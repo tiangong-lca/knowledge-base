@@ -15,7 +15,7 @@ checkPaths:
   - "app/**"
   - "scripts/**"
 lastReviewedAt: 2026-11-03
-lastReviewedCommit: 6212678ddfaff2d68622c95d411372cca2fdc226
+lastReviewedCommit: 753a9513e821b7804452114b1ac805f8a928f1bc
 ---
 
 # LCA Living Knowledge Base and Review
@@ -58,3 +58,7 @@ This is an M1 main repository. Current implementation is tracked in [knowledge-b
 ## License
 
 Code is licensed under [MIT](LICENSE). Original narrative and knowledge records in `content/` and `knowledge/` are licensed under [CC BY-NC-SA 4.0](LICENSE-content), attributed to TianGong LCA Knowledge Base contributors. Commercial use of original knowledge content requires separate authorization from the relevant rights holders. Third-party sources retain their own licenses and applicable authorization conditions; a citation does not relicense the source or authorize full-text redistribution. See source-specific rights and preservation notes.
+
+## Book design awaiting confirmation
+
+The detailed [LCA treatise design and AI goal](_docs/lca-book-goal.md) proposes a prologue, eight volumes and research appendices, with evidence-point requirements, literature coverage and evidence-driven revision rules. It is a design draft awaiting user confirmation. Delivering this file does not authorize manuscript expansion or changes to the public corpus.
