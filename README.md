@@ -15,7 +15,7 @@ checkPaths:
   - "app/**"
   - "scripts/**"
 lastReviewedAt: 2026-11-03
-lastReviewedCommit: 50cc3d7
+lastReviewedCommit: 3c3b6adbd6cbfb4988879f6e12a3670c445cc048
 ---
 
 # LCA Living Knowledge Base and Review
@@ -30,7 +30,7 @@ Read [publication contract](_docs/publication-contract.md), [editorial protocol]
 
 ## Develop
 
-Use Node 24 (>=24.18 <25) and pnpm 12.16.1, matching package.json. macOS Apple Silicon, Linux x64 and Windows x64 are supported; macOS Intel is retired.
+Use Node 24.18.0 from `.nvmrc` and pnpm 12.16.1, matching the compatible Node range and exact package-manager pin in package.json. macOS Apple Silicon, Linux x64 and Windows x64 are supported; macOS Intel is retired.
 
 ```sh
 pnpm install --frozen-lockfile
@@ -40,7 +40,9 @@ pnpm build
 pnpm dev
 ```
 
-The static site is exported to `out/`. Search works without an external service or credentials. `edgeone.json` prepares Git-based static hosting; no live domain or deployment is claimed by a successful build. Do not copy another site's identity, search index or credentials.
+The static site is exported to `out/`. Search works without an external service or credentials. EdgeOne Makers project `makers-w8wl4xjmt2mj` imports this repository's `main` branch; the production hostname is `prism.tiangong.earth`. Hosting qualification is tracked in [knowledge-base #3](https://github.com/tiangong-lca/knowledge-base/issues/3). A successful local build does not establish live deployment, domain activation or HTTPS availability. Do not copy another site's identity, search index or credentials.
+
+`edgeone.json` and `.nvmrc` both select the platform-preinstalled Node 24.18.0. The pnpm `packageManager` pin remains 12.16.1; a supported preinstalled pnpm switches to that declared version automatically. Check the actual hosted install log and keep the frozen lockfile. Do not run `corepack enable` against platform-owned Node shims.
 
 ```sh
 node scripts/impact.mjs <changed-id>
