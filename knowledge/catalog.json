@@ -1,0 +1,885 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "id": "src-olca-flows",
+      "title": "Flows",
+      "url": "https://greendelta.github.io/openLCA2-manual/flows/index.html",
+      "version": "openLCA 2 manual; mutable web edition",
+      "publisher": "GreenDelta",
+      "accessedAt": "2026-11-03",
+      "accessStatus": "public-html-inspected",
+      "rights": "来源保留原权利；本项目仅发布原创释义、书目信息和定位，不再许可原文、图像或数据。",
+      "preservation": "本次核读公开网页；未将原始网页归档入本仓。URL 可能变化，访问日期和章节定位用于重新核查；无法保证远端长期保留该版。"
+    },
+    {
+      "id": "src-olca-exchanges",
+      "title": "Inputs/Outputs",
+      "url": "https://greendelta.github.io/openLCA2-manual/processes/tab_inputs_outputs.html",
+      "version": "openLCA 2 manual; mutable web edition",
+      "publisher": "GreenDelta",
+      "accessedAt": "2026-11-03",
+      "accessStatus": "public-html-inspected",
+      "rights": "来源保留原权利；本项目仅发布原创释义、书目信息和定位，不再许可原文、图像或数据。",
+      "preservation": "本次核读公开网页；未将原始网页归档入本仓。URL 可能变化，访问日期和章节定位用于重新核查；无法保证远端长期保留该版。"
+    },
+    {
+      "id": "src-olca-waste",
+      "title": "Waste modelling",
+      "url": "https://greendelta.github.io/openLCA2-manual/waste_modelling.html",
+      "version": "openLCA 2 manual; describes transition at 1.7",
+      "publisher": "GreenDelta",
+      "accessedAt": "2026-11-03",
+      "accessStatus": "public-html-inspected",
+      "rights": "来源保留原权利；本项目仅发布原创释义、书目信息和定位，不再许可原文、图像或数据。",
+      "preservation": "本次核读公开网页；未将原始网页归档入本仓。URL 可能变化，访问日期和章节定位用于重新核查；无法保证远端长期保留该版。"
+    },
+    {
+      "id": "src-ilcd-process",
+      "title": "ILCD Format 1.1 Documentation — Process data set",
+      "url": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/ILCD_Format_1.1_Documentation/ILCD_ProcessDataSet.html",
+      "version": "ILCD Format 1.1",
+      "publisher": "European Commission Joint Research Centre",
+      "accessedAt": "2026-11-03",
+      "accessStatus": "public-html-inspected",
+      "rights": "来源保留原权利；本项目仅发布原创释义、书目信息和定位，不再许可原文、图像或数据。",
+      "preservation": "本次核读公开网页；未将原始网页归档入本仓。URL 可能变化，访问日期和章节定位用于重新核查；无法保证远端长期保留该版。"
+    },
+    {
+      "id": "src-ecoinvent-models",
+      "title": "System Models",
+      "url": "https://support.ecoinvent.org/system-models",
+      "version": "Web article dated 2024-02-14; accessed edition 2026-11-03",
+      "publisher": "ecoinvent",
+      "accessedAt": "2026-11-03",
+      "accessStatus": "public-html-inspected",
+      "rights": "来源保留原权利；本项目仅发布原创释义、书目信息和定位，不再许可原文、图像或数据。",
+      "preservation": "本次核读公开网页；未将原始网页归档入本仓。URL 可能变化，访问日期和章节定位用于重新核查；无法保证远端长期保留该版。"
+    },
+    {
+      "id": "src-olca-validation",
+      "title": "Model Validation in openLCA",
+      "url": "https://greendelta.github.io/openLCA2-manual/validation.html",
+      "version": "openLCA 2 manual; mutable web edition",
+      "publisher": "GreenDelta",
+      "accessedAt": "2026-11-03",
+      "accessStatus": "public-html-inspected",
+      "rights": "来源保留原权利；本项目仅发布原创释义、书目信息和定位，不再许可原文、图像或数据。",
+      "preservation": "本次核读公开网页；未将原始网页归档入本仓。URL 可能变化，访问日期和章节定位用于重新核查；无法保证远端长期保留该版。"
+    },
+    {
+      "id": "src-olca-cfs",
+      "title": "Characterization factors",
+      "url": "https://greendelta.github.io/openLCA2-manual/lcia_methods/impcat_cfs.html",
+      "version": "openLCA 2 manual; mutable web edition",
+      "publisher": "GreenDelta",
+      "accessedAt": "2026-11-03",
+      "accessStatus": "public-html-inspected",
+      "rights": "来源保留原权利；本项目仅发布原创释义、书目信息和定位，不再许可原文、图像或数据。",
+      "preservation": "本次核读公开网页；未将原始网页归档入本仓。URL 可能变化，访问日期和章节定位用于重新核查；无法保证远端长期保留该版。"
+    },
+    {
+      "id": "src-brightway-matrix",
+      "title": "Matrix Construction",
+      "url": "https://docs.brightway.dev/en/latest/content/overview/matrix.html",
+      "version": "Brightway latest documentation; accessed edition 2026-11-03",
+      "publisher": "Brightway Developers",
+      "accessedAt": "2026-11-03",
+      "accessStatus": "public-html-inspected",
+      "rights": "来源保留原权利；本项目仅发布原创释义、书目信息和定位，不再许可原文、图像或数据。",
+      "preservation": "本次核读公开网页；未将原始网页归档入本仓。URL 可能变化，访问日期和章节定位用于重新核查；无法保证远端长期保留该版。"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-flow-types",
+      "sourceId": "src-olca-flows",
+      "locator": "Flows: three flow types; paragraphs following table",
+      "summary": "手册区分三种 flow type，并列出 reference flow property。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-exchange",
+      "sourceId": "src-olca-exchanges",
+      "locator": "Inputs/Outputs: Flow; Amount; Unit",
+      "summary": "输入输出表将 flow 与具体数量、单位和过程角色组合。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-waste-material",
+      "sourceId": "src-olca-waste",
+      "locator": "Material flow logic; Creating a waste treatment process",
+      "summary": "描述废物类型沿物质方向连接产生和处理过程。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-waste-opposite",
+      "sourceId": "src-olca-waste",
+      "locator": "Opposite direction approach; numbered steps 1–2",
+      "summary": "描述 product 类型负输入和负输出的旧式处理编码。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-waste-history",
+      "sourceId": "src-olca-waste",
+      "locator": "Material flow logic opening paragraph; Opposite direction approach opening paragraph",
+      "summary": "手册将物质流向方式的引入与 openLCA 1.7 关联。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-ilcd-qr",
+      "sourceId": "src-ilcd-process",
+      "locator": "Quantitative reference: eDoc IDs 1-1-4, 1-1-4-15, 1-1-4-16, 1-1-4-17",
+      "summary": "定义定量参考及其类型，区分具体参考交换和功能表述。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-ecoinvent-choice",
+      "sourceId": "src-ecoinvent-models",
+      "locator": "System Models introduction; Key Concepts: Allocation and Substitution",
+      "summary": "系统模型控制连接和多功能处理假设，选择需匹配研究目标。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-ecoinvent-cutoff",
+      "sourceId": "src-ecoinvent-models",
+      "locator": "Allocation cut-off by Classification: Introduction; Classification of Products",
+      "summary": "说明初级生产、再生利用和分类的边界。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-ecoinvent-apos",
+      "sourceId": "src-ecoinvent-models",
+      "locator": "Allocation at the Point of Substitution: opening paragraphs",
+      "summary": "说明 APOS 归因框架和 3.2 版本改名。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-ecoinvent-conseq",
+      "sourceId": "src-ecoinvent-models",
+      "locator": "Substitution, Consequential, Long-term: Introduction",
+      "summary": "说明后果模型中的替代与边际供应。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-cf-editor",
+      "sourceId": "src-olca-cfs",
+      "locator": "Characterization factors: window capabilities list",
+      "summary": "表征因子界面包括流、因子、单位和位置。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-lcia-unmapped",
+      "sourceId": "src-olca-validation",
+      "locator": "Completeness check: final paragraphs",
+      "summary": "LCIA Checks 列出具体影响类别中未被评价的流。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-bw-roles",
+      "sourceId": "src-brightway-matrix",
+      "locator": "Matrix Construction introduction; What Data Enters the technosphere Matrix? Important box",
+      "summary": "矩阵有不同对象维度；schema input/output 不表示物理方向。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-bw-sign",
+      "sourceId": "src-brightway-matrix",
+      "locator": "Positive and Negative Values in the technosphere",
+      "summary": "矩阵符号按生产、消费和对象类型解释，不直接表示功能。",
+      "relation": "supports"
+    }
+  ],
+  "claims": [
+    {
+      "id": "cl-flow-type",
+      "text": "openLCA 2 手册将 flow 分为 elementary、product 和 waste 三种类型；这是该软件的类型体系。",
+      "kind": "source-statement",
+      "scope": "openLCA 2 手册的 flow 数据对象",
+      "evidenceIds": [
+        "ev-flow-types"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-flow",
+        "cn-waste"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "不能当作所有标准共用且互斥的分类体系。"
+      ]
+    },
+    {
+      "id": "cl-exchange",
+      "text": "在 openLCA 输入输出表中，一个已定义的 flow 可以与过程中的输入或输出角色、数量和单位组合。",
+      "kind": "source-statement",
+      "scope": "openLCA 2 过程编辑器",
+      "evidenceIds": [
+        "ev-exchange"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-flow",
+        "cn-exchange"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "reviewKind": "agent-source-check",
+      "caveats": []
+    },
+    {
+      "id": "cl-flow-exchange-distinction",
+      "text": "本项目把“所指对象的描述”与“某过程使用或产生该对象的一次定量关系”分开讲述：相同 flow 记录被复用，不等于每次交换数量或角色相同。",
+      "kind": "interpretation",
+      "scope": "用于解释 openLCA 的 flow 与过程输入输出关系",
+      "evidenceIds": [
+        "ev-flow-types",
+        "ev-exchange"
+      ],
+      "premiseIds": [
+        "cl-flow-type",
+        "cl-exchange"
+      ],
+      "conceptIds": [
+        "cn-flow",
+        "cn-exchange"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "这是分析用的区分，不声称为各标准统一采用的术语定义。"
+      ]
+    },
+    {
+      "id": "cl-waste-material",
+      "text": "openLCA 的 material flow logic 将废物记为产生过程的 waste 输出，并作为处理过程的 waste 输入及定量参考。",
+      "kind": "source-statement",
+      "scope": "openLCA 手册所述 material flow logic",
+      "evidenceIds": [
+        "ev-waste-material"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-waste",
+        "cn-quant-ref"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "reviewKind": "agent-source-check",
+      "caveats": []
+    },
+    {
+      "id": "cl-waste-opposite",
+      "text": "openLCA 的 opposite direction approach 使用 product 类型：废物产生过程记录负输入，处理过程记录负输出。",
+      "kind": "source-statement",
+      "scope": "openLCA 手册所述 opposite direction approach",
+      "evidenceIds": [
+        "ev-waste-opposite"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-waste"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "reviewKind": "agent-source-check",
+      "caveats": []
+    },
+    {
+      "id": "cl-waste-no-universal",
+      "text": "仅凭负号或 product 类型，不能把一条记录直接解释成通用的废物定义；解释这个案例需要同时知道过程角色、方向和编码约定。",
+      "kind": "synthesis",
+      "scope": "以上两种废物表达的阅读与比较",
+      "evidenceIds": [
+        "ev-waste-material",
+        "ev-waste-opposite"
+      ],
+      "premiseIds": [
+        "cl-waste-material",
+        "cl-waste-opposite"
+      ],
+      "conceptIds": [
+        "cn-waste",
+        "cn-exchange"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "本次没有运行软件或证明任意两模型可无损互转。"
+      ],
+      "reasoning": "同一废物处理关系在已引用手册中存在两种类型与方向约定，因此单字段不足以决定含义；本结论不推出任意模型等价。"
+    },
+    {
+      "id": "cl-waste-history",
+      "text": "openLCA 2 手册回顾称，沿物质流向的废物表达从 openLCA 1.7 引入；更早只采用所述反向表达方式。",
+      "kind": "source-statement",
+      "scope": "手册对软件版本沿革的回顾",
+      "evidenceIds": [
+        "ev-waste-history"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-waste"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "尚未核读 1.7 当年的发布说明与实现；不据此推断其为该思想的首次提出。"
+      ]
+    },
+    {
+      "id": "cl-ilcd-quant-ref",
+      "text": "ILCD Format 1.1 的 quantitativeReference 指定数据集输入和输出所相对的定量参考。其类型允许参考流、功能单位、其他参数或生产期间。",
+      "kind": "source-statement",
+      "scope": "ILCD Format 1.1 过程数据集",
+      "evidenceIds": [
+        "ev-ilcd-qr"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-quant-ref"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "reviewKind": "agent-source-check",
+      "caveats": []
+    },
+    {
+      "id": "cl-ilcd-reference-flow",
+      "text": "在 ILCD Format 1.1 中，referenceToReferenceFlow 指向数据集内作为参考的一个或多个输入或输出交换。",
+      "kind": "source-statement",
+      "scope": "ILCD Format 1.1，eDoc 1-1-4-16",
+      "evidenceIds": [
+        "ev-ilcd-qr"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-reference-flow"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "reviewKind": "agent-source-check",
+      "caveats": []
+    },
+    {
+      "id": "cl-ilcd-fu",
+      "text": "ILCD Format 1.1 允许用过程提供的性能描述功能单位，也允许在参考流之外补充功能单位表述。",
+      "kind": "source-statement",
+      "scope": "ILCD Format 1.1 的定量参考说明",
+      "evidenceIds": [
+        "ev-ilcd-qr"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-fu"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "这是格式文档的含义说明；本章未完成 ISO 定义及所有方法的逐条比较。"
+      ]
+    },
+    {
+      "id": "cl-fu-distinction",
+      "text": "在本项目的阅读框架中，先说明需要提供的功能，再说明为实现它需要多少具体产品或服务。二者间的转换依据应当单独呈现。",
+      "kind": "interpretation",
+      "scope": "功能表述与参考流的解释框架",
+      "evidenceIds": [
+        "ev-ilcd-qr"
+      ],
+      "premiseIds": [
+        "cl-ilcd-reference-flow",
+        "cl-ilcd-fu"
+      ],
+      "conceptIds": [
+        "cn-fu",
+        "cn-reference-flow"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "转换可能依赖性能、寿命和使用条件；单一数量不能替代这些前提。"
+      ]
+    },
+    {
+      "id": "cl-fu-example",
+      "text": "假设同一项维护服务需要 A 涂料 0.20 kg/m²、B 涂料 0.25 kg/m²，且覆盖面积为 10 m²、性能和维护期间已设定为相同，则本例参考需求分别为 2.0 kg 和 2.5 kg。",
+      "kind": "calculation",
+      "scope": "本项目构造的教学算例；0.20×10 与 0.25×10",
+      "evidenceIds": [
+        "ev-ilcd-qr"
+      ],
+      "premiseIds": [
+        "cl-fu-distinction"
+      ],
+      "conceptIds": [
+        "cn-fu",
+        "cn-reference-flow"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "数值是明确假设，不是实测数据或产品性能声明；环境结果仍需分别计算。"
+      ],
+      "reasoning": "教学前提固定面积10m²且性能/期间相同；分别计算0.20kg/m²×10m²=2.0kg、0.25kg/m²×10m²=2.5kg。"
+    },
+    {
+      "id": "cl-system-model",
+      "text": "ecoinvent 的系统模型规定清单计算中的方法规则，包括供应连接及生产者和消费者之间的分配或替代；用户需要理解所选假设是否适合研究目标。",
+      "kind": "source-statement",
+      "scope": "ecoinvent System Models 页面介绍",
+      "evidenceIds": [
+        "ev-ecoinvent-choice"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-system-model"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "reviewKind": "agent-source-check",
+      "caveats": []
+    },
+    {
+      "id": "cl-cutoff",
+      "text": "ecoinvent cut-off by classification 将初级生产负担归于初级使用者，再生材料承担回收过程相关负担；这不意味着再生产品的完整供应链环境负担为零。",
+      "kind": "interpretation",
+      "scope": "ecoinvent cut-off by classification 的概述",
+      "evidenceIds": [
+        "ev-ecoinvent-cutoff"
+      ],
+      "premiseIds": [
+        "cl-system-model"
+      ],
+      "conceptIds": [
+        "cn-cutoff"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "具体回收链有例外与细节，本条不替代逐过程追踪。"
+      ]
+    },
+    {
+      "id": "cl-apos",
+      "text": "ecoinvent 将 APOS 说明为归因型系统模型，废物产生者与利用处理产物的后续用户共同承担相关负担。",
+      "kind": "source-statement",
+      "scope": "ecoinvent APOS 概述",
+      "evidenceIds": [
+        "ev-ecoinvent-apos"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-apos"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "reviewKind": "agent-source-check",
+      "caveats": []
+    },
+    {
+      "id": "cl-conseq",
+      "text": "ecoinvent 的 consequential 模型以替代处理多功能性，并采用边际供应假设；这些假设属于该具名系统模型。",
+      "kind": "source-statement",
+      "scope": "ecoinvent Substitution, consequential, long-term 概述",
+      "evidenceIds": [
+        "ev-ecoinvent-conseq"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-system-model",
+        "cn-allocation"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "不将该实现概括为所有后果型 LCA 的唯一做法。"
+      ]
+    },
+    {
+      "id": "cl-apos-history",
+      "text": "ecoinvent 页面称，APOS 原名 Allocation, ecoinvent default，名称随 ecoinvent 3.2 改变。",
+      "kind": "source-statement",
+      "scope": "官方页面对名称沿革的回顾",
+      "evidenceIds": [
+        "ev-ecoinvent-apos"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-apos"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "未核验该次改名是否伴随算法改变；改名本身不证明方法改变。"
+      ]
+    },
+    {
+      "id": "cl-model-not-format",
+      "text": "比较回收或分配结果时，需对齐研究目的、系统模型及边界，不能把相同交换格式当作方法选择相同的证据。",
+      "kind": "synthesis",
+      "scope": "ecoinvent 模型与 openLCA 表达的跨层比较",
+      "evidenceIds": [
+        "ev-ecoinvent-choice",
+        "ev-waste-opposite"
+      ],
+      "premiseIds": [
+        "cl-system-model",
+        "cl-cutoff",
+        "cl-apos",
+        "cl-conseq"
+      ],
+      "conceptIds": [
+        "cn-system-model",
+        "cn-allocation"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "本条提出比较时应核查的条件，不判定某个模型普遍优越。"
+      ],
+      "reasoning": "ecoinvent具名系统模型控制连接及分配/替代，openLCA的类型与正负方向属于表达约定。格式相同没有提供前一层选择的证据。"
+    },
+    {
+      "id": "cl-cf-context",
+      "text": "openLCA 的表征因子编辑界面同时包含流、因子值、单位和位置等信息；一个裸数值不足以完整标识适用的表征记录。",
+      "kind": "interpretation",
+      "scope": "openLCA 2 表征因子界面",
+      "evidenceIds": [
+        "ev-cf-editor"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-cf"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "reviewKind": "agent-source-check",
+      "caveats": []
+    },
+    {
+      "id": "cl-unmapped",
+      "text": "openLCA 手册说明，LCIA Checks 可以显示某一影响类别中未被评价的流；可能原因包括流的映射问题。",
+      "kind": "source-statement",
+      "scope": "openLCA 2 手册 Completeness check",
+      "evidenceIds": [
+        "ev-lcia-unmapped"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-missing-cf"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "reviewKind": "agent-source-check",
+      "caveats": []
+    },
+    {
+      "id": "cl-missing-not-zero",
+      "text": "本项目建议将“已匹配且因子为零”“尚未找到适用因子”“明确不适用”和“采用代理因子”分别记录，保留判断依据。",
+      "kind": "proposal",
+      "scope": "本项目建议的表征覆盖报告方式",
+      "evidenceIds": [
+        "ev-lcia-unmapped",
+        "ev-cf-editor"
+      ],
+      "premiseIds": [
+        "cl-cf-context",
+        "cl-unmapped"
+      ],
+      "conceptIds": [
+        "cn-cf",
+        "cn-missing-cf"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "这是本项目建议，未声称是所引手册或 ISO 的原文要求。"
+      ],
+      "reasoning": "手册将未评价流列为完整性检查对象，而因子记录还需流、单位与位置。为保留核查所需信息，本项目建议为不同信息状态设置独立记录；这是建议而非外部规范。"
+    },
+    {
+      "id": "cl-zero-example",
+      "text": "对假设清单中的 3 kg 流，已确认的零因子给出 3×0=0；若适用因子未知，该项结果仍未知。将未知项暂不计入所得的部分合计，不能证明该项影响为零。",
+      "kind": "calculation",
+      "scope": "项目教学算例；只讨论信息状态与算术",
+      "evidenceIds": [
+        "ev-lcia-unmapped"
+      ],
+      "premiseIds": [
+        "cl-missing-not-zero"
+      ],
+      "conceptIds": [
+        "cn-cf",
+        "cn-missing-cf"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "未计算真实环境影响；未知项的大小和方向都不能由该算例推断。"
+      ],
+      "reasoning": "前提一：3kg流已匹配的适用因子=0，乘积为0。前提二：因子未确定，乘积无法确定。两种情形可对已表征合计产生同样数值，但所含信息不同。"
+    },
+    {
+      "id": "cl-bw-direction",
+      "text": "Brightway 文档明确提醒，数据 schema 中的 input 和 output 字段不表示物理流向；它们在该模型中连接产品或生物圈节点与过程节点。",
+      "kind": "source-statement",
+      "scope": "Brightway latest Matrix Construction 的 Important 说明",
+      "evidenceIds": [
+        "ev-bw-roles"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-exchange"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "本次核查的是文档，未对特定安装版本进行运行验证。"
+      ]
+    },
+    {
+      "id": "cl-bw-sign",
+      "text": "Brightway 文档把技术圈矩阵中的正负值解释为生产与消费，并明确符号本身不决定某条边是不是过程的功能。",
+      "kind": "source-statement",
+      "scope": "Brightway latest 的技术圈矩阵约定",
+      "evidenceIds": [
+        "ev-bw-sign"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-exchange",
+        "cn-waste"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "reviewKind": "agent-source-check",
+      "caveats": []
+    }
+  ],
+  "concepts": [
+    {
+      "id": "cn-flow",
+      "label": "流对象",
+      "english": "Flow",
+      "definitionClaimIds": [
+        "cl-flow-type"
+      ],
+      "aliases": [
+        "流"
+      ]
+    },
+    {
+      "id": "cn-exchange",
+      "label": "过程交换",
+      "english": "Exchange",
+      "definitionClaimIds": [
+        "cl-flow-exchange-distinction"
+      ],
+      "aliases": [
+        "输入输出关系"
+      ]
+    },
+    {
+      "id": "cn-waste",
+      "label": "废物与废物表达",
+      "english": "Waste / waste flow",
+      "definitionClaimIds": [
+        "cl-waste-material",
+        "cl-waste-opposite"
+      ],
+      "aliases": [
+        "废物流"
+      ]
+    },
+    {
+      "id": "cn-quant-ref",
+      "label": "定量参考",
+      "english": "Quantitative reference",
+      "definitionClaimIds": [
+        "cl-ilcd-quant-ref"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "cn-reference-flow",
+      "label": "参考流",
+      "english": "Reference flow",
+      "definitionClaimIds": [
+        "cl-ilcd-reference-flow"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "cn-fu",
+      "label": "功能单位",
+      "english": "Functional unit",
+      "definitionClaimIds": [
+        "cl-ilcd-fu",
+        "cl-fu-distinction"
+      ],
+      "aliases": [
+        "FU"
+      ]
+    },
+    {
+      "id": "cn-system-model",
+      "label": "系统模型",
+      "english": "System model",
+      "definitionClaimIds": [
+        "cl-system-model"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "cn-allocation",
+      "label": "分配与多功能处理",
+      "english": "Allocation / multifunctionality",
+      "definitionClaimIds": [
+        "cl-model-not-format"
+      ],
+      "aliases": [
+        "多功能性"
+      ]
+    },
+    {
+      "id": "cn-cutoff",
+      "label": "cut-off 系统模型",
+      "english": "Allocation, cut-off by classification",
+      "definitionClaimIds": [
+        "cl-cutoff"
+      ],
+      "aliases": [
+        "截断模型"
+      ]
+    },
+    {
+      "id": "cn-apos",
+      "label": "APOS 系统模型",
+      "english": "Allocation at the point of substitution",
+      "definitionClaimIds": [
+        "cl-apos"
+      ],
+      "aliases": [
+        "APOS"
+      ]
+    },
+    {
+      "id": "cn-cf",
+      "label": "表征因子",
+      "english": "Characterization factor",
+      "definitionClaimIds": [
+        "cl-cf-context"
+      ],
+      "aliases": [
+        "CF"
+      ]
+    },
+    {
+      "id": "cn-missing-cf",
+      "label": "未表征状态",
+      "english": "Uncharacterized / missing factor",
+      "definitionClaimIds": [
+        "cl-unmapped",
+        "cl-missing-not-zero"
+      ],
+      "aliases": [
+        "缺失因子"
+      ]
+    }
+  ],
+  "mappings": [
+    {
+      "id": "map-fu-reference",
+      "from": "cn-fu",
+      "to": "cn-reference-flow",
+      "relation": "related",
+      "conditions": [
+        "仅说明功能需求与实现需求的关联，不是同义词。",
+        "转换需要明确的性能、寿命、使用条件及数量依据。"
+      ],
+      "claimIds": [
+        "cl-ilcd-reference-flow",
+        "cl-ilcd-fu",
+        "cl-fu-distinction"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "id": "cov-flow",
+      "title": "流、交换与废物表达",
+      "status": "sampled",
+      "notes": "已核读 openLCA 2 与 Brightway 在线文档；ISO、ILCD 与其他软件的完整对照待补。"
+    },
+    {
+      "id": "cov-fu",
+      "title": "功能单位与参考流",
+      "status": "sampled",
+      "notes": "以 ILCD 1.1 格式说明和假设算例起步；功能等效性的产品级证据待补。"
+    },
+    {
+      "id": "cov-recycling",
+      "title": "分配与回收",
+      "status": "sampled",
+      "notes": "已核读 ecoinvent 系统模型概述；其他数据库、PCR 与逐过程算例待补。"
+    },
+    {
+      "id": "cov-characterization",
+      "title": "表征覆盖",
+      "status": "sampled",
+      "notes": "已核读 openLCA 相关功能说明；未进行软件运行与真实数据复现。"
+    },
+    {
+      "id": "cov-history",
+      "title": "历史起源与传播",
+      "status": "planned",
+      "notes": "当前仅记录两项官方回顾的版本沿革；早期原始报告、SETAC 与标准制定史尚待考证。"
+    },
+    {
+      "id": "cov-standards",
+      "title": "全球标准与制度",
+      "status": "planned",
+      "notes": "ISO 全文、国家标准、PEF/OEF、PCR 和 EPD 体系尚未完成逐版本核读。"
+    },
+    {
+      "id": "cov-lcia",
+      "title": "影响评价方法谱系",
+      "status": "planned",
+      "notes": "各影响类别的科学模型、价值选择、地域及时间差异待专题研究。"
+    },
+    {
+      "id": "cov-datasets",
+      "title": "数据库与数据质量",
+      "status": "planned",
+      "notes": "代表性、数据采集、质量评分、不确定性及跨库实证待专题研究。"
+    },
+    {
+      "id": "cov-applications",
+      "title": "行业应用与决策",
+      "status": "planned",
+      "notes": "电力、建筑、农业、交通及政策应用待建立有明确问题的综述协议。"
+    },
+    {
+      "id": "cov-frontiers",
+      "title": "边界与前沿",
+      "status": "planned",
+      "notes": "动态 LCA、区域化、生命周期成本与社会评价、AI 等待建立边界和证据目录。"
+    }
+  ]
+}

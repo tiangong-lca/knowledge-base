@@ -1,0 +1,1 @@
+export function PublicationShell({title,description,children}:{title:string;description:string;children:React.ReactNode}) { return <main id="main-content" className="publication-shell"><header className="page-intro"><a href="/">知识库</a><h1>{title}</h1><p>{description}</p></header>{children}</main>; }
