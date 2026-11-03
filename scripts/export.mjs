@@ -12,7 +12,11 @@ for (const route of ['', 'docs', 'sources', 'claims', 'concepts', 'coverage', 'c
 const published = publicCatalog(catalog);
 const digest = createHash('sha256').update(JSON.stringify(published)).digest('hex');
 const sourceCommit = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
-const dirty = !!execFileSync('git', ['status', '--porcelain', '--untracked-files=normal'], { encoding: 'utf8' }).trim();
+const worktreeStatus = execFileSync('git', ['status', '--porcelain', '--untracked-files=normal'], { encoding: 'utf8' }).trimEnd();
+const dirty = Boolean(worktreeStatus);
+if (dirty) {
+  console.warn(`Git worktree status (paths only, porcelain format):\n${worktreeStatus}`);
+}
 mkdirSync('out/downloads', { recursive: true });
 writeFileSync('out/downloads/catalog.json', `${JSON.stringify(published, null, 2)}\n`);
 writeFileSync('out/downloads/dependencies.json', `${JSON.stringify(buildDependencies(published), null, 2)}\n`);

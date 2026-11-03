@@ -15,7 +15,7 @@ checkPaths:
   - "app/**"
   - "scripts/**"
 lastReviewedAt: 2026-11-03
-lastReviewedCommit: 3c3b6adbd6cbfb4988879f6e12a3670c445cc048
+lastReviewedCommit: 6212678ddfaff2d68622c95d411372cca2fdc226
 ---
 
 # LCA Living Knowledge Base and Review
@@ -42,7 +42,7 @@ pnpm dev
 
 The static site is exported to `out/`. Search works without an external service or credentials. EdgeOne Makers project `makers-w8wl4xjmt2mj` imports this repository's `main` branch; the production hostname is `prism.tiangong.earth`. Hosting qualification is tracked in [knowledge-base #3](https://github.com/tiangong-lca/knowledge-base/issues/3). A successful local build does not establish live deployment, domain activation or HTTPS availability. Do not copy another site's identity, search index or credentials.
 
-`edgeone.json` and `.nvmrc` both select the platform-preinstalled Node 24.18.0. The pnpm `packageManager` pin remains 12.16.1; a supported preinstalled pnpm switches to that declared version automatically. Check the actual hosted install log and keep the frozen lockfile. Do not run `corepack enable` against platform-owned Node shims.
+`edgeone.json` and `.nvmrc` both select the platform-preinstalled Node 24.18.0. The pnpm `packageManager` pin remains 12.16.1; a supported preinstalled pnpm switches to that declared version automatically. Check the actual hosted install log and keep the frozen lockfile. Do not run `corepack enable` against platform-owned Node shims. The lockfile includes the verified pnpm 12.16.1 executable wrapper used by hosted version selection. `tsconfig.json` deliberately matches the hosted builder's compact serialization and function-directory exclusions so a build preserves source identity; `/.edgeone/` is generated deployment output.
 
 ```sh
 node scripts/impact.mjs <changed-id>
