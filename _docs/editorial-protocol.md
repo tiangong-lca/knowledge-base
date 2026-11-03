@@ -1,0 +1,48 @@
+---
+docType: contract
+scope: repo
+status: active
+authoritative: true
+owner: knowledge-base
+language: en
+whenToUse:
+  - when evidence review, source scope or maintenance policy changes
+whenToUpdate:
+  - when evidence review, source scope or maintenance policy changes
+checkPaths:
+  - "content/**"
+  - "knowledge/**"
+  - "releases/**"
+lastReviewedAt: 2026-11-03
+lastReviewedCommit: 901ae1d
+---
+
+# Editorial and living review protocol
+
+## Initial scope and evidence frame
+
+Publication starts with four bounded topics: flow/exchange/waste conventions; functional unit/reference flow in ILCD Format 1.1; ecoinvent system model overview; characterization coverage in openLCA. The history chapter is a research agenda with two source-bound software/database version nodes. The initial source frame is eight public official HTML documents, accessed 2026-11-03, selected for explanatory pilot value rather than a systematic literature search. No global recall or completeness estimate is claimed.
+
+The source set is not a systematic review. All eight URLs were inspected at the cited sections. Current web pages are mutable; this first set does not bundle source HTML or claim immutable preservation. Current manuals were not independently checked against historical executables. ISO full text, national standards, PCR/EPD rules, historical original reports and native software execution are outside the completed review scope. A blocked EUR-Lex page and a missing ILCD mirror enumeration page provided no evidence; the accessible JRC ILCD ProcessDataSet documentation supplies the cited quantitative-reference fields.
+
+## Claim method
+
+A source statement paraphrases only the cited content. Interpretation explains a source within its scope. Synthesis connects explicit premises, keeps their caveats and cannot create new normative authority. Calculation records assumptions and arithmetic; hypothetical values remain hypothetical. Proposals identify rationale and alternatives rather than pretending a source required the proposal. Reviewed means agent source checking for the stated scope; it is not human expert approval or certification.
+
+Every substantive factual MDX assertion renders its canonical catalog claim or is visibly marked as a hypothetical illustration, question, editorial policy or research task. Repeated explanatory prose must preserve the canonical statement's scope. Claim IDs are stable; meaning-changing edits create review obligations. Evidence links say supports, qualifies, contradicts or context. Counterevidence is retained rather than averaged into a confidence score. Absence from the bounded search is not evidence of nonexistence.
+
+Concept labels are distinct from meaning. Each concept links definition claims scoped to their source systems; mappings require direction, conditions and supporting claims. The initial functional-unit/reference-flow relation records relatedness, not equivalence or universal computable conversion. Contextual mappings do not authorize transitive equivalence.
+
+## Ongoing retrieval and updates
+
+A maintainer checks official source announcements weekly, screens candidate literature monthly and plans quarterly topic synthesis, adjusting cadence through a recorded amendment when workload or change rates justify it. This is an initial maintenance policy, not evidence that any automated monitor is already running. Before expanding a topic, write its databases, multilingual queries, date limits, eligibility rules, screening responsibility, full-text access needs and stop conditions. Preserve exclusions and failed access.
+
+On new evidence, capture source identity and rights, extract exact locators, assess support/contradiction and identify affected claims. Changes to source content, claim premises, concepts, mappings and numerical inputs trigger dependent review. Review the entire affected public closure before republishing; avoid silently dropping qualifiers. Changes that may alter recommendations, cross-standard interpretations or scientific conclusions require domain review; until such review occurs, disclose the limitation and keep conclusions appropriately scoped.
+
+Keep retrieval cutoff, evidence check date and substantive modification date distinct. Deployment time proves none of them. Release history binds the accepted catalog and content versions; later errata or withdrawal must be discoverable from old HTML/PDF release identity without changing the historical bytes. Public exports use only the reviewed publishable closure and do not contain private originals, draft conclusions or internal research artifacts.
+
+## Acceptance and later work
+
+Automated validation checks IDs, references, required reasoning, public dependency closure and update propagation. Substantive review checks source entailment, applicability, counterexamples, caveats and unintended normative claims. Browser review checks whether a reader can find this evidence. These checks are separate and none establishes environmental truth by itself.
+
+Next content tasks are version-bound primary-source acquisition, expanded national/sector standards coverage, historical original sources, native reference cases for waste conventions, and a domain-reviewed functional equivalence case. The coverage inventory records these gaps without equating source counts with field-wide completeness.

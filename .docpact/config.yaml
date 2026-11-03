@@ -1,0 +1,215 @@
+lastReviewedAt: "2026-11-03"
+lastReviewedCommit: "901ae1d"
+version: 1
+layout: repo
+
+# Review metadata is recorded only after review of a real repository revision.
+repo:
+  id: knowledge-base
+  owner: knowledge-base
+
+catalog:
+  repos:
+    - id: knowledge-base
+      path: .
+      canonicalRepo: tiangong-lca/knowledge-base
+      entryDoc: AGENTS.md
+      workflowDocs:
+        - README.md
+        - _docs/publication-contract.md
+        - _docs/architecture.md
+        - _docs/editorial-protocol.md
+      workspaceIntegrationRequired: true
+
+ownership:
+  domains:
+    - id: knowledge-publication
+      paths:
+        include:
+          - AGENTS.md
+          - README.md
+          - LICENSE*
+          - .docpact/config.yaml
+          - _docs/**
+          - knowledge/**
+          - content/**
+          - releases/**
+      ownerRepo: knowledge-base
+    - id: publication-site-and-tooling
+      paths:
+        include:
+          - app/**
+          - components/**
+          - lib/**
+          - config/**
+          - public/**
+          - scripts/**
+          - tests/**
+          - .github/**
+          - package.json
+          - pnpm-lock.yaml
+          - pnpm-workspace.yaml
+          - tsconfig.json
+          - next.config.*
+          - next-env.d.ts
+          - source.config.*
+          - mdx-components.*
+          - postcss.config.*
+          - edgeone.json
+          - .gitignore
+          - .gitattributes
+          - .nvmrc
+          - .npmrc
+      ownerRepo: knowledge-base
+
+coverage:
+  include:
+    - AGENTS.md
+    - README.md
+    - LICENSE*
+    - .docpact/config.yaml
+    - _docs/**
+    - knowledge/**
+    - content/**
+    - releases/**
+    - app/**
+    - components/**
+    - lib/**
+    - config/**
+    - public/**
+    - scripts/**
+    - tests/**
+    - .github/**
+    - package.json
+    - pnpm-lock.yaml
+    - pnpm-workspace.yaml
+    - tsconfig.json
+    - next.config.*
+    - next-env.d.ts
+    - source.config.*
+    - mdx-components.*
+    - postcss.config.*
+    - edgeone.json
+    - .gitignore
+    - .gitattributes
+    - .nvmrc
+    - .npmrc
+
+docInventory:
+  include:
+    - AGENTS.md
+    - README.md
+    - .docpact/config.yaml
+    - _docs/**
+
+freshness:
+  warn_after_commits: 50
+  warn_after_days: 90
+  critical_after_days: 180
+
+rules:
+  - id: publication-governance
+    scope: repo
+    repo: knowledge-base
+    triggers:
+      - path: AGENTS.md
+        kind: contributor-contract
+      - path: README.md
+        kind: repository-entry
+      - path: LICENSE*
+        kind: publication-rights
+      - path: .docpact/config.yaml
+        kind: governance-config
+      - path: _docs/**
+        kind: publication-contract
+    requiredDocs:
+      - path: AGENTS.md
+        mode: review_or_update
+      - path: _docs/publication-contract.md
+        mode: review_or_update
+      - path: .docpact/config.yaml
+        mode: review_or_update
+    reason: Ownership, rights, epistemic status and editorial authority must remain explicit as publication governance changes.
+
+  - id: knowledge-and-editorial-content
+    scope: repo
+    repo: knowledge-base
+    triggers:
+      - path: knowledge/**
+        kind: canonical-knowledge-records
+      - path: content/**
+        kind: public-narrative
+      - path: releases/**
+        kind: immutable-publication-and-errata
+    requiredDocs:
+      - path: _docs/publication-contract.md
+        mode: review_or_update
+      - path: _docs/editorial-protocol.md
+        mode: review_or_update
+    reason: Claims, concepts, mappings, evidence and releases require source-bound editorial review, explicit uncertainty and correction propagation; integrity checks do not prove scientific truth.
+
+  - id: publication-site
+    scope: repo
+    repo: knowledge-base
+    triggers:
+      - path: app/**
+        kind: public-site
+      - path: components/**
+        kind: knowledge-presentation
+      - path: lib/**
+        kind: knowledge-projection
+      - path: config/**
+        kind: publication-configuration
+      - path: public/**
+        kind: published-static-assets
+      - path: package.json
+        kind: toolchain
+      - path: pnpm-lock.yaml
+        kind: dependency-lock
+      - path: pnpm-workspace.yaml
+        kind: package-manager-policy
+      - path: tsconfig.json
+        kind: compiler-configuration
+      - path: next.config.*
+        kind: static-export-configuration
+      - path: next-env.d.ts
+        kind: framework-types
+      - path: source.config.*
+        kind: mdx-configuration
+      - path: mdx-components.*
+        kind: mdx-components
+      - path: postcss.config.*
+        kind: stylesheet-configuration
+      - path: edgeone.json
+        kind: deployment-configuration
+      - path: .nvmrc
+        kind: supported-node-version
+      - path: .npmrc
+        kind: package-manager-configuration
+    requiredDocs:
+      - path: README.md
+        mode: review_or_update
+      - path: _docs/architecture.md
+        mode: review_or_update
+    reason: Static rendering, public export scope, citation interfaces and compatible dependency choices must match the documented architecture and validation entrypoints.
+
+  - id: publication-validation-and-automation
+    scope: repo
+    repo: knowledge-base
+    triggers:
+      - path: scripts/**
+        kind: validation-or-publication-tooling
+      - path: tests/**
+        kind: publication-regression-tests
+      - path: .github/**
+        kind: delivery-and-maintenance-automation
+      - path: .gitignore
+        kind: material-retention
+      - path: .gitattributes
+        kind: file-distribution-policy
+    requiredDocs:
+      - path: _docs/architecture.md
+        mode: review_or_update
+      - path: _docs/publication-contract.md
+        mode: review_or_update
+    reason: Validation and automation must preserve public-only exports, source identities, immutable releases and bounded update authority without treating software success as substantive review.
