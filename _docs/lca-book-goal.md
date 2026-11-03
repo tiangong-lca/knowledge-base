@@ -1,4 +1,6 @@
 ---
+lastReviewedAt: 2026-11-03
+lastReviewedCommit: 753a9513e821b7804452114b1ac805f8a928f1bc
 title: Prism LCA 全书设计与 AI 执行目标
 docType: design
 scope: repo
