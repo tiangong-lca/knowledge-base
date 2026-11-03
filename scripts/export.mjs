@@ -14,7 +14,11 @@ const digest = createHash('sha256').update(JSON.stringify(published)).digest('he
 const sourceCommit = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
 const worktreeStatus = execFileSync('git', ['status', '--porcelain', '--untracked-files=normal'], { encoding: 'utf8' }).trimEnd();
 const dirty = Boolean(worktreeStatus);
-if (dirty) console.warn(`Git worktree status (paths only, porcelain format):\n${worktreeStatus}`);
+if (dirty) {
+  console.warn(`Git worktree status (paths only, porcelain format):\n${worktreeStatus}`);
+  const publicConfigDiff = execFileSync('git', ['diff', '--no-ext-diff', '--no-color', '--', 'pnpm-lock.yaml', 'tsconfig.json'], { encoding: 'utf8' }).trimEnd();
+  if (publicConfigDiff) console.warn(`Hosted build changes to public dependency/compiler manifests:\n${publicConfigDiff}`);
+}
 mkdirSync('out/downloads', { recursive: true });
 writeFileSync('out/downloads/catalog.json', `${JSON.stringify(published, null, 2)}\n`);
 writeFileSync('out/downloads/dependencies.json', `${JSON.stringify(buildDependencies(published), null, 2)}\n`);
