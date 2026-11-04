@@ -1,0 +1,6861 @@
+---
+title: Research execution records retained outside the reader narrative
+docType: reference
+scope: repo
+status: historical
+authoritative: false
+owner: knowledge-base
+language: en
+whenToUse:
+  - when continuing source acquisition, checking or editorial research
+whenToUpdate:
+  - when the retained research execution record changes
+checkPaths:
+  - _docs/editorial/2026-11-04-research-process.md
+---
+
+# Research process checkpoint
+
+The public bibliography supplies scholarly references. This development document retains the previous search/execution/coverage/structure records. It does not claim the full-book programme complete.
+
+## Search protocol
+```json
+{
+  "id": "community-classics-wave-2026-11-04",
+  "questions": [
+    "Which original foundational and regional works are missing from the initial register, and which identities/access routes can be checked?",
+    "Which language, region and method traditions remain unsearched or access-limited?",
+    "Which original methodological debates, corrections and contrary perspectives need separate work-level acquisition before synthesis?",
+    "How do original allocation, inventory-computation and LCIA works qualify their models, corrections, value choices and intended use?",
+    "How do contemporary early reports, source-language regional accounts and uncertainty/data-quality work define their questions, denominators and evidential limits?",
+    "What do institutional review, adjacent social/economic assessment, dynamic timing and future-technology scenarios actually assess, and what additional conditions permit their connection?"
+  ],
+  "sourcesPolicy": "Purposive bounded discovery. Prioritize original publishers, standards institutions, governments, societies and author/university repositories. Institutional catalogs and official successor bibliographies may establish candidate identity only, with indirect status recorded. No illicit mirrors, credential exposure, paywall bypass, paid acquisition, or source-text redistribution. Search hits are leads; available originals, metadata and passage evidence remain distinct. Selective institutional/publisher citation chasing supplements targeted queries.",
+  "queries": [
+    {
+      "id": "Q-SEED-IMPORT",
+      "query": "Import the 42 candidates recorded in goal §11; original 2026-11-03 search strings were not retained. This is an import descriptor, not a reconstructed search query.",
+      "date": "2026-11-03",
+      "channel": "inherited-register"
+    },
+    {
+      "id": "Q1-01",
+      "query": "site.setac.org early life cycle assessment books foundation Fava Vigon 1991 1993 1994",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q1-02",
+      "query": "site.setac.org/resource \"technical framework\" \"1991\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q1-03",
+      "query": "site.setac.org \"Editors: James Fava\" \"Conceptual\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q1-04",
+      "query": "site.setac.org/resource \"Guidelines for Life-Cycle Assessment\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q1-05",
+      "query": "site.setac.org \"Data Quality\" \"Conceptual Framework\" file",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q2-01",
+      "query": "Nordic guidelines life cycle assessment 1995 Lindfors 1995 20",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q2-02",
+      "query": "site.norden.org \"Nordic Guidelines\" \"1995\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q2-03",
+      "query": "\"Nordic guidelines on life-cycle assessment\" \"ivl\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q2-04",
+      "query": "\"On the nordic guidelines for life cycle assessment\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q2-05",
+      "query": "\"Nordic guidelines on life-cycle assessment\" site:finna.fi",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q3-01",
+      "query": "site.jstage.jst.go.jp LIME life cycle impact assessment Itsubo 2004",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q3-02",
+      "query": "site.aist.go.jp LIME 2 2010 伊坪 稲葉",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q3-03",
+      "query": "\"LIME2\" \"意思決定を支援する環境影響評価手法\" site:ci.nii.ac.jp",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q3-04",
+      "query": "\"LIME2\" \"978\" \"2010\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q3-05",
+      "query": "\"LIME3\" \"Preface\" \"1545\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q4-01",
+      "query": "\"GB/T 24044-2008\" site:std.samr.gov.cn",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q4-02",
+      "query": "生命周期评价 研究进展 site:craes.cn",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q4-03",
+      "query": "生命周期评价 中国 研究进展 site:ces.org.cn",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q4-04",
+      "query": "\"生命周期评价在清洁生产领域的应用前景\" 2002",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q5-01",
+      "query": "site.bafu.admin.ch ecological scarcity method eco factors 2021 2013 1990",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q5-02",
+      "query": "site.bafu.admin.ch \"Ökobilanzen\" \"1990\" \"Ahbe\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q5-03",
+      "query": "\"Methodik für Ökobilanzen auf der Basis\" site:bafu.admin.ch \"1990\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q5-04",
+      "query": "\"Swiss Eco-Factors 2021\" \"Frischknecht\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q6-01",
+      "query": "site.epa.gov TRACI 2002 Bare 2011 manual 2.1",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q6-02",
+      "query": "\"TRACI\" \"Bare\" \"2003\" site:epa.gov",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q6-03",
+      "query": "\"TRACI\" \"10.1162\" \"2002\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q6-04",
+      "query": "\"TRACI\" \"Norris\" site:cfpub.epa.gov",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q7-01",
+      "query": "\"allocation\" \"Tillman\" \"1994\" \"life cycle\" journal",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q7-02",
+      "query": "\"Ekvall\" \"Tillman\" \"1997\" \"allocation\" open",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q7-03",
+      "query": "\"System expansion and allocation in life cycle assessment\" 1998",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q7-04",
+      "query": "\"Avoiding co-product allocation\" Weidema 2000",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q7-05",
+      "query": "\"Normative ethics and methodology for life cycle assessment\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q7-06",
+      "query": "\"Allocation of environmental burdens in multiple-function systems\" site:manchester.ac.uk",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q7-REOPEN",
+      "query": "Reopen seed M01 publisher record and inspect its references for exact prior-work identities.",
+      "date": "2026-11-04",
+      "channel": "publisher-reference-list"
+    },
+    {
+      "id": "q-selected-foundations-2026-11-04",
+      "query": "Follow official institutional publication links for CML2001, UNEP1996, EPA1991/1993/2006 and ILCD2010; inspect selected framework/function/interpretation passages",
+      "date": "2026-11-04",
+      "channel": "official institutional publication records and reference-chain follow-up"
+    },
+    {
+      "id": "q-lcia-recipe-rivm-2026-11-04",
+      "query": "site.rivm.nl ReCiPe2016 2016-0104 PDF; then official report/download links and RIVM repository PID/HAL links",
+      "date": "2026-11-04",
+      "channel": "official publication discovery and public institutional repository"
+    },
+    {
+      "id": "q-lcia-usetox-doc-2026-11-04",
+      "query": "USEtox2.0 documentation version1.00 PDF official manual human toxicity ecosystem",
+      "date": "2026-11-04",
+      "channel": "official model documentation"
+    },
+    {
+      "id": "q-lcia-recipe-paper-2026-11-04",
+      "query": "ReCiPe2016 harmonised life cycle impact assessment midpoint endpoint1246; publisher PDF and institutional VLIZ record",
+      "date": "2026-11-04",
+      "channel": "primary publication and institutional repository"
+    },
+    {
+      "id": "q-w2-allocation-ekvall",
+      "query": "Ekvall Tillman 1997 Open loop recycling criteria allocation procedures life cycle assessment original pdf",
+      "date": "2026-11-04",
+      "channel": "public web search followed by official publisher/author/institution pages"
+    },
+    {
+      "id": "q-w2-allocation-weidema",
+      "query": "Weidema 2001 Avoiding co-product allocation life cycle assessment addendum original pdf",
+      "date": "2026-11-04",
+      "channel": "public web search followed by official publisher/author/institution pages"
+    },
+    {
+      "id": "q-w2-allocation-thesis",
+      "query": "\"A special view on the nature\" site:esu-services.ch",
+      "date": "2026-11-04",
+      "channel": "public web search followed by official publisher/author/institution pages"
+    },
+    {
+      "id": "q-w2-inventory-book",
+      "query": "\"computational structure\" \"Heijungs\" \"pdf\"",
+      "date": "2026-11-04",
+      "channel": "public web search followed by official publisher/author/institution pages"
+    },
+    {
+      "id": "q-w2-inventory-thesis",
+      "query": "Suh 2004 \"Materials and energy flows\" \"Leiden\" thesis pdf",
+      "date": "2026-11-04",
+      "channel": "public web search followed by official publisher/author/institution pages"
+    },
+    {
+      "id": "q-w2-allocation-errata",
+      "query": "\"Errata\" \"Ekvall\" \"Tillman\" -site:researchgate.net -site:semanticscholar.org",
+      "date": "2026-11-04",
+      "channel": "public web search followed by official publisher/author/institution pages"
+    },
+    {
+      "id": "q-w2-allocation-log-01",
+      "query": "Weidema 2001 Avoiding co-product allocation life cycle assessment addendum original pdf",
+      "date": "2026-11-04",
+      "channel": "public web search; exact recorded query"
+    },
+    {
+      "id": "q-w2-allocation-log-02",
+      "query": "Ekvall Tillman 1997 Open loop recycling criteria allocation procedures life cycle assessment original pdf",
+      "date": "2026-11-04",
+      "channel": "public web search; exact recorded query"
+    },
+    {
+      "id": "q-w2-allocation-log-03",
+      "query": "Heijungs Frischknecht allocation system expansion substitution life cycle assessment original paper",
+      "date": "2026-11-04",
+      "channel": "public web search; exact recorded query"
+    },
+    {
+      "id": "q-w2-allocation-log-04",
+      "query": "\"Avoiding Co-Product Allocation\" filetype:pdf site:lca-net.com",
+      "date": "2026-11-04",
+      "channel": "public web search; exact recorded query"
+    },
+    {
+      "id": "q-w2-allocation-log-05",
+      "query": "\"Avoiding Co-Product Allocation\" filetype:pdf site:2-0-lca.com",
+      "date": "2026-11-04",
+      "channel": "public web search; exact recorded query"
+    },
+    {
+      "id": "q-w2-allocation-log-06",
+      "query": "\"Avoiding Co-Product Allocation\" filetype:pdf Weidema original author",
+      "date": "2026-11-04",
+      "channel": "public web search; exact recorded query"
+    },
+    {
+      "id": "q-w2-allocation-log-07",
+      "query": "\"Avoiding Co-Product Allocation\" \"pdf\" -\"volume4issue3\" -\"addendum\" -\"scispace\" -\"researchgate\"",
+      "date": "2026-11-04",
+      "channel": "public web search; exact recorded query"
+    },
+    {
+      "id": "q-w2-allocation-log-08",
+      "query": "\"Heijungs\" \"Frischknecht\" \"allocation\" 1998 pdf",
+      "date": "2026-11-04",
+      "channel": "public web search; exact recorded query"
+    },
+    {
+      "id": "q-w2-allocation-log-09",
+      "query": "site:link.springer.com \"Errata\" \"Open-Loop Recycling\" \"105\"",
+      "date": "2026-11-04",
+      "channel": "public web search; exact recorded query"
+    },
+    {
+      "id": "q-w2-allocation-log-10",
+      "query": "\"A special view on the nature\" site:esu-services.ch",
+      "date": "2026-11-04",
+      "channel": "public web search; exact recorded query"
+    },
+    {
+      "id": "q-w2-allocation-log-11",
+      "query": "\"A special view on the nature\" site:universiteitleiden.nl",
+      "date": "2026-11-04",
+      "channel": "public web search; exact recorded query"
+    },
+    {
+      "id": "q-w2-allocation-log-12",
+      "query": "\"Open-Loop Recycling\" \"Errata\" site:springer.com",
+      "date": "2026-11-04",
+      "channel": "public web search; exact recorded query"
+    },
+    {
+      "id": "q-w2-allocation-log-13",
+      "query": "\"Errata\" \"Ekvall\" \"105\" \"1998\"",
+      "date": "2026-11-04",
+      "channel": "public web search; exact recorded query"
+    },
+    {
+      "id": "q-w2-allocation-log-14",
+      "query": "\"Open-loop recycling\" \"Erratum\" Springer 1998",
+      "date": "2026-11-04",
+      "channel": "public web search; exact recorded query"
+    },
+    {
+      "id": "q-w2-allocation-log-15",
+      "query": "\"Weidema\" \"108819800300106366\" pdf site:research.aau.dk",
+      "date": "2026-11-04",
+      "channel": "public web search; exact recorded query"
+    },
+    {
+      "id": "q-w2-allocation-log-16",
+      "query": "\"Weidema\" \"Avoiding Co\" site:vbn.aau.dk",
+      "date": "2026-11-04",
+      "channel": "public web search; exact recorded query"
+    },
+    {
+      "id": "q-w2-allocation-log-17",
+      "query": "\"Ekvall\" \"Gabathuler\" \"Errata\" DOI",
+      "date": "2026-11-04",
+      "channel": "public web search; exact recorded query"
+    },
+    {
+      "id": "q-w2-allocation-log-18",
+      "query": "\"Errata\" \"3\" \"105\" \"BF029\" \"1998\" LCA",
+      "date": "2026-11-04",
+      "channel": "public web search; exact recorded query"
+    },
+    {
+      "id": "q-w2-allocation-log-19",
+      "query": "\"A special view on the nature of the allocation problem\" filetype:pdf -\"citeseerx\" -\"researchgate\"",
+      "date": "2026-11-04",
+      "channel": "public web search; exact recorded query"
+    },
+    {
+      "id": "q-w2-allocation-log-20",
+      "query": "\"A special view\" \"allocation\" site:research.vu.nl",
+      "date": "2026-11-04",
+      "channel": "public web search; exact recorded query"
+    },
+    {
+      "id": "q-w2-allocation-log-21",
+      "query": "\"Errata\" \"Ekvall\" site:research.chalmers.se",
+      "date": "2026-11-04",
+      "channel": "public web search; exact recorded query"
+    },
+    {
+      "id": "q-w2-allocation-log-22",
+      "query": "\"Weidema\" \"Avoiding Co-Product\" \"11-33\" filetype:pdf -site:researchgate.net -site:semanticscholar.org -site:jie.yale.edu",
+      "date": "2026-11-04",
+      "channel": "public web search; exact recorded query"
+    },
+    {
+      "id": "q-w2-allocation-log-23",
+      "query": "\"Errata\" \"Ekvall\" \"Tillman\" -site:researchgate.net -site:semanticscholar.org",
+      "date": "2026-11-04",
+      "channel": "public web search; exact recorded query"
+    },
+    {
+      "id": "q-w2-allocation-log-24",
+      "query": "\"BF02979343\" pdf -site:researchgate.net -site:scispace.com",
+      "date": "2026-11-04",
+      "channel": "public web search; exact recorded query"
+    },
+    {
+      "id": "Q-W2-I-01",
+      "query": "\"System Boundary Selection in Life-Cycle Inventories Using Hybrid Approaches\" pdf Suh",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-02",
+      "query": "\"The computational structure of life cycle assessment\" Heijungs Suh 2002 pdf site:leidenuniv.nl",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-03",
+      "query": "\"Errors in Conventional and Input-Output\" Lenzen 2001 pdf",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-04",
+      "query": "site:escholarship.org Suh hybrid life cycle inventories 2004",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-05",
+      "query": "\"es0263745\" pdf",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-06",
+      "query": "\"System Boundary Selection\" \"Suh\" filetype:pdf",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-07",
+      "query": "\"computational structure\" \"Heijungs\" \"pdf\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-08",
+      "query": "site:isa.org.usyd.edu.au \"Errors\" \"Life-Cycle\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-09",
+      "query": "\"System boundary selection\" Suh Horvath pdf berkeley",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-10",
+      "query": "\"System boundary selection\" Suh site:isa.org.usyd.edu.au",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-11",
+      "query": "\"Errors in conventional\" site:isa.org.usyd.edu.au filetype:pdf",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-12",
+      "query": "site:ce.berkeley.edu \"Suh\" \"2004\" \"657\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-13",
+      "query": "site:isa.org.usyd.edu.au \"Lenzen\" \"127-148\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-14",
+      "query": "site:sciencespo.fr \"es0263745\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-15",
+      "query": "\"System Boundary Selection\" filetype:pdf -unitload -thesis -dissertations -report200 -biosketches -IIBCC -ISIE -ucl",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-16",
+      "query": "\"System Boundary Selection\" \"Suh\" \"pdf\" \"Lenzen\" -site:unitload.vt.edu -site:pubs.acs.org -site:researchgate.net -site:scispace.com -site:sohu.com -site:is4ie.org -site:usbr.gov -site:aiche.org -site:discovery.ucl.ac.uk -site:iibcc.biz -site:rankless.org -site:openalex.org -site:research-collection.ethz.ch",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-17",
+      "query": "\"Errors in Conventional\" Lenzen pdf -site:wiley.com -site:researchgate.net -site:unitload.vt.edu",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-18",
+      "query": "\"Suh\" \"es0263745\" \"berkeley.edu\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-19",
+      "query": "\"Suh\" \"es0263745\" \"leiden\" filetype:pdf",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-20",
+      "query": "Suh 2004 \"Materials and energy flows\" \"Leiden\" thesis pdf",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-21",
+      "query": "\"System boundary selection\" \"Suh\" \"hondo.ynu.ac.jp\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-22",
+      "query": "\"System boundary selection\" \"Suh\" \"infoscience\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-23",
+      "query": "\"Errors in conventional\" \"pdf\" \"Lenzen\" \"sydney.edu.au\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-24",
+      "query": "\"1887/8399\" pdf",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-25",
+      "query": "\"System Boundary Selection\" \"657\" \"pdf\" \"Suh\" site:ynu.ac.jp",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-26",
+      "query": "\"System Boundary Selection\" \"657\" \"pdf\" site:research.vu.nl",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-27",
+      "query": "\"System Boundary Selection\" \"657\" \"pdf\" site:scholarlypublications.universiteitleiden.nl",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-28",
+      "query": "Suh \"System boundary selection\" \"download\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-29",
+      "query": "\"Materials and energy flows in industry\" \"8399\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "Q-W2-I-30",
+      "query": "\"Heijungs\" \"Suh\" \"System Boundary\" \"657\" \"pdf\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w3-regional-01",
+      "date": "2026-11-04",
+      "channel": "public-web-search",
+      "query": "\"生命周期评价的回顾与展望\" \"1998\""
+    },
+    {
+      "id": "q-w3-regional-02",
+      "date": "2026-11-04",
+      "channel": "public-web-search",
+      "query": "\"生命周期评价在国内的研究进展评述\" \"pdf\""
+    },
+    {
+      "id": "q-w3-regional-03",
+      "date": "2026-11-04",
+      "channel": "public-web-search",
+      "query": "site.rcees.cas.cn \"生命周期评价\" \"1998\""
+    },
+    {
+      "id": "q-w3-uncertainty-01",
+      "query": "Weidema Wesnaes 1996 data quality management life cycle inventories pedigree pdf",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w3-uncertainty-02",
+      "query": "Huijbregts 1998 Application uncertainty variability LCA general framework sources pdf",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w3-uncertainty-03",
+      "query": "Ciroth Muller Weidema Lesage empirically based uncertainty factors pedigree matrix ecoinvent pdf",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w3-uncertainty-04",
+      "query": "\"Weidema\" \"Wesnæs\" \"1996\" filetype:pdf -scribd -unitload -thesis -pure.tue.nl",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w3-uncertainty-05",
+      "query": "\"Data quality management for life cycle inventories\" \"lca-net.com\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w3-uncertainty-06",
+      "query": "\"Empirically based uncertainty factors\" filetype:pdf greendelta",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w3-uncertainty-07",
+      "query": "\"Application of uncertainty and variability in LCA\" Huijbregts 1998 pdf thesis",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w3-uncertainty-08",
+      "query": "\"Data quality management for life cycle inventories\" filetype:pdf",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w3-uncertainty-09",
+      "query": "\"s0959652696000431\" pdf",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w3-uncertainty-10",
+      "query": "\"Empirically based uncertainty factors\" \"greendelta.com\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w3-uncertainty-11",
+      "query": "\"Weidema\" \"Wesnaes\" \"1996\" \"vbn.aau.dk\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w3-uncertainty-12",
+      "query": "\"Weidema\" \"Wesnaes\" \"data quality\" \"download\"",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w3-uncertainty-13",
+      "query": "\"Data quality management for life cycle inventories\" site:vbn.aau.dk",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w3-uncertainty-14",
+      "query": "\"s11367-013-0670-5\" filetype:pdf",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w3-uncertainty-15",
+      "query": "Weidema Wesnaes 1996 pdf site:lca-net.com/files",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w3-uncertainty-16",
+      "query": "Weidema Wesnaes 1996 pdf site:2-0-lca.com",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w3-uncertainty-17",
+      "query": "\"Data quality management\" Weidema filetype:pdf site:dk",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w3-uncertainty-18",
+      "query": "Huijbregts \"Uncertainty and variability in environmental life-cycle assessment\" 2001 thesis uva",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w3-history-01",
+      "query": "site:nepis.epa.gov 1974 resource environmental profile analysis nine beverage containers Hunt Franklin",
+      "channel": "web public search",
+      "date": "2026-11-04"
+    },
+    {
+      "id": "q-w3-history-02",
+      "query": "site:epa.gov 1974 beverage containers comparative environmental impacts resource profile report Hunt",
+      "channel": "web public search",
+      "date": "2026-11-04"
+    },
+    {
+      "id": "q-w3-history-03",
+      "query": "site:setac.org technical framework life cycle assessment 1991 pdf",
+      "channel": "web public search",
+      "date": "2026-11-04"
+    },
+    {
+      "id": "q-w3-history-04",
+      "query": "site:nepis.epa.gov \"Resource and Environmental Profile Analysis of Five Milk\"",
+      "channel": "web public search",
+      "date": "2026-11-04"
+    },
+    {
+      "id": "q-w3-history-05",
+      "query": "\"Technical Framework\" \"Smugglers\" filetype:pdf site:setac.org",
+      "channel": "web public search",
+      "date": "2026-11-04"
+    },
+    {
+      "id": "q-w4-institutions-01",
+      "query": "site:eur-lex.europa.eu 2021/2279 Environmental Footprint recommendation annex PEF OEF PDF",
+      "channel": "public web search",
+      "date": "2026-11-04"
+    },
+    {
+      "id": "q-w4-institutions-02",
+      "query": "site:lifecycleinitiative.org 2011 Global Guidance Principles Life Cycle Assessment Databases pdf",
+      "channel": "public web search",
+      "date": "2026-11-04"
+    },
+    {
+      "id": "q-w4-institutions-03",
+      "query": "site:unep.org Global Guidance Principles Life Cycle Assessment Databases 2011",
+      "channel": "public web search",
+      "date": "2026-11-04"
+    },
+    {
+      "id": "q-w4-institutions-04",
+      "query": "site:eur-lex.europa.eu \"2021/2279\" \"23.5.2022\" \"read\" \"Corrigendum\"",
+      "channel": "public web search",
+      "date": "2026-11-04"
+    },
+    {
+      "id": "q-w4-institutions-05",
+      "query": "site:eur-lex.europa.eu \"32021H2279\" filetype:pdf",
+      "channel": "public web search",
+      "date": "2026-11-04"
+    },
+    {
+      "id": "q-w4-institutions-06",
+      "query": "site:op.europa.eu \"2021/2279\" environmental footprint",
+      "channel": "public web search",
+      "date": "2026-11-04"
+    },
+    {
+      "id": "q-w4-institutions-07",
+      "query": "site:environment.ec.europa.eu \"2021/2279\" \"pdf\"",
+      "channel": "public web search",
+      "date": "2026-11-04"
+    },
+    {
+      "id": "q-w4-institutions-08",
+      "query": "site:green-forum.ec.europa.eu \"2021/2279\" recommendation",
+      "channel": "public web search",
+      "date": "2026-11-04"
+    },
+    {
+      "id": "q-w4-institutions-09",
+      "query": "site:eur-lex.europa.eu \"2021/2279\" \"Corrigendum\" \"for:\"",
+      "channel": "public web search",
+      "date": "2026-11-04"
+    },
+    {
+      "id": "q-w4-sustainability-01",
+      "date": "2026-11-04",
+      "channel": "public-web-search",
+      "query": "site.lifecycleinitiative.org \"Guidelines\" \"Social Life Cycle Assessment\" \"2020\" pdf"
+    },
+    {
+      "id": "q-w4-sustainability-02",
+      "date": "2026-11-04",
+      "channel": "public-web-search",
+      "query": "\"Environmental life-cycle costing: a code of practice\" 2011 pdf"
+    },
+    {
+      "id": "q-w4-sustainability-03",
+      "date": "2026-11-04",
+      "channel": "public-web-search",
+      "query": "\"Towards Life Cycle Sustainability Assessment\" Finkbeiner 2010"
+    },
+    {
+      "id": "q-w4-sustainability-04",
+      "date": "2026-11-04",
+      "channel": "official-publication-record",
+      "query": "Open official2020SocialLCAguidelines record and inspect English download link."
+    },
+    {
+      "id": "q-w4-sustainability-05",
+      "date": "2026-11-04",
+      "channel": "publisher-and-author-institution",
+      "query": "Open DOI10.3390/su2103309 and RWTHauthor institutional record848048."
+    },
+    {
+      "id": "q-w4-sustainability-06",
+      "date": "2026-11-04",
+      "channel": "publisher-original-record",
+      "query": "Open DOI10.1007/s11367-011-0287-5; distinguish3pageeditorial from98pageSETACcode book."
+    },
+    {
+      "id": "q-w4-sustainability-07",
+      "date": "2026-11-04",
+      "channel": "official-publication-download-link",
+      "query": "https://www.lifecycleinitiative.org/wp-content/uploads/2021/01/Guidelines-for-Social-Life-Cycle-Assessment-of-Products-and-Organizations-2020-22.1.21sml.pdf — current English link47 from official2020record; webreader rejected13,652,687byte size, normal local acquisition attempted."
+    },
+    {
+      "id": "q-w4-sustainability-08",
+      "date": "2026-11-04",
+      "channel": "author-institutional-public-download",
+      "query": "https://publications.rwth-aachen.de/record/848048/files/848048.pdf — normal open download, metadataCC BY3.0."
+    },
+    {
+      "id": "q-w4-sustainability-09",
+      "date": "2026-11-04",
+      "channel": "institutional-public-original-download",
+      "query": "https://publikationen.bibliothek.kit.edu/120084381/8414703 — observed public KIT institutional PDF; RWTH returned248byteHTML instead ofPDF."
+    },
+    {
+      "id": "q-w4-time-futures-01",
+      "query": "Levasseur 2010 Considering time LCA dynamic global warming impact assessment pdf author",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w4-time-futures-02",
+      "query": "Arvidsson 2018 Environmental assessment emerging technologies recommendations prospective LCA Chalmers pdf",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w4-time-futures-03",
+      "query": "Levasseur 2010 dynamic LCA 10.1021/es9030003 polymtl",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w4-time-futures-04",
+      "query": "\"Levasseur\" \"2010\" \"es9030003\" filetype:pdf",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w4-time-futures-05",
+      "query": "Annie Levasseur thèse 2012 dynamique analyse cycle vie polytechnique pdf",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w4-time-futures-06",
+      "query": "\"Considering Time in LCA\" pdf -site:researchgate.net -site:mindat.org -site:cir.nii.ac.jp",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w4-time-futures-07",
+      "query": "\"A critical view on the current application of LCA for new technologies\" pdf",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w4-time-futures-08",
+      "query": "\"Van der Giesen\" \"2020\" \"120904\" pdf",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w4-time-futures-09",
+      "query": "\"120904\" site:scholarlypublications.universiteitleiden.nl",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w4-time-futures-10",
+      "query": "\"A critical view\" \"Giesen\" filetype:pdf -site:researchgate.net -site:sciencedirect.com -site:documentsdelivered.com",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-w4-time-futures-11",
+      "query": "\"A critical view on the current application\" site:dspace.library.uu.nl",
+      "date": "2026-11-04",
+      "channel": "public-web-search"
+    },
+    {
+      "id": "q-case-ipcc-ar6-definition-2026-11-04",
+      "query": "Open official IPCC AR6 WGI Chapter7 indexed text §§7.6.1–7.6.1.3; select definitions and indirect-contribution context.",
+      "date": "2026-11-04",
+      "channel": "official-domain indexed text open; direct PDF retrieval failed"
+    },
+    {
+      "id": "q-case-ipcc-ar6-errata-2026-11-04",
+      "query": "Open official IPCC AR6 WGI Errata version7October2025 replacement Table7.15; inspect correction, header, CO2/CH4-fossil rows, GWP100 column and caption.",
+      "date": "2026-11-04",
+      "channel": "official-domain indexed text open; independently corroborated; original PDF unavailable"
+    }
+  ],
+  "limitations": [
+    "This map is not a systematic review, an exhaustive classics list or a numerical recall/completeness assessment.",
+    "Initial 42 records were inherited from the 2026-11-03 goal register; historical search strings were not preserved. Import is explicitly marked, not reconstructed.",
+    "Targeted searches ran on 2026-11-04 with no retrospective publication-date exclusion; not every record/URL was rechecked that day. Access and last-check dates remain separate.",
+    "Language inclusion was opportunistic English/German/Japanese/Chinese; no exhaustive multilingual database search, complete journal run, country census or bibliometric sampling was conducted.",
+    "Screening was performed by an agent through primary-source checks; no independent dual-screening, domain-expert approval or inter-rater protocol was completed.",
+    "Bounded priorities were the four early SETAC books, Nordic guidance, Japan/LIME, China, Swiss ecological scarcity, North American TRACI, and original allocation/consequential debates. Stopping after that bounded discovery pass does not indicate saturation.",
+    "All records retain not-close-read. Separate source-bound reading/evidence records are required to substantiate manuscript assertions.",
+    "Public-fulltext-available describes a legitimate observed route; an observed link without successful file acquisition is distinguished in record limitations.",
+    "Metadata disagreements, failed routes, catalog-only entries and unverified rights are retained; no book, portal, issue summary or full-text link is counted as community coverage.",
+    "Conceptual book ambitions remain broader than this first-wave map. Proposed traditions/volume mappings are editorial navigation, not bibliometric findings.",
+    "The query log retains exact topic-level search strings and the named seed-reference chase; intermediate reformulations and URL-fetch retries are not exhaustively reconstructed. The retained protocol supports a repeatable starting point, not a complete transactional search history."
+  ]
+}
+```
+
+## Coverage and next research
+```json
+{
+  "discoveryGaps": [
+    {
+      "id": "gap-original-setac",
+      "description": "Acquire the four early SETAC originals and reconcile workshop/printing/title-leaf identities.",
+      "volumes": [
+        "V1",
+        "V2",
+        "V4",
+        "V5"
+      ],
+      "priority": "high",
+      "nextSearch": "SETAC authorized account/library access; exact workshop/book titles; compare 1991 and 1994 manifestations."
+    },
+    {
+      "id": "gap-nordic-originals",
+      "description": "Nord 1995:20 original and underlying technical reports remain unacquired.",
+      "volumes": [
+        "V1",
+        "V2",
+        "V4",
+        "V5",
+        "V6"
+      ],
+      "priority": "high",
+      "nextSearch": "Nordic Council/IVL/library: Nord 1995:20; TemaNord 1995:502 and 1995:503; Naturvårdsverket 4537 Vägledning för Livscykelanalyser LCA."
+    },
+    {
+      "id": "gap-debate-diversity",
+      "description": "Acquire opposing allocation/system-expansion arguments, correction history and reproducible examples.",
+      "volumes": [
+        "V4",
+        "V6",
+        "V8"
+      ],
+      "priority": "high",
+      "nextSearch": "Huppes/Schneider 1994 allocation workshop; Ekvall/Finnveden 2001 Allocation in ISO 14041—A Critical Review; Tillman 2000; Frischknecht 1998; Schneider French thesis 1996."
+    },
+    {
+      "id": "gap-swiss-genealogy",
+      "description": "Original ecological scarcity predecessors and version rights/manifests remain unresolved.",
+      "volumes": [
+        "V1",
+        "V2",
+        "V5"
+      ],
+      "priority": "high",
+      "nextSearch": "BUWAL Schriftenreihe Umwelt 133 (1990); Müller-Wenk 1978 Die ökologische Buchhaltung; Braunschweig 1982; exact 1997/1998 and 2006/2009 versions; official UW2121 current file."
+    },
+    {
+      "id": "gap-japan-original-methods",
+      "description": "LIME books/data rights, original category papers, independent criticism and EcoBalance/ILCA history need acquisition.",
+      "volumes": [
+        "V1",
+        "V2",
+        "V5",
+        "V7",
+        "V8"
+      ],
+      "priority": "high",
+      "nextSearch": "JEMAI/ILCA Japan/author sources: LIME 2005, LIME2 2010, LIME3 category articles, versioned coefficients and validation; exact Japanese titles."
+    },
+    {
+      "id": "gap-china-original-chain",
+      "description": "Earlier Chinese methodological works, historical standards, books and conflicting review citations require originals.",
+      "volumes": [
+        "V1",
+        "V2",
+        "V3",
+        "V5",
+        "V7"
+      ],
+      "priority": "high",
+      "nextSearch": "杨建新 王如松 1998 生命周期评价的回顾与展望; 杨建新 王如松 刘晶茹 2001 中国产品生命周期影响评价方法研究; 邓楠圣 王小兵 2003 生命周期评价; original 2000 review; separate mainland/Taiwan/Hong Kong strata."
+    },
+    {
+      "id": "gap-north-american-originals",
+      "description": "TRACI original first page and historical release; Canadian and other US method/database traditions remain incomplete.",
+      "volumes": [
+        "V1",
+        "V2",
+        "V5",
+        "V7"
+      ],
+      "priority": "high",
+      "nextSearch": "Original TRACI 6(3–4):49–78 authors/year; 2002 release; category papers; Canadian/US normalization; EPA 1993 inventory; CSA Z760; GREET/BEES original methods."
+    },
+    {
+      "id": "gap-global-language-regions",
+      "description": "Latin American, African, South/Southeast Asian, Korean, Eastern European and other local-language strata remain largely unsearched.",
+      "volumes": [
+        "V1",
+        "V2",
+        "V5",
+        "V7",
+        "V8"
+      ],
+      "priority": "high",
+      "nextSearch": "Portuguese/Spanish/French/Arabic/Korean/Russian and regional institutional/society searches, then original work identities and counterevidence; no portal-level coverage claim."
+    },
+    {
+      "id": "gap-german-french-traditions",
+      "description": "German/French original methods beyond adjacent Swiss/Nordic sources have not received a bounded original-work search.",
+      "volumes": [
+        "V1",
+        "V2",
+        "V5",
+        "V6"
+      ],
+      "priority": "normal",
+      "nextSearch": "UBA/DIN/author repositories and French doctoral/institutional archives; original weighting, recycling and cascade-system debates."
+    },
+    {
+      "id": "gap-inventory-computation-quality",
+      "description": "Primary IO/hybrid, pedigree calibration, correlation, sensitivity and reproducibility chains remain shallow.",
+      "volumes": [
+        "V3",
+        "V4",
+        "V8"
+      ],
+      "priority": "high",
+      "nextSearch": "Follow B06/M02/M03/M08/M09 original references; compare original mathematical premises, tests and counterexamples."
+    },
+    {
+      "id": "gap-impact-pathways",
+      "description": "Regional/dynamic LCIA, biodiversity/land/water and independent method comparisons require category-level protocols.",
+      "volumes": [
+        "V5",
+        "V8"
+      ],
+      "priority": "high",
+      "nextSearch": "Original Eco-indicator, EDIP versions, AWARE, land/biodiversity, dynamic/absolute sustainability methods; category validation and criticism."
+    },
+    {
+      "id": "gap-practice-history",
+      "description": "Case studies, critical reviews, failures and native historical software/database behavior remain unverified.",
+      "volumes": [
+        "V1",
+        "V6",
+        "V7",
+        "V8"
+      ],
+      "priority": "normal",
+      "nextSearch": "Version-bound ecoinvent/GaBi/GREET methods; historical software/format releases; disclosed comparative claims, review reports and sector cases."
+    },
+    {
+      "id": "gap-frontier-boundaries",
+      "description": "Prospective, organizational, social/cost, AI and other frontier claims require task-specific validation and boundary studies.",
+      "volumes": [
+        "V8"
+      ],
+      "priority": "normal",
+      "nextSearch": "Follow M10/M11/N06/B13 originals and independent counterevidence; no AI demonstration or self-evaluation treated as reliability proof."
+    }
+  ],
+  "readingGaps": [
+    {
+      "id": "gap-setac-originals-access",
+      "description": "SETAC 四本早期原书仅核验到当前机构书目页，均要求账户登录；2022 免费数字化回顾不替代原书。",
+      "affectedUnits": [
+        "V1",
+        "V2",
+        "V7"
+      ],
+      "nextAction": "通过合法授权取得具体版原书，核对题名页、权限与所需章节；未取得前保留未读状态。"
+    },
+    {
+      "id": "gap-framework-event-identity",
+      "description": "CML2001 的未具名会场事件、SETAC 当前题名事件及 EPA1991 项目页的 1990 技术框架事件尚未建立完整同一性；会议年与出版年分开。",
+      "affectedUnits": [
+        "V1",
+        "V2"
+      ],
+      "nextAction": "核验原报告题名页、同期程序或会场记录，再判断是否相同事件；不得按记忆统一年份。"
+    },
+    {
+      "id": "gap-priority-and-private-origins",
+      "description": "1963 累计能源论文、1969 委托报告及术语最早使用未取得足以证明优先权的原件。",
+      "affectedUnits": [
+        "V1"
+      ],
+      "nextAction": "追踪原论文、报告与同期档案；不把后继指南的重复回顾算为独立证明。"
+    },
+    {
+      "id": "gap-cml-1992-book-editions",
+      "description": "1992 原报告、2001 机构指南与 2002 出版书不能以题名相近视为相同载体；前者与后者未完成原文核读。",
+      "affectedUnits": [
+        "V1",
+        "V2",
+        "V3",
+        "V5"
+      ],
+      "nextAction": "取得所需原版并逐条建立版本关系、页码和差异证据。"
+    },
+    {
+      "id": "gap-unep-scan-completeness",
+      "description": "UNEP1996 载体有 87 PDF 页、目录称 91 印刷页；偏移不固定，完整性未完成审计。",
+      "affectedUnits": [
+        "V1",
+        "V2",
+        "A01"
+      ],
+      "nextAction": "逐页核对扫描和印刷页，包括可能省略的空白页；仅引用已核验对应页。"
+    },
+    {
+      "id": "gap-epa-ocr-and-images",
+      "description": "EPA1991 与 EPA1993 仅取得 NEPIS HTML；OCR 不能认证全部图形或弱页码；EPA2006 PDF 亦有提取警告。",
+      "affectedUnits": [
+        "V1",
+        "V2",
+        "V3",
+        "A01"
+      ],
+      "nextAction": "直接引文及依赖图形的结论发布前取得并核验相应页面图像；保留 HTML 与 PDF 索引区别。"
+    },
+    {
+      "id": "gap-iso-authorized-text",
+      "description": "本轮没有读 ISO 授权全文，指南转述不能替代 ISO 条款核查。",
+      "affectedUnits": [
+        "V2",
+        "V3",
+        "V4",
+        "V6",
+        "V7"
+      ],
+      "nextAction": "合法取得具体历史版和修订件，对相关条款逐版本核读并记录权限。"
+    },
+    {
+      "id": "gap-example-equivalence",
+      "description": "教学例子和功能定义不足以证明真实产品功能等效，也不提供实际环境优劣数据。",
+      "affectedUnits": [
+        "P",
+        "V3",
+        "V7"
+      ],
+      "nextAction": "为贯穿案例补充性能、期间、使用条件和产品级证据，再审查比较前提。"
+    },
+    {
+      "id": "gap-global-and-critical-coverage",
+      "description": "本轮是英语机构指南的定向选择；跨语言、地区、独立批评和实证案例覆盖尚未完成。",
+      "affectedUnits": [
+        "V1",
+        "V2",
+        "V6",
+        "V7",
+        "V8",
+        "A01"
+      ],
+      "nextAction": "按覆盖矩阵分专题执行原语种检索、引文追踪和反证抽样；不以本轮来源数证明完整性。"
+    },
+    {
+      "id": "gap-reference-flow-contextual-representation",
+      "description": "CML Part2a p22 与 ILCD p60 使用的参考流表述需要在章节用途和数据层次中比较；尚未形成跨体系固定定义。",
+      "affectedUnits": [
+        "V3-02",
+        "V7-03"
+      ],
+      "nextAction": "逐段对照目标定义、过程数据及连接用途，说明功能关联与产品导向表达各自条件；不把差异先归为矛盾。"
+    },
+    {
+      "id": "gap-wave2-weidema-original",
+      "description": "原论文作者 Download PDF 链接及 Wiley PDF 链接均返回摘要；Yale volume4issue3.pdf 为中文摘要，未以其冒充原论文。",
+      "affectedUnits": [
+        "V4",
+        "V6"
+      ],
+      "nextAction": "通过合法作者或图书馆授权取得 DOI10.1162/108819800300106366 的原文，逐条旁读 pp15–17、21–23。"
+    },
+    {
+      "id": "gap-wave2-errata-original",
+      "description": "Springer 确认 1998 Errata DOI10.1007/BF02978499，p105，链接 1997 原文；原勘误正文未取得。二手片段暗示公式更正，仅作追踪提示。",
+      "affectedUnits": [
+        "V4",
+        "V6",
+        "A05"
+      ],
+      "nextAction": "合法取得原勘误并视觉核验 p159 方程16–18；此前不从未更正排版复算或发表校正式。"
+    },
+    {
+      "id": "gap-wave2-heijungs-frischknecht",
+      "description": "合著论文 DOI10.1007/BF02979343 的出版商只供订阅预览；作者目录已核验身份，第三方副本不替代本轮限定的出版商/作者路径。",
+      "affectedUnits": [
+        "V4",
+        "V6",
+        "A05"
+      ],
+      "nextAction": "取得合法作者或机构原本；单独核查其数学定义，不能以单作者学位论文章节替代。"
+    },
+    {
+      "id": "gap-wave2-formal-comparison",
+      "description": "cascade 回收、固定联合生产和伦理信息用途分属不同问题；尚未建立相同输入、相同决策反事实下的数值对比。",
+      "affectedUnits": [
+        "V4",
+        "V6"
+      ],
+      "nextAction": "先固定问题、功能、市场和决策者前提，再构造有来源的符号或数值对照；核查守恒不等于证实因果。"
+    },
+    {
+      "id": "gap-wave2-thesis-figure",
+      "description": "所获学位论文 p105 图7.5 在本轮 Poppler 渲染中没有可读图形；已读周边分类文字。",
+      "affectedUnits": [
+        "V6",
+        "A01"
+      ],
+      "nextAction": "在合法同版载体中复核图形；未修复前不依据图形布局作主张。"
+    },
+    {
+      "id": "gap-wave2-suh-publisher-version",
+      "description": "ACS original PDF and supporting information remain unacquired; thesis reprint is the actual reading carrier.",
+      "nextAction": "Use lawful library access or a rights-cleared author/institutional publisher-version copy; compare reprint content and pagination before replacing identity.",
+      "affectedUnits": [
+        "V4",
+        "A05"
+      ]
+    },
+    {
+      "id": "gap-wave2-full-computational-book",
+      "description": "The 43-page author sample does not provide later chapters on refined/hybrid models, uncertainty, numerical algorithms and implementation.",
+      "nextAction": "Obtain authorized full-book access or separately accessible original chapter/paper versions; inspect the 2025 errata against the exact acquired edition.",
+      "affectedUnits": [
+        "V4-05",
+        "V4-06",
+        "V6",
+        "A05"
+      ]
+    },
+    {
+      "id": "gap-wave2-independent-hybrid-tests",
+      "description": "Selected accounts share an author and report earlier examples; no independent replication or later double-counting critique was close-read.",
+      "nextAction": "Locate original independent error/debate papers and inspect their assumptions and data before any comparative accuracy claim.",
+      "affectedUnits": [
+        "V4-06",
+        "V6",
+        "V7-03",
+        "A05"
+      ]
+    },
+    {
+      "id": "gap-lcia-rivm-original-fixed-bytes",
+      "description": "Original RIVM2016-0104 and2017v1.1 report not locally acquired/hash-fixed; web channel exposed only specified selected pages.",
+      "affectedUnits": [
+        "V5",
+        "A07"
+      ],
+      "nextAction": "Acquire via a normal public or authorized institutional route, verify permissions/hash/title/erratum and align report/factor release identities; no403bypass."
+    },
+    {
+      "id": "gap-lcia-usetox-internal-scope-conflict",
+      "description": "USEtoxv1.1pp19/144 add indoor/crop residue features whilep177lists these among exclusions.",
+      "affectedUnits": [
+        "V5",
+        "V7",
+        "V8"
+      ],
+      "nextAction": "Check official errata and exact executable/model/database release; trace original feature papers. Keep both located statements until resolved."
+    },
+    {
+      "id": "gap-lcia-factor-release-and-native-reproduction",
+      "description": "Neither primary PDF reading verifies a characterization-factor workbook, chemical database, mapping/defaults or installed software implementation.",
+      "affectedUnits": [
+        "V5",
+        "V7",
+        "A07"
+      ],
+      "nextAction": "Identify lawful versioned factor/database artifacts with licenses and hashes; run bounded native cases and sensitivity tests separately."
+    },
+    {
+      "id": "gap-lcia-independent-appraisal",
+      "description": "Developer documentation and shared toxicity data are not independent empirical model validation.",
+      "affectedUnits": [
+        "V5",
+        "V8"
+      ],
+      "nextAction": "Find independent evaluations/uncertainty analyses tied to exact versions and target scenarios; no method ranking inferred."
+    },
+    {
+      "id": "gap-wave3-origin-priority",
+      "description": "两部原报告证明其自身存在和分析内容，不证明全球首项研究、个人发明者或私人1969研究的完整方法。",
+      "affectedUnits": [
+        "V1",
+        "A01"
+      ],
+      "nextAction": "取得各类优先权断言所需的原件与独立同期旁证，再逐项限定；不能由两报告的先后推出起源谱系。"
+    },
+    {
+      "id": "gap-wave3-setac-framework",
+      "description": "本轮两条针对性查询及原目录复查仍只到要求登录的 SETAC Technical Framework 页面；尚无取得或原书阅读。",
+      "affectedUnits": [
+        "V1",
+        "V2"
+      ],
+      "nextAction": "出现合法公开或已授权原本时取得具体版；保留事件、首次出版与1994目录载体的区别。"
+    },
+    {
+      "id": "gap-wave3-data-validation",
+      "description": "原报告选段阅读尚未验证全部输入、工艺数据、排序规则、政策反应或数值结果。",
+      "affectedUnits": [
+        "V1",
+        "V4",
+        "V7"
+      ],
+      "nextAction": "按明确问题选取 Volume II 或 Appendix D 原数据、审查记录和反对意见进行独立复算。"
+    },
+    {
+      "id": "gap-wave3-meaning-and-reuse",
+      "description": "类别名和过程名可能与后继语义不同；两种研究的比较单位和问题范围不能直接等同。",
+      "affectedUnits": [
+        "V1",
+        "V3",
+        "V5",
+        "V6"
+      ],
+      "nextAction": "对明确的概念继承或方法影响主张补充版本和引文链；逐条检验而非因名称相似推定等价。"
+    },
+    {
+      "id": "gap-regional-lime-complete-carrier",
+      "description": "LIME2007官方PDF文字已读pp39–42，但完整可校验文件未取得、图表未完成复核。",
+      "affectedUnits": [
+        "V1",
+        "V2",
+        "V5"
+      ],
+      "nextAction": "经正常公开下载完成原始PDF并核验页数/权限/哈希；重点看p40图与p42表/公式，不把残缺文件当原件。"
+    },
+    {
+      "id": "gap-regional-bibliometric-reproduction",
+      "description": "2022综述77%依赖CNKI中文关键词1995–2020样本、明确方法子集和未公开的分类过程。",
+      "affectedUnits": [
+        "V1",
+        "V2",
+        "V5"
+      ],
+      "nextAction": "取得或重建明确可审计的检索/筛选/分类清单，覆盖其他语言和术语时另建协议；不把原样本视为全国普查。"
+    },
+    {
+      "id": "gap-regional-original-model-chain",
+      "description": "综述所引LCIA-Y2001、ECER2011和终点基准2021原文仍待阅读。",
+      "affectedUnits": [
+        "V2",
+        "V5"
+      ],
+      "nextAction": "沿参考文献[50]/[51]/[60]取得原件，核查权重、基准年、单位、适用范围和式(1)符号疑点。"
+    },
+    {
+      "id": "gap-regional-standard-and-uptake-history",
+      "description": "Sun2002关于标准转化预计发布、资金合作与用途的叙述不是已验证的完整事件表或采纳率。",
+      "affectedUnits": [
+        "V1",
+        "V2"
+      ],
+      "nextAction": "对需要写入历史的具体事件取得同期标准/行政/项目记录，区分计划、发表、执行和效果。"
+    },
+    {
+      "id": "gap-w3-original-pedigree1996",
+      "description": "Weidema&Wesnæs1996 original full text remains unacquired; author/publisher abstract and later accounts are not a close reading of it.",
+      "nextAction": "Obtain lawful library or rights-cleared author/institution copy; verify actual indicator definitions, uncertainty estimates and rye-bread example before attributing detailed claims.",
+      "affectedUnits": [
+        "V4-06",
+        "V7-02",
+        "A05"
+      ]
+    },
+    {
+      "id": "gap-w3-calibration-reconciliation",
+      "description": "Ciroth2012 summary and conversion tables treat reliabilityscore5 differently; notation mixes GSD/squaredGSD/95%factor labels. No numeric default accepted.",
+      "nextAction": "Compare full later article, source calculations and any author corrections; reconcile parameter conventions and missing-value policy before formulas/factors enter examples or software.",
+      "affectedUnits": [
+        "V4-06",
+        "V7-02",
+        "V7-03",
+        "A05"
+      ]
+    },
+    {
+      "id": "gap-w3-independent-tests",
+      "description": "Original1998multi-user test, detailed2018reproducibility supplement and earlier primary objections were not read; later calibration article remains abstract-only.",
+      "nextAction": "Acquire their original texts/supplements lawfully and inspect designs, samples and definitions before claiming empirical reproducibility or lack of justification.",
+      "affectedUnits": [
+        "V4-06",
+        "V7-02",
+        "A05"
+      ]
+    },
+    {
+      "id": "gap-w3-numerical-precision",
+      "description": "Numerical stability is contextually distinguished using the prior-wave bookp23 only; later numerical algorithms, conditioning and finite MonteCarlo error not newly close-read.",
+      "nextAction": "Read authorized original numerical-method sections and suitable computational-analysis sources, with explicit distinction between data uncertainty, model conditioning and algorithmic error.",
+      "affectedUnits": [
+        "V4-05",
+        "V4-06",
+        "V7-03",
+        "A05"
+      ]
+    },
+    {
+      "id": "gap-wave4-eu-official-carrier",
+      "description": "EUR-Lex原始和纠正PDF请求只得到空HTML；网页出现自动访问检查，OP返回429，普通浏览器路线超时。没有取得可核读EU官方原件。",
+      "affectedUnits": [
+        "V2",
+        "V3",
+        "V4",
+        "V7"
+      ],
+      "nextAction": "以后通过正常公开的官方OP/Cellar下载或合法访问取得完整载体，再核验PEF/OEF选段；不得由搜索片段升级方法要求。"
+    },
+    {
+      "id": "gap-wave4-eu-corrigendum-identity",
+      "description": "官方检索可见CELEX32021H2279及32021H2279R(01)及替换文本提示；原文/纠正文关系仍须在实际取得载体中核验。",
+      "affectedUnits": [
+        "V2",
+        "V7",
+        "A01"
+      ],
+      "nextAction": "分别固定原始2021与2022纠正载体；确认替换范围和页码后再选择所引方法版本。"
+    },
+    {
+      "id": "gap-wave4-comparison-incomplete",
+      "description": "尚不能完成一般LCA、数据库指导、PEF/OEF及类别/行业规则间的原文逐项比较；本轮只有UNEP2011实质阅读。",
+      "affectedUnits": [
+        "V2",
+        "V7"
+      ],
+      "nextAction": "保持对象、制度身份和语言效力为待查问题；以取得原文补证，不拼接未读规范摘要。"
+    },
+    {
+      "id": "gap-wave4-iso-text",
+      "description": "UNEP原作中的ISO引文和改写不等于本轮取得ISO授权全文。",
+      "affectedUnits": [
+        "V2",
+        "V4",
+        "V7"
+      ],
+      "nextAction": "合法取得具体版本及修订件，逐条核对并单独记录权限。"
+    },
+    {
+      "id": "gap-sustainability-lcc-primary-details",
+      "description": "只从2010框架文读到成本视角及其引用定义；2008书和2011完整Code尚未取得/核读。",
+      "affectedUnits": [
+        "V8"
+      ],
+      "nextAction": "合法取得原LCC方法，核对功能参照、系统边界、贴现/币种年/成本主体、外部性和双重计算；不以3页editorial代替98页书。"
+    },
+    {
+      "id": "gap-sustainability-social-native-case",
+      "description": "参考量表、因果/相关路径与组织参照尚未通过原生案例复现或独立效度评估。",
+      "affectedUnits": [
+        "V8",
+        "V7"
+      ],
+      "nextAction": "建立明确的产品/组织对象、数据与参照点案例，保留不同利益相关者、评分假设和敏感性，不自动认定数据库风险为公司实际绩效。"
+    },
+    {
+      "id": "gap-sustainability-current-normative-status",
+      "description": "本轮不审计2020以后正式标准、制度采纳或当代实践成熟度。",
+      "affectedUnits": [
+        "V2",
+        "V8"
+      ],
+      "nextAction": "如正文需要当前规范命题，另查具体正式标准/版本、适用范围与权限；不从2010/2020来源或UNEP发布推断当前法律义务。"
+    },
+    {
+      "id": "gap-sustainability-cross-pillar-overlap",
+      "description": "共享健康/社会经济主题与未来成本内部化可能导致指标重叠；没有独立建立可合并核算边界。",
+      "affectedUnits": [
+        "V8"
+      ],
+      "nextAction": "对每个结果写明对象、单位、因果路径、基准和负担主体，检查重复计算与补偿假设；保留未加权结果。"
+    },
+    {
+      "id": "gap-w4-levasseur-publisher-si",
+      "description": "Levasseur2010 read through author2011thesisAnnex1;direct journalPDF,SIand originalEPAinputs remainunacquired.",
+      "nextAction": "Acquire lawful originalpublisher/SIor rights-cleared authorversion;verify edition/parameter/indexingdetails before any computationalreproduction.",
+      "affectedUnits": [
+        "V5",
+        "V6",
+        "A05"
+      ]
+    },
+    {
+      "id": "gap-w4-taxonomy-crosswalk",
+      "description": "No equivalence between futuretechnology prospective usage and Ekvall2005category is established in this wave.",
+      "nextAction": "Compare exactoriginaldefinition passages,modeling purpose,decision context and system-boundary rules from both works before proposing any conditionalmapping.",
+      "affectedUnits": [
+        "V2",
+        "V3-06",
+        "V6"
+      ]
+    },
+    {
+      "id": "gap-w4-future-validation",
+      "description": "Learning/scaling relationships and futurecase assumptions are reported,not empirically reproduced or checked against laterrealization.",
+      "nextAction": "Read original engineering/learningpapers and longitudinalvalidation cases;track incumbent/foreground/background assumptions separately.",
+      "affectedUnits": [
+        "V4-06",
+        "V7-05",
+        "A05"
+      ]
+    },
+    {
+      "id": "gap-w4-future-lcia",
+      "description": "The2018paper explicitly leavesLCIAundeveloped;2010radiativeforcingmodel is not a completefutureclimate/effect model.",
+      "nextAction": "Select originaldynamicLCIAand futureimpact-category studieswith explicittemporal/model assumptions;do not score uncharacterizedflows as harmless.",
+      "affectedUnits": [
+        "V5",
+        "V6",
+        "V7-05"
+      ]
+    },
+    {
+      "id": "gap-w4-arvidsson-rights",
+      "description": "OpenAccessstatus verified but explicitreuse licence not located for inspected Arvidssoncarrier.",
+      "nextAction": "Confirm source-specificlicence with officialpublisher/library before redistributing anysourcefigures/tables/text;continue original bounded notes only.",
+      "affectedUnits": [
+        "V7",
+        "A05"
+      ]
+    },
+    {
+      "id": "gap-ipcc-case-original-pdf",
+      "description": "教学案例所用IPCC定义与2025更正表目前只有官方派生文字快照，未取得原始PDF字节/哈希或视觉验证。",
+      "affectedUnits": [
+        "CASE-WALL-CONNECT",
+        "V5",
+        "V7"
+      ],
+      "nextAction": "通过正常公开或获授权途径取得具体原件，核对行列、图像与更正链；保留旧快照身份并在发现变化时重新审查依赖计算。"
+    }
+  ],
+  "coverage": [
+    {
+      "id": "cov-flow",
+      "title": "流、交换与废物表达",
+      "status": "sampled",
+      "notes": "已核读 openLCA 2 与 Brightway 在线文档；ISO、ILCD 与其他软件的完整对照待补。"
+    },
+    {
+      "id": "cov-fu",
+      "title": "功能单位与参考流",
+      "status": "sampled",
+      "notes": "已扩充 CML2001、EPA2006 和 ILCD2010 选段，讨论服务、参考流表述与比较条件；真实产品等效性证据和专家评审仍待补。"
+    },
+    {
+      "id": "cov-recycling",
+      "title": "分配与回收",
+      "status": "in-progress",
+      "notes": "已读1997回收程序、1998联合生产论证、2005规范伦理及2001增补选段。区分决策情境、核算与替代前提；原Weidema全文、1998正式勘误和真实案例复现仍待补。"
+    },
+    {
+      "id": "cov-characterization",
+      "title": "表征覆盖",
+      "status": "sampled",
+      "notes": "已核读 openLCA 相关功能说明；未进行软件运行与真实数据复现。"
+    },
+    {
+      "id": "cov-history",
+      "title": "历史起源与传播",
+      "status": "in-progress",
+      "notes": "已读1972政策报告/1973再印、1974容器比较原件及1990s框架选段。明确任务、单位与边界；1960s私人报告、最早使用、SETAC原书及完整影响关系仍待查。"
+    },
+    {
+      "id": "cov-standards",
+      "title": "全球标准与制度",
+      "status": "in-progress",
+      "notes": "已核读UNEP2011数据库指南的推荐强度、审查范围与评审附录，保留其与标准原文的区别。ISO授权全文及EU2021/2279原/纠正载体仍未取得，不据搜索片段写条款或当前法律效力。"
+    },
+    {
+      "id": "cov-lcia",
+      "title": "影响评价方法谱系",
+      "status": "in-progress",
+      "notes": "已读ReCiPe2017方法论文与USEtox2.0文档v1.1选段；保留情景/区域/模型数据边界及内部能力表述不一致。原报告、因子包、代码和独立实证未完成核验。"
+    },
+    {
+      "id": "cov-datasets",
+      "title": "数据库与数据质量",
+      "status": "in-progress",
+      "notes": "已读计算/截断、Huijbregts1998框架、Ciroth2012校准报告和Edelen/Ingwersen作者手稿选段；保留评分与概率联系的争议、假设和未核验参数。跨库实证及完整校准复现未完成。"
+    },
+    {
+      "id": "cov-applications",
+      "title": "行业应用与决策",
+      "status": "in-progress",
+      "notes": "已读中文2002清洁生产展望与2022本地化综述，保留建议/成果和827→243→186的样本区别；未重跑检索、未做全国应用审计或真实项目效果验证。"
+    },
+    {
+      "id": "cov-frontiers",
+      "title": "边界与前沿",
+      "status": "in-progress",
+      "notes": "已读动态气候、未来技术、S-LCA与LCSA原作选段，区分时序、评价终点、成熟度、社会参照和组合条件。未复现原模型、取得完整LCC原书或建立真实技术的综合排名。"
+    }
+  ]
+}
+```
+
+## Argument revisions
+```json
+[
+  {
+    "id": "rev-framework-version-history",
+    "triggerPassageIds": [
+      "psg-epa-1993-framework",
+      "psg-epa-1993-overview",
+      "psg-unep-1996-framework",
+      "psg-epa-2006-html-framework"
+    ],
+    "before": "拟在历史和框架介绍中使用一个通用的四阶段概览。",
+    "after": "按具体作品和版本区分三个组件、目标范围活动、改进评价及解释；同时记录同一作品的措辞不一致。",
+    "reasoning": "不同时间和同一报告内部的分类均需保留；统一现代图式会抹去史料实际表达。",
+    "affectedUnits": [
+      "V1",
+      "V2"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-origin-evidence-objects",
+    "triggerPassageIds": [
+      "psg-cml-2001-part1-procedure",
+      "psg-epa-1991-event",
+      "psg-epa-1993-framework"
+    ],
+    "before": "以事件年份串联早期框架形成节点。",
+    "after": "先界定事件、报告、出版版和回顾各自身份；不确定节点保持开放，不形成单一发明者叙事。",
+    "reasoning": "现有定位不足以证明同名会场事件同一性，回顾也不提供全球优先权证明。",
+    "affectedUnits": [
+      "V1",
+      "A01"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-integrative-with-failure-boundary",
+    "triggerPassageIds": [
+      "psg-unep-1996-shifting",
+      "psg-unep-1996-tools",
+      "psg-cml-2001-part1-limits"
+    ],
+    "before": "先讲全生命周期的综合范围，再在后卷集中说明局限。",
+    "after": "开篇展示问题转移时同时说明可能遗漏、模型简化和互补工具，再逐专题研究后来的扩展。",
+    "reasoning": "早期指南自己同时提出综合目标和边界，不能把综合性写成自动全面识别的保证。",
+    "affectedUnits": [
+      "P",
+      "V1",
+      "V8"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-question-service-first",
+    "triggerPassageIds": [
+      "psg-cml-2001-part2a-goal-function",
+      "psg-ilcd-2010-function",
+      "psg-epa-2006-pdf-goal-function"
+    ],
+    "before": "以物品的名称和数量引入比较问题。",
+    "after": "先询问服务、性能和期间条件，再列各方案为提供该服务所需的参考流。",
+    "reasoning": "研究问题和功能前提影响有意义的比较；物理数量相同本身没有建立服务等效。",
+    "affectedUnits": [
+      "P",
+      "V3-02"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-comparison-beyond-functional-equivalence",
+    "triggerPassageIds": [
+      "psg-cml-2001-part2a-data",
+      "psg-cml-2001-part2a-interpretation",
+      "psg-ilcd-2010-comparison"
+    ],
+    "before": "把功能等效作为比较前提讨论的主要终点。",
+    "after": "功能前提之后继续追踪边界、数据、方法选择与一致性检查，区分定义、模型和结果的可比性。",
+    "reasoning": "功能相近不足以替代其他比较条件的核查；不同层次的可比性不能互换。",
+    "affectedUnits": [
+      "V3-02",
+      "V4",
+      "V6",
+      "V7"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-interpretation-before-use",
+    "triggerPassageIds": [
+      "psg-ilcd-2010-iteration",
+      "psg-ilcd-2010-interpretation",
+      "psg-epa-2006-pdf-interpretation"
+    ],
+    "before": "结果解释章节拟以获得排序并进入使用收束。",
+    "after": "沿结果、检查、有边界的结论和使用递进；允许合理结论不含排序，区分未检出差异与等效证明。",
+    "reasoning": "解释与迭代会改变研究可支持的结论；高不确定性或资源不足不能反过来证明差异很小。",
+    "affectedUnits": [
+      "V4",
+      "V7-07",
+      "V8"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-guide-standard-carrier",
+    "triggerPassageIds": [
+      "psg-cml-2001-part1-guide",
+      "psg-cml-2001-part2b-opening",
+      "psg-ilcd-2010-status"
+    ],
+    "before": "按机构并列介绍规范、指南和方法材料。",
+    "after": "分别识别标准、操作指南、操作数据及方法发行物，并对要求用语绑定具体版和作用范围。",
+    "reasoning": "指南可以增加或细化规则；发行载体的相同机构或名称不能自动赋予同样规范效力。",
+    "affectedUnits": [
+      "V2",
+      "V5",
+      "V7",
+      "A01"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-reference-flow-representation-context",
+    "triggerPassageIds": [
+      "psg-cml-2001-part2a-reference-representation",
+      "psg-ilcd-2010-reference-representation"
+    ],
+    "before": "以实现功能所需的物理数量作为参考流的唯一叙述形式。",
+    "after": "将功能、参考流及过程数据放回各源的用途；允许有条件地比较功能关联和产品导向的参考流表述，保留未完成的定义对照。",
+    "reasoning": "代表例子的表达层次并不完全相同。没有证据支持把所有参考流强制限定为质量或产品数量，也不能仅凭表述不同认定体系矛盾。",
+    "affectedUnits": [
+      "V3-02",
+      "V7-03"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-wave2-three-allocation-questions",
+    "triggerPassageIds": [
+      "psg-ekvall-tillman-1997-problem",
+      "psg-ekvall-tillman-1997-criteria",
+      "psg-frischknecht-1998-defensibility",
+      "psg-ekvall-2005-ethics-link"
+    ],
+    "before": "将分配争论按几个方法名称并列。",
+    "after": "分别提出数学分担规则、被研究决策及其后果、选择规则的规范性依据，再比较各作者所处理对象。",
+    "reasoning": "相同方法标签没有统一问题对象；可加总、可操作或受众认可各自回答不同问题。",
+    "affectedUnits": [
+      "V4",
+      "V6"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-wave2-goal-context-not-binary",
+    "triggerPassageIds": [
+      "psg-ekvall-tillman-1997-discussion",
+      "psg-frischknecht-1998-context",
+      "psg-ekvall-2005-prospective-limits"
+    ],
+    "before": "把目标相关性直接压缩为一套二分标签及唯一推荐方法。",
+    "after": "保留开放循环的目标/可行性标准、联合生产的决策者/市场情境与伦理信息用途之间的异同。",
+    "reasoning": "作者论证的范围和选择维度不同；不能将其当作同一命题的简单赞成或反对。",
+    "affectedUnits": [
+      "V2",
+      "V6",
+      "V7"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-wave2-correction-before-example",
+    "triggerPassageIds": [
+      "psg-weidema-2001-corrections",
+      "psg-weidema-2001-new-rules",
+      "psg-ekvall-tillman-1997-rules"
+    ],
+    "before": "从经典原文复制规则表和例子后再补充版本备注。",
+    "after": "先建立原文—增补/勘误关系；作废或未核验的表图、规则和算例不进入教学复算。",
+    "reasoning": "已读增补明确撤销规则和例子；另一原文已有正式勘误待取得，原排版不能自动当成正确公式。",
+    "affectedUnits": [
+      "V4",
+      "V6",
+      "A05"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-wave2-inventory-representation",
+    "triggerPassageIds": [
+      "psg-hs2002-sample-assumptions",
+      "psg-suh2004-matrix-scope"
+    ],
+    "before": "V4-05 is a research task on matrix representation and solution; no wave-two passage binding had yet been added.",
+    "after": "Proposed treatment separates represented coordinate identities, conditional balance solution and processes left outside the represented system.",
+    "reasoning": "These located passages distinguish model assumptions and included-process recursion; solving the latter cannot establish boundary adequacy.",
+    "affectedUnits": [
+      "V3-05",
+      "V4-04",
+      "V4-05",
+      "V4-06",
+      "A05"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-wave2-hybrid-qualification",
+    "triggerPassageIds": [
+      "psg-suh2004-io-qualifiers",
+      "psg-suh2004-hybrid-forms",
+      "psg-suh2004-hybrid-limits"
+    ],
+    "before": "The discovery register identified hybrid boundary work without a selected-passage record.",
+    "after": "Proposed discussion presents hybrid approaches with internal-boundary, aggregation, import and double-counting qualifications, rather than a universally complete or accurate result.",
+    "reasoning": "The article’s own limitations and unresolved example qualify its broader programmatic claims.",
+    "affectedUnits": [
+      "V4-03",
+      "V4-04",
+      "V4-06",
+      "V6",
+      "A05"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-lcia-indicator-is-not-model-release",
+    "triggerPassageIds": [
+      "psg-recipe-2017-model-vs-database",
+      "psg-usetox-v11-identity-rights"
+    ],
+    "before": "Organize methods by name and corresponding factor table.",
+    "after": "Separate original scholarly work, scientific model, substance/landscape data, factor release and software implementation; bind every quantitative or capability claim to one exact version.",
+    "reasoning": "ReCiPe paper uses USES-LCA2.0 with USEtox data; shared data name does not establish shared model. Documentation/model/data versions and carrier dates also differ.",
+    "affectedUnits": [
+      "V5",
+      "V7",
+      "A07"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-lcia-midpoint-endpoint-scope",
+    "triggerPassageIds": [
+      "psg-recipe-2017-framework",
+      "psg-recipe-2017-conversion-caveats",
+      "psg-usetox-v11-pathways-units"
+    ],
+    "before": "Describe midpoint as simpler score and endpoint as final/actual damage.",
+    "after": "Follow the source-specific cause-impact path, protected object, indicator unit and conversion assumption; retain nonconstant or nonadditional conversion cases and comparative-potential scope.",
+    "reasoning": "Endpoint labels do not establish site-specific observed injury, universal conversion or a method hierarchy.",
+    "affectedUnits": [
+      "V5",
+      "V8"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-lcia-conflicting-manual-passages",
+    "triggerPassageIds": [
+      "psg-usetox-v11-feature-limit-conflict",
+      "psg-usetox-v11-factor-flags"
+    ],
+    "before": "Summarize a manual’s limitation or absolute recommendation from one paragraph.",
+    "after": "Read update tables, module chapters, continuation clauses and limits together; preserve internal conflicts and conditional exclusions before interpreting implementation.",
+    "reasoning": "Selected paragraphs contain both explicit2.0feature additions and contradictory exclusions, as well as an initial absolute-sounding factor rule followed by a qualified exclusion case.",
+    "affectedUnits": [
+      "V5",
+      "V7",
+      "V8"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-wave3-plural-problem-histories",
+    "triggerPassageIds": [
+      "psg-epa-1972-policy-question",
+      "psg-epa-1972-spending-io",
+      "psg-epa-1974-summary-scope"
+    ],
+    "before": "用统一的早期环境比较目的串联1970年代材料。",
+    "after": "分别追踪政策理由、产品系统比较和经济整体问题，保留当时不同研究的对象与边界。",
+    "reasoning": "同为容器研究，政策/散落垃圾与选定参数 REPA 并非同一问题；时间顺序不足以证明线性继承。",
+    "affectedUnits": [
+      "V1"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-wave3-date-and-service-claims",
+    "triggerPassageIds": [
+      "psg-epa-1972-identity",
+      "psg-epa-1974-identity",
+      "psg-epa-1974-service-basis",
+      "psg-epa-1974-rank-and-energy"
+    ],
+    "before": "以目录日期和后继术语确定早期研究阶段。",
+    "after": "记录题名、再印、数据和同期事件日期；把已核验服务比较作为该报告事实，不夸大为首次功能单位发明。",
+    "reasoning": "扫描题名补足 OCR 漏年；再印与数据年份有独立含义；同期能源危机说明也不能自动成为方法起源证明。",
+    "affectedUnits": [
+      "V1",
+      "V3",
+      "A01"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-wave3-old-category-semantics",
+    "triggerPassageIds": [
+      "psg-epa-1974-category-meaning",
+      "psg-epa-1974-assumptions"
+    ],
+    "before": "按现代类别名称解释旧报告的参数和全生命周期范围。",
+    "after": "先释明排出过程水、质量相加、地域代理及消费活动排除等原作约定，再讨论后续变化。",
+    "reasoning": "同名类别和广义过程词不足以证明模型同义，范围标签也不能抵消具体排除。",
+    "affectedUnits": [
+      "V1",
+      "V3",
+      "V5"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-regional-purpose-not-progress-stereotype",
+    "triggerPassageIds": [
+      "psg-sun-2002-prospects-not-outcomes",
+      "psg-xie-2022-identity-and-purpose"
+    ],
+    "before": "按国家排列起步、成熟和落后的单线历史。",
+    "after": "按具体机构目的、所需数据/方法和记录时间组织发展问题；区分同期参与者说明、后来回顾和实证结果。",
+    "reasoning": "2002应用前景和2022本地化议程的对象与证据类型不同，不能据其差异作国家能力/价值观判断。",
+    "affectedUnits": [
+      "V1",
+      "V2"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-regional-localization-layers",
+    "triggerPassageIds": [
+      "psg-xie-2022-inventory-vs-impact-localization",
+      "psg-xie-2022-bibliometric-denominator"
+    ],
+    "before": "把本地化等同翻译方法名或采用本国模型。",
+    "after": "明确是清单数据、地区参数、参考基准、因子、权重还是因果模型的改变，并限定样本/版本/年份。",
+    "reasoning": "被读综述分别讨论这些层次；其方法来源比例并不证明任一具体版本不适用或更准确。",
+    "affectedUnits": [
+      "V2",
+      "V5"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-w3-quality-not-probability",
+    "before": "V4-06 andV7 require source-grounded treatment of quality and uncertainty; no wave-three passage links had been added.",
+    "after": "Propose separating characteristics, indicator scores, calibration assumptions, distribution parameters and propagated results, while preserving the disagreement between approaches.",
+    "reasoning": "The calibration report supplies a conditional construction; the later discussion explicitly recommends complementary rather than merged analysis.",
+    "triggerPassageIds": [
+      "psg-ciroth2012-calibration",
+      "psg-ciroth2012-distribution-assumptions",
+      "psg-ei2018-alongside"
+    ],
+    "affectedUnits": [
+      "V4-06",
+      "V7-02",
+      "V7-03",
+      "A05"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-w3-target-and-variation",
+    "before": "The uncertainty/variability topic had a discovery citation but no selected framework/appendix reading record.",
+    "after": "Propose naming the estimand and distinguishing spread across sources, uncertainty of a mean, model/choice uncertainty and numerical execution questions.",
+    "reasoning": "Huijbregts’s framework and appendix attach different meanings and assumptions to distributions; these cannot be inferred from a generic data-quality score.",
+    "triggerPassageIds": [
+      "psg-huij1998-classification",
+      "psg-huij1998-variability",
+      "psg-huij1998-sd-sem"
+    ],
+    "affectedUnits": [
+      "V4-03",
+      "V4-06",
+      "V7-02",
+      "A05"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-wave4-support-and-authority",
+    "triggerPassageIds": [
+      "psg-unep-2011-guidance-status",
+      "psg-unep-2011-own-peer-review"
+    ],
+    "before": "按机构名称对指南作整体共识或权威标签。",
+    "after": "对每段记录支持程度、原作用语、评审覆盖与保留异议，不将机构署名或推荐语言直接转换为标准或法律义务。",
+    "reasoning": "原作明确允许支持性少数观点并定义自己的推荐措辞；其评审附录还列出未覆盖和待加强的内容。",
+    "affectedUnits": [
+      "V2",
+      "V7",
+      "A01"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-wave4-dataset-versus-study",
+    "triggerPassageIds": [
+      "psg-unep-2011-dataset-goal",
+      "psg-unep-2011-documentation-quality",
+      "psg-unep-2011-dataset-review"
+    ],
+    "before": "把通过数据库审查等同于在任意LCA中可用。",
+    "after": "依次识别数据集所代表对象、入库规则、审查范围及当前研究用途；分开说明代表性、完整性和方法相容性。",
+    "reasoning": "指南区分数据库一般要求与使用者目标范围，且要求审查记录说明究竟检查了什么。",
+    "affectedUnits": [
+      "V3",
+      "V4",
+      "V7"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-wave4-bounded-quality-state",
+    "triggerPassageIds": [
+      "psg-unep-2011-validation",
+      "psg-unep-2011-documentation-quality",
+      "psg-unep-2011-database-management"
+    ],
+    "before": "以一个质量分值或reviewed标签概括数据可用性。",
+    "after": "保留数据来源、缺失、零、不确定性、代表性和复核时点；区分开发者自评、验证、独立审查及用户适用性判断。",
+    "reasoning": "这些记录承担不同证据责任；本章的术语定义也明确有局部范围，不能跨语境默认为同义。",
+    "affectedUnits": [
+      "V4",
+      "V7",
+      "A01"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-sustainability-object-before-integration",
+    "triggerPassageIds": [
+      "psg-slca-2020-functional-reference",
+      "psg-slca-2020-organizational-reference",
+      "psg-lcsa-2010-cost-perspective"
+    ],
+    "before": "把环境、经济和社会方法当作同一功能单位下的三个可互换分数。",
+    "after": "先列产品服务/组织、功能或报告参照、成本主体及有效期间，再讨论可比条件；参照一致性要证明而不是由生命周期名称保证。",
+    "reasoning": "产品FU、组织报告组合和成本主体指向不同对象；不能通过换名字把数据和评价含义统一。",
+    "affectedUnits": [
+      "V3",
+      "V8"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-sustainability-score-is-not-impact",
+    "triggerPassageIds": [
+      "psg-slca-2020-scales-and-risk-meaning",
+      "psg-slca-2020-weighting-and-pathways",
+      "psg-lcsa-2010-explicit-weighting"
+    ],
+    "before": "把风险等级、绩效分值和环境影响量直接归一后作为自然统一结果。",
+    "after": "保留表现/风险/路径、序数/基数、权重和原始未加权结果的区别；说明零分、净零与真实无影响不同。",
+    "reasoning": "指南中0可能是合规，正负抵消不等于无影响；跨维度单一效用分数还需额外选择。",
+    "affectedUnits": [
+      "V5",
+      "V8"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-w4-distinct-time-questions",
+    "before": "The time/futuretechnology unit lacked this wave’s original-passage bindings separating emission calendars and modeled futurestates.",
+    "after": "Propose separating emissiontime,elapsedresponse,analysisendpoint,and technology/background scenario dates before comparing results.",
+    "reasoning": "DynamicLCIA and future-technology modeling answer different time-related questions; sharedfuture-oriented vocabulary does not establish identical model assumptions.",
+    "triggerPassageIds": [
+      "psg-lev2010-timing-horizon",
+      "psg-lev2010-dynamic-combination",
+      "psg-arv2018-identity-definition"
+    ],
+    "affectedUnits": [
+      "V4-01",
+      "V4-03",
+      "V5",
+      "V6",
+      "V7-05"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-w4-future-comparison-conditions",
+    "before": "Futuretechnology comparison needed source-grounded qualifications on scale,maturity,alternatives and backgrounds.",
+    "after": "Propose identifying both futureincumbent and emergingtechnology assumptions,backgroundconsistency and scenario limits;no equivalence based solely on prospective/exante/dynamic labels.",
+    "reasoning": "The2018recommendations and2020countercheck retain choices,uncertainty and limitedfuturevalidation,while2010climatecharacterization has its own fixedmodel assumptions.",
+    "triggerPassageIds": [
+      "psg-arv2018-foreground",
+      "psg-arv2018-background",
+      "psg-arv2018-recommendations-limits",
+      "psg-gie2020-upscaling",
+      "psg-gie2020-background-uncertainty"
+    ],
+    "affectedUnits": [
+      "V3-06",
+      "V4-01",
+      "V4-04",
+      "V6",
+      "V7-05",
+      "A05"
+    ],
+    "status": "applied"
+  },
+  {
+    "id": "rev-case-metric-and-shared-comparison",
+    "before": "Connecting chapters explained limits without one complete numerical bridge from service to physical metric and conditional comparison.",
+    "after": "Added a fixed hypothetical service-to-GWP100 case, version-specific factor provenance, paired interval proof and changed-substrate demand; preserve missing original-PDF verification and static metric scope.",
+    "reasoning": "Selected IPCC metric definitions and corrected factor cells support the physical interpretation and chosen values only. Author assumptions separately supply the model and tolerance; reader review motivated the worked reconstruction.",
+    "triggerPassageIds": [
+      "psg-ipcc-ar6-gwp-definition",
+      "psg-ipcc-ar6-methane-accounting",
+      "psg-ipcc-ar6-2025-gwp100-table"
+    ],
+    "affectedUnits": [
+      "CASE-WALL-CONNECT",
+      "V4",
+      "V5",
+      "V8",
+      "A05"
+    ],
+    "status": "applied"
+  }
+]
+```
+
+## Reading execution and access records
+```json
+[
+  {
+    "id": "rd-cml-2001-part1",
+    "workId": "work-cml-2001-guide",
+    "title": "Life cycle assessment: An operational guide to the ISO standards — Part 1: LCA in perspective",
+    "version": "Final report, May 2001；前言落款 July 2001；所读为 19 页机构报告载体",
+    "url": "https://www.universiteitleiden.nl/binaries/content/assets/science/cml/publicaties_pdf/new-dutch-lca-guide/part1.pdf",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "本指南如何界定综合范围、方法限制与制度角色？",
+    "argumentSummary": "指南将科学依据、操作规则、模型数据和决策程序分开；比较对象涉及功能，广泛覆盖伴随模型简化。它把 LCA 定位为有边界的决策支持，并分别叙述 SETAC、ISO、UNEP 的角色。",
+    "artifacts": [
+      {
+        "id": "art-cml-2001-part1-pdf",
+        "mediaType": "application/pdf",
+        "sha256": "be9efdc47a051bb702b7a25ebb5d85093c757fbe1146b0ca1409ce568bf627f2",
+        "resolvedUrl": "https://www.universiteitleiden.nl/binaries/content/assets/science/cml/publicaties_pdf/new-dutch-lca-guide/part1.pdf",
+        "pageCount": 19
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-cml-2001-part1-identity",
+        "artifactId": "art-cml-2001-part1-pdf",
+        "locator": "版权与免责声明；未编号 Foreword",
+        "printedPages": "未编号前置页",
+        "topics": [
+          "版本身份",
+          "1992 报告的后继说明"
+        ],
+        "limits": [
+          "后继指南对 1992 作品的回顾不能替代其原文。"
+        ],
+        "pdfIndices": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "id": "psg-cml-2001-part1-function",
+        "artifactId": "art-cml-2001-part1-pdf",
+        "locator": "§§1–2.3",
+        "printedPages": "3–5",
+        "topics": [
+          "研究功能",
+          "产品与服务",
+          "问题转移"
+        ],
+        "limits": [
+          "这些段落说明本指南的范围，不证明所有应用均已完整覆盖。"
+        ],
+        "pdfIndices": [
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "id": "psg-cml-2001-part1-limits",
+        "artifactId": "art-cml-2001-part1-pdf",
+        "locator": "§§2.4–2.5",
+        "printedPages": "6–7",
+        "topics": [
+          "潜在影响",
+          "时空简化",
+          "市场与线性假设",
+          "互补工具",
+          "决策支持"
+        ],
+        "limits": [
+          "2001 年指南的模型限制不能倒写为后来所有 LCA 的永久限制。"
+        ],
+        "pdfIndices": [
+          13,
+          14
+        ]
+      },
+      {
+        "id": "psg-cml-2001-part1-procedure",
+        "artifactId": "art-cml-2001-part1-pdf",
+        "locator": "§2.6 continuation；§§3–3.3",
+        "printedPages": "8–10",
+        "topics": [
+          "决策情境",
+          "SETAC",
+          "ISO",
+          "UNEP",
+          "历史事件身份"
+        ],
+        "limits": [
+          "p8 的首次工作坊叙述没有给出会议题名；具体事件身份仍待核验。"
+        ],
+        "pdfIndices": [
+          15,
+          16,
+          17
+        ]
+      },
+      {
+        "id": "psg-cml-2001-part1-guide",
+        "artifactId": "art-cml-2001-part1-pdf",
+        "locator": "§§4–5",
+        "printedPages": "10–11",
+        "topics": [
+          "指南与标准",
+          "操作数据",
+          "科学理由"
+        ],
+        "limits": [
+          "本指南有自己的选择；不能把其操作建议全部归为 ISO 原条文。"
+        ],
+        "pdfIndices": [
+          17,
+          18
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "原始机构 PDF 的前置页及 Part 1 正文核读；p8 页面图像复核。",
+      "methodologicalScope": "历史语境中的方法指南及其自述；未以此认证真实产品环境结论。",
+      "independence": "Part 1、2a、2b 同属一个指南作品；其相互呼应不是独立研究重复验证。",
+      "limitations": [
+        "未阅读 Part 3 的科学论证与附件。",
+        "历史回顾需同期史料补证。"
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "第三方原作保留权利。Leiden 项目页允许非商业使用并请求引用 2002 Handbook；这不使 2001 报告等同于该出版版本，也不授予商业再利用权。本仓仅刊载原创释义、元数据和定位，不重传原文、图像或表格。 Part 1 版权页署 VROM 与 CML。",
+    "unread": [
+      "完整 Part 2 与 Part 3；本条目不代表整部指南阅读。",
+      "1992 原报告和 2002 出版书的完整原文。"
+    ],
+    "sourceKeys": [
+      "CML2001-I"
+    ]
+  },
+  {
+    "id": "rd-cml-2001-part2a",
+    "workId": "work-cml-2001-guide",
+    "title": "Life cycle assessment: An operational guide to the ISO standards — Part 2a: Guide",
+    "version": "May 2001 final report；101 页机构 PDF；不使用 2002 印刷版页码",
+    "url": "https://www.universiteitleiden.nl/binaries/content/assets/science/cml/publicaties_pdf/new-dutch-lca-guide/part2a.pdf",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "目的、功能比较和解释检查如何共同限制结论？",
+    "argumentSummary": "研究目的、用途和受众影响需要的信息；功能单位及方案参考流支撑比较，但还需核查边界、数据与方法一致性。解释阶段检查敏感性、不确定性与结论条件。",
+    "artifacts": [
+      {
+        "id": "art-cml-2001-part2a-pdf",
+        "mediaType": "application/pdf",
+        "sha256": "caf3c98f7e94e4608284b859041240b665f443f0f72f2795a6c058caf588788f",
+        "resolvedUrl": "https://www.universiteitleiden.nl/binaries/content/assets/science/cml/publicaties_pdf/new-dutch-lca-guide/part2a.pdf",
+        "pageCount": 101
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-cml-2001-part2a-orientation",
+        "artifactId": "art-cml-2001-part2a-pdf",
+        "locator": "阅读指引、框架与研究精细程度说明",
+        "printedPages": "3–4",
+        "topics": [
+          "简化与详细研究",
+          "适用范围"
+        ],
+        "limits": [
+          "选段阅读；不是全篇方法规定核对。"
+        ],
+        "pdfIndices": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "psg-cml-2001-part2a-goal-function",
+        "artifactId": "art-cml-2001-part2a-pdf",
+        "locator": "§§2.1–2.2；§§2.3.2–2.4，含脚注",
+        "printedPages": "16；19–25",
+        "topics": [
+          "目的",
+          "用途",
+          "受众",
+          "功能单位",
+          "替代方案",
+          "参考流"
+        ],
+        "limits": [
+          "简化与详细研究的建议有区别；未据此声称所有体系的统一定义。"
+        ],
+        "pdfIndices": [
+          15,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ]
+      },
+      {
+        "id": "psg-cml-2001-part2a-inventory",
+        "artifactId": "art-cml-2001-part2a-pdf",
+        "locator": "§§3.1–3.2；§3.3.2 选段及上下文",
+        "printedPages": "26–27；29–31",
+        "topics": [
+          "清单",
+          "经济与环境边界"
+        ],
+        "limits": [
+          "仅所列选段；未完成所有边界选择和例外的比较。"
+        ],
+        "pdfIndices": [
+          25,
+          26,
+          28,
+          29,
+          30
+        ]
+      },
+      {
+        "id": "psg-cml-2001-part2a-data",
+        "artifactId": "art-cml-2001-part2a-pdf",
+        "locator": "§3.3.5 数据质量段落",
+        "printedPages": "35–36",
+        "topics": [
+          "数据质量",
+          "可比性"
+        ],
+        "limits": [
+          "数据质量讨论不等同于数据集实测验证。"
+        ],
+        "pdfIndices": [
+          34,
+          35
+        ]
+      },
+      {
+        "id": "psg-cml-2001-part2a-interpretation",
+        "artifactId": "art-cml-2001-part2a-pdf",
+        "locator": "§§5.1–5.2 选段；§5.3.2；§5.3.3 开头；§§5.3.6–5.4",
+        "printedPages": "80–84；88–90",
+        "topics": [
+          "一致性检查",
+          "敏感性",
+          "不确定性",
+          "结论"
+        ],
+        "limits": [
+          "p80–84 为选段及程序上下文；未读完所有解释小节。"
+        ],
+        "pdfIndices": [
+          79,
+          80,
+          81,
+          82,
+          83,
+          87,
+          88,
+          89
+        ]
+      },
+      {
+        "id": "psg-cml-2001-part2a-reference-representation",
+        "artifactId": "art-cml-2001-part2a-pdf",
+        "locator": "§2.3.4；已列 pp19–25 内的细定位",
+        "printedPages": "22",
+        "pdfIndices": [
+          21
+        ],
+        "topics": [
+          "参考流表述",
+          "过程数据与目标定义"
+        ],
+        "limits": [
+          "同一已读范围的细定位，不增加独立证据或阅读覆盖。",
+          "涂装面积的参考流表述与过程所需涂料体积不能脱离章节用途混为固定定义。"
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "依据协作选段核读记录和固定 PDF 身份整理；公开网页 PDF 文本通道；截图请求未返回可核验图像。",
+      "methodologicalScope": "该指南自身的分析取向与分层方法；不推广为当前通用规范。",
+      "independence": "与 Part 1、2b 为同一作品；与其他指南存在 ISO 相关方法渊源，不能按独立实验计数。",
+      "limitations": [
+        "未独立执行指南示例。",
+        "未阅读未列出的章节及完整科学背景。",
+        "保护标志限制本地复制；没有解密或绕过限制。",
+        "p22 的参考流例子采用覆盖墙面的表述；过程数据中的涂料体积不属于同一目标定义层。"
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "第三方原作保留权利。Leiden 项目页允许非商业使用并请求引用 2002 Handbook；这不使 2001 报告等同于该出版版本，也不授予商业再利用权。本仓仅刊载原创释义、元数据和定位，不重传原文、图像或表格。 此载体权限标志为禁止打印、复制、修改和加注；选段通过机构公开网页阅读。",
+    "unread": [
+      "未列出的 Part 2a 章节。",
+      "Part 3、完整 2002 书籍及勘误内容。"
+    ],
+    "sourceKeys": [
+      "CML2001-IIa"
+    ]
+  },
+  {
+    "id": "rd-cml-2001-part2b",
+    "workId": "work-cml-2001-guide",
+    "title": "Life cycle assessment: An operational guide to the ISO standards — Part 2b: Operational annex",
+    "version": "May 2001 Operational annex；276 页 PDF；文件元数据修改于 January 2002",
+    "url": "https://www.universiteitleiden.nl/binaries/content/assets/science/cml/publicaties_pdf/new-dutch-lca-guide/part2b.pdf",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "操作附录与指南说明之间应保留哪些载体和适用范围区别？",
+    "argumentSummary": "已核读开头定位、单位表与清单数据质量矩阵开头；这些材料显示操作数据有独立载体。此有限阅读不支持对整套因子或定量转换正确性的结论。",
+    "artifacts": [
+      {
+        "id": "art-cml-2001-part2b-pdf",
+        "mediaType": "application/pdf",
+        "sha256": "0c981cdb03abe75a9291243b93a12fdc8e53e1dadd6888fc2f25dcff13f33cef",
+        "resolvedUrl": "https://www.universiteitleiden.nl/binaries/content/assets/science/cml/publicaties_pdf/new-dutch-lca-guide/part2b.pdf",
+        "pageCount": 276
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-cml-2001-part2b-opening",
+        "artifactId": "art-cml-2001-part2b-pdf",
+        "locator": "阅读指引；前置稀疏章节；Tables 2.4.1–2.4.4；inventory 与 pedigree matrix 开头",
+        "printedPages": "3；8–12",
+        "topics": [
+          "附录定位",
+          "单位",
+          "清单数据质量"
+        ],
+        "limits": [
+          "未完成整个矩阵；页面图像请求超时，未据表提出定量换算结论。"
+        ],
+        "pdfIndices": [
+          2,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "协作记录中的机构公开网页 PDF 选段；未本地提取受保护正文。",
+      "methodologicalScope": "仅开头和指定表格上下文；没有核验整套 operational annex。",
+      "independence": "与同一指南其他分册为同一作品；不是独立证据重复。",
+      "limitations": [
+        "文件修改时间不单独证明内容修订版。",
+        "受保护载体未解密。"
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "第三方原作保留权利。Leiden 项目页允许非商业使用并请求引用 2002 Handbook；这不使 2001 报告等同于该出版版本，也不授予商业再利用权。本仓仅刊载原创释义、元数据和定位，不重传原文、图像或表格。 此载体允许打印、禁止复制、修改和加注；本项目没有打印或绕过限制。",
+    "unread": [
+      "大多数附录、LCIA 因子表、后续解释清单。"
+    ],
+    "sourceKeys": [
+      "CML2001-IIb"
+    ]
+  },
+  {
+    "id": "rd-unep-1996",
+    "workId": "work-unep-1996-guide",
+    "title": "Life Cycle Assessment: What it is and how to do it",
+    "version": "First edition 1996；ISBN 92-807-1546-1；UN 目录称 91 印刷页，所获扫描载体 87 PDF 页",
+    "url": "https://digitallibrary.un.org/record/217945/files/unep_guide_to_lca.pdf",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "当时的综合框架如何处理问题转移、价值判断与工具边界？",
+    "argumentSummary": "这份教育性出版物以产品或功能为对象，把综合分析与其他工具结合。四组件图以改进评价结束，正文强调迭代和规范性判断；同时保留当时实践不能捕获某些跨产品转移的例子。",
+    "artifacts": [
+      {
+        "id": "art-unep-1996-pdf",
+        "mediaType": "application/pdf",
+        "sha256": "889fb24a49a1f699b1d9501a874299ae056f471b278bf89dad583589e3194c67",
+        "resolvedUrl": "https://digitallibrary.un.org/nanna/record/217945/files/unep_guide_to_lca.pdf?withWatermark=0&withMetadata=0&registerDownload=1&version=1",
+        "pageCount": 87
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-unep-1996-identity",
+        "artifactId": "art-unep-1996-pdf",
+        "locator": "版权页与 Foreword",
+        "printedPages": "未编号前置页",
+        "topics": [
+          "版本",
+          "来源合作",
+          "权利"
+        ],
+        "limits": [
+          "前言说明出版合作，不足以证明完整思想谱系。"
+        ],
+        "pdfIndices": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "psg-unep-1996-introduction",
+        "artifactId": "art-unep-1996-pdf",
+        "locator": "Part I: What is life cycle assessment?；历史与应用小节",
+        "printedPages": "3–5",
+        "topics": [
+          "产品与功能",
+          "决策支持",
+          "历史叙述"
+        ],
+        "limits": [
+          "历史段落为回顾，不证明优先权；p3 的三阶段介绍应与后文框架区分。"
+        ],
+        "pdfIndices": [
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "id": "psg-unep-1996-shifting",
+        "artifactId": "art-unep-1996-pdf",
+        "locator": "Why use life cycle assessment?",
+        "printedPages": "7–9",
+        "topics": [
+          "阶段转移",
+          "问题类别转移",
+          "地点转移",
+          "规范性评价",
+          "遗漏的转移"
+        ],
+        "limits": [
+          "当时实践的遗漏例子不构成后来所有 LCA 都不能处理此问题的证明。"
+        ],
+        "pdfIndices": [
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "id": "psg-unep-1996-framework",
+        "artifactId": "art-unep-1996-pdf",
+        "locator": "How is an LCA made?；框架图及说明",
+        "printedPages": "11–13",
+        "topics": [
+          "框架组件",
+          "操作步骤",
+          "迭代",
+          "改进评价"
+        ],
+        "limits": [
+          "图例把 SETAC 框架与本出版物的八步骤区分；未读 SETAC 原书。"
+        ],
+        "pdfIndices": [
+          13,
+          14,
+          15
+        ]
+      },
+      {
+        "id": "psg-unep-1996-tools",
+        "artifactId": "art-unep-1996-pdf",
+        "locator": "The relationships between environmental tools",
+        "printedPages": "40–41",
+        "topics": [
+          "功能单位",
+          "地点环境",
+          "互补工具"
+        ],
+        "limits": [
+          "不是对这些工具现代版本的全面分类。"
+        ],
+        "pdfIndices": [
+          39,
+          40
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "机构原始扫描 PDF 及可搜索文本；印刷 p3、8、9、12、13、41 页面图像核对多栏和图例。",
+      "methodologicalScope": "1996 年教育性指南与当时方法边界；非当前科学共识或正式规范认证。",
+      "independence": "前言说明报告来自 CML 等合作；不得把它与相关 CML 指南按完全独立实验计算。",
+      "limitations": [
+        "扫描与印刷页数不同且偏移不固定；未完成全书完整性审计。",
+        "没有独立复算案例或验证历史优先权。"
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "版权页保留 UNEP 1996 全部权利并要求书面许可。UN 官方文件可公开取得，不等于开放再分发。本仓不含扫描、原文摘录或页面图像；原创释义不改变原作权利。",
+    "unread": [
+      "Part II 低脂涂抹产品案例及未列章节。",
+      "全书完整性与所有印刷页的逐页核读。"
+    ],
+    "sourceKeys": [
+      "UNEP1996",
+      "B03"
+    ]
+  },
+  {
+    "id": "rd-epa-1991-draft",
+    "workId": "work-epa-1991-strategic-plan-draft",
+    "title": "Pollution Prevention Research: Strategic Plan",
+    "version": "封面 Draft Report, March 1991；NEPIS identifier 620D91001，issued 元数据 1990",
+    "url": "https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=93000MAW.TXT",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "同期项目记录能否区分技术框架会议、出版物与后来的起源叙述？",
+    "argumentSummary": "项目页报告 SETAC 于 1990 年 8 月 18–23 日开展技术框架工作坊，并列词汇、方法现状、案例和研究重点等目标；该页未给会场。它不能单独证明首次会议、最终共识或书籍版本。",
+    "artifacts": [
+      {
+        "id": "art-epa-1991-nepis-html",
+        "mediaType": "text/html",
+        "sha256": "5118e12d71728da6bf99b3e3db126ceed03f17da0809375ed897985ba725365a",
+        "resolvedUrl": "https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=93000MAW.TXT"
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-epa-1991-event",
+        "artifactId": "art-epa-1991-nepis-html",
+        "locator": "封面；RREL 项目页 Product Life Cycle Assessments Workshop",
+        "printedPages": "封面；5-55",
+        "topics": [
+          "事件日期",
+          "项目目标",
+          "草稿身份"
+        ],
+        "limits": [
+          "NEPIS block 为 HTML 分页块的零基索引；未取得该文件 PDF，不能称为 PDF 索引。",
+          "项目页不提供场所；与后来 venue-based 记述的事件同一性未证。"
+        ],
+        "nepisBlocks": [
+          0,
+          181
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "原始 EPA NEPIS HTML；仅封面及一个项目页。",
+      "methodologicalScope": "近同期行政项目记录；保留草稿身份和封面/目录元数据日期差异。",
+      "independence": "可作事件线索的同期材料；仍不能替代会议原始报告。",
+      "limitations": [
+        "没有页面图像核对 OCR。",
+        "NEPIS 元数据 226 页，227 pre blocks 含末尾空块；没有 PDF 页数实测。"
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "公开机构历史文献；未核定原作整体再利用许可。本仓只发布原创分析、元数据与定位，不重传全文。",
+    "unread": [
+      "其余战略计划。",
+      "原会议题名页、程序及完整结果。"
+    ],
+    "sourceKeys": [
+      "EPA1991draft"
+    ]
+  },
+  {
+    "id": "rd-epa-1993",
+    "workId": "work-epa-1993-inventory-guide",
+    "title": "Life-Cycle Assessment: Inventory Guidelines and Principles",
+    "version": "EPA/600/R-92/245；题名页 February 1993；NEPIS issued 元数据 1992",
+    "url": "https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=30002QCX.TXT",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "在当时的框架中，组件、目标范围与透明度如何形成？",
+    "argumentSummary": "指南以透明假设和内部一致性回应产品比较冲突，并将框架视为发展中的实践。它报告三个组件及随后增加的目标和范围活动；其历史回顾不能代替被回顾的早期报告。",
+    "artifacts": [
+      {
+        "id": "art-epa-1993-nepis-html",
+        "mediaType": "text/html",
+        "sha256": "295c1da1c1b3113899b155cbe35f0cc6bd600276def5bc92fa4999eb7c7228f6",
+        "resolvedUrl": "https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=30002QCX.TXT"
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-epa-1993-identity",
+        "artifactId": "art-epa-1993-nepis-html",
+        "locator": "封面、题名页、Abstract",
+        "printedPages": "封面；iv",
+        "topics": [
+          "出版日期",
+          "编写阶段",
+          "载体身份"
+        ],
+        "limits": [
+          "报告编号、编写期、最终准备期和出版日期应分开。"
+        ],
+        "nepisBlocks": [
+          0,
+          2,
+          5
+        ]
+      },
+      {
+        "id": "psg-epa-1993-framework",
+        "artifactId": "art-epa-1993-nepis-html",
+        "locator": "Chapter One: Introduction",
+        "printedPages": "1–3",
+        "topics": [
+          "产品声明",
+          "目标与范围",
+          "三组件",
+          "透明假设"
+        ],
+        "limits": [
+          "印刷页码据章节目录和连续分页块定位；OCR 页码弱，直接引文前需图像复核。",
+          "仅 HTML 零基分页块，不是已验证 PDF 索引。"
+        ],
+        "nepisBlocks": [
+          20,
+          21,
+          22
+        ]
+      },
+      {
+        "id": "psg-epa-1993-overview",
+        "artifactId": "art-epa-1993-nepis-html",
+        "locator": "Chapter Two: Overview；概念、历史及方法框架选段",
+        "printedPages": "4–7",
+        "topics": [
+          "组件与启动活动",
+          "迭代",
+          "清单和影响评价的成熟度",
+          "历史线索"
+        ],
+        "limits": [
+          "回顾 1960 年代和 1969 年研究的段落不作为优先权证据。",
+          "未由 OCR 图形作视觉结构结论。"
+        ],
+        "nepisBlocks": [
+          23,
+          24,
+          25,
+          26
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "原始 EPA NEPIS HTML 的选段及周围上下文。",
+      "methodologicalScope": "当时的清单方法指导和框架自述；不冒充现行 ISO 条款。",
+      "independence": "EPA 2006 声明承接早期指导；二者重复的历史措辞不是独立史料佐证。",
+      "limitations": [
+        "133 HTML pre blocks 含末尾空块；元数据为 132 页，未取得 PDF。",
+        "未以实证检验其方法建议。"
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "公开 EPA 报告，承包机构作者；未据政府仓储推断所有材料均为公有领域。本仓只刊载原创释义和定位。",
+    "unread": [
+      "其余清单程序、特定阶段规则、附录和案例。",
+      "所述 1963 原论文、1969 委托报告及 SETAC 原书。"
+    ],
+    "sourceKeys": [
+      "EPA1993"
+    ]
+  },
+  {
+    "id": "rd-epa-2006",
+    "workId": "work-epa-2006-principles-practice",
+    "title": "Life Cycle Assessment: Principles and Practice",
+    "version": "EPA/600/R-06/060；May 2006；SAIC under EPA contract；88 页 PDF",
+    "url": "https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=P1000L86.TXT",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "教学性指南如何连接比较功能、解释和有边界的决策？",
+    "argumentSummary": "指南把累计环境负担与比较权衡相连；其教学例子说明等物理数量未必等服务。解释检查可以改进决策而仍不足以支持排序。摘要和章节采用不同的第四阶段名称，不能静默统一。",
+    "artifacts": [
+      {
+        "id": "art-epa-2006-nepis-html",
+        "mediaType": "text/html",
+        "sha256": "95a12cadff48d621017c7fbe3513f323a03e61ed10b762ba13f743ef31417c4c",
+        "resolvedUrl": "https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=P1000L86.TXT"
+      },
+      {
+        "id": "art-epa-2006-pdf",
+        "mediaType": "application/pdf",
+        "sha256": "873c07009244e8bfa778dc408cce1d8de50937213dda45da1f9d9fb5d68f3d3e",
+        "resolvedUrl": "https://nepis.epa.gov/Exe/ZyPDF.cgi/P1000L86.PDF?Dockey=P1000L86.PDF",
+        "pageCount": 88
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-epa-2006-html-framework",
+        "artifactId": "art-epa-2006-nepis-html",
+        "locator": "Notice；Abstract；Chapter 1",
+        "printedPages": "ii；iv；1–6",
+        "topics": [
+          "框架",
+          "问题转移",
+          "第四阶段措辞",
+          "历史线索",
+          "价值判断"
+        ],
+        "limits": [
+          "HTML block 为零基分页块；PDF 独立载体另列。",
+          "历史回顾不作为首次发明或单一因果链的证明。",
+          "未据 OCR 复原图形布局。"
+        ],
+        "nepisBlocks": [
+          1,
+          3,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ]
+      },
+      {
+        "id": "psg-epa-2006-pdf-identity",
+        "artifactId": "art-epa-2006-pdf",
+        "locator": "封面、Notice、Abstract",
+        "printedPages": "封面；ii；iv",
+        "topics": [
+          "版本",
+          "审查边界"
+        ],
+        "limits": [
+          "机构批准出版不表示批准任意特定 LCA 的结论。"
+        ],
+        "pdfIndices": [
+          0,
+          1,
+          3
+        ]
+      },
+      {
+        "id": "psg-epa-2006-pdf-goal-function",
+        "artifactId": "art-epa-2006-pdf",
+        "locator": "Chapter 1 局部限制；Chapter 2 目的、信息需求、精细度、功能单位和边界选段",
+        "printedPages": "5；7–16；18",
+        "topics": [
+          "服务比较",
+          "功能单位",
+          "假想示例",
+          "边界",
+          "研究规则"
+        ],
+        "limits": [
+          "不是整个 Chapter 2 的逐段阅读；Exhibits 2-1/2-2 未视觉核验。",
+          "保温与肥皂等例子是教学前提，不是真实产品测量证据。"
+        ],
+        "pdfIndices": [
+          12,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          25
+        ]
+      },
+      {
+        "id": "psg-epa-2006-pdf-interpretation",
+        "artifactId": "art-epa-2006-pdf",
+        "locator": "Chapter 5 解释、评价检查及结论段落",
+        "printedPages": "54–58",
+        "topics": [
+          "完整性",
+          "敏感性",
+          "一致性",
+          "不确定性",
+          "不能排序的结论"
+        ],
+        "limits": [
+          "Exhibit 5-1 只核读图注和上下文；不能由未检出差异推出等效。"
+        ],
+        "pdfIndices": [
+          61,
+          62,
+          63,
+          64,
+          65
+        ]
+      },
+      {
+        "id": "psg-epa-2006-html-interpretation",
+        "artifactId": "art-epa-2006-nepis-html",
+        "locator": "Chapter 5 开头",
+        "printedPages": "54",
+        "topics": [
+          "解释与决策"
+        ],
+        "limits": [
+          "与 PDF 对应同一作品同一段落，不是新的独立研究。"
+        ],
+        "nepisBlocks": [
+          61
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "两个协作选段阅读记录，分别基于原始 NEPIS HTML 与 88 页 PDF；印刷 p11/PDF index18 页面图像复核教学框。",
+      "methodologicalScope": "2006 年机构审查后的教育性指导；不作为现行 ISO 条文或产品性能数据。",
+      "independence": "PDF 和 HTML 是同一作品的载体；报告承接早期 EPA 指导，与 CML/ILCD 也共享 ISO 相关渊源，不是三个独立实验。",
+      "limitations": [
+        "PDF 文本提取有 marked-content 警告，关键 p11 图像已核对；其他图形不据文本重建。",
+        "没有全报告阅读或真实系统运行。",
+        "HTML 共 89 pre blocks 含末尾空块；同名作品未据 URL 单独计数。"
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "公开 EPA 教学报告，承包机构作者；出版审查不代表对具体 LCA 结论的认可。未核定所有组成材料的整体再分发权；本仓不重传正文或图像。",
+    "unread": [
+      "其余清单与影响章节、附录和软件表。",
+      "所引 ISO 授权全文及当前 EPA 方法版本。"
+    ],
+    "sourceKeys": [
+      "EPA2006"
+    ]
+  },
+  {
+    "id": "rd-ilcd-2010",
+    "workId": "work-ilcd-2010-detailed-guide",
+    "title": "ILCD Handbook — General guide for Life Cycle Assessment — Detailed guidance",
+    "version": "First edition March 2010；EUR 24708 EN；JRC48157；DOI 10.2788/38479；ISBN 978-92-79-19092-6；2011 仓储/文件日期不等于新版本",
+    "url": "https://eplca.jrc.ec.europa.eu/uploads/ILCD-Handbook-General-guide-for-LCA-DETAILED-GUIDANCE-12March2010-ISBN-fin-v1.0-EN.pdf",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "功能单位、参考流、迭代与比较结论在本版技术指导中怎样连接？",
+    "argumentSummary": "功能同时有定量、定性及期间条件，参考流连接具体实现；应用未定的数据集可用声明单位。解释检查贯穿迭代；资源不足或不确定性过高不能用来证明方案差异不显著。本版也标明与 ISO 的不同关系。",
+    "artifacts": [
+      {
+        "id": "art-ilcd-2010-pdf",
+        "mediaType": "application/pdf",
+        "sha256": "7de4b9126536894b0b2594ab268b23b4de7de228146390ed6ade9954625e0c0f",
+        "resolvedUrl": "https://eplca.jrc.ec.europa.eu/uploads/ILCD-Handbook-General-guide-for-LCA-DETAILED-GUIDANCE-12March2010-ISBN-fin-v1.0-EN.pdf",
+        "pageCount": 417
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-ilcd-2010-identity",
+        "artifactId": "art-ilcd-2010-pdf",
+        "locator": "版权、引用方式与 Preface",
+        "printedPages": "i–ii",
+        "topics": [
+          "版本身份",
+          "权利",
+          "指南定位"
+        ],
+        "limits": [
+          "出版年份与仓储记录日期分开。"
+        ],
+        "pdfIndices": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "psg-ilcd-2010-status",
+        "artifactId": "art-ilcd-2010-pdf",
+        "locator": "§§2.3–2.4",
+        "printedPages": "17–20",
+        "topics": [
+          "要求用语",
+          "ISO 关系标记",
+          "有条件符合性"
+        ],
+        "limits": [
+          "本手册新增或更严格规定不能直接写成 ISO 原文规定。"
+        ],
+        "pdfIndices": [
+          36,
+          37,
+          38,
+          39
+        ]
+      },
+      {
+        "id": "psg-ilcd-2010-iteration",
+        "artifactId": "art-ilcd-2010-pdf",
+        "locator": "Chapter 4，Figures 4–5 及限制与规定",
+        "printedPages": "25–28",
+        "topics": [
+          "迭代",
+          "缺失资源",
+          "高不确定性",
+          "可支持结论"
+        ],
+        "limits": [
+          "Figure 4 的 p25/index44 图像核验；资源不足不能证明差异不显著。"
+        ],
+        "pdfIndices": [
+          44,
+          45,
+          46,
+          47
+        ]
+      },
+      {
+        "id": "psg-ilcd-2010-goal",
+        "artifactId": "art-ilcd-2010-pdf",
+        "locator": "§5.1 与 §§5.2.1–5.2.2 局部；所列四页全文",
+        "printedPages": "29–32",
+        "topics": [
+          "目的",
+          "预期用途",
+          "方法选择"
+        ],
+        "limits": [
+          "不是整个 Chapter 5。"
+        ],
+        "pdfIndices": [
+          48,
+          49,
+          50,
+          51
+        ]
+      },
+      {
+        "id": "psg-ilcd-2010-function",
+        "artifactId": "art-ilcd-2010-pdf",
+        "locator": "§§6.4.1–6.4.7；Table 4 与 footnote 39；规定；§6.5.1 开头",
+        "printedPages": "59–70",
+        "topics": [
+          "功能单位",
+          "参考流",
+          "期间",
+          "定量与定性条件",
+          "声明单位",
+          "方案比较"
+        ],
+        "limits": [
+          "p64/index83 的表和脚注图像核验；没有把声明单位推广为所有比较研究的充分基础。"
+        ],
+        "pdfIndices": [
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89
+        ]
+      },
+      {
+        "id": "psg-ilcd-2010-boundary",
+        "artifactId": "art-ilcd-2010-pdf",
+        "locator": "§6.6.1，含 foreground/background 上下文",
+        "printedPages": "93–98",
+        "topics": [
+          "系统边界",
+          "前景背景"
+        ],
+        "limits": [
+          "仅所列页；不是所有建模规则。"
+        ],
+        "pdfIndices": [
+          112,
+          113,
+          114,
+          115,
+          116,
+          117
+        ]
+      },
+      {
+        "id": "psg-ilcd-2010-comparison",
+        "artifactId": "art-ilcd-2010-pdf",
+        "locator": "§§6.10.1–6.10.8；比较研究规定的开头",
+        "printedPages": "140–145",
+        "topics": [
+          "比较前提",
+          "方案选择",
+          "一致性"
+        ],
+        "limits": [
+          "未读 p145 后的规定续文。"
+        ],
+        "pdfIndices": [
+          159,
+          160,
+          161,
+          162,
+          163,
+          164
+        ]
+      },
+      {
+        "id": "psg-ilcd-2010-interpretation",
+        "artifactId": "art-ilcd-2010-pdf",
+        "locator": "§9.1 解释概述",
+        "printedPages": "285",
+        "topics": [
+          "解释",
+          "结论边界"
+        ],
+        "limits": [
+          "未完成整个 Chapter 9 或审查方案。"
+        ],
+        "pdfIndices": [
+          304
+        ]
+      },
+      {
+        "id": "psg-ilcd-2010-reference-representation",
+        "artifactId": "art-ilcd-2010-pdf",
+        "locator": "§6.4.1 概念框；已列 pp59–70 内的细定位",
+        "printedPages": "60",
+        "pdfIndices": [
+          79
+        ],
+        "topics": [
+          "功能关联表述",
+          "产品导向表述",
+          "参考流用途"
+        ],
+        "limits": [
+          "同一已读范围的细定位，不增加独立证据或阅读覆盖。",
+          "本页允许的两种表述依赖用途；不据此提出所有体系的单一数量字段定义。"
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "原始公开 PDF 的协作选段细读、排版保留文本与指定页面图像；固定载体而非单凭章节题名。",
+      "methodologicalScope": "本版机构技术指导自身的规定与解释；不声称代表所有方法或现行普适政策。",
+      "independence": "与 EPA/CML 共享 ISO 相关框架背景；一致表述不是独立实证验证。",
+      "limitations": [
+        "未阅读全部技术章节或完整 review schemes。",
+        "未取得所引 ISO 标准授权全文。",
+        "参考流可以采用与功能单位直接相关或产品导向的表达；需保留本版讨论的使用情境。"
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "PDF 法律页允许注明来源后再现；仍仅刊载本项目原创释义、元数据和定位，不收录原始 PDF、图像或表格。",
+    "unread": [
+      "Chapter 5–9 未列出的部分、完整 Annex 15、独立审查方案与后续版本。"
+    ],
+    "sourceKeys": [
+      "ILCD2010",
+      "N03"
+    ]
+  },
+  {
+    "id": "rd-ekvall-tillman-1997",
+    "workId": "work-ekvall-tillman-1997-open-loop",
+    "title": "Open-Loop Recycling: Criteria for Allocation Procedures",
+    "version": "IJLCA 2(3):155–162, 1997；DOI 10.1007/BF02978810；所获 9 页载体含末尾权利页",
+    "url": "https://publications.lib.chalmers.se/records/fulltext/24272/local_24272.pdf",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "开放循环分配程序如何与研究目标、可用资源和决策用途一致？",
+    "argumentSummary": "作者把分配与处理分配问题的程序区分，并比较后果取向、可接受性和可操作性；不同标准存在权衡，结论没有指定适合全部应用的唯一程序。",
+    "artifacts": [
+      {
+        "id": "art-ekvall-tillman-1997-pdf",
+        "mediaType": "application/pdf",
+        "sha256": "ee0c3a4aba95e24a9c182ed08df671fe4c396d5ed0fe1d0ca63cea1636c6bca8",
+        "resolvedUrl": "https://publications.lib.chalmers.se/records/fulltext/24272/local_24272.pdf",
+        "pageCount": 9,
+        "bytes": 747444
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-ekvall-tillman-1997-problem",
+        "artifactId": "art-ekvall-tillman-1997-pdf",
+        "locator": "§§1–2；定义与 cascade 系统层级",
+        "printedPages": "155–156",
+        "pdfIndices": [
+          0,
+          1
+        ],
+        "topics": [
+          "分配定义",
+          "程序与回避",
+          "系统层级"
+        ],
+        "limits": [
+          "只核对作者引述的标准语境，不等于核读 ISO 草案。"
+        ]
+      },
+      {
+        "id": "psg-ekvall-tillman-1997-criteria",
+        "artifactId": "art-ekvall-tillman-1997-pdf",
+        "locator": "§§3–6；因果、目标、可接受性、可操作性和 whole-system",
+        "printedPages": "157–158",
+        "pdfIndices": [
+          2,
+          3
+        ],
+        "topics": [
+          "cause-oriented",
+          "effect-oriented",
+          "技术和社会经济系统",
+          "决策影响范围"
+        ],
+        "limits": [
+          "effect-oriented 标准在不受研究决策影响的材料流、或无意影响决策时被作者限定。"
+        ]
+      },
+      {
+        "id": "psg-ekvall-tillman-1997-rules",
+        "artifactId": "art-ekvall-tillman-1997-pdf",
+        "locator": "§§7–8；方法例子、分配式与可用性讨论",
+        "printedPages": "159–160",
+        "pdfIndices": [
+          4,
+          5
+        ],
+        "topics": [
+          "数学分担规则",
+          "公平视角",
+          "数据需求"
+        ],
+        "limits": [
+          "p159 公式图像已看；1998 正式勘误正文未取得，方程16–18不得直接用于复算或教材改写。"
+        ]
+      },
+      {
+        "id": "psg-ekvall-tillman-1997-discussion",
+        "artifactId": "art-ekvall-tillman-1997-pdf",
+        "locator": "§§9.1–9.3",
+        "printedPages": "160–161",
+        "pdfIndices": [
+          5,
+          6
+        ],
+        "topics": [
+          "应用相关标准",
+          "准确性与可行性",
+          "待发展程序"
+        ],
+        "limits": [
+          "这是作者的论证和研究议程，不是独立实测比较全部程序。"
+        ]
+      },
+      {
+        "id": "psg-ekvall-tillman-1997-rights",
+        "artifactId": "art-ekvall-tillman-1997-pdf",
+        "locator": "版权与附加权利说明页",
+        "printedPages": "155；未编号附页",
+        "pdfIndices": [
+          0,
+          8
+        ],
+        "topics": [
+          "再现权限"
+        ],
+        "limits": [
+          "授权再现说明没有授权本项目再次发布全文。"
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "Chalmers 原始期刊排版 PDF 选段；p159/PDF index4 图像核验，区分双栏和公式。",
+      "methodologicalScope": "开放循环材料 cascade 层面的程序选择；不推广为所有多功能过程的同一结论。",
+      "independence": "与 2005 论文共享 Ekvall/Tillman 作者；属于不同论证作品，不是独立实验重复验证。",
+      "limitations": [
+        "p162 参考文献和书讯未整体核读。",
+        "勘误记录 DOI 10.1007/BF02978499 已确认，但原勘误内容仍未核读。"
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "原作保留第三方权利；机构或作者公开提供阅读不授予整体再分发权。本建议仅含原创释义、元数据和定位，原文件及页面图像不进入仓库。 原刊 © ecomed 1997；附页明确再次再现需要许可。",
+    "unread": [
+      "全参考文献与原始引用作品。",
+      "1998 Errata 正文。"
+    ],
+    "sourceKeys": [
+      "lit-com-19"
+    ]
+  },
+  {
+    "id": "rd-ekvall-tillman-molander-2005",
+    "workId": "work-ekvall-tillman-molander-2005-ethics",
+    "title": "Normative ethics and methodology for life cycle assessment",
+    "version": "JCP 13:1225–1234, 2005；DOI 10.1016/j.jclepro.2005.05.010；accepted 2004-08-04，online 2005-06-22",
+    "url": "https://publications.lib.chalmers.se/records/fulltext/11739/local_11739.pdf",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "方法选择为何还与受众认定的良好行动有关？",
+    "argumentSummary": "论文将 retrospective/prospective 的信息目标与伦理立场相连，同时分析两者限制；它没有据此断定一类方法普遍优越，建议公开研究目的和规范性出发点。",
+    "artifacts": [
+      {
+        "id": "art-ekvall-tillman-molander-2005-pdf",
+        "mediaType": "application/pdf",
+        "sha256": "8b0880032fb4c39a847c0b97a238abc823d7f7825e64d51af1f2372a23530412",
+        "resolvedUrl": "https://publications.lib.chalmers.se/records/fulltext/11739/local_11739.pdf",
+        "pageCount": 10,
+        "bytes": 185842
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-ekvall-2005-definitions",
+        "artifactId": "art-ekvall-tillman-molander-2005-pdf",
+        "locator": "Abstract；§1；§2 开头",
+        "printedPages": "1225–1226",
+        "pdfIndices": [
+          0,
+          1
+        ],
+        "topics": [
+          "信息目标",
+          "平均与边际",
+          "分配与系统扩展"
+        ],
+        "limits": [
+          "保留作者 retrospective/prospective 术语；不自动映射为所有现代 ALCA/CLCA 定义。"
+        ]
+      },
+      {
+        "id": "psg-ekvall-2005-ethics-link",
+        "artifactId": "art-ekvall-tillman-molander-2005-pdf",
+        "locator": "§§2.1–2.2 及 Figure1 周围说明选段",
+        "printedPages": "1227–1228",
+        "pdfIndices": [
+          2,
+          3
+        ],
+        "topics": [
+          "目的论",
+          "义务论",
+          "规则与情境",
+          "受众"
+        ],
+        "limits": [
+          "不是完整伦理学体系综述；没有核验被引哲学原著。"
+        ]
+      },
+      {
+        "id": "psg-ekvall-2005-partition",
+        "artifactId": "art-ekvall-tillman-molander-2005-pdf",
+        "locator": "§3.1 分配讨论；§3.2 开头",
+        "printedPages": "1229",
+        "pdfIndices": [
+          4
+        ],
+        "topics": [
+          "分配惯例",
+          "替代立场的批评"
+        ],
+        "limits": [
+          "这里只核读分配段落及其批评的规范性来源；不把经济分配推广为普适。"
+        ]
+      },
+      {
+        "id": "psg-ekvall-2005-prospective-limits",
+        "artifactId": "art-ekvall-tillman-molander-2005-pdf",
+        "locator": "§§4.1–4.2；Table2；§5",
+        "printedPages": "1230–1232",
+        "pdfIndices": [
+          5,
+          6,
+          7
+        ],
+        "topics": [
+          "因果覆盖",
+          "不确定性",
+          "公平和激励",
+          "互补信息"
+        ],
+        "limits": [
+          "会场例子是论证性说明，不是关于所有企业反应的实测预测。",
+          "p1231/index6 图像核验；当时关于标准化可行性的判断不作为现状。"
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "Chalmers 原始期刊排版 PDF 选段及 p1231 图像。",
+      "methodologicalScope": "LCI 信息用途、数据选择与伦理解释；没有完成模型或真实电力系统复算。",
+      "independence": "与 1997 论文共享作者和部分议题；不能把二者的一致表述视为独立经验性证据。",
+      "limitations": [
+        "未完整核读全部案例细节、脚注和参考文献。",
+        "评价体系和推论受文中简化场景约束。"
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "原作保留第三方权利；机构或作者公开提供阅读不授予整体再分发权。本建议仅含原创释义、元数据和定位，原文件及页面图像不进入仓库。 PDF 注明 © 2005 Elsevier Ltd. all rights reserved。",
+    "unread": [
+      "被引伦理学、市场模型与案例的原始资料。",
+      "pp1233–1234 全参考文献。"
+    ],
+    "sourceKeys": [
+      "lit-com-23"
+    ]
+  },
+  {
+    "id": "rd-frischknecht-1998-thesis-allocation",
+    "workId": "work-frischknecht-1998-thesis",
+    "title": "Life Cycle Inventory Analysis for Decision-Making: Scope-dependent Inventory System Models and Context-specific Joint Product Allocation",
+    "version": "ETH Diss.12599；Zurich 1998；ISBN 3-9520661-3-3；作者机构公开 PDF，282 页",
+    "url": "https://esu-services.ch/fileadmin/download/frischknecht-1998-PHD.pdf",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "固定比例联合生产中，分配可辩护性怎样依赖决策者与市场情境？",
+    "argumentSummary": "选段区别物理联系、分担规则及其辩护标准；作者认为研究目标标签不足以区分联合生产的分配选择，转向决策者数量、市场结构与公平或竞争目标。",
+    "artifacts": [
+      {
+        "id": "art-frischknecht-1998-thesis-pdf",
+        "mediaType": "application/pdf",
+        "sha256": "948bc0c204b6064cd7bfca49655116d4c9fbfc3ea1b829d95e5fab1c0a03efce",
+        "resolvedUrl": "https://esu-services.ch/fileadmin/download/frischknecht-1998-PHD.pdf",
+        "pageCount": 282,
+        "bytes": 3606149
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-frischknecht-1998-identity",
+        "artifactId": "art-frischknecht-1998-thesis-pdf",
+        "locator": "题名页、版权页与前言选段",
+        "printedPages": "未编号前置页",
+        "pdfIndices": [
+          0,
+          3,
+          4
+        ],
+        "topics": [
+          "版本与作者身份"
+        ],
+        "limits": [
+          "文件元数据和当前联系信息不能单独证明所有正文与原印刷完全相同。"
+        ]
+      },
+      {
+        "id": "psg-frischknecht-1998-defensibility",
+        "artifactId": "art-frischknecht-1998-thesis-pdf",
+        "locator": "§§7.3.1–7.3.2",
+        "printedPages": "100–103",
+        "pdfIndices": [
+          117,
+          118,
+          119,
+          120
+        ],
+        "topics": [
+          "何时分配",
+          "加总一致性",
+          "规则唯一性",
+          "物理与社会因果",
+          "公平"
+        ],
+        "limits": [
+          "未把成本会计引用原文当成已独立核读。",
+          "固定联合生产的条件不涵盖所有可变联产。"
+        ]
+      },
+      {
+        "id": "psg-frischknecht-1998-context",
+        "artifactId": "art-frischknecht-1998-thesis-pdf",
+        "locator": "§§7.4.1–7.4.2；§7.5.1 开头；p104 footnote30",
+        "printedPages": "104–106",
+        "pdfIndices": [
+          121,
+          122,
+          123
+        ],
+        "topics": [
+          "系统扩展与替代",
+          "决策情境",
+          "市场假设"
+        ],
+        "limits": [
+          "p105/index122 图像中 Figure7.5 的区域未呈现可读图形，分类只据该页周围文字。",
+          "p106 案例为简化假想，具体数学方案未在本轮验证。"
+        ]
+      },
+      {
+        "id": "psg-frischknecht-1998-conclusions",
+        "artifactId": "art-frischknecht-1998-thesis-pdf",
+        "locator": "§7.5.4 结尾及 §7.6",
+        "printedPages": "119–120",
+        "pdfIndices": [
+          136,
+          137
+        ],
+        "topics": [
+          "公平与竞争",
+          "事前事后",
+          "框架限定"
+        ],
+        "limits": [
+          "未读 §7.5 的完整三种推导，不能据总结复算或声称模型正确。"
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "作者 ESU-services 公开的学位论文载体；所列章节选段及 p105 页面图像核验。",
+      "methodologicalScope": "联合生产的特定决策情境；不把此章称为普遍接受的分配规范。",
+      "independence": "独立作者作品；与 2001 原文引文链有明确关系，但不是被引 Heijungs/Frischknecht 合著论文的替代载体。",
+      "limitations": [
+        "主章不是开放循环 cascade 论文，比较时需保留对象差异。",
+        "完整 disutility function、成本内生化和优化/博弈推导未核读验证。",
+        "Figure7.5 在所用渲染中不可见。"
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "原作保留第三方权利；机构或作者公开提供阅读不授予整体再分发权。本建议仅含原创释义、元数据和定位，原文件及页面图像不进入仓库。 版权页 © Rolf Frischknecht 1998；未观察到开放再许可声明。",
+    "unread": [
+      "论文其余章节。",
+      "§7.5 三种方案完整推导、案例与数学证明。",
+      "Heijungs/Frischknecht 1998 合著原文。"
+    ],
+    "sourceKeys": [
+      "Frischknecht1998-thesis"
+    ]
+  },
+  {
+    "id": "rd-weidema-2001-addendum",
+    "workId": "work-weidema-2001-addendum",
+    "title": "Addendum to the Article “Avoiding Co-Product Allocation in Life-Cycle Assessment”",
+    "version": "署名日期 2001-08-25；Yale journal-hosted 与作者机构两种 2 页载体；原论文 issue 2000/引用2001 的差异单列",
+    "url": "https://jie.yale.edu/sites/default/files/files/v4n3_LTE_Weidema_359.pdf",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "增补究竟修改哪些规则和结论，哪些仍需原文旁读？",
+    "argumentSummary": "作者删除一个独立判断条件、重写规则2/3并删除4，同时要求弃用部分表图和例子；它明确说例10结论不正确。新规则仍涉及被替代过程和后续改变，未取消替代模型的证据责任。",
+    "artifacts": [
+      {
+        "id": "art-weidema-2001-addendum-yale",
+        "mediaType": "application/pdf",
+        "sha256": "ddb8d78b95651d3fa5ef2dc0f1ec7096aa9adf459b238a55ac8a5e5d2edbb7e2",
+        "resolvedUrl": "https://jie.yale.edu/sites/default/files/files/v4n3_LTE_Weidema_359.pdf",
+        "pageCount": 2,
+        "bytes": 46272
+      },
+      {
+        "id": "art-weidema-2001-addendum-author",
+        "mediaType": "application/pdf",
+        "sha256": "e98df9e0b2d64ca26bacad9a973de8acfd8c0f2761eea6d423245028c0906a67",
+        "resolvedUrl": "https://2-0-lca.com/wp-content/download-handler.php?file=addendum.pdf",
+        "pageCount": 2,
+        "bytes": 7842
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-weidema-2001-corrections",
+        "artifactId": "art-weidema-2001-addendum-yale",
+        "locator": "修订说明与需忽略的表图、条件和例子清单",
+        "printedPages": "未编号第1页",
+        "pdfIndices": [
+          0
+        ],
+        "topics": [
+          "规则修订",
+          "反例",
+          "旧教材风险"
+        ],
+        "limits": [
+          "原文 pp15–17、21–23 尚未取得；增补所指变化已读，原例实际结构未旁读。"
+        ]
+      },
+      {
+        "id": "psg-weidema-2001-new-rules",
+        "artifactId": "art-weidema-2001-addendum-yale",
+        "locator": "新版规则1–4；署名日期",
+        "printedPages": "未编号第1页；2",
+        "pdfIndices": [
+          0,
+          1
+        ],
+        "topics": [
+          "决定性共产品",
+          "充分利用条件",
+          "中间处理",
+          "替代收益"
+        ],
+        "limits": [
+          "仅重述该作者修改后的规则，不普遍化为 ISO 规则或所有情景模型。"
+        ]
+      },
+      {
+        "id": "psg-weidema-2001-author-carrier",
+        "artifactId": "art-weidema-2001-addendum-author",
+        "locator": "作者公开增补全文；与 journal-hosted 内容对应检查",
+        "printedPages": "无印刷页码；载体页1–2",
+        "pdfIndices": [
+          0,
+          1
+        ],
+        "topics": [
+          "同一增补的两种载体"
+        ],
+        "limits": [
+          "版式和元数据不同；不是两项独立修订或旁证。"
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "两份实际取得的增补全文和 journal-hosted 两页图像；只将此短增补读完，不声称读完其原论文。",
+      "methodologicalScope": "该文作者自己的程序修订；不能凭增补重建全部原始证明或计算。",
+      "independence": "两载体是同一增补；它修订原文，不能作为对原论点的独立验证。",
+      "limitations": [
+        "未取得原论文完整文本。",
+        "需原文对照后才能说明例10怎样改变实际计算。",
+        "未取得形式化页码或独立 DOI。"
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "原作保留第三方权利；机构或作者公开提供阅读不授予整体再分发权。本建议仅含原创释义、元数据和定位，原文件及页面图像不进入仓库。 两载体未观察到开放再许可声明；不重传增补。",
+    "unread": [
+      "原论文完整文本及未经修订的例10/11。",
+      "2010 revisited 全文。"
+    ],
+    "sourceKeys": [
+      "lit-com-22"
+    ]
+  },
+  {
+    "id": "rd-heijungs-suh-2002-author-sample",
+    "workId": "lit-b06",
+    "title": "The Computational Structure of Life Cycle Assessment — author-linked sample",
+    "version": "Original 2002 work; actual sample is a 43-page Springer softcover-reprint carrier with ISBN 978-90-481-6041-9 / ebook 978-94-015-9900-9. PDF metadata modified 2022-09-05; not a new scientific edition. Author-linked errata dated 2025-06-07 read separately.",
+    "url": "https://sites.google.com/vu.nl/reinoutheijungs/publications/the-computational-structure-of-lca",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "What does the basic inventory calculation represent, and which assumptions and conditions limit it?",
+    "argumentSummary": "Flow coordinates require consistent identities, units and signs. The basic balance calculation assumes linearity/additivity and a square nonsingular technology matrix. Data acquisition, omitted processes and actual software behavior remain separate questions.",
+    "artifacts": [
+      {
+        "id": "art-heijungs-suh-2002-sample",
+        "mediaType": "application/pdf",
+        "sha256": "afa56770dc369091c8d2c01b64c5b44143698b574de6f0e2662e95eec7f872b7",
+        "resolvedUrl": "https://drive.usercontent.google.com/download?id=1QLoQ42Ro_FwQvVPN3AooFib48jdbA3qD&export=download",
+        "pageCount": 43
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-hs2002-sample-identity",
+        "artifactId": "art-heijungs-suh-2002-sample",
+        "locator": "Title, copyright/reprint page and Preface",
+        "printedPages": "unnumbered front matter; v–vi",
+        "pdfIndices": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "topics": [
+          "carrier identity",
+          "author purpose"
+        ],
+        "limits": [
+          "Author linked a sample; no full-book access or redistribution permission inferred."
+        ]
+      },
+      {
+        "id": "psg-hs2002-sample-scope",
+        "artifactId": "art-heijungs-suh-2002-sample",
+        "locator": "Chapter 1 §§1.1.1–1.1.2; §§1.3–1.4",
+        "printedPages": "1–4, 7–10",
+        "pdfIndices": [
+          12,
+          13,
+          14,
+          15,
+          18,
+          19,
+          20,
+          21
+        ],
+        "topics": [
+          "data availability assumption",
+          "mathematical vs procedural scope",
+          "notation"
+        ],
+        "limits": [
+          "Historical software criticism is the authors’ account, not a present-day benchmark.",
+          "Definitions may deliberately differ from historical ISO terminology."
+        ]
+      },
+      {
+        "id": "psg-hs2002-sample-coordinates",
+        "artifactId": "art-heijungs-suh-2002-sample",
+        "locator": "§2.1 and opening of Chapter 2",
+        "printedPages": "11–15",
+        "pdfIndices": [
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "topics": [
+          "process vectors",
+          "units/order/signs",
+          "technology/intervention partition",
+          "final demand"
+        ],
+        "limits": [
+          "Basic linear steady-state setup only; no product case measurement verified."
+        ]
+      },
+      {
+        "id": "psg-hs2002-sample-balance",
+        "artifactId": "art-heijungs-suh-2002-sample",
+        "locator": "§2.2 including equations (2.20)–(2.37)",
+        "printedPages": "16–20",
+        "pdfIndices": [
+          27,
+          28,
+          29,
+          30,
+          31
+        ],
+        "topics": [
+          "balance equations",
+          "scaling factors",
+          "inventory vector",
+          "intensity matrix"
+        ],
+        "limits": [
+          "Rendered pp17 and19 checked; OCR conflates Lambda with A.",
+          "Formal derivation does not validate software or supplied data."
+        ]
+      },
+      {
+        "id": "psg-hs2002-sample-assumptions",
+        "artifactId": "art-heijungs-suh-2002-sample",
+        "locator": "§2.3 axioms/theorems and §2.4, including continuation on p24",
+        "printedPages": "20–24",
+        "pdfIndices": [
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "topics": [
+          "linearity/additivity",
+          "square/nonsingular condition",
+          "cutoff/multifunctionality/recycling qualifications",
+          "numerical and data uncertainty"
+        ],
+        "limits": [
+          "Proof is conditional on the model axioms; singular/non-square systems need other treatment.",
+          "Spatial/temporal patterns are neglected in this basic treatment."
+        ]
+      },
+      {
+        "id": "psg-hs2002-sample-scaling",
+        "artifactId": "art-heijungs-suh-2002-sample",
+        "locator": "§2.6 and §2.7",
+        "printedPages": "27–31",
+        "pdfIndices": [
+          38,
+          39,
+          40,
+          41,
+          42
+        ],
+        "topics": [
+          "normalization-dependent scaling factors",
+          "intensity interpretation"
+        ],
+        "limits": [
+          "Do not read all scaling factors as physical activity time without the stated time-rate representation.",
+          "Illustrative numerical coefficients not independently benchmarked."
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "Author institutional-page link to an openly downloadable unencrypted sample and errata; selected text read with surrounding qualifications, formulas on pp17/19/23 visually checked.",
+      "methodologicalScope": "Original mathematical exposition of a basic model; conditional deduction, not an empirical validation or a normative compliance test.",
+      "independence": "Suh coauthored both this book and the boundary article; agreement is not independent experimental replication.",
+      "limitations": [
+        "Full chapters3–10 unavailable in this sample.",
+        "No current solver, database or empirical data-quality test performed.",
+        "Published figures/tables and software were not redistributed."
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "Author explicitly offers table of contents and sample via his VU-affiliated page. Actual sample retains Springer all-rights-reserved notice. Public access to this bounded sample does not grant full-book acquisition or republication rights. Only concise original notes and locators proposed.",
+    "unread": [
+      "Chapter1 pp5–6 were not substantively close-read in this task.",
+      "§2.5 geometry on pp25–26 not assessed; p24 opening and p27 closing only were encountered as surrounding text.",
+      "Book chapters3–10 and appendices beyond sample contents; linked Matlab archive not acquired or run."
+    ],
+    "sourceKeys": [
+      "HS2002-AUTHOR-SAMPLE"
+    ]
+  },
+  {
+    "id": "rd-heijungs-suh-errata-2025",
+    "workId": "work-heijungs-suh-errata-2025",
+    "title": "Errata (7 June 2025) to The Computational Structure of Life Cycle Assessment",
+    "version": "Author-issued correction document dated7June2025;2-page PDF; distinct work from2002book and its43-page sample.",
+    "url": "https://drive.google.com/file/d/1psUtjNcYIFArhTjjOtsyhHQh6MwM6KPy/view?usp=sharing",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "Which correction locations does the author-issued list identify, and what can this establish for the selected book sample?",
+    "argumentSummary": "The correction index names later book pages and equations. It does not establish that unlisted sample passages are error-free.",
+    "artifacts": [
+      {
+        "id": "art-heijungs-suh-2002-errata2025",
+        "mediaType": "application/pdf",
+        "sha256": "7df4426ddeceb0c54dd633f36b82afde4fe32d2688fd922dd5c888320ef20922",
+        "resolvedUrl": "https://drive.usercontent.google.com/download?id=1psUtjNcYIFArhTjjOtsyhHQh6MwM6KPy&export=download",
+        "pageCount": 2
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-hs2002-errata2025",
+        "artifactId": "art-heijungs-suh-2002-errata2025",
+        "locator": "Complete author-provided errata list dated 7 June 2025",
+        "printedPages": "1–2",
+        "pdfIndices": [
+          0,
+          1
+        ],
+        "topics": [
+          "correction record",
+          "equations outside this sample"
+        ],
+        "limits": [
+          "Listed corrections concern later printed pages; absence of a listed correction for pp11–31 does not prove error-free text.",
+          "Correction equations were read as an index; not checked against unavailable later chapters."
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "Separate author-page link;2-page original PDF correction index read; page1 visually checked.",
+      "methodologicalScope": "Correction locations and expressions recorded as an index only; not a rederivation or an audit of the corrected later chapters.",
+      "independence": "Author-issued correction to the same authors’ book; not independent replication.",
+      "limitations": [
+        "Corresponding later source chapters were unavailable.",
+        "No listed correction for selected pp11–31 does not prove those pages error-free."
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "Public author-offered errata link; no explicit open-reuse licence verified. Source rights remain separate from the project licence; only original notes and locators proposed.",
+    "unread": [
+      "Later book chapters containing corrected equations; list entries were not validated against those original pages."
+    ],
+    "sourceKeys": [
+      "HS2002-ERRATA2025"
+    ]
+  },
+  {
+    "id": "rd-suh-2004-boundary-thesis-reprint",
+    "workId": "lit-m03",
+    "title": "System Boundary Selection in Life-Cycle Inventories Using Hybrid Approaches — read via Suh dissertation Chapter II",
+    "version": "Article identity: Environmental Science & Technology38(3),657–664; DOI10.1021/es0263745; online2003-12-18, issue2004-02-01. Actual read carrier: Suh2004 dissertation, ChapterII printed17–32; chapter heading differs and p17 states ACS-courtesy reprint. No page-for-page equivalence with publisher PDF asserted. Repository version Not Applicable(or Unknown); carrier220PDFpages.",
+    "url": "https://scholarlypublications.universiteitleiden.nl/handle/1887/8399",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "How does this methodological account distinguish system truncation, recursive calculation and process/IO hybridization, and what qualifies broader coverage?",
+    "argumentSummary": "Matrix loops remain limited to included processes. Hybrid approaches broaden modeled upstream coverage but retain internal boundaries and IO-data weaknesses. The illustrative truncation result uses a strong second-tier cutoff assumption.",
+    "artifacts": [
+      {
+        "id": "art-suh-2004-thesis-leiden",
+        "mediaType": "application/pdf",
+        "sha256": "ddff0352d833b103fc45f6c78abad133defcafde7ddd579a465e65c6d2274670",
+        "resolvedUrl": "https://scholarlypublications.universiteitleiden.nl/download/1887/8399/1?col=81522199420002711",
+        "pageCount": 220
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-suh2004-thesis-identity",
+        "artifactId": "art-suh-2004-thesis-leiden",
+        "locator": "Repository cover; dissertation title/defense page; ChapterII heading and reprint footnote",
+        "printedPages": "repository cover; unnumbered title page;17",
+        "pdfIndices": [
+          0,
+          1,
+          23
+        ],
+        "topics": [
+          "carrier vs work identity",
+          "ACS-courtesy reprint"
+        ],
+        "limits": [
+          "Repository mislabels type Article/Letter; actual title page identifies a dissertation.",
+          "Reprint heading/footnote wording differs from publisher title; exact publisher version not verified."
+        ]
+      },
+      {
+        "id": "psg-suh2004-boundary-cutoff",
+        "artifactId": "art-suh-2004-thesis-leiden",
+        "locator": "ChapterII §§1–2 including quoted historical standards context",
+        "printedPages": "18–20",
+        "pdfIndices": [
+          24,
+          25,
+          26
+        ],
+        "topics": [
+          "boundary selection",
+          "cumulative omissions",
+          "mass/energy proxies"
+        ],
+        "limits": [
+          "Historical authors’ interpretation of ISO14040/14041/TR14049; no direct current ISO verification."
+        ]
+      },
+      {
+        "id": "psg-suh2004-matrix-scope",
+        "artifactId": "art-suh-2004-thesis-leiden",
+        "locator": "ChapterII §3 beginning",
+        "printedPages": "21",
+        "pdfIndices": [
+          27
+        ],
+        "topics": [
+          "infinite orders within finite selected processes",
+          "matrix vs diagram"
+        ],
+        "limits": [
+          "This does not establish any named current software behavior."
+        ]
+      },
+      {
+        "id": "psg-suh2004-io-qualifiers",
+        "artifactId": "art-suh-2004-thesis-leiden",
+        "locator": "ChapterII §3 continuation and Figure1 discussion",
+        "printedPages": "22–24",
+        "pdfIndices": [
+          28,
+          29,
+          30
+        ],
+        "topics": [
+          "aggregation",
+          "prices",
+          "imports",
+          "time lag",
+          "environmental statistics",
+          "second-tier cutoff illustration"
+        ],
+        "limits": [
+          "Reported quantitative examples not independently replicated or checked against cited underlying datasets.",
+          "Do not generalize Figure1’s low-bias/stochastic-error language to all impact models or correlated errors."
+        ]
+      },
+      {
+        "id": "psg-suh2004-hybrid-forms",
+        "artifactId": "art-suh-2004-thesis-leiden",
+        "locator": "ChapterII §4 prose",
+        "printedPages": "24–28",
+        "pdfIndices": [
+          30,
+          31,
+          32,
+          33,
+          34
+        ],
+        "topics": [
+          "tiered",
+          "IO-based",
+          "integrated",
+          "double counting",
+          "process/IO internal boundary"
+        ],
+        "limits": [
+          "One discussed tiered example retains unresolved double counting; integrated subtraction is a method description, not a tested implementation.",
+          "Claim of upstream completeness is conditional on the represented IO economy and data."
+        ]
+      },
+      {
+        "id": "psg-suh2004-hybrid-tables",
+        "artifactId": "art-suh-2004-thesis-leiden",
+        "locator": "ChapterII Table1 and Table2; sideways scans visually inspected",
+        "printedPages": "29–30",
+        "pdfIndices": [
+          35,
+          38
+        ],
+        "topics": [
+          "method tradeoffs",
+          "historical national IO-data coverage"
+        ],
+        "limits": [
+          "Image reading used because OCR table text is scrambled.",
+          "Historical data-availability table is not current country coverage evidence."
+        ]
+      },
+      {
+        "id": "psg-suh2004-hybrid-limits",
+        "artifactId": "art-suh-2004-thesis-leiden",
+        "locator": "ChapterII §5 including closing research-needs paragraphs",
+        "printedPages": "31–32",
+        "pdfIndices": [
+          39,
+          40
+        ],
+        "topics": [
+          "data representativeness",
+          "internal boundary choice",
+          "remaining development needs"
+        ],
+        "limits": [
+          "Historical ISO-compatibility argument and recommendations remain attributed to authors.",
+          "No general proof that hybrid always improves accuracy."
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "Institutional public PDF obtained through its visible download link; unencrypted OCR scan read in selected ChapterII passages; reprint footnote and sideways tables visually checked.",
+      "methodologicalScope": "A methodological critical review/account with reported examples, not new independent measurements of every cited study.",
+      "independence": "Book/sample and article share Suh; dissertation reprint is another carrier of the article, not another independent work.",
+      "limitations": [
+        "Original ACS PDF/supporting information not obtained.",
+        "Scan duplicates printed28 at indices34/36 and printed36/37 near indices44–47; no universal arithmetic pagination offset.",
+        "No replication of simulations, flooring case or hybrid software.",
+        "Internal limitations qualify broad claims of complete upstream coverage.",
+        "The recorded artifact URL is the durable public retrieval route, not the literal final storage URL. The ephemeral signed redirect is intentionally omitted; the hash identifies the acquired bytes but does not guarantee future availability at that route."
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "Repository labels OpenAccess under Leiden University non-exclusive licence. Linked licence permits acknowledged education/study/research and reserves consent for commercial use. Reprint p17 explicitly acknowledges ACS courtesy. This record does not establish rights to redistribute source text/images/tables or to relabel the source under the project licence.",
+    "unread": [
+      "Dissertation remainder outside ChapterII, except identity and contents.",
+      "ChapterII reference list only used to locate follow-up leads, not as independent evidence.",
+      "Original publisher-page pagination657–664 not mapped from this reprint.",
+      "Publisher supporting information and underlying referenced empirical studies not acquired."
+    ],
+    "sourceKeys": [
+      "SUH2004-BOUNDARY-THESIS-REPRINT"
+    ]
+  },
+  {
+    "id": "rd-recipe-2017-primary-article",
+    "workId": "work-recipe-2017-method-article",
+    "title": "ReCiPe2016: a harmonised life cycle impact assessment method at midpoint and endpoint level",
+    "version": "IJLCA22:138–147(2017); online2016-12-12; acquired10-page original article PDF; distinct from RIVM2016-0104 and2017v1.1 report",
+    "url": "https://www.vliz.be/imisdocs/publications/388157.pdf",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "How do this source’s indicators, model boundaries, temporal/spatial assumptions and value choices constrain interpretation?",
+    "argumentSummary": "中点与终点是这份方法的互补指标层次，取决于路径、保护对象和单位。情景同时组织时间范围和证据取舍；地区覆盖、物种损失和缺失路径限制解释。毒性部分采用USES-LCA2.0与USEtox物质数据，不等于采用USEtox模型。",
+    "artifacts": [
+      {
+        "id": "art-recipe-2017-primary-article-pdf",
+        "mediaType": "application/pdf",
+        "sha256": "f6d1909e9b11c37c89303130037403fb5de724a099982498af5b29dd9c4ef543",
+        "resolvedUrl": "https://www.vliz.be/imisdocs/publications/388157.pdf",
+        "pageCount": 10
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-recipe-2017-identity",
+        "artifactId": "art-recipe-2017-primary-article-pdf",
+        "locator": "Title page; original publication dates and article type",
+        "printedPages": "138",
+        "pdfIndices": [
+          0
+        ],
+        "topics": [
+          "work identity",
+          "article/report distinction"
+        ],
+        "limits": [
+          "2016 online date and 2017 issue year differ. The PDF retains 2016 publisher copyright; the publisher page separately records a 2020 Open Choice license correction."
+        ]
+      },
+      {
+        "id": "psg-recipe-2017-framework",
+        "artifactId": "art-recipe-2017-primary-article-pdf",
+        "locator": "§1 Introduction; §2.1 Framework",
+        "printedPages": "138–139",
+        "pdfIndices": [
+          0,
+          1
+        ],
+        "topics": [
+          "midpoint",
+          "endpoint",
+          "areas of protection",
+          "units"
+        ],
+        "limits": [
+          "Method authors describe complementary indicators; this is not independent validation or a universal superiority ranking. Resource endpoint currency is a modeled extra extraction cost, not an automatic weighting of human health against ecosystems."
+        ]
+      },
+      {
+        "id": "psg-recipe-2017-selection-scenarios",
+        "artifactId": "art-recipe-2017-primary-article-pdf",
+        "locator": "§2.2 Model selection criteria; §2.3 Scenario analysis; Fig.1 and caption",
+        "printedPages": "139–140",
+        "pdfIndices": [
+          1,
+          2
+        ],
+        "topics": [
+          "model choice",
+          "time horizon",
+          "evidence threshold",
+          "scenario uncertainty"
+        ],
+        "limits": [
+          "20/100/1000-or-infinite are scenario conventions, not a uniform time window for all categories or a statement of current scientific consensus. Authors explicitly decline a superiority claim for models chosen for in-house feasibility. Fig.1 dotted fossil-resource path verified in page image."
+        ]
+      },
+      {
+        "id": "psg-recipe-2017-model-vs-database",
+        "artifactId": "art-recipe-2017-primary-article-pdf",
+        "locator": "§3.1.8 Toxicity; surrounding §3.1.7 and §3.1.9",
+        "printedPages": "142",
+        "pdfIndices": [
+          4
+        ],
+        "topics": [
+          "USES-LCA 2.0",
+          "USEtox substance data",
+          "model/database distinction"
+        ],
+        "limits": [
+          "Historical ReCiPe implementation uses USES-LCA 2.0 with USEtox chemical data; it is not the USEtox model. Authors practical reasons are scoped to this publication and not assertions about later releases."
+        ]
+      },
+      {
+        "id": "psg-recipe-2017-conversion-caveats",
+        "artifactId": "art-recipe-2017-primary-article-pdf",
+        "locator": "§3.2.10 Land use; §3.2.12 Fossil resource scarcity; §4.1 Scenario analysis",
+        "printedPages": "144",
+        "pdfIndices": [
+          6
+        ],
+        "topics": [
+          "midpoint-to-endpoint",
+          "missing constant conversion",
+          "partial value-choice treatment"
+        ],
+        "limits": [
+          "Land-use conversion does not always add another causal step; fossil resources lack a constant midpoint-to-endpoint factor. Value-choice influence was not implemented in several categories due to missing data."
+        ]
+      },
+      {
+        "id": "psg-recipe-2017-region-and-missing-pathways",
+        "artifactId": "art-recipe-2017-primary-article-pdf",
+        "locator": "§§4.2–4.4 Discussion; §5 Conclusion",
+        "printedPages": "145",
+        "pdfIndices": [
+          7
+        ],
+        "topics": [
+          "regionalization",
+          "local/global species loss",
+          "missing pathways",
+          "version scope"
+        ],
+        "limits": [
+          "Regional differentiation is limited to named categories. Ecosystem damage is aggregated local species loss, not a verified global extinction count. Article describes 17 midpoint categories; do not substitute a later 18-category release or current software behavior. Indoor/direct-pesticide omissions are this publication scope only."
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "Publisher PDF and VLIZ institutional copy acquired with identical SHA256; selected §§1–4 read, Fig.1/page140 rendered and inspected.",
+      "methodologicalScope": "Selected original method/developer documentation; source-bound interpretation, not independent scientific model validation or current normative authority.",
+      "independence": "Related model developers and shared toxicity data create dependence; two copies of the ReCiPe article are one artifact, not independent evidence.",
+      "limitations": [
+        "Full supplements, factor spreadsheets and software were not inspected or executed.",
+        "RIVM original report bytes unavailable locally; original article is a separate work.",
+        "2020 publisher correction concerns copyright/OpenChoice; technical equivalence across later report releases was not established."
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "Current publisher article page statesCC BY4.0, including third-party-material caveat; DOI10.1007/s11367-016-1246-y. Acquired PDF retains historical2016 copyright imprint; keep license correction provenance. No original text/images redistributed in this proposal.",
+    "unread": [
+      "Individual category derivations beyond selected sections; references not systematically screened.",
+      "Electronic Supplementary Material1/2, factor releases,2017report erratum implementation and installed software."
+    ],
+    "sourceKeys": []
+  },
+  {
+    "id": "rd-usetox-2-documentation-v11",
+    "workId": "work-usetox-2-documentation-v11",
+    "title": "USEtox®2.0 Documentation(Version1.1)",
+    "version": "Formal citation2017; acquired mutable208-page carrier metadata created/modified2026-01-24 (+08:00); DOI10.11581/DTU:00000011",
+    "url": "https://usetox.org/sites/default/files/assets/USEtox_Documentation.pdf",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "How do this source’s indicators, model boundaries, temporal/spatial assumptions and value choices constrain interpretation?",
+    "argumentSummary": "USEtox文档把因子连接为归趋、暴露和效应，区分比较性毒性潜势与损害指标。箱式空间和长期平均假设限制局地预测；recommended/indicative是可靠性分类而非自动排除许可。文档新增功能表与局限章节存在可定位冲突，不能直接当成某一可执行发行版的能力表。",
+    "artifacts": [
+      {
+        "id": "art-usetox-2-documentation-v11-carrier-2026",
+        "mediaType": "application/pdf",
+        "sha256": "c84c5b1737bc821c7e251eb72bcad4fedbe292cdca6a0d880c3a00a701819116",
+        "resolvedUrl": "https://usetox.org/sites/default/files/assets/USEtox_Documentation.pdf",
+        "pageCount": 208
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-usetox-v11-identity-rights",
+        "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+        "locator": "Title/imprint and Preface",
+        "printedPages": "1;3–4",
+        "pdfIndices": [
+          0,
+          2,
+          3
+        ],
+        "topics": [
+          "model/document version",
+          "rights",
+          "factor flags"
+        ],
+        "limits": [
+          "Downloaded carrier creation/modification metadata is January 2026 while formal citation/imprint says2017 v1.1. File hash fixes the observed carrier; it does not prove a new scientific edition or original2017 bytes."
+        ]
+      },
+      {
+        "id": "psg-usetox-v11-pathways-units",
+        "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+        "locator": "Readers Guide Fig.1; §§2.1–2.2",
+        "printedPages": "11;20–23",
+        "pdfIndices": [
+          10,
+          19,
+          20,
+          21,
+          22
+        ],
+        "topics": [
+          "fate",
+          "exposure",
+          "effects",
+          "midpoint units",
+          "endpoint units",
+          "value choices"
+        ],
+        "limits": [
+          "Figure1 visually checked. CTUh cases and CTUe PAF-volume-time are comparative potential indicators. Equal treatment of cancer/non-cancer at midpoint and disease-severity conversion at endpoint are distinct conventions. They do not establish actual local cases or safety."
+        ]
+      },
+      {
+        "id": "psg-usetox-v11-space-time",
+        "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+        "locator": "§§2.3.1–2.3.5; §§11.2.1–11.2.2",
+        "printedPages": "23–27;173",
+        "pdfIndices": [
+          22,
+          23,
+          24,
+          25,
+          26,
+          172
+        ],
+        "topics": [
+          "well-mixed compartments",
+          "spatial scales",
+          "mass balance",
+          "long-term average",
+          "steady-state"
+        ],
+        "limits": [
+          "Generic nested boxes and long-term average transport/exposure assumptions do not recover site-specific peaks, seasonal episodes or actual individual risk. No runtime steady-state solution was independently reproduced."
+        ]
+      },
+      {
+        "id": "psg-usetox-v11-uncertainty-and-missing-input",
+        "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+        "locator": "§§2.4.1–2.5",
+        "printedPages": "27–28",
+        "pdfIndices": [
+          26,
+          27
+        ],
+        "topics": [
+          "model uncertainty",
+          "parameter uncertainty",
+          "linear response",
+          "missing toxicity data",
+          "matrix framework"
+        ],
+        "limits": [
+          "The manual lists zero human effect factor when toxicology information is absent among input uncertainties. This is a documented modeling convention/limitation, not evidence that the true effect is zero; actual database flags/workbook implementation were not checked. No equation reproduction claimed."
+        ]
+      },
+      {
+        "id": "psg-usetox-v11-factor-flags",
+        "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+        "locator": "§3.1.4; §3.3.2, including continuation items1–4",
+        "printedPages": "36–37;41–42",
+        "pdfIndices": [
+          35,
+          36,
+          40,
+          41
+        ],
+        "topics": [
+          "recommended/indicative",
+          "uncertainty",
+          "sensitivity",
+          "excluded emissions"
+        ],
+        "limits": [
+          "Keep the whole sequence: initial use of both classes; sensitivity when indicative factors dominate; possible exclusion if conclusions change requires explicit omission and interpretation caveat. Do not quote the absolute-sounding item1 while dropping item4. Numeric uncertainty guidance is author rough expert judgment, not a measured confidence interval verified here."
+        ]
+      },
+      {
+        "id": "psg-usetox-v11-comparative-scope",
+        "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+        "locator": "§11 introduction and §11.1; §§11.2.3–11.2.6; §§11.3–11.4.4",
+        "printedPages": "171–178",
+        "pdfIndices": [
+          170,
+          171,
+          172,
+          173,
+          174,
+          175,
+          176,
+          177
+        ],
+        "topics": [
+          "comparative impact assessment",
+          "risk boundary",
+          "chemical coverage",
+          "exposure",
+          "uncertainty"
+        ],
+        "limits": [
+          "Authors restrict applicability to comparative potentials rather than absolute local health/ecosystem estimates. Chapter11 carries statements that conflict with explicit2.0 update/indoor chapters; use the conflict passage before promoting any omission claim."
+        ]
+      },
+      {
+        "id": "psg-usetox-v11-feature-limit-conflict",
+        "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+        "locator": "§1.4 Table1; §7.1; §11.4.2",
+        "printedPages": "18–19;144;177",
+        "pdfIndices": [
+          17,
+          18,
+          143,
+          176
+        ],
+        "topics": [
+          "source-internal conflict",
+          "indoor inhalation",
+          "pesticide crop residues",
+          "release verification"
+        ],
+        "limits": [
+          "Table1 explicitly adds residential/occupational indoor exposure and pesticide-residue pathways, and §7.1 describes indoor module; §11.4.2 still lists indoor inhalation and direct pesticide residues among excluded pathways. Textual conflict observed; its cause and executable behavior unresolved. Do not silently repair the source or infer that either paragraph applies to every version."
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "OfficialUSEtox PDF downloaded unencrypted; title/imprint and selected framework/uncertainty/interpretation/limitations passages read; Fig.1/page11 and limitations/page177 visually inspected.",
+      "methodologicalScope": "Selected original method/developer documentation; source-bound interpretation, not independent scientific model validation or current normative authority.",
+      "independence": "Related model developers and shared toxicity data create dependence; two copies of the ReCiPe article are one artifact, not independent evidence.",
+      "limitations": [
+        "No full-document reading or numerical reproduction.",
+        "No model/workbook/database release was acquired or audited.",
+        "Internal feature/limitation inconsistency is observed; origin/runtime resolution remains open.",
+        "Mutable URL and2026carrier metadata do not establish edition history.",
+        "The acquired carrier retains a 2017 citation template but shows 2026 file metadata and current affiliations; it is not established to be byte- or content-identical to a 2017 archived original."
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "Imprintp3 and official documentation landing page authorize reproduction with full source acknowledgment; formal citation Fantke(ed.)et al.2017USEtox2.0DocumentationVersion1.1. All trademark/other rights retained; no blanket dataset/software license inferred. This proposal publishes authored annotations/locators only.",
+    "unread": [
+      "Most fate/exposure/effect derivations, appendices and substance databases.",
+      "Original Rosenbaum2008 article full text remains unacquired; its abstract is not substituted for this manual.",
+      "Current model release, spreadsheet formulae, factors and exact database behavior."
+    ],
+    "sourceKeys": []
+  },
+  {
+    "id": "rd-epa-1974-nine-beverage",
+    "workId": "work-hunt-1974-nine-beverage",
+    "title": "Resource and Environmental Profile Analysis of Nine Beverage Container Alternatives: Final Report",
+    "version": "SW-91c / EPA530SW91C；1974 题名页图像核验；单一 185 页扫描含 Volume I 与 Volume II；前者署 Hunt/Franklin，后者署 Hunt/Welch/Cross/Woodall",
+    "url": "https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=9100M5VS.TXT",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "该同期 REPA 如何设比较基准、类别和适用边界？",
+    "argumentSummary": "报告以具体容器系统提供饮料为比较对象，明确类别和排除项；它解释了从过程输出数量转换为服务比较基准的步骤，并限制对其他产品和实际损害的推断。",
+    "artifacts": [
+      {
+        "id": "art-epa-1974-nine-beverage-html",
+        "mediaType": "text/html",
+        "sha256": "b4c65cff7c3b55f292060f2537ef52bee7648cd01d54e3e29e269516a2ce5fb6",
+        "resolvedUrl": "https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=9100M5VS.TXT",
+        "bytes": 418608
+      },
+      {
+        "id": "art-epa-1974-nine-beverage-pdf",
+        "mediaType": "application/pdf",
+        "sha256": "5ff8112421bbea07fa0a881fc867c0a2fef93972518faa381e457a5fde3bef19",
+        "resolvedUrl": "https://nepis.epa.gov/Exe/ZyPDF.cgi/9100M5VS.PDF?Dockey=9100M5VS.PDF",
+        "bytes": 7131045,
+        "pageCount": 185
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-epa-1974-identity",
+        "artifactId": "art-epa-1974-nine-beverage-html",
+        "locator": "封面、题名页、出版说明、Foreword",
+        "printedPages": "未编号前置页",
+        "topics": [
+          "委托身份",
+          "卷别作者",
+          "出版年份",
+          "目的"
+        ],
+        "limits": [
+          "题名页的1974在 HTML OCR 中遗漏，由 PDF 图像补证。",
+          "出版审查/再现不等于所有结果正确或已获现代标准认证。"
+        ],
+        "nepisBlocks": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "psg-epa-1974-summary-scope",
+        "artifactId": "art-epa-1974-nine-beverage-html",
+        "locator": "Volume I Chapter I Summary；Table1 与比较说明",
+        "printedPages": "1–2；4",
+        "topics": [
+          "七类参数",
+          "排除项",
+          "容器方案",
+          "外推范围"
+        ],
+        "limits": [
+          "原报告的具体系统比较不证明材料普遍优劣；历史结果不作为当前产品结论。",
+          "表中数值未独立复算。"
+        ],
+        "nepisBlocks": [
+          7,
+          8,
+          10
+        ]
+      },
+      {
+        "id": "psg-epa-1974-method",
+        "artifactId": "art-epa-1974-nine-beverage-html",
+        "locator": "Volume I Chapter II A–B；Figure1 图例",
+        "printedPages": "9–10",
+        "topics": [
+          "比较目的",
+          "广义 manufacture",
+          "过程链"
+        ],
+        "limits": [
+          "术语 manufacture 在该文涵盖的活动范围不能按今天的工厂制造阶段直接理解。",
+          "Figure1 结构未做完整视觉核验。"
+        ],
+        "nepisBlocks": [
+          15,
+          16
+        ]
+      },
+      {
+        "id": "psg-epa-1974-category-meaning",
+        "artifactId": "art-epa-1974-nine-beverage-html",
+        "locator": "Chapter II B 的逐类说明；C Organic Raw Materials",
+        "printedPages": "11–14",
+        "topics": [
+          "类别含义",
+          "排水量",
+          "排放质量",
+          "能源与原料"
+        ],
+        "limits": [
+          "类别名称不等于现代 LCIA 类别；p11 的水指标按排出过程水体积定义。",
+          "本轮没有检验全部基础数据或损害模型。"
+        ],
+        "nepisBlocks": [
+          17,
+          18,
+          19,
+          20
+        ]
+      },
+      {
+        "id": "psg-epa-1974-service-basis",
+        "artifactId": "art-epa-1974-nine-beverage-html",
+        "locator": "Chapter II D Methodology 与 E 开头",
+        "printedPages": "14–15",
+        "topics": [
+          "过程基准",
+          "共产品示例",
+          "服务比较单位"
+        ],
+        "limits": [
+          "共产品算例是假设示例；未将它判定为所有后继分配方法的起源或实证证明。"
+        ],
+        "nepisBlocks": [
+          20,
+          21
+        ]
+      },
+      {
+        "id": "psg-epa-1974-assumptions",
+        "artifactId": "art-epa-1974-nine-beverage-html",
+        "locator": "Chapter II E Assumptions and Limitations；Figure III-1 附近",
+        "printedPages": "16–18",
+        "topics": [
+          "地域代理",
+          "数据质量",
+          "资本品",
+          "回收",
+          "消费者出行",
+          "地点影响"
+        ],
+        "limits": [
+          "未核验相应数据选择与排除假设是否足以维持作者的误差判断。",
+          "条目是当时的研究约定，不是现代通用规则。"
+        ],
+        "nepisBlocks": [
+          22,
+          23,
+          24
+        ]
+      },
+      {
+        "id": "psg-epa-1974-rank-and-energy",
+        "artifactId": "art-epa-1974-nine-beverage-html",
+        "locator": "Chapter III A–B 开头与 D Energy Considerations",
+        "printedPages": "19；33",
+        "topics": [
+          "比较与排序",
+          "1973 能源危机的同期叙述"
+        ],
+        "limits": [
+          "未核读完整排序推理或复算 Tables13/14。",
+          "能源危机段落不是方法起源的因果证明。"
+        ],
+        "nepisBlocks": [
+          25,
+          39
+        ]
+      },
+      {
+        "id": "psg-epa-1974-image-check",
+        "artifactId": "art-epa-1974-nine-beverage-pdf",
+        "locator": "题名及指定印刷页图像与 NEPIS 对照",
+        "printedPages": "题名页；1；11–12；15；18；33",
+        "topics": [
+          "印刷页与 HTML 对应",
+          "关键分类和单位"
+        ],
+        "limits": [
+          "仅这些页面完成图像核验；取得整份扫描不代表整本细读。"
+        ],
+        "pdfIndices": [
+          1,
+          7,
+          17,
+          18,
+          21,
+          24,
+          39
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "实际原始 NEPIS HTML 选段与 185 页原报告扫描；指定页图像复核，PDF 无可提取 OCR 文本。",
+      "methodologicalScope": "1974 年特定容器系统的 REPA 及其假设；不声称现代 LCIA 完整性。",
+      "independence": "与 1972 RTI 报告为不同承包研究，仍共享 EPA/行业数据语境；未将同主题视为独立实证重复。",
+      "limitations": [
+        "Volume II 的逐过程数据没有完成细读或复算。",
+        "没有取得所述私人1969委托原报告。",
+        "文本类别用语与现代含义的关系需要逐条限定。"
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "公开 EPA 承包研究报告；没有据机构仓储或出版批准推断所有承包材料整体为公有领域。仅发布原创释义、元数据和定位；不重传原文、表图或扫描。",
+    "unread": [
+      "Volume I 未列的结果段和技术推论。",
+      "完整 Volume II、基础数据、引用和独立评审材料。"
+    ],
+    "sourceKeys": [
+      "EPA530SW91C"
+    ]
+  },
+  {
+    "id": "rd-epa-1972-beverage-problem",
+    "workId": "work-bingham-mulligan-1972-beverage-problem",
+    "title": "The Beverage Container Problem: Analysis and Recommendations",
+    "version": "EPA-R2-72-059；September1972 题名；现有载体 Review Notice 注 April1973 reprint/new preliminary pages；RTI Bingham/Mulligan，contract68-03-0038；200 页扫描",
+    "url": "https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=9101ESAG.TXT",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "同期政策研究怎样界定容器问题及资源比较的边界？",
+    "argumentSummary": "研究面向 EPA 政策选择，区分资源、固废和散落垃圾的政策理由；选段同时讨论其他消费支出与投入产出资料，提醒容器系统节约和经济整体净影响是不同问题。",
+    "artifacts": [
+      {
+        "id": "art-epa-1972-beverage-problem-html",
+        "mediaType": "text/html",
+        "sha256": "6b3349db00a1ff7e2b78d741b7e57195df8820ef0f1ac3fcd2ed7f79a15727f0",
+        "resolvedUrl": "https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=9101ESAG.TXT",
+        "bytes": 391038
+      },
+      {
+        "id": "art-epa-1972-beverage-problem-pdf",
+        "mediaType": "application/pdf",
+        "sha256": "15b773cf026455c338c094b471f8826a1f0ff1c63424555fb3c598be62021701",
+        "resolvedUrl": "https://nepis.epa.gov/Exe/ZyPDF.cgi/9101ESAG.PDF?Dockey=9101ESAG.PDF",
+        "bytes": 7685829,
+        "pageCount": 200
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-epa-1972-identity",
+        "artifactId": "art-epa-1972-beverage-problem-html",
+        "locator": "封面、题名、Review Notice、Foreword、Acknowledgment",
+        "printedPages": "题名；ii–iv",
+        "topics": [
+          "报告与再版",
+          "承包目的",
+          "审查边界"
+        ],
+        "limits": [
+          "1972 报告日期、1973 再印时间和更早的数据年份分别记录。",
+          "批准出版不表示报告观点就是 EPA 政策。"
+        ],
+        "nepisBlocks": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "id": "psg-epa-1972-policy-question",
+        "artifactId": "art-epa-1972-beverage-problem-html",
+        "locator": "Chapter1 §§1.1–1.3 选段",
+        "printedPages": "1–5",
+        "topics": [
+          "政策问题",
+          "对象定义",
+          "地域限制",
+          "不确定性",
+          "公众关切"
+        ],
+        "limits": [
+          "未读完整政策评价与建议；引用的法规事实未独立核验。",
+          "全国视角与判断使用在作者自述中有明确限定。"
+        ],
+        "nepisBlocks": [
+          13,
+          14,
+          15,
+          16,
+          17
+        ]
+      },
+      {
+        "id": "psg-epa-1972-resource-frame",
+        "artifactId": "art-epa-1972-beverage-problem-html",
+        "locator": "Chapter2 §§2.1–2.2.3 选段",
+        "printedPages": "7–11",
+        "topics": [
+          "政策理由",
+          "fillings 与容器数",
+          "数据年份"
+        ],
+        "limits": [
+          "图表趋势只作原报告上下文，未核验预测是否实现。",
+          "不是完整材料资源史。"
+        ],
+        "nepisBlocks": [
+          19,
+          20,
+          21,
+          22,
+          23
+        ]
+      },
+      {
+        "id": "psg-epa-1972-spending-io",
+        "artifactId": "art-epa-1972-beverage-problem-html",
+        "locator": "§2.2.5 Energy 与后续讨论；Table5 及限定",
+        "printedPages": "14–17",
+        "topics": [
+          "消费者支出",
+          "投入产出",
+          "全国与单项比较",
+          "货币基准"
+        ],
+        "limits": [
+          "对其他消费和 IO 的讨论不能直接称为现代 consequential LCA 已建立。",
+          "Appendix D 全表及原1963 IO 数据未核读/复算；没有验证实际行为反应。"
+        ],
+        "nepisBlocks": [
+          26,
+          27,
+          28,
+          29
+        ]
+      },
+      {
+        "id": "psg-epa-1972-image-check",
+        "artifactId": "art-epa-1972-beverage-problem-pdf",
+        "locator": "题名、Review Notice 及指定正文扫描核对",
+        "printedPages": "题名；ii；3；14–15",
+        "topics": [
+          "原作时间",
+          "重印身份",
+          "正文与表的关系"
+        ],
+        "limits": [
+          "图像核验限所列页，不把原扫描全部200页计为已读。"
+        ],
+        "pdfIndices": [
+          1,
+          2,
+          15,
+          26,
+          27
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "实际原始 NEPIS HTML 与 200 页 EPA 原始扫描；题名/再版页及关键正文页面图像核验。",
+      "methodologicalScope": "1972 年容器政策分析中的资源与能源论证；不将其冒充九容器 REPA 或现代标准化 LCA。",
+      "independence": "RTI 研究与 MRI 的1974报告问题设定和方法范围不同；共同机构委托不证明完全独立数据或直接思想影响。",
+      "limitations": [
+        "未读 Appendix D 完整计算、全部政策建议或后来立法结果。",
+        "历史资源供给/消费判断不作为当前事实。"
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "公开 EPA 承包报告；Review Notice 的出版批准和非背书边界已核读。未核定全部材料的整体再利用许可；只提供原创分析和定位，不重传原件。",
+    "unread": [
+      "未列正文、政策方案全比较、附录及引用原件。",
+      "1963 原始投入产出资料。"
+    ],
+    "sourceKeys": [
+      "EPAR272059"
+    ]
+  },
+  {
+    "id": "rd-sun-2002-cleaner-production",
+    "workId": "lit-com-11",
+    "title": "生命周期评价在清洁生产领域的应用前景 / The Application Prospect of Life Cycle Assessment in Cleaner Production",
+    "version": "环境科学研究15(4):4–6(2002)；收稿2001-11-12；PDF载体生成/修改2007-06-19(+08:00)",
+    "url": "https://www.hjkxyj.org.cn/cn/article/pdf/preview/20020402.pdf",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "这篇同期机构作者文章把LCA放在什么清洁生产/政策用途里，哪些是已举例实践，哪些只是应用前景？",
+    "argumentSummary": "作者把清洁生产的预防原则沿产品全生命周期展开，提出上下游审计、生态设计、回收及园区筛选用途。国内标准、资助与合作叙述是同期作者举例；第4–5节是面向后续实践的展望和建议，不能写成全国已普遍采用或已证明减排效果。",
+    "artifacts": [
+      {
+        "id": "art-sun-2002-original-pdf",
+        "mediaType": "application/pdf",
+        "sha256": "e29376b6695749c47ca70cc98964699d268dfbfe4ea60a769c4ffeaa37b37562",
+        "resolvedUrl": "https://www.hjkxyj.org.cn/cn/article/pdf/preview/20020402.pdf",
+        "pageCount": 3
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-sun-2002-identity",
+        "artifactId": "art-sun-2002-original-pdf",
+        "locator": "题名页、双语摘要、收稿日期及文章编号",
+        "printedPages": "4",
+        "pdfIndices": [
+          0
+        ],
+        "topics": [
+          "作品身份",
+          "中文术语",
+          "发表/收稿/载体时间"
+        ],
+        "limits": [
+          "页眉为15(4):4–6；2001-11-12为收稿日，不是发表日。PDF2007生成时间不证明文章2007改版。"
+        ]
+      },
+      {
+        "id": "psg-sun-2002-history-as-retrospect",
+        "artifactId": "art-sun-2002-original-pdf",
+        "locator": "§1 国际上LCA的产生和发展",
+        "printedPages": "4",
+        "pdfIndices": [
+          0
+        ],
+        "topics": [
+          "回顾叙述",
+          "阶段划分",
+          "历史证据边界"
+        ],
+        "limits": [
+          "作者在2002年回顾1960年代至1990年代，并以产生/发展/成熟分期；不据此证明起源优先权或所有方法均已成熟。"
+        ]
+      },
+      {
+        "id": "psg-sun-2002-purpose-and-types",
+        "artifactId": "art-sun-2002-original-pdf",
+        "locator": "§§2.1–2.3 LCA与清洁生产的联系",
+        "printedPages": "5",
+        "pdfIndices": [
+          1
+        ],
+        "topics": [
+          "清洁生产",
+          "全生命周期",
+          "技术复杂程度",
+          "用途边界"
+        ],
+        "limits": [
+          "概念型/简化型/详细型是此文的技术复杂程度分类，不是所有方法的认证等级。ISO相关表述未与授权标准条款独立核对。"
+        ]
+      },
+      {
+        "id": "psg-sun-2002-contemporary-local-account",
+        "artifactId": "art-sun-2002-original-pdf",
+        "locator": "§3.2 我国LCA研究和应用情况，含跨页延续",
+        "printedPages": "5–6",
+        "pdfIndices": [
+          1,
+          2
+        ],
+        "topics": [
+          "同期机构叙述",
+          "标准转化",
+          "资助/合作线索",
+          "应用例子"
+        ],
+        "limits": [
+          "纸面提到前两项标准已发布、另两项预计2002年发布；预计不是已证实事件。所列合作、基金、应用是作者举例，不是全国代表性调查。"
+        ]
+      },
+      {
+        "id": "psg-sun-2002-prospects-not-outcomes",
+        "artifactId": "art-sun-2002-original-pdf",
+        "locator": "§§4.1–4.5；§5结论和建议",
+        "printedPages": "6",
+        "pdfIndices": [
+          2
+        ],
+        "topics": [
+          "应用前景",
+          "预防污染",
+          "上下游边界",
+          "制度目的",
+          "研究建议"
+        ],
+        "limits": [
+          "对审计、规范、生态设计、回收和园区的用途主要是展望和建议；没有实际对照结果、效果量或全国采纳率。"
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "从前一任务缓存复用原始期刊PDF，SHA256一致；全部3页文字与页面图像对读。选段限定了每种叙述能支持的范围。",
+      "methodologicalScope": "原语机构/方法文本的有界解读；区分同期目的、后来回顾、作者建议与实际测量，不宣称国家完整历史或科学验证。",
+      "independence": "Sun2002与Xie2022同有孙启宏署名并共享机构研究背景；后者又沿既有综述引文链展开，不作为完全独立的国家历史证实。",
+      "limitations": [
+        "PDF文本层拉丁字母/数字编码异常，身份、年份、分节与关键叙述依据页面图像确认。",
+        "3页短论述没有提供系统检索、代表性样本或效果评估；国际起源史仅为回顾。"
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "期刊正常公开下载的原始PDF，未发现或核实适用于本载体的明确开放再利用许可；第三方原作保留权利。两份已取得PDF均未加密。原文与页面图像仅留仓库外任务缓存；公开交接仅拟用原创释义、书目信息和定位。",
+    "unread": [
+      "所引原始研究、标准条款、数据集和软件实现没有因本次文章阅读而获得验证。"
+    ],
+    "sourceKeys": []
+  },
+  {
+    "id": "rd-xie-2022-lcia-localization",
+    "workId": "work-xie-2022-lcia-localization-review",
+    "title": "生命周期影响评价方法及本地化研究进展 / Research progress on the life cycle impact assessment methods and their localization in China",
+    "version": "环境工程技术学报12(6):2148–2156，2022年11月；DOI10.12153/j.issn.1674-991X.20210544；不是2002同期史料",
+    "url": "https://www.hjgcjsxb.org.cn/cn/article/pdf/preview/10.12153/j.issn.1674-991X.20210544.pdf",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "“本地化”在此综述具体改变哪些层次？77%统计到底覆盖哪一个文献样本？",
+    "argumentSummary": "综述区分本地清单基础与影响方法，追查基准年、政策目标、地区参数和支付意愿。其77%来自中文期刊关键词样本中243篇明确方法使用的子集，不能代表全部国内LCA。后来研究议程、原模型术语压缩和公式符号疑点均需保留。",
+    "artifacts": [
+      {
+        "id": "art-xie-2022-localization-original-pdf",
+        "mediaType": "application/pdf",
+        "sha256": "5d560b070b757bc34c9bd542fe7fbff2c782d1ea2db2ac062e9396a3a7ba238d",
+        "resolvedUrl": "https://www.hjgcjsxb.org.cn/cn/article/pdf/preview/10.12153/j.issn.1674-991X.20210544.pdf",
+        "pageCount": 9
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-xie-2022-identity-and-purpose",
+        "artifactId": "art-xie-2022-localization-original-pdf",
+        "locator": "题名、双语摘要、刊期、收稿日期；引言",
+        "printedPages": "2148–2149",
+        "pdfIndices": [
+          0,
+          1
+        ],
+        "topics": [
+          "正式身份",
+          "综述目的",
+          "2022回顾"
+        ],
+        "limits": [
+          "正式发表为2022年11月12(6):2148–2156；PDF收稿2021-09-28与英语网页元数据2021-09-27不一致，保留差异。"
+        ]
+      },
+      {
+        "id": "psg-xie-2022-inventory-vs-impact-localization",
+        "artifactId": "art-xie-2022-localization-original-pdf",
+        "locator": "§1概述；§3 LCIA-Y/ECER介绍及局部类别修正",
+        "printedPages": "2149;2151–2153",
+        "pdfIndices": [
+          1,
+          3,
+          4,
+          5
+        ],
+        "topics": [
+          "数据库与影响模型",
+          "标准化基准",
+          "政策目标",
+          "地区参数",
+          "本地化层次"
+        ],
+        "limits": [
+          "数据库建设、本地参数、参考物质、归一化基准、权重和完整因果模型是不同改变；综述不是所引原模型的推导或验证。"
+        ]
+      },
+      {
+        "id": "psg-xie-2022-bibliometric-denominator",
+        "artifactId": "art-xie-2022-localization-original-pdf",
+        "locator": "§3 检索、关键词分析、进一步筛选与Fig.3",
+        "printedPages": "2151–2152",
+        "pdfIndices": [
+          3,
+          4
+        ],
+        "topics": [
+          "CNKI",
+          "中文期刊",
+          "1995–2020",
+          "827检索/243筛选/186国外方法",
+          "代表性限制"
+        ],
+        "limits": [
+          "77%是186/243经明确方法使用筛选的论文，不是827的比例，也不是所有中国LCA活动的普查。检索仅记一个中文关键词、中文期刊与所述年份；未提供完整逐篇编码数据或双人筛选审计。两页图像已复核。"
+        ]
+      },
+      {
+        "id": "psg-xie-2022-technical-binning-and-formula-caution",
+        "artifactId": "art-xie-2022-localization-original-pdf",
+        "locator": "§2方法分类；§3式(1)与符号说明",
+        "printedPages": "2149–2151",
+        "pdfIndices": [
+          1,
+          2,
+          3
+        ],
+        "topics": [
+          "术语压缩",
+          "中点/终点",
+          "权重符号",
+          "原模型回读"
+        ],
+        "limits": [
+          "§2把方法放入中点/终点分组，后又说明ReCiPe同时提供两层结果；不能把分组当完整版本能力表。式(1)前文描述权重，式后却将WF(j)释为资源可供应期；图像确认该字样，需回原模型核查，不直接复现公式。"
+        ]
+      },
+      {
+        "id": "psg-xie-2022-agenda-and-overgeneralization",
+        "artifactId": "art-xie-2022-localization-original-pdf",
+        "locator": "§4不足及对策；§5结语与展望",
+        "printedPages": "2153–2154",
+        "pdfIndices": [
+          5,
+          6
+        ],
+        "topics": [
+          "基准年更新",
+          "跨学科建模",
+          "支付意愿",
+          "研究议程",
+          "限定外推"
+        ],
+        "limits": [
+          "对完整本地模型、支付意愿数据库和政策支撑的要求是作者建议，不是已执行的国家要求。低浓度毒理适用性与跨地区支付意愿差异的广泛措辞需回所引原研究，不凭综述概括全世界或所有居民。"
+        ]
+      },
+      {
+        "id": "psg-xie-2022-citation-chain",
+        "artifactId": "art-xie-2022-localization-original-pdf",
+        "locator": "参考文献[1]、[50]、[51]、[59]–[64]",
+        "printedPages": "2154;2156",
+        "pdfIndices": [
+          6,
+          8
+        ],
+        "topics": [
+          "原始方法线索",
+          "LCIA-Y",
+          "ECER",
+          "局部毒理研究",
+          "共同作者依赖"
+        ],
+        "limits": [
+          "[1]对应已映射lit-com-12白璐等2010综述；[50]杨建新等2001、[51]王洪涛2011和[60]李雪迎等2021仍是待取得的原研究。不能以本次综述阅读替代这些原件。"
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "期刊原始9页PDF，题名/方法/讨论与指定参考文献核读；pp2151–2152页面图像确认检索分母、公式符号及图示。",
+      "methodologicalScope": "原语机构/方法文本的有界解读；区分同期目的、后来回顾、作者建议与实际测量，不宣称国家完整历史或科学验证。",
+      "independence": "Sun2002与Xie2022同有孙启宏署名并共享机构研究背景；后者又沿既有综述引文链展开，不作为完全独立的国家历史证实。",
+      "limitations": [
+        "未复跑CNKI检索或核验243篇逐篇分类；文章未给出本轮可用的完整抽取清单。",
+        "所引方法/毒理/经济原文尚待取得；不把本地化标签当作准确性证明。"
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "期刊正常公开下载的原始PDF，未发现或核实适用于本载体的明确开放再利用许可；第三方原作保留权利。两份已取得PDF均未加密。原文与页面图像仅留仓库外任务缓存；公开交接仅拟用原创释义、书目信息和定位。",
+    "unread": [
+      "所引原始研究、标准条款、数据集和软件实现没有因本次文章阅读而获得验证。"
+    ],
+    "sourceKeys": []
+  },
+  {
+    "id": "rd-huijbregts-1998-framework-uva",
+    "workId": "lit-m08",
+    "title": "Application of uncertainty and variability in LCA. Part I — read via Huijbregts 2001 thesis §2.1",
+    "version": "Article DOI 10.1007/BF02979835, IJLCA 3(5):273–280, September 1998. Actual carrier: 2001 UvA dissertation, Chapter 2 §2.1 opening and printed pp15–24, rather than publisher pagination. Repository wrapper generated 2026-11-04; not a new scientific edition; 193 PDF pages.",
+    "url": "https://dare.uva.nl/id/8c1c7841-e75a-4c1b-bd8c-dac0d2caed3f",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "Which uncertainty/variability distinctions are made, and how does the target of estimation affect distribution interpretation?",
+    "argumentSummary": "The framework separates several uncertainty and variability sources. Parameter simulation presupposes specified distributions and correlations. Its illustrative factory appendix distinguishes spread across sources from uncertainty in their mean under stated assumptions.",
+    "artifacts": [
+      {
+        "id": "art-huijbregts-2001-uva-thesis",
+        "mediaType": "application/pdf",
+        "sha256": "fdf20133f9cd068a925e19eb24726bb56c4f24df743a847c8c02f8a61ad3a082",
+        "resolvedUrl": "https://pure.uva.nl/ws/files/3275047/16759_Huijbregts_Mark_FNWI.pdf",
+        "pageCount": 193
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-huij1998-uva-identity",
+        "artifactId": "art-huijbregts-2001-uva-thesis",
+        "locator": "Repository cover; thesis title/defense page; §2.1 publication note",
+        "topics": [
+          "carrier identity",
+          "article/thesis distinction"
+        ],
+        "limits": [
+          "No direct publisherPDF acquired; no page-by-page equivalence asserted."
+        ],
+        "printedPages": "front matter; unnumbered section opener",
+        "pdfIndices": [
+          0,
+          1,
+          14
+        ]
+      },
+      {
+        "id": "psg-huij1998-classification",
+        "artifactId": "art-huijbregts-2001-uva-thesis",
+        "locator": "§2.1 Introduction, parameter/model/choice subsections",
+        "topics": [
+          "inherent variability",
+          "parameter/model/choice uncertainty",
+          "simulation inputs"
+        ],
+        "limits": [
+          "Historical account of the then-current LCA structure; not a permanent limit on all later methods."
+        ],
+        "printedPages": "15–18",
+        "pdfIndices": [
+          15,
+          16,
+          17,
+          18
+        ]
+      },
+      {
+        "id": "psg-huij1998-variability",
+        "artifactId": "art-huijbregts-2001-uva-thesis",
+        "locator": "Spatial/temporal variability; variability between sources and objects; continuation",
+        "topics": [
+          "target-dependent use of variability",
+          "mean vs population",
+          "lost spatial/temporal context"
+        ],
+        "limits": [
+          "The framework gives a goal-dependent interpretation, not a universal rule for all product comparisons."
+        ],
+        "printedPages": "18–21",
+        "pdfIndices": [
+          18,
+          19,
+          20,
+          21
+        ]
+      },
+      {
+        "id": "psg-huij1998-tools-limits",
+        "artifactId": "art-huijbregts-2001-uva-thesis",
+        "locator": "Integration in LCA research; Tables2.1/2.2; closing qualifications",
+        "topics": [
+          "different tools for different sources",
+          "model uncertainty",
+          "limitations of probabilistic parameter analysis"
+        ],
+        "limits": [
+          "Tables read as the authors’ classification; underlying cited methods not independently tested."
+        ],
+        "printedPages": "21–23",
+        "pdfIndices": [
+          21,
+          22,
+          23
+        ]
+      },
+      {
+        "id": "psg-huij1998-sd-sem",
+        "artifactId": "art-huijbregts-2001-uva-thesis",
+        "locator": "Appendix and Table2.3",
+        "topics": [
+          "representative sample",
+          "assumed normality",
+          "measurement uncertainty",
+          "SD versus SEM"
+        ],
+        "limits": [
+          "Five-factory example is illustrative, not newly verified empirical data.",
+          "Formula radicals and sqrtN confirmed on p24 image; no general sampling-design theorem inferred."
+        ],
+        "printedPages": "23–24",
+        "pdfIndices": [
+          23,
+          24
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "Institutional thesis PDF, selected §2.1 passages read with publication note and surrounding qualifications; appendix formula/table p24 visually checked.",
+      "methodologicalScope": "Original methodological framework and illustrative statistical example; no real database or MonteCarlo implementation validated.",
+      "independence": "Cites earlier pedigree and uncertainty work. It is another carrier of the1998 article, not an independent replication of that work.",
+      "limitations": [
+        "UvA labels the thesis final published version, not necessarily publisher version of each embedded article.",
+        "No full thesis reading; §2.2/PartII not assessed.",
+        "No uncertainty distribution for a real dataset estimated."
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "UvA cover restricts downloading/redistribution beyond strictly personal individual use absent permission or an open-content licence. Source remains in private external cache; no raw text/images/tables proposed for repository redistribution. Only bounded original research notes and locators.",
+    "unread": [
+      "Thesis beyond the identity and selected §2.1/PartI material.",
+      "Original journalPDF and its exact273–280page layout.",
+      "Underlying measurements and methods cited by the article."
+    ],
+    "sourceKeys": [
+      "HUIJ1998-PARTI-UVA-CARRIER"
+    ]
+  },
+  {
+    "id": "rd-ciroth-2012-pedigree-refinement",
+    "workId": "work-ciroth-2012-pedigree-refinement",
+    "title": "Refining the pedigree matrix approach in ecoinvent",
+    "version": "Andreas Ciroth, with contributions from Stéphanie Muller and Bo Weidema; May 2012, Version 7.1, phase 0 report; 88 PDF pages. Section 8 separately credits Muller. PDF metadata title differs; creation in 2014 and modification in 2017 do not establish a new scientific edition. Distinct from the later journal article, online 2013 / issue 2016.",
+    "url": "https://www.greendelta.com/wp-content/uploads/2017/03/Pedigree_report_final_May2012.pdf",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "What empirical and mathematical steps connect pedigree categories to uncertainty factors, and what remains assumed or unvalidated?",
+    "argumentSummary": "The report calibrates factors under an existing pedigree structure using normalized/grouped data and spread comparisons. Independence, reference choices and distribution conventions remain assumptions; factors and empirical coverage are qualified as tentative.",
+    "artifacts": [
+      {
+        "id": "art-ciroth-2012-pedigree-report",
+        "mediaType": "application/pdf",
+        "sha256": "91278d5d2384565aec224a092c74eac5dbce2a684925a6c15e3bfd7c6e17507c",
+        "resolvedUrl": "https://www.greendelta.com/wp-content/uploads/2017/03/Pedigree_report_final_May2012.pdf",
+        "pageCount": 88
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-ciroth2012-scores-factors",
+        "artifactId": "art-ciroth-2012-pedigree-report",
+        "locator": "Cover; §§1–2; Figure1; discussion of Figures2–5 and Equation1",
+        "topics": [
+          "identity",
+          "indicators",
+          "scores vs factors",
+          "basic uncertainty",
+          "lognormal assumption"
+        ],
+        "limits": [
+          "Figure1 andEquation1 page images checked; XML screenshots not audited as software behavior.",
+          "No numeric factor prescription adopted."
+        ],
+        "printedPages": "1,5–10",
+        "pdfIndices": [
+          0,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "id": "psg-ciroth2012-scope-definition",
+        "artifactId": "art-ciroth-2012-pedigree-report",
+        "locator": "§3; §§4.1–4.3",
+        "topics": [
+          "unit-process exchange scope",
+          "definitions",
+          "empirical sources",
+          "confounding/correlation"
+        ],
+        "limits": [
+          "Report operationalization differs from Huijbregts’s distinction; not harmonized here.",
+          "No own experiments were possible within the report project."
+        ],
+        "printedPages": "11–15",
+        "pdfIndices": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      {
+        "id": "psg-ciroth2012-calibration",
+        "artifactId": "art-ciroth-2012-pedigree-report",
+        "locator": "§§4.4–4.5; opening §5.1",
+        "topics": [
+          "scaling",
+          "filter/group construction",
+          "indicator independence assumption",
+          "triangulation"
+        ],
+        "limits": [
+          "Indicator independence assumed; empirical variation is not automatically an isolated causal score effect.",
+          "GSD/log-SD/squaredGSD conventions require reconciliation before numeric reuse."
+        ],
+        "printedPages": "15–20",
+        "pdfIndices": [
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ]
+      },
+      {
+        "id": "psg-ciroth2012-empirical-limits",
+        "artifactId": "art-ciroth-2012-pedigree-report",
+        "locator": "§§5.2.2–5.3.2; Figure18–21; Tables4–7",
+        "topics": [
+          "different-source factors",
+          "homogeneous cup study",
+          "tentative estimates",
+          "meta-uncertainty"
+        ],
+        "limits": [
+          "Detailed preceding reliability raw-data analysis not read.",
+          "Completeness study covers one homogeneous Berlin yoghurt-cup sample; no generic calibration validation inferred."
+        ],
+        "printedPages": "27–31",
+        "pdfIndices": [
+          26,
+          27,
+          28,
+          29,
+          30
+        ]
+      },
+      {
+        "id": "psg-ciroth2012-other-conclusions",
+        "artifactId": "art-ciroth-2012-pedigree-report",
+        "locator": "§§5.4.2,5.5.2–5.5.3,5.6.2–5.7,6–7; Table24",
+        "topics": [
+          "source heterogeneity",
+          "basic-factor gap",
+          "correlation gap",
+          "tentative summary"
+        ],
+        "limits": [
+          "Detailed temporal/geographical/technology analyses before these conclusions not close-read.",
+          "Summary itself reports limited mostly transport data and no explicit correlation analysis."
+        ],
+        "printedPages": "38,43,47–49",
+        "pdfIndices": [
+          37,
+          42,
+          46,
+          47,
+          48
+        ]
+      },
+      {
+        "id": "psg-ciroth2012-distribution-assumptions",
+        "artifactId": "art-ciroth-2012-pedigree-report",
+        "locator": "§§8.3–8.4.3;§§8.7–8.8",
+        "topics": [
+          "independent lognormal factors",
+          "baseline at ideal scores",
+          "distribution-family/center constraints",
+          "limits"
+        ],
+        "limits": [
+          "Middle non-lognormal derivations and MonteCarlo verification not audited.",
+          "Observed Table24p49 reliabilityscore5=n.a. versus Table29p55 numericCV requires explanation before reuse; no final typo diagnosis.",
+          "No supplied factors installed or runtime formulas certified."
+        ],
+        "printedPages": "52–55,62–63",
+        "pdfIndices": [
+          51,
+          52,
+          53,
+          54,
+          61,
+          62
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "Public report from authorcompany, identicalSHA256 at lca-net mirror; selected methods/empirical conclusions/limits read; pp6,8,49,55 visually checked.",
+      "methodologicalScope": "Phase0 empirical-method development report, not universal data-quality calibration or current ecoinvent implementation specification.",
+      "independence": "Weidema contributes to this report and coauthors original pedigree work; later journal article is related, not independent replication.",
+      "limitations": [
+        "Report works within a chosen pedigree structure and distribution assumptions.",
+        "Limited and heterogeneous empirical sources; basic uncertainty factors not calibrated in this phase.",
+        "Internal tables do not preserve the same missing-value treatment for poorest reliability score.",
+        "No source data, statistical code or later journal paper independently reproduced."
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "Public authorcompany report and authororganization mirror; no explicit open-reuse licence located. Access does not authorize redistributing report text, tables, figures or input databases under the project licence.",
+    "unread": [
+      "Most individual data-source analyses before selected conclusions.",
+      "§§8.5–8.6 derivations/simulations and annexes.",
+      "Later journal article DOI10.1007/s11367-013-0670-5 full text."
+    ],
+    "sourceKeys": [
+      "CIROTH2012-PHASE0-V7.1"
+    ]
+  },
+  {
+    "id": "rd-edelen-ingwersen-2018-data-quality",
+    "workId": "work-edelen-ingwersen-2018-data-quality",
+    "title": "The creation, management, and use of data quality information for life cycle assessment",
+    "version": "Edelen and Ingwersen; DOI 10.1007/s11367-017-1348-1. Publisher online date 2017-07-10; journal 23(4):759–772 (2018); PMC author manuscript available 2019-04-01. Actual reading: HTML author-manuscript carrier, not publisher PDF.",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5919259/",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "web-sections",
+    "question": "How does this original discussion/test account distinguish data-quality characteristics/scores, contextual fitness and quantitative uncertainty?",
+    "argumentSummary": "The authors distinguish data-quality descriptions and contextual assessment from quantitative uncertainty. They recommend complementary analysis and retaining descriptive metadata; they report scoring-reproducibility concerns.",
+    "artifacts": [
+      {
+        "id": "art-edelen-ingwersen-2018-pmc-html",
+        "mediaType": "text/html",
+        "sha256": "fac808f7774ccf69e58751e513dc3d70ec30f0540afa015836ea8553940824f3",
+        "resolvedUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5919259/"
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-ei2018-identity-fitness",
+        "artifactId": "art-edelen-ingwersen-2018-pmc-html",
+        "locator": "Citation block; §§1.1–1.3",
+        "topics": [
+          "author manuscript identity",
+          "intrinsic/contextual assessment",
+          "reported reproducibility"
+        ],
+        "limits": [
+          "Supplementary test methods/results not acquired; main-text report only.",
+          "No journal-page mapping from HTML performed."
+        ]
+      },
+      {
+        "id": "psg-ei2018-distribution-debate",
+        "artifactId": "art-edelen-ingwersen-2018-pmc-html",
+        "locator": "§1.4, especially final paragraph",
+        "topics": [
+          "score aggregation",
+          "debate over score-to-distribution justification"
+        ],
+        "limits": [
+          "Earlier studies cited in the debate not independently read.",
+          "Aggregation equations encountered, not validated."
+        ]
+      },
+      {
+        "id": "psg-ei2018-levels-metadata",
+        "artifactId": "art-edelen-ingwersen-2018-pmc-html",
+        "locator": "§§1.5–1.6;§2.1 prose,Tables2–3 and footnotes",
+        "topics": [
+          "flow/process/model levels",
+          "descriptors versus scores",
+          "contextual goals",
+          "indicator definitions"
+        ],
+        "limits": [
+          "Tables inspected in HTMLtext, not a software mapping test.",
+          "Authors’ claimed orthogonality is not an independently verified covariance property."
+        ]
+      },
+      {
+        "id": "psg-ei2018-alongside",
+        "artifactId": "art-edelen-ingwersen-2018-pmc-html",
+        "locator": "§2.4 Usage alongside quantitative uncertainty",
+        "topics": [
+          "DQA alongside uncertainty",
+          "opposing methodological position"
+        ],
+        "limits": [
+          "Author recommendation, not a consensus proof that calibration is impossible."
+        ]
+      },
+      {
+        "id": "psg-ei2018-reuse-limits",
+        "artifactId": "art-edelen-ingwersen-2018-pmc-html",
+        "locator": "§2.6;Table6;§3.1;§4;Disclaimer",
+        "topics": [
+          "contextual rescoring",
+          "nonautomatic translation",
+          "scope limitations",
+          "author/institution distinction"
+        ],
+        "limits": [
+          "Not all paper sections or supplement reviewed.",
+          "No historical software implementation or current database behavior tested."
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "Targeted public PMCHTML downloaded and hashed; selected original author-manuscript sections read with publisher identity check.",
+      "methodologicalScope": "Commentary/discussion article with reported reproducibility testing and proposed guidance; not an independent universal validation of all pedigree methods.",
+      "independence": "Different author team supplies a contrasting position; it cites pedigree work and acknowledges GreenDelta implementation collaboration, so it is not wholly isolated from that methodological network.",
+      "limitations": [
+        "PMCmain PDF did not deliver via webtool; supplement gave browser-check/reCAPTCHA page and was not bypassed.",
+        "Detailed test sample/design/results in supplement remain unread.",
+        "Paper disclaimer says it does not reflect employing institutions’ endorsement/opinion.",
+        "No literal publisher-page or PDFindex locations claimed for this HTMLcarrier."
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "Public PMCauthor manuscript; no explicit reuse licence established. PMCcopyright notice directs readers to assume standard protection absent contrary statement. Reading/free access is not redistribution or commercial-use authority.",
+    "unread": [
+      "PublisherPDF and exact printed-page mapping.",
+      "Supplementary reproducibility-test methods/results.",
+      "§2.5 aggregation derivation not audited;§2.7 software claims encountered but not tested.",
+      "Primary papers cited as previous objections to score-to-distribution methods."
+    ],
+    "sourceKeys": [
+      "EDELEN-INGWERSEN2018-PMC-AM"
+    ]
+  },
+  {
+    "id": "rd-unep-2011-databases",
+    "workId": "work-unep-setac-2011-database-guidance",
+    "title": "Global Guidance Principles for Life Cycle Assessment Databases: A Basis for Greener Processes and Products",
+    "version": "Copyright UNEP2011；ISBN978-92-807-3174-3；DTI/1410/PA；编辑Sonnemann/Vigon，章节作者另列；实际160页final PDF，元数据2011-10-17，网址2020/11为托管路径",
+    "url": "https://helpdesk.lifecycleinitiative.org/wp-content/uploads/2020/11/lca_databases_global_guidance_principles_10-17-2011_final.pdf",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "数据库指导的支持程度、数据集适用性与审查范围怎样区别于全研究和其他方法规则？",
+    "argumentSummary": "本指南面向数据链角色，要求说明用途、质量与审查所据标准；支持程度、入库一致性和具体研究适用性不能互换。原作保留少数支持性观点和自身同行评审的实质限制。",
+    "artifacts": [
+      {
+        "id": "art-unep-2011-databases-pdf",
+        "mediaType": "application/pdf",
+        "sha256": "1e466cdcea78b12ac800cc31d4f2413cc08905553f567775bdd5c51ac7c5e0ac",
+        "resolvedUrl": "https://helpdesk.lifecycleinitiative.org/wp-content/uploads/2020/11/lca_databases_global_guidance_principles_10-17-2011_final.pdf",
+        "bytes": 6768503,
+        "pageCount": 160
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-unep-2011-identity-rights",
+        "artifactId": "art-unep-2011-databases-pdf",
+        "locator": "封面、版权/免责声明与署名说明",
+        "printedPages": "未编号封面/版权页；2–3",
+        "pdfIndices": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "topics": [
+          "版本",
+          "编辑与章节作者",
+          "权利",
+          "机构非背书"
+        ],
+        "limits": [
+          "未将书名或机构参与当成所有观点的正式机构政策。"
+        ]
+      },
+      {
+        "id": "psg-unep-2011-guidance-status",
+        "artifactId": "art-unep-2011-databases-pdf",
+        "locator": "§§1.3.1–1.5 选段及推荐语言说明",
+        "printedPages": "44–46",
+        "pdfIndices": [
+          45,
+          46,
+          47
+        ],
+        "topics": [
+          "目标受众",
+          "支持程度",
+          "少数观点",
+          "推荐语言",
+          "用途"
+        ],
+        "limits": [
+          "p45/index46图像核验；shall在此书被解释为强烈推荐，不能直接升级为法律或ISO义务。",
+          "不是Chapter1全章阅读。"
+        ]
+      },
+      {
+        "id": "psg-unep-2011-dataset-goal",
+        "artifactId": "art-unep-2011-databases-pdf",
+        "locator": "Chapter2开头与§2.1",
+        "printedPages": "54–55",
+        "pdfIndices": [
+          55,
+          56
+        ],
+        "topics": [
+          "单位与聚合数据集",
+          "技术补充",
+          "目标范围",
+          "时空技术覆盖"
+        ],
+        "limits": [
+          "指南自述引用ISO，不代表本轮核验了ISO原文。",
+          "图2.1/2.2未独立视觉分析。"
+        ]
+      },
+      {
+        "id": "psg-unep-2011-validation",
+        "artifactId": "art-unep-2011-databases-pdf",
+        "locator": "§2.2.5续文及§§2.3–2.3.4；Tables2.1/2.2",
+        "printedPages": "61–64",
+        "pdfIndices": [
+          62,
+          63,
+          64,
+          65
+        ],
+        "topics": [
+          "数据适用范围",
+          "完整性",
+          "合理性",
+          "敏感性与不确定性",
+          "一致性"
+        ],
+        "limits": [
+          "未实测数据集或复算表例；对被引来源和ISO陈述保留归属。"
+        ]
+      },
+      {
+        "id": "psg-unep-2011-documentation-quality",
+        "artifactId": "art-unep-2011-databases-pdf",
+        "locator": "Chapter4 Key Messages；§§4.1–4.2.4",
+        "printedPages": "85–89",
+        "pdfIndices": [
+          86,
+          87,
+          88,
+          89,
+          90
+        ],
+        "topics": [
+          "数据库与数据集库",
+          "定量参考",
+          "质量指标",
+          "代表性",
+          "缺失与零",
+          "聚合透明度"
+        ],
+        "limits": [
+          "Table4.1 p88/index89图像核验；其标题和改动说明不是已读ISO条款。",
+          "LCI数据缺失与零的建议不自动规定本项目的LCIA因子四状态模型。"
+        ]
+      },
+      {
+        "id": "psg-unep-2011-dataset-review",
+        "artifactId": "art-unep-2011-databases-pdf",
+        "locator": "§§4.3–4.3.8，含p90脚注和Table4.2",
+        "printedPages": "89–93",
+        "pdfIndices": [
+          90,
+          91,
+          92,
+          93,
+          94
+        ],
+        "topics": [
+          "单数据集审查",
+          "内部外部用途",
+          "入库准则",
+          "审查身份与范围",
+          "保留不符合项"
+        ],
+        "limits": [
+          "p90/index91及p92/index93图像核验。",
+          "数据集审查与完整比较研究审查不能互换；p90脚注关于ISO的陈述仅归于本书。",
+          "结论绑定实际被检查事项和准则，不是普遍适用性证书。"
+        ]
+      },
+      {
+        "id": "psg-unep-2011-database-management",
+        "artifactId": "art-unep-2011-databases-pdf",
+        "locator": "§§4.4–4.5，含p93footnote3",
+        "printedPages": "93–95",
+        "pdfIndices": [
+          94,
+          95,
+          96
+        ],
+        "topics": [
+          "入库协议",
+          "角色",
+          "更新与复核",
+          "验证/审查术语"
+        ],
+        "limits": [
+          "footnote3的validation/review定义明确限本章，不强制统一其他语境。",
+          "Figure4.1只读说明和相邻文字，没有使用图形布局作独立论据。"
+        ]
+      },
+      {
+        "id": "psg-unep-2011-own-peer-review",
+        "artifactId": "art-unep-2011-databases-pdf",
+        "locator": "Annex2全文，含编辑说明",
+        "printedPages": "145–149",
+        "pdfIndices": [
+          146,
+          147,
+          148,
+          149,
+          150
+        ],
+        "topics": [
+          "过程与文本评审",
+          "评审覆盖",
+          "实质限制",
+          "多样性与共识",
+          "编者回应"
+        ],
+        "limits": [
+          "p145/index146与p148/index149图像核验。",
+          "附录称Chapter0/1及8未作相同章节评审，并保留对若干章节的批评。",
+          "同附录既说明workshop后实质改动受限，也保留编者在可能时纳入评论的说明；不据此宣称所有批评未处理。"
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "实际取得的原始公开PDF、版式保留文本和指定六页图像；原作正文与Annex2反证并读。",
+      "methodologicalScope": "2011年数据和数据库技术指导，主要面向数据库管理者、开发者和使用者；不提供现行产品或组织合规结论。",
+      "independence": "多章同一指南作品；Annex2为该卷内不同作者的评审报告，提供限定而非独立经验重复；受众与支持程度是原作自己的说明。",
+      "limitations": [
+        "仅所列选段；未阅读全部聚合/建模、适应性方法、情景或词汇表。",
+        "没有取得授权ISO全文，亦无EU方法原始或纠正文全文的可靠取得。",
+        "部分Poppler渲染报告codestream警告，所用页面肉眼可读；其他未检图形不据提取文本作结构结论。",
+        "同行评审附录承认若干指导仍缺少具体内容；不能把其总体积极评价当成逐条科学证实。"
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "版权页允许教育或非营利用途注明来源后再现；商业/转售需要UNEP事先书面许可。第三方照片/图表不假定可被本项目再许可。只提议原创释义、元数据和定位，不收录PDF、提取文本或页面图像；没有向机构发送出版物。",
+    "unread": [
+      "Chapter1未列部分；Chapter2其他数据收集部分；Chapter3完整聚合与建模。",
+      "Chapter5–8、完整Annex1术语表及Annex3/4。",
+      "被引ISO、数据库协议、评审原始意见及所有相关外部作品。"
+    ],
+    "sourceKeys": [
+      "UNEP2011-GGP"
+    ]
+  },
+  {
+    "id": "rd-unep-2020-slca-guidelines",
+    "workId": "lit-n06",
+    "title": "Guidelines for Social Life Cycle Assessment of Products and Organizations2020",
+    "version": "UNEP2020Englishedition；官网当前English链接的January2021carrier，140页；创建2020-12-10、修改2021-01-23(+08:00)，非凭元数据断言新科学版",
+    "url": "https://www.lifecycleinitiative.org/wp-content/uploads/2021/01/Guidelines-for-Social-Life-Cycle-Assessment-of-Products-and-Organizations-2020-22.1.21sml.pdf",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "相对环境LCA，研究对象、功能/报告参照、评价含义与价值选择怎样改变？三支柱为什么不能自动共用一个分数？",
+    "argumentSummary": "指南保留产品/组织两种对象及不同参照；以利益相关者与社会关系为核心，区分表现、风险和影响路径。参照量表的赋分、基准与聚合带价值选择，活动工时不是影响量，正负项数值抵消也不证明没有影响。",
+    "artifacts": [
+      {
+        "id": "art-unep-2020-slca-english-202101-carrier",
+        "mediaType": "application/pdf",
+        "sha256": "8cd5b7049f8971e5ab4b642f242916f993f9ad26c55a6f215fb9ac9d8d1b0dad",
+        "resolvedUrl": "https://www.lifecycleinitiative.org/wp-content/uploads/2021/01/Guidelines-for-Social-Life-Cycle-Assessment-of-Products-and-Organizations-2020-22.1.21sml.pdf",
+        "pageCount": 140
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-slca-2020-identity-rights-status",
+        "artifactId": "art-unep-2020-slca-english-202101-carrier",
+        "locator": "题名、版权/引用页、作者角色、Foreword与ExecutiveSummary",
+        "printedPages": "1–2;4;6;12",
+        "pdfIndices": [
+          0,
+          1,
+          3,
+          5,
+          11
+        ],
+        "topics": [
+          "edition/carrier",
+          "editor roles",
+          "rights",
+          "guidance status"
+        ],
+        "limits": [
+          "正式引用和版权为2020，官网English链接指向2021年1月文件；载体修改时间不自动证明独立科学新版。版权页声明观点不必然代表UNEP政策或决定，不把发布等同正式采纳。"
+        ]
+      },
+      {
+        "id": "psg-slca-2020-overlap-and-objects",
+        "artifactId": "art-unep-2020-slca-english-202101-carrier",
+        "locator": "§1Introduction；§§2.1–2.2，Table1与stakeholder说明",
+        "printedPages": "16;20–22",
+        "pdfIndices": [
+          15,
+          19,
+          20,
+          21
+        ],
+        "topics": [
+          "people/planet/profit overlap",
+          "products/services",
+          "stakeholders",
+          "organization scope"
+        ],
+        "limits": [
+          "三支柱只是粗略分工，健康等有重叠；不能把E-LCA/LCC/S-LCA视为互不相交且自然可相加的量。利益相关者分类不等于影响类别或测量指标。"
+        ]
+      },
+      {
+        "id": "psg-slca-2020-two-assessment-families",
+        "artifactId": "art-unep-2020-slca-english-202101-carrier",
+        "locator": "§2.4；§5.1.2；§5.2.1.1",
+        "printedPages": "27–28;81–82",
+        "pdfIndices": [
+          26,
+          27,
+          80,
+          81
+        ],
+        "topics": [
+          "reference scale",
+          "performance/risk",
+          "impact pathway",
+          "causal/correlation relationships"
+        ],
+        "limits": [
+          "TypeI参照绩效点评价表现/风险，通常不传播长期效应；TypeII可用因果或相关/回归方向关系刻画路径。文档不保证某一路径总较优；2020发展状态不改写为2026当前状态。"
+        ]
+      },
+      {
+        "id": "psg-slca-2020-functional-reference",
+        "artifactId": "art-unep-2020-slca-english-202101-carrier",
+        "locator": "§3.2Scope；§§3.2.1–3.2.2；Fig.9；Table7后参考流说明",
+        "printedPages": "42–45",
+        "pdfIndices": [
+          41,
+          42,
+          43,
+          44
+        ],
+        "topics": [
+          "functional unit",
+          "product utility",
+          "monetary modeling reference",
+          "reference flow",
+          "nonlinearity"
+        ],
+        "limits": [
+          "功能、使用场景/期间与产品utility需说明；经济/贸易模型可使用货币额作为量化表述，但不证明相同金额就是服务等效。参考流示例关联物质需求，同时明确潜在阈值使社会影响不一定线性缩放。p45图像复核；案例不当真实测量。"
+        ]
+      },
+      {
+        "id": "psg-slca-2020-activity-and-boundaries",
+        "artifactId": "art-unep-2020-slca-english-202101-carrier",
+        "locator": "§§3.2.4–3.2.6",
+        "printedPages": "48–49",
+        "pdfIndices": [
+          47,
+          48
+        ],
+        "topics": [
+          "physical/effect perspective",
+          "activity variable",
+          "working hours",
+          "cut-off"
+        ],
+        "limits": [
+          "活动变量衡量过程活动而非影响；是否采用需按goal/scope说明。按工时分摊不能自动证明损害随工时线性变化。指南在此用elementaryflow描述活动变量，不能据词面强制映射成环境数据格式的生物圈流类型。"
+        ]
+      },
+      {
+        "id": "psg-slca-2020-scales-and-risk-meaning",
+        "artifactId": "art-unep-2020-slca-english-202101-carrier",
+        "locator": "§5.2.1.1；Boxes11–12；§5.2.1.2；§5.2.1.3及其延续",
+        "printedPages": "82–87",
+        "pdfIndices": [
+          81,
+          82,
+          83,
+          84,
+          85,
+          86
+        ],
+        "topics": [
+          "ordinal scale",
+          "PRP",
+          "performance versus risk",
+          "zero/compliance",
+          "positive-negative compensation",
+          "scoring choice"
+        ],
+        "limits": [
+          "序数级别与数值间距不同；线性与非线性赋分均带选择。p83示例0可表示合规；p84说明正负项抵消到0不等于无影响。国家/部门风险代理不能确认某公司的实际绩效。p84图像复核；未复现数据库计分。"
+        ]
+      },
+      {
+        "id": "psg-slca-2020-weighting-and-pathways",
+        "artifactId": "art-unep-2020-slca-english-202101-carrier",
+        "locator": "Table14及页末限定；§5.2.4开头",
+        "printedPages": "91–92",
+        "pdfIndices": [
+          90,
+          91
+        ],
+        "topics": [
+          "equal weights",
+          "stakeholder values",
+          "preweighting data",
+          "aggregation",
+          "impact pathway"
+        ],
+        "limits": [
+          "相同权重并不自动中立；应保留加权前数据，不把社会分数同其他单位裸相加。Table14列方案及利弊而非唯一权重处方；没有在本轮评价其所有心理学概括或路径模型。"
+        ]
+      },
+      {
+        "id": "psg-slca-2020-interpretation",
+        "artifactId": "art-unep-2020-slca-english-202101-carrier",
+        "locator": "Table16；§6.1.3含续页",
+        "printedPages": "111–112",
+        "pdfIndices": [
+          110,
+          111
+        ],
+        "topics": [
+          "risk/performance/impact terminology",
+          "consistency",
+          "value judgments",
+          "sensitivity"
+        ],
+        "limits": [
+          "检查术语、数据、参照点、聚合与用途一致性；敏感性应关注活动变量、赋分、分配和权重。只核读程序，没有真实案例的统计检验或不确定性分析。"
+        ]
+      },
+      {
+        "id": "psg-slca-2020-organizational-reference",
+        "artifactId": "art-unep-2020-slca-english-202101-carrier",
+        "locator": "Chapter7及footnote39；Table17；§7.2.1与Table18",
+        "printedPages": "116–118",
+        "pdfIndices": [
+          115,
+          116,
+          117
+        ],
+        "topics": [
+          "product versus organization",
+          "reporting unit",
+          "reporting flow",
+          "reference period",
+          "comparative assertions"
+        ],
+        "limits": [
+          "SO-LCA以报告组织/组合及期间为参照，不能只将产品FU改名。指南2020版本说SO-LCA结果不拟用于公开比较声明；这是源内适用性限定，不是2026法律/标准禁令。关系到FU本身仍有讨论，脚注需保留。p117图像复核。"
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "官方完整PDF正常下载，无加密；指定段落文字阅读，p45参考流、p84风险/正负聚合与p117组织参照页面图像复核。pdftotext有InvalidFontWeight警告，未据提取重建未检查图形。",
+      "methodologicalScope": "原始指南或方法框架选段的有界解读；不是实证效果验证、当前法律/标准采纳审计或专家认可。",
+      "independence": "2010论文作者Finkbeiner、Lehmann、Traverso也在2020指南编辑名单中；共享方法传统，不作完全独立验证。2010论文又二手引用2008LCC书，指南借鉴既有E-LCA/社会方法。",
+      "limitations": [
+        "未完成全作品逐段精读、所引方法链审查或原生软件复现。",
+        "没有将不同参照对象、单位和价值选择强制转换成单一指标。"
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "©UNEP2020。版权页允许注明来源的教育/非营利用途复制，商业/转售须事先书面许可；声明观点未必代表UNEP决定或政策。照片等第三方素材保留各自权利。此交接只给原创释义/元数据/定位，不公开原文或图像，不以项目许可替代UNEP限制。",
+    "unread": [
+      "大多数库存数据与数据库操作细节、完整影响路径模型、案例、组织库存细则和附录。",
+      "2021方法学子类别表、2022试点报告及任何现行标准原文；本指南提及不等于本轮已读。"
+    ],
+    "sourceKeys": []
+  },
+  {
+    "id": "rd-finkbeiner-2010-lcsa-framework",
+    "workId": "work-finkbeiner-2010-lcsa-framework",
+    "title": "Towards Life Cycle Sustainability Assessment",
+    "version": "Sustainability2(10):3309–3322，published2010-10-22，DOI10.3390/su2103309；KIT原始14页载体",
+    "url": "https://publikationen.bibliothek.kit.edu/120084381/8414703",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "相对环境LCA，研究对象、功能/报告参照、评价含义与价值选择怎样改变？三支柱为什么不能自动共用一个分数？",
+    "argumentSummary": "论文把LCSA写成三种方法的概念组合，分别处理环境、成本和社会维度。成本取决于角色视角，社会代理不原生属于产品；单一分数需要额外效用/归一化和权重选择。作者条件性展示通信工具，并不使不同单位天然可加或证明某方案普遍更好。",
+    "artifacts": [
+      {
+        "id": "art-finkbeiner-2010-lcsa-primary-pdf",
+        "mediaType": "application/pdf",
+        "sha256": "2ee110751d79b1b9487bc34af6e833cbba95af8d1576e930259acc4915f2238d",
+        "resolvedUrl": "https://publikationen.bibliothek.kit.edu/120084381/8414703",
+        "pageCount": 14
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-lcsa-2010-identity-license",
+        "artifactId": "art-finkbeiner-2010-lcsa-primary-pdf",
+        "locator": "题名页、出版日期与末页许可",
+        "printedPages": "3309;3322",
+        "pdfIndices": [
+          0,
+          13
+        ],
+        "topics": [
+          "publication identity",
+          "CC BY3.0",
+          "distinct from LCC book"
+        ],
+        "limits": [
+          "2010-10-22论文；不是2008EnvironmentalLCC书或2011Code of Practice。机构入库时间不改写为论文发表年。"
+        ]
+      },
+      {
+        "id": "psg-lcsa-2010-concept-not-ranking",
+        "artifactId": "art-finkbeiner-2010-lcsa-primary-pdf",
+        "locator": "§1.2末段；§2概念式",
+        "printedPages": "3311–3312",
+        "pdfIndices": [
+          2,
+          3
+        ],
+        "topics": [
+          "conceptual LCSA equation",
+          "method roles",
+          "nonranking"
+        ],
+        "limits": [
+          "LCSA=LCA+LCC+SLCA被称为概念式；不是可以把kgCO2eq、货币和社会分数裸加的单位关系。金字塔图的作者说明也明确不代表工具优劣排名；历史归属是作者回顾，不作首创证明。"
+        ]
+      },
+      {
+        "id": "psg-lcsa-2010-cost-perspective",
+        "artifactId": "art-finkbeiner-2010-lcsa-primary-pdf",
+        "locator": "§2.2EconomicDimension及续页",
+        "printedPages": "3313–3314",
+        "pdfIndices": [
+          4,
+          5
+        ],
+        "topics": [
+          "producer/customer/societal perspectives",
+          "money flows",
+          "lifetime",
+          "internalization",
+          "reference object"
+        ],
+        "limits": [
+          "作者区分不同成本视角，并二手引用2008EnvironmentalLCC定义；没有因此阅读原书。未来预计内部化外部性与全部社会环境价值货币化不同；本文未验证贴现、币种年、财务数据或成本方法实施。"
+        ]
+      },
+      {
+        "id": "psg-lcsa-2010-social-reference",
+        "artifactId": "art-finkbeiner-2010-lcsa-primary-pdf",
+        "locator": "§2.3SocialDimension及数据可得性讨论",
+        "printedPages": "3314–3315",
+        "pdfIndices": [
+          5,
+          6
+        ],
+        "topics": [
+          "organizational/regional indicators",
+          "product attribution",
+          "data-driven proxy choice"
+        ],
+        "limits": [
+          "作者为可操作性选HDI/Gini/GlobalCompact代理，并承认不直接对应产品；这是2010方案，不是当前所有S-LCA指标限定。组织/地区资料到产品需额外假设，不能视为原生产品测量。"
+        ]
+      },
+      {
+        "id": "psg-lcsa-2010-explicit-weighting",
+        "artifactId": "art-finkbeiner-2010-lcsa-primary-pdf",
+        "locator": "§3开头；§3.1及其量表/权重定义",
+        "printedPages": "3315–3317",
+        "pdfIndices": [
+          6,
+          7,
+          8
+        ],
+        "topics": [
+          "within/between-dimension weights",
+          "conditional aggregation",
+          "utility/normalization",
+          "communication"
+        ],
+        "limits": [
+          "作者不推荐必做单一分数，但在决策者选择量化权重时展示透明方案。概念式、效用转换和权重是不同步骤；图形透明不消除补偿或价值选择。未复算图中示例；p3315图像复核。"
+        ]
+      },
+      {
+        "id": "psg-lcsa-2010-dashboard-and-limits",
+        "artifactId": "art-finkbeiner-2010-lcsa-primary-pdf",
+        "locator": "§3.2延续；§4Conclusions",
+        "printedPages": "3319–3320",
+        "pdfIndices": [
+          10,
+          11
+        ],
+        "topics": [
+          "relative dashboard scores",
+          "missing data",
+          "applicability/validity",
+          "communication versus assessment"
+        ],
+        "limits": [
+          "文中0/1000是比较集合内最差/最好相对分数，不是无影响/绝对可持续阈值；缺失数据另有颜色。没有运行软件、复核地面材料案例或将作者2010成熟度语句当今天事实。"
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "KIT机构公开原文PDF，无加密；方法§2与§3指定选段阅读，p3315单一分数限定页面图像复核，末页CC BY3.0核验。",
+      "methodologicalScope": "原始指南或方法框架选段的有界解读；不是实证效果验证、当前法律/标准采纳审计或专家认可。",
+      "independence": "2010论文作者Finkbeiner、Lehmann、Traverso也在2020指南编辑名单中；共享方法传统，不作完全独立验证。2010论文又二手引用2008LCC书，指南借鉴既有E-LCA/社会方法。",
+      "limitations": [
+        "未完成全作品逐段精读、所引方法链审查或原生软件复现。",
+        "没有将不同参照对象、单位和价值选择强制转换成单一指标。"
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "末页明确©2010authors、CC BY3.0；注明作者/来源/许可并保留第三方材料的独立条件。机构元数据2022入库/2024修改不当作论文年份。本轮不重传原始全文或图像。",
+    "unread": [
+      "多数参考文献与原始案例数据；没有复算三角图/仪表盘或运行软件。",
+      "原始2008EnvironmentalLCC书、2011Code of Practice完整书及相关标准条款。"
+    ],
+    "sourceKeys": []
+  },
+  {
+    "id": "rd-levasseur-2010-time-thesis-annex",
+    "workId": "lit-m10",
+    "title": "Considering Time in LCA: Dynamic LCA and Its Application to Global Warming Impact Assessments — author thesis Annex1 carrier",
+    "version": "2010 article DOI10.1021/es9030003, ES&T44(8):3169–3174. Actual reading: Annex1 printed88–101 in Levasseur2011 doctoral thesis (183PDFpages); Avant-propos identifies the article. Not a direct publisherPDF or verified page-by-page publisher-version equivalence. Repository wrapper metadata2026 does not imply a new scientific edition.",
+    "url": "https://publications.polymtl.ca/706/",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "How do emission timing, response integration and the chosen analysis horizon differ, and which limits qualify comparison results?",
+    "argumentSummary": "The authors preserve emission profiles and characterize elapsed-time responses under common temporal bounds. Their radiative-forcing formulation retains specific climate-model assumptions; horizon/discount choices and historical case conclusions remain conditional.",
+    "artifacts": [
+      {
+        "id": "art-levasseur-2011-thesis-annex",
+        "mediaType": "application/pdf",
+        "sha256": "37b539e90d064bb4a34c91e84598a369d2bd2a5224f2a0fcaf032fe9deefaf61",
+        "resolvedUrl": "https://publications.polymtl.ca/706/1/2011_AnnieLevasseur.pdf",
+        "pageCount": 183
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-lev2010-annex-identity",
+        "artifactId": "art-levasseur-2011-thesis-annex",
+        "locator": "Repository/title pages;Avant-propos/TableAP.1;Annex1 opener",
+        "printedPages": "front matter;xxi;88",
+        "pdfIndices": [
+          0,
+          1,
+          21,
+          111
+        ],
+        "topics": [
+          "work/carrier identity",
+          "author byline",
+          "article identification"
+        ],
+        "limits": [
+          "Thesis is an author carrier of the article, not a second independent work.",
+          "No direct journalPDF access claimed."
+        ]
+      },
+      {
+        "id": "psg-lev2010-timing-horizon",
+        "artifactId": "art-levasseur-2011-thesis-annex",
+        "locator": "Annex1 §§1.1–1.2;Figures1–2",
+        "printedPages": "89–92",
+        "pdfIndices": [
+          112,
+          113,
+          114,
+          115
+        ],
+        "topics": [
+          "emission calendar",
+          "elapsed response",
+          "GWP horizon",
+          "common temporal boundary"
+        ],
+        "limits": [
+          "Historical GWP/model values not adopted as current factors.",
+          "Building timeline is an explanatory example, not empirical performance evidence."
+        ]
+      },
+      {
+        "id": "psg-lev2010-aim-model",
+        "artifactId": "art-levasseur-2011-thesis-annex",
+        "locator": "Annex1 §1.4 and §2.1 opening",
+        "printedPages": "93–94",
+        "pdfIndices": [
+          116,
+          117
+        ],
+        "topics": [
+          "method scope",
+          "dynamic factor definition",
+          "background concentration assumption"
+        ],
+        "limits": [
+          "Prior-method descriptions not substituted for reading those originals.",
+          "Model parameters are those specified in this historical work."
+        ]
+      },
+      {
+        "id": "psg-lev2010-dynamic-combination",
+        "artifactId": "art-levasseur-2011-thesis-annex",
+        "locator": "Annex1 §2.1;Equations2–6;Figure3",
+        "printedPages": "94–96",
+        "pdfIndices": [
+          117,
+          118,
+          119
+        ],
+        "topics": [
+          "annual inventory",
+          "lag-dependent characterization",
+          "radiative-forcing output"
+        ],
+        "limits": [
+          "Radiative-forcing metric is not a complete climate-damage or temperature prediction.",
+          "No numerical implementation, time-step indexing or parameter reproduction performed."
+        ]
+      },
+      {
+        "id": "psg-lev2010-case-choices",
+        "artifactId": "art-levasseur-2011-thesis-annex",
+        "locator": "Annex1 §2.2 and results setup, including horizon/discount discussion",
+        "printedPages": "96–99",
+        "pdfIndices": [
+          119,
+          120,
+          121,
+          122
+        ],
+        "topics": [
+          "historical biofuel illustration",
+          "analysis horizon",
+          "discount decision",
+          "conditional threshold comparison"
+        ],
+        "limits": [
+          "Underlying EPArenewable-fuels data and legislation not independently verified or updated.",
+          "No current biofuel ranking or reduction threshold asserted."
+        ]
+      },
+      {
+        "id": "psg-lev2010-limitations",
+        "artifactId": "art-levasseur-2011-thesis-annex",
+        "locator": "Annex1 §3 closing discussion and proposed extensions",
+        "printedPages": "100–101",
+        "pdfIndices": [
+          123,
+          124
+        ],
+        "topics": [
+          "constant atmospheric background",
+          "nonlinear climate response caveat",
+          "additional characterization development"
+        ],
+        "limits": [
+          "Authors’ broad extension claim is not evidence that every impact category was operationalized.",
+          "No later climate model or contemporary policy inference."
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "Public institutional thesis PDF, actual Annex1 text read with identity note, methods, case context and limitations; printedpp91,92,96 images checked.",
+      "methodologicalScope": "Original dynamic-LCIA method and historical illustration, specifically developed for global-warming radiative forcing; not a complete future-technology model.",
+      "independence": "Annex and journal article are one work; case uses earlier EPAdata. Different from the prospective-technology papers, but not an independent replication of their questions.",
+      "limitations": [
+        "Direct ACSarticlePDF and supporting information unavailable.",
+        "Thesis main argument and later annexes not close-read.",
+        "Background-concentration/model assumptions remain fixed as stated; no current calibration.",
+        "No new empirical rankings or code correctness claim."
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "Institutional repository grants public reading; wrapper and thesis state all rights reserved / ©AnnieLevasseur2011. No source-republication licence inferred. Source text, figures and tables remain outsideGit; only original bounded notes/locators proposed.",
+    "unread": [
+      "Thesis main chapters except identity/Avant-propos context.",
+      "Annex1 reference list not independently verified; later annexes unread.",
+      "Original ACSjournalPDF, supplementary information and underlying EPAstudy."
+    ],
+    "sourceKeys": [
+      "LEV2010-ANNEX1-CARRIER"
+    ]
+  },
+  {
+    "id": "rd-arvidsson-2018-prospective",
+    "workId": "lit-m11",
+    "title": "Environmental Assessment of Emerging Technologies: Recommendations for Prospective LCA",
+    "version": "DOI10.1111/jiec.12690;publisherVersion-of-Record online30October2017;journal22(6):1286–1294(2018). Actual Chalmers10-page carrier has repository cover then journal-formatted pages1286–1294; metadata/download-cover timestamp is not a new scientific edition. Byline uses MattyJanssen; institutional person record uses MathiasJanssen.",
+    "url": "https://research.chalmers.se/en/publication/506300",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "Which future/maturity/scenario conditions define the paper’s prospective use and constrain foreground/background comparisons?",
+    "argumentSummary": "The paper proposes a specific future-maturity definition and reviews selected prospective attributional cases. It treats alternatives, scale and foreground/background scenarios as choices, with temporal-mismatch and learning-uncertainty qualifications.",
+    "artifacts": [
+      {
+        "id": "art-arvidsson-2018-chalmers",
+        "mediaType": "application/pdf",
+        "sha256": "3f6767d3c12e18716957abbf54cf3c85781b7c5b8df1b7747e29e01ba3c7ea87",
+        "resolvedUrl": "https://research.chalmers.se/publication/506300/file/506300_Fulltext.pdf",
+        "pageCount": 10
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-arv2018-identity-definition",
+        "artifactId": "art-arvidsson-2018-chalmers",
+        "locator": "Repository cover;Summary;Introduction;Definition of ProspectiveLCA;Figure1",
+        "printedPages": "cover;1286–1288",
+        "pdfIndices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "topics": [
+          "identity",
+          "assessment time vs modeled future",
+          "maturity",
+          "attributional scope"
+        ],
+        "limits": [
+          "Definition is explicitly proposed and used within this paper, not a universal terminology mapping.",
+          "No equation with Ekvall2005 categories inferred."
+        ]
+      },
+      {
+        "id": "psg-arv2018-selection",
+        "artifactId": "art-arvidsson-2018-chalmers",
+        "locator": "Case-Study Approach and Selection;Table1",
+        "printedPages": "1288",
+        "pdfIndices": [
+          3
+        ],
+        "topics": [
+          "nonexhaustive reviewed cases",
+          "selection limits"
+        ],
+        "limits": [
+          "Reviewed case studies were not separately acquired or replicated in this wave.",
+          "This is not systematic global empirical validation."
+        ]
+      },
+      {
+        "id": "psg-arv2018-alternatives",
+        "artifactId": "art-arvidsson-2018-chalmers",
+        "locator": "Technology Alternatives",
+        "printedPages": "1288–1289",
+        "pdfIndices": [
+          3,
+          4
+        ],
+        "topics": [
+          "future-relevant alternatives",
+          "function",
+          "cradle-to-gate building blocks"
+        ],
+        "limits": [
+          "Reported technological examples are historical and not current rankings.",
+          "Building-block inventory does not by itself establish full application equivalence."
+        ]
+      },
+      {
+        "id": "psg-arv2018-foreground",
+        "artifactId": "art-arvidsson-2018-chalmers",
+        "locator": "ForegroundSystemModeling;Equations1–2;Figure2",
+        "printedPages": "1289–1290",
+        "pdfIndices": [
+          4,
+          5
+        ],
+        "topics": [
+          "predictive vs range scenarios",
+          "scale-up",
+          "learning/scaling assumptions",
+          "data sources"
+        ],
+        "limits": [
+          "Engineering/learning expressions describe conditional scenarios, not guaranteed industrial achievement.",
+          "Idealized low-impact example presumes high efficiency/no side reactions or other losses where specified."
+        ]
+      },
+      {
+        "id": "psg-arv2018-background",
+        "artifactId": "art-arvidsson-2018-chalmers",
+        "locator": "BackgroundSystemModeling",
+        "printedPages": "1290–1291",
+        "pdfIndices": [
+          5,
+          6
+        ],
+        "topics": [
+          "future background",
+          "temporal mismatch",
+          "conditional statusquo",
+          "separate background reporting"
+        ],
+        "limits": [
+          "Background omission/separate reporting is a bounded information design, not proof of complete life-cycle impacts.",
+          "No current electricity mix or technology recommendation asserted."
+        ]
+      },
+      {
+        "id": "psg-arv2018-recommendations-limits",
+        "artifactId": "art-arvidsson-2018-chalmers",
+        "locator": "Recommendations and FutureWork;Table2",
+        "printedPages": "1291–1292",
+        "pdfIndices": [
+          6,
+          7
+        ],
+        "topics": [
+          "scenario justification",
+          "learning-parameter sensitivity",
+          "LCIA research gap"
+        ],
+        "limits": [
+          "The paper explicitly does not develop prospective impact assessment.",
+          "No universal accuracy or probability guarantee for its scenarios."
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "Public institutional original journal-formatted carrier, body sections and qualifiers read;Figure1p1287 andFigure2/Equation2p1290 visually inspected.",
+      "methodologicalScope": "Forum/recommendation paper based on nonexhaustive selected cases, focused on prospective attributional modeling; not an ISOstandard or future-performance validation.",
+      "independence": "Different author team; the paper’s handling editor is Levasseur and the later2020paper builds on its literature. Agreement is not independent empirical replication.",
+      "limitations": [
+        "Underlying cases, patents and engineering inputs not independently verified.",
+        "Future alternatives/maturation remain assumptions to justify.",
+        "No whole literature coverage or current technology ranking."
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "Publisher marks OpenAccess;actualPDF bears©2017YaleUniversity. No explicit source-specificCreativeCommons licence was found in inspected publisher text/carrier. Public availability does not by itself authorize source redistribution or commercial reuse.",
+    "unread": [
+      "Underlying case studies and sources for learning/scaling relationships.",
+      "References as original evidence;impact methods for new future emissions."
+    ],
+    "sourceKeys": [
+      "ARVIDSSON2018-CHALMERS"
+    ]
+  },
+  {
+    "id": "rd-vander-giesen-2020-exante",
+    "workId": "work-vander-giesen-2020-exante",
+    "title": "A critical view on the current application of LCA for new technologies and recommendations for improved practice",
+    "version": "Coen van der Giesen; Stefano Cucurachi; Jeroen Guinée; Gert Jan Kramer; Arnold Tukker. DOI 10.1016/j.jclepro.2020.120904; JCP 259, article 120904 (2020). Actual 12-page journal-formatted Publisher’s Version, explicitly identified by Leiden record. PDF available-online date 6 March 2020. Repository status takes precedence over aggregator submitted-version metadata.",
+    "url": "https://scholarlypublications.universiteitleiden.nl/handle/1887/123106",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "selected-passages",
+    "question": "Which consistency and uncertainty limits qualify extrapolation from current laboratory/new-technology data to future comparisons?",
+    "argumentSummary": "This methodological countercheck requires explicit future scopes for emerging, incumbent and background systems; it questions unexamined extrapolation and frames outputs as implications of assumptions rather than final future-performance facts.",
+    "artifacts": [
+      {
+        "id": "art-giesen-2020-leiden",
+        "mediaType": "application/pdf",
+        "sha256": "a4e508cc944e6dc2d91ac9156e9cb77f4bac201c73ef153b3bd19047eb972675",
+        "resolvedUrl": "https://scholarlypublications.universiteitleiden.nl/download/1887/123106/1?col=81522199420002711",
+        "pageCount": 12
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-gie2020-identity",
+        "artifactId": "art-giesen-2020-leiden",
+        "locator": "Title/history/byline/licence block",
+        "printedPages": "1",
+        "pdfIndices": [
+          0
+        ],
+        "topics": [
+          "publisher-version identity",
+          "rights"
+        ],
+        "limits": [
+          "Repository and actualPDF checked;metadata aggregator version not treated as authoritative."
+        ]
+      },
+      {
+        "id": "psg-gie2020-terms-scope",
+        "artifactId": "art-giesen-2020-leiden",
+        "locator": "§§2–3.2;Table1 as literature overview",
+        "printedPages": "2–3",
+        "pdfIndices": [
+          1,
+          2
+        ],
+        "topics": [
+          "source-specific exante term",
+          "review search limits",
+          "time/maturity/function"
+        ],
+        "limits": [
+          "Table1quotes earlier authors;not a direct reading of those originals.",
+          "No single best term or equivalence to2005taxonomy established."
+        ]
+      },
+      {
+        "id": "psg-gie2020-inventory-interpretation",
+        "artifactId": "art-giesen-2020-leiden",
+        "locator": "§§3.3–3.5;§4.1",
+        "printedPages": "4–5",
+        "pdfIndices": [
+          3,
+          4
+        ],
+        "topics": [
+          "consistent future systems",
+          "lab/industrial data mismatch",
+          "impact coverage",
+          "conditional interpretation"
+        ],
+        "limits": [
+          "Critique/recommendations,not a new empirical test of all reviewed methods.",
+          "Historical statements on available databases are not current-service facts."
+        ]
+      },
+      {
+        "id": "psg-gie2020-upscaling",
+        "artifactId": "art-giesen-2020-leiden",
+        "locator": "§§4.2–4.2.2",
+        "printedPages": "5–7",
+        "pdfIndices": [
+          4,
+          5,
+          6
+        ],
+        "topics": [
+          "future incumbent",
+          "same-function comparison",
+          "maturity",
+          "learning is not physical law",
+          "engineering extrapolation limits"
+        ],
+        "limits": [
+          "Underlying scale-up studies not independently reviewed.",
+          "No assertion that one extrapolation method universally succeeds or fails."
+        ]
+      },
+      {
+        "id": "psg-gie2020-background-uncertainty",
+        "artifactId": "art-giesen-2020-leiden",
+        "locator": "§§4.3–4.4",
+        "printedPages": "7–8",
+        "pdfIndices": [
+          6,
+          7
+        ],
+        "topics": [
+          "scenario generation vs assessment",
+          "background mismatch",
+          "uncertainty not automatically probabilized"
+        ],
+        "limits": [
+          "IAM/SSPscenarios and participatory methods not implemented or validated.",
+          "Authors’ philosophical/participatory position remains attributed,not universal consensus."
+        ]
+      },
+      {
+        "id": "psg-gie2020-conclusions",
+        "artifactId": "art-giesen-2020-leiden",
+        "locator": "§5 selected opening/closing paragraphs;Declaration and appendix notice",
+        "printedPages": "9–10",
+        "pdfIndices": [
+          8,
+          9
+        ],
+        "topics": [
+          "question-dependent methods",
+          "further case validation",
+          "source limits"
+        ],
+        "limits": [
+          "Table2not fully audited;supportinginformationnotacquired.",
+          "No independent full-paper literature-review replication."
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "Official Leidenlanding/fileversion/licence plus publicPDF;selected sections read with recommendations and limits.",
+      "methodologicalScope": "Later methodological review/deductive guidance and countercheck,not a standard or technology-performance experiment.",
+      "independence": "Different team fromArvidsson/Levasseur but reuses/cites their tradition;not independent replication of their cases.",
+      "limitations": [
+        "Supportinginformation and original case papersunread.",
+        "No scenario/engineering model or IAMdatabaseexecuted.",
+        "Published artifactURL is durable public retrieval route;actualsignedtemporary finalstorageURL intentionally omitted. Hash identifiesbytes,not futureavailability."
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "ActualPDF and officialrepository identifyCCBY-NC-ND4.0. No source tables/figures or modifiedoriginal redistributed; projectlicence does not override original restrictions.",
+    "unread": [
+      "SupplementaryTablesS1/S2 and underlyingoriginalstudies.",
+      "Completebibliography as primaryevidence;Table2not fullyverified."
+    ],
+    "sourceKeys": [
+      "VANDERGIESEN2020-LEIDEN-VOR"
+    ]
+  },
+  {
+    "id": "rd-ipcc-ar6-wgi-ch7-derived",
+    "workId": "work-ipcc-ar6-wgi-ch7-2021",
+    "title": "IPCC AR6 WGI Chapter 7 — The Earth’s Energy Budget, Climate Feedbacks and Climate Sensitivity",
+    "version": "2021 Chapter 7；此记录仅为官方原文经文本通道提取的指定选段，不是已取得的原始PDF",
+    "url": "https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Chapter07.pdf",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "web-sections",
+    "question": "怎样解释本例所选GWP100指标与具体因子，并保留更正和取得通道的边界？",
+    "argumentSummary": "指标定义、所选中心值和更正上下文经官方文字选段核对；这不是对整份报告、原PDF字节、图像或实际产品的验证。",
+    "artifacts": [
+      {
+        "id": "art-ipcc-ar6-ch7-derived-text",
+        "kind": "derived-text",
+        "sha256": "2eaba81443c150736561becc642283eaf4e9db80934d8cbe2925803fd0d13c20",
+        "mediaType": "text/plain",
+        "originUrl": "https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Chapter07.pdf",
+        "captureMethod": "官方文档经公开网页文本提取通道返回；按原有行序保存所列选段，未改写原文字句；未绕过登录、挑战或付费限制。",
+        "captureScope": "Chapter7 indexed lines3548–3610: definitions, horizon interpretation and indirect-contribution/double-counting context",
+        "originalDocumentMediaType": "application/pdf",
+        "originalDocumentBytesAvailable": false
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-ipcc-ar6-gwp-definition",
+        "artifactId": "art-ipcc-ar6-ch7-derived-text",
+        "locator": "§§7.6.1–7.6.1.2；官方文本通道行3548–3582；印刷定位1012–1014未做视觉核验",
+        "topics": [
+          "指标、单位质量脉冲、绝对/相对量、时间积分与终点指标"
+        ],
+        "limits": [
+          "没有读取整章或原始PDF图表；不据此给所有使用情境指定唯一指标。"
+        ]
+      },
+      {
+        "id": "psg-ipcc-ar6-methane-accounting",
+        "artifactId": "art-ipcc-ar6-ch7-derived-text",
+        "locator": "§7.6.1.3；官方文本通道行3583–3610，尤其3608–3610",
+        "topics": [
+          "间接效应与化石甲烷氧化贡献、防止重复计算"
+        ],
+        "limits": [
+          "保持所用版本的化学/碳循环条件；不复算源模型。"
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "主任务与独立审查分别核对官方索引文本中的标题、定义及更正表的表头、行列、说明和版本；没有取得原始PDF字节或图像。",
+      "methodologicalScope": "命名版本的选段文字来源核查；用于一个虚构教学案例的指标定义和所选中心因子，不是当前所有报告框架的默认要求。",
+      "independence": "两份IPCC材料属于同一报告及其更正链；不同查询或读取通道不是独立科学验证。",
+      "limitations": [
+        "原始PDF字节、原始文件SHA-256和视觉表格核验不可用。",
+        "快照SHA-256只标识实际保存的派生文字选段；不证明与整个原始PDF字节相同。",
+        "表中因子不确定性和其他模型/资料不确定性未在这个单参数教学案例中完整传播。",
+        "没有运行原始气候模型、复核全部补充数据或核读完整报告。"
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "IPCC原文保留其权利。本项目只发布原创解释、书目信息、定位及本例所用两个数值，不重传报告、完整表格、图像或派生原文快照；项目许可不重新许可第三方内容。",
+    "unread": [
+      "完整报告/更正文档、原始PDF图像、源模型和补充数据；原文PDF字节获取失败。"
+    ],
+    "sourceKeys": [
+      "src-case-ipcc-ar6-wgi-ch7"
+    ]
+  },
+  {
+    "id": "rd-ipcc-ar6-wgi-errata-2025-derived",
+    "workId": "work-ipcc-ar6-wgi-errata-2025-10-07",
+    "title": "IPCC AR6 WGI Errata — replacement Table 7.15",
+    "version": "Errata version 7 October 2025；所见更正文本明确说明更正尚未并入已出版文件；只核对指定行列及上下文",
+    "url": "https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Errata.pdf",
+    "accessedAt": "2026-11-04",
+    "readAt": "2026-11-04",
+    "readingStatus": "web-sections",
+    "question": "怎样解释本例所选GWP100指标与具体因子，并保留更正和取得通道的边界？",
+    "argumentSummary": "指标定义、所选中心值和更正上下文经官方文字选段核对；这不是对整份报告、原PDF字节、图像或实际产品的验证。",
+    "artifacts": [
+      {
+        "id": "art-ipcc-ar6-errata2025-derived-text",
+        "kind": "derived-text",
+        "sha256": "b4e629dfd65b4dcaf87ab0e8c7a1156ec9b1100c413cf3e55e59b2e4f289af77",
+        "mediaType": "text/plain",
+        "originUrl": "https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Errata.pdf",
+        "captureMethod": "官方文档经公开网页文本提取通道返回；按原有行序保存所列选段，未改写原文字句；未绕过登录、挑战或付费限制。",
+        "captureScope": "Errata indexed lines0–13 and108–253: document/version and correction status, full table/caption/headers/rows, version and p3",
+        "originalDocumentMediaType": "application/pdf",
+        "originalDocumentBytesAvailable": false
+      }
+    ],
+    "passages": [
+      {
+        "id": "psg-ipcc-ar6-2025-gwp100-table",
+        "artifactId": "art-ipcc-ar6-errata2025-derived-text",
+        "locator": "更正文档第3页（文本定位）；Chapter 7 p1017替换Table7.15；官方通道行0–13、108–160、251–253",
+        "topics": [
+          "更正身份、CO2及CH4-fossil行、GWP-100列及完整表头/说明"
+        ],
+        "limits": [
+          "只据所见官方文字确认所选单元格和说明；原始PDF与视觉列对齐未核验。",
+          "不声称该URL当前所有最新发布版本都与该快照一致。"
+        ]
+      }
+    ],
+    "appraisal": {
+      "basis": "主任务与独立审查分别核对官方索引文本中的标题、定义及更正表的表头、行列、说明和版本；没有取得原始PDF字节或图像。",
+      "methodologicalScope": "命名版本的选段文字来源核查；用于一个虚构教学案例的指标定义和所选中心因子，不是当前所有报告框架的默认要求。",
+      "independence": "两份IPCC材料属于同一报告及其更正链；不同查询或读取通道不是独立科学验证。",
+      "limitations": [
+        "原始PDF字节、原始文件SHA-256和视觉表格核验不可用。",
+        "快照SHA-256只标识实际保存的派生文字选段；不证明与整个原始PDF字节相同。",
+        "表中因子不确定性和其他模型/资料不确定性未在这个单参数教学案例中完整传播。",
+        "没有运行原始气候模型、复核全部补充数据或核读完整报告。"
+      ],
+      "reviewKind": "agent-source-check",
+      "checkedAt": "2026-11-04"
+    },
+    "rights": "IPCC原文保留其权利。本项目只发布原创解释、书目信息、定位及本例所用两个数值，不重传报告、完整表格、图像或派生原文快照；项目许可不重新许可第三方内容。",
+    "unread": [
+      "完整报告/更正文档、原始PDF图像、源模型和补充数据；原文PDF字节获取失败。"
+    ],
+    "sourceKeys": [
+      "src-case-ipcc-ar6-wgi-errata-2025-10-07"
+    ]
+  }
+]
+```

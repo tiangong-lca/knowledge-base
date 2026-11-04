@@ -1,19 +1,25 @@
-import { ArtifactReading } from '@/components/evidence';
-import type { ReadingLedger } from '@/lib/catalog';
+import Link from 'next/link';
+import catalog from '@/lib/catalog';
 import { PublicationShell } from '@/components/publication-shell';
 import rawMap from '@/knowledge/research/literature-map.json';
 import rawLedger from '@/knowledge/research/readings.json';
-import { publicResearch } from '@/scripts/research.mjs';
-const projected = publicResearch(rawMap, rawLedger);
-const map = projected.literatureMap as typeof rawMap;
-const ledger = projected.readingLedger as ReadingLedger;
-export const metadata = {title: '文献地图与阅读记录'};
-export default function Page() { return <PublicationShell title="文献地图与阅读记录" description="发现一本书、取得一个版本、细读一段原文，是不同的研究进展。这里保留检索范围、实际阅读和未解决的问题。">
-<p>发现目录现有 {map.records.length} 条去重记录；阅读台账有 {ledger.readings.length} 条载体阅读记录，涉及 {new Set(ledger.readings.map(r=>r.workId)).size} 项作品。本轮已核读记录均为选段；台账状态按各条记录显示，元数据记录不计为阅读。分册、不同载体和重叠定位不作为独立研究重复计数。记录日期：{map.updatedAt}。</p>
-<p><a href="#readings">实际阅读</a> · <a href="#discoveries">发现目录</a> · <a href="#gaps">研究缺口</a> · <a href="#revisions">结构修订</a> · <a href="/downloads/research.json">下载公开台账</a></p>
-<h2>本轮检索怎样进行</h2><p>{map.protocol.sourcesPolicy}</p><ul>{map.protocol.limitations.map((t,i)=><li key={i}>{t}</li>)}</ul><details><summary>查看实际检索与追踪路径</summary>{map.protocol.queries.map(q=><p key={q.id}><strong>{q.date} · {q.channel}</strong><br/>{q.query}</p>)}</details>
-<h2 id="readings">实际阅读与载体</h2>{ledger.readings.map(r=><article className="source-record" id={r.id} key={r.id}><h3><a href={r.url}>{r.title}</a></h3><p>{r.version}</p><p>作品书目：<a href={`#${map.records.find(w => w.id === r.workId || ('workId' in w && w.workId === r.workId))?.id ?? r.workId}`}>{r.workId}</a></p><p>阅读状态：{r.readingStatus}</p>{r.question && <p><strong>本次问题：</strong>{r.question}</p>}{r.argumentSummary && <p>{r.argumentSummary}</p>}<details><summary>原文位置、载体身份与阅读限制</summary>{r.artifacts.map(a=><div key={a.id}><p>{a.id}</p><dl className="source-reading"><ArtifactReading artifact={a} /></dl></div>)}<ul>{r.passages.map(p=><li id={p.id} key={p.id}><strong>{p.locator}{'printedPages' in p && p.printedPages && <> · 印刷页 {p.printedPages}</>}</strong><br/>{p.limits.join('；')}</li>)}</ul><>{r.appraisal ? <><p>评价范围：{r.appraisal.methodologicalScope}</p><p>证据独立性：{r.appraisal.independence}</p><p>局限：{r.appraisal.limitations.join('；')}</p><p>核查类型：{r.appraisal.reviewKind}</p></> : <p>未进行选段评价。</p>}</><p>未读部分：{r.unread.join('；')}</p><p>权限：{r.rights}</p><p>{r.readAt ? `核读日期：${r.readAt}` : '尚无核读日期'}。具体核查类型见记录，不能把访问或元数据核对当成专家科学评审。</p></details></article>)}
-<h2 id="discoveries">发现目录</h2><p>本目录的阅读字段保留发现阶段状态。已开展的选段阅读另见上方台账；可取得全文不等于已经读完。</p>{map.records.map(r=><details className="source-record" id={r.id} key={r.id}><summary>{r.year} · {r.title}</summary><p>{r.contributors}</p><p>身份：{r.identityStatus}；访问：{r.accessStatus}；发现阶段阅读状态：{r.readingStatus}</p><p>主题：{r.topics.join('、')}；卷目：{r.volumes.join('、')}；语种：{r.languages.join('、')}</p><p>{r.discovery.reason}</p><ul>{r.urls.map((u,i)=><li key={i}><a href={u.url}>{u.role}</a></li>)}</ul><p>{r.limitations.join('；')}</p><p>核查日期：{r.lastCheckedAt}</p></details>)}
-<h2 id="gaps">研究缺口</h2>{[...map.gaps,...ledger.gaps].map(g=><section key={g.id}><h3>{g.description}</h3><p>{'nextAction' in g?g.nextAction:g.nextSearch}</p></section>)}
-<h2 id="revisions">证据如何改变目录与论证</h2>{ledger.revisions.map(r=><section id={r.id} key={r.id}><h3>{r.after}</h3><p>原安排：{r.before}</p><p>修订理由：{r.reasoning}</p><p>状态：{r.status}；影响单元：{r.affectedUnits.join('、')}</p><p>触发证据：{r.triggerPassageIds.map(id=><a key={id} href={`#${id}`}>{id} </a>)}</p></section>)}
-</PublicationShell>; }
+export const metadata = { title: '参考文献' };
+export default function Page() {
+  const seenWorks=new Set<string>(), seenReadings=new Set<string>();
+  return <PublicationShell title="参考文献" description="正文所引报告、方法论文、指南与软件文档。具体引文位置见各章注释。">
+    <p>按文献原题名列示。历史来源的日期指向具体报告、文章或版本；学位论文中的再印文本与原期刊文章分别注明。</p>
+    {catalog.sources.map(source => {
+      const reading = rawLedger.readings.find(r => r.id === source.reading?.readingId);
+      const work = reading && rawMap.records.find(r => r.id === reading.workId || ('workId' in r && r.workId === reading.workId));
+      const firstWork=work && !seenWorks.has(work.id); if(work) seenWorks.add(work.id);
+      const firstReading=reading && !seenReadings.has(reading.id); if(reading) seenReadings.add(reading.id);
+      return <article className="source-record" key={source.id} id={source.id}>
+        {firstWork && <span id={work.id} />}
+        {firstReading && <span id={reading.id} />}
+        <h2><a href={source.url}>{source.title}</a></h2><p>{source.publisher}。{source.version}。</p>
+        <p><Link href={`/sources/#${source.id}`}>引文位置与相关论述</Link></p>
+        {firstReading && <details><summary>引用章节与页码</summary><ul>{reading.passages.map(passage => <li key={passage.id} id={passage.id}>{passage.locator}{'printedPages' in passage && passage.printedPages && <>，{passage.printedPages}</>}</li>)}</ul></details>}
+      </article>;
+    })}
+  </PublicationShell>;
+}

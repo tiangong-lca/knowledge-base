@@ -1,4 +1,18 @@
 import Link from 'next/link';
-import { source } from '@/lib/source';
-import catalog from '@/lib/catalog';
-export default function Home(){const pages=source.getPages().filter(p=>p.slugs.length>0);return <main id="main-content"><section className="home-intro"><div className="home-copy"><p className="publication-name">LCA Living Knowledge Base and Review</p><h1>理解 LCA，<br/>从每个概念的来历开始。</h1><p className="home-lead">把标准、方法、数据与软件放回各自的语境。沿着原始证据，读懂生命周期评价如何形成、今天意味着什么，以及仍有哪些问题。</p><div className="home-actions"><Link className="primary-link" href="/docs/">开始阅读</Link><Link className="secondary-link" href="/concepts/">查阅概念</Link></div><p className="scope-note">全书研究与正文持续扩展中。<Link href="/coverage/">查看已覆盖与待研究的范围</Link></p></div><div className="knowledge-figure" aria-label="阅读路径：现实问题经过概念、方法和实现，最终回到证据"><div className="figure-source">现实中的问题</div><div className="figure-branches"><span>概念是什么</span><span>方法为何如此</span><span>软件如何表达</span></div><div className="figure-line"/><div className="figure-center">每个判断<br/><strong>回到证据</strong></div><div className="figure-foot">来源 · 适用条件 · 分歧 · 修订</div></div></section><section className="reading-section"><div className="section-heading"><h2>从一个具体问题读起</h2><span>概念、边界与实践</span></div><div className="chapter-list">{pages.map((p,i)=><Link className="chapter-row" href={p.url} key={p.url}><span className="chapter-position">{String(i+1).padStart(2,'0')}</span><div><h3>{p.data.title}</h3><p>{p.data.description}</p></div><span className="chapter-action">阅读</span></Link>)}</div></section><section className="evidence-overview"><div><h2>一个观点，<br/>一条可以核查的路径。</h2><p>正文中的观点可以展开，查看具体来源、原文位置、适用范围和限制。不同体系的含义并排呈现，尚有分歧的地方保留问题。</p></div><div className="overview-links"><Link href="/claims/"><strong>观点与论证</strong><span>{catalog.claims.filter(c=>c.status==='reviewed').length} 条已纳入的论断</span></Link><Link href="/sources/"><strong>来源与证据</strong><span>{catalog.sources.length} 份版本化来源记录</span></Link><Link href="/research/"><strong>文献地图与阅读</strong><span>发现、细读和结构修订记录</span></Link><Link href="/changes/"><strong>持续修订</strong><span>查看版本、更新协议与勘误</span></Link></div></section></main>}
+import { getBookPages, getOrderedPages } from '@/lib/reader-book';
+export default function Home() {
+  const chapters = getBookPages();
+  const topics = getOrderedPages().filter(p => p.slugs.length === 1 && p.slugs[0] !== 'book');
+  return <main id="main-content">
+    <section className="home-intro"><div className="home-copy">
+      <p className="publication-name">天工 LCA 知识库</p><h1>生命周期评价的<br/>前世今生</h1>
+      <p className="home-lead">一件物品背后的世界，如何进入计算，又如何成为环境判断？从早期研究到方法分歧，沿着概念、模型与证据，理解生命周期评价。</p>
+      <div className="home-actions"><Link className="primary-link" href="/docs/">开始阅读</Link><Link className="secondary-link" href="/docs/book/">全书导览</Link></div>
+    </div><div className="knowledge-figure" aria-label="阅读主线：现实问题经过概念、方法和模型，形成有依据的判断">
+      <div className="figure-source">现实中的问题</div><div className="figure-branches"><span>概念的来历</span><span>方法的选择</span><span>模型的含义</span></div><div className="figure-line"/><div className="figure-center">沿着证据<br/><strong>理解判断</strong></div><div className="figure-foot">历史 · 方法 · 论证</div>
+    </div></section>
+    <section className="reading-section"><div className="section-heading"><h2>沿全书主线阅读</h2></div><div className="chapter-list">{chapters.map((page,index) => <Link className="chapter-row" href={page.url} key={page.url}><span className="chapter-position">{index+1}</span><div><h3>{page.data.title}</h3><p>{page.data.description}</p></div><span className="chapter-action">阅读</span></Link>)}</div></section>
+    <section className="reading-section"><div className="section-heading"><h2>概念与实践专题</h2></div><div className="chapter-list">{topics.map(page => <Link className="chapter-row" href={page.url} key={page.url}><div><h3>{page.data.title}</h3><p>{page.data.description}</p></div><span className="chapter-action">查阅</span></Link>)}</div></section>
+    <section className="evidence-overview"><div><h2>从论述回到出处</h2><p>章末注释列出文献、原文位置与适用条件。遇到同名概念、方法分歧或不同版本时，可以沿引文进一步比较。</p></div><div className="overview-links"><Link href="/concepts/">概念索引</Link><Link href="/research/">参考文献</Link><Link href="/sources/">引文出处</Link><Link href="/changes/">版本与勘误</Link></div></section>
+  </main>;
+}

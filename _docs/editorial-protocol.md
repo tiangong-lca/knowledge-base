@@ -14,7 +14,7 @@ checkPaths:
   - "knowledge/**"
   - "releases/**"
 lastReviewedAt: 2026-11-04
-lastReviewedCommit: edcc3f5ff973644610dd588056e831940049454d
+lastReviewedCommit: fc1b1167d1849e276a3f0a8d9fad004240375de0
 ---
 
 # Editorial and living review protocol
@@ -60,3 +60,7 @@ Evidence-driven chapter changes are recorded in the reading ledger with triggeri
 For CASE-WALL-CONNECT, review service plans, units, process demand and balance, gas identities, factor version, comparison estimand, shared parameter and tolerance separately. The tolerance is an invented demonstration criterion fixed for the reconstruction, not a preregistered empirical decision or accepted stakeholder standard. Exact arithmetic does not propagate the IPCC factor uncertainty or other omitted uncertainty.
 
 Inspect the materialized prose against the same immutable public input and both substrate scenarios. Keep the deliberately truncated inventory, fixed technology, absent probabilities and unavailable source-PDF verification visible. A future factor/source/assumption change reaches the dependent case claims and must pass the whole affected review closure before publication. Re-reading the same official extraction through another channel is not independent scientific confirmation.
+
+## Finished prose is the publication gate
+
+Apply `_docs/reader-publication-contract.md` to every new or revised chapter. Source discipline alone does not qualify a reader deliverable: the argument must progress continuously and finish its declared question. Remove author-workflow narration, repeated status templates and development promises; retain real scientific conditions, disagreements and explicit invented data. Archive the removed process history in development Markdown. One chapter-wide annotation sequence and one tree-derived reading order serve the page and print view. Independent reader judgment checks what automated validation cannot.
