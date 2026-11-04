@@ -14,8 +14,8 @@ checkPaths:
   - "package.json"
   - "app/**"
   - "scripts/**"
-lastReviewedAt: 2026-11-03
-lastReviewedCommit: 753a9513e821b7804452114b1ac805f8a928f1bc
+lastReviewedAt: 2026-11-04
+lastReviewedCommit: 42a8c3d8cfeb96088a640a93815b985550b36b0a
 ---
 
 # LCA Living Knowledge Base and Review
@@ -53,7 +53,7 @@ Impact analysis reports claims needing review without granting approval or autom
 
 ## Delivery
 
-This is an M1 main repository. The approved book programme is coordinated in [knowledge-base #9](https://github.com/tiangong-lca/knowledge-base/issues/9); the first research/manuscript wave [#10](https://github.com/tiangong-lca/knowledge-base/issues/10) is integrated, and the methods/models expansion is [#12](https://github.com/tiangong-lca/knowledge-base/issues/12). Initial onboarding #1/workspace #2172 remains historical evidence. Use the workspace lifecycle controller for delivery records. A merged child PR requires separate exact workspace integration.
+This is an M1 main repository. The approved book programme is coordinated in [knowledge-base #9](https://github.com/tiangong-lca/knowledge-base/issues/9); the first research/manuscript wave [#10](https://github.com/tiangong-lca/knowledge-base/issues/10) is integrated, the methods/models expansion is [#12](https://github.com/tiangong-lca/knowledge-base/issues/12), and subsequent wave identities and progress are maintained in [the execution ledger](_docs/book-execution.md). Initial onboarding #1/workspace #2172 remains historical evidence. Use the workspace lifecycle controller for delivery records. A merged child PR requires separate exact workspace integration.
 
 ## License
 
