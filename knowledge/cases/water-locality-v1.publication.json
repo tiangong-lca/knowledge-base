@@ -124,7 +124,7 @@
         "这个对照不否定有明确用途的聚合近似；它说明该近似不能冒充本例已知逐行表征的同一结果。"
       ],
       "reasoning": "以2/3和1/3加权r/2与r/8得到3r/8；r/(3r/8)=8/3，总量为8。按两行CF加权则为4，总量为12；r在两种运算中保持不变。",
-      "textTemplate": "同一组虚构输入还可以检验平均的次序。保持外部参照 r 不变，X、Y 的 AMD 分别为 {{evaluated.contributions.0.amdExpression}} 与 {{evaluated.contributions.1.amdExpression}}，耗水权重为 {{evaluated.contributions.0.weight}} 与 {{evaluated.contributions.1.weight}}。先按耗水加权求 AMD，会得到 {{evaluated.weightedAMDExpression}}；再取相对倒数得到因子 {{evaluated.factorAtMeanAMD}}，把它乘总耗水 {{evaluated.totalConsumed}}，结果是 {{evaluated.scoreAtMeanAMD}}。逐项先表征再相加却是 {{evaluated.contributions.0.consumed}}×{{evaluated.contributions.0.factor}}＋{{evaluated.contributions.1.consumed}}×{{evaluated.contributions.1.factor}}＝{{evaluated.baselineScore}}。差别来自倒数这一非线性步骤，不能把“平均剩余量的因子”当成“平均表征因子”。这些权重只描述本题两行清单，不重新定义世界参照，也不构成任何真实国家的汇总因子。"
+      "textTemplate": "回到原来的两行因子（{{evaluated.contributions.0.factor}}和{{evaluated.contributions.1.factor}}），再用同一组虚构输入检验平均的次序。保持外部参照 r 不变，X、Y 的 AMD 分别为 {{evaluated.contributions.0.amdExpression}} 与 {{evaluated.contributions.1.amdExpression}}，耗水权重为 {{evaluated.contributions.0.weight}} 与 {{evaluated.contributions.1.weight}}。先按耗水加权求 AMD，会得到 {{evaluated.weightedAMDExpression}}；再取相对倒数得到因子 {{evaluated.factorAtMeanAMD}}，把它乘总耗水 {{evaluated.totalConsumed}}，结果是 {{evaluated.scoreAtMeanAMD}}。逐项先表征再相加却是 {{evaluated.contributions.0.consumed}}×{{evaluated.contributions.0.factor}}＋{{evaluated.contributions.1.consumed}}×{{evaluated.contributions.1.factor}}＝{{evaluated.baselineScore}}。差别来自倒数这一非线性步骤，不能把“平均剩余量的因子”当成“平均表征因子”。这些权重只描述本题两行清单，不重新定义世界参照，也不构成任何真实国家的汇总因子。"
     },
     {
       "id": "cl-water-conclusion",
