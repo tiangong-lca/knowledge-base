@@ -39,7 +39,9 @@ export function EvidencePassage({ evidence }: { evidence: EvidenceRecord }) {
   if (!passage || !artifact) throw new Error(`Unresolved evidence passage: ${evidence.id}`);
   return artifact.kind === 'derived-text' ? <dl className="source-reading"><ArtifactReading artifact={artifact} /></dl> : null;
 }
-export function ClaimAnnotation({ id }: { id: string }) {
+export function ClaimAnnotation({ id, showCaseInput = true, premiseReferences }: {
+  id: string; showCaseInput?: boolean; premiseReferences?: Map<string, { href: string; label: string }>;
+}) {
   const claim = catalog.claims.find(item => item.id === id);
   if (!claim) { if (isKnownClaim(id)) return <ReviewNotice />; throw new Error(`Unknown claim: ${id}`); }
   const evidence = getClaimEvidence(catalog, claim);
@@ -57,9 +59,10 @@ export function ClaimAnnotation({ id }: { id: string }) {
     {claim.premiseIds.length > 0 && <details><summary>论证联系</summary><ul>{claim.premiseIds.map(premise => {
       const linked = catalog.claims.find(c => c.id === premise);
       if (!linked) throw new Error(`Unknown premise: ${premise}`);
-      return <li key={premise}><Link href={`/claims/#${premise}`}>{linked.text}</Link></li>;
+      const reference = premiseReferences?.get(premise);
+      return <li key={premise}><Link href={reference?.href ?? `/claims/#${premise}`}>{reference?.label ?? linked.text}</Link></li>;
     })}</ul></details>}
-    {claim.caseBinding?.inputFile && <p><a href={`/downloads/cases/${claim.caseBinding.inputFile}`}>计算输入（版本 {claim.caseBinding.version}）</a></p>}
+    {showCaseInput && claim.caseBinding?.inputFile && <p><a href={`/downloads/cases/${claim.caseBinding.inputFile}`}>计算输入（版本 {claim.caseBinding.version}）</a></p>}
   </div>;
 }
 

@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import { createElement, type HTMLAttributes } from 'react';
 import catalog from '@/lib/catalog';
-import type { ReaderPage } from '@/lib/reader-book';
+import { getChapterReferenceIndex, type ReaderPage } from '@/lib/reader-book';
 import { getMDXComponents } from '@/mdx-components';
 import { ClaimAnnotation } from '@/components/evidence';
-import { chapterAnchorPrefix, createChapterNotePlan } from '@/scripts/reader-book.mjs';
+import { chapterAnchorPrefix, createChapterAnnotationPlan, createChapterNotePlan } from '@/scripts/reader-book.mjs';
 
 /** One renderer for a chapter page and for the same chapter in continuous print. */
 export async function ChapterContent({ page, anchorPrefix, print = false }: { page: ReaderPage; anchorPrefix?: string; print?: boolean }) {
@@ -13,6 +13,7 @@ export async function ChapterContent({ page, anchorPrefix, print = false }: { pa
   // Check even before rendering: an authored reference must never silently lose
   // its canonical paragraph or note because a record was removed/withdrawn.
   for (const note of plan.notes) if (claims.get(note.id)?.status !== 'reviewed') throw new Error(`Unpublished or unknown chapter claim: ${note.id}`);
+  const annotations = createChapterAnnotationPlan(plan, catalog.claims, await getChapterReferenceIndex(), { print });
 
   function Paragraph({ id }: { id: string }) {
     const note = plan.byClaimId.get(id), claim = claims.get(id);
@@ -28,7 +29,7 @@ export async function ChapterContent({ page, anchorPrefix, print = false }: { pa
     <MDX components={getMDXComponents({ Prose: ChapterProse, Claim: Paragraph, ...printHeadings })} />
     {plan.notes.length > 0 && <section className="chapter-notes not-prose" aria-labelledby={plan.headingId}>
       {print ? <h3 id={plan.headingId}>注释</h3> : <h2 id={plan.headingId}>注释</h2>}
-      <ol>{plan.notes.map(note => <li id={note.anchor} key={note.id}><ClaimAnnotation id={note.id} /></li>)}</ol>
+      <ol>{plan.notes.map(note => <li id={note.anchor} key={note.id}><ClaimAnnotation id={note.id} {...annotations.get(note.id)} /></li>)}</ol>
     </section>}
   </>;
 }

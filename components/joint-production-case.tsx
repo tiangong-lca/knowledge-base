@@ -23,7 +23,7 @@ export function JointProductionCase() {
     <p className="teaching-case-note">每个向量依次保留 kg 化石 CO2 和 g SO2，均为排放到空气。两种流不相加，不使用 LCIA 因子，也不据此给出整体环境优劣。分数表示这些设定值的精确计算结果，不表示现实数据具有同样的精度。</p>
     <div className="teaching-case-table" role="region" aria-label="操作基准与两种排放的虚构输入" tabIndex={0}>
       <table><caption>所列操作的已纳入负担互不重叠；W-Y 每次处理 1 kg 未利用 Y，且不回收。</caption>
-        <thead><tr><th scope="col">操作</th><th scope="col">每次操作的基准</th><th scope="col">化石 CO2 / kg</th><th scope="col">SO2 / g</th></tr></thead>
+        <thead><tr><th scope="col">操作</th><th scope="col">每次操作的基准</th><th scope="col">化石 CO2（kg）</th><th scope="col">SO2（g）</th></tr></thead>
         <tbody>{operationNames.map(name => <tr key={name}><th scope="row">{labels[name]}</th><td>{bases[name]}</td><td>{spec.inventoryPerOperation[name][0]}</td><td>{spec.inventoryPerOperation[name][1]}</td></tr>)}</tbody>
       </table>
     </div>
@@ -31,7 +31,7 @@ export function JointProductionCase() {
     <h4>问题一：怎样把既有一批的清单分派给产品标签？</h4>
     <p>此处固定为全部利用，不估计生产响应。质量约定的 X 份额为 {result.partitions.mass.shareX}；销售额约定使用 X 每 kg {spec.pricePerKgCU.X} CU、Y 每 kg {spec.pricePerKgCU.Y} CU，收入分别为 {result.batchRevenueCU.X} 和 {result.batchRevenueCU.Y} CU，因此 X 份额为 {result.partitions.grossSales.shareX}。CU 是虚构货币单位。</p>
     <div className="teaching-case-table" role="region" aria-label="质量与销售额分派的完整批次及每 kg 标签" tabIndex={0}>
-      <table><caption>每列向量均为（kg CO2，g SO2）；先逐流守恒，再讨论约定理由。</caption>
+      <table><caption>批次列保留（kg CO2，g SO2）；每 kg 产品列分别以 1 kg X 或 Y 为基准。先逐流核对加总，再讨论约定理由。</caption>
         <thead><tr><th scope="col">约定</th><th scope="col">X / Y 份额</th><th scope="col">X 批次标签</th><th scope="col">Y 批次标签</th><th scope="col">每 kg X</th><th scope="col">每 kg Y</th><th scope="col">逐流相加</th></tr></thead>
         <tbody>{([['质量 mass', result.partitions.mass], ['销售额 gross sales', result.partitions.grossSales]] as const).map(([name, p]) => <tr key={name}><th scope="row">{name}</th><td>{p.shareX} / {p.shareY}</td><td>{vector(p.Xbatch)}</td><td>{vector(p.Ybatch)}</td><td>{vector(p.XperKg)}</td><td>{vector(p.YperKg)}</td><td>{vector(p.sum)}</td></tr>)}</tbody>
       </table>
@@ -58,13 +58,13 @@ export function JointProductionCase() {
       <p className="teaching-case-equation">联合路线＝J ＋ {half.activities.standaloneY} S-Y ＋ {half.activities.wasteY} W-Y＝{vector(half.contributions.joint)} ＋ {vector(half.contributions.topUp)} ＋ {vector(half.contributions.waste)}＝{vector(half.jointRoute)}。</p>
       <p>两项不同的 Y 平衡都要保留：{half.jointYusedKg} kg 联合 Y ＋ {half.standaloneYtopUpKg} kg 独立补供＝{half.balances.requiredYKg} kg 服务；{half.jointYusedKg} kg 联合 Y 已用 ＋ {half.jointYwastedKg} kg 联合 Y 处理＝{half.balances.jointYProducedKg} kg 联合产出。</p>
       <p>完整篮子变化为 {vector(half.jointRoute)} − {vector(result.referenceBasket)}＝{vector(half.changeJointMinusReference)}，CO2 减少而 SO2 增加，不能合并成一个净环境优势。</p>
-      <p className="teaching-case-equation">定义 R-X(q)＝J ＋ {spec.outputKgPerJointBatch.Y}(1−q) W-Y − {spec.outputKgPerJointBatch.Y}q S-Y。q＝{half.q} 时，R-X＝{vector(half.Xresidual)}；再减去 {spec.functionalDemandKg.X} S-X，就恢复完整篮子变化 {vector(half.XresidualReconstructedChange)}。</p>
-      <p className="teaching-case-note">物理联合路线始终包含补供；只在推导这个残余时，补供与参照路线中的对应 Y 供给相消。R-X 不是物理联合清单，也不是可脱离参照技术与响应条件的产品属性。</p>
+      <p className="teaching-case-equation">定义 R_X(q)＝J ＋ {spec.outputKgPerJointBatch.Y}(1−q) W-Y − {spec.outputKgPerJointBatch.Y}q S-Y。q＝{half.q} 时，R_X＝{vector(half.Xresidual)}；再减去 {spec.functionalDemandKg.X} S-X，就恢复完整篮子变化 {vector(half.XresidualReconstructedChange)}。</p>
+      <p className="teaching-case-note">物理联合路线始终包含补供；只在推导这个残余时，补供与参照路线中的对应 Y 供给相消。R_X 不是物理联合清单，也不是可脱离参照技术与响应条件的产品属性。</p>
     </div>
 
     <h4>不能把两次改变比较对象所得的残余相加</h4>
-    <p>全部利用时，R-X＝J − {spec.outputKgPerJointBatch.Y} S-Y＝{vector(trap.XresidualAtFullUse)}。若另一次比较改以 Y 为比较对象，R-Y＝J − {spec.outputKgPerJointBatch.X} S-X＝{vector(trap.YresidualFromDifferentAnchoring)}。</p>
-    <p><strong>故意演示的错误相加：</strong>R-X ＋ R-Y＝{vector(trap.wrongSum)}，并不等于 J 的物理清单 {vector(trap.physicalJointInventory)}。两次比较各自使用同一完整篮子的节省 {vector(trap.doubleClaimedJointSaving)}，不能再把它们当作一对可加总的共产品标签。这项诊断不构成对所有替代比较的一般否定，也没有决定谁应获得联合收益。</p>
+    <p>全部利用时，R_X＝J − {spec.outputKgPerJointBatch.Y} S-Y＝{vector(trap.XresidualAtFullUse)}。若另一次比较改以 Y 为比较对象，R_Y＝J − {spec.outputKgPerJointBatch.X} S-X＝{vector(trap.YresidualFromDifferentAnchoring)}。</p>
+    <p><strong>故意演示的错误相加：</strong>R_X ＋ R_Y＝{vector(trap.wrongSum)}，并不等于 J 的物理清单 {vector(trap.physicalJointInventory)}。两次比较各自使用同一完整篮子的节省 {vector(trap.doubleClaimedJointSaving)}，不能再把它们当作一对可加总的共产品标签。这项诊断不构成对所有替代比较的一般否定，也没有决定谁应获得联合收益。</p>
     <details><summary>计算前提与适用范围</summary><ul>
       <li>X 与 Y 满足不同的材料服务；质量单位相同，不意味着两者可互相替代。</li>
       <li>联合过程的两种产出比例固定，不能独立改变其中一种；独立供给是设定的替代技术。</li>
