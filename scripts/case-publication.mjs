@@ -73,6 +73,8 @@ const pedigreeInputShape = {
     { sourceId: scalar, readingId: scalar, artifactId: scalar, sha256: scalar }])),
   facts: Object.fromEntries(pedigreeFactKeys.map(key => [key,
     { value: scalar, unit: scalar, subject: scalar, sourceKey: scalar, evidenceId: scalar, factId: scalar, passageId: scalar }])),
+  reliabilityTrace: { kind: scalar, gsdDecimalPlaces: scalar, cvDecimalPlaces: scalar,
+    originalRoundingProcedureEstablished: scalar, recommendationStatusResolved: scalar, cvScale: scalar },
   interpretation: { rawObservationsReconstructed: scalar, empiricalCalibrationReproduced: scalar,
     currentDatabaseSoftwareExecuted: scalar, unreportedPrecisionRecovered: scalar, scientificValidation: scalar,
     sourceReportedDiscrepanciesRepaired: scalar, summaryArithmeticFromDisplayedValues: scalar, ratioResidualIsAuthorConditional: scalar },

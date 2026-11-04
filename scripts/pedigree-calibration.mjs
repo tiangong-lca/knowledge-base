@@ -19,6 +19,8 @@ const reviewedFacts = [
   ["journalScoreTwo", "1.03", "GSD", "pedigree-journalScoreTwo", "journal2016", "ev-ped-journal-summary", "nf-ped-journalScoreTwo", "psg-ped2016-summary"],
   ["idealGsd", "1.3", "GSD", "pedigree-idealGsd", "journal2016", "ev-ped-ratio-example", "nf-ped-idealGsd", "psg-ped2016-ratio-example"],
   ["otherGsd", "3.2", "GSD", "pedigree-otherGsd", "journal2016", "ev-ped-ratio-example", "nf-ped-otherGsd", "psg-ped2016-ratio-example"],
+  ["reliabilityCandidateGsd", "43.55207485", "GSD", "pedigree-reliabilityCandidateGsd", "report2012", "ev-ped-reliability-cv-trace", "nf-ped-reliabilityCandidateGsd", "psg-ped2012-reliability-cv-trace"],
+  ["reliabilityReportedCv", "1237.93", "CV ratio", "pedigree-reliabilityReportedCv", "report2012", "ev-ped-reliability-cv-trace", "nf-ped-reliabilityReportedCv", "psg-ped2012-reliability-cv-trace"],
 ];
 const factFields = ["value", "unit", "subject", "sourceKey", "evidenceId", "factId", "passageId"];
 export const pedigreeFactKeys = Object.freeze(reviewedFacts.map(([key]) => key));
@@ -76,6 +78,15 @@ const reviewedIllustration = {
   "realProductRecommendation": false
 };
 
+const reviewedReliabilityTrace = {
+  "kind": "author-conditional-display-rounding-comparison",
+  "gsdDecimalPlaces": 2,
+  "cvDecimalPlaces": 2,
+  "originalRoundingProcedureEstablished": false,
+  "recommendationStatusResolved": false,
+  "cvScale": "standard-deviation/mean ratio, not percent"
+};
+
 const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
 
 /** Exact v1 identity/conditions; structural integrity is not source entailment. */
@@ -92,9 +103,9 @@ export function validatePedigreeCalibrationCase(spec) {
       errors.push(`${path}: must contain exactly the reviewed fields ${wanted.join(', ')}`);
     return true;
   };
-  fields(spec, [...Object.keys(reviewedIdentity), 'sources', 'facts', 'interpretation', 'illustration'], 'case');
+  fields(spec, [...Object.keys(reviewedIdentity), 'sources', 'facts', 'interpretation', 'illustration', 'reliabilityTrace'], 'case');
   for (const [key, value] of Object.entries(reviewedIdentity)) same(spec[key], value, key);
-  for (const [section, expected] of [['interpretation', reviewedInterpretation], ['illustration', reviewedIllustration]]) {
+  for (const [section, expected] of [['interpretation', reviewedInterpretation], ['illustration', reviewedIllustration], ['reliabilityTrace', reviewedReliabilityTrace]]) {
     if (fields(spec[section], Object.keys(expected), section))
       for (const [key, value] of Object.entries(expected)) same(spec[section][key], value, `${section}.${key}`);
   }
@@ -137,9 +148,28 @@ export function evaluatePedigreeCalibrationCase(spec) {
   const additional = facts[spec.illustration.factorFactKey];
   const logSigma = Math.hypot(Math.log(basic), Math.log(additional), Math.log(Number(spec.illustration.otherAdditionalFactors)));
   const totalGsd = Math.exp(logSigma), squaredGsd = totalGsd ** 2;
+  // Eq 8-5 is used here only for the lognormal GSD-to-CV relationship.
+  // Rounding the displayed candidate GSD first is our explicitly stipulated
+  // comparison; a matching display does not identify the source's procedure
+  // or reinstate a candidate omitted from its recommendation table.
+  const authorRoundedGsd = facts.reliabilityCandidateGsd.toFixed(spec.reliabilityTrace.gsdDecimalPlaces);
+  const cvFromGsd = gsd => Math.sqrt(Math.expm1(Math.log(gsd) ** 2));
+  const cvFromUnrounded = cvFromGsd(facts.reliabilityCandidateGsd);
+  const cvFromRounded = cvFromGsd(Number(authorRoundedGsd));
+  const cvFromRoundedToTwoDecimals = cvFromRounded.toFixed(spec.reliabilityTrace.cvDecimalPlaces);
   return {
     caseId: spec.caseId, version: spec.version,
     numericPolicy: 'IEEE-754 binary64 raw value; fixed4/fixed6/fixed8 are Number.toFixed(4/6/8); not source precision',
+    reliabilityTrace: {
+      kind: spec.reliabilityTrace.kind,
+      candidateSourceGsd: spec.facts.reliabilityCandidateGsd.value,
+      authorRoundedGsd, cvFromUnrounded: result(cvFromUnrounded), cvFromRounded: result(cvFromRounded),
+      cvFromRoundedToTwoDecimals, reportedCv: spec.facts.reliabilityReportedCv.value,
+      displayMatch: cvFromRoundedToTwoDecimals === spec.facts.reliabilityReportedCv.value,
+      cvScale: spec.reliabilityTrace.cvScale,
+      originalRoundingProcedureEstablished: false, recommendationStatusResolved: false,
+      empiricalCalibrationReproduced: false,
+    },
     sampling: {
       cluster: summary(facts.clusterMean, facts.clusterVariance, 'precision-of-estimated-mean'),
       poststratified: summary(facts.postMean, facts.postVariance, 'precision-of-estimated-mean'),

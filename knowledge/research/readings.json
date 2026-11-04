@@ -3757,10 +3757,32 @@
           "limits": [
             "Definitions inspected, not all annex derivations; printed intermediate-line inconsistencies do not authorize silent source repair."
           ]
+        },
+        {
+          "id": "psg-ped2012-reliability-cv-trace",
+          "artifactId": "art-ciroth-2012-pedigree-report",
+          "locator": "Table4 and §5.2.3; Table24; §8.4.2 Equation8-5; Table29",
+          "printedPages": "27,49,54–55",
+          "pdfIndices": [
+            26,
+            48,
+            53,
+            54
+          ],
+          "topics": [
+            "rejected GEMIS reliability candidate",
+            "GSD-to-CV formula",
+            "reported CV value",
+            "adoption status versus numerical rounding path"
+          ],
+          "limits": [
+            "Raw candidate43.55207485 and reportedCV1237.93 are printed source values. Rounding the candidate to43.55 before conversion is an author-conditional numerical comparison, not a recovered original algorithm.",
+            "The candidate remains not recommended/n.a. in the earlier conclusion/summary; later conversion-table use remains unexplained."
+          ]
         }
       ],
       "appraisal": {
-        "basis": "Public report from authorcompany, identicalSHA256 at lca-net mirror; selected methods/empirical conclusions/limits read; pp6,8,49,55 visually checked. Newly inspected fixed PDF pp17,29–31,52–53,73,82–83 and original carrier identity; independent source/method arithmetic remains selected in scope.",
+        "basis": "Public report from authorcompany, identicalSHA256 at lca-net mirror; selected methods/empirical conclusions/limits read; pp6,8,49,55 visually checked. Newly inspected fixed PDF pp17,29–31,52–53,73,82–83 and original carrier identity; independent source/method arithmetic remains selected in scope. Additional main-agent full-page images27,54,55 and earlier49 verify the reliability candidate, CV formula and table; conditional round-first numerical path is distinguished from original procedure.",
         "methodologicalScope": "Phase0 empirical-method development report, not universal data-quality calibration or current ecoinvent implementation specification.",
         "independence": "Weidema contributes to this report and coauthors original pedigree work; later journal article is related, not independent replication.",
         "limitations": [
@@ -7762,6 +7784,25 @@
         "A06"
       ],
       "status": "applied-to-candidate-prose; independent integrated review and publication qualification pending"
+    },
+    {
+      "id": "rev-ped-reader-clarity-and-cv-trace",
+      "before": "Ratio-to-factor bridge, cup-variance notation, Chinese score terminology and within-participant design can be read ambiguously; reliabilityCV remains only a status conflict.",
+      "after": "Clarify the source chain, exact cup-weight variance convention, data-quality-score title and same-participant test design. Add a conditional round-first GSD-to-CV numerical trace while keeping original procedure and recommendation status unresolved.",
+      "reasoning": "Reader questions triggered direct source reinspection. Main verified a narrower positive mathematical relation instead of repeating an unsupported claim that conversion itself is wholly unknown.",
+      "triggerPassageIds": [
+        "psg-ped2012-completeness-factors",
+        "psg-ped2008-estimators",
+        "psg-ped2008-results",
+        "psg-ped-ei2018-test-design",
+        "psg-ped2012-reliability-cv-trace"
+      ],
+      "affectedUnits": [
+        "V4-06",
+        "V7-02",
+        "A05"
+      ],
+      "status": "applied-to-candidate; targeted source/method/code/reader rechecks pending"
     }
   ]
 }

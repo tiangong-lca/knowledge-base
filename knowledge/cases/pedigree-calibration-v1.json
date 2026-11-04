@@ -177,6 +177,24 @@
       "evidenceId": "ev-ped-ratio-example",
       "factId": "nf-ped-otherGsd",
       "passageId": "psg-ped2016-ratio-example"
+    },
+    "reliabilityCandidateGsd": {
+      "value": "43.55207485",
+      "unit": "GSD",
+      "subject": "pedigree-reliabilityCandidateGsd",
+      "sourceKey": "report2012",
+      "evidenceId": "ev-ped-reliability-cv-trace",
+      "factId": "nf-ped-reliabilityCandidateGsd",
+      "passageId": "psg-ped2012-reliability-cv-trace"
+    },
+    "reliabilityReportedCv": {
+      "value": "1237.93",
+      "unit": "CV ratio",
+      "subject": "pedigree-reliabilityReportedCv",
+      "sourceKey": "report2012",
+      "evidenceId": "ev-ped-reliability-cv-trace",
+      "factId": "nf-ped-reliabilityReportedCv",
+      "passageId": "psg-ped2012-reliability-cv-trace"
     }
   },
   "interpretation": {
@@ -204,5 +222,13 @@
     "wholeLifeCycleModel": false,
     "actualCupMeanConfidenceInterval": false,
     "realProductRecommendation": false
+  },
+  "reliabilityTrace": {
+    "kind": "author-conditional-display-rounding-comparison",
+    "gsdDecimalPlaces": 2,
+    "cvDecimalPlaces": 2,
+    "originalRoundingProcedureEstablished": false,
+    "recommendationStatusResolved": false,
+    "cvScale": "standard-deviation/mean ratio, not percent"
   }
 }

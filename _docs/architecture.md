@@ -104,7 +104,7 @@ The chapter's single versioned case-input link requests a native same-origin dow
 
 ## Sampling summaries and conditional probability illustration
 
-`scripts/pedigree-calibration.mjs` is a closed static prose adapter. It fixes 17
+`scripts/pedigree-calibration.mjs` is a closed static prose adapter. It fixes 19
 source tuples, three PDF identities and separately stipulated lognormal conditions
 independently of the downloadable input. It evaluates published summary
 square-roots/CVs, displayed-factor rounding, GSD/squared-GSD conversion and an
@@ -123,3 +123,12 @@ default source snapshot cannot replace passage provenance. The existing neutral
 it grants no entitlement or redistribution permission. Legacy cases retain
 their existing source policies and input hashes. No widget, client runtime or
 new dependency is introduced.
+
+
+The candidate also binds the reported reliability GSD and CV to a conditional
+round-first conversion trace. The raw-source and author-rounded paths are
+both evaluated; agreement at displayed precision does not identify the original
+rounding procedure or restore a rejected factor's recommendation status. CV is
+an SD/mean ratio, not a percent. New v1 input review applies to the unpublished
+candidate; earlier candidate hashes remain in Git/review history and no released
+case or legacy artifact is overwritten.

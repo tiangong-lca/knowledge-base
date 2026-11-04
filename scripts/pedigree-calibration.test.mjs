@@ -89,3 +89,37 @@ test('closed v1 rejects any changed source tuple, source identity, numeric type 
   const condition = input(); condition.illustration.logIntervalHalfWidthSd = '1.96';
   assert(validatePedigreeCalibrationCase(condition).length > 0);
 });
+
+test('reliability CV trace separates unrounded input from the author rounding comparison and keeps CV in ratio units', () => {
+  const trace = evaluatePedigreeCalibrationCase(input()).reliabilityTrace;
+  // Independent Python standard-library calculation of the two fixed paths.
+  assert.equal(trace.candidateSourceGsd, '43.55207485');
+  assert.equal(trace.authorRoundedGsd, '43.55');
+  assert.equal(trace.cvFromUnrounded.fixed8, '1238.15382107');
+  assert.equal(trace.cvFromRounded.fixed8, '1237.93122459');
+  assert.equal(trace.cvFromUnrounded.value.toFixed(2), '1238.15');
+  assert.equal(trace.cvFromRoundedToTwoDecimals, '1237.93');
+  assert.equal(trace.reportedCv, '1237.93');
+  assert.equal(trace.displayMatch, true);
+  assert(trace.cvFromUnrounded.value > trace.cvFromRounded.value);
+  assert.equal(trace.cvScale, 'standard-deviation/mean ratio, not percent');
+  // The inverse lognormal relation recovers GSD from CV as a ratio; using a
+  // percent-scaled CV here would violate this distribution identity.
+  const recoveredGsd = Math.exp(Math.sqrt(Math.log1p(trace.cvFromRounded.value ** 2)));
+  close(recoveredGsd, 43.55);
+  assert.equal(trace.kind, 'author-conditional-display-rounding-comparison');
+  assert.equal(trace.originalRoundingProcedureEstablished, false);
+  assert.equal(trace.recommendationStatusResolved, false);
+  assert.equal(trace.empiricalCalibrationReproduced, false);
+});
+
+test('reliability trace assumptions cannot change rounding, scale or establish an original source procedure', () => {
+  const original = input();
+  for (const [field, value] of Object.entries(original.reliabilityTrace)) {
+    const spec = input(); spec.reliabilityTrace[field] = typeof value === 'boolean' ? true : typeof value === 'number' ? value + 1 : 'changed';
+    assert(validatePedigreeCalibrationCase(spec).some(error => error.includes(`reliabilityTrace.${field}`)));
+    assert.throws(() => evaluatePedigreeCalibrationCase(spec), /Invalid pedigree/);
+  }
+  const missing = input(); delete missing.reliabilityTrace;
+  assert(validatePedigreeCalibrationCase(missing).length > 0);
+});

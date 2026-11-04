@@ -571,7 +571,7 @@
       },
       "reading": {
         "status": "selected-passages",
-        "scope": "Cover; §§1–2; Figure1; discussion of Figures2–5 and Equation1，印刷页 1,5–10；§3; §§4.1–4.3，印刷页 11–15；§§4.4–4.5; opening §5.1，印刷页 15–20；§§5.2.2–5.3.2; Figure18–21; Tables4–7，印刷页 27–31；§§5.4.2,5.5.2–5.5.3,5.6.2–5.7,6–7; Table24，印刷页 38,43,47–49；§§8.3–8.4.3;§§8.7–8.8，印刷页 52–55,62–63；新增细化§5.3及Annex A§5 pp72–73、Annex B§2.2 pp82–83。",
+        "scope": "Cover; §§1–2; Figure1; discussion of Figures2–5 and Equation1，印刷页 1,5–10；§3; §§4.1–4.3，印刷页 11–15；§§4.4–4.5; opening §5.1，印刷页 15–20；§§5.2.2–5.3.2; Figure18–21; Tables4–7，印刷页 27–31；§§5.4.2,5.5.2–5.5.3,5.6.2–5.7,6–7; Table24，印刷页 38,43,47–49；§§8.3–8.4.3;§§8.7–8.8，印刷页 52–55,62–63；新增细化§5.3及Annex A§5 pp72–73、Annex B§2.2 pp82–83。；精确配对Table4/§5.2.3、Table24、Equation8-5与Table29（pp27,49,54–55），只建立有条件的数值联系。",
         "checkedAt": "2026-11-05",
         "readingId": "rd-ciroth-2012-pedigree-refinement"
       }
@@ -5823,6 +5823,45 @@
         "reviewKind": "agent-source-check",
         "checkedAt": "2026-11-05"
       }
+    },
+    {
+      "id": "ev-ped-reliability-cv-trace",
+      "sourceId": "src-book-ciroth-2012-pedigree-refinement",
+      "readingId": "rd-ciroth-2012-pedigree-refinement",
+      "passageId": "psg-ped2012-reliability-cv-trace",
+      "locator": "2012报告pp27、49、54–55：Table4/§5.2.3、Table24、Equation8-5、Table29",
+      "summary": "GEMIS可靠性等级5候选GSD被判为可能过高而不推荐；总结表为n.a.，后续CV表仍有1237.93。原式支持检验条件性先舍入再转换路径，但没有恢复实际表算法或采用资格。",
+      "appraisal": {
+        "basis": "Public report from authorcompany, identicalSHA256 at lca-net mirror; selected methods/empirical conclusions/limits read; pp6,8,49,55 visually checked. Newly inspected fixed PDF pp17,29–31,52–53,73,82–83 and original carrier identity; independent source/method arithmetic remains selected in scope. Additional main-agent full-page images27,54,55 and earlier49 verify the reliability candidate, CV formula and table; conditional round-first numerical path is distinguished from original procedure.",
+        "methodologicalScope": "Phase0 empirical-method development report, not universal data-quality calibration or current ecoinvent implementation specification.",
+        "independence": "Weidema contributes to this report and coauthors original pedigree work; later journal article is related, not independent replication.",
+        "limitations": [
+          "Report works within a chosen pedigree structure and distribution assumptions.",
+          "Limited and heterogeneous empirical sources; basic uncertainty factors not calibrated in this phase.",
+          "Internal tables do not preserve the same missing-value treatment for poorest reliability score.",
+          "No source data, statistical code or later journal calibration independently reproduced."
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "numericFacts": [
+        {
+          "id": "nf-ped-reliabilityCandidateGsd",
+          "value": "43.55207485",
+          "unit": "GSD",
+          "subject": "pedigree-reliabilityCandidateGsd",
+          "quantity": "Table4 GEMIS reliability score5 candidate GSD, subsequently not recommended",
+          "basis": "所列2012原页实际印刷值。候选GSD先舍入到两位小数是本书另设的比较路径，不能记为原作者已明确的程序；CV不是百分数。"
+        },
+        {
+          "id": "nf-ped-reliabilityReportedCv",
+          "value": "1237.93",
+          "unit": "CV ratio",
+          "subject": "pedigree-reliabilityReportedCv",
+          "quantity": "Table29 reliability score5 displayed coefficient of variation, dimensionless SD/mean ratio",
+          "basis": "所列2012原页实际印刷值。候选GSD先舍入到两位小数是本书另设的比较路径，不能记为原作者已明确的程序；CV不是百分数。"
+        }
+      ]
     }
   ],
   "claims": [
@@ -9353,7 +9392,7 @@
     },
     {
       "id": "cl-unc-scores",
-      "text": "数据质量评分首先描述的是资料的某些特征。Ciroth 的 2012 年 phase 0 报告在 pedigree matrix 中列出可靠性、完整性、时间、地理与技术方面的指标；例如，它把观测是否经过核对，以及资料与所需情境相距多远，安排到不同等级中。报告随后另列不确定性因子和转换步骤。这意味着一个等级数字本身，还不是测量得到的标准差，也不是天然带有概率意义的刻度。",
+      "text": "数据质量评分首先描述的是资料的某些特征。Ciroth 的 2012 年方法开发报告在谱系矩阵（pedigree matrix）中列出可靠性、完整性、时间、地理与技术方面的指标；例如，它把观测是否经过核对，以及资料与所需情境相距多远，安排到不同等级中。报告随后另列不确定性因子和转换步骤。这意味着一个等级数字本身，还不是测量得到的标准差，也不是天然带有概率意义的刻度。",
       "kind": "interpretation",
       "scope": "May2012 Version7.1 报告所示 pedigree 方案；不是 1996 原论文的重建。",
       "evidenceIds": [
@@ -9376,7 +9415,7 @@
         "cn-quality-rating"
       ],
       "status": "reviewed",
-      "reviewedAt": "2026-11-04",
+      "reviewedAt": "2026-11-05",
       "reviewKind": "agent-source-check"
     },
     {
@@ -9481,55 +9520,47 @@
     },
     {
       "id": "cl-unc-table-conflict",
-      "text": "阅读数字表格时，还要核查它在前后文中的地位。该报告第 49 页的总结表把可靠性最差等级记为无可用值；第 55 页的 CV 转换表，却在同一等级出现 1237.93。前文又曾拒绝采用一个极端估计。这些位置的使用关系尚不明确：差别可能来自修订未同步、表格用途或其他原因，仅凭这几处文字还不能诊断。因此，不能把其中任一数字直接转成推荐参数，更不能将其作为跨项目通用的默认参数。 后来的期刊汇总也把这个可靠性等级列为无可用值，但没有因此解释2012年后表的具体用途。",
       "kind": "interpretation",
-      "scope": "对固定2012v7.1载体中实际表格与文字的有限对照；不是最终错误诊断。",
+      "scope": "2012可靠性等级5候选GSD、CV表值和推荐状态的原文对照",
       "evidenceIds": [
-        "ev-unc-ciroth-summary",
-        "ev-unc-ciroth-table-cv",
-        "ev-unc-ciroth-empirical",
+        "ev-ped-reliability-cv-trace",
         "ev-ped-journal-summary"
       ],
       "evidenceLinks": [
         {
-          "evidenceId": "ev-unc-ciroth-summary",
+          "evidenceId": "ev-ped-reliability-cv-trace",
           "relation": "supports",
-          "rationale": "p49Table24图像确认可靠性score5为n.a.，并保留暂定因子的语境。"
-        },
-        {
-          "evidenceId": "ev-unc-ciroth-table-cv",
-          "relation": "supports",
-          "rationale": "p55Table29图像确认同一等级出现1237.93的CV；这里比较的是可用状态而非把不同统计尺度直接作数值相等比较。"
-        },
-        {
-          "evidenceId": "ev-unc-ciroth-empirical",
-          "relation": "qualifies",
-          "rationale": "p27拒绝采用极端可靠性估计，构成需要继续核对的前文条件；不能仅摘后表作为推荐。"
+          "rationale": "原页分别提供GEMIS候选GSD、拒绝推荐/n.a.状态、CV定义与后表值；本段只归属这些实际表述。"
         },
         {
           "evidenceId": "ev-ped-journal-summary",
           "relation": "qualifies",
-          "rationale": "2016Table6可靠性等级5仍为n.a.；该状态不解释2012Table29的用途或差异原因。"
+          "rationale": "2016Table6同一可靠性等级仍为n.a.，不能据CV表有数值认定推荐恢复。"
         }
       ],
       "premiseIds": [
         "cl-unc-scores",
-        "cl-unc-calibration",
-        "cl-unc-calibration-limits",
-        "cl-unc-baseline"
+        "cl-ped-factor-conventions"
       ],
-      "caveats": [
-        "差异原因仍不明确，可能涉及修订同步、表格用途或其他因素。"
-      ],
-      "reasoning": "固定文件中逐项定位n.a.、CV值及拒绝极端估计的说明；观察到未协调的使用地位，暂缓参数采用，而非推断整个方法无效。",
       "conceptIds": [],
+      "caveats": [
+        "未解释被拒候选为何在后续转换表保留数值；不据此推断所有因子无效或给出可采用参数。"
+      ],
+      "reasoning": "把GSD、CV比例及采用状态分别定位；数学换算与推荐资格是不同问题。",
+      "text": "数值的含义明确后，还要核对采用状态。2012报告中，GEMIS资料给出可靠性等级5的候选GSD 43.55207485；第27页结论认为它可能过高而不推荐，第49页总结表便记为无可用值。第55页转换表却仍列1237.93，这里是CV＝标准差/均值的比例口径，不是GSD，也不是百分数。2016期刊汇总仍把这一等级记为无可用值，不能仅从后表出现了数值，就把它恢复为推荐参数。",
       "status": "reviewed",
       "reviewedAt": "2026-11-05",
-      "reviewKind": "agent-source-check"
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-PEDIGREE-CALIBRATION",
+        "version": "1.0.0",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
+        "inputFile": "pedigree-calibration-v1.json"
+      }
     },
     {
       "id": "cl-unc-alongside",
-      "text": "并非所有方法作者都主张把质量分数并入定量不确定性。Edelen 与 Ingwersen 的 2018 年论文，在其 PMC 作者手稿中，明确建议把数据质量评价与不确定性分析互补使用。其立场是：资料特征和使用适合性需要被评价，模型或数据的不确定性也需要相应分析；两条工作可以相互提醒，但不应在解释中混成同一件事。",
+      "text": "并非所有方法作者都主张把数据质量评分并入定量不确定性。Edelen 与 Ingwersen 的 2018 年论文，在其 PMC 作者手稿中，明确建议把数据质量评价与不确定性分析互补使用。其立场是：资料特征和使用适合性需要被评价，模型或数据的不确定性也需要相应分析；两条工作可以相互提醒，但不应在解释中混成同一件事。",
       "kind": "source-statement",
       "scope": "2017在线发表、2018卷期论文的PMC作者手稿§2.4；作为一种明确的方法立场。",
       "evidenceIds": [
@@ -9550,7 +9581,7 @@
         "cn-quality-calibration"
       ],
       "status": "reviewed",
-      "reviewedAt": "2026-11-04",
+      "reviewedAt": "2026-11-05",
       "reviewKind": "agent-source-check"
     },
     {
@@ -9624,7 +9655,8 @@
         "cl-ped-calibration-boundary",
         "cl-ped-factor-conventions",
         "cl-ped-inventory-center",
-        "cl-ped-three-tests"
+        "cl-ped-three-tests",
+        "cl-ped-reliability-cv-trace"
       ],
       "caveats": [
         "这些方法立场和有限校准材料不足以宣布方法优劣已定。"
@@ -15328,7 +15360,7 @@
         "总体份额由前阶段资料估计；此处没有重建全部份额，也没有证明其估计误差已完全传播。"
       ],
       "reasoning": "逐项解释附录的阶段特定符号，不把第一阶段门店计数变量当作第二阶段质量。",
-      "text": "分层估计不是把每层均值简单相加。用Wₖ表示第k个杯型层在所定总体中的份额，ȳₖ表示该层样本的平均杯重，原文附录的杯重估计写作ȳ_w＝ΣₖWₖȳₖ。各层所占份额不同，相同的层均值对总体均值就有不同贡献。附录还区分了第一阶段的“每家门店有多少种杯型”和第二阶段的“每个总体元素有多重”：两处相似的求和符号，所指的总体、观察值和单位并不相同。",
+      "text": "分层估计不是把每层均值简单相加。用Wₖ表示第k个杯型层在所定总体中的份额，ȳₖ表示该层样本的平均杯重，原文附录的杯重估计写作ȳ＝ΣₖWₖȳₖ。各层所占份额不同，相同的层均值对总体均值就有不同贡献。附录还区分了第一阶段的“每家门店有多少种杯型”和第二阶段的“每个总体元素有多重”：两处相似的求和符号，所指的总体、观察值和单位并不相同。",
       "status": "reviewed",
       "reviewedAt": "2026-11-05",
       "reviewKind": "agent-source-check"
@@ -15338,13 +15370,19 @@
       "kind": "interpretation",
       "scope": "对原附录分层方差与整群比值估计的解释",
       "evidenceIds": [
-        "ev-ped-sampling-estimator"
+        "ev-ped-sampling-estimator",
+        "ev-ped-sampling-results"
       ],
       "evidenceLinks": [
         {
           "evidenceId": "ev-ped-sampling-estimator",
           "relation": "supports",
           "rationale": "附录给出杯型层有限总体方差和整群总量比值；本段解释各项作用，未额外证明权重不确定性已完整传播。"
+        },
+        {
+          "evidenceId": "ev-ped-sampling-results",
+          "relation": "qualifies",
+          "rationale": "p271原结果页公式下仍使用门店/杯型数定义；本段明确按附录p276的杯重阶段定义解释，不猜测不一致成因。"
         }
       ],
       "premiseIds": [
@@ -15357,7 +15395,7 @@
         "原始观测、全部层样本量/均值/方差未披露；原式的阶段权重和份额估计不能视为已审计的完整抽样实现。"
       ],
       "reasoning": "解释原文给定设计下的表达式，未将其推广成任意抽样的标准误公式。",
-      "text": "在给定这些层权重的写法中，均值估计的方差包含ΣₖWₖ²(1−nₖ/Nₖ)sₖ²/nₖ：sₖ²描述层内样本的散布，nₖ/Nₖ是该层抽样比例，Wₖ²决定该层误差怎样进入加权平均。整群路线则先把所选门店的杯重总和相加，再除以这些门店的杯型出现数总和；它没有把每家店的平均杯重当成等权观察。由此可见，知道总共称了多少个杯子，还不足以确定平均值的精度；层、群、权重和估计对象都在公式中承担工作。",
+      "text": "在给定这些层权重的写法中，均值估计的方差包含ΣₖWₖ²(1−nₖ/Nₖ)sₖ²/nₖ：sₖ²是该层样本杯重的方差，nₖ与Nₖ分别是层样本量与层总体量，nₖ/Nₖ是抽样比例，Wₖ²决定该层误差怎样进入加权平均。整群路线则先把所选门店的杯重总和相加，再除以这些门店的杯型出现数总和；它没有把每家店的平均杯重当成等权观察。由此可见，知道总共称了多少个杯子，还不足以确定平均值的精度；层、群、权重和估计对象都在公式中承担工作。 这里采用附录3.5.3的杯重阶段定义；结果页公式下的符号表使用的却是第一阶段杯型数等定义，两处符号说明未完全协调。",
       "status": "reviewed",
       "reviewedAt": "2026-11-05",
       "reviewKind": "agent-source-check"
@@ -15630,7 +15668,7 @@
         "实际资料是否满足分布、独立性与中心值设定需另外判断；未测量真实协方差。"
       ],
       "reasoning": "由对数乘积和独立正态方差相加说明聚合公式，不将经验分组比值自动识别为独立分量。",
-      "text": "把一个因子放入概率模型，还要明确它扮演什么角色。假定X是若干独立乘性分量的乘积，每个分量的对数服从正态分布。对数把乘积变成和，独立性使对数方差相加；若各分量GSD为g_b、g₁、g₂……，总量便有ln(g_T)²＝ln(g_b)²＋Σᵢln(gᵢ)²。这里加的是对数标准差的平方，独立性让交叉协方差项消失。若误差来源相关，仅有各项GSD就不足以决定总散布。",
+      "text": "把一个因子放入概率模型，还要明确它扮演什么角色。假定X是若干独立乘性分量的乘积，每个分量的对数服从正态分布。对数把乘积变成和，独立性使对数方差相加；若各分量GSD为g_b、g₁、g₂……，总量便有[ln(g_T)]²＝[ln(g_b)]²＋Σᵢ[ln(gᵢ)]²。这里加的是对数标准差的平方，独立性让交叉协方差项消失。若误差来源相关，仅有各项GSD就不足以决定总散布。",
       "status": "reviewed",
       "reviewedAt": "2026-11-05",
       "reviewKind": "agent-source-check"
@@ -15655,9 +15693,10 @@
       "conceptIds": [],
       "caveats": [
         "参与者不是全部LCA用户的随机样本；计划评分项数不等于有效完整响应数。",
-        "它没有检验新修订EPA矩阵的有效性、杯重因子或培训干预。"
+        "它没有检验新修订EPA矩阵的有效性、杯重因子或培训干预。",
+        "这是同一批参与者的两体系设计要求；实际缺填和错误另述，不能据计划断言所有评分均完整。"
       ],
-      "text": "还有一项检验发生在查因子表之前：不同使用者会不会给同一资料相近的等级？Edelen 与 Ingwersen 的测试附件让12名美国EPA员工或承包人员，依据同一数据集及背景文件，评价其中四项输入流；参与者分别使用Weidema 2013的五指标体系和Cooper—Kahn 2012的七指标A/B体系。测试没有先指定一个正确分数，而是观察评分分布。因此，它首先检验的是评分的可重复性与理解，而不是某个概率区间是否覆盖真实误差。",
+      "text": "还有一项检验发生在查因子表之前：不同使用者会不会给同一资料相近的等级？Edelen 与 Ingwersen 的测试附件让12名美国EPA员工或承包人员，依据同一数据集及背景文件，评价其中四项输入流；测试要求同一批参与者对这四项输入流，按Weidema 2013的五指标体系和Cooper—Kahn 2012的七指标A/B体系各评价一次。测试没有先指定一个正确分数，而是观察评分分布。因此，它首先检验的是评分的可重复性与理解，而不是某个概率区间是否覆盖真实误差。",
       "status": "reviewed",
       "reviewedAt": "2026-11-05",
       "reviewKind": "agent-source-check"
@@ -15774,7 +15813,7 @@
       "caseBinding": {
         "caseId": "CASE-PEDIGREE-CALIBRATION",
         "version": "1.0.0",
-        "inputSha256": "f2e12a21e200b05e7ec0ae24183eba2d3458f52a08952aca020109edfad8f588",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
         "inputFile": "pedigree-calibration-v1.json"
       }
     },
@@ -15814,7 +15853,7 @@
       "caseBinding": {
         "caseId": "CASE-PEDIGREE-CALIBRATION",
         "version": "1.0.0",
-        "inputSha256": "f2e12a21e200b05e7ec0ae24183eba2d3458f52a08952aca020109edfad8f588",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
         "inputFile": "pedigree-calibration-v1.json"
       }
     },
@@ -15856,7 +15895,7 @@
       "caseBinding": {
         "caseId": "CASE-PEDIGREE-CALIBRATION",
         "version": "1.0.0",
-        "inputSha256": "f2e12a21e200b05e7ec0ae24183eba2d3458f52a08952aca020109edfad8f588",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
         "inputFile": "pedigree-calibration-v1.json"
       }
     },
@@ -15901,7 +15940,7 @@
       "caseBinding": {
         "caseId": "CASE-PEDIGREE-CALIBRATION",
         "version": "1.0.0",
-        "inputSha256": "f2e12a21e200b05e7ec0ae24183eba2d3458f52a08952aca020109edfad8f588",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
         "inputFile": "pedigree-calibration-v1.json"
       }
     },
@@ -15933,14 +15972,14 @@
         "这是表内运算和版本对照，没有从原始样本重建多位小数因子；更多显示位数不构成更强的经验精度证明。"
       ],
       "reasoning": "逐项核对显示值的舍入与后继表的数量身份，不把同一数据链算作独立重复验证。",
-      "text": "报告先列出等级2、3、4的暂定GSD因子1.032982251、1.041623865、1.084355355，随后以1.03、1.04、1.08提出舍入后的建议。按显示值保留两位小数，确实得到这组三个数。2016卷期论文沿用这组建议，其中等级2仍为1.03，表头也标作GSD。等级5没有可用值；空缺不能被自动填成1。",
+      "text": "报告据图20、21所展示的GSD比值比较，先列出等级2、3、4的暂定GSD因子1.032982251、1.041623865、1.084355355，随后以1.03、1.04、1.08提出舍入后的建议。多条超市链怎样汇成单一精细显示值，报告没有展开；接下来可核对的是舍入这一步。按显示值保留两位小数，确实得到这组三个数。2016卷期论文沿用这组建议，其中等级2仍为1.03，表头也标作GSD。等级5没有可用值；空缺不能被自动填成1。",
       "status": "reviewed",
       "reviewedAt": "2026-11-05",
       "reviewKind": "agent-source-check",
       "caseBinding": {
         "caseId": "CASE-PEDIGREE-CALIBRATION",
         "version": "1.0.0",
-        "inputSha256": "f2e12a21e200b05e7ec0ae24183eba2d3458f52a08952aca020109edfad8f588",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
         "inputFile": "pedigree-calibration-v1.json"
       }
     },
@@ -15979,7 +16018,7 @@
       "caseBinding": {
         "caseId": "CASE-PEDIGREE-CALIBRATION",
         "version": "1.0.0",
-        "inputSha256": "f2e12a21e200b05e7ec0ae24183eba2d3458f52a08952aca020109edfad8f588",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
         "inputFile": "pedigree-calibration-v1.json"
       }
     },
@@ -16013,14 +16052,14 @@
         "只适用于目标GSD不小于基准时的非负对数方差差额；没有经验验证或替代因子建议。"
       ],
       "reasoning": "把不同问题的数学条件显式分开：候选比值规则与恰好恢复既定组间散布的独立分量要求并非同一恒等式。",
-      "text": "这也显示了比值与独立额外分量的区别。另加一个要求：把GSD＝1.3当作基准，要通过一个独立乘性分量恰好恢复总GSD＝3.2。在这个额外条件下，所需分量应为exp{√[ln(3.2)²−ln(1.3)²]}≈3.105500，而不是两组GSD直接相除得到的R。若把R直接当作该独立分量，合成GSD约为2.555421；用方差差额构造的分量则返回3.2000。这是一项附加模型条件下的代数对照，不是为原文另造一个应当采用的新默认因子。",
+      "text": "这也显示了比值与独立额外分量的区别。另加一个要求：把GSD＝1.3当作基准，要通过一个独立乘性分量恰好恢复总GSD＝3.2。在这个额外条件下，所需分量应为exp{√[[ln(3.2)]²−[ln(1.3)]²]}≈3.105500，而不是两组GSD直接相除得到的R。若把R直接当作该独立分量，合成GSD约为2.555421；用方差差额构造的分量则返回3.2000。这是一项附加模型条件下的代数对照，不是为原文另造一个应当采用的新默认因子。",
       "status": "reviewed",
       "reviewedAt": "2026-11-05",
       "reviewKind": "agent-source-check",
       "caseBinding": {
         "caseId": "CASE-PEDIGREE-CALIBRATION",
         "version": "1.0.0",
-        "inputSha256": "f2e12a21e200b05e7ec0ae24183eba2d3458f52a08952aca020109edfad8f588",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
         "inputFile": "pedigree-calibration-v1.json"
       }
     },
@@ -16068,7 +16107,7 @@
       "caseBinding": {
         "caseId": "CASE-PEDIGREE-CALIBRATION",
         "version": "1.0.0",
-        "inputSha256": "f2e12a21e200b05e7ec0ae24183eba2d3458f52a08952aca020109edfad8f588",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
         "inputFile": "pedigree-calibration-v1.json"
       }
     },
@@ -16108,7 +16147,7 @@
       "caseBinding": {
         "caseId": "CASE-PEDIGREE-CALIBRATION",
         "version": "1.0.0",
-        "inputSha256": "f2e12a21e200b05e7ec0ae24183eba2d3458f52a08952aca020109edfad8f588",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
         "inputFile": "pedigree-calibration-v1.json"
       }
     },
@@ -16147,14 +16186,14 @@
         "计算使用印刷因子及作者固定条件；没有传播因子校准误差或验证真实分布。"
       ],
       "reasoning": "对数方差相加、指数还原；额外GSD为1时其对数方差贡献为0。",
-      "text": "按这些条件，σ_log＝√[ln(1.2)²＋ln(1.03)²]≈0.184702；总GSD g_T＝exp(σ_log)≈1.202860，平方GSD U_T≈1.446872。把所有额外因子改为1时，它们的对数都为零，总GSD就退回基础GSD，而不会归零。这个结果让“最佳评级仍有基础不确定性”成为可检查的运算，也把它成立所依赖的模型写了出来。",
+      "text": "按这些条件，对数标准差σ＝√{[ln(1.2)]²＋[ln(1.03)]²}≈0.184702；总GSD g_T＝exp(σ)≈1.202860，平方GSD U_T≈1.446872。把所有额外因子改为1时，它们的对数都为零，总GSD就退回基础GSD，而不会归零。这个结果让“最佳评级仍有基础不确定性”成为可检查的运算，也把它成立所依赖的模型写了出来。",
       "status": "reviewed",
       "reviewedAt": "2026-11-05",
       "reviewKind": "agent-source-check",
       "caseBinding": {
         "caseId": "CASE-PEDIGREE-CALIBRATION",
         "version": "1.0.0",
-        "inputSha256": "f2e12a21e200b05e7ec0ae24183eba2d3458f52a08952aca020109edfad8f588",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
         "inputFile": "pedigree-calibration-v1.json"
       }
     },
@@ -16188,14 +16227,14 @@
         "不将两标准差范围写成无条件或精确95%的经验覆盖保证；不是已估计总体均值的置信区间。"
       ],
       "reasoning": "由定义U_T＝exp(2σ_log)，指数还原对数区间得到中位数除/乘U_T。",
-      "text": "在同一假定分布中，对数中心两侧各取两个σ_log，回到原尺度便得到10/U_T至10×U_T，即约6.9115至14.4687 kg/件。这是所设参数分布的一个中央范围，不是对柏林平均杯重计算出来的置信区间。它也不会把其他材料、排放和表征因子的未知关系一起解决；若要继续传播到整个LCA结果，仍须给出其余模型及依赖结构。",
+      "text": "在同一假定分布中，对数中心两侧各取两个对数标准差σ，回到原尺度便得到10/U_T至10×U_T，即约6.9115至14.4687 kg/件。这是所设参数分布的一个中央范围，不是对柏林平均杯重计算出来的置信区间。它也不会把其他材料、排放和表征因子的未知关系一起解决；若要继续传播到整个LCA结果，仍须给出其余模型及依赖结构。",
       "status": "reviewed",
       "reviewedAt": "2026-11-05",
       "reviewKind": "agent-source-check",
       "caseBinding": {
         "caseId": "CASE-PEDIGREE-CALIBRATION",
         "version": "1.0.0",
-        "inputSha256": "f2e12a21e200b05e7ec0ae24183eba2d3458f52a08952aca020109edfad8f588",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
         "inputFile": "pedigree-calibration-v1.json"
       }
     },
@@ -16222,14 +16261,49 @@
         "这是所设分布的数学性质，不是对原调查均值的再估计；没有推断实际软件采用哪种中心值。"
       ],
       "reasoning": "由正态指数矩E(expY)＝exp(μ＋σ²/2)推导算术均值，并保持本例中位数固定。",
-      "text": "中心值也必须随定义保持一致。上面把10设为中位数和几何均值；在这组对数正态条件下，算术均值是10exp(σ_log²/2)≈10.1720 kg/件。若已有清单提供的是算术均值，对数中心应取μ_log＝ln(算术均值)−σ_log²/2；不能既保留原来的σ_log，又把同一个数同时当作算术均值和中位数。分布的中心、散布和所要估计的对象，应一起进入参数说明。",
+      "text": "中心值也必须随定义保持一致。上面把10设为中位数和几何均值；在这组对数正态条件下，算术均值是10exp(σ²/2)≈10.1720 kg/件。若已有清单提供的是算术均值，对数中心应取μ＝ln(算术均值)−σ²/2；不能既保留原来的σ，又把同一个数同时当作算术均值和中位数。分布的中心、散布和所要估计的对象，应一起进入参数说明。",
       "status": "reviewed",
       "reviewedAt": "2026-11-05",
       "reviewKind": "agent-source-check",
       "caseBinding": {
         "caseId": "CASE-PEDIGREE-CALIBRATION",
         "version": "1.0.0",
-        "inputSha256": "f2e12a21e200b05e7ec0ae24183eba2d3458f52a08952aca020109edfad8f588",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
+        "inputFile": "pedigree-calibration-v1.json"
+      }
+    },
+    {
+      "id": "cl-ped-reliability-cv-trace",
+      "kind": "calculation",
+      "scope": "作者条件性的先舍入GSD再按对数正态式转换CV；并非恢复原表算法",
+      "evidenceIds": [
+        "ev-ped-reliability-cv-trace"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-reliability-cv-trace",
+          "relation": "supports",
+          "rationale": "提供未舍入候选GSD、CV公式和后表目标值；两位小数预舍入是本书明确附加的条件，不归因于原作者。"
+        }
+      ],
+      "premiseIds": [
+        "cl-unc-table-conflict",
+        "cl-ped-factor-conventions"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "先舍入再转换的数值吻合不能证明原表实际采用该算法；直接使用未舍入候选值给出不同结果。",
+        "没有恢复被拒绝候选的推荐状态、经验适用性或原始统计数据。"
+      ],
+      "reasoning": "按原报告CV＝sqrt(exp([lnG]²)−1)分别计算未舍入GSD与作者先舍入到两位小数的路径，再比较CV显示值，区分数值关联与原程序/资格证据。",
+      "text": "按报告第54页的对数正态换算式，可以进一步检验这两个数的联系：CV＝√{exp([ln(g)]²)−1}。若先把上面的候选GSD舍入至43.55，得到CV≈1237.931225，再显示到两位小数，便与1237.93相合；直接使用未舍入候选值，则得到约1238.153821。这建立了一条“先舍入、再转换”的条件性数值路径，仍不能确认原表实际采用的舍入程序，也没有解释被拒候选为何保留在转换表中。数学上的联系与使用上的正当性，需要分别回答。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-PEDIGREE-CALIBRATION",
+        "version": "1.0.0",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
         "inputFile": "pedigree-calibration-v1.json"
       }
     }

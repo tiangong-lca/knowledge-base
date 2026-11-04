@@ -668,7 +668,7 @@ test('pedigree public closure binds every selected fact and its actual original-
   const fixture = pedigreeFixture();
   assert.deepEqual(errors(fixture), []);
   assert.equal(fixture.catalog.claims[0].text, 'CV=1.03250202%; source=0.07%; unrepaired=false; residual=3.105500; distribution=[6.91145966,14.46872367].');
-  assert.equal(caseInputSha256(fixture.spec), 'f2e12a21e200b05e7ec0ae24183eba2d3458f52a08952aca020109edfad8f588');
+  assert.equal(caseInputSha256(fixture.spec), 'bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab');
   assert.equal(caseEvaluationReceipt(fixture.spec, 'a'.repeat(40)).scientificApproval, false);
   // Omitted artifact kind is the existing retrieved-carrier convention.
   for (const reading of fixture.readingRegister.readings) delete reading.artifacts[0].kind;
@@ -678,7 +678,7 @@ test('pedigree public closure binds every selected fact and its actual original-
   assert.deepEqual(errors(fixture), []);
 });
 
-test('all seventeen pedigree facts fail on missing or mismatched reviewed source/value/unit/subject identities', () => {
+test('all nineteen pedigree facts fail on missing or mismatched reviewed source/value/unit/subject identities', () => {
   for (const input of Object.values(pedigreeFixture().spec.facts)) {
     for (const field of ['id', 'value', 'unit', 'subject']) pedigreeRejects(fixture => {
       fixture.catalog.evidence.find(record => record.id === input.evidenceId).numericFacts.find(fact => fact.id === input.factId)[field] = 'wrong';
@@ -744,7 +744,7 @@ test('pedigree source gate comes from the registry and cannot be disabled by inp
 test('pedigree nested public projection, changed-input rejection and exact prose binding preserve authority', () => {
   const fixture = pedigreeFixture(), bytes = canonicalCaseInput(fixture.spec);
   for (const record of [fixture.spec, fixture.spec.sources, ...Object.values(fixture.spec.sources), fixture.spec.facts,
-    ...Object.values(fixture.spec.facts), fixture.spec.interpretation, fixture.spec.illustration]) record.privateCapture = { raw: 'PRIVATE /private/source.pdf' };
+    ...Object.values(fixture.spec.facts), fixture.spec.interpretation, fixture.spec.illustration, fixture.spec.reliabilityTrace]) record.privateCapture = { raw: 'PRIVATE /private/source.pdf' };
   assert.equal(canonicalCaseInput(fixture.spec), bytes);
   assert(!canonicalCaseInput(fixture.spec).includes('PRIVATE'));
   assert(Object.isFrozen(caseTemplateContext(fixture.spec).evaluated.illustration));
@@ -757,4 +757,28 @@ test('pedigree nested public projection, changed-input rejection and exact prose
   pedigreeRejects(f => { f.catalog.claims[0].text += ' unsupported'; }, /stale text/);
   pedigreeRejects(f => { f.publication.approvedInputSha256 = '0'.repeat(64); }, /stale or unapproved/);
   pedigreeRejects(f => { f.publication.claims[0].textTemplate += ' empirical reproduction'; }, /stale text/);
+});
+
+test('reliability trace requires its own two exact source facts and actual report passage carrier', () => {
+  const selectedFacts = ['reliabilityCandidateGsd', 'reliabilityReportedCv'];
+  for (const key of selectedFacts) {
+    const input = pedigreeFixture().spec.facts[key];
+    pedigreeRejects(fixture => {
+      const evidence = fixture.catalog.evidence.find(record => record.id === input.evidenceId);
+      evidence.numericFacts = evidence.numericFacts.filter(fact => fact.id !== input.factId);
+    }, /public source fact/);
+    pedigreeRejects(fixture => {
+      const evidence = fixture.catalog.evidence.find(record => record.id === input.evidenceId);
+      evidence.passageId = fixture.spec.facts.preciseScoreTwo.passageId;
+    }, /original PDF passage carrier/);
+  }
+  pedigreeRejects(fixture => {
+    const reading = fixture.readingRegister.readings.find(reading => reading.id === fixture.spec.sources.report2012.readingId);
+    reading.passages = reading.passages.filter(passage => passage.id !== fixture.spec.facts.reliabilityCandidateGsd.passageId);
+  }, /original PDF passage carrier/);
+  const fixture = pedigreeFixture();
+  fixture.publication.claims[0].textTemplate = '{{evaluated.reliabilityTrace.authorRoundedGsd}}→{{evaluated.reliabilityTrace.cvFromRounded.fixed8}}→{{evaluated.reliabilityTrace.cvFromRoundedToTwoDecimals}}; source={{input.facts.reliabilityReportedCv.value}}; procedure={{evaluated.reliabilityTrace.originalRoundingProcedureEstablished}}.';
+  fixture.catalog.claims[0] = structuredClone(materializeCaseClaims(fixture.spec, fixture.publication)[0]);
+  assert.equal(fixture.catalog.claims[0].text, '43.55→1237.93122459→1237.93; source=1237.93; procedure=false.');
+  assert.deepEqual(errors(fixture), []);
 });
