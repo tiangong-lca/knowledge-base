@@ -7353,6 +7353,21 @@
             "Hypothetical failure mechanism attributed to authors, not a tested real-case occurrence.",
             "Financial rescaling variants have different implications; effects in SupportingInformationS2 were not inspected in this reading."
           ]
+        },
+        {
+          "id": "psg-hyb-agez-stam",
+          "artifactId": "art-hyb-agez-publisher-pdf",
+          "locator": "§4.3 Similar technological attributes method，式 (13) 与类别筛选示例",
+          "printedPages": "526",
+          "pdfIndices": [
+            9
+          ],
+          "topics": [
+            "技术类别的覆盖判断"
+          ],
+          "limits": [
+            "类别知识的适用性取决于活动实际的输入结构。"
+          ]
         }
       ],
       "appraisal": {
@@ -7402,7 +7417,7 @@
         {
           "id": "psg-hyb-jakobs-design",
           "artifactId": "art-hyb-jakobs-2021-pdf",
-          "locator": "§§2.1–2.3.1, Eq.2; §§2.5–2.6, Eq.3",
+          "locator": "§§2.1–2.3.1, Eq.2; §§2.5–2.6, Eq.3 and §4 opening on household coverage",
           "printedPages": "3–5,7–8",
           "pdfIndices": [
             2,
@@ -9133,6 +9148,74 @@
         "CASE-POWER"
       ],
       "status": "applied; targeted native reader recheck closed all three material findings; main clarified two optional phrases and source summary without changing numbers; rendered requalification remains separate"
+    },
+    {
+      "id": "rev-hyb-source-formulation",
+      "before": "边界综述定性介绍三种混合形式。",
+      "after": "将第三章所载另一项单作者方法原作作为双向块平衡与烤面包算例的来源。",
+      "reasoning": "原作给出过程和背景两个方向的连接及可复算的后处理系数。",
+      "triggerPassageIds": [
+        "psg-hyb-suh-object",
+        "psg-hyb-suh-block",
+        "psg-hyb-suh-toaster"
+      ],
+      "affectedUnits": [
+        "V4-04",
+        "V4-05",
+        "A05"
+      ],
+      "status": "applied to the chapter and linked research records"
+    },
+    {
+      "id": "rev-hyb-ledger",
+      "before": "扣除已表示商品流只以一句方法说明出现。",
+      "after": "分开原例后处理系数的求解与本书可见年账的拆分，逐笔展示归属和重新归一化。",
+      "reasoning": "附录说明所需账目，原数值例没有给足原始账目。",
+      "triggerPassageIds": [
+        "psg-hyb-suh-overlap",
+        "psg-hyb-suh-prices"
+      ],
+      "affectedUnits": [
+        "V4-04",
+        "V4-05",
+        "A05"
+      ],
+      "status": "applied to the chapter and linked research records"
+    },
+    {
+      "id": "rev-hyb-identification",
+      "before": "重复计算容易被统一理解成相同部门名称或相同金额。",
+      "after": "并列三供应者反例和泵例，区分交易双方、生产用途及平均配方中的补项。",
+      "reasoning": "在给定的两个供应网络中，聚合数据相同而具名产品的单位结果不同。",
+      "triggerPassageIds": [
+        "psg-hyb-suh-bridge",
+        "psg-hyb-agez-resolution",
+        "psg-hyb-agez-path"
+      ],
+      "affectedUnits": [
+        "V4-04",
+        "V4-05",
+        "A05"
+      ],
+      "status": "applied to the chapter and linked research records"
+    },
+    {
+      "id": "rev-hyb-criticism",
+      "before": "独立检验仅作后续线索。",
+      "after": "增加构造经济的误差反转、回应摘要中的代表性质疑，以及数据库价格分布和修正规则敏感性。",
+      "reasoning": "这些检验分别使用构造真值、产业网络比较与条件概率分布，支持不同层次的判断。",
+      "triggerPassageIds": [
+        "psg-hyb-yang-counterexample",
+        "psg-hyb-yang-reversal",
+        "psg-hyb-response-york-abstract",
+        "psg-hyb-jakobs-denominators"
+      ],
+      "affectedUnits": [
+        "V4-04",
+        "V4-05",
+        "A05"
+      ],
+      "status": "applied to the chapter and linked research records"
     }
   ]
 }

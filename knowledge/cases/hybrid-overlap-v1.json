@@ -1,0 +1,180 @@
+{
+  "caseId": "CASE-HYBRID-OVERLAP",
+  "version": "1.0.0",
+  "model": "synthetic-disjoint-record-residualization-v1",
+  "createdAt": "2026-11-05",
+  "status": "author-invented-inventory-only-teaching-model",
+  "numericProvenanceDefault": "AUTHOR-INVENTED: every annual flow, price, emission and technology coefficient in this generator network",
+  "linkedService": {
+    "caseId": "CASE-WALL-CONNECT",
+    "version": "1.0.0",
+    "inputFile": "wall-coating-v1.json",
+    "inputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+    "scenario": "smooth",
+    "alternative": "paintA",
+    "area": "100",
+    "areaUnit": "m2",
+    "intervalYears": "[0,10)",
+    "treatmentTimesYears": [
+      "0",
+      "5"
+    ],
+    "kgPerM2PerTreatment": "0.05",
+    "paintKg": "10",
+    "electricityKWhPerKgPaint": "2",
+    "fixedElectricityDeliveryKWh": "20",
+    "scope": "electricity-subinventory-only",
+    "oldAggregatedElectricityBurdensAdded": false,
+    "paintNonElectricBurdensAdded": false,
+    "wallClimateScoreCalculated": false,
+    "alternativesCompared": false
+  },
+  "annualBasis": {
+    "periodYears": "1",
+    "region": "fictional-region",
+    "priceYear": "fictional-year",
+    "currencyUnit": "CU",
+    "priceBasis": "producer",
+    "electricityPriceCUPerKWh": "1",
+    "transactionUnit": "CU/year",
+    "emissionUnit": "kg CO2/year",
+    "stationaryOverLinkedService": true,
+    "repeatedSteadyTechnology": true,
+    "marginsIncluded": false,
+    "taxesIncluded": false,
+    "importsIncluded": false,
+    "capitalIncluded": false,
+    "lossesIncluded": false,
+    "coProductsIncluded": false
+  },
+  "suppliers": {
+    "F": {
+      "output": "100",
+      "outputUnit": "kWh/year",
+      "outputValueCU": "100",
+      "directCO2Kg": "40",
+      "commodity": "E",
+      "industry": "E"
+    },
+    "G": {
+      "output": "100",
+      "outputUnit": "kWh/year",
+      "outputValueCU": "100",
+      "directCO2Kg": "120",
+      "commodity": "E",
+      "industry": "E"
+    },
+    "S": {
+      "output": "100",
+      "outputUnit": "CU/year",
+      "outputValueCU": "100",
+      "directCO2Kg": "30",
+      "commodity": "S",
+      "industry": "S"
+    }
+  },
+  "transactions": {
+    "rowSupplierOrder": [
+      "F",
+      "G",
+      "S"
+    ],
+    "columnConsumerOrder": [
+      "F",
+      "G",
+      "S"
+    ],
+    "identified": {
+      "description": "F and G each supply 10 CU of power to S",
+      "annualCU": [
+        [
+          "0",
+          "0",
+          "10"
+        ],
+        [
+          "0",
+          "0",
+          "10"
+        ],
+        [
+          "20",
+          "30",
+          "20"
+        ]
+      ]
+    },
+    "sameAggregateCounterworld": {
+      "description": "G supplies all 20 CU of power to S; F supplies none",
+      "annualCU": [
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "20"
+        ],
+        [
+          "20",
+          "30",
+          "20"
+        ]
+      ]
+    }
+  },
+  "residualization": {
+    "foregroundSupplier": "F",
+    "removeForegroundMakeAndDirectEmissions": true,
+    "removeIdentifiedForegroundPurchases": true,
+    "removeIdentifiedForegroundSales": true,
+    "removalRule": "each identified annual transaction incident to F is removed once from raw use; its original direction determines the bridge",
+    "normalization": "remaining use columns divided by remaining commodity output values; remaining emissions divided by those same outputs",
+    "commodityOrder": [
+      "E",
+      "S"
+    ],
+    "foregroundActivityUnit": "kWh",
+    "residualActivityUnits": [
+      "CU",
+      "CU"
+    ],
+    "directInventoryUnit": "kg CO2",
+    "upstreamUnit": "CU/kWh",
+    "downstreamUnit": "kWh/CU"
+  },
+  "controls": {
+    "finalDemand": [
+      "20",
+      "0",
+      "0"
+    ],
+    "finalDemandCoordinates": [
+      "F kWh",
+      "E CU",
+      "S CU"
+    ],
+    "processOnly": "F direct emissions for fixed 20 kWh; both bridges omitted",
+    "naive": "same identified explicit bridges plus unadjusted raw IO coefficients and raw IO emissions",
+    "corrected": "both bridges plus remaining accounts after exact record removal and renormalization",
+    "counterworld": "same raw aggregates, prices, outputs, emissions and final demand; only the supplier identity of power sold to S changes",
+    "misidentification": "apply the identified-world 10 CU F-to-S invoice removal and bridge to the counterworld, where that invoice is actually G-to-S"
+  },
+  "interpretation": {
+    "authorDesignedSpecialCase": true,
+    "informedBySuhConceptually": true,
+    "sourceCoefficientsReused": false,
+    "literalGeneralAppendixA7Implementation": false,
+    "sourceResidualizationReconstructed": false,
+    "empiricalCalibration": false,
+    "scientificValidation": false,
+    "realSupplierData": false,
+    "characterizationFactors": null,
+    "climateImpactScore": false,
+    "wholeWallLifeCycle": false,
+    "equalAggregatesIdentifySupplierOverlap": false,
+    "uncertaintyPropagated": false
+  }
+}
