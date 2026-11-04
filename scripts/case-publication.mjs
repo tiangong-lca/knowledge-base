@@ -5,6 +5,7 @@ import { isDeepStrictEqual } from 'node:util';
 import { evaluateTeachingCase, validateTeachingCase } from './teaching-case.mjs';
 import { evaluateJointProductionCase, validateJointProductionCase } from './joint-production.mjs';
 import { publicCatalog } from './knowledge.mjs';
+import { evaluateWaterLocalityCase, validateWaterLocalityCase, evaluatePhosphorusBoundaryCase, validatePhosphorusBoundaryCase } from './impact-examples.mjs';
 
 // Every nested object has an explicit schema. Unknown fields never enter public
 // downloads or the approved-input hash, including capture/private metadata.
@@ -34,9 +35,35 @@ const jointInputShape = {
   assessment: { kind: scalar, characterizationFactors: scalar, crossFlowAggregation: scalar, interpretation: scalar },
   residualInterpretation: scalar, premises: list,
 };
+const waterInputShape = {
+  caseId: scalar, version: scalar, model: scalar, createdAt: scalar, status: scalar,
+  productReference: { amount: scalar, unit: scalar, meaning: scalar }, waterUnit: scalar, indicatorUnit: scalar, factorUnit: scalar,
+  reference: { symbol: scalar, positive: scalar, origin: scalar, estimatedFromProductRows: scalar },
+  contributions: [{ id: scalar, basinLabel: scalar, periodLabel: scalar, withdrawal: scalar, return: scalar, consumed: scalar,
+    returnBasinLabel: scalar, returnPeriodLabel: scalar, amdRelativeToR: scalar, factor: scalar }],
+  counterfactual: { changed: scalar, foregroundFactor: scalar, inventoryHeldFixed: scalar, referenceHeldFixed: scalar, backgroundHeldFixed: scalar },
+  premises: { synthetic: scalar, nonOverlapping: scalar, sameProductReference: scalar, sameBasinSamePeriodReturns: scalar,
+    noTransfersOrStorageChange: scalar, fixedBackground: scalar, marginalIllustration: scalar, completeSupplyChain: scalar,
+    actualBasinOrFactorFile: scalar, hydrologicalModel: scalar, uncertaintyPropagated: scalar },
+};
+const phosphorusInputShape = {
+  caseId: scalar, version: scalar, model: scalar, createdAt: scalar, status: scalar,
+  conditions: { agriculture: scalar, inputKind: scalar, totalPApplicationDataSupplied: scalar, preExistingNetEmission: scalar,
+    specificLossDataAvailable: scalar, measuredUniversalLoss: scalar },
+  application: { amount: scalar, unit: scalar, speciesBasis: scalar, hypothetical: scalar },
+  loss: { fraction: scalar, unit: scalar, subject: scalar, role: scalar, sourceId: scalar, evidenceId: scalar },
+  emission: { unit: scalar, speciesBasis: scalar, compartment: scalar, kind: scalar },
+  characterization: { symbol: scalar, value: scalar, unit: scalar, matchedEmissionSpeciesBasis: scalar, matchedCompartment: scalar, numericFactorAdopted: scalar },
+};
 // Closed model registry: a case identity selects its projection, evaluator and
 // numeric-source policy together. An input flag cannot disable wall fact checks.
 const caseAdapters = new Map([
+  ['CASE-WATER-LOCALITY', { shape: waterInputShape, validate: validateWaterLocalityCase,
+    context: input => ({ evaluated: evaluateWaterLocalityCase(input) }),
+    // All numbers are synthetic; source passages motivate the conceptual relation.
+    validateFacts: () => [] }],
+  ['CASE-PHOSPHORUS-BOUNDARY', { shape: phosphorusInputShape, validate: validatePhosphorusBoundaryCase,
+    context: input => ({ evaluated: evaluatePhosphorusBoundaryCase(input) }), validateFacts: validatePhosphorusLossFact }],
   ['CASE-WALL-CONNECT', { shape: wallInputShape, validate: validateTeachingCase, context: input => {
     const [low, high] = input.uncertainty.closedRange;
     return Object.fromEntries(['smooth', 'rough'].map(scenario => [scenario,
@@ -94,6 +121,7 @@ export const caseInputSha256 = spec => createHash('sha256').update(canonicalCase
  * Safe primitive paths: input.<public input path> plus model-specific results.
  * Wall: smooth|rough.low|display|high. Joint: evaluated.partitions,
  * evaluated.scenarios.full|half|none, referenceBasket and separate residuals.
+ * Static impact examples: evaluated numeric/symbolic primitive paths.
  * Numeric array segments are allowed (e.g. evaluated.referenceBasket.0).
  */
 export function caseTemplateContext(spec) {
@@ -180,6 +208,15 @@ function validateWallFactorFacts(spec, published) {
     const fact = evidence?.numericFact;
     if (!evidence || evidence.sourceId !== cf.sourceId || !fact || fact.value !== value || fact.unit !== cf.factorUnits[index] || fact.subject !== cf.factorSubjects?.[index]) errors.push(`case characterization.factorVector.${index}: does not match bound public source numericFact value/unit/subject`);
   });
+  return errors;
+}
+function validatePhosphorusLossFact(spec, published) {
+  const errors = [], loss = spec.loss;
+  const source = published.sources.find(record => record.id === loss.sourceId);
+  if (!source) errors.push(`phosphorus inventory estimation: source ${loss.sourceId} is not in the reviewed public closure`);
+  else if (!['public-html-inspected', 'public-passages-inspected', 'public-full-text-inspected', 'licensed-full-text-inspected'].includes(source.accessStatus)) errors.push('phosphorus inventory estimation: numerical source was not inspected');
+  const evidence = published.evidence.find(record => record.id === loss.evidenceId), fact = evidence?.numericFact;
+  if (!evidence || evidence.sourceId !== loss.sourceId || !fact || fact.value !== loss.fraction || fact.unit !== loss.unit || fact.subject !== loss.subject) errors.push('phosphorus inventory estimation: loss coefficient does not match bound public source numericFact value/unit/subject');
   return errors;
 }
 export const safeCaseInputFile = name => typeof name === 'string' && /^[a-z0-9]+(?:-[a-z0-9]+)*\.json$/.test(name);

@@ -110,6 +110,11 @@ export function validateCatalog(data) {
     httpUrl(source.url, `${p}.url`);
     if (!validDate(source.accessedAt)) fail(`${p}.accessedAt`, 'must be a valid YYYY-MM-DD date');
     choice(source, p, 'accessStatus', accessStatuses);
+    if (source.accessStatus === 'passages-inspected' && (!isObject(source.reading)
+        || !['selected-passages', 'web-sections'].includes(source.reading.status)
+        || !isText(source.reading.readingId))) {
+      fail(`${p}.reading`, 'neutral passage inspection requires an explicit selected-reading scope and readingId binding');
+    }
     if (source.artifact !== undefined) {
       validateArtifact(source.artifact, `${p}.artifact`, fail, httpUrl);
     }

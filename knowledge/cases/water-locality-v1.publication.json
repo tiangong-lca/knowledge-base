@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "caseId": "CASE-WATER-LOCALITY",
+  "version": "1.0.0",
+  "inputFile": "water-locality-v1.json",
+  "approvedInputSha256": "3247631869a302b032681868e68fbf5992d2fd4afb28696127f1beed40fef2f9",
+  "reviewedAt": "2026-11-04",
+  "reviewKind": "agent-source-check",
+  "claims": [
+    {
+      "id": "cl-water-opening",
+      "kind": "synthesis",
+      "scope": "以AWARE具名定义和表征关系组织水量到指标的解释",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-water-physical-object",
+        "cl-water-aware-question",
+        "cl-water-reference-and-units"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "把原文区分的流量、背景和代理中点组成章节问题，不增加实测结果或统一标准义务。",
+      "textTemplate": "一份清单写着“耗水{{evaluated.totalConsumed}} m³”，已经给出了体积，却还没有给出缺水潜势。水从哪个流域进入、是否以及何时返还，所用因子代表什么背景，最后的等效单位又相对于什么参照，都会改变结果能够回答的问题。AWARE把其中一条联系表达得很清楚：从一个具体耗水量出发，在具名模型的背景和参照下，计算潜在的其他用水者受剥夺程度。这条联系值得逐步展开，因为物理水量、模型背景与环境指标各自承担不同的工作。"
+    },
+    {
+      "id": "cl-water-case-input",
+      "kind": "proposal",
+      "scope": "两项虚构、无重叠且共用1kg产品参照的耗水贡献",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-water-physical-object",
+        "cl-water-supplychain-reference"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "这是计算组织的示例，不是一个真实产品完整功能单位或完整生命周期清单。"
+      ],
+      "reasoning": "声明水量、返回的流域/时段和共同参照，以取水减同口径回水得到两项假定耗水；不从来源借用这些数字。",
+      "textTemplate": "现在用一组完全虚构的数字把这条联系算出来。设两项不重叠的清单贡献都已折算到交付{{input.productReference.amount}} kg同一种规定产品：现场在{{input.contributions.0.basinLabel}}流域的{{input.contributions.0.periodLabel}}月取水{{input.contributions.0.withdrawal}} m³，并在同一时期返还原流域{{input.contributions.0.return}} m³；上游材料在{{input.contributions.1.basinLabel}}流域的{{input.contributions.1.periodLabel}}月取水{{input.contributions.1.withdrawal}} m³、同期返还{{input.contributions.1.return}} m³。按本题的封闭假定，耗水分别为{{evaluated.contributions.0.consumed}}和{{evaluated.contributions.1.consumed}} m³/kg产品。这里没有跨流域调水、库存变化或未说明的回水去向；{{input.contributions.0.basinLabel}}、{{input.contributions.1.basinLabel}}、{{input.contributions.0.periodLabel}}、{{input.contributions.1.periodLabel}}及所有用量都是演算标签与假定，其他供应链贡献尚未列入，不能当作实际为零。"
+    },
+    {
+      "id": "cl-water-case-factors",
+      "kind": "calculation",
+      "scope": "固定外部r下的虚构正AMD比例；不重建真实流域因子",
+      "evidenceIds": [
+        "ev-water-aware-mechanism"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-water-aware-mechanism",
+          "relation": "context",
+          "rationale": "原论文Eq3提供所采用的正值未截断比例形式。"
+        }
+      ],
+      "premiseIds": [
+        "cl-water-case-input",
+        "cl-water-remaining-mechanism",
+        "cl-water-background-inventory"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "以r为外部固定正数，分别代入r/2和r/8，因r约去得到2和8；不以局部产品清单定义全球参照。",
+      "textTemplate": "再设这两个虚构情境在同一固定背景下的表征因子为{{evaluated.contributions.0.factor}}和{{evaluated.contributions.1.factor}} m³ world-eq./m³。它们可以由原论文未截断区间的比例式表示：把外部给定的正参照记为{{input.reference.symbol}}，令AMD_X＝{{evaluated.contributions.0.amdExpression}}、AMD_Y＝{{evaluated.contributions.1.amdExpression}}，则r/AMD_X＝{{evaluated.contributions.0.factor}}、r/AMD_Y＝{{evaluated.contributions.1.factor}}；两者都远离原方法的截断界限。r不是用这两行产品数据重新算出的世界平均，两个AMD也不是实际水文测量。这个构造只保证数字与所说明的比例关系相容。"
+    },
+    {
+      "id": "cl-water-case-result",
+      "kind": "calculation",
+      "scope": "两行虚构清单按各自固定因子加总",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-water-case-input",
+        "cl-water-case-factors",
+        "cl-water-reference-and-units"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "先在每一行相乘，再在共同产品参照下相加；体积总量与相对表征总量保留不同含义。",
+      "textTemplate": "逐项表征以后，现场贡献为{{evaluated.contributions.0.consumed}}×{{evaluated.contributions.0.factor}}＝{{evaluated.contributions.0.score}} m³ world-eq./kg产品，上游贡献为{{evaluated.contributions.1.consumed}}×{{evaluated.contributions.1.factor}}＝{{evaluated.contributions.1.score}} m³ world-eq./kg产品，合计{{evaluated.baselineScore}} m³ world-eq./kg产品。物理耗水体积仍为{{evaluated.contributions.0.consumed}}＋{{evaluated.contributions.1.consumed}}＝{{evaluated.totalConsumed}} m³/kg产品。较小的上游耗水量产生了较大的指标贡献，因为两项流量对应的情境因子不同。{{evaluated.totalConsumed}}与{{evaluated.baselineScore}}各自回答一个问题，不能把后者再读成实际取了{{evaluated.baselineScore}} m³水、观察到了某个缺水人数，或已经估出生态损害。"
+    },
+    {
+      "id": "cl-water-case-locality",
+      "kind": "calculation",
+      "scope": "固定耗水和产品参照、只更换一个虚构情境因子的敏感性对照",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-water-case-result",
+        "cl-water-case-factors"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "保持两个清单耗水量不变，仅将第一行因子从2换为8；结果24不被解释为真实迁移的预测。",
+      "textTemplate": "若只把现场那一行的情境因子也改成{{input.counterfactual.foregroundFactor}}，耗水仍为{{evaluated.contributions.0.consumed}}与{{evaluated.contributions.1.consumed}} m³/kg，指标就变为{{evaluated.contributions.0.consumed}}×{{input.counterfactual.foregroundFactor}}＋{{evaluated.contributions.1.consumed}}×{{evaluated.contributions.1.factor}}＝{{evaluated.counterfactualScore}} m³ world-eq./kg。这个对照只改变给定模型中的一个条件，说明同样的体积并不决定同样的缺水潜势。它没有证明工厂实际迁移后只有这个条件变化，也不能据此提出选址建议；真实迁移还会改变哪些活动，需要另外的事实。"
+    },
+    {
+      "id": "cl-water-case-averaging",
+      "kind": "calculation",
+      "scope": "正值未截断的两行示例中，倒数和消费加权平均的次序",
+      "evidenceIds": [
+        "ev-water-resolution"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-water-resolution",
+          "relation": "context",
+          "rationale": "原论文区分平均AMD与因子倒数；本段自行构造精确代数检验。"
+        }
+      ],
+      "premiseIds": [
+        "cl-water-case-factors",
+        "cl-water-case-result"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "这个对照不否定有明确用途的聚合近似；它说明该近似不能冒充本例已知逐行表征的同一结果。"
+      ],
+      "reasoning": "以2/3和1/3加权r/2与r/8得到3r/8；r/(3r/8)=8/3，总量为8。按两行CF加权则为4，总量为12；r在两种运算中保持不变。",
+      "textTemplate": "同一组虚构输入还可以检验平均的次序。保持外部参照 r 不变，X、Y 的 AMD 分别为 {{evaluated.contributions.0.amdExpression}} 与 {{evaluated.contributions.1.amdExpression}}，耗水权重为 {{evaluated.contributions.0.weight}} 与 {{evaluated.contributions.1.weight}}。先按耗水加权求 AMD，会得到 {{evaluated.weightedAMDExpression}}；再取相对倒数得到因子 {{evaluated.factorAtMeanAMD}}，把它乘总耗水 {{evaluated.totalConsumed}}，结果是 {{evaluated.scoreAtMeanAMD}}。逐项先表征再相加却是 {{evaluated.contributions.0.consumed}}×{{evaluated.contributions.0.factor}}＋{{evaluated.contributions.1.consumed}}×{{evaluated.contributions.1.factor}}＝{{evaluated.baselineScore}}。差别来自倒数这一非线性步骤，不能把“平均剩余量的因子”当成“平均表征因子”。这些权重只描述本题两行清单，不重新定义世界参照，也不构成任何真实国家的汇总因子。"
+    },
+    {
+      "id": "cl-water-conclusion",
+      "kind": "synthesis",
+      "scope": "由具名方法与虚构重建总结水量、背景和指标的可解释关系",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-water-case-result",
+        "cl-water-case-locality",
+        "cl-water-case-averaging",
+        "cl-water-net-gross-meaning",
+        "cl-water-version-and-boundary"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "连接已说明的定义和计算步骤，归纳读者可以区分的变化来源；不增加真实产品排序或规范要求。",
+      "textTemplate": "一个可解释的水稀缺结果，可以沿三层关系返回它的依据：清单中的水量如何定义，因子所描述的流域和参考期是什么，以及两者如何在共同产品参照下相乘与加总。演算得到的{{evaluated.baselineScore}}或{{evaluated.counterfactualScore}}都有清楚的路径，却都没有离开各自的假定背景。体积、背景和指标保持各自的位置，才有可能判断结果变化来自用量、地点与时间、模型口径还是聚合方式，而不是把每个带m³的数字看成同一种水量。"
+    },
+    {
+      "id": "cl-water-case-weighted-factor",
+      "kind": "calculation",
+      "scope": "本例两行耗水清单的消费加权因子与精确加总",
+      "textTemplate": "这份已知清单也可以形成一个能精确重建总结果的平均因子。直接按耗水权重平均两个既定因子，得到（{{evaluated.contributions.0.weight}}）×{{evaluated.contributions.0.factor}}＋（{{evaluated.contributions.1.weight}}）×{{evaluated.contributions.1.factor}}＝{{evaluated.consumptionWeightedMeanCF}} m³ world-eq./m³；再乘总耗水{{evaluated.totalConsumed}} m³/kg产品，就回到{{evaluated.scoreFromMeanCF}} m³ world-eq./kg产品。这个{{evaluated.consumptionWeightedMeanCF}}只是本题两行数据及其权重的汇总，不能当作某个国家或世界的默认因子。正确的加总可以压缩这些已知贡献，却不会恢复原本未知的流域或月份。",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-water-case-factors",
+        "cl-water-case-result",
+        "cl-water-case-averaging"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "本例产品清单的权重不取代具体发行物的农业、非农业或地理汇总口径。"
+      ],
+      "reasoning": "按消费量q_i构造均值Σ(q_i CF_i)/Σq_i，再乘Σq_i，代数上回到逐行加总；由固定输入得到4及12。"
+    }
+  ]
+}

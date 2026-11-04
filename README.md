@@ -72,3 +72,5 @@ The expanded `/docs/book/allocation-and-substitution/` also contains CASE-JOINT-
 ## Reader delivery policy
 
 Read [_docs/reader-publication-contract.md](_docs/reader-publication-contract.md). Published pages are finished book prose with scholarly notes; research/development logs and TODOs stay in development Markdown. Layout matches the owning docs site, with tree-derived order and chapter-wide notes shared by normal and print reading. The public `/research/` route is a bibliography. Preserve actual source/assumption limitations, and assess reader/layout quality independently from source and code validation.
+
+The water-locality and phosphorus-boundary examples publish versioned inputs and exact evaluated receipts under `/downloads/cases/`, linked from their chapter notes. They are static explanatory examples: water values are synthetic; the phosphorus default is source-bound and conditional, with characterization left symbolic. Use their registered case identities with `scripts/impact.mjs` for affected-claim review.

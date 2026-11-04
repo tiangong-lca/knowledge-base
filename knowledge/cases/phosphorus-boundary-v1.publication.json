@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "caseId": "CASE-PHOSPHORUS-BOUNDARY",
+  "version": "1.0.0",
+  "inputFile": "phosphorus-boundary-v1.json",
+  "approvedInputSha256": "05f1d0fe71ee5a1461e64987fb0cbc40cba7b0d96145ee9cc8017b647343dc39",
+  "reviewedAt": "2026-11-04",
+  "reviewKind": "agent-source-check",
+  "claims": [
+    {
+      "id": "cl-path-operation",
+      "kind": "calculation",
+      "scope": "作者设定2kg总P的背景农业练习，条件性采用UNEP2019 Tier1的10%缺省。",
+      "evidenceIds": [
+        "ev-path-boundary"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-path-boundary",
+          "relation": "context",
+          "rationale": "p68 Tier1限于背景农业/总P施用量；Tier2/3使用更具体方法。"
+        }
+      ],
+      "premiseIds": [
+        "cl-path-freshwater"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "作者仅设定背景农业总P施用量为2kg；按来源有条件的0.10缺省计算，2×0.10=0.2kgP。结果是估计净排放，不是实测，也不是表征结果。",
+      "textTemplate": "沿这条链回到清单，可以看清一个很小的运算。设背景农业资料只给出施入土壤的{{evaluated.appliedTotalP}} kg总磷，这个用量由作者为练习设定。按2019指南第一层方法（Tier1）的条件，可对背景农业的总磷施用量采用{{evaluated.lossPercent}}%的缺省损失比例，得到进入淡水的净磷量估计：{{evaluated.appliedTotalP}} kg P×{{evaluated.lossFractionTwoDecimals}}＝{{evaluated.netFreshwaterPDecimal}} kg P。这一步估计的是排放量，尚未得到淡水富营养化指标。对前景农业或具备更具体资料的情形，指南另设分层方法估计损失；{{evaluated.lossPercent}}%不能当作每块田的实测规律。"
+    },
+    {
+      "id": "cl-path-operation-indicator",
+      "kind": "interpretation",
+      "scope": "由练习净入淡水P量与兼容的符号因子构造中点指标；未采用数值CF。",
+      "evidenceIds": [
+        "ev-path-boundary",
+        "ev-path-units"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-path-boundary",
+          "relation": "supports",
+          "rationale": "指南区分施用输入与净接收体排放。"
+        },
+        {
+          "evidenceId": "ev-path-units",
+          "relation": "context",
+          "rationale": "P当量是表征结果尺度。"
+        }
+      ],
+      "premiseIds": [
+        "cl-path-operation"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "c_FW仅是符号，未采用或验证任何原生CF包的数值。"
+      ],
+      "reasoning": "用单位明确、但未赋数值的兼容表征因子乘净排放，P质量约去后得到P当量；既有净排放已经跨过施用到接收体的连接，再乘损失比例会重复转换。",
+      "textTemplate": "接下来，设与这项磷排入淡水记录匹配的区域表征因子为{{evaluated.characterizationSymbol}}，单位为kg P-eq/kg P，指标才写成{{evaluated.netFreshwaterPDecimal}} kg P×{{evaluated.characterizationSymbol}}，结果单位为kg P-eq。这里没有为{{evaluated.characterizationSymbol}}设定数值：它须对应排放介质、地点和所选模型；若改用以kg磷酸盐为基准的因子，还须处理质量基准的差别。若原清单已经给出净入淡水的{{evaluated.netFreshwaterPDecimal}} kg P，就直接从这项记录开始表征，不再乘一次土壤损失比例。施用量、净排放与类别指标由此各有位置。"
+    }
+  ]
+}

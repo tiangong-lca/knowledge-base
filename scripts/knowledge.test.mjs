@@ -154,8 +154,13 @@ test('inspected passages can retain unresolved access context without asserting 
   const output = publicCatalog(data);
   assert.equal(output.sources[0].accessStatus, 'passages-inspected');
   assert.equal(output.sources[0].rights, data.sources[0].rights);
+  delete data.sources[0].reading.readingId;
+  hasError(data, /neutral passage inspection requires/);
+  data.sources[0].reading.readingId = 'reading-source-sections';
   data.sources[0].reading.status = 'metadata-only';
   hasError(data, /metadata-only reading cannot claim inspected/);
+  delete data.sources[0].reading;
+  hasError(data, /neutral passage inspection requires/);
 });
 
 test('derived claims require a reviewable argument and actual premises', () => {
