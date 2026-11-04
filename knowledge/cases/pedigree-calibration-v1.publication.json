@@ -145,7 +145,8 @@
       "scope": "所选原报告精细显示值到建议值的舍入及后续表头核对",
       "evidenceIds": [
         "ev-ped-completeness-factors",
-        "ev-ped-journal-summary"
+        "ev-ped-journal-summary",
+        "ev-ped-completeness-subsets"
       ],
       "evidenceLinks": [
         {
@@ -157,6 +158,11 @@
           "evidenceId": "ev-ped-journal-summary",
           "relation": "supports",
           "rationale": "Table6标作GSD并保留完整性建议序列及等级5空缺；它不构成独立新杯重实验。"
+        },
+        {
+          "evidenceId": "ev-ped-completeness-subsets",
+          "relation": "supports",
+          "rationale": "2012报告p30 Figures20–21直接给出本文所指的GSD比值比较；p31 Tables6–7的暂定值/舍入另由相邻证据定位，未把图示当成完整可重建的汇总程序。"
         }
       ],
       "premiseIds": [
@@ -202,7 +208,7 @@
     {
       "id": "cl-ped-ratio-residual",
       "kind": "calculation",
-      "scope": "作者附加独立分量复现要求下的比值/对数方差差额对照",
+      "scope": "本书附加独立分量复现要求下的比值/对数方差差额对照",
       "evidenceIds": [
         "ev-ped-ratio-example",
         "ev-ped-log-product"
@@ -373,7 +379,7 @@
     {
       "id": "cl-ped-inventory-center",
       "kind": "calculation",
-      "scope": "作者所设对数正态模型的中心值含义及均值推导",
+      "scope": "本书所设对数正态模型的中心值含义及均值推导",
       "evidenceIds": [
         "ev-ped-log-product"
       ],
@@ -429,7 +435,7 @@
     {
       "id": "cl-ped-reliability-cv-trace",
       "kind": "calculation",
-      "scope": "作者条件性的先舍入GSD再按对数正态式转换CV；并非恢复原表算法",
+      "scope": "本书附加条件下的先舍入GSD再按对数正态式转换CV；并非恢复原表算法",
       "evidenceIds": [
         "ev-ped-reliability-cv-trace"
       ],

@@ -9478,9 +9478,9 @@
     },
     {
       "id": "cl-unc-baseline",
-      "text": "即使各项资料评分都达到最佳等级，也不等于总不确定性归零。在报告的扩展设定中，没有额外不确定性时，总量退回基础不确定性。与此同时，phase 0 总结承认基础因子尚未在该报告的项目中得到经验校准，指标相关性也没有被明确分析；前面使用的指标独立性因此应保留为假设。最佳评分、经验校准和独立性验证，是三件不同的事。",
+      "text": "即使各项资料评分都达到最佳等级，也不等于总不确定性归零。在报告的扩展设定中，没有额外不确定性时，总量退回基础不确定性。与此同时，报告总结承认基础因子尚未在该报告的项目中得到经验校准，指标相关性也没有被明确分析；前面使用的指标独立性因此应保留为假设。最佳评分、经验校准和独立性验证，是三件不同的事。",
       "kind": "interpretation",
-      "scope": "2012phase0报告的基础项与假设；不据此判定现行ecoinvent版本。",
+      "scope": "2012年方法开发报告的基础项与假设；不据此判定现行ecoinvent版本。",
       "evidenceIds": [
         "ev-unc-ciroth-baseline",
         "ev-unc-ciroth-summary",
@@ -9515,7 +9515,7 @@
         "cn-quality-calibration"
       ],
       "status": "reviewed",
-      "reviewedAt": "2026-11-04",
+      "reviewedAt": "2026-11-05",
       "reviewKind": "agent-source-check"
     },
     {
@@ -15395,7 +15395,7 @@
         "原始观测、全部层样本量/均值/方差未披露；原式的阶段权重和份额估计不能视为已审计的完整抽样实现。"
       ],
       "reasoning": "解释原文给定设计下的表达式，未将其推广成任意抽样的标准误公式。",
-      "text": "在给定这些层权重的写法中，均值估计的方差包含ΣₖWₖ²(1−nₖ/Nₖ)sₖ²/nₖ：sₖ²是该层样本杯重的方差，nₖ与Nₖ分别是层样本量与层总体量，nₖ/Nₖ是抽样比例，Wₖ²决定该层误差怎样进入加权平均。整群路线则先把所选门店的杯重总和相加，再除以这些门店的杯型出现数总和；它没有把每家店的平均杯重当成等权观察。由此可见，知道总共称了多少个杯子，还不足以确定平均值的精度；层、群、权重和估计对象都在公式中承担工作。 这里采用附录3.5.3的杯重阶段定义；结果页公式下的符号表使用的却是第一阶段杯型数等定义，两处符号说明未完全协调。",
+      "text": "在给定这些层权重的写法中，均值估计的方差包含ΣₖWₖ²(1−nₖ/Nₖ)sₖ²/nₖ：sₖ²是该层样本杯重的方差，nₖ与Nₖ分别是层样本量与层总体量，nₖ/Nₖ是抽样比例，Wₖ²决定该层误差怎样进入加权平均。整群路线则先把所选门店的杯重总和相加，再除以这些门店的杯型出现数总和；它没有把每家店的平均杯重当成等权观察。由此可见，知道总共称了多少个杯子，还不足以确定平均值的精度；层、群、权重和估计对象都在公式中承担工作。这里采用附录3.5.3的杯重阶段定义；结果页公式下的符号表使用的却是第一阶段杯型数等定义，两处符号说明未完全协调。",
       "status": "reviewed",
       "reviewedAt": "2026-11-05",
       "reviewKind": "agent-source-check"
@@ -15950,7 +15950,8 @@
       "scope": "所选原报告精细显示值到建议值的舍入及后续表头核对",
       "evidenceIds": [
         "ev-ped-completeness-factors",
-        "ev-ped-journal-summary"
+        "ev-ped-journal-summary",
+        "ev-ped-completeness-subsets"
       ],
       "evidenceLinks": [
         {
@@ -15962,6 +15963,11 @@
           "evidenceId": "ev-ped-journal-summary",
           "relation": "supports",
           "rationale": "Table6标作GSD并保留完整性建议序列及等级5空缺；它不构成独立新杯重实验。"
+        },
+        {
+          "evidenceId": "ev-ped-completeness-subsets",
+          "relation": "supports",
+          "rationale": "2012报告p30 Figures20–21直接给出本文所指的GSD比值比较；p31 Tables6–7的暂定值/舍入另由相邻证据定位，未把图示当成完整可重建的汇总程序。"
         }
       ],
       "premiseIds": [
@@ -16025,7 +16031,7 @@
     {
       "id": "cl-ped-ratio-residual",
       "kind": "calculation",
-      "scope": "作者附加独立分量复现要求下的比值/对数方差差额对照",
+      "scope": "本书附加独立分量复现要求下的比值/对数方差差额对照",
       "evidenceIds": [
         "ev-ped-ratio-example",
         "ev-ped-log-product"
@@ -16241,7 +16247,7 @@
     {
       "id": "cl-ped-inventory-center",
       "kind": "calculation",
-      "scope": "作者所设对数正态模型的中心值含义及均值推导",
+      "scope": "本书所设对数正态模型的中心值含义及均值推导",
       "evidenceIds": [
         "ev-ped-log-product"
       ],
@@ -16275,7 +16281,7 @@
     {
       "id": "cl-ped-reliability-cv-trace",
       "kind": "calculation",
-      "scope": "作者条件性的先舍入GSD再按对数正态式转换CV；并非恢复原表算法",
+      "scope": "本书附加条件下的先舍入GSD再按对数正态式转换CV；并非恢复原表算法",
       "evidenceIds": [
         "ev-ped-reliability-cv-trace"
       ],
