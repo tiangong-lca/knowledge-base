@@ -181,6 +181,13 @@ test('export independently rejects stale joins and emits exact public input byte
     assert.throws(run, /stale text, metadata or caseBinding/);
     f.catalog.claims = structuredClone(materializeCaseClaims(f.spec, f.publication)); await writeJson(root, 'knowledge/catalog.json', f.catalog);
     f.spec.rawCapture = 'PRIVATE original'; f.spec.characterization.capture = { privatePath: '/private/source' }; await writeJson(root, 'knowledge/cases/wall-coating-v1.json', f.spec);
+    const joint = jointFixture();
+    joint.spec.privateCapture = { raw: 'PRIVATE joint original' };
+    joint.spec.inventoryPerOperation.privateCapture = 'PRIVATE joint inventory';
+    await writeJson(root, 'knowledge/cases/joint-batch-v1.json', joint.spec);
+    await writeJson(root, 'knowledge/cases/joint-batch-v1.publication.json', joint.publication);
+    const bothCatalogs = { schemaVersion: 1, ...Object.fromEntries(['sources', 'evidence', 'claims', 'concepts', 'mappings', 'coverage'].map(section => [section, [...f.catalog[section], ...joint.catalog[section]]])) };
+    await writeJson(root, 'knowledge/catalog.json', bothCatalogs);
     run();
     const bytes = await readFile(join(root, 'out/downloads/cases/wall-coating-v1.json'), 'utf8');
     assert.equal(bytes, canonicalCaseInput(f.spec));
@@ -193,6 +200,15 @@ test('export independently rejects stale joins and emits exact public input byte
     assert(manifest.files['downloads/cases/wall-coating-v1.evaluated.json']);
     assert(!bytes.includes('PRIVATE'));
     assert(manifest.files['downloads/catalog.json']);
+    const jointBytes = await readFile(join(root, 'out/downloads/cases/joint-batch-v1.json'), 'utf8');
+    const jointReceipt = JSON.parse(await readFile(join(root, 'out/downloads/cases/joint-batch-v1.evaluated.json'), 'utf8'));
+    assert.equal(jointBytes, canonicalCaseInput(joint.spec));
+    assert.equal(manifest.files['downloads/cases/joint-batch-v1.json'], joint.publication.approvedInputSha256);
+    assert.equal(jointReceipt.inputSha256, joint.publication.approvedInputSha256);
+    assert.equal(jointReceipt.sourceCommit, manifest.sourceCommit);
+    assert.equal(jointReceipt.evaluations.evaluated.scenarios.half.jointRoute[1], '163/5');
+    assert(!jointBytes.includes('PRIVATE'));
+    assert(!JSON.stringify(jointReceipt).includes('PRIVATE'));
   });
 });
 
@@ -208,4 +224,90 @@ test('separately registered versions retain their own immutable input links and 
   assert.deepEqual(validateCasePublications([{ spec: f.spec, publication: f.publication }, { spec: spec2, publication: publication2 }], f.catalog), []);
   assert.equal(f.catalog.claims[0].caseBinding.inputFile, 'wall-coating-v1.json');
   assert.equal(f.catalog.claims[1].caseBinding.inputFile, 'wall-coating-v2.json');
+});
+
+function jointFixture() {
+  const spec = JSON.parse(readFileSync(new URL('../knowledge/cases/joint-batch-v1.json', import.meta.url), 'utf8'));
+  const publication = { schemaVersion: 1, caseId: spec.caseId, version: spec.version, inputFile: 'joint-batch-v1.json',
+    approvedInputSha256: caseInputSha256(spec), reviewedAt: '2026-11-04', reviewKind: 'agent-source-check', claims: [{
+      id: 'joint-calculation', kind: 'calculation', scope: 'Two-flow invented joint-batch illustration, not an empirical comparison',
+      textTemplate: 'Mass={{evaluated.partitions.mass.shareX}}; sales={{evaluated.partitions.grossSales.XperKg.0}}; half={{evaluated.scenarios.half.jointRoute.0}},{{evaluated.scenarios.half.jointRoute.1}}; top-up={{evaluated.scenarios.half.contributions.topUp.0}}; waste={{evaluated.scenarios.half.contributions.waste.1}}; balanced={{evaluated.scenarios.half.balances.residualReconstructionMatches}}; wrongSum={{evaluated.doNotCombineSeparateResiduals.wrongSum.0}}.',
+      premiseIds: ['joint-premise'], evidenceIds: [], evidenceLinks: [], conceptIds: [], mappingIds: [], caveats: ['All numerical inputs are invented.'],
+      reasoning: 'Apply the declared accounting shares separately to each flow, then reconstruct positive routes before subtracting references.',
+    }] };
+  const catalog = { schemaVersion: 1, sources: [{ id: 'joint-context-source', title: 'Conceptual distinction only', url: 'https://example.org/context', version: 'Selected passage', publisher: 'Publisher', accessedAt: '2026-11-04', accessStatus: 'public-html-inspected', rights: 'Metadata only', preservation: 'Mutable URL' }],
+    evidence: [{ id: 'joint-context-evidence', sourceId: 'joint-context-source', locator: 'selected conceptual passage', summary: 'Supports the stated conceptual distinction, not invented coefficients', relation: 'supports' }],
+    claims: [{ id: 'joint-premise', kind: 'source-statement', text: 'The selected source distinguishes the conceptual questions.', scope: 'Selected conceptual passage',
+      evidenceIds: ['joint-context-evidence'], premiseIds: [], conceptIds: [], mappingIds: [], caveats: [], status: 'reviewed', reviewedAt: '2026-11-04', reviewKind: 'agent-source-check' }], concepts: [], mappings: [], coverage: [] };
+  catalog.claims.push(...structuredClone(materializeCaseClaims(spec, publication)));
+  return { spec, publication, catalog };
+}
+
+test('the second model dispatches primitive templates and has no invented characterization-source requirement', () => {
+  const f = jointFixture();
+  assert.deepEqual(errors(f), []);
+  assert(f.catalog.evidence.every(evidence => evidence.numericFact === undefined));
+  assert.equal(f.catalog.claims[1].text, 'Mass=2/5; sales=5/3; half=41/2,163/5; top-up=9; waste=3/5; balanced=true; wrongSum=-18.');
+  assert.deepEqual(f.catalog.claims[1].caseBinding, { caseId: 'CASE-JOINT-BATCH', version: '1.0.0', inputSha256: caseInputSha256(f.spec), inputFile: 'joint-batch-v1.json' });
+  assert.equal(caseTemplateContext(f.spec).evaluated.scenarios.none.balances.YserviceSuppliedKg, '6');
+});
+
+test('joint input and evaluated output project every nested public shape without leaking raw metadata', () => {
+  const f = jointFixture(), original = canonicalCaseInput(f.spec);
+  for (const record of [f.spec, f.spec.activityBasis, f.spec.outputKgPerJointBatch, f.spec.inventoryPerOperation, f.spec.pricePerKgCU,
+    f.spec.functionalDemandKg, f.spec.systemActivities, f.spec.systemActivities.reference, f.spec.systemActivities.jointRoute, f.spec.assessment]) record.privateCapture = { raw: 'PRIVATE /private/source' };
+  assert.equal(canonicalCaseInput(f.spec), original);
+  const context = caseTemplateContext(f.spec), receipt = caseEvaluationReceipt(f.spec, 'a'.repeat(40));
+  assert(!JSON.stringify(context).includes('PRIVATE'));
+  assert(!JSON.stringify(receipt).includes('PRIVATE'));
+  assert.equal(receipt.inputSha256, caseInputSha256(f.spec));
+  assert.equal(receipt.evaluations.evaluated.scenarios.half.Xresidual[0], '5/2');
+  assert(Object.isFrozen(context.evaluated.scenarios.half));
+  const output = publicTeachingCase(f.spec); output.premises.push('Public clone only');
+  assert(!f.spec.premises.includes('Public clone only'));
+  f.spec.assessment.interpretation = { hidden: 'PRIVATE' };
+  assert.throws(() => publicTeachingCase(f.spec), /public scalar/);
+});
+
+test('joint coefficients, premise changes and stale calculated prose need explicit new review', () => {
+  for (const change of [f => { f.spec.inventoryPerOperation.wasteY[0] = '1'; }, f => { f.spec.pricePerKgCU.X = '6'; }, f => { f.spec.premises.push('Different supplier response'); }]) {
+    const f = jointFixture(); change(f);
+    assert(errors(f).some(error => /stale or unapproved/.test(error)));
+  }
+  const f = jointFixture(); f.spec.inventoryPerOperation.wasteY[0] = '1'; f.publication.approvedInputSha256 = caseInputSha256(f.spec);
+  assert(errors(f).some(error => /stale text, metadata or caseBinding/.test(error)));
+  f.catalog.claims[1] = structuredClone(materializeCaseClaims(f.spec, f.publication)[0]);
+  assert.deepEqual(errors(f), []);
+  assert.match(f.catalog.claims[1].text, /half=22,163\/5/);
+});
+
+test('a closed case adapter cannot be selected by a model flag or suppress wall numeric fact checks', () => {
+  for (const caseId of ['UNKNOWN', '__proto__', 'constructor']) {
+    const f = jointFixture(); f.spec.caseId = caseId;
+    assert.throws(() => publicTeachingCase(f.spec), /reviewed model adapter/);
+  }
+  const joint = jointFixture(); joint.spec.model = 'CASE-WALL-CONNECT';
+  assert.throws(() => publicTeachingCase(joint.spec), /model/);
+  const wall = fixture(); wall.spec.assessment = { kind: 'inventory-only', characterizationFactors: null };
+  delete wall.catalog.evidence[1].numericFact;
+  assert(errors(wall).some(error => /numericFact/.test(error)));
+  assert.equal(caseInputSha256(JSON.parse(readFileSync(new URL('../knowledge/cases/wall-coating-v1.json', import.meta.url), 'utf8'))), 'cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285');
+});
+
+test('wall and joint publications coexist with their own literal MDX identities and downloads', async () => {
+  await withRepository(async (root, wall) => {
+    const joint = jointFixture();
+    const catalog = { schemaVersion: 1, ...Object.fromEntries(['sources', 'evidence', 'claims', 'concepts', 'mappings', 'coverage'].map(section => [section, [...wall.catalog[section], ...joint.catalog[section]]])) };
+    await writeJson(root, 'knowledge/catalog.json', catalog);
+    await writeJson(root, 'knowledge/cases/joint-batch-v1.json', joint.spec);
+    await writeJson(root, 'knowledge/cases/joint-batch-v1.publication.json', joint.publication);
+    await writeFile(join(root, 'content/test.mdx'), '<TeachingCase id="CASE-WALL-CONNECT" version="1.0.0" />\n<TeachingCase id="CASE-JOINT-BATCH" version="1.0.0" />');
+    assert.deepEqual(await validateRepository(root), []);
+    const entries = await loadCasePublications(root);
+    assert.equal(entries.length, 2);
+    assert.deepEqual(validateCasePublications(entries, catalog), []);
+    for (const entry of entries) assert.equal(caseEvaluationReceipt(entry.spec, 'a'.repeat(40)).inputSha256, entry.publication.approvedInputSha256);
+    joint.catalog.claims[1].caseBinding.inputFile = 'wall-coating-v1.json';
+    assert(errors(joint).some(error => /stale text, metadata or caseBinding/.test(error)));
+  });
 });

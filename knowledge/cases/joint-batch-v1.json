@@ -1,0 +1,92 @@
+{
+  "caseId": "CASE-JOINT-BATCH",
+  "version": "1.0.0",
+  "model": "fixed-ratio-joint-inventory-v1",
+  "createdAt": "2026-11-04",
+  "status": "hypothetical-teaching-model; inventory accounting only, not an empirical comparative LCA",
+  "numericProvenanceDefault": "All products, quantities, prices, emissions, feasible activities, reference technologies and use scenarios are invented. Source arguments motivate distinctions; no source supplies these data or endorses a universal method.",
+  "inventoryRows": [
+    "fossil CO2 emitted to air, kg",
+    "SO2 emitted to air, g"
+  ],
+  "activityBasis": {
+    "joint": "one indivisible stipulated batch yielding 4 kg X and 6 kg Y in fixed proportions",
+    "standaloneX": "one operation supplies 1 kg functionally equivalent X",
+    "standaloneY": "one operation supplies 1 kg functionally equivalent Y",
+    "wasteY": "one operation treats 1 kg unused joint Y without recovery"
+  },
+  "outputKgPerJointBatch": {
+    "X": "4",
+    "Y": "6"
+  },
+  "inventoryPerOperation": {
+    "joint": [
+      "10",
+      "20"
+    ],
+    "standaloneX": [
+      "5",
+      "1"
+    ],
+    "standaloneY": [
+      "3",
+      "4"
+    ],
+    "wasteY": [
+      "0.5",
+      "0.2"
+    ]
+  },
+  "pricePerKgCU": {
+    "X": "3",
+    "Y": "1"
+  },
+  "functionalDemandKg": {
+    "X": "4",
+    "Y": "6"
+  },
+  "partitionQuestion": "How shall the inventory of one existing fully saleable batch be assigned to product labels under an expressly chosen mass or gross-sales convention? No production response is estimated.",
+  "partitionScope": "q=1 only; all common burdens in joint inventory, no separable product-specific burdens. Fractions apply flow by flow. Nonnegative shares sum to one.",
+  "decisionQuestion": "For one bounded service basket of 4 kg X and 6 kg Y delivered at the specified recipient gate and period, replace independent supply with one joint batch, topping up Y and treating unused joint Y if necessary. What is the conditional change in each inventory flow?",
+  "qMeaning": "Scenario-stipulated fraction of joint Y that reaches the specified existing Y service; every utilized kg replaces exactly one kg of the stated standalone Y supply. Remaining joint Y is treated as waste; missing Y service is supplied separately. q is not a free credit multiplier or an inferred price response.",
+  "qScenarios": [
+    "1",
+    "0.5",
+    "0"
+  ],
+  "qProbability": null,
+  "systemActivities": {
+    "reference": {
+      "joint": "0",
+      "standaloneX": "4",
+      "standaloneY": "6",
+      "wasteY": "0"
+    },
+    "jointRoute": {
+      "joint": "1",
+      "standaloneX": "0",
+      "standaloneY": "6*(1-q)",
+      "wasteY": "6*(1-q)"
+    }
+  },
+  "assessment": {
+    "kind": "inventory-only",
+    "characterizationFactors": null,
+    "crossFlowAggregation": false,
+    "interpretation": "Two inventory coordinates retain their distinct units. No LCIA, cross-flow total, damage assessment or whole-environment ranking is performed."
+  },
+  "residualInterpretation": "An X-anchored comparison residual is a subtraction of the named reference supply, not a physical route inventory, atmospheric removal, intrinsic product property or simultaneous additive assignment to both co-products. Standalone Y top-up remains in the direct route and cancels only when deriving the reduced residual.",
+  "premises": [
+    "X and Y are different specified material services; their equal mass unit does not make them interchangeable.",
+    "The joint process cannot vary one valuable output independently; reference technologies are stipulated independent alternatives.",
+    "Inventory coefficients describe complete included burdens of their named operations, with no overlap between joint, top-up and treatment inventories. All other activities and elementary flows are omitted, not empirically zero.",
+    "Only the enumerated bounded activity changes are asserted. Unchanged capital burdens are outside this operating comparison; no plant-construction or investment claim is made.",
+    "The recipients' X and Y requirements are fixed. Useful joint Y substitutes 1:1 in quality, location, timing and downstream use; no further processing or downstream differences are stipulated in this toy case.",
+    "Alternative supply can decrease by the indicated quantities and joint operation can replace the stated X supply; no constraints, market price feedback, rebound, delayed response or other induced activities are modeled.",
+    "Actual supplier response and q require evidence before real-world interpretation; observed sales prices or a sale alone do not verify displacement.",
+    "CU prices only determine the illustrative full-use accounting shares, not the decision activities or who determines joint output.",
+    "All emissions are positive physical flows in each actual route. A negative residual is a reference subtraction; it is not atmospheric removal, negative physical production or a product property.",
+    "No LCIA factors or cross-flow aggregation are used. CO2 and SO2 comparisons remain separate and imply no total environmental ranking.",
+    "Partial-use scenarios are separately changed service-delivery conditions, not applications of Weidema's rules or his corrected examples."
+  ]
+}

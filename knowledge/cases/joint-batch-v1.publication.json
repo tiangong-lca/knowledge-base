@@ -1,0 +1,379 @@
+{
+  "schemaVersion": 1,
+  "caseId": "CASE-JOINT-BATCH",
+  "version": "1.0.0",
+  "inputFile": "joint-batch-v1.json",
+  "approvedInputSha256": "569797a9cc454583cd9397a468145f24b22f57fd9e5a8c98971138e779b3c773",
+  "reviewedAt": "2026-11-04",
+  "reviewKind": "agent-source-check",
+  "claims": [
+    {
+      "id": "cl-joint-question",
+      "textTemplate": "前面的争论还可以落到同一批产品上：如果一个过程同时供应两项不同服务，怎样给产品记录份额，又怎样比较一次供给改变？现在使用 {{input.caseId}} v{{input.version}}。一批联合生产 J 固定产出 {{input.outputKgPerJointBatch.X}} kg X 和 {{input.outputKgPerJointBatch.Y}} kg Y，不能只增加其中一种而保持另一种不变。X、Y 是两种不同的材料服务，各自具有本例规定的品级、交付地点和期间要求；质量单位相同并不使它们可以互换。产品、产量、排放量、价格、使用情景及供应者的反应全部由作者虚构，CO2 与 SO2 则保留真实的物质身份。我们先问整批清单怎样分担，再另问满足同一组服务的供给怎样改变。",
+      "kind": "proposal",
+      "scope": "CASE-JOINT-BATCH v1.0.0：作者设定的固定比例联合生产、份额核算与固定服务组合的条件比较；不是实测供应系统",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-allocation-three-responsibilities",
+        "cl-allocation-fixed-proportions"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "作者规定联合批次、两项不同服务与两个研究问题；来源只提供区分问题的背景，不提供虚构产品数据。"
+    },
+    {
+      "id": "cl-joint-typed-inventory",
+      "textTemplate": "先把每次操作与清单行读准。J 每次就是上述整批；S-X 每次独立供应 1 kg 与 X 功能等同的材料，S-Y 每次独立供应 1 kg 与 Y 功能等同的材料；W-Y 每次处理 1 kg 未使用的联合产品 Y，且没有回收。以下向量始终依次表示“排入空气的化石 CO2，kg”和“排入空气的 SO2，g”。每次 J 为 （{{input.inventoryPerOperation.joint.0}}，{{input.inventoryPerOperation.joint.1}}），S-X 为 （{{input.inventoryPerOperation.standaloneX.0}}，{{input.inventoryPerOperation.standaloneX.1}}），S-Y 为 （{{input.inventoryPerOperation.standaloneY.0}}，{{input.inventoryPerOperation.standaloneY.1}}），W-Y 为 （{{input.inventoryPerOperation.wasteY.0}}，{{input.inventoryPerOperation.wasteY.1}}）。同一行的数值可以相加，两个坐标之间不相加。本例保留两项清单流，不使用表征因子，也没有把 kg CO2 写成 kg CO2-eq。",
+      "kind": "proposal",
+      "scope": "CASE-JOINT-BATCH v1.0.0：作者设定的固定比例联合生产、份额核算与固定服务组合的条件比较；不是实测供应系统",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-joint-question"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "逐一固定四项活动的操作基准和两种排放的身份、行单位；W-Y 系数明确按每 kg 未使用 Y 给出，避免批次与处理量混淆。"
+    },
+    {
+      "id": "cl-joint-boundary",
+      "textTemplate": "这里把 J 所含的负担全部视为两项产出的共同负担，没有另列只归某一种产品的活动；S-X、S-Y 和 W-Y 的所列负担各自完整计入自己的操作，不与 J 重复。其他活动和排放没有覆盖，不能当作实际为零。这是一项限定期间的运行比较：既有资本的改变、建厂投资、价格反馈、产能限制和模型外的连锁活动都没有展开。因而下面能够检查的是这组明确输入的核算与条件比较，不能用份额加总代替完整生命周期或全部元素质量守恒检验。",
+      "kind": "proposal",
+      "scope": "CASE-JOINT-BATCH v1.0.0：作者设定的固定比例联合生产、份额核算与固定服务组合的条件比较；不是实测供应系统",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-joint-typed-inventory"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "公开作者给定的清单边界和无重叠假设，并限定运行问题；未借用来源把缺项合理化。"
+    },
+    {
+      "id": "cl-joint-mass-partition",
+      "textTemplate": "先让整批 X、Y 都能使用和出售，问一项纯粹的份额核算问题：按所声明的质量规则，现有这批清单应分别记在两个产品标签上多少？X 的份额为 {{input.outputKgPerJointBatch.X}}÷（{{input.outputKgPerJointBatch.X}}＋{{input.outputKgPerJointBatch.Y}}）＝{{evaluated.partitions.mass.shareX}}，Y 的份额为 {{evaluated.partitions.mass.shareY}}。把每一清单行分别乘这些份额，X 得 （{{evaluated.partitions.mass.Xbatch.0}}，{{evaluated.partitions.mass.Xbatch.1}}），Y 得 （{{evaluated.partitions.mass.Ybatch.0}}，{{evaluated.partitions.mass.Ybatch.1}}）；逐行相加仍为 （{{evaluated.partitions.mass.sum.0}}，{{evaluated.partitions.mass.sum.1}}）。若以每 kg 产品列示，X 是 （{{evaluated.partitions.mass.XperKg.0}}，{{evaluated.partitions.mass.XperKg.1}}），Y 是 （{{evaluated.partitions.mass.YperKg.0}}，{{evaluated.partitions.mass.YperKg.1}}），单位分别为 kg CO2/kg 产品与 g SO2/kg 产品。此处相同的每 kg 数值来自所选质量规则，没有宣告 X、Y 功能相同。",
+      "kind": "calculation",
+      "scope": "CASE-JOINT-BATCH v1.0.0：作者设定的固定比例联合生产、份额核算与固定服务组合的条件比较；不是实测供应系统",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-joint-typed-inventory",
+        "cl-joint-boundary"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "以两种产出质量之和为分母求份额，逐行分担，再除以相应产品质量；引擎输出精确分数并复核份额加总。"
+    },
+    {
+      "id": "cl-joint-sales-partition",
+      "textTemplate": "另一项约定把份额关联到这批产品的销售额。作者设 X 的价格为 {{input.pricePerKgCU.X}} CU/kg、Y 为 {{input.pricePerKgCU.Y}} CU/kg，CU 是教学货币单位。于是两项批次收入分别为 {{evaluated.batchRevenueCU.X}} 与 {{evaluated.batchRevenueCU.Y}} CU，合计 {{evaluated.batchRevenueCU.total}} CU；X、Y 的份额变为 {{evaluated.partitions.grossSales.shareX}} 与 {{evaluated.partitions.grossSales.shareY}}。本批 X 记 （{{evaluated.partitions.grossSales.Xbatch.0}}，{{evaluated.partitions.grossSales.Xbatch.1}}），Y 记 （{{evaluated.partitions.grossSales.Ybatch.0}}，{{evaluated.partitions.grossSales.Ybatch.1}}），相加还是 （{{evaluated.partitions.grossSales.sum.0}}，{{evaluated.partitions.grossSales.sum.1}}）。每 kg X 列示为 （{{evaluated.partitions.grossSales.XperKg.0}}，{{evaluated.partitions.grossSales.XperKg.1}}），每 kg Y 为 （{{evaluated.partitions.grossSales.YperKg.0}}，{{evaluated.partitions.grossSales.YperKg.1}}）。这次变动来自分担依据，尚未改变任何操作或排放。",
+      "kind": "calculation",
+      "scope": "CASE-JOINT-BATCH v1.0.0：作者设定的固定比例联合生产、份额核算与固定服务组合的条件比较；不是实测供应系统",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-joint-mass-partition"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "由作者给定价格与批次产量求收入及收入份额，再逐行分担；所有收入和清单数值绑定同一版本输入。"
+    },
+    {
+      "id": "cl-joint-what-additivity-proves",
+      "textTemplate": "两套份额都非负，都能唯一算出，也都把每一行恰好分完。加总相符检查了它们共同具有的一项核算性质，却没有替我们选择依据。质量规则可以追求统一、易说明的数量约定；收入规则可以追求与销售价值相联系的归属。研究仍须说明为什么需要这种归属，以及该依据为什么适合其用途。在本例固定比例生产中，把 X 的价格改高会改变收入份额，却不会单凭这个标签改写 J 的技术。把份额除成每 kg 也只是改变列示分母，没有让 J 能独立增减 X。",
+      "kind": "interpretation",
+      "scope": "CASE-JOINT-BATCH v1.0.0：作者设定的固定比例联合生产、份额核算与固定服务组合的条件比较；不是实测供应系统",
+      "evidenceIds": [
+        "ev-allocation-1998-defensibility"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-allocation-1998-defensibility",
+          "relation": "context",
+          "rationale": "学位论文 §7.3.2 区分规则的加总性质与可辩护性；这里的两种具体份额仍是作者给定的教学约定。"
+        }
+      ],
+      "premiseIds": [
+        "cl-joint-mass-partition",
+        "cl-joint-sales-partition",
+        "cl-allocation-fixed-proportions"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "比较同一批次两套可加份额，区分标签变化、物理活动变化及规则选择依据。"
+    },
+    {
+      "id": "cl-joint-rival-criteria",
+      "textTemplate": "将这两段原文放在一起，分歧就比“赞成经济分配还是反对经济分配”更具体了。2005 年论文为描述负担成因这一特定目的给出理由；Frischknecht 则继续追问，归给产品的负担拿去与外部替代品比较后，能否满足他的竞争性判断。前一项收入归属并没有自动回答后一项比较，也没有据此失去全部用途。这是对两种有明确前提的评价标准所作的对照，不是声称两组作者正在逐段回应对方。回到本例，若只想记录一批产品的份额，应说明标签规则；若想知道一次供给改变的后果，就还需要把会变动的活动明确列出来。",
+      "kind": "synthesis",
+      "scope": "CASE-JOINT-BATCH v1.0.0：作者设定的固定比例联合生产、份额核算与固定服务组合的条件比较；不是实测供应系统",
+      "evidenceIds": [
+        "ev-allocation-1998-sales-criterion",
+        "ev-allocation-2005-sales-purpose"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-allocation-1998-sales-criterion",
+          "relation": "supports",
+          "rationale": "p119 的批评对象是把销售额分担用于与外部竞争产品比较时是否满足其标准，不是对一切销售额核算的否定。"
+        },
+        {
+          "evidenceId": "ev-allocation-2005-sales-purpose",
+          "relation": "supports",
+          "rationale": "§3.1 p1229 的合理性判断明确附有描述负担成因这一目的，不能去掉条件。"
+        }
+      ],
+      "premiseIds": [
+        "cl-allocation-1998-sales-criterion",
+        "cl-allocation-2005-sales-purpose",
+        "cl-joint-what-additivity-proves"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "保留两段来源各自的评价目的，再说明仅有相同方法名称不足以让其成为同一个判断；不据此宣布普遍优越规则。"
+    },
+    {
+      "id": "cl-joint-fixed-basket",
+      "textTemplate": "现在另立比较问题：在规定接收点和期间，同样交付 {{input.functionalDemandKg.X}} kg X 服务与 {{input.functionalDemandKg.Y}} kg Y 服务，联合供应相对于独立供应会改变哪些活动？先取全部 Y 都能满足既有 Y 需求的情景。我们额外设定质量、地点、时点和后续使用均能一对一匹配，联合供应确实使所列独立供应减少；独立供应可按所列数量退出，也无需新增中间处理。这些供应反应是本题前提，不能从产品售出、收入份额或功能相似中推出来。先在这个前提下逐项列出两条供给路线，再解释减项。",
+      "kind": "proposal",
+      "scope": "CASE-JOINT-BATCH v1.0.0：作者设定的固定比例联合生产、份额核算与固定服务组合的条件比较；不是实测供应系统",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-joint-rival-criteria",
+        "cl-allocation-alternative-supply",
+        "cl-joint-boundary"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "明确把现有批次份额问题转为保留两项服务的运行路线比较，并给出功能匹配之外的活动响应假设。"
+    },
+    {
+      "id": "cl-joint-positive-routes",
+      "textTemplate": "独立路线需要 {{evaluated.referenceActivities.standaloneX}} 次 S-X 加 {{evaluated.referenceActivities.standaloneY}} 次 S-Y。因此 CO2 是 {{evaluated.referenceActivities.standaloneX}}×{{input.inventoryPerOperation.standaloneX.0}}＋{{evaluated.referenceActivities.standaloneY}}×{{input.inventoryPerOperation.standaloneY.0}}＝{{evaluated.referenceBasket.0}} kg，SO2 是 {{evaluated.referenceActivities.standaloneX}}×{{input.inventoryPerOperation.standaloneX.1}}＋{{evaluated.referenceActivities.standaloneY}}×{{input.inventoryPerOperation.standaloneY.1}}＝{{evaluated.referenceBasket.1}} g。全部利用的联合路线只需 {{evaluated.scenarios.full.activities.joint}} 次 J，清单为 （{{evaluated.scenarios.full.jointRoute.0}}，{{evaluated.scenarios.full.jointRoute.1}}）。两条路线都交付规定的 X 和 Y，且各自排放均为正；联合减独立的整组服务差值是 （{{evaluated.scenarios.full.changeJointMinusReference.0}}，{{evaluated.scenarios.full.changeJointMinusReference.1}}）。在所设反应下，这两项清单排放都减少，幅度分别按 kg CO2 和 g SO2 读取。",
+      "kind": "calculation",
+      "scope": "CASE-JOINT-BATCH v1.0.0：作者设定的固定比例联合生产、份额核算与固定服务组合的条件比较；不是实测供应系统",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-joint-fixed-basket",
+        "cl-joint-typed-inventory"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "从两条满足固定服务组合的正活动路线直接计算清单，再逐行作差；先展示减项所对应的实际独立活动。"
+    },
+    {
+      "id": "cl-joint-residual-derivation",
+      "textTemplate": "整组服务比较也可以换一种代数写法。独立路线是 {{input.functionalDemandKg.X}}S-X＋{{input.functionalDemandKg.Y}}S-Y，于是 J−（{{input.functionalDemandKg.X}}S-X＋{{input.functionalDemandKg.Y}}S-Y）＝（J−{{input.functionalDemandKg.Y}}S-Y）−{{input.functionalDemandKg.X}}S-X。把括号内记为以 X 为比较锚点的残余清单 R_X，其值为 （{{evaluated.scenarios.full.Xresidual.0}}，{{evaluated.scenarios.full.Xresidual.1}}），对应 {{input.outputKgPerJointBatch.X}} kg X；除成每 kg X 是 （{{evaluated.scenarios.full.XresidualPerKg.0}}，{{evaluated.scenarios.full.XresidualPerKg.1}}）。R_X 再减去 {{input.functionalDemandKg.X}} 次 S-X，便回到整组服务差值 （{{evaluated.scenarios.full.XresidualReconstructedChange.0}}，{{evaluated.scenarios.full.XresidualReconstructedChange.1}}）。这里之所以能够减去 Y 的替代供应，是因为先把两条路线都要提供的 Y 服务写在了同一个比较中。",
+      "kind": "calculation",
+      "scope": "CASE-JOINT-BATCH v1.0.0：作者设定的固定比例联合生产、份额核算与固定服务组合的条件比较；不是实测供应系统",
+      "evidenceIds": [
+        "ev-allocation-1998-comparison"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-allocation-1998-comparison",
+          "relation": "context",
+          "rationale": "学位论文 p104 footnote30 讨论通过补入另一功能的供给或从联合系统减去替代供给建立比较；本段数值与代数推导由作者给定。"
+        }
+      ],
+      "premiseIds": [
+        "cl-joint-positive-routes"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "通过括号重排证明 X 残余与完整服务组合比较等价，而不是先给产品任意减一个收益。"
+    },
+    {
+      "id": "cl-joint-negative-meaning",
+      "textTemplate": "负残余的物理含义由这条推导决定。J 本身仍排放 {{input.inventoryPerOperation.joint.0}} kg CO2 和 {{input.inventoryPerOperation.joint.1}} g SO2；负号来自减去特定 Y 参照供应后留下的比较量，并没有把 J 变成吸收气体的过程。R_X 还连着同一组 Y 服务、所选 S-Y 技术与供应能减少的前提，不能脱离这些条件当成 X 的固有属性。若只把两条功能匹配的技术路线相比较，代数已经成立；若进一步把差值解释为市场中的实际变化，还必须为供应者怎样反应提供证据。本例把这种反应直接设定了，没有用减法本身证明它。",
+      "kind": "interpretation",
+      "scope": "CASE-JOINT-BATCH v1.0.0：作者设定的固定比例联合生产、份额核算与固定服务组合的条件比较；不是实测供应系统",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-joint-residual-derivation",
+        "cl-joint-fixed-basket"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "由正排放路线和参照减法的区别解释负残余，另外区分功能比较的代数与对真实供应变化的因果解释。"
+    },
+    {
+      "id": "cl-joint-different-questions",
+      "textTemplate": "现在可以正面读三种每 kg X 数字：质量规则记 {{evaluated.partitions.mass.XperKg.0}} kg CO2，收入规则记 {{evaluated.partitions.grossSales.XperKg.0}} kg CO2，X 残余记 {{evaluated.scenarios.full.XresidualPerKg.0}} kg CO2。前两项回答同一批清单按不同约定怎样归属，后一项参与一个带 Y 参照供应的路线比较。各自的用途、分母与参照必须随数值保留。还可沿 SO2 检查这个区别：质量标签的每 kg X 为 {{evaluated.partitions.mass.XperKg.1}} g，高于 S-X 的 {{input.inventoryPerOperation.standaloneX.1}} g；但完整服务组合的联合路线比独立路线少 {{evaluated.doNotCombineSeparateResiduals.doubleClaimedJointSaving.1}} g SO2。这两个判断使用不同的核算对象，不靠把其中一个数字挑小就能合并成采购结论。",
+      "kind": "interpretation",
+      "scope": "CASE-JOINT-BATCH v1.0.0：作者设定的固定比例联合生产、份额核算与固定服务组合的条件比较；不是实测供应系统",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-joint-mass-partition",
+        "cl-joint-sales-partition",
+        "cl-joint-positive-routes",
+        "cl-joint-negative-meaning"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "用同一案例并列各输出的正面问题，再以另一清单行展示产品标签判断与整组服务判断的差别；没有跨气体加总。"
+    },
+    {
+      "id": "cl-joint-double-credit",
+      "textTemplate": "残余还有一个容易验证的使用边界。若另把 Y 作为锚点，单独定义 R_Y＝J−{{input.functionalDemandKg.X}}S-X，会得到 （{{evaluated.doNotCombineSeparateResiduals.YresidualFromDifferentAnchoring.0}}，{{evaluated.doNotCombineSeparateResiduals.YresidualFromDifferentAnchoring.1}}），对应本批 Y。这是换了锚点的另一项比较。把它与刚才的 R_X 当成一对可相加产品标签，会得到 （{{evaluated.doNotCombineSeparateResiduals.wrongSum.0}}，{{evaluated.doNotCombineSeparateResiduals.wrongSum.1}}），而 J 实际清单是 （{{evaluated.doNotCombineSeparateResiduals.physicalJointInventory.0}}，{{evaluated.doNotCombineSeparateResiduals.physicalJointInventory.1}}）。差额正是整组服务的一份节省 （{{evaluated.doNotCombineSeparateResiduals.doubleClaimedJointSaving.0}}，{{evaluated.doNotCombineSeparateResiduals.doubleClaimedJointSaving.1}}）：X 与其独立供给相比已拿到了全部节省，Y 与其独立供给相比又拿一次。两项各自成立的比较，不能未经统一规则就并成同一批的归属清单；若要供数据库或报告相加，必须先确定一套一致的系统约定。",
+      "kind": "calculation",
+      "scope": "CASE-JOINT-BATCH v1.0.0：作者设定的固定比例联合生产、份额核算与固定服务组合的条件比较；不是实测供应系统",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-joint-residual-derivation",
+        "cl-joint-what-additivity-proves"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "分别重排同一整组服务差值到两个锚点，计算两残余之和及其与物理批次清单的差，展示同时认领全部节省的重复收益。"
+    },
+    {
+      "id": "cl-joint-partial-use",
+      "textTemplate": "再让服务实现条件变一次：只有比例 q 的联合 Y 在规定期间到达指定用途。每一 kg 真正用上的联合 Y 仍按前提替代一 kg S-Y，未用上的进入 W-Y，Y 服务的缺口另由 S-Y 补齐。这个 q 是作者给定的交付情景，不是任意打折的收益系数，也没有表示售出的产品都一定替代其他生产。取 q＝{{evaluated.scenarios.half.q}}，联合 Y 中 {{evaluated.scenarios.half.jointYusedKg}} kg 用于既定服务，{{evaluated.scenarios.half.jointYwastedKg}} kg 接受无回收处理，并另购 {{evaluated.scenarios.half.standaloneYtopUpKg}} kg Y。X 与 Y 的最终服务要求都保持不变。",
+      "kind": "proposal",
+      "scope": "CASE-JOINT-BATCH v1.0.0：作者设定的固定比例联合生产、份额核算与固定服务组合的条件比较；不是实测供应系统",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-joint-fixed-basket",
+        "cl-joint-double-credit"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "以部分联合 Y 未实现规定服务的初始条件建立另一情景，并明确有用产出、废物处理和服务补足的同时变化。"
+    },
+    {
+      "id": "cl-joint-partial-balances",
+      "textTemplate": "所以这次联合路线的操作是 {{evaluated.scenarios.half.activities.joint}}J＋{{evaluated.scenarios.half.activities.standaloneY}}S-Y＋{{evaluated.scenarios.half.activities.wasteY}}W-Y，S-X 为 {{evaluated.scenarios.half.activities.standaloneX}}。两项数量核对各管一件事：已用联合 Y {{evaluated.scenarios.half.jointYusedKg}} kg 加补足 Y {{evaluated.scenarios.half.standaloneYtopUpKg}} kg，共交付 {{evaluated.scenarios.half.balances.YserviceSuppliedKg}} kg，满足所需服务；已用联合 Y 加进入处理的 {{evaluated.scenarios.half.jointYwastedKg}} kg，共交代 J 产出的 {{evaluated.scenarios.half.balances.jointYDispositionKg}} kg。与此同时 X 仍交付 {{evaluated.scenarios.half.balances.XserviceSuppliedKg}} kg。这是服务交付与本批 Y 去向的两项核对，没有列出所有物质输入，因而不是完整的元素守恒证明。",
+      "kind": "calculation",
+      "scope": "CASE-JOINT-BATCH v1.0.0：作者设定的固定比例联合生产、份额核算与固定服务组合的条件比较；不是实测供应系统",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-joint-partial-use",
+        "cl-joint-typed-inventory"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "由 q 重建联合、补足与处理活动，分别验证接收方需求和联合产品去向，防止把两种平衡混称完整质量守恒。"
+    },
+    {
+      "id": "cl-joint-partial-inventory",
+      "textTemplate": "沿这些操作量重新相乘，联合路线为 J 的 （{{input.inventoryPerOperation.joint.0}}，{{input.inventoryPerOperation.joint.1}}），加上补足供给的 （{{evaluated.scenarios.half.contributions.topUp.0}}，{{evaluated.scenarios.half.contributions.topUp.1}}），再加处理的 （{{evaluated.scenarios.half.contributions.waste.0}}，{{evaluated.scenarios.half.contributions.waste.1}}），得到 （{{evaluated.scenarios.half.jointRoute.0}}，{{evaluated.scenarios.half.jointRoute.1}}）。单位顺序仍为 kg CO2、g SO2。与没有变动的独立路线 （{{evaluated.referenceBasket.0}}，{{evaluated.referenceBasket.1}}） 相减，差值是 （{{evaluated.scenarios.half.changeJointMinusReference.0}}，{{evaluated.scenarios.half.changeJointMinusReference.1}}）：CO2 减少，SO2 却增加了。全部利用时的两项排放都减少，到了半利用情景已不能原样保留；而且本章还没有将这两项清单变化表征到可作综合判断的尺度。",
+      "kind": "calculation",
+      "scope": "CASE-JOINT-BATCH v1.0.0：作者设定的固定比例联合生产、份额核算与固定服务组合的条件比较；不是实测供应系统",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-joint-partial-balances",
+        "cl-joint-positive-routes"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "逐项计算正路线中联合、补足、处理的贡献后再与固定独立路线作差，保留两个气体的不同单位与不同变化方向。"
+    },
+    {
+      "id": "cl-joint-cancellation",
+      "textTemplate": "这时仍能使用残余写法，但要把省掉的项究竟去了哪里说清楚。一般 q 下，直接列出的联合路线是 J＋{{input.outputKgPerJointBatch.Y}}（1−q）S-Y＋{{input.outputKgPerJointBatch.Y}}（1−q）W-Y；从中减去参照 Y 服务 {{input.functionalDemandKg.Y}}S-Y 后，正的补足项与参照项部分抵消，留下 R_X(q)＝J＋{{input.outputKgPerJointBatch.Y}}（1−q）W-Y−{{input.outputKgPerJointBatch.Y}}q S-Y。半利用时就是 J＋{{evaluated.scenarios.half.jointYwastedKg}}W-Y−{{evaluated.scenarios.half.jointYusedKg}}S-Y，结果 （{{evaluated.scenarios.half.Xresidual.0}}，{{evaluated.scenarios.half.Xresidual.1}}）；再减去 {{input.functionalDemandKg.X}}S-X，仍得 （{{evaluated.scenarios.half.XresidualReconstructedChange.0}}，{{evaluated.scenarios.half.XresidualReconstructedChange.1}}）。补足活动在实物路线中存在，在简化残余中则已通过代数抵消体现；不能因为简化式没有正的补足项，就说该残余漏算了它。反过来，若声称展示的是实际联合路线，补足和处理都必须出现。",
+      "kind": "calculation",
+      "scope": "CASE-JOINT-BATCH v1.0.0：作者设定的固定比例联合生产、份额核算与固定服务组合的条件比较；不是实测供应系统",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-joint-partial-inventory",
+        "cl-joint-residual-derivation"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "先给出正路线及参照 Y，再逐项抵消；证明无正补足项的残余仍与直接路线比较一致，并区分省略活动与代数消项。"
+    },
+    {
+      "id": "cl-joint-version-boundary",
+      "textTemplate": "这段部分利用推演也让版本问题有了实际着落。Weidema 的增补会改变他那套程序中的分支与处理归属，读者需要按修订内容回看原规则，不能把旧例子继续照算。本例选择的做法则是另行声明两条服务匹配路线，直接追踪未使用 Y 的处理与供给补足，再重排差值；这里没有判定他的决定性共产品，也没有声称实现其修订规则3。减法写得相像，并不足以证明两者已经采用同一套问题与归属前提。",
+      "kind": "interpretation",
+      "scope": "CASE-JOINT-BATCH v1.0.0：作者设定的固定比例联合生产、份额核算与固定服务组合的条件比较；不是实测供应系统",
+      "evidenceIds": [
+        "ev-allocation-2001-correction",
+        "ev-allocation-2001-rules"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-allocation-2001-correction",
+          "relation": "context",
+          "rationale": "增补要求实质性修订程序与例子；只用于说明版本需落实到程序，未把教学情景称为原例重算。"
+        },
+        {
+          "evidenceId": "ev-allocation-2001-rules",
+          "relation": "qualifies",
+          "rationale": "修订规则仍有自己的条件及中间处理归属；作者自定路线并不自动等于该规则。"
+        }
+      ],
+      "premiseIds": [
+        "cl-joint-cancellation",
+        "cl-allocation-addendum-substantive",
+        "cl-allocation-addendum-substitution-duty"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "将本例的直接服务路线推演与具名规则的完整程序区分，保留原程序定义和决定性产品证据尚缺的边界。"
+    },
+    {
+      "id": "cl-joint-exercise",
+      "textTemplate": "可以遮住下面的答案，尝试检验一段建议：“两种份额都加得回整批，所以它们都证明了替代确实发生；X 的残余为负，说明工厂从空气中去除了气体；到了半利用情景，只需把原来的替代收益减半。”请分别指出每一句跨过了哪个尚未给定的环节，再从操作量独立复核半利用路线。同时做一个延伸：若 q＝{{evaluated.scenarios.none.q}}，而既定的 X、Y 服务要求仍保留，哪些活动必须留下，哪些能够退出？请先写路线，再算排放，不要只修改最终标签。",
+      "kind": "proposal",
+      "scope": "CASE-JOINT-BATCH v1.0.0：作者设定的固定比例联合生产、份额核算与固定服务组合的条件比较；不是实测供应系统",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-joint-cancellation",
+        "cl-joint-what-additivity-proves",
+        "cl-joint-negative-meaning"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "练习要求区分加总、真实供应反应和负残余，并独立重建未利用情景的活动，而非复述已显示的最终指标。"
+    },
+    {
+      "id": "cl-joint-answer",
+      "textTemplate": "份额加总只证明所列负担分完了；替代是否发生，还需要独立供应能减少、服务能匹配等前提或实际证据。负残余来自扣除参照供应，J 的正排放并未消失。半利用时应先写 {{evaluated.scenarios.half.activities.joint}}J＋{{evaluated.scenarios.half.activities.standaloneY}}S-Y＋{{evaluated.scenarios.half.activities.wasteY}}W-Y，再重算两项清单；其差值为 （{{evaluated.scenarios.half.changeJointMinusReference.0}}，{{evaluated.scenarios.half.changeJointMinusReference.1}}）。有效残余虽然没有正的补足项，但那是与参照 Y 抵消后的表达。q＝{{evaluated.scenarios.none.q}} 时，联合路线仍为 {{evaluated.scenarios.none.activities.joint}}J，却必须有 {{evaluated.scenarios.none.activities.standaloneY}}S-Y 补足服务及 {{evaluated.scenarios.none.activities.wasteY}}W-Y 处理未用产出，得到 （{{evaluated.scenarios.none.jointRoute.0}}，{{evaluated.scenarios.none.jointRoute.1}}）；与独立路线的差值为 （{{evaluated.scenarios.none.changeJointMinusReference.0}}，{{evaluated.scenarios.none.changeJointMinusReference.1}}）。把这个教学构造用于真实供应，还需取得实际产率、服务等效、未用物去向、替代技术、供应反应与边界证据；若用途是产品份额报告，另需说明选择分担规则的理由。",
+      "kind": "calculation",
+      "scope": "CASE-JOINT-BATCH v1.0.0：作者设定的固定比例联合生产、份额核算与固定服务组合的条件比较；不是实测供应系统",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-joint-exercise",
+        "cl-joint-partial-balances",
+        "cl-joint-cancellation"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按练习中的三项错误分别指出缺失依据，并由零利用的服务补足和产出去向重建正路线；不以算术检验代替真实供应或规范性选择的证据。"
+    }
+  ]
+}
