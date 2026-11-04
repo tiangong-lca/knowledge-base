@@ -35,3 +35,90 @@
 结论要指出什么观察能区分竞争响应模型，例如市场边界、贸易/输电限制、产能/调度与时间信息；资料不足时保留条件情景，不提供无证据的默认技术。教学模型说明假定的后果，不替真实供应反应作实证验证。保持既有案例版本/输入及其含义，新论述所需数值绑定另行审查。
 
 成稿应连续解释这条因果与建模链，接回联合批次章的供应反应前提。论断、概念、映射、来源选段、方法评价、反证和证据触发修订同时维护。独立来源/方法/算术与读者检查、适用完整性/构建/页面/Docpact/CI，以及源码Main、精确root和线上交付分开核验。代理审阅不是人类领域或科学批准。完整序篇、八卷、附录及其未完成覆盖仍由 programme #9 保持开放。
+
+## Actual reading and evidence-led revision, 2026-11-05
+
+Four original PDF carriers support five separately identified contributions: the
+1999 article; Nordheim's p308 Comment and Weidema's pp309–310 Reply in one
+three-page carrier; existing M01/2004; and PSI98-17. The2004 printed/currentDOIs
+identify one bibliographic work without a verified registrar-alias claim. Shared
+Comment/Reply bytes do not establish independent empirical replication. Readings
+remain selected passages with exact hashes/locators. Originals, extractions and
+images stay outside Git/public exports. Ordinary publisher access for1999 displayed
+an institutional banner; individual entitlement and access context remain unresolved.
+Neutral inspected-passages status does not assert open access or redistribution.
+Other public institutional/author/project carriers also retain third-party rights.
+
+The original procedure distinguishes direct processes/markets, output/capital
+adjustment, replacement-relative trends, constraints and actor preferences. The
+Comment challenges geography, mixed capacity responses, transmission and delivery
+attribution. The Reply acknowledges geographic inadequacy and revises its European
+aluminium premise while retaining globalmaterial/multipleregionalpower reasoning.
+Unpublished industry forecasts and underlyingIPAIstatistics remain unacquired.
+The2004source explicitly attributes its procedure to1999, but does not explicitly
+cite this exchange; no causal influence or settlement is inferred.
+
+PSI changed the positive example design: its average import/export construction
+does not identify an isolated demand response. Only nine displayedM3facts enter
+the public case. Swiss1995 P60277+I18113−E25143=53247GWh includes51567final
+consumption+1680losses; domestic35134+DE7014+FR9116+AT1973+IT10 closes the same
+denominator. Private checking also examinedM2/M4/SBB; those reconstructions do not
+enter the public model. T5absolute emissions lack the separately cited inventory
+chain. M4sparse samples/internaltable/weighting differences remain unreconciled.
+PSI's average-first/scenario-sensitivity view, responsibility judgment and the
+Frischknecht dissent remain visible.
+
+The separate fictional model fixes extra1kg output at a selected producer,
+10kWh/kg, otherusers100kWh and a commonabstractstaticperiod. FixedH40 requires
+stipulatedG70 versus baselineH40/G60; actualexpandingH50 retainsG60. InventedCO2
+coefficients0.02/0.8kg/kWh give8/0.2kg increments while producerassignment stays0.2.
+Both intervention worlds supply the same extra service; the baseline lacks it.
+Availability alone does not establish actual response. This is conditional
+electricityCO2 arithmetic, not empirical supplier selection, a complete materialLCI,
+CO2-equivalent score, propagated uncertainty or present-grid default.
+
+The continuous chapter follows both allocation chapters: joint-batch premise →
+originalprocedure → critique/concession → averageconstruction → latersegmentation →
+positiveactivities → discriminatingobservations and the unfilled regional symbolic
+chain. Structure follows the explanatory problem, not a chapter/source quota.
+Three concepts and one relatedness mapping introduce no universal equivalence.
+
+## Actual bounded queries and exclusions
+
+Author/publisher/project/PSIdirectroutes and exact-title/identifier/correction
+queries are recorded in the reading packages/literature register. Main also ran
+these public-web queries on2026-11-05, including a repeat source confirmation:
+
+- `"Marginal Production Technologies" "Nordheim" reply correction erratum`
+- `"后果型" "边际电力" "铝" 市场边界`
+- `"marginale Stromproduktion" Ökobilanz Aluminium Weidema Nordheim`
+
+Results rediscovered the original exchange/PSI and later citations; no correction
+was verified. Chinese hits mostly concerned current industrial markets and did not
+support this historical method proposition. Secondary mirrors, building/railway
+citations, general news and price pages were excluded as original evidence. The
+Danish official *Market information in life cycle assessments* report and publisher
+record *Uncertainties related to the identification of the marginal energy
+technology in consequential life cycle assessments* remain discovery leads,
+not acquired/read support in this unit. Search silence proves neither correction
+absence nor non-English scholarship absence; no systematic coverage is claimed.
+
+## Initial review and remaining publication gates
+
+Independent source readings preceded synthesis. Method review required explicit
+material response, equalextra service across interventionworlds and actual rather
+than merelyavailableHexpansion. Review of the32-paragraph artifact restored the
+exclusiveidentified-process stoppingcondition; clarified exportsigns/units,
+PSIcomparability and responsibility; and corrected actualPSIp35support and the
+exact2004§6title. Focused integrated recheck closed these findings. All22evidence
+joins/fivecontributioncarrierhashes and eightmaterializedclaims matched.
+
+The closed static adapter binds nine source tuples through the actual reading,
+passage and originalPDF. Eightcaseparagraphs bind inputSHA256
+`a58663c4648adee29c1c8236907d436ad42304ff3728aae8d3c133ba23e6a81e`.
+Independent code review found no material issue in45scopedtests, source-image
+checks, exactarithmetic,14nestedprivate-field projections,120required-leafomissions,
+stalemetadata/textrejection and sixunchangedlegacyhashes. Main integrity and175tests
+pass. These establish consistency, not empirical validity or human approval.
+Nativeindependentreader assessment is in progress; actualrendered/build/CI/Main,
+exactroot/livequalification remain separate required gates.

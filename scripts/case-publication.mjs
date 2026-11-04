@@ -8,6 +8,7 @@ import { publicCatalog } from './knowledge.mjs';
 import { evaluateWaterLocalityCase, validateWaterLocalityCase, evaluatePhosphorusBoundaryCase, validatePhosphorusBoundaryCase } from './impact-examples.mjs';
 import { pedigreeFactKeys, validatePedigreeCalibrationCase, evaluatePedigreeCalibrationCase } from './pedigree-calibration.mjs';
 import { historicalFactKeys, validateHistoricalContainerCase, evaluateHistoricalContainerCase } from './historical-container.mjs';
+import { marketResponseInputShape, validateMarketResponseCase, evaluateMarketResponseCase, validateMarketResponseFacts } from './market-response.mjs';
 
 // Every nested object has an explicit schema. Unknown fields never enter public
 // downloads or the approved-input hash, including capture/private metadata.
@@ -86,6 +87,8 @@ const pedigreeInputShape = {
 // Closed model registry: a case identity selects its projection, evaluator and
 // numeric-source policy together. An input flag cannot disable wall fact checks.
 const caseAdapters = new Map([
+  ['CASE-MARKET-RESPONSE', { shape: marketResponseInputShape, validate: validateMarketResponseCase,
+    context: input => ({ evaluated: evaluateMarketResponseCase(input) }), validateFacts: validateMarketResponseFacts }],
   ['CASE-PEDIGREE-CALIBRATION', { shape: pedigreeInputShape, validate: validatePedigreeCalibrationCase,
     context: input => ({ evaluated: evaluatePedigreeCalibrationCase(input) }), validateFacts: validatePedigreeFacts }],
   ['CASE-HISTORICAL-GLASS', { shape: historicalInputShape, validate: validateHistoricalContainerCase,
