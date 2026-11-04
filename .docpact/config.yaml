@@ -19,6 +19,7 @@ catalog:
         - _docs/publication-contract.md
         - _docs/architecture.md
         - _docs/editorial-protocol.md
+        - _docs/reader-publication-contract.md
       workspaceIntegrationRequired: true
 
 ownership:
@@ -213,3 +214,25 @@ rules:
       - path: _docs/publication-contract.md
         mode: review_or_update
     reason: Validation and automation must preserve public-only exports, source identities, immutable releases and bounded update authority without treating software success as substantive review.
+
+
+  - id: reader-publication-boundary
+    scope: repo
+    repo: knowledge-base
+    triggers:
+      - path: content/**
+        kind: finished-reader-prose
+      - path: knowledge/**
+        kind: canonical-reader-claims
+      - path: components/**
+        kind: reader-presentation
+      - path: app/**
+        kind: reader-page
+      - path: lib/**
+        kind: reader-navigation
+      - path: scripts/**
+        kind: reader-publication-validation
+    requiredDocs:
+      - path: _docs/reader-publication-contract.md
+        mode: review_or_update
+    reason: Preserve the user's finished-prose, developer-record separation, docs layout parity and independent reader-review requirements across future expansion.
