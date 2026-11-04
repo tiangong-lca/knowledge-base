@@ -19,11 +19,11 @@ lastReviewedCommit: 50cc3d7
 
 # Editorial and living review protocol
 
-## Initial scope and evidence frame
+## Historical pilot scope and evidence frame
 
 Publication starts with four bounded topics: flow/exchange/waste conventions; functional unit/reference flow in ILCD Format 1.1; ecoinvent system model overview; characterization coverage in openLCA. The history chapter is a research agenda with two source-bound software/database version nodes. The initial source frame is eight public official HTML documents, accessed 2026-11-03, selected for explanatory pilot value rather than a systematic literature search. No global recall or completeness estimate is claimed.
 
-The source set is not a systematic review. All eight URLs were inspected at the cited sections. Current web pages are mutable; this first set does not bundle source HTML or claim immutable preservation. Current manuals were not independently checked against historical executables. ISO full text, national standards, PCR/EPD rules, historical original reports and native software execution are outside the completed review scope. A blocked EUR-Lex page and a missing ILCD mirror enumeration page provided no evidence; the accessible JRC ILCD ProcessDataSet documentation supplies the cited quantitative-reference fields.
+That initial source set was not a systematic review. All eight URLs were inspected at the cited sections. Current web pages are mutable; this first set does not bundle source HTML or claim immutable preservation. Current manuals were not independently checked against historical executables. ISO full text, national standards, PCR/EPD rules, historical original reports and native software execution are outside the completed review scope. A blocked EUR-Lex page and a missing ILCD mirror enumeration page provided no evidence; the accessible JRC ILCD ProcessDataSet documentation supplies the cited quantitative-reference fields.
 
 ## Claim method
 
@@ -46,3 +46,11 @@ Keep retrieval cutoff, evidence check date and substantive modification date dis
 Automated validation checks IDs, references, required reasoning, public dependency closure and update propagation. Substantive review checks source entailment, applicability, counterexamples, caveats and unintended normative claims. Browser review checks whether a reader can find this evidence. These checks are separate and none establishes environmental truth by itself.
 
 Next content tasks are version-bound primary-source acquisition, expanded national/sector standards coverage, historical original sources, native reference cases for waste conventions, and a domain-reviewed functional equivalence case. The coverage inventory records these gaps without equating source counts with field-wide completeness.
+
+## Approved research and manuscript expansion
+
+The 2026-11-04 approval supersedes the design-only gate for the mission in `lca-book-goal.md`; exact baseline and ongoing task identities are in `book-execution.md`. The first wave follows official institutional originals and reference chains for framework history, functional comparison and interpretation, while separately broadening classic/community discovery. It is a targeted foundational reading programme, not an exhaustive or formally completed systematic review.
+
+The discovery register preserves actual query dates/channels and old seed-check dates; acquisition and partial reading do not upgrade a whole work to read. The reading register identifies selected ranges, offsets, carrier hashes, independence and limits. Missing original SETAC books, incomplete event matches, ISO full-text access and uneven global coverage remain visible. No historical guide's provision is attributed directly to an unread ISO clause or silently treated as current universal practice.
+
+Evidence-driven chapter changes are recorded in the reading ledger with triggering passages and affected units, then applied to the goal/argument plan. Prose distinguishes institutional explanations, project inference and proposed reading structure. A separate source-bound substantive review precedes delivery; corrections update exact locators and preserve necessary qualifiers. All promoted first-wave claims carry actual agent source-check status, not expert scientific endorsement.
