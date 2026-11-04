@@ -9,7 +9,7 @@ const validDate = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.te
 const digest = value => typeof value === 'string' && /^[a-f0-9]{64}$/i.test(value);
 const inspected = ['selected-passages', 'web-sections'];
 const readingStates = [...inspected, 'metadata-only', 'not-close-read'];
-const accessStates = ['metadata-only', 'abstract-or-excerpt', 'public-fulltext-available', 'login-required', 'unavailable'];
+const accessStates = ['metadata-only', 'abstract-or-excerpt', 'public-fulltext-available', 'access-context-unresolved', 'login-required', 'unavailable'];
 const indexById = values => new Map(objects(values).map(value => [value.id, value]));
 
 export function validateResearch(literatureMap, readingRegister, catalog = {}) {

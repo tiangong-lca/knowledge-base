@@ -5,7 +5,7 @@ export type EvidenceRelation = 'supports' | 'qualifies' | 'contradicts' | 'conte
 export type ClaimKind = 'source-statement' | 'interpretation' | 'synthesis' | 'calculation' | 'proposal';
 export type ClaimStatus = 'reviewed' | 'draft' | 'needs-review' | 'withdrawn';
 export type ReviewKind = 'agent-source-check' | 'human-source-check' | 'human-editorial-review' | 'human-expert-review' | 'not-reviewed';
-export type AccessStatus = 'public-html-inspected' | 'public-passages-inspected' | 'public-full-text-inspected' | 'licensed-full-text-inspected' | 'metadata-only' | 'unavailable';
+export type AccessStatus = 'public-html-inspected' | 'public-passages-inspected' | 'passages-inspected' | 'public-full-text-inspected' | 'licensed-full-text-inspected' | 'metadata-only' | 'unavailable';
 
 export interface RetrievedArtifact {
   kind?: 'retrieved';

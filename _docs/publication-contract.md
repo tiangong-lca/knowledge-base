@@ -28,6 +28,8 @@ Canonical knowledge is stored in knowledge/catalog.json; MDX renders claim state
 
 Source retrieval, rights, version and preservation limits are recorded. Unavailable full text does not support a purported full-text verification. No source copying is authorized merely by access. Proposed improvements carry reasoning and alternatives; editorial suggestions are not external normative requirements.
 
+When a carrier's access circumstances are unresolved, `passages-inspected` records only actual selected inspection without asserting public or licensed access. Its literature entry may use `access-context-unresolved`; rights and limitations state the observed context separately. An institutional-access banner or a captured article body does not establish entitlement, an open license or redistribution permission. Abstract-only substantive reading must not be misreported as proof that fuller text was unavailable. These states do not permit a full-work reading upgrade or weaken passage/evidence bindings.
+
 Changed sources, premises, concepts and mappings invalidate dependent review through the derived dependency graph. Search cutoff, evidence review date and substantive modification date remain distinct. New evidence passes screening, extraction, impact review and editorial PR before publication. Historical releases remain immutable with separately discoverable errata.
 
 Initial publication may include explicitly disclosed open questions, but must not present unsupported draft conclusions as established facts. Publication status and epistemic uncertainty are separate. Automated integrity checks verify references and required fields; independent substantive review evaluates entailment and applicability.

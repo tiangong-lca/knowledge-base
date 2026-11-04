@@ -4,7 +4,7 @@ const claimKinds = ['source-statement', 'interpretation', 'synthesis', 'calculat
 const statuses = ['reviewed', 'draft', 'needs-review', 'withdrawn'];
 const reviewKinds = ['agent-source-check', 'human-source-check', 'human-editorial-review', 'human-expert-review', 'not-reviewed'];
 const relations = ['supports', 'qualifies', 'contradicts', 'context'];
-const accessStatuses = ['public-html-inspected', 'public-passages-inspected', 'public-full-text-inspected', 'licensed-full-text-inspected', 'metadata-only', 'unavailable'];
+const accessStatuses = ['public-html-inspected', 'public-passages-inspected', 'passages-inspected', 'public-full-text-inspected', 'licensed-full-text-inspected', 'metadata-only', 'unavailable'];
 const mappingRelations = ['related', 'exact', 'close', 'broader', 'narrower', 'overlap', 'conditional-equivalence', 'not-equivalent', 'unresolved'];
 const isObject = v => v !== null && typeof v === 'object' && !Array.isArray(v);
 const isText = v => typeof v === 'string' && v.trim().length > 0;

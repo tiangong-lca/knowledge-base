@@ -146,6 +146,18 @@ test('reading metadata cannot upgrade metadata checks or partial reading to full
   hasError(data, /reading.status: must be one of/);
 });
 
+test('inspected passages can retain unresolved access context without asserting public or licensed access', () => {
+  const data = addReadingMetadata(fixture());
+  data.sources[0].accessStatus = 'passages-inspected';
+  data.sources[0].rights = 'Publisher access context and entitlement are unresolved; no original redistribution.';
+  assert.deepEqual(validateCatalog(data), []);
+  const output = publicCatalog(data);
+  assert.equal(output.sources[0].accessStatus, 'passages-inspected');
+  assert.equal(output.sources[0].rights, data.sources[0].rights);
+  data.sources[0].reading.status = 'metadata-only';
+  hasError(data, /metadata-only reading cannot claim inspected/);
+});
+
 test('derived claims require a reviewable argument and actual premises', () => {
   const data = fixture(); delete data.claims[1].reasoning; data.claims[1].premiseIds = [];
   hasError(data, /explicit reasoning/); hasError(data, /identified premises/);
