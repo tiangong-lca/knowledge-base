@@ -3,10 +3,14 @@ import { join } from 'node:path';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { publicCatalog, validateCatalog, buildDependencies } from './knowledge.mjs';
+import { publicResearch, validateResearch } from './research.mjs';
+const literatureMap = JSON.parse(readFileSync('knowledge/research/literature-map.json', 'utf8'));
+const readingLedger = JSON.parse(readFileSync('knowledge/research/readings.json', 'utf8'));
+const research = publicResearch(literatureMap, readingLedger);
 const catalog = JSON.parse(readFileSync('knowledge/catalog.json', 'utf8'));
-const errors = validateCatalog(catalog);
+const errors = [...validateCatalog(catalog), ...validateResearch(literatureMap, readingLedger, catalog)];
 if (errors.length) throw new Error(errors.join('\n'));
-for (const route of ['', 'docs', 'sources', 'claims', 'concepts', 'coverage', 'changes', 'print']) {
+for (const route of ['', 'docs', 'sources', 'claims', 'concepts', 'coverage', 'changes', 'print', 'research']) {
   if (!existsSync(`out/${route ? `${route}/` : ''}index.html`)) throw new Error(`Missing static route: ${route}`);
 }
 const published = publicCatalog(catalog);
@@ -18,10 +22,11 @@ if (dirty) {
   console.warn(`Git worktree status (paths only, porcelain format):\n${worktreeStatus}`);
 }
 mkdirSync('out/downloads', { recursive: true });
+writeFileSync('out/downloads/research.json', `${JSON.stringify(research, null, 2)}\n`);
 writeFileSync('out/downloads/catalog.json', `${JSON.stringify(published, null, 2)}\n`);
 writeFileSync('out/downloads/dependencies.json', `${JSON.stringify(buildDependencies(published), null, 2)}\n`);
 
-writeFileSync('out/llms.txt', '# LCA Living Knowledge Base and Review\n\nChinese source-grounded living publication. Agent source checks are not human expert review.\n\n- [Review](/docs/)\n- [Claims and evidence](/claims/)\n- [Sources](/sources/)\n- [Coverage and gaps](/coverage/)\n- [Machine-readable public catalog](/downloads/catalog.json)\n- [Build identity](/downloads/manifest.json)\n');
+writeFileSync('out/llms.txt', '# LCA Living Knowledge Base and Review\n\nChinese source-grounded living publication. Agent source checks are not human expert review.\n\n- [Review](/docs/)\n- [Claims and evidence](/claims/)\n- [Sources](/sources/)\n- [Literature map and selected readings](/research/)\n- [Research register](/downloads/research.json)\n- [Coverage and gaps](/coverage/)\n- [Machine-readable public catalog](/downloads/catalog.json)\n- [Build identity](/downloads/manifest.json)\n');
 console.log(`Public export verified: ${published.claims.length} claims; source ${sourceCommit}${dirty ? ' (working preview)' : ''}`);
 
 const files = {};

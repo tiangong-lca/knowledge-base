@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { validateCatalog, publicCatalog, buildDependencies, affectedClaims } from './knowledge.mjs';
+import { validateCatalog, publicCatalog, buildDependencies, affectedClaims, getClaimEvidence } from './knowledge.mjs';
 import { validateClaimReferences } from './validate.mjs';
 
 function fixture() {
@@ -44,6 +44,106 @@ test('rejects impossible dates, missing locators, and unsupported access claims'
 test('context evidence cannot establish a reviewed source assertion', () => {
   const data = fixture(); data.evidence[0].relation = 'context';
   hasError(data, /needs supporting evidence/);
+});
+
+test('claim-specific roles override legacy roles in both directions', () => {
+  const data = fixture();
+  assert.deepEqual(getClaimEvidence(data, data.claims[0]), [{ evidence: data.evidence[0], relation: 'supports', rationale: null, legacy: true }]);
+  data.claims[0].evidenceLinks = [{ evidenceId: 'evidence', relation: 'qualifies', rationale: 'This passage limits this claim rather than supporting it.' }];
+  hasError(data, /needs supporting evidence/);
+  assert.equal(getClaimEvidence(data, data.claims[0])[0].relation, 'qualifies');
+  data.evidence[0].relation = 'context';
+  data.claims[0].evidenceLinks[0].relation = 'supports';
+  assert.deepEqual(validateCatalog(data), []);
+  assert.deepEqual(getClaimEvidence(data, data.claims[0])[0], { evidence: data.evidence[0], relation: 'supports', rationale: data.claims[0].evidenceLinks[0].rationale, legacy: false });
+  data.sources[0].accessStatus = 'metadata-only';
+  hasError(data, /was not inspected/);
+});
+
+test('legacy evidence role may be omitted only when every claim use is explicit', () => {
+  const data = fixture();
+  delete data.evidence[0].relation;
+  data.claims[0].evidenceLinks = [{ evidenceId: 'evidence', relation: 'supports', rationale: 'Direct support for this bounded assertion.' }];
+  assert.deepEqual(validateCatalog(data), []);
+  data.claims[1].evidenceIds = ['evidence'];
+  hasError(data, /every claim use/);
+  data.claims[1].evidenceLinks = [{ evidenceId: 'evidence', relation: 'contradicts', rationale: 'A competing interpretation must remain visible.' }];
+  assert.deepEqual(validateCatalog(data), []);
+  assert.equal(getClaimEvidence(data, data.claims[1])[0].relation, 'contradicts');
+});
+
+test('explicit evidence links require an exact unique set, valid roles and rationales', () => {
+  const data = fixture();
+  const link = { evidenceId: 'evidence', relation: 'supports', rationale: 'Directly inspected passage.' };
+  data.claims[0].evidenceLinks = [];
+  hasError(data, /missing link evidence/);
+  // Presence of an explicit collection must never recover the legacy support role.
+  assert.equal(getClaimEvidence(data, data.claims[0])[0].relation, undefined);
+  data.claims[0].evidenceLinks = [link, { ...link }];
+  hasError(data, /duplicate evidence link/);
+  data.claims[0].evidenceLinks = [{ ...link, evidenceId: 'other' }];
+  hasError(data, /must exactly match evidenceIds/);
+  data.claims[0].evidenceLinks = [{ ...link, relation: 'proves', rationale: '' }];
+  hasError(data, /evidenceLinks\[0\].relation/); hasError(data, /evidenceLinks\[0\].rationale/);
+  data.claims[0].evidenceLinks = [null];
+  assert.doesNotThrow(() => validateCatalog(data));
+  hasError(data, /evidenceLinks\[0\]: must be an object/);
+});
+
+function addReadingMetadata(data) {
+  data.sources[0].accessStatus = 'public-passages-inspected';
+  data.sources[0].artifact = { sha256: 'a'.repeat(64), pageCount: 100, resolvedUrl: 'https://example.org/source.pdf', mediaType: 'application/pdf' };
+  data.sources[0].reading = { status: 'selected-passages', scope: 'Printed pages 10–12 only; the remainder was not read.', checkedAt: '2026-11-04', readingId: 'reading-source-sections' };
+  data.evidence[0].appraisal = { basis: 'Selected original passages inspected.', limitations: ['Historical edition; not a current standard.'], independence: 'Shares antecedent guidance with other sources.', methodologicalScope: 'Applies to the identified study design.', reviewKind: 'agent-source-check', checkedAt: '2026-11-04' };
+  data.claims[0].evidenceLinks = [{ evidenceId: 'evidence', relation: 'supports', rationale: 'Supports the assertion under its stated scope.' }];
+  return data;
+}
+
+test('artifact, selected reading and appraisal fields validate and survive the public projection', () => {
+  const data = addReadingMetadata(fixture());
+  assert.deepEqual(validateCatalog(data), []);
+  const output = publicCatalog(data);
+  assert.deepEqual(output.sources[0].artifact, data.sources[0].artifact);
+  assert.deepEqual(output.sources[0].reading, data.sources[0].reading);
+  assert.deepEqual(output.evidence[0].appraisal, data.evidence[0].appraisal);
+  assert.deepEqual(output.claims[0].evidenceLinks, data.claims[0].evidenceLinks);
+  output.evidence[0].appraisal.limitations.push('Projection edits must not mutate the original.');
+  assert.equal(data.evidence[0].appraisal.limitations.length, 1);
+});
+
+test('nested public allowlists exclude unknown private metadata and link properties', () => {
+  const data = addReadingMetadata(fixture());
+  for (const record of [data.sources[0].artifact, data.sources[0].reading, data.evidence[0].appraisal, data.claims[0].evidenceLinks[0]]) record.privateNotes = { secret: 'PRIVATE nested note' };
+  assert.equal(JSON.stringify(publicCatalog(data)).includes('PRIVATE'), false);
+});
+
+test('invalid artifacts and incomplete appraisals cannot enter public exports', () => {
+  const data = addReadingMetadata(fixture());
+  data.sources[0].artifact = { sha256: 'not-a-hash', pageCount: 0, resolvedUrl: 'file:///private/source.pdf', mediaType: 'pdf' };
+  data.evidence[0].appraisal.limitations = 'none';
+  data.evidence[0].appraisal.checkedAt = '2026-02-30';
+  delete data.evidence[0].appraisal.independence;
+  for (const field of ['sha256', 'pageCount', 'resolvedUrl', 'mediaType', 'limitations', 'checkedAt', 'independence']) hasError(data, new RegExp(field));
+  assert.throws(() => publicCatalog(data), /Cannot publish invalid catalog/);
+});
+
+test('reading metadata cannot upgrade metadata checks or partial reading to full-text inspection', () => {
+  const data = addReadingMetadata(fixture());
+  data.sources[0].accessStatus = 'public-full-text-inspected';
+  hasError(data, /do not establish full-text inspection/);
+  data.sources[0].reading.status = 'metadata-only';
+  hasError(data, /metadata-only reading cannot claim inspected/);
+  data.sources[0].accessStatus = 'metadata-only';
+  hasError(data, /was not inspected/);
+  data.claims[0].status = 'draft'; data.claims[1].status = 'draft';
+  assert.deepEqual(validateCatalog(data), []);
+  assert.deepEqual(publicCatalog(data).sources, []);
+  data.sources[0].reading.status = 'web-sections';
+  hasError(data, /conflict with uninspected access/);
+  data.sources[0].accessStatus = 'public-html-inspected';
+  assert.deepEqual(validateCatalog(data), []);
+  data.sources[0].reading.status = 'full-book';
+  hasError(data, /reading.status: must be one of/);
 });
 
 test('derived claims require a reviewable argument and actual premises', () => {
@@ -101,6 +201,19 @@ test('public MDX rejects unknown, draft and dynamic Claim references', () => {
   assert.deepEqual(validateClaimReferences('```mdx\n<Claim id="missing" />\n```\n`<Claim id="missing" />`', data), []);
 });
 
+test('Prose references use literal unique published claim IDs and reject dynamic attributes', () => {
+  const data = fixture();
+  assert.deepEqual(validateClaimReferences('<Prose ids="claim derived">Authored prose.</Prose>', data), []);
+  assert.deepEqual(validateClaimReferences("<Prose ids='claim\nderived' />", data), []);
+  assert.match(validateClaimReferences('<Prose ids="claim missing" />', data).join(), /unknown Prose claim missing/);
+  data.claims[1].status = 'draft';
+  assert.match(validateClaimReferences('<Prose ids="claim derived" />', data).join(), /unpublished Prose claim derived/);
+  for (const tag of ['<Prose ids={selected} />', '<Prose ids="claim" {...props} />', '<Prose ids="claim" ids="derived" />', '<Prose ids="claim" hidden />']) assert.match(validateClaimReferences(tag, data).join(), /literal ids/);
+  assert.match(validateClaimReferences('<Prose ids="" />', data).join(), /at least one claim ID/);
+  assert.match(validateClaimReferences('<Prose ids="claim claim" />', data).join(), /duplicate claim IDs/);
+  assert.deepEqual(validateClaimReferences('```mdx\n<Prose ids="missing" />\n```\n`<Prose ids="missing" />`', data), []);
+});
+
 test('source and evidence changes propagate to transitive dependent claims', () => {
   const data = fixture();
   assert.deepEqual(affectedClaims(data, ['source']), ['claim', 'derived']);
@@ -120,4 +233,51 @@ test('concept and mapping edits trigger associated claims and terminate semantic
   assert.deepEqual(affectedClaims(data, ['mapping']), ['derived']);
   data.claims[0].mappingIds = ['mapping'];
   assert.deepEqual(affectedClaims(data, ['mapping']), ['claim', 'derived']);
+});
+
+
+test('reading and passage corrections reach all dependent claims', () => {
+  const data = fixture();
+  data.sources[0].reading = { readingId: 'reading-record' };
+  data.evidence[0].readingId = 'reading-record';
+  data.evidence[0].passageId = 'exact-passage';
+  assert.deepEqual(affectedClaims(data, ['reading-record']), ['claim', 'derived']);
+  assert.deepEqual(affectedClaims(data, ['exact-passage']), ['claim', 'derived']);
+  assert.deepEqual(affectedClaims(data, ['unrelated-passage']), []);
+});
+
+test('impact CLI accepts registered reading and passage identities and rejects unknown IDs', async () => {
+  const { mkdtempSync, mkdirSync, writeFileSync, rmSync } = await import('node:fs');
+  const { tmpdir } = await import('node:os');
+  const { join } = await import('node:path');
+  const { execFileSync } = await import('node:child_process');
+  const { fileURLToPath } = await import('node:url');
+  const root = mkdtempSync(join(tmpdir(), 'lca-impact-'));
+  try {
+    mkdirSync(join(root, 'knowledge/research'), { recursive: true });
+    const data = fixture();
+    data.sources[0].reading = { readingId: 'rd-example' };
+    data.evidence[0].readingId = 'rd-example';
+    data.evidence[0].passageId = 'psg-example';
+    writeFileSync(join(root, 'knowledge/catalog.json'), JSON.stringify(data));
+    writeFileSync(join(root, 'knowledge/research/readings.json'), JSON.stringify({ readings: [{ id: 'rd-example', passages: [{ id: 'psg-example' }, { id: 'psg-unused' }] }] }));
+    const run = id => JSON.parse(execFileSync(process.execPath, [fileURLToPath(new URL('./impact.mjs', import.meta.url)), id], { cwd: root, encoding: 'utf8', stdio: 'pipe' }));
+    assert.deepEqual(run('rd-example').requiresReview, ['claim', 'derived']);
+    assert.deepEqual(run('psg-example').requiresReview, ['claim', 'derived']);
+    assert.deepEqual(run('psg-unused').requiresReview, []);
+    assert.throws(() => run('invented-id'), /Unknown changed identity/);
+  } finally { rmSync(root, { recursive: true, force: true }); }
+});
+
+
+test('legacy source and unbound artifact URLs cannot publish signed access or credentials', () => {
+  for (const url of ['https://name:secret@example.org/source', 'https://example.org/source?X-Amz-Signature=secret', 'https://example.org/source?access_token=secret']) {
+    const data = fixture();
+    data.sources[0].artifact = { sha256: 'a'.repeat(64), resolvedUrl: url, mediaType: 'text/html' };
+    hasError(data, /credentials/);
+    assert.throws(() => publicCatalog(data), /Cannot publish invalid catalog/);
+    delete data.sources[0].artifact;
+    data.sources[0].url = url;
+    hasError(data, /credentials/);
+  }
 });

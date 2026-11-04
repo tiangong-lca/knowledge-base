@@ -20,7 +20,7 @@ lastReviewedCommit: 753a9513e821b7804452114b1ac805f8a928f1bc
 
 # LCA Living Knowledge Base and Review
 
-中文 LCA 动态知识库与研究评论：从问题起源、概念含义、方法选择到数据与软件表达，沿可核查的证据链阅读。首版是四个语义样板专题和持续维护基础；覆盖清单明确保留全球历史、标准与文献研究的空白。
+中文 LCA 动态知识库与研究评论：从问题起源、概念含义、方法选择到数据与软件表达，沿可核查的证据链阅读。已从四个语义样板专题进入全书研究和正文扩充；文献地图与选段阅读台账明确保留全球历史、标准与文献覆盖缺口。
 
 ## Read and contribute
 
@@ -53,12 +53,14 @@ Impact analysis reports claims needing review without granting approval or autom
 
 ## Delivery
 
-This is an M1 main repository. Current implementation is tracked in [knowledge-base #1](https://github.com/tiangong-lca/knowledge-base/issues/1); workspace onboarding in [workspace #2172](https://github.com/tiangong-lca/workspace/issues/2172). Use the workspace lifecycle controller for delivery records. A merged child PR requires separate exact workspace integration.
+This is an M1 main repository. The approved book programme is coordinated in [knowledge-base #9](https://github.com/tiangong-lca/knowledge-base/issues/9); the first research/manuscript wave is [#10](https://github.com/tiangong-lca/knowledge-base/issues/10). Initial onboarding #1/workspace #2172 remains historical evidence. Use the workspace lifecycle controller for delivery records. A merged child PR requires separate exact workspace integration.
 
 ## License
 
 Code is licensed under [MIT](LICENSE). Original narrative and knowledge records in `content/` and `knowledge/` are licensed under [CC BY-NC-SA 4.0](LICENSE-content), attributed to TianGong LCA Knowledge Base contributors. Commercial use of original knowledge content requires separate authorization from the relevant rights holders. Third-party sources retain their own licenses and applicable authorization conditions; a citation does not relicense the source or authorize full-text redistribution. See source-specific rights and preservation notes.
 
-## Book design awaiting confirmation
+## Approved book programme
 
-The detailed [LCA treatise design and AI goal](_docs/lca-book-goal.md) proposes a prologue, eight volumes and research appendices, with evidence-point requirements, literature coverage and evidence-driven revision rules. It is a design draft awaiting user confirmation. Delivering this file does not authorize manuscript expansion or changes to the public corpus.
+The [LCA treatise design and AI goal](_docs/lca-book-goal.md) was approved on 2026-11-04 at baseline a9ae501. [Execution record](_docs/book-execution.md) preserves the authority to research, revise arguments from evidence and expand prose without repeated outline approval. The prologue, eight-volume mission and appendices remain the scope; a wave is not the completed book.
+
+Read `/docs/book/` for developing chapters and `/research/` for discovery queries, selected-passage readings, artifact hashes, gaps and evidence-driven revisions. Public research registers live in `knowledge/research/`; downloaded originals remain outside Git. Discovery records do not claim whole-work reading. `/downloads/research.json` exports only explicitly selected public fields.

@@ -4,7 +4,7 @@ const claimKinds = ['source-statement', 'interpretation', 'synthesis', 'calculat
 const statuses = ['reviewed', 'draft', 'needs-review', 'withdrawn'];
 const reviewKinds = ['agent-source-check', 'human-source-check', 'human-editorial-review', 'human-expert-review', 'not-reviewed'];
 const relations = ['supports', 'qualifies', 'contradicts', 'context'];
-const accessStatuses = ['public-html-inspected', 'public-full-text-inspected', 'licensed-full-text-inspected', 'metadata-only', 'unavailable'];
+const accessStatuses = ['public-html-inspected', 'public-passages-inspected', 'public-full-text-inspected', 'licensed-full-text-inspected', 'metadata-only', 'unavailable'];
 const mappingRelations = ['related', 'exact', 'close', 'broader', 'narrower', 'overlap', 'conditional-equivalence', 'not-equivalent', 'unresolved'];
 const isObject = v => v !== null && typeof v === 'object' && !Array.isArray(v);
 const isText = v => typeof v === 'string' && v.trim().length > 0;
@@ -12,6 +12,20 @@ const validDate = v => typeof v === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(v) &&
 const records = (data, key) => Array.isArray(data?.[key]) ? data[key].filter(isObject) : [];
 const ids = value => Array.isArray(value) ? value.filter(isText) : [];
 const byId = values => new Map(values.map(v => [v.id, v]));
+
+/** Resolve evidence in evidenceIds order. Explicit links replace legacy roles, never supplement them.
+ * Missing evidence is omitted here and reported by validateCatalog. Legacy rationales are null.
+ */
+export function getClaimEvidence(catalog, claim) {
+  const evidenceMap = byId(records(catalog, 'evidence'));
+  const legacy = claim?.evidenceLinks === undefined;
+  return ids(claim?.evidenceIds).flatMap(id => {
+    const evidence = evidenceMap.get(id);
+    if (!evidence) return [];
+    const link = Array.isArray(claim?.evidenceLinks) ? claim.evidenceLinks.find(item => isObject(item) && item.evidenceId === id) : undefined;
+    return [{ evidence, relation: legacy ? evidence.relation : link?.relation, rationale: legacy ? null : link?.rationale, legacy }];
+  });
+}
 
 export function validateCatalog(data) {
   const errors = [];
@@ -40,6 +54,18 @@ export function validateCatalog(data) {
   function choice(item, path, field, choices) {
     if (!choices.includes(item[field])) fail(`${path}.${field}`, `must be one of ${choices.join(', ')}`);
   }
+  function date(item, path, field) {
+    if (!validDate(item[field])) fail(`${path}.${field}`, 'must be a valid YYYY-MM-DD date');
+  }
+  function httpUrl(value, path) {
+    try {
+      const parsed = new URL(value);
+      if (!['https:', 'http:'].includes(parsed.protocol)) fail(path, 'must use HTTP or HTTPS');
+      if (parsed.username || parsed.password) fail(path, 'must not contain credentials');
+      if ([...parsed.searchParams.keys()].some(key => /^(?:token|access_token|signature|awsaccesskeyid|x-amz-signature|x-amz-credential|x-amz-security-token)$/i.test(key))) fail(path, 'must not contain access tokens or ephemeral signed credentials');
+    }
+    catch { fail(path, 'must be an absolute HTTP or HTTPS URL'); }
+  }
   function array(item, path, field, target, nonempty = false) {
     if (!Array.isArray(item[field])) { fail(`${path}.${field}`, 'must be an array'); return; }
     if (nonempty && item[field].length === 0) fail(`${path}.${field}`, 'must not be empty');
@@ -54,16 +80,50 @@ export function validateCatalog(data) {
   for (const source of sourceMap.values()) {
     const p = `sources.${source.id}`;
     textFields(source, p, ['title', 'url', 'version', 'publisher', 'rights', 'preservation']);
-    try { if (!['https:', 'http:'].includes(new URL(source.url).protocol)) fail(`${p}.url`, 'must use HTTP or HTTPS'); }
-    catch { fail(`${p}.url`, 'must be an absolute HTTP or HTTPS URL'); }
+    httpUrl(source.url, `${p}.url`);
     if (!validDate(source.accessedAt)) fail(`${p}.accessedAt`, 'must be a valid YYYY-MM-DD date');
     choice(source, p, 'accessStatus', accessStatuses);
+    if (source.artifact !== undefined) {
+      if (!isObject(source.artifact)) fail(`${p}.artifact`, 'must be an object');
+      else {
+        const artifact = source.artifact;
+        if (typeof artifact.sha256 !== 'string' || !/^[a-f0-9]{64}$/i.test(artifact.sha256)) fail(`${p}.artifact.sha256`, 'must be a SHA-256 hex digest');
+        if (artifact.pageCount !== undefined && (!Number.isSafeInteger(artifact.pageCount) || artifact.pageCount < 1)) fail(`${p}.artifact.pageCount`, 'must be a positive safe integer');
+        httpUrl(artifact.resolvedUrl, `${p}.artifact.resolvedUrl`);
+        if (typeof artifact.mediaType !== 'string' || !/^[A-Za-z0-9!#$&^_.+-]+\/[A-Za-z0-9!#$&^_.+-]+$/.test(artifact.mediaType)) fail(`${p}.artifact.mediaType`, 'must be a media type such as application/pdf');
+      }
+    }
+    if (source.reading !== undefined) {
+      if (!isObject(source.reading)) fail(`${p}.reading`, 'must be an object');
+      else {
+        choice(source.reading, `${p}.reading`, 'status', ['selected-passages', 'web-sections', 'metadata-only']);
+        textFields(source.reading, `${p}.reading`, ['scope']);
+        date(source.reading, `${p}.reading`, 'checkedAt');
+        if (source.reading.readingId !== undefined && !isText(source.reading.readingId)) fail(`${p}.reading.readingId`, 'must be a nonempty string when supplied');
+        const inspected = accessStatuses.filter(status => status.endsWith('-inspected'));
+        if (source.reading.status === 'metadata-only' && inspected.includes(source.accessStatus)) fail(`${p}.reading.status`, 'metadata-only reading cannot claim inspected source content');
+        if (['selected-passages', 'web-sections'].includes(source.reading.status)) {
+          if (['metadata-only', 'unavailable'].includes(source.accessStatus)) fail(`${p}.reading.status`, 'inspected passages or sections conflict with uninspected access status');
+          if (['public-full-text-inspected', 'licensed-full-text-inspected'].includes(source.accessStatus)) fail(`${p}.reading.status`, 'selected passages or web sections do not establish full-text inspection');
+        }
+      }
+    }
   }
   for (const evidence of evidenceMap.values()) {
     const p = `evidence.${evidence.id}`;
     textFields(evidence, p, ['sourceId', 'locator', 'summary']);
     if (!sourceMap.has(evidence.sourceId)) fail(`${p}.sourceId`, `unknown source ${evidence.sourceId}`);
-    choice(evidence, p, 'relation', relations);
+    if (evidence.relation !== undefined) choice(evidence, p, 'relation', relations);
+    else if ([...claimMap.values()].some(claim => ids(claim.evidenceIds).includes(evidence.id) && !(Array.isArray(claim.evidenceLinks) && claim.evidenceLinks.some(link => isObject(link) && link.evidenceId === evidence.id)))) fail(`${p}.relation`, 'may be absent only when every claim use has an explicit evidence link');
+    if (evidence.appraisal !== undefined) {
+      if (!isObject(evidence.appraisal)) fail(`${p}.appraisal`, 'must be an object');
+      else {
+        textFields(evidence.appraisal, `${p}.appraisal`, ['basis', 'independence', 'methodologicalScope']);
+        array(evidence.appraisal, `${p}.appraisal`, 'limitations');
+        choice(evidence.appraisal, `${p}.appraisal`, 'reviewKind', reviewKinds);
+        date(evidence.appraisal, `${p}.appraisal`, 'checkedAt');
+      }
+    }
   }
   for (const claim of claimMap.values()) {
     const p = `claims.${claim.id}`;
@@ -72,6 +132,22 @@ export function validateCatalog(data) {
     choice(claim, p, 'status', statuses);
     choice(claim, p, 'reviewKind', reviewKinds);
     array(claim, p, 'evidenceIds', evidenceMap);
+    if (claim.evidenceLinks !== undefined) {
+      if (!Array.isArray(claim.evidenceLinks)) fail(`${p}.evidenceLinks`, 'must be an array');
+      else {
+        const linked = new Set();
+        for (const [index, link] of claim.evidenceLinks.entries()) {
+          const path = `${p}.evidenceLinks[${index}]`;
+          if (!isObject(link)) { fail(path, 'must be an object'); continue; }
+          textFields(link, path, ['evidenceId', 'rationale']);
+          choice(link, path, 'relation', relations);
+          if (linked.has(link.evidenceId)) fail(`${p}.evidenceLinks`, `duplicate evidence link ${link.evidenceId}`);
+          linked.add(link.evidenceId);
+          if (!ids(claim.evidenceIds).includes(link.evidenceId)) fail(`${p}.evidenceLinks`, `link ${link.evidenceId} must exactly match evidenceIds`);
+        }
+        for (const id of ids(claim.evidenceIds)) if (!linked.has(id)) fail(`${p}.evidenceLinks`, `missing link ${id}; must exactly match evidenceIds`);
+      }
+    }
     array(claim, p, 'premiseIds', claimMap);
     array(claim, p, 'conceptIds', conceptMap);
     array(claim, p, 'caveats');
@@ -84,16 +160,16 @@ export function validateCatalog(data) {
       for (const premise of ids(claim.premiseIds)) {
         if (claimMap.has(premise) && claimMap.get(premise).status !== 'reviewed') fail(`${p}.premiseIds`, `reviewed claim depends on unpublished premise ${premise}`);
       }
-      const evidence = ids(claim.evidenceIds).map(id => evidenceMap.get(id)).filter(Boolean);
+      const evidence = getClaimEvidence(data, claim);
       if (claim.kind === 'source-statement' && !evidence.some(e => e.relation === 'supports')) fail(`${p}.evidenceIds`, 'reviewed source-statement needs supporting evidence; context alone is insufficient');
       if (claim.kind === 'interpretation' && evidence.length === 0 && ids(claim.premiseIds).length === 0) fail(p, 'reviewed interpretation needs evidence or premises');
       if (['synthesis', 'calculation', 'proposal'].includes(claim.kind)) {
         if (!isText(claim.reasoning)) fail(`${p}.reasoning`, 'reviewed derived claims need explicit reasoning');
         if (ids(claim.premiseIds).length === 0) fail(`${p}.premiseIds`, 'reviewed derived claims need identified premises');
       }
-      for (const e of evidence) {
+      for (const { evidence: e, relation } of evidence) {
         const source = sourceMap.get(e.sourceId);
-        if (e.relation === 'supports' && source && ['metadata-only', 'unavailable'].includes(source.accessStatus)) fail(`${p}.evidenceIds`, `supporting evidence ${e.id} was not inspected`);
+        if (relation === 'supports' && source && ['metadata-only', 'unavailable'].includes(source.accessStatus)) fail(`${p}.evidenceIds`, `supporting evidence ${e.id} was not inspected`);
       }
     }
   }
@@ -132,14 +208,26 @@ export function validateCatalog(data) {
 }
 
 const fields = {
-  sources: ['id', 'title', 'url', 'version', 'publisher', 'accessedAt', 'accessStatus', 'rights', 'preservation'],
-  evidence: ['id', 'sourceId', 'locator', 'summary', 'relation'],
-  claims: ['id', 'text', 'kind', 'scope', 'evidenceIds', 'premiseIds', 'conceptIds', 'mappingIds', 'status', 'reviewedAt', 'reviewKind', 'caveats', 'reasoning'],
+  sources: ['id', 'title', 'url', 'version', 'publisher', 'accessedAt', 'accessStatus', 'rights', 'preservation', 'artifact', 'reading'],
+  evidence: ['id', 'sourceId', 'locator', 'summary', 'relation', 'appraisal', 'readingId', 'passageId'],
+  claims: ['id', 'text', 'kind', 'scope', 'evidenceIds', 'evidenceLinks', 'premiseIds', 'conceptIds', 'mappingIds', 'status', 'reviewedAt', 'reviewKind', 'caveats', 'reasoning'],
   concepts: ['id', 'label', 'english', 'definitionClaimIds', 'aliases'],
   mappings: ['id', 'from', 'to', 'relation', 'conditions', 'claimIds'],
   coverage: ['id', 'title', 'status', 'notes'],
 };
-const select = (section, record) => Object.fromEntries(fields[section].filter(key => record[key] !== undefined).map(key => [key, structuredClone(record[key])]));
+const pick = (record, keys) => Object.fromEntries(keys.filter(key => record[key] !== undefined).map(key => [key, structuredClone(record[key])]));
+const nestedFields = {
+  artifact: ['sha256', 'pageCount', 'resolvedUrl', 'mediaType'],
+  reading: ['status', 'scope', 'checkedAt', 'readingId'],
+  appraisal: ['basis', 'limitations', 'independence', 'methodologicalScope', 'reviewKind', 'checkedAt'],
+};
+const select = (section, record) => {
+  return Object.fromEntries(fields[section].filter(key => record[key] !== undefined).map(key => {
+    if (nestedFields[key]) return [key, pick(record[key], nestedFields[key])];
+    if (key === 'evidenceLinks') return [key, record[key].map(link => pick(link, ['evidenceId', 'relation', 'rationale']))];
+    return [key, structuredClone(record[key])];
+  }));
+};
 
 /** Only reviewed claims and their public reference closure enter projections. */
 export function publicCatalog(data) {
@@ -147,7 +235,7 @@ export function publicCatalog(data) {
   if (errors.length) throw new Error(`Cannot publish invalid catalog:\n${errors.join('\n')}`);
   const claims = data.claims.filter(c => c.status === 'reviewed');
   const claimIds = new Set(claims.map(c => c.id));
-  const evidenceIds = new Set(claims.flatMap(c => c.evidenceIds));
+  const evidenceIds = new Set(claims.flatMap(c => getClaimEvidence(data, c).map(({ evidence }) => evidence.id)));
   const evidence = data.evidence.filter(e => evidenceIds.has(e.id));
   const sourceIds = new Set(evidence.map(e => e.sourceId));
   const conceptIds = new Set(claims.flatMap(c => c.conceptIds));
@@ -171,7 +259,12 @@ export function buildDependencies(data) {
     if (!graph[id].includes(dependent)) graph[id].push(dependent);
   };
   for (const section of sections) for (const item of records(data, section)) if (isText(item.id)) graph[item.id] ??= [];
-  for (const e of records(data, 'evidence')) add(e.sourceId, e.id);
+  for (const source of records(data, 'sources')) add(source.reading?.readingId, source.id);
+  for (const e of records(data, 'evidence')) {
+    add(e.sourceId, e.id);
+    add(e.readingId, e.id);
+    add(e.passageId, e.id);
+  }
   for (const c of records(data, 'claims')) {
     for (const dependency of [...ids(c.evidenceIds), ...ids(c.premiseIds), ...ids(c.conceptIds), ...ids(c.mappingIds)]) add(dependency, c.id);
   }
