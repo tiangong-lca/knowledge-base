@@ -138,3 +138,14 @@ Independent source/prose and code/arithmetic findings were repaired and rechecke
 The affected-market unit [#30 / PR31](https://github.com/tiangong-lca/knowledge-base/pull/31) is delivery-complete at Main `688c3d723926ec641f892d4cb2f6de835f78287f`, integrated through [workspace #2224 / PR2225](https://github.com/tiangong-lca/workspace/pull/2225) at Main `82b9da14d5479b84d5965a07c302a7d8a466fcc3`. Final source receipt `finish_MZyfFqxLQHuU8JzZoMwwaL7G`, projection `projection__fpyNt1U8xHc5p6M2kOIuMiX` and fresh root receipt `finish_sOIx5KBGJeUFofPelET2DMcz` verify complete scopes, exact inclusion and no remaining mirrors. Source CI41924350222 and root CI41926545395 passed. The final clean local build verified 350 manifest files, and the clean live merge passed 16 artifact hashes and independent mobile/desktop reader checks. Preview 3829 and owned review browsers were closed; no task containers, volumes or networks were created. The original workspace now points to those exact root/child merges, preserving the other 23 physical child HEADs, branches and working statuses. Private evidence, worktrees and dependencies are retained under programme 9.
 
 [Knowledge Base #32](https://github.com/tiangong-lca/knowledge-base/issues/32) starts from that completed source. V4-04 promises an original, reconstructible process/IO connection and failure example, while the existing hybrid chapter describes forms and a reported overlap qualitatively. The new source-first protocol is [2026-11-05-hybrid-overlap.md](research-waves/2026-11-05-hybrid-overlap.md). It distinguishes the already selected thesis reprint, missing publisher carrier, partial computational-book sample and metadata-only handbook lead. No new original reading, confirmed independent test, numerical construction or finished chapter is claimed at startup. Existing case versions and full-book coverage commitments remain unchanged.
+
+The Chapter III reprint of Suh's 2004 Ecological Economics paper now supplies the
+documented two-way connection. Two independent transcriptions and exact solves
+recover the printed toast result from the adjusted blocks. The unadjusted accounts
+and the reconciliation between the two price labels remain open. Agez's pump,
+Yang's aggregation counterexample and reversal, Jakobs's price sensitivity and the
+Pomponi–Lenzen author abstract address distinct questions and carry separate
+reading limits. The development record preserves the actual access and query
+history. The next manuscript step uses a disclosed supplier ledger to make the
+missing account split inspectable. Publication and integration qualification are
+still open under issue 32.
