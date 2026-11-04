@@ -15,7 +15,7 @@ checkPaths:
   - "app/**"
   - "scripts/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: b82848541053517d1ae90ca6cc0776d91ecac5aa
+lastReviewedCommit: f0f98e1f514357afdc6f9543e4db0cbca714cdfd
 ---
 
 # LCA Living Knowledge Base and Review
@@ -76,3 +76,10 @@ Read [_docs/reader-publication-contract.md](_docs/reader-publication-contract.md
 The water-locality and phosphorus-boundary examples publish versioned inputs and exact evaluated receipts under `/downloads/cases/`, linked from their chapter notes. They are static explanatory examples: water values are synthetic; the phosphorus default is source-bound and conditional, with characterization left symbolic. Use their registered case identities with `scripts/impact.mjs` for affected-claim review.
 
 The expanded historical-container chapter reconstructs selected 1974 service, glass-energy and summary-normalization steps. `historical-glass-v1` inputs and evaluated receipts retain every required source-fact identity and the original PDF hash. Whole-system assembly is explicitly not fully reproduced; the displayed coefficient-rounding check is conditional, not empirical uncertainty. Use `node scripts/impact.mjs CASE-HISTORICAL-GLASS` for affected numerical prose.
+
+The data-quality/probability chapter traces a published cup-weight sampling study,
+its later completeness-factor proposal and an explicitly hypothetical lognormal
+inventory parameter. `pedigree-calibration-v1` inputs/results preserve source
+summary arithmetic, GSD conventions and the separate author conditions. They do
+not reproduce missing raw observations or the complete empirical calibration.
+Use `node scripts/impact.mjs CASE-PEDIGREE-CALIBRATION` for dependent prose.

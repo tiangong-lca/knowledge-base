@@ -14,7 +14,7 @@ checkPaths:
   - "knowledge/**"
   - "releases/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: b82848541053517d1ae90ca6cc0776d91ecac5aa
+lastReviewedCommit: f0f98e1f514357afdc6f9543e4db0cbca714cdfd
 ---
 
 # Editorial and living review protocol
@@ -74,3 +74,22 @@ Apply `_docs/reader-publication-contract.md` to every new or revised chapter. So
 ## Historical numerical reconstruction
 
 Separate reproduction of a source table's aggregation and units, a disclosed component calculation, and the original complete model. Fix the actual printed reference quantities and inspect table headings and cells before computing. Report gaps without inferring an error cause or tuning undisclosed inputs. A conditional bound on displayed-coefficient rounding does not cover undisclosed mass precision or empirical uncertainty. Bottle and package uses refer to different objects; comparing scenarios that change both does not isolate either one. New selected passages extend the existing work and reading identity; repeated carriers and independent arithmetic checks are not independent empirical data. Public exposition explains the actual calculations and limits; access attempts, review handling and remaining execution stay in development Markdown.
+
+## Empirical calibration and probability meaning
+
+Identify the sampled population element, sampling design, estimand and actual
+reported statistic before assigning a distribution. Distinguish re-evaluation of
+published summaries from rebuilding estimates using raw observations. A later
+paper that reuses a dataset is not an independent empirical confirmation. Keep
+source-internal numerical conflicts with their exact locations and unknown cause;
+do not tune a missing input to make them agree.
+
+For the pedigree illustration, separate a reference-group GSD ratio, an assumed
+independent multiplicative component, and a squared-GSD representation. State the
+additional assumptions when comparing these quantities. A hypothetical inventory
+median and basic dispersion do not become source-derived measurements merely
+because one additional factor has a published origin. Scoring reproducibility,
+factor calibration, distribution coverage and domain applicability require
+different evidence. The official scoring-test supplement extends the existing
+work/reading identity; it does not establish correct scores, a training effect,
+or effectiveness of the paper's newly proposed matrix.

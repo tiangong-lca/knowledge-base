@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: b82848541053517d1ae90ca6cc0776d91ecac5aa
+lastReviewedCommit: f0f98e1f514357afdc6f9543e4db0cbca714cdfd
 ---
 
 # Publication architecture
@@ -101,3 +101,34 @@ The historical-container evaluator is another closed static prose adapter. `hist
 Case publication validation accepts an optional `{ readingRegister }` context; the historical adapter requires it and resolves actual evidence/passage/artifact joins, while legacy adapters retain their existing behavior. Repository validation and export pass the already-loaded canonical register. Missing, ambiguous, cross-reading, non-original or mismatched PDF carriers fail the historical publication gate even when the source snapshot itself still matches. Numeric inputs, materialized prose and legacy hashes are unchanged by this identity guard.
 
 The chapter's single versioned case-input link requests a native same-origin download using its validated basename, matching existing teaching-case download controls. Its visible label states that action; browser-specific save/open policy still applies. It does not navigate through a custom fetch endpoint or create another input representation.
+
+## Sampling summaries and conditional probability illustration
+
+`scripts/pedigree-calibration.mjs` is a closed static prose adapter. It fixes 19
+source tuples, three PDF identities and separately stipulated lognormal conditions
+independently of the downloadable input. It evaluates published summary
+square-roots/CVs, displayed-factor rounding, GSD/squared-GSD conversion and an
+author-conditional independent-component comparison. Its inventory illustration
+uses a declared median, basic GSD and independence assumption. The log-center
+plus/minus-two-standard-deviation range is a distribution range under those
+conditions, not an empirical confidence interval for the cup mean.
+
+Transcendental calculations use finite binary64 values with explicit fixed4,
+fixed6 and fixed8 display strings; source decimal strings remain unchanged.
+Displayed precision does not recover unreported measurement precision. The
+registered publication gate requires exact source/evidence/fact/passage tuples
+and actual unambiguous reading-register joins to each fixed original PDF. A
+default source snapshot cannot replace passage provenance. The existing neutral
+`passages-inspected` access state is accepted with actual selected-reading scope;
+it grants no entitlement or redistribution permission. Legacy cases retain
+their existing source policies and input hashes. No widget, client runtime or
+new dependency is introduced.
+
+
+The candidate also binds the reported reliability GSD and CV to a conditional
+round-first conversion trace. The raw-source and author-rounded paths are
+both evaluated; agreement at displayed precision does not identify the original
+rounding procedure or restore a rejected factor's recommendation status. CV is
+an SD/mean ratio, not a percent. New v1 input review applies to the unpublished
+candidate; earlier candidate hashes remain in Git/review history and no released
+case or legacy artifact is overwritten.

@@ -624,3 +624,161 @@ test('repository validation carries the actual register into historical carrier 
     assert((await validateRepository(root)).some(error => /PDF passage carrier/.test(error)));
   } finally { await rm(root, { recursive: true, force: true }); }
 });
+
+function pedigreeFixture() {
+  const spec = JSON.parse(readFileSync(new URL('../knowledge/cases/pedigree-calibration-v1.json', import.meta.url), 'utf8'));
+  const evidence = new Map();
+  for (const input of Object.values(spec.facts)) {
+    const source = spec.sources[input.sourceKey];
+    if (!evidence.has(input.evidenceId)) evidence.set(input.evidenceId, { id: input.evidenceId, sourceId: source.sourceId,
+      readingId: source.readingId, passageId: input.passageId, locator: 'Inspected named cells and their headings',
+      summary: 'Selected published numerical summary', relation: 'supports', numericFacts: [] });
+    evidence.get(input.evidenceId).numericFacts.push({ id: input.factId, value: input.value, unit: input.unit,
+      subject: input.subject, quantity: 'Source-reported selected quantity', basis: 'Original PDF selected numerical passage' });
+  }
+  const publication = { schemaVersion: 1, caseId: spec.caseId, version: spec.version,
+    inputFile: 'pedigree-calibration-v1.json', approvedInputSha256: caseInputSha256(spec), reviewedAt: '2026-11-05', reviewKind: 'agent-source-check',
+    claims: [{ id: 'pedigree-check', textTemplate: 'CV={{evaluated.sampling.stratified.cvPercent.fixed8}}%; source={{input.facts.conflictingStratifiedCv.value}}%; unrepaired={{evaluated.sampling.sourceDiscrepancy.repaired}}; residual={{evaluated.ratioIllustration.authorConditionalIndependentResidualGsd.fixed6}}; distribution=[{{evaluated.illustration.logCenterTwoSigmaLower.fixed8}},{{evaluated.illustration.logCenterTwoSigmaUpper.fixed8}}].',
+      kind: 'calculation', scope: 'Displayed source summaries and conditional author illustration only', evidenceIds: [...evidence.keys()], premiseIds: ['pedigree-premise'], conceptIds: [],
+      caveats: ['Not empirical calibration or original software execution'], reasoning: 'Source arithmetic and author conditions remain distinct.' }] };
+  const catalog = { schemaVersion: 1, sources: Object.values(spec.sources).map(selected => ({
+    id: selected.sourceId, title: 'Selected primary source', url: 'https://example.org/source.pdf', version: 'Inspected original PDF', publisher: 'Publisher',
+    accessedAt: '2026-11-05', accessStatus: 'passages-inspected', rights: 'Access context unresolved; no source redistribution permission', preservation: 'Selected acquired bytes',
+    reading: { readingId: selected.readingId, status: 'selected-passages', scope: 'Named numerical and methodological passages', checkedAt: '2026-11-05' },
+    artifact: { mediaType: 'application/pdf', sha256: selected.sha256, resolvedUrl: 'https://example.org/source.pdf', bytes: 100, pageCount: 88 },
+  })), evidence: [...evidence.values()], claims: structuredClone(materializeCaseClaims(spec, publication)), concepts: [], mappings: [], coverage: [] };
+  catalog.claims.push({ id: 'pedigree-premise', text: 'The selected source reports these numerical summaries.', kind: 'source-statement',
+    scope: 'Selected PDF summary tables', evidenceIds: [...evidence.keys()], premiseIds: [], conceptIds: [], caveats: [],
+    status: 'reviewed', reviewedAt: '2026-11-05', reviewKind: 'agent-source-check' });
+  const readingRegister = { schemaVersion: 1, readings: Object.values(spec.sources).map(selected => ({
+    id: selected.readingId, readingStatus: 'selected-passages',
+    artifacts: [{ id: selected.artifactId, kind: 'retrieved', mediaType: 'application/pdf', sha256: selected.sha256 }],
+    passages: [...evidence.values()].filter(record => record.readingId === selected.readingId).map(record => ({ id: record.passageId, artifactId: selected.artifactId })),
+  })) };
+  return { spec, publication, catalog, readingRegister };
+}
+
+const pedigreeRejects = (change, pattern = /pedigree calibration|Cannot publish invalid catalog/) => {
+  const fixture = pedigreeFixture(); change(fixture);
+  const result = errors(fixture);
+  assert(result.some(error => pattern.test(error)), `Expected ${pattern}; got:\n${result.join('\n')}`);
+};
+
+test('pedigree public closure binds every selected fact and its actual original-PDF passage', () => {
+  const fixture = pedigreeFixture();
+  assert.deepEqual(errors(fixture), []);
+  assert.equal(fixture.catalog.claims[0].text, 'CV=1.03250202%; source=0.07%; unrepaired=false; residual=3.105500; distribution=[6.91145966,14.46872367].');
+  assert.equal(caseInputSha256(fixture.spec), 'bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab');
+  assert.equal(caseEvaluationReceipt(fixture.spec, 'a'.repeat(40)).scientificApproval, false);
+  // Omitted artifact kind is the existing retrieved-carrier convention.
+  for (const reading of fixture.readingRegister.readings) delete reading.artifacts[0].kind;
+  assert.deepEqual(errors(fixture), []);
+  // A source snapshot is not used as a substitute for a resolved passage.
+  delete fixture.catalog.sources[0].artifact;
+  assert.deepEqual(errors(fixture), []);
+});
+
+test('all nineteen pedigree facts fail on missing or mismatched reviewed source/value/unit/subject identities', () => {
+  for (const input of Object.values(pedigreeFixture().spec.facts)) {
+    for (const field of ['id', 'value', 'unit', 'subject']) pedigreeRejects(fixture => {
+      fixture.catalog.evidence.find(record => record.id === input.evidenceId).numericFacts.find(fact => fact.id === input.factId)[field] = 'wrong';
+    }, /public source fact|numericFacts/);
+    pedigreeRejects(fixture => {
+      const evidence = fixture.catalog.evidence.find(record => record.id === input.evidenceId);
+      evidence.numericFacts = evidence.numericFacts.filter(fact => fact.id !== input.factId);
+    }, /public source fact|numericFacts/);
+    pedigreeRejects(fixture => { fixture.catalog.evidence.find(record => record.id === input.evidenceId).sourceId = fixture.spec.sources[input.sourceKey === 'sampling2008' ? 'report2012' : 'sampling2008'].sourceId; }, /public source fact|numericFacts/);
+  }
+});
+
+test('pedigree gate rejects missing, duplicate, cross-reading, derived, non-PDF or changed passage carriers', () => {
+  const changes = [
+    fixture => { fixture.readingRegister = undefined; },
+    fixture => { fixture.readingRegister = { schemaVersion: 1, readings: [] }; },
+    fixture => { fixture.readingRegister.readings.push(structuredClone(fixture.readingRegister.readings[0])); },
+    fixture => { fixture.readingRegister.readings[1].passages.push(structuredClone(fixture.readingRegister.readings[0].passages[0])); },
+    fixture => { fixture.readingRegister.readings[1].artifacts.push(structuredClone(fixture.readingRegister.readings[0].artifacts[0])); },
+    fixture => { fixture.readingRegister.readings[0].passages[0].id = fixture.readingRegister.readings[0].id; },
+    fixture => { fixture.catalog.sources.push(structuredClone(fixture.catalog.sources[0])); },
+    fixture => { fixture.catalog.evidence.push(structuredClone(fixture.catalog.evidence[0])); },
+    fixture => { fixture.catalog.sources[0].reading.readingId = fixture.readingRegister.readings[1].id; },
+    fixture => { delete fixture.catalog.sources[0].reading; },
+    fixture => { fixture.catalog.sources[0].reading.scope = ''; },
+    fixture => { fixture.catalog.sources[0].reading.status = 'full-work'; },
+    fixture => { fixture.catalog.sources[0].accessStatus = 'metadata-only'; },
+    fixture => { fixture.catalog.evidence[0].readingId = fixture.readingRegister.readings[1].id; },
+    fixture => { fixture.catalog.evidence[0].passageId = fixture.readingRegister.readings[0].passages[1].id; },
+    fixture => { fixture.readingRegister.readings[0].passages[0].artifactId = fixture.readingRegister.readings[1].artifacts[0].id; },
+    fixture => { fixture.readingRegister.readings[0].artifacts[0].id = 'different-artifact'; },
+    fixture => { fixture.readingRegister.readings[0].artifacts[0].kind = 'derived-text'; },
+    fixture => { fixture.readingRegister.readings[0].artifacts[0].kind = 'unknown'; },
+    fixture => { fixture.readingRegister.readings[0].artifacts[0].mediaType = 'text/html'; },
+    fixture => { fixture.readingRegister.readings[0].artifacts[0].sha256 = '0'.repeat(64); },
+    fixture => { fixture.readingRegister.readings[0].artifacts = []; },
+    fixture => { fixture.readingRegister.readings[0].readingStatus = 'metadata-only'; },
+    fixture => { fixture.readingRegister.readings[0].passages[0] = null; },
+  ];
+  for (const change of changes) pedigreeRejects(change);
+  // Default PDF still matches: it cannot rescue the different actual carrier.
+  pedigreeRejects(fixture => {
+    const reading = fixture.readingRegister.readings[0];
+    reading.artifacts.push({ id: 'derived-copy', kind: 'derived-text', mediaType: 'text/plain', sha256: fixture.spec.sources.sampling2008.sha256 });
+    reading.passages[0].artifactId = 'derived-copy';
+  }, /original PDF passage carrier/);
+});
+
+test('pedigree source gate comes from the registry and cannot be disabled by input flags or singular fallback', () => {
+  pedigreeRejects(fixture => {
+    fixture.spec.validateFacts = false; fixture.spec.numericProvenanceDefault = 'hypothetical';
+    fixture.readingRegister = null;
+  }, /actual reading register/);
+  pedigreeRejects(fixture => {
+    const evidence = fixture.catalog.evidence[0]; evidence.numericFact = evidence.numericFacts[0]; delete evidence.numericFacts;
+  }, /public source fact|numericFacts/);
+  pedigreeRejects(fixture => { fixture.catalog.evidence[0].numericFacts.push(structuredClone(fixture.catalog.evidence[0].numericFacts[0])); }, /public source fact|numericFacts/);
+  pedigreeRejects(fixture => { fixture.catalog.claims[0].status = 'draft'; }, /canonical claim/);
+  const fixture = pedigreeFixture();
+  assert(errors({ ...fixture, readingRegister: undefined }).length > 0);
+});
+
+test('pedigree nested public projection, changed-input rejection and exact prose binding preserve authority', () => {
+  const fixture = pedigreeFixture(), bytes = canonicalCaseInput(fixture.spec);
+  for (const record of [fixture.spec, fixture.spec.sources, ...Object.values(fixture.spec.sources), fixture.spec.facts,
+    ...Object.values(fixture.spec.facts), fixture.spec.interpretation, fixture.spec.illustration, fixture.spec.reliabilityTrace]) record.privateCapture = { raw: 'PRIVATE /private/source.pdf' };
+  assert.equal(canonicalCaseInput(fixture.spec), bytes);
+  assert(!canonicalCaseInput(fixture.spec).includes('PRIVATE'));
+  assert(Object.isFrozen(caseTemplateContext(fixture.spec).evaluated.illustration));
+  for (const change of [spec => { spec.facts.clusterMean.value = '5.7'; }, spec => { spec.facts.clusterMean.sourceKey = 'report2012'; },
+    spec => { delete spec.facts.clusterMean.passageId; }, spec => { spec.sources.sampling2008.sha256 = '0'.repeat(64); },
+    spec => { spec.illustration.center = 'arithmetic-mean'; }, spec => { spec.interpretation.empiricalCalibrationReproduced = true; }]) {
+    const spec = pedigreeFixture().spec; change(spec);
+    assert.throws(() => publicTeachingCase(spec), /Invalid teaching case/);
+  }
+  pedigreeRejects(f => { f.catalog.claims[0].text += ' unsupported'; }, /stale text/);
+  pedigreeRejects(f => { f.publication.approvedInputSha256 = '0'.repeat(64); }, /stale or unapproved/);
+  pedigreeRejects(f => { f.publication.claims[0].textTemplate += ' empirical reproduction'; }, /stale text/);
+});
+
+test('reliability trace requires its own two exact source facts and actual report passage carrier', () => {
+  const selectedFacts = ['reliabilityCandidateGsd', 'reliabilityReportedCv'];
+  for (const key of selectedFacts) {
+    const input = pedigreeFixture().spec.facts[key];
+    pedigreeRejects(fixture => {
+      const evidence = fixture.catalog.evidence.find(record => record.id === input.evidenceId);
+      evidence.numericFacts = evidence.numericFacts.filter(fact => fact.id !== input.factId);
+    }, /public source fact/);
+    pedigreeRejects(fixture => {
+      const evidence = fixture.catalog.evidence.find(record => record.id === input.evidenceId);
+      evidence.passageId = fixture.spec.facts.preciseScoreTwo.passageId;
+    }, /original PDF passage carrier/);
+  }
+  pedigreeRejects(fixture => {
+    const reading = fixture.readingRegister.readings.find(reading => reading.id === fixture.spec.sources.report2012.readingId);
+    reading.passages = reading.passages.filter(passage => passage.id !== fixture.spec.facts.reliabilityCandidateGsd.passageId);
+  }, /original PDF passage carrier/);
+  const fixture = pedigreeFixture();
+  fixture.publication.claims[0].textTemplate = '{{evaluated.reliabilityTrace.authorRoundedGsd}}→{{evaluated.reliabilityTrace.cvFromRounded.fixed8}}→{{evaluated.reliabilityTrace.cvFromRoundedToTwoDecimals}}; source={{input.facts.reliabilityReportedCv.value}}; procedure={{evaluated.reliabilityTrace.originalRoundingProcedureEstablished}}.';
+  fixture.catalog.claims[0] = structuredClone(materializeCaseClaims(fixture.spec, fixture.publication)[0]);
+  assert.equal(fixture.catalog.claims[0].text, '43.55→1237.93122459→1237.93; source=1237.93; procedure=false.');
+  assert.deepEqual(errors(fixture), []);
+});

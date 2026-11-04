@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: b82848541053517d1ae90ca6cc0776d91ecac5aa
+lastReviewedCommit: f0f98e1f514357afdc6f9543e4db0cbca714cdfd
 ---
 
 # Publication contract
@@ -71,3 +71,14 @@ An evidence record may publish either its legacy singular `numericFact` or a non
 The historical-glass adapter requires every selected fact in the reviewed public closure with matching evidence/source identity, fact ID, value, unit and subject, and binds the exact inspected original PDF hash. Its closed v1 records selected component arithmetic and source-reported summary normalization, retaining unclosed whole-system assembly, unreported precision and empirical limits. The author-conditional coefficient-rounding bound holds displayed mass fixed and is not a probability or empirical uncertainty interval. Neither input flags nor a matching aggregate permit bypassing source facts or declaring complete original-software reproduction.
 
 Historical numerical publication also requires the actual reading register. Each fact's evidence must resolve through an inspected same-source reading and an unambiguous passage to its original-PDF artifact with the fixed hash. A source's default snapshot cannot substitute for a missing or different passage carrier. Generic mixed-carrier readings remain valid for other evidence; carrier identity checks still do not establish that a passage entails its claimed quantity.
+
+The pedigree-calibration case separates source-summary arithmetic from a
+deliberately stipulated probability model. Its three numerical sources bind
+exact reading, passage, fact and original-PDF identities. The neutral
+`passages-inspected` state retains unresolved access context while recording
+actual selected inspection; it is not an open-license or entitlement claim.
+Reported internal discrepancies remain unrepaired. Published GSD factors,
+squared-GSD parameters, log standard deviations, estimator precision and
+individual spread retain separate meanings. No case flag can promote the
+summary calculation into reproduction of raw observations, empirical calibration
+or current database software.
