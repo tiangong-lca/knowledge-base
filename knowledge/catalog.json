@@ -455,7 +455,7 @@
       },
       "reading": {
         "status": "selected-passages",
-        "scope": "封面、题名页、出版说明、Foreword，印刷页 未编号前置页；Volume I Chapter I Summary；Table1 与比较说明，印刷页 1–2；4；Volume I Chapter II A–B；Figure1 图例，印刷页 9–10；Chapter II B 的逐类说明；C Organic Raw Materials，印刷页 11–14；Chapter II D Methodology 与 E 开头，印刷页 14–15；Chapter II E Assumptions and Limitations；Figure III-1 附近，印刷页 16–18；Chapter III A–B 开头与 D Energy Considerations，印刷页 19；33；题名及指定印刷页图像与 NEPIS 对照，印刷页 题名页；1；11–12；15；18；33；新增所列1974玻璃比较、单位换算、燃料/分项与来源选页；局部重建不等于全模型复现。",
+        "scope": "封面、题名页、出版说明、Foreword，印刷页 未编号前置页；Volume I Chapter I Summary；Table1 与比较说明，印刷页 1–2；4；Volume I Chapter II A–B；Figure1 图例，印刷页 9–10；Chapter II B 的逐类说明；C Organic Raw Materials，印刷页 11–14；Chapter II D Methodology 与 E 开头，印刷页 14–15；Chapter II E Assumptions and Limitations；Figure III-1 附近，印刷页 16–18；Chapter III A–B 开头与 D Energy Considerations，印刷页 19；33；题名及指定印刷页图像与 NEPIS 对照，印刷页 题名页；1；11–12；15；18；33；新增所列1974玻璃比较、单位换算、燃料/分项与来源选页；局部重建不等于全模型复现。；原目录iii–v的两卷结构。",
         "checkedAt": "2026-11-05",
         "readingId": "rd-epa-1974-nine-beverage"
       }
@@ -5237,6 +5237,24 @@
         "independence": "同一作品内的表/公式核对；重复读取与派生算术不是独立实证确认。",
         "limitations": [
           "只按本报告语境解释，不外推为所有年代/方法的统一能源定义。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      }
+    },
+    {
+      "id": "ev-hist-report-structure",
+      "sourceId": "src-book-epa-1974-nine-beverage",
+      "readingId": "rd-epa-1974-nine-beverage",
+      "passageId": "psg-epa1974-hist-report-structure",
+      "locator": "原报告目录，印刷页iii–v（PDF第5–7页）",
+      "summary": "第一卷包括方法、汇总、容器比较与回用/回收；第二卷列换算及玻璃、ABS、钢、铝体系的过程资料。",
+      "appraisal": {
+        "basis": "固定原扫描目录三页的标题与卷级层次。",
+        "methodologicalScope": "所引用1974报告的分卷结构与本章卷号指向。",
+        "independence": "同一原件的目录证据，不是另一项研究。",
+        "limitations": [
+          "不以目录代替各过程或结果正文的实际阅读。"
         ],
         "reviewKind": "agent-source-check",
         "checkedAt": "2026-11-05"
@@ -14596,6 +14614,31 @@
         "inputSha256": "56e6028764e85278fa73143d2321ab20b4ad8cd8d64ff9a75e2c871fb7448d7c",
         "inputFile": "historical-glass-v1.json"
       }
+    },
+    {
+      "id": "cl-hist-report-structure",
+      "text": "原报告分为两卷：第一卷说明研究方法、汇总结果、容器比较与回用和回收情境；第二卷列出换算因子和各材料系统的过程资料。本章以下的卷号，都指这份1974年报告。先知道它的组织方式，才能把第一卷的比较结果接回第二卷的计算依据。",
+      "kind": "interpretation",
+      "scope": "1974原报告的卷级结构与本章引注约定。",
+      "evidenceIds": [
+        "ev-hist-report-structure"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hist-report-structure",
+          "relation": "supports",
+          "rationale": "目录直接支持两卷内容分工；卷号指向的说明属于本章编辑约定。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "当前引用载体是一份包含两卷的185页扫描；不代表两份独立研究。"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check"
     }
   ],
   "concepts": [
