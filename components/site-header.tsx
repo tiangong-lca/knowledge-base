@@ -37,7 +37,7 @@ function KnowledgeSearchDialog(props: SharedProps) {
     >
       <SearchDialogHeader>
         <SearchDialogIcon />
-        <SearchDialogInput placeholder="搜索概念、观点、来源或章节" aria-label="搜索知识库" />
+        <SearchDialogInput placeholder="搜索章节、概念、引文或论述" aria-label="搜索知识库" />
         <SearchDialogClose />
       </SearchDialogHeader>
       <SearchDialogList items={results} Empty={() => <p role="status" className="px-4 py-10 text-center text-sm text-fd-muted-foreground">{query.trim() ? '没有找到匹配内容。可换用英文原词或查看全书导览。' : '试试「waste」「功能单位」或某个来源的名称。'}</p>} />

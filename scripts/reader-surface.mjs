@@ -38,7 +38,7 @@ export function validateReaderText(text, { label = 'Reader prose', knownIds = ne
     if (match) errors.push(`${label}: project-process prose “${match[0]}” belongs in development Markdown`);
   }
   aiExecution.lastIndex = 0;
-  if (!allowAIStatement && aiExecution.test(prose)) errors.push(`${label}: general AI review identity belongs once in the changes-page writing statement`);
+  if (!allowAIStatement && aiExecution.test(prose)) errors.push(`${label}: general AI review identity belongs once in the edition or print writing statement`);
   const tokens = prose.match(/[A-Za-z][A-Za-z0-9._:-]*/g) ?? [];
   const exposed = new Set();
   for (const token of tokens) {
@@ -118,7 +118,7 @@ export async function validateReaderOutput(root, { knownIds = new Set() } = {}) 
       const path = join(directory, entry.name), label = relative(root, path).replaceAll('\\', '/');
       if (entry.name === '_docs') { errors.push(`${label}: development Markdown must remain outside public output`); continue; }
       if (entry.isDirectory()) await visit(path);
-      else if (entry.isFile() && entry.name.endsWith('.html')) errors.push(...validateReaderHtml(await readFile(path, 'utf8'), { label, knownIds, allowAIStatement: label === 'changes/index.html' }));
+      else if (entry.isFile() && entry.name.endsWith('.html')) errors.push(...validateReaderHtml(await readFile(path, 'utf8'), { label, knownIds, allowAIStatement: label === 'changes/index.html' || label === 'print/index.html' }));
       else if (entry.isFile() && entry.name === 'llms.txt') errors.push(...validateReaderIndex(await readFile(path, 'utf8')));
       else if (!entry.isFile()) errors.push(`${label}: unexpected public output entry`);
     }

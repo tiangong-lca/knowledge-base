@@ -1,4 +1,5 @@
+import { SidebarKeyboard } from '@/components/sidebar-keyboard';
 import { DocsLayout } from 'fumadocs-ui/layouts/docs';
 import { source } from '@/lib/source';
 import { baseOptions } from '@/lib/layout.shared';
-export default function Layout({ children }: { children:React.ReactNode }) { return <DocsLayout {...baseOptions()} tree={source.getPageTree()}>{children}</DocsLayout>; }
+export default function Layout({ children }: { children:React.ReactNode }) { return <DocsLayout {...baseOptions()} tree={source.getPageTree()}><SidebarKeyboard />{children}</DocsLayout>; }

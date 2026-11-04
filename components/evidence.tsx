@@ -53,7 +53,7 @@ export function ClaimAnnotation({ id }: { id: string }) {
         <EvidencePassage evidence={item} />
       </li>;
     })}</ul>}
-    {claim.caveats.length > 0 && <p className="annotation-limits">{claim.caveats.join('；')}</p>}
+    {claim.caveats.length > 0 && <p className="annotation-limits">{claim.caveats.map(text => text.replace(/[。；;\s]+$/, '')).join('；')}。</p>}
     {claim.premiseIds.length > 0 && <details><summary>论证联系</summary><ul>{claim.premiseIds.map(premise => {
       const linked = catalog.claims.find(c => c.id === premise);
       if (!linked) throw new Error(`Unknown premise: ${premise}`);
@@ -69,15 +69,15 @@ export function Prose({ ids }: { ids: string }) {
     const index = catalog.claims.findIndex(item => item.id === id), claim = catalog.claims[index];
     if (!claim) { if (isKnownClaim(id)) return <ReviewNotice key={id} />; throw new Error(`Unknown claim: ${id}`); }
     if (claim.status !== 'reviewed') return <ReviewNotice key={id} />;
-    return <p key={id}>{claim.text}<sup className="prose-references"><Link href={`/claims/#${id}`} aria-label={`注释 ${index + 1}`}>[{index + 1}]</Link></sup></p>;
+    return <p key={id}>{claim.text}<sup className="prose-references"><Link href={`/claims/#${id}`} aria-label="查看这段论述的出处与条件">注</Link></sup></p>;
   })}</div>;
 }
 export function Claim({ id, anchor = false }: { id: string; anchor?: boolean }) {
   const index = catalog.claims.findIndex(item => item.id === id), claim = catalog.claims[index];
   if (!claim) { if (isKnownClaim(id)) return <ReviewNotice />; throw new Error(`Unknown claim: ${id}`); }
-  if (!anchor) return <Prose ids={id} />;
+  if (!anchor) return <div className="concept-definition"><p className="claim-text">{claim.text}</p><details><summary>出处与条件</summary><ClaimAnnotation id={id} /></details></div>;
   return <section className="claim-block" id={id}>
-    <h2>注释 {index + 1}</h2><p className="claim-text">{claim.text}</p>
+    <blockquote className="claim-text">{claim.text}</blockquote>
     <ClaimAnnotation id={id} />
   </section>;
 }

@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: { default: '生命周期评价的前�
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const entries: SearchEntry[] = [
     ...source.getPages().map(p=>({ title:p.data.title, text:p.data.description??'', url:p.url, kind:'章节' })),
-    ...catalog.claims.filter(c=>c.status==='reviewed').map(c=>({title:c.text,text:c.scope,url:`/claims/#${c.id}`,kind:'观点'})),
+    ...catalog.claims.filter(c=>c.status==='reviewed').map(c=>({title:c.text,text:c.scope,url:`/claims/#${c.id}`,kind:'论述'})),
     ...catalog.concepts.map(c=>({title:c.label,text:`${c.english} ${c.aliases.join(' ')}`,url:`/concepts/#${c.id}`,kind:'概念'})),
     ...catalog.sources.map(s=>({title:s.title,text:`${s.publisher} ${s.version}`,url:`/sources/#${s.id}`,kind:'来源'})),
   ];

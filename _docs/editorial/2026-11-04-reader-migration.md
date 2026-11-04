@@ -4381,3 +4381,202 @@ Rationale: 导航名称使用著作主题，去掉研究进行中的出版流程
 ## Scoped Docpact result
 
 After-coding lint used the explicit changed MDX/meta file list and saved `/tmp/prism-book-execution/reader-quality/mdx-docpact-lint.json`. Coverage and freshness pass. Its two findings are missing-review evidence for `_docs/editorial-protocol.md` (d001) and `_docs/publication-contract.md` (d002), both read by this task. Those documents and governance review writes are outside delegated MDX ownership; the coordinator owns the policy update/review evidence and integrated rerun. No contract or review marker was mutated by this subtask. Both diagnostics were drilled down read-only.
+
+# Source-use and preservation wording
+
+Source-specific rights and preservation limits are restated for readers; original wording remains below. No new reuse permission is granted.
+
+```json
+[
+  {
+    "id": "src-olca-flows",
+    "rights": "来源保留原权利；本项目仅发布原创释义、书目信息和定位，不再许可原文、图像或数据。",
+    "preservation": "本次核读公开网页；未将原始网页归档入本仓。URL 可能变化，访问日期和章节定位用于重新核查；无法保证远端长期保留该版。"
+  },
+  {
+    "id": "src-olca-exchanges",
+    "rights": "来源保留原权利；本项目仅发布原创释义、书目信息和定位，不再许可原文、图像或数据。",
+    "preservation": "本次核读公开网页；未将原始网页归档入本仓。URL 可能变化，访问日期和章节定位用于重新核查；无法保证远端长期保留该版。"
+  },
+  {
+    "id": "src-olca-waste",
+    "rights": "来源保留原权利；本项目仅发布原创释义、书目信息和定位，不再许可原文、图像或数据。",
+    "preservation": "本次核读公开网页；未将原始网页归档入本仓。URL 可能变化，访问日期和章节定位用于重新核查；无法保证远端长期保留该版。"
+  },
+  {
+    "id": "src-ilcd-process",
+    "rights": "来源保留原权利；本项目仅发布原创释义、书目信息和定位，不再许可原文、图像或数据。",
+    "preservation": "本次核读公开网页；未将原始网页归档入本仓。URL 可能变化，访问日期和章节定位用于重新核查；无法保证远端长期保留该版。"
+  },
+  {
+    "id": "src-ecoinvent-models",
+    "rights": "来源保留原权利；本项目仅发布原创释义、书目信息和定位，不再许可原文、图像或数据。",
+    "preservation": "本次核读公开网页；未将原始网页归档入本仓。URL 可能变化，访问日期和章节定位用于重新核查；无法保证远端长期保留该版。"
+  },
+  {
+    "id": "src-olca-validation",
+    "rights": "来源保留原权利；本项目仅发布原创释义、书目信息和定位，不再许可原文、图像或数据。",
+    "preservation": "本次核读公开网页；未将原始网页归档入本仓。URL 可能变化，访问日期和章节定位用于重新核查；无法保证远端长期保留该版。"
+  },
+  {
+    "id": "src-olca-cfs",
+    "rights": "来源保留原权利；本项目仅发布原创释义、书目信息和定位，不再许可原文、图像或数据。",
+    "preservation": "本次核读公开网页；未将原始网页归档入本仓。URL 可能变化，访问日期和章节定位用于重新核查；无法保证远端长期保留该版。"
+  },
+  {
+    "id": "src-brightway-matrix",
+    "rights": "来源保留原权利；本项目仅发布原创释义、书目信息和定位，不再许可原文、图像或数据。",
+    "preservation": "本次核读公开网页；未将原始网页归档入本仓。URL 可能变化，访问日期和章节定位用于重新核查；无法保证远端长期保留该版。"
+  },
+  {
+    "id": "src-book-ilcd-2010",
+    "rights": "PDF 法律页允许注明来源后再现；仍仅刊载本项目原创释义、元数据和定位，不收录原始 PDF、图像或表格。",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-epa-2006",
+    "rights": "公开 EPA 教学报告，承包机构作者；出版审查不代表对具体 LCA 结论的认可。未核定所有组成材料的整体再分发权；本仓不重传正文或图像。",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-cml-2001-part2a",
+    "rights": "第三方原作保留权利。Leiden 项目页允许非商业使用并请求引用 2002 Handbook；这不使 2001 报告等同于该出版版本，也不授予商业再利用权。本仓仅刊载原创释义、元数据和定位，不重传原文、图像或表格。 此载体权限标志为禁止打印、复制、修改和加注；选段通过机构公开网页阅读。",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-epa-1991-draft",
+    "rights": "公开机构历史文献；未核定原作整体再利用许可。本仓只发布原创分析、元数据与定位，不重传全文。",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-epa-1993",
+    "rights": "公开 EPA 报告，承包机构作者；未据政府仓储推断所有材料均为公有领域。本仓只刊载原创释义和定位。",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-unep-1996",
+    "rights": "版权页保留 UNEP 1996 全部权利并要求书面许可。UN 官方文件可公开取得，不等于开放再分发。本仓不含扫描、原文摘录或页面图像；原创释义不改变原作权利。",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-cml-2001-part1",
+    "rights": "第三方原作保留权利。Leiden 项目页允许非商业使用并请求引用 2002 Handbook；这不使 2001 报告等同于该出版版本，也不授予商业再利用权。本仓仅刊载原创释义、元数据和定位，不重传原文、图像或表格。 Part 1 版权页署 VROM 与 CML。",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-ekvall-tillman-1997",
+    "rights": "原作保留第三方权利；机构或作者公开提供阅读不授予整体再分发权。本建议仅含原创释义、元数据和定位，原文件及页面图像不进入仓库。 原刊 © ecomed 1997；附页明确再次再现需要许可。",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-frischknecht-1998-thesis-allocation",
+    "rights": "原作保留第三方权利；机构或作者公开提供阅读不授予整体再分发权。本建议仅含原创释义、元数据和定位，原文件及页面图像不进入仓库。 版权页 © Rolf Frischknecht 1998；未观察到开放再许可声明。",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-ekvall-tillman-molander-2005",
+    "rights": "原作保留第三方权利；机构或作者公开提供阅读不授予整体再分发权。本建议仅含原创释义、元数据和定位，原文件及页面图像不进入仓库。 PDF 注明 © 2005 Elsevier Ltd. all rights reserved。",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-weidema-2001-addendum",
+    "rights": "原作保留第三方权利；机构或作者公开提供阅读不授予整体再分发权。本建议仅含原创释义、元数据和定位，原文件及页面图像不进入仓库。 两载体未观察到开放再许可声明；不重传增补。",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-heijungs-suh-2002-author-sample",
+    "rights": "Author explicitly offers table of contents and sample via his VU-affiliated page. Actual sample retains Springer all-rights-reserved notice. Public access to this bounded sample does not grant full-book acquisition or republication rights. Only concise original notes and locators proposed.",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-suh-2004-boundary-thesis-reprint",
+    "rights": "Repository labels OpenAccess under Leiden University non-exclusive licence. Linked licence permits acknowledged education/study/research and reserves consent for commercial use. Reprint p17 explicitly acknowledges ACS courtesy. This record does not establish rights to redistribute source text/images/tables or to relabel the source under the project licence.",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-recipe-2017-primary-article",
+    "rights": "Current publisher article page statesCC BY4.0, including third-party-material caveat; DOI10.1007/s11367-016-1246-y. Acquired PDF retains historical2016 copyright imprint; keep license correction provenance. No original text/images redistributed in this proposal.",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-usetox-2-documentation-v11",
+    "rights": "Imprintp3 and official documentation landing page authorize reproduction with full source acknowledgment; formal citation Fantke(ed.)et al.2017USEtox2.0DocumentationVersion1.1. All trademark/other rights retained; no blanket dataset/software license inferred. This proposal publishes authored annotations/locators only.",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-epa-1974-nine-beverage",
+    "rights": "公开 EPA 承包研究报告；没有据机构仓储或出版批准推断所有承包材料整体为公有领域。仅发布原创释义、元数据和定位；不重传原文、表图或扫描。",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-epa-1972-beverage-problem",
+    "rights": "公开 EPA 承包报告；Review Notice 的出版批准和非背书边界已核读。未核定全部材料的整体再利用许可；只提供原创分析和定位，不重传原件。",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-sun-2002-cleaner-production",
+    "rights": "期刊正常公开下载的原始PDF，未发现或核实适用于本载体的明确开放再利用许可；第三方原作保留权利。两份已取得PDF均未加密。原文与页面图像仅留仓库外任务缓存；公开交接仅拟用原创释义、书目信息和定位。",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-xie-2022-lcia-localization",
+    "rights": "期刊正常公开下载的原始PDF，未发现或核实适用于本载体的明确开放再利用许可；第三方原作保留权利。两份已取得PDF均未加密。原文与页面图像仅留仓库外任务缓存；公开交接仅拟用原创释义、书目信息和定位。",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-huijbregts-1998-framework-uva",
+    "rights": "UvA cover restricts downloading/redistribution beyond strictly personal individual use absent permission or an open-content licence. Source remains in private external cache; no raw text/images/tables proposed for repository redistribution. Only bounded original research notes and locators.",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-ciroth-2012-pedigree-refinement",
+    "rights": "Public authorcompany report and authororganization mirror; no explicit open-reuse licence located. Access does not authorize redistributing report text, tables, figures or input databases under the project licence.",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-edelen-ingwersen-2018-data-quality",
+    "rights": "Public PMCauthor manuscript; no explicit reuse licence established. PMCcopyright notice directs readers to assume standard protection absent contrary statement. Reading/free access is not redistribution or commercial-use authority.",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-unep-2011-databases",
+    "rights": "版权页允许教育或非营利用途注明来源后再现；商业/转售需要UNEP事先书面许可。第三方照片/图表不假定可被本项目再许可。只提议原创释义、元数据和定位，不收录PDF、提取文本或页面图像；没有向机构发送出版物。",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-unep-2020-slca-guidelines",
+    "rights": "©UNEP2020。版权页允许注明来源的教育/非营利用途复制，商业/转售须事先书面许可；声明观点未必代表UNEP决定或政策。照片等第三方素材保留各自权利。此交接只给原创释义/元数据/定位，不公开原文或图像，不以项目许可替代UNEP限制。",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-finkbeiner-2010-lcsa-framework",
+    "rights": "末页明确©2010authors、CC BY3.0；注明作者/来源/许可并保留第三方材料的独立条件。机构元数据2022入库/2024修改不当作论文年份。本轮不重传原始全文或图像。",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-levasseur-2010-time-thesis-annex",
+    "rights": "Institutional repository grants public reading; wrapper and thesis state all rights reserved / ©AnnieLevasseur2011. No source-republication licence inferred. Source text, figures and tables remain outsideGit; only original bounded notes/locators proposed.",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-arvidsson-2018-prospective",
+    "rights": "Publisher marks OpenAccess;actualPDF bears©2017YaleUniversity. No explicit source-specificCreativeCommons licence was found in inspected publisher text/carrier. Public availability does not by itself authorize source redistribution or commercial reuse.",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-book-vander-giesen-2020-exante",
+    "rights": "ActualPDF and officialrepository identifyCCBY-NC-ND4.0. No source tables/figures or modifiedoriginal redistributed; projectlicence does not override original restrictions.",
+    "preservation": "原始载体保留在仓库外研究缓存；本公开仓库仅保留 SHA-256、来源地址与选段定位。远端可能改变，哈希用于识别而非保证可取得；不以局部核读声明全书已读。"
+  },
+  {
+    "id": "src-case-ipcc-ar6-wgi-ch7",
+    "rights": "IPCC原文保留其权利。本项目只发布原创解释、书目信息、定位及本例所用两个数值，不重传报告、完整表格、图像或派生原文快照；项目许可不重新许可第三方内容。",
+    "preservation": "仓库外保留的是派生文字快照；其SHA-256不代表原始PDF。原始PDF字节及视觉核验仍不可得。原文和快照不进入公开下载；公开记录保留版本、取得方式、范围、数值定位和局限。"
+  },
+  {
+    "id": "src-case-ipcc-ar6-wgi-errata-2025-10-07",
+    "rights": "IPCC原文保留其权利。本项目只发布原创解释、书目信息、定位及本例所用两个数值，不重传报告、完整表格、图像或派生原文快照；项目许可不重新许可第三方内容。",
+    "preservation": "仓库外保留的是派生文字快照；其SHA-256不代表原始PDF。原始PDF字节及视觉核验仍不可得。原文和快照不进入公开下载；公开记录保留版本、取得方式、范围、数值定位和局限。"
+  }
+]
+```

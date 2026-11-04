@@ -9,7 +9,7 @@ export default function Page() {
     <div className="record-list">{catalog.sources.map(source => <article className="source-record" id={source.id} key={source.id}>
       <h2><a href={source.url} rel="noreferrer">{source.title}</a></h2>
       <p>{source.publisher}。{source.version}。</p><p className="subtle">网页访问日期：{source.accessedAt}</p>
-      <SourceReading source={source} />
+      <SourceReading source={source} /><details><summary>使用与保存说明</summary><p>{source.rights}</p><p>{source.preservation}</p></details>
       {catalog.evidence.filter(item => item.sourceId === source.id).map(evidence => <section className="evidence-item" id={evidence.id} key={evidence.id}>
         <h3>{evidence.locator}</h3><p>{evidence.summary}</p><EvidencePassage evidence={evidence} />
         <details><summary>相关论述</summary><ul>{catalog.claims.filter(claim => getClaimEvidence(catalog, claim).some(item => item.evidence.id === evidence.id)).map(claim => <li key={claim.id}><Link href={`/claims/#${claim.id}`}>{claim.text}</Link></li>)}</ul></details>

@@ -22,7 +22,7 @@ export function readerBibliography(catalog, literatureMap, readingLedger) {
   const errors = validateResearch(literatureMap, readingLedger, catalog);
   if (errors.length) throw new TypeError(`Cannot publish bibliography:\n${errors.join('\n')}`);
   const sources = published.sources.map(source => ({
-    ...pick(source, ['id', 'title', 'publisher', 'version', 'url', 'accessedAt']),
+    ...pick(source, ['id', 'title', 'publisher', 'version', 'url', 'accessedAt', 'rights', 'preservation']),
     ...(source.artifact ? { artifact: readerArtifact(source.artifact) } : {}),
   }));
   const citations = published.evidence.map(evidence => ({
