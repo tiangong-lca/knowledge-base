@@ -40,85 +40,104 @@
 
 Four original PDF carriers support five separately identified contributions: the
 1999 article; Nordheim's p308 Comment and Weidema's pp309–310 Reply in one
-three-page carrier; existing M01/2004; and PSI98-17. The2004 printed/currentDOIs
-identify one bibliographic work without a verified registrar-alias claim. Shared
-Comment/Reply bytes do not establish independent empirical replication. Readings
-remain selected passages with exact hashes/locators. Originals, extractions and
-images stay outside Git/public exports. Ordinary publisher access for1999 displayed
-an institutional banner; individual entitlement and access context remain unresolved.
-Neutral inspected-passages status does not assert open access or redistribution.
-Other public institutional/author/project carriers also retain third-party rights.
+three-page carrier; the existing M01/2004 work; and PSI report 98-17. The printed
+and current DOIs for the 2004 paper identify one bibliographic work, without a
+verified registrar-alias claim. Shared Comment/Reply bytes do not establish
+independent empirical replication. All readings remain selected passages with
+exact hashes and locators. Originals, extractions and images stay outside Git and
+public exports. Ordinary publisher access for 1999 displayed an institutional
+banner; individual entitlement and access context remain unresolved. The neutral
+inspection status does not assert open access or redistribution permission. Other
+public institutional, author and project carriers also retain third-party rights.
 
-The original procedure distinguishes direct processes/markets, output/capital
-adjustment, replacement-relative trends, constraints and actor preferences. The
-Comment challenges geography, mixed capacity responses, transmission and delivery
-attribution. The Reply acknowledges geographic inadequacy and revises its European
-aluminium premise while retaining globalmaterial/multipleregionalpower reasoning.
-Unpublished industry forecasts and underlyingIPAIstatistics remain unacquired.
-The2004source explicitly attributes its procedure to1999, but does not explicitly
-cite this exchange; no causal influence or settlement is inferred.
+The original procedure distinguishes direct processes from markets, output from
+capital adjustment, replacement-relative trends, constraints and actor preferences.
+The Comment challenges geography, mixed capacity responses, transmission and
+delivery attribution. The Reply acknowledges inadequate geography and revises its
+European aluminium premise while retaining global material and multiple regional
+power response reasoning. Unpublished industry forecasts and underlying IPAI
+statistics remain unacquired. The 2004 source explicitly attributes its procedure
+to 1999, but does not explicitly cite this exchange; no causal influence or
+settlement is inferred.
 
 PSI changed the positive example design: its average import/export construction
-does not identify an isolated demand response. Only nine displayedM3facts enter
-the public case. Swiss1995 P60277+I18113−E25143=53247GWh includes51567final
-consumption+1680losses; domestic35134+DE7014+FR9116+AT1973+IT10 closes the same
-denominator. Private checking also examinedM2/M4/SBB; those reconstructions do not
-enter the public model. T5absolute emissions lack the separately cited inventory
-chain. M4sparse samples/internaltable/weighting differences remain unreconciled.
-PSI's average-first/scenario-sensitivity view, responsibility judgment and the
-Frischknecht dissent remain visible.
+does not identify an isolated demand response. Only nine displayed M3 facts enter
+the public case. Swiss 1995 P60277 + I18113 − E25143 = 53247 GWh includes 51567
+final consumption plus 1680 losses. Domestic 35134 + DE7014 + FR9116 + AT1973 +
+IT10 closes the same denominator. Private checks also examined M2, M4 and SBB;
+those reconstructions do not enter the public model. T5 absolute emissions lack
+the separately cited inventory chain. M4 sparse samples, internal tables and
+weighting differences remain unreconciled. PSI's average-first/scenario-sensitivity
+view, responsibility judgment and Frischknecht's dissent remain visible.
 
-The separate fictional model fixes extra1kg output at a selected producer,
-10kWh/kg, otherusers100kWh and a commonabstractstaticperiod. FixedH40 requires
-stipulatedG70 versus baselineH40/G60; actualexpandingH50 retainsG60. InventedCO2
-coefficients0.02/0.8kg/kWh give8/0.2kg increments while producerassignment stays0.2.
-Both intervention worlds supply the same extra service; the baseline lacks it.
-Availability alone does not establish actual response. This is conditional
-electricityCO2 arithmetic, not empirical supplier selection, a complete materialLCI,
-CO2-equivalent score, propagated uncertainty or present-grid default.
+The separate fictional model fixes an extra 1 kg output at a selected producer,
+10 kWh/kg, other users' demand of 100 kWh and one abstract static period. Fixed H40
+requires stipulated G70 versus baseline H40/G60; actual expanding H50 retains G60.
+Invented CO2 coefficients of 0.02/0.8 kg/kWh give 8/0.2 kg increments while producer
+assignment stays 0.2 kg. Both intervention worlds supply the same extra service;
+the baseline lacks it. Availability alone does not establish actual response.
+This is conditional electricity CO2 arithmetic, not empirical supplier selection,
+a complete material LCI, CO2-equivalent score, propagated uncertainty or present
+grid default.
 
 The continuous chapter follows both allocation chapters: joint-batch premise →
-originalprocedure → critique/concession → averageconstruction → latersegmentation →
-positiveactivities → discriminatingobservations and the unfilled regional symbolic
-chain. Structure follows the explanatory problem, not a chapter/source quota.
-Three concepts and one relatedness mapping introduce no universal equivalence.
+original procedure → critique/concession → average construction → later segmentation
+→ positive activities → discriminating observations and the unfilled regional
+symbolic chain. Structure follows the explanatory problem, not a chapter/source
+quota. Three concepts and one relatedness mapping introduce no universal equivalence.
 
 ## Actual bounded queries and exclusions
 
-Author/publisher/project/PSIdirectroutes and exact-title/identifier/correction
-queries are recorded in the reading packages/literature register. Main also ran
-these public-web queries on2026-11-05, including a repeat source confirmation:
+Author, publisher, project and PSI direct routes, plus exact-title, identifier and
+correction queries, are recorded in the reading packages and literature register.
+Main also ran these public-web queries on 2026-11-05, including a repeat source
+confirmation:
 
 - `"Marginal Production Technologies" "Nordheim" reply correction erratum`
 - `"后果型" "边际电力" "铝" 市场边界`
 - `"marginale Stromproduktion" Ökobilanz Aluminium Weidema Nordheim`
 
-Results rediscovered the original exchange/PSI and later citations; no correction
-was verified. Chinese hits mostly concerned current industrial markets and did not
-support this historical method proposition. Secondary mirrors, building/railway
-citations, general news and price pages were excluded as original evidence. The
-Danish official *Market information in life cycle assessments* report and publisher
-record *Uncertainties related to the identification of the marginal energy
-technology in consequential life cycle assessments* remain discovery leads,
-not acquired/read support in this unit. Search silence proves neither correction
-absence nor non-English scholarship absence; no systematic coverage is claimed.
+Results rediscovered the original exchange and PSI, plus later citations; no
+correction was verified. Chinese hits mostly concerned current industrial markets
+and did not support this historical method proposition. Secondary mirrors,
+building/railway citations, general news and price pages were excluded as original
+evidence. The Danish official *Market information in life cycle assessments* report
+and publisher record *Uncertainties related to the identification of the marginal
+energy technology in consequential life cycle assessments* remain discovery leads,
+not acquired/read support in this unit. Search silence proves neither the absence
+of corrections nor the absence of non-English scholarship. No systematic coverage
+claim is made.
 
-## Initial review and remaining publication gates
+## Review and publication gates
 
 Independent source readings preceded synthesis. Method review required explicit
-material response, equalextra service across interventionworlds and actual rather
-than merelyavailableHexpansion. Review of the32-paragraph artifact restored the
-exclusiveidentified-process stoppingcondition; clarified exportsigns/units,
-PSIcomparability and responsibility; and corrected actualPSIp35support and the
-exact2004§6title. Focused integrated recheck closed these findings. All22evidence
-joins/fivecontributioncarrierhashes and eightmaterializedclaims matched.
+material response, equal extra service across intervention worlds and actual H
+expansion rather than mere availability. Review of the 32-paragraph artifact
+restored the exclusive identified-process stopping condition; clarified export
+signs, units, PSI comparability and responsibility; and corrected actual PSI p35
+support and the exact 2004 §6 title. Focused integrated review closed these findings.
+All 22 evidence joins, five contribution carrier hashes and eight materialized
+claims matched.
 
-The closed static adapter binds nine source tuples through the actual reading,
-passage and originalPDF. Eightcaseparagraphs bind inputSHA256
+The static adapter binds nine source tuples through the actual reading, passage
+and original PDF. Eight case paragraphs bind input SHA-256
 `a58663c4648adee29c1c8236907d436ad42304ff3728aae8d3c133ba23e6a81e`.
-Independent code review found no material issue in45scopedtests, source-image
-checks, exactarithmetic,14nestedprivate-field projections,120required-leafomissions,
-stalemetadata/textrejection and sixunchangedlegacyhashes. Main integrity and175tests
-pass. These establish consistency, not empirical validity or human approval.
-Nativeindependentreader assessment is in progress; actualrendered/build/CI/Main,
-exactroot/livequalification remain separate required gates.
+Independent code review found no material issue in 45 scoped tests, source-image
+checks, exact arithmetic, 14 nested private-field projections, 120 required-leaf
+omissions, stale metadata/text rejection and six unchanged legacy hashes.
+Main integrity, 175 tests, types, clean build and all 350 manifest hashes passed
+at initial milestone b396ef17. Independent rendered checks covered all 32 notes,
+22 source destinations, search, download, print parity and ten viewport/theme
+combinations. Main inspected selected mobile and desktop screenshots.
+
+A fresh native-app reader assessment identified three precise clarity problems:
+the bridge between inclusive V and separate appendix columns, blended original
+versus Reply reasoning, and ambiguous Chinese material-mass wording. Main verified
+that PSI already defines V to include losses, retained that definition and all
+numbers, separated the historical arguments, and clarified material output. Related
+model labels, vector units and note scopes were improved. Targeted native recheck closed all three material findings; main adopted two
+optional wording clarifications and a source-summary addition. Final rebuilt
+qualification remains pending. These checks establish bounded
+source, arithmetic and publication consistency, not empirical validity or human
+expert approval. Current-head CI, source Main, exact root integration and live
+qualification remain separate required gates.

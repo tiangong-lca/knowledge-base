@@ -9,7 +9,7 @@
     {
       "id": "cl-market-m3-denominator",
       "kind": "calculation",
-      "scope": "平均供电也需要一个模型",
+      "scope": "瑞士1995的M3含线损分母与终端消费口径",
       "evidenceIds": [
         "ev-market-psi-m3"
       ],
@@ -28,12 +28,12 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "复算原表显示整数的P+I-E及终端消费+线损；不恢复未报告精度、原始计量或电压层级清单。",
-      "textTemplate": "用原报告的瑞士1995年数据可以把 M3 展开：发电量{{input.facts.production.value}} GWh，加进口{{input.facts.imports.value}} GWh，减出口{{input.facts.exports.value}} GWh，得到{{evaluated.historical.denominatorGWh.exact}} GWh。这个分母包括{{input.facts.finalConsumption.value}} GWh终端消费和{{input.facts.losses.value}} GWh线损。用{{input.facts.finalConsumption.value}}作分母却仍保留含损耗的全部分子，便把两种计量边界混在一起；本例算的是含线损的混合平衡，不能直接命名为最终用户电表处的一单位电力。"
+      "textTemplate": "用原报告的瑞士1995年数据可以把 M3 展开：发电量{{input.facts.production.value}} GWh，加进口{{input.facts.imports.value}} GWh，减出口{{input.facts.exports.value}} GWh，得到{{evaluated.historical.denominatorGWh.exact}} GWh。表 A.1把终端消费（Verbrauch）与线损（Verluste）分列；式中 V沿用报告正文的含线损定义，对应表内这两项之和，因此这个分母包括{{input.facts.finalConsumption.value}} GWh终端消费和{{input.facts.losses.value}} GWh线损。用{{input.facts.finalConsumption.value}}作分母却仍保留含损耗的全部分子，所得各比值就不再是加总为一的来源份额。若要转到终端用电口径，还须说明损耗如何分摊以及对应的交付边界，不能只换分母便称为电表处的来源组合。本例保持含线损的混合平衡。"
     },
     {
       "id": "cl-market-m3-origins",
       "kind": "calculation",
-      "scope": "平均供电也需要一个模型",
+      "scope": "原表整数电量在M3规则下的来源份额复算",
       "evidenceIds": [
         "ev-market-psi-m3"
       ],
@@ -51,12 +51,12 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "在已列明的来源前提或本书明示条件内作连接解释；不将条件演算提升为经验因果识别。",
-      "textTemplate": "M3 留在国内的本国发电是{{input.facts.production.value}}−{{input.facts.exports.value}}＝{{evaluated.historical.domesticAfterExportGWh.exact}} GWh。再加德国{{input.facts.de.value}}、法国{{input.facts.fr.value}}、奥地利{{input.facts.at.value}}和意大利{{input.facts.it.value}} GWh，恰好回到{{evaluated.historical.denominatorGWh.exact}} GWh。各项除以这个分母，依次约为{{evaluated.historical.origins.CH.percentFixed4}}%、{{evaluated.historical.origins.DE.percentFixed4}}%、{{evaluated.historical.origins.FR.percentFixed4}}%、{{evaluated.historical.origins.AT.percentFixed4}}%和{{evaluated.historical.origins.IT.percentFixed4}}%。这些份额复现了公开整数与指定规则之间的关系；它们并不说明新增需求也按这些比例分给五个来源。"
+      "textTemplate": "M3 留在国内的本国发电是{{input.facts.production.value}}−{{input.facts.exports.value}}＝{{evaluated.historical.domesticAfterExportGWh.exact}} GWh。再加德国{{input.facts.de.value}}、法国{{input.facts.fr.value}}、奥地利{{input.facts.at.value}}和意大利{{input.facts.it.value}} GWh，恰好回到{{evaluated.historical.denominatorGWh.exact}} GWh。各项除以这个分母，依次约为{{evaluated.historical.origins.CH.percentFixed4}}%、{{evaluated.historical.origins.DE.percentFixed4}}%、{{evaluated.historical.origins.FR.percentFixed4}}%、{{evaluated.historical.origins.AT.percentFixed4}}%和{{evaluated.historical.origins.IT.percentFixed4}}%。这些份额复现了公开报告中的整数电量与指定规则之间的关系；它们并不说明新增需求也按这些比例分给五个来源。"
     },
     {
       "id": "cl-market-toy-service",
       "kind": "proposal",
-      "scope": "同一次新增需求，两种电力响应",
+      "scope": "本书规定的新增材料产出与两种干预的相同额外服务",
       "evidenceIds": [
         "ev-market-2004-hydro"
       ],
@@ -80,7 +80,7 @@
     {
       "id": "cl-market-toy-boundary",
       "kind": "proposal",
-      "scope": "同一次新增需求，两种电力响应",
+      "scope": "虚构电力子系统的边界、系数与实际活动响应条件",
       "evidenceIds": [],
       "evidenceLinks": [],
       "premiseIds": [
@@ -95,7 +95,7 @@
     {
       "id": "cl-market-toy-reference",
       "kind": "calculation",
-      "scope": "同一次新增需求，两种电力响应",
+      "scope": "虚构增量例子的正活动基线与CO2清单",
       "evidenceIds": [],
       "evidenceLinks": [],
       "premiseIds": [
@@ -110,7 +110,7 @@
     {
       "id": "cl-market-toy-constrained",
       "kind": "calculation",
-      "scope": "同一次新增需求，两种电力响应",
+      "scope": "H总量固定、其他用电不变时的指定G增产与差值",
       "evidenceIds": [],
       "evidenceLinks": [],
       "premiseIds": [
@@ -125,7 +125,7 @@
     {
       "id": "cl-market-toy-expandable",
       "kind": "calculation",
-      "scope": "同一次新增需求，两种电力响应",
+      "scope": "H实际增产、G不变时的正活动和差值",
       "evidenceIds": [],
       "evidenceLinks": [],
       "premiseIds": [
@@ -140,7 +140,7 @@
     {
       "id": "cl-market-toy-purchase",
       "kind": "calculation",
-      "scope": "同一次新增需求，两种电力响应",
+      "scope": "同一指定采购归属与不同系统增量的条件比较",
       "evidenceIds": [],
       "evidenceLinks": [],
       "premiseIds": [

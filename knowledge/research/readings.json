@@ -6647,12 +6647,13 @@
         {
           "id": "ps-market-reply-geography",
           "artifactId": "pdf-market-reply-1999",
-          "locator": "Reply左栏前半：铝市场与原五步程序",
+          "locator": "Reply开头至左栏前半：小增量、铝市场与原五步程序",
           "printedPages": "309",
           "pdfIndices": [
             1
           ],
           "topics": [
+            "小增量与产能",
             "承认不足",
             "地理市场"
           ],
@@ -8505,6 +8506,25 @@
         "CASE-POWER"
       ],
       "status": "applied; finalintegratedreview requested"
+    },
+    {
+      "id": "rev-market-independent-reader-meaning",
+      "before": "Time paragraph blended the original continuous-investment argument with the Reply cumulative-demand clarification; the V/table-column bridge and Chinese material-mass wording could confuse readers.",
+      "after": "Keep the original capital-adjustment argument in its paragraph and explicitly attribute cumulative increments to the Reply; connect inclusiveV to separately listed consumption/losses, explain normalization versus delivered-unit conversion, and use material-output change. Add source-specific note scopes and short model/object clarifications.",
+      "reasoning": "Fresh native-app reader assessment prompted direct source reinspection. Original PSIalreadydefinesVincludinglosses; its arithmetic was correct, while the appendix-column bridge could be clearer. No source values, activities or numerical outputs changed.",
+      "triggerPassageIds": [
+        "ps-market-1999-time",
+        "ps-market-reply-geography",
+        "ps-market-psi-balance",
+        "ps-market-psi-m3"
+      ],
+      "affectedUnits": [
+        "V6-03",
+        "V6-05",
+        "V7-05A",
+        "CASE-POWER"
+      ],
+      "status": "applied; targeted native reader recheck closed all three material findings; main clarified two optional phrases and source summary without changing numbers; rendered requalification remains separate"
     }
   ]
 }
