@@ -65,7 +65,7 @@ export function validateWaterLocalityCase(spec) {
   else spec.contributions.forEach((row, index) => {
     if (!object(row)) { errors.push(`contributions.${index}: must be an object`); return; }
     const prefix = `contributions.${index}`;
-    const expected = index === 0 ? ['foreground', 'X', 'M', '10', '8', '2', '0.5', '2'] : ['upstream', 'Y', 'N', '4', '3', '1', '0.125', '8'];
+    const expected = index === 0 ? ['water-example-foreground', 'X', 'M', '10', '8', '2', '0.5', '2'] : ['water-example-upstream', 'Y', 'N', '4', '3', '1', '0.125', '8'];
     ['id', 'basinLabel', 'periodLabel', 'withdrawal', 'return', 'consumed', 'amdRelativeToR', 'factor'].forEach((key, i) => identity(row[key], expected[i], `${prefix}.${key}`));
     identity(row.returnBasinLabel, row.basinLabel, `${prefix}.returnBasinLabel`);
     identity(row.returnPeriodLabel, row.periodLabel, `${prefix}.returnPeriodLabel`);
