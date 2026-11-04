@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-04",
+  "updatedAt": "2026-11-05",
   "protocol": {
     "id": "community-classics-wave-2026-11-04",
     "questions": [
@@ -1027,6 +1027,111 @@
         "query": "\"Environmental Effects of Recycling Paper\" \"1973\" Hunt Franklin",
         "date": "2026-11-04",
         "channel": "public-web-search"
+      },
+      {
+        "id": "q-ped-original-01",
+        "query": "\"10.1065/lca2007.06.345\" pdf",
+        "date": "2026-11-05",
+        "channel": "Targeted web search; publisher/author/institutional routes and exact DOI metadata",
+        "outcome": "Request-only and secondary listings; original subsequently acquired from ordinary publisher link."
+      },
+      {
+        "id": "q-ped-original-02",
+        "query": "\"10.1007/s11367-013-0670-5\" filetype:pdf",
+        "date": "2026-11-05",
+        "channel": "Targeted web search; publisher/author/institutional routes and exact DOI metadata",
+        "outcome": "Institutional external-DOI metadata, not deposited full text; publisher subsequently acquired."
+      },
+      {
+        "id": "q-ped-original-03",
+        "query": "\"10.1007/s11367-013-0670-5\" correction erratum",
+        "date": "2026-11-05",
+        "channel": "Targeted web search; publisher/author/institutional routes and exact DOI metadata",
+        "outcome": "No attributable correction identified in bounded results."
+      },
+      {
+        "id": "q-ped-original-04",
+        "query": "\"How to obtain a precise and representative estimate\" correction erratum supplement data",
+        "date": "2026-11-05",
+        "channel": "Targeted web search; publisher/author/institutional routes and exact DOI metadata",
+        "outcome": "No attributable correction or original dataset identified."
+      },
+      {
+        "id": "q-ped-original-05",
+        "query": "\"Empirically based uncertainty factors\" correction erratum supplement",
+        "date": "2026-11-05",
+        "channel": "Targeted web search; publisher/author/institutional routes and exact DOI metadata",
+        "outcome": "Related method article found but not identified as correction or promoted."
+      },
+      {
+        "id": "q-ped-original-06",
+        "query": "\"谱系矩阵\" \"完整性\" \"酸奶\"",
+        "date": "2026-11-05",
+        "channel": "Targeted web search; publisher/author/institutional routes and exact DOI metadata",
+        "outcome": "No eligible new primary source identified."
+      },
+      {
+        "id": "q-ped-original-07",
+        "query": "\"Pedigree Matrix\" \"Joghurtbecher\" Vollständigkeit Unsicherheit",
+        "date": "2026-11-05",
+        "channel": "Targeted web search; publisher/author/institutional routes and exact DOI metadata",
+        "outcome": "Existing report surfaced; no new raw dataset identified."
+      },
+      {
+        "id": "q-ped-scoring-01",
+        "query": "\"10.1007/s11367-017-1348-1\" supplementary",
+        "date": "2026-11-05",
+        "channel": "Targeted web search and ordinary publisher ESM link",
+        "outcome": "Official ESM1 acquired; unrelated corrections and later general studies excluded; no attributable correction found in this bounded set."
+      },
+      {
+        "id": "q-ped-scoring-02",
+        "query": "\"Edelen\" \"Ingwersen\" \"reproducibility\" 2018 pedigree",
+        "date": "2026-11-05",
+        "channel": "Targeted web search and ordinary publisher ESM link",
+        "outcome": "Official ESM1 acquired; unrelated corrections and later general studies excluded; no attributable correction found in this bounded set."
+      },
+      {
+        "id": "q-ped-scoring-03",
+        "query": "\"s11367-017-1348-1\" correction erratum supplement",
+        "date": "2026-11-05",
+        "channel": "Targeted web search and ordinary publisher ESM link",
+        "outcome": "Official ESM1 acquired; unrelated corrections and later general studies excluded; no attributable correction found in this bounded set."
+      },
+      {
+        "id": "q-ped-scoring-04",
+        "query": "\"Edelen\" \"Ingwersen\" \"reproducibility test\"",
+        "date": "2026-11-05",
+        "channel": "Targeted web search and ordinary publisher ESM link",
+        "outcome": "Official ESM1 acquired; unrelated corrections and later general studies excluded; no attributable correction found in this bounded set."
+      },
+      {
+        "id": "q-ped-scoring-05",
+        "query": "\"s11367-017-1348-1\" \"correction\"",
+        "date": "2026-11-05",
+        "channel": "Targeted web search and ordinary publisher ESM link",
+        "outcome": "Official ESM1 acquired; unrelated corrections and later general studies excluded; no attributable correction found in this bounded set."
+      },
+      {
+        "id": "q-ped-scoring-06",
+        "query": "\"s11367-017-1348-1\" \"erratum\"",
+        "date": "2026-11-05",
+        "channel": "Targeted web search and ordinary publisher ESM link",
+        "outcome": "Official ESM1 acquired; unrelated corrections and later general studies excluded; no attributable correction found in this bounded set."
+      },
+      {
+        "id": "q-ped-scoring-07",
+        "query": "\"Data Quality Assessment Reproducibility Test\" Edelen Ingwersen",
+        "date": "2026-11-05",
+        "channel": "Targeted web search and ordinary publisher ESM link",
+        "outcome": "Official ESM1 acquired; unrelated corrections and later general studies excluded; no attributable correction found in this bounded set."
+      },
+      {
+        "id": "q-ped-scoring-08",
+        "query": "\"The creation, management, and use of data quality information\" supplement EPA",
+        "date": "2026-11-05",
+        "channel": "Targeted web search and ordinary publisher ESM link",
+        "outcome": "Official ESM1 acquired; unrelated corrections and later general studies excluded; no attributable correction found in this bounded set."
       }
     ],
     "limitations": [
@@ -5694,7 +5799,8 @@
       "discovery": {
         "queryIds": [
           "q-w3-uncertainty-03",
-          "q-w3-uncertainty-10"
+          "q-w3-uncertainty-10",
+          "q-ped-original-07"
         ],
         "reason": "Public phase0report found while seeking original calibration source; distinct from later journal article.",
         "citationParents": [
@@ -5705,12 +5811,13 @@
       "accessStatus": "public-fulltext-available",
       "readingStatus": "not-close-read",
       "accessedAt": "2026-11-04",
-      "lastCheckedAt": "2026-11-04",
+      "lastCheckedAt": "2026-11-05",
       "rights": "Publicsource remains under third-party rights; no source-text/table/figure redistribution licence inferred.",
       "limitations": [
         "Cover governsidentity;laterarticle is anotherwork/version lineage,not assumed identical.",
         "Stratumtagsareeditorial,notcoverageproof.",
-        "Selected passages recorded as rd-ciroth-2012-pedigree-refinement; acquisition does not establish whole-work reading."
+        "Selected passages recorded as rd-ciroth-2012-pedigree-refinement; acquisition does not establish whole-work reading.",
+        "Selected completeness/subset/GSD passages extended2026-11-05; internal database and exact subset pooling remain unavailable."
       ],
       "catalogSourceIds": [
         "src-book-ciroth-2012-pedigree-refinement"
@@ -5731,6 +5838,10 @@
         {
           "url": "https://link.springer.com/article/10.1007/s11367-017-1348-1",
           "role": "Publisheridentity/dates"
+        },
+        {
+          "url": "https://static-content.springer.com/esm/art%3A10.1007%2Fs11367-017-1348-1/MediaObjects/11367_2017_1348_MOESM1_ESM.pdf",
+          "role": "Official six-page ESM1 carrier, acquired2026-11-05"
         }
       ],
       "identifiers": {
@@ -5759,7 +5870,9 @@
       ],
       "discovery": {
         "queryIds": [
-          "q-w3-uncertainty-08"
+          "q-w3-uncertainty-08",
+          "q-ped-scoring-01",
+          "q-ped-scoring-03"
         ],
         "reason": "Primary author-manuscript discussion/test account surfaced in a bounded pedigree-source search; no inference that the full cited literature was searched.",
         "citationParents": [
@@ -5770,10 +5883,10 @@
       "accessStatus": "public-fulltext-available",
       "readingStatus": "not-close-read",
       "accessedAt": "2026-11-04",
-      "lastCheckedAt": "2026-11-04",
+      "lastCheckedAt": "2026-11-05",
       "rights": "Publicsource remains under third-party rights; no source-text/table/figure redistribution licence inferred.",
       "limitations": [
-        "Selectedreadingboundseparately;PDF/supplementnotacquired.",
+        "Selected reading bound separately; main publisher PDF remains unacquired, official six-page ESM1 subsequently acquired and selected-read2026-11-05.",
         "No institutionalendorsement inferred from authoraffiliations.",
         "Selected passages recorded as rd-edelen-ingwersen-2018-data-quality; acquisition does not establish whole-work reading."
       ],
@@ -6920,6 +7033,142 @@
         "Search snippet only. Web opening failed with HTTP400/timeout and direct local PDF retrieval returned HTTP403; original bytes were not acquired.",
         "The original title page, full bibliographic identity, chapter boundaries, numerical tables and publication date were not independently inspected. The year1979 is retained as an archival/search attribution, not verified original-edition identity.",
         "Full work not read; no selected-reading record, canonical source, evidence or claim is promoted. A snippet repeating EPA1974 does not independently validate the original study or establish an erratum."
+      ]
+    },
+    {
+      "id": "work-ciroth-srocka-2008-sampling",
+      "title": "How to Obtain a Precise and Representative Estimate for Parameters in LCA: A case study for the functional unit",
+      "contributors": "Andreas Ciroth; Michael Srocka",
+      "year": "online2007; issue2008",
+      "kind": "method-article",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://link.springer.com/article/10.1065/lca2007.06.345",
+          "role": "Publisher work identity and ordinary article route"
+        },
+        {
+          "url": "https://link.springer.com/content/pdf/10.1065/lca2007.06.345.pdf",
+          "role": "Stable publisher PDF resource; hash identifies the inspected bytes"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1065/lca2007.06.345"
+      },
+      "volumes": [
+        "V4",
+        "V7",
+        "A05",
+        "A06"
+      ],
+      "topics": [
+        "sampling estimand",
+        "empirical pedigree calibration",
+        "probability interpretation"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Germany",
+        "international"
+      ],
+      "traditions": [
+        "statistical sampling",
+        "pedigree uncertainty methods"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-ped-original-01",
+          "q-ped-original-04"
+        ],
+        "reason": "Original source chain for the selected completeness-calibration question; bibliographic discovery does not imply whole-work reading.",
+        "citationParents": [
+          "work-ciroth-2012-pedigree-refinement"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "access-context-unresolved",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-05",
+      "lastCheckedAt": "2026-11-05",
+      "rights": "出版商页面在当前环境显示机构访问并提供普通下载链接；这不证明个人授权、公开访问或开放再利用许可。只记录实际选段检查，访问情境与再分发权利未确定；原始PDF、页面图像和捕获文本不进入公开产物。",
+      "limitations": [
+        "未作全文/全部图表的完整细读。",
+        "原始观测、全部杯层统计量、市场×杯型份额、抽样代码及2012再分析子集身份未取得。",
+        "2007会议幻灯片是不同未晋升线索，不代替本文。",
+        "Selected passages are separately bound; original files and institution-access context do not confer redistribution permission."
+      ],
+      "catalogSourceIds": [
+        "src-book-ciroth-srocka-2008-sampling"
+      ]
+    },
+    {
+      "id": "work-ciroth-2016-pedigree-factors",
+      "title": "Empirically based uncertainty factors for the pedigree matrix in ecoinvent",
+      "contributors": "Andreas Ciroth; Stéphanie Muller; Bo Weidema; Pascal Lesage",
+      "year": "online2013; issue2016",
+      "kind": "method-article",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://link.springer.com/article/10.1007/s11367-013-0670-5",
+          "role": "Publisher work identity and ordinary article route"
+        },
+        {
+          "url": "https://link.springer.com/content/pdf/10.1007/s11367-013-0670-5.pdf",
+          "role": "Stable publisher PDF resource; hash identifies the inspected bytes"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1007/s11367-013-0670-5"
+      },
+      "volumes": [
+        "V4",
+        "V7",
+        "A05",
+        "A06"
+      ],
+      "topics": [
+        "sampling estimand",
+        "empirical pedigree calibration",
+        "probability interpretation"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "international"
+      ],
+      "traditions": [
+        "statistical sampling",
+        "pedigree uncertainty methods"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-ped-original-02",
+          "q-ped-original-03",
+          "q-ped-original-05"
+        ],
+        "reason": "Original source chain for the selected completeness-calibration question; bibliographic discovery does not imply whole-work reading.",
+        "citationParents": [
+          "work-ciroth-2012-pedigree-refinement"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "access-context-unresolved",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-05",
+      "lastCheckedAt": "2026-11-05",
+      "rights": "出版商页面在当前环境显示机构访问并提供普通下载链接；这不证明个人授权、公开访问或开放再利用许可。只记录实际选段检查，访问情境与再分发权利未确定；原始PDF、页面图像和捕获文本不进入公开产物。",
+      "limitations": [
+        "未声称完整全文及全部参考文献细读。",
+        "全部时间/地理/技术底层资料、原计算代码及非对数正态扩展论文未重现。",
+        "当前ecoinvent实施、全部因子的行业适用性与独立外部验证未检查。",
+        "Selected passages are separately bound; original files and institution-access context do not confer redistribution permission."
+      ],
+      "catalogSourceIds": [
+        "src-book-ciroth-2016-pedigree-factors"
       ]
     }
   ],

@@ -3528,7 +3528,7 @@
       "version": "Andreas Ciroth, with contributions from Stéphanie Muller and Bo Weidema; May 2012, Version 7.1, phase 0 report; 88 PDF pages. Section 8 separately credits Muller. PDF metadata title differs; creation in 2014 and modification in 2017 do not establish a new scientific edition. Distinct from the later journal article, online 2013 / issue 2016.",
       "url": "https://www.greendelta.com/wp-content/uploads/2017/03/Pedigree_report_final_May2012.pdf",
       "accessedAt": "2026-11-04",
-      "readAt": "2026-11-04",
+      "readAt": "2026-11-05",
       "readingStatus": "selected-passages",
       "question": "What empirical and mathematical steps connect pedigree categories to uncertainty factors, and what remains assumed or unvalidated?",
       "argumentSummary": "The report calibrates factors under an existing pedigree structure using normalized/grouped data and spread comparisons. Independence, reference choices and distribution conventions remain assumptions; factors and empirical coverage are qualified as tentative.",
@@ -3685,26 +3685,98 @@
             61,
             62
           ]
+        },
+        {
+          "id": "psg-ped2012-completeness-subsets",
+          "artifactId": "art-ciroth-2012-pedigree-report",
+          "locator": "§5.3.1.1; Figures18–21 and footnote14",
+          "printedPages": "28–30",
+          "pdfIndices": [
+            27,
+            28,
+            29
+          ],
+          "topics": [
+            "subset coverage",
+            "score mapping",
+            "GSD population/sample"
+          ],
+          "limits": [
+            "Exact subset membership/replications and one-supermarket versus25% relation not fully specified."
+          ]
+        },
+        {
+          "id": "psg-ped2012-completeness-factors",
+          "artifactId": "art-ciroth-2012-pedigree-report",
+          "locator": "Tables6–7; §5.3.2",
+          "printedPages": "31",
+          "pdfIndices": [
+            30
+          ],
+          "topics": [
+            "precise and rounded proposed GSD",
+            "homogeneous sample",
+            "meta-uncertainty"
+          ],
+          "limits": [
+            "No raw or pooling-code reproduction; not a universal empirical default."
+          ]
+        },
+        {
+          "id": "psg-ped2012-cup-database",
+          "artifactId": "art-ciroth-2012-pedigree-report",
+          "locator": "Annex A§5, yoghurt-cup study description and limitations",
+          "printedPages": "72–73",
+          "pdfIndices": [
+            71,
+            72
+          ],
+          "topics": [
+            "internal database",
+            "subset ordering",
+            "available population is sample"
+          ],
+          "limits": [
+            "Schema screenshot does not disclose the actual observations or complete subset algorithm."
+          ]
+        },
+        {
+          "id": "psg-ped2012-gsd-definition",
+          "artifactId": "art-ciroth-2012-pedigree-report",
+          "locator": "Annex B§2.2; relationship between GSD and log standard deviation",
+          "printedPages": "82–83",
+          "pdfIndices": [
+            81,
+            82
+          ],
+          "topics": [
+            "n-denominator empirical GSD",
+            "positive multiplicative scaling",
+            "log-space transform"
+          ],
+          "limits": [
+            "Definitions inspected, not all annex derivations; printed intermediate-line inconsistencies do not authorize silent source repair."
+          ]
         }
       ],
       "appraisal": {
-        "basis": "Public report from authorcompany, identicalSHA256 at lca-net mirror; selected methods/empirical conclusions/limits read; pp6,8,49,55 visually checked.",
+        "basis": "Public report from authorcompany, identicalSHA256 at lca-net mirror; selected methods/empirical conclusions/limits read; pp6,8,49,55 visually checked. Newly inspected fixed PDF pp17,29–31,52–53,73,82–83 and original carrier identity; independent source/method arithmetic remains selected in scope.",
         "methodologicalScope": "Phase0 empirical-method development report, not universal data-quality calibration or current ecoinvent implementation specification.",
         "independence": "Weidema contributes to this report and coauthors original pedigree work; later journal article is related, not independent replication.",
         "limitations": [
           "Report works within a chosen pedigree structure and distribution assumptions.",
           "Limited and heterogeneous empirical sources; basic uncertainty factors not calibrated in this phase.",
           "Internal tables do not preserve the same missing-value treatment for poorest reliability score.",
-          "No source data, statistical code or later journal paper independently reproduced."
+          "No source data, statistical code or later journal calibration independently reproduced."
         ],
         "reviewKind": "agent-source-check",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rights": "Public authorcompany report and authororganization mirror; no explicit open-reuse licence located. Access does not authorize redistributing report text, tables, figures or input databases under the project licence.",
       "unread": [
         "Most individual data-source analyses before selected conclusions.",
-        "§§8.5–8.6 derivations/simulations and annexes.",
-        "Later journal article DOI10.1007/s11367-013-0670-5 full text."
+        "§§8.5–8.6 derivations/simulations; annexes except selected Annex A§5 and Annex B§2.2.",
+        "Full later journal/work/reference coverage remains incomplete; its actual selected reading is separately bound as rd-ciroth-2016-pedigree-factors."
       ],
       "sourceKeys": [
         "CIROTH2012-PHASE0-V7.1"
@@ -3714,10 +3786,10 @@
       "id": "rd-edelen-ingwersen-2018-data-quality",
       "workId": "work-edelen-ingwersen-2018-data-quality",
       "title": "The creation, management, and use of data quality information for life cycle assessment",
-      "version": "Edelen and Ingwersen; DOI 10.1007/s11367-017-1348-1. Publisher online date 2017-07-10; journal 23(4):759–772 (2018); PMC author manuscript available 2019-04-01. Actual reading: HTML author-manuscript carrier, not publisher PDF.",
+      "version": "Edelen and Ingwersen; DOI 10.1007/s11367-017-1348-1. Publisher online date 2017-07-10; journal 23(4):759–772 (2018); PMC author manuscript available 2019-04-01. Actual reading: HTML author-manuscript carrier, not publisher PDF. Publisher ESM1, Data Quality Assessment Reproducibility Test, six unnumbered PDF pages, additionally inspected2026-11-05; main publisher PDF remains unacquired.",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5919259/",
       "accessedAt": "2026-11-04",
-      "readAt": "2026-11-04",
+      "readAt": "2026-11-05",
       "readingStatus": "web-sections",
       "question": "How does this original discussion/test account distinguish data-quality characteristics/scores, contextual fitness and quantitative uncertainty?",
       "argumentSummary": "The authors distinguish data-quality descriptions and contextual assessment from quantitative uncertainty. They recommend complementary analysis and retaining descriptive metadata; they report scoring-reproducibility concerns.",
@@ -3727,6 +3799,13 @@
           "mediaType": "text/html",
           "sha256": "fac808f7774ccf69e58751e513dc3d70ec30f0540afa015836ea8553940824f3",
           "resolvedUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5919259/"
+        },
+        {
+          "id": "art-edelen-ingwersen2018-esm1",
+          "mediaType": "application/pdf",
+          "sha256": "c8d5978ef7701ef582d92510e338af1d8200e36edbe941b34d89f811ced7111f",
+          "resolvedUrl": "https://static-content.springer.com/esm/art%3A10.1007%2Fs11367-017-1348-1/MediaObjects/11367_2017_1348_MOESM1_ESM.pdf",
+          "pageCount": 6
         }
       ],
       "passages": [
@@ -3740,7 +3819,7 @@
             "reported reproducibility"
           ],
           "limits": [
-            "Supplementary test methods/results not acquired; main-text report only.",
+            "This main-HTML passage is a summary; actual ESM methods/results are separately located below.",
             "No journal-page mapping from HTML performed."
           ]
         },
@@ -3795,28 +3874,68 @@
             "author/institution distinction"
           ],
           "limits": [
-            "Not all paper sections or supplement reviewed.",
+            "Not all main-paper sections reviewed; selected ESM inspection is separately recorded.",
             "No historical software implementation or current database behavior tested."
+          ]
+        },
+        {
+          "id": "psg-ped-ei2018-test-design",
+          "artifactId": "art-edelen-ingwersen2018-esm1",
+          "locator": "ESM1 Methods; TableS1",
+          "printedPages": "Unnumbered PDF1–3",
+          "pdfIndices": [
+            0,
+            1,
+            2
+          ],
+          "topics": [
+            "12 participants",
+            "one dataset and four inputs",
+            "two named methods",
+            "no correct-score criterion"
+          ],
+          "limits": [
+            "Planned48scores/person is not a valid observed-response count; TableS1 lists metadata fields, not the populated dataset."
+          ]
+        },
+        {
+          "id": "psg-ped-ei2018-test-results",
+          "artifactId": "art-edelen-ingwersen2018-esm1",
+          "locator": "ESM1 Results; FiguresS1–S2",
+          "printedPages": "Unnumbered PDF2,4–6",
+          "pdfIndices": [
+            1,
+            3,
+            4,
+            5
+          ],
+          "topics": [
+            "incomplete ratings",
+            "mistakes",
+            "between-user score distributions"
+          ],
+          "limits": [
+            "No digitized raw responses, agreement statistic or coverage/probability validation; experience-null statement is bounded to the authors’ limited account."
           ]
         }
       ],
       "appraisal": {
-        "basis": "Targeted public PMCHTML downloaded and hashed; selected original author-manuscript sections read with publisher identity check.",
+        "basis": "Targeted public PMCHTML downloaded and hashed; selected original author-manuscript sections read with publisher identity check. Additional ordinary publisher ESM1 download; methods/results text and TableS1/FiguresS1–S2 inspected, fixed six-page PDF hash.",
         "methodologicalScope": "Commentary/discussion article with reported reproducibility testing and proposed guidance; not an independent universal validation of all pedigree methods.",
         "independence": "Different author team supplies a contrasting position; it cites pedigree work and acknowledges GreenDelta implementation collaboration, so it is not wholly isolated from that methodological network.",
         "limitations": [
-          "PMCmain PDF did not deliver via webtool; supplement gave browser-check/reCAPTCHA page and was not bypassed.",
-          "Detailed test sample/design/results in supplement remain unread.",
           "Paper disclaimer says it does not reflect employing institutions’ endorsement/opinion.",
-          "No literal publisher-page or PDFindex locations claimed for this HTMLcarrier."
+          "No literal publisher-page or PDFindex locations claimed for this HTMLcarrier.",
+          "Earlier/current PMC browser challenge was not bypassed; existing main HTML was reused unchanged. Official publisher supplement was subsequently acquired through its visible link.",
+          "No expert-defined correct scores, raw response table, populated dataset or probability-calibration experiment supplied by the selected test.",
+          "No before/after training intervention or revised-EPA-matrix effectiveness test; differently defined scales do not isolate category-count effects."
         ],
         "reviewKind": "agent-source-check",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rights": "Public PMCauthor manuscript; no explicit reuse licence established. PMCcopyright notice directs readers to assume standard protection absent contrary statement. Reading/free access is not redistribution or commercial-use authority.",
       "unread": [
         "PublisherPDF and exact printed-page mapping.",
-        "Supplementary reproducibility-test methods/results.",
         "§2.5 aggregation derivation not audited;§2.7 software claims encountered but not tested.",
         "Primary papers cited as previous objections to score-to-distribution methods."
       ],
@@ -5940,6 +6059,318 @@
       "sourceKeys": [
         "JRC61049"
       ]
+    },
+    {
+      "id": "rd-ciroth-srocka-2008-sampling",
+      "workId": "work-ciroth-srocka-2008-sampling",
+      "title": "How to Obtain a Precise and Representative Estimate for Parameters in LCA: A case study for the functional unit",
+      "version": "Ciroth and Srocka；online2007-06-19；IJLCA13(3):265–277 (2008)；出版商原件13页，PDF1对应印刷265。",
+      "url": "https://link.springer.com/article/10.1065/lca2007.06.345",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "How do the actual sampling object, reported spread and proposed factor meanings connect, and which numerical steps are reconstructable?",
+      "argumentSummary": "Sampling design identifies an offered-type-by-shop population and distinct estimator/population variances. Published summary arithmetic is recoverable; original observations, complete weights and the stratified CV discrepancy remain unresolved.",
+      "artifacts": [
+        {
+          "id": "art-ciroth-srocka-2008-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "eb0f22d9be1b085fa4af12a53d132b6db5bd9486d05ff12089368e7e35e0b834",
+          "resolvedUrl": "https://link.springer.com/content/pdf/10.1065/lca2007.06.345.pdf",
+          "pageCount": 13
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-ped2008-identity",
+          "artifactId": "art-ciroth-srocka-2008-pdf",
+          "locator": "Title, author/citation block and abstract",
+          "printedPages": "265",
+          "pdfIndices": [
+            0
+          ],
+          "topics": [
+            "work identity",
+            "study purpose"
+          ],
+          "limits": [
+            "Identity and purpose, not a complete reading of introductory historical examples."
+          ]
+        },
+        {
+          "id": "psg-ped2008-population",
+          "artifactId": "art-ciroth-srocka-2008-pdf",
+          "locator": "§§3.1–3.2; §3.7.3 footnote7",
+          "printedPages": "267,273",
+          "pdfIndices": [
+            2,
+            8
+          ],
+          "topics": [
+            "cup-type by shop population",
+            "offered assortment versus sales"
+          ],
+          "limits": [
+            "Sampling-day Berlin plastic cups; no sales-volume population inferred."
+          ]
+        },
+        {
+          "id": "psg-ped2008-design",
+          "artifactId": "art-ciroth-srocka-2008-pdf",
+          "locator": "§3.3, Table1; Table2 and sampling context",
+          "printedPages": "268–269",
+          "pdfIndices": [
+            3,
+            4
+          ],
+          "topics": [
+            "market frame",
+            "two-stage sampling",
+            "cup properties"
+          ],
+          "limits": [
+            "Nominal fractions do not establish individual inclusion probabilities or recover realized raw samples."
+          ]
+        },
+        {
+          "id": "psg-ped2008-estimators",
+          "artifactId": "art-ciroth-srocka-2008-pdf",
+          "locator": "Annex §§3.5.1–3.5.5",
+          "printedPages": "276",
+          "pdfIndices": [
+            11
+          ],
+          "topics": [
+            "separate stage weights",
+            "cluster ratio",
+            "poststratification",
+            "estimator versus population variance"
+          ],
+          "limits": [
+            "Raw counts/observations and all stratum statistics absent; printed notation is not silently repaired."
+          ]
+        },
+        {
+          "id": "psg-ped2008-results",
+          "artifactId": "art-ciroth-srocka-2008-pdf",
+          "locator": "§3.6 reported estimates and variance summaries",
+          "printedPages": "271",
+          "pdfIndices": [
+            6
+          ],
+          "topics": [
+            "reported cup means",
+            "estimated-mean precision",
+            "population spread"
+          ],
+          "limits": [
+            "Arithmetic from displayed summaries only; p271 legend must be distinguished from cup-stage annex definitions."
+          ]
+        },
+        {
+          "id": "psg-ped2008-discussion",
+          "artifactId": "art-ciroth-srocka-2008-pdf",
+          "locator": "§§3.7.3–3.7.4 and footnote7",
+          "printedPages": "273",
+          "pdfIndices": [
+            8
+          ],
+          "topics": [
+            "population meaning",
+            "stratified CV statement",
+            "interpretation boundaries"
+          ],
+          "limits": [
+            "The stated0.07% is inconsistent with p271 displayed mean/variance; cause unknown."
+          ]
+        },
+        {
+          "id": "psg-ped2008-limitations",
+          "artifactId": "art-ciroth-srocka-2008-pdf",
+          "locator": "§3.7.1 weaknesses; surrounding discussion",
+          "printedPages": "271–272",
+          "pdfIndices": [
+            6,
+            7
+          ],
+          "topics": [
+            "measurement",
+            "closed shops",
+            "population limitations"
+          ],
+          "limits": [
+            "Authors report mitigations; no independent survey or bias validation performed."
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "固定13页出版商PDF的选定方法、结果和附录；主代理与独立方法检查核对原页271、273、276及汇总算术。",
+        "methodologicalScope": "柏林特定抽样日的150g酸奶塑料杯类型×门店总体、杯重均值估计与散布。",
+        "independence": "同一原调查被后续2012/2016工作再用；期刊后继不是独立抽样复现。",
+        "limitations": [
+          "原始观测、完整分层统计量和后续校准子集未取得；不是从观测重现估计量。",
+          "p271分层方差与p273的0.07%存在未解释差异；不静默修复。",
+          "出版商访问情境未确定，选段检查不构成全篇阅读或领域批准。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "rights": "出版商页面在当前环境显示机构访问并提供普通下载链接；这不证明个人授权、公开访问或开放再利用许可。只记录实际选段检查，访问情境与再分发权利未确定；原始PDF、页面图像和捕获文本不进入公开产物。",
+      "unread": [
+        "未作全文/全部图表的完整细读。",
+        "原始观测、全部杯层统计量、市场×杯型份额、抽样代码及2012再分析子集身份未取得。",
+        "2007会议幻灯片是不同未晋升线索，不代替本文。"
+      ],
+      "sourceKeys": [
+        "SAMPLING2008-PEDIGREE-SELECTED"
+      ]
+    },
+    {
+      "id": "rd-ciroth-2016-pedigree-factors",
+      "workId": "work-ciroth-2016-pedigree-factors",
+      "title": "Empirically based uncertainty factors for the pedigree matrix in ecoinvent",
+      "version": "Online2013-12-20；IJLCA21(9):1338–1348 (2016)；出版商原件11页，PDF1对应印刷1338。",
+      "url": "https://link.springer.com/article/10.1007/s11367-013-0670-5",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "How do the actual sampling object, reported spread and proposed factor meanings connect, and which numerical steps are reconstructable?",
+      "argumentSummary": "The article proposes reference-group spread ratios and a tentative factor table, with a separate squared-GSD aggregation convention. Completeness details refer back to2012; conditional distribution arithmetic does not reproduce the empirical calibration.",
+      "artifacts": [
+        {
+          "id": "art-ciroth-2016-pedigree-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "645ed4cb76c4c1773276bd1a52e2299592bb3f33971adab6db99e1e02bf3226f",
+          "resolvedUrl": "https://link.springer.com/content/pdf/10.1007/s11367-013-0670-5.pdf",
+          "pageCount": 11
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-ped2016-identity",
+          "artifactId": "art-ciroth-2016-pedigree-pdf",
+          "locator": "Title, dates, abstract",
+          "printedPages": "1338",
+          "pdfIndices": [
+            0
+          ],
+          "topics": [
+            "online versus issue identity",
+            "phase0 scope"
+          ],
+          "limits": [
+            "Online2013 and issue2016 are one work, not separate replications."
+          ]
+        },
+        {
+          "id": "psg-ped2016-gsd-combination",
+          "artifactId": "art-ciroth-2016-pedigree-pdf",
+          "locator": "§§2.4–2.5; displayed GSD definition and Equation1",
+          "printedPages": "1343",
+          "pdfIndices": [
+            5
+          ],
+          "topics": [
+            "GSD definition",
+            "log-space SD",
+            "squared-GSD convention",
+            "independence conditions"
+          ],
+          "limits": [
+            "The printed affine-invariance statement is not valid for arbitrary additive shifts; only positive multiplicative scaling is used here."
+          ]
+        },
+        {
+          "id": "psg-ped2016-ratio-rule",
+          "artifactId": "art-ciroth-2016-pedigree-pdf",
+          "locator": "§2.6 candidate-factor rule",
+          "printedPages": "1344–1345",
+          "pdfIndices": [
+            6,
+            7
+          ],
+          "topics": [
+            "ideal-group reference",
+            "ratio inversion",
+            "candidate versus final proposal"
+          ],
+          "limits": [
+            "No independent residual-component identity or empirical raw subgroup reconstruction inferred."
+          ]
+        },
+        {
+          "id": "psg-ped2016-ratio-example",
+          "artifactId": "art-ciroth-2016-pedigree-pdf",
+          "locator": "§2.6 temporal-correlation illustrative example",
+          "printedPages": "1345",
+          "pdfIndices": [
+            7
+          ],
+          "topics": [
+            "illustrative3.2/1.3 ratio",
+            "candidate proposal"
+          ],
+          "limits": [
+            "This is an author illustration, not an observed yoghurt-cup pair."
+          ]
+        },
+        {
+          "id": "psg-ped2016-summary",
+          "artifactId": "art-ciroth-2016-pedigree-pdf",
+          "locator": "Table6; §3.2 completeness remarks; §3.3",
+          "printedPages": "1346–1347",
+          "pdfIndices": [
+            8,
+            9
+          ],
+          "topics": [
+            "tentative completeness row",
+            "GSD table convention",
+            "related2012 report"
+          ],
+          "limits": [
+            "Table is a proposal, not independently regenerated raw calibration; score5 is unavailable."
+          ]
+        },
+        {
+          "id": "psg-ped2016-limits",
+          "artifactId": "art-ciroth-2016-pedigree-pdf",
+          "locator": "§§3.3–4 conclusions and application discussion",
+          "printedPages": "1347",
+          "pdfIndices": [
+            9
+          ],
+          "topics": [
+            "generic defaults",
+            "case-specific uncertainty",
+            "future refinement"
+          ],
+          "limits": [
+            "No current database or software adoption checked; same source lineage is not new independent field evidence."
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "固定11页出版商PDF选定方法/结果；实际检查GSD定义、聚合式、候选比值、示例及Table6。",
+        "methodologicalScope": "2013网络发表、2016卷期的phase0因子建议及方法说明。",
+        "independence": "与2012报告同一项目及作者链；完整性数据仍来自同一杯重调查。",
+        "limitations": [
+          "详细完整性再分析指回2012报告，原始子集和汇总程序未提供。",
+          "GSD、平方GSD和对数标准差按各处明示约定区分；比值作为独立分量是额外模型选择。",
+          "选段内的代数问题不等于发现正式勘误或确认软件缺陷。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "rights": "出版商页面在当前环境显示机构访问并提供普通下载链接；这不证明个人授权、公开访问或开放再利用许可。只记录实际选段检查，访问情境与再分发权利未确定；原始PDF、页面图像和捕获文本不进入公开产物。",
+      "unread": [
+        "未声称完整全文及全部参考文献细读。",
+        "全部时间/地理/技术底层资料、原计算代码及非对数正态扩展论文未重现。",
+        "当前ecoinvent实施、全部因子的行业适用性与独立外部验证未检查。"
+      ],
+      "sourceKeys": [
+        "JOURNAL2016-PEDIGREE-SELECTED"
+      ]
     }
   ],
   "gaps": [
@@ -6251,8 +6682,8 @@
     },
     {
       "id": "gap-w3-calibration-reconciliation",
-      "description": "Ciroth2012 summary and conversion tables treat reliabilityscore5 differently; notation mixes GSD/squaredGSD/95%factor labels. No numeric default accepted.",
-      "nextAction": "Compare full later article, source calculations and any author corrections; reconcile parameter conventions and missing-value policy before formulas/factors enter examples or software.",
+      "description": "Selected2008original,2012report,2016journal and2018scoring supplement now inspectable; raw empirical database/subset pooling, internal numeric discrepancies, actual software and general calibration validity remain unclosed.",
+      "nextAction": "Complete source-bound exposition and conditional arithmetic; preserve exact missing observations/subsets and unresolved version/quantity conventions, then seek independent empirical/domain evidence through authorized routes.",
       "affectedUnits": [
         "V4-06",
         "V7-02",
@@ -6496,6 +6927,18 @@
       "affectedUnits": [
         "P01",
         "V7",
+        "A06"
+      ]
+    },
+    {
+      "id": "gap-ped-raw-calibration-and-error-origin",
+      "description": "Original raw cup observations, all stratum statistics and2012subset/pooling code remain unavailable;2008stratifiedCV discrepancy and later algebra/convention ambiguities have no verified correction.",
+      "nextAction": "Do not tune or extrapolate defaults. Preserve source pairs and only reconstruct disclosed summaries; investigate attributable corrections or legitimately supplied data separately.",
+      "affectedUnits": [
+        "V4-06",
+        "V7-02",
+        "V7-07",
+        "A05",
         "A06"
       ]
     }
