@@ -62,7 +62,7 @@ export function ClaimAnnotation({ id, showCaseInput = true, premiseReferences }:
       const reference = premiseReferences?.get(premise);
       return <li key={premise}><Link href={reference?.href ?? `/claims/#${premise}`}>{reference?.label ?? linked.text}</Link></li>;
     })}</ul></details>}
-    {showCaseInput && claim.caseBinding?.inputFile && <p><a href={`/downloads/cases/${claim.caseBinding.inputFile}`}>计算输入（版本 {claim.caseBinding.version}）</a></p>}
+    {showCaseInput && claim.caseBinding?.inputFile && <p><a href={`/downloads/cases/${claim.caseBinding.inputFile}`} download={claim.caseBinding.inputFile}>下载计算输入（版本 {claim.caseBinding.version}）</a></p>}
   </div>;
 }
 

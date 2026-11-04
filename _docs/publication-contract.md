@@ -16,8 +16,8 @@ checkPaths:
   - "content/**"
   - "scripts/**"
   - "releases/**"
-lastReviewedAt: 2026-11-04
-lastReviewedCommit: 2f7c1824d9926424a13d77d00fbb58d34e932d8a
+lastReviewedAt: 2026-11-05
+lastReviewedCommit: b82848541053517d1ae90ca6cc0776d91ecac5aa
 ---
 
 # Publication contract
@@ -63,3 +63,11 @@ Reused original works receive precise additional passage/visual-check records wh
 The user-approved `_docs/reader-publication-contract.md` governs every delivered reading page. Public prose is finished exposition; all research/development process logs and TODOs stay in `_docs/`. Scientific scope, source identity, counterevidence and hypothetical assumptions remain reader-accessible. Stable machine identities and validation receipts do not become visible prose labels. Source/reader review and actual visual verification supplement software checks.
 
 Static prose examples retain versioned public inputs and exact materialized claims even when they do not use a calculator widget. Water-locality numbers are synthetic; the phosphorus example binds a source-derived inventory-estimation coefficient and leaves its LCIA factor symbolic. The registered adapter fixes each numerical-source policy; an input flag cannot suppress required source evidence. Changed v1 tuples require renewed model/version and complete affected-prose review.
+
+## Source-table fact sets and historical reconstruction
+
+An evidence record may publish either its legacy singular `numericFact` or a nonempty `numericFacts` list. Each plural item has a unique identity within that evidence and the same decimal value, unit, quantity, subject and basis contract; singular/plural coexistence is rejected. Nested publication projection excludes unknown fields. Fact identity alone does not establish source entailment or scientific validity.
+
+The historical-glass adapter requires every selected fact in the reviewed public closure with matching evidence/source identity, fact ID, value, unit and subject, and binds the exact inspected original PDF hash. Its closed v1 records selected component arithmetic and source-reported summary normalization, retaining unclosed whole-system assembly, unreported precision and empirical limits. The author-conditional coefficient-rounding bound holds displayed mass fixed and is not a probability or empirical uncertainty interval. Neither input flags nor a matching aggregate permit bypassing source facts or declaring complete original-software reproduction.
+
+Historical numerical publication also requires the actual reading register. Each fact's evidence must resolve through an inspected same-source reading and an unambiguous passage to its original-PDF artifact with the fixed hash. A source's default snapshot cannot substitute for a missing or different passage carrier. Generic mixed-carrier readings remain valid for other evidence; carrier identity checks still do not establish that a passage entails its claimed quantity.

@@ -78,6 +78,12 @@ export function validateCatalog(data) {
   function textFields(item, path, fields) {
     for (const field of fields) if (!isText(item[field])) fail(`${path}.${field}`, 'must be a nonempty string');
   }
+  function numericFact(fact, path) {
+    if (!isObject(fact)) { fail(path, 'must be an object'); return; }
+    textFields(fact, path, ['unit', 'quantity', 'subject', 'basis']);
+    const value = fact.value;
+    if (typeof value !== 'string' || value.length > 200 || !/^-?(?:\d+(?:\.\d+)?|\.\d+)$/.test(value)) fail(`${path}.value`, 'must be a finite decimal string');
+  }
   function choice(item, path, field, choices) {
     if (!choices.includes(item[field])) fail(`${path}.${field}`, `must be one of ${choices.join(', ')}`);
   }
@@ -140,12 +146,23 @@ export function validateCatalog(data) {
     if (!sourceMap.has(evidence.sourceId)) fail(`${p}.sourceId`, `unknown source ${evidence.sourceId}`);
     if (evidence.relation !== undefined) choice(evidence, p, 'relation', relations);
     else if ([...claimMap.values()].some(claim => ids(claim.evidenceIds).includes(evidence.id) && !(Array.isArray(claim.evidenceLinks) && claim.evidenceLinks.some(link => isObject(link) && link.evidenceId === evidence.id)))) fail(`${p}.relation`, 'may be absent only when every claim use has an explicit evidence link');
-    if (evidence.numericFact !== undefined) {
-      if (!isObject(evidence.numericFact)) fail(`${p}.numericFact`, 'must be an object');
+    if (evidence.numericFact !== undefined && evidence.numericFacts !== undefined) fail(p, 'numericFact and numericFacts must not both be supplied');
+    if (evidence.numericFact !== undefined) numericFact(evidence.numericFact, `${p}.numericFact`);
+    if (evidence.numericFacts !== undefined) {
+      if (!Array.isArray(evidence.numericFacts)) fail(`${p}.numericFacts`, 'must be an array');
       else {
-        textFields(evidence.numericFact, `${p}.numericFact`, ['unit', 'quantity', 'subject', 'basis']);
-        const value = evidence.numericFact.value;
-        if (typeof value !== 'string' || value.length > 200 || !/^-?(?:\d+(?:\.\d+)?|\.\d+)$/.test(value)) fail(`${p}.numericFact.value`, 'must be a finite decimal string');
+        if (evidence.numericFacts.length === 0) fail(`${p}.numericFacts`, 'must not be empty');
+        const factIds = new Set();
+        for (const [index, fact] of evidence.numericFacts.entries()) {
+          const path = `${p}.numericFacts[${index}]`;
+          numericFact(fact, path);
+          if (!isObject(fact)) continue;
+          textFields(fact, path, ['id']);
+          if (isText(fact.id)) {
+            if (factIds.has(fact.id)) fail(`${path}.id`, `duplicate numeric fact ID ${fact.id}`);
+            factIds.add(fact.id);
+          }
+        }
       }
     }
     if (evidence.appraisal !== undefined) {
@@ -252,7 +269,7 @@ export function validateCatalog(data) {
 
 const fields = {
   sources: ['id', 'title', 'url', 'version', 'publisher', 'accessedAt', 'accessStatus', 'rights', 'preservation', 'artifact', 'reading'],
-  evidence: ['id', 'sourceId', 'locator', 'summary', 'relation', 'appraisal', 'readingId', 'passageId', 'numericFact'],
+  evidence: ['id', 'sourceId', 'locator', 'summary', 'relation', 'appraisal', 'readingId', 'passageId', 'numericFact', 'numericFacts'],
   claims: ['id', 'text', 'kind', 'scope', 'evidenceIds', 'evidenceLinks', 'premiseIds', 'conceptIds', 'mappingIds', 'status', 'reviewedAt', 'reviewKind', 'caveats', 'reasoning', 'caseBinding'],
   concepts: ['id', 'label', 'english', 'definitionClaimIds', 'aliases'],
   mappings: ['id', 'from', 'to', 'relation', 'conditions', 'claimIds'],
@@ -269,6 +286,7 @@ const nestedFields = {
 const select = (section, record) => {
   return Object.fromEntries(fields[section].filter(key => record[key] !== undefined).map(key => {
     if (nestedFields[key]) return [key, pick(record[key], nestedFields[key])];
+    if (key === 'numericFacts') return [key, record[key].map(fact => pick(fact, ['id', ...nestedFields.numericFact]))];
     if (key === 'evidenceLinks') return [key, record[key].map(link => pick(link, ['evidenceId', 'relation', 'rationale']))];
     return [key, structuredClone(record[key])];
   }));

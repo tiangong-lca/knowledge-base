@@ -14,8 +14,8 @@ checkPaths:
   - "package.json"
   - "app/**"
   - "scripts/**"
-lastReviewedAt: 2026-11-04
-lastReviewedCommit: 2f7c1824d9926424a13d77d00fbb58d34e932d8a
+lastReviewedAt: 2026-11-05
+lastReviewedCommit: b82848541053517d1ae90ca6cc0776d91ecac5aa
 ---
 
 # LCA Living Knowledge Base and Review
@@ -74,3 +74,5 @@ The expanded `/docs/book/allocation-and-substitution/` also contains CASE-JOINT-
 Read [_docs/reader-publication-contract.md](_docs/reader-publication-contract.md). Published pages are finished book prose with scholarly notes; research/development logs and TODOs stay in development Markdown. Layout matches the owning docs site, with tree-derived order and chapter-wide notes shared by normal and print reading. The public `/research/` route is a bibliography. Preserve actual source/assumption limitations, and assess reader/layout quality independently from source and code validation.
 
 The water-locality and phosphorus-boundary examples publish versioned inputs and exact evaluated receipts under `/downloads/cases/`, linked from their chapter notes. They are static explanatory examples: water values are synthetic; the phosphorus default is source-bound and conditional, with characterization left symbolic. Use their registered case identities with `scripts/impact.mjs` for affected-claim review.
+
+The expanded historical-container chapter reconstructs selected 1974 service, glass-energy and summary-normalization steps. `historical-glass-v1` inputs and evaluated receipts retain every required source-fact identity and the original PDF hash. Whole-system assembly is explicitly not fully reproduced; the displayed coefficient-rounding check is conditional, not empirical uncertainty. Use `node scripts/impact.mjs CASE-HISTORICAL-GLASS` for affected numerical prose.

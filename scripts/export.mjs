@@ -12,7 +12,7 @@ const readingLedger = JSON.parse(readFileSync('knowledge/research/readings.json'
 const catalog = JSON.parse(readFileSync('knowledge/catalog.json', 'utf8'));
 const cases = await loadCasePublications(process.cwd());
 // Revalidate joins and public MDX independently of the preceding build step.
-const errors = [...new Set([...validateCasePublications(cases, catalog), ...await validateRepository(process.cwd())])];
+const errors = [...new Set([...validateCasePublications(cases, catalog, { readingRegister: readingLedger }), ...await validateRepository(process.cwd())])];
 if (errors.length) throw new Error(errors.join('\n'));
 for (const route of ['', 'docs', 'sources', 'claims', 'concepts', 'coverage', 'changes', 'print', 'research']) {
   if (!existsSync(`out/${route ? `${route}/` : ''}index.html`)) throw new Error(`Missing static route: ${route}`);
