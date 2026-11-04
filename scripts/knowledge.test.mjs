@@ -358,3 +358,84 @@ test('malformed numeric facts and unbound case identities cannot publish', () =>
   data.claims[0].caseBinding = { caseId: '../secret', version: 'latest', inputSha256: null };
   hasError(data, /caseBinding.caseId/); hasError(data, /caseBinding.version/); hasError(data, /caseBinding.inputSha256/);
 });
+
+const numericFact = () => ({ value: '28.1', unit: 'ratio', quantity: 'GWP100', subject: 'CH4-fossil', basis: 'specified corrected table' });
+
+test('legacy numerical evidence retains its exact public shape without a fact ID', () => {
+  const data = fixture();
+  data.evidence[0].numericFact = numericFact();
+  assert.deepEqual(validateCatalog(data), []);
+  assert.deepEqual(publicCatalog(data).evidence[0], data.evidence[0]);
+  assert.equal(Object.hasOwn(publicCatalog(data).evidence[0], 'numericFacts'), false);
+});
+
+test('one source-table evidence can expose distinct facts with IDs local to that evidence', () => {
+  const data = fixture();
+  data.evidence[0].numericFacts = [
+    { id: 'source', ...numericFact() },
+    { id: 'second-cell', ...numericFact(), value: '273', subject: 'N2O' },
+  ];
+  data.evidence.push({ ...data.evidence[0], id: 'other-evidence', locator: 'section 2', numericFacts: [{ id: 'source', ...numericFact() }] });
+  assert.deepEqual(validateCatalog(data), []);
+  const out = publicCatalog(data);
+  assert.deepEqual(out.evidence[0].numericFacts, data.evidence[0].numericFacts);
+  assert.equal(out.evidence[0].locator, data.evidence[0].locator);
+  assert.equal(out.evidence.length, 1);
+  assert.equal(Object.hasOwn(out.evidence[0], 'numericFact'), false);
+});
+
+test('plural numerical facts refuse malformed lists, missing identities and duplicate identities', () => {
+  for (const [numericFacts, pattern] of [
+    [null, /numericFacts: must be an array/],
+    [{ id: 'one', ...numericFact() }, /numericFacts: must be an array/],
+    [[], /numericFacts: must not be empty/],
+    [[null], /numericFacts\[0\]: must be an object/],
+    [[[]], /numericFacts\[0\]: must be an object/],
+    [['one'], /numericFacts\[0\]: must be an object/],
+    [[numericFact()], /numericFacts\[0\].id: must be a nonempty string/],
+    [[{ id: ' ', ...numericFact() }], /numericFacts\[0\].id: must be a nonempty string/],
+    [[{ id: 1, ...numericFact() }], /numericFacts\[0\].id: must be a nonempty string/],
+    [[{ id: 'one', ...numericFact() }, { id: 'one', ...numericFact(), value: '30' }], /numericFacts\[1\].id: duplicate numeric fact ID one/],
+  ]) {
+    const data = fixture(); data.evidence[0].numericFacts = numericFacts;
+    hasError(data, pattern);
+    assert.throws(() => publicCatalog(data), /Cannot publish invalid catalog/);
+  }
+});
+
+test('singular and plural facts share decimal and nonempty semantic-field validation', () => {
+  for (const [field, value] of [
+    ...['NaN', 'Infinity', '1e3', ' 1', '', '1'.repeat(201), 28.1, null].map(value => ['value', value]),
+    ...['unit', 'quantity', 'subject', 'basis'].flatMap(field => [[field, ' '], [field, null], [field, undefined]]),
+  ]) {
+    for (const plural of [false, true]) {
+      const data = fixture();
+      const fact = { ...numericFact(), [field]: value };
+      const path = plural ? 'numericFacts[0]' : 'numericFact';
+      data.evidence[0][plural ? 'numericFacts' : 'numericFact'] = plural ? [{ id: 'one', ...fact }] : fact;
+      assert.ok(validateCatalog(data).some(error => error.startsWith(`evidence.evidence.${path}.${field}:`)), `${path}.${field} must reject ${String(value)}`);
+      assert.throws(() => publicCatalog(data), /Cannot publish invalid catalog/);
+    }
+  }
+});
+
+test('a record cannot publish singular and plural facts together even if individually valid', () => {
+  const data = fixture();
+  data.evidence[0].numericFact = numericFact();
+  data.evidence[0].numericFacts = [{ id: 'one', ...numericFact() }];
+  hasError(data, /numericFact and numericFacts must not both be supplied/);
+  assert.throws(() => publicCatalog(data), /numericFact and numericFacts must not both be supplied/);
+});
+
+test('plural numerical projection allowlists every nested fact and does not alias raw input', () => {
+  const data = fixture();
+  const facts = [{ id: 'one', ...numericFact() }, { id: 'two', ...numericFact(), value: '30' }];
+  data.evidence[0].numericFacts = facts.map(fact => ({ ...fact, privatePath: 'PRIVATE', unknown: { rawCapture: 'PRIVATE' } }));
+  const out = publicCatalog(data);
+  assert.deepEqual(out.evidence[0].numericFacts, facts);
+  assert.equal(JSON.stringify(out).includes('PRIVATE'), false);
+  out.evidence[0].numericFacts[0].basis = 'Changed projection';
+  out.evidence[0].numericFacts.push({ id: 'three', ...numericFact() });
+  assert.equal(data.evidence[0].numericFacts[0].basis, numericFact().basis);
+  assert.equal(data.evidence[0].numericFacts.length, 2);
+});

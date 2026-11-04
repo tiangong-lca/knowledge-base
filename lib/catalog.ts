@@ -88,6 +88,14 @@ export interface EvidenceAppraisalRecord {
   checkedAt: string;
 }
 
+export interface NumericFact {
+  value: string;
+  unit: string;
+  quantity: string;
+  subject: string;
+  basis: string;
+}
+
 export interface EvidenceRecord {
   id: string;
   sourceId: string;
@@ -97,6 +105,8 @@ export interface EvidenceRecord {
   appraisal?: EvidenceAppraisalRecord;
   readingId?: string;
   passageId?: string;
+  numericFact?: NumericFact;
+  numericFacts?: (NumericFact & { id: string })[];
 }
 
 export interface ClaimRecord {
