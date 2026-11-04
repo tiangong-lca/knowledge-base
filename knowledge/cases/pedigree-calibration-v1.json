@@ -1,0 +1,208 @@
+{
+  "caseId": "CASE-PEDIGREE-CALIBRATION",
+  "version": "1.0.0",
+  "model": "selected-summary-and-conditional-lognormal-v1",
+  "createdAt": "2026-11-05",
+  "status": "source-summary-arithmetic-and-author-illustrations",
+  "sources": {
+    "sampling2008": {
+      "sourceId": "src-book-ciroth-srocka-2008-sampling",
+      "readingId": "rd-ciroth-srocka-2008-sampling",
+      "artifactId": "art-ciroth-srocka-2008-pdf",
+      "sha256": "eb0f22d9be1b085fa4af12a53d132b6db5bd9486d05ff12089368e7e35e0b834"
+    },
+    "report2012": {
+      "sourceId": "src-book-ciroth-2012-pedigree-refinement",
+      "readingId": "rd-ciroth-2012-pedigree-refinement",
+      "artifactId": "art-ciroth-2012-pedigree-report",
+      "sha256": "91278d5d2384565aec224a092c74eac5dbce2a684925a6c15e3bfd7c6e17507c"
+    },
+    "journal2016": {
+      "sourceId": "src-book-ciroth-2016-pedigree-factors",
+      "readingId": "rd-ciroth-2016-pedigree-factors",
+      "artifactId": "art-ciroth-2016-pedigree-pdf",
+      "sha256": "645ed4cb76c4c1773276bd1a52e2299592bb3f33971adab6db99e1e02bf3226f"
+    }
+  },
+  "facts": {
+    "clusterMean": {
+      "value": "5.6589",
+      "unit": "g",
+      "subject": "pedigree-clusterMean",
+      "sourceKey": "sampling2008",
+      "evidenceId": "ev-ped-sampling-results",
+      "factId": "nf-ped-clusterMean",
+      "passageId": "psg-ped2008-results"
+    },
+    "clusterVariance": {
+      "value": "0.0072",
+      "unit": "g²",
+      "subject": "pedigree-clusterVariance",
+      "sourceKey": "sampling2008",
+      "evidenceId": "ev-ped-sampling-results",
+      "factId": "nf-ped-clusterVariance",
+      "passageId": "psg-ped2008-results"
+    },
+    "postMean": {
+      "value": "5.7245",
+      "unit": "g",
+      "subject": "pedigree-postMean",
+      "sourceKey": "sampling2008",
+      "evidenceId": "ev-ped-sampling-results",
+      "factId": "nf-ped-postMean",
+      "passageId": "psg-ped2008-results"
+    },
+    "postVariance": {
+      "value": "0.0014",
+      "unit": "g²",
+      "subject": "pedigree-postVariance",
+      "sourceKey": "sampling2008",
+      "evidenceId": "ev-ped-sampling-results",
+      "factId": "nf-ped-postVariance",
+      "passageId": "psg-ped2008-results"
+    },
+    "stratifiedMean": {
+      "value": "5.6474",
+      "unit": "g",
+      "subject": "pedigree-stratifiedMean",
+      "sourceKey": "sampling2008",
+      "evidenceId": "ev-ped-sampling-results",
+      "factId": "nf-ped-stratifiedMean",
+      "passageId": "psg-ped2008-results"
+    },
+    "stratifiedVariance": {
+      "value": "0.0034",
+      "unit": "g²",
+      "subject": "pedigree-stratifiedVariance",
+      "sourceKey": "sampling2008",
+      "evidenceId": "ev-ped-sampling-results",
+      "factId": "nf-ped-stratifiedVariance",
+      "passageId": "psg-ped2008-results"
+    },
+    "populationVariance": {
+      "value": "0.72",
+      "unit": "g²",
+      "subject": "pedigree-populationVariance",
+      "sourceKey": "sampling2008",
+      "evidenceId": "ev-ped-sampling-results",
+      "factId": "nf-ped-populationVariance",
+      "passageId": "psg-ped2008-results"
+    },
+    "conflictingStratifiedCv": {
+      "value": "0.07",
+      "unit": "%",
+      "subject": "pedigree-conflictingStratifiedCv",
+      "sourceKey": "sampling2008",
+      "evidenceId": "ev-ped-sampling-conflict",
+      "factId": "nf-ped-conflictingStratifiedCv",
+      "passageId": "psg-ped2008-discussion"
+    },
+    "preciseScoreTwo": {
+      "value": "1.032982251",
+      "unit": "GSD",
+      "subject": "pedigree-preciseScoreTwo",
+      "sourceKey": "report2012",
+      "evidenceId": "ev-ped-completeness-factors",
+      "factId": "nf-ped-preciseScoreTwo",
+      "passageId": "psg-ped2012-completeness-factors"
+    },
+    "preciseScoreThree": {
+      "value": "1.041623865",
+      "unit": "GSD",
+      "subject": "pedigree-preciseScoreThree",
+      "sourceKey": "report2012",
+      "evidenceId": "ev-ped-completeness-factors",
+      "factId": "nf-ped-preciseScoreThree",
+      "passageId": "psg-ped2012-completeness-factors"
+    },
+    "preciseScoreFour": {
+      "value": "1.084355355",
+      "unit": "GSD",
+      "subject": "pedigree-preciseScoreFour",
+      "sourceKey": "report2012",
+      "evidenceId": "ev-ped-completeness-factors",
+      "factId": "nf-ped-preciseScoreFour",
+      "passageId": "psg-ped2012-completeness-factors"
+    },
+    "roundedScoreTwo": {
+      "value": "1.03",
+      "unit": "GSD",
+      "subject": "pedigree-roundedScoreTwo",
+      "sourceKey": "report2012",
+      "evidenceId": "ev-ped-completeness-factors",
+      "factId": "nf-ped-roundedScoreTwo",
+      "passageId": "psg-ped2012-completeness-factors"
+    },
+    "roundedScoreThree": {
+      "value": "1.04",
+      "unit": "GSD",
+      "subject": "pedigree-roundedScoreThree",
+      "sourceKey": "report2012",
+      "evidenceId": "ev-ped-completeness-factors",
+      "factId": "nf-ped-roundedScoreThree",
+      "passageId": "psg-ped2012-completeness-factors"
+    },
+    "roundedScoreFour": {
+      "value": "1.08",
+      "unit": "GSD",
+      "subject": "pedigree-roundedScoreFour",
+      "sourceKey": "report2012",
+      "evidenceId": "ev-ped-completeness-factors",
+      "factId": "nf-ped-roundedScoreFour",
+      "passageId": "psg-ped2012-completeness-factors"
+    },
+    "journalScoreTwo": {
+      "value": "1.03",
+      "unit": "GSD",
+      "subject": "pedigree-journalScoreTwo",
+      "sourceKey": "journal2016",
+      "evidenceId": "ev-ped-journal-summary",
+      "factId": "nf-ped-journalScoreTwo",
+      "passageId": "psg-ped2016-summary"
+    },
+    "idealGsd": {
+      "value": "1.3",
+      "unit": "GSD",
+      "subject": "pedigree-idealGsd",
+      "sourceKey": "journal2016",
+      "evidenceId": "ev-ped-ratio-example",
+      "factId": "nf-ped-idealGsd",
+      "passageId": "psg-ped2016-ratio-example"
+    },
+    "otherGsd": {
+      "value": "3.2",
+      "unit": "GSD",
+      "subject": "pedigree-otherGsd",
+      "sourceKey": "journal2016",
+      "evidenceId": "ev-ped-ratio-example",
+      "factId": "nf-ped-otherGsd",
+      "passageId": "psg-ped2016-ratio-example"
+    }
+  },
+  "interpretation": {
+    "rawObservationsReconstructed": false,
+    "empiricalCalibrationReproduced": false,
+    "currentDatabaseSoftwareExecuted": false,
+    "unreportedPrecisionRecovered": false,
+    "scientificValidation": false,
+    "sourceReportedDiscrepanciesRepaired": false,
+    "summaryArithmeticFromDisplayedValues": true,
+    "ratioResidualIsAuthorConditional": true
+  },
+  "illustration": {
+    "kind": "author-stipulated-independent-lognormal-inventory-parameter",
+    "median": "10",
+    "unit": "kg material / stipulated product item",
+    "basicGsd": "1.2",
+    "selectedCompletenessScore": "2",
+    "factorFactKey": "roundedScoreTwo",
+    "otherAdditionalFactors": "1",
+    "logComponentsIndependent": true,
+    "distribution": "lognormal",
+    "center": "median-not-arithmetic-mean",
+    "logIntervalHalfWidthSd": "2",
+    "wholeLifeCycleModel": false,
+    "actualCupMeanConfidenceInterval": false,
+    "realProductRecommendation": false
+  }
+}

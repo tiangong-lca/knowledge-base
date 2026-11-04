@@ -7678,6 +7678,90 @@
         "V7"
       ],
       "status": "applied"
+    },
+    {
+      "id": "rev-ped-population",
+      "before": "Data-quality exposition explains calibration mostly in general terms.",
+      "after": "Follow the actual offered-type-by-shop population, staged sampling and weighted estimator before discussing probability factors.",
+      "reasoning": "New actual source inspection changes the explanatory chain while preserving missing data, access and scientific-validity limits.",
+      "triggerPassageIds": [
+        "psg-ped2008-population",
+        "psg-ped2008-design",
+        "psg-ped2008-estimators"
+      ],
+      "affectedUnits": [
+        "V4-06",
+        "V7-02",
+        "A05"
+      ],
+      "status": "applied-to-candidate-prose; independent integrated review and publication qualification pending"
+    },
+    {
+      "id": "rev-ped-precision",
+      "before": "Variability and mean uncertainty are distinguished through an earlier teaching example.",
+      "after": "Add source-summary arithmetic for actual reported cluster/poststratified/population quantities; preserve unresolved stratified CV conflict.",
+      "reasoning": "New actual source inspection changes the explanatory chain while preserving missing data, access and scientific-validity limits.",
+      "triggerPassageIds": [
+        "psg-ped2008-results",
+        "psg-ped2008-discussion"
+      ],
+      "affectedUnits": [
+        "V4-06",
+        "V7-07",
+        "A05"
+      ],
+      "status": "applied-to-candidate-prose; independent integrated review and publication qualification pending"
+    },
+    {
+      "id": "rev-ped-calibration",
+      "before": "The homogeneous-cup calibration is named but its intermediate steps remain verbal.",
+      "after": "Explain subset-reference and scoring choices, precise/rounded proposals and exact unavailable raw/pooling steps; related later publication is not independent replication.",
+      "reasoning": "New actual source inspection changes the explanatory chain while preserving missing data, access and scientific-validity limits.",
+      "triggerPassageIds": [
+        "psg-ped2012-completeness-subsets",
+        "psg-ped2012-completeness-factors",
+        "psg-ped2012-cup-database",
+        "psg-ped2016-summary"
+      ],
+      "affectedUnits": [
+        "V4-06",
+        "V7-02",
+        "A06"
+      ],
+      "status": "applied-to-candidate-prose; independent integrated review and publication qualification pending"
+    },
+    {
+      "id": "rev-ped-probability-meaning",
+      "before": "GSD/log-SD/squared-factor differences are listed as a caution.",
+      "after": "Derive their conditional transformations and one explicit median-centered lognormal inventory example; distinguish a group ratio from an independently additive log-variance component.",
+      "reasoning": "New actual source inspection changes the explanatory chain while preserving missing data, access and scientific-validity limits.",
+      "triggerPassageIds": [
+        "psg-ped2012-gsd-definition",
+        "psg-ciroth2012-distribution-assumptions",
+        "psg-ped2016-gsd-combination",
+        "psg-ped2016-ratio-example"
+      ],
+      "affectedUnits": [
+        "V4-06",
+        "A05"
+      ],
+      "status": "applied-to-candidate-prose; independent integrated review and publication qualification pending"
+    },
+    {
+      "id": "rev-ped-scoring-test",
+      "before": "The alternative data-quality position relies on selected main-paper prose; supplement was unavailable.",
+      "after": "Add actual official test design/results and distinguish reproducibility of grades from empirical probability calibration or training efficacy.",
+      "reasoning": "New actual source inspection changes the explanatory chain while preserving missing data, access and scientific-validity limits.",
+      "triggerPassageIds": [
+        "psg-ped-ei2018-test-design",
+        "psg-ped-ei2018-test-results"
+      ],
+      "affectedUnits": [
+        "V7-02",
+        "V7-07",
+        "A06"
+      ],
+      "status": "applied-to-candidate-prose; independent integrated review and publication qualification pending"
     }
   ]
 }

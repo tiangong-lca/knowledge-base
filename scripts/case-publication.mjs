@@ -6,6 +6,7 @@ import { evaluateTeachingCase, validateTeachingCase } from './teaching-case.mjs'
 import { evaluateJointProductionCase, validateJointProductionCase } from './joint-production.mjs';
 import { publicCatalog } from './knowledge.mjs';
 import { evaluateWaterLocalityCase, validateWaterLocalityCase, evaluatePhosphorusBoundaryCase, validatePhosphorusBoundaryCase } from './impact-examples.mjs';
+import { pedigreeFactKeys, validatePedigreeCalibrationCase, evaluatePedigreeCalibrationCase } from './pedigree-calibration.mjs';
 import { historicalFactKeys, validateHistoricalContainerCase, evaluateHistoricalContainerCase } from './historical-container.mjs';
 
 // Every nested object has an explicit schema. Unknown fields never enter public
@@ -66,9 +67,25 @@ const historicalInputShape = {
   facts: Object.fromEntries(historicalFactKeys.map(key => [key, { value: scalar, unit: scalar, subject: scalar, evidenceId: scalar, factId: scalar }])),
   coefficientRounding: { kind: scalar, halfWidth: scalar, massHeldAtPrintedValue: scalar, massPrecisionIncluded: scalar, probabilityAssigned: scalar },
 };
+const pedigreeInputShape = {
+  caseId: scalar, version: scalar, model: scalar, createdAt: scalar, status: scalar,
+  sources: Object.fromEntries(['sampling2008', 'report2012', 'journal2016'].map(key => [key,
+    { sourceId: scalar, readingId: scalar, artifactId: scalar, sha256: scalar }])),
+  facts: Object.fromEntries(pedigreeFactKeys.map(key => [key,
+    { value: scalar, unit: scalar, subject: scalar, sourceKey: scalar, evidenceId: scalar, factId: scalar, passageId: scalar }])),
+  interpretation: { rawObservationsReconstructed: scalar, empiricalCalibrationReproduced: scalar,
+    currentDatabaseSoftwareExecuted: scalar, unreportedPrecisionRecovered: scalar, scientificValidation: scalar,
+    sourceReportedDiscrepanciesRepaired: scalar, summaryArithmeticFromDisplayedValues: scalar, ratioResidualIsAuthorConditional: scalar },
+  illustration: { kind: scalar, median: scalar, unit: scalar, basicGsd: scalar, selectedCompletenessScore: scalar,
+    factorFactKey: scalar, otherAdditionalFactors: scalar, logComponentsIndependent: scalar, distribution: scalar,
+    center: scalar, logIntervalHalfWidthSd: scalar, wholeLifeCycleModel: scalar, actualCupMeanConfidenceInterval: scalar,
+    realProductRecommendation: scalar },
+};
 // Closed model registry: a case identity selects its projection, evaluator and
 // numeric-source policy together. An input flag cannot disable wall fact checks.
 const caseAdapters = new Map([
+  ['CASE-PEDIGREE-CALIBRATION', { shape: pedigreeInputShape, validate: validatePedigreeCalibrationCase,
+    context: input => ({ evaluated: evaluatePedigreeCalibrationCase(input) }), validateFacts: validatePedigreeFacts }],
   ['CASE-HISTORICAL-GLASS', { shape: historicalInputShape, validate: validateHistoricalContainerCase,
     context: input => ({ evaluated: evaluateHistoricalContainerCase(input) }), validateFacts: validateHistoricalFacts }],
   ['CASE-WATER-LOCALITY', { shape: waterInputShape, validate: validateWaterLocalityCase,
@@ -274,6 +291,62 @@ function validateHistoricalFacts(spec, published, context) {
         || (carrier?.artifact.kind !== undefined && carrier.artifact.kind !== 'retrieved') || carrier?.artifact.mediaType !== 'application/pdf'
         || carrier?.artifact.sha256 !== spec.sourceArtifactSha256)
       errors.push(`historical reconstruction.facts.${key}: missing or mismatched inspected original PDF passage carrier`);
+  }
+  return errors;
+}
+// This case requires actual passage-carrier resolution. Neither input policy
+// flags nor a source's default snapshot can replace the inspected reading.
+function validatePedigreeFacts(spec, published, context) {
+  const errors = [], register = context?.readingRegister;
+  const readings = new Map(), passages = new Map(), artifacts = new Map(), identities = new Set();
+  let malformed = !object(register) || register.schemaVersion !== 1 || !Array.isArray(register.readings);
+  const identify = record => {
+    if (!object(record) || typeof record.id !== 'string' || !/^[A-Za-z][A-Za-z0-9._:-]*$/.test(record.id)
+        || identities.has(record.id)) { malformed = true; return false; }
+    identities.add(record.id); return true;
+  };
+  if (!malformed) for (const reading of register.readings) {
+    if (!identify(reading)) continue;
+    readings.set(reading.id, reading);
+    if (!Array.isArray(reading.passages) || !Array.isArray(reading.artifacts)) { malformed = true; continue; }
+    for (const passage of reading.passages) if (identify(passage)) passages.set(passage.id, { reading, passage });
+    for (const artifact of reading.artifacts) if (identify(artifact)) artifacts.set(artifact.id, { reading, artifact });
+  }
+  if (malformed) errors.push('pedigree calibration: an unambiguous actual reading register with unique reading/passage/artifact identities is required');
+  const sourceIds = new Set();
+  for (const source of published.sources) {
+    if (sourceIds.has(source.id)) errors.push('pedigree calibration: ambiguous public source identity');
+    sourceIds.add(source.id);
+  }
+  const evidenceIds = new Set();
+  for (const evidence of published.evidence) {
+    if (evidenceIds.has(evidence.id)) errors.push('pedigree calibration: ambiguous public evidence identity');
+    evidenceIds.add(evidence.id);
+  }
+  const sources = new Map(published.sources.map(source => [source.id, source]));
+  const evidenceById = new Map(published.evidence.map(evidence => [evidence.id, evidence]));
+  for (const [key, selected] of Object.entries(spec.sources)) {
+    const source = sources.get(selected.sourceId), reading = readings.get(selected.readingId);
+    if (!source || !['passages-inspected', 'public-passages-inspected', 'public-full-text-inspected', 'licensed-full-text-inspected'].includes(source.accessStatus)
+        || source.reading?.readingId !== selected.readingId || source.reading?.status !== 'selected-passages'
+        || typeof source.reading?.scope !== 'string' || !source.reading.scope.trim() || reading?.readingStatus !== 'selected-passages')
+      errors.push(`pedigree calibration.sources.${key}: source must bind the actual inspected selected reading and scope`);
+  }
+  for (const [key, input] of Object.entries(spec.facts)) {
+    const selected = spec.sources[input.sourceKey], evidence = evidenceById.get(input.evidenceId);
+    const facts = Array.isArray(evidence?.numericFacts) ? evidence.numericFacts : [];
+    const matches = facts.filter(fact => fact?.id === input.factId);
+    if (!evidence || evidence.sourceId !== selected.sourceId || evidence.numericFact !== undefined || matches.length !== 1
+        || new Set(facts.map(fact => fact?.id)).size !== facts.length
+        || matches[0].value !== input.value || matches[0].unit !== input.unit || matches[0].subject !== input.subject)
+      errors.push(`pedigree calibration.facts.${key}: missing or mismatched public source fact identity/value/unit/subject`);
+    const reading = readings.get(selected.readingId), located = passages.get(input.passageId);
+    const carrier = artifacts.get(located?.passage.artifactId);
+    if (!reading || evidence?.readingId !== selected.readingId || evidence?.passageId !== input.passageId
+        || located?.reading !== reading || carrier?.reading !== reading || located?.passage.artifactId !== selected.artifactId
+        || carrier?.artifact.id !== selected.artifactId || ![undefined, 'retrieved'].includes(carrier?.artifact.kind)
+        || carrier?.artifact.mediaType !== 'application/pdf' || carrier?.artifact.sha256 !== selected.sha256)
+      errors.push(`pedigree calibration.facts.${key}: missing or mismatched inspected original PDF passage carrier`);
   }
   return errors;
 }
