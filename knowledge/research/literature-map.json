@@ -1132,6 +1132,51 @@
         "date": "2026-11-05",
         "channel": "Targeted web search and ordinary publisher ESM link",
         "outcome": "Official ESM1 acquired; unrelated corrections and later general studies excluded; no attributable correction found in this bounded set."
+      },
+      {
+        "id": "q-market-1999-original",
+        "query": "\"Marginal production technologies for life cycle inventories\" pdf",
+        "channel": "web.search_query；并直接打开作者和出版商已知入口",
+        "date": "2026-11-05"
+      },
+      {
+        "id": "q-market-exchange-direct",
+        "query": "https://www.lca-net.com/files/lca_4_308_310.pdf",
+        "channel": "direct author-hosted original acquisition；打开预先记录的原件URL",
+        "date": "2026-11-05"
+      },
+      {
+        "id": "q-market-2004-direct",
+        "query": "https://lcafood.dk/Material/Ekvall%20and%20Weidema_2004.pdf",
+        "channel": "direct project-hosted original acquisition；打开预先记录的原件URL",
+        "date": "2026-11-05"
+      },
+      {
+        "id": "q-market-psi-direct",
+        "query": "https://www.psi.ch/sites/default/files/import/ta/PublicationTab/Menard_1998.pdf",
+        "channel": "direct official PSI original acquisition；沿Reply中的实际文献引用",
+        "date": "2026-11-05"
+      },
+      {
+        "id": "Q-MARKET-MAIN-1",
+        "query": "\"Marginal Production Technologies\" \"Nordheim\" reply correction erratum",
+        "date": "2026-11-05",
+        "channel": "public-web-search",
+        "language": "en"
+      },
+      {
+        "id": "Q-MARKET-MAIN-2",
+        "query": "\"后果型\" \"边际电力\" \"铝\" 市场边界",
+        "date": "2026-11-05",
+        "channel": "public-web-search",
+        "language": "zh"
+      },
+      {
+        "id": "Q-MARKET-MAIN-3",
+        "query": "\"marginale Stromproduktion\" Ökobilanz Aluminium Weidema Nordheim",
+        "date": "2026-11-05",
+        "channel": "public-web-search",
+        "language": "de"
       }
     ],
     "limitations": [
@@ -2302,19 +2347,28 @@
         {
           "url": "https://link.springer.com/article/10.1007/BF02994190",
           "role": "出版商"
+        },
+        {
+          "url": "https://lcafood.dk/Material/Ekvall%20and%20Weidema_2004.pdf",
+          "role": "实际核读原始PDF；哈希固定本轮字节"
         }
       ],
       "identifiers": {
-        "doi": "10.1007/BF02994190"
+        "doi": "10.1007/BF02994190",
+        "manifestationNote": "原件印刷DOI10.1065/lca2004.03.148；作者、标题、卷期页码一致，作为同作保留；旧DOI最终解析失败，未验证正式别名登记。"
       },
       "volumes": [
         "V4",
-        "V6"
+        "V6",
+        "V7"
       ],
       "topics": [
         "system boundaries",
         "data selection",
-        "allocation"
+        "allocation",
+        "market segments",
+        "consequential system boundaries",
+        "technology mix"
       ],
       "languages": [
         "en"
@@ -2328,24 +2382,27 @@
       "discovery": {
         "queryIds": [
           "Q-SEED-IMPORT",
-          "Q7-REOPEN"
+          "Q7-REOPEN",
+          "q-market-2004-direct"
         ],
-        "reason": "Inherited candidate register §11; retained for work-level discovery, not upgraded to passage evidence. V4/V6：边界、后果建模、数据选择",
-        "citationParents": []
+        "reason": "Inherited candidate register §11; retained for work-level discovery, not upgraded to passage evidence. V4/V6：边界、后果建模、数据选择；2026-11-05实际取得项目原件并单独绑定选段。",
+        "citationParents": [
+          "work-weidema-frees-nielsen-1999"
+        ]
       },
       "identityStatus": "verified",
-      "accessStatus": "abstract-or-excerpt",
+      "accessStatus": "public-fulltext-available",
       "readingStatus": "not-close-read",
       "accessedAt": "2026-11-03",
-      "lastCheckedAt": "2026-11-04",
-      "rights": "Third-party sources retain their rights. Bibliographic facts and original project annotations are published here; source text, figures, datasets and software are not relicensed. Full-text access or borrowing does not grant redistribution permission. No source-specific open reuse license was verified in the inherited seed check.",
+      "lastCheckedAt": "2026-11-05",
+      "rights": "第三方原作保留原有权利。所列机构、作者或项目载体可公开访问，未发现明确开放再利用许可；可访问不等于获准再分发。原始PDF、提取文本和页面图像不进入仓库或公开导出。",
       "limitations": [
-        "书目/摘要，未全文细读",
-        "Historical metadata/abstract/partial-page check inherited from 2026-11-03; original search strings and a complete access log were not recorded in the seed register.",
-        "Volume/region/tradition tags are provisional editorial discovery strata, not evidence of intellectual origin, influence or coverage.",
-        "Reopened on 2026-11-04 for discovery/identity or reference-list checks; no full-work close reading completed."
+        "未声称整作细读或当前市场/行业科学验证。",
+        "被引包装报告、价格弹性与原始行业资料未独立复算。"
       ],
-      "catalogSourceIds": []
+      "catalogSourceIds": [
+        "src-ekvall-weidema-2004"
+      ]
     },
     {
       "id": "lit-m02",
@@ -7169,6 +7226,243 @@
       ],
       "catalogSourceIds": [
         "src-book-ciroth-2016-pedigree-factors"
+      ]
+    },
+    {
+      "id": "work-weidema-frees-nielsen-1999",
+      "title": "Marginal Production Technologies for Life Cycle Inventories",
+      "contributors": "Bo P. Weidema; Niels Frees; Anne-Merete Nielsen",
+      "year": "1999",
+      "kind": "method-article",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://link.springer.com/article/10.1007/BF02979395",
+          "role": "作品身份与普通获取入口"
+        },
+        {
+          "url": "https://link.springer.com/content/pdf/10.1007/BF02979395.pdf",
+          "role": "实际核读原始PDF；哈希固定本轮字节"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1007/BF02979395"
+      },
+      "volumes": [
+        "V4",
+        "V6",
+        "V7"
+      ],
+      "topics": [
+        "marginal technology",
+        "capacity adjustment",
+        "market boundaries"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Europe"
+      ],
+      "traditions": [
+        "electricity and market-response LCI methods"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-market-1999-original"
+        ],
+        "reason": "针对需求变化、市场边界与供电活动选择的有界原件读取；获取或同载体核读不升级整作阅读。",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "access-context-unresolved",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-05",
+      "lastCheckedAt": "2026-11-05",
+      "rights": "当前环境的出版商普通页面显示清华大学机构访问，并提供下载链接；这不证明个人授权、公开访问或开放再利用许可。访问情境与再分发权利未确定，只记录实际选段检查；原始PDF和图像不进入仓库或公开导出。",
+      "limitations": [
+        "p56参考文献未实质核查；被引原报告、统计和通信未核实。",
+        "p49、52文字核读但未查对应图像；不主张整作细读。"
+      ],
+      "catalogSourceIds": [
+        "src-weidema-frees-nielsen-1999"
+      ]
+    },
+    {
+      "id": "work-nordheim-1999-comment",
+      "title": "Comment: Marginal Production Technologies for Life Cycle Inventories",
+      "contributors": "Eirik Nordheim",
+      "year": "1999",
+      "kind": "comment",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://www.lca-net.com/files/lca_4_308_310.pdf",
+          "role": "实际核读原始PDF；哈希固定本轮字节"
+        }
+      ],
+      "identifiers": {
+        "series": "IJLCA4(6):308–310 shared carrier; Comment308"
+      },
+      "volumes": [
+        "V4",
+        "V6",
+        "V7"
+      ],
+      "topics": [
+        "global aluminium",
+        "transmission constraints",
+        "average and marginal debate"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Europe"
+      ],
+      "traditions": [
+        "electricity and market-response LCI methods"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-market-exchange-direct"
+        ],
+        "reason": "针对需求变化、市场边界与供电活动选择的有界原件读取；获取或同载体核读不升级整作阅读。",
+        "citationParents": [
+          "work-weidema-frees-nielsen-1999"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-05",
+      "lastCheckedAt": "2026-11-05",
+      "rights": "第三方原作保留原有权利。所列机构、作者或项目载体可公开访问，未发现明确开放再利用许可；可访问不等于获准再分发。原始PDF、提取文本和页面图像不进入仓库或公开导出。",
+      "limitations": [
+        "Reply不计入本作品；行业原始统计与包装报告未独立检查。",
+        "采购来源的混合与受影响活动的混合仍须分别辨认。"
+      ],
+      "catalogSourceIds": [
+        "src-nordheim-1999-comment"
+      ]
+    },
+    {
+      "id": "work-weidema-1999-reply",
+      "title": "A Reply to the Aluminium Industry: Each Market Has Its Own Marginal",
+      "contributors": "Bo P. Weidema",
+      "year": "1999",
+      "kind": "reply",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://www.lca-net.com/files/lca_4_308_310.pdf",
+          "role": "实际核读原始PDF；哈希固定本轮字节"
+        }
+      ],
+      "identifiers": {
+        "series": "IJLCA4(6):309–310 shared carrier; Reply only"
+      },
+      "volumes": [
+        "V4",
+        "V6",
+        "V7"
+      ],
+      "topics": [
+        "geographic markets",
+        "regional electricity",
+        "response and attribution"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Europe"
+      ],
+      "traditions": [
+        "electricity and market-response LCI methods"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-market-exchange-direct"
+        ],
+        "reason": "针对需求变化、市场边界与供电活动选择的有界原件读取；获取或同载体核读不升级整作阅读。",
+        "citationParents": [
+          "work-nordheim-1999-comment",
+          "work-weidema-frees-nielsen-1999"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-05",
+      "lastCheckedAt": "2026-11-05",
+      "rights": "第三方原作保留原有权利。所列机构、作者或项目载体可公开访问，未发现明确开放再利用许可；可访问不等于获准再分发。原始PDF、提取文本和页面图像不进入仓库或公开导出。",
+      "limitations": [
+        "未出版预测材料、IPAI原统计、包装原报告未独立取得。",
+        "三页载体中的日本数据库专栏不属于Reply。"
+      ],
+      "catalogSourceIds": [
+        "src-weidema-1999-reply"
+      ]
+    },
+    {
+      "id": "work-menard-dones-gantner-1998",
+      "title": "Strommix in Ökobilanzen: Auswirkungen der Strommodellwahl für Produkt- und Betriebs-Ökobilanzen",
+      "contributors": "Martin Ménard; Roberto Dones; Urs Gantner",
+      "year": "1998",
+      "kind": "institutional-report",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://www.psi.ch/sites/default/files/import/ta/PublicationTab/Menard_1998.pdf",
+          "role": "实际核读原始PDF；哈希固定本轮字节"
+        }
+      ],
+      "identifiers": {
+        "report": "PSI Bericht98-17",
+        "manifestationNote": "封面December1998，内扉页November1998；扫描/OCR载体生成于2004，不是另一个出版年。"
+      },
+      "volumes": [
+        "V4",
+        "V6",
+        "V7"
+      ],
+      "topics": [
+        "electricity consumer mix",
+        "trade and transit",
+        "average and marginal judgments"
+      ],
+      "languages": [
+        "de"
+      ],
+      "regions": [
+        "Europe"
+      ],
+      "traditions": [
+        "electricity and market-response LCI methods"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-market-psi-direct"
+        ],
+        "reason": "针对需求变化、市场边界与供电活动选择的有界原件读取；获取或同载体核读不升级整作阅读。",
+        "citationParents": [
+          "work-weidema-1999-reply"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-05",
+      "lastCheckedAt": "2026-11-05",
+      "rights": "第三方原作保留原有权利。所列机构、作者或项目载体可公开访问，未发现明确开放再利用许可；可访问不等于获准再分发。原始PDF、提取文本和页面图像不进入仓库或公开导出。",
+      "limitations": [
+        "不是整作细读；完整应用、附录B/G数据组装和原始计量未重现。",
+        "另引Frischknecht1996原始清单未取得；T5绝对排放、当前电网及市场响应未验证。",
+        "边际章节与脚注是多方方法意见，不是共识或经验因果测量。"
+      ],
+      "catalogSourceIds": [
+        "src-menard-dones-gantner-1998"
       ]
     }
   ],

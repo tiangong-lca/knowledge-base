@@ -1,0 +1,148 @@
+{
+  "caseId": "CASE-MARKET-RESPONSE",
+  "version": "1.0.0",
+  "model": "historical-average-and-stipulated-response-v1",
+  "createdAt": "2026-11-05",
+  "status": "selected-historical-arithmetic-and-author-illustration",
+  "source": {
+    "sourceId": "src-menard-dones-gantner-1998",
+    "readingId": "rd-menard-dones-gantner-1998-market",
+    "artifactId": "pdf-psi-1998",
+    "sha256": "e0ccffc801eff82d5b0b96c4bc862031941a34db61c878c02d9ac72aacded0e8"
+  },
+  "facts": {
+    "production": {
+      "value": "60277",
+      "unit": "GWh",
+      "quantity": "annual-electricity-flow",
+      "subject": "switzerland-1995-production",
+      "basis": "Swiss1995 physical electricity balance; displayed GWh; exports use positive magnitude",
+      "evidenceId": "ev-market-psi-m3",
+      "factId": "nf-market-psi-production",
+      "passageId": "ps-market-psi-m3"
+    },
+    "imports": {
+      "value": "18113",
+      "unit": "GWh",
+      "quantity": "annual-electricity-flow",
+      "subject": "switzerland-1995-imports",
+      "basis": "Swiss1995 physical electricity balance; displayed GWh; exports use positive magnitude",
+      "evidenceId": "ev-market-psi-m3",
+      "factId": "nf-market-psi-imports",
+      "passageId": "ps-market-psi-m3"
+    },
+    "exports": {
+      "value": "25143",
+      "unit": "GWh",
+      "quantity": "annual-electricity-flow",
+      "subject": "switzerland-1995-exports-positive-magnitude",
+      "basis": "Swiss1995 physical electricity balance; displayed GWh; exports use positive magnitude",
+      "evidenceId": "ev-market-psi-m3",
+      "factId": "nf-market-psi-exports",
+      "passageId": "ps-market-psi-m3"
+    },
+    "finalConsumption": {
+      "value": "51567",
+      "unit": "GWh",
+      "quantity": "annual-electricity-flow",
+      "subject": "switzerland-1995-final-consumption",
+      "basis": "Swiss1995 physical electricity balance; displayed GWh; exports use positive magnitude",
+      "evidenceId": "ev-market-psi-m3",
+      "factId": "nf-market-psi-final-consumption",
+      "passageId": "ps-market-psi-m3"
+    },
+    "losses": {
+      "value": "1680",
+      "unit": "GWh",
+      "quantity": "annual-electricity-flow",
+      "subject": "switzerland-1995-reported-losses",
+      "basis": "Swiss1995 physical electricity balance; displayed GWh; exports use positive magnitude",
+      "evidenceId": "ev-market-psi-m3",
+      "factId": "nf-market-psi-losses",
+      "passageId": "ps-market-psi-m3"
+    },
+    "de": {
+      "value": "7014",
+      "unit": "GWh",
+      "quantity": "annual-electricity-flow",
+      "subject": "germany-to-switzerland-1995-imports",
+      "basis": "Swiss1995 physical electricity balance; displayed GWh; exports use positive magnitude",
+      "evidenceId": "ev-market-psi-m3",
+      "factId": "nf-market-psi-de",
+      "passageId": "ps-market-psi-m3"
+    },
+    "fr": {
+      "value": "9116",
+      "unit": "GWh",
+      "quantity": "annual-electricity-flow",
+      "subject": "france-to-switzerland-1995-imports",
+      "basis": "Swiss1995 physical electricity balance; displayed GWh; exports use positive magnitude",
+      "evidenceId": "ev-market-psi-m3",
+      "factId": "nf-market-psi-fr",
+      "passageId": "ps-market-psi-m3"
+    },
+    "at": {
+      "value": "1973",
+      "unit": "GWh",
+      "quantity": "annual-electricity-flow",
+      "subject": "austria-to-switzerland-1995-imports",
+      "basis": "Swiss1995 physical electricity balance; displayed GWh; exports use positive magnitude",
+      "evidenceId": "ev-market-psi-m3",
+      "factId": "nf-market-psi-at",
+      "passageId": "ps-market-psi-m3"
+    },
+    "it": {
+      "value": "10",
+      "unit": "GWh",
+      "quantity": "annual-electricity-flow",
+      "subject": "italy-to-switzerland-1995-imports",
+      "basis": "Swiss1995 physical electricity balance; displayed GWh; exports use positive magnitude",
+      "evidenceId": "ev-market-psi-m3",
+      "factId": "nf-market-psi-it",
+      "passageId": "ps-market-psi-m3"
+    }
+  },
+  "interpretation": {
+    "historicalModel": "M3-only",
+    "referenceYear": "1995",
+    "balanceIncludesReportedLosses": true,
+    "exportMixEqualsDomesticProductionMix": true,
+    "allImportsAssignedToDomesticConsumption": true,
+    "historicalEmissionTotalsReconstructed": false,
+    "originalSoftwareExecuted": false,
+    "unreportedPrecisionRecovered": false,
+    "empiricalResponseValidated": false,
+    "scientificValidation": false
+  },
+  "illustration": {
+    "kind": "author-stipulated-two-supply-activity-response",
+    "materialLabel": "hypothetical-material",
+    "additionalMaterialKg": "1",
+    "electricityKWhPerKg": "10",
+    "otherUsersDemandKWh": "100",
+    "baselineHGenerationKWh": "40",
+    "baselineGGenerationKWh": "60",
+    "constrainedHGenerationKWh": "40",
+    "expandableHGenerationKWh": "50",
+    "producerTakesOnlyH": true,
+    "hCO2KgPerKWh": "0.02",
+    "gCO2KgPerKWh": "0.8",
+    "coefficientUnit": "kg CO2/kWh",
+    "activityUnit": "kWh",
+    "sameAdditionalMaterialService": true,
+    "fixedOtherUsersDemand": true,
+    "importsExportsAndLossesIncluded": false,
+    "coProductsIncluded": false,
+    "otherMaterialFeedbackIncluded": false,
+    "realTechnologyOrAluminiumModel": false,
+    "coefficientsAreAuthorStipulated": true,
+    "wholeLifeCycleModel": false,
+    "uncertaintyPropagated": false,
+    "additionalDemandEqualsSelectedProducerOutput": true,
+    "responseFrame": "static-before-after-same-abstract-period",
+    "hAndGInterchangeableWithinMarket": true,
+    "internalTransmissionConstraint": false,
+    "capacityOrDispatchMechanismIdentified": false,
+    "actualOutputChangesStipulated": true
+  }
+}

@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: f0f98e1f514357afdc6f9543e4db0cbca714cdfd
+lastReviewedCommit: b396ef17c807d3725f4aa11b8550d177979f1b41
 ---
 
 # Publication contract
@@ -82,3 +82,13 @@ squared-GSD parameters, log standard deviations, estimator precision and
 individual spread retain separate meanings. No case flag can promote the
 summary calculation into reproduction of raw observations, empirical calibration
 or current database software.
+
+The market-response case keeps historical average-supply arithmetic separate
+from author-stipulated demand-response scenarios. Its nine displayed source facts
+bind value, unit, quantity, subject and basis as well as exact evidence, reading,
+passage and original-PDF identity. The loss-inclusive M3 denominator is not a
+final-meter delivery unit. Fictional material response, electricity activities and
+CO2 coefficients are explicit conditions; capacity availability, procurement
+identity and actual output response remain distinct. The input cannot declare
+empirical response validation or convert the modeled CO2 inventory into a full
+material footprint or impact score. Older registered inputs remain unchanged.

@@ -14,10 +14,14 @@ checkPaths:
   - "knowledge/**"
   - "releases/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: f0f98e1f514357afdc6f9543e4db0cbca714cdfd
+lastReviewedCommit: b396ef17c807d3725f4aa11b8550d177979f1b41
 ---
 
 # Editorial and living review protocol
+
+## Market-response source and argument checks
+
+The market-response unit reconstructs the original 1999 procedure, its contemporary critique and concession, and the explicit 2004 procedural lineage without inferring influence from chronology. PSI average-mix arithmetic and its dissenting method positions are distinct from the synthetic response example. Reviews check exclusive direct-process conditions, actual supply versus capacity availability, equal extra service across response scenarios, loss-inclusive denominators and material-response stipulations. Source joins, positive activities, reader meaning and rendered publication receive separate checks. Restricted originals and actual query/exclusion logs remain outside reader pages; gaps never become source facts.
 
 ## Historical pilot scope and evidence frame
 

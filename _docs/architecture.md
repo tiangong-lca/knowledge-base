@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: f0f98e1f514357afdc6f9543e4db0cbca714cdfd
+lastReviewedCommit: 78b69535c46cc55d452206382f868a799552fe44
 ---
 
 # Publication architecture
@@ -132,3 +132,15 @@ rounding procedure or restore a rejected factor's recommendation status. CV is
 an SD/mean ratio, not a percent. New v1 input review applies to the unpublished
 candidate; earlier candidate hashes remain in Git/review history and no released
 case or legacy artifact is overwritten.
+
+## Average supply and conditional response
+
+`scripts/market-response.mjs` is a closed static prose adapter with its own nested
+public shape and exact-rational evaluator. It exposes selected historical M3
+country weights and separate positive producer/other-user/generation scenarios,
+activity differences and CO2 differences. Its fact gate checks all five semantic
+tuple fields plus the actual source/passage/original-PDF join. Eight canonical
+paragraphs bind one versioned downloadable input; no calculator widget, client
+runtime or dependency is added. Unknown nested fields are stripped before hashing;
+missing or changed reviewed leaves fail closed. Legacy case policies/hashes remain
+unchanged. Exact arithmetic does not identify empirical market response.
