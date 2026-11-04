@@ -991,6 +991,42 @@
         "query": "Inspect known JRC61049 official record and normally acquired https://publications.jrc.ec.europa.eu/repository/bitstream/JRC61049/jrc61049_ilcd%20handbook%20final.pdf.",
         "date": "2026-11-04",
         "channel": "direct-known-source verification; preserved acquisition/reading records; no broad-search query log"
+      },
+      {
+        "id": "q-case-historical-container-01",
+        "query": "\"Resource and Environmental Profile Analysis of Nine Beverage Container Alternatives\" correction errata",
+        "date": "2026-11-04",
+        "channel": "public-web-search"
+      },
+      {
+        "id": "q-case-historical-container-02",
+        "query": "\"SW-91c\" energy returnable glass criticism",
+        "date": "2026-11-04",
+        "channel": "public-web-search"
+      },
+      {
+        "id": "q-case-historical-container-03",
+        "query": "\"1974\" \"饮料容器\" \"环境\" 分析 更正",
+        "date": "2026-11-04",
+        "channel": "public-web-search"
+      },
+      {
+        "id": "q-case-historical-container-04",
+        "query": "\"SW-91c\" errata correction",
+        "date": "2026-11-04",
+        "channel": "public-web-search"
+      },
+      {
+        "id": "q-case-historical-container-05",
+        "query": "\"Resource and environmental profile analysis\" \"glass\" \"data\" 1974 critique",
+        "date": "2026-11-04",
+        "channel": "public-web-search"
+      },
+      {
+        "id": "q-case-historical-container-06",
+        "query": "\"Environmental Effects of Recycling Paper\" \"1973\" Hunt Franklin",
+        "date": "2026-11-04",
+        "channel": "public-web-search"
       }
     ],
     "limitations": [
@@ -1005,7 +1041,8 @@
       "Metadata disagreements, failed routes, catalog-only entries and unverified rights are retained; no book, portal, issue summary or full-text link is counted as community coverage.",
       "Conceptual book ambitions remain broader than this first-wave map. Proposed traditions/volume mappings are editorial navigation, not bibliometric findings.",
       "The query log retains exact topic-level search strings and the named seed-reference chase; intermediate reformulations and URL-fetch retries are not exhaustively reconstructed. The retained protocol supports a repeatable starting point, not a complete transactional search history.",
-      "The2026-11-04water/pathways extension preserves four actual water queries and reference-chain inspections. Nutrient sources have acquisition/direct-verification records but no preserved broad-search strings; none were reconstructed. Its three AWARE articles, two guidance reports and five explanatory webpages do not establish independent model validation or complete LCIA coverage."
+      "The2026-11-04water/pathways extension preserves four actual water queries and reference-chain inspections. Nutrient sources have acquisition/direct-verification records but no preserved broad-search strings; none were reconstructed. Its three AWARE articles, two guidance reports and five explanatory webpages do not establish independent model validation or complete LCIA coverage.",
+      "The 2026-11-04 historical-container pass used the six recorded English/Chinese public-web queries with no publication-date filter and no pagination. Only bounded returned results were screened; query-specific result attribution within each three-query round was not retained. No verified correction was identified in this returned set, which does not establish that no erratum, criticism or contrary study exists. GAO indexed text and an OTA archival search snippet remain unpromoted leads, not independent verification of the original model."
     ]
   },
   "records": [
@@ -5791,9 +5828,15 @@
           "q-w3-history-02",
           "q-w3-history-03",
           "q-w3-history-04",
-          "q-w3-history-05"
+          "q-w3-history-05",
+          "q-case-historical-container-01",
+          "q-case-historical-container-02",
+          "q-case-historical-container-03",
+          "q-case-historical-container-04",
+          "q-case-historical-container-05",
+          "q-case-historical-container-06"
         ],
-        "reason": "Targeted official-original retrieval following early-source research gaps; obtained original contractor studies, not a retrospective origin narrative.",
+        "reason": "Targeted official-original retrieval following early-source research gaps; obtained original contractor studies, not a retrospective origin narrative. A bounded 2026-11-04 historical-container correction/critique and citation-chain search reused this existing work identity; its six exact queries are appended without creating another original-report record.",
         "citationParents": []
       },
       "identityStatus": "verified",
@@ -5804,7 +5847,8 @@
       "rights": "公开 EPA 承包研究报告；没有据机构仓储或出版批准推断所有承包材料整体为公有领域。仅发布原创释义、元数据和定位；不重传原文、表图或扫描。",
       "limitations": [
         "Only the reading-ledger passages were inspected; entire report/appendix/results not verified. No global priority or influence claim follows.",
-        "Selected passages recorded as rd-epa-1974-nine-beverage; acquisition does not establish whole-work reading."
+        "Selected passages recorded as rd-epa-1974-nine-beverage; acquisition does not establish whole-work reading.",
+        "The 2026-11-04 six-query correction/critique pass screened only returned results without date filters or pagination; no verified correction was identified in that bounded set, not proof that no correction or criticism exists. GAO1977 and OTA1979 are separate unpromoted discovery leads; no full-original reading or adoption is claimed for either."
       ],
       "catalogSourceIds": [
         "src-book-epa-1974-nine-beverage"
@@ -6756,6 +6800,127 @@
       "catalogSourceIds": [
         "src-book-ilcd-2011-lcia-recommendations"
       ]
+    },
+    {
+      "id": "work-gao-1977-beverage-deposit",
+      "title": "Potential Effects of a National Mandatory Deposit on Beverage Containers",
+      "contributors": "U.S. General Accounting Office",
+      "year": "1977",
+      "kind": "government-report",
+      "goalSeedIds": [],
+      "volumes": [
+        "V1",
+        "V3",
+        "V4",
+        "V7"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "United States"
+      ],
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-04",
+      "lastCheckedAt": "2026-11-04",
+      "catalogSourceIds": [],
+      "urls": [
+        {
+          "url": "https://www.gao.gov/products/pad-78-19",
+          "role": "official work metadata; publication date 1977-12-07 verified"
+        },
+        {
+          "url": "https://www.gao.gov/assets/pad-78-19.pdf",
+          "role": "official PDF route; indexed text accessible, original bytes not acquired"
+        }
+      ],
+      "identifiers": {
+        "report": "PAD-78-19"
+      },
+      "topics": [
+        "beverage-container deposit policy",
+        "later use of EPA1974 container comparisons"
+      ],
+      "traditions": [
+        "contemporary government policy analysis"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-case-historical-container-01",
+          "q-case-historical-container-02",
+          "q-case-historical-container-03"
+        ],
+        "citationParents": [
+          "work-hunt-1974-nine-beverage"
+        ],
+        "reason": "Returned in the first three-query historical-container search round. The official product record verified title, report number and 1977-12-07 date; the official PDF indexed text exposed later reuse of the EPA1974 comparison. Per-query attribution within the returned round is not established."
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "rights": "Government institutional hosting does not establish unrestricted rights for all embedded third-party material. This discovery record supplies original metadata and route descriptions only; no report text, tables or images are redistributed.",
+      "limitations": [
+        "Official PDF indexed text was accessible through the web tool and reported 101 pages; original PDF bytes were not acquired locally. Direct local PDF retrieval returned HTTP403 and the screenshot request failed with a cache miss.",
+        "Full work not read; no selected-reading record, canonical source, evidence or claim is promoted from this lead. Indexed-text availability is not visual verification or independent reproduction of EPA1974 results."
+      ]
+    },
+    {
+      "id": "work-ota-1979-municipal-waste-beverage-lead",
+      "title": "Materials and Energy From Municipal Waste (Part 11 of 18; beverage-container chapter archival lead)",
+      "contributors": "U.S. Congress, Office of Technology Assessment (attributed by archival route/search result; original title page not inspected)",
+      "year": "1979",
+      "kind": "archival-chapter-lead",
+      "goalSeedIds": [],
+      "volumes": [
+        "V1",
+        "V3",
+        "V4",
+        "V7"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "United States"
+      ],
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-04",
+      "lastCheckedAt": "2026-11-04",
+      "catalogSourceIds": [],
+      "urls": [
+        {
+          "url": "https://www.princeton.edu/~ota/disk3/1979/7910/791011.PDF",
+          "role": "OTA archival PDF lead returned in search; title page and full work identity not independently inspected"
+        }
+      ],
+      "identifiers": {
+        "discoveryRecord": "Search result: Materials and Energy From Municipal Waste (Part 11 of 18); archival route 1979/7910/791011.PDF"
+      },
+      "topics": [
+        "beverage-container comparison reception",
+        "later citation of EPA1974 container study"
+      ],
+      "traditions": [
+        "archival technology-assessment lead"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-case-historical-container-04",
+          "q-case-historical-container-05",
+          "q-case-historical-container-06"
+        ],
+        "citationParents": [
+          "work-hunt-1974-nine-beverage"
+        ],
+        "reason": "Returned in the second three-query historical-container search round. A search snippet describes the EPA1974 study and a nine-system comparison; the snippet is a discovery lead, not independently inspected original-chapter evidence. Per-query attribution within the returned round is not established."
+      },
+      "identityStatus": "partial",
+      "accessStatus": "metadata-only",
+      "rights": "Archival availability and search indexing do not establish redistribution permission for the work or embedded third-party material. Only attributed discovery metadata and the archive route are recorded.",
+      "limitations": [
+        "Search snippet only. Web opening failed with HTTP400/timeout and direct local PDF retrieval returned HTTP403; original bytes were not acquired.",
+        "The original title page, full bibliographic identity, chapter boundaries, numerical tables and publication date were not independently inspected. The year1979 is retained as an archival/search attribution, not verified original-edition identity.",
+        "Full work not read; no selected-reading record, canonical source, evidence or claim is promoted. A snippet repeating EPA1974 does not independently validate the original study or establish an erratum."
+      ]
     }
   ],
   "gaps": [
@@ -6955,6 +7120,41 @@
         "V5"
       ],
       "priority": "high"
+    },
+    {
+      "id": "lit-gap-historical-container-ref48",
+      "description": "EPA1974 reference48 identifies Hunt and Franklin, Environmental Effects of Recycling Paper, presented at the AIChE73rd National Meeting, Minneapolis, August27–30,1972, revised July9,1973. This is a citation-chain lead only: the separate original paper and revision were not acquired or read; secondary search references do not establish edition identity or its underlying data.",
+      "nextSearch": "Seek the normally accessible original conference/revised paper or an institutional catalog and reconcile the1972 presentation with the1973 revision before any substantive use. Keep EPA1974 reference48 as the provenance; do not substitute a later bibliography for the original.",
+      "volumes": [
+        "V1",
+        "V3",
+        "V7"
+      ],
+      "priority": "normal"
+    },
+    {
+      "id": "lit-gap-historical-container-private-ref68",
+      "description": "EPA1974 reference68, under Unpublished Material and Private Sources, names Midwest Research Institute private data used for estimates, including industry-submitted data. Those private underlying data were not acquired, inspected or reproduced; reading the public report does not close that source-chain gap.",
+      "nextSearch": "Determine whether a legitimate public archival release or author/institutional description exists; preserve the boundary if data remain private. Do not infer access, reconstruct private inputs as source facts or claim complete historical-model reproduction.",
+      "volumes": [
+        "V1",
+        "V3",
+        "V4",
+        "V7"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "lit-gap-historical-container-correction-reception",
+      "description": "The six-query historical-container returned set did not identify a verified correction; the search was bounded with no date filter or pagination. GAO1977 indexed text and the OTA1979 archive snippet are unpromoted reception leads, with original bytes/visual verification and full-work reading outstanding. Neither search absence nor repeated EPA1974 numbers establishes independent confirmation.",
+      "nextSearch": "Revisit legitimate official/archive routes for the two leads, verify original title pages and exact cited passages/tables, and expand a separately logged errata/critique search when needed. Preserve failed-access evidence and separate source reuse from independent criticism or verification.",
+      "volumes": [
+        "V1",
+        "V3",
+        "V4",
+        "V7"
+      ],
+      "priority": "normal"
     }
   ]
 }

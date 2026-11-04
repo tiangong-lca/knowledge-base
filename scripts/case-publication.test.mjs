@@ -442,3 +442,85 @@ test('reviewed static impact publications materialize all ten bound paragraphs a
     assert.equal(caseInputSha256(JSON.parse(readFileSync(new URL(`../knowledge/cases/${name}-v1.json`, import.meta.url), 'utf8'))), expected);
   }
 });
+
+function historicalFixture() {
+  const spec = JSON.parse(readFileSync(new URL('../knowledge/cases/historical-glass-v1.json', import.meta.url), 'utf8'));
+  const evidence = new Map();
+  for (const input of Object.values(spec.facts)) {
+    if (!evidence.has(input.evidenceId)) evidence.set(input.evidenceId, { id: input.evidenceId, sourceId: spec.sourceId, locator: 'Named table and cells', summary: 'Selected historical source quantities', relation: 'supports', numericFacts: [] });
+    evidence.get(input.evidenceId).numericFacts.push({ id: input.factId, value: input.value, unit: input.unit, subject: input.subject, quantity: 'Selected source quantity', basis: 'Inspected table with original units and scope' });
+  }
+  const publication = { schemaVersion: 1, caseId: spec.caseId, version: spec.version, inputFile: 'historical-glass-v1.json', approvedInputSha256: caseInputSha256(spec), reviewedAt: '2026-11-04', reviewKind: 'agent-source-check', claims: [{ id: 'historical-check', textTemplate: '{{evaluated.fabrication.total}}; {{evaluated.summary.retGJ}}; {{evaluated.assembly.owgFixed3}}; gap={{evaluated.assembly.gap}}; full={{evaluated.assembly.fullClosure}}.', kind: 'calculation', scope: 'Selected arithmetic only', evidenceIds: [...evidence.keys()], premiseIds: ['hist-premise'], conceptIds: [], caveats: ['Not a full original-program reproduction'], reasoning: 'Keep source-reported totals separate from reconstructed components.' }] };
+  const catalog = { schemaVersion: 1, sources: [{ id: spec.sourceId, title: 'Historical source', url: 'https://example.org/source', version: '1974 fixed carrier', publisher: 'Publisher', accessedAt: '2026-11-04', accessStatus: 'public-passages-inspected', rights: 'Original analysis; no source redistribution', preservation: 'Fixed selected carrier', artifact: { mediaType: 'application/pdf', sha256: spec.sourceArtifactSha256, resolvedUrl: 'https://example.org/source.pdf', bytes: 7131045, pageCount: 185 } }], evidence: [...evidence.values()], claims: structuredClone(materializeCaseClaims(spec, publication)), concepts: [], mappings: [], coverage: [] };
+  catalog.claims.push({ id: 'hist-premise', text: 'The source gives the selected historical context.', kind: 'source-statement', scope: 'Selected source context', evidenceIds: [evidence.keys().next().value], premiseIds: [], conceptIds: [], caveats: [], status: 'reviewed', reviewedAt: '2026-11-04', reviewKind: 'agent-source-check' });
+  return { spec, publication, catalog };
+}
+
+test('historical reconstruction publishes its exact selected checks without certifying full closure', () => {
+  const f = historicalFixture();
+  assert.deepEqual(errors(f), []);
+  assert.equal(f.catalog.claims[0].text, '15.6679627; 6.023298; 5965.910; gap=70.09; full=false.');
+  const receipt = caseEvaluationReceipt(f.spec, 'a'.repeat(40));
+  assert.equal(receipt.scientificApproval, false);
+  assert.equal(receipt.evaluations.evaluated.assembly.fullClosure, false);
+  assert.equal(receipt.inputSha256, caseInputSha256(f.spec));
+});
+
+test('every historical source fact needs its own public identity, quantity basis and fixed carrier', () => {
+  for (const input of Object.values(historicalFixture().spec.facts)) {
+    for (const key of ['id', 'value', 'unit', 'subject']) {
+      const f = historicalFixture();
+      const evidence = f.catalog.evidence.find(e => e.id === input.evidenceId);
+      const fact = evidence.numericFacts.find(n => n.id === input.factId);
+      fact[key] = key === 'value' ? '12345' : 'different';
+      assert(errors(f).some(error => /missing or mismatched public source fact/.test(error)), `${input.factId}.${key}`);
+    }
+  }
+  const carrier = historicalFixture(); carrier.catalog.sources[0].artifact.sha256 = '0'.repeat(64);
+  assert(errors(carrier).some(error => /carrier does not match/.test(error)));
+  const unread = historicalFixture(); unread.catalog.sources[0].accessStatus = 'metadata-only';
+  assert(errors(unread).some(error => /not inspected/.test(error)));
+  const wrongSource = historicalFixture();
+  wrongSource.catalog.sources.push({ ...wrongSource.catalog.sources[0], id: 'other-original' });
+  wrongSource.catalog.evidence[0].sourceId = 'other-original';
+  assert(errors(wrongSource).some(error => /missing or mismatched public source fact/.test(error)));
+});
+
+test('historical source checks cannot be disabled by flags, legacy fallback or unpublished facts', () => {
+  const disabled = historicalFixture(); disabled.spec.validateFacts = false; disabled.spec.numericProvenanceDefault = 'hypothetical';
+  delete disabled.catalog.evidence[0].numericFacts;
+  assert(errors(disabled).some(error => /missing or mismatched public source fact/.test(error)));
+  const singular = historicalFixture(); const selected = singular.catalog.evidence[0];
+  selected.numericFact = selected.numericFacts[0]; delete selected.numericFacts;
+  assert(errors(singular).some(error => /missing or mismatched public source fact/.test(error)));
+  const privateOnly = historicalFixture();
+  privateOnly.publication.claims[0].evidenceIds.pop();
+  privateOnly.catalog.claims = [...structuredClone(materializeCaseClaims(privateOnly.spec, privateOnly.publication)), privateOnly.catalog.claims.find(claim => claim.id === 'hist-premise')];
+  assert(errors(privateOnly).some(error => /missing or mismatched public source fact/.test(error)));
+});
+
+test('historical input projection drops nested private keys while rejecting any missing required field', () => {
+  const original = historicalFixture(), bytes = canonicalCaseInput(original.spec);
+  const inject = value => {
+    if (value && typeof value === 'object') {
+      Object.values(value).forEach(inject); value.privateCapture = { text: 'PRIVATE' };
+    }
+  };
+  inject(original.spec);
+  assert.equal(canonicalCaseInput(original.spec), bytes);
+  assert.equal(JSON.stringify(caseEvaluationReceipt(original.spec, 'a'.repeat(40))).includes('PRIVATE'), false);
+  assert.deepEqual(errors(original), []);
+  for (const key of Object.keys(historicalFixture().spec.facts)) {
+    const f = historicalFixture(); delete f.spec.facts[key];
+    assert.throws(() => canonicalCaseInput(f.spec), /Invalid teaching case/);
+  }
+});
+
+test('historical templates remain hash-bound and cannot silently change reported or reconstructed meanings', () => {
+  const f = historicalFixture(); f.publication.claims[0].textTemplate += ' Fully reproduced';
+  assert(errors(f).some(error => /stale text, metadata or caseBinding/.test(error)));
+  const hash = historicalFixture(); hash.publication.approvedInputSha256 = '0'.repeat(64);
+  assert(errors(hash).some(error => /stale or unapproved/.test(error)));
+  const canonical = historicalFixture(); canonical.catalog.claims[0].caseBinding.inputSha256 = '0'.repeat(64);
+  assert(errors(canonical).some(error => /caseBinding/.test(error)));
+});

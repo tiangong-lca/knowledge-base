@@ -1,0 +1,441 @@
+{
+  "schemaVersion": 1,
+  "caseId": "CASE-HISTORICAL-GLASS",
+  "version": "1.0.0",
+  "inputFile": "historical-glass-v1.json",
+  "approvedInputSha256": "56e6028764e85278fa73143d2321ab20b4ad8cd8d64ff9a75e2c871fb7448d7c",
+  "reviewedAt": "2026-11-05",
+  "reviewKind": "agent-source-check",
+  "claims": [
+    {
+      "id": "cl-hist-bottle-demand",
+      "kind": "calculation",
+      "scope": "按原报告印刷瓶重、2000lb/ton和百万次灌装计算；不恢复未披露精度。",
+      "evidenceIds": [
+        "ev-hist-demand",
+        "ev-hist-materials"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hist-demand",
+          "relation": "context",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        },
+        {
+          "evidenceId": "ev-hist-materials",
+          "relation": "context",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        }
+      ],
+      "premiseIds": [
+        "cl-hist-counting"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "瓶重是作者的典型值；所示精确小数只是按这些输入的算术。"
+      ],
+      "reasoning": "以百万×瓶重/2000得到305和205；新回用玻璃再除10，保留30与30.5的不同显示。",
+      "textTemplate": "报告按每短吨{{input.facts.poundsPerShortTon.value}}磅计算ton。回用瓶的典型重量写为{{input.facts.returnablePounds.value}}磅，百万次灌装对应累计通过灌装的玻璃量{{evaluated.demand.returnableFillingTon}}短吨；使用{{input.facts.uses.value}}次时，新制造量为{{evaluated.demand.returnableFillingTon}}/{{input.facts.uses.value}}＝{{evaluated.demand.returnableManufactureTon}}短吨。一次性瓶按每只{{input.facts.oneWayPounds.value}}磅计算，所需新玻璃为{{evaluated.demand.oneWayManufactureTon}}短吨。第二卷Table6把十次系统显示为{{input.facts.sourceCoarseRetGlass.value}}短吨；这个显示量不能不加说明地替代公式给出的{{evaluated.demand.returnableManufactureTon}}。"
+    },
+    {
+      "id": "cl-hist-flow-bases",
+      "kind": "calculation",
+      "scope": "原Figure4的百万灌装质量流重建。",
+      "evidenceIds": [
+        "ev-hist-demand"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hist-demand",
+          "relation": "context",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        }
+      ],
+      "premiseIds": [
+        "cl-hist-bottle-demand"
+      ],
+      "conceptIds": [
+        "cn-hist-bottle-trippage"
+      ],
+      "mappingIds": [
+        "map-hist-service-trippage"
+      ],
+      "caveats": [
+        "这条物量关系没有确定每段运输距离、装载率或回收行为。"
+      ],
+      "reasoning": "N作用于新瓶补充，累计灌装量保持305，返回为305−305/N。",
+      "textTemplate": "在这组账本中，新回用瓶为{{evaluated.demand.newReturnableBottles}}只，完成的仍是百万次灌装。Figure4将{{evaluated.demand.returnableFillingTon}}短吨放在灌装环节，将{{evaluated.demand.returnableManufactureTon}}短吨放在新制造与最终处置环节，返回流则为{{evaluated.demand.returnableFillingTon}}−{{evaluated.demand.returnableManufactureTon}}＝{{evaluated.demand.returnableReturnedTon}}短吨。这里的灌装和返回量是这一组交付活动中的累计通过量，不是同时存在的瓶子库存。制造量除以N，并不意味着每个环节都可以一起除以N。"
+    },
+    {
+      "id": "cl-hist-electricity-basis",
+      "kind": "interpretation",
+      "scope": "原Table4供电背景及其能源因子。",
+      "evidenceIds": [
+        "ev-hist-electricity",
+        "ev-hist-energy-meaning"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hist-electricity",
+          "relation": "supports",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        },
+        {
+          "evidenceId": "ev-hist-energy-meaning",
+          "relation": "supports",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        }
+      ],
+      "premiseIds": [
+        "cl-hist-energy-convention"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "正文按原表标年叙述；p49/Table4标1972而参考文献78标1970，底层资料年份没有被独立核实或改写。"
+      ],
+      "textTemplate": "例如，第二卷Table4把每1000kWh复合电力的供给能源列为{{input.facts.electricityFactor.value}}百万Btu。该表标作1972年的美国组合，并对水力与核能另设能量等效。这里相乘的不是把终端电量换一个单位，而是用所选供电背景给出它对应的资源需求。改变供电背景、等效约定或资料版本，结果的含义也会随之变化。"
+    },
+    {
+      "id": "cl-hist-glass-inputs",
+      "kind": "interpretation",
+      "scope": "Table22能源输入行，按报告短吨基准。",
+      "evidenceIds": [
+        "ev-hist-glass-inputs"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hist-glass-inputs",
+          "relation": "supports",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        }
+      ],
+      "premiseIds": [
+        "cl-hist-bottle-demand"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "这五项输入不等于全部玻璃系统的数据，也不表示各地玻璃厂都具有相同需求。"
+      ],
+      "textTemplate": "整个容器体系中的玻璃容器制造工序，可以从印刷输入开始核对。第二卷Table22按每短吨玻璃容器列出：馏分油{{input.facts.glassInputDistillate.value}}加仑、残余油{{input.facts.glassInputResidual.value}}加仑、天然气{{input.facts.glassInputGas.value}}立方英尺、汽油{{input.facts.glassInputGasoline.value}}加仑和电力{{input.facts.glassInputElectricity.value}}kWh。数量、载能体和每短吨的分母必须一起保留；相同的数值若改接到“每只瓶”或“每次灌装”，就已是另一道计算。"
+    },
+    {
+      "id": "cl-hist-fuel-multiplication",
+      "kind": "calculation",
+      "scope": "原输入×含供给阶段的能源总因子的选段核对。",
+      "evidenceIds": [
+        "ev-hist-glass-inputs",
+        "ev-hist-fuel-factors",
+        "ev-hist-electricity",
+        "ev-hist-unit-factor"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hist-glass-inputs",
+          "relation": "context",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        },
+        {
+          "evidenceId": "ev-hist-fuel-factors",
+          "relation": "context",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        },
+        {
+          "evidenceId": "ev-hist-electricity",
+          "relation": "context",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        },
+        {
+          "evidenceId": "ev-hist-unit-factor",
+          "relation": "context",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        }
+      ],
+      "premiseIds": [
+        "cl-hist-glass-inputs",
+        "cl-hist-electricity-basis"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "因子分母分别为1000gal、1000ft³和1000kWh；计算位数不代表观测精度。吻合总能源没有同时证明其process/transport分列已重建。"
+      ],
+      "reasoning": "逐项按原单位相乘，合计15.6679627，按明确小数显示规则得到15.668。",
+      "textTemplate": "按原Table1的总因子和Table4的电力因子，五项贡献分别为：{{input.facts.glassInputDistillate.value}}×{{input.facts.fuelFactorDistillate.value}}/1000、{{input.facts.glassInputResidual.value}}×{{input.facts.fuelFactorResidual.value}}/1000、{{input.facts.glassInputGas.value}}×{{input.facts.fuelFactorGas.value}}/1000、{{input.facts.glassInputGasoline.value}}×{{input.facts.fuelFactorGasoline.value}}/1000，以及{{input.facts.glassInputElectricity.value}}×{{input.facts.electricityFactor.value}}/1000。各项单位都是百万Btu/短吨玻璃，相加得到{{evaluated.fabrication.total}}；保留三位小数为{{evaluated.fabrication.rounded3}}，与Table14的玻璃制造总能源{{input.facts.glassFabricationReported.value}}相合。"
+    },
+    {
+      "id": "cl-hist-glass-branch",
+      "kind": "calculation",
+      "scope": "Table8八项玻璃/上游无机材料支路的显示系数。",
+      "evidenceIds": [
+        "ev-hist-component-table",
+        "ev-hist-unit-factor"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hist-component-table",
+          "relation": "context",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        },
+        {
+          "evidenceId": "ev-hist-unit-factor",
+          "relation": "context",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        }
+      ],
+      "premiseIds": [
+        "cl-hist-fuel-multiplication"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "各值按Table8共同系统基准，不是将各过程一短吨产出的系数直接相加。该支路不包含完整包装、瓶盖、灌装、处置和独列系统运输。"
+      ],
+      "reasoning": "按同一Table8参考量求和八项；不把已包含的玻璃制造重复计入。",
+      "textTemplate": "再沿第二卷Table8分开一条支路。长石开采、玻璃砂开采、天然纯碱开采、纯碱制造、石灰制造、石灰石开采、盐开采与玻璃容器制造这八项，按该表的每短吨系统基准分别列为{{input.facts.componentFeldspar.value}}、{{input.facts.componentSand.value}}、{{input.facts.componentNaturalSodaAsh.value}}、{{input.facts.componentSodaAshManufacture.value}}、{{input.facts.componentLime.value}}、{{input.facts.componentLimestone.value}}、{{input.facts.componentSalt.value}}与{{input.facts.componentGlassFabrication.value}}百万Btu，合计{{evaluated.glassBranch.factor}}。这个合计已包含前面的玻璃制造分项，不能再把{{input.facts.glassFabricationReported.value}}额外加一次。"
+    },
+    {
+      "id": "cl-hist-branch-scaling",
+      "kind": "calculation",
+      "scope": "按已披露量与Table8玻璃支路系数构造的条件计算。",
+      "evidenceIds": [
+        "ev-hist-component-table",
+        "ev-hist-demand"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hist-component-table",
+          "relation": "context",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        },
+        {
+          "evidenceId": "ev-hist-demand",
+          "relation": "context",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        }
+      ],
+      "premiseIds": [
+        "cl-hist-glass-branch",
+        "cl-hist-flow-bases"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "没有把同一缩放因子用于灌装、包装回流或所有运输。"
+      ],
+      "reasoning": "分别将玻璃支路18.523乘30.5和205，保留整个系统其他项。",
+      "textTemplate": "用同一玻璃支路乘新制造量，十次使用情境得到{{evaluated.demand.returnableManufactureTon}}×{{evaluated.glassBranch.factor}}＝{{evaluated.glassBranch.ret}}百万Btu；一次性情境得到{{evaluated.demand.oneWayManufactureTon}}×{{evaluated.glassBranch.factor}}＝{{evaluated.glassBranch.owg}}百万Btu。两者仍以同一组百万次灌装为参照。这一步显示了使用次数怎样进入新玻璃支路，却还没有算完两个容器系统。"
+    },
+    {
+      "id": "cl-hist-branch-check",
+      "kind": "calculation",
+      "scope": "Table9玻璃支路与公开Table8系数的数值核对。",
+      "evidenceIds": [
+        "ev-hist-five-trip-branch",
+        "ev-hist-component-table",
+        "ev-hist-demand",
+        "ev-hist-package-sensitivity"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hist-five-trip-branch",
+          "relation": "context",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        },
+        {
+          "evidenceId": "ev-hist-component-table",
+          "relation": "context",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        },
+        {
+          "evidenceId": "ev-hist-demand",
+          "relation": "context",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        },
+        {
+          "evidenceId": "ev-hist-package-sensitivity",
+          "relation": "context",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        }
+      ],
+      "premiseIds": [
+        "cl-hist-branch-scaling"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "同一报告内的吻合不是独立实证重复。"
+      ],
+      "reasoning": "61×18.523=1129.903，与表列整数1130相合。",
+      "textTemplate": "原报告还提供一个可对照的支路数。瓶子使用{{input.facts.fiveTripUses.value}}次时，新玻璃为{{evaluated.demand.fiveTripManufactureTon}}短吨；{{evaluated.demand.fiveTripManufactureTon}}×{{evaluated.glassBranch.factor}}＝{{evaluated.glassBranch.fiveTrip}}百万Btu，取整为{{evaluated.glassBranch.fiveTripRounded}}，对应Table9中“瓶系统”一列的{{input.facts.fiveTripGlassBranch.value}}。这个吻合核对的是该支路，没有把同表其余列或五次体系的全部计算一并验证。"
+    },
+    {
+      "id": "cl-hist-reported-summaries",
+      "kind": "calculation",
+      "scope": "Tables7/13报告的总量及其显示分项。",
+      "evidenceIds": [
+        "ev-hist-summary"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hist-summary",
+          "relation": "supports",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        }
+      ],
+      "premiseIds": [
+        "cl-hist-branch-scaling"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "分项加总只检验报告值间的算术，不提供全部过程输入的独立验证。"
+      ],
+      "textTemplate": "两个系统的整体数值须另行读取。第二卷的汇总按百万次12液盎司灌装给出：10-RET的过程能源{{input.facts.retProcess.value}}、运输能源{{input.facts.retTransport.value}}与材料资源能值{{input.facts.retMaterialResource.value}}相加为{{evaluated.summary.retPartsTotal}}百万Btu；OWG对应{{input.facts.owgProcess.value}}、{{input.facts.owgTransport.value}}与{{input.facts.owgMaterialResource.value}}，相加为{{evaluated.summary.owgPartsTotal}}。这里使用的是原报告公布的整体结果，不能把它们当成前面那条玻璃支路独立算出的全系统总量。",
+      "reasoning": "核对两组报告分项相加，并保持来源公布的整体总量与本书玻璃支路计算的证明范围不同。"
+    },
+    {
+      "id": "cl-hist-normalization",
+      "kind": "calculation",
+      "scope": "原公开系数下的汇总归一化；不恢复未披露精度。",
+      "evidenceIds": [
+        "ev-hist-conversion",
+        "ev-hist-summary",
+        "ev-hist-systems"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hist-conversion",
+          "relation": "context",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        },
+        {
+          "evidenceId": "ev-hist-summary",
+          "relation": "context",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        },
+        {
+          "evidenceId": "ev-hist-systems",
+          "relation": "context",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        }
+      ],
+      "premiseIds": [
+        "cl-hist-reported-summaries"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "p19另列2817个12oz容器/1000L；此处明确使用p51的公开小数与合并系数，不把所有显示数当成无限精度等式。"
+      ],
+      "reasoning": "2026与6036分别乘0.002973；计算量和报告显示位数分开。",
+      "textTemplate": "从这个分母转到一千升服务，还需要换算。报告列出每液盎司{{input.facts.litresPerFluidOunce.value}}L和每Btu为{{input.facts.joulesPerBtu.value}}J；按这些小数，一百万次12液盎司灌装为{{evaluated.demand.cohortLitres}}L。它又直接给出合并系数{{input.facts.energyConversion.value}}，把“百万Btu/1200万液盎司”转为“GJ/1000L”。用该系数乘{{input.facts.retTotal.value}}和{{input.facts.owgTotal.value}}，得到{{evaluated.summary.retGJ}}与{{evaluated.summary.owgGJ}}；按总表相应的小数位显示为{{evaluated.summary.retRounded2}}与{{evaluated.summary.owgRounded1}}，对应第一卷的{{input.facts.retMetric.value}}与{{input.facts.owgMetric.value}}。"
+    },
+    {
+      "id": "cl-hist-assembly-check",
+      "kind": "calculation",
+      "scope": "固定印刷205短吨、逐项采用Table8显示系数的检查。",
+      "evidenceIds": [
+        "ev-hist-component-table",
+        "ev-hist-demand",
+        "ev-hist-summary"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hist-component-table",
+          "relation": "context",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        },
+        {
+          "evidenceId": "ev-hist-demand",
+          "relation": "context",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        },
+        {
+          "evidenceId": "ev-hist-summary",
+          "relation": "context",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        }
+      ],
+      "premiseIds": [
+        "cl-hist-glass-branch",
+        "cl-hist-reported-summaries"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "这不是已确认的原报告错误；不同表的基准、未显示质量精度或其他输入仍可能有关。"
+      ],
+      "reasoning": "十三项之和29.102×205=5965.910，与6036差70.09，不能隐去或调参强制相等。",
+      "textTemplate": "一个具体差额把这一区别显示出来。Table8除上述八项外，还列出处置{{input.facts.componentDisposal.value}}、封口{{input.facts.componentClosure.value}}、系统运输{{input.facts.componentTransport.value}}、灌装{{input.facts.componentFilling.value}}与包装{{input.facts.componentPackaging.value}}百万Btu。十三项按表的共同基准合计{{evaluated.assembly.factor}}；若固定采用表列瓶重导出的{{evaluated.demand.oneWayManufactureTon}}短吨，相乘为{{evaluated.assembly.owgFixed3}}百万Btu，与整体表的{{input.facts.owgTotal.value}}相差{{evaluated.assembly.gap}}。按这组显示输入，整表组装没有精确闭合。"
+    },
+    {
+      "id": "cl-hist-rounding-bound",
+      "kind": "calculation",
+      "scope": "作者提出的条件性系数舍入上界，不是原报告统计分析。",
+      "evidenceIds": [
+        "ev-hist-component-table",
+        "ev-hist-demand",
+        "ev-hist-summary"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hist-component-table",
+          "relation": "context",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        },
+        {
+          "evidenceId": "ev-hist-demand",
+          "relation": "context",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        },
+        {
+          "evidenceId": "ev-hist-summary",
+          "relation": "context",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        }
+      ],
+      "premiseIds": [
+        "cl-hist-assembly-check"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "未假定概率分布，不推断全部差异的原因；固定205是该检验的前提。"
+      ],
+      "reasoning": "三角不等式给出13个半末位误差之和×固定质量；与公开表差额比较。",
+      "textTemplate": "还可以检验一种很窄的解释：假定只有这十三个三位小数系数各自发生不超过{{input.coefficientRounding.halfWidth}}的四舍五入误差，仍把{{evaluated.demand.oneWayManufactureTon}}短吨固定不动，则总和误差上限为13×{{input.coefficientRounding.halfWidth}}×{{evaluated.demand.oneWayManufactureTon}}＝{{evaluated.assembly.coefficientOnlyBound}}百万Btu，小于{{evaluated.assembly.gap}}的差额。这只排除了“在这些固定条件下，单靠所列系数的显示舍入就足够”的解释；它没有计入瓶重的未披露精度，也不是经验不确定性区间。"
+    },
+    {
+      "id": "cl-hist-package-sensitivity",
+      "kind": "interpretation",
+      "scope": "原VolumeI p29保持五次瓶使用的包装情境。",
+      "evidenceIds": [
+        "ev-hist-package-sensitivity"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hist-package-sensitivity",
+          "relation": "supports",
+          "rationale": "所定位原文提供该段所用的历史条件或数值；算术与连接性解释由本书明确展开。"
+        }
+      ],
+      "premiseIds": [
+        "cl-hist-pair"
+      ],
+      "conceptIds": [
+        "cn-hist-package-trippage",
+        "cn-hist-bottle-trippage"
+      ],
+      "mappingIds": [
+        "map-hist-two-trippages"
+      ],
+      "caveats": [
+        "原文各点的显示精度不同；不把三个点拟合成已证实的原程序，不据此作当代包装建议。"
+      ],
+      "textTemplate": "瓶子与纸包装的使用次数还可以分开考察。原报告把瓶子保持在{{input.facts.fiveTripUses.value}}次使用，改动纸包装：一次使用时能源为{{input.facts.packageEnergyOne.value}}GJ/1000L，两次时为{{input.facts.packageEnergyTwo.value}}，三次时为{{input.facts.packageEnergyThree.value}}。这是原作者报告的三个离散情境结果；它们说明包装假定会改变系统比较，但不是上述局部重建独立验证出的全部模型，单凭这三个点也不能确定任意使用次数的通用函数。"
+    }
+  ]
+}

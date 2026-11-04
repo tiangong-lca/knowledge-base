@@ -6,6 +6,7 @@ import { evaluateTeachingCase, validateTeachingCase } from './teaching-case.mjs'
 import { evaluateJointProductionCase, validateJointProductionCase } from './joint-production.mjs';
 import { publicCatalog } from './knowledge.mjs';
 import { evaluateWaterLocalityCase, validateWaterLocalityCase, evaluatePhosphorusBoundaryCase, validatePhosphorusBoundaryCase } from './impact-examples.mjs';
+import { historicalFactKeys, validateHistoricalContainerCase, evaluateHistoricalContainerCase } from './historical-container.mjs';
 
 // Every nested object has an explicit schema. Unknown fields never enter public
 // downloads or the approved-input hash, including capture/private metadata.
@@ -55,9 +56,21 @@ const phosphorusInputShape = {
   emission: { unit: scalar, speciesBasis: scalar, compartment: scalar, kind: scalar },
   characterization: { symbol: scalar, value: scalar, unit: scalar, matchedEmissionSpeciesBasis: scalar, matchedCompartment: scalar, numericFactorAdopted: scalar },
 };
+const historicalInputShape = {
+  caseId: scalar, version: scalar, model: scalar, createdAt: scalar, status: scalar,
+  sourceId: scalar, sourceArtifactSha256: scalar,
+  interpretation: { sourceYear: scalar, comparison: scalar, scope: scalar, usesIncludeInitialFilling: scalar,
+    printedDecimalsAreExactArithmeticInputs: scalar, reportedTotalsIndependentlyReproduced: scalar,
+    originalSoftwareExecuted: scalar, empiricalValidation: scalar, currentProductRecommendation: scalar,
+    unreportedPrecisionRecovered: scalar },
+  facts: Object.fromEntries(historicalFactKeys.map(key => [key, { value: scalar, unit: scalar, subject: scalar, evidenceId: scalar, factId: scalar }])),
+  coefficientRounding: { kind: scalar, halfWidth: scalar, massHeldAtPrintedValue: scalar, massPrecisionIncluded: scalar, probabilityAssigned: scalar },
+};
 // Closed model registry: a case identity selects its projection, evaluator and
 // numeric-source policy together. An input flag cannot disable wall fact checks.
 const caseAdapters = new Map([
+  ['CASE-HISTORICAL-GLASS', { shape: historicalInputShape, validate: validateHistoricalContainerCase,
+    context: input => ({ evaluated: evaluateHistoricalContainerCase(input) }), validateFacts: validateHistoricalFacts }],
   ['CASE-WATER-LOCALITY', { shape: waterInputShape, validate: validateWaterLocalityCase,
     context: input => ({ evaluated: evaluateWaterLocalityCase(input) }),
     // All numbers are synthetic; source passages motivate the conceptual relation.
@@ -217,6 +230,26 @@ function validatePhosphorusLossFact(spec, published) {
   else if (!['public-html-inspected', 'public-passages-inspected', 'public-full-text-inspected', 'licensed-full-text-inspected'].includes(source.accessStatus)) errors.push('phosphorus inventory estimation: numerical source was not inspected');
   const evidence = published.evidence.find(record => record.id === loss.evidenceId), fact = evidence?.numericFact;
   if (!evidence || evidence.sourceId !== loss.sourceId || !fact || fact.value !== loss.fraction || fact.unit !== loss.unit || fact.subject !== loss.subject) errors.push('phosphorus inventory estimation: loss coefficient does not match bound public source numericFact value/unit/subject');
+  return errors;
+}
+function validateHistoricalFacts(spec, published) {
+  const errors = [];
+  const source = published.sources.find(record => record.id === spec.sourceId);
+  if (!source) errors.push('historical reconstruction: source is outside the reviewed public closure');
+  else {
+    if (!['public-passages-inspected', 'public-full-text-inspected', 'licensed-full-text-inspected'].includes(source.accessStatus))
+      errors.push('historical reconstruction: original numerical source was not inspected');
+    if (source.artifact?.mediaType !== 'application/pdf' || source.artifact?.sha256 !== spec.sourceArtifactSha256)
+      errors.push('historical reconstruction: source carrier does not match the inspected PDF');
+  }
+  const evidenceById = new Map(published.evidence.map(record => [record.id, record]));
+  for (const [key, input] of Object.entries(spec.facts)) {
+    const evidence = evidenceById.get(input.evidenceId);
+    const facts = evidence?.numericFacts?.filter(fact => fact.id === input.factId) ?? [];
+    if (!evidence || evidence.sourceId !== spec.sourceId || facts.length !== 1
+        || facts[0].value !== input.value || facts[0].unit !== input.unit || facts[0].subject !== input.subject)
+      errors.push(`historical reconstruction.facts.${key}: missing or mismatched public source fact value/unit/subject/identity`);
+  }
   return errors;
 }
 export const safeCaseInputFile = name => typeof name === 'string' && /^[a-z0-9]+(?:-[a-z0-9]+)*\.json$/.test(name);

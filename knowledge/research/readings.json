@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-04",
+  "updatedAt": "2026-11-05",
   "readings": [
     {
       "id": "rd-cml-2001-part1",
@@ -2464,10 +2464,10 @@
       "version": "SW-91c / EPA530SW91C；1974 题名页图像核验；单一 185 页扫描含 Volume I 与 Volume II；前者署 Hunt/Franklin，后者署 Hunt/Welch/Cross/Woodall",
       "url": "https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=9100M5VS.TXT",
       "accessedAt": "2026-11-04",
-      "readAt": "2026-11-04",
+      "readAt": "2026-11-05",
       "readingStatus": "selected-passages",
-      "question": "该同期 REPA 如何设比较基准、类别和适用边界？",
-      "argumentSummary": "报告以具体容器系统提供饮料为比较对象，明确类别和排除项；它解释了从过程输出数量转换为服务比较基准的步骤，并限制对其他产品和实际损害的推断。",
+      "question": "该同期REPA如何设比较基准与边界，以及公开数值能独立重建哪些计算层次？",
+      "argumentSummary": "原报告把服务灌装数、新瓶制造和回用活动分别连接；选段支持燃料到玻璃能源分项、玻璃支路与报告汇总的单位核对。不同表的完整总量组装仍有未解释差额，来源精度和私人底层数据限制不被消除。",
       "artifacts": [
         {
           "id": "art-epa-1974-nine-beverage-html",
@@ -2650,24 +2650,265 @@
             24,
             39
           ]
+        },
+        {
+          "id": "psg-epa1974-hist-demand",
+          "artifactId": "art-epa-1974-nine-beverage-pdf",
+          "locator": "Volume II pp88–91；Table29、Figure4与瓶重/吨基准说明",
+          "printedPages": "88、89、90、91",
+          "topics": [
+            "百万次灌装与新瓶、重复通过灌装和返回质量分别计数；ton按2000lb计算。"
+          ],
+          "limits": [
+            "典型瓶重与平均使用次数不是每只瓶的实测寿命分布；不据返回流单独确定运输距离。"
+          ],
+          "pdfIndices": [
+            94,
+            95,
+            96,
+            97
+          ]
+        },
+        {
+          "id": "psg-epa1974-hist-systems",
+          "artifactId": "art-epa-1974-nine-beverage-pdf",
+          "locator": "Volume I pp19–21、28、30；Tables6–7与10-RET/OWG说明",
+          "printedPages": "19、20、21、28、30",
+          "topics": [
+            "10-RET与OWG的服务/场外条件、包装使用次数及6.02/17.9GJ结果。"
+          ],
+          "limits": [
+            "19-RET表注off-premise与其行/正文on-premise不一致，本比较不采用该表注分类；p21交叉引页不作为精确定位。"
+          ],
+          "pdfIndices": [
+            25,
+            26,
+            27,
+            34,
+            36
+          ]
+        },
+        {
+          "id": "psg-epa1974-hist-materials",
+          "artifactId": "art-epa-1974-nine-beverage-pdf",
+          "locator": "Volume II Table6 p56；Volume I p28；Volume II p85",
+          "printedPages": "56、28、85",
+          "topics": [
+            "10-RET新玻璃数量表写30短吨；灌装与纸包装、瓶的回用条件分开。"
+          ],
+          "limits": [
+            "30是该表的显示数量，不能无说明地替代305/10所得30.5。"
+          ],
+          "pdfIndices": [
+            62,
+            34,
+            91
+          ]
+        },
+        {
+          "id": "psg-epa1974-hist-conversion",
+          "artifactId": "art-epa-1974-nine-beverage-pdf",
+          "locator": "Volume II §I.D p51；对照Volume I p19",
+          "printedPages": "51、19",
+          "topics": [
+            "报告给出常用单位到SI及百万12液盎司灌装到1000L服务的换算系数。"
+          ],
+          "limits": [
+            "采用原报告公布的小数；p19的2817个12oz容器与逐步使用0.02957L的小数运算不视为无限精度等式。"
+          ],
+          "pdfIndices": [
+            57,
+            25
+          ]
+        },
+        {
+          "id": "psg-epa1974-hist-glass-inputs",
+          "artifactId": "art-epa-1974-nine-beverage-pdf",
+          "locator": "Volume II Table22 p79，能源输入行及各自单位",
+          "printedPages": "79",
+          "topics": [
+            "每短吨玻璃容器的五项燃料/电力输入及来源分组。"
+          ],
+          "limits": [
+            "表中来源号83为1967Census；其他材料或运输资料的来源与数值不能混作这五项燃料数据。"
+          ],
+          "pdfIndices": [
+            85
+          ]
+        },
+        {
+          "id": "psg-epa1974-hist-fuel-factors",
+          "artifactId": "art-epa-1974-nine-beverage-pdf",
+          "locator": "Volume II §I.A p44及Table1 p45，Energy行Total列",
+          "printedPages": "44、45",
+          "topics": [
+            "所用燃料能源因子包括燃烧前与燃烧；保留每1000gal或1000ft³分母。"
+          ],
+          "limits": [
+            "此处只重建能源行，不复算全部排放因子或原迭代程序。"
+          ],
+          "pdfIndices": [
+            50,
+            51
+          ]
+        },
+        {
+          "id": "psg-epa1974-hist-electricity",
+          "artifactId": "art-epa-1974-nine-beverage-pdf",
+          "locator": "Volume II §I.B p49及Table4 p50",
+          "printedPages": "49、50",
+          "topics": [
+            "原报告标作1972的复合供电因子11.1百万Btu/1000kWh。"
+          ],
+          "limits": [
+            "p49/表4标年1972，参考文献78在p177标为1970年鉴；底层资料年份未据此擅自修正。"
+          ],
+          "pdfIndices": [
+            55,
+            56
+          ]
+        },
+        {
+          "id": "psg-epa1974-hist-component-table",
+          "artifactId": "art-epa-1974-nine-beverage-pdf",
+          "locator": "Volume II Table8 p59，Energy汇总行、分项表头与计量基准",
+          "printedPages": "59",
+          "topics": [
+            "一次性玻璃系统每短吨基准的十三项能源；玻璃及上游无机材料八项可分开核对。"
+          ],
+          "limits": [
+            "这些是该表定义的系统分项系数，不是所有过程各自一短吨输出的同一分母；固定205短吨重算仍与总表有差额。"
+          ],
+          "pdfIndices": [
+            65
+          ]
+        },
+        {
+          "id": "psg-epa1974-hist-unit-factor",
+          "artifactId": "art-epa-1974-nine-beverage-pdf",
+          "locator": "Volume II Table14 pp65–66，玻璃制造与所述选列能源行",
+          "printedPages": "65、66",
+          "topics": [
+            "玻璃制造总能源为15.668百万Btu/短吨；其process与transport列仍须按具体表示核对。"
+          ],
+          "limits": [
+            "燃料乘算吻合总能源不表示原运输分列也已重建；其他污染物行未完整复算。"
+          ],
+          "pdfIndices": [
+            71,
+            72
+          ]
+        },
+        {
+          "id": "psg-epa1974-hist-summary",
+          "artifactId": "art-epa-1974-nine-beverage-pdf",
+          "locator": "Volume II Table7 p57与Table13 p64，10-RET/OWG能源输入及汇总行",
+          "printedPages": "57、64",
+          "topics": [
+            "每百万12oz灌装的整体报告值为2026与6036百万Btu。"
+          ],
+          "limits": [
+            "这些整体值是来源报告结果；分项相加或换算成功不将它们变成独立从全部底层数据得出的结果。"
+          ],
+          "pdfIndices": [
+            63,
+            70
+          ]
+        },
+        {
+          "id": "psg-epa1974-hist-five-trip-branch",
+          "artifactId": "art-epa-1974-nine-beverage-pdf",
+          "locator": "Volume II Table9 p60，Bottle system 61tons列的Energy汇总",
+          "printedPages": "60",
+          "topics": [
+            "五次使用情境的玻璃支路报告1130百万Btu。"
+          ],
+          "limits": [
+            "只核对玻璃支路，不声称该表其他分项或整个5-RET体系全部闭合。"
+          ],
+          "pdfIndices": [
+            66
+          ]
+        },
+        {
+          "id": "psg-epa1974-hist-package-sensitivity",
+          "artifactId": "art-epa-1974-nine-beverage-pdf",
+          "locator": "Volume I p29首段；参照p28情境定义",
+          "printedPages": "28、29",
+          "topics": [
+            "瓶子保持五次使用时，纸包装一/二/三次的报告能源为12、9.0、8GJ/1000L。"
+          ],
+          "limits": [
+            "三个点是原报告离散情境结果；不拟合成已证实的原模型连续函数，不把包装效应说成只改变瓶子次数。"
+          ],
+          "pdfIndices": [
+            34,
+            35
+          ]
+        },
+        {
+          "id": "psg-epa1974-hist-provenance",
+          "artifactId": "art-epa-1974-nine-beverage-pdf",
+          "locator": "Volume II p90的周转资料说明；Bibliography pp175–177，refs48、68、78、83",
+          "printedPages": "90、175、176、177",
+          "topics": [
+            "资料来自公开统计、未发表报告和MRI私人行业估计；实际周转次数难以准确确定。"
+          ],
+          "limits": [
+            "原始程序、全部私人底层数据与正式更正链未取得；没有据局部差异宣布作者工作无效。"
+          ],
+          "pdfIndices": [
+            96,
+            181,
+            182,
+            183
+          ]
+        },
+        {
+          "id": "psg-epa1974-hist-energy-meaning",
+          "artifactId": "art-epa-1974-nine-beverage-pdf",
+          "locator": "Volume I pp11–14、17；Volume II pp44、49–50",
+          "printedPages": "11、12、13、14、17、44、49、50",
+          "topics": [
+            "能源资源核算包含燃料供应与燃烧、所选供电等效及部分材料能值；不是直接环境损害或电表数量。"
+          ],
+          "limits": [
+            "只按本报告语境解释，不外推为所有年代/方法的统一能源定义。"
+          ],
+          "pdfIndices": [
+            17,
+            18,
+            19,
+            20,
+            23,
+            50,
+            55,
+            56
+          ]
         }
       ],
       "appraisal": {
-        "basis": "实际原始 NEPIS HTML 选段与 185 页原报告扫描；指定页图像复核，PDF 无可提取 OCR 文本。",
+        "basis": "实际原始NEPIS选段与固定185页扫描；既有选页加本次所列数值/表头/脚注图像检查，PDF为图像载体。",
         "methodologicalScope": "1974 年特定容器系统的 REPA 及其假设；不声称现代 LCIA 完整性。",
         "independence": "与 1972 RTI 报告为不同承包研究，仍共享 EPA/行业数据语境；未将同主题视为独立实证重复。",
         "limitations": [
-          "Volume II 的逐过程数据没有完成细读或复算。",
+          "已新增所列第一卷情境及第二卷玻璃/能源表选段和局部核算；完整第二卷、原程序和全部总量未独立重建。",
           "没有取得所述私人1969委托原报告。",
-          "文本类别用语与现代含义的关系需要逐条限定。"
+          "文本类别用语与现代含义的关系需要逐条限定。",
+          "固定表列205短吨时，Table8十三项能源合计×205与Tables7/13相差70.09百万Btu；不能只用显示系数的舍入解释，也不由此确定源错误。",
+          "Table22燃料运算与Table14总能源相容，但运输分列/ton-mile层尚未完整衔接；没有擅自补加或替换。",
+          "表中的典型瓶重、三位小数系数和部分汇总精度不同；所有本书算术位数不等于历史测量精度。",
+          "p49/Table4的1972与参考文献78的1970年份标注不一致；未核验底层电力资料。",
+          "VolumeI Table6的19-trip off-premise表注与行/正文不一致；Table7p21的VolumeII交叉引页不能直接沿用。"
         ],
         "reviewKind": "agent-source-check",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rights": "公开 EPA 承包研究报告；没有据机构仓储或出版批准推断所有承包材料整体为公有领域。仅发布原创释义、元数据和定位；不重传原文、表图或扫描。",
       "unread": [
-        "Volume I 未列的结果段和技术推论。",
-        "完整 Volume II、基础数据、引用和独立评审材料。"
+        "未列范围的原报告正文与所有原始数据/模型代码。",
+        "完整第二卷其他材料体系、全部污染物流、全部敏感性曲线和独立底层验证。",
+        "参考文献中的私人产业记录、原始工作数据库与未发表报告。"
       ],
       "sourceKeys": [
         "EPA530SW91C"
@@ -6219,6 +6460,27 @@
       "affectedUnits": [
         "V5"
       ]
+    },
+    {
+      "id": "gap-hist-total-reconciliation",
+      "description": "所选公开表尚不足以完整重建10-RET/OWG总量；固定表列质量时Table8组合有差额，运输分列/数据精度也未全部对应。",
+      "nextAction": "保留准确的输入、差额与未闭合层次；继续寻找原工作数据/权威修订，不通过反推参数或插值强制闭合。",
+      "affectedUnits": [
+        "V1",
+        "V4",
+        "V7",
+        "A06"
+      ]
+    },
+    {
+      "id": "gap-hist-trippage-empirical",
+      "description": "原报告明确实际周转次数资料薄弱；N=10/5为所述情境，并非已验证的普遍寿命分布或回收率。",
+      "nextAction": "后续实证案例须独立取得使用分布、损失、包装回流和运输条件，不以这个历史模型代替。",
+      "affectedUnits": [
+        "P01",
+        "V7",
+        "A06"
+      ]
     }
   ],
   "revisions": [
@@ -6883,6 +7145,77 @@
       "affectedUnits": [
         "V5",
         "acidification-and-nutrient-pathways"
+      ],
+      "status": "applied"
+    },
+    {
+      "id": "rev-hist-counting",
+      "triggerPassageIds": [
+        "psg-epa1974-hist-demand",
+        "psg-epa1974-hist-systems"
+      ],
+      "before": "从回用材料名称进入历史比较。",
+      "after": "先固定灌装服务，再分开新瓶、累计灌装、返回与纸包装的次数；不把N写成回收率或统一的全系统除数。",
+      "reasoning": "实际原表、段落和算术改变了论证组织；未知条件不由总量或形式相似性消除。",
+      "affectedUnits": [
+        "P01",
+        "V1",
+        "V3",
+        "A06"
+      ],
+      "status": "applied"
+    },
+    {
+      "id": "rev-hist-energy",
+      "triggerPassageIds": [
+        "psg-epa1974-hist-fuel-factors",
+        "psg-epa1974-hist-electricity",
+        "psg-epa1974-hist-glass-inputs",
+        "psg-epa1974-hist-component-table",
+        "psg-epa1974-hist-summary",
+        "psg-epa1974-hist-conversion"
+      ],
+      "before": "汇总能源容易被当作直接电量或已独立复现的总量。",
+      "after": "先从五项燃料/电力重建玻璃分项，分开支路、报告汇总和服务归一化，并保留原供给背景与电力年份疑点。",
+      "reasoning": "实际原表、段落和算术改变了论证组织；未知条件不由总量或形式相似性消除。",
+      "affectedUnits": [
+        "V1",
+        "V4",
+        "V7",
+        "A06"
+      ],
+      "status": "applied"
+    },
+    {
+      "id": "rev-hist-reconstruction",
+      "triggerPassageIds": [
+        "psg-epa1974-hist-component-table",
+        "psg-epa1974-hist-summary",
+        "psg-epa1974-hist-provenance"
+      ],
+      "before": "拟把显示的过程表直接组装为原研究全模型的精确复本。",
+      "after": "依据实际差额区分成功的局部核对与未闭合的完整组装；仅给有明确前提的显示舍入上界，不反推未知参数或宣称完整复现。",
+      "reasoning": "实际原表、段落和算术改变了论证组织；未知条件不由总量或形式相似性消除。",
+      "affectedUnits": [
+        "V4",
+        "V7",
+        "A06"
+      ],
+      "status": "applied"
+    },
+    {
+      "id": "rev-hist-sensitivity",
+      "triggerPassageIds": [
+        "psg-epa1974-hist-systems",
+        "psg-epa1974-hist-package-sensitivity"
+      ],
+      "before": "5-RET到10-RET差异可能只按瓶子次数解释。",
+      "after": "用原文保持瓶子五次、改变包装一/二/三次的三个点解释条件比较，不拟合成原程序。",
+      "reasoning": "实际原表、段落和算术改变了论证组织；未知条件不由总量或形式相似性消除。",
+      "affectedUnits": [
+        "V1",
+        "V6",
+        "V7"
       ],
       "status": "applied"
     }
