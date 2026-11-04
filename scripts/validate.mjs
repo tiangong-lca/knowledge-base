@@ -3,6 +3,7 @@ import { resolve, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { publicCatalog, validateCatalog } from './knowledge.mjs';
 import { validateResearch } from './research.mjs';
+import { loadCasePublications, validateCasePublications } from './case-publication.mjs';
 
 export function validateClaimReferences(text, catalog, label = 'MDX') {
   const errors = [];
@@ -30,6 +31,24 @@ export function validateClaimReferences(text, catalog, label = 'MDX') {
   return errors;
 }
 
+export function validateTeachingCaseReferences(text, entries, label = 'MDX') {
+  const errors = [];
+  const known = new Set(entries.map(({ spec }) => `${spec.caseId}@${spec.version}`));
+  const source = text.replace(/^\s*(```|~~~)[\s\S]*?^\s*\1[^\n]*$/gm, '').replace(/`[^`\n]*`/g, '');
+  for (const match of source.matchAll(/<TeachingCase\b[^>]*(?:>|$)/g)) {
+    const tag = match[0];
+    const attributes = [...tag.matchAll(/\s+(id|version)\s*=\s*(["'])([^"']+)\2/g)];
+    const remainder = tag.replace(/^<TeachingCase/, '').replace(/\s+(id|version)\s*=\s*(["'])([^"']+)\2/g, '');
+    if (!/^\s*\/\s*>$/.test(remainder) || attributes.length !== 2 || new Set(attributes.map(a => a[1])).size !== 2) {
+      errors.push(`${label}: TeachingCase must use one literal id and version attribute in a self-closing tag`);
+      continue;
+    }
+    const values = Object.fromEntries(attributes.map(a => [a[1], a[3]]));
+    if (!known.has(`${values.id}@${values.version}`)) errors.push(`${label}: unknown TeachingCase ${values.id}@${values.version}`);
+  }
+  return errors;
+}
+
 async function mdxFiles(path) {
   const result = [];
   for (const entry of await readdir(path, { withFileTypes: true })) {
@@ -52,8 +71,14 @@ export async function validateRepository(root) {
     readOptional('knowledge/research/readings.json'),
   ]);
   errors.push(...validateResearch(literature, readings, data));
+  let cases = [];
+  try { cases = await loadCasePublications(root); errors.push(...validateCasePublications(cases, data)); }
+  catch (error) { errors.push(error.message); }
   if (errors.length) return errors;
-  for (const file of await mdxFiles(resolve(root, 'content'))) errors.push(...validateClaimReferences(await readFile(file, 'utf8'), data, relative(root, file)));
+  for (const file of await mdxFiles(resolve(root, 'content'))) {
+    const text = await readFile(file, 'utf8'), label = relative(root, file);
+    errors.push(...validateClaimReferences(text, data, label), ...validateTeachingCaseReferences(text, cases, label));
+  }
   return errors;
 }
 
@@ -62,6 +87,6 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
     const root = fileURLToPath(new URL('..', import.meta.url));
     const errors = await validateRepository(root);
     if (errors.length) { console.error(errors.join('\n')); process.exitCode = 1; }
-    else console.log('Catalog, research-register integrity and public MDX references passed. This does not establish scientific or human expert review.');
+    else console.log('Catalog, research/case publication integrity and public MDX references passed. This does not establish scientific or human expert review.');
   } catch (error) { console.error(error.message); process.exitCode = 1; }
 }

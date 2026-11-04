@@ -166,3 +166,55 @@ test('public allowlisted fields cannot carry hidden nested objects through primi
   f.readings.readings[0].passages[0].pdfIndices.push({ privateNotes: 'secret' });
   assert(!JSON.stringify(publicResearch(f.literature, f.readings)).includes('secret'));
 });
+
+function derivedFixture() {
+  const f = fixture();
+  const artifact = { id: 'art-derived', kind: 'derived-text', mediaType: 'text/plain', sha256: 'd'.repeat(64), originUrl: 'https://example.org/corrected-table.pdf', captureMethod: 'Official indexed text selected capture', captureScope: 'Selected table rows/header/caption; no PDF visual verification', originalDocumentMediaType: 'application/pdf', originalDocumentBytesAvailable: false };
+  const reading = f.readings.readings[0];
+  reading.artifacts = [artifact];
+  reading.passages = [{ id: 'psg-pdf', artifactId: artifact.id, locator: 'Replacement table 7.15, selected rows', topics: ['metric'], limits: ['Original PDF bytes unavailable; selected text only.'] }];
+  const { id, ...snapshot } = artifact;
+  f.catalog.sources[0].artifact = snapshot;
+  return f;
+}
+
+test('derived selected text is a bounded distinct carrier in validation and public research projection', () => {
+  const f = derivedFixture();
+  assert.deepEqual(errors(f), []);
+  f.readings.readings[0].artifacts[0].privatePath = '/private/raw-capture.txt';
+  const projected = publicResearch(f.literature, f.readings).readingLedger.readings[0].artifacts[0];
+  assert.equal(projected.kind, 'derived-text');
+  for (const field of ['originUrl', 'captureMethod', 'captureScope', 'originalDocumentMediaType', 'originalDocumentBytesAvailable']) assert.equal(projected[field], f.catalog.sources[0].artifact[field]);
+  assert.equal(projected.pageCount, undefined);
+  assert.equal(projected.resolvedUrl, undefined);
+  assert(!JSON.stringify(projected).includes('/private/'));
+});
+
+test('derived capture metadata and source binding cannot be dropped or silently changed', () => {
+  for (const field of ['kind', 'originUrl', 'captureMethod', 'captureScope', 'originalDocumentMediaType', 'originalDocumentBytesAvailable']) {
+    const f = derivedFixture(); delete f.catalog.sources[0].artifact[field];
+    assert(errors(f).some(error => error.includes(`artifact.${field}`)), errors(f).join('\n'));
+  }
+  for (const field of ['originUrl', 'captureMethod', 'captureScope', 'originalDocumentMediaType', 'originalDocumentBytesAvailable']) {
+    const f = derivedFixture(); delete f.readings.readings[0].artifacts[0][field];
+    assert(errors(f).some(error => error.includes(`.${field}`)), errors(f).join('\n'));
+  }
+  const f = fixture(); f.catalog.sources[0].artifact.kind = 'retrieved';
+  assert.deepEqual(errors(f), []); // Explicit retrieved and legacy missing kind identify the same carrier.
+});
+
+test('derived text cannot claim PDF indices, original download URLs or page counts', () => {
+  for (const mutate of [
+    f => f.readings.readings[0].passages[0].pdfIndices = [0],
+    f => f.readings.readings[0].passages[0].nepisBlocks = [0],
+    f => f.readings.readings[0].artifacts[0].pageCount = 2,
+    f => f.readings.readings[0].artifacts[0].resolvedUrl = 'https://example.org/original.pdf',
+    f => f.readings.readings[0].artifacts[0].originalDocumentBytesAvailable = true,
+    f => f.readings.readings[0].artifacts[0].originUrl = 'https://example.org/origin?signature=secret',
+  ]) {
+    const f = derivedFixture(); mutate(f); assert(errors(f).length > 0);
+  }
+  const f = derivedFixture(); f.readings.readings[0].artifacts[0].captureMethod = { privateNotes: 'hidden-private-text' };
+  assert(errors(f).some(error => /captureMethod/.test(error)));
+  assert(!JSON.stringify(publicResearch(f.literature, f.readings)).includes('hidden-private-text'));
+});

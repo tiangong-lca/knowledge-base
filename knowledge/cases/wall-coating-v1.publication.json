@@ -1,0 +1,453 @@
+{
+  "schemaVersion": 1,
+  "caseId": "CASE-WALL-CONNECT",
+  "version": "1.0.0",
+  "inputFile": "wall-coating-v1.json",
+  "approvedInputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+  "reviewedAt": "2026-11-04",
+  "reviewKind": "agent-source-check",
+  "claims": [
+    {
+      "id": "cl-wall-question",
+      "textTemplate": "现在把问题完整地做一遍：让 {{input.service.area}} m² 干燥室内墙面在 {{input.service.intervalYears}} 年内连续保持指定的均匀颜色和至少 0.98 的假定遮盖率，应分别启动哪些活动，最后能够怎样比较？这就是 CASE-WALL-CONNECT v1.0.0 的固定问题。下方计算器和可下载输入属于同一个案例版本。涂料 A、B 的身份、性能、涂装计划、投入、排放量、基底适配、电力参数范围与比较容差全部由作者虚构；CO2 与化石来源 CH4 是真实的物质身份，唯有注明出处的表征因子取自外部来源。先从已有平整、完好的基底开始；粗糙基底留到后面，只改变一项初始条件。",
+      "kind": "proposal",
+      "scope": "CASE-WALL-CONNECT v1.0.0：固定作者假设与选定因子下的教学推演",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-book-service-contract"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "作者定义本案例的研究问题和假设地位，不把构造的产品数据归于外部文献。 既有服务条件论证提供教学任务的动机；本段全部案例参数仍为作者设定，不归因于指南。"
+    },
+    {
+      "id": "cl-wall-quantities",
+      "textTemplate": "先沿着时间安排材料。A 每次用量为 {{input.service.paintA.kgPerM2PerTreatment}} kg/m²，假定每次维持 {{input.service.paintA.stipulatedLifeYearsPerTreatment}} 年，因此在第 {{input.service.paintA.treatmentTimesYears.0}} 年和第 {{input.service.paintA.treatmentTimesYears.1}} 年各涂一次；B 每次为 {{input.service.paintB.kgPerM2PerTreatment}} kg/m²，一次维持 {{input.service.paintB.stipulatedLifeYearsPerTreatment}} 年。于是 A 的用量是 {{input.service.area}} m² × {{input.service.paintA.kgPerM2PerTreatment}} kg/m²/次 × {{smooth.display.service.alternatives.paintA.treatmentCount}} 次＝{{smooth.display.service.alternatives.paintA.requiredKg}} kg，B 相应为 {{smooth.display.service.alternatives.paintB.requiredKg}} kg。区间右端不含第 10 年那个时点，所以不再安排当年的重涂。这里还假定没有损耗，重涂瞬时完成、没有停用，A 重涂不用先去除旧层，十年间性能与生产技术不变；正是这些设定使两份计划接上了连续服务。",
+      "kind": "calculation",
+      "scope": "CASE-WALL-CONNECT v1.0.0：固定作者假设与选定因子下的教学推演",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-wall-question"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "面积乘单次面积用量再乘区间内的涂装次数；以每次寿命和无间断假设核对时间覆盖，结果由同版本输入与精确引擎生成。"
+    },
+    {
+      "id": "cl-wall-reference",
+      "textTemplate": "现在有两个相连的表述层次。服务一侧是“用 A 或 B 让这 {{input.service.area}} m² 墙面满足所定期间与性能”；计算一侧是所选过程坐标上 {{smooth.display.service.alternatives.paintA.requiredKg}} kg A 或 {{smooth.display.service.alternatives.paintB.requiredKg}} kg B 的需求。前一章所读 CML 2001 §2.3.4 的涂料例以覆盖墙面面积表述参考流，把所需体积放在过程数据中；ILCD 2010 §6.4.1 则容许按用途采用服务关联或产品导向的参考表述。本例保留服务关联的一层，再为以 kg 供给涂料的过程建立产品量需求。这是对两段语境的有限衔接：kg 与 g 的换算只改变同一质量的数值表示，而由墙面要求得到用量，还需要性能和计划这些额外前提。本例从一开始就设定 kg 数据，无须把指南的体积偷换成质量，也没有证明任意两套数据库可直接互换。",
+      "kind": "synthesis",
+      "scope": "CASE-WALL-CONNECT v1.0.0：固定作者假设与选定因子下的教学推演",
+      "evidenceIds": [
+        "ev-cml-reference-form",
+        "ev-ilcd-reference-form"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-cml-reference-form",
+          "relation": "context",
+          "rationale": "CML 2001 Part 2a §2.3.4 p22 支持面积参考与过程体积的层次区别；不支持本例虚构性能。"
+        },
+        {
+          "evidenceId": "ev-ilcd-reference-form",
+          "relation": "context",
+          "rationale": "ILCD 2010 §6.4.1 p60 支持用途相关的两类参考表达；本例质量坐标是作者选择。"
+        }
+      ],
+      "premiseIds": [
+        "cl-wall-quantities",
+        "cl-book-cml-reference",
+        "cl-book-ilcd-reference"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "分别保留来源的表达用途，再由本例公开的性能及计划构造服务到过程需求的映射，未作普遍术语同一化。"
+    },
+    {
+      "id": "cl-wall-same-mass",
+      "textTemplate": "先用一个会改错问题的做法检验这条联系。若两者都只取 {{input.countercase.massKg}} kg，A 为了维持十年仍须分两次使用，只能服务 {{smooth.low.sameMass.alternatives.paintA.serviceArea}} m²；B 却服务 {{smooth.low.sameMass.alternatives.paintB.serviceArea}} m²。在共同 θ＝{{smooth.low.theta}} 时，二者指标分别是 {{smooth.low.sameMass.alternatives.paintA.indicator}} 与 {{smooth.low.sameMass.alternatives.paintB.indicator}} kg CO2-eq。这个“等质量”结果回答的是各供给这份质量的负担，伴随的十年墙面服务并不相同。把 A 恢复到规定面积后，其结果变为 {{smooth.low.alternatives.paintA.indicator}}，B 仍为 {{smooth.low.alternatives.paintB.indicator}}；看似较低的一方随之反转。我们还没有因此得到真实涂料优劣，而是找出了改变比较对象的那一步：把服务相等换成了采购质量相等。",
+      "kind": "calculation",
+      "scope": "CASE-WALL-CONNECT v1.0.0：固定作者假设与选定因子下的教学推演",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-wall-quantities",
+        "cl-wall-reference"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "同质量可服务面积＝质量÷单次面积用量÷次数；在同一低端参数下分别评价等质量和完整服务，所有数值均由同版本引擎取得。"
+    },
+    {
+      "id": "cl-wall-coordinates",
+      "textTemplate": "要把完整服务送进过程模型，先读每个坐标究竟代表什么。四列 P-A、P-B、P-P、P-E 各代表一次操作，依次供应 1 kg A、1 kg B、1 m² 基底准备和 1 kWh 电力；四行也依次保留 kg A、kg B、m²、kWh 的单位。矩阵 A 把产出记为正数，把消耗的中间产品记为负数。s 记录各指定操作的次数；例如 P-B 列电力行的 {{input.technosphere.matrix.3.1}}，意思是每执行一次供给 1 kg B 的操作，消耗相应的 kWh 电力。这样定义坐标以后，混合行单位的矩阵就可以逐行核对，而不必假装各元素都是同一种无量纲物理量。",
+      "kind": "interpretation",
+      "scope": "CASE-WALL-CONNECT v1.0.0：固定作者假设与选定因子下的教学推演",
+      "evidenceIds": [
+        "ev-inv-hs-coordinates"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-inv-hs-coordinates",
+          "relation": "context",
+          "rationale": "Heijungs 与 Suh 作者样章 §2.1 支持过程列、流行、单位与符号一致性；具体四列和系数由作者定义。"
+        }
+      ],
+      "premiseIds": [
+        "cl-wall-reference"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "把来源的坐标纪律用于作者给定四过程模型，解释系数的行单位／次操作及活动次数。"
+    },
+    {
+      "id": "cl-wall-demand",
+      "textTemplate": "平整基底上无需准备活动。把刚才得到的两份用量分别放入对应产品行，便有 f_A＝({{smooth.display.alternatives.paintA.demand.0}}, {{smooth.display.alternatives.paintA.demand.1}}, {{smooth.display.alternatives.paintA.demand.2}}, {{smooth.display.alternatives.paintA.demand.3}})ᵀ，f_B＝({{smooth.display.alternatives.paintB.demand.0}}, {{smooth.display.alternatives.paintB.demand.1}}, {{smooth.display.alternatives.paintB.demand.2}}, {{smooth.display.alternatives.paintB.demand.3}})ᵀ，行单位仍按上段顺序。f 的电力坐标为零，表示交付给外部的最终需求不包括电力；造涂料所需的电力由过程之间供给。服务怎样转成这两个 f，已经由性能、涂装计划和基底条件决定，下面的求解只负责把这些需求实现出来。",
+      "kind": "calculation",
+      "scope": "CASE-WALL-CONNECT v1.0.0：固定作者假设与选定因子下的教学推演",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-wall-quantities",
+        "cl-wall-coordinates"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按完整服务所需质量填入相应产品坐标，按平整基底假设填零准备需求，电力只作为模型内部投入。"
+    },
+    {
+      "id": "cl-wall-activities",
+      "textTemplate": "逐行解 As＝f 比先背逆矩阵更容易看见工作怎样发生。前三行直接给出涂料与准备次数，电力行再要求所供电力抵消前三列的消耗。A 因而启动 {{smooth.display.alternatives.paintA.activities.0}} 次 P-A 和 {{smooth.display.alternatives.paintA.activities.3}} 次 P-E；B 启动 {{smooth.display.alternatives.paintB.activities.1}} 次 P-B 和 {{smooth.display.alternatives.paintB.activities.3}} 次 P-E。核对 B 的电力行，就是 {{input.technosphere.matrix.3.1}} kWh/次 × {{smooth.display.alternatives.paintB.activities.1}} 次＋1 kWh/次 × {{smooth.display.alternatives.paintB.activities.3}} 次＝0 kWh；B 产品行却留下所需的 {{smooth.display.alternatives.paintB.balance.1}} kg。最终电力需求为零与实际使用电力完全相容。计算器逐项展示 f → s 的全部轨迹，读者可以把解乘回矩阵检查这两种净交付。",
+      "kind": "calculation",
+      "scope": "CASE-WALL-CONNECT v1.0.0：固定作者假设与选定因子下的教学推演",
+      "evidenceIds": [
+        "ev-inv-hs-balance"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-inv-hs-balance",
+          "relation": "context",
+          "rationale": "作者样章 §2.2 的 As=f 提供需求平衡形式；此处数值解来自本例系数。"
+        }
+      ],
+      "premiseIds": [
+        "cl-wall-demand"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "前三行为单位输出，第四行求内供电力；再乘回技术矩阵核对净交付。"
+    },
+    {
+      "id": "cl-wall-balance-meaning",
+      "textTemplate": "这里平衡的是模型中所列的产品与服务交付。As＝f 没有列出全部化学元素与物质去向，不能当作完整的元素质量守恒检验。本例也有意采用没有相互反馈的四过程结构，让人先看清服务如何进入需求。前面过程甲、乙相互索取产品的两过程例子仍保留自己的产品身份与虚构排放，教的是递归内部需求怎样被完整求解；它的排放不能改名为本例 CO2 或 CH4 再套因子。这两个例子共有的是对已定坐标和平衡关系负责，各自补上的解释环节却不同。",
+      "kind": "interpretation",
+      "scope": "CASE-WALL-CONNECT v1.0.0：固定作者假设与选定因子下的教学推演",
+      "evidenceIds": [
+        "ev-inv-hs-balance"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-inv-hs-balance",
+          "relation": "context",
+          "rationale": "样章需求平衡的对象是经济流；本例未提供元素守恒所需的完整物质表。"
+        }
+      ],
+      "premiseIds": [
+        "cl-wall-activities",
+        "cl-inv-example-inputs",
+        "cl-inv-example-solution"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "由本例行定义限定平衡命题，并按已有反馈例的明确虚构身份区分两个案例。"
+    },
+    {
+      "id": "cl-wall-inventory",
+      "textTemplate": "同一组活动次数接着乘排放矩阵：g＝B(θ)s。θ 表示电力操作每 kWh 的化石 CO2 排放量，其具体范围稍后再处理。先在展示点 θ＝{{smooth.display.theta}} 看 A：涂料操作贡献 {{smooth.display.alternatives.paintA.inventoryContributions.0.0}} kg CO2，电力贡献 {{smooth.display.alternatives.paintA.inventoryContributions.0.3}} kg，合为 {{smooth.display.alternatives.paintA.inventory.0}} kg；化石 CH4 相应由 {{smooth.display.alternatives.paintA.inventoryContributions.1.0}} 与 {{smooth.display.alternatives.paintA.inventoryContributions.1.3}} kg 合为 {{smooth.display.alternatives.paintA.inventory.1}} kg。B 则合为 {{smooth.display.alternatives.paintB.inventory.0}} kg CO2 和 {{smooth.display.alternatives.paintB.inventory.1}} kg 化石 CH4。这里每一项都是“每次操作排放 × 操作次数”，因此每种气体能先按同一身份求和。",
+      "kind": "calculation",
+      "scope": "CASE-WALL-CONNECT v1.0.0：固定作者假设与选定因子下的教学推演",
+      "evidenceIds": [
+        "ev-inv-hs-balance",
+        "ev-inv-hs-assumptions"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-inv-hs-balance",
+          "relation": "context",
+          "rationale": "样章 g=Bs 支持同一活动倍率作用于干预矩阵；本例排放身份和数值均为显式设定。"
+        },
+        {
+          "evidenceId": "ev-inv-hs-assumptions",
+          "relation": "qualifies",
+          "rationale": "样章 §§2.3–2.4 的线性、可加假设限定这里按操作次数缩放并求和的做法。"
+        }
+      ],
+      "premiseIds": [
+        "cl-wall-activities"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "逐列乘环境系数与活动次数，再按已识别的两种排放行求和；展示点由输入固定。"
+    },
+    {
+      "id": "cl-wall-inventory-boundary",
+      "textTemplate": "这份清单的可核对性还来自分工明确：涂料和准备列只计非电力负担，供电负担统一留在 P-E 一列，因而没有把同一供电重复加两遍。清单保留“排入空气的化石 CO2”和“排入空气的化石 CH4”这两个身份，后者才能与随后选用的化石甲烷因子对接。施工设备、劳动、废物处理、处置回收，以及其他排放和影响类别没有建模；线性求和并不会填上它们。于是读者已经获得一份可重算的截断清单，接下来要问的具体问题是：怎样把这两种已识别气体换算到一个具名气候指标上？",
+      "kind": "interpretation",
+      "scope": "CASE-WALL-CONNECT v1.0.0：固定作者假设与选定因子下的教学推演",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-wall-inventory",
+        "cl-wall-question"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按输入的非电力／供电分工解释避免重复计数，并从显式两行环境矩阵限定下一步指标所覆盖的清单。"
+    },
+    {
+      "id": "cl-wall-factor-choice",
+      "textTemplate": "本版选定 IPCC AR6 WGI 表 7.15 在 2025 年 10 月 7 日勘误版本中的替换表，取 GWP-100 中心值：CO2 为 {{input.characterization.factorVector.0}}，化石 CH4 为 {{input.characterization.factorVector.1}}。这里核对的是官方索引文本中的版本、修正语境、表头、行列与说明，并接受带独立身份记录的派生文本载体作为这几项窄主张的依据；原 PDF 字节、原文件哈希及视觉表格核对仍不可得。这是公开保留访问限制的编辑决定，并不将派生文本称为原 PDF，也没有把选定版本宣布为所有报告的当前默认值。所选化石甲烷因子已计入相应氧化贡献，本例不另加一笔由该甲烷氧化产生的 CO2。",
+      "kind": "synthesis",
+      "scope": "CASE-WALL-CONNECT v1.0.0：固定作者假设与选定因子下的教学推演",
+      "evidenceIds": [
+        "ev-ipcc-ar6-2025-co2-gwp100",
+        "ev-ipcc-ar6-2025-fossil-ch4-gwp100",
+        "ev-ipcc-ar6-methane-accounting"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ipcc-ar6-2025-co2-gwp100",
+          "relation": "supports",
+          "rationale": "2025-10-07 勘误替换表的 CO2 行、GWP-100 列支持所选中心值；证据载体为披露限制的官方派生文本。"
+        },
+        {
+          "evidenceId": "ev-ipcc-ar6-2025-fossil-ch4-gwp100",
+          "relation": "supports",
+          "rationale": "同一替换表的 fossil CH4 行、GWP-100 列支持所选中心值及未传播的报告不确定性。"
+        },
+        {
+          "evidenceId": "ev-ipcc-ar6-methane-accounting",
+          "relation": "qualifies",
+          "rationale": "Chapter 7 选读的甲烷氧化处理限定化石甲烷表征，避免在此另加同一氧化贡献。"
+        }
+      ],
+      "premiseIds": [
+        "cl-wall-inventory-boundary",
+        "cl-ipcc-ar6-2025-co2-gwp100",
+        "cl-ipcc-ar6-2025-fossil-ch4-gwp100"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "将两个有版本和物质身份的源值与本例两行清单对应；载体接受决定不提升为原件视觉核查或实证验证。"
+    },
+    {
+      "id": "cl-wall-characterization",
+      "textTemplate": "表征运算保留单位以后很直接：I＝g_CO2 × {{input.characterization.factorVector.0}} kg CO2-eq/kg CO2＋g_CH4 × {{input.characterization.factorVector.1}} kg CO2-eq/kg 化石 CH4。每项的气体质量单位分别消去，两项才在 kg CO2-eq 上相加。在展示点，A 的 CO2 项为 {{smooth.display.alternatives.paintA.characterizedContributions.0}}、CH4 项为 {{smooth.display.alternatives.paintA.characterizedContributions.1}}，合计 {{smooth.display.alternatives.paintA.indicator}} kg CO2-eq；B 合计 {{smooth.display.alternatives.paintB.indicator}} kg CO2-eq。这里的分母始终是已经由 f 实现的整项规定服务。kg CO2-eq 记录换算后的相对指标，而原清单仍分别记录真实气体身份，没有把甲烷在物质上变成 CO2。",
+      "kind": "calculation",
+      "scope": "CASE-WALL-CONNECT v1.0.0：固定作者假设与选定因子下的教学推演",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-wall-inventory",
+        "cl-wall-factor-choice"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "分别以相应气体因子乘清单行，再相加为同一等效单位；结果绑定输入因子版本和精确引擎。"
+    },
+    {
+      "id": "cl-wall-metric-meaning",
+      "textTemplate": "要读懂这个正面的测量对象，可以把 GWP 看成一个特定比较：在选定时间范围内，某气体理想化单位脉冲排放所产生的时间积分辐射强迫，与 CO2 参照脉冲相比较。这个物理比值本身无量纲；计算中保留 kg CO2-eq/kg 气体的写法，是为了交代质量与参照身份。因此刚算出的 I 表达这个相对积分强迫尺度上的模型化潜势。它没有给出实际排放了多少千克 CO2、当地观察到多少损害、排放后第 100 年的温升，或一个终点损害数；这些对象需要不同的模型与证据。",
+      "kind": "interpretation",
+      "scope": "CASE-WALL-CONNECT v1.0.0：固定作者假设与选定因子下的教学推演",
+      "evidenceIds": [
+        "ev-ipcc-ar6-gwp-definition"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ipcc-ar6-gwp-definition",
+          "relation": "context",
+          "rationale": "AR6 WGI Chapter 7 §§7.6.1–7.6.1.3 的脉冲与积分辐射强迫定义支持指标位置和时间范围的解释；阅读载体是披露限制的派生文本。"
+        }
+      ],
+      "premiseIds": [
+        "cl-wall-characterization",
+        "cl-ipcc-ar6-gwp-definition"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源定义解释相对脉冲度量，并将本例线性表征结果限制在这个度量上，不跳接到温升或损害。"
+    },
+    {
+      "id": "cl-wall-time",
+      "textTemplate": "服务的十年与 GWP-100 的一百年由此各有工作：前者决定 A 要做几次涂装，后者决定每笔气体数量采用哪种表征尺度。本例先在技术与供电不变的假设下汇总十年内的活动，再用静态脉冲因子表征。它并没有把第 0 年和第 5 年排放放到一个共同日历终点，计算随日历变化的强迫轨迹。若研究问题变成“从今天到某一固定年份的累计强迫”，就需要保留排放时点并重建相应模型；仅把显示分母改成每年，仍然得不到那个时间问题的答案。",
+      "kind": "synthesis",
+      "scope": "CASE-WALL-CONNECT v1.0.0：固定作者假设与选定因子下的教学推演",
+      "evidenceIds": [
+        "ev-ipcc-ar6-gwp-definition"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ipcc-ar6-gwp-definition",
+          "relation": "qualifies",
+          "rationale": "脉冲度量的时间积分范围限定其时间解释；本例活动汇总规则另由作者给定。"
+        }
+      ],
+      "premiseIds": [
+        "cl-wall-quantities",
+        "cl-wall-metric-meaning"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "区分确定活动计划的服务期间与选定度量的脉冲积分期间，由本例静态求和结构识别其未计算的共同日历问题。"
+    },
+    {
+      "id": "cl-wall-unknown",
+      "textTemplate": "现在把展示点放回真正要考察的范围。作者规定同一个固定但未知的电力 CO2 强度 θ 位于 [{{input.uncertainty.closedRange.0}}, {{input.uncertainty.closedRange.1}}] kg CO2/kWh；A、B 在一次情景中必须使用同一 θ。我们要确定的是 Δ(θ)＝I_B(θ)−I_A(θ)，即相同基底、相同供电前提下一整项服务的指标差。{{input.uncertainty.displayPoint}} 只是方便展开算式的展示点，不是从样本估出的均值。此处没有赋予范围内各值概率，也没有样本、置信区间或单面墙之间的个体变异；表征中心因子同时保持固定，源表所报甲烷 ±10.4 的不确定性没有传播进来。因此下面的范围回答的是这一项共同参数未知时差值能到哪里。",
+      "kind": "proposal",
+      "scope": "CASE-WALL-CONNECT v1.0.0：固定作者假设与选定因子下的教学推演",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-wall-characterization"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "作者定义一个共同的有界未知参数和差值目标，并限定固定因子及无概率分布的计算任务。"
+    },
+    {
+      "id": "cl-wall-paired-range",
+      "textTemplate": "先在同一个 θ 下作差，就能保住已知的关系。由排放和用电次数，平整基底的差值整理成 Δ(θ)＝{{smooth.display.comparison.affine.intercept}}＋{{smooth.display.comparison.affine.slope}}θ，单位为 kg CO2-eq/规定服务。它是斜率为正的仿射函数，所以整个闭区间的最小值和最大值就在两端，而不靠抽查三个展示点来猜测。端点给出 [{{smooth.display.comparison.range.0}}, {{smooth.display.comparison.range.1}}]。差值在 θ＝{{smooth.display.comparison.crossoverTheta}} 穿过零，故在允许范围的一侧 B 较低、另一侧 A 较低；展示点的 A 较低尚不能升级为整个范围的严格排序。图中的连线表达的正是这条由模型推出的关系。",
+      "kind": "calculation",
+      "scope": "CASE-WALL-CONNECT v1.0.0：固定作者假设与选定因子下的教学推演",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-wall-unknown",
+        "cl-wall-inventory",
+        "cl-wall-characterization"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "同一θ下先相减得到仿射差值；斜率为正保证端点极值，交点在输入范围内使严格排序不能全域成立。"
+    },
+    {
+      "id": "cl-wall-pairing",
+      "textTemplate": "也可以先各自求范围：A 为 [{{smooth.display.comparison.marginalRanges.paintA.0}}, {{smooth.display.comparison.marginalRanges.paintA.1}}]，B 为 [{{smooth.display.comparison.marginalRanges.paintB.0}}, {{smooth.display.comparison.marginalRanges.paintB.1}}]。若再拿 B 的最低端减 A 的最高端、B 的最高端减 A 的最低端，会得到 [{{smooth.display.comparison.independentExtremesRange.0}}, {{smooth.display.comparison.independentExtremesRange.1}}]。这种独立极端相减在区间算术中可作保守外包络，并非普遍错误；但这里它丢掉了共同 θ，包含一边取较清洁供电、另一边同时取较高排放供电的组合。题目已经排除那些配对，便能用上一段的精确差值范围收紧结论。两个边际范围是否重叠，既没有恢复这种配对，也还没有检验任何等效准则。",
+      "kind": "interpretation",
+      "scope": "CASE-WALL-CONNECT v1.0.0：固定作者假设与选定因子下的教学推演",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-wall-paired-range"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "两个边际区间的笛卡尔组合包含共同θ所产生的配对集合，独立极端相减因此包住真范围，却未必精确。"
+    },
+    {
+      "id": "cl-wall-tolerance",
+      "textTemplate": "严格排序与容差内等效还需要分开证明。本版在执行重建计算之前固定作者虚构、刻意较粗的准则：对所有允许 θ，|Δ(θ)|≤{{input.comparison.tolerance}} kg CO2-eq/规定服务；这项构造准则没有获得现实利益相关方认可，也不宣称选择者事先不知道所构造案例的表现。平整基底的整个配对区间 [{{smooth.display.comparison.range.0}}, {{smooth.display.comparison.range.1}}] 落在 ±{{input.comparison.tolerance}} 内，所以按这一准则可以判为条件性的实际容差内等效，同时仍不能建立全域严格排序。两句话依据不同的不等式：前者核对允许差值的大小，后者核对符号。这里不是用“分不出优劣”推出相等，更不是统计等效检验；若将来要采用更紧的容差，应另定版本并重算该不等式。",
+      "kind": "interpretation",
+      "scope": "CASE-WALL-CONNECT v1.0.0：固定作者假设与选定因子下的教学推演",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-wall-paired-range",
+        "cl-wall-unknown"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "直接检验配对差值区间包含于固定容差带，另以区间穿零判断严格排序；两谓词不相互替代。"
+    },
+    {
+      "id": "cl-wall-rough-demand",
+      "textTemplate": "最后只换墙面的初始条件：基底粗糙但完好，作者假定 A 能直接达到原服务，B 必须先对全部 {{input.service.area}} m² 做一次准备。最终面积、期间、涂料质量、耐久假设、所有过程系数、共同 θ、因子版本和容差都不变。因而 B 的需求第三坐标从 {{smooth.display.alternatives.paintB.demand.2}} 变为 {{rough.display.alternatives.paintB.demand.2}} m²，P-P 从零活动变为 {{rough.display.alternatives.paintB.activities.2}} 次，供电次数随之从 {{smooth.display.alternatives.paintB.activities.3}} 增至 {{rough.display.alternatives.paintB.activities.3}}。这是服务实现条件激活了一个过程：矩阵事先留有该列，平整情景不用它，粗糙情景要用它。把旧结果除以另一种面积或期间，仍会让准备次数留在零，产生不了这笔新投入。",
+      "kind": "calculation",
+      "scope": "CASE-WALL-CONNECT v1.0.0：固定作者假设与选定因子下的教学推演",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-wall-demand",
+        "cl-wall-activities",
+        "cl-wall-tolerance"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按虚构基底兼容规则向B最终需求加入全墙准备，再由原技术矩阵计算新增供电；其余输入保持固定。"
+    },
+    {
+      "id": "cl-wall-rough-comparison",
+      "textTemplate": "沿同样的 s → g → I 路径重算，在展示点，B 的清单成为 {{rough.display.alternatives.paintB.inventory.0}} kg CO2 与 {{rough.display.alternatives.paintB.inventory.1}} kg 化石 CH4，指标升至 {{rough.display.alternatives.paintB.indicator}} kg CO2-eq，A 仍为 {{rough.display.alternatives.paintA.indicator}}。新的差值是 Δ(θ)＝{{rough.display.comparison.affine.intercept}}＋{{rough.display.comparison.affine.slope}}θ，整个允许范围为 [{{rough.display.comparison.range.0}}, {{rough.display.comparison.range.1}}]。它始终大于零且全在 +{{input.comparison.tolerance}} 之外，于是这个粗糙基底模型中，A 的所选指标在全域严格较低，两方案也不满足既定容差内等效。这次结论改变有可追踪的原因：B 多做了准备并多用了电，比较的是另一种初始基底下如何实现同一最终服务。它仍没有变成实际涂料的采购建议。",
+      "kind": "calculation",
+      "scope": "CASE-WALL-CONNECT v1.0.0：固定作者假设与选定因子下的教学推演",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-wall-rough-demand",
+        "cl-wall-factor-choice",
+        "cl-wall-tolerance"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "新需求与原系数、因子相乘，仿射端点范围全正且低端大于容差，分别证明严格排序和全域容差外。"
+    },
+    {
+      "id": "cl-wall-exercise",
+      "textTemplate": "读者可以先遮住答案，试做一个接续任务。有人建议：“既然展示点上 A 较低，平整墙面也选 A；把粗糙墙面的结果折成每 m²，就能和原平整结果合并。至于误差，分别减两个结果范围的极端就够了。”请沿本例指出三处操作各自需要哪项前提，再在不改变输入的情况下给出能成立的比较。同时独立复核粗糙情景 B 的电力行与两项排放和：从新增准备需求开始，不要只复制已经显示的最终指标。",
+      "kind": "proposal",
+      "scope": "CASE-WALL-CONNECT v1.0.0：固定作者假设与选定因子下的教学推演",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-wall-pairing",
+        "cl-wall-tolerance",
+        "cl-wall-rough-comparison"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "作者设置重建任务，要求把服务条件、共享参数和比较谓词落实到同一条计算链。"
+    },
+    {
+      "id": "cl-wall-answer",
+      "textTemplate": "答案的关键是把每一步送回它回答的问题。平整情景要在共同 θ 全域比较，不能把单个展示点代替整个范围；其严格排序未定，但满足本版 ±{{input.comparison.tolerance}} 的条件性容差准则。粗糙情景 B 的电力核对为 {{input.technosphere.matrix.3.1}}×{{rough.display.alternatives.paintB.activities.1}}＋{{input.technosphere.matrix.3.2}}×{{rough.display.alternatives.paintB.activities.2}}＋{{rough.display.alternatives.paintB.activities.3}}＝0 kWh；逐列相乘得到的两项清单必须包含准备列和增加的供电贡献。把结果折为每 m² 可以改变报告尺度，却不能消去这项初始条件差异，也不能补回平整模型未启动的活动。独立极端相减仍是保守外包络；利用已知配对后应采用精确的 Δ 范围。这样，读者就能从服务、方案用量、f、s、g 一直重建到一个有物理解释的指标，再凭明确的不等式给出有边界的比较；要把结论用于真实墙面，下一步必须取得实际性能、活动、排放及决策准则的证据。",
+      "kind": "synthesis",
+      "scope": "CASE-WALL-CONNECT v1.0.0：固定作者假设与选定因子下的教学推演",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-wall-exercise",
+        "cl-wall-tolerance",
+        "cl-wall-rough-comparison",
+        "cl-wall-pairing"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "把练习的三个建议分别还原到比较域、活动条件和已知配对，再以已推导范围及需求平衡给出可复核答案。"
+    }
+  ]
+}

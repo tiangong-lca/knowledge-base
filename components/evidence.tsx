@@ -3,7 +3,7 @@ import rawMap from '@/knowledge/research/literature-map.json';
 import rawLedger from '@/knowledge/research/readings.json';
 import { publicResearch } from '@/scripts/research.mjs';
 import catalog, { getClaimEvidence, isKnownClaim } from '@/lib/catalog';
-import type { ClaimKind, EvidenceRecord, EvidenceAppraisalRecord, EvidenceRelation, ReviewKind, SourceRecord } from '@/lib/catalog';
+import type { ClaimKind, EvidenceRecord, EvidenceAppraisalRecord, EvidenceRelation, ReviewKind, SourceRecord, SourceArtifact, ReadingLedger } from '@/lib/catalog';
 
 const kinds: Record<ClaimKind, string> = { 'source-statement': '来源陈述', interpretation: '解释', synthesis: '综合判断', calculation: '计算', proposal: '建议' };
 export const evidenceRelations: Record<EvidenceRelation, string> = { supports: '支持', qualifies: '限定', contradicts: '反对', context: '背景' };
@@ -31,6 +31,22 @@ export function ConceptRef({ id }: { id: string }) {
   return <Link href={`/concepts/#${id}`}>{concept.label}</Link>;
 }
 
+/** Shared carrier description keeps source and passage details honest about acquired bytes. */
+export function ArtifactReading({ artifact }: { artifact: SourceArtifact }) {
+  if (artifact.kind === 'derived-text') return <>
+    <dt>核读载体</dt><dd>派生文字快照 · 非原始 PDF 字节 · {artifact.mediaType}</dd>
+    <dt>原文入口</dt><dd><a href={artifact.originUrl}>原文入口</a> · {artifact.originalDocumentMediaType}</dd>
+    <dt>获取方式</dt><dd>{artifact.captureMethod}</dd>
+    <dt>快照范围</dt><dd>{artifact.captureScope}</dd>
+    <dt>原始字节</dt><dd>原始文档字节不可用；快照摘要不代表原始 PDF 摘要或视觉核验。</dd>
+    <dt>快照 SHA-256</dt><dd><code className="artifact-hash">{artifact.sha256}</code></dd>
+  </>;
+  return <>
+    <dt>核对文件</dt><dd><a href={artifact.resolvedUrl}>所核载体</a> · {artifact.mediaType}{artifact.pageCount !== undefined && <> · {artifact.pageCount} 页</>}</dd>
+    <dt>载体 SHA-256</dt><dd><code className="artifact-hash">{artifact.sha256}</code></dd>
+  </>;
+}
+
 export function SourceReading({ source }: { source: SourceRecord }) {
   if (!source.reading && !source.artifact) return null;
   return <dl className="source-reading">
@@ -40,14 +56,11 @@ export function SourceReading({ source }: { source: SourceRecord }) {
       <dt>核读记录日期</dt><dd>{source.reading.checkedAt}</dd>
       {source.reading.readingId && <><dt>核读记录</dt><dd><Link href={`/research/#${source.reading.readingId}`}>{source.reading.readingId}</Link></dd></>}
     </>}
-    {source.artifact && <>
-      <dt>核对文件</dt><dd><a href={source.artifact.resolvedUrl}>所核文件</a> · {source.artifact.mediaType}{source.artifact.pageCount !== undefined && <> · {source.artifact.pageCount} 页</>}</dd>
-      <dt>SHA-256</dt><dd><code className="artifact-hash">{source.artifact.sha256}</code></dd>
-    </>}
+    {source.artifact && <ArtifactReading artifact={source.artifact} />}
   </dl>;
 }
 
-const readingLedger = publicResearch(rawMap, rawLedger).readingLedger as typeof rawLedger;
+const readingLedger = publicResearch(rawMap, rawLedger).readingLedger as ReadingLedger;
 export function EvidencePassage({ evidence }: { evidence: EvidenceRecord }) {
   if (!evidence.readingId || !evidence.passageId) return null;
   const reading = readingLedger.readings.find(r => r.id === evidence.readingId);
@@ -55,8 +68,8 @@ export function EvidencePassage({ evidence }: { evidence: EvidenceRecord }) {
   const artifact = reading?.artifacts.find(a => a.id === passage?.artifactId);
   if (!passage || !artifact) throw new Error(`Unresolved evidence passage: ${evidence.id}`);
   return <details className="evidence-appraisal"><summary>这条证据使用的载体</summary>
-    <p><Link href={`/research/#${passage.id}`}>阅读定位与限制</Link> · <a href={artifact.resolvedUrl}>原始载体</a> · {artifact.mediaType}</p>
-    <p><code className="artifact-hash">{artifact.sha256}</code></p>
+    <p><Link href={`/research/#${passage.id}`}>阅读定位与限制</Link></p>
+    <dl className="source-reading"><ArtifactReading artifact={artifact} /></dl>
     <p>{passage.limits.join('；')}</p>
   </details>;
 }
@@ -121,6 +134,7 @@ export function Claim({ id, anchor = false }: { id: string; anchor?: boolean }) 
             {source && <SourceReading source={source} />}
           </div>;
         })}
+        {claim.caseBinding && <div className="evidence-item"><strong>教学案例绑定</strong><p>{claim.caseBinding.caseId} · v{claim.caseBinding.version}{claim.caseBinding.inputFile && <> · <a href={`/downloads/cases/${claim.caseBinding.inputFile}`}>下载已核对的公开输入</a></>}</p><small>输入 SHA-256</small><code className="artifact-hash">{claim.caseBinding.inputSha256}</code><p className="subtle">该绑定证明本段对应所列教学输入；不证明虚构数据具有经验效度。</p></div>}
         {claim.caveats.length > 0 && <p><strong>限制</strong> {claim.caveats.join('；')}</p>}
         {claim.reasoning && <p><strong>推理过程</strong> {claim.reasoning}</p>}
         {claim.premiseIds.length > 0 && <p><strong>依赖观点</strong> {claim.premiseIds.map(premise => <Link key={premise} href={`/claims/#${premise}`}>{premise} </Link>)}</p>}
