@@ -73,7 +73,7 @@ export async function validateRepository(root) {
   ]);
   errors.push(...validateResearch(literature, readings, data));
   let cases = [];
-  try { cases = await loadCasePublications(root); errors.push(...validateCasePublications(cases, data)); }
+  try { cases = await loadCasePublications(root); errors.push(...validateCasePublications(cases, data, { readingRegister: readings })); }
   catch (error) { errors.push(error.message); }
   if (errors.length) return errors;
   const knownIds = readerInternalIds(data, literature, readings, cases);

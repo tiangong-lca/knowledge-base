@@ -21,7 +21,7 @@ function fixture() {
   const catalog = { schemaVersion: 1, sources: [{ id: spec.characterization.sourceId, title: 'Selected factors', url: 'https://example.org/factors', version: 'corrected table', publisher: 'Publisher', accessedAt: '2026-11-04', accessStatus: 'public-html-inspected', rights: 'Original metadata only', preservation: 'Mutable URL' }], evidence: spec.characterization.factorEvidenceIds.map((id, i) => ({ id, sourceId: spec.characterization.sourceId, locator: `selected row ${i}`, summary: 'Inspected selected central characterization factor', relation: 'supports', numericFact: { value: spec.characterization.factorVector[i], unit: spec.characterization.factorUnits[i], quantity: 'GWP100 characterization factor', subject: spec.characterization.factorSubjects[i], basis: 'Selected central GWP100 factor from corrected Table 7.15' } })), claims: structuredClone(materializeCaseClaims(spec, publication)), concepts: [], mappings: [], coverage: [] };
   return { spec, publication, catalog };
 }
-const errors = f => validateCasePublication(f.spec, f.publication, f.catalog);
+const errors = f => validateCasePublication(f.spec, f.publication, f.catalog, { readingRegister: f.readingRegister });
 function rejects(change, pattern) {
   const f = fixture(); change(f); const result = errors(f);
   assert(result.some(error => pattern.test(error)), `Expected ${pattern}; got:\n${result.join('\n')}`);
@@ -452,8 +452,14 @@ function historicalFixture() {
   }
   const publication = { schemaVersion: 1, caseId: spec.caseId, version: spec.version, inputFile: 'historical-glass-v1.json', approvedInputSha256: caseInputSha256(spec), reviewedAt: '2026-11-04', reviewKind: 'agent-source-check', claims: [{ id: 'historical-check', textTemplate: '{{evaluated.fabrication.total}}; {{evaluated.summary.retGJ}}; {{evaluated.assembly.owgFixed3}}; gap={{evaluated.assembly.gap}}; full={{evaluated.assembly.fullClosure}}.', kind: 'calculation', scope: 'Selected arithmetic only', evidenceIds: [...evidence.keys()], premiseIds: ['hist-premise'], conceptIds: [], caveats: ['Not a full original-program reproduction'], reasoning: 'Keep source-reported totals separate from reconstructed components.' }] };
   const catalog = { schemaVersion: 1, sources: [{ id: spec.sourceId, title: 'Historical source', url: 'https://example.org/source', version: '1974 fixed carrier', publisher: 'Publisher', accessedAt: '2026-11-04', accessStatus: 'public-passages-inspected', rights: 'Original analysis; no source redistribution', preservation: 'Fixed selected carrier', artifact: { mediaType: 'application/pdf', sha256: spec.sourceArtifactSha256, resolvedUrl: 'https://example.org/source.pdf', bytes: 7131045, pageCount: 185 } }], evidence: [...evidence.values()], claims: structuredClone(materializeCaseClaims(spec, publication)), concepts: [], mappings: [], coverage: [] };
+  catalog.sources[0].reading = { readingId: 'hist-reading', status: 'selected-passages', scope: 'Named historical tables', checkedAt: '2026-11-04' };
+  for (const record of catalog.evidence) { record.readingId = 'hist-reading'; record.passageId = `passage-${record.id}`; }
+  const readingRegister = { schemaVersion: 1, readings: [{ id: 'hist-reading', readingStatus: 'selected-passages',
+    artifacts: [{ id: 'hist-pdf', ...catalog.sources[0].artifact }],
+    passages: catalog.evidence.map(record => ({ id: record.passageId, artifactId: 'hist-pdf' })),
+  }] };
   catalog.claims.push({ id: 'hist-premise', text: 'The source gives the selected historical context.', kind: 'source-statement', scope: 'Selected source context', evidenceIds: [evidence.keys().next().value], premiseIds: [], conceptIds: [], caveats: [], status: 'reviewed', reviewedAt: '2026-11-04', reviewKind: 'agent-source-check' });
-  return { spec, publication, catalog };
+  return { spec, publication, catalog, readingRegister };
 }
 
 test('historical reconstruction publishes its exact selected checks without certifying full closure', () => {
@@ -523,4 +529,98 @@ test('historical templates remain hash-bound and cannot silently change reported
   assert(errors(hash).some(error => /stale or unapproved/.test(error)));
   const canonical = historicalFixture(); canonical.catalog.claims[0].caseBinding.inputSha256 = '0'.repeat(64);
   assert(errors(canonical).some(error => /caseBinding/.test(error)));
+});
+
+function actualHistoricalFixture() {
+  const read = path => JSON.parse(readFileSync(new URL(`../${path}`, import.meta.url), 'utf8'));
+  return { spec: read('knowledge/cases/historical-glass-v1.json'), publication: read('knowledge/cases/historical-glass-v1.publication.json'),
+    catalog: read('knowledge/catalog.json'), readingRegister: read('knowledge/research/readings.json') };
+}
+
+test('actual historical facts resolve their own PDF passage carrier, including in a mixed reading', () => {
+  const original = actualHistoricalFixture();
+  assert.deepEqual(errors(original), []);
+  const batch = historicalFixture();
+  assert.deepEqual(validateCasePublications([{ spec: batch.spec, publication: batch.publication }], batch.catalog, { readingRegister: batch.readingRegister }), []);
+  assert.equal(caseInputSha256(original.spec), '56e6028764e85278fa73143d2321ab20b4ad8cd8d64ff9a75e2c871fb7448d7c');
+  const reject = change => {
+    const f = actualHistoricalFixture(); change(f);
+    assert(errors(f).some(error => /reading register|selected reading|PDF passage carrier/.test(error)));
+    assert.equal(caseInputSha256(f.spec), caseInputSha256(original.spec));
+    assert.deepEqual(caseEvaluationReceipt(f.spec, 'a'.repeat(40)), caseEvaluationReceipt(original.spec, 'a'.repeat(40)));
+  };
+  // Source snapshot is still the correct PDF in each test; the evidence's own
+  // passage or actual carrier has lost the required original-PDF identity.
+  const evidence = f => f.catalog.evidence.find(record => record.id === 'ev-hist-demand');
+  const reading = f => f.readingRegister.readings.find(record => record.id === evidence(f).readingId);
+  const passage = f => reading(f).passages.find(record => record.id === evidence(f).passageId);
+  const artifact = f => reading(f).artifacts.find(record => record.id === passage(f).artifactId);
+  for (const change of [
+    f => { evidence(f).passageId = 'psg-epa-1974-identity'; },
+    f => { delete evidence(f).readingId; delete evidence(f).passageId; },
+    f => { delete evidence(f).readingId; }, f => { delete evidence(f).passageId; },
+    f => { delete f.catalog.sources.find(record => record.id === f.spec.sourceId).reading; },
+    f => { evidence(f).readingId = 'different-reading'; },
+    f => { passage(f).artifactId = 'missing-artifact'; },
+    f => { const selected = artifact(f); reading(f).artifacts = reading(f).artifacts.filter(record => record !== selected); },
+    f => { artifact(f).sha256 = '0'.repeat(64); },
+    f => { artifact(f).mediaType = 'text/html'; },
+    f => { artifact(f).kind = 'derived-text'; },
+    f => { artifact(f).kind = 'unknown-carrier'; },
+    f => { reading(f).readingStatus = 'metadata-only'; },
+    f => { reading(f).readingStatus = 'not-close-read'; },
+    f => { reading(f).artifacts.push(structuredClone(artifact(f))); },
+    f => { reading(f).passages.push(structuredClone(passage(f))); },
+    f => { f.readingRegister.readings.push(structuredClone(reading(f))); },
+    f => { const selected = artifact(f); reading(f).artifacts = reading(f).artifacts.filter(record => record !== selected);
+      f.readingRegister.readings.push({ id: 'other-reading', readingStatus: 'selected-passages', artifacts: [selected], passages: [] }); },
+  ]) reject(change);
+});
+
+test('historical publication requires a well-shaped unambiguous reading register while legacy three-argument validation remains valid', () => {
+  const f = actualHistoricalFixture();
+  assert(validateCasePublication(f.spec, f.publication, f.catalog).some(error => /reading register/.test(error)));
+  assert(validateCasePublications([{ spec: f.spec, publication: f.publication }], f.catalog).some(error => /reading register/.test(error)));
+  for (const readingRegister of [undefined, null, [], {}, { schemaVersion: 2, readings: [] }, { schemaVersion: 1, readings: null },
+    { schemaVersion: 1, readings: [null] }, { schemaVersion: 1, readings: [{ id: 'bad' }] },
+    { schemaVersion: 1, readings: [{ id: 'bad', artifacts: [], passages: [null] }] },
+    { schemaVersion: 1, readings: [{ id: 'bad', artifacts: [null], passages: [] }] }]) {
+    assert.doesNotThrow(() => validateCasePublication(f.spec, f.publication, f.catalog, { readingRegister }));
+    assert(validateCasePublication(f.spec, f.publication, f.catalog, { readingRegister }).some(error => /reading register/.test(error)));
+  }
+  const legacy = fixture();
+  assert.deepEqual(validateCasePublication(legacy.spec, legacy.publication, legacy.catalog), []);
+  assert.deepEqual(validateCasePublication(legacy.spec, legacy.publication, legacy.catalog, { readingRegister: null }), []);
+  const bytes = canonicalCaseInput(legacy.spec), historicalBytes = canonicalCaseInput(f.spec);
+  f.readingRegister.privateCapture = { raw: 'PRIVATE' };
+  for (const reading of f.readingRegister.readings) reading.privateCapture = { raw: 'PRIVATE' };
+  assert.deepEqual(errors(f), []);
+  assert.equal(canonicalCaseInput(f.spec), historicalBytes);
+  assert.equal(canonicalCaseInput(legacy.spec), bytes);
+  assert.equal(JSON.stringify(caseEvaluationReceipt(f.spec, 'a'.repeat(40))).includes('PRIVATE'), false);
+});
+
+test('repository validation carries the actual register into historical carrier refusal', async () => {
+  const root = await mkdtemp(join(tmpdir(), 'prism-historical-carrier-'));
+  try {
+    const f = actualHistoricalFixture();
+    await mkdir(join(root, 'knowledge/cases'), { recursive: true });
+    await mkdir(join(root, 'knowledge/research'), { recursive: true });
+    await mkdir(join(root, 'content'));
+    await writeJson(root, 'knowledge/catalog.json', f.catalog);
+    await writeJson(root, 'knowledge/cases/historical-glass-v1.json', f.spec);
+    await writeJson(root, 'knowledge/cases/historical-glass-v1.publication.json', f.publication);
+    await writeJson(root, 'knowledge/research/readings.json', f.readingRegister);
+    await writeJson(root, 'knowledge/research/literature-map.json', JSON.parse(readFileSync(new URL('../knowledge/research/literature-map.json', import.meta.url), 'utf8')));
+    // Other canonical case-bound claims need their manifests for repository validation.
+    const entries = await loadCasePublications(fileURLToPath(new URL('..', import.meta.url)));
+    for (const { spec, publication, inputFile } of entries.filter(entry => entry.spec.caseId !== f.spec.caseId)) {
+      await writeJson(root, `knowledge/cases/${inputFile}`, spec);
+      await writeJson(root, `knowledge/cases/${inputFile.slice(0, -5)}.publication.json`, publication);
+    }
+    assert.deepEqual(await validateRepository(root), []);
+    f.catalog.evidence.find(record => record.id === 'ev-hist-demand').passageId = 'psg-epa-1974-identity';
+    await writeJson(root, 'knowledge/catalog.json', f.catalog);
+    assert((await validateRepository(root)).some(error => /PDF passage carrier/.test(error)));
+  } finally { await rm(root, { recursive: true, force: true }); }
 });

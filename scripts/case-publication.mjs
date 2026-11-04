@@ -188,7 +188,7 @@ export function materializeCaseClaims(spec, publication) {
   })));
 }
 
-export function validateCasePublication(spec, publication, catalog) {
+export function validateCasePublication(spec, publication, catalog, context = {}) {
   const errors = [];
   let expected, published;
   try { expected = materializeCaseClaims(spec, publication); } catch (error) { errors.push(error.message); }
@@ -205,7 +205,7 @@ export function validateCasePublication(spec, publication, catalog) {
     } catch (error) { errors.push(error.message); }
   }
   for (const claim of catalog.claims) if (claim.caseBinding?.caseId === spec.caseId && claim.caseBinding.version === spec.version && !expectedIds.has(claim.id)) errors.push(`case publication: extra caseBinding on ${claim.id}`);
-  errors.push(...caseAdapter(spec).validateFacts(publicTeachingCase(spec), published));
+  errors.push(...caseAdapter(spec).validateFacts(publicTeachingCase(spec), published, context));
   return errors;
 }
 function validateWallFactorFacts(spec, published) {
@@ -232,7 +232,7 @@ function validatePhosphorusLossFact(spec, published) {
   if (!evidence || evidence.sourceId !== loss.sourceId || !fact || fact.value !== loss.fraction || fact.unit !== loss.unit || fact.subject !== loss.subject) errors.push('phosphorus inventory estimation: loss coefficient does not match bound public source numericFact value/unit/subject');
   return errors;
 }
-function validateHistoricalFacts(spec, published) {
+function validateHistoricalFacts(spec, published, context) {
   const errors = [];
   const source = published.sources.find(record => record.id === spec.sourceId);
   if (!source) errors.push('historical reconstruction: source is outside the reviewed public closure');
@@ -242,6 +242,26 @@ function validateHistoricalFacts(spec, published) {
     if (source.artifact?.mediaType !== 'application/pdf' || source.artifact?.sha256 !== spec.sourceArtifactSha256)
       errors.push('historical reconstruction: source carrier does not match the inspected PDF');
   }
+  // A source snapshot is not the carrier of every passage in a mixed reading.
+  // Resolve the numerical evidence's actual passage before accepting its PDF hash.
+  const register = context?.readingRegister;
+  const readings = new Map(), passages = new Map(), artifacts = new Map(), ids = new Set();
+  let malformed = !object(register) || register.schemaVersion !== 1 || !Array.isArray(register.readings);
+  const identify = record => {
+    if (!object(record) || typeof record.id !== 'string' || !/^[A-Za-z][A-Za-z0-9._:-]*$/.test(record.id) || ids.has(record.id)) { malformed = true; return false; }
+    ids.add(record.id); return true;
+  };
+  if (!malformed) for (const reading of register.readings) {
+    if (!identify(reading)) continue;
+    readings.set(reading.id, reading);
+    if (!Array.isArray(reading.passages) || !Array.isArray(reading.artifacts)) { malformed = true; continue; }
+    for (const passage of reading.passages) if (identify(passage)) passages.set(passage.id, { reading, passage });
+    for (const artifact of reading.artifacts) if (identify(artifact)) artifacts.set(artifact.id, { reading, artifact });
+  }
+  if (malformed) errors.push('historical reconstruction: an unambiguous reading register with valid reading/passage/artifact identities is required');
+  const reading = readings.get(source?.reading?.readingId);
+  if (!reading || !['selected-passages', 'web-sections'].includes(reading.readingStatus) || source.reading.status !== reading.readingStatus)
+    errors.push('historical reconstruction: source must bind an inspected selected reading');
   const evidenceById = new Map(published.evidence.map(record => [record.id, record]));
   for (const [key, input] of Object.entries(spec.facts)) {
     const evidence = evidenceById.get(input.evidenceId);
@@ -249,6 +269,11 @@ function validateHistoricalFacts(spec, published) {
     if (!evidence || evidence.sourceId !== spec.sourceId || facts.length !== 1
         || facts[0].value !== input.value || facts[0].unit !== input.unit || facts[0].subject !== input.subject)
       errors.push(`historical reconstruction.facts.${key}: missing or mismatched public source fact value/unit/subject/identity`);
+    const located = passages.get(evidence?.passageId), carrier = artifacts.get(located?.passage.artifactId);
+    if (!reading || evidence?.readingId !== reading.id || located?.reading !== reading || carrier?.reading !== reading
+        || (carrier?.artifact.kind !== undefined && carrier.artifact.kind !== 'retrieved') || carrier?.artifact.mediaType !== 'application/pdf'
+        || carrier?.artifact.sha256 !== spec.sourceArtifactSha256)
+      errors.push(`historical reconstruction.facts.${key}: missing or mismatched inspected original PDF passage carrier`);
   }
   return errors;
 }
@@ -271,7 +296,7 @@ export async function loadCasePublications(root) {
   }
   return entries;
 }
-export function validateCasePublications(entries, catalog) {
+export function validateCasePublications(entries, catalog, context = {}) {
   const errors = [], cases = new Set(), claims = new Set();
   if (!Array.isArray(entries)) return ['case publications: must be an array'];
   for (const entry of entries) {
@@ -280,7 +305,7 @@ export function validateCasePublications(entries, catalog) {
     const identity = `${spec.caseId}@${spec.version}`;
     if (cases.has(identity)) errors.push(`Duplicate case publication ${identity}`);
     cases.add(identity);
-    try { errors.push(...validateCasePublication(spec, publication, catalog)); } catch (error) { errors.push(error.message); }
+    try { errors.push(...validateCasePublication(spec, publication, catalog, context)); } catch (error) { errors.push(error.message); }
     for (const claim of Array.isArray(publication?.claims) ? publication.claims : []) {
       if (claims.has(claim.id)) errors.push(`Duplicate case-bound claim ${claim.id}`);
       claims.add(claim.id);
