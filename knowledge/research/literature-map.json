@@ -9,7 +9,8 @@
       "Which original methodological debates, corrections and contrary perspectives need separate work-level acquisition before synthesis?",
       "How do original allocation, inventory-computation and LCIA works qualify their models, corrections, value choices and intended use?",
       "How do contemporary early reports, source-language regional accounts and uncertainty/data-quality work define their questions, denominators and evidential limits?",
-      "What do institutional review, adjacent social/economic assessment, dynamic timing and future-technology scenarios actually assess, and what additional conditions permit their connection?"
+      "What do institutional review, adjacent social/economic assessment, dynamic timing and future-technology scenarios actually assess, and what additional conditions permit their connection?",
+      "How do basin/month water-deprivation proxies and receiving-system acidification/nutrient models translate inventory flows into differently scoped indicators?"
     ],
     "sourcesPolicy": "Purposive bounded discovery. Prioritize original publishers, standards institutions, governments, societies and author/university repositories. Institutional catalogs and official successor bibliographies may establish candidate identity only, with indirect status recorded. No illicit mirrors, credential exposure, paywall bypass, paid acquisition, or source-text redistribution. Search hits are leads; available originals, metadata and passage evidence remain distinct. Selective institutional/publisher citation chasing supplements targeted queries.",
     "queries": [
@@ -948,6 +949,48 @@
         "query": "Open official IPCC AR6 WGI Errata version7October2025 replacement Table7.15; inspect correction, header, CO2/CH4-fossil rows, GWP100 column and caption.",
         "date": "2026-11-04",
         "channel": "official-domain indexed text open; independently corroborated; original PDF unavailable"
+      },
+      {
+        "id": "q-w5-water-01",
+        "query": "site.wulca-waterlca.org AWARE model user manual water consumption m3 world equivalent",
+        "date": "2026-11-04",
+        "channel": "public-web-search; preserved water search log"
+      },
+      {
+        "id": "q-w5-water-02",
+        "query": "Boulay 2018 AWARE consensus model water scarcity footprints water consumption available water remaining pdf",
+        "date": "2026-11-04",
+        "channel": "public-web-search; preserved water search log"
+      },
+      {
+        "id": "q-w5-water-03",
+        "query": "\"10.1007/s11367-017-1333-8\" correction erratum",
+        "date": "2026-11-04",
+        "channel": "public-web-search; preserved water search log"
+      },
+      {
+        "id": "q-w5-water-04",
+        "query": "\"10.1111/jiec.70023\" correction erratum",
+        "date": "2026-11-04",
+        "channel": "public-web-search; preserved water search log"
+      },
+      {
+        "id": "q-w5-water-reference-chain",
+        "query": "Follow preserved WULCA official-versions links to AWARE2018/AWARE2.0 and official explanatory pages; follow updated-article reference to DOI10.1007/s11367-026-02648-7.",
+        "date": "2026-11-04",
+        "channel": "known-source reference-chain inspection; not a new broad search"
+      },
+      {
+        "id": "q-w5-unep2019-direct",
+        "query": "Inspect known UNEP2019Volume2 official library identity and normally acquired https://ourlandandwater.nz/wp-content/uploads/2019/12/EPF_GLAMVolume2.pdf.",
+        "date": "2026-11-04",
+        "channel": "direct-known-source verification; preserved acquisition/reading records; no broad-search query log"
+      },
+      {
+        "id": "q-w5-ilcd2011-direct",
+        "query": "Inspect known JRC61049 official record and normally acquired https://publications.jrc.ec.europa.eu/repository/bitstream/JRC61049/jrc61049_ilcd%20handbook%20final.pdf.",
+        "date": "2026-11-04",
+        "channel": "direct-known-source verification; preserved acquisition/reading records; no broad-search query log"
       }
     ],
     "limitations": [
@@ -961,7 +1004,8 @@
       "Public-fulltext-available describes a legitimate observed route; an observed link without successful file acquisition is distinguished in record limitations.",
       "Metadata disagreements, failed routes, catalog-only entries and unverified rights are retained; no book, portal, issue summary or full-text link is counted as community coverage.",
       "Conceptual book ambitions remain broader than this first-wave map. Proposed traditions/volume mappings are editorial navigation, not bibliometric findings.",
-      "The query log retains exact topic-level search strings and the named seed-reference chase; intermediate reformulations and URL-fetch retries are not exhaustively reconstructed. The retained protocol supports a repeatable starting point, not a complete transactional search history."
+      "The query log retains exact topic-level search strings and the named seed-reference chase; intermediate reformulations and URL-fetch retries are not exhaustively reconstructed. The retained protocol supports a repeatable starting point, not a complete transactional search history.",
+      "The2026-11-04water/pathways extension preserves four actual water queries and reference-chain inspections. Nutrient sources have acquisition/direct-verification records but no preserved broad-search strings; none were reconstructed. Its three AWARE articles, two guidance reports and five explanatory webpages do not establish independent model validation or complete LCIA coverage."
     ]
   },
   "records": [
@@ -4058,7 +4102,7 @@
           "Q4-03",
           "Q4-04"
         ],
-        "reason": "turns institutional bibliography lead into actual original. Local file `/tmp/prism-book-execution/community/chinese2002.pdf`, inspected image `chinese2002-page1.png`. Not a measured demonstration of national adoption and not proof of all statements in historical overview.",
+        "reason": "Turns institutional bibliography lead into an acquired original. Not a measured demonstration of national adoption and not proof of all statements in the historical overview.",
         "citationParents": []
       },
       "identityStatus": "verified",
@@ -6143,6 +6187,575 @@
       "catalogSourceIds": [
         "src-case-ipcc-ar6-wgi-errata-2025-10-07"
       ]
+    },
+    {
+      "id": "work-water-aware-2018",
+      "title": "The WULCA consensus characterization model for water scarcity footprints: assessing impacts of water consumption based on available water remaining (AWARE)",
+      "contributors": "Anne-Marie Boulay; Jane Bare; Lorenzo Benini; Markus Berger; Michael J. Lathuillière; Alessandro Manzardo; Manuele Margni; Masaharu Motoshita; Montserrat Núñez; Amandine Valerie Pastor; Bradley Ridoutt; Taikan Oki; Sebastien Worbe; Stephan Pfister",
+      "year": "2018",
+      "kind": "journal-article",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://doi.org/10.1007/s11367-017-1333-8",
+          "role": "DOI identity"
+        },
+        {
+          "url": "https://link.springer.com/content/pdf/10.1007/s11367-017-1333-8.pdf",
+          "role": "acquired carrier stable target; digest identifies acquired bytes"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1007/s11367-017-1333-8"
+      },
+      "volumes": [
+        "V5"
+      ],
+      "topics": [
+        "potential deprivation question",
+        "water quantity versus quality",
+        "withdrawal versus consumption",
+        "same-basin return caveat"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Global"
+      ],
+      "traditions": [
+        "WULCA/AWARE water-scarcity characterization"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-w5-water-02",
+          "q-w5-water-03",
+          "q-w5-water-reference-chain"
+        ],
+        "reason": "Bounded water-method reference-chain inspection; actual selected reading is recorded separately.",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-04",
+      "lastCheckedAt": "2026-11-04",
+      "rights": "原作标明CC BY4.0；第三方材料仍按各自权利声明使用。本书提供原创释义、元数据和定位，不附原文、图表或数据文件。",
+      "limitations": [
+        "368–376 selected method, object, limits and metadata passages; not full article or ESM",
+        "所读为选段或网页分节，不代表整篇/整部作品核读；无人工领域专家评审。",
+        "p374上截断文字与Eq4a存在未解决源内差异；不将其标记为官方勘误。"
+      ],
+      "catalogSourceIds": [
+        "src-water-aware2018"
+      ]
+    },
+    {
+      "id": "work-water-aware20-2025",
+      "title": "The updated and improved method for water scarcity impact assessment in LCA, AWARE2.0",
+      "contributors": "Georg Seitfudem; Markus Berger; Hannes Müller Schmied; Anne-Marie Boulay",
+      "year": "2025",
+      "kind": "journal-article",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://doi.org/10.1111/jiec.70023",
+          "role": "DOI identity"
+        },
+        {
+          "url": "https://link.springer.com/content/pdf/10.1111/jiec.70023.pdf",
+          "role": "acquired carrier stable target; digest identifies acquired bytes"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1111/jiec.70023"
+      },
+      "volumes": [
+        "V5"
+      ],
+      "topics": [
+        "native basin-month",
+        "actual discharge notation",
+        "marginal scope",
+        "new input/reference periods",
+        "area and basin topology",
+        "water-stock and transfer limitations"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Global"
+      ],
+      "traditions": [
+        "WULCA/AWARE water-scarcity characterization"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-w5-water-04",
+          "q-w5-water-reference-chain"
+        ],
+        "reason": "Bounded water-method reference-chain inspection; actual selected reading is recorded separately.",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-04",
+      "lastCheckedAt": "2026-11-04",
+      "rights": "原作标明CC BY-NC4.0，须署名且限非商业使用；第三方材料保留各自权利。本书提供原创释义、元数据和定位，不附原文、图表或数据文件。",
+      "limitations": [
+        "891–895;903–904; p905 data-availability continuation inspected; not rest of results or supplement",
+        "所读为选段或网页分节，不代表整篇/整部作品核读；无人工领域专家评审。"
+      ],
+      "catalogSourceIds": [
+        "src-water-aware20-2025"
+      ]
+    },
+    {
+      "id": "work-water-wulca-howto",
+      "title": "How to use AWARE",
+      "contributors": "WULCA (institutional webpage; individual authors not identified)",
+      "year": "undated",
+      "kind": "institutional-webpage",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://wulca-waterlca.org/what-is-aware/how-to/",
+          "role": "official mutable explanatory page or publisher identity"
+        }
+      ],
+      "identifiers": {},
+      "volumes": [
+        "V5"
+      ],
+      "topics": [
+        "per-product-unit scaling",
+        "month matching",
+        "agricultural aggregation",
+        "upstream fertilizer example and summation"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Global"
+      ],
+      "traditions": [
+        "WULCA official method explanation"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-w5-water-01",
+          "q-w5-water-reference-chain"
+        ],
+        "reason": "Bounded water-method reference-chain inspection; actual selected reading is recorded separately.",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-04",
+      "lastCheckedAt": "2026-11-04",
+      "rights": "WULCA网页及其第三方材料保留各自权利。FAQ关于因子使用的说明不等于网页原文、图片或所有资产的通用再分发许可；这里只提供原创释义、书目信息和引文定位。",
+      "limitations": [
+        "complete explanatory body text; image tables unread",
+        "所读为选段或网页分节，不代表整篇/整部作品核读；无人工领域专家评审。"
+      ],
+      "catalogSourceIds": [
+        "src-water-wulca-howto"
+      ]
+    },
+    {
+      "id": "work-water-wulca-faq",
+      "title": "AWARE FAQ",
+      "contributors": "WULCA (institutional webpage; individual authors not identified)",
+      "year": "undated",
+      "kind": "institutional-webpage",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://wulca-waterlca.org/what-is-aware/faq/",
+          "role": "official mutable explanatory page or publisher identity"
+        }
+      ],
+      "identifiers": {},
+      "volumes": [
+        "V5"
+      ],
+      "topics": [
+        "local inventory multiplication",
+        "consumption definition",
+        "aggregation patterns",
+        "marginal boundary"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Global"
+      ],
+      "traditions": [
+        "WULCA official method explanation"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-w5-water-01",
+          "q-w5-water-reference-chain"
+        ],
+        "reason": "Bounded water-method reference-chain inspection; actual selected reading is recorded separately.",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-04",
+      "lastCheckedAt": "2026-11-04",
+      "rights": "WULCA网页及其第三方材料保留各自权利。FAQ关于因子使用的说明不等于网页原文、图片或所有资产的通用再分发许可；这里只提供原创释义、书目信息和引文定位。",
+      "limitations": [
+        "FAQ body text, no linked articles",
+        "所读为选段或网页分节，不代表整篇/整部作品核读；无人工领域专家评审。"
+      ],
+      "catalogSourceIds": [
+        "src-water-wulca-faq"
+      ]
+    },
+    {
+      "id": "work-water-wulca-versions",
+      "title": "Official versions of AWARE",
+      "contributors": "WULCA (institutional webpage; individual authors not identified)",
+      "year": "undated",
+      "kind": "institutional-webpage",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://wulca-waterlca.org/what-is-aware/official-versions/",
+          "role": "official mutable explanatory page or publisher identity"
+        }
+      ],
+      "identifiers": {},
+      "volumes": [
+        "V5"
+      ],
+      "topics": [
+        "version boundary",
+        "input period",
+        "model consistency",
+        "marginal scope"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Global"
+      ],
+      "traditions": [
+        "WULCA official method explanation"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-w5-water-01",
+          "q-w5-water-reference-chain"
+        ],
+        "reason": "Bounded water-method reference-chain inspection; actual selected reading is recorded separately.",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-04",
+      "lastCheckedAt": "2026-11-04",
+      "rights": "WULCA网页及其第三方材料保留各自权利。FAQ关于因子使用的说明不等于网页原文、图片或所有资产的通用再分发许可；这里只提供原创释义、书目信息和引文定位。",
+      "limitations": [
+        "version and marginal-scope sections; no linked memorandum",
+        "所读为选段或网页分节，不代表整篇/整部作品核读；无人工领域专家评审。"
+      ],
+      "catalogSourceIds": [
+        "src-water-wulca-versions"
+      ]
+    },
+    {
+      "id": "work-water-wulca-download",
+      "title": "Download AWARE factors",
+      "contributors": "WULCA (institutional webpage; individual authors not identified)",
+      "year": "undated",
+      "kind": "institutional-webpage",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://wulca-waterlca.org/what-is-aware/download-aware-factors/",
+          "role": "official mutable explanatory page or publisher identity"
+        }
+      ],
+      "identifiers": {},
+      "volumes": [
+        "V5"
+      ],
+      "topics": [
+        "release fixes",
+        "aggregation versus watershed changes",
+        "Google Earth zero-factor caveat"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Global"
+      ],
+      "traditions": [
+        "WULCA official method explanation"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-w5-water-01",
+          "q-w5-water-reference-chain"
+        ],
+        "reason": "Bounded water-method reference-chain inspection; actual selected reading is recorded separately.",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-04",
+      "lastCheckedAt": "2026-11-04",
+      "rights": "WULCA网页及其第三方材料保留各自权利。FAQ关于因子使用的说明不等于网页原文、图片或所有资产的通用再分发许可；这里只提供原创释义、书目信息和引文定位。",
+      "limitations": [
+        "download description and version table; no factor spreadsheet or map",
+        "所读为选段或网页分节，不代表整篇/整部作品核读；无人工领域专家评审。"
+      ],
+      "catalogSourceIds": [
+        "src-water-wulca-download"
+      ]
+    },
+    {
+      "id": "work-water-wulca-uncertainty",
+      "title": "AWARE uncertainty",
+      "contributors": "WULCA (institutional webpage; individual authors not identified)",
+      "year": "undated",
+      "kind": "institutional-webpage",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://wulca-waterlca.org/what-is-aware/aware-uncertainty/",
+          "role": "official mutable explanatory page or publisher identity"
+        }
+      ],
+      "identifiers": {},
+      "volumes": [
+        "V5"
+      ],
+      "topics": [
+        "uncertainty versus spatiotemporal variability",
+        "stale availability statement"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Global"
+      ],
+      "traditions": [
+        "WULCA official method explanation"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-w5-water-01",
+          "q-w5-water-reference-chain"
+        ],
+        "reason": "Bounded water-method reference-chain inspection; actual selected reading is recorded separately.",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-04",
+      "lastCheckedAt": "2026-11-04",
+      "rights": "WULCA网页及其第三方材料保留各自权利。FAQ关于因子使用的说明不等于网页原文、图片或所有资产的通用再分发许可；这里只提供原创释义、书目信息和引文定位。",
+      "limitations": [
+        "webpage abstract and availability line; not underlying2021 paper",
+        "所读为选段或网页分节，不代表整篇/整部作品核读；无人工领域专家评审。"
+      ],
+      "catalogSourceIds": [
+        "src-water-wulca-uncertainty"
+      ]
+    },
+    {
+      "id": "work-water-aware-2026-uncertainty",
+      "title": "Harnessing model ensembles to assess uncertainty and provide prospective characterization factors for AWARE2.0",
+      "contributors": "Georg Seitfudem; Markus Berger; Anne-Marie Boulay",
+      "year": "2026",
+      "kind": "journal-article",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://doi.org/10.1007/s11367-026-02648-7",
+          "role": "DOI identity"
+        },
+        {
+          "url": "https://link.springer.com/article/10.1007/s11367-026-02648-7",
+          "role": "acquired carrier stable target; digest identifies acquired bytes"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1007/s11367-026-02648-7"
+      },
+      "volumes": [
+        "V5"
+      ],
+      "topics": [
+        "existence of later uncertainty/prospective work",
+        "input-model uncertainty"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Global"
+      ],
+      "traditions": [
+        "WULCA/AWARE water-scarcity characterization"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-w5-water-reference-chain"
+        ],
+        "reason": "Bounded water-method reference-chain inspection; actual selected reading is recorded separately.",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "access-context-unresolved",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-04",
+      "lastCheckedAt": "2026-11-04",
+      "rights": "出版者/许可方声明专有权利。载体含机构访问提示和正文分节，但这不能证明公开访问、使用者授权或开放许可；访问情境与再利用权利尚未确定。这里只提供原创释义、元数据和定位，不再分发原始载体。",
+      "limitations": [
+        "Abstract, identity and data availability selected for substantive reading; carrier access/rights/section presence inspected separately. Full methods/results not substantively read; this is not an unavailable-full-text claim",
+        "所读为选段或网页分节，不代表整篇/整部作品核读；无人工领域专家评审。",
+        "实质阅读仅摘要、身份与Data availability；机构访问提示、正文分节存在及专有权利另作载体核对。",
+        "不声称订阅提示、全文不可获得、公开访问、授权资格或全方法阅读。"
+      ],
+      "catalogSourceIds": [
+        "src-water-aware2026-uncertainty"
+      ]
+    },
+    {
+      "id": "work-unep-glam-2019-volume2",
+      "title": "Global Guidance on Environmental Life Cycle Impact Assessment Indicators — Volume2",
+      "contributors": "Editors: Rolf Frischknecht; Olivier Jolliet. Chapter3 authors: Sandra Payen; Bárbara Civit; Heather Golden; Briana Niblick; Aimable Uwizeye; Lisa Winter; Andrew Henderson.",
+      "year": "2019",
+      "kind": "institutional-guidance-report",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://www.lifecycleinitiative.org/library/global-guidance-for-life-cycle-impact-assessment-indicators-volume-2/",
+          "role": "official work identity"
+        },
+        {
+          "url": "https://ourlandandwater.nz/wp-content/uploads/2019/12/EPF_GLAMVolume2.pdf",
+          "role": "research-host original-work copy; publisher byte equality not verified"
+        }
+      ],
+      "identifiers": {},
+      "volumes": [
+        "V5"
+      ],
+      "topics": [
+        "terrestrial acidification",
+        "freshwater/coastal-marine eutrophication",
+        "receiving-system response"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Global"
+      ],
+      "traditions": [
+        "UNEP/SETAC Life Cycle Initiative impact-assessment guidance"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-w5-unep2019-direct"
+        ],
+        "reason": "Known-source verification from preserved acquisition records, not an invented new broad search; distinct edition/work from earlier database or detailed-LCA guidance.",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-04",
+      "lastCheckedAt": "2026-11-04",
+      "rights": "©UNEP2019；注明来源的教育或非营利用途可再现，商业或转售须事先书面许可；第三方材料保留各自条件。本书提供原创释义、元数据和定位，不附原PDF、原图表或原文。",
+      "limitations": [
+        "未完整核读全书或底层模型论文。",
+        "未与出版者PDF字节比较；未取得独立勘误，不宣称不存在勘误。",
+        "未采用统计表中的数值CF。",
+        "p73类别措辞疑点保留；p74交叉引用未独立查遍全书，不断言目标小节不存在。"
+      ],
+      "catalogSourceIds": [
+        "src-book-unep-glam-2019-volume2"
+      ]
+    },
+    {
+      "id": "work-ilcd-2011-lcia-recommendations",
+      "title": "Recommendations for Life Cycle Impact Assessment in the European context — based on existing environmental impact assessment models and factors",
+      "contributors": "European Commission–Joint Research Centre–Institute for Environment and Sustainability (institutional author; no individual chapter author inferred from PDF metadata)",
+      "year": "2011",
+      "kind": "institutional-guidance-report",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://publications.jrc.ec.europa.eu/repository/handle/JRC61049",
+          "role": "official work identity"
+        },
+        {
+          "url": "https://publications.jrc.ec.europa.eu/repository/bitstream/JRC61049/jrc61049_ilcd%20handbook%20final.pdf",
+          "role": "official repository original-work PDF"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.2788/33030",
+        "report": "JRC61049; EUR24571EN",
+        "isbn": "978-92-79-17451-3"
+      },
+      "volumes": [
+        "V5"
+      ],
+      "topics": [
+        "terrestrial eutrophication",
+        "critical load",
+        "European country-level methods"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Europe"
+      ],
+      "traditions": [
+        "ILCD European-context LCIA evaluation"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-w5-ilcd2011-direct"
+        ],
+        "reason": "Known-source verification from preserved acquisition records, not an invented new broad search; distinct edition/work from earlier database or detailed-LCA guidance.",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-04",
+      "lastCheckedAt": "2026-11-04",
+      "rights": "©European Union2011；注明来源后可再现。原PDF/源图表不进入提案，底层第三方作品权利另行保留。",
+      "limitations": [
+        "未运行AE/EMEP/RAINS或完整核读指南。",
+        "未取得所拟采用AE发行版精确SI单位，不补写molN-eq。",
+        "2011 ReCiPe能力描述不套到后继版。"
+      ],
+      "catalogSourceIds": [
+        "src-book-ilcd-2011-lcia-recommendations"
+      ]
     }
   ],
   "gaps": [
@@ -6297,6 +6910,51 @@
       ],
       "priority": "normal",
       "nextSearch": "Follow M10/M11/N06/B13 originals and independent counterevidence; no AI demonstration or self-evaluation treated as reliability proof."
+    },
+    {
+      "id": "lit-gap-water-full-method-data",
+      "description": "ISO14046原条文、底层水文模型/代码、真实CF工作簿与完整数据集未核读/审计；合成算例不验证模型。",
+      "nextSearch": "在合法取得具名版本与权利后，单独追踪模型输入、实现、真实因子和数据审计；保持教学数值为虚构。",
+      "volumes": [
+        "V5"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "lit-gap-water-2026-access-method",
+      "description": "2026载体含正文分节及机构访问提示，实质阅读仅摘要/身份/Data availability；资格、开放状态和再利用许可未确定，完整方法、补充及数据未读。",
+      "nextSearch": "需要使用该工作更深结论时先明确合法访问与权利，再对完整方法/数据作独立具名阅读；不得从摘要直接采用数值或分布。",
+      "volumes": [
+        "V5"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "lit-gap-pathway-CF-packages",
+      "description": "UNEP2019/ReCiPe/AE原生CF包和底层Roy/Helmes/Cosme/Azevedo/AE/EDIP论文未独立重建；未作实证或科学专家验证。",
+      "nextSearch": "通过合法渠道取得具名发行物，分别做原文、实现与数据验证；不得把说明或教学算术当作验证。",
+      "volumes": [
+        "V5"
+      ],
+      "priority": "normal"
+    },
+    {
+      "id": "lit-gap-terrestrial-AE-unit",
+      "description": "所读ILCD2011页未确定拟采用AE发行版精确SI因子单位；不凭记忆补写。",
+      "nextSearch": "在选择具体因子发行版后核对原始单位、分母、适用空间和版本。",
+      "volumes": [
+        "V5"
+      ],
+      "priority": "normal"
+    },
+    {
+      "id": "lit-gap-recipe-full-report-persists",
+      "description": "ReCiPe2016及2017v1.1原报告字节仍未取得；官方路线网络失败，旧LAP3地址返回HTML；2017方法论文不是报告替代。",
+      "nextSearch": "重试合法官方/机构版本载体，取得后核对标题、前置勘误、单位和选段；保留失败记录。",
+      "volumes": [
+        "V5"
+      ],
+      "priority": "high"
     }
   ]
 }
