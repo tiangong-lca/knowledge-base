@@ -16,8 +16,8 @@ checkPaths:
   - "scripts/**"
   - "package.json"
   - ".github/**"
-lastReviewedAt: 2026-11-03
-lastReviewedCommit: 6212678ddfaff2d68622c95d411372cca2fdc226
+lastReviewedAt: 2026-11-04
+lastReviewedCommit: adce3a13906a532bd665942e3d3f7a8f3cbae008
 ---
 
 # Publication architecture

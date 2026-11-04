@@ -53,7 +53,7 @@ Impact analysis reports claims needing review without granting approval or autom
 
 ## Delivery
 
-This is an M1 main repository. The approved book programme is coordinated in [knowledge-base #9](https://github.com/tiangong-lca/knowledge-base/issues/9); the first research/manuscript wave is [#10](https://github.com/tiangong-lca/knowledge-base/issues/10). Initial onboarding #1/workspace #2172 remains historical evidence. Use the workspace lifecycle controller for delivery records. A merged child PR requires separate exact workspace integration.
+This is an M1 main repository. The approved book programme is coordinated in [knowledge-base #9](https://github.com/tiangong-lca/knowledge-base/issues/9); the first research/manuscript wave [#10](https://github.com/tiangong-lca/knowledge-base/issues/10) is integrated, and the methods/models expansion is [#12](https://github.com/tiangong-lca/knowledge-base/issues/12). Initial onboarding #1/workspace #2172 remains historical evidence. Use the workspace lifecycle controller for delivery records. A merged child PR requires separate exact workspace integration.
 
 ## License
 
