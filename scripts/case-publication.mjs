@@ -3,6 +3,7 @@ import { readdir, readFile, lstat } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { isDeepStrictEqual } from 'node:util';
 import { evaluateTeachingCase, validateTeachingCase } from './teaching-case.mjs';
+import { evaluateJointProductionCase, validateJointProductionCase } from './joint-production.mjs';
 import { publicCatalog } from './knowledge.mjs';
 
 // Every nested object has an explicit schema. Unknown fields never enter public
@@ -10,7 +11,7 @@ import { publicCatalog } from './knowledge.mjs';
 const scalar = null, list = [scalar], matrix = [list];
 const alternative = { kgPerM2PerTreatment: scalar, treatmentTimesYears: list, stipulatedLifeYearsPerTreatment: scalar, requiredKg: scalar };
 const scenario = { version: scalar, initialCondition: scalar, demands: { paintA: list, paintB: list }, changed: list, heldFixed: list };
-const inputShape = {
+const wallInputShape = {
   caseId: scalar, version: scalar, createdAt: scalar, status: scalar, numericProvenanceDefault: scalar,
   service: { area: scalar, areaUnit: scalar, intervalYears: scalar, performance: scalar, paintA: alternative, paintB: alternative, assumptions: list },
   technosphere: { columns: list, rows: list, signConvention: scalar, matrix, equations: list, determinant: scalar, doubleCountingRule: scalar },
@@ -21,6 +22,37 @@ const inputShape = {
   scenarios: { smooth: scenario, rough: scenario }, priorExampleRelationship: scalar,
   countercase: { massKg: scalar, meaning: scalar },
 };
+const productAmounts = { X: scalar, Y: scalar };
+const operationAmounts = { joint: scalar, standaloneX: scalar, standaloneY: scalar, wasteY: scalar };
+const jointInputShape = {
+  caseId: scalar, version: scalar, model: scalar, createdAt: scalar, status: scalar, numericProvenanceDefault: scalar,
+  inventoryRows: list, activityBasis: operationAmounts, outputKgPerJointBatch: productAmounts,
+  inventoryPerOperation: { joint: list, standaloneX: list, standaloneY: list, wasteY: list },
+  pricePerKgCU: productAmounts, functionalDemandKg: productAmounts,
+  partitionQuestion: scalar, partitionScope: scalar, decisionQuestion: scalar, qMeaning: scalar, qScenarios: list, qProbability: scalar,
+  systemActivities: { reference: operationAmounts, jointRoute: operationAmounts },
+  assessment: { kind: scalar, characterizationFactors: scalar, crossFlowAggregation: scalar, interpretation: scalar },
+  residualInterpretation: scalar, premises: list,
+};
+// Closed model registry: a case identity selects its projection, evaluator and
+// numeric-source policy together. An input flag cannot disable wall fact checks.
+const caseAdapters = new Map([
+  ['CASE-WALL-CONNECT', { shape: wallInputShape, validate: validateTeachingCase, context: input => {
+    const [low, high] = input.uncertainty.closedRange;
+    return Object.fromEntries(['smooth', 'rough'].map(scenario => [scenario,
+      Object.fromEntries(Object.entries({ low, display: input.uncertainty.displayPoint, high }).map(([name, theta]) => [name, evaluateTeachingCase(input, { scenario, theta })])),
+    ]));
+  }, validateFacts: validateWallFactorFacts }],
+  ['CASE-JOINT-BATCH', { shape: jointInputShape, validate: validateJointProductionCase,
+    context: input => ({ evaluated: evaluateJointProductionCase(input) }),
+    // This adapter validates inventory-only/no-factor scope before reaching here.
+    validateFacts: () => [] }],
+]);
+function caseAdapter(spec) {
+  const adapter = object(spec) && caseAdapters.get(spec.caseId);
+  if (!adapter) throw new TypeError('Unsupported teaching case identity; a reviewed model adapter is required');
+  return adapter;
+}
 const claimShape = {
   id: scalar, text: scalar, kind: scalar, scope: scalar, evidenceIds: list,
   evidenceLinks: [{ evidenceId: scalar, relation: scalar, rationale: scalar }],
@@ -48,8 +80,9 @@ function freeze(value) {
   return value;
 }
 export function publicTeachingCase(spec) {
-  const output = project(spec, inputShape);
-  const errors = validateTeachingCase(output);
+  const adapter = caseAdapter(spec);
+  const output = project(spec, adapter.shape);
+  const errors = adapter.validate(output);
   if (errors.length) throw new TypeError(`Invalid teaching case:\n${errors.join('\n')}`);
   return output;
 }
@@ -58,17 +91,14 @@ export const canonicalCaseInput = spec => `${JSON.stringify(publicTeachingCase(s
 export const caseInputSha256 = spec => createHash('sha256').update(canonicalCaseInput(spec)).digest('hex');
 
 /**
- * Safe token paths: input.<public input path>, smooth|rough.low|display|high.
- * Each point exposes the exact evaluateTeachingCase result: service, model,
- * alternatives.paintA|paintB, comparison, sameMass and metadata. Numeric array
- * segments are allowed (e.g. input.characterization.factorVector.1).
+ * Safe primitive paths: input.<public input path> plus model-specific results.
+ * Wall: smooth|rough.low|display|high. Joint: evaluated.partitions,
+ * evaluated.scenarios.full|half|none, referenceBasket and separate residuals.
+ * Numeric array segments are allowed (e.g. evaluated.referenceBasket.0).
  */
 export function caseTemplateContext(spec) {
   const input = publicTeachingCase(spec);
-  const [low, high] = input.uncertainty.closedRange;
-  return freeze({ input, ...Object.fromEntries(['smooth', 'rough'].map(scenario => [scenario,
-    Object.fromEntries(Object.entries({ low, display: input.uncertainty.displayPoint, high }).map(([name, theta]) => [name, evaluateTeachingCase(input, { scenario, theta })])),
-  ])) });
+  return freeze({ input, ...caseAdapter(input).context(input) });
 }
 function interpolate(template, context) {
   if (typeof template !== 'string' || !template.trim()) throw new TypeError('textTemplate: must be a nonempty string');
@@ -134,7 +164,12 @@ export function validateCasePublication(spec, publication, catalog) {
     } catch (error) { errors.push(error.message); }
   }
   for (const claim of catalog.claims) if (claim.caseBinding?.caseId === spec.caseId && claim.caseBinding.version === spec.version && !expectedIds.has(claim.id)) errors.push(`case publication: extra caseBinding on ${claim.id}`);
-  const cf = publicTeachingCase(spec).characterization;
+  errors.push(...caseAdapter(spec).validateFacts(publicTeachingCase(spec), published));
+  return errors;
+}
+function validateWallFactorFacts(spec, published) {
+  const errors = [];
+  const cf = spec.characterization;
   if (!Array.isArray(cf.factorEvidenceIds) || cf.factorEvidenceIds.length !== cf.factorVector.length || new Set(cf.factorEvidenceIds).size !== cf.factorVector.length) errors.push('case characterization.factorEvidenceIds: each factor needs distinct public numeric evidence');
   if (!Array.isArray(cf.factorSubjects) || cf.factorSubjects.length !== cf.factorVector.length) errors.push('case characterization.factorSubjects: each factor needs an explicit subject');
   const factorSource = published.sources.find(source => source.id === cf.sourceId);

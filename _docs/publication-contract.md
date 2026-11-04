@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-04
-lastReviewedCommit: fc1b1167d1849e276a3f0a8d9fad004240375de0
+lastReviewedCommit: 4cbc293777b1ff8862f0686b73795d626d2a5438
 ---
 
 # Publication contract
@@ -49,6 +49,12 @@ A `derived-text` artifact identifies the actual captured text bytes, its origina
 Reviewed numerical evidence can expose a `numericFact` with value, unit, quantity, subject and basis. A teaching case binds each selected characterization factor to the published numerical fact and its source. Hypothetical performance, inventory and decision assumptions remain separate from source-derived factors.
 
 `knowledge/cases/*.publication.json` binds reviewed claim templates to the SHA-256 of the exact allowlisted downloadable input. Explicitly materialized canonical claim text and metadata must match that binding; build validates without approving or rewriting claims. Input or template changes require renewed substantive review and deliberate catalog updates. Versioned input filenames and case bindings preserve each registered version's own identity. This validation establishes consistency, not empirical truth or stakeholder acceptance of a hypothetical tolerance.
+
+## Distinct questions in a shared case
+
+CASE-JOINT-BATCH keeps additive product shares, physical alternative routes and reference-conditioned residuals separate in claim text and output fields. Two differently unitized inventory flows are never aggregated into an environmental score. Its prices, service equivalence, supplier response and utilization scenarios are author stipulations; source discussions motivate the argument but do not provide numerical evidence for them. A model with no characterization uses no factor bindings, through its explicit registered inventory-only policy; the wall model's fact binding remains mandatory.
+
+Reused original works receive precise additional passage/visual-check records where inspected. Added locators do not increment work counts or imply whole-work reading. Dated normative and adequacy criteria retain each author's purpose. A correction record does not substitute for an unread original procedure, and a mathematically similar teaching formula is not automatically that procedure's implementation.
 
 ## Reader publication boundary
 

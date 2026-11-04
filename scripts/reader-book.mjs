@@ -101,3 +101,46 @@ export function createChapterNotePlan(raw, anchorPrefix) {
   const notes = collectChapterClaimIds(raw).map((id, index) => ({ id, number: index + 1, anchor: `${anchorPrefix}-note-${index + 1}` }));
   return { notes, byClaimId: new Map(notes.map(note => [note.id, note])), headingId: `${anchorPrefix}-notes` };
 }
+
+/** Locate premises in the actual reading/print order without copying their prose. */
+export function createChapterReferenceIndex(pages) {
+  const index = new Map();
+  for (const page of pages) {
+    const plan = createChapterNotePlan(page.raw, chapterAnchorPrefix(page.url));
+    for (const note of plan.notes) {
+      const locations = index.get(note.id) ?? [];
+      locations.push({ title: page.title, url: page.url, number: note.number,
+        anchor: note.anchor, printAnchor: page.printAnchorPrefix ? `${page.printAnchorPrefix}-note-${note.number}` : null });
+      index.set(note.id, locations);
+    }
+  }
+  return index;
+}
+
+/** Scope/caveats stay with each claim; only repeated input links and premise text are condensed. */
+export function createChapterAnnotationPlan(notePlan, claims, referenceIndex, { print = false } = {}) {
+  const byId = new Map(claims.map(claim => [claim.id, claim])), seenInputs = new Set(), result = new Map();
+  for (const note of notePlan.notes) {
+    const claim = byId.get(note.id);
+    if (!claim) throw new Error(`Unknown chapter claim: ${note.id}`);
+    const binding = claim.caseBinding;
+    const inputKey = binding?.inputFile ? JSON.stringify([binding.caseId, binding.version, binding.inputSha256, binding.inputFile]) : null;
+    const showCaseInput = inputKey === null || !seenInputs.has(inputKey);
+    if (inputKey !== null) seenInputs.add(inputKey);
+    const premiseReferences = new Map();
+    for (const id of claim.premiseIds ?? []) {
+      const local = notePlan.byClaimId.get(id);
+      if (local) premiseReferences.set(id, { href: `#${local.anchor}`, label: `本章注 ${local.number}` });
+      else {
+        const locations = referenceIndex.get(id) ?? [];
+        const location = (print ? locations.find(item => item.printAnchor) : null) ?? locations[0];
+        if (location) premiseReferences.set(id, {
+          href: print && location.printAnchor ? `#${location.printAnchor}` : `${location.url}#${location.anchor}`,
+          label: `《${location.title}》注 ${location.number}`,
+        });
+      }
+    }
+    result.set(note.id, { showCaseInput, premiseReferences });
+  }
+  return result;
+}

@@ -1,14 +1,13 @@
 import { PublicationNote } from '@/components/publication-note';
 import Link from 'next/link';
 import catalog from '@/lib/catalog';
-import { getBookPages, getOrderedPages } from '@/lib/reader-book';
+import { getBookPages, getPrintPages } from '@/lib/reader-book';
 import { ChapterContent } from '@/components/chapter-content';
 import { PrintButton } from '@/components/print-button';
 import { PublicationShell } from '@/components/publication-shell';
 export const metadata = { title: '连续阅读与打印' };
 export default function Page() {
-  const chapters=getBookPages(), topics=getOrderedPages().filter(p=>p.slugs.length===1&&p.slugs[0]!=='book');
-  const pages=[...chapters,...topics];
+  const chapters=getBookPages(), pages=getPrintPages(), topics=pages.slice(chapters.length);
   return <PublicationShell title="生命周期评价的前世今生" description="连续阅读与打印。正文章节和补充专题沿目录顺序展开，注释随章列出。">
     <div className="print-controls"><PrintButton /><p>引用网页时请记录篇名、网址与访问日期。各章原始来源见章末注释。</p></div>
     <PublicationNote />

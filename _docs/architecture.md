@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-04
-lastReviewedCommit: fc1b1167d1849e276a3f0a8d9fad004240375de0
+lastReviewedCommit: 4cbc293777b1ff8862f0686b73795d626d2a5438
 ---
 
 # Publication architecture
@@ -66,9 +66,17 @@ Reading and passage identifiers also participate in reverse dependencies: changi
 
 `scripts/case-publication.mjs` projects nested allowlists, computes the downloadable UTF-8 input hash, interpolates primitive-only claim tokens, checks factor/evidence joins and validates canonical claim bindings. Export writes versioned inputs and evaluated receipts under `/downloads/cases/` and covers them with the build manifest. The impact graph accepts a case ID or case ID@version.
 
-The server `TeachingCase` component projects the repository specification before passing it to the client. Raw JSON and Node publication helpers must not enter the client graph. MDX references use literal registered id/version pairs. The client runs the same evaluator and presents scenario/parameter controls, a difference plot, matrices and numeric traces; fixed tables remain available to print and without interaction. A component currently supports CASE-WALL-CONNECT v1.0.0; new cases require a reviewed renderer binding as well as registration.
+The server `TeachingCase` component projects the repository specification before passing it to the client. Raw JSON and Node publication helpers must not enter the client graph. MDX references use literal registered id/version pairs. The client runs the same evaluator and presents scenario/parameter controls, a difference plot, matrices and numeric traces; fixed tables remain available to print and without interaction. `TeachingCase` explicitly dispatches CASE-WALL-CONNECT v1.0.0 to the existing interactive client and CASE-JOINT-BATCH v1.0.0 to a static server renderer. New cases require a reviewed renderer binding as well as registration.
 
 Derived text artifacts retain original URL/media type and explicit absence of original bytes; their text hash is visibly distinct from an original-document hash. Catalog/research validation checks the same qualification fields and their joins; public exports retain them while excluding raw captures and private metadata.
+
+## Bounded joint-product model
+
+`scripts/joint-production.mjs` evaluates a fixed-ratio batch and three declared utilization scenarios with exact reduced rational outputs. It checks separate inventory coordinates, additive mass/sales shares, both service requirements, joint-Y disposition, positive physical routes and algebraic comparison-residual reconstruction. Negative residuals and the deliberately invalid sum of separately anchored comparisons are distinct from physical emissions. No LCIA factors or cross-flow sum exists in this model.
+
+The closed registry in `case-publication.mjs` selects each known case's nested public projection, validator, evaluation context and numerical-source policy together. The joint input is explicitly inventory-only; an input flag cannot disable the wall case's factor/evidence checks. Wall projection order and downloadable hash are preserved by regression. Joint templates use `input` and `evaluated` paths; the existing export pipeline writes both models' canonical inputs, evaluated receipts and manifest hashes.
+
+`JointProductionCase` renders static, horizontally scrollable tables and reconstruction text after projecting raw input on the server. It sends no raw-case client data prop. The fixed question, operation basis, separate units, full-basket comparison, residual interpretation and hypothetical assumptions remain visible in the narrative and static/no-script/print view. This is a second bounded adapter, not a general allocation or market-response solver.
 
 ## Reader shell and scholarly apparatus
 
@@ -81,3 +89,5 @@ The standard Fumadocs DocsLayout owns document navigation, sidebar, TOC, search/
 `reader-surface.mjs` checks authored reader fields and the generated HTML/aria text, while allowing internal anchors and structured data. It catches strong project-process wording, visible internal labels and duplicate DOM IDs; semantic review still decides whether a condition is scientifically necessary. The HTML parser is bundled with pinned Next16.4.4, without a new dependency; its use is covered by compatibility fixtures.
 
 `SidebarKeyboard` completes Escape dismissal for the installed standard mobile drawer through the exported sidebar hook. It is active only for an open drawer, returns focus to its external trigger and leaves Escape inside nested search/menu/listbox controls to that control. Desktop collapsed state and page navigation remain owned by Fumadocs.
+
+Chapter annotations resolve premises to the same local or named-chapter note sequence instead of inserting complete dependent paragraphs into print. The print page and reference index share `getPrintPages`; a printed destination is preferred when a premise also occurs on an unprinted navigation page. React's server `cache` shares this derived index within a render request. Exact case/version/hash/file input links appear once per chapter; all canonical scope, caveats and dependency records remain intact, and standalone claim pages retain their complete context. The joint-case table block has an authored MDX heading so it appears in the actual generated TOC.
