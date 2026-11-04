@@ -4789,6 +4789,899 @@
       "sourceKeys": [
         "src-case-ipcc-ar6-wgi-errata-2025-10-07"
       ]
+    },
+    {
+      "id": "rd-water-aware2018",
+      "workId": "work-water-aware-2018",
+      "accessedAt": "2026-11-04",
+      "readAt": "2026-11-04",
+      "readingStatus": "selected-passages",
+      "artifacts": [
+        {
+          "id": "art-water-aware2018-pdf",
+          "sha256": "8dcf3f5e49fe36284b9ce897bb47852ac98ea04094e7207756c4da64765ddb17",
+          "mediaType": "application/pdf",
+          "pageCount": 11,
+          "resolvedUrl": "https://link.springer.com/content/pdf/10.1007/s11367-017-1333-8.pdf"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-water-aware2018-object",
+          "artifactId": "art-water-aware2018-pdf",
+          "locator": "Introduction p369 proxy-midpoint paragraph; §§3.1–3.2 p370",
+          "printedPages": "369–370",
+          "pdfIndices": [
+            1,
+            2
+          ],
+          "topics": [
+            "potential deprivation question",
+            "water quantity versus quality",
+            "withdrawal versus consumption",
+            "same-basin return caveat"
+          ],
+          "limits": [
+            "No independently read ISO clause.",
+            "Same-watershed return does not imply absence of local impacts between withdrawal and release points."
+          ]
+        },
+        {
+          "id": "psg-water-aware2018-mechanism",
+          "artifactId": "art-water-aware2018-pdf",
+          "locator": "§4.1 pp371–372 Eqs1–4; §§4.1.1–4.2 p373; §5 p374 Eq5",
+          "printedPages": "371–374",
+          "pdfIndices": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "topics": [
+            "remaining availability per area and time",
+            "human and aquatic ecosystem requirements",
+            "inverse relative factor",
+            "reference units",
+            "inventory multiplication"
+          ],
+          "limits": [
+            "Cutoffs are modeling choices, not universal scarcity safety thresholds.",
+            "Ecosystem-demand model is a proxy, not a measured endpoint.",
+            "Do not combine the 2018 equation notation with actual-discharge data without checking whether human use has already been deducted.",
+            "原文p374上截断说明与p371Eq4a不一致；未取得权威勘误，不据此改写公式或认定官方实现错误。"
+          ]
+        },
+        {
+          "id": "psg-water-aware2018-resolution-limits",
+          "artifactId": "art-water-aware2018-pdf",
+          "locator": "§§4.1.1 and4.1.3 p373; §5 and§6.1 pp374–375; §§6.3–6.6 pp375–376",
+          "printedPages": "373–376",
+          "pdfIndices": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "topics": [
+            "basin-month factors",
+            "consumption-pattern aggregation",
+            "inverse versus average",
+            "environmental demand and hydrological limitations",
+            "green-water exclusion"
+          ],
+          "limits": [
+            "No numerical findings from variability analysis or table are adopted.",
+            "Supplementary material, global hydrological code and validation studies were not read/reproduced.",
+            "月份对应指定多年水文参照，不是清单发生年份实时水况。",
+            "p377关于未来随机工作的说法是历史叙述，不是当前研究不存在的证据。"
+          ]
+        },
+        {
+          "id": "psg-water-aware2018-identity-rights",
+          "artifactId": "art-water-aware2018-pdf",
+          "locator": "Title/identity p368; Open Access statement p377",
+          "printedPages": "368；377",
+          "pdfIndices": [
+            0,
+            9
+          ],
+          "topics": [
+            "citation2018 versus online2017",
+            "CC BY4.0"
+          ],
+          "limits": [
+            "出版年份与在线年份分别保留；许可证不证明底层模型正确。"
+          ]
+        },
+        {
+          "id": "psg-water-aware2018-uncertainty-applicability",
+          "artifactId": "art-water-aware2018-pdf",
+          "locator": "§§6.7–6.8，印刷p377；不采用全文结论或参考文献作新增论据",
+          "printedPages": "377",
+          "pdfIndices": [
+            9
+          ],
+          "topics": [
+            "原论文不确定性讨论",
+            "边际适用条件",
+            "历史状态与当前状态"
+          ],
+          "limits": [
+            "原文关于当时数据/传播困难的说法不推广为目前研究不存在或普遍数学不可能。",
+            "未重现不确定性传播、原生代码或因子数据。"
+          ]
+        }
+      ],
+      "rights": "原作标明CC BY4.0；第三方材料仍按各自权利声明使用。本书提供原创释义、元数据和定位，不附原文、图表或数据文件。",
+      "title": "The WULCA consensus characterization model for water scarcity footprints: assessing impacts of water consumption based on available water remaining (AWARE)",
+      "version": "2018journal article; DOI10.1007/s11367-017-1333-8; published online2017-06-08; citation2018; 23:368–378",
+      "url": "https://doi.org/10.1007/s11367-017-1333-8",
+      "question": "耗水怎样进入AWARE缺水潜势，其反比、参照与聚合有哪些条件？",
+      "argumentSummary": "原论文将原流域耗水与潜在剥夺联系，采用多年参照下的流域/月剩余可用量和反比指标；截断、消费模式聚合与水文假设限制解释。",
+      "unread": [
+        "原始水文模型/代码、真实CF工作簿与全球数据审计；无原生模型或数据集验证。",
+        "其余段落、补充材料、独立ISO14046原条文及后续完整实证验证。"
+      ],
+      "sourceKeys": [
+        "10.1007/s11367-017-1333-8"
+      ],
+      "appraisal": {
+        "basis": "所列哈希载体选段核查及先前独立代理源文反查；本次重新验证原字节哈希与关键定位。",
+        "methodologicalScope": "Selected mechanism/object/limits pp369–376; identityp368/licencep377; not full article or ESM",
+        "independence": "WULCA解释页、AWARE原论文及更新共享作者或方法谱系；重复引述不是独立实证验证。",
+        "limitations": [
+          "Selected mechanism/object/limits pp369–376; identityp368/licencep377; not full article or ESM",
+          "所读为选段或网页分节，不代表整篇/整部作品核读；无人工领域专家评审。",
+          "p374上截断文字与Eq4a存在未解决源内差异；不将其标记为官方勘误。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-04"
+      }
+    },
+    {
+      "id": "rd-water-aware20",
+      "workId": "work-water-aware20-2025",
+      "accessedAt": "2026-11-04",
+      "readAt": "2026-11-04",
+      "readingStatus": "selected-passages",
+      "artifacts": [
+        {
+          "id": "art-water-aware20-pdf",
+          "sha256": "d58afcda9640aeffc525e961a3447973dcac50a0239d7b3586e5b1a4bbfd64f0",
+          "mediaType": "application/pdf",
+          "pageCount": 17,
+          "resolvedUrl": "https://link.springer.com/content/pdf/10.1111/jiec.70023.pdf"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-water-aware20-update",
+          "artifactId": "art-water-aware20-pdf",
+          "locator": "Title/abstract p891; §§1–2.2 pp892–895; §§4.1.2–4.2 pp903–904; §5 p904",
+          "printedPages": "891–895;903–904",
+          "pdfIndices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            12,
+            13
+          ],
+          "topics": [
+            "native basin-month",
+            "actual discharge notation",
+            "marginal scope",
+            "new input/reference periods",
+            "area and basin topology",
+            "water-stock and transfer limitations"
+          ],
+          "limits": [
+            "2025 published article, downloaded publisher PDF has February2026 creation/modification metadata; no inference of a substantive correction.",
+            "Rest of results/figures and supporting information not read.",
+            "No AWARE2.0 factor dataset or software implementation validated.",
+            "p892实际出口流量的实现叙述明确回顾Boulay2018，不泛化为全部AWARE2.0流域。",
+            "更新的实际可用量参照为1990–2019、耗水2019；环境参照仍1960–2010，不等于逐年实测因子。"
+          ]
+        },
+        {
+          "id": "psg-water-aware20-identity-data",
+          "artifactId": "art-water-aware20-pdf",
+          "locator": "p891 identity/licence; Data availability pp904–905 continuation",
+          "printedPages": "891；904–905",
+          "pdfIndices": [
+            0,
+            13,
+            14
+          ],
+          "topics": [
+            "2025article identity",
+            "CC BY-NC4.0",
+            "dataavailability statement"
+          ],
+          "limits": [
+            "只核验数据可用性声明及延续；未取得或审计数据集，PDF2026创建日期不证明方法新版。"
+          ]
+        }
+      ],
+      "rights": "原作标明CC BY-NC4.0，须署名且限非商业使用；第三方材料保留各自权利。本书提供原创释义、元数据和定位，不附原文、图表或数据文件。",
+      "title": "The updated and improved method for water scarcity impact assessment in LCA, AWARE2.0",
+      "version": "2025journal article; DOI10.1111/jiec.70023; 29:891–907",
+      "url": "https://doi.org/10.1111/jiec.70023",
+      "question": "AWARE2.0的输入、月份参照和实现更新如何改变指标解释？",
+      "argumentSummary": "2025论文回顾2018方法时把ActAvail定义为人类干预后的可用量，并说明实际出口流量；更新的输入期、内流盆地近似和边界另行区分。反复扣除同一耗水不是该定义下的合法代数操作。",
+      "unread": [
+        "原始水文模型/代码、真实CF工作簿与全球数据审计；无原生模型或数据集验证。",
+        "其余结果/图表、Supporting Information、数据与代码；未取得真实因子发行物。"
+      ],
+      "sourceKeys": [
+        "10.1111/jiec.70023"
+      ],
+      "appraisal": {
+        "basis": "所列哈希载体选段核查及先前独立代理源文反查；本次重新验证原字节哈希与关键定位。",
+        "methodologicalScope": "891–895;903–904; p905 data-availability continuation inspected; not rest of results or supplement",
+        "independence": "WULCA解释页、AWARE原论文及更新共享作者或方法谱系；重复引述不是独立实证验证。",
+        "limitations": [
+          "891–895;903–904; p905 data-availability continuation inspected; not rest of results or supplement",
+          "所读为选段或网页分节，不代表整篇/整部作品核读；无人工领域专家评审。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-04"
+      }
+    },
+    {
+      "id": "rd-water-wulca-howto",
+      "workId": "work-water-wulca-howto",
+      "accessedAt": "2026-11-04",
+      "readAt": "2026-11-04",
+      "readingStatus": "web-sections",
+      "artifacts": [
+        {
+          "id": "art-water-wulca-howto-html",
+          "sha256": "3c2219cdd61dcc4bcefd4299cd0ee08e96ac7368ec27e74003aec3dae033f7ba",
+          "mediaType": "text/html",
+          "resolvedUrl": "https://wulca-waterlca.org/what-is-aware/how-to/"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-water-wulca-howto",
+          "artifactId": "art-water-wulca-howto-html",
+          "locator": "Body from version1.2 example introduction through closing cradle-to-gate paragraph",
+          "topics": [
+            "per-product-unit scaling",
+            "month matching",
+            "agricultural aggregation",
+            "upstream fertilizer example and summation"
+          ],
+          "limits": [
+            "Explanatory text read; numerical image tables not visually checked and no tomato values adopted.",
+            "Demonstration explicitly uses AWARE1.2; does not document AWARE2.0 factor release."
+          ]
+        }
+      ],
+      "rights": "WULCA网页及其第三方材料保留各自权利。FAQ关于因子使用的说明不等于网页原文、图片或所有资产的通用再分发许可；这里只提供原创释义、书目信息和引文定位。",
+      "title": "How to apply AWARE",
+      "version": "WULCA mutable undated webpage; accessed2026-11-04",
+      "url": "https://wulca-waterlca.org/what-is-aware/how-to/",
+      "question": "官方示例怎样按共同产品参照衔接月份与上游贡献？",
+      "argumentSummary": "AWARE1.2说明正文把本地耗水、匹配月份和上游贡献统一到产品参照后相加；未采用图片表的番茄数值。",
+      "unread": [
+        "原始水文模型/代码、真实CF工作簿与全球数据审计；无原生模型或数据集验证。",
+        "所有链接原论文、因子表、地图、备忘录与网页图片，除非另有具名阅读记录。"
+      ],
+      "sourceKeys": [
+        "WULCA-howto"
+      ],
+      "appraisal": {
+        "basis": "所列哈希载体选段核查及先前独立代理源文反查；本次重新验证原字节哈希与关键定位。",
+        "methodologicalScope": "complete explanatory body text; image tables unread",
+        "independence": "WULCA解释页、AWARE原论文及更新共享作者或方法谱系；重复引述不是独立实证验证。",
+        "limitations": [
+          "complete explanatory body text; image tables unread",
+          "所读为选段或网页分节，不代表整篇/整部作品核读；无人工领域专家评审。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-04"
+      }
+    },
+    {
+      "id": "rd-water-wulca-faq",
+      "workId": "work-water-wulca-faq",
+      "accessedAt": "2026-11-04",
+      "readAt": "2026-11-04",
+      "readingStatus": "web-sections",
+      "artifacts": [
+        {
+          "id": "art-water-wulca-faq-html",
+          "sha256": "02e7e4e908327829e02a460d144d326f161be375c86000aefcab101575f458ef",
+          "mediaType": "text/html",
+          "resolvedUrl": "https://wulca-waterlca.org/what-is-aware/faq/"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-water-wulca-faq",
+          "artifactId": "art-water-wulca-faq-html",
+          "locator": "Questions on units, agri/non-agri, unknown, groundwater, application, nation-scale assessment, reuse/desalination and reuse rights",
+          "topics": [
+            "local inventory multiplication",
+            "consumption definition",
+            "aggregation patterns",
+            "marginal boundary"
+          ],
+          "limits": [
+            "Mutable undated page, accessed2026-11-04.",
+            "Its unit shorthand is read alongside original-paper averaging caveat; do not assume world aggregate CF=1.",
+            "Bayart2010 cited definition not independently read here."
+          ]
+        }
+      ],
+      "rights": "WULCA网页及其第三方材料保留各自权利。FAQ关于因子使用的说明不等于网页原文、图片或所有资产的通用再分发许可；这里只提供原创释义、书目信息和引文定位。",
+      "title": "AWARE FAQ",
+      "version": "WULCA mutable undated webpage; accessed2026-11-04",
+      "url": "https://wulca-waterlca.org/what-is-aware/faq/",
+      "question": "官方FAQ怎样解释耗水、单位和聚合边界？",
+      "argumentSummary": "FAQ区分本地耗水、农业/非农业消费模式聚合和边际用途；其单位简写必须连同原论文的反比与平均条件理解。",
+      "unread": [
+        "原始水文模型/代码、真实CF工作簿与全球数据审计；无原生模型或数据集验证。",
+        "所有链接原论文、因子表、地图、备忘录与网页图片，除非另有具名阅读记录。"
+      ],
+      "sourceKeys": [
+        "WULCA-faq"
+      ],
+      "appraisal": {
+        "basis": "所列哈希载体选段核查及先前独立代理源文反查；本次重新验证原字节哈希与关键定位。",
+        "methodologicalScope": "FAQ body text, no linked articles",
+        "independence": "WULCA解释页、AWARE原论文及更新共享作者或方法谱系；重复引述不是独立实证验证。",
+        "limitations": [
+          "FAQ body text, no linked articles",
+          "所读为选段或网页分节，不代表整篇/整部作品核读；无人工领域专家评审。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-04"
+      }
+    },
+    {
+      "id": "rd-water-wulca-versions",
+      "workId": "work-water-wulca-versions",
+      "accessedAt": "2026-11-04",
+      "readAt": "2026-11-04",
+      "readingStatus": "web-sections",
+      "artifacts": [
+        {
+          "id": "art-water-wulca-versions-html",
+          "sha256": "d330f0cfd99e4b2dbee5d3db480e11d6766174b302f0895548d9a1f3131f7da0",
+          "mediaType": "text/html",
+          "resolvedUrl": "https://wulca-waterlca.org/what-is-aware/official-versions/"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-water-wulca-versions",
+          "artifactId": "art-water-wulca-versions-html",
+          "locator": "AWARE and AWARE2.0; Why use AWARE2.0; marginal-factor paragraph",
+          "topics": [
+            "version boundary",
+            "input period",
+            "model consistency",
+            "marginal scope"
+          ],
+          "limits": [
+            "Website account, not independent consensus validation or a universal adoption mandate."
+          ]
+        }
+      ],
+      "rights": "WULCA网页及其第三方材料保留各自权利。FAQ关于因子使用的说明不等于网页原文、图片或所有资产的通用再分发许可；这里只提供原创释义、书目信息和引文定位。",
+      "title": "Official versions of AWARE",
+      "version": "WULCA mutable undated webpage; accessed2026-11-04",
+      "url": "https://wulca-waterlca.org/what-is-aware/official-versions/",
+      "question": "官方版本说明区分哪些更新和边际条件？",
+      "argumentSummary": "网页解释AWARE与AWARE2.0的版本、输入期及边际使用范围，不是独立科学验证或普遍采用命令。",
+      "unread": [
+        "原始水文模型/代码、真实CF工作簿与全球数据审计；无原生模型或数据集验证。",
+        "所有链接原论文、因子表、地图、备忘录与网页图片，除非另有具名阅读记录。"
+      ],
+      "sourceKeys": [
+        "WULCA-versions"
+      ],
+      "appraisal": {
+        "basis": "所列哈希载体选段核查及先前独立代理源文反查；本次重新验证原字节哈希与关键定位。",
+        "methodologicalScope": "version and marginal-scope sections; no linked memorandum",
+        "independence": "WULCA解释页、AWARE原论文及更新共享作者或方法谱系；重复引述不是独立实证验证。",
+        "limitations": [
+          "version and marginal-scope sections; no linked memorandum",
+          "所读为选段或网页分节，不代表整篇/整部作品核读；无人工领域专家评审。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-04"
+      }
+    },
+    {
+      "id": "rd-water-wulca-download",
+      "workId": "work-water-wulca-download",
+      "accessedAt": "2026-11-04",
+      "readAt": "2026-11-04",
+      "readingStatus": "web-sections",
+      "artifacts": [
+        {
+          "id": "art-water-wulca-download-html",
+          "sha256": "dcc07f3b4bfd61a9db2895670c49d4c1e250e346c5092478edf9192f7d2cd203",
+          "mediaType": "text/html",
+          "resolvedUrl": "https://wulca-waterlca.org/what-is-aware/download-aware-factors/"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-water-wulca-release-tracking",
+          "artifactId": "art-water-wulca-download-html",
+          "locator": "AWARE2.0 download section; AWARE version tracking table 2015–2024",
+          "topics": [
+            "release fixes",
+            "aggregation versus watershed changes",
+            "Google Earth zero-factor caveat"
+          ],
+          "limits": [
+            "Version table text read; linked factor workbooks and maps not read.",
+            "No current geographic factor selected."
+          ]
+        }
+      ],
+      "rights": "WULCA网页及其第三方材料保留各自权利。FAQ关于因子使用的说明不等于网页原文、图片或所有资产的通用再分发许可；这里只提供原创释义、书目信息和引文定位。",
+      "title": "Download AWARE factors",
+      "version": "WULCA mutable undated webpage; accessed2026-11-04",
+      "url": "https://wulca-waterlca.org/what-is-aware/download-aware-factors/",
+      "question": "发行记录怎样区分因子包、聚合修订和地图限制？",
+      "argumentSummary": "下载说明和版本表记录原生及聚合发行物与修订；查看列表不等于取得或验证真实因子工作簿。",
+      "unread": [
+        "原始水文模型/代码、真实CF工作簿与全球数据审计；无原生模型或数据集验证。",
+        "所有链接原论文、因子表、地图、备忘录与网页图片，除非另有具名阅读记录。"
+      ],
+      "sourceKeys": [
+        "WULCA-download"
+      ],
+      "appraisal": {
+        "basis": "所列哈希载体选段核查及先前独立代理源文反查；本次重新验证原字节哈希与关键定位。",
+        "methodologicalScope": "download description and version table; no factor spreadsheet or map",
+        "independence": "WULCA解释页、AWARE原论文及更新共享作者或方法谱系；重复引述不是独立实证验证。",
+        "limitations": [
+          "download description and version table; no factor spreadsheet or map",
+          "所读为选段或网页分节，不代表整篇/整部作品核读；无人工领域专家评审。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-04"
+      }
+    },
+    {
+      "id": "rd-water-wulca-uncertainty",
+      "workId": "work-water-wulca-uncertainty",
+      "accessedAt": "2026-11-04",
+      "readAt": "2026-11-04",
+      "readingStatus": "web-sections",
+      "artifacts": [
+        {
+          "id": "art-water-wulca-uncertainty-html",
+          "sha256": "dc839b85c07aee6ce8861026fcb19f4ddd3660d8e30cd93401d1e951154c94fe",
+          "mediaType": "text/html",
+          "resolvedUrl": "https://wulca-waterlca.org/what-is-aware/aware-uncertainty/"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-water-wulca-uncertainty-status",
+          "artifactId": "art-water-wulca-uncertainty-html",
+          "locator": "2021 uncertainty abstract and final AWARE2.0 availability statement",
+          "topics": [
+            "uncertainty versus spatiotemporal variability",
+            "stale availability statement"
+          ],
+          "limits": [
+            "Only webpage abstract, not original2021 article.",
+            "Page availability claim conflicts with newer2026 publisher abstract; not adopted as current fact.",
+            "Webpage spread numbers not adopted or independently checked."
+          ]
+        }
+      ],
+      "rights": "WULCA网页及其第三方材料保留各自权利。FAQ关于因子使用的说明不等于网页原文、图片或所有资产的通用再分发许可；这里只提供原创释义、书目信息和引文定位。",
+      "title": "AWARE uncertainty",
+      "version": "WULCA mutable undated webpage; accessed2026-11-04",
+      "url": "https://wulca-waterlca.org/what-is-aware/aware-uncertainty/",
+      "question": "旧网页的不确定性摘要和可用性陈述有哪些时间边界？",
+      "argumentSummary": "仅核读网页载录摘要与AWARE2.0可用性句；该句受2026新论文摘要限定，不能据它断言当前没有相关研究或数据。",
+      "unread": [
+        "原始水文模型/代码、真实CF工作簿与全球数据审计；无原生模型或数据集验证。",
+        "所有链接原论文、因子表、地图、备忘录与网页图片，除非另有具名阅读记录。"
+      ],
+      "sourceKeys": [
+        "WULCA-uncertainty"
+      ],
+      "appraisal": {
+        "basis": "所列哈希载体选段核查及先前独立代理源文反查；本次重新验证原字节哈希与关键定位。",
+        "methodologicalScope": "webpage abstract and availability line; not underlying2021 paper",
+        "independence": "WULCA解释页、AWARE原论文及更新共享作者或方法谱系；重复引述不是独立实证验证。",
+        "limitations": [
+          "webpage abstract and availability line; not underlying2021 paper",
+          "所读为选段或网页分节，不代表整篇/整部作品核读；无人工领域专家评审。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-04"
+      }
+    },
+    {
+      "id": "rd-water-aware2026-abstract",
+      "workId": "work-water-aware-2026-uncertainty",
+      "accessedAt": "2026-11-04",
+      "readAt": "2026-11-04",
+      "readingStatus": "web-sections",
+      "artifacts": [
+        {
+          "id": "art-water-aware2026-landing-html",
+          "sha256": "99ef74c6f1acbf3e71de7e74281928dacb238bb2ac87123358e8a59a8719a2b0",
+          "mediaType": "text/html",
+          "resolvedUrl": "https://link.springer.com/article/10.1007/s11367-026-02648-7"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-water-aware2026-abstract",
+          "artifactId": "art-water-aware2026-landing-html",
+          "locator": "Title, author/date metadata, Abstract Purpose/Methods/Results/Conclusions; Data availability; separately inspected access/rights indicators and section presence",
+          "topics": [
+            "existence of later uncertainty/prospective work",
+            "input-model uncertainty"
+          ],
+          "limits": [
+            "Substantive reading covers abstract/metadata/data availability only. The acquired HTML contains article sections, but full methods/results, supplement and stochastic/prospective dataset remain unread.",
+            "No numerical uncertainty value or distribution adopted."
+          ]
+        }
+      ],
+      "rights": "出版者/许可方声明专有权利。载体含机构访问提示和正文分节，但这不能证明公开访问、使用者授权或开放许可；访问情境与再利用权利尚未确定。这里只提供原创释义、元数据和定位，不再分发原始载体。",
+      "title": "Harnessing model ensembles to assess uncertainty and provide prospective characterization factors for AWARE2.0",
+      "version": "2026journal article; DOI10.1007/s11367-026-02648-7; 31, article98; published2026-06-01",
+      "url": "https://doi.org/10.1007/s11367-026-02648-7",
+      "question": "较新的摘要是否足以限定旧网页“尚不可用”的说法？",
+      "argumentSummary": "2026摘要和数据可用性声明描述随机与前瞻AWARE2.0工作，足以限制旧网页的无条件现时缺失断言；不据此采用其数值、分布、方法结论或数据集。",
+      "unread": [
+        "原始水文模型/代码、真实CF工作簿与全球数据审计；无原生模型或数据集验证。",
+        "载体含有的完整方法、结果和讨论；补充材料及随机/前瞻数据集。"
+      ],
+      "sourceKeys": [
+        "10.1007/s11367-026-02648-7"
+      ],
+      "appraisal": {
+        "basis": "所列哈希载体选段核查及先前独立代理源文反查；本次重新验证原字节哈希与关键定位。",
+        "methodologicalScope": "Abstract, identity and data availability selected for substantive reading; carrier access/rights/section presence inspected separately. Full methods/results not substantively read; this is not an unavailable-full-text claim",
+        "independence": "WULCA解释页、AWARE原论文及更新共享作者或方法谱系；重复引述不是独立实证验证。",
+        "limitations": [
+          "Abstract, identity and data availability selected for substantive reading; carrier access/rights/section presence inspected separately. Full methods/results not substantively read; this is not an unavailable-full-text claim",
+          "所读为选段或网页分节，不代表整篇/整部作品核读；无人工领域专家评审。",
+          "实质阅读仅摘要、身份与Data availability；机构访问提示、正文分节存在及专有权利另作载体核对。",
+          "载体访问情境未确定；未建立公开访问、授权资格或开放许可，不作完整方法阅读推断。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-04"
+      }
+    },
+    {
+      "id": "rd-unep-glam-2019-pathways",
+      "workId": "work-unep-glam-2019-volume2",
+      "title": "Global Guidance on Environmental Life Cycle Impact Assessment Indicators — Volume2",
+      "version": "UNEP/SETAC Life Cycle Initiative，2019；编辑Frischknecht/Jolliet；202页研究机构公开副本；独立于ReCiPe手册",
+      "url": "https://www.lifecycleinitiative.org/library/global-guidance-for-life-cycle-impact-assessment-indicators-volume-2/",
+      "accessedAt": "2026-11-04",
+      "readAt": "2026-11-04",
+      "readingStatus": "selected-passages",
+      "question": "排放怎样经过接收环境到达酸化或富营养化指标？",
+      "argumentSummary": "第3章给出陆地酸化与淡水/近岸富营养化的链条，并保留限制营养物、背景、聚合、响应及未实现路径。边际斜率与相对目标的平均响应须区分；2019实际酸化/海洋EF为开发者平均值，不能解释为当地当前状态。",
+      "artifacts": [
+        {
+          "id": "art-unep-glam-2019-volume2-olw-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "25a581923bca994a7258c7e5748ea91f36d0f735d8ad2eaefdfb465b71702ca1",
+          "resolvedUrl": "https://ourlandandwater.nz/wp-content/uploads/2019/12/EPF_GLAMVolume2.pdf",
+          "pageCount": 202
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-glam2-2019-identity-rights",
+          "artifactId": "art-unep-glam-2019-volume2-olw-pdf",
+          "locator": "封面、版权；编辑/作者p2；第3章作者p60",
+          "printedPages": "无编号；1–2；60",
+          "pdfIndices": [
+            0,
+            1,
+            2,
+            3,
+            61
+          ],
+          "topics": [
+            "作品身份",
+            "权利",
+            "编辑与第3章作者角色分开"
+          ],
+          "limits": [
+            "版权年2019与PDF创建日分别记录；未与出版者文件逐字节比较。"
+          ]
+        },
+        {
+          "id": "psg-glam2-2019-acid",
+          "artifactId": "art-unep-glam-2019-volume2-olw-pdf",
+          "locator": "§§3.1–3.2.1；Figure3.1及图注；§3.5.3",
+          "printedPages": "61–62；66",
+          "pdfIndices": [
+            62,
+            63,
+            67
+          ],
+          "topics": [
+            "大气反应与沉降",
+            "土壤缓冲和pH",
+            "维管植物响应"
+          ],
+          "limits": [
+            "推荐范围是陆地酸化、水体富营养化；广义图示不表示全部路径已实现。"
+          ]
+        },
+        {
+          "id": "psg-glam2-2019-eutro-scope",
+          "artifactId": "art-unep-glam-2019-volume2-olw-pdf",
+          "locator": "§3.2.2；Figure3.2及图注；§3.5.4 Limiting nutrients",
+          "printedPages": "62–63；66",
+          "pdfIndices": [
+            63,
+            64,
+            67
+          ],
+          "topics": [
+            "初级生产和耗氧",
+            "共同限制",
+            "陆地营养路径"
+          ],
+          "limits": [
+            "淡水P与海洋N限制是简化，不是普遍生态定律；图示陆地路径不等于已有推荐因子。"
+          ]
+        },
+        {
+          "id": "psg-glam2-2019-units",
+          "artifactId": "art-unep-glam-2019-volume2-olw-pdf",
+          "locator": "§3.4 p64；Tables3.1–3.3表头pp69–71（仅单位，未采用数值行）",
+          "printedPages": "64；69–71",
+          "pdfIndices": [
+            65,
+            70,
+            71,
+            72
+          ],
+          "topics": [
+            "SO2/P/N当量",
+            "PDF面积或体积时间"
+          ],
+          "limits": [
+            "没有采用Tables3.1–3.3的数值因子；保持类别和分母。"
+          ]
+        },
+        {
+          "id": "psg-glam2-2019-freshwater",
+          "artifactId": "art-unep-glam-2019-volume2-olw-pdf",
+          "locator": "§3.5.1 Fate / Exposure / Effect",
+          "printedPages": "64–65",
+          "pdfIndices": [
+            65,
+            66
+          ],
+          "topics": [
+            "磷输运滞留",
+            "总磷与物种关系",
+            "缺少形态暴露"
+          ],
+          "limits": [
+            "底层Helmes/Azevedo原论文未另行重算。"
+          ]
+        },
+        {
+          "id": "psg-glam2-2019-marine",
+          "artifactId": "art-unep-glam-2019-volume2-olw-pdf",
+          "locator": "§3.5.2 Fate / Exposure / Effect及p66承接",
+          "printedPages": "65–66",
+          "pdfIndices": [
+            66,
+            67
+          ],
+          "topics": [
+            "流域和近岸",
+            "氮停留和去除",
+            "底层耗氧",
+            "缺氧响应"
+          ],
+          "limits": [
+            "能力与氧补给缺项判断绑定2019所述模型，非任何后继发行版。"
+          ]
+        },
+        {
+          "id": "psg-glam2-2019-response",
+          "artifactId": "art-unep-glam-2019-volume2-olw-pdf",
+          "locator": "§3.5.4 Effect modelling；Figure3.3；p68开头",
+          "printedPages": "66–68",
+          "pdfIndices": [
+            67,
+            68,
+            69
+          ],
+          "topics": [
+            "PNOF/PAF/PDF条件",
+            "局地可逆效应",
+            "背景和工作点",
+            "积极效应截止",
+            "边际斜率与相对目标的平均响应",
+            "实际提供因子与原则建议的差别"
+          ],
+          "limits": [
+            "PNOF/PAF等同PDF有代表性前提；零EF为建议，不证明生态效应为零。",
+            "2019实际提供的酸化和海洋富营养化EF采用开发者平均值，不反映当前条件；当时当前条件端点变体仅淡水可用。",
+            "PDF0.2替代工作点是有条件的专家判断，不是现场测得状态或通用安全线。"
+          ]
+        },
+        {
+          "id": "psg-glam2-2019-boundary",
+          "artifactId": "art-unep-glam-2019-volume2-olw-pdf",
+          "locator": "§3.5.4 Technosphere–ecosphere boundary，Tier1–3；§3.6.2",
+          "printedPages": "68",
+          "pdfIndices": [
+            69
+          ],
+          "topics": [
+            "施用量与净排放",
+            "背景农业10%P缺省",
+            "前景分层",
+            "空间聚合"
+          ],
+          "limits": [
+            "10%不作所有田块实测值；已有净排放不重复应用土壤损失。"
+          ]
+        },
+        {
+          "id": "psg-glam2-2019-interpretation",
+          "artifactId": "art-unep-glam-2019-volume2-olw-pdf",
+          "locator": "§3.6.3说明段；§§3.8.1–3.8.5",
+          "printedPages": "69；71；73–74",
+          "pdfIndices": [
+            70,
+            72,
+            74,
+            75
+          ],
+          "topics": [
+            "推荐层次",
+            "空间匹配",
+            "因子包与测试",
+            "源内疑点"
+          ],
+          "limits": [
+            "未逐格采用统计表。",
+            "p73 terrestrial eutrophication与NOx/SO2/NH3例子有类别/物质疑点，不作为候选事实。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "原作未加密PDF选段及图示、单位和边界页面图像核对。",
+        "methodologicalScope": "2019第3章路径解释；无原生因子包或代码执行。",
+        "independence": "与ReCiPe/LC-IMPACT共享底层模型，不构成独立实证。",
+        "limitations": [
+          "未完整核读全书或底层模型论文。",
+          "未与出版者PDF字节比较；未取得独立勘误，不宣称不存在勘误。",
+          "未采用统计表中的数值CF。",
+          "p73类别措辞疑点保留；p74交叉引用未独立查遍全书，不断言目标小节不存在。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-04"
+      },
+      "rights": "©UNEP2019；注明来源的教育或非营利用途可再现，商业或转售须事先书面许可；第三方材料保留各自条件。本书提供原创释义、元数据和定位，不附原PDF、原图表或原文。",
+      "unread": [
+        "全书其他章节和评审附录。",
+        "Roy/Helmes/Cosme/Azevedo原论文及其代码、CF发行物。",
+        "Tier1缺省所引Bouwman2009原研究及具体农业实测，未单独核读。"
+      ],
+      "sourceKeys": [
+        "UNEP-GLAM-2019-Volume2"
+      ]
+    },
+    {
+      "id": "rd-ilcd-2011-eutrophication-pathways",
+      "workId": "work-ilcd-2011-lcia-recommendations",
+      "title": "Recommendations for Life Cycle Impact Assessment in the European context — based on existing environmental impact assessment models and factors",
+      "version": "ILCD Handbook First edition November2011；JRC61049；EUR24571EN；doi10.2788/33030；159页官方PDF",
+      "url": "https://publications.jrc.ec.europa.eu/repository/handle/JRC61049",
+      "accessedAt": "2026-11-04",
+      "readAt": "2026-11-04",
+      "readingStatus": "selected-passages",
+      "question": "陆地营养富集的路径和中点如何区别于水体耗氧？",
+      "argumentSummary": "在2011欧洲、国家尺度的方法语境中，AE与EDIP2003连接大气沉降、敏感接收区和临界负荷；AE超载与EDIP2003未受保护面积不同，也不等于水体耗氧或PDF。",
+      "artifacts": [
+        {
+          "id": "art-ilcd-2011-lcia-recommendations-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "1adbcb9218443922f8c403a16b9d32b71df27c43c789925fc2afb606e8a0835f",
+          "resolvedUrl": "https://publications.jrc.ec.europa.eu/repository/bitstream/JRC61049/jrc61049_ilcd%20handbook%20final.pdf",
+          "pageCount": 159
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-ilcd2011-identity",
+          "artifactId": "art-ilcd-2011-lcia-recommendations-pdf",
+          "locator": "正式引用、法律页",
+          "printedPages": "封面；i",
+          "pdfIndices": [
+            0,
+            1
+          ],
+          "topics": [
+            "第一版2011-11",
+            "权利和doi"
+          ],
+          "limits": [
+            "PDF元数据含Draft，正文正式引用为第一版；2012修改时间不是新版证明。"
+          ]
+        },
+        {
+          "id": "psg-ilcd2011-terrestrial-eutro",
+          "artifactId": "art-ilcd-2011-lcia-recommendations-pdf",
+          "locator": "§3.8.1.1 Midpoint，AE与EDIP2003",
+          "printedPages": "65",
+          "pdfIndices": [
+            78
+          ],
+          "topics": [
+            "沉降与临界负荷",
+            "未受保护面积"
+          ],
+          "limits": [
+            "2011欧洲语境；不自动成为当前推荐；未核验AE精确SI因子单位。",
+            "AE与EDIP2003均为欧洲国家层次因子；EDIP2003此处限大气排放。"
+          ]
+        },
+        {
+          "id": "psg-ilcd2011-eutro-space",
+          "artifactId": "art-ilcd-2011-lcia-recommendations-pdf",
+          "locator": "§§3.8.3–3.8.4；§3.8.5.1前两段",
+          "printedPages": "74–75",
+          "pdfIndices": [
+            87,
+            88
+          ],
+          "topics": [
+            "接收区敏感性",
+            "空间差异",
+            "限制营养物"
+          ],
+          "limits": [
+            "不采用文中数量级或运行其模型。",
+            "扩展到其他大陆需要相互一致的区域模型及敏感区信息，不外推现成全球因子。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "官方未加密PDF选段；p65、p74图像核验；正式引用/版权核对。",
+        "methodologicalScope": "2011欧洲语境指南；非当前方法排名或底层模型原论文复算。",
+        "independence": "指南评价是其原作，对底层模型的概述不构成独立实证。",
+        "limitations": [
+          "未运行AE/EMEP/RAINS或完整核读指南。",
+          "未取得所拟采用AE发行版精确SI单位，不补写molN-eq。",
+          "2011 ReCiPe能力描述不套到后继版。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-04"
+      },
+      "rights": "©European Union2011；注明来源后可再现。原PDF/源图表不进入提案，底层第三方作品权利另行保留。",
+      "unread": [
+        "底层AE/EDIP模型原论文与临界负荷数据库。",
+        "指南其余章节、独立实证验证和原生因子发行包。"
+      ],
+      "sourceKeys": [
+        "JRC61049"
+      ]
     }
   ],
   "gaps": [
@@ -5262,6 +6155,70 @@
         "V7"
       ],
       "nextAction": "通过正常公开或获授权途径取得具体原件，核对行列、图像与更正链；保留旧快照身份并在发现变化时重新审查依赖计算。"
+    },
+    {
+      "id": "gap-water-full-method-data",
+      "description": "ISO14046原条文、底层水文模型/代码、真实CF工作簿与完整数据集未核读/审计；合成算例不验证模型。",
+      "nextAction": "在合法取得具名版本与权利后，单独追踪模型输入、实现、真实因子和数据审计；保持教学数值为虚构。",
+      "affectedUnits": [
+        "V5"
+      ]
+    },
+    {
+      "id": "gap-water-2026-access-method",
+      "description": "2026载体含正文分节及机构访问提示，实质阅读仅摘要/身份/Data availability；资格、开放状态和再利用许可未确定，完整方法、补充及数据未读。",
+      "nextAction": "需要使用该工作更深结论时先明确合法访问与权利，再对完整方法/数据作独立具名阅读；不得从摘要直接采用数值或分布。",
+      "affectedUnits": [
+        "V5"
+      ]
+    },
+    {
+      "id": "gap-water-2018-cutoff-source",
+      "description": "AWARE2018p374上截断文字与p371Eq4a不一致；观察到源内差异，尚无权威更正。",
+      "nextAction": "保留原始两个定位并检索权威澄清；未澄清前不据p374字面改公式、不称官方勘误或实现错误。",
+      "affectedUnits": [
+        "V5"
+      ]
+    },
+    {
+      "id": "gap-water-uncertainty-freshness",
+      "description": "WULCA不确定性页的AWARE2.0尚不可用句受到2026摘要/数据声明限定；网页并非当前研究不存在的证据。",
+      "nextAction": "比较具名版本与访问日期；若要采用后继随机/前瞻结论，另读完整方法和数据。",
+      "affectedUnits": [
+        "V5"
+      ]
+    },
+    {
+      "id": "gap-pathway-CF-packages",
+      "description": "UNEP2019/ReCiPe/AE原生CF包和底层Roy/Helmes/Cosme/Azevedo/AE/EDIP论文未独立重建；未作实证或科学专家验证。",
+      "nextAction": "通过合法渠道取得具名发行物，分别做原文、实现与数据验证；不得把说明或教学算术当作验证。",
+      "affectedUnits": [
+        "V5"
+      ]
+    },
+    {
+      "id": "gap-terrestrial-AE-unit",
+      "description": "所读ILCD2011页未确定拟采用AE发行版精确SI因子单位；不凭记忆补写。",
+      "nextAction": "在选择具体因子发行版后核对原始单位、分母、适用空间和版本。",
+      "affectedUnits": [
+        "V5"
+      ]
+    },
+    {
+      "id": "gap-recipe-full-report-persists",
+      "description": "ReCiPe2016及2017v1.1原报告字节仍未取得；官方路线网络失败，旧LAP3地址返回HTML；2017方法论文不是报告替代。",
+      "nextAction": "重试合法官方/机构版本载体，取得后核对标题、前置勘误、单位和选段；保留失败记录。",
+      "affectedUnits": [
+        "V5"
+      ]
+    },
+    {
+      "id": "gap-unep2019-source-wording",
+      "description": "UNEP2019§3.8.3p73把terrestrial eutrophication与NOx/SO2/NH3并列，和章节范围/营养物语义有疑点；未取得权威勘误。p74交叉引用未独立查遍全书。",
+      "nextAction": "p73疑句不作物质清单证据、不擅改类别；解释积极效应据p67完整论证，交叉引用目标不存在的断言暂不采用。",
+      "affectedUnits": [
+        "V5"
+      ]
     }
   ],
   "revisions": [
@@ -5828,6 +6785,104 @@
         "V6",
         "V8",
         "A05"
+      ],
+      "status": "applied"
+    },
+    {
+      "id": "rev-water-proxy-and-scale",
+      "triggerPassageIds": [
+        "psg-water-aware2018-object",
+        "psg-water-aware2018-mechanism",
+        "psg-water-aware2018-resolution-limits",
+        "psg-water-wulca-howto"
+      ],
+      "before": "水影响仅以体积或泛称稀缺描述。",
+      "after": "按原流域耗水、潜在剥夺代理、多年水文参照的月份因子、世界当量及共同产品参照下的贡献加和组织解释。",
+      "reasoning": "变量身份、指标问题与聚合尺度是不同层次；月份匹配不等于实时观测。",
+      "affectedUnits": [
+        "V5",
+        "water-scarcity-and-reference"
+      ],
+      "status": "applied"
+    },
+    {
+      "id": "rev-water-net-input-and-average",
+      "triggerPassageIds": [
+        "psg-water-aware20-update",
+        "psg-water-aware2018-resolution-limits"
+      ],
+      "before": "剩余量公式未先交代输入是否已扣耗水，反比前后平均可能混用。",
+      "after": "明确p892ActAvail已含人类干预，实际出口实现回顾2018；保留更新内流盆地差别。固定外部r的虚构两行例子区分先逐行表征得到12与先平均AMD得到8。",
+      "reasoning": "具名变量与实际实现要分开；净/毛代数只在同口径假设下成立，平均与求逆不可交换的合成反例不验证官方代码。",
+      "affectedUnits": [
+        "V5",
+        "water-scarcity-and-reference"
+      ],
+      "status": "applied"
+    },
+    {
+      "id": "rev-water-version-uncertainty-carrier",
+      "triggerPassageIds": [
+        "psg-water-aware2026-abstract",
+        "psg-water-wulca-uncertainty-status",
+        "psg-water-wulca-versions",
+        "psg-water-wulca-release-tracking"
+      ],
+      "before": "旧网页的尚不可用句或误认订阅提示可能被当作当前全文与研究缺失事实。",
+      "after": "保留2026较新工作存在这一有限事实，实质阅读仍限摘要/身份/Data availability；记录正文分节存在和访问情境未定，不发布资格或全文不可获得推断。",
+      "reasoning": "原始HTML反查纠正了载体描述，未扩展实质方法阅读；各版本和权利分别记录。",
+      "affectedUnits": [
+        "V5",
+        "water-scarcity-and-reference"
+      ],
+      "status": "applied"
+    },
+    {
+      "id": "rev-pathways-receiving-systems",
+      "triggerPassageIds": [
+        "psg-glam2-2019-acid",
+        "psg-glam2-2019-eutro-scope",
+        "psg-glam2-2019-freshwater",
+        "psg-glam2-2019-marine"
+      ],
+      "before": "酸化与营养影响停留在类别名和排放质量。",
+      "after": "按大气沉降/土壤缓冲、磷命运/物种关系及近岸氮至耗氧分别解释；广义图示与实际纳入路径分开。",
+      "reasoning": "同一机制图不能证明所有路径已在因子实现，海洋XF也不能套成原污染物暴露比例。",
+      "affectedUnits": [
+        "V5",
+        "acidification-and-nutrient-pathways"
+      ],
+      "status": "applied"
+    },
+    {
+      "id": "rev-pathways-response-and-europe",
+      "triggerPassageIds": [
+        "psg-glam2-2019-response",
+        "psg-ilcd2011-terrestrial-eutro",
+        "psg-ilcd2011-eutro-space"
+      ],
+      "before": "响应背景与方法地理范围可能被读成所有类别都具备当前当地状态的同一种因子。",
+      "after": "解释边际斜率、相对目标的平均响应及2019酸化/海洋实际平均EF限制；欧洲国家级AE/EDIP2003与水体耗氧及PDF区别。",
+      "reasoning": "独立反查明确这两项实质条件；原则推荐、实际供给和超地域适用不能混为一谈。",
+      "affectedUnits": [
+        "V5",
+        "acidification-and-nutrient-pathways"
+      ],
+      "status": "applied"
+    },
+    {
+      "id": "rev-pathways-boundary-and-units",
+      "triggerPassageIds": [
+        "psg-glam2-2019-units",
+        "psg-glam2-2019-boundary",
+        "psg-glam2-2019-interpretation"
+      ],
+      "before": "施用量或不同当量/端点单位可能直接进入一项无条件总分。",
+      "after": "保留背景农业具条件10%P缺省、虚构2kg施用到0.2kg净排放的算术，再接同质量基准符号CF；不同类别及面积/体积时间端点保持单位区别。",
+      "reasoning": "排放估计与表征是不同操作；不重复损失步骤、不虚构数值因子，不用p73疑句填补物质清单。",
+      "affectedUnits": [
+        "V5",
+        "acidification-and-nutrient-pathways"
       ],
       "status": "applied"
     }

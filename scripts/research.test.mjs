@@ -79,6 +79,20 @@ test('unsupported close-read upgrades and metadata-only passage evidence fail cl
   rejects(f => f.catalog.sources[0].accessStatus = 'public-full-text-inspected', /does not establish full-text inspection/);
 });
 
+test('unresolved access context does not erase inspected passages or upgrade them to full-work reading', () => {
+  const f = fixture();
+  f.literature.records[0].accessStatus = 'access-context-unresolved';
+  f.literature.records[0].limitations = ['Carrier has an access indicator; public or licensed entitlement is not established.'];
+  f.catalog.sources[0].accessStatus = 'passages-inspected';
+  assert.deepEqual(errors(f), []);
+  const output = publicResearch(f.literature, f.readings);
+  assert.equal(output.literatureMap.records[0].accessStatus, 'access-context-unresolved');
+  assert.equal(output.literatureMap.records[0].readingStatus, 'not-close-read');
+  assert.equal(output.readingLedger.readings[0].readingStatus, 'selected-passages');
+  f.catalog.sources[0].accessStatus = 'licensed-full-text-inspected';
+  assert(errors(f).some(error => /does not establish full-text inspection/.test(error)));
+});
+
 test('SHA and source snapshot mismatches cannot silently rebind source content', () => {
   rejects(f => f.readings.readings[0].artifacts[0].sha256 = 'not-a-digest', /SHA-256 hex digest/);
   rejects(f => f.catalog.sources[0].artifact.sha256 = 'c'.repeat(64), /does not match any artifact/);

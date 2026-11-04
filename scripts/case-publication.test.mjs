@@ -186,7 +186,13 @@ test('export independently rejects stale joins and emits exact public input byte
     joint.spec.inventoryPerOperation.privateCapture = 'PRIVATE joint inventory';
     await writeJson(root, 'knowledge/cases/joint-batch-v1.json', joint.spec);
     await writeJson(root, 'knowledge/cases/joint-batch-v1.publication.json', joint.publication);
-    const bothCatalogs = { schemaVersion: 1, ...Object.fromEntries(['sources', 'evidence', 'claims', 'concepts', 'mappings', 'coverage'].map(section => [section, [...f.catalog[section], ...joint.catalog[section]]])) };
+    const impacts = ['water-locality', 'phosphorus-boundary'].map(impactFixture);
+    for (const impact of impacts) {
+      impact.spec.privateCapture = 'PRIVATE impact original';
+      await writeJson(root, `knowledge/cases/${impact.publication.inputFile}`, impact.spec);
+      await writeJson(root, `knowledge/cases/${impact.publication.inputFile.replace('.json', '.publication.json')}`, impact.publication);
+    }
+    const bothCatalogs = { schemaVersion: 1, ...Object.fromEntries(['sources', 'evidence', 'claims', 'concepts', 'mappings', 'coverage'].map(section => [section, [...f.catalog[section], ...joint.catalog[section], ...impacts.flatMap(impact => impact.catalog[section])]])) };
     await writeJson(root, 'knowledge/catalog.json', bothCatalogs);
     run();
     const bytes = await readFile(join(root, 'out/downloads/cases/wall-coating-v1.json'), 'utf8');
@@ -209,6 +215,19 @@ test('export independently rejects stale joins and emits exact public input byte
     assert.equal(jointReceipt.evaluations.evaluated.scenarios.half.jointRoute[1], '163/5');
     assert(!jointBytes.includes('PRIVATE'));
     assert(!JSON.stringify(jointReceipt).includes('PRIVATE'));
+    for (const impact of impacts) {
+      const file = impact.publication.inputFile;
+      const inputBytes = await readFile(join(root, 'out/downloads/cases', file), 'utf8');
+      const evaluatedFile = file.replace('.json', '.evaluated.json');
+      const evaluated = JSON.parse(await readFile(join(root, 'out/downloads/cases', evaluatedFile), 'utf8'));
+      assert.equal(inputBytes, canonicalCaseInput(impact.spec));
+      assert.equal(manifest.files[`downloads/cases/${file}`], impact.publication.approvedInputSha256);
+      assert.equal(evaluated.inputSha256, impact.publication.approvedInputSha256);
+      assert.equal(evaluated.sourceCommit, manifest.sourceCommit);
+      assert.equal(evaluated.scientificApproval, false);
+      assert(manifest.files[`downloads/cases/${evaluatedFile}`]);
+      assert(!inputBytes.includes('PRIVATE')); assert(!JSON.stringify(evaluated).includes('PRIVATE'));
+    }
   });
 });
 
@@ -310,4 +329,116 @@ test('wall and joint publications coexist with their own literal MDX identities 
     joint.catalog.claims[1].caseBinding.inputFile = 'wall-coating-v1.json';
     assert(errors(joint).some(error => /stale text, metadata or caseBinding/.test(error)));
   });
+});
+
+function impactFixture(name) {
+  const spec = JSON.parse(readFileSync(new URL(`../knowledge/cases/${name}-v1.json`, import.meta.url), 'utf8'));
+  const phosphorus = name === 'phosphorus-boundary', sourceId = phosphorus ? spec.loss.sourceId : 'water-context';
+  const evidenceId = phosphorus ? spec.loss.evidenceId : 'water-context-evidence';
+  const publication = { schemaVersion: 1, caseId: spec.caseId, version: spec.version, inputFile: `${name}-v1.json`, approvedInputSha256: caseInputSha256(spec), reviewedAt: '2026-11-04', reviewKind: 'agent-source-check', claims: [{
+    id: `${name}-claim`, kind: 'interpretation', scope: 'Reviewed static invented arithmetic, not an empirical environmental result',
+    textTemplate: phosphorus ? 'Applied={{evaluated.appliedTotalP}}; loss={{evaluated.lossPercent}}%; net={{evaluated.netFreshwaterPDecimal}}; indicator={{evaluated.indicatorExpression}}.' : 'Volume={{evaluated.totalConsumed}}; rowScores={{evaluated.contributions.0.score}}+{{evaluated.contributions.1.score}}; total={{evaluated.baselineScore}}; change={{evaluated.counterfactualScore}}; meanAMD={{evaluated.weightedAMDExpression}}; factorAtMean={{evaluated.factorAtMeanAMD}}; meanCF={{evaluated.consumptionWeightedMeanCF}}.',
+    evidenceIds: [evidenceId], premiseIds: [], conceptIds: [], mappingIds: [], caveats: [],
+  }] };
+  const catalog = { schemaVersion: 1, sources: [{ id: sourceId, title: 'Selected boundary conditions', url: 'https://example.org/boundary', version: 'Selected passage', publisher: 'Publisher', accessedAt: '2026-11-04', accessStatus: 'public-passages-inspected', rights: 'Metadata only', preservation: 'Mutable source' }],
+    evidence: [{ id: evidenceId, sourceId, locator: 'Printed p68 Tier1 for phosphorus, conceptual water context otherwise', summary: 'Selected conceptual conditions, not the invented product amount', relation: 'supports',
+      ...(phosphorus ? { numericFact: { value: '0.1', unit: 'kg P to freshwater/kg total P applied', quantity: 'background agricultural P loss fraction', subject: 'total-P-applied-to-agricultural-soil', basis: 'UNEP2019 printedp68 Tier1: background agriculture with total-P application data; conditional default, not measured universal loss' } } : {}),
+    }], claims: structuredClone(materializeCaseClaims(spec, publication)), concepts: [], mappings: [], coverage: [] };
+  return { spec, publication, catalog };
+}
+
+test('water and phosphorus dispatch separately with exact primitive receipts and distinct identities/units', () => {
+  const water = impactFixture('water-locality'), phosphorus = impactFixture('phosphorus-boundary');
+  for (const f of [water, phosphorus]) assert.deepEqual(errors(f), []);
+  assert.equal(water.catalog.claims[0].text, 'Volume=3; rowScores=4+8; total=12; change=24; meanAMD=3r/8; factorAtMean=8/3; meanCF=4.');
+  assert.equal(phosphorus.catalog.claims[0].text, 'Applied=2; loss=10%; net=0.2; indicator=0.2 kg P×c_FW.');
+  assert.notEqual(caseInputSha256(water.spec), caseInputSha256(phosphorus.spec));
+  assert.equal(caseEvaluationReceipt(water.spec, 'a'.repeat(40)).evaluations.evaluated.baselineScore, '12');
+  assert.equal(caseEvaluationReceipt(phosphorus.spec, 'a'.repeat(40)).evaluations.evaluated.netFreshwaterP, '1/5');
+  assert.equal(phosphorus.spec.loss.role, 'inventory-estimation-coefficient');
+});
+
+test('every nested impact-example input object projects private metadata before hashing or evaluating', () => {
+  for (const name of ['water-locality', 'phosphorus-boundary']) {
+    const f = impactFixture(name), before = canonicalCaseInput(f.spec);
+    const inject = value => {
+      if (Array.isArray(value)) value.forEach(inject);
+      else if (value !== null && typeof value === 'object') {
+        Object.values(value).forEach(inject); value.privateCapture = { raw: 'PRIVATE /private/source' };
+      }
+    };
+    inject(f.spec);
+    assert.equal(canonicalCaseInput(f.spec), before);
+    assert(!JSON.stringify(caseTemplateContext(f.spec)).includes('PRIVATE'));
+    assert(!JSON.stringify(caseEvaluationReceipt(f.spec, 'a'.repeat(40))).includes('PRIVATE'));
+    assert.deepEqual(errors(f), []);
+  }
+});
+
+test('new examples reject stale hashes, stale templates, expression evaluation and modified canonical bindings', () => {
+  for (const name of ['water-locality', 'phosphorus-boundary']) {
+    const f = impactFixture(name);
+    f.publication.approvedInputSha256 = '0'.repeat(64);
+    assert(errors(f).some(error => /stale or unapproved/.test(error)));
+    f.publication.approvedInputSha256 = caseInputSha256(f.spec);
+    f.publication.claims[0].textTemplate += ' altered';
+    assert(errors(f).some(error => /stale text, metadata or caseBinding/.test(error)));
+    const bound = impactFixture(name); bound.catalog.claims[0].caseBinding.inputSha256 = '0'.repeat(64);
+    assert(errors(bound).some(error => /stale text, metadata or caseBinding/.test(error)));
+    f.publication.claims[0].textTemplate = '{{evaluated.constructor}}';
+    assert.throws(() => materializeCaseClaims(f.spec, f.publication), /unsafe token/);
+    f.publication.claims[0].textTemplate = '{{evaluated.netFreshwaterP * 2}}';
+    assert.throws(() => materializeCaseClaims(f.spec, f.publication), /unsafe token/);
+  }
+});
+
+test('phosphorus source identity and exact public loss fact are mandatory regardless of input flags', () => {
+  for (const field of ['value', 'unit', 'subject']) {
+    const f = impactFixture('phosphorus-boundary'); f.catalog.evidence[0].numericFact[field] = field === 'value' ? '0.2' : 'wrong';
+    assert(errors(f).some(error => /numericFact value\/unit\/subject/.test(error)));
+  }
+  const missing = impactFixture('phosphorus-boundary');
+  missing.spec.validateFacts = false; missing.spec.assessment = { kind: 'inventory-only' };
+  delete missing.catalog.evidence[0].numericFact;
+  assert(errors(missing).some(error => /numericFact/.test(error)));
+  const source = impactFixture('phosphorus-boundary'); source.catalog.sources[0].accessStatus = 'metadata-only';
+  assert(errors(source).some(error => /not inspected/.test(error)));
+  const wrongSource = impactFixture('phosphorus-boundary');
+  wrongSource.catalog.sources[0].id = 'other-source'; wrongSource.catalog.evidence[0].sourceId = 'other-source';
+  assert(errors(wrongSource).some(error => /reviewed public closure/.test(error)));
+  const omitted = impactFixture('phosphorus-boundary');
+  // Valid catalog containing the source/fact privately, but no claim publishes it.
+  // A different reviewed premise keeps the derived proposal structurally valid.
+  omitted.publication.claims[0].evidenceIds = [];
+  omitted.catalog.claims = [];
+  omitted.publication.claims[0].kind = 'proposal';
+  omitted.publication.claims[0].premiseIds = ['premise'];
+  omitted.publication.claims[0].reasoning = 'The source coefficient remains required by the registered model.';
+  omitted.catalog.claims.push({ id: 'premise', text: 'Hypothetical boundary conditions are stipulated.', kind: 'interpretation', scope: 'Context', evidenceIds: ['other-context'], premiseIds: [], conceptIds: [], caveats: [], status: 'reviewed', reviewedAt: '2026-11-04', reviewKind: 'agent-source-check' });
+  omitted.catalog.sources.push({ ...omitted.catalog.sources[0], id: 'context-source' });
+  omitted.catalog.evidence.push({ id: 'other-context', sourceId: 'context-source', locator: 'Conceptual passage', summary: 'Conceptual context', relation: 'supports' });
+  omitted.catalog.claims.push(...structuredClone(materializeCaseClaims(omitted.spec, omitted.publication)));
+  assert(errors(omitted).some(error => /reviewed public closure/.test(error)), errors(omitted).join('\n'));
+});
+
+
+test('reviewed static impact publications materialize all ten bound paragraphs and preserve legacy hashes', () => {
+  const catalog = JSON.parse(readFileSync(new URL('../knowledge/catalog.json', import.meta.url), 'utf8'));
+  let count = 0;
+  for (const name of ['water-locality', 'phosphorus-boundary']) {
+    const spec = JSON.parse(readFileSync(new URL(`../knowledge/cases/${name}-v1.json`, import.meta.url), 'utf8'));
+    const publication = JSON.parse(readFileSync(new URL(`../knowledge/cases/${name}-v1.publication.json`, import.meta.url), 'utf8'));
+    const materialized = materializeCaseClaims(spec, publication);
+    for (const claim of materialized) {
+      const actual = catalog.claims.find(record => record.id === claim.id);
+      assert.equal(claim.text, actual.text, claim.id);
+      // Every substantive assertion, premise, caveat and evidence relation survives.
+      for (const key of ['kind', 'scope', 'evidenceIds', 'evidenceLinks', 'premiseIds', 'conceptIds', 'mappingIds', 'caveats', 'reasoning']) assert.deepEqual(claim[key], actual[key], `${claim.id}.${key}`);
+      count++;
+    }
+  }
+  assert.equal(count, 10);
+  for (const [name, expected] of [['wall-coating', 'cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285'], ['joint-batch', '569797a9cc454583cd9397a468145f24b22f57fd9e5a8c98971138e779b3c773']]) {
+    assert.equal(caseInputSha256(JSON.parse(readFileSync(new URL(`../knowledge/cases/${name}-v1.json`, import.meta.url), 'utf8'))), expected);
+  }
 });

@@ -1,0 +1,67 @@
+{
+  "caseId": "CASE-WATER-LOCALITY",
+  "version": "1.0.0",
+  "model": "static-water-locality-v1",
+  "createdAt": "2026-11-04",
+  "status": "hypothetical-illustration",
+  "productReference": {
+    "amount": "1",
+    "unit": "kg",
+    "meaning": "hypothetical same specified product"
+  },
+  "waterUnit": "m3/kg product",
+  "indicatorUnit": "m3 world-eq./kg product",
+  "factorUnit": "m3 world-eq./m3",
+  "reference": {
+    "symbol": "r",
+    "positive": true,
+    "origin": "external-fixed",
+    "estimatedFromProductRows": false
+  },
+  "contributions": [
+    {
+      "id": "water-example-foreground",
+      "basinLabel": "X",
+      "periodLabel": "M",
+      "withdrawal": "10",
+      "return": "8",
+      "consumed": "2",
+      "returnBasinLabel": "X",
+      "returnPeriodLabel": "M",
+      "amdRelativeToR": "0.5",
+      "factor": "2"
+    },
+    {
+      "id": "water-example-upstream",
+      "basinLabel": "Y",
+      "periodLabel": "N",
+      "withdrawal": "4",
+      "return": "3",
+      "consumed": "1",
+      "returnBasinLabel": "Y",
+      "returnPeriodLabel": "N",
+      "amdRelativeToR": "0.125",
+      "factor": "8"
+    }
+  ],
+  "counterfactual": {
+    "changed": "foreground-factor-only",
+    "foregroundFactor": "8",
+    "inventoryHeldFixed": true,
+    "referenceHeldFixed": true,
+    "backgroundHeldFixed": true
+  },
+  "premises": {
+    "synthetic": true,
+    "nonOverlapping": true,
+    "sameProductReference": true,
+    "sameBasinSamePeriodReturns": true,
+    "noTransfersOrStorageChange": true,
+    "fixedBackground": true,
+    "marginalIllustration": true,
+    "completeSupplyChain": false,
+    "actualBasinOrFactorFile": false,
+    "hydrologicalModel": false,
+    "uncertaintyPropagated": false
+  }
+}

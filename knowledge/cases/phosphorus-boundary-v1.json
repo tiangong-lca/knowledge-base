@@ -1,0 +1,43 @@
+{
+  "caseId": "CASE-PHOSPHORUS-BOUNDARY",
+  "version": "1.0.0",
+  "model": "static-background-phosphorus-boundary-v1",
+  "createdAt": "2026-11-04",
+  "status": "hypothetical-illustration",
+  "conditions": {
+    "agriculture": "background",
+    "inputKind": "total-P-application-to-agricultural-soil",
+    "totalPApplicationDataSupplied": true,
+    "preExistingNetEmission": false,
+    "specificLossDataAvailable": false,
+    "measuredUniversalLoss": false
+  },
+  "application": {
+    "amount": "2",
+    "unit": "kg total P applied",
+    "speciesBasis": "P",
+    "hypothetical": true
+  },
+  "loss": {
+    "fraction": "0.1",
+    "unit": "kg P to freshwater/kg total P applied",
+    "subject": "total-P-applied-to-agricultural-soil",
+    "role": "inventory-estimation-coefficient",
+    "sourceId": "src-book-unep-glam-2019-volume2",
+    "evidenceId": "ev-path-boundary"
+  },
+  "emission": {
+    "unit": "kg P to freshwater",
+    "speciesBasis": "P",
+    "compartment": "freshwater",
+    "kind": "estimated-net-emission"
+  },
+  "characterization": {
+    "symbol": "c_FW",
+    "value": null,
+    "unit": "kg P-eq/kg P",
+    "matchedEmissionSpeciesBasis": "P",
+    "matchedCompartment": "freshwater",
+    "numericFactorAdopted": false
+  }
+}

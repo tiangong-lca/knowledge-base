@@ -4,7 +4,7 @@ const claimKinds = ['source-statement', 'interpretation', 'synthesis', 'calculat
 const statuses = ['reviewed', 'draft', 'needs-review', 'withdrawn'];
 const reviewKinds = ['agent-source-check', 'human-source-check', 'human-editorial-review', 'human-expert-review', 'not-reviewed'];
 const relations = ['supports', 'qualifies', 'contradicts', 'context'];
-const accessStatuses = ['public-html-inspected', 'public-passages-inspected', 'public-full-text-inspected', 'licensed-full-text-inspected', 'metadata-only', 'unavailable'];
+const accessStatuses = ['public-html-inspected', 'public-passages-inspected', 'passages-inspected', 'public-full-text-inspected', 'licensed-full-text-inspected', 'metadata-only', 'unavailable'];
 const mappingRelations = ['related', 'exact', 'close', 'broader', 'narrower', 'overlap', 'conditional-equivalence', 'not-equivalent', 'unresolved'];
 const isObject = v => v !== null && typeof v === 'object' && !Array.isArray(v);
 const isText = v => typeof v === 'string' && v.trim().length > 0;
@@ -110,6 +110,11 @@ export function validateCatalog(data) {
     httpUrl(source.url, `${p}.url`);
     if (!validDate(source.accessedAt)) fail(`${p}.accessedAt`, 'must be a valid YYYY-MM-DD date');
     choice(source, p, 'accessStatus', accessStatuses);
+    if (source.accessStatus === 'passages-inspected' && (!isObject(source.reading)
+        || !['selected-passages', 'web-sections'].includes(source.reading.status)
+        || !isText(source.reading.readingId))) {
+      fail(`${p}.reading`, 'neutral passage inspection requires an explicit selected-reading scope and readingId binding');
+    }
     if (source.artifact !== undefined) {
       validateArtifact(source.artifact, `${p}.artifact`, fail, httpUrl);
     }

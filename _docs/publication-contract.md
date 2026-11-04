@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-04
-lastReviewedCommit: 4cbc293777b1ff8862f0686b73795d626d2a5438
+lastReviewedCommit: 2f7c1824d9926424a13d77d00fbb58d34e932d8a
 ---
 
 # Publication contract
@@ -27,6 +27,8 @@ The initial release established bounded examples. The approved book programme no
 Canonical knowledge is stored in knowledge/catalog.json; MDX renders claim statements by ID. Source, evidence, claim, concept, mapping and coverage identities are stable. Version changes never silently overwrite a released snapshot. Claims distinguish source-statement, interpretation, synthesis, calculation and proposal. Each evidence record identifies an exact locator. Claim-specific evidenceLinks assign support, qualification, contradiction or context plus rationale; legacy records retain their original evidence-level relation. Explicit links must exactly cover evidenceIds and never silently fall back to a legacy role. Claim scope, premises, caveats, review date and review kind remain explicit. AI review is never labeled human expert approval.
 
 Source retrieval, rights, version and preservation limits are recorded. Unavailable full text does not support a purported full-text verification. No source copying is authorized merely by access. Proposed improvements carry reasoning and alternatives; editorial suggestions are not external normative requirements.
+
+When a carrier's access circumstances are unresolved, `passages-inspected` records only actual selected inspection without asserting public or licensed access. It requires an explicit selected-reading scope and reading-ID binding, whose carrier and passages are verified by the research validator. Its literature entry may use `access-context-unresolved`; rights and limitations state the observed context separately. An institutional-access banner or a captured article body does not establish entitlement, an open license or redistribution permission. Abstract-only substantive reading must not be misreported as proof that fuller text was unavailable. These states do not permit a full-work reading upgrade or weaken passage/evidence bindings.
 
 Changed sources, premises, concepts and mappings invalidate dependent review through the derived dependency graph. Search cutoff, evidence review date and substantive modification date remain distinct. New evidence passes screening, extraction, impact review and editorial PR before publication. Historical releases remain immutable with separately discoverable errata.
 
@@ -59,3 +61,5 @@ Reused original works receive precise additional passage/visual-check records wh
 ## Reader publication boundary
 
 The user-approved `_docs/reader-publication-contract.md` governs every delivered reading page. Public prose is finished exposition; all research/development process logs and TODOs stay in `_docs/`. Scientific scope, source identity, counterevidence and hypothetical assumptions remain reader-accessible. Stable machine identities and validation receipts do not become visible prose labels. Source/reader review and actual visual verification supplement software checks.
+
+Static prose examples retain versioned public inputs and exact materialized claims even when they do not use a calculator widget. Water-locality numbers are synthetic; the phosphorus example binds a source-derived inventory-estimation coefficient and leaves its LCIA factor symbolic. The registered adapter fixes each numerical-source policy; an input flag cannot suppress required source evidence. Changed v1 tuples require renewed model/version and complete affected-prose review.
