@@ -14,7 +14,7 @@ checkPaths:
   - "knowledge/**"
   - "releases/**"
 lastReviewedAt: 2026-11-04
-lastReviewedCommit: e6784aabc46a1a6513288483ec695dc0e001203c
+lastReviewedCommit: fc1b1167d1849e276a3f0a8d9fad004240375de0
 ---
 
 # Editorial and living review protocol
@@ -66,3 +66,7 @@ Inspect the materialized prose against the same immutable public input and both 
 The expanded framework chapter compares actual outputs and tasks in dated sources: inventory/profile handoffs, design options, feedback and checked recommendations. Earlier feedback and later improvement recommendations prevent an unsupported clean replacement narrative. Independent review found one ambiguous pronoun that could confuse normalization with characterization; the final wording explicitly names characterization and valuation and was rechecked against UNEP pp21–22.
 
 The joint-product chapter first reconstructs the positive physical alternatives and only then defines a comparison residual. Independent design review clarified the treatment denominator and distinguished physical top-up from its legitimate cancellation in a reduced residual. Final semantic review checks every case paragraph, the distinct1998/2005 adequacy arguments and the source/correction limits. Arithmetic and code review are separate from source entailment and from any real-world supplier-response or scientific validation.
+
+## Finished prose is the publication gate
+
+Apply `_docs/reader-publication-contract.md` to every new or revised chapter. Source discipline alone does not qualify a reader deliverable: the argument must progress continuously and finish its declared question. Remove author-workflow narration, repeated status templates and development promises; retain real scientific conditions, disagreements and explicit invented data. Archive the removed process history in development Markdown. One chapter-wide annotation sequence and one tree-derived reading order serve the page and print view. Independent reader judgment checks what automated validation cannot.

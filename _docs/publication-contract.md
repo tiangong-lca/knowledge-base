@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-04
-lastReviewedCommit: e6784aabc46a1a6513288483ec695dc0e001203c
+lastReviewedCommit: fc1b1167d1849e276a3f0a8d9fad004240375de0
 ---
 
 # Publication contract
@@ -40,7 +40,7 @@ Code is MIT licensed. Original knowledge prose and records in content/ and knowl
 
 `knowledge/research/literature-map.json` records discovery and coverage, not research completion. `readings.json` identifies actual selected passages, work/version/carrier identities, acquisition hashes, methodological appraisal, unread areas and evidence-triggered revisions. Shared works, overlapping passages and repeated institutional lineages do not count as independent confirmation. Catalog sources bind reading IDs and artifact identity; evidence binds a reading and passage, including the exact carrier for mixed PDF/HTML readings. SHA-256 identifies acquired bytes but does not guarantee future availability or redistribute permission.
 
-The research page and machine export use nested public allowlists. No raw originals, private paths, credentials or unpublished claim text enter them. A public reading note may report uncertainty or a proposed editorial revision; this is not promotion of an unsupported substantive conclusion. `Prose` renders canonical reviewed text continuously, with accessible claim/evidence links; `Claim` retains the detailed view. General source appraisal and claim-specific entailment are separate.
+Reader pages present bibliography and citations; search protocols, execution history and editorial changes live in development Markdown. Machine exports retain nested public allowlists. No raw originals, private paths, credentials or unpublished claim text enter them. A public reading note may report uncertainty or a proposed editorial revision; this is not promotion of an unsupported substantive conclusion. `Prose` renders canonical reviewed text continuously, with accessible claim/evidence links; `Claim` retains the detailed view. General source appraisal and claim-specific entailment are separate.
 
 ## Reproducible teaching cases and derived carriers
 
@@ -55,3 +55,7 @@ Reviewed numerical evidence can expose a `numericFact` with value, unit, quantit
 CASE-JOINT-BATCH keeps additive product shares, physical alternative routes and reference-conditioned residuals separate in claim text and output fields. Two differently unitized inventory flows are never aggregated into an environmental score. Its prices, service equivalence, supplier response and utilization scenarios are author stipulations; source discussions motivate the argument but do not provide numerical evidence for them. A model with no characterization uses no factor bindings, through its explicit registered inventory-only policy; the wall model's fact binding remains mandatory.
 
 Reused original works receive precise additional passage/visual-check records where inspected. Added locators do not increment work counts or imply whole-work reading. Dated normative and adequacy criteria retain each author's purpose. A correction record does not substitute for an unread original procedure, and a mathematically similar teaching formula is not automatically that procedure's implementation.
+
+## Reader publication boundary
+
+The user-approved `_docs/reader-publication-contract.md` governs every delivered reading page. Public prose is finished exposition; all research/development process logs and TODOs stay in `_docs/`. Scientific scope, source identity, counterevidence and hypothetical assumptions remain reader-accessible. Stable machine identities and validation receipts do not become visible prose labels. Source/reader review and actual visual verification supplement software checks.

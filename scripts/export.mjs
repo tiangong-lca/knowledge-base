@@ -3,12 +3,12 @@ import { join } from 'node:path';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { publicCatalog, buildDependencies } from './knowledge.mjs';
-import { publicResearch } from './research.mjs';
+import { readerBibliography } from './reader-bibliography.mjs';
+import { readerInternalIds, validateReaderOutput } from './reader-surface.mjs';
 import { loadCasePublications, validateCasePublications, canonicalCaseInput, caseEvaluationReceipt } from './case-publication.mjs';
 import { validateRepository } from './validate.mjs';
 const literatureMap = JSON.parse(readFileSync('knowledge/research/literature-map.json', 'utf8'));
 const readingLedger = JSON.parse(readFileSync('knowledge/research/readings.json', 'utf8'));
-const research = publicResearch(literatureMap, readingLedger);
 const catalog = JSON.parse(readFileSync('knowledge/catalog.json', 'utf8'));
 const cases = await loadCasePublications(process.cwd());
 // Revalidate joins and public MDX independently of the preceding build step.
@@ -31,11 +31,16 @@ for (const { inputFile, spec } of cases) {
   writeFileSync(`out/downloads/cases/${inputFile}`, canonicalCaseInput(spec));
   writeFileSync(`out/downloads/cases/${inputFile.slice(0, -5)}.evaluated.json`, `${JSON.stringify(caseEvaluationReceipt(spec, sourceCommit), null, 2)}\n`);
 }
-writeFileSync('out/downloads/research.json', `${JSON.stringify(research, null, 2)}\n`);
+const bibliographyBytes = `${JSON.stringify(readerBibliography(catalog, literatureMap, readingLedger), null, 2)}\n`;
+writeFileSync('out/downloads/bibliography.json', bibliographyBytes);
+// Retain the URL, explicitly migrate its view via schemaVersion2/artifactKind.
+writeFileSync('out/downloads/research.json', bibliographyBytes);
 writeFileSync('out/downloads/catalog.json', `${JSON.stringify(published, null, 2)}\n`);
 writeFileSync('out/downloads/dependencies.json', `${JSON.stringify(buildDependencies(published), null, 2)}\n`);
 
-writeFileSync('out/llms.txt', '# LCA Living Knowledge Base and Review\n\nChinese source-grounded living publication. Agent source checks are not human expert review.\n\n- [Review](/docs/)\n- [Claims and evidence](/claims/)\n- [Sources](/sources/)\n- [Literature map and selected readings](/research/)\n- [Research register](/downloads/research.json)\n- [Coverage and gaps](/coverage/)\n- [Machine-readable public catalog](/downloads/catalog.json)\n- [Build identity](/downloads/manifest.json)\n');
+writeFileSync('out/llms.txt', '# 生命周期评价的前世今生\n\n从问题、概念与原始文献到方法含义和条件判断的中文书稿。网站：天工 LCA 知识库。\n\n- [全书正文](/docs/book/)\n- [参考文献](/research/)\n- [引文出处](/sources/)\n- [注释与论证](/claims/)\n- [概念索引](/concepts/)\n- [连续阅读与打印](/print/)\n- [版本与勘误](/changes/)\n- [书目与引文数据](/downloads/bibliography.json)\n');
+const surfaceErrors = await validateReaderOutput('out', { knownIds: readerInternalIds(catalog, literatureMap, readingLedger, cases) });
+if (surfaceErrors.length) throw new Error(`Reader publication surface failed:\n${surfaceErrors.join('\n')}`);
 console.log(`Public export verified: ${published.claims.length} claims; source ${sourceCommit}${dirty ? ' (working preview)' : ''}`);
 
 const files = {};

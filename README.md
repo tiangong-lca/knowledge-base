@@ -15,7 +15,7 @@ checkPaths:
   - "app/**"
   - "scripts/**"
 lastReviewedAt: 2026-11-04
-lastReviewedCommit: e6784aabc46a1a6513288483ec695dc0e001203c
+lastReviewedCommit: fc1b1167d1849e276a3f0a8d9fad004240375de0
 ---
 
 # LCA Living Knowledge Base and Review
@@ -63,8 +63,12 @@ Code is licensed under [MIT](LICENSE). Original narrative and knowledge records 
 
 The [LCA treatise design and AI goal](_docs/lca-book-goal.md) was approved on 2026-11-04 at baseline a9ae501. [Execution record](_docs/book-execution.md) preserves the authority to research, revise arguments from evidence and expand prose without repeated outline approval. The prologue, eight-volume mission and appendices remain the scope; a wave is not the completed book.
 
-Read `/docs/book/` for developing chapters and `/research/` for discovery queries, selected-passage readings, artifact hashes, gaps and evidence-driven revisions. Public research registers live in `knowledge/research/`; downloaded originals remain outside Git. Discovery records do not claim whole-work reading. `/downloads/research.json` exports only explicitly selected public fields.
+Read `/docs/book/` for developing chapters and `/research/` for discovery queries, selected-passage readings, artifact hashes, gaps and evidence-driven revisions. Public research registers live in `knowledge/research/`; downloaded originals remain outside Git. Discovery records do not claim whole-work reading. `/downloads/bibliography.json` exports the reader bibliography. The retained `/downloads/research.json` URL now returns the same schema2 bibliography, not the former research-workbench schema; execution records are retained in development Markdown.
 
 The developing chapter `/docs/book/wall-service-to-comparison/` contains a reproducible hypothetical wall-coating case. Versioned input and evaluated receipt are under `/downloads/cases/`; claim details expose their binding. `node scripts/impact.mjs CASE-WALL-CONNECT` finds dependent prose. The interactive controls and fixed print tables use the same evaluator. Source-derived factors and author-invented model values are explicitly distinguished; no actual paint ranking is claimed.
 
 The expanded `/docs/book/allocation-and-substitution/` also contains CASE-JOINT-BATCH: fixed tables reconstruct product shares, a matched-service comparison and a partial-use continuation. Its two inventory flows retain separate units; negative comparison residuals are not physical removal. Versioned inputs/results are under `/downloads/cases/joint-batch-v1.*`; use `node scripts/impact.mjs CASE-JOINT-BATCH` for dependent review. The original wall case and its public input bytes remain unchanged.
+
+## Reader delivery policy
+
+Read [_docs/reader-publication-contract.md](_docs/reader-publication-contract.md). Published pages are finished book prose with scholarly notes; research/development logs and TODOs stay in development Markdown. Layout matches the owning docs site, with tree-derived order and chapter-wide notes shared by normal and print reading. The public `/research/` route is a bibliography. Preserve actual source/assumption limitations, and assess reader/layout quality independently from source and code validation.

@@ -1,7 +1,7 @@
 import 'server-only';
 
 import rawSpecification from '../knowledge/cases/joint-batch-v1.json';
-import { publicTeachingCase, caseInputSha256 } from '../scripts/case-publication.mjs';
+import { publicTeachingCase } from '../scripts/case-publication.mjs';
 import { evaluateJointProductionCase } from '../scripts/joint-production.mjs';
 
 const operationNames = ['joint', 'standaloneX', 'standaloneY', 'wasteY'] as const;
@@ -18,9 +18,9 @@ export function JointProductionCase() {
   const trap = result.doNotCombineSeparateResiduals;
   return <section className="teaching-case" aria-labelledby="joint-batch-case-heading" data-case-id={spec.caseId} data-case-version={spec.version}>
     <h3 id="joint-batch-case-heading">同一批共产品：份额、路线与比较残余</h3>
-    <p className="teaching-case-meta">{spec.caseId} · v{spec.version} · 作者虚构、仅作清单核算的教学模型</p>
+    <p className="teaching-case-meta">虚构教学案例 · 清单核算</p>
     <p>一批 J 固定产出 {spec.outputKgPerJointBatch.X} kg X 和 {spec.outputKgPerJointBatch.Y} kg Y。两者分别满足明确规定的不同材料服务；同为 kg 不表示能够互相替代。数量、价格、排放、替代技术和供应响应全部为作者设定。</p>
-    <p className="teaching-case-note">每个向量依次保留 kg 化石 CO2 和 g SO2，均为排放到空气。两种流不相加，不使用 LCIA 因子，也不据此给出整体环境优劣。所有表格为固定精确分数，可在无脚本与打印时阅读。</p>
+    <p className="teaching-case-note">每个向量依次保留 kg 化石 CO2 和 g SO2，均为排放到空气。两种流不相加，不使用 LCIA 因子，也不据此给出整体环境优劣。分数表示这些设定值的精确计算结果，不表示现实数据具有同样的精度。</p>
     <div className="teaching-case-table" role="region" aria-label="操作基准与两种排放的虚构输入" tabIndex={0}>
       <table><caption>所列操作的已纳入负担互不重叠；W-Y 每次处理 1 kg 未利用 Y，且不回收。</caption>
         <thead><tr><th scope="col">操作</th><th scope="col">每次操作的基准</th><th scope="col">化石 CO2 / kg</th><th scope="col">SO2 / g</th></tr></thead>
@@ -65,8 +65,20 @@ export function JointProductionCase() {
     <h4>不能把两次改变比较对象所得的残余相加</h4>
     <p>全部利用时，R-X＝J − {spec.outputKgPerJointBatch.Y} S-Y＝{vector(trap.XresidualAtFullUse)}。若另一次比较改以 Y 为比较对象，R-Y＝J − {spec.outputKgPerJointBatch.X} S-X＝{vector(trap.YresidualFromDifferentAnchoring)}。</p>
     <p><strong>故意演示的错误相加：</strong>R-X ＋ R-Y＝{vector(trap.wrongSum)}，并不等于 J 的物理清单 {vector(trap.physicalJointInventory)}。两次比较各自使用同一完整篮子的节省 {vector(trap.doubleClaimedJointSaving)}，不能再把它们当作一对可加总的共产品标签。这项诊断不构成对所有替代比较的一般否定，也没有决定谁应获得联合收益。</p>
-    <details><summary>已固定的虚构前提与未覆盖内容</summary><ul>{spec.premises.map(premise => <li key={premise}>{premise}</li>)}</ul></details>
-    <p className="teaching-case-note">算术重建不证明真实替代响应、规范上最优的分派、科学或人类专家认可。这个 q 续例是作者自己的路线构造，不声称实现任何来源中未读或已修正的程序。</p>
-    <p className="teaching-case-download"><a href="/downloads/cases/joint-batch-v1.json" download>下载此版本公开输入 JSON</a> · <a href="/downloads/cases/joint-batch-v1.evaluated.json" download>下载只读精确计算结果</a><br/>输入 SHA-256：<code className="artifact-hash">{caseInputSha256(spec)}</code></p>
+    <details><summary>计算前提与适用范围</summary><ul>
+      <li>X 与 Y 满足不同的材料服务；质量单位相同，不意味着两者可互相替代。</li>
+      <li>联合过程的两种产出比例固定，不能独立改变其中一种；独立供给是设定的替代技术。</li>
+      <li>每项操作的清单包含本例为该操作纳入的全部负担，各操作之间没有重复计入。其他活动和基本流被省略，不表示其实际排放为零。</li>
+      <li>比较限于列出的运行活动变化，不变的资本负担在此边界之外，不能据此判断建厂或投资的后果。</li>
+      <li>X 与 Y 的接收需求固定。可用的联合 Y 在质量、地点、时间和后续使用条件上与独立 Y 相同，按一比一替代；本例未设定额外加工或后续使用差异。</li>
+      <li>独立供应能按所列数量减少，联合活动能取代所列 X 供应；模型未纳入产能约束、价格反馈、反弹、响应延迟或其他诱发活动。</li>
+      <li>将结果用于实际问题，需要另有证据支持供应者响应与利用比例 q；观察到售价或发生销售，并不能单独证明替代。</li>
+      <li>虚构货币 CU 的价格只决定全部利用时的销售额分派，不决定供给路线，也不说明哪种产品决定联合产量。</li>
+      <li>各物理路线的排放都是正值。负残余来自减去参照供给，不是大气移除、负的物理生产量或产品固有属性。</li>
+      <li>CO2 与 SO2 保留各自单位，不经过影响表征或跨流加总，不能据此判定整体环境优劣。</li>
+      <li>部分利用情景改变的是明确设定的服务交付条件，不是 Weidema 规则或其修正例题的应用。</li>
+    </ul></details>
+    <p className="teaching-case-note">这些路线展示的是给定条件下的清单差异。选择哪种分派约定仍需说明评价目的；真实供给是否按假定响应，则需要独立证据。</p>
+    <p className="teaching-case-download"><a href="/downloads/cases/joint-batch-v1.json" download>下载案例输入</a> · <a href="/downloads/cases/joint-batch-v1.evaluated.json" download>下载计算结果</a></p>
   </section>;
 }

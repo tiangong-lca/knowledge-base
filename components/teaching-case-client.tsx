@@ -79,7 +79,7 @@ export function TeachingCaseClient({ spec: teachingCase }: { spec: TeachingCaseS
   const lowMass = evaluateCase(teachingCase, 'smooth', lowTheta).sameMass;
   return <section className="teaching-case" aria-labelledby={`${instance}-heading`} data-case-id={id} data-case-version={version}>
     <h3 id={`${instance}-heading`}>把同一项墙面服务接到计算上</h3>
-    <p className="teaching-case-meta">{id} · v{version} · 作者虚构的教学模型</p>
+    <p className="teaching-case-meta">墙面涂装算例 · 数据版本 {version} · 数值为教学假定</p>
     <p>规定服务：100 m² 干燥室内墙面，在 [0,10) 年内连续保持指定均匀颜色与至少 0.98 的假定遮盖率。第 10 年这一时点不计入，因此不增加当年的重涂。下列性能、投入、排放量、基底适配、θ 范围和容差均为作者虚构；只有明确注明的表征因子取自外部来源。</p>
     <div className="teaching-case-table" role="region" aria-label="虚构性能与涂装计划" tabIndex={0}>
       <table><caption>服务先固定，再由虚构性能和计划重建用量；用量并不等于服务本身。</caption>
@@ -139,7 +139,7 @@ export function TeachingCaseClient({ spec: teachingCase }: { spec: TeachingCaseS
       </table>
     </div>
     <p>同为 {teachingCase.countercase.massKg} kg 并不提供同一服务：在平整基底、θ={lowTheta} 时，A 只覆盖 {lowMass.alternatives.paintA.serviceArea} m² 的十年服务，指标 {lowMass.alternatives.paintA.indicator}；B 覆盖 {lowMass.alternatives.paintB.serviceArea} m²，指标 {lowMass.alternatives.paintB.indicator}。A 的服务比例为 {lowMass.alternatives.paintA.serviceFraction}，缺口为 {serviceDeficitPercent(lowMass.alternatives.paintA.serviceFraction)}%；其指标看似更低，伴随提供的服务更少。恢复同一服务后的结果见固定表格。</p>
-    <p className="teaching-case-note">因子 c = {vector(teachingCase.characterization.factorVector)}，单位依次为 {teachingCase.characterization.factorUnits.join('、')}。选定版本：<a href={`/sources/#${teachingCase.characterization.sourceId}`}>{teachingCase.characterization.name}</a>；并非普遍适用的当前报告默认值。来源核对状态：{teachingCase.characterization.sourceStatus}。即官方索引表格文本经检查，原 PDF 字节、哈希与视觉确认仍不可得。源表报告及本例处理：{teachingCase.characterization.reportedCH4Uncertainty}。该因子不确定性未在此传播，也未在此解释其统计含义。指标范围：{teachingCase.characterization.scope}。此指标不是观测损害、温度变化或完整产品等效性；算术检验不等于科学或人类专家认可。</p>
+    <p className="teaching-case-note">因子 c = {vector(teachingCase.characterization.factorVector)}，单位依次为 {teachingCase.characterization.factorUnits.join('、')}。采用<a href={`/sources/#${teachingCase.characterization.sourceId}`}>IPCC AR6 WGI 表7.15（2025年10月7日勘误）</a>的中心值；化石 CH4 的所列数值为 {teachingCase.characterization.reportedCH4Uncertainty.split(';')[0]}。本例没有传播该因子的不确定性，也不赋予 θ 概率。GWP100 是相对积分辐射强迫的脉冲指标，不等于观测损害、温度变化或完整产品等效性。引文版本与文字载体限制见章末注释。</p>
     <p className="teaching-case-download"><a href="/downloads/cases/wall-coating-v1.json" download>下载此版本输入 JSON</a> · 固定服务、模型、因子、情景、共同参数与容差，可逐项重建。</p>
   </section>;
 }

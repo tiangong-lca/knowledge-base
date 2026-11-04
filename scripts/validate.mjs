@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { publicCatalog, validateCatalog } from './knowledge.mjs';
 import { validateResearch } from './research.mjs';
 import { loadCasePublications, validateCasePublications } from './case-publication.mjs';
+import { readerInternalIds, validateReaderClaims, validateReaderMdx } from './reader-surface.mjs';
 
 export function validateClaimReferences(text, catalog, label = 'MDX') {
   const errors = [];
@@ -75,9 +76,11 @@ export async function validateRepository(root) {
   try { cases = await loadCasePublications(root); errors.push(...validateCasePublications(cases, data)); }
   catch (error) { errors.push(error.message); }
   if (errors.length) return errors;
+  const knownIds = readerInternalIds(data, literature, readings, cases);
+  errors.push(...validateReaderClaims(publicCatalog(data), knownIds));
   for (const file of await mdxFiles(resolve(root, 'content'))) {
     const text = await readFile(file, 'utf8'), label = relative(root, file);
-    errors.push(...validateClaimReferences(text, data, label), ...validateTeachingCaseReferences(text, cases, label));
+    errors.push(...validateClaimReferences(text, data, label), ...validateTeachingCaseReferences(text, cases, label), ...validateReaderMdx(text, label, knownIds));
   }
   return errors;
 }
