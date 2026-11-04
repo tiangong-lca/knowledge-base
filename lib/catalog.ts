@@ -7,6 +7,64 @@ export type ClaimStatus = 'reviewed' | 'draft' | 'needs-review' | 'withdrawn';
 export type ReviewKind = 'agent-source-check' | 'human-source-check' | 'human-editorial-review' | 'human-expert-review' | 'not-reviewed';
 export type AccessStatus = 'public-html-inspected' | 'public-passages-inspected' | 'public-full-text-inspected' | 'licensed-full-text-inspected' | 'metadata-only' | 'unavailable';
 
+export interface RetrievedArtifact {
+  kind?: 'retrieved';
+  sha256: string;
+  mediaType: string;
+  resolvedUrl: string;
+  pageCount?: number;
+  blockCount?: number;
+}
+
+/** SHA-256 identifies the selected text capture, never the unavailable original bytes. */
+export interface DerivedTextArtifact {
+  kind: 'derived-text';
+  sha256: string;
+  mediaType: 'text/plain';
+  originUrl: string;
+  captureMethod: string;
+  captureScope: string;
+  originalDocumentMediaType: string;
+  originalDocumentBytesAvailable: false;
+}
+export type SourceArtifact = RetrievedArtifact | DerivedTextArtifact;
+export type ReadingArtifact = SourceArtifact & { id: string };
+export interface ReadingPassage {
+  id: string;
+  artifactId: string;
+  locator: string;
+  printedPages?: string;
+  topics: string[];
+  limits: string[];
+  pdfIndices?: number[];
+  nepisBlocks?: number[];
+}
+export interface ReadingRecord {
+  id: string;
+  workId: string;
+  title: string;
+  version: string;
+  url: string;
+  accessedAt: string;
+  readAt?: string | null;
+  readingStatus: 'selected-passages' | 'web-sections' | 'metadata-only' | 'not-close-read';
+  question?: string;
+  argumentSummary?: string;
+  rights: string;
+  unread: string[];
+  artifacts: ReadingArtifact[];
+  passages: ReadingPassage[];
+  appraisal?: EvidenceAppraisalRecord;
+  numericFact?: { value: string; unit: string; quantity: string; subject: string; basis: string };
+}
+export interface ReadingLedger {
+  schemaVersion: 1;
+  updatedAt: string;
+  readings: ReadingRecord[];
+  gaps: { id: string; description: string; nextAction: string; affectedUnits: string[] }[];
+  revisions: { id: string; before: string; after: string; reasoning: string; status: string; triggerPassageIds: string[]; affectedUnits: string[] }[];
+}
+
 export interface SourceRecord {
   id: string;
   title: string;
@@ -17,7 +75,7 @@ export interface SourceRecord {
   accessStatus: AccessStatus;
   rights: string;
   preservation: string;
-  artifact?: { sha256: string; pageCount?: number; resolvedUrl: string; mediaType: string };
+  artifact?: SourceArtifact;
   reading?: { status: 'selected-passages' | 'web-sections' | 'metadata-only'; scope: string; checkedAt: string; readingId?: string };
 }
 
@@ -56,6 +114,7 @@ export interface ClaimRecord {
   reviewKind: ReviewKind;
   caveats: string[];
   reasoning?: string;
+  caseBinding?: { caseId: string; version: string; inputSha256: string; inputFile?: string };
 }
 
 export interface Catalog {

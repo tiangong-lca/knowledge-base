@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-04
-lastReviewedCommit: 9489994ddd64ae8aa99bf5f13719a097c4005f31
+lastReviewedCommit: edcc3f5ff973644610dd588056e831940049454d
 ---
 
 # Publication contract
@@ -41,3 +41,11 @@ Code is MIT licensed. Original knowledge prose and records in content/ and knowl
 `knowledge/research/literature-map.json` records discovery and coverage, not research completion. `readings.json` identifies actual selected passages, work/version/carrier identities, acquisition hashes, methodological appraisal, unread areas and evidence-triggered revisions. Shared works, overlapping passages and repeated institutional lineages do not count as independent confirmation. Catalog sources bind reading IDs and artifact identity; evidence binds a reading and passage, including the exact carrier for mixed PDF/HTML readings. SHA-256 identifies acquired bytes but does not guarantee future availability or redistribute permission.
 
 The research page and machine export use nested public allowlists. No raw originals, private paths, credentials or unpublished claim text enter them. A public reading note may report uncertainty or a proposed editorial revision; this is not promotion of an unsupported substantive conclusion. `Prose` renders canonical reviewed text continuously, with accessible claim/evidence links; `Claim` retains the detailed view. General source appraisal and claim-specific entailment are separate.
+
+## Reproducible teaching cases and derived carriers
+
+A `derived-text` artifact identifies the actual captured text bytes, its original-document URL, extraction method/scope and unavailable original bytes. Its hash never represents the original PDF; visual verification and complete-document reading must not be inferred. A narrow editorial acceptance may support selected claims while this gap remains explicit. Raw captures remain outside public exports.
+
+Reviewed numerical evidence can expose a `numericFact` with value, unit, quantity, subject and basis. A teaching case binds each selected characterization factor to the published numerical fact and its source. Hypothetical performance, inventory and decision assumptions remain separate from source-derived factors.
+
+`knowledge/cases/*.publication.json` binds reviewed claim templates to the SHA-256 of the exact allowlisted downloadable input. Explicitly materialized canonical claim text and metadata must match that binding; build validates without approving or rewriting claims. Input or template changes require renewed substantive review and deliberate catalog updates. Versioned input filenames and case bindings preserve each registered version's own identity. This validation establishes consistency, not empirical truth or stakeholder acceptance of a hypothetical tolerance.

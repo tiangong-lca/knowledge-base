@@ -281,3 +281,63 @@ test('legacy source and unbound artifact URLs cannot publish signed access or cr
     hasError(data, /credentials/);
   }
 });
+
+function derivedArtifact() {
+  return { kind: 'derived-text', mediaType: 'text/plain', sha256: 'd'.repeat(64), originUrl: 'https://example.org/corrected-table.pdf', captureMethod: 'Official indexed text, exact selected capture', captureScope: 'Table header, selected rows and caption only; no visual inspection', originalDocumentMediaType: 'application/pdf', originalDocumentBytesAvailable: false };
+}
+
+test('derived text snapshot retains discriminant and capture limitations without leaking private data', () => {
+  const data = fixture();
+  data.sources[0].artifact = { ...derivedArtifact(), privatePath: '/private/raw-capture.txt', rawCapture: { secret: 'private text' } };
+  assert.deepEqual(validateCatalog(data), []);
+  const artifact = publicCatalog(data).sources[0].artifact;
+  assert.deepEqual(artifact, derivedArtifact());
+  assert.equal(artifact.originalDocumentBytesAvailable, false);
+  assert.equal(artifact.resolvedUrl, undefined);
+  assert(!JSON.stringify(artifact).includes('/private/'));
+});
+
+test('derived snapshot metadata is mandatory and cannot masquerade as retrieved PDF bytes', () => {
+  for (const field of ['originUrl', 'captureMethod', 'captureScope', 'originalDocumentMediaType', 'originalDocumentBytesAvailable']) {
+    const data = fixture(); data.sources[0].artifact = derivedArtifact(); delete data.sources[0].artifact[field];
+    hasError(data, new RegExp(field));
+    assert.throws(() => publicCatalog(data), /Cannot publish invalid catalog/);
+  }
+  for (const extra of [{ mediaType: 'application/pdf' }, { originalDocumentBytesAvailable: true }, { resolvedUrl: 'https://example.org/original.pdf' }, { pageCount: 100 }, { pdfIndices: [0] }, { kind: 'unknown' }, { captureMethod: { privateNotes: 'secret' } }]) {
+    const data = fixture(); data.sources[0].artifact = { ...derivedArtifact(), ...extra };
+    assert(validateCatalog(data).length > 0);
+  }
+  const data = fixture(); data.sources[0].artifact = derivedArtifact(); delete data.sources[0].artifact.kind;
+  hasError(data, /capture metadata requires kind derived-text/);
+});
+
+test('derived origin routes use the same credential and signed URL guards', () => {
+  for (const originUrl of ['file:///private/capture.txt', 'https://name:secret@example.org/source', 'https://example.org/source?X-Amz-Credential=secret', 'https://example.org/source?access_token=secret']) {
+    const data = fixture(); data.sources[0].artifact = { ...derivedArtifact(), originUrl };
+    assert(validateCatalog(data).some(error => error.includes('originUrl')));
+  }
+});
+
+test('numeric source facts and case bindings retain only explicit public fields', () => {
+  const data = fixture();
+  data.evidence[0].numericFact = { value: '28.1', unit: 'ratio', quantity: 'GWP100', subject: 'CH4-fossil', basis: 'specified corrected table', privatePath: 'PRIVATE' };
+  data.claims[0].caseBinding = { caseId: 'CASE-WALL-CONNECT', version: '1.0.0', inputSha256: 'a'.repeat(64), privatePath: 'PRIVATE' };
+  assert.deepEqual(validateCatalog(data), []);
+  const out = publicCatalog(data);
+  assert.equal(out.evidence[0].numericFact.value, '28.1');
+  assert.equal(out.claims[0].caseBinding.inputSha256, 'a'.repeat(64));
+  assert.equal(JSON.stringify(out).includes('PRIVATE'), false);
+  assert.deepEqual(affectedClaims(data, ['CASE-WALL-CONNECT@1.0.0']), ['claim', 'derived']);
+  assert.deepEqual(affectedClaims(data, ['CASE-WALL-CONNECT']), ['claim', 'derived']);
+});
+
+test('malformed numeric facts and unbound case identities cannot publish', () => {
+  const data = fixture();
+  data.evidence[0].numericFact = { value: 'NaN', unit: 'ratio', quantity: 'GWP100', subject: 'CH4-fossil', basis: 'specified corrected table' };
+  hasError(data, /numericFact.value.*finite decimal/);
+  data.evidence[0].numericFact.value = '28.1'; delete data.evidence[0].numericFact.basis;
+  hasError(data, /numericFact.basis/);
+  delete data.evidence[0].numericFact;
+  data.claims[0].caseBinding = { caseId: '../secret', version: 'latest', inputSha256: null };
+  hasError(data, /caseBinding.caseId/); hasError(data, /caseBinding.version/); hasError(data, /caseBinding.inputSha256/);
+});

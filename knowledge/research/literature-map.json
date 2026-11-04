@@ -936,6 +936,18 @@
         "query": "\"A critical view on the current application\" site:dspace.library.uu.nl",
         "date": "2026-11-04",
         "channel": "public-web-search"
+      },
+      {
+        "id": "q-case-ipcc-ar6-definition-2026-11-04",
+        "query": "Open official IPCC AR6 WGI Chapter7 indexed text §§7.6.1–7.6.1.3; select definitions and indirect-contribution context.",
+        "date": "2026-11-04",
+        "channel": "official-domain indexed text open; direct PDF retrieval failed"
+      },
+      {
+        "id": "q-case-ipcc-ar6-errata-2026-11-04",
+        "query": "Open official IPCC AR6 WGI Errata version7October2025 replacement Table7.15; inspect correction, header, CO2/CH4-fossil rows, GWP100 column and caption.",
+        "date": "2026-11-04",
+        "channel": "official-domain indexed text open; independently corroborated; original PDF unavailable"
       }
     ],
     "limitations": [
@@ -6022,6 +6034,114 @@
       ],
       "catalogSourceIds": [
         "src-book-vander-giesen-2020-exante"
+      ]
+    },
+    {
+      "id": "work-ipcc-ar6-wgi-ch7-2021",
+      "title": "IPCC AR6 WGI Chapter 7 — The Earth’s Energy Budget, Climate Feedbacks and Climate Sensitivity",
+      "contributors": "IPCC Working Group I; Chapter7 authors and report errata editors as identified by the source",
+      "year": "2021",
+      "kind": "assessment-chapter",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Chapter07.pdf",
+          "role": "official original-document entry; indexed selected text inspected"
+        }
+      ],
+      "identifiers": {},
+      "volumes": [
+        "V5",
+        "V7",
+        "A05"
+      ],
+      "topics": [
+        "GWP",
+        "climate metric",
+        "factor identity",
+        "corrections"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "international"
+      ],
+      "traditions": [
+        "scientific assessment and corrective record"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-case-ipcc-ar6-definition-2026-11-04"
+        ],
+        "reason": "Targeted factor/definition and correction-context lookup for the connected teaching case; exact derived text retained outsideGit, original PDF not acquired.",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "abstract-or-excerpt",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-04",
+      "lastCheckedAt": "2026-11-04",
+      "rights": "IPCC原文保留其权利。本项目只发布原创解释、书目信息、定位及本例所用两个数值，不重传报告、完整表格、图像或派生原文快照；项目许可不重新许可第三方内容。",
+      "limitations": [
+        "只有指定官方文字选段；原始PDF/视觉验证缺口保留，捕获通道与原始字节身份分开。"
+      ],
+      "catalogSourceIds": [
+        "src-case-ipcc-ar6-wgi-ch7"
+      ]
+    },
+    {
+      "id": "work-ipcc-ar6-wgi-errata-2025-10-07",
+      "title": "IPCC AR6 WGI Errata — replacement Table 7.15",
+      "contributors": "IPCC Working Group I; Chapter7 authors and report errata editors as identified by the source",
+      "year": "2025-10-07 errata version",
+      "kind": "official-report-correction",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Errata.pdf",
+          "role": "official original-document entry; indexed selected text inspected"
+        }
+      ],
+      "identifiers": {},
+      "volumes": [
+        "V5",
+        "V7",
+        "A05"
+      ],
+      "topics": [
+        "GWP",
+        "climate metric",
+        "factor identity",
+        "corrections"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "international"
+      ],
+      "traditions": [
+        "scientific assessment and corrective record"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-case-ipcc-ar6-errata-2026-11-04"
+        ],
+        "reason": "Targeted factor/definition and correction-context lookup for the connected teaching case; exact derived text retained outsideGit, original PDF not acquired.",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "abstract-or-excerpt",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-04",
+      "lastCheckedAt": "2026-11-04",
+      "rights": "IPCC原文保留其权利。本项目只发布原创解释、书目信息、定位及本例所用两个数值，不重传报告、完整表格、图像或派生原文快照；项目许可不重新许可第三方内容。",
+      "limitations": [
+        "只有指定官方文字选段；原始PDF/视觉验证缺口保留，捕获通道与原始字节身份分开。"
+      ],
+      "catalogSourceIds": [
+        "src-case-ipcc-ar6-wgi-errata-2025-10-07"
       ]
     }
   ],

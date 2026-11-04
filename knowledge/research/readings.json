@@ -4514,6 +4514,134 @@
       "sourceKeys": [
         "VANDERGIESEN2020-LEIDEN-VOR"
       ]
+    },
+    {
+      "id": "rd-ipcc-ar6-wgi-ch7-derived",
+      "workId": "work-ipcc-ar6-wgi-ch7-2021",
+      "title": "IPCC AR6 WGI Chapter 7 — The Earth’s Energy Budget, Climate Feedbacks and Climate Sensitivity",
+      "version": "2021 Chapter 7；此记录仅为官方原文经文本通道提取的指定选段，不是已取得的原始PDF",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Chapter07.pdf",
+      "accessedAt": "2026-11-04",
+      "readAt": "2026-11-04",
+      "readingStatus": "web-sections",
+      "question": "怎样解释本例所选GWP100指标与具体因子，并保留更正和取得通道的边界？",
+      "argumentSummary": "指标定义、所选中心值和更正上下文经官方文字选段核对；这不是对整份报告、原PDF字节、图像或实际产品的验证。",
+      "artifacts": [
+        {
+          "id": "art-ipcc-ar6-ch7-derived-text",
+          "kind": "derived-text",
+          "sha256": "2eaba81443c150736561becc642283eaf4e9db80934d8cbe2925803fd0d13c20",
+          "mediaType": "text/plain",
+          "originUrl": "https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Chapter07.pdf",
+          "captureMethod": "官方文档经公开网页文本提取通道返回；按原有行序保存所列选段，未改写原文字句；未绕过登录、挑战或付费限制。",
+          "captureScope": "Chapter7 indexed lines3548–3610: definitions, horizon interpretation and indirect-contribution/double-counting context",
+          "originalDocumentMediaType": "application/pdf",
+          "originalDocumentBytesAvailable": false
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-ipcc-ar6-gwp-definition",
+          "artifactId": "art-ipcc-ar6-ch7-derived-text",
+          "locator": "§§7.6.1–7.6.1.2；官方文本通道行3548–3582；印刷定位1012–1014未做视觉核验",
+          "topics": [
+            "指标、单位质量脉冲、绝对/相对量、时间积分与终点指标"
+          ],
+          "limits": [
+            "没有读取整章或原始PDF图表；不据此给所有使用情境指定唯一指标。"
+          ]
+        },
+        {
+          "id": "psg-ipcc-ar6-methane-accounting",
+          "artifactId": "art-ipcc-ar6-ch7-derived-text",
+          "locator": "§7.6.1.3；官方文本通道行3583–3610，尤其3608–3610",
+          "topics": [
+            "间接效应与化石甲烷氧化贡献、防止重复计算"
+          ],
+          "limits": [
+            "保持所用版本的化学/碳循环条件；不复算源模型。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "主任务与独立审查分别核对官方索引文本中的标题、定义及更正表的表头、行列、说明和版本；没有取得原始PDF字节或图像。",
+        "methodologicalScope": "命名版本的选段文字来源核查；用于一个虚构教学案例的指标定义和所选中心因子，不是当前所有报告框架的默认要求。",
+        "independence": "两份IPCC材料属于同一报告及其更正链；不同查询或读取通道不是独立科学验证。",
+        "limitations": [
+          "原始PDF字节、原始文件SHA-256和视觉表格核验不可用。",
+          "快照SHA-256只标识实际保存的派生文字选段；不证明与整个原始PDF字节相同。",
+          "表中因子不确定性和其他模型/资料不确定性未在这个单参数教学案例中完整传播。",
+          "没有运行原始气候模型、复核全部补充数据或核读完整报告。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-04"
+      },
+      "rights": "IPCC原文保留其权利。本项目只发布原创解释、书目信息、定位及本例所用两个数值，不重传报告、完整表格、图像或派生原文快照；项目许可不重新许可第三方内容。",
+      "unread": [
+        "完整报告/更正文档、原始PDF图像、源模型和补充数据；原文PDF字节获取失败。"
+      ],
+      "sourceKeys": [
+        "src-case-ipcc-ar6-wgi-ch7"
+      ]
+    },
+    {
+      "id": "rd-ipcc-ar6-wgi-errata-2025-derived",
+      "workId": "work-ipcc-ar6-wgi-errata-2025-10-07",
+      "title": "IPCC AR6 WGI Errata — replacement Table 7.15",
+      "version": "Errata version 7 October 2025；所见更正文本明确说明更正尚未并入已出版文件；只核对指定行列及上下文",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Errata.pdf",
+      "accessedAt": "2026-11-04",
+      "readAt": "2026-11-04",
+      "readingStatus": "web-sections",
+      "question": "怎样解释本例所选GWP100指标与具体因子，并保留更正和取得通道的边界？",
+      "argumentSummary": "指标定义、所选中心值和更正上下文经官方文字选段核对；这不是对整份报告、原PDF字节、图像或实际产品的验证。",
+      "artifacts": [
+        {
+          "id": "art-ipcc-ar6-errata2025-derived-text",
+          "kind": "derived-text",
+          "sha256": "b4e629dfd65b4dcaf87ab0e8c7a1156ec9b1100c413cf3e55e59b2e4f289af77",
+          "mediaType": "text/plain",
+          "originUrl": "https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Errata.pdf",
+          "captureMethod": "官方文档经公开网页文本提取通道返回；按原有行序保存所列选段，未改写原文字句；未绕过登录、挑战或付费限制。",
+          "captureScope": "Errata indexed lines0–13 and108–253: document/version and correction status, full table/caption/headers/rows, version and p3",
+          "originalDocumentMediaType": "application/pdf",
+          "originalDocumentBytesAvailable": false
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-ipcc-ar6-2025-gwp100-table",
+          "artifactId": "art-ipcc-ar6-errata2025-derived-text",
+          "locator": "更正文档第3页（文本定位）；Chapter 7 p1017替换Table7.15；官方通道行0–13、108–160、251–253",
+          "topics": [
+            "更正身份、CO2及CH4-fossil行、GWP-100列及完整表头/说明"
+          ],
+          "limits": [
+            "只据所见官方文字确认所选单元格和说明；原始PDF与视觉列对齐未核验。",
+            "不声称该URL当前所有最新发布版本都与该快照一致。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "主任务与独立审查分别核对官方索引文本中的标题、定义及更正表的表头、行列、说明和版本；没有取得原始PDF字节或图像。",
+        "methodologicalScope": "命名版本的选段文字来源核查；用于一个虚构教学案例的指标定义和所选中心因子，不是当前所有报告框架的默认要求。",
+        "independence": "两份IPCC材料属于同一报告及其更正链；不同查询或读取通道不是独立科学验证。",
+        "limitations": [
+          "原始PDF字节、原始文件SHA-256和视觉表格核验不可用。",
+          "快照SHA-256只标识实际保存的派生文字选段；不证明与整个原始PDF字节相同。",
+          "表中因子不确定性和其他模型/资料不确定性未在这个单参数教学案例中完整传播。",
+          "没有运行原始气候模型、复核全部补充数据或核读完整报告。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-04"
+      },
+      "rights": "IPCC原文保留其权利。本项目只发布原创解释、书目信息、定位及本例所用两个数值，不重传报告、完整表格、图像或派生原文快照；项目许可不重新许可第三方内容。",
+      "unread": [
+        "完整报告/更正文档、原始PDF图像、源模型和补充数据；原文PDF字节获取失败。"
+      ],
+      "sourceKeys": [
+        "src-case-ipcc-ar6-wgi-errata-2025-10-07"
+      ]
     }
   ],
   "gaps": [
@@ -4977,6 +5105,16 @@
         "V7",
         "A05"
       ]
+    },
+    {
+      "id": "gap-ipcc-case-original-pdf",
+      "description": "教学案例所用IPCC定义与2025更正表目前只有官方派生文字快照，未取得原始PDF字节/哈希或视觉验证。",
+      "affectedUnits": [
+        "CASE-WALL-CONNECT",
+        "V5",
+        "V7"
+      ],
+      "nextAction": "通过正常公开或获授权途径取得具体原件，核对行列、图像与更正链；保留旧快照身份并在发现变化时重新审查依赖计算。"
     }
   ],
   "revisions": [
@@ -5484,6 +5622,25 @@
         "V4-04",
         "V6",
         "V7-05",
+        "A05"
+      ],
+      "status": "applied"
+    },
+    {
+      "id": "rev-case-metric-and-shared-comparison",
+      "before": "Connecting chapters explained limits without one complete numerical bridge from service to physical metric and conditional comparison.",
+      "after": "Added a fixed hypothetical service-to-GWP100 case, version-specific factor provenance, paired interval proof and changed-substrate demand; preserve missing original-PDF verification and static metric scope.",
+      "reasoning": "Selected IPCC metric definitions and corrected factor cells support the physical interpretation and chosen values only. Author assumptions separately supply the model and tolerance; reader review motivated the worked reconstruction.",
+      "triggerPassageIds": [
+        "psg-ipcc-ar6-gwp-definition",
+        "psg-ipcc-ar6-methane-accounting",
+        "psg-ipcc-ar6-2025-gwp100-table"
+      ],
+      "affectedUnits": [
+        "CASE-WALL-CONNECT",
+        "V4",
+        "V5",
+        "V8",
         "A05"
       ],
       "status": "applied"

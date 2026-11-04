@@ -2,13 +2,17 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
-import { publicCatalog, validateCatalog, buildDependencies } from './knowledge.mjs';
-import { publicResearch, validateResearch } from './research.mjs';
+import { publicCatalog, buildDependencies } from './knowledge.mjs';
+import { publicResearch } from './research.mjs';
+import { loadCasePublications, validateCasePublications, canonicalCaseInput, caseEvaluationReceipt } from './case-publication.mjs';
+import { validateRepository } from './validate.mjs';
 const literatureMap = JSON.parse(readFileSync('knowledge/research/literature-map.json', 'utf8'));
 const readingLedger = JSON.parse(readFileSync('knowledge/research/readings.json', 'utf8'));
 const research = publicResearch(literatureMap, readingLedger);
 const catalog = JSON.parse(readFileSync('knowledge/catalog.json', 'utf8'));
-const errors = [...validateCatalog(catalog), ...validateResearch(literatureMap, readingLedger, catalog)];
+const cases = await loadCasePublications(process.cwd());
+// Revalidate joins and public MDX independently of the preceding build step.
+const errors = [...new Set([...validateCasePublications(cases, catalog), ...await validateRepository(process.cwd())])];
 if (errors.length) throw new Error(errors.join('\n'));
 for (const route of ['', 'docs', 'sources', 'claims', 'concepts', 'coverage', 'changes', 'print', 'research']) {
   if (!existsSync(`out/${route ? `${route}/` : ''}index.html`)) throw new Error(`Missing static route: ${route}`);
@@ -22,6 +26,11 @@ if (dirty) {
   console.warn(`Git worktree status (paths only, porcelain format):\n${worktreeStatus}`);
 }
 mkdirSync('out/downloads', { recursive: true });
+for (const { inputFile, spec } of cases) {
+  mkdirSync('out/downloads/cases', { recursive: true });
+  writeFileSync(`out/downloads/cases/${inputFile}`, canonicalCaseInput(spec));
+  writeFileSync(`out/downloads/cases/${inputFile.slice(0, -5)}.evaluated.json`, `${JSON.stringify(caseEvaluationReceipt(spec, sourceCommit), null, 2)}\n`);
+}
 writeFileSync('out/downloads/research.json', `${JSON.stringify(research, null, 2)}\n`);
 writeFileSync('out/downloads/catalog.json', `${JSON.stringify(published, null, 2)}\n`);
 writeFileSync('out/downloads/dependencies.json', `${JSON.stringify(buildDependencies(published), null, 2)}\n`);

@@ -13,6 +13,33 @@ const records = (data, key) => Array.isArray(data?.[key]) ? data[key].filter(isO
 const ids = value => Array.isArray(value) ? value.filter(isText) : [];
 const byId = values => new Map(values.map(v => [v.id, v]));
 
+// A missing kind is the existing retrieved carrier, not a claim about first editions.
+export const artifactFields = ['kind', 'sha256', 'pageCount', 'resolvedUrl', 'mediaType', 'originUrl', 'captureMethod', 'captureScope', 'originalDocumentMediaType', 'originalDocumentBytesAvailable'];
+const captureFields = ['originUrl', 'captureMethod', 'captureScope', 'originalDocumentMediaType', 'originalDocumentBytesAvailable'];
+const mediaType = value => typeof value === 'string' && /^[A-Za-z0-9!#$&^_.+-]+\/[A-Za-z0-9!#$&^_.+-]+$/.test(value);
+export function validateArtifact(artifact, path, fail, httpUrl, requirePdfBounds = false) {
+  if (!isObject(artifact)) { fail(path, 'must be an object'); return; }
+  if (typeof artifact.sha256 !== 'string' || !/^[a-f0-9]{64}$/i.test(artifact.sha256)) fail(`${path}.sha256`, 'must be a SHA-256 hex digest');
+  if (!mediaType(artifact.mediaType)) fail(`${path}.mediaType`, 'must be a valid media type');
+  if (artifact.kind !== undefined && !['retrieved', 'derived-text'].includes(artifact.kind)) fail(`${path}.kind`, 'must be retrieved or derived-text when supplied');
+  if (artifact.kind === 'derived-text') {
+    if (artifact.mediaType !== 'text/plain') fail(`${path}.mediaType`, 'derived-text requires text/plain capture bytes');
+    httpUrl(artifact.originUrl, `${path}.originUrl`);
+    for (const field of ['captureMethod', 'captureScope']) if (!isText(artifact[field])) fail(`${path}.${field}`, 'derived-text requires a nonempty string');
+    if (!mediaType(artifact.originalDocumentMediaType)) fail(`${path}.originalDocumentMediaType`, 'derived-text requires the original document media type');
+    if (artifact.originalDocumentBytesAvailable !== false) fail(`${path}.originalDocumentBytesAvailable`, 'must be false; this receipt hashes derived capture bytes only');
+    for (const field of ['resolvedUrl', 'pageCount', 'blockCount', 'pdfIndices', 'nepisBlocks']) if (artifact[field] !== undefined) fail(`${path}.${field}`, 'derived-text must not claim retrieved original bytes or page/block bounds');
+  } else {
+    httpUrl(artifact.resolvedUrl, `${path}.resolvedUrl`);
+    for (const field of captureFields) if (artifact[field] !== undefined) fail(`${path}.${field}`, 'capture metadata requires kind derived-text');
+    if (artifact.pageCount !== undefined || (requirePdfBounds && artifact.mediaType === 'application/pdf')) {
+      if (!Number.isSafeInteger(artifact.pageCount) || artifact.pageCount < 1) fail(`${path}.pageCount`, 'must be a positive safe integer; PDF page bounds are required');
+      if (artifact.mediaType !== 'application/pdf') fail(`${path}.pageCount`, 'page counts require an application/pdf carrier');
+    }
+    if (artifact.blockCount !== undefined && (!Number.isSafeInteger(artifact.blockCount) || artifact.blockCount < 1)) fail(`${path}.blockCount`, 'must be a positive safe integer when recorded');
+  }
+}
+
 /** Resolve evidence in evidenceIds order. Explicit links replace legacy roles, never supplement them.
  * Missing evidence is omitted here and reported by validateCatalog. Legacy rationales are null.
  */
@@ -84,14 +111,7 @@ export function validateCatalog(data) {
     if (!validDate(source.accessedAt)) fail(`${p}.accessedAt`, 'must be a valid YYYY-MM-DD date');
     choice(source, p, 'accessStatus', accessStatuses);
     if (source.artifact !== undefined) {
-      if (!isObject(source.artifact)) fail(`${p}.artifact`, 'must be an object');
-      else {
-        const artifact = source.artifact;
-        if (typeof artifact.sha256 !== 'string' || !/^[a-f0-9]{64}$/i.test(artifact.sha256)) fail(`${p}.artifact.sha256`, 'must be a SHA-256 hex digest');
-        if (artifact.pageCount !== undefined && (!Number.isSafeInteger(artifact.pageCount) || artifact.pageCount < 1)) fail(`${p}.artifact.pageCount`, 'must be a positive safe integer');
-        httpUrl(artifact.resolvedUrl, `${p}.artifact.resolvedUrl`);
-        if (typeof artifact.mediaType !== 'string' || !/^[A-Za-z0-9!#$&^_.+-]+\/[A-Za-z0-9!#$&^_.+-]+$/.test(artifact.mediaType)) fail(`${p}.artifact.mediaType`, 'must be a media type such as application/pdf');
-      }
+      validateArtifact(source.artifact, `${p}.artifact`, fail, httpUrl);
     }
     if (source.reading !== undefined) {
       if (!isObject(source.reading)) fail(`${p}.reading`, 'must be an object');
@@ -115,6 +135,14 @@ export function validateCatalog(data) {
     if (!sourceMap.has(evidence.sourceId)) fail(`${p}.sourceId`, `unknown source ${evidence.sourceId}`);
     if (evidence.relation !== undefined) choice(evidence, p, 'relation', relations);
     else if ([...claimMap.values()].some(claim => ids(claim.evidenceIds).includes(evidence.id) && !(Array.isArray(claim.evidenceLinks) && claim.evidenceLinks.some(link => isObject(link) && link.evidenceId === evidence.id)))) fail(`${p}.relation`, 'may be absent only when every claim use has an explicit evidence link');
+    if (evidence.numericFact !== undefined) {
+      if (!isObject(evidence.numericFact)) fail(`${p}.numericFact`, 'must be an object');
+      else {
+        textFields(evidence.numericFact, `${p}.numericFact`, ['unit', 'quantity', 'subject', 'basis']);
+        const value = evidence.numericFact.value;
+        if (typeof value !== 'string' || value.length > 200 || !/^-?(?:\d+(?:\.\d+)?|\.\d+)$/.test(value)) fail(`${p}.numericFact.value`, 'must be a finite decimal string');
+      }
+    }
     if (evidence.appraisal !== undefined) {
       if (!isObject(evidence.appraisal)) fail(`${p}.appraisal`, 'must be an object');
       else {
@@ -152,6 +180,16 @@ export function validateCatalog(data) {
     array(claim, p, 'conceptIds', conceptMap);
     array(claim, p, 'caveats');
     if (claim.mappingIds !== undefined) array(claim, p, 'mappingIds', mappingMap);
+    if (claim.caseBinding !== undefined) {
+      if (!isObject(claim.caseBinding)) fail(`${p}.caseBinding`, 'must be an object');
+      else {
+        textFields(claim.caseBinding, `${p}.caseBinding`, ['caseId', 'version']);
+        if (claim.caseBinding.inputFile !== undefined && (typeof claim.caseBinding.inputFile !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*\.json$/.test(claim.caseBinding.inputFile))) fail(`${p}.caseBinding.inputFile`, 'must be a safe public JSON basename');
+        if (!/^[A-Za-z][A-Za-z0-9._:-]*$/.test(claim.caseBinding.caseId ?? '')) fail(`${p}.caseBinding.caseId`, 'must be a stable case identifier');
+        if (!/^\d+\.\d+\.\d+(?:[-+][A-Za-z0-9.-]+)?$/.test(claim.caseBinding.version ?? '')) fail(`${p}.caseBinding.version`, 'must be an explicit version');
+        if (typeof claim.caseBinding.inputSha256 !== 'string' || !/^[a-f0-9]{64}$/i.test(claim.caseBinding.inputSha256)) fail(`${p}.caseBinding.inputSha256`, 'must bind the approved public input SHA-256');
+      }
+    }
     if (claim.reviewedAt !== null && claim.reviewedAt !== undefined && !validDate(claim.reviewedAt)) fail(`${p}.reviewedAt`, 'must be a valid YYYY-MM-DD date or null');
     if (claim.reasoning !== undefined && !isText(claim.reasoning)) fail(`${p}.reasoning`, 'must be a nonempty string when supplied');
     if (claim.status === 'reviewed') {
@@ -209,15 +247,17 @@ export function validateCatalog(data) {
 
 const fields = {
   sources: ['id', 'title', 'url', 'version', 'publisher', 'accessedAt', 'accessStatus', 'rights', 'preservation', 'artifact', 'reading'],
-  evidence: ['id', 'sourceId', 'locator', 'summary', 'relation', 'appraisal', 'readingId', 'passageId'],
-  claims: ['id', 'text', 'kind', 'scope', 'evidenceIds', 'evidenceLinks', 'premiseIds', 'conceptIds', 'mappingIds', 'status', 'reviewedAt', 'reviewKind', 'caveats', 'reasoning'],
+  evidence: ['id', 'sourceId', 'locator', 'summary', 'relation', 'appraisal', 'readingId', 'passageId', 'numericFact'],
+  claims: ['id', 'text', 'kind', 'scope', 'evidenceIds', 'evidenceLinks', 'premiseIds', 'conceptIds', 'mappingIds', 'status', 'reviewedAt', 'reviewKind', 'caveats', 'reasoning', 'caseBinding'],
   concepts: ['id', 'label', 'english', 'definitionClaimIds', 'aliases'],
   mappings: ['id', 'from', 'to', 'relation', 'conditions', 'claimIds'],
   coverage: ['id', 'title', 'status', 'notes'],
 };
 const pick = (record, keys) => Object.fromEntries(keys.filter(key => record[key] !== undefined).map(key => [key, structuredClone(record[key])]));
 const nestedFields = {
-  artifact: ['sha256', 'pageCount', 'resolvedUrl', 'mediaType'],
+  artifact: artifactFields,
+  numericFact: ['value', 'unit', 'quantity', 'subject', 'basis'],
+  caseBinding: ['caseId', 'version', 'inputSha256', 'inputFile'],
   reading: ['status', 'scope', 'checkedAt', 'readingId'],
   appraisal: ['basis', 'limitations', 'independence', 'methodologicalScope', 'reviewKind', 'checkedAt'],
 };
@@ -266,6 +306,7 @@ export function buildDependencies(data) {
     add(e.passageId, e.id);
   }
   for (const c of records(data, 'claims')) {
+    if (isObject(c.caseBinding)) { add(c.caseBinding.caseId, c.id); add(`${c.caseBinding.caseId}@${c.caseBinding.version}`, c.id); }
     for (const dependency of [...ids(c.evidenceIds), ...ids(c.premiseIds), ...ids(c.conceptIds), ...ids(c.mappingIds)]) add(dependency, c.id);
   }
   for (const c of records(data, 'concepts')) for (const claim of ids(c.definitionClaimIds)) add(claim, c.id);

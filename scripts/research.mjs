@@ -1,3 +1,4 @@
+import { artifactFields, validateArtifact } from './knowledge.mjs';
 /** Integrity checks for discovery and selected-reading records, not scientific approval. */
 const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
 const text = value => typeof value === 'string' && value.trim().length > 0;
@@ -145,13 +146,7 @@ export function validateResearch(literatureMap, readingRegister, catalog = {}) {
     const localArtifacts = indexById(artifacts);
     for (const artifact of artifacts) {
       const ap = `${path}.artifacts.${artifact.id}`; id(artifact.id, `${ap}.id`);
-      if (!digest(artifact.sha256)) fail(`${ap}.sha256`, 'must be a SHA-256 hex digest');
-      if (typeof artifact.mediaType !== 'string' || !/^[A-Za-z0-9!#$&^_.+-]+\/[A-Za-z0-9!#$&^_.+-]+$/.test(artifact.mediaType)) fail(`${ap}.mediaType`, 'must be a valid media type');
-      url(artifact.resolvedUrl, `${ap}.resolvedUrl`);
-      if (artifact.mediaType === 'application/pdf' || artifact.pageCount !== undefined) {
-        if (!Number.isSafeInteger(artifact.pageCount) || artifact.pageCount < 1) fail(`${ap}.pageCount`, 'must be a positive safe integer; PDF page bounds are required');
-      }
-      if (artifact.blockCount !== undefined && (!Number.isSafeInteger(artifact.blockCount) || artifact.blockCount < 1)) fail(`${ap}.blockCount`, 'must be a positive safe integer when recorded');
+      validateArtifact(artifact, ap, fail, url, true);
     }
     const passages = records(reading, path, 'passages');
     if (didRead && !passages.length) fail(`${path}.passages`, 'selected reading needs actual located passages');
@@ -201,7 +196,11 @@ export function validateResearch(literatureMap, readingRegister, catalog = {}) {
     if (object(source.artifact)) {
       const match = objects(reading.artifacts).find(artifact => digest(artifact.sha256) && digest(source.artifact.sha256) && artifact.sha256.toLowerCase() === source.artifact.sha256.toLowerCase());
       if (!match) fail(`${path}.artifact.sha256`, 'does not match any artifact in the bound reading');
-      else for (const field of ['mediaType', 'pageCount', 'resolvedUrl']) if (source.artifact[field] !== match[field]) fail(`${path}.artifact.${field}`, 'must match the same bound artifact identity');
+      else for (const field of artifactFields.filter(field => field !== 'sha256')) {
+        const sourceValue = field === 'kind' ? source.artifact.kind ?? 'retrieved' : source.artifact[field];
+        const readingValue = field === 'kind' ? match.kind ?? 'retrieved' : match[field];
+        if (sourceValue !== readingValue) fail(`${path}.artifact.${field}`, 'must match the same bound artifact identity');
+      }
     }
     const work = workMap.get(reading.workId);
     if (work && list(work.catalogSourceIds).length && !work.catalogSourceIds.includes(source.id)) fail(`${path}.reading.readingId`, 'bound source is absent from the work catalogSourceIds');
@@ -240,7 +239,7 @@ const select = (value, scalarFields, arrayFields = []) => {
   for (const field of arrayFields) if (Array.isArray(value[field])) result[field] = value[field].filter(text);
   return result;
 };
-const publicArtifact = artifact => select(artifact, ['id', 'mediaType', 'sha256', 'resolvedUrl', 'pageCount', 'blockCount']);
+const publicArtifact = artifact => select(artifact, ['id', ...artifactFields, 'blockCount']);
 const publicPassage = passage => {
   const result = select(passage, ['id', 'artifactId', 'locator', 'printedPages'], ['topics', 'limits']);
   for (const field of ['pdfIndices', 'nepisBlocks']) if (Array.isArray(passage[field])) result[field] = passage[field].filter(Number.isSafeInteger);

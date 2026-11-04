@@ -1,0 +1,214 @@
+{
+  "caseId": "CASE-WALL-CONNECT",
+  "version": "1.0.0",
+  "createdAt": "2026-11-04",
+  "status": "hypothetical-teaching-model; arithmetic and semantic scope reviewed; not an empirical comparative LCA",
+  "numericProvenanceDefault": "AUTHOR-INVENTED: every performance, inventory, energy, scenario, range and tolerance number; only the explicitly sourced characterization factors are exceptions",
+  "service": {
+    "area": "100",
+    "areaUnit": "m2",
+    "intervalYears": "[0,10)",
+    "performance": "Continuous uniform specified colour and stipulated opacity at least 0.98; indoor dry wall; no other functional requirement claimed",
+    "paintA": {
+      "kgPerM2PerTreatment": "0.05",
+      "treatmentTimesYears": [
+        "0",
+        "5"
+      ],
+      "stipulatedLifeYearsPerTreatment": "5",
+      "requiredKg": "10"
+    },
+    "paintB": {
+      "kgPerM2PerTreatment": "0.06",
+      "treatmentTimesYears": [
+        "0"
+      ],
+      "stipulatedLifeYearsPerTreatment": "10",
+      "requiredKg": "6"
+    },
+    "assumptions": [
+      "No application loss",
+      "Instantaneous renewal with no downtime",
+      "Stationary processes and performance over ten years",
+      "No removal needed for A renewal",
+      "Application equipment and labour omitted",
+      "No disposal or recovery model",
+      "Paint identities fictional, substance identities CO2 and fossil CH4 real but quantities invented"
+    ]
+  },
+  "technosphere": {
+    "columns": [
+      "P-A: one operation supplies 1 kg ready-to-apply Paint A",
+      "P-B: one operation supplies 1 kg ready-to-apply Paint B",
+      "P-P: one operation prepares 1 m2 substrate",
+      "P-E: one operation supplies 1 kWh electricity"
+    ],
+    "rows": [
+      "Paint A, kg",
+      "Paint B, kg",
+      "preparation service, m2",
+      "electricity, kWh"
+    ],
+    "signConvention": "output positive, intermediate input negative; columns are per stated process operation; s contains dimensionless counts of those operations; f row entries retain each row's unit",
+    "matrix": [
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "-2",
+        "-5",
+        "-0.2",
+        "1"
+      ]
+    ],
+    "equations": [
+      "A s = f",
+      "sA=fA",
+      "sB=fB",
+      "sP=fP",
+      "sE=2*sA+5*sB+0.2*sP+fE"
+    ],
+    "determinant": "1",
+    "doubleCountingRule": "Non-electric burdens of paints and preparation exclude P-E burdens. P-E represents its own stipulated aggregated electricity supply burden. No methane oxidation CO2 is separately added."
+  },
+  "environment": {
+    "rows": [
+      "CO2, fossil-origin emission to air, kg",
+      "CH4, fossil-origin emission to air, kg"
+    ],
+    "matrix": [
+      [
+        "2",
+        "3",
+        "0.05",
+        "theta"
+      ],
+      [
+        "0.005",
+        "0.01",
+        "0",
+        "0.001"
+      ]
+    ],
+    "rule": "positive emission; g=B(theta)*s; all entries invented including explicitly assumed zero; no other elementary flows are claimed covered"
+  },
+  "characterization": {
+    "name": "GWP100 using selected central factors from IPCC AR6 WGI Table 7.15 as replaced by errata version 7 October 2025",
+    "factorVector": [
+      "1",
+      "28.1"
+    ],
+    "factorUnits": [
+      "kg CO2-eq/kg CO2",
+      "kg CO2-eq/kg fossil CH4"
+    ],
+    "outputUnit": "kg CO2-eq per specified 100 m2 / ten-year service",
+    "sourceId": "src-case-ipcc-ar6-wgi-errata-2025-10-07",
+    "sourceStatus": "official indexed full-table text inspected; direct source bytes and visual PDF unavailable (403 / screenshot failure); original-PDF SHA-256 remains null",
+    "reportedCH4Uncertainty": "28.1 ± 10.4; not propagated in this one-parameter example; no interpretation of the ± statistic claimed here",
+    "scope": "Fixed selected factor version and 100-year pulse metric; not a universal current reporting default; not observed local injury, temperature or endpoint damage",
+    "factorEvidenceIds": [
+      "ev-ipcc-ar6-2025-co2-gwp100",
+      "ev-ipcc-ar6-2025-fossil-ch4-gwp100"
+    ],
+    "factorSubjects": [
+      "CO2",
+      "CH4-fossil"
+    ]
+  },
+  "uncertainty": {
+    "parameter": "theta",
+    "meaning": "Unknown fixed fossil CO2 inventory intensity of the one shared electricity supply model, conditional on this exercise's stationary supply scenario",
+    "unit": "kg CO2/kWh",
+    "closedRange": [
+      "0.1",
+      "0.5"
+    ],
+    "displayPoint": "0.3",
+    "sharedRelation": "Exactly the same theta applies to both alternatives and both substrate scenarios; it is not two independent unknowns",
+    "probability": null,
+    "interpretation": "Epistemic bounded parameter exercise, neither individual variability nor an estimated population mean; not a distribution, sampling interval, or statistical test"
+  },
+  "comparison": {
+    "estimand": "Delta_S(theta)=I_B,S(theta)-I_A,S(theta), characterized indicator difference for one whole specified service under substrate S and a common theta",
+    "tolerance": "4",
+    "toleranceUnit": "kg CO2-eq per 100 m2 / ten-year service",
+    "toleranceStatus": "AUTHOR-INVENTED predeclared didactic decision criterion; no empirical or stakeholder endorsement; deliberately coarse so robust tolerance and unresolved sign can coexist",
+    "strictOrdering": "B lower only if all admissible Delta<0; A lower only if all admissible Delta>0",
+    "boundedEquivalence": "For this one metric/model only: all admissible |Delta|<=4; evaluate paired Delta directly, never marginal-interval overlap",
+    "predeclaration": "This published version fixes the author-invented tolerance and predicates as part of the teaching specification; it is not a preregistered experiment or stakeholder-endorsed criterion."
+  },
+  "scenarios": {
+    "smooth": {
+      "version": "1.0.0-S0",
+      "initialCondition": "Smooth sound substrate already usable by both paints",
+      "demands": {
+        "paintA": [
+          "10",
+          "0",
+          "0",
+          "0"
+        ],
+        "paintB": [
+          "0",
+          "6",
+          "0",
+          "0"
+        ]
+      }
+    },
+    "rough": {
+      "version": "1.0.0-S1",
+      "initialCondition": "Rough sound substrate: A stipulated tolerant, B requires one preparation treatment over all 100 m2 before coating; same final service",
+      "demands": {
+        "paintA": [
+          "10",
+          "0",
+          "0",
+          "0"
+        ],
+        "paintB": [
+          "0",
+          "6",
+          "100",
+          "0"
+        ]
+      },
+      "changed": [
+        "B preparation final demand becomes 100 m2",
+        "P-P becomes active",
+        "B electricity activity rises 30 to 50 operations",
+        "B inventory and indicator change"
+      ],
+      "heldFixed": [
+        "all A entries",
+        "paint B mass and durability",
+        "A and B technology coefficients",
+        "shared theta",
+        "factor version",
+        "service denominator",
+        "tolerance"
+      ]
+    }
+  },
+  "priorExampleRelationship": "A new acyclic four-process case. The earlier two-process A/B feedback case retains fictitious product/emission identities and its 50/19 kg result. No emission identity, coefficient or factor is transferred from it.",
+  "countercase": {
+    "massKg": "6",
+    "meaning": "AUTHOR-INVENTED equal-mass diagnostic while the required 100 m2 / ten-year service stays fixed; this mass does not provide equal service for the two stipulated paints."
+  }
+}
