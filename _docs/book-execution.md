@@ -259,3 +259,31 @@ The [electricity chapter](https://prism.tiangong.earth/docs/book/electricity-ser
 A fresh independent full-programme audit selected the remaining native waste-service exchange/format chain for [Issue50](https://github.com/tiangong-lca/knowledge-base/issues/50). The [preregistered protocol](research-waves/2026-11-06-native-exchange-semantics.md) distinguishes an original specimen, a source-reconstructed variant and any analytical control, and requires actual native import/linking/calculation plus a meaningful incompatibility or failure. The prior pilot flow/waste and characterization pages propose tests but do not establish those behaviors; executing AVERT does not fill this different gap.
 
 Exploratory metadata screening found a GreenDelta bottle tutorial/solved-backup route and a JRC eILCD example, with different dates, permissions, representation scopes and missing materials. No new numerical expectation, restored database, software execution or compatibility conclusion is claimed at startup. MacOS Intel is not a runtime fallback. Early SETAC/Nordic/CML originals remain a strong competing research obligation: ordinary checked routes did not produce their original bytes, and later citations do not substitute for them. All other impact, region/industry, synthesis, appendix and edition obligations remain active.
+
+Issue50's source and numerical gate milestones are committed at `a7606ff`,
+`dc620e5` and `9f07ff8`. Original selected passages and independently derived
+expectations preceded the original-module calculations. Qualified modern runs
+bind staged archive hashes, closed inspected database trees and actual loaded
+JARs. The bottle's two NONE representations agree under explicit coordinate
+mapping; its archived allocation outputs reproduce within tolerance. JRC's
+hydro projection agrees while fossil CO2/CO retain the independently explained
+missing machine-treatment contribution. A saved link can resolve without that
+downstream activity entering the solve.
+
+The working publication has 43 connected paragraphs and 33 case-bound passages,
+with 19 original source tuples and 29 selected native observations. Independent
+source and reader reviews clarified reference versus target, model scale versus
+physical cycles, source instances versus imported providers, resultingAmount,
+CF units, migrated source reading and exported exchange fields. A conservative
+data-minimization correction removes an unused exact machine CO coefficient from
+the public candidate. Complete originals and native vectors remain private.
+
+Two portable macOS-arm64 replays preserve signed results and the declared JRC
+failure and eILCD target reset. Repeated JSON-LD results also vary one aggregate
+input flag while the exported exchanges and signed values agree, so the final
+claim does not assign that exception exclusively to eILCD or target doubling.
+Code review found and resolved Windows private-directory admission on old Python;
+Windows now requires CPython3.13+ before path creation. Windows/Linux native and
+actual Windows ACL qualification remain open. The static adapter does not launch
+native code. All 258 repository tests and type checking passed at this candidate
+stage; final rendered, CI, Main/live and exact-root receipts continue in Issue50.

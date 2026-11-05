@@ -1,0 +1,1442 @@
+{
+  "caseId": "CASE-NATIVE-EXCHANGE",
+  "version": "1.0.0",
+  "model": "native-exchange-and-format-semantics",
+  "createdAt": "2026-11-06",
+  "status": "versioned-teaching-case",
+  "sources": [
+    {
+      "sourceId": "src-kb50-bottle-tutorial",
+      "sourceVersion": "手册 v1.3，2020 年 6 月，适用 openLCA 1.10；51 页。",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb50-bottle-tutorial",
+      "readingVersion": "手册 v1.3，2020 年 6 月，适用 openLCA 1.10；51 页。",
+      "workId": "work-kb50-bottle-tutorial",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb50-bottle-tutorial"
+    },
+    {
+      "sourceId": "src-kb50-bottle-allocation-report",
+      "sourceVersion": "Master_bottles_solved_20200319.zolca 内项目 44fe2047-a72c-44ad-9a6f-58d55428a40a 的报告成员。",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb50-bottle-backup",
+      "readingVersion": "GreenDelta 教程配套 Derby 备份；ZIP 内日期 2020-03-20 至 2020-03-24，2025-02 重新托管；已执行的升级记录包括 schema v8。",
+      "workId": "work-kb50-bottle-tutorial",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb50-bottle-allocation-report"
+    },
+    {
+      "sourceId": "src-kb50-jrc-model",
+      "sourceVersion": "eILCD SDK v2.1.1；模型数据版本 01.00.000，XML 版本属性 1.1",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb50-jrc-sdk",
+      "readingVersion": "eILCD SDK v2.1.1；模型数据版本 01.00.000，XML 版本属性 1.1",
+      "workId": "work-kb50-jrc-sdk",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb50-jrc-model"
+    },
+    {
+      "sourceId": "src-kb50-jrc-result",
+      "sourceVersion": "eILCD SDK v2.1.1；模型数据版本 01.00.000，XML 版本属性 1.1",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb50-jrc-sdk",
+      "readingVersion": "eILCD SDK v2.1.1；模型数据版本 01.00.000，XML 版本属性 1.1",
+      "workId": "work-kb50-jrc-sdk",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb50-jrc-result"
+    },
+    {
+      "sourceId": "src-kb50-jrc-machine",
+      "sourceVersion": "eILCD SDK v2.1.1；模型数据版本 01.00.000，XML 版本属性 1.1",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb50-jrc-sdk",
+      "readingVersion": "eILCD SDK v2.1.1；模型数据版本 01.00.000，XML 版本属性 1.1",
+      "workId": "work-kb50-jrc-sdk",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb50-jrc-machine"
+    },
+    {
+      "sourceId": "src-kb50-bottle-backup",
+      "sourceVersion": "GreenDelta 教程配套 Derby 备份；ZIP 内日期 2020-03-20 至 2020-03-24，2025-02 重新托管；已执行的升级记录包括 schema v8。",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb50-bottle-backup",
+      "readingVersion": "GreenDelta 教程配套 Derby 备份；ZIP 内日期 2020-03-20 至 2020-03-24，2025-02 重新托管；已执行的升级记录包括 schema v8。",
+      "workId": "work-kb50-bottle-tutorial",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb50-bottle-backup"
+    },
+    {
+      "sourceId": "src-kb50-jrc-sdk",
+      "sourceVersion": "eILCD SDK v2.1.1；模型数据版本 01.00.000，XML 版本属性 1.1",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb50-jrc-sdk",
+      "readingVersion": "eILCD SDK v2.1.1；模型数据版本 01.00.000，XML 版本属性 1.1",
+      "workId": "work-kb50-jrc-sdk",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb50-jrc-sdk"
+    },
+    {
+      "sourceId": "src-kb50-jrc-moulding",
+      "sourceVersion": "eILCD SDK v2.1.1；模型数据版本 01.00.000，XML 版本属性 1.1",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb50-jrc-sdk",
+      "readingVersion": "eILCD SDK v2.1.1；模型数据版本 01.00.000，XML 版本属性 1.1",
+      "workId": "work-kb50-jrc-sdk",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb50-jrc-moulding"
+    },
+    {
+      "sourceId": "src-kb50-jrc-rail",
+      "sourceVersion": "eILCD SDK v2.1.1；模型数据版本 01.00.000，XML 版本属性 1.1",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb50-jrc-sdk",
+      "readingVersion": "eILCD SDK v2.1.1；模型数据版本 01.00.000，XML 版本属性 1.1",
+      "workId": "work-kb50-jrc-sdk",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb50-jrc-rail"
+    },
+    {
+      "sourceId": "src-kb50-jrc-wash",
+      "sourceVersion": "eILCD SDK v2.1.1；模型数据版本 01.00.000，XML 版本属性 1.1",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb50-jrc-sdk",
+      "readingVersion": "eILCD SDK v2.1.1；模型数据版本 01.00.000，XML 版本属性 1.1",
+      "workId": "work-kb50-jrc-sdk",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb50-jrc-wash"
+    },
+    {
+      "sourceId": "src-kb50-jrc-grid",
+      "sourceVersion": "eILCD SDK v2.1.1；模型数据版本 01.00.000，XML 版本属性 1.1",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb50-jrc-sdk",
+      "readingVersion": "eILCD SDK v2.1.1；模型数据版本 01.00.000，XML 版本属性 1.1",
+      "workId": "work-kb50-jrc-sdk",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb50-jrc-grid"
+    },
+    {
+      "sourceId": "src-kb50-jrc-granulate",
+      "sourceVersion": "eILCD SDK v2.1.1；模型数据版本 01.00.000，XML 版本属性 1.1",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb50-jrc-sdk",
+      "readingVersion": "eILCD SDK v2.1.1；模型数据版本 01.00.000，XML 版本属性 1.1",
+      "workId": "work-kb50-jrc-sdk",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb50-jrc-granulate"
+    },
+    {
+      "sourceId": "src-kb50-olca-setup",
+      "sourceVersion": "2.7.0，标签对应提交 0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb50-olca-modules270",
+      "readingVersion": "2.7.0，标签对应提交 0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+      "workId": "work-kb50-olca-modules270",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb50-olca-setup"
+    },
+    {
+      "sourceId": "src-kb50-olca-exchange-sign",
+      "sourceVersion": "2.7.0，标签对应提交 0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb50-olca-modules270",
+      "readingVersion": "2.7.0，标签对应提交 0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+      "workId": "work-kb50-olca-modules270",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb50-olca-exchange-sign"
+    },
+    {
+      "sourceId": "src-kb50-olca-saved-links",
+      "sourceVersion": "2.7.0，标签对应提交 0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb50-olca-modules270",
+      "readingVersion": "2.7.0，标签对应提交 0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+      "workId": "work-kb50-olca-modules270",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb50-olca-saved-links"
+    },
+    {
+      "sourceId": "src-kb50-olca-open-inventory",
+      "sourceVersion": "2.7.0，标签对应提交 0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb50-olca-modules270",
+      "readingVersion": "2.7.0，标签对应提交 0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+      "workId": "work-kb50-olca-modules270",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb50-olca-open-inventory"
+    },
+    {
+      "sourceId": "src-kb50-olca-json-system-writer",
+      "sourceVersion": "2.7.0，标签对应提交 0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb50-olca-modules270",
+      "readingVersion": "2.7.0，标签对应提交 0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+      "workId": "work-kb50-olca-modules270",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb50-olca-json-system-writer"
+    },
+    {
+      "sourceId": "src-kb50-olca-json-system-reader",
+      "sourceVersion": "2.7.0，标签对应提交 0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb50-olca-modules270",
+      "readingVersion": "2.7.0，标签对应提交 0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+      "workId": "work-kb50-olca-modules270",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb50-olca-json-system-reader"
+    },
+    {
+      "sourceId": "src-kb50-olca-eilcd-model-import",
+      "sourceVersion": "2.7.0，标签对应提交 0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb50-olca-modules270",
+      "readingVersion": "2.7.0，标签对应提交 0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+      "workId": "work-kb50-olca-modules270",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb50-olca-eilcd-model-import"
+    },
+    {
+      "sourceId": "src-kb50-olca-eilcd-system-export",
+      "sourceVersion": "2.7.0，标签对应提交 0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb50-olca-modules270",
+      "readingVersion": "2.7.0，标签对应提交 0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+      "workId": "work-kb50-olca-modules270",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb50-olca-eilcd-system-export"
+    },
+    {
+      "sourceId": "src-kb50-olca-impact-factor-build",
+      "sourceVersion": "2.7.0，标签对应提交 0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb50-olca-modules270",
+      "readingVersion": "2.7.0，标签对应提交 0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+      "workId": "work-kb50-olca-modules270",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb50-olca-impact-factor-build"
+    },
+    {
+      "sourceId": "src-kb50-olca-environment-index",
+      "sourceVersion": "2.7.0，标签对应提交 0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb50-olca-modules270",
+      "readingVersion": "2.7.0，标签对应提交 0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+      "workId": "work-kb50-olca-modules270",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb50-olca-environment-index"
+    },
+    {
+      "sourceId": "src-kb50-olca-result-flow-view",
+      "sourceVersion": "2.7.0，标签对应提交 0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb50-olca-modules270",
+      "readingVersion": "2.7.0，标签对应提交 0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+      "workId": "work-kb50-olca-modules270",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb50-olca-result-flow-view"
+    }
+  ],
+  "carriers": [
+    {
+      "artifactId": "art-kb50-bottle-tutorial",
+      "readingId": "rd-kb50-bottle-tutorial",
+      "mediaType": "application/pdf",
+      "sha256": "37a298510a47107f5be98ca1dfc7f0f5c8f50a95268657b0fd0c88f2bf8f00ef",
+      "resolvedUrl": "https://www.openlca.org/wp-content/uploads/2025/01/Report_PC_PET_Tutorial.pdf",
+      "kind": "retrieved",
+      "pageCount": 51,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb50-bottle-allocation-report",
+      "readingId": "rd-kb50-bottle-backup",
+      "mediaType": "application/json",
+      "sha256": "bf5e63dea850cbaa6edbf250fa3f8fc9a5a73a75e5749045d435ee4a11c44472",
+      "resolvedUrl": "https://www.openlca.org/wp-content/uploads/2025/02/Master_bottles_solved_20200319.zolca",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb50-jrc-model",
+      "readingId": "rd-kb50-jrc-sdk",
+      "mediaType": "application/xml",
+      "sha256": "ee4a3848d057075c8af73a376d4c8331d59519d0c045448e1bc3d8a9aec18acb",
+      "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb50-jrc-result",
+      "readingId": "rd-kb50-jrc-sdk",
+      "mediaType": "application/xml",
+      "sha256": "6d86acbf5aa16a05944cd91830bcc533eba1abfd5aa82ea6462a6ec5d34848e0",
+      "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb50-jrc-machine",
+      "readingId": "rd-kb50-jrc-sdk",
+      "mediaType": "application/xml",
+      "sha256": "2595c409fa051a8ecf2a6cb420ad6751e475c1046600146a56bb9e8d306ebd3d",
+      "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb50-bottle-backup",
+      "readingId": "rd-kb50-bottle-backup",
+      "mediaType": "application/zip",
+      "sha256": "a0890da2c89377d3edfa6a6505fa6ab7ad7eaf1bd628404821e3df5b32a7314b",
+      "resolvedUrl": "https://www.openlca.org/wp-content/uploads/2025/02/Master_bottles_solved_20200319.zolca",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb50-jrc-sdk",
+      "readingId": "rd-kb50-jrc-sdk",
+      "mediaType": "application/zip",
+      "sha256": "590882f8bda2ec4f0fb3d0ad757001f0d9ac2ccef5a2f4e46cad2d8184c464d0",
+      "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb50-jrc-moulding",
+      "readingId": "rd-kb50-jrc-sdk",
+      "mediaType": "application/xml",
+      "sha256": "9e4baf2a20dbb57d9569477908fcce8ded18bb792171fe502a89ec55c52d2268",
+      "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb50-jrc-rail",
+      "readingId": "rd-kb50-jrc-sdk",
+      "mediaType": "application/xml",
+      "sha256": "e590d202928d54c44f981e5f54f89301e2a1811376431aac609633bfc051ccf1",
+      "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb50-jrc-wash",
+      "readingId": "rd-kb50-jrc-sdk",
+      "mediaType": "application/xml",
+      "sha256": "14337a01aabb99edad33d57d17afad01c4f258643e87e256822e385c90af2086",
+      "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb50-jrc-grid",
+      "readingId": "rd-kb50-jrc-sdk",
+      "mediaType": "application/xml",
+      "sha256": "7154ac82d5e3b4d8fc11ac90ede9eddf880060e4857dbf6b2d630ec59dcf678e",
+      "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb50-jrc-granulate",
+      "readingId": "rd-kb50-jrc-sdk",
+      "mediaType": "application/xml",
+      "sha256": "7ee2f3613c553a0af4d971d961dfabe475c1d0b1a0a45529864589f2a3750db4",
+      "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb50-olca-setup",
+      "readingId": "rd-kb50-olca-modules270",
+      "mediaType": "text/x-java-source",
+      "sha256": "1aa488517d79cb8c49ebe34a302dd80e9d0b60eb29c162347a27c64fe1421a8f",
+      "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb50-olca-exchange-sign",
+      "readingId": "rd-kb50-olca-modules270",
+      "mediaType": "text/x-java-source",
+      "sha256": "5f2fb171eeeff6ad4c60b091f54059b67c1cdb3498e89c83ec98068d8b3a9592",
+      "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb50-olca-saved-links",
+      "readingId": "rd-kb50-olca-modules270",
+      "mediaType": "text/x-java-source",
+      "sha256": "75268f5571c1cc30dc839ebbc0580ddbf6040fd18541ea6bb4468fcbb4a55ab0",
+      "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb50-olca-open-inventory",
+      "readingId": "rd-kb50-olca-modules270",
+      "mediaType": "text/x-java-source",
+      "sha256": "4ab65da998412a9d3c53b2b1fe8460bf9be345e470e0254f7155fa339f3fe695",
+      "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb50-olca-json-system-writer",
+      "readingId": "rd-kb50-olca-modules270",
+      "mediaType": "text/x-java-source",
+      "sha256": "26123945739361a07e35189e467244ead010acf153925b2a94e84b58581e37dd",
+      "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb50-olca-json-system-reader",
+      "readingId": "rd-kb50-olca-modules270",
+      "mediaType": "text/x-java-source",
+      "sha256": "150d8b603339947c2287ecb20d9693f623cce686130f1aeea7df434f4de4f40e",
+      "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb50-olca-eilcd-model-import",
+      "readingId": "rd-kb50-olca-modules270",
+      "mediaType": "text/x-java-source",
+      "sha256": "c050b9836c45992f55859548d01fe22eadcf3a6ddfefacba1acf2b2c490d96a4",
+      "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-io/2.7.0/olca-io-2.7.0-sources.jar",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb50-olca-eilcd-system-export",
+      "readingId": "rd-kb50-olca-modules270",
+      "mediaType": "text/x-java-source",
+      "sha256": "d0a529285cb93a81476ca95a9c17870381abdb6124291632c0a3b9866e9d712d",
+      "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-io/2.7.0/olca-io-2.7.0-sources.jar",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb50-olca-impact-factor-build",
+      "readingId": "rd-kb50-olca-modules270",
+      "mediaType": "text/x-java-source",
+      "sha256": "ea1472d8411bcd6f5df7fae9f8bb29a3233b4121fa0cc8a9cff996be6988005b",
+      "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb50-olca-environment-index",
+      "readingId": "rd-kb50-olca-modules270",
+      "mediaType": "text/x-java-source",
+      "sha256": "437ac14a8e8d8c61ff705e76dd231cb02d354d37287f1f29668f2ff009fcfe81",
+      "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb50-olca-result-flow-view",
+      "readingId": "rd-kb50-olca-modules270",
+      "mediaType": "text/x-java-source",
+      "sha256": "60672f7038e11b8c10b08723f62f0e34154ed78bc79fb97319a8c4cddb20d7b3",
+      "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    }
+  ],
+  "passages": [
+    {
+      "evidenceId": "ev-kb50-bottle-service",
+      "sourceId": "src-kb50-bottle-tutorial",
+      "readingId": "rd-kb50-bottle-tutorial",
+      "passageId": "psg-kb50-bottle-service",
+      "artifactId": "art-kb50-bottle-tutorial",
+      "locator": "§4 表2 p16；图49–50 pp39–40，图52–53 p41。",
+      "pdfIndices": [
+        15,
+        38,
+        39,
+        40
+      ],
+      "nepisBlocks": [],
+      "printedPages": "16、39、40、41"
+    },
+    {
+      "evidenceId": "ev-kb50-bottle-waste-representation",
+      "sourceId": "src-kb50-bottle-tutorial",
+      "readingId": "rd-kb50-bottle-tutorial",
+      "passageId": "psg-kb50-bottle-waste-representation",
+      "artifactId": "art-kb50-bottle-tutorial",
+      "locator": "§§9.1–9.2，图47–54 pp38–42。",
+      "pdfIndices": [
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "nepisBlocks": [],
+      "printedPages": "38、39、40、41、42"
+    },
+    {
+      "evidenceId": "ev-kb50-bottle-acenaphthene",
+      "sourceId": "src-kb50-bottle-tutorial",
+      "readingId": "rd-kb50-bottle-tutorial",
+      "passageId": "psg-kb50-bottle-acenaphthene",
+      "artifactId": "art-kb50-bottle-tutorial",
+      "locator": "PDF p39 Fig48，Material 处理过程输出表第一行，Acenaphthene、Emission to water/fresh water、Amount 和 Unit 列。",
+      "pdfIndices": [
+        38
+      ],
+      "nepisBlocks": [],
+      "printedPages": "39"
+    },
+    {
+      "evidenceId": "ev-kb50-bottle-figure55",
+      "sourceId": "src-kb50-bottle-tutorial",
+      "readingId": "rd-kb50-bottle-tutorial",
+      "passageId": "psg-kb50-bottle-figure55",
+      "artifactId": "art-kb50-bottle-tutorial",
+      "locator": "p42 图55图注、两个分析窗格与显示值。",
+      "pdfIndices": [
+        41
+      ],
+      "nepisBlocks": [],
+      "printedPages": "42"
+    },
+    {
+      "evidenceId": "ev-kb50-bottle-backup-report",
+      "sourceId": "src-kb50-bottle-allocation-report",
+      "readingId": "rd-kb50-bottle-backup",
+      "passageId": "psg-kb50-bottle-backup-report",
+      "artifactId": "art-kb50-bottle-allocation-report",
+      "locator": "_olca_/projects/44fe2047-a72c-44ad-9a6f-58d55428a40a/report.json :: title、variants、indicators、results[0].variantResults",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb50-jrc-model-reference",
+      "sourceId": "src-kb50-jrc-model",
+      "readingId": "rd-kb50-jrc-sdk",
+      "passageId": "psg-kb50-jrc-model-reference",
+      "artifactId": "art-kb50-jrc-model",
+      "locator": "eILCD-SDK_v2.1.1/ILCD/lifecyclemodels/10062015cc-184a-41b8-8fa6-49e999cbd101.xml :: /lifeCycleModelDataSet/lifeCycleModelInformation/dataSetInformation、quantitativeReference 和 technology/processes/processInstance[@dataSetInternalID=2]",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb50-jrc-result",
+      "sourceId": "src-kb50-jrc-result",
+      "readingId": "rd-kb50-jrc-sdk",
+      "passageId": "psg-kb50-jrc-result",
+      "artifactId": "art-kb50-jrc-result",
+      "locator": "eILCD-SDK_v2.1.1/ILCD/processes/a91683fe-3b0b-471c-a007-f9d8b4e29d5a.xml :: quantitativeReference、LCIMethodAndAllocation/typeOfDataSet 与 exchanges #1/2/3/5/6/7/10",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb50-jrc-process-machine",
+      "sourceId": "src-kb50-jrc-machine",
+      "readingId": "rd-kb50-jrc-sdk",
+      "passageId": "psg-kb50-jrc-process-machine",
+      "artifactId": "art-kb50-jrc-machine",
+      "locator": "eILCD-SDK_v2.1.1/ILCD/processes/e642549a-ed92-4db7-a877-5b53e5acdd8c.xml :: reference #0 and exchanges #0–2",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb50-bottle-backup-entities",
+      "sourceId": "src-kb50-bottle-backup",
+      "readingId": "rd-kb50-bottle-backup",
+      "passageId": "psg-kb50-bottle-backup-entities",
+      "artifactId": "art-kb50-bottle-backup",
+      "locator": "ZIP 目录及 service.properties，_olca_/updates/5912d392-e353-4158-a730-e3df6e7cfb5b.MF。seg0/c830.dat 未压缩字节偏移 33526、33842、34491、34806 的四个系统名。seg0/c740.dat 偏移 262262、262448、263703、263912 的使用和处理过程名。seg0/c890.dat 的方法名邻接标记。",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb50-jrc-archive",
+      "sourceId": "src-kb50-jrc-sdk",
+      "readingId": "rd-kb50-jrc-sdk",
+      "passageId": "psg-kb50-jrc-archive",
+      "artifactId": "art-kb50-jrc-sdk",
+      "locator": "SDK ZIP 中央目录、eILCD-SDK_v2.1.1/CHANGES.txt 与 ILCD/processes、ILCD/lifecyclemodels、ILCD/flows 目录",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb50-jrc-model-edges",
+      "sourceId": "src-kb50-jrc-model",
+      "readingId": "rd-kb50-jrc-sdk",
+      "passageId": "psg-kb50-jrc-model-edges",
+      "artifactId": "art-kb50-jrc-model",
+      "locator": "eILCD-SDK_v2.1.1/ILCD/lifecyclemodels/10062015cc-184a-41b8-8fa6-49e999cbd101.xml :: technology/processes，实例 #0–6、connections/outputExchange/downstreamProcess 与 groups",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb50-jrc-process-moulding",
+      "sourceId": "src-kb50-jrc-moulding",
+      "readingId": "rd-kb50-jrc-sdk",
+      "passageId": "psg-kb50-jrc-process-moulding",
+      "artifactId": "art-kb50-jrc-moulding",
+      "locator": "eILCD-SDK_v2.1.1/ILCD/processes/ecf3ceb8-1907-482e-8550-efd5c1f970e9.xml :: mathematicalRelations and exchanges #0–3、5–6",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb50-jrc-process-rail",
+      "sourceId": "src-kb50-jrc-rail",
+      "readingId": "rd-kb50-jrc-sdk",
+      "passageId": "psg-kb50-jrc-process-rail",
+      "artifactId": "art-kb50-jrc-rail",
+      "locator": "eILCD-SDK_v2.1.1/ILCD/processes/24b22ed7-6187-4bea-b8b1-eccbfc267cb9.xml :: reference #2, operation location, mathematicalRelations and exchanges #0–2",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb50-jrc-process-wash",
+      "sourceId": "src-kb50-jrc-wash",
+      "readingId": "rd-kb50-jrc-sdk",
+      "passageId": "psg-kb50-jrc-process-wash",
+      "artifactId": "art-kb50-jrc-wash",
+      "locator": "eILCD-SDK_v2.1.1/ILCD/processes/23dd327f-d58e-42da-82ac-351c42df0127.xml :: reference #3, mathematicalRelations and exchanges #1–7",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb50-jrc-process-grid",
+      "sourceId": "src-kb50-jrc-grid",
+      "readingId": "rd-kb50-jrc-sdk",
+      "passageId": "psg-kb50-jrc-process-grid",
+      "artifactId": "art-kb50-jrc-grid",
+      "locator": "eILCD-SDK_v2.1.1/ILCD/processes/e38740ed-4e9e-4f4c-ae17-251ca7442c58.xml :: reference #509 and exchanges #1、4、5、509",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb50-jrc-process-granulate",
+      "sourceId": "src-kb50-jrc-granulate",
+      "readingId": "rd-kb50-jrc-sdk",
+      "passageId": "psg-kb50-jrc-process-granulate",
+      "artifactId": "art-kb50-jrc-granulate",
+      "locator": "eILCD-SDK_v2.1.1/ILCD/processes/8ddfe862-e580-47ab-a248-b62c6f4323d4.xml :: reference #239, operation location and exchanges #1、4、5、239",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb50-olca-setup",
+      "sourceId": "src-kb50-olca-setup",
+      "readingId": "rd-kb50-olca-modules270",
+      "passageId": "psg-kb50-olca-setup",
+      "artifactId": "art-kb50-olca-setup",
+      "locator": "org/openlca/core/model/CalculationSetup.java :: 22–54、115–173、180–218、239–275 行",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb50-olca-exchange-sign",
+      "sourceId": "src-kb50-olca-exchange-sign",
+      "readingId": "rd-kb50-olca-modules270",
+      "passageId": "psg-kb50-olca-exchange-sign",
+      "artifactId": "art-kb50-olca-exchange-sign",
+      "locator": "org/openlca/core/matrix/CalcExchange.java :: 77–112 行",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb50-olca-saved-links",
+      "sourceId": "src-kb50-olca-saved-links",
+      "readingId": "rd-kb50-olca-modules270",
+      "passageId": "psg-kb50-olca-saved-links",
+      "artifactId": "art-kb50-olca-saved-links",
+      "locator": "org/openlca/core/matrix/index/TechIndex.java :: 85–150 行",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb50-olca-open-inventory",
+      "sourceId": "src-kb50-olca-open-inventory",
+      "readingId": "rd-kb50-olca-modules270",
+      "passageId": "psg-kb50-olca-open-inventory",
+      "artifactId": "art-kb50-olca-open-inventory",
+      "locator": "org/openlca/core/matrix/InventoryBuilder.java :: 155–205 行",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb50-olca-json-system-writer",
+      "sourceId": "src-kb50-olca-json-system-writer",
+      "readingId": "rd-kb50-olca-modules270",
+      "passageId": "psg-kb50-olca-json-system-writer",
+      "artifactId": "art-kb50-olca-json-system-writer",
+      "locator": "org/openlca/jsonld/output/ProductSystemWriter.java :: 31–79、101–145 行",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb50-olca-json-system-reader",
+      "sourceId": "src-kb50-olca-json-system-reader",
+      "readingId": "rd-kb50-olca-modules270",
+      "passageId": "psg-kb50-olca-json-system-reader",
+      "artifactId": "art-kb50-olca-json-system-reader",
+      "locator": "org/openlca/jsonld/input/ProductSystemReader.java :: 48–149、243–264 行",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb50-olca-eilcd-model-import",
+      "sourceId": "src-kb50-olca-eilcd-model-import",
+      "readingId": "rd-kb50-olca-modules270",
+      "passageId": "psg-kb50-olca-eilcd-model-import",
+      "artifactId": "art-kb50-olca-eilcd-model-import",
+      "locator": "org/openlca/io/ilcd/input/models/ModelImport.java :: 41–74、76–154、160–198、208–222 行",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb50-olca-eilcd-system-export",
+      "sourceId": "src-kb50-olca-eilcd-system-export",
+      "readingId": "rd-kb50-olca-modules270",
+      "passageId": "psg-kb50-olca-eilcd-system-export",
+      "artifactId": "art-kb50-olca-eilcd-system-export",
+      "locator": "org/openlca/io/ilcd/output/SystemExport.java :: 83–105、108–158、161–200 行",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb50-olca-impact-factor-build",
+      "sourceId": "src-kb50-olca-impact-factor-build",
+      "readingId": "rd-kb50-olca-modules270",
+      "passageId": "psg-kb50-olca-impact-factor-build",
+      "artifactId": "art-kb50-olca-impact-factor-build",
+      "locator": "org/openlca/core/matrix/ImpactBuilder.java :: 99–119、123–174、181–214、226–251 行",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb50-olca-environment-index",
+      "sourceId": "src-kb50-olca-environment-index",
+      "readingId": "rd-kb50-olca-modules270",
+      "passageId": "psg-kb50-olca-environment-index",
+      "artifactId": "art-kb50-olca-environment-index",
+      "locator": "org/openlca/core/matrix/index/EnviIndex.java :: 38–43、152–169、189–205、251–312 行",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb50-olca-result-flow-view",
+      "sourceId": "src-kb50-olca-result-flow-view",
+      "readingId": "rd-kb50-olca-modules270",
+      "passageId": "psg-kb50-olca-result-flow-view",
+      "artifactId": "art-kb50-olca-result-flow-view",
+      "locator": "org/openlca/core/results/providers/ResultProvider.java :: 585–597 行",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    }
+  ],
+  "facts": [
+    {
+      "key": "filledBottle",
+      "evidenceId": "ev-kb50-bottle-service",
+      "factId": "filled-bottle",
+      "value": "1.06500",
+      "unit": "kg",
+      "quantity": "模型使用过程产品输入显示量",
+      "subject": "PET Bottle, filled",
+      "basis": "图50、53"
+    },
+    {
+      "key": "disposedReference",
+      "evidenceId": "ev-kb50-bottle-service",
+      "factId": "disposed-reference",
+      "value": "0.06500",
+      "unit": "kg",
+      "quantity": "模型使用过程定量参考输出显示量",
+      "subject": "PET Bottle, disposed",
+      "basis": "图50、53，Mass"
+    },
+    {
+      "key": "materialUse",
+      "evidenceId": "ev-kb50-bottle-waste-representation",
+      "factId": "material-use",
+      "value": "0.06500",
+      "unit": "kg",
+      "quantity": "使用过程的废物输出显示量",
+      "subject": "PET Bottle Usage (Material Flow Logic)",
+      "basis": "图50，处理相关交换"
+    },
+    {
+      "key": "materialReference",
+      "evidenceId": "ev-kb50-bottle-waste-representation",
+      "factId": "material-reference",
+      "value": "1000.00000",
+      "unit": "kg",
+      "quantity": "处理过程的废物输入参考显示量",
+      "subject": "Waste incineration of plastics (Material Flow Logic)",
+      "basis": "图48，定量参考"
+    },
+    {
+      "key": "oppositeUse",
+      "evidenceId": "ev-kb50-bottle-waste-representation",
+      "factId": "opposite-use",
+      "value": "-0.06500",
+      "unit": "kg",
+      "quantity": "使用过程的产品输入显示量",
+      "subject": "PET Bottle Usage (Opposite Direction Approach)",
+      "basis": "图53，处理相关交换"
+    },
+    {
+      "key": "oppositeReference",
+      "evidenceId": "ev-kb50-bottle-waste-representation",
+      "factId": "opposite-reference",
+      "value": "-1000.00000",
+      "unit": "kg",
+      "quantity": "处理过程的产品输出参考显示量",
+      "subject": "Waste incineration of plastics (Opposite Direction Approach)",
+      "basis": "图51，定量参考"
+    },
+    {
+      "key": "displayedAcenaphthene",
+      "evidenceId": "ev-kb50-bottle-acenaphthene",
+      "factId": "freshwater-acenaphthene",
+      "value": "0.00000000101665",
+      "unit": "kg",
+      "quantity": "基础流输出显示量",
+      "subject": "Acenaphthene / emission to water / fresh water",
+      "basis": "图48，单个 Material 处理过程记录"
+    },
+    {
+      "key": "displayedGwp",
+      "evidenceId": "ev-kb50-bottle-figure55",
+      "factId": "display-gwp",
+      "value": "0.36967",
+      "unit": "kg CO2 eq",
+      "quantity": "GWP100a 显示值",
+      "subject": "图55两个 Usage 分析窗格",
+      "basis": "CML-IA baseline，窗格未示精确设置"
+    },
+    {
+      "key": "displayedAcidification",
+      "evidenceId": "ev-kb50-bottle-figure55",
+      "factId": "display-acidification",
+      "value": "0.00100",
+      "unit": "kg SO2 eq",
+      "quantity": "酸化显示值",
+      "subject": "图55两个 Usage 分析窗格",
+      "basis": "CML-IA baseline，窗格未示精确设置"
+    },
+    {
+      "key": "savedGwpNone",
+      "evidenceId": "ev-kb50-bottle-backup-report",
+      "factId": "saved-gwp-none",
+      "value": "0.36967439872753327",
+      "unit": "kg CO2 eq",
+      "quantity": "报告中保存的 GWP100a 总量",
+      "subject": "No Allocation 具名变体",
+      "basis": "项目44fe2047…报告，results[0].variantResults"
+    },
+    {
+      "key": "savedGwpEconomic",
+      "evidenceId": "ev-kb50-bottle-backup-report",
+      "factId": "saved-gwp-economic",
+      "value": "0.2653416905789811",
+      "unit": "kg CO2 eq",
+      "quantity": "报告中保存的 GWP100a 总量",
+      "subject": "Economic Allocation 具名变体",
+      "basis": "项目44fe2047…报告，results[0].variantResults"
+    },
+    {
+      "key": "jrcPartWeight",
+      "evidenceId": "ev-kb50-jrc-model-reference",
+      "factId": "part-weight",
+      "value": "0.2",
+      "unit": "kg/part",
+      "quantity": "参考实例的单件质量参数覆盖值",
+      "subject": "Plastic injection moulding part，模型实例 #2",
+      "basis": "parameter[@name=\"weight\"]，模型名称标注 5 parts at 0.2 kg/part"
+    },
+    {
+      "key": "jrcScale",
+      "evidenceId": "ev-kb50-jrc-model-reference",
+      "factId": "reference-scaling-factor",
+      "value": "5",
+      "unit": "1",
+      "quantity": "模型参考实例标度因子",
+      "subject": "Plastic injection moulding part，模型实例 #2",
+      "basis": "scalingFactor，区别于独立的 multiplicationFactor 属性"
+    },
+    {
+      "key": "jrcResultReference",
+      "evidenceId": "ev-kb50-jrc-result",
+      "factId": "result-reference",
+      "value": "1.0",
+      "unit": "kg",
+      "quantity": "指定结果过程的定量参考输出结果量",
+      "subject": "Plastic part (unspecified)",
+      "basis": "指定结果过程交换 #1 的 resultingAmount，Mass"
+    },
+    {
+      "key": "jrcResultCo2",
+      "evidenceId": "ev-kb50-jrc-result",
+      "factId": "result-fossil-co2",
+      "value": "1.8919649886152838",
+      "unit": "kg",
+      "quantity": "指定结果过程的基础流输出结果量",
+      "subject": "carbon dioxide (fossil)",
+      "basis": "指定结果过程交换 #7 的 resultingAmount，五件的指定结果记录"
+    },
+    {
+      "key": "jrcResultCo",
+      "evidenceId": "ev-kb50-jrc-result",
+      "factId": "result-fossil-co",
+      "value": "0.004985489385407549",
+      "unit": "kg",
+      "quantity": "指定结果过程的基础流输出结果量",
+      "subject": "carbon monoxide (fossil)",
+      "basis": "指定结果过程交换 #3 的 resultingAmount，五件的指定结果记录"
+    },
+    {
+      "key": "jrcResultHydro",
+      "evidenceId": "ev-kb50-jrc-result",
+      "factId": "result-hydro-primary-energy",
+      "value": "62.28678976347955",
+      "unit": "MJ",
+      "quantity": "指定结果过程的基础流输入结果量",
+      "subject": "primary energy from hydro power",
+      "basis": "指定结果过程交换 #5 的 resultingAmount，五件的指定结果记录"
+    },
+    {
+      "key": "jrcMachineReference",
+      "evidenceId": "ev-kb50-jrc-process-machine",
+      "factId": "machine-reference",
+      "value": "1.0",
+      "unit": "kg",
+      "quantity": "设备末端处理过程的定量参考输入结果量",
+      "subject": "EoL plastic injection machine",
+      "basis": "设备处理过程交换 #0 的 resultingAmount，Mass"
+    },
+    {
+      "key": "jrcMachineCo2",
+      "evidenceId": "ev-kb50-jrc-process-machine",
+      "factId": "machine-fossil-co2",
+      "value": "0.972076908272198",
+      "unit": "kg",
+      "quantity": "设备末端处理过程的基础流输出结果量",
+      "subject": "carbon dioxide (fossil)",
+      "basis": "设备处理过程交换 #1 的 resultingAmount，参考输入 1 kg"
+    }
+  ],
+  "native": {
+    "summarySha256": "47fde99bd83ae5fdc1d024be74ca8c70a9fa700d134fe18f6509fec511c10167",
+    "summary": {
+      "kind": "author-derived-native-execution-summary",
+      "recordedAt": "2026-11-06",
+      "engine": {
+        "name": "openLCA official Java modules",
+        "version": "2.7.0",
+        "sourceCommit": "0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+        "javaVersion": "25.0.5+8-LTS",
+        "os": "Mac OS X",
+        "architecture": "aarch64",
+        "backend": "org.openlca.core.matrix.solvers.JavaSolver",
+        "originalBottleSchema": 8,
+        "calculationBottleSchema": 15
+      },
+      "loadedComponents": [
+        {
+          "name": "openLcaCore",
+          "jar": "olca-core-2.7.0.jar",
+          "sha256": "237aa35da7062c1fd31256f583247482f49af1dcfa92e52eb73b2299128e40f2"
+        },
+        {
+          "name": "openLcaIo",
+          "jar": "olca-io-2.7.0.jar",
+          "sha256": "77dadd79ca4d44a840d1aab926e06d490bd840d757aefbd73d5e8775ed303a05"
+        },
+        {
+          "name": "olcaIlcd",
+          "jar": "olca-ilcd-3.1.0.jar",
+          "sha256": "f06143a8c8ceda5ad69db9bc4e4a3b26f4c9b8f4c4d3c8f0d9c2818700c7f6e5"
+        }
+      ],
+      "workflows": [
+        {
+          "id": "bottle-calc-02",
+          "receiptSha256": "de9d14d758e731e078fa9c70b45766fd0bc05eef189d9619918bfe1808b263b8",
+          "inputArchiveSha256": "a0890da2c89377d3edfa6a6505fa6ab7ad7eaf1bd628404821e3df5b32a7314b",
+          "inspectionReceiptSha256": "b09bcdfacd7ff583847cbc96e7cef7802922531bef1f13acd272bae596da003b",
+          "closedInspectedTreeSha256": "16990d231ad5cc0a65bb639087dc46363e37141dfe34aaf93dad3ee98171f890",
+          "protocolSha256": "eaab71d29808d40c527f60057839177ed74f4b5f98942ea18827d15f604f8a91",
+          "scope": "原生模块派生记录；完整原件、数据库和结果向量不随公开摘要分发"
+        },
+        {
+          "id": "jrc-calc-02",
+          "receiptSha256": "c03297d014e7b40507cda214b8d74f6ba8ee494fc4bf458b4ad39cb49dfe2139",
+          "inputArchiveSha256": "590882f8bda2ec4f0fb3d0ad757001f0d9ac2ccef5a2f4e46cad2d8184c464d0",
+          "inspectionReceiptSha256": "6659c58c09924a9881a47476eb4db699eb5fa80a2138d37f1e7735e6037e6f49",
+          "closedInspectedTreeSha256": "2da062058f2cd9393dbbb6f11388790f9fbce096d16aa0022de82cdfd384d73f",
+          "protocolSha256": "eaab71d29808d40c527f60057839177ed74f4b5f98942ea18827d15f604f8a91",
+          "scope": "原生模块派生记录；完整原件、数据库和结果向量不随公开摘要分发"
+        },
+        {
+          "id": "bottle-probes-01",
+          "receiptSha256": "024e46871998a69b66f2b7a76be4fa74d1bddc7159a26686f26954d4932d668b",
+          "inputArchiveSha256": "a0890da2c89377d3edfa6a6505fa6ab7ad7eaf1bd628404821e3df5b32a7314b",
+          "inspectionReceiptSha256": "b09bcdfacd7ff583847cbc96e7cef7802922531bef1f13acd272bae596da003b",
+          "closedInspectedTreeSha256": "16990d231ad5cc0a65bb639087dc46363e37141dfe34aaf93dad3ee98171f890",
+          "protocolSha256": "6197b87330d914dce6c04ecc344a6fc0a0a87a8c09e3431a932609077c22cdde",
+          "scope": "原生模块派生记录；完整原件、数据库和结果向量不随公开摘要分发"
+        }
+      ],
+      "observations": [
+        {
+          "id": "materialGwp",
+          "value": "0.36967439872753316",
+          "unit": "kg CO2 eq",
+          "run": "bottle-calc-02",
+          "case": "material-none",
+          "quantity": "完整模型的CML GWP100a合计",
+          "basis": "保存目标0.065 kg；显式分配；全部已匹配类别贡献"
+        },
+        {
+          "id": "oppositeGwp",
+          "value": "0.36967439872753316",
+          "unit": "kg CO2 eq",
+          "run": "bottle-calc-02",
+          "case": "opposite-none",
+          "quantity": "完整模型的CML GWP100a合计",
+          "basis": "保存目标0.065 kg；显式分配；全部已匹配类别贡献"
+        },
+        {
+          "id": "economicGwp",
+          "value": "0.265341690578981",
+          "unit": "kg CO2 eq",
+          "run": "bottle-calc-02",
+          "case": "material-economic",
+          "quantity": "完整模型的CML GWP100a合计",
+          "basis": "保存目标0.065 kg；显式分配；全部已匹配类别贡献"
+        },
+        {
+          "id": "materialAcidification",
+          "value": "0.0010037421698306092",
+          "unit": "kg SO2 eq",
+          "run": "bottle-calc-02",
+          "case": "material-none",
+          "quantity": "完整模型的CML酸化合计",
+          "basis": "保存目标0.065 kg；显式NONE"
+        },
+        {
+          "id": "treatmentActivity",
+          "value": "0.00006500000000000001",
+          "unit": "1",
+          "run": "bottle-calc-02",
+          "case": "material-none",
+          "quantity": "处理数据集活动倍数",
+          "basis": "1000 kg处理参考；0.065 kg使用参考"
+        },
+        {
+          "id": "treatmentAcenaphthene",
+          "value": "0.0000000000000660819880502834",
+          "unit": "kg",
+          "run": "bottle-calc-02",
+          "case": "material-none",
+          "quantity": "处理过程单独的活动缩放后清单贡献",
+          "basis": "明确UUID、过程、无分配；不含同流其他过程贡献"
+        },
+        {
+          "id": "treatmentCo2",
+          "value": "0.15742837698474968",
+          "unit": "kg",
+          "run": "bottle-calc-02",
+          "case": "material-none",
+          "quantity": "处理过程单独的活动缩放后清单贡献",
+          "basis": "明确UUID、过程、无分配；不含同流其他过程贡献"
+        },
+        {
+          "id": "systemAcenaphthene",
+          "value": "0.00000000000017897071615544022",
+          "unit": "kg",
+          "run": "bottle-calc-02",
+          "case": "material-none",
+          "quantity": "全系统中选定同一流的清单总量",
+          "basis": "全部过程的该流贡献；不是全部类别得分"
+        },
+        {
+          "id": "systemCo2",
+          "value": "0.3365308633602971",
+          "unit": "kg",
+          "run": "bottle-calc-02",
+          "case": "material-none",
+          "quantity": "全系统中选定同一流的清单总量",
+          "basis": "全部过程的该流贡献；不是全部类别得分"
+        },
+        {
+          "id": "removedLinkGwp",
+          "value": "0.21210505837816782",
+          "unit": "kg CO2 eq",
+          "run": "bottle-probes-01",
+          "case": "removed-saved-waste-link",
+          "quantity": "删除一条保存连接后的CML GWP100a合计",
+          "basis": "作者控制；保留默认提供者；没有自动重连"
+        },
+        {
+          "id": "removedLinkOpenWaste",
+          "value": "0.065",
+          "unit": "kg",
+          "run": "bottle-probes-01",
+          "case": "removed-saved-waste-link",
+          "quantity": "未连接处理的废物输出",
+          "basis": "WASTE_FLOW；不是基础环境排放"
+        },
+        {
+          "id": "diagnosticPositive",
+          "value": "0.6730617267205942",
+          "unit": "diagnostic unit",
+          "run": "bottle-probes-01",
+          "case": "diagnostic-factor-positive",
+          "quantity": "作者单类别方法的计算得分",
+          "basis": "系数分别2、0和无记录；没有环境意义"
+        },
+        {
+          "id": "diagnosticZero",
+          "value": "0.0",
+          "unit": "diagnostic unit",
+          "run": "bottle-probes-01",
+          "case": "diagnostic-factor-explicit-zero",
+          "quantity": "作者单类别方法的计算得分",
+          "basis": "系数分别2、0和无记录；没有环境意义"
+        },
+        {
+          "id": "diagnosticAbsent",
+          "value": "0.0",
+          "unit": "diagnostic unit",
+          "run": "bottle-probes-01",
+          "case": "diagnostic-factor-absent",
+          "quantity": "作者单类别方法的计算得分",
+          "basis": "系数分别2、0和无记录；没有环境意义"
+        },
+        {
+          "id": "sourceDoubleGwp",
+          "value": "0.7393487974550663",
+          "unit": "kg CO2 eq",
+          "run": "bottle-probes-01",
+          "case": "source-0.13",
+          "quantity": "加倍目标下的CML GWP100a合计",
+          "basis": "作者目标控制0.13 kg；JSON含原始方法"
+        },
+        {
+          "id": "jsonDoubleGwp",
+          "value": "0.7393487974550663",
+          "unit": "kg CO2 eq",
+          "run": "bottle-probes-01",
+          "case": "jsonld-doubled-target",
+          "quantity": "加倍目标下的CML GWP100a合计",
+          "basis": "作者目标控制0.13 kg；JSON含原始方法"
+        },
+        {
+          "id": "jsonDoubleCo2",
+          "value": "0.6730617267205942",
+          "unit": "kg",
+          "run": "bottle-probes-01",
+          "case": "jsonld-doubled-target",
+          "quantity": "重新导入后选定CO2流清单",
+          "basis": "每次用导入对象自身目标；eILCD只导出系统，未含方法"
+        },
+        {
+          "id": "eilcdDoubleCo2",
+          "value": "0.3365308633602971",
+          "unit": "kg",
+          "run": "bottle-probes-01",
+          "case": "eilcd-doubled-target",
+          "quantity": "重新导入后选定CO2流清单",
+          "basis": "每次用导入对象自身目标；eILCD只导出系统，未含方法"
+        },
+        {
+          "id": "jrcBaselineCo2",
+          "value": "1.8919611003076513",
+          "unit": "kg",
+          "run": "jrc-calc-02",
+          "case": "imported-baseline",
+          "quantity": "原生导入图的选定基础流清单",
+          "basis": "保存目标1 kg；参数设置分别记录；不是LCIA"
+        },
+        {
+          "id": "jrcBaselineCo",
+          "value": "0.004985487937099917",
+          "unit": "kg",
+          "run": "jrc-calc-02",
+          "case": "imported-baseline",
+          "quantity": "原生导入图的选定基础流清单",
+          "basis": "保存目标1 kg；参数设置分别记录；不是LCIA"
+        },
+        {
+          "id": "jrcBaselineHydro",
+          "value": "62.28678976347956",
+          "unit": "MJ",
+          "run": "jrc-calc-02",
+          "case": "imported-baseline",
+          "quantity": "原生导入图的选定基础流清单",
+          "basis": "保存目标1 kg；参数设置分别记录；不是LCIA"
+        },
+        {
+          "id": "jrcBareCo2",
+          "value": "1.8271476813254837",
+          "unit": "kg",
+          "run": "jrc-calc-02",
+          "case": "omit-all-overrides",
+          "quantity": "原生导入图的选定基础流清单",
+          "basis": "保存目标1 kg；参数设置分别记录；不是LCIA"
+        },
+        {
+          "id": "jrcBareCo",
+          "value": "0.004924441055977646",
+          "unit": "kg",
+          "run": "jrc-calc-02",
+          "case": "omit-all-overrides",
+          "quantity": "原生导入图的选定基础流清单",
+          "basis": "保存目标1 kg；参数设置分别记录；不是LCIA"
+        },
+        {
+          "id": "jrcBareHydro",
+          "value": "62.077690600584035",
+          "unit": "MJ",
+          "run": "jrc-calc-02",
+          "case": "omit-all-overrides",
+          "quantity": "原生导入图的选定基础流清单",
+          "basis": "保存目标1 kg；参数设置分别记录；不是LCIA"
+        },
+        {
+          "id": "jrcWeightOneCo2",
+          "value": "1.8274896186750003",
+          "unit": "kg",
+          "run": "jrc-calc-02",
+          "case": "weight-one-control",
+          "quantity": "原生导入图的选定基础流清单",
+          "basis": "保存目标1 kg；参数设置分别记录；不是LCIA"
+        },
+        {
+          "id": "jrcWeightOneCo",
+          "value": "0.00492476312213393",
+          "unit": "kg",
+          "run": "jrc-calc-02",
+          "case": "weight-one-control",
+          "quantity": "原生导入图的选定基础流清单",
+          "basis": "保存目标1 kg；参数设置分别记录；不是LCIA"
+        },
+        {
+          "id": "jrcWeightOneHydro",
+          "value": "62.07879374889297",
+          "unit": "MJ",
+          "run": "jrc-calc-02",
+          "case": "weight-one-control",
+          "quantity": "原生导入图的选定基础流清单",
+          "basis": "保存目标1 kg；参数设置分别记录；不是LCIA"
+        },
+        {
+          "id": "jrcOpenMachine",
+          "value": "0.000004000000000000001",
+          "unit": "kg",
+          "run": "jrc-calc-02",
+          "case": "imported-baseline",
+          "quantity": "原生图的开放技术流输出",
+          "basis": "分别PRODUCT_FLOW与WASTE_FLOW；不等于基础环境流"
+        },
+        {
+          "id": "jrcTerminalWaste",
+          "value": "0.019400000000000008",
+          "unit": "kg",
+          "run": "jrc-calc-02",
+          "case": "imported-baseline",
+          "quantity": "原生图的开放技术流输出",
+          "basis": "分别PRODUCT_FLOW与WASTE_FLOW；不等于基础环境流"
+        }
+      ],
+      "factorStates": [
+        {
+          "state": "positive",
+          "storedFactorRows": 1,
+          "numericCCell": 2,
+          "diagnosticScore": 0.6730617267205942
+        },
+        {
+          "state": "explicit-zero",
+          "storedFactorRows": 1,
+          "numericCCell": 0,
+          "diagnosticScore": 0
+        },
+        {
+          "state": "absent",
+          "storedFactorRows": 0,
+          "numericCCell": 0,
+          "diagnosticScore": 0
+        }
+      ],
+      "roundTrips": [
+        {
+          "id": "jsonld-original-target",
+          "sourceTargetKg": "0.065",
+          "importedTargetKg": "0.065",
+          "nativeDemandRatio": "1.0",
+          "storedGraphMatches": true,
+          "signedInventoryMatchesAtActualDemand": true,
+          "environmentalInputFlagsAllMatch": true,
+          "originalCmlCompared": true
+        },
+        {
+          "id": "eilcd-original-target",
+          "sourceTargetKg": "0.065",
+          "importedTargetKg": "0.065",
+          "nativeDemandRatio": "1.0",
+          "storedGraphMatches": true,
+          "signedInventoryMatchesAtActualDemand": true,
+          "environmentalInputFlagsAllMatch": true,
+          "originalCmlCompared": false
+        },
+        {
+          "id": "jsonld-doubled-target",
+          "sourceTargetKg": "0.13",
+          "importedTargetKg": "0.13",
+          "nativeDemandRatio": "1.0",
+          "storedGraphMatches": true,
+          "signedInventoryMatchesAtActualDemand": true,
+          "environmentalInputFlagsAllMatch": true,
+          "originalCmlCompared": true
+        },
+        {
+          "id": "eilcd-doubled-target",
+          "sourceTargetKg": "0.13",
+          "importedTargetKg": "0.065",
+          "nativeDemandRatio": "0.5",
+          "storedGraphMatches": true,
+          "signedInventoryMatchesAtActualDemand": true,
+          "environmentalInputFlagsAllMatch": false,
+          "originalCmlCompared": false
+        }
+      ],
+      "environmentalIndexException": {
+        "flowUuid": "16768a0b-2697-465e-8a4f-47451ba0f6af",
+        "run": "bottle-probes-01",
+        "case": "eilcd-doubled-target",
+        "sourceInput": true,
+        "importInput": false,
+        "signedInventoryAtRestoredTargetKg": "-0.0008212882005999999",
+        "sourceExchangeDirectionsChanged": false,
+        "attributedToTargetChange": false,
+        "meaning": "同一流在源过程含正输入与负输出。带符号B及清单相同，汇总输入标记不同；不宣称全部结果元数据一致。"
+      },
+      "baselineComparison": {
+        "bottleTechnologyCoordinates": 10,
+        "bottleInventoryCoordinates": 435,
+        "bottleImpactCategories": 11,
+        "bottleAAndBAndCExactlyMatchAfterDeclaredCoordinateMap": true,
+        "bottleTotalsMatchWithinTolerance": true,
+        "jrcOriginalGasTotalsReproduced": false,
+        "jrcOriginalHydroReproduced": true,
+        "jrcMachineTreatmentInTechIndex": false
+      },
+      "portableReplay": {
+        "runSummarySha256": "eb9e9ba33b006fc4b77919c52379002d716b0d3d28366fe34f5a6131be8830bb",
+        "launcherSha256": "debfa6ff458e37c9e8a2313dd1e1425fde246363023a6b64e2218ac26b283361",
+        "dependencyLockSha256": "29770c945dc6c82e6b11f672d31e62f3d7b9bc3674bc9290a591763887e18425",
+        "bottleReceiptSha256": "790ee3f76dfd9b8015e3a1d801e08e7249fbfb6dc4fa33b29a12f5737b76a915",
+        "jrcReceiptSha256": "6d898ade408d91839c4ebbe11dd1dfde570a99830b4fe91137345eaff9986719",
+        "probeReceiptSha256": "b053a125220f0a0bd4271d67896042e9bbceb137528c247d4b0472f70b8506ec",
+        "sourceArchivesAndRuntimeJarsMatched": true,
+        "baselineNumericComparisonsMatched": true,
+        "fullJrcOriginalGasTotalsReproduced": false,
+        "independentTargetResetObserved": true,
+        "jsonProcessRecordsMatchApartFromMigrationLastChange": true,
+        "directionLabelVariations": [
+          {
+            "case": "jsonld-original-target",
+            "flowUuid": "16768a0b-2697-465e-8a4f-47451ba0f6af",
+            "sourceInput": true,
+            "importInput": false
+          },
+          {
+            "case": "jsonld-doubled-target",
+            "flowUuid": "16768a0b-2697-465e-8a4f-47451ba0f6af",
+            "sourceInput": true,
+            "importInput": false
+          },
+          {
+            "case": "eilcd-doubled-target",
+            "flowUuid": "16768a0b-2697-465e-8a4f-47451ba0f6af",
+            "sourceInput": true,
+            "importInput": false
+          }
+        ],
+        "interpretation": "另一全新运行中，JSON-LD两个目标的重新导入也出现同一流汇总方向标记差异；带符号矩阵和选定数值保留。该差异不能归因于目标加倍或eILCD格式本身。"
+      }
+    }
+  },
+  "controls": {
+    "diagnosticCoefficient": "2",
+    "diagnosticEnvironmentalMeaning": false,
+    "sourceTargetKg": "0.065",
+    "doubledTargetKg": "0.13",
+    "allocationForRepresentationComparison": "NONE",
+    "regionalized": false,
+    "automaticLinkRebuilding": false,
+    "jsonExportIncludesOriginalCml": true,
+    "eilcdExportIncludesOriginalCml": false,
+    "eilcdOpenLcaExtensionsRetained": true
+  },
+  "scope": {
+    "nativeReexecutedDuringStaticBuild": false,
+    "historicalDesktopReproduced": false,
+    "empiricalEnvironmentalValidation": false,
+    "fullJrcSourceModelReproduced": false,
+    "foreignImporterTested": false,
+    "sourceOriginalsOrCompleteExportsPublished": false,
+    "sourceSettingsAndDerivedObservationsDistinct": true
+  }
+}

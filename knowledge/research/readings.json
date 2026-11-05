@@ -19233,13 +19233,14 @@
         {
           "id": "psg-kb50-jrc-flow-a1ff365a-b063-4993-9ddc-6c68dd45ff81",
           "artifactId": "art-kb50-jrc-flow-a1ff365a-b063-4993-9ddc-6c68dd45ff81",
-          "locator": "eILCD-SDK_v2.1.1/ILCD/flows/a1ff365a-b063-4993-9ddc-6c68dd45ff81.xml :: UUID、名称、typeOfDataSet、referenceToReferenceFlowProperty 和引用属性",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flows/a1ff365a-b063-4993-9ddc-6c68dd45ff81.xml :: 第 6–8、17、22、41、45–50 行，UUID、名称、typeOfDataSet 及参考属性索引 0。",
           "topics": [
             "流对象",
             "流类型和参考属性"
           ],
           "limits": [
-            "选取字段核读，未通读附带文献。"
+            "选取字段核读，未通读附带文献。",
+            "本条给出流记录类型与属性引用，处理过程交换方向和物质去向另查各自原件。"
           ]
         },
         {
@@ -19514,7 +19515,8 @@
         "src-kb50-jrc-rail-property-reference",
         "src-kb50-jrc-part-property-reference",
         "src-kb50-jrc-energy-property-record",
-        "src-kb50-jrc-mass-property-record"
+        "src-kb50-jrc-mass-property-record",
+        "src-kb50-jrc-machine-flow"
       ]
     },
     {
@@ -21338,7 +21340,7 @@
         "V7-03",
         "A06"
       ],
-      "nextAction": "独立核对原生实现的结果选择/汇总、方向和量纲；未知原因不靠推断补齐。"
+      "nextAction": "指定结果的选择原因和完整边界仍未知。普通2.7导入已观察到独立的机器处理活动缺席及开放洗后废物流；这不解释原件为何省略该终端流，也不补出LCIA。"
     },
     {
       "id": "gap-kb50-jrc-location-selection",
@@ -21348,7 +21350,7 @@
         "V7-03",
         "A04"
       ],
-      "nextAction": "对具名导入版本检查真实匹配行为和日志，不能混同地点字段。"
+      "nextAction": "已核读普通2.7匹配路径及该例原生导入；继续区分原模型连接位置、过程位置和其他配置/工具的匹配行为，不能把忽略字段视为语义保留。"
     },
     {
       "id": "gap-kb50-jrc-property-version",
@@ -21369,6 +21371,17 @@
         "A06"
       ],
       "nextAction": "如需历史复演，另核原软件具体发行、受支持架构、完整教程数据及设置，并独立保存运行与限制。"
+    },
+    {
+      "id": "gap-kb50-native-profile-and-platform",
+      "description": "当前真实执行限macOS arm64、2.7.0模块、普通非区域化设置、JSON-LD及带openLCA扩展的eILCD自往返。历史桌面、Linux/Windows、外部读取器、地域零值默认与全部版本没有得到运行资格。",
+      "affectedUnits": [
+        "V5-06",
+        "V7-03",
+        "A04",
+        "A06"
+      ],
+      "nextAction": "按实际研究问题选择原件和具名版本追加独立运行；不要把跨平台门槛、源代码可读或同软件自往返等同平台或生态互操作通过。"
     }
   ],
   "revisions": [
@@ -23066,7 +23079,7 @@
       "before": "从废物流标签与方向进入潜在的跨软件对照。",
       "after": "以源实例的双端交换定位为中心，区分标签、符号、物质去向、定量参考、模型标度与真正选中的处理连接。",
       "reasoning": "同一源例既含不同废物 UUID 的链接，又含同一 Product UUID 的处理链，且复用同一供电过程构成两个实例。",
-      "status": "proposed"
+      "status": "applied-to-candidate; source/native and reader reviews completed; rendered qualification and delivery tracked separately"
     },
     {
       "id": "rev-kb50-jrc-aggregate-selected-result",
@@ -23085,7 +23098,31 @@
       "before": "把指定结果过程当成软件原生计算可直接复用的完整聚合清单。",
       "after": "按独立源算术验证结果列范围，分开过程分类、版本、结果列和图实际存在的边界流。",
       "reasoning": "七个结果量能够核算，洗涤末端仍有未列流，模型没有可用的 LCIA 结果。",
-      "status": "proposed"
+      "status": "applied-to-candidate; source/native and reader reviews completed; rendered qualification and delivery tracked separately"
+    },
+    {
+      "id": "rev-kb50-native-target-and-record-state",
+      "before": "现有流/废物与缺因子页面主要从手册说明进入拟议对照，文件导入和数值合计尚没有原生行为证据。",
+      "after": "用固定原件的原生图、目标、参数、A/B/C、活动和记录状态分别说明条件对应、缺席处理、目标复位与零/缺失的数值合并，并保留重复运行的方向标记例外。",
+      "reasoning": "原模块和独立源预期支持的成功与失败不能合并为通用互操作宣告；全系统合计、局部贡献与元数据分别有资格范围。",
+      "status": "applied-to-candidate; software and scientific evidence boundaries retained",
+      "triggerPassageIds": [
+        "psg-kb50-olca-saved-links",
+        "psg-kb50-olca-eilcd-system-export",
+        "psg-kb50-olca-impact-factor-build",
+        "psg-kb50-olca-environment-index"
+      ],
+      "affectedUnits": [
+        "V3-04",
+        "V3-06",
+        "V4-05",
+        "V5-06",
+        "V6-06",
+        "V7-03",
+        "A04",
+        "A06",
+        "A07"
+      ]
     }
   ]
 }
