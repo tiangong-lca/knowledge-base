@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: 14e29acd7ed0605dd30396d2ad26f3a77376f1e8
+lastReviewedCommit: d91291376ad3dc667dd85948b0ac039ae11674e2
 ---
 
 # Publication architecture
@@ -196,3 +196,19 @@ The previous cases and their inputs remain unchanged; no new widget or runtime
 dependency is added.
 
 Mixed retrieved carriers now expose the exact cited artifact link in annotations and evidence details when it differs from the source-level default. This preserves HTML metadata and revision-index locators alongside their primary PDF rather than routing every citation to that PDF. Derived-text disclosure remains unchanged.
+
+## Particulate-health reconstruction
+
+The static `particulate-health` adapter registers 30 fixed source tuples through
+the existing case publication interface and exact-rational evaluator. It
+separates the explicitly joined Humbert/Gronlund historical factors, a rounded
+height-weighting consistency check and a dated GLAM factor-table contrast. The
+input contains no live atmospheric or epidemiological model and cannot set the
+false native, empirical, causal or uncertainty-validation flags to true.
+
+The numeric-source policy binds each tuple to its actual reading, carrier,
+passage and PDF page or worksheet location, including a singular health effect
+fact and plural source-table facts. The GLAM original XLSX member and the
+release ZIP retain separate hashes and inspected passages. The download and
+claim templates use the same public input identity; no new widget, dependency,
+source-original export or changes to prior case inputs are introduced.

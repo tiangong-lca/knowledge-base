@@ -13898,11 +13898,12 @@
         {
           "id": "psg-kb46-humbert2011-framework",
           "artifactId": "art-kb46-humbert2011-pdf",
-          "locator": "主文 p4809，图1与 §§2.1–2.3，式(1)–(2)",
+          "locator": "主文 pp4808–4809，Introduction、图1与 §§2.1–2.3，式(1)–(2)",
           "pdfIndices": [
+            0,
             1
           ],
-          "printedPages": "4809",
+          "printedPages": "4808–4809",
           "topics": [
             "particulate characterization"
           ],
@@ -13931,12 +13932,12 @@
         {
           "id": "psg-kb46-humbert2011-height-weights",
           "artifactId": "art-kb46-humbert2011-pdf",
-          "locator": "Supporting Information 表 S2及脚注，合并载体物理页14（SI第5页）；主文 p4813式(7)",
+          "locator": "Supporting Information 表 S2及脚注，合并载体物理页14（SI第5页）；主文 p4814式(7)",
           "pdfIndices": [
             13,
-            5
+            6
           ],
-          "printedPages": "SI第5页；4813",
+          "printedPages": "SI第5页；4814",
           "topics": [
             "particulate characterization"
           ],
@@ -13948,15 +13949,16 @@
         {
           "id": "psg-kb46-humbert2011-model-lineage",
           "artifactId": "art-kb46-humbert2011-pdf",
-          "locator": "主文 pp4811–4813，§§2.5–2.6及式(5)–(7)；SI物理页22–23，表S6–S7",
+          "locator": "主文 pp4811–4814，§§2.5–2.6及式(5)–(7)；SI物理页22–23，表S6–S7",
           "pdfIndices": [
             3,
             4,
             5,
+            6,
             21,
             22
           ],
-          "printedPages": "4811–4813；SI第13–14页",
+          "printedPages": "4811–4814；SI第13–14页",
           "topics": [
             "particulate characterization"
           ],
@@ -13997,7 +13999,7 @@
             "particulate characterization"
           ],
           "limits": [
-            "主代理按显示的S17–S18与S3复算得到城市/乡村SO2为0.9848332/0.7934602 ppm，NOx为0.20962734/0.18668364 ppm；与主表部分值未完全闭合，原因未定，不替换原表值。",
+            "按显示的S17–S18与S3复算得到城市/乡村SO2为0.9848332/0.7934602 ppm，NOx为0.20962734/0.18668364 ppm；与主表部分值未完全闭合，原因未定，不替换原表值。",
             "这些未闭合重算不用于公开主要教学结果；主要历史关系直接使用Gronlund明确采用的Humbert表3。"
           ]
         }
@@ -14112,13 +14114,15 @@
         {
           "id": "psg-kb46-fantke2017-coverage",
           "artifactId": "art-kb46-fantke2017-pdf",
-          "locator": "主文 pp9095、9097–9098的源高、限制和未来研究，物理页8、10–11",
+          "locator": "主文 pp9089–9090、9095、9097–9098的粒级定义、研究目标、源高、限制和未来研究，物理页2–3、8、10–11",
           "pdfIndices": [
+            1,
+            2,
             7,
             9,
             10
           ],
-          "printedPages": "9095；9097–9098",
+          "printedPages": "9089–9090；9095；9097–9098",
           "topics": [
             "particulate characterization"
           ],
@@ -14786,7 +14790,7 @@
         {
           "id": "psg-kb46-pope2002-risk-results",
           "artifactId": "art-kb46-pope2002-hearing-pdf",
-          "locator": "听证印本第143、146页，原刊1136、1139，表2早期暴露列及图4年龄分层",
+          "locator": "听证印本第143–144、146页，原刊1136–1137、1139，表2早期暴露列、图2的早晚期平均暴露平滑曲线及图4年龄分层",
           "topics": [
             "相对风险",
             "年龄分层",
@@ -14797,9 +14801,10 @@
           ],
           "pdfIndices": [
             146,
+            147,
             149
           ],
-          "printedPages": "听证143,146；原刊1136,1139"
+          "printedPages": "听证143–144,146；原刊1136–1137,1139"
         },
         {
           "id": "psg-kb46-pope2002-limitations",
@@ -17732,6 +17737,94 @@
         "A06"
       ],
       "status": "applied to the bounded manuscript; source recheck complete, delivery tracked separately"
+    },
+    {
+      "id": "revision-kb46-chain",
+      "before": "原有影响评价章节尚未连续解释颗粒物从排放质量进入人群健康表征的链条。",
+      "after": "新增V5-03C候选以明确相接的Humbert2011—Gronlund2015关系作为主计算，排放、吸入与健康损害各保留分母。",
+      "reasoning": "兼容性来自原文明确连接和人口/呼吸条件，不由同一单位或发布日期推断。",
+      "status": "applied-to-candidate; chapter review and delivery remain separate",
+      "triggerPassageIds": [
+        "psg-kb46-humbert2011-framework",
+        "psg-kb46-humbert2011-intake-table",
+        "psg-kb46-gronlund2015-severity-coupling",
+        "psg-kb46-gronlund2015-characterization-table"
+      ],
+      "affectedUnits": [
+        "V5-01",
+        "V5-03C",
+        "A07"
+      ]
+    },
+    {
+      "id": "revision-kb46-population",
+      "before": "健康因子容易只按DALY/kg理解，隐藏观察队列、年龄及严重度的来源。",
+      "after": "先解释Pope队列的暴露分配与调整，再区分Gronlund世界年龄权重和LC-IMPACT受体年龄范围；同名EF保留病例、死亡、吸入损害或浓度响应的实际口径。",
+      "reasoning": "年龄标准化没有替换原队列或疾病严重度；同一模型内呼吸率相消不能为跨模型任意配对提供依据。",
+      "status": "applied-to-candidate; chapter review and delivery remain separate",
+      "triggerPassageIds": [
+        "psg-kb46-pope2002-methods",
+        "psg-kb46-gronlund2015-effect-default",
+        "psg-kb46-lcimpact2020-intake-damage"
+      ],
+      "affectedUnits": [
+        "V5-01",
+        "V5-02",
+        "V5-03C"
+      ]
+    },
+    {
+      "id": "revision-kb46-background",
+      "before": "边际/平均若只作为方法标签，会混淆健康参照与大气化学状态。",
+      "after": "分别解释健康工作点、反事实与局部/区间斜率，再用独立场地约束化学研究限定前体的有限变化外推；生态专题只建立有条件数学联系。",
+      "reasoning": "不同响应的输入、端点、范围和上游证据必须分别确定。",
+      "status": "applied-to-candidate; chapter review and delivery remain separate",
+      "triggerPassageIds": [
+        "psg-kb46-fantke2019-slope",
+        "psg-kb46-burnett2014-ier-form",
+        "psg-kb46-guo2018-precursor-sensitivity"
+      ],
+      "affectedUnits": [
+        "V5-03C",
+        "V5-04",
+        "V6-06"
+      ]
+    },
+    {
+      "id": "revision-kb46-exposure-location",
+      "before": "室内外可能被误读为彼此隔开的两类排放。",
+      "after": "以四区室暴露关系和后续动态活动模型区分排放地与接触地，保留活动停止后继续暴露及健康连接条件。",
+      "reasoning": "模型具名覆盖和时间积分决定可复用关系，不按室内/室外标签直接套用。",
+      "status": "applied-to-candidate; chapter review and delivery remain separate",
+      "triggerPassageIds": [
+        "psg-kb46-fantke2017-matrix",
+        "psg-kb46-fantke2017-health-join",
+        "psg-kb46-bhoonah2023-activity-intake"
+      ],
+      "affectedUnits": [
+        "V5-01",
+        "V5-03C",
+        "V5-04"
+      ]
+    },
+    {
+      "id": "revision-kb46-release-identity",
+      "before": "论文年份、同名表头和软件匹配可能被当作因子身份的充分依据。",
+      "after": "正式勘误、发布汇总、操作表、ZIP成员及原始/匹配表分别定位；现代算例仅比较同一2024发行物的四个条目。",
+      "reasoning": "2019勘误与未闭合的操作/汇总关系、2026说明与2024数据发行的区别触发版本与实现层次的解释。",
+      "status": "applied-to-candidate; chapter review and delivery remain separate",
+      "triggerPassageIds": [
+        "psg-kb46-fantke2019-correction-columns",
+        "psg-kb46-fantke2019-correction-model-discrepancy",
+        "psg-kb46-glam-pm2024-release-scope",
+        "psg-kb46-glam2026-release-lineage"
+      ],
+      "affectedUnits": [
+        "V5-02",
+        "V5-06",
+        "A04",
+        "A07"
+      ]
     }
   ]
 }

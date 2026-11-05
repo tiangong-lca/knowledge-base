@@ -14,7 +14,7 @@ checkPaths:
   - "knowledge/**"
   - "releases/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: 31beb8bcb19888dd08b83543159aea7b74d46157
+lastReviewedCommit: d91291376ad3dc667dd85948b0ac039ae11674e2
 ---
 
 # Editorial and living review protocol
@@ -126,3 +126,24 @@ not certify native implementation. Model comparisons need their own design,
 units and actual applicability constraints; preserve a same-method requirement
 when evaluating claims about country-specific methods and keep a regression's
 predictive response separate from an intervention effect.
+
+## Particulate pathway checks
+
+Trace source emissions, atmospheric formation, receptor exposure, health
+response and severity through their actual denominators. Check cohort exposure
+assignment and adjustment separately from later baseline, age and outcome
+choices. A WHO age standard does not replace the original risk population or
+severity evidence. Equal factor names and units do not prove compatible
+inhalation conventions, endpoints or reference states.
+
+For response comparisons, name the working point, counterfactual and finite
+interval. Distinguish parameter distributions from model, transfer and causal
+uncertainty. For precursor chemistry, retain whether the perturbed quantity is
+source emission or ambient total species and whether the output is particle
+mass, inhaled mass or damage. A reduced model's comparison with its parent and a
+field-constrained mechanism supply different evidence.
+
+Inspect formal corrections alongside the original table and implementation.
+Keep unresolved formula/table joins visible without changing source-reported
+values. Source reviews, arithmetic, reader comprehension and actual publication
+checks remain separate; none certifies an actual health intervention.
