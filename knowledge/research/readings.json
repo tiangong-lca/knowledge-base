@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-05",
+  "updatedAt": "2026-11-06",
   "readings": [
     {
       "id": "rd-cml-2001-part1",
@@ -15487,6 +15487,2389 @@
         "完整结果和发布表的逐项演算关系未复现。"
       ],
       "sourceKeys": []
+    },
+    {
+      "id": "rd-kb48-main-egrid2023-guide",
+      "workId": "work-kb48-main-egrid2023-guide",
+      "title": "Technical Guide for eGRID2023",
+      "version": "数据年2023。2025-01-15 原始发行所附技术指南。官方 178 页 PDF。",
+      "url": "https://www.epa.gov/system/files/documents/2025-01/egrid2023_technical_guide.pdf",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "eGRID 年平均发电输出强度与 ERCOT 网损折算的分母分别是什么？",
+      "argumentSummary": "指南将电厂区域发电输出与互联区域损耗估计分开，给出应用到终端消费时的有条件折算。",
+      "artifacts": [
+        {
+          "id": "art-kb48-main-egrid2023-guide-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "12164c665217f1b4d00ac6a8115a3806710dab79993d02959cdf7f7f66abd841",
+          "resolvedUrl": "https://www.epa.gov/system/files/documents/2025-01/egrid2023_technical_guide.pdf",
+          "pageCount": 178
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb48-main-egrid2023-guide-generation-scope",
+          "artifactId": "art-kb48-main-egrid2023-guide-pdf",
+          "locator": "印刷第2–3、8、19及22–24页（物理13–14、19、30、33–35），§2.1、§3.1、§3.1.3.3、§3.4",
+          "topics": [
+            "net electricity generation",
+            "output emission rate",
+            "regional generation",
+            "plant attribution"
+          ],
+          "limits": [
+            "地图和区域命名不能确定实际服务或机组在不同发行物之间的匹配。发电口径未核验成完整生命周期或配电端用电。"
+          ],
+          "pdfIndices": [
+            12,
+            13,
+            18,
+            29,
+            32,
+            33,
+            34
+          ],
+          "printedPages": "2–3、8、19、22–24"
+        },
+        {
+          "id": "psg-kb48-main-egrid2023-guide-nonbaseload",
+          "artifactId": "art-kb48-main-egrid2023-guide-pdf",
+          "locator": "印刷第19–20页（物理30–31），§3.1.3.3 非基荷输出率",
+          "topics": [
+            "nonbaseload",
+            "capacity factor proxy",
+            "average versus marginal"
+          ],
+          "limits": [
+            "与基于真实小时数据的边际响应及重新求解未来电力系统的量不同。"
+          ],
+          "pdfIndices": [
+            29,
+            30
+          ],
+          "printedPages": "19–20"
+        },
+        {
+          "id": "psg-kb48-main-egrid2023-guide-ggl-method",
+          "artifactId": "art-kb48-main-egrid2023-guide-pdf",
+          "locator": "印刷第25–27、66–67页（物理36–38、77–78），§3.5、Table 3-6、§6.9",
+          "topics": [
+            "transmission and distribution loss",
+            "interconnection grouping",
+            "consumption scale conversion"
+          ],
+          "limits": [
+            "这是互联系统年度估计，未测具体服务、电压、小时或边际损耗。它不能给发电因子补出进口组成。FAQ 网页的同名行存在差异。"
+          ],
+          "pdfIndices": [
+            35,
+            36,
+            37,
+            76,
+            77
+          ],
+          "printedPages": "25–27、66–67"
+        },
+        {
+          "id": "psg-kb48-main-egrid2023-guide-adjustments",
+          "artifactId": "art-kb48-main-egrid2023-guide-pdf",
+          "locator": "印刷第14–16页（物理25–27页），§3.1.2.1 生物质 CO₂ 与 §3.1.2.2 热电联产发电分配",
+          "topics": [
+            "biomass CO2 adjustment",
+            "electricity-only CHP allocation",
+            "adjusted versus unadjusted emissions"
+          ],
+          "limits": [
+            "这是 eGRID2023 所述核算规则，不能据此假定生物质供应链没有影响。未重算各电厂的调整值或验证实际有用热。"
+          ],
+          "pdfIndices": [
+            24,
+            25,
+            26
+          ],
+          "printedPages": "14–16"
+        }
+      ],
+      "appraisal": {
+        "basis": "印刷第2–3、8、19及22–24页（物理13–14、19、30、33–35），§2.1、§3.1、§3.1.3.3、§3.4。印刷第19–20页（物理30–31），§3.1.3.3 非基荷输出率。印刷第25–27、66–67页（物理36–38、77–78），§3.5、Table 3-6、§6.9。印刷第14–16页（物理25–27页），§3.1.2.1 生物质 CO₂ 与 §3.1.2.2 热电联产发电分配",
+        "methodologicalScope": "eGRID 年平均发电输出强度与 ERCOT 网损折算的分母分别是什么？",
+        "independence": "和修订工作簿、FAQ 属同一 EPA 发行谱系。EIA-923 与州统计是上游数据。",
+        "limitations": [
+          "未核读全部电厂匹配、测量替代或附录。",
+          "没有现场输配损耗和实际终端馈线。",
+          "不能据原始指南假定其所有单元格已随修订2更新。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "rights": "公开联邦技术指南，来源及出版信息按 EPA 保留。版权状态与第三方附件许可不作统一外推。",
+      "unread": [
+        "未核读全部电厂匹配、测量替代或附录。",
+        "没有现场输配损耗和实际终端馈线。",
+        "不能据原始指南假定其所有单元格已随修订2更新。"
+      ],
+      "sourceKeys": [
+        "src-kb48-main-egrid2023-guide"
+      ]
+    },
+    {
+      "id": "rd-kb48-main-egrid2023-rev2",
+      "workId": "work-kb48-main-egrid2023-rev2",
+      "title": "Emissions & Generation Resource Integrated Database (eGRID2023), Revision 2",
+      "version": "2023 数据年。2025-06-12 Revision 2。选定英制工作簿，另列同版公制工作簿、修订网页和发行说明。",
+      "url": "https://www.epa.gov/system/files/documents/2025-06/egrid2023_data_rev2.xlsx",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "怎样以精确修订版的区域发电与损耗单元格核对量纲、近闭合及发行差异？",
+      "argumentSummary": "英制选定行提供直接发电总量、发电因子和跨输配年度损耗。原数据逐字段区别地区和分母。",
+      "artifacts": [
+        {
+          "id": "art-kb48-main-egrid2023-rev2-imperial",
+          "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "sha256": "895cd81dd8662406189ad8adf5a2578dcb362cdb5cff7cca81b10ee6bd2447c6",
+          "resolvedUrl": "https://www.epa.gov/system/files/documents/2025-06/egrid2023_data_rev2.xlsx"
+        },
+        {
+          "id": "art-kb48-main-egrid2023-rev2-metric",
+          "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "sha256": "3dfbbcf2f949d58d5b2dbee3aab8150bd04a0c8ebb730ba1cd37a013bd4450ab",
+          "resolvedUrl": "https://www.epa.gov/system/files/documents/2025-06/egrid2023_data_metric_rev2.xlsx"
+        },
+        {
+          "id": "art-kb48-main-egrid2023-rev2-revisions",
+          "mediaType": "text/html",
+          "sha256": "e01eebb463a3f529643218676bd9a8d897e2cb4ccf4efafc83bfa07f1b1c96ab",
+          "resolvedUrl": "https://www.epa.gov/egrid/known-issues-data-notes-and-revisions"
+        },
+        {
+          "id": "art-kb48-main-egrid2023-rev2-release-notes",
+          "mediaType": "text/plain",
+          "sha256": "63cf2f15f4c3d02b66016a52f9664febe00e1be473992cf632e19ccaec3f84a7",
+          "resolvedUrl": "https://www.epa.gov/system/files/other-files/2025-06/egrid2023_release_notes.txt"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb48-main-egrid2023-rev2-srl23-erct",
+          "artifactId": "art-kb48-main-egrid2023-rev2-imperial",
+          "locator": "英制 SRL23!A1:W2、A7:W7，ERCT / ERCOT All；数值 I7、O7、W7",
+          "topics": [
+            "2023 ERCT regional generation",
+            "CO2 mass",
+            "reported lb per MWh"
+          ],
+          "limits": [
+            "CO₂ 原始质量为短吨，不能直接当公吨。W7 XML 小数与界面显示 733.862 不增加物理精度。电厂行残差原因未确证。"
+          ]
+        },
+        {
+          "id": "psg-kb48-main-egrid2023-rev2-ggl23-ercot",
+          "artifactId": "art-kb48-main-egrid2023-rev2-imperial",
+          "locator": "英制 GGL23!A1:F2、A4:F4、A7:F7；ERCOT 数值 C4、D4、E4、F4",
+          "topics": [
+            "ERCOT interconnection",
+            "estimated loss numerator",
+            "disposition excluding exports",
+            "direct use"
+          ],
+          "limits": [
+            "回算不改写发布舍入率。表口径不是一个 eGRID 子区的直接仪表或指定电压线路。"
+          ]
+        },
+        {
+          "id": "psg-kb48-main-egrid2023-rev2-metric-carrier",
+          "artifactId": "art-kb48-main-egrid2023-rev2-metric",
+          "locator": "公制 SRL23 与 GGL23 第1–2行表头与选定 ERCT、ERCOT 行",
+          "topics": [
+            "metric versus imperial data",
+            "carrier-specific column identifiers"
+          ],
+          "limits": [
+            "实际案例以英制原件为数值输入。未对两个工作簿做全量重算或推定每个字段精确换算。"
+          ]
+        },
+        {
+          "id": "psg-kb48-main-egrid2023-rev2-revisions",
+          "artifactId": "art-kb48-main-egrid2023-rev2-revisions",
+          "locator": "Known Issues, Data Notes, and Revisions，eGRID2023 下 Revisions 三段",
+          "topics": [
+            "release dates",
+            "negative net generation",
+            "ORIS crosswalk"
+          ],
+          "limits": [
+            "网页变更记录不等于旧版和修订2的数值等价。未独立量化每项修订的贡献。"
+          ]
+        },
+        {
+          "id": "psg-kb48-main-egrid2023-rev2-release-notes",
+          "artifactId": "art-kb48-main-egrid2023-rev2-release-notes",
+          "locator": "eGRID2023_release_notes.txt 前部三条2025日期与各发行物列表",
+          "topics": [
+            "file manifests",
+            "guide and revised workbook identity"
+          ],
+          "limits": [
+            "数据年份与发行月份分开。"
+          ]
+        },
+        {
+          "id": "psg-kb48-main-egrid2023-rev2-plant-boundaries",
+          "artifactId": "art-kb48-main-egrid2023-rev2-imperial",
+          "locator": "英制修订2 XLSX PLNT23!C1:N2、C9825:N9825、C11411:N11411，UNT23 厂号/机组号及 PLNT23 厂号/子区定向索引列",
+          "topics": [
+            "ORIS plant identity",
+            "exact unit join",
+            "BA and eGRID subregion boundary"
+          ],
+          "limits": [
+            "交集、未匹配与成员数是另行计算，并非原工作簿的现成数值。未按小时验证厂站的计量集合，不用州名、地区名或映射行替代实际机组级范围。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "英制 SRL23!A1:W2、A7:W7，ERCT / ERCOT All；数值 I7、O7、W7。英制 GGL23!A1:F2、A4:F4、A7:F7；ERCOT 数值 C4、D4、E4、F4。公制 SRL23 与 GGL23 第1–2行表头与选定 ERCT、ERCOT 行。Known Issues, Data Notes, and Revisions，eGRID2023 下 Revisions 三段。eGRID2023_release_notes.txt 前部三条2025日期与各发行物列表。英制修订2 XLSX PLNT23!C1:N2、C9825:N9825、C11411:N11411，UNT23 厂号/机组号及 PLNT23 厂号/子区定向索引列",
+        "methodologicalScope": "怎样以精确修订版的区域发电与损耗单元格核对量纲、近闭合及发行差异？",
+        "independence": "同一 EPA 年度数据库及方法谱系。两个工作簿不是两个独立排放测量。",
+        "limitations": [
+          "未核验旧版本全部数值变动或每个电厂的独立计量。",
+          "不能确认残差成因或把年度地区数据称为小时与端点事实。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "rights": "EPA eGRID FAQ 第25问说明该机构生成的数据属公有领域，商用和非商用均可，并给出建议引文。只拟公开选定事实、出处及原创分析，保留 EPA 归属。",
+      "unread": [
+        "未核验旧版本全部数值变动或每个电厂的独立计量。",
+        "不能确认残差成因或把年度地区数据称为小时与端点事实。"
+      ],
+      "sourceKeys": [
+        "src-kb48-main-egrid2023-rev2"
+      ]
+    },
+    {
+      "id": "rd-kb48-main-egrid-faq",
+      "workId": "work-kb48-main-egrid-faq",
+      "title": "Frequent Questions About eGRID",
+      "version": "网页显示 2026-07-28 更新，2026-11-06 取得官方 HTML。选定 eGRID2023 #14 与 #25。",
+      "url": "https://www.epa.gov/egrid/frequent-questions-about-egrid",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "FAQ 与数据发行对网损及使用权各自说明了什么？",
+      "argumentSummary": "保留表中互联区域值的冲突及明确的使用归属。",
+      "artifacts": [
+        {
+          "id": "art-kb48-main-egrid-faq-html",
+          "mediaType": "text/html",
+          "sha256": "11f491637d0c8a27903cf4fdc7f3b8229391e8c96533c6ea8eff07706ce30844",
+          "resolvedUrl": "https://www.epa.gov/egrid/frequent-questions-about-egrid"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb48-main-egrid-faq-ggl-disagreement",
+          "artifactId": "art-kb48-main-egrid-faq-html",
+          "locator": "FAQ 第14问 What is Grid Gross Loss，下 2023 GGL Estimates 表",
+          "topics": [
+            "documented source conflict",
+            "ERCOT versus Western"
+          ],
+          "limits": [
+            "网页冲突成因不明。不以表名相同把三个来源自动合并。本案选择指定发行工作簿。"
+          ]
+        },
+        {
+          "id": "psg-kb48-main-egrid-faq-use-rights",
+          "artifactId": "art-kb48-main-egrid-faq-html",
+          "locator": "FAQ 第25问 Can I use eGRID data commercially and how do I cite it",
+          "topics": [
+            "dataset reuse",
+            "EPA attribution"
+          ],
+          "limits": [
+            "本项目只采用选定事实与出处。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "FAQ 第14问 What is Grid Gross Loss，下 2023 GGL Estimates 表。FAQ 第25问 Can I use eGRID data commercially and how do I cite it",
+        "methodologicalScope": "FAQ 与数据发行对网损及使用权各自说明了什么？",
+        "independence": "FAQ 与其他来源都出自 EPA，不是独立物理损耗验证。",
+        "limitations": [
+          "未找到此网页差异的权威原因说明。",
+          "未逐问复核整个网页。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "rights": "EPA eGRID FAQ 第25问说明该机构生成的数据属公有领域，商用和非商用均可，并给出建议引文。只拟公开选定事实、出处及原创分析，保留 EPA 归属。",
+      "unread": [
+        "未找到此网页差异的权威原因说明。",
+        "未逐问复核整个网页。"
+      ],
+      "sourceKeys": [
+        "src-kb48-main-egrid-faq"
+      ]
+    },
+    {
+      "id": "rd-kb48-main-eia930-method",
+      "workId": "work-kb48-main-eia930-method",
+      "title": "About the EIA-930 data",
+      "version": "2026-11-06 原始 HTML 片段，由 Hourly Electric Grid Monitor 的 About 入口加载，含后续报告规则更新。",
+      "url": "https://www.eia.gov/electricity/930-content/about.html",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "EIA-930 小时平衡、时标与另行估算的发电排放是怎样定义的？",
+      "argumentSummary": "系统需求和有符号净交换出自大电网报告边界，另行的负荷排放归属取决于估算和流量分配。",
+      "artifacts": [
+        {
+          "id": "art-kb48-main-eia930-method-html",
+          "mediaType": "text/html",
+          "sha256": "3f99228141fd9b61a049ce4ab4d1664e78e3e4d6bdc878826ab0d5b0f00302cd",
+          "resolvedUrl": "https://www.eia.gov/electricity/930-content/about.html"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb48-main-eia930-method-bulk-grid-balance",
+          "artifactId": "art-kb48-main-eia930-method-html",
+          "locator": "About the EIA-930 data，Data Element Descriptions 的 Demand、Net generation、Total interchange，Data Relationships 与 Data Quality",
+          "topics": [
+            "BA bulk system",
+            "generation minus interchange",
+            "reported demand scope"
+          ],
+          "limits": [
+            "报告取样、异常和动态交易安排可影响数据关系。系统需求不是某个终端计量点，也未给该点接入电压。"
+          ]
+        },
+        {
+          "id": "psg-kb48-main-eia930-method-time-and-imputation",
+          "artifactId": "art-kb48-main-eia930-method-html",
+          "locator": "About the EIA-930 data，Time Reporting、Daylight Saving Time Reporting、Imputation 与 Data Quality",
+          "topics": [
+            "hour-ending average power",
+            "timezone and DST",
+            "blanks versus imputation"
+          ],
+          "limits": [
+            "方法网页含当前通用规则。2023 CSV 的真实列、时间偏移和缺失以原发行文件核对。"
+          ]
+        },
+        {
+          "id": "psg-kb48-main-eia930-method-estimated-emissions",
+          "artifactId": "art-kb48-main-eia930-method-html",
+          "locator": "About the EIA-930 data，Estimated CO2 emissions 与 Data Quality of Hourly CO2 Emissions",
+          "topics": [
+            "generation estimates",
+            "multiregional input-output allocation",
+            "noncausal assignment"
+          ],
+          "limits": [
+            "范围由 BA 可见机组、燃料、流量匹配及报告质量限定。实际 BALANCE CSV 无 CO₂ 列，本轮不以该方法当作实测排放或已核原始 CO₂ 表。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "About the EIA-930 data，Data Element Descriptions 的 Demand、Net generation、Total interchange，Data Relationships 与 Data Quality。About the EIA-930 data，Time Reporting、Daylight Saving Time Reporting、Imputation 与 Data Quality。About the EIA-930 data，Estimated CO2 emissions 与 Data Quality of Hourly CO2 Emissions",
+        "methodologicalScope": "EIA-930 小时平衡、时标与另行估算的发电排放是怎样定义的？",
+        "independence": "与小时发行数据和 930A 同为 EIA 统计体系。和 eGRID 的部分统计输入并非独立。",
+        "limitations": [
+          "未取得本例燃料小时排放输出或真实排放监测。",
+          "当前方法不等于 2023 所有实际处理算法完整复现。",
+          "未核所有 BA 的报告与时区。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "rights": "EIA Copyrights and Reuse 页说明本机构公开出版数据的公有领域地位，建议引用时注明来源和日期，另区分第三方受保护材料。此处只拟公开选定官方数据事实、出处和原创释义，不转传标识或其他第三方材料。",
+      "unread": [
+        "未取得本例燃料小时排放输出或真实排放监测。",
+        "当前方法不等于 2023 所有实际处理算法完整复现。",
+        "未核所有 BA 的报告与时区。"
+      ],
+      "sourceKeys": [
+        "src-kb48-main-eia930-method"
+      ]
+    },
+    {
+      "id": "rd-kb48-main-eia930-balance2023",
+      "workId": "work-kb48-main-eia930-balance2023",
+      "title": "Hourly Electric Grid Monitor, EIA-930 2023 Balance and companion 930A generator inventory",
+      "version": "数据日期2023。独立 Jan–Jun 与 Jul–Dec BALANCE 原始 CSV。检索时的两个文件哈希固定实际快照。EIA-930A 2023 XLSX 是单独的伴随名录。",
+      "url": "https://www.eia.gov/electricity/gridmonitor/about",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "2023 ERCO 年度和典型小时能够建立哪些电量关系，以及哪里存在缺失和边界差异？",
+      "argumentSummary": "原表实际有完整的需求与净发电时间系列，交换留缺，逐小时关系并非全都等值。",
+      "artifacts": [
+        {
+          "id": "art-kb48-main-eia930-balance2023-jan-jun",
+          "mediaType": "text/csv",
+          "sha256": "a0e14e9c07ab4cc1de3e384c7be890b0c61d9de3fe04ad3ae5ec739f1f35ec1b",
+          "resolvedUrl": "https://www.eia.gov/electricity/gridmonitor/sixMonthFiles/EIA930_BALANCE_2023_Jan_Jun.csv"
+        },
+        {
+          "id": "art-kb48-main-eia930-balance2023-jul-dec",
+          "mediaType": "text/csv",
+          "sha256": "c719fc1b513eec8982ce209b6e3173fc64b2d0d243f83d3bf0d8d1adf6222de2",
+          "resolvedUrl": "https://www.eia.gov/electricity/gridmonitor/sixMonthFiles/EIA930_BALANCE_2023_Jul_Dec.csv"
+        },
+        {
+          "id": "art-kb48-main-eia930-balance2023-generator-inventory",
+          "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "sha256": "ed8008bf4f5cbb0799d5a99b4dbc806e892eb150a9b357a709b582a93e28676f",
+          "resolvedUrl": "https://www.eia.gov/electricity/930-content/EIA_930A_2023_with%20layout.xlsx"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb48-main-eia930-balance2023-export-hour",
+          "artifactId": "art-kb48-main-eia930-balance2023-jan-jun",
+          "locator": "Jan–Jun CSV 第1行列名与物理60807行，ERCO／2023-01-01 本地01:00末、UTC07:00",
+          "topics": [
+            "positive net interchange",
+            "hour-ending demand",
+            "export sign"
+          ],
+          "limits": [
+            "这是 BA 小时功率，不是某个终端负荷。列值不包含单位边际效果。"
+          ]
+        },
+        {
+          "id": "psg-kb48-main-eia930-balance2023-import-hour",
+          "artifactId": "art-kb48-main-eia930-balance2023-jul-dec",
+          "locator": "Jul–Dec CSV 第1行列名与物理61845行，ERCO／2023-07-01 本地09:00末、UTC14:00",
+          "topics": [
+            "negative net interchange",
+            "hour-ending demand",
+            "import sign"
+          ],
+          "limits": [
+            "不用双边可用量加总替代所报总交换。当地时标同一 UTC 偏移不能跨全年使用。"
+          ]
+        },
+        {
+          "id": "psg-kb48-main-eia930-balance2023-balance-first-half",
+          "artifactId": "art-kb48-main-eia930-balance2023-jan-jun",
+          "locator": "Jan–Jun CSV 第1行与物理60807–65149的4343行 ERCO，空交换行63269、非闭合例61066",
+          "topics": [
+            "2023 first half",
+            "annual sum inputs",
+            "reported missing interchange"
+          ],
+          "limits": [
+            "年合计为作者从小时记录派生，不能标成原表中现成值。对空交换行不按零替代。"
+          ]
+        },
+        {
+          "id": "psg-kb48-main-eia930-balance2023-balance-second-half",
+          "artifactId": "art-kb48-main-eia930-balance2023-jul-dec",
+          "locator": "Jul–Dec CSV 第1行与物理61837–66253的4417行 ERCO，夏令时64885–64887，空交换64116、64319–64320、64934、65449",
+          "topics": [
+            "2023 second half",
+            "UTC uniqueness",
+            "partial interchange sum",
+            "annual sum inputs"
+          ],
+          "limits": [
+            "年度交换只有8754个报告值。三项平衡需要两份文件且限完全行。当地年份与UTC结束年份边界不同。"
+          ]
+        },
+        {
+          "id": "psg-kb48-main-eia930-balance2023-generator-inventory-context",
+          "artifactId": "art-kb48-main-eia930-balance2023-generator-inventory",
+          "locator": "EIA_930A_2023.xlsx，Layout Details!A1:B2 与 SUMMARY!A40:F41 的 ERCO 条目",
+          "topics": [
+            "generator reporting inventory",
+            "plant versus generator join"
+          ],
+          "limits": [
+            "它不是小时发电表，不能证明 eGRID 地区或 AVERT 范围等价。本轮不以名单个数代替机组级覆盖审查。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "Jan–Jun CSV 第1行列名与物理60807行，ERCO／2023-01-01 本地01:00末、UTC07:00。Jul–Dec CSV 第1行列名与物理61845行，ERCO／2023-07-01 本地09:00末、UTC14:00。Jan–Jun CSV 第1行与物理60807–65149的4343行 ERCO，空交换行63269、非闭合例61066。Jul–Dec CSV 第1行与物理61837–66253的4417行 ERCO，夏令时64885–64887，空交换64116、64319–64320、64934、65449。EIA_930A_2023.xlsx，Layout Details!A1:B2 与 SUMMARY!A40:F41 的 ERCO 条目",
+        "methodologicalScope": "2023 ERCO 年度和典型小时能够建立哪些电量关系，以及哪里存在缺失和边界差异？",
+        "independence": "两份半年度文件分同一报告系列，930A是同一机构的补充名录。数据不独立覆盖 eGRID/AVERT 的机组。",
+        "limitations": [
+          "未取经审查的缺失交换时点补录，不补写成零。",
+          "未核对非ERCO系列、完整机组跨库映射或当地终端电表。",
+          "未取得本例的 EIA 小时排放数据。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "rights": "EIA Copyrights and Reuse 页说明本机构公开出版数据的公有领域地位，建议引用时注明来源和日期，另区分第三方受保护材料。此处只拟公开选定官方数据事实、出处和原创释义，不转传标识或其他第三方材料。",
+      "unread": [
+        "未取经审查的缺失交换时点补录，不补写成零。",
+        "未核对非ERCO系列、完整机组跨库映射或当地终端电表。",
+        "未取得本例的 EIA 小时排放数据。"
+      ],
+      "sourceKeys": [
+        "src-kb48-main-eia930-balance2023"
+      ]
+    },
+    {
+      "id": "rd-kb48-future-cambium2024-report",
+      "workId": "work-kb48-future-cambium2024-report",
+      "title": "Cambium 2024 Scenario Descriptions and Documentation",
+      "version": "2024 数据版，第五次发布。NREL/TP-6A40-93005 标题叶 2025 年 4 月。实验室 77 页载体。",
+      "url": "https://docs.nlr.gov/docs/fy25osti/93005.pdf",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "Cambium 的终端与发电边界、长期反事实、损耗及排放路径怎样形成？",
+      "argumentSummary": "公开发布有不同发电和终端分母，长期有限扰动允许结构变化，还需要区域和时段后分配。",
+      "artifacts": [
+        {
+          "id": "art-kb48-future-cambium2024-report-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "f52654c802a8f9907703d221a9ee52284996e7ad0048e9f9591774dd52d229bf",
+          "resolvedUrl": "https://docs.nlr.gov/docs/fy25osti/93005.pdf",
+          "pageCount": 77
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb48-future-cambium2024-report-identity-model",
+          "artifactId": "art-kb48-future-cambium2024-report-pdf",
+          "locator": "物理第1、8–11、13–14页，标题页、印刷§§1.1–1.2、§2及§3情景列表",
+          "topics": [
+            "capacity expansion",
+            "hourly dispatch",
+            "2024 release"
+          ],
+          "limits": [
+            "公开文档和表格不能代替商业模型及精确输入。"
+          ],
+          "pdfIndices": [
+            0,
+            7,
+            8,
+            9,
+            10,
+            12,
+            13
+          ],
+          "printedPages": "标题页，1–4、6–7"
+        },
+        {
+          "id": "psg-kb48-future-cambium2024-report-historical-bridge",
+          "artifactId": "art-kb48-future-cambium2024-report-pdf",
+          "locator": "印刷第17–20、22–24页（物理24–27、29–31），§§4.1–4.2、图4–5及§5.2",
+          "topics": [
+            "GEA regions",
+            "eGRID historical denominator",
+            "time alignment"
+          ],
+          "limits": [
+            "同名地理无自动等价。历史重聚合和 2025 模拟值不是同一数据生成过程。"
+          ],
+          "pdfIndices": [
+            23,
+            24,
+            25,
+            26,
+            28,
+            29,
+            30
+          ],
+          "printedPages": "17–20、22–24"
+        },
+        {
+          "id": "psg-kb48-future-cambium2024-report-delivery",
+          "artifactId": "art-kb48-future-cambium2024-report-pdf",
+          "locator": "印刷第21、26–29、34页（物理28、33–36、41），§5.1式与脚注13、§5.4以及§5.7",
+          "topics": [
+            "busbar versus end use",
+            "distribution losses",
+            "average versus marginal"
+          ],
+          "limits": [
+            "以配电损耗换算发电强度不能补出进出口与储能分配。已经按终端列报的指标不再另行放大。"
+          ],
+          "pdfIndices": [
+            27,
+            32,
+            33,
+            34,
+            35,
+            40
+          ],
+          "printedPages": "21、26–29、34"
+        },
+        {
+          "id": "psg-kb48-future-cambium2024-report-fuel-cycle",
+          "artifactId": "art-kb48-future-cambium2024-report-pdf",
+          "locator": "印刷第26–29及39–41页（物理33–36、46–48），§5.4、§6.2、表5",
+          "topics": [
+            "direct combustion",
+            "fuel supply chain",
+            "GWP100"
+          ],
+          "limits": [
+            "§5.4 p26 把 g 写成 gigawatts，其他列和逐指标定义明确为克。未重建所有上游燃料因子。"
+          ],
+          "pdfIndices": [
+            32,
+            33,
+            34,
+            35,
+            45,
+            46,
+            47
+          ],
+          "printedPages": "26–29、39–41"
+        },
+        {
+          "id": "psg-kb48-future-cambium2024-report-lrmer-process",
+          "artifactId": "art-kb48-future-cambium2024-report-pdf",
+          "locator": "印刷第44–52页（物理51–59），§6.4 Step 1–5、公式及 Caveats",
+          "topics": [
+            "national finite perturbation",
+            "flow coloring",
+            "structural response",
+            "storage and credit accounting"
+          ],
+          "limits": [
+            "按地区或单小时没有独立施加增量。模型有限差异和后分配不是任何真实用户的实测因果响应。p52 关于隔年计算的一句与该版五年数据不符。"
+          ],
+          "pdfIndices": [
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58
+          ],
+          "printedPages": "44–52"
+        },
+        {
+          "id": "psg-kb48-future-cambium2024-report-loss-print",
+          "artifactId": "art-kb48-future-cambium2024-report-pdf",
+          "locator": "印刷第60–61页（物理67–68），§6.7 文本、变量定义和公式",
+          "topics": [
+            "fixed losses",
+            "resistive losses",
+            "annual normalization"
+          ],
+          "limits": [
+            "当年负荷是逐小时之和时，按印刷公式逐小时累计不能回到给定年度可变总量。源代码与勘误未见，源文字和发表值各自保留。"
+          ],
+          "pdfIndices": [
+            66,
+            67
+          ],
+          "printedPages": "60–61"
+        }
+      ],
+      "appraisal": {
+        "basis": "物理第1、8–11、13–14页，标题页、印刷§§1.1–1.2、§2及§3情景列表。印刷第17–20、22–24页（物理24–27、29–31），§§4.1–4.2、图4–5及§5.2。印刷第21、26–29、34页（物理28、33–36、41），§5.1式与脚注13、§5.4以及§5.7。印刷第26–29及39–41页（物理33–36、46–48），§5.4、§6.2、表5。印刷第44–52页（物理51–59），§6.4 Step 1–5、公式及 Caveats。印刷第60–61页（物理67–68），§6.7 文本、变量定义和公式",
+        "methodologicalScope": "Cambium 的终端与发电边界、长期反事实、损耗及排放路径怎样形成？",
+        "independence": "方法报告与工作簿、数据发行属同一项目。eGRID 与 ReEDS 是上游而非独立验证。",
+        "limitations": [
+          "未核读全部成本模型、技术输入表和每条引文。",
+          "未取得同版完整 ReEDS、PLEXOS 与后处理运行封存。",
+          "未找到本版损耗印刷分母的发布者勘误。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "rights": "公开来源。版权与再分发条件依原作者及发行机构。只提议原创释义、元数据与来源定位，不公开原件。",
+      "unread": [
+        "未核读全部成本模型、技术输入表和每条引文。",
+        "未取得同版完整 ReEDS、PLEXOS 与后处理运行封存。",
+        "未找到本版损耗印刷分母的发布者勘误。"
+      ],
+      "sourceKeys": [
+        "src-kb48-future-cambium2024-report"
+      ]
+    },
+    {
+      "id": "rd-kb48-future-cambium2024-release",
+      "workId": "work-kb48-future-cambium2024-release",
+      "title": "Cambium 2024 Data, GEA annual metrics, historical intensity and mappings",
+      "version": "2024 数据发行；公开 Scenario Viewer 项目 5c7bef16-7e38-4094-92ce-8b03dfa93380，文件号69141、69180和69181。",
+      "url": "https://scenarioviewer.nlr.gov/?project=5c7bef16-7e38-4094-92ce-8b03dfa93380&mode=download&layout=Default",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "区域年度实际发行能区分哪些活动和排放分母，哪些历史边界不能直接连接？",
+      "argumentSummary": "同地理标识下分别识别历史电厂重聚合与模拟输出，后者保留独立的终端、母线、输电和储能字段。",
+      "artifacts": [
+        {
+          "id": "art-kb48-future-cambium2024-release-annual-csv",
+          "mediaType": "text/csv",
+          "sha256": "e5d83c6b31e78d343a6921953da79287928b804073c973ce92c1be909ab947c6",
+          "resolvedUrl": "https://scenarioviewer.nlr.gov/?project=5c7bef16-7e38-4094-92ce-8b03dfa93380&mode=download&layout=Default"
+        },
+        {
+          "id": "art-kb48-future-cambium2024-release-annual-zip",
+          "mediaType": "application/zip",
+          "sha256": "b5438ee16c0cf03054bac62520155cbfdc8e98797aba025e48e793fb1527c189",
+          "resolvedUrl": "https://scenarioviewer.nlr.gov/?project=5c7bef16-7e38-4094-92ce-8b03dfa93380&mode=download&layout=Default"
+        },
+        {
+          "id": "art-kb48-future-cambium2024-release-history-csv",
+          "mediaType": "text/csv",
+          "sha256": "62da7f1d652180e035fc739c1fd70de4a8ff3438d034988940c6d55f08ff98be",
+          "resolvedUrl": "https://scenarioviewer.nlr.gov/?project=5c7bef16-7e38-4094-92ce-8b03dfa93380&mode=download&layout=Default"
+        },
+        {
+          "id": "art-kb48-future-cambium2024-release-history-zip",
+          "mediaType": "application/zip",
+          "sha256": "dfee52c63d5f8f6f5c14b01e74e6b12d7867fd74ad90c3ad47e7f1db841568af",
+          "resolvedUrl": "https://scenarioviewer.nlr.gov/?project=5c7bef16-7e38-4094-92ce-8b03dfa93380&mode=download&layout=Default"
+        },
+        {
+          "id": "art-kb48-future-cambium2024-release-mapping-csv",
+          "mediaType": "text/csv",
+          "sha256": "fdb2fd42650e24345e717d102e7f0e035099e8f012e8814d05b96a4b398cff87",
+          "resolvedUrl": "https://scenarioviewer.nlr.gov/?project=5c7bef16-7e38-4094-92ce-8b03dfa93380&mode=download&layout=Default"
+        },
+        {
+          "id": "art-kb48-future-cambium2024-release-mapping-zip",
+          "mediaType": "application/zip",
+          "sha256": "66bb72509c36a245b62a55f38632240b2455870bdebfac391cc99c47e31f080d",
+          "resolvedUrl": "https://scenarioviewer.nlr.gov/?project=5c7bef16-7e38-4094-92ce-8b03dfa93380&mode=download&layout=Default"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb48-future-cambium2024-release-annual-archive",
+          "artifactId": "art-kb48-future-cambium2024-release-annual-zip",
+          "locator": "Scenario Viewer ID69141，ALL / Annual / GEA Regions，ZIP 目录唯一成员 Cambium24_allScenarios_annual_gea.csv",
+          "topics": [
+            "release archive identity"
+          ],
+          "limits": [
+            "下载包的哈希不能替代成员哈希。"
+          ]
+        },
+        {
+          "id": "psg-kb48-future-cambium2024-release-midcase-balance",
+          "artifactId": "art-kb48-future-cambium2024-release-annual-csv",
+          "locator": "Cambium24_allScenarios_annual_gea.csv 物理第4–6行列／单位与第13行 MidCase/ERCOT/2025",
+          "topics": [
+            "generation",
+            "busbar load",
+            "end-use load",
+            "transmission and charging"
+          ],
+          "limits": [
+            "数字源自模拟，残差成因未核实。配电比例需按终端所需母线电量为分母。"
+          ]
+        },
+        {
+          "id": "psg-kb48-future-cambium2024-release-midcase-rates",
+          "artifactId": "art-kb48-future-cambium2024-release-annual-csv",
+          "locator": "Cambium24_allScenarios_annual_gea.csv 物理第4–6行及第13行 MidCase/ERCOT/2025，distloss、aer、srmer、lrmer及total_gen字段",
+          "topics": [
+            "annual estimates",
+            "end-use emission rates",
+            "modeled CO2 direct versus CO2e fuel cycle"
+          ],
+          "limits": [
+            "对应一个模拟年与情景。未确定发行年度率的全部小时加权步骤。不能直接用年度行代替固定用电时段或真实历史终端因子。"
+          ]
+        },
+        {
+          "id": "psg-kb48-future-cambium2024-release-alternate-rate",
+          "artifactId": "art-kb48-future-cambium2024-release-annual-csv",
+          "locator": "Cambium24_allScenarios_annual_gea.csv 物理第4–6行及第661行 LowRECost_HighNGPrice/ERCOT/2025，lrmer_co2e字段",
+          "topics": [
+            "scenario sensitivity",
+            "same delivered quantity"
+          ],
+          "limits": [
+            "这是组合情景对比，不分离单一参数效应。工作簿已显示的气体分项换算没有精确闭合到该行最后一个显示位。"
+          ]
+        },
+        {
+          "id": "psg-kb48-future-cambium2024-release-history-archive",
+          "artifactId": "art-kb48-future-cambium2024-release-history-zip",
+          "locator": "Scenario Viewer ID69180，GEA Historical Intensities，ZIP 目录唯一成员 GEA_historical_emissions_intensities 3-17-25.csv",
+          "topics": [
+            "eGRID reaggregation archive identity"
+          ],
+          "limits": [
+            "这个历史重聚合文件不是未来情景生成数据。"
+          ]
+        },
+        {
+          "id": "psg-kb48-future-cambium2024-release-history-ercot",
+          "artifactId": "art-kb48-future-cambium2024-release-history-csv",
+          "locator": "GEA_historical_emissions_intensities 3-17-25.csv 物理第1–4、132行，ERCOT / 2023",
+          "topics": [
+            "historical in-region generation",
+            "plant aggregation"
+          ],
+          "limits": [
+            "源文件用科学计数法显示质量。从已显示质量与发电量回算约343.9946925，保留差异。没有按该地区终端交付口径换算。"
+          ]
+        },
+        {
+          "id": "psg-kb48-future-cambium2024-release-mapping-archive",
+          "artifactId": "art-kb48-future-cambium2024-release-mapping-zip",
+          "locator": "Scenario Viewer ID69181，GEA Mappings and Shapefiles，ZIP 成员 county_to_gea_mapping_cambium23.csv",
+          "topics": [
+            "county mapping archive identity"
+          ],
+          "limits": [
+            "成员名 cambium23 不自动证明历史版次相等。"
+          ]
+        },
+        {
+          "id": "psg-kb48-future-cambium2024-release-county-map",
+          "artifactId": "art-kb48-future-cambium2024-release-mapping-csv",
+          "locator": "county_to_gea_mapping_cambium23.csv 物理第1行表头与物理行 Harris 730, Dallas 1789, Travis 2773",
+          "topics": [
+            "ERCOT GEA",
+            "county versus electric grid"
+          ],
+          "limits": [
+            "县级代理关系不能单独确定具体电厂或服务的物理接入。AVERT、EIA BA 和 eGRID 映射未由此验证。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "Scenario Viewer ID69141，ALL / Annual / GEA Regions，ZIP 目录唯一成员 Cambium24_allScenarios_annual_gea.csv。Cambium24_allScenarios_annual_gea.csv 物理第4–6行列／单位与第13行 MidCase/ERCOT/2025。Cambium24_allScenarios_annual_gea.csv 物理第4–6行及第13行 MidCase/ERCOT/2025，distloss、aer、srmer、lrmer及total_gen字段。Cambium24_allScenarios_annual_gea.csv 物理第4–6行及第661行 LowRECost_HighNGPrice/ERCOT/2025，lrmer_co2e字段。Scenario Viewer ID69180，GEA Historical Intensities，ZIP 目录唯一成员 GEA_historical_emissions_intensities 3-17-25.csv。GEA_historical_emissions_intensities 3-17-25.csv 物理第1–4、132行，ERCOT / 2023。Scenario Viewer ID69181，GEA Mappings and Shapefiles，ZIP 成员 county_to_gea_mapping_cambium23.csv。county_to_gea_mapping_cambium23.csv 物理第1行表头与物理行 Harris 730, Dallas 1789, Travis 2773",
+        "methodologicalScope": "区域年度实际发行能区分哪些活动和排放分母，哪些历史边界不能直接连接？",
+        "independence": "年度、历史与地图都来自同一项目。历史文件重用 eGRID。",
+        "limitations": [
+          "未做 GEA 与独立电网和原 eGRID 的精确空间成员逐一匹配。",
+          "没有核查每小时到年度统计的内部生成代码。",
+          "原版模型输入及运行未获得。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "rights": "DOE/NREL/Alliance 公开提供数据，发布使用结果须给出归属。工作簿目录的 Data License 要求数据副本保留适用声明，Scenario Viewer 的使用条件另列。原件和完整表留在私有取证目录。仅提议选定事实、出处与原创说明。",
+      "unread": [
+        "未做 GEA 与独立电网和原 eGRID 的精确空间成员逐一匹配。",
+        "没有核查每小时到年度统计的内部生成代码。",
+        "原版模型输入及运行未获得。"
+      ],
+      "sourceKeys": [
+        "src-kb48-future-cambium2024-release"
+      ]
+    },
+    {
+      "id": "rd-kb48-future-cambium2024-workbook",
+      "workId": "work-kb48-future-cambium2024-workbook",
+      "title": "Workbooks for Cambium 2024 Data",
+      "version": "文件内部标 Released March 2025。目录 v1 2025-04-10。目录 Last Updated 2026-03-12。",
+      "url": "https://data.nlr.gov/submissions/289",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "工作簿如何用源气体数据、年度输出与时间权重生成终端 LRMER？",
+      "argumentSummary": "直接与燃烧前逐气体系数用于求 CO₂e。跨年与日内输出的时间组织不同。",
+      "artifacts": [
+        {
+          "id": "art-kb48-future-cambium2024-workbook-xlsx",
+          "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "sha256": "80e930a78640d423ace34517eb8101a07a38b9a5c1d899e3ed33f0f63f9a63eb",
+          "resolvedUrl": "https://data.nlr.gov/system/files/289/1744314776-Cambium24_Workbook.xlsx"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb48-future-cambium2024-workbook-levelization",
+          "artifactId": "art-kb48-future-cambium2024-workbook-xlsx",
+          "locator": "Description and Guidance!B2:B36，Levelized LRMER!D7:D14,Y24:AF25，Data - Annual!B7:N7",
+          "topics": [
+            "year over year levelization",
+            "cached formula and input"
+          ],
+          "limits": [
+            "跨年汇总与给定用户的小时负荷加权不同。只读取公式和缓存并独立核算选式，未重新运行电子表格或容量调度模型。"
+          ]
+        },
+        {
+          "id": "psg-kb48-future-cambium2024-workbook-ercot-gases",
+          "artifactId": "art-kb48-future-cambium2024-workbook-xlsx",
+          "locator": "Data - Annual!B7、P7、BL7、DH7、FD7、GZ7、IV7与各列第3–5行，GWP!B7:E7",
+          "topics": [
+            "per-gas fuel-cycle factors",
+            "AR6 GWP100",
+            "end-use MWh"
+          ],
+          "limits": [
+            "这是已发行模型指标的显示精度核算。仅包括燃烧与燃烧前范围，不能称全生命周期。替代情景逐气体已显示值回算与 CSV 最后一位有差。"
+          ]
+        },
+        {
+          "id": "psg-kb48-future-cambium2024-workbook-ercot-time-of-day",
+          "artifactId": "art-kb48-future-cambium2024-workbook-xlsx",
+          "locator": "Data - Time-of-day!B30、C44、C50、Q3:Q5、Q44、Q50，Timezones!A3:B3，Description and Guidance!B39",
+          "topics": [
+            "time-of-day averages",
+            "CT standard time",
+            "temporal matching"
+          ],
+          "limits": [
+            "日内钟点跨日的聚合估计，不能冒充某天的真实负荷响应。两项为直接CO₂，不是混合CO₂e。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "Description and Guidance!B2:B36，Levelized LRMER!D7:D14,Y24:AF25，Data - Annual!B7:N7。Data - Annual!B7、P7、BL7、DH7、FD7、GZ7、IV7与各列第3–5行，GWP!B7:E7。Data - Time-of-day!B30、C44、C50、Q3:Q5、Q44、Q50，Timezones!A3:B3，Description and Guidance!B39",
+        "methodologicalScope": "工作簿如何用源气体数据、年度输出与时间权重生成终端 LRMER？",
+        "independence": "此工作簿是 Cambium 2024 的二次载体，同一数据生产谱系。显示数值复核不是另一个容量模型。",
+        "limitations": [
+          "未执行 Office 原生重新计算。",
+          "未检查全部时段、成本项与外部源数据。",
+          "无法由工作簿推断 2025 情景是当前实测。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "rights": "DOE/NREL/Alliance 公开提供数据，发布使用结果须给出归属。工作簿目录的 Data License 要求数据副本保留适用声明，Scenario Viewer 的使用条件另列。原件和完整表留在私有取证目录。仅提议选定事实、出处与原创说明。",
+      "unread": [
+        "未执行 Office 原生重新计算。",
+        "未检查全部时段、成本项与外部源数据。",
+        "无法由工作簿推断 2025 情景是当前实测。"
+      ],
+      "sourceKeys": [
+        "src-kb48-future-cambium2024-workbook"
+      ]
+    },
+    {
+      "id": "rd-kb48-future-borenstein-bushnell2018",
+      "workId": "work-kb48-future-borenstein-bushnell2018",
+      "title": "Do Two Electricity Pricing Wrongs Make a Right? Cost Recovery, Externalities, and Efficiency",
+      "version": "WP24756，封面 June 2018, revised September 2018。",
+      "url": "https://www.nber.org/system/files/working_papers/w24756/w24756.pdf",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "被援引的平方损耗分配方法怎样从年度量得到小时变化？",
+      "argumentSummary": "使用公用事业年度估计、居民负荷时形代理及逐小时平方和分配。",
+      "artifacts": [
+        {
+          "id": "art-kb48-future-borenstein-bushnell2018-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "9ad1a25f0c9d15d4e8210ee6c4f67f44f625069df7cf34c83e5f913aed04ca6d",
+          "resolvedUrl": "https://www.nber.org/system/files/working_papers/w24756/w24756.pdf",
+          "pageCount": 61
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb48-future-borenstein-bushnell2018-loss-normalizer",
+          "artifactId": "art-kb48-future-borenstein-bushnell2018-pdf",
+          "locator": "印刷第52–54页（物理53–55），式(10)–(12)及图21",
+          "topics": [
+            "distribution quadratic losses",
+            "sum of hourly squares",
+            "marginal losses"
+          ],
+          "limits": [
+            "仅按原式右边校核归一分母，不把居民配电估计移到个案。不确立 Cambium 实际代码。"
+          ],
+          "pdfIndices": [
+            52,
+            53,
+            54
+          ],
+          "printedPages": "52–54"
+        }
+      ],
+      "appraisal": {
+        "basis": "印刷第52–54页（物理53–55），式(10)–(12)及图21",
+        "methodologicalScope": "被援引的平方损耗分配方法怎样从年度量得到小时变化？",
+        "independence": "相对 Cambium 是上游作者和方法，不是本版软件实现的独立实测。",
+        "limitations": [
+          "所引 2019 WP294R 精确历史载体未取得。",
+          "未读完全文或复制作者数据。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "rights": "NBER工作论文可公开阅读，封面保留作者版权。只提议原创释义与公式定位。",
+      "unread": [
+        "所引 2019 WP294R 精确历史载体未取得。",
+        "未读完全文或复制作者数据。"
+      ],
+      "sourceKeys": [
+        "src-kb48-future-borenstein-bushnell2018"
+      ]
+    },
+    {
+      "id": "rd-kb48-future-gagnon-cole2022",
+      "workId": "work-kb48-future-gagnon-cole2022",
+      "title": "Planning for the evolution of the electric grid with a long-run marginal emission rate",
+      "version": "iScience 25(3),103915。实验室公开论文载体。",
+      "url": "https://www.nlr.gov/docs/fy22osti/80472.pdf",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "怎样将终端用电时形与小时估计量相接，原研究怎样检查代表性？",
+      "argumentSummary": "按照干预时间形状加权。对照同模型中单独施加的干预，其效果受规划与情景假设限制。",
+      "artifacts": [
+        {
+          "id": "art-kb48-future-gagnon-cole2022-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "62d90bcc826dc9cdb5a361d7a8e4fea8132f278c3e6fc045c9973a6e1c2fe09a",
+          "resolvedUrl": "https://www.nlr.gov/docs/fy22osti/80472.pdf",
+          "pageCount": 18
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb48-future-gagnon-cole2022-intervention-weights",
+          "artifactId": "art-kb48-future-gagnon-cole2022-pdf",
+          "locator": "印刷第8–9页的限制与第15页式(5)，物理第9–10、16页",
+          "topics": [
+            "hourly load weighting",
+            "evaluation design",
+            "limited causal scope"
+          ],
+          "limits": [
+            "同模型比较不是现实干预测量。不是 Cambium 2024 年度表的内部聚合公式。"
+          ],
+          "pdfIndices": [
+            8,
+            9,
+            15
+          ],
+          "printedPages": "8–9、15"
+        }
+      ],
+      "appraisal": {
+        "basis": "印刷第8–9页的限制与第15页式(5)，物理第9–10、16页",
+        "methodologicalScope": "怎样将终端用电时形与小时估计量相接，原研究怎样检查代表性？",
+        "independence": "共同作者和 ReEDS 模型谱系，对 Cambium 2024 不构成独立验证。",
+        "limitations": [
+          "未复跑研究 ReEDS2020。",
+          "未读所有干预原始输入与结果代码。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "rights": "公开来源。版权与再分发条件依原作者及发行机构。只提议原创释义、元数据与来源定位，不公开原件。",
+      "unread": [
+        "未复跑研究 ReEDS2020。",
+        "未读所有干预原始输入与结果代码。"
+      ],
+      "sourceKeys": [
+        "src-kb48-future-gagnon-cole2022"
+      ]
+    },
+    {
+      "id": "rd-kb48-future-koebrich2023",
+      "workId": "work-kb48-future-koebrich2023",
+      "title": "Towards Objective Evaluation of the Accuracy of Marginal Emissions Factors",
+      "version": "2023 作者预印本，前置 highlights 页，文内第1页是物理第2页。非2025年增作者正式版。",
+      "url": "https://veraci-t.org/wp-content/uploads/2023/08/VERACI-T-paper-marginalemissionsfactorsaccuracy-WattTime-202308.pdf",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "用历史运行数据检验边际估计时，哪些条件限制判读？",
+      "argumentSummary": "以观测代理量检验多模型时段值和顺序。不同输入年份与作用范围改变所能判断的问题。",
+      "artifacts": [
+        {
+          "id": "art-kb48-future-koebrich2023-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "5cdd757723c0cc41d91375ba671f53166cd2afd7ae3a854c3b4ac388dd51eec2",
+          "resolvedUrl": "https://veraci-t.org/wp-content/uploads/2023/08/VERACI-T-paper-marginalemissionsfactorsaccuracy-WattTime-202308.pdf",
+          "pageCount": 24
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb48-future-koebrich2023-empirical-proxy",
+          "artifactId": "art-kb48-future-koebrich2023-pdf",
+          "locator": "印刷第5–6、12–14页（物理6–7、13–15），表1、3、4及§6.1.2和§6.2",
+          "topics": [
+            "external proxy check",
+            "2021 release",
+            "simulated weather mismatch"
+          ],
+          "limits": [
+            "发布版本、比较目的和时段均不同于 2024 长期有限扰动。WattTime 自身产品也列为比较对象。"
+          ],
+          "pdfIndices": [
+            5,
+            6,
+            12,
+            13,
+            14
+          ],
+          "printedPages": "5–6、12–14"
+        }
+      ],
+      "appraisal": {
+        "basis": "印刷第5–6、12–14页（物理6–7、13–15），表1、3、4及§6.1.2和§6.2",
+        "methodologicalScope": "用历史运行数据检验边际估计时，哪些条件限制判读？",
+        "independence": "不同于 NREL 团队。作者所在机构也是被比较服务提供者。",
+        "limitations": [
+          "2025正式版在普通发布者路由返回403，预印本结果不能转记成该版。",
+          "没有长期容量响应的直接观测。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "rights": "公开来源。版权与再分发条件依原作者及发行机构。只提议原创释义、元数据与来源定位，不公开原件。",
+      "unread": [
+        "2025正式版在普通发布者路由返回403，预印本结果不能转记成该版。",
+        "没有长期容量响应的直接观测。"
+      ],
+      "sourceKeys": [
+        "src-kb48-future-koebrich2023"
+      ]
+    },
+    {
+      "id": "rd-kb48-future-vandepaer2019",
+      "workId": "work-kb48-future-vandepaer2019",
+      "title": "The integration of long-term marginal electricity supply mixes in the ecoinvent consequential database version 3.4 and examination of modeling choices",
+      "version": "2018-12-11 在线，2019-08 卷24，1409–1428。原刊、电子补充 DOCX 与 7z。",
+      "url": "https://link.springer.com/article/10.1007/s11367-018-1571-4",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "情景趋势归一怎样得到长期供电份额，环境结果怎样依赖版本化背景链接？",
+      "argumentSummary": "通过选定年份内增长份额构造市场组合，并替换数据库背景中的供电市场。可见技术代理、区域分辨率、模型与影响算法均参与结果。",
+      "artifacts": [
+        {
+          "id": "art-kb48-future-vandepaer2019-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "8ba78b77e7f62d743b1582d27ecf166d897ab6119cccf24133a21a1bc29ca1b2",
+          "resolvedUrl": "https://link.springer.com/content/pdf/10.1007/s11367-018-1571-4.pdf",
+          "pageCount": 20
+        },
+        {
+          "id": "art-kb48-future-vandepaer2019-esm1",
+          "mediaType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "sha256": "b2990a7aeee9807c1f309da19e931211216be73233cecef08263f4d7ef771393",
+          "resolvedUrl": "https://static-content.springer.com/esm/art%3A10.1007%2Fs11367-018-1571-4/MediaObjects/11367_2018_1571_MOESM1_ESM.docx"
+        },
+        {
+          "id": "art-kb48-future-vandepaer2019-esm4",
+          "mediaType": "application/x-7z-compressed",
+          "sha256": "e8172e8ef4b0f7989bc35d80e119f5148d3495842b7d92e904884c9642f227bb",
+          "resolvedUrl": "https://static-content.springer.com/esm/art%3A10.1007%2Fs11367-018-1571-4/MediaObjects/11367_2018_1571_MOESM4_ESM.7z"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb48-future-vandepaer2019-positive-growth",
+          "artifactId": "art-kb48-future-vandepaer2019-pdf",
+          "locator": "原刊1411–1415页（物理3–7），§2.1，式(1)、表1、§2.1.2–2.1.3",
+          "topics": [
+            "trend-based marginal supply",
+            "constrained production",
+            "region proxies"
+          ],
+          "limits": [
+            "该选法不同于保持同年其他输入、对需求做显式扰动。收缩市场可能延迟退出而非支持新增，不能无条件套用。"
+          ],
+          "pdfIndices": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "printedPages": "1411–1415"
+        },
+        {
+          "id": "psg-kb48-future-vandepaer2019-background-sensitivity",
+          "artifactId": "art-kb48-future-vandepaer2019-pdf",
+          "locator": "原刊1415–1416、1419–1421、1424–1425页（物理7–8、11–13、16–17），§2.2、图4–6与讨论",
+          "topics": [
+            "background replacement",
+            "scenario and period sensitivity",
+            "life cycle assessment"
+          ],
+          "limits": [
+            "技术与区域代理、未评估的跨区供电变化及模型实现影响结论。"
+          ],
+          "pdfIndices": [
+            6,
+            7,
+            10,
+            11,
+            12,
+            15,
+            16
+          ],
+          "printedPages": "1415–1416、1419–1421、1424–1425"
+        },
+        {
+          "id": "psg-kb48-future-vandepaer2019-esm1-known-issues",
+          "artifactId": "art-kb48-future-vandepaer2019-esm1",
+          "locator": "Springer ESM1 DOCX，SI.5 List of known issues ecoinvent consequential version 3.4",
+          "topics": [
+            "integration errors",
+            "voltage link issues",
+            "version-specific correction"
+          ],
+          "limits": [
+            "不以平均差替代单个国家或指标的影响上界。未验证实际 v3.5 原版数据。"
+          ]
+        },
+        {
+          "id": "psg-kb48-future-vandepaer2019-esm4-notebooks",
+          "artifactId": "art-kb48-future-vandepaer2019-esm4",
+          "locator": "Springer ESM4 原压缩包，SI. Notebooks/Replacing supply mixes in ecoinvent 3.4.ipynb 零基0、4–6、12–22、54–55；Impact assessment of the marginal mixes.ipynb 零基0、4–5、10–21",
+          "topics": [
+            "native workflow inputs",
+            "Brightway2",
+            "Wurst"
+          ],
+          "limits": [
+            "已读源码与元数据，不代表成功执行。源笔记本没有完整版本锁，未取得授权的原始数据库。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "原刊1411–1415页（物理3–7），§2.1，式(1)、表1、§2.1.2–2.1.3。原刊1415–1416、1419–1421、1424–1425页（物理7–8、11–13、16–17），§2.2、图4–6与讨论。Springer ESM1 DOCX，SI.5 List of known issues ecoinvent consequential version 3.4。Springer ESM4 原压缩包，SI. Notebooks/Replacing supply mixes in ecoinvent 3.4.ipynb 零基0、4–6、12–22、54–55；Impact assessment of the marginal mixes.ipynb 零基0、4–5、10–21",
+        "methodologicalScope": "情景趋势归一怎样得到长期供电份额，环境结果怎样依赖版本化背景链接？",
+        "independence": "与 Cambium 不是同一模型，方法对应的估计对象与清单边界不同。原文与附件属同一项目。",
+        "limitations": [
+          "未核全各国上游能源预测原件。",
+          "未运行原背景清单或附带笔记本。",
+          "补充材料对 v3.5 的陈述未用 v3.5 实际原数据独立验证。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "rights": "原刊标明 CC BY 4.0。该许可不传递给独立授权的数据库。第三方原文件和模型不转传。",
+      "unread": [
+        "未核全各国上游能源预测原件。",
+        "未运行原背景清单或附带笔记本。",
+        "补充材料对 v3.5 的陈述未用 v3.5 实际原数据独立验证。"
+      ],
+      "sourceKeys": [
+        "src-kb48-future-vandepaer2019"
+      ]
+    },
+    {
+      "id": "rd-kb48-siler2012",
+      "workId": "work-kb48-siler2012",
+      "title": "Marginal Emissions Factors for the U.S. Electricity System",
+      "version": "Environ. Sci. Technol. 46(9):4742–4748，2012-04-16 在线；实际核读同 DOI A–G 排版校样和研究者机构发布的配套 XLSX，不声称正式出版 PDF 字节相同。",
+      "url": "https://doi.org/10.1021/es300145v",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "以相邻小时总化石发电变化解释同一区域排放变化，识别了什么？",
+      "argumentSummary": "以 CEMS 历史变动估计发电侧边际排放，排除区际进出口与未覆盖机组；独立列示 eGRID 年平均值与不同统计意义的斜率。",
+      "artifacts": [
+        {
+          "id": "art-kb48-siler2012-proof",
+          "mediaType": "application/pdf",
+          "sha256": "d29b26875d750992e37e737035154638a1bedf414986ab69deca4b7c158958bb",
+          "resolvedUrl": "https://watttime.org/wp-content/uploads/2023/11/Marginal-Emissions-Factors-for-the-US-Electricity-System_April-2012.pdf",
+          "pageCount": 7
+        },
+        {
+          "id": "art-kb48-siler2012-cmu",
+          "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "sha256": "b03c255664615fb59dad1010678dec9060f890928fd02ab6fba3b0f2eb7e05e8",
+          "resolvedUrl": "https://www.cmu.edu/cedm/tools-for-cedm/files/marginal_emissions_factors-3.xlsx"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb48-siler2012-first-difference",
+          "artifactId": "art-kb48-siler2012-proof",
+          "locator": "校样物理第 2 页，印刷 B；Data、Average MEFs 的相邻小时差分公式与 Fig.1 后文字。",
+          "topics": [
+            "CEMS",
+            "gross generation",
+            "within-region",
+            "linear regression"
+          ],
+          "limits": [
+            "研究假设不等于外生干预或全系统实测。"
+          ],
+          "pdfIndices": [
+            1
+          ],
+          "printedPages": "B"
+        },
+        {
+          "id": "psg-kb48-siler2012-load-and-uncertainty",
+          "artifactId": "art-kb48-siler2012-proof",
+          "locator": "校样物理第 2–3 页，印刷 B–C；Trends in MEFs、Fig.2、Results 第 2 栏对区间的讨论。",
+          "topics": [
+            "load proxy",
+            "sampling uncertainty",
+            "model error"
+          ],
+          "limits": [
+            "高拟合度不识别漏掉的供电响应或模型正确性。"
+          ],
+          "pdfIndices": [
+            1,
+            2
+          ],
+          "printedPages": "B–C"
+        },
+        {
+          "id": "psg-kb48-siler2012-texas-2007-average-marginal",
+          "artifactId": "art-kb48-siler2012-proof",
+          "locator": "校样物理第 4–5 页，印刷 D–E；表 2 TRE、表下注 b 和下一页开头比较段。",
+          "topics": [
+            "Texas TRE",
+            "2007",
+            "average and marginal",
+            "relative error"
+          ],
+          "limits": [
+            "两个估计的发电范围与分母不应合并为端用因子；显示数不能复现未舍入结果。"
+          ],
+          "pdfIndices": [
+            3,
+            4
+          ],
+          "printedPages": "D–E"
+        },
+        {
+          "id": "psg-kb48-siler2012-cmu-texas-2007",
+          "artifactId": "art-kb48-siler2012-cmu",
+          "locator": "CMU XLSX Years!AK4:AO7、AK14:AO17；TRE 的 AL7 和 AL17 为字面值，标题、年份、MEF 列、公斤/兆瓦时单位。",
+          "topics": [
+            "workbook",
+            "historical regression outputs",
+            "displayed rounding"
+          ],
+          "limits": [
+            "读取已有结果，不等于运行原回归或获得未舍入 eGRID 平均值。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "固定公开校样，目视检查式、图 1/2 与表 1/2；读取原始 OOXML 的表头、字面值和公式标签。",
+        "methodologicalScope": "2006–2011 八个 NERC 区域，部分时段分组估计；2007 年对照不同来源分母。",
+        "independence": "CMU 表由本研究作者估计，论文、工作簿和同一作者学位论文不是独立复验；CEMS 与 eGRID 是上游。",
+        "limitations": [
+          "不含观测终端服务、跨区响应、设备投资及风光引起的额外循环/备用变化。",
+          "期刊 DOI 直达 PDF 与指定 SI 均返回 403；工作簿不能替代 SI。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "unread": [
+        "期刊最终版、期刊原 SI、CEMS 原始记录、完整回归代码和全部工作表尚未核对。"
+      ],
+      "sourceKeys": [
+        "src-kb48-siler2012"
+      ],
+      "rights": "ACS 保留论文著作权；实际校样由 WattTime 公开提供、CMU 机构网页公开附数据；仅引定位与原创释义，未确认校样和表格的再分发授权。"
+    },
+    {
+      "id": "rd-kb48-silerthesis2012",
+      "workId": "work-kb48-silerthesis2012",
+      "title": "Evaluating Interventions in the U.S. Electricity System: Assessments of Energy Efficiency, Renewable Energy, and Small-Scale Cogeneration",
+      "version": "2012 年 8 月博士学位论文；第 2 章明确基于已刊论文，§2.8 的论文附加论证和图表不可当成期刊附件字节。",
+      "url": "https://www.cmu.edu/ceic/assets/docs/publications/phd-dissertations/2012/kyle-siler-evans-phd-thesis-2012.pdf",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "作者如何评价样本遗漏和边际燃料外部比较？",
+      "argumentSummary": "作者讨论水电蓄水与西得州限发的非化石响应；与 SPP 市场时间占比作非同义的合理性比较。",
+      "artifacts": [
+        {
+          "id": "art-kb48-silerthesis2012-thesis",
+          "mediaType": "application/pdf",
+          "sha256": "c7de4875ba3b154b9641764e5eac67cef87cd4861961694c33f255cbf5f87a22",
+          "resolvedUrl": "https://www.cmu.edu/ceic/assets/docs/publications/phd-dissertations/2012/kyle-siler-evans-phd-thesis-2012.pdf",
+          "pageCount": 150
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb48-silerthesis2012-hydro-and-wind",
+          "artifactId": "art-kb48-silerthesis2012-thesis",
+          "locator": "物理第 36–38 页、印刷 pp.26–28，§2.8.2 Data limitations。",
+          "topics": [
+            "reservoir",
+            "curtailment",
+            "fossil regression limitations"
+          ],
+          "limits": [
+            "所引早期运行细节未在本轮独立完整核对。"
+          ],
+          "pdfIndices": [
+            35,
+            36,
+            37
+          ],
+          "printedPages": "26–28"
+        },
+        {
+          "id": "psg-kb48-silerthesis2012-spp-check",
+          "artifactId": "art-kb48-silerthesis2012-thesis",
+          "locator": "物理第 39–40 页、印刷 pp.29–30，§2.8.3 和 Fig.2.6。",
+          "topics": [
+            "ISO benchmark",
+            "fuel attribution",
+            "generation response"
+          ],
+          "limits": [
+            "不同分母、跨平衡区权重不同，不能当逐机组因果证明。"
+          ],
+          "pdfIndices": [
+            38,
+            39
+          ],
+          "printedPages": "29–30"
+        }
+      ],
+      "appraisal": {
+        "basis": "核对论文封面、章节来源说明与 §2.8 选段；目视表 2.3 与 Fig.2.6。",
+        "methodologicalScope": "作者对本研究历史回归的适用性说明。",
+        "independence": "与对应 ACS 论文同一作者和分析，SPP 数据是不同运营口径的外部材料。",
+        "limitations": [
+          "未把学位论文当 ACS 附件的同载体；没有补齐原调度与 CEMS 数据。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "unread": [
+        "其他章节和 §2.8.5 的全区域图表未核验。"
+      ],
+      "sourceKeys": [
+        "src-kb48-silerthesis2012"
+      ],
+      "rights": "CMU 公开原 PDF；没有确认全文再分发许可，仅用定位与原创释义。"
+    },
+    {
+      "id": "rd-kb48-spp2010",
+      "workId": "work-kb48-spp2010",
+      "title": "2010 State of the Market Report",
+      "version": "2010 数据年，2011 发布的官方 SPP 原 PDF。",
+      "url": "https://www.spp.org/documents/14599/2010-state-of-the-market-report.pdf",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "独立运行报告实际怎样定义市场边际燃料？",
+      "argumentSummary": "运行报告说明价格边际资源及其限制，并按时间统计各燃料；不是同一回归量。",
+      "artifacts": [
+        {
+          "id": "art-kb48-spp2010-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "9bf151584de5eea337eb09b623a73e5486694a510ce3ecea316dd0788ffdf6ee",
+          "resolvedUrl": "https://www.spp.org/documents/14599/2010-state-of-the-market-report.pdf",
+          "pageCount": 105
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb48-spp2010-marginal-price",
+          "artifactId": "art-kb48-spp2010-pdf",
+          "locator": "物理第 53 页、印刷 p.52，Generation on the Margin 与 Fig.II.22。",
+          "topics": [
+            "market price setting",
+            "SPP",
+            "time shares"
+          ],
+          "limits": [
+            "价格边际时长不能换作污染排放斜率或电量份额。"
+          ],
+          "pdfIndices": [
+            52
+          ],
+          "printedPages": "52"
+        }
+      ],
+      "appraisal": {
+        "basis": "目视原报告第 52 页 Fig.II.22 与上下文。",
+        "methodologicalScope": "2010 SPP EIS 市场运营记录。",
+        "independence": "运营机构资料独立于 CMU 回归分析，但本比较并非独立测得 CO₂ 变化。",
+        "limitations": [
+          "仅选择 2010 报告，未重建论文跨 2007–2010 的整体匹配。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "unread": [
+        "未通读其他章和跨年报告。"
+      ],
+      "sourceKeys": [
+        "src-kb48-spp2010"
+      ],
+      "rights": "SPP 公布原 PDF；未确认可重分发。"
+    },
+    {
+      "id": "rd-kb48-graffzivin2014",
+      "workId": "work-kb48-graffzivin2014",
+      "title": "Spatial and temporal heterogeneity of marginal emissions: Implications for electric cars and other electricity-shifting policies",
+      "version": "Journal of Economic Behavior & Organization 107:248–268，2014 刊版排印，Yale 作者页面所供 21 页原 PDF。",
+      "url": "https://doi.org/10.1016/j.jebo.2014.03.010",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "用区域消费解释更大互联区排放时，处理了哪些空间与识别问题？",
+      "argumentSummary": "采用 FERC 小时消费和 CEMS 互联区排放，区别消费的统计响应与当地毛发电斜率，并具体说明外生性假设和遗漏。",
+      "artifacts": [
+        {
+          "id": "art-kb48-graffzivin2014-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "1470e3584a6fd3ce89e11cafb7df5ecaea0878063e6f92fe1b7602aa73440ff6",
+          "resolvedUrl": "https://resources.environment.yale.edu/kotchen/pubs/cars.pdf",
+          "pageCount": 21
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb48-graffzivin2014-consumption-estimand",
+          "artifactId": "art-kb48-graffzivin2014-pdf",
+          "locator": "物理第 4–5、9–10 页，印刷 pp.251–252、256–257，§§2、3.1、4 式(1)–(2)和注 18–21。",
+          "topics": [
+            "FERC load",
+            "CEMS emissions",
+            "fixed effects",
+            "interconnection"
+          ],
+          "limits": [
+            "价格假定与控制项不消除所有共同变化；不识别单个干预发生的反事实。"
+          ],
+          "pdfIndices": [
+            3,
+            4,
+            8,
+            9
+          ],
+          "printedPages": "251–252, 256–257"
+        },
+        {
+          "id": "psg-kb48-graffzivin2014-scope-countercheck",
+          "artifactId": "art-kb48-graffzivin2014-pdf",
+          "locator": "物理第 12–13 页，印刷 pp.259–260，Fig.5 两个面板与 §5 标题前比较段。",
+          "topics": [
+            "comparison",
+            "plant own use",
+            "line losses",
+            "fossil sample"
+          ],
+          "limits": [
+            "历史论文报告的损耗数值不能作为 CASE-POWER 的 2023 地区系数。"
+          ],
+          "pdfIndices": [
+            11,
+            12
+          ],
+          "printedPages": "259–260"
+        }
+      ],
+      "appraisal": {
+        "basis": "读原刊 §§2–4、Figs.4–5 的相关选段；目视核对方程(1)(2)与 §5 上方对照段。",
+        "methodologicalScope": "2007–2009 历史周工作日样本，三大互联区，东部另分六个需求区。",
+        "independence": "分析作者不同但共用 EPA CEMS，加入 FERC Form 714 的消费和 EIA 923 的发电口径。",
+        "limitations": [
+          "既非实际节电实验，也未覆盖所有小化石、非化石或跨互联区响应。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "unread": [
+        "未复现样本、代码、附录估计与全部运输情景。"
+      ],
+      "sourceKeys": [
+        "src-kb48-graffzivin2014"
+      ],
+      "rights": "Elsevier 保留期刊著作权；Yale 作者公开提供阅读载体。只用定位和原创释义。"
+    },
+    {
+      "id": "rd-kb48-avertmanual43",
+      "workId": "work-kb48-avertmanual43",
+      "title": "AVERT User Manual Version 4.3",
+      "version": "AVERT v4.3，April 2024；149 页官方 PDF。桌面 Main Module 与 Web 的交互能力、发行日期和实际输入应分别核查。",
+      "url": "https://www.epa.gov/avert/avert-user-manual",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "AVERT 将终端节电输入换成何种历史响应，损失定义、模型输出和局限在哪里？",
+      "argumentSummary": "模型由历史化石负荷驱动；设置服务变化后在机组负荷档数据中求差。终端与机组分母、相关性与反事实、模型配置与实际再投资需要分别说明。",
+      "artifacts": [
+        {
+          "id": "art-kb48-avertmanual43-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "e697db9b95d55b973bdd94d61c966a6ed1723a1209a57e67cf88714b7088db6b",
+          "resolvedUrl": "https://www.epa.gov/system/files/documents/2024-04/avert-user-manual-v4.3.pdf",
+          "pageCount": 149
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb48-avertmanual43-loss-denominator",
+          "artifactId": "art-kb48-avertmanual43-pdf",
+          "locator": "物理第 24–25 页、印刷 pp.18–19，脚注 32–35、公式和表 2。",
+          "topics": [
+            "T&D losses",
+            "sales denominator",
+            "energy efficiency",
+            "Texas"
+          ],
+          "limits": [
+            "保留原实现，不修订 EPA 算式，不把 2023 沿用值当成新测量。"
+          ],
+          "pdfIndices": [
+            23,
+            24
+          ],
+          "printedPages": "18–19"
+        },
+        {
+          "id": "psg-kb48-avertmanual43-statistical-module",
+          "artifactId": "art-kb48-avertmanual43-pdf",
+          "locator": "物理第 86–89 页、印刷 pp.80–83，Statistical Analysis、Statistical Output、图 49–50。",
+          "topics": [
+            "Monte Carlo",
+            "load bins",
+            "statistical output",
+            "units"
+          ],
+          "limits": [
+            "本轮使用官方预计算 RDF，不运行上游蒙特卡洛。"
+          ],
+          "pdfIndices": [
+            85,
+            86,
+            87,
+            88
+          ],
+          "printedPages": "80–83"
+        },
+        {
+          "id": "psg-kb48-avertmanual43-accuracy-and-nonmonotonic",
+          "artifactId": "art-kb48-avertmanual43-pdf",
+          "locator": "物理第 106 页、印刷 p.100，How can users assess the accuracy… 和 Why do some EGUs show positive increases… 两段。",
+          "topics": [
+            "uncertainty",
+            "non-monotonic unit responses"
+          ],
+          "limits": [
+            "原手册说明可能机制；未识别本次特定机组的真实检修或因果反应。"
+          ],
+          "pdfIndices": [
+            105
+          ],
+          "printedPages": "100"
+        },
+        {
+          "id": "psg-kb48-avertmanual43-rates-and-horizon",
+          "artifactId": "art-kb48-avertmanual43-pdf",
+          "locator": "物理第 107–108 页、印刷 pp.101–102，What kinds of emission rates…、时间范围与 advanced output 的 CO₂ short tons。",
+          "topics": [
+            "average fossil",
+            "marginal fossil",
+            "short-run",
+            "US short ton"
+          ],
+          "limits": [
+            "不等于 eGRID 所有发电的平均值，也不等于每兆瓦时终端服务的比值。"
+          ],
+          "pdfIndices": [
+            106,
+            107
+          ],
+          "printedPages": "101–102"
+        },
+        {
+          "id": "psg-kb48-avertmanual43-balance-and-transmission",
+          "artifactId": "art-kb48-avertmanual43-pdf",
+          "locator": "物理第 109–110 页、印刷 pp.103–104，Why…system fossil generation、Monte Carlo 总量问题、Can AVERT capture transmission constraints… 。",
+          "topics": [
+            "historical modeled generation",
+            "regional isolation",
+            "generation balance"
+          ],
+          "limits": [
+            "不把外部区域或特定节点的响应等同于此模型，不把模型合计与输入不闭合视为真实输配损失。"
+          ],
+          "pdfIndices": [
+            108,
+            109
+          ],
+          "printedPages": "103–104"
+        },
+        {
+          "id": "psg-kb48-avertmanual43-web-limit",
+          "artifactId": "art-kb48-avertmanual43-pdf",
+          "locator": "物理第 116 页、印刷 p.110，Appendix I Web-Based AVERT。",
+          "topics": [
+            "desktop and web",
+            "GUI scope",
+            "custom profiles"
+          ],
+          "limits": [
+            "不能由手册断言当前部署的二进制版本或源提交。"
+          ],
+          "pdfIndices": [
+            115
+          ],
+          "printedPages": "110"
+        }
+      ],
+      "appraisal": {
+        "basis": "选读官方手册表 2、式、数据流程和 Appendix G/I 方法范围；核对图表、物理页和印刷页。",
+        "methodologicalScope": "2023 RDF 可用于近基年短期情景；Web 主模块不再生成 RDF，不纳入机组扩建/退役的内生变化。",
+        "independence": "手册、原 Web、RDF、预发布因子及桌面均为 EPA 方法链，不能当彼此独立的实证验证。",
+        "limitations": [
+          "只估电力部门直接运行排放；非化石、跨区约束、响应不确定性和未来结构效应不能据此推断。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "unread": [
+        "全部手册、Windows Statistical Module 的原生执行、桌面 Excel VBA、原始 CEMS 校准及未来模板未核验。"
+      ],
+      "sourceKeys": [
+        "src-kb48-avertmanual43"
+      ],
+      "rights": "EPA 公开发布原 PDF；原件不随作品重分发，图表可能有各自权利。"
+    },
+    {
+      "id": "rd-kb48-avertweb43",
+      "workId": "work-kb48-avertweb43",
+      "title": "EPA AVERT Web Edition v4.3.0",
+      "version": "v4.3.0 tag 4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5；GitHub 标题 April 2024 Cloud.gov Deployment，公开发布记录 2025-06-03，RDF 基年 2023。",
+      "url": "https://github.com/USEPA/AVERT/releases/tag/v4.3.0",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "web-sections",
+      "question": "原生发布实现实际怎样转换终端用电并产生排放？",
+      "argumentSummary": "原客户端计算负荷变化，核心按 RDF 的负荷档与机组序列插值；原客户端聚合每月输出。配置、数据基年、源码发布、当前主分支与站点部署必须分开。",
+      "artifacts": [
+        {
+          "id": "art-kb48-avertweb43-core",
+          "mediaType": "text/javascript",
+          "sha256": "d6580ce91d0df1b6cc0dbee187aa961e71d41300ff3d4e44e3c9de882acb8691",
+          "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/server/app/calculations.js"
+        },
+        {
+          "id": "art-kb48-avertweb43-server-config",
+          "mediaType": "text/javascript",
+          "sha256": "d8ce138b74e574909b0bec605c329861c8ffceb0df69982ac8882616de86ce82",
+          "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/server/app/config.js"
+        },
+        {
+          "id": "art-kb48-avertweb43-controller",
+          "mediaType": "text/javascript",
+          "sha256": "2da7ea9572a1c1be15895c317022010d561df9181920e692ed755ba620f3eaa3",
+          "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/server/app/controllers.js"
+        },
+        {
+          "id": "art-kb48-avertweb43-server-pkg",
+          "mediaType": "application/json",
+          "sha256": "abe3584d72b03bc5175877b3fb37946960f2386c6db4c05df61e03f7ce2516e4",
+          "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/server/package.json"
+        },
+        {
+          "id": "art-kb48-avertweb43-client-config",
+          "mediaType": "text/plain",
+          "sha256": "f0cfb9ed0b4e503be2d818232d52697352597cca06a97e4dac0ff8c25eab5e68",
+          "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/client/src/config.ts"
+        },
+        {
+          "id": "art-kb48-avertweb43-client-impacts",
+          "mediaType": "text/plain",
+          "sha256": "2c06cfc47da58030ad24103135a227d9b7b4a5c5ab2548a42f34f70e6ae4ca4e",
+          "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/client/src/calculations/impacts.ts"
+        },
+        {
+          "id": "art-kb48-avertweb43-client-agg",
+          "mediaType": "text/plain",
+          "sha256": "41eeda807a5536bf2c5883097aebfda0a95345ddf307a1afde6a2d2d3df8f6bd",
+          "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/client/src/calculations/emissions.ts"
+        },
+        {
+          "id": "art-kb48-avertweb43-client-table",
+          "mediaType": "text/plain",
+          "sha256": "839de15cbcdbad8a50b34a58250c4364cebee9ba7cf490b9c28610468934ee24",
+          "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/client/src/components/PowerEmissionsTable.tsx"
+        },
+        {
+          "id": "art-kb48-avertweb43-rdf",
+          "mediaType": "application/json",
+          "sha256": "5c6aad182b7ae4f7043b05675f859076d758e027d406c730ef023162b6552c85",
+          "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/server/app/data/rdf_TE_2023.json"
+        },
+        {
+          "id": "art-kb48-avertweb43-nei",
+          "mediaType": "application/json",
+          "sha256": "eb7cd9b02bf9e97b6a1f55effd471d8dcd63feb13b1023c8eae63d422cca6d0d",
+          "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/server/app/data/annual-emission-factors.json"
+        },
+        {
+          "id": "art-kb48-avertweb43-license",
+          "mediaType": "text/plain",
+          "sha256": "6d489af6292662d9e36d34ce49423784984a5f6e41d7b58f49b01264df59fa03",
+          "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/LICENSE"
+        },
+        {
+          "id": "art-kb48-avertweb43-client-limits",
+          "mediaType": "application/json",
+          "sha256": "1cfb12be64f3bc35e9830d06e35568cbe4efb04c73383f05cd090b583cbc6bac",
+          "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/client/src/data/region-ev-hourly-limits.json"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb48-avertweb43-release-config",
+          "artifactId": "art-kb48-avertweb43-server-config",
+          "locator": "v4.3.0 server/app/config.js，year 与 regions.TE.rdf，1–68 行。",
+          "topics": [
+            "year",
+            "pin",
+            "region"
+          ],
+          "limits": []
+        },
+        {
+          "id": "psg-kb48-avertweb43-controller-chain",
+          "artifactId": "art-kb48-avertweb43-controller",
+          "locator": "v4.3.0 server/app/controllers.js，45–65 行，emissions.calculate。",
+          "topics": [
+            "RDF",
+            "NEI",
+            "runtime data"
+          ],
+          "limits": []
+        },
+        {
+          "id": "psg-kb48-avertweb43-client-te-parameter",
+          "artifactId": "art-kb48-avertweb43-client-config",
+          "locator": "v4.3.0 client/src/config.ts 214–222、415–424 行，lineLoss.texas 与 regions.TE。",
+          "topics": [
+            "Texas line loss",
+            "coefficient",
+            "actualEmissions"
+          ],
+          "limits": [
+            "不从代码系数推断损耗实际观测或修复手册脚注分母。"
+          ]
+        },
+        {
+          "id": "psg-kb48-avertweb43-client-loss-and-limits",
+          "artifactId": "art-kb48-avertweb43-client-impacts",
+          "locator": "v4.3.0 client/src/calculations/impacts.ts，561–656、665–751 行，calculateHourlyImpacts 与 calculateHourlyChangesValidation。",
+          "topics": [
+            "end-use adjustment",
+            "utility generation",
+            "hourly limits"
+          ],
+          "limits": [
+            "预处理输出是模型输入，不能在解释时当成模型实际发电差。"
+          ]
+        },
+        {
+          "id": "psg-kb48-avertweb43-core-interpolation",
+          "artifactId": "art-kb48-avertweb43-core",
+          "locator": "v4.3.0 server/app/calculations.js，92–117、129–143、176–241、248–310、348–365 行。",
+          "topics": [
+            "interpolation",
+            "EGU",
+            "NEI",
+            "monthly output"
+          ],
+          "limits": [
+            "等于最右档边时下一格可能不存在，本轮所有入选小时均没有触发。TE 所用 NEI 机组和年份键均匹配。"
+          ]
+        },
+        {
+          "id": "psg-kb48-avertweb43-aggregate-original-post",
+          "artifactId": "art-kb48-avertweb43-client-agg",
+          "locator": "v4.3.0 client/src/calculations/emissions.ts，407–473 行，calculateAggregatedEmissionsData。",
+          "topics": [
+            "aggregation",
+            "monthly",
+            "regional"
+          ],
+          "limits": []
+        },
+        {
+          "id": "psg-kb48-avertweb43-display-replacement-and-ratio",
+          "artifactId": "art-kb48-avertweb43-client-table",
+          "locator": "v4.3.0 client/src/components/PowerEmissionsTable.tsx，16–26、54–85、108–134、348–364、494–509 行。",
+          "topics": [
+            "replacement",
+            "rounding",
+            "rate denominator"
+          ],
+          "limits": [
+            "TE 输入全部无特殊旗标，替换未触发。"
+          ]
+        },
+        {
+          "id": "psg-kb48-avertweb43-rdf-texas-hours",
+          "artifactId": "art-kb48-avertweb43-rdf",
+          "locator": "v4.3.0 rdf_TE_2023.json 的 region、run、regional_load[4347]、regional_load[4360]、data.generation。",
+          "topics": [
+            "fossil load",
+            "source clock",
+            "Texas region"
+          ],
+          "limits": [
+            "这两个小时是原基线中的模型参考，不是本轮另行观测的终端需求。"
+          ]
+        },
+        {
+          "id": "psg-kb48-avertweb43-nei-input",
+          "artifactId": "art-kb48-avertweb43-nei",
+          "locator": "v4.3.0 annual-emission-factors.json 的 regions 中 Texas egus，ORISPL/unit 与 annual_data.year 连接。",
+          "topics": [
+            "NEI",
+            "heat-based proxy",
+            "yearly join"
+          ],
+          "limits": [
+            "与原读取的 347 个 TE RDF 热输入机组键及 2023 年核对，全部匹配。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "固定官方 Git tag 文件，并以 Git tree 哈希逐件验证；读取源函数和实际 RDF/NEI 键/值；离线执行选定原生函数且由独立插值审查确认。",
+        "methodologicalScope": "原 Node20 下的离线原核心与原客户端数值函数，选择 TE、2023、指定假设负荷；不含 Web UI 全流程和原 Statistical Module。",
+        "independence": "代码、RDF、NEI 与 EPA 手册是同一模型证据链。独立插值和核对仅验证解释/执行，非独立真实调度测量。",
+        "limitations": [
+          "原模型只包含指定历史化石机组和模型假设。TE 不能等同 eGRID ERCT 或所有 Texas 发电。",
+          "公共生产 RDF 的数据对象与 tag 匹配，不建立当前部署服务器二进制精确同一。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "unread": [
+        "未运行桌面 XLSB、完整浏览器 app、Monte Carlo 上游统计模块、公开服务的情景 POST 或重新估计原始机组数据。"
+      ],
+      "sourceKeys": [
+        "src-kb48-avertweb43"
+      ],
+      "rights": "官方标记代码仓库 LICENSE 为 CC0-1.0；对手册、第三方库、底层数据和图表各按自己的来源规则，仅用定位、审核所需最少事实及原创说明。"
+    },
+    {
+      "id": "rd-kb48-avertrates43",
+      "workId": "work-kb48-avertrates43",
+      "title": "AVERT v4.3 Avoided Emission Rates 2017–2023",
+      "version": "April 2024 XLSX，2023 表 A2 说明因子计算日期。",
+      "url": "https://www.epa.gov/avert/avoided-emission-rates-generated-avert",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "发布的 Uniform EE Texas 因子是什么分母、能否再调损失？",
+      "argumentSummary": "因子由 EPA 对规定项目轮廓预先运行 AVERT 得到；均匀节电的零售端因子已调损失，不能再调。",
+      "artifacts": [
+        {
+          "id": "art-kb48-avertrates43-xlsx",
+          "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "sha256": "79a6039a5a2f69e75ffbd8281aac1f9d2dfc538663ce48021a39f6d2295f385e",
+          "resolvedUrl": "https://www.epa.gov/system/files/documents/2024-04/avert_emission_rates_04-11-24_0.xlsx"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb48-avertrates43-texas-uniform-retail",
+          "artifactId": "art-kb48-avertrates43-xlsx",
+          "locator": "原 XLSX README!A8、A11；2023!A17:I18 和 A32:I32，I32 为 Texas Uniform EE CO₂ 字面值。",
+          "topics": [
+            "retail denominator",
+            "T&D already included",
+            "Texas",
+            "0.5%"
+          ],
+          "limits": [
+            "不再叠乘线损。V32 的单独便利公式有原始 #REF!，不影响本证据直接使用 I32；不声称全工作簿无错误。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "核对原 OOXML 的 README、列题、行题、字面值与另一便捷查询列缓存。",
+        "methodologicalScope": "2017–2023 工作簿中的 2023 TE、Uniform EE CO₂ 选点。",
+        "independence": "同 AVERT 谱系；官方表的近似比较不是独立模型或相同参数的结果复验。",
+        "limitations": [
+          "发布轮廓采用 0.5% 置换；与本书 1 MWh/h 的自设轮廓不同。未核准全部表。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "unread": [
+        "其他排放、年份和所有公式未检查；便捷查找区不用于提数。"
+      ],
+      "sourceKeys": [
+        "src-kb48-avertrates43"
+      ],
+      "rights": "EPA 公开提供数据文件，引用最少事实，不复制整表及附件。"
+    },
+    {
+      "id": "rd-kb48-arvesen2015-grid",
+      "workId": "work-kb48-arvesen2015-grid",
+      "title": "Life cycle assessment of transport of electricity via different voltage levels: A case study for Nord-Trøndelag county in Norway",
+      "version": "Applied Energy 157:144–151（2015）的 NVA 作者未编辑稿，原载体 20 页。另有出版商单独发行的 Supporting Information。",
+      "url": "https://nva.sikt.no/registration/0198cc7eaf48-e8c79d7c-f25d-4b3f-a8f6-39ffd46ddf52",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "一项输配电生命周期研究如何把交付节点、损耗和设施接成可核查的清单？",
+      "argumentSummary": "作者以三段各自交付电量作分母，按电源与用户连接的段落相加示例。设施生产、安装、运维、报废和泄漏与损耗补电都在输配电范围内。补充材料给出地方与区域的每交付 MWh 损耗行。",
+      "artifacts": [
+        {
+          "id": "art-kb48-arvesen-aam",
+          "mediaType": "application/pdf",
+          "sha256": "0f86b61f7954b3875e8dea5eed3648a79d435ec082d3d7c0444dbcdf57249f41",
+          "resolvedUrl": "https://api.nva.unit.no/publication/0198cc7eaf48-e8c79d7c-f25d-4b3f-a8f6-39ffd46ddf52/filelink/1bec6bdb-09dd-4f63-9aa2-c4f0c862b7db",
+          "pageCount": 20
+        },
+        {
+          "id": "art-kb48-arvesen-si",
+          "mediaType": "application/msword",
+          "sha256": "85459f60b22f6378d90c070f341c83b10959d8b5026eacd6541395255ba74e39",
+          "resolvedUrl": "https://ars.els-cdn.com/content/image/1-s2.0-S0306261915009381-mmc1.doc"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb48-arvesen-boundary",
+          "artifactId": "art-kb48-arvesen-aam",
+          "locator": "作者稿 §§2、3.1–3.2、表1–2 与脚注，pp4–6",
+          "printedPages": "4–6",
+          "topics": [
+            "voltage and denominators"
+          ],
+          "limits": [
+            "电压数值与设施的网络角色都需辨明。",
+            "表2的三个段落具有不同的数据和地理边界。"
+          ],
+          "pdfIndices": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "id": "psg-kb48-arvesen-feed-loss",
+          "artifactId": "art-kb48-arvesen-aam",
+          "locator": "作者稿 §3.3 的地方网损耗和 §3.4 首段的区域网损耗，pp6、8",
+          "printedPages": "6、8",
+          "topics": [
+            "loss denominator"
+          ],
+          "limits": [
+            "百分比经舍入，不能据此反推原始精确供电量。",
+            "每段的分母都是该段的输入量。"
+          ],
+          "pdfIndices": [
+            5,
+            7
+          ]
+        },
+        {
+          "id": "psg-kb48-arvesen-assets",
+          "artifactId": "art-kb48-arvesen-aam",
+          "locator": "作者稿 §3.2 寿命和截断分配，§§3.3–3.5、表4和脚注，pp6–9",
+          "printedPages": "6–9",
+          "topics": [
+            "assets and inventory choices"
+          ],
+          "limits": [
+            "大部分构件寿命为假定 40 年，恶劣沿海区域连接采用较短寿命。",
+            "SF₆ 泄漏率取假定，不能解释为实测。",
+            "设备计数与代理类型是该地模型配置。"
+          ],
+          "pdfIndices": [
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        {
+          "id": "psg-kb48-arvesen-segment-results",
+          "artifactId": "art-kb48-arvesen-aam",
+          "locator": "作者稿 §4.1、图1与图注，pp9–11",
+          "printedPages": "9–11",
+          "topics": [
+            "grid path totals"
+          ],
+          "limits": [
+            "属于输配电，含补损发电而不含供给用户净电量的发电负担。",
+            "作者示例相加不等于各段物理量逐段折算到同一终端的精确能量平衡。",
+            "各段结果和总结果为已舍入模型输出。"
+          ],
+          "pdfIndices": [
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "id": "psg-kb48-arvesen-mix-sensitivity",
+          "artifactId": "art-kb48-arvesen-aam",
+          "locator": "作者稿 §4.1、表5及随后正文，pp11–12",
+          "printedPages": "11–12",
+          "topics": [
+            "loss background sensitivity"
+          ],
+          "limits": [
+            "表5和 p10 标为 43%，p12 同一情景叙述为 44%，不确定差异来源。",
+            "份额是气候影响份额，不能当作物理能量损耗百分比。",
+            "替代组合是敏感性设置，不是观测到的进口构成。"
+          ],
+          "pdfIndices": [
+            10,
+            11
+          ]
+        },
+        {
+          "id": "psg-kb48-arvesen-model-limits",
+          "artifactId": "art-kb48-arvesen-aam",
+          "locator": "作者稿 §4.1末、§4.2、图2图注、§5和致谢，pp13–16",
+          "printedPages": "13–16",
+          "topics": [
+            "snapshot and combined scope"
+          ],
+          "limits": [
+            "并非固定地点和负荷每小时边际损耗。",
+            "前身与本研究共享数据或作者，不能作为独立验证。",
+            "没有以图形比例重建作者完整系统。"
+          ],
+          "pdfIndices": [
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "id": "psg-kb48-arvesen-si-scope",
+          "artifactId": "art-kb48-arvesen-si",
+          "locator": "Supporting Information 封面与 §1、§2开头，S1",
+          "printedPages": "封面、S1",
+          "topics": [
+            "inventory annualization"
+          ],
+          "limits": [
+            "原始载体为 Word，位置依据印刷 S 页；渲染只用于复核。",
+            "国家主网原始库存不在附件内。"
+          ]
+        },
+        {
+          "id": "psg-kb48-arvesen-si-local-loss",
+          "artifactId": "art-kb48-arvesen-si",
+          "locator": "Supporting Information §2 输入表，S5 `Power losses` 行",
+          "printedPages": "S5",
+          "topics": [
+            "delivered electricity loss inventory"
+          ],
+          "limits": [
+            "只用于当地 2011 年有界模型。",
+            "原表数值为两位有效数字。"
+          ]
+        },
+        {
+          "id": "psg-kb48-arvesen-si-regional-loss",
+          "artifactId": "art-kb48-arvesen-si",
+          "locator": "Supporting Information §3 输入表，S14 `Energy losses` 行",
+          "printedPages": "S14",
+          "topics": [
+            "delivered electricity loss inventory"
+          ],
+          "limits": [
+            "只核对所列损耗行，不把相邻开关制造各行单位当作已经解释。",
+            "原表数值为两位有效数字。"
+          ]
+        },
+        {
+          "id": "psg-kb48-arvesen-si-sf6",
+          "artifactId": "art-kb48-arvesen-si",
+          "locator": "Supporting Information §2 直接排放表，S6 `Circuit breakers 22 kV` 行",
+          "printedPages": "S6",
+          "topics": [
+            "equipment SF6 leakage"
+          ],
+          "limits": [
+            "为模型假定流，不是实测泄漏率。",
+            "不能在没有明确表征方法和参考电量时直接解释成每 MWh 的温室影响。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "作者 PDF 扉页、§§2–5 所列选段及原 Word 补充材料选段。",
+        "methodologicalScope": "考察一个有明确地区与参考年的归因输配电模型，不做完整模型复现。",
+        "independence": "NTE Nett 地方和区域资料与 Jorge 等的挪威主输电网资料角色不同。期刊作者稿、其补充材料与共同作者 Hauan 学位研究前身不是独立验证。",
+        "limitations": [
+          "研究采用归因、现状取向的固定系统，未验证设施扩张、边际调度或实际供电改善。",
+          "损耗负担依赖所选发电组合。部分设备、寿命与 SF₆ 泄漏有模型假定。",
+          "作者稿 pp10–11 与 p12 对挪威情景气候损耗份额分别列 43% 和 44%，原因未核实。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "rights": "挪威国家学术档案 NVA 标记 OpenFile 并允许匿名下载，许可标识为 copyright-act/1.0。未核准再分发许可。 补充材料来自出版商，未核准开放再分发。",
+      "unread": [
+        "期刊定稿全文、Jorge 模型的完整修改表及原生后台数据库未核对。",
+        "补充材料其他大部分行未经逐项核对。"
+      ],
+      "sourceKeys": [
+        "src-kb48-arvesen2015-grid",
+        "src-kb48-arvesen2015-grid-si"
+      ]
+    },
+    {
+      "id": "rd-kb48-hauan2014-grid-abstract",
+      "workId": "work-kb48-hauan2014-grid-abstract",
+      "title": "Life Cycle Assessment of Electricity Transmission and Distribution — Hauan thesis abstract",
+      "version": "NTNU Master’s Theses 2014 摘要集（卷首 2015 年），p79，档案号 M-2014-46。",
+      "url": "https://www.ntnu.no/documents/10383/1263289226/Bok_2014.pdf/5096440a-ae93-42d3-ad19-5e71cd06c733",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "期刊研究承接的学位论文在已取得的官方载体中实际报告了什么？",
+      "argumentSummary": "摘要报告使用 2011 条件和 Arda、Ecoinvent、ReCiPe midpoint hierarchist，挪威发电情景三段合计 13.0 kg CO₂e/MWh。",
+      "artifacts": [
+        {
+          "id": "art-kb48-hauan-abstract",
+          "mediaType": "application/pdf",
+          "sha256": "7239a3d2e33460738d75a76df7d68ce7b52b21fa753762727dd14d99e9e8f392",
+          "resolvedUrl": "https://www.ntnu.no/documents/10383/1263289226/Bok_2014.pdf/5096440a-ae93-42d3-ad19-5e71cd06c733",
+          "pageCount": 134
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb48-hauan-precursor",
+          "artifactId": "art-kb48-hauan-abstract",
+          "locator": "NTNU 摘要集 Hauan 条目，印刷 p79、PDF 物理第87页",
+          "printedPages": "79",
+          "topics": [
+            "lineage and earlier result"
+          ],
+          "limits": [
+            "不能从摘要识别差异归因，不能把两个数值平均。"
+          ],
+          "pdfIndices": [
+            86
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "NTNU 摘要集印刷 p79。",
+        "methodologicalScope": "只核对摘要所报告的模型对象与结果。",
+        "independence": "作者 Hauan 与 2015 年文章共享作者和案例资料。期刊作者稿致谢明确说明承接关系，前身不是独立验证。",
+        "limitations": [
+          "完整论文、模型和与 2015 文章的全部修订差异未核验。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "rights": "公开获取范围仅用于选段核对。版权保留，未核准开放再分发许可。只发布原创建议、释义、必要事实和定位。",
+      "unread": [
+        "学位论文全文、图表与原模型未取得。"
+      ],
+      "sourceKeys": [
+        "src-kb48-hauan2014-grid-abstract"
+      ]
+    },
+    {
+      "id": "rd-kb48-treyer-v3-market",
+      "workId": "work-kb48-treyer-v3-market",
+      "title": "Life cycle inventories of electricity generation and power supply in version 3 of the ecoinvent database—part II: electricity markets",
+      "version": "Int J Life Cycle Assess 21:1255–1268（2016）期刊出版定稿，2014-01-28 首次在线。",
+      "url": "https://link.springer.com/content/pdf/10.1007/s11367-013-0694-x.pdf",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "数据库怎样将同样称为电力的高、中、低压市场和不同过程连接？",
+      "argumentSummary": "生产混合不含贸易和本版定义的输电设施，市场链接本地供应、进口、设施、排放与损失。损耗按各地区总量与瑞士段落比例结合分配，所供电力还取决于归因或后果连接规则。",
+      "artifacts": [
+        {
+          "id": "art-kb48-treyer-v3",
+          "mediaType": "application/pdf",
+          "sha256": "f152d6bbdbdc473c2c309f9c8c5fcdcc5e5db54b0e445b435d0fcb95c3a4f2ec",
+          "resolvedUrl": "https://link.springer.com/content/pdf/10.1007/s11367-013-0694-x.pdf",
+          "pageCount": 14
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb48-treyer-voltage-market",
+          "artifactId": "art-kb48-treyer-v3",
+          "locator": "§§2.2–2.2.2，图1及 `Electricity transformation and transmission losses and emissions`，pp1258–1260",
+          "printedPages": "1258–1260",
+          "topics": [
+            "voltage-level market representation"
+          ],
+          "limits": [
+            "挪威本地网络的层级职责和数据库电压分档是不同的定义。",
+            "不能从文章推断当前 ecoinvent 版本的链接或某用户实际供电。"
+          ],
+          "pdfIndices": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "id": "psg-kb48-treyer-loss-proxy",
+          "artifactId": "art-kb48-treyer-v3",
+          "locator": "§3.1 及表3含脚注，§3.2 首段，pp1261–1262",
+          "printedPages": "1261–1262",
+          "topics": [
+            "loss allocation proxy"
+          ],
+          "limits": [
+            "并非为每个国家观测得分段损失，也不能作为当前全地区默认值。",
+            "只核对主文示例和定义，不完整转述 ESM 地理表。"
+          ],
+          "pdfIndices": [
+            6,
+            7
+          ]
+        },
+        {
+          "id": "psg-kb48-treyer-longterm-scope",
+          "artifactId": "art-kb48-treyer-v3",
+          "locator": "§§2.3.1–2.3.2 及表2脚注，pp1260–1262",
+          "printedPages": "1260–1262",
+          "topics": [
+            "long-run system choice"
+          ],
+          "limits": [
+            "技术、进口可用性与区域适用性为版本限定的选择。",
+            "不是 AVERT 固定机组运行响应，也不替代具名未来电力情景。"
+          ],
+          "pdfIndices": [
+            5,
+            6,
+            7
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "原始出版 PDF 扉页及 §§2.2–2.3、3.1–3.2、图1和表3。",
+        "methodologicalScope": "说明一代数据库的方法结构与局限，未运行数据集。",
+        "independence": "数据库作者对自身 v3 清单的原始方法说明，损耗依据 Itten 等，不能把介绍、损耗数据与其他相关文献算作独立实证。",
+        "limitations": [
+          "瑞士阶段分配比例被当作跨区域代理。",
+          "ecoinvent v3 文档不代表后来发行版的现行行为。",
+          "出版者 PDF 实际取得。作品入口为订阅预览，获取授权情境待确认。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "rights": "直接普通 HTTPS 请求取得实际原刊 PDF，完成选段核对。出版者作品页另标示订阅预览，全文授权情境与再分发许可未确证。只登记原作身份、选段定位和原创释义。",
+      "unread": [
+        "另附 ESM 全地理表、Itten 底层数据及数据库原生运行未核验。"
+      ],
+      "sourceKeys": [
+        "src-kb48-treyer-v3-market"
+      ]
     }
   ],
   "gaps": [
@@ -16220,6 +18603,140 @@
         "A07"
       ],
       "nextAction": "若需复现汇总，定位其正式求解器版本与生成输入、设置、参数及预计算记录。作为表格例子时保留发布数字和口径差异。"
+    },
+    {
+      "id": "gap-kb48-main-ggl-disagreement",
+      "description": "2023 同名 EPA 网损表在 FAQ 与原技术指南、修订2 XLSX 间有 ERCOT 和 Western 的值差异。",
+      "nextAction": "保留三种载体与读取日期。待明确勘误或新的版本证据时再修订。",
+      "affectedUnits": [
+        "V4-03",
+        "V4-04",
+        "V5-03A",
+        "V6-03",
+        "V7-05A",
+        "A04",
+        "A06",
+        "CASE-POWER"
+      ]
+    },
+    {
+      "id": "gap-kb48-main-incomplete-interchange",
+      "description": "EIA930 ERCO 2023 交换数据六空，完整行也存在残差。直接净发电和需求均有实际读值。",
+      "nextAction": "可继续找权威修订，不能先用 0 或需求差额填充观察。对全年需求净发电与已报交换总量标各自分母和缺失。",
+      "affectedUnits": [
+        "V4-03",
+        "V4-04",
+        "V5-03A",
+        "V6-03",
+        "V7-05A",
+        "A04",
+        "A06",
+        "CASE-POWER"
+      ]
+    },
+    {
+      "id": "gap-kb48-main-grid-service-and-voltage",
+      "description": "2023 eGRID 的 ERCT 发电厂口径、互联系统网损、EIA 的 ERCO BA 和 AVERT Texas 模型区域不能按名称设为同一成员。",
+      "nextAction": "任何数据合并应以对象、统计边界、接入位置和实际覆盖逐项佐证。继续保留用户端电压和时变损耗的缺口。",
+      "affectedUnits": [
+        "V4-03",
+        "V4-04",
+        "V5-03A",
+        "V6-03",
+        "V7-05A",
+        "A04",
+        "A06",
+        "CASE-POWER"
+      ]
+    },
+    {
+      "id": "gap-kb48-future-loss-print-normalization",
+      "description": "Cambium 2024 p61 写年度总负荷平方，按其年与小时变量口径不能恢复指定可变损耗年度总量。上游已取得版本使用小时平方和。",
+      "affectedUnits": [
+        "V4-03",
+        "V5-03A",
+        "V5-04",
+        "V6-03",
+        "V6-05",
+        "V7-05A",
+        "A04",
+        "A06",
+        "CASE-POWER"
+      ],
+      "nextAction": "若需重建实现，寻找本版发布者勘误、执行源码或可确证的小时输入输出。继续将印刷推导和已发布数值区分。"
+    },
+    {
+      "id": "gap-kb48-future-native-planning",
+      "description": "公开 ReEDS 与 Cambium 发行结果不足以重演同版商业 PLEXOS、容量与调度双运行、流量和属性后处理。",
+      "affectedUnits": [
+        "V4-03",
+        "V5-03A",
+        "V5-04",
+        "V6-03",
+        "V6-05",
+        "V7-05A",
+        "A04",
+        "A06",
+        "CASE-POWER"
+      ],
+      "nextAction": "需取得可授权的商业运行环境、原始同版锁及输入输出。现阶段只核公开输出口径与有限关系。"
+    },
+    {
+      "id": "gap-kb48-future-annual-hourly-weight",
+      "description": "GEA 年度 CSV 与 Gagnon/Cole 小时干预加权各自清楚，年度发布表每个指标的生成权重尚未全部确认。",
+      "affectedUnits": [
+        "V4-03",
+        "V5-03A",
+        "V5-04",
+        "V6-03",
+        "V6-05",
+        "V7-05A",
+        "A04",
+        "A06",
+        "CASE-POWER"
+      ],
+      "nextAction": "有实际固定时形时取得同版同地小时或月小时因子及其权重、时区与缺省，并保留端点对齐限制。"
+    },
+    {
+      "id": "gap-kb48-siler-si",
+      "description": "出版社标注 2012 研究的 SI 可免费阅读，但本轮 DOI/出版社原 PDF 和指定 SI PDF 公开请求返回 403，候选子 DOI 返回 404；实际使用 WattTime 公开校样、CMU 作者机构配套表及同一作者论文选段，未核准它们与最终版或附件同字节。",
+      "nextAction": "仅从出版方已发布入口、作者机构库或有合法身份的公开原件定位最终版和独立 SI；取得后核对校样定位与附表，不把代替文本当原件。",
+      "affectedUnits": [
+        "V6-03",
+        "V7-05A",
+        "A06"
+      ]
+    },
+    {
+      "id": "gap-kb48-avert-upstream-native",
+      "description": "已原生运行准确 Web v4.3.0 主计算与原客户端选定数值函数，但未用 Windows MATLAB Runtime Statistical Module 重建历史 CEMS/NEI 统计、未运行桌面 Excel 宏、未验证当前部署核心字节、未校准 2023 外部实际用电反应。",
+      "nextAction": "若结论需要上游或桌面验证，先取得适用环境、原始历史数据和精确版本，另行记录资源与原生过程。真实干预需要独立反事实和实测数据。",
+      "affectedUnits": [
+        "V4-06",
+        "V6-03",
+        "V7-05A",
+        "A06"
+      ]
+    },
+    {
+      "id": "gap-kb48-avert-loss-definition",
+      "description": "v4.3 手册表2脚注35用销售量作损失比的分母，正文和原客户端使用 1/(1−x)。保留具体计算，不声称两处等价；与 eGRID GGL 或配电电压的区别不由名称消除。",
+      "nextAction": "查定 AEO 底表及相关更正或 EPA 制作说明；未核准之前不自行修改发布实现和系数。",
+      "affectedUnits": [
+        "V4-03",
+        "V7-05A",
+        "A06"
+      ]
+    },
+    {
+      "id": "gap-kb48-arvesen-native-grid",
+      "description": "Nord-Trøndelag 有界主文作者稿和原始 SI 已取得。主网模型修改明细、原生过程网络、精确终端串联及正式版全文未闭合。作者稿对气候损耗份额 43% 与 44% 的表述有差异，未确认差异原因。",
+      "affectedUnits": [
+        "V7-05A",
+        "CASE-POWER",
+        "A06"
+      ],
+      "nextAction": "需完整本地过程库存与主网模型，核对出版版和基准；无需把该组历史因子接入 Texas。"
     }
   ],
   "revisions": [
@@ -17824,6 +20341,24 @@
         "V5-06",
         "A04",
         "A07"
+      ]
+    },
+    {
+      "id": "rev-kb48-response-denominators",
+      "before": "已有市场章节保留真实电力时间/损耗/调度数据缺口；假设性边际结果不带入实际地区。",
+      "after": "用准确发布的 TE 2023 模型和原生情景划分终端输入、调整后化石负荷输入、模型发电输出与直接排放；对照不同口径的历史回归和分域平均，保留跨源不等同。",
+      "reasoning": "同年 eGRID 与 AVERT 也有不同机组集合；原模型不强制每档完全闭合，边际化石因子不能改写为固定终端平均或未来值。",
+      "status": "proposed",
+      "triggerPassageIds": [
+        "psg-kb48-avertmanual43-rates-and-horizon",
+        "psg-kb48-avertweb43-core-interpolation",
+        "psg-kb48-graffzivin2014-scope-countercheck"
+      ],
+      "affectedUnits": [
+        "V6-03",
+        "V6-06",
+        "V7-05A",
+        "A06"
       ]
     }
   ]
