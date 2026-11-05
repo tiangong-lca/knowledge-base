@@ -4281,6 +4281,90 @@
         "query": "site.nist.gov short ton 907.18474 pound 0.45359237 conversion exact",
         "channel": "public-web-search",
         "date": "2026-11-06"
+      },
+      {
+        "id": "q-kb50-bottle-tutorial",
+        "query": "publisher case studies; Nexus ws/files/22017; pdfinfo -url for archived solved database and chapter9_1.zip",
+        "channel": "Publisher catalog / original PDF",
+        "date": "2026-11-06"
+      },
+      {
+        "id": "q-kb50-bottle-rights",
+        "query": "site:nexus.openlca.org \"openLCA LCIA methods\" \"license\" 2.0.4 commercial ELCD",
+        "channel": "Web search",
+        "date": "2026-11-06"
+      },
+      {
+        "id": "q-kb50-bottle-release",
+        "query": "site:openlca.org openLCA LCIA methods version 2.0.4 package license CML method license ELCD 3.2",
+        "channel": "Web search",
+        "date": "2026-11-06"
+      },
+      {
+        "id": "q-kb50-bottle-lineage",
+        "query": "\"89863fc3-3306-11dd-bd11-0800200c9a66\" ELCD original process data set download waste incineration plastics JRC XML unit quantitative reference",
+        "channel": "Web search and JRC DOI",
+        "date": "2026-11-06"
+      },
+      {
+        "id": "q-kb50-bottle-original-method",
+        "query": "Leiden CML-IA characterization factors v4.7 August 2016 official download spreadsheet baseline GWP100a Leiden university data-cmlia",
+        "channel": "Web search and Leiden publisher",
+        "date": "2026-11-06"
+      },
+      {
+        "id": "Q-KB50-JRC-SDK",
+        "query": "JRC eILCD SDK v2.1.1 injection moulding ILCD life cycle model interface paper quantitative reference connections release compatibility",
+        "channel": "Web search",
+        "date": "2026-11-06"
+      },
+      {
+        "id": "Q-KB50-JRC-INTERFACE",
+        "query": "eILCD EF life cycle model dataset provider quantitative reference multiplication factor compatibility openLCA JRC interface paper 2.1.1",
+        "channel": "Web search",
+        "date": "2026-11-06"
+      },
+      {
+        "id": "Q-KB50-JRC-COMPARISON",
+        "query": "ILCD eILCD life cycle model exchange interoperability openLCA independent study JRC validation reference connections",
+        "channel": "Web search",
+        "date": "2026-11-06"
+      },
+      {
+        "id": "Q-KB50-JRC-BASE-SCHEMA",
+        "query": "JRC official ILCD_ProcessDataSet.xsd original ILCD format 1.1 download ILCD Schema JRC lca XML 1.1 zip",
+        "channel": "Web search",
+        "date": "2026-11-06"
+      },
+      {
+        "id": "Q-KB50-JRC-BASE-SCHEMA-JRC",
+        "query": "site:eplca.jrc.ec.europa.eu ILCD schema xsd ILCD_Format_1.1_Schema.zip ILCD_ProcessDataSet.xsd",
+        "channel": "Web search",
+        "date": "2026-11-06"
+      },
+      {
+        "id": "Q-KB50-JRC-BASE-SCHEMA-FORGE",
+        "query": "site:code.europa.eu eplca ILCD_ProcessDataSet.xsd ILCD schema source",
+        "channel": "Web search",
+        "date": "2026-11-06"
+      },
+      {
+        "id": "Q-KB50-JRC-OFFICIAL-RETRIEVAL",
+        "query": "Follow developer page and exact file links. Reacquire legacy SDK and ILCD docs archives, standalone model and process docs, interface PDF, and publisher PDF by normal HTTPS.",
+        "channel": "Official sites and curl",
+        "date": "2026-11-06"
+      },
+      {
+        "id": "q-kb50-openlca-exact-release",
+        "date": "2026-11-06",
+        "channel": "Context7；GreenDelta GitHub；Maven Central",
+        "query": "openLCA modules 与精确 2.7.0 发行：从通用文档发现后固定 v2.7.0 标签、提交源码和发行 POM、源码 JAR。"
+      },
+      {
+        "id": "q-kb50-openlca-source-join",
+        "date": "2026-11-06",
+        "channel": "本地原始源码档案与发行源码 JAR",
+        "query": "逐成员核对 CalculationSetup、产品系统图、JSON-LD、eILCD 普通路径和因子矩阵；分别核对 olca-ilcd 3.1.0 的 XML 绑定与 ZIP 定位。"
       }
     ],
     "limitations": [
@@ -16995,6 +17079,702 @@
       "catalogSourceIds": [
         "src-kb48-units-nist-hb44-2026"
       ]
+    },
+    {
+      "id": "work-kb50-bottle-tutorial",
+      "title": "openLCA Tutorial: Basic Modelling in openLCA",
+      "contributors": "GreenDelta",
+      "year": "2020",
+      "kind": "original-software-tutorial-with-model",
+      "urls": [
+        {
+          "url": "https://www.openlca.org/wp-content/uploads/2025/01/Report_PC_PET_Tutorial.pdf",
+          "role": "本次核读原PDF"
+        },
+        {
+          "url": "https://nexus.openlca.org/ws/files/22017",
+          "role": "同字节Nexus PDF"
+        },
+        {
+          "url": "https://www.openlca.org/wp-content/uploads/2025/02/Master_bottles_solved_20200319.zolca",
+          "role": "教程配套原备份"
+        }
+      ],
+      "identifiers": {},
+      "goalSeedIds": [],
+      "volumes": [
+        "V3",
+        "V4",
+        "V7"
+      ],
+      "topics": [
+        "waste treatment",
+        "quantitative reference",
+        "openLCA"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Europe"
+      ],
+      "traditions": [
+        "process-LCA"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-kb50-bottle-tutorial"
+        ],
+        "reason": "辨明原例、数据库、许可与方法包身份。",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
+      "rights": "厂商匿名提供教学 PDF；未核准整件或图表再分发。",
+      "limitations": [
+        "六月独立交换包404。",
+        "备份精确配置需原生读取。"
+      ],
+      "catalogSourceIds": [
+        "src-kb50-bottle-tutorial",
+        "src-kb50-bottle-backup",
+        "src-kb50-bottle-allocation-report"
+      ]
+    },
+    {
+      "id": "work-kb50-elcd-nexus-terms",
+      "title": "ELCD III dataset license and Nexus End User Licence Agreement",
+      "contributors": "European Commission JRC; GreenDelta",
+      "year": "2013",
+      "kind": "dataset-license-and-eula",
+      "urls": [
+        {
+          "url": "https://nexus.openlca.org/ws/files/3101",
+          "role": "实际核读合订PDF"
+        }
+      ],
+      "identifiers": {},
+      "goalSeedIds": [],
+      "volumes": [
+        "V3",
+        "V4",
+        "V7"
+      ],
+      "topics": [
+        "data rights"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Europe"
+      ],
+      "traditions": [
+        "process-LCA"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-kb50-bottle-rights"
+        ],
+        "reason": "辨明原例、数据库、许可与方法包身份。",
+        "citationParents": [
+          "work-kb50-bottle-tutorial"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
+      "rights": "核读可公开取得的条款文本，不据此统一所有第三方数据权利，不再分发。",
+      "limitations": [
+        "具体数据版本与权利仍需核对。"
+      ],
+      "catalogSourceIds": [
+        "src-kb50-elcd-nexus-terms"
+      ]
+    },
+    {
+      "id": "work-kb50-method-license",
+      "title": "openLCA LCIA methods package license",
+      "contributors": "Cristina Rodríguez; Claudia di Noi; Michael Srocka; Andreas Ciroth",
+      "year": "2017",
+      "kind": "method-package-license",
+      "urls": [
+        {
+          "url": "https://nexus.openlca.org/ws/files/14028",
+          "role": "实际核读原许可通知"
+        }
+      ],
+      "identifiers": {},
+      "goalSeedIds": [],
+      "volumes": [
+        "V3",
+        "V4",
+        "V7"
+      ],
+      "topics": [
+        "method pack rights"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Europe"
+      ],
+      "traditions": [
+        "process-LCA"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-kb50-bottle-rights"
+        ],
+        "reason": "辨明原例、数据库、许可与方法包身份。",
+        "citationParents": [
+          "work-kb50-bottle-tutorial"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
+      "rights": "2017 方法包通知声明 CC BY-SA 4.0；精确旧版因子、流映射及底层来源权利须独立查明。",
+      "limitations": [
+        "非对所有底层因子及其数据库的通行授权。"
+      ],
+      "catalogSourceIds": [
+        "src-kb50-method-license"
+      ]
+    },
+    {
+      "id": "work-kb50-method-log",
+      "title": "Impact Assessment Method Log file: openLCA IA method v.2.0.4 vs v.2.0.3",
+      "contributors": "GreenDelta",
+      "year": "2019",
+      "kind": "method-package-release-notes",
+      "urls": [
+        {
+          "url": "https://nexus.openlca.org/ws/files/16210",
+          "role": "实际核读版本日志"
+        }
+      ],
+      "identifiers": {},
+      "goalSeedIds": [],
+      "volumes": [
+        "V3",
+        "V4",
+        "V7"
+      ],
+      "topics": [
+        "CML release identity"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Europe"
+      ],
+      "traditions": [
+        "process-LCA"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-kb50-bottle-release",
+          "q-kb50-bottle-original-method"
+        ],
+        "reason": "辨明原例、数据库、许可与方法包身份。",
+        "citationParents": [
+          "work-kb50-bottle-tutorial"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
+      "rights": "公开取得日志；不复制全表或方法包。",
+      "limitations": [
+        "日志不是方法数据或因子全表。"
+      ],
+      "catalogSourceIds": [
+        "src-kb50-method-log"
+      ]
+    },
+    {
+      "id": "work-kb50-incineration-catalog",
+      "title": "Waste incineration of plastics (PET, PMMA, PC), EU-27 — JRC Data Catalogue",
+      "contributors": "Simone Fazio; David Pennington; European Commission JRC",
+      "year": "2026",
+      "kind": "official-dataset-catalog-record",
+      "urls": [
+        {
+          "url": "https://data.jrc.ec.europa.eu/dataset/jrc-eplca-89863fc3-3306-11dd-bd11-0800200c9a66",
+          "role": "实际核读目录载体"
+        },
+        {
+          "url": "https://doi.org/10.2905/JRC.BZ4WEDG",
+          "role": "目录DOI"
+        }
+      ],
+      "identifiers": {},
+      "goalSeedIds": [],
+      "volumes": [
+        "V3",
+        "V4",
+        "V7"
+      ],
+      "topics": [
+        "ELCD",
+        "historical waste treatment",
+        "data rights"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "EU-27"
+      ],
+      "traditions": [
+        "process-LCA"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-kb50-bottle-lineage"
+        ],
+        "reason": "辨明原例、数据库、许可与方法包身份。",
+        "citationParents": [
+          "work-kb50-bottle-tutorial"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
+      "rights": "目录标记匿名访问与自定使用条款；不把目录许可推成全部教程包许可。",
+      "limitations": [
+        "目录与过程原始XML的日期和身份分开。"
+      ],
+      "catalogSourceIds": [
+        "src-kb50-incineration-catalog"
+      ]
+    },
+    {
+      "id": "work-kb50-jrc-sdk",
+      "title": "eILCD Data Format SDK v2.1.1 — LDPE injection moulding parts example",
+      "contributors": "European Commission Joint Research Centre (distribution); maki life cycle data node (model ownership declaration)",
+      "year": "2020",
+      "kind": "SDK / illustrative model",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip",
+          "role": "固定原件或原包"
+        },
+        {
+          "url": "https://knowledge-for-policy.ec.europa.eu/european-platform-life-cycle-assessment-eplca/topic/lcdn-developer-tools_en",
+          "role": "当前发布目录"
+        }
+      ],
+      "identifiers": {},
+      "volumes": [
+        "V3",
+        "V4",
+        "V7"
+      ],
+      "topics": [
+        "eILCD",
+        "process linkage",
+        "reference quantities",
+        "waste services"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "European Union"
+      ],
+      "traditions": [
+        "LCI formats and interoperability"
+      ],
+      "discovery": {
+        "queryIds": [
+          "Q-KB50-JRC-SDK",
+          "Q-KB50-JRC-INTERFACE"
+        ],
+        "reason": "模型怎样将五件注塑件、废料处理、两路供电和汇总过程连接起来？",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
+      "rights": "JRC 提供公开下载。示例模型声明版权、限定非商业性 eILCD 软件导入/导出接口测试，禁止将该示例用于实际 LCA 研究。只保留原件身份、定位和有界原创解释。模型、原图及再导出不再分发。",
+      "limitations": [
+        "模型明示仅用于格式接口测试并标注不符合其列举的 PEF/OEF 方案。",
+        "比较固定模型所列数量及交换语义，不能证明实际行业、环境影响或任何软件的导入行为。"
+      ],
+      "catalogSourceIds": [
+        "src-kb50-jrc-sdk",
+        "src-kb50-jrc-model",
+        "src-kb50-jrc-model-xsd",
+        "src-kb50-jrc-result",
+        "src-kb50-jrc-factor",
+        "src-kb50-jrc-diagram",
+        "src-kb50-jrc-wash",
+        "src-kb50-jrc-rail",
+        "src-kb50-jrc-granulate",
+        "src-kb50-jrc-grid",
+        "src-kb50-jrc-machine",
+        "src-kb50-jrc-moulding",
+        "src-kb50-jrc-rail-property-reference",
+        "src-kb50-jrc-part-property-reference",
+        "src-kb50-jrc-energy-property-record",
+        "src-kb50-jrc-mass-property-record"
+      ]
+    },
+    {
+      "id": "work-kb50-jrc-ilcd11",
+      "title": "ILCD Format 1.1 Documentation — selected process, flow and model fields",
+      "contributors": "European Commission Joint Research Centre",
+      "year": "2009",
+      "kind": "technical documentation",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/ILCD_Format_1.1_Documentation/ILCD_ProcessDataSet.html",
+          "role": "固定原件或原包"
+        },
+        {
+          "url": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/ILCD_Format_1.1_Documentation.zip",
+          "role": "官方文档 ZIP"
+        }
+      ],
+      "identifiers": {},
+      "volumes": [
+        "V3",
+        "V4",
+        "V7"
+      ],
+      "topics": [
+        "ILCD 1.1",
+        "exchange coordinates",
+        "flow type"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "European Union"
+      ],
+      "traditions": [
+        "LCI formats and interoperability"
+      ],
+      "discovery": {
+        "queryIds": [
+          "Q-KB50-JRC-SDK",
+          "Q-KB50-JRC-BASE-SCHEMA"
+        ],
+        "reason": "过程数据集如何区分定量参考、方向、符号、变量与结果量？",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
+      "rights": "公开机构文档。只登记原件身份、定位及原创释义，来源的原文件和图像继续适用其各自权利。",
+      "limitations": [
+        "文档含模型扩展说明，不能以通用 1.1 网页标题推断所有工具支持。"
+      ],
+      "catalogSourceIds": [
+        "src-ilcd-process",
+        "src-kb50-jrc-model-doc",
+        "src-kb50-jrc-flow-doc"
+      ]
+    },
+    {
+      "id": "work-kb50-jrc-interface",
+      "title": "Modelling requirements on LCI models under the Environmental footprint for interoperable data exchange via the eILCD format",
+      "contributors": "Luca Zampori et al., EF transition phase Data Working Group",
+      "year": "2020",
+      "kind": "working-group technical paper",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://eplca.jrc.ec.europa.eu/permalink/InterfacePaper_Modelling_eILCD.pdf",
+          "role": "固定原件或原包"
+        }
+      ],
+      "identifiers": {},
+      "volumes": [
+        "V3",
+        "V4",
+        "V7"
+      ],
+      "topics": [
+        "EF eILCD interoperability",
+        "provider links"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "European Union"
+      ],
+      "traditions": [
+        "LCI formats and interoperability"
+      ],
+      "discovery": {
+        "queryIds": [
+          "Q-KB50-JRC-INTERFACE"
+        ],
+        "reason": "EF 交换规范所要求的连接、独立输入、参考与输出文档是什么？",
+        "citationParents": [
+          "work-kb50-jrc-sdk"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
+      "rights": "公开官方 PDF 及同字节 SDK 成员。只登记原件身份、定位及原创释义，未确定该 PDF 或其中图件的独立再发布许可。",
+      "limitations": [
+        "所读为 EF 过渡阶段用途文件，不能证明示例合规或软件支持。"
+      ],
+      "catalogSourceIds": [
+        "src-kb50-jrc-interface"
+      ]
+    },
+    {
+      "id": "work-kb50-jrc-lavoisier",
+      "title": "Bridging the interoperability gap in life cycle assessment: the lavoisier conversion framework and implementation for EcoSpold 2 and ILCD formats",
+      "contributors": "José Paulo Pereira das Dores Pilz Savioli, Tiago Emmanuel Nunes Braga, Thiago Oliveira Rodrigues, Silvana Aparecida Borsetti Gregorio Vidotti, and Cássia Maria Lie Ugaya",
+      "year": "2026",
+      "kind": "journal article",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://link.springer.com/content/pdf/10.1007/s11367-026-02691-4.pdf",
+          "role": "固定原件或原包"
+        },
+        {
+          "url": "https://link.springer.com/article/10.1007/s11367-026-02691-4",
+          "role": "出版者版本记录及附件入口"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1007/s11367-026-02691-4"
+      },
+      "volumes": [
+        "V3",
+        "V4",
+        "V7"
+      ],
+      "topics": [
+        "EcoSpold 2",
+        "plain ILCD",
+        "LCI conversion",
+        "provider loss"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Brazil"
+      ],
+      "traditions": [
+        "LCI formats and interoperability"
+      ],
+      "discovery": {
+        "queryIds": [
+          "Q-KB50-JRC-COMPARISON"
+        ],
+        "reason": "独立转换研究证明哪一类交换保留和失败，验证范围有多大？",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
+      "rights": "出版定稿第14页载明 CC BY 4.0，第三方材料可能另有标注。这里登记原件身份、定位及原创释义。",
+      "limitations": [
+        "论文摘要与图对比报告115份 EcoSpold2 文件，§2.9 另称较广验证305份，使用时保持原范围。",
+        "未运行作者的工具、数据或附件。"
+      ],
+      "catalogSourceIds": [
+        "src-kb50-jrc-lavoisier"
+      ]
+    },
+    {
+      "id": "work-kb50-olca-modules270",
+      "title": "openLCA modules 2.7.0 — pinned release source",
+      "contributors": "GreenDelta",
+      "year": "2026",
+      "kind": "versioned-software-source",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://codeload.github.com/GreenDelta/olca-modules/tar.gz/0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+          "role": "不可变提交源码压缩包"
+        },
+        {
+          "url": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar",
+          "role": "同版 Core 发行源码"
+        },
+        {
+          "url": "https://repo.maven.apache.org/maven2/org/openlca/olca-io/2.7.0/olca-io-2.7.0-sources.jar",
+          "role": "同版 I/O 发行源码"
+        }
+      ],
+      "identifiers": {
+        "tag": "v2.7.0",
+        "commit": "0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+        "maven": "org.openlca:olca-modules:2.7.0"
+      },
+      "volumes": [
+        "V3",
+        "V4",
+        "V5",
+        "V7"
+      ],
+      "topics": [
+        "software implementation",
+        "LCI interchange",
+        "provider links"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Germany"
+      ],
+      "traditions": [
+        "openLCA"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-kb50-openlca-exact-release",
+          "q-kb50-openlca-source-join"
+        ],
+        "reason": "该发行的源码怎样把同一处理服务表达为保存的系统连接、符号矩阵、独立目标和因子记录？",
+        "citationParents": [
+          "work-kb50-bottle-tutorial",
+          "work-kb50-jrc-sdk"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
+      "rights": "所读 openLCA 源码发行的 POM 声明 MPL-2.0。这里只登记源码版本、定位、哈希及原创释义。此代码许可不转授教程、数据集、方法包或其转换件的权利。",
+      "limitations": [
+        "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。",
+        "同一发布的提交源码与 Java 成员匹配，不能作为两个独立实现。历史 1.10 教程对应版的实际执行另需证据。"
+      ],
+      "catalogSourceIds": [
+        "src-kb50-olca-release",
+        "src-kb50-olca-io-dependency",
+        "src-kb50-olca-setup",
+        "src-kb50-olca-reference-amount",
+        "src-kb50-olca-exchange-sign",
+        "src-kb50-olca-conversion",
+        "src-kb50-olca-saved-links",
+        "src-kb50-olca-default-provider",
+        "src-kb50-olca-open-inventory",
+        "src-kb50-olca-json-export",
+        "src-kb50-olca-json-system-writer",
+        "src-kb50-olca-json-system-reader",
+        "src-kb50-olca-json-quantity",
+        "src-kb50-olca-impact-factor-build",
+        "src-kb50-olca-matrix-builder",
+        "src-kb50-olca-sparse-zero",
+        "src-kb50-olca-ilcd-import-entry",
+        "src-kb50-olca-eilcd-model-import",
+        "src-kb50-olca-eilcd-system-export",
+        "src-kb50-olca-ilcd-flow-import",
+        "src-kb50-olca-ilcd-property-import",
+        "src-kb50-olca-environment-index",
+        "src-kb50-olca-result-flow-view"
+      ]
+    },
+    {
+      "id": "work-kb50-olca-ilcd310",
+      "title": "openLCA ILCD 3.1.0 — published parser source",
+      "contributors": "GreenDelta",
+      "year": "2025",
+      "kind": "versioned-software-source",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://repo.maven.apache.org/maven2/org/openlca/olca-ilcd/3.1.0/olca-ilcd-3.1.0-sources.jar",
+          "role": "Maven Central 固定发行源码 JAR"
+        },
+        {
+          "url": "https://repo.maven.apache.org/maven2/org/openlca/olca-ilcd/3.1.0/olca-ilcd-3.1.0.pom",
+          "role": "发行 POM"
+        }
+      ],
+      "identifiers": {
+        "maven": "org.openlca:olca-ilcd:3.1.0"
+      },
+      "volumes": [
+        "V3",
+        "V4",
+        "V5",
+        "V7"
+      ],
+      "topics": [
+        "software implementation",
+        "LCI interchange",
+        "provider links"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Germany"
+      ],
+      "traditions": [
+        "openLCA"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-kb50-openlca-exact-release",
+          "q-kb50-openlca-source-join"
+        ],
+        "reason": "固定解析器如何选择 ZIP 成员和读取模型 XML 字段？",
+        "citationParents": [
+          "work-kb50-olca-modules270"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
+      "rights": "所读 openLCA 源码发行的 POM 声明 MPL-2.0。这里只登记源码版本、定位、哈希及原创释义。此代码许可不转授教程、数据集、方法包或其转换件的权利。",
+      "limitations": [
+        "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。",
+        "独立解析器发行是同一厂商实现的依赖，不构成独立复现。"
+      ],
+      "catalogSourceIds": [
+        "src-kb50-olca-parser-release",
+        "src-kb50-olca-parser-model",
+        "src-kb50-olca-parser-instance",
+        "src-kb50-olca-parser-link",
+        "src-kb50-olca-parser-zip",
+        "src-kb50-olca-parser-iterate",
+        "src-kb50-olca-parser-directory"
+      ]
     }
   ],
   "gaps": [
@@ -17343,6 +18123,25 @@
       ],
       "priority": "normal",
       "nextSearch": "从 NTNU 学位档案、Treyer 的 ESM、Jorge 源和现行数据发行说明继续查证。"
+    },
+    {
+      "id": "lit-gap-kb50-jrc-sdk-source-conflicts",
+      "description": "eILCD SDK v2.1.1 的样例图、成员名、两个流UUID属性注解与个别模型标记有实际载体差异。尚未找到同一发行的发布者补充更正。",
+      "volumes": [
+        "V3",
+        "V7"
+      ],
+      "priority": "normal",
+      "nextSearch": "针对具名版本和字段查看官方后续勘误及版本；保留既有载体的真实差异。"
+    },
+    {
+      "id": "lit-gap-kb50-jrc-migrated-access",
+      "description": "迁移后 Knowledge4Policy SDK 和 ILCD 1.1 文档下载在本轮普通请求返回 403。原 JRC 路径取得完整档案。两路径发布的字节关系仍未独立确认。",
+      "volumes": [
+        "V7"
+      ],
+      "priority": "normal",
+      "nextSearch": "若引用迁移路径的文件，先取得并核对字节及成员。既有证据继续绑定本轮实际原 JRC 载体。"
     }
   ]
 }
