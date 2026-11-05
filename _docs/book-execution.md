@@ -132,3 +132,30 @@ Task [knowledge-base #30](https://github.com/tiangong-lca/knowledge-base/issues/
 Unit 30 now has a source-reviewed candidate chapter with 32 paragraphs, 22 evidence groups, five selected contribution readings in four carriers, three concepts and a conditional relatedness mapping. Existing M01 work identity is reused. The geographic concession, PSI average-model dissent and explicit 2004 procedure lineage are retained without an empirical universal verdict. Nine displayed PSI facts support M3 weights; a separate fictional positive electricity model fixes material response and produces 8/0.2 kg CO2 changes. Eight paragraphs bind canonical input a58663c4648adee29c1c8236907d436ad42304ff3728aae8d3c133ba23e6a81e.
 
 Independent source/prose and code/arithmetic findings were repaired and rechecked. The initial clean milestone b396ef17 passed integrity, 175 tests, types, build, 350 manifest hashes and strict/scoped Docpact. Independent rendered checks covered chapter notes, direct sources, search, download, print parity and ten viewport/theme combinations. Native reader feedback prompted more precise denominator notation, source attribution and Chinese output terminology; numerical inputs/results are unchanged, and targeted native recheck closed all three material findings. Final current-head CI, Main, exact root and live qualification remain required. No original redistribution, full-work reading, domain or human approval is claimed. Preview 3829 is owned by task 30 and retained for qualification; no containers, volumes or networks were created. Worktree, dependencies and private source/review caches remain retained under programme 9. The actual protocol/revision record is research-waves/2026-11-05-market-response.md; programme 9 remains open.
+
+## 2026-11-05: connecting process and input-output records
+
+The affected-market unit [#30 / PR31](https://github.com/tiangong-lca/knowledge-base/pull/31) is delivery-complete at Main `688c3d723926ec641f892d4cb2f6de835f78287f`, integrated through [workspace #2224 / PR2225](https://github.com/tiangong-lca/workspace/pull/2225) at Main `82b9da14d5479b84d5965a07c302a7d8a466fcc3`. Final source receipt `finish_MZyfFqxLQHuU8JzZoMwwaL7G`, projection `projection__fpyNt1U8xHc5p6M2kOIuMiX` and fresh root receipt `finish_sOIx5KBGJeUFofPelET2DMcz` verify complete scopes, exact inclusion and no remaining mirrors. Source CI41924350222 and root CI41926545395 passed. The final clean local build verified 350 manifest files, and the clean live merge passed 16 artifact hashes and independent mobile/desktop reader checks. Preview 3829 and owned review browsers were closed; no task containers, volumes or networks were created. The original workspace now points to those exact root/child merges, preserving the other 23 physical child HEADs, branches and working statuses. Private evidence, worktrees and dependencies are retained under programme 9.
+
+[Knowledge Base #32](https://github.com/tiangong-lca/knowledge-base/issues/32) starts from that completed source. V4-04 promises an original, reconstructible process/IO connection and failure example, while the existing hybrid chapter describes forms and a reported overlap qualitatively. The new source-first protocol is [2026-11-05-hybrid-overlap.md](research-waves/2026-11-05-hybrid-overlap.md). It distinguishes the already selected thesis reprint, missing publisher carrier, partial computational-book sample and metadata-only handbook lead. No new original reading, confirmed independent test, numerical construction or finished chapter is claimed at startup. Existing case versions and full-book coverage commitments remain unchanged.
+
+The Chapter III reprint of Suh's 2004 Ecological Economics paper now supplies the
+documented two-way connection. Two independent transcriptions and exact solves
+recover the printed toast result from the adjusted blocks. The unadjusted accounts
+and the reconciliation between the two price labels remain open. Agez's pump,
+Yang's aggregation counterexample and reversal, Jakobs's price sensitivity and the
+Pomponi–Lenzen author abstract address distinct questions and carry separate
+reading limits. The development record preserves the actual access and query
+history. The next manuscript step uses a disclosed supplier ledger to make the
+missing account split inspectable. Publication and integration qualification are
+still open under issue 32.
+
+The completed manuscript candidate now deepens the existing hybrid chapter to
+38 paragraphs, including 11 bound to the new supplier-ledger case. It distinguishes
+Peters and Hertwich's 2004 working-paper comparison from the 2006 journal exchange.
+The printed equation shows five columns, while the prose applies the same rate to
+each sector in Suh's six-sector economy. Following the prose reproduces the stated
+four-decimal results. The reader notes retain this discrepancy and the separate
+A7 price-axis question. Targeted reader feedback led to explicit treatment of the
+structural-shift exception and named secondary attribution of the 2006 reply.
+The source Issue and PR own CI, integration, live qualification and terminal status.

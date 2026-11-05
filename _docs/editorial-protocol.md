@@ -14,7 +14,7 @@ checkPaths:
   - "knowledge/**"
   - "releases/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: b396ef17c807d3725f4aa11b8550d177979f1b41
+lastReviewedCommit: 91eb129098ef43e56432110a5cfd30f581a34424
 ---
 
 # Editorial and living review protocol
@@ -97,3 +97,14 @@ factor calibration, distribution coverage and domain applicability require
 different evidence. The official scoring-test supplement extends the existing
 work/reading identity; it does not establish correct scores, a training effect,
 or effectiveness of the paper's newly proposed matrix.
+
+## Evidence for an internal process and IO boundary
+
+Record the work and its carrier separately when chapters of one thesis reprint
+different papers. A numerical reproduction starts at the earliest supplied inputs.
+For the Suh example, the displayed residual matrices permit a block solve. A
+separate account-level reproduction requires unreduced supply, use and emissions
+records, prices, period alignment and mappings. Retain conflicting price labels
+with their original locations. Keep a published hypothetical comparison, an
+author-designed counterexample, database price sensitivity and a reply available
+only through its abstract in distinct evidence records.

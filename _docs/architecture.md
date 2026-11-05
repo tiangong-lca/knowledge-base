@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: 78b69535c46cc55d452206382f868a799552fe44
+lastReviewedCommit: f5eb493072fbe9d3b0c18cd8e5c4e843963a8f46
 ---
 
 # Publication architecture
@@ -144,3 +144,20 @@ paragraphs bind one versioned downloadable input; no calculator widget, client
 runtime or dependency is added. Unknown nested fields are stripped before hashing;
 missing or changed reviewed leaves fail closed. Legacy case policies/hashes remain
 unchanged. Exact arithmetic does not identify empirical market response.
+
+## Supplier records and the hybrid inventory example
+
+`scripts/hybrid-overlap.mjs` derives the raw economic accounts, residual economic
+accounts, two inter-system requirements and direct intensities from complete
+synthetic annual transactions. Fraction arithmetic gives exact activity balances
+and CO2 totals for two disjoint supplier ledgers and their shared aggregate. The
+naive construction retains the explicit links while using the original economic
+accounts. The evaluated download also reports the discrepancy obtained by testing
+an assumed supplier allocation against the other ledger.
+
+The closed publication entry binds the wall case ID, version, input filename and
+canonical hash to the actual entries discovered by the existing loader. The
+service link uses the original treatment plan and electricity requirement. Both
+normal repository validation and the exporter check parent uniqueness and
+compatibility. The example uses the existing canonical paragraphs, local notes
+and versioned input download surface.

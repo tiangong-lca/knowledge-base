@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: b396ef17c807d3725f4aa11b8550d177979f1b41
+lastReviewedCommit: 91eb129098ef43e56432110a5cfd30f581a34424
 ---
 
 # Publication contract
@@ -92,3 +92,13 @@ CO2 coefficients are explicit conditions; capacity availability, procurement
 identity and actual output response remain distinct. The input cannot declare
 empirical response validation or convert the modeled CO2 inventory into a full
 material footprint or impact score. Older registered inputs remain unchanged.
+
+The hybrid-inventory example binds the particular published wall service that
+supplies its external electricity demand. Repository validation and export require
+one matching wall input and manifest, their registered filename, the canonical
+public hash and the service fields used by the calculation. The new annual
+transactions, prices and direct emissions are author stipulations. Separate
+ledgers preserve supplier identity through aggregation, subtraction, normalization
+and solution. A balance residual can check a proposed system of equations while
+the actual trading partners still require evidence. Source-reported numerical
+examples and the new supplier records have distinct provenance.
