@@ -1,0 +1,1274 @@
+{
+  "caseId": "CASE-POWER",
+  "version": "1.0.0",
+  "model": "electricity-service-boundaries",
+  "createdAt": "2026-11-06",
+  "status": "versioned-teaching-case",
+  "sources": [
+    {
+      "sourceId": "src-kb48-main-egrid2023-rev2",
+      "sourceVersion": "2023 数据年。2025-06-12 Revision 2。选定英制工作簿，另列同版公制工作簿、修订网页和发行说明。",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb48-main-egrid2023-rev2",
+      "readingVersion": "2023 数据年。2025-06-12 Revision 2。选定英制工作簿，另列同版公制工作簿、修订网页和发行说明。",
+      "workId": "work-kb48-main-egrid2023-rev2",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb48-main-egrid2023-rev2-imperial"
+    },
+    {
+      "sourceId": "src-kb48-main-eia930-balance2023",
+      "sourceVersion": "数据日期2023。独立 Jan–Jun 与 Jul–Dec BALANCE 原始 CSV。检索时的两个文件哈希固定实际快照。EIA-930A 2023 XLSX 是单独的伴随名录。",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb48-main-eia930-balance2023",
+      "readingVersion": "数据日期2023。独立 Jan–Jun 与 Jul–Dec BALANCE 原始 CSV。检索时的两个文件哈希固定实际快照。EIA-930A 2023 XLSX 是单独的伴随名录。",
+      "workId": "work-kb48-main-eia930-balance2023",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb48-main-eia930-balance2023-jan-jun"
+    },
+    {
+      "sourceId": "src-kb48-arvesen2015-grid",
+      "sourceVersion": "Applied Energy 157:144–151（2015）的 NVA 作者未编辑稿，原载体 20 页。另有出版商单独发行的 Supporting Information。",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb48-arvesen2015-grid",
+      "readingVersion": "Applied Energy 157:144–151（2015）的 NVA 作者未编辑稿，原载体 20 页。另有出版商单独发行的 Supporting Information。",
+      "workId": "work-kb48-arvesen2015-grid",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb48-arvesen-aam"
+    },
+    {
+      "sourceId": "src-kb48-arvesen2015-grid-si",
+      "sourceVersion": "2015 年期刊作品的原始 .doc 补充材料，附件标题声明总计 18 页。",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb48-arvesen2015-grid",
+      "readingVersion": "Applied Energy 157:144–151（2015）的 NVA 作者未编辑稿，原载体 20 页。另有出版商单独发行的 Supporting Information。",
+      "workId": "work-kb48-arvesen2015-grid",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb48-arvesen-si"
+    },
+    {
+      "sourceId": "src-kb48-avertweb43",
+      "sourceVersion": "v4.3.0 tag 4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5；GitHub 标题 April 2024 Cloud.gov Deployment，公开发布记录 2025-06-03，RDF 基年 2023。",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb48-avertweb43",
+      "readingVersion": "v4.3.0 tag 4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5；GitHub 标题 April 2024 Cloud.gov Deployment，公开发布记录 2025-06-03，RDF 基年 2023。",
+      "workId": "work-kb48-avertweb43",
+      "readingStatus": "web-sections",
+      "defaultArtifactId": "art-kb48-avertweb43-core"
+    },
+    {
+      "sourceId": "src-kb48-future-cambium2024-release",
+      "sourceVersion": "2024 数据发行；公开 Scenario Viewer 项目 5c7bef16-7e38-4094-92ce-8b03dfa93380，文件号69141、69180和69181。",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb48-future-cambium2024-release",
+      "readingVersion": "2024 数据发行；公开 Scenario Viewer 项目 5c7bef16-7e38-4094-92ce-8b03dfa93380，文件号69141、69180和69181。",
+      "workId": "work-kb48-future-cambium2024-release",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb48-future-cambium2024-release-annual-csv"
+    },
+    {
+      "sourceId": "src-kb48-future-cambium2024-workbook",
+      "sourceVersion": "文件内部标 Released March 2025。目录 v1 2025-04-10。目录 Last Updated 2026-03-12。",
+      "accessStatus": "public-passages-inspected",
+      "readingId": "rd-kb48-future-cambium2024-workbook",
+      "readingVersion": "文件内部标 Released March 2025。目录 v1 2025-04-10。目录 Last Updated 2026-03-12。",
+      "workId": "work-kb48-future-cambium2024-workbook",
+      "readingStatus": "selected-passages",
+      "defaultArtifactId": "art-kb48-future-cambium2024-workbook-xlsx"
+    }
+  ],
+  "carriers": [
+    {
+      "artifactId": "art-kb48-main-egrid2023-rev2-imperial",
+      "readingId": "rd-kb48-main-egrid2023-rev2",
+      "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "sha256": "895cd81dd8662406189ad8adf5a2578dcb362cdb5cff7cca81b10ee6bd2447c6",
+      "resolvedUrl": "https://www.epa.gov/system/files/documents/2025-06/egrid2023_data_rev2.xlsx",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb48-main-eia930-balance2023-jan-jun",
+      "readingId": "rd-kb48-main-eia930-balance2023",
+      "mediaType": "text/csv",
+      "sha256": "a0e14e9c07ab4cc1de3e384c7be890b0c61d9de3fe04ad3ae5ec739f1f35ec1b",
+      "resolvedUrl": "https://www.eia.gov/electricity/gridmonitor/sixMonthFiles/EIA930_BALANCE_2023_Jan_Jun.csv",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb48-main-eia930-balance2023-jul-dec",
+      "readingId": "rd-kb48-main-eia930-balance2023",
+      "mediaType": "text/csv",
+      "sha256": "c719fc1b513eec8982ce209b6e3173fc64b2d0d243f83d3bf0d8d1adf6222de2",
+      "resolvedUrl": "https://www.eia.gov/electricity/gridmonitor/sixMonthFiles/EIA930_BALANCE_2023_Jul_Dec.csv",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb48-arvesen-aam",
+      "readingId": "rd-kb48-arvesen2015-grid",
+      "mediaType": "application/pdf",
+      "sha256": "0f86b61f7954b3875e8dea5eed3648a79d435ec082d3d7c0444dbcdf57249f41",
+      "resolvedUrl": "https://api.nva.unit.no/publication/0198cc7eaf48-e8c79d7c-f25d-4b3f-a8f6-39ffd46ddf52/filelink/1bec6bdb-09dd-4f63-9aa2-c4f0c862b7db",
+      "kind": "retrieved",
+      "pageCount": 20,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb48-arvesen-si",
+      "readingId": "rd-kb48-arvesen2015-grid",
+      "mediaType": "application/msword",
+      "sha256": "85459f60b22f6378d90c070f341c83b10959d8b5026eacd6541395255ba74e39",
+      "resolvedUrl": "https://ars.els-cdn.com/content/image/1-s2.0-S0306261915009381-mmc1.doc",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb48-avertweb43-core",
+      "readingId": "rd-kb48-avertweb43",
+      "mediaType": "text/javascript",
+      "sha256": "d6580ce91d0df1b6cc0dbee187aa961e71d41300ff3d4e44e3c9de882acb8691",
+      "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/server/app/calculations.js",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb48-avertweb43-client-config",
+      "readingId": "rd-kb48-avertweb43",
+      "mediaType": "text/plain",
+      "sha256": "f0cfb9ed0b4e503be2d818232d52697352597cca06a97e4dac0ff8c25eab5e68",
+      "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/client/src/config.ts",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb48-avertweb43-rdf",
+      "readingId": "rd-kb48-avertweb43",
+      "mediaType": "application/json",
+      "sha256": "5c6aad182b7ae4f7043b05675f859076d758e027d406c730ef023162b6552c85",
+      "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/server/app/data/rdf_TE_2023.json",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb48-future-cambium2024-release-annual-csv",
+      "readingId": "rd-kb48-future-cambium2024-release",
+      "mediaType": "text/csv",
+      "sha256": "e5d83c6b31e78d343a6921953da79287928b804073c973ce92c1be909ab947c6",
+      "resolvedUrl": "https://scenarioviewer.nlr.gov/?project=5c7bef16-7e38-4094-92ce-8b03dfa93380&mode=download&layout=Default",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb48-future-cambium2024-workbook-xlsx",
+      "readingId": "rd-kb48-future-cambium2024-workbook",
+      "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "sha256": "80e930a78640d423ace34517eb8101a07a38b9a5c1d899e3ed33f0f63f9a63eb",
+      "resolvedUrl": "https://data.nlr.gov/system/files/289/1744314776-Cambium24_Workbook.xlsx",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb48-future-cambium2024-release-annual-zip",
+      "readingId": "rd-kb48-future-cambium2024-release",
+      "mediaType": "application/zip",
+      "sha256": "b5438ee16c0cf03054bac62520155cbfdc8e98797aba025e48e793fb1527c189",
+      "resolvedUrl": "https://scenarioviewer.nlr.gov/?project=5c7bef16-7e38-4094-92ce-8b03dfa93380&mode=download&layout=Default",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb48-avertweb43-server-config",
+      "readingId": "rd-kb48-avertweb43",
+      "mediaType": "text/javascript",
+      "sha256": "d8ce138b74e574909b0bec605c329861c8ffceb0df69982ac8882616de86ce82",
+      "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/server/app/config.js",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb48-avertweb43-controller",
+      "readingId": "rd-kb48-avertweb43",
+      "mediaType": "text/javascript",
+      "sha256": "2da7ea9572a1c1be15895c317022010d561df9181920e692ed755ba620f3eaa3",
+      "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/server/app/controllers.js",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb48-avertweb43-client-impacts",
+      "readingId": "rd-kb48-avertweb43",
+      "mediaType": "text/plain",
+      "sha256": "2c06cfc47da58030ad24103135a227d9b7b4a5c5ab2548a42f34f70e6ae4ca4e",
+      "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/client/src/calculations/impacts.ts",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb48-avertweb43-client-agg",
+      "readingId": "rd-kb48-avertweb43",
+      "mediaType": "text/plain",
+      "sha256": "41eeda807a5536bf2c5883097aebfda0a95345ddf307a1afde6a2d2d3df8f6bd",
+      "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/client/src/calculations/emissions.ts",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb48-avertweb43-client-table",
+      "readingId": "rd-kb48-avertweb43",
+      "mediaType": "text/plain",
+      "sha256": "839de15cbcdbad8a50b34a58250c4364cebee9ba7cf490b9c28610468934ee24",
+      "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/client/src/components/PowerEmissionsTable.tsx",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb48-avertweb43-nei",
+      "readingId": "rd-kb48-avertweb43",
+      "mediaType": "application/json",
+      "sha256": "eb7cd9b02bf9e97b6a1f55effd471d8dcd63feb13b1023c8eae63d422cca6d0d",
+      "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/server/app/data/annual-emission-factors.json",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    },
+    {
+      "artifactId": "art-kb48-avertweb43-client-limits",
+      "readingId": "rd-kb48-avertweb43",
+      "mediaType": "application/json",
+      "sha256": "1cfb12be64f3bc35e9830d06e35568cbe4efb04c73383f05cd090b583cbc6bac",
+      "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/client/src/data/region-ev-hourly-limits.json",
+      "kind": "retrieved",
+      "pageCount": null,
+      "blockCount": null
+    }
+  ],
+  "passages": [
+    {
+      "evidenceId": "ev-kb48-main-egrid2023-rev2-srl23-erct",
+      "sourceId": "src-kb48-main-egrid2023-rev2",
+      "readingId": "rd-kb48-main-egrid2023-rev2",
+      "passageId": "psg-kb48-main-egrid2023-rev2-srl23-erct",
+      "artifactId": "art-kb48-main-egrid2023-rev2-imperial",
+      "locator": "英制 SRL23!A1:W2、A7:W7，ERCT / ERCOT All；数值 I7、O7、W7",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb48-main-egrid2023-rev2-ggl23-ercot",
+      "sourceId": "src-kb48-main-egrid2023-rev2",
+      "readingId": "rd-kb48-main-egrid2023-rev2",
+      "passageId": "psg-kb48-main-egrid2023-rev2-ggl23-ercot",
+      "artifactId": "art-kb48-main-egrid2023-rev2-imperial",
+      "locator": "英制 GGL23!A1:F2、A4:F4、A7:F7；ERCOT 数值 C4、D4、E4、F4",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb48-main-eia930-balance2023-export-hour",
+      "sourceId": "src-kb48-main-eia930-balance2023",
+      "readingId": "rd-kb48-main-eia930-balance2023",
+      "passageId": "psg-kb48-main-eia930-balance2023-export-hour",
+      "artifactId": "art-kb48-main-eia930-balance2023-jan-jun",
+      "locator": "Jan–Jun CSV 第1行列名与物理60807行，ERCO／2023-01-01 本地01:00末、UTC07:00",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb48-main-eia930-balance2023-import-hour",
+      "sourceId": "src-kb48-main-eia930-balance2023",
+      "readingId": "rd-kb48-main-eia930-balance2023",
+      "passageId": "psg-kb48-main-eia930-balance2023-import-hour",
+      "artifactId": "art-kb48-main-eia930-balance2023-jul-dec",
+      "locator": "Jul–Dec CSV 第1行列名与物理61845行，ERCO／2023-07-01 本地09:00末、UTC14:00",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb48-arvesen-feed-loss",
+      "sourceId": "src-kb48-arvesen2015-grid",
+      "readingId": "rd-kb48-arvesen2015-grid",
+      "passageId": "psg-kb48-arvesen-feed-loss",
+      "artifactId": "art-kb48-arvesen-aam",
+      "locator": "作者稿 §3.3 的地方网损耗和 §3.4 首段的区域网损耗，pp6、8",
+      "pdfIndices": [
+        5,
+        7
+      ],
+      "nepisBlocks": [],
+      "printedPages": "6、8"
+    },
+    {
+      "evidenceId": "ev-kb48-arvesen-si-local-loss",
+      "sourceId": "src-kb48-arvesen2015-grid-si",
+      "readingId": "rd-kb48-arvesen2015-grid",
+      "passageId": "psg-kb48-arvesen-si-local-loss",
+      "artifactId": "art-kb48-arvesen-si",
+      "locator": "Supporting Information §2 输入表，S5 `Power losses` 行",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": "S5"
+    },
+    {
+      "evidenceId": "ev-kb48-arvesen-si-regional-loss",
+      "sourceId": "src-kb48-arvesen2015-grid-si",
+      "readingId": "rd-kb48-arvesen2015-grid",
+      "passageId": "psg-kb48-arvesen-si-regional-loss",
+      "artifactId": "art-kb48-arvesen-si",
+      "locator": "Supporting Information §3 输入表，S14 `Energy losses` 行",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": "S14"
+    },
+    {
+      "evidenceId": "ev-kb48-avertweb43-client-te-parameter",
+      "sourceId": "src-kb48-avertweb43",
+      "readingId": "rd-kb48-avertweb43",
+      "passageId": "psg-kb48-avertweb43-client-te-parameter",
+      "artifactId": "art-kb48-avertweb43-client-config",
+      "locator": "v4.3.0 client/src/config.ts 214–222、415–424 行，lineLoss.texas 与 regions.TE。",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb48-avertweb43-rdf-texas-hours",
+      "sourceId": "src-kb48-avertweb43",
+      "readingId": "rd-kb48-avertweb43",
+      "passageId": "psg-kb48-avertweb43-rdf-texas-hours",
+      "artifactId": "art-kb48-avertweb43-rdf",
+      "locator": "v4.3.0 rdf_TE_2023.json 的 region、run、regional_load[4347]、regional_load[4360]、data.generation。",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb48-future-cambium2024-release-midcase-balance",
+      "sourceId": "src-kb48-future-cambium2024-release",
+      "readingId": "rd-kb48-future-cambium2024-release",
+      "passageId": "psg-kb48-future-cambium2024-release-midcase-balance",
+      "artifactId": "art-kb48-future-cambium2024-release-annual-csv",
+      "locator": "Cambium24_allScenarios_annual_gea.csv 物理第4–6行列／单位与第13行 MidCase/ERCOT/2025",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb48-future-cambium2024-release-midcase-rates",
+      "sourceId": "src-kb48-future-cambium2024-release",
+      "readingId": "rd-kb48-future-cambium2024-release",
+      "passageId": "psg-kb48-future-cambium2024-release-midcase-rates",
+      "artifactId": "art-kb48-future-cambium2024-release-annual-csv",
+      "locator": "Cambium24_allScenarios_annual_gea.csv 物理第4–6行及第13行 MidCase/ERCOT/2025，distloss、aer、srmer、lrmer及total_gen字段",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb48-future-cambium2024-release-alternate-rate",
+      "sourceId": "src-kb48-future-cambium2024-release",
+      "readingId": "rd-kb48-future-cambium2024-release",
+      "passageId": "psg-kb48-future-cambium2024-release-alternate-rate",
+      "artifactId": "art-kb48-future-cambium2024-release-annual-csv",
+      "locator": "Cambium24_allScenarios_annual_gea.csv 物理第4–6行及第661行 LowRECost_HighNGPrice/ERCOT/2025，lrmer_co2e字段",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb48-future-cambium2024-workbook-ercot-gases",
+      "sourceId": "src-kb48-future-cambium2024-workbook",
+      "readingId": "rd-kb48-future-cambium2024-workbook",
+      "passageId": "psg-kb48-future-cambium2024-workbook-ercot-gases",
+      "artifactId": "art-kb48-future-cambium2024-workbook-xlsx",
+      "locator": "Data - Annual!B7、P7、BL7、DH7、FD7、GZ7、IV7与各列第3–5行，GWP!B7:E7",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb48-future-cambium2024-release-annual-archive",
+      "sourceId": "src-kb48-future-cambium2024-release",
+      "readingId": "rd-kb48-future-cambium2024-release",
+      "passageId": "psg-kb48-future-cambium2024-release-annual-archive",
+      "artifactId": "art-kb48-future-cambium2024-release-annual-zip",
+      "locator": "Scenario Viewer ID69141，ALL / Annual / GEA Regions，ZIP 目录唯一成员 Cambium24_allScenarios_annual_gea.csv",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb48-avertweb43-release-config",
+      "sourceId": "src-kb48-avertweb43",
+      "readingId": "rd-kb48-avertweb43",
+      "passageId": "psg-kb48-avertweb43-release-config",
+      "artifactId": "art-kb48-avertweb43-server-config",
+      "locator": "v4.3.0 server/app/config.js，year 与 regions.TE.rdf，1–68 行。",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb48-avertweb43-controller-chain",
+      "sourceId": "src-kb48-avertweb43",
+      "readingId": "rd-kb48-avertweb43",
+      "passageId": "psg-kb48-avertweb43-controller-chain",
+      "artifactId": "art-kb48-avertweb43-controller",
+      "locator": "v4.3.0 server/app/controllers.js，45–65 行，emissions.calculate。",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb48-avertweb43-client-loss-and-limits",
+      "sourceId": "src-kb48-avertweb43",
+      "readingId": "rd-kb48-avertweb43",
+      "passageId": "psg-kb48-avertweb43-client-loss-and-limits",
+      "artifactId": "art-kb48-avertweb43-client-impacts",
+      "locator": "v4.3.0 client/src/calculations/impacts.ts，561–656、665–751 行，calculateHourlyImpacts 与 calculateHourlyChangesValidation。",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb48-avertweb43-core-interpolation",
+      "sourceId": "src-kb48-avertweb43",
+      "readingId": "rd-kb48-avertweb43",
+      "passageId": "psg-kb48-avertweb43-core-interpolation",
+      "artifactId": "art-kb48-avertweb43-core",
+      "locator": "v4.3.0 server/app/calculations.js，92–117、129–143、176–241、248–310、348–365 行。",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb48-avertweb43-aggregate-original-post",
+      "sourceId": "src-kb48-avertweb43",
+      "readingId": "rd-kb48-avertweb43",
+      "passageId": "psg-kb48-avertweb43-aggregate-original-post",
+      "artifactId": "art-kb48-avertweb43-client-agg",
+      "locator": "v4.3.0 client/src/calculations/emissions.ts，407–473 行，calculateAggregatedEmissionsData。",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb48-avertweb43-display-replacement-and-ratio",
+      "sourceId": "src-kb48-avertweb43",
+      "readingId": "rd-kb48-avertweb43",
+      "passageId": "psg-kb48-avertweb43-display-replacement-and-ratio",
+      "artifactId": "art-kb48-avertweb43-client-table",
+      "locator": "v4.3.0 client/src/components/PowerEmissionsTable.tsx，16–26、54–85、108–134、348–364、494–509 行。",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    },
+    {
+      "evidenceId": "ev-kb48-avertweb43-nei-input",
+      "sourceId": "src-kb48-avertweb43",
+      "readingId": "rd-kb48-avertweb43",
+      "passageId": "psg-kb48-avertweb43-nei-input",
+      "artifactId": "art-kb48-avertweb43-nei",
+      "locator": "v4.3.0 annual-emission-factors.json 的 regions 中 Texas egus，ORISPL/unit 与 annual_data.year 连接。",
+      "pdfIndices": [],
+      "nepisBlocks": [],
+      "printedPages": null
+    }
+  ],
+  "facts": {
+    "egridNetGeneration": {
+      "evidenceId": "ev-kb48-main-egrid2023-rev2-srl23-erct",
+      "factId": "erct-net-generation",
+      "value": "477137386.10100001",
+      "unit": "MWh",
+      "quantity": "地区年净发电量",
+      "subject": "eGRID2023 Rev2 ERCT",
+      "basis": "英制 SRL23!I7 原 XML，SRNGENAN。"
+    },
+    "egridCo2Mass": {
+      "evidenceId": "ev-kb48-main-egrid2023-rev2-srl23-erct",
+      "factId": "erct-co2-mass",
+      "value": "175076531.801",
+      "unit": "short ton CO2",
+      "quantity": "地区年调整后直接 CO₂ 质量",
+      "subject": "eGRID2023 Rev2 ERCT",
+      "basis": "英制 SRL23!O7 原 XML，SRCO2AN。"
+    },
+    "egridCo2OutputRate": {
+      "evidenceId": "ev-kb48-main-egrid2023-rev2-srl23-erct",
+      "factId": "erct-co2-output-rate",
+      "value": "733.86199999999997",
+      "unit": "lb CO2/MWh generation",
+      "quantity": "地区年直接 CO₂ 发电输出率",
+      "subject": "eGRID2023 Rev2 ERCT",
+      "basis": "英制 SRL23!W7 原 XML，SRCO2RTA，显示733.862。"
+    },
+    "egridGridLosses": {
+      "evidenceId": "ev-kb48-main-egrid2023-rev2-ggl23-ercot",
+      "factId": "ercot-estimated-losses",
+      "value": "18707069.898406301",
+      "unit": "MWh",
+      "quantity": "年估计输配损耗",
+      "subject": "eGRID2023 Rev2 ERCOT 互联系统",
+      "basis": "英制 GGL23!C4 原 XML，ESTLOSS。"
+    },
+    "egridDisposition": {
+      "evidenceId": "ev-kb48-main-egrid2023-rev2-ggl23-ercot",
+      "factId": "ercot-disposition-without-exports",
+      "value": "477196420.04940498",
+      "unit": "MWh",
+      "quantity": "年处置量不含出口",
+      "subject": "eGRID2023 Rev2 ERCOT 互联系统",
+      "basis": "英制 GGL23!D4 原 XML，TOTDISP。"
+    },
+    "egridDirectUse": {
+      "evidenceId": "ev-kb48-main-egrid2023-rev2-ggl23-ercot",
+      "factId": "ercot-direct-use",
+      "value": "33326181.968807202",
+      "unit": "MWh",
+      "quantity": "年直接使用",
+      "subject": "eGRID2023 Rev2 ERCOT 互联系统",
+      "basis": "英制 GGL23!E4 原 XML，DIRCTUSE。"
+    },
+    "egridPublishedGgl": {
+      "evidenceId": "ev-kb48-main-egrid2023-rev2-ggl23-ercot",
+      "factId": "ercot-published-ggl",
+      "value": "0.042000000000000003",
+      "unit": "MWh/MWh",
+      "quantity": "发表年总损耗率",
+      "subject": "eGRID2023 Rev2 ERCOT 互联系统",
+      "basis": "英制 GGL23!F4 原 XML 分数值，GGRSLOSS，显示4.2%。"
+    },
+    "eiaExportGeneration": {
+      "evidenceId": "ev-kb48-main-eia930-balance2023-export-hour",
+      "factId": "jan-export-net-generation",
+      "value": "36539",
+      "unit": "MW",
+      "quantity": "小时平均净发电",
+      "subject": "EIA930 ERCO 2023-01-01 07:00 UTC 小时结束",
+      "basis": "Jan–Jun CSV物理60807行，Net Generation (MW)。"
+    },
+    "eiaExportInterchange": {
+      "evidenceId": "ev-kb48-main-eia930-balance2023-export-hour",
+      "factId": "jan-export-net-interchange",
+      "value": "710",
+      "unit": "MW",
+      "quantity": "小时平均净交换，正为净外送",
+      "subject": "EIA930 ERCO 2023-01-01 07:00 UTC 小时结束",
+      "basis": "Jan–Jun CSV物理60807行，Total Interchange (MW)。"
+    },
+    "eiaExportDemand": {
+      "evidenceId": "ev-kb48-main-eia930-balance2023-export-hour",
+      "factId": "jan-export-demand",
+      "value": "35829",
+      "unit": "MW",
+      "quantity": "小时平均 BA 需求",
+      "subject": "EIA930 ERCO 2023-01-01 07:00 UTC 小时结束",
+      "basis": "Jan–Jun CSV物理60807行，Demand (MW)。"
+    },
+    "eiaImportGeneration": {
+      "evidenceId": "ev-kb48-main-eia930-balance2023-import-hour",
+      "factId": "jul-import-net-generation",
+      "value": "51829",
+      "unit": "MW",
+      "quantity": "小时平均净发电",
+      "subject": "EIA930 ERCO 2023-07-01 14:00 UTC 小时结束",
+      "basis": "Jul–Dec CSV物理61845行，Net Generation (MW)。"
+    },
+    "eiaImportInterchange": {
+      "evidenceId": "ev-kb48-main-eia930-balance2023-import-hour",
+      "factId": "jul-import-net-interchange",
+      "value": "-81",
+      "unit": "MW",
+      "quantity": "小时平均净交换，负为净输入",
+      "subject": "EIA930 ERCO 2023-07-01 14:00 UTC 小时结束",
+      "basis": "Jul–Dec CSV物理61845行，Total Interchange (MW)。"
+    },
+    "eiaImportDemand": {
+      "evidenceId": "ev-kb48-main-eia930-balance2023-import-hour",
+      "factId": "jul-import-demand",
+      "value": "51910",
+      "unit": "MW",
+      "quantity": "小时平均 BA 需求",
+      "subject": "EIA930 ERCO 2023-07-01 14:00 UTC 小时结束",
+      "basis": "Jul–Dec CSV物理61845行，Demand (MW)。"
+    },
+    "norwayLocalLossFraction": {
+      "evidenceId": "ev-kb48-arvesen-feed-loss",
+      "factId": "a48-local-loss-share",
+      "value": "0.063",
+      "unit": "fraction",
+      "quantity": "electricity-loss-share-of-input",
+      "subject": "Nord-Trøndelag local distribution",
+      "basis": "Arvesen §3.3 2011 feed-in"
+    },
+    "norwayRegionalLossFraction": {
+      "evidenceId": "ev-kb48-arvesen-feed-loss",
+      "factId": "a48-regional-loss-share",
+      "value": "0.016",
+      "unit": "fraction",
+      "quantity": "electricity-loss-share-of-input",
+      "subject": "Nord-Trøndelag regional transmission",
+      "basis": "Arvesen §3.4 2011 feed-in"
+    },
+    "norwayLocalLossPerDelivered": {
+      "evidenceId": "ev-kb48-arvesen-si-local-loss",
+      "factId": "a48-local-loss-per-delivered",
+      "value": "67",
+      "unit": "kWh/MWh",
+      "quantity": "loss-electricity-per-delivered-output",
+      "subject": "Nord-Trøndelag local distribution",
+      "basis": "Arvesen SI S5 Power losses, NO mix"
+    },
+    "norwayRegionalLossPerDelivered": {
+      "evidenceId": "ev-kb48-arvesen-si-regional-loss",
+      "factId": "a48-regional-loss-per-delivered",
+      "value": "16",
+      "unit": "kWh/MWh",
+      "quantity": "loss-electricity-per-delivered-output",
+      "subject": "Nord-Trøndelag regional transmission",
+      "basis": "Arvesen SI S14 Energy losses, NO mix"
+    },
+    "avertLossFraction": {
+      "evidenceId": "ev-kb48-avertweb43-client-te-parameter",
+      "factId": "avert-te-line-loss-exact",
+      "value": "0.0457913819880058",
+      "unit": "fraction",
+      "quantity": "发布 Web 客户端线损配置",
+      "subject": "AVERT TE，v4.3.0，2023 RDF",
+      "basis": "v4.3.0 client/src/config.ts 214–222、415–424 行，lineLoss.texas 与 regions.TE。"
+    },
+    "avertJuly03FossilLoad": {
+      "evidenceId": "ev-kb48-avertweb43-rdf-texas-hours",
+      "factId": "avert-te-jul01-03h-fossil-load",
+      "value": "34246",
+      "unit": "MW",
+      "quantity": "RDF 原区域化石负荷",
+      "subject": "TE 2023，RDF 4348 / Jul 1 hour 03",
+      "basis": "v4.3.0 rdf_TE_2023.json 的 region、run、regional_load[4347]、regional_load[4360]、data.generation。"
+    },
+    "avertJuly16FossilLoad": {
+      "evidenceId": "ev-kb48-avertweb43-rdf-texas-hours",
+      "factId": "avert-te-jul01-16h-fossil-load",
+      "value": "45576",
+      "unit": "MW",
+      "quantity": "RDF 原区域化石负荷",
+      "subject": "TE 2023，RDF 4361 / Jul 1 hour 16",
+      "basis": "v4.3.0 rdf_TE_2023.json 的 region、run、regional_load[4347]、regional_load[4360]、data.generation。"
+    },
+    "cambiumGeneration": {
+      "evidenceId": "ev-kb48-future-cambium2024-release-midcase-balance",
+      "factId": "midcase-generation",
+      "value": "438493630.0",
+      "unit": "MWh",
+      "quantity": "母线区域发电",
+      "subject": "ERCOT 2025 MidCase",
+      "basis": "Cambium 2024 年度 GEA 原始 CSV，MidCase / ERCOT / 2025，字段 generation"
+    },
+    "cambiumImports": {
+      "evidenceId": "ev-kb48-future-cambium2024-release-midcase-balance",
+      "factId": "midcase-imports",
+      "value": "412059.4",
+      "unit": "MWh",
+      "quantity": "母线输入贸易",
+      "subject": "ERCOT 2025 MidCase",
+      "basis": "Cambium 2024 年度 GEA 原始 CSV，MidCase / ERCOT / 2025，字段 imports"
+    },
+    "cambiumExports": {
+      "evidenceId": "ev-kb48-future-cambium2024-release-midcase-balance",
+      "factId": "midcase-exports",
+      "value": "1208316.6",
+      "unit": "MWh",
+      "quantity": "母线输出贸易",
+      "subject": "ERCOT 2025 MidCase",
+      "basis": "Cambium 2024 年度 GEA 原始 CSV，MidCase / ERCOT / 2025，字段 exports"
+    },
+    "cambiumBusbarLoad": {
+      "evidenceId": "ev-kb48-future-cambium2024-release-midcase-balance",
+      "factId": "midcase-busbar_load",
+      "value": "437697380.0",
+      "unit": "MWh",
+      "quantity": "完整母线负荷",
+      "subject": "ERCOT 2025 MidCase",
+      "basis": "Cambium 2024 年度 GEA 原始 CSV，MidCase / ERCOT / 2025，字段 busbar_load"
+    },
+    "cambiumBusbarLoadForEndUse": {
+      "evidenceId": "ev-kb48-future-cambium2024-release-midcase-balance",
+      "factId": "midcase-busbar_load_for_enduse",
+      "value": "425158500.0",
+      "unit": "MWh",
+      "quantity": "终端服务所需母线负荷",
+      "subject": "ERCOT 2025 MidCase",
+      "basis": "Cambium 2024 年度 GEA 原始 CSV，MidCase / ERCOT / 2025，字段 busbar_load_for_enduse"
+    },
+    "cambiumEndUseLoad": {
+      "evidenceId": "ev-kb48-future-cambium2024-release-midcase-balance",
+      "factId": "midcase-enduse_load",
+      "value": "409876104.3",
+      "unit": "MWh",
+      "quantity": "终端服务用电量",
+      "subject": "ERCOT 2025 MidCase",
+      "basis": "Cambium 2024 年度 GEA 原始 CSV，MidCase / ERCOT / 2025，字段 enduse_load"
+    },
+    "cambiumTransmissionLosses": {
+      "evidenceId": "ev-kb48-future-cambium2024-release-midcase-balance",
+      "factId": "midcase-trans_losses",
+      "value": "4366699.0",
+      "unit": "MWh",
+      "quantity": "区域间输电损耗母线负荷",
+      "subject": "ERCOT 2025 MidCase",
+      "basis": "Cambium 2024 年度 GEA 原始 CSV，MidCase / ERCOT / 2025，字段 trans_losses"
+    },
+    "cambiumBatteryCharging": {
+      "evidenceId": "ev-kb48-future-cambium2024-release-midcase-balance",
+      "factId": "midcase-battery_charging",
+      "value": "8168517.0",
+      "unit": "MWh",
+      "quantity": "电池充电母线负荷",
+      "subject": "ERCOT 2025 MidCase",
+      "basis": "Cambium 2024 年度 GEA 原始 CSV，MidCase / ERCOT / 2025，字段 battery_charging"
+    },
+    "cambiumPumpedStorageCharging": {
+      "evidenceId": "ev-kb48-future-cambium2024-release-midcase-balance",
+      "factId": "midcase-phs_charging",
+      "value": "3672.7",
+      "unit": "MWh",
+      "quantity": "抽水蓄能充电母线负荷",
+      "subject": "ERCOT 2025 MidCase",
+      "basis": "Cambium 2024 年度 GEA 原始 CSV，MidCase / ERCOT / 2025，字段 phs_charging"
+    },
+    "cambiumAverageDistributionLoss": {
+      "evidenceId": "ev-kb48-future-cambium2024-release-midcase-rates",
+      "factId": "midcase-distloss_rate_avg",
+      "value": "0.0359",
+      "unit": "MWh/MWh",
+      "quantity": "发表的年度平均配电损耗率",
+      "subject": "ERCOT 2025 MidCase",
+      "basis": "Cambium 2024 年度 GEA 原始 CSV，MidCase / ERCOT / 2025，字段 distloss_rate_avg"
+    },
+    "cambiumMarginalDistributionLoss": {
+      "evidenceId": "ev-kb48-future-cambium2024-release-midcase-rates",
+      "factId": "midcase-distloss_rate_marg",
+      "value": "0.0539",
+      "unit": "MWh/MWh",
+      "quantity": "发表的年度边际配电损耗率",
+      "subject": "ERCOT 2025 MidCase",
+      "basis": "Cambium 2024 年度 GEA 原始 CSV，MidCase / ERCOT / 2025，字段 distloss_rate_marg"
+    },
+    "cambiumAverageDirectGenerationRate": {
+      "evidenceId": "ev-kb48-future-cambium2024-release-midcase-rates",
+      "factId": "midcase-aer_gen_co2_c",
+      "value": "235.2",
+      "unit": "kg CO2/MWh generation",
+      "quantity": "区内母线发电直接CO₂平均率",
+      "subject": "ERCOT 2025 MidCase",
+      "basis": "Cambium 2024 年度 GEA 原始 CSV，MidCase / ERCOT / 2025，字段 aer_gen_co2_c"
+    },
+    "cambiumAverageDirectEndUseRate": {
+      "evidenceId": "ev-kb48-future-cambium2024-release-midcase-rates",
+      "factId": "midcase-aer_load_co2_c",
+      "value": "249.7",
+      "unit": "kg CO2/MWh end use",
+      "quantity": "终端归属直接CO₂平均率",
+      "subject": "ERCOT 2025 MidCase",
+      "basis": "Cambium 2024 年度 GEA 原始 CSV，MidCase / ERCOT / 2025，字段 aer_load_co2_c"
+    },
+    "cambiumAverageEndUseCo2e": {
+      "evidenceId": "ev-kb48-future-cambium2024-release-midcase-rates",
+      "factId": "midcase-aer_load_co2e",
+      "value": "307.5",
+      "unit": "kg CO2e/MWh end use",
+      "quantity": "终端归属燃烧与燃烧前平均率",
+      "subject": "ERCOT 2025 MidCase",
+      "basis": "Cambium 2024 年度 GEA 原始 CSV，MidCase / ERCOT / 2025，字段 aer_load_co2e"
+    },
+    "cambiumShortRunEndUseCo2e": {
+      "evidenceId": "ev-kb48-future-cambium2024-release-midcase-rates",
+      "factId": "midcase-srmer_co2e",
+      "value": "757.8",
+      "unit": "kg CO2e/MWh end use",
+      "quantity": "终端燃烧与燃烧前短边际率",
+      "subject": "ERCOT 2025 MidCase",
+      "basis": "Cambium 2024 年度 GEA 原始 CSV，MidCase / ERCOT / 2025，字段 srmer_co2e"
+    },
+    "cambiumLongRunDirectEndUseCo2e": {
+      "evidenceId": "ev-kb48-future-cambium2024-release-midcase-rates",
+      "factId": "midcase-lrmer_co2e_c",
+      "value": "410.1",
+      "unit": "kg CO2e/MWh end use",
+      "quantity": "终端燃烧长边际率",
+      "subject": "ERCOT 2025 MidCase",
+      "basis": "Cambium 2024 年度 GEA 原始 CSV，MidCase / ERCOT / 2025，字段 lrmer_co2e_c"
+    },
+    "cambiumLongRunPrecombEndUseCo2e": {
+      "evidenceId": "ev-kb48-future-cambium2024-release-midcase-rates",
+      "factId": "midcase-lrmer_co2e_p",
+      "value": "137.2",
+      "unit": "kg CO2e/MWh end use",
+      "quantity": "终端燃烧前长边际率",
+      "subject": "ERCOT 2025 MidCase",
+      "basis": "Cambium 2024 年度 GEA 原始 CSV，MidCase / ERCOT / 2025，字段 lrmer_co2e_p"
+    },
+    "cambiumLongRunEndUseCo2e": {
+      "evidenceId": "ev-kb48-future-cambium2024-release-midcase-rates",
+      "factId": "midcase-lrmer_co2e",
+      "value": "547.3",
+      "unit": "kg CO2e/MWh end use",
+      "quantity": "终端燃烧与燃烧前长边际率",
+      "subject": "ERCOT 2025 MidCase",
+      "basis": "Cambium 2024 年度 GEA 原始 CSV，MidCase / ERCOT / 2025，字段 lrmer_co2e"
+    },
+    "cambiumAlternativeLongRunEndUseCo2e": {
+      "evidenceId": "ev-kb48-future-cambium2024-release-alternate-rate",
+      "factId": "lowrecost_highngprice-lrmer_co2e",
+      "value": "638.4",
+      "unit": "kg CO2e/MWh end use",
+      "quantity": "终端燃烧与燃烧前长边际率",
+      "subject": "ERCOT 2025 LowRECost_HighNGPrice",
+      "basis": "Cambium 2024 年度 GEA 原始 CSV，LowRECost_HighNGPrice / ERCOT / 2025，字段 lrmer_co2e"
+    },
+    "cambiumDirectCo2": {
+      "evidenceId": "ev-kb48-future-cambium2024-workbook-ercot-gases",
+      "factId": "direct-co2",
+      "value": "409.1",
+      "unit": "kg CO2/MWh end use",
+      "quantity": "直接燃烧CO₂长边际",
+      "subject": "ERCOT 2025 Mid-case，Cambium 2024 官方工作簿",
+      "basis": "Data - Annual!P7，实际读取的保存字面量。"
+    },
+    "cambiumDirectCh4": {
+      "evidenceId": "ev-kb48-future-cambium2024-workbook-ercot-gases",
+      "factId": "direct-ch4",
+      "value": "15.5",
+      "unit": "g CH4/MWh end use",
+      "quantity": "直接燃烧CH₄长边际",
+      "subject": "ERCOT 2025 Mid-case，Cambium 2024 官方工作簿",
+      "basis": "Data - Annual!BL7，实际读取的保存字面量。"
+    },
+    "cambiumDirectN2o": {
+      "evidenceId": "ev-kb48-future-cambium2024-workbook-ercot-gases",
+      "factId": "direct-n2o",
+      "value": "1.99",
+      "unit": "g N2O/MWh end use",
+      "quantity": "直接燃烧N₂O长边际",
+      "subject": "ERCOT 2025 Mid-case，Cambium 2024 官方工作簿",
+      "basis": "Data - Annual!DH7，实际读取的保存字面量。"
+    },
+    "cambiumPrecombCo2": {
+      "evidenceId": "ev-kb48-future-cambium2024-workbook-ercot-gases",
+      "factId": "precomb-co2",
+      "value": "41.5",
+      "unit": "kg CO2/MWh end use",
+      "quantity": "燃烧前CO₂长边际",
+      "subject": "ERCOT 2025 Mid-case，Cambium 2024 官方工作簿",
+      "basis": "Data - Annual!FD7，实际读取的保存字面量。"
+    },
+    "cambiumPrecombCh4": {
+      "evidenceId": "ev-kb48-future-cambium2024-workbook-ercot-gases",
+      "factId": "precomb-ch4",
+      "value": "3209.1",
+      "unit": "g CH4/MWh end use",
+      "quantity": "燃烧前CH₄长边际",
+      "subject": "ERCOT 2025 Mid-case，Cambium 2024 官方工作簿",
+      "basis": "Data - Annual!GZ7，实际读取的保存字面量。"
+    },
+    "cambiumPrecombN2o": {
+      "evidenceId": "ev-kb48-future-cambium2024-workbook-ercot-gases",
+      "factId": "precomb-n2o",
+      "value": "0.19",
+      "unit": "g N2O/MWh end use",
+      "quantity": "燃烧前N₂O长边际",
+      "subject": "ERCOT 2025 Mid-case，Cambium 2024 官方工作簿",
+      "basis": "Data - Annual!IV7，实际读取的保存字面量。"
+    },
+    "cambiumCo2Gwp": {
+      "evidenceId": "ev-kb48-future-cambium2024-workbook-ercot-gases",
+      "factId": "gwp-co2",
+      "value": "1",
+      "unit": "kg CO2e/kg CO2",
+      "quantity": "工作簿所用CO₂ GWP100",
+      "subject": "Cambium 2024 工作簿的 AR6 100 年 GWP 选项",
+      "basis": "GWP!C7，实际读取的保存字面量。"
+    },
+    "cambiumCh4Gwp": {
+      "evidenceId": "ev-kb48-future-cambium2024-workbook-ercot-gases",
+      "factId": "gwp-ch4",
+      "value": "29.8",
+      "unit": "kg CO2e/kg CH4",
+      "quantity": "工作簿所用CH₄ GWP100",
+      "subject": "Cambium 2024 工作簿的 AR6 100 年 GWP 选项",
+      "basis": "GWP!D7，实际读取的保存字面量。"
+    },
+    "cambiumN2oGwp": {
+      "evidenceId": "ev-kb48-future-cambium2024-workbook-ercot-gases",
+      "factId": "gwp-n2o",
+      "value": "273",
+      "unit": "kg CO2e/kg N2O",
+      "quantity": "工作簿所用N₂O GWP100",
+      "subject": "Cambium 2024 工作簿的 AR6 100 年 GWP 选项",
+      "basis": "GWP!E7，实际读取的保存字面量。"
+    }
+  },
+  "archive": {
+    "evidenceId": "ev-kb48-future-cambium2024-release-annual-archive",
+    "memberArtifactId": "art-kb48-future-cambium2024-release-annual-csv",
+    "memberName": "Cambium24_allScenarios_annual_gea.csv"
+  },
+  "native": {
+    "summarySha256": "92c68c5b4b4e57c6c962b3b8648630ade423a49439ca0d6e06ac4dfbbf28a002",
+    "summary": {
+      "schemaVersion": 1,
+      "kind": "author-derived-native-model-execution",
+      "method": "EPA AVERT Web v4.3.0 numerical replay with pinned original source and input data",
+      "release": {
+        "url": "https://github.com/USEPA/AVERT/releases/tag/v4.3.0",
+        "commit": "4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5",
+        "version": "4.3.0",
+        "rdfYear": 2023,
+        "rdfRegion": "TE"
+      },
+      "testedRuntime": {
+        "node": "v20.20.2",
+        "v8": "11.3.244.8-node.38",
+        "platform": "darwin",
+        "arch": "arm64"
+      },
+      "portableDriverSha256": "a608c10d6f5f16bf4d9f760f29dc827dee447bdedbeef10a5d86a1c6951dafd0",
+      "acquisitionManifestSha256": "d17bba88d6f1f131e999d6897dc336f752edfa780dd3e2e0a76982e82b0baea9",
+      "signConvention": "Model deltas are scenario minus baseline. A requested terminal reduction is recorded as positive MWh.",
+      "aggregation": "Modeled regional deltas sum monthly post-minus-original results from the original AVERT client aggregation.",
+      "batches": {
+        "primary": {
+          "originalReceiptSha256": "6401d5f2e0938ef9aa9371ffa919ba3a4debd189946fa5259346930013811de1",
+          "portableReceiptSha256": "331fc923c9f86ac1687b820f33817da2865a22d5d9cc89590f8f56e3cef5c5bb",
+          "byteIdenticalScenarioFiles": 8
+        },
+        "secondary": {
+          "originalReceiptSha256": "9090f63b7fd605dcf89e1e00be31758a23b29df30a7da3a20691785d7a8edb75",
+          "portableReceiptSha256": "805212e6fef6d294990dcb5a229e3b96b176303f7efcef0d4d7cb8a1d66b6766",
+          "byteIdenticalScenarioFiles": 8
+        }
+      },
+      "scenarios": [
+        {
+          "id": "zero",
+          "batch": "primary",
+          "profile": {
+            "rdfOneHourIntervals": 8760,
+            "affectedHours": 0,
+            "constantTerminalReductionMWhPerHour": "0",
+            "selectedRdfHourOfYear": null,
+            "selectedRdfHour": null
+          },
+          "terminalReductionMWh": "0",
+          "requestedModelFossilLoadChangeMWh": "0",
+          "modeled": {
+            "generation": {
+              "unit": "MWh",
+              "baseline": "270918817.13364995",
+              "scenario": "270918817.13364995",
+              "delta": "0"
+            },
+            "co2": {
+              "unit": "US-short-ton",
+              "baseline": "173806013.5614042",
+              "scenario": "173806013.5614042",
+              "delta": "0"
+            },
+            "so2": {
+              "unit": "lb",
+              "baseline": "150993593.38592643",
+              "scenario": "150993593.38592643",
+              "delta": "0"
+            },
+            "nox": {
+              "unit": "lb",
+              "baseline": "132647734.80569442",
+              "scenario": "132647734.80569442",
+              "delta": "0"
+            }
+          },
+          "diagnostics": {
+            "inRange": true,
+            "thresholdFlags": 0,
+            "missingMonths": 0,
+            "nonfiniteOutputs": 0,
+            "replacementFlags": 0,
+            "modeledEguCount": 347,
+            "matchedNeiUnitYears": 347,
+            "eguCo2Increases": 0,
+            "eguCo2Decreases": 0,
+            "eguCo2UnchangedWithinTolerance": 347,
+            "eguCo2SignToleranceUSShortTon": "1E-9"
+          },
+          "outputs": {
+            "inputSHA": "a7fefb25440b9e044b146c561efe01695817657e9d99fc6f391647fc58e0f8ff",
+            "rawSHA": "ed762d2dc82ee396ff202efd3240ab6f4219b280c59c376e0219ca42a954eb99",
+            "aggregatedSHA": "c9cb5080dae9def50367368279a1b1175d3e1c474e314f451d28db71629aeadd"
+          }
+        },
+        {
+          "id": "flat-one-mwh-per-hour",
+          "batch": "primary",
+          "profile": {
+            "rdfOneHourIntervals": 8760,
+            "affectedHours": 8760,
+            "constantTerminalReductionMWhPerHour": "1",
+            "selectedRdfHourOfYear": null,
+            "selectedRdfHour": null
+          },
+          "terminalReductionMWh": "8760",
+          "requestedModelFossilLoadChangeMWh": "-9180.382397142455",
+          "modeled": {
+            "generation": {
+              "unit": "MWh",
+              "baseline": "270918817.13364995",
+              "scenario": "270909629.2153984",
+              "delta": "-9187.918252352625"
+            },
+            "co2": {
+              "unit": "US-short-ton",
+              "baseline": "173806013.5614042",
+              "scenario": "173800340.83910143",
+              "delta": "-5672.722302591428"
+            },
+            "so2": {
+              "unit": "lb",
+              "baseline": "150993593.38592643",
+              "scenario": "150988405.1761465",
+              "delta": "-5188.209779851139"
+            },
+            "nox": {
+              "unit": "lb",
+              "baseline": "132647734.80569442",
+              "scenario": "132642002.32917814",
+              "delta": "-5732.476515945047"
+            }
+          },
+          "diagnostics": {
+            "inRange": true,
+            "thresholdFlags": 0,
+            "missingMonths": 0,
+            "nonfiniteOutputs": 0,
+            "replacementFlags": 0,
+            "modeledEguCount": 347,
+            "matchedNeiUnitYears": 347,
+            "eguCo2Increases": 10,
+            "eguCo2Decreases": 337,
+            "eguCo2UnchangedWithinTolerance": 0,
+            "eguCo2SignToleranceUSShortTon": "1E-9"
+          },
+          "outputs": {
+            "inputSHA": "1087c869e59650dd578a2ef73e7f1581dfea6e5d74b2367e688841389480a642",
+            "rawSHA": "70b2755e087337cd95231d515bd857c6787a71b0f2617c9b7f74c3aa92084b11",
+            "aggregatedSHA": "380703fb81602d24f68dd6917d8b0bca328a30c69a446d7e03b9b7267d74fbbb"
+          }
+        },
+        {
+          "id": "july1-03h-100mwh",
+          "batch": "secondary",
+          "profile": {
+            "rdfOneHourIntervals": 8760,
+            "affectedHours": 1,
+            "constantTerminalReductionMWhPerHour": "0",
+            "selectedRdfHourOfYear": 4348,
+            "selectedRdfHour": 3
+          },
+          "terminalReductionMWh": "100",
+          "requestedModelFossilLoadChangeMWh": "-104.79888581214115",
+          "modeled": {
+            "generation": {
+              "unit": "MWh",
+              "baseline": "270918817.13364995",
+              "scenario": "270918710.9519763",
+              "delta": "-106.18167366832495"
+            },
+            "co2": {
+              "unit": "US-short-ton",
+              "baseline": "173806013.5614042",
+              "scenario": "173805953.27841213",
+              "delta": "-60.28299222141504"
+            },
+            "so2": {
+              "unit": "lb",
+              "baseline": "150993593.38592643",
+              "scenario": "150993558.83678868",
+              "delta": "-34.54913756623864"
+            },
+            "nox": {
+              "unit": "lb",
+              "baseline": "132647734.80569442",
+              "scenario": "132647716.06225704",
+              "delta": "-18.74343723990023"
+            }
+          },
+          "diagnostics": {
+            "inRange": true,
+            "thresholdFlags": 0,
+            "missingMonths": 0,
+            "nonfiniteOutputs": 0,
+            "replacementFlags": 0,
+            "modeledEguCount": 347,
+            "matchedNeiUnitYears": 347,
+            "eguCo2Increases": 144,
+            "eguCo2Decreases": 203,
+            "eguCo2UnchangedWithinTolerance": 0,
+            "eguCo2SignToleranceUSShortTon": "1E-9"
+          },
+          "outputs": {
+            "inputSHA": "8ef229e3878cd7feda969c2216735c3213b8e6e699e200ffad99468d4748ded2",
+            "rawSHA": "47f4c3d8ceb0dfda21dae3a6cbd5bc788cb9e4665fd5dd4ba04c51ca46aa2519",
+            "aggregatedSHA": "6760d07263b678eabc63dea04eeb91d6896f1655a6f95dd960f8b19f2f2cc959"
+          }
+        },
+        {
+          "id": "july1-16h-100mwh",
+          "batch": "secondary",
+          "profile": {
+            "rdfOneHourIntervals": 8760,
+            "affectedHours": 1,
+            "constantTerminalReductionMWhPerHour": "0",
+            "selectedRdfHourOfYear": 4361,
+            "selectedRdfHour": 16
+          },
+          "terminalReductionMWh": "100",
+          "requestedModelFossilLoadChangeMWh": "-104.79888581214115",
+          "modeled": {
+            "generation": {
+              "unit": "MWh",
+              "baseline": "270918817.13364995",
+              "scenario": "270918711.626565",
+              "delta": "-105.50708512961864"
+            },
+            "co2": {
+              "unit": "US-short-ton",
+              "baseline": "173806013.5614042",
+              "scenario": "173805956.93803665",
+              "delta": "-56.62336741760373"
+            },
+            "so2": {
+              "unit": "lb",
+              "baseline": "150993593.38592643",
+              "scenario": "150993537.11000416",
+              "delta": "-56.27592234313488"
+            },
+            "nox": {
+              "unit": "lb",
+              "baseline": "132647734.80569442",
+              "scenario": "132647628.89210364",
+              "delta": "-105.91359080560505"
+            }
+          },
+          "diagnostics": {
+            "inRange": true,
+            "thresholdFlags": 0,
+            "missingMonths": 0,
+            "nonfiniteOutputs": 0,
+            "replacementFlags": 0,
+            "modeledEguCount": 347,
+            "matchedNeiUnitYears": 347,
+            "eguCo2Increases": 90,
+            "eguCo2Decreases": 257,
+            "eguCo2UnchangedWithinTolerance": 0,
+            "eguCo2SignToleranceUSShortTon": "1E-9"
+          },
+          "outputs": {
+            "inputSHA": "6b6cff8ef9dd712721c06068e95169c9aabd276ce6aca4b2c719dd10ab635c2b",
+            "rawSHA": "29630f808b1bec437c57ce9bac29f37fada00c29cd3139432870c6ce373fd7b2",
+            "aggregatedSHA": "05a49491734f477131182114eddba7059e0c47f0bdd7d90e0e6658d64a106cd9"
+          }
+        }
+      ]
+    },
+    "manifestArtifactBindings": [
+      {
+        "artifactId": "art-kb48-avertweb43-core",
+        "manifestPath": "server/app/calculations.js",
+        "sha256": "d6580ce91d0df1b6cc0dbee187aa961e71d41300ff3d4e44e3c9de882acb8691",
+        "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/server/app/calculations.js"
+      },
+      {
+        "artifactId": "art-kb48-avertweb43-server-config",
+        "manifestPath": "server/app/config.js",
+        "sha256": "d8ce138b74e574909b0bec605c329861c8ffceb0df69982ac8882616de86ce82",
+        "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/server/app/config.js"
+      },
+      {
+        "artifactId": "art-kb48-avertweb43-controller",
+        "manifestPath": "server/app/controllers.js",
+        "sha256": "2da7ea9572a1c1be15895c317022010d561df9181920e692ed755ba620f3eaa3",
+        "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/server/app/controllers.js"
+      },
+      {
+        "artifactId": "art-kb48-avertweb43-client-config",
+        "manifestPath": "client/src/config.ts",
+        "sha256": "f0cfb9ed0b4e503be2d818232d52697352597cca06a97e4dac0ff8c25eab5e68",
+        "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/client/src/config.ts"
+      },
+      {
+        "artifactId": "art-kb48-avertweb43-client-impacts",
+        "manifestPath": "client/src/calculations/impacts.ts",
+        "sha256": "2c06cfc47da58030ad24103135a227d9b7b4a5c5ab2548a42f34f70e6ae4ca4e",
+        "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/client/src/calculations/impacts.ts"
+      },
+      {
+        "artifactId": "art-kb48-avertweb43-client-agg",
+        "manifestPath": "client/src/calculations/emissions.ts",
+        "sha256": "41eeda807a5536bf2c5883097aebfda0a95345ddf307a1afde6a2d2d3df8f6bd",
+        "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/client/src/calculations/emissions.ts"
+      },
+      {
+        "artifactId": "art-kb48-avertweb43-client-table",
+        "manifestPath": "client/src/components/PowerEmissionsTable.tsx",
+        "sha256": "839de15cbcdbad8a50b34a58250c4364cebee9ba7cf490b9c28610468934ee24",
+        "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/client/src/components/PowerEmissionsTable.tsx"
+      },
+      {
+        "artifactId": "art-kb48-avertweb43-rdf",
+        "manifestPath": "server/app/data/rdf_TE_2023.json",
+        "sha256": "5c6aad182b7ae4f7043b05675f859076d758e027d406c730ef023162b6552c85",
+        "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/server/app/data/rdf_TE_2023.json"
+      },
+      {
+        "artifactId": "art-kb48-avertweb43-nei",
+        "manifestPath": "server/app/data/annual-emission-factors.json",
+        "sha256": "eb7cd9b02bf9e97b6a1f55effd471d8dcd63feb13b1023c8eae63d422cca6d0d",
+        "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/server/app/data/annual-emission-factors.json"
+      },
+      {
+        "artifactId": "art-kb48-avertweb43-client-limits",
+        "manifestPath": "client/src/data/region-ev-hourly-limits.json",
+        "sha256": "1cfb12be64f3bc35e9830d06e35568cbe4efb04c73383f05cd090b583cbc6bac",
+        "resolvedUrl": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/client/src/data/region-ev-hourly-limits.json"
+      }
+    ]
+  },
+  "scope": {
+    "commonGridBoundaryEstablished": false,
+    "physicalEndServiceEquivalenceEstablished": false,
+    "nativeReexecutedDuringStaticBuild": false,
+    "empiricalValidation": false,
+    "futureScenarioRunReproduced": false,
+    "alternativeGasBreakdownReproduced": false,
+    "fullLifeCycleImpactReproduced": false
+  }
+}

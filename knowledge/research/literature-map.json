@@ -4275,6 +4275,12 @@
         "query": "https://link.springer.com/article/10.1007/s11367-013-0694-x",
         "channel": "public-official-direct-read",
         "date": "2026-11-06"
+      },
+      {
+        "id": "q-kb48-units-nist-hb44",
+        "query": "site.nist.gov short ton 907.18474 pound 0.45359237 conversion exact",
+        "channel": "public-web-search",
+        "date": "2026-11-06"
       }
     ],
     "limitations": [
@@ -16929,6 +16935,65 @@
       ],
       "catalogSourceIds": [
         "src-kb48-treyer-v3-market"
+      ]
+    },
+    {
+      "id": "work-kb48-units-nist-hb44-2026",
+      "title": "NIST Handbook 44 (2026), Appendix C. General Tables of Units of Measurement",
+      "contributors": "National Institute of Standards and Technology (NIST)",
+      "year": "2026",
+      "kind": "agency-technical-handbook-appendix",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://www.nist.gov/system/files/documents/2025/12/30/appc-26-HB44-20251222.pdf",
+          "role": "本次核读的独立附录 PDF"
+        },
+        {
+          "url": "https://doi.org/10.6028/NIST.HB.44-2026",
+          "role": "整部 2026 年手册的 DOI"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.6028/NIST.HB.44-2026",
+        "edition": "2026",
+        "part": "Appendix C"
+      },
+      "volumes": [
+        "V4",
+        "V7"
+      ],
+      "topics": [
+        "electricity data unit conversions",
+        "short ton and avoirdupois pound"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "United States"
+      ],
+      "traditions": [
+        "unit metrology"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-kb48-units-nist-hb44"
+        ],
+        "reason": "按美制短吨和磅的精确换算检索 NIST，取得并视觉核对 2026 版附录原页。",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
+      "rights": "NIST 官方公开技术出版物。该附录注明可免费取得，保留机构、手册版本与 DOI 归属。仅引用三项换算关系、精确性规则和定位，不附原文件或整表。",
+      "limitations": [
+        "选定原页支持单位关系，不支持排放数据统计口径或测量误差。"
+      ],
+      "catalogSourceIds": [
+        "src-kb48-units-nist-hb44-2026"
       ]
     }
   ],

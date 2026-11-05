@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-06
-lastReviewedCommit: 9ccb37022a3ffd9e72244844afddd9f669886435
+lastReviewedCommit: 1776bb5dc99ca36569b5ab7d3a598e2e3dce336a
 ---
 
 # Publication contract
@@ -142,3 +142,14 @@ identity. The particulate case requires both the original XLSX and the ZIP
 passage in the reviewed public closure. A matching archive hash cannot substitute
 for the workbook hash, or conversely. Neither a source's publication date nor a
 software-matched sheet supplies the coverage of the full original method.
+
+For electricity, preserve source-defined generation, delivery, loss, trade and
+time coordinates. An identical region name or unit cannot authorize cross-source
+division. A native model result is an author-derived execution record, distinct
+from a source-table literal. CASE-POWER fixes both the selected source tuples and
+its separately labeled native summary, including exact code/input and receipt
+identities. Static publication evaluates arithmetic from those reviewed records;
+it does not rerun or certify the original model. Archive and member identities,
+mixed-carrier readings and original access limitations remain independently
+bound. A source documentation discrepancy does not establish implementation
+behavior without the executable evidence.

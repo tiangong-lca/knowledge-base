@@ -3429,6 +3429,29 @@
         "checkedAt": "2026-11-06",
         "scope": "期刊 p1255、pp1258–1262 所列选段。"
       }
+    },
+    {
+      "id": "src-kb48-units-nist-hb44-2026",
+      "title": "NIST Handbook 44 (2026), Appendix C. General Tables of Units of Measurement",
+      "url": "https://www.nist.gov/system/files/documents/2025/12/30/appc-26-HB44-20251222.pdf",
+      "version": "Handbook 44 – 2026，附录 C 的独立官方 PDF，28 页。",
+      "publisher": "National Institute of Standards and Technology (NIST)",
+      "accessedAt": "2026-11-06",
+      "accessStatus": "public-passages-inspected",
+      "rights": "NIST 官方公开技术出版物。该附录注明可免费取得，保留机构、手册版本与 DOI 归属。仅引用三项换算关系、精确性规则和定位，不附原文件或整表。",
+      "preservation": "以 NIST 官方 URL 实取 PDF 原字节固定 SHA-256。只核对物理第7、9、17页，原件留在私有目录。",
+      "artifact": {
+        "sha256": "41c43b7827bb02725faebe7257bd4032686013975b520ae6671a2ec3cce375db",
+        "resolvedUrl": "https://www.nist.gov/system/files/documents/2025/12/30/appc-26-HB44-20251222.pdf",
+        "mediaType": "application/pdf",
+        "pageCount": 28
+      },
+      "reading": {
+        "readingId": "rd-kb48-units-nist-hb44-2026",
+        "status": "selected-passages",
+        "scope": "印刷 C-7（物理第7页）Avoirdupois Units of Mass 与脚注10–11；C-9（物理第9页）§4 关于下划线和舍入的段落；C-17（物理第17页）Units of Mass Not Less Than Avoirdupois Ounces，上表 short ton 行 Avoirdupois Pounds 列及下表 pound、short ton 两行 Kilograms 列。",
+        "checkedAt": "2026-11-06"
+      }
     }
   ],
   "evidence": [
@@ -16643,11 +16666,11 @@
       "sourceId": "src-kb48-main-egrid2023-guide",
       "readingId": "rd-kb48-main-egrid2023-guide",
       "passageId": "psg-kb48-main-egrid2023-guide-nonbaseload",
-      "locator": "印刷第19–20页（物理30–31），§3.1.3.3 非基荷输出率",
-      "summary": "非基荷选量用容量因子代理调度顺序。容量因子还会受维护和维修影响，所得非基荷输出率只是一种年尺度的代理。",
+      "locator": "印刷第19–21页（物理30–32），§3.1.3.3非基荷输出率、线性权重公式、用途及可再生燃料发电排除",
+      "summary": "非基荷权重以容量因子为调度顺序代理：低于0.2为1，高于0.8为0，中间线性下降。排放与发电分别加权汇总后相除，可再生燃料发电排除。用于有关边际化石替代的近似，不等于小时干预的原生响应。",
       "relation": "qualifies",
       "appraisal": {
-        "basis": "印刷第19–20页（物理30–31），§3.1.3.3 非基荷输出率",
+        "basis": "印刷第19–21页（物理30–32），§3.1.3.3非基荷输出率、线性权重公式、用途及可再生燃料发电排除",
         "methodologicalScope": "eGRID 年平均发电输出强度与 ERCOT 网损折算的分母分别是什么？",
         "independence": "和修订工作簿、FAQ 属同一 EPA 发行谱系。EIA-923 与州统计是上游数据。",
         "limitations": [
@@ -17116,11 +17139,11 @@
       "sourceId": "src-kb48-future-cambium2024-report",
       "readingId": "rd-kb48-future-cambium2024-report",
       "passageId": "psg-kb48-future-cambium2024-report-delivery",
-      "locator": "印刷第21、26–29、34页（物理28、33–36、41），§5.1式与脚注13、§5.4以及§5.7",
+      "locator": "印刷第21、25–29、34页（物理28、32–36、41），§5.1式与脚注13、§5.3表后光伏等效量、§5.4以及§5.7",
       "summary": "母线因子除以 1 减对应配电损耗率得到终端因子。短边际用边际配电损耗，平均与长边际用平均配电损耗。终端所需母线负荷与终端负荷均排除单列的输电损耗和储能充电，且含表后光伏服务。区域发电、终端归属与终端干预是不同问题。",
       "relation": "supports",
       "appraisal": {
-        "basis": "印刷第21、26–29、34页（物理28、33–36、41），§5.1式与脚注13、§5.4以及§5.7",
+        "basis": "印刷第21、25–29、34页（物理28、32–36、41），§5.1式与脚注13、§5.3表后光伏等效量、§5.4以及§5.7",
         "methodologicalScope": "Cambium 的终端与发电边界、长期反事实、损耗及排放路径怎样形成？",
         "independence": "方法报告与工作簿、数据发行属同一项目。eGRID 与 ReEDS 是上游而非独立验证。",
         "limitations": [
@@ -18262,14 +18285,15 @@
       "readingId": "rd-kb48-avertweb43",
       "passageId": "psg-kb48-avertweb43-core-interpolation",
       "locator": "v4.3.0 server/app/calculations.js，92–117、129–143、176–241、248–310、348–365 行。",
-      "summary": "原核心按季节、负荷档和机组表分别插值，给出机组逐月基线与情景值。超出档边界的小时被过滤；PM₂.₅、VOCs 和 NH₃ 用热输入与 NEI 系数，不能视为原始小时监测数据。",
+      "summary": "原核心按负荷档和机组表分别插值；发电使用全年同一组，污染物与热投入区分5—9月和其余月份，给出机组逐月基线与情景值。超出档边界的小时被过滤；PM₂.₅、VOCs 和 NH₃ 用热输入与 NEI 系数，不能视为原始小时监测数据。",
       "relation": "supports",
       "appraisal": {
         "basis": "v4.3.0 server/app/calculations.js，92–117、129–143、176–241、248–310、348–365 行。",
         "methodologicalScope": "原 Node20 下的离线原核心与原客户端数值函数，选择 TE、2023、指定假设负荷；不含 Web UI 全流程和原 Statistical Module。",
         "independence": "代码、RDF、NEI 与 EPA 手册是同一模型证据链。独立插值和核对仅验证解释/执行，非独立真实调度测量。",
         "limitations": [
-          "等于最右档边时下一格可能不存在，本轮所有入选小时均没有触发。TE 所用 NEI 机组和年份键均匹配。"
+          "等于最右档边时下一格可能不存在，本轮所有入选小时均没有触发。TE 所用 NEI 机组和年份键均匹配。",
+          "TE regional_load_mw观测极值9865/61440 MW与load_bin_edges首尾1165/66840 MW分别识别；手册p98 Table7列前一组。"
         ],
         "reviewKind": "agent-source-check",
         "checkedAt": "2026-11-06"
@@ -18301,7 +18325,7 @@
       "readingId": "rd-kb48-avertweb43",
       "passageId": "psg-kb48-avertweb43-display-replacement-and-ratio",
       "locator": "v4.3.0 client/src/components/PowerEmissionsTable.tsx，16–26、54–85、108–134、348–364、494–509 行。",
-      "summary": "表格计算按月份差加总；特殊排放替换若有则改基线与情景展示值，保留差值；CO₂ 比值的分母取模型发电差。UI 输出有额外舍入，本轮保留原函数未作显示舍入的结果。",
+      "summary": "表格计算按月份差加总；特殊排放替换若有则改基线与情景展示值，保留差值；CO₂ 比值的分母取模型发电差。原函数结果与UI额外的显示舍入分别识别。",
       "relation": "supports",
       "appraisal": {
         "basis": "v4.3.0 client/src/components/PowerEmissionsTable.tsx，16–26、54–85、108–134、348–364、494–509 行。",
@@ -18849,6 +18873,83 @@
         "independence": "eGRID 原表仅证明其自身字段。AVERT 成员须由其原始 RDF 单独核证。",
         "limitations": [
           "交集、未匹配与成员数是另行计算，并非原工作簿的现成数值。未按小时验证厂站的计量集合，不用州名、地区名或映射行替代实际机组级范围。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      }
+    },
+    {
+      "id": "ev-kb48-units-short-ton",
+      "sourceId": "src-kb48-units-nist-hb44-2026",
+      "readingId": "rd-kb48-units-nist-hb44-2026",
+      "passageId": "psg-kb48-units-short-ton",
+      "locator": "印刷 C-7（物理第7页）Avoirdupois Units of Mass 与脚注10–11；C-9（物理第9页）§4 关于下划线和舍入的段落；C-17（物理第17页）Units of Mass Not Less Than Avoirdupois Ounces，上表 short ton 行 Avoirdupois Pounds 列及下表 pound、short ton 两行 Kilograms 列。",
+      "summary": "1 美制短吨等于 2000 常衡磅。C-17 千克列以带下划线的数值给出 1 常衡磅等于 0.45359237 kg、1 短吨等于 907.18474 kg。C-9 说明下划线标记精确系数，转换不改变原量的精度，应在计算末尾舍入。",
+      "relation": "supports",
+      "appraisal": {
+        "basis": "印刷 C-7（物理第7页）Avoirdupois Units of Mass 与脚注10–11；C-9（物理第9页）§4 关于下划线和舍入的段落；C-17（物理第17页）Units of Mass Not Less Than Avoirdupois Ounces，上表 short ton 行 Avoirdupois Pounds 列及下表 pound、short ton 两行 Kilograms 列。",
+        "methodologicalScope": "以原页表头和精确标记核对定义换算，区别质量单位身份与数据的显示精度。",
+        "independence": "美国国家计量机构的单位关系，独立于 EPA 电网排放统计和 AVERT 运行结果。",
+        "limitations": [
+          "换算系数的精确性不增加原始排放量的有效位。",
+          "本证据只确定美制短吨、常衡磅和千克关系，不替代原数据文件对 ton 字段的单位说明。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      }
+    },
+    {
+      "id": "ev-kb48-future-cambium2024-report-clock",
+      "sourceId": "src-kb48-future-cambium2024-report",
+      "readingId": "rd-kb48-future-cambium2024-report",
+      "passageId": "psg-kb48-future-cambium2024-report-clock",
+      "locator": "印刷第22页（物理29），§5.2 timestamp、timestamp_local、tz及脚注14–15",
+      "summary": "标准时且不采用夏令时；小时起点；8760小时、所有模拟年从周日开始，沿用2012天气与负荷的星期模式。",
+      "relation": "supports",
+      "appraisal": {
+        "basis": "印刷第22页（物理29），§5.2 timestamp、timestamp_local、tz及脚注14–15",
+        "methodologicalScope": "把模拟小时序列与干预时形或真实年度序列连接前，辨认时钟及天气日历。",
+        "independence": "同一Cambium方法报告，不是独立观测验证。",
+        "limitations": [
+          "原报告定义时钟；未将发布的全年小时原件与EIA逐一匹配。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      }
+    },
+    {
+      "id": "ev-kb48-avertmanual43-load-range",
+      "sourceId": "src-kb48-avertmanual43",
+      "readingId": "rd-kb48-avertmanual43",
+      "passageId": "psg-kb48-avertmanual43-load-range",
+      "locator": "手册印刷第98页（物理104），Table 7 Texas行及Maximum/Minimum possible hourly load表头",
+      "summary": "表7 Texas最大/最小可能小时负荷列为61440/9865 MW。与固定Web发行物的实际档边须分别核对，不能把手册标签当作实际程序边界。",
+      "relation": "qualifies",
+      "appraisal": {
+        "basis": "手册印刷第98页（物理104）Table 7 Texas行；v4.3.0 Texas RDF的regional_load_mw极值与load_bin_edges，及calculations.js输入范围过滤",
+        "methodologicalScope": "区分印刷说明、RDF观测负荷与原计算的可插值档边。",
+        "independence": "同一EPA项目的不同载体；实际RDF比较为作者核验。",
+        "limitations": [
+          "原表数字未调整；全部四情景无越界不证明边界以外的行为有效。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      }
+    },
+    {
+      "id": "ev-kb48-future-cambium2024-workbook-lifecycle",
+      "sourceId": "src-kb48-future-cambium2024-workbook",
+      "readingId": "rd-kb48-future-cambium2024-workbook",
+      "passageId": "psg-kb48-future-cambium2024-workbook-lifecycle",
+      "locator": "Description and Guidance!B16，Combustion、Precombustion及Combined范围说明",
+      "summary": "直接燃烧和燃烧前相加仍不包括非燃烧运行维护或发电设施建设/预期退役排放。",
+      "relation": "qualifies",
+      "appraisal": {
+        "basis": "Description and Guidance!B16，Combustion、Precombustion及Combined范围说明",
+        "methodologicalScope": "解释发布CO2e没有覆盖的生命周期过程。",
+        "independence": "同一Cambium数据谱系的说明，不是独立清单验证。",
+        "limitations": [
+          "不以Combined标签扩大为完整LCA。"
         ],
         "reviewKind": "agent-source-check",
         "checkedAt": "2026-11-06"
@@ -39307,6 +39408,2184 @@
       "status": "reviewed",
       "reviewedAt": "2026-11-05",
       "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-opening",
+      "text": "一项生产活动改变用电，环境负担会怎样变化？回答之前，先要知道这一度电在哪里交付、何时使用，以及问题是在分担既有供电的负担，还是判断需求变化会引起什么。电厂送出的电量、网络送达的电量和设备完成的服务，沿途需要不同的连接。单位都写成kWh，不能代替这些连接。",
+      "kind": "interpretation",
+      "scope": "同一度电，先问在哪里交付；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-treyer-voltage-market",
+        "ev-kb48-main-egrid2023-guide-generation-scope",
+        "ev-kb48-avertmanual43-rates-and-horizon"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-treyer-voltage-market",
+          "relation": "supports",
+          "rationale": "历史电力市场与电压转换的技术连接。"
+        },
+        {
+          "evidenceId": "ev-kb48-main-egrid2023-guide-generation-scope",
+          "relation": "supports",
+          "rationale": "发电输出与消费边界有别。"
+        },
+        {
+          "evidenceId": "ev-kb48-avertmanual43-rates-and-horizon",
+          "relation": "supports",
+          "rationale": "变化估计的时间与固定系统范围。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-power-delivery",
+        "cn-power-response"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-service",
+      "text": "本章从交付点上的用电需求向供电系统追溯。减少一度电是一个能量条件，还不是“同样服务”的证明：照明、生产或充电若改变了完成时间和性能，就需要另行说明比较的功能。下面的减少用电轮廓是规定给模型的条件，来源中的网架、电量和机组记录则是另一层证据。两者接起来，才能明确计算回答的是哪一种变化。",
+      "kind": "synthesis",
+      "scope": "同一度电，先问在哪里交付；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-avertmanual43-web-limit",
+        "ev-kb48-future-gagnon-cole2022-intervention-weights"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-avertmanual43-web-limit",
+          "relation": "supports",
+          "rationale": "工具可接受的需求轮廓与其使用边界。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-gagnon-cole2022-intervention-weights",
+          "relation": "supports",
+          "rationale": "给定干预形状改变电力模型比较对象。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-opening"
+      ],
+      "conceptIds": [
+        "cn-power-delivery",
+        "cn-power-response"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-coordinates",
+      "text": "所需坐标不只有国家和年份。交付电压决定接入哪些网络；区域标识决定哪些电厂或交换量进入记录；时间坐标决定如何配对负荷；平均归属与响应估计又决定如何使用这些记录。挪威的输配研究可说明交付链怎样构造，美国的年度和小时资料可检验电量口径，未来情景可说明另一组系统条件。它们各自提供一段解释，不能被拼成一个已经观测到的共同电网。",
+      "kind": "synthesis",
+      "scope": "同一度电，先问在哪里交付；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-arvesen-boundary",
+        "ev-kb48-main-eia930-method-time-and-imputation",
+        "ev-kb48-future-cambium2024-report-identity-model"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-arvesen-boundary",
+          "relation": "supports",
+          "rationale": "挪威网段、年份和各自交付参考量。"
+        },
+        {
+          "evidenceId": "ev-kb48-main-eia930-method-time-and-imputation",
+          "relation": "supports",
+          "rationale": "小时及数据处理身份。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-report-identity-model",
+          "relation": "supports",
+          "rationale": "未来情景的系统与模型身份。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-opening",
+        "cl-power-service"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-voltage-path",
+      "text": "Arvesen等人的挪威研究把网络分为主干输电、区域输电和地方配电。地方网络的典型电压为11或22 kV，交付普通用户前再变为230或400 V；区域与主干网络的典型电压却都包含132 kV。大型工业用户可以直接接入上游网络。由此可见，电压数值与网段角色有关，却不是网段身份的唯一标签；从哪一级取电，会改变需要经过的设施。",
+      "kind": "interpretation",
+      "scope": "交付点怎样带出输配活动；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-arvesen-boundary"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-arvesen-boundary",
+          "relation": "supports",
+          "rationale": "作者稿表1、脚注及上游工业接入说明。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-power-delivery"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-grid-assets",
+      "text": "输配过程也不是给发电量乘上一个损失百分比就结束了。该研究用线路、导体、电缆、变压器和开关设备的数量与技术特征建立清单，并考虑生产、运输、施工、检查和报废。含六氟化硫的设备还有假定的运行泄漏；设施寿命影响如何把建造活动分摊到年度交付量。补足损失电量所需的发电，与网络本身的材料和排放，是两组不同活动。",
+      "kind": "interpretation",
+      "scope": "交付点怎样带出输配活动；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-arvesen-assets",
+        "ev-kb48-arvesen-si-scope",
+        "ev-kb48-arvesen-si-sf6"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-arvesen-assets",
+          "relation": "supports",
+          "rationale": "设施清单、寿命与运行活动。"
+        },
+        {
+          "evidenceId": "ev-kb48-arvesen-si-scope",
+          "relation": "supports",
+          "rationale": "原始DOC清单的不同活动与单位。"
+        },
+        {
+          "evidenceId": "ev-kb48-arvesen-si-sf6",
+          "relation": "supports",
+          "rationale": "设备年泄漏假设的物质与参考量。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-power-delivery"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-loss-definition",
+      "text": "先只看电量损失。若一段网络的输入为E入、输出为E出，且损耗率定义为ℓ=(E入−E出)/E入，那么交付1 MWh需要输入1/(1−ℓ) MWh，损失量为ℓ/(1−ℓ) MWh。若另一资料改用损失量除以输出量，得到的比例就不再是这个ℓ。百分号相同而分母不同，不能套用同一个乘除式。",
+      "kind": "calculation",
+      "scope": "交付点怎样带出输配活动；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-arvesen-feed-loss",
+        "ev-kb48-treyer-loss-proxy"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-arvesen-feed-loss",
+          "relation": "supports",
+          "rationale": "原文明确fed-in电量分母。"
+        },
+        {
+          "evidenceId": "ev-kb48-treyer-loss-proxy",
+          "relation": "supports",
+          "rationale": "发电端输入至终端损失的原文定义。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-voltage-path"
+      ],
+      "conceptIds": [
+        "cn-power-loss-basis"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-norway-loss",
+      "kind": "calculation",
+      "scope": "交付点怎样带出输配活动；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-arvesen-feed-loss",
+        "ev-kb48-arvesen-si-local-loss",
+        "ev-kb48-arvesen-si-regional-loss"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-arvesen-feed-loss",
+          "relation": "supports",
+          "rationale": "两个输入损耗率的原文分母。"
+        },
+        {
+          "evidenceId": "ev-kb48-arvesen-si-local-loss",
+          "relation": "supports",
+          "rationale": "S5原始67 kWh/MWh交付。"
+        },
+        {
+          "evidenceId": "ev-kb48-arvesen-si-regional-loss",
+          "relation": "supports",
+          "rationale": "S14原始16 kWh/MWh交付。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-loss-definition"
+      ],
+      "conceptIds": [
+        "cn-power-loss-basis"
+      ],
+      "mappingIds": [],
+      "caveats": [
+        "算例没有传播原统计、参数和模型结构的不确定性；显示小数为核算所列值，不代表同等的测量或预测精度。"
+      ],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "text": "该研究中2011年Nord-Trøndelag的NTE Nett地方配电输入损耗率为6.3%。按这一分母换算，每交付1 MWh需补足约67.24 kWh；原始附件列为67 kWh。区域输电的1.6%同样给出约16.26 kWh，附件列为16 kWh。两组数在原表精度内相符，附件把这部分输入连接到挪威电力组合。这里复算的是损失参考量的转换，不是整个网络的生命周期结果。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-POWER",
+        "version": "1.0.0",
+        "inputSha256": "ea3923170eadd0b16fface8a178f6fd6b32a4cb50fa46588638c166be02d9e4c",
+        "inputFile": "electricity-service-v1.json"
+      }
+    },
+    {
+      "id": "cl-power-segment-denominators",
+      "text": "这两个“每交付1 MWh”分别指各自网段的输出。部分用户在区域网或主干网取电，因此不同网段经过的总电量并不相等。若从一个低压交付点逐段倒推，需要使各级因子对应同一交付链的输入和输出；存在分流或中间注入时，先明确它们如何分配或另列。没有分支和新增注入的单一通路，是可以直接连续使用各段交付比例的简化情形。不能把分别归一的网段清单不加说明地当作同一用户的串联系统。",
+      "kind": "interpretation",
+      "scope": "交付点怎样带出输配活动；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-arvesen-boundary"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-arvesen-boundary",
+          "relation": "supports",
+          "rationale": "作者稿§3.2明示各段交付量不同及独立归一。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-norway-loss"
+      ],
+      "conceptIds": [
+        "cn-power-delivery",
+        "cn-power-loss-basis"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-database-voltage",
+      "text": "数据库还要把这条交付链表示为可连接的活动。Treyer与Bauer介绍的ecoinvent v3电力市场，将高、中、低压分别定义为高于24 kV、1—24 kV和低于1 kV，并以电压转换活动连接相邻市场。同一电压层级内的输送、跨层变压、设施和损失各有位置。因此，挪威研究称为“地方配电”的11或22 kV，不会仅凭“配电”二字就变成数据库的低压参考产品。现实网络角色与软件分类必须通过具体过程对应。",
+      "kind": "interpretation",
+      "scope": "交付点怎样带出输配活动；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-treyer-voltage-market",
+        "ev-kb48-arvesen-boundary"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-treyer-voltage-market",
+          "relation": "supports",
+          "rationale": "期刊图1及1258—1260页市场和电压定义。"
+        },
+        {
+          "evidenceId": "ev-kb48-arvesen-boundary",
+          "relation": "supports",
+          "rationale": "挪威地方配电的电压和变换范围。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-power-delivery"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-loss-proxy",
+      "text": "这种表示也保留数据质量上的选择。该版数据库方法用各地总损耗统计建立地域差异，却在缺少分级资料时用瑞士比例把损耗分配到不同电压层级。一个带国家名称的市场，因而可能同时含有当地总量与外地分配代理。它可以形成一个明确的计算模型，但不能据此声称已经测得该地每一级网络的损失。",
+      "kind": "interpretation",
+      "scope": "交付点怎样带出输配活动；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-treyer-loss-proxy"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-treyer-loss-proxy",
+          "relation": "supports",
+          "rationale": "历史版总损耗与瑞士分级比例的不同来源。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-power-loss-basis"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-egrid-scope",
+      "text": "把注意力移到美国2023年的年度发电记录。EPA的eGRID将电厂归入区域，用相应年排放总量除以年净发电量，得到发电输出强度。净发电扣除了厂内自用，尚未包含电送达用户途中所需的额外电量；区域内发电也没有自动变成区域消费的来源组合。进口、出口、燃料开采运输和电厂建设，并不由这个输出强度补齐。",
+      "kind": "interpretation",
+      "scope": "年度发电账包含什么；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-main-egrid2023-guide-generation-scope"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-main-egrid2023-guide-generation-scope",
+          "relation": "supports",
+          "rationale": "指南§3.1发电点、净发电、贸易和生命周期排除。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-power-generation-account"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-egrid-adjustments",
+      "text": "分子也不是把所有烟囱记录原样相加。eGRID同时保留未调整量与调整量；其区域汇总使用调整后排放。生物质CO₂按该版既定假设扣除，热电联产则在相应调整之后分出与有用热有关的负担。这里的“电力排放”已经经过归属处理。比较两张排放表时，先确认是否采用同一调整口径，比先争论哪个数字更大更有意义。",
+      "kind": "interpretation",
+      "scope": "年度发电账包含什么；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-main-egrid2023-guide-adjustments",
+        "ev-kb48-main-egrid2023-guide-generation-scope"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-main-egrid2023-guide-adjustments",
+          "relation": "supports",
+          "rationale": "生物质与CHP先后处理、未调整和调整量分别保存。"
+        },
+        {
+          "evidenceId": "ev-kb48-main-egrid2023-guide-generation-scope",
+          "relation": "supports",
+          "rationale": "地区输出率使用调整量。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-power-generation-account"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-egrid-rate",
+      "kind": "calculation",
+      "scope": "年度发电账包含什么；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-main-egrid2023-rev2-srl23-erct",
+        "ev-kb48-units-short-ton"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-main-egrid2023-rev2-srl23-erct",
+          "relation": "supports",
+          "rationale": "SRL23原始区域行、单位及显示值。"
+        },
+        {
+          "evidenceId": "ev-kb48-units-short-ton",
+          "relation": "supports",
+          "rationale": "美国短吨与常衡磅的确切换算。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-egrid-scope",
+        "cl-power-egrid-adjustments"
+      ],
+      "conceptIds": [
+        "cn-power-generation-account"
+      ],
+      "mappingIds": [],
+      "caveats": [
+        "算例没有传播原统计、参数和模型结构的不确定性；显示小数为核算所列值，不代表同等的测量或预测精度。"
+      ],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "text": "修订2工作簿的ERCT区域行给出约477137386.101 MWh净发电和175076531.801美国短吨CO₂。每短吨为2000磅，把分子换成磅再除以这份净发电，得到约733.8621 lb CO₂/MWh；原表公布值为733.862。这个一致性检验保留了分子、分母和显示精度，却没有把发电年平均变成任意一小时减少用电的响应。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-POWER",
+        "version": "1.0.0",
+        "inputSha256": "ea3923170eadd0b16fface8a178f6fd6b32a4cb50fa46588638c166be02d9e4c",
+        "inputFile": "electricity-service-v1.json"
+      }
+    },
+    {
+      "id": "cl-power-egrid-revision",
+      "text": "版本会改变这本账的组成。eGRID2023的第二次修订恢复了此前被处理为零的负净发电，并更新了有关匹配和汇总字段。复算时保留这些负值，是遵循该发行物的记账口径，不能因“发电应当为正”的直觉先把它们删掉。数据年份说明记录属于哪一年，修订日期说明读到的是哪一版；两者都参与数值身份。",
+      "kind": "interpretation",
+      "scope": "年度发电账包含什么；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-main-egrid2023-rev2-revisions",
+        "ev-kb48-main-egrid2023-rev2-release-notes"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-main-egrid2023-rev2-revisions",
+          "relation": "supports",
+          "rationale": "修订2公开更改记录。"
+        },
+        {
+          "evidenceId": "ev-kb48-main-egrid2023-rev2-release-notes",
+          "relation": "supports",
+          "rationale": "发行说明与负净发电处理。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-egrid-loss",
+      "kind": "calculation",
+      "scope": "年度发电账包含什么；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-main-egrid2023-rev2-ggl23-ercot",
+        "ev-kb48-main-egrid2023-guide-ggl-method"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-main-egrid2023-rev2-ggl23-ercot",
+          "relation": "supports",
+          "rationale": "GGL23损失、处置和直接使用的原始字段。"
+        },
+        {
+          "evidenceId": "ev-kb48-main-egrid2023-guide-ggl-method",
+          "relation": "supports",
+          "rationale": "公式、州级分配和年度互联系统范围。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-loss-definition",
+        "cl-power-egrid-scope"
+      ],
+      "conceptIds": [
+        "cn-power-loss-basis"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "text": "eGRID另有网损表，其对象是互联系统的年度总损耗估计。这里的“处置量”合计售电、无偿供给、自用和损失等去向；扣除州际净出口后，ERCOT行的量为约477196420.049 MWh。再减去不经电网的直接自用约33326181.969 MWh，才得到损耗率的分母。因此，网损率=损失量÷（不含出口处置量−直接使用量），用约18707069.898 MWh损失计算得4.2145%，公布时为4.2%。这是另一组明确的量，不能拿前面的ERCT电厂净发电替换这个分母。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-POWER",
+        "version": "1.0.0",
+        "inputSha256": "ea3923170eadd0b16fface8a178f6fd6b32a4cb50fa46588638c166be02d9e4c",
+        "inputFile": "electricity-service-v1.json"
+      }
+    },
+    {
+      "id": "cl-power-egrid-loss-conflict",
+      "text": "来源之间还存在一个具体差异：该技术指南和修订2工作簿将ERCOT列为4.2%、Western列为4.1%，而所引FAQ网页列出的两项相反。这里采用有明确数据版本的工作簿和指南，保留网页的不同记载，不能把访问更新日期当成已经解释差异的证据。即使网损值确定，把发电强度按损耗折算也只改变对应电量规模，不会自动追踪进口电的来源组成。",
+      "kind": "interpretation",
+      "scope": "年度发电账包含什么；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-main-egrid-faq-ggl-disagreement",
+        "ev-kb48-main-egrid2023-guide-ggl-method",
+        "ev-kb48-main-egrid2023-guide-generation-scope"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-main-egrid-faq-ggl-disagreement",
+          "relation": "qualifies",
+          "rationale": "FAQ与精确发行物不同值。"
+        },
+        {
+          "evidenceId": "ev-kb48-main-egrid2023-guide-ggl-method",
+          "relation": "supports",
+          "rationale": "网损应用范围。"
+        },
+        {
+          "evidenceId": "ev-kb48-main-egrid2023-guide-generation-scope",
+          "relation": "supports",
+          "rationale": "发电强度不做贸易归属。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-power-loss-basis",
+        "cn-power-generation-account"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-eia-balance",
+      "text": "要看小时上的连接，可以换到EIA-930的平衡责任区记录。按其方法定义，需求等于上报净发电减去净交换，净出口取正、净进口取负。每行MW表示该小时内的平均功率，时间标记指小时结束；乘一小时才得到这段电量。数据位于运营方可见的批发电网范围，未必包含配电端的全部资源，更不是逐个终端电表的集合。",
+      "kind": "interpretation",
+      "scope": "小时平衡怎样连接发电与需求；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-main-eia930-method-bulk-grid-balance"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-main-eia930-method-bulk-grid-balance",
+          "relation": "supports",
+          "rationale": "需求平衡、交换符号、计量范围与小时平均定义。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-power-hourly-balance"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-eia-hours",
+      "kind": "calculation",
+      "scope": "小时平衡怎样连接发电与需求；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-main-eia930-balance2023-export-hour",
+        "ev-kb48-main-eia930-balance2023-import-hour"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-main-eia930-balance2023-export-hour",
+          "relation": "supports",
+          "rationale": "原CSV冬季出口样本行。"
+        },
+        {
+          "evidenceId": "ev-kb48-main-eia930-balance2023-import-hour",
+          "relation": "supports",
+          "rationale": "原CSV夏季进口样本行。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-eia-balance"
+      ],
+      "conceptIds": [
+        "cn-power-hourly-balance"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "text": "ERCO在2023年1月1日本地01时结束的一行，净发电为36539 MW，净出口710 MW，因此需求为35829 MW。7月1日本地09时结束的一行则为51829 MW净发电和-81 MW净交换，需求成为51910 MW。后一行的负交换代表净进口，所以需求大于本区净发电；它并不表示“负用电”。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-POWER",
+        "version": "1.0.0",
+        "inputSha256": "ea3923170eadd0b16fface8a178f6fd6b32a4cb50fa46588638c166be02d9e4c",
+        "inputFile": "electricity-service-v1.json"
+      }
+    },
+    {
+      "id": "cl-power-eia-quality",
+      "text": "这两行恰好满足平衡定义式，不表示全年数据已闭合。按当地数据日期取出的2023年记录中，需求和净发电各有8760个值，净交换却有6项空缺；另有187项明确上报为零。对三个值都存在的小时核算，也有不为零的残差。空缺不能当成零，依据另两项反推的交换也不能冒充原始上报值。完整年度加总与“只把已填值相加”的结果，因而是不同的统计量。",
+      "kind": "calculation",
+      "scope": "小时平衡怎样连接发电与需求；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-main-eia930-balance2023-balance-first-half",
+        "ev-kb48-main-eia930-balance2023-balance-second-half",
+        "ev-kb48-main-eia930-method-time-and-imputation"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-main-eia930-balance2023-balance-first-half",
+          "relation": "supports",
+          "rationale": "第一半年完整ERCO记录的有界扫描和缺值。"
+        },
+        {
+          "evidenceId": "ev-kb48-main-eia930-balance2023-balance-second-half",
+          "relation": "supports",
+          "rationale": "第二半年对应扫描及年度连接。"
+        },
+        {
+          "evidenceId": "ev-kb48-main-eia930-method-time-and-imputation",
+          "relation": "supports",
+          "rationale": "原报、调整、插补及数据质量。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-eia-balance"
+      ],
+      "conceptIds": [
+        "cn-power-hourly-balance"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-eia-clock",
+      "text": "时间连接同样需要规则。这批记录按UTC小时键连续且唯一，当地钟点却在夏令时结束时重复；当地2023年最后一些结算小时还落在2024年的UTC日期。只按“2023”和“几点”连接两套数据，就可能重复或漏掉一小时。先使用带时区的小时身份，再说明年界和小时起止，才能比较对应时刻的电量与模型输入。",
+      "kind": "interpretation",
+      "scope": "小时平衡怎样连接发电与需求；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-main-eia930-balance2023-balance-first-half",
+        "ev-kb48-main-eia930-balance2023-balance-second-half",
+        "ev-kb48-main-eia930-method-time-and-imputation"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-main-eia930-balance2023-balance-first-half",
+          "relation": "supports",
+          "rationale": "半年数据UTC连续性起点。"
+        },
+        {
+          "evidenceId": "ev-kb48-main-eia930-balance2023-balance-second-half",
+          "relation": "supports",
+          "rationale": "重复当地钟点与跨UTC年界。"
+        },
+        {
+          "evidenceId": "ev-kb48-main-eia930-method-time-and-imputation",
+          "relation": "supports",
+          "rationale": "官方当地时区、夏令时和小时终点定义。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-power-hourly-balance"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-region-membership",
+      "text": "区域名称也不足以保证可接。AVERT的TE机组数据包含SRO Cogen，而同年的eGRID把这座Texas电厂归为MISO平衡区和SRMV子区域；另一个被TE包含的Tenaska Kiamichi电厂位于Oklahoma，却被eGRID归入ERCO和ERCT。两个具体记录已经足以否定“Texas州界就是共同边界”的简化。因而，不能拿eGRID某区域的排放量除以EIA另一集合的需求，或把AVERT基线当成前述年度全体电厂总量。",
+      "kind": "synthesis",
+      "scope": "小时平衡怎样连接发电与需求；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-main-egrid2023-rev2-plant-boundaries",
+        "ev-kb48-avertweb43-rdf-texas-hours",
+        "ev-kb48-main-eia930-method-bulk-grid-balance"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-main-egrid2023-rev2-plant-boundaries",
+          "relation": "supports",
+          "rationale": "实际PLNT23两行的州、BA和子区域身份。"
+        },
+        {
+          "evidenceId": "ev-kb48-avertweb43-rdf-texas-hours",
+          "relation": "supports",
+          "rationale": "同版TE RDF中机组身份和负荷。"
+        },
+        {
+          "evidenceId": "ev-kb48-main-eia930-method-bulk-grid-balance",
+          "relation": "supports",
+          "rationale": "EIA运营方可见集合的范围。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-egrid-scope",
+        "cl-power-eia-balance"
+      ],
+      "conceptIds": [
+        "cn-power-generation-account",
+        "cn-power-hourly-balance"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-eia-emissions",
+      "text": "即使一项小时产品另行提供CO₂，也要辨认它如何得到。EIA说明的小时排放方法，是用发电和燃料排放系数估算，再通过多区域投入产出式的流量归属处理进出口；它不是直接读取每小时全部烟囱排放。电量平衡、排放估算和消费归属是相接的三个步骤，某一步的统计完整性不会自动证明后两步准确。",
+      "kind": "interpretation",
+      "scope": "小时平衡怎样连接发电与需求；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-main-eia930-method-estimated-emissions"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-main-eia930-method-estimated-emissions",
+          "relation": "supports",
+          "rationale": "燃料因子估计与MRIO贸易归属说明。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-power-generation-account",
+        "cn-power-hourly-balance"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-average-response",
+      "text": "年度平均回答的是一组已计入排放如何除以相应电量；对需求变化的响应估计则要比较改变前后两个状态。平均强度并没有规定多用或少用电时由哪些机组改变出力。“平均”“非基荷”和“边际”需要回到具体估计方法解释，不能仅把它们当成强度高低的不同名称。",
+      "kind": "interpretation",
+      "scope": "平均与响应为何不是同一个估计；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-main-egrid2023-guide-nonbaseload",
+        "ev-kb48-siler2012-first-difference"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-main-egrid2023-guide-nonbaseload",
+          "relation": "supports",
+          "rationale": "容量因子代理与非基荷计算。"
+        },
+        {
+          "evidenceId": "ev-kb48-siler2012-first-difference",
+          "relation": "supports",
+          "rationale": "响应斜率相对于年均强度的估计差异。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-power-response",
+        "cn-power-generation-account"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-historical-generation",
+      "text": "Siler-Evans等2012年的研究从历史小时变化入手：把相邻小时化石毛发电的差与排放差配对，用回归斜率估计平均边际关系。样本来自2006—2011年的CEMS记录，按其NERC区域分别处理，不追踪区域间进出口；未覆盖的电源被假定不参与边际响应。这是有明确样本与条件的统计估计，不是把当时总排放除以总发电，也不是对每一项节电政策作实验。",
+      "kind": "interpretation",
+      "scope": "平均与响应为何不是同一个估计；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-siler2012-first-difference",
+        "ev-kb48-siler2012-load-and-uncertainty"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-siler2012-first-difference",
+          "relation": "supports",
+          "rationale": "数据、差分回归、毛发电和区域范围。"
+        },
+        {
+          "evidenceId": "ev-kb48-siler2012-load-and-uncertainty",
+          "relation": "supports",
+          "rationale": "遗漏电源、时段分组与适用限制。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-power-response"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-historical-consumption",
+      "text": "Graff Zivin、Kotchen与Mansur则把解释变量移到消费端：用2007—2009年FERC Form 714的小时消费解释互联系统的排放，并在东部互联系统中让不同地区的消费对应共同系统的排放变化。这样，某地区需求可以联系到别处的发电，而不预先限定响应必须发生在当地。模型设置一天中小时与样本月份的交叉固定效应，并以工作日估计；作者用消费者通常不直接承受批发电价来支持需求外生性。这个识别理由需要单独评估，不能仅凭结果采用质量/电量的单位就视为因果实验。",
+      "kind": "interpretation",
+      "scope": "平均与响应为何不是同一个估计；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-graffzivin2014-consumption-estimand",
+        "ev-kb48-graffzivin2014-scope-countercheck"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-graffzivin2014-consumption-estimand",
+          "relation": "supports",
+          "rationale": "期刊式1/2、小时月份控制、工作日与外生性论证。"
+        },
+        {
+          "evidenceId": "ev-kb48-graffzivin2014-scope-countercheck",
+          "relation": "supports",
+          "rationale": "消费与发电端、区域交易和毛/净口径的限制。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-power-response"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-empirical-limits",
+      "text": "这两种方法的区别首先在于“什么变化解释什么排放”。一份研究报告的置信区间很窄，也可能没有覆盖数据误差、模型选择和跨情境转用的不确定性。Siler-Evans等明确提醒了这一点，其论文延伸还讨论了水电跨时段调节和风电弃电。另一团队采用不同估计式提供了有用的对照，但两者共享部分CEMS数据来源，不能被算作两套完全独立的实测验证。",
+      "kind": "synthesis",
+      "scope": "平均与响应为何不是同一个估计；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-siler2012-load-and-uncertainty",
+        "ev-kb48-silerthesis2012-hydro-and-wind",
+        "ev-kb48-graffzivin2014-scope-countercheck"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-siler2012-load-and-uncertainty",
+          "relation": "supports",
+          "rationale": "作者对窄区间与更大模型/数据限制的说明。"
+        },
+        {
+          "evidenceId": "ev-kb48-silerthesis2012-hydro-and-wind",
+          "relation": "supports",
+          "rationale": "跨时段水电和弃风条件。"
+        },
+        {
+          "evidenceId": "ev-kb48-graffzivin2014-scope-countercheck",
+          "relation": "supports",
+          "rationale": "另一估计对象和共有观测来源。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-historical-generation",
+        "cl-power-historical-consumption"
+      ],
+      "conceptIds": [
+        "cn-power-response"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-price-versus-energy",
+      "text": "市场上“边际燃料”还可能指决定价格的燃料在多少时段出现。SPP的市场报告就按这种时间份额呈现，而前述回归可估计发电变化中不同燃料的能量份额。一个燃料在许多小时决定价格，不意味着它提供同样比例的新增电量，更不等于新增排放份额。价格形成、能量响应与排放响应，须分别建立连接。",
+      "kind": "interpretation",
+      "scope": "平均与响应为何不是同一个估计；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-spp2010-marginal-price",
+        "ev-kb48-silerthesis2012-spp-check"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-spp2010-marginal-price",
+          "relation": "supports",
+          "rationale": "市场报告图II.22的边际价格燃料时间份额。"
+        },
+        {
+          "evidenceId": "ev-kb48-silerthesis2012-spp-check",
+          "relation": "supports",
+          "rationale": "论文对统计能量份额与SPP时间份额的比较。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-power-response"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-native-model",
+      "text": "统计关系也可以被组织成可逐小时求值的程序。这里采用EPA AVERT Web 4.3.0发布的Texas模型区域（TE）的2023年数据；该发行物的机组涉及Oklahoma和Texas两州。计算采用同一发行物的原始数值函数。其区域数据文件保存负荷档位和各机组的关系：发电量使用全年同一组，污染物与热投入则区分5—9月和其他月份，计算程序把原负荷与改变后负荷分别代入，再汇总两种状态的差。它描述既有机组数据中的运行关系，不能仅因能输出逐小时结果就被看作带完整输电约束的调度优化器。",
+      "kind": "interpretation",
+      "scope": "把一次用电变化送入原始模型；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-avertweb43-release-config",
+        "ev-kb48-avertmanual43-statistical-module",
+        "ev-kb48-avertweb43-core-interpolation"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-avertweb43-release-config",
+          "relation": "supports",
+          "rationale": "精确发行版、TE区域与2023数据配置。"
+        },
+        {
+          "evidenceId": "ev-kb48-avertmanual43-statistical-module",
+          "relation": "supports",
+          "rationale": "上游统计关系与区域文件生成方法。"
+        },
+        {
+          "evidenceId": "ev-kb48-avertweb43-core-interpolation",
+          "relation": "supports",
+          "rationale": "原始计算函数按负荷档位插值。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-power-response"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-native-scenario",
+      "kind": "calculation",
+      "scope": "把一次用电变化送入原始模型；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-avertweb43-controller-chain",
+        "ev-kb48-avertweb43-client-loss-and-limits"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-avertweb43-controller-chain",
+          "relation": "context",
+          "rationale": "原始服务端输入到计算的路径；指定轮廓为作者设定。"
+        },
+        {
+          "evidenceId": "ev-kb48-avertweb43-client-loss-and-limits",
+          "relation": "supports",
+          "rationale": "原始客户端输入与检查函数；实际情景数值由绑定的原生运行给出。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-service"
+      ],
+      "conceptIds": [
+        "cn-power-response"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "text": "先规定一个便于追踪的需求变化：在这套2023年数据的每个一小时时段都减少1 MWh终端用电，全年共8760 MWh。没有另加光伏、风电、储能或电动汽车轮廓，直接计算整套TE区域，不再按州份额缩放。这是模型的条件输入，并不代表某项已实施的节能工程；零变化轮廓则提供同一程序的参照。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-POWER",
+        "version": "1.0.0",
+        "inputSha256": "ea3923170eadd0b16fface8a178f6fd6b32a4cb50fa46588638c166be02d9e4c",
+        "inputFile": "electricity-service-v1.json"
+      }
+    },
+    {
+      "id": "cl-power-native-loss",
+      "kind": "calculation",
+      "scope": "把一次用电变化送入原始模型；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-avertweb43-client-te-parameter",
+        "ev-kb48-avertweb43-client-loss-and-limits"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-avertweb43-client-te-parameter",
+          "relation": "supports",
+          "rationale": "发布配置中的精确lineLoss值。"
+        },
+        {
+          "evidenceId": "ev-kb48-avertweb43-client-loss-and-limits",
+          "relation": "supports",
+          "rationale": "原输入函数的1/(1−lineLoss)转换。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-native-scenario"
+      ],
+      "conceptIds": [
+        "cn-power-loss-basis",
+        "cn-power-response"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "text": "原始客户端先使用TE参数0.0457913819880058，按1/(1−ℓ)把终端变化变成请求的化石负荷变化。每减少1 MWh终端电量，这一步约请求减少1.047989 MWh；全年小时输入求和为-9180.3824 MWh，负号表示改变后减去原状态。这个中间量已经包含该程序的损耗处理，进入计算核后不能再被当成未经调整的终端电量。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-POWER",
+        "version": "1.0.0",
+        "inputSha256": "ea3923170eadd0b16fface8a178f6fd6b32a4cb50fa46588638c166be02d9e4c",
+        "inputFile": "electricity-service-v1.json"
+      }
+    },
+    {
+      "id": "cl-power-native-loss-document",
+      "text": "这项参数的解释还有一个来源限制。AVERT 4.3手册用同样的除以1−ℓ形式处理终端电量，但脚注把损耗比例写成“净发电加净进口再减销售量，除以销售量”。若严格采用这一销售量分母，简单电量平衡应使用1+ℓ，而不是1/(1−ℓ)。此处保留发布程序实际采用的转换，不自行改写为另一套模型，也不把它等同于eGRID的网损定义。手册、参数来源和程序行为需要分别辨认。",
+      "kind": "interpretation",
+      "scope": "把一次用电变化送入原始模型；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-avertmanual43-loss-denominator",
+        "ev-kb48-avertweb43-client-te-parameter",
+        "ev-kb48-avertweb43-client-loss-and-limits"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-avertmanual43-loss-denominator",
+          "relation": "qualifies",
+          "rationale": "手册表2、公式和脚注35的分母不一致。"
+        },
+        {
+          "evidenceId": "ev-kb48-avertweb43-client-te-parameter",
+          "relation": "supports",
+          "rationale": "所执行发行参数。"
+        },
+        {
+          "evidenceId": "ev-kb48-avertweb43-client-loss-and-limits",
+          "relation": "supports",
+          "rationale": "原程序实际转换。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-native-loss"
+      ],
+      "conceptIds": [
+        "cn-power-loss-basis"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-native-interpolation",
+      "text": "计算核接着在相邻负荷档位之间作线性插值。设两个档位为L₀、L₁，对应某机组的一项量为y₀、y₁，则档内负荷L给出y(L)=y₀+(y₁−y₀)(L−L₀)/(L₁−L₀)。对改变前后分别求值，再把小时结果归入月份。这使响应取决于原先处于哪个档位、扰动是否跨档，以及各机组的已存关系；它不是给所有机组统一乘上一个平均排放率。",
+      "kind": "calculation",
+      "scope": "把一次用电变化送入原始模型；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-avertweb43-core-interpolation"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-avertweb43-core-interpolation",
+          "relation": "supports",
+          "rationale": "原服务器数值函数的档位搜索、插值和月份累加。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-native-model"
+      ],
+      "conceptIds": [
+        "cn-power-response"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-native-output",
+      "kind": "calculation",
+      "scope": "把一次用电变化送入原始模型；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-avertweb43-core-interpolation",
+        "ev-kb48-avertweb43-aggregate-original-post",
+        "ev-kb48-avertmanual43-balance-and-transmission"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-avertweb43-core-interpolation",
+          "relation": "supports",
+          "rationale": "原函数不通过总量约束校准逐机组响应。"
+        },
+        {
+          "evidenceId": "ev-kb48-avertweb43-aggregate-original-post",
+          "relation": "supports",
+          "rationale": "原始聚合的前后值与月路径。"
+        },
+        {
+          "evidenceId": "ev-kb48-avertmanual43-balance-and-transmission",
+          "relation": "supports",
+          "rationale": "手册关于平衡、传输与近似的限制。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-native-loss",
+        "cl-power-native-interpolation"
+      ],
+      "conceptIds": [
+        "cn-power-response"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "text": "这组原函数计算的全年机组发电合计变化为-9187.9183 MWh，直接CO₂变化为-5672.7223美国短吨。它们是把各机组结果先汇为每月区域总量、逐月计算“情景减基线”，再加总月差得到的模型输出。尤其要注意，发电合计变化与前面的请求化石负荷变化相差约-7.5359 MWh：插值得到的各机组响应没有逐档强制合计等于请求负荷，这个差额不能再解释成一项额外网损。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-POWER",
+        "version": "1.0.0",
+        "inputSha256": "ea3923170eadd0b16fface8a178f6fd6b32a4cb50fa46588638c166be02d9e4c",
+        "inputFile": "electricity-service-v1.json"
+      }
+    },
+    {
+      "id": "cl-power-native-ratios",
+      "kind": "calculation",
+      "scope": "把一次用电变化送入原始模型；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-avertweb43-display-replacement-and-ratio",
+        "ev-kb48-avertweb43-aggregate-original-post",
+        "ev-kb48-units-short-ton"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-avertweb43-display-replacement-and-ratio",
+          "relation": "supports",
+          "rationale": "原显示层的变化量、发电差分母及潜在替换路径。"
+        },
+        {
+          "evidenceId": "ev-kb48-avertweb43-aggregate-original-post",
+          "relation": "supports",
+          "rationale": "派生运行采用的原月差聚合。"
+        },
+        {
+          "evidenceId": "ev-kb48-units-short-ton",
+          "relation": "supports",
+          "rationale": "短吨、磅与kg的确切单位关系。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-native-output"
+      ],
+      "conceptIds": [
+        "cn-power-response"
+      ],
+      "mappingIds": [],
+      "caveats": [
+        "算例没有传播原统计、参数和模型结构的不确定性；显示小数为核算所列值，不代表同等的测量或预测精度。"
+      ],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "text": "用1美国短吨=907.18474 kg换算，模型给出的CO₂减少量约为5146207.11 kg。将它除以规定的终端减少量，约为587.47 kg/MWh；除以模型发电减少量的绝对值，则约为560.11 kg/MWh。同一分子产生两个数，因为两个分母回答不同问题。不能把它们的差直接当成两种算法对同一排放因子的分歧。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-POWER",
+        "version": "1.0.0",
+        "inputSha256": "ea3923170eadd0b16fface8a178f6fd6b32a4cb50fa46588638c166be02d9e4c",
+        "inputFile": "electricity-service-v1.json"
+      }
+    },
+    {
+      "id": "cl-power-native-check-meaning",
+      "text": "零变化输入使原状态与后状态相同，可以检查这条数值路径没有凭空制造变化；检查所有小时是否落在可插值范围，也能发现被跳过或无法求值的记录。然而，这些内部一致性条件没有观察真实工程实施后的电网。原模型的逐机组关系还允许少数机组在总负荷下降时给出更高排放；是否对应特定机组的实际运行机制，仍需另一类证据。",
+      "kind": "interpretation",
+      "scope": "把一次用电变化送入原始模型；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-avertweb43-core-interpolation",
+        "ev-kb48-avertmanual43-accuracy-and-nonmonotonic",
+        "ev-kb48-avertmanual43-load-range"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-avertweb43-core-interpolation",
+          "relation": "supports",
+          "rationale": "输入边界与同值代入的计算含义。"
+        },
+        {
+          "evidenceId": "ev-kb48-avertmanual43-accuracy-and-nonmonotonic",
+          "relation": "supports",
+          "rationale": "非单调机组关系及实际准确性限制。"
+        },
+        {
+          "evidenceId": "ev-kb48-avertmanual43-load-range",
+          "relation": "qualifies",
+          "rationale": "手册负荷表与原程序档边分别核对，不把表头当作程序测试结论。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-power-response"
+      ],
+      "mappingIds": [],
+      "caveats": [
+        "本例按固定RDF的load_bin_edges核对可插值范围，未把手册表7中的Texas年度观测极值当成程序档边。所有情景均未触发越界或上端点；这不检验现实干预效果。"
+      ],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-native-two-hours",
+      "kind": "calculation",
+      "scope": "把一次用电变化送入原始模型；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-avertweb43-rdf-texas-hours",
+        "ev-kb48-avertweb43-client-loss-and-limits",
+        "ev-kb48-avertweb43-core-interpolation"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-avertweb43-rdf-texas-hours",
+          "relation": "supports",
+          "rationale": "精确RDF的两个原始小时和负荷。"
+        },
+        {
+          "evidenceId": "ev-kb48-avertweb43-client-loss-and-limits",
+          "relation": "supports",
+          "rationale": "原预处理传入小时变化。"
+        },
+        {
+          "evidenceId": "ev-kb48-avertweb43-core-interpolation",
+          "relation": "supports",
+          "rationale": "原始数值求值关系；输出为作者规定情景的实际计算。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-native-interpolation"
+      ],
+      "conceptIds": [
+        "cn-power-response",
+        "cn-power-hourly-balance"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "text": "再规定两种情景都减少100 MWh终端电量，分别放到区域数据文件（RDF）标记的7月1日03时和16时，其余小时不变。这两个记录在上述化石负荷坐标上的值分别为34246和45576 MW。两次输入请求的化石负荷变化相同，模型CO₂变化却分别为-60.2830和-56.6234短吨，相当于每规定减少的终端MWh约546.88和513.68 kg。相同电量在不同运行位置进入模型，会得到不同响应。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-POWER",
+        "version": "1.0.0",
+        "inputSha256": "ea3923170eadd0b16fface8a178f6fd6b32a4cb50fa46588638c166be02d9e4c",
+        "inputFile": "electricity-service-v1.json"
+      }
+    },
+    {
+      "id": "cl-power-native-pollutants",
+      "kind": "calculation",
+      "scope": "把一次用电变化送入原始模型；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-avertweb43-core-interpolation",
+        "ev-kb48-avertweb43-aggregate-original-post",
+        "ev-kb48-avertweb43-nei-input"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-avertweb43-core-interpolation",
+          "relation": "supports",
+          "rationale": "各污染物各自的原始计算。"
+        },
+        {
+          "evidenceId": "ev-kb48-avertweb43-aggregate-original-post",
+          "relation": "supports",
+          "rationale": "原聚合保留不同物质与单位。"
+        },
+        {
+          "evidenceId": "ev-kb48-avertweb43-nei-input",
+          "relation": "qualifies",
+          "rationale": "另一些污染物通过热投入与NEI年度资料估算，数据链并不相同。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-native-two-hours"
+      ],
+      "conceptIds": [
+        "cn-power-response"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "text": "CO₂的顺序还不能替其他污染物下结论。上述03时与16时情景的模型SO₂变化分别约为-34.55和-56.28磅，NOₓ变化分别约为-18.74和-105.91磅。这里16时的减少量反而较大。不同物质的质量不能直接加总，更没有仅凭这些质量变化就完成颗粒物暴露、健康或多影响类别评价。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-POWER",
+        "version": "1.0.0",
+        "inputSha256": "ea3923170eadd0b16fface8a178f6fd6b32a4cb50fa46588638c166be02d9e4c",
+        "inputFile": "electricity-service-v1.json"
+      }
+    },
+    {
+      "id": "cl-power-native-application",
+      "text": "这两个时间轮廓通过原始数值函数求值，并非Web界面中的任意小时上传功能；手册对界面输入另有限制。更关键的是，同样减少100 MWh并未证明两次安排完成了相同最终服务，RDF时钟也不能未经对应就与EIA的UTC小时相连。把这个结果用于某项选择，需要先补上功能、位置、时钟和实际可实施性的证据，而不是只选出较低的CO₂比值。",
+      "kind": "synthesis",
+      "scope": "把一次用电变化送入原始模型；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-avertmanual43-web-limit",
+        "ev-kb48-avertweb43-rdf-texas-hours",
+        "ev-kb48-main-eia930-method-time-and-imputation",
+        "ev-kb48-future-gagnon-cole2022-intervention-weights"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-avertmanual43-web-limit",
+          "relation": "qualifies",
+          "rationale": "界面不支持任意外部小时向量。"
+        },
+        {
+          "evidenceId": "ev-kb48-avertweb43-rdf-texas-hours",
+          "relation": "supports",
+          "rationale": "RDF时间字段的实际范围。"
+        },
+        {
+          "evidenceId": "ev-kb48-main-eia930-method-time-and-imputation",
+          "relation": "supports",
+          "rationale": "EIA另一时钟约定。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-gagnon-cole2022-intervention-weights",
+          "relation": "supports",
+          "rationale": "干预形状与结果权重之间的关系。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-native-two-hours"
+      ],
+      "conceptIds": [
+        "cn-power-response",
+        "cn-power-delivery"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-future-question",
+      "text": "前述运行关系以既有系统为条件。如果一项需求变化持续到足以影响投资和退役，原有机组组合本身也可能改变。短期与长期在这里首先是模型允许哪些资本资产变化，不能简单按一条固定年数界线划分；一个标为未来年份的结果，也可能仍是固定机组条件下的运行估计。应先辨认系统中哪些东西允许变，再看时间标签。",
+      "kind": "interpretation",
+      "scope": "未来需求还会改变哪些资产；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-future-cambium2024-report-lrmer-process",
+        "ev-kb48-treyer-longterm-scope"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-report-lrmer-process",
+          "relation": "supports",
+          "rationale": "§6.4短/长期资本定义与重求解。"
+        },
+        {
+          "evidenceId": "ev-kb48-treyer-longterm-scope",
+          "relation": "supports",
+          "rationale": "历史ecoinvent长期市场的容量解释。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-power-response",
+        "cn-power-prospective"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-future-system",
+      "text": "Cambium 2024用一组相接的模型构造未来电力系统：ReEDS处理发电与输电容量、退役和规划约束，dGen提供表后光伏预测，PRAS检查资源充足性，再将容量转入PLEXOS作更细的机组承诺和小时调度。这里的“2024”是发布版本，下面采用的是2025模拟年。公开的年度表是这一过程的输出，不是对2025实况的直接登记。",
+      "kind": "interpretation",
+      "scope": "未来需求还会改变哪些资产；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-future-cambium2024-report-identity-model",
+        "ev-kb48-future-cambium2024-release-annual-archive"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-report-identity-model",
+          "relation": "supports",
+          "rationale": "报告所述模型链与发布/模拟年。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-release-annual-archive",
+          "relation": "supports",
+          "rationale": "实际年度GEA发布包身份。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-power-prospective"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-future-perturbation",
+      "text": "其长期边际排放率（long-run marginal emission rate，LRMER）由基线与增加终端负荷的两次求解形成。2025模拟年把全国负荷按原形状放大1%，其他实际求解年份采用5%；ReEDS与PLEXOS都重新求解，因此机组运行与容量组合都可以变化。随后还要把变化分配到地区和小时。这是有限、全局扰动的模型响应，不是只在某州某一小时增加一度电，再直接读取该小时的局部导数。",
+      "kind": "interpretation",
+      "scope": "未来需求还会改变哪些资产；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-future-cambium2024-report-lrmer-process"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-report-lrmer-process",
+          "relation": "supports",
+          "rationale": "§6.4全国同比扰动、两个模型重求解与区域后分配。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-power-prospective",
+        "cn-power-response"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-future-postprocessing",
+      "text": "两次求解相减仍未得到最后发布的小时因子。这里的“技术增量”是同一发电技术在扰动情景与基线之间的发电量差。Cambium先将各技术的增加量按网络流量和节点内完全混合的假设分配到消费地区，再扣去相应减少量。若某技术在一个小时的净变化为负，就将它移出该小时组合：作者认为这种减少可能源自其他时段的投资或运行变化，不能直接归因于本小时需求增加。这一步旨在避免把跨时段作用错归给本小时，却没有把删去的减少量重新分配到引起它的小时。最终指标因此不是未经处理的所有机组前后差。",
+      "kind": "interpretation",
+      "scope": "未来需求还会改变哪些资产；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-future-cambium2024-report-lrmer-process"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-report-lrmer-process",
+          "relation": "supports",
+          "rationale": "§6.4步骤2—5的流量分配、删负、储能近似与政策处理。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-power-prospective"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-future-balance",
+      "kind": "calculation",
+      "scope": "未来需求还会改变哪些资产；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-future-cambium2024-release-midcase-balance",
+        "ev-kb48-future-cambium2024-report-delivery"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-release-midcase-balance",
+          "relation": "supports",
+          "rationale": "原年度CSV行的发电、贸易和母线量。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-report-delivery",
+          "relation": "supports",
+          "rationale": "母线与终端参考量定义。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-future-system"
+      ],
+      "conceptIds": [
+        "cn-power-prospective",
+        "cn-power-hourly-balance"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "text": "从同一发布包的MidCase、ERCOT、2025行看母线电量：区域发电438493630.0 MWh，加进口412059.4，减出口1208316.6，得到437697372.8 MWh。表列母线负荷为437697380 MWh，前式减去表列值为-7.2 MWh。这个很小但非零的差额应保留；已公布数值只支持近似闭合，不能据总量接近就断言已重建原始求解精度。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-POWER",
+        "version": "1.0.0",
+        "inputSha256": "ea3923170eadd0b16fface8a178f6fd6b32a4cb50fa46588638c166be02d9e4c",
+        "inputFile": "electricity-service-v1.json"
+      }
+    },
+    {
+      "id": "cl-power-future-load-parts",
+      "kind": "calculation",
+      "scope": "未来需求还会改变哪些资产；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-future-cambium2024-release-midcase-balance",
+        "ev-kb48-future-cambium2024-report-delivery"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-release-midcase-balance",
+          "relation": "supports",
+          "rationale": "同一原始行各活动量。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-report-delivery",
+          "relation": "supports",
+          "rationale": "§5.7母线、终端和储能定义。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-future-balance"
+      ],
+      "conceptIds": [
+        "cn-power-prospective",
+        "cn-power-delivery"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "text": "母线是连接发电、用电和其他电网活动的电气连接点；模型按这一层级记账。母线负荷还不全是送去完成终端服务的电量。同一行中，为终端供电所需的母线量为425158500.0 MWh，另列区域间输电损耗4366699.0、电池充电8168517.0和抽蓄充电3672.7 MWh。四项相加比表列母线负荷高8.7 MWh。这里的终端负荷包括表后光伏供电，即位于用户电表内侧、直接服务该用户的发电。为终端服务所列的母线量，将这部分电量也按配电损耗转换为相应的母线等效量；表后光伏并未实际经过对应网络，因此这组等效量不全是电网表计测得的外购电。充电、输电损失和终端服务有各自位置，不能把整个母线负荷都当成用户交付量。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-POWER",
+        "version": "1.0.0",
+        "inputSha256": "ea3923170eadd0b16fface8a178f6fd6b32a4cb50fa46588638c166be02d9e4c",
+        "inputFile": "electricity-service-v1.json"
+      }
+    },
+    {
+      "id": "cl-power-future-distribution",
+      "kind": "calculation",
+      "scope": "未来需求还会改变哪些资产；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-future-cambium2024-release-midcase-balance",
+        "ev-kb48-future-cambium2024-release-midcase-rates",
+        "ev-kb48-future-cambium2024-report-delivery"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-release-midcase-balance",
+          "relation": "supports",
+          "rationale": "母线终端服务与终端量原值。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-release-midcase-rates",
+          "relation": "supports",
+          "rationale": "分别列报的平均与边际损耗率。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-report-delivery",
+          "relation": "supports",
+          "rationale": "§5.1不同指标的配电转换。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-future-load-parts"
+      ],
+      "conceptIds": [
+        "cn-power-loss-basis",
+        "cn-power-prospective"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "text": "该行终端用电为409876104.3 MWh，与终端服务所需母线量之差为15282395.7 MWh，占后者约3.5945%。这是配电层的数量差，与单列的区域间输电损失不同。报告又区分平均和边际配电损耗：前者用于平均及长期指标，后者用于短期指标。已经以终端MWh发布的因子，不能再重复乘一次“送达用户”的损耗修正。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-POWER",
+        "version": "1.0.0",
+        "inputSha256": "ea3923170eadd0b16fface8a178f6fd6b32a4cb50fa46588638c166be02d9e4c",
+        "inputFile": "electricity-service-v1.json"
+      }
+    },
+    {
+      "id": "cl-power-future-direct-rates",
+      "kind": "interpretation",
+      "scope": "未来需求还会改变哪些资产；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-future-cambium2024-release-midcase-rates",
+        "ev-kb48-future-cambium2024-report-delivery",
+        "ev-kb48-future-cambium2024-report-historical-bridge"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-release-midcase-rates",
+          "relation": "supports",
+          "rationale": "同一发行行两个不同直接CO2指标。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-report-delivery",
+          "relation": "supports",
+          "rationale": "平均发电与负荷归属的处理。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-report-historical-bridge",
+          "relation": "supports",
+          "rationale": "原生与eGRID兼容口径的区别。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-power-generation-account",
+        "cn-power-prospective"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "text": "即使都只看直接CO₂，该情景的发电平均为235.2 kg/MWh发电，消费端平均为249.7 kg/MWh终端用电。这两个率之间涉及进口出口、储能来源和归属处理，以及配电转换。仅把前者除以一个交付比例，不足以重建后者；同样也不能把它们直接与前面的eGRID区域率当成同一系统的新旧值。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-POWER",
+        "version": "1.0.0",
+        "inputSha256": "ea3923170eadd0b16fface8a178f6fd6b32a4cb50fa46588638c166be02d9e4c",
+        "inputFile": "electricity-service-v1.json"
+      }
+    },
+    {
+      "id": "cl-power-future-three-questions",
+      "kind": "interpretation",
+      "scope": "未来需求还会改变哪些资产；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-future-cambium2024-release-midcase-rates",
+        "ev-kb48-future-cambium2024-report-lrmer-process",
+        "ev-kb48-future-cambium2024-report-fuel-cycle"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-release-midcase-rates",
+          "relation": "supports",
+          "rationale": "三个公开年度输出的精确条目。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-report-lrmer-process",
+          "relation": "supports",
+          "rationale": "长期响应的定义与处理。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-report-fuel-cycle",
+          "relation": "supports",
+          "rationale": "气体和燃烧前范围。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-power-prospective",
+        "cn-power-response"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "text": "前段只计直接燃烧CO₂；现在既加入燃烧前过程，也将CH₄和N₂O换算为CO₂e。在同一MidCase模拟行中，这种较广范围的终端平均排放率为307.5、短期边际率为757.8、长期边际率为547.3 kg CO₂e/MWh。三者的单位和终端分母形式相同，估计对象却不同：一个归属既有情景供电的排放，一个估计固定资本下的变化，一个允许资本随负荷扰动变化。它们不能作为三种任选其一的答案，也不能只按大小判定哪个模型更正确。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-POWER",
+        "version": "1.0.0",
+        "inputSha256": "ea3923170eadd0b16fface8a178f6fd6b32a4cb50fa46588638c166be02d9e4c",
+        "inputFile": "electricity-service-v1.json"
+      }
+    },
+    {
+      "id": "cl-power-future-gases",
+      "kind": "calculation",
+      "scope": "未来需求还会改变哪些资产；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-future-cambium2024-workbook-ercot-gases",
+        "ev-kb48-future-cambium2024-report-fuel-cycle"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-workbook-ercot-gases",
+          "relation": "supports",
+          "rationale": "原工作簿分气体质量、单位和GWP单元格。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-report-fuel-cycle",
+          "relation": "supports",
+          "rationale": "AR6百年GWP与燃烧/燃烧前边界。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-future-three-questions"
+      ],
+      "conceptIds": [
+        "cn-power-prospective"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "text": "CO₂e还含一次气体表征。对应ERCOT、2025、MidCase长期边际排放率的工作簿直接燃烧分项每终端MWh为409.1 kg CO₂、15.5 g CH₄和1.99 g N₂O。把克换成千克，再用该版列出的100年GWP——CO₂为1、CH₄为29.8、N₂O为273——加权，得到410.10517 kg CO₂e。燃烧前分项同样由41.5 kg CO₂、3209.1 g CH₄和0.19 g N₂O得到137.18305 kg CO₂e。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-POWER",
+        "version": "1.0.0",
+        "inputSha256": "ea3923170eadd0b16fface8a178f6fd6b32a4cb50fa46588638c166be02d9e4c",
+        "inputFile": "electricity-service-v1.json"
+      }
+    },
+    {
+      "id": "cl-power-future-gases-total",
+      "kind": "calculation",
+      "scope": "未来需求还会改变哪些资产；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-future-cambium2024-workbook-ercot-gases",
+        "ev-kb48-future-cambium2024-release-midcase-rates",
+        "ev-kb48-future-cambium2024-report-fuel-cycle",
+        "ev-kb48-future-cambium2024-workbook-lifecycle"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-workbook-ercot-gases",
+          "relation": "supports",
+          "rationale": "分项计算的原值。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-release-midcase-rates",
+          "relation": "supports",
+          "rationale": "年度CSV合计与分项的独立载体。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-report-fuel-cycle",
+          "relation": "supports",
+          "rationale": "明确排除的设施和非燃烧运行过程。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-workbook-lifecycle",
+          "relation": "qualifies",
+          "rationale": "B16直接说明建设、非燃烧运维和退役未计入。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-future-gases"
+      ],
+      "conceptIds": [
+        "cn-power-prospective"
+      ],
+      "mappingIds": [],
+      "caveats": [
+        "算例没有传播原统计、参数和模型结构的不确定性；显示小数为核算所列值，不代表同等的测量或预测精度。"
+      ],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "text": "两组相加为547.28822 kg CO₂e/MWh，在一位小数精度下与发布的547.3一致。这个算术关系解释了气体质量怎样走到该指标，却没有重新求解容量和调度模型。燃料开采、加工、运输与逸散虽已进入燃烧前分项，设施建设、非燃烧运维与退役等链条仍未因此补全。这里的CO₂e不能被简称为完整电力生命周期影响。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-POWER",
+        "version": "1.0.0",
+        "inputSha256": "ea3923170eadd0b16fface8a178f6fd6b32a4cb50fa46588638c166be02d9e4c",
+        "inputFile": "electricity-service-v1.json"
+      }
+    },
+    {
+      "id": "cl-power-future-scenario",
+      "kind": "calculation",
+      "scope": "未来需求还会改变哪些资产；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-future-cambium2024-release-alternate-rate",
+        "ev-kb48-future-cambium2024-release-midcase-rates",
+        "ev-kb48-future-cambium2024-report-identity-model"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-release-alternate-rate",
+          "relation": "supports",
+          "rationale": "具名替代情景年度行。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-release-midcase-rates",
+          "relation": "supports",
+          "rationale": "同年同区基准值。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-report-identity-model",
+          "relation": "supports",
+          "rationale": "各情景捆绑假设的范围。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-future-system",
+        "cl-power-future-three-questions"
+      ],
+      "conceptIds": [
+        "cn-power-prospective"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "text": "换成低可再生能源成本并伴随高天然气价格的一组情景假设，同年同一区域的长期指标为638.4 kg CO₂e/MWh，比MidCase高91.1。这组情景同时改变技术成本、性能和燃料条件，差额不能只归因于某一个价格。表中结果提供了特定未来条件之间的比较，并不证明真实世界会沿其中一条路径发生。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-POWER",
+        "version": "1.0.0",
+        "inputSha256": "ea3923170eadd0b16fface8a178f6fd6b32a4cb50fa46588638c166be02d9e4c",
+        "inputFile": "electricity-service-v1.json"
+      }
+    },
+    {
+      "id": "cl-power-future-time",
+      "text": "年度代表率也不等于任意用户的小时率。若某项干预在小时h改变电量Δqₕ，采用相应小时响应率mₕ时，合计估计应逐小时形成ΣmₕΔqₕ；只有总电量变化非零时，才能再除以它写成每单位净变化的率；移峰的净电量变化可为零，排放变化却未必为零。Gagnon与Cole用不同负荷形状在同一模型家族内比较这类估计，说明负荷形状的权重为何重要。Cambium还采用标准时、小时起点及2012天气和日历模式，不能把它的钟点裸接到真实2023年的EIA小时终点；公开年度率也不能未经聚合规则核实就当作某个用户的加权结果。",
+      "kind": "calculation",
+      "scope": "未来需求还会改变哪些资产；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-future-gagnon-cole2022-intervention-weights",
+        "ev-kb48-future-cambium2024-report-clock"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-future-gagnon-cole2022-intervention-weights",
+          "relation": "supports",
+          "rationale": "式5的干预负荷加权及同模型比较。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-report-clock",
+          "relation": "supports",
+          "rationale": "§5.2和脚注14–15直接说明标准时、小时起点及2012日历。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-native-two-hours",
+        "cl-power-future-perturbation"
+      ],
+      "conceptIds": [
+        "cn-power-prospective",
+        "cn-power-hourly-balance"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-future-formula",
+      "text": "文档中的公式与实际输出还应分开看。Cambium报告把年可变配电损耗记为Lᵥ,年、年母线量记为Q年，印出的系数是Lᵥ,年/Q年²，再用它乘各小时Qₕ²。按这些定义求和，通常不能回到规定的年损耗；保持该年度总量需要的分母是ΣQₕ²，而不是(ΣQₕ)²。其引用的Borenstein与Bushnell工作论文采用前一种小时平方和形式。这个差异可以从原式判断，却不能据此断定实际生成程序使用了哪一种式子，也不能据它直接改写已经发布的年度数据。",
+      "kind": "calculation",
+      "scope": "未来需求还会改变哪些资产；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-future-cambium2024-report-loss-print",
+        "ev-kb48-future-borenstein-bushnell2018-loss-normalizer"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-report-loss-print",
+          "relation": "qualifies",
+          "rationale": "印刷p61年负荷和小时损耗公式。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-borenstein-bushnell2018-loss-normalizer",
+          "relation": "supports",
+          "rationale": "原始上游式11右侧小时平方和分母。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-loss-definition",
+        "cl-power-future-distribution"
+      ],
+      "conceptIds": [
+        "cn-power-loss-basis",
+        "cn-power-prospective"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-alternative-lca",
+      "text": "若问题要求完整的生命周期清单，还必须把响应的技术组合接到对应技术的背景活动。Vandepaer等2019年的方法以一个未来情景内增长的非受限技术增量构造边际组合，再通过ecoinvent背景、电压市场和影响评价取得结果。其美国份额来自全国展望并分配到子区域，因而细地域的清单名称并不等于当地实测边际供应。这条路线与Cambium的扩容和调度重求解不同，使用的背景版本与影响方法也需要重新对齐。",
+      "kind": "synthesis",
+      "scope": "把响应接回生命周期问题；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-future-vandepaer2019-positive-growth",
+        "ev-kb48-future-vandepaer2019-background-sensitivity",
+        "ev-kb48-future-vandepaer2019-esm4-notebooks"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-future-vandepaer2019-positive-growth",
+          "relation": "supports",
+          "rationale": "增量归一、国家展望和地区应用。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-vandepaer2019-background-sensitivity",
+          "relation": "supports",
+          "rationale": "背景版本、电压链和影响方法。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-vandepaer2019-esm4-notebooks",
+          "relation": "context",
+          "rationale": "原notebook实际依赖授权背景库及替换市场操作。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-database-voltage",
+        "cl-power-future-gases-total"
+      ],
+      "conceptIds": [
+        "cn-power-prospective",
+        "cn-power-delivery"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-validation-objects",
+      "text": "检验结果时，先问检验的是哪一层。原程序重算一致，检验的是固定输入下的数值路径；与同一模型重求解结果比较，检验的是在该模型内近似是否合适；用观测建立代理比较，又要考虑时空对齐及代理是否对应真正待估的响应。Koebrich等的作者预印本用2021观测代理考察旧版Cambium小时信号，提供了另一团队的限制证据，却没有检验这里2024版本的长期资本反事实。作者所在的WattTime也提供被比较的排放信号，这一背景须与检验设计一起理解。",
+      "kind": "synthesis",
+      "scope": "把响应接回生命周期问题；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-future-gagnon-cole2022-intervention-weights",
+        "ev-kb48-future-koebrich2023-empirical-proxy",
+        "ev-kb48-avertmanual43-accuracy-and-nonmonotonic"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-future-gagnon-cole2022-intervention-weights",
+          "relation": "supports",
+          "rationale": "同模型家族的比较对象。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-koebrich2023-empirical-proxy",
+          "relation": "qualifies",
+          "rationale": "预印本版次、代理年份、旧版模型和利益背景。"
+        },
+        {
+          "evidenceId": "ev-kb48-avertmanual43-accuracy-and-nonmonotonic",
+          "relation": "supports",
+          "rationale": "运行关系与真实准确性的分层限制。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-native-check-meaning",
+        "cl-power-future-perturbation"
+      ],
+      "conceptIds": [
+        "cn-power-response",
+        "cn-power-prospective"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-connection",
+      "text": "因此，把一项用电需求接入LCA，需要逐道确认关系：功能要求怎样给出电量与时间轮廓，交付点怎样接到网络，供电与贸易怎样归属，哪些资产和运行量随问题改变，最后哪些排放进入了什么影响方法。缺少其中一道连接时，已有结果仍可回答它限定的问题，但不能凭相同的kWh、地区名或CO₂e标签替代缺失证据。电力因子的意义，正在这条关系链及其条件之中。",
+      "kind": "synthesis",
+      "scope": "把响应接回生命周期问题；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-arvesen-boundary",
+        "ev-kb48-main-egrid2023-guide-generation-scope",
+        "ev-kb48-avertmanual43-rates-and-horizon",
+        "ev-kb48-future-cambium2024-report-lrmer-process",
+        "ev-kb48-future-cambium2024-report-fuel-cycle"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-arvesen-boundary",
+          "relation": "supports",
+          "rationale": "交付参考量与真实输配边界。"
+        },
+        {
+          "evidenceId": "ev-kb48-main-egrid2023-guide-generation-scope",
+          "relation": "supports",
+          "rationale": "年度发电归属范围。"
+        },
+        {
+          "evidenceId": "ev-kb48-avertmanual43-rates-and-horizon",
+          "relation": "supports",
+          "rationale": "历史响应的范围。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-report-lrmer-process",
+          "relation": "supports",
+          "rationale": "未来资本响应的条件。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-report-fuel-cycle",
+          "relation": "supports",
+          "rationale": "指标及未覆盖生命周期链。"
+        }
+      ],
+      "premiseIds": [
+        "cl-power-grid-assets",
+        "cl-power-region-membership",
+        "cl-power-native-ratios",
+        "cl-power-future-gases-total"
+      ],
+      "conceptIds": [
+        "cn-power-delivery",
+        "cn-power-response",
+        "cn-power-prospective"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-nonbaseload",
+      "text": "eGRID的非基荷率采用一种可明确写出的近似。容量因子可理解为实际发电相对于按额定能力持续运行的发电量比例；这里把它当作调度顺序的代理。低于0.2的电厂，该电厂的发电与排放全部计入；高于0.8的电厂不计入；两者之间采用从1降到0的线性权重。分别加总加权发电和加权排放，再相除形成该率，可再生燃料发电不进入这一计算。它有时用于估算节能或可再生能源替代边际化石发电的排放，却没有识别每个小时真实响应的机组；检修也会影响容量因子。",
+      "kind": "interpretation",
+      "scope": "平均与响应为何不是同一个估计；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-main-egrid2023-guide-nonbaseload"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-main-egrid2023-guide-nonbaseload",
+          "relation": "supports",
+          "rationale": "原指南p20线性权重、p21用途与可再生燃料排除。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-power-response",
+        "cn-power-generation-account"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-native-coordinate",
+      "text": "AVERT在这里求值的是其排放数据库所覆盖的化石燃料机组，而不是全部电源。化石负荷是需要由这些化石资源满足的区域负荷坐标，以MW表示；乘一小时才得到该段电量；核电、水电、风电和太阳能出力不直接进入这组机组发电与排放合计。方法把新增节能或可再生能源视为减少对化石资源的需求。下面的例子沿用这一处理，把规定的终端减少量转换为化石负荷请求，并未另外求解非化石电源或进口怎样随干预改变。",
+      "kind": "interpretation",
+      "scope": "把一次用电变化送入原始模型；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-avertmanual43-rates-and-horizon",
+        "ev-kb48-avertmanual43-balance-and-transmission"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-avertmanual43-rates-and-horizon",
+          "relation": "supports",
+          "rationale": "原手册p101明示只含化石机组的平均与边际率。"
+        },
+        {
+          "evidenceId": "ev-kb48-avertmanual43-balance-and-transmission",
+          "relation": "supports",
+          "rationale": "原手册解释化石需求与总系统需求的区别及EE/RE假设。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-power-response"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-power-future-storage-policy",
+      "text": "储能放电本身不产生新电，必须联系此前的发电与充放电损失。Cambium用接收地区当月的非储能、非能量受限发电组合近似这部分来源，并按往返效率调整燃料消耗。水电等受能量预算限制的来源则还可能增加总能量：方法先用同一技术的月度净发电变化区分新增能量与原有能量的时段转移，再用来源地区的月度发电组合近似后者对应的替代发电，不加储能效率损失。随后，州级清洁能源组合要求还会影响排放属性在地区间的归属：方法先判断分配结果是否满足政策，再以平均化的转移规则调整，而非跟踪每一笔真实证书交易。最后才将相应指标转换到终端用电。",
+      "kind": "interpretation",
+      "scope": "未来需求还会改变哪些资产；具名历史资料、原始模型与明确假设的范围",
+      "evidenceIds": [
+        "ev-kb48-future-cambium2024-report-lrmer-process"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-report-lrmer-process",
+          "relation": "supports",
+          "rationale": "§6.4步骤3—5储能/月度能量预算近似与州政策再分配。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-power-prospective"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源实际对象、分母、时空与版本解释。文献定义、原表数值、作者规定的干预和原程序派生结果分别归属；精确计算不建立跨系统同一性、现场因果效应或完整生命周期有效性。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-06",
+      "reviewKind": "agent-source-check"
     }
   ],
   "concepts": [
@@ -40274,6 +42553,95 @@
         "PM marginal effect",
         "PM average effect"
       ]
+    },
+    {
+      "id": "cn-power-delivery",
+      "label": "电力交付点与服务",
+      "english": "Electricity delivery point and service",
+      "definitionClaimIds": [
+        "cl-power-service",
+        "cl-power-voltage-path",
+        "cl-power-segment-denominators",
+        "cl-power-database-voltage"
+      ],
+      "aliases": [
+        "电压连接",
+        "电力参考产品"
+      ]
+    },
+    {
+      "id": "cn-power-loss-basis",
+      "label": "电力损耗的参考量",
+      "english": "Reference quantities for electricity losses",
+      "definitionClaimIds": [
+        "cl-power-loss-definition",
+        "cl-power-norway-loss",
+        "cl-power-egrid-loss",
+        "cl-power-native-loss-document"
+      ],
+      "aliases": [
+        "输入损耗率",
+        "交付损耗量"
+      ]
+    },
+    {
+      "id": "cn-power-generation-account",
+      "label": "发电输出与消费归属",
+      "english": "Generation output and consumption attribution",
+      "definitionClaimIds": [
+        "cl-power-egrid-scope",
+        "cl-power-egrid-adjustments",
+        "cl-power-egrid-rate",
+        "cl-power-future-direct-rates"
+      ],
+      "aliases": [
+        "发电排放强度",
+        "消费电力组合"
+      ]
+    },
+    {
+      "id": "cn-power-hourly-balance",
+      "label": "小时电量平衡与时钟",
+      "english": "Hourly power balance and time convention",
+      "definitionClaimIds": [
+        "cl-power-eia-balance",
+        "cl-power-eia-hours",
+        "cl-power-eia-clock"
+      ],
+      "aliases": [
+        "净交换",
+        "小时终点"
+      ]
+    },
+    {
+      "id": "cn-power-response",
+      "label": "电力变化的估计对象",
+      "english": "Estimands of electricity response",
+      "definitionClaimIds": [
+        "cl-power-average-response",
+        "cl-power-historical-generation",
+        "cl-power-historical-consumption",
+        "cl-power-native-ratios"
+      ],
+      "aliases": [
+        "边际排放率",
+        "化石负荷变化"
+      ]
+    },
+    {
+      "id": "cn-power-prospective",
+      "label": "未来电力系统与资本响应",
+      "english": "Prospective power systems and capital response",
+      "definitionClaimIds": [
+        "cl-power-future-question",
+        "cl-power-future-perturbation",
+        "cl-power-future-postprocessing",
+        "cl-power-future-three-questions"
+      ],
+      "aliases": [
+        "LRMER",
+        "长期边际排放"
+      ]
     }
   ],
   "mappings": [
@@ -40652,6 +43020,62 @@
         "cl-pm-implementation-layer",
         "cl-pm-matched-scope"
       ]
+    },
+    {
+      "id": "map-power-delivery-reference",
+      "from": "cn-power-delivery",
+      "to": "cn-reference-flow",
+      "relation": "related",
+      "conditions": [
+        "交付电量须先对应功能、性能、时间和电压连接；相同能量不自动建立相同最终服务。"
+      ],
+      "claimIds": [
+        "cl-power-service",
+        "cl-power-native-application"
+      ]
+    },
+    {
+      "id": "map-power-generation-consumption",
+      "from": "cn-power-generation-account",
+      "to": "cn-market-average-consumption",
+      "relation": "related",
+      "conditions": [
+        "须保持同一地区/年份/载体，并明确贸易、储能和损失处理；发电平均不能只改分母就当作消费组合。"
+      ],
+      "claimIds": [
+        "cl-power-egrid-scope",
+        "cl-power-eia-emissions",
+        "cl-power-future-direct-rates"
+      ]
+    },
+    {
+      "id": "map-power-response-production",
+      "from": "cn-power-response",
+      "to": "cn-market-marginal-production",
+      "relation": "related",
+      "conditions": [
+        "程序辨认供应商、历史统计估计和原模型求值分别有条件；不能凭边际名称把固定资本响应等同长期供应技术。"
+      ],
+      "claimIds": [
+        "cl-power-historical-generation",
+        "cl-power-historical-consumption",
+        "cl-power-future-question"
+      ]
+    },
+    {
+      "id": "map-power-future-scenarios",
+      "from": "cn-power-prospective",
+      "to": "cn-future-scenarios",
+      "relation": "related",
+      "conditions": [
+        "明确资本、天气、技术与政策假设、小时权重及影响方法；模型内比较不证明未来实况或跨模型等价。"
+      ],
+      "claimIds": [
+        "cl-power-future-perturbation",
+        "cl-power-future-scenario",
+        "cl-power-future-time",
+        "cl-power-alternative-lca"
+      ]
     }
   ],
   "coverage": [
@@ -40707,7 +43131,7 @@
       "id": "cov-applications",
       "title": "行业应用与决策",
       "status": "in-progress",
-      "notes": "既有清洁生产/本地化资料之外，新增1974历史容器模型的有界分支与归一化重建；不是完整原程序或现代实证效果验证，行业/地区及独立案例覆盖继续开放。 HistoricalPSIM3average weights and a separately stipulated material/electricityresponse example begin CASE-POWER; actualregionalproduction/dispatch/capacity and fullpowercase coverage remain open. 混合清单的教学年账和价格敏感性研究分开呈现，真实工厂的供应商识别仍需对应记录。 新增乳制品规则到默认活动、发布输出和审查对象的具体链路，以及原奶甲烷模型比较；不建立公司产品合规、实测减排、全部食品或其他行业覆盖。"
+      "notes": "既有清洁生产/本地化资料之外，新增1974历史容器模型的有界分支与归一化重建；不是完整原程序或现代实证效果验证，行业/地区及独立案例覆盖继续开放。 HistoricalPSIM3average weights and a separately stipulated material/electricityresponse example begin CASE-POWER; actualregionalproduction/dispatch/capacity and fullpowercase coverage remain open. 混合清单的教学年账和价格敏感性研究分开呈现，真实工厂的供应商识别仍需对应记录。 新增乳制品规则到默认活动、发布输出和审查对象的具体链路，以及原奶甲烷模型比较；不建立公司产品合规、实测减排、全部食品或其他行业覆盖。 新增具体交付点、挪威输配活动、美国2023统计与固定原生AVERT响应及Cambium未来情景的有界电力链；保留共同网界、完整LCA背景、现场因果效果与其他行业地区缺口。"
     },
     {
       "id": "cov-frontiers",

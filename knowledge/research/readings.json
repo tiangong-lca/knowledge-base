@@ -15536,7 +15536,7 @@
         {
           "id": "psg-kb48-main-egrid2023-guide-nonbaseload",
           "artifactId": "art-kb48-main-egrid2023-guide-pdf",
-          "locator": "印刷第19–20页（物理30–31），§3.1.3.3 非基荷输出率",
+          "locator": "印刷第19–21页（物理30–32），§3.1.3.3非基荷输出率、线性权重公式、用途及可再生燃料发电排除",
           "topics": [
             "nonbaseload",
             "capacity factor proxy",
@@ -15547,9 +15547,10 @@
           ],
           "pdfIndices": [
             29,
-            30
+            30,
+            31
           ],
-          "printedPages": "19–20"
+          "printedPages": "19–21"
         },
         {
           "id": "psg-kb48-main-egrid2023-guide-ggl-method",
@@ -16087,7 +16088,7 @@
         {
           "id": "psg-kb48-future-cambium2024-report-delivery",
           "artifactId": "art-kb48-future-cambium2024-report-pdf",
-          "locator": "印刷第21、26–29、34页（物理28、33–36、41），§5.1式与脚注13、§5.4以及§5.7",
+          "locator": "印刷第21、25–29、34页（物理28、32–36、41），§5.1式与脚注13、§5.3表后光伏等效量、§5.4以及§5.7",
           "topics": [
             "busbar versus end use",
             "distribution losses",
@@ -16098,13 +16099,14 @@
           ],
           "pdfIndices": [
             27,
+            31,
             32,
             33,
             34,
             35,
             40
           ],
-          "printedPages": "21、26–29、34"
+          "printedPages": "21、25–29、34"
         },
         {
           "id": "psg-kb48-future-cambium2024-report-fuel-cycle",
@@ -16172,10 +16174,27 @@
             67
           ],
           "printedPages": "60–61"
+        },
+        {
+          "id": "psg-kb48-future-cambium2024-report-clock",
+          "artifactId": "art-kb48-future-cambium2024-report-pdf",
+          "locator": "印刷第22页（物理29），§5.2 timestamp、timestamp_local、tz及脚注14–15",
+          "topics": [
+            "hour beginning",
+            "standard time",
+            "2012 weather and calendar"
+          ],
+          "limits": [
+            "模拟时钟不等于真实年份的当地夏令时钟点；小时权重需按实际干预另行指定。"
+          ],
+          "pdfIndices": [
+            28
+          ],
+          "printedPages": "22"
         }
       ],
       "appraisal": {
-        "basis": "物理第1、8–11、13–14页，标题页、印刷§§1.1–1.2、§2及§3情景列表。印刷第17–20、22–24页（物理24–27、29–31），§§4.1–4.2、图4–5及§5.2。印刷第21、26–29、34页（物理28、33–36、41），§5.1式与脚注13、§5.4以及§5.7。印刷第26–29及39–41页（物理33–36、46–48），§5.4、§6.2、表5。印刷第44–52页（物理51–59），§6.4 Step 1–5、公式及 Caveats。印刷第60–61页（物理67–68），§6.7 文本、变量定义和公式",
+        "basis": "物理第1、8–11、13–14页，标题页、印刷§§1.1–1.2、§2及§3情景列表。印刷第17–20、22–24页（物理24–27、29–31），§§4.1–4.2、图4–5及§5.2。印刷第21、26–29、34页（物理28、33–36、41），§5.1式与脚注13、§5.4以及§5.7。印刷第26–29及39–41页（物理33–36、46–48），§5.4、§6.2、表5。印刷第44–52页（物理51–59），§6.4 Step 1–5、公式及 Caveats。印刷第60–61页（物理67–68），§6.7 文本、变量定义和公式；新增核读印刷第22页（物理29），§5.2 timestamp、timestamp_local、tz及脚注14–15，及印刷第25页表后光伏母线等效量。",
         "methodologicalScope": "Cambium 的终端与发电边界、长期反事实、损耗及排放路径怎样形成？",
         "independence": "方法报告与工作簿、数据发行属同一项目。eGRID 与 ReEDS 是上游而非独立验证。",
         "limitations": [
@@ -16421,6 +16440,19 @@
           ],
           "limits": [
             "日内钟点跨日的聚合估计，不能冒充某天的真实负荷响应。两项为直接CO₂，不是混合CO₂e。"
+          ]
+        },
+        {
+          "id": "psg-kb48-future-cambium2024-workbook-lifecycle",
+          "artifactId": "art-kb48-future-cambium2024-workbook-xlsx",
+          "locator": "Description and Guidance!B16，Combustion、Precombustion及Combined范围说明",
+          "topics": [
+            "fuel stages",
+            "construction exclusions",
+            "noncombustion operations"
+          ],
+          "limits": [
+            "工作簿说明范围，不是重新执行背景全生命周期清单。"
           ]
         }
       ],
@@ -17216,10 +17248,26 @@
             115
           ],
           "printedPages": "110"
+        },
+        {
+          "id": "psg-kb48-avertmanual43-load-range",
+          "artifactId": "art-kb48-avertmanual43-pdf",
+          "locator": "手册印刷第98页（物理104），Table 7 Texas行及Maximum/Minimum possible hourly load表头",
+          "pdfIndices": [
+            103
+          ],
+          "printedPages": "98",
+          "topics": [
+            "load limits",
+            "observed load extrema"
+          ],
+          "limits": [
+            "手册列9865—61440 MW；固定Web RDF这些值是观测负荷极值，计算档边另为1165—66840 MW。两个对象不等同。"
+          ]
         }
       ],
       "appraisal": {
-        "basis": "选读官方手册表 2、式、数据流程和 Appendix G/I 方法范围；核对图表、物理页和印刷页。",
+        "basis": "选读官方手册表 2、式、数据流程和 Appendix G/I 方法范围；核对图表、物理页和印刷页。；新增印刷p98 Table7与固定Web RDF的区别。",
         "methodologicalScope": "2023 RDF 可用于近基年短期情景；Web 主模块不再生成 RDF，不纳入机组扩建/退役的内生变化。",
         "independence": "手册、原 Web、RDF、预发布因子及桌面均为 EPA 方法链，不能当彼此独立的实证验证。",
         "limitations": [
@@ -17869,6 +17917,68 @@
       ],
       "sourceKeys": [
         "src-kb48-treyer-v3-market"
+      ]
+    },
+    {
+      "id": "rd-kb48-units-nist-hb44-2026",
+      "workId": "work-kb48-units-nist-hb44-2026",
+      "title": "NIST Handbook 44 (2026), Appendix C. General Tables of Units of Measurement",
+      "version": "Handbook 44 – 2026，附录 C 的独立官方 PDF，28 页。",
+      "url": "https://www.nist.gov/system/files/documents/2025/12/30/appc-26-HB44-20251222.pdf",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "美制短吨、常衡磅和千克如何精确换算，换算与显示精度如何区分？",
+      "argumentSummary": "1 美制短吨等于 2000 常衡磅。C-17 千克列以带下划线的数值给出 1 常衡磅等于 0.45359237 kg、1 短吨等于 907.18474 kg。C-9 说明下划线标记精确系数，转换不改变原量的精度，应在计算末尾舍入。",
+      "artifacts": [
+        {
+          "id": "art-kb48-units-nist-hb44-2026-pdf",
+          "sha256": "41c43b7827bb02725faebe7257bd4032686013975b520ae6671a2ec3cce375db",
+          "resolvedUrl": "https://www.nist.gov/system/files/documents/2025/12/30/appc-26-HB44-20251222.pdf",
+          "mediaType": "application/pdf",
+          "pageCount": 28
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb48-units-short-ton",
+          "artifactId": "art-kb48-units-nist-hb44-2026-pdf",
+          "locator": "印刷 C-7（物理第7页）Avoirdupois Units of Mass 与脚注10–11；C-9（物理第9页）§4 关于下划线和舍入的段落；C-17（物理第17页）Units of Mass Not Less Than Avoirdupois Ounces，上表 short ton 行 Avoirdupois Pounds 列及下表 pound、short ton 两行 Kilograms 列。",
+          "topics": [
+            "US short ton",
+            "avoirdupois pound",
+            "exact kilogram conversion",
+            "rounding"
+          ],
+          "limits": [
+            "换算系数的精确性不增加原始排放量的有效位。",
+            "本证据只确定美制短吨、常衡磅和千克关系，不替代原数据文件对 ton 字段的单位说明。"
+          ],
+          "pdfIndices": [
+            6,
+            8,
+            16
+          ],
+          "printedPages": "C-7、C-9、C-17"
+        }
+      ],
+      "appraisal": {
+        "basis": "印刷 C-7（物理第7页）Avoirdupois Units of Mass 与脚注10–11；C-9（物理第9页）§4 关于下划线和舍入的段落；C-17（物理第17页）Units of Mass Not Less Than Avoirdupois Ounces，上表 short ton 行 Avoirdupois Pounds 列及下表 pound、short ton 两行 Kilograms 列。",
+        "methodologicalScope": "以原页表头和精确标记核对定义换算，区别质量单位身份与数据的显示精度。",
+        "independence": "美国国家计量机构的单位关系，独立于 EPA 电网排放统计和 AVERT 运行结果。",
+        "limitations": [
+          "换算系数的精确性不增加原始排放量的有效位。",
+          "本证据只确定美制短吨、常衡磅和千克关系，不替代原数据文件对 ton 字段的单位说明。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "rights": "NIST 官方公开技术出版物。该附录注明可免费取得，保留机构、手册版本与 DOI 归属。仅引用三项换算关系、精确性规则和定位，不附原文件或整表。",
+      "unread": [
+        "未细读附录其他单位表或整部手册。"
+      ],
+      "sourceKeys": [
+        "src-kb48-units-nist-hb44-2026"
       ]
     }
   ],
@@ -20348,13 +20458,69 @@
       "before": "已有市场章节保留真实电力时间/损耗/调度数据缺口；假设性边际结果不带入实际地区。",
       "after": "用准确发布的 TE 2023 模型和原生情景划分终端输入、调整后化石负荷输入、模型发电输出与直接排放；对照不同口径的历史回归和分域平均，保留跨源不等同。",
       "reasoning": "同年 eGRID 与 AVERT 也有不同机组集合；原模型不强制每档完全闭合，边际化石因子不能改写为固定终端平均或未来值。",
-      "status": "proposed",
+      "status": "applied-to-candidate; independent manuscript review and delivery remain separate",
       "triggerPassageIds": [
         "psg-kb48-avertmanual43-rates-and-horizon",
         "psg-kb48-avertweb43-core-interpolation",
         "psg-kb48-graffzivin2014-scope-countercheck"
       ],
       "affectedUnits": [
+        "V6-03",
+        "V6-06",
+        "V7-05A",
+        "A06"
+      ]
+    },
+    {
+      "id": "rev-kb48-delivered-grid",
+      "before": "电压和损耗可能作为名称或附加百分比被直接接入电力因子。",
+      "after": "从挪威原始设施清单和每段交付量解释电压角色、输入损耗率与补足电量，再与数据库电压类别有条件对应。",
+      "reasoning": "实际补充表与fed-in分母相符，各网段服务量不同，数据库分级还含外地代理。",
+      "status": "applied-to-candidate; independent manuscript review and delivery remain separate",
+      "triggerPassageIds": [
+        "psg-kb48-arvesen-boundary",
+        "psg-kb48-arvesen-feed-loss",
+        "psg-kb48-arvesen-si-local-loss",
+        "psg-kb48-treyer-voltage-market"
+      ],
+      "affectedUnits": [
+        "CASE-POWER",
+        "V4-03",
+        "V4-04",
+        "V7-05A"
+      ]
+    },
+    {
+      "id": "rev-kb48-hourly-identity",
+      "before": "同年同地区的电力资料容易被视为可以直接相除或逐小时对应。",
+      "after": "分开eGRID电厂归属、EIA运营可见电量与AVERT机组集合，保留缺值/零/残差和当地时钟/UTC差别。",
+      "reasoning": "原始PLNT23两行直接反驳以州界代替共同集合；EIA全年小时数据存在缺值与时钟重复。",
+      "status": "applied-to-candidate; independent manuscript review and delivery remain separate",
+      "triggerPassageIds": [
+        "psg-kb48-main-egrid2023-rev2-plant-boundaries",
+        "psg-kb48-main-eia930-method-time-and-imputation",
+        "psg-kb48-main-eia930-balance2023-balance-second-half"
+      ],
+      "affectedUnits": [
+        "CASE-POWER",
+        "V4-03",
+        "V6-06",
+        "A04"
+      ]
+    },
+    {
+      "id": "rev-kb48-prospective-response",
+      "before": "未来因子可能只作为换一个年份的边际系数。",
+      "after": "解释有限全国扰动、资本重求解、流量分配和后处理，再追踪母线/终端活动与燃烧前CO2e边界。",
+      "reasoning": "Cambium原报告和发布行显示统计对象及能量分母不同；印刷公式、发布输出和可执行生成链仍要分别验证。",
+      "status": "applied-to-candidate; independent manuscript review and delivery remain separate",
+      "triggerPassageIds": [
+        "psg-kb48-future-cambium2024-report-lrmer-process",
+        "psg-kb48-future-cambium2024-release-midcase-balance",
+        "psg-kb48-future-cambium2024-report-loss-print"
+      ],
+      "affectedUnits": [
+        "CASE-POWER",
         "V6-03",
         "V6-06",
         "V7-05A",

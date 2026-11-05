@@ -14,8 +14,8 @@ checkPaths:
   - "package.json"
   - "app/**"
   - "scripts/**"
-lastReviewedAt: 2026-11-05
-lastReviewedCommit: d91291376ad3dc667dd85948b0ac039ae11674e2
+lastReviewedAt: 2026-11-06
+lastReviewedCommit: 1776bb5dc99ca36569b5ab7d3a598e2e3dce336a
 ---
 
 # LCA Living Knowledge Base and Review
@@ -98,3 +98,11 @@ checks printed height weights and compares four factors from one dated GLAM
 release. Exact source/reading identities include separate archive and workbook
 hashes. These checks do not establish native atmospheric reproduction, causal
 health effects or model validity. Use `node scripts/impact.mjs CASE-PARTICULATE-HEALTH` to locate the dependent numerical prose.
+
+The electricity chapter traces grid delivery, annual and hourly accounts, and
+historical versus prospective response models. `electricity-service-v1` fixes
+source facts and a separate author-derived AVERT execution summary. Static builds
+evaluate its arithmetic without executing AVERT. The optional [offline replay
+instructions](_docs/reproduction/electricity/README-electricity-native.md) use
+pinned historical code and dependencies in private directories, with no change
+to the site's runtime. Use `node scripts/impact.mjs CASE-POWER` for dependent prose.

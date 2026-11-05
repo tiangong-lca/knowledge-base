@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "release": {
+    "name": "EPA AVERT Web Edition",
+    "version": "4.3.0",
+    "commit": "4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5",
+    "reference": "https://github.com/USEPA/AVERT/releases/tag/v4.3.0",
+    "license": "CC0-1.0 as declared by the tagged repository",
+    "dataYear": 2023,
+    "region": "TE",
+    "testedRuntime": {
+      "node": "20.20.2",
+      "platform": "darwin",
+      "arch": "arm64"
+    }
+  },
+  "originalArtifacts": [
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/LICENSE",
+      "gitBlob": "1625c1793607996fcfc46420e8aa2f3d2b7efd1e",
+      "sha256": "6d489af6292662d9e36d34ce49423784984a5f6e41d7b58f49b01264df59fa03",
+      "bytes": 7047
+    },
+    {
+      "path": "server/package.json",
+      "url": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/server/package.json",
+      "gitBlob": "e094a8e7a7a14af9760d45b4e9e5ba0ca44f113a",
+      "sha256": "abe3584d72b03bc5175877b3fb37946960f2386c6db4c05df61e03f7ce2516e4",
+      "bytes": 844
+    },
+    {
+      "path": "server/app/config.js",
+      "url": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/server/app/config.js",
+      "gitBlob": "8d0ff1e1ef6e3367a73e41a4da90bae3bfff4921",
+      "sha256": "d8ce138b74e574909b0bec605c329861c8ffceb0df69982ac8882616de86ce82",
+      "bytes": 2052
+    },
+    {
+      "path": "server/app/controllers.js",
+      "url": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/server/app/controllers.js",
+      "gitBlob": "09ada748d5db4f783e56c0ea9d18f6e74ee41e25",
+      "sha256": "2da7ea9572a1c1be15895c317022010d561df9181920e692ed755ba620f3eaa3",
+      "bytes": 2148
+    },
+    {
+      "path": "server/app/calculations.js",
+      "url": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/server/app/calculations.js",
+      "gitBlob": "d38494e97bc7bd7447ee0dda9779b0e201b8873c",
+      "sha256": "d6580ce91d0df1b6cc0dbee187aa961e71d41300ff3d4e44e3c9de882acb8691",
+      "bytes": 11562
+    },
+    {
+      "path": "client/package.json",
+      "url": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/client/package.json",
+      "gitBlob": "450cd81a9bdeb475141ab9c1f185bccc22fa60b6",
+      "sha256": "84818b88b80b86050c0cf18c9b82b99efad8e61a0e73ece7c0f8e2fefe52938f",
+      "bytes": 2146
+    },
+    {
+      "path": "client/package-lock.json",
+      "url": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/client/package-lock.json",
+      "gitBlob": "d1f8be437b79546e91dd23d0a45d86df973a0fb9",
+      "sha256": "9f6d52d0cf7427af4e29a331de0233ac4d2e2c36601748639dc76742b9828887",
+      "bytes": 452567
+    },
+    {
+      "path": "client/src/redux/reducers/results.ts",
+      "url": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/client/src/redux/reducers/results.ts",
+      "gitBlob": "266840a820b9d705c98ab0244ca9d6730e7d1fef",
+      "sha256": "158c711351aebe7e03697014f6937d21724a4f4e285091021be5496330a2a3e7",
+      "bytes": 8747
+    },
+    {
+      "path": "client/src/components/PowerEmissionsTable.tsx",
+      "url": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/client/src/components/PowerEmissionsTable.tsx",
+      "gitBlob": "77290611efaf882922d25890908155a70ea033d0",
+      "sha256": "839de15cbcdbad8a50b34a58250c4364cebee9ba7cf490b9c28610468934ee24",
+      "bytes": 22499
+    },
+    {
+      "path": "client/src/config.ts",
+      "url": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/client/src/config.ts",
+      "gitBlob": "be4f1ab41edb7056e388d30a0b088a61e8237cf9",
+      "sha256": "f0cfb9ed0b4e503be2d818232d52697352597cca06a97e4dac0ff8c25eab5e68",
+      "bytes": 18079
+    },
+    {
+      "path": "client/src/calculations/impacts.ts",
+      "url": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/client/src/calculations/impacts.ts",
+      "gitBlob": "c853eb8be968f84267b930c5d618e3b8479ef9e3",
+      "sha256": "2c06cfc47da58030ad24103135a227d9b7b4a5c5ab2548a42f34f70e6ae4ca4e",
+      "bytes": 26157
+    },
+    {
+      "path": "client/src/data/region-ev-hourly-limits.json",
+      "url": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/client/src/data/region-ev-hourly-limits.json",
+      "gitBlob": "e476075561481b9cd2056a5b27577813299db41a",
+      "sha256": "1cfb12be64f3bc35e9830d06e35568cbe4efb04c73383f05cd090b583cbc6bac",
+      "bytes": 223
+    },
+    {
+      "path": "client/src/calculations/emissions.ts",
+      "url": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/client/src/calculations/emissions.ts",
+      "gitBlob": "8897badd1c10ced0c948e7ad195225cfc548238b",
+      "sha256": "41eeda807a5536bf2c5883097aebfda0a95345ddf307a1afde6a2d2d3df8f6bd",
+      "bytes": 25383
+    },
+    {
+      "path": "client/src/utilities.ts",
+      "url": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/client/src/utilities.ts",
+      "gitBlob": "fb380b22fee660ddf57676c22c7553aec789cf43",
+      "sha256": "d3761a9f3880b55a7f0d1a71cd2e48636689ee0607d97e4443f094bf7f4690df",
+      "bytes": 711
+    },
+    {
+      "path": "server/app/data/rdf_TE_2023.json",
+      "url": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/server/app/data/rdf_TE_2023.json",
+      "gitBlob": "768fd512c3a15f82b27c87ac3c70df963ea00566",
+      "sha256": "5c6aad182b7ae4f7043b05675f859076d758e027d406c730ef023162b6552c85",
+      "bytes": 4241433
+    },
+    {
+      "path": "server/app/data/annual-emission-factors.json",
+      "url": "https://raw.githubusercontent.com/USEPA/AVERT/4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5/server/app/data/annual-emission-factors.json",
+      "gitBlob": "66a48a419665b2bc524acb26191bc7360416e8ef",
+      "sha256": "eb7cd9b02bf9e97b6a1f55effd471d8dcd63feb13b1023c8eae63d422cca6d0d",
+      "bytes": 9443932
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "typescript",
+      "url": "https://registry.npmjs.org/typescript/-/typescript-5.4.3.tgz",
+      "archive": "archives/typescript-5.4.3.tgz",
+      "extractDirectory": "node_modules/typescript",
+      "version": "5.4.3",
+      "archiveSha256": "c1fe425dd986563370ea040a173022216ac93dc4d5e977e6f6d47539302f1090",
+      "integrity": "sha512-KrPd3PKaCLr78MalgiwJnA25Nm8HAmdwN3mYUYZgG/wizIo9EainNVQI9/yDavtVFRN2h3k8uf3GLHuhDMgEHg==",
+      "license": "Apache-2.0",
+      "entry": "lib/typescript.js",
+      "files": {
+        "package.json": "4a63f421619738f89867599fa5cfa5e2a200ecd5e2d4f668e69a0b7561b38394",
+        "lib/typescript.js": "d11c5c5a6f68774af19d1fc9d2c9aa3bb179d0bb2a78458a1ccf16638614443e"
+      },
+      "licenseFiles": [
+        "LICENSE.txt",
+        "ThirdPartyNoticeText.txt"
+      ]
+    },
+    {
+      "name": "stats-lite",
+      "url": "https://registry.npmjs.org/stats-lite/-/stats-lite-2.2.0.tgz",
+      "archive": "archives/stats-lite-2.2.0.tgz",
+      "extractDirectory": "node_modules/stats-lite",
+      "version": "2.2.0",
+      "archiveSha256": "8ed81c90ca1d45f1450314bf5fbcfd6568acbf6f17a1bab65fd4b80198a26787",
+      "integrity": "sha512-/Kz55rgUIv2KP2MKphwYT/NCuSfAlbbMRv2ZWw7wyXayu230zdtzhxxuXXcvsc6EmmhS8bSJl3uS1wmMHFumbA==",
+      "license": "MIT",
+      "entry": "stats.js",
+      "files": {
+        "package.json": "4b242cf6b3e277ced8443643e73615c2011b670828cb2f30f1e90d9192635356",
+        "stats.js": "e7568a31e38204267740e15c033a48fec6717fda2c9273772d89845885604c1c"
+      },
+      "licenseFiles": [
+        "LICENSE"
+      ]
+    },
+    {
+      "name": "isnumber",
+      "url": "https://registry.npmjs.org/isnumber/-/isnumber-1.0.0.tgz",
+      "archive": "archives/isnumber-1.0.0.tgz",
+      "extractDirectory": "node_modules/isnumber",
+      "version": "1.0.0",
+      "archiveSha256": "94f1beac29b06672d9320a7411426c4f460291659c08133ae7584fc6f99b4b3d",
+      "integrity": "sha1-Dj+XWbWB2Z3YUIbw7Cp0kJz63QE=",
+      "license": "MIT",
+      "entry": "index.js",
+      "files": {
+        "package.json": "ede7207135ff6be13d81fa8e8c1f623148460a53a42731e13e6ff5a7c41b35ef",
+        "index.js": "272e2fc067c372f5a0968e92f287360117e38acdbeb1055d89e69abdb42938c2"
+      },
+      "licenseFiles": [
+        "LICENSE"
+      ]
+    }
+  ]
+}

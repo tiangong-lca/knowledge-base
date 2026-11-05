@@ -28,6 +28,20 @@ test('actual internal identities and raw machine labels are rejected without ban
   assert.deepEqual(validateReaderText('cl-other-study is not a registered project identity.', { knownIds }), []);
 });
 
+test('native run-local scenario names do not forbid ordinary words while publication identities remain protected', () => {
+  const knownIds = readerInternalIds({
+    claims: [{id:'cl-real-publication'}],
+    native: {kind:'author-derived-native-model-execution', scenarios:[
+      {id:'zero', source:{id:'ev-real-source'}, caseId:'CASE-POWER'},
+    ]},
+  });
+  assert.deepEqual(validateReaderText('The zero burden is conditional.', {knownIds}), []);
+  for (const text of ['cl-real-publication','ev-real-source','CASE-POWER'])
+    assert(validateReaderText(text, {knownIds}).length, text);
+  assert(readerInternalIds({claims:[{id:'zero'}]}).has('zero'));
+  assert(readerInternalIds({scenarios:[{id:'other-local-record'}]}).has('other-local-record'));
+});
+
 test('MDX ignores component attributes, links and code examples, but checks actual prose and local developer routes', () => {
   const mdx = '<Prose ids="cl-reader-known" />\n[注释](/claims/#cl-reader-known)\n```mdx\n本轮 cl-reader-known\n```\n`源码提交`\n当前方法尚未确定排序。';
   assert.deepEqual(validateReaderMdx(mdx, 'chapter', knownIds), []);
