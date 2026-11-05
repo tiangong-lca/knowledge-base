@@ -159,3 +159,9 @@ four-decimal results. The reader notes retain this discrepancy and the separate
 A7 price-axis question. Targeted reader feedback led to explicit treatment of the
 structural-shift exception and named secondary attribution of the 2006 reply.
 The source Issue and PR own CI, integration, live qualification and terminal status.
+
+## From reconstructing inventories to weighting burdens
+
+The [hybrid chapter](https://prism.tiangong.earth/docs/book/inventory-boundary-and-hybrid/) shipped through [source PR33](https://github.com/tiangong-lca/knowledge-base/pull/33) at Main `9866f5daab09bcdc7ea5613fe6f068a4adec9bc0` and [workspace PR2228](https://github.com/tiangong-lca/workspace/pull/2228) at Main `49dca1f02e590d81953e294350595661f682562a`. Final receipts `finish_Ob6YqRhZER2OiOHAl187j72o` and `finish_mFhwjODzQsz4OrEOwaMr9eBj` verify source and integration completion. Live checks covered 16 artifact hashes and the 38 paragraph/note pairs. The original unadjusted economic accounts and full 2006 exchange remain open research leads.
+
+[Issue 34](https://github.com/tiangong-lca/knowledge-base/issues/34) takes up V5-05. The [pre-reading protocol](research-waves/2026-11-05-ecological-scarcity.md) asks how reference flows and Swiss policy targets enter a published eco-factor and how two burdens can trade off in a single score. It distinguishes the limited prior inspection of the 2013 German work from the factor and target reading ahead. Broader multilingual, methods, applications and edition review commitments remain with programme 9.
