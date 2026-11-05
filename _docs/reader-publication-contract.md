@@ -1,6 +1,6 @@
 ---
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: 8a7bd5a90041c1b3c8e48346f2d6ff7d5c1038e8
+lastReviewedCommit: 0dc23e80f1e06bdf235c55bf2d299a8b4d3cbf2c
 title: Reader publication and layout contract
 docType: contract
 scope: repo
