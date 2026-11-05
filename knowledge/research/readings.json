@@ -10904,12 +10904,12 @@
           "locator": "p395 Table3 and notes; p397 Table6 (web extracted lines178–183;388–405)",
           "printedPages": "395;397",
           "topics": [
-            "planned versus actual reference",
+            "SO2 planned versus actual reference",
             "five category weights",
             "changing periods"
           ],
           "limits": [
-            "Displayed precision retained; original underlying statistics not acquired in this delegated scope.",
+            "Displayed precision is retained. Separate official SO2 records corroborate that mass-emission row, without proving which carrier the authors used or reproducing the AP total.",
             "表3所显示SO₂和NOₓ行不能直接相加复得总量；NOₓ分项单位与总量组装仍待核准。SO₂单独一行可用官方质量排放数据核对。"
           ]
         },
@@ -10934,8 +10934,8 @@
         "methodologicalScope": "Primary method proposal and documented alternative to predecessor weighting; no claim of national implementation or validation.",
         "independence": "No shared named authors with Chinese2001 or Xie2022. Predecessor is explicitly used rather than independently rederived; broader network dependence not audited.",
         "limitations": [
-          "No original1999 report acquired by this agent.",
-          "No primary policy/statistics re-verification in delegated scope.",
+          "The cited 1999 predecessor report remains unavailable for direct comparison.",
+          "The official Tenth Plan and national SO2 statistical table are recorded in separate readings; they do not establish all category inputs or the full acidification assembly.",
           "Own normalization, characterization and target-inventory compatibility require exact definition before transfer.",
           "表3所显示SO₂和NOₓ行不能直接相加复得总量；NOₓ分项单位与总量组装仍待核准。SO₂单独一行可用官方质量排放数据核对。"
         ],
@@ -10944,7 +10944,7 @@
       },
       "rights": "Author-hosted original journal PDF publicly readable on NOAA institutional server. Copyright ecomed publishers2005; no open reuse license verified. Original PDF download failed ordinary TLS/network; private derived web text captures only. Do not redistribute originals, captures or page images in repository/export.",
       "unread": [
-        "Underlying policy documents and inventory sources;1999 predecessor original; uninspected details outside listed passages"
+        "The 1999 predecessor, uninspected policy and inventory inputs beyond the separately recorded SO2 sources, and details outside the selected passages remain unread."
       ],
       "sourceKeys": []
     },
@@ -13141,6 +13141,69 @@
         "V7-05F",
         "V7-06",
         "CASE-PACK"
+      ],
+      "status": "applied to manuscript candidate"
+    },
+    {
+      "id": "rev-cn-original-chain",
+      "before": "以综述及名称解释早期本地化方法。",
+      "after": "从原刊两个分支、人口与目标分母解释实际方法，并保留缺失的1998年参数贡献。",
+      "reasoning": "新取得的可定位原始资料改变可支持的论证范围；原件缺口和相互关系不得由标签或年代推断。",
+      "triggerPassageIds": [
+        "psg-cn-yang-wang-liu-2001-framework",
+        "psg-cn-yang-wang-liu-2001-normalization",
+        "psg-cn-yang-wang-liu-2001-refs"
+      ],
+      "affectedUnits": [
+        "V2-05",
+        "V7-04"
+      ],
+      "status": "applied to manuscript candidate"
+    },
+    {
+      "id": "rev-cn-formula-boundary",
+      "before": "将综述WF歧义留作未取得原件的问题。",
+      "after": "区分原件环境/资源WF，并明确服务期、下标和资源单位差异；只作限定代数核对。",
+      "reasoning": "新取得的可定位原始资料改变可支持的论证范围；原件缺口和相互关系不得由标签或年代推断。",
+      "triggerPassageIds": [
+        "psg-cn-yang-wang-liu-2001-weighting",
+        "psg-cn-yang-wang-liu-2001-eil",
+        "psg-cn-yang-wang-liu-2001-resources"
+      ],
+      "affectedUnits": [
+        "V2-05",
+        "V7-04"
+      ],
+      "status": "applied to manuscript candidate"
+    },
+    {
+      "id": "rev-cn-partial-adoption",
+      "before": "方法名称与后续引用容易被读作整套方法的采用。",
+      "after": "用项目分列的地区参照、本地资料和工作坊权重解释局部采用；引文身份歧义保留。",
+      "reasoning": "新取得的可定位原始资料改变可支持的论证范围；原件缺口和相互关系不得由标签或年代推断。",
+      "triggerPassageIds": [
+        "psg-hkha-2005-regional-normalization",
+        "psg-hkha-2005-hk-local-and-workshop"
+      ],
+      "affectedUnits": [
+        "V2-05",
+        "V7-04"
+      ],
+      "status": "applied to manuscript candidate"
+    },
+    {
+      "id": "rev-cn-standard-events",
+      "before": "只依据同期作者的预计描述标准时间线。",
+      "after": "用官方登记核准后来事件，保留制度采用与模型验证的边界。",
+      "reasoning": "新取得的可定位原始资料改变可支持的论证范围；原件缺口和相互关系不得由标签或年代推断。",
+      "triggerPassageIds": [
+        "psg-cn-gbt24040-1999-metadata",
+        "psg-cn-gbt24042-2002-metadata",
+        "psg-cn-gbt24043-2002-metadata"
+      ],
+      "affectedUnits": [
+        "V2-05",
+        "V7-04"
       ],
       "status": "applied to manuscript candidate"
     }
