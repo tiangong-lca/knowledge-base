@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: 1a2509eb54f912bb412843147f2937fc824da301
+lastReviewedCommit: fc97d136912a6caeafbfedafb575c869bef15623
 ---
 
 # Publication contract
@@ -108,3 +108,5 @@ For the Swiss 2013 weighting case, the original edition, work, carrier, passage 
 For survey-based damage values, bind the estimate to its actual study, questionnaire basis, sign and units. A reprinted sample table cannot authorize substitution of another publication’s coefficients. Explicitly conditional arithmetic such as the health-day conversion, unpublished precision and unresolved cross-table discrepancies retain their own status. The LIME teaching comparison uses reported factor sets separately on the same stipulated service and damage quantities.
 
 For CASE-PACK, a reuse threshold specifies a comparator, service and impact measure. Published model outputs can establish arithmetic relationships while confidential inputs still limit native reproduction. Respondent incidence and bag-weighted substitution remain distinct quantities in numerical metadata as well as prose. The publication's count and division templates reference evaluated values; explicit reapproval of prose still requires source and reader judgement.
+
+The recovered-paper case binds each grade's published substitution ratio to its own reference process. A direct source ratio remains a model assumption, and a derived product vector is not a complete native activity matrix. Distinguish annual routing, marginal treatment service, finished-paper output, fibre balance and end-product performance. Reported heat-only credits may be retained without claiming that disclosed parameters reproduce them; exact tuple checks must not erase that scientific limit.

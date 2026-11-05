@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: cbaf20c800f0d6fa9076b5504f048b2a88c7a7e0
+lastReviewedCommit: fc97d136912a6caeafbfedafb575c869bef15623
 ---
 
 # Publication architecture
@@ -173,3 +173,7 @@ The closed LIME case operates on two identified primary studies and one stipulat
 ## Reported carrier-bag results
 
 The closed pack-study case calculates from 57 disclosed quantities in one original report. It distinguishes observed survey-count ratios, adopted rounded capacities and published reference flows; an output interpolation and original-model reproduction; strict integer thresholds and reported counts; and nine separate indicator results. Every source quantity binds the actual edition, work, selected passage and original PDF. Required numerical page indices must be covered by the bound passage, allowing a broader truthful explanatory reading scope. The evaluator and public templates use the existing rational and case-publication interfaces.
+
+## Recovered-paper source reconstruction
+
+The closed CASE-CYCLE adapter uses exact fractions to replay the Danish reports' annual routing, grade outputs, source-defined substitution ratios and heat/electricity compensation. Its45 selected quantities bind complete semantic tuples, actual work/edition, unique reading/passage and the original numeric page. Annual commercial paper mass, unit processing output, modeled virgin activity and avoided gas remain separate result groups. The heat-only reported values are retained alongside an explicitly conditional calculation, with reproduction flags false. Nine canonical paragraphs use the versioned input through the existing static publication registry, downloads and note renderer. No new widget, dependency or legacy input change is introduced.

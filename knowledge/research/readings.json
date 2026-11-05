@@ -1215,6 +1215,14 @@
           "resolvedUrl": "https://publications.lib.chalmers.se/records/fulltext/24272/local_24272.pdf",
           "pageCount": 9,
           "bytes": 747444
+        },
+        {
+          "id": "art-ekvall-tillman-1997-springer-pdf",
+          "kind": "retrieved",
+          "sha256": "70b7771362d82504bb08ebb3c8ba378bc9b971c5df72be352e8742b184621ad3",
+          "pageCount": 8,
+          "resolvedUrl": "https://link.springer.com/content/pdf/10.1007/BF02978810.pdf",
+          "mediaType": "application/pdf"
         }
       ],
       "passages": [
@@ -1260,17 +1268,17 @@
           "artifactId": "art-ekvall-tillman-1997-pdf",
           "locator": "§§7–8；方法例子、分配式与可用性讨论",
           "printedPages": "159–160",
-          "pdfIndices": [
-            4,
-            5
-          ],
           "topics": [
             "数学分担规则",
             "公平视角",
             "数据需求"
           ],
           "limits": [
-            "p159 公式图像已看；1998 正式勘误正文未取得，方程16–18不得直接用于复算或教材改写。"
+            "印页159图像已核。正式勘误只更正三个分子中的符号。式(16)末项仍印作 R2/2，见勘误记录与独立核对。"
+          ],
+          "pdfIndices": [
+            4,
+            5
           ]
         },
         {
@@ -1306,26 +1314,92 @@
           "limits": [
             "授权再现说明没有授权本项目再次发布全文。"
           ]
+        },
+        {
+          "id": "psg-ekvall-tillman-1997-springer-eq16",
+          "artifactId": "art-ekvall-tillman-1997-springer-pdf",
+          "locator": "§7 第6项，式(16)–(18)，出版商原排版",
+          "printedPages": "159",
+          "topics": [
+            "勘误前原式",
+            "回收过程下标"
+          ],
+          "limits": [
+            "式(16)末项为 R2/2，与机构载体相同。按正式勘误改符号后的三项之和比完整账多 (R2−R1)/2。"
+          ],
+          "pdfIndices": [
+            4
+          ]
+        },
+        {
+          "id": "psg-kb42-ekvall-tillman-1997-cascade-figure",
+          "artifactId": "art-ekvall-tillman-1997-pdf",
+          "locator": "§§2.1–2.2，Figure 1 及图注，理想化的三产品材料级联",
+          "printedPages": "156",
+          "pdfIndices": [
+            1
+          ],
+          "topics": [
+            "多功能回收过程",
+            "三产品级联",
+            "过程边界"
+          ],
+          "limits": [
+            "图示全量传递。P2 和 P3 完全由前一用途回收料制成，且 P3 使用后不再回收；未给纸种实测损失、服务量或市场响应。"
+          ]
+        },
+        {
+          "id": "psg-kb42-ekvall-tillman-1997-printed-equations",
+          "artifactId": "art-ekvall-tillman-1997-pdf",
+          "locator": "§7 第6项，原印式(16)–(18)",
+          "printedPages": "159",
+          "pdfIndices": [
+            4
+          ],
+          "topics": [
+            "50/50 原式",
+            "勘误",
+            "回收过程下标"
+          ],
+          "limits": [
+            "在原印式(16)和(18)中末项均为 R2/2。正式勘误是独立载体，不能将其所列符号更正读成式(16)末项下标更正。"
+          ]
+        },
+        {
+          "id": "psg-kb42-ekvall-tillman-1997-extraction-rule",
+          "artifactId": "art-ekvall-tillman-1997-pdf",
+          "locator": "§7 point4, printedp159, Eqs(10)–(12), extraction-load allocation",
+          "printedPages": "159",
+          "pdfIndices": [
+            4
+          ],
+          "topics": [
+            "初级生产与最终处理的归属",
+            "提取端负担规则"
+          ],
+          "limits": [
+            "仅核对此处公平前提及三条表达式；不同于式16–18的勘误问题。"
+          ]
         }
       ],
       "appraisal": {
-        "basis": "Chalmers 原始期刊排版 PDF 选段；p159/PDF index4 图像核验，区分双栏和公式。",
+        "basis": "Chalmers PDF 视觉核对印页156的图1及图注、印页159的式(16)–(18)。Springer 原刊同页的式(16)亦复核。",
         "methodologicalScope": "开放循环材料 cascade 层面的程序选择；不推广为所有多功能过程的同一结论。",
         "independence": "与 2005 论文共享 Ekvall/Tillman 作者；属于不同论证作品，不是独立实验重复验证。",
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05",
         "limitations": [
           "p162 参考文献和书讯未整体核读。",
-          "勘误记录 DOI 10.1007/BF02978499 已确认，但原勘误内容仍未核读。"
-        ],
-        "reviewKind": "agent-source-check",
-        "checkedAt": "2026-11-04"
+          "1998 勘误 p105 第1项在独立阅读记录核实，只更正符号。"
+        ]
       },
       "rights": "原作保留第三方权利；机构或作者公开提供阅读不授予整体再分发权。本建议仅含原创释义、元数据和定位，原文件及页面图像不进入仓库。 原刊 © ecomed 1997；附页明确再次再现需要许可。",
       "unread": [
-        "全参考文献与原始引用作品。",
-        "1998 Errata 正文。"
+        "全参考文献与原始引用作品。"
       ],
       "sourceKeys": [
-        "lit-com-19"
+        "lit-com-19",
+        "src-book-ekvall-tillman-1997"
       ]
     },
     {
@@ -11202,6 +11276,1063 @@
         "其他章节、原统计资料、LCconsole软件和运行数据、杨/Nielsen确切引用载体"
       ],
       "sourceKeys": []
+    },
+    {
+      "id": "rd-kb42-dk1057",
+      "workId": "work-kb42-dk1057",
+      "title": "Miljømæssige forhold ved genanvendelse af papir og pap: Opdatering af vidensgrundlaget",
+      "version": "Miljøprojekt nr. 1057 (2005)，丹麦环境署官方原报告PDF (192页)",
+      "url": "https://www2.mst.dk/udgiv/publikationer/2005/87-7614-894-7/pdf/87-7614-895-5.pdf",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "同一历史瓦楞纸系统哪些量可重建，哪些由规则及替代假设决定？",
+      "argumentSummary": "分开核对进料与产出、纸级与质量折算、热电替代及其适用性。",
+      "artifacts": [
+        {
+          "id": "art-kb42-dk1057-pdf",
+          "mediaType": "application/pdf",
+          "resolvedUrl": "https://www2.mst.dk/udgiv/publikationer/2005/87-7614-894-7/pdf/87-7614-895-5.pdf",
+          "sha256": "8ea397e62dea03de82b788d51ee285dd5e7b9a67668e68b2e8a566012b3a766d",
+          "pageCount": 192
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb42-dk1057-identity",
+          "artifactId": "art-kb42-dk1057-pdf",
+          "locator": "题名页、出版机构声明及前言",
+          "printedPages": "未编号前置页、7",
+          "pdfIndices": [
+            0,
+            1,
+            6
+          ],
+          "topics": [
+            "作品身份",
+            "作者与评审角色"
+          ],
+          "limits": [
+            "公开取得不等于开放再利用授权。"
+          ]
+        },
+        {
+          "id": "psg-kb42-dk1057-scope",
+          "artifactId": "art-kb42-dk1057-pdf",
+          "locator": "§§3.2–3.4.2：功能单位与边界",
+          "printedPages": "37、41",
+          "pdfIndices": [
+            36,
+            40
+          ],
+          "topics": [
+            "1 kg 处理服务",
+            "全年分母",
+            "转换和使用排除"
+          ],
+          "limits": [
+            "不把纸的商业质量和绝干纤维质量混用。"
+          ]
+        },
+        {
+          "id": "psg-kb42-dk1057-handoff",
+          "artifactId": "art-kb42-dk1057-pdf",
+          "locator": "§§3.4.3.1–3.4.3.3、图3.2：分配、系统扩展、质量折算",
+          "printedPages": "42–45",
+          "pdfIndices": [
+            41,
+            42,
+            43,
+            44
+          ],
+          "topics": [
+            "纸级与替代",
+            "质量折算",
+            "账目交接"
+          ],
+          "limits": [
+            "报纸—蛋托—瓦楞纸示意图不证明所示纤维实物连续性。"
+          ]
+        },
+        {
+          "id": "psg-kb42-dk1057-occ-baseline",
+          "artifactId": "art-kb42-dk1057-pdf",
+          "locator": "§4.3 表4.5、图4.3：2001瓦楞纸用量、回收与去向",
+          "printedPages": "64–65",
+          "pdfIndices": [
+            63,
+            64
+          ],
+          "topics": [
+            "年度模型",
+            "收集",
+            "贸易",
+            "按厂分流"
+          ],
+          "limits": [
+            "千吨值为取整的模型量；未收集部分送焚烧是研究假设；与上游830的进料和贸易统计有差异。"
+          ]
+        },
+        {
+          "id": "psg-kb42-dk1057-occ-scenarios",
+          "artifactId": "art-kb42-dk1057-pdf",
+          "locator": "§§4.3.2–4.3.5、表4.6：年变化与单位质量的瓦楞纸产品",
+          "printedPages": "66–67",
+          "pdfIndices": [
+            65,
+            66
+          ],
+          "topics": [
+            "国内回收增减",
+            "两种成品",
+            "1.25折算"
+          ],
+          "limits": [
+            "年度情景不与1kg情景合用同一分母；表4.6未明确干物质比例。"
+          ]
+        },
+        {
+          "id": "psg-kb42-dk1057-incineration",
+          "artifactId": "art-kb42-dk1057-pdf",
+          "locator": "§5.3、表5.12–13、图5.1：纸/纸板焚烧热电替代",
+          "printedPages": "77–79",
+          "pdfIndices": [
+            76,
+            77,
+            78
+          ],
+          "topics": [
+            "热电分开匹配",
+            "网络损失",
+            "火用分配",
+            "天然气活动量"
+          ],
+          "limits": [
+            "92%干物质的焚烧假设，非单一纸类直接焚烧测量；热-only的6.04不能用混合热电分支所披露效率复算。"
+          ]
+        },
+        {
+          "id": "psg-kb42-dk1057-mill",
+          "artifactId": "art-kb42-dk1057-pdf",
+          "locator": "§§5.5–5.6.2、表5.16：Grenå与Skjern两厂",
+          "printedPages": "82–85",
+          "pdfIndices": [
+            81,
+            82,
+            83,
+            84
+          ],
+          "topics": [
+            "整厂混合原料",
+            "干物质基准",
+            "筛除杂物",
+            "损失处置"
+          ],
+          "limits": [
+            "整厂投入产出不能推出单一纸种纤维收率或封闭纤维平衡。"
+          ]
+        },
+        {
+          "id": "psg-kb42-dk1057-grades",
+          "artifactId": "art-kb42-dk1057-pdf",
+          "locator": "§5.10：国内及国外瓦楞纸回收、替代纸级",
+          "printedPages": "93",
+          "pdfIndices": [
+            92
+          ],
+          "topics": [
+            "模型原生liner/fluting",
+            "一体化原生纸板",
+            "国外回收边界"
+          ],
+          "limits": [
+            "段首误植报纸杂志，章节、厂名与数据表明确为瓦楞纸。"
+          ]
+        },
+        {
+          "id": "psg-kb42-dk1057-results",
+          "artifactId": "art-kb42-dk1057-pdf",
+          "locator": "附录A 表74、77–78：每kg瓦楞纸的选定过程一次能源结果",
+          "printedPages": "179、181–182",
+          "pdfIndices": [
+            177,
+            179,
+            180
+          ],
+          "topics": [
+            "原报告输出",
+            "研究情景",
+            "过程一次能源"
+          ],
+          "limits": [
+            "组件算术可重建；原生模型和全部背景过程不能据此重建。"
+          ]
+        },
+        {
+          "id": "psg-kb42-dk1057-lineage",
+          "artifactId": "art-kb42-dk1057-pdf",
+          "locator": "参考文献；附录B批判性评审",
+          "printedPages": "125–127、191–193",
+          "pdfIndices": [
+            124,
+            125,
+            126,
+            189,
+            190,
+            191
+          ],
+          "topics": [
+            "关键来源",
+            "供需假设反证",
+            "评审范围"
+          ],
+          "limits": [
+            "原评审未核对原始输入与逐项计算；Katholm 1994是私人通信。"
+          ]
+        },
+        {
+          "id": "psg-kb42-dk1057-substitution-table",
+          "artifactId": "art-kb42-dk1057-pdf",
+          "locator": "Table 3.1, Bølgepap domestic fluting/liner and pap rows",
+          "printedPages": "40",
+          "pdfIndices": [
+            39
+          ],
+          "topics": [
+            "grade-specific substitution",
+            "domestic and export reference processes"
+          ],
+          "limits": [
+            "Reported model ratios do not establish measured market response. Quoted names identify constructed processes."
+          ]
+        },
+        {
+          "id": "psg-kb42-dk1057-data-vintage",
+          "artifactId": "art-kb42-dk1057-pdf",
+          "locator": "§5数据收集引言及§5.1",
+          "printedPages": "68",
+          "pdfIndices": [
+            67
+          ],
+          "topics": [
+            "UMIP数据库更新时间",
+            "原生生产例子与代表性"
+          ],
+          "limits": [
+            "数据库更新时间不是逐项数据版本清单，未取得原生模型。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "官方原始PDF及指定页面的排版文本；核对选定图表页图。",
+        "methodologicalScope": "核对丹麦2001瓦楞纸实际物料统计、研究模型的纸种与方法比较。",
+        "independence": "作者与Ekvall学位论文不同；Ekvall参加该报告的外部评审且是所引研究作者。与830共享作者及统计来源。",
+        "limitations": [
+          "模拟政策变化与现实观察分立；完整UMIP模型及全部原输入未取得。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "rights": "丹麦环境署官方档案公开报告。未核实开放再利用许可；仅交接书目信息、原创释义、位置与必要事实。",
+      "unread": [
+        "未逐页检查未列选段和不可取得的底层数据。"
+      ],
+      "sourceKeys": [
+        "src-kb42-dk1057"
+      ]
+    },
+    {
+      "id": "rd-kb42-dk830",
+      "workId": "work-kb42-dk830",
+      "title": "Statistik for returpapir og -pap 2001",
+      "version": "Miljøprojekt nr. 830 (2003)，丹麦环境署官方原报告PDF (64页)",
+      "url": "https://www2.mst.dk/udgiv/publikationer/2003/87-7972-820-0/pdf/87-7972-821-9.pdf",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "哪些报告数据组成2001年瓦楞纸供应、收集和流向估计？",
+      "argumentSummary": "从供应、贸易、存量变化和企业统计计算收集量，存在报告内与跨报告差异。",
+      "artifacts": [
+        {
+          "id": "art-kb42-dk830-pdf",
+          "mediaType": "application/pdf",
+          "resolvedUrl": "https://www2.mst.dk/udgiv/publikationer/2003/87-7972-820-0/pdf/87-7972-821-9.pdf",
+          "sha256": "153df94b7d343b5e7ec0cc72668ebd113202f3c646edee98adc26e31c75da5d8",
+          "pageCount": 64
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb42-dk830-identity",
+          "artifactId": "art-kb42-dk830-pdf",
+          "locator": "题名页、出版机构声明；§§1.1–1.2：调查与官方统计的分工",
+          "printedPages": "未编号前置页、13–15",
+          "pdfIndices": [
+            0,
+            1,
+            12,
+            13,
+            14
+          ],
+          "topics": [
+            "作品身份",
+            "统计方法"
+          ],
+          "limits": [
+            "选段不包含企业原始报表。"
+          ]
+        },
+        {
+          "id": "psg-kb42-dk830-occ",
+          "artifactId": "art-kb42-dk830-pdf",
+          "locator": "附录B 图0.1、表0.1：2001瓦楞纸供应与回收量",
+          "printedPages": "46–47",
+          "pdfIndices": [
+            45,
+            46
+          ],
+          "topics": [
+            "瓦楞纸物料统计",
+            "分母",
+            "存量调整",
+            "分类差异"
+          ],
+          "limits": [
+            "图中百分比框与流量框的收集量不同。与1057共享作者且为其输入，不能独立验证1057。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "官方原始PDF及指定页面的排版文本；核对选定图表页图。",
+        "methodologicalScope": "核对丹麦2001瓦楞纸供应及回收估计的可重建部分。",
+        "independence": "与1057共享作者Kathe Tønning，且为其引用输入。",
+        "limitations": [
+          "分拣分类、估计来源、舍入与内部差异限制精度。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "rights": "丹麦环境署官方档案公开报告。未核实开放再利用许可；仅交接书目信息、原创释义、位置与必要事实。",
+      "unread": [
+        "未逐页检查未列选段和不可取得的底层数据。"
+      ],
+      "sourceKeys": [
+        "src-kb42-dk830"
+      ]
+    },
+    {
+      "id": "rd-kb42-ekvall-1999-overview",
+      "workId": "lit-com-25",
+      "title": "System Expansion and Allocation in Life Cycle Assessment With Implications for Wastepaper Management",
+      "version": "Chalmers doctoral thesis (1999), Ny serie 1509 / AFR-REPORT 245, 67-page institutional PDF containing the overarching document",
+      "url": "https://research.chalmers.se/publication/891/file/891_Fulltext.pdf",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "两种50/50规则所分配的对象有什么区别？回收料市场方法依赖哪些条件？",
+      "argumentSummary": "一种规则平分实际原生生产、回收与最终处置的负担。另一种以不回收为比较基准，平分两用途的回收后果。开环市场方法连接其他生命周期，间接后果取决于供需、价格与监管。该模型当时还没有真实案例验证，也未计入材料降质。",
+      "rights": "Chalmers官方档案公开下载。第三方权利保留，未核实开放再利用授权。相关论文的版本和权利分别核对。",
+      "unread": [
+        "总论其余选段之外的内容。",
+        "此机构文件未收载的八篇相关论文。"
+      ],
+      "artifacts": [
+        {
+          "id": "art-kb42-ekvall-1999-overview-pdf",
+          "mediaType": "application/pdf",
+          "resolvedUrl": "https://research.chalmers.se/publication/891/file/891_Fulltext.pdf",
+          "sha256": "a8f67977a9ff48c7e39585ced7d05eef430dcf4d142a1fd7098d6aa7a8c6c6de",
+          "pageCount": 67
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb42-ekvall-1999-overview-carrier",
+          "artifactId": "art-kb42-ekvall-1999-overview-pdf",
+          "locator": "题名页及书目信息，List of publications，Contents – overarching document，参考文献末页",
+          "printedPages": "未编号题名页、ii、vi、viii–ix、56",
+          "pdfIndices": [
+            0,
+            1,
+            5,
+            7,
+            8,
+            66
+          ],
+          "topics": [
+            "博士论文载体",
+            "八项相关论文",
+            "已发表、待刊与投稿状态"
+          ],
+          "limits": [
+            "论文清单记载学位论文的组成，所读机构PDF仅含总论，不能从清单推定相应期刊正文、勘误或实证数据已取得。"
+          ]
+        },
+        {
+          "id": "psg-kb42-ekvall-1999-overview-quality",
+          "artifactId": "art-kb42-ekvall-1999-overview-pdf",
+          "locator": "§4.3末段",
+          "printedPages": "21",
+          "pdfIndices": [
+            31
+          ],
+          "topics": [
+            "材料质量下降",
+            "生产负担",
+            "下一用途的可回收性"
+          ],
+          "limits": [
+            "这里讨论潜在后果及比例关系。总论未给出丹麦瓦楞纸的强度折算或收得率。"
+          ]
+        },
+        {
+          "id": "psg-kb42-ekvall-1999-overview-fifty-fifty",
+          "artifactId": "art-kb42-ekvall-1999-overview-pdf",
+          "locator": "§4.4，两种50/50规则",
+          "printedPages": "21",
+          "pdfIndices": [
+            31
+          ],
+          "topics": [
+            "平分实际负担",
+            "平分回收后果",
+            "两用途与多用途"
+          ],
+          "limits": [
+            "所读是Ekvall在1999年对两种方法的描述，没有核实Vigon原文细则，也不据此使用1997年论文公式。"
+          ]
+        },
+        {
+          "id": "psg-kb42-ekvall-1999-overview-market",
+          "artifactId": "art-kb42-ekvall-1999-overview-pdf",
+          "locator": "§4.5、图5",
+          "printedPages": "22",
+          "pdfIndices": [
+            32
+          ],
+          "topics": [
+            "市场连接的其他生命周期",
+            "回收供应和需求响应",
+            "监管与价格弹性"
+          ],
+          "limits": [
+            "图5给出概念机制，不能据此推定丹麦实际响应、市场系数或固定替代比例。"
+          ]
+        },
+        {
+          "id": "psg-kb42-ekvall-1999-overview-market-limits",
+          "artifactId": "art-kb42-ekvall-1999-overview-pdf",
+          "locator": "§§6.1–6.6；第7章总结",
+          "printedPages": "41–46",
+          "pdfIndices": [
+            51,
+            52,
+            53,
+            54,
+            55,
+            56
+          ],
+          "topics": [
+            "作者的理论审视",
+            "边际及其他需求不变的条件",
+            "未纳入材料降质",
+            "缺少真实应用及弹性精度"
+          ],
+          "limits": [
+            "这是总论作者对当时模型的理论检视，未验证其他年份或其他市场的经验替代参数。",
+            "总论报告Paper VIII的理论示例，不视作取得该原文。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "Chalmers原始机构PDF。核对题名页、论文清单、§§4.3–4.5相关页图和所列文本，核读§§6.1–6.6及第7章。",
+        "methodologicalScope": "核对总论所记实际负担与避免后果的分配对象，以及开环市场方法的假设和自述限制。",
+        "independence": "两种50/50规则与市场方法按总论作者的表述归属。总论与同一作者、同一论文系列及其重复载体不构成独立验证。作者参与丹麦报告1057的外部评审。",
+        "limitations": [
+          "清单所列论文正文未包含在该文件中。",
+          "市场模型的理论检视不提供纸级、市场和质量参数的实证确认。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "sourceKeys": [
+        "src-kb42-ekvall-1999-overview"
+      ]
+    },
+    {
+      "id": "rd-paper-rigamonti-2018",
+      "workId": "work-paper-rigamonti-2018",
+      "title": "Recycling processes and quality of secondary materials: Food for thought for waste-management-oriented life cycle assessment studies",
+      "version": "2018 同行评审稿，DTU Orbit 封页；Waste Management 76:261–265；以稿件页码定位。",
+      "url": "https://backend.orbit.dtu.dk/ws/files/162055185/Rigamonti_et_al_2018_Waste_Management.pdf",
+      "rights": "DTU 封页标为同行评审版；作者或权利人保留权利，允许私人学习或研究，不转发原件。",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "在回收链何处评估纸浆替代，0.833 又是由什么设定得到的？",
+      "argumentSummary": "先以物料流核算到替代点之前的损失；纸的例子在纸浆处比较，并在假定五次再循环时援引 2009 年研究的周期算法。",
+      "unread": [
+        "其他材料的分支和完整论文未作逐节核读。"
+      ],
+      "appraisal": {
+        "basis": "DTU 载体所见纸张段、建议与引用。",
+        "methodologicalScope": "废物管理 LCA 方法建议；纸浆层面示例。",
+        "independence": "复用了 2009 年研究，且 Rigamonti、Grosso 两作者重合，不是独立参数验证。",
+        "limitations": [
+          "不是丹麦成品强度试验。",
+          "未核 ISO/TR 14049:2012 原条文。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "artifacts": [
+        {
+          "id": "art-paper-rigamonti-2018-dtu-pdf",
+          "resolvedUrl": "https://backend.orbit.dtu.dk/ws/files/162055185/Rigamonti_et_al_2018_Waste_Management.pdf",
+          "sha256": "eb3dbc94a561af55c07a7e61ea89092829ba73b3eb7c9edadc0408f18b4a6b9c",
+          "mediaType": "application/pdf",
+          "pageCount": 15
+        }
+      ],
+      "passages": [
+        {
+          "id": "ps-paper-rigamonti-2018-pos",
+          "artifactId": "art-paper-rigamonti-2018-dtu-pdf",
+          "locator": "Recommendations，稿件第7页，第一条及纸的例子",
+          "printedPages": "7",
+          "pdfIndices": [
+            7
+          ],
+          "topics": [
+            "point-of-substitution",
+            "paper-pulp",
+            "physical-yield"
+          ],
+          "limits": [
+            "针对该文的废物管理方法建议；不是丹麦成品替代边界。"
+          ]
+        },
+        {
+          "id": "ps-paper-rigamonti-2018-cycles",
+          "artifactId": "art-paper-rigamonti-2018-dtu-pdf",
+          "locator": "Recommendations，稿件第8页第二条；第11、13页引用",
+          "printedPages": "8, 11, 13",
+          "pdfIndices": [
+            8,
+            11,
+            13
+          ],
+          "topics": [
+            "paper-pulp",
+            "cycle-based-allocation"
+          ],
+          "limits": [
+            "五次是假设；0.833 继承自 2009 年模型，不是实测收得率或成品强度。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rd-paper-rigamonti-2009",
+      "workId": "work-paper-rigamonti-2009",
+      "title": "Influence of assumptions about selection and recycling efficiencies on the LCA of integrated waste management systems",
+      "version": "2009 出版版，卷14第411–419页；选读印刷第415页。",
+      "url": "https://link.springer.com/content/pdf/10.1007/s11367-009-0095-3.pdf",
+      "rights": "Springer-Verlag 2009；出版页显示由清华大学提供访问，仅记录所见访问情境，未证实授权资格或公共许可；不转发原件。",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "后来的 0.833 是实测纸种功能，还是模型假设及负担算法？",
+      "argumentSummary": "以约五次再循环分摊一份原生纸浆生产负担；回收浆替代热机械浆的模型净信用写作 1−1/6。",
+      "unread": [
+        "未作全篇核读；意大利模型输入和影响结果未重建。"
+      ],
+      "appraisal": {
+        "basis": "核读出版 PDF 第415页；出版 HTML 访问标识仅作载体说明。",
+        "methodologicalScope": "意大利城市固废系统比较中，开环情景的纸浆替代与生产负担分摊。",
+        "independence": "2018 年直接引用且共享两名作者；没有用该系数验证丹麦案例的独立试验。",
+        "limitations": [
+          "五次来自引用，原始经验数据未定位。",
+          "不是实际加料、处理收得率、成品强度或边际市场比例。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "artifacts": [
+        {
+          "id": "art-paper-rigamonti-2009-springer-pdf",
+          "resolvedUrl": "https://link.springer.com/content/pdf/10.1007/s11367-009-0095-3.pdf",
+          "sha256": "5145818eafe840ad6abcb2fea89f88896585869f4867d2e3cbc2eee1ff331003",
+          "mediaType": "application/pdf",
+          "pageCount": 9
+        },
+        {
+          "id": "art-paper-rigamonti-2009-springer-html",
+          "resolvedUrl": "https://link.springer.com/article/10.1007/s11367-009-0095-3",
+          "sha256": "94e3f8ac66b0594542743e04f142627bec5fa10a1df02427cbf25aea5d1d828e",
+          "mediaType": "text/html"
+        }
+      ],
+      "passages": [
+        {
+          "id": "ps-paper-rigamonti-2009-cycle-accounting",
+          "artifactId": "art-paper-rigamonti-2009-springer-pdf",
+          "locator": "§2.3.2 开环情景及表3，印刷第415页",
+          "printedPages": "415",
+          "pdfIndices": [
+            4
+          ],
+          "topics": [
+            "paper-pulp",
+            "allocation",
+            "cycle-count"
+          ],
+          "limits": [
+            "五次是假定，未直接量出性能或产率；纸浆节点不同于成品箱板。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rd-paper-kreplin-putz-2020",
+      "workId": "work-paper-kreplin-putz-2020",
+      "title": "Ermittlung der Eigenschaftsänderungen von Wellpappe beim mehrfachen Recycling und Abschätzung der maximal möglichen Umläufe",
+      "version": "德国 IGF 19685 N 项目结题报告，签署封页 2020-06-24，系所 PDF 107 页。",
+      "url": "https://www.pmv.tu-darmstadt.de/media/fachgebiet_pmv/bibliothek_1/aif_veroeffentlichungen/AiF_19685_Schlussbericht.pdf",
+      "rights": "大学系所公开提供；机构库另标其存档载体 CC BY-NC-ND 4.0，系所所见封页未标同一许可；不转发原件。",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "瓦楞原纸的反复回收试验支持多宽的循环和功能判断？",
+      "argumentSummary": "不同原纸及混配在实验室的强度走势不同；混配可做到 25 次实验室及 16 次中试循环，实验操作损失、填料和被省略的工厂环节限制其解释。",
+      "unread": [
+        "未重建其模型或完整数据；其余段落未作逐节核读。"
+      ],
+      "appraisal": {
+        "basis": "核读德国原始报告的材料、方法与实验结果；目视核对封页、图5-6和中试讨论。",
+        "methodologicalScope": "瓦楞原纸的制浆、成纸与实验机械指标；实验室和中试。",
+        "independence": "与丹麦 1057 和 Rigamonti 无共同作者或已知共同模型/数据。实验室与中试属于同一项目。",
+        "limitations": [
+          "不是丹麦历史生产或工业收得率。",
+          "不跟踪实际包装使用；部分工厂工序略去。",
+          "不能证明最终箱功能等价。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "artifacts": [
+        {
+          "id": "art-paper-kreplin-putz-2020-pmv-pdf",
+          "resolvedUrl": "https://www.pmv.tu-darmstadt.de/media/fachgebiet_pmv/bibliothek_1/aif_veroeffentlichungen/AiF_19685_Schlussbericht.pdf",
+          "sha256": "e06944b374324463281fbb66e6074a0b577a68bc06977bc16d8e4b6bb2920a10",
+          "mediaType": "application/pdf",
+          "pageCount": 107
+        }
+      ],
+      "passages": [
+        {
+          "id": "ps-paper-kreplin-2020-lab-design",
+          "artifactId": "art-paper-kreplin-putz-2020-pmv-pdf",
+          "locator": "§3.1 第22页、§4.1 第30–32页、§5.1 第43页",
+          "printedPages": "22, 30–32, 43",
+          "pdfIndices": [
+            29,
+            37,
+            38,
+            39,
+            50
+          ],
+          "topics": [
+            "corrugated-base-paper",
+            "air-dry-basis",
+            "test-loss",
+            "recycling-cycles"
+          ],
+          "limits": [
+            "投料为风干纸质量，不是干纤维质量；既有回收次数未知；试验用料损失不是工厂废弃物。"
+          ]
+        },
+        {
+          "id": "ps-paper-kreplin-2020-grade-results",
+          "artifactId": "art-paper-kreplin-putz-2020-pmv-pdf",
+          "locator": "§5.1 第47–53页，尤其第48–49页、图5-6",
+          "printedPages": "47–53",
+          "pdfIndices": [
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60
+          ],
+          "topics": [
+            "corrugated-base-paper",
+            "crush-strength",
+            "filler-loss"
+          ],
+          "limits": [
+            "CMT 是实验瓦楞芯纸平压试验，不是成箱性能。不同纸种、工况、填料和比较循环不同。"
+          ]
+        },
+        {
+          "id": "ps-paper-kreplin-2020-pilot-limit",
+          "artifactId": "art-paper-kreplin-putz-2020-pmv-pdf",
+          "locator": "§4.4 第38页、§5.4 第88页、§5.5 第90页、§6.2 第92页",
+          "printedPages": "38, 88, 90, 92",
+          "pdfIndices": [
+            45,
+            95,
+            97,
+            99
+          ],
+          "topics": [
+            "recycling-cycles",
+            "stock-preparation",
+            "fiber-and-filler-loss"
+          ],
+          "limits": [
+            "并非工厂寿命或纤维个体计数；未模拟使用，筛选净化部分工序略去；末次补填料后不可直接比较。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rd-ekvall-tillman-gabathuler-1998-errata",
+      "workId": "work-ekvall-tillman-gabathuler-1998-errata",
+      "title": "Errata",
+      "version": "IJLCA 3(2):105，1998-03；DOI 10.1007/BF02978499",
+      "url": "https://link.springer.com/content/pdf/10.1007/BF02978499.pdf",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "正式勘误对三条分配式各更正什么？",
+      "argumentSummary": "原刊勘误逐式给出加号分子。将其与 1997 原刊对照后，式(16)末项下标仍须单独说明。",
+      "rights": "第三方保留权利。只拟公开书目、原创释义及定位。未核得允许重新发布原文、页面或完整图表的许可。",
+      "unread": [
+        "同页其他文章及第2项勘误不属本次问题。"
+      ],
+      "artifacts": [
+        {
+          "id": "art-ekvall-tillman-gabathuler-1998-errata-pdf",
+          "kind": "retrieved",
+          "sha256": "5c67372997f948cad8a3fc8c4929ccfeb9a40ed06baea7ff6689ed8111167fc3",
+          "pageCount": 1,
+          "resolvedUrl": "https://link.springer.com/content/pdf/10.1007/BF02978499.pdf",
+          "mediaType": "application/pdf"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-ekvall-tillman-1998-errata-equations",
+          "artifactId": "art-ekvall-tillman-gabathuler-1998-errata-pdf",
+          "locator": "页底 Errata 左栏第1项，对 1997 印页159方程(16)–(18)的正式勘误",
+          "printedPages": "105",
+          "topics": [
+            "勘误",
+            "回收分配"
+          ],
+          "limits": [
+            "更正分子中的符号为加号。没有改写式(16)最后的 R2/2。"
+          ],
+          "pdfIndices": [
+            0
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "出版商一页 PDF，第1项视觉核验，与出版商及 Chalmers 1997 载体对照。",
+        "methodologicalScope": "只确认勘误的作用及按字面应用后的剩余代数差异。",
+        "independence": "与被更正的同一作品直接相连，不是独立验证。",
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05",
+        "limitations": [
+          "原刊没有声称更正式(16)末项下标。"
+        ]
+      },
+      "sourceKeys": [
+        "src-kb42-ekvall-tillman-1998-errata"
+      ]
+    },
+    {
+      "id": "rd-ekvall-2000-market-sae",
+      "workId": "work-ekvall-2000-market-based-sae",
+      "title": "A Market-Based Approach to Allocation in Open-Loop Recycling",
+      "version": "SAE 2000-01-1467；作者上传的 ResearchGate HTML OCR 选段",
+      "url": "https://www.researchgate.net/publication/288156441_A_Market-Based_Approach_to_Allocation_in_Open-Loop_Recycling",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "web-sections",
+      "question": "公开原作者方法可复算哪一段市场响应，和期刊案例是什么关系？",
+      "argumentSummary": "固定焦点购入，额外售出由其他用户增加使用和其他供应者减少收集吸收。纸袋例以旧文献默认弹性给出可复核的条件分解。",
+      "rights": "第三方保留权利。只拟公开书目、原创释义及定位。未核得允许重新发布原文、页面或完整图表的许可。",
+      "unread": [
+        "SAE 版完整 PDF、其他配送情景及 RCR 期刊全文。"
+      ],
+      "artifacts": [
+        {
+          "id": "art-ekvall-2000-sae-author-upload-text",
+          "kind": "derived-text",
+          "sha256": "0d76dfcebefc05157dc1cda1eccd32b9cadecda38a406065c3027d7d5327dabe",
+          "mediaType": "text/plain",
+          "originUrl": "https://www.researchgate.net/publication/288156441_A_Market-Based_Approach_to_Allocation_in_Open-Loop_Recycling",
+          "captureMethod": "从作者公开上传 PDF 对应的 ResearchGate HTML OCR 选段保留源行序，网页显示作者上传身份。原 PDF 字节未取得。",
+          "captureScope": "公开作者内容；Conceptual Model Eqs. 1–6；Price Elasticity Values Table 1；Case Study Eqs. 7–8；参考文献13及相邻条目。",
+          "originalDocumentMediaType": "text/html",
+          "originalDocumentBytesAvailable": false
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-ekvall-2000-sae-equilibrium",
+          "artifactId": "art-ekvall-2000-sae-author-upload-text",
+          "locator": "Conceptual Model，Eqs. (1)–(6)；其他产品生命周期供给、需求及焦点市场流",
+          "topics": [
+            "价格弹性",
+            "边际市场平衡"
+          ],
+          "limits": [
+            "其他市场量相对于焦点流量足够大时用相对弹性近似。只从正文式子核对供给冲击。"
+          ]
+        },
+        {
+          "id": "psg-ekvall-2000-sae-paper-sacks",
+          "artifactId": "art-ekvall-2000-sae-author-upload-text",
+          "locator": "Price Elasticity Values，Table 1；Case Study，Eqs. (7)–(8) 和纸袋纤维说明",
+          "topics": [
+            "纸袋供应",
+            "历史默认参数",
+            "纤维功能"
+          ],
+          "limits": [
+            "默认弹性不是纸袋市场实测。回收材料市场单位和纤维强度等效是独立前提。无原 PDF 图像核验。"
+          ]
+        },
+        {
+          "id": "psg-ekvall-2000-sae-rcr-lineage",
+          "artifactId": "art-ekvall-2000-sae-author-upload-text",
+          "locator": "References，条目13；Case Study 开头对早先两例的识别",
+          "topics": [
+            "作品关系"
+          ],
+          "limits": [
+            "另列尚待刊的期刊文，不将 SAE 视作期刊正式版或其再版。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "作者上传网页 OCR 选段，按分式重算所列结果。",
+        "methodologicalScope": "局部市场均衡及作者报告的纸袋说明。",
+        "independence": "与 RCR 同作者和方法脉络，载体和应用不同。历史弹性依赖 Palmer 等。",
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05",
+        "limitations": [
+          "OCR 可能误识标点和下标；没有原 PDF 版式、研究完整库存和个案弹性。"
+        ]
+      },
+      "sourceKeys": [
+        "src-kb42-ekvall-2000-market-sae"
+      ]
+    },
+    {
+      "id": "rd-palmer-sigman-walls-1996-rff",
+      "workId": "work-palmer-sigman-walls-solid-waste",
+      "title": "The Cost of Reducing Municipal Solid Waste",
+      "version": "Resources for the Future DP 96-35，1996-09；工作论文载体",
+      "url": "https://media.rff.org/documents/RFF-DP-96-35.pdf",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "纸与纸板价格弹性默认值上游采用了什么数据？",
+      "argumentSummary": "工作论文按纸种列出美国废物政策模型的二次供需弹性输入。输入并非哥德堡的经验参数。",
+      "rights": "第三方保留权利。只拟公开书目、原创释义及定位。未核得允许重新发布原文、页面或完整图表的许可。",
+      "unread": [
+        "底层研究原始数据及期刊版完整正文。"
+      ],
+      "artifacts": [
+        {
+          "id": "art-palmer-sigman-walls-1996-rff-pdf",
+          "kind": "retrieved",
+          "sha256": "f9727e6b999a46206301c9574f07bab23daf378ef368016814074dea7181db8c",
+          "pageCount": 42,
+          "resolvedUrl": "https://media.rff.org/documents/RFF-DP-96-35.pdf",
+          "mediaType": "application/pdf"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-palmer-1996-rff-table2-paper",
+          "artifactId": "art-palmer-sigman-walls-1996-rff-pdf",
+          "locator": "Table 2，Paper and Paperboard 二次供给和二次需求",
+          "printedPages": "14",
+          "topics": [
+            "纸种",
+            "历史参数",
+            "供需方向"
+          ],
+          "limits": [
+            "不将二次需求与最终成品需求混用，不把作者模型输入视为瑞典观测。"
+          ],
+          "pdfIndices": [
+            17
+          ]
+        },
+        {
+          "id": "psg-palmer-1996-rff-appendix-a-paper",
+          "artifactId": "art-palmer-sigman-walls-1996-rff-pdf",
+          "locator": "Appendix A，纸类输入弹性的来源和分布",
+          "printedPages": "31–32",
+          "topics": [
+            "来源追溯",
+            "敏感性"
+          ],
+          "limits": [
+            "附录的新闻纸二次供给中间值印为负，和表2正值及正区间不一致。"
+          ],
+          "pdfIndices": [
+            34,
+            35
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "RFF 机构 PDF 选段，视觉检查表2和附录A印页31。",
+        "methodologicalScope": "美国模型校准输入与文献来源。",
+        "independence": "是 Ekvall 方法引用的输入前史，不能当作对 Ekvall 场景的独立验证。",
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05",
+        "limitations": [
+          "期刊版全文未读，附录与表2的符号差异保留。"
+        ]
+      },
+      "sourceKeys": [
+        "src-kb42-palmer-sigman-walls-1996-rff"
+      ]
+    },
+    {
+      "id": "rd-lundmark-soderholm-2002-swedish-demand",
+      "workId": "work-lundmark-soderholm-swedish-wastepaper-demand",
+      "title": "Structural changes in Swedish wastepaper demand: a variable cost function approach",
+      "version": "Lundmark 2002 Luleå 博士论文 2002:36 所收作者投稿版",
+      "url": "https://www.diva-portal.org/smash/get/diva2%3A999445/FULLTEXT01.pdf",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "web-sections",
+      "question": "同期瑞典新闻纸生产是否可把废纸投入普遍视作木浆的一对一替代？",
+      "argumentSummary": "作者在固定产量和资本的模型中估计短期投入关系，新闻纸和纸盒与纸巾和牛皮纸的关系不同。",
+      "rights": "第三方保留权利。只拟公开书目、原创释义及定位。未核得允许重新发布原文、页面或完整图表的许可。",
+      "unread": [
+        "期刊原版全文、完整作者版和底层数据。"
+      ],
+      "artifacts": [
+        {
+          "id": "art-lundmark-2002-swedish-demand-text",
+          "kind": "derived-text",
+          "sha256": "10d1b91e2058655d1c1f064f8b8a6633d75640ae68ed322511dc9bcc723f6493",
+          "mediaType": "text/plain",
+          "originUrl": "https://www.diva-portal.org/smash/get/diva2%3A999445/FULLTEXT01.pdf",
+          "captureMethod": "公共网页 PDF 文本提取，按显示行号选段，保留文本顺序。未取得原 PDF 字节。",
+          "captureScope": "作者论文所收研究的短期模型前提和 Table 2 的数据及解释。",
+          "originalDocumentMediaType": "application/pdf",
+          "originalDocumentBytesAvailable": false
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-lundmark-soderholm-2002-wastepaper-table2",
+          "artifactId": "art-lundmark-2002-swedish-demand-text",
+          "locator": "收录论文的短期成本模型前提，Table 2 及其文字解释",
+          "printedPages": "14–16",
+          "topics": [
+            "固定产量和资本",
+            "新闻纸",
+            "交叉价格弹性"
+          ],
+          "limits": [
+            "纸厂条件投入需求的估计，不是焦点回收增加时市场整体供需的因果效应。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "机构 PDF 文本提取的作者收录版本选段。",
+        "methodologicalScope": "瑞典纸厂面板条件需求和替代证据。",
+        "independence": "与 Ekvall、Palmer 研究作者独立；研究问题与市场范围不同。",
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05",
+        "limitations": [
+          "没有原 PDF 字节或视觉核验。",
+          "未取得市场供应弹性。"
+        ]
+      },
+      "sourceKeys": [
+        "src-kb42-lundmark-soderholm-2002-swedish-demand"
+      ]
+    },
+    {
+      "id": "rd-ekvall-2000-market-rcr-preview",
+      "workId": "work-ekvall-2000-market-based-rcr",
+      "title": "A market-based approach to allocation at open-loop recycling",
+      "version": "Resources, Conservation and Recycling 29(1–2):91–109，2000；出版商 HTML 章节预览",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0921344999000579",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "web-sections",
+      "question": "Paper VIII 期刊正式版在预览中能确认哪些方法及案例条件？",
+      "argumentSummary": "案例以两种理论上的当地收集变化说明市场如何连接其他生命周期，分别涉及经济力量和政策约束。",
+      "rights": "第三方保留权利。只拟公开书目、原创释义及定位。未核得允许重新发布原文、页面或完整图表的许可。",
+      "unread": [
+        "正式版各式、整段案例、表图和全文论证。"
+      ],
+      "artifacts": [
+        {
+          "id": "art-ekvall-2000-rcr-publisher-preview-text",
+          "kind": "derived-text",
+          "sha256": "3e90b799e78562d57fbdb096144c7ddd3dfed418b7d7aa8cbb7276f53664132c",
+          "mediaType": "text/plain",
+          "originUrl": "https://www.sciencedirect.com/science/article/pii/S0921344999000579",
+          "captureMethod": "保留检索返回的出版商章节预览选段。其来源为网页文本提取，不是期刊全文、原始网页字节或 PDF。",
+          "captureScope": "出版商预览中的摘要、导言和主要章节开头。",
+          "originalDocumentMediaType": "text/html",
+          "originalDocumentBytesAvailable": false
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-ekvall-2000-rcr-purpose-cases",
+          "artifactId": "art-ekvall-2000-rcr-publisher-preview-text",
+          "locator": "Abstract, Introduction, Case 1: corrugated board 和 Case 2: newsprint 的首段",
+          "topics": [
+            "市场驱动条件",
+            "政策驱动条件",
+            "理论案例"
+          ],
+          "limits": [
+            "哥德堡两例含未核实资料和假设。预览不提供完整模型或可复算数据。"
+          ]
+        },
+        {
+          "id": "psg-ekvall-2000-rcr-approximation-preview",
+          "artifactId": "art-ekvall-2000-rcr-publisher-preview-text",
+          "locator": "The 50/50 approximation、The allocation approximation 和 Discussion 的预览开头",
+          "topics": [
+            "近似",
+            "核算范围"
+          ],
+          "limits": [
+            "只确认作者提出的用途和限定，不识别正式期刊式号、默认值或数值结果。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "出版商 HTML 章节预览的文本选段。",
+        "methodologicalScope": "只对实际显示的期刊预览选段作说明。",
+        "independence": "与 1999 总论、SAE 文章同作者，载体与案例分开。",
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05",
+        "limitations": [
+          "缺完整期刊文章；不由同行文献补称为原文核读。"
+        ]
+      }
     }
   ],
   "gaps": [
@@ -11319,13 +12450,13 @@
     },
     {
       "id": "gap-wave2-errata-original",
-      "description": "Springer 确认 1998 Errata DOI10.1007/BF02978499，p105，链接 1997 原文；原勘误正文未取得。二手片段暗示公式更正，仅作追踪提示。",
+      "description": "已取得并视觉核验 Springer 正式勘误。式(16)–(18)三处分子符号获得更正。式(16)末项在 1997 原刊仍为 R2/2，勘误没有处理该下标。",
+      "nextAction": "按所引规则与原刊排版区分。若采用使三产品过程账闭合的相邻分担，应引用 1999 总论§4.4；若追溯 1997 原式下标，应明确标作编辑推断，并继续核对 1994 原会文或 1995 指南。",
       "affectedUnits": [
         "V4",
         "V6",
         "A05"
-      ],
-      "nextAction": "合法取得原勘误并视觉核验 p159 方程16–18；此前不从未更正排版复算或发表校正式。"
+      ]
     },
     {
       "id": "gap-wave2-heijungs-frischknecht",
@@ -11864,6 +12995,15 @@
       "affectedUnits": [
         "V2-05",
         "V7-04"
+      ]
+    },
+    {
+      "id": "gap-paper-comieco-2008-premise",
+      "description": "Rigamonti 2009 仅列 Comieco (2008) 与 Matrec 站点首页，未取得当时具体项目、试验或纸种数据。",
+      "nextAction": "如需把五次当成历史经验值，先确认原题、纸种、使用条件和量测记录；目前保持为作者情景假定。",
+      "affectedUnits": [
+        "V6-04",
+        "CASE-CYCLE"
       ]
     }
   ],
@@ -13206,6 +14346,77 @@
         "V7-04"
       ],
       "status": "applied to manuscript candidate"
+    },
+    {
+      "id": "rev-kb42-ekvall-1998-errata-scope",
+      "before": "只确认勘误书目。因原件未核，未使用方程(16)–(18)计算。",
+      "after": "正式符号更正已核实。印刷下标的剩余差异单独记录；相邻实际回收负担分担以 1999 总论表述为依据。",
+      "reasoning": "出版商 1997 正文与 1998 勘误的视觉对照限定了更正范围。按 1999 总论的相邻规则分担时，完整过程账相加闭合。",
+      "status": "applied to chapter and source records",
+      "triggerPassageIds": [
+        "psg-kb42-ekvall-tillman-1997-printed-equations",
+        "psg-ekvall-tillman-1998-errata-equations",
+        "psg-kb42-ekvall-1999-overview-fifty-fifty"
+      ],
+      "affectedUnits": [
+        "V4",
+        "V6",
+        "A05",
+        "CASE-CYCLE"
+      ]
+    },
+    {
+      "id": "rev-cycle-physical-grade-response",
+      "before": "CASE-CYCLE尚未用原始案例把成品流量、质量与外部替代连接；已有联合生产示例不提供材料连续使用的工厂依据。",
+      "after": "新章从丹麦年度路由及单位加工产出进入纸级参照，直接采用表3.1纸级替代比，并将加工收率、成品功能折算与外部响应分开。",
+      "reasoning": "表4.5/4.6与表3.1回答不同问题；独立审查定位到更直接的纸级表，取代从通用质量分类的推断。",
+      "status": "applied",
+      "triggerPassageIds": [
+        "psg-kb42-dk1057-occ-baseline",
+        "psg-kb42-dk1057-occ-scenarios",
+        "psg-kb42-dk1057-substitution-table"
+      ],
+      "affectedUnits": [
+        "V3-04",
+        "V6-04",
+        "V6-06",
+        "V7-05B",
+        "CASE-CYCLE"
+      ]
+    },
+    {
+      "id": "rev-cycle-energy-service",
+      "before": "回收收益可用避免能源总量表达，但未在具名纸链中检验热与电的服务匹配。",
+      "after": "新章保留共同焚烧外供量，对照旧合计算法和补电模型，复算9.88；热单独利用的源报6.04未闭合且不倒推隐藏输入。",
+      "reasoning": "图5.1解释不同热电比为何需要补缺活动；附录一次能源与天然气投入是不同量，不能将数值不同一概当作原文冲突。",
+      "status": "applied",
+      "triggerPassageIds": [
+        "psg-kb42-dk1057-incineration",
+        "psg-kb42-dk1057-results",
+        "psg-kb42-dk1057-data-vintage"
+      ],
+      "affectedUnits": [
+        "V4-06",
+        "V6-04",
+        "CASE-CYCLE"
+      ]
+    },
+    {
+      "id": "rev-cycle-life-limit",
+      "before": "纸循环次数和质量折算若只沿方法综述引用，易把五次假定当作材料普遍寿命。",
+      "after": "追到2009六用途分担，并用2020独立实验的设计、取样与填料条件限制五次物理上限及无限循环两种推断。",
+      "reasoning": "实验可成纸不等于最终箱功能、商业收率或已知纤维代际；共享作者的2009/2018不是两次独立测量。",
+      "status": "applied",
+      "triggerPassageIds": [
+        "ps-paper-rigamonti-2009-cycle-accounting",
+        "ps-paper-kreplin-2020-lab-design",
+        "ps-paper-kreplin-2020-pilot-limit"
+      ],
+      "affectedUnits": [
+        "V6-04",
+        "V7-05B",
+        "CASE-CYCLE"
+      ]
     }
   ]
 }

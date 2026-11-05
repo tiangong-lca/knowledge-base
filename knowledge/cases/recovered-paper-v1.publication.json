@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 1,
+  "caseId": "CASE-CYCLE",
+  "version": "1.0.0",
+  "inputFile": "recovered-paper-v1.json",
+  "reviewedAt": "2026-11-05",
+  "reviewKind": "agent-source-check",
+  "approvedInputSha256": "81bff4219c7d2bdcc978da1e5acc5135064a56a37a7052ba44c80de05d5da4b9",
+  "claims": [
+    {
+      "id": "cl-cycle-annual-routing",
+      "kind": "calculation",
+      "scope": "1057年度基线商业纸料账",
+      "evidenceIds": [
+        "ev-kb42-dk1057-occ-baseline"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb42-dk1057-occ-baseline",
+          "relation": "supports",
+          "rationale": "表4.5情景1与图4.3给年度量和转换下脚料。"
+        }
+      ],
+      "premiseIds": [
+        "cl-cycle-historical-question"
+      ],
+      "caveats": [],
+      "conceptIds": [],
+      "reasoning": "按所引原文的对象、分母和条件展开关系；不将核算恒等式或模型输出当作实证因果验证。",
+      "mappingIds": [],
+      "textTemplate": "在报告的年度基线中，丹麦瓦楞纸使用及收集潜量为 {{evaluated.annualRouting.reportedUse.exact}} 千吨，其中 {{evaluated.annualRouting.collected.exact}} 千吨进入收集，另 {{evaluated.annualRouting.assumedIncinerated.exact}} 千吨被假定送去焚烧。这 {{evaluated.annualRouting.collected.exact}} 千吨收集量中包括 {{evaluated.annualRouting.convertingWasteInCollection.exact}} 千吨生产转换下脚料，不能全部称为消费者用过的纸箱。加上进口 {{evaluated.annualRouting.imports.exact}} 千吨、扣除出口 {{evaluated.annualRouting.exports.exact}} 千吨，国内回收厂进料为 {{evaluated.annualRouting.domesticFeed.exact}} 千吨。这是一组研究采用的年度物料账，收集地、使用地与回收加工地并不重合。"
+    },
+    {
+      "id": "cl-cycle-upstream-statistics",
+      "kind": "calculation",
+      "scope": "上游统计重建与跨报告差异",
+      "evidenceIds": [
+        "ev-kb42-dk1057-occ-baseline",
+        "ev-kb42-dk830-occ"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb42-dk1057-occ-baseline",
+          "relation": "supports",
+          "rationale": "1057表4.5为后来模型采用量。"
+        },
+        {
+          "evidenceId": "ev-kb42-dk830-occ",
+          "relation": "supports",
+          "rationale": "830图0.1和表0.1显示底层统计及内部差异。"
+        }
+      ],
+      "premiseIds": [
+        "cl-cycle-annual-routing"
+      ],
+      "caveats": [],
+      "conceptIds": [],
+      "reasoning": "按所引原文的对象、分母和条件展开关系；不将核算恒等式或模型输出当作实证因果验证。",
+      "mappingIds": [],
+      "textTemplate": "这组整数并不是底层统计的逐项照抄。所引2003年回收统计报告，在瓦楞包装图中以空包装供应加上已装货包装的净进口，得到 {{evaluated.upstreamStatistics.packagingSupply.exact}} 吨供应；再由国内工厂用料、回收纸净出口和库存变化重建 {{evaluated.upstreamStatistics.collected.exact}} 吨收集量。图中的收集率框却印成 {{evaluated.upstreamStatistics.printedRateNumerator.exact}} 吨，两者在显示精度上都约为 {{evaluated.upstreamStatistics.collectionPercentRounded1}}%。此外，底层统计的进口和工厂用量与后来模型不同。能够核对这层加减关系，不表示这些差异已经得到解释，更不能把两个相同年份的表无条件拼成一份精确清单。"
+    },
+    {
+      "id": "cl-cycle-product-yield",
+      "kind": "calculation",
+      "scope": "成品输出比与纤维组分平衡",
+      "evidenceIds": [
+        "ev-kb42-dk1057-occ-baseline",
+        "ev-kb42-dk1057-occ-scenarios"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb42-dk1057-occ-baseline",
+          "relation": "supports",
+          "rationale": "表4.5两纸级的年度产量。"
+        },
+        {
+          "evidenceId": "ev-kb42-dk1057-occ-scenarios",
+          "relation": "supports",
+          "rationale": "表4.6的单位产出与生产损失说明。"
+        }
+      ],
+      "premiseIds": [
+        "cl-cycle-annual-routing"
+      ],
+      "caveats": [],
+      "conceptIds": [
+        "cn-cycle-three-ledgers"
+      ],
+      "reasoning": "按所引原文的对象、分母和条件展开关系；不将核算恒等式或模型输出当作实证因果验证。",
+      "mappingIds": [],
+      "textTemplate": "沿国内加工继续追踪，年度进料183千吨对应144千吨挂面纸和瓦楞芯纸，以及23千吨另一类纸板。两者都以183千吨国内总进料为分母，约为 {{evaluated.recyclingYield.linerFlutingPerKg.fixed6}} 和 {{evaluated.recyclingYield.boardPerKg.fixed6}} kg成品/kg进料；原报告单位情景采用舍入值 {{evaluated.recyclingYield.reportedLinerFlutingPerKg.exact}} 与 {{evaluated.recyclingYield.reportedBoardPerKg.exact}}，合计 {{evaluated.recyclingYield.reportedTotalPerKg.exact}}。剩下的差额 {{evaluated.recyclingYield.reportedPaperOutputShortfall.exact}} kg，是这一报告层次的成品物料量缺口。它没有直接告诉读者其中多少是纤维、填料、杂质或水分，不能把它直接命名为“纤维损失率”。"
+    },
+    {
+      "id": "cl-cycle-annual-quality",
+      "kind": "calculation",
+      "scope": "原报告年度增收情景的质量折算",
+      "evidenceIds": [
+        "ev-kb42-dk1057-occ-scenarios"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb42-dk1057-occ-scenarios",
+          "relation": "supports",
+          "rationale": "§4.3.2给18千吨、16千吨、1.25及12.8千吨关系。"
+        }
+      ],
+      "premiseIds": [
+        "cl-cycle-virgin-reference"
+      ],
+      "caveats": [],
+      "conceptIds": [],
+      "reasoning": "按所引原文的对象、分母和条件展开关系；不将核算恒等式或模型输出当作实证因果验证。",
+      "mappingIds": [],
+      "textTemplate": "年度增加收集情景把进入国内回收的纸料增加 {{evaluated.annualSubstitution.extraRecoveredFeed.exact}} 吨，在进口和出口不变的条件下，同量纸料从焚烧转到回收，报告相应增加 {{evaluated.annualSubstitution.extraRecoveredProduct.exact}} 吨成品。随后采用 {{evaluated.annualSubstitution.linerFlutingStrengthRatio.exact}} 吨再生挂面/芯纸对应一吨原生挂面/芯纸的等强度假设，得到 {{evaluated.annualSubstitution.modelAvoidedVirginLinerFluting.exact}} 吨避免的模型原生生产。前一步是产出量，后一步是功能折算后的参照量。把折算改成一比一，会改变避免生产的账目，却不会凭空增加工厂已经产出的纸。"
+    },
+    {
+      "id": "cl-cycle-grade-quality",
+      "kind": "calculation",
+      "scope": "表3.1直接纸级替代比与表4.6成品量的派生关系",
+      "evidenceIds": [
+        "ev-kb42-dk1057-occ-scenarios",
+        "ev-kb42-dk1057-handoff",
+        "ev-kb42-dk1057-grades",
+        "ev-kb42-dk1057-substitution-table"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb42-dk1057-occ-scenarios",
+          "relation": "supports",
+          "rationale": "表4.6和§4.3.2分别提供单位纸级量与成品折算。"
+        },
+        {
+          "evidenceId": "ev-kb42-dk1057-handoff",
+          "relation": "supports",
+          "rationale": "§3.4.3.3区分纸种质量修正。"
+        },
+        {
+          "evidenceId": "ev-kb42-dk1057-grades",
+          "relation": "supports",
+          "rationale": "§5.10为两纸级选不同原生参照。"
+        },
+        {
+          "evidenceId": "ev-kb42-dk1057-substitution-table",
+          "relation": "supports",
+          "rationale": "第40页表3.1直接给出国内挂面/芯纸0.8:1及纸板1:1，并区分参照工艺。"
+        }
+      ],
+      "premiseIds": [
+        "cl-cycle-annual-quality",
+        "cl-cycle-virgin-reference"
+      ],
+      "caveats": [],
+      "conceptIds": [],
+      "reasoning": "按所引原文的对象、分母和条件展开关系；不将核算恒等式或模型输出当作实证因果验证。",
+      "mappingIds": [],
+      "textTemplate": "单位进料的两种成品还可以分别展开。表3.1在瓦楞纸国内回收行直接给出挂面/芯纸0.8比1、另一类纸板1比1的模型替代关系。因此，0.787 kg挂面/芯纸对应 {{evaluated.gradeSubstitution.linerFlutingFromReportedGradeMass.exact}} kg模型原生挂面/芯纸；0.126 kg纸板对应 {{evaluated.gradeSubstitution.boardFromReportedGradeMass.exact}} kg其原生参照纸板。0.8也等于前述1.25的倒数。这两个乘积是由已披露纸级量与替代比算出的结果，不是原表打印的完整活动向量。两个参照纸级不能合并成一种通用“原生纤维”，年度情景对成品总增量的简化折算也不能反过来证明每个纸级完全相同。"
+    },
+    {
+      "id": "cl-cycle-energy-products",
+      "kind": "calculation",
+      "scope": "同一焚烧分支的热电交付量",
+      "evidenceIds": [
+        "ev-kb42-dk1057-incineration"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb42-dk1057-incineration",
+          "relation": "supports",
+          "rationale": "§5.3与图5.1的输出比、损失和92%基准。"
+        }
+      ],
+      "premiseIds": [
+        "cl-cycle-service-boundary"
+      ],
+      "caveats": [],
+      "conceptIds": [],
+      "reasoning": "按所引原文的对象、分母和条件展开关系；不将核算恒等式或模型输出当作实证因果验证。",
+      "mappingIds": [],
+      "textTemplate": "回收还会改变废纸进入焚烧的量，因此被替代的能源不能省略。丹麦报告的焚烧分支以干物质92%的纸或纸板为基准，每千克模型输送前外供12.53 MJ热电，其中约四分之一为电、四分之三为热。再分别扣除电力和热量输送损失，得到电 {{evaluated.mixedEnergy.deliveredElectricity.exact}} MJ、热 {{evaluated.mixedEnergy.deliveredHeat.exact}} MJ，原报告分别写成 {{evaluated.mixedEnergy.reportedDeliveredElectricity.exact}} 和 {{evaluated.mixedEnergy.reportedDeliveredHeat.exact}}。两者同用MJ，却提供不同服务。"
+    },
+    {
+      "id": "cl-cycle-energy-mismatch",
+      "kind": "calculation",
+      "scope": "合计能量相等不足以保证共同服务相等",
+      "evidenceIds": [
+        "ev-kb42-dk1057-incineration"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb42-dk1057-incineration",
+          "relation": "supports",
+          "rationale": "第77–78页解释原合计算法与产出比例不匹配。"
+        }
+      ],
+      "premiseIds": [
+        "cl-cycle-energy-products"
+      ],
+      "caveats": [],
+      "conceptIds": [],
+      "reasoning": "按所引原文的对象、分母和条件展开关系；不将核算恒等式或模型输出当作实证因果验证。",
+      "mappingIds": [],
+      "textTemplate": "原来的近似把10.34 MJ交付热电合计除以77%的效率，计作约 {{evaluated.mixedEnergy.aggregate.avoidedGasRounded1}} MJ天然气投入被避免。问题是，参照天然气热电联产按一比一输出热和电，废纸焚烧交付的热电比例却不同。总MJ相等并没有使两种产品分别相等。若按热量削减参照机组，随之减少的电力更多，就必须说明这部分电从哪里补回来。"
+    },
+    {
+      "id": "cl-cycle-energy-matched",
+      "kind": "calculation",
+      "scope": "报告显示值的共同热电服务重建",
+      "evidenceIds": [
+        "ev-kb42-dk1057-incineration"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb42-dk1057-incineration",
+          "relation": "supports",
+          "rationale": "图5.1逐步给热匹配和缺电补偿。"
+        }
+      ],
+      "premiseIds": [
+        "cl-cycle-energy-mismatch"
+      ],
+      "caveats": [],
+      "conceptIds": [],
+      "reasoning": "按所引原文的对象、分母和条件展开关系；不将核算恒等式或模型输出当作实证因果验证。",
+      "mappingIds": [],
+      "textTemplate": "按报告显示的7.52 MJ热量，热电各半的参照机组相应少生产7.52 MJ电量，合计 {{evaluated.mixedEnergy.matched.displacedChpOutput.exact}} MJ输出；按78%的交付效率，避免约 {{evaluated.mixedEnergy.matched.displacedGasRounded2}} MJ天然气。焚烧本身只提供2.82 MJ电，因此还缺 {{evaluated.mixedEnergy.matched.missingElectricity.exact}} MJ电，以50%效率的边际纯发电补足，要用 {{evaluated.mixedEnergy.matched.makeupGas.exact}} MJ天然气。两项相减，净避免约 {{evaluated.mixedEnergy.matched.netAvoidedGasRounded2}} MJ。补缺发电是为保持两项服务而加入的活动，不能只保留较大的避免量而删去它。"
+    },
+    {
+      "id": "cl-cycle-heat-only",
+      "kind": "calculation",
+      "scope": "原报火用/系统扩展比较与未闭合复算",
+      "evidenceIds": [
+        "ev-kb42-dk1057-incineration"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb42-dk1057-incineration",
+          "relation": "supports",
+          "rationale": "第78页与表5.13的热单独利用分支。"
+        }
+      ],
+      "premiseIds": [
+        "cl-cycle-energy-matched"
+      ],
+      "caveats": [],
+      "conceptIds": [],
+      "reasoning": "按所引原文的对象、分母和条件展开关系；不将核算恒等式或模型输出当作实证因果验证。",
+      "mappingIds": [],
+      "textTemplate": "热量单独利用的敏感性比较更直接地并列了两种处理：报告先用按能量品质（exergy）分配后的参照数据，给出 {{evaluated.heatOnly.sourceReportedExergyAvoidedGas.exact}} MJ/kg避免天然气；改用带补电的系统扩展后报 {{evaluated.heatOnly.sourceReportedExpandedAvoidedGas.exact}} MJ/kg。两者都是原报结果。但若仍采用前一分支披露的热电比例与效率，对12.53 MJ输送前外供热量扣除20%输送损失，再匹配热量和补电，条件计算得到约 {{evaluated.heatOnly.conditionalMixedEfficienciesAvoidedGasRounded2}} MJ/kg，并不等于6.04。原段未给出足以解释差值的单独中间量，能量品质分配所需的具体系数也未披露。因此，这里可以准确比较作者采取了什么方法，不能把两个原报数字都称为已经由公开参数独立复算的结果。"
+    }
+  ]
+}

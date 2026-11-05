@@ -14,7 +14,7 @@ checkPaths:
   - "knowledge/**"
   - "releases/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: 1a2509eb54f912bb412843147f2937fc824da301
+lastReviewedCommit: fc97d136912a6caeafbfedafb575c869bef15623
 ---
 
 # Editorial and living review protocol
@@ -114,3 +114,5 @@ For ecological-scarcity scores, trace a policy objective, the conversion to a cr
 For a preference-based weight, trace the question actually shown to respondents, the unit of the estimated attribute coefficient and the reference unit of the published damage factor. Record whether the elicited outcome concerns one person, one household or a national total. Matching demographic tables establish common reported descriptors. Claiming identical microdata, deducing exclusions or substituting a later set of weights requires additional evidence. Distinguish arithmetic consistency with a reported number from a documented estimation procedure and an experiment on actual payments from the estimated price of a modelled loss.
 
 For complete-study interpretation, identify which reported comparison serves the stated question and which missing data make it conditional. Review comments, author replies and the final artifact each require locators. An acceptance statement does not establish that every promised edit appears consistently in the released text. Behaviour frequencies with respondents as their denominator require an explicit mapping before being used as bag-weighted material substitutions.
+
+For recovered-material chains, inspect physical processing and the point of substitution before applying quality factors. Keep burden attribution, modeled avoided activity and observed causal response separate. Compare fixed-service accounting choices with their actual assumptions; a changed reference efficiency prevents attributing the whole difference to one rule. Inspect the original correction alongside the original equation and distinguish a later stated rule from an inferred repair. A cycling experiment's stopping condition, sample removal, filler changes and omitted industrial operations must accompany any claim about material lifetime. Review the actual source table before inferring a grade mapping from generic categories.
