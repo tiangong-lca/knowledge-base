@@ -9608,7 +9608,7 @@
           "value": "14651",
           "unit": "items",
           "quantity": "reported surveyed item count",
-          "subject": "HDPE carrier bag",
+          "subject": "single-use carrier bags surveyed (capacity applied to HDPE)",
           "basis": "AnnexB.2 printed79; underlying surveyed counts; distinct from applied rounded Table3.1 capacity"
         },
         {
@@ -9616,7 +9616,7 @@
           "value": "2490",
           "unit": "bags",
           "quantity": "reported surveyed bag count",
-          "subject": "HDPE carrier bag",
+          "subject": "single-use carrier bags surveyed (capacity applied to HDPE)",
           "basis": "AnnexB.2 printed79; underlying surveyed counts; distinct from applied rounded Table3.1 capacity"
         },
         {
@@ -9624,7 +9624,7 @@
           "value": "573",
           "unit": "items",
           "quantity": "reported surveyed item count",
-          "subject": "LDPE carrier bag",
+          "subject": "LDPE carrier bags surveyed",
           "basis": "AnnexB.2 printed79; underlying surveyed counts; distinct from applied rounded Table3.1 capacity"
         },
         {
@@ -9632,7 +9632,7 @@
           "value": "72",
           "unit": "bags",
           "quantity": "reported surveyed bag count",
-          "subject": "LDPE carrier bag",
+          "subject": "LDPE carrier bags surveyed",
           "basis": "AnnexB.2 printed79; underlying surveyed counts; distinct from applied rounded Table3.1 capacity"
         }
       ]
@@ -9643,7 +9643,7 @@
       "readingId": "rd-pack-ea2011",
       "passageId": "psg-pack-ea2011-secondary",
       "locator": "第 30–31 页，第 4.4 节及表 4.5",
-      "summary": "作者采用 76% 袋再用与 53% 受访者厨房内衬用途相乘，作为约 40.3% 轻薄袋避免垃圾袋生产的比例。由 29.3 L、9.3 g 的内衬袋按 19.1 L 缩放，报告每次避免 6.1 g HDPE 内衬材料。",
+      "summary": "作者采用 76% 袋再用与 53% 受访者厨房内衬用途相乘，作为约 40.3% 轻薄袋避免垃圾袋生产的比例。由 29.3 L、9.3 g 的内衬袋按 19.1 L 缩放，报告每次避免 6.1 g HDPE 内衬材料。 同页另列基准终点处理为 86% 填埋、14% 焚烧。",
       "appraisal": {
         "basis": "核对完整官方 PDF 的所列段落与表格；数字和表头另以原页图像复核。",
         "methodologicalScope": "历史报告所选条件与公开表格的解释。",
@@ -9668,7 +9668,7 @@
           "value": "53",
           "unit": "percent",
           "quantity": "respondent incidence of kitchen-bin-liner use",
-          "subject": "respondents reusing carrier bags",
+          "subject": "all surveyed WRAP respondents (1048), multiple-response kitchen-liner incidence",
           "basis": "Section4.4 Table4.5 printed30; respondent share; not a directly observed bag replacement probability"
         },
         {
@@ -10184,7 +10184,7 @@
     {
       "id": "ev-pack-wrap2005-denominators",
       "sourceId": "src-pack-wrap2005",
-      "locator": "Stage2 i–iii,Q6–Q9 printed11–15; physical indices48–50,63–67; original questionnaire index98",
+      "locator": "第二阶段方法第 i–iii 页，Q6–Q9 第 11–15 页",
       "summary": "GB街头访谈n1048；2005年3月2–10日；Q7自报复用比例类别，Q8全部受访者的主用途/所有用途；53%厨房垃圾桶内衬和8%超市购物是人群比例，不是袋数比例或使用周期。",
       "relation": "qualifies",
       "readingId": "rd-pack-wrap2005",
@@ -10203,7 +10203,7 @@
       },
       "numericFacts": [
         {
-          "id": "sample",
+          "id": "nf-pack-wales2016-sample",
           "value": "1048",
           "unit": "respondents",
           "quantity": "sample size",
@@ -24814,6 +24814,1041 @@
       "status": "reviewed",
       "reviewKind": "agent-source-check",
       "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "cl-pack-question",
+      "kind": "interpretation",
+      "scope": "围绕原报告的条件性门槛展开整项研究解释",
+      "text": "“厚塑料袋用五次，就比轻薄袋好。”若读者只记住这句话，会把同一个研究里的好几个条件压在一起。英国环境署委托的购物袋研究确实公布了五次这个数，却用它回答一个更具体的问题：在给定容量、制袋和处置条件下，厚 LDPE 袋承担同样购物运输服务时，何时能低于轻薄 HDPE 袋的气候影响？先看这个数怎样形成，再看研究还能支持什么判断。",
+      "evidenceIds": [
+        "ev-pack-ea-ldpe-impacts",
+        "ev-pack-ea-methods"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-ldpe-impacts",
+          "relation": "supports",
+          "rationale": "表 5.5 并列零复用及五次的影响。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-methods",
+          "relation": "supports",
+          "rationale": "研究先求气候门槛再按该次数比较其他类别。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-pack-goal",
+      "kind": "source-statement",
+      "scope": "原研究的时间、受众和对象",
+      "text": "报告署期为 2011 年 2 月，讨论的是英国 2006/07 参照时期的超市提袋。作者 Chris Edwards 和 Jonna Meyhoff Fry 受托为政府、超市和其他公众提供比较依据；袋型选择同时考虑当时市场和新材料。研究将对象限定为可在超市结账时使用、容量超过十五升的提袋。这个目标可以支持历史条件下的情景比较，但袋子后来减重、消费者改变用法或废物处理条件变化，都需要另有资料才能带入。",
+      "evidenceIds": [
+        "ev-pack-ea-goal",
+        "ev-pack-ea-conclusion"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-goal",
+          "relation": "supports",
+          "rationale": "第 2 节列目标、范围、受众及比较用途。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-conclusion",
+          "relation": "supports",
+          "rationale": "讨论明确限定参照时期和后来的技术变化。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-pack-service",
+      "kind": "calculation",
+      "scope": "原报告所定服务与初始参考流",
+      "evidenceIds": [
+        "ev-pack-ea-flow"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-flow",
+          "relation": "supports",
+          "rationale": "第 3.1–3.2 节给 483 件服务并说明复用处理。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-question"
+      ],
+      "conceptIds": [
+        "cn-pack-service"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "把给定物品运输服务与每只袋的容量及使用次数对应。",
+      "text": "报告把功能单位写成在英国用袋子将一个月的 483 件购物物品从超市运回家。因此，直接比较“一只厚袋”和“一只薄袋”的生产负担还不够。较大的袋子可能一次装得更多，同一只袋子也可能再次购物。体积、实际装填和使用次数都参与决定需要生产多少只袋。原报告的初始参考流先处理容量，主要用途的实际复用次数因缺少独立数据而留作另一层问题。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-PACK-STUDY",
+        "version": "1.0.0",
+        "inputSha256": "d6517e87198308d50d00d9d84ccf13f1fea174db062139994b122ea170921149",
+        "inputFile": "pack-study-v1.json"
+      }
+    },
+    {
+      "id": "cl-pack-capacity",
+      "kind": "calculation",
+      "scope": "调查计数、采用容量及对其他袋型的外推",
+      "evidenceIds": [
+        "ev-pack-ea-capacity",
+        "ev-pack-ea-flow"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-capacity",
+          "relation": "supports",
+          "rationale": "附录 B 列样本、两组实际计数和按体积推算过程。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-flow",
+          "relation": "supports",
+          "rationale": "表 3.1 为采用值。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-service"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "独立求原表计数比，并与报告采用的显示值比较。",
+      "text": "容量也有不同证据来源。附录 B 的调查访问了 1,149 名购物者，记录的 2,490 个轻薄袋装有 14,651 件物品，72 个 LDPE 袋装有 573 件。两个比值分别约为 5.883936 和 7.958333 件/袋。主表采用舍到两位小数的 5.88 和 7.96。纸袋、无纺 PP 袋和棉袋的装填量则借用了 LDPE 每升物品数的关系，按各自体积外推。读者因此知道哪些是分类型的调查计数，哪些是模型中的转接。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-PACK-STUDY",
+        "version": "1.0.0",
+        "inputSha256": "d6517e87198308d50d00d9d84ccf13f1fea174db062139994b122ea170921149",
+        "inputFile": "pack-study-v1.json"
+      }
+    },
+    {
+      "id": "cl-pack-count",
+      "kind": "calculation",
+      "scope": "同一服务下的数量和材料量",
+      "evidenceIds": [
+        "ev-pack-ea-flow"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-flow",
+          "relation": "supports",
+          "rationale": "表 3.1 量、质量和袋数均有明确单位。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-capacity"
+      ],
+      "conceptIds": [
+        "cn-pack-service"
+      ],
+      "mappingIds": [],
+      "caveats": [
+        "版本化计算输入另列未舍入除法与原表显示值的差额。"
+      ],
+      "reasoning": "分别计算483/容量，材料量采用公布参考流与公布袋质量相乘。",
+      "text": "将 483 件除以采用的容量，轻薄袋需要约 82.14 只，LDPE 袋需要约 60.68 只。这里的小数是提供平均服务的模型量。再把表列袋数与每只 8.12 g、34.94 g 相乘，得到约 667 g 和 2,120 g 的袋材。在这一步，较少的厚袋仍对应较多的材料。用未经舍入的除法结果继续计算，末位会略有差别；这些公开算式能核对参考流之间的关系，却还没有计算原料、能源和处置的完整清单。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-PACK-STUDY",
+        "version": "1.0.0",
+        "inputSha256": "d6517e87198308d50d00d9d84ccf13f1fea174db062139994b122ea170921149",
+        "inputFile": "pack-study-v1.json"
+      }
+    },
+    {
+      "id": "cl-pack-provenance",
+      "kind": "interpretation",
+      "scope": "服务出处和附录计量的核对",
+      "text": "沿这些数字往回查，还会遇到文字与表格不一致。第 17 页把四周 446 件的来源写成 2007 年 TNS 调查，附录 B 则交代 Test Research 在 2007 年末访问购物者的容量研究。附录里一句话又把 20.7 写作每袋件数，紧接的表却把它列为每名购物者的物品数，每袋平均另列 6.6。不能把这些来源名称和分母合并成一个已复现的调查。继续计算时应明确采用的是哪一行，追查原始记录时也有了具体目标。",
+      "evidenceIds": [
+        "ev-pack-ea-goal",
+        "ev-pack-ea-capacity"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-goal",
+          "relation": "supports",
+          "rationale": "正文的四周与月服务原始线索。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-capacity",
+          "relation": "supports",
+          "rationale": "附录 B 的原表头和调查说明。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-capacity"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-pack-baseline-boundary",
+      "kind": "source-statement",
+      "scope": "原报告的基准处置、再生含量和评价方法",
+      "text": "这些比较还共用一套处置与评价条件。报告的基准假定袋子用完后有 86% 填埋、14% 焚烧，袋材回收和纸/淀粉袋堆肥主要另作敏感性情景。袋子本身的再生成分按零处理，避免负担模型则对回收和能源替代给出信用。气候结果采用 IPCC 2007 的一百年时间尺度，另八类使用 CML 2 baseline 2000。今天的回收比例或电网数据若不同，应先说明改变了这些条件中的哪一项。",
+      "evidenceIds": [
+        "ev-pack-ea-boundary",
+        "ev-pack-ea-secondary",
+        "ev-pack-ea-methods"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-boundary",
+          "relation": "supports",
+          "rationale": "第22–25页说明再生含量、模型与范围。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-secondary",
+          "relation": "supports",
+          "rationale": "第31页明确袋子终点86%填埋、14%焚烧。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-methods",
+          "relation": "supports",
+          "rationale": "第3.7节列影响方法和时间尺度。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-pack-credit",
+      "kind": "interpretation",
+      "scope": "负担抵扣所代表的替代服务",
+      "text": "轻薄袋的模型还提供了另一项服务——代替垃圾桶内衬袋。作者采用系统扩展，将避免生产这些内衬袋的负担扣掉。这里必须说明替代量：把一只 19.1 L 的购物袋同 29.3 L、9.3 g 的内衬袋按体积折算，报告取每次避免 6.1 g 的 HDPE 内衬材料。这个扣减依赖替代确实发生，也依赖两种用品在相应用途上的等效关系。",
+      "evidenceIds": [
+        "ev-pack-ea-secondary",
+        "ev-pack-ea-boundary"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-secondary",
+          "relation": "supports",
+          "rationale": "第 4.4 节及第 31 页给内衬袋容量、质量和避免量。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-boundary",
+          "relation": "supports",
+          "rationale": "第 3.4 节采用避免负担。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-service"
+      ],
+      "conceptIds": [
+        "cn-pack-substitution"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-pack-people",
+      "kind": "source-statement",
+      "scope": "WRAP Q7、Q8 的受访者分母及多选用途",
+      "text": "被用来估计替代比例的 WRAP 原调查保存了很有价值的分母。2005 年 3 月，研究者在大不列颠街头访问 1,048 人。Q7 问受访者大约重复使用了多少购物袋，答案分为全部、大部分、一半左右、一些等类别；Q8 则问用途，允许同一个人选多项。53% 表示受访者说会用于厨房垃圾桶内衬。它没有表示“53% 的所有袋子”或“53% 的已复用袋子”流向厨房。",
+      "evidenceIds": [
+        "ev-pack-wrap2005-denominators"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-wrap2005-denominators",
+          "relation": "supports",
+          "rationale": "原调查的方法、Q7、Q8 及问卷给出样本和提问形式。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-pack-mapping",
+      "kind": "calculation",
+      "scope": "受访者回答到模型二次用途比例的桥接假定",
+      "evidenceIds": [
+        "ev-pack-ea-secondary",
+        "ev-pack-wrap2005-denominators"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-secondary",
+          "relation": "supports",
+          "rationale": "原报告明确使用 76% 与 53% 相乘。"
+        },
+        {
+          "evidenceId": "ev-pack-wrap2005-denominators",
+          "relation": "qualifies",
+          "rationale": "原问卷的实际分母是人，且用途可以多选。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-people",
+        "cl-pack-credit"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "重算报告的乘积，并用原问题界定它并非逐袋观测比例。",
+      "text": "报告先采用总体约 76% 的袋子再次使用的估计，再乘厨房内衬的 53%，得 0.4028，即 40.28%。这一乘法把受访者关于是否有某种用途的回答，接到了逐袋的分配上。若有的人留用很多袋、有的人只留一只，二者在回答人数里各算一人，实际避免的内衬袋量却可能不同。要把这一步检验得更牢，需要袋量与用途在同一家庭、同一期间的联合记录。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-PACK-STUDY",
+        "version": "1.0.0",
+        "inputSha256": "d6517e87198308d50d00d9d84ccf13f1fea174db062139994b122ea170921149",
+        "inputFile": "pack-study-v1.json"
+      }
+    },
+    {
+      "id": "cl-pack-baseline",
+      "kind": "calculation",
+      "scope": "表 6.1 输出的参数关系",
+      "evidenceIds": [
+        "ev-pack-ea-sensitivity",
+        "ev-pack-ea-secondary"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-sensitivity",
+          "relation": "supports",
+          "rationale": "表 6.1 列三个二次用途情景的同服务GWP。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-secondary",
+          "relation": "supports",
+          "rationale": "报告比例由相乘得到。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-mapping"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "从两个公布端点求斜率和中间值，只检验公开结果之间的一致性。",
+      "text": "这项假定在结果中有多大作用，可以从报告自己的敏感性表看清。按一月购物服务，HDPE 在不计内衬替代时为 2.082 kg CO₂ eq，全部获得替代收益时为 0.830 kg CO₂ eq。两端相差 1.252。只作为两端输出的线性核对，写成 D(r)=2.082−1.252r，代入 r=0.4028，得到 1.5776944，与表列 1.578 的精度相符。这个核对解释了输出怎样随抵扣比例变化，原来的制袋和废物模型还需要独立输入才能复跑。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-PACK-STUDY",
+        "version": "1.0.0",
+        "inputSha256": "d6517e87198308d50d00d9d84ccf13f1fea174db062139994b122ea170921149",
+        "inputFile": "pack-study-v1.json"
+      }
+    },
+    {
+      "id": "cl-pack-uses",
+      "kind": "calculation",
+      "scope": "LDPE 气候门槛的严格整数解",
+      "evidenceIds": [
+        "ev-pack-ea-ldpe-impacts",
+        "ev-pack-ea-hdpe-impacts",
+        "ev-pack-ea-thresholds"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-ldpe-impacts",
+          "relation": "supports",
+          "rationale": "表 5.5 给不复用的GWP及五次结果。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-hdpe-impacts",
+          "relation": "supports",
+          "rationale": "表 5.1 给基准。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-thresholds",
+          "relation": "supports",
+          "rationale": "表 8.1 记录所需次数。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-baseline"
+      ],
+      "conceptIds": [
+        "cn-pack-threshold"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按报告的 B/n 关系逐次检验严格不等式，解释整数与第一次使用。",
+      "text": "厚 LDPE 袋在不重复购物使用时，这一服务的气候结果为 6.924 kg CO₂ eq。若同一批厚袋总共用于购物 n 次，而其他条件按报告的缩放方式处理，分摊到同样服务的结果就是 6.924/n。与轻薄袋的 1.578 相比，要满足严格小于，n 必须大于 6.924/1.578。最小整数是 5。这里算的是包含第一次在内的总使用次数，意味着之后至少再使用四次。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-PACK-STUDY",
+        "version": "1.0.0",
+        "inputSha256": "d6517e87198308d50d00d9d84ccf13f1fea174db062139994b122ea170921149",
+        "inputFile": "pack-study-v1.json"
+      }
+    },
+    {
+      "id": "cl-pack-shift",
+      "kind": "calculation",
+      "scope": "基准二次用途改变对门槛的影响",
+      "evidenceIds": [
+        "ev-pack-ea-sensitivity",
+        "ev-pack-ea-thresholds"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-sensitivity",
+          "relation": "supports",
+          "rationale": "零、中间、全部替代是报告的敏感性情景。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-thresholds",
+          "relation": "supports",
+          "rationale": "表 8.1 列4、5、9。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-uses"
+      ],
+      "conceptIds": [
+        "cn-pack-threshold"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "保持厚袋B不动，分别代入三个D，求严格整数门槛。",
+      "text": "基准的用途一改，门槛也跟着移动。若轻薄袋没有内衬替代收益，LDPE 所需总次数为 4；若轻薄袋全部替代内衬袋，则需 9。这三种情景回答“如果比例如此，会怎样”。零到百分之百并不是调查估出的置信区间，算出九次也没有证明厚袋使用者会做到九次。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-PACK-STUDY",
+        "version": "1.0.0",
+        "inputSha256": "d6517e87198308d50d00d9d84ccf13f1fea174db062139994b122ea170921149",
+        "inputFile": "pack-study-v1.json"
+      }
+    },
+    {
+      "id": "cl-pack-three",
+      "kind": "calculation",
+      "scope": "三次主要使用与二次用途同时存在的条件",
+      "evidenceIds": [
+        "ev-pack-ea-thresholds",
+        "ev-pack-ea-sensitivity",
+        "ev-pack-ea-ldpe-impacts"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-thresholds",
+          "relation": "supports",
+          "rationale": "第 57 页情景说明与第 61 页末列表头的对照。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-sensitivity",
+          "relation": "supports",
+          "rationale": "采用基准1.578。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-ldpe-impacts",
+          "relation": "supports",
+          "rationale": "厚袋原结果6.924。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-shift"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "明确先用报告基准信用再分摊三次，独立计算所需n。",
+      "text": "把轻薄袋也用于三次购物，会提出更严格的比较。第 57 页讨论的是三次购物之后，约四成再用于内衬。把相应的 1.578 除以三，再同 6.924/n 比较，LDPE 需 14 次，与正文的“约十四次”相符。可是表 8.1 最后一列表头只写 HDPE 用三次，LDPE 一行给的是十二次。没有写出的内衬条件和计算顺序会影响解释；读者应保留这项条件不足，不能把十二和十四当成可随意替换的答案。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-PACK-STUDY",
+        "version": "1.0.0",
+        "inputSha256": "d6517e87198308d50d00d9d84ccf13f1fea174db062139994b122ea170921149",
+        "inputFile": "pack-study-v1.json"
+      }
+    },
+    {
+      "id": "cl-pack-rounding",
+      "kind": "calculation",
+      "scope": "棉袋临界值及公开数字的精度边界",
+      "evidenceIds": [
+        "ev-pack-ea-cotton",
+        "ev-pack-ea-sensitivity",
+        "ev-pack-ea-thresholds"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-cotton",
+          "relation": "supports",
+          "rationale": "第 44 页原表给271.533。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-sensitivity",
+          "relation": "supports",
+          "rationale": "HDPE完整抵扣为.830。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-thresholds",
+          "relation": "supports",
+          "rationale": "表8.1给327。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-uses"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "比较B/327与显示D，求严格最小整数并保留来源差异。",
+      "text": "接近边界时，显示精度也会影响整数。棉袋的公布结果是 271.533，全部内衬替代时的轻薄袋基准是 0.830；只拿这两个显示值相除，严格低于需 328 次，而表 8.1 印的是 327 次。在 327 次时，按显示值算约为 0.830376，仍稍高于 0.830。未显示的原始精度可能改变这一下界，但它没有随这张表披露。研究解释要说明用了哪组精度，避免把一个末位差额扩成确定的实物寿命。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-PACK-STUDY",
+        "version": "1.0.0",
+        "inputSha256": "d6517e87198308d50d00d9d84ccf13f1fea174db062139994b122ea170921149",
+        "inputFile": "pack-study-v1.json"
+      }
+    },
+    {
+      "id": "cl-pack-categories",
+      "kind": "calculation",
+      "scope": "五次复用的九类别比较与资源例外",
+      "evidenceIds": [
+        "ev-pack-ea-ldpe-impacts",
+        "ev-pack-ea-hdpe-impacts"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-ldpe-impacts",
+          "relation": "supports",
+          "rationale": "表5.5的九行和除五对照。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-hdpe-impacts",
+          "relation": "supports",
+          "rationale": "表5.1同类别同单位基准。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-uses"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "同类别一一比较，保留单位，不跨类别相加或按数目表决。",
+      "text": "使用五次的 LDPE，气候值 6.924/5=1.3848，报告舍为 1.385，低于 HDPE 的 1.578。非生物资源耗竭却是 82.711/5=16.5422 g Sb eq，略高于基准 16.227。独立逐行核对，厚袋在 9 项中有 8 项较低，恰有这一项较高。八项对一项不能自动变成八票对一票；这一步给出的是取舍的形状，是否值得接受还要回到问题和保护目标。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-PACK-STUDY",
+        "version": "1.0.0",
+        "inputSha256": "d6517e87198308d50d00d9d84ccf13f1fea174db062139994b122ea170921149",
+        "inputFile": "pack-study-v1.json"
+      }
+    },
+    {
+      "id": "cl-pack-selection",
+      "kind": "interpretation",
+      "scope": "两阶段评价次序怎样限定比较",
+      "text": "报告是在先求气候门槛之后，再用这些次数计算其他影响。读者因此不能把第二阶段的并排图读成“几种袋子各按现实平均寿命使用”的调查结果。这种图很适合问：已经把气候差异压到这一水平，其他类别还有什么差异？若要问今天哪种购物安排总体更适合，则需要另有实际使用、耐久性和损坏替换资料。",
+      "evidenceIds": [
+        "ev-pack-ea-methods",
+        "ev-pack-ea2011-review-required-reuse-limitation"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-methods",
+          "relation": "supports",
+          "rationale": "第3.7、5节明示先GWP后其他类别。"
+        },
+        {
+          "evidenceId": "ev-pack-ea2011-review-required-reuse-limitation",
+          "relation": "supports",
+          "rationale": "审查者与最终正文共同指出实际复用缺口。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-categories"
+      ],
+      "conceptIds": [
+        "cn-pack-threshold"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-pack-hotspot",
+      "kind": "interpretation",
+      "scope": "从贡献识别驱动及检验改进的条件",
+      "text": "贡献分析让差异有了可追查的来源。报告将材料生产与制袋用能列为许多结果的主要来源，同时给出一个反直觉例子：HDPE 配方中仅占约 2% 质量的钛白粉，其生产相关的钒排放贡献了淡水生态毒性结果的 19% 以上。按质量很小就忽略一个投入，可能遗漏某个类别的主导项。反过来，贡献高也只说明模型中的敏感位置，实际改用透明袋或换供电需要再核对性能和生产条件。",
+      "evidenceIds": [
+        "ev-pack-ea-hotspot"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-hotspot",
+          "relation": "supports",
+          "rationale": "第35页钛白粉及钒贡献的具体说明。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-categories"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-pack-data",
+      "kind": "interpretation",
+      "scope": "地理、年代、技术及可审计数据之间的关系",
+      "text": "报告用中国制袋、土耳其 LDPE 转换和欧洲材料等多种资料描述供应链。地理混合本身可能符合实际进口关系；问题在于，当特定国家的电网份额套用欧洲通用发电过程时，技术表示仍有近似。原料与转换数据的年份也不同，有些制袋能耗受保密限制。此时可以追踪报告所说明的来源与情景适用性，无法仅凭公开汇总结果证明整套原始模型已经独立重现。",
+      "evidenceIds": [
+        "ev-pack-ea-boundary"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-boundary",
+          "relation": "supports",
+          "rationale": "第3.5、3.6节和AnnexC列地理、时期和保密转换数据。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-hotspot",
+        "cl-book-consistency"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-pack-missing",
+      "kind": "interpretation",
+      "scope": "排除项与拟回答问题的匹配",
+      "text": "完整性则问，问题所关心的后果是否被覆盖。报告列出了未计入的油墨、零售储存、消费者交通和资本设备，也将散落垃圾、行为改变及收费的社会经济后果排除在研究目标之外。排除理由可能在原问题内成立，却限制了以后如何使用它。若一场政策讨论的主要诉求就是海滩垃圾，用这份报告的气候排序回答全部问题，欠缺的是目标与影响范围的连接。",
+      "evidenceIds": [
+        "ev-pack-ea-boundary",
+        "ev-pack-ea-goal",
+        "ev-pack-ea2011-review-land-water-reservation"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-boundary",
+          "relation": "supports",
+          "rationale": "列出具体流程排除与假设。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-goal",
+          "relation": "supports",
+          "rationale": "报告用途和研究范围。"
+        },
+        {
+          "evidenceId": "ev-pack-ea2011-review-land-water-reservation",
+          "relation": "supports",
+          "rationale": "审查保留重要土地/水问题。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-goal",
+        "cl-pack-data"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-pack-litter",
+      "kind": "interpretation",
+      "scope": "新散落潜势指标的用途、单位和转用范围",
+      "text": "2019 年一项以西班牙购物袋资料为基础的研究，另提出散落垃圾潜势指标。它把完成服务所需的袋数与单面面积合在一项，再用袋价、质量和降解参数分别作归一化，构成一个相对指标。价格和质量代表作者假定的行为或传播关系，降解参数来自堆肥条件。这个指标把“可能成为散落物”的一组条件显式列出，却没有把海中暴露、受损生物和损害程度全部算进去。它可以提出英国案例缺少什么证据，不能直接加到 kg CO₂ eq 上。",
+      "evidenceIds": [
+        "ev-pack-lp-construction",
+        "ev-pack-lp-transfer-limits"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-lp-construction",
+          "relation": "supports",
+          "rationale": "手稿第3节给参数与归一化结构。"
+        },
+        {
+          "evidenceId": "ev-pack-lp-transfer-limits",
+          "relation": "supports",
+          "rationale": "作者限定地理、参数校准和环境迁移。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-missing"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-pack-environment",
+      "kind": "interpretation",
+      "scope": "材料去向的环境迁移和观测端点",
+      "text": "接收环境确实会改变材料表现。Napper 与 Thompson 的原始实验把不同袋材放到海水、土壤和露天条件下，比较外观和力学变化。某个可堆肥产品在海洋装置中三个月内消失，在土壤中二十七个月后仍保留；其他被测产品在较长时间后仍能承载。装置中消失也没有直接证明完全矿化。这个实验不能替西班牙指标校准全部参数，却足以说明，用堆肥试验代替海洋行为还需要专门验证。",
+      "evidenceIds": [
+        "ev-pack-marine-deterioration",
+        "ev-pack-lp-transfer-limits"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-marine-deterioration",
+          "relation": "supports",
+          "rationale": "被测产品、接收环境及作者残余产物限制。"
+        },
+        {
+          "evidenceId": "ev-pack-lp-transfer-limits",
+          "relation": "supports",
+          "rationale": "指标实际采用的降解来源。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-litter"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-pack-reviewers",
+      "kind": "source-statement",
+      "scope": "实际审查角色、版本与时点",
+      "text": "这份报告把审查意见和答复一起保存在附录 E。主席 Mark Goedkoop 从目标与范围阶段参与，Keith Elstob 和 Jane Bickerstaffe 在项目后期加入共同审查。最终说明回顾了 2009 年末的初稿和 2010 年夏的修改稿。这些角色和时间很重要：既能核对专家针对什么版本提出问题，也能避免把报告上的一句“已审查”理解成每项输入均经过独立实测。",
+      "evidenceIds": [
+        "ev-pack-ea2011-critical-review-roles"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea2011-critical-review-roles",
+          "relation": "supports",
+          "rationale": "第2.2节及最终E.3说明。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-pack-review-flow",
+      "kind": "interpretation",
+      "scope": "功能与复用审查的答复及最终文字",
+      "text": "审查者直接追问，以气候影响反算的所需次数，是否能称作对真实袋子功能的公平比较。作者答复接受这一问题。最终第 17、32、57 页明确说明缺少各袋型实际复用资料，部分算出的次数并不现实，第 57 页还明确说研究未比较真实功能。由评论到答复再到这几处最终文字，读者能查到边界被说清的过程；行为证据缺口仍然存在。",
+      "evidenceIds": [
+        "ev-pack-ea2011-review-required-reuse-limitation"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea2011-review-required-reuse-limitation",
+          "relation": "supports",
+          "rationale": "意见2.5.1、答复及最终正文的精确位置。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-selection",
+        "cl-pack-reviewers"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-pack-review-capacity",
+      "kind": "interpretation",
+      "scope": "容量资料从审查到可检查的外推关系",
+      "text": "另一条意见要求交代纸袋、淀粉袋的容量来源。答复指向补充方法，最终附录 B 确实给出了取样、测量、分类型计数和按体积外推的过程。补充后的说明没有使所有数据都成为直接观测，却让外推条件可以被评估。若以后有证据表明纸袋的装填或破损规律不同，研究者就知道应从哪一段参考流关系开始修订。",
+      "evidenceIds": [
+        "ev-pack-ea2011-review-capacity-clarification",
+        "ev-pack-ea-capacity"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea2011-review-capacity-clarification",
+          "relation": "supports",
+          "rationale": "意见2.3.2及附录B。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-capacity",
+          "relation": "supports",
+          "rationale": "具体计数和测量对象。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-capacity",
+        "cl-pack-reviewers"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-pack-review-residual",
+      "kind": "interpretation",
+      "scope": "最终表图文字对答复承诺的核对",
+      "text": "答复承诺了更改，还要看最终工件是否处处一致。关于助降解 HDPE 回收，最终的范围说明和敏感性表已排除该情景，但后面的概括文字仍把它列入回收收益。关于影响类别，答复说删除臭氧消耗；主结果确实按九类呈现，部分敏感性图仍保留该标签。这些残留不能用来断言原软件一定算错，也不能因为有答复就忽略。它们限定了哪些结论能从公布材料直接核准。",
+      "evidenceIds": [
+        "ev-pack-ea2011-review-prodegradant-final-residual",
+        "ev-pack-ea2011-review-presentation-residual"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea2011-review-prodegradant-final-residual",
+          "relation": "supports",
+          "rationale": "排除说明、表6.2与后文概括不完全一致。"
+        },
+        {
+          "evidenceId": "ev-pack-ea2011-review-presentation-residual",
+          "relation": "supports",
+          "rationale": "评论、答复与最终图号/类别。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-reviewers"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-pack-acceptance",
+      "kind": "interpretation",
+      "scope": "最终审查接受与保留意见并存",
+      "text": "审查小组最后接受修改后的研究，并认可回收处理的调整，同时明确保留实际功能以及土地、用水方面的限制。它表明一项研究可以达到其审查结论所设的可接受程度，仍有不能回答的问题。若把这份接受意见拿去证明“所有环境后果已覆盖”或“所有消费者会达到这些次数”，使用者已经跨出了原审查自己的边界。",
+      "evidenceIds": [
+        "ev-pack-ea2011-review-final-conditional-acceptance",
+        "ev-pack-ea2011-review-land-water-reservation"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea2011-review-final-conditional-acceptance",
+          "relation": "supports",
+          "rationale": "最终E.3的接受与剩余限定。"
+        },
+        {
+          "evidenceId": "ev-pack-ea2011-review-land-water-reservation",
+          "relation": "supports",
+          "rationale": "土地/水问题及方法敏感性的实际范围。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-review-flow",
+        "cl-pack-review-residual",
+        "cl-pack-missing"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-pack-recommendation",
+      "kind": "synthesis",
+      "scope": "从计算结果到具体使用建议的条件",
+      "text": "对这份研究，可以作出一条可回查的条件性判断：按报告的容量、来源、替代和处置假设，厚 LDPE 袋总共用五次时，其一月运输服务的气候结果低于所设轻薄袋基准，九项中有八项较低。要把它变成消费者或超市的实际建议，还须确认该袋能承担同样的物品、达到相应次数，以及原来被它替换的轻薄袋如何使用。每加一个更强的推荐，就多承担一项实际证据责任。",
+      "evidenceIds": [
+        "ev-pack-ea-conclusion",
+        "ev-pack-ea2011-review-required-reuse-limitation"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-conclusion",
+          "relation": "supports",
+          "rationale": "原作者对LDPE及一般复用的结论。"
+        },
+        {
+          "evidenceId": "ev-pack-ea2011-review-required-reuse-limitation",
+          "relation": "supports",
+          "rationale": "真实复用与实际功能的资料缺口。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-service",
+        "cl-pack-uses",
+        "cl-pack-categories",
+        "cl-pack-mapping"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "将每项判断与产生它的服务、假定、指标和实际行为需求相连。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-pack-later",
+      "kind": "interpretation",
+      "scope": "后续行为资料的时间、类型、用途与分布条件",
+      "text": "后来的调查可以增加知识，但要先核对测量对象。2016 年威尔士报告调查了 2015 年的消费者，询问某类袋通常重复使用多少次才丢掉。厚塑料和布、麻混合袋组有不同的回答基数，计算均值时又把最高的“50 次以上”按 50 计。这样的自报数有明确的时间、类别和截顶条件，而且题目没有限定全是购物使用。它不能直接充当英国 2006 年每一只棉袋的实际购物寿命；用它验证历史门槛前，需要补齐这些对应关系。",
+      "evidenceIds": [
+        "ev-pack-wales2016-transfer"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-wales2016-transfer",
+          "relation": "supports",
+          "rationale": "方法、问卷与均值计算说明。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-selection",
+        "cl-pack-recommendation"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-pack-iterate",
+      "kind": "proposal",
+      "scope": "由实际证据缺口导出的研究重设计",
+      "text": "若要重新回答今天的选择问题，首先要采集同一服务条件下的袋型、实际装填、累计购物使用、破损或遗失，以及用后是否真正减少了内衬袋购买。计量单位应当同时保留“家庭”“购物行程”和“袋”，使受访者比例与逐袋替代能够接上。然后依据实际供货地、材料和废物处理更新清单，评估原先遗漏但对新问题重要的类别。最后再计算次数门槛与结果分布，检验原结论在哪些人群和场景仍能成立。",
+      "evidenceIds": [
+        "ev-pack-wrap2005-denominators",
+        "ev-pack-ea2011-review-required-reuse-limitation",
+        "ev-pack-ea2011-review-land-water-reservation"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-wrap2005-denominators",
+          "relation": "supports",
+          "rationale": "原问卷无法独自提供逐袋联合流向。"
+        },
+        {
+          "evidenceId": "ev-pack-ea2011-review-required-reuse-limitation",
+          "relation": "supports",
+          "rationale": "实际功能和寿命缺口。"
+        },
+        {
+          "evidenceId": "ev-pack-ea2011-review-land-water-reservation",
+          "relation": "supports",
+          "rationale": "新问题可能要求补充类别。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-recommendation",
+        "cl-pack-later",
+        "cl-pack-litter"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "针对确定的缺口指定应重新观察的量、对应关系和模型部分；这些是书中提出的研究步骤，未称原作者已执行。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-pack-limits",
+      "kind": "synthesis",
+      "scope": "全研究的解释和迭代职责",
+      "text": "解释的终点因此也可能成为下一次研究的起点。一张最低分图可以很快给出答案，完整的论证则让读者知道答案依赖哪些量。当新的装填调查、替代证据或损害模型出现时，能够明确返回一处计算或一项假设，才有办法判断结论应当延续、收窄还是改写。",
+      "evidenceIds": [
+        "ev-pack-ea2011-review-observable-scope"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea2011-review-observable-scope",
+          "relation": "supports",
+          "rationale": "审查与最终范围的可核对关系。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-iterate",
+        "cl-book-interpret-iterate",
+        "cl-book-consistency"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "将目标、数据、条件输出和修订责任连为一条可追溯路径。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check"
     }
   ],
   "concepts": [
@@ -25597,6 +26632,38 @@
       ],
       "aliases": [
         "无量纲综合权重"
+      ]
+    },
+    {
+      "id": "cn-pack-service",
+      "label": "购物运输服务与袋参考流",
+      "english": "Carrier service and reference flow",
+      "aliases": [],
+      "definitionClaimIds": [
+        "cl-pack-service",
+        "cl-pack-count"
+      ]
+    },
+    {
+      "id": "cn-pack-substitution",
+      "label": "用后替代的计量对象",
+      "english": "Measured basis for secondary-use substitution",
+      "aliases": [],
+      "definitionClaimIds": [
+        "cl-pack-credit",
+        "cl-pack-people",
+        "cl-pack-mapping"
+      ]
+    },
+    {
+      "id": "cn-pack-threshold",
+      "label": "给定基准下的所需总使用次数",
+      "english": "Required total uses under a specified comparator",
+      "aliases": [],
+      "definitionClaimIds": [
+        "cl-pack-uses",
+        "cl-pack-shift",
+        "cl-pack-selection"
       ]
     }
   ],

@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: 91a5ff249ea2d165ace72d21842856649fecc59e
+lastReviewedCommit: cbaf20c800f0d6fa9076b5504f048b2a88c7a7e0
 ---
 
 # Publication architecture
@@ -169,3 +169,7 @@ The static ecological-scarcity case reconstructs two factors with exact fraction
 ## Japanese preference valuation
 
 The closed LIME case operates on two identified primary studies and one stipulated pair of damage vectors. It separately evaluates coefficients in their questionnaire units, the conditional monetary reconstruction, reported monetary factors, annual reference amounts, relative shares and the threshold for the two routes. The static registry checks 29 complete source tuples, including the distinction between named numerical facts and singular evidence-specific quantities. Both cases that need the same rational arithmetic call the shared exact-rational module. The input download and paragraph templates use the established publication interface.
+
+## Reported carrier-bag results
+
+The closed pack-study case calculates from 57 disclosed quantities in one original report. It distinguishes observed survey-count ratios, adopted rounded capacities and published reference flows; an output interpolation and original-model reproduction; strict integer thresholds and reported counts; and nine separate indicator results. Every source quantity binds the actual edition, work, selected passage and original PDF. Required numerical page indices must be covered by the bound passage, allowing a broader truthful explanatory reading scope. The evaluator and public templates use the existing rational and case-publication interfaces.

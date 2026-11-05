@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: 0a90b879404b7864dcbf3ed68939779cb9263359
+lastReviewedCommit: cbaf20c800f0d6fa9076b5504f048b2a88c7a7e0
 ---
 
 # Publication contract
@@ -106,3 +106,5 @@ examples and the new supplier records have distinct provenance.
 For the Swiss 2013 weighting case, the original edition, work, carrier, passage and numerical tuple all qualify the factor used. The reconstruction from reported inputs and the application of rounded published values are distinct calculations. A synthetic change to one relative factor establishes a conditional ranking threshold. Historical policy change requires separate dated evidence.
 
 For survey-based damage values, bind the estimate to its actual study, questionnaire basis, sign and units. A reprinted sample table cannot authorize substitution of another publication’s coefficients. Explicitly conditional arithmetic such as the health-day conversion, unpublished precision and unresolved cross-table discrepancies retain their own status. The LIME teaching comparison uses reported factor sets separately on the same stipulated service and damage quantities.
+
+For CASE-PACK, a reuse threshold specifies a comparator, service and impact measure. Published model outputs can establish arithmetic relationships while confidential inputs still limit native reproduction. Respondent incidence and bag-weighted substitution remain distinct quantities in numerical metadata as well as prose. The publication's count and division templates reference evaluated values; explicit reapproval of prose still requires source and reader judgement.
