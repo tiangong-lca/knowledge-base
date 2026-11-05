@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: fc97d136912a6caeafbfedafb575c869bef15623
+lastReviewedCommit: 14e29acd7ed0605dd30396d2ad26f3a77376f1e8
 ---
 
 # Publication architecture
@@ -177,3 +177,22 @@ The closed pack-study case calculates from 57 disclosed quantities in one origin
 ## Recovered-paper source reconstruction
 
 The closed CASE-CYCLE adapter uses exact fractions to replay the Danish reports' annual routing, grade outputs, source-defined substitution ratios and heat/electricity compensation. Its45 selected quantities bind complete semantic tuples, actual work/edition, unique reading/passage and the original numeric page. Annual commercial paper mass, unit processing output, modeled virgin activity and avoided gas remain separate result groups. The heat-only reported values are retained alongside an explicitly conditional calculation, with reproduction flags false. Nine canonical paragraphs use the versioned input through the existing static publication registry, downloads and note renderer. No new widget, dependency or legacy input change is introduced.
+
+## Dated dairy rule trace
+
+`scripts/dairy-rules.mjs` registers a prose-only static case through the existing
+publication adapter. Its independent normalized-input digest fixes the selected
+37 tuples and their source scope. The source policy binds seven actual source
+identities, including an XLSX carrier without fictitious PDF page bounds, exact
+passage/worksheet/diagram locators, editions and numeric metadata. Build uses the
+curated JSON; it neither loads third-party workbooks nor executes source macros.
+
+Exact arithmetic separates default activities, reported characterized outputs
+and two conditional model branches. Capital, storage and quantity-column
+inconsistencies remain unclosed; fields cannot turn those checks into a native
+reproduction, compliance verdict or measured effect. Input, templates and
+canonical prose share the existing hash/materialization/public-closure checks.
+The previous cases and their inputs remain unchanged; no new widget or runtime
+dependency is added.
+
+Mixed retrieved carriers now expose the exact cited artifact link in annotations and evidence details when it differs from the source-level default. This preserves HTML metadata and revision-index locators alongside their primary PDF rather than routing every citation to that PDF. Derived-text disclosure remains unchanged.

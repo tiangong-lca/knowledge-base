@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: 57b8808116845d9404bac8ee4fd7eeaa942fe8dd
+lastReviewedCommit: 14e29acd7ed0605dd30396d2ad26f3a77376f1e8
 ---
 
 # Publication contract
@@ -110,3 +110,20 @@ For survey-based damage values, bind the estimate to its actual study, questionn
 For CASE-PACK, a reuse threshold specifies a comparator, service and impact measure. Published model outputs can establish arithmetic relationships while confidential inputs still limit native reproduction. Respondent incidence and bag-weighted substitution remain distinct quantities in numerical metadata as well as prose. The publication's count and division templates reference evaluated values; explicit reapproval of prose still requires source and reader judgement.
 
 The recovered-paper case binds each grade's published substitution ratio to its own reference process. A direct source ratio remains a model assumption, and a derived product vector is not a complete native activity matrix. Distinguish annual routing, marginal treatment service, finished-paper output, fibre balance and end-product performance. Reported heat-only credits may be retained without claiming that disclosed parameters reproduce them; exact tuple checks must not erase that scientific limit.
+
+A dated rule can support a technical conformance condition without establishing
+its legal application to a specific company or the empirical validity of a model.
+For the dairy rule trace, bind numerical evidence to the actual PDF or XLSX
+carrier and its inspected page, worksheet/cell or embedded diagram location.
+Workbook results, formulas that retrieve stored outputs, and native model inputs
+are distinct evidence layers. Do not silently repair disagreements between dated
+public artifacts or publish a reconstructed footprint from an unclosed activity
+chain. Rule-review statements and study-level verification retain their exact
+objects; a shared statement in two carriers is not independent corroboration.
+
+A selected literal fraction in a separate source workbook must retain that
+workbook's original identity and the inspected cells, including the literal's
+numerator, denominator and units. Agreement with a similar default in another
+source cannot waive this binding. Equal labels on separate model connections
+establish numerical agreement only; the exchange semantics and any unresolved
+native relationship remain explicit.

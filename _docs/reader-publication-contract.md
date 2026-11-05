@@ -1,6 +1,6 @@
 ---
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: 57b8808116845d9404bac8ee4fd7eeaa942fe8dd
+lastReviewedCommit: 14e29acd7ed0605dd30396d2ad26f3a77376f1e8
 title: Reader publication and layout contract
 docType: contract
 scope: repo
@@ -63,3 +63,5 @@ related:
 使用本地 Claude Code 时遵守 workspace 的目录、Fable5/1M/Max、Bypass permissions 与非修改默认约束；逐项实际核验，不能声称观察不到的配置。提供中性的工件与验收条件，不先灌输结论。发现按来源、复现或浏览器证据处理；没有发现不等于证明没有问题。用户未要求每步机械重复审查，也不得把代理评审标为人类专家认证。
 
 修改数值案例正文时同步维护其模板与规范记录，保持公开输入哈希及实际数学含义；审查完成后才发布。校验器应针对重复注号、错误阅读顺序、过程性正文、可见内部编号等真实缺陷，同时允许科学不确定性和历史研究对象的正常表述。语义和真实浏览器检查始终必要。
+
+当同一作品的证据来自不同载体时，注释和引文详情须保留到实际引用载体的入口。网页书目或修订目录不能统一跳到该作品的主PDF；原始PDF、电子表格、网页和仅有文字摘录也不能互相冒充。具体载体入口与作品书目入口可以并列，但不重复制造独立来源。

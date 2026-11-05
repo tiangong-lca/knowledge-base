@@ -12706,6 +12706,40 @@
           "limits": [
             "特定政策验证规定可能适用。是否开展了实际抽查、模型访问及后续纠正须有个案记录。"
           ]
+        },
+        {
+          "id": "psg-kb44-ec2021-rp-definition",
+          "artifactId": "art-kb44-ec2021-r01-pdf",
+          "locator": "Annex II §A.2.3，代表产品定义",
+          "printedPages": "118",
+          "pdfIndices": [
+            117
+          ],
+          "topics": [
+            "representative product",
+            "market weighting"
+          ],
+          "limits": [
+            "一般方法的要求不证明特定代表产品的实际代表性。"
+          ]
+        },
+        {
+          "id": "psg-kb44-ec2021-fu-boundary",
+          "artifactId": "art-kb44-ec2021-r01-pdf",
+          "locator": "Annex II §§A.3.2.3–A.3.2.5，代表产品、功能单位、参考流与边界",
+          "printedPages": "127,128",
+          "pdfIndices": [
+            126,
+            127
+          ],
+          "topics": [
+            "functional unit",
+            "reference flow",
+            "category specification"
+          ],
+          "limits": [
+            "仅为指定条款，不证明所有食品功能等价或某个具体研究完全实施。"
+          ]
         }
       ],
       "appraisal": {
@@ -13600,7 +13634,7 @@
       "readAt": "2026-11-05",
       "readingStatus": "selected-passages",
       "question": "这份实际原件如何把类别规则、默认活动、发布结果与审查对象连起来，哪些关系仍不能由公开材料证明？",
-      "argumentSummary": "评审对象是2024年11月5日最终草案的部分更新。声明列出其肯定判断及利益冲突范围，同时提到未纳入本轮的建议和另存的详细意见。",
+      "argumentSummary": "评审对象是2024年11月5日最终草案的部分更新。声明列出其肯定判断及利益冲突范围，同时提到本轮未采纳但与下一次完整更新有关的建议和另存的详细意见。",
       "artifacts": [
         {
           "id": "art-kb44-dairy-review2024-pdf",
@@ -13697,7 +13731,7 @@
             "storage"
           ],
           "limits": [
-            "图示是公开模型的报告表示，不是运行日志。电力转换和供给节点串联，不能将两处0.54MJ重复相加。图示数值为所示精度。"
+            "图示是公开模型的报告表示。供电与电压转换两个节点分别直接连接洗涤过程；它们的数值标签相同，不足以证明两份独立耗电或完整解释其交换含义。图示量保留显示精度。"
           ]
         },
         {
@@ -13800,13 +13834,14 @@
         {
           "id": "psg-kb44-dairy-lci-dishwasher",
           "artifactId": "art-kb44-dairy-lci-xlsx",
-          "locator": "Aggregated!A29:J32，尤其B29:G29",
+          "locator": "Aggregated!A29:J32、E66:G69，特别B29:G29的单周期与资本文本系数",
           "topics": [
             "default capital inventory",
             "per-cycle denominator"
           ],
           "limits": [
-            "文本系数与公开RP图示用量不同；不推断原生模型故障来源、修复后的影响值或评审见过哪份文件。"
+            "文本系数与公开RP图示用量不同；不推断原生模型故障来源、修复后的影响值或评审见过哪份文件。",
+            "E68:G69把供电与电压转换分别列为同一周期下的Level2输入；不据两者相同数值推断独立耗电相加。"
           ]
         },
         {
@@ -15970,7 +16005,7 @@
         "V7-01",
         "A03"
       ],
-      "status": "source-qualified; manuscript and independent publication review pending"
+      "status": "applied to the bounded manuscript; source recheck complete, delivery tracked separately"
     },
     {
       "id": "rev-kb44-activity",
@@ -15988,7 +16023,7 @@
         "V7-01",
         "A06"
       ],
-      "status": "source-qualified; manuscript and independent publication review pending"
+      "status": "applied to the bounded manuscript; source recheck complete, delivery tracked separately"
     },
     {
       "id": "rev-kb44-model-boundary",
@@ -16005,7 +16040,7 @@
         "V7-07",
         "A06"
       ],
-      "status": "source-qualified; manuscript and independent publication review pending"
+      "status": "applied to the bounded manuscript; source recheck complete, delivery tracked separately"
     },
     {
       "id": "rev-kb44-review-object",
@@ -16024,7 +16059,7 @@
         "A03",
         "A10"
       ],
-      "status": "source-qualified; manuscript and independent publication review pending"
+      "status": "applied to the bounded manuscript; source recheck complete, delivery tracked separately"
     },
     {
       "id": "rev-kb44-comparison",
@@ -16042,7 +16077,23 @@
         "V7-01",
         "V7-05D"
       ],
-      "status": "source-qualified; manuscript and independent publication review pending"
+      "status": "applied to the bounded manuscript; source recheck complete, delivery tracked separately"
+    },
+    {
+      "id": "rev-kb44-electricity-graph",
+      "before": "将公开图示的供电与电压转换解释为串联，容易把数值匹配升级为交换语义一致。",
+      "after": "按原始连线识别两个直接输入，记录两个相同数字标签；不推断独立耗电相加或完整原生解释。",
+      "reasoning": "原始EMF连线及LCI第68–69行分别列两个输入；原表量与最终结果不足以自行确定底层交换语义。",
+      "triggerPassageIds": [
+        "psg-kb44-dairy-rp-diagram",
+        "psg-kb44-dairy-lci-dishwasher"
+      ],
+      "affectedUnits": [
+        "V7-01",
+        "V7-03",
+        "A06"
+      ],
+      "status": "applied to the bounded manuscript; source recheck complete, delivery tracked separately"
     }
   ]
 }

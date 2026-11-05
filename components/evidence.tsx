@@ -37,7 +37,10 @@ export function EvidencePassage({ evidence }: { evidence: EvidenceRecord }) {
   const passage = reading?.passages.find(p => p.id === evidence.passageId);
   const artifact = reading?.artifacts.find(a => a.id === passage?.artifactId);
   if (!passage || !artifact) throw new Error(`Unresolved evidence passage: ${evidence.id}`);
-  return artifact.kind === 'derived-text' ? <dl className="source-reading"><ArtifactReading artifact={artifact} /></dl> : null;
+  const sourceArtifact = catalog.sources.find(source => source.id === evidence.sourceId)?.artifact;
+  if (artifact.kind !== 'derived-text' && sourceArtifact && sourceArtifact.kind !== 'derived-text'
+    && artifact.sha256 === sourceArtifact.sha256 && artifact.resolvedUrl === sourceArtifact.resolvedUrl) return null;
+  return <dl className="source-reading"><ArtifactReading artifact={artifact} /></dl>;
 }
 export function ClaimAnnotation({ id, showCaseInput = true, premiseReferences }: {
   id: string; showCaseInput?: boolean; premiseReferences?: Map<string, { href: string; label: string }>;
