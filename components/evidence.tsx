@@ -53,7 +53,7 @@ export function ClaimAnnotation({ id, showCaseInput = true, premiseReferences }:
     {evidence.length > 0 && <ul className="annotation-sources">{evidence.map(({ evidence: item, relation }) => {
       const source = catalog.sources.find(record => record.id === item.sourceId);
       if (!source) throw new Error(`Unknown citation source: ${item.sourceId}`);
-      return <li key={item.id}><Link href={`/sources/#${item.id}`}>{source.title}</Link>。{item.locator}。
+      return <li key={item.id}><Link href={`/sources/#${item.id}`}>{source.title}</Link>。{item.locator.replace(/。+$/u, '')}。
         {relation !== 'supports' && <span>（{evidenceRelations[relation]}）</span>}
         <EvidencePassage evidence={item} />
       </li>;

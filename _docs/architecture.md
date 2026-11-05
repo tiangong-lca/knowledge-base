@@ -243,3 +243,7 @@ identities. This avoids forbidding ordinary scientific uses of “zero” in old
 chapters without weakening checks for actual public record keys. The shared
 edition/print writing note defines annotation kinds; premise disclosures name
 the direction of dependency as “本段依据的前提”.
+
+Citation rendering adds one sentence stop after a locator, collapsing existing
+trailing Chinese stops in the displayed text only. Canonical locator identities
+and all numerical bindings retain their original strings.
