@@ -10,6 +10,7 @@ import { pedigreeFactKeys, validatePedigreeCalibrationCase, evaluatePedigreeCali
 import { historicalFactKeys, validateHistoricalContainerCase, evaluateHistoricalContainerCase } from './historical-container.mjs';
 import { marketResponseInputShape, validateMarketResponseCase, evaluateMarketResponseCase, validateMarketResponseFacts } from './market-response.mjs';
 import { hybridOverlapInputShape, validateHybridOverlapCase, evaluateHybridOverlapCase, validateHybridOverlapServiceLink } from './hybrid-overlap.mjs';
+import { ecologicalScarcityInputShape, validateEcologicalScarcityCase, evaluateEcologicalScarcityCase, validateEcologicalScarcityFacts } from './ecological-scarcity.mjs';
 
 // Every nested object has an explicit schema. Unknown fields never enter public
 // downloads or the approved-input hash, including capture/private metadata.
@@ -88,6 +89,8 @@ const pedigreeInputShape = {
 // Closed model registry: a case identity selects its projection, evaluator and
 // numeric-source policy together. An input flag cannot disable wall fact checks.
 const caseAdapters = new Map([
+  ['CASE-ECOLOGICAL-SCARCITY', { shape: ecologicalScarcityInputShape, validate: validateEcologicalScarcityCase,
+    context: input => ({ evaluated: evaluateEcologicalScarcityCase(input) }), validateFacts: validateEcologicalScarcityFacts }],
   ['CASE-HYBRID-OVERLAP', { shape: hybridOverlapInputShape, validate: validateHybridOverlapCase,
     context: input => ({ evaluated: evaluateHybridOverlapCase(input) }),
     // All generator coefficients are synthetic; the actual wall parent is bound

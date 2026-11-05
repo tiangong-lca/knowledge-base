@@ -159,3 +159,13 @@ four-decimal results. The reader notes retain this discrepancy and the separate
 A7 price-axis question. Targeted reader feedback led to explicit treatment of the
 structural-shift exception and named secondary attribution of the 2006 reply.
 The source Issue and PR own CI, integration, live qualification and terminal status.
+
+## From reconstructing inventories to weighting burdens
+
+The [hybrid chapter](https://prism.tiangong.earth/docs/book/inventory-boundary-and-hybrid/) shipped through [source PR33](https://github.com/tiangong-lca/knowledge-base/pull/33) at Main `9866f5daab09bcdc7ea5613fe6f068a4adec9bc0` and [workspace PR2228](https://github.com/tiangong-lca/workspace/pull/2228) at Main `49dca1f02e590d81953e294350595661f682562a`. Final receipts `finish_Ob6YqRhZER2OiOHAl187j72o` and `finish_mFhwjODzQsz4OrEOwaMr9eBj` verify source and integration completion. Live checks covered 16 artifact hashes and the 38 paragraph/note pairs. The original unadjusted economic accounts and full 2006 exchange remain open research leads.
+
+[Issue 34](https://github.com/tiangong-lca/knowledge-base/issues/34) takes up V5-05. The [pre-reading protocol](research-waves/2026-11-05-ecological-scarcity.md) asks how reference flows and Swiss policy targets enter a published eco-factor and how two burdens can trade off in a single score. It distinguishes the limited prior inspection of the 2013 German work from the factor and target reading ahead. Broader multilingual, methods, applications and edition review commitments remain with programme 9.
+
+For issue 34 the German UW-1330 and UW-2121 reports, federal reports of 2009 and 1999, and two original studies of target or geographical sensitivity now have selected-passage records. Their functions in the argument differ. One pair of 2013 factors can be reconstructed from printed annual loads. The 2009 report specifies reductions from a baseline year, while the later edition shows why an updated estimate of that baseline changes an absolute target. The two external studies separately examine rank stability at fixed electricity supply and contribution shares under regional perspectives. The unit still requires manuscript, review and delivery qualification.
+
+The preceding UW-0906 original explains the historical tonnages and competing air-quality targets. A second carrier of the 2009 policy report checks the Gazette's target table against the BLW copy without adding a second work. The continuous weighting chapter now connects these records to the two-factor service comparison, edition changes, the German sensitivity experiment and the region-perspective study. Computational, source, reader, live and integration qualification have distinct scopes; Issue 34 and its PR record the current delivery state.

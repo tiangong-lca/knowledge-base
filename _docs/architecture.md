@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: f5eb493072fbe9d3b0c18cd8e5c4e843963a8f46
+lastReviewedCommit: eb8c3cdd30010ec91fef5b3730e47a0ece290fdf
 ---
 
 # Publication architecture
@@ -161,3 +161,7 @@ service link uses the original treatment plan and electricity requirement. Both
 normal repository validation and the exporter check parent uniqueness and
 compatibility. The example uses the existing canonical paragraphs, local notes
 and versioned input download surface.
+
+## Swiss ecological-scarcity factor reconstruction
+
+The static ecological-scarcity case reconstructs two factors with exact fractions from the annual reference, current and critical loads in the 2013 Swiss report. Its scoring step uses the rounded factors published in the same tables. The case separates the stipulated service and inventories, common positive scaling and one relative factor sensitivity. The public case adapter verifies nine full numeric facts against the source, edition, reading, selected passages and original PDF. The two nonzero normalization reciprocals retain exact fractions. The input is available from chapter annotations and the existing static download surface.
