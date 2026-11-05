@@ -1,0 +1,395 @@
+{
+  "caseId": "CASE-LIME-VALUATION",
+  "version": "1.0.0",
+  "model": "reported-2003-arithmetic-and-two-published-factor-sets-v1",
+  "createdAt": "2026-11-05",
+  "status": "selected-source-arithmetic-and-author-illustration",
+  "sources": {
+    "jp2003": {
+      "sourceId": "src-lime-jp2003",
+      "readingId": "rd-lime-jp2003",
+      "workId": "work-lime-jp2003",
+      "version": "2003; 環境科学会誌16(5),357–368; Version of Record; Kobe Kernel institutional carrier with repository cover",
+      "artifactId": "art-lime-jp2003",
+      "sha256": "24ffddba87aa1efec562a9bc2ba1815f91989990dac67411cb271ebb6c061531"
+    },
+    "en2004": {
+      "sourceId": "src-lime-2004-conjoint",
+      "readingId": "rd-lime-2004-conjoint",
+      "workId": "work-lime-2004-conjoint",
+      "version": "2004; publisher VoR PDF; 9(3):196–205; printed DOI10.1065/lca2003.11.142; metadata DOI10.1007/BF02994194",
+      "artifactId": "art-lime-2004-conjoint",
+      "sha256": "c376f57ad8c5617ea65a94a19bd3df3e1528d206f55be4cae6432083d5e6d2ea"
+    }
+  },
+  "facts": {
+    "normalizationHealth": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-normalization",
+      "factId": "norm-health",
+      "passageId": "psg-lime-jp2003-normalization",
+      "value": "1430000",
+      "unit": "DALY",
+      "quantity": "annual normalization damage",
+      "subject": "human-health",
+      "basis": "Table3 normalization row, Japan annual loading basis; displayed rounded total"
+    },
+    "normalizationSocial": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-normalization",
+      "factId": "norm-social",
+      "passageId": "psg-lime-jp2003-normalization",
+      "value": "54400",
+      "unit": "million JPY",
+      "quantity": "annual normalization damage",
+      "subject": "social-assets",
+      "basis": "Table3 normalization row; social assets unit is million yen, not yen"
+    },
+    "normalizationBiodiversity": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-normalization",
+      "factId": "norm-biodiversity",
+      "passageId": "psg-lime-jp2003-normalization",
+      "value": ".5",
+      "unit": "species",
+      "quantity": "annual normalization damage",
+      "subject": "biodiversity",
+      "basis": "Table3 normalization row; stipulated annual vascular-plant extinction proxy, not measured complete ecosystem loss"
+    },
+    "normalizationPrimary": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-normalization",
+      "factId": "norm-primary",
+      "passageId": "psg-lime-jp2003-normalization",
+      "value": "15400000000",
+      "unit": "dry ton",
+      "quantity": "annual normalization damage",
+      "subject": "primary-production",
+      "basis": "Table3 normalization row; net primary production damage, dry-matter mass"
+    },
+    "households": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-conversion",
+      "factId": "household-count",
+      "passageId": "psg-lime-jp2003-conversion",
+      "value": "46607000",
+      "unit": "households",
+      "quantity": "national household multiplier",
+      "subject": "Japan households",
+      "basis": "Section5 prints46607千世帯; year/source not specified in this passage"
+    },
+    "baseSocial": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-conversion",
+      "factId": "base-social",
+      "passageId": "psg-lime-jp2003-conversion",
+      "value": "100000000",
+      "unit": "JPY",
+      "quantity": "attribute coding basis",
+      "subject": "social-assets",
+      "basis": "Section5 prints1億円"
+    },
+    "basePrimary": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-conversion",
+      "factId": "base-primary",
+      "passageId": "psg-lime-jp2003-conversion",
+      "value": "100000000",
+      "unit": "ton",
+      "quantity": "attribute coding basis",
+      "subject": "primary-production",
+      "basis": "Section5 prints1億トン; damage indicator is dry mass"
+    },
+    "baseTax": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-conversion",
+      "factId": "base-tax",
+      "passageId": "psg-lime-jp2003-conversion",
+      "value": "1",
+      "unit": "JPY",
+      "quantity": "attribute coding basis",
+      "subject": "tax",
+      "basis": "Section5 prints円"
+    },
+    "baseHealth": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-conversion",
+      "factId": "base-health",
+      "passageId": "psg-lime-jp2003-conversion",
+      "value": "1",
+      "unit": "day",
+      "quantity": "attribute coding basis",
+      "subject": "human-health",
+      "basis": "Section5 prints1日; prior paragraph describes per-person annual loss"
+    },
+    "baseBiodiversity": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-conversion",
+      "factId": "base-biodiversity",
+      "passageId": "psg-lime-jp2003-conversion",
+      "value": "1",
+      "unit": "species",
+      "quantity": "attribute coding basis",
+      "subject": "biodiversity",
+      "basis": "Section5 prints1種"
+    },
+    "betaHealth": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-estimates",
+      "factId": "beta-health",
+      "passageId": "psg-lime-jp2003-estimates",
+      "value": "-.139686",
+      "unit": "model-coded attribute basis",
+      "quantity": "conditional-logit coefficient",
+      "subject": "health",
+      "basis": "Table6; coding bases stated onp364; preserve displayed precision"
+    },
+    "betaSocial": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-estimates",
+      "factId": "beta-social",
+      "passageId": "psg-lime-jp2003-estimates",
+      "value": "-.0008564",
+      "unit": "model-coded attribute basis",
+      "quantity": "conditional-logit coefficient",
+      "subject": "social",
+      "basis": "Table6; coding bases stated onp364; preserve displayed precision"
+    },
+    "betaPrimary": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-estimates",
+      "factId": "beta-primary",
+      "passageId": "psg-lime-jp2003-estimates",
+      "value": "-.0034133",
+      "unit": "model-coded attribute basis",
+      "quantity": "conditional-logit coefficient",
+      "subject": "primary",
+      "basis": "Table6; coding bases stated onp364; preserve displayed precision"
+    },
+    "betaBiodiversity": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-estimates",
+      "factId": "beta-biodiversity",
+      "passageId": "psg-lime-jp2003-estimates",
+      "value": "-1.47314",
+      "unit": "model-coded attribute basis",
+      "quantity": "conditional-logit coefficient",
+      "subject": "biodiversity",
+      "basis": "Table6; coding bases stated onp364; preserve displayed precision"
+    },
+    "betaTax": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-estimates",
+      "factId": "beta-tax",
+      "passageId": "psg-lime-jp2003-estimates",
+      "value": "-.0000891",
+      "unit": "model-coded attribute basis",
+      "quantity": "conditional-logit coefficient",
+      "subject": "tax",
+      "basis": "Table6; coding bases stated onp364; preserve displayed precision"
+    },
+    "publishedHealth2003": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-weights",
+      "factId": "wtp-health",
+      "passageId": "psg-lime-jp2003-wtp",
+      "value": "572000",
+      "unit": "JPY/DALY",
+      "quantity": "reported marginal willingness to pay",
+      "subject": "human-health",
+      "basis": "Table7;1DALY(year) basis"
+    },
+    "publishedSocial2003": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-weights",
+      "factId": "wtp-social",
+      "passageId": "psg-lime-jp2003-wtp",
+      "value": "4460",
+      "unit": "JPY/1000-JPY-damage",
+      "quantity": "reported marginal willingness to pay",
+      "subject": "social-assets",
+      "basis": "Table7;1000円 basis; printed4.46×10^3"
+    },
+    "publishedPrimary2003": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-weights",
+      "factId": "wtp-primary",
+      "passageId": "psg-lime-jp2003-wtp",
+      "value": "17.8",
+      "unit": "JPY/dry-ton",
+      "quantity": "reported marginal willingness to pay",
+      "subject": "primary-production",
+      "basis": "Table7;1ton basis; damage indicator is dry net-primary-production mass"
+    },
+    "publishedBiodiversity2003": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-weights",
+      "factId": "wtp-biodiversity",
+      "passageId": "psg-lime-jp2003-wtp",
+      "value": "768000000000",
+      "unit": "JPY/species",
+      "quantity": "reported marginal willingness to pay",
+      "subject": "biodiversity",
+      "basis": "Table7;1species basis; vascular-plant extinction proxy"
+    },
+    "annualHealth": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-relative-weights",
+      "factId": "annual-value-health",
+      "passageId": "psg-lime-jp2003-relative-weights",
+      "value": "818000000000",
+      "unit": "JPY",
+      "quantity": "reported annual reference damage equivalent",
+      "subject": "health",
+      "basis": "Table8; Table7 WTP times Table3 normalization damage with unit conversion"
+    },
+    "annualSocial": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-relative-weights",
+      "factId": "annual-value-social",
+      "passageId": "psg-lime-jp2003-relative-weights",
+      "value": "243000000000",
+      "unit": "JPY",
+      "quantity": "reported annual reference damage equivalent",
+      "subject": "social",
+      "basis": "Table8; Table7 WTP times Table3 normalization damage with unit conversion"
+    },
+    "annualPrimary": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-relative-weights",
+      "factId": "annual-value-primary",
+      "passageId": "psg-lime-jp2003-relative-weights",
+      "value": "274000000000",
+      "unit": "JPY",
+      "quantity": "reported annual reference damage equivalent",
+      "subject": "primary",
+      "basis": "Table8; Table7 WTP times Table3 normalization damage with unit conversion"
+    },
+    "annualBiodiversity": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-relative-weights",
+      "factId": "annual-value-biodiversity",
+      "passageId": "psg-lime-jp2003-relative-weights",
+      "value": "384000000000",
+      "unit": "JPY",
+      "quantity": "reported annual reference damage equivalent",
+      "subject": "biodiversity",
+      "basis": "Table8; Table7 WTP times Table3 normalization damage with unit conversion"
+    },
+    "shareHealth": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-relative-weights",
+      "factId": "share-health",
+      "passageId": "psg-lime-jp2003-relative-weights",
+      "value": ".48",
+      "unit": "dimensionless",
+      "quantity": "reported relative annual-damage weight",
+      "subject": "health",
+      "basis": "Table8; rounded share of summed annual reference damage equivalents"
+    },
+    "shareSocial": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-relative-weights",
+      "factId": "share-social",
+      "passageId": "psg-lime-jp2003-relative-weights",
+      "value": ".14",
+      "unit": "dimensionless",
+      "quantity": "reported relative annual-damage weight",
+      "subject": "social",
+      "basis": "Table8; rounded share of summed annual reference damage equivalents"
+    },
+    "sharePrimary": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-relative-weights",
+      "factId": "share-primary",
+      "passageId": "psg-lime-jp2003-relative-weights",
+      "value": ".16",
+      "unit": "dimensionless",
+      "quantity": "reported relative annual-damage weight",
+      "subject": "primary",
+      "basis": "Table8; rounded share of summed annual reference damage equivalents"
+    },
+    "shareBiodiversity": {
+      "sourceKey": "jp2003",
+      "evidenceId": "ev-lime-jp-relative-weights",
+      "factId": "share-biodiversity",
+      "passageId": "psg-lime-jp2003-relative-weights",
+      "value": ".22",
+      "unit": "dimensionless",
+      "quantity": "reported relative annual-damage weight",
+      "subject": "biodiversity",
+      "basis": "Table8; rounded share of summed annual reference damage equivalents"
+    },
+    "publishedHealth2004": {
+      "sourceKey": "en2004",
+      "evidenceId": "ev-lime-2004-conjoint-health-wf",
+      "factId": null,
+      "passageId": "psg-lime-2004-conjoint-weights",
+      "value": "9700000",
+      "unit": "JPY/DALY",
+      "quantity": "published monetary weighting factor",
+      "subject": "human health",
+      "basis": "2004 Table7; 1DALY(year)"
+    },
+    "publishedPrimary2004": {
+      "sourceKey": "en2004",
+      "evidenceId": "ev-lime-2004-conjoint-primary-wf",
+      "factId": null,
+      "passageId": "psg-lime-2004-conjoint-weights",
+      "value": "20200",
+      "unit": "JPY/dry t",
+      "quantity": "published monetary weighting factor",
+      "subject": "primary production",
+      "basis": "2004 Table7 1ton; Table1 defines NPP dry-ton"
+    }
+  },
+  "conversions": {
+    "daysPerDALY": "365",
+    "daysPerDALYRole": "conditional arithmetic convention; household-to-person national health conversion unresolved",
+    "millionJPYInJPY": "1000000",
+    "socialDamageBlockJPY": "1000",
+    "unreportedPrecisionRecovered": false,
+    "publishedDiscrepanciesRepaired": false,
+    "roundingEstablishedAsDiscrepancyCause": false
+  },
+  "service": {
+    "amount": "1000",
+    "unit": "metric tonnes of product",
+    "destination": "the same Japanese plant",
+    "grade": "the same stipulated grade",
+    "deliveryDate": "the same stipulated date",
+    "equivalence": "author-stipulated",
+    "allOtherActivitiesAndDamagesHeldEqual": true,
+    "empiricalProductComparison": false,
+    "wholeLifeCycleCoverage": false
+  },
+  "illustration": {
+    "kind": "author-stipulated-two-damage-route-comparison",
+    "healthUnit": "DALY",
+    "primaryProductionUnit": "dry metric tonnes lost",
+    "A": {
+      "health": "0.001",
+      "primaryProduction": "100"
+    },
+    "B": {
+      "health": "0.004",
+      "primaryProduction": "10"
+    },
+    "scoreUnit": "JPY per stipulated delivered service",
+    "onlyTwoDamageRowsDiffer": true,
+    "factorsArePublishedNotReconstructed": true
+  },
+  "interpretation": {
+    "rawChoiceDataReconstructed": false,
+    "conditionalLogitReestimated": false,
+    "humanHealthNationalConversionClosed": false,
+    "observedPreferenceShift": false,
+    "timeTrend": false,
+    "commonCurrencyPriceYearEstablished": false,
+    "crossEditionAbsoluteScoreComparison": false,
+    "scientificValidation": false,
+    "humanExpertApproval": false,
+    "currentFactorRecommendation": false,
+    "uncertaintyPropagated": false
+  }
+}

@@ -8485,6 +8485,806 @@
         "reviewKind": "agent-source-check",
         "checkedAt": "2026-11-05"
       }
+    },
+    {
+      "id": "rd-lime-jp2003",
+      "workId": "work-lime-jp2003",
+      "title": "コンジョイント分析の応用によるLCIAの統合化係数の開発",
+      "version": "2003; 環境科学会誌16(5),357–368; Version of Record; Kobe Kernel institutional carrier with repository cover",
+      "url": "https://hdl.handle.net/20.500.14094/90004722",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "这篇2003年原始日文研究如何把东京受访者的政策取舍估计成四个保护对象的货币权重和相对权重；哪些数值链可以由公开印刷值复核？",
+      "argumentSummary": "三选一、含现状的五属性政策卡以四项损害和家庭年增税构成。作者用条件Logit估计边际取舍，报告各损害单位的支付意愿，并乘当时日本年度损害参照后归一为相对权重。显示系数、基准单位、家庭数和报告权重间有未闭合之处；有限复算保留这些差异，不能称重新估计调查或完整LIME实现。",
+      "rights": "©環境科学会。神户大学机构仓储公开提供阅读不构成开放许可；第三方原件、影印页与调查材料不进入本项目公开仓库或导出。仅发布原创释义、必要数值事实与精确定位。",
+      "unread": [
+        "只核读所登记段落与表格，不是完整原始调查或全模型复现。",
+        "原始逐人逐题选择数据、完整调查票、估计程序与协方差矩阵未取得；正文提到的Appendix1不在本载体十二页论文内。",
+        "2003年东京306个有效回答与2004年英文摘要所称400次访谈的关系未由本论文说明，不合并样本。",
+        "公开载体不授予原件再分发权；未发现可据此指定统一货币价格年的说明。"
+      ],
+      "artifacts": [
+        {
+          "id": "art-lime-jp2003",
+          "mediaType": "application/pdf",
+          "sha256": "24ffddba87aa1efec562a9bc2ba1815f91989990dac67411cb271ebb6c061531",
+          "resolvedUrl": "https://da.lib.kobe-u.ac.jp/da/kernel/90004722/90004722.pdf",
+          "pageCount": 13
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-lime-jp2003-identity",
+          "artifactId": "art-lime-jp2003",
+          "locator": "机构封面；日文标题与署名；英文摘要标题与署名",
+          "printedPages": "357,368",
+          "pdfIndices": [
+            0,
+            1,
+            12
+          ],
+          "topics": [
+            "六位作者",
+            "2003期刊定本与2026仓储封面日期不同"
+          ],
+          "limits": []
+        },
+        {
+          "id": "psg-lime-jp2003-model",
+          "artifactId": "art-lime-jp2003",
+          "locator": "§3.2 推計モデル：随机效用、条件Logit、线性确定效用与MWTP",
+          "printedPages": "360",
+          "pdfIndices": [
+            4
+          ],
+          "topics": [
+            "条件Logit与极值误差",
+            "最大似然",
+            "MWTP负号"
+          ],
+          "limits": []
+        },
+        {
+          "id": "psg-lime-jp2003-normalization",
+          "artifactId": "art-lime-jp2003",
+          "locator": "§§4.3–4.4；表1–3；年度损害计算与所用保护对象",
+          "printedPages": "361–363",
+          "pdfIndices": [
+            5,
+            6,
+            7
+          ],
+          "topics": [
+            "日本年度环境负荷与damage factors",
+            "规格式损害总量",
+            "不完整损害函数与植物绝种代理"
+          ],
+          "limits": [
+            "表3是作者当时的年度损害参照，并非现行LIME通用常数；资源消耗的damage function未开发完，部分生态损害用假设代理。"
+          ]
+        },
+        {
+          "id": "psg-lime-jp2003-questionnaire",
+          "artifactId": "art-lime-jp2003",
+          "locator": "§4.4；表4 调查票样本；健康与生物多样性说明",
+          "printedPages": "363–364",
+          "pdfIndices": [
+            7,
+            8
+          ],
+          "topics": [
+            "三选一含现状",
+            "每人八题",
+            "家庭一年增税",
+            "DALY与损失寿命用语"
+          ],
+          "limits": [
+            "只展示一张样本卡与部分水平，不足以复原全部实验设计或完整问卷；样本卡生物多样性0.1种/年不等于0.5的严格四分之一。"
+          ]
+        },
+        {
+          "id": "psg-lime-jp2003-survey",
+          "artifactId": "art-lime-jp2003",
+          "locator": "§5；表5 调查概要；脚注2–4",
+          "printedPages": "364",
+          "pdfIndices": [
+            8
+          ],
+          "topics": [
+            "2002-01-22至25",
+            "东京四处mall intercept",
+            "306有效回答",
+            "108预调查",
+            "亚组与现状偏差"
+          ],
+          "limits": []
+        },
+        {
+          "id": "psg-lime-jp2003-conversion",
+          "artifactId": "art-lime-jp2003",
+          "locator": "§5 表5上方文字、Weighting Factor1换算式与I1式",
+          "printedPages": "364",
+          "pdfIndices": [
+            8
+          ],
+          "topics": [
+            "46607千户",
+            "健康一日与全国总量属性的不同呈现",
+            "支付意愿换算与LCIA货币加权"
+          ],
+          "limits": [
+            "通用式含家庭数，但健康属性为一人损失日数；论文没有在此写出健康个人基准与家庭数间的完整消去步骤。"
+          ]
+        },
+        {
+          "id": "psg-lime-jp2003-estimates",
+          "artifactId": "art-lime-jp2003",
+          "locator": "表6 本调查评价结果及表下注",
+          "printedPages": "365",
+          "pdfIndices": [
+            9
+          ],
+          "topics": [
+            "五个系数、标准误、t值、P值",
+            "306人",
+            "rho平方及log likelihood"
+          ],
+          "limits": [
+            "表6第三属性印为一次資産，其他正文、表3、4、7、8为一次生産；保留印刷差异。",
+            "P值0.0000是表中显示精度，不能解释为概率严格等于零；未披露系数协方差或MWTP区间。"
+          ]
+        },
+        {
+          "id": "psg-lime-jp2003-wtp",
+          "artifactId": "art-lime-jp2003",
+          "locator": "表7 从本调查结果算出的边际支付意愿",
+          "printedPages": "365",
+          "pdfIndices": [
+            9
+          ],
+          "topics": [
+            "DALY、1000日元、干物质ton、植物种单位",
+            "已报告的货币权重"
+          ],
+          "limits": [
+            "表7社会资产为4.46×10^3，不是4.16×10^3。",
+            "由显示系数和46607千户复算的社会资产与生物多样性值不能只用通常末位舍入解释；不得静默替换报告值。"
+          ]
+        },
+        {
+          "id": "psg-lime-jp2003-relative-weights",
+          "artifactId": "art-lime-jp2003",
+          "locator": "表8；I2式；表7乘表3所得年度损害金额与相对权重",
+          "printedPages": "365",
+          "pdfIndices": [
+            9
+          ],
+          "topics": [
+            "两种综合路径",
+            "0.48,0.14,0.16,0.22",
+            "与Eco-indicator99对象不完全相同"
+          ],
+          "limits": [
+            "表8权重依赖选用的年度损害参照；健康、人类生活与生态系统等比较保留对象范围差异。"
+          ]
+        },
+        {
+          "id": "psg-lime-jp2003-uncertainty",
+          "artifactId": "art-lime-jp2003",
+          "locator": "§6结论与末段讨论",
+          "printedPages": "366–367",
+          "pdfIndices": [
+            10,
+            11
+          ],
+          "topics": [
+            "假设参照值",
+            "需在损害函数齐备后重做调查",
+            "规范值敏感性",
+            "价值观分型研究"
+          ],
+          "limits": [
+            "显著的条件Logit系数不证明总体代表性、问卷完全理解、当前跨地域迁移或所有合理价值立场一致。"
+          ]
+        },
+        {
+          "id": "psg-lime-jp-damage",
+          "artifactId": "art-lime-jp2003",
+          "locator": "第 358–361 页第 2 节、图 1 及第 4.1、4.3 节",
+          "printedPages": "358–361",
+          "pdfIndices": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "topics": [
+            "损害评价与综合化",
+            "四项保护对象",
+            "DALY 与净初级生产"
+          ],
+          "limits": [
+            "四项是研究设定的保护对象；建模范围和实测环境后果需另行辨认。"
+          ]
+        },
+        {
+          "id": "psg-lime-jp-calculation-limit",
+          "artifactId": "art-lime-jp2003",
+          "locator": "第 364 页第 5 节换算式，第 365 页表 6–7",
+          "printedPages": "364–365",
+          "pdfIndices": [
+            8,
+            9
+          ],
+          "topics": [
+            "印刷系数与单位",
+            "舍入条件",
+            "未解释的差额"
+          ],
+          "limits": [
+            "这是对已披露数值的条件性复算。原始精度、问卷编码和作者实际计算程序并未完整披露。"
+          ]
+        },
+        {
+          "id": "psg-lime-jp2003-plant-reference",
+          "artifactId": "art-lime-jp2003",
+          "printedPages": "363–364",
+          "pdfIndices": [
+            7,
+            8
+          ],
+          "locator": "第 363 页表 3，第 364 页第 4.4 节关于维管植物及 50 年情景的说明",
+          "topics": [
+            "已灭绝及野外灭绝的维管植物",
+            "时间窗与问卷水平"
+          ],
+          "limits": [
+            "作者以近 50 年的变化假设构造年度水平，未将其报告为完整损害函数算出的逐年灭绝事件。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "独立逐页查看机构定本的渲染图像；表3、4及6–8另作高分辨率目视核对，并用已披露数字作有限算术检查。",
+        "methodologicalScope": "2002年东京拦截面访及2003年论文披露的条件Logit估计、边际支付意愿、年度损害归一化与相对权重。",
+        "independence": "这是同一原始实证论文的一次独立代理核读，不是新增调查或独立实证验证；同一作品其他载体与后续作者综述不重复计数。",
+        "limitations": [
+          "只核读所登记段落与表格，不是完整原始调查或全模型复现。",
+          "原始逐人逐题选择数据、完整调查票、估计程序与协方差矩阵未取得；正文提到的Appendix1不在本载体十二页论文内。",
+          "2003年东京306个有效回答与2004年英文摘要所称400次访谈的关系未由本论文说明，不合并样本。",
+          "公开载体不授予原件再分发权；未发现可据此指定统一货币价格年的说明。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      }
+    },
+    {
+      "id": "rd-lime-2004-conjoint",
+      "workId": "work-lime-2004-conjoint",
+      "title": "Weighting across safeguard subjects for LCIA through the application of conjoint analysis",
+      "version": "2004; publisher VoR PDF; 9(3):196–205; printed DOI10.1065/lca2003.11.142; metadata DOI10.1007/BF02994194",
+      "url": "https://link.springer.com/article/10.1007/BF02994194",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "不同发表版本的样本、估计及适用范围如何区分？",
+      "argumentSummary": "按所读调查与表格保留版本差异；论文内和论文间的分母不能无披露流程地相互换算。",
+      "artifacts": [
+        {
+          "id": "art-lime-2004-conjoint",
+          "mediaType": "application/pdf",
+          "sha256": "c376f57ad8c5617ea65a94a19bd3df3e1528d206f55be4cae6432083d5e6d2ea",
+          "resolvedUrl": "https://link.springer.com/content/pdf/10.1007/BF02994194.pdf",
+          "pageCount": 10
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-lime-2004-conjoint-identity",
+          "artifactId": "art-lime-2004-conjoint",
+          "locator": "p196 title, abstract; p205 dates",
+          "printedPages": "196,205",
+          "pdfIndices": [
+            0,
+            9
+          ],
+          "topics": [
+            "publication identity",
+            "108 pretest / 400 main"
+          ],
+          "limits": [
+            "400与306同时存在于本篇；原始选择数据和筛选流程未取得。共享样本表支持已报告样本描述的关系，不证明原始记录逐条一致或同一估计。",
+            "2003日文表的系数、t值及金额与本篇不同；不能互填、默认为译文或重复计作独立样本。",
+            "本文明确给出MWTP系数比的一般式与两类权重；未在所读段落明确解释为何Table7数值相当于以社会资产而非税系数标定。数值吻合仅是本项目算术观察。",
+            "未逐句精读全篇或核查其底层损害模型；访问语境及重用权未核准。"
+          ]
+        },
+        {
+          "id": "psg-lime-2004-conjoint-sample",
+          "artifactId": "art-lime-2004-conjoint",
+          "locator": "p199 Fig2; p203 §5, footnote1, Tables5–6",
+          "printedPages": "199,203",
+          "pdfIndices": [
+            3,
+            7
+          ],
+          "topics": [
+            "400 versus306",
+            "Tokyo January2002",
+            "reported coefficients"
+          ],
+          "limits": [
+            "400与306同时存在于本篇；原始选择数据和筛选流程未取得。共享样本表支持已报告样本描述的关系，不证明原始记录逐条一致或同一估计。",
+            "2003日文表的系数、t值及金额与本篇不同；不能互填、默认为译文或重复计作独立样本。",
+            "本文明确给出MWTP系数比的一般式与两类权重；未在所读段落明确解释为何Table7数值相当于以社会资产而非税系数标定。数值吻合仅是本项目算术观察。",
+            "未逐句精读全篇或核查其底层损害模型；访问语境及重用权未核准。"
+          ]
+        },
+        {
+          "id": "psg-lime-2004-conjoint-weights",
+          "artifactId": "art-lime-2004-conjoint",
+          "locator": "p200 Table1 damage-indicator units; p203 §5, Tables6–8 and equations9–10",
+          "printedPages": "200,203",
+          "pdfIndices": [
+            4,
+            7
+          ],
+          "topics": [
+            "population / households",
+            "monetary and dimensionless factors"
+          ],
+          "limits": [
+            "400与306同时存在于本篇；原始选择数据和筛选流程未取得。共享样本表支持已报告样本描述的关系，不证明原始记录逐条一致或同一估计。",
+            "2003日文表的系数、t值及金额与本篇不同；不能互填、默认为译文或重复计作独立样本。",
+            "本文明确给出MWTP系数比的一般式与两类权重；未在所读段落明确解释为何Table7数值相当于以社会资产而非税系数标定。数值吻合仅是本项目算术观察。",
+            "未逐句精读全篇或核查其底层损害模型；访问语境及重用权未核准。"
+          ]
+        },
+        {
+          "id": "psg-lime-2004-conjoint-social-assets-arithmetic",
+          "artifactId": "art-lime-2004-conjoint",
+          "locator": "p202 Table3 social-assets column; p203 Tables7–8 and adjacent multiplication description",
+          "printedPages": "202–203",
+          "pdfIndices": [
+            6,
+            7
+          ],
+          "topics": [
+            "internal numerical discrepancy",
+            "normalization multiplied by monetary weighting"
+          ],
+          "limits": [
+            "按印刷输入复算发现社会资产行不一致；未确定是版次、排印、输入更新或其他原因，不指定正确数值。"
+          ]
+        },
+        {
+          "id": "psg-lime-en-changed-card",
+          "artifactId": "art-lime-2004-conjoint",
+          "locator": "第 202 页第 4.4 节及表 3–4",
+          "printedPages": "202",
+          "pdfIndices": [
+            6
+          ],
+          "topics": [
+            "全国损害基准",
+            "问卷中的现状"
+          ],
+          "limits": [
+            "两张示例卡不足以证明所有受访者看到的整套卡片及具体重编码关系。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "实际选读p196摘要、p199方法/Fig2、p200–203属性/调查/表格、p205发表日期；目视复核p203完整Tables5–8。",
+        "methodologicalScope": "历史实证论文的选读；区分调查设计、已报告估计、作者解释与本项目计算。",
+        "independence": "同一LIME研究谱系的作者论文；共同样本表不是独立实证重复，后继调查也不能填补早期原始数据缺口。",
+        "limitations": [
+          "400与306同时存在于本篇；原始选择数据和筛选流程未取得。共享样本表支持已报告样本描述的关系，不证明原始记录逐条一致或同一估计。",
+          "2003日文表的系数、t值及金额与本篇不同；不能互填、默认为译文或重复计作独立样本。",
+          "本文明确给出MWTP系数比的一般式与两类权重；未在所读段落明确解释为何Table7数值相当于以社会资产而非税系数标定。数值吻合仅是本项目算术观察。",
+          "未逐句精读全篇或核查其底层损害模型；访问语境及重用权未核准。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "rights": "第三方原件保留权利；普通请求取得原件并不授予全文、页面、表格或因子包再分发许可。出版商预览与现有机构访问显示不同，访问语境未核准。本库仅发布原创释义、元数据与定位；原件留在私有缓存。",
+      "unread": [
+        "400与306同时存在于本篇；原始选择数据和筛选流程未取得。共享样本表支持已报告样本描述的关系，不证明原始记录逐条一致或同一估计。",
+        "2003日文表的系数、t值及金额与本篇不同；不能互填、默认为译文或重复计作独立样本。",
+        "本文明确给出MWTP系数比的一般式与两类权重；未在所读段落明确解释为何Table7数值相当于以社会资产而非税系数标定。数值吻合仅是本项目算术观察。",
+        "未逐句精读全篇或核查其底层损害模型；访问语境及重用权未核准。"
+      ]
+    },
+    {
+      "id": "rd-lime-2012-conjoint",
+      "workId": "work-lime-2012-conjoint",
+      "title": "Statistical analysis for the development of national average weighting factors—visualization of the variability between each individual’s environmental thoughts",
+      "version": "2012; publisher VoR PDF; 17(4):488–498; online3February2012",
+      "url": "https://link.springer.com/article/10.1007/s11367-012-0379-x",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "不同发表版本的样本、估计及适用范围如何区分？",
+      "argumentSummary": "按所读调查与表格保留版本差异；论文内和论文间的分母不能无披露流程地相互换算。",
+      "artifacts": [
+        {
+          "id": "art-lime-2012-conjoint",
+          "mediaType": "application/pdf",
+          "sha256": "0ddd4f9f571936fd41138716b825da3c5623c2b08cd14c915b41f71cddebc338",
+          "resolvedUrl": "https://link.springer.com/content/pdf/10.1007/s11367-012-0379-x.pdf",
+          "pageCount": 11
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-lime-2012-conjoint-lineage",
+          "artifactId": "art-lime-2012-conjoint",
+          "locator": "§§1–2; Table6; references",
+          "printedPages": "489–490,496,498",
+          "pdfIndices": [
+            1,
+            2,
+            8,
+            10
+          ],
+          "topics": [
+            "LIME1 limitations",
+            "LIME2 distinct generation"
+          ],
+          "limits": [
+            "这是LIME2后继调查，不得用952、全国抽样、RPL或其货币值补早期306样本。",
+            "§4p495把LIME1调查写为conducted in2003；2003日文及2004英文Table5写2002年1月22–25日。差异原因未知，保留原定位。",
+            "Table4的LIME1比较值归Itsubo etal2003，却对应2004英文Table7数值而非2003日文Table7；不能以后继归属覆盖早期原表。",
+            "本文参考文献把2003日文卷号印为15(5)，实际原刊为16(5)；以后者核定身份。",
+            "补充PPTX与原始选择数据未取得/核读；未重估RPL，未检验全国代表性或作者关于无偏理解的科学结论。",
+            "机构访问banner与公共预览不同；未改认证或账户，不推断OA或已核准许可。"
+          ]
+        },
+        {
+          "id": "psg-lime-2012-conjoint-sample",
+          "artifactId": "art-lime-2012-conjoint",
+          "locator": "§3 sample selection/interview; §4 and Table3",
+          "printedPages": "491–494",
+          "pdfIndices": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "topics": [
+            "two-stage random sampling",
+            "952 versus approx1000"
+          ],
+          "limits": [
+            "这是LIME2后继调查，不得用952、全国抽样、RPL或其货币值补早期306样本。",
+            "§4p495把LIME1调查写为conducted in2003；2003日文及2004英文Table5写2002年1月22–25日。差异原因未知，保留原定位。",
+            "Table4的LIME1比较值归Itsubo etal2003，却对应2004英文Table7数值而非2003日文Table7；不能以后继归属覆盖早期原表。",
+            "本文参考文献把2003日文卷号印为15(5)，实际原刊为16(5)；以后者核定身份。",
+            "补充PPTX与原始选择数据未取得/核读；未重估RPL，未检验全国代表性或作者关于无偏理解的科学结论。",
+            "机构访问banner与公共预览不同；未改认证或账户，不推断OA或已核准许可。"
+          ]
+        },
+        {
+          "id": "psg-lime-2012-conjoint-weights",
+          "artifactId": "art-lime-2012-conjoint",
+          "locator": "§4, Tables3–4, eqs12–13; §§5–6",
+          "printedPages": "494–497",
+          "pdfIndices": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "topics": [
+            "social-assets numeraire",
+            "Japan and time applicability"
+          ],
+          "limits": [
+            "这是LIME2后继调查，不得用952、全国抽样、RPL或其货币值补早期306样本。",
+            "§4p495把LIME1调查写为conducted in2003；2003日文及2004英文Table5写2002年1月22–25日。差异原因未知，保留原定位。",
+            "Table4的LIME1比较值归Itsubo etal2003，却对应2004英文Table7数值而非2003日文Table7；不能以后继归属覆盖早期原表。",
+            "本文参考文献把2003日文卷号印为15(5)，实际原刊为16(5)；以后者核定身份。",
+            "补充PPTX与原始选择数据未取得/核读；未重估RPL，未检验全国代表性或作者关于无偏理解的科学结论。",
+            "机构访问banner与公共预览不同；未改认证或账户，不推断OA或已核准许可。"
+          ]
+        },
+        {
+          "id": "psg-lime-national-lineage-label",
+          "artifactId": "art-lime-2012-conjoint",
+          "locator": "第 495 页表 4 及其后正文，第 496 页表 6，第 498 页参考文献",
+          "printedPages": "495–496；498",
+          "pdfIndices": [
+            7,
+            8,
+            10
+          ],
+          "topics": [
+            "后版中的早期列",
+            "年份与原件归属"
+          ],
+          "limits": [
+            "仅能核定文本间的差异，不能凭后来的简写确定原始调查流程或更正早期作者的数值。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "实际读Publisher完整HTML§§1–6及参考文献，并以11页PDF核对§§2–5、Tables3–4/6；目视复核p496/Table6。",
+        "methodologicalScope": "历史实证论文的选读；区分调查设计、已报告估计、作者解释与本项目计算。",
+        "independence": "同一LIME研究谱系的作者论文；共同样本表不是独立实证重复，后继调查也不能填补早期原始数据缺口。",
+        "limitations": [
+          "这是LIME2后继调查，不得用952、全国抽样、RPL或其货币值补早期306样本。",
+          "§4p495把LIME1调查写为conducted in2003；2003日文及2004英文Table5写2002年1月22–25日。差异原因未知，保留原定位。",
+          "Table4的LIME1比较值归Itsubo etal2003，却对应2004英文Table7数值而非2003日文Table7；不能以后继归属覆盖早期原表。",
+          "本文参考文献把2003日文卷号印为15(5)，实际原刊为16(5)；以后者核定身份。",
+          "补充PPTX与原始选择数据未取得/核读；未重估RPL，未检验全国代表性或作者关于无偏理解的科学结论。",
+          "机构访问banner与公共预览不同；未改认证或账户，不推断OA或已核准许可。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "rights": "第三方原件保留权利；普通请求取得原件并不授予全文、页面、表格或因子包再分发许可。出版商预览与现有机构访问显示不同，访问语境未核准。本库仅发布原创释义、元数据与定位；原件留在私有缓存。",
+      "unread": [
+        "这是LIME2后继调查，不得用952、全国抽样、RPL或其货币值补早期306样本。",
+        "§4p495把LIME1调查写为conducted in2003；2003日文及2004英文Table5写2002年1月22–25日。差异原因未知，保留原定位。",
+        "Table4的LIME1比较值归Itsubo etal2003，却对应2004英文Table7数值而非2003日文Table7；不能以后继归属覆盖早期原表。",
+        "本文参考文献把2003日文卷号印为15(5)，实际原刊为16(5)；以后者核定身份。",
+        "补充PPTX与原始选择数据未取得/核读；未重估RPL，未检验全国代表性或作者关于无偏理解的科学结论。",
+        "机构访问banner与公共预览不同；未改认证或账户，不推断OA或已核准许可。"
+      ]
+    },
+    {
+      "id": "rd-lime-js2007-hypothetical",
+      "workId": "work-lime-js2007-hypothetical",
+      "title": "Hypothetical bias in choice experiments: Within versus between subject tests",
+      "version": "Working Papers in Economics No252, April2007;10pages; institutional PDF",
+      "url": "https://gupea.ub.gu.se/server/api/core/bitstreams/d448a291-16a5-4527-836d-11697b6aae16/content",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "选择型陈述偏好的统计显著性是否同时证明真实付款选择的有效性？",
+      "argumentSummary": "独立实验比较先做假设选择后做真实选择的组与直接做真实选择的组；真实选择会因是否先作假设回答而不同。它限制从问卷内系数直接跳到真实付款行为的解释，未直接检验日本LIME。",
+      "artifacts": [
+        {
+          "id": "art-lime-js2007-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "4fcc3998cf6e1fa283c62ec62b4999e0bc8dea6ccac0c8b8a93608964412fa94",
+          "resolvedUrl": "https://gupea.ub.gu.se/server/api/core/bitstreams/d448a291-16a5-4527-836d-11697b6aae16/content",
+          "pageCount": 10
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-lime-js2007-design",
+          "artifactId": "art-lime-js2007-pdf",
+          "locator": "§2 Experimental Design; Table1",
+          "printedPages": "4–5,10",
+          "pdfIndices": [
+            3,
+            4,
+            9
+          ],
+          "topics": [
+            "hypothetical and actual choices",
+            "volunteer sampling",
+            "payment vehicle"
+          ],
+          "limits": [
+            "这是2007年Working Papers in Economics252，不是已完整核读的2008期刊发表版本；两者不计独立研究。",
+            "70名主要为研究生的LSE志愿者，不代表日本居民；一人因跨两情境不一致被剔除。",
+            "选择为实验获得的钱与WWF动物保护捐款之间的取舍，不是日本家庭增税与四项保护对象损害。",
+            "不能以该研究的偏差幅度校正LIME因子，不能证明2003日本研究发生了同样大小或方向的偏差。"
+          ]
+        },
+        {
+          "id": "psg-lime-js2007-results",
+          "artifactId": "art-lime-js2007-pdf",
+          "locator": "§3 equations3–4 and results; Tables2–3; §4",
+          "printedPages": "6–8,10",
+          "pdfIndices": [
+            5,
+            6,
+            7,
+            9
+          ],
+          "topics": [
+            "marginal willingness to pay",
+            "hypothetical bias",
+            "within/between subjects"
+          ],
+          "limits": [
+            "这是2007年Working Papers in Economics252，不是已完整核读的2008期刊发表版本；两者不计独立研究。",
+            "70名主要为研究生的LSE志愿者，不代表日本居民；一人因跨两情境不一致被剔除。",
+            "选择为实验获得的钱与WWF动物保护捐款之间的取舍，不是日本家庭增税与四项保护对象损害。",
+            "不能以该研究的偏差幅度校正LIME因子，不能证明2003日本研究发生了同样大小或方向的偏差。",
+            "数据未取得，没有重新估计模型；正文及表格给出的统计结果是作者报告。",
+            "随机分组不等于样本随机抽自人口；实验顺序中双阶段组的场次先运行。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "公开大学仓储固定PDF，正文§§1–4与表1–3阅读；p10表格图像核对。",
+        "independence": "作者与早期LIME开发团队不同；独立环境估值实验，但不是对LIME样本或因子的直接重复检验。",
+        "methodologicalScope": "在相同捐款任务中比较先假设后真钱及直接真钱；检验被试内与被试间偏差的区别。",
+        "limitations": [
+          "这是2007年Working Papers in Economics252，不是已完整核读的2008期刊发表版本；两者不计独立研究。",
+          "70名主要为研究生的LSE志愿者，不代表日本居民；一人因跨两情境不一致被剔除。",
+          "选择为实验获得的钱与WWF动物保护捐款之间的取舍，不是日本家庭增税与四项保护对象损害。",
+          "不能以该研究的偏差幅度校正LIME因子，不能证明2003日本研究发生了同样大小或方向的偏差。",
+          "数据未取得，没有重新估计模型；正文及表格给出的统计结果是作者报告。",
+          "随机分组不等于样本随机抽自人口；实验顺序中双阶段组的场次先运行。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "rights": "机构公开提供阅读；PDF未见开放许可，不据此推定再分发权。原件、图像与提取文本留在私有缓存，仅发布原创释义、元数据与定位。",
+      "unread": [
+        "原始数据与2008期刊定本未取得。"
+      ],
+      "sourceKeys": [
+        "LIME-JS2007"
+      ]
+    },
+    {
+      "id": "rd-lime-cm1999-wp13",
+      "workId": "work-lime-cm1999-2001",
+      "title": "Do Hypothetical and Actual Willingness to Pay Differ in Choice Experiments? — Application to the Valuation of the Environment",
+      "version": "Working Papers in Economics No. 13, March 1999; 19 PDF pages; not the 2001 journal version of record",
+      "url": "https://swopec.hhs.se/gunwpe/papers/gunwpe0013.pdf",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "未检出假设/真钱差异的早期环境选择实验究竟检验了什么，设计和统计限度是什么？",
+      "argumentSummary": "在同一35名学生先假设后真钱的设计中，作者未拒绝系数及MWTP相等；文中同时承认一致性压力、热身和捐款动机问题。未拒绝不等于证明等效；后续不同研究提出的设计解释也不能直接给日本LIME作偏差校正。",
+      "artifacts": [
+        {
+          "id": "art-lime-cm1999-wp13",
+          "mediaType": "application/pdf",
+          "sha256": "c8320f34e780d66b29f53718528e6e4f2057780e246fea405e0cc1702e16dcf6",
+          "resolvedUrl": "https://swopec.hhs.se/gunwpe/papers/gunwpe0013.pdf",
+          "pageCount": 19
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-lime-cm1999-design",
+          "artifactId": "art-lime-cm1999-wp13",
+          "locator": "§2, §3 opening; Appendix1–2",
+          "printedPages": "5–7,17–19",
+          "pdfIndices": [
+            4,
+            5,
+            6,
+            16,
+            17,
+            18
+          ],
+          "topics": [
+            "hypothetical then actual",
+            "compliance bias",
+            "sample and tasks"
+          ],
+          "limits": [
+            "所读是1999年工作论文13，不是2001年期刊定本；不能把工作论文页码、样本和检验数值不加标注归给期刊版。",
+            "35名瑞典大学经济学本科生志愿者，同一批人先假设后真钱；不能推广为日本人口、家庭增税或四个保护对象的真实行为检验。",
+            "没有取得原始选择数据或重新估计模型。",
+            "未拒绝相等的零假设不等于用预设容忍区间证明等效；本轮未在所读范围发现等效检验或等效界值。",
+            "不同工作论文与2007实验在样本、项目和设计上均有差异，不能把跨论文结果差异全部归因于被试内/被试间设计。",
+            "1999与2001是同一作品的不同版本线索，不计为两个独立实验；2007与2008同样不重复计数。"
+          ]
+        },
+        {
+          "id": "psg-lime-cm1999-tests",
+          "artifactId": "art-lime-cm1999-wp13",
+          "locator": "§3.1, Table2 and fn11; §3.2; §4",
+          "printedPages": "8–12",
+          "pdfIndices": [
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "topics": [
+            "non-rejection of equality",
+            "MWTP ratio",
+            "inconsistency",
+            "learning"
+          ],
+          "limits": [
+            "所读是1999年工作论文13，不是2001年期刊定本；不能把工作论文页码、样本和检验数值不加标注归给期刊版。",
+            "35名瑞典大学经济学本科生志愿者，同一批人先假设后真钱；不能推广为日本人口、家庭增税或四个保护对象的真实行为检验。",
+            "没有取得原始选择数据或重新估计模型。",
+            "未拒绝相等的零假设不等于用预设容忍区间证明等效；本轮未在所读范围发现等效检验或等效界值。",
+            "不同工作论文与2007实验在样本、项目和设计上均有差异，不能把跨论文结果差异全部归因于被试内/被试间设计。",
+            "1999与2001是同一作品的不同版本线索，不计为两个独立实验；2007与2008同样不重复计数。",
+            "作者的MWTP t检验明确假定两实验相互独立，但设计使用同一35名被试；本轮只记录原文检验及其假设，没有重估成配对或相关模型。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "公开机构工作论文PDF；重读§§2–4及附录对应提取文本，并目视核对第9页表2及LR/t检验文字；原件SHA-256复核。",
+        "independence": "相对于早期LIME团队是另一个原始环境估值实验；与Johansson-Stenman/Svedsäter同属相近研究网络，作者在致谢中互有往来；不称完全独立的研究网络。",
+        "methodologicalScope": "同一被试的假设与真实实验所得和环境捐款取舍；与后续加入独立真实付款组的实验作有限设计比较。",
+        "limitations": [
+          "所读是1999年工作论文13，不是2001年期刊定本；不能把工作论文页码、样本和检验数值不加标注归给期刊版。",
+          "35名瑞典大学经济学本科生志愿者，同一批人先假设后真钱；不能推广为日本人口、家庭增税或四个保护对象的真实行为检验。",
+          "没有取得原始选择数据或重新估计模型。",
+          "未拒绝相等的零假设不等于用预设容忍区间证明等效；本轮未在所读范围发现等效检验或等效界值。",
+          "不同工作论文与2007实验在样本、项目和设计上均有差异，不能把跨论文结果差异全部归因于被试内/被试间设计。",
+          "1999与2001是同一作品的不同版本线索，不计为两个独立实验；2007与2008同样不重复计数。",
+          "作者的MWTP t检验明确假定两实验相互独立，但设计使用同一35名被试；本轮只记录原文检验及其假设，没有重估成配对或相关模型。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "rights": "公开机构工作论文载体未见开放再分发许可；原件、提取文本和图像留在私有缓存；仅发布原创释义、元数据及精确定位。",
+      "unread": [
+        "2001期刊定本全文和原始选择数据未取得；未重估模型；参考文献仅为引文线索。"
+      ],
+      "sourceKeys": [
+        "LIME-CM1999"
+      ]
+    },
+    {
+      "id": "rd-lime-hayashi2012-abstract",
+      "workId": "work-lime-hayashi2012",
+      "title": "Multiple Criteria-Multiple Participant Decisions for Establishing Sustainable Society Based on Biomass Utilization",
+      "version": "2012; Journal of Life Cycle Assessment, Japan 8(4):349–355; DOI 10.3370/lca.8.349; official English HTML abstract only",
+      "url": "https://www.jstage.jst.go.jp/article/lca/8/4/8_349/_article/-char/en",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "web-sections",
+      "question": "使用既有LCIA综合指标与为具体地方决策构造偏好，分别要问哪些偏好、属于谁、何时取得以及如何收集或构造？官方摘要实际支持到什么范围？",
+      "argumentSummary": "作者摘要把LCIA联合分析与MAVT的差异列为偏好模型、是否存在决策问题、偏好所有者、偏好处理方式、取得偏好的时点和个人/群体决策区分；与decision conferencing比较时又涉及权重、收集/构造偏好、支持技术、主持者和组织规模。作者据此区分推导单一综合指标与基于偏好构造的决策支持，并认为后者对生物质可持续社会决策重要。摘要没有给出可移植的地方偏好数值，也没有证明任何现有LIME系数在某一地方决策中失效。",
+      "artifacts": [
+        {
+          "id": "art-lime-hayashi2012-abstract",
+          "mediaType": "text/html",
+          "sha256": "9b4ecef29b2e9131a5449e09a22def768f9364a8d72a2485f4b55b4c923bf8a6",
+          "resolvedUrl": "https://www.jstage.jst.go.jp/article/lca/8/4/8_349/_article/-char/en"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-lime-hayashi2012-abstract",
+          "artifactId": "art-lime-hayashi2012-abstract",
+          "locator": "Official English HTML, Abstract: Objective; Results and Discussion; Conclusions",
+          "topics": [
+            "owners of preferences",
+            "timing to derive preferences",
+            "collecting versus constructing preferences",
+            "single integrated indicator versus decision support"
+          ],
+          "limits": [
+            "实际选读仅限官方英语HTML摘要；页面标为FREE ACCESS并列出PDF链接，但三次PDF请求不完整，不能据此声称正文不可获得或已核读。",
+            "摘要只列出比较维度，不足以逐项补出正文对每种方法的详细定义、机制或评价。",
+            "这是概念/方法比较，不是独立偏差实验、2003样本再分析、日本因子校正或某地方决策过程的实证验证。",
+            "不能把作者关于偏好构造作用的结论改写为所有决策必须使用某种程序，或认定既有综合指标在所有决策中无效。",
+            "单独署名不证明独立于LIME研究网络；本摘要没有核验作者的全部合作关系。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "实际读取完整官方英语HTML的文章身份和Abstract三段；SHA-256绑定77430字节捕获。未使用不完整PDF或来源不确定的正文。",
+        "independence": "这是Hayashi的概念比较，单独署名不证明完全独立研究网络；不是新增调查或对LIME因子的直接检验。",
+        "methodologicalScope": "从摘要核准LCIA联合分析与MAVT/decision conferencing的比较轴及作者结论；限于单一综合指标推导与基于偏好构造的决策支持之间的区分。",
+        "limitations": [
+          "实际选读仅限官方英语HTML摘要；页面标为FREE ACCESS并列出PDF链接，但三次PDF请求不完整，不能据此声称正文不可获得或已核读。",
+          "摘要只列出比较维度，不足以逐项补出正文对每种方法的详细定义、机制或评价。",
+          "这是概念/方法比较，不是独立偏差实验、2003样本再分析、日本因子校正或某地方决策过程的实证验证。",
+          "不能把作者关于偏好构造作用的结论改写为所有决策必须使用某种程序，或认定既有综合指标在所有决策中无效。",
+          "单独署名不证明独立于LIME研究网络；本摘要没有核验作者的全部合作关系。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "rights": "©2012 The Institute of Life Cycle Assessment, Japan；官方公开英语摘要可阅读，不推定正文、HTML、表图再分发许可；只发布原创释义、元数据和定位。",
+      "unread": [
+        "完整日文正文、正文表格与论证细节、33条参考文献内容未核读；三个PDF传输不完整。"
+      ],
+      "sourceKeys": [
+        "LIME-HAYASHI2012-ABSTRACT"
+      ]
     }
   ],
   "gaps": [
@@ -9088,6 +9888,32 @@
         "A07",
         "A10"
       ]
+    },
+    {
+      "id": "gap-lime-jp2003-disclosed-chain",
+      "description": "2003年论文没有完整原始选择数据与估计程序；表6至7部分换算不闭合，健康基准的家庭/个人换算步骤也未完整披露。",
+      "nextAction": "保留原表与复算的不同，继续寻正常可用的完整调查材料、Appendix1或作者后续方法说明；未取得前不宣称重估调查或完整复制原模型。",
+      "affectedUnits": [
+        "V5-05",
+        "A07",
+        "A10"
+      ]
+    },
+    {
+      "id": "gap-lime-supporting-publication-versions",
+      "description": "1999 WP13和2007 WP252已登记实际选读；2001/2008期刊仅保留公开摘要及出版身份发现线索，不是独立实证重复。Hayashi2012仅官方英语摘要，详细概念比较的日文正文未核读。",
+      "affectedUnits": [
+        "V5"
+      ],
+      "nextAction": "需要正文细节时，合法取得并固定有效的期刊/日文全文载体，逐版本比较后新增相应选读；不得使用零字节、来源不定或截断载体。"
+    },
+    {
+      "id": "gap-lime-direct-external-validation",
+      "description": "有界检索尚未识别直接重现2003日本LIME样本、税支付工具或四保护对象偏差幅度的独立原始检验；这不是不存在此类研究的证明。",
+      "affectedUnits": [
+        "V5"
+      ],
+      "nextAction": "后续按精确调查和支付工具追踪独立原始检验，分别记录总体、设计、金额和范围；不把瑞典/LSE捐款实验当日本校正公式。"
     }
   ],
   "revisions": [
@@ -10189,6 +11015,92 @@
         "V5-05",
         "V7-04",
         "A07"
+      ],
+      "status": "applied to the manuscript candidate"
+    },
+    {
+      "id": "rev-lime-question",
+      "before": "把综合权重介绍成供计算者查用的常数。",
+      "after": "从问卷中实际展示的政策组合、损害范围、编码单位与家庭年税额推导权重。",
+      "reasoning": "将一个编码增量同实际损害单位区分后，才能解释系数比的大小、符号和全国聚合。",
+      "triggerPassageIds": [
+        "psg-lime-jp2003-questionnaire",
+        "psg-lime-jp2003-model",
+        "psg-lime-jp2003-conversion"
+      ],
+      "affectedUnits": [
+        "V5-05",
+        "A02",
+        "A07"
+      ],
+      "status": "applied to the manuscript candidate"
+    },
+    {
+      "id": "rev-lime-two-forms",
+      "before": "把货币指标与无量纲指标列为并行方法。",
+      "after": "逐项从单位损害金额、年度参照与总额重建权重，显示两种路径在精确份额下的共同分母。",
+      "reasoning": "年度负荷决定总损害基准，数值吻合的环节与仍有差额的环节有不同复现范围。",
+      "triggerPassageIds": [
+        "psg-lime-jp2003-wtp",
+        "psg-lime-jp2003-relative-weights",
+        "psg-lime-jp-calculation-limit"
+      ],
+      "affectedUnits": [
+        "V5-05",
+        "V7-04",
+        "A05"
+      ],
+      "status": "applied to the manuscript candidate"
+    },
+    {
+      "id": "rev-lime-versions",
+      "before": "从论文摘要的 400 人与日文原表的 306 人提出不同样本的可能。",
+      "after": "比较两篇原刊同日同地的分组表与不同的系数、属性水平和权重，保留 400 与 306 的未披露关系。",
+      "reasoning": "同一组发表表格描述不足以重建逐人选择或证明两套估计相同，后版的年份简称也与早期表值有出入。",
+      "triggerPassageIds": [
+        "psg-lime-jp2003-survey",
+        "psg-lime-2004-conjoint-sample",
+        "psg-lime-en-changed-card",
+        "psg-lime-national-lineage-label"
+      ],
+      "affectedUnits": [
+        "V2-05",
+        "V5-05",
+        "A04"
+      ],
+      "status": "applied to the manuscript candidate"
+    },
+    {
+      "id": "rev-lime-transfer",
+      "before": "用不同代际的平均权重说明公众偏好随时间变化。",
+      "after": "固定相同损害向量，分别应用两份原刊的整套相关行，以同分条件说明次序变化；再交代全国研究改变的抽样、模型与参照。",
+      "reasoning": "缺少只改变偏好的实证对照，能够直接检验的是结论对采用哪一组发表权重的依赖。",
+      "triggerPassageIds": [
+        "psg-lime-2004-conjoint-weights",
+        "psg-lime-jp2003-wtp",
+        "psg-lime-2012-conjoint-weights"
+      ],
+      "affectedUnits": [
+        "V5-05",
+        "V7-04",
+        "A07"
+      ],
+      "status": "applied to the manuscript candidate"
+    },
+    {
+      "id": "rev-lime-decisions",
+      "before": "将问卷内显著系数直接用于解释人们会如何支付或作真实选择。",
+      "after": "比较同一人先假设后兑现与另设直接兑现组的实验，再区分通用权重的估计和具体决策中的偏好形成。",
+      "reasoning": "真实支付对照的样本和任务有界，未拒绝差异、预先设定等效界值或估计日本实际税负是不同问题。",
+      "triggerPassageIds": [
+        "psg-lime-cm1999-tests",
+        "psg-lime-hayashi2012-abstract",
+        "psg-lime-js2007-results"
+      ],
+      "affectedUnits": [
+        "V5-05",
+        "V7-04",
+        "A08"
       ],
       "status": "applied to the manuscript candidate"
     }

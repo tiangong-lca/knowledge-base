@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "caseId": "CASE-LIME-VALUATION",
+  "version": "1.0.0",
+  "inputFile": "lime-valuation-v1.json",
+  "reviewedAt": "2026-11-05",
+  "reviewKind": "agent-source-check",
+  "approvedInputSha256": "9ffb5aab14187f8689ff8ee8897e48f60b6a584f52db0d7f56eb08c788409269",
+  "claims": [
+    {
+      "id": "cl-lime-households",
+      "kind": "calculation",
+      "scope": "按印刷系数与全国户数重算初级生产金额",
+      "evidenceIds": [
+        "ev-lime-jp-estimates",
+        "ev-lime-jp-conversion",
+        "ev-lime-jp-weights"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-jp-estimates",
+          "relation": "supports",
+          "rationale": "表 6 提供估计系数。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-conversion",
+          "relation": "supports",
+          "rationale": "换算式提供户数和单位。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-weights",
+          "relation": "supports",
+          "rationale": "表 7 提供每吨报告值。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-primary-ratio",
+        "cl-lime-participants"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "将一户对整体变化的边际金额聚合后换成每吨，并与原表分别记录。",
+      "textTemplate": "作者把每户金额扩展到 {{input.facts.households.value}} 户，再除以损害编码所代表的一亿吨。用未先行舍入的系数比计算，得到每吨约 {{evaluated.reconstruction.primary.reconstructedMagnitude.fixed6}} 日元，表 7 公布的是每吨 {{input.facts.publishedPrimary2003.value}} 日元。户数是全国汇总的乘数；估计系数所依据的 306 人是调查分母。全国户数写得再精确，也不能替东京样本补上全国抽样。"
+    },
+    {
+      "id": "cl-lime-health",
+      "kind": "calculation",
+      "scope": "每人损失日数与每户税额的数量重合及其边界",
+      "evidenceIds": [
+        "ev-lime-jp-estimates",
+        "ev-lime-jp-questionnaire",
+        "ev-lime-jp-conversion",
+        "ev-lime-jp-weights"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-jp-estimates",
+          "relation": "supports",
+          "rationale": "健康及税金系数给出比值。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-questionnaire",
+          "relation": "supports",
+          "rationale": "健康属性在问卷上按损失日显示。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-conversion",
+          "relation": "qualifies",
+          "rationale": "一般换算式及人均说明未把健康行逐步展开。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-weights",
+          "relation": "supports",
+          "rationale": "表 7 的分母是一个 DALY。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-trade",
+        "cl-lime-households"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "检验系数比乘 365 的数值，保留从每人变化到家庭支付的未披露条件。",
+      "textTemplate": "健康一行的“日”已经是按人展示的日数。其系数除以税金系数，量值约为 1,567.74。只乘每年 365 天，便得到约 57.22 万日元，在表列精度下接近每 DALY {{input.facts.publishedHealth2003.value}} 日元。但问卷中的一天是每个人的一天，支付问题却对每户提问。原文没有在这一行逐步展示户数、受影响人数和人均日数怎样折算。数值能够对上这一种算法，聚合关系仍须单独说明。"
+    },
+    {
+      "id": "cl-lime-mismatch",
+      "kind": "calculation",
+      "scope": "社会资产及物种行的数量差额",
+      "evidenceIds": [
+        "ev-lime-jp-estimates",
+        "ev-lime-jp-conversion",
+        "ev-lime-jp-weights",
+        "ev-lime-jp-calculation-limit"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-jp-estimates",
+          "relation": "supports",
+          "rationale": "两项系数及税金系数来自日文表 6。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-conversion",
+          "relation": "supports",
+          "rationale": "社会资产单位及户数来自换算式。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-weights",
+          "relation": "supports",
+          "rationale": "日文表 7 为比较基准。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-calculation-limit",
+          "relation": "supports",
+          "rationale": "按末位最近舍入作界限计算所得结果及假设。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-households"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "例如，固定所列户数并允许系数按所示末位取最近值，社会资产重算区间约为 4,476.94–4,482.49；公布的 4,460 若按三位有效数字舍入，区间约为 4,455–4,465。这个检验没有为未知差额指定原因。"
+      ],
+      "reasoning": "分别把编码单位转为表 7 单位，对照公布值，再测试仅由显示精度造成差额的假设。",
+      "textTemplate": "有的差额不能仅用印刷末位的舍入解释。社会资产按一亿日元损害编码，但日文表 7 报的是每一千日元损害的支付意愿。按系数比乘全国户数、除以一亿再乘一千，得到约 4,479.71 日元，原表为 {{input.facts.publishedSocial2003.value}}。生物多样性按一种计，系数比乘同一户数得到约 7.7058×10¹¹ 日元，原表为 7.68×10¹¹。即使让这两项损害系数、税金系数和公布金额都在所示末位的通常舍入范围内变化，两行各自的区间仍不相交。更早的计算输入和处理细节并未充分披露；下文应用的是作者公布值。"
+    },
+    {
+      "id": "cl-lime-annual",
+      "kind": "calculation",
+      "scope": "年度参照与每单位损害金额的乘积",
+      "evidenceIds": [
+        "ev-lime-jp-normalization",
+        "ev-lime-jp-weights",
+        "ev-lime-jp-relative-weights"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-jp-normalization",
+          "relation": "supports",
+          "rationale": "表 3 给出健康与社会资产参照及原单位。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-weights",
+          "relation": "supports",
+          "rationale": "表 7 给出每 DALY 与每千日元损害的金额。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-relative-weights",
+          "relation": "supports",
+          "rationale": "表 8 将年度损害换成货币量再比较。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-health",
+        "cl-lime-mismatch"
+      ],
+      "conceptIds": [
+        "cn-lime-annual"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "将表 3 社会资产的百万日元单位转为表 7 的千日元单位，然后相乘。",
+      "textTemplate": "表 7 中每一行的钱都有自己的分母。要回答“日本一年环境负荷所对应的四项损害中，健康占多少”，必须先把各行乘回各自的年度损害量。例如，143 万 DALY 乘每 DALY 57.2 万日元，约为 8.18×10¹¹ 日元。社会资产列的 54,400 是以百万日元计的损失；换成一千日元一份，共有 {{evaluated.annualReference.socialNormalization1000JPYBlocks.exact}} 份，再乘每份 4,460 日元，约为 2.43×10¹¹ 日元。只有在都换为同一货币量后，才能取它们的合计作分母。"
+    },
+    {
+      "id": "cl-lime-shares",
+      "kind": "calculation",
+      "scope": "年度四项货币量的构成比例",
+      "evidenceIds": [
+        "ev-lime-jp-normalization",
+        "ev-lime-jp-weights",
+        "ev-lime-jp-relative-weights"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-jp-normalization",
+          "relation": "supports",
+          "rationale": "四项年度参照按各自单位列于表 3。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-weights",
+          "relation": "supports",
+          "rationale": "表 7 提供已公布的单位权重。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-relative-weights",
+          "relation": "supports",
+          "rationale": "表 8 报告年度对比的无量纲系数。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-annual"
+      ],
+      "conceptIds": [
+        "cn-lime-relative"
+      ],
+      "mappingIds": [
+        "map-lime-wtp-share"
+      ],
+      "caveats": [],
+      "reasoning": "以同一年度四项货币金额总和为分母，依次核对表 8。",
+      "textTemplate": "同样计算初级生产与物种损失，分别约为 2.74×10¹¹ 和 3.84×10¹¹ 日元。用各项未先行舍入的乘积除以四项乘积之和，健康所占约为 {{evaluated.annualReference.rows.health.shareOfUnroundedAmounts.fixed6}}，按两位小数写为 0.48。另三项分别为 0.14、0.16 和 0.22。0.48 同时包含对健康的估值和所取年度参照中的健康损害规模。它并不等于 48% 的人选择健康，也不能解释为所有产品的总损害都应有 48% 归给健康。"
+    },
+    {
+      "id": "cl-lime-service",
+      "kind": "proposal",
+      "scope": "固定交付服务与两项虚构的终点损害",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-lime-purpose",
+        "cl-lime-english"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "共同固定损害的计量与活动条件，将比较限定为两套评价权重的作用。",
+      "textTemplate": "假设有两条路线，都在同一交货日向日本同一工厂交付 {{input.service.amount}} 公吨同等级产品。为单独研究最后的估值步骤，约定前面已经用同一损害口径算得：甲造成人体健康损失 {{input.illustration.A.health}} DALY、初级生产损失 {{input.illustration.A.primaryProduction}} 干吨；乙分别为 {{input.illustration.B.health}} DALY 和 {{input.illustration.B.primaryProduction}} 干吨。其余各项相同。这四个损害数和服务等效条件是本例的设定，实际建模还需建立排放到这些损害的关系。"
+    },
+    {
+      "id": "cl-lime-japan-route",
+      "kind": "calculation",
+      "scope": "日文表的两项差异损害估值",
+      "evidenceIds": [
+        "ev-lime-jp-weights"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-jp-weights",
+          "relation": "supports",
+          "rationale": "两行使用同一份日文表 7 公布值。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-service"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "分别按损害单位乘以相应的单位估值，同服务比较。",
+      "textTemplate": "先把两行损害一起交给 2003 年日文表 7。甲的健康一项是 0.001 × 572,000 = {{evaluated.illustration.published2003.A.healthContribution.exact}} 日元，初级生产一项是 100 × 17.8 = {{evaluated.illustration.published2003.A.primaryProductionContribution.exact}} 日元，合为 {{evaluated.illustration.published2003.A.total.exact}} 日元。乙的两项分别为 2,288 和 178 日元，合为 {{evaluated.illustration.published2003.B.total.exact}} 日元。这两项合计，乙比甲高 114 日元。相同的其他损害无论增加多少共同金额，都不改变这个分差。"
+    },
+    {
+      "id": "cl-lime-break-even",
+      "kind": "calculation",
+      "scope": "固定损害向量的相对估值分界",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-lime-japan-route"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "在 p 为正的两套权重下将差额设为零，分别判断两侧的次序。",
+      "textTemplate": "哪种路线较低，其实可以在查第二张表之前判定条件。从甲换到乙，多损失 0.003 DALY，同时少损失 90 干吨初级生产。设一个 DALY 的权重为 h 日元，一干吨初级生产损失的权重为 p 日元，两项分差就是 0.003h − 90p。两者相等需要 h/p = {{evaluated.illustration.tieHealthToPrimaryFactorRatio.exact}} 干吨/DALY。日文表的比值约为 32,135，略高于分界，因此少损失健康时间的甲占优。分界是这两条路线怎样取舍的结果，换一组损害量，也会换一个分界。"
+    },
+    {
+      "id": "cl-lime-english-route",
+      "kind": "calculation",
+      "scope": "用英文表的两行同口径因子重新排序",
+      "evidenceIds": [
+        "ev-lime-2004-conjoint-health-wf",
+        "ev-lime-2004-conjoint-primary-wf"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-2004-conjoint-health-wf",
+          "relation": "supports",
+          "rationale": "英文原件中的健康金额及单位。"
+        },
+        {
+          "evidenceId": "ev-lime-2004-conjoint-primary-wf",
+          "relation": "supports",
+          "rationale": "英文原件中的初级生产金额及单位。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-service",
+        "cl-lime-break-even",
+        "cl-lime-different-card"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "两个货币分数分别属于各自发表所用的计值条件。本例没有对价格年、货币购买力或方法代际作统一校准。"
+      ],
+      "reasoning": "在固定损害向量上同时采用 2004 年两行公布值，再比较该组权重的相对比值。",
+      "textTemplate": "现在把同样的两行损害一起交给 2004 年英文表 7。甲的健康与初级生产贡献分别为 9,700 和 2,020,000 日元，合计 {{evaluated.illustration.published2004.A.total.exact}} 日元；乙的贡献为 38,800 和 202,000 日元，合计 {{evaluated.illustration.published2004.B.total.exact}} 日元。这套表的 h/p 约为 480 干吨/DALY，落在分界的另一侧，因而乙较低。两轮比较都用了同一对虚构损害量，每一轮内部都只用一份表。由此能辨认结论对表的选择有多敏感，但这是两份发表值在同一算例中的对照。两份论文的样本表都指向 2002 年 1 月，不能把这次换位读成一次跨年的偏好测量。"
+    }
+  ]
+}

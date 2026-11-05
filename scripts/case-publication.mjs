@@ -11,6 +11,7 @@ import { historicalFactKeys, validateHistoricalContainerCase, evaluateHistorical
 import { marketResponseInputShape, validateMarketResponseCase, evaluateMarketResponseCase, validateMarketResponseFacts } from './market-response.mjs';
 import { hybridOverlapInputShape, validateHybridOverlapCase, evaluateHybridOverlapCase, validateHybridOverlapServiceLink } from './hybrid-overlap.mjs';
 import { ecologicalScarcityInputShape, validateEcologicalScarcityCase, evaluateEcologicalScarcityCase, validateEcologicalScarcityFacts } from './ecological-scarcity.mjs';
+import { limeValuationInputShape, validateLimeValuationCase, evaluateLimeValuationCase, validateLimeValuationFacts } from './lime-valuation.mjs';
 
 // Every nested object has an explicit schema. Unknown fields never enter public
 // downloads or the approved-input hash, including capture/private metadata.
@@ -89,6 +90,8 @@ const pedigreeInputShape = {
 // Closed model registry: a case identity selects its projection, evaluator and
 // numeric-source policy together. An input flag cannot disable wall fact checks.
 const caseAdapters = new Map([
+  ['CASE-LIME-VALUATION', { shape: limeValuationInputShape, validate: validateLimeValuationCase,
+    context: input => ({ evaluated: evaluateLimeValuationCase(input) }), validateFacts: validateLimeValuationFacts }],
   ['CASE-ECOLOGICAL-SCARCITY', { shape: ecologicalScarcityInputShape, validate: validateEcologicalScarcityCase,
     context: input => ({ evaluated: evaluateEcologicalScarcityCase(input) }), validateFacts: validateEcologicalScarcityFacts }],
   ['CASE-HYBRID-OVERLAP', { shape: hybridOverlapInputShape, validate: validateHybridOverlapCase,
