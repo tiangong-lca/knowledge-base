@@ -13873,6 +13873,1615 @@
         "完整数据清单、所有映射、DQR原始计算和企业数据未逐项审计。"
       ],
       "sourceKeys": []
+    },
+    {
+      "id": "rd-kb46-humbert2011",
+      "workId": "work-kb46-humbert2011",
+      "title": "Intake Fraction for Particulate Matter: Recommendations for Life Cycle Impact Assessment",
+      "version": "EST 45:4808–4816, 2011 Version of Record；同一作者载体后接 19 页 Supporting Information，总计 28 页。",
+      "url": "https://depts.washington.edu/airqual/Marshall_26.pdf",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "排放的身份、形成与暴露怎样进入颗粒物表征，哪些关系属于模型假设，哪些证据仍不足以支持实际健康变化？",
+      "argumentSummary": "作者按初级颗粒与三类前体、源高和地域原型整理吸入比例。数值来自协调后的模型与文献和专家判断；疾病及损害部分在其框架图中另属范围之外。",
+      "artifacts": [
+        {
+          "id": "art-kb46-humbert2011-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "d01e4a56255d70130cd91d4121389dd4cce117dc6fbe91d94d7b2adead12eee1",
+          "resolvedUrl": "https://depts.washington.edu/airqual/Marshall_26.pdf",
+          "pageCount": 28
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb46-humbert2011-framework",
+          "artifactId": "art-kb46-humbert2011-pdf",
+          "locator": "主文 p4809，图1与 §§2.1–2.3，式(1)–(2)",
+          "pdfIndices": [
+            1
+          ],
+          "printedPages": "4809",
+          "topics": [
+            "particulate characterization"
+          ],
+          "limits": [
+            "吸入质量不是肺沉积量或已吸收剂量。",
+            "式(1)的线性无阈值关系有文中说明的浓度和研究范围；不直接升级为当前普遍健康结论。",
+            "原式(2)下的呼吸量单位印成 m⁻³；本文其他位置和物理定义为体积/人/时间，不把该排印当作不同物理量。"
+          ]
+        },
+        {
+          "id": "psg-kb46-humbert2011-intake-table",
+          "artifactId": "art-kb46-humbert2011-pdf",
+          "locator": "主文 p4810，表3及脚注 a–b",
+          "pdfIndices": [
+            2
+          ],
+          "printedPages": "4810",
+          "topics": [
+            "particulate characterization"
+          ],
+          "limits": [
+            "此处数值是历史模型的推荐原型。",
+            "前体排放的分母仍是前体质量，不是吸入 SO2/NOx/NH3 的健康因子。"
+          ]
+        },
+        {
+          "id": "psg-kb46-humbert2011-height-weights",
+          "artifactId": "art-kb46-humbert2011-pdf",
+          "locator": "Supporting Information 表 S2及脚注，合并载体物理页14（SI第5页）；主文 p4813式(7)",
+          "pdfIndices": [
+            13,
+            5
+          ],
+          "printedPages": "SI第5页；4813",
+          "topics": [
+            "particulate characterization"
+          ],
+          "limits": [
+            "来源份额不是全球每一种产品的固定分布。",
+            "原始显示百分比与因子均有有限精度；加权重算不是回到未舍入底层模型。"
+          ]
+        },
+        {
+          "id": "psg-kb46-humbert2011-model-lineage",
+          "artifactId": "art-kb46-humbert2011-pdf",
+          "locator": "主文 pp4811–4813，§§2.5–2.6及式(5)–(7)；SI物理页22–23，表S6–S7",
+          "pdfIndices": [
+            3,
+            4,
+            5,
+            21,
+            22
+          ],
+          "printedPages": "4811–4813；SI第13–14页",
+          "topics": [
+            "particulate characterization"
+          ],
+          "limits": [
+            "共同上游不构成独立验证。",
+            "不同体系的“城市”边界和源高定义不能仅凭名称互换。"
+          ]
+        },
+        {
+          "id": "psg-kb46-humbert2011-limitations",
+          "artifactId": "art-kb46-humbert2011-pdf",
+          "locator": "主文 p4814，§§3.1–3.2；SI物理页23–24，§4",
+          "pdfIndices": [
+            6,
+            22,
+            23
+          ],
+          "printedPages": "4814；SI第14–15页",
+          "topics": [
+            "particulate characterization"
+          ],
+          "limits": [
+            "不把模型之间的一致或因子区间当作独立观察验证。",
+            "没有重新估计原文的不确定性区间。"
+          ]
+        },
+        {
+          "id": "psg-kb46-humbert2011-supplement-regressions",
+          "artifactId": "art-kb46-humbert2011-pdf",
+          "locator": "SI物理页15–17，§3.1、式(S7)–(S18)、表S3",
+          "pdfIndices": [
+            14,
+            15,
+            16
+          ],
+          "printedPages": "SI第6–8页",
+          "topics": [
+            "particulate characterization"
+          ],
+          "limits": [
+            "主代理按显示的S17–S18与S3复算得到城市/乡村SO2为0.9848332/0.7934602 ppm，NOx为0.20962734/0.18668364 ppm；与主表部分值未完全闭合，原因未定，不替换原表值。",
+            "这些未闭合重算不用于公开主要教学结果；主要历史关系直接使用Gronlund明确采用的Humbert表3。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "固定原件及所列位置的选段阅读；关键方程、表格与图示分别视觉核对。",
+        "methodologicalScope": "颗粒物形成与吸入路径的具名历史方法；不是大气模型或健康效应的独立实证验证。",
+        "independence": "UNEP/SETAC 工作组的文献协调与推荐；USEtox、RiskPoll、Greco 和 Van Zelm 路径共享若干模型及上游数据，不能按载体或作者数当作独立测量。",
+        "limitations": [
+          "地域和源高原型是当时可用信息下的代表性模型；不是具名地点的实测暴露。",
+          "部分前体值基于其他原型推导，二次有机颗粒和高空排放没有纳入。",
+          "按已显示的补充方程 S17–S18 及表 S3 重算未完全回到主表的部分前体值；没有静默修复或宣称完整原生复现。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "rights": "华盛顿大学作者页面公开提供的 ACS 版权原件及补充材料。未核准开放再分发许可；只发表原创释义、必要事实及定位，不重传原文、完整表格或图示。",
+      "unread": [
+        "主文 pp4808–4814 及补充物理页14–17、22–24为本次核心选段；其余表格、参考文献和底层模型未全部细读或运行。"
+      ],
+      "sourceKeys": []
+    },
+    {
+      "id": "rd-kb46-fantke2017",
+      "workId": "work-kb46-fantke2017",
+      "title": "Characterizing Aggregated Exposure to Primary Particulate Matter: Recommended Intake Fractions for Indoor and Outdoor Sources",
+      "version": "EST 51:9089–9100, 2017 Version of Record；DTU载体前附1页封面，本次封面生成2026-11-05不改变论文版本。",
+      "url": "https://backend.orbit.dtu.dk/ws/files/134634584/acs.est.7b02589.pdf",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "排放的身份、形成与暴露怎样进入颗粒物表征，哪些关系属于模型假设，哪些证据仍不足以支持实际健康变化？",
+      "argumentSummary": "四个相连的室内外/城乡空气区室将初级颗粒的排放与多处吸入联系起来。该论文使排放地点和暴露地点明确分离，其城市地面排放、室内情景和前体覆盖各有边界。",
+      "artifacts": [
+        {
+          "id": "art-kb46-fantke2017-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "c20f698fc12daec9ca2902045e8d190fad2eba751339b8505af76afd3e3f45db",
+          "resolvedUrl": "https://backend.orbit.dtu.dk/ws/files/134634584/acs.est.7b02589.pdf",
+          "pageCount": 13
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb46-fantke2017-matrix",
+          "artifactId": "art-kb46-fantke2017-pdf",
+          "locator": "主文 pp9090–9093，图1、表1、式(1)，DTU物理页3–6",
+          "pdfIndices": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "printedPages": "9090–9093",
+          "topics": [
+            "particulate characterization"
+          ],
+          "limits": [
+            "本段解释具名模型的结构，不声称取得/运行了附带宏工作簿。",
+            "FF含停留时间，XF含时间倒数；不是仅按矩阵名称推断其他模型单位。"
+          ]
+        },
+        {
+          "id": "psg-kb46-fantke2017-compartments",
+          "artifactId": "art-kb46-fantke2017-pdf",
+          "locator": "主文 p9093的室内外耦合说明与p9096图3、表3，物理页6、9",
+          "pdfIndices": [
+            5,
+            8
+          ],
+          "printedPages": "9093；9096",
+          "topics": [
+            "particulate characterization"
+          ],
+          "limits": [
+            "室内外暴露份额是模型结果，不代表所有建筑的实际个人暴露。",
+            "排放时长、实际占用和室内共存源未在本书重建。"
+          ]
+        },
+        {
+          "id": "psg-kb46-fantke2017-archetypes",
+          "artifactId": "art-kb46-fantke2017-pdf",
+          "locator": "主文 pp9094–9095，式(2)–(3)、图2、表2，物理页7–8",
+          "pdfIndices": [
+            6,
+            7
+          ],
+          "printedPages": "9094–9095",
+          "topics": [
+            "particulate characterization"
+          ],
+          "limits": [
+            "不同层次的原型平均不直接代表特定单一排放源。",
+            "没有重新拟合城市人口或稀释关系。"
+          ]
+        },
+        {
+          "id": "psg-kb46-fantke2017-health-join",
+          "artifactId": "art-kb46-fantke2017-pdf",
+          "locator": "主文 p9097适用性与 Linking to Exposure–Response，物理页10",
+          "pdfIndices": [
+            9
+          ],
+          "printedPages": "9097",
+          "topics": [
+            "particulate characterization"
+          ],
+          "limits": [
+            "原文的连接条件是该框架的条件；本书没有为新旧模型生成混合因子。"
+          ]
+        },
+        {
+          "id": "psg-kb46-fantke2017-coverage",
+          "artifactId": "art-kb46-fantke2017-pdf",
+          "locator": "主文 pp9095、9097–9098的源高、限制和未来研究，物理页8、10–11",
+          "pdfIndices": [
+            7,
+            9,
+            10
+          ],
+          "printedPages": "9095；9097–9098",
+          "topics": [
+            "particulate characterization"
+          ],
+          "limits": [
+            "表4界面文字中可选源高不等于已经核验所有高度的完整原始因子。",
+            "未取得的补充模型不能由主文描述代替运行证明。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "固定原件及所列位置的选段阅读；关键方程、表格与图示分别视觉核对。",
+        "methodologicalScope": "颗粒物形成与吸入路径的具名历史方法；不是大气模型或健康效应的独立实证验证。",
+        "independence": "继承Humbert2011原型与Apte城市资料，并与后续Fantke健康模型共享作者和数据；模型组合不是独立暴露实测。",
+        "limitations": [
+          "当前主文处理初级PM2.5和地面城市排放；次生形成和高架源的完整发展不由这篇论文提供。",
+          "补充PDF和宏工作簿在本轮公开路线返回403/521，内容与原生运行未核验。",
+          "不同论文的呼吸、室内渗透和暴露定义必须一致，不能因同为kg吸入而随意相乘。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "rights": "原论文标明ACS AuthorChoice非商业复制/改编条件；DTU封面列一般研究使用权利。此处仅发表原创释义和定位，不重传原文、完整表格或附件。",
+      "unread": [
+        "选读主文pp9089–9098的框架、表格和范围；参考文献及全部数据行未逐项细读，补充材料和原生模型未取得/执行。"
+      ],
+      "sourceKeys": []
+    },
+    {
+      "id": "rd-kb46-gronlund2015",
+      "workId": "work-kb46-gronlund2015",
+      "title": "Characterizing the burden of disease of particulate matter for life cycle impact assessment",
+      "version": "HHS Public Access作者稿27页，首页注明终版 Air Quality, Atmosphere & Health 8(1):29–46（2015）。定位用作者稿页码。",
+      "url": "https://stacks.cdc.gov/view/cdc/42041/cdc_42041_DS1.pdf",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "历史效应因子怎样把浓度、吸入量、疾病及年龄结构接入表征？",
+      "argumentSummary": "研究把ACS年龄和死因风险同匹配的历史美国基线与GBD2010高收入北美严重度结合，按WHO世界标准人口年龄加权得到78 DALY/kg吸入PM2.5。用Humbert摄入比例将其换算为每千克不同排放流的表征因子。",
+      "artifacts": [
+        {
+          "id": "art-kb46-gronlund2015-pdf",
+          "sha256": "1c02aa49f2b0a1eed8a49d7f5fae0c1f75ad09cc7062cff3da5c914c0b214478",
+          "resolvedUrl": "https://stacks.cdc.gov/view/cdc/42041/cdc_42041_DS1.pdf",
+          "mediaType": "application/pdf",
+          "pageCount": 27
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb46-gronlund2015-dose-response",
+          "artifactId": "art-kb46-gronlund2015-pdf",
+          "locator": "作者稿第4页，§2.1式(1)及下文的吸入换算",
+          "topics": [
+            "历史基线",
+            "剂量响应",
+            "吸入量"
+          ],
+          "limits": [
+            "同年龄及死因的风险和历史美国基线属于所选模型输入。"
+          ],
+          "pdfIndices": [
+            3
+          ],
+          "printedPages": "作者稿4"
+        },
+        {
+          "id": "psg-kb46-gronlund2015-severity-coupling",
+          "artifactId": "art-kb46-gronlund2015-pdf",
+          "locator": "作者稿第4–5页，§§2.2–2.3",
+          "topics": [
+            "严重度",
+            "年龄权重",
+            "摄入比例连接"
+          ],
+          "limits": [
+            "疾病总体的DALY/死亡之比被用作PM相关疾病的严重度代理。"
+          ],
+          "pdfIndices": [
+            3,
+            4
+          ],
+          "printedPages": "作者稿4,5"
+        },
+        {
+          "id": "psg-kb46-gronlund2015-effect-default",
+          "artifactId": "art-kb46-gronlund2015-pdf",
+          "locator": "作者稿第7页§§3.2–3.3、第25页表1合并列与脚注d、e",
+          "topics": [
+            "WHO年龄权重",
+            "吸入分母",
+            "默认健康效应"
+          ],
+          "limits": [
+            "使用作者直接报告的合计；单独显示和舍入的4.2与19不足以重构合计。"
+          ],
+          "pdfIndices": [
+            6,
+            24
+          ],
+          "printedPages": "作者稿7,25"
+        },
+        {
+          "id": "psg-kb46-gronlund2015-characterization-table",
+          "artifactId": "art-kb46-gronlund2015-pdf",
+          "locator": "作者稿第26页表2，初级PM2.5近地行及SO2、NOx和NH3前体各行",
+          "topics": [
+            "排放物身份",
+            "排放单位",
+            "表征因子"
+          ],
+          "limits": [
+            "分母按各行所列排放流解释；显示精度不代表独立测量或原始未舍入模型结果。"
+          ],
+          "pdfIndices": [
+            25
+          ],
+          "printedPages": "作者稿26"
+        },
+        {
+          "id": "psg-kb46-gronlund2015-burden-comparison",
+          "artifactId": "art-kb46-gronlund2015-pdf",
+          "locator": "作者稿第5–6页§2.4、第8–9页§3.4及第27页表3",
+          "topics": [
+            "暴露基准",
+            "年度疾病负担",
+            "源与受体"
+          ],
+          "limits": [
+            "图表和正文比较的是两条模型估算路径；相同健康因子下实质是摄入比较，县域排放受体可在县外。"
+          ],
+          "pdfIndices": [
+            4,
+            5,
+            7,
+            8,
+            26
+          ],
+          "printedPages": "作者稿5,6,8,9,27"
+        },
+        {
+          "id": "psg-kb46-gronlund2015-acs-bridge",
+          "artifactId": "art-kb46-gronlund2015-pdf",
+          "locator": "作者稿第15页，附录B表4",
+          "topics": [
+            "年龄分组",
+            "ACS风险来源"
+          ],
+          "limits": [
+            "Pope图4用于标识风险分组与原证据；所示精确年龄组数字以Grondlund表4为载体。"
+          ],
+          "pdfIndices": [
+            14
+          ],
+          "printedPages": "作者稿15"
+        },
+        {
+          "id": "psg-kb46-gronlund2015-morbidity-limit",
+          "artifactId": "art-kb46-gronlund2015-pdf",
+          "locator": "作者稿第9页讨论、第18页附录C表8前段、第25页表1",
+          "topics": [
+            "YLD口径",
+            "显示精度"
+          ],
+          "limits": [
+            "不以推测修订附录C中的比较，不影响选用直接报告的78 DALY/kg。"
+          ],
+          "pdfIndices": [
+            8,
+            17,
+            24
+          ],
+          "printedPages": "作者稿9,18,25"
+        }
+      ],
+      "appraisal": {
+        "basis": "核对固定载体、列出的实质选段和关键页图像；工作簿核对原始值与公式。",
+        "methodologicalScope": "历史健康效应与表征方法的选段核读；覆盖原文选择、汇总和已发布因子的算术。",
+        "independence": "ACS CPS-II、Humbert摄入比例和GBD2010严重度是分别输入的来源；表征因子继承这些证据及其限制。",
+        "limitations": [
+          "WHO年龄加权不更换原风险队列或疾病严重度来源。",
+          "表1中78−64对应14 YLD/kg且第9页正文一致；附录C将替代估计41与表1的4并列，比较量的口径未闭合。",
+          "报告因子与病例归因或干预效果的实证核查属于不同任务。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "rights": "美国CDC Stacks公开作者稿，所查载体未建立原文再分发许可。",
+      "unread": [
+        "其余附录、全部城市明细、底层队列和两条全国估算路径的原始数据与计算未逐项复核。"
+      ],
+      "sourceKeys": []
+    },
+    {
+      "id": "rd-kb46-fantke2019",
+      "workId": "work-kb46-fantke2019",
+      "title": "Global Effect Factors for Exposure to Fine Particulate Matter",
+      "version": "Environ. Sci. Technol. 53(12):6855–6868，华盛顿大学公开原刊PDF；另有原发XLSX v1.0，2019-03-25构建。",
+      "url": "https://depts.washington.edu/airqual/Marshall_112.pdf",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "工作点、最低风险参照、区域死亡率和吸入量分别进入哪个计算？",
+      "argumentSummary": "论文使用IER，将疾病和年龄风险与区域健康数据、严重度及吸入量连接。边际因子对应工作点附近的变化，平均因子对应工作点与理论最低风险暴露之间的区间。原发支持文件的汇总列后来由正式勘误更正。",
+      "artifacts": [
+        {
+          "id": "art-kb46-fantke2019-pdf",
+          "sha256": "44d96a5387dce69fca495cb675fdb95a942ae1a527720850f6828e870f32f788",
+          "resolvedUrl": "https://depts.washington.edu/airqual/Marshall_112.pdf",
+          "mediaType": "application/pdf",
+          "pageCount": 14
+        },
+        {
+          "id": "art-kb46-fantke2019-xlsx-v10",
+          "sha256": "1f27e630d1479b4a87c04c8dceb5dee8c8f158c029995443bfc3a50b7b9b4a4e",
+          "resolvedUrl": "https://pmc-oa-opendata.s3.amazonaws.com/PMC6613786.1/es9b01800_si_001.xlsx",
+          "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb46-fantke2019-ier-response",
+          "artifactId": "art-kb46-fantke2019-pdf",
+          "locator": "第6857–6858页，§§2.1–2.2、式(1)及方法局限",
+          "topics": [
+            "IER",
+            "理论最低风险参照",
+            "毒性同质假设"
+          ],
+          "limits": [
+            "理论参照为函数设定，不证明实际安全阈值。高低浓度外推及不同来源的毒性存在结构不确定性。"
+          ],
+          "pdfIndices": [
+            2,
+            3
+          ],
+          "printedPages": "6857,6858"
+        },
+        {
+          "id": "psg-kb46-fantke2019-inputs",
+          "artifactId": "art-kb46-fantke2019-pdf",
+          "locator": "第6858–6859页，§§2.3.1–2.3.6",
+          "topics": [
+            "2015健康资料",
+            "年度暴露",
+            "严重度",
+            "名义呼吸率"
+          ],
+          "limits": [
+            "模型使用人口加权室外浓度、区域健康资料及共同呼吸假设；城内分布和实际个体剂量不由这些值给出。"
+          ],
+          "pdfIndices": [
+            3,
+            4
+          ],
+          "printedPages": "6858,6859"
+        },
+        {
+          "id": "psg-kb46-fantke2019-slope",
+          "artifactId": "art-kb46-fantke2019-pdf",
+          "locator": "第6859–6860页，§2.4、式(2a)和(2b)及续页解释",
+          "topics": [
+            "城市工作点",
+            "理论参照",
+            "边际斜率",
+            "平均斜率"
+          ],
+          "limits": [
+            "边际与平均因子由不同区间决定。论文分母乘以10⁹ μg/kg的印刷方向不能用于把吸入量换成kg；工作簿计算还有基线和步长差别。"
+          ],
+          "pdfIndices": [
+            4,
+            5
+          ],
+          "printedPages": "6859,6860"
+        },
+        {
+          "id": "psg-kb46-fantke2019-global-table",
+          "artifactId": "art-kb46-fantke2019-pdf",
+          "locator": "第6859页表1及第6860页§3.1",
+          "topics": [
+            "模型估计",
+            "全球汇总",
+            "人口加权"
+          ],
+          "limits": [
+            "人口权重是排放权重的代理；结果对应特定时期、地理定义、模型及健康资料。"
+          ],
+          "pdfIndices": [
+            4,
+            5
+          ],
+          "printedPages": "6859,6860"
+        },
+        {
+          "id": "psg-kb46-fantke2019-comparison",
+          "artifactId": "art-kb46-fantke2019-pdf",
+          "locator": "第6863–6866页图4、§3.2及§§4.1–4.3",
+          "topics": [
+            "模型选择",
+            "局地比较",
+            "非线性与不确定性"
+          ],
+          "limits": [
+            "作者的斜率选择建议需和比较问题、背景及变化区间一起使用。回归拟合优度不说明经验有效性。"
+          ],
+          "pdfIndices": [
+            8,
+            9,
+            10,
+            11
+          ],
+          "printedPages": "6863,6864,6865,6866"
+        },
+        {
+          "id": "psg-kb46-fantke2019-original-supplement",
+          "artifactId": "art-kb46-fantke2019-xlsx-v10",
+          "locator": "原发XLSX v1.0的info!C8:C9、C17:C18，effect factors!G1:AC2、Q796/AC796，MODEL!LP1009:PV1018",
+          "topics": [
+            "原发版本",
+            "列标签",
+            "勘误"
+          ],
+          "limits": [
+            "保留发布原状；效应表标签采用正式勘误后的口径。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "核对固定载体、列出的实质选段和关键页图像；工作簿核对原始值与公式。",
+        "methodologicalScope": "核对该历史模型的浓度反应、健康统计和边际或平均效应；结构检查不验证因果、外推或原生模型的全部结果。",
+        "independence": "论文使用GBD2015时代的IER并复用相应健康统计。与GEMM的比较包含重叠的室外流行病学输入；附件和文章属于同一作品。",
+        "limitations": [
+          "论文的质量转换因子按印刷位置直接应用时量纲不符，公开工作表在摄入分母使用10⁻⁹ kg/μg。",
+          "论文固定区域推算的非PM死亡率，工作表以所选地区总体死亡乘两个点的归因分数。由此保持模型定义和发布汇总的区别。",
+          "形式参数区间不覆盖毒性相等假设、未研究人群转移或因果外推的全部不确定性。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "rights": "原刊PDF声明CC BY。原发支持工作簿可公开获取，未核实其独立再分发许可。",
+      "unread": [
+        "其余结果、各地详细输入和原生求解未逐项复核；未重拟合GBD模型。"
+      ],
+      "sourceKeys": []
+    },
+    {
+      "id": "rd-kb46-fantke2019-correction",
+      "workId": "work-kb46-fantke2019-correction",
+      "title": "Correction to “Global Effect Factors for Exposure to Fine Particulate Matter”",
+      "version": "Environ. Sci. Technol. 53:10534，2019-08-14正式勘误；所附XLSX v1.1，2019-07-24构建。",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC8154349.1/PMC8154349.1.pdf",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "勘误明确更正了哪个结果对象？修订附件的模型公式与已发布汇总是否闭合？",
+      "argumentSummary": "勘误将汇总表F:P明确为平均、R:AB为边际。所选日内瓦行保留已发布汇总值。修订说明、MODEL公式和日内瓦汇总的若干对应关系仍未闭合。",
+      "artifacts": [
+        {
+          "id": "art-kb46-fantke2019-correction-pdf",
+          "sha256": "2e1a04514296de07b37e732ba64622ac8b478101c620c04878f04af5f7a22c15",
+          "resolvedUrl": "https://pmc-oa-opendata.s3.amazonaws.com/PMC8154349.1/PMC8154349.1.pdf",
+          "mediaType": "application/pdf",
+          "pageCount": 1
+        },
+        {
+          "id": "art-kb46-fantke2019-correction-xlsx-v11",
+          "sha256": "8e37b149fd4033dce38e35d8dd85f36d72366f6dd5c4987462bf321c46176bfa",
+          "resolvedUrl": "https://pmc-oa-opendata.s3.amazonaws.com/PMC8154349.1/es9b04486_si_001.xlsx",
+          "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb46-fantke2019-correction-columns",
+          "artifactId": "art-kb46-fantke2019-correction-pdf",
+          "locator": "第10534页正文第一段与Supporting Information",
+          "topics": [
+            "更正范围",
+            "汇总列"
+          ],
+          "limits": [
+            "勘误明确指向effect factors表；其陈述不解决工作簿说明与公式的另行差异。"
+          ],
+          "pdfIndices": [
+            0
+          ],
+          "printedPages": "10534"
+        },
+        {
+          "id": "psg-kb46-fantke2019-correction-published-row",
+          "artifactId": "art-kb46-fantke2019-correction-xlsx-v11",
+          "locator": "修订XLSX v1.1，effect factors!F1:AB2、B796:D796、P796、AB796；Input data!A3056:F3056",
+          "topics": [
+            "日内瓦",
+            "已发布均值",
+            "表头身份"
+          ],
+          "limits": [
+            "这是发布的汇总行；与可操作模型重建不闭合。"
+          ]
+        },
+        {
+          "id": "psg-kb46-fantke2019-correction-model-discrepancy",
+          "artifactId": "art-kb46-fantke2019-correction-xlsx-v11",
+          "locator": "修订XLSX v1.1，info!C8:C9、C17；MODEL!DG8:PV1007及LP/PV两列，Input data!E2、E3056:AH3056和BL3056:CL3056；与effect factors!P796/AB796对照",
+          "topics": [
+            "操作模型",
+            "0.1 μg/m³增量",
+            "汇总不闭合"
+          ],
+          "limits": [
+            "日内瓦操作模型重算只检查工作簿结构与缓存；不据此修改发布结果，也不推断其他城市的误差。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "核对固定载体、列出的实质选段和关键页图像；工作簿核对原始值与公式。",
+        "methodologicalScope": "核对正式勘误、两版附件的选定单元格及修订MODEL的日内瓦参数和结果。",
+        "independence": "论文使用GBD2015时代的IER并复用相应健康统计。与GEMM的比较包含重叠的室外流行病学输入；附件和文章属于同一作品。",
+        "limitations": [
+          "修订版info倒置了MODEL的LP/PV说明，并仍指向修订版移除的1009:1018行。",
+          "默认日内瓦MODEL两列的千组均值与同城发布汇总不同；无法由当前可见操作模型重生成汇总。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "rights": "勘误PDF声明CC BY；修订支持工作簿可公开取得，未核实独立再分发许可。",
+      "unread": [
+        "其他城市和全部模型输入未复核；汇总列原生生成与GBD拟合未复现。"
+      ],
+      "sourceKeys": []
+    },
+    {
+      "id": "rd-kb46-burnett2014",
+      "workId": "work-kb46-burnett2014",
+      "title": "An Integrated Risk Function for Estimating the Global Burden of Disease Attributable to Ambient Fine Particulate Matter Exposure",
+      "version": "Environ. Health Perspect. 122(4):397–403，PMC3984213.1原刊PDF，含附加访问页。",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC3984213.1/PMC3984213.1.pdf",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "IER为何整合不同来源的吸入暴露，公式的参照和高浓度形状从哪里来？",
+      "argumentSummary": "早期IER以不同燃烧来源的流行病学关联扩展可拟合暴露范围，将其折为等价环境暴露。模型设定低端反事实和高端渐近行为，并明确同吸入质量毒性相等、时序不变和无暴露交互等条件。",
+      "artifacts": [
+        {
+          "id": "art-kb46-burnett2014-pdf",
+          "sha256": "1939f0cb531112298d13e550ac09456ce6032fbe1028d8ccaf79bac1c7befe94",
+          "resolvedUrl": "https://pmc-oa-opendata.s3.amazonaws.com/PMC3984213.1/PMC3984213.1.pdf",
+          "mediaType": "application/pdf",
+          "pageCount": 8
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb46-burnett2014-ier-form",
+          "artifactId": "art-kb46-burnett2014-pdf",
+          "locator": "第398页，Methods: Underlying assumptions与Model form，式(1)",
+          "topics": [
+            "IER形状",
+            "风险参照",
+            "暴露等价"
+          ],
+          "limits": [
+            "经验观察与模型形状设定需分别理解；早期系数不能代替GBD2015重拟合。"
+          ],
+          "pdfIndices": [
+            1
+          ],
+          "printedPages": "398"
+        }
+      ],
+      "appraisal": {
+        "basis": "核对固定载体、列出的实质选段和关键页图像；工作簿核对原始值与公式。",
+        "methodologicalScope": "核对早期IER的公式和建模前提。",
+        "independence": "模型与GEMM重叠部分室外研究；Fantke使用较后GBD2015系数，早期文章仅为函数谱系。",
+        "limitations": [
+          "不同来源等价转换和未观测浓度风险仍是模型假设。",
+          "不移用该文早期系数说明Fantke2019的数值。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "rights": "原文JATS声明美国EHP内容属公有领域，NLM清单标CC0；沿用书目署名和原件保留边界。",
+      "unread": [
+        "其余结果、完整输入研究表、上游系数估计和补充材料未逐项核读。"
+      ],
+      "sourceKeys": []
+    },
+    {
+      "id": "rd-kb46-burnett2018",
+      "workId": "work-kb46-burnett2018",
+      "title": "Global estimates of mortality associated with long-term exposure to outdoor fine particulate matter",
+      "version": "PNAS 115(38):9592–9597，PMC6156628.1原刊PDF与公开SI PDF。",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC6156628.1/PMC6156628.1.pdf",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "GEMM与IER在来源、终点及比较场景上分别相同或不同在哪里？",
+      "argumentSummary": "GEMM用41个室外PM2.5队列重建长期暴露与死亡的关系。对同类五死因和更广的非传染性疾病加下呼吸道感染分别计算，比较两种减排情景中的模型结果。",
+      "artifacts": [
+        {
+          "id": "art-kb46-burnett2018-pdf",
+          "sha256": "6b71c09b0cd548d82c069014719d9c508dffbaeeec1ae0b0d870d102dffb698a",
+          "resolvedUrl": "https://pmc-oa-opendata.s3.amazonaws.com/PMC6156628.1/PMC6156628.1.pdf",
+          "mediaType": "application/pdf",
+          "pageCount": 6
+        },
+        {
+          "id": "art-kb46-burnett2018-supplement",
+          "sha256": "426b72754bc5939d4ccb83064f1d8feecb54471c6d7df9a911b0e73b17f1bf3c",
+          "resolvedUrl": "https://pmc-oa-opendata.s3.amazonaws.com/PMC6156628.1/pnas.1803222115.sapp.pdf",
+          "mediaType": "application/pdf",
+          "pageCount": 22
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb46-burnett2018-cohorts",
+          "artifactId": "art-kb46-burnett2018-pdf",
+          "locator": "第9593–9594页，模型数据与Results开头",
+          "topics": [
+            "室外队列",
+            "模型参考",
+            "死因范围"
+          ],
+          "limits": [
+            "拟合不使用非室外来源风险，但不等于识别颗粒来源毒性；最低反事实仍是建模约定。"
+          ],
+          "pdfIndices": [
+            1,
+            2
+          ],
+          "printedPages": "9593,9594"
+        },
+        {
+          "id": "psg-kb46-burnett2018-scenario-table",
+          "artifactId": "art-kb46-burnett2018-pdf",
+          "locator": "第9595页表1和讨论开头",
+          "topics": [
+            "全量与部分回退",
+            "模型差异",
+            "死因覆盖"
+          ],
+          "limits": [
+            "不同终点覆盖和响应形状会改变估计。结果不是实际观察到的减排效果。"
+          ],
+          "pdfIndices": [
+            3
+          ],
+          "printedPages": "9595"
+        },
+        {
+          "id": "psg-kb46-burnett2018-hazard-function",
+          "artifactId": "art-kb46-burnett2018-pdf",
+          "locator": "第9596–9597页，Methods中GEMM风险函数和负担换算",
+          "topics": [
+            "函数形状",
+            "队列拟合",
+            "死亡率"
+          ],
+          "limits": [
+            "可用的代数函数是对集合模型预测的近似；高浓度外推受函数形状约束。"
+          ],
+          "pdfIndices": [
+            4,
+            5
+          ],
+          "printedPages": "9596,9597"
+        },
+        {
+          "id": "psg-kb46-burnett2018-supplement-methods",
+          "artifactId": "art-kb46-burnett2018-supplement",
+          "locator": "SI第2–4页，SI Methods队列级与综合危险比估计",
+          "topics": [
+            "两层模型",
+            "Cox模型",
+            "跨队列汇总"
+          ],
+          "limits": [
+            "未重新估计个体或队列级模型。"
+          ],
+          "pdfIndices": [
+            1,
+            2,
+            3
+          ],
+          "printedPages": "SI 2,3,4"
+        }
+      ],
+      "appraisal": {
+        "basis": "核对固定载体、列出的实质选段和关键页图像；工作簿核对原始值与公式。",
+        "methodologicalScope": "核对GEMM论文和部分补充方法、拟合及比较场景。",
+        "independence": "GEMM以室外队列为拟合输入，并与IER共享部分队列及国家暴露、基线死亡率等比较数据，作者也有交集。",
+        "limitations": [
+          "高暴露端证据集中于有限队列，暴露范围以外曲线受函数设定约束。",
+          "两种模型比较不能解释成全独立的复制或实测政策效果。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "rights": "PNAS原刊声明CC BY-NC-ND 4.0。附录仅作原件选段核读。",
+      "unread": [
+        "完整队列风险估计、全部曲线和拟合结果、附录其余段落未逐项复核。"
+      ],
+      "sourceKeys": []
+    },
+    {
+      "id": "rd-kb46-pope2002",
+      "workId": "work-kb46-pope2002",
+      "title": "Lung Cancer, Cardiopulmonary Mortality, and Long-term Exposure to Fine Particulate Air Pollution",
+      "version": "JAMA 287(9):1132–1141（2002-03-06），收于美国参院听证S. Hrg. 107–1011的完整十页影印，听证2002-10-02，政府印本2004。",
+      "url": "https://www.govinfo.gov/content/pkg/CHRG-107shrg83723/pdf/CHRG-107shrg83723.pdf",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "历史健康效应使用的队列风险覆盖什么人群、暴露和死因，控制及外推边界是什么？",
+      "argumentSummary": "ACS CPS-II前瞻队列使用入组地址分配都会区监测浓度，控制吸烟等个体危险因素并检查空间结构。论文报告长期PM2.5与心肺及肺癌死亡关联，说明了未跟踪个体危险因素和残余混杂的限制。",
+      "artifacts": [
+        {
+          "id": "art-kb46-pope2002-hearing-pdf",
+          "sha256": "a0793fde242cf03f5c84603509c8a243f0be1ff1b5cb6721432ef5d8ebe6089e",
+          "resolvedUrl": "https://www.govinfo.gov/content/pkg/CHRG-107shrg83723/pdf/CHRG-107shrg83723.pdf",
+          "mediaType": "application/pdf",
+          "pageCount": 157
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb46-pope2002-identity",
+          "artifactId": "art-kb46-pope2002-hearing-pdf",
+          "locator": "听证印本第139、148–149页，原刊1132–1141连续影印边界",
+          "topics": [
+            "出版身份",
+            "原刊再印"
+          ],
+          "limits": [
+            "政府载体和原刊作品的版本及权利分别处理。"
+          ],
+          "pdfIndices": [
+            142,
+            151,
+            152
+          ],
+          "printedPages": "听证139,148,149；原刊1132起，1141止，听证149为下一篇"
+        },
+        {
+          "id": "psg-kb46-pope2002-methods",
+          "artifactId": "art-kb46-pope2002-hearing-pdf",
+          "locator": "听证印本第140–142页，原刊1133–1135，Study Population、Air Pollution Exposure Estimates、表1和Statistical Analysis",
+          "topics": [
+            "ACS前瞻队列",
+            "监测赋值",
+            "风险调整"
+          ],
+          "limits": [
+            "入组地址分配的都会区监测均值不等于个体吸入剂量。分析集受监测可用性限制。"
+          ],
+          "pdfIndices": [
+            143,
+            144,
+            145
+          ],
+          "printedPages": "听证140,141,142；原刊1133,1134,1135"
+        },
+        {
+          "id": "psg-kb46-pope2002-risk-results",
+          "artifactId": "art-kb46-pope2002-hearing-pdf",
+          "locator": "听证印本第143、146页，原刊1136、1139，表2早期暴露列及图4年龄分层",
+          "topics": [
+            "相对风险",
+            "年龄分层",
+            "早期浓度窗口"
+          ],
+          "limits": [
+            "图4用于核对分组和估计形状；Gronlund的精确年龄组转录值由其表4支持。"
+          ],
+          "pdfIndices": [
+            146,
+            149
+          ],
+          "printedPages": "听证143,146；原刊1136,1139"
+        },
+        {
+          "id": "psg-kb46-pope2002-limitations",
+          "artifactId": "art-kb46-pope2002-hearing-pdf",
+          "locator": "听证印本第144、146、148页，原刊1137、1139、1141，Comment及结论",
+          "topics": [
+            "残余混杂",
+            "风险因素测量",
+            "浓度外推"
+          ],
+          "limits": [
+            "所述关联和形状在研究条件内解释；无法从该研究单独导出干预的实际因果效应。"
+          ],
+          "pdfIndices": [
+            147,
+            149,
+            151
+          ],
+          "printedPages": "听证144,146,148；原刊1137,1139,1141"
+        }
+      ],
+      "appraisal": {
+        "basis": "核对固定载体、列出的实质选段和关键页图像；工作簿核对原始值与公式。",
+        "methodologicalScope": "已核对十页影印边界和指定方法、表图、讨论。其量效关联提供历史模型的上游证据。",
+        "independence": "Pope的ACS CPS-II是Gronlund的死亡响应上游队列，也进入相关颗粒物研究谱系。后续沿用不是独立复现。",
+        "limitations": [
+          "早期PM2.5风险分析用61个都会区，Gronlund另用63个都会区估计历史基线，两者口径不同。",
+          "观察关联、个人吸入剂量与特定干预效果分别需要相应证据。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "rights": "GovInfo公开发布听证载体，内含原刊影印；原文权利独立，未核实开放再分发许可。",
+      "unread": [
+        "听证其余作品、原刊其余段落与原始个体队列记录、完整模型运行未全面核读或复现。"
+      ],
+      "sourceKeys": []
+    },
+    {
+      "id": "rd-kb46-glam2026",
+      "workId": "work-kb46-glam2026",
+      "title": "A Global Consensus Life Cycle Impact Assessment Method (GLAM): impacts on human health",
+      "version": "Springer 正式版，Int J Life Cycle Assess 31:171，2026-09-09 在线发表；同文电子补充材料 MOESM2。",
+      "url": "https://link.springer.com/article/10.1007/s11367-026-02742-w",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "GLAM 的室内外边界、室外浓度式表征与分母、效应斜率和模型分辨率如何定义？",
+      "argumentSummary": "论文把室外初级 PM₂.₅ 与三种前体模型和室内活动的初级 PM₂.₅ 模型纳入一个框架；补充材料区分地面浓度响应、受体健康效应和远程项。",
+      "artifacts": [
+        {
+          "id": "art-kb46-glam2026-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "19c031ca4a2357d92b07afebef83510317b1865ba5af74117f3f6f9011b28c83",
+          "resolvedUrl": "https://link.springer.com/content/pdf/10.1007/s11367-026-02742-w.pdf",
+          "pageCount": 30
+        },
+        {
+          "id": "art-kb46-glam2026-si-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "f56ed44afbefedb1d2946a2c60f2fe7802be04aec873c8290fb5913f41310688",
+          "resolvedUrl": "https://static-content.springer.com/esm/art%3A10.1007%2Fs11367-026-02742-w/MediaObjects/11367_2026_2742_MOESM2_ESM.pdf",
+          "pageCount": 46
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb46-glam2026-release-lineage",
+          "artifactId": "art-kb46-glam2026-pdf",
+          "locator": "正式版物理及印刷第 1 页，摘要 Results 和出版日期",
+          "topics": [
+            "public release",
+            "publication date"
+          ],
+          "limits": [
+            "论文日期没有给出每项数据的年份或新因子包的发行日期。"
+          ],
+          "pdfIndices": [
+            0
+          ],
+          "printedPages": "1"
+        },
+        {
+          "id": "psg-kb46-glam2026-pathway",
+          "artifactId": "art-kb46-glam2026-pdf",
+          "locator": "正式版物理及印刷第 6–8 页 §3.2，图 2；第 22 页 §4.1 的 PM 边界",
+          "topics": [
+            "outdoor precursors",
+            "primary indoor PM2.5",
+            "endpoint and midpoint",
+            "secondary indoor formation"
+          ],
+          "limits": [
+            "图 2 以概念示意表达路径。第 8 页两段质量比标签不能直接组成含时间积分的数值公式。室内范围以 §§3.2.2、4.1 确定。"
+          ],
+          "pdfIndices": [
+            5,
+            6,
+            7,
+            21
+          ],
+          "printedPages": "6–8, 22"
+        },
+        {
+          "id": "psg-kb46-glam2026-severity",
+          "artifactId": "art-kb46-glam2026-pdf",
+          "locator": "正式版物理及印刷第 3 页表 1 PM₂.₅ 死亡行与第 7 页 §3.2.2 室内段",
+          "topics": [
+            "severity factors",
+            "indoor midpoint back-calculation"
+          ],
+          "limits": [
+            "两数的具体推导差别未核实。不能互换，亦不能由一般表替代对应的室内回算系数。"
+          ],
+          "pdfIndices": [
+            2,
+            6
+          ],
+          "printedPages": "3, 7"
+        },
+        {
+          "id": "psg-kb46-glam2026-outdoor-equation",
+          "artifactId": "art-kb46-glam2026-si-pdf",
+          "locator": "MOESM2 物理第 5–6 页/印刷 S5–S6，§S-3，图 S1 及 Calculation procedure and data 无编号公式",
+          "topics": [
+            "outdoor fate factor",
+            "concentration-effect factor",
+            "receptor grid",
+            "long-range term"
+          ],
+          "limits": [
+            "浓度式将吸入路径隐含在效应推导中，不能把此处 EF 当作每千克吸入的系数，也不能把室内图式混入。"
+          ],
+          "pdfIndices": [
+            4,
+            5
+          ],
+          "printedPages": "S5–S6"
+        },
+        {
+          "id": "psg-kb46-glam2026-outdoor-scales",
+          "artifactId": "art-kb46-glam2026-si-pdf",
+          "locator": "MOESM2 物理第 6–8 页/印刷 S6–S8，§S-3 斜率定义、Resolution and scales、Limitations and uncertainty",
+          "topics": [
+            "marginal average linear",
+            "2015 background",
+            "stack heights",
+            "regional aggregation"
+          ],
+          "limits": [
+            "边际、平均和线性是效应定义，不能替代前体化学响应。分辨率与数据年份分别限定。"
+          ],
+          "pdfIndices": [
+            5,
+            6,
+            7
+          ],
+          "printedPages": "S6–S8"
+        },
+        {
+          "id": "psg-kb46-glam2026-size-proxy",
+          "artifactId": "art-kb46-glam2026-pdf",
+          "locator": "正式版物理及印刷第 7 页 §3.2.3，其他颗粒粒级与 PM₁₀ 缺省质量分数段",
+          "topics": [
+            "particle size",
+            "PM10 proxy",
+            "inventory mapping"
+          ],
+          "limits": [
+            "63% 是缺乏源特异分数时的建议代理。它不识别粗粒的独立健康效应。"
+          ],
+          "pdfIndices": [
+            6
+          ],
+          "printedPages": "7"
+        },
+        {
+          "id": "psg-kb46-glam2026-indoor-emission-rates",
+          "artifactId": "art-kb46-glam2026-si-pdf",
+          "locator": "MOESM2 物理第 8 页/印刷 S8，表 S1 表头、十九种活动及脚注",
+          "topics": [
+            "indoor activity emissions",
+            "mass per minute"
+          ],
+          "limits": [
+            "该表是每时间的排放清单输入，不给每时间健康损害或实际个体暴露。"
+          ],
+          "pdfIndices": [
+            7
+          ],
+          "printedPages": "S8"
+        }
+      ],
+      "appraisal": {
+        "basis": "核对正式版及 MOESM2 的固定原件，视觉核对表 1、表 2 的 PM 条目、图 2、§4.1 和 SI 的公式、尺度及表 S1。",
+        "methodologicalScope": "GLAM 的颗粒物表征及选择边界。论文的公开日期和因子包版本各自独立。",
+        "independence": "GLAM 室外分支沿用 Oberschelp、Pfister 和 Hellweg 的模型，室内分支沿用 Bhoonah、Maury-Micolier、Jolliet 和 Fantke 的模型，并沿用 Burnett 等的 IER。作者与上游数据有交集。",
+        "limitations": [
+          "室外适用范围受背景、网格、排放条件和简化化学约束；未给出量化不确定性。",
+          "未据本文确认其他 GLAM 研究版本是否更新了 PM 因子。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "rights": "正文由 Springer 以 CC BY 4.0 公开发表，第三方材料受各自标注约束。SI 是公开发布的附件，未核实单独的再分发许可。仅发表原创释义与定位。",
+      "unread": [
+        "其他健康类别与全文文献未细读。",
+        "Oberschelp 等 2020 付费原文及未成功取得的出版商补充材料没有细读；GLAM 论文和 SI 不替代其原始全文。"
+      ],
+      "sourceKeys": []
+    },
+    {
+      "id": "rd-kb46-glam-pm2024",
+      "workId": "work-kb46-glam-pm2024",
+      "title": "GLAM V1.0.2024.10: Fine Particulate Matter Impacts characterization factors",
+      "version": "V1.0.2024.10；原始发布 ZIP 成员 V1.0.2024.10/HH/GLAM_template_HH_Fine_Particulate_Matter_Impacts.xlsx，LCIAMethods!K2/L2 分别为 2024 与 1.0.2024.10。",
+      "url": "https://www.lifecycleinitiative.org/activities/life-cycle-assessment-data-and-methods/global-guidance-for-life-cycle-impact-assessment-indicators-and-methods-glam/",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "该发行物实际交付哪些颗粒物因子，澳大利亚室外近地面两种城乡情景与两种斜率的精确字段是什么？",
+      "argumentSummary": "原始表保留多种斜率、排放位置和室内条件，流匹配表范围更窄；所读工作簿全部为损害水平因子。",
+      "artifacts": [
+        {
+          "id": "art-kb46-glam-pm2024-xlsx",
+          "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "sha256": "86ff3e060ac78b0c6ed57f0d1d07328dae937fd8362789079a41b62fdfc3c99b",
+          "resolvedUrl": "https://www.lifecycleinitiative.org/wp-content/uploads/2024/10/V1.0.2024.10.zip"
+        },
+        {
+          "id": "art-kb46-glam-pm2024-zip",
+          "mediaType": "application/zip",
+          "sha256": "ed1e2e4a33e6a3f62682ed66a827e2d9ef7c22be2bd93e187fae0a0030e99ecf",
+          "resolvedUrl": "https://www.lifecycleinitiative.org/wp-content/uploads/2024/10/V1.0.2024.10.zip"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb46-glam-pm2024-archive-member",
+          "artifactId": "art-kb46-glam-pm2024-zip",
+          "locator": "官方 V1.0.2024.10 ZIP 中央目录，成员 V1.0.2024.10/HH/GLAM_template_HH_Fine_Particulate_Matter_Impacts.xlsx",
+          "topics": [
+            "release version",
+            "workbook member",
+            "carrier identity"
+          ],
+          "limits": [
+            "此定位仅验证原始归档的成员身份；单元格用独立 XLSX 哈希绑定。"
+          ]
+        },
+        {
+          "id": "psg-kb46-glam-pm2024-release-scope",
+          "artifactId": "art-kb46-glam-pm2024-xlsx",
+          "locator": "ZIP 成员 V1.0.2024.10/HH/GLAM_template_HH_Fine_Particulate_Matter_Impacts.xlsx；LCIAMethods!A1:P2；lciamethods_CF!A1:R29733 和 lciamethods_CF_GLAM!A1:V18370 的字段统计；FLOW_class!A1:F14",
+          "topics": [
+            "damage level",
+            "native scenarios",
+            "inventory matching",
+            "release scope"
+          ],
+          "limits": [
+            "统计范围限指定工作簿；不推断其他发行文件或作者方法支持的全部指标。"
+          ]
+        },
+        {
+          "id": "psg-kb46-glam-pm2024-aus-ground-factors",
+          "artifactId": "art-kb46-glam-pm2024-xlsx",
+          "locator": "ZIP 成员 V1.0.2024.10/HH/GLAM_template_HH_Fine_Particulate_Matter_Impacts.xlsx；lciamethods_CF!A1:R1、A1346:R1347、A1394:R1395；数值 E1346/E1347/E1394/E1395",
+          "topics": [
+            "primary PM2.5",
+            "Australia",
+            "Ground_level",
+            "urban rural",
+            "marginal average"
+          ],
+          "limits": [
+            "四值属于指定国家聚合情景。源类别字段为 Ground_level；具体预设高度另见 GLAM 2026 SI。未用四值分解局地背景与聚合的各自贡献。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "核对 ZIP 目录及准确成员字节；只读提取工作表字段，另直接读取原始 OOXML 的选定字面值，未修改、重新计算或视觉渲染工作簿。",
+        "methodologicalScope": "核对实际发布表的定义和固定数字，不涉及新的暴露估计、软件适用性或经验验证。",
+        "independence": "发布包与 GLAM 人类健康论文属于同一模型谱系；原始表和匹配表是同一发布物的不同处理层次。",
+        "limitations": [
+          "没有把文章的死亡中点与按活动时间指标当作本工作簿中已见的表项。",
+          "区域汇总情景不能代表某个具体排放点。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "rights": "Life Cycle Initiative 提供公开发布包。未核实发布包或工作簿的单独开放再分发许可。只登记原件身份及少量选定事实，不重传原文件、完整表格或模型。",
+      "unread": [
+        "ZIP 其他成员及原网格模型文件未检查。",
+        "工作表其余行仅做字段统计，未逐行复核。",
+        "未核实研究版 1.1.2025.11 有无颗粒物更改。"
+      ],
+      "sourceKeys": []
+    },
+    {
+      "id": "rd-kb46-guo2018",
+      "workId": "work-kb46-guo2018",
+      "title": "Effectiveness of ammonia reduction on control of fine particle nitrate",
+      "version": "Copernicus 正式版，Atmos Chem Phys 18:12241–12256，2018-08-24 发表；同文电子补充材料。",
+      "url": "https://acp.copernicus.org/articles/18/12241/2018/",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "观测条件约束的气粒分配敏感性在什么范围内挑战固定前体因子的外推？",
+      "argumentSummary": "基于不同观测时地的热力学敏感性模拟显示，铵盐和硝酸盐气粒分配使细颗粒无机组分对环境总 NHₓ 的响应随初始状态与季节而变。",
+      "artifacts": [
+        {
+          "id": "art-kb46-guo2018-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "c941e0a8b0334e773a77e0e2c14fd1d0e906af4f48957ef8b3fee00e4f63cab8",
+          "resolvedUrl": "https://acp.copernicus.org/articles/18/12241/2018/acp-18-12241-2018.pdf",
+          "pageCount": 16
+        },
+        {
+          "id": "art-kb46-guo2018-si-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "03bd09e7c23b319f2f52463c0cfca4deccb973281dce70abc2bb3e21b0f49063",
+          "resolvedUrl": "https://acp.copernicus.org/articles/18/12241/2018/acp-18-12241-2018-supplement.pdf",
+          "pageCount": 13
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb46-guo2018-field-constraint",
+          "artifactId": "art-kb46-guo2018-pdf",
+          "locator": "期刊物理第 6–7 页/印刷 12246–12247，§§3.2–3.3，图 2",
+          "topics": [
+            "field observations",
+            "gas particle partitioning",
+            "modeled pH"
+          ],
+          "limits": [
+            "pH 来自热力学估计，个别气相组分的一致性明显较弱；图形对比未验证干预后的浓度变化。"
+          ],
+          "pdfIndices": [
+            5,
+            6
+          ],
+          "printedPages": "12246–12247"
+        },
+        {
+          "id": "psg-kb46-guo2018-precursor-sensitivity",
+          "artifactId": "art-kb46-guo2018-pdf",
+          "locator": "期刊物理第 9–11 页/印刷 12249–12251，§§3.4.2–3.4.3，图 4、5",
+          "topics": [
+            "NHx",
+            "seasonal response",
+            "finite perturbation"
+          ],
+          "limits": [
+            "模拟扰动并非排放或干预。结果限场景条件和细粒无机离子质量，约 70% 不能推广为控制政策阈值。"
+          ],
+          "pdfIndices": [
+            8,
+            9,
+            10
+          ],
+          "printedPages": "12249–12251"
+        },
+        {
+          "id": "psg-kb46-guo2018-site-inputs",
+          "artifactId": "art-kb46-guo2018-si-pdf",
+          "locator": "补充材料物理及印刷第 12 页表 S1，表头、数据来源、粒径切点及 ISORROPIA-II 输入输出分组",
+          "topics": [
+            "site conditions",
+            "particle cut size",
+            "input and output"
+          ],
+          "limits": [
+            "表中不同场地的粒径和测量平台并不相同，pH 是模型输出。"
+          ],
+          "pdfIndices": [
+            11
+          ],
+          "printedPages": "12"
+        }
+      ],
+      "appraisal": {
+        "basis": "对照期刊原件图 2、4、5 和补充材料表 S1 视觉检查气粒分配、模拟横轴、季节和粒径口径。",
+        "methodologicalScope": "现场观测约束下的局地无机气溶胶热力学敏感性，终点是颗粒离子质量浓度。",
+        "independence": "Cabauw 原始现场资料和研究团队独立于所比较的 LC-IMPACT/GLAM 实施。研究不直接测量生命周期因子或人群结局。",
+        "limitations": [
+          "扰动的是模型输入的环境总 NHₓ、总硝酸盐或硫酸盐，不能换写为源排放减量。",
+          "未建立通用 pH 阈值、地区治理排序或 DALY 变化。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "rights": "正文由 Copernicus 以 CC BY 4.0 公开发表。补充材料可公开取得，未依赖单独的再分发许可。只登记原创释义和定位。",
+      "unread": [
+        "其余化学推导、源测量和补充材料页面未逐项复核。",
+        "未取得原始逐时观测序列，未复算热力学模型。"
+      ],
+      "sourceKeys": []
+    },
+    {
+      "id": "rd-kb46-lcimpact2020",
+      "workId": "work-kb46-lcimpact2020",
+      "title": "LC-IMPACT: A spatially differentiated life cycle impact assessment approach — Chapter 6, Particulate Matter Formation",
+      "version": "官方总报告封面 Version 1.0，文件名 20201113；另有未标版号的旧官方独立第 6 章载体（PDF 创建元数据为 2016-06-14）。",
+      "url": "https://www.lc-impact.eu/doc/LC-IMPACT_Overall_report_20201113.pdf",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "区域化方法如何把原排放物、受体吸入量、病例和损害连接起来？旧独立章与 1.0 总报告怎样区分？",
+      "argumentSummary": "第 6 章先用区域排放敏感性、受体人口和呼吸率求吸入，再乘以按病例与严重度定义的效应项。1.0 总报告明确初级颗粒单项和含三种前体的范围选择。",
+      "artifacts": [
+        {
+          "id": "art-kb46-lcimpact2020-report-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "6e3e3cb7f2e93dd9e8a770fd11a960d0273e91f82611c536a6268db6a1f04ea4",
+          "resolvedUrl": "https://www.lc-impact.eu/doc/LC-IMPACT_Overall_report_20201113.pdf",
+          "pageCount": 184
+        },
+        {
+          "id": "art-kb46-lcimpact2020-standalone-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "3e3961efaf869006e2abbff7291f66ffe63c571af37081a277c88e8540e3cd02",
+          "resolvedUrl": "https://www.lc-impact.eu/doc/method/Chapter6_Particulate-matter-formation.pdf",
+          "pageCount": 9
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb46-lcimpact2020-intake-damage",
+          "artifactId": "art-kb46-lcimpact2020-report-pdf",
+          "locator": "总报告 v1.0 物理及印刷第 59–61 页 §§6.1–6.2.2，图 6.1、式 6.1–6.5",
+          "topics": [
+            "intake fraction",
+            "inhaled mass",
+            "emitted precursor",
+            "receptor severity"
+          ],
+          "limits": [
+            "历史方法使用 2000 年排放和背景、2005 年受体人口与死亡率、2012 年严重度；病例限规定死亡结局。"
+          ],
+          "pdfIndices": [
+            58,
+            59,
+            60
+          ],
+          "printedPages": "59–61"
+        },
+        {
+          "id": "psg-kb46-lcimpact2020-scope-choice",
+          "artifactId": "art-kb46-lcimpact2020-report-pdf",
+          "locator": "总报告 v1.0 物理及印刷第 61–63 页 §§6.3–6.5，表 6.1 表头",
+          "topics": [
+            "particle source coverage",
+            "height and spatial resolution",
+            "value choices"
+          ],
+          "limits": [
+            "部分大扰动核对属于特定模型测试；报告用语不能当作所有排放和地区的一般误差界。"
+          ],
+          "pdfIndices": [
+            60,
+            61,
+            62
+          ],
+          "printedPages": "61–63"
+        },
+        {
+          "id": "psg-kb46-lcimpact2020-standalone-version",
+          "artifactId": "art-kb46-lcimpact2020-standalone-pdf",
+          "locator": "旧独立第 6 章物理及印刷第 1–3 页 §§6.1–6.3，式 6.1–6.5；第 5–6 页表 6.1 表头及 Australia、China",
+          "topics": [
+            "older manifestation",
+            "selected factor rows"
+          ],
+          "limits": [
+            "未标版号的旧载体不能用作 1.3 发布包。载体相同选行不构成独立验证。"
+          ],
+          "pdfIndices": [
+            0,
+            1,
+            2,
+            4,
+            5
+          ],
+          "printedPages": "1–3, 5–6"
+        },
+        {
+          "id": "psg-kb46-lcimpact2020-country-precursor-rows",
+          "artifactId": "art-kb46-lcimpact2020-report-pdf",
+          "locator": "总报告 v1.0 物理及印刷第 63–64 页表 6.1，all effects 列组 Australia、China 行及单位表头",
+          "topics": [
+            "ammonia",
+            "sulfur dioxide",
+            "source region factor"
+          ],
+          "limits": [
+            "只核对历史模型中的指定地区与物质。中国重复行的选值一致；不是独立观测或重复排放记录。"
+          ],
+          "pdfIndices": [
+            62,
+            63
+          ],
+          "printedPages": "63–64"
+        }
+      ],
+      "appraisal": {
+        "basis": "视觉核对两个官方 PDF 的公式、表头、限定段落和指定地区行。分别保存总报告和旧独立章的载体身份。",
+        "methodologicalScope": "第 6 章区域、吸入、浓度响应及覆盖选择；未重现 TM5 或受体健康基线计算。",
+        "independence": "旧单章、1.0 章节和 Van Zelm 等研究属于同一 LC-IMPACT 谱系。对读两载体不构成独立的模型或观察结果。",
+        "limitations": [
+          "所示因子没有按烟囱高度分别发行，模型基于区域格点和历史背景。",
+          "不同病种、年龄条件、空间分辨率和斜率定义不能由共同的 DALY/kg 单位消除。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "rights": "LC-IMPACT 官方站点公开提供两种载体。未核实原件或图表的开放再分发许可。只发表原创释义、事实与定位。",
+      "unread": [
+        "未逐行复核表 6.1，也未读总报告其他影响类别。",
+        "Van Zelm 等 2016 期刊原文没有核验合法全文载体。",
+        "LC-IMPACT 1.3 发布包未取得其颗粒物内容，不能继承 1.0 数字。"
+      ],
+      "sourceKeys": []
+    },
+    {
+      "id": "rd-kb46-tm5fasst2018",
+      "workId": "work-kb46-tm5fasst2018",
+      "title": "TM5-FASST: a global atmospheric source–receptor model for rapid impact analysis of emission changes on air quality and short-lived climate pollutants",
+      "version": "Copernicus 正式版，Atmos Chem Phys 18:16173–16211，2018-11-13 发表。",
+      "url": "https://acp.copernicus.org/articles/18/16173/2018/",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "−20% 区域源扰动的线性近似在哪些范围与其完整模型一致？",
+      "argumentSummary": "TM5-FASST 用完整 TM5 的模拟建立源受体系数。若干区域性试验近似线性，特定大扰动仍偏离，且部分联合前体情景缺乏直接检验。",
+      "artifacts": [
+        {
+          "id": "art-kb46-tm5fasst2018-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "84cc18bec48c5ff51b1ccdfce39f7676f56d8af905a042a37c5079e0c5fc8f1f",
+          "resolvedUrl": "https://acp.copernicus.org/articles/18/16173/2018/acp-18-16173-2018.pdf",
+          "pageCount": 39
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb46-tm5fasst2018-linearization",
+          "artifactId": "art-kb46-tm5fasst2018-pdf",
+          "locator": "期刊物理第 5–6 页/印刷 16177–16178，式 1–3 与 −20% 排放扰动设计",
+          "topics": [
+            "linearized source–receptor coefficients",
+            "reference emissions"
+          ],
+          "limits": [
+            "技术文档描述 TM5-FASST 的扰动设计，并不自动证明所有 LCIA 包的因子实现相同。"
+          ],
+          "pdfIndices": [
+            4,
+            5
+          ],
+          "printedPages": "16177–16178"
+        },
+        {
+          "id": "psg-kb46-tm5fasst2018-validation-boundary",
+          "artifactId": "art-kb46-tm5fasst2018-pdf",
+          "locator": "期刊物理第 12–14、30 页/印刷 16184–16186、16202，§§3.1.1、4.1 及图 2、3",
+          "topics": [
+            "additivity",
+            "perturbation validation",
+            "modeled concentration"
+          ],
+          "limits": [
+            "对比量是大气模式浓度响应；缺少部分联合扰动模拟，不能推断全部组合可加。"
+          ],
+          "pdfIndices": [
+            11,
+            12,
+            13,
+            29
+          ],
+          "printedPages": "16184–16186, 16202"
+        }
+      ],
+      "appraisal": {
+        "basis": "核对公式与扰动设计段，视觉核对图 2、3 和简化模型讨论。",
+        "methodologicalScope": "完整 TM5 对同谱系简化模型的响应比较。不是对健康结局或实际排放措施的独立验证。",
+        "independence": "与 LC-IMPACT 使用同一 TM5 模型谱系，以完整 TM5 为基准，证据与独立现场化学研究互补。",
+        "limitations": [
+          "区域总量、扰动区间、绝对与相对误差口径均不可省略。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "rights": "Copernicus 公开发表，CC BY 4.0。只登记原创释义及选段定位。",
+      "unread": [
+        "其他试验、影响类别、补充材料和原生模式输入未读。"
+      ],
+      "sourceKeys": []
+    },
+    {
+      "id": "rd-kb46-bhoonah2023",
+      "workId": "work-kb46-bhoonah2023",
+      "title": "Fine Particulate Matter Exposure and Health Impacts from Indoor Activities",
+      "version": "HAL 作者稿 v1（hal-04266664v1，2023-10-31 提交）；Wiley 正式版于 2023-11-21 发表，Indoor Air 2023:8857446。",
+      "url": "https://hal.science/hal-04266664v1",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "按室内活动给出的排放率、吸入量和健康损失怎样连接，通风与活动时间有什么适用条件？",
+      "argumentSummary": "在一小时参考活动下，模型计算有活动和无活动的室内浓度差并随时间积分，从呼吸率和占用人数得到吸入量。健康效应同时受有效室内浓度和室外背景约束。",
+      "artifacts": [
+        {
+          "id": "art-kb46-bhoonah2023-hal-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "abd9ad285493d8fb47e698900355e6d5fc82ac5dce8ca5ec165c8ef726ce8a53",
+          "resolvedUrl": "https://hal.science/hal-04266664/document",
+          "pageCount": 32
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb46-bhoonah2023-activity-intake",
+          "artifactId": "art-kb46-bhoonah2023-hal-pdf",
+          "locator": "HAL v1 物理第 7–10 页/印刷第 6–9 页，§2.1、图 1、式 1–5",
+          "topics": [
+            "indoor emissions",
+            "integrated inhaled mass",
+            "functional unit",
+            "background"
+          ],
+          "limits": [
+            "图中效应因子依赖选定暴露浓度及背景。吸入质量不是已沉积或已吸收的质量。"
+          ],
+          "pdfIndices": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "printedPages": "6–9"
+        },
+        {
+          "id": "psg-kb46-bhoonah2023-scenario-limits",
+          "artifactId": "art-kb46-bhoonah2023-hal-pdf",
+          "locator": "HAL v1 物理第 12–13、25–27 页/印刷第 11–12、24–26 页，§§2.4、3.6 和结论选段",
+          "topics": [
+            "ventilation scenarios",
+            "room volume",
+            "duration transfer"
+          ],
+          "limits": [
+            "未以固定房间情景代表全部建筑；未建立对实际开窗或人员健康的因果测量。"
+          ],
+          "pdfIndices": [
+            11,
+            12,
+            24,
+            25,
+            26
+          ],
+          "printedPages": "11–12, 24–26"
+        }
+      ],
+      "appraisal": {
+        "basis": "视觉核对 HAL 作者稿图 1、式 1–3、动态条件和讨论；核对所读印刷页与 PDF 页索引。",
+        "methodologicalScope": "以一小时活动为参考的室内初级 PM₂.₅ 动态暴露与损害模型，不等于个体预后。",
+        "independence": "室内方法与 GLAM 论文共享 Fantke 和 Jolliet 两位作者，效应依赖前序 IER 研究。不同载体不增加独立证据。",
+        "limitations": [
+          "窗口开启时间、通风、人数和浓度背景限定模型输出。",
+          "把活动时间换算到实际时长只能作近似。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      },
+      "rights": "HAL 作者稿公开提供，封面标注 HAL Authorization。Wiley 正式版的开放许可与 HAL 载体及附件分别判断。只登记原创释义和定位。",
+      "unread": [
+        "未取得两份 Wiley 附件和动态模型原始输入。",
+        "未对正式版 PDF 逐页核验，选择段落绑定 HAL 作者稿。",
+        "完整结果和发布表的逐项演算关系未复现。"
+      ],
+      "sourceKeys": []
     }
   ],
   "gaps": [
@@ -14577,6 +16186,35 @@
         "A10"
       ],
       "nextAction": "继续取得原始国别/模型记录、必要生理输入及匹配的独立观测；保留原比较设计，不认定实际减排或排名。"
+    },
+    {
+      "id": "gap-kb46-fantke2017-supplement",
+      "description": "Fantke2017主文已取得并选读；ACS补充PDF/ZIP及Caltech附件在本次正常公开请求返回403或521，未核验补充参数及宏工作簿。DTU文件通过普通curl取得，与此前urllib403失败分开记录。",
+      "nextAction": "通过出版商或机构的正常公开入口重试精确补充附件，核准原件身份后再做原生模型/参数复现。",
+      "affectedUnits": [
+        "V5-03C",
+        "V5-04",
+        "A07"
+      ]
+    },
+    {
+      "id": "gap-kb46-humbert-precursor-closure",
+      "description": "Humbert2011显示的SI回归/环带人口与部分主表前体因子未完全闭合；其Greco上游原论文及未舍入模型输入未取得，不能推断差额原因。",
+      "nextAction": "合法取得Greco2007实际原作与原输入或另有修订证据，独立核对回归、人口和使用精度；此前保留主表身份而不静默修正。",
+      "affectedUnits": [
+        "V5-03C",
+        "A07"
+      ]
+    },
+    {
+      "id": "gap-kb46-health-fantke-model-summary",
+      "description": "修订支持文件的日内瓦操作模型千组结果与同城已发布汇总不同。论文式与工作表的质量转换表达、死亡基线和步长口径也有差别。",
+      "affectedUnits": [
+        "V5-03C",
+        "V7-05A",
+        "A07"
+      ],
+      "nextAction": "若需复现汇总，定位其正式求解器版本与生成输入、设置、参数及预计算记录。作为表格例子时保留发布数字和口径差异。"
     }
   ],
   "revisions": [
