@@ -2140,6 +2140,132 @@
         "date": "2026-11-05",
         "channel": "public-web-search",
         "query": "\"Napper\" \"Thompson\" \"2019\" site:biodeg.org"
+      },
+      {
+        "id": "Q-CNSTD-01",
+        "query": "site.std.samr.gov.cn GB/T 24040-1999",
+        "date": "2026-11-05",
+        "channel": "public-web-search",
+        "outcome": "找到官方1999及后继2008条目"
+      },
+      {
+        "id": "Q-CNSTD-02",
+        "query": "site.std.samr.gov.cn GB/T 24042-2002",
+        "date": "2026-11-05",
+        "channel": "public-web-search",
+        "outcome": "初次一般检索结果稀疏，改用精确号"
+      },
+      {
+        "id": "Q-CNSTD-03",
+        "query": "site.openstd.samr.gov.cn 24040 24042 2008",
+        "date": "2026-11-05",
+        "channel": "public-web-search",
+        "outcome": "找到官方全文公开系统元数据"
+      },
+      {
+        "id": "Q-CNSTD-04",
+        "query": "\"GB/T 24042-2002\" \"2002-05-10\"",
+        "date": "2026-11-05",
+        "channel": "public-web-search",
+        "outcome": "校验候选日期；官方后续确认实际发布日期2002-04-16，未采纳检索串的假定日期"
+      },
+      {
+        "id": "Q-CNSTD-05",
+        "query": "\"GB/T 24040-1999\" site:std.samr.gov.cn/gb/search/",
+        "date": "2026-11-05",
+        "channel": "public-web-search",
+        "outcome": "找到官方1999原号条目"
+      },
+      {
+        "id": "Q-CNSTD-06",
+        "query": "\"GB/T 24042-2002\" site:std.samr.gov.cn/gb/search/",
+        "date": "2026-11-05",
+        "channel": "public-web-search",
+        "outcome": "找到官方2002原号条目"
+      },
+      {
+        "id": "Q-CNSTD-07",
+        "query": "\"GB/T 24041-2000\" site:std.samr.gov.cn/gb/search/",
+        "date": "2026-11-05",
+        "channel": "public-web-search",
+        "outcome": "找到官方2000原号条目"
+      },
+      {
+        "id": "Q-CNSTD-08",
+        "query": "\"GB/T 24043-2002\" site:std.samr.gov.cn/gb/search/",
+        "date": "2026-11-05",
+        "channel": "public-web-search",
+        "outcome": "找到官方2002解释条目"
+      },
+      {
+        "id": "Q-CNSTD-09",
+        "query": "\"24042-2002\" site:sac.gov.cn 公告",
+        "date": "2026-11-05",
+        "channel": "public-web-search",
+        "outcome": "没有取得2002原公告"
+      },
+      {
+        "id": "Q-CNSTD-10",
+        "query": "\"24042-2002\" site:gov.cn \"2002\"",
+        "date": "2026-11-05",
+        "channel": "public-web-search",
+        "outcome": "未取得2002原公告；排除无关年鉴数字碰撞"
+      },
+      {
+        "id": "Q-CNSTD-11",
+        "query": "\"GB/T 24042-2002\" \"公告\" \"2002\"",
+        "date": "2026-11-05",
+        "channel": "public-web-search",
+        "outcome": "发现SAC2008历史公告；非2002公告"
+      },
+      {
+        "id": "Q-CNSTD-12",
+        "query": "\"GB/T 24040-1999\" \"国家质量技术监督局\"",
+        "date": "2026-11-05",
+        "channel": "public-web-search",
+        "outcome": "第三方转录不作为原机构确认依据"
+      },
+      {
+        "id": "Q-CNSTD-13",
+        "query": "\"24042\" \"2002-04-16\" \"国家质量监督检验检疫总局\"",
+        "date": "2026-11-05",
+        "channel": "public-web-search",
+        "outcome": "第三方标准转录未作正文/条文证据"
+      },
+      {
+        "id": "Q-CNSTD-14",
+        "query": "\"生命周期评价\" \"2002年\" site:sac.gov.cn \"公告\"",
+        "date": "2026-11-05",
+        "channel": "public-web-search",
+        "outcome": "无2002原公告取得"
+      },
+      {
+        "id": "Q-CNSTD-15",
+        "query": "\"24042-2002\" site:std.sacinfo.org.cn/gnoc/queryInfo",
+        "date": "2026-11-05",
+        "channel": "public-web-search",
+        "outcome": "仅找到2008历史公告"
+      },
+      {
+        "id": "Q-CNSTD-16",
+        "query": "\"24040-1999\" site:std.sacinfo.org.cn/gnoc/queryInfo",
+        "date": "2026-11-05",
+        "channel": "public-web-search",
+        "outcome": "找到2008后继公告"
+      },
+      {
+        "id": "Q-CNSTD-17",
+        "query": "\"24042-2002\" site:sac.gov.cn/ggcx",
+        "date": "2026-11-05",
+        "channel": "public-web-search",
+        "outcome": "无2002原公告取得"
+      },
+      {
+        "id": "Q-CNSTD-18",
+        "query": "\"生命周期评价\" \"1998\" \"国家技术监督局\" site:gov.cn",
+        "date": "2026-11-05",
+        "channel": "public-web-search",
+        "outcome": "没有取得Sun关于1998年启动工作的原机构记录"
       }
     ],
     "limitations": [
@@ -4200,6 +4326,10 @@
         {
           "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D7FF37D3A7E05397BE0A0AB82A",
           "role": "全国标准信息公共服务平台"
+        },
+        {
+          "url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=49702C7C8B0EB91E7E62D63CB55292A4",
+          "role": "official public disclosure page; current rights/access notice and date metadata inspected"
         }
       ],
       "identifiers": {
@@ -4225,7 +4355,12 @@
       ],
       "discovery": {
         "queryIds": [
-          "Q-SEED-IMPORT"
+          "Q-SEED-IMPORT",
+          "Q-CNSTD-01",
+          "Q-CNSTD-05",
+          "Q-CNSTD-06",
+          "Q-CNSTD-07",
+          "Q-CNSTD-08"
         ],
         "reason": "Inherited candidate register §11; retained for work-level discovery, not upgraded to passage evidence. 中国标准/术语入口；继续发现24044及其他相关版本，不把计划当已发布标准",
         "citationParents": []
@@ -4233,15 +4368,21 @@
       "identityStatus": "verified",
       "accessStatus": "metadata-only",
       "readingStatus": "not-close-read",
-      "accessedAt": "2026-11-03",
-      "lastCheckedAt": "2026-11-03",
+      "accessedAt": "2026-11-05",
+      "lastCheckedAt": "2026-11-05",
       "rights": "Third-party sources retain their rights. Bibliographic facts and original project annotations are published here; source text, figures, datasets and software are not relicensed. Full-text access or borrowing does not grant redistribution permission. No source-specific open reuse license was verified in the inherited seed check.",
       "limitations": [
         "标准元数据和关联条目；未读全文",
         "Historical metadata/abstract/partial-page check inherited from 2026-11-03; original search strings and a complete access log were not recorded in the seed register.",
-        "Volume/region/tradition tags are provisional editorial discovery strata, not evidence of intellectual origin, influence or coverage."
+        "Volume/region/tradition tags are provisional editorial discovery strata, not evidence of intellectual origin, influence or coverage.",
+        "2026-11-05：读取官方登记的指定网页区段，见rd-cn-gbt24040-2008-registry；标准全文仍为metadata-only，保持not-close-read。",
+        "阅读对象为国家标准官方信息记录，不是标准全文；登记的等同采用关系不是本次逐条文独立验证。",
+        "发布日期、实施日期、当前状态和历史替代关系分别记录；不以现代版编号倒推早期条款、约束效力或方法有效性。",
+        "不证明杨建新等2001年研究模型、区域参数、归一化或价值取舍获国家采用或验证。"
       ],
-      "catalogSourceIds": []
+      "catalogSourceIds": [
+        "src-cn-gbt24040-2008-registry"
+      ]
     },
     {
       "id": "lit-n06",
@@ -5165,6 +5306,14 @@
         {
           "url": "https://std.samr.gov.cn/search/stdPage?q=GBT24044",
           "role": "publisher/institution metadata or access route; scope and failures described in limitations"
+        },
+        {
+          "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D772D3D3A7E05397BE0A0AB82A",
+          "role": "official registry: identity, dates, adoption and successor metadata; no standard clauses"
+        },
+        {
+          "url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=329770D2F0539B875B094A56C308EC4E",
+          "role": "official public disclosure page; current rights/access notice and date metadata inspected"
         }
       ],
       "identifiers": {
@@ -5198,7 +5347,12 @@
           "Q4-01",
           "Q4-02",
           "Q4-03",
-          "Q4-04"
+          "Q4-04",
+          "Q-CNSTD-01",
+          "Q-CNSTD-05",
+          "Q-CNSTD-06",
+          "Q-CNSTD-07",
+          "Q-CNSTD-08"
         ],
         "reason": "explicit §11.5 N05 next task resolved to work identity. Relation to N02 is officially verified equivalent adoption, **not a citation edge inferred from title similarity**.",
         "citationParents": []
@@ -5206,16 +5360,22 @@
       "identityStatus": "partial",
       "accessStatus": "metadata-only",
       "readingStatus": "not-close-read",
-      "accessedAt": "2026-11-04",
-      "lastCheckedAt": "2026-11-04",
+      "accessedAt": "2026-11-05",
+      "lastCheckedAt": "2026-11-05",
       "rights": "Third-party rights retained. M; official search record says current, gives dates/adoption identity; clicking detail in tool returned search page, so no clauses or authoritative full-text rights checked. Legitimate national standard service/authorized licensed standard access; no permission to republish standard inferred.",
       "limitations": [
         "**GB/T 24044—2008**, *环境管理 生命周期评价 要求与指南* / *Environmental management — Life cycle assessment — Requirements and guidelines*. Issued 26 May 2008, implemented 1 November 2008; national standard, institutional authorship. IDT ISO 14044:2006. Exact original issuing-body title and drafting group not checked in title leaf.",
         "M; official search record says current, gives dates/adoption identity; clicking detail in tool returned search page, so no clauses or authoritative full-text rights checked. Legitimate national standard service/authorized licensed standard access; no permission to republish standard inferred.",
         "Access-status availability does not mean acquisition, close reading, validation of a scientific claim, or permission to redistribute.",
-        "Map assignment is editorial discovery judgment; no regional or community completeness is claimed."
+        "Map assignment is editorial discovery judgment; no regional or community completeness is claimed.",
+        "2026-11-05：读取官方登记的指定网页区段，见rd-cn-gbt24044-2008-registry；标准全文仍为metadata-only，保持not-close-read。",
+        "阅读对象为国家标准官方信息记录，不是标准全文；登记的等同采用关系不是本次逐条文独立验证。",
+        "发布日期、实施日期、当前状态和历史替代关系分别记录；不以现代版编号倒推早期条款、约束效力或方法有效性。",
+        "不证明杨建新等2001年研究模型、区域参数、归一化或价值取舍获国家采用或验证。"
       ],
-      "catalogSourceIds": []
+      "catalogSourceIds": [
+        "src-cn-gbt24044-2008-registry"
+      ]
     },
     {
       "id": "lit-com-11",
@@ -10142,6 +10302,313 @@
       ],
       "catalogSourceIds": [
         "src-pack-napper2019"
+      ]
+    },
+    {
+      "id": "lit-cn-gbt24040-1999",
+      "title": "GB/T 24040-1999 — 环境管理 生命周期评价 原则与框架",
+      "contributors": "国家标准；此处只核对官方登记的起草单位，未查验标准题名叶和完整署名",
+      "year": "1999",
+      "kind": "standard",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D80826D3A7E05397BE0A0AB82A",
+          "role": "official registry: identity, dates, adoption and successor metadata; no standard clauses"
+        }
+      ],
+      "identifiers": {
+        "standard": "GB/T 24040-1999"
+      },
+      "volumes": [
+        "V2",
+        "V7"
+      ],
+      "topics": [
+        "framework",
+        "Chinese national standardization",
+        "institutional history"
+      ],
+      "languages": [
+        "zh"
+      ],
+      "regions": [
+        "China"
+      ],
+      "traditions": [
+        "Chinese national standardization"
+      ],
+      "discovery": {
+        "queryIds": [
+          "Q-CNSTD-01",
+          "Q-CNSTD-05",
+          "Q-CNSTD-06",
+          "Q-CNSTD-07",
+          "Q-CNSTD-08"
+        ],
+        "reason": "Sun2002的前两项已发布、另两项预计2002年发布，构成有针对性的官方登记追查。",
+        "citationParents": [
+          "lit-com-11"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "metadata-only",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-05",
+      "lastCheckedAt": "2026-11-05",
+      "rights": "第三方原作保留权利；本次只发布书目事实与原创释义，未确认标准全文或页面的开放再利用许可。原始HTML仅存仓库外私人任务缓存。",
+      "limitations": [
+        "2026-11-05：读取官方登记的指定网页区段，见rd-cn-gbt24040-1999-registry；标准全文仍为metadata-only，保持not-close-read。",
+        "阅读对象为国家标准官方信息记录，不是标准全文；登记的等同采用关系不是本次逐条文独立验证。",
+        "发布日期、实施日期、当前状态和历史替代关系分别记录；不以现代版编号倒推早期条款、约束效力或方法有效性。",
+        "不证明杨建新等2001年研究模型、区域参数、归一化或价值取舍获国家采用或验证。"
+      ],
+      "catalogSourceIds": [
+        "src-cn-gbt24040-1999-registry"
+      ]
+    },
+    {
+      "id": "lit-cn-gbt24041-2000",
+      "title": "GB/T 24041-2000 — 环境管理 生命周期评价 目的与范围的确定和清单分析",
+      "contributors": "国家标准；此处只核对官方登记的起草单位，未查验标准题名叶和完整署名",
+      "year": "2000",
+      "kind": "standard",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D796D5D3A7E05397BE0A0AB82A",
+          "role": "official registry: identity, dates, adoption and successor metadata; no standard clauses"
+        }
+      ],
+      "identifiers": {
+        "standard": "GB/T 24041-2000"
+      },
+      "volumes": [
+        "V2",
+        "V7"
+      ],
+      "topics": [
+        "framework",
+        "Chinese national standardization",
+        "institutional history"
+      ],
+      "languages": [
+        "zh"
+      ],
+      "regions": [
+        "China"
+      ],
+      "traditions": [
+        "Chinese national standardization"
+      ],
+      "discovery": {
+        "queryIds": [
+          "Q-CNSTD-01",
+          "Q-CNSTD-05",
+          "Q-CNSTD-06",
+          "Q-CNSTD-07",
+          "Q-CNSTD-08"
+        ],
+        "reason": "Sun2002的前两项已发布、另两项预计2002年发布，构成有针对性的官方登记追查。",
+        "citationParents": [
+          "lit-com-11"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "metadata-only",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-05",
+      "lastCheckedAt": "2026-11-05",
+      "rights": "第三方原作保留权利；本次只发布书目事实与原创释义，未确认标准全文或页面的开放再利用许可。原始HTML仅存仓库外私人任务缓存。",
+      "limitations": [
+        "2026-11-05：读取官方登记的指定网页区段，见rd-cn-gbt24041-2000-registry；标准全文仍为metadata-only，保持not-close-read。",
+        "阅读对象为国家标准官方信息记录，不是标准全文；登记的等同采用关系不是本次逐条文独立验证。",
+        "发布日期、实施日期、当前状态和历史替代关系分别记录；不以现代版编号倒推早期条款、约束效力或方法有效性。",
+        "不证明杨建新等2001年研究模型、区域参数、归一化或价值取舍获国家采用或验证。"
+      ],
+      "catalogSourceIds": [
+        "src-cn-gbt24041-2000-registry"
+      ]
+    },
+    {
+      "id": "lit-cn-gbt24042-2002",
+      "title": "GB/T 24042-2002 — 环境管理 生命周期评价 生命周期影响评价",
+      "contributors": "国家标准；此处只核对官方登记的起草单位，未查验标准题名叶和完整署名",
+      "year": "2002",
+      "kind": "standard",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D7B7E6D3A7E05397BE0A0AB82A",
+          "role": "official registry: identity, dates, adoption and successor metadata; no standard clauses"
+        }
+      ],
+      "identifiers": {
+        "standard": "GB/T 24042-2002"
+      },
+      "volumes": [
+        "V2",
+        "V7"
+      ],
+      "topics": [
+        "framework",
+        "Chinese national standardization",
+        "institutional history"
+      ],
+      "languages": [
+        "zh"
+      ],
+      "regions": [
+        "China"
+      ],
+      "traditions": [
+        "Chinese national standardization"
+      ],
+      "discovery": {
+        "queryIds": [
+          "Q-CNSTD-01",
+          "Q-CNSTD-05",
+          "Q-CNSTD-06",
+          "Q-CNSTD-07",
+          "Q-CNSTD-08"
+        ],
+        "reason": "Sun2002的前两项已发布、另两项预计2002年发布，构成有针对性的官方登记追查。",
+        "citationParents": [
+          "lit-com-11"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "metadata-only",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-05",
+      "lastCheckedAt": "2026-11-05",
+      "rights": "第三方原作保留权利；本次只发布书目事实与原创释义，未确认标准全文或页面的开放再利用许可。原始HTML仅存仓库外私人任务缓存。",
+      "limitations": [
+        "2026-11-05：读取官方登记的指定网页区段，见rd-cn-gbt24042-2002-registry；标准全文仍为metadata-only，保持not-close-read。",
+        "阅读对象为国家标准官方信息记录，不是标准全文；登记的等同采用关系不是本次逐条文独立验证。",
+        "发布日期、实施日期、当前状态和历史替代关系分别记录；不以现代版编号倒推早期条款、约束效力或方法有效性。",
+        "不证明杨建新等2001年研究模型、区域参数、归一化或价值取舍获国家采用或验证。"
+      ],
+      "catalogSourceIds": [
+        "src-cn-gbt24042-2002-registry"
+      ]
+    },
+    {
+      "id": "lit-cn-gbt24043-2002",
+      "title": "GB/T 24043-2002 — 环境管理 生命周期评价 生命周期解释",
+      "contributors": "国家标准；此处只核对官方登记的起草单位，未查验标准题名叶和完整署名",
+      "year": "2002",
+      "kind": "standard",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D7B7E7D3A7E05397BE0A0AB82A",
+          "role": "official registry: identity, dates, adoption and successor metadata; no standard clauses"
+        }
+      ],
+      "identifiers": {
+        "standard": "GB/T 24043-2002"
+      },
+      "volumes": [
+        "V2",
+        "V7"
+      ],
+      "topics": [
+        "framework",
+        "Chinese national standardization",
+        "institutional history"
+      ],
+      "languages": [
+        "zh"
+      ],
+      "regions": [
+        "China"
+      ],
+      "traditions": [
+        "Chinese national standardization"
+      ],
+      "discovery": {
+        "queryIds": [
+          "Q-CNSTD-01",
+          "Q-CNSTD-05",
+          "Q-CNSTD-06",
+          "Q-CNSTD-07",
+          "Q-CNSTD-08"
+        ],
+        "reason": "Sun2002的前两项已发布、另两项预计2002年发布，构成有针对性的官方登记追查。",
+        "citationParents": [
+          "lit-com-11"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "metadata-only",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-05",
+      "lastCheckedAt": "2026-11-05",
+      "rights": "第三方原作保留权利；本次只发布书目事实与原创释义，未确认标准全文或页面的开放再利用许可。原始HTML仅存仓库外私人任务缓存。",
+      "limitations": [
+        "2026-11-05：读取官方登记的指定网页区段，见rd-cn-gbt24043-2002-registry；标准全文仍为metadata-only，保持not-close-read。",
+        "阅读对象为国家标准官方信息记录，不是标准全文；登记的等同采用关系不是本次逐条文独立验证。",
+        "发布日期、实施日期、当前状态和历史替代关系分别记录；不以现代版编号倒推早期条款、约束效力或方法有效性。",
+        "不证明杨建新等2001年研究模型、区域参数、归一化或价值取舍获国家采用或验证。"
+      ],
+      "catalogSourceIds": [
+        "src-cn-gbt24043-2002-registry"
+      ]
+    },
+    {
+      "id": "lit-cn-sac-history-2008-07-11",
+      "title": "中国国家标准历史公告（页面标示2008-07-11），表中第341–342项",
+      "contributors": "国家标准化管理委员会历史公告记录",
+      "year": "2008",
+      "kind": "official-announcement",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://std.sacinfo.org.cn/gnoc/queryInfo?id=A3FF1EE9A205EC486C0C1D7F23452CD8",
+          "role": "official historical announcement HTML; selected rows only"
+        }
+      ],
+      "identifiers": {
+        "archiveRecord": "A3FF1EE9A205EC486C0C1D7F23452CD8"
+      },
+      "volumes": [
+        "V2",
+        "V7"
+      ],
+      "topics": [
+        "institutional history",
+        "standards succession"
+      ],
+      "languages": [
+        "zh"
+      ],
+      "regions": [
+        "China"
+      ],
+      "traditions": [
+        "Chinese national standardization"
+      ],
+      "discovery": {
+        "queryIds": [
+          "Q-CNSTD-11",
+          "Q-CNSTD-15",
+          "Q-CNSTD-16"
+        ],
+        "reason": "限定追查制度记录；2008年公告只用于辨明后继关系和日期类型，不能补写2002年原始公告。",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-05",
+      "lastCheckedAt": "2026-11-05",
+      "rights": "第三方原作保留权利；本次只发布书目事实与原创释义，未确认标准全文或页面的开放再利用许可。原始HTML仅存仓库外私人任务缓存。",
+      "limitations": [
+        "仅核读表内第341–342项及页面身份日期，未读其余标准；无1998年启动命令或2002年原公告原件。"
+      ],
+      "catalogSourceIds": [
+        "src-cn-sac-history-2008-07-11"
       ]
     }
   ],
