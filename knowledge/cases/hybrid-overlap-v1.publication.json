@@ -117,7 +117,7 @@
       ],
       "caveats": [],
       "reasoning": "逐项分开 F 的产出、排放、采购和销售，再对剩余供应者归一化。",
-      "textTemplate": "要单列 F，先从 E 的供给与直接排放总量取出 F 的 100 CU 和 40 kg CO₂。再按买卖双方处理两笔跨界交易。使用表中 S 卖给 E 的 50 CU 减去 F 所购的 20，留下 G 所购的 30。E 卖给 S 的 20 CU 减去 F 所售的 10，留下 G 所售的 10。S 自用的 20 保留。此时剩余电力部门只有 G，其 100 CU 产出对应 120 kg 排放，强度重算为 1.2 kg/CU。G 每元需服务 0.3 CU，S 每元需 G 电 0.1 CU 和服务 0.2 CU。两笔跨界交易已从背景内部移出，仍通过连接项进入模型。"
+      "textTemplate": "要单列 F，先从 E 的供给与直接排放总量取出 F 的 100 CU 和 40 kg CO₂。这一步拆出的是 F 在基准年中的整项生产活动。墙面服务占用多少 F 的发电量，要在按年账构造系数之后求解。再按买卖双方处理两笔跨界交易。使用表中 S 卖给 E 的 50 CU 减去 F 所购的 20，留下 G 所购的 30。E 卖给 S 的 20 CU 减去 F 所售的 10，留下 G 所售的 10。S 自用的 20 保留。此时剩余电力部门只有 G，其 100 CU 产出对应 120 kg 排放，强度重算为 1.2 kg/CU。G 每元需服务 0.3 CU，S 每元需 G 电 0.1 CU 和服务 0.2 CU。两笔跨界交易已从背景内部移出，仍通过连接项进入模型。"
     },
     {
       "id": "cl-hyb-equations",
@@ -163,7 +163,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "对两套矩阵分别求解，区别可直接定位的发票重复量和整套模型的净排放差。",
-      "textTemplate": "回看未拆分背景的算法。它的第二行会让电力部门供给 0.2w，服务需求则按 0.2u＋0.25v＋0.2w 计算，其中 v 此时是含 F 的平均电力部门产出。解得 u＝{{evaluated.naive.activities.0.exact}}、v＝{{evaluated.naive.activities.1.exact}}、w＝{{evaluated.naive.activities.2.exact}}，三行都能平衡。按其中的强度计算为 0.4u＋0.8v＋0.3w＝{{evaluated.naive.totalCO2Kg.exact}} kg CO₂。它比逐笔拆分的结果高 {{evaluated.naive.excessOverCorrectedCO2Kg.fixed6}} kg。与发票核对才能发现重复的 10 CU。排放差额还包含平均强度与服务配方的变化，解释它时必须同时考虑这些变化。"
+      "textTemplate": "回看未拆分背景的算法。它的三行变为 u − 0.1w ＝ 20，v − 0.2w ＝ 0，w − 0.2u − 0.25v − 0.2w ＝ 0。这里 u 仍是单列的 F 发电量（kWh），v 是由原表平均系数算出的电力部门活动量（CU），w 是服务产出（CU）。这组表示让同一笔 F 向 S 的售电记录既进入第一行的 0.1 连接，又留在第二行的 0.2 系数里。解得 u＝{{evaluated.naive.activities.0.exact}}、v＝{{evaluated.naive.activities.1.exact}}、w＝{{evaluated.naive.activities.2.exact}}，三行都能平衡。按其中的强度计算为 0.4u＋0.8v＋0.3w＝{{evaluated.naive.totalCO2Kg.exact}} kg CO₂。它比逐笔拆分的结果高 {{evaluated.naive.excessOverCorrectedCO2Kg.fixed6}} kg。与发票核对才能发现重复的 10 CU。排放差额还包含平均强度与服务配方的变化，解释它时必须同时考虑这些变化。"
     },
     {
       "id": "cl-hyb-swap",
@@ -179,7 +179,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "构造保持聚合表各格不变、具体供电关系不同的第二个供应者账本。",
-      "textTemplate": "考虑另一组真实关系已在例内给定的账目。S 仍买 20 CU 电，现在全部购自 G。F、G 的年发电量、价格、排放和服务采购额照旧，因而 F 的最终销售余量增至 100 CU，G 的降至 80 CU。合并成 E 以后，两张表中的产出、部门间每一格使用额以及直接排放都相同。分析者只见部门表，便无法凭“这里有 10 CU 电”决定其中一笔属于 F。"
+      "textTemplate": "考虑另一组同样逐笔给定的供应关系。S 仍买 20 CU 电，现在全部购自 G。F、G 的年发电量、价格、排放和服务采购额照旧，因而 F 的最终销售余量增至 100 CU，G 的降至 80 CU。合并成 E 以后，两张表中的产出、部门间每一格使用额以及直接排放都相同。分析者只见部门表，便无法凭“这里有 10 CU 电”决定其中一笔属于 F。"
     },
     {
       "id": "cl-hyb-swap-result",

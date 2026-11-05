@@ -149,3 +149,13 @@ reading limits. The development record preserves the actual access and query
 history. The next manuscript step uses a disclosed supplier ledger to make the
 missing account split inspectable. Publication and integration qualification are
 still open under issue 32.
+
+The completed manuscript candidate now deepens the existing hybrid chapter to
+38 paragraphs, including 11 bound to the new supplier-ledger case. It distinguishes
+Peters and Hertwich's 2004 working-paper comparison from the 2006 journal exchange.
+The printed equation shows five columns, while the prose applies the same rate to
+each sector in Suh's six-sector economy. Following the prose reproduces the stated
+four-decimal results. The reader notes retain this discrepancy and the separate
+A7 price-axis question. Targeted reader feedback led to explicit treatment of the
+structural-shift exception and named secondary attribution of the 2006 reply.
+The source Issue and PR own CI, integration, live qualification and terminal status.

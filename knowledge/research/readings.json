@@ -7417,7 +7417,7 @@
         {
           "id": "psg-hyb-jakobs-design",
           "artifactId": "art-hyb-jakobs-2021-pdf",
-          "locator": "§§2.1–2.3.1, Eq.2; §§2.5–2.6, Eq.3 and §4 opening on household coverage",
+          "locator": "§§2.1–2.3.1, Eq.2; §§2.5–2.6, Eq.3 and §4 opening on household coverage and §2.1 Eq.1 with the discussion of downstream connections",
           "printedPages": "3–5,7–8",
           "pdfIndices": [
             2,
@@ -7629,6 +7629,95 @@
           "No matrix, coefficient, eigenvalue value, comparative dataset, uncertainty or computational reproduction checked.",
           "The statement that dependencies are realistic and the reported eigenvalue agreement remain the response authors’ characterizations.",
           "Fixed raw HTML contains one Abstract paragraph with six sentences; web extraction displays the same text in two blocks. Locators use Abstract sentence order, not inferred journal-page or PDF numbering."
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      }
+    },
+    {
+      "id": "rd-hyb-downstream-precursor",
+      "workId": "work-hyb-peters-hertwich-2004-workingpaper",
+      "title": "A comment on “Functions, commodities and environmental impacts in an ecological-economic model” — 2004 NTNU working paper",
+      "version": "NTNU Industrial Ecology Programme Working Paper no. 2/2004，September 2004；实际 PDF 15 页，含正文印刷 pp1–11；未核准等同于 2006 年期刊版本。",
+      "url": "https://nva.sikt.no/registration/0198cc473ce9-e0bfe480-e7b3-438f-b0ee-2d666bab9355",
+      "accessedAt": "2026-11-05",
+      "readAt": "2026-11-05",
+      "readingStatus": "selected-passages",
+      "question": "2004 年前置工作论文怎样按需求与数据库构造区分 Cd 的使用？",
+      "argumentSummary": "作者按只为功能需求收集的数据库和可承接任意过程需求的数据库分两种情形，分别讨论小反馈与数据负担，并承认结构性改变和部分任意需求数据库的例外。它不是无条件禁止反馈。",
+      "rights": "第三方原作保留权利。机构公开下载或出版商摘要索引不转授原件、图像、表格或全文的再分发许可；本项目只发布原创释义、元数据与定位。",
+      "unread": [
+        "与 2006 年期刊 Comment 的逐段版本核对。",
+        "原作与本工作的基础资料和作者所引外部数据。"
+      ],
+      "artifacts": [
+        {
+          "id": "art-hyb-downstream-precursor",
+          "mediaType": "application/pdf",
+          "sha256": "b2f9ddfbb9c17f23597f772db0dae9d36f7c7d39521260af92d917be1785eddc",
+          "resolvedUrl": "https://api.nva.unit.no/publication/0198cc473ce9-e0bfe480-e7b3-438f-b0ee-2d666bab9355/filelink/fbeb787f-4223-4e7e-a6f0-3b30d7386c94",
+          "pageCount": 15
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-hyb-downstream-precursor",
+          "artifactId": "art-hyb-downstream-precursor",
+          "locator": "2004 Working Paper §2、§2.1、§2.2 及 §3；式 (3)–(10)；区别固定功能需求与向其他过程提出需求",
+          "printedPages": "1；3–8",
+          "pdfIndices": [
+            2,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "topics": [
+            "条件性 Cd 解释",
+            "固定功能需求与任意过程外需",
+            "数据覆盖和代表性",
+            "不同版本"
+          ],
+          "limits": [
+            "实际载体是 15 页 PDF，其中正文页码 1–11；不是原提示所称 thesis，也不是 2006 年六页期刊原件。",
+            "未建立 2004 工作论文与 2006 Comment 的逐段版本对应；不得把工作论文详细结论直接归为最终文章原文。",
+            "关于收益、数据负担和反馈大小的论断是作者的方法判断与示例，不是所有 LCA 的经验规律。",
+            "未发现此载体对 Suh 2004 Appendix (A7) 的明确更正；不能据此推断未读期刊交流均未更正。",
+            "market share 的具体处理和 downstream 来源代表性仍须取得最终 Comment 与 Reply 正文核对。"
+          ]
+        },
+        {
+          "id": "psg-hyb-downstream-toast-row",
+          "artifactId": "art-hyb-downstream-precursor",
+          "printedPages": "4–5",
+          "pdfIndices": [
+            5,
+            6
+          ],
+          "locator": "§2.1，式 (6)、式 (7)、紧随其后的 CO₂ 对照和行业结构变化的例外",
+          "topics": [
+            "只对烤面包行提出需求的下游系数",
+            "完全置零的对照",
+            "外部需求与内部反馈"
+          ],
+          "limits": [
+            "两个量均为假设系统中的模型结果。工作论文的系数定义有别于 Suh 原例。",
+            "工作论文第 4 页的文字将 0.01 片/美元用于每个部门，式 (6) 的图示却只排了五列，Suh 的经济块有六个部门。按文字把系数用于六个部门，可复得第 5 页的舍入结果。列数差异仍保留。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "公开 NVA OpenFile 的固定 PDF 文本选读；印刷 p1、3、4、6 的实际图像复核；原载体封面标明 Working Paper no. 2/2004，正文日期 September 2004。",
+        "methodologicalScope": "作者的 2004 年工作论文对 downstream 项的条件性方法批评；不是已核准的 2006 年期刊版本。",
+        "independence": "Peters 与 Hertwich 是另组作者；2004 工作论文与其 2006 Comment 属于同一讨论谱系，不计为两次独立检验。",
+        "limitations": [
+          "实际载体是 15 页 PDF，其中正文页码 1–11；不是原提示所称 thesis，也不是 2006 年六页期刊原件。",
+          "未建立 2004 工作论文与 2006 Comment 的逐段版本对应；不得把工作论文详细结论直接归为最终文章原文。",
+          "关于收益、数据负担和反馈大小的论断是作者的方法判断与示例，不是所有 LCA 的经验规律。",
+          "未发现此载体对 Suh 2004 Appendix (A7) 的明确更正；不能据此推断未读期刊交流均未更正。",
+          "market share 的具体处理和 downstream 来源代表性仍须取得最终 Comment 与 Reply 正文核对。"
         ],
         "reviewKind": "agent-source-check",
         "checkedAt": "2026-11-05"
@@ -8216,6 +8305,15 @@
         "V7-05A",
         "CASE-POWER",
         "A05"
+      ]
+    },
+    {
+      "id": "gap-hyb-downstream-final-versions",
+      "description": "已取得 2004 前置工作论文，2006 Comment 与 Reply 只读索引摘要开头；market share、背景流代表性及 A7 的最终立场未核准。",
+      "nextAction": "通过正常作者或机构渠道取得两篇最终正文并核对版本；明确核准前不把工作论文升级为期刊原文，也不声称争议已解决。",
+      "affectedUnits": [
+        "V4-04",
+        "V4-05"
       ]
     }
   ],
@@ -9216,6 +9314,40 @@
         "A05"
       ],
       "status": "applied to the chapter and linked research records"
+    },
+    {
+      "id": "rev-hyb-reader-meaning",
+      "before": "读者可能混用上下游连接，或把重复表示的部门活动量当作具名供应者物量之和。",
+      "after": "写全未拆分的三行方程、两种系数对同笔交易的覆盖，以及多过程的产出与排放边界。将构造例、回应摘要和数据库实际实现分别归属。",
+      "reasoning": "原页与独立读者复核使块的解释更具体，直接投向该次计算的范围。",
+      "triggerPassageIds": [
+        "psg-hyb-suh-block",
+        "psg-hyb-suh-overlap",
+        "psg-hyb-jakobs-design",
+        "psg-hyb-response-york-abstract"
+      ],
+      "affectedUnits": [
+        "V4-04",
+        "V4-05",
+        "A05"
+      ],
+      "status": "applied to manuscript and numerical templates"
+    },
+    {
+      "id": "rev-hyb-downstream-objection",
+      "before": "双向连接与单向数据库实现的区别只按公式说明。",
+      "after": "加入固定功能单位与任意功能流需求的代表性问题，分别归属工作论文的原始论证和后续研究对答复的转述。",
+      "reasoning": "下游块向过程系统提出需求，其用途取决于过程数据能代表哪些产品和买方。已取得的工作论文、后发期刊评论与答复保留各自载体状态。",
+      "triggerPassageIds": [
+        "psg-hyb-downstream-precursor",
+        "psg-hyb-jakobs-design"
+      ],
+      "affectedUnits": [
+        "V4-04",
+        "V4-05",
+        "A05"
+      ],
+      "status": "applied to the chapter"
     }
   ]
 }

@@ -1279,6 +1279,36 @@
         "query": "https://pure.york.ac.uk/portal/en/publications/hybrid-life-cycle-assessment-lca-will-likely-yield-more-accurate-/",
         "date": "2026-11-05",
         "channel": "direct institutional public HTML route, ordinary GET; previously identified in bounded response search, no new search-ranking claim"
+      },
+      {
+        "id": "Q-HYB-BPC-NAME",
+        "query": "Stromman Peters Hertwich 2009 \"by-product\" double counting correction \"product\" hybrid input-output approach by product pdf",
+        "date": "2026-11-05",
+        "channel": "Bounded name check after reader feedback. The inspected Agez original supplies the method name and operation. The 2009 work remains a citation lead."
+      },
+      {
+        "id": "q-hyb-downstream-comment",
+        "query": "\"Peters\" \"Hertwich\" \"Suh\" \"Comment\" \"2006\" \"Functions\"",
+        "date": "2026-11-05",
+        "channel": "one bounded public-web-search for original Comment; then direct publisher, Crossref, NTNU author page and public NVA file links"
+      },
+      {
+        "id": "q-hyb-downstream-reply",
+        "query": "\"Suh\" \"2006\" \"Reply\" \"Functions, commodities\"",
+        "date": "2026-11-05",
+        "channel": "one bounded public-web-search for original Reply; then direct publisher, Crossref, Elsevier API and author publication page"
+      },
+      {
+        "id": "Q-HYB-CD-MAIN",
+        "query": "Peters Hertwich Suh 2006 downstream cutoffs integrated hybrid life cycle assessment original comment calculation theoretical significance downstream corrections appendix A7",
+        "date": "2026-11-05",
+        "channel": "Public web search. Located the two journal records and the NTNU predecessor."
+      },
+      {
+        "id": "Q-HYB-CD-REPLY-REPEC",
+        "query": "\"Downstream cut-offs in integrated hybrid life-cycle assessment\" \"market\" RePEc Suh abstract",
+        "date": "2026-11-05",
+        "channel": "Public web search and RePEc issue navigation. The record for pages 7–12 supplies bibliographic identity. Its abstract section has no text."
       }
     ],
     "limitations": [
@@ -7912,6 +7942,191 @@
       "catalogSourceIds": [
         "src-hyb-response-york-abstract"
       ]
+    },
+    {
+      "id": "work-hyb-peters-hertwich-2004-workingpaper",
+      "title": "A comment on “Functions, commodities and environmental impacts in an ecological-economic model” — 2004 NTNU working paper",
+      "contributors": "Glen Peters; Edgar Hertwich",
+      "year": "2004",
+      "kind": "working-paper",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://nva.sikt.no/registration/0198cc473ce9-e0bfe480-e7b3-438f-b0ee-2d666bab9355",
+          "role": "实际取得的公开 15 页 PDF 的机构记录；OpenFile 标注可下载"
+        },
+        {
+          "url": "https://hdl.handle.net/11250/242589",
+          "role": "原 NTNU 持久标识；现重定向 NVA"
+        }
+      ],
+      "identifiers": {
+        "report": "NTNU Industrial Ecology Programme Working Paper no. 2/2004",
+        "series": "ISSN 1504-3681",
+        "manifestationNote": "September 2004 工作论文，正文 pp1–11，加前后置页共 15 页；不是 thesis；尚未核准与 2006 Comment 等同。"
+      },
+      "volumes": [
+        "V4"
+      ],
+      "topics": [
+        "downstream Cd",
+        "functional versus arbitrary demand",
+        "source-version boundaries"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "international"
+      ],
+      "traditions": [
+        "hybrid LCI"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-hyb-downstream-comment"
+        ],
+        "reason": "读者对 Cd 的问题触发的有界原始交流追踪；只记录实际取得的版本与选段，不把早期工作论文当作最终文章。",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-05",
+      "lastCheckedAt": "2026-11-05",
+      "rights": "第三方原作保留权利。机构公开下载或出版商摘要索引不转授原件、图像、表格或全文的再分发许可；本项目只发布原创释义、元数据与定位。",
+      "limitations": [
+        "实际载体是 15 页 PDF，其中正文页码 1–11；不是原提示所称 thesis，也不是 2006 年六页期刊原件。",
+        "未建立 2004 工作论文与 2006 Comment 的逐段版本对应；不得把工作论文详细结论直接归为最终文章原文。",
+        "关于收益、数据负担和反馈大小的论断是作者的方法判断与示例，不是所有 LCA 的经验规律。",
+        "未发现此载体对 Suh 2004 Appendix (A7) 的明确更正；不能据此推断未读期刊交流均未更正。",
+        "market share 的具体处理和 downstream 来源代表性仍须取得最终 Comment 与 Reply 正文核对。"
+      ],
+      "catalogSourceIds": [
+        "src-hyb-downstream-precursor"
+      ]
+    },
+    {
+      "id": "work-hyb-peters-hertwich-2006-comment",
+      "title": "A comment on “Functions, commodities and environmental impacts in an ecological–economic model”",
+      "contributors": "Glen P. Peters; Edgar G. Hertwich",
+      "year": "2006",
+      "kind": "comment",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0921800905003435",
+          "role": "原刊入口；直接请求 403，仅检索索引摘要开头读到"
+        },
+        {
+          "url": "https://api.crossref.org/works/10.1016/j.ecolecon.2005.08.008",
+          "role": "实际核验作品作者、DOI 和卷期元数据"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1016/j.ecolecon.2005.08.008",
+        "series": "Ecological Economics 59(1):1–6"
+      },
+      "volumes": [
+        "V4"
+      ],
+      "topics": [
+        "downstream Cd",
+        "functional versus arbitrary demand",
+        "source-version boundaries"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "international"
+      ],
+      "traditions": [
+        "hybrid LCI"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-hyb-downstream-comment"
+        ],
+        "reason": "读者对 Cd 的问题触发的有界原始交流追踪；只记录实际取得的版本与选段，不把早期工作论文当作最终文章。",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "abstract-or-excerpt",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-05",
+      "lastCheckedAt": "2026-11-05",
+      "rights": "第三方原作保留权利。机构公开下载或出版商摘要索引不转授原件、图像、表格或全文的再分发许可；本项目只发布原创释义、元数据与定位。",
+      "limitations": [
+        "直接出版商 HTML 返回 403；Elsevier API 仅给 core metadata，未给原刊正文。",
+        "选段捕获不是原始 HTML，也不是完整摘要；不能核准需求类型、market share 或 Appendix (A7) 的最终论证。",
+        "索引摘要把被评论作品的卷号写为 40；Suh 原作卷号为 48，不据此另造作品身份。",
+        "本轮仅保留 discovery record；未绑定 reading 或实质 evidence，索引摘要转述不提升为原作论证核准。"
+      ],
+      "catalogSourceIds": []
+    },
+    {
+      "id": "work-hyb-suh-2006-reply",
+      "title": "Reply: Downstream cut-offs in integrated hybrid life-cycle assessment",
+      "contributors": "Sangwon Suh",
+      "year": "2006",
+      "kind": "reply",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0921800905005604",
+          "role": "原刊入口；仅实际读到索引 Abstract 开头"
+        },
+        {
+          "url": "https://api.crossref.org/works/10.1016/j.ecolecon.2005.07.036",
+          "role": "实际核验作品作者、DOI 和卷期元数据"
+        },
+        {
+          "url": "https://suhlabucsb.blogspot.com/p/publications.html",
+          "role": "作者出版目录只核验发表身份，不含正文链接"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1016/j.ecolecon.2005.07.036",
+        "series": "Ecological Economics 59(1):7–12"
+      },
+      "volumes": [
+        "V4"
+      ],
+      "topics": [
+        "downstream Cd",
+        "functional versus arbitrary demand",
+        "source-version boundaries"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "international"
+      ],
+      "traditions": [
+        "hybrid LCI"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-hyb-downstream-reply"
+        ],
+        "reason": "读者对 Cd 的问题触发的有界原始交流追踪；只记录实际取得的版本与选段，不把早期工作论文当作最终文章。",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "abstract-or-excerpt",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-05",
+      "lastCheckedAt": "2026-11-05",
+      "rights": "第三方原作保留权利。机构公开下载或出版商摘要索引不转授原件、图像、表格或全文的再分发许可；本项目只发布原创释义、元数据与定位。",
+      "limitations": [
+        "原刊全文、完整摘要和补充材料未取得；原始 HTML 也未成功获取。",
+        "所读句子的主语为评论方作者；不能将其意见当作 Suh 的认可或最终结论。",
+        "无法据此核准 market share、背景过程代表性、特定需求与任意外需的最终解释，或 Appendix (A7) 是否修复。",
+        "本轮仅保留 discovery record；未绑定 reading 或实质 evidence，索引摘要转述不提升为原作论证核准。"
+      ],
+      "catalogSourceIds": []
     }
   ],
   "gaps": [
@@ -8146,6 +8361,15 @@
         "V7"
       ],
       "priority": "normal"
+    },
+    {
+      "id": "gap-hyb-downstream-exchange-fulltext",
+      "description": "已发表 Comment/Reply 的原件与完整论证未取得；公开 NTNU 载体为不同的 2004 工作论文。",
+      "priority": "high",
+      "nextSearch": "后续仅追踪两篇确切 DOI 的正常作者/机构可用版本；完成固定载体、版本对应及 market share/代表性/A7 定位。",
+      "volumes": [
+        "V4"
+      ]
     }
   ]
 }
