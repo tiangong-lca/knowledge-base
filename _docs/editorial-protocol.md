@@ -14,7 +14,7 @@ checkPaths:
   - "knowledge/**"
   - "releases/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: 91eb129098ef43e56432110a5cfd30f581a34424
+lastReviewedCommit: f08a5efdfb61043d03b55596b8df3f2865967510
 ---
 
 # Editorial and living review protocol
@@ -108,3 +108,5 @@ records, prices, period alignment and mappings. Retain conflicting price labels
 with their original locations. Keep a published hypothetical comparison, an
 author-designed counterexample, database price sensitivity and a reply available
 only through its abstract in distinct evidence records.
+
+For ecological-scarcity scores, trace a policy objective, the conversion to a critical annual load, the normalizing load and the published factor separately. Retain the baseline year and the factor edition when an estimate is revised. A ranking test requires the same service across alternatives; a change in the composition of one score supports a different claim. Independent checks distinguish exact reconstruction from published inputs, model sensitivity and observations of actual environmental change.
