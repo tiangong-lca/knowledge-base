@@ -1,0 +1,161 @@
+{
+  "caseId": "CASE-ECOLOGICAL-SCARCITY",
+  "version": "1.0.0",
+  "model": "swiss-2013-selected-ecofactors-and-author-service-v1",
+  "createdAt": "2026-11-05",
+  "status": "selected-source-arithmetic-and-author-illustration",
+  "source": {
+    "sourceId": "src-es-swiss-2013",
+    "readingId": "rd-es-swiss-2013",
+    "artifactId": "art-es-swiss-2013",
+    "sha256": "af60472d4aa2ff66bcd6fc5929f37824595e0a4437dd1869a9c62ca5975cff20"
+  },
+  "facts": {
+    "nmvocNormalization": {
+      "value": "89025",
+      "unit": "t NMVOC/a",
+      "quantity": "normalization-flow",
+      "subject": "switzerland-2013-air-nmvoc",
+      "basis": "Switzerland; 2013 edition; Table 14; air emissions; displayed source values; NMVOC excluding methane and CFCs",
+      "evidenceId": "ev-es-nmvoc",
+      "factId": "nf-es-nmvoc-normalization",
+      "passageId": "psg-es-nmvoc"
+    },
+    "nmvocCurrent": {
+      "value": "89025",
+      "unit": "t NMVOC/a",
+      "quantity": "current-flow",
+      "subject": "switzerland-2013-air-nmvoc",
+      "basis": "Switzerland; 2013 edition; Table 14; air emissions; displayed source values; NMVOC excluding methane and CFCs",
+      "evidenceId": "ev-es-nmvoc",
+      "factId": "nf-es-nmvoc-current",
+      "passageId": "psg-es-nmvoc"
+    },
+    "nmvocCritical": {
+      "value": "81000",
+      "unit": "t NMVOC/a",
+      "quantity": "critical-flow",
+      "subject": "switzerland-2013-air-nmvoc",
+      "basis": "Switzerland; 2013 edition; Table 14; air emissions; displayed source values; NMVOC excluding methane and CFCs",
+      "evidenceId": "ev-es-nmvoc",
+      "factId": "nf-es-nmvoc-critical",
+      "passageId": "psg-es-nmvoc"
+    },
+    "nmvocPublishedFactor": {
+      "value": "14",
+      "unit": "UBP/g NMVOC",
+      "quantity": "published-rounded-ecofactor",
+      "subject": "switzerland-2013-air-nmvoc",
+      "basis": "Switzerland; 2013 edition; Table 14; air emissions; displayed source values; NMVOC excluding methane and CFCs",
+      "evidenceId": "ev-es-nmvoc",
+      "factId": "nf-es-nmvoc-factor",
+      "passageId": "psg-es-nmvoc"
+    },
+    "noxNormalization": {
+      "value": "78704",
+      "unit": "t NOx as NO2/a",
+      "quantity": "normalization-flow",
+      "subject": "switzerland-2013-air-nox",
+      "basis": "Switzerland; 2013 edition; Table 15; air emissions; displayed source values; NOx as NO2",
+      "evidenceId": "ev-es-nox",
+      "factId": "nf-es-nox-normalization",
+      "passageId": "psg-es-nox"
+    },
+    "noxCurrent": {
+      "value": "78704",
+      "unit": "t NOx as NO2/a",
+      "quantity": "current-flow",
+      "subject": "switzerland-2013-air-nox",
+      "basis": "Switzerland; 2013 edition; Table 15; air emissions; displayed source values; NOx as NO2",
+      "evidenceId": "ev-es-nox",
+      "factId": "nf-es-nox-current",
+      "passageId": "psg-es-nox"
+    },
+    "noxCritical": {
+      "value": "45000",
+      "unit": "t NOx as NO2/a",
+      "quantity": "critical-flow",
+      "subject": "switzerland-2013-air-nox",
+      "basis": "Switzerland; 2013 edition; Table 15; air emissions; displayed source values; NOx as NO2",
+      "evidenceId": "ev-es-nox",
+      "factId": "nf-es-nox-critical",
+      "passageId": "psg-es-nox"
+    },
+    "noxPublishedFactor": {
+      "value": "39",
+      "unit": "UBP/g NOx as NO2",
+      "quantity": "published-rounded-ecofactor",
+      "subject": "switzerland-2013-air-nox",
+      "basis": "Switzerland; 2013 edition; Table 15; air emissions; displayed source values; NOx as NO2",
+      "evidenceId": "ev-es-nox",
+      "factId": "nf-es-nox-factor",
+      "passageId": "psg-es-nox"
+    },
+    "scalingConstant": {
+      "value": "1000000000000",
+      "unit": "1/a",
+      "quantity": "ecofactor-scaling-constant",
+      "subject": "ecological-scarcity-equation-4",
+      "basis": "Switzerland; 2013 edition; Equation 4; c=10^12/a",
+      "evidenceId": "ev-es-equation",
+      "factId": "nf-es-scaling-constant",
+      "passageId": "psg-es-equation"
+    }
+  },
+  "reconstruction": {
+    "equation": "UBP/Fn * (F/Fk)^2 * c",
+    "gramsPerTonne": "1000000",
+    "massConversionIsUnitDefinition": true,
+    "differentialCharacterizationApplied": false,
+    "normalizationRegion": "Switzerland",
+    "referenceRegion": "Switzerland",
+    "factorOutputUnit": "UBP/g of identified air emission",
+    "unreportedPrecisionRecovered": false,
+    "publishedRoundedFactorsUsedForScores": true
+  },
+  "service": {
+    "amount": "1",
+    "unit": "m2",
+    "activity": "coat the same substrate in Switzerland",
+    "performance": "identical coverage, durability and quality",
+    "equivalence": "author-stipulated",
+    "onlyDifferingInventories": "NMVOC excluding methane and CFCs and NOx as NO2 emitted to air",
+    "allOtherActivitiesAndFlowsHeldEqual": true,
+    "empiricalProductComparison": false,
+    "wholeLifeCycleCoverage": false
+  },
+  "illustration": {
+    "inventoryUnit": "g per stipulated service",
+    "nmvocIdentity": "NMVOC excluding methane and CFCs; air emission",
+    "noxIdentity": "NOx as NO2; air emission",
+    "A": {
+      "nmvoc": "4",
+      "nox": "1"
+    },
+    "B": {
+      "nmvoc": "2",
+      "nox": "2"
+    },
+    "scoreUnit": "UBP per stipulated service",
+    "commonFactorMultiplier": "10",
+    "sensitivity": {
+      "parameter": "x",
+      "kind": "author-educational-multiplier-on-rounded-NOx-factor-only",
+      "displayPoint": "0.5",
+      "nmvocFactorHeldFixed": true,
+      "inventoryHeldFixed": true,
+      "normalizationAndCriticalFlowsHeldFixed": true,
+      "modeledPolicyUpdate": false,
+      "probabilityAssigned": false
+    }
+  },
+  "interpretation": {
+    "sourceEdition": "2013",
+    "currentPolicyOrFactorRecommendation": false,
+    "criticalFlowsAreEcologicalSafetyThresholds": false,
+    "indicatorIsDamageMeasure": false,
+    "scientificValidation": false,
+    "humanExpertApproval": false,
+    "allEnvironmentalCategoriesCovered": false
+  }
+}

@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: f08a5efdfb61043d03b55596b8df3f2865967510
+lastReviewedCommit: eb8c3cdd30010ec91fef5b3730e47a0ece290fdf
 ---
 
 # Publication contract
@@ -102,3 +102,5 @@ ledgers preserve supplier identity through aggregation, subtraction, normalizati
 and solution. A balance residual can check a proposed system of equations while
 the actual trading partners still require evidence. Source-reported numerical
 examples and the new supplier records have distinct provenance.
+
+For the Swiss 2013 weighting case, the original edition, work, carrier, passage and numerical tuple all qualify the factor used. The reconstruction from reported inputs and the application of rounded published values are distinct calculations. A synthetic change to one relative factor establishes a conditional ranking threshold. Historical policy change requires separate dated evidence.

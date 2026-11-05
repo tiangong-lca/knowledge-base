@@ -1479,6 +1479,96 @@
         "date": "2026-11-05",
         "channel": "Crossref API via urllib",
         "outcome": "Metadata confirmed VoR date, authors, PDF and CC BY 4.0. JSON retained."
+      },
+      {
+        "id": "q-es-extension-01",
+        "query": "site.bafu.admin.ch \"Ökofaktoren Schweiz 2006\" pdf",
+        "date": "2026-11-05",
+        "channel": "public-web-search"
+      },
+      {
+        "id": "q-es-extension-02",
+        "query": "site.bafu.admin.ch \"Bewertung in Ökobilanzen\" \"1997\" pdf",
+        "date": "2026-11-05",
+        "channel": "public-web-search"
+      },
+      {
+        "id": "q-es-extension-03",
+        "query": "\"Methode der ökologischen Knappheit\" \"0906\" bafu",
+        "date": "2026-11-05",
+        "channel": "public-web-search"
+      },
+      {
+        "id": "q-es-extension-04",
+        "query": "\"methode_der_oekologischenknappheitoekofaktoren2006.pdf\" \"sd-web\"",
+        "date": "2026-11-05",
+        "channel": "public-web-search"
+      },
+      {
+        "id": "q-es-extension-05",
+        "query": "\"Ökofaktoren 2006\" \"81 000\"",
+        "date": "2026-11-05",
+        "channel": "public-web-search"
+      },
+      {
+        "id": "q-es-extension-06",
+        "query": "\"Bewertung in Ökobilanzen\" \"297\" site.bafu.admin.ch",
+        "date": "2026-11-05",
+        "channel": "public-web-search"
+      },
+      {
+        "id": "q-es-extension-07",
+        "query": "\"Ökofaktoren 1997\" filetype:pdf Brand",
+        "date": "2026-11-05",
+        "channel": "public-web-search"
+      },
+      {
+        "id": "q-es-extension-08",
+        "query": "\"Bewertung in Ökobilanzen\" \"Ökofaktoren 1997\" \"pdf\" \"bafu\"",
+        "date": "2026-11-05",
+        "channel": "public-web-search"
+      },
+      {
+        "id": "q-es-extension-09",
+        "query": "\"Brand\" \"1998\" \"297\" \"pdf\" \"ökologischen Knappheit\"",
+        "date": "2026-11-05",
+        "channel": "public-web-search"
+      },
+      {
+        "id": "q-es-extension-10",
+        "query": "site.bafu.admin.ch \"Ozon in der Schweiz\" 1989 101",
+        "date": "2026-11-05",
+        "channel": "public-web-search"
+      },
+      {
+        "id": "q-es-extension-11",
+        "query": "site.bafu.admin.ch \"Luftreinhaltekonzept\" \"272\"",
+        "date": "2026-11-05",
+        "channel": "public-web-search"
+      },
+      {
+        "id": "q-es-extension-12",
+        "query": "\"bewertung\" \"oekobilanzen\" \"knappheit\" \"pdf\" \"dam\"",
+        "date": "2026-11-05",
+        "channel": "public-web-search"
+      },
+      {
+        "id": "q-es-extension-13",
+        "query": "\"Ökofaktoren 1997\" \"BUWAL\" download",
+        "date": "2026-11-05",
+        "channel": "public-web-search"
+      },
+      {
+        "id": "q-es-extension-14",
+        "query": "\"Ökofaktoren 1997\" \"pdf\" \"infras.ch\"",
+        "date": "2026-11-05",
+        "channel": "public-web-search"
+      },
+      {
+        "id": "q-es-extension-direct",
+        "query": "Direct public retrieval of exact BAFU UW0906 German PDF and legacy official Gazette2009/6585 PDF redirect, then Fedlex PDF; inspect1998 coauthor public publication list and known1997 download URLs.",
+        "date": "2026-11-05",
+        "channel": "official-and-author-direct-retrieval"
       }
     ],
     "limitations": [
@@ -8316,10 +8406,19 @@
         {
           "url": "https://www.blw.admin.ch/dam/it/sd-web/8Azwvn9xSxhj/Konzept%20betreffend%20lufthygienische%20Massnahmen%20des%20Bundes.pdf",
           "role": "Official BLW-hosted German report dated 11 September 2009."
+        },
+        {
+          "url": "https://www.fedlex.admin.ch/eli/fga/2009/1164/de",
+          "role": "官方作品或机构载体入口"
+        },
+        {
+          "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/fga/2009/1164/de/pdf-a/fedlex-data-admin-ch-eli-fga-2009-1164-de-pdf-a.pdf",
+          "role": "实际取得和选读的固定PDF载体"
         }
       ],
       "identifiers": {
-        "document": "11 September 2009; 2009–1221, 32-page BLW carrier"
+        "document": "11 September 2009; 2009–1221, 32-page BLW carrier",
+        "gazette": "BBl 2009 6585–6616"
       },
       "volumes": [
         "V5",
@@ -8340,7 +8439,8 @@
       ],
       "discovery": {
         "queryIds": [
-          "Q-ES-POL"
+          "Q-ES-POL",
+          "q-es-extension-direct"
         ],
         "reason": "Explicit target reference in UW-1330 Tables 14 and 15.",
         "citationParents": [
@@ -8353,10 +8453,12 @@
       "rights": "瑞士联邦机构公开提供这份德文报告。只采用书目信息、事实和原创释义，未评定整份文件的再利用权。",
       "limitations": [
         "表 2 只给削减百分比；未列示 2013 年版采用的两个绝对年流量。",
-        "未检验政策实际达成情况、具体地点的暴露或现行法律。"
+        "未检验政策实际达成情况、具体地点的暴露或现行法律。",
+        "BLW 载体与公报定本为同一作品，另存载体身份和表 2 核对范围。"
       ],
       "catalogSourceIds": [
-        "src-es-federal-2009"
+        "src-es-federal-2009",
+        "src-es-bundesrat-2009-final-carrier"
       ],
       "accessedAt": "2026-11-05",
       "lastCheckedAt": "2026-11-05"
@@ -8558,6 +8660,67 @@
       "catalogSourceIds": [
         "src-es-muhl-2021-perspective"
       ]
+    },
+    {
+      "id": "work-es-ecofactors-2006-in-2009",
+      "title": "Methode der ökologischen Knappheit – Ökofaktoren 2006. Methode für die Wirkungsabschätzung in Ökobilanzen",
+      "contributors": "Rolf Frischknecht; Roland Steiner; Niels Jungbluth; overview author Markus Ahmadi separately credited",
+      "year": "2009",
+      "kind": "method-report",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://www.bafu.admin.ch/dam/de/sd-web/aqzSwUXRGzkR/methode_der_oekologischenknappheitoekofaktoren2006.pdf",
+          "role": "官方作品或机构载体入口"
+        },
+        {
+          "url": "https://www.bafu.admin.ch/dam/de/sd-web/aqzSwUXRGzkR/methode_der_oekologischenknappheitoekofaktoren2006.pdf",
+          "role": "实际取得和选读的固定PDF载体"
+        }
+      ],
+      "identifiers": {
+        "report": "UW0906-D; Bern2009; 188printed/190physicalPDFpages; method data reference2006"
+      },
+      "volumes": [
+        "V5"
+      ],
+      "topics": [
+        "historical critical flows",
+        "edition identity",
+        "Swiss ecological scarcity"
+      ],
+      "languages": [
+        "de"
+      ],
+      "regions": [
+        "Switzerland"
+      ],
+      "traditions": [
+        "Swiss ecological scarcity"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-es-extension-direct"
+        ],
+        "reason": "沿2013报告文献及Situation2006表列追查上一个方法版本，并核读所选两项临界流的历史理由。",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-05",
+      "lastCheckedAt": "2026-11-05",
+      "rights": "第三方原件保留权利；公开下载不转授全文、图表或因子包再分发许可。本项目仅发布原创释义、元数据与定位；原件和图像留在私有缓存。",
+      "limitations": [
+        "实际载体为2009年出版的2006版，不能称作2006年发表，也不能把其详细历史理由不加说明归到2013原文。",
+        "只选读封面、版权页、§§3.4–3.5及相应文献条目；不是整部报告精读。",
+        "BUWAL1989、Graz1993、BUWAL1996a及BUWAL2005a/c等上游原件未取得或未读；本轮只能核准2009方法报告如何引用它们，不能核准其原文或空气化学模型。",
+        "正文说需超过75%减排，但81000是324000的恰好25%；报告又以Graz70–80%区间中点论证81000。应保留这是方法报告的选取，不写成上游科学文献唯一确定精确数值。",
+        "1997/1998原方法报告未取得；2009表格中的Situation1997列是后继报告的历史叙述，不当作1998原件读证。"
+      ],
+      "catalogSourceIds": [
+        "src-es-ecofactors-2006-in-2009"
+      ]
     }
   ],
   "gaps": [
@@ -8606,7 +8769,7 @@
         "V5"
       ],
       "priority": "high",
-      "nextSearch": "BUWAL Schriftenreihe Umwelt 133 (1990); Müller-Wenk 1978; Braunschweig 1982; 1997/1998 and 2006/2009 original releases. German UW-1330 and UW-2121 selected primary passages are now bound; native packages and broader version/rights audit remain open."
+      "nextSearch": "BUWAL Schriftenreihe Umwelt 133 (1990); Müller-Wenk 1978; Braunschweig 1982; 1997/1998 original release. German UW-0906, UW-1330 and UW-2121 selected primary passages are now bound; native packages and broader version/rights audit remain open."
     },
     {
       "id": "gap-japan-original-methods",

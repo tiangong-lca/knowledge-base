@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "caseId": "CASE-ECOLOGICAL-SCARCITY",
+  "version": "1.0.0",
+  "inputFile": "ecological-scarcity-v1.json",
+  "reviewedAt": "2026-11-05",
+  "reviewKind": "agent-source-check",
+  "approvedInputSha256": "2128ddd473a54c6dd696ed1fff28b61cdce93a137c390ff26ecc5c4e640700de",
+  "claims": [
+    {
+      "id": "cl-es-nmvoc",
+      "kind": "calculation",
+      "scope": "表 14 的实际单位和未舍入中间项",
+      "evidenceIds": [
+        "ev-es-nmvoc",
+        "ev-es-equation"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-es-nmvoc",
+          "relation": "supports",
+          "rationale": "表 14 给出三项年度流量及公布因子。"
+        },
+        {
+          "evidenceId": "ev-es-equation",
+          "relation": "supports",
+          "rationale": "式 (4) 给出常数、平方与归一化。"
+        }
+      ],
+      "premiseIds": [
+        "cl-es-three",
+        "cl-es-equation",
+        "cl-es-selection"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "以相同时间尺度约去权重比的单位，仅在归一化时作吨到克换算。",
+      "textTemplate": "现在可以算一克排入空气的 NMVOC 该记多少点。这里采用表 14 中排除甲烷、氯氟烃的一般 NMVOC 项，苯等有专用因子的物质另行辨认。2013 年版的归一化流与现状流都是每年 89,025 吨，临界流是每年 81,000 吨。归一化时把吨换成克，权重中分子分母的吨则可直接相消。计算 10¹² ÷ (89,025 × 10⁶) × (89,025/81,000)²，得 {{evaluated.reconstruction.nmvoc.reconstructedFactor.fixed6}} UBP/g。报告公布的因子为 {{input.facts.nmvocPublishedFactor.value}} UBP/g。多列出的几位小数只展示算术过程。"
+    },
+    {
+      "id": "cl-es-nox",
+      "kind": "calculation",
+      "scope": "表 15 中以 NO₂ 表示 NOx 的因子",
+      "evidenceIds": [
+        "ev-es-nox",
+        "ev-es-equation"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-es-nox",
+          "relation": "supports",
+          "rationale": "第 84–85 页给出质量口径及因子表。"
+        },
+        {
+          "evidenceId": "ev-es-equation",
+          "relation": "supports",
+          "rationale": "用同一公式和年度常数重建。"
+        }
+      ],
+      "premiseIds": [
+        "cl-es-equation",
+        "cl-es-retained-nox"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "以原始年度量计算，不从表内已舍入权重反推。",
+      "textTemplate": "表 15 的 NOx 按 NO₂ 质量计。归一化流和现状流均为每年 78,704 吨，临界流为每年 45,000 吨。相除再平方得到约 {{evaluated.reconstruction.nox.squaredWeighting.fixed6}} 的权重，把它乘上 10¹² ÷ (78,704 × 10⁶)，得到 {{evaluated.reconstruction.nox.reconstructedFactor.fixed6}} UBP/g，原表公布 {{input.facts.noxPublishedFactor.value}} UBP/g。“按 NO₂ 计”限定的是这克排放的质量口径；它没有给出街道旁的 NO₂ 浓度。"
+    },
+    {
+      "id": "cl-es-service",
+      "kind": "proposal",
+      "scope": "等效服务与可比较的两行虚构清单",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-es-nmvoc",
+        "cl-es-nox"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "指定共同服务，仅将两行清单作为方案间可变部分。",
+      "textTemplate": "回到涂装。约定在瑞士同一基底上完成 {{input.service.amount}} 平方米涂装，遮盖效果、耐久性和质量相同。只设两项排入空气的流量有差异，其余活动和流量相同。甲每次服务排放 {{input.illustration.A.nmvoc}} 克一般 NMVOC 和 {{input.illustration.A.nox}} 克按 NO₂ 计的 NOx；乙分别排放 {{input.illustration.B.nmvoc}} 克和 {{input.illustration.B.nox}} 克。假定这里的一般 NMVOC 均适用表 14。服务等效和清单克数都是教学设定。"
+    },
+    {
+      "id": "cl-es-score",
+      "kind": "calculation",
+      "scope": "每次等效服务的两项已公布因子贡献",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-es-service"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按克数乘各自表列因子并加总，比较乙减甲；共同项相消。",
+      "textTemplate": "按公布值给两行排放分别计分。甲的 NMVOC 贡献 4 × 14 = {{evaluated.illustration.baseline.A.nmvocContribution.exact}} 点，NOx 贡献 1 × 39 = {{evaluated.illustration.baseline.A.noxContribution.exact}} 点，共 {{evaluated.illustration.baseline.A.total.exact}} 点。乙的两项贡献分别为 {{evaluated.illustration.baseline.B.nmvocContribution.exact}} 和 {{evaluated.illustration.baseline.B.noxContribution.exact}} 点，共 {{evaluated.illustration.baseline.B.total.exact}} 点。从甲改用乙，少排两克 NMVOC 省下 28 点，多排一克 NOx 增加 39 点，合计增加 {{evaluated.illustration.baseline.differenceBMinusA.exact}} 点。这是两项差异流的分数；若还有相同的背景负担，两边都应加上它，分差仍是 11 点。"
+    },
+    {
+      "id": "cl-es-scale",
+      "kind": "calculation",
+      "scope": "同比例改变两个因子的计分尺度",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-es-score"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "共同正尺度可以从总和和分差中提出。",
+      "textTemplate": "如果把两个因子都乘 {{input.illustration.commonFactorMultiplier}}，甲变成 {{evaluated.illustration.commonScaling.A.total.exact}} 点，乙变成 {{evaluated.illustration.commonScaling.B.total.exact}} 点。这样重定了点数的尺度，但乙少排两克 NMVOC 所换来的收益与多排一克 NOx 所付的代价仍是原来的比例。对两个总分同乘任何正数，次序都能保留。"
+    },
+    {
+      "id": "cl-es-threshold",
+      "kind": "calculation",
+      "scope": "用已公布因子计算次序交换条件",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-es-score",
+        "cl-es-scale"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "令两行贡献的差额为零，并检查斜率为正。",
+      "textTemplate": "另一种试验只改变两项负担的相对重要性。保持两行清单及公布的 NMVOC 因子不动，把公布的 NOx 因子乘一个正数 x。乙减甲现在是 39x − 28 点。在 x = {{evaluated.illustration.sensitivity.tieMultiplier.exact}} 时，多排一克 NOx 恰好抵消少排两克 NMVOC，两种工艺的这部分分数都为 84。x 更大时甲较低，x 更小时乙较低。这个临界点属于采用表列整数因子的比较；改用未舍入的重算值，临界点也会略有不同。"
+    },
+    {
+      "id": "cl-es-test",
+      "kind": "calculation",
+      "scope": "相对评价的构造敏感性",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-es-threshold"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "固定两行清单和一个因子，把另一个因子折半。",
+      "textTemplate": "取 x = {{input.illustration.sensitivity.displayPoint}}，只把 NOx 的计分因子改成 {{evaluated.illustration.sensitivity.noxFactorAtDisplay.exact}} UBP/g。甲得到 {{evaluated.illustration.sensitivity.display.A.total.exact}} 点，乙得到 {{evaluated.illustration.sensitivity.display.B.total.exact}} 点。前后两次比较使用完全一样的排放克数。次序改变，说明这个具体取舍依赖于两项因子的相对大小。x 是我们为找出分界而引入的教学参数，没有替瑞士改写减排目标，也没有为未来政策赋予概率。"
+    }
+  ]
+}
