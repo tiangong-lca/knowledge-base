@@ -14,7 +14,7 @@ checkPaths:
   - "knowledge/**"
   - "releases/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: fc97d136912a6caeafbfedafb575c869bef15623
+lastReviewedCommit: 14e29acd7ed0605dd30396d2ad26f3a77376f1e8
 ---
 
 # Editorial and living review protocol
@@ -116,3 +116,13 @@ For a preference-based weight, trace the question actually shown to respondents,
 For complete-study interpretation, identify which reported comparison serves the stated question and which missing data make it conditional. Review comments, author replies and the final artifact each require locators. An acceptance statement does not establish that every promised edit appears consistently in the released text. Behaviour frequencies with respondents as their denominator require an explicit mapping before being used as bag-weighted material substitutions.
 
 For recovered-material chains, inspect physical processing and the point of substitution before applying quality factors. Keep burden attribution, modeled avoided activity and observed causal response separate. Compare fixed-service accounting choices with their actual assumptions; a changed reference efficiency prevents attributing the whole difference to one rule. Inspect the original correction alongside the original equation and distinguish a later stated rule from an inferred repair. A cycling experiment's stopping condition, sample removal, filler changes and omitted industrial operations must accompany any claim about material lifetime. Review the actual source table before inferring a grade mapping from generic categories.
+
+For institutional application, read the provision's actor, version, modal force
+and scope before tracing the chosen activity or output. Check the actual public
+artifact and its review object separately. Historical rules, partial updates and
+later transition guidance must not be collapsed into a single current method.
+Defaults remain assumptions, and an observed reporting or activity relation does
+not certify native implementation. Model comparisons need their own design,
+units and actual applicability constraints; preserve a same-method requirement
+when evaluating claims about country-specific methods and keep a regression's
+predictive response separate from an intervention effect.

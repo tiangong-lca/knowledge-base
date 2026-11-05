@@ -14,6 +14,7 @@ import { ecologicalScarcityInputShape, validateEcologicalScarcityCase, evaluateE
 import { limeValuationInputShape, validateLimeValuationCase, evaluateLimeValuationCase, validateLimeValuationFacts } from './lime-valuation.mjs';
 import { packStudyInputShape, validatePackStudyCase, evaluatePackStudyCase, validatePackStudyFacts } from './pack-study.mjs';
 import { recoveredPaperInputShape, validateRecoveredPaperCase, evaluateRecoveredPaperCase, validateRecoveredPaperFacts } from './recovered-paper.mjs';
+import { dairyRulesInputShape, validateDairyRulesCase, evaluateDairyRulesCase, validateDairyRulesFacts } from './dairy-rules.mjs';
 
 // Every nested object has an explicit schema. Unknown fields never enter public
 // downloads or the approved-input hash, including capture/private metadata.
@@ -92,6 +93,8 @@ const pedigreeInputShape = {
 // Closed model registry: a case identity selects its projection, evaluator and
 // numeric-source policy together. An input flag cannot disable wall fact checks.
 const caseAdapters = new Map([
+  ['CASE-DAIRY-RULES', { shape: dairyRulesInputShape, validate: validateDairyRulesCase,
+    context: input => ({ evaluated: evaluateDairyRulesCase(input) }), validateFacts: validateDairyRulesFacts }],
   ['CASE-CYCLE', { shape: recoveredPaperInputShape, validate: validateRecoveredPaperCase,
     context: input => ({ evaluated: evaluateRecoveredPaperCase(input) }), validateFacts: validateRecoveredPaperFacts }],
   ['CASE-PACK-STUDY', { shape: packStudyInputShape, validate: validatePackStudyCase,

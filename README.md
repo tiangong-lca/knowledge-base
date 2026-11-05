@@ -15,7 +15,7 @@ checkPaths:
   - "app/**"
   - "scripts/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: f0f98e1f514357afdc6f9543e4db0cbca714cdfd
+lastReviewedCommit: 14e29acd7ed0605dd30396d2ad26f3a77376f1e8
 ---
 
 # LCA Living Knowledge Base and Review
@@ -83,3 +83,10 @@ inventory parameter. `pedigree-calibration-v1` inputs/results preserve source
 summary arithmetic, GSD conventions and the separate author conditions. They do
 not reproduce missing raw observations or the complete empirical calibration.
 Use `node scripts/impact.mjs CASE-PEDIGREE-CALIBRATION` for dependent prose.
+
+The product-footprint rules chapter traces a dated dairy category rule into
+published activity and result artifacts. Its static `dairy-rules-v1` case keeps
+conditional arithmetic, stored LCIA outputs and model-response scenarios separate,
+with exact PDF/XLSX source bindings and unresolved reconstruction limits. Use
+`node scripts/impact.mjs CASE-DAIRY-RULES` for dependent prose. Mixed-carrier
+citations link the actual cited version alongside the work-level source entry.
