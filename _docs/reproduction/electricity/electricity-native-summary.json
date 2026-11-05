@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 1,
+  "kind": "author-derived-native-model-execution",
+  "method": "EPA AVERT Web v4.3.0 numerical replay with pinned original source and input data",
+  "release": {
+    "url": "https://github.com/USEPA/AVERT/releases/tag/v4.3.0",
+    "commit": "4ae6eeb064d48246c62d3d1e8b3640ad9d4291a5",
+    "version": "4.3.0",
+    "rdfYear": 2023,
+    "rdfRegion": "TE"
+  },
+  "testedRuntime": {
+    "node": "v20.20.2",
+    "v8": "11.3.244.8-node.38",
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "portableDriverSha256": "a608c10d6f5f16bf4d9f760f29dc827dee447bdedbeef10a5d86a1c6951dafd0",
+  "acquisitionManifestSha256": "d17bba88d6f1f131e999d6897dc336f752edfa780dd3e2e0a76982e82b0baea9",
+  "signConvention": "Model deltas are scenario minus baseline. A requested terminal reduction is recorded as positive MWh.",
+  "aggregation": "Modeled regional deltas sum monthly post-minus-original results from the original AVERT client aggregation.",
+  "batches": {
+    "primary": {
+      "originalReceiptSha256": "6401d5f2e0938ef9aa9371ffa919ba3a4debd189946fa5259346930013811de1",
+      "portableReceiptSha256": "331fc923c9f86ac1687b820f33817da2865a22d5d9cc89590f8f56e3cef5c5bb",
+      "byteIdenticalScenarioFiles": 8
+    },
+    "secondary": {
+      "originalReceiptSha256": "9090f63b7fd605dcf89e1e00be31758a23b29df30a7da3a20691785d7a8edb75",
+      "portableReceiptSha256": "805212e6fef6d294990dcb5a229e3b96b176303f7efcef0d4d7cb8a1d66b6766",
+      "byteIdenticalScenarioFiles": 8
+    }
+  },
+  "scenarios": [
+    {
+      "id": "zero",
+      "batch": "primary",
+      "profile": {
+        "rdfOneHourIntervals": 8760,
+        "affectedHours": 0,
+        "constantTerminalReductionMWhPerHour": "0",
+        "selectedRdfHourOfYear": null,
+        "selectedRdfHour": null
+      },
+      "terminalReductionMWh": "0",
+      "requestedModelFossilLoadChangeMWh": "0",
+      "modeled": {
+        "generation": {
+          "unit": "MWh",
+          "baseline": "270918817.13364995",
+          "scenario": "270918817.13364995",
+          "delta": "0"
+        },
+        "co2": {
+          "unit": "US-short-ton",
+          "baseline": "173806013.5614042",
+          "scenario": "173806013.5614042",
+          "delta": "0"
+        },
+        "so2": {
+          "unit": "lb",
+          "baseline": "150993593.38592643",
+          "scenario": "150993593.38592643",
+          "delta": "0"
+        },
+        "nox": {
+          "unit": "lb",
+          "baseline": "132647734.80569442",
+          "scenario": "132647734.80569442",
+          "delta": "0"
+        }
+      },
+      "diagnostics": {
+        "inRange": true,
+        "thresholdFlags": 0,
+        "missingMonths": 0,
+        "nonfiniteOutputs": 0,
+        "replacementFlags": 0,
+        "modeledEguCount": 347,
+        "matchedNeiUnitYears": 347,
+        "eguCo2Increases": 0,
+        "eguCo2Decreases": 0,
+        "eguCo2UnchangedWithinTolerance": 347,
+        "eguCo2SignToleranceUSShortTon": "1E-9"
+      },
+      "outputs": {
+        "inputSHA": "a7fefb25440b9e044b146c561efe01695817657e9d99fc6f391647fc58e0f8ff",
+        "rawSHA": "ed762d2dc82ee396ff202efd3240ab6f4219b280c59c376e0219ca42a954eb99",
+        "aggregatedSHA": "c9cb5080dae9def50367368279a1b1175d3e1c474e314f451d28db71629aeadd"
+      }
+    },
+    {
+      "id": "flat-one-mwh-per-hour",
+      "batch": "primary",
+      "profile": {
+        "rdfOneHourIntervals": 8760,
+        "affectedHours": 8760,
+        "constantTerminalReductionMWhPerHour": "1",
+        "selectedRdfHourOfYear": null,
+        "selectedRdfHour": null
+      },
+      "terminalReductionMWh": "8760",
+      "requestedModelFossilLoadChangeMWh": "-9180.382397142455",
+      "modeled": {
+        "generation": {
+          "unit": "MWh",
+          "baseline": "270918817.13364995",
+          "scenario": "270909629.2153984",
+          "delta": "-9187.918252352625"
+        },
+        "co2": {
+          "unit": "US-short-ton",
+          "baseline": "173806013.5614042",
+          "scenario": "173800340.83910143",
+          "delta": "-5672.722302591428"
+        },
+        "so2": {
+          "unit": "lb",
+          "baseline": "150993593.38592643",
+          "scenario": "150988405.1761465",
+          "delta": "-5188.209779851139"
+        },
+        "nox": {
+          "unit": "lb",
+          "baseline": "132647734.80569442",
+          "scenario": "132642002.32917814",
+          "delta": "-5732.476515945047"
+        }
+      },
+      "diagnostics": {
+        "inRange": true,
+        "thresholdFlags": 0,
+        "missingMonths": 0,
+        "nonfiniteOutputs": 0,
+        "replacementFlags": 0,
+        "modeledEguCount": 347,
+        "matchedNeiUnitYears": 347,
+        "eguCo2Increases": 10,
+        "eguCo2Decreases": 337,
+        "eguCo2UnchangedWithinTolerance": 0,
+        "eguCo2SignToleranceUSShortTon": "1E-9"
+      },
+      "outputs": {
+        "inputSHA": "1087c869e59650dd578a2ef73e7f1581dfea6e5d74b2367e688841389480a642",
+        "rawSHA": "70b2755e087337cd95231d515bd857c6787a71b0f2617c9b7f74c3aa92084b11",
+        "aggregatedSHA": "380703fb81602d24f68dd6917d8b0bca328a30c69a446d7e03b9b7267d74fbbb"
+      }
+    },
+    {
+      "id": "july1-03h-100mwh",
+      "batch": "secondary",
+      "profile": {
+        "rdfOneHourIntervals": 8760,
+        "affectedHours": 1,
+        "constantTerminalReductionMWhPerHour": "0",
+        "selectedRdfHourOfYear": 4348,
+        "selectedRdfHour": 3
+      },
+      "terminalReductionMWh": "100",
+      "requestedModelFossilLoadChangeMWh": "-104.79888581214115",
+      "modeled": {
+        "generation": {
+          "unit": "MWh",
+          "baseline": "270918817.13364995",
+          "scenario": "270918710.9519763",
+          "delta": "-106.18167366832495"
+        },
+        "co2": {
+          "unit": "US-short-ton",
+          "baseline": "173806013.5614042",
+          "scenario": "173805953.27841213",
+          "delta": "-60.28299222141504"
+        },
+        "so2": {
+          "unit": "lb",
+          "baseline": "150993593.38592643",
+          "scenario": "150993558.83678868",
+          "delta": "-34.54913756623864"
+        },
+        "nox": {
+          "unit": "lb",
+          "baseline": "132647734.80569442",
+          "scenario": "132647716.06225704",
+          "delta": "-18.74343723990023"
+        }
+      },
+      "diagnostics": {
+        "inRange": true,
+        "thresholdFlags": 0,
+        "missingMonths": 0,
+        "nonfiniteOutputs": 0,
+        "replacementFlags": 0,
+        "modeledEguCount": 347,
+        "matchedNeiUnitYears": 347,
+        "eguCo2Increases": 144,
+        "eguCo2Decreases": 203,
+        "eguCo2UnchangedWithinTolerance": 0,
+        "eguCo2SignToleranceUSShortTon": "1E-9"
+      },
+      "outputs": {
+        "inputSHA": "8ef229e3878cd7feda969c2216735c3213b8e6e699e200ffad99468d4748ded2",
+        "rawSHA": "47f4c3d8ceb0dfda21dae3a6cbd5bc788cb9e4665fd5dd4ba04c51ca46aa2519",
+        "aggregatedSHA": "6760d07263b678eabc63dea04eeb91d6896f1655a6f95dd960f8b19f2f2cc959"
+      }
+    },
+    {
+      "id": "july1-16h-100mwh",
+      "batch": "secondary",
+      "profile": {
+        "rdfOneHourIntervals": 8760,
+        "affectedHours": 1,
+        "constantTerminalReductionMWhPerHour": "0",
+        "selectedRdfHourOfYear": 4361,
+        "selectedRdfHour": 16
+      },
+      "terminalReductionMWh": "100",
+      "requestedModelFossilLoadChangeMWh": "-104.79888581214115",
+      "modeled": {
+        "generation": {
+          "unit": "MWh",
+          "baseline": "270918817.13364995",
+          "scenario": "270918711.626565",
+          "delta": "-105.50708512961864"
+        },
+        "co2": {
+          "unit": "US-short-ton",
+          "baseline": "173806013.5614042",
+          "scenario": "173805956.93803665",
+          "delta": "-56.62336741760373"
+        },
+        "so2": {
+          "unit": "lb",
+          "baseline": "150993593.38592643",
+          "scenario": "150993537.11000416",
+          "delta": "-56.27592234313488"
+        },
+        "nox": {
+          "unit": "lb",
+          "baseline": "132647734.80569442",
+          "scenario": "132647628.89210364",
+          "delta": "-105.91359080560505"
+        }
+      },
+      "diagnostics": {
+        "inRange": true,
+        "thresholdFlags": 0,
+        "missingMonths": 0,
+        "nonfiniteOutputs": 0,
+        "replacementFlags": 0,
+        "modeledEguCount": 347,
+        "matchedNeiUnitYears": 347,
+        "eguCo2Increases": 90,
+        "eguCo2Decreases": 257,
+        "eguCo2UnchangedWithinTolerance": 0,
+        "eguCo2SignToleranceUSShortTon": "1E-9"
+      },
+      "outputs": {
+        "inputSHA": "6b6cff8ef9dd712721c06068e95169c9aabd276ce6aca4b2c719dd10ab635c2b",
+        "rawSHA": "29630f808b1bec437c57ce9bac29f37fada00c29cd3139432870c6ce373fd7b2",
+        "aggregatedSHA": "05a49491734f477131182114eddba7059e0c47f0bdd7d90e0e6658d64a106cd9"
+      }
+    }
+  ]
+}

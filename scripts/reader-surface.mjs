@@ -19,14 +19,21 @@ const localDeveloperPath = value => /^\/(?:_docs)(?:\/|$)/.test(value);
 /** Actual project identities, not a blanket ban on scientific words. */
 export function readerInternalIds(...records) {
   const ids = new Set();
-  function visit(value) {
+  function visit(value, omitLocalScenarioId = false) {
     if (!value || typeof value !== 'object') return;
-    if (Array.isArray(value)) { value.forEach(visit); return; }
-    if (typeof value.id === 'string') ids.add(value.id);
+    if (Array.isArray(value)) { value.forEach(item => visit(item)); return; }
+    if (!omitLocalScenarioId && typeof value.id === 'string') ids.add(value.id);
     if (typeof value.caseId === 'string') ids.add(value.caseId);
-    Object.values(value).forEach(visit);
+    for (const [key, child] of Object.entries(value)) {
+      // Native execution scenario names (e.g. "zero") identify run-local input
+      // profiles, not publication records. Do not ban the same scientific word
+      // across unrelated chapters. Nested record/case identities still count.
+      if (value.kind === 'author-derived-native-model-execution' && key === 'scenarios' && Array.isArray(child))
+        child.forEach(scenario => visit(scenario, true));
+      else visit(child);
+    }
   }
-  records.forEach(visit);
+  records.forEach(record => visit(record));
   return ids;
 }
 

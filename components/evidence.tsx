@@ -53,13 +53,13 @@ export function ClaimAnnotation({ id, showCaseInput = true, premiseReferences }:
     {evidence.length > 0 && <ul className="annotation-sources">{evidence.map(({ evidence: item, relation }) => {
       const source = catalog.sources.find(record => record.id === item.sourceId);
       if (!source) throw new Error(`Unknown citation source: ${item.sourceId}`);
-      return <li key={item.id}><Link href={`/sources/#${item.id}`}>{source.title}</Link>。{item.locator}。
+      return <li key={item.id}><Link href={`/sources/#${item.id}`}>{source.title}</Link>。{item.locator.replace(/。+$/u, '')}。
         {relation !== 'supports' && <span>（{evidenceRelations[relation]}）</span>}
         <EvidencePassage evidence={item} />
       </li>;
     })}</ul>}
     {claim.caveats.length > 0 && <p className="annotation-limits">{claim.caveats.map(text => text.replace(/[。；;\s]+$/, '')).join('；')}。</p>}
-    {claim.premiseIds.length > 0 && <details><summary>论证联系</summary><ul>{claim.premiseIds.map(premise => {
+    {claim.premiseIds.length > 0 && <details><summary>本段依据的前提</summary><ul>{claim.premiseIds.map(premise => {
       const linked = catalog.claims.find(c => c.id === premise);
       if (!linked) throw new Error(`Unknown premise: ${premise}`);
       const reference = premiseReferences?.get(premise);

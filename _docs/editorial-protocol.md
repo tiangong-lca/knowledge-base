@@ -13,8 +13,8 @@ checkPaths:
   - "content/**"
   - "knowledge/**"
   - "releases/**"
-lastReviewedAt: 2026-11-05
-lastReviewedCommit: d91291376ad3dc667dd85948b0ac039ae11674e2
+lastReviewedAt: 2026-11-06
+lastReviewedCommit: 1776bb5dc99ca36569b5ab7d3a598e2e3dce336a
 ---
 
 # Editorial and living review protocol
@@ -147,3 +147,16 @@ Inspect formal corrections alongside the original table and implementation.
 Keep unresolved formula/table joins visible without changing source-reported
 values. Source reviews, arithmetic, reader comprehension and actual publication
 checks remain separate; none certifies an actual health intervention.
+
+## Electricity service and response
+
+Trace a delivery point through its actual grid activities before comparing
+factors. Keep each segment's input/output loss denominator, plant/balancing-area
+membership, clock convention and observed missing/zero values explicit. Separate
+adjusted annual emissions, statistical estimands, original numerical model
+responses and future capital scenarios. A native replay qualifies fixed code and
+inputs only; a zero control or interpolation check does not establish an observed
+intervention effect. Equal energy at different hours does not establish equal
+final service. Inspect original release code, source data, actual versioned
+outputs and technical documentation as different evidence layers. Preserve
+unresolved printed/implemented distinctions and unpropagated uncertainty.

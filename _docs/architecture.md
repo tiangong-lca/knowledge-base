@@ -16,11 +16,34 @@ checkPaths:
   - "scripts/**"
   - "package.json"
   - ".github/**"
-lastReviewedAt: 2026-11-05
-lastReviewedCommit: d91291376ad3dc667dd85948b0ac039ae11674e2
+lastReviewedAt: 2026-11-06
+lastReviewedCommit: 1776bb5dc99ca36569b5ab7d3a598e2e3dce336a
 ---
 
 # Publication architecture
+
+## Electricity reproduction boundary
+
+`scripts/electricity-service.mjs` is the closed CASE-POWER v1 static adapter. Its
+nested allowlist binds 48 source tuples to their actual work, edition, reading,
+passage and original carrier. The Cambium annual ZIP and CSV member remain
+separate identities. Four AVERT outputs are embedded as author-derived native
+execution records with their original/portable receipts and code/data identities.
+The static evaluator computes units, ratios and balance residuals using exact
+decimal-input arithmetic; it never launches the native model. Reader rounding
+retains the exact arithmetic and is not a precision claim. Existing case hashes
+and numeric-source policies remain unchanged.
+
+The separately invoked `scripts/reproduce-electricity-native.mjs` verifies and
+executes pinned EPA AVERT Web v4.3.0 numerical functions with caller-provided
+originals and dependencies in private directories. Its historical Node20.20.2
+and TypeScript5.4.3 requirements do not alter the site's Node/pnpm dependencies.
+The acquisition manifest, recorded summary and instructions live in
+`_docs/reproduction/electricity/`; their actual file identities are checked
+against the case. Raw originals, dependency archives and generator-level outputs
+are excluded from Git and the website. The replay is tested on macOS arm64;
+Linux x64 and Windows x64 replay results are unqualified. No app server, GUI,
+macro, hosted operation or package-install lifecycle is part of the driver.
 
 Next.js App Router, Fumadocs MDX/UI, React, TypeScript and Tailwind produce a static site. Chinese is the initial publication language; English labels preserve terminology. Exact compatible dependencies and the pnpm lockfile are authoritative. The architecture follows the workspace docs site; its product routes, four-locale editorial policy and hosted search identity are not imported.
 
@@ -212,3 +235,15 @@ fact and plural source-table facts. The GLAM original XLSX member and the
 release ZIP retain separate hashes and inspected passages. The download and
 claim templates use the same public input identity; no new widget, dependency,
 source-original export or changes to prior case inputs are introduced.
+
+The reader-ID collector distinguishes publication record identities from the
+four run-local scenario names in an explicitly typed native execution summary.
+It omits only each scenario's own `id`, while retaining nested record IDs and case
+identities. This avoids forbidding ordinary scientific uses of “zero” in older
+chapters without weakening checks for actual public record keys. The shared
+edition/print writing note defines annotation kinds; premise disclosures name
+the direction of dependency as “本段依据的前提”.
+
+Citation rendering adds one sentence stop after a locator, collapsing existing
+trailing Chinese stops in the displayed text only. Canonical locator identities
+and all numerical bindings retain their original strings.
