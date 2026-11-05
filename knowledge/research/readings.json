@@ -17980,6 +17980,2479 @@
       "sourceKeys": [
         "src-kb48-units-nist-hb44-2026"
       ]
+    },
+    {
+      "id": "rd-kb50-bottle-tutorial",
+      "workId": "work-kb50-bottle-tutorial",
+      "title": "openLCA Tutorial: Basic Modelling in openLCA",
+      "version": "手册 v1.3，2020 年 6 月，适用 openLCA 1.10；51 页。",
+      "url": "https://www.openlca.org/wp-content/uploads/2025/01/Report_PC_PET_Tutorial.pdf",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "同一份处理服务的两个原始课例怎样写参考量、方向、类型与结果？",
+      "argumentSummary": "两个使用过程以65 g废瓶为定量参考，处理服务以1000 kg为记录基准；符号与记录方向成对变化。图55所见结果相同到显示位数，窗格对象名与图注不同。",
+      "artifacts": [
+        {
+          "id": "art-kb50-bottle-tutorial",
+          "mediaType": "application/pdf",
+          "sha256": "37a298510a47107f5be98ca1dfc7f0f5c8f50a95268657b0fd0c88f2bf8f00ef",
+          "resolvedUrl": "https://www.openlca.org/wp-content/uploads/2025/01/Report_PC_PET_Tutorial.pdf",
+          "pageCount": 51
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb50-bottle-identity",
+          "artifactId": "art-kb50-bottle-tutorial",
+          "locator": "扉页及 §1 p6，软件、背景库、方法包与备份链接。",
+          "topics": [
+            "historical version",
+            "bundle identity"
+          ],
+          "limits": [
+            "教学材料；不是完整产品比较。"
+          ],
+          "pdfIndices": [
+            0,
+            5
+          ],
+          "printedPages": "1、6"
+        },
+        {
+          "id": "psg-kb50-bottle-service",
+          "artifactId": "art-kb50-bottle-tutorial",
+          "locator": "§4 表2 p16；图49–50 pp39–40，图52–53 p41。",
+          "topics": [
+            "reference product",
+            "packaging mass",
+            "unit"
+          ],
+          "limits": [
+            "以0.065 kg废瓶作参考；它与另列处理交换不是两份塑料。"
+          ],
+          "pdfIndices": [
+            15,
+            38,
+            39,
+            40
+          ],
+          "printedPages": "16、39、40、41"
+        },
+        {
+          "id": "psg-kb50-bottle-waste-representation",
+          "artifactId": "art-kb50-bottle-tutorial",
+          "locator": "§§9.1–9.2，图47–54 pp38–42。",
+          "topics": [
+            "flow type",
+            "direction",
+            "sign",
+            "provider"
+          ],
+          "limits": [
+            "图示可核对应、金额和显示数量；无原数据库ID或运行证明。"
+          ],
+          "pdfIndices": [
+            37,
+            38,
+            39,
+            40,
+            41
+          ],
+          "printedPages": "38、39、40、41、42"
+        },
+        {
+          "id": "psg-kb50-bottle-figure55",
+          "artifactId": "art-kb50-bottle-tutorial",
+          "locator": "p42 图55图注、两个分析窗格与显示值。",
+          "topics": [
+            "CML-IA baseline",
+            "rounding",
+            "system naming"
+          ],
+          "limits": [
+            "图注用Production，窗格用Usage；配置和未舍入值未显示。显示零不证明有匹配零因子。"
+          ],
+          "pdfIndices": [
+            41
+          ],
+          "printedPages": "42"
+        },
+        {
+          "id": "psg-kb50-bottle-allocation",
+          "artifactId": "art-kb50-bottle-tutorial",
+          "locator": "§10 pp43–45，图56–58；另对照 §7.1 p30 图34。",
+          "topics": [
+            "allocation",
+            "target unit",
+            "comparison boundary"
+          ],
+          "limits": [
+            "分配项目使用Material Production，不能从项目配置推定图55。"
+          ],
+          "pdfIndices": [
+            29,
+            42,
+            43,
+            44
+          ],
+          "printedPages": "30、43、44、45"
+        },
+        {
+          "id": "psg-kb50-bottle-acenaphthene",
+          "artifactId": "art-kb50-bottle-tutorial",
+          "locator": "PDF p39 Fig48，Material 处理过程输出表第一行，Acenaphthene、Emission to water/fresh water、Amount 和 Unit 列。",
+          "topics": [
+            "局部清单",
+            "淡水基础流",
+            "显示精度"
+          ],
+          "limits": [
+            "图只显示 Material 处理过程的该行。未核准 Opposite 对应行、实际原生流身份或表征因子。"
+          ],
+          "printedPages": "39",
+          "pdfIndices": [
+            38
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "对原PDF选段读文并独立渲染表、截图与图注。",
+        "methodologicalScope": "openLCA1.10 教学示例中的有限模型字段及截图。",
+        "independence": "出版商手册和备份同源；计算比例由公开输入独立推导。",
+        "limitations": [
+          "未见图55的精确配置和全精度数据。",
+          "未判断原始系统的实际行业代表性。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "unread": [
+        "其他章节和全部背景依赖未逐条核读。"
+      ],
+      "sourceKeys": [
+        "src-kb50-bottle-tutorial"
+      ],
+      "rights": "厂商匿名提供教学 PDF；未核准整件或图表再分发。"
+    },
+    {
+      "id": "rd-kb50-bottle-backup",
+      "workId": "work-kb50-bottle-tutorial",
+      "title": "Master_bottles_solved_20200319.zolca",
+      "version": "GreenDelta 教程配套 Derby 备份；ZIP 内日期 2020-03-20 至 2020-03-24，2025-02 重新托管；已执行的升级记录包括 schema v8。",
+      "url": "https://www.openlca.org/wp-content/uploads/2025/02/Master_bottles_solved_20200319.zolca",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "官方备份保留了哪些候选系统和可追溯的预计算结果？",
+      "argumentSummary": "备份含两对Production/Usage系统名称、两种处理过程及CML-IA baseline；单独分配报告有两个GWP100a存储值，不能充当方向比较的全精度结果。",
+      "artifacts": [
+        {
+          "id": "art-kb50-bottle-backup",
+          "mediaType": "application/zip",
+          "sha256": "a0890da2c89377d3edfa6a6505fa6ab7ad7eaf1bd628404821e3df5b32a7314b",
+          "resolvedUrl": "https://www.openlca.org/wp-content/uploads/2025/02/Master_bottles_solved_20200319.zolca"
+        },
+        {
+          "id": "art-kb50-bottle-allocation-report",
+          "mediaType": "application/json",
+          "sha256": "bf5e63dea850cbaa6edbf250fa3f8fc9a5a73a75e5749045d435ee4a11c44472",
+          "resolvedUrl": "https://www.openlca.org/wp-content/uploads/2025/02/Master_bottles_solved_20200319.zolca"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb50-bottle-backup-entities",
+          "artifactId": "art-kb50-bottle-backup",
+          "locator": "ZIP 目录及 service.properties，_olca_/updates/5912d392-e353-4158-a730-e3df6e7cfb5b.MF。seg0/c830.dat 未压缩字节偏移 33526、33842、34491、34806 的四个系统名。seg0/c740.dat 偏移 262262、262448、263703、263912 的使用和处理过程名。seg0/c890.dat 的方法名邻接标记。",
+          "topics": [
+            "historic Derby",
+            "identities",
+            "stored method metadata"
+          ],
+          "limits": [
+            "原数据未打开；相邻字节不是经过查询验证的关系表。"
+          ]
+        },
+        {
+          "id": "psg-kb50-bottle-backup-report",
+          "artifactId": "art-kb50-bottle-allocation-report",
+          "locator": "_olca_/projects/44fe2047-a72c-44ad-9a6f-58d55428a40a/report.json :: title、variants、indicators、results[0].variantResults",
+          "topics": [
+            "stored outputs",
+            "allocation"
+          ],
+          "limits": [
+            "同名图57项目UUID不同，不能认定完全同一项目。无运行证据。",
+            "成员未给出具体系统 UUID、方法 UUID、目标量或各变体的结构化分配枚举。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "原ZIP字节校验，静态成员及特定JSON字段核对。",
+        "methodologicalScope": "原备份存在性与有限存储输出。",
+        "independence": "来自同一厂商，较本项目新运行独立，非独立算法证据。",
+        "limitations": [
+          "未验证提供者闭合、因子行或实际执行。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "unread": [
+        "其他背景数据、数据库表和报告数值未逐条核查。"
+      ],
+      "sourceKeys": [
+        "src-kb50-bottle-backup",
+        "src-kb50-bottle-allocation-report"
+      ],
+      "rights": "教程匿名直链提供学习用原备份；ELCD、方法包和第三方数据各有条件，保留私有原件及本地交换件，未核准再分发。"
+    },
+    {
+      "id": "rd-kb50-elcd-nexus-terms",
+      "workId": "work-kb50-elcd-nexus-terms",
+      "title": "ELCD III dataset license and Nexus End User Licence Agreement",
+      "version": "ELCD III 2011 数据条件与 Nexus 2013 年 11 月 EULA，合订 10 页。",
+      "url": "https://nexus.openlca.org/ws/files/3101",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "获取许可和再分发限制分别是什么？",
+      "argumentSummary": "使用需归因，旧数据替换、提取、修改和分发有各自条件。",
+      "artifacts": [
+        {
+          "id": "art-kb50-elcd-nexus-terms",
+          "mediaType": "application/pdf",
+          "sha256": "9add3cb735aaee29fc53c4d14a6e92ca498b2a8c6a2d9b2f677b00c98e746281",
+          "resolvedUrl": "https://nexus.openlca.org/ws/files/3101",
+          "pageCount": 10
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb50-elcd-terms",
+          "artifactId": "art-kb50-elcd-nexus-terms",
+          "locator": "物理pp1–4，SCOPE、REDISTRIBUTION, USE, MODIFICATION, DERIVATION。",
+          "topics": [
+            "rights",
+            "supersession"
+          ],
+          "limits": [
+            "不能据通用条款确认特定过程数据版本或后继许可。"
+          ],
+          "pdfIndices": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "id": "psg-kb50-nexus-eula",
+          "artifactId": "art-kb50-elcd-nexus-terms",
+          "locator": "后半部 EULA §§1、3、6、7。",
+          "topics": [
+            "rights",
+            "distribution"
+          ],
+          "limits": [
+            "直接发布方备份、Nexus 获取及数据集许可的适用性需区分。"
+          ],
+          "pdfIndices": [
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "实际合订PDF原页的条款段落。",
+        "methodologicalScope": "历史许可文本与原物件范围。",
+        "independence": "源权利文档，不属于模型有效性证据。",
+        "limitations": [
+          "对源许可做保守内容判断，未断定具体法律权利。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "unread": [
+        "未逐条审查第三方过程、因子与未来发布权。"
+      ],
+      "sourceKeys": [
+        "src-kb50-elcd-nexus-terms"
+      ],
+      "rights": "核读可公开取得的条款文本，不据此统一所有第三方数据权利，不再分发。"
+    },
+    {
+      "id": "rd-kb50-method-license",
+      "workId": "work-kb50-method-license",
+      "title": "openLCA LCIA methods package license",
+      "version": "2017 年 10 月，1 页。",
+      "url": "https://nexus.openlca.org/ws/files/14028",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "方法包的原通知如何声明许可？",
+      "argumentSummary": "2017通知把具名方法包置于CC BY-SA 4.0。",
+      "artifacts": [
+        {
+          "id": "art-kb50-method-license",
+          "mediaType": "application/pdf",
+          "sha256": "138cf41c67fe1edc44defacf948cbb99002d3f5c042759081f7d15640359e9fb",
+          "resolvedUrl": "https://nexus.openlca.org/ws/files/14028",
+          "pageCount": 1
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb50-method-license",
+          "artifactId": "art-kb50-method-license",
+          "locator": "p1 唯一许可段。",
+          "topics": [
+            "method pack rights"
+          ],
+          "limits": [
+            "范围限该通知；旧版备份、底层模型与流有各自权利。"
+          ],
+          "pdfIndices": [
+            0
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "原1页通知。",
+        "methodologicalScope": "方法包许可载体。",
+        "independence": "许可由供应者声明。",
+        "limitations": [
+          "未由通知推出所有数值的再分发许可。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "unread": [],
+      "sourceKeys": [
+        "src-kb50-method-license"
+      ],
+      "rights": "2017 方法包通知声明 CC BY-SA 4.0；精确旧版因子、流映射及底层来源权利须独立查明。"
+    },
+    {
+      "id": "rd-kb50-method-log",
+      "workId": "work-kb50-method-log",
+      "title": "Impact Assessment Method Log file: openLCA IA method v.2.0.4 vs v.2.0.3",
+      "version": "v2.0.4 对 v2.0.3；2019 年 9 月 30 日 PDF 元数据；2 页。",
+      "url": "https://nexus.openlca.org/ws/files/16210",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "方法包版本和CML方法版本怎样分别标识？",
+      "argumentSummary": "2.0.4包更新表将CML-baseline标为4.7（2016），含与旧包不同的分类项。",
+      "artifacts": [
+        {
+          "id": "art-kb50-method-log",
+          "mediaType": "application/pdf",
+          "sha256": "1cf242782e91ae6d06dbd1f9251c4313fbae2625ae6f7498f7e7de7cf7154ec2",
+          "resolvedUrl": "https://nexus.openlca.org/ws/files/16210",
+          "pageCount": 2
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb50-method-log-cml",
+          "artifactId": "art-kb50-method-log",
+          "locator": "p1 CML-IA baseline 条目，p2 表1 CML-baseline 行。",
+          "topics": [
+            "package release",
+            "CML 4.7"
+          ],
+          "limits": [
+            "不是原独立因子表或软件运行。"
+          ],
+          "pdfIndices": [
+            0,
+            1
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "原发行日志段落及表。",
+        "methodologicalScope": "历史方法包谱系。",
+        "independence": "厂商记录与原备份同一供应谱系。",
+        "limitations": [
+          "未逐因子核准匹配或当前版本。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "unread": [
+        "表内其他方法版本未逐项评估。"
+      ],
+      "sourceKeys": [
+        "src-kb50-method-log"
+      ],
+      "rights": "公开取得日志；不复制全表或方法包。"
+    },
+    {
+      "id": "rd-kb50-incineration-catalog",
+      "workId": "work-kb50-incineration-catalog",
+      "title": "Waste incineration of plastics (PET, PMMA, PC), EU-27 — JRC Data Catalogue",
+      "version": "DOI 10.2905/JRC.BZ4WEDG；当前目录载体，目录引文 2026；不等于原始过程 XML 或其版本。",
+      "url": "https://data.jrc.ec.europa.eu/dataset/jrc-eplca-89863fc3-3306-11dd-bd11-0800200c9a66",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "web-sections",
+      "question": "同UUID的候选上游处理过程是什么范围与访问条件？",
+      "argumentSummary": "目录描述EU-27平均MSW厂内的特定废塑料组分，排除收集、运输和预处理；公开访问与自定许可分开。",
+      "artifacts": [
+        {
+          "id": "art-kb50-incineration-catalog",
+          "mediaType": "text/html",
+          "sha256": "3aae9d3bdf64ef666451d522a9353c159a845fe0b2c8d181ed4b9249947ea7ad",
+          "resolvedUrl": "https://data.jrc.ec.europa.eu/dataset/jrc-eplca-89863fc3-3306-11dd-bd11-0800200c9a66"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb50-incineration-catalog-scope",
+          "artifactId": "art-kb50-incineration-catalog",
+          "locator": "标题、描述、Data access、Temporal coverage、Dataset identifier。",
+          "topics": [
+            "ELCD lineage",
+            "waste treatment",
+            "license"
+          ],
+          "limits": [
+            "原XML及旧定制许可链接404；同UUID出现在备份并不证明教程两条过程逐交换继承。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "核对实际JRC目录HTML与DOI重定向。",
+        "methodologicalScope": "目录级的处理边界、身份与权利条件。",
+        "independence": "JRC目录来源不同于教程截图；不能据目录确认教学案例运行。",
+        "limitations": [
+          "未取得精确原XML/版本和数据级权利字段。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "unread": [
+        "未评估其他ELCD版本及模型输入。"
+      ],
+      "sourceKeys": [
+        "src-kb50-incineration-catalog"
+      ],
+      "rights": "目录标记匿名访问与自定使用条款；不把目录许可推成全部教程包许可。"
+    },
+    {
+      "id": "rd-kb50-jrc-sdk",
+      "workId": "work-kb50-jrc-sdk",
+      "title": "eILCD Data Format SDK v2.1.1 — LDPE injection moulding parts example",
+      "version": "eILCD SDK v2.1.1；模型数据版本 01.00.000，XML 版本属性 1.1",
+      "url": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "模型怎样将五件注塑件、废料处理、两路供电和汇总过程连接起来？",
+      "argumentSummary": "逐项连接模型实例、源过程交换、流属性和单位。源公式能重建所列结果量，同时有未列入的洗后废物流以及类型与文件标识差异。",
+      "artifacts": [
+        {
+          "id": "art-kb50-jrc-sdk",
+          "mediaType": "application/zip",
+          "sha256": "590882f8bda2ec4f0fb3d0ad757001f0d9ac2ccef5a2f4e46cad2d8184c464d0",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-model",
+          "mediaType": "application/xml",
+          "sha256": "ee4a3848d057075c8af73a376d4c8331d59519d0c045448e1bc3d8a9aec18acb",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-changes",
+          "mediaType": "text/plain",
+          "sha256": "cd6ce664e73e2159d2649f40eff255ad5183b55bbae0cdcb740f54946cdf68d1",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-model-xsd",
+          "mediaType": "application/xml",
+          "sha256": "80d79496fcdd673cb89a1c2eb40bece6cb080d6e5f5e582892791eb98c48af52",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-factor",
+          "mediaType": "application/pdf",
+          "sha256": "696d4f5343986e54821d7f26d6a28165e94b131ce9d453a305fb9249a48ffd90",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip",
+          "pageCount": 1
+        },
+        {
+          "id": "art-kb50-jrc-wash",
+          "mediaType": "application/xml",
+          "sha256": "14337a01aabb99edad33d57d17afad01c4f258643e87e256822e385c90af2086",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-rail",
+          "mediaType": "application/xml",
+          "sha256": "e590d202928d54c44f981e5f54f89301e2a1811376431aac609633bfc051ccf1",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-granulate",
+          "mediaType": "application/xml",
+          "sha256": "7ee2f3613c553a0af4d971d961dfabe475c1d0b1a0a45529864589f2a3750db4",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-result",
+          "mediaType": "application/xml",
+          "sha256": "6d86acbf5aa16a05944cd91830bcc533eba1abfd5aa82ea6462a6ec5d34848e0",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-grid",
+          "mediaType": "application/xml",
+          "sha256": "7154ac82d5e3b4d8fc11ac90ede9eddf880060e4857dbf6b2d630ec59dcf678e",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-machine",
+          "mediaType": "application/xml",
+          "sha256": "2595c409fa051a8ecf2a6cb420ad6751e475c1046600146a56bb9e8d306ebd3d",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-moulding",
+          "mediaType": "application/xml",
+          "sha256": "9e4baf2a20dbb57d9569477908fcce8ded18bb792171fe502a89ec55c52d2268",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-energy",
+          "mediaType": "application/xml",
+          "sha256": "87f19ddf83dfa6eaa4cd83497251047795e8e0063892227554f32c4440be24e6",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-mass",
+          "mediaType": "application/xml",
+          "sha256": "514af92ae8fbd1ebd219d1ddfc79be70d7960946eac962f46064c36162a45264",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-example_model_01_plain",
+          "mediaType": "application/pdf",
+          "sha256": "1d930ee5d2939dfc94f8749c656ca13d68bdc78ffd1b0760db554a745ebcd409",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip",
+          "pageCount": 1
+        },
+        {
+          "id": "art-kb50-jrc-example_model_02_process_ids",
+          "mediaType": "application/pdf",
+          "sha256": "e9e2f264c7346f5326dfb2c1ffa2de04c3621ea95cdfd2d08dfdd805106a95e3",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip",
+          "pageCount": 1
+        },
+        {
+          "id": "art-kb50-jrc-example_model_03_flow_ids",
+          "mediaType": "application/pdf",
+          "sha256": "01e68cc135fd198e83ca822042fd99064e25debe5992ce63be3882051616e20b",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip",
+          "pageCount": 1
+        },
+        {
+          "id": "art-kb50-jrc-example_model_04_all_ids",
+          "mediaType": "application/pdf",
+          "sha256": "d567afb0a4c41b47ea285b374ec2c1703c085e6e5f06492666305deafb2c6a95",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip",
+          "pageCount": 1
+        },
+        {
+          "id": "art-kb50-jrc-diagram-linked",
+          "mediaType": "image/png",
+          "sha256": "6380127370349c57c090f8a982597f5bab9c86a1801db7025269229bfb409d9c",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-diagram-source",
+          "mediaType": "application/xml",
+          "sha256": "4edc46cfe34f7021c686080de167b701ae8f6201405e17fabe7aabc1073d569c",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-flow-0123d60d-1c78-4a38-9fa0-90b1b6c9491e",
+          "mediaType": "application/xml",
+          "sha256": "96a310e606e28a4438b6265bed0d0a83a3fb438333ee12f6936d1ea4ab661739",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-flow-04202047-6556-11dd-ad8b-0800200c9a66",
+          "mediaType": "application/xml",
+          "sha256": "990cb07cd7d5773e91b578139c3a5b577a3b2adb1d7315c6093f7f9d49242338",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-flow-08a91e70-3ddc-11dd-923d-0050c2490048",
+          "mediaType": "application/xml",
+          "sha256": "641bc061a259ea720bc825089fac513860facbb54cd98f6fd0dc075cc3c397dc",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-flow-08a91e70-3ddc-11dd-924e-0050c2490048",
+          "mediaType": "application/xml",
+          "sha256": "b06fc0cf306c80574fc7848c1eb5a30acc73a9d04319f1df4d6c223056fc0fc2",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-flow-1d0243cc-b9f4-4c91-b3e6-cb69067b9e82",
+          "mediaType": "application/xml",
+          "sha256": "48657f60eda8e7039bf9f01994f747d07472e93f6d96801914dd27355bd51641",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-flow-336b1168-c3ea-4b5c-9955-beb577f3c005",
+          "mediaType": "application/xml",
+          "sha256": "cd44f056129e06872b150ca39051a12edfbf84851a076c7527f5c007d579c34c",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-flow-4f197bf2-7b3b-11dd-ad8b-0800200c9a66",
+          "mediaType": "application/xml",
+          "sha256": "59e2b8d148e3dd971ad865c293b75a1ea6c2ab4c88662585bcef61a959b584ba",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-flow-4f1a3f41-7b3b-11dd-ad8b-0800200c9a66",
+          "mediaType": "application/xml",
+          "sha256": "4c71fe032e1a2326afc7c1a83026c397e9b1d505142680a18f42ccdc09076bf4",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-flow-598e8a3b-c1e5-49d2-8305-176bfd0af3c2",
+          "mediaType": "application/xml",
+          "sha256": "8ba0ad08531a0187fa2fcd446bba681c497d09d31cfea6f9a09a320079e93bc2",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-flow-76013e3e-e074-4452-b1da-7d47842345a8",
+          "mediaType": "application/xml",
+          "sha256": "17cf39572e9d55d59bc057e8e04fa3417a10c5d3574d2d664c95470ceef266cc",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-flow-885d2a57-b6ca-4188-b6ff-618435ada8e0",
+          "mediaType": "application/xml",
+          "sha256": "5ec5fc342d48f78fa671055e416c957f3799c7b62e7f5bab8e5af9de067dd9d6",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-flow-890a70b7-b677-4e2a-8a1b-7d017e0a10ae",
+          "mediaType": "application/xml",
+          "sha256": "18295141b28484dd2ffc43820522ae691c12b294d7285352ec222484614fe6a4",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-flow-8b675989-edc7-4f86-a0e1-ce4a675346df",
+          "mediaType": "application/xml",
+          "sha256": "06d8d88d595dd0a1bd736d5dcb98e17ef7757a67a42d1d22800ee2fe4a14b16e",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-flow-9f8f445c-e172-49f6-8881-bcf2a9824588",
+          "mediaType": "application/xml",
+          "sha256": "697704b15f29ff92e9e0514f529b9d3933320c5d95fdcef87a1dfc69dabc4f54",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-flow-a1ff365a-b063-4993-9ddc-6c68dd45ff81",
+          "mediaType": "application/xml",
+          "sha256": "7d15f0cff2601662ce5016542bea5ca32615451ba4f3d8f9a72de9fa4a6de47d",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-flow-dad7268b-41ef-46e0-9641-48e431bbf937",
+          "mediaType": "application/xml",
+          "sha256": "0e9c7c6c2de439adb82f17a53850b7df477b9b520422408caa86a2b9ba9d968a",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-property-75c6769f-cc71-4217-b3cd-7e83025eb39f",
+          "mediaType": "application/xml",
+          "sha256": "53c5a78a00d60aa67e724e64da2b4350e4ca22c04120e9781f1c0e50b0ca762c",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-property-93a60a56-a3c8-11da-a746-0800200b9a66",
+          "mediaType": "application/xml",
+          "sha256": "2902f006eace41f34803fdab5f90ef3ff431f093077a20e5c3bf42bfd86e2c95",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-property-93a60a56-a3c8-11da-a746-0800200b9a66_02.00.000",
+          "mediaType": "application/xml",
+          "sha256": "d67a9cb48d74b280d3bd7d8bf9a99c0e28f97b7384223c838027010c2aca87e9",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-property-93a60a56-a3c8-11da-a746-0800200c9a66",
+          "mediaType": "application/xml",
+          "sha256": "abef73ca2f7bb24304795e2ebd93cfe544f48c4ba8dcca6824679fbdc03ff559",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-property-93a60a56-a3c8-11da-a746-0800200c9a66_02.00.000",
+          "mediaType": "application/xml",
+          "sha256": "6f1094159e5f4cd5da197e50bbb5113f2aa7a2b2a984ab88a83f44253cba000d",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-property-93a60a56-a3c8-14da-a746-0800200c9a66",
+          "mediaType": "application/xml",
+          "sha256": "05c7084062200599782fa79f070b1d2b2de46c5eb2bc47ed9d64c98ee8ec2d79",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-property-93a60a56-a3c8-14da-a746-0800200c9a66_02.00.000",
+          "mediaType": "application/xml",
+          "sha256": "60bc50f43b9d8eecb037d1d5b3a478e35fe82cc837d91aad9839a06f42645f3b",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-property-93a60a56-a3c8-17da-a746-0800200c9a66",
+          "mediaType": "application/xml",
+          "sha256": "f512c4a474aa18bd143170cf2d4de275bd7f9d3ee90c86853033c9405302107d",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-property-93a60a56-a3c8-17da-a746-0800200c9a66_02.00.000",
+          "mediaType": "application/xml",
+          "sha256": "c5b4db56e653d82331a1b8a1d5d137cb8c5ab21716d5c0bee8ce627810a2fc92",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-property-93a60a56-a3c8-21da-a746-0800200c9a66",
+          "mediaType": "application/xml",
+          "sha256": "6dffb176d5b27a051282ad07ff8574141d287b629f8e5194730f6d9fc1a2bcc6",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-property-93a60a56-a3c8-21da-a746-0800200c9a66_02.00.000",
+          "mediaType": "application/xml",
+          "sha256": "b78a23935a1a9a9d72343b4c1d0f2e0f31345c593fe034b51fa7f4d2b3f956c5",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-property-93a60a56-a3c8-22da-a746-0800200c9a66",
+          "mediaType": "application/xml",
+          "sha256": "2eaf21f033aa63d585f87e8d8002ddf1a2d82b1fa30cbeed618d2523d8450dba",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-property-93a60a56-a3c8-22da-a746-0800200c9a66_02.00.000",
+          "mediaType": "application/xml",
+          "sha256": "1db4297464bd7c23c0d061260f0e8721b147e9f9c6dd47eee65878e2b27d57cc",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-property-bcf81c0a-9fe9-4c88-a25b-99e0dd64ddaa",
+          "mediaType": "application/xml",
+          "sha256": "e2944bbfdb7c24ed8be932ff64336a39b4b813f0653cfd5bada07f3f9f20de8d",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        },
+        {
+          "id": "art-kb50-jrc-property-d77d039c-876e-4729-93e0-39c68acba376",
+          "mediaType": "application/xml",
+          "sha256": "a98acd6014aa8cc48febf467a80c73bdb97d4ca48fbba706ae086914b6ca9e98",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/eILCD-SDK_v2.1.1.zip"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb50-jrc-archive",
+          "artifactId": "art-kb50-jrc-sdk",
+          "locator": "SDK ZIP 中央目录、eILCD-SDK_v2.1.1/CHANGES.txt 与 ILCD/processes、ILCD/lifecyclemodels、ILCD/flows 目录",
+          "topics": [
+            "原包与成员",
+            "LCIA边界"
+          ],
+          "limits": [
+            "目录检查只证明此固定发行物。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-model-reference",
+          "artifactId": "art-kb50-jrc-model",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/lifecyclemodels/10062015cc-184a-41b8-8fa6-49e999cbd101.xml :: /lifeCycleModelDataSet/lifeCycleModelInformation/dataSetInformation、quantitativeReference 和 technology/processes/processInstance[@dataSetInternalID=2]",
+          "topics": [
+            "模型UUID",
+            "定量参考",
+            "标度",
+            "模型与结果分开"
+          ],
+          "limits": [
+            "示例的格式属性 1.1 不抹除模型扩展的独立命名空间。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-model-edges",
+          "artifactId": "art-kb50-jrc-model",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/lifecyclemodels/10062015cc-184a-41b8-8fa6-49e999cbd101.xml :: technology/processes，实例 #0–6、connections/outputExchange/downstreamProcess 与 groups",
+          "topics": [
+            "七个实例",
+            "七条连接",
+            "独立供电实例",
+            "废物与产品"
+          ],
+          "limits": [
+            "仅为 XML 声明。两端流名称、角色、地域与实现判断仍需各自依据。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-model-rights",
+          "artifactId": "art-kb50-jrc-model",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/lifecyclemodels/10062015cc-184a-41b8-8fa6-49e999cbd101.xml :: modellingAndValidation/dataSourcesTreatmentEtc、complianceDeclarations 与 administrativeInformation/publicationAndOwnership",
+          "topics": [
+            "使用权利",
+            "非合规声明",
+            "样例适用性"
+          ],
+          "limits": [
+            "公开下载不确立模型、图或全量派生文件的再分发权利。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-schema-coordinates",
+          "artifactId": "art-kb50-jrc-model-xsd",
+          "locator": "eILCD-SDK_v2.1.1/schemas/ILCD_LifeCycleModelDataSet.xsd :: 7-d1e32/33、43/44/48、55/56、413、480/481、506/510/511/512，OutputExchangeType/DownstreamProcessType",
+          "topics": [
+            "实例ID",
+            "两端UUID",
+            "dominant",
+            "模式注解冲突"
+          ],
+          "limits": [
+            "模式能表示的重复下游，与指定 EF 规则和原生行为分别核对。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-changes",
+          "artifactId": "art-kb50-jrc-changes",
+          "locator": "eILCD-SDK_v2.1.1/CHANGES.txt :: v2.1.1/v2.0/v1.0.4/v1.0.1/v1.0 RC5",
+          "topics": [
+            "版本勘误",
+            "实例连接"
+          ],
+          "limits": [
+            "更正记录不证明当前 PDF 字节落实全部较早变更。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-factor",
+          "artifactId": "art-kb50-jrc-factor",
+          "locator": "eILCD-SDK_v2.1.1/doc/Definition and example for Multiplication Factor.pdf :: p1, definition and calculation of process instance #3",
+          "topics": [
+            "0.004 kg每件",
+            "1 kg清洗参考",
+            "0.02倍"
+          ],
+          "limits": [
+            "为同一示例中指定的局部关系。"
+          ],
+          "pdfIndices": [
+            0
+          ],
+          "printedPages": "1"
+        },
+        {
+          "id": "psg-kb50-jrc-result",
+          "artifactId": "art-kb50-jrc-result",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/processes/a91683fe-3b0b-471c-a007-f9d8b4e29d5a.xml :: quantitativeReference、LCIMethodAndAllocation/typeOfDataSet 与 exchanges #1/2/3/5/6/7/10",
+          "topics": [
+            "指定结果",
+            "七行实际值",
+            "过程类型",
+            "列差别"
+          ],
+          "limits": [
+            "此文件不是完整外部边界或原生结果证明。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-fig-all",
+          "artifactId": "art-kb50-jrc-example_model_04_all_ids",
+          "locator": "eILCD-SDK_v2.1.1/doc/example_model/example_model_04_all_ids.pdf :: p1, arrows, instances #0–6, labels and UUIDs",
+          "topics": [
+            "流向",
+            "显示精度",
+            "图示与XML差异"
+          ],
+          "limits": [
+            "以所引原始图定位，数值显示舍入，不能用图示更换源 XML。"
+          ],
+          "pdfIndices": [
+            0
+          ],
+          "printedPages": "1"
+        },
+        {
+          "id": "psg-kb50-jrc-process-wash",
+          "artifactId": "art-kb50-jrc-wash",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/processes/23dd327f-d58e-42da-82ac-351c42df0127.xml :: reference #3, mathematicalRelations and exchanges #1–7",
+          "topics": [
+            "过程定量参考",
+            "交换与公式"
+          ],
+          "limits": [
+            "固定示例值及其语义。实际行业数据与结果未经本记录验证。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-process-rail",
+          "artifactId": "art-kb50-jrc-rail",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/processes/24b22ed7-6187-4bea-b8b1-eccbfc267cb9.xml :: reference #2, operation location, mathematicalRelations and exchanges #0–2",
+          "topics": [
+            "过程定量参考",
+            "交换与公式"
+          ],
+          "limits": [
+            "固定示例值及其语义。实际行业数据与结果未经本记录验证。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-process-granulate",
+          "artifactId": "art-kb50-jrc-granulate",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/processes/8ddfe862-e580-47ab-a248-b62c6f4323d4.xml :: reference #239, operation location and exchanges #1、4、5、239",
+          "topics": [
+            "过程定量参考",
+            "交换与公式"
+          ],
+          "limits": [
+            "固定示例值及其语义。实际行业数据与结果未经本记录验证。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-process-grid",
+          "artifactId": "art-kb50-jrc-grid",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/processes/e38740ed-4e9e-4f4c-ae17-251ca7442c58.xml :: reference #509 and exchanges #1、4、5、509",
+          "topics": [
+            "过程定量参考",
+            "交换与公式"
+          ],
+          "limits": [
+            "固定示例值及其语义。实际行业数据与结果未经本记录验证。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-process-machine",
+          "artifactId": "art-kb50-jrc-machine",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/processes/e642549a-ed92-4db7-a877-5b53e5acdd8c.xml :: reference #0 and exchanges #0–2",
+          "topics": [
+            "过程定量参考",
+            "交换与公式"
+          ],
+          "limits": [
+            "固定示例值及其语义。实际行业数据与结果未经本记录验证。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-process-moulding",
+          "artifactId": "art-kb50-jrc-moulding",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/processes/ecf3ceb8-1907-482e-8550-efd5c1f970e9.xml :: mathematicalRelations and exchanges #0–3、5–6",
+          "topics": [
+            "过程定量参考",
+            "交换与公式"
+          ],
+          "limits": [
+            "固定示例值及其语义。实际行业数据与结果未经本记录验证。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-unit-energy",
+          "artifactId": "art-kb50-jrc-energy",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/unitgroups/93a60a57-a3c8-11da-a746-0800200c9a66.xml :: quantitativeReference 与 reference unit、kg 或 MJ/kWh",
+          "topics": [
+            "单位组",
+            "参考单位与换算"
+          ],
+          "limits": [
+            "本研究仅核对所用参考单位及相关换算，未核准所有替代单位。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-unit-mass",
+          "artifactId": "art-kb50-jrc-mass",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/unitgroups/93a60a57-a4c8-11da-a746-0800200c9a66.xml :: quantitativeReference 与 reference unit、kg 或 MJ/kWh",
+          "topics": [
+            "单位组",
+            "参考单位与换算"
+          ],
+          "limits": [
+            "本研究仅核对所用参考单位及相关换算，未核准所有替代单位。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-fig-example_model_01_plain",
+          "artifactId": "art-kb50-jrc-example_model_01_plain",
+          "locator": "eILCD-SDK_v2.1.1/doc/example_model/example_model_01_plain.pdf :: p1",
+          "topics": [
+            "原图",
+            "连接显示"
+          ],
+          "limits": [
+            "同一图族。"
+          ],
+          "pdfIndices": [
+            0
+          ],
+          "printedPages": "1"
+        },
+        {
+          "id": "psg-kb50-jrc-fig-example_model_02_process_ids",
+          "artifactId": "art-kb50-jrc-example_model_02_process_ids",
+          "locator": "eILCD-SDK_v2.1.1/doc/example_model/example_model_02_process_ids.pdf :: p1",
+          "topics": [
+            "原图",
+            "连接显示"
+          ],
+          "limits": [
+            "同一图族。"
+          ],
+          "pdfIndices": [
+            0
+          ],
+          "printedPages": "1"
+        },
+        {
+          "id": "psg-kb50-jrc-fig-example_model_03_flow_ids",
+          "artifactId": "art-kb50-jrc-example_model_03_flow_ids",
+          "locator": "eILCD-SDK_v2.1.1/doc/example_model/example_model_03_flow_ids.pdf :: p1",
+          "topics": [
+            "原图",
+            "连接显示"
+          ],
+          "limits": [
+            "同一图族。"
+          ],
+          "pdfIndices": [
+            0
+          ],
+          "printedPages": "1"
+        },
+        {
+          "id": "psg-kb50-jrc-fig-linked",
+          "artifactId": "art-kb50-jrc-diagram-linked",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/external_docs/2ac21e95-47e3-5718-b607-3a30cecc38aa.png :: 图示全部七实例和连接标签",
+          "topics": [
+            "模型引用图",
+            "图示核查"
+          ],
+          "limits": [
+            "图示使用显示精度。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-fig-source",
+          "artifactId": "art-kb50-jrc-diagram-source",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/sources/2ac21e95-47e3-5718-b607-3a30cecc38aa.xml :: referenceToDigitalFile 与标题",
+          "topics": [
+            "图源记录"
+          ],
+          "limits": [
+            "区分图源 XML 与 PNG。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-flow-0123d60d-1c78-4a38-9fa0-90b1b6c9491e",
+          "artifactId": "art-kb50-jrc-flow-0123d60d-1c78-4a38-9fa0-90b1b6c9491e",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flows/0123d60d-1c78-4a38-9fa0-90b1b6c9491e.xml :: UUID、名称、typeOfDataSet、referenceToReferenceFlowProperty 和引用属性",
+          "topics": [
+            "流对象",
+            "流类型和参考属性"
+          ],
+          "limits": [
+            "选取字段核读，未通读附带文献。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-flow-04202047-6556-11dd-ad8b-0800200c9a66",
+          "artifactId": "art-kb50-jrc-flow-04202047-6556-11dd-ad8b-0800200c9a66",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flows/04202047-6556-11dd-ad8b-0800200c9a66.xml :: UUID、名称、typeOfDataSet、referenceToReferenceFlowProperty 和引用属性",
+          "topics": [
+            "流对象",
+            "流类型和参考属性"
+          ],
+          "limits": [
+            "选取字段核读，未通读附带文献。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-flow-08a91e70-3ddc-11dd-923d-0050c2490048",
+          "artifactId": "art-kb50-jrc-flow-08a91e70-3ddc-11dd-923d-0050c2490048",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flows/08a91e70-3ddc-11dd-923d-0050c2490048.xml :: UUID、名称、typeOfDataSet、referenceToReferenceFlowProperty 和引用属性",
+          "topics": [
+            "流对象",
+            "流类型和参考属性"
+          ],
+          "limits": [
+            "选取字段核读，未通读附带文献。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-flow-08a91e70-3ddc-11dd-924e-0050c2490048",
+          "artifactId": "art-kb50-jrc-flow-08a91e70-3ddc-11dd-924e-0050c2490048",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flows/08a91e70-3ddc-11dd-924e-0050c2490048.xml :: UUID、名称、typeOfDataSet、referenceToReferenceFlowProperty 和引用属性",
+          "topics": [
+            "流对象",
+            "流类型和参考属性"
+          ],
+          "limits": [
+            "选取字段核读，未通读附带文献。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-flow-1d0243cc-b9f4-4c91-b3e6-cb69067b9e82",
+          "artifactId": "art-kb50-jrc-flow-1d0243cc-b9f4-4c91-b3e6-cb69067b9e82",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flows/1d0243cc-b9f4-4c91-b3e6-cb69067b9e82.xml :: UUID、名称、typeOfDataSet、referenceToReferenceFlowProperty 和引用属性",
+          "topics": [
+            "流对象",
+            "流类型和参考属性"
+          ],
+          "limits": [
+            "选取字段核读，未通读附带文献。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-flow-336b1168-c3ea-4b5c-9955-beb577f3c005",
+          "artifactId": "art-kb50-jrc-flow-336b1168-c3ea-4b5c-9955-beb577f3c005",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flows/336b1168-c3ea-4b5c-9955-beb577f3c005.xml :: UUID、名称、typeOfDataSet、referenceToReferenceFlowProperty 和引用属性",
+          "topics": [
+            "流对象",
+            "流类型和参考属性"
+          ],
+          "limits": [
+            "选取字段核读，未通读附带文献。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-flow-4f197bf2-7b3b-11dd-ad8b-0800200c9a66",
+          "artifactId": "art-kb50-jrc-flow-4f197bf2-7b3b-11dd-ad8b-0800200c9a66",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flows/4f197bf2-7b3b-11dd-ad8b-0800200c9a66.xml :: UUID、名称、typeOfDataSet、referenceToReferenceFlowProperty 和引用属性",
+          "topics": [
+            "流对象",
+            "流类型和参考属性"
+          ],
+          "limits": [
+            "选取字段核读，未通读附带文献。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-flow-4f1a3f41-7b3b-11dd-ad8b-0800200c9a66",
+          "artifactId": "art-kb50-jrc-flow-4f1a3f41-7b3b-11dd-ad8b-0800200c9a66",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flows/4f1a3f41-7b3b-11dd-ad8b-0800200c9a66.xml :: UUID、名称、typeOfDataSet、referenceToReferenceFlowProperty 和引用属性",
+          "topics": [
+            "流对象",
+            "流类型和参考属性"
+          ],
+          "limits": [
+            "选取字段核读，未通读附带文献。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-flow-598e8a3b-c1e5-49d2-8305-176bfd0af3c2",
+          "artifactId": "art-kb50-jrc-flow-598e8a3b-c1e5-49d2-8305-176bfd0af3c2",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flows/598e8a3b-c1e5-49d2-8305-176bfd0af3c2.xml :: UUID、名称、typeOfDataSet、referenceToReferenceFlowProperty 和引用属性",
+          "topics": [
+            "流对象",
+            "流类型和参考属性"
+          ],
+          "limits": [
+            "选取字段核读，未通读附带文献。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-flow-76013e3e-e074-4452-b1da-7d47842345a8",
+          "artifactId": "art-kb50-jrc-flow-76013e3e-e074-4452-b1da-7d47842345a8",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flows/76013e3e-e074-4452-b1da-7d47842345a8.xml :: UUID、名称、typeOfDataSet、referenceToReferenceFlowProperty 和引用属性",
+          "topics": [
+            "流对象",
+            "流类型和参考属性"
+          ],
+          "limits": [
+            "选取字段核读，未通读附带文献。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-flow-885d2a57-b6ca-4188-b6ff-618435ada8e0",
+          "artifactId": "art-kb50-jrc-flow-885d2a57-b6ca-4188-b6ff-618435ada8e0",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flows/885d2a57-b6ca-4188-b6ff-618435ada8e0.xml :: UUID、名称、typeOfDataSet、referenceToReferenceFlowProperty 和引用属性",
+          "topics": [
+            "流对象",
+            "流类型和参考属性"
+          ],
+          "limits": [
+            "选取字段核读，未通读附带文献。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-flow-890a70b7-b677-4e2a-8a1b-7d017e0a10ae",
+          "artifactId": "art-kb50-jrc-flow-890a70b7-b677-4e2a-8a1b-7d017e0a10ae",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flows/890a70b7-b677-4e2a-8a1b-7d017e0a10ae.xml :: UUID、名称、typeOfDataSet、referenceToReferenceFlowProperty 和引用属性",
+          "topics": [
+            "流对象",
+            "流类型和参考属性"
+          ],
+          "limits": [
+            "选取字段核读，未通读附带文献。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-flow-8b675989-edc7-4f86-a0e1-ce4a675346df",
+          "artifactId": "art-kb50-jrc-flow-8b675989-edc7-4f86-a0e1-ce4a675346df",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flows/8b675989-edc7-4f86-a0e1-ce4a675346df.xml :: UUID、名称、typeOfDataSet、referenceToReferenceFlowProperty 和引用属性",
+          "topics": [
+            "流对象",
+            "流类型和参考属性"
+          ],
+          "limits": [
+            "选取字段核读，未通读附带文献。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-flow-9f8f445c-e172-49f6-8881-bcf2a9824588",
+          "artifactId": "art-kb50-jrc-flow-9f8f445c-e172-49f6-8881-bcf2a9824588",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flows/9f8f445c-e172-49f6-8881-bcf2a9824588.xml :: UUID、名称、typeOfDataSet、referenceToReferenceFlowProperty 和引用属性",
+          "topics": [
+            "流对象",
+            "流类型和参考属性"
+          ],
+          "limits": [
+            "选取字段核读，未通读附带文献。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-flow-a1ff365a-b063-4993-9ddc-6c68dd45ff81",
+          "artifactId": "art-kb50-jrc-flow-a1ff365a-b063-4993-9ddc-6c68dd45ff81",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flows/a1ff365a-b063-4993-9ddc-6c68dd45ff81.xml :: 第 6–8、17、22、41、45–50 行，UUID、名称、typeOfDataSet 及参考属性索引 0。",
+          "topics": [
+            "流对象",
+            "流类型和参考属性"
+          ],
+          "limits": [
+            "选取字段核读，未通读附带文献。",
+            "本条给出流记录类型与属性引用，处理过程交换方向和物质去向另查各自原件。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-flow-dad7268b-41ef-46e0-9641-48e431bbf937",
+          "artifactId": "art-kb50-jrc-flow-dad7268b-41ef-46e0-9641-48e431bbf937",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flows/dad7268b-41ef-46e0-9641-48e431bbf937.xml :: UUID、名称、typeOfDataSet、referenceToReferenceFlowProperty 和引用属性",
+          "topics": [
+            "流对象",
+            "流类型和参考属性"
+          ],
+          "limits": [
+            "选取字段核读，未通读附带文献。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-property-75c6769f-cc71-4217-b3cd-7e83025eb39f",
+          "artifactId": "art-kb50-jrc-property-75c6769f-cc71-4217-b3cd-7e83025eb39f",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flowproperties/75c6769f-cc71-4217-b3cd-7e83025eb39f.xml :: UUID、名称和 referenceToReferenceUnitGroup",
+          "topics": [
+            "流属性",
+            "单位组引用"
+          ],
+          "limits": [
+            "只检查量纲连接。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-property-93a60a56-a3c8-11da-a746-0800200b9a66",
+          "artifactId": "art-kb50-jrc-property-93a60a56-a3c8-11da-a746-0800200b9a66",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flowproperties/93a60a56-a3c8-11da-a746-0800200b9a66.xml :: UUID、名称和 referenceToReferenceUnitGroup",
+          "topics": [
+            "流属性",
+            "单位组引用"
+          ],
+          "limits": [
+            "只检查量纲连接。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-property-93a60a56-a3c8-11da-a746-0800200b9a66_02.00.000",
+          "artifactId": "art-kb50-jrc-property-93a60a56-a3c8-11da-a746-0800200b9a66_02.00.000",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flowproperties/93a60a56-a3c8-11da-a746-0800200b9a66_02.00.000.xml :: UUID、名称和 referenceToReferenceUnitGroup",
+          "topics": [
+            "流属性",
+            "单位组引用"
+          ],
+          "limits": [
+            "只检查量纲连接。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-property-93a60a56-a3c8-11da-a746-0800200c9a66",
+          "artifactId": "art-kb50-jrc-property-93a60a56-a3c8-11da-a746-0800200c9a66",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flowproperties/93a60a56-a3c8-11da-a746-0800200c9a66.xml :: UUID、名称和 referenceToReferenceUnitGroup",
+          "topics": [
+            "流属性",
+            "单位组引用"
+          ],
+          "limits": [
+            "只检查量纲连接。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-property-93a60a56-a3c8-11da-a746-0800200c9a66_02.00.000",
+          "artifactId": "art-kb50-jrc-property-93a60a56-a3c8-11da-a746-0800200c9a66_02.00.000",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flowproperties/93a60a56-a3c8-11da-a746-0800200c9a66_02.00.000.xml :: UUID、名称和 referenceToReferenceUnitGroup",
+          "topics": [
+            "流属性",
+            "单位组引用"
+          ],
+          "limits": [
+            "只检查量纲连接。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-property-93a60a56-a3c8-14da-a746-0800200c9a66",
+          "artifactId": "art-kb50-jrc-property-93a60a56-a3c8-14da-a746-0800200c9a66",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flowproperties/93a60a56-a3c8-14da-a746-0800200c9a66.xml :: UUID、名称和 referenceToReferenceUnitGroup",
+          "topics": [
+            "流属性",
+            "单位组引用"
+          ],
+          "limits": [
+            "只检查量纲连接。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-property-93a60a56-a3c8-14da-a746-0800200c9a66_02.00.000",
+          "artifactId": "art-kb50-jrc-property-93a60a56-a3c8-14da-a746-0800200c9a66_02.00.000",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flowproperties/93a60a56-a3c8-14da-a746-0800200c9a66_02.00.000.xml :: UUID、名称和 referenceToReferenceUnitGroup",
+          "topics": [
+            "流属性",
+            "单位组引用"
+          ],
+          "limits": [
+            "只检查量纲连接。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-property-93a60a56-a3c8-17da-a746-0800200c9a66",
+          "artifactId": "art-kb50-jrc-property-93a60a56-a3c8-17da-a746-0800200c9a66",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flowproperties/93a60a56-a3c8-17da-a746-0800200c9a66.xml :: UUID、名称和 referenceToReferenceUnitGroup",
+          "topics": [
+            "流属性",
+            "单位组引用"
+          ],
+          "limits": [
+            "只检查量纲连接。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-property-93a60a56-a3c8-17da-a746-0800200c9a66_02.00.000",
+          "artifactId": "art-kb50-jrc-property-93a60a56-a3c8-17da-a746-0800200c9a66_02.00.000",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flowproperties/93a60a56-a3c8-17da-a746-0800200c9a66_02.00.000.xml :: UUID、名称和 referenceToReferenceUnitGroup",
+          "topics": [
+            "流属性",
+            "单位组引用"
+          ],
+          "limits": [
+            "只检查量纲连接。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-property-93a60a56-a3c8-21da-a746-0800200c9a66",
+          "artifactId": "art-kb50-jrc-property-93a60a56-a3c8-21da-a746-0800200c9a66",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flowproperties/93a60a56-a3c8-21da-a746-0800200c9a66.xml :: UUID、名称和 referenceToReferenceUnitGroup",
+          "topics": [
+            "流属性",
+            "单位组引用"
+          ],
+          "limits": [
+            "只检查量纲连接。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-property-93a60a56-a3c8-21da-a746-0800200c9a66_02.00.000",
+          "artifactId": "art-kb50-jrc-property-93a60a56-a3c8-21da-a746-0800200c9a66_02.00.000",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flowproperties/93a60a56-a3c8-21da-a746-0800200c9a66_02.00.000.xml :: UUID、名称和 referenceToReferenceUnitGroup",
+          "topics": [
+            "流属性",
+            "单位组引用"
+          ],
+          "limits": [
+            "只检查量纲连接。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-property-93a60a56-a3c8-22da-a746-0800200c9a66",
+          "artifactId": "art-kb50-jrc-property-93a60a56-a3c8-22da-a746-0800200c9a66",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flowproperties/93a60a56-a3c8-22da-a746-0800200c9a66.xml :: UUID、名称和 referenceToReferenceUnitGroup",
+          "topics": [
+            "流属性",
+            "单位组引用"
+          ],
+          "limits": [
+            "只检查量纲连接。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-property-93a60a56-a3c8-22da-a746-0800200c9a66_02.00.000",
+          "artifactId": "art-kb50-jrc-property-93a60a56-a3c8-22da-a746-0800200c9a66_02.00.000",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flowproperties/93a60a56-a3c8-22da-a746-0800200c9a66_02.00.000.xml :: UUID、名称和 referenceToReferenceUnitGroup",
+          "topics": [
+            "流属性",
+            "单位组引用"
+          ],
+          "limits": [
+            "只检查量纲连接。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-property-bcf81c0a-9fe9-4c88-a25b-99e0dd64ddaa",
+          "artifactId": "art-kb50-jrc-property-bcf81c0a-9fe9-4c88-a25b-99e0dd64ddaa",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flowproperties/bcf81c0a-9fe9-4c88-a25b-99e0dd64ddaa.xml :: UUID、名称和 referenceToReferenceUnitGroup",
+          "topics": [
+            "流属性",
+            "单位组引用"
+          ],
+          "limits": [
+            "只检查量纲连接。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-property-d77d039c-876e-4729-93e0-39c68acba376",
+          "artifactId": "art-kb50-jrc-property-d77d039c-876e-4729-93e0-39c68acba376",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flowproperties/d77d039c-876e-4729-93e0-39c68acba376.xml :: UUID、名称和 referenceToReferenceUnitGroup",
+          "topics": [
+            "流属性",
+            "单位组引用"
+          ],
+          "limits": [
+            "只检查量纲连接。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-rail-property-reference",
+          "artifactId": "art-kb50-jrc-flow-598e8a3b-c1e5-49d2-8305-176bfd0af3c2",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flows/598e8a3b-c1e5-49d2-8305-176bfd0af3c2.xml :: quantitativeReference 与 flowProperty #0 的 referenceToFlowPropertyDataSet",
+          "topics": [
+            "参考属性",
+            "属性记录版本"
+          ],
+          "limits": [
+            "仅核对原 XML 声明，未据此判断软件如何解析版本差异。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-part-property-reference",
+          "artifactId": "art-kb50-jrc-flow-336b1168-c3ea-4b5c-9955-beb577f3c005",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flows/336b1168-c3ea-4b5c-9955-beb577f3c005.xml :: quantitativeReference 与 flowProperty #0 的 referenceToFlowPropertyDataSet",
+          "topics": [
+            "参考属性",
+            "属性记录版本"
+          ],
+          "limits": [
+            "仅核对原 XML 声明，未据此判断软件如何解析版本差异。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-energy-property-record",
+          "artifactId": "art-kb50-jrc-property-93a60a56-a3c8-11da-a746-0800200c9a66",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flowproperties/93a60a56-a3c8-11da-a746-0800200c9a66.xml :: common:UUID、referenceToReferenceUnitGroup 与 common:dataSetVersion",
+          "topics": [
+            "参考属性",
+            "属性记录版本"
+          ],
+          "limits": [
+            "仅核对原 XML 声明，未据此判断软件如何解析版本差异。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-mass-property-record",
+          "artifactId": "art-kb50-jrc-property-93a60a56-a3c8-11da-a746-0800200b9a66",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flowproperties/93a60a56-a3c8-11da-a746-0800200b9a66.xml :: common:UUID、referenceToReferenceUnitGroup 与 common:dataSetVersion",
+          "topics": [
+            "参考属性",
+            "属性记录版本"
+          ],
+          "limits": [
+            "仅核对原 XML 声明，未据此判断软件如何解析版本差异。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "复取 SDK 后读取指定 XML、XSD、变更记录，视觉核对四张 PDF 图、内嵌 PNG 和倍率说明页。",
+        "methodologicalScope": "官方示例的表示、参数、图链接和指定结果字段。独立算术从原件推导。",
+        "independence": "同一 SDK 的图、源记录和说明是同一示例的不同载体。未使用软件结果。",
+        "limitations": [
+          "模型明示仅用于格式接口测试并标注不符合其列举的 PEF/OEF 方案。",
+          "比较固定模型所列数量及交换语义，不能证明实际行业、环境影响或任何软件的导入行为。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "rights": "JRC 提供公开下载。示例模型声明版权、限定非商业性 eILCD 软件导入/导出接口测试，禁止将该示例用于实际 LCA 研究。只保留原件身份、定位和有界原创解释。模型、原图及再导出不再分发。",
+      "unread": [
+        "未通读所有模式、全部支持载体和合规资料。未运行软件。示例未提供可对应的原生 LCIA 方法与结果。"
+      ],
+      "sourceKeys": [
+        "src-kb50-jrc-sdk",
+        "src-kb50-jrc-model",
+        "src-kb50-jrc-model-xsd",
+        "src-kb50-jrc-result",
+        "src-kb50-jrc-factor",
+        "src-kb50-jrc-diagram",
+        "src-kb50-jrc-wash",
+        "src-kb50-jrc-rail",
+        "src-kb50-jrc-granulate",
+        "src-kb50-jrc-grid",
+        "src-kb50-jrc-machine",
+        "src-kb50-jrc-moulding",
+        "src-kb50-jrc-rail-property-reference",
+        "src-kb50-jrc-part-property-reference",
+        "src-kb50-jrc-energy-property-record",
+        "src-kb50-jrc-mass-property-record",
+        "src-kb50-jrc-machine-flow"
+      ]
+    },
+    {
+      "id": "rd-kb50-jrc-ilcd11",
+      "workId": "work-kb50-jrc-ilcd11",
+      "title": "ILCD Format 1.1 Documentation — selected process, flow and model fields",
+      "version": "ILCD Format 1.1 公开文档，固定访问载体 2026-11-06",
+      "url": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/ILCD_Format_1.1_Documentation/ILCD_ProcessDataSet.html",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "web-sections",
+      "question": "过程数据集如何区分定量参考、方向、符号、变量与结果量？",
+      "argumentSummary": "过程交换的定量参考、方向和结果量各有字段；流类型属另一条记录。模型扩展的实例引用和连接不可与单一过程行混同。",
+      "artifacts": [
+        {
+          "id": "art-kb50-jrc-process-doc",
+          "mediaType": "text/html",
+          "sha256": "dc854d520b6d62101ca1f3befaa1be64661719352286f74cf6a4653f589eaf84",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/ILCD_Format_1.1_Documentation/ILCD_ProcessDataSet.html"
+        },
+        {
+          "id": "art-kb50-jrc-model-doc",
+          "mediaType": "text/html",
+          "sha256": "6c6f7851196ee2d5da17d60708789917a192617bbb889d822e5f782e36f599d9",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/ILCD_Format_1.1_Documentation/ILCD_LifeCycleModelDataSet.html"
+        },
+        {
+          "id": "art-kb50-jrc-flow-doc",
+          "mediaType": "text/html",
+          "sha256": "c2514aea7140424eb908a55e8cddbbdfbeebc7756137447ff6318a563db26819",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/ILCD_Format_1.1_Documentation.zip"
+        },
+        {
+          "id": "art-kb50-jrc-ilcd11-doczip",
+          "mediaType": "application/zip",
+          "sha256": "8f931c7d1b8ac68579a31a05b8d2282b2cd6462488ede80472a950ab3b166506",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/ILCD_Format_1.1_Documentation.zip"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb50-jrc-doc-direction-amount",
+          "artifactId": "art-kb50-jrc-process-doc",
+          "locator": "Process data set，Quantitative reference；Inputs and Outputs 1-7-32-119/120/123/124/125/126",
+          "topics": [
+            "方向与符号",
+            "引用变量",
+            "结果量"
+          ],
+          "limits": [
+            "同一规则不能直接移植到其他格式和工具。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-doc-model-structure",
+          "artifactId": "art-kb50-jrc-model-doc",
+          "locator": "Life cycle model data set，Quantitative reference、Included process data sets、connections 与 resulting process",
+          "topics": [
+            "模型/过程分离",
+            "连接"
+          ],
+          "limits": [
+            "网页说明不证明给出的示例或运行严格符合。"
+          ]
+        },
+        {
+          "id": "psg-kb50-jrc-doc-flow-type",
+          "artifactId": "art-kb50-jrc-flow-doc",
+          "locator": "ILCD_FlowDataSet.html :: Flow type and quantitative reference / referenceToReferenceFlowProperty",
+          "topics": [
+            "对象类型",
+            "计量"
+          ],
+          "limits": [
+            "原示例的两端角色仍须查具体 Flow 及 Exchange。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "核对机构 HTML 原件及文档 ZIP 同名成员。",
+        "methodologicalScope": "字段定义和默认含义，不能证明软件实现。",
+        "independence": "同一 JRC 文档的网页和 ZIP 成员不是独立证据。",
+        "limitations": [
+          "文档含模型扩展说明，不能以通用 1.1 网页标题推断所有工具支持。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "rights": "公开机构文档。只登记原件身份、定位及原创释义，来源的原文件和图像继续适用其各自权利。",
+      "unread": [
+        "其他数据集和字段未完整核读。"
+      ],
+      "sourceKeys": [
+        "src-ilcd-process",
+        "src-kb50-jrc-model-doc",
+        "src-kb50-jrc-flow-doc"
+      ]
+    },
+    {
+      "id": "rd-kb50-jrc-interface",
+      "workId": "work-kb50-jrc-interface",
+      "title": "Modelling requirements on LCI models under the Environmental footprint for interoperable data exchange via the eILCD format",
+      "version": "Version 2.1, June 2020",
+      "url": "https://eplca.jrc.ec.europa.eu/permalink/InterfacePaper_Modelling_eILCD.pdf",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "EF 交换规范所要求的连接、独立输入、参考与输出文档是什么？",
+      "argumentSummary": "接口文档限制具体 EF 建模场景，并要求区分定量参考实例、聚合过程文件、其元数据和 LCIA。规则与例子、软件行为分别核查。",
+      "artifacts": [
+        {
+          "id": "art-kb50-jrc-interface",
+          "mediaType": "application/pdf",
+          "sha256": "46669df10d6646a7e23b4c04eea806d3eb152feb31f667174d196fe4c1ba9863",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/InterfacePaper_Modelling_eILCD.pdf",
+          "pageCount": 7
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb50-jrc-interface-context",
+          "artifactId": "art-kb50-jrc-interface",
+          "locator": "印刷及物理 pp1、3–4；§1 Introduction 和 §2.1 Parameters",
+          "topics": [
+            "版次",
+            "适用范围",
+            "过程局部参数"
+          ],
+          "limits": [
+            "未证明每种软件都执行该要求。"
+          ],
+          "pdfIndices": [
+            0,
+            2,
+            3
+          ],
+          "printedPages": "1、3、4"
+        },
+        {
+          "id": "psg-kb50-jrc-interface-links",
+          "artifactId": "art-kb50-jrc-interface",
+          "locator": "印刷及物理 pp5–6；§2.3、Figure 1 A/B/C 与脚注 7",
+          "topics": [
+            "两个供应过程",
+            "输入区别",
+            "跨UUID条件"
+          ],
+          "limits": [
+            "图1场景是两个供方进入一个接收过程，不能用图本身概括所有分流拓扑。"
+          ],
+          "pdfIndices": [
+            4,
+            5
+          ],
+          "printedPages": "5、6"
+        },
+        {
+          "id": "psg-kb50-jrc-interface-result",
+          "artifactId": "art-kb50-jrc-interface",
+          "locator": "印刷及物理 pp6–7；§§2.4 Model, 2.5 Documentation",
+          "topics": [
+            "系统标度",
+            "输出数据集",
+            "LCIA报告"
+          ],
+          "limits": [
+            "要求和 SDK 样例实际内容分别查证。"
+          ],
+          "pdfIndices": [
+            5,
+            6
+          ],
+          "printedPages": "6、7"
+        }
+      ],
+      "appraisal": {
+        "basis": "取得官方 PDF，和 SDK 中同名作用的成员核对字节一致。目视核验 pp5–6 Figure 1。",
+        "methodologicalScope": "2020 年指定 EF 交换要求及适用条件。",
+        "independence": "官方独立路由与 SDK 内成员同字节。",
+        "limitations": [
+          "所读为 EF 过渡阶段用途文件，不能证明示例合规或软件支持。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "rights": "公开官方 PDF 及同字节 SDK 成员。只登记原件身份、定位及原创释义，未确定该 PDF 或其中图件的独立再发布许可。",
+      "unread": [
+        "未据该文推定后续规范或实际执行。"
+      ],
+      "sourceKeys": [
+        "src-kb50-jrc-interface"
+      ]
+    },
+    {
+      "id": "rd-kb50-jrc-lavoisier",
+      "workId": "work-kb50-jrc-lavoisier",
+      "title": "Bridging the interoperability gap in life cycle assessment: the lavoisier conversion framework and implementation for EcoSpold 2 and ILCD formats",
+      "version": "Int J Life Cycle Assess 31:116 (2026), published 16 June 2026, version of record",
+      "url": "https://link.springer.com/content/pdf/10.1007/s11367-026-02691-4.pdf",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "独立转换研究证明哪一类交换保留和失败，验证范围有多大？",
+      "argumentSummary": "论文的 Lavoisier 2.0.20 实验分开字段、结果值与解释元数据。研究仅比较普通 ILCD 过程数据集，特定供应方关联丢失，且没有恰当的 LCIA 结果比较。",
+      "artifacts": [
+        {
+          "id": "art-kb50-jrc-lavoisier",
+          "mediaType": "application/pdf",
+          "sha256": "f96ab628416e58c07423d0e9ce2b0bb25c353bba05c7cc2c0b75dccb87dcf665",
+          "resolvedUrl": "https://link.springer.com/content/pdf/10.1007/s11367-026-02691-4.pdf",
+          "pageCount": 14
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb50-jrc-lavoisier-scope",
+          "artifactId": "art-kb50-jrc-lavoisier",
+          "locator": "PDF pp1、5；摘要，§2.4 Flows，第二个连结段",
+          "topics": [
+            "普通ILCD",
+            "排除eILCD模型"
+          ],
+          "limits": [
+            "不能用它判定 eILCD 图的提供者转换行为。"
+          ],
+          "pdfIndices": [
+            0,
+            4
+          ],
+          "printedPages": "1、5"
+        },
+        {
+          "id": "psg-kb50-jrc-lavoisier-test",
+          "artifactId": "art-kb50-jrc-lavoisier",
+          "locator": "PDF pp7–8；§§2.9–2.10 与 Table 1",
+          "topics": [
+            "验证分层",
+            "计算和解释信息",
+            "LCIA界限"
+          ],
+          "limits": [
+            "验证范围以文中实际比较为准。"
+          ],
+          "pdfIndices": [
+            6,
+            7
+          ],
+          "printedPages": "7、8"
+        },
+        {
+          "id": "psg-kb50-jrc-lavoisier-provider",
+          "artifactId": "art-kb50-jrc-lavoisier",
+          "locator": "PDF pp10–12；§§3.1–3.2，Figures 4–7 与 provider/location 段",
+          "topics": [
+            "activityLinkId",
+            "基础流匹配",
+            "方向性损失"
+          ],
+          "limits": [
+            "不能把丢失标识的局部数量一致外推为被选供方网络不变。"
+          ],
+          "pdfIndices": [
+            9,
+            10,
+            11
+          ],
+          "printedPages": "10、11、12"
+        },
+        {
+          "id": "psg-kb50-jrc-lavoisier-rights",
+          "artifactId": "art-kb50-jrc-lavoisier",
+          "locator": "PDF p14；Open Access 许可段",
+          "topics": [
+            "版权许可与保留"
+          ],
+          "limits": [
+            "不据此推定作者全部输入数据的授权。"
+          ],
+          "pdfIndices": [
+            13
+          ],
+          "printedPages": "14"
+        }
+      ],
+      "appraisal": {
+        "basis": "取得 Springer 出版定稿 PDF，精读指定正文并目视核对 Table 1。",
+        "methodologicalScope": "作者报告的工具、数据集层级、验证范围和局限。",
+        "independence": "不同转换实现与研究者，且不是同一 SDK 模型的独立运行验证。",
+        "limitations": [
+          "论文摘要与图对比报告115份 EcoSpold2 文件，§2.9 另称较广验证305份，使用时保持原范围。",
+          "未运行作者的工具、数据或附件。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "rights": "出版定稿第14页载明 CC BY 4.0，第三方材料可能另有标注。这里登记原件身份、定位及原创释义。",
+      "unread": [
+        "补充材料、完整源数据和其他段落未逐项核验。"
+      ],
+      "sourceKeys": [
+        "src-kb50-jrc-lavoisier"
+      ]
+    },
+    {
+      "id": "rd-kb50-olca-modules270",
+      "workId": "work-kb50-olca-modules270",
+      "title": "openLCA modules 2.7.0 — pinned release source",
+      "version": "2.7.0，标签对应提交 0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+      "url": "https://codeload.github.com/GreenDelta/olca-modules/tar.gz/0cee8c739a6f98642761fb72e25bbcfb11f90be2",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "该发行的源码怎样把同一处理服务表达为保存的系统连接、符号矩阵、独立目标和因子记录？",
+      "argumentSummary": "依次辨认数量换算、保存连接与自动选择、直接计算设置、两种格式的系统目标与连接映射，以及数值零的存储。普通 eILCD 入口和可选 Gabi 路径分别处理。",
+      "artifacts": [
+        {
+          "id": "art-kb50-olca-modules270-tag-archive",
+          "mediaType": "application/gzip",
+          "sha256": "0bfbdee48ba6026f67944042cecf9aeb0f0f88678d804d65d6d710a7d252158d",
+          "resolvedUrl": "https://codeload.github.com/GreenDelta/olca-modules/tar.gz/0cee8c739a6f98642761fb72e25bbcfb11f90be2"
+        },
+        {
+          "id": "art-kb50-olca-modules270-core-archive",
+          "mediaType": "application/java-archive",
+          "sha256": "deb2c9cb94be911020a8097929aff3dc40866014cd0bb6a0285d907580d2e121",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-modules270-io-archive",
+          "mediaType": "application/java-archive",
+          "sha256": "17294587bbc8e98d194f215b6e78cdffa00009302cc4daa522e54ee5e4685f76",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-io/2.7.0/olca-io-2.7.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-release",
+          "mediaType": "application/xml",
+          "sha256": "2aa308c95b1d1e1ce78d3dab3dc9f28f2e316d13355e670f6996dc051ceb5546",
+          "resolvedUrl": "https://codeload.github.com/GreenDelta/olca-modules/tar.gz/0cee8c739a6f98642761fb72e25bbcfb11f90be2"
+        },
+        {
+          "id": "art-kb50-olca-io-dependency",
+          "mediaType": "application/xml",
+          "sha256": "b8ad537be04795ca3989860f1d81117fd4b5b01fa9adde435d4edadbee71f727",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-io/2.7.0/olca-io-2.7.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-setup",
+          "mediaType": "text/x-java-source",
+          "sha256": "1aa488517d79cb8c49ebe34a302dd80e9d0b60eb29c162347a27c64fe1421a8f",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-reference-amount",
+          "mediaType": "text/x-java-source",
+          "sha256": "7ec99d03340f9f0cd079fc3781dea87298a79371cb1d1156cff22147074015e6",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-exchange-sign",
+          "mediaType": "text/x-java-source",
+          "sha256": "5f2fb171eeeff6ad4c60b091f54059b67c1cdb3498e89c83ec98068d8b3a9592",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-conversion",
+          "mediaType": "text/x-java-source",
+          "sha256": "b728cedb0859c8f62d66b800b727827353aa7d304e2bee0d3e70963fd6ee6b7c",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-saved-links",
+          "mediaType": "text/x-java-source",
+          "sha256": "75268f5571c1cc30dc839ebbc0580ddbf6040fd18541ea6bb4468fcbb4a55ab0",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-default-provider",
+          "mediaType": "text/x-java-source",
+          "sha256": "0966b217fb58e5b85a45be5ed60edbbe5ed83c9c79dd8ce1346bba326e3a322b",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-open-inventory",
+          "mediaType": "text/x-java-source",
+          "sha256": "4ab65da998412a9d3c53b2b1fe8460bf9be345e470e0254f7155fa339f3fe695",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-json-export",
+          "mediaType": "text/x-java-source",
+          "sha256": "e44c50452e81a0cd08f625aae15bbd70514843274eed589157802304d73ded67",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-json-system-writer",
+          "mediaType": "text/x-java-source",
+          "sha256": "26123945739361a07e35189e467244ead010acf153925b2a94e84b58581e37dd",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-json-system-reader",
+          "mediaType": "text/x-java-source",
+          "sha256": "150d8b603339947c2287ecb20d9693f623cce686130f1aeea7df434f4de4f40e",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-json-quantity",
+          "mediaType": "text/x-java-source",
+          "sha256": "0fac1025cac0462ca6613506ff97b48079307d2b8918c8289286470a2efee0de",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-impact-factor-build",
+          "mediaType": "text/x-java-source",
+          "sha256": "ea1472d8411bcd6f5df7fae9f8bb29a3233b4121fa0cc8a9cff996be6988005b",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-matrix-builder",
+          "mediaType": "text/x-java-source",
+          "sha256": "72457ccc482669236ffbb1494f90272362c950844549746a483e98cdf20da322",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-sparse-zero",
+          "mediaType": "text/x-java-source",
+          "sha256": "448248ad3a86ddc1ae84ccca3612406ab06903a144973e6cffc8a204f7330c9f",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-ilcd-import-entry",
+          "mediaType": "text/x-java-source",
+          "sha256": "90657420bf4bbe039b7808154e0ac87dadfe0d0714b47105f32d28858e991b6e",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-io/2.7.0/olca-io-2.7.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-eilcd-model-import",
+          "mediaType": "text/x-java-source",
+          "sha256": "c050b9836c45992f55859548d01fe22eadcf3a6ddfefacba1acf2b2c490d96a4",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-io/2.7.0/olca-io-2.7.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-eilcd-system-export",
+          "mediaType": "text/x-java-source",
+          "sha256": "d0a529285cb93a81476ca95a9c17870381abdb6124291632c0a3b9866e9d712d",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-io/2.7.0/olca-io-2.7.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-ilcd-flow-import",
+          "mediaType": "text/x-java-source",
+          "sha256": "7723aaeda2dc2c77c771ac24e1b903216c3d824c3984087b59c7b80ad3c0c314",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-io/2.7.0/olca-io-2.7.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-ilcd-property-import",
+          "mediaType": "text/x-java-source",
+          "sha256": "a42a7b531b053d857a455d866325d179ddf609e454b591caa81902ab57174523",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-io/2.7.0/olca-io-2.7.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-environment-index",
+          "mediaType": "text/x-java-source",
+          "sha256": "437ac14a8e8d8c61ff705e76dd231cb02d354d37287f1f29668f2ff009fcfe81",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-result-flow-view",
+          "mediaType": "text/x-java-source",
+          "sha256": "60672f7038e11b8c10b08723f62f0e34154ed78bc79fb97319a8c4cddb20d7b3",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-core/2.7.0/olca-core-2.7.0-sources.jar"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb50-olca-release",
+          "artifactId": "art-kb50-olca-release",
+          "locator": "olca-modules-0cee8c739a6f98642761fb72e25bbcfb11f90be2/pom.xml :: 7–29 行",
+          "topics": [
+            "项目版本与许可"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-io-dependency",
+          "artifactId": "art-kb50-olca-io-dependency",
+          "locator": "META-INF/maven/org.openlca/olca-io/pom.xml :: 36–46 行",
+          "topics": [
+            "解析器依赖"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-setup",
+          "artifactId": "art-kb50-olca-setup",
+          "locator": "org/openlca/core/model/CalculationSetup.java :: 22–54、115–173、180–218、239–275 行",
+          "topics": [
+            "目标量与参数设置"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-reference-amount",
+          "artifactId": "art-kb50-olca-reference-amount",
+          "locator": "org/openlca/core/math/ReferenceAmount.java :: 38–74 行",
+          "topics": [
+            "参考量换算"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-exchange-sign",
+          "artifactId": "art-kb50-olca-exchange-sign",
+          "locator": "org/openlca/core/matrix/CalcExchange.java :: 77–112 行",
+          "topics": [
+            "方向与矩阵符号"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-conversion",
+          "artifactId": "art-kb50-olca-conversion",
+          "locator": "org/openlca/core/matrix/cache/ConversionTable.java :: 78–88 行",
+          "topics": [
+            "交换与表征换算"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-saved-links",
+          "artifactId": "art-kb50-olca-saved-links",
+          "locator": "org/openlca/core/matrix/index/TechIndex.java :: 85–150 行",
+          "topics": [
+            "保存的系统连接"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-default-provider",
+          "artifactId": "art-kb50-olca-default-provider",
+          "locator": "org/openlca/core/matrix/linking/ProviderSearch.java :: 23–94 行",
+          "topics": [
+            "自动选择供方"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-open-inventory",
+          "artifactId": "art-kb50-olca-open-inventory",
+          "locator": "org/openlca/core/matrix/InventoryBuilder.java :: 155–205 行",
+          "topics": [
+            "开口交换与矩阵"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-json-export",
+          "artifactId": "art-kb50-olca-json-export",
+          "locator": "org/openlca/jsonld/output/JsonExport.java :: 79–93、127–145、169–203 行",
+          "topics": [
+            "短引用与依赖实体"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-json-system-writer",
+          "artifactId": "art-kb50-olca-json-system-writer",
+          "locator": "org/openlca/jsonld/output/ProductSystemWriter.java :: 31–79、101–145 行",
+          "topics": [
+            "JSON-LD 目标与连接写入"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-json-system-reader",
+          "artifactId": "art-kb50-olca-json-system-reader",
+          "locator": "org/openlca/jsonld/input/ProductSystemReader.java :: 48–149、243–264 行",
+          "topics": [
+            "JSON-LD 目标与连接读取"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-json-quantity",
+          "artifactId": "art-kb50-olca-json-quantity",
+          "locator": "org/openlca/jsonld/input/Quantity.java :: 24–64 行",
+          "topics": [
+            "目标量依赖字段"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-impact-factor-build",
+          "artifactId": "art-kb50-olca-impact-factor-build",
+          "locator": "org/openlca/core/matrix/ImpactBuilder.java :: 99–119、123–174、181–214、226–251 行",
+          "topics": [
+            "适用因子与类别坐标"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。",
+            "本记录的数值比较限无区域默认、无不确定性、无公式或重复候选改变结果的相应情形。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-matrix-builder",
+          "artifactId": "art-kb50-olca-matrix-builder",
+          "locator": "org/openlca/core/matrix/format/MatrixBuilder.java :: 18–51、66–84、100–140 行",
+          "topics": [
+            "数值矩阵存储"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-sparse-zero",
+          "artifactId": "art-kb50-olca-sparse-zero",
+          "locator": "org/openlca/core/matrix/format/HashPointMatrix.java :: 78–105、143–149 行",
+          "topics": [
+            "零与无记录"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。",
+            "本记录的数值比较限无区域默认、无不确定性、无公式或重复候选改变结果的相应情形。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-ilcd-import-entry",
+          "artifactId": "art-kb50-olca-ilcd-import-entry",
+          "locator": "org/openlca/io/ilcd/input/Import.java :: 76–94、155–194、197–207、223–263 行",
+          "topics": [
+            "ILCD 批量与指定 ID 入口"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-eilcd-model-import",
+          "artifactId": "art-kb50-olca-eilcd-model-import",
+          "locator": "org/openlca/io/ilcd/input/models/ModelImport.java :: 41–74、76–154、160–198、208–222 行",
+          "topics": [
+            "eILCD 普通图与目标"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。",
+            "相同流与方向的匹配可借助内部交换 ID，若所给 ID 未找到，循环可能保留另一匹配交换。源位置及 dominant 属性没有参与该分支的选择。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-eilcd-system-export",
+          "artifactId": "art-kb50-olca-eilcd-system-export",
+          "locator": "org/openlca/io/ilcd/output/SystemExport.java :: 83–105、108–158、161–200 行",
+          "topics": [
+            "eILCD 系统目标与链接输出"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-ilcd-flow-import",
+          "artifactId": "art-kb50-olca-ilcd-flow-import",
+          "locator": "org/openlca/io/ilcd/input/FlowImport.java :: 73–89 行",
+          "topics": [
+            "流属性引用解析"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-ilcd-property-import",
+          "artifactId": "art-kb50-olca-ilcd-property-import",
+          "locator": "org/openlca/io/ilcd/input/FlowPropertyImport.java :: 20–47 行",
+          "topics": [
+            "流属性身份查找"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-environment-index",
+          "artifactId": "art-kb50-olca-environment-index",
+          "locator": "org/openlca/core/matrix/index/EnviIndex.java :: 38–43、152–169、189–205、251–312 行",
+          "topics": [
+            "非区域化介入清单坐标的方向标记"
+          ],
+          "limits": [
+            "限非区域化索引。首个已登记对象由具体构造入口和登记次序决定。源码可解释该标记如何保留，具体数据、先后和数值仍需对应结果及逐交换记录。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-result-flow-view",
+          "artifactId": "art-kb50-olca-result-flow-view",
+          "locator": "org/openlca/core/results/providers/ResultProvider.java :: 585–597 行",
+          "topics": [
+            "介入流结果视图的符号约定"
+          ],
+          "limits": [
+            "只说明该辅助方法的视图变换。矩阵原符号、传入标记及结果调用路径仍需逐项核对。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "读取固定官方源码发行中列出的实际成员与函数。模块 Java 成员按字节对应所列 Git 提交与发行源码 JAR。",
+        "methodologicalScope": "限源码中的字段处理、条件、选择规则及其适用版本。",
+        "independence": "同一厂商实现的源码阅读，不含编译执行或独立算法验证。",
+        "limitations": [
+          "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。",
+          "同一发布的提交源码与 Java 成员匹配，不能作为两个独立实现。历史 1.10 教程对应版的实际执行另需证据。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "rights": "所读 openLCA 源码发行的 POM 声明 MPL-2.0。这里只登记源码版本、定位、哈希及原创释义。此代码许可不转授教程、数据集、方法包或其转换件的权利。",
+      "unread": [
+        "未评估其他版本的完整实现、所有入口或实际数据结果。"
+      ],
+      "sourceKeys": [
+        "src-kb50-olca-release",
+        "src-kb50-olca-io-dependency",
+        "src-kb50-olca-setup",
+        "src-kb50-olca-reference-amount",
+        "src-kb50-olca-exchange-sign",
+        "src-kb50-olca-conversion",
+        "src-kb50-olca-saved-links",
+        "src-kb50-olca-default-provider",
+        "src-kb50-olca-open-inventory",
+        "src-kb50-olca-json-export",
+        "src-kb50-olca-json-system-writer",
+        "src-kb50-olca-json-system-reader",
+        "src-kb50-olca-json-quantity",
+        "src-kb50-olca-impact-factor-build",
+        "src-kb50-olca-matrix-builder",
+        "src-kb50-olca-sparse-zero",
+        "src-kb50-olca-ilcd-import-entry",
+        "src-kb50-olca-eilcd-model-import",
+        "src-kb50-olca-eilcd-system-export",
+        "src-kb50-olca-ilcd-flow-import",
+        "src-kb50-olca-ilcd-property-import",
+        "src-kb50-olca-environment-index",
+        "src-kb50-olca-result-flow-view"
+      ]
+    },
+    {
+      "id": "rd-kb50-olca-ilcd310",
+      "workId": "work-kb50-olca-ilcd310",
+      "title": "openLCA ILCD 3.1.0 — published parser source",
+      "version": "org.openlca:olca-ilcd:3.1.0",
+      "url": "https://repo.maven.apache.org/maven2/org/openlca/olca-ilcd/3.1.0/olca-ilcd-3.1.0-sources.jar",
+      "accessedAt": "2026-11-06",
+      "readAt": "2026-11-06",
+      "readingStatus": "selected-passages",
+      "question": "固定解析器如何选择 ZIP 成员和读取模型 XML 字段？",
+      "argumentSummary": "模型、实例和下游对象映射 XML 字段。按 ID 的成员查找与按目录批量解析有不同条件。上层导入和原生结果须另行核对。",
+      "artifacts": [
+        {
+          "id": "art-kb50-olca-ilcd310-ilcd-archive",
+          "mediaType": "application/java-archive",
+          "sha256": "75874e60e22197c89dc17fc70bfca5ebee9052bf4f3703cac850e3f851b4a154",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-ilcd/3.1.0/olca-ilcd-3.1.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-parser-release",
+          "mediaType": "application/xml",
+          "sha256": "0e9d86de96b30a155b1c2c3116739b0aa68b7d217c78a82905ed2a8a46a9a5c1",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-ilcd/3.1.0/olca-ilcd-3.1.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-parser-model",
+          "mediaType": "text/x-java-source",
+          "sha256": "474edde0c2707cad2e7425feedab9a1b2b4c11d5e7e8f352b20b65168d1e59fc",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-ilcd/3.1.0/olca-ilcd-3.1.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-parser-instance",
+          "mediaType": "text/x-java-source",
+          "sha256": "15fdfa8ff65e6c2116c278b8c6bb23faf7b9d0181bf717b91d24bc94c720b0a8",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-ilcd/3.1.0/olca-ilcd-3.1.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-parser-link",
+          "mediaType": "text/x-java-source",
+          "sha256": "b25e8e9d787f07230662ab6fcc710426180738063061f3bc4f4cc1aa3e4f196c",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-ilcd/3.1.0/olca-ilcd-3.1.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-parser-zip",
+          "mediaType": "text/x-java-source",
+          "sha256": "69a08f4c90a4c361aedba5ba194537f44fb852268a445fa6043276df2f497f39",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-ilcd/3.1.0/olca-ilcd-3.1.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-parser-iterate",
+          "mediaType": "text/x-java-source",
+          "sha256": "eff2be0f0b7e08b291af9173a94b5975f9d91eb98611e2c9c77955875a72e437",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-ilcd/3.1.0/olca-ilcd-3.1.0-sources.jar"
+        },
+        {
+          "id": "art-kb50-olca-parser-directory",
+          "mediaType": "text/x-java-source",
+          "sha256": "9227c51ae84cd9e4e9c2924ecc5fe71e64a3e6da8168ffeef87048e5cf7e5c92",
+          "resolvedUrl": "https://repo.maven.apache.org/maven2/org/openlca/olca-ilcd/3.1.0/olca-ilcd-3.1.0-sources.jar"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb50-olca-parser-release",
+          "artifactId": "art-kb50-olca-parser-release",
+          "locator": "META-INF/maven/org.openlca/olca-ilcd/pom.xml :: 8–26 行",
+          "topics": [
+            "解析器身份与许可"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-parser-model",
+          "artifactId": "art-kb50-olca-parser-model",
+          "locator": "org/openlca/ilcd/models/Model.java :: 21–42 行",
+          "topics": [
+            "XML 模型绑定"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-parser-instance",
+          "artifactId": "art-kb50-olca-parser-instance",
+          "locator": "org/openlca/ilcd/models/ProcessInstance.java :: 18–69 行",
+          "topics": [
+            "XML 实例字段"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-parser-link",
+          "artifactId": "art-kb50-olca-parser-link",
+          "locator": "org/openlca/ilcd/models/DownstreamLink.java :: 9–53 行",
+          "topics": [
+            "XML 连接属性"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-parser-zip",
+          "artifactId": "art-kb50-olca-parser-zip",
+          "locator": "org/openlca/ilcd/io/ZipStore.java :: 53–87、163–194 行",
+          "topics": [
+            "压缩包成员查找"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。",
+            "规则对成员名称和目录生效，不表示同时核对 XML 内部 UUID、引用版本与 URI。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-parser-iterate",
+          "artifactId": "art-kb50-olca-parser-iterate",
+          "locator": "org/openlca/ilcd/io/ZipEntryIterator.java :: 17–44 行",
+          "topics": [
+            "逐成员解析"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。"
+          ]
+        },
+        {
+          "id": "psg-kb50-olca-parser-directory",
+          "artifactId": "art-kb50-olca-parser-directory",
+          "locator": "org/openlca/ilcd/io/Dir.java :: 24–38 行",
+          "topics": [
+            "模型数据目录"
+          ],
+          "limits": [
+            "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "从固定 3.1.0 发行源码 JAR 读取所列成员及函数，核对成员哈希和包内 POM。",
+        "methodologicalScope": "限源码中的字段处理、条件、选择规则及其适用版本。",
+        "independence": "同一厂商实现的源码阅读，不含编译执行或独立算法验证。",
+        "limitations": [
+          "此记录仅核对所列版本的代码路径及字段。实际加载的编译产物、运行配置、原生结果和历史版行为须有各自证据。",
+          "独立解析器发行是同一厂商实现的依赖，不构成独立复现。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-06"
+      },
+      "rights": "所读 openLCA 源码发行的 POM 声明 MPL-2.0。这里只登记源码版本、定位、哈希及原创释义。此代码许可不转授教程、数据集、方法包或其转换件的权利。",
+      "unread": [
+        "未评估其他版本的完整实现、所有入口或实际数据结果。"
+      ],
+      "sourceKeys": [
+        "src-kb50-olca-parser-release",
+        "src-kb50-olca-parser-model",
+        "src-kb50-olca-parser-instance",
+        "src-kb50-olca-parser-link",
+        "src-kb50-olca-parser-zip",
+        "src-kb50-olca-parser-iterate",
+        "src-kb50-olca-parser-directory"
+      ]
     }
   ],
   "gaps": [
@@ -18847,6 +21320,68 @@
         "A06"
       ],
       "nextAction": "需完整本地过程库存与主网模型，核对出版版和基准；无需把该组历史因子接入 Texas。"
+    },
+    {
+      "id": "gap-kb50-bottle-chapter9-zip",
+      "description": "GreenDelta六月chapter9_1.zip实际公开GET404；三月解决版虽含两种处理及四个系统，尚未证明六月交换包字节或其导入行为。",
+      "affectedUnits": [
+        "V7-03",
+        "A04",
+        "A06"
+      ],
+      "nextAction": "保留链接及失败。用原备份明确对象完成实际运行和另标版本的交换，不称重导出的文件为六月原包。"
+    },
+    {
+      "id": "gap-kb50-jrc-result-class-boundary",
+      "description": "指定结果七项结果量闭合，但分类写单一操作过程且不列终端洗后废物流。原因、筛选算法和LCIA仍未确定。",
+      "affectedUnits": [
+        "V4-05",
+        "V5-06",
+        "V7-03",
+        "A06"
+      ],
+      "nextAction": "指定结果的选择原因和完整边界仍未知。普通2.7导入已观察到独立的机器处理活动缺席及开放洗后废物流；这不解释原件为何省略该终端流，也不补出LCIA。"
+    },
+    {
+      "id": "gap-kb50-jrc-location-selection",
+      "description": "#0 到 #1 声明 GLO，而接收交换无 exchange location，只有源过程地点字段。",
+      "affectedUnits": [
+        "V3-06",
+        "V7-03",
+        "A04"
+      ],
+      "nextAction": "已核读普通2.7匹配路径及该例原生导入；继续区分原模型连接位置、过程位置和其他配置/工具的匹配行为，不能把忽略字段视为语义保留。"
+    },
+    {
+      "id": "gap-kb50-jrc-property-version",
+      "description": "铁路用高压电的参考属性声明版本为 28.00.000，塑料件参考属性声明为 00.00.000。两条 URI 都指向内部 UUID 相同、数据集版本为 03.00.000 的各自成员。压缩包另有 02.00.000 的同 UUID 成员。",
+      "affectedUnits": [
+        "V3-06",
+        "V7-03",
+        "A04"
+      ],
+      "nextAction": "分别核对 URI、UUID、显式引用版本和原生载入结果，保留原件字段与所选解析条件。"
+    },
+    {
+      "id": "gap-kb50-olca-historical-equivalence",
+      "description": "教程所用 openLCA 1.10 与所核读 2.7.0 模块是不同发行身份。历史候选版或当前源码均不能自行证明教程的历史运行与迁移的等价。",
+      "affectedUnits": [
+        "V7-03",
+        "A04",
+        "A06"
+      ],
+      "nextAction": "如需历史复演，另核原软件具体发行、受支持架构、完整教程数据及设置，并独立保存运行与限制。"
+    },
+    {
+      "id": "gap-kb50-native-profile-and-platform",
+      "description": "当前真实执行限macOS arm64、2.7.0模块、普通非区域化设置、JSON-LD及带openLCA扩展的eILCD自往返。历史桌面、Linux/Windows、外部读取器、地域零值默认与全部版本没有得到运行资格。",
+      "affectedUnits": [
+        "V5-06",
+        "V7-03",
+        "A04",
+        "A06"
+      ],
+      "nextAction": "按实际研究问题选择原件和具名版本追加独立运行；不要把跨平台门槛、源代码可读或同软件自往返等同平台或生态互操作通过。"
     }
   ],
   "revisions": [
@@ -20525,6 +23060,68 @@
         "V6-06",
         "V7-05A",
         "A06"
+      ]
+    },
+    {
+      "id": "rev-kb50-jrc-exchange-as-edge",
+      "triggerPassageIds": [
+        "psg-kb50-jrc-model-edges",
+        "psg-kb50-jrc-schema-coordinates",
+        "psg-kb50-jrc-factor"
+      ],
+      "affectedUnits": [
+        "V3-04",
+        "V3-06",
+        "V4-05",
+        "V7-03",
+        "A06"
+      ],
+      "before": "从废物流标签与方向进入潜在的跨软件对照。",
+      "after": "以源实例的双端交换定位为中心，区分标签、符号、物质去向、定量参考、模型标度与真正选中的处理连接。",
+      "reasoning": "同一源例既含不同废物 UUID 的链接，又含同一 Product UUID 的处理链，且复用同一供电过程构成两个实例。",
+      "status": "applied-to-candidate; source/native and reader reviews completed; rendered qualification and delivery tracked separately"
+    },
+    {
+      "id": "rev-kb50-jrc-aggregate-selected-result",
+      "triggerPassageIds": [
+        "psg-kb50-jrc-model-reference",
+        "psg-kb50-jrc-result",
+        "psg-kb50-jrc-interface-result"
+      ],
+      "affectedUnits": [
+        "V4-05",
+        "V5-06",
+        "V6-06",
+        "V7-03",
+        "A06"
+      ],
+      "before": "把指定结果过程当成软件原生计算可直接复用的完整聚合清单。",
+      "after": "按独立源算术验证结果列范围，分开过程分类、版本、结果列和图实际存在的边界流。",
+      "reasoning": "七个结果量能够核算，洗涤末端仍有未列流，模型没有可用的 LCIA 结果。",
+      "status": "applied-to-candidate; source/native and reader reviews completed; rendered qualification and delivery tracked separately"
+    },
+    {
+      "id": "rev-kb50-native-target-and-record-state",
+      "before": "现有流/废物与缺因子页面主要从手册说明进入拟议对照，文件导入和数值合计尚没有原生行为证据。",
+      "after": "用固定原件的原生图、目标、参数、A/B/C、活动和记录状态分别说明条件对应、缺席处理、目标复位与零/缺失的数值合并，并保留重复运行的方向标记例外。",
+      "reasoning": "原模块和独立源预期支持的成功与失败不能合并为通用互操作宣告；全系统合计、局部贡献与元数据分别有资格范围。",
+      "status": "applied-to-candidate; software and scientific evidence boundaries retained",
+      "triggerPassageIds": [
+        "psg-kb50-olca-saved-links",
+        "psg-kb50-olca-eilcd-system-export",
+        "psg-kb50-olca-impact-factor-build",
+        "psg-kb50-olca-environment-index"
+      ],
+      "affectedUnits": [
+        "V3-04",
+        "V3-06",
+        "V4-05",
+        "V5-06",
+        "V6-06",
+        "V7-03",
+        "A04",
+        "A06",
+        "A07"
       ]
     }
   ]

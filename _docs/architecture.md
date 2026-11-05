@@ -17,10 +17,38 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-06
-lastReviewedCommit: 1776bb5dc99ca36569b5ab7d3a598e2e3dce336a
+lastReviewedCommit: 9f07ff8f89a7fc857834197a163029d96d67e01f
 ---
 
 # Publication architecture
+
+## Native exchange reproduction and static observations
+
+`scripts/native-exchange.mjs` registers the prose-only CASE-NATIVE-EXCHANGE v1.
+Its nested projection and independently fixed input digest bind 19 original
+numeric facts, 29 selected native observations, exact source/readings/passages,
+and the original and portable run identities. Static evaluation computes only
+declared decimal arithmetic and display strings. It does not load a database,
+reconstruct the native matrices or run Java. The JRC fossil-gas mismatch,
+independent-target reset and aggregate direction-label differences remain
+explicit data, separate from successful signed numerical comparisons.
+
+The optional `scripts/native-exchange/run.py` accepts two caller-provided exact
+archives and extracted JDK/Maven installations. It creates a new work directory
+outside Git, resolves dependencies through Maven Central to a private cache,
+verifies 69 runtime JARs and calls the original openLCA 2.7.0 modules. The three
+authored Java adapters perform inspection, calculation and controlled native
+round trips; they do not replace the numerical solver. Closed database-tree
+digests bind calculation copies to inspection receipts. Explicit zero and absent
+factor rows use a separate author diagnostic method with no environmental claim.
+
+The actual replay is qualified on macOS arm64. Windows admission requires
+CPython 3.13+ for mode-0700 directory access control; macOS/Linux retain Python
+3.9+. Windows/Linux execution and actual Windows ACL behavior remain unqualified.
+The launcher keeps inherited HOME unchanged and isolates Java user.home, temporary
+files, Maven settings and caches through explicit task paths. Originals, complete
+exports, databases and raw output vectors remain in caller-owned private storage.
+The website dependencies and all previous case policies/hashes are unchanged.
 
 ## Electricity reproduction boundary
 

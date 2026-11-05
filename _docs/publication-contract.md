@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-06
-lastReviewedCommit: 1776bb5dc99ca36569b5ab7d3a598e2e3dce336a
+lastReviewedCommit: b276ebbce39329b59af8cf3c4b736a5643b99263
 ---
 
 # Publication contract
@@ -153,3 +153,12 @@ it does not rerun or certify the original model. Archive and member identities,
 mixed-carrier readings and original access limitations remain independently
 bound. A source documentation discrepancy does not establish implementation
 behavior without the executable evidence.
+
+Native exchange comparisons distinguish source-data facts from author-derived
+execution observations. A source artifact or selected code passage cannot stand
+in for a run receipt. Preserve archive/member identity, schema migration,
+explicit settings, loaded-library identity and the closed inspected database
+digest through calculation. Public summaries may expose reviewed selected
+observations and receipt hashes without redistributing the original database,
+complete factor tables or native model exports. A numerical match never grants
+redistribution permission or establishes physical applicability.

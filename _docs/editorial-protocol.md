@@ -14,7 +14,7 @@ checkPaths:
   - "knowledge/**"
   - "releases/**"
 lastReviewedAt: 2026-11-06
-lastReviewedCommit: 1776bb5dc99ca36569b5ab7d3a598e2e3dce336a
+lastReviewedCommit: b276ebbce39329b59af8cf3c4b736a5643b99263
 ---
 
 # Editorial and living review protocol
@@ -160,3 +160,28 @@ intervention effect. Equal energy at different hours does not establish equal
 final service. Inspect original release code, source data, actual versioned
 outputs and technical documentation as different evidence layers. Preserve
 unresolved printed/implemented distinctions and unpropagated uncertainty.
+
+## Native exchange and format evidence
+
+Keep original source records, migrated database objects, saved links, calculation
+coordinates and reported totals as separate evidence. A readable binary marker
+does not prove a current relational object exists. A saved edge can resolve while
+its downstream treatment has no activity coordinate. Reference-flow type,
+direction, signed amount and provider assignment must therefore be inspected
+before describing preservation of a treatment service.
+
+Bind native execution to the exact original archive, closed inspected database
+tree, loaded modules and explicit target, parameter, allocation and method
+settings. Independently derive expected source relationships before solving.
+Retain source-model discrepancies after explaining their numerical residual;
+an explained omission does not turn a failed original comparison into a pass.
+Use quantity-appropriate tolerances, and distinguish treatment-direct inventory,
+whole-system inventory of the same flow and a complete characterized total.
+
+A modern module replay of a migrated example does not establish the historical
+desktop version's behavior. Native format self-roundtrips retain their actual
+extensions and export scope; a system-only LCI export cannot test method
+preservation. Author-created zero/absent-factor controls examine retained
+information and carry no environmental interpretation. Public exposition uses
+minimal attributed source quantities and reviewed derived observations, while
+complete originals, native exports and full data vectors remain private.
