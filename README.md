@@ -15,7 +15,7 @@ checkPaths:
   - "app/**"
   - "scripts/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: 14e29acd7ed0605dd30396d2ad26f3a77376f1e8
+lastReviewedCommit: d91291376ad3dc667dd85948b0ac039ae11674e2
 ---
 
 # LCA Living Knowledge Base and Review
@@ -90,3 +90,11 @@ conditional arithmetic, stored LCIA outputs and model-response scenarios separat
 with exact PDF/XLSX source bindings and unresolved reconstruction limits. Use
 `node scripts/impact.mjs CASE-DAIRY-RULES` for dependent prose. Mixed-carrier
 citations link the actual cited version alongside the work-level source entry.
+
+The chapter `/docs/book/particulate-emissions-and-health/` traces primary and
+precursor emissions through population intake and modeled health damage. Its
+static `particulate-health-v1` case reconstructs a named historical factor join,
+checks printed height weights and compares four factors from one dated GLAM
+release. Exact source/reading identities include separate archive and workbook
+hashes. These checks do not establish native atmospheric reproduction, causal
+health effects or model validity. Use `node scripts/impact.mjs CASE-PARTICULATE-HEALTH` to locate the dependent numerical prose.

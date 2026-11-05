@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: 14e29acd7ed0605dd30396d2ad26f3a77376f1e8
+lastReviewedCommit: d91291376ad3dc667dd85948b0ac039ae11674e2
 ---
 
 # Publication contract
@@ -127,3 +127,18 @@ numerator, denominator and units. Agreement with a similar default in another
 source cannot waive this binding. Equal labels on separate model connections
 establish numerical agreement only; the exchange semantics and any unresolved
 native relationship remain explicit.
+
+For particulate-health teaching, distinguish emitted primary particles or
+precursor mass, inhaled particle mass, population/age definitions, health
+outcomes and already characterized damage. A published historical intake/effect
+join does not authorize replacing either factor with a later model. A weighted
+reconstruction from source factors that themselves use the same weights is a
+consistency check, not independent validation. Keep source groups separate from
+receptor populations and preserve unquantified uncertainty.
+
+When a numerical original is a member of a public release archive, bind the
+exact member bytes and its named archive path separately from the archive's
+identity. The particulate case requires both the original XLSX and the ZIP
+passage in the reviewed public closure. A matching archive hash cannot substitute
+for the workbook hash, or conversely. Neither a source's publication date nor a
+software-matched sheet supplies the coverage of the full original method.
