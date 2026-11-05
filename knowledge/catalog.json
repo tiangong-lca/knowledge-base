@@ -1581,7 +1581,7 @@
       "accessedAt": "2026-11-05",
       "accessStatus": "public-passages-inspected",
       "rights": "机构公开提供阅读；PDF未见开放许可，不据此推定再分发权。原件、图像与提取文本留在私有缓存，仅发布原创释义、元数据与定位。",
-      "preservation": "固定大学PDF，SHA-256绑定本轮载体；未取得原始选择数据；不公开重传第三方原件。",
+      "preservation": "哥德堡大学工作论文系列第 252 号，2007 年 4 月。文件指纹标识大学仓储提供的 PDF；个体选择数据未随此载体提供。",
       "artifact": {
         "mediaType": "application/pdf",
         "sha256": "4fcc3998cf6e1fa283c62ec62b4999e0bc8dea6ccac0c8b8a93608964412fa94",
@@ -1593,6 +1593,51 @@
         "scope": "2007 年工作论文第 3–8 页，实验设计、条件 logit 与效度解释，以及第 10 页表 1–3。",
         "checkedAt": "2026-11-05",
         "readingId": "rd-lime-js2007-hypothetical"
+      }
+    },
+    {
+      "id": "src-lime-cm1999-wp13",
+      "title": "Do Hypothetical and Actual Willingness to Pay Differ in Choice Experiments? — Application to the Valuation of the Environment",
+      "url": "https://swopec.hhs.se/gunwpe/papers/gunwpe0013.pdf",
+      "version": "Working Papers in Economics No. 13, March 1999; 19 PDF pages; not the 2001 journal version of record",
+      "publisher": "Göteborg University Department of Economics; S-WoPEc institutional series carrier",
+      "accessedAt": "2026-11-05",
+      "accessStatus": "public-passages-inspected",
+      "rights": "公开机构工作论文载体未见开放再分发许可；原件、提取文本和图像留在私有缓存；仅发布原创释义、元数据及精确定位。",
+      "preservation": "完整88153字节PDF，SHA-256固定；原件不进入公开仓库。",
+      "artifact": {
+        "mediaType": "application/pdf",
+        "sha256": "c8320f34e780d66b29f53718528e6e4f2057780e246fea405e0cc1702e16dcf6",
+        "resolvedUrl": "https://swopec.hhs.se/gunwpe/papers/gunwpe0013.pdf",
+        "pageCount": 19
+      },
+      "reading": {
+        "status": "selected-passages",
+        "scope": "1999工作论文封面、§§2–4、第5–12页、附录1–2第17–19页；第9页表2及检验文字目视核对。不是2001期刊全文核读。",
+        "checkedAt": "2026-11-05",
+        "readingId": "rd-lime-cm1999-wp13"
+      }
+    },
+    {
+      "id": "src-lime-hayashi2012-abstract",
+      "title": "Multiple Criteria-Multiple Participant Decisions for Establishing Sustainable Society Based on Biomass Utilization",
+      "url": "https://www.jstage.jst.go.jp/article/lca/8/4/8_349/_article/-char/en",
+      "version": "2012; Journal of Life Cycle Assessment, Japan 8(4):349–355; DOI 10.3370/lca.8.349; official English HTML abstract only",
+      "publisher": "日本LCA学会",
+      "accessedAt": "2026-11-05",
+      "accessStatus": "public-html-inspected",
+      "rights": "©2012 The Institute of Life Cycle Assessment, Japan；官方公开英语摘要可阅读，不推定正文、HTML、表图再分发许可；只发布原创释义、元数据和定位。",
+      "preservation": "固定完整英语HTML摘要页面SHA-256；第三方HTML和不完整PDF仅留私有缓存，不公开重传。",
+      "artifact": {
+        "mediaType": "text/html",
+        "sha256": "9b4ecef29b2e9131a5449e09a22def768f9364a8d72a2485f4b55b4c923bf8a6",
+        "resolvedUrl": "https://www.jstage.jst.go.jp/article/lca/8/4/8_349/_article/-char/en"
+      },
+      "reading": {
+        "status": "web-sections",
+        "scope": "官方英语页面的文章身份和Abstract：Objective、Results and Discussion、Conclusions；不包括日文正文、参考文献内容或完整PDF。",
+        "checkedAt": "2026-11-05",
+        "readingId": "rd-lime-hayashi2012-abstract"
       }
     }
   ],
@@ -8926,6 +8971,172 @@
           "不能以该研究的偏差幅度校正LIME因子，不能证明2003日本研究发生了同样大小或方向的偏差。",
           "数据未取得，没有重新估计模型；正文及表格给出的统计结果是作者报告。",
           "随机分组不等于样本随机抽自人口；实验顺序中双阶段组的场次先运行。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      }
+    },
+    {
+      "id": "ev-lime-jp-damage",
+      "sourceId": "src-lime-jp2003",
+      "readingId": "rd-lime-jp2003",
+      "passageId": "psg-lime-jp-damage",
+      "locator": "第 358–361 页第 2 节、图 1 及第 4.1、4.3 节",
+      "summary": "图 1 将清单、影响途径、保护对象损害及最后的综合分开。健康损害用 DALY，社会资产用损失金额，初级生产用 NPP 损失，生物多样性用物种灭绝数。人类健康损失年包含过早死亡和带伤残生活所损失的健康时间。",
+      "appraisal": {
+        "basis": "逐页目视核对日文原刊第 358–361 页图 1、定义及指标说明。",
+        "methodologicalScope": "2002年东京拦截面访及2003年论文披露的条件Logit估计、边际支付意愿、年度损害归一化与相对权重。",
+        "independence": "这是同一原始实证论文的一次独立代理核读，不是新增调查或独立实证验证；同一作品其他载体与后续作者综述不重复计数。",
+        "limitations": [
+          "四项是研究设定的保护对象；建模范围和实测环境后果需另行辨认。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      }
+    },
+    {
+      "id": "ev-lime-jp-calculation-limit",
+      "sourceId": "src-lime-jp2003",
+      "readingId": "rd-lime-jp2003",
+      "passageId": "psg-lime-jp-calculation-limit",
+      "locator": "第 364 页第 5 节换算式，第 365 页表 6–7",
+      "summary": "代入印刷系数、46,607,000 户及损害单位后，社会资产为每千日元损失约 4,479.71 日元，表 7 为 4,460；生物多样性约为每种 7.7058×10¹¹ 日元，表 7 为 7.68×10¹¹。固定户数、假定显示系数与报告值仅在显示末位按最近值舍入时，这两行区间不重合。",
+      "appraisal": {
+        "basis": "人工核读表 6、7 和单位；分别计算四个系数比及显示精度区间，与第二次独立转录比对。",
+        "methodologicalScope": "2002年东京拦截面访及2003年论文披露的条件Logit估计、边际支付意愿、年度损害归一化与相对权重。",
+        "independence": "这是同一原始实证论文的一次独立代理核读，不是新增调查或独立实证验证；同一作品其他载体与后续作者综述不重复计数。",
+        "limitations": [
+          "这是对已披露数值的条件性复算。原始精度、问卷编码和作者实际计算程序并未完整披露。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      }
+    },
+    {
+      "id": "ev-lime-english2004-changed-card",
+      "sourceId": "src-lime-2004-conjoint",
+      "readingId": "rd-lime-2004-conjoint",
+      "passageId": "psg-lime-en-changed-card",
+      "locator": "第 202 页第 4.4 节及表 3–4",
+      "summary": "2004 年英文论文中健康年度参照为 5.43×10⁵ DALY；表 4 将现状表为 50 年约损失两个月。日文原刊的相应现状为每年约四天、50 年约 200 天。共同的调查描述不能代替属性水平和单位的版次核对。",
+      "appraisal": {
+        "basis": "目视核对英文原版表 3–4 与日文原刊印刷第 363 页的表 4。",
+        "methodologicalScope": "历史实证论文的选读；区分调查设计、已报告估计、作者解释与本项目计算。",
+        "independence": "同一LIME研究谱系的作者论文；共同样本表不是独立实证重复，后继调查也不能填补早期原始数据缺口。",
+        "limitations": [
+          "两张示例卡不足以证明所有受访者看到的整套卡片及具体重编码关系。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      }
+    },
+    {
+      "id": "ev-lime-national-lineage-label",
+      "sourceId": "src-lime-2012-conjoint",
+      "readingId": "rd-lime-2012-conjoint",
+      "passageId": "psg-lime-national-lineage-label",
+      "locator": "第 495 页表 4 及其后正文，第 496 页表 6，第 498 页参考文献",
+      "summary": "后文表 4 的早期列标为 2003，人体健康和初级生产的金额却对应 2004 英文表的数值。后文还将早期调查称为 2003 年；两份早期原刊表 5 给的日期是 2002 年 1 月。",
+      "appraisal": {
+        "basis": "核对 2012 原件的对照列及来源名称，与两篇早期原刊表 5、7 分别比对。",
+        "methodologicalScope": "历史实证论文的选读；区分调查设计、已报告估计、作者解释与本项目计算。",
+        "independence": "同一LIME研究谱系的作者论文；共同样本表不是独立实证重复，后继调查也不能填补早期原始数据缺口。",
+        "limitations": [
+          "仅能核定文本间的差异，不能凭后来的简写确定原始调查流程或更正早期作者的数值。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      }
+    },
+    {
+      "id": "ev-lime-cm1999-design",
+      "sourceId": "src-lime-cm1999-wp13",
+      "readingId": "rd-lime-cm1999-wp13",
+      "passageId": "psg-lime-cm1999-design",
+      "locator": "工作论文§2–3，第5–7页；附录1–2，第17–19页",
+      "summary": "35名Göteborg/Karlstad经济学本科生先作16组假设选择，再作16组真钱选择；事先不知道将有真钱阶段。14组进入模型，另2组用于传递性检验。作者为减少照搬回答而采用两种同等D效率的设计，仅4组相同，并明确承认一致性压力风险。",
+      "relation": "qualifies",
+      "appraisal": {
+        "basis": "公开机构工作论文PDF；重读§§2–4及附录对应提取文本，并目视核对第9页表2及LR/t检验文字；原件SHA-256复核。",
+        "independence": "相对于早期LIME团队是另一个原始环境估值实验；与Johansson-Stenman/Svedsäter同属相近研究网络，作者在致谢中互有往来；不称完全独立的研究网络。",
+        "methodologicalScope": "同一被试的假设与真实实验所得和环境捐款取舍；与后续加入独立真实付款组的实验作有限设计比较。",
+        "limitations": [
+          "所读是1999年工作论文13，不是2001年期刊定本；不能把工作论文页码、样本和检验数值不加标注归给期刊版。",
+          "35名瑞典大学经济学本科生志愿者，同一批人先假设后真钱；不能推广为日本人口、家庭增税或四个保护对象的真实行为检验。",
+          "没有取得原始选择数据或重新估计模型。",
+          "未拒绝相等的零假设不等于用预设容忍区间证明等效；本轮未在所读范围发现等效检验或等效界值。",
+          "不同工作论文与2007实验在样本、项目和设计上均有差异，不能把跨论文结果差异全部归因于被试内/被试间设计。",
+          "1999与2001是同一作品的不同版本线索，不计为两个独立实验；2007与2008同样不重复计数。",
+          "作者的MWTP t检验明确假定两实验相互独立，但设计使用同一35名被试；本轮只记录原文检验及其假设，没有重估成配对或相关模型。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      }
+    },
+    {
+      "id": "ev-lime-cm1999-nonrejection",
+      "sourceId": "src-lime-cm1999-wp13",
+      "readingId": "rd-lime-cm1999-wp13",
+      "passageId": "psg-lime-cm1999-tests",
+      "locator": "工作论文§3.1，第9页表2及其后两段、脚注11；§3.2–4，第11–12页",
+      "summary": "表 2 的假设与实际边际支付意愿分别为 0.629 和 0.559，标准误为 0.112 和 0.121。系数相等的似然比检验得 p = 0.157，边际支付意愿相等的 t 检验得 p = 0.403。后一个检验将两轮实验按独立处理，而参与者相同。原作者未拒绝相等假设。",
+      "relation": "qualifies",
+      "appraisal": {
+        "basis": "公开机构工作论文PDF；重读§§2–4及附录对应提取文本，并目视核对第9页表2及LR/t检验文字；原件SHA-256复核。",
+        "independence": "相对于早期LIME团队是另一个原始环境估值实验；与Johansson-Stenman/Svedsäter同属相近研究网络，作者在致谢中互有往来；不称完全独立的研究网络。",
+        "methodologicalScope": "同一被试的假设与真实实验所得和环境捐款取舍；与后续加入独立真实付款组的实验作有限设计比较。",
+        "limitations": [
+          "所读是1999年工作论文13，不是2001年期刊定本；不能把工作论文页码、样本和检验数值不加标注归给期刊版。",
+          "35名瑞典大学经济学本科生志愿者，同一批人先假设后真钱；不能推广为日本人口、家庭增税或四个保护对象的真实行为检验。",
+          "没有取得原始选择数据或重新估计模型。",
+          "未拒绝相等的零假设不等于用预设容忍区间证明等效；本轮未在所读范围发现等效检验或等效界值。",
+          "不同工作论文与2007实验在样本、项目和设计上均有差异，不能把跨论文结果差异全部归因于被试内/被试间设计。",
+          "1999与2001是同一作品的不同版本线索，不计为两个独立实验；2007与2008同样不重复计数。",
+          "作者的MWTP t检验明确假定两实验相互独立，但设计使用同一35名被试；本轮只记录原文检验及其假设，没有重估成配对或相关模型。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      }
+    },
+    {
+      "id": "ev-lime-hayashi2012-preference-construction",
+      "sourceId": "src-lime-hayashi2012-abstract",
+      "readingId": "rd-lime-hayashi2012-abstract",
+      "passageId": "psg-lime-hayashi2012-abstract",
+      "locator": "官方英语HTML Abstract，Objective、Results and Discussion、Conclusions",
+      "summary": "摘要明确把偏好所有者、是否有具体决策问题、偏好取得时点与处理方式列入LCIA联合分析和MAVT的比较；另以权重、偏好收集/构造、决策支持技术、主持者和组织规模等轴比较decision conferencing。作者据此区分推导单一综合指标与基于偏好构造的决策支持，并主张进一步研究后者的作用。摘要不提供地方决策的偏好数据或对早期日本因子的偏差估计。",
+      "relation": "qualifies",
+      "appraisal": {
+        "basis": "实际读取完整官方英语HTML的文章身份和Abstract三段；SHA-256绑定77430字节捕获。未使用不完整PDF或来源不确定的正文。",
+        "independence": "这是Hayashi的概念比较，单独署名不证明完全独立研究网络；不是新增调查或对LIME因子的直接检验。",
+        "methodologicalScope": "从摘要核准LCIA联合分析与MAVT/decision conferencing的比较轴及作者结论；限于单一综合指标推导与基于偏好构造的决策支持之间的区分。",
+        "limitations": [
+          "实际选读仅限官方英语HTML摘要；页面标为FREE ACCESS并列出PDF链接，但三次PDF请求不完整，不能据此声称正文不可获得或已核读。",
+          "摘要只列出比较维度，不足以逐项补出正文对每种方法的详细定义、机制或评价。",
+          "这是概念/方法比较，不是独立偏差实验、2003样本再分析、日本因子校正或某地方决策过程的实证验证。",
+          "不能把作者关于偏好构造作用的结论改写为所有决策必须使用某种程序，或认定既有综合指标在所有决策中无效。",
+          "单独署名不证明独立于LIME研究网络；本摘要没有核验作者的全部合作关系。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-05"
+      }
+    },
+    {
+      "id": "ev-lime-jp-plant-reference",
+      "readingId": "rd-lime-jp2003",
+      "sourceId": "src-lime-jp2003",
+      "passageId": "psg-lime-jp2003-plant-reference",
+      "locator": "第 363 页表 3，第 364 页第 4.4 节关于维管植物及 50 年情景的说明",
+      "summary": "红皮书的灭绝和野外灭绝合计 25 种维管植物。作者假定这一数目来自 50 年间的变化，由此设每年 0.5 种为问卷参照；为使受访者理解，又给出 50 年累计的说明。",
+      "appraisal": {
+        "basis": "核读表 3 的物种列及第 364 页左栏第 2 段。",
+        "methodologicalScope": "问卷设计中物种损害的假想参照。",
+        "independence": "这是同一原始实证论文的一次独立代理核读，不是新增调查或独立实证验证；同一作品其他载体与后续作者综述不重复计数。",
+        "limitations": [
+          "只核读所登记段落与表格，不是完整原始调查或全模型复现。",
+          "原始逐人逐题选择数据、完整调查票、估计程序与协方差矩阵未取得；正文提到的Appendix1不在本载体十二页论文内。",
+          "2003年东京306个有效回答与2004年英文摘要所称400次访谈的关系未由本论文说明，不合并样本。",
+          "公开载体不授予原件再分发权；未发现可据此指定统一货币价格年的说明。"
         ],
         "reviewKind": "agent-source-check",
         "checkedAt": "2026-11-05"
@@ -21982,6 +22193,1171 @@
       "status": "reviewed",
       "reviewKind": "agent-source-check",
       "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "cl-lime-card",
+      "text": "受访者面前有三种政策可选。其中一种让每户这一年多缴 5,000 日元，得到的条件包括避免表中所列的健康损失、停止新增物种灭绝，同时仍有初级生产损失。另一种维持现状，家庭不用多缴税。第三种把税额和几项损害作了另一番组合。受访者要从中选出自己最愿意接受的一种。伊坪徳宏等人在 2003 年发表的日文论文里给出了这样一张示例卡。没有人被直接问到“一年健康生命值多少日元”。",
+      "kind": "source-statement",
+      "scope": "早期日本研究中公开的一组假设环境政策",
+      "evidenceIds": [
+        "ev-lime-jp-questionnaire"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-jp-questionnaire",
+          "relation": "supports",
+          "rationale": "表 4 列出三个方案、各保护对象的水平与每户一年增税额。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "cl-lime-purpose",
+      "text": "这项日本生命周期影响评价研究把损害的推算和损害之间的取舍接在一起。排放经由环境变化对人体健康、社会资产、初级生产和生物多样性产生后果，损害模型先给出四种不同单位的量。到了作者称为「統合化」的一步，已有了多少健康损失、少了多少植物生产量等结果，才需要一种权重把它们综合起来。联合分析（コンジョイント分析）从人们在假设方案之间的选择估计这些取舍；它的输入既有回答，也有研究者决定让人们比较的后果。",
+      "kind": "interpretation",
+      "scope": "日本早期损害评价和联合分析的分工",
+      "evidenceIds": [
+        "ev-lime-jp-damage",
+        "ev-lime-jp-questionnaire"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-jp-damage",
+          "relation": "supports",
+          "rationale": "第 2 节与图 1 界定了损害评价及综合化的位置。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-questionnaire",
+          "relation": "supports",
+          "rationale": "作者选择属性与水平并将其编为政策组合。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-card"
+      ],
+      "conceptIds": [
+        "cn-lime-coded",
+        "cn-lime-wtp"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "cl-lime-policy-contrast",
+      "text": "瑞士生态稀缺法可以在既定政策目标下计算排放的相对点数。这里也出现了“政策”，但承担的职责不同：东京问卷中的政策是供人选择的假设方案，受访者可以为了少受某项损害而接受较高的家庭税额。决定数值的是这些选择怎样随方案属性而变；查到一个法定减排目标，仍不足以填出这份问卷的估值权重。",
+      "kind": "synthesis",
+      "scope": "政策在两条赋权路径中的不同作用",
+      "evidenceIds": [
+        "ev-es-intent",
+        "ev-lime-jp-questionnaire"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-es-intent",
+          "relation": "supports",
+          "rationale": "瑞士方法以环境政策的目标为基础。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-questionnaire",
+          "relation": "supports",
+          "rationale": "日文原刊以假设政策组合收集取舍。"
+        }
+      ],
+      "premiseIds": [
+        "cl-es-authority",
+        "cl-lime-purpose"
+      ],
+      "conceptIds": [],
+      "mappingIds": [
+        "map-lime-policy"
+      ],
+      "caveats": [],
+      "reasoning": "比较目标文件和选择题在各自方法中实际进入计算的位置。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "cl-lime-baseline",
+      "text": "要设计有意义的选项，先要确定现状有多大的损害。作者用日本一年内各项环境负荷的量，乘上它们沿有关途径通向保护对象的损害因子，再按保护对象求和，得到年度参照量「規格値」。这里的日本范围首先限定负荷从哪里产生。损害由谁承受、问卷由谁回答、后来将几户的支付意愿相加，是另外三个范围问题。",
+      "kind": "source-statement",
+      "scope": "问卷属性水平的年度参照和负荷发生范围",
+      "evidenceIds": [
+        "ev-lime-jp-normalization",
+        "ev-lime-jp-conversion"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-jp-normalization",
+          "relation": "supports",
+          "rationale": "第 4.3 节式 (1) 给出年度负荷与损害因子之和。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-conversion",
+          "relation": "supports",
+          "rationale": "第 5 节另列用于估值聚合的户数。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-lime-annual"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "cl-lime-units",
+      "text": "四种量的名称容易造成误读。人体健康用伤残调整生命年（DALY），既包括过早死亡损失的年数，也包括伤残带来的健康时间损失。社会资产用日元表示资产损失，初级生产用损失的净初级生产量计量，即植物固定的物质扣除自身呼吸消耗后的干物质量。生物多样性在这项研究中用灭绝物种数表达。一吨干物质的损失不能直接与一个 DALY 相加，而社会资产本来就用日元计量，也不等于受访家庭已经支付了这笔钱。",
+      "kind": "interpretation",
+      "scope": "四个保护对象的指标及其单位",
+      "evidenceIds": [
+        "ev-lime-jp-damage",
+        "ev-lime-jp-normalization"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-jp-damage",
+          "relation": "supports",
+          "rationale": "第 4.1 节界定 DALY、NPP、社会资产损失和物种指标。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-normalization",
+          "relation": "supports",
+          "rationale": "表 3 在不同列使用各自的原始单位。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-purpose"
+      ],
+      "conceptIds": [
+        "cn-endpoint"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "cl-lime-plant",
+      "text": "当时的损害模型并不能从每项排放一路推到植物灭绝数。为了给问卷设定生物多样性水平，作者利用日本红皮书中维管植物的资料，将灭绝和野外灭绝合计的 25 种，按假定的 50 年分摊，构成每年 0.5 种的参照。这里的“小数物种”来自跨年折算。它可以让受访者比较情景，却不能当作实际逐年观测到的灭绝率。原文也把按更完整损害函数重做调查列为需要检验的事。",
+      "kind": "source-statement",
+      "scope": "维管植物问卷参照值的代理构造",
+      "evidenceIds": [
+        "ev-lime-jp-plant-reference",
+        "ev-lime-jp-uncertainty"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-jp-plant-reference",
+          "relation": "supports",
+          "rationale": "第 364 页列出 25 种、50 年假设及相应的年度水平。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-uncertainty",
+          "relation": "supports",
+          "rationale": "结论说明部分参照值为假设并提出重做研究。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "原研究使用植物资料构造这一属性的基准，不能把它延伸为所有类群的物种损失模型。"
+      ],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "cl-lime-display",
+      "text": "一个国家的总量很难直接想象。日文表 3 的健康参照约为每年 143 万 DALY；问卷把它折为每人每年约四天，并补充说明这种状况若持续 50 年，大致对应几个月的损失。表 4 用日常语言「損失余命」表达，注中说明作此处理是为了让受访者容易理解。问卷上读到的寿命损失日数和损害模型中含伤残的 DALY 有了联系，也留下了一项重要条件：拿系数去换算时，不能丢掉向受访者展示的尺度。",
+      "kind": "interpretation",
+      "scope": "从全国年度损害到受访者看到的水平",
+      "evidenceIds": [
+        "ev-lime-jp-normalization",
+        "ev-lime-jp-questionnaire"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-jp-normalization",
+          "relation": "supports",
+          "rationale": "表 3 给出年度健康损害。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-questionnaire",
+          "relation": "supports",
+          "rationale": "表 4 及其注和下页说明问卷采用人均日数和长期解释。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-units",
+        "cl-lime-baseline"
+      ],
+      "conceptIds": [
+        "cn-lime-coded"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "cl-lime-participants",
+      "text": "这份日文研究的主调查于 2002 年 1 月 22–25 日在东京四处进行，访问的是在场所中拦截到的 20–59 岁男女。表 5 列出 306 个有效回答者，每人作八次选择。108 人参加的是此前的预测试，研究者据此修改问卷。八次选择能让同一个人面对多组取舍；这些回答仍来自同一个人，也没有把东京的受访者扩展成全日本人口样本。",
+      "kind": "source-statement",
+      "scope": "东京场所面访的对象和重复选择层级",
+      "evidenceIds": [
+        "ev-lime-jp-survey",
+        "ev-lime-jp-questionnaire"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-jp-survey",
+          "relation": "supports",
+          "rationale": "表 5 和脚注 2 区分主调与预测试。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-questionnaire",
+          "relation": "supports",
+          "rationale": "第 364 页说明每人完成八次三选一。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "cl-lime-design",
+      "text": "单看一张卡，若有人选择增税方案，我们无从知道他最在意健康、植物生产还是生物多样性。作者用正交设计组合属性水平，在多张卡上改变各项的搭配，每张都保留一个现状方案。于是，某项损害增大时一个方案被选中的机会怎样变化，可以借助许多选择一起估计。论文只列出卡片示例；从一张卡和各属性的汇总系数，不能重建每个人当时面对的全部选项或逐题答案。",
+      "kind": "interpretation",
+      "scope": "联合分析怎样从组合选择中区分属性",
+      "evidenceIds": [
+        "ev-lime-jp-questionnaire",
+        "ev-lime-jp-model"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-jp-questionnaire",
+          "relation": "supports",
+          "rationale": "第 4.4 节交代水平、正交设计和三种组合。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-model",
+          "relation": "supports",
+          "rationale": "模型在多个选择方案上估计属性系数。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-card",
+        "cl-lime-participants"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "cl-lime-logit",
+      "text": "在作者使用的条件 logit 模型中，每个备选方案都有一项可由属性解释的效用 V，以及一项未观察到的随机成分。V 是四项损害与税额按各自系数相乘后的和。原文对随机项采用第一型极值分布，并将尺度参数定为 1；在这个设定下，方案 i 的选择概率为 exp(Vᵢ) 除以同一张卡上各方案 exp(Vⱼ) 的总和。研究者用最大似然估计系数，使所观察到的选择在模型下得到解释。一个系数表示其余属性固定时，一个编码单位改变多少效用；它的绝对值会随编码单位改变。",
+      "kind": "source-statement",
+      "scope": "条件 logit 的系统效用、误差与选择概率",
+      "evidenceIds": [
+        "ev-lime-jp-model",
+        "ev-lime-jp-conversion"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-jp-model",
+          "relation": "supports",
+          "rationale": "第 3.2 节给出随机效用、概率式、尺度约定及估计方法。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-conversion",
+          "relation": "supports",
+          "rationale": "第 5 节列各属性编码单位。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-lime-coded"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "cl-lime-trade",
+      "text": "设某一损害增加 dx，税额改变 dt，而其他属性保持不变。若要保持相同的系统效用，就须满足 βₑ dx + βₜ dt = 0。东京原刊中损害和税额系数都为负；损害增加时，税额必须降低才能抵消它。若损害减少一个单位，允许税额上升的正数才是回避这个单位损害的边际支付意愿（支払意思額）。这一比值将共同的效用尺度消去，却仍然带着每户税额和问卷损害单位。",
+      "kind": "interpretation",
+      "scope": "等效用曲线斜率与回避损害的正金额",
+      "evidenceIds": [
+        "ev-lime-jp-model",
+        "ev-lime-jp-estimates"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-jp-model",
+          "relation": "supports",
+          "rationale": "第 3.2 节给出固定效用时的导数。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-estimates",
+          "relation": "supports",
+          "rationale": "表 6 损害系数与税金系数的符号均为负。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-logit"
+      ],
+      "conceptIds": [
+        "cn-lime-wtp",
+        "cn-lime-coded"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "cl-lime-primary-ratio",
+      "text": "以初级生产一项为例。日文表 6 中损害系数为 −0.0034133，税金系数为 −0.0000891。前者对应一亿吨初级生产损失的编码单位，后者对应每户每年增税一日元。回避一个编码单位时，两者的比值约为每户 38.31 日元。这个数回答的是整个一亿吨变化可以换来多少家庭增税；写成“每吨 38.31 日元”会把损害量的分母缩小一亿倍。",
+      "kind": "calculation",
+      "scope": "一次生产损失的问卷单位与家庭税额之间的比值",
+      "evidenceIds": [
+        "ev-lime-jp-estimates",
+        "ev-lime-jp-conversion"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-jp-estimates",
+          "relation": "supports",
+          "rationale": "表 6 的第三行及税金行提供印刷系数。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-conversion",
+          "relation": "supports",
+          "rationale": "第 364 页列出一亿吨、每户税额及聚合式。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-trade"
+      ],
+      "conceptIds": [
+        "cn-lime-wtp"
+      ],
+      "mappingIds": [],
+      "caveats": [
+        "日文表 6 的第三行印作「一次資産」，同文相邻论述与表 7 均写「一次生産」。"
+      ],
+      "reasoning": "对回避损害方向取正的系数比，并保留其编码单位。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "cl-lime-households",
+      "kind": "calculation",
+      "scope": "按印刷系数与全国户数重算初级生产金额",
+      "evidenceIds": [
+        "ev-lime-jp-estimates",
+        "ev-lime-jp-conversion",
+        "ev-lime-jp-weights"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-jp-estimates",
+          "relation": "supports",
+          "rationale": "表 6 提供估计系数。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-conversion",
+          "relation": "supports",
+          "rationale": "换算式提供户数和单位。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-weights",
+          "relation": "supports",
+          "rationale": "表 7 提供每吨报告值。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-primary-ratio",
+        "cl-lime-participants"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "将一户对整体变化的边际金额聚合后换成每吨，并与原表分别记录。",
+      "text": "作者把每户金额扩展到 46607000 户，再除以损害编码所代表的一亿吨。用未先行舍入的系数比计算，得到每吨约 17.854509 日元，表 7 公布的是每吨 17.8 日元。户数是全国汇总的乘数；估计系数所依据的 306 人是调查分母。全国户数写得再精确，也不能替东京样本补上全国抽样。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-LIME-VALUATION",
+        "version": "1.0.0",
+        "inputSha256": "9ffb5aab14187f8689ff8ee8897e48f60b6a584f52db0d7f56eb08c788409269",
+        "inputFile": "lime-valuation-v1.json"
+      }
+    },
+    {
+      "id": "cl-lime-health",
+      "kind": "calculation",
+      "scope": "每人损失日数与每户税额的数量重合及其边界",
+      "evidenceIds": [
+        "ev-lime-jp-estimates",
+        "ev-lime-jp-questionnaire",
+        "ev-lime-jp-conversion",
+        "ev-lime-jp-weights"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-jp-estimates",
+          "relation": "supports",
+          "rationale": "健康及税金系数给出比值。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-questionnaire",
+          "relation": "supports",
+          "rationale": "健康属性在问卷上按损失日显示。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-conversion",
+          "relation": "qualifies",
+          "rationale": "一般换算式及人均说明未把健康行逐步展开。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-weights",
+          "relation": "supports",
+          "rationale": "表 7 的分母是一个 DALY。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-trade",
+        "cl-lime-households"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "检验系数比乘 365 的数值，保留从每人变化到家庭支付的未披露条件。",
+      "text": "健康一行的“日”已经是按人展示的日数。其系数除以税金系数，量值约为 1,567.74。只乘每年 365 天，便得到约 57.22 万日元，在表列精度下接近每 DALY 572000 日元。但问卷中的一天是每个人的一天，支付问题却对每户提问。原文没有在这一行逐步展示户数、受影响人数和人均日数怎样折算。数值能够对上这一种算法，聚合关系仍须单独说明。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-LIME-VALUATION",
+        "version": "1.0.0",
+        "inputSha256": "9ffb5aab14187f8689ff8ee8897e48f60b6a584f52db0d7f56eb08c788409269",
+        "inputFile": "lime-valuation-v1.json"
+      }
+    },
+    {
+      "id": "cl-lime-mismatch",
+      "kind": "calculation",
+      "scope": "社会资产及物种行的数量差额",
+      "evidenceIds": [
+        "ev-lime-jp-estimates",
+        "ev-lime-jp-conversion",
+        "ev-lime-jp-weights",
+        "ev-lime-jp-calculation-limit"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-jp-estimates",
+          "relation": "supports",
+          "rationale": "两项系数及税金系数来自日文表 6。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-conversion",
+          "relation": "supports",
+          "rationale": "社会资产单位及户数来自换算式。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-weights",
+          "relation": "supports",
+          "rationale": "日文表 7 为比较基准。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-calculation-limit",
+          "relation": "supports",
+          "rationale": "按末位最近舍入作界限计算所得结果及假设。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-households"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "例如，固定所列户数并允许系数按所示末位取最近值，社会资产重算区间约为 4,476.94–4,482.49；公布的 4,460 若按三位有效数字舍入，区间约为 4,455–4,465。这个检验没有为未知差额指定原因。"
+      ],
+      "reasoning": "分别把编码单位转为表 7 单位，对照公布值，再测试仅由显示精度造成差额的假设。",
+      "text": "有的差额不能仅用印刷末位的舍入解释。社会资产按一亿日元损害编码，但日文表 7 报的是每一千日元损害的支付意愿。按系数比乘全国户数、除以一亿再乘一千，得到约 4,479.71 日元，原表为 4460。生物多样性按一种计，系数比乘同一户数得到约 7.7058×10¹¹ 日元，原表为 7.68×10¹¹。即使让这两项损害系数、税金系数和公布金额都在所示末位的通常舍入范围内变化，两行各自的区间仍不相交。更早的计算输入和处理细节并未充分披露；下文应用的是作者公布值。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-LIME-VALUATION",
+        "version": "1.0.0",
+        "inputSha256": "9ffb5aab14187f8689ff8ee8897e48f60b6a584f52db0d7f56eb08c788409269",
+        "inputFile": "lime-valuation-v1.json"
+      }
+    },
+    {
+      "id": "cl-lime-annual",
+      "kind": "calculation",
+      "scope": "年度参照与每单位损害金额的乘积",
+      "evidenceIds": [
+        "ev-lime-jp-normalization",
+        "ev-lime-jp-weights",
+        "ev-lime-jp-relative-weights"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-jp-normalization",
+          "relation": "supports",
+          "rationale": "表 3 给出健康与社会资产参照及原单位。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-weights",
+          "relation": "supports",
+          "rationale": "表 7 给出每 DALY 与每千日元损害的金额。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-relative-weights",
+          "relation": "supports",
+          "rationale": "表 8 将年度损害换成货币量再比较。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-health",
+        "cl-lime-mismatch"
+      ],
+      "conceptIds": [
+        "cn-lime-annual"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "将表 3 社会资产的百万日元单位转为表 7 的千日元单位，然后相乘。",
+      "text": "表 7 中每一行的钱都有自己的分母。要回答“日本一年环境负荷所对应的四项损害中，健康占多少”，必须先把各行乘回各自的年度损害量。例如，143 万 DALY 乘每 DALY 57.2 万日元，约为 8.18×10¹¹ 日元。社会资产列的 54,400 是以百万日元计的损失；换成一千日元一份，共有 54400000 份，再乘每份 4,460 日元，约为 2.43×10¹¹ 日元。只有在都换为同一货币量后，才能取它们的合计作分母。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-LIME-VALUATION",
+        "version": "1.0.0",
+        "inputSha256": "9ffb5aab14187f8689ff8ee8897e48f60b6a584f52db0d7f56eb08c788409269",
+        "inputFile": "lime-valuation-v1.json"
+      }
+    },
+    {
+      "id": "cl-lime-shares",
+      "kind": "calculation",
+      "scope": "年度四项货币量的构成比例",
+      "evidenceIds": [
+        "ev-lime-jp-normalization",
+        "ev-lime-jp-weights",
+        "ev-lime-jp-relative-weights"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-jp-normalization",
+          "relation": "supports",
+          "rationale": "四项年度参照按各自单位列于表 3。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-weights",
+          "relation": "supports",
+          "rationale": "表 7 提供已公布的单位权重。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-relative-weights",
+          "relation": "supports",
+          "rationale": "表 8 报告年度对比的无量纲系数。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-annual"
+      ],
+      "conceptIds": [
+        "cn-lime-relative"
+      ],
+      "mappingIds": [
+        "map-lime-wtp-share"
+      ],
+      "caveats": [],
+      "reasoning": "以同一年度四项货币金额总和为分母，依次核对表 8。",
+      "text": "同样计算初级生产与物种损失，分别约为 2.74×10¹¹ 和 3.84×10¹¹ 日元。用各项未先行舍入的乘积除以四项乘积之和，健康所占约为 0.475917，按两位小数写为 0.48。另三项分别为 0.14、0.16 和 0.22。0.48 同时包含对健康的估值和所取年度参照中的健康损害规模。它并不等于 48% 的人选择健康，也不能解释为所有产品的总损害都应有 48% 归给健康。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-LIME-VALUATION",
+        "version": "1.0.0",
+        "inputSha256": "9ffb5aab14187f8689ff8ee8897e48f60b6a584f52db0d7f56eb08c788409269",
+        "inputFile": "lime-valuation-v1.json"
+      }
+    },
+    {
+      "id": "cl-lime-two-forms",
+      "text": "对一个具体产品，设第 e 项损害为 Dₑ，每单位的货币权重为 vₑ，年度参照为 Nₑ。第一条路径把 Dₑvₑ 相加，得到以日元表示的综合结果。第二条路径先把 Dₑ 除以 Nₑ，再乘刚才得到的年度份额。如果保留未舍入的份额 Nₑvₑ/ΣNⱼvⱼ，那么两条路径只差一个共同的正分母 ΣNⱼvⱼ，排序相同。直接拿 0.48 乘以一个尚未归一化的 DALY 数，却把最关键的 Nₑ 漏掉了。",
+      "kind": "interpretation",
+      "scope": "从同一组单位估值导出两种综合结果的条件",
+      "evidenceIds": [
+        "ev-lime-jp-relative-weights",
+        "ev-lime-jp-conversion"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-jp-relative-weights",
+          "relation": "supports",
+          "rationale": "第 365 页 I₂ 式明确先除以归一化值，再乘第二种权重。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-conversion",
+          "relation": "supports",
+          "rationale": "第 364 页 I₁ 式使用单位损害货币权重。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-shares"
+      ],
+      "conceptIds": [
+        "cn-lime-relative"
+      ],
+      "mappingIds": [
+        "map-lime-wtp-share"
+      ],
+      "caveats": [
+        "若直接以已舍到两位小数的份额计算，两种路径的精确代数对应也会受舍入影响。"
+      ],
+      "reasoning": "将未舍入的年度权重代入原式，得到同一货币和除以共同分母。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "cl-lime-same-table",
+      "text": "伊坪等人 2004 年发表的英文论文常被用来说明早期 LIME 权重。它的摘要和调查流程图写主调查 400 人，正文的样本表和模型结果表却都写 306。日文与英文表 5 给出同一组调查日期，八个按性别和年龄划分的人数逐格相同。两篇发表的分析样本描述由此可以对应。但 400 到 306 的中间过程没有列出，不能用相减所得的 94 人写出一段筛除史，也不宜把两文当作两次独立抽样的印证。",
+      "kind": "interpretation",
+      "scope": "2003 日文与 2004 英文两份发表中的样本依据",
+      "evidenceIds": [
+        "ev-lime-jp-survey",
+        "ev-lime-2004-conjoint-identity",
+        "ev-lime-2004-conjoint-sample"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-jp-survey",
+          "relation": "supports",
+          "rationale": "日文表 5 给日期及分组人数。"
+        },
+        {
+          "evidenceId": "ev-lime-2004-conjoint-identity",
+          "relation": "supports",
+          "rationale": "英文摘要和调查图报告 400。"
+        },
+        {
+          "evidenceId": "ev-lime-2004-conjoint-sample",
+          "relation": "supports",
+          "rationale": "英文表 5 和表 6 使用 306。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-participants"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "cl-lime-different-card",
+      "text": "同样的人数还不足以允许直接换用权重。英文表 3 的年度健康损害参照为 54.3 万 DALY，示例卡中的现状写成连续 50 年约损失两个月；日文表采用的年度参照和给受访者展示的数值更大。两篇的健康系数、其他属性系数及税金系数也不同。即使模型表写了相同的样本量和对数似然值，也推不出两套问卷的编码、数据处理或最后每单位的日元金额完全相同。",
+      "kind": "interpretation",
+      "scope": "问卷示例、年度参照及估值的发表差异",
+      "evidenceIds": [
+        "ev-lime-english2004-changed-card",
+        "ev-lime-jp-questionnaire",
+        "ev-lime-2004-conjoint-weights",
+        "ev-lime-jp-estimates"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-english2004-changed-card",
+          "relation": "supports",
+          "rationale": "英文第 202 页表 3、4 给出其参照量和卡片。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-questionnaire",
+          "relation": "supports",
+          "rationale": "日文表 4 提供早期对照。"
+        },
+        {
+          "evidenceId": "ev-lime-2004-conjoint-weights",
+          "relation": "supports",
+          "rationale": "英文系数与权重列于同页。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-estimates",
+          "relation": "supports",
+          "rationale": "日文表 6 给出另一组估计。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-same-table",
+        "cl-lime-display"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "cl-lime-english",
+      "text": "例如，英文表 7 对一个 DALY 给出 970 万日元，对一吨初级生产损失给出 20,200 日元。英文表的社会资产则是每一万日元损失计一万日元，分母相对于日文表的一千日元已经改变。按英文所述，用表 3 乘表 7 得到年度金额时，社会资产的 229 万个“百万日元”应得到 2.29×10¹² 日元；英文表 8 这一行却印为 3.61×10¹²。公开表格在此处留下差额。比较研究要把所用单位行和具体发表一起带入解释。",
+      "kind": "interpretation",
+      "scope": "英文原刊的单位损害金额及社会资产年度行",
+      "evidenceIds": [
+        "ev-lime-2004-conjoint-health-wf",
+        "ev-lime-2004-conjoint-primary-wf",
+        "ev-lime-2004-conjoint-social-assets-arithmetic"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-2004-conjoint-health-wf",
+          "relation": "supports",
+          "rationale": "英文表 7 的健康行按一 DALY 计。"
+        },
+        {
+          "evidenceId": "ev-lime-2004-conjoint-primary-wf",
+          "relation": "supports",
+          "rationale": "英文表 7 初级生产行按一吨计。"
+        },
+        {
+          "evidenceId": "ev-lime-2004-conjoint-social-assets-arithmetic",
+          "relation": "supports",
+          "rationale": "英文表 3、7 与 8 对照后，社会资产年度金额有未解释差额。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-different-card",
+        "cl-lime-two-forms"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "cl-lime-service",
+      "kind": "proposal",
+      "scope": "固定交付服务与两项虚构的终点损害",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-lime-purpose",
+        "cl-lime-english"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "共同固定损害的计量与活动条件，将比较限定为两套评价权重的作用。",
+      "text": "假设有两条路线，都在同一交货日向日本同一工厂交付 1000 公吨同等级产品。为单独研究最后的估值步骤，约定前面已经用同一损害口径算得：甲造成人体健康损失 0.001 DALY、初级生产损失 100 干吨；乙分别为 0.004 DALY 和 10 干吨。其余各项相同。这四个损害数和服务等效条件是本例的设定，实际建模还需建立排放到这些损害的关系。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-LIME-VALUATION",
+        "version": "1.0.0",
+        "inputSha256": "9ffb5aab14187f8689ff8ee8897e48f60b6a584f52db0d7f56eb08c788409269",
+        "inputFile": "lime-valuation-v1.json"
+      }
+    },
+    {
+      "id": "cl-lime-japan-route",
+      "kind": "calculation",
+      "scope": "日文表的两项差异损害估值",
+      "evidenceIds": [
+        "ev-lime-jp-weights"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-jp-weights",
+          "relation": "supports",
+          "rationale": "两行使用同一份日文表 7 公布值。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-service"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "分别按损害单位乘以相应的单位估值，同服务比较。",
+      "text": "先把两行损害一起交给 2003 年日文表 7。甲的健康一项是 0.001 × 572,000 = 572 日元，初级生产一项是 100 × 17.8 = 1780 日元，合为 2352 日元。乙的两项分别为 2,288 和 178 日元，合为 2466 日元。这两项合计，乙比甲高 114 日元。相同的其他损害无论增加多少共同金额，都不改变这个分差。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-LIME-VALUATION",
+        "version": "1.0.0",
+        "inputSha256": "9ffb5aab14187f8689ff8ee8897e48f60b6a584f52db0d7f56eb08c788409269",
+        "inputFile": "lime-valuation-v1.json"
+      }
+    },
+    {
+      "id": "cl-lime-break-even",
+      "kind": "calculation",
+      "scope": "固定损害向量的相对估值分界",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-lime-japan-route"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "在 p 为正的两套权重下将差额设为零，分别判断两侧的次序。",
+      "text": "哪种路线较低，其实可以在查第二张表之前判定条件。从甲换到乙，多损失 0.003 DALY，同时少损失 90 干吨初级生产。设一个 DALY 的权重为 h 日元，一干吨初级生产损失的权重为 p 日元，两项分差就是 0.003h − 90p。两者相等需要 h/p = 30000 干吨/DALY。日文表的比值约为 32,135，略高于分界，因此少损失健康时间的甲占优。分界是这两条路线怎样取舍的结果，换一组损害量，也会换一个分界。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-LIME-VALUATION",
+        "version": "1.0.0",
+        "inputSha256": "9ffb5aab14187f8689ff8ee8897e48f60b6a584f52db0d7f56eb08c788409269",
+        "inputFile": "lime-valuation-v1.json"
+      }
+    },
+    {
+      "id": "cl-lime-english-route",
+      "kind": "calculation",
+      "scope": "用英文表的两行同口径因子重新排序",
+      "evidenceIds": [
+        "ev-lime-2004-conjoint-health-wf",
+        "ev-lime-2004-conjoint-primary-wf"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-2004-conjoint-health-wf",
+          "relation": "supports",
+          "rationale": "英文原件中的健康金额及单位。"
+        },
+        {
+          "evidenceId": "ev-lime-2004-conjoint-primary-wf",
+          "relation": "supports",
+          "rationale": "英文原件中的初级生产金额及单位。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-service",
+        "cl-lime-break-even",
+        "cl-lime-different-card"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "两个货币分数分别属于各自发表所用的计值条件。本例没有对价格年、货币购买力或方法代际作统一校准。"
+      ],
+      "reasoning": "在固定损害向量上同时采用 2004 年两行公布值，再比较该组权重的相对比值。",
+      "text": "现在把同样的两行损害一起交给 2004 年英文表 7。甲的健康与初级生产贡献分别为 9,700 和 2,020,000 日元，合计 2029700 日元；乙的贡献为 38,800 和 202,000 日元，合计 240800 日元。这套表的 h/p 约为 480 干吨/DALY，落在分界的另一侧，因而乙较低。两轮比较都用了同一对虚构损害量，每一轮内部都只用一份表。由此能辨认结论对表的选择有多敏感，却无法据此测出两个年份之间人群偏好的变化。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-LIME-VALUATION",
+        "version": "1.0.0",
+        "inputSha256": "9ffb5aab14187f8689ff8ee8897e48f60b6a584f52db0d7f56eb08c788409269",
+        "inputFile": "lime-valuation-v1.json"
+      }
+    },
+    {
+      "id": "cl-lime-national",
+      "text": "后来的 LIME2 研究把“这些回答能代表谁”变成了抽样设计问题。作者先抽地点，再借居民登记资料抽取家庭，以入户面访代替场所拦访。约 2,000 户是为取得约 1,000 份回答所抽取的数量；进入发表分析的是来自 147 个地点的 952 份回答。2012 年论文也改用随机参数 logit 模型，让不同受访者的属性取舍可以有分布。抽得更广和允许系数因人而异，分别处理总体代表性和偏好异质性。",
+      "kind": "source-statement",
+      "scope": "2012 年全国研究中的抽样、分析分母与模型",
+      "evidenceIds": [
+        "ev-lime-2012-conjoint-lineage",
+        "ev-lime-2012-conjoint-sample"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-2012-conjoint-lineage",
+          "relation": "supports",
+          "rationale": "第 2 节及表 6 明确比较两种抽样和模型。"
+        },
+        {
+          "evidenceId": "ev-lime-2012-conjoint-sample",
+          "relation": "supports",
+          "rationale": "第 3–4 节区分目标、抽户与分析分母。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "cl-lime-numeraire",
+      "text": "这次发表明确说明了另一种货币标尺：作者把社会资产的损失量视作相应的经济损失，据此给其他保护对象的取舍定价。全国研究也更新了年度损害参照，报道的无量纲权重中生物多样性高于人的健康。若将其与早期东京表比较，改变的不只人数，还有受访群体、问卷水平、模型和计值规则。仅凭排名换位，无法说其中哪一项改变造成了偏好的变化。",
+      "kind": "interpretation",
+      "scope": "LIME2 的社会资产计价标尺与比较条件",
+      "evidenceIds": [
+        "ev-lime-2012-conjoint-weights",
+        "ev-lime-2012-conjoint-lineage"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-2012-conjoint-weights",
+          "relation": "supports",
+          "rationale": "第 4 节解释以社会资产为经济标尺，表 4 及讨论给出结果、比较条件。"
+        },
+        {
+          "evidenceId": "ev-lime-2012-conjoint-lineage",
+          "relation": "supports",
+          "rationale": "表 6 指出模型和抽样不同。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-national",
+        "cl-lime-shares"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "cl-lime-edition",
+      "text": "后版的对照列也值得回到原刊核查。2012 年论文把早期调查写作 2003 年，两篇早期原文的样本表却都列 2002 年 1 月。后版表 4 标作 2003 的早期列，在人体健康和初级生产行采用的数字又对应 2004 年英文表。若要说明某笔估值由哪一次发表给出，应指出那一版的表和单位；后人的比较表可以帮助发现关系，不能独自决定早期数值出自何处。",
+      "kind": "interpretation",
+      "scope": "后版综述标签与早期原件的对应关系",
+      "evidenceIds": [
+        "ev-lime-national-lineage-label",
+        "ev-lime-2004-conjoint-health-wf",
+        "ev-lime-jp-survey"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-national-lineage-label",
+          "relation": "supports",
+          "rationale": "2012 年对照列和日期与早期两篇可逐项核对。"
+        },
+        {
+          "evidenceId": "ev-lime-2004-conjoint-health-wf",
+          "relation": "supports",
+          "rationale": "英文表健康行的原值。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-survey",
+          "relation": "supports",
+          "rationale": "日文表列出调查实际日期。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-same-table",
+        "cl-lime-english",
+        "cl-lime-numeraire"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "cl-lime-validity",
+      "text": "东京论文报告五项系数均在 1% 水平上显著，符号方向也符合预期。作者据此对问卷的可理解性作了积极判断，同时承认部分年度参照借助假设，建议在损害函数更完备后重新调查。系数的显著性说的是这些选择在拟合模型中是否显示出可辨认的取舍；若问题变成家庭真的会怎样花钱，更直接的检验还得让某些选择产生实际支付。",
+      "kind": "interpretation",
+      "scope": "估计的统计意义与实际支付效度",
+      "evidenceIds": [
+        "ev-lime-jp-estimates",
+        "ev-lime-jp-uncertainty"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-jp-estimates",
+          "relation": "supports",
+          "rationale": "第 365 页表 6 列系数、标准误和显著性。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-uncertainty",
+          "relation": "supports",
+          "rationale": "结论陈述作者的理解判断、参照局限与再调查建议。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-trade"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "cl-lime-null",
+      "text": "Carlsson 与 Martinsson 在 1999 年工作论文中安排 35 名瑞典经济学本科生先作假设选择，再作可兑现的选择。学生在留给自己的钱和环境项目捐款之间取舍；两轮采用不同的选择组合，以减少直接重复先前答案的机会。按他们的模型，假设与实际条件下多一单位捐款的边际支付意愿分别为 0.629 和 0.559 单位自留金额。两者相等的检验得到 p = 0.403。原文的这项 t 检验按两轮实验独立处理，而两轮其实是同一批人作答。作者在这一检验下没有检出差异；要主张差异小到足以按等效处理，还需另行规定容许范围并检验。",
+      "kind": "interpretation",
+      "scope": "同一批学生先假设后实际选择的检验",
+      "evidenceIds": [
+        "ev-lime-cm1999-design",
+        "ev-lime-cm1999-nonrejection"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-cm1999-design",
+          "relation": "supports",
+          "rationale": "工作论文说明两轮顺序和选择集设计。"
+        },
+        {
+          "evidenceId": "ev-lime-cm1999-nonrejection",
+          "relation": "supports",
+          "rationale": "第 9 页表 2 及检验段提供估计与检验结果。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-validity"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "这里所引是 1999 年工作论文的设计和统计量；期刊发表版本另有书目身份。"
+      ],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "cl-lime-order",
+      "text": "Johansson-Stenman 与 Svedsäter 的 2007 年工作论文增加了一组关键对照。他们将 70 名以研究生为主的伦敦政治经济学院志愿者随机分组，一组先作假设选择再用真钱选择，另一组直接用真钱选择。以为大象保护项目多捐一单位为例，模型中男性基准组愿放弃的自留金额依次为 0.64、0.56、0.23 单位。若只比较前两个数，第二次选择的人全部已经答过假设题。直接兑现组给出了另一种对照，可以检验先前作答是否影响后续选择。作者把保持回答一致的压力列为可能解释。",
+      "kind": "interpretation",
+      "scope": "把先答假设题的经历同真正支付的条件分开",
+      "evidenceIds": [
+        "ev-lime-js2007-design",
+        "ev-lime-js2007-results"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-js2007-design",
+          "relation": "supports",
+          "rationale": "第 2 节与表 1 说明随机分组及兑现任务。"
+        },
+        {
+          "evidenceId": "ev-lime-js2007-results",
+          "relation": "supports",
+          "rationale": "第 3–4 节和表 3 报告三种条件下的边际估值及作者解释。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-null"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "cl-lime-transfer",
+      "text": "这两个实验使用的是捐款和实验报酬，东京问卷使用的则是家庭增税和四种环境后果。实验可以帮助识别该怎样检验行为效度，却没有提供一个可直接乘到日本权重上的“假设偏差系数”。同样，跨地区应用时，想保留的是原调查人群的取舍，还是想回答当地居民会怎样选，必须先讲清。2012 年论文也将其调查结果的直接适用范围限定在日本，并把向其他地区的价值移转作为另需依据的问题。",
+      "kind": "synthesis",
+      "scope": "行为对照实验与日本权重的地域适用范围",
+      "evidenceIds": [
+        "ev-lime-2012-conjoint-weights",
+        "ev-lime-jp-questionnaire"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-2012-conjoint-weights",
+          "relation": "supports",
+          "rationale": "讨论区分本国评价与利益移转。"
+        },
+        {
+          "evidenceId": "ev-lime-jp-questionnaire",
+          "relation": "supports",
+          "rationale": "东京问卷以假设政策和家庭税额为情境。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-null",
+        "cl-lime-order",
+        "cl-lime-national"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "比较各项研究的支付任务、参与者和所推断的总体。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "cl-lime-decision",
+      "text": "还有一个问题应留给真正要作决定的人。林清忠比较生命周期评价中的联合分析、决策分析中的多属性价值方法及决策会议，指出偏好属于谁、何时取得，以及人们是否围绕一个具体问题形成偏好，都会改变权重的用途。读者若要判断一项采购，先保留健康与初级生产各自的损害量，再注明采用了哪张权重表、代表谁的判断，并给出会使次序交换的条件。这样，即使采购者不接受原调查的取舍，他也能看清分歧落在损害估计、受访群体，还是愿用多少初级生产损失换取一单位健康改善。",
+      "kind": "synthesis",
+      "scope": "通用评价权重与具体决策中的偏好形成",
+      "evidenceIds": [
+        "ev-lime-hayashi2012-preference-construction"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lime-hayashi2012-preference-construction",
+          "relation": "supports",
+          "rationale": "原刊摘要说明不同赋权方法在具体问题、偏好主体和形成方式上的差异。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lime-transfer",
+        "cl-lime-break-even",
+        "cl-lime-english-route"
+      ],
+      "conceptIds": [],
+      "mappingIds": [
+        "map-lime-decision"
+      ],
+      "caveats": [],
+      "reasoning": "把原研究的估值对象与使用者实际需要决定的问题相接，同时保留未加总的损害差异。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-05"
     }
   ],
   "concepts": [
@@ -22718,6 +24094,54 @@
         "Ökofaktor",
         "UBP 因子"
       ]
+    },
+    {
+      "id": "cn-lime-coded",
+      "label": "选择题中的损害属性与编码单位",
+      "english": "Damage attribute and coding unit in a choice experiment",
+      "definitionClaimIds": [
+        "cl-lime-display",
+        "cl-lime-logit"
+      ],
+      "aliases": [
+        "问卷属性水平"
+      ]
+    },
+    {
+      "id": "cn-lime-wtp",
+      "label": "回避单位损害的边际支付意愿",
+      "english": "Marginal willingness to pay for avoided damage",
+      "definitionClaimIds": [
+        "cl-lime-trade",
+        "cl-lime-households"
+      ],
+      "aliases": [
+        "限界支払意思額"
+      ]
+    },
+    {
+      "id": "cn-lime-annual",
+      "label": "保护对象的年度损害参照量",
+      "english": "Annual reference damage by safeguard subject",
+      "definitionClaimIds": [
+        "cl-lime-baseline",
+        "cl-lime-annual"
+      ],
+      "aliases": [
+        "規格値"
+      ]
+    },
+    {
+      "id": "cn-lime-relative",
+      "label": "相对于年度损害的综合权重",
+      "english": "Relative weighting factor for annual damage",
+      "definitionClaimIds": [
+        "cl-lime-shares",
+        "cl-lime-two-forms"
+      ],
+      "aliases": [
+        "无量纲综合权重"
+      ]
     }
   ],
   "mappings": [
@@ -22904,6 +24328,47 @@
         "cl-es-equation",
         "cl-es-why-square"
       ]
+    },
+    {
+      "id": "map-lime-wtp-share",
+      "from": "cn-lime-wtp",
+      "to": "cn-lime-relative",
+      "relation": "related",
+      "conditions": [
+        "同一研究的单位损害估值、同版年度损害参照、相容的保护对象及单位俱备时，可求各项年度金额占总和的份额。"
+      ],
+      "claimIds": [
+        "cl-lime-annual",
+        "cl-lime-shares",
+        "cl-lime-two-forms"
+      ]
+    },
+    {
+      "id": "map-lime-policy",
+      "from": "cn-lime-wtp",
+      "to": "cn-es-factor",
+      "relation": "related",
+      "conditions": [
+        "二者都用于综合不同负担。前者以问卷取舍和货币属性估计损害估值，后者采用现状流与政策目标导出每单位流量点数。"
+      ],
+      "claimIds": [
+        "cl-lime-policy-contrast",
+        "cl-es-authority"
+      ]
+    },
+    {
+      "id": "map-lime-decision",
+      "from": "cn-lime-wtp",
+      "to": "cn-cost-perspective",
+      "relation": "related",
+      "conditions": [
+        "以日元表达的假设损害估值和实际组织的成本核算有各自的主体、支付情境和用途。"
+      ],
+      "claimIds": [
+        "cl-lime-units",
+        "cl-lime-transfer",
+        "cl-lime-decision"
+      ]
     }
   ],
   "coverage": [
@@ -22947,7 +24412,7 @@
       "id": "cov-lcia",
       "title": "影响评价方法谱系",
       "status": "in-progress",
-      "notes": "已核读ReCiPe、USEtox、AWARE及UNEP2019/ILCD2011选段；水/酸化/营养路径与明确虚构或具条件算术已展开。原方法全部报告、因子包、代码、模型有效性和独立实证仍未完成核验。 瑞士生态稀缺法的两个空气排放因子已从 2013 年版公式、历史政策文件和前后因子版次追溯；德国目标抽样与跨地区贡献研究分别限定排名和解释。全类目和实测有效性继续开放。"
+      "notes": "已核读ReCiPe、USEtox、AWARE及UNEP2019/ILCD2011选段；水/酸化/营养路径与明确虚构或具条件算术已展开。原方法全部报告、因子包、代码、模型有效性和独立实证仍未完成核验。 瑞士生态稀缺法的两个空气排放因子已从 2013 年版公式、历史政策文件和前后因子版次追溯；德国目标抽样与跨地区贡献研究分别限定排名和解释。全类目和实测有效性继续开放。 日本 LIME 的东京调查与全国后续研究已沿原表解释问卷、单位、系数、两种综合权重及相反排序条件；专著、完整模型及因子包、真实支付和跨地区使用的验证仍开放。"
     },
     {
       "id": "cov-datasets",

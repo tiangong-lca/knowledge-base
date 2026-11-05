@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: eb8c3cdd30010ec91fef5b3730e47a0ece290fdf
+lastReviewedCommit: 91a5ff249ea2d165ace72d21842856649fecc59e
 ---
 
 # Publication architecture
@@ -165,3 +165,7 @@ and versioned input download surface.
 ## Swiss ecological-scarcity factor reconstruction
 
 The static ecological-scarcity case reconstructs two factors with exact fractions from the annual reference, current and critical loads in the 2013 Swiss report. Its scoring step uses the rounded factors published in the same tables. The case separates the stipulated service and inventories, common positive scaling and one relative factor sensitivity. The public case adapter verifies nine full numeric facts against the source, edition, reading, selected passages and original PDF. The two nonzero normalization reciprocals retain exact fractions. The input is available from chapter annotations and the existing static download surface.
+
+## Japanese preference valuation
+
+The closed LIME case operates on two identified primary studies and one stipulated pair of damage vectors. It separately evaluates coefficients in their questionnaire units, the conditional monetary reconstruction, reported monetary factors, annual reference amounts, relative shares and the threshold for the two routes. The static registry checks 29 complete source tuples, including the distinction between named numerical facts and singular evidence-specific quantities. Both cases that need the same rational arithmetic call the shared exact-rational module. The input download and paragraph templates use the established publication interface.

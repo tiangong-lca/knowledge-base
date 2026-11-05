@@ -1,3 +1,5 @@
+import { rational, decimal, add, subtract, multiply, divide, result, exactResult } from './exact-rational.mjs';
+
 // Closed v1 authority lives independently of the downloadable input. Source
 // arithmetic and the author-stipulated service/sensitivity remain distinct.
 const reviewed = {
@@ -210,90 +212,6 @@ export function validateEcologicalScarcityCase(spec) {
 
   check(spec, reviewed, 'case');
   return errors;
-}
-
-// Reduced rational arithmetic; all public results contain exact strings.
-function greatestCommonDivisor(left, right) {
-  left = left < 0n ? -left : left;
-  while (right) {
-    [left, right] = [right, left % right];
-  }
-  return left;
-}
-
-function rational(numerator, denominator = 1n) {
-  if (!denominator) throw new TypeError('zero denominator');
-  if (denominator < 0n) {
-    numerator = -numerator;
-    denominator = -denominator;
-  }
-  const divisor = greatestCommonDivisor(numerator, denominator);
-  return [numerator / divisor, denominator / divisor];
-}
-
-function decimal(value) {
-  const [whole, fraction = ''] = value.split('.');
-  return rational(BigInt(whole + fraction), 10n ** BigInt(fraction.length));
-}
-
-function add(left, right) {
-  return rational(left[0] * right[1] + right[0] * left[1], left[1] * right[1]);
-}
-
-function subtract(left, right) {
-  return rational(left[0] * right[1] - right[0] * left[1], left[1] * right[1]);
-}
-
-function multiply(left, right) {
-  return rational(left[0] * right[0], left[1] * right[1]);
-}
-
-function divide(left, right) {
-  return rational(left[0] * right[1], left[1] * right[0]);
-}
-
-function fixed(value, places) {
-  const [numerator, denominator] = value;
-  const scale = 10n ** BigInt(places);
-  const magnitude = numerator < 0n ? -numerator : numerator;
-  let rounded = magnitude * scale / denominator;
-  if (magnitude * scale % denominator * 2n >= denominator) {
-    rounded++;
-  }
-
-  const sign = numerator < 0n && rounded !== 0n ? '-' : '';
-  const digits = String(rounded).padStart(places + 1, '0');
-  if (!places) return `${sign}${digits}`;
-  return `${sign}${digits.slice(0, -places)}.${digits.slice(-places)}`;
-}
-
-function exactResult(value) {
-  const [numerator, denominator] = value;
-  let remainder = denominator;
-  let twos = 0;
-  let fives = 0;
-  while (remainder % 2n === 0n) {
-    remainder /= 2n;
-    twos++;
-  }
-  while (remainder % 5n === 0n) {
-    remainder /= 5n;
-    fives++;
-  }
-
-  let exact;
-  if (denominator === 1n) {
-    exact = String(numerator);
-  } else if (remainder === 1n) {
-    exact = fixed(value, Math.max(twos, fives));
-  } else {
-    exact = `${numerator}/${denominator}`;
-  }
-  return { exact, numerator: String(numerator), denominator: String(denominator) };
-}
-
-function result(value) {
-  return { ...exactResult(value), fixed6: fixed(value, 6) };
 }
 
 function reconstructFactor(flow, facts, gramsPerTonne, spec) {
