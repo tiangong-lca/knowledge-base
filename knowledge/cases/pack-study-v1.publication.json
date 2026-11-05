@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "caseId": "CASE-PACK-STUDY",
+  "version": "1.0.0",
+  "inputFile": "pack-study-v1.json",
+  "reviewedAt": "2026-11-05",
+  "reviewKind": "agent-source-check",
+  "approvedInputSha256": "d6517e87198308d50d00d9d84ccf13f1fea174db062139994b122ea170921149",
+  "claims": [
+    {
+      "id": "cl-pack-service",
+      "kind": "calculation",
+      "scope": "原报告所定服务与初始参考流",
+      "evidenceIds": [
+        "ev-pack-ea-flow"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-flow",
+          "relation": "supports",
+          "rationale": "第 3.1–3.2 节给 483 件服务并说明复用处理。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-question"
+      ],
+      "conceptIds": [
+        "cn-pack-service"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "把给定物品运输服务与每只袋的容量及使用次数对应。",
+      "textTemplate": "报告把功能单位写成在英国用袋子将一个月的 {{input.facts.serviceItems.value}} 件购物物品从超市运回家。因此，直接比较“一只厚袋”和“一只薄袋”的生产负担还不够。较大的袋子可能一次装得更多，同一只袋子也可能再次购物。体积、实际装填和使用次数都参与决定需要生产多少只袋。原报告的初始参考流先处理容量，主要用途的实际复用次数因缺少独立数据而留作另一层问题。"
+    },
+    {
+      "id": "cl-pack-capacity",
+      "kind": "calculation",
+      "scope": "调查计数、采用容量及对其他袋型的外推",
+      "evidenceIds": [
+        "ev-pack-ea-capacity",
+        "ev-pack-ea-flow"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-capacity",
+          "relation": "supports",
+          "rationale": "附录 B 列样本、两组实际计数和按体积推算过程。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-flow",
+          "relation": "supports",
+          "rationale": "表 3.1 为采用值。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-service"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "独立求原表计数比，并与报告采用的显示值比较。",
+      "textTemplate": "容量也有不同证据来源。附录 B 的调查访问了 1,149 名购物者，记录的 2,490 个轻薄袋装有 14,651 件物品，72 个 LDPE 袋装有 573 件。两个比值分别约为 {{evaluated.service.hdpe.observedCountRatioItemsPerBag.fixed6}} 和 {{evaluated.service.ldpe.observedCountRatioItemsPerBag.fixed6}} 件/袋。主表采用舍到两位小数的 5.88 和 7.96。纸袋、无纺 PP 袋和棉袋的装填量则借用了 LDPE 每升物品数的关系，按各自体积外推。读者因此知道哪些是分类型的调查计数，哪些是模型中的转接。"
+    },
+    {
+      "id": "cl-pack-count",
+      "kind": "calculation",
+      "scope": "同一服务下的数量和材料量",
+      "evidenceIds": [
+        "ev-pack-ea-flow"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-flow",
+          "relation": "supports",
+          "rationale": "表 3.1 量、质量和袋数均有明确单位。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-capacity"
+      ],
+      "conceptIds": [
+        "cn-pack-service"
+      ],
+      "mappingIds": [],
+      "caveats": [
+        "版本化计算输入另列未舍入除法与原表显示值的差额。"
+      ],
+      "reasoning": "分别计算483/容量，材料量采用公布参考流与公布袋质量相乘。",
+      "textTemplate": "将 483 件除以采用的容量，轻薄袋需要约 {{input.facts.hdpeReferenceFlow.value}} 只，LDPE 袋需要约 {{input.facts.ldpeReferenceFlow.value}} 只。这里的小数是提供平均服务的模型量。再把表列袋数与每只 8.12 g、34.94 g 相乘，得到约 667 g 和 2,120 g 的袋材。在这一步，较少的厚袋仍对应较多的材料。用未经舍入的除法结果继续计算，末位会略有差别；这些公开算式能核对参考流之间的关系，却还没有计算原料、能源和处置的完整清单。"
+    },
+    {
+      "id": "cl-pack-mapping",
+      "kind": "calculation",
+      "scope": "受访者回答到模型二次用途比例的桥接假定",
+      "evidenceIds": [
+        "ev-pack-ea-secondary",
+        "ev-pack-wrap2005-denominators"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-secondary",
+          "relation": "supports",
+          "rationale": "原报告明确使用 76% 与 53% 相乘。"
+        },
+        {
+          "evidenceId": "ev-pack-wrap2005-denominators",
+          "relation": "qualifies",
+          "rationale": "原问卷的实际分母是人，且用途可以多选。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-people",
+        "cl-pack-credit"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "重算报告的乘积，并用原问题界定它并非逐袋观测比例。",
+      "textTemplate": "报告先采用总体约 76% 的袋子再次使用的估计，再乘厨房内衬的 53%，得 {{evaluated.secondaryReuse.reportMultiplication.exact}}，即 40.28%。这一乘法把受访者关于是否有某种用途的回答，接到了逐袋的分配上。若有的人留用很多袋、有的人只留一只，二者在回答人数里各算一人，实际避免的内衬袋量却可能不同。要把这一步检验得更牢，需要袋量与用途在同一家庭、同一期间的联合记录。"
+    },
+    {
+      "id": "cl-pack-baseline",
+      "kind": "calculation",
+      "scope": "表 6.1 输出的参数关系",
+      "evidenceIds": [
+        "ev-pack-ea-sensitivity",
+        "ev-pack-ea-secondary"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-sensitivity",
+          "relation": "supports",
+          "rationale": "表 6.1 列三个二次用途情景的同服务GWP。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-secondary",
+          "relation": "supports",
+          "rationale": "报告比例由相乘得到。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-mapping"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "从两个公布端点求斜率和中间值，只检验公开结果之间的一致性。",
+      "textTemplate": "这项假定在结果中有多大作用，可以从报告自己的敏感性表看清。按一月购物服务，HDPE 在不计内衬替代时为 2.082 kg CO₂ eq，全部获得替代收益时为 0.830 kg CO₂ eq。两端相差 1.252。只作为两端输出的线性核对，写成 D(r)=2.082−1.252r，代入 r=0.4028，得到 {{evaluated.creditInterpolation.atReportMultipliedShare.exact}}，与表列 1.578 的精度相符。这个核对解释了输出怎样随抵扣比例变化，原来的制袋和废物模型还需要独立输入才能复跑。"
+    },
+    {
+      "id": "cl-pack-uses",
+      "kind": "calculation",
+      "scope": "LDPE 气候门槛的严格整数解",
+      "evidenceIds": [
+        "ev-pack-ea-ldpe-impacts",
+        "ev-pack-ea-hdpe-impacts",
+        "ev-pack-ea-thresholds"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-ldpe-impacts",
+          "relation": "supports",
+          "rationale": "表 5.5 给不复用的GWP及五次结果。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-hdpe-impacts",
+          "relation": "supports",
+          "rationale": "表 5.1 给基准。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-thresholds",
+          "relation": "supports",
+          "rationale": "表 8.1 记录所需次数。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-baseline"
+      ],
+      "conceptIds": [
+        "cn-pack-threshold"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按报告的 B/n 关系逐次检验严格不等式，解释整数与第一次使用。",
+      "textTemplate": "厚 LDPE 袋在不重复购物使用时，这一服务的气候结果为 6.924 kg CO₂ eq。若同一批厚袋总共用于购物 n 次，而其他条件按报告的缩放方式处理，分摊到同样服务的结果就是 6.924/n。与轻薄袋的 1.578 相比，要满足严格小于，n 必须大于 6.924/1.578。最小整数是 {{evaluated.thresholds.ldpe.reportedCredit.minimumTotalUses}}。这里算的是包含第一次在内的总使用次数，意味着之后至少再使用四次。"
+    },
+    {
+      "id": "cl-pack-shift",
+      "kind": "calculation",
+      "scope": "基准二次用途改变对门槛的影响",
+      "evidenceIds": [
+        "ev-pack-ea-sensitivity",
+        "ev-pack-ea-thresholds"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-sensitivity",
+          "relation": "supports",
+          "rationale": "零、中间、全部替代是报告的敏感性情景。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-thresholds",
+          "relation": "supports",
+          "rationale": "表 8.1 列4、5、9。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-uses"
+      ],
+      "conceptIds": [
+        "cn-pack-threshold"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "保持厚袋B不动，分别代入三个D，求严格整数门槛。",
+      "textTemplate": "基准的用途一改，门槛也跟着移动。若轻薄袋没有内衬替代收益，LDPE 所需总次数为 {{evaluated.thresholds.ldpe.noCredit.minimumTotalUses}}；若轻薄袋全部替代内衬袋，则需 {{evaluated.thresholds.ldpe.fullCredit.minimumTotalUses}}。这三种情景回答“如果比例如此，会怎样”。零到百分之百并不是调查估出的置信区间，算出九次也没有证明厚袋使用者会做到九次。"
+    },
+    {
+      "id": "cl-pack-three",
+      "kind": "calculation",
+      "scope": "三次主要使用与二次用途同时存在的条件",
+      "evidenceIds": [
+        "ev-pack-ea-thresholds",
+        "ev-pack-ea-sensitivity",
+        "ev-pack-ea-ldpe-impacts"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-thresholds",
+          "relation": "supports",
+          "rationale": "第 57 页情景说明与第 61 页末列表头的对照。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-sensitivity",
+          "relation": "supports",
+          "rationale": "采用基准1.578。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-ldpe-impacts",
+          "relation": "supports",
+          "rationale": "厚袋原结果6.924。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-shift"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "明确先用报告基准信用再分摊三次，独立计算所需n。",
+      "textTemplate": "把轻薄袋也用于三次购物，会提出更严格的比较。第 57 页讨论的是三次购物之后，约四成再用于内衬。把相应的 1.578 除以三，再同 6.924/n 比较，LDPE 需 {{evaluated.threeUseComparison.minimumTotalUses}} 次，与正文的“约十四次”相符。可是表 8.1 最后一列表头只写 HDPE 用三次，LDPE 一行给的是十二次。没有写出的内衬条件和计算顺序会影响解释；读者应保留这项条件不足，不能把十二和十四当成可随意替换的答案。"
+    },
+    {
+      "id": "cl-pack-rounding",
+      "kind": "calculation",
+      "scope": "棉袋临界值及公开数字的精度边界",
+      "evidenceIds": [
+        "ev-pack-ea-cotton",
+        "ev-pack-ea-sensitivity",
+        "ev-pack-ea-thresholds"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-cotton",
+          "relation": "supports",
+          "rationale": "第 44 页原表给271.533。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-sensitivity",
+          "relation": "supports",
+          "rationale": "HDPE完整抵扣为.830。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-thresholds",
+          "relation": "supports",
+          "rationale": "表8.1给327。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-uses"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "比较B/327与显示D，求严格最小整数并保留来源差异。",
+      "textTemplate": "接近边界时，显示精度也会影响整数。棉袋的公布结果是 271.533，全部内衬替代时的轻薄袋基准是 0.830；只拿这两个显示值相除，严格低于需 {{evaluated.thresholds.cottonFullCredit.minimumTotalUses}} 次，而表 8.1 印的是 327 次。在 327 次时，按显示值算约为 {{evaluated.thresholds.cottonFullCredit.burdenAtSourceReportedCount.fixed6}}，仍稍高于 0.830。未显示的原始精度可能改变这一下界，但它没有随这张表披露。研究解释要说明用了哪组精度，避免把一个末位差额扩成确定的实物寿命。"
+    },
+    {
+      "id": "cl-pack-categories",
+      "kind": "calculation",
+      "scope": "五次复用的九类别比较与资源例外",
+      "evidenceIds": [
+        "ev-pack-ea-ldpe-impacts",
+        "ev-pack-ea-hdpe-impacts"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pack-ea-ldpe-impacts",
+          "relation": "supports",
+          "rationale": "表5.5的九行和除五对照。"
+        },
+        {
+          "evidenceId": "ev-pack-ea-hdpe-impacts",
+          "relation": "supports",
+          "rationale": "表5.1同类别同单位基准。"
+        }
+      ],
+      "premiseIds": [
+        "cl-pack-uses"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "同类别一一比较，保留单位，不跨类别相加或按数目表决。",
+      "textTemplate": "使用五次的 LDPE，气候值 6.924/5={{evaluated.categoryComparison.categories.gwp.ldpeAtFiveUsesCalculated.exact}}，报告舍为 1.385，低于 HDPE 的 1.578。非生物资源耗竭却是 82.711/5={{evaluated.categoryComparison.categories.abiotic.ldpeAtFiveUsesCalculated.exact}} g Sb eq，略高于基准 16.227。独立逐行核对，厚袋在 {{evaluated.categoryComparison.totalCategories}} 项中有 {{evaluated.categoryComparison.lowerCategoriesFromCalculatedDivision}} 项较低，恰有这一项较高。八项对一项不能自动变成八票对一票；这一步给出的是取舍的形状，是否值得接受还要回到问题和保护目标。"
+    }
+  ]
+}

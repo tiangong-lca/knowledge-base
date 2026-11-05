@@ -14,7 +14,7 @@ checkPaths:
   - "knowledge/**"
   - "releases/**"
 lastReviewedAt: 2026-11-05
-lastReviewedCommit: 770745e5797578af6431e89e6299946cc6449fbb
+lastReviewedCommit: edc41d69b08ada0321def953de982e2bb52fcf3f
 ---
 
 # Editorial and living review protocol
@@ -112,3 +112,5 @@ only through its abstract in distinct evidence records.
 For ecological-scarcity scores, trace a policy objective, the conversion to a critical annual load, the normalizing load and the published factor separately. Retain the baseline year and the factor edition when an estimate is revised. A ranking test requires the same service across alternatives; a change in the composition of one score supports a different claim. Independent checks distinguish exact reconstruction from published inputs, model sensitivity and observations of actual environmental change.
 
 For a preference-based weight, trace the question actually shown to respondents, the unit of the estimated attribute coefficient and the reference unit of the published damage factor. Record whether the elicited outcome concerns one person, one household or a national total. Matching demographic tables establish common reported descriptors. Claiming identical microdata, deducing exclusions or substituting a later set of weights requires additional evidence. Distinguish arithmetic consistency with a reported number from a documented estimation procedure and an experiment on actual payments from the estimated price of a modelled loss.
+
+For complete-study interpretation, identify which reported comparison serves the stated question and which missing data make it conditional. Review comments, author replies and the final artifact each require locators. An acceptance statement does not establish that every promised edit appears consistently in the released text. Behaviour frequencies with respondents as their denominator require an explicit mapping before being used as bag-weighted material substitutions.
