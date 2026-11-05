@@ -3165,6 +3165,30 @@
         "channel": "public-web-search",
         "query": "\"Global Life Cycle Paper Flows\" Ewijk pdf UCL",
         "outcome": "UCL2017online-first原PDF取得，作品2018年正式卷期另记；仅查看身份与摘要，未细读方法。未用于本单元模型或实体论证，保留为后续全球物质流研究线索。"
+      },
+      {
+        "id": "q-kb42-market-paper",
+        "query": "\"A market-based approach to allocation at open-loop recycling\" DOI, filetype:pdf, Chalmers, DiVA, IVL, TERRA",
+        "date": "2026-11-05",
+        "channel": "web search, publisher preview and DOI/API metadata"
+      },
+      {
+        "id": "q-kb42-recycling-errata",
+        "query": "\"BF02978499\" \"Ekvall\" erratum PDF and publisher PDF paths for corrected work and Errata",
+        "date": "2026-11-05",
+        "channel": "web search, Springer and Chalmers"
+      },
+      {
+        "id": "q-kb42-market-defaults",
+        "query": "\"The Cost of Reducing Municipal Solid Waste\" Palmer Sigman Walls PDF elasticity and Ekvall 2020 C551 price elasticity",
+        "date": "2026-11-05",
+        "channel": "web search and institutional repository acquisition"
+      },
+      {
+        "id": "q-kb42-swedish-wastepaper",
+        "query": "\"Structural changes in Swedish wastepaper demand\" Lundmark Söderholm DiVA; \"Spatial cost efficiency in waste paper handling\" Berglund DiVA",
+        "date": "2026-11-05",
+        "channel": "web search and university PDF text extracts"
       }
     ],
     "limitations": [
@@ -6819,6 +6843,10 @@
         {
           "url": "https://publications.lib.chalmers.se/records/fulltext/24272/local_24272.pdf",
           "role": "actual selected-reading acquisition route"
+        },
+        {
+          "url": "https://link.springer.com/content/pdf/10.1007/BF02978810.pdf",
+          "role": "核对 1997 原排版及 p.159 的 Springer 原 PDF"
         }
       ],
       "identifiers": {
@@ -6860,15 +6888,12 @@
       "identityStatus": "verified",
       "accessStatus": "public-fulltext-available",
       "readingStatus": "not-close-read",
-      "accessedAt": "2026-11-04",
-      "lastCheckedAt": "2026-11-04",
-      "rights": "Third-party rights retained. M/G; institutional abstract/identity and publisher record inspected; not full text. Publisher subscription/library or institutional link; no original download verified; no open reuse license verified.",
+      "accessedAt": "2026-11-05",
+      "lastCheckedAt": "2026-11-05",
+      "rights": "第三方保留权利。只拟公开书目、原创释义及定位。未核得允许重新发布原文、页面或完整图表的许可。",
       "limitations": [
-        "Tomas Ekvall; Anne-Marie Tillman (1997), *Open-Loop Recycling: Criteria for Allocation Procedures*. IJLCA **2(3):155–162**, DOI **10.1007/BF02978810**.",
-        "M/G; institutional abstract/identity and publisher record inspected; not full text. Publisher subscription/library or institutional link; no original download verified; no open reuse license verified.",
-        "Access-status availability does not mean acquisition, close reading, validation of a scientific claim, or permission to redistribute.",
-        "Map assignment is editorial discovery judgment; no regional or community completeness is claimed.",
-        "Actual selected reading is recorded separately as rd-ekvall-tillman-1997; acquisition or overlapping passages do not establish full-work reading."
+        "机构载体和出版商载体均取得。两者的印页 159 都是 PDF 第 5 页，机构载体另有末尾权利页。",
+        "原印方程(16)–(18)的符号经 1998 勘误更正。方程(16)右侧回收过程下标的剩余差异另列。"
       ],
       "catalogSourceIds": [
         "src-book-ekvall-tillman-1997"
@@ -7734,16 +7759,13 @@
       "contributors": "Tomas Ekvall; Anne-Marie Tillman; Heinz Gabathuler",
       "year": "1998-03; IJLCA3:105",
       "kind": "journal-errata",
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-05",
+      "lastCheckedAt": "2026-11-05",
+      "rights": "第三方保留权利。只拟公开书目、原创释义及定位。未核得允许重新发布原文、页面或完整图表的许可。 本次直接 PDF 无需登录，元数据页仍显示订阅预览。",
       "goalSeedIds": [],
-      "urls": [
-        {
-          "url": "https://link.springer.com/article/10.1007/BF02978499",
-          "role": "publisher metadata; subscription body"
-        }
-      ],
-      "identifiers": {
-        "doi": "10.1007/BF02978499"
-      },
       "volumes": [
         "V4",
         "V6"
@@ -7761,25 +7783,36 @@
       "traditions": [
         "methodological correction"
       ],
+      "limitations": [
+        "印页105第1项只更正三个分子中的符号，没有更正式(16)末项下标。",
+        "同页第2项属于另篇作品。"
+      ],
+      "catalogSourceIds": [
+        "src-kb42-ekvall-tillman-1998-errata"
+      ],
+      "urls": [
+        {
+          "url": "https://link.springer.com/article/10.1007/BF02978499",
+          "role": "publisher metadata; subscription body"
+        },
+        {
+          "url": "https://link.springer.com/content/pdf/10.1007/BF02978499.pdf",
+          "role": "实际取得并视觉核对的 Springer 原刊 PDF"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1007/BF02978499"
+      },
       "discovery": {
+        "reason": "追踪 1997 原刊分配式的正式勘误。出版商原刊 PDF 已取得并核验第 1 项。",
         "queryIds": [
-          "q-w2-allocation-errata"
+          "q-w2-allocation-errata",
+          "q-kb42-recycling-errata"
         ],
-        "reason": "Followed correction hints from original recycling literature; publisher identity verified, content unavailable.",
         "citationParents": [
           "lit-com-19"
         ]
-      },
-      "identityStatus": "verified",
-      "accessStatus": "login-required",
-      "readingStatus": "not-close-read",
-      "accessedAt": "2026-11-04",
-      "lastCheckedAt": "2026-11-04",
-      "rights": "Third-party rights retained; metadata-only discovery, no full-text permission or copying.",
-      "limitations": [
-        "Erratum body has not been read; no revised equation or numerical result is asserted."
-      ],
-      "catalogSourceIds": []
+      }
     },
     {
       "id": "work-xie-2022-lcia-localization-review",
@@ -12268,6 +12301,238 @@
           "Q-PAPER-COUNTER-02"
         ],
         "citationParents": []
+      }
+    },
+    {
+      "id": "work-ekvall-2000-market-based-sae",
+      "title": "A Market-Based Approach to Allocation in Open-Loop Recycling",
+      "contributors": "Tomas Ekvall",
+      "year": "2000-04-26",
+      "kind": "conference-technical-paper",
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-05",
+      "lastCheckedAt": "2026-11-05",
+      "rights": "第三方保留权利。只拟公开书目、原创释义及定位。未核得允许重新发布原文、页面或完整图表的许可。",
+      "goalSeedIds": [],
+      "volumes": [
+        "V6"
+      ],
+      "topics": [
+        "市场响应方程",
+        "纸袋配送"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Europe"
+      ],
+      "traditions": [
+        "回收系统边界与分配"
+      ],
+      "limitations": [
+        "核读作者上传的网页 OCR 选段。未取得并视觉核验原 PDF 字节。",
+        "应用为纸袋配送而非期刊哥德堡两例。"
+      ],
+      "catalogSourceIds": [
+        "src-kb42-ekvall-2000-market-sae"
+      ],
+      "urls": [
+        {
+          "url": "https://saemobilus.sae.org/papers/a-market-based-approach-allocation-open-loop-recycling-2000-01-1467",
+          "role": "出版商元数据"
+        },
+        {
+          "url": "https://www.researchgate.net/publication/288156441_A_Market-Based_Approach_to_Allocation_in_Open-Loop_Recycling",
+          "role": "作者上传全文的公开 OCR 文本"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.4271/2000-01-1467",
+        "report": "SAE 2000-01-1467"
+      },
+      "discovery": {
+        "reason": "检索发现近名 SAE 技术论文，其参考文献13另列 RCR 期刊文。",
+        "queryIds": [
+          "q-kb42-market-paper"
+        ],
+        "citationParents": [
+          "work-ekvall-2000-market-based-rcr"
+        ]
+      }
+    },
+    {
+      "id": "work-palmer-sigman-walls-solid-waste",
+      "title": "The Cost of Reducing Municipal Solid Waste",
+      "contributors": "Karen Palmer; Hilary Sigman; Margaret Walls",
+      "year": "1996 discussion paper; 1997 journal version",
+      "kind": "research-discussion-paper-and-journal-version",
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-05",
+      "lastCheckedAt": "2026-11-05",
+      "rights": "第三方保留权利。只拟公开书目、原创释义及定位。未核得允许重新发布原文、页面或完整图表的许可。",
+      "goalSeedIds": [],
+      "volumes": [
+        "V6"
+      ],
+      "topics": [
+        "二次材料供需弹性"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "United States"
+      ],
+      "traditions": [
+        "回收系统边界与分配"
+      ],
+      "limitations": [
+        "数值来自工作论文载体；未核期刊版同表。"
+      ],
+      "catalogSourceIds": [
+        "src-kb42-palmer-sigman-walls-1996-rff"
+      ],
+      "urls": [
+        {
+          "url": "https://media.rff.org/documents/RFF-DP-96-35.pdf",
+          "role": "核读的 RFF DP 96-35 原件"
+        },
+        {
+          "url": "https://doi.org/10.1006/jeem.1997.0986",
+          "role": "同题期刊版 DOI，实际只核书目及摘要"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1006/jeem.1997.0986",
+        "report": "RFF DP 96-35"
+      },
+      "discovery": {
+        "reason": "追溯 SAE 默认弹性的引文，核对同题的作者工作论文。",
+        "queryIds": [
+          "q-kb42-market-defaults"
+        ],
+        "citationParents": [
+          "work-ekvall-2000-market-based-sae"
+        ]
+      }
+    },
+    {
+      "id": "work-lundmark-soderholm-swedish-wastepaper-demand",
+      "title": "Structural changes in Swedish wastepaper demand: a variable cost function approach",
+      "contributors": "Robert Lundmark; Patrik Söderholm",
+      "year": "2002 thesis paper; 2003 journal version",
+      "kind": "research-paper-and-journal-version",
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-05",
+      "lastCheckedAt": "2026-11-05",
+      "rights": "第三方保留权利。只拟公开书目、原创释义及定位。未核得允许重新发布原文、页面或完整图表的许可。",
+      "goalSeedIds": [],
+      "volumes": [
+        "V6"
+      ],
+      "topics": [
+        "纸种差异",
+        "废纸需求",
+        "木浆替代"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Sweden"
+      ],
+      "traditions": [
+        "回收系统边界与分配"
+      ],
+      "limitations": [
+        "学位论文收录版正文选段，不是期刊版或本地原件字节。"
+      ],
+      "catalogSourceIds": [
+        "src-kb42-lundmark-soderholm-2002-swedish-demand"
+      ],
+      "urls": [
+        {
+          "url": "https://www.diva-portal.org/smash/get/diva2%3A999445/FULLTEXT01.pdf",
+          "role": "作者学位论文收录的投稿版本，核读网页 PDF 文本选段"
+        },
+        {
+          "url": "https://doi.org/10.1078/1104-6899-00022",
+          "role": "期刊版 DOI"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1078/1104-6899-00022"
+      },
+      "discovery": {
+        "reason": "定向查找同期瑞典纸厂投入需求与替代假设的独立证据。",
+        "queryIds": [
+          "q-kb42-swedish-wastepaper"
+        ],
+        "citationParents": []
+      }
+    },
+    {
+      "id": "work-ekvall-2000-market-based-rcr",
+      "title": "A market-based approach to allocation at open-loop recycling",
+      "contributors": "Tomas Ekvall",
+      "year": "2000; 29(1–2):91–109",
+      "kind": "journal-article",
+      "identityStatus": "verified",
+      "accessStatus": "abstract-or-excerpt",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-05",
+      "lastCheckedAt": "2026-11-05",
+      "rights": "第三方保留权利。只拟公开书目、原创释义及定位。未核得允许重新发布原文、页面或完整图表的许可。",
+      "goalSeedIds": [],
+      "volumes": [
+        "V6"
+      ],
+      "topics": [
+        "市场模型",
+        "开放循环回收"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Sweden"
+      ],
+      "traditions": [
+        "回收系统边界与分配"
+      ],
+      "limitations": [
+        "完整期刊正文、算式及案例表未取得。",
+        "SAE 同作者近名文章独立记录。"
+      ],
+      "catalogSourceIds": [],
+      "urls": [
+        {
+          "url": "https://www.sciencedirect.com/science/article/pii/S0921344999000579",
+          "role": "出版商的摘要、导言及章节预览"
+        },
+        {
+          "url": "https://doi.org/10.1016/S0921-3449(99)00057-9",
+          "role": "正式期刊 DOI"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1016/S0921-3449(99)00057-9"
+      },
+      "discovery": {
+        "reason": "以总论列出的 Paper VIII 题名核对其期刊正式出版身份。",
+        "queryIds": [
+          "q-kb42-market-paper"
+        ],
+        "citationParents": [
+          "lit-com-25"
+        ]
       }
     }
   ],
