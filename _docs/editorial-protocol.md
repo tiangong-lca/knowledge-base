@@ -185,3 +185,20 @@ preservation. Author-created zero/absent-factor controls examine retained
 information and carry no environmental interpretation. Public exposition uses
 minimal attributed source quantities and reviewed derived observations, while
 complete originals, native exports and full data vectors remain private.
+
+## Original framework and reception comparison
+
+Compare the actor, input, operation, output and return condition before assigning
+cross-version equivalence. A Guide, scientific background and operational data
+volume serve different readers; control that genre difference within one edition.
+Keep the report's date, translated preface, bibliographic identifier and actual
+carrier distinct. An author's description of a standard or workshop draft is
+attributed historical evidence, not direct qualification of that original.
+
+For original hypothetical models, independently solve the stated balances and
+compare selected results without silently correcting printed discrepancies.
+Contribution shares, derivatives and normalized local responses have different
+denominators. A finite coefficient change is a separate calculation and does not
+establish an engineering option. For external uptake, trace the actual factor,
+transformation and reported score, retain counterexamples and unexplained gaps,
+and distinguish common institutional lineage from independent confirmation.

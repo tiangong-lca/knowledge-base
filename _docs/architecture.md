@@ -17,10 +17,28 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-06
-lastReviewedCommit: 9f07ff8f89a7fc857834197a163029d96d67e01f
+lastReviewedCommit: 0a56ed6e190027d25b711715a9ac9f88f70a92e1
 ---
 
 # Publication architecture
+
+## Original CML examples
+
+`scripts/cml-framework-examples.mjs` registers the prose-only
+CASE-CML-FRAMEWORK-EXAMPLES v1. It uses the shared exact-rational arithmetic for
+a four-activity source hypothetical and a separate selected factor/bin comparison.
+An independently fixed canonical input digest and nested allowlist bind source
+identities, original PDF hashes/pages, exact numeric tuples and interpretation
+flags. The source/reading/passage join is checked in the actual public closure.
+The versioned publication manifest binds ten numerical paragraphs to that input.
+
+The first result preserves positive process activities, service balances and
+solid-waste contributions, while separating the derivative, relative response
+and finite perturbation. The second preserves actual reported score identity
+versus recalculated base bins and detects range overlap with unassigned gaps.
+No native program, site modifier, score aggregation or observed environmental
+change is inferred. The original disagreement is data, never silently repaired.
+
 
 ## Native exchange reproduction and static observations
 
