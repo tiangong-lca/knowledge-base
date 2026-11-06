@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-06
-lastReviewedCommit: 0a56ed6e190027d25b711715a9ac9f88f70a92e1
+lastReviewedCommit: f9781d590551f6e3ee38c223d1e56e88d4c2bc59
 ---
 
 # Publication architecture
@@ -30,6 +30,8 @@ a four-activity source hypothetical and a separate selected factor/bin compariso
 An independently fixed canonical input digest and nested allowlist bind source
 identities, original PDF hashes/pages, exact numeric tuples and interpretation
 flags. The source/reading/passage join is checked in the actual public closure.
+The five numeric passages also pin their literal locator, printed-page label
+and complete PDF index set, so coherent citation-label substitution fails.
 The versioned publication manifest binds ten numerical paragraphs to that input.
 
 The first result preserves positive process activities, service balances and

@@ -312,3 +312,13 @@ separate original factor-to-screening comparison has two matches and a concrete
 counterexample. These are bounded source and calculation findings. Manuscript,
 source/reader assessment, rendered publication and exact delivery remain in
 Issue52, while the complete eight-volume and appendix programme stays open.
+
+The CML candidate now has44 connected paragraphs and10 input-bound passages.
+Independent source and code assessments corrected attribution, the earlier dual
+use of local response, separate operational checks and exact citation identity.
+A fresh local-app reader assessment and focused follow-up clarified per-activity
+output, historical terminology and the distinction between documented scoring
+and the author's reconstruction. Main retained the unresolved wording difference
+between the two1992 volumes without assigning an unverified author intention.
+All265 tests and types pass. Current Main/live/root qualification remains in
+Issue52; these reviews do not complete the book or certify empirical effects.
