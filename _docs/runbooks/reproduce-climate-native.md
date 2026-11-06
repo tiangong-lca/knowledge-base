@@ -74,8 +74,12 @@ before executing any author code. The cache layout is
 and leaves the existing file in place. Use `--offline` after the cache is
 populated to require an entirely local replay. The author source cache is
 excluded from the Python import path. Once acquisition ends, the launcher
-guards Python socket and subprocess calls and writes only the designated
-result files. Cached code and raw outputs stay outside Git and public export.
+uses a Python audit hook to reject selected socket, process and filesystem
+mutation events, and ordinary file writes outside the designated results.
+This is a scoped runtime guard, not an operating-system filesystem sandbox or
+complete containment of native dependencies. Only the pinned reviewed author
+code and explicitly trusted dependencies are in scope. Cached code and raw
+outputs stay outside Git and public export.
 
 The default run uses 1,001 float64 samples from 0 to 100 years at 0.1-year
 spacing. Add `--finer-grid` to also replay the separate 0.05-year sensitivity

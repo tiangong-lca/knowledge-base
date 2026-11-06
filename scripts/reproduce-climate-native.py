@@ -134,7 +134,7 @@ def package_entries(roots):
 
 def restrict_execution(output_files):
     forbidden = {"subprocess.Popen", "os.system", "os.posix_spawn", "os.fork", "os.forkpty", "os.exec"}
-    mutations = {"os.remove", "os.rename", "os.mkdir", "os.rmdir", "os.chmod", "os.link", "os.symlink"}
+    mutations = {"os.remove", "os.rename", "os.mkdir", "os.rmdir", "os.chmod", "os.link", "os.symlink", "os.truncate"}
     write_flags = os.O_WRONLY | os.O_RDWR | os.O_APPEND | os.O_CREAT | os.O_TRUNC
 
     def audit(event, arguments):

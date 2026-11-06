@@ -222,6 +222,12 @@ test('actual public closure rejects missing and coherently changed source, readi
   newArtifact.source.artifact.sha256 = replacementHash;
   assert.match(validate(newArtifact.published, newArtifact.context).join('\n'), /exact inspected source, edition, work, reading and original PDF/);
 
+  const wrongCarrier = mutableBindings();
+  const publishedChapterUrl = 'https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Chapter07.pdf';
+  wrongCarrier.source.artifact.resolvedUrl = publishedChapterUrl;
+  wrongCarrier.reading.artifacts.find(a => a.id === sourcePin.artifactId).resolvedUrl = publishedChapterUrl;
+  assert.match(validate(wrongCarrier.published, wrongCarrier.context).join('\n'), /exact inspected source, edition, work, reading and original PDF/);
+
   const newReading = mutableBindings();
   const replacementReadingId = 'rd-fixture-other-edition';
   newReading.reading.id = replacementReadingId;

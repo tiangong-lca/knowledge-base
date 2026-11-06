@@ -405,6 +405,16 @@ const reviewedPdfEditions = new Map([
   ['src-kb54-cain-2019-gwp-star', 'npj Climate and Atmospheric Science 2, 29，2019-09-04 刊行版'],
 ]);
 
+// The displayed carrier link is part of the reviewed citation identity too.
+// Matching hashes cannot justify coherently relabeling a different PDF URL.
+const reviewedPdfUrls = new Map([
+  ['src-kb54-joos2013', 'https://acp.copernicus.org/articles/13/2793/2013/acp-13-2793-2013.pdf'],
+  ['src-kb54-ipcc-ar6-ch7-pdf', 'https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Chapter07.pdf'],
+  ['src-kb54-ipcc-ar6-errata-2025-10-07-pdf', 'https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Errata.pdf'],
+  ['src-kb54-ipcc-ar6-ch7-sm-pdf', 'https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Chapter07_SM.pdf'],
+  ['src-kb54-cain-2019-gwp-star', 'https://www.nature.com/articles/s41612-019-0086-4.pdf'],
+]);
+
 const nativeSourceId = 'src-kb54-ipcc-ch7-code-snapshot';
 const nativeWorkId = 'work-ipcc-ar6-wgi-ch7-author-code';
 const nativeNotebook = 'notebooks/335_chapter7_generate_metrics.ipynb';
@@ -485,7 +495,8 @@ export function validateClimateMetricsFacts(spec, published, context = {}) {
     const reading = uniqueRecord(register.readings, pin.readingId);
     const artifact = uniqueRecord(reading?.artifacts, pin.artifactId);
     const edition = reviewedPdfEditions.get(pin.sourceId);
-    const samePdf = candidate => sameArtifact(candidate, pin.sha256, 'application/pdf') && candidate.pageCount === pin.pageCount;
+    const samePdf = candidate => sameArtifact(candidate, pin.sha256, 'application/pdf')
+      && candidate.pageCount === pin.pageCount && candidate.resolvedUrl === reviewedPdfUrls.get(pin.sourceId);
     if (!inspectedSource(source, pin.readingId, edition) || reading?.workId !== pin.workId
         || reading?.readingStatus !== 'selected-passages' || reading?.version !== edition
         || !samePdf(source.artifact) || !samePdf(artifact) || uniqueRecord(allArtifacts, pin.artifactId) !== artifact) {
