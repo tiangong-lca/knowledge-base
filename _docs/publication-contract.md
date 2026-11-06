@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-06
-lastReviewedCommit: b276ebbce39329b59af8cf3c4b736a5643b99263
+lastReviewedCommit: f9781d590551f6e3ee38c223d1e56e88d4c2bc59
 ---
 
 # Publication contract
@@ -162,3 +162,13 @@ digest through calculation. Public summaries may expose reviewed selected
 observations and receipt hashes without redistributing the original database,
 complete factor tables or native model exports. A numerical match never grants
 redistribution permission or establishes physical applicability.
+
+The CML framework examples keep an original hypothetical process model separate
+from a later external screening transformation. The reviewed input binds every
+selected coefficient, original reported literal, factor range and scoring limit
+to its actual Guide or EPA passage and PDF. Closed exact arithmetic distinguishes
+source statements from reconstruction; the printed determinant and methane-score
+mismatches remain explicit. Source ranges carry no probability assignment, and
+undefined gaps between displayed scoring bins receive no invented rule. The
+static case does not execute historical software, apply facility score modifiers,
+aggregate screening criteria or establish empirical/engineering validity.

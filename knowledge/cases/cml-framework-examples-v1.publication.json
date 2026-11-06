@@ -1,0 +1,324 @@
+{
+  "schemaVersion": 1,
+  "caseId": "CASE-CML-FRAMEWORK-EXAMPLES",
+  "version": "1.0.0",
+  "inputFile": "cml-framework-examples-v1.json",
+  "reviewedAt": "2026-11-06",
+  "reviewKind": "agent-source-check",
+  "approvedInputSha256": "d84fdd5e93d29dc8890e2b647d8f58c1d5dafca2cd9f04c703697bc987fdbed5",
+  "claims": [
+    {
+      "id": "cl-cml-toy-records",
+      "kind": "source-statement",
+      "scope": "1992 Guide表2.3的原作者假想模型，固定十袋需求",
+      "evidenceIds": [
+        "ev-cml-1992-part1-sandwich-inventory"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-cml-1992-part1-sandwich-inventory",
+          "relation": "supports",
+          "rationale": "表 2.3 列出四个联结过程与功能单位对应的经济流量。电力与铝互为投入，按联立平衡计算活动量后汇总环境干预。 本段的重算或跨文本解释保留原件的对象与限制。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [],
+      "caveats": [
+        "原表的其他环境行未在本例中比较；只重建所选固体废物关系。"
+      ],
+      "textTemplate": "Guide的假想例子依次连接电力生产、铝生产、铝箔生产与铝箔使用，最终需要 {{evaluated.processDiagnosis.serviceBags.exact}} 个三明治袋。每组电力活动输出1 MJ，却投入0.01 kg铝；每组铝活动输出1 kg铝，又投入50 MJ电。铝箔活动每输出1 kg铝箔，投入1 kg铝和1 MJ电；使用活动每消耗1 kg铝箔，提供100个袋。这些是原作者为说明方法编制的记录，不是实际袋子的物料调查。"
+    },
+    {
+      "id": "cl-cml-toy-balance",
+      "kind": "calculation",
+      "scope": "同一假想模型的经济流平衡；不包括真实生产工况",
+      "evidenceIds": [
+        "ev-cml-1992-part1-sandwich-inventory",
+        "ev-kb52-cml1992-backgrounds-inventory-balance"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-cml-1992-part1-sandwich-inventory",
+          "relation": "context",
+          "rationale": "表 2.3 列出四个联结过程与功能单位对应的经济流量。电力与铝互为投入，按联立平衡计算活动量后汇总环境干预。 本段的重算或跨文本解释保留原件的对象与限制。"
+        },
+        {
+          "evidenceId": "ev-kb52-cml1992-backgrounds-inventory-balance",
+          "relation": "context",
+          "rationale": "先由功能对应的经济平衡求各过程活动量，再按活动量汇总环境干预。同步求解用于处理相互引用的过程。 本段的重算或跨文本解释保留原件的对象与限制。"
+        }
+      ],
+      "premiseIds": [
+        "cl-cml-toy-records"
+      ],
+      "conceptIds": [],
+      "caveats": [],
+      "reasoning": "沿具体研究任务比较输入、动作、产出和返回条件；原例的计算、取舍、技术可行性和实际实施分别有证据边界，不从阶段名称、时间先后或数值一致推出普遍等价。",
+      "textTemplate": "服务需求先决定使用活动为 {{evaluated.processDiagnosis.baseline.activities.use.exact}} 组，进而需要 {{evaluated.processDiagnosis.baseline.activities.foil.exact}} 组铝箔活动。上游却不能逐层只算一次：供电也要用铝，生产这些铝又要用电。把电力活动量记作x、铝活动量记作y，原记录给出x＝50y＋0.1与y＝0.01x＋0.1。联立得到x＝{{evaluated.processDiagnosis.baseline.activities.electricity.exact}}、y＝{{evaluated.processDiagnosis.baseline.activities.aluminium.exact}}，各中间产品的总供给与总需求才同时平衡。"
+    },
+    {
+      "id": "cl-cml-toy-waste",
+      "kind": "calculation",
+      "scope": "同一假想模型的固体废物质量合计，未作影响评价",
+      "evidenceIds": [
+        "ev-cml-1992-part1-sandwich-inventory",
+        "ev-cml-1992-part1-sandwich-dominance"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-cml-1992-part1-sandwich-inventory",
+          "relation": "context",
+          "rationale": "表 2.3 列出四个联结过程与功能单位对应的经济流量。电力与铝互为投入，按联立平衡计算活动量后汇总环境干预。 本段的重算或跨文本解释保留原件的对象与限制。"
+        },
+        {
+          "evidenceId": "ev-cml-1992-part1-sandwich-dominance",
+          "relation": "context",
+          "rationale": "同一模型的过程矩阵把功能单位汇总前的各过程贡献分开。电力生产贡献大部分固废，铝生产消耗大部分电力。 本段的重算或跨文本解释保留原件的对象与限制。"
+        }
+      ],
+      "premiseIds": [
+        "cl-cml-toy-records",
+        "cl-cml-toy-balance"
+      ],
+      "conceptIds": [],
+      "caveats": [],
+      "reasoning": "沿具体研究任务比较输入、动作、产出和返回条件；原例的计算、取舍、技术可行性和实际实施分别有证据边界，不从阶段名称、时间先后或数值一致推出普遍等价。",
+      "textTemplate": "原表给每组电力、铝、铝箔与使用活动分别记入2、10、0和1 kg固体废物。把这些记录乘以各自活动量，得到 {{evaluated.processDiagnosis.baseline.wasteByProcessKg.electricity.exact}}、{{evaluated.processDiagnosis.baseline.wasteByProcessKg.aluminium.exact}}、{{evaluated.processDiagnosis.baseline.wasteByProcessKg.foil.exact}} 和 {{evaluated.processDiagnosis.baseline.wasteByProcessKg.use.exact}} kg，合计 {{evaluated.processDiagnosis.baseline.totalWasteKg.exact}} kg。这里汇总的是同一类清单流；它还没有评价废物的组成、处理方式或环境损害。"
+    },
+    {
+      "id": "cl-cml-toy-dominance",
+      "kind": "calculation",
+      "scope": "同一模型的过程直接贡献与上游投入追踪",
+      "evidenceIds": [
+        "ev-cml-1992-part1-sandwich-inventory",
+        "ev-cml-1992-part1-sandwich-dominance",
+        "ev-kb52-cml1992-backgrounds-dominance"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-cml-1992-part1-sandwich-inventory",
+          "relation": "context",
+          "rationale": "表 2.3 列出四个联结过程与功能单位对应的经济流量。电力与铝互为投入，按联立平衡计算活动量后汇总环境干预。 本段的重算或跨文本解释保留原件的对象与限制。"
+        },
+        {
+          "evidenceId": "ev-cml-1992-part1-sandwich-dominance",
+          "relation": "context",
+          "rationale": "同一模型的过程矩阵把功能单位汇总前的各过程贡献分开。电力生产贡献大部分固废，铝生产消耗大部分电力。 本段的重算或跨文本解释保留原件的对象与限制。"
+        },
+        {
+          "evidenceId": "ev-kb52-cml1992-backgrounds-dominance",
+          "relation": "context",
+          "rationale": "把合计前的各过程干预保留在矩阵中可追踪贡献。文中用电力、铝生产和铝包装串起二氧化硫排放及酸化贡献。 本段的重算或跨文本解释保留原件的对象与限制。"
+        }
+      ],
+      "premiseIds": [
+        "cl-cml-toy-waste"
+      ],
+      "conceptIds": [
+        "cn-cml-diagnosis-response"
+      ],
+      "caveats": [],
+      "reasoning": "沿具体研究任务比较输入、动作、产出和返回条件；原例的计算、取舍、技术可行性和实际实施分别有证据边界，不从阶段名称、时间先后或数值一致推出普遍等价。",
+      "textTemplate": "保留合计前的各过程贡献，便能继续追问来源。按本例数据重算，电力活动占这项固废的约 {{evaluated.processDiagnosis.baseline.electricityWastePercent.fixed3}}%；与此同时，所产电力中的 {{evaluated.processDiagnosis.baseline.electricityUsedByAluminiumMJ.exact}} MJ进入铝生产，占约 {{evaluated.processDiagnosis.baseline.aluminiumPercentOfElectricity.fixed3}}%。于是，直接记在供电活动上的废物，又通过投入关系连接到铝的需求。Guide把这种追踪称为dominance analysis：它恢复了汇总表中看不见的过程贡献。"
+    },
+    {
+      "id": "cl-cml-toy-determinant",
+      "kind": "calculation",
+      "scope": "Guide p39显示行列式与方程、活动量之间的算术差别",
+      "evidenceIds": [
+        "ev-cml-1992-part1-sandwich-inventory"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-cml-1992-part1-sandwich-inventory",
+          "relation": "context",
+          "rationale": "表 2.3 列出四个联结过程与功能单位对应的经济流量。电力与铝互为投入，按联立平衡计算活动量后汇总环境干预。 本段的重算或跨文本解释保留原件的对象与限制。"
+        }
+      ],
+      "premiseIds": [
+        "cl-cml-toy-balance"
+      ],
+      "conceptIds": [],
+      "caveats": [],
+      "reasoning": "沿具体研究任务比较输入、动作、产出和返回条件；原例的计算、取舍、技术可行性和实际实施分别有证据边界，不从阶段名称、时间先后或数值一致推出普遍等价。",
+      "textTemplate": "原表也留下一个不能一起照抄的数值。原报告正文用行列式求解时，把第二个替列行列式——将铝活动量对应的系数列换成需求列后求得的行列式——印为 {{input.facts.reportedSecondDeterminant.value}}，却把对应铝活动量印为 {{input.facts.reportedAluminiumActivity.value}}。按同页方程重算，前者应为 {{evaluated.processDiagnosis.determinants.secondColumnReplacement.exact}}；若使用原印值除以原矩阵的 {{evaluated.processDiagnosis.determinants.baseline.exact}}，反而得到 {{evaluated.processDiagnosis.determinants.impliedByPrintedSecondAndComputedBaseline.exact}}。本例采用明示方程重建活动，并把这处原件差别保留下来，不据一个相符的总数宣称整页计算都一致。"
+    },
+    {
+      "id": "cl-cml-relative-response",
+      "kind": "calculation",
+      "scope": "同一假想模型、固定其他系数的局部归一化响应",
+      "evidenceIds": [
+        "ev-cml-1992-part1-sandwich-inventory",
+        "ev-cml-1992-part1-sandwich-sensitivity",
+        "ev-kb52-cml1992-backgrounds-marginal-redesign"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-cml-1992-part1-sandwich-inventory",
+          "relation": "context",
+          "rationale": "表 2.3 列出四个联结过程与功能单位对应的经济流量。电力与铝互为投入，按联立平衡计算活动量后汇总环境干预。 本段的重算或跨文本解释保留原件的对象与限制。"
+        },
+        {
+          "evidenceId": "ev-cml-1992-part1-sandwich-sensitivity",
+          "relation": "context",
+          "rationale": "该例选取固废作为响应。绝对值最大的归一化边际响应对应铝生产的产出参数，作者以 1% 的小幅变化说明其含义。 本段的重算或跨文本解释保留原件的对象与限制。"
+        },
+        {
+          "evidenceId": "ev-kb52-cml1992-backgrounds-marginal-redesign",
+          "relation": "context",
+          "rationale": "边际矩阵提示对选定输出影响较大的参数。实际调整燃烧温度会同时改变其他投入或排放，增设烟气洗涤会改变过程网络，所以设计方案须重建并与原设计比较。 本段的重算或跨文本解释保留原件的对象与限制。"
+        }
+      ],
+      "premiseIds": [
+        "cl-cml-toy-balance",
+        "cl-cml-response-question"
+      ],
+      "conceptIds": [
+        "cn-cml-diagnosis-response"
+      ],
+      "caveats": [],
+      "reasoning": "沿具体研究任务比较输入、动作、产出和返回条件；原例的计算、取舍、技术可行性和实际实施分别有证据边界，不从阶段名称、时间先后或数值一致推出普遍等价。",
+      "textTemplate": "在同一假想模型中，铝产出系数的归一化局部响应重算为 {{evaluated.processDiagnosis.sensitivity.aluminiumOutputElasticity.fixed3}}，与原表该项的显示值相合。它表示：在原状态附近，若保持每组投入不变，把铝活动的产出系数——每组产出的铝量——提高一个很小的百分比，所选固废总量下降的百分比约为其1.973倍。电力仍是主要的直接废物来源，最突出的参数响应却出现在铝生产的产出项。二者并不矛盾，因为它们问的是不同问题。"
+    },
+    {
+      "id": "cl-cml-finite-response",
+      "kind": "calculation",
+      "scope": "固定服务下单一铝产出系数的有限变化与局部近似",
+      "evidenceIds": [
+        "ev-cml-1992-part1-sandwich-inventory",
+        "ev-cml-1992-part1-sandwich-sensitivity",
+        "ev-kb52-cml1992-backgrounds-marginal-redesign"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-cml-1992-part1-sandwich-inventory",
+          "relation": "context",
+          "rationale": "表 2.3 列出四个联结过程与功能单位对应的经济流量。电力与铝互为投入，按联立平衡计算活动量后汇总环境干预。 本段的重算或跨文本解释保留原件的对象与限制。"
+        },
+        {
+          "evidenceId": "ev-cml-1992-part1-sandwich-sensitivity",
+          "relation": "context",
+          "rationale": "该例选取固废作为响应。绝对值最大的归一化边际响应对应铝生产的产出参数，作者以 1% 的小幅变化说明其含义。 本段的重算或跨文本解释保留原件的对象与限制。"
+        },
+        {
+          "evidenceId": "ev-kb52-cml1992-backgrounds-marginal-redesign",
+          "relation": "context",
+          "rationale": "边际矩阵提示对选定输出影响较大的参数。实际调整燃烧温度会同时改变其他投入或排放，增设烟气洗涤会改变过程网络，所以设计方案须重建并与原设计比较。 本段的重算或跨文本解释保留原件的对象与限制。"
+        }
+      ],
+      "premiseIds": [
+        "cl-cml-relative-response"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "重建选定参数的响应，未宣称原边际矩阵所有条目均按最近显示位舍入；原始软件未执行。",
+        "原句使用total volume of waste，而所选原表及模型以kg计；未提供密度/体积换算。本段重算的是模型质量变化，原句措辞单独保留。"
+      ],
+      "reasoning": "沿具体研究任务比较输入、动作、产出和返回条件；原例的计算、取舍、技术可行性和实际实施分别有证据边界，不从阶段名称、时间先后或数值一致推出普遍等价。",
+      "textTemplate": "服务需求仍为 {{evaluated.processDiagnosis.serviceBags.exact}} 个袋，其他系数不变，只把铝活动的产出系数从 {{evaluated.processDiagnosis.sensitivity.baselineAluminiumOutput.exact}} kg/组提高到 {{evaluated.processDiagnosis.sensitivity.changedAluminiumOutput.exact}} kg/组，再求解一次。固废成为约 {{evaluated.processDiagnosis.sensitivity.finiteWasteKg.fixed3}} kg，相对原值变化 {{evaluated.processDiagnosis.sensitivity.finiteWasteChangePercent.fixed3}}%；局部近似则给出 {{evaluated.processDiagnosis.sensitivity.localWasteChangePercent.fixed3}}%。原文随后用“total volume of waste”一语说约减少 {{input.facts.reportedWasteDecreasePercent.value}}%；前述模型以kg计，这里重算质量，未另做体积换算。原句没有说明数值处理方式。有限改动与切线近似各有自己的结果，不能把二者相近当成同一个计算。"
+    },
+    {
+      "id": "cl-cml-solvent-bins",
+      "kind": "calculation",
+      "scope": "两个原表点值与EPA基本分档及实际分数的对应",
+      "evidenceIds": [
+        "ev-kb52-cml1992-guide-pocp-factors",
+        "ev-kb52-epa1994-p2-pocp-bins",
+        "ev-kb52-epa1994-p2-pocp-scores",
+        "ev-kb52-epa1994-p2-solvent-factors"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb52-cml1992-guide-pocp-factors",
+          "relation": "context",
+          "rationale": "原始CML表的丙酮、甲苯及甲烷POCP点值与范围。 本段的重算或跨文本解释保留原件的对象与限制。"
+        },
+        {
+          "evidenceId": "ev-kb52-epa1994-p2-pocp-bins",
+          "relation": "context",
+          "rationale": "EPA筛查对POCP使用五个印刷分档。甲烷列在9分示例，不是Table 5分。 本段的重算或跨文本解释保留原件的对象与限制。"
+        },
+        {
+          "evidenceId": "ev-kb52-epa1994-p2-pocp-scores",
+          "relation": "context",
+          "rationale": "EPA原表报告丙酮POCP分5、甲苯分3。 本段的重算或跨文本解释保留原件的对象与限制。"
+        },
+        {
+          "evidenceId": "ev-kb52-epa1994-p2-solvent-factors",
+          "relation": "context",
+          "rationale": "EPA报告把Guide 9266作为其溶剂评分所涉表征数值的来源入口之一，自行定义分档与汇总；背景报告另列于书目。 本段的重算或跨文本解释保留原件的对象与限制。"
+        }
+      ],
+      "premiseIds": [
+        "cl-cml-factor-meaning",
+        "cl-cml-reception-question"
+      ],
+      "conceptIds": [],
+      "caveats": [],
+      "reasoning": "沿具体研究任务比较输入、动作、产出和返回条件；原例的计算、取舍、技术可行性和实际实施分别有证据边界，不从阶段名称、时间先后或数值一致推出普遍等价。",
+      "textTemplate": "EPA说明实际溶剂的POCP评分直接取自其分档表所列示例。再用Guide的点值反查，丙酮为 {{input.facts.acetoneCentral.value}}，甲苯为 {{input.facts.tolueneCentral.value}}。放入EPA自己的区间，前者落在0.051—0.500档，得到 {{evaluated.epaScreening.selected.acetone.recomputedCentralScore}} 分；后者落在0.501—0.999档，得到 {{evaluated.epaScreening.selected.toluene.recomputedCentralScore}} 分。EPA实际溶剂表也分别报告 {{evaluated.epaScreening.selected.acetone.printedScore}} 和 {{evaluated.epaScreening.selected.toluene.printedScore}} 分。这一对照表明两项Guide点值与EPA所用分档相容，仍不能确定作者具体取了哪一精度的原始数值，也不证明所有条目都由同一来源唯一抄入。"
+    },
+    {
+      "id": "cl-cml-range-bins",
+      "kind": "calculation",
+      "scope": "甲苯源范围与EPA基本分档；无概率或场地修正",
+      "evidenceIds": [
+        "ev-kb52-cml1992-guide-pocp-factors",
+        "ev-kb52-cml1992-guide-pocp-reference",
+        "ev-kb52-epa1994-p2-pocp-bins"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb52-cml1992-guide-pocp-factors",
+          "relation": "context",
+          "rationale": "原始CML表的丙酮、甲苯及甲烷POCP点值与范围。 本段的重算或跨文本解释保留原件的对象与限制。"
+        },
+        {
+          "evidenceId": "ev-kb52-cml1992-guide-pocp-reference",
+          "relation": "context",
+          "rationale": "乙烯相对空气排放因子、情景时间范围和来源说明。 本段的重算或跨文本解释保留原件的对象与限制。"
+        },
+        {
+          "evidenceId": "ev-kb52-epa1994-p2-pocp-bins",
+          "relation": "context",
+          "rationale": "EPA筛查对POCP使用五个印刷分档。甲烷列在9分示例，不是Table 5分。 本段的重算或跨文本解释保留原件的对象与限制。"
+        }
+      ],
+      "premiseIds": [
+        "cl-cml-solvent-bins"
+      ],
+      "conceptIds": [],
+      "caveats": [],
+      "reasoning": "沿具体研究任务比较输入、动作、产出和返回条件；原例的计算、取舍、技术可行性和实际实施分别有证据边界，不从阶段名称、时间先后或数值一致推出普遍等价。",
+      "textTemplate": "点值相合还没有保留原资料的全部含义。Guide给甲苯列出的范围是 {{input.facts.tolueneLow.value}}—{{input.facts.tolueneHigh.value}}；低端会落入 {{evaluated.epaScreening.selected.toluene.recomputedLowScore}} 分档，高端则在 {{evaluated.epaScreening.selected.toluene.recomputedHighScore}} 分档。一个固定筛查分因此没有表达原表全部情景差别。这不是分数具有某种概率分布的证明：原范围的场景与天数说明，不等于抽样概率或置信区间。"
+    },
+    {
+      "id": "cl-cml-methane-counter",
+      "kind": "calculation",
+      "scope": "甲烷CML点值与EPA分档示例的未解释不合",
+      "evidenceIds": [
+        "ev-kb52-cml1992-guide-pocp-factors",
+        "ev-kb52-epa1994-p2-pocp-bins"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb52-cml1992-guide-pocp-factors",
+          "relation": "context",
+          "rationale": "原始CML表的丙酮、甲苯及甲烷POCP点值与范围。 本段的重算或跨文本解释保留原件的对象与限制。"
+        },
+        {
+          "evidenceId": "ev-kb52-epa1994-p2-pocp-bins",
+          "relation": "context",
+          "rationale": "EPA筛查对POCP使用五个印刷分档。甲烷列在9分示例，不是Table 5分。 本段的重算或跨文本解释保留原件的对象与限制。"
+        }
+      ],
+      "premiseIds": [
+        "cl-cml-factor-meaning"
+      ],
+      "conceptIds": [],
+      "caveats": [],
+      "reasoning": "沿具体研究任务比较输入、动作、产出和返回条件；原例的计算、取舍、技术可行性和实际实施分别有证据边界，不从阶段名称、时间先后或数值一致推出普遍等价。",
+      "textTemplate": "甲烷还给出一个对不上的例子。Guide点值为 {{input.facts.methaneCentral.value}}，按照EPA的0.006—0.050档应得 {{evaluated.epaScreening.selected.methane.recomputedCentralScore}} 分；EPA却把甲烷写在≤0.005的 {{evaluated.epaScreening.selected.methane.printedScore}} 分示例中。甲烷在这里仅是分档说明的示例；前述实际溶剂表中的丙酮和甲苯分数，属于另一类证据。所读段落没有解释差别的原因，因此不能把两个溶剂的相符扩展成全部示例的统一来源证明。"
+    }
+  ]
+}

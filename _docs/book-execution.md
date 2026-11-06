@@ -287,3 +287,38 @@ Windows now requires CPython3.13+ before path creation. Windows/Linux native and
 actual Windows ACL qualification remain open. The static adapter does not launch
 native code. All 258 repository tests and type checking passed at this candidate
 stage; final rendered, CI, Main/live and exact-root receipts continue in Issue50.
+
+
+## From native exchange delivery to original CML framework formation
+
+The [native exchange chapter](https://prism.tiangong.earth/docs/book/exchange-semantics-and-conversion/) completed source and exact workspace delivery through [PR51](https://github.com/tiangong-lca/knowledge-base/pull/51), Main `eae08067c263e2222f72528b21a1b8e72599de14`, and [workspace PR2252](https://github.com/tiangong-lca/workspace/pull/2252), Main `6db49937be5795cc4552492a39876ba5d80929d1`. Final root receipt `finish_NyeymOas2eZx5oPT4lHnGMSv` verifies delivery complete with one completed source handoff and no remaining mirrors, following source integration projection `projection_C8Z6BWkjYksI19vKyaD7jjWv`. Both source Issue/PR integration fields are Done; programme9 remains In Progress.
+
+All 258 tests, types, source/root CI, governance and actual publication checks passed within their scope. The live clean source serves 43 canonical paragraphs, 43 notes and 135 citation occurrences; 17 hosted artifact hashes, actual input/source/reproduction/navigation/print checks and ten viewport/theme pairs passed. Distinct build/transport identifiers do not imply byte-identical local/host HTML. Original root and Knowledge Base are synchronized; 23 peer physical states and 17 pre-existing indicators were preserved. Owned previews/browser pages are closed, and 28 duplicate derived databases were released with evidence retained; four qualified inspection trees and private originals/runtime/review records remain for audit. The retained JRC and format discrepancies are findings, not incomplete reporting or claims of empirical validity.
+
+A fresh independent whole-programme audit selected [Issue52](https://github.com/tiangong-lca/knowledge-base/issues/52) for V2-02/V2-06 because two original 1992 CML delivery routes now return PDF signatures. The [protocol](research-waves/2026-11-06-cml-framework-formation.md) records the metadata-only screening and source-identity, rights, argument, comparison and reception gates before full acquisition/close reading. It extends the existing report-set and 2001 reading identities and keeps the 2002 handbook, source restrictions, ISO authorization, SETAC/Nordic and wider programme gaps distinct. No new historical conclusion is established at this startup milestone.
+
+Issue52 now holds the original English Guide and Backgrounds under the existing
+B01 report-set identity. Their title date, undated English preface, institutional
+carrier, actual selected reading and conditional reuse policy are separate. The
+2001 Scientific Background and an original EPA1994 screening report add distinct
+version and reception evidence. The requested later passages were checked in
+normal read-only PDF viewing without changing copy or print restrictions.
+
+The source comparison now follows trade-off judgment, reliability/validity,
+contribution and local sensitivity, engineering feasibility and re-comparison.
+Independent exact arithmetic recovers selected relationships in the original
+fictitious process model while retaining a printed determinant discrepancy. A
+separate original factor-to-screening comparison has two matches and a concrete
+counterexample. These are bounded source and calculation findings. Manuscript,
+source/reader assessment, rendered publication and exact delivery remain in
+Issue52, while the complete eight-volume and appendix programme stays open.
+
+The CML candidate now has44 connected paragraphs and10 input-bound passages.
+Independent source and code assessments corrected attribution, the earlier dual
+use of local response, separate operational checks and exact citation identity.
+A fresh local-app reader assessment and focused follow-up clarified per-activity
+output, historical terminology and the distinction between documented scoring
+and the author's reconstruction. Main retained the unresolved wording difference
+between the two1992 volumes without assigning an unverified author intention.
+All265 tests and types pass. Current Main/live/root qualification remains in
+Issue52; these reviews do not complete the book or certify empirical effects.

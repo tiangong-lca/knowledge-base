@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import { cmlFrameworkExamplesInputShape, validateCmlFrameworkExamplesCase, evaluateCmlFrameworkExamplesCase, validateCmlFrameworkExamplesFacts } from './cml-framework-examples.mjs';
 import { readdir, readFile, lstat } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { isDeepStrictEqual } from 'node:util';
@@ -96,6 +97,8 @@ const pedigreeInputShape = {
 // Closed model registry: a case identity selects its projection, evaluator and
 // numeric-source policy together. An input flag cannot disable wall fact checks.
 const caseAdapters = new Map([
+  ['CASE-CML-FRAMEWORK-EXAMPLES', { shape: cmlFrameworkExamplesInputShape, validate: validateCmlFrameworkExamplesCase,
+    context: input => ({ evaluated: evaluateCmlFrameworkExamplesCase(input) }), validateFacts: validateCmlFrameworkExamplesFacts }],
   ['CASE-NATIVE-EXCHANGE', { shape: nativeExchangeInputShape, validate: validateNativeExchangeCase,
     context: input => ({ evaluated: evaluateNativeExchangeCase(input) }), validateFacts: validateNativeExchangeFacts }],
   ['CASE-POWER', { shape: electricityServiceInputShape, validate: validateElectricityServiceCase,
