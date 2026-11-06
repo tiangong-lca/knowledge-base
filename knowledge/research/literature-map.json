@@ -4365,6 +4365,27 @@
         "date": "2026-11-06",
         "channel": "本地原始源码档案与发行源码 JAR",
         "query": "逐成员核对 CalculationSetup、产品系统图、JSON-LD、eILCD 普通路径和因子矩阵；分别核对 olca-ilcd 3.1.0 的 XML 绑定与 ZIP 定位。"
+      },
+      {
+        "id": "q-kb52-cml-1992-guide-identity-rights-2026-11-06",
+        "date": "2026-11-06",
+        "channel": "公开 Web 英文检索，Leiden Part I 条目及机构库政策",
+        "query": "Leiden University Scholarly Publications repository terms use full text copyright download reuse site:universiteitleiden.nl\nHeijungs Environmental life cycle assessment of products guide 90-5191-064-9 9266 NOH original Heijungs guide October 1992 report number\nsite:library.universiteitleiden.nl Scholarly Publications terms copyright Leiden repository use download documents\nsite:scholarlypublications.universiteitleiden.nl copyright disclaimer terms use personal study scholarly publications Leiden\nLeiden University Libraries digital collections conditions use Leiden repository copyright all rights reserved\nLeiden Scholarly Publications Leiden repository open access publication disclaimer copyright repository access file Terms of Use Leiden publication scholarlypublications\nsite:library.universiteitleiden.nl \"Scholarly Publications\" repository Leiden website migration open access\nsite:universiteitleiden.nl \"1887/8061\" Leiden Heijungs 9266 library",
+        "note": "八条实际检索串，未加语言或日期过滤，未翻页。补查报告号和机构使用条件。由 Leiden Part I 条目进入机构库 About 页面及 Repository policy。部分旧链接和 Primo 页面未在 Web 工具打开，正式下载由单独获取记录证明。"
+      },
+      {
+        "id": "q-kb52-cml1992-backgrounds-original-2026-11-06",
+        "date": "2026-11-06",
+        "channel": "Leiden公开机构下载直连；Web检索；作者书目定向点击；Leiden Library通用条款PDF直连",
+        "query": "Leiden University Scholarly Publications reuse copyright rights terms open access publications Leiden repository terms；site:library.universiteitleiden.nl Scholarly Publications \"reuse\" copyright repository Leiden University；site:scholarlypublications.universiteitleiden.nl 1887/8062 Environmental life cycle assessment of products Heijungs 1992 copyright；\"Environmental life cycle assessment of products\" \"Backgrounds\" \"NOH\" 1992 Heijungs English ISBN",
+        "note": "任务协议先记Leiden Primo将1887/8062映射为英文Part II，以及8字节PDF探测。协议后主代理沿机构download入口完整取得HTTP200、34,442,631字节。后续核对英文与荷兰文书目、原件题叶及通用条款。Web工具未打开当前单品页；这与已取得的原件扫描是不同路径的结果。"
+      },
+      {
+        "id": "q-kb52-later-cml-reception-2026-11-06",
+        "date": "2026-11-06",
+        "channel": "公开Web检索、机构PDF文本、NEPIS原始扫描",
+        "query": "site:universiteitleiden.nl Scientific background operational guide Part 3 CML 2001 Guinée；EPA 600 R 94 157 Tolle Vigon lithographic printing 300038IE",
+        "note": "原始载体与后继书目分开；保护PDF使用机构公开文本，NEPIS影像按页核查。"
       }
     ],
     "limitations": [
@@ -4388,7 +4409,7 @@
     {
       "id": "lit-b01",
       "title": "Environmental Life Cycle Assessment of Products, I: Guide / II: Backgrounds",
-      "contributors": "Heijungs et al.; complete contributor roles pending original title leaves",
+      "contributors": "R. Heijungs（final editor）；J.B. Guinée、G. Huppes、R.M. Lankreijer、H.A. Udo de Haes、A. Wegener Sleeswijk（CML）；A.M.M. Ansems、P.G. Eggels（TNO）；R. van Duin、H.P. de Goede（B&G）",
       "year": "1992",
       "kind": "report-set",
       "goalSeedIds": [
@@ -4402,9 +4423,37 @@
         {
           "url": "https://sites.google.com/vu.nl/reinoutheijungs/publications",
           "role": "作者书目"
+        },
+        {
+          "url": "https://scholarlypublications.universiteitleiden.nl/handle/1887/8061",
+          "role": "Part I 机构书目与存档标记"
+        },
+        {
+          "url": "https://scholarlypublications.universiteitleiden.nl/download/1887/8061/1?col=81522199420002711",
+          "role": "Part I 英文原报告公开下载"
+        },
+        {
+          "url": "https://www.library.universiteitleiden.nl/binaries/content/assets/ul2ub/research--publish/about-scholarly-publications/repository-policy.pdf",
+          "role": "机构库一般使用条件"
+        },
+        {
+          "url": "https://scholarlypublications.universiteitleiden.nl/download/1887/8062/1?col=81522199420002711",
+          "role": "official-original-scan-part2"
+        },
+        {
+          "url": "https://sites.google.com/vu.nl/reinoutheijungs/publications/books",
+          "role": "编者书目及英语分册路由"
         }
       ],
-      "identifiers": {},
+      "identifiers": {
+        "isbn": "90-5191-064-9",
+        "report": "NOH 9266（Guide）、9267（Backgrounds），见书目",
+        "discoveryRecord": "Leiden handles 1887/8061（Guide）、1887/8062（Backgrounds）",
+        "manifestationNote": "英文译本，两分册题叶署 October 1992。英文序言回顾 1993 年 4 月，实际刊印日期未核实。荷兰文版为不同载体。",
+        "englishNohReportSet": "9266 + 9267（编者书目）",
+        "part2Handle": "1887/8062",
+        "part2Alma": "Alma9940742951302711"
+      },
       "volumes": [
         "V1",
         "V2",
@@ -4427,25 +4476,31 @@
       ],
       "discovery": {
         "queryIds": [
-          "Q-SEED-IMPORT"
+          "Q-SEED-IMPORT",
+          "q-kb52-cml-1992-guide-identity-rights-2026-11-06",
+          "q-kb52-cml1992-backgrounds-original-2026-11-06"
         ],
-        "reason": "Inherited candidate register §11; retained for work-level discovery, not upgraded to passage evidence. V1、V2、V3、V5",
+        "reason": "承接B01及后继指南/作者书目。Leiden原始英文报告集两部件现分别固定载体与选段；2001修订和1994外部筛查接受以独立作品及实际引用位置登记。",
         "citationParents": [
           "lit-com-17"
         ]
       },
-      "identityStatus": "partial",
-      "accessStatus": "metadata-only",
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
       "readingStatus": "not-close-read",
-      "accessedAt": "2026-11-03",
-      "lastCheckedAt": "2026-11-03",
-      "rights": "Third-party sources retain their rights. Bibliographic facts and original project annotations are published here; source text, figures, datasets and software are not relicensed. Full-text access or borrowing does not grant redistribution permission. No source-specific open reuse license was verified in the inherited seed check.",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
+      "rights": "版权页 © Centre of Environmental Science, Leiden 1992。Leiden Scholarly Publications 通用存档条款规定，完整署名且保持原样的副本通常可用于个人研究、教学或非营利用途，并可有条目专门条件。未核实本报告专门开放再利用许可。本书仅发布原创释义、必要事实与定位。",
       "limitations": [
-        "后继资料及作者书目核对；原始两卷报告未阅读全文，原始载体仍需取得",
-        "Historical metadata/abstract/partial-page check inherited from 2026-11-03; original search strings and a complete access log were not recorded in the seed register.",
-        "Volume/region/tradition tags are provisional editorial discovery strata, not evidence of intellectual origin, influence or coverage."
+        "英译报告集两卷属于同一研究。取得原始机构载体，登记实际核读的选段，未通读全书。英语前言回顾1993年4月事件，英译本确切刊行日未核定。",
+        "荷兰文原版未核读。英语报告NOH号由编者书目与外部参考文献佐证，原件印出的是项目合同号。",
+        "继承的初轮元数据检查未保留完整历史检索日志；本轮有实际机构载体的取得和选段阅读记录。",
+        "领域和地区标签用于导航，未证明方法起源、采用范围或覆盖完整性。"
       ],
-      "catalogSourceIds": []
+      "catalogSourceIds": [
+        "src-book-cml-1992-part1",
+        "src-book-cml-1992-backgrounds"
+      ]
     },
     {
       "id": "lit-b02",
@@ -8517,6 +8572,10 @@
         {
           "url": "https://www.universiteitleiden.nl/binaries/content/assets/science/cml/publicaties_pdf/new-dutch-lca-guide/part1.pdf",
           "role": "official-publication"
+        },
+        {
+          "url": "https://www.universiteitleiden.nl/binaries/content/assets/science/cml/publicaties_pdf/new-dutch-lca-guide/part3.pdf",
+          "role": "official-publication-part3"
         }
       ],
       "identifiers": {},
@@ -8560,7 +8619,8 @@
       ],
       "catalogSourceIds": [
         "src-book-cml-2001-part2a",
-        "src-book-cml-2001-part1"
+        "src-book-cml-2001-part1",
+        "src-kb52-cml-2001-part3"
       ]
     },
     {
@@ -17775,6 +17835,65 @@
         "src-kb50-olca-parser-zip",
         "src-kb50-olca-parser-iterate",
         "src-kb50-olca-parser-directory"
+      ]
+    },
+    {
+      "id": "work-kb52-epa-1994-lithographic-p2",
+      "title": "Development of a Pollution Prevention Factors Methodology Based on Life-Cycle Assessment: Lithographic Printing Case Study",
+      "contributors": "D. A. Tolle；B. W. Vigon；J. R. Becker；M. A. Salem（Battelle）",
+      "year": "1994",
+      "kind": "institutional-report",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://nepis.epa.gov/Exe/ZyPDF.cgi/300038IE.PDF?Dockey=300038IE.PDF",
+          "role": "official-original-scan"
+        }
+      ],
+      "identifiers": {
+        "report": "EPA/600/R-94/157",
+        "nepis": "300038IE"
+      },
+      "volumes": [
+        "V2",
+        "V5",
+        "V7"
+      ],
+      "topics": [
+        "原始资料接受",
+        "工业筛查",
+        "POCP"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "United States"
+      ],
+      "traditions": [
+        "US EPA/Battelle"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-kb52-later-cml-reception-2026-11-06"
+        ],
+        "reason": "同期EPA报告直接引用1992指南的表征资料，同时另建筛查规则。",
+        "citationParents": [
+          "lit-b01",
+          "work-epa-1993-inventory-guide"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
+      "rights": "美国EPA刊行的承包研究。公开机构扫描、经该机构审查与批准刊行均不证明全部内容可再分发。本仓仅发表原创释义、必要事实与定位。",
+      "limitations": [
+        "只核读选段；详见阅读记录。"
+      ],
+      "catalogSourceIds": [
+        "src-kb52-epa-1994-lithographic-p2"
       ]
     }
   ],
