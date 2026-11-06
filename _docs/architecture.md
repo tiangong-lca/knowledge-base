@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-06
-lastReviewedCommit: 869af981fbec9eb04ab24e21bf24b956e68335f3
+lastReviewedCommit: 4bb17bce16dcafa3fcf13d774d08229659c6be7c
 ---
 
 # Publication architecture
@@ -153,7 +153,9 @@ The closed registry in `case-publication.mjs` selects each known case's nested p
 
 The standard Fumadocs DocsLayout owns document navigation, sidebar, TOC, search/theme controls and mobile menu. HomeLayout supplies the other public routes. Theme/brand tokens follow the owning docs site; homepage72rem sizing does not constrain the document grid. No extra42rem prose cap or second document header/mobile index is added. Chinese translations and the existing local knowledge search corpus are retained without adding an external search service.
 
-`lib/reader-book.ts` derives chapter order from the same page tree as the sidebar. `scripts/reader-book.mjs` creates one note plan per complete MDX source, ignoring code/comment examples. `ChapterContent` injects paragraph components with one local reference marker, then appends reader annotations. `ClaimAnnotation` supplies source locations, scope and material caveats without execution logs or visible database keys. Print reuses the renderer with unique prefixes and demoted section headings. Reader appendix pages expose bibliography, citations and conceptual navigation; technical build/research histories stay in `_docs/`.
+Current implementation: `lib/reader-book.ts` derives chapter order from the same page tree as the sidebar. `scripts/reader-book.mjs` creates one note plan per complete MDX source, ignoring code/comment examples. `ChapterContent` injects paragraph components with one local reference marker, then appends reader annotations. `ClaimAnnotation` supplies source locations, scope and material caveats without execution logs or visible database keys. Print reuses the renderer with unique prefixes and demoted section headings. Reader appendix pages expose bibliography, citations and conceptual navigation; technical build/research histories stay in `_docs/`.
+
+Planned monograph migration (user requirement, 2026-11-06; not implemented here): the website may keep fine navigation while a separately curated book structure supplies parts, chapters, formal sections and print order. Both must reference shared canonical prose/claims/evidence/cases rather than fork their scientific content. The full old-to-new map must preserve all 37 chapters and five supplements and stable citation identities. Note plans must follow assembled book chapter boundaries, not merely concatenate per-MDX note sequences. Validate actual ordering, unique anchors, numbering, links, search behavior, old editions and print hierarchy when implementing. The goal and reader contract define editorial requirements; this paragraph does not claim a new runtime or schema already exists.
 
 `reader-bibliography.mjs` exports schemaVersion2 / reader-bibliography: bibliographic sources, cited evidence and exact cited passage/carrier identity. Both `/downloads/bibliography.json` and the retained `/downloads/research.json` URL return identical curated bytes; the latter no longer exposes the schema1 research workbench. Queries, gaps, editorial revisions and workflow states remain in repository research/development records. Public catalog provenance remains separately available, with its actual review kind unchanged. The AI reading index links the book and bibliography, not execution records.
 

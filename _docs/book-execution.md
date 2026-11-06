@@ -28,6 +28,18 @@ This supersedes the prior design-only gate. S1–S6 research, source-grounded wr
 
 Coordination: [knowledge-base #9](https://github.com/tiangong-lca/knowledge-base/issues/9). It remains open across research waves; an individual merged wave never proves the whole book complete.
 
+## 2026-11-06 pause and monograph amendment
+
+The user paused the full programme and then explicitly asked to incorporate the supplied monograph-editing requirements into the entire goal. The prior research/writing scope remains approved but execution stays paused. [Issue #56](https://github.com/tiangong-lca/knowledge-base/issues/56) owns this bounded goal/contract amendment; it does not restart research, rewrite public chapters, alter runtime navigation or complete climate source #54's pending workspace integration. Its reviewable source change is prepared for later merge/integration when execution resumes.
+
+The amended goal requires a whole-book argument and continuous authored prose; single-volume priority with 6–8 parts and 24–32 chapters; the detailed title/section constraints; explicit preservation and mapping of all 37 chapters and five supplements; concise front matter; a justified destination for supplements; and independent website/book organization sharing canonical content. Eight research domains and twelve appendix responsibilities are preserved. The exact baseline is in `editorial/2026-11-06-monograph-baseline.md`. No new TOC, mapping destinations, prose rewrite or renderer migration has been completed by this amendment.
+
+After explicit resume, first deliver goal §2.12's argument, recommended complete TOC, two alternatives, full mapping, risks and self-checks. Then implement coherent chapter transitions and prose, select research by remaining argument/evidence gaps, and qualify actual website/book publication behavior. Scope-preserving work needs no new round-by-round outline approval. Source delivery and root integration remain separate; programme #9 stays open.
+
+Validation of this documentation amendment: an independent agent checked all 42 baseline entries against the exact Main source, all 91 unchanged P/V/A research rows, front-matter identities and added local links. Its two material findings (a stale immediate-execution instruction and unconditional volume-level apparatus) were repaired and rechecked with no remaining material inconsistency in scope. Main independently confirmed row preservation and documentation-only changes; `pnpm build` (including content validation/static export), scoped enforced Docpact and strict configuration validation passed. These checks do not qualify a new manuscript, book structure, live publication or whole-book completion. No preview server, container, volume or network was created; the existing validation worktree, installed dependencies and build outputs are deliberately retained for the paused handoff.
+
+The dated wave entries below retain their historical wording and then-current status. References there to an “eight-volume” mission preserve research coverage, not the current physical book form; current execution status is the pause recorded above.
+
 ## First wave
 
 Executable task: [knowledge-base #10](https://github.com/tiangong-lca/knowledge-base/issues/10).
