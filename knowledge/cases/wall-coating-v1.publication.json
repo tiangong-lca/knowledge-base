@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "inputFile": "wall-coating-v1.json",
   "approvedInputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
-  "reviewedAt": "2026-11-04",
+  "reviewedAt": "2026-11-06",
   "reviewKind": "agent-source-check",
   "claims": [
     {
@@ -224,7 +224,9 @@
       "evidenceIds": [
         "ev-ipcc-ar6-2025-co2-gwp100",
         "ev-ipcc-ar6-2025-fossil-ch4-gwp100",
-        "ev-ipcc-ar6-methane-accounting"
+        "ev-ipcc-ar6-methane-accounting",
+        "ev-kb54-ipcc-ar6-errata-table-7-15",
+        "ev-kb54-ipcc-ar6-feedback-methane-budget"
       ],
       "evidenceLinks": [
         {
@@ -241,6 +243,16 @@
           "evidenceId": "ev-ipcc-ar6-methane-accounting",
           "relation": "qualifies",
           "rationale": "Chapter 7 选读的甲烷氧化处理限定化石甲烷表征，避免在此另加同一氧化贡献。"
+        },
+        {
+          "evidenceId": "ev-kb54-ipcc-ar6-errata-table-7-15",
+          "relation": "supports",
+          "rationale": "原始PDF对应选段确认所引定义、因子或碳核算条件；不把原文字快照改称PDF，也不改变原案例输入及计算版本。"
+        },
+        {
+          "evidenceId": "ev-kb54-ipcc-ar6-feedback-methane-budget",
+          "relation": "supports",
+          "rationale": "原始PDF对应选段确认所引定义、因子或碳核算条件；不把原文字快照改称PDF，也不改变原案例输入及计算版本。"
         }
       ],
       "premiseIds": [
@@ -251,7 +263,7 @@
       "conceptIds": [],
       "mappingIds": [],
       "caveats": [
-        "因子引自官方文档的派生文字摘录；原始 PDF 字节及表格图像未对照。",
+        "引文保留原案例所用文字摘录的历史身份；同条注释另列原始报告或更正表的对应选段，两者不是独立科学验证。",
         "所选版本不是所有报告框架的通用默认值；表中因子不确定性没有在这个单参数算例中传播。"
       ],
       "reasoning": "将两个有版本和物质身份的源值与本例两行清单对应；载体接受决定不提升为原件视觉核查或实证验证。"

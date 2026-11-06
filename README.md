@@ -15,7 +15,7 @@ checkPaths:
   - "app/**"
   - "scripts/**"
 lastReviewedAt: 2026-11-06
-lastReviewedCommit: 1776bb5dc99ca36569b5ab7d3a598e2e3dce336a
+lastReviewedCommit: a9179bb08c3e09189e85cda3e707378442938143
 ---
 
 # LCA Living Knowledge Base and Review
@@ -57,7 +57,7 @@ This is an M1 main repository. The approved book programme is coordinated in [kn
 
 ## License
 
-Code is licensed under [MIT](LICENSE). Original narrative and knowledge records in `content/` and `knowledge/` are licensed under [CC BY-NC-SA 4.0](LICENSE-content), attributed to TianGong LCA Knowledge Base contributors. Commercial use of original knowledge content requires separate authorization from the relevant rights holders. Third-party sources retain their own licenses and applicable authorization conditions; a citation does not relicense the source or authorize full-text redistribution. See source-specific rights and preservation notes.
+Code is licensed under [MIT](LICENSE). Original narrative and knowledge records in `content/` and `knowledge/`, and original figures in `public/book-figures/`, are licensed under [CC BY-NC-SA 4.0](LICENSE-content), attributed to TianGong LCA Knowledge Base contributors. Commercial use of original knowledge content requires separate authorization from the relevant rights holders. Third-party sources retain their own licenses and applicable authorization conditions; a citation does not relicense the source or authorize full-text redistribution. See source-specific rights and preservation notes.
 
 ## Approved book programme
 
@@ -106,3 +106,13 @@ evaluate its arithmetic without executing AVERT. The optional [offline replay
 instructions](_docs/reproduction/electricity/README-electricity-native.md) use
 pinned historical code and dependencies in private directories, with no change
 to the site's runtime. Use `node scripts/impact.mjs CASE-POWER` for dependent prose.
+
+
+The climate chapter `/docs/book/climate-response-and-metrics/` distinguishes
+pulse response, reference metrics, corrected factor versions, dated inventories
+and historical emission-rate inputs. `climate-metrics-v1` binds thirty original
+PDF facts, an unchanged wall-case parent and selected native observations to its
+public input. Static builds perform only the disclosed reconstruction and
+arithmetic. The optional [historical native replay](
+_docs/runbooks/reproduce-climate-native.md) is a separate Python entrypoint and
+does not reproduce the 2025 correction or establish empirical climate validity.

@@ -26410,6 +26410,63 @@
         "A08",
         "A09"
       ]
+    },
+    {
+      "id": "rev-kb54-climate-response-reference",
+      "before": "V5-03A尚无从原始大气响应到指标分母的完整专题；墙面案例依赖指定派生文本。",
+      "after": "新增气候专题，分别说明脉冲响应、强迫积分、温度卷积、参考及实际原件/更正。旧截取和版本身份保留。",
+      "reasoning": "原始参数和计算显示，同一单位标签不能省略量的定义；选定原生重建只资格化自己的历史输入和网格。",
+      "status": "applied; source and mathematical inspection complete; independent manuscript/reader and delivery review pending",
+      "triggerPassageIds": [
+        "psg-kb54-joos-fit",
+        "psg-kb54-ipcc-ar6-pulse-metric-definitions",
+        "psg-kb54-ipcc-ar6-sm-pulse-equations"
+      ],
+      "affectedUnits": [
+        "V5-03A",
+        "V5-04",
+        "A05",
+        "A06",
+        "A07"
+      ]
+    },
+    {
+      "id": "rev-kb54-climate-version-and-budget",
+      "before": "读者可看到单个气候因子，但出版表、补充表、校正和甲烷碳收支的不同资格缺少相连解释。",
+      "after": "以固定清单/脉冲对照显示版本与指标的关系，区分通用、化石及非化石甲烷行；较晚文献仍须查实际参数。",
+      "reasoning": "同名行与发表年份不足以确定因子；原文更正和实际实现必须分别绑定。",
+      "status": "applied; source and mathematical inspection complete; independent manuscript/reader and delivery review pending",
+      "triggerPassageIds": [
+        "psg-kb54-ipcc-ar6-errata-table-7-15",
+        "psg-kb54-ipcc-ar6-errata-table-7-sm-7",
+        "psg-kb54-zieger2025-supplement-version-and-kernels"
+      ],
+      "affectedUnits": [
+        "V5-03A",
+        "V7-05A",
+        "V7-05C",
+        "A07",
+        "A08"
+      ]
+    },
+    {
+      "id": "rev-kb54-climate-history-allocation",
+      "before": "静态脉冲、共同日历终点及变化率历史容易都被称为动态当量。",
+      "after": "显式区分日期脉冲叠加与历史排放率，并保留2019/2021原始争论的公式版本、物理近似与分配问题。",
+      "reasoning": "相同当前排放率可对应不同历史差分值；线性加总不决定历史责任或抵销资格。",
+      "status": "applied; source and mathematical inspection complete; independent manuscript/reader and delivery review pending",
+      "triggerPassageIds": [
+        "psg-kb54-cain-2019-gwp-star-equation",
+        "psg-kb54-rogelj-schleussner-2021-reply-version-and-framework",
+        "psg-kb54-zieger2025-dynamic-definitions"
+      ],
+      "affectedUnits": [
+        "V5-03A",
+        "V5-04",
+        "V6",
+        "A05",
+        "A10"
+      ]
     }
   ]
 }

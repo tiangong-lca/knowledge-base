@@ -1,0 +1,972 @@
+{
+  "caseId": "CASE-CLIMATE-METRICS",
+  "version": "1.0.0",
+  "model": "climate-metrics-v1",
+  "createdAt": "2026-11-06",
+  "status": "reviewed-teaching-case",
+  "sources": {
+    "src-kb54-joos2013": {
+      "sourceId": "src-kb54-joos2013",
+      "workId": "work-kb54-joos2013",
+      "readingId": "rd-kb54-joos2013",
+      "artifactId": "art-kb54-joos2013",
+      "sha256": "e7132499026cb7d6d1a6c25a7572b85c09c32f38a37112c7653518e54723a1e7",
+      "pageCount": 33
+    },
+    "src-kb54-ipcc-ar6-ch7-pdf": {
+      "sourceId": "src-kb54-ipcc-ar6-ch7-pdf",
+      "workId": "work-ipcc-ar6-wgi-ch7-2021",
+      "readingId": "rd-kb54-ipcc-ar6-ch7-pdf",
+      "artifactId": "art-kb54-ipcc-ar6-ch7-pdf",
+      "sha256": "470d2662fdd212421617a32c684e8106a4221a7235bdfff40a278eff02febfa9",
+      "pageCount": 132
+    },
+    "src-kb54-ipcc-ar6-errata-2025-10-07-pdf": {
+      "sourceId": "src-kb54-ipcc-ar6-errata-2025-10-07-pdf",
+      "workId": "work-ipcc-ar6-wgi-errata-2025-10-07",
+      "readingId": "rd-kb54-ipcc-ar6-errata-2025-10-07-pdf",
+      "artifactId": "art-kb54-ipcc-ar6-errata-2025-10-07-pdf",
+      "sha256": "3894b028c7df8b4791b1052f44eb4604aa502e1d4b99e19fa504aaf3014935b9",
+      "pageCount": 33
+    },
+    "src-kb54-ipcc-ar6-ch7-sm-pdf": {
+      "sourceId": "src-kb54-ipcc-ar6-ch7-sm-pdf",
+      "workId": "work-kb54-ipcc-ar6-wgi-ch7-sm-2021",
+      "readingId": "rd-kb54-ipcc-ar6-ch7-sm-pdf",
+      "artifactId": "art-kb54-ipcc-ar6-ch7-sm-pdf",
+      "sha256": "4290518ef9418a4157ddb9481e589131eeb110614c3aa7b62641d3241d39ce58",
+      "pageCount": 36
+    },
+    "src-kb54-cain-2019-gwp-star": {
+      "sourceId": "src-kb54-cain-2019-gwp-star",
+      "workId": "work-kb54-cain-2019-gwp-star",
+      "readingId": "rd-kb54-cain-2019-gwp-star",
+      "artifactId": "art-kb54-cain-2019-gwp-star-publisher-pdf",
+      "sha256": "739674197034938fb42fae93cf4280c86c39a5f6f66b7cb13b69bfc1922e4da8",
+      "pageCount": 7
+    }
+  },
+  "facts": {
+    "a0": {
+      "source": "src-kb54-joos2013",
+      "evidenceId": "ev-kb54-joos-fit",
+      "passageId": "psg-kb54-joos-fit",
+      "factId": "nf-kb54-a0",
+      "pdfIndex": 10,
+      "value": "0.2173",
+      "unit": "1",
+      "quantity": "多模型CO2响应拟合权重",
+      "subject": "Joos2013 PD100 multi-model mean IRFCO2 a0",
+      "basis": "Table5 IRFCO2行；100GtC、389ppm、0–1000yr；打印值作为重建输入。"
+    },
+    "a1": {
+      "source": "src-kb54-joos2013",
+      "evidenceId": "ev-kb54-joos-fit",
+      "passageId": "psg-kb54-joos-fit",
+      "factId": "nf-kb54-a1",
+      "pdfIndex": 10,
+      "value": "0.2240",
+      "unit": "1",
+      "quantity": "多模型CO2响应拟合权重",
+      "subject": "Joos2013 PD100 multi-model mean IRFCO2 a1",
+      "basis": "Table5 IRFCO2行；100GtC、389ppm、0–1000yr；打印值作为重建输入。"
+    },
+    "a2": {
+      "source": "src-kb54-joos2013",
+      "evidenceId": "ev-kb54-joos-fit",
+      "passageId": "psg-kb54-joos-fit",
+      "factId": "nf-kb54-a2",
+      "pdfIndex": 10,
+      "value": "0.2824",
+      "unit": "1",
+      "quantity": "多模型CO2响应拟合权重",
+      "subject": "Joos2013 PD100 multi-model mean IRFCO2 a2",
+      "basis": "Table5 IRFCO2行；100GtC、389ppm、0–1000yr；打印值作为重建输入。"
+    },
+    "a3": {
+      "source": "src-kb54-joos2013",
+      "evidenceId": "ev-kb54-joos-fit",
+      "passageId": "psg-kb54-joos-fit",
+      "factId": "nf-kb54-a3",
+      "pdfIndex": 10,
+      "value": "0.2763",
+      "unit": "1",
+      "quantity": "多模型CO2响应拟合权重",
+      "subject": "Joos2013 PD100 multi-model mean IRFCO2 a3",
+      "basis": "Table5 IRFCO2行；100GtC、389ppm、0–1000yr；打印值作为重建输入。"
+    },
+    "tau1": {
+      "source": "src-kb54-joos2013",
+      "evidenceId": "ev-kb54-joos-fit",
+      "passageId": "psg-kb54-joos-fit",
+      "factId": "nf-kb54-tau1",
+      "pdfIndex": 10,
+      "value": "394.4",
+      "unit": "yr",
+      "quantity": "多模型CO2响应拟合时间常数",
+      "subject": "Joos2013 PD100 multi-model mean IRFCO2 tau1",
+      "basis": "Table5 IRFCO2行；拟合模式不是独立物理过程寿命；打印值。"
+    },
+    "tau2": {
+      "source": "src-kb54-joos2013",
+      "evidenceId": "ev-kb54-joos-fit",
+      "passageId": "psg-kb54-joos-fit",
+      "factId": "nf-kb54-tau2",
+      "pdfIndex": 10,
+      "value": "36.54",
+      "unit": "yr",
+      "quantity": "多模型CO2响应拟合时间常数",
+      "subject": "Joos2013 PD100 multi-model mean IRFCO2 tau2",
+      "basis": "Table5 IRFCO2行；拟合模式不是独立物理过程寿命；打印值。"
+    },
+    "tau3": {
+      "source": "src-kb54-joos2013",
+      "evidenceId": "ev-kb54-joos-fit",
+      "passageId": "psg-kb54-joos-fit",
+      "factId": "nf-kb54-tau3",
+      "pdfIndex": 10,
+      "value": "4.304",
+      "unit": "yr",
+      "quantity": "多模型CO2响应拟合时间常数",
+      "subject": "Joos2013 PD100 multi-model mean IRFCO2 tau3",
+      "basis": "Table5 IRFCO2行；拟合模式不是独立物理过程寿命；打印值。"
+    },
+    "joosIntegral20": {
+      "source": "src-kb54-joos2013",
+      "evidenceId": "ev-kb54-joos-integrals",
+      "passageId": "psg-kb54-joos-integrals",
+      "factId": "nf-kb54-joosIntegral20",
+      "pdfIndex": 9,
+      "value": "14.2",
+      "unit": "yr",
+      "quantity": "积分剩余比例的报告均值",
+      "subject": "Joos2013 PD100 integrated IRFCO2 at 20 yr",
+      "basis": "Table4 Best estimates for time-integrated IRFCO2；fit-derived mean，保留显示精度。"
+    },
+    "joosIntegral100": {
+      "source": "src-kb54-joos2013",
+      "evidenceId": "ev-kb54-joos-integrals",
+      "passageId": "psg-kb54-joos-integrals",
+      "factId": "nf-kb54-joosIntegral100",
+      "pdfIndex": 9,
+      "value": "52.4",
+      "unit": "yr",
+      "quantity": "积分剩余比例的报告均值",
+      "subject": "Joos2013 PD100 integrated IRFCO2 at 100 yr",
+      "basis": "Table4 Best estimates for time-integrated IRFCO2；fit-derived mean，保留显示精度。"
+    },
+    "joosIntegral500": {
+      "source": "src-kb54-joos2013",
+      "evidenceId": "ev-kb54-joos-integrals",
+      "passageId": "psg-kb54-joos-integrals",
+      "factId": "nf-kb54-joosIntegral500",
+      "pdfIndex": 9,
+      "value": "184",
+      "unit": "yr",
+      "quantity": "积分剩余比例的报告均值",
+      "subject": "Joos2013 PD100 integrated IRFCO2 at 500 yr",
+      "basis": "Table4 Best estimates for time-integrated IRFCO2；fit-derived mean，保留显示精度。"
+    },
+    "joosRadiativeEfficiency": {
+      "source": "src-kb54-joos2013",
+      "evidenceId": "ev-kb54-joos-integrals",
+      "passageId": "psg-kb54-joos-integrals",
+      "factId": "nf-kb54-joosRadiativeEfficiency",
+      "pdfIndex": 9,
+      "value": "0.00000000000000177",
+      "unit": "W m^-2 kgCO2^-1",
+      "quantity": "单位CO2质量的辐射效率",
+      "subject": "Joos2013 Table4 caption conversion",
+      "basis": "表注明示乘数；未披露精度不能由目标AGWP倒求。"
+    },
+    "joosAgwp100": {
+      "source": "src-kb54-joos2013",
+      "evidenceId": "ev-kb54-joos-integrals",
+      "passageId": "psg-kb54-joos-integrals",
+      "factId": "nf-kb54-joosAgwp100",
+      "pdfIndex": 9,
+      "value": "92.5",
+      "unit": "10^-15 W m^-2 yr kgCO2^-1",
+      "quantity": "CO2绝对全球增温潜势报告均值",
+      "subject": "Joos2013 PD100 AGWP100",
+      "basis": "Table4 Best estimates for AGWP，100yr均值；不是全部物理不确定性。"
+    },
+    "oldFossilGwp20": {
+      "source": "src-kb54-ipcc-ar6-ch7-pdf",
+      "evidenceId": "ev-kb54-ipcc-ar6-table-7-15-published",
+      "passageId": "psg-kb54-ipcc-ar6-table-7-15-published",
+      "factId": "nf-kb54-oldFossilGwp20",
+      "pdfIndex": 94,
+      "value": "82.5",
+      "unit": "1",
+      "quantity": "GWP20相对脉冲指标中心值",
+      "subject": "IPCC AR6 published Table7.15 CH4-fossil GWP20",
+      "basis": "主表指定物质行/指标列；相同单位质量CO2为参考，含所述反馈/碳核算；仅中心值。"
+    },
+    "oldFossilGwp100": {
+      "source": "src-kb54-ipcc-ar6-ch7-pdf",
+      "evidenceId": "ev-kb54-ipcc-ar6-table-7-15-published",
+      "passageId": "psg-kb54-ipcc-ar6-table-7-15-published",
+      "factId": "nf-kb54-oldFossilGwp100",
+      "pdfIndex": 94,
+      "value": "29.8",
+      "unit": "1",
+      "quantity": "GWP100相对脉冲指标中心值",
+      "subject": "IPCC AR6 published Table7.15 CH4-fossil GWP100",
+      "basis": "主表指定物质行/指标列；相同单位质量CO2为参考，含所述反馈/碳核算；仅中心值。"
+    },
+    "newFossilGwp20": {
+      "source": "src-kb54-ipcc-ar6-errata-2025-10-07-pdf",
+      "evidenceId": "ev-kb54-ipcc-ar6-errata-table-7-15",
+      "passageId": "psg-kb54-ipcc-ar6-errata-table-7-15",
+      "factId": "nf-kb54-newFossilGwp20",
+      "pdfIndex": 2,
+      "value": "77.4",
+      "unit": "1",
+      "quantity": "GWP20相对脉冲指标中心值",
+      "subject": "IPCC AR6 2025-10-07 corrected Table7.15 CH4-fossil GWP20",
+      "basis": "主表指定物质行/指标列；相同单位质量CO2为参考，含所述反馈/碳核算；仅中心值。"
+    },
+    "newFossilGwp100": {
+      "source": "src-kb54-ipcc-ar6-errata-2025-10-07-pdf",
+      "evidenceId": "ev-kb54-ipcc-ar6-errata-table-7-15",
+      "passageId": "psg-kb54-ipcc-ar6-errata-table-7-15",
+      "factId": "nf-kb54-newFossilGwp100",
+      "pdfIndex": 2,
+      "value": "28.1",
+      "unit": "1",
+      "quantity": "GWP100相对脉冲指标中心值",
+      "subject": "IPCC AR6 2025-10-07 corrected Table7.15 CH4-fossil GWP100",
+      "basis": "主表指定物质行/指标列；相同单位质量CO2为参考，含所述反馈/碳核算；仅中心值。"
+    },
+    "newFossilGtp100": {
+      "source": "src-kb54-ipcc-ar6-errata-2025-10-07-pdf",
+      "evidenceId": "ev-kb54-ipcc-ar6-errata-table-7-15",
+      "passageId": "psg-kb54-ipcc-ar6-errata-table-7-15",
+      "factId": "nf-kb54-newFossilGtp100",
+      "pdfIndex": 2,
+      "value": "7.1",
+      "unit": "1",
+      "quantity": "GTP100相对脉冲指标中心值",
+      "subject": "IPCC AR6 2025-10-07 corrected Table7.15 CH4-fossil GTP100",
+      "basis": "主表指定物质行/指标列；相同单位质量CO2为参考，含所述反馈/碳核算；仅中心值。"
+    },
+    "newNonfossilGwp100": {
+      "source": "src-kb54-ipcc-ar6-errata-2025-10-07-pdf",
+      "evidenceId": "ev-kb54-ipcc-ar6-errata-table-7-15",
+      "passageId": "psg-kb54-ipcc-ar6-errata-table-7-15",
+      "factId": "nf-kb54-newNonfossilGwp100",
+      "pdfIndex": 2,
+      "value": "25.3",
+      "unit": "1",
+      "quantity": "GWP100相对脉冲指标中心值",
+      "subject": "IPCC AR6 2025-10-07 corrected Table7.15 CH4-non fossil GWP100",
+      "basis": "主表指定物质行/指标列；相同单位质量CO2为参考，含所述反馈/碳核算；仅中心值。"
+    },
+    "referenceOne": {
+      "source": "src-kb54-ipcc-ar6-errata-2025-10-07-pdf",
+      "evidenceId": "ev-kb54-ipcc-ar6-errata-table-7-15",
+      "passageId": "psg-kb54-ipcc-ar6-errata-table-7-15",
+      "factId": "nf-kb54-referenceOne",
+      "pdfIndex": 2,
+      "value": "1",
+      "unit": "1",
+      "quantity": "选定相对脉冲指标的CO2参考值",
+      "subject": "IPCC AR62025 corrected Table7.15 CO2 GWP20/GWP100/GTP100",
+      "basis": "同表CO2行三个指定参考列均为1；各自分母仍是该指标的同一CO2响应。"
+    },
+    "newFossilGwp100Width": {
+      "source": "src-kb54-ipcc-ar6-errata-2025-10-07-pdf",
+      "evidenceId": "ev-kb54-ipcc-ar6-errata-table-7-15",
+      "passageId": "psg-kb54-ipcc-ar6-errata-table-7-15",
+      "factId": "nf-kb54-newFossilGwp100Width",
+      "pdfIndex": 2,
+      "value": "10.4",
+      "unit": "1",
+      "quantity": "来源显示的GWP100加减范围",
+      "subject": "IPCC AR62025 corrected Table7.15 CH4-fossil GWP100 uncertainty",
+      "basis": "28.1±10.4；引用表列范围，不赋予教学案例概率分布，不与显示舍入混同。"
+    },
+    "oldSmCh4Gwp100": {
+      "source": "src-kb54-ipcc-ar6-ch7-sm-pdf",
+      "evidenceId": "ev-kb54-ipcc-ar6-sm-table-7-sm-7-published",
+      "passageId": "psg-kb54-ipcc-ar6-sm-table-7-sm-7-published",
+      "factId": "nf-kb54-oldSmCh4Gwp100",
+      "pdfIndex": 15,
+      "value": "27.9",
+      "unit": "1",
+      "quantity": "GWP100相对脉冲指标",
+      "subject": "published SM generic CH4 GWP100",
+      "basis": "甲烷脚注排除自身碳含量核算，非化石/生物源主表的直接替代。"
+    },
+    "newSmCh4Gwp100": {
+      "source": "src-kb54-ipcc-ar6-errata-2025-10-07-pdf",
+      "evidenceId": "ev-kb54-ipcc-ar6-errata-table-7-sm-7",
+      "passageId": "psg-kb54-ipcc-ar6-errata-table-7-sm-7",
+      "factId": "nf-kb54-newSmCh4Gwp100",
+      "pdfIndex": 4,
+      "value": "26.2",
+      "unit": "1",
+      "quantity": "GWP100相对脉冲指标",
+      "subject": "2025 corrected SM generic CH4 GWP100",
+      "basis": "甲烷脚注允许另作碳收支；保留分子反馈及间接化学。"
+    },
+    "oldSmCo2Agwp100": {
+      "source": "src-kb54-ipcc-ar6-ch7-sm-pdf",
+      "evidenceId": "ev-kb54-ipcc-ar6-sm-table-7-sm-7-published",
+      "passageId": "psg-kb54-ipcc-ar6-sm-table-7-sm-7-published",
+      "factId": "nf-kb54-oldSmCo2Agwp100",
+      "pdfIndex": 15,
+      "value": "0.0895",
+      "unit": "pW m^-2 yr kg^-1",
+      "quantity": "CO2 AGWP100参考",
+      "subject": "published SM CO2 AGWP100",
+      "basis": "Table7.SM.7 CO2行AGWP100列，打印值。"
+    },
+    "newSmCo2Agwp100": {
+      "source": "src-kb54-ipcc-ar6-errata-2025-10-07-pdf",
+      "evidenceId": "ev-kb54-ipcc-ar6-errata-table-7-sm-7",
+      "passageId": "psg-kb54-ipcc-ar6-errata-table-7-sm-7",
+      "factId": "nf-kb54-newSmCo2Agwp100",
+      "pdfIndex": 4,
+      "value": "0.093",
+      "unit": "pW m^-2 yr kg^-1",
+      "quantity": "CO2 AGWP100参考",
+      "subject": "2025 corrected SM CO2 AGWP100",
+      "basis": "Table7.SM.7 CO2行AGWP100列，打印值。"
+    },
+    "newSmCh4Agwp100": {
+      "source": "src-kb54-ipcc-ar6-errata-2025-10-07-pdf",
+      "evidenceId": "ev-kb54-ipcc-ar6-errata-table-7-sm-7",
+      "passageId": "psg-kb54-ipcc-ar6-errata-table-7-sm-7",
+      "factId": "nf-kb54-newSmCh4Agwp100",
+      "pdfIndex": 4,
+      "value": "2.43",
+      "unit": "pW m^-2 yr kg^-1",
+      "quantity": "CH4 AGWP100绝对脉冲指标",
+      "subject": "2025 corrected SM generic CH4 AGWP100",
+      "basis": "Table7.SM.7 CH4行AGWP100列，打印值；自身碳含量核算不在其中。"
+    },
+    "rateR": {
+      "source": "src-kb54-cain-2019-gwp-star",
+      "evidenceId": "ev-kb54-cain-2019-gwp-star-fit-methods",
+      "passageId": "psg-kb54-cain-2019-gwp-star-fit-methods",
+      "factId": "nf-kb54-rateR",
+      "pdfIndex": 5,
+      "value": "0.75",
+      "unit": "1",
+      "quantity": "变化率项权重",
+      "subject": "Cain2019 r",
+      "basis": "Methods Table1三情景系数的作者选定均值，不作普遍物理常数。"
+    },
+    "rateS": {
+      "source": "src-kb54-cain-2019-gwp-star",
+      "evidenceId": "ev-kb54-cain-2019-gwp-star-fit-methods",
+      "passageId": "psg-kb54-cain-2019-gwp-star-fit-methods",
+      "factId": "nf-kb54-rateS",
+      "pdfIndex": 5,
+      "value": "0.25",
+      "unit": "1",
+      "quantity": "慢调整项权重",
+      "subject": "Cain2019 s",
+      "basis": "Methods Table1三情景系数的作者选定均值；r+s=1。"
+    },
+    "rateGwp100": {
+      "source": "src-kb54-cain-2019-gwp-star",
+      "evidenceId": "ev-kb54-cain-2019-gwp-star-fit-methods",
+      "passageId": "psg-kb54-cain-2019-gwp-star-fit-methods",
+      "factId": "nf-kb54-rateGwp100",
+      "pdfIndex": 5,
+      "value": "28",
+      "unit": "1",
+      "quantity": "历史示例的GWP100输入",
+      "subject": "Cain2019 CH4 AR5 GWP100",
+      "basis": "Methods/Fig1采用的历史因子；不替换为AR6校正值以冒充同一公式拟合。"
+    },
+    "rateHorizon": {
+      "source": "src-kb54-cain-2019-gwp-star",
+      "evidenceId": "ev-kb54-cain-2019-gwp-star-fit-methods",
+      "passageId": "psg-kb54-cain-2019-gwp-star-fit-methods",
+      "factId": "nf-kb54-rateHorizon",
+      "pdfIndex": 5,
+      "value": "100",
+      "unit": "yr",
+      "quantity": "GWP积分时间范围",
+      "subject": "Cain2019 fitted GWP100 horizon",
+      "basis": "Methods用GWP100近似规定甲烷情景；与差分间隔分开。"
+    },
+    "rateLookback": {
+      "source": "src-kb54-cain-2019-gwp-star",
+      "evidenceId": "ev-kb54-cain-2019-gwp-star-fit-methods",
+      "passageId": "psg-kb54-cain-2019-gwp-star-fit-methods",
+      "factId": "nf-kb54-rateLookback",
+      "pdfIndex": 5,
+      "value": "20",
+      "unit": "yr",
+      "quantity": "排放率差分间隔",
+      "subject": "Cain2019 delta-t",
+      "basis": "Methods中Delta-t=20年；不是GWP积分时间范围或单产品寿命。"
+    }
+  },
+  "responseReconstruction": {
+    "kind": "author-analytic-reconstruction-of-published-fit",
+    "horizonsYears": [
+      "20",
+      "100",
+      "500"
+    ],
+    "fitWindowYears": [
+      "0",
+      "1000"
+    ],
+    "coefficientsTreatedAsDisplayed": true,
+    "originalEnsembleReexecuted": false,
+    "radiativeEfficiencyPrecisionRecovered": false
+  },
+  "fixedPulsePair": {
+    "kind": "author-stipulated-diagnostic-pulses",
+    "timeYears": "0",
+    "co2Kg": "28.1",
+    "fossilCh4Kg": "1",
+    "co2Reference": true,
+    "samePhysicalServiceEstablished": false,
+    "purpose": "固定质量和排放时点，检验一个指标下的相等是否转移到另一个指标；不作产品优劣比较。"
+  },
+  "wallParent": {
+    "caseId": "CASE-WALL-CONNECT",
+    "version": "1.0.0",
+    "inputFile": "wall-coating-v1.json",
+    "inputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+    "scenario": "smooth",
+    "theta": "0.3",
+    "areaM2": "100",
+    "serviceYears": "10",
+    "gasRows": [
+      "CO2, fossil-origin emission to air, kg",
+      "CH4, fossil-origin emission to air, kg"
+    ],
+    "paintAInventoryKg": [
+      "26",
+      "0.07"
+    ],
+    "paintBInventoryKg": [
+      "27",
+      "0.09"
+    ],
+    "sameHypotheticalService": true,
+    "originalPublishedCaseChanged": false,
+    "characterizationPurpose": "同一固定虚构清单，在选定历史/校正因子及时间范围下作额外比较；原案例版本保持原值。"
+  },
+  "timingExample": {
+    "kind": "author-stipulated-single-co2-pulse-schedules",
+    "massKg": "1",
+    "earlyEmissionYear": "0",
+    "lateEmissionYear": "80",
+    "calendarEndpointYear": "100",
+    "fixedPostPulseWindowYears": "100",
+    "gas": "CO2",
+    "responseRun": "source-0.1-year-grid",
+    "nativeElapsedHorizonsYears": [
+      "20",
+      "100"
+    ],
+    "allOtherEmissionsExcluded": true,
+    "negativeEmissionOrStorageCredit": false,
+    "purpose": "相同排放质量在不同时间发生；分别比较共同日历终点与每次脉冲后相同时间范围。"
+  },
+  "rateExample": {
+    "kind": "author-stipulated-annual-methane-histories",
+    "gas": "CH4 under Cain2019 historical convention",
+    "rateUnit": "t CH4 yr^-1",
+    "outputRateUnit": "t CO2-we yr^-1",
+    "outputCumulativeUnit": "t CO2-we",
+    "historicalYears": [
+      "2001",
+      "2020"
+    ],
+    "futureYears": [
+      "2021",
+      "2070"
+    ],
+    "historicalRates": {
+      "A": "80",
+      "B": "100",
+      "C": "120"
+    },
+    "futureRateEach": "100",
+    "checkYears": [
+      "2040",
+      "2041"
+    ],
+    "sumIntervals": [
+      [
+        "2021",
+        "2040"
+      ],
+      [
+        "2021",
+        "2070"
+      ]
+    ],
+    "boundaryUnchanged": true,
+    "missingHistoryAssumedZero": false,
+    "temperatureOrOffsetAuthorization": false,
+    "formulaVersion": "Cain2019 Eq1 with source r,s,H,Delta-t,GWP100; not AR6 updated-factor or later revised formula",
+    "purpose": "展示当前相同排放率、不同历史对应的计算差别及共同边界下的加总关系。"
+  },
+  "native": {
+    "summary": {
+      "kind": "author-derived-native-execution-summary",
+      "recordedAt": "2026-11-06",
+      "engine": {
+        "name": "IPCC WG I AR6 Chapter 7 author analytical response and carbon-cycle modules",
+        "sourceCommit": "2f948c862dbc158182ba47b863395ec1a4aa7998",
+        "sourceVersion": "固定 GitHub 后续源码，区别于 2021 Zenodo v.1.0。",
+        "notebookZeroBasedCells": [
+          7,
+          9,
+          11,
+          14,
+          16,
+          17
+        ],
+        "authorFunctions": [
+          "co2_analytical",
+          "ch4_analytical",
+          "carbon_cycle_adjustment"
+        ],
+        "pythonVersion": "3.12.16",
+        "pythonExecutableSha256": "ab825fde913c394f6fb8dc57da39108ad98e1827a5404119993de3d3bc6d8fb7",
+        "numpyVersion": "2.5.4",
+        "scipyVersion": "1.18.1",
+        "fairVersion": "1.6.2",
+        "fairWheelSha256": "f313f9d777084b3064e9ae9e7e9e0ec83187b832d3a4ff2e2bdc15269e9e14c9",
+        "operatingSystem": "macOS 27.2",
+        "architecture": "arm64",
+        "pythonFlags": [
+          "-I",
+          "-S",
+          "-B"
+        ]
+      },
+      "sourceArtifactId": "art-kb54-ipcc-ch7-snapshot-notebook335",
+      "sourceReadingId": "rd-kb54-ipcc-ch7-code-snapshot",
+      "loadedAuthorFiles": [
+        {
+          "repoRelativeFile": "src/ar6/metrics/__init__.py",
+          "sha256": "76ab49d1ede7e2f5b8748c91bafe02c455a0979d0c2ca6d085e373cea121c9b9"
+        },
+        {
+          "repoRelativeFile": "src/ar6/metrics/ch4.py",
+          "sha256": "ce2f7fb3df6a9b941b301a941355022c8eef3351d98db7d705c991b39e1f64ab"
+        },
+        {
+          "repoRelativeFile": "src/ar6/metrics/co2.py",
+          "sha256": "2f00ec4d94ed13d340503241a35c35f99eb889cce026de865779cccba8236adb"
+        },
+        {
+          "repoRelativeFile": "src/ar6/metrics/constants.py",
+          "sha256": "76bee7f91c648922a7e802922e325ddae783225d44073035201e16ac11e01ea7"
+        },
+        {
+          "repoRelativeFile": "src/ar6/metrics/gasser.py",
+          "sha256": "37ea4ab653239aae2263cc38eb488516107ef0cd7e65cc0b0b74f731529a15b9"
+        },
+        {
+          "repoRelativeFile": "src/ar6/metrics/halogen_generic.py",
+          "sha256": "d43df50416289682072735b9f3f205d9d79a6a20dddb906d1da684753f279320"
+        }
+      ],
+      "generatorNotebookSha256": "09c8a6f0460e7bfb8bbc86191dac0988c3185ebcd77019d782a42dc04ebdda1e",
+      "frozenInputs": {
+        "frozenAtUtc": "2026-11-06T04:44:55.506056+00:00",
+        "specificationSha256": "075b7f7cdbc7798207162c467ceac8e75b691f0d5e2b4cdc089c027891f475e1",
+        "canonicalParametersSha256": "0e1d77655f1a70888d382a2358bee6ac3c513595334f4ca470d0612c566d153f",
+        "privateLauncherSha256": "854999f5ee03141cef547759a15293aa000e7f78530815d9307c35f765e86bcf",
+        "privateReferenceGeneratorSha256": "d7f0c8ecb9c25031291dd389bd9714bcf924ba0f0253b4352ff6bb12fccba967",
+        "parameters": {
+          "atmosphere_mass_kg": 5135200000000000000,
+          "baseline": {
+            "ch4_ppb": 1866.3,
+            "co2_ppm": 409.9,
+            "n2o_ppb": 332.1
+          },
+          "ch4_lifetime_yr": 11.8,
+          "ch4_ozone_w_m2_ppb": 0.00014,
+          "ch4_rapid_adjustment": -0.14,
+          "ch4_water_w_m2_ppb": 0.00004,
+          "co2_airborne_fractions": [
+            0.2173,
+            0.224,
+            0.2824,
+            0.2763
+          ],
+          "co2_rapid_adjustment": 0.05,
+          "co2_taus_yr_author_permanent_sentinel_zero": [
+            0,
+            394.4,
+            36.54,
+            4.304
+          ],
+          "d_yr": [
+            3.424102092311,
+            285.003477841911
+          ],
+          "feedback_gamma_kg_c_per_yr_per_k": 3015000000000,
+          "feedback_times_yr": [
+            2.376,
+            30.14,
+            490.1
+          ],
+          "feedback_weights": [
+            0.6368,
+            0.3322,
+            0.031
+          ],
+          "molar_masses_kg_per_mol": {
+            "air": 0.02897,
+            "c": 0.012,
+            "ch4": 0.016043,
+            "co2": 0.04401
+          },
+          "q_k_per_w_m2": [
+            0.443767728883447,
+            0.313998206372015
+          ]
+        },
+        "checkTolerances": {
+          "exact_grid_absolute_yr": 2e-14,
+          "nonzero_relative": 5e-8,
+          "zero_absolute": 1e-24
+        },
+        "comparison": "独立标量数学实现使用相同参数证据，核查解析分量、离散因果卷积和历史表的舍入值。"
+      },
+      "units": {
+        "horizon": "yr",
+        "rf": "W m^-2 kg^-1",
+        "agwp": "W m^-2 yr kg^-1",
+        "agtp": "K kg^-1",
+        "iagtp": "K yr kg^-1",
+        "gwp": "dimensionless equal-mass ratio",
+        "gtp": "dimensionless equal-mass ratio",
+        "feedbackRelativeDifferencePercent": "%",
+        "pulseMassBasis": "1 kg of the named gas at time zero"
+      },
+      "observations": [
+        {
+          "id": "source-0.1-year-grid",
+          "startedAtUtc": "2026-11-06T04:45:00.774239+00:00",
+          "finishedAtUtc": "2026-11-06T04:45:21.067639+00:00",
+          "timeAxis": {
+            "startYr": 0,
+            "endYr": 100,
+            "stepYr": 0.1,
+            "pointCount": 1001,
+            "encoding": "little-endian float64",
+            "sha256": "54498b0a9e1fc33b571ec8a1a13878869ad9724ced363369e88e1253f360697c"
+          },
+          "outputCsvSha256": "bff83d6b96643289ddb889c401b14adc2bba02b5f901359b075f34904b08c0a4",
+          "receiptSha256": "ca1e480ed83e6b42f736b7fb47fbf2f62be0816125417c31de10c89fd343ea6d",
+          "stdoutSha256": "783062b860a908c79e98e8541d1d6936da2e00cb441ef165013adfdb005c7e8c",
+          "expectedComparisons": 56,
+          "passedComparisons": 56,
+          "observations": [
+            {
+              "horizonYr": 20,
+              "ch4DirectResponse": {
+                "agtp": "2.4620941873739064e-14",
+                "agwp": "1.926296644279653e-12",
+                "iagtp": "8.037288390202567e-13",
+                "rf": "3.671585869442068e-14"
+              },
+              "ch4FeedbackIncrement": {
+                "agtp": "1.4329369999118885e-15",
+                "agwp": "4.9781299934997574e-14",
+                "rf": "3.0234558376279307e-15"
+              },
+              "gwp": {
+                "direct": "79.15339922524674",
+                "carbonCycleFeedbackIncrement": "2.0455619436434866",
+                "total": "81.19896116889024"
+              },
+              "gtp": {
+                "direct": "49.703333901720974",
+                "carbonCycleFeedbackIncrement": "2.8927303647435485",
+                "total": "52.59606426646452"
+              },
+              "co2Response": {
+                "rf": "1.0188543879436157e-15",
+                "agwp": "2.433624661902381e-14",
+                "agtp": "4.953579557142457e-16"
+              }
+            },
+            {
+              "horizonYr": 50,
+              "ch4DirectResponse": {
+                "agtp": "4.042286721312156e-15",
+                "agwp": "2.325456117320661e-12",
+                "iagtp": "1.118606407731127e-12",
+                "rf": "2.888784707894571e-15"
+              },
+              "ch4FeedbackIncrement": {
+                "agtp": "6.832628503445159e-16",
+                "agwp": "1.099353474270798e-13",
+                "rf": "1.116894607069511e-15"
+              },
+              "gwp": {
+                "direct": "44.96383775106293",
+                "carbonCycleFeedbackIncrement": "2.1256540117012817",
+                "total": "47.08949176276421"
+              },
+              "gtp": {
+                "direct": "9.451140109538338",
+                "carbonCycleFeedbackIncrement": "1.597514816601717",
+                "total": "11.048654926140054"
+              }
+            },
+            {
+              "horizonYr": 100,
+              "ch4DirectResponse": {
+                "agtp": "1.9348805843625857e-15",
+                "agwp": "2.359051322126759e-12",
+                "iagtp": "1.2435077222314228e-12",
+                "rf": "4.173345314047938e-17"
+              },
+              "ch4FeedbackIncrement": {
+                "agtp": "1.868953064958838e-16",
+                "agwp": "1.3337668608252476e-13",
+                "rf": "1.3860239947270275e-16"
+              },
+              "gwp": {
+                "direct": "26.368390738288824",
+                "carbonCycleFeedbackIncrement": "1.490823256372176",
+                "total": "27.859213994661"
+              },
+              "gtp": {
+                "direct": "4.903429853822638",
+                "carbonCycleFeedbackIncrement": "0.47363544438746363",
+                "total": "5.377065298210102"
+              },
+              "co2Response": {
+                "rf": "6.99631844162819e-16",
+                "agwp": "8.9465123053613e-14",
+                "agtp": "3.9459738224952534e-16"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sensitivity-0.05-year-grid",
+          "startedAtUtc": "2026-11-06T04:45:32.337279+00:00",
+          "finishedAtUtc": "2026-11-06T04:45:34.636281+00:00",
+          "timeAxis": {
+            "startYr": 0,
+            "endYr": 100,
+            "stepYr": 0.05,
+            "pointCount": 2001,
+            "encoding": "little-endian float64",
+            "sha256": "3c3bc905ebedaaee0291dd194c8d0c23abb0b617caf5614a3c42b4f6f54051e1"
+          },
+          "outputCsvSha256": "99b1356227ad5ec92f81dd15e972e5a1845e0146bac73e3817f37943518395a4",
+          "receiptSha256": "1f5a99b8de238fd3194965570394fa4b11237d545022459593d597028c7af4d8",
+          "stdoutSha256": "95f8709a276c569d6ab638ac695776a45537de104a2cbb30b7b24a7c79367340",
+          "expectedComparisons": 52,
+          "passedComparisons": 52,
+          "observations": [
+            {
+              "horizonYr": 20,
+              "ch4DirectResponse": {
+                "agtp": "2.4620941873739064e-14",
+                "agwp": "1.926296644279653e-12",
+                "iagtp": "8.037288390202567e-13",
+                "rf": "3.671585869442068e-14"
+              },
+              "ch4FeedbackIncrement": {
+                "agtp": "1.4637299916939287e-15",
+                "agwp": "5.0644759222513946e-14",
+                "rf": "3.098795254696576e-15"
+              },
+              "gwp": {
+                "direct": "79.15339922524674",
+                "carbonCycleFeedbackIncrement": "2.0810423240420564",
+                "total": "81.2344415492888"
+              },
+              "gtp": {
+                "direct": "49.703333901720974",
+                "carbonCycleFeedbackIncrement": "2.9548934761397114",
+                "total": "52.65822737786068"
+              },
+              "co2Response": {
+                "rf": "1.0188543879436157e-15",
+                "agwp": "2.433624661902381e-14",
+                "agtp": "4.953579557142457e-16"
+              }
+            },
+            {
+              "horizonYr": 50,
+              "ch4DirectResponse": {
+                "agtp": "4.042286721312156e-15",
+                "agwp": "2.325456117320661e-12",
+                "iagtp": "1.118606407731127e-12",
+                "rf": "2.888784707894571e-15"
+              },
+              "ch4FeedbackIncrement": {
+                "agtp": "7.228414915647711e-16",
+                "agwp": "1.1323743261710148e-13",
+                "rf": "1.1993990451633754e-15"
+              },
+              "gwp": {
+                "direct": "44.96383775106293",
+                "carbonCycleFeedbackIncrement": "2.189501452905802",
+                "total": "47.15333920396873"
+              },
+              "gtp": {
+                "direct": "9.451140109538338",
+                "carbonCycleFeedbackIncrement": "1.6900523601524027",
+                "total": "11.141192469690742"
+              }
+            },
+            {
+              "horizonYr": 100,
+              "ch4DirectResponse": {
+                "agtp": "1.9348805843625857e-15",
+                "agwp": "2.359051322126759e-12",
+                "iagtp": "1.2435077222314228e-12",
+                "rf": "4.173345314047938e-17"
+              },
+              "ch4FeedbackIncrement": {
+                "agtp": "2.263358674641476e-16",
+                "agwp": "1.40509596376535e-13",
+                "rf": "2.1247037071173586e-16"
+              },
+              "gwp": {
+                "direct": "26.368390738288824",
+                "carbonCycleFeedbackIncrement": "1.5705516471746537",
+                "total": "27.938942385463477"
+              },
+              "gtp": {
+                "direct": "4.903429853822638",
+                "carbonCycleFeedbackIncrement": "0.5735868448337125",
+                "total": "5.47701669865635"
+              },
+              "co2Response": {
+                "rf": "6.99631844162819e-16",
+                "agwp": "8.9465123053613e-14",
+                "agtp": "3.9459738224952534e-16"
+              }
+            }
+          ]
+        }
+      ],
+      "zeroTimeControl": {
+        "horizonYr": 0,
+        "co2Rf": "1.7088044898272427e-15",
+        "ch4Rf": "1.9996133702320482e-13",
+        "integratedForcingAndTemperatureOutputsExactlyZero": true,
+        "feedbackOutputsExactlyZero": true,
+        "gwp": null,
+        "gtp": null,
+        "ratioInterpretation": "参照分母为零，两个比值在起点未定义。"
+      },
+      "sourceGridHistoricalRoundedReference": {
+        "20": {
+          "gwp": {
+            "abs_tol": 0.05,
+            "expected": 81.2
+          }
+        },
+        "50": {
+          "gtp": {
+            "abs_tol": 0.05,
+            "expected": 11
+          }
+        },
+        "100": {
+          "gtp": {
+            "abs_tol": 0.005,
+            "expected": 5.38
+          },
+          "gwp": {
+            "abs_tol": 0.05,
+            "expected": 27.9
+          }
+        }
+      },
+      "gridSensitivity": {
+        "differenceDirection": "0.05-year-grid minus 0.1-year-grid",
+        "differences": [
+          {
+            "horizonYr": 20,
+            "directResponsesIdentical": true,
+            "feedbackAbsoluteDifference": {
+              "rf": "7.53394170686452e-17",
+              "agwp": "8.634592875163718e-16",
+              "agtp": "3.0792991782040244e-17"
+            },
+            "feedbackRelativeDifferencePercent": {
+              "rf": "2.4918312393063857",
+              "agwp": "1.7345053034851343",
+              "agtp": "2.148942471576465"
+            },
+            "gwpDifference": "0.03548038039856749",
+            "gtpDifference": "0.06216311139615982"
+          },
+          {
+            "horizonYr": 50,
+            "directResponsesIdentical": true,
+            "feedbackAbsoluteDifference": {
+              "rf": "8.25044380938644e-17",
+              "agwp": "3.3020851900216787e-15",
+              "agtp": "3.9578641220255203e-17"
+            },
+            "feedbackRelativeDifferencePercent": {
+              "rf": "7.386949276291888",
+              "agwp": "3.0036610310546052",
+              "agtp": "5.792593758068176"
+            },
+            "gwpDifference": "0.06384744120451558",
+            "gtpDifference": "0.09253754355068722"
+          },
+          {
+            "horizonYr": 100,
+            "directResponsesIdentical": true,
+            "feedbackAbsoluteDifference": {
+              "rf": "7.386797123903311e-17",
+              "agwp": "7.132910294010236e-15",
+              "agtp": "3.9440560968263804e-17"
+            },
+            "feedbackRelativeDifferencePercent": {
+              "rf": "53.29487189259024",
+              "agwp": "5.347943859991289",
+              "agtp": "21.103023777182138"
+            },
+            "gwpDifference": "0.07972839080247596",
+            "gtpDifference": "0.0999514004462485"
+          }
+        ],
+        "basis": "相同物理参数下只改变数值卷积网格。反馈绝对差沿用 RF、AGWP、AGTP 的单位，反馈相对差是百分数，GWP 和 GTP 差为无量纲比值差。"
+      },
+      "boundaries": [
+        "作者运行仅执行 0–100 年、等质量脉冲的 CO₂、CH₄ 及 CH₄ 的增温驱动碳循环反馈函数；执行范围未覆盖 500 年完整网格、整本 notebook、图表或全套因子。",
+        "运行甲烷行包括增温驱动碳反馈。检查的源码没有化石氧化和生物源吸收的生成器，相关预计算 CSV 未作为运行输入。",
+        "未复现 2025 勘误、整张历史表、原图、CGTP 或其他气体的完整结果。两个网格只检验步长敏感性，未建立连续极限收敛。",
+        "运行观察不是 IPCC 报告的直接引文或独立观测。数值核对不等同于模型实证验证或人类专家审定。",
+        "保留的数据哈希固定原私有运行凭据。公开摘要只摘录相关量和证据身份。"
+      ]
+    },
+    "summarySha256": "acde0c073ea4591a2abe11bb0fc20c849649e060f46ca192939f358e49b1b70c"
+  },
+  "scope": {
+    "allSourceOriginalsPublished": false,
+    "climateEmpiricallyValidated": false,
+    "humanExpertApproval": false,
+    "factorUncertaintyPropagated": false,
+    "correctedAr6GeneratorReproduced": false,
+    "historicalSelectedNativeFunctionsExecuted": true,
+    "nativeReexecutedByStaticBuild": false,
+    "fossilOxidationGeneratorExecuted": false,
+    "historicalFullNotebookExecuted": false,
+    "newProductOrSectorFootprint": false,
+    "finiteDifferenceSignIsGlobalCooling": false
+  }
+}

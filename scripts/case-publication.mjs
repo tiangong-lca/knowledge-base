@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import { climateMetricsInputShape, validateClimateMetricsCase, evaluateClimateMetricsCase, validateClimateMetricsFacts, validateClimateMetricsWallLink } from './climate-metrics.mjs';
 import { cmlFrameworkExamplesInputShape, validateCmlFrameworkExamplesCase, evaluateCmlFrameworkExamplesCase, validateCmlFrameworkExamplesFacts } from './cml-framework-examples.mjs';
 import { readdir, readFile, lstat } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -97,6 +98,9 @@ const pedigreeInputShape = {
 // Closed model registry: a case identity selects its projection, evaluator and
 // numeric-source policy together. An input flag cannot disable wall fact checks.
 const caseAdapters = new Map([
+  ['CASE-CLIMATE-METRICS', { shape: climateMetricsInputShape, validate: validateClimateMetricsCase,
+    context: input => ({ evaluated: evaluateClimateMetricsCase(input) }), validateFacts: validateClimateMetricsFacts,
+    wallParent: { label: 'climate metrics', key: 'wallParent', validate: validateClimateMetricsWallLink } }],
   ['CASE-CML-FRAMEWORK-EXAMPLES', { shape: cmlFrameworkExamplesInputShape, validate: validateCmlFrameworkExamplesCase,
     context: input => ({ evaluated: evaluateCmlFrameworkExamplesCase(input) }), validateFacts: validateCmlFrameworkExamplesFacts }],
   ['CASE-NATIVE-EXCHANGE', { shape: nativeExchangeInputShape, validate: validateNativeExchangeCase,
@@ -119,7 +123,8 @@ const caseAdapters = new Map([
     context: input => ({ evaluated: evaluateHybridOverlapCase(input) }),
     // All generator coefficients are synthetic; the actual wall parent is bound
     // separately against discovered publication entries below.
-    validateFacts: () => [] }],
+    validateFacts: () => [],
+    wallParent: { label: 'hybrid overlap', key: 'linkedService', validate: validateHybridOverlapServiceLink } }],
   ['CASE-MARKET-RESPONSE', { shape: marketResponseInputShape, validate: validateMarketResponseCase,
     context: input => ({ evaluated: evaluateMarketResponseCase(input) }), validateFacts: validateMarketResponseFacts }],
   ['CASE-PEDIGREE-CALIBRATION', { shape: pedigreeInputShape, validate: validatePedigreeCalibrationCase,
@@ -407,28 +412,27 @@ export async function loadCasePublications(root) {
   }
   return entries;
 }
-// CASE-HYBRID-OVERLAP borrows one fixed electricity demand from an actual
-// registered wall publication. A copied hash in the child input cannot establish
-// that parent exists, is unique or still exposes the approved service.
-function validateHybridOverlapParent(spec, entries) {
-  const errors = [], input = publicTeachingCase(spec), link = input.linkedService;
+// A copied hash in a child input cannot establish that the registered wall
+// parent exists, is unique or still evaluates to the approved service.
+function validateWallParent(spec, entries, { label, key, validate }) {
+  const errors = [], input = publicTeachingCase(spec), link = input[key];
   const parents = entries.filter(entry =>
     (entry?.spec?.caseId === link.caseId && entry?.spec?.version === link.version)
     || (entry?.publication?.caseId === link.caseId && entry?.publication?.version === link.version));
-  if (parents.length !== 1) return ['hybrid overlap parent: exactly one registered wall caseId/version is required'];
+  if (parents.length !== 1) return [`${label} parent: exactly one registered wall caseId/version is required`];
   const parent = parents[0], publication = parent.publication;
   if (parent.spec?.caseId !== link.caseId || parent.spec?.version !== link.version
       || publication?.caseId !== link.caseId || publication?.version !== link.version)
-    errors.push('hybrid overlap parent: wall input and publication caseId/version must match');
+    errors.push(`${label} parent: wall input and publication caseId/version must match`);
   if (parent.inputFile !== link.inputFile || publication?.inputFile !== link.inputFile)
-    errors.push('hybrid overlap parent: registered wall input filename must match the fixed publication input');
+    errors.push(`${label} parent: registered wall input filename must match the fixed publication input`);
   try {
     const actualSha256 = caseInputSha256(parent.spec);
     if (publication?.approvedInputSha256 !== link.inputSha256)
-      errors.push('hybrid overlap parent: approved wall publication input hash differs from the fixed parent');
-    errors.push(...validateHybridOverlapServiceLink(input, publicTeachingCase(parent.spec), actualSha256)
-      .map(error => `hybrid overlap parent: ${error}`));
-  } catch (error) { errors.push(`hybrid overlap parent: invalid registered wall input: ${error.message}`); }
+      errors.push(`${label} parent: approved wall publication input hash differs from the fixed parent`);
+    errors.push(...validate(input, publicTeachingCase(parent.spec), actualSha256)
+      .map(error => `${label} parent: ${error}`));
+  } catch (error) { errors.push(`${label} parent: invalid registered wall input: ${error.message}`); }
   return errors;
 }
 export function validateCasePublications(entries, catalog, context = {}) {
@@ -441,8 +445,9 @@ export function validateCasePublications(entries, catalog, context = {}) {
     if (cases.has(identity)) errors.push(`Duplicate case publication ${identity}`);
     cases.add(identity);
     try { errors.push(...validateCasePublication(spec, publication, catalog, context)); } catch (error) { errors.push(error.message); }
-    if (spec.caseId === 'CASE-HYBRID-OVERLAP') {
-      try { errors.push(...validateHybridOverlapParent(spec, entries)); } catch (error) { errors.push(error.message); }
+    const wallParent = caseAdapters.get(spec.caseId)?.wallParent;
+    if (wallParent) {
+      try { errors.push(...validateWallParent(spec, entries, wallParent)); } catch (error) { errors.push(error.message); }
     }
     for (const claim of Array.isArray(publication?.claims) ? publication.claims : []) {
       if (claims.has(claim.id)) errors.push(`Duplicate case-bound claim ${claim.id}`);

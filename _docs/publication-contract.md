@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-06
-lastReviewedCommit: c874de0fe8947c41d2adb93fe3e7a11a092182dc
+lastReviewedCommit: a9179bb08c3e09189e85cda3e707378442938143
 ---
 
 # Publication contract
@@ -36,7 +36,7 @@ Initial publication may include explicitly disclosed open questions, but must no
 
 ## Rights boundary
 
-Code is MIT licensed. Original knowledge prose and records in content/ and knowledge/ are CC BY-NC-SA 4.0; commercial use requires separate authorization. Third-party content retains its original licenses and authorization conditions; no project license overrides them. Contributors must have authority to license their submissions, and separate commercial authorization must come from the relevant rights holders. Publication rights are reviewed independently of evidence support.
+Code is MIT licensed. Original knowledge prose and records in content/ and knowledge/, and original book figures in public/book-figures/, are CC BY-NC-SA 4.0; commercial use requires separate authorization. Third-party content retains its original licenses and authorization conditions; no project license overrides them. Contributors must have authority to license their submissions, and separate commercial authorization must come from the relevant rights holders. Publication rights are reviewed independently of evidence support.
 
 ## Public research records
 
@@ -172,3 +172,15 @@ mismatches remain explicit. Source ranges carry no probability assignment, and
 undefined gaps between displayed scoring bins receive no invented rule. The
 static case does not execute historical software, apply facility score modifiers,
 aggregate screening criteria or establish empirical/engineering validity.
+
+
+Climate comparisons bind gas identity, carbon-content accounting, metric,
+time horizon or calendar endpoint, reference and factor edition separately.
+A generic methane row excluding its carbon-content budget may still include
+warming-driven carbon feedback. A native historical routine, a supplied response
+series and a corrected factor table have different provenance. The climate case
+preserves those layers and an unchanged parent inventory. Its source-rounding
+interval is distinct from physical uncertainty; an annual history metric is not
+a product-unit factor or an authorization for offsets. Current original-carrier
+readings can extend a work while preserving earlier derived-text captures and
+immutable case inputs as dated evidence.
