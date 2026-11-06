@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-06
-lastReviewedCommit: f9781d590551f6e3ee38c223d1e56e88d4c2bc59
+lastReviewedCommit: 869af981fbec9eb04ab24e21bf24b956e68335f3
 ---
 
 # Publication architecture
@@ -295,3 +295,37 @@ the direction of dependency as “本段依据的前提”.
 Citation rendering adds one sentence stop after a locator, collapsing existing
 trailing Chinese stops in the displayed text only. Canonical locator identities
 and all numerical bindings retain their original strings.
+
+
+## Climate response and metric comparison
+
+`scripts/climate-metrics.mjs` registers CASE-CLIMATE-METRICS v1. Its nested public
+projection and independently fixed input digest bind thirty numeric facts to the
+actual source, work, reading, PDF and complete passage coordinates. Joos response
+and integral evaluation use binary64 exponentials with declared display precision;
+fixed pulse/wall comparisons, source rounding intervals and annual-history
+arithmetic use the shared exact-rational module. A selected wall-parent identity
+is checked against the unique discovered input/manifest and its actual solved gas
+vectors. The old wall input and all earlier case versions remain unchanged.
+
+The native summary is separately identified by sorted compact JavaScript JSON.
+Validation binds its observed code, notebook, parameters, axes and receipt identities
+to actual source-reading records. Static builds do not execute Python or reconstruct
+unprovided original model outputs. The downloadable evaluated receipt separates
+historical native values, author reconstructions, corrected-table factors, and
+synthetic time/rate examples. Undefined time-zero ratios remain undefined in the
+native source; displayed uncertainty widths never become automatic probabilities.
+
+The opt-in `scripts/reproduce-climate-native.py` follows its dedicated runbook.
+It verifies a separately pinned native semantic summary, exact source bytes and
+runtime versions before calling selected unchanged author modules. It does not
+install dependencies, execute notebooks, or make network calls during the numerical
+run. Acquisition cache and new output directory are explicit private caller-owned
+resources. The site dependencies remain unchanged. The retained replay qualification
+is macOS arm64 only; Linux x64 and Windows x64 execution remain unverified.
+
+The authored SVG in `public/book-figures/` plots the same Joos parameters and
+separates dimensionless remaining fraction from its time integral. Its source is
+an original plot from the selected public facts, not an exported third-party
+figure. Standard static export carries the asset; the chapter and print route
+share its MDX placement and the canonical paragraph-note sequence.

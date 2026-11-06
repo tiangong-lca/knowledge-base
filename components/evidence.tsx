@@ -24,7 +24,7 @@ export function ConceptRef({ id }: { id: string }) {
 /** Reader-facing citation identity; execution records and hashes remain in the editorial archive. */
 export function ArtifactReading({ artifact }: { artifact: SourceArtifact }) {
   if (artifact.kind === 'derived-text') return <>
-    <dt>引文依据</dt><dd><a href={artifact.originUrl}>官方文档</a>的文字摘录。原始 PDF 字节及表格图像未对照，引用限于所列文字与数值。</dd>
+    <dt>引文依据</dt><dd><a href={artifact.originUrl}>官方文档</a>的文字摘录，引用限于所列文字与数值。该摘录记录本身不代表原始 PDF 字节或表格图像的核对。</dd>
   </>;
   return <><dt>文献文本</dt><dd><a href={artifact.resolvedUrl}>查看引用版本</a></dd></>;
 }

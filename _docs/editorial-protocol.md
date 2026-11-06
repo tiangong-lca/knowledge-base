@@ -14,7 +14,7 @@ checkPaths:
   - "knowledge/**"
   - "releases/**"
 lastReviewedAt: 2026-11-06
-lastReviewedCommit: f9781d590551f6e3ee38c223d1e56e88d4c2bc59
+lastReviewedCommit: 550d3c8c5f11d6dfa02ce6db4e049b51e9f1aa0e
 ---
 
 # Editorial and living review protocol
@@ -202,3 +202,23 @@ denominators. A finite coefficient change is a separate calculation and does not
 establish an engineering option. For external uptake, trace the actual factor,
 transformation and reported score, retain counterexamples and unexplained gaps,
 and distinguish common institutional lineage from independent confirmation.
+
+
+## Climate response, timing and version
+
+Read the unit pulse, background, reference response and each integration or
+convolution before choosing a factor. Check main/supplement/correction rows and
+methane carbon budgets independently of shared substance names. Publication date
+does not prove adoption of a correction. Distinguish re-evaluation of a published
+fit, native execution, model comparison and observational calibration/validation.
+When a printed dynamic equation leaves the rate/cumulative-input convention
+ambiguous, define the input and derive a dimensional pulse-sum check without
+inventing the behavior of unavailable software.
+
+Freeze numerical expectations before execution. Exact historical-grid reproduction
+and step-size sensitivity remain separate results. Source coefficients, selected
+runtime observations and synthetic histories require separate metadata. Annual
+rates, completed-interval sums, absolute temperature and a change relative to prior
+history are not interchangeable. In a methodology dispute, match the formula
+version actually criticized and separate physical approximation from distribution
+or institutional adoption. No arithmetic sign confers policy authority.
