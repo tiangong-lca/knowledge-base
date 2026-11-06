@@ -4386,6 +4386,52 @@
         "channel": "公开Web检索、机构PDF文本、NEPIS原始扫描",
         "query": "site:universiteitleiden.nl Scientific background operational guide Part 3 CML 2001 Guinée；EPA 600 R 94 157 Tolle Vigon lithographic printing 300038IE",
         "note": "原始载体与后继书目分开；保护PDF使用机构公开文本，NEPIS影像按页核查。"
+      },
+      {
+        "id": "q-kb54-climate-originals-2026-11-06",
+        "date": "2026-11-06",
+        "channel": "原始期刊/机构网页、DOI和普通PDF取得；已登记协议的前后向引文追索",
+        "query": "site.ipcc.ch AR6 Chapter 7 errata 7 October 2025 Table 7.15; Sterner Johansson 2017 carbon cycle feedback emission metrics climate GWP GTP original; 气候 指标 GWP GTP IPCC AR6 勘误 时间尺度 甲烷 生物源",
+        "note": "同时按已登记DOI直接核对Joos2013、Olivié/Peters2013和Gasser2017期刊原件；新发现Zieger2025另登记。仅候选筛查不等于主题查全。"
+      },
+      {
+        "id": "q-kb54-rate-metric-definition",
+        "date": "2026-11-06",
+        "channel": "英文公开网页索引、出版社原始 PDF 与出版页补充材料入口",
+        "query": "Cain 2019 Improved calculation warming equivalent emissions shorter lived climate pollutants 10.1038/s41612-019-0086-4 publisher",
+        "note": "以 DOI 核对出版社文章和补充材料。后续检索将另行发表的 Smith 等（2021）列为相关方法进展。"
+      },
+      {
+        "id": "q-kb54-rate-metric-country-critique",
+        "date": "2026-11-06",
+        "channel": "英文公开网页索引、IOP 题名与 DOI、ETH Research Collection 原始刊行版",
+        "query": "Rogelj Schleussner GWP* country accounting equity Unintentional unfairness author reply Cain Allen 2019 2020 original\nRogelj Schleussner Unintentional unfairness 2019 10.1088 2019 a pdf IOP Rogelj Schleussner",
+        "note": "IOP PDF 请求返回验证页。ETH 公共机构库提供带封页的刊行版。"
+      },
+      {
+        "id": "q-kb54-rate-metric-published-exchange",
+        "date": "2026-11-06",
+        "channel": "英文公开网页索引、IOP 题名与 DOI、Reading CentAUR 与 Humboldt edoc 刊行版",
+        "query": "Cain Allen Comment on Unintentional unfairness 2021 10.1088 PDF IOP Cain\nRogelj Schleussner Reply to Comment Unintentional unfairness 2021 10.1088 pdf official",
+        "note": "IOP PDF 请求返回验证页。由作者所属机构公开库取得两篇刊行版。较早发布的往返信件预印本另有版本身份。"
+      },
+      {
+        "id": "q-kb54-ipcc-official-pdfs-2026-11-06",
+        "query": "AR6 WGI Chapter 7 official Chapter07 PDF, Chapter07_SM PDF and Version 7 October 2025 Errata; metric definitions, Table 7.15, Table 7.SM.7 and published/FGD correction scope",
+        "date": "2026-11-06",
+        "channel": "official IPCC carrier acquisition and selected PDF reading"
+      },
+      {
+        "id": "q-kb54-zieger-dynamic-2026-11-06",
+        "query": "Zieger et al. 2025, 10.5194/esd-16-2003-2025, dynamic life cycle climate metrics, article and supplement; source inputs and October 2025 errata comparison",
+        "date": "2026-11-06",
+        "channel": "official ESD journal discovery and original article/supplement acquisition"
+      },
+      {
+        "id": "q-kb54-ipcc-ch7-author-code-2026-11-06",
+        "date": "2026-11-06",
+        "channel": "公开 Web 检索；官方 GitHub API 和固定原件；Zenodo 版本和 ZIP 下载",
+        "query": "IPCC WG1 Chapter 7 GitHub Zenodo emission metrics 5211358 GWP GTP Chapter 7 Table 7.15 author code\nBill Collins IPCC Chapter 7 Table 7.SM.7 metrics python source spreadsheet carbon climate feedback Collins greenhouse gas metrics"
       }
     ],
     "limitations": [
@@ -9657,22 +9703,25 @@
       ],
       "discovery": {
         "queryIds": [
-          "q-case-ipcc-ar6-definition-2026-11-04"
+          "q-case-ipcc-ar6-definition-2026-11-04",
+          "q-kb54-ipcc-official-pdfs-2026-11-06"
         ],
-        "reason": "Targeted factor/definition and correction-context lookup for the connected teaching case; exact derived text retained outsideGit, original PDF not acquired.",
+        "reason": "2026-11-04 为相连教学例发现指标定义和更正上下文，当次留存指定派生文字选段。2026-11-06 在同一作品下取得正式原件并作具名选读。",
         "citationParents": []
       },
       "identityStatus": "verified",
-      "accessStatus": "abstract-or-excerpt",
+      "accessStatus": "public-fulltext-available",
       "readingStatus": "not-close-read",
-      "accessedAt": "2026-11-04",
-      "lastCheckedAt": "2026-11-04",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
       "rights": "IPCC原文保留其权利。本项目只发布原创解释、书目信息、定位及本例所用两个数值，不重传报告、完整表格、图像或派生原文快照；项目许可不重新许可第三方内容。",
       "limitations": [
-        "只有指定官方文字选段；原始PDF/视觉验证缺口保留，捕获通道与原始字节身份分开。"
+        "2026-11-04 墙体教学例的早期捕获使用指定官方文字选段，当次未取得原始 PDF 字节或验证其图像。历史载体和选段身份由 src-case-ipcc-ar6-wgi-ch7 与 rd-ipcc-ar6-wgi-ch7-derived 保留；2026-11-06 的原件核读另立载体和阅读记录。",
+        "2026-11-06 从官方入口取得正式第 7 章原始 PDF，核读具名段落及 Table 7.15 出版行列；该章 PDF 仍显示更正前表值。 选段与载体身份见 rd-kb54-ipcc-ar6-ch7-pdf。选段核查不表示全文核读、全部因子复核或修订程序再现。"
       ],
       "catalogSourceIds": [
-        "src-case-ipcc-ar6-wgi-ch7"
+        "src-case-ipcc-ar6-wgi-ch7",
+        "src-kb54-ipcc-ar6-ch7-pdf"
       ]
     },
     {
@@ -9711,22 +9760,25 @@
       ],
       "discovery": {
         "queryIds": [
-          "q-case-ipcc-ar6-errata-2026-11-04"
+          "q-case-ipcc-ar6-errata-2026-11-04",
+          "q-kb54-ipcc-official-pdfs-2026-11-06"
         ],
-        "reason": "Targeted factor/definition and correction-context lookup for the connected teaching case; exact derived text retained outsideGit, original PDF not acquired.",
+        "reason": "2026-11-04 为相连教学例发现指标定义和更正上下文，当次留存指定派生文字选段。2026-11-06 在同一作品下取得正式原件并作具名选读。",
         "citationParents": []
       },
       "identityStatus": "verified",
-      "accessStatus": "abstract-or-excerpt",
+      "accessStatus": "public-fulltext-available",
       "readingStatus": "not-close-read",
-      "accessedAt": "2026-11-04",
-      "lastCheckedAt": "2026-11-04",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
       "rights": "IPCC原文保留其权利。本项目只发布原创解释、书目信息、定位及本例所用两个数值，不重传报告、完整表格、图像或派生原文快照；项目许可不重新许可第三方内容。",
       "limitations": [
-        "只有指定官方文字选段；原始PDF/视觉验证缺口保留，捕获通道与原始字节身份分开。"
+        "2026-11-04 墙体教学例的早期捕获使用指定官方文字选段，当次未取得原始 PDF 字节或验证其图像。历史载体和选段身份由 src-case-ipcc-ar6-wgi-errata-2025-10-07 与 rd-ipcc-ar6-wgi-errata-2025-derived 保留；2026-11-06 的原件核读另立载体和阅读记录。",
+        "2026-11-06 从官方入口取得 Version 7 October 2025 原始 PDF；视觉核对第 3 页更正主表、第 4 页公式修订和第 5 页补充替换表的所列条目。 选段与载体身份见 rd-kb54-ipcc-ar6-errata-2025-10-07-pdf。选段核查不表示全文核读、全部因子复核或修订程序再现。"
       ],
       "catalogSourceIds": [
-        "src-case-ipcc-ar6-wgi-errata-2025-10-07"
+        "src-case-ipcc-ar6-wgi-errata-2025-10-07",
+        "src-kb54-ipcc-ar6-errata-2025-10-07-pdf"
       ]
     },
     {
@@ -17894,6 +17946,740 @@
       ],
       "catalogSourceIds": [
         "src-kb52-epa-1994-lithographic-p2"
+      ]
+    },
+    {
+      "id": "work-kb54-joos2013",
+      "title": "Carbon dioxide and climate impulse response functions for the computation of greenhouse gas metrics: a multi-model analysis",
+      "contributors": "F. Joos et al.",
+      "year": "2013",
+      "kind": "journal-article",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://acp.copernicus.org/articles/13/2793/2013/acp-13-2793-2013.pdf",
+          "role": "original-full-text"
+        },
+        {
+          "url": "https://acp.copernicus.org/articles/13/2793/2013/acp-13-2793-2013-supplement.pdf",
+          "role": "publisher-supplement"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.5194/acp-13-2793-2013"
+      },
+      "volumes": [
+        "V5",
+        "V7"
+      ],
+      "topics": [
+        "气候响应",
+        "指标/参考",
+        "版本及科学边界"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "International"
+      ],
+      "traditions": [
+        "climate science / LCA"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-kb54-climate-originals-2026-11-06"
+        ],
+        "reason": "登记协议后沿气候指标、响应和勘误的原始文献链核读。",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
+      "rights": "原文首页及期刊声明CC BY3.0；补充文件作为同文附件，单独再分发许可不额外推定。仅公开原创释义、必要参数和定位；保留作者归属。",
+      "limitations": [
+        "仅所列选段细读，不代表全文、底层模型或观测验证完成。"
+      ],
+      "catalogSourceIds": [
+        "src-kb54-joos2013"
+      ]
+    },
+    {
+      "id": "work-kb54-olivie-peters2013",
+      "title": "Variation in emission metrics due to variation in CO2 and temperature impulse response functions",
+      "contributors": "D. J. L. Olivié；G. P. Peters",
+      "year": "2013",
+      "kind": "journal-article",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://esd.copernicus.org/articles/4/267/2013/esd-4-267-2013.pdf",
+          "role": "original-full-text"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.5194/esd-4-267-2013"
+      },
+      "volumes": [
+        "V5",
+        "V7"
+      ],
+      "topics": [
+        "气候响应",
+        "指标/参考",
+        "版本及科学边界"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "International"
+      ],
+      "traditions": [
+        "climate science / LCA"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-kb54-climate-originals-2026-11-06"
+        ],
+        "reason": "登记协议后沿气候指标、响应和勘误的原始文献链核读。",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
+      "rights": "原作者作品按载体所示CC BY许可发布；保留原作者和作品归属。这里只发表原创释义、必要数值及精确定位，原文件和整表不随本项目分发。",
+      "limitations": [
+        "仅所列选段细读，不代表全文、底层模型或观测验证完成。"
+      ],
+      "catalogSourceIds": [
+        "src-kb54-olivie-peters2013"
+      ]
+    },
+    {
+      "id": "work-kb54-gasser2017",
+      "title": "Accounting for the climate–carbon feedback in emission metrics",
+      "contributors": "T. Gasser；G. P. Peters；J. S. Fuglestvedt；W. J. Collins；D. T. Shindell；P. Ciais",
+      "year": "2017",
+      "kind": "journal-article",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://esd.copernicus.org/articles/8/235/2017/esd-8-235-2017.pdf",
+          "role": "original-full-text"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.5194/esd-8-235-2017"
+      },
+      "volumes": [
+        "V5",
+        "V7"
+      ],
+      "topics": [
+        "气候响应",
+        "指标/参考",
+        "版本及科学边界"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "International"
+      ],
+      "traditions": [
+        "climate science / LCA"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-kb54-climate-originals-2026-11-06"
+        ],
+        "reason": "登记协议后沿气候指标、响应和勘误的原始文献链核读。",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
+      "rights": "原作者作品按载体所示CC BY许可发布；保留原作者和作品归属。这里只发表原创释义、必要数值及精确定位，原文件和整表不随本项目分发。",
+      "limitations": [
+        "仅所列选段细读，不代表全文、底层模型或观测验证完成。"
+      ],
+      "catalogSourceIds": [
+        "src-kb54-gasser2017"
+      ]
+    },
+    {
+      "id": "work-kb54-sterner-johansson2017",
+      "title": "The effect of climate–carbon cycle feedbacks on emission metrics",
+      "contributors": "Erik O Sterner；Daniel J A Johansson",
+      "year": "2017",
+      "kind": "journal-article",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://publications.lib.chalmers.se/records/fulltext/249097/local_249097.pdf",
+          "role": "original-full-text"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1088/1748-9326/aa61dc"
+      },
+      "volumes": [
+        "V5",
+        "V7"
+      ],
+      "topics": [
+        "气候响应",
+        "指标/参考",
+        "版本及科学边界"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "International"
+      ],
+      "traditions": [
+        "climate science / LCA"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-kb54-climate-originals-2026-11-06"
+        ],
+        "reason": "登记协议后沿气候指标、响应和勘误的原始文献链核读。",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
+      "rights": "原作者作品按载体所示CC BY许可发布；保留原作者和作品归属。这里只发表原创释义、必要数值及精确定位，原文件和整表不随本项目分发。",
+      "limitations": [
+        "仅所列选段细读，不代表全文、底层模型或观测验证完成。"
+      ],
+      "catalogSourceIds": [
+        "src-kb54-sterner-johansson2017"
+      ]
+    },
+    {
+      "id": "work-kb54-cain-2019-gwp-star",
+      "title": "Improved calculation of warming-equivalent emissions for short-lived climate pollutants",
+      "contributors": "Michelle Cain, John Lynch, Myles R. Allen, Jan S. Fuglestvedt, David J. Frame, Adrian H Macey",
+      "year": "2019",
+      "kind": "original-method-article",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://doi.org/10.1038/s41612-019-0086-4",
+          "role": "work-doi"
+        },
+        {
+          "url": "https://www.nature.com/articles/s41612-019-0086-4",
+          "role": "publisher-version-and-supplement-index"
+        },
+        {
+          "url": "https://www.nature.com/articles/s41612-019-0086-4.pdf",
+          "role": "publisher-version-of-record-pdf"
+        },
+        {
+          "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41612-019-0086-4/MediaObjects/41612_2019_86_MOESM1_ESM.pdf",
+          "role": "publisher-supplement-pdf"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1038/s41612-019-0086-4",
+        "pmid": "31656858",
+        "pmcid": "PMC6814445"
+      },
+      "volumes": [
+        "V5"
+      ],
+      "topics": [
+        "甲烷排放率",
+        "温度响应",
+        "GWP*",
+        "强迫与热响应"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Global"
+      ],
+      "traditions": [
+        "Climate response modelling",
+        "Emissions metrics"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-kb54-rate-metric-definition"
+        ],
+        "reason": "定位甲烷变化率指标加入慢响应项的原始方程、情景拟合和补充材料。",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
+      "rights": "正文标示 CC BY 4.0 International，第三方材料按各自标注处理。补充材料由出版社与正文一起提供，补充 PDF 未单独列出许可。两份 PDF 分别保存载体身份与引注。",
+      "limitations": [
+        "拟合范围受所选甲烷情景、模型设置、线性近似和历史强迫约束。选段不提供其他污染物的系数资格、独立观测检验或新版定义的比较。"
+      ],
+      "catalogSourceIds": [
+        "src-kb54-cain-2019-gwp-star",
+        "src-kb54-cain-2019-gwp-star-supplement-pdf"
+      ]
+    },
+    {
+      "id": "work-kb54-rogelj-schleussner-2019",
+      "title": "Unintentional unfairness when applying new greenhouse gas emissions metrics at country level",
+      "contributors": "Joeri Rogelj, Carl-Friedrich Schleussner",
+      "year": "2019",
+      "kind": "journal-article",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://doi.org/10.1088/1748-9326/ab4928",
+          "role": "work-doi"
+        },
+        {
+          "url": "https://www.research-collection.ethz.ch/entities/publication/a11698dc-1c3c-45a1-9b74-8c68c328823c",
+          "role": "institutional-version-of-record-entry"
+        },
+        {
+          "url": "https://www.research-collection.ethz.ch/bitstreams/f0cea27d-b609-488f-a1ac-dbd1a308b6af/download",
+          "role": "institutional-version-of-record-pdf"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1088/1748-9326/ab4928",
+        "repositoryDoi": "10.3929/ethz-b-000384659"
+      },
+      "volumes": [
+        "V5"
+      ],
+      "topics": [
+        "国家尺度甲烷核算",
+        "历史排放基线",
+        "分配公平",
+        "GWP*"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Global",
+        "Selected national inventories"
+      ],
+      "traditions": [
+        "Climate policy",
+        "Emissions accounting"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-kb54-rate-metric-country-critique"
+        ],
+        "reason": "定位将 GWP* 用于国家甲烷核算时关于历史参考和分配结果的原始批评。",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
+      "rights": "刊行版及 ETH 条目标示 CC BY 3.0 Unported。引用保留作者、题名、期刊及 DOI。",
+      "limitations": [
+        "国家结果依赖清单年份、回看区间和参考设定。研究的主要检验对象是国家核算，所列结果无法单独验证后续公式的物理精度。"
+      ],
+      "catalogSourceIds": [
+        "src-kb54-rogelj-schleussner-2019"
+      ]
+    },
+    {
+      "id": "work-kb54-cain-2021-gwp-star-comment",
+      "title": "Comment on ‘Unintentional unfairness when applying new greenhouse gas emissions metrics at country level’",
+      "contributors": "Michelle Cain, Keith Shine, David Frame, John Lynch, Adrian Macey, Ray Pierrehumbert, Myles Allen",
+      "year": "2021",
+      "kind": "comment",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://doi.org/10.1088/1748-9326/ac02eb",
+          "role": "work-doi"
+        },
+        {
+          "url": "https://centaur.reading.ac.uk/98869/",
+          "role": "institutional-version-of-record-entry"
+        },
+        {
+          "url": "https://centaur.reading.ac.uk/98869/1/erl_cain_comment.pdf",
+          "role": "institutional-version-of-record-pdf"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1088/1748-9326/ac02eb"
+      },
+      "volumes": [
+        "V5"
+      ],
+      "topics": [
+        "甲烷变化率",
+        "国家与其他排放边界",
+        "物理归因与分配",
+        "GWP*"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Global",
+        "Illustrative subglobal emission sources"
+      ],
+      "traditions": [
+        "Emissions metrics",
+        "Climate policy"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-kb54-rate-metric-country-critique",
+          "q-kb54-rate-metric-published-exchange"
+        ],
+        "reason": "识别作者团队针对国家核算批评正式发表的评论，核对它采用的修订公式及历史归因论点。",
+        "citationParents": [
+          "work-kb54-rogelj-schleussner-2019"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
+      "rights": "刊行版标示 CC BY 4.0 International。引用保留作者、题名、期刊及 DOI，原件由原载体提供。",
+      "limitations": [
+        "三个来源属于设定示例。累积窗口与年值的判断取决于路径平滑性、窗口边界以及采用的参考排放。"
+      ],
+      "catalogSourceIds": [
+        "src-kb54-cain-2021-gwp-star-comment"
+      ]
+    },
+    {
+      "id": "work-kb54-rogelj-schleussner-2021-reply",
+      "title": "Reply to Comment on ‘Unintentional unfairness when applying new greenhouse gas emissions metrics at country level’",
+      "contributors": "Joeri Rogelj, Carl-Friedrich Schleussner",
+      "year": "2021",
+      "kind": "reply",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://doi.org/10.1088/1748-9326/ac02ec",
+          "role": "work-doi"
+        },
+        {
+          "url": "https://edoc.hu-berlin.de/items/bda02fb7-acc1-4a84-b656-8afc9c9285a8",
+          "role": "institutional-version-of-record-entry"
+        },
+        {
+          "url": "https://edoc.hu-berlin.de/server/api/core/bitstreams/0a7d2d50-d58f-422e-821f-199288d249d3/content",
+          "role": "institutional-version-of-record-pdf"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1088/1748-9326/ac02ec"
+      },
+      "volumes": [
+        "V5"
+      ],
+      "topics": [
+        "修订版 GWP*",
+        "历史排放分配",
+        "核算与物理指标",
+        "回看区间"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Global",
+        "Illustrative national accounting"
+      ],
+      "traditions": [
+        "Climate policy",
+        "Emissions accounting"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-kb54-rate-metric-published-exchange"
+        ],
+        "reason": "定位批评者对正式评论的刊行答复，区分它与回复较早评论版本的预印本。",
+        "citationParents": [
+          "work-kb54-rogelj-schleussner-2019",
+          "work-kb54-cain-2021-gwp-star-comment"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
+      "rights": "刊行版标示 CC BY 4.0 International。引用保留作者、题名、期刊及 DOI，原件由原载体提供。",
+      "limitations": [
+        "答复的示例是阐明国家分配的思想实验。文中的核算规则与制度解释属于作者争论对象，其适用性需要相应制度原件。"
+      ],
+      "catalogSourceIds": [
+        "src-kb54-rogelj-schleussner-2021-reply"
+      ]
+    },
+    {
+      "id": "work-kb54-ipcc-ar6-wgi-ch7-sm-2021",
+      "title": "IPCC AR6 WGI Chapter 7 — The Earth’s Energy Budget, Climate Feedbacks, and Climate Sensitivity Supplementary Material",
+      "contributors": "Chris Smith; Zebedee R. J. Nicholls; Kyle Armour; William Collins; Piers Forster; Malte Meinshausen; Matthew D. Palmer; Masahiro Watanabe",
+      "year": "2021",
+      "kind": "assessment-chapter-supplement",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Chapter07_SM.pdf",
+          "role": "official supplementary original PDF"
+        }
+      ],
+      "identifiers": {
+        "report": "IPCC AR6 WGI Chapter 7 Supplementary Material"
+      },
+      "volumes": [
+        "V5",
+        "V7",
+        "A05",
+        "A10"
+      ],
+      "topics": [
+        "气候指标定义",
+        "响应参数与碳循环",
+        "绝对/相对因子和更正链"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "international"
+      ],
+      "traditions": [
+        "climate science / LCA"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-kb54-ipcc-official-pdfs-2026-11-06"
+        ],
+        "reason": "从 AR6 正式第 7 章沿方程、表注及补充材料入口定位同一评估的补充贡献。",
+        "citationParents": [
+          "work-ipcc-ar6-wgi-ch7-2021"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
+      "rights": "IPCC及原作权利人保留其权利。普通公开入口可取得原件。项目保留书目信息、精确定位和原创释义；原文件、页面图像及完整因子表仍在私有证据保全范围，项目许可不重新许可第三方内容。",
+      "limitations": [
+        "此处独列 Smith 等署名的补充贡献以便引注，科学证据仍与主章和勘误同源。具体选段见阅读记录。"
+      ],
+      "catalogSourceIds": [
+        "src-kb54-ipcc-ar6-ch7-sm-pdf"
+      ]
+    },
+    {
+      "id": "work-kb54-zieger2025",
+      "title": "Climate change metrics: bridging IPCC AR6 updates and dynamic life cycle assessments",
+      "contributors": "Vladimir Zieger; Thibaut Lecompte; Simon Guihéneuf; Yann Guevel; Manuel Bazzana; Thomas Gasser; Yue He",
+      "year": "2025",
+      "kind": "journal-article",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://doi.org/10.5194/esd-16-2003-2025",
+          "role": "article DOI"
+        },
+        {
+          "url": "https://esd.copernicus.org/articles/16/2003/2025/esd-16-2003-2025.pdf",
+          "role": "journal original article PDF"
+        },
+        {
+          "url": "https://doi.org/10.5194/esd-16-2003-2025-supplement",
+          "role": "related supplement DOI"
+        },
+        {
+          "url": "https://esd.copernicus.org/articles/16/2003/2025/esd-16-2003-2025-supplement.pdf",
+          "role": "journal original supplement PDF"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.5194/esd-16-2003-2025",
+        "series": "Earth System Dynamics 16, 2003–2019"
+      },
+      "volumes": [
+        "V5",
+        "V7",
+        "A10"
+      ],
+      "topics": [
+        "绝对动态气候指标",
+        "带日期清单",
+        "甲烷氧化与单列 CO₂ 吸收",
+        "历史 AR6 参数"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "international"
+      ],
+      "traditions": [
+        "climate science / LCA"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-kb54-zieger-dynamic-2026-11-06"
+        ],
+        "reason": "沿登记的动态气候指标与 AR6 版本问题前向追索，通过期刊作品页定位正文和补充 PDF。",
+        "citationParents": [
+          "work-ipcc-ar6-wgi-ch7-2021",
+          "work-kb54-ipcc-ar6-wgi-ch7-sm-2021"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
+      "rights": "载体标明 © Author(s) 2025，CC BY 4.0。补充材料提示个别组成部分可能有不同版权。项目保留作者归属、精确载体定位与原创释义；原件私下保全。论文许可不适用于未经核验的代码或外部数据。",
+      "limitations": [
+        "正文和补充材料属于一个作品，按实际载体定位。核读所列段落而非作品全文。",
+        "发表日期晚于 2025-10-07 勘误；实际模型参数和对照表仍为早期 AR6 口径。工具代码和报告输出未验证。"
+      ],
+      "catalogSourceIds": [
+        "src-kb54-zieger2025-article-pdf",
+        "src-kb54-zieger2025-supplement-pdf"
+      ]
+    },
+    {
+      "id": "work-ipcc-ar6-wgi-ch7-author-code",
+      "title": "IPCC WGI AR6 Chapter 7 — Author code and data",
+      "contributors": "Chris Smith; Piers Forster; Matt Palmer; Bill Collins; Nick Leach; Masa Watanabe; Sophie Berger; Brad Hall; Mark Zelinka; Dan Lunt; Michelle Cain; Glen Harris; Mark Ringer",
+      "year": "2021",
+      "kind": "versioned-software-source",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.5211358",
+          "role": "Zenodo v.1.0 固定版本 DOI"
+        },
+        {
+          "url": "https://doi.org/10.5281/zenodo.5211357",
+          "role": "Zenodo 概念 DOI"
+        },
+        {
+          "url": "https://github.com/IPCC-WG1/Chapter-7/tree/235679fbd25e489827de605e1417ac3f27e6abab",
+          "role": "归档对应 GitHub tag 提交"
+        },
+        {
+          "url": "https://github.com/IPCC-WG1/Chapter-7/tree/2f948c862dbc158182ba47b863395ec1a4aa7998",
+          "role": "后续精确源码提交"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/IPCC-WG1/Chapter-7/2f948c862dbc158182ba47b863395ec1a4aa7998/notebooks/335_chapter7_generate_metrics.ipynb",
+          "role": "后续固定提交实际核读原件"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/IPCC-WG1/Chapter-7/2f948c862dbc158182ba47b863395ec1a4aa7998/src/ar6/metrics/co2.py",
+          "role": "后续固定提交实际核读原件"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/IPCC-WG1/Chapter-7/2f948c862dbc158182ba47b863395ec1a4aa7998/src/ar6/metrics/ch4.py",
+          "role": "后续固定提交实际核读原件"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/IPCC-WG1/Chapter-7/2f948c862dbc158182ba47b863395ec1a4aa7998/src/ar6/metrics/gasser.py",
+          "role": "后续固定提交实际核读原件"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/IPCC-WG1/Chapter-7/2f948c862dbc158182ba47b863395ec1a4aa7998/src/ar6/metrics/constants.py",
+          "role": "后续固定提交实际核读原件"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/IPCC-WG1/Chapter-7/2f948c862dbc158182ba47b863395ec1a4aa7998/src/ar6/metrics/__init__.py",
+          "role": "后续固定提交实际核读原件"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/IPCC-WG1/Chapter-7/2f948c862dbc158182ba47b863395ec1a4aa7998/src/ar6/metrics/halogen_generic.py",
+          "role": "后续固定提交实际核读原件"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/IPCC-WG1/Chapter-7/2f948c862dbc158182ba47b863395ec1a4aa7998/LICENSE",
+          "role": "后续固定提交实际核读原件"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/IPCC-WG1/Chapter-7/2f948c862dbc158182ba47b863395ec1a4aa7998/data_input/metrics/ch4_co2_response_functions.csv",
+          "role": "后续固定提交实际核读原件"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/IPCC-WG1/Chapter-7/2f948c862dbc158182ba47b863395ec1a4aa7998/data_input/metrics/ch4_extra_response_functions.csv",
+          "role": "后续固定提交实际核读原件"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.5281/zenodo.5211358",
+        "edition": "v.1.0；另选读并执行同一软件工作的后续固定 GitHub 版本。",
+        "manifestationNote": "2021 tag 235679fbd25e489827de605e1417ac3f27e6abab；2022 固定后续提交 2f948c862dbc158182ba47b863395ec1a4aa7998。"
+      },
+      "volumes": [
+        "V5",
+        "A05"
+      ],
+      "topics": [
+        "CO₂ 脉冲响应",
+        "甲烷历史指标",
+        "气候—碳反馈",
+        "作者代码复现"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "international"
+      ],
+      "traditions": [
+        "IPCC WG I assessment support"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-kb54-ipcc-ch7-author-code-2026-11-06"
+        ],
+        "reason": "追踪第 7 章历史指标的作者软件与不同版本可执行边界。",
+        "citationParents": [
+          "work-ipcc-ar6-wgi-ch7-2021"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-06",
+      "lastCheckedAt": "2026-11-06",
+      "rights": "仓库 LICENSE 为 MIT，署 Chris Smith（2020）。Zenodo 元数据的存档许可标记为 other-open，历史 setup.py 的 BSD 声明与仓库许可证文本不同。第三方数据、图和报告各有自己的权利条件。此记录公开定位、身份及原创释义，整件源码、存档和数据保留在公开仓库之外。",
+      "limitations": [
+        "Zenodo 归档、随后固定提交、报告章节与响应数据共享 IPCC 第 7 章作者和方法证据链。这些载体是同一作者软件工作的不同版本，不能作为独立实证。",
+        "作者运行仅执行 0–100 年、等质量脉冲的 CO₂、CH₄ 及 CH₄ 的增温驱动碳循环反馈函数；执行范围未覆盖 500 年完整网格、整本 notebook、图表或全套因子。"
+      ],
+      "catalogSourceIds": [
+        "src-kb54-ipcc-ch7-code-v1",
+        "src-kb54-ipcc-ch7-code-snapshot"
       ]
     }
   ],
