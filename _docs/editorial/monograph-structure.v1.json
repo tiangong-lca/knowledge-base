@@ -10078,7 +10078,7 @@
     {
       "oldUnit": "C02",
       "kind": "body-appendix-rewrite",
-      "newRequirement": "燃料/支路细算及舍入上限进入X01；正文保留305→30.5→274.5和2026/6036→6.02/17.9两条量链、70.09未闭合差额及原始资料限制，并明确回链细算。",
+      "newRequirement": "燃料/支路细算及舍入上限进入X01；B02-S03明确回链X01。正文保留305→30.5→274.5和2026/6036→6.02/17.9两条量链、70.09未闭合差额及原始资料限制。若简明说明提及1.3325上限，须同时保留固定205短吨、仅13个打印系数各0.0005舍入的条件，不能当成总体误差上限。",
       "target": "B02"
     },
     {
@@ -10140,5 +10140,28 @@
     "B04": "各环节交出了什么，换版本或用途后，这些产出还能支持什么？",
     "B32": "早期系统比较留下的问题，怎样在今天的计算与证据中继续被检验和修订？"
   },
+  "plannedSynthesis": [
+    {
+      "id": "planned-history-return",
+      "status": "not-written-not-approved",
+      "target": "B32-S04",
+      "sourceUnits": [
+        "C02",
+        "C03",
+        "C37",
+        "C34"
+      ],
+      "candidatePremiseIds": [
+        "cl-early-policy-question-version",
+        "cl-early-policy-other-spending",
+        "cl-hist-conclusion",
+        "cl-wall-tolerance",
+        "cl-wall-rough-demand",
+        "cl-pack-limits",
+        "cl-book-conclusion-conditions"
+      ],
+      "reviewRequirement": "只比较既有案例实际显示的对象/范围/判断条件；历史报告、作者教学例和实际研究分别标识。成文时另建有前提的规范综合论断并审查，不据年代相邻写制度继承、方法优胜或整体进步史。"
+    }
+  ],
   "manuscriptReadScope": "Main agent read all expanded canonical prose and ordinary MDX for44units plus initial HTML text/tables of both dynamic cases. Existing notes/primary originals, interactions and print pagination were not requalified in this editorial task."
 }
