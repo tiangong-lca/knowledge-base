@@ -1,3 +1,4 @@
+import { assertProcessNetworkHeadingHistory, validateProcessNetworkCoverage } from './reader-process-network.mjs';
 import { assertFunctionalReferenceHeadingHistory, validateFunctionalReferenceCoverage } from './reader-functional-reference.mjs';
 import { assertCleanerProductionHeadingHistory, validateCleanerProductionCoverage } from './reader-cleaner-production.mjs';
 import { readdir, readFile } from 'node:fs/promises';
@@ -90,6 +91,7 @@ export async function validateRepository(root) {
   if (edition) {
     const [accepted,baseline,placements,headings]=await Promise.all(['framework-accepted','citation-baseline','citation-placements','framework-heading-history'].map(name=>readOptional(`config/${name}.json`)));
     const [functionalAccepted,functionalHeadingHistory,functionalProse]=await Promise.all(['functional-reference-accepted','functional-reference-heading-history','functional-reference-prose-accepted'].map(name=>readOptional(`config/${name}.json`)));
+    const [processAccepted,processHeadingHistory,processProse]=await Promise.all(['process-network-accepted','process-network-heading-history','process-network-prose-accepted'].map(name=>readOptional(`config/${name}.json`)));
     const [cleanerAccepted,cleanerHeadingHistory]=await Promise.all(['cleaner-production-accepted','cleaner-production-heading-history'].map(name=>readOptional(`config/${name}.json`)));
     const sources=new Map();
     for(const file of await mdxFiles(resolve(root,'content'))) {
@@ -102,6 +104,8 @@ export async function validateRepository(root) {
       assertFrameworkHeadingHistory(headings);
       assertCleanerProductionHeadingHistory(cleanerHeadingHistory);
       assertFunctionalReferenceHeadingHistory(functionalHeadingHistory);
+      assertProcessNetworkHeadingHistory(processHeadingHistory);
+      errors.push(...validateProcessNetworkCoverage(edition,sources,processAccepted,data,processProse));
       errors.push(...validateFunctionalReferenceCoverage(edition,sources,functionalAccepted,data,functionalProse));
       errors.push(...validateCleanerProductionCoverage(edition,sources,cleanerAccepted,data));
       errors.push(...validateFrameworkCoverage(edition,sources,accepted,data));

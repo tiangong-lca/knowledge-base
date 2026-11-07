@@ -16,8 +16,8 @@ checkPaths:
   - "scripts/**"
   - "package.json"
   - ".github/**"
-lastReviewedAt: 2026-11-07
-lastReviewedCommit: 28a961266fd66c2535aa99f14245a7961f10cdf1
+lastReviewedAt: 2026-11-08
+lastReviewedCommit: b0aa9573c6f2999e2205ad7bda54263d1db425db
 ---
 
 # Publication architecture
@@ -378,3 +378,11 @@ B05 retains the existing website source and stable print unit rather than adding
 B06 consumes C08 and S03 once in the explicit 44-unit roster, using the rewritten C08 source for both website and book. S03 remains a fine website projection of the same canonical records. The source/map receipt retains 15 original IDs, eight ordinary-block destinations and two reviewed additions in 7/6/4 section order. A separate reviewed-prose receipt binds 17 full canonical records, both LF-normalized MDX sources and the authored wall-case navigation meaning/placement. Repository and actual decoded-HTML checks reject missing, duplicate, moved or changed substantive content even when markers and links remain. SourceRef and concept/case navigation are checked separately.
 
 Eight actual clean 87f printed-heading captures extend the unchanged 2,254 positional, 1,788 canonical, 19 framework and 3 cleaner expectations to 4,072. Original C08/S03 source groups retain their exact 10/5-note subsets; this also covers S03's now-seven-note website. A retained native unit/group carries fragment-targeted source context inside its actual target, avoiding duplicate IDs. Relocated unit/group notices explain the broader chapter and provide exact current destinations with the original edition. Tests verify source scope, attachment, text, date, source link and current note identities. HTML qualification does not qualify a separately generated PDF's destination interoperability.
+
+## Shared process-network chapter
+
+B07 retains the C17 route/key/source in the same 44-unit mixed roster. Its three sections share ten canonical paragraphs between website and print. `process-network-accepted.json` independently pins the original eight identities, source/heading map and two explicit additions; its nested legacy numeric baseline identifies dd715663 and ordinal17 separately from the current 79af source snapshot. The four actually captured native printed headings in `process-network-heading-history.json` extend the prior4,072 historical obligations to4,076 without replacing any earlier inventory or its edition context.
+
+`reader-process-network.mjs` validates exact source registration, section/occurrence order and actual decoded paragraph/endnote text. A separately pinned reviewed-prose receipt binds all ten full canonical records and the LF-normalized shared MDX. Mutating both catalog and HTML does not authorize changing the reviewed scientific content. Original eight-note groups and the native printed unit retain their original title, edition and exact current subset2,3,4,6,7,8,9,10 through the existing retained-scope mechanism; no same-ID notice or new stylesheet is needed. Non-native scopes use no-script notices, and old headings point to their precise new section. Source admission and actual export checks require all receipt layers even when an altered output omits the chapter.
+
+The two-process numerical example remains author-stipulated prose with its existing exact arithmetic, not a new empirical dataset or general solver. The new scaling explanation has its own selected-source evidence. One wall-case template/canonical paragraph gains a named chapter reference; case inputs, factors and versions stay unchanged. These representation checks do not establish source entailment, continuous reading, real-world model validity or full-book/PDF qualification; those retain their separate acceptance evidence.

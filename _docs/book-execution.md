@@ -429,3 +429,19 @@ This next chapter must preserve the10m²teaching assumption separately from the1
 ### 2026-11-08 B06成稿与本地资格
 
 [Issue70](https://github.com/tiangong-lca/knowledge-base/issues/70) 的《功能参照》已形成三节17段共同规范正文，明确消费C08与S03，保留网站细入口、原15条和八块普通解释。四载体选段重读、来源/依赖审核及实际v3连续读者复核分别完成；主代理保留按用途解释的术语边界，不制造统一定义或人类专家资格。312项测试、类型检查、规范/阅读/18项案例校验和工作树build/export通过，830条主张与44个混合阅读单元不构成全书完成比例。4072项历史地址、原注释子集范围与实质导航有独立接受守卫。实际浏览器、干净提交、Main/托管和精确root正常交付尚未完成。全书32章、八领域、十二组附录及正式版次门槛继续开放。
+
+
+## 2026-11-08 B06 completed and B07 process-network authoring — Issue72
+
+Source70/PR71 is fully delivered at Main79af66d9fb6788e2b9e4e3478f3410e4c190d0b7 through root2285/PR2286/Mainbdb368bac1b1f96fe05710c7054d400be86fcc19. Normal source finish_TFAHQ2fLy3UV6_p4gh49by6l, projection_NievSWeJU50YPCLoXclukSY6 and final root finish_6w4G-h9Hd2JwFum6u7tcXVFe verify delivery complete, both IntegrationDone fields and1/1sourcehandoff with zero remaining mirrors. Required source/root CI, clean Main build, actual53hosted hashes and28distinct browserchecks(26initial+2focused navigation) passed; no second full28rerun is claimed. Original23peerphysicalstates remain preserved. Prior pending descriptions are dated milestones, not remaining B06work.
+
+[Issue72](https://github.com/tiangong-lca/knowledge-base/issues/72) was created/started before implementation on codex/book-process-network from exact79af. The [protocol](editorial/2026-11-08-process-network-monograph.md) freezes all271tracked-file identities,830claims/176readings/112prior revisions/36casefiles and actual clean79afC17/print addresses. Read-only dependency review inspected49claims/52occurrences, separating12premise-only records from conceptual routing; actual capture identifies four additional printed headings beyond4072. No new original passage reading or B07prose is claimed at this protocol milestone.
+
+The chapter will be actually rewritten under 数量坐标／需求平衡／反馈边界, preserving eight original propositions and exact author-stipulated feedback arithmetic. A named B07reference will replace the wall paragraph/template's relative antecedent without changing any input. Source/math, fresh reader, engineering, actual rendered qualification and normal source/Main/hosted/exactroot delivery remain open. The full32chapter/eight-domain/twelve-appendix and formalPDFinteroperability obligations remain open in programme9. No task runtime resources were created; programme worktrees/dependencies and lawful private evidence remain retained.
+
+
+### 2026-11-08 B07 actual v2 manuscript and review
+
+Issue72 now has an actual three-section/ten-paragraph shared manuscript, preserving eight originals and adding the separately identified service-to-demand and scaling-basis explanations. Main and independent selected-original checks preserve the original sample/reprint/errata identities and record the observed p30coefficient inconsistency without adopting it into the hypothetical case. Actualv1/v2source reviews and a fresh revised continuous-reader check found no remaining material issue after bounded clarification; neither is human expert certification. The main agent rejected two reader misreadings after exact text/source checks. Old reading events, all797evidence records,18case inputs and prior accepted histories remain preserved; one wall reference/template changes by name only.
+
+The actualv2reader excerpt hash is eaa31c91f5e72236b083f2680bc5d5d418d44d1f42d64a8ddc39c06d92ec6416. Engineering pins ten full records/sharedMDX, original eight-note scope and four captured headings, yielding4,076historical obligations with the same44mixed units.321tests, types, repository validation and actual working build/export832claims pass. Clean committed build, actualbrowser/print/governance, sourcePR/Main/hosted and exactrootnormalhandoff remain pending at this milestone; fullbook/formalPDFscope is unchanged.

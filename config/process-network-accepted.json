@@ -1,0 +1,82 @@
+{
+  "sourceCommit": "79af66d9fb6788e2b9e4e3478f3410e4c190d0b7",
+  "source": {
+    "route": "/docs/book/inventory-calculation",
+    "path": "content/docs/book/inventory-calculation.mdx",
+    "sha256": "3238e7ff55ebe65ed2b6805ad85988f2f5cda33ecb77e6e0da63699c05356456",
+    "title": "清单怎样算出来：矩阵、倍率与一段反馈",
+    "claimIds": [
+      "cl-inv-computation-start",
+      "cl-inv-coordinate-meaning",
+      "cl-inv-demand-balance",
+      "cl-inv-environment-scaling",
+      "cl-inv-example-inputs",
+      "cl-inv-example-solution",
+      "cl-inv-example-truncated",
+      "cl-inv-example-meaning"
+    ],
+    "legacyNumericBaseline": {
+      "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+      "printOrdinal": 17
+    }
+  },
+  "title": "过程网络",
+  "part": "可比世界",
+  "sections": [
+    {
+      "id": "数量坐标",
+      "title": "数量坐标",
+      "claimIds": [
+        "cl-inv-service-to-demand",
+        "cl-inv-computation-start",
+        "cl-inv-coordinate-meaning"
+      ]
+    },
+    {
+      "id": "需求平衡",
+      "title": "需求平衡",
+      "claimIds": [
+        "cl-inv-demand-balance",
+        "cl-inv-scaling-basis",
+        "cl-inv-environment-scaling"
+      ]
+    },
+    {
+      "id": "反馈边界",
+      "title": "反馈边界",
+      "claimIds": [
+        "cl-inv-example-inputs",
+        "cl-inv-example-solution",
+        "cl-inv-example-truncated",
+        "cl-inv-example-meaning"
+      ]
+    }
+  ],
+  "sourceHeadings": [
+    {
+      "id": "先说明数字代表什么",
+      "title": "先说明数字代表什么",
+      "target": "数量坐标"
+    },
+    {
+      "id": "给定需求怎样约束过程",
+      "title": "给定需求怎样约束过程",
+      "target": "需求平衡"
+    },
+    {
+      "id": "一个两过程的虚构例子",
+      "title": "一个两过程的虚构例子",
+      "target": "反馈边界"
+    },
+    {
+      "id": "方程解完之后",
+      "title": "方程解完之后",
+      "target": "反馈边界"
+    }
+  ],
+  "additions": [
+    "cl-inv-service-to-demand",
+    "cl-inv-scaling-basis"
+  ],
+  "authorization": "Issue 72 protocol committed as 4c1a69e before prose changes; original eight identities retained with two explicit new records. This inventory does not itself accept rewritten prose."
+}
