@@ -2,11 +2,14 @@ import { source } from '@/lib/source';
 import { cache } from 'react';
 import baseline from '@/config/citation-baseline.json';
 import placements from '@/config/citation-placements.json';
+import history from '@/config/citation-history.json';
+import { assertCitationHistory } from '@/scripts/reader-citation-history.mjs';
 import { bookChapters, createChapterReferenceIndex, orderPages, printUnitAnchor } from '@/scripts/reader-book.mjs';
 import { assertCitationBaseline, assertPrintFrontMatter } from '@/scripts/reader-citation-baseline.mjs';
-import { citationSourceHref, createCurrentPrintRoutes, createLegacyCitationEntries, type Destination, type LegacyEntry } from '@/scripts/reader-citations.mjs';
+import { createCurrentPrintRoutes, createLegacyCitationEntries, createCanonicalCitationEntries, type Destination, type LegacyEntry } from '@/scripts/reader-citations.mjs';
 
 assertCitationBaseline(baseline);
+assertCitationHistory(history);
 assertPrintFrontMatter(placements.frontMatter);
 
 export type ReaderPage = ReturnType<typeof source.getPages>[number];
@@ -27,19 +30,19 @@ export function getPrintPages(): ReaderPage[] {
 }
 
 export const printFrontMatterCount = placements.frontMatter.length;
-export const citationBaseline = { date: baseline.sourceDate, sourceHref: citationSourceHref(baseline.sourceCommit) };
-const legacyEntries = createLegacyCitationEntries(baseline, placements);
+const legacyEntries = [...createLegacyCitationEntries(baseline, placements, history.pages),
+  ...createCanonicalCitationEntries(history, placements, getPrintPages().map(page => page.url))];
 
 export function getLegacyCitations(route: string, print: boolean) {
   const path = print ? '/print' : route;
-  const aliases = new Map<string, string[]>();
+  const aliases = new Map<string, LegacyEntry[]>();
   const notices: LegacyEntry[] = [];
   for (const entry of legacyEntries) {
     if (entry.path !== path) continue;
     const target = entry.targets[0];
     if (entry.mode === 'alias' && target.route === route) {
       const list = aliases.get(target.id) ?? [];
-      list.push(entry.id);
+      list.push(entry);
       aliases.set(target.id, list);
     }
     if (entry.mode === 'notice' && entry.route === route) notices.push(entry);

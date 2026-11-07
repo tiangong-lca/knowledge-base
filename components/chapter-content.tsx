@@ -1,20 +1,20 @@
 import Link from 'next/link';
 import { createElement, type HTMLAttributes } from 'react';
 import catalog from '@/lib/catalog';
-import { citationBaseline, getChapterReferenceIndex, getCitationLabel, getLegacyCitations, type ReaderPage } from '@/lib/reader-book';
+import { getChapterReferenceIndex, getCitationLabel, getLegacyCitations, type ReaderPage } from '@/lib/reader-book';
 import { getMDXComponents } from '@/mdx-components';
 import { ClaimAnnotation } from '@/components/evidence';
 import { chapterAnchorPrefix, createChapterAnnotationPlan, createChapterNotePlan, printUnitAnchor } from '@/scripts/reader-book.mjs';
-import { citationHref } from '@/scripts/reader-citations.mjs';
+import { citationHref, citationSourceHref, type LegacyEntry } from '@/scripts/reader-citations.mjs';
 
-function CitationVersion() {
-  return <>此链接按 <time dateTime={citationBaseline.date}>{citationBaseline.date}</time> 留存文本定位。其他版本的同号引用可能指向不同内容。<a href={citationBaseline.sourceHref}>查看这一版本的源文件</a></>;
+function CitationVersion({ edition }: { edition: LegacyEntry['edition'] }) {
+  return <>此链接按 <time dateTime={edition.sourceDate}>{edition.sourceDate}</time> 留存文本定位。其他历史版本的引用需核对各自源文件。<a href={citationSourceHref(edition.sourceCommit)}>查看这一版本的源文件</a></>;
 }
 
 /** Keep the fragment itself in the HTML so the notice works without scripting. */
-export function LegacyCitationAliases({ ids, target }: { ids?: string[]; target: string }) {
-  return ids?.map(id => <span key={id} id={id} className="legacy-citation-target" data-legacy-for={target} tabIndex={-1}>
-    <span className="legacy-citation-context"><CitationVersion /></span>
+export function LegacyCitationAliases({ ids, target }: { ids?: LegacyEntry[]; target: string }) {
+  return ids?.map(entry => <span key={entry.id} id={entry.id} className="legacy-citation-target" data-legacy-for={target} tabIndex={-1}>
+    <span className="legacy-citation-context"><CitationVersion edition={entry.edition} /></span>
   </span>);
 }
 
@@ -72,7 +72,7 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
     </section>}
     {notices.map(notice => <div key={notice.id} id={notice.id} className="legacy-citation-target not-prose" data-legacy-notice="" tabIndex={-1}>
       <div className="legacy-citation-context">
-        <p><CitationVersion /></p>
+        <p><CitationVersion edition={notice.edition} /></p>
         <p>可从下列链接查阅这一留存版本对应的内容。</p>
         <ul>{notice.links.map(link => <li key={link.href}><a href={link.href} data-legacy-destination="">{link.label}</a></li>)}</ul>
       </div>

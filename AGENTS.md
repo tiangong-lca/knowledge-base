@@ -14,7 +14,7 @@ checkPaths:
   - ".docpact/config.yaml"
   - "_docs/**"
 lastReviewedAt: 2026-11-07
-lastReviewedCommit: bac68b35ba5228ed97c99cfc85d5605c187aad97
+lastReviewedCommit: ab5f8dfad4e0939f5dc505f1df6169776356fe54
 ---
 
 # Knowledge Base contributor contract
