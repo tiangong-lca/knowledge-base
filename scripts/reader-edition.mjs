@@ -1,3 +1,4 @@
+import { assertHybridInventoryRegistration } from './reader-hybrid-inventory.mjs';
 import { assertExchangeSemanticsRegistration, exchangeSemanticsRoute, exchangeSemanticsTitles } from './reader-exchange-semantics.mjs';
 import { assertProcessNetworkRegistration } from './reader-process-network.mjs';
 import { assertFunctionalReferenceRegistration, functionalReferenceSupplement } from './reader-functional-reference.mjs';
@@ -26,6 +27,7 @@ export function currentEditionKeys(edition, availableSources, baseline, placemen
   assertCleanerProductionRegistration(edition);
   assertFunctionalReferenceRegistration(edition);
   assertProcessNetworkRegistration(edition);
+  assertHybridInventoryRegistration(edition);
   assertExchangeSemanticsRegistration(edition);
   const assembly = units.find(unit => unit.key === frameworkUnitKey);
   if (!assembly || assembly.source !== frameworkManuscript || assembly.kind !== 'chapter') throw new Error('Missing accepted B04 manuscript registration');

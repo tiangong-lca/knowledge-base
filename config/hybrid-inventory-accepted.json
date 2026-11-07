@@ -1,0 +1,3409 @@
+{
+  "sourceCommit": "0aed5f6cbb337c268d257a4821a6d236418c5f30",
+  "source": {
+    "route": "/docs/book/inventory-boundary-and-hybrid",
+    "path": "content/docs/book/inventory-boundary-and-hybrid.mdx",
+    "sha256": "f8e07d8650cbb6313983f71a561c393233faab774fe2e2c8e868330978a36391",
+    "title": "边界之外：混合清单补上了什么",
+    "claimIds": [
+      "cl-inv-boundary-carrier",
+      "cl-inv-small-cuts",
+      "cl-hyb-question",
+      "cl-inv-io-limits",
+      "cl-inv-hybrid-forms",
+      "cl-inv-double-counting",
+      "cl-hyb-object",
+      "cl-hyb-sign",
+      "cl-hyb-upstream",
+      "cl-hyb-downstream",
+      "cl-hyb-balance",
+      "cl-hyb-inventory",
+      "cl-hyb-toaster",
+      "cl-hyb-downstream-dispute",
+      "cl-hyb-downstream-test",
+      "cl-hyb-accounts",
+      "cl-hyb-evidence-boundary",
+      "cl-hyb-service",
+      "cl-hyb-ledger",
+      "cl-hyb-invoices",
+      "cl-hyb-raw",
+      "cl-hyb-naive",
+      "cl-hyb-remove",
+      "cl-hyb-equations",
+      "cl-hyb-corrected",
+      "cl-hyb-naive-result",
+      "cl-hyb-swap",
+      "cl-hyb-swap-result",
+      "cl-hyb-pump",
+      "cl-hyb-bpc",
+      "cl-hyb-paths",
+      "cl-hyb-popcorn",
+      "cl-hyb-response",
+      "cl-hyb-database",
+      "cl-hyb-denominator",
+      "cl-hyb-limits",
+      "cl-hyb-audit",
+      "cl-inv-judgement"
+    ],
+    "legacyNumericBaseline": {
+      "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+      "printOrdinal": 19
+    },
+    "canonicalBaseline": {
+      "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+      "printOrdinal": 21
+    }
+  },
+  "title": "混合清单",
+  "part": "可比世界",
+  "sections": [
+    {
+      "id": "过程经济边界",
+      "title": "过程经济边界",
+      "claimIds": [
+        "cl-inv-boundary-carrier",
+        "cl-inv-small-cuts",
+        "cl-hyb-question",
+        "cl-inv-io-limits",
+        "cl-inv-hybrid-forms",
+        "cl-inv-double-counting",
+        "cl-hyb-object",
+        "cl-hyb-sign"
+      ]
+    },
+    {
+      "id": "双向账户",
+      "title": "双向账户",
+      "claimIds": [
+        "cl-hyb-upstream",
+        "cl-hyb-downstream",
+        "cl-hyb-balance",
+        "cl-hyb-inventory",
+        "cl-hyb-toaster",
+        "cl-hyb-downstream-dispute",
+        "cl-hyb-downstream-test",
+        "cl-hyb-downstream-zero",
+        "cl-hyb-accounts",
+        "cl-hyb-evidence-boundary",
+        "cl-hyb-service",
+        "cl-hyb-ledger",
+        "cl-hyb-invoices",
+        "cl-hyb-raw",
+        "cl-hyb-naive",
+        "cl-hyb-remove",
+        "cl-hyb-equations",
+        "cl-hyb-corrected",
+        "cl-hyb-naive-result",
+        "cl-hyb-swap",
+        "cl-hyb-swap-result"
+      ]
+    },
+    {
+      "id": "误差来源",
+      "title": "误差来源",
+      "claimIds": [
+        "cl-hyb-pump",
+        "cl-hyb-bpc",
+        "cl-hyb-paths",
+        "cl-hyb-popcorn",
+        "cl-hyb-response",
+        "cl-hyb-database",
+        "cl-hyb-denominator",
+        "cl-hyb-limits",
+        "cl-hyb-audit",
+        "cl-inv-judgement"
+      ]
+    }
+  ],
+  "sourceHeadings": [
+    {
+      "id": "方程能算到哪里",
+      "title": "方程能算到哪里",
+      "target": "过程经济边界"
+    },
+    {
+      "id": "同一个产品过程与部门各自看见什么",
+      "title": "同一个产品，过程与部门各自看见什么",
+      "target": "过程经济边界"
+    },
+    {
+      "id": "把两个方向的供应写进同一组平衡式",
+      "title": "把两个方向的供应写进同一组平衡式",
+      "target": "双向账户"
+    },
+    {
+      "id": "从同一项用电需求追到三家供应者",
+      "title": "从同一项用电需求追到三家供应者",
+      "target": "双向账户"
+    },
+    {
+      "id": "两张部门总表相同的反例",
+      "title": "两张部门总表相同的反例",
+      "target": "双向账户"
+    },
+    {
+      "id": "部门平均配方补入的是什么",
+      "title": "部门平均配方补入的是什么",
+      "target": "误差来源"
+    },
+    {
+      "id": "怎样评价混合结果的误差",
+      "title": "怎样评价混合结果的误差",
+      "target": "误差来源"
+    }
+  ],
+  "originalHistoricalEntries": [
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "方程能算到哪里",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "方程能算到哪里",
+          "kind": "heading"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "同一个产品过程与部门各自看见什么",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "同一个产品过程与部门各自看见什么",
+          "kind": "heading"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "把两个方向的供应写进同一组平衡式",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "把两个方向的供应写进同一组平衡式",
+          "kind": "heading"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "从同一项用电需求追到三家供应者",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "从同一项用电需求追到三家供应者",
+          "kind": "heading"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "两张部门总表相同的反例",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "两张部门总表相同的反例",
+          "kind": "heading"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "部门平均配方补入的是什么",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "部门平均配方补入的是什么",
+          "kind": "heading"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "怎样评价混合结果的误差",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "怎样评价混合结果的误差",
+          "kind": "heading"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-1",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-boundary-carrier",
+          "kind": "note",
+          "claimId": "cl-inv-boundary-carrier"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-2",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-small-cuts",
+          "kind": "note",
+          "claimId": "cl-inv-small-cuts"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-3",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-question",
+          "kind": "note",
+          "claimId": "cl-hyb-question"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-4",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-io-limits",
+          "kind": "note",
+          "claimId": "cl-inv-io-limits"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-5",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-hybrid-forms",
+          "kind": "note",
+          "claimId": "cl-inv-hybrid-forms"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-6",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-double-counting",
+          "kind": "note",
+          "claimId": "cl-inv-double-counting"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-7",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-object",
+          "kind": "note",
+          "claimId": "cl-hyb-object"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-8",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-sign",
+          "kind": "note",
+          "claimId": "cl-hyb-sign"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-9",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-upstream",
+          "kind": "note",
+          "claimId": "cl-hyb-upstream"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-10",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-downstream",
+          "kind": "note",
+          "claimId": "cl-hyb-downstream"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-11",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-balance",
+          "kind": "note",
+          "claimId": "cl-hyb-balance"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-12",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-inventory",
+          "kind": "note",
+          "claimId": "cl-hyb-inventory"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-13",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-toaster",
+          "kind": "note",
+          "claimId": "cl-hyb-toaster"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-14",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-downstream-dispute",
+          "kind": "note",
+          "claimId": "cl-hyb-downstream-dispute"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-15",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-downstream-test",
+          "kind": "note",
+          "claimId": "cl-hyb-downstream-test"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-16",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-accounts",
+          "kind": "note",
+          "claimId": "cl-hyb-accounts"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-17",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-evidence-boundary",
+          "kind": "note",
+          "claimId": "cl-hyb-evidence-boundary"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-18",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-service",
+          "kind": "note",
+          "claimId": "cl-hyb-service"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-19",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-ledger",
+          "kind": "note",
+          "claimId": "cl-hyb-ledger"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-20",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-invoices",
+          "kind": "note",
+          "claimId": "cl-hyb-invoices"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-21",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-raw",
+          "kind": "note",
+          "claimId": "cl-hyb-raw"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-22",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-naive",
+          "kind": "note",
+          "claimId": "cl-hyb-naive"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-23",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-remove",
+          "kind": "note",
+          "claimId": "cl-hyb-remove"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-24",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-equations",
+          "kind": "note",
+          "claimId": "cl-hyb-equations"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-25",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-corrected",
+          "kind": "note",
+          "claimId": "cl-hyb-corrected"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-26",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-naive-result",
+          "kind": "note",
+          "claimId": "cl-hyb-naive-result"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-27",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-swap",
+          "kind": "note",
+          "claimId": "cl-hyb-swap"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-28",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-swap-result",
+          "kind": "note",
+          "claimId": "cl-hyb-swap-result"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-29",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-pump",
+          "kind": "note",
+          "claimId": "cl-hyb-pump"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-30",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-bpc",
+          "kind": "note",
+          "claimId": "cl-hyb-bpc"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-31",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-paths",
+          "kind": "note",
+          "claimId": "cl-hyb-paths"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-32",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-popcorn",
+          "kind": "note",
+          "claimId": "cl-hyb-popcorn"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-33",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-response",
+          "kind": "note",
+          "claimId": "cl-hyb-response"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-34",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-database",
+          "kind": "note",
+          "claimId": "cl-hyb-database"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-35",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-denominator",
+          "kind": "note",
+          "claimId": "cl-hyb-denominator"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-36",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-limits",
+          "kind": "note",
+          "claimId": "cl-hyb-limits"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-37",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-audit",
+          "kind": "note",
+          "claimId": "cl-hyb-audit"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-note-38",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-judgement",
+          "kind": "note",
+          "claimId": "cl-inv-judgement"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-notes",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-annotations",
+          "kind": "note-group"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964",
+          "kind": "chapter"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-方程能算到哪里",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-方程能算到哪里",
+          "kind": "heading"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-同一个产品过程与部门各自看见什么",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-同一个产品过程与部门各自看见什么",
+          "kind": "heading"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-把两个方向的供应写进同一组平衡式",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-把两个方向的供应写进同一组平衡式",
+          "kind": "heading"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-从同一项用电需求追到三家供应者",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-从同一项用电需求追到三家供应者",
+          "kind": "heading"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-两张部门总表相同的反例",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-两张部门总表相同的反例",
+          "kind": "heading"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-部门平均配方补入的是什么",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-部门平均配方补入的是什么",
+          "kind": "heading"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-怎样评价混合结果的误差",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-怎样评价混合结果的误差",
+          "kind": "heading"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-1",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-boundary-carrier",
+          "kind": "note",
+          "claimId": "cl-inv-boundary-carrier"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-2",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-small-cuts",
+          "kind": "note",
+          "claimId": "cl-inv-small-cuts"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-3",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-question",
+          "kind": "note",
+          "claimId": "cl-hyb-question"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-4",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-io-limits",
+          "kind": "note",
+          "claimId": "cl-inv-io-limits"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-5",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-hybrid-forms",
+          "kind": "note",
+          "claimId": "cl-inv-hybrid-forms"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-6",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-double-counting",
+          "kind": "note",
+          "claimId": "cl-inv-double-counting"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-7",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-object",
+          "kind": "note",
+          "claimId": "cl-hyb-object"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-8",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-sign",
+          "kind": "note",
+          "claimId": "cl-hyb-sign"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-9",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-upstream",
+          "kind": "note",
+          "claimId": "cl-hyb-upstream"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-10",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-downstream",
+          "kind": "note",
+          "claimId": "cl-hyb-downstream"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-11",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-balance",
+          "kind": "note",
+          "claimId": "cl-hyb-balance"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-12",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-inventory",
+          "kind": "note",
+          "claimId": "cl-hyb-inventory"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-13",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-toaster",
+          "kind": "note",
+          "claimId": "cl-hyb-toaster"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-14",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-downstream-dispute",
+          "kind": "note",
+          "claimId": "cl-hyb-downstream-dispute"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-15",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-downstream-test",
+          "kind": "note",
+          "claimId": "cl-hyb-downstream-test"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-16",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-accounts",
+          "kind": "note",
+          "claimId": "cl-hyb-accounts"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-17",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-evidence-boundary",
+          "kind": "note",
+          "claimId": "cl-hyb-evidence-boundary"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-18",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-service",
+          "kind": "note",
+          "claimId": "cl-hyb-service"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-19",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-ledger",
+          "kind": "note",
+          "claimId": "cl-hyb-ledger"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-20",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-invoices",
+          "kind": "note",
+          "claimId": "cl-hyb-invoices"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-21",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-raw",
+          "kind": "note",
+          "claimId": "cl-hyb-raw"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-22",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-naive",
+          "kind": "note",
+          "claimId": "cl-hyb-naive"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-23",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-remove",
+          "kind": "note",
+          "claimId": "cl-hyb-remove"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-24",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-equations",
+          "kind": "note",
+          "claimId": "cl-hyb-equations"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-25",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-corrected",
+          "kind": "note",
+          "claimId": "cl-hyb-corrected"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-26",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-naive-result",
+          "kind": "note",
+          "claimId": "cl-hyb-naive-result"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-27",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-swap",
+          "kind": "note",
+          "claimId": "cl-hyb-swap"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-28",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-swap-result",
+          "kind": "note",
+          "claimId": "cl-hyb-swap-result"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-29",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-pump",
+          "kind": "note",
+          "claimId": "cl-hyb-pump"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-30",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-bpc",
+          "kind": "note",
+          "claimId": "cl-hyb-bpc"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-31",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-paths",
+          "kind": "note",
+          "claimId": "cl-hyb-paths"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-32",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-popcorn",
+          "kind": "note",
+          "claimId": "cl-hyb-popcorn"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-33",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-response",
+          "kind": "note",
+          "claimId": "cl-hyb-response"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-34",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-database",
+          "kind": "note",
+          "claimId": "cl-hyb-database"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-35",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-denominator",
+          "kind": "note",
+          "claimId": "cl-hyb-denominator"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-36",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-limits",
+          "kind": "note",
+          "claimId": "cl-hyb-limits"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-37",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-audit",
+          "kind": "note",
+          "claimId": "cl-hyb-audit"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-note-38",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-judgement",
+          "kind": "note",
+          "claimId": "cl-inv-judgement"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-chapter-19-notes",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-annotations",
+          "kind": "note-group"
+        }
+      ],
+      "mode": "alias",
+      "edition": {
+        "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-boundary-carrier",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-boundary-carrier",
+          "kind": "note",
+          "claimId": "cl-inv-boundary-carrier"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-small-cuts",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-small-cuts",
+          "kind": "note",
+          "claimId": "cl-inv-small-cuts"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-question",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-question",
+          "kind": "note",
+          "claimId": "cl-hyb-question"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-io-limits",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-io-limits",
+          "kind": "note",
+          "claimId": "cl-inv-io-limits"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-hybrid-forms",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-hybrid-forms",
+          "kind": "note",
+          "claimId": "cl-inv-hybrid-forms"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-double-counting",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-double-counting",
+          "kind": "note",
+          "claimId": "cl-inv-double-counting"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-object",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-object",
+          "kind": "note",
+          "claimId": "cl-hyb-object"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-sign",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-sign",
+          "kind": "note",
+          "claimId": "cl-hyb-sign"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-upstream",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-upstream",
+          "kind": "note",
+          "claimId": "cl-hyb-upstream"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-downstream",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-downstream",
+          "kind": "note",
+          "claimId": "cl-hyb-downstream"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-balance",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-balance",
+          "kind": "note",
+          "claimId": "cl-hyb-balance"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-inventory",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-inventory",
+          "kind": "note",
+          "claimId": "cl-hyb-inventory"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-toaster",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-toaster",
+          "kind": "note",
+          "claimId": "cl-hyb-toaster"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-downstream-dispute",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-downstream-dispute",
+          "kind": "note",
+          "claimId": "cl-hyb-downstream-dispute"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-downstream-test",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-downstream-test",
+          "kind": "note",
+          "claimId": "cl-hyb-downstream-test"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-accounts",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-accounts",
+          "kind": "note",
+          "claimId": "cl-hyb-accounts"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-evidence-boundary",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-evidence-boundary",
+          "kind": "note",
+          "claimId": "cl-hyb-evidence-boundary"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-service",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-service",
+          "kind": "note",
+          "claimId": "cl-hyb-service"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-ledger",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-ledger",
+          "kind": "note",
+          "claimId": "cl-hyb-ledger"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-invoices",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-invoices",
+          "kind": "note",
+          "claimId": "cl-hyb-invoices"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-raw",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-raw",
+          "kind": "note",
+          "claimId": "cl-hyb-raw"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-naive",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-naive",
+          "kind": "note",
+          "claimId": "cl-hyb-naive"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-remove",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-remove",
+          "kind": "note",
+          "claimId": "cl-hyb-remove"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-equations",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-equations",
+          "kind": "note",
+          "claimId": "cl-hyb-equations"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-corrected",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-corrected",
+          "kind": "note",
+          "claimId": "cl-hyb-corrected"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-naive-result",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-naive-result",
+          "kind": "note",
+          "claimId": "cl-hyb-naive-result"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-swap",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-swap",
+          "kind": "note",
+          "claimId": "cl-hyb-swap"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-swap-result",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-swap-result",
+          "kind": "note",
+          "claimId": "cl-hyb-swap-result"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-pump",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-pump",
+          "kind": "note",
+          "claimId": "cl-hyb-pump"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-bpc",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-bpc",
+          "kind": "note",
+          "claimId": "cl-hyb-bpc"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-paths",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-paths",
+          "kind": "note",
+          "claimId": "cl-hyb-paths"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-popcorn",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-popcorn",
+          "kind": "note",
+          "claimId": "cl-hyb-popcorn"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-response",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-response",
+          "kind": "note",
+          "claimId": "cl-hyb-response"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-database",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-database",
+          "kind": "note",
+          "claimId": "cl-hyb-database"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-denominator",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-denominator",
+          "kind": "note",
+          "claimId": "cl-hyb-denominator"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-limits",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-limits",
+          "kind": "note",
+          "claimId": "cl-hyb-limits"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-audit",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-audit",
+          "kind": "note",
+          "claimId": "cl-hyb-audit"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-judgement",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-judgement",
+          "kind": "note",
+          "claimId": "cl-inv-judgement"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-annotations",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/docs/book/inventory-boundary-and-hybrid",
+          "id": "chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-annotations",
+          "kind": "note-group"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964",
+          "kind": "chapter"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-boundary-carrier",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-boundary-carrier",
+          "kind": "note",
+          "claimId": "cl-inv-boundary-carrier"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-small-cuts",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-small-cuts",
+          "kind": "note",
+          "claimId": "cl-inv-small-cuts"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-question",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-question",
+          "kind": "note",
+          "claimId": "cl-hyb-question"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-io-limits",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-io-limits",
+          "kind": "note",
+          "claimId": "cl-inv-io-limits"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-hybrid-forms",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-hybrid-forms",
+          "kind": "note",
+          "claimId": "cl-inv-hybrid-forms"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-double-counting",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-double-counting",
+          "kind": "note",
+          "claimId": "cl-inv-double-counting"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-object",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-object",
+          "kind": "note",
+          "claimId": "cl-hyb-object"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-sign",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-sign",
+          "kind": "note",
+          "claimId": "cl-hyb-sign"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-upstream",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-upstream",
+          "kind": "note",
+          "claimId": "cl-hyb-upstream"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-downstream",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-downstream",
+          "kind": "note",
+          "claimId": "cl-hyb-downstream"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-balance",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-balance",
+          "kind": "note",
+          "claimId": "cl-hyb-balance"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-inventory",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-inventory",
+          "kind": "note",
+          "claimId": "cl-hyb-inventory"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-toaster",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-toaster",
+          "kind": "note",
+          "claimId": "cl-hyb-toaster"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-downstream-dispute",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-downstream-dispute",
+          "kind": "note",
+          "claimId": "cl-hyb-downstream-dispute"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-downstream-test",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-downstream-test",
+          "kind": "note",
+          "claimId": "cl-hyb-downstream-test"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-accounts",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-accounts",
+          "kind": "note",
+          "claimId": "cl-hyb-accounts"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-evidence-boundary",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-evidence-boundary",
+          "kind": "note",
+          "claimId": "cl-hyb-evidence-boundary"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-service",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-service",
+          "kind": "note",
+          "claimId": "cl-hyb-service"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-ledger",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-ledger",
+          "kind": "note",
+          "claimId": "cl-hyb-ledger"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-invoices",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-invoices",
+          "kind": "note",
+          "claimId": "cl-hyb-invoices"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-raw",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-raw",
+          "kind": "note",
+          "claimId": "cl-hyb-raw"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-naive",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-naive",
+          "kind": "note",
+          "claimId": "cl-hyb-naive"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-remove",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-remove",
+          "kind": "note",
+          "claimId": "cl-hyb-remove"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-equations",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-equations",
+          "kind": "note",
+          "claimId": "cl-hyb-equations"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-corrected",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-corrected",
+          "kind": "note",
+          "claimId": "cl-hyb-corrected"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-naive-result",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-naive-result",
+          "kind": "note",
+          "claimId": "cl-hyb-naive-result"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-swap",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-swap",
+          "kind": "note",
+          "claimId": "cl-hyb-swap"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-swap-result",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-swap-result",
+          "kind": "note",
+          "claimId": "cl-hyb-swap-result"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-pump",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-pump",
+          "kind": "note",
+          "claimId": "cl-hyb-pump"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-bpc",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-bpc",
+          "kind": "note",
+          "claimId": "cl-hyb-bpc"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-paths",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-paths",
+          "kind": "note",
+          "claimId": "cl-hyb-paths"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-popcorn",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-popcorn",
+          "kind": "note",
+          "claimId": "cl-hyb-popcorn"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-response",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-response",
+          "kind": "note",
+          "claimId": "cl-hyb-response"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-database",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-database",
+          "kind": "note",
+          "claimId": "cl-hyb-database"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-denominator",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-denominator",
+          "kind": "note",
+          "claimId": "cl-hyb-denominator"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-limits",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-limits",
+          "kind": "note",
+          "claimId": "cl-hyb-limits"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-audit",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-audit",
+          "kind": "note",
+          "claimId": "cl-hyb-audit"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-judgement",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-judgement",
+          "kind": "note",
+          "claimId": "cl-inv-judgement"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    },
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "path": "/print",
+      "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-annotations",
+      "targets": [
+        {
+          "route": "/docs/book/inventory-boundary-and-hybrid",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-annotations",
+          "kind": "note-group"
+        }
+      ],
+      "mode": "retained",
+      "edition": {
+        "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "sourceDate": "2026-11-07"
+      }
+    }
+  ],
+  "additions": [
+    "cl-hyb-downstream-zero"
+  ],
+  "authorization": "Issue76 protocol committed and pushed as3175a49 before new source work or authorship. Original38 identities and all172 original historical records are unchanged. One explicit interpretation, cl-hyb-downstream-zero, follows cl-hyb-downstream-test, based on the main agent source-reviewed Agez S1 two-page passage ev-hyb-agez-downstream-omission: omitting downstream feedback and removing original background overlap when retaining it are distinct operations. This freezes conservation/mapping and the source-judged addition only; it does not accept final prose or verify a particular account subtraction or empirical accuracy."
+}

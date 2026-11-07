@@ -561,3 +561,43 @@ not a new-achievement claim. Current64-context and actual0aed HTML checks are ba
 work only. New primary-source access/reading, numerical judgement, actual manuscript
 and source/Main/hosted/root qualification remain open; all full-book research and
 edition responsibilities persist.
+
+### Issue76 selected originals and authored candidate — 2026-11-08
+
+Protocol3175a49 preceded48 actual bounded queries and new source work. Final2006
+Comment/Reply and full Pomponi/Lenzen response remain unavailable; an apparent OA
+route resolves to the2004precursor. Reinspection preserves separate dates and
+carrier/version scope. AgezS1 andS2 were lawfully acquired from publisher links:
+S1two pages read, S2only registered cells/formulas/saved values inspected, no
+recalculation or full-workbook qualification. Yang's printed sign and energy
+coefficient discrepancies and Jakobs's descriptive inconsistencies remain explicit.
+
+Independent published-coefficient toast arithmetic matches4display values with
+11zero residuals, without reconstructing undisclosed pre-subtraction accounts.
+The synthetic supplier derivation matches113rational results and all11templates;
+its input/parent identities remain unchanged. Actual source review clarifies the
+operation basis, binary correction assumptions and Yang's stated construction.
+All38original paragraphs are rewritten in three continuous sections, with one
+new S1-backed interpretation (8/21/10). Source and numerical reviews do not grant
+reader/engineering/publication acceptance. The independently pinned final-prose
+receipt is not yet created; current production validation correctly refuses that
+missing evidence. Full Goal, other domains and edition duties remain open.
+
+### Issue76 actual v2 reader/engineering acceptance — 2026-11-08
+
+The fresh local reader inspected full v1 and then full v2 with39notes, description
+and actual neighbor metadata. Four substantive clarity requests were resolved;
+no new material reading barrier was reported. Exact v2SHA256 is
+`d436566f0107104e03825776ae3496a686e7628fdef7956aebd9907dbc44b2c7`.
+The final39-record/source receipt now exists with code pin
+`efbff0fec68e6d5be4af9c6ed5e2bc9634dd1bd350cd9879c399080292049441`.
+Separate source, two-template clarification and targeted public-context rechecks
+preserve limits. No human expert, empirical or full-book approval is implied.
+
+Independent engineering found and verified repairs for added unreviewed body/note
+text and an extra premise summary. Nine actual web/print DOM mutations now reject.
+350tests/types and the corrected complete working build pass. An initial build's
+bibliography-process-language refusal remains recorded; new locators now identify
+source passages while dated execution remains in research/development records.
+All833publicclaims are still a dirty3175working preview. Clean/Main, full browser,
+hosting, exact root and normalterminal/mirror completion remain pending.

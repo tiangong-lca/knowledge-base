@@ -188,6 +188,20 @@ function printedReferenceIndex(document) {
   }
   return index;
 }
+/** Return substantive text not owned by an explicitly checked rendered node.
+ * This walks all element kinds, including unwrapped text; a new container or
+ * familiar class name cannot make an unreviewed assertion disappear.
+ */
+export function unaccountedReaderText(root, checkedNodes) {
+  const unexpected = [];
+  function visit(node) {
+    if (checkedNodes.has(node)) return;
+    if (node.nodeType === 3) { if (compact(node.text)) unexpected.push(node.text); return; }
+    if (node.nodeType === 1 || node === root) for (const child of node.childNodes ?? []) visit(child);
+  }
+  visit(root); return unexpected;
+}
+
 /** Match ClaimAnnotation's actual public projection, including per-unit input deduplication. */
 export function validateExchangeAnnotationOutput(document,unit,route,catalog,{print=false,claimIds=null}={}) {
   const errors=[],prefix=print?printUnitAnchor(route):chapterAnchorPrefix(route),allNotes=unit.querySelectorAll('[data-reader-claim]'),ids=allNotes.map(note=>note.getAttribute('data-reader-claim'));
@@ -216,7 +230,8 @@ export function validateExchangeAnnotationOutput(document,unit,route,catalog,{pr
       }
     });
     const details=annotation.querySelectorAll('details'),premises=claim.premiseIds;
-    if(details.length!==(premises.length?1:0)|| (premises.length&&details[0]?.querySelector('summary')?.text!=='本段依据的前提'))fail('premise section missing or changed');
+    const summaries=details.flatMap(detail=>detail.querySelectorAll('summary'));
+    if(details.length!==(premises.length?1:0)||summaries.length!==(premises.length?1:0)|| (premises.length&&summaries[0]?.text!=='本段依据的前提'))fail('premise section missing or changed');
     const premiseItems=details[0]?.querySelectorAll('li')??[];
     if(premiseItems.length!==premises.length)fail('premise occurrences missing or repeated');
     premises.forEach((premise,index)=>{
@@ -235,6 +250,14 @@ export function validateExchangeAnnotationOutput(document,unit,route,catalog,{pr
     });
     const inputs=annotation.querySelectorAll('a').filter(link=>link.getAttribute('href')?.startsWith('/downloads/cases/')),expectedInput=showInput&&binding?.inputFile;
     if(inputs.length!==(expectedInput?1:0)||(expectedInput&&(inputs[0].getAttribute('href')!==`/downloads/cases/${binding.inputFile}`||inputs[0].getAttribute('download')!==binding.inputFile||inputs[0].text!==`下载计算输入（版本 ${binding.version}）`)))fail('case-input link missing, changed or incorrectly repeated');
+    // Every allowed root above has a separate exact content/identity check.
+    // Do not allow the whole source list/details/input paragraph: otherwise new
+    // prose next to a valid item/link could impersonate reviewed annotation text.
+    const checkedText = new Set([scope, ...sourceItems, ...limits,
+      ...(premises.length ? summaries.slice(0,1) : []),
+      ...premiseItems.flatMap(item => item.querySelectorAll('a')), ...inputs].filter(Boolean));
+    if (unaccountedReaderText(annotation, checkedText).length) fail('contains unexpected unreviewed text');
+
   }
   if(claimIds)for(const id of claimIds)if(ids.filter(found=>found===id).length!==1)errors.push(`/print: moved S01 actual annotation missing or repeated: ${route} ${id}`);
   return errors;
