@@ -197,3 +197,67 @@ test('the export rejects a truncated or changed frozen inventory before using it
     }
   } finally { await rm(repository, { recursive: true, force: true }); }
 });
+
+
+test('a source appendix cannot disappear by deleting both its registration and exported HTML', async () => {
+  const repository = await mkdtemp(join(tmpdir(), 'reader-new-appendix-'));
+  const out = join(repository, 'out'), content = join(repository, 'content/docs'), config = join(repository, 'config');
+  const baseline = JSON.parse(await readFile(new URL('../config/citation-baseline.json', import.meta.url), 'utf8'));
+  const appendix = '/docs/appendices/energy-check';
+  try {
+    await mkdir(out, { recursive: true });
+    await mkdir(config, { recursive: true });
+    for (const page of baseline.pages) {
+      const path = page.route === '/docs' ? join(content, 'index.mdx')
+        : page.route === '/docs/book' ? join(content, 'book/index.mdx')
+        : join(content, `${page.route.slice('/docs/'.length)}.mdx`);
+      await mkdir(join(path, '..'), { recursive: true });
+      await writeFile(path, '---\ntitle: 一篇正文\n---\n');
+    }
+    await mkdir(join(content, 'appendices'), { recursive: true });
+    await writeFile(join(content, 'book/meta.json'), '{"pages":[]}');
+    await writeFile(join(content, 'appendices/energy-check.mdx'), '---\ntitle: 能源复核\n---\n');
+    await writeFile(join(config, 'citation-baseline.json'), JSON.stringify(baseline));
+    await writeFile(join(config, 'citation-placements.json'), JSON.stringify({ frontMatter: ['/docs', '/docs/book'], notes: [] }));
+    await writeFile(join(out, 'index.html'), '<main>一份书稿</main>');
+    await assert.rejects(validateReaderOutput(out), /Reader source has no current print registration: \/docs\/appendices\/energy-check/);
+    await rm(join(content, 'appendices/energy-check.mdx'));
+    await writeFile(join(config, 'citation-placements.json'), JSON.stringify({ frontMatter: ['/docs', '/docs/book'], notes: [],
+      printAdditions: [{ route: appendix, kind: 'appendix' }] }));
+    await assert.rejects(validateReaderOutput(out), /Missing printed unit: \/docs\/appendices\/energy-check/);
+  } finally { await rm(repository, { recursive: true, force: true }); }
+});
+
+
+test('relocated notes in a new appendix are validated in its HTML and current print article', async () => {
+  const root = await mkdtemp(join(tmpdir(), 'reader-appendix-links-'));
+  const a = '/docs/book/a', appendix = '/docs/appendices/energy-check', claim = 'cl-moved';
+  const baseline = { sourceCommit: 'a'.repeat(40), sourceDate: '2026-11-07', pages: [
+    { route: a, noteClaims: [claim], headingIds: [], printOrdinal: 1 },
+  ] };
+  const placements = { frontMatter: [], notes: [{ from: a, claimId: claim, to: appendix }],
+    printAdditions: [{ route: appendix, kind: 'appendix' }] };
+  const old = chapterAnchorPrefix(a), anchor = chapterNoteAnchor(chapterAnchorPrefix(appendix), claim);
+  const aPrint = printUnitAnchor(a), appendixPrint = printUnitAnchor(appendix), printNote = chapterNoteAnchor(appendixPrint, claim);
+  const edition = `<time datetime="2026-11-07">2026-11-07</time><a href="${citationSourceHref(baseline.sourceCommit)}">原版</a>`;
+  const notice = id => `<div id="${id}" data-legacy-notice><div class="legacy-citation-context">${edition}<a data-legacy-destination href="${appendix}/#${anchor}">注1</a></div></div>`;
+  const alias = (id, target) => `<span id="${id}" data-legacy-for="${target}"><span class="legacy-citation-context">${edition}</span></span>`;
+  const notes = (id, aliases = '') => `<a href="#${id}" role="doc-noteref" aria-label="注 1" data-reader-reference="${claim}">[1]</a><section class="chapter-notes"><ol><li id="${id}" data-reader-claim="${claim}">${aliases}条件</li></ol></section>`;
+  const print = `<section id="writing-note"></section><article id="${aPrint}" data-reader-route="${a}">${alias('print-chapter-1', aPrint)}</article><article id="${appendixPrint}" data-reader-route="${appendix}">${notes(printNote, alias('print-chapter-1-note-1', printNote) + alias('print-chapter-1-notes', printNote))}</article><section id="print-references"></section>`;
+  const write = async (route, html) => {
+    const directory = join(root, route.slice(1));
+    await mkdir(directory, { recursive: true });
+    await writeFile(join(directory, 'index.html'), `<main id="main-content">${html}</main>`);
+  };
+  try {
+    await write(a, notice(`${old}-note-1`) + notice(`${old}-notes`));
+    await write(appendix, notes(anchor));
+    await write('/print', print);
+    assert.deepEqual(await validateLegacyCitationOutput(root, baseline, placements), []);
+    await rm(join(root, appendix.slice(1), 'index.html'));
+    assert((await validateLegacyCitationOutput(root, baseline, placements)).some(error => error.includes('missing legacy reader route')));
+    await write(appendix, notes(anchor));
+    await write('/print', print.replace(`<article id="${appendixPrint}" data-reader-route="${appendix}">`, `<article id="${appendixPrint}" data-reader-route="/docs/other">`));
+    assert((await validateLegacyCitationOutput(root, baseline, placements)).some(error => error.includes('printed unit order differs')));
+  } finally { await rm(root, { recursive: true, force: true }); }
+});

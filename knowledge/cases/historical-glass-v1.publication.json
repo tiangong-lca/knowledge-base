@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "inputFile": "historical-glass-v1.json",
   "approvedInputSha256": "56e6028764e85278fa73143d2321ab20b4ad8cd8d64ff9a75e2c871fb7448d7c",
-  "reviewedAt": "2026-11-05",
+  "reviewedAt": "2026-11-07",
   "reviewKind": "agent-source-check",
   "claims": [
     {
@@ -293,7 +293,7 @@
       "caveats": [
         "分项加总只检验报告值间的算术，不提供全部过程输入的独立验证。"
       ],
-      "textTemplate": "两个系统的整体数值须另行读取。第二卷的汇总按百万次12液盎司灌装给出：10-RET的过程能源{{input.facts.retProcess.value}}、运输能源{{input.facts.retTransport.value}}与材料资源能值{{input.facts.retMaterialResource.value}}相加为{{evaluated.summary.retPartsTotal}}百万Btu；OWG对应{{input.facts.owgProcess.value}}、{{input.facts.owgTransport.value}}与{{input.facts.owgMaterialResource.value}}，相加为{{evaluated.summary.owgPartsTotal}}。这里使用的是原报告公布的整体结果，不能把它们当成前面那条玻璃支路独立算出的全系统总量。",
+      "textTemplate": "两个系统的整体数值须另行读取。第二卷的汇总按百万次12液盎司灌装给出：10-RET的过程能源{{input.facts.retProcess.value}}、运输能源{{input.facts.retTransport.value}}与材料资源能值{{input.facts.retMaterialResource.value}}相加为{{evaluated.summary.retPartsTotal}}百万Btu；OWG对应{{input.facts.owgProcess.value}}、{{input.facts.owgTransport.value}}与{{input.facts.owgMaterialResource.value}}，相加为{{evaluated.summary.owgPartsTotal}}。这里使用的是原报告公布的整体结果；附录《容器能源复核》重算的玻璃支路只覆盖其中一部分，不能据那条支路宣称全系统总量已经独立算出。",
       "reasoning": "核对两组报告分项相加，并保持来源公布的整体总量与本书玻璃支路计算的证明范围不同。"
     },
     {
@@ -369,7 +369,7 @@
         "这不是已确认的原报告错误；不同表的基准、未显示质量精度或其他输入仍可能有关。"
       ],
       "reasoning": "十三项之和29.102×205=5965.910，与6036差70.09，不能隐去或调参强制相等。",
-      "textTemplate": "一个具体差额把这一区别显示出来。Table8除上述八项外，还列出处置{{input.facts.componentDisposal.value}}、封口{{input.facts.componentClosure.value}}、系统运输{{input.facts.componentTransport.value}}、灌装{{input.facts.componentFilling.value}}与包装{{input.facts.componentPackaging.value}}百万Btu。十三项按表的共同基准合计{{evaluated.assembly.factor}}；若固定采用表列瓶重导出的{{evaluated.demand.oneWayManufactureTon}}短吨，相乘为{{evaluated.assembly.owgFixed3}}百万Btu，与整体表的{{input.facts.owgTotal.value}}相差{{evaluated.assembly.gap}}。按这组显示输入，整表组装没有精确闭合。"
+      "textTemplate": "一个具体差额把这一区别显示出来。第二卷Table8除附录《容器能源复核》列出的八项玻璃及上游无机材料分项外，还列出处置{{input.facts.componentDisposal.value}}、封口{{input.facts.componentClosure.value}}、系统运输{{input.facts.componentTransport.value}}、灌装{{input.facts.componentFilling.value}}与包装{{input.facts.componentPackaging.value}}百万Btu。十三项按表的共同基准合计{{evaluated.assembly.factor}}；若固定采用表列瓶重导出的{{evaluated.demand.oneWayManufactureTon}}短吨，相乘为{{evaluated.assembly.owgFixed3}}百万Btu，与整体表的{{input.facts.owgTotal.value}}相差{{evaluated.assembly.gap}}。按这组显示输入，整表组装没有精确闭合。"
     },
     {
       "id": "cl-hist-rounding-bound",
@@ -406,7 +406,7 @@
         "未假定概率分布，不推断全部差异的原因；固定205是该检验的前提。"
       ],
       "reasoning": "三角不等式给出13个半末位误差之和×固定质量；与公开表差额比较。",
-      "textTemplate": "还可以检验一种很窄的解释：假定只有这十三个三位小数系数各自发生不超过{{input.coefficientRounding.halfWidth}}的四舍五入误差，仍把{{evaluated.demand.oneWayManufactureTon}}短吨固定不动，则总和误差上限为13×{{input.coefficientRounding.halfWidth}}×{{evaluated.demand.oneWayManufactureTon}}＝{{evaluated.assembly.coefficientOnlyBound}}百万Btu，小于{{evaluated.assembly.gap}}的差额。这只排除了“在这些固定条件下，单靠所列系数的显示舍入就足够”的解释；它没有计入瓶重的未披露精度，也不是经验不确定性区间。"
+      "textTemplate": "正文《饮料容器账本》的整表组装还留下一个很窄的解释可检验：假定只有该组装所用Table8十三个三位小数系数各自发生不超过{{input.coefficientRounding.halfWidth}}的四舍五入误差，仍把{{evaluated.demand.oneWayManufactureTon}}短吨固定不动，则总和误差上限为13×{{input.coefficientRounding.halfWidth}}×{{evaluated.demand.oneWayManufactureTon}}＝{{evaluated.assembly.coefficientOnlyBound}}百万Btu，小于{{evaluated.assembly.gap}}的差额。这只排除了“在这些固定条件下，单靠所列系数的显示舍入就足够”的解释；它没有计入瓶重的未披露精度，也不是经验不确定性区间。"
     },
     {
       "id": "cl-hist-package-sensitivity",
@@ -435,7 +435,7 @@
       "caveats": [
         "原文各点的显示精度不同；不把三个点拟合成已证实的原程序，不据此作当代包装建议。"
       ],
-      "textTemplate": "瓶子与纸包装的使用次数还可以分开考察。原报告把瓶子保持在{{input.facts.fiveTripUses.value}}次使用，改动纸包装：一次使用时能源为{{input.facts.packageEnergyOne.value}}GJ/1000L，两次时为{{input.facts.packageEnergyTwo.value}}，三次时为{{input.facts.packageEnergyThree.value}}。这是原作者报告的三个离散情境结果；它们说明包装假定会改变系统比较，但不是上述局部重建独立验证出的全部模型，单凭这三个点也不能确定任意使用次数的通用函数。"
+      "textTemplate": "瓶子与纸包装的使用次数还可以分开考察。原报告把瓶子保持在{{input.facts.fiveTripUses.value}}次使用，改动纸包装：一次使用时能源为{{input.facts.packageEnergyOne.value}}GJ/1000L，两次时为{{input.facts.packageEnergyTwo.value}}，三次时为{{input.facts.packageEnergyThree.value}}。这是原作者报告的三个离散情境结果；它们说明包装假定会改变系统比较，但不是附录的局部重建独立验证出的全部模型，单凭这三个点也不能确定任意使用次数的通用函数。"
     }
   ]
 }

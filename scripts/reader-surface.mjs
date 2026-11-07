@@ -2,7 +2,7 @@ import { access, readdir, readFile } from 'node:fs/promises';
 import { join, relative, resolve } from 'node:path';
 import { chapterAnchorPrefix, chapterNoteAnchor, printUnitAnchor } from './reader-book.mjs';
 import { assertCitationBaseline, assertPrintFrontMatter } from './reader-citation-baseline.mjs';
-import { citationHref, citationSourceHref, createLegacyCitationEntries } from './reader-citations.mjs';
+import { citationHref, citationSourceHref, createCurrentPrintRoutes, createLegacyCitationEntries } from './reader-citations.mjs';
 // Use the parser already bundled by the exact Next dependency (16.4.4).
 // This internal bundle is intentionally version-coupled and covered by tests;
 // there is no additional parser dependency or hand-written HTML stripping.
@@ -181,11 +181,13 @@ function readCitationSurface(document, path) {
   return { ids, errors, printOrder };
 }
 
-export async function validateLegacyCitationOutput(root, sourceBaseline, locations) {
+export async function validateLegacyCitationOutput(root, sourceBaseline, locations, availableRoutes = null) {
+  const sourceRoutes = availableRoutes ?? [...sourceBaseline.pages.map(page => page.route), ...(locations.printAdditions ?? []).map(page => page.route)];
+  const printRoutes = createCurrentPrintRoutes(sourceBaseline, locations, sourceRoutes);
   const entries = createLegacyCitationEntries(sourceBaseline, locations);
   const pages = new Map();
   const errors = [];
-  for (const path of new Set([...sourceBaseline.pages.map(page => page.route), '/print'])) {
+  for (const path of new Set([...sourceBaseline.pages.map(page => page.route), ...(locations.printAdditions ?? []).map(page => page.route), '/print'])) {
     const html = await readFile(join(root, path.slice(1), 'index.html'), 'utf8').catch(error => {
       if (error.code !== 'ENOENT') throw error;
       return null;
@@ -201,8 +203,7 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
   }
   const print = pages.get('/print');
   if (print) {
-    const retainedRoutes = sourceBaseline.pages.filter(page => page.printOrdinal).sort((a, b) => a.printOrdinal - b.printOrdinal).map(page => page.route);
-    if (JSON.stringify(print.printOrder) !== JSON.stringify([...locations.frontMatter, ...retainedRoutes])) errors.push('/print: printed unit order differs from the retained reading edition');
+    if (JSON.stringify(print.printOrder) !== JSON.stringify(printRoutes)) errors.push('/print: printed unit order differs from the explicit current reading edition');
     for (const id of ['writing-note', 'print-references']) if (!print.ids.has(id)) errors.push(`/print: missing ${id} fragment`);
   }
 
@@ -268,7 +269,24 @@ export async function validateReaderOutput(root, { knownIds = new Set() } = {}) 
   if (baseline && placements) {
     assertCitationBaseline(baseline);
     assertPrintFrontMatter(placements.frontMatter);
-    errors.push(...await validateLegacyCitationOutput(root, baseline, placements));
+    const sourceDirectory = resolve(root, '..', 'content', 'docs');
+    const sourceRoutes = [];
+    async function discover(directory) {
+      for (const entry of await readdir(directory, { withFileTypes: true })) {
+        const path = join(directory, entry.name);
+        if (entry.isDirectory()) await discover(path);
+        else if (entry.isFile() && /\.mdx?$/.test(entry.name)) {
+          const slug = relative(sourceDirectory, path).replaceAll('\\', '/').replace(/\.mdx?$/, '').replace(/(?:^|\/)index$/, '');
+          sourceRoutes.push(`/docs${slug ? `/${slug}` : ''}`);
+        }
+      }
+    }
+    const hasReaderSource = await access(sourceDirectory).then(() => true, error => {
+      if (error.code !== 'ENOENT') throw error;
+      return false;
+    });
+    if (hasReaderSource) await discover(sourceDirectory);
+    errors.push(...await validateLegacyCitationOutput(root, baseline, placements, hasReaderSource ? sourceRoutes : null));
   } else if (baseline || placements || bookSource || bookOutput) errors.push('The book export requires both the reader citation baseline and placement files');
   return [...new Set(errors)];
 }

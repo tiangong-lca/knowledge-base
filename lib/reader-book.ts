@@ -4,7 +4,7 @@ import baseline from '@/config/citation-baseline.json';
 import placements from '@/config/citation-placements.json';
 import { bookChapters, createChapterReferenceIndex, orderPages, printUnitAnchor } from '@/scripts/reader-book.mjs';
 import { assertCitationBaseline, assertPrintFrontMatter } from '@/scripts/reader-citation-baseline.mjs';
-import { citationSourceHref, createLegacyCitationEntries, type Destination, type LegacyEntry } from '@/scripts/reader-citations.mjs';
+import { citationSourceHref, createCurrentPrintRoutes, createLegacyCitationEntries, type Destination, type LegacyEntry } from '@/scripts/reader-citations.mjs';
 
 assertCitationBaseline(baseline);
 assertPrintFrontMatter(placements.frontMatter);
@@ -21,18 +21,9 @@ export function getBookPages(): ReaderPage[] {
   return bookChapters(getOrderedPages());
 }
 
-const retainedPrintRoutes = baseline.pages
-  .filter(page => page.printOrdinal !== undefined)
-  .sort((a, b) => a.printOrdinal! - b.printOrdinal!)
-  .map(page => page.route);
-
 export function getPrintPages(): ReaderPage[] {
   const pages = new Map(source.getPages().map(page => [page.url, page]));
-  return [...placements.frontMatter, ...retainedPrintRoutes].map(route => {
-    const page = pages.get(route);
-    if (!page) throw new Error(`Missing printed unit: ${route}`);
-    return page;
-  });
+  return createCurrentPrintRoutes(baseline, placements, [...pages.keys()]).map(route => pages.get(route)!);
 }
 
 export const printFrontMatterCount = placements.frontMatter.length;

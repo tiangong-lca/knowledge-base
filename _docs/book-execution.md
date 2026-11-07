@@ -368,3 +368,14 @@ Main verified all44source hashes,828source occurrences,244authored headings,63ot
 
 
 On2026-11-07 the user cleared the old paused Goal and explicitly authorized one `gh pr ready 57` transition. The same head538fb2b was made non-draft, normal controller merge delivered Main2bc7f4f, and the revised full-book Goal was successfully created as active without an invented token budget. The editorial branch incorporates this exact Main; its two substantive artifacts remained byte-identical through the rebase, with only three review-metadata conflicts resolved to upstream before fresh review marks. Exact source CI and batch root integration remain separate gates. The earlier pause/application limitation is historical and grants no reason to stop authorized in-scope work.
+
+
+## 2026-11-07 container monograph unit — Issue62
+
+The previous opening60/PR61 is fully delivered at Maina36597d72f8cd89beb285d5d5b439b4aa10e89a3 and root2269/PR2270 Mainb5c5e0bf40bc54512e77995ae896e70bdc295ed7. Controller source scope, exact inclusion, both mirrors and root terminal handoff are complete; parent9 remains open.
+
+Issue62 was created and started before implementation on `codex/book-container-monograph`, from exacta36597d. The [unit protocol](research-waves/2026-11-07-container-monograph.md) freezes baseline identities and defines B02/B03/X01 authoring, source review, relocated notes and appendix qualification. Current candidate rewrites23nonnumeric original paragraphs, preserves13case-bound paragraphs with four necessary/clarifying cross-page template changes, and adds one nonnumerical synthesis with explicit original premises. All36old IDs have one intended unit; six detailed paragraphs move to X01. Original case input53facts/hash, other cases and releases remain unchanged.
+
+Independent selected-original inspection covered43SW-91c selected numeric/context pages plus RTI version/policy/IO pages and SW contextual pages, separately from main's original NEPIS reading. The53facts and all existing arithmetic require no correction; the70.09display-input assembly gap and conditional1.3325rounding bound remain. Actual integrated candidate/source, independent continuous-reader and rendered publication checks are separate. Local284tests, typecheck and working-preview build/export822claims pass; independent engineering review found no material defect in the exact2254address/45print-unit migration. This entry records a working milestone, not merged delivery. Source PR/Main/hosted/exact-root handoff and the full-book research/edition gates remain pending.
+
+No container, volume or network was created. Programme worktrees/dependencies/build output and private original-source/review artifacts are deliberately retained. Any temporary browser/preview resources receive task-specific ownership and cleanup receipts at handoff; unrelated previews and peer repository state are not task resources.
