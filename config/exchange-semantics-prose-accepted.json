@@ -1,0 +1,2841 @@
+{
+  "schema": "knowledge-base.exchange-semantics-manuscript-acceptance.v1",
+  "status": "reviewed",
+  "readerDraftSha256": "96123bbe62e35a8ae1117962a7d5792fcf75b85be8b4e6c1b450eb5e372d8d37",
+  "sourceReview": {
+    "kind": "bounded-agent-source-and-retained-native-review",
+    "reviewedAt": "2026-11-08",
+    "reportSha256": "75cf515959d20f38507efed34205b5ce0dcf0918db3a70d625bf4ab4adf3b324",
+    "actualCandidateSha256": "fecf0044d0999039b73bdc7901269d356b6cce4b786abe8eb459d970d1b9213f",
+    "newNativeRun": false,
+    "qualification": "Selected original/code/manual and retained-observation review; no historical desktop, foreign-reader or empirical qualification."
+  },
+  "readerReview": {
+    "kind": "independent-continuous-reader-and-author-review",
+    "reviewedAt": "2026-11-08",
+    "reportSha256": "2c7165b381a1e508b0fc70304bc814f85919426a4e63210f5d9cef9058bf0c05",
+    "scope": "Full v1/v2 four-section readings and actual final v2-to-v4 changes/notes; meaningful navigation reviewed as text, actual destinations remain output/browser checks.",
+    "humanExpertApproval": false
+  },
+  "partialSourceReview": {
+    "sourceSha256": "97902d79c18610ca15f275d423ce94ab87ca3be5a5cab6dce54e2b13ed17d96d",
+    "ordinaryAction": "retain-all-six",
+    "destinations": [
+      {
+        "claimId": "cl-early-policy-question-version",
+        "route": "/docs/book/early-container-policy-and-systems",
+        "claim": {
+          "id": "cl-early-policy-question-version",
+          "text": "从交付账转向公共决策，还要问政府为何单独干预饮料容器。为此，现在回读一份较早的研究：Research Triangle Institute（RTI）的《饮料容器问题：分析与建议》，题名署期为1972年9月，目标是分析政策选择并向EPA提出行动建议。现有载体注明1973年4月再印，正文按收到的形式重现，另加前置页和封面。两种日期属于同一份研究；批准出版也没有把作者的建议变成EPA政策。它与前章共同面对瓶罐，所求的答案已经转向干预的理由。",
+          "kind": "interpretation",
+          "scope": "RTI报告的题名、再印说明和研究目的",
+          "evidenceIds": [
+            "ev-early-rti1972-version",
+            "ev-early-rti1972-question"
+          ],
+          "evidenceLinks": [
+            {
+              "evidenceId": "ev-early-rti1972-version",
+              "relation": "supports",
+              "rationale": "题名与Review Notice分别给出报告和再印日期，明示前置页/封面的变化。"
+            },
+            {
+              "evidenceId": "ev-early-rti1972-question",
+              "relation": "supports",
+              "rationale": "pp2–3以政策分析和EPA行动建议界定研究用途，与单纯方案参数比较的对象有别。"
+            }
+          ],
+          "premiseIds": [],
+          "caveats": [
+            "出版批准不意味着全部建议已成为 EPA 政策；这里仅讨论所引政策问题。"
+          ],
+          "conceptIds": [],
+          "status": "reviewed",
+          "reviewedAt": "2026-11-07",
+          "reviewKind": "agent-source-check"
+        }
+      },
+      {
+        "claimId": "cl-early-container-commission",
+        "route": "/docs/book/early-container-comparisons",
+        "claim": {
+          "id": "cl-early-container-commission",
+          "text": "一只饮料瓶用完以后要去哪里，制造它、运送它又要付出什么？1974年美国环境保护署（EPA）出版的《九种饮料容器替代方案的资源与环境剖面分析》，由亨特（Robert G. Hunt）等人编写，把这些问题放在包装实践与固体废物的关系中。作者比较具体容器方案的资源投入和排放，追问替换一套容器系统会带来哪些变化。瓶子因此连同生产、流转和处置活动一起进入分析；只拿一块玻璃与一片金属相比，还没有提出这份研究所要回答的问题。",
+          "kind": "interpretation",
+          "scope": "SW-91c题名、前言与其容器研究对象",
+          "evidenceIds": [
+            "ev-early-repa1974-purpose",
+            "ev-early-repa1974-options",
+            "ev-early-repa1974-title-year"
+          ],
+          "evidenceLinks": [
+            {
+              "evidenceId": "ev-early-repa1974-purpose",
+              "relation": "supports",
+              "rationale": "前言把委托研究置于包装和固废问题中，并说明比较替代容器的资源与环境影响。"
+            },
+            {
+              "evidenceId": "ev-early-repa1974-options",
+              "relation": "supports",
+              "rationale": "p1明确结果只针对所选具体容器系统，限定材料层面的外推。"
+            },
+            {
+              "evidenceId": "ev-early-repa1974-title-year",
+              "relation": "supports",
+              "rationale": "原扫描题名页支持1974出版身份、作品题名、Hunt等作者与EPA出版身份；与前言HTML的委托目的分别绑定载体。"
+            }
+          ],
+          "premiseIds": [],
+          "caveats": [
+            "未将原报告结论推广为当前产品或材料的环境优劣。"
+          ],
+          "conceptIds": [],
+          "status": "reviewed",
+          "reviewedAt": "2026-11-07",
+          "reviewKind": "agent-source-check"
+        }
+      },
+      {
+        "claimId": "cl-book-framework-project",
+        "route": "book-framework-responsibilities",
+        "section": "史料与职责",
+        "claim": {
+          "id": "cl-book-framework-project",
+          "text": "一个具体起点是EPA《污染预防研究：战略计划》（Pollution Prevention Research: Strategic Plan）的1991年3月草稿。它的项目页记载，环境毒理学与化学学会（SETAC）在1990年8月18—23日举办技术框架工作坊，目标包括整理词汇、方法现状和案例，辨认研究重点。这里记录了一次组织研究议题的活动；该页没有会场，文件日期也不是事件日期。出版物何时形成，又是另一项需要核实的事实。",
+          "kind": "source-statement",
+          "scope": "EPA 战略计划草稿的单个项目页",
+          "evidenceIds": [
+            "ev-book-epa1991-event"
+          ],
+          "premiseIds": [],
+          "caveats": [
+            "该页不提供会场，也不证明首次会议；不能代替工作坊成果书。"
+          ],
+          "conceptIds": [],
+          "status": "reviewed",
+          "reviewedAt": "2026-11-07",
+          "reviewKind": "agent-source-check",
+          "evidenceLinks": [
+            {
+              "evidenceId": "ev-book-epa1991-event",
+              "relation": "supports",
+              "rationale": "该定位直接支持所述具名来源的内容；其适用范围和阅读限制随记录保留。"
+            }
+          ]
+        }
+      },
+      {
+        "claimId": "cl-book-framework-epa1993",
+        "route": "book-framework-responsibilities",
+        "section": "史料与职责",
+        "claim": {
+          "id": "cl-book-framework-epa1993",
+          "text": "到了EPA1993年2月出版的《生命周期评价：清单指南与原则》，研究被描述为清单、影响和改进分析三个组件，目标定义与范围活动也已加入。作者同时提到有实践者另列第四组件，并允许组件互相补充。这种写法保留了当时对工作组织的讨论：数出三个或四个名称，仍不能知道各自承担什么责任。",
+          "kind": "source-statement",
+          "scope": "EPA/600/R-92/245 的 Introduction 与 Overview",
+          "evidenceIds": [
+            "ev-book-epa1993-framework",
+            "ev-book-epa1993-overview"
+          ],
+          "premiseIds": [],
+          "caveats": [
+            "题名页出版日期与最终编写期分开；载体页码和图形的 OCR 可能限制定位。"
+          ],
+          "conceptIds": [],
+          "status": "reviewed",
+          "reviewedAt": "2026-11-07",
+          "reviewKind": "agent-source-check",
+          "evidenceLinks": [
+            {
+              "evidenceId": "ev-book-epa1993-framework",
+              "relation": "supports",
+              "rationale": "该定位直接支持所述具名来源的内容；其适用范围和阅读限制随记录保留。"
+            },
+            {
+              "evidenceId": "ev-book-epa1993-overview",
+              "relation": "supports",
+              "rationale": "该定位直接支持所述具名来源的内容；其适用范围和阅读限制随记录保留。"
+            }
+          ]
+        }
+      },
+      {
+        "claimId": "cl-book-framework-unep",
+        "route": "book-framework-responsibilities",
+        "section": "史料与职责",
+        "claim": {
+          "id": "cl-book-framework-unep",
+          "text": "UNEP1996年的《生命周期评价：是什么以及如何开展》更清楚地显示了“数组件”的限度。开篇以三个阶段介绍主要任务，框架图却以四个组件、改进评价为结尾，图例又把它们与指南展开的八个操作步骤分开；正文还要求反复细化研究。这里的数字服务于不同层次的说明。判断方法是否改变，得继续看这些层次如何连接，不能仅凭数字不同就认定换了方法。",
+          "kind": "interpretation",
+          "scope": "UNEP1996 印刷 p3 与 pp12—13 的介绍层次",
+          "evidenceIds": [
+            "ev-book-unep1996-intro",
+            "ev-book-unep1996-framework"
+          ],
+          "premiseIds": [],
+          "caveats": [
+            "这是对该出版物介绍层次的解释，不证明其分类与所有后继标准等同。"
+          ],
+          "conceptIds": [],
+          "status": "reviewed",
+          "reviewedAt": "2026-11-07",
+          "reviewKind": "agent-source-check",
+          "evidenceLinks": [
+            {
+              "evidenceId": "ev-book-unep1996-intro",
+              "relation": "context",
+              "rationale": "该原文提供解释或推理的前提；本段的作者综合、推论或建议不冒充来源原句。"
+            },
+            {
+              "evidenceId": "ev-book-unep1996-framework",
+              "relation": "context",
+              "rationale": "该原文提供解释或推理的前提；本段的作者综合、推论或建议不冒充来源原句。"
+            }
+          ]
+        }
+      },
+      {
+        "claimId": "cl-book-framework-guide",
+        "route": "book-framework-responsibilities",
+        "section": "史料与职责",
+        "claim": {
+          "id": "cl-book-framework-guide",
+          "text": "指南本身也不是一个同质的证据对象。由CML等编制的2001年《生命周期评价：ISO标准操作指南》把操作指南、操作模型与数据、科学背景分开，并要求说明与国际标准化组织（ISO）标准的关系及超出ISO的部分。规则告诉读者怎样操作，数据使某些操作可以执行，背景解释为什么作这样的选择。引用其中一部分，需要保留它自己的任务；一份指南对可操作做法的选择，不能整体取得标准条款的效力。",
+          "kind": "interpretation",
+          "scope": "CML2001 Part1 编写原则与阅读指引",
+          "evidenceIds": [
+            "ev-book-cml2001-guide"
+          ],
+          "premiseIds": [],
+          "caveats": [
+            "指南对 ISO 的关系说明，不使指南全部规定都成为 ISO 要求。"
+          ],
+          "conceptIds": [],
+          "status": "reviewed",
+          "reviewedAt": "2026-11-07",
+          "reviewKind": "agent-source-check",
+          "evidenceLinks": [
+            {
+              "evidenceId": "ev-book-cml2001-guide",
+              "relation": "context",
+              "rationale": "该原文提供解释或推理的前提；本段的作者综合、推论或建议不冒充来源原句。"
+            }
+          ]
+        }
+      },
+      {
+        "claimId": "cl-book-framework-epa2006",
+        "route": "book-framework-responsibilities",
+        "section": "史料与职责",
+        "claim": {
+          "id": "cl-book-framework-epa2006",
+          "text": "也有同一作品没有统一名称的情形。EPA2006年的《生命周期评价：原则与实践》更新并合并早期材料，摘要仍称第四阶段为“改进分析”，正文的四阶段说明却用“解释”，并专设解释章。因此，引用这份报告必须指明依据的部分。这个差别阻止我们把历史画成一条整齐的术语替换线，却不妨碍继续比较两种名称下实际安排的工作。",
+          "kind": "interpretation",
+          "scope": "EPA/600/R-06/060 的摘要、正文及来源承接自述",
+          "evidenceIds": [
+            "ev-book-epa2006-terminology",
+            "ev-book-epa2006-interpretation"
+          ],
+          "premiseIds": [],
+          "caveats": [
+            "没有断言内部差别由哪位作者或编辑造成，也没有据此判定方法整体失效。"
+          ],
+          "conceptIds": [],
+          "status": "reviewed",
+          "reviewedAt": "2026-11-07",
+          "reviewKind": "agent-source-check",
+          "evidenceLinks": [
+            {
+              "evidenceId": "ev-book-epa2006-terminology",
+              "relation": "context",
+              "rationale": "该原文提供解释或推理的前提；本段的作者综合、推论或建议不冒充来源原句。"
+            },
+            {
+              "evidenceId": "ev-book-epa2006-interpretation",
+              "relation": "context",
+              "rationale": "该原文提供解释或推理的前提；本段的作者综合、推论或建议不冒充来源原句。"
+            }
+          ]
+        }
+      },
+      {
+        "claimId": "cl-waste-history",
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "section": "转换边界",
+        "claim": {
+          "id": "cl-waste-history",
+          "text": "表示约定还有自己的版本史。openLCA 2 手册回顾，沿物质流向的废物表达从 openLCA 1.7 引入，更早采用所述反向表达。这条回顾说明引入时点；某份旧数据经特定版本迁移后怎样运行，则须由相应记录和行为证据回答，不能由版本节点直接推得。",
+          "kind": "source-statement",
+          "scope": "手册对软件版本沿革的回顾",
+          "evidenceIds": [
+            "ev-waste-history"
+          ],
+          "premiseIds": [],
+          "conceptIds": [
+            "cn-waste"
+          ],
+          "status": "reviewed",
+          "reviewedAt": "2026-11-08",
+          "reviewKind": "agent-source-check",
+          "caveats": [
+            "版本沿革依据该手册的回顾；它不证明这一思想由 openLCA 首次提出。"
+          ]
+        }
+      }
+    ],
+    "meaningReview": "Each destination retains the original scoped proposition. Named source cross-references preserve the six ordinary paragraphs’ local referents; APOS and M01/M02 responsibilities remain explicitly uncompleted in development records."
+  },
+  "claims": [
+    {
+      "id": "cl-native-opening",
+      "kind": "synthesis",
+      "scope": "一条交换怎样要求另一项活动；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-jrc-model-edges",
+        "ev-kb50-olca-saved-links",
+        "ev-kb50-olca-open-inventory"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-jrc-model-edges",
+          "relation": "supports",
+          "rationale": "实例 #4 与 #5 使用同一具名过程数据但连接不同；#2 至 #3 用不同废物 UUID，至 #6 则用同一 Product flow UUID。#0 到 #1 声明 GLO。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-saved-links",
+          "relation": "supports",
+          "rationale": "以产品系统作为计算目标时，从保存的 processLinks 形成供方与流的坐标，以过程和交换数据库 ID 组合作为连接索引。单过程目标走单独的搜索或扫描分支。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-open-inventory",
+          "relation": "supports",
+          "rationale": "基础流进入环境介入表。可连接的产品输入或废物输出有选中供方时进入技术矩阵，无选中供方时进入介入表，原流类别仍须单独检查。"
+        }
+      ],
+      "premiseIds": [
+        "cl-flow-exchange-distinction"
+      ],
+      "conceptIds": [
+        "cn-exchange",
+        "cn-native-provider"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "一批待处理物从工厂运往处理设施，画在纸上只需一条箭头；要让这条箭头进入计算，却须说明送走的对象、两端过程的角色和处理活动的参考量。仅有物质的去向，还没有规定软件怎样表示它。流记录已经导入、过程之间已有连接、求解得到一个总量，是这条链上的不同进展。交换语义所要追问的，正是这些记录怎样把原来的问题交给计算。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-flow-type",
+      "text": "openLCA 2 手册把 flow 分为基础流（elementary）、产品流（product）和废物流（waste）。基础流描述未经先前人类转化而从自然环境取得，或无需后续人类转化而排入环境的物质和能量，例如开采原油或向空气排放。另两类的过程角色须结合交换查看；手册也提醒，待回收废纸可以被建模为产品流。这是软件组织对象的类型体系，不能仅凭名称归定现实用途。",
+      "kind": "source-statement",
+      "scope": "openLCA 2 手册的 flow 数据对象",
+      "evidenceIds": [
+        "ev-flow-types"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-flow",
+        "cn-waste"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "不能当作所有标准共用且互斥的分类体系。"
+      ]
+    },
+    {
+      "id": "cl-exchange",
+      "text": "对象进入某个过程时，还需要一条 exchange。openLCA 的输入输出表把已定义的 flow 与这个过程的输入或输出角色、数量和单位组合起来；同一个对象因而可以出现在不同的过程交换中。",
+      "kind": "source-statement",
+      "scope": "openLCA 2 过程编辑器",
+      "evidenceIds": [
+        "ev-exchange"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-flow",
+        "cn-exchange"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caveats": []
+    },
+    {
+      "id": "cl-flow-exchange-distinction",
+      "text": "“水是什么”与“这个工厂用了多少水”，由此落在不同的信息上：前者描述可复用的对象，后者给出一次具体的定量关系。复用同一条 flow，不意味着每次交换的数量、单位或角色相同。读取清单时，既要认出对象，也要认出它在这一过程中的位置。",
+      "kind": "interpretation",
+      "scope": "用于解释 openLCA 的 flow 与过程输入输出关系",
+      "evidenceIds": [
+        "ev-flow-types",
+        "ev-exchange"
+      ],
+      "premiseIds": [
+        "cl-flow-type",
+        "cl-exchange"
+      ],
+      "conceptIds": [
+        "cn-flow",
+        "cn-exchange"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "这是分析用的区分，不声称为各标准统一采用的术语定义。"
+      ]
+    },
+    {
+      "id": "cl-native-record-and-link",
+      "kind": "interpretation",
+      "scope": "一条交换怎样要求另一项活动；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-flow-types",
+        "ev-exchange",
+        "ev-kb50-olca-saved-links",
+        "ev-kb50-olca-default-provider"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-flow-types",
+          "relation": "supports",
+          "rationale": "手册区分三种 flow type，并列出 reference flow property。"
+        },
+        {
+          "evidenceId": "ev-exchange",
+          "relation": "supports",
+          "rationale": "输入输出表将 flow 与具体数量、单位和过程角色组合。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-saved-links",
+          "relation": "supports",
+          "rationale": "以产品系统作为计算目标时，从保存的 processLinks 形成供方与流的坐标，以过程和交换数据库 ID 组合作为连接索引。单过程目标走单独的搜索或扫描分支。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-default-provider",
+          "relation": "supports",
+          "rationale": "查找先按流获取候选，再在指定策略下比较默认供方 ID。ONLY_DEFAULTS 无可用默认者时返回空。该自动选择与读取现有系统图是两个入口。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-flow",
+        "cn-exchange",
+        "cn-native-provider"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "一条交换还不独自决定由谁供应或处理。openLCA 的产品系统另存过程连接，把某个过程中的具体交换与选定的提供者对应起来。交换上的默认提供者只是另一个记录位置；它与产品系统已经保存的连接需要分别查看。对象、过程交换和系统连接这三层信息，合在一起才说明计算可以沿哪条关系继续。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-native-reference-and-target",
+      "kind": "interpretation",
+      "scope": "一条交换怎样要求另一项活动；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-olca-setup",
+        "ev-kb50-olca-reference-amount",
+        "ev-kb50-jrc-process-moulding"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-olca-setup",
+          "relation": "supports",
+          "rationale": "直接构造的 CalculationSetup 对产品系统取其目标量、单位和属性，正的废物参考需求换算后按废物流取反。构造器不载入系统的参数重定义，调用方可显式提供 withParameters。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-reference-amount",
+          "relation": "supports",
+          "rationale": "当前单位中的量先乘单位换算因子，再除属性换算因子，转换至参考流属性的参考单位。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-process-moulding",
+          "relation": "supports",
+          "rationale": "参考产物为输出 #5。模型实例重量 .2 代入后，废塑料每件 .004 kg。设备处理输出另有 .002 的 meanAmount 与 EoLmach 变量，两项要相乘。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-quant-ref",
+        "cn-inventory-balance"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "沿着连接继续之前，还要确定每份过程数据代表多少量。过程的定量参考规定一份记录以多少参考输入或输出为基准，产品系统的目标则规定本次要求多少参考对象。在单一参考流的情形中，两者共同决定取多少份过程记录；带公式的参考交换须先按采用的参数求值。这个倍数是模型的活动量，不宜径直当作设备实际开机了多少次。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-waste-material",
+      "text": "待处理物在软件中可以有不同表示。openLCA 手册所述的 material flow logic 顺着物质去向表达：产生过程记录 waste 输出，处理过程记录 waste 输入，并把这一输入作为定量参考。参考落在输入端，是这套处理表达的一部分。",
+      "kind": "source-statement",
+      "scope": "openLCA 手册所述 material flow logic",
+      "evidenceIds": [
+        "ev-waste-material"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-waste",
+        "cn-quant-ref"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caveats": []
+    },
+    {
+      "id": "cl-native-example-scope",
+      "kind": "calculation",
+      "scope": "一条交换怎样要求另一项活动；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-bottle-identity",
+        "ev-kb50-bottle-backup-entities",
+        "ev-kb50-olca-setup"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-bottle-identity",
+          "relation": "supports",
+          "rationale": "扉页标示手册 v1.3、2020 年 6 月，适用 openLCA 1.10。§1 指出教学用途、所用数据库及配套备份。"
+        },
+        {
+          "evidenceId": "ev-kb50-bottle-backup-entities",
+          "relation": "supports",
+          "rationale": "原备份在所列字节偏移出现两种 Production、两种 Usage 系统名以及对应使用和处理过程名。布局成员与名称标记支持区分对象，实际关系表仍需核对。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-setup",
+          "relation": "context",
+          "rationale": "直接构造的 CalculationSetup 对产品系统取其目标量、单位和属性，正的废物参考需求换算后按废物流取反。构造器不载入系统的参数重定义，调用方可显式提供 withParameters。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-record-and-link",
+        "cl-native-bottle-reference"
+      ],
+      "conceptIds": [
+        "cn-exchange",
+        "cn-native-provider"
+      ],
+      "mappingIds": [],
+      "caveats": [
+        "本例使用JavaSolver和固定依赖；原始数据库及完整重导出不随公开摘要再分发。"
+      ],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "GreenDelta 的瓶子教程提供了一组可以沿记录追查的实例。教程标明适用 openLCA 1.10；这里使用的是保存下来的数据库，在恢复副本并迁移后，由 openLCA 2.7.0 官方 Java 模块求解。教程、归档和这次模块计算各有自己的身份：以下关系解释固定教学模型的行为，不是当年某个桌面补丁版的重演，也不是今日真实瓶子的环境评价。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-bottle-reference",
+      "kind": "interpretation",
+      "scope": "一条交换怎样要求另一项活动；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-bottle-service",
+        "ev-kb50-bottle-waste-representation"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-bottle-service",
+          "relation": "supports",
+          "rationale": "表2的 PET、HDPE、PP 分别为 60、4、1 g。两个使用过程显示 1.06500 kg 的灌装瓶输入，并用 0.06500 kg 废弃瓶产品流作 Mass 定量参考。"
+        },
+        {
+          "evidenceId": "ev-kb50-bottle-waste-representation",
+          "relation": "supports",
+          "rationale": "Material 的使用过程记录正废物输出，处理过程记录正废物输入作为定量参考。Opposite 用负产品输入和负产品输出分别表达对应交换。图54分别展示两个 Production 名称的产品系统图。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-quant-ref",
+        "cn-reference-flow",
+        "cn-waste"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "瓶子使用过程输入 1.06500 kg 装水瓶，另设 0.06500 kg 的“PET Bottle, disposed”产品输出作为定量参考，再用一条不同 flow 对象的交换连接焚烧。后两条记录在数据中各有身份：参考输出规定计算多少瓶体，处理交换提出等量待处理物的要求，其类型和方向取决于下述两种表示。它们不能相加，当成两批分别称重的瓶体；教程交换表也没有给出饮用水最后去向的完整清单。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-material",
+      "kind": "source-statement",
+      "scope": "同一处理量的两种写法；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-bottle-waste-representation"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-bottle-waste-representation",
+          "relation": "supports",
+          "rationale": "Material 的使用过程记录正废物输出，处理过程记录正废物输入作为定量参考。Opposite 用负产品输入和负产品输出分别表达对应交换。图54分别展示两个 Production 名称的产品系统图。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-waste",
+        "cn-quant-ref"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "在瓶子的沿物质流向表示中，使用过程输出 0.06500 kg 的 waste，处理过程则以输入 1000.00000 kg 为参考。两端都是正数量，但“取一份使用记录”和“取一份处理记录”显然不是同样多的物质。连接必须把这两个参考尺度接起来。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-waste-opposite",
+      "text": "同一手册还保留 opposite direction approach：它把相应对象设为 product，在废物产生过程记负输入，在处理过程记负输出。这里改变的是类型、输入输出位置和符号的组合，物质送往处理设施的方向不能只从其中一个字段读取。",
+      "kind": "source-statement",
+      "scope": "openLCA 手册所述 opposite direction approach",
+      "evidenceIds": [
+        "ev-waste-opposite"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-waste"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caveats": []
+    },
+    {
+      "id": "cl-native-opposite",
+      "kind": "interpretation",
+      "scope": "同一处理量的两种写法；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-bottle-waste-representation",
+        "ev-waste-opposite"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-bottle-waste-representation",
+          "relation": "supports",
+          "rationale": "Material 的使用过程记录正废物输出，处理过程记录正废物输入作为定量参考。Opposite 用负产品输入和负产品输出分别表达对应交换。图54分别展示两个 Production 名称的产品系统图。"
+        },
+        {
+          "evidenceId": "ev-waste-opposite",
+          "relation": "supports",
+          "rationale": "描述 product 类型负输入和负输出的旧式处理编码。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-waste",
+        "cn-exchange"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "瓶子模型的反向表示正好给出这组组合：使用过程记录 -0.06500 kg 的产品输入，处理过程以 -1000.00000 kg 的产品输出为参考。两个负号须与两端角色一同解释，才能认出所要求的处理关系。它们并没有把真实的瓶体质量变成负数。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-scale",
+      "kind": "calculation",
+      "scope": "同一处理量的两种写法；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-bottle-service",
+        "ev-kb50-bottle-waste-representation",
+        "ev-kb50-olca-exchange-sign"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-bottle-service",
+          "relation": "supports",
+          "rationale": "表2的 PET、HDPE、PP 分别为 60、4、1 g。两个使用过程显示 1.06500 kg 的灌装瓶输入，并用 0.06500 kg 废弃瓶产品流作 Mass 定量参考。"
+        },
+        {
+          "evidenceId": "ev-kb50-bottle-waste-representation",
+          "relation": "supports",
+          "rationale": "Material 的使用过程记录正废物输出，处理过程记录正废物输入作为定量参考。Opposite 用负产品输入和负产品输出分别表达对应交换。图54分别展示两个 Production 名称的产品系统图。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-exchange-sign",
+          "relation": "context",
+          "rationale": "普通交换按输入取负、输出取正的规则写入系数，规则作用于已处理原始正负值及换算和分配的数量。可链接交换按流类型及输入输出方向识别。避免交换有独立分支。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-material",
+        "cl-native-opposite",
+        "cl-native-bottle-reference",
+        "cl-native-reference-and-target"
+      ],
+      "conceptIds": [
+        "cn-waste",
+        "cn-inventory-balance"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "现在将系统目标定为 0.06500 kg 参考瓶体，恰好需要一份使用记录。与之连接的处理活动倍数是 0.06500÷1000.00000=0.000065；反向表示的两个负数量相除，也得到这个正倍数。两种写法在这里要求同样的处理量，因为参考、数量和连接已经逐项配对。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-matrix-sign",
+      "kind": "calculation",
+      "scope": "同一处理量的两种写法；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-olca-exchange-sign",
+        "ev-kb50-olca-conversion",
+        "ev-kb50-bottle-waste-representation"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-olca-exchange-sign",
+          "relation": "context",
+          "rationale": "普通交换按输入取负、输出取正的规则写入系数，规则作用于已处理原始正负值及换算和分配的数量。可链接交换按流类型及输入输出方向识别。避免交换有独立分支。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-conversion",
+          "relation": "context",
+          "rationale": "交换量使用单位因子除属性因子，表征因子使用相反的比值。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-kb50-bottle-waste-representation",
+          "relation": "supports",
+          "rationale": "Material 的使用过程记录正废物输出，处理过程记录正废物输入作为定量参考。Opposite 用负产品输入和负产品输出分别表达对应交换。图54分别展示两个 Production 名称的产品系统图。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-scale"
+      ],
+      "conceptIds": [
+        "cn-inventory-balance",
+        "cn-waste"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "求解所用的符号还要再看一层。本例的处理参考与使用过程中的处理交换进入矩阵时，输出按记录符号计入，输入取反。因此，正的 1000 kg 废物输入与负的 1000 kg 产品输出都给出 −1000；正的 0.065 kg 废物输出与负的 0.065 kg 产品输入都给出 +0.065。这两个无分配模型的处理对角元及连接项便分别相同。取一份使用记录，处理平衡是“0.065−1000×处理活动倍数＝0”。负对角元抵消产生的待处理量，不表示设施处理了负质量。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-waste-no-universal",
+      "text": "因此，比较两套表示时，可以先画出物质的真实去向，再逐项列出对象类型、过程角色、输入输出、符号和定量参考。把“所有负数都是废物”当作读取规则，会丢掉这些约定；仅凭 product 标签也不能作出相反判断。这些字段一起支持这个案例的解释，并不提供通用的废物定义。",
+      "kind": "synthesis",
+      "scope": "以上两种废物表达的阅读与比较",
+      "evidenceIds": [
+        "ev-waste-material",
+        "ev-waste-opposite"
+      ],
+      "premiseIds": [
+        "cl-waste-material",
+        "cl-waste-opposite"
+      ],
+      "conceptIds": [
+        "cn-waste",
+        "cn-exchange"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "两种表达约定的存在，不证明任意两个模型能够无损互转。"
+      ],
+      "reasoning": "同一废物处理关系在已引用手册中存在两种类型与方向约定，因此单字段不足以决定含义；本结论不推出任意模型等价。"
+    },
+    {
+      "id": "cl-bw-sign",
+      "text": "换到另一软件体系，符号规则还须重新查明。Brightway 文档把供应链中的过程与产品关系放入技术圈矩阵，与过程和自然环境的交换分开；技术圈正值、负值分别表示生产与消费。文档同时提醒，正负并不决定一条边是否承担所建模过程的功能，例如过程会产生废物，却不是为了产生废物才建模。这一功能关系仍须结合节点和边的约定识别。",
+      "kind": "source-statement",
+      "scope": "Brightway latest 的技术圈矩阵约定",
+      "evidenceIds": [
+        "ev-bw-sign",
+        "ev-bw-roles"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-exchange",
+        "cn-waste"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caveats": [],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-bw-sign",
+          "relation": "supports",
+          "rationale": "技术圈矩阵的正负生产/消费约定与废物产生不等于功能的反例。"
+        },
+        {
+          "evidenceId": "ev-bw-roles",
+          "relation": "supports",
+          "rationale": "矩阵说明的引言区分供应链过程—产品关系与过程—自然环境交换的对象维度。"
+        }
+      ]
+    },
+    {
+      "id": "cl-bw-direction",
+      "text": "Brightway 对 input 和 output 的提醒更直接：这些 schema 字段连接产品或生物圈节点与过程节点，并不表示物理流向。界面或字段恰好用了相同的英文词，不足以让两个体系中的记录自动获得同样的含义。",
+      "kind": "source-statement",
+      "scope": "Brightway latest Matrix Construction 的 Important 说明",
+      "evidenceIds": [
+        "ev-bw-roles"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-exchange"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "这里依据文档所述约定；特定安装版本的行为应按其版本确认。"
+      ]
+    },
+    {
+      "id": "cl-native-allocation-held",
+      "kind": "calculation",
+      "scope": "同一处理量的两种写法；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-bottle-allocation",
+        "ev-kb50-bottle-backup-report",
+        "ev-kb50-olca-setup"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-bottle-allocation",
+          "relation": "supports",
+          "rationale": "图57项目 UUID 为 40cc48fa-5533-4a74-9117-c9eeedf857a6。两个 Material Production 变体对同一废弃瓶产品流取 0.065 kg，分别选择 Economic 与 None。图55的设置仍待查。"
+        },
+        {
+          "evidenceId": "ev-kb50-bottle-backup-report",
+          "relation": "supports",
+          "rationale": "报告保存 No Allocation 与 Economic Allocation 两个具名变体的 GWP100a 总量。报告项目 UUID 与图57项目不同。酸化只有类别描述，结果数组仅有 GWP100a。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-setup",
+          "relation": "context",
+          "rationale": "直接构造的 CalculationSetup 对产品系统取其目标量、单位和属性，正的废物参考需求换算后按废物流取反。构造器不载入系统的参数重定义，调用方可显式提供 withParameters。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-material",
+        "cl-native-opposite"
+      ],
+      "conceptIds": [
+        "cn-allocation",
+        "cn-waste"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "回到瓶子，还不能立即把两次得分相减。教程中的焚烧过程同时涉及处理、电力和蒸汽，分配决定这些功能各承担多少过程负担；经济分配利用数量与成本、收益信息形成份额。归档的 Material（沿物质流向）处理过程默认采用经济分配，Opposite（反向表示）没有相同设置。本例比较编码时先显式采用无分配（NONE），经济分配另作比较，避免把负担归属的改变混入表示方式的对应。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-representation-result",
+      "kind": "calculation",
+      "scope": "同一处理量的两种写法；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-bottle-waste-representation",
+        "ev-kb50-olca-saved-links",
+        "ev-kb50-olca-matrix-builder",
+        "ev-ipcc-ar6-gwp-definition",
+        "ev-kb74-ipcc-gwp-definition"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-bottle-waste-representation",
+          "relation": "supports",
+          "rationale": "Material 的使用过程记录正废物输出，处理过程记录正废物输入作为定量参考。Opposite 用负产品输入和负产品输出分别表达对应交换。图54分别展示两个 Production 名称的产品系统图。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-saved-links",
+          "relation": "context",
+          "rationale": "以产品系统作为计算目标时，从保存的 processLinks 形成供方与流的坐标，以过程和交换数据库 ID 组合作为连接索引。单过程目标走单独的搜索或扫描分支。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-matrix-builder",
+          "relation": "context",
+          "rationale": "矩阵构造器初用稀疏对象承载单元，按填充情况可转密。读取给出数字单元，源因子记录仍是独立对象。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-ipcc-ar6-gwp-definition",
+          "relation": "context",
+          "rationale": "仅解释GWP的时间范围和CO2参照含义；本例继续使用归档CML方法，没有换用AR6因子。"
+        },
+        {
+          "evidenceId": "ev-kb74-ipcc-gwp-definition",
+          "relation": "context",
+          "rationale": "正式报告1012–1013页说明单位质量排放、时间积分和CO₂参考，只用于GWP名称及物理量的解释，不提供或替换归档CML因子。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-scale",
+        "cl-native-matrix-sign",
+        "cl-native-allocation-held",
+        "cl-native-example-scope"
+      ],
+      "conceptIds": [
+        "cn-native-preservation",
+        "cn-inventory-balance"
+      ],
+      "mappingIds": [],
+      "caveats": [
+        "配对明确限定到这两个具名模型；清单和类别合计存在微小求和次序差异，不宣称所有输出字节相同。"
+      ],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "在目标、背景、连接和无分配设置都固定后，按角色配对两套使用过程、处理过程及处理流，活动供需矩阵、每份活动的清单矩阵和流到类别的换算矩阵均相同。两套计算各有 10 个活动坐标、435 个清单坐标和 11 个影响类别，总量在浮点容差内相符；其中 100 年全球变暖潜势 GWP100a 均约为 0.369674399 kg CO₂ eq，即千克二氧化碳当量。这里建立的是这组坐标和设置下的对应，最终得分相同只是它的一项结果。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-small-inventory",
+      "kind": "calculation",
+      "scope": "局部贡献、同流总量与类别合计；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-bottle-acenaphthene",
+        "ev-kb50-bottle-waste-representation",
+        "ev-kb50-olca-open-inventory"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-bottle-acenaphthene",
+          "relation": "supports",
+          "rationale": "原图在 Material 处理过程的淡水 Acenaphthene 行显示 1.01665E−9 kg。海洋行及 Acenaphthylene 行分别列出。"
+        },
+        {
+          "evidenceId": "ev-kb50-bottle-waste-representation",
+          "relation": "supports",
+          "rationale": "Material 的使用过程记录正废物输出，处理过程记录正废物输入作为定量参考。Opposite 用负产品输入和负产品输出分别表达对应交换。图54分别展示两个 Production 名称的产品系统图。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-open-inventory",
+          "relation": "context",
+          "rationale": "基础流进入环境介入表。可连接的产品输入或废物输出有选中供方时进入技术矩阵，无选中供方时进入介入表，原流类别仍须单独检查。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-scale",
+        "cl-native-allocation-held"
+      ],
+      "conceptIds": [
+        "cn-inventory-balance"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "怎样判断一个总量确实包含了所要的活动？可以先沿一条排放向下核对。教程图中的处理记录以 1000 kg 废物为参考，向淡水输出 0.00000000101665 kg Acenaphthene；乘瓶子所需的处理倍数，得到 6.608225e-14 kg。迁移后归档中的系数保留更多小数，原生计算给出的处理过程单独贡献约为 6.608199e-14 kg。两者在图示精度内相容，所核对的是这一过程对这一淡水流的局部贡献。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-same-flow-total",
+      "kind": "calculation",
+      "scope": "局部贡献、同流总量与类别合计；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-bottle-acenaphthene",
+        "ev-kb50-olca-open-inventory",
+        "ev-kb50-olca-result-flow-view"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-bottle-acenaphthene",
+          "relation": "supports",
+          "rationale": "原图在 Material 处理过程的淡水 Acenaphthene 行显示 1.01665E−9 kg。海洋行及 Acenaphthylene 行分别列出。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-open-inventory",
+          "relation": "context",
+          "rationale": "基础流进入环境介入表。可连接的产品输入或废物输出有选中供方时进入技术矩阵，无选中供方时进入介入表，原流类别仍须单独检查。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-result-flow-view",
+          "relation": "context",
+          "rationale": "flowValueView 根据传入 EnviFlow 的输入标记转换结果视图符号：输入标记取反并把零保留为零，其他方向保留原值。该转换作用于视图数值，不能从视图数值反推每条交换的原符号。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-small-inventory"
+      ],
+      "conceptIds": [
+        "cn-inventory-balance",
+        "cn-flow"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "把核对范围扩大到全系统，同一淡水流的清单量约为 1.789707e-13 kg，因为背景中的其他过程也有贡献。这个量不应与刚才的处理乘积直接判等。过程、流的身份、排放介质和结果层次须一同保留，否则原本不同范围的数值，会被误读成同一次计算的矛盾。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-three-co2-quantities",
+      "kind": "calculation",
+      "scope": "局部贡献、同流总量与类别合计；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-bottle-backup-entities",
+        "ev-kb50-olca-impact-factor-build",
+        "ev-kb50-olca-result-flow-view"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-bottle-backup-entities",
+          "relation": "supports",
+          "rationale": "原备份在所列字节偏移出现两种 Production、两种 Usage 系统名以及对应使用和处理过程名。布局成员与名称标记支持区分对象，实际关系表仍需核对。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-impact-factor-build",
+          "relation": "context",
+          "rationale": "非区域化路径只在类别、清单流 ID 与无地域的因子条件满足时写相应矩阵单元。区域化路径还记录已匹配的地域坐标后再应用默认因子，属于不同配置。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-result-flow-view",
+          "relation": "context",
+          "rationale": "flowValueView 根据传入 EnviFlow 的输入标记转换结果视图符号：输入标记取反并把零保留为零，其他方向保留原值。该转换作用于视图数值，不能从视图数值反推每条交换的原符号。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-allocation-held",
+        "cl-native-same-flow-total"
+      ],
+      "conceptIds": [
+        "cn-cf",
+        "cn-inventory-balance"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "CO₂ 又把范围向前推进一层：选定空气排放流的处理贡献约为 0.157428377 kg，全系统同流清单约为 0.336530863 kg。归档 CML GWP100a 给该流的匹配因子为每千克排放 1 kg CO₂ 当量，但类别中还有其他已匹配温室气体；加上它们才得到 0.369674399 kg CO₂ eq。因子恰为 1，仍不能把过程贡献、单流清单和类别合计当成同一个量。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-allocation-result",
+      "kind": "calculation",
+      "scope": "局部贡献、同流总量与类别合计；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-bottle-allocation",
+        "ev-kb50-bottle-backup-report",
+        "ev-kb50-olca-setup"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-bottle-allocation",
+          "relation": "supports",
+          "rationale": "图57项目 UUID 为 40cc48fa-5533-4a74-9117-c9eeedf857a6。两个 Material Production 变体对同一废弃瓶产品流取 0.065 kg，分别选择 Economic 与 None。图55的设置仍待查。"
+        },
+        {
+          "evidenceId": "ev-kb50-bottle-backup-report",
+          "relation": "supports",
+          "rationale": "报告保存 No Allocation 与 Economic Allocation 两个具名变体的 GWP100a 总量。报告项目 UUID 与图57项目不同。酸化只有类别描述，结果数组仅有 GWP100a。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-setup",
+          "relation": "context",
+          "rationale": "直接构造的 CalculationSetup 对产品系统取其目标量、单位和属性，正的废物参考需求换算后按废物流取反。构造器不载入系统的参数重定义，调用方可显式提供 withParameters。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-allocation-held",
+        "cl-native-representation-result"
+      ],
+      "conceptIds": [
+        "cn-allocation",
+        "cn-inventory-balance"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "此前暂时固定的分配，此时也可以单独打开比较。归档项目指定经济分配后，Material 模型的 GWP100a 约为 0.265341691 kg CO₂ eq，无分配则约为 0.369674399 kg CO₂ eq，两者分别与归档报告中的保存值在核对容差内相符。处理活动倍数没有变化，变化的是参考功能承担的贡献；较低得分因而不能证明处理量减少，或电力与蒸汽的供应已经在现实中替代了其他活动。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-printed-comparator",
+      "kind": "interpretation",
+      "scope": "局部贡献、同流总量与类别合计；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-bottle-figure55",
+        "ev-kb50-bottle-allocation",
+        "ev-kb50-bottle-backup-report"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-bottle-figure55",
+          "relation": "supports",
+          "rationale": "图55的分析窗格标作 Usage，图注标作 Production。两窗格显示同一 CML-IA baseline 类别名称与所列数值，GWP100a 均显示 0.36967，酸化均显示 0.00100，化石资源项显示 0.00000。"
+        },
+        {
+          "evidenceId": "ev-kb50-bottle-allocation",
+          "relation": "supports",
+          "rationale": "图57项目 UUID 为 40cc48fa-5533-4a74-9117-c9eeedf857a6。两个 Material Production 变体对同一废弃瓶产品流取 0.065 kg，分别选择 Economic 与 None。图55的设置仍待查。"
+        },
+        {
+          "evidenceId": "ev-kb50-bottle-backup-report",
+          "relation": "supports",
+          "rationale": "报告保存 No Allocation 与 Economic Allocation 两个具名变体的 GWP100a 总量。报告项目 UUID 与图57项目不同。酸化只有类别描述，结果数组仅有 GWP100a。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-review-scope",
+        "cn-native-preservation"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "历史截图提供的是另一种、较窄的比较。教程窗格显示 GWP100a 为 0.36967 kg CO₂ eq、酸化为 0.00100 kg SO₂ eq，现代无分配结果在显示精度上相符。然而图注写 Production，窗格写 Usage，截图未展示完整目标和分配设置，另一张分配项目图的身份也不同于归档项目。数字能对上显示位数，不能据此把这些材料合并成同一历史运行。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-missing-link",
+      "kind": "calculation",
+      "scope": "有默认提供者，处理仍可能没有发生；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-olca-saved-links",
+        "ev-kb50-olca-open-inventory",
+        "ev-kb50-olca-default-provider"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-olca-saved-links",
+          "relation": "context",
+          "rationale": "以产品系统作为计算目标时，从保存的 processLinks 形成供方与流的坐标，以过程和交换数据库 ID 组合作为连接索引。单过程目标走单独的搜索或扫描分支。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-open-inventory",
+          "relation": "context",
+          "rationale": "基础流进入环境介入表。可连接的产品输入或废物输出有选中供方时进入技术矩阵，无选中供方时进入介入表，原流类别仍须单独检查。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-default-provider",
+          "relation": "context",
+          "rationale": "查找先按流获取候选，再在指定策略下比较默认供方 ID。ONLY_DEFAULTS 无可用默认者时返回空。该自动选择与读取现有系统图是两个入口。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-record-and-link",
+        "cl-native-example-scope"
+      ],
+      "conceptIds": [
+        "cn-native-provider",
+        "cn-waste"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "更有区分力的检查，是看缺一项关系时会发生什么。在同一瓶子模型副本中，只删除使用到处理的一条已保存连接，保留废物交换和默认提供者，也不重建连接。重新求解后，处理过程没有活动坐标，0.065 kg 废物留在未接续的边界上。结果表仍列出它，类型仍为 WASTE_FLOW；这是一条开放技术流，列入清单并不使它成为直接排入自然环境的基础流。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-missing-link-score",
+      "kind": "calculation",
+      "scope": "有默认提供者，处理仍可能没有发生；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-olca-saved-links",
+        "ev-kb50-olca-open-inventory"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-olca-saved-links",
+          "relation": "context",
+          "rationale": "以产品系统作为计算目标时，从保存的 processLinks 形成供方与流的坐标，以过程和交换数据库 ID 组合作为连接索引。单过程目标走单独的搜索或扫描分支。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-open-inventory",
+          "relation": "context",
+          "rationale": "基础流进入环境介入表。可连接的产品输入或废物输出有选中供方时进入技术矩阵，无选中供方时进入介入表，原流类别仍须单独检查。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-missing-link",
+        "cl-native-three-co2-quantities"
+      ],
+      "conceptIds": [
+        "cn-native-provider",
+        "cn-inventory-truncation"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "删去这条连接，GWP100a 约降到 0.212105058 kg CO₂ eq；在清单层，处理过程的淡水 Acenaphthene 和 CO₂ 贡献也不再计入。这是类别合计和过程清单两个层次的变化。分数降低有一个明确的模型原因：处理活动缺席。默认提供者名称仍在，并未补回该活动；只看总分，漏算的负担就可能被误当成实际处理改善。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-jrc-scope",
+      "kind": "interpretation",
+      "scope": "一千克还没有说清多少件；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-jrc-archive",
+        "ev-kb50-jrc-model-reference",
+        "ev-kb50-jrc-model-rights"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-jrc-archive",
+          "relation": "supports",
+          "rationale": "样例压缩包中有一个模型文件、七个过程 XML 与流/属性/单位；未见 LCIA 方法目录或方法数据集。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-model-reference",
+          "relation": "supports",
+          "rationale": "参考实例 #2 同时有标度 5 和 weight=.2。另用 referenceToResultingProcess 指向 a91683fe…；成员名、永久 URI 与模型内部 UUID 不同。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-model-rights",
+          "relation": "qualifies",
+          "rationale": "模型标示版权并限定非商业接口测试；用途字段将其界定为示例，排除实际 LCA 研究；所列方案合规字段为 Not compliant。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-quant-ref",
+        "cn-data-fitness"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "瓶子暴露的是连接是否被采用；JRC eILCD SDK 的注塑示例进一步把参数和实例带入问题。它明确规定 5 件、每件 0.2 kg，共 1 kg。原件限定为非商业导入、导出接口测试，并排除实际 LCA 研究用途，因此适合用来检查关系怎样传递，不能作为真实注塑行业的环境数据。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-jrc-instance",
+      "kind": "calculation",
+      "scope": "一千克还没有说清多少件；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-jrc-model-edges",
+        "ev-kb50-jrc-process-grid",
+        "ev-kb50-olca-eilcd-model-import"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-jrc-model-edges",
+          "relation": "supports",
+          "rationale": "实例 #4 与 #5 使用同一具名过程数据但连接不同；#2 至 #3 用不同废物 UUID，至 #6 则用同一 Product flow UUID。#0 到 #1 声明 GLO。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-process-grid",
+          "relation": "supports",
+          "rationale": "电网过程 #509 为 3.6 MJ 的参考输出。交换 #1、4、5 给出本样例的水力一次能源、化石 CO₂ 与 CO。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-eilcd-model-import",
+          "relation": "context",
+          "rationale": "普通导入按实例 ID 找两端，按过程 UUID 取得过程。同一流建连接，异流可加入两端数量各为 1 的连接过程。保存的系统目标取自参考过程定量交换。过程参数覆盖另存为重定义，所列普通路径不使用实例倍率或标度。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-jrc-scope",
+        "cl-native-record-and-link"
+      ],
+      "conceptIds": [
+        "cn-native-provider",
+        "cn-native-preservation"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "在这份源模型里，七个过程实例引用六个不同的过程 UUID。两个电力实例共用一份电网数据，一个服务铁路，另一个服务注塑和清洗，各有自己的连接对象、分组和倍率。此次普通导入的计算图将这些用电要求汇到同一提供者，源实例的区别与导入后的共享坐标因而不是同一层记录。这个具体聚合也不证明共用 UUID 的任意实例都能等价合并。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-jrc-connectors",
+      "kind": "calculation",
+      "scope": "一千克还没有说清多少件；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-jrc-model-edges",
+        "ev-kb50-jrc-process-rail",
+        "ev-kb50-jrc-process-granulate",
+        "ev-kb50-olca-eilcd-model-import"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-jrc-model-edges",
+          "relation": "supports",
+          "rationale": "实例 #4 与 #5 使用同一具名过程数据但连接不同；#2 至 #3 用不同废物 UUID，至 #6 则用同一 Product flow UUID。#0 到 #1 声明 GLO。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-process-rail",
+          "relation": "supports",
+          "rationale": "货物两端各有 1 kg。电力交换 #1 的 meanAmount=3.6，乘 spec_energy。实例距离/利用率覆盖数据集默认；入站货物交换未给地点字段。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-process-granulate",
+          "relation": "supports",
+          "rationale": "粒料过程位置标 DE。定量参考输出 #239 为 1 kg。交换 #1、4、5 给出本样例的水力一次能源、化石 CO₂ 与 CO。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-eilcd-model-import",
+          "relation": "context",
+          "rationale": "普通导入按实例 ID 找两端，按过程 UUID 取得过程。同一流建连接，异流可加入两端数量各为 1 的连接过程。保存的系统目标取自参考过程定量交换。过程参数覆盖另存为重定义，所列普通路径不使用实例倍率或标度。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-jrc-instance"
+      ],
+      "conceptIds": [
+        "cn-native-provider",
+        "cn-native-preservation"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "另有四处连接，两端使用不同的流 UUID，例如运输前后的货物与所需塑料。普通 openLCA 导入器为它们各建一个连接过程，两端都按各自参考单位记数量 1：三处是 kg 对 kg，一处电力是 MJ 对 MJ。导入警告说明了这一处理，不能从解释中省去；更不能把此处的 1∶1 对应推广为任意同名流、不同单位或不同质量材料之间的换算。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-jrc-parameters",
+      "kind": "calculation",
+      "scope": "一千克还没有说清多少件；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-jrc-model-reference",
+        "ev-kb50-jrc-process-moulding",
+        "ev-kb50-jrc-process-rail",
+        "ev-kb50-olca-setup",
+        "ev-kb50-olca-eilcd-model-import"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-jrc-model-reference",
+          "relation": "supports",
+          "rationale": "参考实例 #2 同时有标度 5 和 weight=.2。另用 referenceToResultingProcess 指向 a91683fe…；成员名、永久 URI 与模型内部 UUID 不同。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-process-moulding",
+          "relation": "supports",
+          "rationale": "参考产物为输出 #5。模型实例重量 .2 代入后，废塑料每件 .004 kg。设备处理输出另有 .002 的 meanAmount 与 EoLmach 变量，两项要相乘。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-process-rail",
+          "relation": "supports",
+          "rationale": "货物两端各有 1 kg。电力交换 #1 的 meanAmount=3.6，乘 spec_energy。实例距离/利用率覆盖数据集默认；入站货物交换未给地点字段。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-setup",
+          "relation": "context",
+          "rationale": "直接构造的 CalculationSetup 对产品系统取其目标量、单位和属性，正的废物参考需求换算后按废物流取反。构造器不载入系统的参数重定义，调用方可显式提供 withParameters。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-eilcd-model-import",
+          "relation": "context",
+          "rationale": "普通导入按实例 ID 找两端，按过程 UUID 取得过程。同一流建连接，异流可加入两端数量各为 1 的连接过程。保存的系统目标取自参考过程定量交换。过程参数覆盖另存为重定义，所列普通路径不使用实例倍率或标度。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-jrc-scope",
+        "cl-native-jrc-instance"
+      ],
+      "conceptIds": [
+        "cn-quant-ref",
+        "cn-inventory-balance"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "导入后的目标字段写着 1 kg，五件产品的信息却还依赖参数。单件质量以及铁路距离、利用率的覆盖值存于 Baseline 参数集，参考输出则保留随质量求值的公式。显式采用这组参数后，1 kg 除以每份参考活动的 0.2 kg，得到五个模型活动单位。这是公式重新给出的倍率，不能说源实例的分组和标度已经原样迁移；只读目标字段也无法得到它。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-jrc-weight-control",
+      "kind": "calculation",
+      "scope": "一千克还没有说清多少件；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-jrc-process-moulding",
+        "ev-kb50-jrc-process-grid",
+        "ev-kb50-olca-setup"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-jrc-process-moulding",
+          "relation": "supports",
+          "rationale": "参考产物为输出 #5。模型实例重量 .2 代入后，废塑料每件 .004 kg。设备处理输出另有 .002 的 meanAmount 与 EoLmach 变量，两项要相乘。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-process-grid",
+          "relation": "supports",
+          "rationale": "电网过程 #509 为 3.6 MJ 的参考输出。交换 #1、4、5 给出本样例的水力一次能源、化石 CO₂ 与 CO。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-setup",
+          "relation": "context",
+          "rationale": "直接构造的 CalculationSetup 对产品系统取其目标量、单位和属性，正的废物参考需求换算后按废物流取反。构造器不载入系统的参数重定义，调用方可显式提供 withParameters。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-jrc-parameters"
+      ],
+      "conceptIds": [
+        "cn-fu",
+        "cn-quant-ref",
+        "cn-inventory-balance"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "为分清“同样重”与“同样多件”，可只将单件质量改成 1 kg，仍要求交付 1 kg，并保留铁路参数覆盖。所需活动变为一份，而源用电公式含有不随单件质量同比缩放的固定项，故同样的材料总质量不再给出同样的用电量。这项作者控制的化石 CO₂ 清单比五件情形少约 0.064471482 kg；它揭示给定公式中的件数效应，没有测量真实工厂改产后的排放。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-jrc-bare-setup",
+      "kind": "interpretation",
+      "scope": "一千克还没有说清多少件；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-olca-setup",
+        "ev-kb50-jrc-model-reference",
+        "ev-kb50-jrc-process-rail"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-olca-setup",
+          "relation": "supports",
+          "rationale": "直接构造的 CalculationSetup 对产品系统取其目标量、单位和属性，正的废物参考需求换算后按废物流取反。构造器不载入系统的参数重定义，调用方可显式提供 withParameters。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-model-reference",
+          "relation": "supports",
+          "rationale": "参考实例 #2 同时有标度 5 和 weight=.2。另用 referenceToResultingProcess 指向 a91683fe…；成员名、永久 URI 与模型内部 UUID 不同。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-process-rail",
+          "relation": "supports",
+          "rationale": "货物两端各有 1 kg。电力交换 #1 的 meanAmount=3.6，乘 spec_energy。实例距离/利用率覆盖数据集默认；入站货物交换未给地点字段。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-native-provider",
+        "cn-quant-ref"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "参数保存在哪里，与计算实际采用什么，仍须分别确认。这个版本的 CalculationSetup.of 会读取系统目标，却不会自动采用系统中的参数集；显式传入 Baseline 才构成前述配置。省略全部覆盖还会改变铁路参数，因而不能拿它冒充“只改单件质量”的对照。参数实验的对象，和连接实验一样，要精确到实际改变的关系。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-native-jrc-machine-edge",
+      "kind": "calculation",
+      "scope": "连接保存下来，仍可能没有带入处理；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-jrc-model-edges",
+        "ev-kb50-jrc-process-machine",
+        "ev-kb50-jrc-machine-flow",
+        "ev-kb50-jrc-process-moulding",
+        "ev-kb50-olca-eilcd-model-import"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-jrc-model-edges",
+          "relation": "supports",
+          "rationale": "实例 #4 与 #5 使用同一具名过程数据但连接不同；#2 至 #3 用不同废物 UUID，至 #6 则用同一 Product flow UUID。#0 到 #1 声明 GLO。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-process-machine",
+          "relation": "supports",
+          "rationale": "设备末端处理的定量参考 #0 为正向输入，类型需和同 UUID 的 Product flow 原件核对。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-machine-flow",
+          "relation": "supports",
+          "rationale": "设备末端处理流记录 EoL plastic injection machine 的 typeOfDataSet 为 Product flow。参考属性索引 0 引用质量属性 UUID 93a60a56-a3c8-11da-a746-0800200b9a66，引用中声明版本 00.00.000。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-process-moulding",
+          "relation": "supports",
+          "rationale": "参考产物为输出 #5。模型实例重量 .2 代入后，废塑料每件 .004 kg。设备处理输出另有 .002 的 meanAmount 与 EoLmach 变量，两项要相乘。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-eilcd-model-import",
+          "relation": "context",
+          "rationale": "普通导入按实例 ID 找两端，按过程 UUID 取得过程。同一流建连接，异流可加入两端数量各为 1 的连接过程。保存的系统目标取自参考过程定量交换。过程参数覆盖另存为重定义，所列普通路径不使用实例倍率或标度。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-jrc-instance",
+        "cl-native-record-and-link"
+      ],
+      "conceptIds": [
+        "cn-native-provider",
+        "cn-waste"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "即使连接保存下来，也可能没有带入所设想的处理。源例把报废机器设为 Product flow，由注塑过程输出，接到末端处理的正输入，该输入同时是处理参考。普通导入路径保留类型，并将产品输出端视为提供者；这条关系遂成为“末端处理向注塑过程取得报废机器”。从所要求的注塑件出发，注塑过程并不沿这条产品供应关系请求下游处理。连接能够解析，仍未回答谁在向谁要求活动。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-jrc-machine-coordinate",
+      "kind": "calculation",
+      "scope": "连接保存下来，仍可能没有带入处理；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-olca-saved-links",
+        "ev-kb50-olca-open-inventory",
+        "ev-kb50-jrc-process-machine"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-olca-saved-links",
+          "relation": "context",
+          "rationale": "以产品系统作为计算目标时，从保存的 processLinks 形成供方与流的坐标，以过程和交换数据库 ID 组合作为连接索引。单过程目标走单独的搜索或扫描分支。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-open-inventory",
+          "relation": "context",
+          "rationale": "基础流进入环境介入表。可连接的产品输入或废物输出有选中供方时进入技术矩阵，无选中供方时进入介入表，原流类别仍须单独检查。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-process-machine",
+          "relation": "supports",
+          "rationale": "设备末端处理的定量参考 #0 为正向输入，类型需和同 UUID 的 Product flow 原件核对。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-jrc-machine-edge"
+      ],
+      "conceptIds": [
+        "cn-native-provider",
+        "cn-inventory-truncation"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "JRC注塑示例的实际活动索引多出一个以报废机器为输出的注塑坐标，却没有末端处理的活动坐标。约 4.000000e-6 kg 报废机器作为 PRODUCT_FLOW 留在开放清单中。求解器可以成功求解这样一张图，但它求解成功，并不会使图中缺席的处理发生。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-jrc-source-discrepancy",
+      "kind": "calculation",
+      "scope": "连接保存下来，仍可能没有带入处理；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-jrc-result",
+        "ev-kb50-jrc-process-machine",
+        "ev-kb50-jrc-process-moulding",
+        "ev-kb50-olca-saved-links"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-jrc-result",
+          "relation": "supports",
+          "rationale": "文件标作单一操作单元过程，有七条交换。六条的 meanAmount 与 resultingAmount 不同且无变量引用。所列结果可作有界聚合核对，洗后废物流未列入。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-process-machine",
+          "relation": "supports",
+          "rationale": "设备末端处理的定量参考 #0 为正向输入，类型需和同 UUID 的 Product flow 原件核对。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-process-moulding",
+          "relation": "supports",
+          "rationale": "参考产物为输出 #5。模型实例重量 .2 代入后，废塑料每件 .004 kg。设备处理输出另有 .002 的 meanAmount 与 EoLmach 变量，两项要相乘。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-saved-links",
+          "relation": "context",
+          "rationale": "以产品系统作为计算目标时，从保存的 processLinks 形成供方与流的坐标，以过程和交换数据库 ID 组合作为连接索引。单过程目标走单独的搜索或扫描分支。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-jrc-machine-coordinate"
+      ],
+      "conceptIds": [
+        "cn-inventory-truncation",
+        "cn-native-preservation"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "差额也沿着气体清单留下痕迹。模型指定结果的 resultingAmount 字段给出化石 CO₂ 1.8919649886152838 kg，导入图计算约为 1.891961100 kg；按未舍入值相减，前者多约 3.888308e-6 kg。报废机器量乘源处理系数 0.972076908272198 kg CO₂/kg，得到约 3.888308e-6 kg，化石一氧化碳（CO）的差额也与该处理贡献相符。这里解释了差额，未把该处理补入所示计算图；原生输出仍缺少这项贡献，仍未完整重现原件的两项气体总量。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-jrc-partial-match",
+      "kind": "calculation",
+      "scope": "连接保存下来，仍可能没有带入处理；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-jrc-result",
+        "ev-kb50-jrc-process-machine",
+        "ev-kb50-jrc-process-grid",
+        "ev-kb50-jrc-process-granulate"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-jrc-result",
+          "relation": "supports",
+          "rationale": "文件标作单一操作单元过程，有七条交换。六条的 meanAmount 与 resultingAmount 不同且无变量引用。所列结果可作有界聚合核对，洗后废物流未列入。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-process-machine",
+          "relation": "supports",
+          "rationale": "设备末端处理的定量参考 #0 为正向输入，类型需和同 UUID 的 Product flow 原件核对。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-process-grid",
+          "relation": "supports",
+          "rationale": "电网过程 #509 为 3.6 MJ 的参考输出。交换 #1、4、5 给出本样例的水力一次能源、化石 CO₂ 与 CO。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-process-granulate",
+          "relation": "supports",
+          "rationale": "粒料过程位置标 DE。定量参考输出 #239 为 1 kg。交换 #1、4、5 给出本样例的水力一次能源、化石 CO₂ 与 CO。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-jrc-source-discrepancy"
+      ],
+      "conceptIds": [
+        "cn-native-preservation",
+        "cn-review-scope"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "若改看水电一次能源，原生值约 62.286789763 MJ，却与指定结果相符：缺席的机器处理恰好没有这项输入。只检查这个资源量，或把 CO₂ 都显示为两位小数，就可能看不见气体链的差别。对应检验需要能区分关键关系的量；一个容易吻合的总量，不足以替整个计算图作证。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-jrc-result-projection",
+      "kind": "calculation",
+      "scope": "连接保存下来，仍可能没有带入处理；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-jrc-process-wash",
+        "ev-kb50-jrc-result",
+        "ev-kb50-jrc-doc-direction-amount"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-jrc-process-wash",
+          "relation": "supports",
+          "rationale": "正向废物输入 #3 是 1 kg 的定量参考。输出 #5 的 out=1−loss，loss=.03。用电每库存单位 .6 MJ，另有水量和原样例的基础流。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-result",
+          "relation": "supports",
+          "rationale": "文件标作单一操作单元过程，有七条交换。六条的 meanAmount 与 resultingAmount 不同且无变量引用。所列结果可作有界聚合核对，洗后废物流未列入。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-doc-direction-amount",
+          "relation": "supports",
+          "rationale": "过程指明数量参考、流数据集、交换方向与数值。默认结果量是 meanAmount 与引用变量相乘，无变量则规定相等；负结果量可反转方向解释。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-jrc-scope",
+        "cl-native-record-and-link"
+      ],
+      "conceptIds": [
+        "cn-inventory-truncation",
+        "cn-review-scope"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "指定结果本身也有边界。清洗按源关系产生约 0.019400 kg 未继续连接的塑料废物，原生清单保留了它，指定结果的七条交换却没有这一项。该结果文件的六条非参考交换还在没有变量引用时，给出不同的 meanAmount 和 resultingAmount。ILCD 说明规定后者等于前者乘引用变量，无变量时应相等。本例用源文件所记 resultingAmount 比较，保留这项不一致；不能一边拿它作基准，一边默默替它补齐或修正。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-jrc-version-reference",
+      "kind": "interpretation",
+      "scope": "连接保存下来，仍可能没有带入处理；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-jrc-rail-property-reference",
+        "ev-kb50-jrc-energy-property-record",
+        "ev-kb50-olca-ilcd-flow-import",
+        "ev-kb50-olca-ilcd-property-import"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-jrc-rail-property-reference",
+          "relation": "supports",
+          "rationale": "铁路用高压电流的参考属性索引 0 指向能量 UUID 93a60a56-a3c8-11da-a746-0800200c9a66，声明版本 28.00.000，URI 指向无后缀成员。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-energy-property-record",
+          "relation": "supports",
+          "rationale": "无后缀能量属性成员记录同一内部 UUID，数据集版本为 03.00.000，并引用能量单位组。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-ilcd-flow-import",
+          "relation": "supports",
+          "rationale": "导入流的属性时以属性 UUID 查询属性，再用本地属性索引选择参考属性。此调用不把原引用的版本及 URI 传给属性查找。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-ilcd-property-import",
+          "relation": "supports",
+          "rationale": "属性导入优先复用库中同 UUID 对象，否则按该 ID 查找载体记录。创建新记录时才复制所获对象的版本。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-native-preservation",
+        "cn-data-fitness"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "数值之外还有版本身份：源例电力流请求参考属性的 28.00.000 版本，所给 URI 对应成员却标为 03.00.000。按 UUID 找到一个可用属性，甚至算得相同能量，都不能证明请求的版本已经得到满足。这个未建立的版本关系与气体差额、开放废物一样，应留在对模型的解释之中。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-native-format-scope",
+      "kind": "calculation",
+      "scope": "文件往返保留的是哪个问题；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-olca-json-export",
+        "ev-kb50-olca-json-system-writer",
+        "ev-kb50-olca-eilcd-system-export",
+        "ev-kb50-olca-ilcd-import-entry"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-olca-json-export",
+          "relation": "context",
+          "rationale": "普通引用和交换默认供方有不同的导出入口。关闭递归导出默认供方仍可写短引用。已被其他引用纳入的对象及特定结果供方有其自身规则。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-json-system-writer",
+          "relation": "context",
+          "rationale": "系统写入参考过程、参考交换内部 ID、独立目标量、单位和属性字段，并记录供方、流、关联过程和交换内部 ID。系统参数集亦单独写入。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-eilcd-system-export",
+          "relation": "context",
+          "rationale": "导出用实例 ID 指向参考过程，以流及下游实例表达连接。所列路径不写独立目标量、单位与属性。过程参数来源限所选基线或首个参数集中的对应过程项。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-ilcd-import-entry",
+          "relation": "context",
+          "rationale": "批量入口按类型迭代载体中的记录，指定模型 ID 的入口另行查找。失败可能记入日志或返回空，不能仅靠调用结束确认实体完整。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-example-scope",
+        "cl-native-record-and-link"
+      ],
+      "conceptIds": [
+        "cn-native-preservation"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "理解数据怎样生成计算活动之后，还要问：这些关系经过文件转换，是否仍回答同一个需求？格式、写入器、读取器和计算设置须一并交代。瓶子的两条往返都在同版 openLCA 中完成：JSON-LD 导出系统、依赖和原 CML 方法，eILCD 导出系统及依赖，保留写入器生成的 openLCA 扩展。后一条按清单范围比较；没有选择导出方法，不能反过来成为格式丢失方法数据的证据。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-waste-history",
+      "text": "表示约定还有自己的版本史。openLCA 2 手册回顾，沿物质流向的废物表达从 openLCA 1.7 引入，更早采用所述反向表达。这条回顾说明引入时点；某份旧数据经特定版本迁移后怎样运行，则须由相应记录和行为证据回答，不能由版本节点直接推得。",
+      "kind": "source-statement",
+      "scope": "手册对软件版本沿革的回顾",
+      "evidenceIds": [
+        "ev-waste-history"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-waste"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "版本沿革依据该手册的回顾；它不证明这一思想由 openLCA 首次提出。"
+      ]
+    },
+    {
+      "id": "cl-native-format-original-target",
+      "kind": "calculation",
+      "scope": "文件往返保留的是哪个问题；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-olca-json-system-writer",
+        "ev-kb50-olca-json-system-reader",
+        "ev-kb50-olca-eilcd-system-export",
+        "ev-kb50-olca-eilcd-model-import"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-olca-json-system-writer",
+          "relation": "context",
+          "rationale": "系统写入参考过程、参考交换内部 ID、独立目标量、单位和属性字段，并记录供方、流、关联过程和交换内部 ID。系统参数集亦单独写入。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-json-system-reader",
+          "relation": "context",
+          "rationale": "读取目标量并解析参考过程、过程内交换 ID 与目标量属性。连接须解析其供方、流、过程及交换。缺少依赖或对应交换时会清除部分参考字段或跳过连接。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-eilcd-system-export",
+          "relation": "context",
+          "rationale": "导出用实例 ID 指向参考过程，以流及下游实例表达连接。所列路径不写独立目标量、单位与属性。过程参数来源限所选基线或首个参数集中的对应过程项。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-eilcd-model-import",
+          "relation": "context",
+          "rationale": "普通导入按实例 ID 找两端，按过程 UUID 取得过程。同一流建连接，异流可加入两端数量各为 1 的连接过程。保存的系统目标取自参考过程定量交换。过程参数覆盖另存为重定义，所列普通路径不使用实例倍率或标度。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-format-scope",
+        "cl-native-representation-result"
+      ],
+      "conceptIds": [
+        "cn-native-preservation",
+        "cn-quant-ref"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "回到这两条固定往返路径，以原来的 0.065 kg 为系统目标时，两条往返保留了所检查的过程身份、版本、单位和九条保存连接，带符号清单在各自目标下相符；JSON-LD 也复现了所比的 CML 类别结果。不过，0.065 kg 恰好等于参考交换量。这个巧合遮住了一个问题：独立于过程参考的系统目标，是否真的随文件传递了？",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-format-double-target",
+      "kind": "calculation",
+      "scope": "文件往返保留的是哪个问题；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-olca-json-system-writer",
+        "ev-kb50-olca-json-system-reader",
+        "ev-kb50-olca-eilcd-system-export",
+        "ev-kb50-olca-eilcd-model-import"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-olca-json-system-writer",
+          "relation": "context",
+          "rationale": "系统写入参考过程、参考交换内部 ID、独立目标量、单位和属性字段，并记录供方、流、关联过程和交换内部 ID。系统参数集亦单独写入。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-json-system-reader",
+          "relation": "context",
+          "rationale": "读取目标量并解析参考过程、过程内交换 ID 与目标量属性。连接须解析其供方、流、过程及交换。缺少依赖或对应交换时会清除部分参考字段或跳过连接。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-eilcd-system-export",
+          "relation": "context",
+          "rationale": "导出用实例 ID 指向参考过程，以流及下游实例表达连接。所列路径不写独立目标量、单位与属性。过程参数来源限所选基线或首个参数集中的对应过程项。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-eilcd-model-import",
+          "relation": "context",
+          "rationale": "普通导入按实例 ID 找两端，按过程 UUID 取得过程。同一流建连接，异流可加入两端数量各为 1 的连接过程。保存的系统目标取自参考过程定量交换。过程参数覆盖另存为重定义，所列普通路径不使用实例倍率或标度。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-format-original-target",
+        "cl-native-scale"
+      ],
+      "conceptIds": [
+        "cn-native-preservation",
+        "cn-quant-ref"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "将系统目标单独改为 0.13 kg、过程参考仍留在 0.065 kg，就能把两者分开。源模型要求两倍活动，JSON-LD 重新导入仍给出 0.13 kg；eILCD 的这条写入路径没有记录独立目标，读取时从参考交换取回 0.065 kg。后一模型仍可正常求解，但恢复的需求只有原要求的一半。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-format-result-scale",
+      "kind": "calculation",
+      "scope": "文件往返保留的是哪个问题；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-olca-eilcd-system-export",
+        "ev-kb50-olca-eilcd-model-import",
+        "ev-kb50-olca-json-system-writer"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-olca-eilcd-system-export",
+          "relation": "context",
+          "rationale": "导出用实例 ID 指向参考过程，以流及下游实例表达连接。所列路径不写独立目标量、单位与属性。过程参数来源限所选基线或首个参数集中的对应过程项。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-eilcd-model-import",
+          "relation": "context",
+          "rationale": "普通导入按实例 ID 找两端，按过程 UUID 取得过程。同一流建连接，异流可加入两端数量各为 1 的连接过程。保存的系统目标取自参考过程定量交换。过程参数覆盖另存为重定义，所列普通路径不使用实例倍率或标度。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-json-system-writer",
+          "relation": "context",
+          "rationale": "系统写入参考过程、参考交换内部 ID、独立目标量、单位和属性字段，并记录供方、流、关联过程和交换内部 ID。系统参数集亦单独写入。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-format-double-target"
+      ],
+      "conceptIds": [
+        "cn-native-preservation",
+        "cn-inventory-balance"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "清单随这个需求变化：JSON-LD 加倍目标后的选定 CO₂ 流约为 0.673061727 kg，eILCD 重新导入后约为 0.336530863 kg。相应系数和保存连接没有丢失，活动量按恢复的目标减少。先找到目标的差异，才知道这个比例说明什么；单说“格式间结果不同”，会把一次具体路径的行为泛化为格式的性质。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-result-direction",
+      "kind": "calculation",
+      "scope": "文件往返保留的是哪个问题；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-olca-environment-index",
+        "ev-kb50-olca-result-flow-view",
+        "ev-kb50-olca-open-inventory"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-olca-environment-index",
+          "relation": "context",
+          "rationale": "非区域化 NormalFlowIndex 以流的数据库 ID 查找或复用同一行。首次加入该行时保存输入或输出标记。register 遇到同一流的后续交换时直接返回既有坐标，不据后续交换方向改写该标记。该行的方向标记不足以区分每条交换的角色。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-result-flow-view",
+          "relation": "context",
+          "rationale": "flowValueView 根据传入 EnviFlow 的输入标记转换结果视图符号：输入标记取反并把零保留为零，其他方向保留原值。该转换作用于视图数值，不能从视图数值反推每条交换的原符号。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-open-inventory",
+          "relation": "context",
+          "rationale": "基础流进入环境介入表。可连接的产品输入或废物输出有选中供方时进入技术矩阵，无选中供方时进入介入表，原流类别仍须单独检查。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-record-and-link",
+        "cl-native-format-scope"
+      ],
+      "conceptIds": [
+        "cn-exchange",
+        "cn-native-preservation"
+      ],
+      "mappingIds": [],
+      "caveats": [
+        "具体每次运行首先访问哪条交换没有被跟踪；源码说明首次登记规则，不能据此声称测得了工作目录、时间戳或某种格式对访问顺序的因果作用。"
+      ],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "还有一种差别不表现为带符号量改变。源背景中的同一 municipal waste 流既有正输入又有负输出。在这里不按地点分别建行的非区域化索引中，同一流合为一行，保留首次登记交换的输入标记；结果视图再用这个输入／输出标记转换显示符号。不同重导入运行出现过不同的汇总标记，而已核对的过程交换字段、带符号系数和清单量相同。JSON-LD 和 eILCD 都观察到这一现象；这里尚未跟踪出唯一成因，不能只归于目标加倍或某一种格式。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-conversion-study",
+      "kind": "source-statement",
+      "scope": "文件往返保留的是哪个问题；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-jrc-lavoisier-scope",
+        "ev-kb50-jrc-lavoisier-test",
+        "ev-kb50-jrc-lavoisier-provider"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-jrc-lavoisier-scope",
+          "relation": "supports",
+          "rationale": "文章只实现普通 ILCD 过程数据集与 EcoSpold 2 的转换，特意排除 eILCD Life Cycle Model。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-lavoisier-test",
+          "relation": "supports",
+          "rationale": "作者以文件在工具中打开及字段比较检查转换，并按对计算和解释的用途分层。直接承认缺少适当的 LCIA 结果比较。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-lavoisier-provider",
+          "relation": "supports",
+          "rationale": "文章记录到普通 ILCD 的 activityLinkId 损失和反向转换的其他缺口；这证明其具名路径的差异。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-native-preservation",
+        "cn-review-scope"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "外部转换研究同样需要这样的范围说明。Savioli 等关于 Lavoisier 的研究比较 EcoSpold 2 与 ILCD 数据集转换，明确不处理这里的 eILCD 生命周期模型；论文讨论 provider 字段损失，并承认没有完成适当的 LCIA 结果比较。文件能打开、字段保留多少和影响结果是否对应，是不同问题。该研究说明其工具与数据范围内的转换情况，不能替瓶子、JRC 或所有格式组合提供验证。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-cf-context",
+      "text": "从清单走向影响指标，还要连接一次。openLCA 的表征因子编辑界面把流、因子值、单位和位置放在同一条记录中。一个裸数值没有交代这些上下文，因此也没有完整标识一项可用的表征记录。",
+      "kind": "interpretation",
+      "scope": "openLCA 2 表征因子界面",
+      "evidenceIds": [
+        "ev-cf-editor"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-cf"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caveats": []
+    },
+    {
+      "id": "cl-native-factor-context",
+      "kind": "interpretation",
+      "scope": "同一个数值零可以来自不同记录；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-olca-impact-factor-build",
+        "ev-cf-editor"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-olca-impact-factor-build",
+          "relation": "supports",
+          "rationale": "非区域化路径只在类别、清单流 ID 与无地域的因子条件满足时写相应矩阵单元。区域化路径还记录已匹配的地域坐标后再应用默认因子，属于不同配置。"
+        },
+        {
+          "evidenceId": "ev-cf-editor",
+          "relation": "supports",
+          "rationale": "表征因子界面包括流、因子、单位和位置。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-cf",
+        "cn-missing-cf"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "实际表征先将具体清单流与指定类别中适用的因子匹配，再相乘求贡献。在本例不按地点分别表征的非区域化配置中，要核对流身份、单位与属性换算，以及因子的地理适用范围；仅适用于某地的记录，不会自动成为无地域限定的因子。方法、版本和类别给出比较对象，具体匹配则决定哪些清单量真正进入这一合计。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-unmapped",
+      "text": "这也解释了为什么需要在总分旁边检查遗漏。openLCA 手册所述的 LCIA Checks 可以显示某一影响类别中未被评价的流，映射问题是可能原因之一。这样的检查指出覆盖问题所在，并未仅凭“没有贡献”就判定了流的环境作用。",
+      "kind": "source-statement",
+      "scope": "openLCA 2 手册 Completeness check",
+      "evidenceIds": [
+        "ev-lcia-unmapped"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-missing-cf"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caveats": []
+    },
+    {
+      "id": "cl-zero-example",
+      "text": "用一个假设清单便能分清这两件事：某流有 3 kg，若适用因子已确认是零，贡献为 3×0=0；若适用因子未知，该项结果仍未知。暂不计入它所得的是部分合计。这个例子既没有估计未知影响有多大，也不能决定它会否改变排序，所说明的是未计入不等于已评价为零。",
+      "kind": "calculation",
+      "scope": "假设清单的信息状态与算术；不是实测影响结果",
+      "evidenceIds": [
+        "ev-lcia-unmapped"
+      ],
+      "premiseIds": [
+        "cl-missing-not-zero"
+      ],
+      "conceptIds": [
+        "cn-cf",
+        "cn-missing-cf"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "未计算真实环境影响；未知项的大小和方向都不能由该算例推断。"
+      ],
+      "reasoning": "前提一：3kg流已匹配的适用因子=0，乘积为0。前提二：因子未确定，乘积无法确定。两种情形可对已表征合计产生同样数值，但所含信息不同。"
+    },
+    {
+      "id": "cl-native-factor-probe",
+      "kind": "calculation",
+      "scope": "同一个数值零可以来自不同记录；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-olca-impact-factor-build",
+        "ev-kb50-olca-open-inventory"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-olca-impact-factor-build",
+          "relation": "context",
+          "rationale": "非区域化路径只在类别、清单流 ID 与无地域的因子条件满足时写相应矩阵单元。区域化路径还记录已匹配的地域坐标后再应用默认因子，属于不同配置。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-open-inventory",
+          "relation": "context",
+          "rationale": "基础流进入环境介入表。可连接的产品输入或废物输出有选中供方时进入技术矩阵，无选中供方时进入介入表，原流类别仍须单独检查。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-factor-context",
+        "cl-native-three-co2-quantities"
+      ],
+      "conceptIds": [
+        "cn-cf",
+        "cn-missing-cf"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "固定瓶子图的原生检查让这种信息差别变得可见。在 openLCA 2.7.0 中保持完整清单，为其中的空气 CO₂ 流另建一个没有环境解释的单类别诊断方法。作者设定系数 2，约 0.336530863 kg 清单就产生 0.673061727 个诊断单位。这个控制确认记录被采用并参与乘法，系数 2 本身不代表另一种环境影响评价。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-factor-zero-absent",
+      "kind": "calculation",
+      "scope": "同一个数值零可以来自不同记录；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-olca-impact-factor-build",
+        "ev-kb50-olca-sparse-zero"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-olca-impact-factor-build",
+          "relation": "context",
+          "rationale": "非区域化路径只在类别、清单流 ID 与无地域的因子条件满足时写相应矩阵单元。区域化路径还记录已匹配的地域坐标后再应用默认因子，属于不同配置。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-sparse-zero",
+          "relation": "context",
+          "rationale": "稀疏实现写入数值零时移除对应非零存储，读取未存坐标时得到零。应结合类别、流和原因子行的存在状态解释数值。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-factor-probe"
+      ],
+      "conceptIds": [
+        "cn-cf",
+        "cn-missing-cf"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "仍用这个诊断方法和类别，把系数改为 0，数据库保留一条零值因子；再删除它，记录数变为零。清单没有变化，两次原生计算的相应表征矩阵单元和诊断得分却都为 0。到数值层，这两种来源状态已经无法区分；要知道是哪一种，必须返回保留的因子记录与匹配信息。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-native-factor-real-gap",
+      "kind": "calculation",
+      "scope": "同一个数值零可以来自不同记录；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-bottle-acenaphthene",
+        "ev-kb50-olca-impact-factor-build",
+        "ev-lcia-unmapped"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-bottle-acenaphthene",
+          "relation": "supports",
+          "rationale": "原图在 Material 处理过程的淡水 Acenaphthene 行显示 1.01665E−9 kg。海洋行及 Acenaphthylene 行分别列出。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-impact-factor-build",
+          "relation": "context",
+          "rationale": "非区域化路径只在类别、清单流 ID 与无地域的因子条件满足时写相应矩阵单元。区域化路径还记录已匹配的地域坐标后再应用默认因子，属于不同配置。 本段运行观察另由绑定的原生回执支持；源码本身不证明运行结果。"
+        },
+        {
+          "evidenceId": "ev-lcia-unmapped",
+          "relation": "supports",
+          "rationale": "LCIA Checks 列出具体影响类别中未被评价的流。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-small-inventory",
+        "cl-native-factor-context"
+      ],
+      "conceptIds": [
+        "cn-cf",
+        "cn-missing-cf"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "诊断之外，归档方法本身也有实际未匹配的流：用于核对处理清单的淡水 Acenaphthene，在这份 CML 方法中没有同 UUID 的因子记录。它已经计入过程清单，并不意味着已有可匹配的表征记录，更不意味着其环境作用已被评价为零。清单计入、记录匹配和影响评价，须各自保留可查的边界。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-NATIVE-EXCHANGE",
+        "version": "1.0.0",
+        "inputSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+        "inputFile": "native-exchange-v1.json"
+      }
+    },
+    {
+      "id": "cl-missing-not-zero",
+      "text": "报告因而宜分别记录“已匹配且因子为零”“尚未找到适用因子”“明确不适用”和“采用代理因子”，并保存各自判断依据。这是一项让覆盖缺口可查的报告建议：哪些已有依据，哪些仍未知，哪些借用了替代判断，不应随数值汇总一起消失。状态可以采用不同编码，信息上的区别却需要留下。",
+      "kind": "proposal",
+      "scope": "表征覆盖的信息状态记录建议；不是所引手册或 ISO 的原文要求",
+      "evidenceIds": [
+        "ev-lcia-unmapped",
+        "ev-cf-editor"
+      ],
+      "premiseIds": [
+        "cl-cf-context",
+        "cl-unmapped"
+      ],
+      "conceptIds": [
+        "cn-cf",
+        "cn-missing-cf"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "状态区分是一项记录建议，不是所引手册或 ISO 的原文要求。"
+      ],
+      "reasoning": "手册将未评价流列为完整性检查对象，而因子记录还需流、单位与位置。为保留核查所需信息，可为不同信息状态设置独立记录；这些状态的区分是一项解释建议，而非外部规范。"
+    },
+    {
+      "id": "cl-native-factor-report",
+      "kind": "proposal",
+      "scope": "同一个数值零可以来自不同记录；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-olca-impact-factor-build",
+        "ev-kb50-olca-sparse-zero",
+        "ev-lcia-unmapped"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-olca-impact-factor-build",
+          "relation": "supports",
+          "rationale": "非区域化路径只在类别、清单流 ID 与无地域的因子条件满足时写相应矩阵单元。区域化路径还记录已匹配的地域坐标后再应用默认因子，属于不同配置。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-sparse-zero",
+          "relation": "supports",
+          "rationale": "稀疏实现写入数值零时移除对应非零存储，读取未存坐标时得到零。应结合类别、流和原因子行的存在状态解释数值。"
+        },
+        {
+          "evidenceId": "ev-lcia-unmapped",
+          "relation": "supports",
+          "rationale": "LCIA Checks 列出具体影响类别中未被评价的流。"
+        }
+      ],
+      "premiseIds": [
+        "cl-missing-not-zero",
+        "cl-native-factor-zero-absent"
+      ],
+      "conceptIds": [
+        "cn-cf",
+        "cn-missing-cf"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "报告合计时，还宜一并给出方法与版本、清单流及其位置、匹配记录，以及未匹配、明确零值、不适用或代理判断的依据。地域不适用与名称相似，也不能独自授权补入一个因子。软件把某个数值单元写成零，只完成数值处理，没有替读者完成上述判断。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-native-preservation-meaning",
+      "kind": "synthesis",
+      "scope": "把计算关系接回所要评价的服务；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-bottle-waste-representation",
+        "ev-kb50-jrc-model-edges",
+        "ev-kb50-olca-saved-links",
+        "ev-kb50-olca-eilcd-system-export"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-bottle-waste-representation",
+          "relation": "supports",
+          "rationale": "Material 的使用过程记录正废物输出，处理过程记录正废物输入作为定量参考。Opposite 用负产品输入和负产品输出分别表达对应交换。图54分别展示两个 Production 名称的产品系统图。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-model-edges",
+          "relation": "supports",
+          "rationale": "实例 #4 与 #5 使用同一具名过程数据但连接不同；#2 至 #3 用不同废物 UUID，至 #6 则用同一 Product flow UUID。#0 到 #1 声明 GLO。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-saved-links",
+          "relation": "supports",
+          "rationale": "以产品系统作为计算目标时，从保存的 processLinks 形成供方与流的坐标，以过程和交换数据库 ID 组合作为连接索引。单过程目标走单独的搜索或扫描分支。"
+        },
+        {
+          "evidenceId": "ev-kb50-olca-eilcd-system-export",
+          "relation": "supports",
+          "rationale": "导出用实例 ID 指向参考过程，以流及下游实例表达连接。所列路径不写独立目标量、单位与属性。过程参数来源限所选基线或首个参数集中的对应过程项。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-representation-result",
+        "cl-native-jrc-machine-coordinate",
+        "cl-native-format-double-target"
+      ],
+      "conceptIds": [
+        "cn-native-preservation",
+        "cn-model-evidence-layer"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "回看瓶子与注塑例，“保留了模型”因此需要逐层回答：对象和版本是否对应，单位与参考是否一致，保存连接是否带入所需活动，参数是否实际采用，需求是否随文件传递，表征与显示又留下了什么含义。两种废物编码可以在固定条件下对应，JRC 的处理活动仍可能缺席，独立目标也可能在另一条路径中改变。这些结论并不冲突，因为它们各自检验了不同的关系。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-native-service-meaning",
+      "kind": "synthesis",
+      "scope": "把计算关系接回所要评价的服务；固定原件与openLCA 2.7.0原生模块的具名案例",
+      "evidenceIds": [
+        "ev-kb50-bottle-identity",
+        "ev-kb50-jrc-model-rights",
+        "ev-kb50-jrc-lavoisier-test"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb50-bottle-identity",
+          "relation": "supports",
+          "rationale": "扉页标示手册 v1.3、2020 年 6 月，适用 openLCA 1.10。§1 指出教学用途、所用数据库及配套备份。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-model-rights",
+          "relation": "qualifies",
+          "rationale": "模型标示版权并限定非商业接口测试；用途字段将其界定为示例，排除实际 LCA 研究；所列方案合规字段为 Not compliant。"
+        },
+        {
+          "evidenceId": "ev-kb50-jrc-lavoisier-test",
+          "relation": "supports",
+          "rationale": "作者以文件在工具中打开及字段比较检查转换，并按对计算和解释的用途分层。直接承认缺少适当的 LCIA 结果比较。"
+        }
+      ],
+      "premiseIds": [
+        "cl-native-preservation-meaning"
+      ],
+      "conceptIds": [
+        "cn-fu",
+        "cn-data-fitness",
+        "cn-native-preservation"
+      ],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
+      "text": "这些关系清楚之后，研究仍要回到所评价的服务：这批材料是否适用该处理，产品性能和件数是否满足同样用途，背景、分配和影响方法是否适合问题。原生计算使已有记录怎样进入答案变得可查，不能独自证明记录代表现实。没有写进过程网络的活动，以及没有获得相应评价的影响，还需要各自的实物、用途与经验依据；这也是检查表示之后，继续追问清单边界的理由。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    }
+  ],
+  "sections": [
+    {
+      "id": "对象与交换",
+      "title": "对象与交换",
+      "claimIds": [
+        "cl-native-opening",
+        "cl-flow-type",
+        "cl-exchange",
+        "cl-flow-exchange-distinction",
+        "cl-native-record-and-link",
+        "cl-native-reference-and-target",
+        "cl-waste-material",
+        "cl-native-example-scope",
+        "cl-native-bottle-reference",
+        "cl-native-material",
+        "cl-waste-opposite",
+        "cl-native-opposite",
+        "cl-native-scale",
+        "cl-native-matrix-sign",
+        "cl-waste-no-universal",
+        "cl-bw-sign",
+        "cl-bw-direction",
+        "cl-native-allocation-held",
+        "cl-native-representation-result"
+      ]
+    },
+    {
+      "id": "计算活动",
+      "title": "计算活动",
+      "claimIds": [
+        "cl-native-small-inventory",
+        "cl-native-same-flow-total",
+        "cl-native-three-co2-quantities",
+        "cl-native-allocation-result",
+        "cl-native-printed-comparator",
+        "cl-native-missing-link",
+        "cl-native-missing-link-score",
+        "cl-native-jrc-scope",
+        "cl-native-jrc-instance",
+        "cl-native-jrc-connectors",
+        "cl-native-jrc-parameters",
+        "cl-native-jrc-weight-control",
+        "cl-native-jrc-bare-setup",
+        "cl-native-jrc-machine-edge",
+        "cl-native-jrc-machine-coordinate",
+        "cl-native-jrc-source-discrepancy",
+        "cl-native-jrc-partial-match",
+        "cl-native-jrc-result-projection",
+        "cl-native-jrc-version-reference"
+      ]
+    },
+    {
+      "id": "转换边界",
+      "title": "转换边界",
+      "claimIds": [
+        "cl-native-format-scope",
+        "cl-waste-history",
+        "cl-native-format-original-target",
+        "cl-native-format-double-target",
+        "cl-native-format-result-scale",
+        "cl-native-result-direction",
+        "cl-native-conversion-study"
+      ]
+    },
+    {
+      "id": "表征状态",
+      "title": "表征状态",
+      "claimIds": [
+        "cl-cf-context",
+        "cl-native-factor-context",
+        "cl-unmapped",
+        "cl-zero-example",
+        "cl-native-factor-probe",
+        "cl-native-factor-zero-absent",
+        "cl-native-factor-real-gap",
+        "cl-missing-not-zero",
+        "cl-native-factor-report",
+        "cl-native-preservation-meaning",
+        "cl-native-service-meaning"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "route": "/docs/book/exchange-semantics-and-conversion",
+      "mdxSha256": "1f7545acef83f3ba3f7eef4844cb516122e5d6cc41613ce703a7b86aeb2057e6"
+    },
+    {
+      "route": "/docs/flows",
+      "mdxSha256": "7fc5d31f923b33231f25d1603dde283cde28f9335b13862a1795469aaf375281"
+    },
+    {
+      "route": "/docs/characterization",
+      "mdxSha256": "08b21f3e720b2c697c3c8a2800f348c8fd9bce6f6330561b6501e5de61581df9"
+    },
+    {
+      "route": "/docs/history",
+      "mdxSha256": "97902d79c18610ca15f275d423ce94ab87ca3be5a5cab6dce54e2b13ed17d96d"
+    }
+  ],
+  "ordinaryDispositions": [
+    {
+      "oldUnit": "C18",
+      "block": 20,
+      "section": "表征状态",
+      "reviewRationale": "保留原计算材料入口及版本、取得范围的导航意义。",
+      "navigation": [
+        {
+          "text": "固定原件与原生模块的复算说明",
+          "href": "https://github.com/tiangong-lca/knowledge-base/blob/main/_docs/reproduction/native-exchange/README.md"
+        }
+      ]
+    },
+    {
+      "oldUnit": "S02",
+      "block": 1,
+      "section": "对象与交换",
+      "reviewRationale": "工厂到处理设施的对象、角色、参考与编码问题纳入开篇，不预赋通用类型。",
+      "claimIds": [
+        "cl-native-opening"
+      ]
+    },
+    {
+      "oldUnit": "S02",
+      "block": 4,
+      "section": "对象与交换",
+      "reviewRationale": "水的对象描述与工厂定量使用关系进入规范解释。",
+      "claimIds": [
+        "cl-flow-exchange-distinction"
+      ]
+    },
+    {
+      "oldUnit": "S02",
+      "block": 7,
+      "section": "对象与交换",
+      "reviewRationale": "保留先画物理去向，再核对类型、角色、方向、符号与参考的解释。",
+      "claimIds": [
+        "cl-waste-no-universal"
+      ]
+    },
+    {
+      "oldUnit": "S02",
+      "block": 9,
+      "section": "对象与交换",
+      "reviewRationale": "负数非通用废物规则与另一软件文档的具体理由共同保留。",
+      "claimIds": [
+        "cl-waste-no-universal",
+        "cl-bw-sign",
+        "cl-bw-direction"
+      ]
+    },
+    {
+      "oldUnit": "S02",
+      "block": 13,
+      "section": "转换边界",
+      "reviewRationale": "版本回顾与特定版本迁移/运行证据分开；不主张思想首创。",
+      "claimIds": [
+        "cl-waste-history"
+      ]
+    },
+    {
+      "oldUnit": "S02",
+      "block": 15,
+      "section": "对象与交换",
+      "reviewRationale": "共同章源真正展开瓶子、注塑、目标和转换问题；具名节入口保留推进关系，细页保留实际章入口。",
+      "claimIds": [
+        "cl-native-opening",
+        "cl-native-record-and-link",
+        "cl-native-reference-and-target"
+      ],
+      "navigation": [
+        {
+          "text": "计算活动",
+          "href": "#计算活动"
+        },
+        {
+          "text": "转换边界",
+          "href": "#转换边界"
+        },
+        {
+          "text": "表征状态",
+          "href": "#表征状态"
+        }
+      ]
+    },
+    {
+      "oldUnit": "S02",
+      "block": 16,
+      "section": "对象与交换",
+      "reviewRationale": "保留对象连接之外负担归属的方法入口，不把现有较早打印单元误称后文。",
+      "navigation": [
+        {
+          "text": "分配与回收",
+          "href": "/docs/allocation/"
+        }
+      ]
+    },
+    {
+      "oldUnit": "S05",
+      "block": 1,
+      "section": "表征状态",
+      "reviewRationale": "未增加合计的不同记录/证据状态保留，不从缺贡献推出零影响。",
+      "claimIds": [
+        "cl-unmapped",
+        "cl-zero-example",
+        "cl-native-factor-zero-absent",
+        "cl-missing-not-zero"
+      ]
+    },
+    {
+      "oldUnit": "S05",
+      "block": 4,
+      "section": "表征状态",
+      "reviewRationale": "方法、版本、类别、具体流、单位、地理及实际匹配共同界定合计。",
+      "claimIds": [
+        "cl-cf-context",
+        "cl-native-factor-context"
+      ]
+    },
+    {
+      "oldUnit": "S05",
+      "block": 7,
+      "section": "表征状态",
+      "reviewRationale": "不同状态、已有依据、未知和替代判断进入明确报告建议。",
+      "claimIds": [
+        "cl-missing-not-zero"
+      ]
+    },
+    {
+      "oldUnit": "S05",
+      "block": 10,
+      "section": "表征状态",
+      "reviewRationale": "保留3kg假设例不估计未知真实影响及不直接判断排序的限制。",
+      "claimIds": [
+        "cl-zero-example"
+      ]
+    },
+    {
+      "oldUnit": "S05",
+      "block": 12,
+      "section": "表征状态",
+      "reviewRationale": "诊断段明确固定瓶子、2.7.0和非环境系数；细页仍有真实章入口。",
+      "claimIds": [
+        "cl-native-factor-probe"
+      ]
+    },
+    {
+      "oldUnit": "S05",
+      "block": 16,
+      "section": "表征状态",
+      "reviewRationale": "保留代理、地域不适用与名称相似不授权补因子的解释和论证入口。",
+      "claimIds": [
+        "cl-native-factor-report",
+        "cl-missing-not-zero"
+      ],
+      "navigation": [
+        {
+          "text": "注释与论证",
+          "href": "/claims/"
+        }
+      ]
+    }
+  ]
+}

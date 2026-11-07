@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-06",
+  "updatedAt": "2026-11-08",
   "protocol": {
     "id": "community-classics-wave-2026-11-04",
     "questions": [
@@ -4432,6 +4432,18 @@
         "date": "2026-11-06",
         "channel": "公开 Web 检索；官方 GitHub API 和固定原件；Zenodo 版本和 ZIP 下载",
         "query": "IPCC WG1 Chapter 7 GitHub Zenodo emission metrics 5211358 GWP GTP Chapter 7 Table 7.15 author code\nBill Collins IPCC Chapter 7 Table 7.SM.7 metrics python source spreadsheet carbon climate feedback Collins greenhouse gas metrics"
+      },
+      {
+        "id": "q-kb74-exchange-context7-2026-11-08",
+        "date": "2026-11-08",
+        "channel": "Context7 resolve-library-id与query-docs",
+        "query": "openLCA2.7.0 CalculationSetup、TechIndex、EnviIndex、ILCD ModelImport/SystemExport；Brightway Matrix Construction技术圈符号、功能关系与input/output方向。Context7的modules结果指向master，固定版本行为另以2.7.0发行源码核对。"
+      },
+      {
+        "id": "q-kb74-exchange-manual-captures-2026-11-08",
+        "date": "2026-11-08",
+        "channel": "官方网页的定向HTTP取得与选段阅读",
+        "query": "取得Flows、Inputs/Outputs、Waste modelling、Model Validation、Characterization factors及Brightway Matrix Construction的实际HTML，核对具名类型、方向、因子、LCIA Checks与矩阵说明段落。"
       }
     ],
     "limitations": [
@@ -18680,6 +18692,132 @@
       "catalogSourceIds": [
         "src-kb54-ipcc-ch7-code-v1",
         "src-kb54-ipcc-ch7-code-snapshot"
+      ]
+    },
+    {
+      "id": "work-kb74-openlca2-manual",
+      "title": "openLCA 2 Manual",
+      "contributors": "GreenDelta",
+      "year": "未标明；2026-11-08访问版本",
+      "kind": "software-documentation",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://greendelta.github.io/openLCA2-manual/flows/index.html",
+          "role": "2026-11-08取得并选读的官方网页"
+        },
+        {
+          "url": "https://greendelta.github.io/openLCA2-manual/processes/tab_inputs_outputs.html",
+          "role": "2026-11-08取得并选读的官方网页"
+        },
+        {
+          "url": "https://greendelta.github.io/openLCA2-manual/waste_modelling.html",
+          "role": "2026-11-08取得并选读的官方网页"
+        },
+        {
+          "url": "https://greendelta.github.io/openLCA2-manual/validation.html",
+          "role": "2026-11-08取得并选读的官方网页"
+        },
+        {
+          "url": "https://greendelta.github.io/openLCA2-manual/lcia_methods/impcat_cfs.html",
+          "role": "2026-11-08取得并选读的官方网页"
+        }
+      ],
+      "identifiers": {},
+      "volumes": [
+        "V3",
+        "V4",
+        "V7"
+      ],
+      "topics": [
+        "交换语义",
+        "软件数据模型",
+        "计算边界"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [],
+      "traditions": [
+        "GreenDelta"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-kb74-exchange-context7-2026-11-08",
+          "q-kb74-exchange-manual-captures-2026-11-08"
+        ],
+        "reason": "以具名字段和矩阵约定辨明交换对象、计算角色与结果范围。",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-08",
+      "lastCheckedAt": "2026-11-08",
+      "rights": "原文、图像与数据适用来源声明的权利；这里只登记载体身份、选段定位及原创释义，不转授第三方材料的再分发许可。",
+      "limitations": [
+        "动态文档的2026-11-08载体不代表2026-11-03历史完整版本。",
+        "同一软件手册中的多个网页是同一作品的多个载体，不构成多项独立研究。"
+      ],
+      "catalogSourceIds": [
+        "src-olca-flows",
+        "src-olca-exchanges",
+        "src-olca-waste",
+        "src-olca-validation",
+        "src-olca-cfs"
+      ]
+    },
+    {
+      "id": "work-kb74-brightway-matrix",
+      "title": "Brightway documentation — Matrix Construction",
+      "contributors": "Brightway Developers",
+      "year": "未标明；2026-11-08访问版本",
+      "kind": "software-documentation",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://docs.brightway.dev/en/latest/content/overview/matrix.html",
+          "role": "2026-11-08取得并选读的官方网页"
+        }
+      ],
+      "identifiers": {},
+      "volumes": [
+        "V3",
+        "V4",
+        "V7"
+      ],
+      "topics": [
+        "交换语义",
+        "软件数据模型",
+        "计算边界"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [],
+      "traditions": [
+        "Brightway Developers"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-kb74-exchange-context7-2026-11-08",
+          "q-kb74-exchange-manual-captures-2026-11-08"
+        ],
+        "reason": "以具名字段和矩阵约定辨明交换对象、计算角色与结果范围。",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-08",
+      "lastCheckedAt": "2026-11-08",
+      "rights": "原文、图像与数据适用来源声明的权利；这里只登记载体身份、选段定位及原创释义，不转授第三方材料的再分发许可。",
+      "limitations": [
+        "动态文档的2026-11-08载体不代表2026-11-03历史完整版本。",
+        "这是另一软件体系的文档对照，不是同一模型的独立运行验证。"
+      ],
+      "catalogSourceIds": [
+        "src-brightway-matrix"
       ]
     }
   ],

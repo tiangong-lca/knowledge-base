@@ -1,3 +1,4 @@
+import { projectExchangeSemanticsRaw, historyPrintCrossReference, historyPrintDestination } from '@/scripts/reader-exchange-semantics.mjs';
 import Link from 'next/link';
 import { createElement, type AnchorHTMLAttributes, type HTMLAttributes } from 'react';
 import catalog from '@/lib/catalog';
@@ -22,7 +23,7 @@ export function LegacyCitationAliases({ ids, target }: { ids?: LegacyEntry[]; ta
 /** One renderer for a website page and its corresponding continuous print unit. */
 export async function ChapterContent({ page, print = false }: { page: ReaderPage; print?: boolean }) {
   const prefix = print ? printUnitAnchor(page.url) : chapterAnchorPrefix(page.url);
-  const plan = createChapterNotePlan(await page.data.getText('raw'), prefix);
+  const plan = createChapterNotePlan(projectExchangeSemanticsRaw(page.url, await page.data.getText('raw'), print), prefix);
   const legacy = getLegacyCitations(page.url, print);
   const claims = new Map(catalog.claims.map(claim => [claim.id, claim]));
   // Check even before rendering: an authored reference must never silently lose
@@ -31,6 +32,8 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
   const annotations = createChapterAnnotationPlan(plan, catalog.claims, await getChapterReferenceIndex(print), { print });
 
   function Paragraph({ id }: { id: string }) {
+    const crossReference = historyPrintCrossReference(page.url, id, print);
+    if (crossReference) return <p data-reader-partial-claim={id}><a href={`#${historyPrintDestination(crossReference).id}`}>{crossReference.text}</a></p>;
     const note = plan.byClaimId.get(id), claim = claims.get(id);
     if (!note || !claim || claim.status !== 'reviewed') throw new Error(`Chapter claim is absent from its note map: ${id}`);
     const text = splitReferenceTail(claim.text);

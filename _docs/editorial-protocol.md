@@ -14,7 +14,7 @@ checkPaths:
   - "knowledge/**"
   - "releases/**"
 lastReviewedAt: 2026-11-08
-lastReviewedCommit: b0aa9573c6f2999e2205ad7bda54263d1db425db
+lastReviewedCommit: 3f0fe0cda7b4687d3e0b6dfd6127efbe7a14a605
 ---
 
 # Editorial and living review protocol
@@ -246,3 +246,6 @@ The container monograph unit preserves all36original propositions while moving s
 A functional-reference rewrite preserves the difference between a service requirement, a reference object in its methodological use, a dataset quantitative reference and a model's activity requirements. Conditional functional comparability does not waive applicable category or comparative-assertion requirements. Keep Format1.1's type condition and internal-exchange scope, the EPA example's joint purpose/value conditions and CML's indirect ISO attribution. A maintenance countercase remains an author assumption; source guidance about additional processes is separate. Raw explanatory paragraphs promoted into canonical records receive explicit identities, evidence roles and review; ordinary navigation retains its actual meaning and destination. New selected inspections append to existing work/carrier/readings without rewriting prior acquisition or reading events.
 
 For the process-network exposition, keep net external demand distinct from internal process scaling, and bind a multiplier to its stated reference record. A time-valued multiplier requires the particular time-rate representation; neither an abstract multiplier nor a solved product balance establishes equipment starts, dynamic scheduling or elemental conservation. Square/nonsingular conditions concern the stated algebraic solution, not empirical validity or arbitrary infinite-series convergence. A source sample's internal numerical inconsistency and a correction list's omission retain separate records; never silently repair the source or treat an unlisted page as certified. New passage reviews preserve old events and do not refresh unrelated chapter/appendix evidence merely because they share a PDF carrier.
+
+
+For exchange-semantics revisions, preserve the distinction between reference and treatment objects, stored exchange signs and matrix signs, and a numerical omission explanation versus a repaired native graph. An explicit zero record and a missing factor can yield the same numeric cell while retaining different evidence states. Reusable definitions must remain intelligible in concepts and fine routes as well as the book. Append dated manual/original selections without rebinding old public reading anchors; changed claim-level explanatory scope requires precise evidence roles, not a blanket refresh of other records sharing that source.

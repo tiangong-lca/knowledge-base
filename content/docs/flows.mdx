@@ -3,23 +3,17 @@ title: 流、交换与废物表达
 description: 从对象、过程角色和编码约定解释flow、exchange与两种废物处理表达。
 ---
 
-设想一个工厂将一批待处理物送往处理设施。为了读懂数据，要问三件事：送走的是什么，哪两个过程发生了关系，以及软件用什么约定记录这件事。这个教学场景没有预设它采用哪一种flow type。
+设想一个工厂将待处理物送往处理设施，纸上的箭头表示物质的去向。要读懂相应数据，还要认出两端对象和软件的记录约定。
 
 ## 一个对象与一次交换
 
 <Prose ids="cl-flow-type cl-exchange cl-flow-exchange-distinction" />
 
-一条flow记录描述可复用的对象，而某过程中的数量、单位与角色还要随具体交换查看。“工厂用了多少水”和“水是什么”分别需要不同信息。
-
 ## 两种废物表达
 
 <Prose ids="cl-waste-material cl-waste-opposite" />
 
-比较这两套表达约定，可以先画出物质的真实去向，再逐项写出类型、过程角色、输入输出、符号与定量参考。一个界面词语不能独自交代全部关系。
-
 <Prose ids="cl-waste-no-universal" />
-
-仅以“所有负数均为废物”读取数据，就会遗漏符号所依赖的约定。另一个软件体系的说明提供了具体理由：
 
 <Prose ids="cl-bw-sign cl-bw-direction" />
 
@@ -27,10 +21,6 @@ description: 从对象、过程角色和编码约定解释flow、exchange与两�
 
 <Prose ids="cl-waste-history" />
 
-表达方式的引入时点与特定版本怎样运行，是不同问题。判断旧数据如何迁移或某种写法怎样被解释，需要相应版本的记录与行为证据。
-
 ## 对应关系的边界
 
-[交换怎样使处理活动发生](/docs/book/exchange-semantics-and-conversion/)沿瓶子模型与JRC示例逐项展开这些关系，包括两种废物写法、保存连接、独立目标量和格式往返。原生计算的条件与结果可在同一条论证中追问。
-
-[分配与回收](/docs/allocation/)继续讨论这些对象怎样连接，以及负担怎样归属。
+[交换语义](/docs/book/exchange-semantics-and-conversion/)沿瓶子与注塑示例展开保存连接、独立目标和文件往返，把记录约定接到实际计算关系；[分配与回收](/docs/allocation/)讨论负担归属与方法选择。
