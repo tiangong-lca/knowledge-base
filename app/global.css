@@ -113,7 +113,8 @@ button { cursor: pointer; }
    typography reads these tokens directly, so body color alone is insufficient. */
 @media print {
   :root, .dark {
-    color-scheme: light;
+    /* The screen theme sets an inline root color-scheme; paper must override it. */
+    color-scheme: light !important;
     --color-fd-background: #fff;
     --color-fd-foreground: #161616;
     --color-fd-muted: #f4f4f4;

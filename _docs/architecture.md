@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-07
-lastReviewedCommit: dd715663c3438aa730eef0da1696dc376a7715f1
+lastReviewedCommit: bac68b35ba5228ed97c99cfc85d5605c187aad97
 ---
 
 # Publication architecture
@@ -167,7 +167,7 @@ Chapter annotations resolve premises to the same local or named-chapter note seq
 
 The water-locality and phosphorus-boundary v1 adapters are closed static illustrations. Exact rational evaluation preserves their reviewed tuples and rejects changed units, return assumptions, applicability or numerical symbolic-CF substitution. Water ratios remain synthetic with a fixed external reference; phosphorus binds the conditional inventory-estimation coefficient to the inspected source numericFact. Their templates bind the numerical prose and output receipts without adding an interactive calculator. Legacy wall/joint input hashes and source policies remain unchanged.
 
-The publication shell fills its available width with a zero minimum so intrinsic teaching tables remain locally scrollable in the mobile continuous reader. Print media applies the light paper palette at the Fumadocs token level, independent of the selected screen theme; typography, headings, annotations and tables must remain legible against the white paper background. Screen theme selection is not changed by printing.
+The publication shell fills its available width with a zero minimum so intrinsic teaching tables remain locally scrollable in the mobile continuous reader. Print media applies the light paper palette at the Fumadocs token level, independent of the selected screen theme; typography, headings, annotations and tables must remain legible against the white paper background. Screen theme selection is not changed by printing. The print color-scheme rule overrides the theme provider's inline root style so the browser's page canvas and margins also stay light when background printing is enabled.
 
 The historical-container evaluator is another closed static prose adapter. `historical-glass-v1.json` separates source facts, interpretation limits and an author-conditional display-rounding assumption. Pure rational evaluation keeps source totals distinct from reconstructed components; output receipts preserve that distinction and explicitly deny full closure. `case-publication.mjs` projects its nested schema, validates every scoped source fact and fixed original carrier, and binds thirteen canonical paragraphs to the exact downloadable input. No renderer widget or client runtime is added. Legacy case projection order and hashes remain unchanged. Evidence may expose singular `numericFact` or scoped-ID `numericFacts`, never both; each plural fact is explicitly allowlisted in the public projection.
 

@@ -163,7 +163,7 @@
         "因子分母分别为1000gal、1000ft³和1000kWh；计算位数不代表观测精度。吻合总能源没有同时证明其process/transport分列已重建。"
       ],
       "reasoning": "逐项按原单位相乘，合计15.6679627，按明确小数显示规则得到15.668。",
-      "textTemplate": "按原Table1的总因子和Table4的电力因子，五项贡献分别为：{{input.facts.glassInputDistillate.value}}×{{input.facts.fuelFactorDistillate.value}}/1000、{{input.facts.glassInputResidual.value}}×{{input.facts.fuelFactorResidual.value}}/1000、{{input.facts.glassInputGas.value}}×{{input.facts.fuelFactorGas.value}}/1000、{{input.facts.glassInputGasoline.value}}×{{input.facts.fuelFactorGasoline.value}}/1000，以及{{input.facts.glassInputElectricity.value}}×{{input.facts.electricityFactor.value}}/1000。各项单位都是百万Btu/短吨玻璃，相加得到{{evaluated.fabrication.total}}；保留三位小数为{{evaluated.fabrication.rounded3}}，与Table14的玻璃制造总能源{{input.facts.glassFabricationReported.value}}相合。"
+      "textTemplate": "原Table1总因子的单位，液体燃料为百万Btu/千加仑，天然气为百万Btu/千立方英尺；Table4的电力因子为百万Btu/千kWh。各输入据此换算分母，五项贡献分别为：{{input.facts.glassInputDistillate.value}}×{{input.facts.fuelFactorDistillate.value}}/1000、{{input.facts.glassInputResidual.value}}×{{input.facts.fuelFactorResidual.value}}/1000、{{input.facts.glassInputGas.value}}×{{input.facts.fuelFactorGas.value}}/1000、{{input.facts.glassInputGasoline.value}}×{{input.facts.fuelFactorGasoline.value}}/1000，以及{{input.facts.glassInputElectricity.value}}×{{input.facts.electricityFactor.value}}/1000。各项单位都是百万Btu/短吨玻璃，相加得到{{evaluated.fabrication.total}}；保留三位小数为{{evaluated.fabrication.rounded3}}，与Table14的玻璃制造总能源{{input.facts.glassFabricationReported.value}}相合。"
     },
     {
       "id": "cl-hist-glass-branch",
@@ -194,7 +194,7 @@
         "各值按Table8共同系统基准，不是将各过程一短吨产出的系数直接相加。该支路不包含完整包装、瓶盖、灌装、处置和独列系统运输。"
       ],
       "reasoning": "按同一Table8参考量求和八项；不把已包含的玻璃制造重复计入。",
-      "textTemplate": "再沿第二卷Table8分开一条支路。长石开采、玻璃砂开采、天然纯碱开采、纯碱制造、石灰制造、石灰石开采、盐开采与玻璃容器制造这八项，按该表的每短吨系统基准分别列为{{input.facts.componentFeldspar.value}}、{{input.facts.componentSand.value}}、{{input.facts.componentNaturalSodaAsh.value}}、{{input.facts.componentSodaAshManufacture.value}}、{{input.facts.componentLime.value}}、{{input.facts.componentLimestone.value}}、{{input.facts.componentSalt.value}}与{{input.facts.componentGlassFabrication.value}}百万Btu，合计{{evaluated.glassBranch.factor}}。这个合计已包含前面的玻璃制造分项，不能再把{{input.facts.glassFabricationReported.value}}额外加一次。"
+      "textTemplate": "再沿第二卷Table8分开一条支路。该表以一短吨一次性玻璃容器系统（OWG）为共同基准，各分项已经按这一系统所需的物量组织，并非每道工序各产出一短吨。长石开采、玻璃砂开采、天然纯碱开采、纯碱制造、石灰制造、石灰石开采、盐开采与玻璃容器制造这八项，按该表的每短吨系统基准分别列为{{input.facts.componentFeldspar.value}}、{{input.facts.componentSand.value}}、{{input.facts.componentNaturalSodaAsh.value}}、{{input.facts.componentSodaAshManufacture.value}}、{{input.facts.componentLime.value}}、{{input.facts.componentLimestone.value}}、{{input.facts.componentSalt.value}}与{{input.facts.componentGlassFabrication.value}}百万Btu，合计{{evaluated.glassBranch.factor}}。这个合计已包含前面的玻璃制造分项，不能再把{{input.facts.glassFabricationReported.value}}额外加一次。"
     },
     {
       "id": "cl-hist-branch-scaling",
@@ -369,7 +369,7 @@
         "这不是已确认的原报告错误；不同表的基准、未显示质量精度或其他输入仍可能有关。"
       ],
       "reasoning": "十三项之和29.102×205=5965.910，与6036差70.09，不能隐去或调参强制相等。",
-      "textTemplate": "一个具体差额把这一区别显示出来。第二卷Table8除附录《容器能源复核》列出的八项玻璃及上游无机材料分项外，还列出处置{{input.facts.componentDisposal.value}}、封口{{input.facts.componentClosure.value}}、系统运输{{input.facts.componentTransport.value}}、灌装{{input.facts.componentFilling.value}}与包装{{input.facts.componentPackaging.value}}百万Btu。十三项按表的共同基准合计{{evaluated.assembly.factor}}；若固定采用表列瓶重导出的{{evaluated.demand.oneWayManufactureTon}}短吨，相乘为{{evaluated.assembly.owgFixed3}}百万Btu，与整体表的{{input.facts.owgTotal.value}}相差{{evaluated.assembly.gap}}。按这组显示输入，整表组装没有精确闭合。"
+      "textTemplate": "一个具体差额把这一区别显示出来。第二卷Table8以一短吨一次性玻璃容器系统（OWG）为共同基准，各活动已按完成这一系统所需的物量组织。附录《容器能源复核》列出的八项玻璃及上游无机材料分项，小计{{evaluated.glassBranch.factor}}百万Btu；表中另有处置{{input.facts.componentDisposal.value}}、封口{{input.facts.componentClosure.value}}、系统运输{{input.facts.componentTransport.value}}、灌装{{input.facts.componentFilling.value}}与包装{{input.facts.componentPackaging.value}}百万Btu，十三项合计{{evaluated.assembly.factor}}。一次性系统的每次灌装都使用一只新瓶；固定采用表列瓶重导出的{{evaluated.demand.oneWayManufactureTon}}短吨，便把共同系统基准换为百万次灌装，得到{{evaluated.assembly.owgFixed3}}百万Btu。它与Tables7和13所报OWG整体值{{input.facts.owgTotal.value}}相差{{evaluated.assembly.gap}}。这次对照沿用这些表的公开系统名称与计量基准；按这些显示输入，整表组装尚未精确闭合，差额本身不能证明原报告有错。"
     },
     {
       "id": "cl-hist-rounding-bound",
@@ -435,7 +435,7 @@
       "caveats": [
         "原文各点的显示精度不同；不把三个点拟合成已证实的原程序，不据此作当代包装建议。"
       ],
-      "textTemplate": "瓶子与纸包装的使用次数还可以分开考察。原报告把瓶子保持在{{input.facts.fiveTripUses.value}}次使用，改动纸包装：一次使用时能源为{{input.facts.packageEnergyOne.value}}GJ/1000L，两次时为{{input.facts.packageEnergyTwo.value}}，三次时为{{input.facts.packageEnergyThree.value}}。这是原作者报告的三个离散情境结果；它们说明包装假定会改变系统比较，但不是附录的局部重建独立验证出的全部模型，单凭这三个点也不能确定任意使用次数的通用函数。"
+      "textTemplate": "瓶子与纸包装的使用次数还可以分开考察。原报告把瓶子保持在{{input.facts.fiveTripUses.value}}次使用，改动纸包装：纸包装使用一次时能源为{{input.facts.packageEnergyOne.value}}GJ/1000L，两次时为{{input.facts.packageEnergyTwo.value}}，三次时为{{input.facts.packageEnergyThree.value}}。这是原作者报告的三个离散情境结果；它们说明包装假定会改变系统比较，但不是附录的局部重建独立验证出的全部模型，单凭这三个点也不能确定任意使用次数的通用函数。"
     }
   ]
 }
