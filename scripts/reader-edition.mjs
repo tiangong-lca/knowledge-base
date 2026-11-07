@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import { assertCleanerProductionRegistration } from './reader-cleaner-production.mjs';
 import { collectChapterClaimOccurrences, printUnitAnchor } from './reader-book.mjs';
 
 export const frameworkUnitKey = 'book-framework-responsibilities';
@@ -19,6 +20,7 @@ export function currentEditionKeys(edition, availableSources, baseline, placemen
   const units = edition.units;
   if (!Array.isArray(units) || new Set(units.map(unit => unit.key)).size !== units.length)
     throw new Error('Book edition has missing or duplicate units');
+  assertCleanerProductionRegistration(edition);
   const assembly = units.find(unit => unit.key === frameworkUnitKey);
   if (!assembly || assembly.source !== frameworkManuscript || assembly.kind !== 'chapter') throw new Error('Missing accepted B04 manuscript registration');
   if (!units.some(unit => unit.key === frameworkAppendix && unit.source === frameworkAppendix && unit.kind === 'appendix')) throw new Error('Missing accepted X02 appendix registration');

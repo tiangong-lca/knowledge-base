@@ -1,3 +1,4 @@
+import { assertCleanerProductionHeadingHistory, validateCleanerProductionCoverage } from './reader-cleaner-production.mjs';
 import { readdir, readFile } from 'node:fs/promises';
 import { resolve, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -86,6 +87,7 @@ export async function validateRepository(root) {
   const edition = await readOptional('config/book-edition.json');
   if (edition) {
     const [accepted,baseline,placements,headings]=await Promise.all(['framework-accepted','citation-baseline','citation-placements','framework-heading-history'].map(name=>readOptional(`config/${name}.json`)));
+    const [cleanerAccepted,cleanerHeadingHistory]=await Promise.all(['cleaner-production-accepted','cleaner-production-heading-history'].map(name=>readOptional(`config/${name}.json`)));
     const sources=new Map();
     for(const file of await mdxFiles(resolve(root,'content'))) {
       const path=relative(resolve(root,'content'),file).replaceAll('\\','/');
@@ -95,6 +97,8 @@ export async function validateRepository(root) {
     try {
       currentEditionKeys(edition,[...sources.keys()],baseline,placements);
       assertFrameworkHeadingHistory(headings);
+      assertCleanerProductionHeadingHistory(cleanerHeadingHistory);
+      errors.push(...validateCleanerProductionCoverage(edition,sources,cleanerAccepted,data));
       errors.push(...validateFrameworkCoverage(edition,sources,accepted,data));
     } catch(error) { errors.push(error.message); }
   }

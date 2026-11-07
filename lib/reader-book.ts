@@ -1,3 +1,4 @@
+import catalog from '@/lib/catalog';
 import { source } from '@/lib/source';
 import { monographSource } from '@/lib/monograph-source';
 import { cache } from 'react';
@@ -7,6 +8,9 @@ import history from '@/config/citation-history.json';
 import edition from '@/config/book-edition.json';
 import accepted from '@/config/framework-accepted.json';
 import headingHistory from '@/config/framework-heading-history.json';
+import cleanerAccepted from '@/config/cleaner-production-accepted.json';
+import cleanerHeadingHistory from '@/config/cleaner-production-heading-history.json';
+import { cleanerProductionHeadingEntries, remapCleanerProductionCitations, validateCleanerProductionCoverage } from '@/scripts/reader-cleaner-production.mjs';
 import { assertCitationHistory } from '@/scripts/reader-citation-history.mjs';
 import { bookChapters, createChapterReferenceIndex, orderPages } from '@/scripts/reader-book.mjs';
 import { assertCitationBaseline, assertPrintFrontMatter } from '@/scripts/reader-citation-baseline.mjs';
@@ -34,7 +38,8 @@ const historical = [...createLegacyCitationEntries(baseline, placements, history
   ...headingHistory.canonicalPrintedHeadings.map(heading=>({route:heading.route,path:'/print',id:heading.id,
     targets:[{route:heading.route,path:'/print',id:heading.id,kind:'heading' as const}],mode:'retained' as const,
     edition:{sourceCommit:headingHistory.sourceCommit,sourceDate:'2026-11-07'}}))];
-const legacyEntries: LegacyEntry[] = remapBookCitations(historical, edition, accepted, placements);
+const legacyEntries: LegacyEntry[] = remapCleanerProductionCitations(
+  remapBookCitations([...historical, ...cleanerProductionHeadingEntries(cleanerHeadingHistory)], edition, accepted, placements), cleanerAccepted, cleanerHeadingHistory);
 export function getLegacyCitations(route: string, print: boolean) {
   const path = print ? '/print' : route, aliases = new Map<string, LegacyEntry[]>(), notices: LegacyEntry[] = [];
   for (const entry of legacyEntries) {
@@ -50,6 +55,8 @@ export function getLegacyCitations(route: string, print: boolean) {
 export const getChapterReferenceIndex = cache(async (print = false) => {
   const pages = print ? getPrintPages() : getOrderedPages();
   const rawPages = await Promise.all(pages.map(async(page,index)=>({url:page.url,title:page.data.title,raw:await page.data.getText('raw'),printOrder:index})));
+  const cleanerErrors = validateCleanerProductionCoverage(edition, new Map(rawPages.map(page => [page.url, page.raw])), cleanerAccepted, catalog);
+  if (cleanerErrors.length) throw new Error(cleanerErrors.join('\n'));
   if (print) {
     const rawSources = new Map(await Promise.all([...source.getPages(),...monographSource.getPages()].map(async page=>[page.url,await page.data.getText('raw')] as const)));
     const errors = validateFrameworkCoverage(edition,rawSources,accepted);
