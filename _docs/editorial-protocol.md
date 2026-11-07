@@ -14,10 +14,18 @@ checkPaths:
   - "knowledge/**"
   - "releases/**"
 lastReviewedAt: 2026-11-06
-lastReviewedCommit: 550d3c8c5f11d6dfa02ce6db4e049b51e9f1aa0e
+lastReviewedCommit: e5df5ed06b754b4ba3f6f41742ce3e8636a5815a
 ---
 
 # Editorial and living review protocol
+
+## Whole-book editorial priority
+
+The user's 2026-11-06 amendment governs the entire approved objective, including already published prose. Apply `lca-book-goal.md` §§2.7–2.12 and `reader-publication-contract.md`: establish a whole-book argument, preserve all 37 chapters and five supplemental topics through an explicit migration map, prefer one volume organized in parts, and observe the formal title/TOC constraints. Eight research domains and twelve appendix responsibilities remain coverage obligations, not a mandatory physical volume count.
+
+After the pause and bounded amendment, the user explicitly resumed execution on 2026-11-06. First deliver the argument, complete proposed book TOC, alternatives, complete mapping, risks and counts; reviewed source delivery and pending integration may proceed independently. Use the resulting argument gaps to select further research. Structure changes do not license invented facts or lost scope; later evidence-based additions remain possible with explicit revision records.
+
+Evaluate continuous prose and chapter-to-chapter transitions, not only headings. Source summaries, repeated templates and isolated claim paragraphs must become an actual argument with reader-relevant explanations, counterarguments and conclusions. Preserve scientific qualifications and author/source distinctions. Record source entailment, manuscript coherence, title statistics, content conservation and publication correctness separately; a positive model response is not human editorial or scientific approval.
 
 ## Market-response source and argument checks
 
@@ -73,7 +81,7 @@ The joint-product chapter first reconstructs the positive physical alternatives 
 
 ## Finished prose is the publication gate
 
-Apply `_docs/reader-publication-contract.md` to every new or revised chapter. Source discipline alone does not qualify a reader deliverable: the argument must progress continuously and finish its declared question. Remove author-workflow narration, repeated status templates and development promises; retain real scientific conditions, disagreements and explicit invented data. Archive the removed process history in development Markdown. One chapter-wide annotation sequence and one tree-derived reading order serve the page and print view. Independent reader judgment checks what automated validation cannot.
+Apply `_docs/reader-publication-contract.md` to every new or revised chapter. Source discipline alone does not qualify a reader deliverable: the argument must progress continuously and finish its declared question. Remove author-workflow narration, repeated status templates and development promises; retain real scientific conditions, disagreements and explicit invented data. Archive the removed process history in development Markdown. Each actual book chapter requires one continuous annotation sequence. Website navigation and book/print order may differ while sharing canonical prose and evidence; migrate note plans to the actual assembled chapter boundaries. The current runtime still derives print order from the website tree, so the required two-structure migration remains pending. Independent reader judgment checks what automated validation cannot.
 
 ## Historical numerical reconstruction
 
