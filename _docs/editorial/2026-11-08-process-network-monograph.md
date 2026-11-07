@@ -17,7 +17,7 @@ checkPaths:
   - knowledge/cases/wall-coating-v1.publication.json
   - config/book-edition.json
 lastReviewedAt: 2026-11-08
-lastReviewedCommit: 79af66d9fb6788e2b9e4e3478f3410e4c190d0b7
+lastReviewedCommit: b0aa9573c6f2999e2205ad7bda54263d1db425db
 related:
   - 2026-11-06-monograph-structure.md
   - monograph-structure.v1.json
