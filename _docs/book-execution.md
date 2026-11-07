@@ -445,3 +445,51 @@ The chapter will be actually rewritten under 数量坐标／需求平衡／反�
 Issue72 now has an actual three-section/ten-paragraph shared manuscript, preserving eight originals and adding the separately identified service-to-demand and scaling-basis explanations. Main and independent selected-original checks preserve the original sample/reprint/errata identities and record the observed p30coefficient inconsistency without adopting it into the hypothetical case. Actualv1/v2source reviews and a fresh revised continuous-reader check found no remaining material issue after bounded clarification; neither is human expert certification. The main agent rejected two reader misreadings after exact text/source checks. Old reading events, all797evidence records,18case inputs and prior accepted histories remain preserved; one wall reference/template changes by name only.
 
 The actualv2reader excerpt hash is eaa31c91f5e72236b083f2680bc5d5d418d44d1f42d64a8ddc39c06d92ec6416. Engineering pins ten full records/sharedMDX, original eight-note scope and four captured headings, yielding4,076historical obligations with the same44mixed units.321tests, types, repository validation and actual working build/export832claims pass. Clean committed build, actualbrowser/print/governance, sourcePR/Main/hosted and exactrootnormalhandoff remain pending at this milestone; fullbook/formalPDFscope is unchanged.
+
+## 2026-11-08 B07 completed; B08 exchange-semantics authoring — Issue74
+
+Source72/PR73 subsequently delivered exact Main c0a68a3a20fa5a6e8265f3264c0e2a54f0d0e290,
+tree-identical to reviewed b6030342, after required CI42402485671. Clean Main build,
+54 actual hosted artifact hashes and first-run 28/28 hosted browser checks passed;
+the separate local run also passed 28/28. Stable hosted manifest SHA256
+60cd055587f9ec6c7175d89a4497d4700af34fd54430c73d802fb4d79e4cea14 binds the actual publication.
+Independent root review and required CI42404380819 passed; root2287/PR2288 merged
+Main8d36648d1ca14f5688934d7303ce43b4576e095f with the exact reviewed98cb3f86e tree.
+All23peer pins and864778prior integration-record bytes remained intact.
+
+Normal source finish_OaKxk0Iph4AtJX-X6S40S9RA verifies delivery_complete=true;
+projection_Xy2CKlWK0sO5_sFzDwogPf90 verifies both source integration mirrors and
+exact original/current inclusion. Final normal root finish_ynOKPmciGTyyycObdGW2AKFr
+verifies delivery_complete=true, source_handoff.complete=true,1/1source complete
+and zero remaining mirrors; receipt SHA256
+4dc7364c523d40f4cd267b6137f75c868dda5ebd33a48a202d2c1195dd33c395.
+The original workspace/owned child are synchronized, preserving all23peer physical
+states and17preexisting dirty-gitlink indicators. Prior pendingB07paragraphs are
+dated milestones, not current debt. Source/root records and programme9 contain the
+terminal facts. Task browsers/server are closed; no task containers/volumes/networks
+remain. Programme worktrees, dependencies, named builds and private evidence are retained.
+
+[Issue74](https://github.com/tiangong-lca/knowledge-base/issues/74) was created/started
+before implementation on `codex/book-exchange-semantics` from freshly verified c0.
+Its [prereading and authoring protocol](editorial/2026-11-08-exchange-semantics-monograph.md)
+freezes277tracked identities,832claims,176readings,113prior revisions and36casefiles.
+The actual adopted B08 inventory has60source occurrences/56distinct claims,
+14ordinary explanation blocks and33case-bound paragraphs under four formal sections.
+Source statements, retained original-module observations and static publication
+arithmetic remain separate; no new original reading or native run is claimed at
+this protocol milestone.
+
+Independent actual-HTML capture verified nine manifest-bound files, the43/9/7/S01-nine
+note subsets, all292+52scoped historical obligations and19additional printed heading
+names. The old dd715/a365provenance remains separate from this c0capture. S01 has
+partial/shared responsibilities: seven claims already have B02/B03/B04destinations,
+one belongs to this B08rewrite, and APOS plus ordinary historical-method content
+retain unfinished M01/M02 or chapter-specific responsibilities. A separate partial
+disposition and coordinated print body/note-index projection must not pretend
+whole-S01consumption or rewrite earlier accepted receipts.
+
+The actual manuscript, source/native-observation review, independent continuous
+reader, engineering/browser/print qualification, reviewed Main/hosting and exact
+root/terminal handoffs remain open for74. Full32chapters, eight research domains,
+twelve appendix responsibilities, remaining classic/global/industry/empirical work
+and formal PDF qualification remain open for the whole Goal.
