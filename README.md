@@ -116,3 +116,6 @@ public input. Static builds perform only the disclosed reconstruction and
 arithmetic. The optional [historical native replay](
 _docs/runbooks/reproduce-climate-native.md) is a separate Python entrypoint and
 does not reproduce the 2025 correction or establish empirical climate validity.
+
+
+The [2026-11-06 monograph organization](_docs/editorial/2026-11-06-monograph-structure.md) records the adopted working argument, complete proposed TOC and content-preserving migration map. It is an editorial baseline under Issue58; actual prose rewriting, independent website/book organization and full-book research/qualification remain separate work. Its source branch now includes the accepted goal amendment from Issue56/PR57 at Main2bc7f4f. The revised full-book Goal is active as of2026-11-07; source and exact integration qualification remain separate gates.
