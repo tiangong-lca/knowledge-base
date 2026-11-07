@@ -95,11 +95,21 @@ export function chapterAnchorPrefix(url) {
   return `chapter-${Array.from(new TextEncoder().encode(url), byte => byte.toString(16).padStart(2, '0')).join('')}`;
 }
 
+/** A printed unit keeps its identity when its displayed chapter number changes. */
+export function printUnitAnchor(url) {
+  return chapterAnchorPrefix(url).replace(/^chapter-/, 'print-unit-');
+}
+
+/** @param {string} prefix @param {string} claimId */
+export function chapterNoteAnchor(prefix, claimId) {
+  return `${prefix}-claim-${claimId}`;
+}
+
 /** One chapter-wide sequence. Repeated paragraphs share a single endnote. */
 export function createChapterNotePlan(raw, anchorPrefix) {
   if (typeof anchorPrefix !== 'string' || !/^[A-Za-z][A-Za-z0-9:._-]*$/.test(anchorPrefix)) throw new TypeError('Chapter note prefix must be a safe, unique anchor prefix');
-  const notes = collectChapterClaimIds(raw).map((id, index) => ({ id, number: index + 1, anchor: `${anchorPrefix}-note-${index + 1}` }));
-  return { notes, byClaimId: new Map(notes.map(note => [note.id, note])), headingId: `${anchorPrefix}-notes` };
+  const notes = collectChapterClaimIds(raw).map((id, index) => ({ id, number: index + 1, anchor: chapterNoteAnchor(anchorPrefix, id) }));
+  return { notes, byClaimId: new Map(notes.map(note => [note.id, note])), headingId: `${anchorPrefix}-annotations` };
 }
 
 /** Locate premises in the actual reading/print order without copying their prose. */
@@ -110,7 +120,8 @@ export function createChapterReferenceIndex(pages) {
     for (const note of plan.notes) {
       const locations = index.get(note.id) ?? [];
       locations.push({ title: page.title, url: page.url, number: note.number,
-        anchor: note.anchor, printAnchor: page.printAnchorPrefix ? `${page.printAnchorPrefix}-note-${note.number}` : null });
+        anchor: note.anchor, printAnchor: page.printAnchorPrefix ? chapterNoteAnchor(page.printAnchorPrefix, note.id) : null,
+        printOrder: page.printOrder ?? Number.MAX_SAFE_INTEGER });
       index.set(note.id, locations);
     }
   }
@@ -133,9 +144,9 @@ export function createChapterAnnotationPlan(notePlan, claims, referenceIndex, { 
       if (local) premiseReferences.set(id, { href: `#${local.anchor}`, label: `本章注 ${local.number}` });
       else {
         const locations = referenceIndex.get(id) ?? [];
-        const location = (print ? locations.find(item => item.printAnchor) : null) ?? locations[0];
+        const location = (print ? locations.filter(item => item.printAnchor).sort((a, b) => a.printOrder - b.printOrder)[0] : null) ?? locations[0];
         if (location) premiseReferences.set(id, {
-          href: print && location.printAnchor ? `#${location.printAnchor}` : `${location.url}#${location.anchor}`,
+          href: print && location.printAnchor ? `#${location.printAnchor}` : `${location.url}/#${location.anchor}`,
           label: `《${location.title}》注 ${location.number}`,
         });
       }

@@ -14,8 +14,8 @@ checkPaths:
   - "package.json"
   - "app/**"
   - "scripts/**"
-lastReviewedAt: 2026-11-06
-lastReviewedCommit: 869af981fbec9eb04ab24e21bf24b956e68335f3
+lastReviewedAt: 2026-11-07
+lastReviewedCommit: dd715663c3438aa730eef0da1696dc376a7715f1
 ---
 
 # LCA Living Knowledge Base and Review
@@ -71,7 +71,7 @@ The expanded `/docs/book/allocation-and-substitution/` also contains CASE-JOINT-
 
 ## Reader delivery policy
 
-Read [_docs/reader-publication-contract.md](_docs/reader-publication-contract.md). Published pages are finished book prose with scholarly notes; research/development logs and TODOs stay in development Markdown. Layout matches the owning docs site. Current rendering shares tree-derived order and chapter-wide notes between normal and print reading; the amended contract requires a later separately curated book order sharing canonical content with website navigation, with notes regenerated for actual book chapters. The public `/research/` route is a bibliography. Preserve actual source/assumption limitations, and assess reader/layout quality independently from source and code validation.
+Read [_docs/reader-publication-contract.md](_docs/reader-publication-contract.md). Published pages are finished book prose with scholarly notes; research/development logs and TODOs stay in development Markdown. Layout matches the owning docs site. Current rendering shares canonical prose and per-unit notes between normal and print reading; print retains the fixed42unit baseline after the preface and reading guide, while website navigation follows its page tree; the amended contract requires a later separately curated book order sharing canonical content with website navigation, with notes regenerated for actual book chapters. The public `/research/` route is a bibliography. Preserve actual source/assumption limitations, and assess reader/layout quality independently from source and code validation.
 
 The water-locality and phosphorus-boundary examples publish versioned inputs and exact evaluated receipts under `/downloads/cases/`, linked from their chapter notes. They are static explanatory examples: water values are synthetic; the phosphorus default is source-bound and conditional, with characterization left symbolic. Use their registered case identities with `scripts/impact.mjs` for affected-claim review.
 
@@ -119,3 +119,5 @@ does not reproduce the 2025 correction or establish empirical climate validity.
 
 
 The [2026-11-06 monograph organization](_docs/editorial/2026-11-06-monograph-structure.md) records the adopted working argument, complete proposed TOC and content-preserving migration map. It is an editorial baseline under Issue58; actual prose rewriting, independent website/book organization and full-book research/qualification remain separate work. Its source branch now includes the accepted goal amendment from Issue56/PR57 at Main2bc7f4f. The revised full-book Goal is active as of2026-11-07; source and exact integration qualification remain separate gates.
+
+The opening and final synthesis use stable claim-occurrence note anchors with consecutive visible numbers. Old2026-11-07baseline addresses remain native aliases or explicit relocation links, including the two moved carrier-bag conclusions. `config/citation-baseline.json` is frozen and independently checked; do not regenerate it from current MDX. The full32chapter book assembly remains separate from this bounded44article print view.

@@ -1,9 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, mkdir, writeFile, rm } from 'node:fs/promises';
+import { mkdtemp, mkdir, readFile, writeFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { readerInternalIds, validateReaderClaims, validateReaderHtml, validateReaderIndex, validateReaderMdx, validateReaderOutput, validateReaderText } from './reader-surface.mjs';
+import { readerInternalIds, validateLegacyCitationOutput, validateReaderClaims, validateReaderHtml, validateReaderIndex, validateReaderMdx, validateReaderOutput, validateReaderText } from './reader-surface.mjs';
+import { chapterAnchorPrefix, chapterNoteAnchor, printUnitAnchor } from './reader-book.mjs';
+import { assertCitationBaseline, assertPrintFrontMatter } from './reader-citation-baseline.mjs';
+import { citationSourceHref } from './reader-citations.mjs';
 
 const knownIds = readerInternalIds({ claims: [{ id: 'cl-reader-known' }], evidence: [{ id: 'ev-reader-known' }], readings: [{ id: 'rd-reader-known' }] });
 
@@ -93,4 +96,104 @@ test('output scan checks actual HTML and index, excludes machine JSON and refuse
     await mkdir(join(root, '_docs')); await writeFile(join(root, '_docs/task.md'), 'Internal development');
     assert((await validateReaderOutput(root)).some(error => /outside public output/.test(error)));
   } finally { await rm(root, { recursive: true, force: true }); }
+});
+
+test('static citation validation follows native links to the exact relocated claim and requires the pinned heading', async () => {
+  const root = await mkdtemp(join(tmpdir(), 'reader-citations-'));
+  const a = '/docs/a', b = '/docs/b', claim = 'cl-moved';
+  const baseline = { sourceCommit: 'a'.repeat(40), sourceDate: '2026-11-07', pages: [
+    { route: a, noteClaims: [claim], headingIds: ['旧节'], printOrdinal: 1 },
+    { route: b, noteClaims: [], headingIds: [], printOrdinal: 2 },
+  ] };
+  const placements = { frontMatter: [], notes: [{ from: a, claimId: claim, to: b }] };
+  const oldPrefix = chapterAnchorPrefix(a), anchor = chapterNoteAnchor(chapterAnchorPrefix(b), claim);
+  const edition = `<time datetime="${baseline.sourceDate}">${baseline.sourceDate}</time><a href="${citationSourceHref(baseline.sourceCommit)}">查看源文件</a>`;
+  const notice = id => `<div id="${id}" data-legacy-notice><div class="legacy-citation-context">
+    ${edition}<a href="${b}/#${anchor}" data-legacy-destination>注 1</a>
+    </div></div>`;
+  const notes = `<a href="#${anchor}" role="doc-noteref" aria-label="注 1" data-reader-reference="${claim}">[1]</a>
+    <section class="chapter-notes"><ol><li id="${anchor}" data-reader-claim="${claim}">适用条件</li></ol></section>`;
+  const oldPrintAlias = (id, target) => `<span id="${id}" data-legacy-for="${target}"><span class="legacy-citation-context">${edition}</span></span>`;
+  const aPrint = printUnitAnchor(a), bPrint = printUnitAnchor(b), printNote = chapterNoteAnchor(bPrint, claim);
+  const movedAliases = oldPrintAlias('print-chapter-1-note-1', printNote) + oldPrintAlias('print-chapter-1-notes', printNote);
+  const print = `<section id="writing-note">编写说明</section>
+    <article id="${aPrint}" data-reader-route="${a}">${oldPrintAlias('print-chapter-1', aPrint)}
+      ${oldPrintAlias('print-chapter-1-旧节', `${aPrint}-旧节`)}<h3 id="${aPrint}-旧节">原节</h3></article>
+    <article id="${bPrint}" data-reader-route="${b}">${oldPrintAlias('print-chapter-2', bPrint)}
+      ${notes.replaceAll(anchor, printNote).replace('适用条件', `${movedAliases}适用条件`)}</article>
+    <section id="print-references">参考文献</section>`;
+  const writePage = async (route, html) => {
+    const directory = join(root, route.slice(1));
+    await mkdir(directory, { recursive: true });
+    await writeFile(join(directory, 'index.html'), `<main id="main-content">${html}</main>`);
+  };
+  try {
+    const notices = notice(`${oldPrefix}-note-1`) + notice(`${oldPrefix}-notes`);
+    await writePage(a, `<span id="旧节" data-reader-section="旧节"></span>${notices}`);
+    await writePage(b, notes);
+    await writePage('/print', print);
+    assert.deepEqual(await validateLegacyCitationOutput(root, baseline, placements), []);
+    await writePage(a, `<span id="旧节"></span>${notices.replace('>2026-11-07</time>', '>2026-11-06</time>')}`);
+    await writePage(b, notes.replace(`data-reader-claim="${claim}"`, 'data-reader-claim="cl-other"'));
+    await writePage('/print', print.replace(movedAliases, '').replace('原节</h3>', `原节</h3>${movedAliases}`));
+    const errors = await validateLegacyCitationOutput(root, baseline, placements);
+    assert(errors.some(error => error.includes('-note-1') && error.includes('missing exact edition context')));
+    assert(errors.some(error => error.includes('旧节') && error.includes('wrong or missing heading')));
+    assert(errors.some(error => error.includes('-note-1') && error.includes('wrong or missing note')));
+    assert(errors.some(error => error.includes('#print-chapter-1-note-1') && error.includes('alias does not land at its destination')));
+  } finally { await rm(root, { recursive: true, force: true }); }
+});
+
+test('real or cached book output cannot bypass citation validation by omitting both source configs', async () => {
+  const repository = await mkdtemp(join(tmpdir(), 'reader-config-'));
+  const out = join(repository, 'out');
+  const print = join(out, 'print');
+  const book = join(repository, 'content/docs/book');
+  try {
+    await mkdir(print, { recursive: true });
+    await writeFile(join(print, 'index.html'), '<article class="print-chapter prose"><h2>一章</h2></article>');
+    assert((await validateReaderOutput(out)).some(error => error.includes('requires both the reader citation')));
+    await writeFile(join(print, 'index.html'), '<html>Fixture</html>');
+    await mkdir(book, { recursive: true });
+    await writeFile(join(book, 'meta.json'), '{"pages":[]}');
+    assert((await validateReaderOutput(out)).some(error => error.includes('requires both the reader citation')));
+  } finally { await rm(repository, { recursive: true, force: true }); }
+});
+
+test('the export rejects a truncated or changed frozen inventory before using it to check HTML', async () => {
+  const capture = await readFile(new URL('../config/citation-baseline.json', import.meta.url), 'utf8');
+  const baseline = JSON.parse(capture.replaceAll('\n', '\r\n'));
+  assert.doesNotThrow(() => assertCitationBaseline(baseline));
+  assert.doesNotThrow(() => assertPrintFrontMatter(['/docs', '/docs/book']));
+
+  const repository = await mkdtemp(join(tmpdir(), 'reader-baseline-'));
+  const out = join(repository, 'out');
+  const config = join(repository, 'config');
+  try {
+    await mkdir(join(out, 'docs/book'), { recursive: true });
+    await mkdir(join(out, 'print'));
+    await mkdir(config);
+    await writeFile(join(out, 'docs/book/index.html'), '<main id="main-content"><h1>一份书稿</h1></main>');
+    await writeFile(join(out, 'print/index.html'), '<main id="main-content"><section id="writing-note"></section><section id="print-references"></section></main>');
+    await writeFile(join(config, 'citation-placements.json'), '{"frontMatter":[],"notes":[]}');
+
+    const mutations = {
+      'empty inventory': changed => { changed.pages = []; },
+      'missing printed route': changed => { changed.pages = changed.pages.filter(page => page.printOrdinal !== 42); },
+      'reordered claims': changed => { changed.pages.find(page => page.noteClaims.length > 1).noteClaims.reverse(); },
+      'wrong source commit': changed => { changed.sourceCommit = 'a'.repeat(40); },
+      'wrong source date': changed => { changed.sourceDate = '2026-11-06'; },
+    };
+    for (const [description, mutate] of Object.entries(mutations)) {
+      const changed = structuredClone(baseline);
+      mutate(changed);
+      await writeFile(join(config, 'citation-baseline.json'), JSON.stringify(changed));
+      await assert.rejects(validateReaderOutput(out), /baseline differs from the frozen 2026-11-07 edition/, description);
+    }
+    await writeFile(join(config, 'citation-baseline.json'), capture);
+    for (const frontMatter of [[], ['/docs/book', '/docs'], ['/docs', '/docs/book', '/docs/flows']]) {
+      await writeFile(join(config, 'citation-placements.json'), JSON.stringify({ frontMatter, notes: [] }));
+      await assert.rejects(validateReaderOutput(out), /Printed front matter must contain the preface and guide in their approved order/);
+    }
+  } finally { await rm(repository, { recursive: true, force: true }); }
 });
