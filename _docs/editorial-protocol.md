@@ -13,8 +13,8 @@ checkPaths:
   - "content/**"
   - "knowledge/**"
   - "releases/**"
-lastReviewedAt: 2026-11-06
-lastReviewedCommit: e5df5ed06b754b4ba3f6f41742ce3e8636a5815a
+lastReviewedAt: 2026-11-07
+lastReviewedCommit: dd715663c3438aa730eef0da1696dc376a7715f1
 ---
 
 # Editorial and living review protocol
@@ -81,7 +81,7 @@ The joint-product chapter first reconstructs the positive physical alternatives 
 
 ## Finished prose is the publication gate
 
-Apply `_docs/reader-publication-contract.md` to every new or revised chapter. Source discipline alone does not qualify a reader deliverable: the argument must progress continuously and finish its declared question. Remove author-workflow narration, repeated status templates and development promises; retain real scientific conditions, disagreements and explicit invented data. Archive the removed process history in development Markdown. Each actual book chapter requires one continuous annotation sequence. Website navigation and book/print order may differ while sharing canonical prose and evidence; migrate note plans to the actual assembled chapter boundaries. The current runtime still derives print order from the website tree, so the required two-structure migration remains pending. Independent reader judgment checks what automated validation cannot.
+Apply `_docs/reader-publication-contract.md` to every new or revised chapter. Source discipline alone does not qualify a reader deliverable: the argument must progress continuously and finish its declared question. Remove author-workflow narration, repeated status templates and development promises; retain real scientific conditions, disagreements and explicit invented data. Archive the removed process history in development Markdown. Each actual book chapter requires one continuous annotation sequence. Website navigation and book/print order may differ while sharing canonical prose and evidence; migrate note plans to the actual assembled chapter boundaries. The current runtime preserves the frozen42unit print roster with shared prose front matter; the complete independently curated32chapter assembly remains pending. Independent reader judgment checks what automated validation cannot.
 
 ## Historical numerical reconstruction
 
@@ -230,3 +230,11 @@ rates, completed-interval sums, absolute temperature and a change relative to pr
 history are not interchangeable. In a methodology dispute, match the formula
 version actually criticized and separate physical approximation from distribution
 or institutional adoption. No arithmetic sign confers policy authority.
+
+## Meaning-preserving monograph revision
+
+Before rewriting an established unit, freeze its canonical claims, source/premise closure, case input/publication bytes and old public reference meanings. Recheck sources where a smoother phrase would widen a proposition: nominal service does not prove equal actual function; data reuse does not prove model reuse; favorable committee conclusions do not imply every chapter received peer review. Record original acquisition and new selected reinspection separately.
+
+Retain an existing claim identity when its proposition and material qualifications remain, including a correction of compressed source attribution. A materially new historical synthesis gets its own identity and explicit premises. The opening/final-synthesis unit reuses registered primary passages and four new bounded synthesis records; its source checks are separate from continuous reader judgment and rendered publication. Historical container questions, a synthetic wall comparison and one carrier-bag study do not establish a universal progress narrative. Arithmetic recaps without copied numerical outputs still depend on their original case-bound premises.
+
+Scope corrections found during rewriting propagate to dependent prose and evidence summaries. The source-review log records the CML three-level distinction, ILCD uncertainty versus resource limitations, exact UNEP draft/committee review scope, actual-function objections in the bag report, named USEtox model zero and bounded reuse of reported foreground results. Frozen numerical case versions and releases remain unchanged.

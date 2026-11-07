@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-07
-lastReviewedCommit: 965aaec5820746a643bf5320334edc7bd803a373
+lastReviewedCommit: dd715663c3438aa730eef0da1696dc376a7715f1
 ---
 
 # Publication contract
@@ -184,3 +184,5 @@ interval is distinct from physical uncertainty; an annual history metric is not
 a product-unit factor or an authorization for offsets. Current original-carrier
 readings can extend a work while preserving earlier derived-text captures and
 immutable case inputs as dated evidence.
+
+Stable reader addresses are tied to their actual claim occurrence and preserved edition context. A moving display number cannot silently reassign an older address. The opening migration retains one canonical editable claim, with native old aliases or explicit relocation destinations and an immutable-source link for its dated baseline. This does not create a second editable scientific edition or imply every earlier unversioned URL had the same meaning. New authored synthesis and source-scope corrections require their own actual evidence review before promotion.

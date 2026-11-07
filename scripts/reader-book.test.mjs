@@ -1,16 +1,25 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { bookChapters, chapterAnchorPrefix, collectChapterClaimIds, createChapterAnnotationPlan, createChapterNotePlan, createChapterReferenceIndex, orderPages } from './reader-book.mjs';
+import { bookChapters, chapterAnchorPrefix, chapterNoteAnchor, collectChapterClaimIds, createChapterAnnotationPlan, createChapterNotePlan, createChapterReferenceIndex, orderPages, printUnitAnchor } from './reader-book.mjs';
+import { citationHref, createLegacyCitationEntries } from './reader-citations.mjs';
 
 test('chapter notes continue across separate Prose and Claim blocks rather than resetting each block', () => {
   const raw = '<Prose ids="first second" />\n## Next section\n<Claim id="third" />\n<Prose ids="fourth fifth" />';
   const plan = createChapterNotePlan(raw, 'reader-chapter');
   assert.deepEqual(plan.notes.map(note => [note.id, note.number, note.anchor]), [
-    ['first', 1, 'reader-chapter-note-1'], ['second', 2, 'reader-chapter-note-2'], ['third', 3, 'reader-chapter-note-3'],
-    ['fourth', 4, 'reader-chapter-note-4'], ['fifth', 5, 'reader-chapter-note-5'],
+    ['first', 1, 'reader-chapter-claim-first'], ['second', 2, 'reader-chapter-claim-second'], ['third', 3, 'reader-chapter-claim-third'],
+    ['fourth', 4, 'reader-chapter-claim-fourth'], ['fifth', 5, 'reader-chapter-claim-fifth'],
   ]);
   assert.equal(plan.byClaimId.get('third').number, 3);
-  assert.equal(plan.headingId, 'reader-chapter-notes');
+  assert.equal(plan.headingId, 'reader-chapter-annotations');
+});
+
+test('inserting and reordering paragraphs changes visible numbers without reassigning claim anchors', () => {
+  const before = createChapterNotePlan('<Prose ids="first second" />', 'reader');
+  const after = createChapterNotePlan('<Prose ids="second new first" />', 'reader');
+  assert.equal(before.byClaimId.get('first').anchor, after.byClaimId.get('first').anchor);
+  assert.equal(before.byClaimId.get('second').anchor, after.byClaimId.get('second').anchor);
+  assert.deepEqual(after.notes.map(({ id, number }) => [id, number]), [['second', 1], ['new', 2], ['first', 3]]);
 });
 
 test('repeated claims share one unique note and never produce duplicate note IDs', () => {
@@ -91,20 +100,46 @@ test('book order follows folder indexes and children, deduplicates URL aliases, 
 test('premise references use chapter-local notes and the same unique print destinations as the book', () => {
   const index = createChapterReferenceIndex([
     { url: '/docs', title: 'Unprinted introduction', raw: '<Claim id="later" />' },
-    { url: '/docs/early', title: 'Earlier chapter', raw: '<Prose ids="first repeated" />', printAnchorPrefix: 'print-chapter-1' },
-    { url: '/docs/later', title: 'Later chapter', raw: '<Prose ids="later repeated" />', printAnchorPrefix: 'print-chapter-2' },
+    { url: '/docs/early', title: 'Earlier chapter', raw: '<Prose ids="first repeated" />', printAnchorPrefix: 'print-unit-early', printOrder: 1 },
+    { url: '/docs/topic', title: 'Printed topic', raw: '<Claim id="later" />', printAnchorPrefix: 'print-unit-topic', printOrder: 3 },
+    { url: '/docs/later', title: 'Later chapter', raw: '<Prose ids="later repeated" />', printAnchorPrefix: 'print-unit-later', printOrder: 2 },
     { url: '/docs/unprinted', title: 'Online explanation', raw: '<Claim id="online" />' },
   ]);
   const claims = [{ id: 'first', premiseIds: ['repeated', 'later', 'online', 'unplaced'], scope: 'Keep this condition', caveats: ['Keep this limit'] }, { id: 'repeated', premiseIds: [] }];
   const before = structuredClone(claims);
-  const printed = createChapterAnnotationPlan(createChapterNotePlan('<Prose ids="first repeated" />', 'print-chapter-1'), claims, index, { print: true }).get('first');
-  assert.deepEqual(printed.premiseReferences.get('repeated'), { href: '#print-chapter-1-note-2', label: '本章注 2' });
-  assert.deepEqual(printed.premiseReferences.get('later'), { href: '#print-chapter-2-note-1', label: '《Later chapter》注 1' });
-  assert.equal(printed.premiseReferences.get('online').href, `/docs/unprinted#${chapterAnchorPrefix('/docs/unprinted')}-note-1`);
+  const printed = createChapterAnnotationPlan(createChapterNotePlan('<Prose ids="first repeated" />', 'print-unit-early'), claims, index, { print: true }).get('first');
+  assert.deepEqual(printed.premiseReferences.get('repeated'), { href: '#print-unit-early-claim-repeated', label: '本章注 2' });
+  assert.deepEqual(printed.premiseReferences.get('later'), { href: '#print-unit-later-claim-later', label: '《Later chapter》注 1' });
+  assert.equal(printed.premiseReferences.get('online').href, `/docs/unprinted/#${chapterAnchorPrefix('/docs/unprinted')}-claim-online`);
   assert.equal(printed.premiseReferences.has('unplaced'), false); // retain the canonical fallback rather than invent a chapter
   const online = createChapterAnnotationPlan(createChapterNotePlan('<Prose ids="first repeated" />', 'current'), claims, index).get('first');
-  assert.equal(online.premiseReferences.get('later').href, `/docs#${chapterAnchorPrefix('/docs')}-note-1`);
+  assert.equal(online.premiseReferences.get('later').href, `/docs/#${chapterAnchorPrefix('/docs')}-claim-later`);
   assert.deepEqual(claims, before); // presentation never removes source/scope/caveat records
+});
+
+test('legacy web and print ordinals resolve by baseline claim and exact occurrence after relocation', () => {
+  const a = '/docs/book/a', b = '/docs/book/b', shared = '/docs/related';
+  const baseline = { pages: [
+    { route: a, noteClaims: ['stay', 'moved'], headingIds: ['一节'], printOrdinal: 1 },
+    { route: b, noteClaims: [], headingIds: [], printOrdinal: 2 },
+    { route: shared, noteClaims: ['moved'], headingIds: [] },
+  ] };
+  const placements = { frontMatter: [], notes: [{ from: a, claimId: 'moved', to: b }] };
+  const entries = createLegacyCitationEntries(baseline, placements);
+  const entry = (path, id) => entries.find(record => record.path === path && record.id === id);
+  const oldA = chapterAnchorPrefix(a);
+  assert.equal(entry(a, `${oldA}-note-1`).targets[0].id, `${oldA}-claim-stay`);
+  const moved = entry(a, `${oldA}-note-2`);
+  assert.equal(moved.mode, 'notice');
+  assert.equal(citationHref(moved.targets[0], a), `${b}/#${chapterNoteAnchor(chapterAnchorPrefix(b), 'moved')}`);
+  assert.equal(entry(shared, `${chapterAnchorPrefix(shared)}-note-1`).targets[0].route, shared);
+  const printMoved = entry('/print', 'print-chapter-1-note-2');
+  assert.equal(printMoved.mode, 'alias');
+  assert.equal(printMoved.targets[0].id, chapterNoteAnchor(printUnitAnchor(b), 'moved'));
+  assert.equal(entry('/print', 'print-chapter-1').targets[0].id, printUnitAnchor(a));
+  assert.equal(entry('/print', 'print-chapter-1-一节').targets[0].id, `${printUnitAnchor(a)}-一节`);
+  assert.throws(() => createLegacyCitationEntries(baseline, { ...placements, notes: [...placements.notes, ...placements.notes] }), /Duplicate legacy/);
+  assert.throws(() => createLegacyCitationEntries(baseline, { ...placements, notes: [{ from: a, claimId: 'missing', to: b }] }), /unknown earlier address/);
 });
 
 test('input links deduplicate within one chapter only for the exact case/version/hash/file identity', () => {

@@ -16,8 +16,8 @@ checkPaths:
   - "scripts/**"
   - "package.json"
   - ".github/**"
-lastReviewedAt: 2026-11-06
-lastReviewedCommit: 4bb17bce16dcafa3fcf13d774d08229659c6be7c
+lastReviewedAt: 2026-11-07
+lastReviewedCommit: dd715663c3438aa730eef0da1696dc376a7715f1
 ---
 
 # Publication architecture
@@ -153,7 +153,7 @@ The closed registry in `case-publication.mjs` selects each known case's nested p
 
 The standard Fumadocs DocsLayout owns document navigation, sidebar, TOC, search/theme controls and mobile menu. HomeLayout supplies the other public routes. Theme/brand tokens follow the owning docs site; homepage72rem sizing does not constrain the document grid. No extra42rem prose cap or second document header/mobile index is added. Chinese translations and the existing local knowledge search corpus are retained without adding an external search service.
 
-Current implementation: `lib/reader-book.ts` derives chapter order from the same page tree as the sidebar. `scripts/reader-book.mjs` creates one note plan per complete MDX source, ignoring code/comment examples. `ChapterContent` injects paragraph components with one local reference marker, then appends reader annotations. `ClaimAnnotation` supplies source locations, scope and material caveats without execution logs or visible database keys. Print reuses the renderer with unique prefixes and demoted section headings. Reader appendix pages expose bibliography, citations and conceptual navigation; technical build/research histories stay in `_docs/`.
+Current implementation: `lib/reader-book.ts` keeps website order from the page tree and derives the bounded print roster from the fixed original 42-unit citation baseline, preceded by shared preface and guide prose. `scripts/reader-book.mjs` creates one note plan per complete MDX source, ignoring code/comment examples. `ChapterContent` injects paragraph components with one local reference marker, then appends reader annotations. `ClaimAnnotation` supplies source locations, scope and material caveats without execution logs or visible database keys. Print reuses the renderer with unique prefixes and demoted section headings. Reader appendix pages expose bibliography, citations and conceptual navigation; technical build/research histories stay in `_docs/`.
 
 Planned monograph migration (user requirement, 2026-11-06; not implemented here): the website may keep fine navigation while a separately curated book structure supplies parts, chapters, formal sections and print order. Both must reference shared canonical prose/claims/evidence/cases rather than fork their scientific content. The full old-to-new map must preserve all 37 chapters and five supplements and stable citation identities. Note plans must follow assembled book chapter boundaries, not merely concatenate per-MDX note sequences. Validate actual ordering, unique anchors, numbering, links, search behavior, old editions and print hierarchy when implementing. The goal and reader contract define editorial requirements; this paragraph does not claim a new runtime or schema already exists.
 
@@ -331,3 +331,11 @@ separates dimensionless remaining fraction from its time integral. Its source is
 an original plot from the selected public facts, not an exported third-party
 figure. Standard static export carries the asset; the chapter and print route
 share its MDX placement and the canonical paragraph-note sequence.
+
+## Stable reader citation identity
+
+`config/citation-baseline.json` freezes the exact old route/heading/note meanings from Main dd715663 and its emitted HTML. `config/citation-placements.json` supplies the four explicit moved-note destinations and the two front-matter routes. `scripts/reader-citations.mjs` plans native aliases and cross-page relocation notices; `scripts/reader-book.mjs` assigns consecutive visible numbers independently of stable claim-occurrence anchors. `ReaderSection` emits explicit front-matter positions without adding TOC headings and scopes them uniquely in print.
+
+The Node-only `scripts/reader-citation-baseline.mjs` independently pins the parsed complete baseline digest, including source identity, and exact preface/guide order. Both server roster derivation and export validation call it before deriving expectations. The public frozen inventory has2254addresses; its body content is not duplicated. `scripts/reader-surface.mjs` checks emitted target claim identity, native link destination, alias adjacency, uniqueness, date/source context, note numbers and original print order. A real book source or output requires both configs; generic non-book fixtures retain their separate scope. Deliberate truncation and front-matter mutation tests guard against circular self-validation.
+
+Legacy context appears when an old fragment is targeted, with the preserved source date and immutable GitHub tree. It cannot infer another historical unversioned edition and does not claim hosted archives. The current44print articles are a bounded continuity step; the planned32chapter assembly with shared canonical blocks and per-assembled-chapter notes remains future work.
