@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { bookChapters, chapterAnchorPrefix, chapterNoteAnchor, collectChapterClaimIds, createChapterAnnotationPlan, createChapterNotePlan, createChapterReferenceIndex, orderPages, printUnitAnchor } from './reader-book.mjs';
-import { citationHref, createLegacyCitationEntries } from './reader-citations.mjs';
+import { citationHref, createCurrentPrintRoutes, createLegacyCitationEntries } from './reader-citations.mjs';
 
 test('chapter notes continue across separate Prose and Claim blocks rather than resetting each block', () => {
   const raw = '<Prose ids="first second" />\n## Next section\n<Claim id="third" />\n<Prose ids="fourth fifth" />';
@@ -157,4 +157,26 @@ test('input links deduplicate within one chapter only for the exact case/version
   const second = createChapterAnnotationPlan(createChapterNotePlan('<Claim id="repeat" />', 'b'), claims, new Map());
   assert.equal(second.get('repeat').showCaseInput, true);
   assert.throws(() => createChapterAnnotationPlan(plan, [], new Map()), /Unknown chapter claim/);
+});
+
+
+test('a new appendix has an explicit current print place and receives moved web and print notes', () => {
+  const a = '/docs/book/a', appendix = '/docs/appendices/energy-check';
+  const baseline = { pages: [{ route: a, noteClaims: ['moved'], headingIds: [], printOrdinal: 1 }] };
+  const placements = { frontMatter: [], notes: [{ from: a, claimId: 'moved', to: appendix }],
+    printAdditions: [{ route: appendix, kind: 'appendix' }] };
+  assert.deepEqual(createCurrentPrintRoutes(baseline, placements, [a, appendix]), [a, appendix]);
+  const entries = createLegacyCitationEntries(baseline, placements);
+  const web = entries.find(entry => entry.path === a && entry.id.endsWith('-note-1'));
+  const print = entries.find(entry => entry.path === '/print' && entry.id === 'print-chapter-1-note-1');
+  assert.equal(web.mode, 'notice');
+  assert.deepEqual(web.targets[0], { route: appendix, path: appendix,
+    id: chapterNoteAnchor(chapterAnchorPrefix(appendix), 'moved'), kind: 'note', claimId: 'moved' });
+  assert.equal(print.mode, 'alias');
+  assert.equal(print.targets[0].path, '/print');
+  assert.equal(print.targets[0].id, chapterNoteAnchor(printUnitAnchor(appendix), 'moved'));
+  assert.throws(() => createCurrentPrintRoutes(baseline, placements, [a]), /Missing printed unit/);
+  assert.throws(() => createCurrentPrintRoutes(baseline, { ...placements, printAdditions: [] }, [a, appendix]), /no current print registration/);
+  assert.throws(() => createCurrentPrintRoutes(baseline, { ...placements, printAdditions: [...placements.printAdditions, ...placements.printAdditions] }, [a, appendix]), /Invalid or repeated/);
+  assert.throws(() => createLegacyCitationEntries(baseline, { ...placements, printAdditions: [] }), /Unknown citation target route/);
 });

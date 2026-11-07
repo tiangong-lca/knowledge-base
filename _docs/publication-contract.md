@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-07
-lastReviewedCommit: dd715663c3438aa730eef0da1696dc376a7715f1
+lastReviewedCommit: bac68b35ba5228ed97c99cfc85d5605c187aad97
 ---
 
 # Publication contract
@@ -186,3 +186,6 @@ readings can extend a work while preserving earlier derived-text captures and
 immutable case inputs as dated evidence.
 
 Stable reader addresses are tied to their actual claim occurrence and preserved edition context. A moving display number cannot silently reassign an older address. The opening migration retains one canonical editable claim, with native old aliases or explicit relocation destinations and an immutable-source link for its dated baseline. This does not create a second editable scientific edition or imply every earlier unversioned URL had the same meaning. New authored synthesis and source-scope corrections require their own actual evidence review before promotion.
+
+
+An editorial move of historical calculation paragraphs can retain the same registered input version only while its exact source facts, quantity semantics, assumptions and arithmetic remain unchanged. Reworded cross-page antecedents are explicitly revised in the publication templates and canonical materialization under a renewed substantive review date; the changed publication-manifest bytes have their own new content hash. Preserve all unaffected case/release bytes. An added nonnumerical synthesis must bind the actual local reconstruction premises and cannot promote reported totals into independently reproduced whole-system outputs.

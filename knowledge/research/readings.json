@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-06",
+  "updatedAt": "2026-11-07",
   "readings": [
     {
       "id": "rd-cml-2001-part1",
@@ -2675,7 +2675,7 @@
       "version": "SW-91c / EPA530SW91C；1974 题名页图像核验；单一 185 页扫描含 Volume I 与 Volume II；前者署 Hunt/Franklin，后者署 Hunt/Welch/Cross/Woodall",
       "url": "https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=9100M5VS.TXT",
       "accessedAt": "2026-11-04",
-      "readAt": "2026-11-05",
+      "readAt": "2026-11-07",
       "readingStatus": "selected-passages",
       "question": "该同期REPA如何设比较基准与边界，以及公开数值能独立重建哪些计算层次？",
       "argumentSummary": "原报告把服务灌装数、新瓶制造和回用活动分别连接；选段支持燃料到玻璃能源分项、玻璃支路与报告汇总的单位核对。不同表的完整总量组装仍有未解释差额，来源精度和私人底层数据限制不被消除。",
@@ -3113,6 +3113,65 @@
             5,
             6
           ]
+        },
+        {
+          "id": "psg-epa1974-monograph-reinspection",
+          "artifactId": "art-epa-1974-nine-beverage-pdf",
+          "locator": "2026-11-07成文复核：题名、前言、目录iii–v；I1–2、4、9、11–15、17–21、28–29、33；II44–45、49–51、53、56–60、64–66、79、85、88–91、175–177",
+          "printedPages": "指定45个扫描页，见pdfIndices",
+          "topics": [
+            "容器著作化单元的实际选段重读；表头、单位、计量基准、范围与来源限制"
+          ],
+          "limits": [
+            "同一原作的重新查看不增加作品或独立证据数量；仅所列页，不代表两卷全读或完整原程序重建。"
+          ],
+          "pdfIndices": [
+            1,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            10,
+            15,
+            17,
+            18,
+            19,
+            20,
+            21,
+            23,
+            24,
+            25,
+            26,
+            27,
+            34,
+            35,
+            39,
+            50,
+            51,
+            55,
+            56,
+            57,
+            59,
+            62,
+            63,
+            64,
+            65,
+            66,
+            70,
+            71,
+            72,
+            85,
+            91,
+            94,
+            95,
+            96,
+            97,
+            181,
+            182,
+            183
+          ]
         }
       ],
       "appraisal": {
@@ -3130,7 +3189,7 @@
           "VolumeI Table6的19-trip off-premise表注与行/正文不一致；Table7p21的VolumeII交叉引页不能直接沿用。"
         ],
         "reviewKind": "agent-source-check",
-        "checkedAt": "2026-11-05"
+        "checkedAt": "2026-11-07"
       },
       "rights": "公开 EPA 承包研究报告；没有据机构仓储或出版批准推断所有承包材料整体为公有领域。仅发布原创释义、元数据和定位；不重传原文、表图或扫描。",
       "unread": [
@@ -3149,7 +3208,7 @@
       "version": "EPA-R2-72-059；September1972 题名；现有载体 Review Notice 注 April1973 reprint/new preliminary pages；RTI Bingham/Mulligan，contract68-03-0038；200 页扫描",
       "url": "https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=9101ESAG.TXT",
       "accessedAt": "2026-11-04",
-      "readAt": "2026-11-04",
+      "readAt": "2026-11-07",
       "readingStatus": "selected-passages",
       "question": "同期政策研究怎样界定容器问题及资源比较的边界？",
       "argumentSummary": "研究面向 EPA 政策选择，区分资源、固废和散落垃圾的政策理由；选段同时讨论其他消费支出与投入产出资料，提醒容器系统节约和经济整体净影响是不同问题。",
@@ -3264,8 +3323,8 @@
         {
           "id": "psg-epa-1972-image-check",
           "artifactId": "art-epa-1972-beverage-problem-pdf",
-          "locator": "题名、Review Notice 及指定正文扫描核对",
-          "printedPages": "题名；ii；3；14–15",
+          "locator": "题名、Review Notice、政策理由与数量对象、消费联系及Table5脚注的指定扫描核对",
+          "printedPages": "题名；ii；2–4；7；14–17",
           "topics": [
             "原作时间",
             "重印身份",
@@ -3277,9 +3336,14 @@
           "pdfIndices": [
             1,
             2,
+            14,
             15,
+            16,
+            19,
             26,
-            27
+            27,
+            28,
+            29
           ]
         }
       ],
@@ -3292,7 +3356,7 @@
           "历史资源供给/消费判断不作为当前事实。"
         ],
         "reviewKind": "agent-source-check",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-07"
       },
       "rights": "公开 EPA 承包报告；Review Notice 的出版批准和非背书边界已核读。未核定全部材料的整体再利用许可；只提供原创分析和定位，不重传原件。",
       "unread": [
@@ -26488,6 +26552,26 @@
         "F01",
         "F02",
         "V7-02"
+      ]
+    },
+    {
+      "id": "rev-kb62-container-monograph",
+      "before": "容器系统与政策两章按原主题逐段展开，玻璃细算和条件舍入检验嵌在正文中；部分指代依赖未迁移的相邻位置。",
+      "after": "按交付任务、过程账、能源汇总和重建边界成文；六段完整计算进入具名附录，分母与系统基准明确。政策章保留较早报告的回读、条件能源估算，并以两个新记录补明原作者的定性资源比较和政策理由。",
+      "reasoning": "原件表头、单位、选中单元与政策段落分别约束计算和作者综合；保留全部36原观点、53数值事实、完整组装差额及条件边界。独立读者发现的身份、基准和信息落点缺口经同一原件核实后修订，不以新措辞升级经验资格。",
+      "status": "source, independent engineering and continuous-reader assessments complete within stated scope; actual browser and print repair verified; final exact-source/hosted/root delivery pending",
+      "triggerPassageIds": [
+        "psg-epa1974-hist-component-table",
+        "psg-epa1974-hist-demand",
+        "psg-epa-1972-spending-io",
+        "psg-epa-1974-rank-and-energy"
+      ],
+      "affectedUnits": [
+        "B02",
+        "B03",
+        "X01",
+        "C02",
+        "C03"
       ]
     }
   ]
