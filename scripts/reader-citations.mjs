@@ -4,7 +4,7 @@ import { chapterAnchorPrefix, chapterNoteAnchor, printUnitAnchor } from './reade
 /** @typedef {{ notes: { from: string, claimId: string, to: string }[], frontMatter: string[], printAdditions?: { route: string, kind: string }[] }} Placements */
 /** @typedef {{ route: string, path: string, id: string, kind: 'chapter' | 'heading' | 'note' | 'note-group', claimId?: string }} Destination */
 /** @typedef {{ sourceCommit: string, sourceDate: string }} CitationEdition */
-/** @typedef {{ route: string, path: string, id: string, targets: Destination[], mode: 'retained' | 'alias' | 'notice', edition: CitationEdition }} LegacyEntry */
+/** @typedef {{ route: string, path: string, id: string, targets: Destination[], mode: 'retained' | 'alias' | 'notice', edition: CitationEdition, scope?: { text: string, targets: Destination[] } }} LegacyEntry */
 /** @typedef {{ sourceCommit: string, sourceDate: string, pages: { route: string, noteClaims: string[], printOrdinal?: number }[] }} CanonicalHistory */
 
 /** @param {string} route @param {boolean} print */

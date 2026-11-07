@@ -148,3 +148,7 @@ button { cursor: pointer; }
   .scholarly-prose > p { break-inside: avoid; }
   .prose-reference-tail { white-space: nowrap; }
 }
+
+/* Source-subset context follows the retained native unit/group fragment. */
+.print-chapter:not(:target) > [data-legacy-scope],
+.chapter-notes > :not(:target) + [data-legacy-scope] { display: none; }

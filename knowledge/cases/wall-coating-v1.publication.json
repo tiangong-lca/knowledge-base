@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "inputFile": "wall-coating-v1.json",
   "approvedInputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
-  "reviewedAt": "2026-11-06",
+  "reviewedAt": "2026-11-08",
   "reviewKind": "agent-source-check",
   "claims": [
     {
@@ -39,7 +39,7 @@
     },
     {
       "id": "cl-wall-reference",
-      "textTemplate": "现在有两个相连的表述层次。服务一侧是“用 A 或 B 让这 {{input.service.area}} m² 墙面满足所定期间与性能”；计算一侧是所选过程坐标上 {{smooth.display.service.alternatives.paintA.requiredKg}} kg A 或 {{smooth.display.service.alternatives.paintB.requiredKg}} kg B 的需求。前一章所读 CML 2001 §2.3.4 的涂料例以覆盖墙面面积表述参考流，把所需体积放在过程数据中；ILCD 2010 §6.4.1 则容许按用途采用服务关联或产品导向的参考表述。本例保留服务关联的一层，再为以 kg 供给涂料的过程建立产品量需求。这是对两段语境的有限衔接：kg 与 g 的换算只改变同一质量的数值表示，而由墙面要求得到用量，还需要性能和计划这些额外前提。本例从一开始就设定 kg 数据，无须把指南的体积偷换成质量，也没有证明任意两套数据库可直接互换。",
+      "textTemplate": "现在有两个相连的表述层次。服务一侧是“用 A 或 B 让这 {{input.service.area}} m² 墙面满足所定期间与性能”；计算一侧是所选过程坐标上 {{smooth.display.service.alternatives.paintA.requiredKg}} kg A 或 {{smooth.display.service.alternatives.paintB.requiredKg}} kg B 的需求。《功能参照》讨论的 CML 2001 §2.3.4 的涂料例以覆盖墙面面积表述参考流，把所需体积放在过程数据中；ILCD 2010 §6.4.1 则容许按用途采用服务关联或产品导向的参考表述。本例保留服务关联的一层，再为以 kg 供给涂料的过程建立产品量需求。这是对两段语境的有限衔接：kg 与 g 的换算只改变同一质量的数值表示，而由墙面要求得到用量，还需要性能和计划这些额外前提。本例从一开始就设定 kg 数据，无须把指南的体积偷换成质量，也没有证明任意两套数据库可直接互换。",
       "kind": "synthesis",
       "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
       "evidenceIds": [

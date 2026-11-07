@@ -57,6 +57,14 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
       return id ? <><LegacyCitationAliases ids={legacy.aliases.get(id)} target={id} />{heading}</> : heading;
     }];
   }));
+  async function RetainedScope({ entry }: { entry?: LegacyEntry }) {
+    if (!entry?.scope) return null;
+    const links = await Promise.all(entry.scope.targets.map(async target => ({ href: citationHref(target, entry.path), label: await getCitationLabel(target) })));
+    return <div data-legacy-scope={entry.id} className="legacy-citation-context">
+      <p><CitationVersion edition={entry.edition} /></p><p>{entry.scope.text}</p>
+      <ul>{links.map(link => <li key={link.href}><a href={link.href} data-legacy-scope-destination="">{link.label}</a></li>)}</ul>
+    </div>;
+  }
   const notices = await Promise.all(legacy.notices.map(async notice => ({
     ...notice,
     links: await Promise.all(notice.targets.map(async target => ({
@@ -66,10 +74,12 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
   })));
 
   return <>
+    <RetainedScope entry={legacy.scopes.get(prefix)} />
     <MDX components={getMDXComponents({ Prose: ChapterProse, Claim: Paragraph, ReaderSection, a: ReaderLink, ...headings })} />
     {plan.notes.length > 0 && <section className="chapter-notes not-prose" aria-labelledby={plan.headingId}>
       <LegacyCitationAliases ids={legacy.aliases.get(plan.headingId)} target={plan.headingId} />
       {print ? <h3 id={plan.headingId}>注释</h3> : <h2 id={plan.headingId}>注释</h2>}
+      <RetainedScope entry={legacy.scopes.get(plan.headingId)} />
       <ol>{plan.notes.map(note => <li id={note.anchor} data-reader-claim={note.id} key={note.id}>
         <LegacyCitationAliases ids={legacy.aliases.get(note.anchor)} target={note.anchor} />
         <ClaimAnnotation id={note.id} {...annotations.get(note.id)} />
@@ -78,7 +88,7 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
     {notices.map(notice => <div key={notice.id} id={notice.id} className="legacy-citation-target not-prose" data-legacy-notice="" tabIndex={-1}>
       <div className="legacy-citation-context">
         <p><CitationVersion edition={notice.edition} /></p>
-        <p>可从下列链接查阅这一留存版本对应的内容。</p>
+        <p>{notice.scope?.text ?? '可从下列链接查阅这一留存版本对应的内容。'}</p>
         <ul>{notice.links.map(link => <li key={link.href}><a href={link.href} data-legacy-destination="">{link.label}</a></li>)}</ul>
       </div>
     </div>)}

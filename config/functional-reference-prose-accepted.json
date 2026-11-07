@@ -1,0 +1,510 @@
+{
+  "schemaVersion": 1,
+  "status": "reviewed",
+  "reviewedAt": "2026-11-08",
+  "reviewKind": "agent-source-and-reader-check",
+  "reviewScope": "Exact final v3 canonical records, two reviewed MDX sources, authored navigation and claim placement; structural checks do not establish human scientific approval.",
+  "readerDraftSha256": "ccd45669bf2d4def5ede2c1e6531b0a094f32aa75056668b15270264b3abba1d",
+  "sources": [
+    {
+      "route": "/docs/book/service-and-reference",
+      "path": "content/docs/book/service-and-reference.mdx",
+      "mdxSha256": "6a7eed193a5e5f3f335a33217f6687ac6c1e824da5abc5f82ccb19523cac4865",
+      "normalization": "CRLF to LF only"
+    },
+    {
+      "route": "/docs/functional-unit",
+      "path": "content/docs/functional-unit.mdx",
+      "mdxSha256": "d00b49b3e79c1823095d8e751bab6010ea705b1744098bcebaa7388786b6397e",
+      "normalization": "CRLF to LF only"
+    }
+  ],
+  "navigation": [
+    {
+      "route": "/docs/book/service-and-reference",
+      "afterClaim": "cl-book-maintenance-condition",
+      "beforeClaim": "cl-book-record-model-limit",
+      "href": "/docs/book/wall-service-to-comparison/",
+      "linkText": "把墙面服务一路算到有依据的比较",
+      "text": "延伸案例：把墙面服务一路算到有依据的比较。该案例另设100 m²、十年的墙面服务，将面积、性能、寿命和维护计划连接到过程需求与指标；它与这里10 m²的简例各有自己的假设。"
+    },
+    {
+      "route": "/docs/functional-unit",
+      "afterClaim": "cl-book-maintenance-condition",
+      "beforeClaim": "cl-book-record-model-limit",
+      "href": "/docs/book/wall-service-to-comparison/",
+      "linkText": "把墙面服务一路算到有依据的比较",
+      "text": "延伸案例：把墙面服务一路算到有依据的比较。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "cl-book-service",
+      "text": "要为一面墙选择涂料，先要决定究竟在选择什么：是一批可采购的材料，还是让墙面在约定期间保持某种覆盖性能的办法？千克可以计量购入量，却不能独自回答后一问题。ILCD 2010指南在说明“功能单位”时，用对象、数量、性能和期间描述研究对象提供的功能。沿着这个思路，本章把需要公开说明的功能条件称为服务要求：完成什么、完成多少、达到什么程度、持续多久。方案名称和材料用量，要放在这些要求下，才能说明它们在这次服务比较中的意义。",
+      "kind": "interpretation",
+      "scope": "依据ILCD2010功能表述构造的服务比较入口",
+      "evidenceIds": [
+        "ev-ilcd-service"
+      ],
+      "premiseIds": [],
+      "caveats": [],
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ilcd-service",
+          "relation": "context",
+          "rationale": "来源提供讨论语境；作者的解释、假设算术或组织建议不冒充原文规定或实测结论。"
+        }
+      ]
+    },
+    {
+      "id": "cl-book-geometry",
+      "text": "相同的几何尺寸也不能替代功能。美国环境保护署（EPA）2006年出版的指南以绝热材料说明：面积和厚度相同的两种材料，可能提供不同的隔热能力；若问题是降低热流，就应先对齐所需的热流降低程度。这是用于讲解方法的设例，并没有测定现实产品的表现。它指出的困难却很具体：看起来一样多的材料，未必做了同样多的事。",
+      "kind": "source-statement",
+      "scope": "具名指南选段的历史语境；不代替现行标准或产品级验证",
+      "evidenceIds": [
+        "ev-epa-insulation"
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "教学示例不提供真实产品的性能或环境比较证据。"
+      ],
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-epa-insulation",
+          "relation": "supports",
+          "rationale": "具名来源选段支持限定于该文献/格式的陈述；作者解释与应用限制另行辨认。"
+        }
+      ]
+    },
+    {
+      "id": "cl-book-service-contract",
+      "text": "把服务条件写出来，因而不是给结果补一个分母，而是让比较的理由可供检查。谁使用、达到什么性能、持续多久，哪些差异在这次研究中可以忽略，都需要交代。这里讨论的是作为服务替代方案的比较；“同一服务”不意味着所有技术属性都必须相同。ILCD也讨论了在明确个别判断和偏好的前提下比较不完全可比的对象。关键是说明接受哪些差异的理由。即使两项结果都写成“每次使用”，也还要说明每次提供了什么功能、是否达到相同要求。",
+      "kind": "interpretation",
+      "scope": "服务替代方案的条件解释；部分可比对象仍须明确判断与偏好",
+      "evidenceIds": [
+        "ev-ilcd-service",
+        "ev-epa-insulation"
+      ],
+      "premiseIds": [
+        "cl-book-service",
+        "cl-book-geometry"
+      ],
+      "caveats": [
+        "对部分可比对象的讨论不豁免特定比较性断言、产品类别规则或其他适用要求。"
+      ],
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ilcd-service",
+          "relation": "context",
+          "rationale": "来源提供讨论语境；作者的解释、假设算术或组织建议不冒充原文规定或实测结论。"
+        },
+        {
+          "evidenceId": "ev-epa-insulation",
+          "relation": "context",
+          "rationale": "来源提供讨论语境；作者的解释、假设算术或组织建议不冒充原文规定或实测结论。"
+        }
+      ]
+    },
+    {
+      "id": "cl-book-soap",
+      "text": "服务的取舍还会改变被纳入的过程。EPA的洗手例比较固体皂与液体皂，要求说明完成等效洗手各需多少用量，不能直接把等质量或等体积当成等效。当液体皂附带保湿功能时，指南同时考察两件事：保湿是否与研究目的相关，消费者是否实际获得这一价值。在这两个条件成立时，比较才把保湿纳入，并在固体皂一侧考虑另用乳液。共同的服务名称由此需要展开为具体的使用组合。",
+      "kind": "source-statement",
+      "scope": "具名指南选段的历史语境；不代替现行标准或产品级验证",
+      "evidenceIds": [
+        "ev-epa-soap"
+      ],
+      "premiseIds": [],
+      "caveats": [],
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-epa-soap",
+          "relation": "supports",
+          "rationale": "具名来源选段支持限定于该文献/格式的陈述；作者解释与应用限制另行辨认。"
+        }
+      ]
+    },
+    {
+      "id": "cl-book-function-boundary",
+      "text": "从“洗手”改为“洗手并保湿”，变化就可能落在过程清单里：原先没有的产品、包装或使用活动需要重新考虑。仅把原结果除以另一个数量，无法代替这一步。这个条件性例子并不要求每项附加功能都扩展边界；它说明，服务选择与实现办法相互牵动，边界应随所回答的问题接受检查。",
+      "kind": "interpretation",
+      "scope": "对该条件性教学例的推论；不主张所有附加功能都必须扩展边界",
+      "evidenceIds": [
+        "ev-epa-soap"
+      ],
+      "premiseIds": [
+        "cl-book-soap"
+      ],
+      "caveats": [],
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-epa-soap",
+          "relation": "context",
+          "rationale": "来源提供讨论语境；作者的解释、假设算术或组织建议不冒充原文规定或实测结论。"
+        }
+      ]
+    },
+    {
+      "id": "cl-fu-distinction",
+      "text": "以涂料为例，可以把这条联系写成两步：先说明墙面需要的功能，再说明各方案为实现它需要多少具体产品或服务。连接两步的依据包括覆盖能力、寿命、使用条件和维护计划。把功能要求与方案用量分开说明，正是为了保留这些依据；缺少它们，就不存在从一个服务名称到某个产品数量的通用换算。",
+      "kind": "interpretation",
+      "scope": "功能表述与参考流的解释框架",
+      "evidenceIds": [
+        "ev-ilcd-qr",
+        "ev-ilcd-service"
+      ],
+      "premiseIds": [
+        "cl-ilcd-reference-flow",
+        "cl-ilcd-fu"
+      ],
+      "conceptIds": [
+        "cn-fu",
+        "cn-reference-flow"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "转换可能依赖性能、寿命和使用条件；单一数量不能替代这些前提。"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ilcd-qr",
+          "relation": "context",
+          "rationale": "来源提供讨论语境；作者的解释、假设算术或组织建议不冒充原文规定或实测结论。"
+        },
+        {
+          "evidenceId": "ev-ilcd-service",
+          "relation": "context",
+          "rationale": "ILCD2010实际选段讨论性能、寿命、使用与维护条件，为作者的服务到产品数量解释提供语境；不是由格式字段证明真实用量。"
+        }
+      ]
+    },
+    {
+      "id": "cl-fu-example",
+      "text": "用一个虚构算例暂时固定这些条件：两种涂料都完成相同的涂装性能要求、同一维护期间的表面保护；A需0.20 kg/m²，B需0.25 kg/m²，面积为10 m²。于是本例所需涂料分别为A的2.0 kg和B的2.5 kg。数值来自作者设定，乘法只把设定展开，并没有检验性能确实相同。若手中只有“每千克涂料”的环境结果，仍须用相应的覆盖能力、耐久条件与维护计划连接到这项服务，再分别计算环境结果。",
+      "kind": "calculation",
+      "scope": "作者设定的涂料维护服务教学算例；0.20×10 与 0.25×10",
+      "evidenceIds": [
+        "ev-ilcd-qr"
+      ],
+      "premiseIds": [
+        "cl-fu-distinction"
+      ],
+      "conceptIds": [
+        "cn-fu",
+        "cn-reference-flow"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "数值是明确假设，不是实测数据或产品性能声明；环境结果仍需分别计算。"
+      ],
+      "reasoning": "教学前提固定面积10m²且性能/期间相同；分别计算0.20kg/m²×10m²=2.0kg、0.25kg/m²×10m²=2.5kg。",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ilcd-qr",
+          "relation": "context",
+          "rationale": "来源提供讨论语境；作者的解释、假设算术或组织建议不冒充原文规定或实测结论。"
+        }
+      ]
+    },
+    {
+      "id": "cl-book-cml-reference",
+      "text": "把服务连接到数量之后，还要辨认数量在文献中处于哪一层。本节所说的参考对象，回答的是“其他数量相对于什么来说明”这一问题，并不预先规定它必须是哪一种量。莱顿大学CML的2001操作指南在涂料例中，以某种涂料覆盖的墙面面积表述方案参考流，把所需涂料体积归入过程数据。这里，服务要求、选定涂料实现的覆盖面积与过程所用体积各有位置。若把“参考流”直接改写成只记录千克数的字段，就会丢掉这段指南区分的建模层次。",
+      "kind": "interpretation",
+      "scope": "CML2001 Part2a §2.3.4涂料例的方案参考对象与过程数据",
+      "evidenceIds": [
+        "ev-cml-reference-form"
+      ],
+      "premiseIds": [],
+      "caveats": [],
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-cml-reference-form",
+          "relation": "context",
+          "rationale": "来源提供讨论语境；作者的解释、假设算术或组织建议不冒充原文规定或实测结论。"
+        }
+      ]
+    },
+    {
+      "id": "cl-book-ilcd-reference",
+      "text": "ILCD 2010也没有把参考流限定为一种脱离用途的数量写法。指南讨论了与功能单位相联的表达，以及产品导向的表达；产品性质、数据用途和软件建模方式会影响选择。两种表达共同要求说明其他输入输出怎样与参考对象建立定量关系。因此，看到“一千克产品”时，还应追问这份数据在做什么：它是在描述产品生产，还是已经代表某个选定方案提供的功能？单位本身不能回答这个问题。",
+      "kind": "interpretation",
+      "scope": "ILCD2010 §6.4.1中依用途而异的参考流表达",
+      "evidenceIds": [
+        "ev-ilcd-reference-form"
+      ],
+      "premiseIds": [],
+      "caveats": [],
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ilcd-reference-form",
+          "relation": "context",
+          "rationale": "来源提供讨论语境；作者的解释、假设算术或组织建议不冒充原文规定或实测结论。"
+        }
+      ]
+    },
+    {
+      "id": "cl-book-reference-reading",
+      "text": "这两段指南可以放在同一条阅读路径上：辨认服务要求，辨认某一方案的参考对象，再追踪所需过程数据及其数量联系。这就是本章“功能参照”所要说明的联系，是对不同用途的整理，并非给“参考流”另立统一定义。措辞不同不足以证明CML与ILCD相互矛盾，名称相同也不足以证明两种表示可直接互换。对照必须保留每个数量所指的对象、所在的研究层次和转换条件，随后才能检查记录如何承载它们。",
+      "kind": "synthesis",
+      "scope": "对CML与ILCD所述用途的作者综合；不是统一术语定义",
+      "evidenceIds": [
+        "ev-cml-reference-form",
+        "ev-ilcd-reference-form"
+      ],
+      "premiseIds": [
+        "cl-book-cml-reference",
+        "cl-book-ilcd-reference"
+      ],
+      "caveats": [],
+      "reasoning": "两段原文将参考表述置于具体用途；因此共同解释框架须保留这些用途，不能由相似标签推出普遍等价。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-cml-reference-form",
+          "relation": "context",
+          "rationale": "来源提供讨论语境；作者的解释、假设算术或组织建议不冒充原文规定或实测结论。"
+        },
+        {
+          "evidenceId": "ev-ilcd-reference-form",
+          "relation": "context",
+          "rationale": "来源提供讨论语境；作者的解释、假设算术或组织建议不冒充原文规定或实测结论。"
+        }
+      ]
+    },
+    {
+      "id": "cl-ilcd-quant-ref",
+      "text": "在ILCD Format 1.1过程数据集里，quantitativeReference指定输入和输出所相对的定量参考。其类型可选择参考流、功能单位、其他参数或生产期间。其中，生产期间以数据集所代表的过程运行时段作参照。这个字段首先说明数据相对于什么计量，并不只允许“一千克产品”这一种参考。",
+      "kind": "source-statement",
+      "scope": "ILCD Format 1.1 过程数据集",
+      "evidenceIds": [
+        "ev-ilcd-qr"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-quant-ref"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caveats": [],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ilcd-qr",
+          "relation": "supports",
+          "rationale": "具名来源选段支持限定于该文献/格式的陈述；作者解释与应用限制另行辨认。"
+        }
+      ]
+    },
+    {
+      "id": "cl-ilcd-reference-flow",
+      "text": "当类型为Reference flow(s)时，referenceToReferenceFlow指向本数据集内作为参考的一个或多个输入或输出交换。它是数据集内部的交换引用，与描述性能的文字分别记录。",
+      "kind": "source-statement",
+      "scope": "ILCD Format 1.1，eDoc 1-1-4-16及1-1-4-17",
+      "evidenceIds": [
+        "ev-ilcd-qr"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-reference-flow"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caveats": [],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ilcd-qr",
+          "relation": "supports",
+          "rationale": "具名来源选段支持限定于该文献/格式的陈述；作者解释与应用限制另行辨认。"
+        }
+      ]
+    },
+    {
+      "id": "cl-ilcd-fu",
+      "text": "同一格式允许以过程所提供的性能来描述功能单位，而不必让这段描述本身指向一条流；在采用参考流时，还可以补充功能单位表述。functionalUnitOrOther字段可描述数量、名称、性质或质量以及单位。功能描述与交换引用因而可以并存；这是Format 1.1的说明范围，不能直接替代ISO或所有方法对功能单位的定义。",
+      "kind": "source-statement",
+      "scope": "ILCD Format 1.1 的定量参考说明",
+      "evidenceIds": [
+        "ev-ilcd-qr"
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-fu"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "这是格式文档的含义说明，不是 ISO 或所有方法的统一定义。"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ilcd-qr",
+          "relation": "supports",
+          "rationale": "具名来源选段支持限定于该文献/格式的陈述；作者解释与应用限制另行辨认。"
+        }
+      ]
+    },
+    {
+      "id": "cl-book-maintenance-condition",
+      "kind": "interpretation",
+      "scope": "作者设定的10 m²教学算例条件变化；ILCD维护说明提供语境",
+      "evidenceIds": [
+        "ev-ilcd-service"
+      ],
+      "premiseIds": [
+        "cl-fu-example",
+        "cl-fu-distinction"
+      ],
+      "conceptIds": [
+        "cn-fu",
+        "cn-reference-flow"
+      ],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "不提供实际涂料性能、维护次数或环境优劣的经验结论。"
+      ],
+      "text": "这些区别在条件改变时才显出用处。若上述10 m²算例中的B在同一期间需要额外维护一次，原来的2.5 kg就不能直接代表整个期间的需求，应重新说明维护活动及其用量；这还不足以判定B的环境表现更差。若改变的是所要求的性能，连比较问题本身也要重新界定。这里改变的是作者的教学假设，不是报告某种涂料的实测缺陷。ILCD在涂料示例的脚注中也提醒，重涂可能包括清除旧层，或改用以后开发的涂料。维护因而可能改变过程，不能不加说明地把首次用量再乘一次。",
+      "reviewedAt": "2026-11-08",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ilcd-service",
+          "relation": "context",
+          "rationale": "来源提供讨论语境；作者的解释、假设算术或组织建议不冒充原文规定或实测结论。"
+        }
+      ]
+    },
+    {
+      "id": "cl-book-record-model-limit",
+      "kind": "interpretation",
+      "scope": "数据格式、功能表述与模型使用的解释边界；不声称具体软件行为",
+      "evidenceIds": [
+        "ev-ilcd-qr"
+      ],
+      "premiseIds": [
+        "cl-ilcd-quant-ref",
+        "cl-ilcd-reference-flow",
+        "cl-ilcd-fu",
+        "cl-fu-distinction"
+      ],
+      "conceptIds": [
+        "cn-fu",
+        "cn-reference-flow"
+      ],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "格式记录能力不等于求解器行为；具体实现需独立证据。"
+      ],
+      "text": "数据记录能够留下一个参考交换和一段性能描述，却不能凭此决定服务怎样实现。沿着交换引用辨认技术对象、数量与测量单位，是检查记录的起点；所需性能是否实现，还要有相应依据。方法要求、数据格式与具体模型各自回答不同问题。例如产品类别规则（PCR）怎样规定声明单位，或软件怎样用一组数表达各项产品需求，都要查看各自的定义与约束。功能单位与参考流的有条件关联，不会因为它们同在一份记录里就变成同义关系。模型仍须说明由哪些活动、按什么数量提供服务，保存了相关信息也不等于计算已经使用了它。",
+      "reviewedAt": "2026-11-08",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ilcd-qr",
+          "relation": "context",
+          "rationale": "来源提供讨论语境；作者的解释、假设算术或组织建议不冒充原文规定或实测结论。"
+        }
+      ]
+    },
+    {
+      "id": "cl-book-comparison-more",
+      "text": "即使功能条件已有可接受的交代，比较仍有下一层问题。CML 2001在讨论环境优劣或等效的比较性断言时，转述ISO要求，继续检查边界、数据质量、分配和影响评价。ILCD 2010则把情景、寿命、维护及建模和数据的一致性继续带入比较，并讨论不确定性与所考虑的影响类别怎样限制结论。所比较的服务与描述服务的系统需要一起检查：前者得到说明，不能替后者作保证；某个指标较低，也不能自动推出无条件的环境优越性。",
+      "kind": "synthesis",
+      "scope": "CML比较性断言要求与ILCD比较研究条件的有界综合",
+      "evidenceIds": [
+        "ev-cml-comparison",
+        "ev-ilcd-comparison"
+      ],
+      "premiseIds": [
+        "cl-book-service-contract",
+        "cl-book-reference-reading"
+      ],
+      "caveats": [
+        "选读指南不代替对ISO原文、ILCD所引建模规定或具体研究合规性的完整核验。"
+      ],
+      "reasoning": "两份指南都在功能前提之外列出模型与数据条件，因而功能等效不是全部可比性的充分证明。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-cml-comparison",
+          "relation": "context",
+          "rationale": "来源提供讨论语境；作者的解释、假设算术或组织建议不冒充原文规定或实测结论。"
+        },
+        {
+          "evidenceId": "ev-ilcd-comparison",
+          "relation": "context",
+          "rationale": "来源提供讨论语境；作者的解释、假设算术或组织建议不冒充原文规定或实测结论。"
+        }
+      ]
+    },
+    {
+      "id": "cl-book-three-comparisons",
+      "text": "据此，本书把接下来的比较组织为三个问题：定义上在回答怎样的服务问题，模型上怎样用边界和数据表达它，结果上又能支持多强的差异判断。这是一种分析安排，不是新增的标准阶段。它让分歧能够落到具体环节，而不止于给整项研究贴上“可比”或“不可比”的标签。下一步便是把已经说明的服务要求转成过程需求，检查那些活动怎样连接、怎样缩放，以及哪些关系仍需要证据。",
+      "kind": "proposal",
+      "scope": "比较研究中服务、模型和结果三个层次的分析建议；不是新增标准阶段",
+      "evidenceIds": [
+        "ev-cml-comparison",
+        "ev-ilcd-comparison"
+      ],
+      "premiseIds": [
+        "cl-book-comparison-more"
+      ],
+      "caveats": [],
+      "reasoning": "来源要求涉及不同对象；分层提问可保留这些对象之间的区别，并为后文的数据与解释检查建立连接。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-cml-comparison",
+          "relation": "context",
+          "rationale": "来源提供讨论语境；作者的解释、假设算术或组织建议不冒充原文规定或实测结论。"
+        },
+        {
+          "evidenceId": "ev-ilcd-comparison",
+          "relation": "context",
+          "rationale": "来源提供讨论语境；作者的解释、假设算术或组织建议不冒充原文规定或实测结论。"
+        }
+      ]
+    }
+  ]
+}

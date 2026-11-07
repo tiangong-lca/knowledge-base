@@ -3,32 +3,26 @@ title: 功能单位与参考流
 description: 分开说明研究要求的服务、具体交换的定量参考，以及连接两者所需的性能假设。
 ---
 
-比较两种方案，可以先把问题写成一份服务要求：完成什么、完成多少、达到什么性能、持续多久。再问每个方案为此需要多少具体产品或服务。ILCD的数据集说明提供了一个观察这些信息怎样留下记录的入口。
+整章论述见[功能参照](/docs/book/service-and-reference/)；此处从数据集字段进入。
 
 ## 先找到数据集相对于什么计量
 
 <Prose ids="cl-ilcd-quant-ref cl-ilcd-reference-flow cl-ilcd-fu" />
 
-这里的“参考流”指向具体输入或输出交换；功能表述则可以描述性能。阅读时既要查看技术名称，也要查看质量、数量和测量单位。详细依据见<SourceRef id="src-ilcd-process" />中的Quantitative reference部分。
+字段说明见<SourceRef id="src-ilcd-process" />的Quantitative reference部分。
 
 ## 从功能要求到产品需求
 
-<Prose ids="cl-fu-distinction" />
-
-用一个虚构算例把连接写出来：先假设两种涂料完成同一维护期间、同一质量要求下的表面保护，再固定面积和用量。
-
-<Prose ids="cl-fu-example" />
-
-若只给出“每千克涂料”的结果，还需要覆盖能力、耐久条件和维护计划，才能判断是否比较了同一项服务。例子的性能相同假设只规定这个教学问题，不能当作真实产品已经等效的证据。
+<Prose ids="cl-fu-distinction cl-fu-example" />
 
 ## 性能或计划改变时
 
-假如B涂料需要在同一期间额外维护一次，数量关系就要重算；如果两者性能要求不同，比较问题本身也要重新定义。这些是算例的条件变化，不是关于某个实际产品的调查结果。
+<Prose ids="cl-book-maintenance-condition" />
 
-[把墙面服务一路算到有依据的比较](/docs/book/wall-service-to-comparison/)将面积、性能、寿命和维护计划进一步连接到过程需求与指标。
+延伸案例：[把墙面服务一路算到有依据的比较](/docs/book/wall-service-to-comparison/)。
 
 ## 概念、记录与模型
 
-ILCD Format1.1的定量参考说明面向具体数据集。遇到ISO、PCR、声明单位或软件需求向量时，也要分别辨认定义、用途与约束；数据怎样记录，不能单独决定服务怎样实现。
+<Prose ids="cl-book-record-model-limit" />
 
-概念入口为<ConceptRef id="cn-fu" />与<ConceptRef id="cn-reference-flow" />。二者在这里是有条件的关联，不是同义关系，也没有不附加性能前提的通用换算。
+概念入口：<ConceptRef id="cn-fu" />与<ConceptRef id="cn-reference-flow" />。
