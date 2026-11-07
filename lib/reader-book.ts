@@ -1,3 +1,7 @@
+import processProse from '@/config/process-network-prose-accepted.json';
+import processAccepted from '@/config/process-network-accepted.json';
+import processHeadings from '@/config/process-network-heading-history.json';
+import { processNetworkHeadingEntries, remapProcessNetworkCitations, validateProcessNetworkCoverage } from '@/scripts/reader-process-network.mjs';
 import functionalProse from '@/config/functional-reference-prose-accepted.json';
 import functionalAccepted from '@/config/functional-reference-accepted.json';
 import functionalHeadings from '@/config/functional-reference-heading-history.json';
@@ -42,8 +46,8 @@ const historical = [...createLegacyCitationEntries(baseline, placements, history
   ...headingHistory.canonicalPrintedHeadings.map(heading=>({route:heading.route,path:'/print',id:heading.id,
     targets:[{route:heading.route,path:'/print',id:heading.id,kind:'heading' as const}],mode:'retained' as const,
     edition:{sourceCommit:headingHistory.sourceCommit,sourceDate:'2026-11-07'}}))];
-const legacyEntries: LegacyEntry[] = remapFunctionalReferenceCitations(remapCleanerProductionCitations(
-  remapBookCitations([...historical, ...cleanerProductionHeadingEntries(cleanerHeadingHistory), ...functionalReferenceHeadingEntries(functionalHeadings)], edition, accepted, placements), cleanerAccepted, cleanerHeadingHistory), functionalAccepted, functionalHeadings);
+const legacyEntries: LegacyEntry[] = remapProcessNetworkCitations(remapFunctionalReferenceCitations(remapCleanerProductionCitations(
+  remapBookCitations([...historical, ...cleanerProductionHeadingEntries(cleanerHeadingHistory), ...functionalReferenceHeadingEntries(functionalHeadings), ...processNetworkHeadingEntries(processHeadings)], edition, accepted, placements), cleanerAccepted, cleanerHeadingHistory), functionalAccepted, functionalHeadings), processAccepted, processHeadings);
 export function getLegacyCitations(route: string, print: boolean) {
   const path = print ? '/print' : route, aliases = new Map<string, LegacyEntry[]>(), notices: LegacyEntry[] = [], scopes = new Map<string, LegacyEntry>();
   for (const entry of legacyEntries) {
@@ -63,6 +67,8 @@ export const getChapterReferenceIndex = cache(async (print = false) => {
   const cleanerErrors = validateCleanerProductionCoverage(edition, new Map(rawPages.map(page => [page.url, page.raw])), cleanerAccepted, catalog);
   if (cleanerErrors.length) throw new Error(cleanerErrors.join('\n'));
   const rawSources = new Map(await Promise.all([...source.getPages(),...monographSource.getPages()].map(async page=>[page.url,await page.data.getText('raw')] as const)));
+  const processErrors = validateProcessNetworkCoverage(edition,rawSources,processAccepted,catalog,processProse);
+  if (processErrors.length) throw new Error(processErrors.join('\n'));
   const functionalErrors = validateFunctionalReferenceCoverage(edition,rawSources,functionalAccepted,catalog,functionalProse);
   if (functionalErrors.length) throw new Error(functionalErrors.join('\n'));
   if (print) {

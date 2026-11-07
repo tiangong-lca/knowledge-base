@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "status": "reviewed",
+  "reviewedAt": "2026-11-08",
+  "reviewKind": "agent-source-and-reader-check",
+  "reviewScope": "Exact accepted v2 canonical records, shared website/book MDX source, three-section placement and continuous ten-note manuscript after source/logic review and revised continuous-reader review. Structural checks do not establish human scientific approval, whole-work reading, empirical validation or full-book completion.",
+  "readerDraftSha256": "eaa31c91f5e72236b083f2680bc5d5d418d44d1f42d64a8ddc39c06d92ec6416",
+  "sourceBaselineCommit": "79af66d9fb6788e2b9e4e3478f3410e4c190d0b7",
+  "protocolCommit": "4c1a69e92a754f175d8425cd710fc7d1e3f08b67",
+  "sources": [
+    {
+      "route": "/docs/book/inventory-calculation",
+      "path": "content/docs/book/inventory-calculation.mdx",
+      "mdxSha256": "8d46bb3572f9fca9d01619c428ef3e92764e84804f5db17cd5c5288338f342ac",
+      "normalization": "CRLF to LF only"
+    }
+  ],
+  "claims": [
+    {
+      "id": "cl-inv-service-to-demand",
+      "text": "《功能参照》把服务要求连接到了方案需要的产品数量。拿到这个数量，还不知道供给它时，各过程的数据应放大或缩小多少：外部只要求交付一种产品，内部却可能需要多种供给活动。本章把选定的过程及其投入产出联系作为一个过程网络，先说明系统对外应净交付什么，再求出各份过程记录的倍率。这里用相对于记录基准的倍率表达过程参与的程度，尚不是一份实际设备运行记录。服务怎样被实现、所用关系从哪里取得，仍须各有依据。",
+      "kind": "interpretation",
+      "scope": "作者将服务/方案用量与给定过程系统的净外部需求、内部活动连接；不是关于任何产品的实测供给关系。",
+      "evidenceIds": [
+        "ev-inv-hs-coordinates",
+        "ev-inv-hs-balance"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-inv-hs-coordinates",
+          "relation": "context",
+          "rationale": "样章pp14–15在经济流坐标中表示系统的最终/外部需求，为本段的计算入口提供语境。"
+        },
+        {
+          "evidenceId": "ev-inv-hs-balance",
+          "relation": "context",
+          "rationale": "样章pp16–18把外部需求与满足内部供给的过程倍率区分；本段将其与本书服务解释连接。"
+        }
+      ],
+      "premiseIds": [
+        "cl-fu-distinction",
+        "cl-inv-demand-balance"
+      ],
+      "caveats": [
+        "需求坐标与过程关系属于明确给定的模型；有了形式表达不证明实际服务等效、数据充分或真实供给链已完整。"
+      ],
+      "reasoning": "将服务要求与方案用量的既有解释，接到所选过程系统的净外部需求和内部平衡；这是章际分析入口，不把计算步骤当作完成服务证据。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-inv-computation-start",
+      "text": "计算从哪里开始，决定了它能回答什么。Heijungs与Suh在其2002年著作的公开样章中，先把数据已经可得当作前提，再讨论怎样处理和组合这些数据；测量、估算和取得数据的方法并不在他们这部计算论述中展开。他们在原书的前几章又先把数值视为确定的，以建立基本方程。这里暂时搁置的工作并没有因此消失：用现成数据搭起计算结构，与判断这些数据是否适合所问的问题，是两项需要分别完成的工作。",
+      "kind": "source-statement",
+      "scope": "Heijungs 与 Suh 2002 著作公开样章 Chapter1 所述计算范围",
+      "evidenceIds": [
+        "ev-inv-hs-scope"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-inv-hs-scope",
+          "relation": "supports",
+          "rationale": "p2明确暂设数据可得和早期章节数值确定，并把数据取得技术留在本书范围之外。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "公开样章的章节简介不足以证明后续完整论证。"
+      ],
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-inv-coordinate-meaning",
+      "text": "一列数字要代表一个过程，首先得让每个位置都有固定含义：是哪一种产品、材料或排放，用什么单位，输入和输出怎样区分。样章约定输入为负、输出为正；换用另一套符号也可以，但必须前后一致。换单位时要换算相应数字；调换行序时，数字与对应的流名称、单位要一起移动。把这样的过程记录并排放置，列便对应过程，行对应流。过程之间的产品、材料、能源或服务等交换，样章称为经济流，用技术矩阵A表示；过程与环境之间的流则用环境干预矩阵B表示。两部分保留相同的过程列，行所指的对象则不同；不能因为都是一行数字，就把不同物质或单位的数量混加。",
+      "kind": "source-statement",
+      "scope": "Heijungs–Suh2002样章§2.1的特定符号和数据组织方式。",
+      "evidenceIds": [
+        "ev-inv-hs-coordinates"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-inv-hs-coordinates",
+          "relation": "supports",
+          "rationale": "pp12–15逐步设置坐标、输入负号、单位转换及A/B分区；本段保持其列过程、行流的约定。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "不同文献或软件可能采用不同符号；名称相同不等于矩阵定义相同。"
+      ],
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-inv-demand-balance",
+      "text": "有了这些坐标，便可把系统应向外净提供的产品数量写成需求向量f，再用倍率向量s表示各过程相对于其记录基准取多少倍。As＝f的意思是：按s缩放A的各列，然后在每一行分别相加，所得净交付恰好等于该行的外部需求。中间产品在过程之间的供应与消耗也在同一行中相抵。样章的唯一解有两个条件：A的行数与列数相等，即为方阵；各行方程的系数关系相互独立，即A非奇异、可逆。此时可写s＝A⁻¹f，其中A⁻¹是A的逆矩阵。公式沿用已经选定的过程与流；是否截断、选择哪些过程，以及同时产出多种产品等多功能情形怎样处理，仍是需要交代的建模问题。",
+      "kind": "source-statement",
+      "scope": "该样章的基本模型与唯一解条件；不涉及样章之外的改进算法。",
+      "evidenceIds": [
+        "ev-inv-hs-balance",
+        "ev-inv-hs-assumptions"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-inv-hs-balance",
+          "relation": "supports",
+          "rationale": "§2.2以经济流平衡建立As=f，并把需求和倍率分别定义为外部要求及过程缩放。"
+        },
+        {
+          "evidenceId": "ev-inv-hs-assumptions",
+          "relation": "qualifies",
+          "rationale": "§2.3将逆矩阵唯一解限于方阵且非奇异，§2.4列出不自动满足基本设置的情形。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "奇异或非方阵情形可能需要其他处理；本段未证明它们一概无解。"
+      ],
+      "conceptIds": [
+        "cn-inventory-balance"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-inv-scaling-basis",
+      "text": "倍率还要连同记录基准一起读。Heijungs与Suh在原书§2.6指出，同一过程可以按不同参考数量表示：把该过程整列输入输出同时乘以同一个正数c，在需求不变时，它所需的倍率就相应除以c。倍率的大小只有相对于记录基准才有意义。在过程与需求使用相同数量坐标的表示中，倍率无量纲；若另把过程数据按每单位时间的流率记录，而需求仍是产品数量，倍率便可带时间单位，表示用这份流率数据满足需求所对应的过程时间。这种解释依赖明确的记录方式，不能把任何倍率都直接读成设备实际运行了几次。",
+      "kind": "source-statement",
+      "scope": "Heijungs–Suh2002作者关联样章§2.6的参考过程表示与倍率解释；时间率表示为有条件的另一方案。",
+      "evidenceIds": [
+        "ev-inv-hs-scaling",
+        "ev-inv-hs-assumptions"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-inv-hs-scaling",
+          "relation": "supports",
+          "rationale": "pp27–28明确列向量c倍与倍率s_j/c、同坐标下无量纲及另行时间流率表示下的时间量纲。"
+        },
+        {
+          "evidenceId": "ev-inv-hs-assumptions",
+          "relation": "qualifies",
+          "rationale": "基本模型的线性与时空简化继续适用，不能由倍率解释推出动态排程或经验活动事实。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "时间量纲依赖所述时间率表达；它不提供实际设备启动次数、动态排放时序或经验运行记录。"
+      ],
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-inv-environment-scaling",
+      "text": "满足产品需求以后，同一组倍率还要带到环境流上。将B的各列按s缩放，再按同一环境流分别相加，得到g＝Bs；g记录的是所列排放、提取等环境交换的数量。这一步把“各过程要参与多少”连接到了“这些活动合计交换多少环境流”。连接依赖线性缩放和流量可加，不能自动表达地点、时序或生产规模变化的全部特征。所得清单也还不是影响评价或优劣判断：公式说明给定模型怎样计算，研究仍须说明这些关系为何适用于所问对象。",
+      "kind": "interpretation",
+      "scope": "2002 样章基本模型的含义及线性、可加假设的适用性",
+      "evidenceIds": [
+        "ev-inv-hs-balance",
+        "ev-inv-hs-assumptions"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-inv-hs-balance",
+          "relation": "supports",
+          "rationale": "§2.2用同一缩放向量组合干预矩阵并得到g=Bs，支撑本段对计算步骤的解释。"
+        },
+        {
+          "evidenceId": "ev-inv-hs-assumptions",
+          "relation": "qualifies",
+          "rationale": "§§2.3–2.4明确线性、可加与时空简化，限制把形式计算外推为现实适用性。"
+        }
+      ],
+      "premiseIds": [
+        "cl-inv-coordinate-meaning",
+        "cl-inv-demand-balance"
+      ],
+      "caveats": [
+        "环境清单数量不直接等于影响评价或方案优劣判断。"
+      ],
+      "conceptIds": [
+        "cn-inventory-balance"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-inv-example-inputs",
+      "text": "用一个完全虚构的两过程系统来看内部需求。先把每份过程记录的基准定清楚：甲记录产出1单位甲产品并消耗0.5单位乙产品；乙记录产出1单位乙产品并消耗0.1单位甲产品。这里的一份是按单位产出归一化的数据基准，不是一次真实设备启动。行依次为甲、乙产品，列依次为甲、乙过程，便有A＝[[1,−0.1],[−0.5,1]]。若外部只需要净得到1单位甲产品，f＝[1,0]。再设每份甲、乙记录分别产生2千克、1千克的同一种虚构基本排放流，都直接排入环境，写成一行B＝[2,1]。所有系数都由作者设定，既不是样章的原例，也不是产品实测资料。",
+      "kind": "calculation",
+      "scope": "作者设定、按单位产出归一化的两过程模型；同一种以千克计的虚构基本排放流；不构成完整产品研究设计。",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-inv-coordinate-meaning",
+        "cl-inv-demand-balance",
+        "cl-inv-environment-scaling"
+      ],
+      "caveats": [
+        "所有系数为人为输入；外部来源仅支撑表达与计算规则，不为虚构系数提供经验依据。"
+      ],
+      "reasoning": "选择简单正产出/负投入系数，形成甲乙之间双向需求；按列过程、行产品构造A，明确给定B与f。系数不是由来源推导出的事实。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-inv-example-solution",
+      "text": "令s甲、s乙分别表示甲、乙过程的倍率。甲产品这一行要求s甲−0.1s乙＝1，乙产品这一行要求s乙＝0.5s甲。把后式代入前式，得s甲＝20/19、s乙＝10/19；于是排放量为2×20/19＋10/19＝50/19千克，约2.632千克。甲过程略多于一份，是因为供给它的乙过程也需要甲产品；增加的甲生产又索取乙产品。乙的外部净需求虽然为零，内部供给却不是零。两个倍率同时满足这两条平衡关系，把已列入的甲乙反馈一起纳入了求解。",
+      "kind": "calculation",
+      "scope": "仅适用于上一段虚构A、B、f及线性/可加假设。",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-inv-example-inputs",
+        "cl-inv-demand-balance",
+        "cl-inv-environment-scaling"
+      ],
+      "caveats": [
+        "精确有理数解只适用于给定模型，不证明任何 LCA 软件已经正确实现。"
+      ],
+      "reasoning": "由s乙=s甲/2及s甲−s乙/10=1得s甲=20/19、s乙=10/19；直接计算A*s=[1,0]、B*s=50/19。两条平衡关系与排放求和均可直接代回核对。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-inv-example-truncated",
+      "text": "现在换一种记账办法：只记1份甲过程，以及它直接需要的0.5份乙过程，到这里便停止追踪。排放量会是2＋0.5＝2.5千克。较小的数来自遗漏了乙继续索取甲产品的关系；把倍率[1,0.5]代回原来的A，净产出只有[0.95,0]，没有完成原先要求的[1,0]。相对于完整模型的50/19千克，2.5千克恰好低5%。这个百分比只比较同一组虚构系数下的完整平衡与这一层展开规则，不能拿来校正现实清单，也不是一个经验误差率。",
+      "kind": "calculation",
+      "scope": "同一虚构模型；有限一层展开与两过程平衡解的比较。",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-inv-example-inputs",
+        "cl-inv-example-solution"
+      ],
+      "caveats": [
+        "5%不是经验误差率，也不能用作现实清单的统一修正系数。"
+      ],
+      "reasoning": "截断倍率s_t=[1,1/2]；A*s_t=[19/20,0]，B*s_t=5/2；(50/19−5/2)/(50/19)=1/20。遗漏的是过程乙对甲产品的反馈需求。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-inv-example-meaning",
+      "text": "至此解决的是给定过程之间的供需关系，尚未解决现实中该选哪些过程。Suh等人讨论系统边界的论文也指出，矩阵处理的上游供应关系仍局限于已经纳入所选边界的过程。甲乙例的方程可以检查这两种活动的反馈，却不能找出一项根本没有列入的活动，或替未知系数补上可靠数据。计算后的判断因而有两个落点：已表示的关系是否被完整求解，以及所表示的对象和关系是否足以回答问题。接下来考察交换记录时，还要追问那些名称、数量和连接，是否仍表示这里所说的同一对象与关系。",
+      "kind": "interpretation",
+      "scope": "从虚构计算及所读方法段落得出的有限解释；非一般误差估计。",
+      "evidenceIds": [
+        "ev-inv-suh-matrix",
+        "ev-inv-hs-scope"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-inv-suh-matrix",
+          "relation": "qualifies",
+          "rationale": "再印p21明确把无限阶关系限制在已纳入的过程，为区分反馈求解与边界遗漏提供直接限制。"
+        },
+        {
+          "evidenceId": "ev-inv-hs-scope",
+          "relation": "context",
+          "rationale": "样章p2预设数据可得，不能用其计算规则替代未知系数的取得与核查。"
+        }
+      ],
+      "premiseIds": [
+        "cl-inv-computation-start",
+        "cl-inv-environment-scaling",
+        "cl-inv-example-solution",
+        "cl-inv-example-truncated"
+      ],
+      "caveats": [
+        "求解给定平衡关系，不证明真实系统已被完整表示、功能实际等效或环境结论有效。"
+      ],
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    }
+  ]
+}

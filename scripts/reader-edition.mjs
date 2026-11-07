@@ -1,3 +1,4 @@
+import { assertProcessNetworkRegistration } from './reader-process-network.mjs';
 import { assertFunctionalReferenceRegistration, functionalReferenceSupplement } from './reader-functional-reference.mjs';
 import { createHash } from 'node:crypto';
 import { assertCleanerProductionRegistration } from './reader-cleaner-production.mjs';
@@ -23,6 +24,7 @@ export function currentEditionKeys(edition, availableSources, baseline, placemen
     throw new Error('Book edition has missing or duplicate units');
   assertCleanerProductionRegistration(edition);
   assertFunctionalReferenceRegistration(edition);
+  assertProcessNetworkRegistration(edition);
   const assembly = units.find(unit => unit.key === frameworkUnitKey);
   if (!assembly || assembly.source !== frameworkManuscript || assembly.kind !== 'chapter') throw new Error('Missing accepted B04 manuscript registration');
   if (!units.some(unit => unit.key === frameworkAppendix && unit.source === frameworkAppendix && unit.kind === 'appendix')) throw new Error('Missing accepted X02 appendix registration');

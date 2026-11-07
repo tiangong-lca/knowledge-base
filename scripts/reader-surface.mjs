@@ -1,3 +1,4 @@
+import { assertProcessNetworkProseAccepted, processNetworkHeadingEntries, remapProcessNetworkCitations, validateProcessNetworkCoverage, validateRenderedProcessNetwork } from './reader-process-network.mjs';
 import { assertFunctionalReferenceProseAccepted, functionalReferenceHeadingEntries, remapFunctionalReferenceCitations, validateFunctionalReferenceCoverage, validateRenderedFunctionalReference } from './reader-functional-reference.mjs';
 import { cleanerProductionHeadingEntries, remapCleanerProductionCitations, validateCleanerProductionCoverage, validateRenderedCleanerProduction } from './reader-cleaner-production.mjs';
 import { access, readdir, readFile } from 'node:fs/promises';
@@ -215,8 +216,8 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
   const historicPrintRoutes = book ? [...sourceBaseline.pages.filter(page=>page.printOrdinal!==undefined).map(page=>page.route),...locations.frontMatter,...(locations.printAdditions??[]).map(unit=>unit.route)] : printRoutes;
   let entries = [...createLegacyCitationEntries(sourceBaseline, locations, history?.pages),
     ...(history ? createCanonicalCitationEntries(history, locations, historicPrintRoutes) : [])];
-  if (book) entries = remapFunctionalReferenceCitations(remapCleanerProductionCitations(remapBookCitations(
-    [...entries,...publishedHeadingEntries(book.headingHistory),...cleanerProductionHeadingEntries(book.cleanerHeadingHistory),...functionalReferenceHeadingEntries(book.functionalHeadings)],book.edition,book.accepted,locations),book.cleanerAccepted,book.cleanerHeadingHistory),book.functionalAccepted,book.functionalHeadings);
+  if (book) entries = remapProcessNetworkCitations(remapFunctionalReferenceCitations(remapCleanerProductionCitations(remapBookCitations(
+    [...entries,...publishedHeadingEntries(book.headingHistory),...cleanerProductionHeadingEntries(book.cleanerHeadingHistory),...functionalReferenceHeadingEntries(book.functionalHeadings),...processNetworkHeadingEntries(book.processHeadings)],book.edition,book.accepted,locations),book.cleanerAccepted,book.cleanerHeadingHistory),book.functionalAccepted,book.functionalHeadings),book.processAccepted,book.processHeadings);
   const addresses = new Set();
   for (const entry of entries) {
     const address = `${entry.path}#${entry.id}`;
@@ -236,7 +237,7 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
     }
     const document = htmlParser.parse(html);
     const surface = readCitationSurface(document, path);
-    if (book) errors.push(...validateRenderedCleanerProduction(document,path,book.cleanerAccepted,book.catalog), ...validateRenderedFunctionalReference(document,path,book.functionalAccepted,book.catalog,book.functionalProse));
+    if (book) errors.push(...validateRenderedCleanerProduction(document,path,book.cleanerAccepted,book.catalog), ...validateRenderedFunctionalReference(document,path,book.functionalAccepted,book.catalog,book.functionalProse), ...validateRenderedProcessNetwork(document,path,book.processAccepted,book.catalog,book.processProse));
     if (!surface.ids.has('main-content')) errors.push(`${path}: missing main-content fragment`);
     pages.set(path, surface);
     errors.push(...surface.errors);
@@ -288,6 +289,7 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
     errors.push(...validateFrameworkCoverage(book.edition,book.sources,book.accepted));
     errors.push(...validateCleanerProductionCoverage(book.edition,book.sources,book.cleanerAccepted,book.catalog));
     errors.push(...validateFunctionalReferenceCoverage(book.edition,book.sources,book.functionalAccepted,book.catalog,book.functionalProse));
+    errors.push(...validateProcessNetworkCoverage(book.edition,book.sources,book.processAccepted,book.catalog,book.processProse));
   }
   if (book && print) errors.push(...validateRenderedFrameworkCoverage(print.bodyClaims,book.accepted));
   return errors;
@@ -346,10 +348,10 @@ export async function validateReaderOutput(root, { knownIds = new Set() } = {}) 
     });
     if (hasReaderSource) await discover(sourceDirectory);
     const readConfig = async file => readFile(join(config,file),'utf8').then(JSON.parse,error=>{if(error.code==='ENOENT')return null;throw error;});
-    const [edition,accepted,headingHistory,cleanerAccepted,cleanerHeadingHistory,functionalAccepted,functionalHeadings,functionalProse] = await Promise.all(['book-edition.json','framework-accepted.json','framework-heading-history.json','cleaner-production-accepted.json','cleaner-production-heading-history.json','functional-reference-accepted.json','functional-reference-heading-history.json','functional-reference-prose-accepted.json'].map(readConfig));
+    const [edition,accepted,headingHistory,cleanerAccepted,cleanerHeadingHistory,functionalAccepted,functionalHeadings,functionalProse,processAccepted,processHeadings,processProse] = await Promise.all(['book-edition.json','framework-accepted.json','framework-heading-history.json','cleaner-production-accepted.json','cleaner-production-heading-history.json','functional-reference-accepted.json','functional-reference-heading-history.json','functional-reference-prose-accepted.json','process-network-accepted.json','process-network-heading-history.json','process-network-prose-accepted.json'].map(readConfig));
     let book = null;
     if (edition || accepted || headingHistory || cleanerAccepted || cleanerHeadingHistory) {
-      if (!edition || !accepted || !headingHistory || !cleanerAccepted || !cleanerHeadingHistory || !functionalAccepted || !functionalHeadings || !functionalProse) throw new Error('Book edition requires its accepted proposition and published heading inventories');
+      if (!edition || !accepted || !headingHistory || !cleanerAccepted || !cleanerHeadingHistory || !functionalAccepted || !functionalHeadings || !functionalProse || !processAccepted || !processHeadings || !processProse) throw new Error('Book edition requires its accepted proposition and published heading inventories');
       const sources = new Map();
       async function discoverRaw(directory,prefix) {
         for (const entry of await readdir(directory,{withFileTypes:true})) {
@@ -366,7 +368,8 @@ export async function validateReaderOutput(root, { knownIds = new Set() } = {}) 
       await discoverRaw(manuscriptDirectory,'/monograph');
       const catalog = JSON.parse(await readFile(resolve(root,'..','knowledge','catalog.json'),'utf8'));
       assertFunctionalReferenceProseAccepted(functionalProse);
-      book={edition,accepted,headingHistory,cleanerAccepted,cleanerHeadingHistory,functionalAccepted,functionalHeadings,functionalProse,sources,catalog};
+      assertProcessNetworkProseAccepted(processProse);
+      book={edition,accepted,headingHistory,cleanerAccepted,cleanerHeadingHistory,functionalAccepted,functionalHeadings,functionalProse,processAccepted,processHeadings,processProse,sources,catalog};
       sourceRoutes.splice(0,sourceRoutes.length,...sources.keys());
     }
     errors.push(...await validateLegacyCitationOutput(root, baseline, placements, hasReaderSource ? sourceRoutes : null, history,book));
