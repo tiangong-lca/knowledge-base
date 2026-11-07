@@ -140,3 +140,11 @@ button { cursor: pointer; }
 .legacy-citation-context { display: block; margin: .55rem 0; padding: .55rem .75rem; border-inline-start: 2px solid var(--color-fd-border); color: var(--color-fd-muted-foreground); font-size: .875rem; }
 .legacy-citation-context a { text-decoration: underline; }
 @media print { .legacy-citation-context { display: none; } }
+
+/* Screen-only end separators can spill onto an otherwise empty printed page
+   before the next chapter's forced page break. */
+@media print {
+  .print-chapter { padding-bottom: 0; border-bottom: 0; }
+  .scholarly-prose > p { break-inside: avoid; }
+  .prose-reference-tail { white-space: nowrap; }
+}

@@ -7,6 +7,7 @@ import { citationHref, citationSourceHref, createCurrentPrintRoutes, createLegac
 // Use the parser already bundled by the exact Next dependency (16.4.4).
 // This internal bundle is intentionally version-coupled and covered by tests;
 // there is no additional parser dependency or hand-written HTML stripping.
+import { currentEditionKeys, validateFrameworkCoverage, remapBookCitations, publishedHeadingEntries, validateRenderedFrameworkCoverage } from './reader-edition.mjs';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 
 const processPatterns = [
@@ -18,7 +19,7 @@ const aiExecution = /AI\s*辅助(?:来源)?核查(?:稿)?|来源核查由\s*AI\s
 const machineKeys = new Set(['inputSha256', 'sourceCommit', 'reviewedAt', 'reviewKind', 'caseBinding', 'schemaVersion', 'artifactKind', 'scientificApproval', 'captureMethod', 'readingStatus', 'accessStatus', 'agent-source-check', 'selected-passages', 'not-close-read', 'working-preview']);
 const rawHash = /(?<![a-f0-9])[a-f0-9]{64}(?![a-f0-9])/gi;
 const caseId = /\bCASE-[A-Z0-9]+(?:-[A-Z0-9]+)*\b/g;
-const localDeveloperPath = value => /^\/(?:_docs)(?:\/|$)/.test(value);
+const localDeveloperPath = value => /^\/(?:_docs|monograph)(?:\/|$)/.test(value);
 
 /** Actual project identities, not a blanket ban on scientific words. */
 export function readerInternalIds(...records) {
@@ -150,12 +151,13 @@ function readCitationSurface(document, path) {
       noteNumbers.set(note.id, index + 1);
     }
   }
-  const cited = new Set();
+  const cited = new Set(), bodyClaims = new Map();
   for (const marker of document.querySelectorAll('a[role="doc-noteref"]')) {
     const href = marker.getAttribute('href') ?? '';
     const claimId = marker.getAttribute('data-reader-reference');
     const route = path === '/print' ? marker.closest('article[data-reader-route]')?.getAttribute('data-reader-route') : path;
     const prefix = route && (path === '/print' ? printUnitAnchor(route) : chapterAnchorPrefix(route));
+    const occurrences = bodyClaims.get(route) ?? []; occurrences.push(claimId); bodyClaims.set(route,occurrences);
     const number = href.startsWith('#') ? noteNumbers.get(href.slice(1)) : null;
     if (!prefix || !claimId || href !== `#${chapterNoteAnchor(prefix, claimId)}` || !number
       || marker.text !== `[${number}]` || marker.getAttribute('aria-label') !== `注 ${number}`)
@@ -176,17 +178,21 @@ function readCitationSurface(document, path) {
     const links = notice ? node.querySelectorAll('a[data-legacy-destination]').map(link => link.getAttribute('href')) : [];
     const section = /^H[1-6]$/.test(node.tagName) || node.getAttribute('data-reader-section') === node.id;
     if (ids.has(node.id)) errors.push(`${path}: duplicate citation surface ID ${node.id}`);
-    ids.set(node.id, { route, claimId, section, tag: node.tagName, notice, alias, edition, editionDate, links, number: noteNumbers.get(node.id) });
+    const title = path === '/print' ? node.closest('article[data-reader-route]')?.getAttribute('data-reader-title') : document.querySelector('h1')?.text;
+    ids.set(node.id, { title, route, claimId, section, tag: node.tagName, notice, alias, edition, editionDate, links, number: noteNumbers.get(node.id) });
   }
   const printOrder = path === '/print' ? document.querySelectorAll('article[data-reader-route]').map(article => article.getAttribute('data-reader-route')) : [];
-  return { ids, errors, printOrder };
+  const noteLinks = document.querySelectorAll('a[href]').map(link=>({href:link.getAttribute('href'),label:link.text})).filter(link=>/-claim-[A-Za-z0-9]/.test(link.href) && /注\s*\d+/.test(link.label));
+  return { ids, errors, printOrder, noteLinks, bodyClaims };
 }
 
-export async function validateLegacyCitationOutput(root, sourceBaseline, locations, availableRoutes = null, history = null) {
+export async function validateLegacyCitationOutput(root, sourceBaseline, locations, availableRoutes = null, history = null, book = null) {
   const sourceRoutes = availableRoutes ?? [...sourceBaseline.pages.map(page => page.route), ...(locations.printAdditions ?? []).map(page => page.route)];
-  const printRoutes = createCurrentPrintRoutes(sourceBaseline, locations, sourceRoutes);
-  const entries = [...createLegacyCitationEntries(sourceBaseline, locations, history?.pages),
-    ...(history ? createCanonicalCitationEntries(history, locations, printRoutes) : [])];
+  const printRoutes = book ? currentEditionKeys(book.edition, sourceRoutes, sourceBaseline, locations) : createCurrentPrintRoutes(sourceBaseline, locations, sourceRoutes);
+  const historicPrintRoutes = book ? [...sourceBaseline.pages.filter(page=>page.printOrdinal!==undefined).map(page=>page.route),...locations.frontMatter,...(locations.printAdditions??[]).map(unit=>unit.route)] : printRoutes;
+  let entries = [...createLegacyCitationEntries(sourceBaseline, locations, history?.pages),
+    ...(history ? createCanonicalCitationEntries(history, locations, historicPrintRoutes) : [])];
+  if (book) entries = remapBookCitations([...entries,...publishedHeadingEntries(book.headingHistory)],book.edition,book.accepted,locations);
   const addresses = new Set();
   for (const entry of entries) {
     const address = `${entry.path}#${entry.id}`;
@@ -240,6 +246,19 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
       if (!semanticMatch) errors.push(`${address}: wrong or missing ${target.kind} destination ${target.path}/#${target.id}`);
     }
   }
+  // Every displayed cross-unit note label must use the actual destination plan.
+  for (const [path, surface] of pages) for (const link of surface.noteLinks) {
+    const match = /^(?:([^#]+?)\/?)?#(.+)$/.exec(link.href);
+    if (!match) continue;
+    const destinationPath = match[1]?.replace(/\/$/,'') || path;
+    const actual = pages.get(destinationPath)?.ids.get(decodeURIComponent(match[2]));
+    const number = /注\s*(\d+)/.exec(link.label)?.[1];
+    if (!actual?.number || Number(number)!==actual.number) errors.push(`${path}: wrong or missing destination note label ${link.href}`);
+    const title = /^《(.+?)》注/.exec(link.label)?.[1];
+    if (title && actual?.title && title !== actual.title) errors.push(`${path}: wrong destination note title ${link.href}`);
+  }
+  if (book?.sources) errors.push(...validateFrameworkCoverage(book.edition,book.sources,book.accepted));
+  if (book && print) errors.push(...validateRenderedFrameworkCoverage(print.bodyClaims,book.accepted));
   return errors;
 }
 
@@ -295,7 +314,29 @@ export async function validateReaderOutput(root, { knownIds = new Set() } = {}) 
       return false;
     });
     if (hasReaderSource) await discover(sourceDirectory);
-    errors.push(...await validateLegacyCitationOutput(root, baseline, placements, hasReaderSource ? sourceRoutes : null, history));
+    const readConfig = async file => readFile(join(config,file),'utf8').then(JSON.parse,error=>{if(error.code==='ENOENT')return null;throw error;});
+    const [edition,accepted,headingHistory] = await Promise.all(['book-edition.json','framework-accepted.json','framework-heading-history.json'].map(readConfig));
+    let book = null;
+    if (edition || accepted || headingHistory) {
+      if (!edition || !accepted || !headingHistory) throw new Error('Book edition requires its accepted proposition and published heading inventories');
+      const sources = new Map();
+      async function discoverRaw(directory,prefix) {
+        for (const entry of await readdir(directory,{withFileTypes:true})) {
+          const path=join(directory,entry.name);
+          if(entry.isDirectory())await discoverRaw(path,`${prefix}/${entry.name}`);
+          else if(entry.isFile()&&/\.mdx?$/.test(entry.name)) {
+            const route=`${prefix}/${entry.name.replace(/\.mdx?$/,'')}`.replace(/\/index$/,'');
+            sources.set(route,await readFile(path,'utf8'));
+          }
+        }
+      }
+      await discoverRaw(sourceDirectory,'/docs');
+      const manuscriptDirectory=resolve(root,'..','content','monograph');
+      await discoverRaw(manuscriptDirectory,'/monograph');
+      book={edition,accepted,headingHistory,sources};
+      sourceRoutes.splice(0,sourceRoutes.length,...sources.keys());
+    }
+    errors.push(...await validateLegacyCitationOutput(root, baseline, placements, hasReaderSource ? sourceRoutes : null, history,book));
     if (!history) errors.push('The book export requires the historical canonical citation inventory');
   } else if (baseline || placements || history || bookSource || bookOutput) errors.push('The book export requires both the reader citation baseline and placement files');
   return [...new Set(errors)];
