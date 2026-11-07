@@ -18715,6 +18715,52 @@
           "pdfIndices": [
             38
           ]
+        },
+        {
+          "id": "psg-kb74-bottle-reference-sign-2026-11-08",
+          "artifactId": "art-kb50-bottle-tutorial",
+          "locator": "扉页与§1 p6；表2 p16；§§9.1–9.2 pp38–42，图47–55的参考量、方向、类型、数量、窗格标题与图注；选读日期：2026-11-08。",
+          "topics": [
+            "参考对象",
+            "废物表示",
+            "局部清单",
+            "显示精度"
+          ],
+          "limits": [
+            "只核对教学模型的具名字段与截图；0.065 kg参考输出不与等量处理交换相加。",
+            "图55的Production图注与Usage窗格、完整计算设置缺席分别保留。"
+          ],
+          "pdfIndices": [
+            0,
+            5,
+            15,
+            37,
+            38,
+            39,
+            40,
+            41
+          ],
+          "printedPages": "1、6、16、38–42"
+        },
+        {
+          "id": "psg-kb74-bottle-allocation-settings-2026-11-08",
+          "artifactId": "art-kb50-bottle-tutorial",
+          "locator": "§7.1 p30图34及§10 pp43–45图56–58；分配、方法、目标、项目UUID和图示结果；选读日期：2026-11-08。",
+          "topics": [
+            "分配",
+            "计算设置",
+            "项目身份"
+          ],
+          "limits": [
+            "图34的配置不自动成为图55的配置。图57项目UUID与三月归档项目不同，显示值相符不使其成为同一次历史运行。"
+          ],
+          "pdfIndices": [
+            29,
+            42,
+            43,
+            44
+          ],
+          "printedPages": "30、43–45"
         }
       ],
       "appraisal": {
@@ -18786,6 +18832,31 @@
           "limits": [
             "同名图57项目UUID不同，不能认定完全同一项目。无运行证据。",
             "成员未给出具体系统 UUID、方法 UUID、目标量或各变体的结构化分配枚举。"
+          ]
+        },
+        {
+          "id": "psg-kb74-bottle-archive-identity-2026-11-08",
+          "artifactId": "art-kb50-bottle-backup",
+          "locator": "Master_bottles_solved_20200319.zolca的ZIP目录、日期及_olca_/updates/5912d392-e353-4158-a730-e3df6e7cfb5b.MF；选读日期：2026-11-08。",
+          "topics": [
+            "归档身份",
+            "数据库迁移"
+          ],
+          "limits": [
+            "已执行schema v8升级清单、归档成员日期与教程软件版本是不同身份；本次没有打开数据库或重新求解。"
+          ]
+        },
+        {
+          "id": "psg-kb74-bottle-report-values-2026-11-08",
+          "artifactId": "art-kb50-bottle-allocation-report",
+          "locator": "_olca_/projects/44fe2047-a72c-44ad-9a6f-58d55428a40a/report.json：title、variants、indicators及results[0].variantResults；选读日期：2026-11-08。",
+          "topics": [
+            "保存结果",
+            "分配",
+            "成员身份"
+          ],
+          "limits": [
+            "保存的No Allocation与Economic Allocation值不代替运行设置或所有矩阵。报告与教程图57的项目身份保持分立。"
           ]
         }
       ],
@@ -20083,6 +20154,188 @@
           "limits": [
             "仅核对原 XML 声明，未据此判断软件如何解析版本差异。"
           ]
+        },
+        {
+          "id": "psg-kb74-jrc-model-2026-11-08",
+          "artifactId": "art-kb50-jrc-model",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/lifecyclemodels/10062015cc-184a-41b8-8fa6-49e999cbd101.xml：dataSetInformation、quantitativeReference、technology/processes实例0–6的参数、倍率、组和连接；intendedApplications及publicationAndOwnership；选读日期：2026-11-08。",
+          "topics": [
+            "实例与连接",
+            "参数覆盖",
+            "参考量",
+            "使用条件"
+          ],
+          "limits": [
+            "同一示例的实例、图与记录不构成独立确认；仅限非商业接口测试，不用于实际LCA研究。"
+          ]
+        },
+        {
+          "id": "psg-kb74-jrc-result-2026-11-08",
+          "artifactId": "art-kb50-jrc-result",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/processes/a91683fe-3b0b-471c-a007-f9d8b4e29d5a.xml：quantitativeReference及七条exchanges的flow引用、exchangeDirection、meanAmount、resultingAmount与变量引用；选读日期：2026-11-08。",
+          "topics": [
+            "指定结果",
+            "数量字段",
+            "完整性边界"
+          ],
+          "limits": [
+            "六条非参考交换无变量而两量不同，保留源内不一致；指定结果缺少清洗末端废物，不等于完整开放流清单。"
+          ]
+        },
+        {
+          "id": "psg-kb74-jrc-wash-2026-11-08",
+          "artifactId": "art-kb50-jrc-wash",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/processes/23dd327f-d58e-42da-82ac-351c42df0127.xml：quantitativeReference、mathematicalRelations及全部已列exchanges的流引用、方向、meanAmount、resultingAmount和referenceToVariable；选读日期：2026-11-08。",
+          "topics": [
+            "过程参考",
+            "公式与交换",
+            "参数"
+          ],
+          "limits": [
+            "仅核读这份示例的所列交换与公式；原件字段不是原生执行或真实行业证据。"
+          ]
+        },
+        {
+          "id": "psg-kb74-jrc-rail-2026-11-08",
+          "artifactId": "art-kb50-jrc-rail",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/processes/24b22ed7-6187-4bea-b8b1-eccbfc267cb9.xml：quantitativeReference、mathematicalRelations及全部已列exchanges的流引用、方向、meanAmount、resultingAmount和referenceToVariable；选读日期：2026-11-08。",
+          "topics": [
+            "过程参考",
+            "公式与交换",
+            "参数"
+          ],
+          "limits": [
+            "仅核读这份示例的所列交换与公式；原件字段不是原生执行或真实行业证据。"
+          ]
+        },
+        {
+          "id": "psg-kb74-jrc-granulate-2026-11-08",
+          "artifactId": "art-kb50-jrc-granulate",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/processes/8ddfe862-e580-47ab-a248-b62c6f4323d4.xml：quantitativeReference、mathematicalRelations及全部已列exchanges的流引用、方向、meanAmount、resultingAmount和referenceToVariable；选读日期：2026-11-08。",
+          "topics": [
+            "过程参考",
+            "公式与交换",
+            "参数"
+          ],
+          "limits": [
+            "仅核读这份示例的所列交换与公式；原件字段不是原生执行或真实行业证据。"
+          ]
+        },
+        {
+          "id": "psg-kb74-jrc-grid-2026-11-08",
+          "artifactId": "art-kb50-jrc-grid",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/processes/e38740ed-4e9e-4f4c-ae17-251ca7442c58.xml：quantitativeReference、mathematicalRelations及全部已列exchanges的流引用、方向、meanAmount、resultingAmount和referenceToVariable；选读日期：2026-11-08。",
+          "topics": [
+            "过程参考",
+            "公式与交换",
+            "参数"
+          ],
+          "limits": [
+            "仅核读这份示例的所列交换与公式；原件字段不是原生执行或真实行业证据。"
+          ]
+        },
+        {
+          "id": "psg-kb74-jrc-machine-2026-11-08",
+          "artifactId": "art-kb50-jrc-machine",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/processes/e642549a-ed92-4db7-a877-5b53e5acdd8c.xml：quantitativeReference、mathematicalRelations及全部已列exchanges的流引用、方向、meanAmount、resultingAmount和referenceToVariable；选读日期：2026-11-08。",
+          "topics": [
+            "过程参考",
+            "公式与交换",
+            "参数"
+          ],
+          "limits": [
+            "仅核读这份示例的所列交换与公式；原件字段不是原生执行或真实行业证据。"
+          ]
+        },
+        {
+          "id": "psg-kb74-jrc-moulding-2026-11-08",
+          "artifactId": "art-kb50-jrc-moulding",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/processes/ecf3ceb8-1907-482e-8550-efd5c1f970e9.xml：quantitativeReference、mathematicalRelations及全部已列exchanges的流引用、方向、meanAmount、resultingAmount和referenceToVariable；选读日期：2026-11-08。",
+          "topics": [
+            "过程参考",
+            "公式与交换",
+            "参数"
+          ],
+          "limits": [
+            "仅核读这份示例的所列交换与公式；原件字段不是原生执行或真实行业证据。"
+          ]
+        },
+        {
+          "id": "psg-kb74-jrc-rail-property-reference-2026-11-08",
+          "artifactId": "art-kb50-jrc-flow-598e8a3b-c1e5-49d2-8305-176bfd0af3c2",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flows/598e8a3b-c1e5-49d2-8305-176bfd0af3c2.xml：UUID、typeOfDataSet、quantitativeReference、参考属性与版本引用及dataSetVersion；选读日期：2026-11-08。",
+          "topics": [
+            "流与属性身份",
+            "版本引用"
+          ],
+          "limits": [
+            "版本请求与实际成员身份分别保留；UUID查找或数值相符不证明指定版本得到满足。"
+          ]
+        },
+        {
+          "id": "psg-kb74-jrc-energy-property-record-2026-11-08",
+          "artifactId": "art-kb50-jrc-property-93a60a56-a3c8-11da-a746-0800200c9a66",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flowproperties/93a60a56-a3c8-11da-a746-0800200c9a66.xml：UUID、Net calorific value名称、参考单位组与dataSetVersion；选读日期：2026-11-08。",
+          "topics": [
+            "流与属性身份",
+            "版本引用"
+          ],
+          "limits": [
+            "版本请求与实际成员身份分别保留；UUID查找或数值相符不证明指定版本得到满足。"
+          ]
+        },
+        {
+          "id": "psg-kb74-jrc-machine-flow-2026-11-08",
+          "artifactId": "art-kb50-jrc-flow-a1ff365a-b063-4993-9ddc-6c68dd45ff81",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/flows/a1ff365a-b063-4993-9ddc-6c68dd45ff81.xml：UUID、typeOfDataSet、quantitativeReference、参考属性与版本引用及dataSetVersion；选读日期：2026-11-08。",
+          "topics": [
+            "流与属性身份",
+            "版本引用"
+          ],
+          "limits": [
+            "版本请求与实际成员身份分别保留；UUID查找或数值相符不证明指定版本得到满足。"
+          ]
+        },
+        {
+          "id": "psg-kb74-jrc-diagram-all-ids-2026-11-08",
+          "artifactId": "art-kb50-jrc-example_model_04_all_ids",
+          "locator": "eILCD-SDK_v2.1.1/doc/example_model/example_model_04_all_ids.pdf p1：七实例、箭头、UUID、数量和参考关系；选读日期：2026-11-08。",
+          "topics": [
+            "图示对象",
+            "连接",
+            "显示精度"
+          ],
+          "limits": [
+            "仅视觉核对这一张具名图；图中舍入值不替代XML或运行记录。"
+          ],
+          "pdfIndices": [
+            0
+          ],
+          "printedPages": "1"
+        },
+        {
+          "id": "psg-kb74-jrc-unit-mass-2026-11-08",
+          "artifactId": "art-kb50-jrc-mass",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/unitgroups/93a60a57-a4c8-11da-a746-0800200c9a66.xml：quantitativeReference、kg参考单位及其换算；选读日期：2026-11-08。",
+          "topics": [
+            "参考单位",
+            "单位换算"
+          ],
+          "limits": [
+            "仅限所用kg参考与换算；未评估单位组全部替代单位。"
+          ]
+        },
+        {
+          "id": "psg-kb74-jrc-unit-energy-2026-11-08",
+          "artifactId": "art-kb50-jrc-energy",
+          "locator": "eILCD-SDK_v2.1.1/ILCD/unitgroups/93a60a57-a3c8-11da-a746-0800200c9a66.xml：quantitativeReference、MJ参考单位及kWh换算；选读日期：2026-11-08。",
+          "topics": [
+            "参考单位",
+            "单位换算"
+          ],
+          "limits": [
+            "仅限所用MJ及kWh参考与换算；未评估单位组全部替代单位。"
+          ]
         }
       ],
       "appraisal": {
@@ -20210,6 +20463,20 @@
             "本轮来源检查代理直接读取固定HTML这四行及其中枚举解释；没有另行取得外部枚举页、XSD或执行软件。",
             "1-1-4-16是@type为Reference flow(s)时对本数据集一个或多个输入/输出交换的内部引用。",
             "功能单位可以描述性能并可在参考流之外补充；字段记录能力不证明实际服务实现、求解行为或通用换算。"
+          ]
+        },
+        {
+          "id": "psg-kb74-ilcd11-exchange-values-2026-11-08",
+          "artifactId": "art-kb50-jrc-process-doc",
+          "locator": "Process data set，Inputs and Outputs：exchangeDirection 1-7-32-123的Input/Output枚举、referenceToVariable 1-7-32-124、meanAmount 1-7-32-125、resultingAmount 1-7-32-126；2026-11-08复核既有固定HTML选段。",
+          "topics": [
+            "方向与负值",
+            "变量乘数",
+            "最终交换量"
+          ],
+          "limits": [
+            "保留原2026-11-06取得及2026-11-07定量参考选读，未替换此前事件或字段定位。",
+            "这些字段说明不证明JRC示例始终符合，也不证明任何导入器按该说明运行。"
           ]
         }
       ],
@@ -20407,6 +20674,76 @@
           "id": "psg-kb50-jrc-lavoisier-rights",
           "artifactId": "art-kb50-jrc-lavoisier",
           "locator": "PDF p14；Open Access 许可段",
+          "topics": [
+            "版权许可与保留"
+          ],
+          "limits": [
+            "不据此推定作者全部输入数据的授权。"
+          ],
+          "pdfIndices": [
+            13
+          ],
+          "printedPages": "14"
+        },
+        {
+          "id": "psg-kb74-jrc-lavoisier-scope-2026-11-08",
+          "artifactId": "art-kb50-jrc-lavoisier",
+          "locator": "PDF pp1、5；摘要，§2.4 Flows，第二个连结段；选读日期：2026-11-08。",
+          "topics": [
+            "普通ILCD",
+            "排除eILCD模型"
+          ],
+          "limits": [
+            "不能用它判定 eILCD 图的提供者转换行为。"
+          ],
+          "pdfIndices": [
+            0,
+            4
+          ],
+          "printedPages": "1、5"
+        },
+        {
+          "id": "psg-kb74-jrc-lavoisier-test-2026-11-08",
+          "artifactId": "art-kb50-jrc-lavoisier",
+          "locator": "PDF pp7–8；§§2.9–2.10 与 Table 1；选读日期：2026-11-08。",
+          "topics": [
+            "验证分层",
+            "计算和解释信息",
+            "LCIA界限"
+          ],
+          "limits": [
+            "验证范围以文中实际比较为准。",
+            "§2.9称305份EcoSpold2文件用于验证，摘要及图4–5称115份用于比较；所读段落未建立两组范围的关系，不推定差异原因。"
+          ],
+          "pdfIndices": [
+            6,
+            7
+          ],
+          "printedPages": "7、8"
+        },
+        {
+          "id": "psg-kb74-jrc-lavoisier-provider-2026-11-08",
+          "artifactId": "art-kb50-jrc-lavoisier",
+          "locator": "PDF pp10–12；§§3.1–3.2，Figures 4–7 与 provider/location 段；选读日期：2026-11-08。",
+          "topics": [
+            "activityLinkId",
+            "基础流匹配",
+            "方向性损失"
+          ],
+          "limits": [
+            "不能把丢失标识的局部数量一致外推为被选供方网络不变。"
+          ],
+          "pdfIndices": [
+            9,
+            10,
+            11
+          ],
+          "printedPages": "10、11、12"
+        },
+        {
+          "id": "psg-kb74-jrc-lavoisier-rights-2026-11-08",
+          "artifactId": "art-kb50-jrc-lavoisier",
+          "locator": "PDF p14；Open Access 许可段；选读日期：2026-11-08。",
           "topics": [
             "版权许可与保留"
           ],
@@ -20862,6 +21199,246 @@
           ],
           "limits": [
             "只说明该辅助方法的视图变换。矩阵原符号、传入标记及结果调用路径仍需逐项核对。"
+          ]
+        },
+        {
+          "id": "psg-kb74-olca-setup-2026-11-08",
+          "artifactId": "art-kb50-olca-setup",
+          "locator": "org/openlca/core/model/CalculationSetup.java :: 22–54、115–173、180–218、239–275 行；各段前后四行必要上下文；选读日期：2026-11-08。",
+          "topics": [
+            "固定发行源码",
+            "字段与计算路径"
+          ],
+          "limits": [
+            "仅限2.7.0所列成员和路径。本次未编译、执行原生模块、核准历史桌面行为或验证所有调用入口。"
+          ]
+        },
+        {
+          "id": "psg-kb74-olca-reference-amount-2026-11-08",
+          "artifactId": "art-kb50-olca-reference-amount",
+          "locator": "org/openlca/core/math/ReferenceAmount.java :: 38–74 行；各段前后四行必要上下文；选读日期：2026-11-08。",
+          "topics": [
+            "固定发行源码",
+            "字段与计算路径"
+          ],
+          "limits": [
+            "仅限2.7.0所列成员和路径。本次未编译、执行原生模块、核准历史桌面行为或验证所有调用入口。"
+          ]
+        },
+        {
+          "id": "psg-kb74-olca-exchange-sign-2026-11-08",
+          "artifactId": "art-kb50-olca-exchange-sign",
+          "locator": "org/openlca/core/matrix/CalcExchange.java :: 77–112 行；各段前后四行必要上下文；选读日期：2026-11-08。",
+          "topics": [
+            "固定发行源码",
+            "字段与计算路径"
+          ],
+          "limits": [
+            "仅限2.7.0所列成员和路径。本次未编译、执行原生模块、核准历史桌面行为或验证所有调用入口。"
+          ]
+        },
+        {
+          "id": "psg-kb74-olca-conversion-2026-11-08",
+          "artifactId": "art-kb50-olca-conversion",
+          "locator": "org/openlca/core/matrix/cache/ConversionTable.java :: 78–88 行；各段前后四行必要上下文；选读日期：2026-11-08。",
+          "topics": [
+            "固定发行源码",
+            "字段与计算路径"
+          ],
+          "limits": [
+            "仅限2.7.0所列成员和路径。本次未编译、执行原生模块、核准历史桌面行为或验证所有调用入口。"
+          ]
+        },
+        {
+          "id": "psg-kb74-olca-saved-links-2026-11-08",
+          "artifactId": "art-kb50-olca-saved-links",
+          "locator": "org/openlca/core/matrix/index/TechIndex.java :: 85–150 行；各段前后四行必要上下文；选读日期：2026-11-08。",
+          "topics": [
+            "固定发行源码",
+            "字段与计算路径"
+          ],
+          "limits": [
+            "仅限2.7.0所列成员和路径。本次未编译、执行原生模块、核准历史桌面行为或验证所有调用入口。"
+          ]
+        },
+        {
+          "id": "psg-kb74-olca-default-provider-2026-11-08",
+          "artifactId": "art-kb50-olca-default-provider",
+          "locator": "org/openlca/core/matrix/linking/ProviderSearch.java :: 23–94 行；各段前后四行必要上下文；选读日期：2026-11-08。",
+          "topics": [
+            "固定发行源码",
+            "字段与计算路径"
+          ],
+          "limits": [
+            "仅限2.7.0所列成员和路径。本次未编译、执行原生模块、核准历史桌面行为或验证所有调用入口。"
+          ]
+        },
+        {
+          "id": "psg-kb74-olca-open-inventory-2026-11-08",
+          "artifactId": "art-kb50-olca-open-inventory",
+          "locator": "org/openlca/core/matrix/InventoryBuilder.java :: 155–205 行；各段前后四行必要上下文；选读日期：2026-11-08。",
+          "topics": [
+            "固定发行源码",
+            "字段与计算路径"
+          ],
+          "limits": [
+            "仅限2.7.0所列成员和路径。本次未编译、执行原生模块、核准历史桌面行为或验证所有调用入口。"
+          ]
+        },
+        {
+          "id": "psg-kb74-olca-json-export-2026-11-08",
+          "artifactId": "art-kb50-olca-json-export",
+          "locator": "org/openlca/jsonld/output/JsonExport.java :: 79–93、127–145、169–203 行；各段前后四行必要上下文；选读日期：2026-11-08。",
+          "topics": [
+            "固定发行源码",
+            "字段与计算路径"
+          ],
+          "limits": [
+            "仅限2.7.0所列成员和路径。本次未编译、执行原生模块、核准历史桌面行为或验证所有调用入口。"
+          ]
+        },
+        {
+          "id": "psg-kb74-olca-json-system-writer-2026-11-08",
+          "artifactId": "art-kb50-olca-json-system-writer",
+          "locator": "org/openlca/jsonld/output/ProductSystemWriter.java :: 31–79、101–145 行；各段前后四行必要上下文；选读日期：2026-11-08。",
+          "topics": [
+            "固定发行源码",
+            "字段与计算路径"
+          ],
+          "limits": [
+            "仅限2.7.0所列成员和路径。本次未编译、执行原生模块、核准历史桌面行为或验证所有调用入口。"
+          ]
+        },
+        {
+          "id": "psg-kb74-olca-json-system-reader-2026-11-08",
+          "artifactId": "art-kb50-olca-json-system-reader",
+          "locator": "org/openlca/jsonld/input/ProductSystemReader.java :: 48–149、243–264 行；各段前后四行必要上下文；选读日期：2026-11-08。",
+          "topics": [
+            "固定发行源码",
+            "字段与计算路径"
+          ],
+          "limits": [
+            "仅限2.7.0所列成员和路径。本次未编译、执行原生模块、核准历史桌面行为或验证所有调用入口。"
+          ]
+        },
+        {
+          "id": "psg-kb74-olca-impact-factor-build-2026-11-08",
+          "artifactId": "art-kb50-olca-impact-factor-build",
+          "locator": "org/openlca/core/matrix/ImpactBuilder.java :: 99–119、123–174、181–214、226–251 行；各段前后四行必要上下文；选读日期：2026-11-08。",
+          "topics": [
+            "固定发行源码",
+            "字段与计算路径"
+          ],
+          "limits": [
+            "仅限2.7.0所列成员和路径。本次未编译、执行原生模块、核准历史桌面行为或验证所有调用入口。"
+          ]
+        },
+        {
+          "id": "psg-kb74-olca-matrix-builder-2026-11-08",
+          "artifactId": "art-kb50-olca-matrix-builder",
+          "locator": "org/openlca/core/matrix/format/MatrixBuilder.java :: 18–51、66–84、100–140 行；各段前后四行必要上下文；选读日期：2026-11-08。",
+          "topics": [
+            "固定发行源码",
+            "字段与计算路径"
+          ],
+          "limits": [
+            "仅限2.7.0所列成员和路径。本次未编译、执行原生模块、核准历史桌面行为或验证所有调用入口。"
+          ]
+        },
+        {
+          "id": "psg-kb74-olca-sparse-zero-2026-11-08",
+          "artifactId": "art-kb50-olca-sparse-zero",
+          "locator": "org/openlca/core/matrix/format/HashPointMatrix.java :: 78–105、143–149 行；各段前后四行必要上下文；选读日期：2026-11-08。",
+          "topics": [
+            "固定发行源码",
+            "字段与计算路径"
+          ],
+          "limits": [
+            "仅限2.7.0所列成员和路径。本次未编译、执行原生模块、核准历史桌面行为或验证所有调用入口。"
+          ]
+        },
+        {
+          "id": "psg-kb74-olca-ilcd-import-entry-2026-11-08",
+          "artifactId": "art-kb50-olca-ilcd-import-entry",
+          "locator": "org/openlca/io/ilcd/input/Import.java :: 76–94、155–194、197–207、223–263 行；各段前后四行必要上下文；选读日期：2026-11-08。",
+          "topics": [
+            "固定发行源码",
+            "字段与计算路径"
+          ],
+          "limits": [
+            "仅限2.7.0所列成员和路径。本次未编译、执行原生模块、核准历史桌面行为或验证所有调用入口。"
+          ]
+        },
+        {
+          "id": "psg-kb74-olca-eilcd-model-import-2026-11-08",
+          "artifactId": "art-kb50-olca-eilcd-model-import",
+          "locator": "org/openlca/io/ilcd/input/models/ModelImport.java :: 41–74、76–154、160–198、208–222 行；各段前后四行必要上下文；选读日期：2026-11-08。",
+          "topics": [
+            "固定发行源码",
+            "字段与计算路径"
+          ],
+          "limits": [
+            "仅限2.7.0所列成员和路径。本次未编译、执行原生模块、核准历史桌面行为或验证所有调用入口。"
+          ]
+        },
+        {
+          "id": "psg-kb74-olca-eilcd-system-export-2026-11-08",
+          "artifactId": "art-kb50-olca-eilcd-system-export",
+          "locator": "org/openlca/io/ilcd/output/SystemExport.java :: 83–105、108–158、161–200 行；各段前后四行必要上下文；选读日期：2026-11-08。",
+          "topics": [
+            "固定发行源码",
+            "字段与计算路径"
+          ],
+          "limits": [
+            "仅限2.7.0所列成员和路径。本次未编译、执行原生模块、核准历史桌面行为或验证所有调用入口。"
+          ]
+        },
+        {
+          "id": "psg-kb74-olca-ilcd-flow-import-2026-11-08",
+          "artifactId": "art-kb50-olca-ilcd-flow-import",
+          "locator": "org/openlca/io/ilcd/input/FlowImport.java :: 73–89 行；各段前后四行必要上下文；选读日期：2026-11-08。",
+          "topics": [
+            "固定发行源码",
+            "字段与计算路径"
+          ],
+          "limits": [
+            "仅限2.7.0所列成员和路径。本次未编译、执行原生模块、核准历史桌面行为或验证所有调用入口。"
+          ]
+        },
+        {
+          "id": "psg-kb74-olca-ilcd-property-import-2026-11-08",
+          "artifactId": "art-kb50-olca-ilcd-property-import",
+          "locator": "org/openlca/io/ilcd/input/FlowPropertyImport.java :: 20–47 行；各段前后四行必要上下文；选读日期：2026-11-08。",
+          "topics": [
+            "固定发行源码",
+            "字段与计算路径"
+          ],
+          "limits": [
+            "仅限2.7.0所列成员和路径。本次未编译、执行原生模块、核准历史桌面行为或验证所有调用入口。"
+          ]
+        },
+        {
+          "id": "psg-kb74-olca-environment-index-2026-11-08",
+          "artifactId": "art-kb50-olca-environment-index",
+          "locator": "org/openlca/core/matrix/index/EnviIndex.java :: 38–43、152–169、189–205、251–312 行；各段前后四行必要上下文；选读日期：2026-11-08。",
+          "topics": [
+            "固定发行源码",
+            "字段与计算路径"
+          ],
+          "limits": [
+            "仅限2.7.0所列成员和路径。本次未编译、执行原生模块、核准历史桌面行为或验证所有调用入口。"
+          ]
+        },
+        {
+          "id": "psg-kb74-olca-result-flow-view-2026-11-08",
+          "artifactId": "art-kb50-olca-result-flow-view",
+          "locator": "org/openlca/core/results/providers/ResultProvider.java :: 585–597 行；各段前后四行必要上下文；选读日期：2026-11-08。",
+          "topics": [
+            "固定发行源码",
+            "字段与计算路径"
+          ],
+          "limits": [
+            "仅限2.7.0所列成员和路径。本次未编译、执行原生模块、核准历史桌面行为或验证所有调用入口。"
           ]
         }
       ],
@@ -23327,6 +23904,25 @@
             "本段是科学评估和用途讨论。读者采用某合规或决策口径须另行识别相应规则。"
           ],
           "printedPages": "1017–1019"
+        },
+        {
+          "id": "psg-kb74-ipcc-gwp-definition-2026-11-08",
+          "artifactId": "art-kb54-ipcc-ar6-ch7-pdf",
+          "locator": "正式报告§7.6.1及§§7.6.1.1–7.6.1.2，印刷页1012–1013；单位质量脉冲、积分强迫、CO₂参考与时间范围；2026-11-08选读正文并核对两张完整页图。",
+          "pdfIndices": [
+            89,
+            90
+          ],
+          "printedPages": "1012–1013",
+          "topics": [
+            "GWP的物理量",
+            "时间积分",
+            "参考气体"
+          ],
+          "limits": [
+            "此次仅复核指标定义与相邻解释，不重新读取完整主章、因子表或全部底层研究。",
+            "不以AR6的术语定义替换归档CML因子；此前派生文字与正式PDF继续保留各自身份和取得日期。"
+          ]
         }
       ],
       "appraisal": {
@@ -24143,6 +24739,227 @@
       "sourceKeys": [
         "src-kb54-ipcc-ch7-code-snapshot"
       ]
+    },
+    {
+      "id": "rd-kb74-openlca2-manual",
+      "workId": "work-kb74-openlca2-manual",
+      "title": "openLCA 2 Manual",
+      "version": "可变官方网页；2026-11-08取得的指定HTML载体",
+      "url": "https://greendelta.github.io/openLCA2-manual/flows/index.html",
+      "accessedAt": "2026-11-08",
+      "readAt": "2026-11-08",
+      "readingStatus": "web-sections",
+      "question": "所列官方文档怎样区分交换对象、角色、符号与结果检查？",
+      "argumentSummary": "选段区分对象记录与过程交换、符号与角色以及计算结果与覆盖依据；结论限所述文档约定。",
+      "artifacts": [
+        {
+          "id": "art-kb74-olca-flows-html-2026-11-08",
+          "mediaType": "text/html",
+          "sha256": "5fe4e45e5b51499d18c19ef7ba6f13b43b75a18b40b282bc050e223ad514d3a4",
+          "resolvedUrl": "https://greendelta.github.io/openLCA2-manual/flows/index.html"
+        },
+        {
+          "id": "art-kb74-olca-exchanges-html-2026-11-08",
+          "mediaType": "text/html",
+          "sha256": "e7179b688c70063449ce7d4ab5b2932f05b53821bd1e2ee00198cb36b812bac5",
+          "resolvedUrl": "https://greendelta.github.io/openLCA2-manual/processes/tab_inputs_outputs.html"
+        },
+        {
+          "id": "art-kb74-olca-waste-html-2026-11-08",
+          "mediaType": "text/html",
+          "sha256": "01309ba50bb2dbb5649d460a59e840c5cba8c4752aa92c6496045a39e8b81106",
+          "resolvedUrl": "https://greendelta.github.io/openLCA2-manual/waste_modelling.html"
+        },
+        {
+          "id": "art-kb74-olca-validation-html-2026-11-08",
+          "mediaType": "text/html",
+          "sha256": "3a3510c8fd74ec97ac8324c81180dda76c160d95bd9ed2986920ce446270ce0f",
+          "resolvedUrl": "https://greendelta.github.io/openLCA2-manual/validation.html"
+        },
+        {
+          "id": "art-kb74-olca-cfs-html-2026-11-08",
+          "mediaType": "text/html",
+          "sha256": "b35087056b7285996cb622ee9df767288e116e55160446730893d67896eefeef",
+          "resolvedUrl": "https://greendelta.github.io/openLCA2-manual/lcia_methods/impcat_cfs.html"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb74-flow-types-2026-11-08",
+          "artifactId": "art-kb74-olca-flows-html-2026-11-08",
+          "locator": "Flows：三种flow type及reference flow property的说明；2026-11-08网页载体。",
+          "topics": [
+            "对象类型",
+            "参考属性"
+          ],
+          "limits": [
+            "软件的对象类型体系不直接证明物理去向或现实适用性。"
+          ]
+        },
+        {
+          "id": "psg-kb74-exchange-fields-2026-11-08",
+          "artifactId": "art-kb74-olca-exchanges-html-2026-11-08",
+          "locator": "Inputs/Outputs：Flow、Amount、Unit及Provider段；2026-11-08网页载体。",
+          "topics": [
+            "交换角色",
+            "数量与单位",
+            "默认提供者"
+          ],
+          "limits": [
+            "交换中的提供者和产品系统另行保存的连接须分别核对；网页不是固定2.7.0运行证据。"
+          ]
+        },
+        {
+          "id": "psg-kb74-waste-material-2026-11-08",
+          "artifactId": "art-kb74-olca-waste-html-2026-11-08",
+          "locator": "Material flow logic及Creating a waste treatment process段；2026-11-08网页载体。",
+          "topics": [
+            "废物输出",
+            "处理输入",
+            "定量参考"
+          ],
+          "limits": [
+            "限手册所述material flow logic；废物物质去向仍需过程角色与交换共同解释。"
+          ]
+        },
+        {
+          "id": "psg-kb74-waste-opposite-2026-11-08",
+          "artifactId": "art-kb74-olca-waste-html-2026-11-08",
+          "locator": "Opposite direction approach正文及两条创建步骤；2026-11-08网页载体。",
+          "topics": [
+            "product类型",
+            "负输入与负输出"
+          ],
+          "limits": [
+            "单独的负号或product类型不是通用废物定义。"
+          ]
+        },
+        {
+          "id": "psg-kb74-waste-history-2026-11-08",
+          "artifactId": "art-kb74-olca-waste-html-2026-11-08",
+          "locator": "Material flow logic首段及Opposite direction approach首段关于openLCA1.7的回顾；2026-11-08网页载体。",
+          "topics": [
+            "软件版本史"
+          ],
+          "limits": [
+            "这是当前手册的历史回顾，不是对所有早期补丁版的实际运行验证。"
+          ]
+        },
+        {
+          "id": "psg-kb74-lcia-unmapped-2026-11-08",
+          "artifactId": "art-kb74-olca-validation-html-2026-11-08",
+          "locator": "Completeness check最后关于LCIA Checks及mis-mapping的段落；2026-11-08网页载体。",
+          "topics": [
+            "未被评价的流",
+            "映射",
+            "覆盖"
+          ],
+          "limits": [
+            "类别中未被评价不等于环境作用为零；检查功能不构成研究有效性认证。"
+          ]
+        },
+        {
+          "id": "psg-kb74-cf-editor-2026-11-08",
+          "artifactId": "art-kb74-olca-cfs-html-2026-11-08",
+          "locator": "Characterization factors：window capabilities列表；2026-11-08网页载体。",
+          "topics": [
+            "流",
+            "因子值",
+            "单位",
+            "位置"
+          ],
+          "limits": [
+            "编辑字段的存在不确认每条因子适用、匹配成功或具有环境代表性。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "实际取得的官方HTML及所列选段。",
+        "methodologicalScope": "具名文档页面的对象、字段、符号和检查功能；不作为原生运行证明。",
+        "independence": "openLCA五页属于同一官方手册；Brightway为另一软件体系的文档，非相同模型的独立复算。",
+        "limitations": [
+          "仅核对所列段落，未完整阅读手册、网站或全部实现。",
+          "保留旧来源2026-11-03访问记录；本载体不能补造该日的历史快照。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-08"
+      },
+      "unread": [
+        "其他页面、未列段落、全部源码与实际软件行为未由本记录验证。"
+      ],
+      "sourceKeys": [
+        "src-olca-flows",
+        "src-olca-exchanges",
+        "src-olca-waste",
+        "src-olca-validation",
+        "src-olca-cfs"
+      ],
+      "rights": "原文、图像与数据适用来源声明的权利；这里只登记载体身份、选段定位及原创释义，不转授第三方材料的再分发许可。"
+    },
+    {
+      "id": "rd-kb74-brightway-matrix",
+      "workId": "work-kb74-brightway-matrix",
+      "title": "Brightway documentation — Matrix Construction",
+      "version": "可变官方网页；2026-11-08取得的指定HTML载体",
+      "url": "https://docs.brightway.dev/en/latest/content/overview/matrix.html",
+      "accessedAt": "2026-11-08",
+      "readAt": "2026-11-08",
+      "readingStatus": "web-sections",
+      "question": "技术圈矩阵的符号、功能边与input/output字段怎样区分？",
+      "argumentSummary": "所读矩阵说明区分生产与消费的正负约定、功能边和节点连接字段；schema方向不能直接读作物质流向。",
+      "artifacts": [
+        {
+          "id": "art-kb74-brightway-matrix-html-2026-11-08",
+          "mediaType": "text/html",
+          "sha256": "f5a3fec2cee255e8002913bb1526c071f23891d958d671b6a6882fece9549d08",
+          "resolvedUrl": "https://docs.brightway.dev/en/latest/content/overview/matrix.html"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-kb74-bw-roles-2026-11-08",
+          "artifactId": "art-kb74-brightway-matrix-html-2026-11-08",
+          "locator": "Matrix Construction首段与What Data Enters the technosphere Matrix?中的Important框；2026-11-08网页载体。",
+          "topics": [
+            "矩阵对象",
+            "schema方向"
+          ],
+          "limits": [
+            "仅比较文档的节点/边约定，不声称运行了Brightway或与openLCA格式互操作。"
+          ]
+        },
+        {
+          "id": "psg-kb74-bw-sign-2026-11-08",
+          "artifactId": "art-kb74-brightway-matrix-html-2026-11-08",
+          "locator": "Positive and Negative Values in the technosphere段及其功能边说明；2026-11-08网页载体。",
+          "topics": [
+            "生产与消费",
+            "符号",
+            "功能关系"
+          ],
+          "limits": [
+            "矩阵正负与功能关系分别解释，不能直接据此翻译任意软件交换。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "实际取得的官方HTML及所列选段。",
+        "methodologicalScope": "Matrix Construction所列节点、边、符号与功能关系；不验证运行结果、LCIA覆盖或跨软件转换。",
+        "independence": "openLCA五页属于同一官方手册；Brightway为另一软件体系的文档，非相同模型的独立复算。",
+        "limitations": [
+          "仅核对所列段落，未完整阅读手册、网站或全部实现。",
+          "保留旧来源2026-11-03访问记录；本载体不能补造该日的历史快照。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-08"
+      },
+      "unread": [
+        "其他页面、未列段落、全部源码与实际软件行为未由本记录验证。"
+      ],
+      "sourceKeys": [
+        "src-brightway-matrix"
+      ],
+      "rights": "原文、图像与数据适用来源声明的权利；这里只登记载体身份、选段定位及原创释义，不转授第三方材料的再分发许可。"
     }
   ],
   "gaps": [
@@ -27130,6 +27947,88 @@
       ],
       "affectedUnits": [
         "B07"
+      ]
+    },
+    {
+      "id": "rev-kb74-exchange-selected-source-reinspection-2026-11-08",
+      "before": "既有固定原件保留2026-11-06选段记录；六个可变文档来源保留2026-11-03访问记录，尚未绑定本次实际HTML载体。",
+      "after": "2026-11-08的具名PDF、XML、报告成员和20个Java成员选段另行登记；六个HTML载体归入openLCA官方手册与Brightway文档两个作品，并为九个相应证据补明阅读与段落身份。",
+      "reasoning": "同一原件的日期化选读不覆盖先前取得、readAt、段落或评价，也不增加独立作品数。保留Lavoisier验证305份与比较115份的原文范围及关系未建立的限制；修正该直接PDF来源误写为ZIP成员的保存说明。本次记录不资格化尚未审查的书稿，也不重新执行原生模型。",
+      "status": "selected-source metadata only; manuscript, native execution and publication acceptance remain separately qualified",
+      "triggerPassageIds": [
+        "psg-kb74-bottle-reference-sign-2026-11-08",
+        "psg-kb74-bottle-allocation-settings-2026-11-08",
+        "psg-kb74-bottle-archive-identity-2026-11-08",
+        "psg-kb74-bottle-report-values-2026-11-08",
+        "psg-kb74-jrc-model-2026-11-08",
+        "psg-kb74-jrc-result-2026-11-08",
+        "psg-kb74-jrc-wash-2026-11-08",
+        "psg-kb74-jrc-rail-2026-11-08",
+        "psg-kb74-jrc-granulate-2026-11-08",
+        "psg-kb74-jrc-grid-2026-11-08",
+        "psg-kb74-jrc-machine-2026-11-08",
+        "psg-kb74-jrc-moulding-2026-11-08",
+        "psg-kb74-jrc-rail-property-reference-2026-11-08",
+        "psg-kb74-jrc-energy-property-record-2026-11-08",
+        "psg-kb74-jrc-machine-flow-2026-11-08",
+        "psg-kb74-jrc-diagram-all-ids-2026-11-08",
+        "psg-kb74-jrc-unit-mass-2026-11-08",
+        "psg-kb74-jrc-unit-energy-2026-11-08",
+        "psg-kb74-olca-setup-2026-11-08",
+        "psg-kb74-olca-reference-amount-2026-11-08",
+        "psg-kb74-olca-exchange-sign-2026-11-08",
+        "psg-kb74-olca-conversion-2026-11-08",
+        "psg-kb74-olca-saved-links-2026-11-08",
+        "psg-kb74-olca-default-provider-2026-11-08",
+        "psg-kb74-olca-open-inventory-2026-11-08",
+        "psg-kb74-olca-json-export-2026-11-08",
+        "psg-kb74-olca-json-system-writer-2026-11-08",
+        "psg-kb74-olca-json-system-reader-2026-11-08",
+        "psg-kb74-olca-impact-factor-build-2026-11-08",
+        "psg-kb74-olca-matrix-builder-2026-11-08",
+        "psg-kb74-olca-sparse-zero-2026-11-08",
+        "psg-kb74-olca-ilcd-import-entry-2026-11-08",
+        "psg-kb74-olca-eilcd-model-import-2026-11-08",
+        "psg-kb74-olca-eilcd-system-export-2026-11-08",
+        "psg-kb74-olca-ilcd-flow-import-2026-11-08",
+        "psg-kb74-olca-ilcd-property-import-2026-11-08",
+        "psg-kb74-olca-environment-index-2026-11-08",
+        "psg-kb74-olca-result-flow-view-2026-11-08",
+        "psg-kb74-jrc-lavoisier-scope-2026-11-08",
+        "psg-kb74-jrc-lavoisier-test-2026-11-08",
+        "psg-kb74-jrc-lavoisier-provider-2026-11-08",
+        "psg-kb74-jrc-lavoisier-rights-2026-11-08",
+        "psg-kb74-flow-types-2026-11-08",
+        "psg-kb74-exchange-fields-2026-11-08",
+        "psg-kb74-waste-material-2026-11-08",
+        "psg-kb74-waste-opposite-2026-11-08",
+        "psg-kb74-waste-history-2026-11-08",
+        "psg-kb74-lcia-unmapped-2026-11-08",
+        "psg-kb74-cf-editor-2026-11-08",
+        "psg-kb74-bw-roles-2026-11-08",
+        "psg-kb74-bw-sign-2026-11-08"
+      ],
+      "affectedUnits": [
+        "B08",
+        "C18",
+        "S02",
+        "S05",
+        "S01"
+      ]
+    },
+    {
+      "id": "rev-kb74-exchange-field-and-metric-reinspection",
+      "before": "ILCD字段及GWP定义已有各自历史选读，早期派生文字与后来取得的正式IPCC报告分别留存。",
+      "after": "追加2026-11-08对交换方向、变量及最终量字段的选读，并以正式IPCC报告1012–1013页及完整页图复核GWP定义。",
+      "reasoning": "本次用于界定交换解释和类别名称，不改变原字段读取事件、历史CML因子或其他案例输入；同一原件复核不增加独立研究。",
+      "status": "bounded selected-source reinspection; manuscript acceptance remains separate",
+      "triggerPassageIds": [
+        "psg-kb74-ilcd11-exchange-values-2026-11-08",
+        "psg-kb74-ipcc-gwp-definition-2026-11-08"
+      ],
+      "affectedUnits": [
+        "B08",
+        "C18"
       ]
     }
   ]
