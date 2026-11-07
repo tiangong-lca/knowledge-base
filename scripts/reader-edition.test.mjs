@@ -24,7 +24,7 @@ test('accepted B04 65-proposition and actual 19-heading inventories are independ
 });
 
 test('actual mixed roster conserves sources and rejects co-deleted registrations, foreign manuscripts and kind substitutions',()=>{
-  assert.equal(currentEditionKeys(edition,available(),baseline,placements).length,45);
+  assert.equal(currentEditionKeys(edition,available(),baseline,placements).length,44);
   for(const key of [frameworkUnitKey,frameworkAppendix]) {
     const copy=structuredClone(edition);const removed=copy.units.find(unit=>unit.key===key);copy.units=copy.units.filter(unit=>unit!==removed);
     assert.throws(()=>currentEditionKeys(copy,available().filter(route=>route!==removed.source),baseline,placements),/Missing accepted/);

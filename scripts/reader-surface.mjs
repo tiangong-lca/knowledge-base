@@ -1,3 +1,4 @@
+import { assertFunctionalReferenceProseAccepted, functionalReferenceHeadingEntries, remapFunctionalReferenceCitations, validateFunctionalReferenceCoverage, validateRenderedFunctionalReference } from './reader-functional-reference.mjs';
 import { cleanerProductionHeadingEntries, remapCleanerProductionCitations, validateCleanerProductionCoverage, validateRenderedCleanerProduction } from './reader-cleaner-production.mjs';
 import { access, readdir, readFile } from 'node:fs/promises';
 import { join, relative, resolve } from 'node:path';
@@ -134,7 +135,7 @@ function aliasDestination(node) {
   return sibling?.id === target ? target : null;
 }
 
-function readCitationSurface(document, path) {
+export function readCitationSurface(document, path) {
   const ids = new Map();
   const errors = [];
   const noteNumbers = new Map();
@@ -167,6 +168,11 @@ function readCitationSurface(document, path) {
   }
   for (const id of noteNumbers.keys()) if (!cited.has(id)) errors.push(`${path}: unreferenced chapter note ${id}`);
 
+  const scopedContexts = new Map();
+  for (const scope of document.querySelectorAll('[data-legacy-scope]')) {
+    const id = scope.getAttribute('data-legacy-scope'), list = scopedContexts.get(id) ?? [];
+    list.push(scope); scopedContexts.set(id, list);
+  }
   for (const node of document.querySelectorAll('[id]')) {
     const claimId = node.getAttribute('data-reader-claim');
     const route = path === '/print' ? node.closest('article[data-reader-route]')?.getAttribute('data-reader-route') : path;
@@ -180,11 +186,27 @@ function readCitationSurface(document, path) {
     const section = /^H[1-6]$/.test(node.tagName) || node.getAttribute('data-reader-section') === node.id;
     if (ids.has(node.id)) errors.push(`${path}: duplicate citation surface ID ${node.id}`);
     const title = path === '/print' ? node.closest('article[data-reader-route]')?.getAttribute('data-reader-title') : document.querySelector('h1')?.text;
-    ids.set(node.id, { title, route, claimId, section, tag: node.tagName, notice, alias, edition, editionDate, links, number: noteNumbers.get(node.id) });
+    const scopeNodes = scopedContexts.get(node.id) ?? [];
+    const scope = scopeNodes.length === 1 ? scopeNodes[0] : null;
+    const scopeLink = scope?.querySelector('a');
+    const scopeDate = scope?.querySelector('time');
+    ids.set(node.id, { scopeAttached: scope && (node.tagName === 'ARTICLE' ? scope.parentNode === node : scope.previousElementSibling === node && scope.parentNode === node.parentNode), scopeCount: scopeNodes.length, scopeText: scope?.text, scopeEdition: scopeLink?.getAttribute('href'), scopeDate: scopeDate?.text === scopeDate?.getAttribute('datetime') ? scopeDate?.text : null, scopeLinks: scope?.querySelectorAll('a[data-legacy-scope-destination]').map(link=>link.getAttribute('href')), noticeText: context?.text, title, route, claimId, section, tag: node.tagName, notice, alias, edition, editionDate, links, number: noteNumbers.get(node.id) });
   }
   const printOrder = path === '/print' ? document.querySelectorAll('article[data-reader-route]').map(article => article.getAttribute('data-reader-route')) : [];
   const noteLinks = document.querySelectorAll('a[href]').map(link=>({href:link.getAttribute('href'),label:link.text})).filter(link=>/-claim-[A-Za-z0-9]/.test(link.href) && /注\s*\d+/.test(link.label));
   return { ids, errors, printOrder, noteLinks, bodyClaims };
+}
+
+/** Verify native source-subset context independently of the target's existence. */
+export function validateHistoricalScope(source, entry, address = `${entry.path}/#${entry.id}`) {
+  if (!entry.scope) return [];
+  if (entry.mode === 'retained') {
+    if (!source.scopeAttached || source.scopeCount !== 1 || !source.scopeText?.includes(entry.scope.text)
+      || source.scopeEdition !== citationSourceHref(entry.edition.sourceCommit) || source.scopeDate !== entry.edition.sourceDate
+      || JSON.stringify(source.scopeLinks) !== JSON.stringify(entry.scope.targets.map(target => citationHref(target, entry.path))))
+      return [`${address}: missing or changed exact retained source-subset context`];
+  } else if (!source.noticeText?.includes(entry.scope.text)) return [`${address}: missing exact relocated source-subset explanation`];
+  return [];
 }
 
 export async function validateLegacyCitationOutput(root, sourceBaseline, locations, availableRoutes = null, history = null, book = null) {
@@ -193,8 +215,8 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
   const historicPrintRoutes = book ? [...sourceBaseline.pages.filter(page=>page.printOrdinal!==undefined).map(page=>page.route),...locations.frontMatter,...(locations.printAdditions??[]).map(unit=>unit.route)] : printRoutes;
   let entries = [...createLegacyCitationEntries(sourceBaseline, locations, history?.pages),
     ...(history ? createCanonicalCitationEntries(history, locations, historicPrintRoutes) : [])];
-  if (book) entries = remapCleanerProductionCitations(remapBookCitations(
-    [...entries,...publishedHeadingEntries(book.headingHistory),...cleanerProductionHeadingEntries(book.cleanerHeadingHistory)],book.edition,book.accepted,locations),book.cleanerAccepted,book.cleanerHeadingHistory);
+  if (book) entries = remapFunctionalReferenceCitations(remapCleanerProductionCitations(remapBookCitations(
+    [...entries,...publishedHeadingEntries(book.headingHistory),...cleanerProductionHeadingEntries(book.cleanerHeadingHistory),...functionalReferenceHeadingEntries(book.functionalHeadings)],book.edition,book.accepted,locations),book.cleanerAccepted,book.cleanerHeadingHistory),book.functionalAccepted,book.functionalHeadings);
   const addresses = new Set();
   for (const entry of entries) {
     const address = `${entry.path}#${entry.id}`;
@@ -214,7 +236,7 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
     }
     const document = htmlParser.parse(html);
     const surface = readCitationSurface(document, path);
-    if (book) errors.push(...validateRenderedCleanerProduction(document,path,book.cleanerAccepted,book.catalog));
+    if (book) errors.push(...validateRenderedCleanerProduction(document,path,book.cleanerAccepted,book.catalog), ...validateRenderedFunctionalReference(document,path,book.functionalAccepted,book.catalog,book.functionalProse));
     if (!surface.ids.has('main-content')) errors.push(`${path}: missing main-content fragment`);
     pages.set(path, surface);
     errors.push(...surface.errors);
@@ -241,7 +263,8 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
       const expected = entry.targets.map(target => citationHref(target, entry.path));
       if (!source.notice || JSON.stringify(source.links) !== JSON.stringify(expected)) errors.push(`${address}: migration notice has the wrong native links`);
     }
-    for (const target of entry.targets) {
+    errors.push(...validateHistoricalScope(source, entry, address));
+    for (const target of [...entry.targets, ...(entry.scope?.targets ?? [])]) {
       const actual = pages.get(target.path)?.ids.get(target.id);
       const semanticMatch = actual?.route === target.route && (
         target.kind === 'note' ? actual.tag === 'LI' && actual.claimId === target.claimId && actual.number :
@@ -264,6 +287,7 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
   if (book?.sources) {
     errors.push(...validateFrameworkCoverage(book.edition,book.sources,book.accepted));
     errors.push(...validateCleanerProductionCoverage(book.edition,book.sources,book.cleanerAccepted,book.catalog));
+    errors.push(...validateFunctionalReferenceCoverage(book.edition,book.sources,book.functionalAccepted,book.catalog,book.functionalProse));
   }
   if (book && print) errors.push(...validateRenderedFrameworkCoverage(print.bodyClaims,book.accepted));
   return errors;
@@ -322,10 +346,10 @@ export async function validateReaderOutput(root, { knownIds = new Set() } = {}) 
     });
     if (hasReaderSource) await discover(sourceDirectory);
     const readConfig = async file => readFile(join(config,file),'utf8').then(JSON.parse,error=>{if(error.code==='ENOENT')return null;throw error;});
-    const [edition,accepted,headingHistory,cleanerAccepted,cleanerHeadingHistory] = await Promise.all(['book-edition.json','framework-accepted.json','framework-heading-history.json','cleaner-production-accepted.json','cleaner-production-heading-history.json'].map(readConfig));
+    const [edition,accepted,headingHistory,cleanerAccepted,cleanerHeadingHistory,functionalAccepted,functionalHeadings,functionalProse] = await Promise.all(['book-edition.json','framework-accepted.json','framework-heading-history.json','cleaner-production-accepted.json','cleaner-production-heading-history.json','functional-reference-accepted.json','functional-reference-heading-history.json','functional-reference-prose-accepted.json'].map(readConfig));
     let book = null;
     if (edition || accepted || headingHistory || cleanerAccepted || cleanerHeadingHistory) {
-      if (!edition || !accepted || !headingHistory || !cleanerAccepted || !cleanerHeadingHistory) throw new Error('Book edition requires its accepted proposition and published heading inventories');
+      if (!edition || !accepted || !headingHistory || !cleanerAccepted || !cleanerHeadingHistory || !functionalAccepted || !functionalHeadings || !functionalProse) throw new Error('Book edition requires its accepted proposition and published heading inventories');
       const sources = new Map();
       async function discoverRaw(directory,prefix) {
         for (const entry of await readdir(directory,{withFileTypes:true})) {
@@ -341,7 +365,8 @@ export async function validateReaderOutput(root, { knownIds = new Set() } = {}) 
       const manuscriptDirectory=resolve(root,'..','content','monograph');
       await discoverRaw(manuscriptDirectory,'/monograph');
       const catalog = JSON.parse(await readFile(resolve(root,'..','knowledge','catalog.json'),'utf8'));
-      book={edition,accepted,headingHistory,cleanerAccepted,cleanerHeadingHistory,sources,catalog};
+      assertFunctionalReferenceProseAccepted(functionalProse);
+      book={edition,accepted,headingHistory,cleanerAccepted,cleanerHeadingHistory,functionalAccepted,functionalHeadings,functionalProse,sources,catalog};
       sourceRoutes.splice(0,sourceRoutes.length,...sources.keys());
     }
     errors.push(...await validateLegacyCitationOutput(root, baseline, placements, hasReaderSource ? sourceRoutes : null, history,book));

@@ -1,3 +1,7 @@
+import functionalProse from '@/config/functional-reference-prose-accepted.json';
+import functionalAccepted from '@/config/functional-reference-accepted.json';
+import functionalHeadings from '@/config/functional-reference-heading-history.json';
+import { functionalReferenceHeadingEntries, remapFunctionalReferenceCitations, validateFunctionalReferenceCoverage } from '@/scripts/reader-functional-reference.mjs';
 import catalog from '@/lib/catalog';
 import { source } from '@/lib/source';
 import { monographSource } from '@/lib/monograph-source';
@@ -38,27 +42,30 @@ const historical = [...createLegacyCitationEntries(baseline, placements, history
   ...headingHistory.canonicalPrintedHeadings.map(heading=>({route:heading.route,path:'/print',id:heading.id,
     targets:[{route:heading.route,path:'/print',id:heading.id,kind:'heading' as const}],mode:'retained' as const,
     edition:{sourceCommit:headingHistory.sourceCommit,sourceDate:'2026-11-07'}}))];
-const legacyEntries: LegacyEntry[] = remapCleanerProductionCitations(
-  remapBookCitations([...historical, ...cleanerProductionHeadingEntries(cleanerHeadingHistory)], edition, accepted, placements), cleanerAccepted, cleanerHeadingHistory);
+const legacyEntries: LegacyEntry[] = remapFunctionalReferenceCitations(remapCleanerProductionCitations(
+  remapBookCitations([...historical, ...cleanerProductionHeadingEntries(cleanerHeadingHistory), ...functionalReferenceHeadingEntries(functionalHeadings)], edition, accepted, placements), cleanerAccepted, cleanerHeadingHistory), functionalAccepted, functionalHeadings);
 export function getLegacyCitations(route: string, print: boolean) {
-  const path = print ? '/print' : route, aliases = new Map<string, LegacyEntry[]>(), notices: LegacyEntry[] = [];
+  const path = print ? '/print' : route, aliases = new Map<string, LegacyEntry[]>(), notices: LegacyEntry[] = [], scopes = new Map<string, LegacyEntry>();
   for (const entry of legacyEntries) {
     if (entry.path !== path) continue;
+    if (entry.mode === 'retained' && entry.scope && entry.route === route) scopes.set(entry.id, entry);
     const target = entry.targets[0];
     if (entry.mode === 'alias' && target.route === route) {
       const list = aliases.get(target.id) ?? []; list.push(entry); aliases.set(target.id, list);
     }
     if (entry.mode === 'notice' && entry.route === route) notices.push(entry);
   }
-  return { aliases, notices };
+  return { aliases, notices, scopes };
 }
 export const getChapterReferenceIndex = cache(async (print = false) => {
   const pages = print ? getPrintPages() : getOrderedPages();
   const rawPages = await Promise.all(pages.map(async(page,index)=>({url:page.url,title:page.data.title,raw:await page.data.getText('raw'),printOrder:index})));
   const cleanerErrors = validateCleanerProductionCoverage(edition, new Map(rawPages.map(page => [page.url, page.raw])), cleanerAccepted, catalog);
   if (cleanerErrors.length) throw new Error(cleanerErrors.join('\n'));
+  const rawSources = new Map(await Promise.all([...source.getPages(),...monographSource.getPages()].map(async page=>[page.url,await page.data.getText('raw')] as const)));
+  const functionalErrors = validateFunctionalReferenceCoverage(edition,rawSources,functionalAccepted,catalog,functionalProse);
+  if (functionalErrors.length) throw new Error(functionalErrors.join('\n'));
   if (print) {
-    const rawSources = new Map(await Promise.all([...source.getPages(),...monographSource.getPages()].map(async page=>[page.url,await page.data.getText('raw')] as const)));
     const errors = validateFrameworkCoverage(edition,rawSources,accepted);
     if (errors.length) throw new Error(errors.join('\n'));
   }

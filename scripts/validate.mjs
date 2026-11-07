@@ -1,3 +1,4 @@
+import { assertFunctionalReferenceHeadingHistory, validateFunctionalReferenceCoverage } from './reader-functional-reference.mjs';
 import { assertCleanerProductionHeadingHistory, validateCleanerProductionCoverage } from './reader-cleaner-production.mjs';
 import { readdir, readFile } from 'node:fs/promises';
 import { resolve, relative } from 'node:path';
@@ -85,8 +86,10 @@ export async function validateRepository(root) {
     errors.push(...validateClaimReferences(text, data, label), ...validateTeachingCaseReferences(text, cases, label), ...validateReaderMdx(text, label, knownIds));
   }
   const edition = await readOptional('config/book-edition.json');
+  if (!edition && await readOptional('content/docs/book/meta.json')) errors.push('Book source requires its current edition and accepted publication inventories');
   if (edition) {
     const [accepted,baseline,placements,headings]=await Promise.all(['framework-accepted','citation-baseline','citation-placements','framework-heading-history'].map(name=>readOptional(`config/${name}.json`)));
+    const [functionalAccepted,functionalHeadingHistory,functionalProse]=await Promise.all(['functional-reference-accepted','functional-reference-heading-history','functional-reference-prose-accepted'].map(name=>readOptional(`config/${name}.json`)));
     const [cleanerAccepted,cleanerHeadingHistory]=await Promise.all(['cleaner-production-accepted','cleaner-production-heading-history'].map(name=>readOptional(`config/${name}.json`)));
     const sources=new Map();
     for(const file of await mdxFiles(resolve(root,'content'))) {
@@ -98,6 +101,8 @@ export async function validateRepository(root) {
       currentEditionKeys(edition,[...sources.keys()],baseline,placements);
       assertFrameworkHeadingHistory(headings);
       assertCleanerProductionHeadingHistory(cleanerHeadingHistory);
+      assertFunctionalReferenceHeadingHistory(functionalHeadingHistory);
+      errors.push(...validateFunctionalReferenceCoverage(edition,sources,functionalAccepted,data,functionalProse));
       errors.push(...validateCleanerProductionCoverage(edition,sources,cleanerAccepted,data));
       errors.push(...validateFrameworkCoverage(edition,sources,accepted,data));
     } catch(error) { errors.push(error.message); }
