@@ -1,3 +1,4 @@
+import { cleanerProductionHeadingEntries, remapCleanerProductionCitations, validateCleanerProductionCoverage, validateRenderedCleanerProduction } from './reader-cleaner-production.mjs';
 import { access, readdir, readFile } from 'node:fs/promises';
 import { join, relative, resolve } from 'node:path';
 import { chapterAnchorPrefix, chapterNoteAnchor, printUnitAnchor } from './reader-book.mjs';
@@ -192,7 +193,8 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
   const historicPrintRoutes = book ? [...sourceBaseline.pages.filter(page=>page.printOrdinal!==undefined).map(page=>page.route),...locations.frontMatter,...(locations.printAdditions??[]).map(unit=>unit.route)] : printRoutes;
   let entries = [...createLegacyCitationEntries(sourceBaseline, locations, history?.pages),
     ...(history ? createCanonicalCitationEntries(history, locations, historicPrintRoutes) : [])];
-  if (book) entries = remapBookCitations([...entries,...publishedHeadingEntries(book.headingHistory)],book.edition,book.accepted,locations);
+  if (book) entries = remapCleanerProductionCitations(remapBookCitations(
+    [...entries,...publishedHeadingEntries(book.headingHistory),...cleanerProductionHeadingEntries(book.cleanerHeadingHistory)],book.edition,book.accepted,locations),book.cleanerAccepted,book.cleanerHeadingHistory);
   const addresses = new Set();
   for (const entry of entries) {
     const address = `${entry.path}#${entry.id}`;
@@ -210,7 +212,9 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
       errors.push(`${path}: missing legacy reader route`);
       continue;
     }
-    const surface = readCitationSurface(htmlParser.parse(html), path);
+    const document = htmlParser.parse(html);
+    const surface = readCitationSurface(document, path);
+    if (book) errors.push(...validateRenderedCleanerProduction(document,path,book.cleanerAccepted,book.catalog));
     if (!surface.ids.has('main-content')) errors.push(`${path}: missing main-content fragment`);
     pages.set(path, surface);
     errors.push(...surface.errors);
@@ -257,7 +261,10 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
     const title = /^《(.+?)》注/.exec(link.label)?.[1];
     if (title && actual?.title && title !== actual.title) errors.push(`${path}: wrong destination note title ${link.href}`);
   }
-  if (book?.sources) errors.push(...validateFrameworkCoverage(book.edition,book.sources,book.accepted));
+  if (book?.sources) {
+    errors.push(...validateFrameworkCoverage(book.edition,book.sources,book.accepted));
+    errors.push(...validateCleanerProductionCoverage(book.edition,book.sources,book.cleanerAccepted,book.catalog));
+  }
   if (book && print) errors.push(...validateRenderedFrameworkCoverage(print.bodyClaims,book.accepted));
   return errors;
 }
@@ -315,10 +322,10 @@ export async function validateReaderOutput(root, { knownIds = new Set() } = {}) 
     });
     if (hasReaderSource) await discover(sourceDirectory);
     const readConfig = async file => readFile(join(config,file),'utf8').then(JSON.parse,error=>{if(error.code==='ENOENT')return null;throw error;});
-    const [edition,accepted,headingHistory] = await Promise.all(['book-edition.json','framework-accepted.json','framework-heading-history.json'].map(readConfig));
+    const [edition,accepted,headingHistory,cleanerAccepted,cleanerHeadingHistory] = await Promise.all(['book-edition.json','framework-accepted.json','framework-heading-history.json','cleaner-production-accepted.json','cleaner-production-heading-history.json'].map(readConfig));
     let book = null;
-    if (edition || accepted || headingHistory) {
-      if (!edition || !accepted || !headingHistory) throw new Error('Book edition requires its accepted proposition and published heading inventories');
+    if (edition || accepted || headingHistory || cleanerAccepted || cleanerHeadingHistory) {
+      if (!edition || !accepted || !headingHistory || !cleanerAccepted || !cleanerHeadingHistory) throw new Error('Book edition requires its accepted proposition and published heading inventories');
       const sources = new Map();
       async function discoverRaw(directory,prefix) {
         for (const entry of await readdir(directory,{withFileTypes:true})) {
@@ -333,7 +340,8 @@ export async function validateReaderOutput(root, { knownIds = new Set() } = {}) 
       await discoverRaw(sourceDirectory,'/docs');
       const manuscriptDirectory=resolve(root,'..','content','monograph');
       await discoverRaw(manuscriptDirectory,'/monograph');
-      book={edition,accepted,headingHistory,sources};
+      const catalog = JSON.parse(await readFile(resolve(root,'..','knowledge','catalog.json'),'utf8'));
+      book={edition,accepted,headingHistory,cleanerAccepted,cleanerHeadingHistory,sources,catalog};
       sourceRoutes.splice(0,sourceRoutes.length,...sources.keys());
     }
     errors.push(...await validateLegacyCitationOutput(root, baseline, placements, hasReaderSource ? sourceRoutes : null, history,book));

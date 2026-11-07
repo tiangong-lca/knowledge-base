@@ -15,7 +15,7 @@ checkPaths:
   - "app/**"
   - "scripts/**"
 lastReviewedAt: 2026-11-07
-lastReviewedCommit: af32bc8567858e1ae9ce8c65c42eab978e529c63
+lastReviewedCommit: 28a961266fd66c2535aa99f14245a7961f10cdf1
 ---
 
 # LCA Living Knowledge Base and Review
@@ -71,7 +71,7 @@ The expanded `/docs/book/allocation-and-substitution/` also contains CASE-JOINT-
 
 ## Reader delivery policy
 
-Read [_docs/reader-publication-contract.md](_docs/reader-publication-contract.md). Published pages are finished book prose with scholarly notes; research/development logs and TODOs stay in development Markdown. Layout matches the owning docs site. Current rendering shares canonical prose and per-unit notes between normal and print reading; print retains the fixed42unit baseline after the preface and reading guide and appends explicitly registered current appendices, while website navigation follows its page tree; the amended contract requires a later separately curated book order sharing canonical content with website navigation, with notes regenerated for actual book chapters. The public `/research/` route is a bibliography. Preserve actual source/assumption limitations, and assess reader/layout quality independently from source and code validation.
+Read [_docs/reader-publication-contract.md](_docs/reader-publication-contract.md). Published pages are finished book prose with scholarly notes; research/development logs and TODOs stay in development Markdown. Layout matches the owning docs site. Current rendering shares canonical prose between website and book while generating notes for each actual surface unit. An explicit mixed45-unit roster contains shared front matter, retained sources, the independently authored B04 assembly and two calculation appendices; B05 uses one genuine shared MDX chapter with three adopted sections and six notes. The complete32-chapter monograph organization remains separate work, with conservation and generation-specific historical references required at each migration. The public `/research/` route is a bibliography. Preserve actual source/assumption limitations, and assess reader/layout quality independently from source and code validation.
 
 The water-locality and phosphorus-boundary examples publish versioned inputs and exact evaluated receipts under `/downloads/cases/`, linked from their chapter notes. They are static explanatory examples: water values are synthetic; the phosphorus default is source-bound and conditional, with characterization left symbolic. Use their registered case identities with `scripts/impact.mjs` for affected-claim review.
 
@@ -130,3 +130,6 @@ The opening and final synthesis use stable claim-occurrence note anchors with co
 
 
 [Framework monograph #66](https://github.com/tiangong-lca/knowledge-base/issues/66) implements the first separate book chapter with its own actual note plan. The explicit mixed roster, accepted65-proposition map and19captured printed-heading identities guard B04/X02 alongside the unchanged4,042historical addresses. The [unit protocol](_docs/editorial/2026-11-07-framework-monograph.md) records source reinspection, numerical conservation, reader/engineering checks and delivery boundaries. This bounded chapter does not certify the full32chapter edition or complete historical research.
+
+
+[Cleaner-production monograph #68](https://github.com/tiangong-lca/knowledge-base/issues/68) keeps the C06 route and book identity while authoring three sections in one shared source. The original five propositions and historical notes remain; one explicitly reviewed interpretation records the source’s proposed development agenda. Separate accepted-content and actual-hosted heading inventories preserve three additional printed heading names alongside all4,061earlier expectations. The [protocol](_docs/editorial/2026-11-07-cleaner-production-monograph.md) distinguishes original-source review, continuous reading, actual body-text/section validation and publication qualification.
