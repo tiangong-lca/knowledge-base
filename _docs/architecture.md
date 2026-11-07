@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-07
-lastReviewedCommit: bac68b35ba5228ed97c99cfc85d5605c187aad97
+lastReviewedCommit: ab5f8dfad4e0939f5dc505f1df6169776356fe54
 ---
 
 # Publication architecture
@@ -342,3 +342,12 @@ Legacy context appears when an old fragment is targeted, with the preserved sour
 
 
 Current appendix registration is deliberately separate from the immutable citation baseline. `createCurrentPrintRoutes` validates allowed appendix additions, uniqueness and registered source existence, then compares the resulting roster against actual source pages. Runtime uses `source.getPages()`; export independently discovers MD/MDX files under `content/docs`. Thus deleting both a registration and its exported article cannot silently omit an existing source. The folder's navigation index is excluded, while its article descendants remain mandatory. Print presents appendices separately from the five existing topics, and stable note/premise anchors remain scoped to actual source occurrences. This narrow addition does not implement the later assembled32chapter schema.
+
+
+## Published canonical citation history
+
+`config/citation-history.json` separately records the canonical note generation actually emitted by published Main `a36597d72f8cd89beb285d5d5b439b4aa10e89a3`. It reconstructs 44 historical source pages and print units with that commit's own reader code, catalog and MDX hashes: 830 ordered claim occurrences produce 1,660 web/print note names, 84 nonempty annotation headings and 44 printed unit IDs. The record explicitly identifies immutable-source reconstruction, not a captured historical HTML artifact.
+
+The Node-only `reader-citation-history.mjs` pins the entire parsed snapshot independently before runtime or export planning. The original 2,254-address baseline and its guard remain unchanged. Both generations together require 4,042 distinct historical addresses. Canonical moves use explicit existing route/claim placements only for occurrences actually present in their historical source; retained names must also resolve to the same claim. Aliases and notices carry each entry's own source commit/date, so a later canonical address cannot inherit the earlier positional generation's provenance. Real book output requires all history/config inputs, including when expected output has also been removed.
+
+The correction restores six C02 canonical web notices and six route-scoped print aliases at their matching X01 notes. It does not alter current note numbering, the ten existing moves, 45-unit print order, manuscript, catalog, case files or releases. A later book assembly must separately capture/map existing route-scoped printed MDX heading names before changing their scope; old numeric heading aliases verify current destinations but are not themselves a history of those newer names. Future published generations require explicit evidence and migration coverage, never regeneration or replacement of these frozen historical snapshots.

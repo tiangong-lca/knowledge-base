@@ -1,8 +1,9 @@
 import { access, readdir, readFile } from 'node:fs/promises';
 import { join, relative, resolve } from 'node:path';
 import { chapterAnchorPrefix, chapterNoteAnchor, printUnitAnchor } from './reader-book.mjs';
+import { assertCitationHistory } from './reader-citation-history.mjs';
 import { assertCitationBaseline, assertPrintFrontMatter } from './reader-citation-baseline.mjs';
-import { citationHref, citationSourceHref, createCurrentPrintRoutes, createLegacyCitationEntries } from './reader-citations.mjs';
+import { citationHref, citationSourceHref, createCurrentPrintRoutes, createLegacyCitationEntries, createCanonicalCitationEntries } from './reader-citations.mjs';
 // Use the parser already bundled by the exact Next dependency (16.4.4).
 // This internal bundle is intentionally version-coupled and covered by tests;
 // there is no additional parser dependency or hand-written HTML stripping.
@@ -181,13 +182,20 @@ function readCitationSurface(document, path) {
   return { ids, errors, printOrder };
 }
 
-export async function validateLegacyCitationOutput(root, sourceBaseline, locations, availableRoutes = null) {
+export async function validateLegacyCitationOutput(root, sourceBaseline, locations, availableRoutes = null, history = null) {
   const sourceRoutes = availableRoutes ?? [...sourceBaseline.pages.map(page => page.route), ...(locations.printAdditions ?? []).map(page => page.route)];
   const printRoutes = createCurrentPrintRoutes(sourceBaseline, locations, sourceRoutes);
-  const entries = createLegacyCitationEntries(sourceBaseline, locations);
+  const entries = [...createLegacyCitationEntries(sourceBaseline, locations, history?.pages),
+    ...(history ? createCanonicalCitationEntries(history, locations, printRoutes) : [])];
+  const addresses = new Set();
+  for (const entry of entries) {
+    const address = `${entry.path}#${entry.id}`;
+    if (addresses.has(address)) throw new Error(`Duplicate historical citation address: ${address}`);
+    addresses.add(address);
+  }
   const pages = new Map();
   const errors = [];
-  for (const path of new Set([...sourceBaseline.pages.map(page => page.route), ...(locations.printAdditions ?? []).map(page => page.route), '/print'])) {
+  for (const path of new Set([...sourceBaseline.pages.map(page => page.route), ...(history?.pages ?? []).map(page => page.route), ...(locations.printAdditions ?? []).map(page => page.route), '/print'])) {
     const html = await readFile(join(root, path.slice(1), 'index.html'), 'utf8').catch(error => {
       if (error.code !== 'ENOENT') throw error;
       return null;
@@ -216,7 +224,7 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
       errors.push(`${address}: missing old citation target`);
       continue;
     }
-    if (entry.mode !== 'retained' && (source.edition !== citationSourceHref(sourceBaseline.sourceCommit) || source.editionDate !== sourceBaseline.sourceDate))
+    if (entry.mode !== 'retained' && (source.edition !== citationSourceHref(entry.edition.sourceCommit) || source.editionDate !== entry.edition.sourceDate))
       errors.push(`${address}: missing exact edition context`);
     if (entry.mode === 'alias' && source.alias !== entry.targets[0].id) errors.push(`${address}: alias does not land at its destination`);
     if (entry.mode === 'notice') {
@@ -259,7 +267,7 @@ export async function validateReaderOutput(root, { knownIds = new Set() } = {}) 
     if (error.code !== 'ENOENT') throw error;
     return false;
   });
-  const [baseline, placements] = await Promise.all(['citation-baseline.json', 'citation-placements.json'].map(async file => {
+  const [baseline, placements, history] = await Promise.all(['citation-baseline.json', 'citation-placements.json', 'citation-history.json'].map(async file => {
     const raw = await readFile(join(config, file), 'utf8').catch(error => {
       if (error.code !== 'ENOENT') throw error;
       return null;
@@ -269,6 +277,7 @@ export async function validateReaderOutput(root, { knownIds = new Set() } = {}) 
   if (baseline && placements) {
     assertCitationBaseline(baseline);
     assertPrintFrontMatter(placements.frontMatter);
+    if (history) assertCitationHistory(history);
     const sourceDirectory = resolve(root, '..', 'content', 'docs');
     const sourceRoutes = [];
     async function discover(directory) {
@@ -286,7 +295,8 @@ export async function validateReaderOutput(root, { knownIds = new Set() } = {}) 
       return false;
     });
     if (hasReaderSource) await discover(sourceDirectory);
-    errors.push(...await validateLegacyCitationOutput(root, baseline, placements, hasReaderSource ? sourceRoutes : null));
-  } else if (baseline || placements || bookSource || bookOutput) errors.push('The book export requires both the reader citation baseline and placement files');
+    errors.push(...await validateLegacyCitationOutput(root, baseline, placements, hasReaderSource ? sourceRoutes : null, history));
+    if (!history) errors.push('The book export requires the historical canonical citation inventory');
+  } else if (baseline || placements || history || bookSource || bookOutput) errors.push('The book export requires both the reader citation baseline and placement files');
   return [...new Set(errors)];
 }

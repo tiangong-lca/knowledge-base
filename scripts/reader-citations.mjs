@@ -3,7 +3,9 @@ import { chapterAnchorPrefix, chapterNoteAnchor, printUnitAnchor } from './reade
 /** @typedef {{ route: string, headingIds: string[], noteClaims: string[], printOrdinal?: number }} BaselinePage */
 /** @typedef {{ notes: { from: string, claimId: string, to: string }[], frontMatter: string[], printAdditions?: { route: string, kind: string }[] }} Placements */
 /** @typedef {{ route: string, path: string, id: string, kind: 'chapter' | 'heading' | 'note' | 'note-group', claimId?: string }} Destination */
-/** @typedef {{ route: string, path: string, id: string, targets: Destination[], mode: 'retained' | 'alias' | 'notice' }} LegacyEntry */
+/** @typedef {{ sourceCommit: string, sourceDate: string }} CitationEdition */
+/** @typedef {{ route: string, path: string, id: string, targets: Destination[], mode: 'retained' | 'alias' | 'notice', edition: CitationEdition }} LegacyEntry */
+/** @typedef {{ sourceCommit: string, sourceDate: string, pages: { route: string, noteClaims: string[], printOrdinal?: number }[] }} CanonicalHistory */
 
 /** @param {string} route @param {boolean} print */
 function location(route, print) {
@@ -56,9 +58,10 @@ export function createCurrentPrintRoutes(baseline, placements, availableRoutes) 
 }
 
 /** Freeze earlier meanings independently of the current prose order.
- * @param {{ pages: BaselinePage[] }} baseline @param {Placements} placements
+ * @param {{ pages: BaselinePage[], sourceCommit?: string, sourceDate?: string }} baseline @param {Placements} placements
+ * @param {{ route: string, noteClaims: string[] }[]} [laterPages]
  */
-export function createLegacyCitationEntries(baseline, placements) {
+export function createLegacyCitationEntries(baseline, placements, laterPages = []) {
   /** @type {LegacyEntry[]} */
   const entries = [];
   const used = new Set();
@@ -83,7 +86,7 @@ export function createLegacyCitationEntries(baseline, placements) {
     if (used.has(key) || !targets.length) throw new Error(`Duplicate or empty legacy citation: ${key}`);
     used.add(key);
     const mode = targets.length !== 1 || targets[0].path !== path ? 'notice' : targets[0].id === id ? 'retained' : 'alias';
-    entries.push({ route, path, id, targets, mode });
+    entries.push({ route, path, id, targets, mode, edition: { sourceCommit: baseline.sourceCommit ?? '', sourceDate: baseline.sourceDate ?? '' } });
   }
 
   for (const page of baseline.pages) {
@@ -111,6 +114,58 @@ export function createLegacyCitationEntries(baseline, placements) {
         ? noteTargets : [{ route, path, id: `${prefix}-annotations`, kind: 'note-group' }]);
     }
   }
-  if (applied.size !== moves.size) throw new Error('Legacy citation placement refers to an unknown earlier address');
+  const laterOccurrences = new Set(laterPages.flatMap(page => page.noteClaims.map(claimId => noteKey(page.route, claimId))));
+  for (const key of moves.keys()) if (!applied.has(key) && !laterOccurrences.has(key))
+    throw new Error('Legacy citation placement refers to an unknown earlier address');
+  return entries;
+}
+
+/** Preserve the complete reconstructed published note family, not just known moves.
+ * Printed MDX heading names are outside this bounded reconstruction; freeze/map
+ * those separately before a later assembly changes their print-unit scope.
+ * @param {CanonicalHistory} history @param {Placements} placements
+ * @param {string[]} currentPrintRoutes
+ * @returns {LegacyEntry[]}
+ */
+export function createCanonicalCitationEntries(history, placements, currentPrintRoutes) {
+  /** @type {LegacyEntry[]} */
+  const entries = [];
+  const used = new Set(), routes = new Set(), ordinals = new Set();
+  const printRoutes = new Set(currentPrintRoutes);
+  const moves = new Map(placements.notes.map(move => [`${move.from}#${move.claimId}`, move.to]));
+  if (moves.size !== placements.notes.length) throw new Error('Duplicate canonical citation placement');
+  const edition = { sourceCommit: history.sourceCommit, sourceDate: history.sourceDate };
+  /** @param {string} route @param {string} path @param {string} id @param {Destination[]} targets */
+  function add(route, path, id, targets) {
+    const key = `${path}#${id}`;
+    if (used.has(key) || !targets.length) throw new Error(`Duplicate or empty canonical citation: ${key}`);
+    used.add(key);
+    const mode = targets.length !== 1 || targets[0].path !== path ? 'notice' : targets[0].id === id ? 'retained' : 'alias';
+    entries.push({ route, path, id, targets, mode, edition });
+  }
+  for (const page of history.pages) {
+    if (routes.has(page.route) || new Set(page.noteClaims).size !== page.noteClaims.length
+      || (page.printOrdinal !== undefined && (page.printOrdinal < 1 || ordinals.has(page.printOrdinal))))
+      throw new Error(`Duplicate canonical history occurrence or print unit: ${page.route}`);
+    routes.add(page.route);
+    if (page.printOrdinal !== undefined) ordinals.add(page.printOrdinal);
+    for (const print of page.printOrdinal !== undefined ? [false, true] : [false]) {
+      const { route, path, prefix } = location(page.route, print);
+      if (print) add(route, path, prefix, [{ route, path, id: prefix, kind: 'chapter' }]);
+      const notes = page.noteClaims.map(claimId => {
+        const destination = moves.get(`${route}#${claimId}`) ?? route;
+        // All current printed destinations must be explicitly registered. An
+        // output/source check independently verifies the actual destination claim.
+        if (!printRoutes.has(destination)) throw new Error(`Unknown canonical citation target route: ${destination}`);
+        const target = location(destination, print);
+        /** @type {Destination} */
+        const note = { route: destination, path: target.path, id: chapterNoteAnchor(target.prefix, claimId), kind: 'note', claimId };
+        add(route, path, chapterNoteAnchor(prefix, claimId), [note]);
+        return note;
+      });
+      if (notes.length) add(route, path, `${prefix}-annotations`, notes.every(note => note.route !== route)
+        ? notes : [{ route, path, id: `${prefix}-annotations`, kind: 'note-group' }]);
+    }
+  }
   return entries;
 }
