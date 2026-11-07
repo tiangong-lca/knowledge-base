@@ -493,3 +493,29 @@ reader, engineering/browser/print qualification, reviewed Main/hosting and exact
 root/terminal handoffs remain open for74. Full32chapters, eight research domains,
 twelve appendix responsibilities, remaining classic/global/industry/empirical work
 and formal PDF qualification remain open for the whole Goal.
+
+### 2026-11-08 B08 actual manuscript and source/reader acceptance
+
+Issue74's four-section shared manuscript preserves56original identities,14ordinary
+responsibilities and33case-bound paragraphs. Source reinspection was committed/pushed
+as3f33327304e6d143fbfacc85d8c5c605baa4611d after the prereading protocol. Two manual
+work/readings, six actual HTML carriers and53dated passages supplement the unchanged
+prior events. One new formal-IPCC context evidence and an existing Brightway evidence
+join clarify the final prose without replacing old carrier identities or archived factors.
+
+Actual v4source and continuous-reader checks are complete, with reader artifact
+SHA25696123bbe62e35a8ae1117962a7d5792fcf75b85be8b4e6c1b450eb5e372d8d37.
+The expanded212-record source context, including27new climate routes, was read;
+no outside scientific rewrite or global review-date refresh is justified. All18case
+inputs and earlier accepted receipts remain fixed. The actual four-section source,
+fine website9/7projections, eight S01print cross-references and six retained ordinary
+paragraphs have explicit accepted dispositions. M01/M02 and the complete32chapter
+edition are not thereby completed.
+
+The mixed roster is42units with4,095historical address obligations. Independent
+engineering review led to actual annotation-content and ordinary-link checks; a
+first export caught encoded Chinese navigation being mistaken for heading links,
+and the bounded validator fix retains that failure evidence. Integrated tests,
+case/research checks and types pass; repaired working export, clean-head browser/print,
+reviewed Main/hosting, exact root and normal terminal handoffs remain separate
+pending gates at this milestone. Full-book research and formalPDFscope stay open.

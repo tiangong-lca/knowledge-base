@@ -24,7 +24,7 @@ test('accepted B04 65-proposition and actual 19-heading inventories are independ
 });
 
 test('actual mixed roster conserves sources and rejects co-deleted registrations, foreign manuscripts and kind substitutions',()=>{
-  assert.equal(currentEditionKeys(edition,available(),baseline,placements).length,44);
+  assert.equal(currentEditionKeys(edition,available(),baseline,placements).length,42);
   for(const key of [frameworkUnitKey,frameworkAppendix]) {
     const copy=structuredClone(edition);const removed=copy.units.find(unit=>unit.key===key);copy.units=copy.units.filter(unit=>unit!==removed);
     assert.throws(()=>currentEditionKeys(copy,available().filter(route=>route!==removed.source),baseline,placements),/Missing accepted/);
@@ -32,7 +32,7 @@ test('actual mixed roster conserves sources and rejects co-deleted registrations
   assert.throws(()=>currentEditionKeys(edition,[...available(),'/monograph/unregistered'],baseline,placements),/no current book registration/);
   assert.throws(()=>currentEditionKeys(edition,available().filter(route=>route!==frameworkAppendix),baseline,placements),/Missing book source/);
   const kind=structuredClone(edition);kind.units.find(unit=>unit.key==='/docs/history').kind='chapter';
-  assert.throws(()=>currentEditionKeys(kind,available(),baseline,placements),/incorrect source or kind/);
+  assert.throws(()=>currentEditionKeys(kind,available(),baseline,placements),/incorrect source or kind|S01 must remain/);
 });
 
 test('actual occurrences guard the body independently of deduplicated note plans',()=>{

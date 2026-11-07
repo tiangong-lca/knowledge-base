@@ -1,3 +1,5 @@
+import exchangeProse from '@/config/exchange-semantics-prose-accepted.json';
+import { exchangeSemanticsHeadingEntries, remapExchangeSemanticsCitations, projectExchangeSemanticsRaw, validateExchangeSemanticsCoverage } from '@/scripts/reader-exchange-semantics.mjs';
 import processProse from '@/config/process-network-prose-accepted.json';
 import processAccepted from '@/config/process-network-accepted.json';
 import processHeadings from '@/config/process-network-heading-history.json';
@@ -46,8 +48,8 @@ const historical = [...createLegacyCitationEntries(baseline, placements, history
   ...headingHistory.canonicalPrintedHeadings.map(heading=>({route:heading.route,path:'/print',id:heading.id,
     targets:[{route:heading.route,path:'/print',id:heading.id,kind:'heading' as const}],mode:'retained' as const,
     edition:{sourceCommit:headingHistory.sourceCommit,sourceDate:'2026-11-07'}}))];
-const legacyEntries: LegacyEntry[] = remapProcessNetworkCitations(remapFunctionalReferenceCitations(remapCleanerProductionCitations(
-  remapBookCitations([...historical, ...cleanerProductionHeadingEntries(cleanerHeadingHistory), ...functionalReferenceHeadingEntries(functionalHeadings), ...processNetworkHeadingEntries(processHeadings)], edition, accepted, placements), cleanerAccepted, cleanerHeadingHistory), functionalAccepted, functionalHeadings), processAccepted, processHeadings);
+const legacyEntries: LegacyEntry[] = remapExchangeSemanticsCitations(remapProcessNetworkCitations(remapFunctionalReferenceCitations(remapCleanerProductionCitations(
+  remapBookCitations([...historical, ...cleanerProductionHeadingEntries(cleanerHeadingHistory), ...functionalReferenceHeadingEntries(functionalHeadings), ...processNetworkHeadingEntries(processHeadings), ...exchangeSemanticsHeadingEntries()], edition, accepted, placements), cleanerAccepted, cleanerHeadingHistory), functionalAccepted, functionalHeadings), processAccepted, processHeadings));
 export function getLegacyCitations(route: string, print: boolean) {
   const path = print ? '/print' : route, aliases = new Map<string, LegacyEntry[]>(), notices: LegacyEntry[] = [], scopes = new Map<string, LegacyEntry>();
   for (const entry of legacyEntries) {
@@ -75,7 +77,9 @@ export const getChapterReferenceIndex = cache(async (print = false) => {
     const errors = validateFrameworkCoverage(edition,rawSources,accepted);
     if (errors.length) throw new Error(errors.join('\n'));
   }
-  return createChapterReferenceIndex(rawPages, {print});
+  const exchangeErrors = validateExchangeSemanticsCoverage(edition, rawSources, undefined, catalog, exchangeProse);
+  if (exchangeErrors.length) throw new Error(exchangeErrors.join("\n"));
+  return createChapterReferenceIndex(rawPages.map(page => ({ ...page, raw: projectExchangeSemanticsRaw(page.url, page.raw, print) })), {print});
 });
 export async function getCitationLabel(target: Destination) {
   const print = target.path === '/print';

@@ -1,3 +1,4 @@
+import { validateExchangeSemanticsCoverage, assertExchangeSemanticsOriginal, assertExchangeSemanticsHeadingHistory, assertExchangeSemanticsCitationSources, assertExchangeSemanticsPartialHistory } from './reader-exchange-semantics.mjs';
 import { assertProcessNetworkHeadingHistory, validateProcessNetworkCoverage } from './reader-process-network.mjs';
 import { assertFunctionalReferenceHeadingHistory, validateFunctionalReferenceCoverage } from './reader-functional-reference.mjs';
 import { assertCleanerProductionHeadingHistory, validateCleanerProductionCoverage } from './reader-cleaner-production.mjs';
@@ -93,6 +94,7 @@ export async function validateRepository(root) {
     const [functionalAccepted,functionalHeadingHistory,functionalProse]=await Promise.all(['functional-reference-accepted','functional-reference-heading-history','functional-reference-prose-accepted'].map(name=>readOptional(`config/${name}.json`)));
     const [processAccepted,processHeadingHistory,processProse]=await Promise.all(['process-network-accepted','process-network-heading-history','process-network-prose-accepted'].map(name=>readOptional(`config/${name}.json`)));
     const [cleanerAccepted,cleanerHeadingHistory]=await Promise.all(['cleaner-production-accepted','cleaner-production-heading-history'].map(name=>readOptional(`config/${name}.json`)));
+    const [exchangeOriginal,exchangeHeadings,exchangeCitations,exchangePartial,exchangeProse]=await Promise.all(['original','heading-history','citation-sources','partial-history','prose-accepted'].map(name=>readOptional(`config/exchange-semantics-${name}.json`)));
     const sources=new Map();
     for(const file of await mdxFiles(resolve(root,'content'))) {
       const path=relative(resolve(root,'content'),file).replaceAll('\\','/');
@@ -100,6 +102,9 @@ export async function validateRepository(root) {
       sources.set(route,await readFile(file,'utf8'));
     }
     try {
+      if (!exchangeOriginal || !exchangeHeadings || !exchangeCitations || !exchangePartial || !exchangeProse) throw new Error("Book edition requires independent B08 original, captured history, partial-source and manuscript inventories");
+      assertExchangeSemanticsOriginal(exchangeOriginal); assertExchangeSemanticsHeadingHistory(exchangeHeadings); assertExchangeSemanticsCitationSources(exchangeCitations); assertExchangeSemanticsPartialHistory(exchangePartial);
+      errors.push(...validateExchangeSemanticsCoverage(edition,sources,exchangeOriginal,data,exchangeProse,exchangePartial));
       currentEditionKeys(edition,[...sources.keys()],baseline,placements);
       assertFrameworkHeadingHistory(headings);
       assertCleanerProductionHeadingHistory(cleanerHeadingHistory);

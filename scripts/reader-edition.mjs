@@ -1,3 +1,4 @@
+import { assertExchangeSemanticsRegistration, exchangeSemanticsRoute, exchangeSemanticsTitles } from './reader-exchange-semantics.mjs';
 import { assertProcessNetworkRegistration } from './reader-process-network.mjs';
 import { assertFunctionalReferenceRegistration, functionalReferenceSupplement } from './reader-functional-reference.mjs';
 import { createHash } from 'node:crypto';
@@ -25,6 +26,7 @@ export function currentEditionKeys(edition, availableSources, baseline, placemen
   assertCleanerProductionRegistration(edition);
   assertFunctionalReferenceRegistration(edition);
   assertProcessNetworkRegistration(edition);
+  assertExchangeSemanticsRegistration(edition);
   const assembly = units.find(unit => unit.key === frameworkUnitKey);
   if (!assembly || assembly.source !== frameworkManuscript || assembly.kind !== 'chapter') throw new Error('Missing accepted B04 manuscript registration');
   if (!units.some(unit => unit.key === frameworkAppendix && unit.source === frameworkAppendix && unit.kind === 'appendix')) throw new Error('Missing accepted X02 appendix registration');
@@ -43,15 +45,15 @@ export function currentEditionKeys(edition, availableSources, baseline, placemen
   const navigation = new Set(['/docs/appendices']);
   for (const source of available) if (!navigation.has(source) && !covered.has(source)) throw new Error(`Reader source has no current book registration: ${source}`);
   const retained = [...placements.frontMatter, ...baseline.pages.filter(page => page.printOrdinal !== undefined).sort((a,b) => a.printOrdinal-b.printOrdinal).map(page => page.route), ...(placements.printAdditions ?? []).map(unit => unit.route)];
-  const expected = retained.filter(route => route !== expectedCoverage[1] && route !== functionalReferenceSupplement).map(route => route === expectedCoverage[0] ? frameworkUnitKey : route);
+  const expected = retained.filter(route => route !== expectedCoverage[1] && route !== functionalReferenceSupplement && route !== '/docs/flows' && route !== '/docs/characterization').map(route => route === expectedCoverage[0] ? frameworkUnitKey : route);
   if (JSON.stringify(units.map(unit => unit.key)) !== JSON.stringify(expected)) throw new Error('Book edition omitted, reordered or misclassified an accepted retained unit');
   for (const unit of units.filter(unit => unit.key !== frameworkUnitKey)) {
     const kind = placements.frontMatter.includes(unit.key) ? 'front-matter' : unit.key.startsWith('/docs/book/') ? 'chapter' : unit.key.startsWith('/docs/appendices/') ? 'appendix' : 'topic';
     if (unit.source !== unit.key || unit.kind !== kind) throw new Error(`Book unit has incorrect source or kind: ${unit.key}`);
   }
   const roster = units.map(({key,source,kind})=>({key,source,kind}));
-  if (digest(roster) !== '6d909b2012f4b6ede34934dfe1c886548122364d48eb8d20b16c7e4093b5d0d2')
-    throw new Error('Current mixed reading roster differs from accepted B04/B06 edition');
+  if (digest(roster) !== '5f3ff6a7388d9983531aed817a41b1a46dc89611325b5a8f541696fd88eaa490')
+    throw new Error('Current mixed reading roster differs from registered B04/B06/B08 edition');
   return units.map(unit => unit.key);
 }
 
@@ -140,6 +142,12 @@ export function frameworkBookHref(href, currentKey) {
   if (href.startsWith('/print/#')) return href.slice('/print/'.length);
   const [path,fragment] = href.split('#');
   const route = path.replace(/\/$/,'');
+  if (currentKey === exchangeSemanticsRoute) {
+    if (!path && exchangeSemanticsTitles.includes(decodeURIComponent(fragment ?? '')))
+      return `#${printUnitAnchor(exchangeSemanticsRoute)}-${decodeURIComponent(fragment)}`;
+    if (route === '/docs/allocation' && !fragment)
+      return `#${printUnitAnchor('/docs/allocation')}`;
+  }
   if (route === frameworkAppendix) return `#${printUnitAnchor(frameworkAppendix)}${fragment ? `-${decodeURIComponent(fragment)}` : ''}`;
   if (currentKey === frameworkAppendix && route === '/docs/book/cml-computation-judgment-and-improvement') {
     const section = {'从活动平衡到废物贡献':'清单计算','另一个研究怎样使用这份指南':'外部采用'}[decodeURIComponent(fragment ?? '')];

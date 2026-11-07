@@ -43,8 +43,8 @@ test('B06 source and actual eight-heading capture are independently pinned', () 
   assert.throws(() => assertFunctionalReferenceProseAccepted(null), /independently reviewed/);
 });
 
-test('exact C08+S03 consumption conserves all other sources in the 44-unit mixed roster', () => {
-  assert.equal(currentEditionKeys(edition, available, baseline, placements).length, 44);
+test('exact C08+S03 consumption conserves all other sources in the current 42-unit mixed roster', () => {
+  assert.equal(currentEditionKeys(edition, available, baseline, placements).length, 42);
   for (const mutate of [
     copy => copy.units = copy.units.filter(unit => unit.key !== route),
     copy => copy.units.find(unit => unit.key === route).coverage = [],
