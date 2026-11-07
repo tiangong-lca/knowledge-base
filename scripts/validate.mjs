@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { publicCatalog, validateCatalog } from './knowledge.mjs';
 import { validateResearch } from './research.mjs';
 import { loadCasePublications, validateCasePublications } from './case-publication.mjs';
+import { currentEditionKeys, validateFrameworkCoverage, assertFrameworkHeadingHistory } from './reader-edition.mjs';
 import { readerInternalIds, validateReaderClaims, validateReaderMdx } from './reader-surface.mjs';
 
 export function validateClaimReferences(text, catalog, label = 'MDX') {
@@ -81,6 +82,21 @@ export async function validateRepository(root) {
   for (const file of await mdxFiles(resolve(root, 'content'))) {
     const text = await readFile(file, 'utf8'), label = relative(root, file);
     errors.push(...validateClaimReferences(text, data, label), ...validateTeachingCaseReferences(text, cases, label), ...validateReaderMdx(text, label, knownIds));
+  }
+  const edition = await readOptional('config/book-edition.json');
+  if (edition) {
+    const [accepted,baseline,placements,headings]=await Promise.all(['framework-accepted','citation-baseline','citation-placements','framework-heading-history'].map(name=>readOptional(`config/${name}.json`)));
+    const sources=new Map();
+    for(const file of await mdxFiles(resolve(root,'content'))) {
+      const path=relative(resolve(root,'content'),file).replaceAll('\\','/');
+      const route=`/${path.replace(/\.mdx?$/,'').replace(/(?:^|\/)index$/,'')}`;
+      sources.set(route,await readFile(file,'utf8'));
+    }
+    try {
+      currentEditionKeys(edition,[...sources.keys()],baseline,placements);
+      assertFrameworkHeadingHistory(headings);
+      errors.push(...validateFrameworkCoverage(edition,sources,accepted,data));
+    } catch(error) { errors.push(error.message); }
   }
   return errors;
 }

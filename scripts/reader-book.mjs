@@ -2,6 +2,16 @@
 const routeKey = url => typeof url === 'string' && /^\/(?!\/)/.test(url)
   ? url.split(/[?#]/, 1)[0].replace(/\/+$/, '') || '/' : null;
 
+const referenceGraphemes = new Intl.Segmenter('zh', { granularity: 'grapheme' });
+
+/** Keep the final complete character with its printed note, without changing text. */
+export function splitReferenceTail(text) {
+  if (typeof text !== 'string') throw new TypeError('Reference prose must be text');
+  const end = text.trimEnd().length;
+  const boundary = end ? referenceGraphemes.segment(text).containing(end - 1).index : 0;
+  return { body: text.slice(0, boundary), tail: text.slice(boundary) };
+}
+
 /**
  * The navigation tree is the sole order authority. Folder indexes precede their
  * children; separators, external links and pages outside this tree are excluded.
@@ -69,7 +79,7 @@ function maskCode(raw) {
 }
 
 /** Literal Claim/Prose references, in document order and unique first-use order. */
-export function collectChapterClaimIds(raw) {
+export function collectChapterClaimOccurrences(raw) {
   if (typeof raw !== 'string') throw new TypeError('Chapter content must be raw MDX text');
   const source = maskCode(raw), ids = [], seen = new Set();
   for (const match of source.matchAll(/<(Prose|Claim)\b[^>]*(?:>|$)/g)) {
@@ -83,10 +93,15 @@ export function collectChapterClaimIds(raw) {
     if (!references.length) throw new TypeError('Prose requires at least one claim for chapter notes');
     for (const id of references) {
       if (!/^[A-Za-z][A-Za-z0-9._:-]*$/.test(id)) throw new TypeError('Invalid chapter claim identifier');
-      if (!seen.has(id)) { seen.add(id); ids.push(id); }
+      ids.push(id);
     }
   }
   return ids;
+}
+
+/** Unique first use controls notes; the occurrence collector separately guards body conservation. */
+export function collectChapterClaimIds(raw) {
+  return [...new Set(collectChapterClaimOccurrences(raw))];
 }
 
 /** Injective route encoding: default note IDs cannot collide between chapters. */
@@ -113,14 +128,14 @@ export function createChapterNotePlan(raw, anchorPrefix) {
 }
 
 /** Locate premises in the actual reading/print order without copying their prose. */
-export function createChapterReferenceIndex(pages) {
+export function createChapterReferenceIndex(pages, { print = false } = {}) {
   const index = new Map();
   for (const page of pages) {
-    const plan = createChapterNotePlan(page.raw, chapterAnchorPrefix(page.url));
+    const plan = createChapterNotePlan(page.raw, print ? printUnitAnchor(page.url) : chapterAnchorPrefix(page.url));
     for (const note of plan.notes) {
       const locations = index.get(note.id) ?? [];
-      locations.push({ title: page.title, url: page.url, number: note.number,
-        anchor: note.anchor, printAnchor: page.printAnchorPrefix ? chapterNoteAnchor(page.printAnchorPrefix, note.id) : null,
+      locations.push({ title: page.title, url: print ? '/print' : page.url, unitKey: page.url, number: note.number,
+        anchor: note.anchor, printAnchor: print ? note.anchor : page.printAnchorPrefix ? chapterNoteAnchor(page.printAnchorPrefix, note.id) : null,
         printOrder: page.printOrder ?? Number.MAX_SAFE_INTEGER });
       index.set(note.id, locations);
     }

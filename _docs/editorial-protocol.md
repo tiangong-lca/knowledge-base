@@ -14,7 +14,7 @@ checkPaths:
   - "knowledge/**"
   - "releases/**"
 lastReviewedAt: 2026-11-07
-lastReviewedCommit: bac68b35ba5228ed97c99cfc85d5605c187aad97
+lastReviewedCommit: af32bc8567858e1ae9ce8c65c42eab978e529c63
 ---
 
 # Editorial and living review protocol
@@ -81,7 +81,7 @@ The joint-product chapter first reconstructs the positive physical alternatives 
 
 ## Finished prose is the publication gate
 
-Apply `_docs/reader-publication-contract.md` to every new or revised chapter. Source discipline alone does not qualify a reader deliverable: the argument must progress continuously and finish its declared question. Remove author-workflow narration, repeated status templates and development promises; retain real scientific conditions, disagreements and explicit invented data. Archive the removed process history in development Markdown. Each actual book chapter requires one continuous annotation sequence. Website navigation and book/print order may differ while sharing canonical prose and evidence; migrate note plans to the actual assembled chapter boundaries. The current runtime preserves the frozen42unit print roster with shared prose front matter and an explicitly registered container-energy appendix; the complete independently curated32chapter assembly remains pending. Independent reader judgment checks what automated validation cannot.
+Apply `_docs/reader-publication-contract.md` to every new or revised chapter. Source discipline alone does not qualify a reader deliverable: the argument must progress continuously and finish its declared question. Remove author-workflow narration, repeated status templates and development promises; retain real scientific conditions, disagreements and explicit invented data. Archive the removed process history in development Markdown. Each actual book chapter requires one continuous annotation sequence. Website navigation and book/print order may differ while sharing canonical prose and evidence; migrate note plans to the actual assembled chapter boundaries. The current runtime explicitly registers retained source units, shared prose front matter, the independently authored framework chapter and two calculation appendices. B04 interleaves canonical prose and has one actual chapter note plan; the complete independently curated32chapter assembly remains pending. Independent reader judgment checks what automated validation cannot.
 
 ## Historical numerical reconstruction
 

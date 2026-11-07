@@ -15,7 +15,7 @@ checkPaths:
   - "app/**"
   - "scripts/**"
 lastReviewedAt: 2026-11-07
-lastReviewedCommit: bac68b35ba5228ed97c99cfc85d5605c187aad97
+lastReviewedCommit: af32bc8567858e1ae9ce8c65c42eab978e529c63
 ---
 
 # LCA Living Knowledge Base and Review
@@ -24,7 +24,7 @@ lastReviewedCommit: bac68b35ba5228ed97c99cfc85d5605c187aad97
 
 ## Read and contribute
 
-`content/docs/` contains the narrative. `knowledge/catalog.json` is the canonical source, evidence, claim, concept and conditional-mapping registry. Public pages and machine exports share one reviewed-record projection. Source checks performed by agents are labeled explicitly and do not claim human expert or scientific approval.
+`content/docs/` contains the fine website narrative; `content/monograph/` contains independently authored book assemblies over the same canonical claims. `knowledge/catalog.json` is the canonical source, evidence, claim, concept and conditional-mapping registry. Public pages and machine exports share one reviewed-record projection. Source checks performed by agents are labeled explicitly and do not claim human expert or scientific approval.
 
 Read [publication contract](_docs/publication-contract.md), [editorial protocol](_docs/editorial-protocol.md), [architecture](_docs/architecture.md) and [edition workflow](releases/README.md). Private research, restricted originals and meeting transcripts are not part of this repository.
 
@@ -120,10 +120,13 @@ does not reproduce the 2025 correction or establish empirical climate validity.
 
 The [2026-11-06 monograph organization](_docs/editorial/2026-11-06-monograph-structure.md) records the adopted working argument, complete proposed TOC and content-preserving migration map. It is an editorial baseline under Issue58; actual prose rewriting, independent website/book organization and full-book research/qualification remain separate work. Its source branch now includes the accepted goal amendment from Issue56/PR57 at Main2bc7f4f. The revised full-book Goal is active as of2026-11-07; source and exact integration qualification remain separate gates.
 
-The opening and final synthesis use stable claim-occurrence note anchors with consecutive visible numbers. Old2026-11-07baseline addresses remain native aliases or explicit relocation links, including the two moved carrier-bag conclusions. `config/citation-baseline.json` is frozen and independently checked; do not regenerate it from current MDX. Six container calculation notes now relocate to `/docs/appendices/container-energy-check/`, with an explicit current print position and independent source-coverage checks. The full32chapter book assembly remains separate from this bounded45article print view.
+The opening and final synthesis use stable claim-occurrence note anchors with consecutive visible numbers. Old2026-11-07baseline addresses remain native aliases or explicit relocation links, including the two moved carrier-bag conclusions. `config/citation-baseline.json` is frozen and independently checked; do not regenerate it from current MDX. Six container calculation notes now relocate to `/docs/appendices/container-energy-check/`, with an explicit current print position and independent source-coverage checks. The current mixed45article print view now includes one independently authored B04 assembly and two appendices; the full32chapter book assembly remains separate.
 
 
 [Container monograph Issue62](https://github.com/tiangong-lca/knowledge-base/issues/62) implements the two historical chapters and their energy appendix under the [source and publication protocol](_docs/research-waves/2026-11-07-container-monograph.md). All36original claims and historical numerical input identities remain; a separate local-path synthesis supports continuous main-text reading. Current implementation and local validation do not substitute for independent reader assessment, exact source/Main/hosted qualification or workspace integration.
 
 
-[Canonical citation repair #64](https://github.com/tiangong-lca/knowledge-base/issues/64) preserves the later published note family that the original positional inventory predates. `config/citation-history.json` is a separately pinned reconstruction from immutable Main a36597d, with explicit source/code/catalog/page hashes and no historical-HTML-capture claim. Runtime/export now check 4,042 historical addresses across the two generations and render each migration's own source context. The [repair protocol](_docs/research-waves/2026-11-07-canonical-citation-continuity.md) records the defect, unchanged scientific content and the separate future printed-heading scope gate. The container task's completion remains open until this corrective delivery and its exact integration are qualified.
+[Canonical citation repair #64](https://github.com/tiangong-lca/knowledge-base/issues/64) preserves the later published note family that the original positional inventory predates. `config/citation-history.json` is a separately pinned reconstruction from immutable Main a36597d, with explicit source/code/catalog/page hashes and no historical-HTML-capture claim. Runtime/export now check 4,042 historical addresses across the two generations and render each migration's own source context. The [repair protocol](_docs/research-waves/2026-11-07-canonical-citation-continuity.md) records the defect, unchanged scientific content and the separate future printed-heading scope gate. Container62 and corrective64 subsequently completed their reviewed Main and exact root handoffs; current programme state is recorded in the execution ledger.
+
+
+[Framework monograph #66](https://github.com/tiangong-lca/knowledge-base/issues/66) implements the first separate book chapter with its own actual note plan. The explicit mixed roster, accepted65-proposition map and19captured printed-heading identities guard B04/X02 alongside the unchanged4,042historical addresses. The [unit protocol](_docs/editorial/2026-11-07-framework-monograph.md) records source reinspection, numerical conservation, reader/engineering checks and delivery boundaries. This bounded chapter does not certify the full32chapter edition or complete historical research.

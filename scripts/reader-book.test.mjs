@@ -1,7 +1,15 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { bookChapters, chapterAnchorPrefix, chapterNoteAnchor, collectChapterClaimIds, createChapterAnnotationPlan, createChapterNotePlan, createChapterReferenceIndex, orderPages, printUnitAnchor } from './reader-book.mjs';
+import { bookChapters, chapterAnchorPrefix, chapterNoteAnchor, collectChapterClaimIds, createChapterAnnotationPlan, createChapterNotePlan, createChapterReferenceIndex, orderPages, printUnitAnchor, splitReferenceTail } from './reader-book.mjs';
 import { citationHref, createCurrentPrintRoutes, createLegacyCitationEntries } from './reader-citations.mjs';
+
+test('printed note attachment preserves exact prose and the complete final grapheme', () => {
+  for (const [text, tail] of [['有条件的判断。', '。'], ['café\u0301', 'é\u0301'], ['末尾👨‍👩‍👧‍👦', '👨‍👩‍👧‍👦'], ['结果。  ', '。  '], ['', '']]) {
+    const result = splitReferenceTail(text);
+    assert.equal(result.body + result.tail, text);
+    assert.equal(result.tail, tail);
+  }
+});
 
 test('chapter notes continue across separate Prose and Claim blocks rather than resetting each block', () => {
   const raw = '<Prose ids="first second" />\n## Next section\n<Claim id="third" />\n<Prose ids="fourth fifth" />';

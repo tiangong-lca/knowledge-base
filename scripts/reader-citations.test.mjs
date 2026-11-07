@@ -22,8 +22,8 @@ test('the independently frozen canonical family preserves every actual published
   assert.equal(history.pages.reduce((n, page) => n + page.noteClaims.length, 0), 830);
   assert.equal(entries.length, 1788);
   assert.equal(new Set(entries.map(entry => `${entry.path}#${entry.id}`)).size, 1788);
-  assert.equal(entries.filter(entry => entry.mode === 'alias').length, 6);
-  assert.equal(entries.filter(entry => entry.mode === 'notice').length, 6);
+  assert.equal(entries.filter(entry => entry.mode === 'alias').length, 10);
+  assert.equal(entries.filter(entry => entry.mode === 'notice').length, 10);
   for (const entry of entries) {
     assert.equal(entry.edition.sourceCommit, 'a36597d72f8cd89beb285d5d5b439b4aa10e89a3');
     for (const target of entry.targets.filter(target => target.kind === 'note'))
@@ -100,6 +100,13 @@ test('published canonical moves retain native same-claim targets, unique IDs and
     assert((await check()).some(error => error.includes(`duplicate citation surface ID ${oldWeb}`)));
     await write(a, webA.replace(`${b}/#${currentWeb}`, `${a}/#${chapterNoteAnchor(aWeb, stay)}`));
     assert((await check()).some(error => error.includes('migration notice has the wrong native links')));
+    await write(a, webA.replace('>注1</a>', '>注2</a>'));
+    assert((await check()).some(error => error.includes('wrong or missing destination note label')));
+    await write(a, webA + `<a href="${b}/#${currentWeb}">《错误标题》注 1</a>`);
+    await write(b, `<h1>实际标题</h1>${webB}`);
+    assert((await check()).some(error => error.includes('wrong destination note title')));
+    await write(a, webA + `<a href="${b}/#${currentWeb}-dead">《实际标题》注 1</a>`);
+    assert((await check()).some(error => error.includes('wrong or missing destination note label')));
     await write(a, webA); await write(b, webB.replace(`data-reader-claim="${moved}"`, `data-reader-claim="${stay}"`));
     assert((await check()).some(error => error.includes(oldWeb) && error.includes('wrong or missing note destination')));
     await write(b, webB); await write('/print', print.replace(printAlias, '').replace('</article>', `${printAlias}</article>`));
