@@ -601,3 +601,52 @@ bibliography-process-language refusal remains recorded; new locators now identif
 source passages while dated execution remains in research/development records.
 All833publicclaims are still a dirty3175working preview. Clean/Main, full browser,
 hosting, exact root and normalterminal/mirror completion remain pending.
+
+## 2026-11-08 B09 terminal; B10 joint-production authoring — Issue78
+
+Source76/PR77 is fully delivered at exact Main
+`cf50f01fdf0ad497a12922ed20142e04a3d06991`, tree-identical to reviewed ed99e62.
+Root2291/PR2292/Main `01e1d659ec1a0535bc1cf0fa393f7c516e151bfd` retains the
+reviewed6efc137 tree, exact source pin, all23 peer pins and875061 prior review-record
+bytes. Source validate42434004481 and root ai-doc-lint42436947347 passed.
+Current qualified rootf9976a283/PR2294 still includes cf50 after unrelated Platform
+integration; the original local snapshot remains at01e1d659 with physicalKBcf50,
+all23 other physical states and17 prior dirty indicators preserved.
+
+The accepted《混合清单》contains39 continuous paragraphs/notes, preserves the
+original38-note scope and eleven unchanged-input case bindings. Actual bounded
+source, arithmetic, fresh reader, context and engineering reviews,350tests/types,
+clean builds and strict governance passed. Hosted95 actual artifacts match stable
+manifestabcb9289f87f944dabae8287e8a9447b468d3c30da4483180a2e2248f605a379;
+355 declared files remain uncaptured. Local and hosted29browser groups plus four
+wrapping combinations pass, with12 representative final images viewed per phase.
+All4,102 historical obligations and1,061 old/1,083 current reading/passage anchors
+are verified. Two known preload warnings and controlled network events remain
+recorded. Full response/final2006 exchange gaps, limitedS2 inspection and scientific,
+empirical/native/human-expert/formalPDF boundaries remain unchanged.
+
+Normal source `finish_NPF9uku6umN6EX6fKxaQTdeW` verifies delivery_complete=true;
+`projection_pVLl0z3eA2lhgl6mv-h2vOrr` verifies both IntegrationDone mirrors.
+Final normal root `finish_HcqheQxbG2fsxPt3X8H232MD` verifies delivery_complete=true,
+source_handoff.complete=true,1/1 source complete and zero remaining mirrors;
+receipt SHA256 `bbec162d1efe852fd02c10cd1b7477d38c27f64a01a563e17db1c1afd2ab2893`.
+No76/2291 delivery action remains. All owned previews/browser contexts are closed;
+no task containers, volumes or networks remain. Programme worktrees/dependencies,
+lawful private originals, named builds and review/capture receipts are retained.
+
+Programme9's prior5570-character B08-delivery/B09-start execution section was
+preserved verbatim and read back in [comment6717885921](https://github.com/tiangong-lca/knowledge-base/issues/9#issuecomment-6717885921)
+before replacing only that section. All other body sections and acceptance criteria
+remain unchanged. The programme stays OPEN/In Progress for the full goal.
+
+[Issue78](https://github.com/tiangong-lca/knowledge-base/issues/78) now owns B10
+《共同生产》from fresh clean cf50 on `codex/book-joint-production`, targetMain.
+Its [prereading/authoring protocol](editorial/2026-11-08-joint-production-monograph.md)
+must be reviewed, committed and pushed before new original investigation or prose.
+The actual291-file baseline freezes833claims,178readings,119revisions and36casefiles.
+The two source pages hold36distinct canonical paragraphs (29+7),16 direct evidence
+points/four works and20case templates; S04 remains M02. Fresh actual publication
+captures identify14 additional meaningful native addresses beyond4,102 historical
+obligations and the original29/7 note subsets. Five outside canonical consumers,
+seven premise links and the separate allocation-topic navigation remain obligations.
+No new original reading, numerical research or completed B10 manuscript is claimed.
