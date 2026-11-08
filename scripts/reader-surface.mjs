@@ -1,3 +1,4 @@
+import { assertClimateAssemblyOriginal, assertClimateAssemblyHeadingOriginal, assertClimateAssemblyAccepted, validateClimateAssemblyArtifactBytes, climateAssemblyHeadingEntries, remapClimateAssemblyCitations, validateClimateAssemblyCoverage, validateRenderedClimateAssembly } from './reader-climate-assembly.mjs';
 import { assertClosingSynthesisOriginal, assertClosingSynthesisHeadingHistory, assertClosingSynthesisProseAccepted, closingSynthesisHeadingEntries, remapClosingSynthesisCitations, validateClosingSynthesisCoverage, validateRenderedClosingSynthesis } from './reader-closing-synthesis.mjs';
 import { assertWallSelectionOriginal, assertWallSelectionHeadingHistory, assertWallSelectionAccepted, wallSelectionHeadingEntries, remapWallSelectionCitations, validateWallSelectionCoverage, validateRenderedWallSelection } from './reader-wall-selection.mjs';
 import { validateReaderNumberingOutput } from './reader-numbering-output.mjs';
@@ -225,8 +226,8 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
   const historicPrintRoutes = book ? [...sourceBaseline.pages.filter(page=>page.printOrdinal!==undefined).map(page=>page.route),...locations.frontMatter,...(locations.printAdditions??[]).map(unit=>unit.route)] : printRoutes;
   let entries = [...createLegacyCitationEntries(sourceBaseline, locations, history?.pages),
     ...(history ? createCanonicalCitationEntries(history, locations, historicPrintRoutes) : [])];
-  if (book) entries = remapClosingSynthesisCitations(remapWallSelectionCitations(remapJointProductionCitations(remapHybridInventoryCitations(remapExchangeSemanticsCitations(remapProcessNetworkCitations(remapFunctionalReferenceCitations(remapCleanerProductionCitations(remapBookCitations(
-    [...entries,...publishedHeadingEntries(book.headingHistory),...cleanerProductionHeadingEntries(book.cleanerHeadingHistory),...functionalReferenceHeadingEntries(book.functionalHeadings),...processNetworkHeadingEntries(book.processHeadings),...exchangeSemanticsHeadingEntries(book.exchangeHeadings),...hybridInventoryHeadingEntries(book.hybridHeadings),...jointProductionHeadingEntries(book.jointHeadings),...wallSelectionHeadingEntries(book.wallHeadings),...closingSynthesisHeadingEntries(book.closingHistory)],book.edition,book.accepted,locations),book.cleanerAccepted,book.cleanerHeadingHistory),book.functionalAccepted,book.functionalHeadings),book.processAccepted,book.processHeadings),book.exchangeOriginal,book.exchangeHeadings,book.exchangePartial,book.exchangeCitations),book.hybridAccepted,book.hybridHeadings),book.jointOriginal,book.jointHeadings,book.jointProse),book.wallOriginal,book.wallHeadings,book.wallAccepted),book.closingHistory,book.closingProse);
+  if (book) entries = remapClimateAssemblyCitations(remapClosingSynthesisCitations(remapWallSelectionCitations(remapJointProductionCitations(remapHybridInventoryCitations(remapExchangeSemanticsCitations(remapProcessNetworkCitations(remapFunctionalReferenceCitations(remapCleanerProductionCitations(remapBookCitations(
+    [...entries,...publishedHeadingEntries(book.headingHistory),...cleanerProductionHeadingEntries(book.cleanerHeadingHistory),...functionalReferenceHeadingEntries(book.functionalHeadings),...processNetworkHeadingEntries(book.processHeadings),...exchangeSemanticsHeadingEntries(book.exchangeHeadings),...hybridInventoryHeadingEntries(book.hybridHeadings),...jointProductionHeadingEntries(book.jointHeadings),...wallSelectionHeadingEntries(book.wallHeadings),...closingSynthesisHeadingEntries(book.closingHistory),...climateAssemblyHeadingEntries()],book.edition,book.accepted,locations),book.cleanerAccepted,book.cleanerHeadingHistory),book.functionalAccepted,book.functionalHeadings),book.processAccepted,book.processHeadings),book.exchangeOriginal,book.exchangeHeadings,book.exchangePartial,book.exchangeCitations),book.hybridAccepted,book.hybridHeadings),book.jointOriginal,book.jointHeadings,book.jointProse),book.wallOriginal,book.wallHeadings,book.wallAccepted),book.closingHistory,book.closingProse),book.climateAccepted);
   const addresses = new Set();
   for (const entry of entries) {
     const address = `${entry.path}#${entry.id}`;
@@ -247,7 +248,7 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
     const document = numbered ? numbered.documents.get(path) : htmlParser.parse(html);
     if (!document) { errors.push(`${path}: missing independently verified numbered semantic document`); continue; }
     const surface = readCitationSurface(document, path);
-    if (book) errors.push(...validateRenderedClosingSynthesis(document,path,book.catalog,book.closingProse,book.closingHistory), ...validateRenderedWallSelection(document,path,book.wallOriginal,book.catalog,book.wallAccepted), ...validateRenderedJointProduction(document,path,book.jointOriginal,book.catalog,book.jointProse), ...validateRenderedCleanerProduction(document,path,book.cleanerAccepted,book.catalog), ...validateRenderedFunctionalReference(document,path,book.functionalAccepted,book.catalog,book.functionalProse), ...validateRenderedProcessNetwork(document,path,book.processAccepted,book.catalog,book.processProse), ...validateRenderedExchangeSemantics(document,path,book.exchangeOriginal,book.catalog,book.exchangeProse,book.exchangePartial), ...validateRenderedHybridInventory(document,path,book.hybridAccepted,book.catalog,book.hybridProse));
+    if (book) errors.push(...validateRenderedClimateAssembly(document,path,book.catalog,book.climateAccepted), ...validateRenderedClosingSynthesis(document,path,book.catalog,book.closingProse,book.closingHistory), ...validateRenderedWallSelection(document,path,book.wallOriginal,book.catalog,book.wallAccepted), ...validateRenderedJointProduction(document,path,book.jointOriginal,book.catalog,book.jointProse), ...validateRenderedCleanerProduction(document,path,book.cleanerAccepted,book.catalog), ...validateRenderedFunctionalReference(document,path,book.functionalAccepted,book.catalog,book.functionalProse), ...validateRenderedProcessNetwork(document,path,book.processAccepted,book.catalog,book.processProse), ...validateRenderedExchangeSemantics(document,path,book.exchangeOriginal,book.catalog,book.exchangeProse,book.exchangePartial), ...validateRenderedHybridInventory(document,path,book.hybridAccepted,book.catalog,book.hybridProse));
     if (!surface.ids.has('main-content')) errors.push(`${path}: missing main-content fragment`);
     pages.set(path, surface);
     errors.push(...surface.errors);
@@ -296,6 +297,7 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
     if (title && actual?.title && title !== actual.title) errors.push(`${path}: wrong destination note title ${link.href}`);
   }
   if (book?.sources) {
+    errors.push(...validateClimateAssemblyCoverage(book.edition,book.sources,book.catalog,book.climateAccepted));
     errors.push(...validateClosingSynthesisCoverage(book.edition,book.sources,book.catalog,book.closingProse));
     errors.push(...validateWallSelectionCoverage(book.edition,book.sources,book.wallOriginal,book.catalog,book.wallAccepted));
     errors.push(...validateJointProductionCoverage(book.edition,book.sources,book.jointOriginal,book.catalog,book.jointProse));
@@ -366,6 +368,7 @@ export async function validateReaderOutput(root, { knownIds = new Set() } = {}) 
     if (hasReaderSource) await discover(sourceDirectory);
     const readConfig = async file => readFile(join(config,file),'utf8').then(JSON.parse,error=>{if(error.code==='ENOENT')return null;throw error;});
     const [edition,accepted,headingHistory,cleanerAccepted,cleanerHeadingHistory,functionalAccepted,functionalHeadings,functionalProse,processAccepted,processHeadings,processProse] = await Promise.all(['book-edition.json','framework-accepted.json','framework-heading-history.json','cleaner-production-accepted.json','cleaner-production-heading-history.json','functional-reference-accepted.json','functional-reference-heading-history.json','functional-reference-prose-accepted.json','process-network-accepted.json','process-network-heading-history.json','process-network-prose-accepted.json'].map(readConfig));
+    const climateAccepted = await readConfig('climate-assembly-accepted.json');
     const [closingHistory,closingProse] = await Promise.all(['heading-history','prose-accepted'].map(name=>readConfig(`closing-synthesis-${name}.json`)));
     const [jointOriginal,jointHeadings,jointProse] = await Promise.all(['original','heading-history','prose-accepted'].map(name=>readConfig(`joint-production-${name}.json`)));
     const [wallOriginal,wallHeadings,wallAccepted] = await Promise.all(['original','heading-history','accepted'].map(name=>readConfig(`wall-selection-${name}.json`)));
@@ -383,6 +386,8 @@ export async function validateReaderOutput(root, { knownIds = new Set() } = {}) 
       const missingWall = [['original',wallOriginal],['heading-history',wallHeadings],['accepted',wallAccepted]].filter(([,value])=>!value).map(([name])=>`wall-selection-${name}.json`);
       if (missingWall.length) throw new Error(`Book edition requires its wall original, captured headings and final selection; missing: ${missingWall.join(', ')}`);
       assertWallSelectionOriginal(wallOriginal); assertWallSelectionHeadingHistory(wallHeadings); assertWallSelectionAccepted(wallAccepted);
+      assertClimateAssemblyOriginal(); assertClimateAssemblyHeadingOriginal(); assertClimateAssemblyAccepted(climateAccepted);
+      errors.push(...validateClimateAssemblyArtifactBytes({figure:await readFile(join(root,'book-figures/climate-response-and-integral.svg')),input:await readFile(resolve(root,'..','knowledge/cases/climate-metrics-v1.json'))}));
       assertClosingSynthesisOriginal(); assertClosingSynthesisHeadingHistory(closingHistory); assertClosingSynthesisProseAccepted(closingProse);
       const sources = new Map();
       async function discoverRaw(directory,prefix) {
@@ -402,7 +407,7 @@ export async function validateReaderOutput(root, { knownIds = new Set() } = {}) 
       assertFunctionalReferenceProseAccepted(functionalProse);
       assertProcessNetworkProseAccepted(processProse);
       assertExchangeSemanticsOriginal(exchangeOriginal); assertExchangeSemanticsHeadingHistory(exchangeHeadings); assertExchangeSemanticsCitationSources(exchangeCitations); assertExchangeSemanticsPartialHistory(exchangePartial); assertExchangeSemanticsProseAccepted(exchangeProse);
-      book={closingHistory,closingProse,wallOriginal,wallHeadings,wallAccepted,jointOriginal,jointHeadings,jointProse,hybridAccepted,hybridHeadings,hybridProse,edition,accepted,headingHistory,cleanerAccepted,cleanerHeadingHistory,functionalAccepted,functionalHeadings,functionalProse,processAccepted,processHeadings,processProse,exchangeOriginal,exchangeHeadings,exchangeCitations,exchangePartial,exchangeProse,sources,catalog};
+      book={climateAccepted,closingHistory,closingProse,wallOriginal,wallHeadings,wallAccepted,jointOriginal,jointHeadings,jointProse,hybridAccepted,hybridHeadings,hybridProse,edition,accepted,headingHistory,cleanerAccepted,cleanerHeadingHistory,functionalAccepted,functionalHeadings,functionalProse,processAccepted,processHeadings,processProse,exchangeOriginal,exchangeHeadings,exchangeCitations,exchangePartial,exchangeProse,sources,catalog};
       sourceRoutes.splice(0,sourceRoutes.length,...sources.keys());
     }
     errors.push(...await validateLegacyCitationOutput(root, baseline, placements, hasReaderSource ? sourceRoutes : null, history,book));

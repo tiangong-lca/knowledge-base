@@ -769,3 +769,32 @@ receipt SHA256 is
 This qualifies only its exact candidate and bounded semantic scope. New continuous
 reader review, engineering/actual output, sourceCI/merge, hosted qualification,
 root integration and normal completion are still pending at this milestone.
+
+
+The preceding closing unit#82/PR83 subsequently completed sourceMain
+`838b77a27e1fbc057c6c3022ef784854d27ccbca`, actual hosted qualification and exact
+workspace#2306/PR2307 integration at `7951e3a0579c32d8efbab7e2719bb6e1ab331ef6`.
+Its ordinary source/root terminal receipts and both integration mirrors are
+complete; the earlier pending paragraph above records its pre-delivery milestone.
+
+[Issue84](https://github.com/tiangong-lca/knowledge-base/issues/84) continues on
+`codex/book-climate-assembly`, targetmain. Protocol/originals were pushed as
+`9efe61392e8cab2c9ea8c12ebcc42f3e43ea8675` before manuscript changes. Actual
+selection assigns40 old responsibilities plus one bounded figure explanation to
+a five-section B15 chapter, and eight complete reconstruction records to a real
+three-section appendix. The result is33chapters/40bookunits/3appendices and
+162formal chapter sections; the remaining merger and full-book gates stay open.
+
+Independent source, candidate semantic/numerical/consumer and fresh continuous
+reader assessments are complete within the scopes of the
+[protocol](editorial/2026-11-09-climate-assembly.md). Exact final terminology
+follow-ups preserve numerical inputs and all seven timing dependency edges.
+The new current B32 acceptance retains the immutable original closure and renews
+six specific consumer judgments. Independent engineering fault probes exposed
+hidden-text/image and extra-visual acceptance gaps; the demonstrated faults now
+reject after repair. All435 tests, type checking, catalog validation and strict
+governance configuration pass. Next compilation and subsequent actual export
+validation pass as a working preview; initial failures and their fixes remain
+recorded. Clean committed build, actual local browser and hosted publication,
+sourcePR and root integration remain pending at this milestone. No full
+fourth-part, full-book or human-expert acceptance is inferred.

@@ -1,0 +1,556 @@
+import { createHash } from "node:crypto";
+import original from "../config/climate-assembly-original.json" with { type: "json" };
+import captured from "../config/climate-assembly-heading-original.json" with { type: "json" };
+import baseline from "../config/citation-baseline.json" with { type: "json" };
+import history from "../config/citation-history.json" with { type: "json" };
+import { assertCitationBaseline } from "./reader-citation-baseline.mjs";
+import { assertCitationHistory } from "./reader-citation-history.mjs";
+import { createLegacyCitationEntries, createCanonicalCitationEntries } from "./reader-citations.mjs";
+import { chapterAnchorPrefix, collectChapterClaimOccurrences, printUnitAnchor } from "./reader-book.mjs";
+import { publicCatalog } from "./knowledge.mjs";
+import { validateExchangeAnnotationOutput, unaccountedReaderText } from "./reader-exchange-semantics.mjs";
+import { isVerifiedReaderPagination } from "./reader-numbering-output.mjs";
+import { readerParagraphText, validateReaderHistoricalText } from "./reader-publication-text.mjs";
+const climateAssemblyKey = "book-climate-equivalence";
+const climateAssemblyManuscript = "/monograph/climate-equivalence";
+const climateAssemblyTitle = "气候当量";
+const climateAssemblyRoutes = ["/docs/book/climate-response-and-metrics", "/docs/book/emission-time-and-assessment"];
+const climateAssemblyAppendix = "/docs/appendices/climate-numerical-reconstruction";
+const climateAssemblyTitles = ["响应与指标", "气体与碳收支", "清单比较", "排放日历", "历史与用途"];
+const climateAssemblyAppendixTitles = ["参考响应", "显示精度", "历史程序"];
+const climateAssemblyMovedIds = ["cl-climate-joos-design", "cl-climate-fit", "cl-climate-integral", "cl-climate-fit-reference", "cl-climate-reported-precision", "cl-climate-rounded-ratio", "cl-climate-native-scope", "cl-climate-grid"];
+// Main owns this independently reviewed current-content pin. Test pins qualify only explicit fixtures.
+/** @type {string|null} */
+const climateAssemblyAcceptedDigest = "4ff898b414ec6d779c5d1dbb648a8bf912c7513bb4833f4b6e2a3e85f13b4ea7";
+const climateAssemblyDigest = (value) => createHash("sha256").update(JSON.stringify(value)).digest("hex");
+const rawDigest = (text) => createHash("sha256").update(text.replaceAll("\r\n", "\n")).digest("hex");
+const ordered = (value) => Array.isArray(value) ? value.map(ordered) : value
+    && typeof value === "object" ? Object.fromEntries(Object.keys(value).sort().map((key) => [key, ordered(value[key])])) : value;
+const same = (a, b) => JSON.stringify(a) === JSON.stringify(b), sameRecord = (a, b) => same(ordered(a), ordered(b));
+const nonempty = (value) => typeof value === "string" && !!value.trim(), hashLike = (value) => /^[a-f0-9]{64}$/.test(value ?? "");
+const unique = (values) => [...new Set(values)];
+const location = (route, path) => path === "/print" ? printUnitAnchor(route) : chapterAnchorPrefix(route);
+const target = (route, path, kind, id, claimId) => ({ route, path, kind, id, ...claimId ? { claimId } : {} });
+const sourceRoutes = [...climateAssemblyRoutes, climateAssemblyManuscript, climateAssemblyAppendix];
+const plainSections = (titles) => titles.map((title) => ({ id: title, title }));
+function assertClimateAssemblyOriginal(value = original) {
+  if (climateAssemblyDigest(value) !== "f3a653ef5b73e4be49e562ed578c8d279786734bebb49a4a44b987d04fe52c8b") throw new Error("Climate immutable original48/source/scientific closure differs");
+}
+function assertClimateAssemblyHeadingOriginal(value = captured) {
+  if (climateAssemblyDigest(value) !== "103a3c90c519d0e6e47d9979391b69d85d1ab39ad246b306bb714770b85df263") throw new Error("Climate actual838 immutable heading/scope capture differs");
+}
+function assertClimateAssemblyRegistration(edition) {
+  const units = edition?.units ?? [], matches = units.filter((row) => row.key === climateAssemblyKey), unit = matches[0], appendices = units.filter((row) => row.key === climateAssemblyAppendix);
+  if (matches.length !== 1
+      || unit.source !== climateAssemblyManuscript
+      || unit.kind !== "chapter"
+      || unit.part !== "环境后果"
+      || !same(unit.coverage, climateAssemblyRoutes)
+      || !same(unit.sections, plainSections(climateAssemblyTitles))
+      || units.some((row) => climateAssemblyRoutes.includes(row.key))
+      || appendices.length !== 1
+      || appendices[0].source !== climateAssemblyAppendix
+      || appendices[0].kind !== "appendix") throw new Error("Climate requires actual five-section/two-source book assembly and registered numerical appendix");
+}
+/** Inspect only the bounded static MDX shape used by these four authored sources. */
+function inspectClimateAssemblySource(raw) {
+  const front = /^---\r?\n([\s\S]*?)\r?\n---/.exec(raw ?? "")?.[1] ?? "", field = (name) => new RegExp(`^${name}:\\s*(.+)$`, "m").exec(front)?.[1]?.replace(/^(['"])(.*)\1$/, "$2");
+  const pieces = raw.replace(/^---\r?\n[\s\S]*?\r?\n---/, "").split(/^## (.+)\s*$/m), headings = [], occurrences = [], ordinary = [], figures = [];
+  for (let i = 1; i < pieces.length; i += 2) {
+    const explicit = /^(.*?)\s+\[#([^\]]+)\]$/.exec(pieces[i]), title = explicit ? explicit[1] : pieces[i], id = explicit ? explicit[2] : title, body = pieces[i + 1];
+    headings.push({ id, title });
+    occurrences.push(...collectChapterClaimOccurrences(body).map((claim) => ({ id: claim, section: id })));
+    const rest = body.replace(/<figure>[\s\S]*?<\/figure>/g, (figure) => {
+      const attr = (name) => new RegExp(`\\b${name}="([^"]*)"`).exec(figure)?.[1];
+      figures.push({ section: id, src: attr("src"), alt: attr("alt"), width: attr("width"), height: attr("height"), caption: /<figcaption>([^<]*)<\/figcaption>/.exec(figure)?.[1] });
+      return "";
+    }).replace(/<(?:Prose|Claim)\b[^>]*\/>/g, "");
+    for (const block of rest.split(/\n\s*\n/).map((value) => value.trim()).filter(Boolean)) {
+      const links = [...block.matchAll(/\[([^\]]+)\]\(([^)]+)\)/g)].map((match) => ({ text: match[1], href: match[2] })), text = block.replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1").replace(/\s*\n\s*/g, "");
+      ordinary.push({ section: id, text, links });
+    }
+  }
+  return { title: field("title"), description: field("description"), headings, occurrences, ordinary, figure: figures.length === 1 ? figures[0] : null, figureCount: figures.length, outsideOccurrences: collectChapterClaimOccurrences(pieces[0]) };
+}
+function assertClimateAssemblyAccepted(accepted, independentDigest = climateAssemblyAcceptedDigest) {
+  assertClimateAssemblyOriginal();
+  assertClimateAssemblyHeadingOriginal();
+  if (!accepted
+      || accepted.schemaVersion !== 1
+      || accepted.status !== "reviewed"
+      || !hashLike(independentDigest)
+      || climateAssemblyDigest(accepted) !== independentDigest) throw new Error("Climate requires independently reviewed current content; acceptance is incomplete");
+  const mainIds = accepted.sections?.flatMap((section) => section.claimIds ?? []) ?? [], appendixIds = accepted.appendix?.sections?.flatMap((section) => section.claimIds ?? []) ?? [], all = [...mainIds, ...appendixIds], wanted = [...original.orderedClaimIds, "cl-climate-reference-illustration"];
+  if (accepted.bookKey !== climateAssemblyKey
+      || accepted.manuscript !== climateAssemblyManuscript
+      || accepted.title !== climateAssemblyTitle
+      || !same(accepted.sections?.map(({ id, title }) => ({ id, title })), plainSections(climateAssemblyTitles))
+      || accepted.appendix?.route !== climateAssemblyAppendix
+      || accepted.appendix?.title !== "气候数值的重建"
+      || !same(accepted.appendix.sections?.map(({ id, title }) => ({ id, title })), plainSections(climateAssemblyAppendixTitles))
+      || mainIds.length !== 41
+      || !same(appendixIds, climateAssemblyMovedIds)
+      || unique(all).length !== 49
+      || !same([...all].sort(), wanted.sort())
+      || !same(accepted.claims?.map((row) => row.id), all)
+      || accepted.claims.some((row) => row.status !== "reviewed")) throw new Error("Climate accepted49/order/five-section/three-section appendix conservation differs");
+  if (!same(accepted.website?.map((page) => page.route), climateAssemblyRoutes)) throw new Error("Climate requires both fine website memberships");
+  const originalClimate = collectChapterClaimOccurrences(original.sourceFiles[`content${climateAssemblyRoutes[0]}.mdx`].text), originalTime = collectChapterClaimOccurrences(original.sourceFiles[`content${climateAssemblyRoutes[1]}.mdx`].text);
+  for (const [index, wantedIds] of [[0, [...originalClimate.filter((id) => !climateAssemblyMovedIds.includes(id)), "cl-climate-reference-illustration"]], [1, originalTime]]) {
+    const page = accepted.website[index];
+    if (!Array.isArray(page.occurrences)
+        || !same(page.occurrences.map((row) => row.id), page.claimIds)
+        || unique(page.claimIds).length !== page.claimIds.length
+        || !same([...page.claimIds].sort(), [...wantedIds].sort())) throw new Error("Climate fine website current membership or section occurrence receipt differs");
+  }
+  if (!same(accepted.sources?.map((row) => row.route), sourceRoutes)
+      || accepted.sources.some((row) => !nonempty(row.title)
+      || !nonempty(row.description)
+      || !hashLike(row.mdxSha256)
+      || !Array.isArray(row.headings)
+      || !Array.isArray(row.ordinary)
+      || row.ordinary.some((item) => !nonempty(item.section)
+      || !nonempty(item.text)
+      || !Array.isArray(item.links)
+      || item.links.some((link) => !nonempty(link.text)
+      || !nonempty(link.href))))) throw new Error("Climate acceptance needs all four exact source metadata/headings/ordinary navigation receipts");
+  if (!Array.isArray(accepted.reviewEvidence)
+      || !accepted.reviewEvidence.length
+      || accepted.reviewEvidence.some((row) => !nonempty(row.kind)
+      || !hashLike(row.reportSha256)
+      || !hashLike(row.receiptSha256))) throw new Error("Climate acceptance requires explicit substantive and reader review evidence");
+  for (const row of accepted.sources) {
+    const figureExpected = [climateAssemblyRoutes[0], climateAssemblyManuscript].includes(row.route);
+    if (figureExpected ? !sameRecord(row.figure, { section: "响应与指标", src: "/book-figures/climate-response-and-integral.svg", alt: "相同CO₂响应的两种量：上图显示大气中剩余的比例，下图显示到各时点的累计面积。", width: "700", height: "800", caption: "同一响应的剩余比例与时间积分" }) : row.figure !== null) throw new Error("Climate original response figure needs exact reviewed placement and identity");
+  }
+}
+/** Keep original external scientific records exact; only the separately reviewed49 are authored here. */
+function validateClimateAssemblyCoverage(edition, sources, catalog, accepted, independentDigest = climateAssemblyAcceptedDigest, catalogProjection = "raw") {
+  assertClimateAssemblyRegistration(edition);
+  assertClimateAssemblyAccepted(accepted, independentDigest);
+  if (!["raw", "public"].includes(catalogProjection)) throw new Error("Climate requires explicit raw or public catalog projection");
+  const errors = [];
+  for (const source of accepted.sources) {
+    const raw = sources.get(source.route);
+    if (typeof raw !== "string") {
+      errors.push(`Climate missing source: ${source.route}`);
+      continue;
+    }
+    const found = inspectClimateAssemblySource(raw), expectedOccurrences = source.route === climateAssemblyManuscript ? accepted.sections.flatMap((section) => section.claimIds.map((id) => ({ id, section: section.id }))) : source.route === climateAssemblyAppendix ? accepted.appendix.sections.flatMap((section) => section.claimIds.map((id) => ({ id, section: section.id }))) : accepted.website.find((page) => page.route === source.route).occurrences;
+    if (rawDigest(raw) !== source.mdxSha256
+        || !sameRecord({ title: found.title, description: found.description, headings: found.headings, ordinary: found.ordinary, figure: found.figure }, { title: source.title, description: source.description, headings: source.headings, ordinary: source.ordinary, figure: source.figure })
+        || found.outsideOccurrences.length
+        || found.figureCount !== (source.figure ? 1 : 0)
+        || !same(found.occurrences, expectedOccurrences)
+        || collectChapterClaimOccurrences(raw).length !== expectedOccurrences.length) errors.push(`Climate actual MDX/body/navigation/figure differs from reviewed source: ${source.route}`);
+  }
+  const groups = [["claims", accepted.claims], ...Object.entries(original.scientificClosure)], reference = structuredClone(catalog);
+  for (const [kind, records] of groups) {
+    const fixed = new Map(records.map((record) => [record.id, record]));
+    reference[kind] = [...(reference[kind] ?? []).filter((record) => !fixed.has(record.id)), ...records];
+  }
+  const expected = catalogProjection === "public" ? publicCatalog(reference) : reference;
+  for (const [kind, records] of groups) for (const fixed of records) {
+    const found = catalog?.[kind]?.filter((row) => row.id === fixed.id) ?? [], wanted = expected[kind].find((row) => row.id === fixed.id);
+    if (found.length !== 1 || !sameRecord(found[0], wanted)) errors.push(`Climate reviewed ${kind} record differs: ${fixed.id}`);
+  }
+  return errors;
+}
+function validateClimateAssemblyArtifactBytes({ figure, input } = {}) {
+  assertClimateAssemblyOriginal();
+  return [["figure", figure, "public/book-figures/climate-response-and-integral.svg"], ["input", input, "knowledge/cases/climate-metrics-v1.json"]].flatMap(([name, bytes, path]) => (typeof bytes === "string"
+      || Buffer.isBuffer(bytes))
+      && createHash("sha256").update(bytes).digest("hex") === original.frozenFileHashes[path] ? [] : [`Climate immutable ${name} bytes differ or missing`]);
+}
+function climateAssemblyHeadingEntries() {
+  assertClimateAssemblyHeadingOriginal();
+  return captured.newNativePrintHeadings.map((row) => ({ route: row.route, path: row.path, id: row.id, targets: [target(row.route, row.path, "heading", row.id)], mode: "retained", edition: { sourceCommit: captured.sourceCommit, sourceDate: "2026-11-09" } }));
+}
+function originalEntries() {
+  assertCitationBaseline(baseline);
+  assertCitationHistory(history);
+  const placements = { frontMatter: ["/docs", "/docs/book"], notes: [], printAdditions: [] };
+  return [...createLegacyCitationEntries(baseline, placements, history.pages), ...createCanonicalCitationEntries(history, placements, baseline.pages.map((page) => page.route))].filter((entry) => climateAssemblyRoutes.includes(entry.route));
+}
+const climateAssemblyOriginalEntries = () => [...originalEntries(), ...climateAssemblyHeadingEntries()];
+function currentPlace(id, print, accepted) {
+  const appendix = accepted.appendix.sections.find((row) => row.claimIds.includes(id));
+  if (appendix) return { route: climateAssemblyAppendix, section: appendix.id };
+  if (print) {
+    const section = accepted.sections.find((row) => row.claimIds.includes(id));
+    if (section) return { route: climateAssemblyKey, section: section.id };
+  } else {
+    for (const page of accepted.website) {
+      const occurrence = page.occurrences.find((row) => row.id === id);
+      if (occurrence) return { route: page.route, section: occurrence.section };
+    }
+  }
+  throw new Error(`Climate original proposition has no current destination: ${id}`);
+}
+function remapClimateAssemblyCitations(entries, accepted, independentDigest = climateAssemblyAcceptedDigest) {
+  assertClimateAssemblyAccepted(accepted, independentDigest);
+  const frozen = climateAssemblyOriginalEntries(), byAddress = new Map(frozen.map((row) => [`${row.path}#${row.id}`, row]));
+  if (frozen.length !== 237 || byAddress.size !== 237) throw new Error("Climate requires226original plus11actual captured obligations");
+  for (const [address, fixed] of byAddress) {
+    const found = entries.filter((row) => `${row.path}#${row.id}` === address);
+    if (found.length !== 1 || !sameRecord(found[0], fixed)) throw new Error(`Climate historical entry missing, repeated or changed: ${address}`);
+  }
+  for (const entry of entries) if (climateAssemblyRoutes.includes(entry.route)
+      && !byAddress.has(`${entry.path}#${entry.id}`)) throw new Error(`Climate unexpected historical entry: ${entry.id}`);
+  return entries.map((entry) => {
+    if (!byAddress.has(`${entry.path}#${entry.id}`)) return entry;
+    const print = entry.path === "/print", route = print ? climateAssemblyKey : entry.route, path = entry.path, first = entry.targets[0];
+    const note = (id) => {
+      const where = currentPlace(id, print, accepted), destinationPath = print ? "/print" : where.route;
+      return target(where.route, destinationPath, "note", `${location(where.route, destinationPath)}-claim-${id}`, id);
+    };
+    if (first.kind === "note") {
+      const targets2 = entry.targets.map((row) => note(row.claimId)), native = targets2.length === 1 && targets2[0].path === path;
+      return { ...entry, route: native ? targets2[0].route : route, targets: targets2, mode: native ? entry.id === targets2[0].id ? "retained" : "alias" : "notice" };
+    }
+    const sourcePath = `content${entry.route}.mdx`;
+    const oldSource = captured.originalSourceHistory.find((row) => row.commit === entry.edition.sourceCommit
+        && row.path === sourcePath);
+    let scopes = entry.edition.sourceCommit === captured.sourceCommit
+      ? captured.sourceSections[entry.route]
+      : oldSource?.sectionScopes;
+    if (!scopes) throw new Error(`Climate historical source identity is unknown: ${entry.id}`);
+    if (oldSource && entry.route === climateAssemblyRoutes[0]) {
+      // Earlier climate source reconstructions omitted the figure flag. Reuse only the
+      // original section's proven scope after checking the exact same bytes.
+      const frozenSource = original.sourceFiles[sourcePath];
+      const sourceSha256 = createHash("sha256").update(frozenSource.text).digest("hex");
+      if (oldSource.sha256 !== frozenSource.sha256 || sourceSha256 !== frozenSource.sha256)
+        throw new Error(`Climate historical figure scope lacks exact same-source proof: ${entry.id}`);
+      scopes = scopes.map((scope) => {
+        const qualified = original.sectionScopes[entry.route].find((row) => row.title === scope.title);
+        if (!qualified || !same(qualified.claimIds, scope.claimIds))
+          throw new Error(`Climate historical section scope differs from same-byte original: ${entry.id}`);
+        return { ...scope, hasResponseFigure: qualified.hasResponseFigure };
+      });
+    }
+    const sourceTitle = /^title:\s*(.+)$/m.exec(original.sourceFiles[sourcePath].text)[1], group = first.kind === "note-group", heading = first.kind === "heading";
+    let scope;
+    if (heading) {
+      const row = captured.newNativePrintHeadings.find((row2) => row2.route === entry.route
+          && (first.id === row2.id
+          || first.id === row2.id.slice(`${printUnitAnchor(entry.route)}-`.length)));
+      scope = scopes.find((item) => item.title === row?.title);
+      if (!scope) throw new Error(`Climate unmapped original heading: ${entry.id}`);
+    } else scope = { claimIds: oldSource?.claimIds ?? collectChapterClaimOccurrences(original.sourceFiles[sourcePath].text), hasResponseFigure: entry.route === climateAssemblyRoutes[0] };
+    const notes = scope.claimIds.map(note), destinations = unique(scope.claimIds.map((id) => {
+      const where = currentPlace(id, print, accepted);
+      return JSON.stringify(target(where.route, print ? "/print" : where.route, "heading", `${print ? `${printUnitAnchor(where.route)}-` : ""}${where.section}`));
+    })).map((value) => JSON.parse(value));
+    if (scope.hasResponseFigure) {
+      const figureRoute = print ? climateAssemblyKey : climateAssemblyRoutes[0], figure = target(figureRoute, print ? "/print" : figureRoute, "heading", `${print ? `${printUnitAnchor(figureRoute)}-` : ""}响应与指标`);
+      if (!destinations.some((row) => sameRecord(row, figure))) destinations.unshift(figure);
+    }
+    const targets = group ? notes : [...destinations, ...notes], text = `原《${sourceTitle}》${heading ? `“${scope.title}”` : group ? "注释组" : "篇章"}的范围由下列原有${notes.length}则注释${group ? "" : "与具名内容位置"}${scope.hasResponseFigure
+        && !group ? "及原响应图的现行入口" : ""}界定；链接保留原命题及原顺序，现行篇章另有其他内容。`;
+    const nativeId = group ? `${location(route, path)}-annotations` : heading ? entry.id : location(route, path), retained = entry.id === nativeId
+        && (group ? route !== climateAssemblyKey : heading
+        && !print
+        && accepted.sources.find((row) => row.route === route)?.headings.some((row) => row.id === entry.id));
+    return retained ? { ...entry, route, targets: [target(route, path, first.kind, nativeId)], mode: "retained", scope: { text, targets } } : { ...entry, route, targets, mode: "notice", scope: { text, targets } };
+  });
+}
+/** Only destinations used by this bounded assembly are translated. */
+function climateAssemblyBookHref(href, currentKey) {
+  if (typeof href !== "string") return href;
+  const [path, fragment] = href.split("#"), route = path.replace(/\/$/, "");
+  if (route === climateAssemblyAppendix) return `#${printUnitAnchor(route)}${fragment ? `-${decodeURIComponent(fragment)}` : ""}`;
+  if (climateAssemblyRoutes.includes(route)) {
+    const section = decodeURIComponent(fragment ?? "");
+    if (!section) return `#${printUnitAnchor(climateAssemblyKey)}`;
+    if (climateAssemblyTitles.includes(section)) return `#${printUnitAnchor(climateAssemblyKey)}-${section}`;
+  }
+  if ([climateAssemblyKey, climateAssemblyAppendix].includes(currentKey)
+      && ["/docs/book/future-technology-and-context", "/docs/book/acidification-and-nutrient-pathways"].includes(route)
+      && !fragment) return `#${printUnitAnchor(route)}`;
+  return href;
+}
+const headingCopyQualifications = new WeakMap();
+const frameworkSvgAttributes = {
+  xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24", viewBox: "0 0 24 24",
+  fill: "none", stroke: "currentColor", "stroke-width": "2", "stroke-linecap": "round",
+  "stroke-linejoin": "round", "aria-hidden": "true"
+};
+const copyButtonClass = "inline-flex items-center justify-center rounded-md text-sm font-medium duration-100 disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fd-ring hover:bg-fd-accent hover:text-fd-accent-foreground p-1 [&_svg]:size-4 not-prose shrink-0 text-fd-muted-foreground opacity-0 transition-opacity group-hover/heading:opacity-100";
+const copyPathData = [
+  "M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71",
+  "M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+];
+function frameworkSvgShape(svg, className, pathData) {
+  if (svg?.tagName !== "SVG" || !sameRecord(svg.attributes, { ...frameworkSvgAttributes, class: className })) return false;
+  const children = svg.childNodes.filter((node) => node.nodeType === 1);
+  return svg.text === "" && children.length === pathData.length
+    && children.every((path, index) => path.tagName === "PATH"
+      && path.childNodes.length === 0 && sameRecord(path.attributes, { d: pathData[index] }));
+}
+function climateBodyOwner(unit) {
+  const wrappers = unit.querySelectorAll("div").filter((node) => node.getAttribute("class") === "prose flex-1");
+  if (!wrappers.length) return unit; // Explicit direct-child fixtures and their known renderer shape.
+  if (wrappers.length !== 1 || wrappers[0].parentNode !== unit
+      || !sameRecord(wrappers[0].attributes, { class: "prose flex-1" })) return null;
+  return wrappers[0];
+}
+function qualifyHeadingCopyButtons(unit, source) {
+  const owner = climateBodyOwner(unit);
+  if (!owner) return;
+  for (const heading of unit.querySelectorAll("h2")) {
+    if (heading.parentNode !== owner || !source.headings.some((row) => row.id === heading.id)) continue;
+    const children = heading.childNodes.filter((node) => node.nodeType === 1);
+    const [anchor, button] = children;
+    if (children.length !== 2 || anchor?.tagName !== "A" || button?.tagName !== "BUTTON"
+        || anchor.getAttribute("href") !== `#${heading.id}`
+        || !sameRecord(button.attributes, { "aria-live": "polite", class: copyButtonClass })) continue;
+    const controls = button.childNodes.filter((node) => node.nodeType === 1);
+    if (controls.length !== 2 || !frameworkSvgShape(controls[0], "lucide lucide-link", copyPathData)
+        || controls[1].tagName !== "SPAN" || !sameRecord(controls[1].attributes, { class: "sr-only" })
+        || controls[1].childNodes.length !== 1 || controls[1].firstChild?.nodeType !== 3
+        || controls[1].text !== "复制章节链接" || button.text !== "复制章节链接") continue;
+    headingCopyQualifications.set(button, { unit, owner, heading, headingId: heading.id, digest: rawDigest(button.outerHTML) });
+  }
+}
+function trustedHeadingCopyButton(button) {
+  const proof = headingCopyQualifications.get(button);
+  return !!proof && button.parentNode === proof.heading && proof.heading.parentNode === proof.owner
+    && climateBodyOwner(proof.unit) === proof.owner && proof.heading.id === proof.headingId && rawDigest(button.outerHTML) === proof.digest;
+}
+function trustedFrameworkSvg(svg) {
+  if (trustedHeadingCopyButton(svg.parentNode)) return true;
+  const footer = svg.closest(".docs-pagination");
+  if (!footer || !isVerifiedReaderPagination(footer)) return false;
+  const container = svg.parentNode, link = container?.parentNode;
+  if (container?.tagName !== "DIV" || link?.tagName !== "A" || link.parentNode !== footer
+      || link.querySelectorAll("svg").length !== 1) return false;
+  const children = container.childNodes.filter((node) => node.nodeType === 1);
+  if (children.length !== 2 || children[0] !== svg || children[1].tagName !== "P") return false;
+  return container.getAttribute("class") === "inline-flex items-center gap-1.5 font-medium"
+      && frameworkSvgShape(svg, "lucide lucide-chevron-left -mx-1 size-4 shrink-0 rtl:rotate-180", ["m15 18-6-6 6-6"])
+    || container.getAttribute("class") === "inline-flex items-center gap-1.5 font-medium flex-row-reverse"
+      && frameworkSvgShape(svg, "lucide lucide-chevron-right -mx-1 size-4 shrink-0 rtl:rotate-180", ["m9 18 6-6-6-6"]);
+}
+/** URL identity remains exact except for one semantic decode of the fragment. */
+function ordinaryHrefIdentity(href) {
+  if (typeof href !== "string") return null;
+  const hash = href.indexOf("#");
+  if (hash < 0) return { path: href, hasFragment: false };
+  try {
+    return { path: href.slice(0, hash), hasFragment: true, fragment: decodeURIComponent(href.slice(hash + 1)) };
+  } catch {
+    return null;
+  }
+}
+function sameOrdinaryNavigation(actual, expected) {
+  const normalize = (rows) => {
+    let invalid = false;
+    const normalized = rows.map((row) => ({ ...row, links: row.links.map((link) => {
+      const href = ordinaryHrefIdentity(link.href);
+      if (href === null) invalid = true;
+      return { ...link, href };
+    }) }));
+    return invalid ? null : normalized;
+  };
+  const found = normalize(actual), wanted = normalize(expected);
+  return found !== null && wanted !== null && sameRecord(found, wanted);
+}
+function concealedByInlineStyle(style) {
+  // Normalize only actual opacity numbers and the hidden display/visibility
+  // keywords. Caption text cannot establish whether a textless image is visible.
+  for (const declaration of style.replace(/\/\*[\s\S]*?\*\//g, "").split(";")) {
+    const colon = declaration.indexOf(":");
+    if (colon < 0) continue;
+    const property = declaration.slice(0, colon).trim().toLowerCase();
+    const value = declaration.slice(colon + 1).replace(/\s*!important\s*$/i, "").trim().toLowerCase();
+    if (property === "display" && value === "none") return true;
+    if (property === "content-visibility" && value === "hidden") return true;
+    const inset = property === "clip-path" && /^inset\(\s*([+-]?(?:\d+(?:\.\d*)?|\.\d+))%\s*\)$/.exec(value);
+    if (inset && Number(inset[1]) === 100) return true;
+    if (property === "visibility" && ["hidden", "collapse"].includes(value)) return true;
+    if (property === "opacity" && /^[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:e[+-]?\d+)?%?$/.test(value)
+        && Number(value.replace(/%$/, "")) === 0) return true;
+  }
+  return false;
+}
+function concealed(node) {
+  for (let current = node; current; current = current.parentNode) {
+    if (current.hasAttribute?.("hidden")
+        || current.getAttribute?.("aria-hidden") === "true"
+        || concealedByInlineStyle(current.getAttribute?.("style") ?? "")
+        || /(?:^|\s)(?:hidden|invisible)(?:\s|$)/.test(current.getAttribute?.("class") ?? "")
+        || /(?:^|\s)opacity-0(?:\s|$)/.test(current.getAttribute?.("class") ?? "") && !trustedHeadingCopyButton(current)
+        || /(?:^|\s)sr-only(?:\s|$)/.test(current.getAttribute?.("class") ?? "")
+          && !(current.tagName === "SPAN" && trustedHeadingCopyButton(current.parentNode))) return true;
+  }
+  return false;
+}
+function concealedText(node) {
+  return concealed(node) || (node?.querySelectorAll("*") ?? []).some((child) => child.text.trim() && concealed(child));
+}
+function headingConcealed(node) {
+  return concealedText(node);
+}
+/** Numbering has already been independently verified and normalized by reader-numbering-output. */
+function validateRenderedClimateAssembly(document, path, catalog, accepted, independentDigest = climateAssemblyAcceptedDigest) {
+  if (![...climateAssemblyRoutes, climateAssemblyAppendix, "/print"].includes(path)) return [];
+  assertClimateAssemblyAccepted(accepted, independentDigest);
+  const print = path === "/print", routes = print ? [climateAssemblyKey, climateAssemblyAppendix] : [path], errors = [], entries = remapClimateAssemblyCitations(climateAssemblyOriginalEntries(), accepted, independentDigest);
+  for (const route of routes) {
+    const units = print ? document.querySelectorAll(`article[data-reader-route="${route}"]`) : document.querySelectorAll("article");
+    if (units.length !== 1) {
+      errors.push(`${path}: Climate actual reading unit missing/repeated: ${route}`);
+      continue;
+    }
+    const unit = units[0], source = accepted.sources.find((row) => row.route === (route === climateAssemblyKey ? climateAssemblyManuscript : route)), prefix = location(route, path), checked = /* @__PURE__ */ new Set(), children = unit.childNodes.filter((node) => node.nodeType === 1), title = children.find((node) => node.tagName === (print ? "H2" : "H1")), expected = route === climateAssemblyKey ? accepted.sections.flatMap((section2) => section2.claimIds.map((id) => ({ id, section: section2.id }))) : route === climateAssemblyAppendix ? accepted.appendix.sections.flatMap((section2) => section2.claimIds.map((id) => ({ id, section: section2.id }))) : accepted.website.find((row) => row.route === route).occurrences;
+    if (!print) qualifyHeadingCopyButtons(unit, source);
+    if (!title
+        || title.text !== source.title
+        || concealedText(title)
+        || print
+        && unit.getAttribute("data-reader-title") !== source.title) errors.push(`${path}: Climate title differs or hidden: ${route}`);
+    else checked.add(title);
+    const description = title && children[children.indexOf(title) + 1];
+    if (description?.tagName !== "P"
+        || description.text !== source.description
+        || concealedText(description)) errors.push(`${path}: Climate description differs or hidden: ${route}`);
+    else checked.add(description);
+    if (!print) {
+      for (const node of children.filter((node2) => node2.tagName === "DIV" && node2.text === "生命周期评价的前世今生")) checked.add(node);
+      const pagination = unit.querySelectorAll(".docs-pagination");
+      if (pagination.length !== 1 || !isVerifiedReaderPagination(pagination[0])) errors.push(`${path}: Climate website pagination lacks independent qualification`);
+      else checked.add(pagination[0]);
+    }
+    const actual = [], headings = [];
+    let section = null;
+    for (const node of unit.querySelectorAll('h1,h2,h3,h4,h5,h6,a[role="doc-noteref"]')) {
+      if (node.closest("[data-legacy-for],[data-legacy-notice],[data-legacy-scope]")) continue;
+      if (node.getAttribute("role") === "doc-noteref") {
+        const id = node.getAttribute("data-reader-reference"), paragraph = node.closest("p"), found = (catalog.claims ?? []).filter((row) => row.id === id), fixed = accepted.claims.find((row) => row.id === id);
+        actual.push({ id, section });
+        if (!paragraph
+            || found.length !== 1
+            || readerParagraphText(paragraph, node) !== fixed?.text
+            || !sameRecord(found[0], fixed)
+            || concealedText(paragraph)) errors.push(`${path}: Climate canonical body differs or hidden: ${id}`);
+        else checked.add(paragraph);
+      } else if (node.closest(".chapter-notes")) {
+        section = null;
+        if (node.id !== `${prefix}-annotations`
+            || node.text !== "注释"
+            || node.tagName !== (print ? "H3" : "H2")
+            || concealedText(node)) errors.push(`${path}: Climate annotation heading differs`);
+        else checked.add(node);
+      } else if (node !== title) {
+        section = print ? node.id.slice(prefix.length + 1) : node.id;
+        headings.push({ id: section, title: node.text.replace(/复制章节链接$/, "") });
+        if (node.tagName !== (print ? "H3" : "H2") || headingConcealed(node)) errors.push(`${path}: Climate content heading differs or hidden`);
+        else checked.add(node);
+      }
+    }
+    if (!same(actual, expected) || !same(headings, source.headings)) errors.push(`${path}: Climate actual body order/sections differ: ${route}`);
+    const ordinary = [];
+    let currentSection = null;
+    for (const node of unit.querySelectorAll("h1,h2,h3,h4,h5,h6,p,figure")) {
+      if (node.closest("[data-legacy-for],[data-legacy-notice],[data-legacy-scope],.chapter-notes,.docs-pagination")) continue;
+      if (/^H[1-6]$/.test(node.tagName) && node !== title) currentSection = print ? node.id.slice(prefix.length + 1) : node.id;
+      if (node.tagName === "P" && !checked.has(node) && !node.closest("figure") && !node.querySelector('[role="doc-noteref"]')) {
+        const row = { section: currentSection, text: node.text, links: node.querySelectorAll("a").map((link) => ({ text: link.text, href: link.getAttribute("href") })) };
+        ordinary.push(row);
+        if (concealedText(node)) errors.push(`${path}: Climate ordinary navigation hidden`);
+        else checked.add(node);
+      }
+      if (node.tagName === "FIGURE") {
+        const imgs = node.querySelectorAll("img"), captions = node.querySelectorAll("figcaption"), img = imgs[0], expectedFigure = source.figure, found = { section: currentSection, src: img?.getAttribute("src"), alt: img?.getAttribute("alt"), width: img?.getAttribute("width"), height: img?.getAttribute("height"), caption: captions[0]?.text };
+        if (imgs.length !== 1
+            || captions.length !== 1
+            || node.text !== captions[0]?.text
+            || !sameRecord(found, expectedFigure)
+            || concealedText(node)
+            || concealed(img)) errors.push(`${path}: Climate original response figure absent/changed/hidden/misplaced`);
+        else checked.add(node);
+      }
+    }
+    // Scientific raster/vector-file images are the approved figure's img only.
+    // Fumadocs' inline SVG controls do not acquire scientific-image slots.
+    const images = unit.querySelectorAll("img");
+    if (images.length !== (source.figure ? 1 : 0)
+        || images.some((image) => image.parentNode?.tagName !== "FIGURE"
+          || image.getAttribute("src") !== source.figure?.src))
+      errors.push(`${path}: Climate scientific-image roster differs: ${route}`);
+    for (const visual of unit.querySelectorAll("svg,canvas,video,iframe,object,embed")) {
+      if (visual.tagName !== "SVG" || !trustedFrameworkSvg(visual))
+        errors.push(`${path}: Climate unreviewed visual element: ${visual.tagName}`);
+    }
+    if (source.figure) {
+      const sequence = unit.querySelectorAll('a[role="doc-noteref"],figure'), index = sequence.findIndex((node) => node.tagName === "FIGURE");
+      if (index < 0
+          || sequence[index - 1]?.getAttribute("data-reader-reference") !== "cl-climate-reference-illustration"
+          || sequence[index + 1]?.getAttribute("data-reader-reference") !== "cl-climate-reference-limits") errors.push(`${path}: Climate response figure loses its actual explanatory paragraph placement`);
+    }
+    const expectedOrdinary = source.ordinary.map((row) => ({ ...row, links: row.links.map((link) => ({ ...link, href: print ? climateAssemblyBookHref(link.href, route) : link.href })) }));
+    if (!sameOrdinaryNavigation(ordinary, expectedOrdinary)
+        || unit.querySelectorAll("figure").length !== (source.figure ? 1 : 0)) errors.push(`${path}: Climate reviewed ordinary navigation/figure count differs: ${route}`);
+    const notes = unit.querySelectorAll("[data-reader-claim]");
+    if (unit.querySelectorAll(".chapter-notes").length !== 1
+        || !same(notes.map((node) => node.getAttribute("data-reader-claim")), expected.map((row) => row.id))) errors.push(`${path}: Climate exact continuous note plan differs: ${route}`);
+    const annotations = validateExchangeAnnotationOutput(document, unit, route, catalog, { print });
+    errors.push(...annotations);
+    if (!annotations.length) for (const note of notes) {
+      const annotation = note.querySelector(".claim-annotation");
+      if (concealedText(note) || concealedText(annotation)) errors.push(`${path}: Climate annotation hidden`);
+      else checked.add(annotation);
+    }
+    const unitEntries = entries.filter((entry) => entry.path === path && entry.route === route), label = (destination) => {
+      const destSource = accepted.sources.find((row) => row.route === (destination.route === climateAssemblyKey ? climateAssemblyManuscript : destination.route)), ids = destination.route === climateAssemblyKey ? accepted.sections.flatMap((row) => row.claimIds) : destination.route === climateAssemblyAppendix ? climateAssemblyMovedIds : accepted.website.find((row) => row.route === destination.route)?.claimIds ?? [];
+      return `《${destSource?.title}》${destination.kind === "note" ? `注 ${ids.indexOf(destination.claimId) + 1}` : destination.kind === "heading" ? `·${destination.path === "/print" ? destination.id.slice(printUnitAnchor(destination.route).length + 1) : destination.id}` : destination.kind === "note-group" ? "注释" : ""}`;
+    };
+    for (const entry of unitEntries) {
+      if (entry.mode === "notice"
+          && unit.querySelectorAll(`[id="${entry.id}"][data-legacy-notice]`).length !== 1) errors.push(`${path}: Climate historical notice missing/repeated: ${entry.id}`);
+      if (entry.mode === "alias"
+          && unit.querySelectorAll(`[id="${entry.id}"][data-legacy-for="${entry.targets[0].id}"]`).length !== 1) errors.push(`${path}: Climate historical alias missing/repeated: ${entry.id}`);
+      if (entry.mode === "retained" && entry.scope) {
+        const contexts = unit.querySelectorAll(`[data-legacy-scope="${entry.id}"]`), context = contexts[0];
+        if (contexts.length !== 1
+            || !(context.parentNode === unit
+            && unit.id === entry.id
+            || context.previousElementSibling?.id === entry.id
+            && context.parentNode === context.previousElementSibling.parentNode)) errors.push(`${path}: Climate native historical subset missing/detached: ${entry.id}`);
+      }
+    }
+    const historical = validateReaderHistoricalText(unit, unitEntries, path, label);
+    errors.push(...historical.errors);
+    for (const node of historical.checked) {
+      if (concealedText(node)) errors.push(`${path}: Climate historical context hidden`);
+      else checked.add(node);
+    }
+    if (unaccountedReaderText(unit, checked).length) errors.push(`${path}: Climate output contains unexpected unreviewed text: ${route}`);
+  }
+  return errors;
+}
+export {
+  assertClimateAssemblyAccepted,
+  assertClimateAssemblyHeadingOriginal,
+  assertClimateAssemblyOriginal,
+  assertClimateAssemblyRegistration,
+  climateAssemblyAcceptedDigest,
+  climateAssemblyAppendix,
+  climateAssemblyAppendixTitles,
+  climateAssemblyBookHref,
+  climateAssemblyDigest,
+  climateAssemblyHeadingEntries,
+  climateAssemblyKey,
+  climateAssemblyManuscript,
+  climateAssemblyMovedIds,
+  climateAssemblyOriginalEntries,
+  climateAssemblyRoutes,
+  climateAssemblyTitle,
+  climateAssemblyTitles,
+  inspectClimateAssemblySource,
+  remapClimateAssemblyCitations,
+  validateClimateAssemblyArtifactBytes,
+  validateClimateAssemblyCoverage,
+  validateRenderedClimateAssembly
+};

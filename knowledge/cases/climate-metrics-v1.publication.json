@@ -4,12 +4,12 @@
   "version": "1.0.0",
   "inputFile": "climate-metrics-v1.json",
   "approvedInputSha256": "0491866fc3fd0de3e59db3be3c28ff80c27e4c247601cbcad85dfab27b434c74",
-  "reviewedAt": "2026-11-06",
+  "reviewedAt": "2026-11-09",
   "reviewKind": "agent-source-check",
   "claims": [
     {
       "id": "cl-climate-fit",
-      "textTemplate": "把排放后第 t 年仍留在大气中的增量比例记作 R(t)，这项研究的拟合写成 R(t)＝a₀＋Σ aᵢ exp(−t/τᵢ)。所选多模型行给出 a₀＝{{input.facts.a0.value}}，其余权重为{{input.facts.a1.value}}、{{input.facts.a2.value}}、{{input.facts.a3.value}}，相应时间常数为{{input.facts.tau1.value}}、{{input.facts.tau2.value}}、{{input.facts.tau3.value}}年。权重相加为1，所以脉冲刚加入时 R(0)＝1；这些参数适用于论文声明的0至1000年拟合范围。",
+      "textTemplate": "这项参考响应可按公开拟合逐项重建。把排放后第 t 年仍留在大气中的增量比例记作 R(t)，则 R(t)＝a₀＋Σ aᵢ exp(−t/τᵢ)。Joos表5的所选多模型行给出 a₀＝{{input.facts.a0.value}}，其余权重{{input.facts.a1.value}}、{{input.facts.a2.value}}、{{input.facts.a3.value}}对应时间常数{{input.facts.tau1.value}}、{{input.facts.tau2.value}}、{{input.facts.tau3.value}}年。权重之和为1，故 R(0)＝1；使用范围是论文规定的排放后0至1000年。",
       "kind": "source-statement",
       "scope": "Joos2013 Table5的CO₂多模型拟合；0–1000年范围。",
       "evidenceIds": [
@@ -38,7 +38,7 @@
     },
     {
       "id": "cl-climate-integral",
-      "textTemplate": "第100年剩余多少，与前100年累计存在了多少，是两个量。按这些打印参数计算，R(100)＝{{evaluated.response.h100.remainingFraction.fixed6}}；从0积到100年的 I(100)＝∫R(t)dt 则为{{evaluated.response.h100.integratedYears.fixed6}}年。前者是比例，后者是“比例乘时间”的面积。积分可以逐项求得：I(H)＝a₀H＋Σ aᵢτᵢ[1−exp(−H/τᵢ)]；它不是又一个无量纲的剩余百分数。",
+      "textTemplate": "对这个拟合逐项积分，得到 I(H)＝a₀H＋Σ aᵢτᵢ[1−exp(−H/τᵢ)]。按打印参数，第100年的剩余比例 R(100)＝{{evaluated.response.h100.remainingFraction.fixed6}}，而从0至100年的 I(100)＝∫R(t)dt 为{{evaluated.response.h100.integratedYears.fixed6}}年。两者对应正文图中瞬时曲线与累计面积：前者是比例，后者是比例乘时间，不能把后者当作另一个剩余百分数。",
       "kind": "calculation",
       "scope": "同一拟合的瞬时剩余比例与时间积分；打印参数重建。",
       "evidenceIds": [
@@ -73,7 +73,7 @@
     },
     {
       "id": "cl-climate-fit-reference",
-      "textTemplate": "同一拟合在20、100、500年的积分分别约为{{evaluated.response.h20.integratedYears.fixed3}}、{{evaluated.response.h100.integratedYears.fixed3}}、{{evaluated.response.h500.integratedYears.fixed3}}年，对应论文表4显示的{{input.facts.joosIntegral20.value}}、{{input.facts.joosIntegral100.value}}、{{input.facts.joosIntegral500.value}}。这里能够重建的是公开拟合的积分及其舍入关系。它没有重新生成各模型的原始轨迹，也没有把模型间的离散程度变成对任意一份产品清单的置信区间。 下图把这两个量并列：上栏阴影的面积，等于下栏在100年处的积分值。",
+      "textTemplate": "在20、100、500年处，同一拟合的积分约为{{evaluated.response.h20.integratedYears.fixed3}}、{{evaluated.response.h100.integratedYears.fixed3}}、{{evaluated.response.h500.integratedYears.fixed3}}年，分别对应论文表4显示的{{input.facts.joosIntegral20.value}}、{{input.facts.joosIntegral100.value}}、{{input.facts.joosIntegral500.value}}。这一重建能检查公开拟合及其舍入关系，却没有重新生成各模型的原始轨迹。模型间离散程度也没有因此成为任意产品清单的置信区间。正文的响应／积分图采用这一拟合，上栏阴影面积与下栏在同一时点的值相对应。",
       "kind": "calculation",
       "scope": "公开拟合积分与原表显示值的比较。",
       "evidenceIds": [
@@ -109,7 +109,7 @@
     },
     {
       "id": "cl-climate-reported-precision",
-      "textTemplate": "显示精度也属于这条关系的边界。例如，把上述100年积分乘以Joos表注显示的辐射效率1.77×10⁻¹⁵ W m⁻² kg⁻¹，得到的 AGWP 为{{evaluated.response.agwp100.reconstructed.fixed3}}×10⁻¹⁵ W m⁻² yr kg⁻¹，而表中报告的均值是{{input.facts.joosAgwp100.value}}×10⁻¹⁵。两者很接近，但不是逐位相等。用打印参数重算与引用作者报告值，是两种可追溯的数值；不能为了抹平差额反推出一个未披露参数，再把它称为原始输入。",
+      "textTemplate": "从拟合积分重建AGWP时，还会遇到显示精度的边界。以Joos表注给出的辐射效率1.77×10⁻¹⁵ W m⁻² kg⁻¹乘100年积分，得到{{evaluated.response.agwp100.reconstructed.fixed3}}×10⁻¹⁵ W m⁻² yr kg⁻¹；表中报告的均值则是{{input.facts.joosAgwp100.value}}×10⁻¹⁵。两个数接近而不逐位相等，其差额来源尚未确定。打印参数重算与作者报告值各有身份，不能反推一个未披露输入抹平差额，再把它称作原始参数。",
       "kind": "calculation",
       "scope": "Joos2013显示参数的重算与Table4报告值；未披露精度不反推。",
       "evidenceIds": [
@@ -141,7 +141,7 @@
     },
     {
       "id": "cl-climate-three-methane-rows",
-      "textTemplate": "于是同叫 CH₄ 的行也未必能够互换。2025年更正主表的 GWP100 中心值，化石甲烷为{{input.facts.newFossilGwp100.value}}，非化石甲烷为{{input.facts.newNonfossilGwp100.value}}；更正补充表的通用甲烷行给出{{input.facts.newSmCh4Gwp100.value}}，脚注明确把甲烷自身碳的来源和去向留给使用者另作收支。后一行不是“完全没有碳循环反馈”，也不是非化石行的另一种写法；它的分工是暂不把那笔碳的来源和去向替使用者结清。 这里采用中心值；化石甲烷的GWP100还列有±{{input.facts.newFossilGwp100Width.value}}的范围，本章的固定因子对照没有将它作为概率分布传播。",
+      "textTemplate": "这些边界落实到表中，就形成不能互换的甲烷行。2025年10月7日版AR6勘误替换主表所列GWP100中心值，化石甲烷为{{input.facts.newFossilGwp100.value}}，非化石为{{input.facts.newNonfossilGwp100.value}}；替换补充表的通用行则为{{input.facts.newSmCh4Gwp100.value}}，把甲烷自身碳的来源与去向留给使用者另作收支。通用行仍含增温驱动的碳反馈，并非非化石行的别名。这里用的是中心值；化石甲烷还列有±{{input.facts.newFossilGwp100Width.value}}范围，固定因子对照没有把它当作概率分布传播。",
       "kind": "source-statement",
       "scope": "2025更正主表与补充表的三种甲烷碳核算口径。",
       "evidenceIds": [
@@ -174,7 +174,7 @@
     },
     {
       "id": "cl-climate-rounded-ratio",
-      "textTemplate": "绝对值和相对值还各有显示精度。更正补充表中，通用甲烷行的 AGWP100 为{{input.facts.newSmCh4Agwp100.value}}，CO₂ 参考为{{input.facts.newSmCo2Agwp100.value}}，单位同为 pW m⁻² yr kg⁻¹。直接相除得到{{evaluated.correctedSmQuotient.quotient.fixed3}}，而相对列打印{{input.facts.newSmCh4Gwp100.value}}。若把每个打印数的末位半单位作为舍入范围，这几列能够相容；这种检查只处理显示精度，不是在估计真实气候效应的置信范围。",
+      "textTemplate": "相对指标也可能无法由打印的绝对值逐位重现。更正补充表的通用甲烷AGWP100为{{input.facts.newSmCh4Agwp100.value}}，CO₂参考为{{input.facts.newSmCo2Agwp100.value}}，单位均为 pW m⁻² yr kg⁻¹；商为{{evaluated.correctedSmQuotient.quotient.fixed3}}，相对列却显示{{input.facts.newSmCh4Gwp100.value}}。若明确假定每个打印数的舍入范围为末位半单位，这几列能够相容。这个检查回答显示数字之间的关系，不估计真实气候效应的置信范围。",
       "kind": "calculation",
       "scope": "更正补充表通用甲烷AGWP100比值的显示精度检查。",
       "evidenceIds": [
@@ -198,7 +198,7 @@
     },
     {
       "id": "cl-climate-equal-score",
-      "textTemplate": "用一个纯粹的脉冲对照看相等的含义：同在第0年排放{{input.fixedPulsePair.co2Kg}} kg CO₂，或{{input.fixedPulsePair.fossilCh4Kg}} kg化石 CH₄。按更正后的 GWP100，两者都是{{evaluated.pulsePair.newGwp100.co2.fixed3}} kg CO₂ 当量；保持化石甲烷行，改用更正主表的 GWP20，前者仍是{{evaluated.pulsePair.newGwp20.co2.fixed3}}，后者变为{{evaluated.pulsePair.newGwp20.fossilCh4.fixed3}}；若保持100年，改按更正主表同一化石甲烷行的 GTP100换算，两者分别相当于{{evaluated.pulsePair.newGtp100.co2.fixed3}}和{{evaluated.pulsePair.newGtp100.fossilCh4.fixed3}} kg CO₂脉冲在第100年的温度响应。这仍是CO₂参考质量，不是开尔文温度值。排放质量没有变，改变的是相等所针对的物理量和时间问题。",
+      "textTemplate": "先用两次同日脉冲检验“相等”：第0年排放{{input.fixedPulsePair.co2Kg}} kg CO₂，或{{input.fixedPulsePair.fossilCh4Kg}} kg化石 CH₄。按更正GWP100，两者均为{{evaluated.pulsePair.newGwp100.co2.fixed3}} kg CO₂ 当量；保持化石甲烷行改用更正GWP20，结果却为{{evaluated.pulsePair.newGwp20.co2.fixed3}}与{{evaluated.pulsePair.newGwp20.fossilCh4.fixed3}}。若仍看到100年而改用更正GTP100，两者分别相当于{{evaluated.pulsePair.newGtp100.co2.fixed3}}和{{evaluated.pulsePair.newGtp100.fossilCh4.fixed3}} kg CO₂脉冲的终点温度响应，单位仍是参考质量而非开尔文。排放质量不动，相等所针对的效应和时间问题已经改变；这两组诊断质量也没有被证明提供相同产品服务。",
       "kind": "calculation",
       "scope": "同日作者设定脉冲；以更正主表化石甲烷行比较指标。",
       "evidenceIds": [
@@ -231,7 +231,7 @@
     },
     {
       "id": "cl-climate-wall-fixed",
-      "textTemplate": "回到同一墙面服务，比较可以更具体。在原涂装例的平整基底、共同电力参数 θ＝{{input.wallParent.theta}} kg化石 CO₂/kWh 下，A的固定清单是{{input.wallParent.paintAInventoryKg.0}} kg CO₂ 与{{input.wallParent.paintAInventoryKg.1}} kg化石 CH₄，B则为{{input.wallParent.paintBInventoryKg.0}}与{{input.wallParent.paintBInventoryKg.1}} kg。两边都对应原设定的{{input.wallParent.areaM2}} m²、{{input.wallParent.serviceYears}}年服务。这里保留这两份虚构清单，只改变下一步所用的换算，而不重新安排材料和活动。",
+      "textTemplate": "要在相同服务下比较，可以取墙面涂装例的一组固定虚构清单。平整基底、共同电力参数 θ＝{{input.wallParent.theta}} kg化石 CO₂/kWh 时，A含{{input.wallParent.paintAInventoryKg.0}} kg CO₂和{{input.wallParent.paintAInventoryKg.1}} kg化石 CH₄，B含{{input.wallParent.paintBInventoryKg.0}}与{{input.wallParent.paintBInventoryKg.1}} kg，均对应原设定的{{input.wallParent.areaM2}} m²、{{input.wallParent.serviceYears}}年服务。保留这些清单及其性能、活动和截断假设，只换下一步的因子，才能单独辨认换算的作用。",
       "kind": "calculation",
       "scope": "原墙面例平整基底、θ＝0.3的固定服务与气体向量。",
       "evidenceIds": [],
@@ -248,7 +248,7 @@
     },
     {
       "id": "cl-climate-wall-reweighted",
-      "textTemplate": "以更正后的 GWP100 计算，A、B分别为{{evaluated.wall.newGwp100.paintA.fixed3}}和{{evaluated.wall.newGwp100.paintB.fixed3}} kg CO₂ 当量，B减A为{{evaluated.wall.newGwp100.delta.fixed3}}。若只把甲烷因子换成出版表的{{input.facts.oldFossilGwp100.value}}，差值为{{evaluated.wall.oldGwp100.delta.fixed3}}；采用更正后的 GWP20，差值为{{evaluated.wall.newGwp20.delta.fixed3}}。本例在这些口径下差值仍为正，因为B的两种排放都较多；版本或时间范围改变，并不必然导致排名反转。",
+      "textTemplate": "采用更正GWP100，A与B为{{evaluated.wall.newGwp100.paintA.fixed3}}、{{evaluated.wall.newGwp100.paintB.fixed3}} kg CO₂ 当量，B减A得{{evaluated.wall.newGwp100.delta.fixed3}}。甲烷因子换回出版表的{{input.facts.oldFossilGwp100.value}}，差值为{{evaluated.wall.oldGwp100.delta.fixed3}}；采用更正GWP20则为{{evaluated.wall.newGwp20.delta.fixed3}}。差值随版本和时间范围改变，却始终为正：本例B的两种排放都较多，所用因子也均为正。因子变化会改变比较的尺度，并不必然使排序反转。",
       "kind": "calculation",
       "scope": "同一虚构墙面清单的历史/校正及时间范围重算。",
       "evidenceIds": [
@@ -277,7 +277,7 @@
     },
     {
       "id": "cl-climate-timing-assumptions",
-      "textTemplate": "取一个只有 CO₂ 的时间例子：相同的{{input.timingExample.massKg}} kg，一种安排在第{{input.timingExample.earlyEmissionYear}}年排放，另一种在第{{input.timingExample.lateEmissionYear}}年排放，均看到第{{input.timingExample.calendarEndpointYear}}年。为隔离时点效应，这里固定历史作者程序的 CO₂ 响应：初始单位质量强迫约为{{evaluated.native.zeroTimeControl.co2Rf.scientificText3}} W m⁻² kg⁻¹，温度使用该程序的双时间尺度核，不计其他排放、储存信用或技术变化。因此两笔排放分别经历100年和20年；这是一组单独设定的排放日程；其历史强迫标定与前文Joos表注的1.77×10⁻¹⁵ W m⁻² kg⁻¹不同，也未采用2025更正表。",
+      "textTemplate": "为单独检验日期，设同样的{{input.timingExample.massKg}} kg CO₂分别在第{{input.timingExample.earlyEmissionYear}}年和第{{input.timingExample.lateEmissionYear}}年排放，均观察至第{{input.timingExample.calendarEndpointYear}}年。这里固定历史作者程序的响应：初始单位质量强迫约{{evaluated.native.zeroTimeControl.co2Rf.scientificText3}} W m⁻² kg⁻¹，温度采用包含快、慢两个热响应分量的双时间尺度核，不计其他排放、储存信用或技术变化。两笔排放因而经历100年与20年。这是另行设定的日程；其强迫标定不同于Joos表注的1.77×10⁻¹⁵ W m⁻² kg⁻¹，也不是2025更正表的重算。",
       "kind": "proposal",
       "scope": "作者单独设定的1kg CO₂早/晚排放；历史程序中心参数。",
       "evidenceIds": [
@@ -306,7 +306,7 @@
     },
     {
       "id": "cl-climate-timing-result",
-      "textTemplate": "在这组固定响应下，早排放到共同终点的累计强迫为{{evaluated.timing.commonEndpoint.early.agwp.scientificText3}} W m⁻² yr，晚排放为{{evaluated.timing.commonEndpoint.late.agwp.scientificText3}}；但终点温度响应分别为{{evaluated.timing.commonEndpoint.early.agtp.scientificText3}} K和{{evaluated.timing.commonEndpoint.late.agtp.scientificText3}} K，后一项反而较高。这是两种不同的时间运算：累计强迫持续累加正的面积，温度响应却由逐渐减弱的气体强迫和气候系统对早先强迫的余响应共同决定。在这组参数下，CO₂脉冲的温度响应从第20年到第100年回落，所以较短的累计作用时间与较大的终点温度响应可以同时发生。若改为每笔排放之后都观察100年，两笔相同脉冲的响应又相同，但它们的日历终点已分别是100年和180年。",
+      "textTemplate": "在这组固定核下，早排放至共同终点的累计强迫为{{evaluated.timing.commonEndpoint.early.agwp.scientificText3}} W m⁻² yr，晚排放为{{evaluated.timing.commonEndpoint.late.agwp.scientificText3}}；终点温度响应却分别是{{evaluated.timing.commonEndpoint.early.agtp.scientificText3}} K与{{evaluated.timing.commonEndpoint.late.agtp.scientificText3}} K，晚排放反而较高。累计强迫不断累加正面积，温度则同时取决于逐渐减弱的气体强迫和先前强迫留下的热响应。在所用参数下，CO₂脉冲的温度响应从第20年至第100年回落，两种方向便可同时出现。改成每次排放后都看100年，两次相同脉冲响应相同，但对应的日历终点已是100年与180年。",
       "kind": "calculation",
       "scope": "历史CO₂核在20/100年的响应；固定参数时点对照。",
       "evidenceIds": [
@@ -337,7 +337,7 @@
     },
     {
       "id": "cl-climate-rate-formula",
-      "textTemplate": "以Cain等人2019年的明确版本为例，CO₂增温当量（CO₂-we，warming-equivalent emissions）的年度率 Eᵂ(t)＝GWP_H[r(H/Δt)(E(t)−E(t−Δt))＋sE(t)]。E是每年的甲烷排放率；H是GWP积分范围，Δt是比较历史排放率的间隔，两者不能混为一个时间。该研究采用 H＝{{input.facts.rateHorizon.value}}年、Δt＝{{input.facts.rateLookback.value}}年、r＝{{input.facts.rateR.value}}、s＝{{input.facts.rateS.value}}和历史 GWP100＝{{input.facts.rateGwp100.value}}，于是可写成112E(t)−105E(t−20)。结果仍是每年的核算率，须再乘时间并相加才成为累计量。这种历史依赖的增温当量与常规GWP口径的CO₂当量是不同构造，不能逐项互换，也不能未经说明混加。",
+      "textTemplate": "Cain等人2019年的明确形式把这种历史输入写为 CO₂增温当量（CO₂-we，warming-equivalent emissions）的年度率：Eᵂ(t)＝GWP_H[r(H/Δt)(E(t)−E(t−Δt))＋sE(t)]。E为年度甲烷排放率，H为GWP积分范围，Δt为回看历史率的间隔。该研究取 H＝{{input.facts.rateHorizon.value}}年、Δt＝{{input.facts.rateLookback.value}}年、r＝{{input.facts.rateR.value}}、s＝{{input.facts.rateS.value}}及历史GWP100＝{{input.facts.rateGwp100.value}}，故可写成112E(t)−105E(t−20)。结果仍是年度核算率，乘时间并相加才得到累计量。它与常规GWP的CO₂当量是不同构造，不能逐项互换或未经说明混加。",
       "kind": "interpretation",
       "scope": "Cain2019规定参数的GWP*年度率表达式；不是后续公式总称。",
       "evidenceIds": [
@@ -379,7 +379,7 @@
     },
     {
       "id": "cl-climate-rate-histories",
-      "textTemplate": "考虑三个边界始终不变的假想来源A、B、C。2001—2020年，它们分别每年排放{{input.rateExample.historicalRates.A}}、{{input.rateExample.historicalRates.B}}、{{input.rateExample.historicalRates.C}} t CH₄；从2021年至2070年，三者都固定为每年{{input.rateExample.futureRateEach}} t。没有缺失年份，也不把未知历史补成零。到2040年，常规GWP100给三者的当年结果都是{{evaluated.rate.A.y2040.conventional.exact}} t CO₂ 当量/年，而上述变化率式分别给出{{evaluated.rate.A.y2040.revised.exact}}、{{evaluated.rate.B.y2040.revised.exact}}、{{evaluated.rate.C.y2040.revised.exact}} t CO₂-we/年。",
+      "textTemplate": "相同的当年率为何还会得到不同结果？设边界始终固定的三个假想来源A、B、C，在2001—2020年每年分别排放{{input.rateExample.historicalRates.A}}、{{input.rateExample.historicalRates.B}}、{{input.rateExample.historicalRates.C}} t CH₄，2021—2070年却都改为每年{{input.rateExample.futureRateEach}} t。年份完整，未知历史没有被补成零。2040年按历史常规GWP100，各为{{evaluated.rate.A.y2040.conventional.exact}} t CO₂ 当量/年；按上述2019变化率式，则依次为{{evaluated.rate.A.y2040.revised.exact}}、{{evaluated.rate.B.y2040.revised.exact}}、{{evaluated.rate.C.y2040.revised.exact}} t CO₂-we/年。当前相同，所保留的过去不同。",
       "kind": "calculation",
       "scope": "同气体、固定边界的三组作者年度历史。",
       "evidenceIds": [
@@ -410,7 +410,7 @@
     },
     {
       "id": "cl-climate-rate-window",
-      "textTemplate": "到2041年，式中回看的年份变成2021年，三者的过去与当前率都为100，结果于是都为{{evaluated.rate.A.y2041.revised.exact}} t CO₂-we/年。三者的历史差别在2021—2040年累计成{{evaluated.rate.A.sum20.revised.exact}}、{{evaluated.rate.B.sum20.revised.exact}}、{{evaluated.rate.C.sum20.revised.exact}} t CO₂-we；若继续累加到2070年，又分别成为{{evaluated.rate.A.sum50.revised.exact}}、{{evaluated.rate.B.sum50.revised.exact}}、{{evaluated.rate.C.sum50.revised.exact}}。评价从哪里开始、在哪里结束，会影响这个历史依赖量的解读。",
+      "textTemplate": "到2041年，回看年份移至2021年，三者的过去率与当前率都为100，年度结果因而同为{{evaluated.rate.A.y2041.revised.exact}} t CO₂-we/年。相同的当前率没有抹掉已计入前一窗口的历史：2021—2040年累计量依次为{{evaluated.rate.A.sum20.revised.exact}}、{{evaluated.rate.B.sum20.revised.exact}}、{{evaluated.rate.C.sum20.revised.exact}} t CO₂-we，累加至2070年则为{{evaluated.rate.A.sum50.revised.exact}}、{{evaluated.rate.B.sum50.revised.exact}}、{{evaluated.rate.C.sum50.revised.exact}}。因此，解读年度率和期间累计量，都须说明评价从哪里开始、在哪里结束。",
       "kind": "calculation",
       "scope": "同一年度历史的20/50年累计与回看窗口。",
       "evidenceIds": [
@@ -446,7 +446,7 @@
     },
     {
       "id": "cl-climate-rate-aggregate",
-      "textTemplate": "把三个来源合在一起，历史和未来都是每年300 t CH₄；变化率式的合计为{{evaluated.rate.aggregate.y2040.revised.exact}} t CO₂-we/年，与逐个计算后相加一致。这个加总关系来自共同边界和同一线性公式。C的负值表示相对于此前较高排放历史的变化，并不意味着C在该年移除了 CO₂，或全球温度已经低于没有这些排放的世界；其他气体及其历史仍可使总温度上升。",
+      "textTemplate": "共同边界下，这三个来源的历史与未来合计均为每年300 t CH₄，变化率式的合计为{{evaluated.rate.aggregate.y2040.revised.exact}} t CO₂-we/年，等于各自结果之和。这是同一线性公式的加总关系。C的负数表示相对于此前较高排放率的变化，不表示当年移除了 CO₂，也不表示全球温度低于没有这些排放的世界；其他气体及其历史仍可使总温度上升。",
       "kind": "calculation",
       "scope": "共同历史边界下的线性加总和负增量解释。",
       "evidenceIds": [
@@ -482,7 +482,7 @@
     },
     {
       "id": "cl-climate-native-scope",
-      "textTemplate": "同一个版本的程序也需要说明运行对象。IPCC作者代码的2021年存档，与随后补入碳反馈函数和指标生成过程的源码快照，包含的程序不同。后续快照的0.1年网格在选定范围内给出通用甲烷 GWP100＝{{evaluated.native.h100.gwp.fixed6}}、GTP100＝{{evaluated.native.h100.gtp.fixed6}}，对应更正前补充表的显示值。这一计算含增温驱动碳反馈，却没有运行甲烷自身碳的化石氧化或生物源吸收生成过程；它不等于复现主表两种甲烷行，更不等于复现2025年更正。",
+      "textTemplate": "历史程序的重演回答另一种复算问题。IPCC作者代码2021年存档与后来补入碳反馈函数、指标生成过程的源码快照，包含不同程序。后续快照的0.1年网格在选定范围内给出通用甲烷GWP100＝{{evaluated.native.h100.gwp.fixed6}}、GTP100＝{{evaluated.native.h100.gtp.fixed6}}，对应更正前补充表的显示值。计算包含增温驱动的碳反馈，却未运行甲烷自身碳的化石氧化或生物源吸收生成过程。因此它既不是两种甲烷主表行的完整复现，也不是2025更正的复现。",
       "kind": "calculation",
       "scope": "后续作者源码0–100年选定原生函数；历史通用甲烷列。",
       "evidenceIds": [
@@ -539,7 +539,7 @@
     },
     {
       "id": "cl-climate-grid",
-      "textTemplate": "在物理参数不变时，把这段反馈卷积的步长从0.1年缩至0.05年，GWP100与GTP100又各增加约{{evaluated.native.h100.gwpDifference.fixed6}}和{{evaluated.native.h100.gtpDifference.fixed6}}。这说明“按某个离散程序得到同样结果”与“数值近似已经充分收敛”仍是两项判断。两个步长的差别不能直接解释官方更正的原因，也不能自动代表气候参数的不确定性；每个结论都需要与其相应的证据。",
+      "textTemplate": "数值网格又提供了一个独立检查。在物理参数不变时，将这段反馈卷积的步长从0.1年减为0.05年，GWP100、GTP100分别增加约{{evaluated.native.h100.gwpDifference.fixed6}}和{{evaluated.native.h100.gtpDifference.fixed6}}。同一离散程序下的匹配，说明该版本的计算一致；是否已充分收敛，还要检查更细网格下的变化。两个步长之差也不能解释官方更正的原因或代表气候参数不确定性。重建的价值在于明确重建了哪一个对象，并让这些不同检查各自保有范围。",
       "kind": "calculation",
       "scope": "固定物理参数、两个离散网格的数值敏感性。",
       "evidenceIds": [

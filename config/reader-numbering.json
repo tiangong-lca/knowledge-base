@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "scope": "current-40-unit-book-and-37-page-website-presentation",
+  "scope": "current-40-unit-33-chapter-book-and-47-unit-37-chapter-website-presentation",
   "parts": [
     {
       "number": 1,
@@ -150,18 +150,11 @@
       "title": "从排放到中点和终点：因果路径与价值选择"
     },
     {
-      "key": "/docs/book/climate-response-and-metrics",
-      "source": "/docs/book/climate-response-and-metrics",
+      "key": "book-climate-equivalence",
+      "source": "/monograph/climate-equivalence",
       "kind": "chapter",
       "part": 4,
-      "title": "气候指标与 CO₂ 当量的含义"
-    },
-    {
-      "key": "/docs/book/emission-time-and-assessment",
-      "source": "/docs/book/emission-time-and-assessment",
-      "kind": "chapter",
-      "part": 4,
-      "title": "排放发生在何时，影响又看至何时"
+      "title": "气候当量"
     },
     {
       "key": "/docs/book/acidification-and-nutrient-pathways",
@@ -312,6 +305,12 @@
       "source": "/docs/appendices/cml-framework-calculations",
       "kind": "appendix",
       "title": "指南算例复核"
+    },
+    {
+      "key": "/docs/appendices/climate-numerical-reconstruction",
+      "source": "/docs/appendices/climate-numerical-reconstruction",
+      "kind": "appendix",
+      "title": "气候数值的重建"
     }
   ],
   "web": [
@@ -627,6 +626,12 @@
       "source": "/docs/appendices/cml-framework-calculations",
       "kind": "appendix",
       "title": "指南算例复核"
+    },
+    {
+      "key": "/docs/appendices/climate-numerical-reconstruction",
+      "source": "/docs/appendices/climate-numerical-reconstruction",
+      "kind": "appendix",
+      "title": "气候数值的重建"
     }
   ],
   "headings": {
@@ -1100,58 +1105,37 @@
     ],
     "/docs/book/climate-response-and-metrics": [
       {
-        "key": "先问当量保留了什么",
-        "id": "先问当量保留了什么",
-        "title": "先问当量保留了什么",
+        "key": "响应与指标",
+        "id": "响应与指标",
+        "title": "响应与指标",
         "depth": 2,
         "type": "mdx"
       },
       {
-        "key": "co-的参考也需要一个模型",
-        "id": "co-的参考也需要一个模型",
-        "title": "CO₂ 的参考也需要一个模型",
+        "key": "气体与碳收支",
+        "id": "气体与碳收支",
+        "title": "气体与碳收支",
         "depth": 2,
         "type": "mdx"
       },
       {
-        "key": "累计强迫与终点温度",
-        "id": "累计强迫与终点温度",
-        "title": "累计强迫与终点温度",
+        "key": "清单比较",
+        "id": "清单比较",
+        "title": "清单比较",
         "depth": 2,
         "type": "mdx"
       },
       {
-        "key": "反馈与甲烷的碳从哪里来",
-        "id": "反馈与甲烷的碳从哪里来",
-        "title": "反馈与甲烷的碳从哪里来",
+        "key": "排放日历",
+        "id": "排放日历",
+        "title": "排放日历",
         "depth": 2,
         "type": "mdx"
       },
       {
-        "key": "同一清单版本和指标怎样改变比较",
-        "id": "同一清单版本和指标怎样改变比较",
-        "title": "同一清单，版本和指标怎样改变比较",
-        "depth": 2,
-        "type": "mdx"
-      },
-      {
-        "key": "排放日期与共同观察时点",
-        "id": "排放日期与共同观察时点",
-        "title": "排放日期与共同观察时点",
-        "depth": 2,
-        "type": "mdx"
-      },
-      {
-        "key": "排放率的历史是另一种输入",
-        "id": "排放率的历史是另一种输入",
-        "title": "排放率的历史是另一种输入",
-        "depth": 2,
-        "type": "mdx"
-      },
-      {
-        "key": "把复现结果放回它所回答的问题",
-        "id": "把复现结果放回它所回答的问题",
-        "title": "把复现结果放回它所回答的问题",
+        "key": "历史与用途",
+        "id": "历史与用途",
+        "title": "历史与用途",
         "depth": 2,
         "type": "mdx"
       }
@@ -2412,6 +2396,66 @@
         "key": "历史与修订",
         "id": "历史与修订",
         "title": "历史与修订",
+        "depth": 2,
+        "type": "mdx"
+      }
+    ],
+    "/monograph/climate-equivalence": [
+      {
+        "key": "响应与指标",
+        "id": "响应与指标",
+        "title": "响应与指标",
+        "depth": 2,
+        "type": "mdx"
+      },
+      {
+        "key": "气体与碳收支",
+        "id": "气体与碳收支",
+        "title": "气体与碳收支",
+        "depth": 2,
+        "type": "mdx"
+      },
+      {
+        "key": "清单比较",
+        "id": "清单比较",
+        "title": "清单比较",
+        "depth": 2,
+        "type": "mdx"
+      },
+      {
+        "key": "排放日历",
+        "id": "排放日历",
+        "title": "排放日历",
+        "depth": 2,
+        "type": "mdx"
+      },
+      {
+        "key": "历史与用途",
+        "id": "历史与用途",
+        "title": "历史与用途",
+        "depth": 2,
+        "type": "mdx"
+      }
+    ],
+    "/docs/appendices/climate-numerical-reconstruction": [
+      {
+        "key": "参考响应",
+        "id": "参考响应",
+        "title": "参考响应",
+        "depth": 2,
+        "type": "mdx"
+      },
+      {
+        "key": "显示精度",
+        "id": "显示精度",
+        "title": "显示精度",
+        "depth": 2,
+        "type": "mdx"
+      },
+      {
+        "key": "历史程序",
+        "id": "历史程序",
+        "title": "历史程序",
         "depth": 2,
         "type": "mdx"
       }

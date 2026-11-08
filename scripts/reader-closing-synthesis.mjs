@@ -2,6 +2,8 @@ import { publicCatalog } from './knowledge.mjs';
 import { createHash } from 'node:crypto';
 import original from '../config/closing-synthesis-original.json' with { type: 'json' };
 import captured from '../config/closing-synthesis-heading-history.json' with { type: 'json' };
+import currentScientific from '../config/closing-synthesis-current-accepted.json' with { type: 'json' };
+import climateOriginal from '../config/climate-assembly-original.json' with { type: 'json' };
 import { chapterAnchorPrefix, collectChapterClaimOccurrences, printUnitAnchor } from './reader-book.mjs';
 import { validateExchangeAnnotationOutput, unaccountedReaderText } from './reader-exchange-semantics.mjs';
 import { isVerifiedReaderPagination } from './reader-numbering-output.mjs';
@@ -29,6 +31,19 @@ const rawDigest = value => createHash('sha256').update(value.replaceAll('\r\n','
 const compact = text => text.replace(/\s+/g,'');
 const nonempty = value => typeof value==='string' && !!value.trim();
 const allIds = closingSynthesisSections.flatMap(section=>section.claimIds);
+// Main alone qualifies this additive current dependency acceptance. The original127 closure stays immutable.
+/** @type {string|null} */
+export const closingSynthesisCurrentDigest = "d97b99eedbf2a2810f60053692e264cebdaa0fb789cedb8008cc6893675c6b42";
+const currentTimeIds=['cl-time-combination','cl-time-common-endpoint','cl-time-dynamic-not-forecast','cl-time-elapsed-response','cl-time-emission-profile','cl-time-horizon-choice','cl-time-model-limits'];
+export function assertClosingSynthesisCurrentAccepted(value,independentDigest=closingSynthesisCurrentDigest){
+ assertClosingSynthesisOriginal();
+ if(!value||value.schemaVersion!==1||value.status!=='reviewed'||value.originalDigest!==closingSynthesisDigest(original)||!/^[a-f0-9]{64}$/.test(independentDigest??'')||closingSynthesisDigest(value)!==independentDigest)throw new Error('B32 current scientific acceptance is incomplete or not independently pinned');
+ if(!same(value.changes?.map(row=>row.current?.id),currentTimeIds)||!same(value.consumers?.map(row=>row.id),climateOriginal.downstreamClaims.map(row=>row.id)))throw new Error('B32 current acceptance requires exact seven changes and six affected consumers');
+ for(const change of value.changes){const fixed=original.scientificClosure.claims.find(row=>row.id===change.current.id);if(!fixed||!sameRecord(change.old,fixed)||change.current.status!=='reviewed'||change.current.id!==change.old.id||!nonempty(change.rationale)||!same(change.current.premiseIds??[],fixed.premiseIds??[])||!same(change.current.evidenceIds??[],fixed.evidenceIds??[]))throw new Error('B32 current acceptance changes an unqualified original, status or dependency edge');}
+ for(const consumer of value.consumers){const fixed=climateOriginal.downstreamClaims.find(row=>row.id===consumer.id);if(!fixed||!sameRecord(consumer.record,fixed)||!nonempty(consumer.rationale))throw new Error('B32 current acceptance needs exact unchanged consumer records and renewed use judgments');}
+ if(!Array.isArray(value.reviewEvidence)||!value.reviewEvidence.length||value.reviewEvidence.some(row=>!nonempty(row.kind)||!/^[a-f0-9]{64}$/.test(row.reportSha256??'')||!/^[a-f0-9]{64}$/.test(row.receiptSha256??'')))throw new Error('B32 current acceptance lacks explicit affected-consumer review evidence');
+}
+
 const metadata = raw => Object.fromEntries([...(/^---\r?\n([\s\S]*?)\r?\n---/.exec(raw)?.[1]??'').matchAll(/^(title|description):\s*(.+)$/gm)].map(match=>[match[1],match[2].replace(/^(['"])(.*)\1$/,'$2')]));
 function sections(raw) {
   const pieces=raw.split(/^## (.+)\s*$/m),headings=[],occurrences=[];
@@ -58,9 +73,12 @@ export function assertClosingSynthesisProseAccepted(prose,independentDigest=clos
   if(prose.sources.some(source=>!nonempty(source.title)||!nonempty(source.description)||!/^[a-f0-9]{64}$/.test(source.mdxSha256)||!Array.isArray(source.headings)||!Array.isArray(source.ordinary)||source.ordinary.length))throw new Error('B32 final source metadata/hash/ordinary prose receipt is incomplete');
 }
 /** @param {any} edition @param {Map<string,string>} sources @param {any} catalog @param {any} prose @param {string|null} independentDigest @param {'raw'|'public'} catalogProjection */
-export function validateClosingSynthesisCoverage(edition,sources,catalog,prose,independentDigest=closingSynthesisProseDigest,catalogProjection='raw') {
+export function validateClosingSynthesisCoverage(edition,sources,catalog,prose,independentDigest=closingSynthesisProseDigest,catalogProjection='raw',currentAcceptance=currentScientific,currentDigest=closingSynthesisCurrentDigest) {
   assertClosingSynthesisOriginal();assertClosingSynthesisRegistration(edition);assertClosingSynthesisProseAccepted(prose,independentDigest);
   const errors=[];
+  let currentRecords=new Map();
+  if(currentAcceptance?.status==='reviewed'){assertClosingSynthesisCurrentAccepted(currentAcceptance,currentDigest);currentRecords=new Map(currentAcceptance.changes.map(row=>[row.current.id,row.current]));}
+  const currentClosure={...original.scientificClosure,claims:original.scientificClosure.claims.map(row=>currentRecords.get(row.id)??row)};
   for(const source of prose.sources){const raw=sources.get(source.route);if(typeof raw!=='string'||rawDigest(raw)!==source.mdxSha256){errors.push(`B32 source differs from independently reviewed MDX: ${source.route}`);continue;}const actual=sections(raw);if(!sameRecord(metadata(raw),{title:source.title,description:source.description})||!same(actual.headings,source.headings))errors.push(`B32 actual source metadata/headings differ: ${source.route}`);const expected=source.route===closingSynthesisManuscript?closingSynthesisSections.flatMap(section=>section.claimIds.map(id=>({id,section:section.id}))):prose.website.find(page=>page.route===source.route)?.occurrences;if(!same(actual.occurrences,expected)||collectChapterClaimOccurrences(raw).length!==expected?.length)errors.push(`B32 body missing, duplicated, reordered, outside sections or misplaced: ${source.route}`);}
   if(!['raw','public'].includes(catalogProjection))throw new Error('B32 catalog comparison requires an explicit raw or public projection');
   // Runtime receives lib/catalog's allowlisted projection. Reconstruct only the
@@ -69,7 +87,7 @@ export function validateClosingSynthesisCoverage(edition,sources,catalog,prose,i
   let expectedPublic=null;
   if(catalogProjection==='public'){
     const reference=structuredClone(catalog);
-    for(const [kind,records] of [['claims',prose.claims],...Object.entries(original.scientificClosure)]){
+    for(const [kind,records] of [['claims',prose.claims],...Object.entries(currentClosure)]){
       const fixed=new Map(records.map(record=>[record.id,record]));
       reference[kind]=[...(reference[kind]??[]).filter(record=>!fixed.has(record.id)),...records];
     }
@@ -77,8 +95,9 @@ export function validateClosingSynthesisCoverage(edition,sources,catalog,prose,i
   }
   const expected=(kind,fixed)=>expectedPublic?expectedPublic[kind].find(record=>record.id===fixed.id):fixed;
   for(const fixed of prose.claims){const found=catalog?.claims?.filter(row=>row.id===fixed.id)??[];if(found.length!==1||found[0].status!=='reviewed'||!sameRecord(found[0],expected('claims',fixed)))errors.push(`B32 canonical record differs from independently reviewed manuscript: ${fixed.id}`);}
-  // Original direct22 may be reauthored; the unchanged external scientific closure may not.
-  for(const [kind,records] of Object.entries(original.scientificClosure))for(const fixed of records){const found=catalog?.[kind]?.filter(row=>row.id===fixed.id)??[];if(found.length!==1||!sameRecord(found[0],expected(kind,fixed)))errors.push(`B32 original scientific ${kind} closure differs: ${fixed.id}`);}
+  // Original direct22 and seven explicit current dependencies have separate acceptance; all other scientific records remain exact.
+  for(const [kind,records] of Object.entries(currentClosure))for(const fixed of records){const found=catalog?.[kind]?.filter(row=>row.id===fixed.id)??[];if(found.length!==1||!sameRecord(found[0],expected(kind,fixed)))errors.push(`B32 original scientific ${kind} closure differs: ${fixed.id}`);}
+  if(currentRecords.size){const reference=structuredClone(catalog);for(const consumer of currentAcceptance.consumers){const found=catalog?.claims?.filter(row=>row.id===consumer.id)??[];reference.claims=reference.claims.filter(row=>row.id!==consumer.id).concat(consumer.record);const wanted=catalogProjection==='public'?publicCatalog(reference).claims.find(row=>row.id===consumer.id):consumer.record;if(found.length!==1||!sameRecord(found[0],wanted))errors.push(`B32 renewed consumer differs: ${consumer.id}`);}}
   return errors;
 }
 /** @param {any} history @param {string|null} headingDigest @returns {any[]} */
