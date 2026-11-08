@@ -4,6 +4,7 @@ import original from '../config/closing-synthesis-original.json' with { type: 'j
 import captured from '../config/closing-synthesis-heading-history.json' with { type: 'json' };
 import currentScientific from '../config/closing-synthesis-current-accepted.json' with { type: 'json' };
 import climateOriginal from '../config/climate-assembly-original.json' with { type: 'json' };
+import dataOriginal from '../config/data-applicability-original.json' with { type: 'json' };
 import { chapterAnchorPrefix, collectChapterClaimOccurrences, printUnitAnchor } from './reader-book.mjs';
 import { validateExchangeAnnotationOutput, unaccountedReaderText } from './reader-exchange-semantics.mjs';
 import { isVerifiedReaderPagination } from './reader-numbering-output.mjs';
@@ -33,14 +34,17 @@ const nonempty = value => typeof value==='string' && !!value.trim();
 const allIds = closingSynthesisSections.flatMap(section=>section.claimIds);
 // Main alone qualifies this additive current dependency acceptance. The original127 closure stays immutable.
 /** @type {string|null} */
-export const closingSynthesisCurrentDigest = "d97b99eedbf2a2810f60053692e264cebdaa0fb789cedb8008cc6893675c6b42";
+export const closingSynthesisCurrentDigest = 'c3e919df1c4e19a8bdfea73ec0217af42ca818c57393cb05d6668be1fb737c08';
 const currentTimeIds=['cl-time-combination','cl-time-common-endpoint','cl-time-dynamic-not-forecast','cl-time-elapsed-response','cl-time-emission-profile','cl-time-horizon-choice','cl-time-model-limits'];
+const currentDataIds=['cl-db2011-documenting-number','cl-db2011-missing-and-zero','cl-db2011-representativeness-and-precision','cl-db2011-represented-object','cl-db2011-review-of-guidance','cl-db2011-review-questions','cl-db2011-review-relative-to-criteria','cl-db2011-user-and-manager','cl-db2011-versioned-confidence'];
+const currentAllowedIds=[...currentTimeIds,...currentDataIds];
+const currentConsumers=[...climateOriginal.downstreamClaims,...dataOriginal.downstreamClaims];
 export function assertClosingSynthesisCurrentAccepted(value,independentDigest=closingSynthesisCurrentDigest){
  assertClosingSynthesisOriginal();
  if(!value||value.schemaVersion!==1||value.status!=='reviewed'||value.originalDigest!==closingSynthesisDigest(original)||!/^[a-f0-9]{64}$/.test(independentDigest??'')||closingSynthesisDigest(value)!==independentDigest)throw new Error('B32 current scientific acceptance is incomplete or not independently pinned');
- if(!same(value.changes?.map(row=>row.current?.id),currentTimeIds)||!same(value.consumers?.map(row=>row.id),climateOriginal.downstreamClaims.map(row=>row.id)))throw new Error('B32 current acceptance requires exact seven changes and six affected consumers');
+ if(!same(value.changes?.map(row=>row.current?.id),currentAllowedIds)||!same(value.consumers?.map(row=>row.id),currentConsumers.map(row=>row.id)))throw new Error('B32 current acceptance requires exact seven time/nine data changes and six climate/seven data affected consumers');
  for(const change of value.changes){const fixed=original.scientificClosure.claims.find(row=>row.id===change.current.id);if(!fixed||!sameRecord(change.old,fixed)||change.current.status!=='reviewed'||change.current.id!==change.old.id||!nonempty(change.rationale)||!same(change.current.premiseIds??[],fixed.premiseIds??[])||!same(change.current.evidenceIds??[],fixed.evidenceIds??[]))throw new Error('B32 current acceptance changes an unqualified original, status or dependency edge');}
- for(const consumer of value.consumers){const fixed=climateOriginal.downstreamClaims.find(row=>row.id===consumer.id);if(!fixed||!sameRecord(consumer.record,fixed)||!nonempty(consumer.rationale))throw new Error('B32 current acceptance needs exact unchanged consumer records and renewed use judgments');}
+ for(const consumer of value.consumers){const fixed=currentConsumers.find(row=>row.id===consumer.id);if(!fixed||!sameRecord(consumer.record,fixed)||!nonempty(consumer.rationale))throw new Error('B32 current acceptance needs exact unchanged consumer records and renewed use judgments');}
  if(!Array.isArray(value.reviewEvidence)||!value.reviewEvidence.length||value.reviewEvidence.some(row=>!nonempty(row.kind)||!/^[a-f0-9]{64}$/.test(row.reportSha256??'')||!/^[a-f0-9]{64}$/.test(row.receiptSha256??'')))throw new Error('B32 current acceptance lacks explicit affected-consumer review evidence');
 }
 

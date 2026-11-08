@@ -830,3 +830,29 @@ and2concept uses require review; existing B32 original/current climate acceptanc
 18case inputs and all4140historical meanings remain protected. No new manuscript,
 source reading or independent acceptance is claimed at this protocol milestone.
 Programme9 remains active for all remaining research and publication obligations.
+
+### Issue86 actual candidate and bounded acceptance
+
+The protocol/originals were pushed as`feb051601a63507f17a6ca6c881440b0d7adbb6c`.
+Selected same-byte2011original reinspection, actual14-record authoring and separate
+source/semantic review now support the four-section B25 manuscript. The website
+keeps7/7members. All7downstream consumers,2definitions and9concept neighbors were
+read and remain compatible; only exact current B32 data-premise acceptance changes.
+No original B32 history, previous climate acceptance or numerical input is replaced.
+
+A fresh local-app reader found two concrete fine-page/scope issues; four shared
+paragraphs were corrected and separately rechecked against source and reader
+criteria. The follow-up found both issues resolved without a new material reading
+problem. Actual source-level reading is bounded to the candidate and adjacent
+cost/uncertainty inputs plus fine-page projections, not all of Part6 or the book.
+The final reader receipt is
+`04228c3df6ed83446ab5568ee6859bf6ffee8261e8bee12d77a0dc7eb3fc65a6`.
+
+Current actual counts are32chapters/39bookunits/160formal chapter sections,
+47website units and4146historical obligations. The120-section goal and all other
+research/authoring/formal-edition obligations stay open. Full444tests, types,
+catalog and strict configuration pass. Initial current-count test omissions and
+an actual Prose-wrapper export rejection were repaired with their evidence
+preserved. Next compilation and repaired actual export pass as a working preview.
+Clean commit/build, actual browser, hosted identity, sourcePR/CI/merge and exact
+root integration remain pending; no local service or container was started.

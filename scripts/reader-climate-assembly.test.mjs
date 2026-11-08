@@ -151,17 +151,18 @@ test("actual combined body and appendix retain notes, source conditions, figure 
   assert(navigation);
   for (const changed of [html.replace(figure.outerHTML, ""), html.replace(figure.outerHTML, "").replace("</article>", figure.outerHTML + "</article>"), html.replace(figure.outerHTML, figure.outerHTML.replace("<figure>", "<figure hidden>")), html.replace('width="700"', 'width="701"'), ...["hidden", 'aria-hidden="true"', 'style="display:none"', 'class="hidden"'].map((hidden) => html.replace("<img ", `<img ${hidden} `)), html.replace(paragraph.outerHTML, ""), html.replace(paragraph.outerHTML, paragraph.outerHTML + paragraph.outerHTML), html.replace(paragraph.outerHTML, paragraph.outerHTML.replace("<p>", "<p hidden>")), html.replace(notice.outerHTML, ""), html.replace(notice.outerHTML, notice.outerHTML + notice.outerHTML), html.replace(limits.outerHTML, ""), html.replace(navigation.outerHTML, navigation.outerHTML.replace("参考响应", "错误入口")), html.replace("</article>", "<p>未审新增文字</p></article>")]) assert(check(changed).length);
 });
-const timeIds = b32.scientificClosure.claims.filter((row) => row.id.startsWith("cl-time-")).map((row) => row.id), current = { schemaVersion: 1, status: "reviewed", originalDigest: closingSynthesisDigest(b32), changes: timeIds.map((id) => {
+const dataOriginalForCurrent = await json("config/data-applicability-original");
+const timeIds = b32.scientificClosure.claims.filter((row) => row.id.startsWith("cl-time-")).map((row) => row.id), dataIds = b32.scientificClosure.claims.filter(row=>dataOriginalForCurrent.orderedClaimIds.includes(row.id)).map(row=>row.id), current = { schemaVersion: 1, status: "reviewed", originalDigest: closingSynthesisDigest(b32), changes: [...timeIds,...dataIds].map((id) => {
   const old = b32.scientificClosure.claims.find((row) => row.id === id);
   return { old, current: { ...structuredClone(old), text: old.text + " Explicit fixture renewed wording." }, rationale: "Fixture renewed source meaning." };
-}), consumers: original.downstreamClaims.map((record) => ({ id: record.id, record, rationale: "Fixture confirmed unchanged use." })), reviewEvidence: [{ kind: "fixture only", reportSha256: "c".repeat(64), receiptSha256: "d".repeat(64) }] }, currentPin = closingSynthesisDigest(current), closingCatalog = structuredClone(rawCatalog);
+}), consumers: [...original.downstreamClaims,...dataOriginalForCurrent.downstreamClaims].map((record) => ({ id: record.id, record, rationale: "Fixture confirmed unchanged use." })), reviewEvidence: [{ kind: "fixture only", reportSha256: "c".repeat(64), receiptSha256: "d".repeat(64) }] }, currentPin = closingSynthesisDigest(current), closingCatalog = structuredClone(rawCatalog);
 for (const [kind, records] of [["claims", [...b32.scientificClosure.claims, ...b32Prose.claims]], ["evidence", b32.scientificClosure.evidence], ["sources", b32.scientificClosure.sources]]) {
   const ids = new Set(records.map((row) => row.id));
   closingCatalog[kind] = closingCatalog[kind].filter((row) => !ids.has(row.id)).concat(structuredClone(records));
 }
 for (const change of current.changes) Object.assign(closingCatalog.claims.find((row) => row.id === change.current.id), structuredClone(change.current));
 const closingSources = new Map(await Promise.all([...closingSynthesisRoutes, closingSynthesisManuscript].map(async (route) => [route, await readFile(new URL(`../content${route}.mdx`, import.meta.url), "utf8")])));
-test("B32 additive current acceptance qualifies only exact seven records, six consumers and reviewed edges", () => {
+test("B32 additive current acceptance qualifies only exact seven time/nine data records, six climate/seven data consumers and reviewed edges", () => {
   assertClosingSynthesisCurrentAccepted(current, currentPin);
   assert.throws(() => assertClosingSynthesisCurrentAccepted(current), /not independently pinned/);
   assert.deepEqual(validateClosingSynthesisCoverage(edition, closingSources, closingCatalog, b32Prose, void 0, "raw", current, currentPin), []);

@@ -36,8 +36,8 @@ test('B07 independently pins original-eight/two-addition map and four actual cap
   assert.throws(()=>assertProcessNetworkProseAccepted(null),/independently reviewed/);
 });
 
-test('B07 registration preserves its place in the current40 source roster and rejects source/scope/section changes', () => {
-  assert.equal(currentEditionKeys(edition,available,baseline,placements).length,40);
+test('B07 registration preserves its place in the current39 source roster and rejects source/scope/section changes', () => {
+  assert.equal(currentEditionKeys(edition,available,baseline,placements).length,39);
   for (const mutate of [copy=>copy.units=copy.units.filter(unit=>unit.key!==route),copy=>copy.units.find(unit=>unit.key===route).source='/monograph/empty-b07',copy=>copy.units.find(unit=>unit.key===route).coverage=['/docs/history'],copy=>copy.units.find(unit=>unit.key===route).sections.reverse(),copy=>copy.units.find(unit=>unit.key===route).part='问题的来路',copy=>copy.units.find(unit=>unit.key===route).kind='topic']) {const copy=structuredClone(edition);mutate(copy);assert.throws(()=>currentEditionKeys(copy,available,baseline,placements),/B07/);}
   assert.throws(()=>currentEditionKeys(edition,available.filter(source=>source!==route),baseline,placements),/Missing book source/);
   const reordered=structuredClone(edition), index=reordered.units.findIndex(unit=>unit.key===route); [reordered.units[index],reordered.units[index+1]]=[reordered.units[index+1],reordered.units[index]];assert.throws(()=>currentEditionKeys(reordered,available,baseline,placements),/explicit current seven-part numbered order/);

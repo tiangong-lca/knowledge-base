@@ -10,9 +10,9 @@ const routeKey = value => typeof value === 'string' ? value.replace(/\/+$/, '') 
 const chinese = ['', '一', '二', '三', '四', '五', '六', '七'];
 // Main owns the independently reviewed current-edition pin, separate from immutable histories.
 /** @type {string|null} */
-export const readerNumberingDigest = "07215484785eff1a9bf0525312547556f6fc721173e9f46ecf874fb8fb5992f4";
+export const readerNumberingDigest = "67fc08cb528e7532c2b03df2fb62e2640c774bf7c2340f79aaa4d8562735ba32";
 export function assertReaderNumbering(value = numbering, independentDigest = readerNumberingDigest) {
-  if (createHash('sha256').update(JSON.stringify(value)).digest('hex') !== independentDigest) throw new Error('Reader numbering differs from the independently pinned actual 40-unit/33-chapter/47-web-unit climate heading and part inventory');
+  if (createHash('sha256').update(JSON.stringify(value)).digest('hex') !== independentDigest) throw new Error('Reader numbering differs from the independently pinned actual 39-unit/32-chapter/47-web-unit data applicability heading and part inventory');
 }
 export const readerNumberingManifest = numbering;
 export const readerParts = numbering.parts.map(part => ({ ...part, label: `第${chinese[part.number]}部` }));
@@ -112,8 +112,9 @@ export const numberedHeadingText = readNumberedHeading;
 export const getUnitHeadingPlan = getHeadingNumberPlan;
 
 
-/** Two source-qualified continuations; other old scopes keep their own meaning. */
+/** Source-qualified continuations; other old scopes keep their own meaning. */
 export const readerContinuationContracts = [
+  { key: 'data-to-uncertainty', route: '/docs/book/review-support-and-version-boundaries', bookSource: '/monograph/data-applicability', bookSourceKey: 'book-data-applicability', sourceHref: '/docs/book/uncertainty-and-variability', sourceLabel: '不确定性', bookKey: '/docs/book/uncertainty-and-variability', bookLabel: '不确定性', webContext: '继续阅读：不确定性。', bookContext: '继续阅读：不确定性。' },
   { key: 'policy-to-framework', route: '/docs/book/early-container-policy-and-systems', sourceHref: '/docs/book/framework-history/', sourceLabel: '评价框架的形成', bookKey: 'book-framework-responsibilities', bookLabel: '框架职责', webContext: '沿着这些职责，下一章进入评价框架的形成。', bookContext: '沿着这些职责，下一章进入框架职责。' },
   { key: 'emission-time-to-future', route: '/docs/book/emission-time-and-assessment', bookSource: '/monograph/climate-equivalence', bookSourceKey: 'book-climate-equivalence', sourceHref: '/docs/book/future-technology-and-context/', sourceLabel: '未来技术置于怎样的世界', bookKey: '/docs/book/future-technology-and-context', bookLabel: '未来技术置于怎样的世界', webContext: '前瞻技术的情景设定，见未来技术置于怎样的世界。', bookContext: '未来清单的技术与背景设定，另见后面的未来技术置于怎样的世界。' },
 ];

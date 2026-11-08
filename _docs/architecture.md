@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-09
-lastReviewedCommit: 46b99baf16fadaae7a90ca68d003fc4d3652359f
+lastReviewedCommit: feb051601a63507f17a6ca6c881440b0d7adbb6c
 ---
 
 # Publication architecture
@@ -188,7 +188,7 @@ The standard Fumadocs DocsLayout owns document navigation, sidebar, TOC, search/
 
 Current implementation: `lib/reader-book.ts` keeps canonical source enumeration separate from the cloned, numbered website tree and reads the explicit current print roster in `config/book-edition.json`. Shared front matter precedes seven parts of actual chapters; independently authored B04 and B10 replace their respective pairs of fine website units, and X02 follows X01 under appendices. `scripts/reader-book.mjs` creates one note plan per complete MDX source, ignoring code/comment examples. `ChapterContent` injects paragraph components with one local reference marker, then appends reader annotations. `ClaimAnnotation` supplies source locations, scope and material caveats without execution logs or visible database keys. Print reuses the renderer with unique prefixes and demoted section headings. Reader appendix pages expose bibliography, citations and conceptual navigation; technical build/research histories stay in `_docs/`.
 
-Remaining full monograph migration (user requirement, 2026-11-06; bounded B04/B10/B15/B32 assemblies and the numbered current order are implemented): the website may keep fine navigation while a separately curated book structure supplies parts, chapters, formal sections and print order. Both must reference shared canonical prose/claims/evidence/cases rather than fork their scientific content. The full old-to-new map must preserve all 37 chapters and five supplements and stable citation identities. Note plans must follow assembled book chapter boundaries, not merely concatenate per-MDX note sequences. Validate actual ordering, unique anchors, numbering, links, search behavior, old editions and print hierarchy when implementing. The goal and reader contract define editorial requirements; this paragraph does not claim a new runtime or schema already exists.
+Remaining full monograph migration (user requirement, 2026-11-06; bounded B04/B10/B15/B25/B32 assemblies and the numbered current order are implemented): the website may keep fine navigation while a separately curated book structure supplies parts, chapters, formal sections and print order. Both must reference shared canonical prose/claims/evidence/cases rather than fork their scientific content. The full old-to-new map must preserve all 37 chapters and five supplements and stable citation identities. Note plans must follow assembled book chapter boundaries, not merely concatenate per-MDX note sequences. Validate actual ordering, unique anchors, numbering, links, search behavior, old editions and print hierarchy when implementing. The goal and reader contract define editorial requirements; this paragraph does not claim a new runtime or schema already exists.
 
 `reader-bibliography.mjs` exports schemaVersion2 / reader-bibliography: bibliographic sources, cited evidence and exact cited passage/carrier identity. Both `/downloads/bibliography.json` and the retained `/downloads/research.json` URL return identical curated bytes; the latter no longer exposes the schema1 research workbench. Queries, gaps, editorial revisions and workflow states remain in repository research/development records. Public catalog provenance remains separately available, with its actual review kind unchanged. The AI reading index links the book and bibliography, not execution records.
 
@@ -371,7 +371,7 @@ share its MDX placement and the canonical paragraph-note sequence.
 
 The Node-only `scripts/reader-citation-baseline.mjs` independently pins the parsed complete baseline digest, including source identity, and exact preface/guide order. Both server roster derivation and export validation call it before deriving expectations. The public frozen inventory has2254addresses; its body content is not duplicated. `scripts/reader-surface.mjs` checks emitted target claim identity, native link destination, alias adjacency, uniqueness, date/source context, note numbers and original print order. A real book source or output requires both configs; generic non-book fixtures retain their separate scope. Deliberate truncation and front-matter mutation tests guard against circular self-validation.
 
-Legacy context appears when an old fragment is targeted, with the preserved source date and immutable GitHub tree. It cannot infer another historical unversioned edition and does not claim hosted archives. The current 40 print articles comprise two front-matter units, 33 chapters (including B04/B10/B15/B32 assemblies and shared B06/B08), two retained topics and three appendices. Full 32-chapter migration remains future work; each actual assembly has its own continuous book note plan.
+Legacy context appears when an old fragment is targeted, with the preserved source date and immutable GitHub tree. It cannot infer another historical unversioned edition and does not claim hosted archives. The current39 print articles comprise two front-matter units,32 chapters (including B04/B10/B15/B25/B32 assemblies and shared B06/B08), two retained topics and three appendices. Each actual assembly has its own continuous book note plan;160formal chapter sections, retained topics and incomplete research/authoring keep the full edition unfinished.
 
 
 Current appendix registration is deliberately separate from the immutable citation baseline. `createCurrentPrintRoutes` validates allowed appendix additions, uniqueness and registered source existence, then compares the resulting roster against actual source pages. Runtime uses `source.getPages()`; export independently discovers MD/MDX files under `content/docs`. Thus deleting both a registration and its exported article cannot silently omit an existing source. The folder's navigation index is excluded, while its article descendants remain mandatory. Print presents appendices separately from the two retained topics, and stable note/premise anchors remain scoped to actual source occurrences. This original appendix registration remains part of the current mixed-edition conservation checks; the bounded B04 assembly below adds a separate manuscript source without claiming the complete32chapter edition.
@@ -480,9 +480,9 @@ print pages without clipping, truncating or changing the cited source identity.
 `config/reader-numbering.json` binds the actual current source titles, heading
 identities, seven parts and separate book/website orders. Its independent code
 pin supplements discovered-source and edition-coverage checks; it is not the
-editorial 32-chapter plan made executable by inference. The current 40-unit book
-contains 33 real chapters, two front units, two retained topics and three appendices.
-C14/C15 remain separate. The website keeps37 fine chapters in47 reading units.
+editorial 32-chapter plan made executable by inference. The current39-unit book
+contains32 real chapters, two front units, two retained topics and three appendices.
+B25 now consumes C14/C15 under four authored sections with14continuous notes. The website keeps37 fine chapters in47 reading units.
 
 `reader-numbering.mjs` derives edition/view labels and complete heading plans,
 including actual case subheadings. `NumberedTitle` and `NumberedHeading` render a
@@ -643,3 +643,36 @@ review. Number/title visibility must be qualified before normalization. Actual
 export and browser qualification, sourceCI/merge, hosting and exact workspace
 integration remain independent delivery evidence. The new33-chapter roster does
 not satisfy the final32-chapter/120-section goal or formal PDF publication.
+
+## Data applicability and explicit new evidence
+
+B25 consumes the two original data/review units in one four-section14-note book
+source; fine website routes retain7/7members. The immutable original binds12prior
+propositions, their scientific closure and original6/6scopes. Six actual saved
+Main46b printed headings extend4140historical obligations to4146. Old titles,
+editions and exact note subsets remain at real native or no-script destinations.
+
+The separately pinned current acceptance binds three source files,14complete
+claims,14evidence and one source record. Its two newly introduced evidence records
+are not covered by the older12-evidence snapshot: their full records must receive
+explicit current acceptance. Original evidence/source records remain exact. Raw
+repository and projected runtime checks retain that distinction; output inspection
+first checks actual scientific records, then full body, annotations, historical
+scope and the exact uncertainty continuation after the final proposition.
+
+The actual body admits no scientific image or unreviewed extra text. Visibility,
+heading order and native note identities remain separate from source receipts.
+The B32 current dependency acceptance adds nine exact data-premise changes and
+seven unchanged consumers while preserving earlier seven timing changes and six
+climate consumers. Unlisted original records still compare exactly. These guards
+do not grant original-source, reader, empirical or whole-book approval; actual
+browser, hosted source identity and tracked delivery retain their own evidence.
+
+The final continuation follows the real `ChapterProse` wrapper, not necessarily
+the canonical paragraph's immediate sibling. Admission recognizes only the exact
+direct `scholarly-prose` wrapper under the established article body, with direct
+paragraph children and the final canonical paragraph last; its immediate next
+body element must be the reviewed continuation. Extra nesting, attributes,
+substantive intervening content or relocation fail. Actual-component fixtures
+supplement generated-output checks, preventing an artificial direct-paragraph
+fixture from defining the production renderer's structure.
