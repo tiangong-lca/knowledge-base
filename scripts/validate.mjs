@@ -1,5 +1,6 @@
 import { validateReaderNumberingSources } from './reader-numbering-output.mjs';
 import { assertJointProductionOriginal, assertJointProductionHeadingHistory, validateJointProductionCoverage, validateJointProductionArtifactBytes } from './reader-joint-production.mjs';
+import { assertWallSelectionOriginal, assertWallSelectionHeadingHistory, validateWallSelectionCoverage, validateWallSelectionArtifactBytes } from './reader-wall-selection.mjs';
 import { assertHybridInventoryAccepted, assertHybridInventoryHeadingHistory, validateHybridInventoryCoverage } from './reader-hybrid-inventory.mjs';
 import { validateExchangeSemanticsCoverage, assertExchangeSemanticsOriginal, assertExchangeSemanticsHeadingHistory, assertExchangeSemanticsCitationSources, assertExchangeSemanticsPartialHistory } from './reader-exchange-semantics.mjs';
 import { assertProcessNetworkHeadingHistory, validateProcessNetworkCoverage } from './reader-process-network.mjs';
@@ -100,6 +101,7 @@ export async function validateRepository(root) {
     const [processAccepted,processHeadingHistory,processProse]=await Promise.all(['process-network-accepted','process-network-heading-history','process-network-prose-accepted'].map(name=>readOptional(`config/${name}.json`)));
     const [cleanerAccepted,cleanerHeadingHistory]=await Promise.all(['cleaner-production-accepted','cleaner-production-heading-history'].map(name=>readOptional(`config/${name}.json`)));
     const [jointOriginal,jointHeadings,jointProse] = await Promise.all(['original','heading-history','prose-accepted'].map(name=>readOptional(`config/joint-production-${name}.json`)));
+    const [wallOriginal,wallHeadings,wallAccepted] = await Promise.all(['original','heading-history','accepted'].map(name=>readOptional(`config/wall-selection-${name}.json`)));
     const [hybridAccepted,hybridHeadings,hybridProse]=await Promise.all(['accepted','heading-history','prose-accepted'].map(name=>readOptional(`config/hybrid-inventory-${name}.json`)));
     const [exchangeOriginal,exchangeHeadings,exchangeCitations,exchangePartial,exchangeProse]=await Promise.all(['original','heading-history','citation-sources','partial-history','prose-accepted'].map(name=>readOptional(`config/exchange-semantics-${name}.json`)));
     const sources=new Map();
@@ -111,6 +113,12 @@ export async function validateRepository(root) {
     try {
       if (!numbering) throw new Error('Current reader publication requires its independently pinned reader-numbering.json');
       errors.push(...validateReaderNumberingSources(numbering,sources,edition));
+      const missingWall = [['original',wallOriginal],['heading-history',wallHeadings],['accepted',wallAccepted]].filter(([,value])=>!value).map(([name])=>`wall-selection-${name}.json`);
+      if (missingWall.length) throw new Error(`Book edition requires its wall original, captured headings and final selection; missing: ${missingWall.join(', ')}`);
+      assertWallSelectionOriginal(wallOriginal); assertWallSelectionHeadingHistory(wallHeadings);
+      errors.push(...validateWallSelectionCoverage(edition,sources,wallOriginal,data,wallAccepted));
+      const wallBytes = await Promise.all(['components/teaching-case-client.tsx','knowledge/cases/wall-coating-v1.json','knowledge/cases/wall-coating-v1.publication.json','scripts/teaching-case.mjs','lib/teaching-case.ts'].map(path=>readFile(resolve(root,path))));
+      errors.push(...validateWallSelectionArtifactBytes(wallAccepted,{component:wallBytes[0],input:wallBytes[1],publication:wallBytes[2],engine:wallBytes[3],clientEngine:wallBytes[4]}));
       const missingHybrid = [['accepted',hybridAccepted],['heading-history',hybridHeadings],['prose-accepted',hybridProse]].filter(([,value])=>!value).map(([name])=>`hybrid-inventory-${name}.json`);
       if (missingHybrid.length) throw new Error(`Book edition requires its independent B09 original, captured-heading and final-prose inventories; missing: ${missingHybrid.join(', ')}`);
       assertHybridInventoryAccepted(hybridAccepted); assertHybridInventoryHeadingHistory(hybridHeadings);

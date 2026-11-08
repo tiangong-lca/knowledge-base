@@ -139,6 +139,39 @@ Reading and passage identifiers also participate in reverse dependencies: changi
 
 The server `TeachingCase` component projects the repository specification before passing it to the client. Raw JSON and Node publication helpers must not enter the client graph. MDX references use literal registered id/version pairs. The client runs the same evaluator and presents scenario/parameter controls, a difference plot, matrices and numeric traces; fixed tables remain available to print and without interaction. `TeachingCase` explicitly dispatches CASE-WALL-CONNECT v1.0.0 to the existing interactive client and CASE-JOINT-BATCH v1.0.0 to a static server renderer. New cases used through `TeachingCase` require a reviewed widget renderer binding as well as registration. Prose-only numerical examples instead use reviewed canonical `Prose` and the chapter input links; they retain the same projection, input-hash, source-fact and evaluated-export checks.
 
+The wall selection keeps its single source route and22original canonical/template
+records under four sections. The widget now follows the rough comparison and
+precedes the exercise. Two trace tables preserve each full f/s/electricity/g/I
+reconstruction; five original tables, plot, controls and independent predicates
+remain. The coordinate paragraph links natively to the complete matrix/reference
+surface. Its title uses a deterministic view-specific ID; `useId` remains only for
+control and chart accessibility. The two actual old React-generated title IDs are
+historical notices, not promises about future component-tree positions.
+
+`wall-selection-original.json` freezes the source, public scientific closure,
+original104wall histories, component representations and numerical identities.
+`wall-selection-heading-history.json` binds seven additional actual638c19d hosted
+heading addresses. Their independent pins supplement existing history pins.
+`reader-wall-selection.mjs` remaps the old five-section and case scopes to dated
+native notices with precise original note subsets, and preserves original22-note
+group/title context. The old section that contained the complete calculator names
+its current calculation reference as well as its four original notes. Shared
+runtime labels identify the actual new section or calculation title. Generic
+history checks and the wall-specific scope checks both apply; a surviving empty
+ID is insufficient.
+
+The separately approved `wall-selection-accepted.json` binds complete current
+source and semantic presentations, all23old paragraph/five heading dispositions,
+ten local condition roles, seven tables and exact native links. A null independent
+pin or pending receipt refuses publication. Source validation reads actual
+component/input/publication/evaluator bytes; runtime coverage validates the exact
+canonical/source/evidence/premise records and four-section22-paragraph order.
+Output checks run after full numbering admission and verify actual text, matrix
+and contribution data, controls, visible conditions, annotations, original scopes,
+position and destinations. Five original tables remain independently required
+alongside the complete new trace quantities. These gates do not establish a
+fresh original-source reading, empirical validity or final browser qualification.
+
 Derived text artifacts retain original URL/media type and explicit absence of original bytes; their text hash is visibly distinct from an original-document hash. Catalog/research validation checks the same qualification fields and their joins; public exports retain them while excluding raw captures and private metadata.
 
 ## Bounded joint-product model
