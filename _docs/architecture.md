@@ -437,3 +437,7 @@ Native annotation-group headings share the existing seven-rem reference scroll
 margin. Without that margin, a mobile saved group URL placed its heading and the
 first version-context line beneath the fixed document header and TOC. Both web
 H2 and continuous-print H3 group targets retain readable arrival positions.
+
+Plain bibliography version paragraphs use the same anywhere-wrapping policy as
+their links. This keeps long archive-member filenames within narrow continuous
+print pages without clipping, truncating or changing the cited source identity.
