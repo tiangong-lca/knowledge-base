@@ -58,6 +58,10 @@ CASE-JOINT-BATCH keeps additive product shares, physical alternative routes and 
 
 Reused original works receive precise additional passage/visual-check records where inspected. Added locators do not increment work counts or imply whole-work reading. Dated normative and adequacy criteria retain each author's purpose. A correction record does not substitute for an unread original procedure, and a mathematically similar teaching formula is not automatically that procedure's implementation.
 
+## Editorial selection and historical continuity
+
+The2026-11-08 whole-book selection decision in `editorial/2026-11-08-argument-and-selection.md` separates evidence eligibility from main-text inclusion. Faithful source support does not require publication of every inspected detail. Preserve coverage obligations, reader-essential conditions, counterevidence and immutable source/release identity while permitting explicitly reviewed mergers, notes, appendices, useful website topics and corrections. A current paragraph's removal from the main text requires a documented semantic destination or correction, dependent-use review and actual historical-link qualification; retaining an empty anchor or changing a baseline hash is insufficient. Existing code guards remain binding until those bounded dispositions are implemented and reviewed. Editorial agreement is not scientific consensus or human expert approval.
+
 ## Reader publication boundary
 
 The user-approved `_docs/reader-publication-contract.md` governs every delivered reading page. Public prose is finished exposition; all research/development process logs and TODOs stay in `_docs/`. Scientific scope, source identity, counterevidence and hypothetical assumptions remain reader-accessible. Stable machine identities and validation receipts do not become visible prose labels. Source/reader review and actual visual verification supplement software checks.

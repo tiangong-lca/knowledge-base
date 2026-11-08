@@ -650,3 +650,15 @@ captures identify14 additional meaningful native addresses beyond4,102 historica
 obligations and the original29/7 note subsets. Five outside canonical consumers,
 seven premise links and the separate allocation-topic navigation remain obligations.
 No new original reading, numerical research or completed B10 manuscript is claimed.
+
+
+## 2026-11-08 resumed: argument and selection before further prose
+
+The user paused after requesting numbered contents and a review of whole-book selection, then explicitly resumed with that editorial review as the first priority. Issue78's [scope update](https://github.com/tiangong-lca/knowledge-base/issues/78#issuecomment-6718983847) preserves the full B10/numbering acceptance and adds manuscript/process audit, material disposition and consensus/disagreement synthesis. The parent programme remains open.
+
+The current source checkpoint is1dd75651b49b508c8a1d6ec019bdd3863f6b14e3 on codex/book-joint-production. Subsequent B10 manuscript/source-context/case/reader work and numbering are local. The fresh B10 reader review eventually passed after concrete clarifications;383 tests passed. The numbering production build still fails the actual TOC inventory check for ecological-scarcity-and-targets, despite compilation/type checking succeeding. No new source PR, successful publication output, hosting or root integration is claimed.
+
+The [argument and selection decision](editorial/2026-11-08-argument-and-selection.md) sets the editorial gates before further authoring. Actual manuscript coverage and chapter-role findings are recorded separately; these are editorial readings of the current source, not new external-source verification or a field-wide consensus finding. Prior local acceptance remains evidence for its exact manuscript only; substantive cuts or synthesis changes require renewed affected review. Retain the current worktree, private sources and review evidence; no preview/server/container/volume/network has been created for this audit.
+
+
+The actual source-level editorial audit now covers all35chapters plus all six front/topic/appendix units across three readers (22+11+2chapters). Main verified41 source/expanded hashes, current edition ordering and831 distinct body claims, and read the reports and critical examples; this is a joint reading, not a falsely claimed single-reader full pass. The [chapter-role map](editorial/2026-11-08-chapter-roles.md) records current questions, positive outputs, onward dependencies, concrete duplication and selection candidates. The independent plan review reported no material plan defect. No full-book scientific consensus, new original-source review or rendered qualification is claimed. Next is the explicitly bounded B10 selection pilot, preserving numerical input and substantive assumptions while removing duplicated exposition between prose and case tables; later whole-book changes follow the recorded roles rather than source availability.
