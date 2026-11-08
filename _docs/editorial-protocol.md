@@ -13,8 +13,8 @@ checkPaths:
   - "content/**"
   - "knowledge/**"
   - "releases/**"
-lastReviewedAt: 2026-11-08
-lastReviewedCommit: 504e3057cb77d6ede34f21711293c9e725927035
+lastReviewedAt: 2026-11-09
+lastReviewedCommit: 0e9683ff75d1d8f255b0644606a400ce1c799de5
 ---
 
 # Editorial and living review protocol
@@ -261,3 +261,18 @@ For the process-network exposition, keep net external demand distinct from inter
 
 
 For exchange-semantics revisions, preserve the distinction between reference and treatment objects, stored exchange signs and matrix signs, and a numerical omission explanation versus a repaired native graph. An explicit zero record and a missing factor can yield the same numeric cell while retaining different evidence states. Reusable definitions must remain intelligible in concepts and fine routes as well as the book. Append dated manual/original selections without rebinding old public reading anchors; changed claim-level explanatory scope requires precise evidence roles, not a blanket refresh of other records sharing that source.
+
+
+A closing synthesis must retain distinct analytical roles when returning to cases:
+container delivery comparison versus policy scope, controlled wall activity changes,
+and the bag study's model thresholds versus actual use, category tradeoffs and
+review limits. Shared terminology, monetary units, time coordinates and source
+inputs do not establish equivalence. Preserve source-specific probability and
+quality positions without inventing field consensus. A compressed source history
+may leave the closing exposition only while its substantive public destination,
+exact premise connection and original citation identity remain qualified.
+
+Independent reading of the opening and completed final part is a bounded coherence
+check. Its omissions must be named, and optional ideas for other chapters do not
+become fabricated new cases or proof of whole-book approval. Cached selected text
+rereading is recorded separately from new acquisition and visual original review.

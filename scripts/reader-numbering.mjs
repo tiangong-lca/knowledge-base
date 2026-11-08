@@ -9,7 +9,7 @@ import numbering from '../config/reader-numbering.json' with { type: 'json' };
 const routeKey = value => typeof value === 'string' ? value.replace(/\/+$/, '') || '/' : value;
 const chinese = ['', '一', '二', '三', '四', '五', '六', '七'];
 export function assertReaderNumbering(value = numbering) {
-  if (createHash('sha256').update(JSON.stringify(value)).digest('hex') !== '6437c416489fd5adc74b51b49e04d4b403f8ba100676f2fc556409e28cf6c4c5') throw new Error('Reader numbering differs from the independently pinned actual 41-unit/37-page heading and part inventory');
+  if (createHash('sha256').update(JSON.stringify(value)).digest('hex') !== 'dd37e4d98203b99e8b4b79a620da2b1ace956538f91054c2f17f3842843b707a') throw new Error('Reader numbering differs from the independently pinned actual 40-unit/37-page heading and part inventory');
 }
 assertReaderNumbering();
 export const readerNumberingManifest = numbering;

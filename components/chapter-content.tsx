@@ -68,7 +68,7 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
       const headingProps: HTMLAttributes<HTMLHeadingElement> & {'data-reader-heading-key': string} = { ...props, id, 'data-reader-heading-key': numbered.key };
       if (print && level+2>6) throw new Error(`Book heading exceeds the available HTML hierarchy: ${page.url} ${props.id}`);
       const heading = createElement(print ? `h${level + 2}` : defaults[name] ?? name, headingProps, <NumberedTitle number={numbered.number}>{props.children}</NumberedTitle>);
-      return id ? <><LegacyCitationAliases ids={legacy.aliases.get(id)} target={id} />{heading}</> : heading;
+      return id ? <><LegacyCitationAliases ids={legacy.aliases.get(id)} target={id} />{heading}<RetainedScope entry={legacy.scopes.get(id)} /></> : heading;
     }];
   }));
   async function RetainedScope({ entry }: { entry?: LegacyEntry }) {

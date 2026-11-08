@@ -1,3 +1,4 @@
+import { assertClosingSynthesisRegistration, closingSynthesisKey, closingSynthesisRoutes, closingSynthesisBookHref } from './reader-closing-synthesis.mjs';
 import { getPresentationUnits, readerParts } from './reader-numbering.mjs';
 import { assertJointProductionRegistration, jointProductionKey, jointProductionRoutes, jointProductionBookHref } from './reader-joint-production.mjs';
 import { assertHybridInventoryRegistration } from './reader-hybrid-inventory.mjs';
@@ -27,6 +28,7 @@ export function currentEditionKeys(edition, availableSources, baseline, placemen
   if (!Array.isArray(units) || new Set(units.map(unit => unit.key)).size !== units.length)
     throw new Error('Book edition has missing or duplicate units');
   assertJointProductionRegistration(edition);
+  assertClosingSynthesisRegistration(edition);
   assertCleanerProductionRegistration(edition);
   assertFunctionalReferenceRegistration(edition);
   assertProcessNetworkRegistration(edition);
@@ -50,7 +52,7 @@ export function currentEditionKeys(edition, availableSources, baseline, placemen
   const navigation = new Set(['/docs/appendices']);
   for (const source of available) if (!navigation.has(source) && !covered.has(source)) throw new Error(`Reader source has no current book registration: ${source}`);
   const retained = [...placements.frontMatter, ...baseline.pages.filter(page => page.printOrdinal !== undefined).sort((a,b) => a.printOrdinal-b.printOrdinal).map(page => page.route), ...(placements.printAdditions ?? []).map(unit => unit.route)];
-  const expected = retained.filter(route => route !== jointProductionRoutes[1] && route !== expectedCoverage[1] && route !== functionalReferenceSupplement && route !== '/docs/flows' && route !== '/docs/characterization').map(route => route === expectedCoverage[0] ? frameworkUnitKey : route === jointProductionRoutes[0] ? jointProductionKey : route);
+  const expected = retained.filter(route => route !== closingSynthesisRoutes[1] && route !== jointProductionRoutes[1] && route !== expectedCoverage[1] && route !== functionalReferenceSupplement && route !== '/docs/flows' && route !== '/docs/characterization').map(route => route === closingSynthesisRoutes[0] ? closingSynthesisKey : route === expectedCoverage[0] ? frameworkUnitKey : route === jointProductionRoutes[0] ? jointProductionKey : route);
   if (JSON.stringify(units.map(unit => unit.key).sort()) !== JSON.stringify([...expected].sort())) throw new Error('Book edition omitted or misclassified an accepted retained unit');
   const presentation = getPresentationUnits('book');
   if (JSON.stringify(units.map(({key,source,kind})=>({key,source,kind}))) !== JSON.stringify(presentation.map(({key,source,kind})=>({key,source,kind})))) throw new Error('Book edition differs from the explicit current seven-part numbered order');
@@ -58,13 +60,13 @@ export function currentEditionKeys(edition, availableSources, baseline, placemen
     const declared = presentation.find(row => row.key === unit.key);
     if (unit.kind === 'chapter' && unit.part !== readerParts.find(part => part.number === declared.part)?.title) throw new Error(`Book unit has incorrect current part: ${unit.key}`);
   }
-  for (const unit of units.filter(unit => unit.key !== frameworkUnitKey && unit.key !== jointProductionKey)) {
+  for (const unit of units.filter(unit => unit.key !== closingSynthesisKey && unit.key !== frameworkUnitKey && unit.key !== jointProductionKey)) {
     const kind = placements.frontMatter.includes(unit.key) ? 'front-matter' : unit.key.startsWith('/docs/book/') ? 'chapter' : unit.key.startsWith('/docs/appendices/') ? 'appendix' : 'topic';
     if (unit.source !== unit.key || unit.kind !== kind) throw new Error(`Book unit has incorrect source or kind: ${unit.key}`);
   }
   const roster = units.map(({key,source,kind})=>({key,source,kind}));
-  if (digest(roster) !== 'a927fe1c82c9561425670ddd64e61eca01c8911421dfbd50f5e0cd2008e3e2b0')
-    throw new Error('Current reading roster differs from the pinned 41-unit seven-part B04/B06/B08/B09/B10 edition');
+  if (digest(roster) !== 'aa48cded49ee511dab80de726f23172e6bc48153b8153dcee8de6cb72108bdba')
+    throw new Error('Current reading roster differs from the pinned 40-unit seven-part B04/B06/B08/B09/B10/B32 edition');
   return units.map(unit => unit.key);
 }
 
@@ -150,7 +152,7 @@ export function publishedHeadingEntries(history) {
 /** Qualified links for the bounded assembly; ambiguous old scopes keep their website meaning. */
 export function frameworkBookHref(href, currentKey) {
   if (typeof href !== 'string') return href;
-  href = jointProductionBookHref(href);
+  href = closingSynthesisBookHref(jointProductionBookHref(href));
   if (href.startsWith('/print/#')) return href.slice('/print/'.length);
   const [path,fragment] = href.split('#');
   const route = path.replace(/\/$/,'');

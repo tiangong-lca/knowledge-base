@@ -1,3 +1,4 @@
+import { closingSynthesisKey, closingSynthesisRoutes } from './reader-closing-synthesis.mjs';
 import { isVerifiedReaderPagination, prepareNumberedCaseElement } from './reader-numbering-output.mjs';
 import { createHash } from 'node:crypto';
 import original from '../config/joint-production-original.json' with { type: 'json' };
@@ -334,10 +335,11 @@ export function validateJointProductionConsumerOutput(document,path,catalog) {
   ], errors=[];
   for(const consumer of expected) {
     if(path!=='/print'&&path!==consumer.route)continue;
-    const units=path==='/print'?document.querySelectorAll(`article[data-reader-route="${consumer.route}"]`):document.querySelectorAll('article');
+    const actualRoute=path==='/print'&&closingSynthesisRoutes.includes(consumer.route)?closingSynthesisKey:consumer.route;
+    const units=path==='/print'?document.querySelectorAll(`article[data-reader-route="${actualRoute}"]`):document.querySelectorAll('article');
     if(units.length!==1){errors.push(`${path}: B10 outside premise consumer missing or repeated: ${consumer.route}`);continue;}
     for(const id of consumer.ids)if(units[0].querySelectorAll(`[data-reader-claim="${id}"]`).length!==1)errors.push(`${path}: B10 outside actual premise annotation missing: ${id}`);
-    errors.push(...validateExchangeAnnotationOutput(document,units[0],consumer.route,catalog,{print:path==='/print',claimIds:consumer.ids}));
+    errors.push(...validateExchangeAnnotationOutput(document,units[0],actualRoute,catalog,{print:path==='/print',claimIds:consumer.ids}));
   }
   return errors;
 }

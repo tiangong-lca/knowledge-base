@@ -78,12 +78,21 @@ function validation(document,path,sources){
       pairs.set(node,{number,title,gap});allNumbers.add(number);allTitles.add(title);return true;
     }catch(error){fail(`${label}: ${error.message}`);return false;}
   }
+  // Inspect authored article headings before verified number/title wrappers are
+  // removed. Collapsed navigation/TOC labels are intentionally outside this check.
+  function articleHeadingVisibility(heading,label){
+    if(!heading)return;
+    const spans=heading.querySelectorAll('[data-reader-number],[data-reader-heading-title]');
+    const hidden=node=>{for(let current=node;current;current=current.parentNode){if(current.hasAttribute?.('hidden')||current.getAttribute?.('aria-hidden')==='true'||/(?:display\s*:\s*none|visibility\s*:\s*hidden|opacity\s*:\s*0(?:[;\s]|$))/i.test(current.getAttribute?.('style')??'')||/(?:^|\s)(?:hidden|sr-only|invisible|opacity-0)(?:\s|$)/.test(current.getAttribute?.('class')??''))return true;}return false;};
+    for(const span of spans)if(hidden(span)||span.querySelectorAll('*').some(child=>compact(child.text)&&hidden(child)))fail(`Actual article heading number/title is concealed before normalization: ${label}`);
+  }
   function unit(node,view,record){
     if(!node){fail(`Missing ${view} reading unit ${record.key}`);return;}
     const print=view==='book',header=node.querySelectorAll('h1,h2,h3,h4,h5,h6').filter(h=>h.getAttribute('data-reader-heading-key')==='@unit');
     if(header.length!==1)fail(`Unit ${record.key} requires exactly one @unit heading`);
     const h=header[0],tag=print?(record.kind==='front-matter'?'H2':'H3'):'H1';
     if(h?.tagName!==tag)fail(`Wrong actual unit heading depth: ${record.key}`);
+    articleHeadingVisibility(h,record.key);
     if(record.label){if(numbered(h,{number:record.label,title:record.title,key:'@unit'},`unit ${record.key}`))normalizedHeadings.push({node:h,tag:print?'h2':'h1'});}else plain(h,record.title,`front matter ${record.key}`);
     if(node.getAttribute('data-reader-title')!==record.title||node.getAttribute('data-reader-route')!==record.key)fail(`Wrong native unit title/identity: ${record.key}`);
     if(print&&node.id!==printUnitAnchor(record.key))fail(`Wrong native printed unit anchor: ${record.key}`);
@@ -93,6 +102,7 @@ function validation(document,path,sources){
     for(const [index,slot]of plan.entries()){
       const heading=content[index],actualDepth=print?Math.min(slot.depth+2,6):slot.depth;
       if(heading?.tagName!==`H${actualDepth}`)fail(`Wrong actual content heading depth: ${record.key} ${slot.key}`);
+      articleHeadingVisibility(heading,`${record.key} ${slot.key}`);
       if(slot.id&&heading?.id!==(print?`${printUnitAnchor(record.key)}-${slot.id}`:slot.id))fail(`Wrong stable MDX heading anchor: ${record.key} ${slot.key}`);
       if(numbered(heading,{...slot,key:slot.key},`heading ${record.key} ${slot.key}`))normalizedHeadings.push({node:heading,tag:`h${print?Math.min(slot.depth+1,6):slot.depth}`});
     }
