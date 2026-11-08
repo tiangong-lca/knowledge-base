@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-08
-lastReviewedCommit: 06920de5deedb5b3ea65aeb272d8c087201a417e
+lastReviewedCommit: 5c8cf451506559150a651564a0673088067b41ae
 ---
 
 # Publication architecture
@@ -491,6 +491,10 @@ references. A router-managed hash update was observed to scroll correctly while
 leaving CSS `:target` unset, so it could not activate target-bound historical
 scope context. Native anchors preserve both the fragment state and that context;
 cross-page application links retain their existing routing behavior.
+The same arrival margin also applies to native numbered case titles on website
+pages. A direct saved `joint-batch-case-heading` URL on a390px no-script page
+otherwise placed the entire title under the96px combined navigation/TOC header;
+checking only the enclosing MDX section did not cover that distinct address.
 
 The two exact C03/C28 reading continuations have explicit source/view contracts;
 unknown fragments are not silently reinterpreted. Production still needs the
