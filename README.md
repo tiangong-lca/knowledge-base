@@ -14,8 +14,8 @@ checkPaths:
   - "package.json"
   - "app/**"
   - "scripts/**"
-lastReviewedAt: 2026-11-08
-lastReviewedCommit: 5c8cf451506559150a651564a0673088067b41ae
+lastReviewedAt: 2026-11-09
+lastReviewedCommit: 862e2feb1e2592e5ca2b09f5f8b92f5add50a54d
 ---
 
 # LCA Living Knowledge Base and Review
