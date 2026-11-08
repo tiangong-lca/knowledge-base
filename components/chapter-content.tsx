@@ -1,3 +1,6 @@
+import { NumberedTitle } from '@/components/numbered-heading';
+import { assertNumberingToc, getContinuationLink, getHeadingNumbering, getUnitHeadingPlan } from '@/scripts/reader-numbering.mjs';
+import { TeachingCase } from '@/components/teaching-case';
 import { projectExchangeSemanticsRaw, historyPrintCrossReference, historyPrintDestination } from '@/scripts/reader-exchange-semantics.mjs';
 import Link from 'next/link';
 import { createElement, type AnchorHTMLAttributes, type HTMLAttributes } from 'react';
@@ -22,6 +25,8 @@ export function LegacyCitationAliases({ ids, target }: { ids?: LegacyEntry[]; ta
 
 /** One renderer for a website page and its corresponding continuous print unit. */
 export async function ChapterContent({ page, print = false }: { page: ReaderPage; print?: boolean }) {
+  const view = print ? 'book' : 'web';
+  assertNumberingToc(view, page.url, page.data.toc);
   const prefix = print ? printUnitAnchor(page.url) : chapterAnchorPrefix(page.url);
   const plan = createChapterNotePlan(projectExchangeSemanticsRaw(page.url, await page.data.getText('raw'), print), prefix);
   const legacy = getLegacyCitations(page.url, print);
@@ -47,16 +52,22 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
     return <><LegacyCitationAliases ids={legacy.aliases.get(id)} target={id} />
       <span id={id} data-reader-section={id} className="reader-section-target" /></>;
   }
+  function ChapterTeachingCase(props: Parameters<typeof TeachingCase>[0]) { return <TeachingCase {...props} print={print} numbering={getUnitHeadingPlan(view, page.url).filter(heading=>heading.type==='case')} />; }
   const MDX = page.data.body;
   function ReaderLink(props: AnchorHTMLAttributes<HTMLAnchorElement>) {
-    return <a {...props} href={print ? frameworkBookHref(props.href, page.url) : props.href} />;
+    const continuation = typeof props.children==='string' ? getContinuationLink(view, page.url, props.href, props.children) : null;
+    return <a {...props} href={continuation?.href ?? (print ? frameworkBookHref(props.href, page.url) : props.href)}>{continuation?.label ?? props.children}</a>;
   }
   const defaults = getMDXComponents();
   const headings = Object.fromEntries(([1, 2, 3, 4, 5, 6] as const).map(level => {
     const name = `h${level}` as const;
     return [name, (props: HTMLAttributes<HTMLHeadingElement>) => {
       const id = print && props.id ? `${prefix}-${props.id}` : props.id;
-      const heading = createElement(print ? `h${Math.min(level + 1, 6)}` : defaults[name] ?? name, { ...props, id });
+      const numbered = props.id ? getHeadingNumbering(view, page.url, props.id) : null;
+      if (!numbered) throw new Error(`Actual content heading has no numbering slot: ${page.url} ${props.id}`);
+      const headingProps: HTMLAttributes<HTMLHeadingElement> & {'data-reader-heading-key': string} = { ...props, id, 'data-reader-heading-key': numbered.key };
+      if (print && level+2>6) throw new Error(`Book heading exceeds the available HTML hierarchy: ${page.url} ${props.id}`);
+      const heading = createElement(print ? `h${level + 2}` : defaults[name] ?? name, headingProps, <NumberedTitle number={numbered.number}>{props.children}</NumberedTitle>);
       return id ? <><LegacyCitationAliases ids={legacy.aliases.get(id)} target={id} />{heading}</> : heading;
     }];
   }));
@@ -78,10 +89,10 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
 
   return <>
     <RetainedScope entry={legacy.scopes.get(prefix)} />
-    <MDX components={getMDXComponents({ Prose: ChapterProse, Claim: Paragraph, ReaderSection, a: ReaderLink, ...headings })} />
+    <MDX components={getMDXComponents({ Prose: ChapterProse, Claim: Paragraph, ReaderSection, TeachingCase: ChapterTeachingCase, a: ReaderLink, ...headings })} />
     {plan.notes.length > 0 && <section className="chapter-notes not-prose" aria-labelledby={plan.headingId}>
       <LegacyCitationAliases ids={legacy.aliases.get(plan.headingId)} target={plan.headingId} />
-      {print ? <h3 id={plan.headingId}>注释</h3> : <h2 id={plan.headingId}>注释</h2>}
+      {print ? <h4 id={plan.headingId}>注释</h4> : <h2 id={plan.headingId}>注释</h2>}
       <RetainedScope entry={legacy.scopes.get(plan.headingId)} />
       <ol>{plan.notes.map(note => <li id={note.anchor} data-reader-claim={note.id} key={note.id}>
         <LegacyCitationAliases ids={legacy.aliases.get(note.anchor)} target={note.anchor} />

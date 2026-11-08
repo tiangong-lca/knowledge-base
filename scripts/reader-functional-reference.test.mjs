@@ -43,8 +43,8 @@ test('B06 source and actual eight-heading capture are independently pinned', () 
   assert.throws(() => assertFunctionalReferenceProseAccepted(null), /independently reviewed/);
 });
 
-test('exact C08+S03 consumption conserves all other sources in the current 42-unit mixed roster', () => {
-  assert.equal(currentEditionKeys(edition, available, baseline, placements).length, 42);
+test('exact C08+S03 consumption conserves all other sources in the current 41-unit mixed roster', () => {
+  assert.equal(currentEditionKeys(edition, available, baseline, placements).length, 41);
   for (const mutate of [
     copy => copy.units = copy.units.filter(unit => unit.key !== route),
     copy => copy.units.find(unit => unit.key === route).coverage = [],
@@ -58,7 +58,7 @@ test('exact C08+S03 consumption conserves all other sources in the current 42-un
   }
   for (const missing of [route, supplement]) assert.throws(() => currentEditionKeys(edition, available.filter(source => source !== missing), baseline, placements), /Missing book source|Missing or repeated consumed source/);
   const unrelated = structuredClone(edition); [unrelated.units[8], unrelated.units[9]] = [unrelated.units[9], unrelated.units[8]];
-  assert.throws(() => currentEditionKeys(unrelated, available, baseline, placements), /omitted, reordered/);
+  assert.throws(() => currentEditionKeys(unrelated, available, baseline, placements), /explicit current seven-part numbered order/);
 });
 
 test('B06 actual sources guard original/additional occurrences and retained noncanonical links', () => {

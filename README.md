@@ -15,7 +15,7 @@ checkPaths:
   - "app/**"
   - "scripts/**"
 lastReviewedAt: 2026-11-08
-lastReviewedCommit: 2b5219c1eca94bfc5fda452685c454a7ca29aa48
+lastReviewedCommit: c6d569b529f485a82e61c8eae3ef71609651840e
 ---
 
 # LCA Living Knowledge Base and Review
@@ -71,7 +71,7 @@ The expanded `/docs/book/allocation-and-substitution/` also contains CASE-JOINT-
 
 ## Reader delivery policy
 
-Read [_docs/reader-publication-contract.md](_docs/reader-publication-contract.md). Published pages are finished book prose with scholarly notes; research/development logs and TODOs stay in development Markdown. Layout matches the owning docs site. Current rendering shares canonical prose between website and book while generating notes for each actual surface unit. The explicit mixed42-unit roster contains shared front matter, retained sources, the independently authored B04 assembly and two calculation appendices. B05 uses one genuine shared MDX chapter with three adopted sections and six notes; B06 consumes two original sources in one shared seventeen-note chapter. B08 integrates the exchange/flow/characterization sources in one four-section chapter; the fine website entrances remain. S01 keeps its historical-method prose and APOS paragraph, with eight explicit print cross-references to their actual chapter notes. The complete32-chapter monograph organization remains separate work, with conservation and generation-specific historical references required at each migration. The public `/research/` route is a bibliography. Preserve actual source/assumption limitations, and assess reader/layout quality independently from source and code validation.
+Read [_docs/reader-publication-contract.md](_docs/reader-publication-contract.md). Published pages are finished book prose with scholarly notes; research/development logs and TODOs stay in development Markdown. Layout matches the owning docs site. Current rendering shares canonical prose between website and book while generating notes for each actual surface unit. The explicit mixed41-unit roster contains shared front matter, retained sources, the independently authored B04/B10 assemblies and two calculation appendices. B05 uses one genuine shared MDX chapter with three adopted sections and six notes; B06 consumes two original sources in one shared seventeen-note chapter. B08 integrates the exchange/flow/characterization sources in one four-section chapter; the fine website entrances remain. S01 keeps its historical-method prose and APOS paragraph, with eight explicit print cross-references to their actual chapter notes. The complete32-chapter monograph organization remains separate work, with conservation and generation-specific historical references required at each migration. The public `/research/` route is a bibliography. Preserve actual source/assumption limitations, and assess reader/layout quality independently from source and code validation.
 
 The water-locality and phosphorus-boundary examples publish versioned inputs and exact evaluated receipts under `/downloads/cases/`, linked from their chapter notes. They are static explanatory examples: water values are synthetic; the phosphorus default is source-bound and conditional, with characterization left symbolic. Use their registered case identities with `scripts/impact.mjs` for affected-claim review.
 
@@ -120,7 +120,7 @@ does not reproduce the 2025 correction or establish empirical climate validity.
 
 The [2026-11-06 monograph organization](_docs/editorial/2026-11-06-monograph-structure.md) records the adopted working argument, complete proposed TOC and content-preserving migration map. It is an editorial baseline under Issue58; actual prose rewriting, independent website/book organization and full-book research/qualification remain separate work. Its source branch now includes the accepted goal amendment from Issue56/PR57 at Main2bc7f4f. The revised full-book Goal is active as of2026-11-07; source and exact integration qualification remain separate gates.
 
-The opening and final synthesis use stable claim-occurrence note anchors with consecutive visible numbers. Old2026-11-07baseline addresses remain native aliases or explicit relocation links, including the two moved carrier-bag conclusions. `config/citation-baseline.json` is frozen and independently checked; do not regenerate it from current MDX. Six container calculation notes now relocate to `/docs/appendices/container-energy-check/`, with an explicit current print position and independent source-coverage checks. The current mixed42article print view includes the independently authored B04 assembly, shared B06/B08 chapters and two appendices; the full32chapter book assembly remains separate.
+The opening and final synthesis use stable claim-occurrence note anchors with consecutive visible numbers. Old2026-11-07baseline addresses remain native aliases or explicit relocation links, including the two moved carrier-bag conclusions. `config/citation-baseline.json` is frozen and independently checked; do not regenerate it from current MDX. Six container calculation notes now relocate to `/docs/appendices/container-energy-check/`, with an explicit current print position and independent source-coverage checks. The current mixed41article print view includes the independently authored B04/B10 assemblies, shared B06/B08 chapters and two appendices; the full32chapter book assembly remains separate.
 
 
 [Container monograph Issue62](https://github.com/tiangong-lca/knowledge-base/issues/62) implements the two historical chapters and their energy appendix under the [source and publication protocol](_docs/research-waves/2026-11-07-container-monograph.md). All36original claims and historical numerical input identities remain; a separate local-path synthesis supports continuous main-text reading. Current implementation and local validation do not substitute for independent reader assessment, exact source/Main/hosted qualification or workspace integration.
@@ -151,3 +151,17 @@ The original38-note scope, seven newly captured headings and all4102 historical
 addresses are independently guarded. The11 synthetic-account templates keep their
 original inputs. Actual manuscript acceptance, source/Main, hosting and exact-root
 completion remain separate from the research and integrity checks.
+
+## Contents and heading numbers
+
+The website's fine reading sequence and the book's assembled chapters use separate,
+explicitly named numbering. Both follow the seven-part reading argument. The current
+book retains 35 actual chapters plus front matter, topics and appendices; the three
+remaining planned mergers and the final 32-chapter/120-section edition remain
+editorial work. Display numbers never replace stable heading or citation IDs.
+`config/reader-numbering.json` and the source/output validators bind each actual
+number, title, hierarchy and navigation target. See the reader publication contract
+for the user's numbering requirements and the continuing full-book scope.
+
+
+Editorial selection follows the [whole-book argument and selection decision](_docs/editorial/2026-11-08-argument-and-selection.md) and [35-chapter role map](_docs/editorial/2026-11-08-chapter-roles.md). Source support qualifies an assertion; inclusion and emphasis require a distinct argumentative role. The joint-production chapter keeps its derivation in canonical prose and uses the case component as a lookup surface, with unchanged tables, inputs and visible conditions. Its reviewed selection receipt preserves the original case/reference baseline separately from the current presentation; source, reader and actual publication checks remain independent.

@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-08
-lastReviewedCommit: 2b5219c1eca94bfc5fda452685c454a7ca29aa48
+lastReviewedCommit: c6d569b529f485a82e61c8eae3ef71609651840e
 ---
 
 # Publication architecture
@@ -147,15 +147,15 @@ Derived text artifacts retain original URL/media type and explicit absence of or
 
 The closed registry in `case-publication.mjs` selects each known case's nested public projection, validator, evaluation context and numerical-source policy together. The joint input is explicitly inventory-only; an input flag cannot disable the wall case's factor/evidence checks. Wall projection order and downloadable hash are preserved by regression. Joint templates use `input` and `evaluated` paths; the existing export pipeline writes both models' canonical inputs, evaluated receipts and manifest hashes.
 
-`JointProductionCase` renders static, horizontally scrollable tables and reconstruction text after projecting raw input on the server. It sends no raw-case client data prop. The fixed question, operation basis, separate units, full-basket comparison, residual interpretation and hypothetical assumptions remain visible in the narrative and static/no-script/print view. This is a second bounded adapter, not a general allocation or market-response solver.
+`JointProductionCase` renders static, horizontally scrollable lookup tables after projecting raw input on the server. The canonical chapter supplies the full derivation once; the component retains four unchanged tables, a concise input/reference legend, eleven visible assumptions and exact native links to the appropriate website/book sections. It sends no raw-case client data prop. The fixed question, operation basis, separate units, full-basket comparison, residual interpretation and hypothetical assumptions remain visible in the narrative and static/no-script/print view. This is a second bounded adapter, not a general allocation or market-response solver.
 
 ## Reader shell and scholarly apparatus
 
 The standard Fumadocs DocsLayout owns document navigation, sidebar, TOC, search/theme controls and mobile menu. HomeLayout supplies the other public routes. Theme/brand tokens follow the owning docs site; homepage72rem sizing does not constrain the document grid. No extra42rem prose cap or second document header/mobile index is added. Chinese translations and the existing local knowledge search corpus are retained without adding an external search service.
 
-Current implementation: `lib/reader-book.ts` keeps website order from the page tree and reads the explicit mixed print roster in `config/book-edition.json`. Shared front matter precedes retained sources; the separately authored B04 manuscript replaces the two framework website units and X02 follows X01 under appendices. `scripts/reader-book.mjs` creates one note plan per complete MDX source, ignoring code/comment examples. `ChapterContent` injects paragraph components with one local reference marker, then appends reader annotations. `ClaimAnnotation` supplies source locations, scope and material caveats without execution logs or visible database keys. Print reuses the renderer with unique prefixes and demoted section headings. Reader appendix pages expose bibliography, citations and conceptual navigation; technical build/research histories stay in `_docs/`.
+Current implementation: `lib/reader-book.ts` keeps canonical source enumeration separate from the cloned, numbered website tree and reads the explicit current print roster in `config/book-edition.json`. Shared front matter precedes seven parts of actual chapters; independently authored B04 and B10 replace their respective pairs of fine website units, and X02 follows X01 under appendices. `scripts/reader-book.mjs` creates one note plan per complete MDX source, ignoring code/comment examples. `ChapterContent` injects paragraph components with one local reference marker, then appends reader annotations. `ClaimAnnotation` supplies source locations, scope and material caveats without execution logs or visible database keys. Print reuses the renderer with unique prefixes and demoted section headings. Reader appendix pages expose bibliography, citations and conceptual navigation; technical build/research histories stay in `_docs/`.
 
-Remaining full monograph migration (user requirement, 2026-11-06; the bounded B04 assembly below is implemented): the website may keep fine navigation while a separately curated book structure supplies parts, chapters, formal sections and print order. Both must reference shared canonical prose/claims/evidence/cases rather than fork their scientific content. The full old-to-new map must preserve all 37 chapters and five supplements and stable citation identities. Note plans must follow assembled book chapter boundaries, not merely concatenate per-MDX note sequences. Validate actual ordering, unique anchors, numbering, links, search behavior, old editions and print hierarchy when implementing. The goal and reader contract define editorial requirements; this paragraph does not claim a new runtime or schema already exists.
+Remaining full monograph migration (user requirement, 2026-11-06; bounded B04/B10 assemblies and the numbered current order are implemented): the website may keep fine navigation while a separately curated book structure supplies parts, chapters, formal sections and print order. Both must reference shared canonical prose/claims/evidence/cases rather than fork their scientific content. The full old-to-new map must preserve all 37 chapters and five supplements and stable citation identities. Note plans must follow assembled book chapter boundaries, not merely concatenate per-MDX note sequences. Validate actual ordering, unique anchors, numbering, links, search behavior, old editions and print hierarchy when implementing. The goal and reader contract define editorial requirements; this paragraph does not claim a new runtime or schema already exists.
 
 `reader-bibliography.mjs` exports schemaVersion2 / reader-bibliography: bibliographic sources, cited evidence and exact cited passage/carrier identity. Both `/downloads/bibliography.json` and the retained `/downloads/research.json` URL return identical curated bytes; the latter no longer exposes the schema1 research workbench. Queries, gaps, editorial revisions and workflow states remain in repository research/development records. Public catalog provenance remains separately available, with its actual review kind unchanged. The AI reading index links the book and bibliography, not execution records.
 
@@ -338,7 +338,7 @@ share its MDX placement and the canonical paragraph-note sequence.
 
 The Node-only `scripts/reader-citation-baseline.mjs` independently pins the parsed complete baseline digest, including source identity, and exact preface/guide order. Both server roster derivation and export validation call it before deriving expectations. The public frozen inventory has2254addresses; its body content is not duplicated. `scripts/reader-surface.mjs` checks emitted target claim identity, native link destination, alias adjacency, uniqueness, date/source context, note numbers and original print order. A real book source or output requires both configs; generic non-book fixtures retain their separate scope. Deliberate truncation and front-matter mutation tests guard against circular self-validation.
 
-Legacy context appears when an old fragment is targeted, with the preserved source date and immutable GitHub tree. It cannot infer another historical unversioned edition and does not claim hosted archives. The current42print articles comprise two front-matter,36chapters (including the B04 assembly and shared B06/B08),two retained topics and two appendices. Full32chapter migration remains future work; B04 now has its own actual book note plan.
+Legacy context appears when an old fragment is targeted, with the preserved source date and immutable GitHub tree. It cannot infer another historical unversioned edition and does not claim hosted archives. The current 41 print articles comprise two front-matter units, 35 chapters (including B04/B10 assemblies and shared B06/B08), two retained topics and two appendices. Full 32-chapter migration remains future work; each actual assembly has its own continuous book note plan.
 
 
 Current appendix registration is deliberately separate from the immutable citation baseline. `createCurrentPrintRoutes` validates allowed appendix additions, uniqueness and registered source existence, then compares the resulting roster against actual source pages. Runtime uses `source.getPages()`; export independently discovers MD/MDX files under `content/docs`. Thus deleting both a registration and its exported article cannot silently omit an existing source. The folder's navigation index is excluded, while its article descendants remain mandatory. Print presents appendices separately from the two retained topics, and stable note/premise anchors remain scoped to actual source occurrences. This original appendix registration remains part of the current mixed-edition conservation checks; the bounded B04 assembly below adds a separate manuscript source without claiming the complete32chapter edition.
@@ -402,7 +402,7 @@ The existing native-exchange input, factor edition and execution summary remain 
 
 ## Hybrid inventory shared chapter
 
-B09 keeps the existing C19 route and the mixed42-unit roster. Its three explicit
+At its bounded delivery, B09 kept the existing C19 route and the then-current 42-unit roster. The later B10 assembly and numbered current order retain B09 itself unchanged. Its three explicit
 sections contain the original38 canonical paragraphs and one separately bound
 Agez S1 interpretation. `hybrid-inventory-accepted.json` preserves the original
 occurrences and all172 prior C19 address meanings; its seven-heading companion
@@ -441,3 +441,77 @@ H2 and continuous-print H3 group targets retain readable arrival positions.
 Plain bibliography version paragraphs use the same anywhere-wrapping policy as
 their links. This keeps long archive-member filenames within narrow continuous
 print pages without clipping, truncating or changing the cited source identity.
+
+## Numbered current reading structures
+
+`config/reader-numbering.json` binds the actual current source titles, heading
+identities, seven parts and separate book/website orders. Its independent code
+pin supplements discovered-source and edition-coverage checks; it is not the
+editorial 32-chapter plan made executable by inference. The current 41-unit book
+contains 35 real chapters, two front units, two retained topics and two appendices.
+Three still-unmerged pairs remain separate. The website keeps 37 fine pages.
+
+`reader-numbering.mjs` derives edition/view labels and complete heading plans,
+including actual case subheadings. `NumberedTitle` and `NumberedHeading` render a
+real number span and a separate canonical title span; URLs and heading IDs remain
+unchanged. A cloned Fumadocs tree and explicit pagination use the website plan,
+while print presents part boundaries and complete actual section lists. Case
+input and evaluation stay unchanged; separately reviewed editorial selection may
+remove duplicate component exposition without altering the canonical derivation.
+Print heading levels reflect the
+book part/section hierarchy. Front matter and scholarly apparatus remain distinct.
+
+`reader-numbering-output.mjs` admits actual numbered output only after validating
+the pinned local artifact, discovered sources, exact unit/part/heading roster,
+number/title/depth, native contents destinations and website sidebar/pagination.
+The installed MDX compiler emits plain TOC labels as React Fragments; the source
+check admits only exact static text/array/Fragment trees and rejects unsupported
+markup instead of coercing objects. Native breadcrumbs and mobile TOC triggers
+reuse tree labels, so their current route, part/category, hierarchy and position
+are separately qualified before their number/title markers enter the accepted set.
+It then creates a separately qualified semantic clone for existing content and
+citation checks, removing only verified format spans, exact qualified view-label
+and breadcrumb navigation nodes, and restoring prior semantic heading levels.
+An unknown, misplaced or altered breadcrumb blocks the clone; ordinary body and
+historical content cannot enter this removal list. It never rewrites emitted files. Pagination qualification
+is held outside mutable DOM attributes and bound to the verified node bytes.
+Scoped widget checks independently validate the complete current case roster,
+captions/header roles and exact accepted presentation. The joint lookup uses three
+headings after a reviewed five-to-three disposition; the wall case retains five.
+The original joint five-heading capture remains immutable.
+
+The two exact C03/C28 reading continuations have explicit source/view contracts;
+unknown fragments are not silently reinterpreted. Production still needs the
+accepted B10 prose receipt and independently fixed digest. Numbers and a correct
+directory do not establish scientific acceptance, continuous authorship, browser
+quality or formal PDF pagination.
+
+
+## B10 component selection without changing its scientific input
+
+The next `joint-production-prose-accepted.json` receipt includes a separately
+reviewed `caseSelection`, bound by the whole receipt's independent code digest.
+It identifies the original case digest, unchanged raw input hash, actual reviewed
+component hash, sixteen original paragraph dispositions, five original heading
+dispositions and eleven exact assumptions. Both website and book presentations
+bind their complete semantic text, three actual headings and precise native
+navigation plus the two original downloads. The four tables, captions and cell
+roles are still checked against `joint-production-original.json`; its digest and
+the fourteen captured address records are never replaced by this selection.
+
+A removed second explanation must have an actual canonical target available in
+both current carriers. Complete manuscript order and exact canonical record
+checks remain independent. Missing or pending selection fails; no current-output
+fallback silently adopts the original widget. Root, descendant and original
+ancestor visibility is checked before the numbered semantic clone can detach the
+case, and the actual body navigation targets must exist uniquely. Reintroducing
+the removed narrative as normal, folded, hidden or print-only text fails the
+accepted full-text check.
+
+CLI `validate.mjs` reads the actual component and raw input bytes and passes them
+to the pure `validateJointProductionArtifactBytes` check. The bundled reader guard
+performs no filesystem reads and does not assume the source layout around its
+compiled module. Recording the source hash alone does not replace this byte check
+or actual output inspection. The precise current receipt is set only after the
+new full reader artifact has actually been reviewed; an old prose receipt cannot
+certify a later presentation merely because its37canonical paragraphs are stable.

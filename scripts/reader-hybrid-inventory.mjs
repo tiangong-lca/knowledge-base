@@ -1,6 +1,7 @@
+import { isVerifiedReaderPagination } from './reader-numbering-output.mjs';
+import { validateReaderHistoricalText } from './reader-publication-text.mjs';
 import { createHash } from 'node:crypto';
 import headingCapture from '../config/hybrid-inventory-heading-history.json' with { type: 'json' };
-import { citationHref, citationSourceHref } from './reader-citations.mjs';
 import { validateExchangeAnnotationOutput, unaccountedReaderText } from './reader-exchange-semantics.mjs';
 import { chapterAnchorPrefix, collectChapterClaimOccurrences, printUnitAnchor } from './reader-book.mjs';
 
@@ -124,13 +125,13 @@ function paragraphText(node, marker) {
  * exception. Known historical contexts are also matched exactly here; the
  * global historical-scope/destination checks remain independently mandatory.
  */
-function validateHybridInventoryTextCoverage(unit, path, accepted, prose) {
+function validateHybridInventoryTextCoverage(unit, path, accepted, prose, {legacyPrintLabel = null} = {}) {
   const print = path === '/print', checked = new Set(), errors = [];
   const compact = value => value.replace(/\s+/g, '');
   const children = unit.childNodes.filter(node => node.nodeType === 1);
   const title = children.find(node => node.tagName === (print ? 'H2' : 'H1'));
-  const wantedTitle = print ? new RegExp(`^(?:[1-9][0-9]*　)?${accepted.title}$`) : null;
-  if (title && (print ? wantedTitle.test(title.text) : title.text === accepted.title)) checked.add(title);
+  const legacyTitle = print && legacyPrintLabel !== null ? `${legacyPrintLabel}　${accepted.title}` : null;
+  if (title && (title.text === accepted.title || (legacyTitle !== null && title.text === legacyTitle))) checked.add(title);
   else errors.push(`${path}: B09 visible chapter title differs`);
   const next = title ? children[children.indexOf(title) + 1] : null;
   const description = prose?.sources?.find(source => source.route === hybridInventoryRoute)?.description;
@@ -151,6 +152,7 @@ function validateHybridInventoryTextCoverage(unit, path, accepted, prose) {
       errors.push(`${path}: B09 reviewed pagination is missing or repeated`);
     if (pagination.length > 1) errors.push(`${path}: repeated B09 pagination metadata`);
     for (const node of pagination) {
+      if (isVerifiedReaderPagination(node)) { checked.add(node); continue; }
       const links = node.querySelectorAll('a');
       if (!Array.isArray(navigation) || navigation.length !== links.length || !navigation.length
         || navigation.some((item, index) => typeof item.title !== 'string' || typeof item.description !== 'string'
@@ -178,30 +180,18 @@ function validateHybridInventoryTextCoverage(unit, path, accepted, prose) {
   const entries = remapHybridInventoryCitations([
     ...accepted.originalHistoricalEntries, ...hybridInventoryHeadingEntries(headingCapture),
   ], accepted, headingCapture).filter(entry => entry.path === path);
-  const byId = new Map(entries.map(entry => [entry.id, entry]));
   const noteIds = accepted.sections.flatMap(section => section.claimIds);
   const label = target => target.kind === 'note' ? `《${accepted.title}》注 ${noteIds.indexOf(target.claimId) + 1}`
     : `《${accepted.title}》${print && target.kind === 'heading' ? `·${target.id.slice(prefix.length + 1)}` : target.kind === 'note-group' ? '注释' : ''}`;
-  const versionText = edition => `此链接按 ${edition.sourceDate} 留存文本定位。其他历史版本的引用需核对各自源文件。查看这一版本的源文件`;
-  for (const node of unit.querySelectorAll('[data-legacy-for],[data-legacy-notice],[data-legacy-scope]')) {
-    const scopeId = node.getAttribute('data-legacy-scope'), entry = byId.get(scopeId ?? node.id);
-    const alias = node.hasAttribute('data-legacy-for'), notice = node.hasAttribute('data-legacy-notice');
-    const validMode = entry && (alias ? entry.mode === 'alias' && node.getAttribute('data-legacy-for') === entry.targets[0].id
-      : notice ? entry.mode === 'notice' : entry.mode === 'retained' && entry.scope);
-    const targets = entry ? alias ? [] : scopeId ? entry.scope?.targets ?? [] : entry.targets : [];
-    const explanation = entry ? alias ? '' : entry.scope?.text ?? '可从下列链接查阅这一留存版本对应的内容。' : '';
-    const expectedText = entry ? versionText(entry.edition) + explanation + targets.map(label).join('') : '';
-    const links = node.querySelectorAll('a'), expectedHrefs = entry ? [citationSourceHref(entry.edition.sourceCommit), ...targets.map(target => citationHref(target, path))] : [];
-    if (!validMode || compact(node.text) !== compact(expectedText) || !same(links.map(link => link.getAttribute('href')), expectedHrefs))
-      errors.push(`${path}: B09 historical output context has unexpected content or identity`);
-    else checked.add(node);
-  }
+  const contexts = validateReaderHistoricalText(unit, entries, path, label);
+  errors.push(...contexts.errors);
+  for (const node of contexts.checked) checked.add(node);
   if (unaccountedReaderText(unit, checked).length) errors.push(`${path}: B09 contains unexpected unreviewed body text`);
   return errors;
 }
 
 /** Actual paragraph text and section membership are checked independently of IDs and note deduplication. */
-export function validateRenderedHybridInventory(document, path, accepted, catalog, prose = null, independentDigest = hybridInventoryProseDigest) {
+export function validateRenderedHybridInventory(document, path, accepted, catalog, prose = null, independentDigest = hybridInventoryProseDigest, legacyContext = {}) {
   assertHybridInventoryAccepted(accepted);
   if (![hybridInventoryRoute, '/print'].includes(path)) return [];
   assertHybridInventoryProseAccepted(prose, independentDigest);
@@ -233,6 +223,6 @@ export function validateRenderedHybridInventory(document, path, accepted, catalo
   const notes = unit.querySelectorAll('[data-reader-claim]').map(node => node.getAttribute('data-reader-claim'));
   if (!same(notes, accepted.sections.flatMap(section => section.claimIds))) errors.push(`${path}: actual B09 endnotes differ from the 39-claim continuous plan`);
   errors.push(...validateExchangeAnnotationOutput(document, unit, hybridInventoryRoute, catalog, { print }));
-  errors.push(...validateHybridInventoryTextCoverage(unit, path, accepted, prose));
+  errors.push(...validateHybridInventoryTextCoverage(unit, path, accepted, prose, legacyContext));
   return errors;
 }

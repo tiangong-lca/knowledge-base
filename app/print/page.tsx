@@ -1,50 +1,59 @@
 import { PublicationNote } from '@/components/publication-note';
 import Link from 'next/link';
 import catalog from '@/lib/catalog';
-import { getLegacyCitations, getPrintPages, printFrontMatterCount } from '@/lib/reader-book';
+import { getLegacyCitations, getPrintPages } from '@/lib/reader-book';
 import { ChapterContent, LegacyCitationAliases } from '@/components/chapter-content';
+import { NumberedHeading, NumberedTitle } from '@/components/numbered-heading';
 import { PrintButton } from '@/components/print-button';
 import { PublicationShell } from '@/components/publication-shell';
+import { getPresentationUnits, getUnitHeadingPlan, readerParts } from '@/scripts/reader-numbering.mjs';
 import { printUnitAnchor } from '@/scripts/reader-book.mjs';
 
-export const metadata = { title: '连续阅读与打印' };
+export const metadata = { title: '书籍目录、连续阅读与打印' };
 
 export default function Page() {
   const pages = getPrintPages();
-  const frontMatter = pages.slice(0, printFrontMatterCount);
-  const body = pages.slice(printFrontMatterCount);
-  const chapters = body.filter(page => page.kind === 'chapter');
-  const topics = body.filter(page => page.kind === 'topic');
-  const appendices = body.filter(page => page.kind === 'appendix');
-  const chapterNumbers = new Map(chapters.map((page, index) => [page.url, index + 1]));
-  const tocLinks = (units: typeof pages) => units.map(page =>
-    <li key={page.url}><Link href={`#${printUnitAnchor(page.url)}`}>{page.data.title}</Link>
-      {page.sections && <ul>{page.sections.map(section=><li key={section.id}><Link href={`#${printUnitAnchor(page.url)}-${section.id}`}>{section.title}</Link></li>)}</ul>}
+  const units = getPresentationUnits('book');
+  const byKey = new Map(pages.map(page=>[page.url,page]));
+  const frontMatter = units.filter(unit=>unit.kind==='front-matter');
+  const topics = units.filter(unit=>unit.kind==='topic');
+  const appendices = units.filter(unit=>unit.kind==='appendix');
+  const tocLinks = (items: typeof units) => items.map(unit =>
+    <li key={unit.key}><Link href={`#${printUnitAnchor(unit.key)}`} data-reader-toc-unit={unit.key}><NumberedTitle number={unit.label}>{unit.title}</NumberedTitle></Link>
+      {getUnitHeadingPlan('book',unit.key).some(heading=>heading.type==='mdx') && <ul>{getUnitHeadingPlan('book',unit.key).filter(heading=>heading.type==='mdx').map(heading=><li key={heading.key}><Link href={`#${printUnitAnchor(unit.key)}-${heading.id}`} data-reader-route={unit.key} data-reader-toc-heading={heading.key}><NumberedTitle number={heading.number}>{heading.title}</NumberedTitle></Link></li>)}</ul>}
     </li>);
-
-  return <PublicationShell title="生命周期评价的前世今生" description="连续阅读与打印。正文章节、补充专题和附录沿目录顺序展开，注释随章列出。">
-    <div className="print-controls"><PrintButton /><p>引用时请记录篇名、网址、版本和访问日期。各章原始来源见章末注释。</p></div>
+  const article = (unit: typeof units[number]) => {
+    const page = byKey.get(unit.key);
+    if (!page || page.data.title!==unit.title) throw new Error(`Actual book title differs from numbering inventory: ${unit.key}`);
+    const id = printUnitAnchor(unit.key);
+    return <article className="print-chapter prose" key={unit.key} id={id} data-reader-route={unit.key} data-reader-title={page.data.title}>
+      <LegacyCitationAliases ids={getLegacyCitations(page.url,true).aliases.get(id)} target={id} />
+      <NumberedHeading level={unit.kind==='front-matter'?2:3} number={unit.label} data-reader-heading-key="@unit">{page.data.title}</NumberedHeading>
+      {unit.kind!=='front-matter' && <p>{page.data.description}</p>}
+      <ChapterContent page={page} print />
+    </article>;
+  };
+  return <PublicationShell title="生命周期评价的前世今生" description="书籍目录与连续阅读。正文按部、章、节展开，专题与附录分别列后，注释随章。">
+    <div className="print-controls"><PrintButton /><p>书籍按连续章次编排；<Link href="/#web-contents">网页细读目录</Link>保留细分篇章。引用时请记录篇名、网址、版本和访问日期。</p></div>
     <PublicationNote />
-    <nav aria-label="合订本目录">
-      <h2>目录</h2>
-      {frontMatter.length > 0 && <ul>{tocLinks(frontMatter)}</ul>}
-      <ol className="list-decimal ps-6">{tocLinks(chapters)}</ol>
+    <nav aria-label="书籍目录" data-reader-contents="book" className="reader-book-contents">
+      <h2>书籍目录</h2>
+      <ul>{tocLinks(frontMatter)}</ul>
+      {readerParts.map(part=><section key={part.number}><h3 data-reader-toc-part={part.number}><Link href={`#print-part-${part.number}`}><NumberedTitle number={part.label}>{part.title}</NumberedTitle></Link></h3><ul>{tocLinks(units.filter(unit=>unit.part===part.number))}</ul></section>)}
       <h3>概念与实践专题</h3><ul>{tocLinks(topics)}</ul>
-      {appendices.length > 0 && <><h3>附录</h3><ul>{tocLinks(appendices)}</ul></>}
+      <h3>附录</h3><ul>{tocLinks(appendices)}</ul>
       <p><Link href="#print-references">参考文献</Link></p>
     </nav>
-    <div className="print-book">{pages.map((page, index) => {
-      const id = printUnitAnchor(page.url);
-      const chapterIndex = index - printFrontMatterCount;
-      const chapterNumber = chapterNumbers.get(page.url);
-      return <article className="print-chapter prose" key={page.url} id={id} data-reader-route={page.url} data-reader-title={page.data.title}>
-        <LegacyCitationAliases ids={getLegacyCitations(page.url, true).aliases.get(id)} target={id} />
-        <h2>{chapterNumber ? `${chapterNumber}　` : ''}{page.data.title}</h2>
-        {chapterIndex >= 0 && <p>{page.data.description}</p>}
-        <ChapterContent page={page} print />
-      </article>;
-    })}
-      <section className="print-chapter" id="print-references"><h2>参考文献</h2>{catalog.sources.map(item => <div className="evidence-item" key={item.id}><strong>{item.title}</strong><p>{item.publisher}。{item.version}。</p><a href={item.url}>文献链接</a></div>)}</section>
+    <div className="print-book">
+      {frontMatter.map(article)}
+      {readerParts.map(part=><section className="print-part" data-reader-part-group={part.number} key={part.number}>
+        <h2 id={`print-part-${part.number}`} data-reader-part={part.number}><NumberedTitle number={part.label}>{part.title}</NumberedTitle></h2>
+        <p className="print-part-introduction">{part.introduction}</p>
+        {units.filter(unit=>unit.part===part.number).map(article)}
+      </section>)}
+      <section className="print-part"><h2>概念与实践专题</h2>{topics.map(article)}</section>
+      <section className="print-part"><h2>附录</h2>{appendices.map(article)}</section>
+      <section className="print-chapter" id="print-references"><h2>参考文献</h2>{catalog.sources.map(item=><div className="evidence-item" key={item.id}><strong>{item.title}</strong><p>{item.publisher}。{item.version}。</p><a href={item.url}>文献链接</a></div>)}</section>
     </div>
   </PublicationShell>;
 }

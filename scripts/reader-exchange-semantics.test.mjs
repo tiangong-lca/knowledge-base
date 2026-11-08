@@ -34,7 +34,7 @@ test('original-map, actual capture, partial source and original address inventor
 });
 
 test('shared B08 consumes only S02/S05 and registration cannot co-delete whole sources or partial history',()=>{
- const available=edition.units.flatMap(unit=>[unit.source,...unit.coverage??[]]);assert(!edition.units.some(unit=>['/docs/flows','/docs/characterization'].includes(unit.key)));assert(edition.units.some(unit=>unit.key===historyRoute));assert.deepEqual(edition.units.find(unit=>unit.key===route).coverage,['/docs/flows','/docs/characterization']);assert.equal(currentEditionKeys(edition,available,baseline,placements).length,42);
+ const available=edition.units.flatMap(unit=>[unit.source,...unit.coverage??[]]);assert(!edition.units.some(unit=>['/docs/flows','/docs/characterization'].includes(unit.key)));assert(edition.units.some(unit=>unit.key===historyRoute));assert.deepEqual(edition.units.find(unit=>unit.key===route).coverage,['/docs/flows','/docs/characterization']);assert.equal(currentEditionKeys(edition,available,baseline,placements).length,41);
  for(const mutate of [x=>x.units=x.units.filter(unit=>unit.key!==route),x=>x.units.find(unit=>unit.key===route).sections.reverse(),x=>x.units.find(unit=>unit.key===route).coverage.push(historyRoute),x=>x.units=x.units.filter(unit=>unit.key!==historyRoute),x=>x.units.find(unit=>unit.key===route).coverage.pop()]){const changed=structuredClone(edition);mutate(changed);assert.throws(()=>currentEditionKeys(changed,available,baseline,placements),/B08|S01/);}
  for(const missing of [route,historyRoute,'/docs/flows','/docs/characterization'])assert.throws(()=>currentEditionKeys(edition,available.filter(value=>value!==missing),baseline,placements),/Missing/);
 });
