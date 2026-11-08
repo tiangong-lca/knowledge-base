@@ -45,9 +45,11 @@ test('actual case detail keeps its source sibling hierarchy and stays outside fo
   ]);
   assert.equal(joint.filter(row=>row.type==='mdx').length,4);
   const wall=getUnitHeadingPlan('book','/docs/book/wall-service-to-comparison');
-  assert.deepEqual(wall.filter(row=>row.type==='case').map(row=>[row.depth,row.number]),[[3,'31.2.1'],[4,'31.2.1.1'],[4,'31.2.1.2'],[4,'31.2.1.3'],[4,'31.2.1.4']]);
+  assert.deepEqual(wall.filter(row=>row.type==='case').map(row=>[row.depth,row.number]),[[3,'31.4.1'],[4,'31.4.1.1'],[4,'31.4.1.2'],[4,'31.4.1.3'],[4,'31.4.1.4']]);
   assert.equal(wall.find(row=>row.key==='@case:wall:current').title,'当前计算：平整基底 smooth · θ=0.3');
   assert.equal(wall.filter(row=>row.type==='mdx')[2].number,'31.3');
+  assert.deepEqual(wall.filter(row=>row.type==='mdx').map(row=>[row.title,row.number]),[['功能实现','31.1'],['清单形成','31.2'],['指标含义','31.3'],['配对判断','31.4']]);
+  assert.equal(getUnitNumbering('web','/docs/book/wall-service-to-comparison').title,'墙面服务比较');
   assert.equal(getHeadingNumbering('book','/docs/appendices/container-energy-check','工序输入').number,'A.1');
 });
 

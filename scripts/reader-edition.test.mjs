@@ -84,6 +84,15 @@ test('bounded appendix navigation stays native within the actual book and ambigu
   assert.equal(frameworkBookHref('/print/#actual',frameworkAppendix),'#actual');
 });
 
+test('wall calculation entry and next study stay native in the continuous book only',()=>{
+  const wall='/docs/book/wall-service-to-comparison';
+  assert.equal(frameworkBookHref('#wall-case-reference',wall),`#${printUnitAnchor(wall)}-wall-case-reference`);
+  assert.equal(frameworkBookHref('/docs/book/interpretation-and-limits/',wall),`#${printUnitAnchor('/docs/book/interpretation-and-limits')}`);
+  assert.equal(frameworkBookHref('#wall-case-reference',frameworkUnitKey),'#wall-case-reference');
+  const scoped='/docs/book/interpretation-and-limits/#某个具体范围';
+  assert.equal(frameworkBookHref(scoped,wall),scoped);
+});
+
 
 test('rendered body conservation rejects missing or duplicated propositions even with intact notes and registration',()=>{
   const bodyClaims=new Map([[frameworkUnitKey,accepted.sections.flatMap(section=>section.claimIds)],[frameworkAppendix,[...accepted.appendix.claimIds]]]);

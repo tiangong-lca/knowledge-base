@@ -1,5 +1,9 @@
 import { getPresentationUnits } from '@/scripts/reader-numbering.mjs';
 import jointOriginal from '@/config/joint-production-original.json';
+import wallOriginal from '@/config/wall-selection-original.json';
+import wallHeadings from '@/config/wall-selection-heading-history.json';
+import wallAccepted from '@/config/wall-selection-accepted.json';
+import { wallSelectionRoute, wallSelectionTitles, wallSelectionCaseHeadingId, wallSelectionHeadingEntries, remapWallSelectionCitations, validateWallSelectionCoverage } from '@/scripts/reader-wall-selection.mjs';
 import jointHeadings from '@/config/joint-production-heading-history.json';
 import jointProse from '@/config/joint-production-prose-accepted.json';
 import { jointProductionHeadingEntries, remapJointProductionCitations, validateJointProductionCoverage } from '@/scripts/reader-joint-production.mjs';
@@ -31,7 +35,7 @@ import cleanerAccepted from '@/config/cleaner-production-accepted.json';
 import cleanerHeadingHistory from '@/config/cleaner-production-heading-history.json';
 import { cleanerProductionHeadingEntries, remapCleanerProductionCitations, validateCleanerProductionCoverage } from '@/scripts/reader-cleaner-production.mjs';
 import { assertCitationHistory } from '@/scripts/reader-citation-history.mjs';
-import { bookChapters, createChapterReferenceIndex, orderPages } from '@/scripts/reader-book.mjs';
+import { bookChapters, createChapterReferenceIndex, orderPages, printUnitAnchor } from '@/scripts/reader-book.mjs';
 import { assertCitationBaseline, assertPrintFrontMatter } from '@/scripts/reader-citation-baseline.mjs';
 import { currentEditionKeys, validateFrameworkCoverage, assertFrameworkHeadingHistory, remapBookCitations } from '@/scripts/reader-edition.mjs';
 import { createLegacyCitationEntries, createCanonicalCitationEntries, type Destination, type LegacyEntry } from '@/scripts/reader-citations.mjs';
@@ -62,8 +66,8 @@ const historical = [...createLegacyCitationEntries(baseline, placements, history
   ...headingHistory.canonicalPrintedHeadings.map(heading=>({route:heading.route,path:'/print',id:heading.id,
     targets:[{route:heading.route,path:'/print',id:heading.id,kind:'heading' as const}],mode:'retained' as const,
     edition:{sourceCommit:headingHistory.sourceCommit,sourceDate:'2026-11-07'}}))];
-const legacyEntries: LegacyEntry[] = remapJointProductionCitations(remapHybridInventoryCitations(remapExchangeSemanticsCitations(remapProcessNetworkCitations(remapFunctionalReferenceCitations(remapCleanerProductionCitations(
-  remapBookCitations([...historical, ...cleanerProductionHeadingEntries(cleanerHeadingHistory), ...functionalReferenceHeadingEntries(functionalHeadings), ...processNetworkHeadingEntries(processHeadings), ...exchangeSemanticsHeadingEntries(), ...hybridInventoryHeadingEntries(hybridHeadings), ...jointProductionHeadingEntries(jointHeadings)], edition, accepted, placements), cleanerAccepted, cleanerHeadingHistory), functionalAccepted, functionalHeadings), processAccepted, processHeadings)), hybridAccepted, hybridHeadings), jointOriginal, jointHeadings, jointProse);
+const legacyEntries: LegacyEntry[] = remapWallSelectionCitations(remapJointProductionCitations(remapHybridInventoryCitations(remapExchangeSemanticsCitations(remapProcessNetworkCitations(remapFunctionalReferenceCitations(remapCleanerProductionCitations(
+  remapBookCitations([...historical, ...cleanerProductionHeadingEntries(cleanerHeadingHistory), ...functionalReferenceHeadingEntries(functionalHeadings), ...processNetworkHeadingEntries(processHeadings), ...exchangeSemanticsHeadingEntries(), ...hybridInventoryHeadingEntries(hybridHeadings), ...jointProductionHeadingEntries(jointHeadings), ...wallSelectionHeadingEntries(wallHeadings)], edition, accepted, placements), cleanerAccepted, cleanerHeadingHistory), functionalAccepted, functionalHeadings), processAccepted, processHeadings)), hybridAccepted, hybridHeadings), jointOriginal, jointHeadings, jointProse), wallOriginal, wallHeadings, wallAccepted);
 export function getLegacyCitations(route: string, print: boolean) {
   const path = print ? '/print' : route, aliases = new Map<string, LegacyEntry[]>(), notices: LegacyEntry[] = [], scopes = new Map<string, LegacyEntry>();
   for (const entry of legacyEntries) {
@@ -84,6 +88,8 @@ export const getChapterReferenceIndex = cache(async (print = false) => {
   if (cleanerErrors.length) throw new Error(cleanerErrors.join('\n'));
   const rawSources = new Map(await Promise.all([...source.getPages(),...monographSource.getPages()].map(async page=>[page.url,await page.data.getText('raw')] as const)));
   const jointErrors = validateJointProductionCoverage(edition,rawSources,jointOriginal,catalog,jointProse);
+  const wallErrors = validateWallSelectionCoverage(edition,rawSources,wallOriginal,catalog,wallAccepted);
+  if (wallErrors.length) throw new Error(wallErrors.join('\n'));
   if (jointErrors.length) throw new Error(jointErrors.join("\n"));
   const hybridErrors = validateHybridInventoryCoverage(edition,rawSources,hybridAccepted,catalog,hybridProse);
   if (hybridErrors.length) throw new Error(hybridErrors.join('\n'));
@@ -109,6 +115,11 @@ export async function getCitationLabel(target: Destination) {
   }
   const page = print ? getPrintPages().find(page=>page.url===target.route) : source.getPages().find(page=>page.url===target.route);
   if (!page) throw new Error(`Missing citation destination ${target.route}`);
+  if (target.route === wallSelectionRoute && target.kind === 'heading') {
+    const section = wallSelectionTitles.find(id => target.id === (print ? `${printUnitAnchor(wallSelectionRoute)}-${id}` : id));
+    const title = section ?? (target.id === wallSelectionCaseHeadingId(print) ? '计算表与参数' : null);
+    if (title) return `《${page.data.title}》·${title}`;
+  }
   const sections = print ? (page as PrintPage).sections : undefined;
   const section = sections?.find(section=>target.id.endsWith(`-${section.id}`));
   return `《${page.data.title}》${section ? `·${section.title}` : target.kind==='note-group' ? '注释' : ''}`;

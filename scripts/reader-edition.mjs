@@ -154,6 +154,12 @@ export function frameworkBookHref(href, currentKey) {
   if (href.startsWith('/print/#')) return href.slice('/print/'.length);
   const [path,fragment] = href.split('#');
   const route = path.replace(/\/$/,'');
+  if (currentKey === '/docs/book/wall-service-to-comparison') {
+    if (!path && fragment === 'wall-case-reference')
+      return `#${printUnitAnchor(currentKey)}-wall-case-reference`;
+    if (route === '/docs/book/interpretation-and-limits' && !fragment)
+      return `#${printUnitAnchor(route)}`;
+  }
   if (currentKey === exchangeSemanticsRoute) {
     if (!path && exchangeSemanticsTitles.includes(decodeURIComponent(fragment ?? '')))
       return `#${printUnitAnchor(exchangeSemanticsRoute)}-${decodeURIComponent(fragment)}`;

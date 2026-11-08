@@ -665,3 +665,56 @@ The actual source-level editorial audit now covers all35chapters plus all six fr
 
 
 B10 selection pilot now has a freshly read full37-paragraph/four-table/37-note artifact, SHA57d83fc88d573c4cb4e0f320d92a4ea7f57ae8b418ba803bed4250e503298c89. The component removes the repeated derivation while preserving all original tables, eleven now-visible assumptions and exact numerical input. New caseSelection records16paragraph/5heading dispositions; canonical prose and source bindings are unchanged in this pilot. Independent engineering findings on root visibility and stale five-heading tests were fixed and rechecked. Project-pinned Node24.18.0 passes393tests, typecheck and the working production build/export; native TOC Fragment and breadcrumb/mobile labels now receive exact structural qualification. Current working output remains dirty atc6d569b, not a clean or hosted edition. Browser qualification and normal source/CI/hosting/root handoffs remain open.
+
+## 2026-11-08 B10 terminal; wall selection — Issue80
+
+The preceding B10 working-state notes are historical. Source78/PR79 delivered
+Main `638c19d035a247a9fedf97ad6e93995d2f920bc7`, tree-identical to reviewed51b6d11.
+Root2301/PR2302 delivered Main `74b48b6a111fa6b9ce13554ad1a505c0a00f41bd`,
+tree-identical to reviewed3d5f8c1 and pinning that exact source. Required source
+validate42472156438/job128705233022 and root ai-doc-lint42477306765/job128721399272,
+plus the actual post-merge root checks, passed. Final independent root review
+closed its initial premature-evidence wording finding and found no material final
+delta issue. All23 peer pins and890,918 prior integration-record bytes remain.
+
+Normal source `finish_VWaCe0Lm65HZJC2_BBYo39Iz` and final normal root
+`finish_9XxG7FPJT7AJ2OumP3h8YfbM` both verify delivery_complete=true; root source
+handoff is complete1/1 with zero remaining mirrors. Source Issue78 and PR79 have
+IntegrationDone after `projection_xvlIVMAv85TNKVYRp1b_Fmbn`. Final root receipt
+SHA256 is `29044205dfb64b7c5efd6ec4b390ef74de07c62d931b31889a9cb66587b6605b`.
+Durable [source](https://github.com/tiangong-lca/knowledge-base/pull/79#issuecomment-6721180579),
+[root](https://github.com/tiangong-lca/workspace/pull/2302#issuecomment-6721186431)
+and [programme](https://github.com/tiangong-lca/knowledge-base/issues/9#issuecomment-6721188563)
+records contain the current handoff and continuing full-book responsibilities.
+
+Clean638c19d hosted manifest209a12a59cdd90e8d9c76019100ae9af710bd08abe0d6c62a9a754f487642863
+was stable around a450-artifact capture; all declared file hashes match. Full
+captured/offline output checks cover4,116 historical identities. Eleven scoped
+actual hosted batches complete113functional checks; local15batches complete215.
+Ten hosted screenshots match actually inspected local bytes and two were directly
+inspected. Raw HEAD cancellation terminal events, exact disabled-script controls
+and the known unmanifested favicon404 remain recorded with their limits; no new
+full live history loop, formalPDF or scientific/human-expert approval is inferred.
+
+The task-owned preview and browser contexts are released; no task containers,
+volumes or networks were created. Programme worktrees, dependencies, lawful private
+originals and evidence are retained. Original root01e1d659 and physicalKBcf50 remain
+intentionally unchanged; all24physical child HEAD/branch/status records match the
+pre-integration snapshot. The qualified remote integration snapshot is74b48b6a.
+
+[Issue80](https://github.com/tiangong-lca/knowledge-base/issues/80) is now InProgress
+from freshMain638c19d in the reused programme worktree on`codex/book-wall-selection`,
+targetmain. Its [wall selection protocol](editorial/2026-11-08-wall-selection.md)
+precedes manuscript and UI edits. Actual initial audits separately inspect the22
+wall paragraphs/component, the closing argument, and stored638publication identities.
+The wall task preserves its22templates and immutable input, improves the actual
+reading sequence and calculation-reference role, and captures seven additional
+published heading addresses without replacing the4,116 prior obligations.
+Conclusion revision has a separate reading/implementation boundary. No new
+external originals, wall implementation, rendering qualification or whole-Part7
+completion is claimed at this protocol milestone.
+
+The user-forwarded course subtitles, HTML and Handbook analysis remains candidate
+input. Identity/version/selected-reading and G1–G4 disposition are still required;
+no automatic lit-b05 reading upgrade or new canonical paragraph follows. Programme9
+remains open for the complete approved book, its research domains and apparatus.

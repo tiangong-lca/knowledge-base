@@ -67,6 +67,16 @@ Read `/docs/book/` for published chapters and `/research/` for the reader biblio
 
 The chapter `/docs/book/wall-service-to-comparison/` contains a reproducible hypothetical wall-coating case. Versioned input and evaluated receipt are under `/downloads/cases/`; claim details expose their binding. `node scripts/impact.mjs CASE-WALL-CONNECT` finds dependent prose. The interactive controls and fixed print tables use the same evaluator. Source-derived factors and author-invented model values are explicitly distinguished; no actual paint ranking is claimed.
 
+[Wall selection #80](https://github.com/tiangong-lca/knowledge-base/issues/80) follows
+the [material-selection protocol](_docs/editorial/2026-11-08-wall-selection.md).
+The shared chapter uses four formal sections and retains its22canonical paragraphs;
+the calculation reference follows the rough-substrate comparison and precedes the
+exercise/answer. Complete per-paint traces are tables, while the original five
+input/fixed-result tables, graph and controls remain. Seven newly captured native
+heading addresses supplement the4,116existing histories. Independent final
+selection, actual output and delivery are separately qualified; pending acceptance
+cannot pass the source or publication gate.
+
 The expanded `/docs/book/allocation-and-substitution/` also contains CASE-JOINT-BATCH: fixed tables reconstruct product shares, a matched-service comparison and a partial-use continuation. Its two inventory flows retain separate units; negative comparison residuals are not physical removal. Versioned inputs/results are under `/downloads/cases/joint-batch-v1.*`; use `node scripts/impact.mjs CASE-JOINT-BATCH` for dependent review. The original wall case and its public input bytes remain unchanged.
 
 ## Reader delivery policy

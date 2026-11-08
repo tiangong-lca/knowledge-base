@@ -1,0 +1,2951 @@
+{
+  "schemaVersion": 1,
+  "status": "reviewed",
+  "title": "墙面服务比较",
+  "description": "以同一个虚构墙面案例连接服务、参考用量、需求、活动、清单、GWP100 与共同参数下的条件比较。",
+  "mdxSha256": "639dde6de0d5a4264469c4c4aa9ede4a4d5c660e12ad2e8bb341dcc0d179e19b",
+  "componentSha256": "bec16494e1a752cad860d36ee300601625249bfae8c9c9e9bbcf4cae6a0ecd13",
+  "sections": [
+    {
+      "id": "功能实现",
+      "title": "功能实现",
+      "claimIds": [
+        "cl-wall-question",
+        "cl-wall-quantities",
+        "cl-wall-reference",
+        "cl-wall-same-mass"
+      ]
+    },
+    {
+      "id": "清单形成",
+      "title": "清单形成",
+      "claimIds": [
+        "cl-wall-coordinates",
+        "cl-wall-demand",
+        "cl-wall-activities",
+        "cl-wall-balance-meaning"
+      ]
+    },
+    {
+      "id": "指标含义",
+      "title": "指标含义",
+      "claimIds": [
+        "cl-wall-inventory",
+        "cl-wall-inventory-boundary",
+        "cl-wall-factor-choice",
+        "cl-wall-characterization",
+        "cl-wall-metric-meaning",
+        "cl-wall-time"
+      ]
+    },
+    {
+      "id": "配对判断",
+      "title": "配对判断",
+      "claimIds": [
+        "cl-wall-unknown",
+        "cl-wall-paired-range",
+        "cl-wall-pairing",
+        "cl-wall-tolerance",
+        "cl-wall-rough-demand",
+        "cl-wall-rough-comparison",
+        "cl-wall-exercise",
+        "cl-wall-answer"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "cl-wall-question",
+      "kind": "proposal",
+      "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-book-service-contract"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "作者定义本案例的研究问题和假设地位，不把构造的产品数据归于外部文献。 既有服务条件论证提供教学任务的动机；本段全部案例参数仍为作者设定，不归因于指南。",
+      "text": "现在把比较完整地做一遍：让 100 m² 干燥室内墙面在 [0,10) 年内连续保持指定的均匀颜色和至少 0.98 的假定遮盖率，应分别启动哪些活动，最后能够怎样比较？涂料 A、B 的身份、性能、涂装计划、投入、排放量、基底适配、电力参数范围与比较容差均为教学假定；CO2 与化石来源 CH4 保留真实的物质身份，表征因子采用注明出处的数值。先从已有平整、完好的基底开始，再考察粗糙基底会改变什么。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-WALL-CONNECT",
+        "version": "1.0.0",
+        "inputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+        "inputFile": "wall-coating-v1.json"
+      }
+    },
+    {
+      "id": "cl-wall-quantities",
+      "kind": "calculation",
+      "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-wall-question"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "面积乘单次面积用量再乘区间内的涂装次数；以每次寿命和无间断假设核对时间覆盖，结果由同版本输入与精确引擎生成。",
+      "text": "先沿着时间安排材料。A 每次用量为 0.05 kg/m²，假定每次维持 5 年，因此在第 0 年和第 5 年各涂一次；B 每次为 0.06 kg/m²，一次维持 10 年。于是 A 的用量是 100 m² × 0.05 kg/m²/次 × 2 次＝10 kg，B 相应为 6 kg。区间右端不含第 10 年那个时点，所以不再安排当年的重涂。这里还假定没有损耗，重涂瞬时完成、没有停用，A 重涂不用先去除旧层，十年间性能与生产技术不变；正是这些设定使两份计划接上了连续服务。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-WALL-CONNECT",
+        "version": "1.0.0",
+        "inputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+        "inputFile": "wall-coating-v1.json"
+      }
+    },
+    {
+      "id": "cl-wall-reference",
+      "kind": "synthesis",
+      "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
+      "evidenceIds": [
+        "ev-cml-reference-form",
+        "ev-ilcd-reference-form"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-cml-reference-form",
+          "relation": "context",
+          "rationale": "CML 2001 Part 2a §2.3.4 p22 支持面积参考与过程体积的层次区别；不支持本例虚构性能。"
+        },
+        {
+          "evidenceId": "ev-ilcd-reference-form",
+          "relation": "context",
+          "rationale": "ILCD 2010 §6.4.1 p60 支持用途相关的两类参考表达；本例质量坐标是作者选择。"
+        }
+      ],
+      "premiseIds": [
+        "cl-wall-quantities",
+        "cl-book-cml-reference",
+        "cl-book-ilcd-reference"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "分别保留来源的表达用途，再由本例公开的性能及计划构造服务到过程需求的映射，未作普遍术语同一化。",
+      "text": "现在有两个相连的表述层次。服务一侧是“用 A 或 B 让这 100 m² 墙面满足所定期间与性能”；计算一侧是所选过程坐标上 10 kg A 或 6 kg B 的需求。《功能参照》讨论的 CML 2001 §2.3.4 的涂料例以覆盖墙面面积表述参考流，把所需体积放在过程数据中；ILCD 2010 §6.4.1 则容许按用途采用服务关联或产品导向的参考表述。本例保留服务关联的一层，再为以 kg 供给涂料的过程建立产品量需求。这是对两段语境的有限衔接：kg 与 g 的换算只改变同一质量的数值表示，而由墙面要求得到用量，还需要性能和计划这些额外前提。本例从一开始就设定 kg 数据，无须把指南的体积偷换成质量，也没有证明任意两套数据库可直接互换。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-WALL-CONNECT",
+        "version": "1.0.0",
+        "inputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+        "inputFile": "wall-coating-v1.json"
+      }
+    },
+    {
+      "id": "cl-wall-same-mass",
+      "kind": "calculation",
+      "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-wall-quantities",
+        "cl-wall-reference"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "同质量可服务面积＝质量÷单次面积用量÷次数；在同一低端参数下分别评价等质量和完整服务，所有数值均由同版本引擎取得。",
+      "text": "先用一个会改错问题的做法检验这条联系。若两者都只取 6 kg，A 为了维持十年仍须分两次使用，只能服务 60 m²；B 却服务 100 m²。在共同 θ＝0.1 时，二者指标分别是 14.3802 与 23.529 kg CO2-eq。这个“等质量”结果回答的是各供给这份质量的负担，伴随的十年墙面服务并不相同。把 A 恢复到规定面积后，其结果变为 23.967，B 仍为 23.529；看似较低的一方随之反转。我们还没有因此得到真实涂料优劣，而是找出了改变比较对象的那一步：把服务相等换成了采购质量相等。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-WALL-CONNECT",
+        "version": "1.0.0",
+        "inputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+        "inputFile": "wall-coating-v1.json"
+      }
+    },
+    {
+      "id": "cl-wall-coordinates",
+      "kind": "interpretation",
+      "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
+      "evidenceIds": [
+        "ev-inv-hs-coordinates"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-inv-hs-coordinates",
+          "relation": "context",
+          "rationale": "Heijungs 与 Suh 作者样章 §2.1 支持过程列、流行、单位与符号一致性；具体四列和系数由作者定义。"
+        }
+      ],
+      "premiseIds": [
+        "cl-wall-reference"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "把来源的坐标纪律用于作者给定四过程模型，解释系数的行单位／次操作及活动次数。",
+      "text": "要把完整服务送进过程模型，先读每个坐标究竟代表什么。四列 P-A、P-B、P-P、P-E 各代表一次操作，依次供应 1 kg A、1 kg B、1 m² 基底准备和 1 kWh 电力；四行也依次保留 kg A、kg B、m²、kWh 的单位。矩阵 A 把产出记为正数，把消耗的中间产品记为负数。s 记录各指定操作的次数；例如 P-B 列电力行的 -5，意思是每执行一次供给 1 kg B 的操作，消耗相应的 kWh 电力。这样定义坐标以后，混合行单位的矩阵就可以逐行核对，而不必假装各元素都是同一种无量纲物理量。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-WALL-CONNECT",
+        "version": "1.0.0",
+        "inputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+        "inputFile": "wall-coating-v1.json"
+      }
+    },
+    {
+      "id": "cl-wall-demand",
+      "kind": "calculation",
+      "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-wall-quantities",
+        "cl-wall-coordinates"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按完整服务所需质量填入相应产品坐标，按平整基底假设填零准备需求，电力只作为模型内部投入。",
+      "text": "平整基底上无需准备活动。把刚才得到的两份用量分别放入对应产品行，便有 f_A＝(10, 0, 0, 0)ᵀ，f_B＝(0, 6, 0, 0)ᵀ，行单位仍按上段顺序。f 的电力坐标为零，表示交付给外部的最终需求不包括电力；造涂料所需的电力由过程之间供给。服务怎样转成这两个 f，已经由性能、涂装计划和基底条件决定，下面的求解只负责把这些需求实现出来。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-WALL-CONNECT",
+        "version": "1.0.0",
+        "inputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+        "inputFile": "wall-coating-v1.json"
+      }
+    },
+    {
+      "id": "cl-wall-activities",
+      "kind": "calculation",
+      "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
+      "evidenceIds": [
+        "ev-inv-hs-balance"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-inv-hs-balance",
+          "relation": "context",
+          "rationale": "作者样章 §2.2 的 As=f 提供需求平衡形式；此处数值解来自本例系数。"
+        }
+      ],
+      "premiseIds": [
+        "cl-wall-demand"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "前三行为单位输出，第四行求内供电力；再乘回技术矩阵核对净交付。",
+      "text": "逐行解 As＝f 比先背逆矩阵更容易看见工作怎样发生。前三行直接给出涂料与准备次数，电力行再要求所供电力抵消前三列的消耗。A 因而启动 10 次 P-A 和 20 次 P-E；B 启动 6 次 P-B 和 30 次 P-E。核对 B 的电力行，就是 -5 kWh/次 × 6 次＋1 kWh/次 × 30 次＝0 kWh；B 产品行却留下所需的 6 kg。最终电力需求为零与实际使用电力完全相容。计算器逐项展示 f → s 的全部轨迹，读者可以把解乘回矩阵检查这两种净交付。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-WALL-CONNECT",
+        "version": "1.0.0",
+        "inputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+        "inputFile": "wall-coating-v1.json"
+      }
+    },
+    {
+      "id": "cl-wall-balance-meaning",
+      "kind": "interpretation",
+      "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
+      "evidenceIds": [
+        "ev-inv-hs-balance"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-inv-hs-balance",
+          "relation": "context",
+          "rationale": "样章需求平衡的对象是经济流；本例未提供元素守恒所需的完整物质表。"
+        }
+      ],
+      "premiseIds": [
+        "cl-wall-activities",
+        "cl-inv-example-inputs",
+        "cl-inv-example-solution"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "由本例行定义限定平衡命题，并按已有反馈例的明确虚构身份区分两个案例。",
+      "text": "这里平衡的是模型中所列的产品与服务交付。As＝f 没有列出全部化学元素与物质去向，不能当作完整的元素质量守恒检验。本例也有意采用没有相互反馈的四过程结构，让人先看清服务如何进入需求。《过程网络》中过程甲、乙相互索取产品的两过程例子仍保留自己的产品身份与虚构排放，教的是递归内部需求怎样被完整求解；它的排放不能改名为本例 CO2 或 CH4 再套因子。这两个例子共有的是对已定坐标和平衡关系负责，各自补上的解释环节却不同。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-WALL-CONNECT",
+        "version": "1.0.0",
+        "inputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+        "inputFile": "wall-coating-v1.json"
+      }
+    },
+    {
+      "id": "cl-wall-inventory",
+      "kind": "calculation",
+      "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
+      "evidenceIds": [
+        "ev-inv-hs-balance",
+        "ev-inv-hs-assumptions"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-inv-hs-balance",
+          "relation": "context",
+          "rationale": "样章 g=Bs 支持同一活动倍率作用于干预矩阵；本例排放身份和数值均为显式设定。"
+        },
+        {
+          "evidenceId": "ev-inv-hs-assumptions",
+          "relation": "qualifies",
+          "rationale": "样章 §§2.3–2.4 的线性、可加假设限定这里按操作次数缩放并求和的做法。"
+        }
+      ],
+      "premiseIds": [
+        "cl-wall-activities"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "逐列乘环境系数与活动次数，再按已识别的两种排放行求和；展示点由输入固定。",
+      "text": "同一组活动次数接着乘排放矩阵：g＝B(θ)s。θ 表示电力操作每 kWh 的化石 CO2 排放量，其具体范围稍后再处理。先在展示点 θ＝0.3 看 A：涂料操作贡献 20 kg CO2，电力贡献 6 kg，合为 26 kg；化石 CH4 相应由 0.05 与 0.02 kg 合为 0.07 kg。B 则合为 27 kg CO2 和 0.09 kg 化石 CH4。这里每一项都是“每次操作排放 × 操作次数”，因此每种气体能先按同一身份求和。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-WALL-CONNECT",
+        "version": "1.0.0",
+        "inputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+        "inputFile": "wall-coating-v1.json"
+      }
+    },
+    {
+      "id": "cl-wall-inventory-boundary",
+      "kind": "interpretation",
+      "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-wall-inventory",
+        "cl-wall-question"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按输入的非电力／供电分工解释避免重复计数，并从显式两行环境矩阵限定下一步指标所覆盖的清单。",
+      "text": "这份清单的可核对性还来自分工明确：涂料和准备列只计非电力负担，供电负担统一留在 P-E 一列，因而没有把同一供电重复加两遍。清单保留“排入空气的化石 CO2”和“排入空气的化石 CH4”这两个身份，后者才能与随后选用的化石甲烷因子对接。施工设备、劳动、废物处理、处置回收，以及其他排放和影响类别没有建模；线性求和并不会填上它们。于是读者已经获得一份可重算的截断清单，接下来要问的具体问题是：怎样把这两种已识别气体换算到一个具名气候指标上？",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-WALL-CONNECT",
+        "version": "1.0.0",
+        "inputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+        "inputFile": "wall-coating-v1.json"
+      }
+    },
+    {
+      "id": "cl-wall-factor-choice",
+      "kind": "synthesis",
+      "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
+      "evidenceIds": [
+        "ev-ipcc-ar6-2025-co2-gwp100",
+        "ev-ipcc-ar6-2025-fossil-ch4-gwp100",
+        "ev-ipcc-ar6-methane-accounting",
+        "ev-kb54-ipcc-ar6-errata-table-7-15",
+        "ev-kb54-ipcc-ar6-feedback-methane-budget"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ipcc-ar6-2025-co2-gwp100",
+          "relation": "supports",
+          "rationale": "2025-10-07 勘误替换表的 CO2 行、GWP-100 列支持所选中心值；证据载体为披露限制的官方派生文本。"
+        },
+        {
+          "evidenceId": "ev-ipcc-ar6-2025-fossil-ch4-gwp100",
+          "relation": "supports",
+          "rationale": "同一替换表的 fossil CH4 行、GWP-100 列支持所选中心值及未传播的报告不确定性。"
+        },
+        {
+          "evidenceId": "ev-ipcc-ar6-methane-accounting",
+          "relation": "qualifies",
+          "rationale": "Chapter 7 选读的甲烷氧化处理限定化石甲烷表征，避免在此另加同一氧化贡献。"
+        },
+        {
+          "evidenceId": "ev-kb54-ipcc-ar6-errata-table-7-15",
+          "relation": "supports",
+          "rationale": "原始PDF对应选段确认所引定义、因子或碳核算条件；不把原文字快照改称PDF，也不改变原案例输入及计算版本。"
+        },
+        {
+          "evidenceId": "ev-kb54-ipcc-ar6-feedback-methane-budget",
+          "relation": "supports",
+          "rationale": "原始PDF对应选段确认所引定义、因子或碳核算条件；不把原文字快照改称PDF，也不改变原案例输入及计算版本。"
+        }
+      ],
+      "premiseIds": [
+        "cl-wall-inventory-boundary",
+        "cl-ipcc-ar6-2025-co2-gwp100",
+        "cl-ipcc-ar6-2025-fossil-ch4-gwp100"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "引文保留原案例所用文字摘录的历史身份；同条注释另列原始报告或更正表的对应选段，两者不是独立科学验证。",
+        "所选版本不是所有报告框架的通用默认值；表中因子不确定性没有在这个单参数算例中传播。"
+      ],
+      "reasoning": "将两个有版本和物质身份的源值与本例两行清单对应；载体接受决定不提升为原件视觉核查或实证验证。",
+      "text": "GWP-100 因子选用 IPCC AR6 WGI 表 7.15 在 2025 年 10 月 7 日勘误中的替换表，取中心值：CO2 为 1，化石 CH4 为 28.1。所选化石甲烷因子已计入相应氧化贡献，因此清单不另加一笔由该甲烷氧化产生的 CO2。因子的版本、物种与核算条件共同确定了这一步换算的含义。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-WALL-CONNECT",
+        "version": "1.0.0",
+        "inputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+        "inputFile": "wall-coating-v1.json"
+      }
+    },
+    {
+      "id": "cl-wall-characterization",
+      "kind": "calculation",
+      "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-wall-inventory",
+        "cl-wall-factor-choice"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "分别以相应气体因子乘清单行，再相加为同一等效单位；结果绑定输入因子版本和精确引擎。",
+      "text": "表征运算保留单位以后很直接：I＝g_CO2 × 1 kg CO2-eq/kg CO2＋g_CH4 × 28.1 kg CO2-eq/kg 化石 CH4。每项的气体质量单位分别消去，两项才在 kg CO2-eq 上相加。在展示点，A 的 CO2 项为 26、CH4 项为 1.967，合计 27.967 kg CO2-eq；B 合计 29.529 kg CO2-eq。这里的分母始终是已经由 f 实现的整项规定服务。kg CO2-eq 记录换算后的相对指标，而原清单仍分别记录真实气体身份，没有把甲烷在物质上变成 CO2。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-WALL-CONNECT",
+        "version": "1.0.0",
+        "inputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+        "inputFile": "wall-coating-v1.json"
+      }
+    },
+    {
+      "id": "cl-wall-metric-meaning",
+      "kind": "interpretation",
+      "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
+      "evidenceIds": [
+        "ev-ipcc-ar6-gwp-definition"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ipcc-ar6-gwp-definition",
+          "relation": "context",
+          "rationale": "AR6 WGI Chapter 7 §§7.6.1–7.6.1.3 的脉冲与积分辐射强迫定义支持指标位置和时间范围的解释；阅读载体是披露限制的派生文本。"
+        }
+      ],
+      "premiseIds": [
+        "cl-wall-characterization",
+        "cl-ipcc-ar6-gwp-definition"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按来源定义解释相对脉冲度量，并将本例线性表征结果限制在这个度量上，不跳接到温升或损害。",
+      "text": "要读懂这个正面的测量对象，可以把 GWP 看成一个特定比较：在选定时间范围内，某气体理想化单位脉冲排放所产生的时间积分辐射强迫，与 CO2 参照脉冲相比较。这个物理比值本身无量纲；计算中保留 kg CO2-eq/kg 气体的写法，是为了交代质量与参照身份。因此刚算出的 I 表达这个相对积分强迫尺度上的模型化潜势。它没有给出实际排放了多少千克 CO2、当地观察到多少损害、排放后第 100 年的温升，或一个终点损害数；这些对象需要不同的模型与证据。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-WALL-CONNECT",
+        "version": "1.0.0",
+        "inputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+        "inputFile": "wall-coating-v1.json"
+      }
+    },
+    {
+      "id": "cl-wall-time",
+      "kind": "synthesis",
+      "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
+      "evidenceIds": [
+        "ev-ipcc-ar6-gwp-definition"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ipcc-ar6-gwp-definition",
+          "relation": "qualifies",
+          "rationale": "脉冲度量的时间积分范围限定其时间解释；本例活动汇总规则另由作者给定。"
+        }
+      ],
+      "premiseIds": [
+        "cl-wall-quantities",
+        "cl-wall-metric-meaning"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "区分确定活动计划的服务期间与选定度量的脉冲积分期间，由本例静态求和结构识别其未计算的共同日历问题。",
+      "text": "服务的十年与 GWP-100 的一百年由此各有工作：前者决定 A 要做几次涂装，后者决定每笔气体数量采用哪种表征尺度。本例先在技术与供电不变的假设下汇总十年内的活动，再用静态脉冲因子表征。它并没有把第 0 年和第 5 年排放放到一个共同日历终点，计算随日历变化的强迫轨迹。若研究问题变成“从今天到某一固定年份的累计强迫”，就需要保留排放时点并重建相应模型；仅把显示分母改成每年，仍然得不到那个时间问题的答案。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-WALL-CONNECT",
+        "version": "1.0.0",
+        "inputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+        "inputFile": "wall-coating-v1.json"
+      }
+    },
+    {
+      "id": "cl-wall-unknown",
+      "kind": "proposal",
+      "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-wall-characterization"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "作者定义一个共同的有界未知参数和差值目标，并限定固定因子及无概率分布的计算任务。",
+      "text": "现在把展示点放回真正要考察的范围。设同一个固定但未知的电力 CO2 强度 θ 位于 [0.1, 0.5] kg CO2/kWh；A、B 在一次情景中必须使用同一 θ。我们要确定的是 Δ(θ)＝I_B(θ)−I_A(θ)，即相同基底、相同供电前提下一整项服务的指标差。0.3 只是方便展开算式的展示点，不是从样本估出的均值。此处没有赋予范围内各值概率，也没有样本、置信区间或单面墙之间的个体变异；表征中心因子同时保持固定，源表所报甲烷 ±10.4 的不确定性没有传播进来。因此下面的范围回答的是这一项共同参数未知时差值能到哪里。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-WALL-CONNECT",
+        "version": "1.0.0",
+        "inputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+        "inputFile": "wall-coating-v1.json"
+      }
+    },
+    {
+      "id": "cl-wall-paired-range",
+      "kind": "calculation",
+      "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-wall-unknown",
+        "cl-wall-inventory",
+        "cl-wall-characterization"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "同一θ下先相减得到仿射差值；斜率为正保证端点极值，交点在输入范围内使严格排序不能全域成立。",
+      "text": "先在同一个 θ 下作差，就能保住已知的关系。由排放和用电次数，平整基底的差值整理成 Δ(θ)＝-1.438＋10θ，单位为 kg CO2-eq/规定服务。它是斜率为正的仿射函数，所以整个闭区间的最小值和最大值就在两端，而不靠抽查三个展示点来猜测。端点给出 [-0.438, 3.562]。差值在 θ＝0.1438 穿过零，故在允许范围的一侧 B 较低、另一侧 A 较低；展示点的 A 较低尚不能升级为整个范围的严格排序。图中的连线表达的正是这条由模型推出的关系。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-WALL-CONNECT",
+        "version": "1.0.0",
+        "inputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+        "inputFile": "wall-coating-v1.json"
+      }
+    },
+    {
+      "id": "cl-wall-pairing",
+      "kind": "interpretation",
+      "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-wall-paired-range"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "两个边际区间的笛卡尔组合包含共同θ所产生的配对集合，独立极端相减因此包住真范围，却未必精确。",
+      "text": "也可以先各自求范围：A 为 [23.967, 31.967]，B 为 [23.529, 35.529]。若再拿 B 的最低端减 A 的最高端、B 的最高端减 A 的最低端，会得到 [-8.438, 11.562]。这种独立极端相减在区间算术中可作保守外包络，并非普遍错误；但这里它丢掉了共同 θ，包含一边取较清洁供电、另一边同时取较高排放供电的组合。题目已经排除那些配对，便能用上一段的精确差值范围收紧结论。两个边际范围是否重叠，既没有恢复这种配对，也还没有检验任何等效准则。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-WALL-CONNECT",
+        "version": "1.0.0",
+        "inputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+        "inputFile": "wall-coating-v1.json"
+      }
+    },
+    {
+      "id": "cl-wall-tolerance",
+      "kind": "interpretation",
+      "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-wall-paired-range",
+        "cl-wall-unknown"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "容差为展示而构造，不能据此视为事先独立确定的实证判据。"
+      ],
+      "reasoning": "直接检验配对差值区间包含于固定容差带，另以区间穿零判断严格排序；两谓词不相互替代。",
+      "text": "严格排序与容差内等效需要分开证明。为检验差值的大小，设一个教学容差：对所有允许 θ，|Δ(θ)|≤4 kg CO2-eq/规定服务。它是一项为算例构造的准则，并非现实利益相关方认可的决策门槛。平整基底的整个配对区间 [-0.438, 3.562] 落在 ±4 内，所以满足这一条件性的容差准则，同时仍不能建立全域严格排序。两句话依据不同的不等式：前者核对差值的大小，后者核对符号。这里没有用“分不出优劣”推出相等，也不是统计等效检验；换用更紧的容差，必须重新检验该不等式。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-WALL-CONNECT",
+        "version": "1.0.0",
+        "inputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+        "inputFile": "wall-coating-v1.json"
+      }
+    },
+    {
+      "id": "cl-wall-rough-demand",
+      "kind": "calculation",
+      "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-wall-demand",
+        "cl-wall-activities",
+        "cl-wall-tolerance"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按虚构基底兼容规则向B最终需求加入全墙准备，再由原技术矩阵计算新增供电；其余输入保持固定。",
+      "text": "最后只换墙面的初始条件：基底粗糙但完好，作者假定 A 能直接达到原服务，B 必须先对全部 100 m² 做一次准备。最终面积、期间、涂料质量、耐久假设、所有过程系数、共同 θ、因子版本和容差都不变。因而 B 的需求第三坐标从 0 变为 100 m²，P-P 从零活动变为 100 次，供电次数随之从 30 增至 50。这是服务实现条件激活了一个过程：矩阵事先留有该列，平整情景不用它，粗糙情景要用它。把旧结果除以另一种面积或期间，仍会让准备次数留在零，产生不了这笔新投入。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-WALL-CONNECT",
+        "version": "1.0.0",
+        "inputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+        "inputFile": "wall-coating-v1.json"
+      }
+    },
+    {
+      "id": "cl-wall-rough-comparison",
+      "kind": "calculation",
+      "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-wall-rough-demand",
+        "cl-wall-factor-choice",
+        "cl-wall-tolerance"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "新需求与原系数、因子相乘，仿射端点范围全正且低端大于容差，分别证明严格排序和全域容差外。",
+      "text": "沿同样的 s → g → I 路径重算，在展示点，B 的清单成为 38 kg CO2 与 0.11 kg 化石 CH4，指标升至 41.091 kg CO2-eq，A 仍为 27.967。新的差值是 Δ(θ)＝4.124＋30θ，整个允许范围为 [7.124, 19.124]。它始终大于零且全在 +4 之外，于是这个粗糙基底模型中，A 的所选指标在全域严格较低，两方案也不满足既定容差内等效。这次结论改变有可追踪的原因：B 多做了准备并多用了电，比较的是另一种初始基底下如何实现同一最终服务。它仍没有变成实际涂料的采购建议。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-WALL-CONNECT",
+        "version": "1.0.0",
+        "inputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+        "inputFile": "wall-coating-v1.json"
+      }
+    },
+    {
+      "id": "cl-wall-exercise",
+      "kind": "proposal",
+      "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-wall-pairing",
+        "cl-wall-tolerance",
+        "cl-wall-rough-comparison"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "作者设置重建任务，要求把服务条件、共享参数和比较谓词落实到同一条计算链。",
+      "text": "读者可以先遮住答案，试做一个接续任务。有人建议：“既然展示点上 A 较低，平整墙面也选 A；把粗糙墙面的结果折成每 m²，就能和原平整结果合并。至于误差，分别减两个结果范围的极端就够了。”请沿本例指出三处操作各自需要哪项前提，再在不改变输入的情况下给出能成立的比较。同时独立复核粗糙情景 B 的电力行与两项排放和：从新增准备需求开始，不要只复制已经显示的最终指标。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-WALL-CONNECT",
+        "version": "1.0.0",
+        "inputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+        "inputFile": "wall-coating-v1.json"
+      }
+    },
+    {
+      "id": "cl-wall-answer",
+      "kind": "synthesis",
+      "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-wall-exercise",
+        "cl-wall-tolerance",
+        "cl-wall-rough-comparison",
+        "cl-wall-pairing"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "把练习的三个建议分别还原到比较域、活动条件和已知配对，再以已推导范围及需求平衡给出可复核答案。",
+      "text": "答案的关键是把每一步送回它回答的问题。平整情景要在共同 θ 全域比较，不能把单个展示点代替整个范围；其严格排序未定，但满足本版 ±4 的条件性容差准则。粗糙情景 B 的电力核对为 -5×6＋-0.2×100＋50＝0 kWh；逐列相乘得到的两项清单必须包含准备列和增加的供电贡献。把结果折为每 m² 可以改变报告尺度，却不能消去这项初始条件差异，也不能补回平整模型未启动的活动。独立极端相减仍是保守外包络；利用已知配对后应采用精确的 Δ 范围。这样，读者就能从服务、方案用量、f、s、g 一直重建到一个有物理解释的指标，再凭明确的不等式给出有边界的比较；实际墙面比较还须以真实性能、活动、排放及决策准则为依据。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-WALL-CONNECT",
+        "version": "1.0.0",
+        "inputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+        "inputFile": "wall-coating-v1.json"
+      }
+    }
+  ],
+  "ordinary": {
+    "web": [
+      {
+        "text": "完整的技术矩阵和排放矩阵见本章计算表。下面先沿着每一行的含义求解。",
+        "section": "清单形成",
+        "navigation": [
+          {
+            "text": "本章计算表",
+            "href": "#wall-case-reference"
+          }
+        ]
+      },
+      {
+        "text": "接下来的购物袋比较把这些问题放进一项实际研究，区分报告给定的条件、观察所得的资料和仍需判断的使用情境。",
+        "section": "配对判断",
+        "navigation": [
+          {
+            "text": "购物袋比较",
+            "href": "/docs/book/interpretation-and-limits/"
+          }
+        ]
+      }
+    ],
+    "book": [
+      {
+        "text": "完整的技术矩阵和排放矩阵见本章计算表。下面先沿着每一行的含义求解。",
+        "section": "清单形成",
+        "navigation": [
+          {
+            "text": "本章计算表",
+            "href": "#print-unit-2f646f63732f626f6f6b2f77616c6c2d736572766963652d746f2d636f6d70617269736f6e-wall-case-reference"
+          }
+        ]
+      },
+      {
+        "text": "接下来的购物袋比较把这些问题放进一项实际研究，区分报告给定的条件、观察所得的资料和仍需判断的使用情境。",
+        "section": "配对判断",
+        "navigation": [
+          {
+            "text": "购物袋比较",
+            "href": "#print-unit-2f646f63732f626f6f6b2f696e746572707265746174696f6e2d616e642d6c696d697473"
+          }
+        ]
+      }
+    ]
+  },
+  "caseSelection": {
+    "originalCaseDigest": "6a12753b20338ea3965a149864c063888fe09a1a18fde76b62656c70b4370824",
+    "inputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+    "paragraphDispositions": [
+      {
+        "id": "P1",
+        "action": "retain",
+        "targetClaimIds": [
+          "cl-wall-question"
+        ],
+        "rationale": "Keep the local case/version/hypothetical identity.",
+        "destination": "Current case metadata"
+      },
+      {
+        "id": "P2",
+        "action": "compress",
+        "targetClaimIds": [
+          "cl-wall-question",
+          "cl-wall-quantities"
+        ],
+        "rationale": "Keep exact service/time and local fiction/source distinction; canonical prose owns the full plan derivation.",
+        "destination": "Current service paragraph; 功能实现"
+      },
+      {
+        "id": "P3",
+        "action": "retain",
+        "targetClaimIds": [
+          "cl-wall-quantities",
+          "cl-wall-inventory-boundary"
+        ],
+        "rationale": "Necessary local renewal and omitted-coverage conditions remain explicit.",
+        "destination": "Current assumption paragraph"
+      },
+      {
+        "id": "P4",
+        "action": "retain",
+        "targetClaimIds": [
+          "cl-wall-unknown"
+        ],
+        "rationale": "Controls require the same fixed theta and fixed factor/tolerance condition.",
+        "destination": "Current theta note"
+      },
+      {
+        "id": "P5",
+        "action": "compress",
+        "targetClaimIds": [
+          "cl-wall-rough-demand"
+        ],
+        "rationale": "Keep actual scenario/compatibility condition and version without a second explanation of the complete route.",
+        "destination": "Current scenario paragraph"
+      },
+      {
+        "id": "P6",
+        "action": "retain",
+        "targetClaimIds": [
+          "cl-wall-characterization",
+          "cl-wall-rough-comparison"
+        ],
+        "rationale": "Live status announces current values for the chosen controls.",
+        "destination": "Current polite status"
+      },
+      {
+        "id": "P7",
+        "action": "retain",
+        "targetClaimIds": [
+          "cl-wall-inventory-boundary",
+          "cl-wall-factor-choice"
+        ],
+        "rationale": "Non-electric accounting and methane oxidation conditions remain local to the matrix.",
+        "destination": "Matrix accounting note"
+      },
+      {
+        "id": "P8",
+        "action": "move",
+        "targetClaimIds": [
+          "cl-wall-demand"
+        ],
+        "rationale": "Preserve the full demand vector and mixed coordinate units in one trace row.",
+        "destination": "Paint A trace demand row"
+      },
+      {
+        "id": "P9",
+        "action": "move",
+        "targetClaimIds": [
+          "cl-wall-activities"
+        ],
+        "rationale": "Preserve full activity vector and per-operation meaning in one trace row.",
+        "destination": "Paint A trace activity row"
+      },
+      {
+        "id": "P10",
+        "action": "move",
+        "targetClaimIds": [
+          "cl-wall-activities"
+        ],
+        "rationale": "Preserve every electricity coefficient, contribution and final value.",
+        "destination": "Paint A trace electricity row"
+      },
+      {
+        "id": "P11",
+        "action": "move",
+        "targetClaimIds": [
+          "cl-wall-inventory"
+        ],
+        "rationale": "Preserve both gas identities, complete contribution sums and totals.",
+        "destination": "Paint A trace CO2 and CH4 rows"
+      },
+      {
+        "id": "P12",
+        "action": "move",
+        "targetClaimIds": [
+          "cl-wall-characterization"
+        ],
+        "rationale": "Preserve c multiplication, both characterized contributions, total and whole-service unit.",
+        "destination": "Paint A trace indicator row"
+      },
+      {
+        "id": "P13",
+        "action": "move",
+        "targetClaimIds": [
+          "cl-wall-demand"
+        ],
+        "rationale": "Preserve the full demand vector and mixed coordinate units in one trace row.",
+        "destination": "Paint B trace demand row"
+      },
+      {
+        "id": "P14",
+        "action": "move",
+        "targetClaimIds": [
+          "cl-wall-activities"
+        ],
+        "rationale": "Preserve full activity vector and per-operation meaning in one trace row.",
+        "destination": "Paint B trace activity row"
+      },
+      {
+        "id": "P15",
+        "action": "move",
+        "targetClaimIds": [
+          "cl-wall-activities",
+          "cl-wall-rough-demand"
+        ],
+        "rationale": "Preserve electricity reconstruction including the activated preparation contribution.",
+        "destination": "Paint B trace electricity row"
+      },
+      {
+        "id": "P16",
+        "action": "move",
+        "targetClaimIds": [
+          "cl-wall-inventory",
+          "cl-wall-rough-comparison"
+        ],
+        "rationale": "Preserve both gas identities and all terms, including the rough-case activity-dependent terms.",
+        "destination": "Paint B trace CO2 and CH4 rows"
+      },
+      {
+        "id": "P17",
+        "action": "move",
+        "targetClaimIds": [
+          "cl-wall-characterization",
+          "cl-wall-rough-comparison"
+        ],
+        "rationale": "Preserve factor multiplication, both contributions, total and complete-service denominator.",
+        "destination": "Paint B trace indicator row"
+      },
+      {
+        "id": "P18",
+        "action": "compress",
+        "targetClaimIds": [
+          "cl-wall-paired-range"
+        ],
+        "rationale": "The point difference and sign label remain; the whole-domain derivation is canonical.",
+        "destination": "Current paired difference row"
+      },
+      {
+        "id": "P19",
+        "action": "compress",
+        "targetClaimIds": [
+          "cl-wall-paired-range",
+          "cl-wall-pairing"
+        ],
+        "rationale": "Keep paired range, legitimate conservative envelope and root/slider condition with a native reasoning link.",
+        "destination": "Current ranges paragraph; 配对判断"
+      },
+      {
+        "id": "P20",
+        "action": "retain",
+        "targetClaimIds": [
+          "cl-wall-paired-range",
+          "cl-wall-rough-comparison"
+        ],
+        "rationale": "Fixed results must remain independent of controls and accessible to print/no-script readers.",
+        "destination": "Fixed-results introduction"
+      },
+      {
+        "id": "P21",
+        "action": "move",
+        "targetClaimIds": [
+          "cl-wall-same-mass"
+        ],
+        "rationale": "Canonical text preserves the stronger exact equal-mass service/rank-reversal counterexample; remove the second full exposition.",
+        "destination": "Native 功能实现 link and cl-wall-same-mass"
+      },
+      {
+        "id": "P22",
+        "action": "compress",
+        "targetClaimIds": [
+          "cl-wall-factor-choice",
+          "cl-wall-metric-meaning",
+          "cl-wall-unknown",
+          "cl-wall-time"
+        ],
+        "rationale": "Keep vector/units/dated source and unpropagated uncertainty locally; physical and time interpretation remains in 指标含义.",
+        "destination": "Current factor note and native explanation link"
+      },
+      {
+        "id": "P23",
+        "action": "retain",
+        "targetClaimIds": [
+          "cl-wall-question",
+          "cl-wall-answer"
+        ],
+        "rationale": "Keep exact input download and reconstruction purpose.",
+        "destination": "Current input download"
+      }
+    ],
+    "headingDispositions": [
+      {
+        "key": "@case:wall:title",
+        "action": "compress",
+        "rationale": "Name the calculation/reference purpose without a second narrative opening.",
+        "targetClaimIds": [
+          "cl-wall-question"
+        ]
+      },
+      {
+        "key": "@case:wall:current",
+        "action": "retain",
+        "rationale": "Keep current scenario and theta distinguishable from fixed rows.",
+        "targetClaimIds": [
+          "cl-wall-unknown"
+        ]
+      },
+      {
+        "key": "@case:wall:paintA",
+        "action": "retain",
+        "rationale": "Identify the complete A reconstruction table.",
+        "targetClaimIds": [
+          "cl-wall-demand",
+          "cl-wall-activities",
+          "cl-wall-inventory",
+          "cl-wall-characterization"
+        ]
+      },
+      {
+        "key": "@case:wall:paintB",
+        "action": "retain",
+        "rationale": "Identify the complete B reconstruction table.",
+        "targetClaimIds": [
+          "cl-wall-demand",
+          "cl-wall-activities",
+          "cl-wall-inventory",
+          "cl-wall-characterization",
+          "cl-wall-rough-demand"
+        ]
+      },
+      {
+        "key": "@case:wall:baseline",
+        "action": "compress",
+        "rationale": "Keep fixed results and independent whole-domain judgment distinct from current controls.",
+        "targetClaimIds": [
+          "cl-wall-paired-range",
+          "cl-wall-tolerance",
+          "cl-wall-rough-comparison"
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "service",
+        "text": "规定服务：100 m² 干燥室内墙面，在 [0,10) 年内连续保持指定均匀颜色与至少 0.98 的假定遮盖率，不含第 10 年时点的重涂。"
+      },
+      {
+        "id": "fiction",
+        "text": "性能、投入、排放量、基底适配、θ 范围和容差均为作者虚构；表征因子另有具名来源。"
+      },
+      {
+        "id": "renewal",
+        "text": "假定无损耗、瞬时重涂且无停用、性能与技术十年不变、A 重涂无需先去除旧涂层。"
+      },
+      {
+        "id": "omissions",
+        "text": "施工设备、劳动、处置与回收等被刻意省略；只追踪两种排放和一个气候指标。未覆盖的活动、流和影响类别不能视为零，也不能由此推断实际涂料性能或完整生命周期结论。"
+      },
+      {
+        "id": "accounting",
+        "text": "涂料和基底准备的非电力负担排除 P-E 的负担；电力供应统一在 P-E 中计入。化石 CH4 的氧化 CO2 不再单独加一次。"
+      },
+      {
+        "id": "common-parameter",
+        "text": "θ ∈ [0.1, 0.5]；同一个值同时用于 A、B。它是不确定但固定的电力排放强度参数，不是两次独立抽样。容差与表征因子由本版本固定。"
+      },
+      {
+        "id": "fixed-criterion",
+        "text": "容差与表征因子由本版本固定。"
+      },
+      {
+        "id": "factor-scope",
+        "text": "化石 CH4 为 28.1 ± 10.4，其不确定性未传播，θ 也无概率。"
+      },
+      {
+        "id": "no-probability",
+        "text": "连线是此固定模型的仿射关系，范围没有概率含义。"
+      },
+      {
+        "id": "non-implication",
+        "text": "仅仅“未能证明全域容差内”不能证明全域容差外。"
+      }
+    ],
+    "currentPresentation": {
+      "web": {
+        "text": "计算表与参数墙面涂装算例 · 数据版本 1.0.0 · 数值为教学假定规定服务：100 m² 干燥室内墙面，在 [0,10) 年内连续保持指定均匀颜色与至少 0.98 的假定遮盖率，不含第 10 年时点的重涂。性能、投入、排放量、基底适配、θ 范围和容差均为作者虚构；表征因子另有具名来源。表格供查阅与复算；推理见功能实现、清单形成、指标含义与配对判断。服务先固定，再由虚构性能和计划重建用量；用量并不等于服务本身。替代方案每次用量假定维持时间涂装年份100 m² 总量涂料 A0.05 kg/m²5 年/次0、5100 × 0.05 × 2 = 10 kg涂料 B0.06 kg/m²10 年/次0100 × 0.06 × 1 = 6 kg假定无损耗、瞬时重涂且无停用、性能与技术十年不变、A 重涂无需先去除旧涂层。施工设备、劳动、处置与回收等被刻意省略；只追踪两种排放和一个气候指标。未覆盖的活动、流和影响类别不能视为零，也不能由此推断实际涂料性能或完整生命周期结论。基底初始情景平整基底 smooth粗糙基底 rough共同 θ：0.3 kg CO2/kWhθ ∈ [0.1, 0.5]；同一个值同时用于 A、B。它是不确定但固定的电力排放强度参数，不是两次独立抽样。容差与表征因子由本版本固定。当前计算：平整基底 smooth · θ=0.3已有平整完好基底：A、B 均无准备需求。 情景版本 1.0.0-S0。A：27.967；B：29.529；配对 Δ：1.562 kg CO2-eq / 规定服务。配对差值 Δ = I_B − I_A 与共同 θ横轴 θ 从 0.1 到 0.5，单位 kg CO2/kWh；纵轴为每项规定服务的 kg CO2-eq。阴影为固定 ±4 容差带。实线为平整基底，虚线为粗糙基底，圆点为当前场景与 θ。平整基底 smooth范围 [-0.438, 3.562]；粗糙基底 rough范围 [7.124, 19.124]。-40419.1240.10.30.5Δ · kg CO2-eq / 规定服务共同 θ · kg CO2/kWh固定容差带 ±4实线：平整；虚线：粗糙；圆点：当前值。平整基底 smooth，θ=0.3，Δ=1.562。连线是此固定模型的仿射关系，范围没有概率含义。A：正数为产出，负数为中间投入；每列为一次指定操作，行单位保留。s 为这些操作的次数。A 的行（单位）P-A · 1 kg A / 次操作P-B · 1 kg B / 次操作P-P · 1 m² 基底准备 / 次操作P-E · 1 kWh 电力 / 次操作Paint A, kg1000Paint B, kg0100preparation service, m20010electricity, kWh-2-5-0.21B(θ)：每次指定操作的排放；所有数量及显式零值均为教学假定。排放到空气（kg）P-A · 1 kg A / 次操作P-B · 1 kg B / 次操作P-P · 1 m² 基底准备 / 次操作P-E · 1 kWh 电力 / 次操作化石 CO2230.05θ = 0.3化石 CH40.0050.0100.001涂料和基底准备的非电力负担排除 P-E 的负担；电力供应统一在 P-E 中计入。化石 CH4 的氧化 CO2 不再单独加一次。涂料 A：f → s → g → I涂料 A · 平整基底 smooth · θ=0.3；每项结果对应同一 100 m²、十年规定服务。计算量与坐标当前值与完整算式最终需求 fkg A、kg B、m² 准备、kWh 电力(10, 0, 0, 0)ᵀA s = f 的解 sP-A、P-B、P-P、P-E 操作次数(10, 0, 0, 20)ᵀ；各次操作的基准见矩阵列标题。供电操作次数 s_E每次供应 1 kWh2 × 10 + 5 × 0 + 0.2 × 0 + 0 = 20g = B(θ) s：化石 CO2排放到空气，kg20 + 0 + 0 + 6 = 26 kgg = B(θ) s：化石 CH4排放到空气，kg0.05 + 0 + 0 + 0.02 = 0.07 kgI = cᵀgkg CO2-eq / 规定服务1 × 26 + 28.1 × 0.07 = 26 + 1.967 = 27.967 kg CO2-eq / 规定服务涂料 B：f → s → g → I涂料 B · 平整基底 smooth · θ=0.3；每项结果对应同一 100 m²、十年规定服务。计算量与坐标当前值与完整算式最终需求 fkg A、kg B、m² 准备、kWh 电力(0, 6, 0, 0)ᵀA s = f 的解 sP-A、P-B、P-P、P-E 操作次数(0, 6, 0, 30)ᵀ；各次操作的基准见矩阵列标题。供电操作次数 s_E每次供应 1 kWh2 × 0 + 5 × 6 + 0.2 × 0 + 0 = 30g = B(θ) s：化石 CO2排放到空气，kg0 + 18 + 0 + 9 = 27 kgg = B(θ) s：化石 CH4排放到空气，kg0 + 0.06 + 0 + 0.03 = 0.09 kgI = cᵀgkg CO2-eq / 规定服务1 × 27 + 28.1 × 0.09 = 27 + 2.529 = 29.529 kg CO2-eq / 规定服务配对 Δ = I_B − I_A = 29.529 − 27.967 = 1.562 kg CO2-eq / 规定服务。正值为 A 较低，负值为 B 较低。严格排序（整个 θ 域）：未建立全域严格排序。全域容差内：成立，检验所有允许 θ 下 |Δ| ≤ 4。全域容差外：不成立，检验所有允许 θ 下 |Δ| > 4。仅仅“未能证明全域容差内”不能证明全域容差外。共同 θ 下的精确配对范围：[-0.438, 3.562]；独立边际极端相减的保守外包络：[-8.438, 11.562]，后者未保留共同参数关系。θ=0.1438 时 Δ=0；滑块步长未必取到交点。 两种范围的区别见配对判断。固定结果与全域判断以下两种情景的固定值始终保留，不随上方控件变化；打印和无脚本阅读也可复核。数值单位均为 kg CO2-eq / 同一 100 m²、十年规定服务。版本 1.0.0 的精确计算值。范围为共同 θ 的闭区间端点极值，非置信区间。情景共同 θI_AI_BΔ = I_B − I_A平整基底 smooth0.123.96723.529-0.438平整基底 smooth0.327.96729.5291.562平整基底 smooth0.531.96735.5293.562粗糙基底 rough0.123.96731.0917.124粗糙基底 rough0.327.96741.09113.124粗糙基底 rough0.531.96751.09119.124范围与三个独立判断：固定容差为作者预设的 ±4，未获经验或利益相关方认可。情景配对 Δ 范围严格排序全域容差内全域容差外平整基底 smooth[-0.438, 3.562]未建立全域严格排序成立不成立粗糙基底 rough[7.124, 19.124]A 在整个允许范围内严格较低不成立成立等质量并不等于同一服务；用量与排序反转的反例见功能实现。因子 c = (1, 28.1)ᵀ，单位依次为 kg CO2-eq/kg CO2、kg CO2-eq/kg fossil CH4；取IPCC AR6 WGI 表7.15（2025年10月7日勘误）中心值。化石 CH4 为 28.1 ± 10.4，其不确定性未传播，θ 也无概率。GWP100 的物理对象与时间边界见指标含义；引文版本与载体限制见章末注释。下载此版本输入 JSON · 固定服务、模型、因子、情景、共同参数与容差，可逐项重建。",
+        "headings": [
+          {
+            "tag": "H3",
+            "id": "wall-case-reference",
+            "text": "计算表与参数"
+          },
+          {
+            "tag": "H4",
+            "id": "",
+            "text": "当前计算：平整基底 smooth · θ=0.3"
+          },
+          {
+            "tag": "H4",
+            "id": "",
+            "text": "涂料 A：f → s → g → I"
+          },
+          {
+            "tag": "H4",
+            "id": "",
+            "text": "涂料 B：f → s → g → I"
+          },
+          {
+            "tag": "H4",
+            "id": "",
+            "text": "固定结果与全域判断"
+          }
+        ],
+        "links": [
+          {
+            "text": "功能实现",
+            "href": "#功能实现"
+          },
+          {
+            "text": "清单形成",
+            "href": "#清单形成"
+          },
+          {
+            "text": "指标含义",
+            "href": "#指标含义"
+          },
+          {
+            "text": "配对判断",
+            "href": "#配对判断"
+          },
+          {
+            "text": "配对判断",
+            "href": "#配对判断"
+          },
+          {
+            "text": "功能实现",
+            "href": "#功能实现"
+          },
+          {
+            "text": "IPCC AR6 WGI 表7.15（2025年10月7日勘误）",
+            "href": "/sources/#src-case-ipcc-ar6-wgi-errata-2025-10-07"
+          },
+          {
+            "text": "指标含义",
+            "href": "#指标含义"
+          },
+          {
+            "text": "下载此版本输入 JSON",
+            "href": "/downloads/cases/wall-coating-v1.json"
+          }
+        ],
+        "tables": [
+          {
+            "caption": "服务先固定，再由虚构性能和计划重建用量；用量并不等于服务本身。",
+            "rows": [
+              [
+                "替代方案",
+                "每次用量",
+                "假定维持时间",
+                "涂装年份",
+                "100 m² 总量"
+              ],
+              [
+                "涂料 A",
+                "0.05 kg/m²",
+                "5 年/次",
+                "0、5",
+                "100 × 0.05 × 2 = 10 kg"
+              ],
+              [
+                "涂料 B",
+                "0.06 kg/m²",
+                "10 年/次",
+                "0",
+                "100 × 0.06 × 1 = 6 kg"
+              ]
+            ],
+            "cellSemantics": [
+              [
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ]
+            ]
+          },
+          {
+            "caption": "A：正数为产出，负数为中间投入；每列为一次指定操作，行单位保留。s 为这些操作的次数。",
+            "rows": [
+              [
+                "A 的行（单位）",
+                "P-A · 1 kg A / 次操作",
+                "P-B · 1 kg B / 次操作",
+                "P-P · 1 m² 基底准备 / 次操作",
+                "P-E · 1 kWh 电力 / 次操作"
+              ],
+              [
+                "Paint A, kg",
+                "1",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "Paint B, kg",
+                "0",
+                "1",
+                "0",
+                "0"
+              ],
+              [
+                "preparation service, m2",
+                "0",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "electricity, kWh",
+                "-2",
+                "-5",
+                "-0.2",
+                "1"
+              ]
+            ],
+            "cellSemantics": [
+              [
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ]
+            ]
+          },
+          {
+            "caption": "B(θ)：每次指定操作的排放；所有数量及显式零值均为教学假定。",
+            "rows": [
+              [
+                "排放到空气（kg）",
+                "P-A · 1 kg A / 次操作",
+                "P-B · 1 kg B / 次操作",
+                "P-P · 1 m² 基底准备 / 次操作",
+                "P-E · 1 kWh 电力 / 次操作"
+              ],
+              [
+                "化石 CO2",
+                "2",
+                "3",
+                "0.05",
+                "θ = 0.3"
+              ],
+              [
+                "化石 CH4",
+                "0.005",
+                "0.01",
+                "0",
+                "0.001"
+              ]
+            ],
+            "cellSemantics": [
+              [
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ]
+            ]
+          },
+          {
+            "caption": "涂料 A · 平整基底 smooth · θ=0.3；每项结果对应同一 100 m²、十年规定服务。",
+            "rows": [
+              [
+                "计算量与坐标",
+                "当前值与完整算式"
+              ],
+              [
+                "最终需求 fkg A、kg B、m² 准备、kWh 电力",
+                "(10, 0, 0, 0)ᵀ"
+              ],
+              [
+                "A s = f 的解 sP-A、P-B、P-P、P-E 操作次数",
+                "(10, 0, 0, 20)ᵀ；各次操作的基准见矩阵列标题。"
+              ],
+              [
+                "供电操作次数 s_E每次供应 1 kWh",
+                "2 × 10 + 5 × 0 + 0.2 × 0 + 0 = 20"
+              ],
+              [
+                "g = B(θ) s：化石 CO2排放到空气，kg",
+                "20 + 0 + 0 + 6 = 26 kg"
+              ],
+              [
+                "g = B(θ) s：化石 CH4排放到空气，kg",
+                "0.05 + 0 + 0 + 0.02 = 0.07 kg"
+              ],
+              [
+                "I = cᵀgkg CO2-eq / 规定服务",
+                "1 × 26 + 28.1 × 0.07 = 26 + 1.967 = 27.967 kg CO2-eq / 规定服务"
+              ]
+            ],
+            "cellSemantics": [
+              [
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ]
+            ]
+          },
+          {
+            "caption": "涂料 B · 平整基底 smooth · θ=0.3；每项结果对应同一 100 m²、十年规定服务。",
+            "rows": [
+              [
+                "计算量与坐标",
+                "当前值与完整算式"
+              ],
+              [
+                "最终需求 fkg A、kg B、m² 准备、kWh 电力",
+                "(0, 6, 0, 0)ᵀ"
+              ],
+              [
+                "A s = f 的解 sP-A、P-B、P-P、P-E 操作次数",
+                "(0, 6, 0, 30)ᵀ；各次操作的基准见矩阵列标题。"
+              ],
+              [
+                "供电操作次数 s_E每次供应 1 kWh",
+                "2 × 0 + 5 × 6 + 0.2 × 0 + 0 = 30"
+              ],
+              [
+                "g = B(θ) s：化石 CO2排放到空气，kg",
+                "0 + 18 + 0 + 9 = 27 kg"
+              ],
+              [
+                "g = B(θ) s：化石 CH4排放到空气，kg",
+                "0 + 0.06 + 0 + 0.03 = 0.09 kg"
+              ],
+              [
+                "I = cᵀgkg CO2-eq / 规定服务",
+                "1 × 27 + 28.1 × 0.09 = 27 + 2.529 = 29.529 kg CO2-eq / 规定服务"
+              ]
+            ],
+            "cellSemantics": [
+              [
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ]
+            ]
+          },
+          {
+            "caption": "版本 1.0.0 的精确计算值。范围为共同 θ 的闭区间端点极值，非置信区间。",
+            "rows": [
+              [
+                "情景",
+                "共同 θ",
+                "I_A",
+                "I_B",
+                "Δ = I_B − I_A"
+              ],
+              [
+                "平整基底 smooth",
+                "0.1",
+                "23.967",
+                "23.529",
+                "-0.438"
+              ],
+              [
+                "平整基底 smooth",
+                "0.3",
+                "27.967",
+                "29.529",
+                "1.562"
+              ],
+              [
+                "平整基底 smooth",
+                "0.5",
+                "31.967",
+                "35.529",
+                "3.562"
+              ],
+              [
+                "粗糙基底 rough",
+                "0.1",
+                "23.967",
+                "31.091",
+                "7.124"
+              ],
+              [
+                "粗糙基底 rough",
+                "0.3",
+                "27.967",
+                "41.091",
+                "13.124"
+              ],
+              [
+                "粗糙基底 rough",
+                "0.5",
+                "31.967",
+                "51.091",
+                "19.124"
+              ]
+            ],
+            "cellSemantics": [
+              [
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ]
+            ]
+          },
+          {
+            "caption": "范围与三个独立判断：固定容差为作者预设的 ±4，未获经验或利益相关方认可。",
+            "rows": [
+              [
+                "情景",
+                "配对 Δ 范围",
+                "严格排序",
+                "全域容差内",
+                "全域容差外"
+              ],
+              [
+                "平整基底 smooth",
+                "[-0.438, 3.562]",
+                "未建立全域严格排序",
+                "成立",
+                "不成立"
+              ],
+              [
+                "粗糙基底 rough",
+                "[7.124, 19.124]",
+                "A 在整个允许范围内严格较低",
+                "不成立",
+                "成立"
+              ]
+            ],
+            "cellSemantics": [
+              [
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "book": {
+        "text": "计算表与参数墙面涂装算例 · 数据版本 1.0.0 · 数值为教学假定规定服务：100 m² 干燥室内墙面，在 [0,10) 年内连续保持指定均匀颜色与至少 0.98 的假定遮盖率，不含第 10 年时点的重涂。性能、投入、排放量、基底适配、θ 范围和容差均为作者虚构；表征因子另有具名来源。表格供查阅与复算；推理见功能实现、清单形成、指标含义与配对判断。服务先固定，再由虚构性能和计划重建用量；用量并不等于服务本身。替代方案每次用量假定维持时间涂装年份100 m² 总量涂料 A0.05 kg/m²5 年/次0、5100 × 0.05 × 2 = 10 kg涂料 B0.06 kg/m²10 年/次0100 × 0.06 × 1 = 6 kg假定无损耗、瞬时重涂且无停用、性能与技术十年不变、A 重涂无需先去除旧涂层。施工设备、劳动、处置与回收等被刻意省略；只追踪两种排放和一个气候指标。未覆盖的活动、流和影响类别不能视为零，也不能由此推断实际涂料性能或完整生命周期结论。基底初始情景平整基底 smooth粗糙基底 rough共同 θ：0.3 kg CO2/kWhθ ∈ [0.1, 0.5]；同一个值同时用于 A、B。它是不确定但固定的电力排放强度参数，不是两次独立抽样。容差与表征因子由本版本固定。当前计算：平整基底 smooth · θ=0.3已有平整完好基底：A、B 均无准备需求。 情景版本 1.0.0-S0。A：27.967；B：29.529；配对 Δ：1.562 kg CO2-eq / 规定服务。配对差值 Δ = I_B − I_A 与共同 θ横轴 θ 从 0.1 到 0.5，单位 kg CO2/kWh；纵轴为每项规定服务的 kg CO2-eq。阴影为固定 ±4 容差带。实线为平整基底，虚线为粗糙基底，圆点为当前场景与 θ。平整基底 smooth范围 [-0.438, 3.562]；粗糙基底 rough范围 [7.124, 19.124]。-40419.1240.10.30.5Δ · kg CO2-eq / 规定服务共同 θ · kg CO2/kWh固定容差带 ±4实线：平整；虚线：粗糙；圆点：当前值。平整基底 smooth，θ=0.3，Δ=1.562。连线是此固定模型的仿射关系，范围没有概率含义。A：正数为产出，负数为中间投入；每列为一次指定操作，行单位保留。s 为这些操作的次数。A 的行（单位）P-A · 1 kg A / 次操作P-B · 1 kg B / 次操作P-P · 1 m² 基底准备 / 次操作P-E · 1 kWh 电力 / 次操作Paint A, kg1000Paint B, kg0100preparation service, m20010electricity, kWh-2-5-0.21B(θ)：每次指定操作的排放；所有数量及显式零值均为教学假定。排放到空气（kg）P-A · 1 kg A / 次操作P-B · 1 kg B / 次操作P-P · 1 m² 基底准备 / 次操作P-E · 1 kWh 电力 / 次操作化石 CO2230.05θ = 0.3化石 CH40.0050.0100.001涂料和基底准备的非电力负担排除 P-E 的负担；电力供应统一在 P-E 中计入。化石 CH4 的氧化 CO2 不再单独加一次。涂料 A：f → s → g → I涂料 A · 平整基底 smooth · θ=0.3；每项结果对应同一 100 m²、十年规定服务。计算量与坐标当前值与完整算式最终需求 fkg A、kg B、m² 准备、kWh 电力(10, 0, 0, 0)ᵀA s = f 的解 sP-A、P-B、P-P、P-E 操作次数(10, 0, 0, 20)ᵀ；各次操作的基准见矩阵列标题。供电操作次数 s_E每次供应 1 kWh2 × 10 + 5 × 0 + 0.2 × 0 + 0 = 20g = B(θ) s：化石 CO2排放到空气，kg20 + 0 + 0 + 6 = 26 kgg = B(θ) s：化石 CH4排放到空气，kg0.05 + 0 + 0 + 0.02 = 0.07 kgI = cᵀgkg CO2-eq / 规定服务1 × 26 + 28.1 × 0.07 = 26 + 1.967 = 27.967 kg CO2-eq / 规定服务涂料 B：f → s → g → I涂料 B · 平整基底 smooth · θ=0.3；每项结果对应同一 100 m²、十年规定服务。计算量与坐标当前值与完整算式最终需求 fkg A、kg B、m² 准备、kWh 电力(0, 6, 0, 0)ᵀA s = f 的解 sP-A、P-B、P-P、P-E 操作次数(0, 6, 0, 30)ᵀ；各次操作的基准见矩阵列标题。供电操作次数 s_E每次供应 1 kWh2 × 0 + 5 × 6 + 0.2 × 0 + 0 = 30g = B(θ) s：化石 CO2排放到空气，kg0 + 18 + 0 + 9 = 27 kgg = B(θ) s：化石 CH4排放到空气，kg0 + 0.06 + 0 + 0.03 = 0.09 kgI = cᵀgkg CO2-eq / 规定服务1 × 27 + 28.1 × 0.09 = 27 + 2.529 = 29.529 kg CO2-eq / 规定服务配对 Δ = I_B − I_A = 29.529 − 27.967 = 1.562 kg CO2-eq / 规定服务。正值为 A 较低，负值为 B 较低。严格排序（整个 θ 域）：未建立全域严格排序。全域容差内：成立，检验所有允许 θ 下 |Δ| ≤ 4。全域容差外：不成立，检验所有允许 θ 下 |Δ| > 4。仅仅“未能证明全域容差内”不能证明全域容差外。共同 θ 下的精确配对范围：[-0.438, 3.562]；独立边际极端相减的保守外包络：[-8.438, 11.562]，后者未保留共同参数关系。θ=0.1438 时 Δ=0；滑块步长未必取到交点。 两种范围的区别见配对判断。固定结果与全域判断以下两种情景的固定值始终保留，不随上方控件变化；打印和无脚本阅读也可复核。数值单位均为 kg CO2-eq / 同一 100 m²、十年规定服务。版本 1.0.0 的精确计算值。范围为共同 θ 的闭区间端点极值，非置信区间。情景共同 θI_AI_BΔ = I_B − I_A平整基底 smooth0.123.96723.529-0.438平整基底 smooth0.327.96729.5291.562平整基底 smooth0.531.96735.5293.562粗糙基底 rough0.123.96731.0917.124粗糙基底 rough0.327.96741.09113.124粗糙基底 rough0.531.96751.09119.124范围与三个独立判断：固定容差为作者预设的 ±4，未获经验或利益相关方认可。情景配对 Δ 范围严格排序全域容差内全域容差外平整基底 smooth[-0.438, 3.562]未建立全域严格排序成立不成立粗糙基底 rough[7.124, 19.124]A 在整个允许范围内严格较低不成立成立等质量并不等于同一服务；用量与排序反转的反例见功能实现。因子 c = (1, 28.1)ᵀ，单位依次为 kg CO2-eq/kg CO2、kg CO2-eq/kg fossil CH4；取IPCC AR6 WGI 表7.15（2025年10月7日勘误）中心值。化石 CH4 为 28.1 ± 10.4，其不确定性未传播，θ 也无概率。GWP100 的物理对象与时间边界见指标含义；引文版本与载体限制见章末注释。下载此版本输入 JSON · 固定服务、模型、因子、情景、共同参数与容差，可逐项重建。",
+        "headings": [
+          {
+            "tag": "H4",
+            "id": "print-unit-2f646f63732f626f6f6b2f77616c6c2d736572766963652d746f2d636f6d70617269736f6e-wall-case-reference",
+            "text": "计算表与参数"
+          },
+          {
+            "tag": "H5",
+            "id": "",
+            "text": "当前计算：平整基底 smooth · θ=0.3"
+          },
+          {
+            "tag": "H5",
+            "id": "",
+            "text": "涂料 A：f → s → g → I"
+          },
+          {
+            "tag": "H5",
+            "id": "",
+            "text": "涂料 B：f → s → g → I"
+          },
+          {
+            "tag": "H5",
+            "id": "",
+            "text": "固定结果与全域判断"
+          }
+        ],
+        "links": [
+          {
+            "text": "功能实现",
+            "href": "#print-unit-2f646f63732f626f6f6b2f77616c6c2d736572766963652d746f2d636f6d70617269736f6e-功能实现"
+          },
+          {
+            "text": "清单形成",
+            "href": "#print-unit-2f646f63732f626f6f6b2f77616c6c2d736572766963652d746f2d636f6d70617269736f6e-清单形成"
+          },
+          {
+            "text": "指标含义",
+            "href": "#print-unit-2f646f63732f626f6f6b2f77616c6c2d736572766963652d746f2d636f6d70617269736f6e-指标含义"
+          },
+          {
+            "text": "配对判断",
+            "href": "#print-unit-2f646f63732f626f6f6b2f77616c6c2d736572766963652d746f2d636f6d70617269736f6e-配对判断"
+          },
+          {
+            "text": "配对判断",
+            "href": "#print-unit-2f646f63732f626f6f6b2f77616c6c2d736572766963652d746f2d636f6d70617269736f6e-配对判断"
+          },
+          {
+            "text": "功能实现",
+            "href": "#print-unit-2f646f63732f626f6f6b2f77616c6c2d736572766963652d746f2d636f6d70617269736f6e-功能实现"
+          },
+          {
+            "text": "IPCC AR6 WGI 表7.15（2025年10月7日勘误）",
+            "href": "/sources/#src-case-ipcc-ar6-wgi-errata-2025-10-07"
+          },
+          {
+            "text": "指标含义",
+            "href": "#print-unit-2f646f63732f626f6f6b2f77616c6c2d736572766963652d746f2d636f6d70617269736f6e-指标含义"
+          },
+          {
+            "text": "下载此版本输入 JSON",
+            "href": "/downloads/cases/wall-coating-v1.json"
+          }
+        ],
+        "tables": [
+          {
+            "caption": "服务先固定，再由虚构性能和计划重建用量；用量并不等于服务本身。",
+            "rows": [
+              [
+                "替代方案",
+                "每次用量",
+                "假定维持时间",
+                "涂装年份",
+                "100 m² 总量"
+              ],
+              [
+                "涂料 A",
+                "0.05 kg/m²",
+                "5 年/次",
+                "0、5",
+                "100 × 0.05 × 2 = 10 kg"
+              ],
+              [
+                "涂料 B",
+                "0.06 kg/m²",
+                "10 年/次",
+                "0",
+                "100 × 0.06 × 1 = 6 kg"
+              ]
+            ],
+            "cellSemantics": [
+              [
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ]
+            ]
+          },
+          {
+            "caption": "A：正数为产出，负数为中间投入；每列为一次指定操作，行单位保留。s 为这些操作的次数。",
+            "rows": [
+              [
+                "A 的行（单位）",
+                "P-A · 1 kg A / 次操作",
+                "P-B · 1 kg B / 次操作",
+                "P-P · 1 m² 基底准备 / 次操作",
+                "P-E · 1 kWh 电力 / 次操作"
+              ],
+              [
+                "Paint A, kg",
+                "1",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "Paint B, kg",
+                "0",
+                "1",
+                "0",
+                "0"
+              ],
+              [
+                "preparation service, m2",
+                "0",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "electricity, kWh",
+                "-2",
+                "-5",
+                "-0.2",
+                "1"
+              ]
+            ],
+            "cellSemantics": [
+              [
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ]
+            ]
+          },
+          {
+            "caption": "B(θ)：每次指定操作的排放；所有数量及显式零值均为教学假定。",
+            "rows": [
+              [
+                "排放到空气（kg）",
+                "P-A · 1 kg A / 次操作",
+                "P-B · 1 kg B / 次操作",
+                "P-P · 1 m² 基底准备 / 次操作",
+                "P-E · 1 kWh 电力 / 次操作"
+              ],
+              [
+                "化石 CO2",
+                "2",
+                "3",
+                "0.05",
+                "θ = 0.3"
+              ],
+              [
+                "化石 CH4",
+                "0.005",
+                "0.01",
+                "0",
+                "0.001"
+              ]
+            ],
+            "cellSemantics": [
+              [
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ]
+            ]
+          },
+          {
+            "caption": "涂料 A · 平整基底 smooth · θ=0.3；每项结果对应同一 100 m²、十年规定服务。",
+            "rows": [
+              [
+                "计算量与坐标",
+                "当前值与完整算式"
+              ],
+              [
+                "最终需求 fkg A、kg B、m² 准备、kWh 电力",
+                "(10, 0, 0, 0)ᵀ"
+              ],
+              [
+                "A s = f 的解 sP-A、P-B、P-P、P-E 操作次数",
+                "(10, 0, 0, 20)ᵀ；各次操作的基准见矩阵列标题。"
+              ],
+              [
+                "供电操作次数 s_E每次供应 1 kWh",
+                "2 × 10 + 5 × 0 + 0.2 × 0 + 0 = 20"
+              ],
+              [
+                "g = B(θ) s：化石 CO2排放到空气，kg",
+                "20 + 0 + 0 + 6 = 26 kg"
+              ],
+              [
+                "g = B(θ) s：化石 CH4排放到空气，kg",
+                "0.05 + 0 + 0 + 0.02 = 0.07 kg"
+              ],
+              [
+                "I = cᵀgkg CO2-eq / 规定服务",
+                "1 × 26 + 28.1 × 0.07 = 26 + 1.967 = 27.967 kg CO2-eq / 规定服务"
+              ]
+            ],
+            "cellSemantics": [
+              [
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ]
+            ]
+          },
+          {
+            "caption": "涂料 B · 平整基底 smooth · θ=0.3；每项结果对应同一 100 m²、十年规定服务。",
+            "rows": [
+              [
+                "计算量与坐标",
+                "当前值与完整算式"
+              ],
+              [
+                "最终需求 fkg A、kg B、m² 准备、kWh 电力",
+                "(0, 6, 0, 0)ᵀ"
+              ],
+              [
+                "A s = f 的解 sP-A、P-B、P-P、P-E 操作次数",
+                "(0, 6, 0, 30)ᵀ；各次操作的基准见矩阵列标题。"
+              ],
+              [
+                "供电操作次数 s_E每次供应 1 kWh",
+                "2 × 0 + 5 × 6 + 0.2 × 0 + 0 = 30"
+              ],
+              [
+                "g = B(θ) s：化石 CO2排放到空气，kg",
+                "0 + 18 + 0 + 9 = 27 kg"
+              ],
+              [
+                "g = B(θ) s：化石 CH4排放到空气，kg",
+                "0 + 0.06 + 0 + 0.03 = 0.09 kg"
+              ],
+              [
+                "I = cᵀgkg CO2-eq / 规定服务",
+                "1 × 27 + 28.1 × 0.09 = 27 + 2.529 = 29.529 kg CO2-eq / 规定服务"
+              ]
+            ],
+            "cellSemantics": [
+              [
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ]
+            ]
+          },
+          {
+            "caption": "版本 1.0.0 的精确计算值。范围为共同 θ 的闭区间端点极值，非置信区间。",
+            "rows": [
+              [
+                "情景",
+                "共同 θ",
+                "I_A",
+                "I_B",
+                "Δ = I_B − I_A"
+              ],
+              [
+                "平整基底 smooth",
+                "0.1",
+                "23.967",
+                "23.529",
+                "-0.438"
+              ],
+              [
+                "平整基底 smooth",
+                "0.3",
+                "27.967",
+                "29.529",
+                "1.562"
+              ],
+              [
+                "平整基底 smooth",
+                "0.5",
+                "31.967",
+                "35.529",
+                "3.562"
+              ],
+              [
+                "粗糙基底 rough",
+                "0.1",
+                "23.967",
+                "31.091",
+                "7.124"
+              ],
+              [
+                "粗糙基底 rough",
+                "0.3",
+                "27.967",
+                "41.091",
+                "13.124"
+              ],
+              [
+                "粗糙基底 rough",
+                "0.5",
+                "31.967",
+                "51.091",
+                "19.124"
+              ]
+            ],
+            "cellSemantics": [
+              [
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ]
+            ]
+          },
+          {
+            "caption": "范围与三个独立判断：固定容差为作者预设的 ±4，未获经验或利益相关方认可。",
+            "rows": [
+              [
+                "情景",
+                "配对 Δ 范围",
+                "严格排序",
+                "全域容差内",
+                "全域容差外"
+              ],
+              [
+                "平整基底 smooth",
+                "[-0.438, 3.562]",
+                "未建立全域严格排序",
+                "成立",
+                "不成立"
+              ],
+              [
+                "粗糙基底 rough",
+                "[7.124, 19.124]",
+                "A 在整个允许范围内严格较低",
+                "不成立",
+                "成立"
+              ]
+            ],
+            "cellSemantics": [
+              [
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                },
+                {
+                  "tag": "TH",
+                  "scope": "col"
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ],
+              [
+                {
+                  "tag": "TH",
+                  "scope": "row"
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                },
+                {
+                  "tag": "TD",
+                  "scope": null
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "reader": {
+    "status": "reviewed",
+    "artifactSha256": "fabed9d033ce7e4645d872f5e0850a167878af7039de24e4d07eb16c4c4de30a",
+    "bodyParagraphs": 22,
+    "notes": 22,
+    "tables": 7,
+    "scope": "Complete current MDX Prose order and authored navigation, actual canonical text, actual compiled widget and annotations. Semantic reading omits separately checked number spans; SVG title/description and all actual text labels retained. Full app DOM, visual graph/layout and interactive states need separate qualification.",
+    "reviewKind": "independent-agent-reader-review",
+    "reviewReceiptSha256": "73984d33905a22a0d82590985be873c0d8c4b16d7898e5eeed1f8b06bedaeebc",
+    "result": "No material understanding or argument finding; full22body/7tables/22notes read. Visual and interactive qualification is separate."
+  },
+  "qualification": {
+    "sourceSemanticReview": "reviewed",
+    "fullAppOutput": "Separate required gate. Initial working source build/export verified; exact clean-source evidence is recorded in the task, not granted by this fixed receipt.",
+    "actualBrowser": "Separate required gate, not certified by this source/reader receipt.",
+    "scientificExpertApproval": false,
+    "formalPdf": false,
+    "sourceSemanticReceiptSha256": "18d5fa27e1016982178078a373c5325e2b0ad2a684d34f96c7d184be27e4cc3c",
+    "engineeringScopeReview": "reviewed; historical calculator-scope E1 corrected and rechecked",
+    "engineeringReceiptSha256": "c82eede437b90b4dbc99cdbf2a78f87623c0d17f1db1a135ff7b7d9e3fdae076"
+  }
+}
