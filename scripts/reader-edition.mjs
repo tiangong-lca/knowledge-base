@@ -1,3 +1,4 @@
+import { assertDataApplicabilityRegistration, dataApplicabilityKey, dataApplicabilityRoutes, dataApplicabilityBookHref } from './reader-data-applicability.mjs';
 import { assertClimateAssemblyRegistration, climateAssemblyKey, climateAssemblyRoutes, climateAssemblyBookHref } from './reader-climate-assembly.mjs';
 import { assertClosingSynthesisRegistration, closingSynthesisKey, closingSynthesisRoutes, closingSynthesisBookHref } from './reader-closing-synthesis.mjs';
 import { getPresentationUnits, readerParts } from './reader-numbering.mjs';
@@ -12,7 +13,7 @@ import { collectChapterClaimOccurrences, printUnitAnchor } from './reader-book.m
 
 // Main sets this current-roster pin after independently qualifying the actual edition.
 /** @type {string|null} */
-export const currentEditionRosterDigest = "3aab1ef984c017642e36626b2c5738c739dd62c92473f021d257f882b5c27fb9";
+export const currentEditionRosterDigest = "154057d78802d39927500b5f453ea5865eb7321f80a70c31463573d949a7105b";
 export const frameworkUnitKey = 'book-framework-responsibilities';
 export const frameworkManuscript = '/monograph/framework-responsibilities';
 export const frameworkAppendix = '/docs/appendices/cml-framework-calculations';
@@ -31,6 +32,7 @@ export function currentEditionKeys(edition, availableSources, baseline, placemen
   const units = edition.units;
   if (!Array.isArray(units) || new Set(units.map(unit => unit.key)).size !== units.length)
     throw new Error('Book edition has missing or duplicate units');
+  assertDataApplicabilityRegistration(edition);
   assertClimateAssemblyRegistration(edition);
   assertJointProductionRegistration(edition);
   assertClosingSynthesisRegistration(edition);
@@ -57,7 +59,7 @@ export function currentEditionKeys(edition, availableSources, baseline, placemen
   const navigation = new Set(['/docs/appendices']);
   for (const source of available) if (!navigation.has(source) && !covered.has(source)) throw new Error(`Reader source has no current book registration: ${source}`);
   const retained = [...placements.frontMatter, ...baseline.pages.filter(page => page.printOrdinal !== undefined).sort((a,b) => a.printOrdinal-b.printOrdinal).map(page => page.route), ...(placements.printAdditions ?? []).map(unit => unit.route)];
-  const expected = retained.filter(route => route !== climateAssemblyRoutes[1] && route !== closingSynthesisRoutes[1] && route !== jointProductionRoutes[1] && route !== expectedCoverage[1] && route !== functionalReferenceSupplement && route !== '/docs/flows' && route !== '/docs/characterization').map(route => route === climateAssemblyRoutes[0] ? climateAssemblyKey : route === closingSynthesisRoutes[0] ? closingSynthesisKey : route === expectedCoverage[0] ? frameworkUnitKey : route === jointProductionRoutes[0] ? jointProductionKey : route);
+  const expected = retained.filter(route => route !== dataApplicabilityRoutes[1] && route !== climateAssemblyRoutes[1] && route !== closingSynthesisRoutes[1] && route !== jointProductionRoutes[1] && route !== expectedCoverage[1] && route !== functionalReferenceSupplement && route !== '/docs/flows' && route !== '/docs/characterization').map(route => route === dataApplicabilityRoutes[0] ? dataApplicabilityKey : route === climateAssemblyRoutes[0] ? climateAssemblyKey : route === closingSynthesisRoutes[0] ? closingSynthesisKey : route === expectedCoverage[0] ? frameworkUnitKey : route === jointProductionRoutes[0] ? jointProductionKey : route);
   if (JSON.stringify(units.map(unit => unit.key).sort()) !== JSON.stringify([...expected].sort())) throw new Error('Book edition omitted or misclassified an accepted retained unit');
   const presentation = getPresentationUnits('book');
   if (JSON.stringify(units.map(({key,source,kind})=>({key,source,kind}))) !== JSON.stringify(presentation.map(({key,source,kind})=>({key,source,kind})))) throw new Error('Book edition differs from the explicit current seven-part numbered order');
@@ -65,13 +67,13 @@ export function currentEditionKeys(edition, availableSources, baseline, placemen
     const declared = presentation.find(row => row.key === unit.key);
     if (unit.kind === 'chapter' && unit.part !== readerParts.find(part => part.number === declared.part)?.title) throw new Error(`Book unit has incorrect current part: ${unit.key}`);
   }
-  for (const unit of units.filter(unit => unit.key !== climateAssemblyKey && unit.key !== closingSynthesisKey && unit.key !== frameworkUnitKey && unit.key !== jointProductionKey)) {
+  for (const unit of units.filter(unit => unit.key !== dataApplicabilityKey && unit.key !== climateAssemblyKey && unit.key !== closingSynthesisKey && unit.key !== frameworkUnitKey && unit.key !== jointProductionKey)) {
     const kind = placements.frontMatter.includes(unit.key) ? 'front-matter' : unit.key.startsWith('/docs/book/') ? 'chapter' : unit.key.startsWith('/docs/appendices/') ? 'appendix' : 'topic';
     if (unit.source !== unit.key || unit.kind !== kind) throw new Error(`Book unit has incorrect source or kind: ${unit.key}`);
   }
   const roster = units.map(({key,source,kind})=>({key,source,kind}));
   if (digest(roster) !== currentEditionRosterDigest)
-    throw new Error('Current reading roster differs from the independently accepted 40-unit/33-chapter climate-assembly edition');
+    throw new Error('Current reading roster differs from the independently accepted 39-unit/32-chapter data-applicability edition');
   return units.map(unit => unit.key);
 }
 
@@ -157,7 +159,7 @@ export function publishedHeadingEntries(history) {
 /** Qualified links for the bounded assembly; ambiguous old scopes keep their website meaning. */
 export function frameworkBookHref(href, currentKey) {
   if (typeof href !== 'string') return href;
-  href = climateAssemblyBookHref(closingSynthesisBookHref(jointProductionBookHref(href)), currentKey);
+  href = dataApplicabilityBookHref(climateAssemblyBookHref(closingSynthesisBookHref(jointProductionBookHref(href)), currentKey), currentKey);
   if (href.startsWith('/print/#')) return href.slice('/print/'.length);
   const [path,fragment] = href.split('#');
   const route = path.replace(/\/$/,'');

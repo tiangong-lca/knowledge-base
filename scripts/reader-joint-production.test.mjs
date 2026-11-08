@@ -73,7 +73,7 @@ test('B10 original36,29/7 scopes and fourteen independently captured addresses a
  for(const change of [copy=>copy.addresses.pop(),copy=>copy.addresses[0].id='other',copy=>copy.manifestSha256='0'.repeat(64)]){const copy=structuredClone(history);change(copy);assert.throws(()=>assertJointProductionHeadingHistory(copy),/fourteen actual/);}
 });
 test('B10 registered book/source coverage is mandatory independently of coordinated source removal',()=>{
- assertJointProductionRegistration(edition);const available=edition.units.flatMap(unit=>[unit.source,...unit.coverage??[]]);assert.equal(currentEditionKeys(edition,available,baseline,placements).length,40);
+ assertJointProductionRegistration(edition);const available=edition.units.flatMap(unit=>[unit.source,...unit.coverage??[]]);assert.equal(currentEditionKeys(edition,available,baseline,placements).length,39);
  for(const change of [copy=>copy.units=copy.units.filter(unit=>unit.key!==key),copy=>copy.units.find(unit=>unit.key===key).coverage.pop(),copy=>copy.units.find(unit=>unit.key===key).source=routes[0],copy=>copy.units.find(unit=>unit.key===key).sections.reverse()]){const copy=structuredClone(edition);change(copy);assert.throws(()=>currentEditionKeys(copy,available.filter(route=>route!==manuscript),baseline,placements),/B10/);}
  assert.throws(()=>currentEditionKeys(edition,[...available,'/monograph/unknown'],baseline,placements),/no current book registration/);
 });

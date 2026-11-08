@@ -1,0 +1,1139 @@
+{
+  "version": 1,
+  "baseCommit": "46b99baf16fadaae7a90ca68d003fc4d3652359f",
+  "status": "Original pre-authoring snapshot; not manuscript acceptance or new original reading.",
+  "sourceFiles": {
+    "content/docs/book/database-fitness-and-documentation.mdx": {
+      "sha256": "9b95083969bfc319fd4dbe06483e4c8a1e36d78a4b4a66b66c49237356043326",
+      "text": "---\ntitle: 数据能够取得之后，还需要判断什么\ndescription: 以2011年数据库指导的具体建议解释数据集表示对象、质量维度、缺口和聚合文档。\n---\n\n## 数据链中的用途与表示对象\n\n<Prose ids=\"cl-db2011-user-and-manager cl-db2011-represented-object\" />\n\n## 质量维度与缺失信息\n\n<Prose ids=\"cl-db2011-representativeness-and-precision cl-db2011-missing-and-zero\" />\n\n## 让数值和汇总结果可以追问\n\n<Prose ids=\"cl-db2011-documenting-number cl-db2011-aggregation-information\" />\n"
+    },
+    "content/docs/book/review-support-and-version-boundaries.mdx": {
+      "sha256": "27d55f784ad3918edd0a91b7fb28b954b5105550b31961430477f6195509b714",
+      "text": "---\ntitle: 审查和推荐怎样保留自己的边界\ndescription: 区分数据集审查、局部验证含义、推荐支持程度以及指南自身评审和版本更新的局限。\n---\n\n## 先确认审查的准则和范围\n\n<Prose ids=\"cl-db2011-review-relative-to-criteria cl-db2011-validation-context cl-db2011-review-questions\" />\n\n## 推荐的支持程度与评审覆盖\n\n<Prose ids=\"cl-db2011-recommendation-strength cl-db2011-review-of-guidance\" />\n\n## 版本与信任\n\n<Prose ids=\"cl-db2011-versioned-confidence\" />\n"
+    }
+  },
+  "orderedClaimIds": [
+    "cl-db2011-user-and-manager",
+    "cl-db2011-represented-object",
+    "cl-db2011-representativeness-and-precision",
+    "cl-db2011-missing-and-zero",
+    "cl-db2011-documenting-number",
+    "cl-db2011-aggregation-information",
+    "cl-db2011-review-relative-to-criteria",
+    "cl-db2011-validation-context",
+    "cl-db2011-review-questions",
+    "cl-db2011-recommendation-strength",
+    "cl-db2011-review-of-guidance",
+    "cl-db2011-versioned-confidence"
+  ],
+  "sectionScopes": {
+    "/docs/book/database-fitness-and-documentation": [
+      {
+        "title": "数据链中的用途与表示对象",
+        "claimIds": [
+          "cl-db2011-user-and-manager",
+          "cl-db2011-represented-object"
+        ]
+      },
+      {
+        "title": "质量维度与缺失信息",
+        "claimIds": [
+          "cl-db2011-representativeness-and-precision",
+          "cl-db2011-missing-and-zero"
+        ]
+      },
+      {
+        "title": "让数值和汇总结果可以追问",
+        "claimIds": [
+          "cl-db2011-documenting-number",
+          "cl-db2011-aggregation-information"
+        ]
+      }
+    ],
+    "/docs/book/review-support-and-version-boundaries": [
+      {
+        "title": "先确认审查的准则和范围",
+        "claimIds": [
+          "cl-db2011-review-relative-to-criteria",
+          "cl-db2011-validation-context",
+          "cl-db2011-review-questions"
+        ]
+      },
+      {
+        "title": "推荐的支持程度与评审覆盖",
+        "claimIds": [
+          "cl-db2011-recommendation-strength",
+          "cl-db2011-review-of-guidance"
+        ]
+      },
+      {
+        "title": "版本与信任",
+        "claimIds": [
+          "cl-db2011-versioned-confidence"
+        ]
+      }
+    ]
+  },
+  "claims": [
+    {
+      "id": "cl-db2011-user-and-manager",
+      "text": "取得一份数据库中的数据，还需要知道它为什么被接纳，以及是否适合眼前的问题。2011 年数据库指导把管理者放在数据提供者与使用者之间：管理者维护共同条件，开发者说明数据怎样形成，使用者则根据研究目的判断适用性。这些责任相连，却回答不同问题；一个数据库内部一致，并没有单独完成每项具体研究的选择。",
+      "kind": "interpretation",
+      "scope": "UNEP2011 数据链角色与使用责任",
+      "evidenceIds": [
+        "ev-db2011-audience",
+        "ev-db2011-review-purpose"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db2011-audience",
+          "relation": "supports",
+          "rationale": "pp44–46说明主要受众及数据链角色，适用性仍取决于研究目标范围。"
+        },
+        {
+          "evidenceId": "ev-db2011-review-purpose",
+          "relation": "supports",
+          "rationale": "pp89–90将数据库要求与使用者目的分成审查的两个目标，限定入库状态能表达什么。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "不是对任何实际数据库或数据集的质量认证。"
+      ],
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-04",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-db2011-represented-object",
+      "text": "数据集首先应说明自己代表什么过程。指南要求开发者明确技术、时期、地域、活动边界和预期用途；这一目标范围与完整 LCA 的设定相似，但尺度较小。用户因而需要把“这个数据描述什么”与“我的系统需要什么”放在一起检查。同名过程只是查找的入口，尚未提供二者适合连接的全部理由。",
+      "kind": "interpretation",
+      "scope": "该指南单位过程数据集的目标范围",
+      "evidenceIds": [
+        "ev-db2011-goal",
+        "ev-db2011-validation"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db2011-goal",
+          "relation": "supports",
+          "rationale": "pp54–55以较小尺度的表示对象和目标范围组织数据集开发，列出时空技术及用途条件。"
+        },
+        {
+          "evidenceId": "ev-db2011-validation",
+          "relation": "qualifies",
+          "rationale": "p61要求数据集范围与研究范围相容，不能只凭过程名称决定用途。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "同名过程不证明数据库连接适用；指南的说明也不是独立核验的 ISO 条文。"
+      ],
+      "conceptIds": [
+        "cn-data-fitness"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-04",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-db2011-representativeness-and-precision",
+      "text": "代表性和精密程度因此也不能压成同一个“质量好”。前者要问数据反映了哪个目标总体，后者关心数值的变动情况。一个数值表现稳定，并不能仅凭这一点说明它代表当前需要的技术、地区或时期。质量指标的作用，是把不同疑问分别呈现出来，让数据选择能够回到研究对象，而不是用一个笼统标签代替判断。",
+      "kind": "synthesis",
+      "scope": "由本版数据质量维度和数据集范围形成的解释",
+      "evidenceIds": [
+        "ev-db2011-quality-dimensions",
+        "ev-db2011-goal"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db2011-quality-dimensions",
+          "relation": "supports",
+          "rationale": "Table4.1把precision与representativeness列为不同维度，后者明确关涉时空技术覆盖。"
+        },
+        {
+          "evidenceId": "ev-db2011-goal",
+          "relation": "supports",
+          "rationale": "数据集目标范围指定它应表示的技术、时间和地区，为代表性判断提供对象。"
+        }
+      ],
+      "premiseIds": [
+        "cl-db2011-user-and-manager",
+        "cl-db2011-represented-object"
+      ],
+      "caveats": [
+        "表格是该指南的适配版本，不能代替 ISO 原表；质量维度的说明不提供实际精度或代表性测量。"
+      ],
+      "reasoning": "稳定性和目标总体相符回答不同问题，因此一个维度的表现不足以单独确定另一个维度。",
+      "conceptIds": [
+        "cn-data-fitness"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-04",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-db2011-missing-and-zero",
+      "text": "完整性还要联系准备进行的计算。指南提醒，清单缺少必要的基本流时，某些影响计算可能无法开展；并建议数据格式和软件分开表达缺失与真实零值。缺少记录没有告诉用户真实数量是多少。保留这种信息状态，用户才知道结果受到怎样的覆盖限制，以及应补数据、改用途，还是继续分析已有信息。",
+      "kind": "interpretation",
+      "scope": "UNEP2011 对LCI数据缺口的建议",
+      "evidenceIds": [
+        "ev-db2011-aggregation-gaps",
+        "ev-db2011-validation"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db2011-aggregation-gaps",
+          "relation": "supports",
+          "rationale": "p89把LCI缺口与影响计算适用性相连，并明确建议区分缺失和数值零。"
+        },
+        {
+          "evidenceId": "ev-db2011-validation",
+          "relation": "context",
+          "rationale": "pp61–62将完整性检查与所述目标范围相连，约束完整性判断的用途。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "该建议讨论LCI数据缺失；没有直接规定某种LCIA因子四状态数据模型。"
+      ],
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-04",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-db2011-documenting-number",
+      "text": "文档让一个数值的形成过程可被追问：它来自测量、计算还是估计，采用什么来源、边界和固定假设。运输负载、电力组合等模型条件，也可能改变读数的含义。指南同时承认透明、保密与实际工作量之间存在取舍。因此，值得检查的是现有文档能否解释关键选择、暴露局限，而不仅是字段填写得是否整齐。",
+      "kind": "interpretation",
+      "scope": "UNEP2011 文档建议及透明度取舍",
+      "evidenceIds": [
+        "ev-db2011-documentation"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db2011-documentation",
+          "relation": "supports",
+          "rationale": "pp86–88分别讨论文档取舍、来源类别及固定输入/计算约定，支撑追踪关键模型选择。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "没有要求公开受限商业原始资料，也不判定任何具体文档已足够。"
+      ],
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-04",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-db2011-aggregation-information",
+      "text": "聚合会使这些追问更重要。一个汇总数据集可以隐藏许多过程、连接和分配选择；用户需要知道采用了哪些底层资料，怎样链接，以及哪些部分仍可供检查。指南还建议保持原有流信息的细节。总数方便使用，但它所概括的结构若不可见，适用性判断和敏感性检查就需要依靠额外说明。",
+      "kind": "interpretation",
+      "scope": "该指南聚合过程数据集的文档建议",
+      "evidenceIds": [
+        "ev-db2011-aggregation-gaps"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db2011-aggregation-gaps",
+          "relation": "supports",
+          "rationale": "p89要求说明底层数据、链接、聚合方式和分配敏感性，并建议保留原流细节。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "聚合的文档要求不等于聚合数据已经复算，也不表示聚合本身必然降低质量。"
+      ],
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-04",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-db2011-review-relative-to-criteria",
+      "text": "审查同样需要先找到它所据的准则。指南把单个数据集的审查与完整研究的审查区分，并讨论数据库管理者和使用者不同的信息需要。一个数据集在某库通过检查，换到采用不同条件的库，仍可能需要查看原审查记录或补充检查。判断的关键在于哪些条件已被确认，而不是让一个 reviewed 标签代替所有使用情境。",
+      "kind": "interpretation",
+      "scope": "本指南数据集审查的对象与准则",
+      "evidenceIds": [
+        "ev-db2011-review-purpose"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db2011-review-purpose",
+          "relation": "supports",
+          "rationale": "pp89–91说明单数据集范围和不同数据库准则，并允许额外审查或评估已有审查记录。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "p90 对完整公开比较研究另有脚注限定；指南引述不替代相应 ISO 要求。"
+      ],
+      "conceptIds": [
+        "cn-review-scope"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-04",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-db2011-validation-context",
+      "text": "甚至 validation 这个词，在不同讨论尺度中也要重新确认含义。单位过程开发章节用它讨论数据对实际过程的表示和一组质量检查；数据库管理章节的脚注则特别限定，它可以是按既定准则进行的手工或自动核对，并把 review 描述为独立、系统且有记录的人工过程。通过一种检查，并不能无条件替代另一种审查。",
+      "kind": "interpretation",
+      "scope": "UNEP2011 两处有范围限定的术语使用",
+      "evidenceIds": [
+        "ev-db2011-validation",
+        "ev-db2011-local-definitions"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db2011-validation",
+          "relation": "supports",
+          "rationale": "p61的定义和后续检查讨论过程表示及开发质量。"
+        },
+        {
+          "evidenceId": "ev-db2011-local-definitions",
+          "relation": "qualifies",
+          "rationale": "p93 footnote3明确只对本章给出validation/review含义，不能外推成统一术语或全部科学验证。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "不把两处不同尺度的用法直接判为矛盾，也不将其定义强制用于其他文件。"
+      ],
+      "conceptIds": [
+        "cn-review-scope"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-04",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-db2011-review-questions",
+      "text": "因此，审查记录要让读者看清谁检查了什么。指南建议列出审查者的资格和分工、内部或外部审查、涉及的数据与方法、采用的检查，以及没有满足的条件。这样的记录使“通过”有了边界：用户可以区分原始数据是否被检查、模型是否被检查，以及哪些例外仍然存在。记录一次审查的结论，也保留了以后重新判断的依据。",
+      "kind": "interpretation",
+      "scope": "UNEP2011 审查记录和异常说明",
+      "evidenceIds": [
+        "ev-db2011-review-record"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db2011-review-record",
+          "relation": "supports",
+          "rationale": "pp91–93及Table4.2要求具体身份、范围、准则和结果，且说明未通过检查和例外的记录。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "审查记录完整不等于判断正确，也不能向未被审查的内容转授专家审批身份。"
+      ],
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-04",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-db2011-recommendation-strength",
+      "text": "阅读这些建议时，还需保留文件自己的语言规则。它用不同等级表达支持强度，并说明自身指导叙述中的 shall 相当于强烈推荐；具有证据或科学论证支持的少数观点也可以保留。这里既有共同实践，也有尚未收敛的选择。若把机构出版物中的每一句都译成普遍强制要求，就会抹去原作特意保留的支持程度和适用空间。",
+      "kind": "interpretation",
+      "scope": "该2011指南推荐语言与支持程度",
+      "evidenceIds": [
+        "ev-db2011-support-language"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db2011-support-language",
+          "relation": "supports",
+          "rationale": "p45同时规定措辞与推荐程度的对应，并说明支持性少数观点可以纳入，限制整体共识标签。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "这是该文件的语言规则，不自行决定法律效力，也不能推出 EU 方法或 ISO 的全部要求。",
+        "引用的外部要求仍须按相应原版本确认。"
+      ],
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-04",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-db2011-review-of-guidance",
+      "text": "指南自己的评审附录提供了一个具体提醒。附录汇总了对送审草稿章节的意见，评语总体正面，也要求把分配、截断和数据集审查写得更具体。第 0、1 和 8 章未接受章节同行评审。技术审查委员会对文件整体给予肯定，阅读具体建议时仍要看该建议的依据和评语的范围。总体赞许没有覆盖每个细节；评审过程的存在，也不能单独证明每个结论都已充分成立。",
+      "kind": "interpretation",
+      "scope": "UNEP2011 Annex2的评价和覆盖范围",
+      "evidenceIds": [
+        "ev-db2011-own-review"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db2011-own-review",
+          "relation": "supports",
+          "rationale": "Annex2分别记录送审草稿章节总体正面的评语、第0、1和8章未审、对具体内容的批评及委员会的总体意见；各项范围不能互相替代。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "附录也保留编者称评论在可能时已纳入的说明；不推断所有批评都未处理或都已解决。"
+      ],
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-07",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-db2011-versioned-confidence",
+      "text": "数据的变化会把这些问题再次带回使用者面前。技术、原始资料或基本流覆盖更新后，指南建议说明改了什么、对相关数据有什么影响，以及做过怎样的复核。旧版本的审查记录可以帮助理解历史，却还需要与当前版本的变化相接。这样，信任落实到可追踪的对象、条件和检查，而不会在更新之后只留下一个没有时间边界的标签。",
+      "kind": "synthesis",
+      "scope": "由数据更新与限定审查范围形成的解释",
+      "evidenceIds": [
+        "ev-db2011-change",
+        "ev-db2011-review-record"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db2011-change",
+          "relation": "supports",
+          "rationale": "pp94–95要求说明更新类别、相关后果和变更后的审查情况，支撑版本关联。"
+        },
+        {
+          "evidenceId": "ev-db2011-review-record",
+          "relation": "supports",
+          "rationale": "具体审查对象与检查范围限定旧记录能够支持的判断。"
+        }
+      ],
+      "premiseIds": [
+        "cl-db2011-review-relative-to-criteria",
+        "cl-db2011-review-questions"
+      ],
+      "caveats": [
+        "内容变化需要与既有证据相接，但不表示每次变更都必然使全部旧证据失效。"
+      ],
+      "reasoning": "检查绑定具体内容，更新改变部分内容；用户需把变更和现有审查记录连接起来，才能判断旧结论还有哪些支持范围。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-04",
+      "reviewKind": "agent-source-check"
+    }
+  ],
+  "scientificClosure": {
+    "claims": [],
+    "evidence": [
+      {
+        "id": "ev-db2011-audience",
+        "readingId": "rd-unep-2011-databases",
+        "passageId": "psg-unep-2011-guidance-status",
+        "locator": "印刷 pp44–46；PDF indexes45–47；§§1.3.1–1.5 选段",
+        "summary": "数据库管理者、开发者与使用者的不同责任和用途。",
+        "sourceId": "src-book-unep-2011-databases",
+        "appraisal": {
+          "basis": "实际取得的原始公开PDF、版式保留文本和指定六页图像；原作正文与Annex2反证并读。",
+          "methodologicalScope": "2011年数据和数据库技术指导，主要面向数据库管理者、开发者和使用者；不提供现行产品或组织合规结论。",
+          "independence": "多章同一指南作品；Annex2为该卷内不同作者的评审报告，提供限定而非独立经验重复；受众与支持程度是原作自己的说明。",
+          "limitations": [
+            "仅所列选段；未阅读全部聚合/建模、适应性方法、情景或词汇表。",
+            "没有取得授权ISO全文，亦无EU方法原始或纠正文全文的可靠取得。",
+            "部分Poppler渲染报告codestream警告，所用页面肉眼可读；其他未检图形不据提取文本作结构结论。",
+            "同行评审附录承认若干指导仍缺少具体内容；不能把其总体积极评价当成逐条科学证实。"
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        }
+      },
+      {
+        "id": "ev-db2011-support-language",
+        "readingId": "rd-unep-2011-databases",
+        "passageId": "psg-unep-2011-guidance-status",
+        "locator": "印刷 p45；PDF index46；§1.3.3续文及§1.3.4",
+        "summary": "本文件的支持层级、少数观点和推荐用语含义。",
+        "sourceId": "src-book-unep-2011-databases",
+        "appraisal": {
+          "basis": "实际取得的原始公开PDF、版式保留文本和指定六页图像；原作正文与Annex2反证并读。",
+          "methodologicalScope": "2011年数据和数据库技术指导，主要面向数据库管理者、开发者和使用者；不提供现行产品或组织合规结论。",
+          "independence": "多章同一指南作品；Annex2为该卷内不同作者的评审报告，提供限定而非独立经验重复；受众与支持程度是原作自己的说明。",
+          "limitations": [
+            "仅所列选段；未阅读全部聚合/建模、适应性方法、情景或词汇表。",
+            "没有取得授权ISO全文，亦无EU方法原始或纠正文全文的可靠取得。",
+            "部分Poppler渲染报告codestream警告，所用页面肉眼可读；其他未检图形不据提取文本作结构结论。",
+            "同行评审附录承认若干指导仍缺少具体内容；不能把其总体积极评价当成逐条科学证实。"
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        }
+      },
+      {
+        "id": "ev-db2011-goal",
+        "readingId": "rd-unep-2011-databases",
+        "passageId": "psg-unep-2011-dataset-goal",
+        "locator": "印刷 pp54–55；PDF indexes55–56；Chapter2开头及§2.1",
+        "summary": "单位过程数据集的表示对象、范围和预期使用。",
+        "sourceId": "src-book-unep-2011-databases",
+        "appraisal": {
+          "basis": "实际取得的原始公开PDF、版式保留文本和指定六页图像；原作正文与Annex2反证并读。",
+          "methodologicalScope": "2011年数据和数据库技术指导，主要面向数据库管理者、开发者和使用者；不提供现行产品或组织合规结论。",
+          "independence": "多章同一指南作品；Annex2为该卷内不同作者的评审报告，提供限定而非独立经验重复；受众与支持程度是原作自己的说明。",
+          "limitations": [
+            "仅所列选段；未阅读全部聚合/建模、适应性方法、情景或词汇表。",
+            "没有取得授权ISO全文，亦无EU方法原始或纠正文全文的可靠取得。",
+            "部分Poppler渲染报告codestream警告，所用页面肉眼可读；其他未检图形不据提取文本作结构结论。",
+            "同行评审附录承认若干指导仍缺少具体内容；不能把其总体积极评价当成逐条科学证实。"
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        }
+      },
+      {
+        "id": "ev-db2011-validation",
+        "readingId": "rd-unep-2011-databases",
+        "passageId": "psg-unep-2011-validation",
+        "locator": "印刷 pp61–64；PDF indexes62–65；§§2.3–2.3.4",
+        "summary": "研究与数据集范围匹配及验证检查的目标相关性。",
+        "sourceId": "src-book-unep-2011-databases",
+        "appraisal": {
+          "basis": "实际取得的原始公开PDF、版式保留文本和指定六页图像；原作正文与Annex2反证并读。",
+          "methodologicalScope": "2011年数据和数据库技术指导，主要面向数据库管理者、开发者和使用者；不提供现行产品或组织合规结论。",
+          "independence": "多章同一指南作品；Annex2为该卷内不同作者的评审报告，提供限定而非独立经验重复；受众与支持程度是原作自己的说明。",
+          "limitations": [
+            "仅所列选段；未阅读全部聚合/建模、适应性方法、情景或词汇表。",
+            "没有取得授权ISO全文，亦无EU方法原始或纠正文全文的可靠取得。",
+            "部分Poppler渲染报告codestream警告，所用页面肉眼可读；其他未检图形不据提取文本作结构结论。",
+            "同行评审附录承认若干指导仍缺少具体内容；不能把其总体积极评价当成逐条科学证实。"
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        }
+      },
+      {
+        "id": "ev-db2011-documentation",
+        "readingId": "rd-unep-2011-databases",
+        "passageId": "psg-unep-2011-documentation-quality",
+        "locator": "印刷 pp86–88；PDF indexes87–89；§§4.1–4.2.2",
+        "summary": "文档、定量参考、数据来源、假设及质量指标。",
+        "sourceId": "src-book-unep-2011-databases",
+        "appraisal": {
+          "basis": "实际取得的原始公开PDF、版式保留文本和指定六页图像；原作正文与Annex2反证并读。",
+          "methodologicalScope": "2011年数据和数据库技术指导，主要面向数据库管理者、开发者和使用者；不提供现行产品或组织合规结论。",
+          "independence": "多章同一指南作品；Annex2为该卷内不同作者的评审报告，提供限定而非独立经验重复；受众与支持程度是原作自己的说明。",
+          "limitations": [
+            "仅所列选段；未阅读全部聚合/建模、适应性方法、情景或词汇表。",
+            "没有取得授权ISO全文，亦无EU方法原始或纠正文全文的可靠取得。",
+            "部分Poppler渲染报告codestream警告，所用页面肉眼可读；其他未检图形不据提取文本作结构结论。",
+            "同行评审附录承认若干指导仍缺少具体内容；不能把其总体积极评价当成逐条科学证实。"
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        }
+      },
+      {
+        "id": "ev-db2011-quality-dimensions",
+        "readingId": "rd-unep-2011-databases",
+        "passageId": "psg-unep-2011-documentation-quality",
+        "locator": "印刷 pp87–88；PDF indexes88–89；§4.2.1.5及Table4.1",
+        "summary": "精密度和代表性等指标分别承担用途适合性说明。",
+        "sourceId": "src-book-unep-2011-databases",
+        "appraisal": {
+          "basis": "实际取得的原始公开PDF、版式保留文本和指定六页图像；原作正文与Annex2反证并读。",
+          "methodologicalScope": "2011年数据和数据库技术指导，主要面向数据库管理者、开发者和使用者；不提供现行产品或组织合规结论。",
+          "independence": "多章同一指南作品；Annex2为该卷内不同作者的评审报告，提供限定而非独立经验重复；受众与支持程度是原作自己的说明。",
+          "limitations": [
+            "仅所列选段；未阅读全部聚合/建模、适应性方法、情景或词汇表。",
+            "没有取得授权ISO全文，亦无EU方法原始或纠正文全文的可靠取得。",
+            "部分Poppler渲染报告codestream警告，所用页面肉眼可读；其他未检图形不据提取文本作结构结论。",
+            "同行评审附录承认若干指导仍缺少具体内容；不能把其总体积极评价当成逐条科学证实。"
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        }
+      },
+      {
+        "id": "ev-db2011-aggregation-gaps",
+        "readingId": "rd-unep-2011-databases",
+        "passageId": "psg-unep-2011-documentation-quality",
+        "locator": "印刷 p89；PDF index90；§§4.2.3–4.2.4",
+        "summary": "聚合文档、底层数据可用性、缺失与零的区别。",
+        "sourceId": "src-book-unep-2011-databases",
+        "appraisal": {
+          "basis": "实际取得的原始公开PDF、版式保留文本和指定六页图像；原作正文与Annex2反证并读。",
+          "methodologicalScope": "2011年数据和数据库技术指导，主要面向数据库管理者、开发者和使用者；不提供现行产品或组织合规结论。",
+          "independence": "多章同一指南作品；Annex2为该卷内不同作者的评审报告，提供限定而非独立经验重复；受众与支持程度是原作自己的说明。",
+          "limitations": [
+            "仅所列选段；未阅读全部聚合/建模、适应性方法、情景或词汇表。",
+            "没有取得授权ISO全文，亦无EU方法原始或纠正文全文的可靠取得。",
+            "部分Poppler渲染报告codestream警告，所用页面肉眼可读；其他未检图形不据提取文本作结构结论。",
+            "同行评审附录承认若干指导仍缺少具体内容；不能把其总体积极评价当成逐条科学证实。"
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        }
+      },
+      {
+        "id": "ev-db2011-review-purpose",
+        "readingId": "rd-unep-2011-databases",
+        "passageId": "psg-unep-2011-dataset-review",
+        "locator": "印刷 pp89–91；PDF indexes90–92；§§4.3–4.3.6，含p90脚注",
+        "summary": "单数据集审查的入库准则和用户用途双重目的。",
+        "sourceId": "src-book-unep-2011-databases",
+        "appraisal": {
+          "basis": "实际取得的原始公开PDF、版式保留文本和指定六页图像；原作正文与Annex2反证并读。",
+          "methodologicalScope": "2011年数据和数据库技术指导，主要面向数据库管理者、开发者和使用者；不提供现行产品或组织合规结论。",
+          "independence": "多章同一指南作品；Annex2为该卷内不同作者的评审报告，提供限定而非独立经验重复；受众与支持程度是原作自己的说明。",
+          "limitations": [
+            "仅所列选段；未阅读全部聚合/建模、适应性方法、情景或词汇表。",
+            "没有取得授权ISO全文，亦无EU方法原始或纠正文全文的可靠取得。",
+            "部分Poppler渲染报告codestream警告，所用页面肉眼可读；其他未检图形不据提取文本作结构结论。",
+            "同行评审附录承认若干指导仍缺少具体内容；不能把其总体积极评价当成逐条科学证实。"
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        }
+      },
+      {
+        "id": "ev-db2011-review-record",
+        "readingId": "rd-unep-2011-databases",
+        "passageId": "psg-unep-2011-dataset-review",
+        "locator": "印刷 pp91–93；PDF indexes92–94；§§4.3.6–4.3.8；Table4.2",
+        "summary": "审查者身份、具体范围、结果、未通过项和局限。",
+        "sourceId": "src-book-unep-2011-databases",
+        "appraisal": {
+          "basis": "实际取得的原始公开PDF、版式保留文本和指定六页图像；原作正文与Annex2反证并读。",
+          "methodologicalScope": "2011年数据和数据库技术指导，主要面向数据库管理者、开发者和使用者；不提供现行产品或组织合规结论。",
+          "independence": "多章同一指南作品；Annex2为该卷内不同作者的评审报告，提供限定而非独立经验重复；受众与支持程度是原作自己的说明。",
+          "limitations": [
+            "仅所列选段；未阅读全部聚合/建模、适应性方法、情景或词汇表。",
+            "没有取得授权ISO全文，亦无EU方法原始或纠正文全文的可靠取得。",
+            "部分Poppler渲染报告codestream警告，所用页面肉眼可读；其他未检图形不据提取文本作结构结论。",
+            "同行评审附录承认若干指导仍缺少具体内容；不能把其总体积极评价当成逐条科学证实。"
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        }
+      },
+      {
+        "id": "ev-db2011-local-definitions",
+        "readingId": "rd-unep-2011-databases",
+        "passageId": "psg-unep-2011-database-management",
+        "locator": "印刷 p93；PDF index94；footnote3及§4.4",
+        "summary": "本章特别定义的validation/review及数据库入库协议。",
+        "sourceId": "src-book-unep-2011-databases",
+        "appraisal": {
+          "basis": "实际取得的原始公开PDF、版式保留文本和指定六页图像；原作正文与Annex2反证并读。",
+          "methodologicalScope": "2011年数据和数据库技术指导，主要面向数据库管理者、开发者和使用者；不提供现行产品或组织合规结论。",
+          "independence": "多章同一指南作品；Annex2为该卷内不同作者的评审报告，提供限定而非独立经验重复；受众与支持程度是原作自己的说明。",
+          "limitations": [
+            "仅所列选段；未阅读全部聚合/建模、适应性方法、情景或词汇表。",
+            "没有取得授权ISO全文，亦无EU方法原始或纠正文全文的可靠取得。",
+            "部分Poppler渲染报告codestream警告，所用页面肉眼可读；其他未检图形不据提取文本作结构结论。",
+            "同行评审附录承认若干指导仍缺少具体内容；不能把其总体积极评价当成逐条科学证实。"
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        }
+      },
+      {
+        "id": "ev-db2011-change",
+        "readingId": "rd-unep-2011-databases",
+        "passageId": "psg-unep-2011-database-management",
+        "locator": "印刷 pp94–95；PDF indexes95–96；§§4.4.2–4.4.4",
+        "summary": "数据更新的类型、相关影响、审查情况和维护责任。",
+        "sourceId": "src-book-unep-2011-databases",
+        "appraisal": {
+          "basis": "实际取得的原始公开PDF、版式保留文本和指定六页图像；原作正文与Annex2反证并读。",
+          "methodologicalScope": "2011年数据和数据库技术指导，主要面向数据库管理者、开发者和使用者；不提供现行产品或组织合规结论。",
+          "independence": "多章同一指南作品；Annex2为该卷内不同作者的评审报告，提供限定而非独立经验重复；受众与支持程度是原作自己的说明。",
+          "limitations": [
+            "仅所列选段；未阅读全部聚合/建模、适应性方法、情景或词汇表。",
+            "没有取得授权ISO全文，亦无EU方法原始或纠正文全文的可靠取得。",
+            "部分Poppler渲染报告codestream警告，所用页面肉眼可读；其他未检图形不据提取文本作结构结论。",
+            "同行评审附录承认若干指导仍缺少具体内容；不能把其总体积极评价当成逐条科学证实。"
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        }
+      },
+      {
+        "id": "ev-db2011-own-review",
+        "readingId": "rd-unep-2011-databases",
+        "passageId": "psg-unep-2011-own-peer-review",
+        "locator": "印刷 pp145–149；PDF indexes146–150；Annex2，重点pp147–149",
+        "summary": "本卷的评审范围、总体评价、保留批评和编者回应。",
+        "sourceId": "src-book-unep-2011-databases",
+        "appraisal": {
+          "basis": "实际取得的原始公开PDF、版式保留文本和指定六页图像；原作正文与Annex2反证并读。",
+          "methodologicalScope": "2011年数据和数据库技术指导，主要面向数据库管理者、开发者和使用者；不提供现行产品或组织合规结论。",
+          "independence": "多章同一指南作品；Annex2为该卷内不同作者的评审报告，提供限定而非独立经验重复；受众与支持程度是原作自己的说明。",
+          "limitations": [
+            "仅所列选段；未阅读全部聚合/建模、适应性方法、情景或词汇表。",
+            "没有取得授权ISO全文，亦无EU方法原始或纠正文全文的可靠取得。",
+            "部分Poppler渲染报告codestream警告，所用页面肉眼可读；其他未检图形不据提取文本作结构结论。",
+            "同行评审附录承认若干指导仍缺少具体内容；不能把其总体积极评价当成逐条科学证实。"
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "src-book-unep-2011-databases",
+        "title": "Global Guidance Principles for Life Cycle Assessment Databases: A Basis for Greener Processes and Products",
+        "url": "https://helpdesk.lifecycleinitiative.org/wp-content/uploads/2020/11/lca_databases_global_guidance_principles_10-17-2011_final.pdf",
+        "version": "UNEP（2011）；Sonnemann/Vigon 编；ISBN 978-92-807-3174-3；DTI/1410/PA",
+        "publisher": "UNEP/SETAC Life Cycle Initiative",
+        "accessedAt": "2026-11-04",
+        "accessStatus": "public-passages-inspected",
+        "rights": "UNEP允许教育或非营利用途注明来源后再现；商业或转售须事先书面许可。照片、图表等第三方材料另有权利。",
+        "preservation": "引文依据所列版本与页码；原始文献由作者或出版机构提供，本书不转载原件。不同版本及再印文本的页码不能直接混用。",
+        "artifact": {
+          "mediaType": "application/pdf",
+          "sha256": "1e466cdcea78b12ac800cc31d4f2413cc08905553f567775bdd5c51ac7c5e0ac",
+          "resolvedUrl": "https://helpdesk.lifecycleinitiative.org/wp-content/uploads/2020/11/lca_databases_global_guidance_principles_10-17-2011_final.pdf",
+          "bytes": 6768503,
+          "pageCount": 160
+        },
+        "reading": {
+          "status": "selected-passages",
+          "scope": "封面、版权/免责声明与署名说明，印刷页 未编号封面/版权页；2–3；§§1.3.1–1.5 选段及推荐语言说明，印刷页 44–46；Chapter2开头与§2.1，印刷页 54–55；§2.2.5续文及§§2.3–2.3.4；Tables2.1/2.2，印刷页 61–64；Chapter4 Key Messages；§§4.1–4.2.4，印刷页 85–89；§§4.3–4.3.8，含p90脚注和Table4.2，印刷页 89–93；§§4.4–4.5，含p93footnote3，印刷页 93–95；Annex2全文，含编辑说明，印刷页 145–149",
+          "checkedAt": "2026-11-04",
+          "readingId": "rd-unep-2011-databases"
+        }
+      }
+    ]
+  },
+  "downstreamClaims": [
+    {
+      "id": "cl-closing-historical-return",
+      "kind": "synthesis",
+      "text": "本书由一件物品的选择出发，走到这里，得到的是一种可以说明根据的判断方式。容器研究让交付比较与链外政策问题分别可见，墙面教学例让活动变化的后果可以重算，购物袋研究让模型所需次数与真实用法之间的缺口有了位置。这些材料没有共同证明某个产品普遍更好，却使问题可以被问得更准确：所比较的服务是什么，哪些活动完成它，哪些证据支持眼前的判断。已有根据可以支持条件明确的选择，也可以保留尚须权衡的后果。新证据到来时，沿着这些关系返回，便有理由说明为什么保持结论，或在哪一步改变它。",
+      "scope": "本书所选两部早期容器原报告、一项墙面教学案例与一项历史购物袋研究的作者综合。",
+      "premiseIds": [
+        "cl-closing-container-comparison-and-policy",
+        "cl-closing-wall-substrate",
+        "cl-closing-pack-threshold-and-review",
+        "cl-book-conclusion-conditions",
+        "cl-pack-limits",
+        "cl-connect-next-evidence-at-link"
+      ],
+      "evidenceIds": [
+        "ev-early-repa1974-service",
+        "ev-early-rti1972-spending",
+        "ev-pack-ea2011-review-required-reuse-limitation"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-early-repa1974-service",
+          "relation": "context",
+          "rationale": "给出已采用的交付任务和过程到交付的比较关系。"
+        },
+        {
+          "evidenceId": "ev-early-rti1972-spending",
+          "relation": "context",
+          "rationale": "给出作者识别的容器链外消费及净影响缺口。"
+        },
+        {
+          "evidenceId": "ev-pack-ea2011-review-required-reuse-limitation",
+          "relation": "context",
+          "rationale": "给出已发表研究对所需次数与实际复用证据的明确区分。"
+        }
+      ],
+      "conceptIds": [],
+      "reasoning": "三类例证分别显示怎样确定比较对象、怎样通过模型隔离与复核前提变化、怎样标出迈向实际建议所缺的资料。共同的阅读问题及其作者判断由这些受限前提综合推出。",
+      "caveats": [
+        "材料之间的关系是本书的分析对照。制度传承、学科整体进步或历史优先权各需独立史料。",
+        "可追溯的模型关系提供复查起点；实际决定的适用性仍取决于研究证据、范围及相关判断理由。"
+      ],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-09"
+    },
+    {
+      "id": "cl-connect-next-evidence-at-link",
+      "text": "这条思路也可用于下一次比较：从最先缺依据的关系着手。服务变化，就回查所需过程与竞争对象；背景资料更换，就检查它代表谁、影响哪些计算；补入原先缺失的流，就重看覆盖与结果；规则发生实质修订，就核对所用分支是否仍适用。仍有根据的关系可以保留，变化触及的部分需要重新检查，同时继续寻找尚未查清的依赖。这样能分清，修订一项判断缺的是资料、关系解释，还是作出选择的理由。这是一条有条件的检查路径，未查清的问题仍然开放。",
+      "kind": "proposal",
+      "scope": "服务、数据、覆盖和规则变化后的针对性复查；作者建议，不是自动影响识别算法。",
+      "evidenceIds": [
+        "ev-ilcd-iteration",
+        "ev-db2011-change",
+        "ev-allocation-2001-correction",
+        "ev-time-arv-background"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ilcd-iteration",
+          "relation": "supports",
+          "rationale": "解释回到目标、模型和数据的迭代，支撑按问题重新核查的推进方式。"
+        },
+        {
+          "evidenceId": "ev-db2011-change",
+          "relation": "supports",
+          "rationale": "更新需说明相关数据影响和复核，支持以变化所触及部分安排检查。"
+        },
+        {
+          "evidenceId": "ev-allocation-2001-correction",
+          "relation": "context",
+          "rationale": "增补删除规则和弃用例子的实例，说明有些变化触及程序适用性而非仅换数值。"
+        },
+        {
+          "evidenceId": "ev-time-arv-background",
+          "relation": "context",
+          "rationale": "背景分报使替换背景后的再用可被讨论，但不保证替换无需重算。"
+        }
+      ],
+      "premiseIds": [
+        "cl-book-interpret-iterate",
+        "cl-db2011-versioned-confidence",
+        "cl-allocation-addendum-substantive",
+        "cl-future-background"
+      ],
+      "caveats": [
+        "依赖关系可能仍不完整，不能据此建立免于重新检查的通用规则。",
+        "这是一项针对性检查建议，不提供计算、软件或规范合规的验证结果。"
+      ],
+      "reasoning": "迭代、版本更新和修订实例支持按依赖关系定位后续证据；这是一项有条件的检查建议，不是已证明正确的自动化影响分析算法。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-09",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-connect-object-before-unit",
+      "text": "一项比较走到结论面前，先前接起的关系也到了接受检验的时候：这个数描述什么，它为什么与眼前的选择有关？先从最靠近数据的一端看。数据库中的流记录可以供多个过程引用，每一次交换却各有数量和角色；跨方案比较所要求的服务，又处在另一个层次。两份结果都写成“每千克”，说清的是报数基准，尚须说明各自怎样完成服务。千克换成克有确定比例，换算后的结果是否适用于这次比较，则取决于具体方案、服务条件和资料实际表示的对象。把这些关系说清，连接才有可检查的根据。",
+      "kind": "synthesis",
+      "scope": "流对象、交换关系与跨方案服务比较的连接条件；作者综合，不主张概念等价。",
+      "evidenceIds": [
+        "ev-flow-types",
+        "ev-exchange",
+        "ev-ilcd-service",
+        "ev-db2011-goal"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-flow-types",
+          "relation": "context",
+          "rationale": "openLCA手册提供流对象类型，限定本段对象层的例子。"
+        },
+        {
+          "evidenceId": "ev-exchange",
+          "relation": "supports",
+          "rationale": "输入输出表把复用流与数量、单位、角色组合，支持把对象与定量关系分开。"
+        },
+        {
+          "evidenceId": "ev-ilcd-service",
+          "relation": "supports",
+          "rationale": "ILCD功能描述的对象、数量、性能、期间说明单位标签不足以建立服务可比。"
+        },
+        {
+          "evidenceId": "ev-db2011-goal",
+          "relation": "supports",
+          "rationale": "2011指南以技术、时期、地域及用途说明数据集表示对象，提供连接另一端的具体条件。"
+        }
+      ],
+      "premiseIds": [
+        "cl-flow-exchange-distinction",
+        "cl-book-service-contract",
+        "cl-db2011-represented-object"
+      ],
+      "caveats": [
+        "流记录、交换和功能单位并非同层级概念；共同分析结构不证明概念等价。",
+        "这一连接是分析性综合，不是新标准阶段。",
+        "这里限定跨方案比较的解释，不把研究目的设为同量纲单位换算的前置条件。"
+      ],
+      "reasoning": "两处实例各自区分对象和对象在任务中的关系；共同点是连接前需辨认关系两端，不能据共同名词建立实体同一性。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-09",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-connect-reuse-keeps-relation",
+      "text": "关系辨认清楚，资料便有了可复用的位置。ReCiPe论文以USES-LCA2.0为基础计算毒性，采用USEtox物质数据作输入，同时明确没有采用USEtox模型。前瞻技术研究建议分开报告前景与背景影响，也是在为另一情景利用前景结果提供机会；要换入背景重算，仍须知道数据和模型怎样相接。重用保留下来的，是有对象、假设和接口含义的那份资料。共享输入并未使两个模型相同，分开报告也未必已足够重建完整模型。知道资料接在何处，接下来才能判断它实际覆盖了什么。",
+      "kind": "synthesis",
+      "scope": "跨模型复用输入或模块时保留用途和依赖关系的条件；作者综合。",
+      "evidenceIds": [
+        "ev-lcia-model-data-factor-separation",
+        "ev-time-arv-background",
+        "ev-db2011-documentation"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-lcia-model-data-factor-separation",
+          "relation": "supports",
+          "rationale": "ReCiPe原论文明确区分所采用的物质数据与未采用的USEtox模型，直接反驳数据共享蕴含模型相同。"
+        },
+        {
+          "evidenceId": "ev-time-arv-background",
+          "relation": "supports",
+          "rationale": "2018论文建议分开报告前景与背景的影响，以便在别的情景利用前景结果；这不单独提供替换背景重算所需的模型接口。"
+        },
+        {
+          "evidenceId": "ev-db2011-documentation",
+          "relation": "supports",
+          "rationale": "2011指南说明来源、边界及固定假设，使重用判断有可追查条件。"
+        }
+      ],
+      "premiseIds": [
+        "cl-lcia-model-data-factor-separation",
+        "cl-future-background",
+        "cl-db2011-documenting-number"
+      ],
+      "caveats": [
+        "这两项文献实例不证明任何实际因子发行包、模型软件或跨库重用结果。",
+        "分开报告不保证已足以重建完整模型。"
+      ],
+      "reasoning": "共享输入和可替换模块使有条件重用成为可能，但不产生跨模型等价性；重新连接应追踪被改变的依赖关系。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-09",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-connect-review-does-not-transfer",
+      "text": "审查能够增加判断的根据，前提是知道它检查了什么。数据集审查可能对照入库准则，完整研究的审查则要面对研究目标和比较问题；既有审查中的对象、准则、版本及未满足条件，决定了哪些检查仍适用于当前使用。数据库指南自身的审查史已经显示，整体肯定与具体建议得到何种检查各有范围。引用可把一句话连回出处，新的综合仍须交代自己的推理；文本支持、实际关系的验证和领域判断分别承担工作。循着这些具体记录，才能决定已有审查提供了哪些根据，以及哪里需要补充。",
+      "kind": "synthesis",
+      "scope": "审查准则、被审对象和版本变化之间的适用关系；作者综合，不由引用转授评审结论。",
+      "evidenceIds": [
+        "ev-db2011-review-purpose",
+        "ev-db2011-review-record",
+        "ev-db2011-own-review",
+        "ev-db2011-change"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db2011-review-purpose",
+          "relation": "supports",
+          "rationale": "2011指南区分数据集审查与具体使用需求，并讨论不同入库条件。"
+        },
+        {
+          "evidenceId": "ev-db2011-review-record",
+          "relation": "supports",
+          "rationale": "审查记录列范围、人员、检查及未通过项，使既有审查可在限定条件下复用。"
+        },
+        {
+          "evidenceId": "ev-db2011-own-review",
+          "relation": "qualifies",
+          "rationale": "Annex2分别记录送审草稿章节总体正面的评语、第0、1和8章未审、对具体内容的批评及委员会的总体意见；各项范围不能互相替代。"
+        },
+        {
+          "evidenceId": "ev-db2011-change",
+          "relation": "supports",
+          "rationale": "更新及复核需绑定当前变化，支持版本改变后重接审查条件。"
+        }
+      ],
+      "premiseIds": [
+        "cl-db2011-review-relative-to-criteria",
+        "cl-db2011-review-questions",
+        "cl-db2011-review-of-guidance",
+        "cl-db2011-versioned-confidence"
+      ],
+      "caveats": [
+        "2011 指南的评审不构成对新引用或新综合的外部认证。",
+        "这里不从指南引述推出现行 ISO 或 EU 规范合规要求。"
+      ],
+      "reasoning": "记录清楚使既有检查可被有条件采纳；不同审查对象与当前版本间的适用关系必须另查，来源核查也不能自行升级为科学批准。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-09",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-connect-target-and-distribution",
+      "text": "对象和服务有了明确位置，资料能代表谁便成为下一道问题。若想知道一类工厂的平均表现，需要说明所取资料为何能代表这类工厂，再辨认区间描述的是各厂之间的变异，还是平均值估计的不确定程度。代表性与精密程度各自提供信息：区间很窄，不会单独扩大资料的适用总体；观测包含多种工厂，也还须交代采样和估计依据，才能说明平均值估得多准。将总体与所估计的量同时说清，才知道这一组数能够支持哪一种比较。",
+      "kind": "synthesis",
+      "scope": "数据代表对象与统计估计目标的联系；作者综合，不替代样本或分布依据。",
+      "evidenceIds": [
+        "ev-db2011-quality-dimensions",
+        "ev-unc-huij-target",
+        "ev-unc-huij-sd-sem"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db2011-quality-dimensions",
+          "relation": "supports",
+          "rationale": "2011指南将精密度与代表性列为不同质量维度，为先识别总体提供依据。"
+        },
+        {
+          "evidenceId": "ev-unc-huij-target",
+          "relation": "supports",
+          "rationale": "Huijbregts依研究目标区分来源变异和平均表现的不确定性。"
+        },
+        {
+          "evidenceId": "ev-unc-huij-sd-sem",
+          "relation": "qualifies",
+          "rationale": "五工厂例的SD/SEM转换另有代表性与正态假设；不由公式替真实样本证明这些条件。"
+        }
+      ],
+      "premiseIds": [
+        "cl-db2011-representativeness-and-precision",
+        "cl-unc-target",
+        "cl-unc-sd-sem"
+      ],
+      "caveats": [
+        "未从指南质量维度推导统计分布；未校准任何真实数据。",
+        "没有把五工厂示例的假设推广到其他样本。"
+      ],
+      "reasoning": "适用对象和统计估计量是相接但独立的两项核查；满足其中一项并不蕴含另一项，连接需要同时说明目标总体与估计目标。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-09",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-connect-zero-needs-origin",
+      "text": "结果表里的零尤其需要这样的说明。有依据的清单零、显示中与零相混的缺失记录，以及USEtox文档所述缺少毒理资料时按约定置零的人体效应因子，具有不同的信息状态。社会量表的零可以表示合规，仪表盘的零可以处在相对最差端；正负项目相抵的净零又要靠各分项解释。因此，数值宜连同生成方式保留：未知项指回覆盖缺口，参照分数指回量表，净额保留相抵的各项。由此可以判断哪些信息可用于眼前的问题、哪些仍须补充，缺项的实际大小却不会由这个分类自动得出。",
+      "kind": "proposal",
+      "scope": "清单、缺失值、毒性约定、社会量表与抵消结果中零的不同含义；作者记录建议。",
+      "evidenceIds": [
+        "ev-db2011-aggregation-gaps",
+        "ev-usetox-missing-data-model-zero",
+        "ev-sustainability-slca-scale-meaning",
+        "ev-sustainability-lcsa-relative-dashboard"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db2011-aggregation-gaps",
+          "relation": "supports",
+          "rationale": "2011指南明确要求区分缺失与真实零，支撑信息状态不应被数值掩盖。"
+        },
+        {
+          "evidenceId": "ev-usetox-missing-data-model-zero",
+          "relation": "supports",
+          "rationale": "USEtox文档将缺毒理资料时按约定把人体效应因子置零列为输入不确定性；该计算零不证明无毒性。"
+        },
+        {
+          "evidenceId": "ev-sustainability-slca-scale-meaning",
+          "relation": "supports",
+          "rationale": "2020指南区分合规赋零、序数赋分及正负抵消的语义。"
+        },
+        {
+          "evidenceId": "ev-sustainability-lcsa-relative-dashboard",
+          "relation": "supports",
+          "rationale": "2010仪表盘的零取决于比较集合且缺失另示，支撑相对评分零的单独解释。"
+        }
+      ],
+      "premiseIds": [
+        "cl-db2011-missing-and-zero",
+        "cl-usetox-missing-data-model-zero",
+        "cl-sustainability-ordinal-zero-and-net-zero",
+        "cl-sustainability-dashboard-zero-is-relative"
+      ],
+      "caveats": [
+        "状态并列是一项记录建议，不要求所有软件采用相同编码。",
+        "真实零仍须有对应测量或模型适用依据；信息状态区分不验证任何具体零值。"
+      ],
+      "reasoning": "同一数字可由不同生成过程得到；保存生成状态可阻止错误解释，但不建立跨量表转换或补足未知事实。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-09",
+      "reviewKind": "agent-source-check"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "cn-data-fitness",
+      "label": "数据适用性与表示对象",
+      "english": "Data fitness and represented object",
+      "definitionClaimIds": [
+        "cl-db2011-represented-object",
+        "cl-db2011-representativeness-and-precision"
+      ],
+      "aliases": [
+        "代表性",
+        "适用目的"
+      ]
+    },
+    {
+      "id": "cn-review-scope",
+      "label": "审查对象与准则",
+      "english": "Review scope and criteria",
+      "definitionClaimIds": [
+        "cl-db2011-review-relative-to-criteria",
+        "cl-db2011-validation-context",
+        "cl-rule-review-objects"
+      ],
+      "aliases": [
+        "validation",
+        "review",
+        "审查边界"
+      ]
+    }
+  ],
+  "frozenFileHashes": {
+    "_docs/editorial/monograph-structure.v1.json": "eef12a34a559b6cb6e3f45637470b48d178ac51b9fe29d4df85fe1bce9c08696",
+    "config/book-edition.json": "212978605e37198c65bb1b48186e00c1ebe70dfacd41420878ef5a2561f6938e",
+    "config/citation-baseline.json": "ed171cf8bfa8b6e685e3fed264b9f756d3b11a15ca806dd1d40dad7861ee581c",
+    "config/citation-history.json": "8e4f8ade64afd25d2b35e12710f7cdcabe21201e31622a30285a9033760203bb",
+    "config/citation-placements.json": "6556eb21f0f4e7692d65a1acc76034a80c24b51bbcd339ec99ac363614f9c568",
+    "config/cleaner-production-accepted.json": "8babe006d6922d1a299cc3ef89dd1ab13b566273b98e88e5c78a5a2c8209cfeb",
+    "config/cleaner-production-heading-history.json": "2c941a2d86c6fcb8675bb4d13e10c877272bfc4463168e8069047e73218c211f",
+    "config/climate-assembly-accepted.json": "eeb33ea8c625bdc4275e76465a80d90bb0bb14070e09d9141b46e8e4addb04f8",
+    "config/climate-assembly-heading-original.json": "c83b49ccb344a366821bd42a58ca63dd3861af83008261961edd329fcda1ef13",
+    "config/climate-assembly-original.json": "f79eee42ad64fe8ba670020875d928bd6e57c05f06a66ee42e8356a61fd0b214",
+    "config/closing-synthesis-current-accepted.json": "f62cbce71aa1fe4a3d6a299249675ed0321735e453641511b5f8870099bea48d",
+    "config/closing-synthesis-heading-history.json": "e9363729726b26c40c14283d63ba9288b65107dcaf175572959a0cf0b9de09c0",
+    "config/closing-synthesis-original.json": "b3eea24a93af1b78c9fafac443e3ff0d86b5f12377fc7127d953912af19c59bb",
+    "config/closing-synthesis-prose-accepted.json": "813dd62c967a33dfe9e0ed5385e5ad14454c1a3035d93a38e3a01f0fd989aca7",
+    "config/exchange-semantics-citation-sources.json": "3d406821ec187189424eefd093b16eac442ff271ced2b5d7f016b5d473f7a763",
+    "config/exchange-semantics-heading-history.json": "3a57427ab3bce30a27ba1990334d328cc570473116113bfbb0cabe2b8a8b7919",
+    "config/exchange-semantics-original.json": "ba3696f5691449849e15409d29b098eac6e136412519c138afde452dad299199",
+    "config/exchange-semantics-partial-history.json": "b4536e59e501655a2dbde9b69aefb3178104f3d129fe8837b08960b31fbb7ab6",
+    "config/exchange-semantics-prose-accepted.json": "eea517bcf13839c2e723686874956a70cc4c918cdbf71cea5c12395cc97581b6",
+    "config/framework-accepted.json": "ba3d4279ff67ddb7fe7ede2a063ff865216c8cedc05ad5266cc27b00a421433c",
+    "config/framework-heading-history.json": "10ec6ed4cbf90f6dd74a8c8977ac2f0ca33b3a9652610f1971b7640f9f636316",
+    "config/functional-reference-accepted.json": "e37c13d6401a6be7a04dc43b7d9ec056fc41a0a4a43e955ef036b0ff0c30b657",
+    "config/functional-reference-heading-history.json": "f2b39048b5cd0a26766794b4a62928be6d788d3cff8ecd0409f5521f6896bb1c",
+    "config/functional-reference-prose-accepted.json": "0b3a992ae91acb5261b959bd71cdd47feda1ad58fe990e0cec65a9667d4aa130",
+    "config/hybrid-inventory-accepted.json": "b6742136373bae6b24d3bd8d56ef5c4ffd37c0c335420c6f6184aa2a1a9cb747",
+    "config/hybrid-inventory-heading-history.json": "767cfe436bde9f2dd20a74c89d195ecad72ba8301d5a7cf52bc9d897e9eb5b00",
+    "config/hybrid-inventory-prose-accepted.json": "ada2f0892d975adcc8e7c0c237ff85425974910be4f12c1e0af036c622883629",
+    "config/joint-production-heading-history.json": "8dade2da796fd195d1208ff66c7434038336cc5eea5f2e72681d18a37031e39b",
+    "config/joint-production-original.json": "e9758a6ab6ce03c6caf8e9e263d8d877b9f35b2e099060706efa8e4f176fefe4",
+    "config/joint-production-prose-accepted.json": "43128318f7431fbb2893a919e8752e0a3a639dc878805ba563feb5638ef42058",
+    "config/process-network-accepted.json": "eba1dd374d02e72030a561021a91cc3094ff54fe95f821ae054ca804b5732ec0",
+    "config/process-network-heading-history.json": "38498ef8beb84abfb3ae236225c6e85b4bd6a2d57ebaff5e16346cd52246de98",
+    "config/process-network-prose-accepted.json": "b556d184f927f39c2606852074aecc3b39cff74fb548c6012cb9ac498b7f68d0",
+    "config/reader-numbering.json": "7a645cde9c97b0fd29b296663f32bbdeb1e5d5589e76629c601f94365d926182",
+    "config/wall-selection-accepted.json": "eeb30329f10f962052cb5ade88cbe7da3418c2437c66e94bc1494b6949b04d0a",
+    "config/wall-selection-heading-history.json": "058ba9e4ac17474aa3014701be43649745379d66db26c59420af89f398d52c6a",
+    "config/wall-selection-original.json": "50ca5e390015673a90cb89eb5f2bb96f2ea5420f2d32ce437de74e75923ea99b",
+    "knowledge/cases/climate-metrics-v1.json": "c6712d1c48605c0102eecbd6921fb3b3883e3d4e0d60c5d3d9fc69f62570ece6",
+    "knowledge/cases/climate-metrics-v1.publication.json": "d2d43466eed396def6c5f5d08ab7ee8177d94452809f2131b51f5fb2bb58e5d7",
+    "knowledge/cases/cml-framework-examples-v1.json": "d84fdd5e93d29dc8890e2b647d8f58c1d5dafca2cd9f04c703697bc987fdbed5",
+    "knowledge/cases/cml-framework-examples-v1.publication.json": "e5d59602d0e0cf391d9abb9b5e8a8f2fad087d7a46fa83d3f4f96ccedc8d41f0",
+    "knowledge/cases/dairy-rules-v1.json": "2d93b03bc866eaaf59538ca424f873593a0dfac11fd85675352830a2822b0f27",
+    "knowledge/cases/dairy-rules-v1.publication.json": "38186d4c239e68278465ffa844efefbabdee2f5a46a811a21003a1d26621776d",
+    "knowledge/cases/ecological-scarcity-v1.json": "2128ddd473a54c6dd696ed1fff28b61cdce93a137c390ff26ecc5c4e640700de",
+    "knowledge/cases/ecological-scarcity-v1.publication.json": "3131acbb94e025ccadb6f1ad38148dca915fccdd89bb06e49d3529580d7d3901",
+    "knowledge/cases/electricity-service-v1.json": "ea3923170eadd0b16fface8a178f6fd6b32a4cb50fa46588638c166be02d9e4c",
+    "knowledge/cases/electricity-service-v1.publication.json": "e55a0a9dcfbca702d7275e241d3976ec93c610ac4361e92aadcd02b4cfee1f46",
+    "knowledge/cases/historical-glass-v1.json": "56e6028764e85278fa73143d2321ab20b4ad8cd8d64ff9a75e2c871fb7448d7c",
+    "knowledge/cases/historical-glass-v1.publication.json": "8f3aa7d4064791107b0510beae377bb1b4936554d79f62bbee104546728e83f5",
+    "knowledge/cases/hybrid-overlap-v1.json": "449be3b1eff749a1b10d55f9717fec06fd2ddbf4d86b623a9a64e6db5a09137e",
+    "knowledge/cases/hybrid-overlap-v1.publication.json": "99161dad7359c503717bd9b626d25d035a22f8b3a23cb8087e279ad7aceb08bf",
+    "knowledge/cases/joint-batch-v1.json": "569797a9cc454583cd9397a468145f24b22f57fd9e5a8c98971138e779b3c773",
+    "knowledge/cases/joint-batch-v1.publication.json": "4e96e27e16d2cc145ea965617c62ba521d3adb4759e9edbd538ea1871e47e401",
+    "knowledge/cases/lime-valuation-v1.json": "9ffb5aab14187f8689ff8ee8897e48f60b6a584f52db0d7f56eb08c788409269",
+    "knowledge/cases/lime-valuation-v1.publication.json": "5d9b48aa774704dfece42984d93e7e5680163d16343ed39d59454d8c405dd718",
+    "knowledge/cases/market-response-v1.json": "a58663c4648adee29c1c8236907d436ad42304ff3728aae8d3c133ba23e6a81e",
+    "knowledge/cases/market-response-v1.publication.json": "e757e0fd5c6e38c70ef2b2bd8837ae3a337b07d1280f6eb314ab54475d20764c",
+    "knowledge/cases/native-exchange-v1.json": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+    "knowledge/cases/native-exchange-v1.publication.json": "edc91ba0ceb5f8d1ab87cdd7ce3e3486ff00c91765fecd22e67dc8dd0e58c37b",
+    "knowledge/cases/pack-study-v1.json": "d6517e87198308d50d00d9d84ccf13f1fea174db062139994b122ea170921149",
+    "knowledge/cases/pack-study-v1.publication.json": "a011306d63536143b32d1f7eb94ce778edde789424087bacef7ce66af19498a8",
+    "knowledge/cases/particulate-health-v1.json": "cf130fd22b311b6d3bd18b251b2b5a5a9d62cd694b409f9ed3dd520aee9301ce",
+    "knowledge/cases/particulate-health-v1.publication.json": "4c5efdfcb5a390bdc723db4da978cdaaef881a40149b1a86e3cc4829d0a0e22e",
+    "knowledge/cases/pedigree-calibration-v1.json": "a16d272426d1fd295db51cb0195c8c3fb8d3d7835249e32d8682f58f6e614171",
+    "knowledge/cases/pedigree-calibration-v1.publication.json": "09444a71cb70573bcd53640805d0f6107b82ddc5e155f5b29ab0a560c08bcd2f",
+    "knowledge/cases/phosphorus-boundary-v1.json": "05f1d0fe71ee5a1461e64987fb0cbc40cba7b0d96145ee9cc8017b647343dc39",
+    "knowledge/cases/phosphorus-boundary-v1.publication.json": "76c25ff98b73a149e5a36de6fb3033642af57328f66a45840a69f1a614614b2e",
+    "knowledge/cases/recovered-paper-v1.json": "81bff4219c7d2bdcc978da1e5acc5135064a56a37a7052ba44c80de05d5da4b9",
+    "knowledge/cases/recovered-paper-v1.publication.json": "2965099e5016a448aa6d9d418d9ea2d48240a2af2375baaa99a74694c2534123",
+    "knowledge/cases/wall-coating-v1.json": "c6f03091e388fd03de343883ec09f5bcedc001be62578ded1c423d15782af732",
+    "knowledge/cases/wall-coating-v1.publication.json": "c59264fc995837323f9a4fb80db28317ae6ca510aebff41763d926ec3d23cb12",
+    "knowledge/cases/water-locality-v1.json": "5217aa07949fc4b5990f1129aa428958e60ef01713f7198da4a286ab66b7bca9",
+    "knowledge/cases/water-locality-v1.publication.json": "047894167ddebd40f17ac4123f4f57885a54b96df1d0823ccefd1ee70a613077",
+    "knowledge/catalog.json": "a7eff44a10374b1f3b7105c46795fbe4144522e22b2852df73a106f75888bb9e",
+    "knowledge/research/literature-map.json": "82784f9217a399282e0ef211d2002246b4b9710c8af0cfa4141fb331579a15ea",
+    "knowledge/research/readings.json": "e50a7b1995ea6ab7dc05bb72543f60497c9e1f2add56ff3b2412ce9f89a45498",
+    "public/book-figures/climate-response-and-integral.svg": "d0d00e8de5fc4cd31285d99e51e04fcf87201506c4f638dd5ea3a97e6dac0739"
+  }
+}

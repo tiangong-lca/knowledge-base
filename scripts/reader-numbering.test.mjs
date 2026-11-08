@@ -8,18 +8,18 @@ import { assertNumberingToc, assertReaderNumbering, getContinuationLink, getHead
 const route = '/docs/book/service-and-reference';
 const html = (number='6.1',title='服务要求') => `<h2 data-reader-heading-key="服务要求"><a href="#服务要求"><span data-reader-number="">${number}</span> <span data-reader-heading-title="">${title}</span></a><button>复制章节链接</button></h2>`;
 
-test('current book retains 40 actual units, 33 chapters and all seven real part groups', () => {
+test('current book retains 39 actual units, 32 chapters and all seven real part groups', () => {
   const units=getPresentationUnits('book');
-  assert.equal(units.length,40);
-  assert.deepEqual(['front-matter','chapter','topic','appendix'].map(kind=>units.filter(unit=>unit.kind===kind).length),[2,33,2,3]);
-  assert.deepEqual([1,2,3,4,5,6,7].map(part=>units.filter(unit=>unit.part===part).length),[5,4,4,6,5,5,4]);
+  assert.equal(units.length,39);
+  assert.deepEqual(['front-matter','chapter','topic','appendix'].map(kind=>units.filter(unit=>unit.kind===kind).length),[2,32,2,3]);
+  assert.deepEqual([1,2,3,4,5,6,7].map(part=>units.filter(unit=>unit.part===part).length),[5,4,4,6,5,4,4]);
   assert.equal(getUnitNumbering('book',route).label,'第6章');
   assert.equal(getUnitNumbering('book','/docs/book/inventory-calculation').label,'第7章');
   assert.equal(getUnitNumbering('book','book-joint-production').label,'第10章');
   assert.equal(getUnitNumbering('book','/docs/book/emission-time-and-assessment'),null);
   assert.equal(getUnitNumbering('book','book-climate-equivalence').label,'第15章');
-  assert.equal(getUnitNumbering('book','/docs/book/wall-service-to-comparison').label,'第30章');
-  assert.equal(getUnitNumbering('book','book-revisable-judgment').label,'第33章');
+  assert.equal(getUnitNumbering('book','/docs/book/wall-service-to-comparison').label,'第29章');
+  assert.equal(getUnitNumbering('book','book-revisable-judgment').label,'第32章');
   assert.equal(getUnitNumbering('book','/docs/allocation').label,'专题2');
   assert.equal(getUnitNumbering('book','/docs/appendices/container-energy-check').label,'附录 A');
   assert.equal(getUnitNumbering('book','/docs/appendices/cml-framework-calculations').label,'附录 B');
@@ -47,10 +47,10 @@ test('actual case detail keeps its source sibling hierarchy and stays outside fo
   ]);
   assert.equal(joint.filter(row=>row.type==='mdx').length,4);
   const wall=getUnitHeadingPlan('book','/docs/book/wall-service-to-comparison');
-  assert.deepEqual(wall.filter(row=>row.type==='case').map(row=>[row.depth,row.number]),[[3,'30.4.1'],[4,'30.4.1.1'],[4,'30.4.1.2'],[4,'30.4.1.3'],[4,'30.4.1.4']]);
+  assert.deepEqual(wall.filter(row=>row.type==='case').map(row=>[row.depth,row.number]),[[3,'29.4.1'],[4,'29.4.1.1'],[4,'29.4.1.2'],[4,'29.4.1.3'],[4,'29.4.1.4']]);
   assert.equal(wall.find(row=>row.key==='@case:wall:current').title,'当前计算：平整基底 smooth · θ=0.3');
-  assert.equal(wall.filter(row=>row.type==='mdx')[2].number,'30.3');
-  assert.deepEqual(wall.filter(row=>row.type==='mdx').map(row=>[row.title,row.number]),[['功能实现','30.1'],['清单形成','30.2'],['指标含义','30.3'],['配对判断','30.4']]);
+  assert.equal(wall.filter(row=>row.type==='mdx')[2].number,'29.3');
+  assert.deepEqual(wall.filter(row=>row.type==='mdx').map(row=>[row.title,row.number]),[['功能实现','29.1'],['清单形成','29.2'],['指标含义','29.3'],['配对判断','29.4']]);
   assert.equal(getUnitNumbering('web','/docs/book/wall-service-to-comparison').title,'墙面服务比较');
   assert.equal(getHeadingNumbering('book','/docs/appendices/container-energy-check','工序输入').number,'A.1');
 });

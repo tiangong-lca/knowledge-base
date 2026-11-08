@@ -1,3 +1,4 @@
+import { assertDataApplicabilityOriginal, assertDataApplicabilityHeadingOriginal, validateDataApplicabilityCoverage } from './reader-data-applicability.mjs';
 import { assertClimateAssemblyOriginal, assertClimateAssemblyHeadingOriginal, validateClimateAssemblyArtifactBytes, validateClimateAssemblyCoverage } from './reader-climate-assembly.mjs';
 import { assertClosingSynthesisOriginal, assertClosingSynthesisHeadingHistory, validateClosingSynthesisCoverage } from './reader-closing-synthesis.mjs';
 import { validateReaderNumberingSources } from './reader-numbering-output.mjs';
@@ -102,6 +103,7 @@ export async function validateRepository(root) {
     const [functionalAccepted,functionalHeadingHistory,functionalProse]=await Promise.all(['functional-reference-accepted','functional-reference-heading-history','functional-reference-prose-accepted'].map(name=>readOptional(`config/${name}.json`)));
     const [processAccepted,processHeadingHistory,processProse]=await Promise.all(['process-network-accepted','process-network-heading-history','process-network-prose-accepted'].map(name=>readOptional(`config/${name}.json`)));
     const [cleanerAccepted,cleanerHeadingHistory]=await Promise.all(['cleaner-production-accepted','cleaner-production-heading-history'].map(name=>readOptional(`config/${name}.json`)));
+    const dataAccepted = await readOptional('config/data-applicability-accepted.json');
     const climateAccepted = await readOptional('config/climate-assembly-accepted.json');
     const [closingHistory,closingProse] = await Promise.all(['heading-history','prose-accepted'].map(name=>readOptional(`config/closing-synthesis-${name}.json`)));
     const [jointOriginal,jointHeadings,jointProse] = await Promise.all(['original','heading-history','prose-accepted'].map(name=>readOptional(`config/joint-production-${name}.json`)));
@@ -115,6 +117,8 @@ export async function validateRepository(root) {
       sources.set(route,await readFile(file,'utf8'));
     }
     try {
+      assertDataApplicabilityOriginal(); assertDataApplicabilityHeadingOriginal();
+      errors.push(...validateDataApplicabilityCoverage(edition,sources,data,dataAccepted));
       assertClimateAssemblyOriginal(); assertClimateAssemblyHeadingOriginal();
       errors.push(...validateClimateAssemblyCoverage(edition,sources,data,climateAccepted));
       errors.push(...validateClimateAssemblyArtifactBytes({figure:await readFile(resolve(root,'public/book-figures/climate-response-and-integral.svg')),input:await readFile(resolve(root,'knowledge/cases/climate-metrics-v1.json'))}));

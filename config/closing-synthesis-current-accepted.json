@@ -435,6 +435,553 @@
         "reviewKind": "agent-source-check"
       },
       "rationale": "Selected original Annex1 passages and the exact revised49-record candidate were reviewed; calendar/lag, forcing scope, policy choices, model limits and future-scenario separation retain their identities. The current date records that actual bounded review; original frozen records remain unchanged."
+    },
+    {
+      "old": {
+        "id": "cl-db2011-documenting-number",
+        "text": "文档让一个数值的形成过程可被追问：它来自测量、计算还是估计，采用什么来源、边界和固定假设。运输负载、电力组合等模型条件，也可能改变读数的含义。指南同时承认透明、保密与实际工作量之间存在取舍。因此，值得检查的是现有文档能否解释关键选择、暴露局限，而不仅是字段填写得是否整齐。",
+        "kind": "interpretation",
+        "scope": "UNEP2011 文档建议及透明度取舍",
+        "evidenceIds": [
+          "ev-db2011-documentation"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-documentation",
+            "relation": "supports",
+            "rationale": "pp86–88分别讨论文档取舍、来源类别及固定输入/计算约定，支撑追踪关键模型选择。"
+          }
+        ],
+        "premiseIds": [],
+        "caveats": [
+          "没有要求公开受限商业原始资料，也不判定任何具体文档已足够。"
+        ],
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-04",
+        "reviewKind": "agent-source-check"
+      },
+      "current": {
+        "id": "cl-db2011-documenting-number",
+        "text": "作出这些判断，需要读到数值背后的形成过程。它来自测量、计算还是估计，依据什么资料，哪些边界和假设已经固定？运输负载、电力组合等条件会进入模型，不能只留下最后的数值。指南建议用文档交代这些选择，同时承认透明、商业保密与实际工作量之间的取舍。文档的用处在于使关键条件和局限可以被追问；字段整齐与信息充分并非同一件事，也不能以透明为由要求公开受限原始资料。",
+        "kind": "interpretation",
+        "scope": "UNEP2011 文档建议及透明度取舍",
+        "evidenceIds": [
+          "ev-db2011-documentation"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-documentation",
+            "relation": "supports",
+            "rationale": "pp86–88分别讨论文档取舍、来源类别及固定输入/计算约定，支撑追踪关键模型选择。"
+          }
+        ],
+        "premiseIds": [],
+        "caveats": [
+          "没有要求公开受限商业原始资料，也不判定任何具体文档已足够。"
+        ],
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-09",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "B25 independently reauthored this exact original proposition with its source/evidence, scope, caveats and premise edges retained. Actual selected2011 original reinspection and candidate-v1 source/semantic assessment confirm compatibility; targeted review date reflects this new check. This does not change the immutable closing original or authorize unlisted changes."
+    },
+    {
+      "old": {
+        "id": "cl-db2011-missing-and-zero",
+        "text": "完整性还要联系准备进行的计算。指南提醒，清单缺少必要的基本流时，某些影响计算可能无法开展；并建议数据格式和软件分开表达缺失与真实零值。缺少记录没有告诉用户真实数量是多少。保留这种信息状态，用户才知道结果受到怎样的覆盖限制，以及应补数据、改用途，还是继续分析已有信息。",
+        "kind": "interpretation",
+        "scope": "UNEP2011 对LCI数据缺口的建议",
+        "evidenceIds": [
+          "ev-db2011-aggregation-gaps",
+          "ev-db2011-validation"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-aggregation-gaps",
+            "relation": "supports",
+            "rationale": "p89把LCI缺口与影响计算适用性相连，并明确建议区分缺失和数值零。"
+          },
+          {
+            "evidenceId": "ev-db2011-validation",
+            "relation": "context",
+            "rationale": "pp61–62将完整性检查与所述目标范围相连，约束完整性判断的用途。"
+          }
+        ],
+        "premiseIds": [],
+        "caveats": [
+          "该建议讨论LCI数据缺失；没有直接规定某种LCIA因子四状态数据模型。"
+        ],
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-04",
+        "reviewKind": "agent-source-check"
+      },
+      "current": {
+        "id": "cl-db2011-missing-and-zero",
+        "text": "文档还要把“没有记录”与“记录为零”分开。清单缺少某类影响计算所需的基本流，可能使该项计算失去必要输入；给缺口填上零，并没有补出真实数量。2011年指南据此建议数据格式和软件区分缺失与真实零值。保留差别，用户才能把已有结果放回它实际覆盖的范围，并决定需要补数据、调整用途，还是仅就现有覆盖作有限分析。完整性由此联系到准备回答的问题，而不是文件里是否每格都有一个数。",
+        "kind": "interpretation",
+        "scope": "UNEP2011 对LCI数据缺口的建议",
+        "evidenceIds": [
+          "ev-db2011-aggregation-gaps",
+          "ev-db2011-validation"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-aggregation-gaps",
+            "relation": "supports",
+            "rationale": "p89把LCI缺口与影响计算适用性相连，并明确建议区分缺失和数值零。"
+          },
+          {
+            "evidenceId": "ev-db2011-validation",
+            "relation": "context",
+            "rationale": "pp61–62将完整性检查与所述目标范围相连，约束完整性判断的用途。"
+          }
+        ],
+        "premiseIds": [],
+        "caveats": [
+          "该建议讨论LCI数据缺失；没有直接规定某种LCIA因子四状态数据模型。"
+        ],
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-09",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "B25 independently reauthored this exact original proposition with its source/evidence, scope, caveats and premise edges retained. Actual selected2011 original reinspection and candidate-v1 source/semantic assessment confirm compatibility; targeted review date reflects this new check. This does not change the immutable closing original or authorize unlisted changes."
+    },
+    {
+      "old": {
+        "id": "cl-db2011-representativeness-and-precision",
+        "text": "代表性和精密程度因此也不能压成同一个“质量好”。前者要问数据反映了哪个目标总体，后者关心数值的变动情况。一个数值表现稳定，并不能仅凭这一点说明它代表当前需要的技术、地区或时期。质量指标的作用，是把不同疑问分别呈现出来，让数据选择能够回到研究对象，而不是用一个笼统标签代替判断。",
+        "kind": "synthesis",
+        "scope": "由本版数据质量维度和数据集范围形成的解释",
+        "evidenceIds": [
+          "ev-db2011-quality-dimensions",
+          "ev-db2011-goal"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-quality-dimensions",
+            "relation": "supports",
+            "rationale": "Table4.1把precision与representativeness列为不同维度，后者明确关涉时空技术覆盖。"
+          },
+          {
+            "evidenceId": "ev-db2011-goal",
+            "relation": "supports",
+            "rationale": "数据集目标范围指定它应表示的技术、时间和地区，为代表性判断提供对象。"
+          }
+        ],
+        "premiseIds": [
+          "cl-db2011-user-and-manager",
+          "cl-db2011-represented-object"
+        ],
+        "caveats": [
+          "表格是该指南的适配版本，不能代替 ISO 原表；质量维度的说明不提供实际精度或代表性测量。"
+        ],
+        "reasoning": "稳定性和目标总体相符回答不同问题，因此一个维度的表现不足以单独确定另一个维度。",
+        "conceptIds": [
+          "cn-data-fitness"
+        ],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-04",
+        "reviewKind": "agent-source-check"
+      },
+      "current": {
+        "id": "cl-db2011-representativeness-and-precision",
+        "text": "对象明确以后，质量信息才有可判断的参照。指南的质量指标表把代表性与精密程度分开：代表性关注数据反映目标总体的程度，包括技术、地域和时期；精密程度描述数值的变动。一个测量值相当稳定，仍可能取自与研究不同的技术或年份。把这两种疑问分别保留下来，用户才能知道问题在数值分散，还是在所表示对象与所需对象之间的距离。一个笼统的“质量好”标签提供不了这种区分。",
+        "kind": "synthesis",
+        "scope": "由本版数据质量维度和数据集范围形成的解释",
+        "evidenceIds": [
+          "ev-db2011-quality-dimensions",
+          "ev-db2011-goal"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-quality-dimensions",
+            "relation": "supports",
+            "rationale": "Table4.1把precision与representativeness列为不同维度，后者明确关涉时空技术覆盖。"
+          },
+          {
+            "evidenceId": "ev-db2011-goal",
+            "relation": "supports",
+            "rationale": "数据集目标范围指定它应表示的技术、时间和地区，为代表性判断提供对象。"
+          }
+        ],
+        "premiseIds": [
+          "cl-db2011-user-and-manager",
+          "cl-db2011-represented-object"
+        ],
+        "caveats": [
+          "表格是该指南的适配版本，不能代替 ISO 原表；质量维度的说明不提供实际精度或代表性测量。"
+        ],
+        "reasoning": "稳定性和目标总体相符回答不同问题，因此一个维度的表现不足以单独确定另一个维度。",
+        "conceptIds": [
+          "cn-data-fitness"
+        ],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-09",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "B25 independently reauthored this exact original proposition with its source/evidence, scope, caveats and premise edges retained. Actual selected2011 original reinspection and candidate-v1 source/semantic assessment confirm compatibility; targeted review date reflects this new check. This does not change the immutable closing original or authorize unlisted changes."
+    },
+    {
+      "old": {
+        "id": "cl-db2011-represented-object",
+        "text": "数据集首先应说明自己代表什么过程。指南要求开发者明确技术、时期、地域、活动边界和预期用途；这一目标范围与完整 LCA 的设定相似，但尺度较小。用户因而需要把“这个数据描述什么”与“我的系统需要什么”放在一起检查。同名过程只是查找的入口，尚未提供二者适合连接的全部理由。",
+        "kind": "interpretation",
+        "scope": "该指南单位过程数据集的目标范围",
+        "evidenceIds": [
+          "ev-db2011-goal",
+          "ev-db2011-validation"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-goal",
+            "relation": "supports",
+            "rationale": "pp54–55以较小尺度的表示对象和目标范围组织数据集开发，列出时空技术及用途条件。"
+          },
+          {
+            "evidenceId": "ev-db2011-validation",
+            "relation": "qualifies",
+            "rationale": "p61要求数据集范围与研究范围相容，不能只凭过程名称决定用途。"
+          }
+        ],
+        "premiseIds": [],
+        "caveats": [
+          "同名过程不证明数据库连接适用；指南的说明也不是独立核验的 ISO 条文。"
+        ],
+        "conceptIds": [
+          "cn-data-fitness"
+        ],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-04",
+        "reviewKind": "agent-source-check"
+      },
+      "current": {
+        "id": "cl-db2011-represented-object",
+        "text": "选择先从数据表示的对象开始。一个过程名称之下，可能是某座工厂，也可能是行业平均；技术、地域、时期、活动边界和预期用途决定它实际描述什么。指南把这些内容放进单位过程数据集的目标与范围，借此引导开发，也让用户能够与自己所需的过程相对照。这里沿用完整LCA界定目标范围的思路，处理的尺度却较小。只有两边的对象和条件相接，同名记录才可能成为有理由的模型输入。",
+        "kind": "interpretation",
+        "scope": "该指南单位过程数据集的目标范围",
+        "evidenceIds": [
+          "ev-db2011-goal",
+          "ev-db2011-validation"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-goal",
+            "relation": "supports",
+            "rationale": "pp54–55以较小尺度的表示对象和目标范围组织数据集开发，列出时空技术及用途条件。"
+          },
+          {
+            "evidenceId": "ev-db2011-validation",
+            "relation": "qualifies",
+            "rationale": "p61要求数据集范围与研究范围相容，不能只凭过程名称决定用途。"
+          }
+        ],
+        "premiseIds": [],
+        "caveats": [
+          "同名过程不证明数据库连接适用；指南的说明也不是独立核验的 ISO 条文。"
+        ],
+        "conceptIds": [
+          "cn-data-fitness"
+        ],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-09",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "B25 independently reauthored this exact original proposition with its source/evidence, scope, caveats and premise edges retained. Actual selected2011 original reinspection and candidate-v1 source/semantic assessment confirm compatibility; targeted review date reflects this new check. This does not change the immutable closing original or authorize unlisted changes."
+    },
+    {
+      "old": {
+        "id": "cl-db2011-review-of-guidance",
+        "text": "指南自己的评审附录提供了一个具体提醒。附录汇总了对送审草稿章节的意见，评语总体正面，也要求把分配、截断和数据集审查写得更具体。第 0、1 和 8 章未接受章节同行评审。技术审查委员会对文件整体给予肯定，阅读具体建议时仍要看该建议的依据和评语的范围。总体赞许没有覆盖每个细节；评审过程的存在，也不能单独证明每个结论都已充分成立。",
+        "kind": "interpretation",
+        "scope": "UNEP2011 Annex2的评价和覆盖范围",
+        "evidenceIds": [
+          "ev-db2011-own-review"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-own-review",
+            "relation": "supports",
+            "rationale": "Annex2分别记录送审草稿章节总体正面的评语、第0、1和8章未审、对具体内容的批评及委员会的总体意见；各项范围不能互相替代。"
+          }
+        ],
+        "premiseIds": [],
+        "caveats": [
+          "附录也保留编者称评论在可能时已纳入的说明；不推断所有批评都未处理或都已解决。"
+        ],
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-07",
+        "reviewKind": "agent-source-check"
+      },
+      "current": {
+        "id": "cl-db2011-review-of-guidance",
+        "text": "指南自身的评审附录展示了这种范围区别。送审草稿章节收到的意见总体正面，也要求加强分配与截断的具体指导；对数据集审查一章，意见尤其指出清单很多，而对不明显问题的实质指导较少。第0、1和8章未受章节同行评审，技术审查委员会仍对整部文件及合作成果给予肯定。编者另说明，批评意见在可能时已纳入。整体价值、具体不足与实际覆盖可以同时成立；不能由总体赞许推定每一细节已获充分证实，也不能把列出的批评一概视为从未处理。",
+        "kind": "interpretation",
+        "scope": "UNEP2011 Annex2的评价和覆盖范围",
+        "evidenceIds": [
+          "ev-db2011-own-review"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-own-review",
+            "relation": "supports",
+            "rationale": "Annex2分别记录送审草稿章节总体正面的评语、第0、1和8章未审、对具体内容的批评及委员会的总体意见；各项范围不能互相替代。"
+          }
+        ],
+        "premiseIds": [],
+        "caveats": [
+          "附录也保留编者称评论在可能时已纳入的说明；不推断所有批评都未处理或都已解决。"
+        ],
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-09",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "B25 independently reauthored this exact original proposition with its source/evidence, scope, caveats and premise edges retained. Actual selected2011 original reinspection and candidate-v1 source/semantic assessment confirm compatibility; targeted review date reflects this new check. This does not change the immutable closing original or authorize unlisted changes."
+    },
+    {
+      "old": {
+        "id": "cl-db2011-review-questions",
+        "text": "因此，审查记录要让读者看清谁检查了什么。指南建议列出审查者的资格和分工、内部或外部审查、涉及的数据与方法、采用的检查，以及没有满足的条件。这样的记录使“通过”有了边界：用户可以区分原始数据是否被检查、模型是否被检查，以及哪些例外仍然存在。记录一次审查的结论，也保留了以后重新判断的依据。",
+        "kind": "interpretation",
+        "scope": "UNEP2011 审查记录和异常说明",
+        "evidenceIds": [
+          "ev-db2011-review-record"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-review-record",
+            "relation": "supports",
+            "rationale": "pp91–93及Table4.2要求具体身份、范围、准则和结果，且说明未通过检查和例外的记录。"
+          }
+        ],
+        "premiseIds": [],
+        "caveats": [
+          "审查记录完整不等于判断正确，也不能向未被审查的内容转授专家审批身份。"
+        ],
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-04",
+        "reviewKind": "agent-source-check"
+      },
+      "current": {
+        "id": "cl-db2011-review-questions",
+        "text": "要判断哪些检查可以承接，记录就须展开“谁检查了什么”。指南建议说明审查者的资格与分工、内部或外部审查，以及原始数据、清单方法、过程结果和文档中哪些部分进入了范围。结果还应列出实际采用的检查、未满足的条件和例外。这使用户能把审查结论对应到自己的疑问：原始数据被检查和模型被检查各有意义，缺项也有可以继续追查的位置。记录保存的是判断依据，并不使记录本身成为正确性的保证。",
+        "kind": "interpretation",
+        "scope": "UNEP2011 审查记录和异常说明",
+        "evidenceIds": [
+          "ev-db2011-review-record"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-review-record",
+            "relation": "supports",
+            "rationale": "pp91–93及Table4.2要求具体身份、范围、准则和结果，且说明未通过检查和例外的记录。"
+          }
+        ],
+        "premiseIds": [],
+        "caveats": [
+          "审查记录完整不等于判断正确，也不能向未被审查的内容转授专家审批身份。"
+        ],
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-09",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "B25 independently reauthored this exact original proposition with its source/evidence, scope, caveats and premise edges retained. Actual selected2011 original reinspection and candidate-v1 source/semantic assessment confirm compatibility; targeted review date reflects this new check. This does not change the immutable closing original or authorize unlisted changes."
+    },
+    {
+      "old": {
+        "id": "cl-db2011-review-relative-to-criteria",
+        "text": "审查同样需要先找到它所据的准则。指南把单个数据集的审查与完整研究的审查区分，并讨论数据库管理者和使用者不同的信息需要。一个数据集在某库通过检查，换到采用不同条件的库，仍可能需要查看原审查记录或补充检查。判断的关键在于哪些条件已被确认，而不是让一个 reviewed 标签代替所有使用情境。",
+        "kind": "interpretation",
+        "scope": "本指南数据集审查的对象与准则",
+        "evidenceIds": [
+          "ev-db2011-review-purpose"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-review-purpose",
+            "relation": "supports",
+            "rationale": "pp89–91说明单数据集范围和不同数据库准则，并允许额外审查或评估已有审查记录。"
+          }
+        ],
+        "premiseIds": [],
+        "caveats": [
+          "p90 对完整公开比较研究另有脚注限定；指南引述不替代相应 ISO 要求。"
+        ],
+        "conceptIds": [
+          "cn-review-scope"
+        ],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-04",
+        "reviewKind": "agent-source-check"
+      },
+      "current": {
+        "id": "cl-db2011-review-relative-to-criteria",
+        "text": "判断一份数据能否用于眼前的研究，审查记录可以增加一层根据。2011年UNEP/SETAC数据库指导首先要求明确审查所据准则：检查的是单个数据集，还是包含它的完整研究；确认的是数据库要求，还是用户还需要另外判断的条件？它允许另一数据库在接纳已审数据时追加审查，也允许先评估已有审查记录是否足够。已有工作因此能够复用，但复用的是有明确对象与准则的检查结果。仅凭reviewed标签，无法知道换了用途以后哪些问题已经得到回答。",
+        "kind": "interpretation",
+        "scope": "本指南数据集审查的对象与准则",
+        "evidenceIds": [
+          "ev-db2011-review-purpose"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-review-purpose",
+            "relation": "supports",
+            "rationale": "pp89–91说明单数据集范围和不同数据库准则，并允许额外审查或评估已有审查记录。"
+          }
+        ],
+        "premiseIds": [],
+        "caveats": [
+          "p90 对完整公开比较研究另有脚注限定；指南引述不替代相应 ISO 要求。"
+        ],
+        "conceptIds": [
+          "cn-review-scope"
+        ],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-09",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "B25 independently reauthored this exact original proposition with its source/evidence, scope, caveats and premise edges retained. Actual selected2011 original reinspection and candidate-v1 source/semantic assessment confirm compatibility; targeted review date reflects this new check. This does not change the immutable closing original or authorize unlisted changes."
+    },
+    {
+      "old": {
+        "id": "cl-db2011-user-and-manager",
+        "text": "取得一份数据库中的数据，还需要知道它为什么被接纳，以及是否适合眼前的问题。2011 年数据库指导把管理者放在数据提供者与使用者之间：管理者维护共同条件，开发者说明数据怎样形成，使用者则根据研究目的判断适用性。这些责任相连，却回答不同问题；一个数据库内部一致，并没有单独完成每项具体研究的选择。",
+        "kind": "interpretation",
+        "scope": "UNEP2011 数据链角色与使用责任",
+        "evidenceIds": [
+          "ev-db2011-audience",
+          "ev-db2011-review-purpose"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-audience",
+            "relation": "supports",
+            "rationale": "pp44–46说明主要受众及数据链角色，适用性仍取决于研究目标范围。"
+          },
+          {
+            "evidenceId": "ev-db2011-review-purpose",
+            "relation": "supports",
+            "rationale": "pp89–90将数据库要求与使用者目的分成审查的两个目标，限定入库状态能表达什么。"
+          }
+        ],
+        "premiseIds": [],
+        "caveats": [
+          "不是对任何实际数据库或数据集的质量认证。"
+        ],
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-04",
+        "reviewKind": "agent-source-check"
+      },
+      "current": {
+        "id": "cl-db2011-user-and-manager",
+        "text": "一份数据进入数据库，便有机会被许多研究反复使用；它能支持哪一次研究，却要在使用时具体判断。2011年UNEP/SETAC数据库指导把管理者置于提供者与使用者之间：开发者交代数据怎样形成，管理者维护共同条件并传递信息，使用者据自己的目标判断是否适用。这条分工链让选择有据可循。数据被接纳进一个内部一致的库，是其中一个环节，尚未替用户完成眼前的选择。",
+        "kind": "interpretation",
+        "scope": "UNEP2011 数据链角色与使用责任",
+        "evidenceIds": [
+          "ev-db2011-audience",
+          "ev-db2011-review-purpose"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-audience",
+            "relation": "supports",
+            "rationale": "pp44–46说明主要受众及数据链角色，适用性仍取决于研究目标范围。"
+          },
+          {
+            "evidenceId": "ev-db2011-review-purpose",
+            "relation": "supports",
+            "rationale": "pp89–90将数据库要求与使用者目的分成审查的两个目标，限定入库状态能表达什么。"
+          }
+        ],
+        "premiseIds": [],
+        "caveats": [
+          "不是对任何实际数据库或数据集的质量认证。"
+        ],
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-09",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "B25 independently reauthored this exact original proposition with its source/evidence, scope, caveats and premise edges retained. Actual selected2011 original reinspection and candidate-v1 source/semantic assessment confirm compatibility; targeted review date reflects this new check. This does not change the immutable closing original or authorize unlisted changes."
+    },
+    {
+      "old": {
+        "id": "cl-db2011-versioned-confidence",
+        "text": "数据的变化会把这些问题再次带回使用者面前。技术、原始资料或基本流覆盖更新后，指南建议说明改了什么、对相关数据有什么影响，以及做过怎样的复核。旧版本的审查记录可以帮助理解历史，却还需要与当前版本的变化相接。这样，信任落实到可追踪的对象、条件和检查，而不会在更新之后只留下一个没有时间边界的标签。",
+        "kind": "synthesis",
+        "scope": "由数据更新与限定审查范围形成的解释",
+        "evidenceIds": [
+          "ev-db2011-change",
+          "ev-db2011-review-record"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-change",
+            "relation": "supports",
+            "rationale": "pp94–95要求说明更新类别、相关后果和变更后的审查情况，支撑版本关联。"
+          },
+          {
+            "evidenceId": "ev-db2011-review-record",
+            "relation": "supports",
+            "rationale": "具体审查对象与检查范围限定旧记录能够支持的判断。"
+          }
+        ],
+        "premiseIds": [
+          "cl-db2011-review-relative-to-criteria",
+          "cl-db2011-review-questions"
+        ],
+        "caveats": [
+          "内容变化需要与既有证据相接，但不表示每次变更都必然使全部旧证据失效。"
+        ],
+        "reasoning": "检查绑定具体内容，更新改变部分内容；用户需把变更和现有审查记录连接起来，才能判断旧结论还有哪些支持范围。",
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-04",
+        "reviewKind": "agent-source-check"
+      },
+      "current": {
+        "id": "cl-db2011-versioned-confidence",
+        "text": "即使用途不变，更新后的数据内容也需要重新接到原先的使用理由。指南列出的变化包括技术更新、原始资料改善、基本流增加，以及由底层数据变更引起的聚合结果重算。它建议向用户说明改动及对相关数据的后果，并交代变更后接受了何种程度的审查。旧记录于是仍有用：它说明先前检查过什么，变更记录则指出哪些联系需要重新确认。版本变化不必使全部证据归零，信任却需要接到当前内容，不能只沿用一个无时间边界的标签。",
+        "kind": "synthesis",
+        "scope": "由数据更新与限定审查范围形成的解释",
+        "evidenceIds": [
+          "ev-db2011-change",
+          "ev-db2011-review-record"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-change",
+            "relation": "supports",
+            "rationale": "pp94–95要求说明更新类别、相关后果和变更后的审查情况，支撑版本关联。"
+          },
+          {
+            "evidenceId": "ev-db2011-review-record",
+            "relation": "supports",
+            "rationale": "具体审查对象与检查范围限定旧记录能够支持的判断。"
+          }
+        ],
+        "premiseIds": [
+          "cl-db2011-review-relative-to-criteria",
+          "cl-db2011-review-questions"
+        ],
+        "caveats": [
+          "内容变化需要与既有证据相接，但不表示每次变更都必然使全部旧证据失效。"
+        ],
+        "reasoning": "检查绑定具体内容，更新改变部分内容；用户需把变更和现有审查记录连接起来，才能判断旧结论还有哪些支持范围。",
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-09",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "B25 independently reauthored this exact original proposition with its source/evidence, scope, caveats and premise edges retained. Actual selected2011 original reinspection and candidate-v1 source/semantic assessment confirm compatibility; targeted review date reflects this new check. This does not change the immutable closing original or authorize unlisted changes."
     }
   ],
   "consumers": [
@@ -742,6 +1289,359 @@
         "reviewKind": "agent-source-check"
       },
       "rationale": "Other categories still require relevant dynamic characterization; historical forcing/annual-factor clarification does not turn missing category models into zero impacts."
+    },
+    {
+      "id": "cl-closing-historical-return",
+      "record": {
+        "id": "cl-closing-historical-return",
+        "kind": "synthesis",
+        "text": "本书由一件物品的选择出发，走到这里，得到的是一种可以说明根据的判断方式。容器研究让交付比较与链外政策问题分别可见，墙面教学例让活动变化的后果可以重算，购物袋研究让模型所需次数与真实用法之间的缺口有了位置。这些材料没有共同证明某个产品普遍更好，却使问题可以被问得更准确：所比较的服务是什么，哪些活动完成它，哪些证据支持眼前的判断。已有根据可以支持条件明确的选择，也可以保留尚须权衡的后果。新证据到来时，沿着这些关系返回，便有理由说明为什么保持结论，或在哪一步改变它。",
+        "scope": "本书所选两部早期容器原报告、一项墙面教学案例与一项历史购物袋研究的作者综合。",
+        "premiseIds": [
+          "cl-closing-container-comparison-and-policy",
+          "cl-closing-wall-substrate",
+          "cl-closing-pack-threshold-and-review",
+          "cl-book-conclusion-conditions",
+          "cl-pack-limits",
+          "cl-connect-next-evidence-at-link"
+        ],
+        "evidenceIds": [
+          "ev-early-repa1974-service",
+          "ev-early-rti1972-spending",
+          "ev-pack-ea2011-review-required-reuse-limitation"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-early-repa1974-service",
+            "relation": "context",
+            "rationale": "给出已采用的交付任务和过程到交付的比较关系。"
+          },
+          {
+            "evidenceId": "ev-early-rti1972-spending",
+            "relation": "context",
+            "rationale": "给出作者识别的容器链外消费及净影响缺口。"
+          },
+          {
+            "evidenceId": "ev-pack-ea2011-review-required-reuse-limitation",
+            "relation": "context",
+            "rationale": "给出已发表研究对所需次数与实际复用证据的明确区分。"
+          }
+        ],
+        "conceptIds": [],
+        "reasoning": "三类例证分别显示怎样确定比较对象、怎样通过模型隔离与复核前提变化、怎样标出迈向实际建议所缺的资料。共同的阅读问题及其作者判断由这些受限前提综合推出。",
+        "caveats": [
+          "材料之间的关系是本书的分析对照。制度传承、学科整体进步或历史优先权各需独立史料。",
+          "可追溯的模型关系提供复查起点；实际决定的适用性仍取决于研究证据、范围及相关判断理由。"
+        ],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-09"
+      },
+      "rationale": "Transitive dependency through next-evidence-at-link remains intact: reasoned preservation or revision follows traceable changes, without claiming universal product superiority, scientific history or decision validation."
+    },
+    {
+      "id": "cl-connect-next-evidence-at-link",
+      "record": {
+        "id": "cl-connect-next-evidence-at-link",
+        "text": "这条思路也可用于下一次比较：从最先缺依据的关系着手。服务变化，就回查所需过程与竞争对象；背景资料更换，就检查它代表谁、影响哪些计算；补入原先缺失的流，就重看覆盖与结果；规则发生实质修订，就核对所用分支是否仍适用。仍有根据的关系可以保留，变化触及的部分需要重新检查，同时继续寻找尚未查清的依赖。这样能分清，修订一项判断缺的是资料、关系解释，还是作出选择的理由。这是一条有条件的检查路径，未查清的问题仍然开放。",
+        "kind": "proposal",
+        "scope": "服务、数据、覆盖和规则变化后的针对性复查；作者建议，不是自动影响识别算法。",
+        "evidenceIds": [
+          "ev-ilcd-iteration",
+          "ev-db2011-change",
+          "ev-allocation-2001-correction",
+          "ev-time-arv-background"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-ilcd-iteration",
+            "relation": "supports",
+            "rationale": "解释回到目标、模型和数据的迭代，支撑按问题重新核查的推进方式。"
+          },
+          {
+            "evidenceId": "ev-db2011-change",
+            "relation": "supports",
+            "rationale": "更新需说明相关数据影响和复核，支持以变化所触及部分安排检查。"
+          },
+          {
+            "evidenceId": "ev-allocation-2001-correction",
+            "relation": "context",
+            "rationale": "增补删除规则和弃用例子的实例，说明有些变化触及程序适用性而非仅换数值。"
+          },
+          {
+            "evidenceId": "ev-time-arv-background",
+            "relation": "context",
+            "rationale": "背景分报使替换背景后的再用可被讨论，但不保证替换无需重算。"
+          }
+        ],
+        "premiseIds": [
+          "cl-book-interpret-iterate",
+          "cl-db2011-versioned-confidence",
+          "cl-allocation-addendum-substantive",
+          "cl-future-background"
+        ],
+        "caveats": [
+          "依赖关系可能仍不完整，不能据此建立免于重新检查的通用规则。",
+          "这是一项针对性检查建议，不提供计算、软件或规范合规的验证结果。"
+        ],
+        "reasoning": "迭代、版本更新和修订实例支持按依赖关系定位后续证据；这是一项有条件的检查建议，不是已证明正确的自动化影响分析算法。",
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-09",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "Version premise still supports affected-content rechecking while preserving other evidence. Consumer explicitly acknowledges unknown dependencies and remains a suggested path, not an exemption algorithm."
+    },
+    {
+      "id": "cl-connect-object-before-unit",
+      "record": {
+        "id": "cl-connect-object-before-unit",
+        "text": "一项比较走到结论面前，先前接起的关系也到了接受检验的时候：这个数描述什么，它为什么与眼前的选择有关？先从最靠近数据的一端看。数据库中的流记录可以供多个过程引用，每一次交换却各有数量和角色；跨方案比较所要求的服务，又处在另一个层次。两份结果都写成“每千克”，说清的是报数基准，尚须说明各自怎样完成服务。千克换成克有确定比例，换算后的结果是否适用于这次比较，则取决于具体方案、服务条件和资料实际表示的对象。把这些关系说清，连接才有可检查的根据。",
+        "kind": "synthesis",
+        "scope": "流对象、交换关系与跨方案服务比较的连接条件；作者综合，不主张概念等价。",
+        "evidenceIds": [
+          "ev-flow-types",
+          "ev-exchange",
+          "ev-ilcd-service",
+          "ev-db2011-goal"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-flow-types",
+            "relation": "context",
+            "rationale": "openLCA手册提供流对象类型，限定本段对象层的例子。"
+          },
+          {
+            "evidenceId": "ev-exchange",
+            "relation": "supports",
+            "rationale": "输入输出表把复用流与数量、单位、角色组合，支持把对象与定量关系分开。"
+          },
+          {
+            "evidenceId": "ev-ilcd-service",
+            "relation": "supports",
+            "rationale": "ILCD功能描述的对象、数量、性能、期间说明单位标签不足以建立服务可比。"
+          },
+          {
+            "evidenceId": "ev-db2011-goal",
+            "relation": "supports",
+            "rationale": "2011指南以技术、时期、地域及用途说明数据集表示对象，提供连接另一端的具体条件。"
+          }
+        ],
+        "premiseIds": [
+          "cl-flow-exchange-distinction",
+          "cl-book-service-contract",
+          "cl-db2011-represented-object"
+        ],
+        "caveats": [
+          "流记录、交换和功能单位并非同层级概念；共同分析结构不证明概念等价。",
+          "这一连接是分析性综合，不是新标准阶段。",
+          "这里限定跨方案比较的解释，不把研究目的设为同量纲单位换算的前置条件。"
+        ],
+        "reasoning": "两处实例各自区分对象和对象在任务中的关系；共同点是连接前需辨认关系两端，不能据共同名词建立实体同一性。",
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-09",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "Rewritten represented-object retains dataset target, technology/time/geography, purpose and non-equivalence of naming; consumer still distinguishes physical unit conversion from contextual comparability. No stronger premise imported."
+    },
+    {
+      "id": "cl-connect-reuse-keeps-relation",
+      "record": {
+        "id": "cl-connect-reuse-keeps-relation",
+        "text": "关系辨认清楚，资料便有了可复用的位置。ReCiPe论文以USES-LCA2.0为基础计算毒性，采用USEtox物质数据作输入，同时明确没有采用USEtox模型。前瞻技术研究建议分开报告前景与背景影响，也是在为另一情景利用前景结果提供机会；要换入背景重算，仍须知道数据和模型怎样相接。重用保留下来的，是有对象、假设和接口含义的那份资料。共享输入并未使两个模型相同，分开报告也未必已足够重建完整模型。知道资料接在何处，接下来才能判断它实际覆盖了什么。",
+        "kind": "synthesis",
+        "scope": "跨模型复用输入或模块时保留用途和依赖关系的条件；作者综合。",
+        "evidenceIds": [
+          "ev-lcia-model-data-factor-separation",
+          "ev-time-arv-background",
+          "ev-db2011-documentation"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-lcia-model-data-factor-separation",
+            "relation": "supports",
+            "rationale": "ReCiPe原论文明确区分所采用的物质数据与未采用的USEtox模型，直接反驳数据共享蕴含模型相同。"
+          },
+          {
+            "evidenceId": "ev-time-arv-background",
+            "relation": "supports",
+            "rationale": "2018论文建议分开报告前景与背景的影响，以便在别的情景利用前景结果；这不单独提供替换背景重算所需的模型接口。"
+          },
+          {
+            "evidenceId": "ev-db2011-documentation",
+            "relation": "supports",
+            "rationale": "2011指南说明来源、边界及固定假设，使重用判断有可追查条件。"
+          }
+        ],
+        "premiseIds": [
+          "cl-lcia-model-data-factor-separation",
+          "cl-future-background",
+          "cl-db2011-documenting-number"
+        ],
+        "caveats": [
+          "这两项文献实例不证明任何实际因子发行包、模型软件或跨库重用结果。",
+          "分开报告不保证已足以重建完整模型。"
+        ],
+        "reasoning": "共享输入和可替换模块使有条件重用成为可能，但不产生跨模型等价性；重新连接应追踪被改变的依赖关系。",
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-09",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "Rewritten documentation still supports inspecting sources, assumptions and model conditions; consumer preserves separate source-specific model-reuse examples and non-reconstruction qualification."
+    },
+    {
+      "id": "cl-connect-review-does-not-transfer",
+      "record": {
+        "id": "cl-connect-review-does-not-transfer",
+        "text": "审查能够增加判断的根据，前提是知道它检查了什么。数据集审查可能对照入库准则，完整研究的审查则要面对研究目标和比较问题；既有审查中的对象、准则、版本及未满足条件，决定了哪些检查仍适用于当前使用。数据库指南自身的审查史已经显示，整体肯定与具体建议得到何种检查各有范围。引用可把一句话连回出处，新的综合仍须交代自己的推理；文本支持、实际关系的验证和领域判断分别承担工作。循着这些具体记录，才能决定已有审查提供了哪些根据，以及哪里需要补充。",
+        "kind": "synthesis",
+        "scope": "审查准则、被审对象和版本变化之间的适用关系；作者综合，不由引用转授评审结论。",
+        "evidenceIds": [
+          "ev-db2011-review-purpose",
+          "ev-db2011-review-record",
+          "ev-db2011-own-review",
+          "ev-db2011-change"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-review-purpose",
+            "relation": "supports",
+            "rationale": "2011指南区分数据集审查与具体使用需求，并讨论不同入库条件。"
+          },
+          {
+            "evidenceId": "ev-db2011-review-record",
+            "relation": "supports",
+            "rationale": "审查记录列范围、人员、检查及未通过项，使既有审查可在限定条件下复用。"
+          },
+          {
+            "evidenceId": "ev-db2011-own-review",
+            "relation": "qualifies",
+            "rationale": "Annex2分别记录送审草稿章节总体正面的评语、第0、1和8章未审、对具体内容的批评及委员会的总体意见；各项范围不能互相替代。"
+          },
+          {
+            "evidenceId": "ev-db2011-change",
+            "relation": "supports",
+            "rationale": "更新及复核需绑定当前变化，支持版本改变后重接审查条件。"
+          }
+        ],
+        "premiseIds": [
+          "cl-db2011-review-relative-to-criteria",
+          "cl-db2011-review-questions",
+          "cl-db2011-review-of-guidance",
+          "cl-db2011-versioned-confidence"
+        ],
+        "caveats": [
+          "2011 指南的评审不构成对新引用或新综合的外部认证。",
+          "这里不从指南引述推出现行 ISO 或 EU 规范合规要求。"
+        ],
+        "reasoning": "记录清楚使既有检查可被有条件采纳；不同审查对象与当前版本间的适用关系必须另查，来源核查也不能自行升级为科学批准。",
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-09",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "All four rewritten premises retain object/criteria, actual review scope, bounded positive/critical Annex2 history and change-related review. Consumer remains a synthesis without ISO/EU/current certification transfer."
+    },
+    {
+      "id": "cl-connect-target-and-distribution",
+      "record": {
+        "id": "cl-connect-target-and-distribution",
+        "text": "对象和服务有了明确位置，资料能代表谁便成为下一道问题。若想知道一类工厂的平均表现，需要说明所取资料为何能代表这类工厂，再辨认区间描述的是各厂之间的变异，还是平均值估计的不确定程度。代表性与精密程度各自提供信息：区间很窄，不会单独扩大资料的适用总体；观测包含多种工厂，也还须交代采样和估计依据，才能说明平均值估得多准。将总体与所估计的量同时说清，才知道这一组数能够支持哪一种比较。",
+        "kind": "synthesis",
+        "scope": "数据代表对象与统计估计目标的联系；作者综合，不替代样本或分布依据。",
+        "evidenceIds": [
+          "ev-db2011-quality-dimensions",
+          "ev-unc-huij-target",
+          "ev-unc-huij-sd-sem"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-quality-dimensions",
+            "relation": "supports",
+            "rationale": "2011指南将精密度与代表性列为不同质量维度，为先识别总体提供依据。"
+          },
+          {
+            "evidenceId": "ev-unc-huij-target",
+            "relation": "supports",
+            "rationale": "Huijbregts依研究目标区分来源变异和平均表现的不确定性。"
+          },
+          {
+            "evidenceId": "ev-unc-huij-sd-sem",
+            "relation": "qualifies",
+            "rationale": "五工厂例的SD/SEM转换另有代表性与正态假设；不由公式替真实样本证明这些条件。"
+          }
+        ],
+        "premiseIds": [
+          "cl-db2011-representativeness-and-precision",
+          "cl-unc-target",
+          "cl-unc-sd-sem"
+        ],
+        "caveats": [
+          "未从指南质量维度推导统计分布；未校准任何真实数据。",
+          "没有把五工厂示例的假设推广到其他样本。"
+        ],
+        "reasoning": "适用对象和统计估计量是相接但独立的两项核查；满足其中一项并不蕴含另一项，连接需要同时说明目标总体与估计目标。",
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-09",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "Representativeness/precision distinction remains compatible with population and estimand distinction. Consumer explicitly retains its separate statistical premises and does not derive a distribution from quality indicators."
+    },
+    {
+      "id": "cl-connect-zero-needs-origin",
+      "record": {
+        "id": "cl-connect-zero-needs-origin",
+        "text": "结果表里的零尤其需要这样的说明。有依据的清单零、显示中与零相混的缺失记录，以及USEtox文档所述缺少毒理资料时按约定置零的人体效应因子，具有不同的信息状态。社会量表的零可以表示合规，仪表盘的零可以处在相对最差端；正负项目相抵的净零又要靠各分项解释。因此，数值宜连同生成方式保留：未知项指回覆盖缺口，参照分数指回量表，净额保留相抵的各项。由此可以判断哪些信息可用于眼前的问题、哪些仍须补充，缺项的实际大小却不会由这个分类自动得出。",
+        "kind": "proposal",
+        "scope": "清单、缺失值、毒性约定、社会量表与抵消结果中零的不同含义；作者记录建议。",
+        "evidenceIds": [
+          "ev-db2011-aggregation-gaps",
+          "ev-usetox-missing-data-model-zero",
+          "ev-sustainability-slca-scale-meaning",
+          "ev-sustainability-lcsa-relative-dashboard"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-aggregation-gaps",
+            "relation": "supports",
+            "rationale": "2011指南明确要求区分缺失与真实零，支撑信息状态不应被数值掩盖。"
+          },
+          {
+            "evidenceId": "ev-usetox-missing-data-model-zero",
+            "relation": "supports",
+            "rationale": "USEtox文档将缺毒理资料时按约定把人体效应因子置零列为输入不确定性；该计算零不证明无毒性。"
+          },
+          {
+            "evidenceId": "ev-sustainability-slca-scale-meaning",
+            "relation": "supports",
+            "rationale": "2020指南区分合规赋零、序数赋分及正负抵消的语义。"
+          },
+          {
+            "evidenceId": "ev-sustainability-lcsa-relative-dashboard",
+            "relation": "supports",
+            "rationale": "2010仪表盘的零取决于比较集合且缺失另示，支撑相对评分零的单独解释。"
+          }
+        ],
+        "premiseIds": [
+          "cl-db2011-missing-and-zero",
+          "cl-usetox-missing-data-model-zero",
+          "cl-sustainability-ordinal-zero-and-net-zero",
+          "cl-sustainability-dashboard-zero-is-relative"
+        ],
+        "caveats": [
+          "状态并列是一项记录建议，不要求所有软件采用相同编码。",
+          "真实零仍须有对应测量或模型适用依据；信息状态区分不验证任何具体零值。"
+        ],
+        "reasoning": "同一数字可由不同生成过程得到；保存生成状态可阻止错误解释，但不建立跨量表转换或补足未知事实。",
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-09",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "Missing-versus-true-zero support is retained. Consumer preserves its own convention-zero and score-zero premises, without claiming the guide mandates common coding or a four-state model."
     }
   ],
   "reviewEvidence": [
@@ -754,6 +1654,16 @@
       "kind": "exact final wording and scoped review-date delta; six consumer judgments carried forward",
       "reportSha256": "409368e2339335f97e4a41bfa142fc727ff5e062fc5c006d237bf878074e082d",
       "receiptSha256": "860f9fc8ff85edba9baf1ea5e3dcd7beab7c358aa1437feecb29b05e66285dbe"
+    },
+    {
+      "kind": "B25 actual candidate source/semantic and seven dependent-use judgments; primary independently read originals, fourteen claims, seven consumers, two definitions and nine concept neighbors",
+      "reportSha256": "12753ac926d7aa079296af8bb20959ee7278eebd05389e93ab29cc91b865e255",
+      "receiptSha256": "767d739353f3ebc16aba7068213ef4a8ab145212a77232f87c08062815a3cb3e"
+    },
+    {
+      "kind": "B25 exact four-text reader correction source delta; review-relative/version current premises and affected unchanged consumers rechecked",
+      "reportSha256": "05b833556572fa1dd4b1a7147704b0af7ea33655ef00536c9667f97e4e646b5d",
+      "receiptSha256": "bbc4178264dfec84db18b6e6556310e5f922801bf084d287fee3ed9fcaaf747f"
     }
   ]
 }
