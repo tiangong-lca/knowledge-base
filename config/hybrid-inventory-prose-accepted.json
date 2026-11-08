@@ -1,0 +1,1263 @@
+{
+  "status": "reviewed",
+  "reviewedAt": "2026-11-08",
+  "reviewKind": "agent-source-arithmetic-context-and-independent-reader-check",
+  "reviewedWorkingTreeBase": "3175a49778afb92e4f6014d005e3116d164d6c3c",
+  "readerDraftSha256": "d436566f0107104e03825776ae3496a686e7628fdef7956aebd9907dbc44b2c7",
+  "readerScope": "Fresh Fable5/1M/Max/Bypass local session: full v1 and actual v2 including39 notes, description and page navigation; bounded v1→v2 clarification review. Source, empirical, engineering, links, formal PDF and full-book qualification are separate.",
+  "reviewEvidence": [
+    {
+      "kind": "independent-reader",
+      "sha256": "403896226e678b910637bc38987e0c268c256aae00598a00c6cab5849546b526"
+    },
+    {
+      "kind": "selected-source",
+      "sha256": "0e5a56ced2cb258535f8d9134123ab15e0c0c2e337fadb5c4df714db267a256a"
+    },
+    {
+      "kind": "selected-source",
+      "sha256": "e4d6bf9c2dc7a547c0224f13bdbe0a8fc7a66ce75a69ed57962f89e537e3d04e"
+    },
+    {
+      "kind": "selected-source",
+      "sha256": "64035c7abd011774e7bddf7ebe2082e535a67e80c3adbbfcec0fba1abf229b73"
+    },
+    {
+      "kind": "selected-source",
+      "sha256": "6dabbdb4bc2e6836d0780c02667051559146891aea726b91a66f4ba01b650382"
+    },
+    {
+      "kind": "arithmetic",
+      "sha256": "2dba45ddab3d576c7b07b7b92981ce5ae83059ad0196b3f8249acf1ba5b141c5"
+    },
+    {
+      "kind": "arithmetic",
+      "sha256": "00b88a3a4c9d499f364543afa92467142a66cf8dd2ec3cf21964795a362b6c11"
+    },
+    {
+      "kind": "public-context",
+      "sha256": "de9cc7ad3f89a4907d4843bb5f4079056a56acc8a01e9e1944d00e66ebc070d7"
+    }
+  ],
+  "sources": [
+    {
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "mdxSha256": "8e22e3f81fe2d178fffec352706501124b8605f48a7afbbc0999cb06f4085585",
+      "description": "沿烤面包器、三家供应者与泵的账户，辨认过程和经济数据的内部边界、重复覆盖与误差来源。",
+      "navigation": [
+        {
+          "href": "/docs/book/exchange-semantics-and-conversion/",
+          "title": "交换语义",
+          "description": "从对象与交换追踪计算活动、文件转换和表征状态，辨明模型保留了什么。"
+        },
+        {
+          "href": "/docs/book/midpoint-endpoint-value-choices/",
+          "title": "从排放到中点和终点：因果路径与价值选择",
+          "description": "沿因果路径、保护对象、单位、情景与区域条件解释中点和终点指标。"
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "cl-inv-boundary-carrier",
+      "text": "过程之间的联系即使全部算清，清单仍可能漏掉一整项活动。Suh 等人在讨论系统边界时指出，沿已选过程不断向上游展开，可以追到很深，却始终只在已选过程之间移动。联立方程把这些过程的相互需求一次求出，也没有因此增加一种原来不存在的数据。要让维修、运输或另一项活动进入结果，必须先识别它与产品系统的联系，再找到能表示这项活动的记录。边界问题由此超出了求解本身。",
+      "kind": "source-statement",
+      "scope": "Suh2004 学位论文 ChapterII 的再印文本；定位不采用 ACS 期刊版 pp657–664。",
+      "evidenceIds": [
+        "ev-inv-suh-matrix"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-inv-suh-matrix",
+          "relation": "supports",
+          "rationale": "实际再印p21把矩阵的递归优势与只涵盖所选过程的限制放在同一段讨论。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "定位采用固定再印载体的页码与索引；不能混用 ACS 期刊版页码或视为补充材料。"
+      ],
+      "conceptIds": [
+        "cn-inventory-truncation"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-inv-small-cuts",
+      "text": "遗漏是否重要，也不能只看进入产品的质量。Suh 等人的讨论保留了两个容易被混为一谈的问题：一项投入很轻或耗能很少，并不保证其环境贡献很小；逐项看似微小的省略，合在一起也未必可以忽略。维修等服务尤其难以按进入产品的物质质量判断。截断需要说明被舍去的是什么，以及这些舍去会怎样影响研究结论。",
+      "kind": "source-statement",
+      "scope": "该再印第2节对截断准则的论证；不是新的统一截断阈值。",
+      "evidenceIds": [
+        "ev-inv-suh-cutoff"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-inv-suh-cutoff",
+          "relation": "supports",
+          "rationale": "实际pp19–20分别讨论代理指标、服务投入和多个小截断的累积贡献。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "这里依据再印文本的论证，不从其历史标准转述推出当前规范要求。"
+      ],
+      "conceptIds": [
+        "cn-inventory-truncation"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-hyb-question",
+      "kind": "synthesis",
+      "scope": "已表示的过程反馈与遗漏的活动",
+      "text": "设一家工厂记得年度维修支出，却没有维修服务的上游清单。研究者可以把这笔已知采购接到经济投入产出表，用部门平均生产结构估计其背景。另一家工厂连有没有漏记维修采购也不清楚。此时借用同类部门的平均配方，承担的就是寻找潜在缺项的任务；配方还可能带入工厂已经实测的钢材和电力。两种用法都利用了经济数据，前者接续已知采购，后者推断缺项。后者尤其需要回答：补进来的哪一部分，已经由过程清单表示？",
+      "evidenceIds": [
+        "ev-hyb-agez-gap",
+        "ev-inv-suh-matrix"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb-agez-gap",
+          "relation": "supports",
+          "rationale": "原文区分已知流的背景建模和利用平均配方推断过程缺项，两者的资料缺口不同。"
+        },
+        {
+          "evidenceId": "ev-inv-suh-matrix",
+          "relation": "supports",
+          "rationale": "再印第二章第 21 页把边界内的递归求解与过程集合的覆盖分开。"
+        }
+      ],
+      "premiseIds": [
+        "cl-inv-example-meaning",
+        "cl-inv-small-cuts"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "将过程求解的覆盖边界与两种使用经济投入产出数据的目的相连。 两家工厂是作者设定的说明情境，不是原文实测案例。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-inv-io-limits",
+      "text": "经济账户的长处，是把许多部门放在同一张相互供需的网络中；代价是网络节点所代表的对象变粗了。Suh 等人所讨论的投入产出限制包括，部门内不同产品和技术被聚合，货币交易随价格变化，进口可能借用国内技术，统计年份与对象年份错开，环境账户也可能缺项。因此，一笔钱虽然找到了去向，它所换来的平均配方仍需另行判断能否代表具名产品。覆盖较宽和产品代表性较好，是两个不同的条件。",
+      "kind": "source-statement",
+      "scope": "Suh2004再印对当时投入产出方法及数据的评估；不用于判定现有数据库的具体质量。",
+      "evidenceIds": [
+        "ev-inv-suh-io",
+        "ev-inv-suh-limits"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-inv-suh-io",
+          "relation": "supports",
+          "rationale": "实际pp22–24列出聚合、价格、进口、年份及统计遗漏，与部门覆盖优势并列讨论。"
+        },
+        {
+          "evidenceId": "ev-inv-suh-limits",
+          "relation": "qualifies",
+          "rationale": "p31进一步要求投入产出数据满足研究所需质量，限制把覆盖面当成足够适用性的证据。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "文中第二阶截断演示带有明确强假设；不把其结果推广成现实清单的普遍误差。"
+      ],
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-inv-hybrid-forms",
+      "text": "混合清单就在这两类信息之间安排分工。Suh 等人区分的分层混合（tiered hybrid），由细致过程与背景数据分担需求；投入产出型混合（input-output-based hybrid）细分经济部门；集成混合（integrated hybrid）则把过程与经济系统接入统一结构。它们不是同一算法的三个名称。采用哪一种，都会遇到一条内部边界：哪些供应关系交给过程记录，哪些交给部门记录，跨界关系又由谁描述。",
+      "kind": "interpretation",
+      "scope": "Suh2004 再印 §4 的三类混合方法及各部分覆盖关系；末句为分析性解释。",
+      "evidenceIds": [
+        "ev-inv-suh-hybrid",
+        "ev-inv-suh-table"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-inv-suh-hybrid",
+          "relation": "supports",
+          "rationale": "实际pp25–28分别说明三类组合方式及过程部分与投入产出部分的界线选择。"
+        },
+        {
+          "evidenceId": "ev-inv-suh-table",
+          "relation": "qualifies",
+          "rationale": "Table1逐类保留不同弱点，支持不把名称相同理解为同一组保证。"
+        }
+      ],
+      "premiseIds": [
+        "cl-inv-boundary-carrier",
+        "cl-inv-io-limits"
+      ],
+      "caveats": [
+        "这些历史分类不是对全部后来混合方法的穷尽目录。"
+      ],
+      "conceptIds": [
+        "cn-hybrid-inventory"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-inv-double-counting",
+      "text": "内部边界放得不清，扩大覆盖就可能同时扩大重复。Suh 等人报告过一个分层案例，国际运输与国家能源矩阵相互覆盖，重复计算未得到满意解决；他们随后介绍的集成方法，试图通过扣除过程部分已经描述的商品流来处理重叠。前者是一个具体困难，后者是一种有条件的处理办法。只有找到同一活动在两套账户中的位置，才能判断某次扣除是否成立；“混合”这个方法名称本身不能完成这项核对。",
+      "kind": "source-statement",
+      "scope": "再印文本对所引运输案例与集成方法的报告；不是独立复算。",
+      "evidenceIds": [
+        "ev-inv-suh-hybrid",
+        "ev-inv-suh-limits"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-inv-suh-hybrid",
+          "relation": "supports",
+          "rationale": "实际p26明确报告一个未满意解决的重复计算问题；pp26–27说明集成方法的流量扣除处理。"
+        },
+        {
+          "evidenceId": "ev-inv-suh-limits",
+          "relation": "qualifies",
+          "rationale": "p32仍把内部边界和重复计算工具列为发展课题，限制无条件解决的读法。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "这里是再印文本对运输案例及集成方法的报告，不证明某一软件已经正确实现扣除。"
+      ],
+      "conceptIds": [
+        "cn-hybrid-inventory"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-hyb-object",
+      "kind": "source-statement",
+      "scope": "Suh 2004 年单作者论文的功能需求与经济系统",
+      "text": "Suh 的另一篇研究用一个假设的烤面包器，把这条内部边界写成了可计算的连接。功能需求是烤面包器在使用期内提供 1,000 片烤面包。过程侧分别描述钢、电、烤面包器、烤面包和废物处理，经济侧则记录农业、采矿、制造、建筑、金融及其他产品与服务的货币产出。钢有千克，电有千瓦时，部门产出有美元；这些坐标共同服务于一项需求，却不能先把它们化成一个无差别的总量。",
+      "evidenceIds": [
+        "ev-hyb-suh-object",
+        "ev-hyb-suh-toaster"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb-suh-object",
+          "relation": "supports",
+          "rationale": "第三章题头与功能单位说明确定原论文和需求身份。"
+        },
+        {
+          "evidenceId": "ev-hyb-suh-toaster",
+          "relation": "supports",
+          "rationale": "实例列出了五个过程和六类经济活动。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-hyb-sign",
+      "kind": "interpretation",
+      "scope": "处置服务的供求方向与物理废物流",
+      "text": "连通之前，还要说清每一行在计量什么。烤面包器报废时，按实物流看，是使用过程送出废物、处置过程接收废物；按服务看，是处置过程供给处理服务、使用过程需要这项服务。Suh 的集成例采用后一种表示，相应的两项记录一起反号。同一次处置可以用这两种坐标描述。若只换行名、留下另一种坐标中的符号，就会让方程索取不同的活动。",
+      "evidenceIds": [
+        "ev-hyb-suh-sign"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb-suh-sign",
+          "relation": "supports",
+          "rationale": "第 44、49、55、57 页的表格、式 (28) 和说明给出这两种方向。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-hyb-upstream",
+      "kind": "source-statement",
+      "scope": "上游连接按选定过程单位运行基准下的活动量归一化；不表示设备启动次数",
+      "text": "先沿过程采购走向经济系统。Suh 把稳态期间内尚未由过程模型覆盖的购买金额，除以同一期间按选定单位运行基准计的活动量，构成上游连接 Cᵘ。这里的“单位运行”是一份过程记录的计量基准，例如生产 1 kg 钢所需的活动，并非一次设备启动。Cᵘ 的行是背景商品，列是过程，单位为“货币／过程单位运行基准”。烤面包例每生产 1 kg 钢，向采矿和制造部门各提出 0.1 美元需求；采购金额还必须与经济表采用的价格口径一致。",
+      "evidenceIds": [
+        "ev-hyb-suh-bridge",
+        "ev-hyb-suh-toaster",
+        "ev-hyb-suh-prices",
+        "ev-hyb-suh-operation-basis"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb-suh-bridge",
+          "relation": "supports",
+          "rationale": "式 (21)、(22) 及后续单位说明定义归一化方向。"
+        },
+        {
+          "evidenceId": "ev-hyb-suh-toaster",
+          "relation": "supports",
+          "rationale": "表 3 和式 (29) 给出钢过程的两项补充。"
+        },
+        {
+          "evidenceId": "ev-hyb-suh-prices",
+          "relation": "qualifies",
+          "rationale": "运费、批零差价和表的价格基准制约金额的可比性。"
+        },
+        {
+          "evidenceId": "ev-hyb-suh-operation-basis",
+          "relation": "supports",
+          "rationale": "所选原文定义稳态期与过程单位运行基准，支持相对基准的活动量解释。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-hyb-upstream-bridge"
+      ],
+      "mappingIds": [
+        "map-hyb-bridge-directions"
+      ],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-hyb-downstream",
+      "kind": "source-statement",
+      "scope": "下游连接按每单位货币产出的过程产品物量计",
+      "text": "再沿相反方向，看经济部门使用了哪些过程产出。Suh 用交付的功能流物量除以对应商品的货币产出，构成下游连接 Cᵈ，单位为“功能流物量／货币产出”。原例每一美元制造业商品需要过程侧供应 0.01 kg 钢、0.08 kWh 电，以及对应 0.05 kg 废物的处理服务。制造业多生产一些，就会多索取这些过程产出；过程为此扩大活动，又会采购背景商品。两条跨界关系由此形成反馈。",
+      "evidenceIds": [
+        "ev-hyb-suh-bridge",
+        "ev-hyb-suh-toaster"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb-suh-bridge",
+          "relation": "supports",
+          "rationale": "式 (22) 规定下游功能流的分子和经济产出分母。"
+        },
+        {
+          "evidenceId": "ev-hyb-suh-toaster",
+          "relation": "supports",
+          "rationale": "表 4、式 (30) 明示制造部门对过程产品与服务的需要。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-hyb-downstream-bridge"
+      ],
+      "mappingIds": [
+        "map-hyb-bridge-directions"
+      ],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-hyb-balance",
+      "kind": "interpretation",
+      "scope": "混合平衡中各行的单位及可求解条件",
+      "text": "把反馈写成平衡式，需要保留两种坐标。令 s 表示各过程相对于其单位运行基准的活动量，x 表示各背景商品的货币产出；P 的列给出每份过程基准的功能流净供给，供给记正、需求记负；R 的列给出每元背景产出所需的背景投入。物量平衡 P s − Cᵈ x ＝ y 表示，过程供给扣去经济部门的使用，余量才交给外部需求 y。货币平衡 x − R x − Cᵘ s ＝ 0 表示，背景产出同时满足背景内部和过程侧的采购。右侧为零，只说明没有另外指定背景商品的外部需求，不能读成背景无需活动。在系数固定且组合方阵可逆的条件下，两式共同确定 s 与 x。",
+      "evidenceIds": [
+        "ev-hyb-suh-block",
+        "ev-hyb-suh-bridge",
+        "ev-hyb-suh-operation-basis"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb-suh-block",
+          "relation": "supports",
+          "rationale": "将式 (23)–(25) 的两个块行拆开解释，沿用过程产出为正、需要项为负的平衡约定。"
+        },
+        {
+          "evidenceId": "ev-hyb-suh-bridge",
+          "relation": "supports",
+          "rationale": "两种连接分别把物量或货币需求换到对应的行。"
+        },
+        {
+          "evidenceId": "ev-hyb-suh-operation-basis",
+          "relation": "supports",
+          "rationale": "所选原文定义稳态期与过程单位运行基准，支持相对基准的活动量解释。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-hyb-upstream-bridge",
+        "cn-hyb-downstream-bridge"
+      ],
+      "mappingIds": [
+        "map-hyb-bridge-directions"
+      ],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-hyb-inventory",
+      "kind": "interpretation",
+      "scope": "活动求解与直接环境流的逐块汇总",
+      "text": "活动量确定后，环境账户才随之缩放。过程直接 CO₂ 强度以每份单位运行基准计，乘 s；背景直接强度以每元产出计，乘 x。两项都成为千克，才能对同一种环境流相加。过程侧可能已包含分属多家企业的钢铁、电力和处置活动；这些活动的直接排放若还留在背景总账里，就会再次进入结果。因此，技术流配平并不是核对的终点，环境账户也要沿同一条内部边界分开。",
+      "evidenceIds": [
+        "ev-hyb-suh-block",
+        "ev-hyb-suh-overlap"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb-suh-block",
+          "relation": "supports",
+          "rationale": "式 (26)、(27) 分开两个环境干预块。"
+        },
+        {
+          "evidenceId": "ev-hyb-suh-overlap",
+          "relation": "supports",
+          "rationale": "附录末段另行要求调整已由过程表示的环境干预。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-hyb-toaster",
+      "kind": "source-statement",
+      "scope": "1,000 片烤面包的原文教学例及其两项贡献",
+      "text": "烤面包例显示了这条回路为何会改变过程侧本身。一次使用活动交付全部 1,000 片烤面包，原文式（7）给它 1 kg CO₂ 的直接排放；整个过程清单还要计入钢、电等活动，其中制钢用电、发电用钢，须先联立求解。原文报告的过程清单为 18.1 kg CO₂。接入两种连接后，总量为 30.015 kg，其中过程部分 20.027 kg、背景部分 9.988 kg。这里 Cᵈ 的烤面包行是零，背景增加的是对钢、电和处置服务的需求。若保留原来的 18.1，只在末尾加上 9.988，就漏算了背景反过来需要的过程活动。这些数值说明的是作者设定的假设系统。",
+      "evidenceIds": [
+        "ev-hyb-suh-toaster",
+        "ev-hyb-suh-limits"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb-suh-toaster",
+          "relation": "supports",
+          "rationale": "式 (9)、(33) 和图 3 后的分解给出同一功能单位的四个报告值。"
+        },
+        {
+          "evidenceId": "ev-hyb-suh-limits",
+          "relation": "qualifies",
+          "rationale": "原文限定约 66% 增幅的案例范围。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-hyb-downstream-dispute",
+      "kind": "interpretation",
+      "scope": "Peters 与 Hertwich 工作论文区分固定功能需求和可独立索取任一过程产出的数据库",
+      "text": "方程允许背景索取钢和电，过程数据是否足以承接这些需求，却引出了争论。Peters 与 Hertwich 的 2004 年工作论文区分两种极端情形：一组数据只适合共同描述指定功能单位，或其中各过程足以分别承接外部需求。对前一种情形，反馈只包括由原功能需求引出的背景活动再购买同一特定服务。作者用背景部门员工午餐需要该型烤面包器提供的烤面包来说明这条联系；它不是经济中全部烤面包消费。他们依据这种消费品示例判断，许多这类应用的反馈可能很小，并在这一前提下建议将 Cᵈ 置零。对后一种情形，则须识别各部门究竟向哪些具体过程采购，数据相容性与采集成本都随之成为问题。作者也承认，实际数据库常居于两者之间。能在矩阵中留出一个位置，与能够为它找到相应数据，仍是两步。",
+      "evidenceIds": [
+        "ev-hyb-downstream-comment",
+        "ev-hyb-suh-block"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb-downstream-comment",
+          "relation": "supports",
+          "rationale": "工作论文分别讨论两种数据库用途、功能流需求位置与所需销售范围。"
+        },
+        {
+          "evidenceId": "ev-hyb-suh-block",
+          "relation": "context",
+          "rationale": "此前的原模型确定被讨论的下游块及其单位。"
+        }
+      ],
+      "premiseIds": [
+        "cl-hyb-downstream",
+        "cl-hyb-toaster"
+      ],
+      "conceptIds": [
+        "cn-hyb-downstream-bridge"
+      ],
+      "caveats": [
+        "详细论证依据 2004 年 NTNU 工作论文。2006 年同题期刊评论另有出版身份，两版逐项对应仍需核对。"
+      ],
+      "mappingIds": [],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-08",
+      "reasoning": "区分工作论文对不同数据用途给出的条件判断，并联系原模型可求解和可识别的不同要求。"
+    },
+    {
+      "id": "cl-hyb-downstream-test",
+      "kind": "source-statement",
+      "scope": "工作论文只保留烤面包行反馈时与全零下游块的原例对照",
+      "text": "这篇工作论文把反馈对象改成了烤面包本身：假定每个经济部门每生产一美元商品，就购入 0.01 片烤面包。最终消费者的需求仍为 1,000 片，经济活动另引出约 0.0632 片内部需求。作者报告的结果为 27.2369 kg CO₂，将 Cᵈ 全部置零则为 27.2352 kg。小差别只说明这组系数中的烤面包服务反馈很小，不能据此外推 Suh 原例中的钢、电和处置服务反馈也小；两组总量来自不同的连接设定。Peters 与 Hertwich 还保留了结构变化的例外：研究若涉及电站等行业的大幅调整，经济部门对这些过程产出的需求可能值得追踪。",
+      "evidenceIds": [
+        "ev-hyb-downstream-toast-row",
+        "ev-hyb-suh-toaster"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb-downstream-toast-row",
+          "relation": "supports",
+          "rationale": "工作论文给出替换的下游行、内部需求、两种结果和结构变化例外。"
+        },
+        {
+          "evidenceId": "ev-hyb-suh-toaster",
+          "relation": "qualifies",
+          "rationale": "原例式 (30) 的非零项位于钢、电和处置服务行。"
+        }
+      ],
+      "premiseIds": [
+        "cl-hyb-downstream-dispute",
+        "cl-hyb-toaster"
+      ],
+      "conceptIds": [
+        "cn-hyb-downstream-bridge"
+      ],
+      "mappingIds": [],
+      "caveats": [
+        "模型中的片数按连续可分的活动量计量。0.0632 是内部需求的报告值，外部功能需求仍为 1,000 片。",
+        "工作论文第 4 页的文字将 0.01 片/美元用于每个部门，式 (6) 的图示却只排了五列，Suh 的经济块有六个部门。按文字把系数用于六个部门，可复得第 5 页的舍入结果。列数差异仍保留。"
+      ],
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-08",
+      "status": "reviewed"
+    },
+    {
+      "id": "cl-hyb-downstream-zero",
+      "text": "忽略反馈与消除重叠，是两种不同的操作。Agez 等人在补充说明中单独讨论下游连接：若过程技术已经由经济表表示，再引入经济部门对过程侧的采购，就须处理它在相应经济部门中的原有覆盖。将 Cᵈ 置零只是不再接入这条下游补充，并不完成保留该连接时所需的扣除。是否忽略反馈关乎模型范围，保留反馈以后怎样避免重复则关乎账户处理。",
+      "kind": "interpretation",
+      "scope": "Agez S1中省略下游连接与保留连接时处理背景重叠的区别",
+      "evidenceIds": [
+        "ev-hyb-agez-downstream-omission"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb-agez-downstream-omission",
+          "relation": "supports",
+          "rationale": "S1第二节及续句区分下游技术的原有经济表示与将Cᵈ置零所省略的连接。"
+        }
+      ],
+      "premiseIds": [
+        "cl-hyb-downstream",
+        "cl-hyb-downstream-test"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "这里依据 Agez 等人 S1 两页的概念说明；它未提供某个具体经济系统扣除前的交易和直接排放台账，本段不验证具体账户扣除或经验准确性。"
+      ],
+      "reasoning": "区分是否保留下游反馈的模型范围选择，与保留连接后怎样避免重复的账户责任；不把省略反馈或源文概念陈述当成完成扣除。"
+    },
+    {
+      "id": "cl-hyb-accounts",
+      "kind": "source-statement",
+      "scope": "先调整年度供给、使用和排放记录，再构造剩余背景",
+      "text": "即使跨界采购已知，R 也不能直接从未处理的部门表中照抄。Suh 的附录先把过程流量对齐到年度基准，辨认货币交易与投入产出表中的中间部门，再把功能流映射到商品、把过程映射到产业。使用表要处理三类已覆盖记录：过程内部交易、过程向经济部门交货，以及过程从经济部门采购。供给表移出已具体表示的生产，环境账户移出相应直接干预；然后才按选定技术假设形成剩余背景系数。扣一笔支出、移出一项生产、重算每元排放，发生在相互关联但并不相同的位置。",
+      "evidenceIds": [
+        "ev-hyb-suh-overlap"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb-suh-overlap",
+          "relation": "supports",
+          "rationale": "附录 A1–A7 明确先选流量、映射并扣减供给和使用表，末段另列环境账户调整。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [
+        "cn-hyb-residual-background"
+      ],
+      "mappingIds": [
+        "map-hyb-residual-inventory"
+      ],
+      "caveats": [
+        "所引再印本的式 (A7) 把价格对角矩阵写在映射后生产矩阵的左侧，而生产表按产业行、商品列定义。用于一般供给表时，价格究竟对应哪一个轴仍需核准。本章小账按已知交易的产品、单价和供应者逐笔分开。"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-hyb-evidence-boundary",
+      "kind": "interpretation",
+      "scope": "原例给定系数的可复算范围和未解的价格口径",
+      "text": "原文公开到哪一步，决定了这套方法能被核对到哪一步。烤面包例原文的式（28）至（32），配合过程排放强度和需求向量，足以复算原文式（33）的结果；它们却没有提供扣除前的完整供给、使用、映射、价格和排放账目。给出的 R 与背景排放强度已经经过扣除。价格口径还有一个未解衔接：再印本第 57 页称上游采购采用生产者价格，第 58 页却称经济系数采用消费者价格。结果能够按已给系数算回，并不验证更早的扣除和价格转换。要把这一步展开，需要一套交易双方都可见的账目。",
+      "evidenceIds": [
+        "ev-hyb-suh-toaster",
+        "ev-hyb-suh-prices",
+        "ev-hyb-suh-overlap"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb-suh-toaster",
+          "relation": "supports",
+          "rationale": "原例明示后处理矩阵，可按所列输入复算结果。"
+        },
+        {
+          "evidenceId": "ev-hyb-suh-prices",
+          "relation": "qualifies",
+          "rationale": "原文两种价格表述之间缺少明确的数值调和。"
+        },
+        {
+          "evidenceId": "ev-hyb-suh-overlap",
+          "relation": "qualifies",
+          "rationale": "附录列明构造背景所需原始对象，但数值例未披露这些完整账目。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-hyb-service",
+      "kind": "proposal",
+      "scope": "平整墙面采用涂料 A 的固定供电子需求",
+      "evidenceIds": [
+        "ev-hyb-suh-object"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb-suh-object",
+          "relation": "context",
+          "rationale": "原文提供以固定功能需求连接两种系统的背景，墙面服务及供应账目来自本书案例。"
+        }
+      ],
+      "premiseIds": [
+        "cl-wall-demand",
+        "cl-hyb-balance"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "从墙面服务的平整基底 A 路线提取电力需要，单独说明新增前景和核算对象。",
+      "text": "下面另设一套交易双方可见的小账，只取墙面服务中的用电部分。平整的 100 m² 墙面在十年中分两次涂刷，每次用 A 涂料 5 kg。按生产每千克涂料用电 2 kWh，合计 20 kWh。指定这批电由 F 交付，再用三家供应者的账目计算供电子系统的 CO₂ 清单。墙面计划在这里仅确定交付量，不能把所得结果当作完整墙面足迹。以下交易、技术、地区、价格和排放均由本书设定。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-HYBRID-OVERLAP",
+        "version": "1.0.0",
+        "inputSha256": "449be3b1eff749a1b10d55f9717fec06fd2ddbf4d86b623a9a64e6db5a09137e",
+        "inputFile": "hybrid-overlap-v1.json"
+      }
+    },
+    {
+      "id": "cl-hyb-ledger",
+      "kind": "proposal",
+      "scope": "虚构稳态年度的交付者、生产者价格及直接排放",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-hyb-service"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "明示用于归一化的年度、生产者价格、单位与简化边界。",
+      "text": "先给供应网络选一个稳态年度，假定该年的技术和相对价格适用于这项供电，币值单位记为 CU。同一地区两家发电方 F、G 各年发电 100 kWh，均以生产者价格 1 CU/kWh 交付。服务方 S 的年产出为 100 CU。F、G、S 年直接排放依次为 40、120、30 kg CO₂。年度账目提供投入与排放的每单位系数；十年墙面计划交给这个网络的需求合计仍为 20 kWh，不按年再乘十。模型按固定比例缩放，忽略税费、流通差价、进口、线损、资本和共产品。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-HYBRID-OVERLAP",
+        "version": "1.0.0",
+        "inputSha256": "449be3b1eff749a1b10d55f9717fec06fd2ddbf4d86b623a9a64e6db5a09137e",
+        "inputFile": "hybrid-overlap-v1.json"
+      }
+    },
+    {
+      "id": "cl-hyb-invoices",
+      "kind": "proposal",
+      "scope": "谁卖给谁的五项年度中间交易",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-hyb-ledger"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "由年产出与所列中间销售逐行求最终销售余量，作为拆分前的核对。",
+      "text": "在这个年度，S 向 F 和 G 各买 10 CU 的电，并使用本部门 20 CU 的服务。F 向 S 采购 20 CU 服务，G 向 S 采购 30 CU 服务。其余中间交易均为零，产出余量售给最终用户。逐个供应者检查，F 与 G 各剩 90 CU，S 剩 30 CU。五笔中间交易保留了卖方和买方的身份；将来判断重复时，要找的就是同一笔交付在两套表示中的对应位置。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-HYBRID-OVERLAP",
+        "version": "1.0.0",
+        "inputSha256": "449be3b1eff749a1b10d55f9717fec06fd2ddbf4d86b623a9a64e6db5a09137e",
+        "inputFile": "hybrid-overlap-v1.json"
+      }
+    },
+    {
+      "id": "cl-hyb-raw",
+      "kind": "calculation",
+      "scope": "把两家发电方汇成电力部门后的原始账户",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-hyb-invoices"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "合并 F、G 的年度记录，再分别按各部门产出归一化。",
+      "text": "若把两家发电方合成电力部门 E，原表便只显示 E 产出 200 CU、S 产出 100 CU。使用表以卖方为行、买方为列。S 买电合计 20，电力部门买服务合计 50，服务部门自用服务 20，均为 CU/年。按买方的总产出除各列，就得到 E 每元产出购入 0.25 CU 服务，S 每元产出购入 0.2 CU 电和 0.2 CU 服务。E 的直接 CO₂ 强度是 (40＋120)/200＝0.8 kg/CU，S 为 30/100＝0.3 kg/CU。这张部门表已经包含 F 的生产、购销和排放。稍后把 F 单列为过程时，不能当作它此前完全不在背景里。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-HYBRID-OVERLAP",
+        "version": "1.0.0",
+        "inputSha256": "449be3b1eff749a1b10d55f9717fec06fd2ddbf4d86b623a9a64e6db5a09137e",
+        "inputFile": "hybrid-overlap-v1.json"
+      }
+    },
+    {
+      "id": "cl-hyb-naive",
+      "kind": "calculation",
+      "scope": "原表直接接回具名发电方造成的重叠",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-hyb-raw"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "把明确的下游连接和仍然包含该笔电的原表列并列，按同一价格还原到年度交易。",
+      "text": "若只算 F 直接供电，这 20 kWh 对应 8 kg CO₂。缺掉的服务看起来可以由经济表补上。发票给出每 1 kWh 的 F 出力需要 0.2 CU 服务，S 每 1 CU 产出需要 F 供 0.1 kWh。若接上这两条关系又照用整张原表，生产 100 CU 服务便会同时要求原表中的 20 CU 电和单列的 10 kWh 的 F 电。按同一价格相加是 30 CU，而发票合计只有 20 CU。多出来的需求可以追到一笔具体交付：F 卖给 S 的电既在 E 中，又被单列一次。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-HYBRID-OVERLAP",
+        "version": "1.0.0",
+        "inputSha256": "449be3b1eff749a1b10d55f9717fec06fd2ddbf4d86b623a9a64e6db5a09137e",
+        "inputFile": "hybrid-overlap-v1.json"
+      }
+    },
+    {
+      "id": "cl-hyb-remove",
+      "kind": "calculation",
+      "scope": "按交易双方拆出前景活动并重新计算剩余系数",
+      "evidenceIds": [
+        "ev-hyb-suh-overlap"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb-suh-overlap",
+          "relation": "context",
+          "rationale": "原文给出先处理原始账户再归一化的思路。此处的简化交易和单价均由本书规定。"
+        }
+      ],
+      "premiseIds": [
+        "cl-hyb-naive",
+        "cl-hyb-accounts"
+      ],
+      "conceptIds": [
+        "cn-hyb-residual-background"
+      ],
+      "mappingIds": [
+        "map-hyb-residual-inventory"
+      ],
+      "caveats": [],
+      "reasoning": "逐项分开 F 的产出、排放、采购和销售，再对剩余供应者归一化。",
+      "text": "于是，单列 F 要从年度账户开始。先从 E 的供给与直接排放总量取出 F 的 100 CU 和 40 kg CO₂。此处拆出 F 的整项基准年活动，而非按墙面的 20 kWh 先扣掉年产出的五分之一。需求占用多少活动，要等系数形成以后求解。再按买卖双方处理两笔跨界交易。使用表中 S 卖给 E 的 50 CU 减去 F 所购的 20，留下 G 所购的 30。E 卖给 S 的 20 CU 减去 F 所售的 10，留下 G 所售的 10。S 自用的 20 保留。此时剩余电力部门只有 G，其 100 CU 产出对应 120 kg 排放，强度重算为 1.2 kg/CU。G 每元需服务 0.3 CU，S 每元需 G 电 0.1 CU 和服务 0.2 CU。移出的两笔交易并未消失：它们离开背景内部，改由跨界连接表示。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-HYBRID-OVERLAP",
+        "version": "1.0.0",
+        "inputSha256": "449be3b1eff749a1b10d55f9717fec06fd2ddbf4d86b623a9a64e6db5a09137e",
+        "inputFile": "hybrid-overlap-v1.json"
+      }
+    },
+    {
+      "id": "cl-hyb-equations",
+      "kind": "calculation",
+      "scope": "三种活动坐标的供需平衡",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-hyb-remove"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "把两项跨界供需和剩余账户逐行放回各自单位的平衡式。",
+      "text": "用 u 表示 F 的总发电量（kWh），v 表示剩余电力部门 G 的产出（CU），w 表示服务产出（CU）。对应的平衡依次为 u − 0.1w ＝ 20，v − 0.1w ＝ 0，w − 0.2u − 0.3v − 0.2w ＝ 0。第一行先满足服务方对 F 的用电，余量交付墙面；第二行安排 G 满足服务方的另一笔用电。两个 0.1 分别为 kWh/CU 与 CU/CU。第三行使服务产出足以承担 F、G 和 S 自身所需的服务。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-HYBRID-OVERLAP",
+        "version": "1.0.0",
+        "inputSha256": "449be3b1eff749a1b10d55f9717fec06fd2ddbf4d86b623a9a64e6db5a09137e",
+        "inputFile": "hybrid-overlap-v1.json"
+      }
+    },
+    {
+      "id": "cl-hyb-corrected",
+      "kind": "calculation",
+      "scope": "有身份记录时三项正活动及供电清单",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-hyb-equations"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "精确解三个线性平衡并按三个供应者各自的直接强度累计，逐供应者对账。",
+      "text": "将前两式中的 u、v 代入服务平衡，得到 0.75w＝4，因此 w＝16/3 CU，v＝8/15 CU，u＝308/15 kWh。F 比最终交付的 20 kWh 多发的部分，正好供给为了交付这批电而运行的服务活动。供电清单是 0.4u＋1.2v＋0.3w＝784/75 kg CO₂，约 10.453333 kg。回到未聚合的 F、G、S 账目直接求解，会得到相同活动与排放；在这个已知交易的例子里，拆分没有丢失供应关系。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-HYBRID-OVERLAP",
+        "version": "1.0.0",
+        "inputSha256": "449be3b1eff749a1b10d55f9717fec06fd2ddbf4d86b623a9a64e6db5a09137e",
+        "inputFile": "hybrid-overlap-v1.json"
+      }
+    },
+    {
+      "id": "cl-hyb-naive-result",
+      "kind": "calculation",
+      "scope": "方程闭合与原始交易重复可以同时发生",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-hyb-naive",
+        "cl-hyb-corrected"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "对两套矩阵分别求解，区别可直接定位的发票重复量和整套模型的净排放差。",
+      "text": "未拆分的算法也能算出一组看似完整的结果。它的三行变为 u − 0.1w ＝ 20，v − 0.2w ＝ 0，w − 0.2u − 0.25v − 0.2w ＝ 0。这里 u 仍是单列的 F 发电量（kWh），v 是由原表平均系数算出的电力部门活动量（CU），w 是服务产出（CU）。这组表示让同一笔 F 向 S 的售电记录既进入第一行的 0.1 连接，又留在第二行的 0.2 系数里。解得 u＝1500/73、v＝80/73、w＝400/73，三行都能平衡。按其中的强度计算为 0.4u＋0.8v＋0.3w＝784/73 kg CO₂。它比逐笔拆分的结果高 0.286393 kg。因此，三行都平衡并没有排除重复；发票才指出重复的是那 10 CU 交付。两套完整模型的排放差还包含平均强度与服务配方的变化，不能把这项差额直接命名为“一次重复排放”。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-HYBRID-OVERLAP",
+        "version": "1.0.0",
+        "inputSha256": "449be3b1eff749a1b10d55f9717fec06fd2ddbf4d86b623a9a64e6db5a09137e",
+        "inputFile": "hybrid-overlap-v1.json"
+      }
+    },
+    {
+      "id": "cl-hyb-swap",
+      "kind": "proposal",
+      "scope": "固定部门总额后交换服务方的实际供电者",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-hyb-invoices",
+        "cl-hyb-raw"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "构造保持聚合表各格不变、具体供电关系不同的第二个供应者账本。",
+      "text": "即便看到了相同的部门总表，拆法也未必唯一。另设一组逐笔给定的供应关系：S 仍买 20 CU 电，现在全部购自 G。F、G 的年发电量、价格、排放和服务采购额照旧，因而 F 的最终销售余量增至 100 CU，G 的降至 80 CU。合并成 E 以后，两张表中的产出、部门间每一格使用额以及直接排放都相同。只凭部门总表，便无法确认其中哪一笔电由 F 供应；相同的总额容得下不同交易网络。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-HYBRID-OVERLAP",
+        "version": "1.0.0",
+        "inputSha256": "449be3b1eff749a1b10d55f9717fec06fd2ddbf4d86b623a9a64e6db5a09137e",
+        "inputFile": "hybrid-overlap-v1.json"
+      }
+    },
+    {
+      "id": "cl-hyb-swap-result",
+      "kind": "calculation",
+      "scope": "同一项外部交付在另一种供应网络中的结果",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-hyb-swap",
+        "cl-hyb-corrected"
+      ],
+      "conceptIds": [],
+      "mappingIds": [
+        "map-hyb-residual-inventory"
+      ],
+      "caveats": [],
+      "reasoning": "更换送电对象后重建连接项和剩余表，对比同一交付的结果及分供应者残差。",
+      "text": "这一次，F 仍采购服务，却没有向 S 供电，因此 u＝20。G 要供应 S 的全部购电，故 v＝0.2w。再代入服务平衡得 w＝200/37，v＝40/37，供电清单为 404/37 kg CO₂，约 10.918919 kg。若因部门总表相同而把第一组的计算结果用于这组实际采购关系，就会低估 0.465586 kg。原来的解代入这一组供应者账目，F 多记了 8/15 kWh，G 少记了 8/15 kWh 的供给。仍按 1 CU/kWh 折合后，两个供给残差在合并电力行中恰好抵消，具体供应者却错了，而且两者排放强度不同。总表的一致性因此不能代替供应者身份的证据。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-HYBRID-OVERLAP",
+        "version": "1.0.0",
+        "inputSha256": "449be3b1eff749a1b10d55f9717fec06fd2ddbf4d86b623a9a64e6db5a09137e",
+        "inputFile": "hybrid-overlap-v1.json"
+      }
+    },
+    {
+      "id": "cl-hyb-pump",
+      "kind": "source-statement",
+      "scope": "Agez 等人泵例中实物分辨率和货币产品组的差别",
+      "text": "前面的供应者小账能够逐笔辨认交付。现实清单若只有产品名称，扣除会遇到另一种困难。Agez 等人构造了一台泵：细清单区分直接使用的不锈钢与钢制零件中所含的钢，粗清单却把两者合记为 1 kg 不锈钢。在其设定下，这种简写没有改变过程排放，却改变了从输入名称能够识别的产品组。两张过程清单给出相同数值，并不意味着它们能引导相同的背景扣除。",
+      "evidenceIds": [
+        "ev-hyb-agez-gap",
+        "ev-hyb-agez-resolution"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb-agez-gap",
+          "relation": "supports",
+          "rationale": "原文把由行业配方推断缺失直接投入与给已知采购寻找背景供应区分开来。"
+        },
+        {
+          "evidenceId": "ev-hyb-agez-resolution",
+          "relation": "supports",
+          "rationale": "图 2 对照同一泵的两种表示，图 3–5 把这些标签用于上游修正。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-hyb-bpc",
+      "kind": "interpretation",
+      "scope": "虚构泵的负补项及其计量含义",
+      "text": "泵价把这个差别带进了货币补项。作者设一台泵值 12 欧元，机械部门每欧元产出平均购买 0.03 欧元钢，因此一台泵对应 0.36 欧元的平均钢投入。过程记录中的 1 kg 钢则按 0.75 欧元/kg 计价。by-product correction（BPC）逐项减去已经覆盖投入的货币值，得到 0.36 − 0.75 ＝ −0.39 欧元/台。负的是这项货币补量，过程侧的 1 kg 实物用钢仍为正。它暴露了具名工艺用钢价值超过部门平均额的差距；怎样解释该差距，取决于匹配与计价假设。",
+      "evidenceIds": [
+        "ev-hyb-agez-bpc"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb-agez-bpc",
+          "relation": "supports",
+          "rationale": "图 4、图 5c 与式 (12) 给出价格、平均购钢额和减去具名钢投入的规则。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "负的单位为欧元/台。泵和钢的价格及数量均属于原文的假设例。"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-hyb-paths",
+      "kind": "interpretation",
+      "scope": "按名称置零与按高贡献路径扣减各自要求的识别证据",
+      "text": "若改用按过程覆盖置零的二元规则，识别工作仍不可省。按显式过程覆盖作二元修正，看到钢便可把背景“钢”补项置零，但“金属制品”补项仍可能包含粗清单已经合并的钢制零件。换成 tier-wise purchase correction（TPC），沿高贡献路径逐层找钢并扣减，又可能找到建厂房的钢。泵体和厂房都用钢，却不是同一项活动。名称相同只能提示可能重叠，要决定哪一部分可以扣除，还须知道用途、供应层级与过程侧已经表示的范围。",
+      "evidenceIds": [
+        "ev-hyb-agez-resolution",
+        "ev-hyb-agez-path"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb-agez-resolution",
+          "relation": "supports",
+          "rationale": "低分辨率清单影响二元规则识别的产品组。"
+        },
+        {
+          "evidenceId": "ev-hyb-agez-path",
+          "relation": "supports",
+          "rationale": "原文明确区分泵体用钢与基础设施用钢，说明路径排名的局限。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-hyb-popcorn",
+      "kind": "source-statement",
+      "scope": "Yang 等人构造经济中的截断与聚合误差",
+      "text": "覆盖扩大以后，估计是否更接近目标，还需要一个可比较的参照。Yang、Heijungs 与 Brandão 构造所有活动已知的小经济，再移去玉米生产过程，使 1 kg 爆米花所需的 0.5 kg 玉米失去过程描述。玉米单价为 2 美元/kg，缺项值 1 美元；分层混合模型用合并玉米和小麦的农业部门供应这一美元。相对于例内完整模型，作者报告混合结果的相对误差幅度为 65.3%，截断过程结果为 33.7%。同文降低小麦排放强度、使部门内两种作物更相近后，误差排序又反转。这个构造预先假定价格信息准确、数据年份一致，决定补项表现的是农业平均配方对缺失玉米的代表性。",
+      "evidenceIds": [
+        "ev-hyb-yang-counterexample",
+        "ev-hyb-yang-reversal",
+        "ev-hyb-yang-printed-sign",
+        "ev-hyb-yang-energy-text"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb-yang-counterexample",
+          "relation": "supports",
+          "rationale": "式 (25) 至 (28) 与 §2.6 的比较说明遗漏量、换算价格与两种误差幅度。"
+        },
+        {
+          "evidenceId": "ev-hyb-yang-reversal",
+          "relation": "supports",
+          "rationale": "作者改变小麦强度并报告反转，另说明价格与数据年份的假设。"
+        },
+        {
+          "evidenceId": "ev-hyb-yang-printed-sign",
+          "relation": "qualifies",
+          "rationale": "原文内部不一致限制逐字矩阵重建；正文保留作者报告与设定反转，不宣称本轮复算。"
+        },
+        {
+          "evidenceId": "ev-hyb-yang-energy-text",
+          "relation": "qualifies",
+          "rationale": "原文内部不一致限制逐字矩阵重建；正文保留作者报告与设定反转，不宣称本轮复算。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "原文p240展开式（24）的农业/爆米花项为+1，式（25）同项为−1；p239能源排放文字为2kg而矩阵系数为1.5。这里保留作者报告的误差，不以静默修正后的矩阵冒充原文复现。"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-hyb-response",
+      "kind": "interpretation",
+      "scope": "构造反例与对实际产业联系代表性的异议",
+      "text": "这个反例说明，存在补入活动后估计反而更差的条件；它没有告诉人们这些条件在真实经济中有多常见。Pomponi 与 Lenzen 在回应论文的作者摘要中报告，他们改变五部门经济的技术联系后，过程截断误差大于混合聚合误差，并用替代系统与真实经济的主特征值比较来支持其代表性判断。于是争论有了两层：给定账目下谁更接近参照，以及这些账目代表哪些实际系统。摘要没有给出完整矩阵、误差计算或真实经济比较数据，因而这里只能转述作者的判断，不能据此独立判定两类方法在现实中的准确性排序。",
+      "evidenceIds": [
+        "ev-hyb-yang-counterexample",
+        "ev-hyb-response-abstract"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb-yang-counterexample",
+          "relation": "context",
+          "rationale": "前文误差比较以例内完整模型为参照。"
+        },
+        {
+          "evidenceId": "ev-hyb-response-abstract",
+          "relation": "supports",
+          "rationale": "约克大学所载作者摘要支持对回应立场的具名转述。"
+        }
+      ],
+      "premiseIds": [
+        "cl-hyb-popcorn"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "此处引据机构网页所载作者摘要。其替代经济的逐项系数与复算仍需完整正文。",
+        "作者摘要没有完整模型输入、误差计算或真实经济主特征值比较数据；完整矩阵本身也不能代替代表性检验。"
+      ],
+      "reasoning": "依据两份来源各自比较的对象区分存在性反例与外推到真实经济的判断。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-hyb-database",
+      "kind": "source-statement",
+      "scope": "Jakobs 等人检验价格与上游补充规则的设计",
+      "text": "Jakobs、Schulte 与 Pauliuk 将问题移到数据库规模，检验价格如何改变背景补量。他们把 ecoinvent 3.5 过程映射到 EXIOBASE 3.6 的 2012 年经济表，以 BACI 贸易单价和代理分布进行 10,000 次蒙特卡洛抽样，比较二元规则与相似技术属性法（similar technological attributes method，STAM）。后者借助产品类别之间的技术关系筛选上游补项。文章的框架式保留 Cᵈ，方法讨论也转述 Suh 对 2006 年评论的答复，称下游反馈在许多算例中较小、在一些应用中仍可能显著。但该文沿用 pyLCAIO 的计算实现只构造上游 Cᵘ；结果的解释范围应随实际实现，而不能由完整框架式代替。",
+      "evidenceIds": [
+        "ev-hyb-jakobs-design",
+        "ev-hyb-agez-stam",
+        "ev-hyb-jakobs-description-limits"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb-jakobs-design",
+          "relation": "supports",
+          "rationale": "原文方法与式 (2) 说明数据库、年份、价格抽样和单向连接范围。"
+        },
+        {
+          "evidenceId": "ev-hyb-agez-stam",
+          "relation": "supports",
+          "rationale": "方法原作 §4.3 给出 STAM 的全称及按产品类别使用技术知识筛选补项的含义。"
+        },
+        {
+          "evidenceId": "ev-hyb-jakobs-description-limits",
+          "relation": "qualifies",
+          "rationale": "原文数据描述存在未解差异，保留其位置；不把图表统计替换为自行推断的数据版本。"
+        }
+      ],
+      "premiseIds": [
+        "cl-hyb-downstream-dispute"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "关于 2006 年答复的这句话依据 Jakobs 等人第 3 页的具名转述。原答复的详细算例和论证还需核对全文。"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-hyb-denominator",
+      "kind": "source-statement",
+      "scope": "瑞士家庭月消费篮子的新增量及其过程基准",
+      "text": "其瑞士家庭月消费篮子结果，首先需要认清分母。表 4、5 的 Γ 行只合计由 ecoinvent 表示的消费部分，覆盖清单内 12,065 个过程；另以 EXIOBASE 或 AGRIBALYSE 单独建模的活动不在这个基准内。该部分过程足迹为 1,144 kg CO₂ 当量，原表以 10² kg CO₂ 当量列示。用贸易单价与代理分布时，STAM 和二元规则的中位新增 IO 足迹分别为 88、163 kg CO₂ 当量，原表报告为基准的 7.7%、14.3%。只取 4,789 个混合过程的 Λ 行，绝对新增量各自不变，过程基准却缩为 513 kg CO₂ 当量，相应比例成为 17.2%、31.8%。同一新增量换了基准，就回答了另一个问题。",
+      "evidenceIds": [
+        "ev-hyb-jakobs-design",
+        "ev-hyb-jakobs-denominators"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb-jakobs-design",
+          "relation": "qualifies",
+          "rationale": "第 7–8 页的家庭案例范围限定了表内消费活动。"
+        },
+        {
+          "evidenceId": "ev-hyb-jakobs-denominators",
+          "relation": "supports",
+          "rationale": "原表 4、5 的单位为百千克 CO₂ 当量，Γ、Λ 的过程基准与新增量分别列示。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "百分数沿用原表所列显示值，绝对量以千克表示。各列经过舍入，直接用显示值相除可能有末位差异。"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-hyb-limits",
+      "kind": "interpretation",
+      "scope": "价格敏感性与实际足迹误差需要的不同参照",
+      "text": "按过程统计的结果又有不同的比较对象和统计口径。同文 6,264 个混合过程的碳足迹强度中位增幅，STAM 为 6.1%，二元规则为 16.7%；这不是前述家庭篮子的增幅。更根本的限制是，这次抽样独立处理价格，没有同时传播 IO 聚合、过程供应链数据与表征因素的不确定性。它说明指定数据库、映射、修正规则和价格分布下的结果会怎样变动，并未测得某一家工厂足迹的实际误差。判断哪种补充更准确，仍需要可独立核对的对象记录和参照清单。",
+      "evidenceIds": [
+        "ev-hyb-jakobs-corrections",
+        "ev-hyb-jakobs-limits"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb-jakobs-corrections",
+          "relation": "supports",
+          "rationale": "表 3 的 D 行给出过程层增幅。"
+        },
+        {
+          "evidenceId": "ev-hyb-jakobs-limits",
+          "relation": "qualifies",
+          "rationale": "原文讨论明确限定不确定性传播范围和准确度解释。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-hyb-audit",
+      "kind": "synthesis",
+      "scope": "从交易身份、年度账户、平衡到适用性判断",
+      "text": "一项可解释的混合清单，可以沿一笔具体交易接受检验：卖方、买方、产品、年份和计价层级，能否一直追到经济表的单元格以及过程侧对应的输入或输出？若服务方用电与最终交付在时段、电压或交付条件上不同，同一个 F 记录又能代表其中哪一些？在身份成立之后，才继续检查供给、使用和直接排放是否一起分开、分母是否重算，并回到固定需求核对各供应者的活动。两种供应关系若能生成相同部门表而产生不同结果，就应保留两种解释，直至购销证据能够区分它们。",
+      "evidenceIds": [
+        "ev-hyb-suh-overlap",
+        "ev-hyb-agez-path"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb-suh-overlap",
+          "relation": "supports",
+          "rationale": "原文附录为逐项追踪和重新归一化提供方法依据。"
+        },
+        {
+          "evidenceId": "ev-hyb-agez-path",
+          "relation": "qualifies",
+          "rationale": "路径用途与产品组标签限制扣除对象的辨认。"
+        }
+      ],
+      "premiseIds": [
+        "cl-hyb-swap-result",
+        "cl-hyb-response",
+        "cl-hyb-limits"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "把已建立的来源条件和可构造的供应者反例转成有边界的复核顺序。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-inv-judgement",
+      "text": "混合清单的价值，是为过程边界以外的活动提供连接、线索与估计；它的可信程度，要分别经过计算、代表性和覆盖范围的检验。给定数据能否正确求解，不能代替数据能否描述对象；补得更多，也不能代替被补活动是否合适。内部边界、价格口径和重叠处理清楚之后，独立案例与相反结果仍须参与判断。因而方法选择应围绕研究要回答的问题及其证据条件，而不能仅凭“过程”或“混合”的标签给结果排出优劣。",
+      "kind": "synthesis",
+      "scope": "形式求解、数据代表性和系统覆盖的检查框架；不是通用方法排名。",
+      "evidenceIds": [
+        "ev-inv-hs-assumptions",
+        "ev-inv-suh-limits"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-inv-hs-assumptions",
+          "relation": "context",
+          "rationale": "基本方程的明确条件支持单独检查计算假设，而不据此推出数据和边界充分性。"
+        },
+        {
+          "evidenceId": "ev-inv-suh-limits",
+          "relation": "qualifies",
+          "rationale": "再印pp31–32要求数据质量适用并保留未解决课题，限制无条件准确性承诺。"
+        }
+      ],
+      "premiseIds": [
+        "cl-inv-example-meaning",
+        "cl-inv-boundary-carrier",
+        "cl-inv-small-cuts",
+        "cl-inv-io-limits",
+        "cl-inv-hybrid-forms",
+        "cl-inv-double-counting"
+      ],
+      "caveats": [
+        "两项作品共享作者，不能视为独立重复验证；其方法论讨论不提供现实产品或数据库的优劣结论。"
+      ],
+      "reasoning": "形式求解、数据代表性和系统覆盖具有不同的证据责任；将它们分开，能避免由计算完成直接推出经验充分性。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-08",
+      "reviewKind": "agent-source-check"
+    }
+  ]
+}

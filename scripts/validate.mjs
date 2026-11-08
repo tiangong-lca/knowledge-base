@@ -1,3 +1,4 @@
+import { assertHybridInventoryAccepted, assertHybridInventoryHeadingHistory, validateHybridInventoryCoverage } from './reader-hybrid-inventory.mjs';
 import { validateExchangeSemanticsCoverage, assertExchangeSemanticsOriginal, assertExchangeSemanticsHeadingHistory, assertExchangeSemanticsCitationSources, assertExchangeSemanticsPartialHistory } from './reader-exchange-semantics.mjs';
 import { assertProcessNetworkHeadingHistory, validateProcessNetworkCoverage } from './reader-process-network.mjs';
 import { assertFunctionalReferenceHeadingHistory, validateFunctionalReferenceCoverage } from './reader-functional-reference.mjs';
@@ -94,6 +95,7 @@ export async function validateRepository(root) {
     const [functionalAccepted,functionalHeadingHistory,functionalProse]=await Promise.all(['functional-reference-accepted','functional-reference-heading-history','functional-reference-prose-accepted'].map(name=>readOptional(`config/${name}.json`)));
     const [processAccepted,processHeadingHistory,processProse]=await Promise.all(['process-network-accepted','process-network-heading-history','process-network-prose-accepted'].map(name=>readOptional(`config/${name}.json`)));
     const [cleanerAccepted,cleanerHeadingHistory]=await Promise.all(['cleaner-production-accepted','cleaner-production-heading-history'].map(name=>readOptional(`config/${name}.json`)));
+    const [hybridAccepted,hybridHeadings,hybridProse]=await Promise.all(['accepted','heading-history','prose-accepted'].map(name=>readOptional(`config/hybrid-inventory-${name}.json`)));
     const [exchangeOriginal,exchangeHeadings,exchangeCitations,exchangePartial,exchangeProse]=await Promise.all(['original','heading-history','citation-sources','partial-history','prose-accepted'].map(name=>readOptional(`config/exchange-semantics-${name}.json`)));
     const sources=new Map();
     for(const file of await mdxFiles(resolve(root,'content'))) {
@@ -102,6 +104,10 @@ export async function validateRepository(root) {
       sources.set(route,await readFile(file,'utf8'));
     }
     try {
+      const missingHybrid = [['accepted',hybridAccepted],['heading-history',hybridHeadings],['prose-accepted',hybridProse]].filter(([,value])=>!value).map(([name])=>`hybrid-inventory-${name}.json`);
+      if (missingHybrid.length) throw new Error(`Book edition requires its independent B09 original, captured-heading and final-prose inventories; missing: ${missingHybrid.join(', ')}`);
+      assertHybridInventoryAccepted(hybridAccepted); assertHybridInventoryHeadingHistory(hybridHeadings);
+      errors.push(...validateHybridInventoryCoverage(edition,sources,hybridAccepted,data,hybridProse));
       if (!exchangeOriginal || !exchangeHeadings || !exchangeCitations || !exchangePartial || !exchangeProse) throw new Error("Book edition requires independent B08 original, captured history, partial-source and manuscript inventories");
       assertExchangeSemanticsOriginal(exchangeOriginal); assertExchangeSemanticsHeadingHistory(exchangeHeadings); assertExchangeSemanticsCitationSources(exchangeCitations); assertExchangeSemanticsPartialHistory(exchangePartial);
       errors.push(...validateExchangeSemanticsCoverage(edition,sources,exchangeOriginal,data,exchangeProse,exchangePartial));

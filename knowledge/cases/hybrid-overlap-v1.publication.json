@@ -3,7 +3,7 @@
   "caseId": "CASE-HYBRID-OVERLAP",
   "version": "1.0.0",
   "inputFile": "hybrid-overlap-v1.json",
-  "reviewedAt": "2026-11-05",
+  "reviewedAt": "2026-11-08",
   "reviewKind": "agent-source-check",
   "approvedInputSha256": "449be3b1eff749a1b10d55f9717fec06fd2ddbf4d86b623a9a64e6db5a09137e",
   "claims": [
@@ -29,7 +29,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "从墙面服务的平整基底 A 路线提取电力需要，单独说明新增前景和核算对象。",
-      "textTemplate": "取全书墙面服务例中的一项供电需求。平整的 {{evaluated.linkedService.areaM2}} m² 墙面在十年中分两次涂刷，每次用 A 涂料 {{evaluated.linkedService.paintKgPerTreatment.exact}} kg。按生产每千克涂料用电 2 kWh，合计 {{evaluated.linkedService.fixedElectricityDeliveryKWh.exact}} kWh。现在指定这批电由 F 交付，换用下文的三家供应者来计算供电子系统的 CO₂ 清单。原案例的涂刷计划只用来确定这项交付量。下文的交易、技术、地区、价格和排放全部是本书设定。"
+      "textTemplate": "下面另设一套交易双方可见的小账，只取墙面服务中的用电部分。平整的 {{evaluated.linkedService.areaM2}} m² 墙面在十年中分两次涂刷，每次用 A 涂料 {{evaluated.linkedService.paintKgPerTreatment.exact}} kg。按生产每千克涂料用电 2 kWh，合计 {{evaluated.linkedService.fixedElectricityDeliveryKWh.exact}} kWh。指定这批电由 F 交付，再用三家供应者的账目计算供电子系统的 CO₂ 清单。墙面计划在这里仅确定交付量，不能把所得结果当作完整墙面足迹。以下交易、技术、地区、价格和排放均由本书设定。"
     },
     {
       "id": "cl-hyb-ledger",
@@ -44,7 +44,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "明示用于归一化的年度、生产者价格、单位与简化边界。",
-      "textTemplate": "设一年的生产技术和相对价格可用于上述涂料生产，币值单位写作 CU。同一地区两家发电方 F、G 各年发电 100 kWh，均以生产者价格 1 CU/kWh 交付。服务方 S 的年产出为 100 CU。F、G、S 年直接排放依次为 40、120、30 kg CO₂。年账用来估计每单位活动的投入与排放强度。墙面的需求仍是指定交付的 20 kWh。模型按固定比例缩放，忽略税费、流通差价、进口、线损、资本和共产品。"
+      "textTemplate": "先给供应网络选一个稳态年度，假定该年的技术和相对价格适用于这项供电，币值单位记为 CU。同一地区两家发电方 F、G 各年发电 100 kWh，均以生产者价格 1 CU/kWh 交付。服务方 S 的年产出为 100 CU。F、G、S 年直接排放依次为 40、120、30 kg CO₂。年度账目提供投入与排放的每单位系数；十年墙面计划交给这个网络的需求合计仍为 20 kWh，不按年再乘十。模型按固定比例缩放，忽略税费、流通差价、进口、线损、资本和共产品。"
     },
     {
       "id": "cl-hyb-invoices",
@@ -59,7 +59,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "由年产出与所列中间销售逐行求最终销售余量，作为拆分前的核对。",
-      "textTemplate": "S 向 F 和 G 各买 10 CU 的电，并使用本部门 20 CU 的服务。F 向 S 采购 20 CU 服务，G 向 S 采购 30 CU 服务。其余中间交易均为零，产出余量售给最终用户。逐个供应者检查，F 与 G 各剩 90 CU，S 剩 30 CU。这里每一笔交易都有卖方和买方，稍后可以据此判断某笔钱在两套表示中出现了几次。"
+      "textTemplate": "在这个年度，S 向 F 和 G 各买 10 CU 的电，并使用本部门 20 CU 的服务。F 向 S 采购 20 CU 服务，G 向 S 采购 30 CU 服务。其余中间交易均为零，产出余量售给最终用户。逐个供应者检查，F 与 G 各剩 90 CU，S 剩 30 CU。五笔中间交易保留了卖方和买方的身份；将来判断重复时，要找的就是同一笔交付在两套表示中的对应位置。"
     },
     {
       "id": "cl-hyb-raw",
@@ -74,7 +74,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "合并 F、G 的年度记录，再分别按各部门产出归一化。",
-      "textTemplate": "把 F、G 合并为电力部门 E 后，原表只显示 E 产出 200 CU、S 产出 100 CU。使用表以卖方为行、买方为列。S 买电合计 20，电力部门买服务合计 50，服务部门自用服务 20，均为 CU/年。按买方的总产出除各列，就得到 E 每元产出购入 0.25 CU 服务，S 每元产出购入 0.2 CU 电和 0.2 CU 服务。E 的直接 CO₂ 强度是 (40＋120)/200＝0.8 kg/CU，S 为 30/100＝0.3 kg/CU。原表已经把 F 的生产、购销和排放都计了进去。"
+      "textTemplate": "若把两家发电方合成电力部门 E，原表便只显示 E 产出 200 CU、S 产出 100 CU。使用表以卖方为行、买方为列。S 买电合计 20，电力部门买服务合计 50，服务部门自用服务 20，均为 CU/年。按买方的总产出除各列，就得到 E 每元产出购入 0.25 CU 服务，S 每元产出购入 0.2 CU 电和 0.2 CU 服务。E 的直接 CO₂ 强度是 (40＋120)/200＝0.8 kg/CU，S 为 30/100＝0.3 kg/CU。这张部门表已经包含 F 的生产、购销和排放。稍后把 F 单列为过程时，不能当作它此前完全不在背景里。"
     },
     {
       "id": "cl-hyb-naive",
@@ -89,7 +89,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "把明确的下游连接和仍然包含该笔电的原表列并列，按同一价格还原到年度交易。",
-      "textTemplate": "若只算 F 直接供电，这 20 kWh 对应 {{evaluated.processOnly.totalCO2Kg.exact}} kg CO₂。现在尝试补上服务。发票给出每 1 kWh 的 F 出力需要 0.2 CU 服务，S 每 1 CU 产出需要 F 供 0.1 kWh。若接上这两条关系又照用整张原表，生产 100 CU 服务便会同时要求原表中的 20 CU 电和单列的 10 kWh 的 F 电。按同一价格相加是 {{evaluated.naive.servicePowerPurchasePer100CU.exact}} CU，而发票合计只有 {{evaluated.naive.actualLedgerPowerPurchasePer100CU.exact}} CU。重复来自已经并入 E 的那笔 F 向 S 售电。"
+      "textTemplate": "若只算 F 直接供电，这 20 kWh 对应 {{evaluated.processOnly.totalCO2Kg.exact}} kg CO₂。缺掉的服务看起来可以由经济表补上。发票给出每 1 kWh 的 F 出力需要 0.2 CU 服务，S 每 1 CU 产出需要 F 供 0.1 kWh。若接上这两条关系又照用整张原表，生产 100 CU 服务便会同时要求原表中的 20 CU 电和单列的 10 kWh 的 F 电。按同一价格相加是 {{evaluated.naive.servicePowerPurchasePer100CU.exact}} CU，而发票合计只有 {{evaluated.naive.actualLedgerPowerPurchasePer100CU.exact}} CU。多出来的需求可以追到一笔具体交付：F 卖给 S 的电既在 E 中，又被单列一次。"
     },
     {
       "id": "cl-hyb-remove",
@@ -117,7 +117,7 @@
       ],
       "caveats": [],
       "reasoning": "逐项分开 F 的产出、排放、采购和销售，再对剩余供应者归一化。",
-      "textTemplate": "要单列 F，先从 E 的供给与直接排放总量取出 F 的 100 CU 和 40 kg CO₂。这一步拆出的是 F 在基准年中的整项生产活动。墙面服务占用多少 F 的发电量，要在按年账构造系数之后求解。再按买卖双方处理两笔跨界交易。使用表中 S 卖给 E 的 50 CU 减去 F 所购的 20，留下 G 所购的 30。E 卖给 S 的 20 CU 减去 F 所售的 10，留下 G 所售的 10。S 自用的 20 保留。此时剩余电力部门只有 G，其 100 CU 产出对应 120 kg 排放，强度重算为 1.2 kg/CU。G 每元需服务 0.3 CU，S 每元需 G 电 0.1 CU 和服务 0.2 CU。两笔跨界交易已从背景内部移出，仍通过连接项进入模型。"
+      "textTemplate": "于是，单列 F 要从年度账户开始。先从 E 的供给与直接排放总量取出 F 的 100 CU 和 40 kg CO₂。此处拆出 F 的整项基准年活动，而非按墙面的 20 kWh 先扣掉年产出的五分之一。需求占用多少活动，要等系数形成以后求解。再按买卖双方处理两笔跨界交易。使用表中 S 卖给 E 的 50 CU 减去 F 所购的 20，留下 G 所购的 30。E 卖给 S 的 20 CU 减去 F 所售的 10，留下 G 所售的 10。S 自用的 20 保留。此时剩余电力部门只有 G，其 100 CU 产出对应 120 kg 排放，强度重算为 1.2 kg/CU。G 每元需服务 0.3 CU，S 每元需 G 电 0.1 CU 和服务 0.2 CU。移出的两笔交易并未消失：它们离开背景内部，改由跨界连接表示。"
     },
     {
       "id": "cl-hyb-equations",
@@ -132,7 +132,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "把两项跨界供需和剩余账户逐行放回各自单位的平衡式。",
-      "textTemplate": "用 u 表示 F 的总发电量（kWh），v 表示剩余电力部门 G 的产出（CU），w 表示服务产出（CU）。三条式子是 u − 0.1w ＝ 20，v − 0.1w ＝ 0，w − 0.2u − 0.3v − 0.2w ＝ 0。第一行从 F 总发电里扣除服务方用电，余量才是墙面的外部交付。第二行要求 G 满足服务方的另一笔用电。两个 0.1 分别为 kWh/CU 与 CU/CU。第三行使服务产出足以承担 F、G 和 S 自身所需的服务。"
+      "textTemplate": "用 u 表示 F 的总发电量（kWh），v 表示剩余电力部门 G 的产出（CU），w 表示服务产出（CU）。对应的平衡依次为 u − 0.1w ＝ 20，v − 0.1w ＝ 0，w − 0.2u − 0.3v − 0.2w ＝ 0。第一行先满足服务方对 F 的用电，余量交付墙面；第二行安排 G 满足服务方的另一笔用电。两个 0.1 分别为 kWh/CU 与 CU/CU。第三行使服务产出足以承担 F、G 和 S 自身所需的服务。"
     },
     {
       "id": "cl-hyb-corrected",
@@ -147,7 +147,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "精确解三个线性平衡并按三个供应者各自的直接强度累计，逐供应者对账。",
-      "textTemplate": "用前两式把 u、v 写成 w 的函数，代入第三式得 0.75w＝4，因此 w＝{{evaluated.identified.corrected.activities.2.exact}} CU，v＝{{evaluated.identified.corrected.activities.1.exact}} CU，u＝{{evaluated.identified.corrected.activities.0.exact}} kWh。F 比最终交付的 20 kWh 多发的部分，正好供给为了交付这批电而运行的服务活动。供电清单是 0.4u＋1.2v＋0.3w＝{{evaluated.identified.corrected.totalCO2Kg.exact}} kg CO₂，约 {{evaluated.identified.corrected.totalCO2Kg.fixed6}} kg。用完全分开的 F、G、S 交易记录直接求解，也得到同一组物理活动与排放。"
+      "textTemplate": "将前两式中的 u、v 代入服务平衡，得到 0.75w＝4，因此 w＝{{evaluated.identified.corrected.activities.2.exact}} CU，v＝{{evaluated.identified.corrected.activities.1.exact}} CU，u＝{{evaluated.identified.corrected.activities.0.exact}} kWh。F 比最终交付的 20 kWh 多发的部分，正好供给为了交付这批电而运行的服务活动。供电清单是 0.4u＋1.2v＋0.3w＝{{evaluated.identified.corrected.totalCO2Kg.exact}} kg CO₂，约 {{evaluated.identified.corrected.totalCO2Kg.fixed6}} kg。回到未聚合的 F、G、S 账目直接求解，会得到相同活动与排放；在这个已知交易的例子里，拆分没有丢失供应关系。"
     },
     {
       "id": "cl-hyb-naive-result",
@@ -163,7 +163,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "对两套矩阵分别求解，区别可直接定位的发票重复量和整套模型的净排放差。",
-      "textTemplate": "回看未拆分背景的算法。它的三行变为 u − 0.1w ＝ 20，v − 0.2w ＝ 0，w − 0.2u − 0.25v − 0.2w ＝ 0。这里 u 仍是单列的 F 发电量（kWh），v 是由原表平均系数算出的电力部门活动量（CU），w 是服务产出（CU）。这组表示让同一笔 F 向 S 的售电记录既进入第一行的 0.1 连接，又留在第二行的 0.2 系数里。解得 u＝{{evaluated.naive.activities.0.exact}}、v＝{{evaluated.naive.activities.1.exact}}、w＝{{evaluated.naive.activities.2.exact}}，三行都能平衡。按其中的强度计算为 0.4u＋0.8v＋0.3w＝{{evaluated.naive.totalCO2Kg.exact}} kg CO₂。它比逐笔拆分的结果高 {{evaluated.naive.excessOverCorrectedCO2Kg.fixed6}} kg。与发票核对才能发现重复的 10 CU。排放差额还包含平均强度与服务配方的变化，解释它时必须同时考虑这些变化。"
+      "textTemplate": "未拆分的算法也能算出一组看似完整的结果。它的三行变为 u − 0.1w ＝ 20，v − 0.2w ＝ 0，w − 0.2u − 0.25v − 0.2w ＝ 0。这里 u 仍是单列的 F 发电量（kWh），v 是由原表平均系数算出的电力部门活动量（CU），w 是服务产出（CU）。这组表示让同一笔 F 向 S 的售电记录既进入第一行的 0.1 连接，又留在第二行的 0.2 系数里。解得 u＝{{evaluated.naive.activities.0.exact}}、v＝{{evaluated.naive.activities.1.exact}}、w＝{{evaluated.naive.activities.2.exact}}，三行都能平衡。按其中的强度计算为 0.4u＋0.8v＋0.3w＝{{evaluated.naive.totalCO2Kg.exact}} kg CO₂。它比逐笔拆分的结果高 {{evaluated.naive.excessOverCorrectedCO2Kg.fixed6}} kg。因此，三行都平衡并没有排除重复；发票才指出重复的是那 10 CU 交付。两套完整模型的排放差还包含平均强度与服务配方的变化，不能把这项差额直接命名为“一次重复排放”。"
     },
     {
       "id": "cl-hyb-swap",
@@ -179,7 +179,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "构造保持聚合表各格不变、具体供电关系不同的第二个供应者账本。",
-      "textTemplate": "考虑另一组同样逐笔给定的供应关系。S 仍买 20 CU 电，现在全部购自 G。F、G 的年发电量、价格、排放和服务采购额照旧，因而 F 的最终销售余量增至 100 CU，G 的降至 80 CU。合并成 E 以后，两张表中的产出、部门间每一格使用额以及直接排放都相同。分析者只见部门表，便无法凭“这里有 10 CU 电”决定其中一笔属于 F。"
+      "textTemplate": "即便看到了相同的部门总表，拆法也未必唯一。另设一组逐笔给定的供应关系：S 仍买 20 CU 电，现在全部购自 G。F、G 的年发电量、价格、排放和服务采购额照旧，因而 F 的最终销售余量增至 100 CU，G 的降至 80 CU。合并成 E 以后，两张表中的产出、部门间每一格使用额以及直接排放都相同。只凭部门总表，便无法确认其中哪一笔电由 F 供应；相同的总额容得下不同交易网络。"
     },
     {
       "id": "cl-hyb-swap-result",
@@ -197,7 +197,7 @@
       ],
       "caveats": [],
       "reasoning": "更换送电对象后重建连接项和剩余表，对比同一交付的结果及分供应者残差。",
-      "textTemplate": "第二组账目里，F 仍采购服务，却没有向 S 供电，因此 u＝20。G 要供应 S 的全部购电，故 v＝0.2w。再代入服务平衡得 w＝{{evaluated.sameAggregateCounterworld.corrected.activities.2.exact}}，v＝{{evaluated.sameAggregateCounterworld.corrected.activities.1.exact}}，供电清单为 {{evaluated.sameAggregateCounterworld.corrected.totalCO2Kg.exact}} kg CO₂，约 {{evaluated.sameAggregateCounterworld.corrected.totalCO2Kg.fixed6}} kg。若沿用第一组账目的扣法，则会低估 {{evaluated.ambiguity.trueCounterworldCO2MinusIdentifiedWorldKg.fixed6}} kg。原来的解代入这一组供应者账目，F 多记了 8/15 kWh，G 少记了 8/15 kWh 的供给。这两项在合并的电力行里刚好抵消，却指向排放强度不同的供应者。"
+      "textTemplate": "这一次，F 仍采购服务，却没有向 S 供电，因此 u＝20。G 要供应 S 的全部购电，故 v＝0.2w。再代入服务平衡得 w＝{{evaluated.sameAggregateCounterworld.corrected.activities.2.exact}}，v＝{{evaluated.sameAggregateCounterworld.corrected.activities.1.exact}}，供电清单为 {{evaluated.sameAggregateCounterworld.corrected.totalCO2Kg.exact}} kg CO₂，约 {{evaluated.sameAggregateCounterworld.corrected.totalCO2Kg.fixed6}} kg。若因部门总表相同而把第一组的计算结果用于这组实际采购关系，就会低估 {{evaluated.ambiguity.trueCounterworldCO2MinusIdentifiedWorldKg.fixed6}} kg。原来的解代入这一组供应者账目，F 多记了 8/15 kWh，G 少记了 8/15 kWh 的供给。仍按 1 CU/kWh 折合后，两个供给残差在合并电力行中恰好抵消，具体供应者却错了，而且两者排放强度不同。总表的一致性因此不能代替供应者身份的证据。"
     }
   ]
 }

@@ -247,3 +247,21 @@ test('compiled MDX encoded paragraph fragments match meaning while raw heading p
  assert.deepEqual(checkQuery(withQuery),[]);
  for(const wrong of [withQuery.replace('mode=one','mode=two'),withQuery.replace('/docs/example/','/docs/other/'),withQuery.replace(encodeURIComponent('计算活动'),'%ZZ')])assert(checkQuery(wrong).length);
 });
+
+test('shared annotation guard rejects additive unwrapped, paragraph, div and list assertions beside valid scholarly fields',()=>{
+ const assertion='未经来源支持的新增断言。';
+ for(const [path,html]of [[route,b08(false)],['/print',b08(true)+s01()+movedDestinations()]]){
+   const check=text=>validateRenderedExchangeSemantics(htmlParser.parse(text),path,original,catalog);
+   assert.deepEqual(check(html),[]);
+   const document=htmlParser.parse(html),annotation=document.querySelector('.claim-annotation');
+   for(const added of [assertion,`<p>${assertion}</p>`,`<div>${assertion}</div>`,`<ul><li>${assertion}</li></ul>`]){
+     const changed=html.replace(annotation.outerHTML,annotation.outerHTML.replace(/<\/div>$/,added+'</div>'));
+     assert(check(changed).some(error=>/annotation contains unexpected unreviewed text/.test(error)),`${path} additive annotation text escaped`);
+   }
+   for(const selector of ['.annotation-sources','details','details li']){
+     const item=document.querySelector(selector);if(!item)continue;
+     const at=item.outerHTML.lastIndexOf('</'),changedItem=item.outerHTML.slice(0,at)+assertion+item.outerHTML.slice(at);
+     assert(check(html.replace(item.outerHTML,changedItem)).some(error=>/actual annotation/.test(error)),`${path} nested annotation text escaped`);
+   }
+ }
+});

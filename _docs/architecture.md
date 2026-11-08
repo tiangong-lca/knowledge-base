@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-08
-lastReviewedCommit: 3f0fe0cda7b4687d3e0b6dfd6127efbe7a14a605
+lastReviewedCommit: 2b5219c1eca94bfc5fda452685c454a7ca29aa48
 ---
 
 # Publication architecture
@@ -399,3 +399,45 @@ The original347affected historical records, including three incoming front-matte
 Actual output checks compare canonical paragraphs, section order and annotation kinds/scopes/caveats, ordered evidence/locators/relations, alternate-carrier links, premise destinations and per-unit case-input deduplication. They cover B08, S01's retained note and its eight moved note destinations. Retained ordinary content also binds link labels, actual print-transformed targets and section placement. Positive tests render the real annotation component; destructive output mutations keep the note IDs while removing scholarly content. Source and output checks reject the changed artifacts independently, without treating these guards as scientific or reader acceptance.
 
 The existing native-exchange input, factor edition and execution summary remain fixed. Changed33publication templates receive source/reader reapproval against the same public input identity. Six newly captured manual pages become two work/readings with six carriers; old reading/passage anchors and earlier acquisition events remain. Static publication still does not rerun the native engine or establish historical-desktop, foreign-reader, empirical or full-book/PDF qualification.
+
+## Hybrid inventory shared chapter
+
+B09 keeps the existing C19 route and the mixed42-unit roster. Its three explicit
+sections contain the original38 canonical paragraphs and one separately bound
+Agez S1 interpretation. `hybrid-inventory-accepted.json` preserves the original
+occurrences and all172 prior C19 address meanings; its seven-heading companion
+records actual clean0aed HTML capture. The additive history contains4102 entries,
+without regenerating earlier frozen files. Old source/annotation targets retain
+exactly their original38-note scope and disclose the new paragraph.
+
+`reader-hybrid-inventory.mjs` separates conservation, captured headings and final
+prose acceptance. A code-pinned receipt must match all39 complete canonical
+records and the shared MDX bytes; a missing receipt/pin refuses admission. Runtime,
+repository validation and output export all require these inputs. Real output
+checks paragraph text, section/heading level, note order and the shared annotation
+validator's conditions, locators, cited carriers, premises and case-input links.
+An existing address without its scholarly content is insufficient. The two
+closing-synthesis premise links resolve through the current title and note plan.
+
+The11 hybrid case templates retain the same registered input and wall-parent
+identity. New selected readings and supplement carriers do not run historical
+software or change case coefficients. Source, arithmetic, continuous-reader,
+engineering, browser, hosting and exact-integration evidence remain separate;
+formal PDF qualification is not inferred from a successful HTML print check.
+
+B09 output admission also accounts for every readable body/annotation text node,
+including unwrapped text and added elements. Exact header descriptions and neighbor
+metadata are bound in the accepted source record; known historical contexts keep
+independent edition/link checks. The shared annotation check requires one validated
+premise summary and does not whitelist additional summary or wrapper text. These
+checks reject added assertions as well as missing canonical paragraphs; they do not
+replace actual browser geometry, interaction or source-entailment review.
+
+Native annotation-group headings share the existing seven-rem reference scroll
+margin. Without that margin, a mobile saved group URL placed its heading and the
+first version-context line beneath the fixed document header and TOC. Both web
+H2 and continuous-print H3 group targets retain readable arrival positions.
+
+Plain bibliography version paragraphs use the same anywhere-wrapping policy as
+their links. This keeps long archive-member filenames within narrow continuous
+print pages without clipping, truncating or changing the cited source identity.

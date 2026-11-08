@@ -15,7 +15,7 @@ checkPaths:
   - "app/**"
   - "scripts/**"
 lastReviewedAt: 2026-11-08
-lastReviewedCommit: 3f0fe0cda7b4687d3e0b6dfd6127efbe7a14a605
+lastReviewedCommit: 2b5219c1eca94bfc5fda452685c454a7ca29aa48
 ---
 
 # LCA Living Knowledge Base and Review
@@ -140,3 +140,14 @@ The opening and final synthesis use stable claim-occurrence note anchors with co
 
 
 [Exchange-semantics monograph #74](https://github.com/tiangong-lca/knowledge-base/issues/74) preserves all56original propositions and14ordinary-content responsibilities in four sections. The [protocol](_docs/editorial/2026-11-08-exchange-semantics-monograph.md) separates selected originals, retained native observations, actual manuscript and reader review from publication qualification. Separate original-map, final-prose, partial-S01 and captured-heading receipts protect4,095historical addresses, including old43/9/7/9-note subsets. Render checks compare actual annotation conditions, provenance, premises and retained navigation, rather than accepting empty stable anchors. Source/Main, hosted and exact-root completion remain separate delivery gates.
+
+[Hybrid-inventory monograph #76](https://github.com/tiangong-lca/knowledge-base/issues/76)
+authors the existing C19 route in three shared sections, retaining38 original
+propositions and adding one source-bound distinction between omitting downstream
+feedback and correcting overlap. Its [protocol](
+_docs/editorial/2026-11-08-hybrid-inventory-monograph.md) records the actual
+selected readings, newly acquired supplements and unresolved final-article access.
+The original38-note scope, seven newly captured headings and all4102 historical
+addresses are independently guarded. The11 synthetic-account templates keep their
+original inputs. Actual manuscript acceptance, source/Main, hosting and exact-root
+completion remain separate from the research and integrity checks.
