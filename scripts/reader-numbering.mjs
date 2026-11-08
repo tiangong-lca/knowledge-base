@@ -8,10 +8,12 @@ import numbering from '../config/reader-numbering.json' with { type: 'json' };
 
 const routeKey = value => typeof value === 'string' ? value.replace(/\/+$/, '') || '/' : value;
 const chinese = ['', '一', '二', '三', '四', '五', '六', '七'];
-export function assertReaderNumbering(value = numbering) {
-  if (createHash('sha256').update(JSON.stringify(value)).digest('hex') !== 'dd37e4d98203b99e8b4b79a620da2b1ace956538f91054c2f17f3842843b707a') throw new Error('Reader numbering differs from the independently pinned actual 40-unit/37-page heading and part inventory');
+// Main owns the independently reviewed current-edition pin, separate from immutable histories.
+/** @type {string|null} */
+export const readerNumberingDigest = "07215484785eff1a9bf0525312547556f6fc721173e9f46ecf874fb8fb5992f4";
+export function assertReaderNumbering(value = numbering, independentDigest = readerNumberingDigest) {
+  if (createHash('sha256').update(JSON.stringify(value)).digest('hex') !== independentDigest) throw new Error('Reader numbering differs from the independently pinned actual 40-unit/33-chapter/47-web-unit climate heading and part inventory');
 }
-assertReaderNumbering();
 export const readerNumberingManifest = numbering;
 export const readerParts = numbering.parts.map(part => ({ ...part, label: `第${chinese[part.number]}部` }));
 
@@ -19,6 +21,7 @@ export const readerParts = numbering.parts.map(part => ({ ...part, label: `第${
  * @returns {NumberingUnit[]}
  */
 export function getPresentationUnits(view) {
+  assertReaderNumbering();
   if (view !== 'book' && view !== 'web') throw new TypeError(`Unknown reading view: ${view}`);
   const counts = { chapter: 0, topic: 0, appendix: 0 };
   return numbering[view].map(unit => {
@@ -112,12 +115,12 @@ export const getUnitHeadingPlan = getHeadingNumberPlan;
 /** Two source-qualified continuations; other old scopes keep their own meaning. */
 export const readerContinuationContracts = [
   { key: 'policy-to-framework', route: '/docs/book/early-container-policy-and-systems', sourceHref: '/docs/book/framework-history/', sourceLabel: '评价框架的形成', bookKey: 'book-framework-responsibilities', bookLabel: '框架职责', webContext: '沿着这些职责，下一章进入评价框架的形成。', bookContext: '沿着这些职责，下一章进入框架职责。' },
-  { key: 'emission-time-to-future', route: '/docs/book/emission-time-and-assessment', sourceHref: '/docs/book/future-technology-and-context/', sourceLabel: '未来技术置于怎样的世界', bookKey: '/docs/book/future-technology-and-context', bookLabel: '未来技术置于怎样的世界', webContext: '前瞻技术的情景设定，见未来技术置于怎样的世界。', bookContext: '前瞻技术的情景设定，见未来技术置于怎样的世界。' },
+  { key: 'emission-time-to-future', route: '/docs/book/emission-time-and-assessment', bookSource: '/monograph/climate-equivalence', bookSourceKey: 'book-climate-equivalence', sourceHref: '/docs/book/future-technology-and-context/', sourceLabel: '未来技术置于怎样的世界', bookKey: '/docs/book/future-technology-and-context', bookLabel: '未来技术置于怎样的世界', webContext: '前瞻技术的情景设定，见未来技术置于怎样的世界。', bookContext: '未来清单的技术与背景设定，另见后面的未来技术置于怎样的世界。' },
 ];
 
 export function getContinuationLink(view, route, href, label) {
   if (view !== 'book' && view !== 'web') throw new TypeError(`Unknown reading view: ${view}`);
-  const contract = readerContinuationContracts.find(row => row.route === routeKey(route) && row.sourceHref === href && row.sourceLabel === label);
+  const contract = readerContinuationContracts.find(row => (view === 'book' ? row.bookSourceKey ?? row.route : row.route) === routeKey(route) && row.sourceHref === href && row.sourceLabel === label);
   if (!contract) return null;
   return { key: contract.key, href: view === 'book' ? `#${printUnitAnchor(contract.bookKey)}` : contract.sourceHref, label: view === 'book' ? contract.bookLabel : contract.sourceLabel };
 }

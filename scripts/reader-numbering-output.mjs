@@ -106,8 +106,8 @@ function validation(document,path,sources){
       if(slot.id&&heading?.id!==(print?`${printUnitAnchor(record.key)}-${slot.id}`:slot.id))fail(`Wrong stable MDX heading anchor: ${record.key} ${slot.key}`);
       if(numbered(heading,{...slot,key:slot.key},`heading ${record.key} ${slot.key}`))normalizedHeadings.push({node:heading,tag:`h${print?Math.min(slot.depth+1,6):slot.depth}`});
     }
-    for(const contract of readerContinuationContracts.filter(contract=>contract.route===record.source)) {
-      const wanted=getContinuationLink(view,contract.route,contract.sourceHref,contract.sourceLabel),context=print?contract.bookContext:contract.webContext;
+    for(const contract of readerContinuationContracts.filter(contract=>(print?contract.bookSource??contract.route:contract.route)===record.source)) {
+      const wanted=getContinuationLink(view,print?contract.bookSourceKey??contract.route:contract.route,contract.sourceHref,contract.sourceLabel),context=print?contract.bookContext:contract.webContext;
       const candidates=node.querySelectorAll('p a[href]').filter(link=>!link.closest(`${apparatus},.docs-pagination`)&&(link.getAttribute('href')===wanted.href||link.getAttribute('href')===contract.sourceHref||link.text===contract.sourceLabel||link.text===contract.bookLabel));
       if(candidates.length!==1||candidates[0].getAttribute('href')!==wanted.href||candidates[0].text!==wanted.label||candidates[0].closest('p')?.text!==context||candidates[0].closest('p')?.querySelectorAll('a').length!==1)fail(`Qualified ordinary continuation differs: ${contract.key}`);
       if(print)targetExists(printUnitAnchor(contract.bookKey),`Continuation ${contract.key}`);

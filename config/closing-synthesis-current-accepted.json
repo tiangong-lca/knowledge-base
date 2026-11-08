@@ -1,0 +1,759 @@
+{
+  "schemaVersion": 1,
+  "status": "reviewed",
+  "originalDigest": "febb6e039e8c1af69ea31bf88325785fa73b957b6f50183a87f3139089bc9325",
+  "changes": [
+    {
+      "old": {
+        "id": "cl-time-combination",
+        "text": "动态计算的含义，是把各年的排放量分别乘上适用于相应时间差的表征因子，再对年份和气体种类相加。清单提供“什么气体在何时排了多少”，响应模型提供“这次排放经过这段时间后怎样贡献于指标”。在这篇文章发展的方法中，所计算的是辐射强迫相关结果；年份被保留下来，并不使这些结果自动成为完整的温度变化或气候损害预测。",
+        "kind": "source-statement",
+        "scope": "Annex1 §2.1所示的辐射强迫表征与时间分辨清单；不推广为全部动态LCIA的定义。",
+        "evidenceIds": [
+          "ev-time-lev-response",
+          "ev-time-lev-limits"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-time-lev-response",
+            "relation": "supports",
+            "rationale": "实际pp94–96定义气体响应与年度组合，p96说明对各年各气体累加得到辐射强迫贡献。"
+          },
+          {
+            "evidenceId": "ev-time-lev-limits",
+            "relation": "qualifies",
+            "rationale": "p100保留辐射强迫与实际气候影响之间的复杂关系，限制把这一指标直接称为完整气候后果。"
+          }
+        ],
+        "premiseIds": [],
+        "caveats": [
+          "方法说明不使历史气体响应参数或表征因子成为现行默认值。"
+        ],
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-04",
+        "reviewKind": "agent-source-check"
+      },
+      "current": {
+        "id": "cl-time-combination",
+        "text": "清单与响应的连接可按年份展开：某年某气体的排放量，乘以对应经过时间的表征因子，再对年份及气体相加。Levasseur等人在这篇文章中用这一关系计算辐射强迫相关结果；其称为“瞬时”的年度因子仍按一年区间积分定义。保留年份使时间关系可见，却没有直接给出完整温度变化或气候损害预测。",
+        "kind": "source-statement",
+        "scope": "Annex1 §2.1所示的辐射强迫表征与时间分辨清单；不推广为全部动态LCIA的定义。",
+        "evidenceIds": [
+          "ev-time-lev-response",
+          "ev-time-lev-limits"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-time-lev-response",
+            "relation": "supports",
+            "rationale": "实际pp94–96定义气体响应与年度组合，p96说明对各年各气体累加得到辐射强迫贡献。"
+          },
+          {
+            "evidenceId": "ev-time-lev-limits",
+            "relation": "qualifies",
+            "rationale": "p100保留辐射强迫与实际气候影响之间的复杂关系，限制把这一指标直接称为完整气候后果。"
+          }
+        ],
+        "premiseIds": [],
+        "caveats": [
+          "方法说明不使历史气体响应参数或表征因子成为现行默认值。"
+        ],
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-09",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "Selected original Annex1 passages and the exact revised49-record candidate were reviewed; calendar/lag, forcing scope, policy choices, model limits and future-scenario separation retain their identities. The current date records that actual bounded review; original frozen records remain unchanged."
+    },
+    {
+      "old": {
+        "id": "cl-time-common-endpoint",
+        "text": "若研究的问题是“截至同一个日历终点，系统造成了哪些影响”，就不能把这个终点与“每次排放之后都考察同样长的时间”混为一谈。后发生的排放，其固定排放后时间窗也会向后移动。文章用建筑的时间线说明这种差别，并要求比较时把时间边界说清楚。这个论证限定了所回答的问题，并不等于宣布固定时间范围的 GWP 对任何问题都没有意义。",
+        "kind": "interpretation",
+        "scope": "围绕共同日历终点的研究问题解释该文时间窗论证；不是对全部GWP用途的否定。",
+        "evidenceIds": [
+          "ev-time-lev-endpoint"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-time-lev-endpoint",
+            "relation": "supports",
+            "rationale": "实际pp90–92和Figure2把研究时间范围与各次排放后的固定积分窗并列，展示二者如何错开。"
+          }
+        ],
+        "premiseIds": [
+          "cl-time-emission-profile",
+          "cl-time-elapsed-response"
+        ],
+        "caveats": [
+          "原时间线是解释性示例；未据此评价真实建筑的环境性能。"
+        ],
+        "conceptIds": [
+          "cn-time-roles"
+        ],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-04",
+        "reviewKind": "agent-source-check"
+      },
+      "current": {
+        "id": "cl-time-common-endpoint",
+        "text": "因此，“每次排放后都观察同样久”与“把系统看到同一个日历终点”是两种设置。前者的观察终点随排放日期后移，后者则让较晚排放经历较短的响应时间。Levasseur等人用建筑时间线解释这一区别，要求比较的时间边界相称。这并不否定固定范围GWP的所有用途，而是说明它不能未经说明就代表另一种共同终点问题。",
+        "kind": "interpretation",
+        "scope": "围绕共同日历终点的研究问题解释该文时间窗论证；不是对全部GWP用途的否定。",
+        "evidenceIds": [
+          "ev-time-lev-endpoint"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-time-lev-endpoint",
+            "relation": "supports",
+            "rationale": "实际pp90–92和Figure2把研究时间范围与各次排放后的固定积分窗并列，展示二者如何错开。"
+          }
+        ],
+        "premiseIds": [
+          "cl-time-emission-profile",
+          "cl-time-elapsed-response"
+        ],
+        "caveats": [
+          "原时间线是解释性示例；未据此评价真实建筑的环境性能。"
+        ],
+        "conceptIds": [
+          "cn-time-roles"
+        ],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-09",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "Selected original Annex1 passages and the exact revised49-record candidate were reviewed; calendar/lag, forcing scope, policy choices, model limits and future-scenario separation retain their identities. The current date records that actual bounded review; original frozen records remain unchanged."
+    },
+    {
+      "old": {
+        "id": "cl-time-dynamic-not-forecast",
+        "text": "还有一种时间问题，不能仅靠给排放加上年份解决：未来的工艺、设备和供能系统会是什么样子。上述方法说明既定排放剖面如何与响应模型组合，却不会自行产生未来技术的成熟路线或市场情境。我们因此需要另问，清单里的未来排放从哪些技术和背景假设而来；这也把讨论从排放发生的时序，带到了未来技术研究的设计。",
+        "kind": "interpretation",
+        "scope": "时间表征与未来技术情景的分析区分；不是新的外部分类型式。",
+        "evidenceIds": [
+          "ev-time-lev-response",
+          "ev-time-lev-limits",
+          "ev-time-arv-definition"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-time-lev-response",
+            "relation": "context",
+            "rationale": "该文组合公式以给定的时间清单和气体响应为输入，没有自行估计未来技术路线。"
+          },
+          {
+            "evidenceId": "ev-time-lev-limits",
+            "relation": "qualifies",
+            "rationale": "其固定背景和扩展限制，约束把动态表征理解成所有背景都已预测的读法。"
+          },
+          {
+            "evidenceId": "ev-time-arv-definition",
+            "relation": "context",
+            "rationale": "2018论文把技术放在未来成熟状态建模，提供下一层问题的独立定义背景。"
+          }
+        ],
+        "premiseIds": [
+          "cl-time-emission-profile",
+          "cl-time-combination",
+          "cl-time-model-limits"
+        ],
+        "caveats": [
+          "这里不把dynamic作为跨文献只有一种含义的标签。"
+        ],
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-04",
+        "reviewKind": "agent-source-check"
+      },
+      "current": {
+        "id": "cl-time-dynamic-not-forecast",
+        "text": "时间表征还留下一个独立问题：清单中的未来排放从何而来？给定排放剖面与响应模型可以组合，却不会自行产生未来工艺、设备、供能系统的成熟路线或市场情境。评价这些设定，需要未来技术研究的设计；排放时序与技术背景是相互联系、仍需分别说明的两项工作。",
+        "kind": "interpretation",
+        "scope": "时间表征与未来技术情景的分析区分；不是新的外部分类型式。",
+        "evidenceIds": [
+          "ev-time-lev-response",
+          "ev-time-lev-limits",
+          "ev-time-arv-definition"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-time-lev-response",
+            "relation": "context",
+            "rationale": "该文组合公式以给定的时间清单和气体响应为输入，没有自行估计未来技术路线。"
+          },
+          {
+            "evidenceId": "ev-time-lev-limits",
+            "relation": "qualifies",
+            "rationale": "其固定背景和扩展限制，约束把动态表征理解成所有背景都已预测的读法。"
+          },
+          {
+            "evidenceId": "ev-time-arv-definition",
+            "relation": "context",
+            "rationale": "2018论文把技术放在未来成熟状态建模，提供下一层问题的独立定义背景。"
+          }
+        ],
+        "premiseIds": [
+          "cl-time-emission-profile",
+          "cl-time-combination",
+          "cl-time-model-limits"
+        ],
+        "caveats": [
+          "这里不把dynamic作为跨文献只有一种含义的标签。"
+        ],
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-09",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "Selected original Annex1 passages and the exact revised49-record candidate were reviewed; calendar/lag, forcing scope, policy choices, model limits and future-scenario separation retain their identities. The current date records that actual bounded review; original frozen records remain unchanged."
+    },
+    {
+      "old": {
+        "id": "cl-time-elapsed-response",
+        "text": "需要分清两个时刻：排放在什么时候发生，以及我们在什么时候评价它。如果排放发生在 j，而评价时刻是 t，该文组合清单与表征的关系取决于已经经过的时间 t−j。刚发生的排放和早年已经发生的排放，即使来自同一种气体且质量相同，也处在不同的响应阶段。把这个时间差保留下来，才有可能说明各次排放在所选评价时刻分别贡献了什么。",
+        "kind": "source-statement",
+        "scope": "该文离散年份和滞后表征的解释；不构成可直接运行的索引约定或算法实现。",
+        "evidenceIds": [
+          "ev-time-lev-response"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-time-lev-response",
+            "relation": "supports",
+            "rationale": "实际p96 Equation6及紧随的文字按t−j解释不同排放年份的因子，明确区别日历时刻与排放后经过的时间。"
+          }
+        ],
+        "premiseIds": [],
+        "caveats": [
+          "关系式的解释不代替时间步长、端点和零滞后的具体实现定义及数值检验。"
+        ],
+        "conceptIds": [
+          "cn-time-roles"
+        ],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-04",
+        "reviewKind": "agent-source-check"
+      },
+      "current": {
+        "id": "cl-time-elapsed-response",
+        "text": "给排放记上日期后，需要另定评价时刻。排放发生在 j，评价在 t，响应取决于经过时间 t−j。同种气体的相同质量，一笔刚排出，一笔已在早年排出，在这个评价时刻便处于不同响应阶段。时间差把日历记录接到响应模型上，不能用一个不带日期的总量替代。",
+        "kind": "source-statement",
+        "scope": "该文离散年份和滞后表征的解释；不构成可直接运行的索引约定或算法实现。",
+        "evidenceIds": [
+          "ev-time-lev-response"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-time-lev-response",
+            "relation": "supports",
+            "rationale": "实际p96 Equation6及紧随的文字按t−j解释不同排放年份的因子，明确区别日历时刻与排放后经过的时间。"
+          }
+        ],
+        "premiseIds": [],
+        "caveats": [
+          "关系式的解释不代替时间步长、端点和零滞后的具体实现定义及数值检验。"
+        ],
+        "conceptIds": [
+          "cn-time-roles"
+        ],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-09",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "Selected original Annex1 passages and the exact revised49-record candidate were reviewed; calendar/lag, forcing scope, policy choices, model limits and future-scenario separation retain their identities. The current date records that actual bounded review; original frozen records remain unchanged."
+    },
+    {
+      "old": {
+        "id": "cl-time-emission-profile",
+        "text": "把整个生命周期的排放加成一个总量，可能使排放发生的先后次序不再可见。Levasseur 等人的 2010 年文章从这个问题出发，提出在清单中保留排放的时间分布，再作动态表征。这里依据该文收入作者 2011 年学位论文附录一的文本，页码采用这一载体。这里讨论的是时间信息怎样进入模型，不是任何燃料或产品已经被证明更好的结论。",
+        "kind": "source-statement",
+        "scope": "2010文章的作者学位论文Annex1载体；非直接期刊PDF阅读。",
+        "evidenceIds": [
+          "ev-time-lev-inventory"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-time-lev-inventory",
+            "relation": "supports",
+            "rationale": "实际pp89–92先描述汇总清单丢失时间信息，再说明保留时间剖面的动态做法，支撑本段的问题设置。"
+          }
+        ],
+        "premiseIds": [],
+        "caveats": [
+          "论述依据学位论文附录载体，不代替 ACS 期刊版、补充材料或案例原始输入。"
+        ],
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-04",
+        "reviewKind": "agent-source-check"
+      },
+      "current": {
+        "id": "cl-time-emission-profile",
+        "text": "排放清单可以保留的不只是气体和总质量，还有它们进入环境的日期。Levasseur等人的2010年文章正是从时间分布在汇总中消失的问题出发，把按年记录的清单与动态表征联系起来。这项工作先改变了输入的组织方式；其方法意义不等于已经证明某种燃料或产品更好。",
+        "kind": "source-statement",
+        "scope": "2010文章的作者学位论文Annex1载体；非直接期刊PDF阅读。",
+        "evidenceIds": [
+          "ev-time-lev-inventory"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-time-lev-inventory",
+            "relation": "supports",
+            "rationale": "实际pp89–92先描述汇总清单丢失时间信息，再说明保留时间剖面的动态做法，支撑本段的问题设置。"
+          }
+        ],
+        "premiseIds": [],
+        "caveats": [
+          "论述依据学位论文附录载体，不代替 ACS 期刊版、补充材料或案例原始输入。"
+        ],
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-09",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "Selected original Annex1 passages and the exact revised49-record candidate were reviewed; calendar/lag, forcing scope, policy choices, model limits and future-scenario separation retain their identities. The current date records that actual bounded review; original frozen records remain unchanged."
+    },
+    {
+      "old": {
+        "id": "cl-time-horizon-choice",
+        "text": "时间范围也不是被动态公式自动选出来的。选择在何时结束观察，会决定哪些后续贡献还在评价之内；是否另外采用折现，又是另一项选择。Levasseur 等人把这类决定与政策和价值判断联系起来，并说明是否采用折现独立于其动态方法。因而，比较不只需要给出一个年份，还需要解释这个时间设置为什么适合研究问题。",
+        "kind": "interpretation",
+        "scope": "该文关于分析时间范围和折现的讨论；末句为对报告责任的分析。",
+        "evidenceIds": [
+          "ev-time-lev-value-choices",
+          "ev-time-lev-endpoint"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-time-lev-value-choices",
+            "relation": "supports",
+            "rationale": "实际p98把时间范围与折现的选择视为政策判断，并明确折现决策独立于所提方法。"
+          },
+          {
+            "evidenceId": "ev-time-lev-endpoint",
+            "relation": "context",
+            "rationale": "pp91–92说明选定终点会排除其后的影响，提供本段关于时间设置含义的背景。"
+          }
+        ],
+        "premiseIds": [
+          "cl-time-common-endpoint",
+          "cl-time-combination"
+        ],
+        "caveats": [
+          "不把该文的政策论述当作现行法律或标准原条文。"
+        ],
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-04",
+        "reviewKind": "agent-source-check"
+      },
+      "current": {
+        "id": "cl-time-horizon-choice",
+        "text": "日历已经写进公式，观察到哪一年却仍要选择。终点之外的后续贡献不再进入所选评价，另加折现又会改变时间权重。Levasseur等人把这些决定联系到政策和价值判断，并明确是否折现独立于其动态方法。因此，时间设置须有与研究问题相称的理由，而不能只报一个年份。",
+        "kind": "interpretation",
+        "scope": "该文关于分析时间范围和折现的讨论；末句为对报告责任的分析。",
+        "evidenceIds": [
+          "ev-time-lev-value-choices",
+          "ev-time-lev-endpoint"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-time-lev-value-choices",
+            "relation": "supports",
+            "rationale": "实际p98把时间范围与折现的选择视为政策判断，并明确折现决策独立于所提方法。"
+          },
+          {
+            "evidenceId": "ev-time-lev-endpoint",
+            "relation": "context",
+            "rationale": "pp91–92说明选定终点会排除其后的影响，提供本段关于时间设置含义的背景。"
+          }
+        ],
+        "premiseIds": [
+          "cl-time-common-endpoint",
+          "cl-time-combination"
+        ],
+        "caveats": [
+          "不把该文的政策论述当作现行法律或标准原条文。"
+        ],
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-09",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "Selected original Annex1 passages and the exact revised49-record candidate were reviewed; calendar/lag, forcing scope, policy choices, model limits and future-scenario separation retain their identities. The current date records that actual bounded review; original frozen records remain unchanged."
+    },
+    {
+      "old": {
+        "id": "cl-time-model-limits",
+        "text": "增加时间分辨率，并没有消除其他模型假设。该文仍为气体指定大气负荷响应，并使用固定背景浓度等设定；作者也指出背景浓度会变化，辐射强迫与气候影响之间的关系并不简单。对其他环境问题采用类似思路，还需要发展相应的动态表征。因此，“动态”说明这里保留了某些时间关系，不能单靠这个名称保证模型已经涵盖所有变化。",
+        "kind": "source-statement",
+        "scope": "2010方法及其作者明确保留的限制；不是对后来动态方法的完整调查。",
+        "evidenceIds": [
+          "ev-time-lev-limits"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-time-lev-limits",
+            "relation": "supports",
+            "rationale": "实际pp100–101分别讨论背景浓度、气候关系复杂性及其他类别仍需发展因子，支撑本段对适用范围的限定。"
+          }
+        ],
+        "premiseIds": [],
+        "caveats": [
+          "这些历史参数不自动适用于后续气候模型或当前分析。"
+        ],
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-04",
+        "reviewKind": "agent-source-check"
+      },
+      "current": {
+        "id": "cl-time-model-limits",
+        "text": "时间分辨率提高，也没有撤销响应模型的条件。Levasseur等人仍指定气体的大气负荷响应并采用固定背景浓度，同时指出真实背景会变化、辐射强迫与气候影响的联系并不简单。向其他环境问题扩展还需相应动态表征。由此可见，“动态”保留了特定时间关系，并不表示模型已经包括所有变化。",
+        "kind": "source-statement",
+        "scope": "2010方法及其作者明确保留的限制；不是对后来动态方法的完整调查。",
+        "evidenceIds": [
+          "ev-time-lev-limits"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-time-lev-limits",
+            "relation": "supports",
+            "rationale": "实际pp100–101分别讨论背景浓度、气候关系复杂性及其他类别仍需发展因子，支撑本段对适用范围的限定。"
+          }
+        ],
+        "premiseIds": [],
+        "caveats": [
+          "这些历史参数不自动适用于后续气候模型或当前分析。"
+        ],
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-09",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "Selected original Annex1 passages and the exact revised49-record candidate were reviewed; calendar/lag, forcing scope, policy choices, model limits and future-scenario separation retain their identities. The current date records that actual bounded review; original frozen records remain unchanged."
+    }
+  ],
+  "consumers": [
+    {
+      "id": "cl-connect-prospective-two-questions",
+      "record": {
+        "id": "cl-connect-prospective-two-questions",
+        "text": "前瞻研究把这种区别带到了方法名称上。Ekvall等人2005年以所求信息区分系统负担与行动后果；2018年的技术研究方法则把早期工艺放进未来较成熟的情景，其讨论采用归因型评价。两处都使用prospective，却没有因此回答同一个问题。若一项研究同时关心未来技术和行动后果，可以先说明未来工艺、规模与背景怎样设定，再论证某项行动会改变哪些活动、怎样改变，以及在什么边界内追踪。前一组条件描述未来系统，后一组条件解释变化机制；两方面各有依据，才有条件把它们用于同一项研究。",
+        "kind": "synthesis",
+        "scope": "2005 信息取向与 2018 未来技术定义的区分及条件性组合；作者提议，不是通用分类对照。",
+        "evidenceIds": [
+          "ev-allocation-2005-definitions",
+          "ev-time-arv-definition",
+          "ev-allocation-1997-causality"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-allocation-2005-definitions",
+            "relation": "supports",
+            "rationale": "2005作者依据系统负担或改变后果界定自己的方法取向。"
+          },
+          {
+            "evidenceId": "ev-time-arv-definition",
+            "relation": "supports",
+            "rationale": "2018作者的未来成熟度定义及明确归因型范围，构成不能据同名合并的直接条件。"
+          },
+          {
+            "evidenceId": "ev-allocation-1997-causality",
+            "relation": "qualifies",
+            "rationale": "1997论文把后果取向联系到决策实际影响的材料流，限制将未来情景自动当作改变机制。"
+          }
+        ],
+        "premiseIds": [
+          "cl-allocation-information-and-ethics",
+          "cl-allocation-causal-directions",
+          "cl-future-definition",
+          "cl-future-comparison-conditions"
+        ],
+        "caveats": [
+          "这种对照不建立 2005、2018 与当代所有 ALCA/CLCA 标签的通用映射。",
+          "情景加改变机制是一种条件性构造，不构成真实案例的经验验证。"
+        ],
+        "reasoning": "两个维度可在研究设计中条件性组合，但当前选段没有证明任意未来归因清单可直接转换为后果模型；本段组合路径是作者提议。",
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-09",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "The conditional combination of future maturity/scenario and causal mechanism still needs separate assumptions; time characterization does not manufacture supply response or empirical future validity."
+    },
+    {
+      "id": "cl-connect-time-relations",
+      "record": {
+        "id": "cl-connect-time-relations",
+        "text": "时间是另一种容易被相同数字掩盖的条件。组织的报告期间框定所描述的活动，未来工艺的运行年份涉及成熟状态和供给背景，动态气候表征还要区分排放时点、响应历时与评价终点。这些时间各做一件事。相同年份未必表明它们已经协调，不同年份也可能有各自的理由。说明资料覆盖哪段活动、未来情景怎样设定、每次排放追踪到哪里，才能判断这些部分是否适合相接。随时间表征已给定的排放，提供了响应方面的认识；未来工艺会处于什么状态，还需要另一组设定依据。",
+        "kind": "synthesis",
+        "scope": "报告期间、技术运行情景与排放响应时间的协调；作者综合，不给出通用时间网格。",
+        "evidenceIds": [
+          "ev-sustainability-slca-organizational-reference",
+          "ev-time-lev-response",
+          "ev-time-lev-endpoint",
+          "ev-time-arv-background"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-sustainability-slca-organizational-reference",
+            "relation": "context",
+            "rationale": "SO-LCA报告期间属于组织研究参照，提供与排放响应不同的时间角色。"
+          },
+          {
+            "evidenceId": "ev-time-lev-response",
+            "relation": "supports",
+            "rationale": "动态公式按评价时刻与排放时刻之差组合，支持区分日期与历时。"
+          },
+          {
+            "evidenceId": "ev-time-lev-endpoint",
+            "relation": "supports",
+            "rationale": "共同日历终点与固定排放后时间窗有不同含义。"
+          },
+          {
+            "evidenceId": "ev-time-arv-background",
+            "relation": "supports",
+            "rationale": "未来前景与背景需协调情境，但相关条件不变时也保留现状情景的理由。"
+          }
+        ],
+        "premiseIds": [
+          "cl-sustainability-organization-reporting-reference",
+          "cl-time-elapsed-response",
+          "cl-time-common-endpoint",
+          "cl-time-dynamic-not-forecast",
+          "cl-future-background"
+        ],
+        "caveats": [
+          "没有给出跨领域通用时间网格，也不宣称固定时间窗对所有问题不适用。",
+          "动态气候选段仍限于辐射强迫相关方法。"
+        ],
+        "reasoning": "这些时间项都参与模型却约束不同关系；连接要求角色对应，而非要求所有时间值相等或由一个时间方法包办。",
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-09",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "Reporting dates, response lag and observation endpoint remain distinct; the annual-factor clarification does not create a universal grid or compatibility proof."
+    },
+    {
+      "id": "cl-connect-useful-without-winner",
+      "record": {
+        "id": "cl-connect-useful-without-winner",
+        "text": "这也使比较的用途有了不同的强度。负担集中在哪里、哪项假设最值得追查、一组未来设定会带来什么结果，都是可以获得的认识，即使研究尚不能给出总体优胜者。从这些认识走向采购、政策或公开推荐，要再核对推荐的范围与研究实际覆盖的范围。资料不足以分辨差异时，可以保留具体的取舍与待解问题；若要进一步说差异小到可以接受，则须按相应准则和证据检验。前一种知识状态没有自动给出后一种结论。",
+        "kind": "synthesis",
+        "scope": "条件性结果、推荐范围与等效断言的证据责任；作者综合，不给出具体采购或政策结论。",
+        "evidenceIds": [
+          "ev-epa-interpretation",
+          "ev-ilcd-iteration",
+          "ev-early-rti1972-spending",
+          "ev-time-gie-conditional"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-epa-interpretation",
+            "relation": "supports",
+            "rationale": "EPA允许不能总体推荐时仍解释负担与利弊，为有用信息弱于赢家结论提供依据。"
+          },
+          {
+            "evidenceId": "ev-ilcd-iteration",
+            "relation": "qualifies",
+            "rationale": "p28指出高不确定性可使有意义的差异难以分辨，并限制由数据或资源不足推断差异不显著。"
+          },
+          {
+            "evidenceId": "ev-early-rti1972-spending",
+            "relation": "context",
+            "rationale": "早期报告的支出转移问题是系统内节约不能直接代表更广净影响的具体实例。"
+          },
+          {
+            "evidenceId": "ev-time-gie-conditional",
+            "relation": "supports",
+            "rationale": "2020论文把结果作为给定假设的可能含义，而非未来实现的预测保证。"
+          }
+        ],
+        "premiseIds": [
+          "cl-book-no-ranking",
+          "cl-book-not-equivalent",
+          "cl-early-policy-other-spending",
+          "cl-time-dynamic-not-forecast",
+          "cl-future-comparison-conditions"
+        ],
+        "caveats": [
+          "没有提出具体产品采购或公共政策推荐。",
+          "1972实例不是对当前经济净效应的实测证明。"
+        ],
+        "reasoning": "各例均显示结论范围要与模型范围及证据能力相接；保留用途并不授权超出该范围的推荐或等效断言。",
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-09",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "Conditional scenario knowledge remains useful without forecast or overall-winner status; recommendation, small-difference and equivalence burdens are retained."
+    },
+    {
+      "id": "cl-connect-values-stay-specific",
+      "record": {
+        "id": "cl-connect-values-stay-specific",
+        "text": "即使覆盖与计算都已说清，结论还会受到选择理由的影响。分配中的公平理由关乎份额归属，成本评价要明确费用承担者，动态评价要说明观察终点，综合评价的权重又决定几项结果怎样共同进入判断。它们各有对象，不能拿一种理由替另一种选择作答。保留原有结果，说明理由，再观察判断随哪项选择而改变，争论才会落到具体位置。等权也体现选择；透明地写出它，使读者有机会评判，却仍须解释它为什么适合这次决定。",
+        "kind": "synthesis",
+        "scope": "公平、承担主体、时间终点和权重选择的各自理由；作者综合，不统一为可互换参数。",
+        "evidenceIds": [
+          "ev-allocation-1997-fairness",
+          "ev-sustainability-lcc-perspectives",
+          "ev-time-lev-value-choices",
+          "ev-sustainability-slca-weighting"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-allocation-1997-fairness",
+            "relation": "supports",
+            "rationale": "不同公平前提对应不同分担方向，展示规则背后的特定理由。"
+          },
+          {
+            "evidenceId": "ev-sustainability-lcc-perspectives",
+            "relation": "supports",
+            "rationale": "成本视角限定谁承担支出与收益，支持判断对象需保留主体。"
+          },
+          {
+            "evidenceId": "ev-time-lev-value-choices",
+            "relation": "supports",
+            "rationale": "观察时间和折现作为另外的政策/价值选择，不由动态公式决定。"
+          },
+          {
+            "evidenceId": "ev-sustainability-slca-weighting",
+            "relation": "qualifies",
+            "rationale": "保留加权前数据与等权重并非中立的提醒，限制透明性被误读为无争议。"
+          }
+        ],
+        "premiseIds": [
+          "cl-allocation-fairness-interpretations",
+          "cl-sustainability-lcc-actor-perspective",
+          "cl-time-horizon-choice",
+          "cl-sustainability-explicit-aggregation-conditions"
+        ],
+        "caveats": [
+          "未评定某种公平观、主体视角、时间范围或权重普遍正确。",
+          "未将不同来源的建议当成同一套强制规则。"
+        ],
+        "reasoning": "这些选择均影响结果相关性，但分属责任、覆盖主体、时间及聚合；连接在于显明理由和后果，不在于证明它们共享同一伦理或数值尺度。",
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-09",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "Observation endpoint and added discounting remain separate choices; their reasons do not become fairness, payer perspective or a mandatory common rule."
+    },
+    {
+      "id": "cl-future-comparison-conditions",
+      "record": {
+        "id": "cl-future-comparison-conditions",
+        "text": "因此，未来比较的结论应当连同它的条件一起读：所需服务、技术成熟度与规模、竞争方案、背景情景、排放时序和评价边界，分别支撑哪一段判断。同名不能代替跨文献论证；不能仅因 prospective 这个词，就把这里的未来成熟情景与 Ekvall 等人 2005 年的方法分类视为等同。结果可以说明一组设定下的可能含义，至于这些设定是否会实现、结论能外推多远，仍需另外的证据。",
+        "kind": "synthesis",
+        "scope": "时间响应、未来技术情景和比较边界的分析联系；不是新标准或现实方案排序。",
+        "evidenceIds": [
+          "ev-time-gie-conditional",
+          "ev-time-arv-definition",
+          "ev-time-lev-value-choices"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-time-gie-conditional",
+            "relation": "qualifies",
+            "rationale": "实际p5把未来LCA结果解释为具体假设下的可能含义，限制把条件结果当成最终未来事实。"
+          },
+          {
+            "evidenceId": "ev-time-arv-definition",
+            "relation": "context",
+            "rationale": "2018论文自行限定术语和attributional讨论范围，支持保留来源自己的问题与边界。"
+          },
+          {
+            "evidenceId": "ev-time-lev-value-choices",
+            "relation": "context",
+            "rationale": "2010论文保留时间范围和折现的选择，为评价边界也须随结论呈现提供背景。"
+          }
+        ],
+        "premiseIds": [
+          "cl-time-common-endpoint",
+          "cl-time-horizon-choice",
+          "cl-time-model-limits",
+          "cl-time-dynamic-not-forecast",
+          "cl-future-definition",
+          "cl-future-scale-up",
+          "cl-future-incumbent",
+          "cl-future-scenarios",
+          "cl-future-background",
+          "cl-future-impact-limits"
+        ],
+        "caveats": [
+          "两种 prospective 用法的范围区别不构成当代全部方法标签的通用对照。",
+          "不同作者的建议与交叉引用不是未来表现的独立验证。"
+        ],
+        "reasoning": "将时间响应、技术情景和比较边界分别对照其原文范围，再要求外推说明；术语相同不构成模型等价的证据。",
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-04",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "Service, maturity, alternative, background, emissions schedule and temporal assessment boundary retain separate evidential responsibilities and conditional future meaning."
+    },
+    {
+      "id": "cl-future-impact-limits",
+      "record": {
+        "id": "cl-future-impact-limits",
+        "text": "即使技术与背景情景已经写清楚，影响评价也未必跟得上。2018 年论文把这一步留作未来研究，2020 年研究则指出，新材料或新技术可能出现尚无合适类别或因子表达的影响。先前的动态气候方法同样需要针对其他问题发展相应表征。没有被表征的流，不能因为结果表里没有数字，就被理解为没有环境后果。",
+        "kind": "interpretation",
+        "scope": "三项作品对时间表征与未来技术评价范围的限制；不是具体新材料危害判断。",
+        "evidenceIds": [
+          "ev-time-arv-limits",
+          "ev-time-gie-conditional",
+          "ev-time-lev-limits"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-time-arv-limits",
+            "relation": "supports",
+            "rationale": "实际p1292明确说明本文未展开prospective LCIA，并提出未来影响类别问题。"
+          },
+          {
+            "evidenceId": "ev-time-gie-conditional",
+            "relation": "supports",
+            "rationale": "实际p5 §3.4指出缺少类别或因子可能使潜在影响未被分类。"
+          },
+          {
+            "evidenceId": "ev-time-lev-limits",
+            "relation": "context",
+            "rationale": "实际p101提出其他类别需发展动态因子，说明时间方法的扩展并非现成覆盖。"
+          }
+        ],
+        "premiseIds": [
+          "cl-time-model-limits",
+          "cl-future-definition",
+          "cl-future-background"
+        ],
+        "caveats": [
+          "未识别或量化任何具体未来损害；未把缺失表征直接转成统一阻断规则。"
+        ],
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-04",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "Other categories still require relevant dynamic characterization; historical forcing/annual-factor clarification does not turn missing category models into zero impacts."
+    }
+  ],
+  "reviewEvidence": [
+    {
+      "kind": "independent exact candidate source/numerical/dependent-use review, followed by primary disposition",
+      "reportSha256": "9b0a6418ee2851b3dbbee6b6830bd7324c20996ade3b099cc9ecd0f7c6046446",
+      "receiptSha256": "60c09199823dfa79dc7c7c9836b329183f280cc5cef30d27587947ebb065da1d"
+    },
+    {
+      "kind": "exact final wording and scoped review-date delta; six consumer judgments carried forward",
+      "reportSha256": "409368e2339335f97e4a41bfa142fc727ff5e062fc5c006d237bf878074e082d",
+      "receiptSha256": "860f9fc8ff85edba9baf1ea5e3dcd7beab7c358aa1437feecb29b05e66285dbe"
+    }
+  ]
+}

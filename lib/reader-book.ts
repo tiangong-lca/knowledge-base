@@ -1,3 +1,5 @@
+import climateAccepted from '@/config/climate-assembly-accepted.json';
+import { climateAssemblyKey, climateAssemblyRoutes, climateAssemblyAppendix, climateAssemblyHeadingEntries, remapClimateAssemblyCitations, validateClimateAssemblyCoverage } from '@/scripts/reader-climate-assembly.mjs';
 import closingHistory from '@/config/closing-synthesis-heading-history.json';
 import closingProse from '@/config/closing-synthesis-prose-accepted.json';
 import { closingSynthesisHeadingEntries, remapClosingSynthesisCitations, validateClosingSynthesisCoverage } from '@/scripts/reader-closing-synthesis.mjs';
@@ -69,8 +71,8 @@ const historical = [...createLegacyCitationEntries(baseline, placements, history
   ...headingHistory.canonicalPrintedHeadings.map(heading=>({route:heading.route,path:'/print',id:heading.id,
     targets:[{route:heading.route,path:'/print',id:heading.id,kind:'heading' as const}],mode:'retained' as const,
     edition:{sourceCommit:headingHistory.sourceCommit,sourceDate:'2026-11-07'}}))];
-const legacyEntries: LegacyEntry[] = remapClosingSynthesisCitations(remapWallSelectionCitations(remapJointProductionCitations(remapHybridInventoryCitations(remapExchangeSemanticsCitations(remapProcessNetworkCitations(remapFunctionalReferenceCitations(remapCleanerProductionCitations(
-  remapBookCitations([...historical, ...cleanerProductionHeadingEntries(cleanerHeadingHistory), ...functionalReferenceHeadingEntries(functionalHeadings), ...processNetworkHeadingEntries(processHeadings), ...exchangeSemanticsHeadingEntries(), ...hybridInventoryHeadingEntries(hybridHeadings), ...jointProductionHeadingEntries(jointHeadings), ...wallSelectionHeadingEntries(wallHeadings), ...closingSynthesisHeadingEntries(closingHistory)], edition, accepted, placements), cleanerAccepted, cleanerHeadingHistory), functionalAccepted, functionalHeadings), processAccepted, processHeadings)), hybridAccepted, hybridHeadings), jointOriginal, jointHeadings, jointProse), wallOriginal, wallHeadings, wallAccepted), closingHistory, closingProse);
+const legacyEntries: LegacyEntry[] = remapClimateAssemblyCitations(remapClosingSynthesisCitations(remapWallSelectionCitations(remapJointProductionCitations(remapHybridInventoryCitations(remapExchangeSemanticsCitations(remapProcessNetworkCitations(remapFunctionalReferenceCitations(remapCleanerProductionCitations(
+  remapBookCitations([...historical, ...cleanerProductionHeadingEntries(cleanerHeadingHistory), ...functionalReferenceHeadingEntries(functionalHeadings), ...processNetworkHeadingEntries(processHeadings), ...exchangeSemanticsHeadingEntries(), ...hybridInventoryHeadingEntries(hybridHeadings), ...jointProductionHeadingEntries(jointHeadings), ...wallSelectionHeadingEntries(wallHeadings), ...closingSynthesisHeadingEntries(closingHistory), ...climateAssemblyHeadingEntries()], edition, accepted, placements), cleanerAccepted, cleanerHeadingHistory), functionalAccepted, functionalHeadings), processAccepted, processHeadings)), hybridAccepted, hybridHeadings), jointOriginal, jointHeadings, jointProse), wallOriginal, wallHeadings, wallAccepted), closingHistory, closingProse), climateAccepted);
 export function getLegacyCitations(route: string, print: boolean) {
   const path = print ? '/print' : route, aliases = new Map<string, LegacyEntry[]>(), notices: LegacyEntry[] = [], scopes = new Map<string, LegacyEntry>();
   for (const entry of legacyEntries) {
@@ -90,6 +92,8 @@ export const getChapterReferenceIndex = cache(async (print = false) => {
   const cleanerErrors = validateCleanerProductionCoverage(edition, new Map(rawPages.map(page => [page.url, page.raw])), cleanerAccepted, catalog);
   if (cleanerErrors.length) throw new Error(cleanerErrors.join('\n'));
   const rawSources = new Map(await Promise.all([...source.getPages(),...monographSource.getPages()].map(async page=>[page.url,await page.data.getText('raw')] as const)));
+  const climateErrors = validateClimateAssemblyCoverage(edition, rawSources, catalog, climateAccepted, undefined, 'public');
+  if (climateErrors.length) throw new Error(climateErrors.join('\n'));
   const closingErrors = validateClosingSynthesisCoverage(edition, rawSources, catalog, closingProse, undefined, 'public');
   if (closingErrors.length) throw new Error(closingErrors.join('\n'));
   const jointErrors = validateJointProductionCoverage(edition,rawSources,jointOriginal,catalog,jointProse);
@@ -120,6 +124,10 @@ export async function getCitationLabel(target: Destination) {
   }
   const page = print ? getPrintPages().find(page=>page.url===target.route) : source.getPages().find(page=>page.url===target.route);
   if (!page) throw new Error(`Missing citation destination ${target.route}`);
+  if (target.kind === 'heading' && [climateAssemblyKey, ...climateAssemblyRoutes, climateAssemblyAppendix].includes(target.route)) {
+    const section = print ? target.id.slice(printUnitAnchor(target.route).length + 1) : target.id;
+    return `《${page.data.title}》·${section}`;
+  }
   if (target.route === wallSelectionRoute && target.kind === 'heading') {
     const section = wallSelectionTitles.find(id => target.id === (print ? `${printUnitAnchor(wallSelectionRoute)}-${id}` : id));
     const title = section ?? (target.id === wallSelectionCaseHeadingId(print) ? '计算表与参数' : null);
