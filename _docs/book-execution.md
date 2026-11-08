@@ -798,3 +798,35 @@ validation pass as a working preview; initial failures and their fixes remain
 recorded. Clean committed build, actual local browser and hosted publication,
 sourcePR and root integration remain pending at this milestone. No full
 fourth-part, full-book or human-expert acceptance is inferred.
+
+
+## 2026-11-09 climate delivered; data applicability — Issue86
+
+Climate84/PR85 completed at Main `46b99baf16fadaae7a90ca68d003fc4d3652359f`.
+Workspace2308/PR2309 integrates that exact source at
+`a80183dd3141008321e9245faea706b914d89507`; required source/root CI and normal
+terminal receipts are complete, with1/1sourcehandoff and no remaining mirrors.
+Final source receipt SHA256 is
+`7e266dec7b3ba6beae9729b5590ce00ab2c1431bf98a1bfe633f3ecbed4e880a`;
+final root receipt is
+`ec51fb47a07457ece86c06e4c63d035051fb5532b874a7f695f866f4288e287c`.
+The final source/root/programme handoff comments are6727534862,6727539583
+and6727544318. The earlier pending paragraph preserves its actual milestone.
+
+Actual Main46b hosting,49reader records,4140historical obligations and selected
+responsive/theme/no-script/print interactions were qualified separately. The
+owned preview and browser contexts are closed; original workspace and all physical
+peer states remain unchanged. Programme worktrees, dependencies, lawful evidence
+and captured artifacts are deliberately retained. FormalPDF, whole-Part4 and
+whole-book acceptance remain separate.
+
+[Issue86](https://github.com/tiangong-lca/knowledge-base/issues/86) starts from46b
+on `codex/book-data-applicability`, targetmain. The
+[data applicability protocol](editorial/2026-11-09-data-applicability.md) and
+immutable12-record snapshot precede new selected reading and actual prose.
+B25 follows the adopted C14/C15 data-use chain: represented object, quality and
+documentation, review criteria and version changes. All7downstream consumers
+and2concept uses require review; existing B32 original/current climate acceptance,
+18case inputs and all4140historical meanings remain protected. No new manuscript,
+source reading or independent acceptance is claimed at this protocol milestone.
+Programme9 remains active for all remaining research and publication obligations.
