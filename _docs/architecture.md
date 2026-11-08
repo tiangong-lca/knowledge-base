@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-08
-lastReviewedCommit: c6d569b529f485a82e61c8eae3ef71609651840e
+lastReviewedCommit: f78be1e086fc99a008242066d5947d3eff107996
 ---
 
 # Publication architecture
@@ -479,6 +479,13 @@ Scoped widget checks independently validate the complete current case roster,
 captions/header roles and exact accepted presentation. The joint lookup uses three
 headings after a reviewed five-to-three disposition; the wall case retains five.
 The original joint five-heading capture remains immutable.
+
+Continuous-book native part, unit and numbered-heading targets use the same7rem
+arrival margin as retained note/group targets. Actual clicks at the first clean
+candidate otherwise placed a chapter title partly, and a section title entirely,
+under the56px fixed header. This changes scroll arrival only, not content,
+numbering identity or printed page layout. Browser qualification checks the
+visible target against the actual header boundary, including no-script links.
 
 The two exact C03/C28 reading continuations have explicit source/view contracts;
 unknown fragments are not silently reinterpreted. Production still needs the

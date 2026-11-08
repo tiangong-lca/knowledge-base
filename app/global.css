@@ -166,6 +166,10 @@ button { cursor: pointer; }
 .reader-book-contents section > h3 { margin-top: 1.8rem; font-size: 1.1rem; }
 .print-part > h2 { margin-top: 3rem; font-size: 2rem; line-height: 1.5; }
 .print-part-introduction { line-height: 1.95; color: var(--color-fd-muted-foreground); }
+/* Native contents and case links must arrive below the fixed reading header. */
+.print-book .print-chapter,
+.print-book [data-reader-part],
+.print-book [data-reader-heading-key] { scroll-margin-top: 7rem; }
 .print-part .print-chapter > h3 { margin-top: 0; font-size: 1.7rem; line-height: 1.6; }
 .print-part .print-chapter > h4 { font-size: 1.2rem; margin-top: 2rem; }
 .print-book .teaching-case h5 { font-size: 1.1rem; font-weight: 600; margin: 0 0 .6rem; }
