@@ -1,3 +1,6 @@
+import { validateReaderNumberingOutput } from './reader-numbering-output.mjs';
+import { assertReaderNumbering } from './reader-numbering.mjs';
+import { assertJointProductionOriginal, assertJointProductionHeadingHistory, assertJointProductionProseAccepted, jointProductionHeadingEntries, remapJointProductionCitations, validateJointProductionCoverage, validateRenderedJointProduction } from './reader-joint-production.mjs';
 import { assertHybridInventoryAccepted, assertHybridInventoryHeadingHistory, assertHybridInventoryProseAccepted, hybridInventoryHeadingEntries, remapHybridInventoryCitations, validateHybridInventoryCoverage, validateRenderedHybridInventory } from './reader-hybrid-inventory.mjs';
 import { assertExchangeSemanticsOriginal, assertExchangeSemanticsHeadingHistory, assertExchangeSemanticsCitationSources, assertExchangeSemanticsPartialHistory, assertExchangeSemanticsProseAccepted, exchangeSemanticsHeadingEntries, remapExchangeSemanticsCitations, validateExchangeSemanticsCoverage, validateRenderedExchangeSemantics } from './reader-exchange-semantics.mjs';
 import { assertProcessNetworkProseAccepted, processNetworkHeadingEntries, remapProcessNetworkCitations, validateProcessNetworkCoverage, validateRenderedProcessNetwork } from './reader-process-network.mjs';
@@ -213,13 +216,15 @@ export function validateHistoricalScope(source, entry, address = `${entry.path}/
 }
 
 export async function validateLegacyCitationOutput(root, sourceBaseline, locations, availableRoutes = null, history = null, book = null) {
+  const numbered = book ? await validateReaderNumberingOutput(root,{sources:book.sources,edition:book.edition}) : null;
+  if (numbered?.errors.length) return numbered.errors;
   const sourceRoutes = availableRoutes ?? [...sourceBaseline.pages.map(page => page.route), ...(locations.printAdditions ?? []).map(page => page.route)];
   const printRoutes = book ? currentEditionKeys(book.edition, sourceRoutes, sourceBaseline, locations) : createCurrentPrintRoutes(sourceBaseline, locations, sourceRoutes);
   const historicPrintRoutes = book ? [...sourceBaseline.pages.filter(page=>page.printOrdinal!==undefined).map(page=>page.route),...locations.frontMatter,...(locations.printAdditions??[]).map(unit=>unit.route)] : printRoutes;
   let entries = [...createLegacyCitationEntries(sourceBaseline, locations, history?.pages),
     ...(history ? createCanonicalCitationEntries(history, locations, historicPrintRoutes) : [])];
-  if (book) entries = remapHybridInventoryCitations(remapExchangeSemanticsCitations(remapProcessNetworkCitations(remapFunctionalReferenceCitations(remapCleanerProductionCitations(remapBookCitations(
-    [...entries,...publishedHeadingEntries(book.headingHistory),...cleanerProductionHeadingEntries(book.cleanerHeadingHistory),...functionalReferenceHeadingEntries(book.functionalHeadings),...processNetworkHeadingEntries(book.processHeadings),...exchangeSemanticsHeadingEntries(book.exchangeHeadings),...hybridInventoryHeadingEntries(book.hybridHeadings)],book.edition,book.accepted,locations),book.cleanerAccepted,book.cleanerHeadingHistory),book.functionalAccepted,book.functionalHeadings),book.processAccepted,book.processHeadings),book.exchangeOriginal,book.exchangeHeadings,book.exchangePartial,book.exchangeCitations),book.hybridAccepted,book.hybridHeadings);
+  if (book) entries = remapJointProductionCitations(remapHybridInventoryCitations(remapExchangeSemanticsCitations(remapProcessNetworkCitations(remapFunctionalReferenceCitations(remapCleanerProductionCitations(remapBookCitations(
+    [...entries,...publishedHeadingEntries(book.headingHistory),...cleanerProductionHeadingEntries(book.cleanerHeadingHistory),...functionalReferenceHeadingEntries(book.functionalHeadings),...processNetworkHeadingEntries(book.processHeadings),...exchangeSemanticsHeadingEntries(book.exchangeHeadings),...hybridInventoryHeadingEntries(book.hybridHeadings),...jointProductionHeadingEntries(book.jointHeadings)],book.edition,book.accepted,locations),book.cleanerAccepted,book.cleanerHeadingHistory),book.functionalAccepted,book.functionalHeadings),book.processAccepted,book.processHeadings),book.exchangeOriginal,book.exchangeHeadings,book.exchangePartial,book.exchangeCitations),book.hybridAccepted,book.hybridHeadings),book.jointOriginal,book.jointHeadings,book.jointProse);
   const addresses = new Set();
   for (const entry of entries) {
     const address = `${entry.path}#${entry.id}`;
@@ -237,9 +242,10 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
       errors.push(`${path}: missing legacy reader route`);
       continue;
     }
-    const document = htmlParser.parse(html);
+    const document = numbered ? numbered.documents.get(path) : htmlParser.parse(html);
+    if (!document) { errors.push(`${path}: missing independently verified numbered semantic document`); continue; }
     const surface = readCitationSurface(document, path);
-    if (book) errors.push(...validateRenderedCleanerProduction(document,path,book.cleanerAccepted,book.catalog), ...validateRenderedFunctionalReference(document,path,book.functionalAccepted,book.catalog,book.functionalProse), ...validateRenderedProcessNetwork(document,path,book.processAccepted,book.catalog,book.processProse), ...validateRenderedExchangeSemantics(document,path,book.exchangeOriginal,book.catalog,book.exchangeProse,book.exchangePartial), ...validateRenderedHybridInventory(document,path,book.hybridAccepted,book.catalog,book.hybridProse));
+    if (book) errors.push(...validateRenderedJointProduction(document,path,book.jointOriginal,book.catalog,book.jointProse), ...validateRenderedCleanerProduction(document,path,book.cleanerAccepted,book.catalog), ...validateRenderedFunctionalReference(document,path,book.functionalAccepted,book.catalog,book.functionalProse), ...validateRenderedProcessNetwork(document,path,book.processAccepted,book.catalog,book.processProse), ...validateRenderedExchangeSemantics(document,path,book.exchangeOriginal,book.catalog,book.exchangeProse,book.exchangePartial), ...validateRenderedHybridInventory(document,path,book.hybridAccepted,book.catalog,book.hybridProse));
     if (!surface.ids.has('main-content')) errors.push(`${path}: missing main-content fragment`);
     pages.set(path, surface);
     errors.push(...surface.errors);
@@ -288,6 +294,7 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
     if (title && actual?.title && title !== actual.title) errors.push(`${path}: wrong destination note title ${link.href}`);
   }
   if (book?.sources) {
+    errors.push(...validateJointProductionCoverage(book.edition,book.sources,book.jointOriginal,book.catalog,book.jointProse));
     errors.push(...validateFrameworkCoverage(book.edition,book.sources,book.accepted));
     errors.push(...validateCleanerProductionCoverage(book.edition,book.sources,book.cleanerAccepted,book.catalog));
     errors.push(...validateFunctionalReferenceCoverage(book.edition,book.sources,book.functionalAccepted,book.catalog,book.functionalProse));
@@ -330,6 +337,8 @@ export async function validateReaderOutput(root, { knownIds = new Set() } = {}) 
     });
     return raw === null ? null : JSON.parse(raw);
   }));
+  const numberingArtifact = await readFile(join(config,'reader-numbering.json'),'utf8').then(JSON.parse,error=>{if(error.code==='ENOENT')return null;throw error;});
+  if (numberingArtifact) assertReaderNumbering(numberingArtifact);
   if (baseline && placements) {
     assertCitationBaseline(baseline);
     assertPrintFrontMatter(placements.frontMatter);
@@ -353,14 +362,18 @@ export async function validateReaderOutput(root, { knownIds = new Set() } = {}) 
     if (hasReaderSource) await discover(sourceDirectory);
     const readConfig = async file => readFile(join(config,file),'utf8').then(JSON.parse,error=>{if(error.code==='ENOENT')return null;throw error;});
     const [edition,accepted,headingHistory,cleanerAccepted,cleanerHeadingHistory,functionalAccepted,functionalHeadings,functionalProse,processAccepted,processHeadings,processProse] = await Promise.all(['book-edition.json','framework-accepted.json','framework-heading-history.json','cleaner-production-accepted.json','cleaner-production-heading-history.json','functional-reference-accepted.json','functional-reference-heading-history.json','functional-reference-prose-accepted.json','process-network-accepted.json','process-network-heading-history.json','process-network-prose-accepted.json'].map(readConfig));
+    const [jointOriginal,jointHeadings,jointProse] = await Promise.all(['original','heading-history','prose-accepted'].map(name=>readConfig(`joint-production-${name}.json`)));
     const [hybridAccepted,hybridHeadings,hybridProse] = await Promise.all(['accepted','heading-history','prose-accepted'].map(name=>readConfig(`hybrid-inventory-${name}.json`)));
     const [exchangeOriginal,exchangeHeadings,exchangeCitations,exchangePartial,exchangeProse] = await Promise.all(["original","heading-history","citation-sources","partial-history","prose-accepted"].map(name=>readConfig(`exchange-semantics-${name}.json`)));
     let book = null;
-    if (edition || accepted || headingHistory || cleanerAccepted || cleanerHeadingHistory || bookOutput) {
+    if (edition || accepted || headingHistory || cleanerAccepted || cleanerHeadingHistory || bookOutput || numberingArtifact) {
       if (!edition || !accepted || !headingHistory || !cleanerAccepted || !cleanerHeadingHistory || !functionalAccepted || !functionalHeadings || !functionalProse || !processAccepted || !processHeadings || !processProse || !exchangeOriginal || !exchangeHeadings || !exchangeCitations || !exchangePartial || !exchangeProse) throw new Error('Book edition requires its accepted proposition and published heading inventories');
       const missingHybrid = [['accepted',hybridAccepted],['heading-history',hybridHeadings],['prose-accepted',hybridProse]].filter(([,value])=>!value).map(([name])=>`hybrid-inventory-${name}.json`);
       if (missingHybrid.length) throw new Error(`Book edition requires its independent B09 original, captured-heading and final-prose inventories; missing: ${missingHybrid.join(', ')}`);
       assertHybridInventoryAccepted(hybridAccepted); assertHybridInventoryHeadingHistory(hybridHeadings); assertHybridInventoryProseAccepted(hybridProse);
+      const missingJoint = [['original',jointOriginal],['heading-history',jointHeadings],['prose-accepted',jointProse]].filter(([,value])=>!value).map(([name])=>`joint-production-${name}.json`);
+      if (missingJoint.length) throw new Error(`Book edition requires its independent B10 original, actual capture and final-prose inventories; missing: ${missingJoint.join(', ')}`);
+      assertJointProductionOriginal(jointOriginal); assertJointProductionHeadingHistory(jointHeadings); assertJointProductionProseAccepted(jointProse);
       const sources = new Map();
       async function discoverRaw(directory,prefix) {
         for (const entry of await readdir(directory,{withFileTypes:true})) {
@@ -379,11 +392,11 @@ export async function validateReaderOutput(root, { knownIds = new Set() } = {}) 
       assertFunctionalReferenceProseAccepted(functionalProse);
       assertProcessNetworkProseAccepted(processProse);
       assertExchangeSemanticsOriginal(exchangeOriginal); assertExchangeSemanticsHeadingHistory(exchangeHeadings); assertExchangeSemanticsCitationSources(exchangeCitations); assertExchangeSemanticsPartialHistory(exchangePartial); assertExchangeSemanticsProseAccepted(exchangeProse);
-      book={hybridAccepted,hybridHeadings,hybridProse,edition,accepted,headingHistory,cleanerAccepted,cleanerHeadingHistory,functionalAccepted,functionalHeadings,functionalProse,processAccepted,processHeadings,processProse,exchangeOriginal,exchangeHeadings,exchangeCitations,exchangePartial,exchangeProse,sources,catalog};
+      book={jointOriginal,jointHeadings,jointProse,hybridAccepted,hybridHeadings,hybridProse,edition,accepted,headingHistory,cleanerAccepted,cleanerHeadingHistory,functionalAccepted,functionalHeadings,functionalProse,processAccepted,processHeadings,processProse,exchangeOriginal,exchangeHeadings,exchangeCitations,exchangePartial,exchangeProse,sources,catalog};
       sourceRoutes.splice(0,sourceRoutes.length,...sources.keys());
     }
     errors.push(...await validateLegacyCitationOutput(root, baseline, placements, hasReaderSource ? sourceRoutes : null, history,book));
     if (!history) errors.push('The book export requires the historical canonical citation inventory');
-  } else if (baseline || placements || history || bookSource || bookOutput) errors.push('The book export requires both the reader citation baseline and placement files');
+  } else if (baseline || placements || history || bookSource || bookOutput || numberingArtifact) errors.push('The book export requires both the reader citation baseline and placement files');
   return [...new Set(errors)];
 }

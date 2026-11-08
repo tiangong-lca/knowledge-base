@@ -1,4 +1,5 @@
 import 'server-only';
+import type { CaseHeadingNumber } from './numbered-heading';
 
 import rawSpecification from '../knowledge/cases/wall-coating-v1.json';
 import { publicTeachingCase } from '../scripts/case-publication.mjs';
@@ -7,12 +8,12 @@ import { TeachingCaseClient } from './teaching-case-client';
 import { JointProductionCase } from './joint-production-case';
 
 /** Raw records and Node publication helpers stay outside the client module graph. */
-export function TeachingCase({ id, version }: { id: 'CASE-WALL-CONNECT' | 'CASE-JOINT-BATCH'; version: '1.0.0' }) {
+export function TeachingCase({ id, version, print = false, numbering = [] }: { print?: boolean; numbering?: CaseHeadingNumber[]; id: 'CASE-WALL-CONNECT' | 'CASE-JOINT-BATCH'; version: '1.0.0' }) {
   if (id === 'CASE-JOINT-BATCH') {
     if (version !== '1.0.0') throw new TypeError(`Unsupported teaching case ${id}@${version}`);
-    return <JointProductionCase />;
+    return <JointProductionCase print={print} numbering={numbering} />;
   }
   const spec = publicTeachingCase(rawSpecification) as unknown as TeachingCaseSpec;
   assertTeachingCaseIdentity(spec, id, version);
-  return <TeachingCaseClient spec={spec} />;
+  return <TeachingCaseClient spec={spec} print={print} numbering={numbering} />;
 }

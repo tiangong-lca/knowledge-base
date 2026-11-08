@@ -14,7 +14,7 @@ checkPaths:
   - "knowledge/**"
   - "releases/**"
 lastReviewedAt: 2026-11-08
-lastReviewedCommit: 2b5219c1eca94bfc5fda452685c454a7ca29aa48
+lastReviewedCommit: c6d569b529f485a82e61c8eae3ef71609651840e
 ---
 
 # Editorial and living review protocol
@@ -26,6 +26,18 @@ The user's 2026-11-06 amendment governs the entire approved objective, including
 After the pause and bounded amendment, the user explicitly resumed execution on 2026-11-06. First deliver the argument, complete proposed book TOC, alternatives, complete mapping, risks and counts; reviewed source delivery and pending integration may proceed independently. Use the resulting argument gaps to select further research. Structure changes do not license invented facts or lost scope; later evidence-based additions remain possible with explicit revision records.
 
 Evaluate continuous prose and chapter-to-chapter transitions, not only headings. Source summaries, repeated templates and isolated claim paragraphs must become an actual argument with reader-relevant explanations, counterarguments and conclusions. Preserve scientific qualifications and author/source distinctions. Record source entailment, manuscript coherence, title statistics, content conservation and publication correctness separately; a positive model response is not human editorial or scientific approval.
+
+## Argument, selection and synthesis before further authoring
+
+The user's 2026-11-08 resumption prioritizes a whole-manuscript argument and selection audit before further prose changes. Apply `lca-book-goal.md` §2.13 and [the argument and selection decision](editorial/2026-11-08-argument-and-selection.md). The existing centre, eight domains, twelve appendix responsibilities and42-item migration map remain; accessible or faithfully cited material has no automatic claim to main-text space.
+
+Each unit's existing editorial record must establish four things: (1) its question, incoming premises, proposed conditional answer and downstream use before writing; (2) the role, evidence fitness, distinct contribution and destination of candidate material after reading; (3) a synthesis distinguishing common ground, different questions, real empirical/model/value/institutional disagreement and unknowns; (4) closure against the actual final prose, including deletion/repetition checks and a continuous review of each completed part. Record material moves/mergers/corrections by identity, but do not create a new platform or require every unchanged ledger entry to be rewritten.
+
+A source check determines the strength of an admissible assertion, not whether it belongs in this chapter. Preserve strong counterevidence and reader-essential qualifications; allocate space by relevance, evidence and consequences, not source counts or symmetrical treatment of positions. Field-wide consensus needs evidence for its claimed community, period and proposition; agreement among selected sources is narrower. Different purposes or versions need explanation before being called a dispute. Give a reasoned conditional judgment where possible, and identify the missing evidence where it is not.
+
+Conservation protects substantive responsibilities and citation history, not permanent paragraph membership in the main text. Reviewed destinations may include integrated prose, notes, appendices or an independently useful website topic; corrections require historical identity and affected-consumer review. Current validators still bind the accepted edition until an explicitly reviewed disposition and actual target replace that arrangement. Do not delete a guard or refresh an entire baseline merely to accommodate cuts. Current book-source registration does not yet support an arbitrary website-only topic, and the new policy alone does not implement that capability.
+
+Stop this round of retrieval when the declared question has a defensible answer or a precisely bounded unresolved state, major alternatives and counterevidence have dispositions, and further acquisition would only repeat examples. Record the stop reason and reopening trigger without claiming exhaustive coverage. At chapter end state what has been learned and can be used, not just what cannot be inferred. Part-level and whole-book coherence remain separate from local source/reader acceptance.
 
 ## Market-response source and argument checks
 
@@ -81,7 +93,7 @@ The joint-product chapter first reconstructs the positive physical alternatives 
 
 ## Finished prose is the publication gate
 
-Apply `_docs/reader-publication-contract.md` to every new or revised chapter. Source discipline alone does not qualify a reader deliverable: the argument must progress continuously and finish its declared question. Remove author-workflow narration, repeated status templates and development promises; retain real scientific conditions, disagreements and explicit invented data. Archive the removed process history in development Markdown. Each actual book chapter requires one continuous annotation sequence. Website navigation and book/print order may differ while sharing canonical prose and evidence; migrate note plans to the actual assembled chapter boundaries. The current runtime explicitly registers retained source units, shared prose front matter, the independently authored framework chapter and two calculation appendices. B04 interleaves canonical prose and has one actual chapter note plan; the complete independently curated32chapter assembly remains pending. Independent reader judgment checks what automated validation cannot.
+Apply `_docs/reader-publication-contract.md` to every new or revised chapter. Source discipline alone does not qualify a reader deliverable: the argument must progress continuously and finish its declared question. Remove author-workflow narration, repeated status templates and development promises; retain real scientific conditions, disagreements and explicit invented data. Archive the removed process history in development Markdown. Each actual book chapter requires one continuous annotation sequence. Website navigation and book/print order may differ while sharing canonical prose and evidence; migrate note plans to the actual assembled chapter boundaries. The current runtime explicitly registers retained source units, shared prose front matter, independently authored framework and joint-production chapters, and two calculation appendices. B04 and B10 each interleave canonical prose with one actual chapter note plan. The current numbered seven-part order does not complete the independently authored32chapter assembly, which remains pending. Independent reader judgment checks what automated validation cannot.
 
 ## Historical numerical reconstruction
 

@@ -157,9 +157,9 @@ test('both actual closing-consumer premises retain current hybrid title/numbers 
 });
 
 
-test('production roster admission rejects coordinated B09 source and registration deletion without changing its42-unit identity',()=>{
+test('production roster admission rejects coordinated B09 source and registration deletion without changing its41-unit identity',()=>{
   const available=edition.units.flatMap(unit=>[unit.source,...unit.coverage??[]]);
-  assert.equal(currentEditionKeys(edition,available,baseline,placements).length,42);
+  assert.equal(currentEditionKeys(edition,available,baseline,placements).length,41);
   const deleted=structuredClone(edition);deleted.units=deleted.units.filter(unit=>unit.key!==route);
   assert.throws(()=>currentEditionKeys(deleted,available.filter(source=>source!==route),baseline,placements),/B09/);
   assert.throws(()=>currentEditionKeys(edition,available.filter(source=>source!==route),baseline,placements),/Missing book source/);
@@ -235,7 +235,7 @@ test('observed web/print shells retain exactly reviewed descriptions, neighbor m
     const descriptionHtml=(print?observedShell.printDescription:observedShell.webDescription).replace(observedShell.oldDescription,description);
     const own=`<article data-reader-route="${route}" data-reader-title="混合清单">${print?'':observedShell.breadcrumb}${titleHtml}${descriptionHtml}<div class="${print?'print-body':'prose flex-1'}">${body}</div>${print?'':observedShell.pagination}</article>`;
     const html=own+(print?base.querySelector(`article[data-reader-route="${externalRoute}"]`).outerHTML:'');
-    const check=text=>validateRenderedHybridInventory(htmlParser.parse(text),path,accepted,catalog,metadataProse,metadataDigest);
+    const check=text=>validateRenderedHybridInventory(htmlParser.parse(text),path,accepted,catalog,metadataProse,metadataDigest,{legacyPrintLabel:print?18:null});
     assert.deepEqual(check(html),[]);
     for(const added of ['额外断言。','<div>额外断言。</div>','<p>额外断言。</p>','<ol><li>额外断言。</li></ol>']){
       assert(check(html.replace(descriptionHtml,descriptionHtml+added)).length);

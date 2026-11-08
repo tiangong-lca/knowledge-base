@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-08
-lastReviewedCommit: 2b5219c1eca94bfc5fda452685c454a7ca29aa48
+lastReviewedCommit: 5c8cf451506559150a651564a0673088067b41ae
 ---
 
 # Publication contract
@@ -57,6 +57,10 @@ Reviewed numerical evidence can expose a `numericFact` with value, unit, quantit
 CASE-JOINT-BATCH keeps additive product shares, physical alternative routes and reference-conditioned residuals separate in claim text and output fields. Two differently unitized inventory flows are never aggregated into an environmental score. Its prices, service equivalence, supplier response and utilization scenarios are author stipulations; source discussions motivate the argument but do not provide numerical evidence for them. A model with no characterization uses no factor bindings, through its explicit registered inventory-only policy; the wall model's fact binding remains mandatory.
 
 Reused original works receive precise additional passage/visual-check records where inspected. Added locators do not increment work counts or imply whole-work reading. Dated normative and adequacy criteria retain each author's purpose. A correction record does not substitute for an unread original procedure, and a mathematically similar teaching formula is not automatically that procedure's implementation.
+
+## Editorial selection and historical continuity
+
+The2026-11-08 whole-book selection decision in `editorial/2026-11-08-argument-and-selection.md` separates evidence eligibility from main-text inclusion. Faithful source support does not require publication of every inspected detail. Preserve coverage obligations, reader-essential conditions, counterevidence and immutable source/release identity while permitting explicitly reviewed mergers, notes, appendices, useful website topics and corrections. A current paragraph's removal from the main text requires a documented semantic destination or correction, dependent-use review and actual historical-link qualification; retaining an empty anchor or changing a baseline hash is insufficient. Existing code guards remain binding until those bounded dispositions are implemented and reviewed. Editorial agreement is not scientific consensus or human expert approval.
 
 ## Reader publication boundary
 

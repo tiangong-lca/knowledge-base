@@ -601,3 +601,67 @@ bibliography-process-language refusal remains recorded; new locators now identif
 source passages while dated execution remains in research/development records.
 All833publicclaims are still a dirty3175working preview. Clean/Main, full browser,
 hosting, exact root and normalterminal/mirror completion remain pending.
+
+## 2026-11-08 B09 terminal; B10 joint-production authoring — Issue78
+
+Source76/PR77 is fully delivered at exact Main
+`cf50f01fdf0ad497a12922ed20142e04a3d06991`, tree-identical to reviewed ed99e62.
+Root2291/PR2292/Main `01e1d659ec1a0535bc1cf0fa393f7c516e151bfd` retains the
+reviewed6efc137 tree, exact source pin, all23 peer pins and875061 prior review-record
+bytes. Source validate42434004481 and root ai-doc-lint42436947347 passed.
+Current qualified rootf9976a283/PR2294 still includes cf50 after unrelated Platform
+integration; the original local snapshot remains at01e1d659 with physicalKBcf50,
+all23 other physical states and17 prior dirty indicators preserved.
+
+The accepted《混合清单》contains39 continuous paragraphs/notes, preserves the
+original38-note scope and eleven unchanged-input case bindings. Actual bounded
+source, arithmetic, fresh reader, context and engineering reviews,350tests/types,
+clean builds and strict governance passed. Hosted95 actual artifacts match stable
+manifestabcb9289f87f944dabae8287e8a9447b468d3c30da4483180a2e2248f605a379;
+355 declared files remain uncaptured. Local and hosted29browser groups plus four
+wrapping combinations pass, with12 representative final images viewed per phase.
+All4,102 historical obligations and1,061 old/1,083 current reading/passage anchors
+are verified. Two known preload warnings and controlled network events remain
+recorded. Full response/final2006 exchange gaps, limitedS2 inspection and scientific,
+empirical/native/human-expert/formalPDF boundaries remain unchanged.
+
+Normal source `finish_NPF9uku6umN6EX6fKxaQTdeW` verifies delivery_complete=true;
+`projection_pVLl0z3eA2lhgl6mv-h2vOrr` verifies both IntegrationDone mirrors.
+Final normal root `finish_HcqheQxbG2fsxPt3X8H232MD` verifies delivery_complete=true,
+source_handoff.complete=true,1/1 source complete and zero remaining mirrors;
+receipt SHA256 `bbec162d1efe852fd02c10cd1b7477d38c27f64a01a563e17db1c1afd2ab2893`.
+No76/2291 delivery action remains. All owned previews/browser contexts are closed;
+no task containers, volumes or networks remain. Programme worktrees/dependencies,
+lawful private originals, named builds and review/capture receipts are retained.
+
+Programme9's prior5570-character B08-delivery/B09-start execution section was
+preserved verbatim and read back in [comment6717885921](https://github.com/tiangong-lca/knowledge-base/issues/9#issuecomment-6717885921)
+before replacing only that section. All other body sections and acceptance criteria
+remain unchanged. The programme stays OPEN/In Progress for the full goal.
+
+[Issue78](https://github.com/tiangong-lca/knowledge-base/issues/78) now owns B10
+《共同生产》from fresh clean cf50 on `codex/book-joint-production`, targetMain.
+Its [prereading/authoring protocol](editorial/2026-11-08-joint-production-monograph.md)
+must be reviewed, committed and pushed before new original investigation or prose.
+The actual291-file baseline freezes833claims,178readings,119revisions and36casefiles.
+The two source pages hold36distinct canonical paragraphs (29+7),16 direct evidence
+points/four works and20case templates; S04 remains M02. Fresh actual publication
+captures identify14 additional meaningful native addresses beyond4,102 historical
+obligations and the original29/7 note subsets. Five outside canonical consumers,
+seven premise links and the separate allocation-topic navigation remain obligations.
+No new original reading, numerical research or completed B10 manuscript is claimed.
+
+
+## 2026-11-08 resumed: argument and selection before further prose
+
+The user paused after requesting numbered contents and a review of whole-book selection, then explicitly resumed with that editorial review as the first priority. Issue78's [scope update](https://github.com/tiangong-lca/knowledge-base/issues/78#issuecomment-6718983847) preserves the full B10/numbering acceptance and adds manuscript/process audit, material disposition and consensus/disagreement synthesis. The parent programme remains open.
+
+The current source checkpoint is1dd75651b49b508c8a1d6ec019bdd3863f6b14e3 on codex/book-joint-production. Subsequent B10 manuscript/source-context/case/reader work and numbering are local. The fresh B10 reader review eventually passed after concrete clarifications;383 tests passed. The numbering production build still fails the actual TOC inventory check for ecological-scarcity-and-targets, despite compilation/type checking succeeding. No new source PR, successful publication output, hosting or root integration is claimed.
+
+The [argument and selection decision](editorial/2026-11-08-argument-and-selection.md) sets the editorial gates before further authoring. Actual manuscript coverage and chapter-role findings are recorded separately; these are editorial readings of the current source, not new external-source verification or a field-wide consensus finding. Prior local acceptance remains evidence for its exact manuscript only; substantive cuts or synthesis changes require renewed affected review. Retain the current worktree, private sources and review evidence; no preview/server/container/volume/network has been created for this audit.
+
+
+The actual source-level editorial audit now covers all35chapters plus all six front/topic/appendix units across three readers (22+11+2chapters). Main verified41 source/expanded hashes, current edition ordering and831 distinct body claims, and read the reports and critical examples; this is a joint reading, not a falsely claimed single-reader full pass. The [chapter-role map](editorial/2026-11-08-chapter-roles.md) records current questions, positive outputs, onward dependencies, concrete duplication and selection candidates. The independent plan review reported no material plan defect. No full-book scientific consensus, new original-source review or rendered qualification is claimed. Next is the explicitly bounded B10 selection pilot, preserving numerical input and substantive assumptions while removing duplicated exposition between prose and case tables; later whole-book changes follow the recorded roles rather than source availability.
+
+
+B10 selection pilot now has a freshly read full37-paragraph/four-table/37-note artifact, SHA57d83fc88d573c4cb4e0f320d92a4ea7f57ae8b418ba803bed4250e503298c89. The component removes the repeated derivation while preserving all original tables, eleven now-visible assumptions and exact numerical input. New caseSelection records16paragraph/5heading dispositions; canonical prose and source bindings are unchanged in this pilot. Independent engineering findings on root visibility and stale five-heading tests were fixed and rechecked. Project-pinned Node24.18.0 passes393tests, typecheck and the working production build/export; native TOC Fragment and breadcrumb/mobile labels now receive exact structural qualification. Current working output remains dirty atc6d569b, not a clean or hosted edition. Browser qualification and normal source/CI/hosting/root handoffs remain open.

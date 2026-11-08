@@ -1,6 +1,14 @@
 'use client';
 
 import { useId, useState } from 'react';
+import { NumberedHeading, type CaseHeadingNumber } from './numbered-heading';
+
+function CaseHeading({slot, numbering, print, children, id}: {slot: string; numbering: CaseHeadingNumber[]; print: boolean; children: React.ReactNode; id?: string}) {
+  const key = `@case:wall:${slot}`, heading = numbering.find(row=>row.key===key);
+  if (!heading) throw new Error(`Missing actual wall-case heading number: ${key}`);
+  return <NumberedHeading level={heading.depth+(print?2:0)} number={heading.number} id={id} data-reader-heading-key={key}>{children}</NumberedHeading>;
+}
+
 import {
   assertTeachingCaseIdentity, evaluateCase, publishedResults, serviceDeficitPercent,
   type CaseAlternative, type CaseResult, type CaseScenario, type TeachingCaseSpec,
@@ -52,11 +60,11 @@ function PairedChart({ result, id, teachingCase, publishedCaseResults }: {
   </figure>;
 }
 
-function Trace({ result, alternative, teachingCase }: { result: CaseResult; alternative: CaseAlternative; teachingCase: TeachingCaseSpec }) {
+function Trace({ result, alternative, teachingCase, print, numbering }: { result: CaseResult; alternative: CaseAlternative; teachingCase: TeachingCaseSpec; print: boolean; numbering: CaseHeadingNumber[] }) {
   const value = result.alternatives[alternative];
   const energy = teachingCase.technosphere.matrix[3].slice(0, 3).map(coefficient => coefficient.replace(/^-/, ''));
   return <section className="teaching-case-trace">
-    <h4>{names[alternative]}：f → s → g → I</h4>
+    <CaseHeading slot={alternative} numbering={numbering} print={print}>{names[alternative]}：f → s → g → I</CaseHeading>
     <p><strong>f</strong> = {vector(value.demand)}；依次为 kg A、kg B、m² 准备、kWh 电力的最终需求。</p>
     <p><strong>A s = f</strong> 得 <strong>s</strong> = {vector(value.activities)}，依次为 P-A、P-B、P-P、P-E 的操作次数，各自操作基准见矩阵列标题。</p>
     <p className="teaching-case-equation">s_E = {energy[0]} × {value.activities[0]} + {energy[1]} × {value.activities[1]} + {energy[2]} × {value.activities[2]} + {value.demand[3]} = {value.activities[3]}。</p>
@@ -66,7 +74,7 @@ function Trace({ result, alternative, teachingCase }: { result: CaseResult; alte
 }
 
 /** Receives only the server's public projection, never an imported source record. */
-export function TeachingCaseClient({ spec: teachingCase }: { spec: TeachingCaseSpec }) {
+export function TeachingCaseClient({ spec: teachingCase, print = false, numbering = [] }: { spec: TeachingCaseSpec; print?: boolean; numbering?: CaseHeadingNumber[] }) {
   const { caseId: id, version } = teachingCase;
   assertTeachingCaseIdentity(teachingCase, id, version);
   const instance = useId();
@@ -78,7 +86,7 @@ export function TeachingCaseClient({ spec: teachingCase }: { spec: TeachingCaseS
   const lowTheta = teachingCase.uncertainty.closedRange[0];
   const lowMass = evaluateCase(teachingCase, 'smooth', lowTheta).sameMass;
   return <section className="teaching-case" aria-labelledby={`${instance}-heading`} data-case-id={id} data-case-version={version}>
-    <h3 id={`${instance}-heading`}>把同一项墙面服务接到计算上</h3>
+    <CaseHeading slot="title" numbering={numbering} print={print} id={`${instance}-heading`}>把同一项墙面服务接到计算上</CaseHeading>
     <p className="teaching-case-meta">墙面涂装算例 · 数据版本 {version} · 数值为教学假定</p>
     <p>规定服务：100 m² 干燥室内墙面，在 [0,10) 年内连续保持指定均匀颜色与至少 0.98 的假定遮盖率。第 10 年这一时点不计入，因此不增加当年的重涂。下列性能、投入、排放量、基底适配、θ 范围和容差均为作者虚构；只有明确注明的表征因子取自外部来源。</p>
     <div className="teaching-case-table" role="region" aria-label="虚构性能与涂装计划" tabIndex={0}>
@@ -101,7 +109,7 @@ export function TeachingCaseClient({ spec: teachingCase }: { spec: TeachingCaseS
       <p id={`${instance}-theta-note`}>θ ∈ {range(teachingCase.uncertainty.closedRange)}；同一个值同时用于 A、B。它是不确定但固定的电力排放强度参数，不是两次独立抽样。容差与表征因子由本版本固定。</p>
     </div>
     <div className="teaching-case-current">
-      <h4>当前计算：{scenarioNames[scenario]} · θ={result.theta}</h4>
+      <CaseHeading slot="current" numbering={numbering} print={print}>当前计算：{scenarioNames[scenario]} · θ={result.theta}</CaseHeading>
       <p>{scenario === 'smooth' ? '两种涂料都直接用于已有平整基底，均无准备需求。' : '粗糙基底上假定 A 可直接使用；B 必须先准备全部 100 m²。最终墙面服务相同，B 的准备与电力需求随之增加。'} 情景版本 {result.scenarioVersion}。</p>
       <p className="teaching-case-announcement teaching-case-live" role="status" aria-live="polite" aria-atomic="true">A：{result.alternatives.paintA.indicator}；B：{result.alternatives.paintB.indicator}；配对 Δ：{comparison.difference} kg CO2-eq / 规定服务。</p>
       <PairedChart result={result} id={instance} teachingCase={teachingCase} publishedCaseResults={publishedCaseResults} />
@@ -116,7 +124,7 @@ export function TeachingCaseClient({ spec: teachingCase }: { spec: TeachingCaseS
         </table>
       </div>
       <p className="teaching-case-note">涂料和基底准备的非电力负担排除 P-E 的负担；电力供应统一在 P-E 中计入。化石 CH4 的氧化 CO2 不再单独加一次。</p>
-      <div className="teaching-case-traces">{alternatives.map(alt => <Trace key={alt} result={result} alternative={alt} teachingCase={teachingCase} />)}</div>
+      <div className="teaching-case-traces">{alternatives.map(alt => <Trace key={alt} result={result} alternative={alt} teachingCase={teachingCase} print={print} numbering={numbering} />)}</div>
       <p><strong>paired Δ = I_B − I_A</strong> = {result.alternatives.paintB.indicator} − {result.alternatives.paintA.indicator} = <strong>{comparison.difference}</strong> kg CO2-eq / 规定服务。Δ &gt; 0 表示 A 的这个指标较低；Δ &lt; 0 表示 B 较低。</p>
       <ul className="teaching-case-predicates">
         <li>严格排序（整个 θ 域）：<strong>{ordering(comparison.strictOrdering)}</strong>。</li>
@@ -126,7 +134,7 @@ export function TeachingCaseClient({ spec: teachingCase }: { spec: TeachingCaseS
       <p>共同 θ 下 Δ 的精确范围是 <strong>{range(comparison.range)}</strong>。分别取两方案边际极端相减得到 {range(comparison.independentExtremesRange)}，是丢失共同参数关系后的保守外包络；它可能包含共同 θ 无法同时产生的组合，因此不等于本模型的精确配对范围。{comparison.crossoverInDomain ? `此情景在 θ=${comparison.crossoverTheta} 时 Δ=0；滑块步长不必刚好落在交点。` : '此情景在允许 θ 域内没有 Δ=0 交点。'}</p>
     </div>
 
-    <h4>固定出版基线与全域判断</h4>
+    <CaseHeading slot="baseline" numbering={numbering} print={print}>固定出版基线与全域判断</CaseHeading>
     <p>以下两种情景的固定值始终保留，不随上方控件变化；打印和无脚本阅读也可复核。数值单位均为 kg CO2-eq / 同一 100 m²、十年规定服务。</p>
     <div className="teaching-case-table" role="region" aria-label="两个情景的固定基线数值" tabIndex={0}>
       <table><caption>版本 1.0.0 的精确计算值。范围为共同 θ 的闭区间端点极值，非置信区间。</caption>

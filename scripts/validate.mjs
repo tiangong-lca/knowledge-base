@@ -1,3 +1,5 @@
+import { validateReaderNumberingSources } from './reader-numbering-output.mjs';
+import { assertJointProductionOriginal, assertJointProductionHeadingHistory, validateJointProductionCoverage, validateJointProductionArtifactBytes } from './reader-joint-production.mjs';
 import { assertHybridInventoryAccepted, assertHybridInventoryHeadingHistory, validateHybridInventoryCoverage } from './reader-hybrid-inventory.mjs';
 import { validateExchangeSemanticsCoverage, assertExchangeSemanticsOriginal, assertExchangeSemanticsHeadingHistory, assertExchangeSemanticsCitationSources, assertExchangeSemanticsPartialHistory } from './reader-exchange-semantics.mjs';
 import { assertProcessNetworkHeadingHistory, validateProcessNetworkCoverage } from './reader-process-network.mjs';
@@ -89,12 +91,15 @@ export async function validateRepository(root) {
     errors.push(...validateClaimReferences(text, data, label), ...validateTeachingCaseReferences(text, cases, label), ...validateReaderMdx(text, label, knownIds));
   }
   const edition = await readOptional('config/book-edition.json');
+  const numbering = await readOptional('config/reader-numbering.json');
+  if (numbering && !edition) errors.push('Current numbered reader publication requires its explicit book edition');
   if (!edition && await readOptional('content/docs/book/meta.json')) errors.push('Book source requires its current edition and accepted publication inventories');
   if (edition) {
     const [accepted,baseline,placements,headings]=await Promise.all(['framework-accepted','citation-baseline','citation-placements','framework-heading-history'].map(name=>readOptional(`config/${name}.json`)));
     const [functionalAccepted,functionalHeadingHistory,functionalProse]=await Promise.all(['functional-reference-accepted','functional-reference-heading-history','functional-reference-prose-accepted'].map(name=>readOptional(`config/${name}.json`)));
     const [processAccepted,processHeadingHistory,processProse]=await Promise.all(['process-network-accepted','process-network-heading-history','process-network-prose-accepted'].map(name=>readOptional(`config/${name}.json`)));
     const [cleanerAccepted,cleanerHeadingHistory]=await Promise.all(['cleaner-production-accepted','cleaner-production-heading-history'].map(name=>readOptional(`config/${name}.json`)));
+    const [jointOriginal,jointHeadings,jointProse] = await Promise.all(['original','heading-history','prose-accepted'].map(name=>readOptional(`config/joint-production-${name}.json`)));
     const [hybridAccepted,hybridHeadings,hybridProse]=await Promise.all(['accepted','heading-history','prose-accepted'].map(name=>readOptional(`config/hybrid-inventory-${name}.json`)));
     const [exchangeOriginal,exchangeHeadings,exchangeCitations,exchangePartial,exchangeProse]=await Promise.all(['original','heading-history','citation-sources','partial-history','prose-accepted'].map(name=>readOptional(`config/exchange-semantics-${name}.json`)));
     const sources=new Map();
@@ -104,9 +109,20 @@ export async function validateRepository(root) {
       sources.set(route,await readFile(file,'utf8'));
     }
     try {
+      if (!numbering) throw new Error('Current reader publication requires its independently pinned reader-numbering.json');
+      errors.push(...validateReaderNumberingSources(numbering,sources,edition));
       const missingHybrid = [['accepted',hybridAccepted],['heading-history',hybridHeadings],['prose-accepted',hybridProse]].filter(([,value])=>!value).map(([name])=>`hybrid-inventory-${name}.json`);
       if (missingHybrid.length) throw new Error(`Book edition requires its independent B09 original, captured-heading and final-prose inventories; missing: ${missingHybrid.join(', ')}`);
       assertHybridInventoryAccepted(hybridAccepted); assertHybridInventoryHeadingHistory(hybridHeadings);
+      const missingJoint = [['original',jointOriginal],['heading-history',jointHeadings],['prose-accepted',jointProse]].filter(([,value])=>!value).map(([name])=>`joint-production-${name}.json`);
+      if (missingJoint.length) throw new Error(`Book edition requires its independent B10 original, actual capture and final-prose inventories; missing: ${missingJoint.join(', ')}`);
+      assertJointProductionOriginal(jointOriginal); assertJointProductionHeadingHistory(jointHeadings);
+      errors.push(...validateJointProductionCoverage(edition,sources,jointOriginal,data,jointProse));
+      const [component, input] = await Promise.all([
+        readFile(resolve(root, 'components/joint-production-case.tsx')),
+        readFile(resolve(root, 'knowledge/cases/joint-batch-v1.json')),
+      ]);
+      errors.push(...validateJointProductionArtifactBytes(jointProse, { component, input }));
       errors.push(...validateHybridInventoryCoverage(edition,sources,hybridAccepted,data,hybridProse));
       if (!exchangeOriginal || !exchangeHeadings || !exchangeCitations || !exchangePartial || !exchangeProse) throw new Error("Book edition requires independent B08 original, captured history, partial-source and manuscript inventories");
       assertExchangeSemanticsOriginal(exchangeOriginal); assertExchangeSemanticsHeadingHistory(exchangeHeadings); assertExchangeSemanticsCitationSources(exchangeCitations); assertExchangeSemanticsPartialHistory(exchangePartial);

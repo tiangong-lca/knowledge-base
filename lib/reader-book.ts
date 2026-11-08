@@ -1,3 +1,8 @@
+import { getPresentationUnits } from '@/scripts/reader-numbering.mjs';
+import jointOriginal from '@/config/joint-production-original.json';
+import jointHeadings from '@/config/joint-production-heading-history.json';
+import jointProse from '@/config/joint-production-prose-accepted.json';
+import { jointProductionHeadingEntries, remapJointProductionCitations, validateJointProductionCoverage } from '@/scripts/reader-joint-production.mjs';
 import hybridAccepted from '@/config/hybrid-inventory-accepted.json';
 import hybridHeadings from '@/config/hybrid-inventory-heading-history.json';
 import hybridProse from '@/config/hybrid-inventory-prose-accepted.json';
@@ -37,7 +42,12 @@ assertPrintFrontMatter(placements.frontMatter);
 assertFrameworkHeadingHistory(headingHistory);
 export type ReaderPage = ReturnType<typeof source.getPages>[number];
 export type PrintPage = ReaderPage & { kind: string; sections?: { id: string; title: string }[]; part?: string };
-export function getOrderedPages(): ReaderPage[] { return orderPages(source.getPageTree(), source.getPages()); }
+export function getOrderedPages(): ReaderPage[] {
+  const available = new Map(source.getPages().map(page=>[page.url.replace(/\/$/,''),page]));
+  const ordered = getPresentationUnits('web').map(unit=>{ const page=available.get(unit.key); if (!page) throw new Error(`Missing numbered website page: ${unit.key}`); return page; });
+  if (ordered.length !== available.size) throw new Error('Numbered website order omits a canonical source page');
+  return ordered;
+}
 export function getBookPages(): ReaderPage[] { return bookChapters(getOrderedPages()); }
 export function getPrintPages(): PrintPage[] {
   const pages = new Map([...source.getPages(), ...monographSource.getPages()].map(page => [page.url, page]));
@@ -52,8 +62,8 @@ const historical = [...createLegacyCitationEntries(baseline, placements, history
   ...headingHistory.canonicalPrintedHeadings.map(heading=>({route:heading.route,path:'/print',id:heading.id,
     targets:[{route:heading.route,path:'/print',id:heading.id,kind:'heading' as const}],mode:'retained' as const,
     edition:{sourceCommit:headingHistory.sourceCommit,sourceDate:'2026-11-07'}}))];
-const legacyEntries: LegacyEntry[] = remapHybridInventoryCitations(remapExchangeSemanticsCitations(remapProcessNetworkCitations(remapFunctionalReferenceCitations(remapCleanerProductionCitations(
-  remapBookCitations([...historical, ...cleanerProductionHeadingEntries(cleanerHeadingHistory), ...functionalReferenceHeadingEntries(functionalHeadings), ...processNetworkHeadingEntries(processHeadings), ...exchangeSemanticsHeadingEntries(), ...hybridInventoryHeadingEntries(hybridHeadings)], edition, accepted, placements), cleanerAccepted, cleanerHeadingHistory), functionalAccepted, functionalHeadings), processAccepted, processHeadings)), hybridAccepted, hybridHeadings);
+const legacyEntries: LegacyEntry[] = remapJointProductionCitations(remapHybridInventoryCitations(remapExchangeSemanticsCitations(remapProcessNetworkCitations(remapFunctionalReferenceCitations(remapCleanerProductionCitations(
+  remapBookCitations([...historical, ...cleanerProductionHeadingEntries(cleanerHeadingHistory), ...functionalReferenceHeadingEntries(functionalHeadings), ...processNetworkHeadingEntries(processHeadings), ...exchangeSemanticsHeadingEntries(), ...hybridInventoryHeadingEntries(hybridHeadings), ...jointProductionHeadingEntries(jointHeadings)], edition, accepted, placements), cleanerAccepted, cleanerHeadingHistory), functionalAccepted, functionalHeadings), processAccepted, processHeadings)), hybridAccepted, hybridHeadings), jointOriginal, jointHeadings, jointProse);
 export function getLegacyCitations(route: string, print: boolean) {
   const path = print ? '/print' : route, aliases = new Map<string, LegacyEntry[]>(), notices: LegacyEntry[] = [], scopes = new Map<string, LegacyEntry>();
   for (const entry of legacyEntries) {
@@ -73,6 +83,8 @@ export const getChapterReferenceIndex = cache(async (print = false) => {
   const cleanerErrors = validateCleanerProductionCoverage(edition, new Map(rawPages.map(page => [page.url, page.raw])), cleanerAccepted, catalog);
   if (cleanerErrors.length) throw new Error(cleanerErrors.join('\n'));
   const rawSources = new Map(await Promise.all([...source.getPages(),...monographSource.getPages()].map(async page=>[page.url,await page.data.getText('raw')] as const)));
+  const jointErrors = validateJointProductionCoverage(edition,rawSources,jointOriginal,catalog,jointProse);
+  if (jointErrors.length) throw new Error(jointErrors.join("\n"));
   const hybridErrors = validateHybridInventoryCoverage(edition,rawSources,hybridAccepted,catalog,hybridProse);
   if (hybridErrors.length) throw new Error(hybridErrors.join('\n'));
   const processErrors = validateProcessNetworkCoverage(edition,rawSources,processAccepted,catalog,processProse);
