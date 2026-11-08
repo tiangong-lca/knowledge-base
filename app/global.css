@@ -135,7 +135,7 @@ button { cursor: pointer; }
 }
 
 /* Legacy fragments remain native targets, with their edition context shown on arrival. */
-.legacy-citation-target, .reader-section-target { display: block; scroll-margin-top: 7rem; }
+.legacy-citation-target, .reader-section-target, .chapter-notes > h2[id], .chapter-notes > h3[id] { display: block; scroll-margin-top: 7rem; }
 .legacy-citation-target:not(:target) > .legacy-citation-context { display: none; }
 .legacy-citation-context { display: block; margin: .55rem 0; padding: .55rem .75rem; border-inline-start: 2px solid var(--color-fd-border); color: var(--color-fd-muted-foreground); font-size: .875rem; }
 .legacy-citation-context a { text-decoration: underline; }

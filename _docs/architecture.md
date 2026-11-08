@@ -432,3 +432,8 @@ independent edition/link checks. The shared annotation check requires one valida
 premise summary and does not whitelist additional summary or wrapper text. These
 checks reject added assertions as well as missing canonical paragraphs; they do not
 replace actual browser geometry, interaction or source-entailment review.
+
+Native annotation-group headings share the existing seven-rem reference scroll
+margin. Without that margin, a mobile saved group URL placed its heading and the
+first version-context line beneath the fixed document header and TOC. Both web
+H2 and continuous-print H3 group targets retain readable arrival positions.
