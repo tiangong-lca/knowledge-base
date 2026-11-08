@@ -157,3 +157,19 @@ test('sidebar native folder ancestry accepts the installed Fumadocs16.17.10 rend
  const record=web.find(unit=>unit.key==='/docs/book/allocation-and-substitution'),base=webHtml(record),sidebar=renderToStaticMarkup(tree),html=base.replace(htmlParser.parse(base).querySelector('#nd-sidebar').outerHTML,sidebar);assert.deepEqual(check(html,record.key),[]);
  const doc=htmlParser.parse(html),root=doc.querySelector('#nd-sidebar'),content=part=>{const control=root.querySelector(`[data-reader-part-name="${part}"]`).closest('button').getAttribute('aria-controls');return root.querySelectorAll('[id]').find(node=>node.id===control);},last=content(1).querySelectorAll('a').at(-1),markup=last.outerHTML,flat=root.querySelectorAll('[data-reader-unit-name]').map(node=>node.getAttribute('data-reader-unit-name'));last.remove();content(2).insertAdjacentHTML('afterbegin',markup);assert.deepEqual(root.querySelectorAll('[data-reader-unit-name]').map(node=>node.getAttribute('data-reader-unit-name')),flat);assert(check(doc.toString(),record.key).some(error=>error.includes('sidebar folder membership differs')));
 });
+
+test('actual article unit and content title/number spans remain visible before semantic normalization',()=>{
+ const html=bookHtml(),document=htmlParser.parse(html),article=document.querySelector('article[data-reader-route="book-revisable-judgment"]'),unitHeading=article.querySelector('[data-reader-heading-key="@unit"]'),contentHeading=article.querySelector('[data-reader-heading-key="对象连接"]');
+ assert.deepEqual(prepareNumberedReaderDocument(document,'/print',{sources}).errors,[]);
+ for(const heading of [unitHeading,contentHeading])for(const selector of ['[data-reader-number]','[data-reader-heading-title]']){
+  const span=heading.querySelector(selector);
+  for(const hidden of ['hidden','aria-hidden="true"','style="display:none"','class="hidden"']){
+   const changed=span.outerHTML.replace('<span ',`<span ${hidden} `),result=prepareNumberedReaderDocument(htmlParser.parse(html.replace(heading.outerHTML,heading.outerHTML.replace(span.outerHTML,changed))),'/print',{sources});
+   assert(result.errors.some(error=>error.includes('concealed before normalization')));assert.equal(result.document,null);
+  }
+  const nested=span.outerHTML.replace(span.innerHTML,`<span hidden>${span.innerHTML}</span>`),result=prepareNumberedReaderDocument(htmlParser.parse(html.replace(heading.outerHTML,heading.outerHTML.replace(span.outerHTML,nested))),'/print',{sources});assert(result.errors.some(error=>error.includes('concealed before normalization')));assert.equal(result.document,null);
+ }
+ // The admission is article-specific; a legitimately closed navigation subtree
+ // retains its own existing Fumadocs/sidebar qualification instead of being banned.
+ const record=web.find(unit=>unit.key==='/docs/book/from-connected-results-to-conditional-judgment');assert.deepEqual(check(webHtml(record),record.key),[]);
+});

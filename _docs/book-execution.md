@@ -718,3 +718,54 @@ The user-forwarded course subtitles, HTML and Handbook analysis remains candidat
 input. Identity/version/selected-reading and G1–G4 disposition are still required;
 no automatic lit-b05 reading upgrade or new canonical paragraph follows. Programme9
 remains open for the complete approved book, its research domains and apparatus.
+
+
+## 2026-11-09 wall terminal; authored closing synthesis — Issue82
+
+Wall80/PR81 is delivered at Main `862e2feb1e2592e5ca2b09f5f8b92f5add50a54d`,
+tree-identical to reviewed `1c15ae2e7e081281c5c3a1b05c4a23c598c272c3`.
+Workspace2304/PR2305 integrates that exact source at
+`02c79c30211092213d80c6d30882c06e0b369f45`, tree-identical to reviewed164aff67.
+Required source and root CI passed. Normal source
+`finish_grf_0vwDRRZotnULXMj8U6fP`, root `finish_SYNrlE5fUuimlIaxAEPVFILt`,
+source projection `projection_JacmAtn3H2kmOXAVZCNprWxP`, and final root
+`finish_-UmOibC8HhxZyixgHT5GzNqi` verify complete delivery and1/1sourcehandoff
+with zero remaining mirrors. Final root receipt SHA256 is
+`4fa0081b54f568bc619ec2a554178447009af56f0eb9d8032cc8088fcc2c3764`.
+Durable [source](https://github.com/tiangong-lca/knowledge-base/pull/81#issuecomment-6724019555),
+[root](https://github.com/tiangong-lca/workspace/pull/2305#issuecomment-6724037605)
+and [programme](https://github.com/tiangong-lca/knowledge-base/issues/9#issuecomment-6724054072)
+handoffs preserve the full-book limits.
+
+Actual hosted862 capture has450 verified bodies and manifest
+`c922448bd689eff838fbdb494e81613656c919955273e7a9fb3a01fef23ec55c`.
+Full offline qualification covers48documents,41units and4,123historical addresses;
+local28batches/302checks and hosted24batches/200checks remain exact-run evidence.
+Initial hosted terminal unknowns remain unknown despite complete relevant body
+captures and later bounded diagnostic repeats with zero pending lifecycles.
+The later repeats do not retrospectively prove the earlier terminal outcomes.
+The owned preview and all task browser contexts were closed; no Docker resources
+were created. Programme checkouts, dependencies and evidence remain deliberately
+retained. Original root01e1d659/physicalKBcf50 and all unrelated peer states remain
+unchanged; the qualified integrated snapshot is remote02c79c302.
+
+[Issue82](https://github.com/tiangong-lca/knowledge-base/issues/82) starts from862
+on`codex/book-closing-synthesis`, targetmain, under the
+[closing protocol](editorial/2026-11-09-closing-synthesis.md).
+Protocol and immutable original closure were committed and pushed as
+`0e9683ff75d1d8f255b0644606a400ce1c799de5` before authoring. The four-section
+candidate uses22rewritten canonical paragraphs and an independent book manuscript;
+two fine website sources retain8/14members. Only this assembly produces34actual
+chapters/40units; it does not complete the32chapter edition, other assemblies,
+all eight research domains, twelve appendix responsibilities or formal publication.
+
+The independent bounded semantic review found no material issue in the22changed
+texts,149claim closure,115evidence and31source metadata records. It additionally
+reread cached SC030148 selected text at pp17–18,36,41,46,57,118–119, without new
+acquisition or visual-PDF claims. Report SHA256 is
+`be659c431f575b330cb2e9c0003ab17e5749cd5822cff73d8c7d9b3c9a4d75a2`;
+receipt SHA256 is
+`4b7de745be21b1639f1b23a2e62ee55ec8799ceadeee572a6f05763e03259f9a`.
+This qualifies only its exact candidate and bounded semantic scope. New continuous
+reader review, engineering/actual output, sourceCI/merge, hosted qualification,
+root integration and normal completion are still pending at this milestone.

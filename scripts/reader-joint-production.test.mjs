@@ -59,8 +59,7 @@ function rendered(print=true,webRoute=routes[0]){const route=print?key:webRoute,
  return markup+(print?`<article data-reader-route="/docs/allocation"><p><a href="#${printUnitAnchor(key)}">共同生产的详细论证</a>进一步比较选择所依据的问题与理由。</p></article>`:'');}
 const consumers=[
  {route:'/docs/book/market-boundaries-and-response',title:'市场响应测试',ids:['cl-market-question','cl-market-closing']},
- {route:'/docs/book/connecting-objects-references-and-time',title:'对象连接测试',ids:['cl-connect-prospective-two-questions']},
- {route:'/docs/book/from-connected-results-to-conditional-judgment',title:'条件判断测试',ids:['cl-connect-values-stay-specific','cl-connect-next-evidence-at-link']},
+ {route:'book-revisable-judgment',title:'可修订的判断',ids:['cl-connect-prospective-two-questions','cl-connect-values-stay-specific','cl-connect-next-evidence-at-link']},
 ];
 const extraPremises=[...new Set(consumers.flatMap(consumer=>consumer.ids.flatMap(id=>byId.get(id).premiseIds)))].filter(id=>!bookIds.includes(id));
 const extraRoute='/docs/book/fixture-other-premises';
@@ -74,7 +73,7 @@ test('B10 original36,29/7 scopes and fourteen independently captured addresses a
  for(const change of [copy=>copy.addresses.pop(),copy=>copy.addresses[0].id='other',copy=>copy.manifestSha256='0'.repeat(64)]){const copy=structuredClone(history);change(copy);assert.throws(()=>assertJointProductionHeadingHistory(copy),/fourteen actual/);}
 });
 test('B10 registered book/source coverage is mandatory independently of coordinated source removal',()=>{
- assertJointProductionRegistration(edition);const available=edition.units.flatMap(unit=>[unit.source,...unit.coverage??[]]);assert.equal(currentEditionKeys(edition,available,baseline,placements).length,41);
+ assertJointProductionRegistration(edition);const available=edition.units.flatMap(unit=>[unit.source,...unit.coverage??[]]);assert.equal(currentEditionKeys(edition,available,baseline,placements).length,40);
  for(const change of [copy=>copy.units=copy.units.filter(unit=>unit.key!==key),copy=>copy.units.find(unit=>unit.key===key).coverage.pop(),copy=>copy.units.find(unit=>unit.key===key).source=routes[0],copy=>copy.units.find(unit=>unit.key===key).sections.reverse()]){const copy=structuredClone(edition);change(copy);assert.throws(()=>currentEditionKeys(copy,available.filter(route=>route!==manuscript),baseline,placements),/B10/);}
  assert.throws(()=>currentEditionKeys(edition,[...available,'/monograph/unknown'],baseline,placements),/no current book registration/);
 });

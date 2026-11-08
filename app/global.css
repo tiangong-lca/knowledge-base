@@ -149,9 +149,10 @@ button { cursor: pointer; }
   .prose-reference-tail { white-space: nowrap; }
 }
 
-/* Source-subset context follows the retained native unit/group fragment. */
+/* Source-subset context follows its retained native unit/group/heading fragment. */
 .print-chapter:not(:target) > [data-legacy-scope],
-.chapter-notes > :not(:target) + [data-legacy-scope] { display: none; }
+.chapter-notes > :not(:target) + [data-legacy-scope],
+:is(h1,h2,h3,h4,h5,h6):not(:target) + [data-legacy-scope] { display: none; }
 
 /* Visible edition numbers share canonical titles without changing their anchors. */
 [data-reader-number] { font-variant-numeric: tabular-nums; white-space: nowrap; }

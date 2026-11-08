@@ -8,17 +8,17 @@ import { assertNumberingToc, assertReaderNumbering, getContinuationLink, getHead
 const route = '/docs/book/service-and-reference';
 const html = (number='6.1',title='服务要求') => `<h2 data-reader-heading-key="服务要求"><a href="#服务要求"><span data-reader-number="">${number}</span> <span data-reader-heading-title="">${title}</span></a><button>复制章节链接</button></h2>`;
 
-test('current book retains 41 actual units, 35 chapters and all seven real part groups', () => {
+test('current book retains 40 actual units, 34 chapters and all seven real part groups', () => {
   const units=getPresentationUnits('book');
-  assert.equal(units.length,41);
-  assert.deepEqual(['front-matter','chapter','topic','appendix'].map(kind=>units.filter(unit=>unit.kind===kind).length),[2,35,2,2]);
-  assert.deepEqual([1,2,3,4,5,6,7].map(part=>units.filter(unit=>unit.part===part).length),[5,4,4,7,5,5,5]);
+  assert.equal(units.length,40);
+  assert.deepEqual(['front-matter','chapter','topic','appendix'].map(kind=>units.filter(unit=>unit.kind===kind).length),[2,34,2,2]);
+  assert.deepEqual([1,2,3,4,5,6,7].map(part=>units.filter(unit=>unit.part===part).length),[5,4,4,7,5,5,4]);
   assert.equal(getUnitNumbering('book',route).label,'第6章');
   assert.equal(getUnitNumbering('book','/docs/book/inventory-calculation').label,'第7章');
   assert.equal(getUnitNumbering('book','book-joint-production').label,'第10章');
   assert.equal(getUnitNumbering('book','/docs/book/emission-time-and-assessment').label,'第16章');
   assert.equal(getUnitNumbering('book','/docs/book/wall-service-to-comparison').label,'第31章');
-  assert.equal(getUnitNumbering('book','/docs/book/from-connected-results-to-conditional-judgment').label,'第35章');
+  assert.equal(getUnitNumbering('book','book-revisable-judgment').label,'第34章');
   assert.equal(getUnitNumbering('book','/docs/allocation').label,'专题2');
   assert.equal(getUnitNumbering('book','/docs/appendices/container-energy-check').label,'附录 A');
   assert.equal(getUnitNumbering('book','/docs/appendices/cml-framework-calculations').label,'附录 B');

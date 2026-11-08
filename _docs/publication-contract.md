@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-09
-lastReviewedCommit: 862e2feb1e2592e5ca2b09f5f8b92f5add50a54d
+lastReviewedCommit: 0e9683ff75d1d8f255b0644606a400ce1c799de5
 ---
 
 # Publication contract
@@ -199,3 +199,11 @@ Published canonical reference names are publication surfaces in their own right,
 
 
 Combining sources into one authored chapter must preserve the narrower meaning of their published unit and annotation-group addresses as well as individual claim references. Native scope context identifies the original title/edition and exact original note subset; a broader current note group cannot silently replace that meaning. Reviewed manuscript acceptance binds both canonical scientific records and any substantive authored navigation. Shared website/book projections do not create separately editable copies of scientific explanation.
+
+
+Native retained headings, as well as chapter and note-group targets, may carry
+narrower historical content scopes than their present section. Qualify each
+scope against its own immutable source or actual captured edition, preserve the
+original claim subset and expose its dated context at the native heading.
+Inherited citations are remapped by their actual destination identity; the source
+route alone cannot determine where a subsequently moved note belongs.
