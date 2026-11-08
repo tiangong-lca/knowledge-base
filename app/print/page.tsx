@@ -19,8 +19,8 @@ export default function Page() {
   const topics = units.filter(unit=>unit.kind==='topic');
   const appendices = units.filter(unit=>unit.kind==='appendix');
   const tocLinks = (items: typeof units) => items.map(unit =>
-    <li key={unit.key}><Link href={`#${printUnitAnchor(unit.key)}`} data-reader-toc-unit={unit.key}><NumberedTitle number={unit.label}>{unit.title}</NumberedTitle></Link>
-      {getUnitHeadingPlan('book',unit.key).some(heading=>heading.type==='mdx') && <ul>{getUnitHeadingPlan('book',unit.key).filter(heading=>heading.type==='mdx').map(heading=><li key={heading.key}><Link href={`#${printUnitAnchor(unit.key)}-${heading.id}`} data-reader-route={unit.key} data-reader-toc-heading={heading.key}><NumberedTitle number={heading.number}>{heading.title}</NumberedTitle></Link></li>)}</ul>}
+    <li key={unit.key}><a href={`#${printUnitAnchor(unit.key)}`} data-reader-toc-unit={unit.key}><NumberedTitle number={unit.label}>{unit.title}</NumberedTitle></a>
+      {getUnitHeadingPlan('book',unit.key).some(heading=>heading.type==='mdx') && <ul>{getUnitHeadingPlan('book',unit.key).filter(heading=>heading.type==='mdx').map(heading=><li key={heading.key}><a href={`#${printUnitAnchor(unit.key)}-${heading.id}`} data-reader-route={unit.key} data-reader-toc-heading={heading.key}><NumberedTitle number={heading.number}>{heading.title}</NumberedTitle></a></li>)}</ul>}
     </li>);
   const article = (unit: typeof units[number]) => {
     const page = byKey.get(unit.key);
@@ -39,10 +39,10 @@ export default function Page() {
     <nav aria-label="书籍目录" data-reader-contents="book" className="reader-book-contents">
       <h2>书籍目录</h2>
       <ul>{tocLinks(frontMatter)}</ul>
-      {readerParts.map(part=><section key={part.number}><h3 data-reader-toc-part={part.number}><Link href={`#print-part-${part.number}`}><NumberedTitle number={part.label}>{part.title}</NumberedTitle></Link></h3><ul>{tocLinks(units.filter(unit=>unit.part===part.number))}</ul></section>)}
+      {readerParts.map(part=><section key={part.number}><h3 data-reader-toc-part={part.number}><a href={`#print-part-${part.number}`}><NumberedTitle number={part.label}>{part.title}</NumberedTitle></a></h3><ul>{tocLinks(units.filter(unit=>unit.part===part.number))}</ul></section>)}
       <h3>概念与实践专题</h3><ul>{tocLinks(topics)}</ul>
       <h3>附录</h3><ul>{tocLinks(appendices)}</ul>
-      <p><Link href="#print-references">参考文献</Link></p>
+      <p><a href="#print-references">参考文献</a></p>
     </nav>
     <div className="print-book">
       {frontMatter.map(article)}

@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-08
-lastReviewedCommit: f78be1e086fc99a008242066d5947d3eff107996
+lastReviewedCommit: 06920de5deedb5b3ea65aeb272d8c087201a417e
 ---
 
 # Publication architecture
@@ -486,6 +486,11 @@ candidate otherwise placed a chapter title partly, and a section title entirely,
 under the56px fixed header. This changes scroll arrival only, not content,
 numbering identity or printed page layout. Browser qualification checks the
 visible target against the actual header boundary, including no-script links.
+Same-document book contents use native anchors for parts, units, sections and
+references. A router-managed hash update was observed to scroll correctly while
+leaving CSS `:target` unset, so it could not activate target-bound historical
+scope context. Native anchors preserve both the fragment state and that context;
+cross-page application links retain their existing routing behavior.
 
 The two exact C03/C28 reading continuations have explicit source/view contracts;
 unknown fragments are not silently reinterpreted. Production still needs the
