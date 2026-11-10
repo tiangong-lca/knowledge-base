@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-10
-lastReviewedCommit: 6e9b5b88e50c2606535bbc5da4fda695bd1f8eb8
+lastReviewedCommit: bb12fa4bce7a68a3f5725f6ffa6a8a1ffe8c059c
 ---
 
 # Publication architecture
@@ -326,6 +326,12 @@ dependency is added.
 Mixed retrieved carriers now expose the exact cited artifact link in annotations and evidence details when it differs from the source-level default. This preserves HTML metadata and revision-index locators alongside their primary PDF rather than routing every citation to that PDF. Derived-text disclosure remains unchanged.
 
 ## Particulate-health reconstruction
+
+`config/pm-selection-original.json` records the clean bb12 manuscript, its
+scientific and reading closure, case-file identities and retained captured
+citation scopes before Issue90 authoring. It supplies immutable comparison
+evidence; no new renderer, migration or production acceptance is implied by
+this inventory. The existing case and citation guards continue to apply.
 
 The static `particulate-health` adapter registers 30 fixed source tuples through
 the existing case publication interface and exact-rational evaluator. It

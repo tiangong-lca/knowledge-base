@@ -15,10 +15,17 @@ checkPaths:
   - "app/**"
   - "scripts/**"
 lastReviewedAt: 2026-11-10
-lastReviewedCommit: 6e9b5b88e50c2606535bbc5da4fda695bd1f8eb8
+lastReviewedCommit: bb12fa4bce7a68a3f5725f6ffa6a8a1ffe8c059c
 ---
 
 # LCA Living Knowledge Base and Review
+
+[Particulate selection #90](https://github.com/tiangong-lca/knowledge-base/issues/90)
+begins with the [source and material protocol](_docs/editorial/2026-11-10-pm-selection.md)
+and an immutable original inventory at `config/pm-selection-original.json`.
+The planned rewrite preserves the complete historical calculation, qualified
+comparisons and real destinations for supplementary material. The inventory
+is a pre-authoring record, not acceptance of a new manuscript or publication.
 
 [Toxicity pathways #88](https://github.com/tiangong-lca/knowledge-base/issues/88)
 uses one shared three-section, twelve-paragraph C27/B19 source. Its
