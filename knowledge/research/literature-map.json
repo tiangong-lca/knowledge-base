@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-08",
+  "updatedAt": "2026-11-09",
   "protocol": {
     "id": "community-classics-wave-2026-11-04",
     "questions": [
@@ -4840,6 +4840,24 @@
         "date": "2026-11-08",
         "channel": "具名原文／增补／再讨论的有界公开检索；出版商、作者机构、大学资料库与身份记录交叉检查",
         "query": "\"Weidema\" \"Avoiding co-product allocation\" \"系统扩展\""
+      },
+      {
+        "id": "q-kb88-usetox-2008-original",
+        "query": "\"10.1007/s11367-008-0038-4\" pdf full text Rosenbaum",
+        "date": "2026-11-09",
+        "channel": "public-web-search"
+      },
+      {
+        "id": "q-kb88-usetox-2011-original",
+        "query": "\"10.1007/s11367-011-0316-4\" filetype:pdf Rosenbaum USEtox human exposure",
+        "date": "2026-11-09",
+        "channel": "public-web-search"
+      },
+      {
+        "id": "q-kb88-usetox-scope-erratum",
+        "query": "site:usetox.org \"11.4.2\" \"excluded\" \"indoor\" correction documentation",
+        "date": "2026-11-09",
+        "channel": "public-web-search"
       }
     ],
     "limitations": [
@@ -6342,6 +6360,14 @@
         {
           "url": "https://link.springer.com/article/10.1007/s11367-008-0038-4",
           "role": "出版商"
+        },
+        {
+          "url": "https://www.lifecycleinitiative.org/resources/articles/",
+          "role": "UNEP Life Cycle Initiative public access article listing"
+        },
+        {
+          "url": "https://www.lifecycleinitiative.org/wp-content/uploads/2012/12/USEtox-the-UNEP-SETAC-toxocity-model-recommended-characterisation-factors-for-human-toxicity-and-freshwater-ecotoxicity-in-life-cycle-impact-assessement.pdf",
+          "role": "publisher-formatted original PDF hosted by the Life Cycle Initiative"
         }
       ],
       "identifiers": {
@@ -6365,23 +6391,91 @@
       ],
       "discovery": {
         "queryIds": [
-          "Q-SEED-IMPORT"
+          "Q-SEED-IMPORT",
+          "q-kb88-usetox-2008-original"
         ],
-        "reason": "Inherited candidate register §11; retained for work-level discovery, not upgraded to passage evidence. V5：毒性模型、共识形成及局限",
+        "reason": "Inherited candidate register §11 for V5 toxicity modelling, consensus formation and limits. The DOI search located the original through the Life Cycle Initiative public access listing. Selected reading is separately registered.",
         "citationParents": [
           "lit-com-17"
         ]
       },
       "identityStatus": "verified",
-      "accessStatus": "abstract-or-excerpt",
+      "accessStatus": "public-fulltext-available",
       "readingStatus": "not-close-read",
       "accessedAt": "2026-11-03",
-      "lastCheckedAt": "2026-11-03",
-      "rights": "Third-party sources retain their rights. Bibliographic facts and original project annotations are published here; source text, figures, datasets and software are not relicensed. Full-text access or borrowing does not grant redistribution permission. No source-specific open reuse license was verified in the inherited seed check.",
+      "lastCheckedAt": "2026-11-09",
+      "rights": "© Springer-Verlag 2008. The Life Cycle Initiative publicly lists the publisher-formatted copy under Public access Articles. Public access establishes selected reading access. No open redistribution license was verified. Only bibliographic details and authored annotations are registered.",
       "limitations": [
-        "作者表/摘要/参考文献；未读付费全文",
+        "The 2026-11-03 seed inspection covered author list, abstract and references. The publisher article HTML displayed a subscription preview again on 2026-11-09. The Life Cycle Initiative publicly hosted the original PDF that day, with selected inspection recorded in rd-kb88-rosenbaum-2008.",
         "Historical metadata/abstract/partial-page check inherited from 2026-11-03; original search strings and a complete access log were not recorded in the seed register.",
         "Volume/region/tradition tags are provisional editorial discovery strata, not evidence of intellectual origin, influence or coverage."
+      ],
+      "catalogSourceIds": []
+    },
+    {
+      "id": "lit-kb88-rosenbaum-2011",
+      "title": "USEtox human exposure and toxicity factors for comparative assessment of toxic emissions in life cycle analysis: sensitivity to key chemical properties",
+      "contributors": "Ralph K. Rosenbaum, Mark A. J. Huijbregts, Andrew D. Henderson, Manuele Margni, Thomas E. McKone, Dik van de Meent, Michael Z. Hauschild, Shanna Shaked, Ding Sheng Li, Lois S. Gold and Olivier Jolliet",
+      "year": "2011",
+      "kind": "method-article",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://link.springer.com/article/10.1007/s11367-011-0316-4",
+          "role": "publisher article"
+        },
+        {
+          "url": "https://link.springer.com/content/pdf/10.1007/s11367-011-0316-4.pdf",
+          "role": "publisher PDF endpoint used for byte-fixed acquisition"
+        },
+        {
+          "url": "https://www.rivm.nl/documenten/article-usetox-human-exposure-and-toxicity-factors-for-comparative",
+          "role": "RIVM public article listing"
+        },
+        {
+          "url": "https://www.rivm.nl/sites/default/files/2018-11/USEtox%20human%20exposure%20and%20toxicity%20factors%20for%20comparative.pdf",
+          "role": "RIVM public PDF, inspected via web extraction for comparison only"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1007/s11367-011-0316-4"
+      },
+      "volumes": [
+        "V5"
+      ],
+      "topics": [
+        "toxicity",
+        "human exposure",
+        "historical pathway coverage"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "international"
+      ],
+      "traditions": [
+        "UNEP-SETAC toxicity consensus"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-kb88-usetox-2011-original",
+          "q-kb88-usetox-scope-erratum"
+        ],
+        "reason": "The manual §6.1 cites this work for the 1.01 human exposure model. Targeted discovery located the dated exclusion and indoor-extension passages for comparison with 2.0.",
+        "citationParents": [
+          "work-usetox-2-documentation-v11"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-09",
+      "lastCheckedAt": "2026-11-09",
+      "rights": "© Springer-Verlag 2011. The publisher endpoint returned the full PDF without login or payment. RIVM separately lists a public article copy. No open redistribution license was verified. Only bibliographic details and authored annotations are registered.",
+      "limitations": [
+        "Separate selected reading rd-kb88-rosenbaum-2011 binds the publisher PDF. The RIVM PDF returned selected text through the web service but direct file acquisition timed out, so the publisher hash is not assigned to the RIVM carrier.",
+        "The historical exclusion statement does not specify the coverage of USEtox 2.0 or a later release."
       ],
       "catalogSourceIds": []
     },

@@ -37,8 +37,13 @@ relationship a chemical toxicity factor preserves and when its comparative
 potential supports the intended use. Independent continuous reading of the
 current fourth part and adjacent chapters supports this editorial priority,
 without approving external originals, a new manuscript or the whole part.
-Source investigation, authoring, consumer/history review, actual publication and
-exact integration remain pending. Programme9 remains open for all full-book work.
+The selected originals and a twelve-paragraph candidate now have bounded source
+and consumer review. The local-app reader completed the candidate and adjacent
+prose, then focused checks of the revised version and factor-guidance paragraphs.
+Its remaining question about the strength of "only when" was resolved against
+the original manual's explicit condition, separately from reader judgment.
+Actual publication and exact integration remain pending. Programme9 remains
+open for all full-book work.
 
 On 2026-11-04 the project owner approved the full design at Main a9ae501f3a0be19455d4478bbefbb446faadb665 (goal file SHA-256 af85e3c8ab486e365cb6d2db924a0b64d1ea65e05fd90830ff5bfae66fb2d32c), explicitly enabled goal mode, authorized literature mapping/classics discovery/key original close reading, evidence-led outline and argument revisions, and direct manuscript expansion without repeated outline review.
 

@@ -1,0 +1,1755 @@
+{
+  "schemaVersion": 1,
+  "status": "reviewed",
+  "originalDigest": "90fa03189186e997fb1fcc7cb32ebf23b692fe04a1ff8adbec366127365cae32",
+  "route": "/docs/book/usetox-pathways-and-boundaries",
+  "title": "毒性路径",
+  "sections": [
+    {
+      "id": "排放与受体",
+      "title": "排放与受体",
+      "claimIds": [
+        "cl-usetox-matched-emissions",
+        "cl-usetox-fate-exposure-effect",
+        "cl-usetox-intake-and-effects",
+        "cl-usetox-indicators-not-observed-cases"
+      ]
+    },
+    {
+      "id": "模型与范围",
+      "title": "模型与范围",
+      "claimIds": [
+        "cl-usetox-model-comparison",
+        "cl-usetox-comparison-uncertainty",
+        "cl-usetox-boxes-and-time",
+        "cl-usetox-internal-feature-conflict"
+      ]
+    },
+    {
+      "id": "比较的依据",
+      "title": "比较的依据",
+      "claimIds": [
+        "cl-usetox-missing-data-model-zero",
+        "cl-usetox-factor-flags-and-conditions",
+        "cl-usetox-prioritization",
+        "cl-usetox-conclusion"
+      ]
+    }
+  ],
+  "source": {
+    "mdxSha256": "50becb426465686b1a6ae5b507a3889f81b421f6d33238466e767e68db45a869",
+    "description": "化学排放的归趋、暴露与效应，以及比较潜势的使用条件。"
+  },
+  "claims": [
+    {
+      "id": "cl-usetox-matched-emissions",
+      "text": "同一种化学物质，排入空气和排入水中，能够合成一个排放量以后再评价吗？Rosenbaum等人在2008年的USEtox论文中，用苯并[a]芘向大陆尺度空气和淡水的两项排放说明表征：先让每项排放量乘上对应介质的人体毒性因子，再将两个贡献相加。原例的两项质量采用同一功能单位；每功能单位的排放质量乘以每单位排放的病例潜势，得到每功能单位的潜在病例。这里匹配的是“物质—排放介质”，空气与淡水还不是人的吸入与摄入途径。把排放量记作m气、m水，因子记作CF气、CF水，这一步就是m气×CF气＋m水×CF水。只保留物质总质量，还不足以确定这个结果；保留两项记录，才能继续追问差别从哪里来。",
+      "kind": "interpretation",
+      "scope": "2008原论文§6.1苯并[a]芘示例的符号化解释；不采用其数值为当前发行因子。",
+      "evidenceIds": [
+        "ev-kb88-2008-compartment-use",
+        "ev-kb88-2008-factor-units"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb88-2008-compartment-use",
+          "relation": "supports",
+          "rationale": "原例逐项匹配大陆空气与淡水排放后相加。"
+        },
+        {
+          "evidenceId": "ev-kb88-2008-factor-units",
+          "relation": "qualifies",
+          "rationale": "原模型区分排放介质、接收介质和人群暴露途径；维度由§2.2定义。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "原例没有指定产品功能单位的具体服务，也未注明大陆空气的城乡子型；此处不补造具体清单行、因子等级或当前软件对应。",
+        "原印算例的结果单位带有额外/kg；按§2.2因子每kg排放、原例质量每功能单位的定义相乘，应得到潜在病例每功能单位。这是维度解释，不是原作者正式勘误；此处不复用原例数值。"
+      ],
+      "reasoning": "按原例的加权和保留两种因子的身份；合并后使用同一因子须有两因子相同等条件，不能从物质名称推出。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-09",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-usetox-fate-exposure-effect",
+      "text": "毒性表征因子的差别来自排放以后的一连串关系。USEtox2.0文档将它们分为归趋、暴露和效应：归趋描述物质在空气、水和土壤等介质中的迁移、停留与转化；暴露把介质中的物质连接到人群摄入或生态接触；效应再将摄入或浓度联系到相应毒性指标。排入空气的物质也可能转入其他介质，因此排放入口与最后接触途径需要分别追踪。这样的分解使一个因子不只承担换算，还保留了可以追问的环境路径。",
+      "kind": "source-statement",
+      "scope": "USEtox2.0 Documentation v1.1，所获208页载体的模型框架",
+      "evidenceIds": [
+        "ev-usetox-fate-exposure-effect"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-usetox-fate-exposure-effect",
+          "relation": "supports",
+          "rationale": "正文和Fig.1直接展示三类过程及相互连接；并未把介质浓度、摄入量和效应当作同一个量。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "路径框架不等于多数过程公式已被复现或验证。",
+        "文档正式引用 2017；文件的 2026 元数据不证明正文是新的方法版本。"
+      ],
+      "conceptIds": [
+        "cn-toxic-pathway"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-09",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-usetox-intake-and-effects",
+      "text": "以人体路径为例，归趋与暴露共同给出摄入分数iF：排出的物质有多大份额，经过某条途径进入所表示的人群。它的分子是摄入质量，分母是排放质量。肉、奶、鱼等具体接触途径先按摄入路线汇总；吸入与经口摄入再分别连接相应效应类型的因子，以每单位摄入量的效应换成每单位排放量的病例潜势。改变排放介质会改变归趋和摄入关系，改用另一种效应资料则改变后面的连接。这两种变化即使都使总分下降，也要求不同的解释。",
+      "kind": "interpretation",
+      "scope": "USEtox2.0文档§§2.2、2.5.1的人体摄入分数、效应和表征矩阵含义。",
+      "evidenceIds": [
+        "ev-kb88-v11-intake-units"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb88-v11-intake-units",
+          "relation": "supports",
+          "rationale": "pp22、28–30按排放区室、接触途径和效应类型区分矩阵与单位。"
+        }
+      ],
+      "premiseIds": [
+        "cl-usetox-fate-exposure-effect"
+      ],
+      "caveats": [
+        "这里说明模型关系，不复现任何物质的工作簿或证明剂量反应适用于现场人群。",
+        "相同人群量或单位不使不同模型、暴露途径和健康结局的因子自动相容。"
+      ],
+      "reasoning": "沿实际矩阵中排放介质—暴露途径—效应类型的对应，解释量与变化来源；不以一对标量代替全部矩阵。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-09",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-usetox-indicators-not-observed-cases",
+      "text": "淡水生态毒性沿另一种接触和效应关系形成指标：暴露环节关心淡水中可用于接触的溶解份额，效应环节联系物种对浓度的响应。文档在中点保留潜在受影响物种比例及其体积、时间积分；人体毒性中点则用累计疾病病例潜势表达。两类量各有对象，不能因都叫毒性而相加。进一步转为损害，还要引入相应的严重程度或潜在消失的物种比例转换。无论停在哪一步，比较模型中的“病例”都不是某地已经观察到的人数，潜势也不能直接替代具体人群与地点的风险调查。",
+      "kind": "interpretation",
+      "scope": "USEtox2.0文档的指标定义与比较用途",
+      "evidenceIds": [
+        "ev-usetox-indicators-not-observed-cases",
+        "ev-usetox-comparative-applicability"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-usetox-indicators-not-observed-cases",
+          "relation": "supports",
+          "rationale": "§2.2给出单位和转换，Chapter11明确限制绝对定量估计；两者共同约束“病例”单位的解释。"
+        },
+        {
+          "evidenceId": "ev-usetox-comparative-applicability",
+          "relation": "supports",
+          "rationale": "适用性小节明确限制绝对估计；与指标定义共同支持对“病例”单位的有界解释。"
+        }
+      ],
+      "premiseIds": [
+        "cl-usetox-fate-exposure-effect"
+      ],
+      "caveats": [
+        "效应数据、严重程度因子与实际病例预测之间还有模型假设；没有校准现场风险。",
+        "不同保护对象和指标不能因都叫毒性而直接相加。"
+      ],
+      "reasoning": "模型输出由泛化介质/暴露/效应计算而来，且文档限制其绝对估计用途；因此单位有病例并不建立对特定现场病例的观测或预测证明。",
+      "conceptIds": [
+        "cn-toxic-pathway"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-09",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-usetox-model-comparison",
+      "text": "这些关系为什么被组合成USEtox？2008年论文记录的做法，是请既有模型的开发者把结果放到同一比较中。七个模型在各自能够计算的环节参与，试验集合包含45种不解离、非两亲性的有机物；研究者在三次工作坊中逐层追查归趋、暴露、效应与最终因子的差别，并在轮次之间调整模型，力求消除非预期差异。这里的共识具有具体内容：在这一比较任务中，哪些机制不可缺少，哪些模型选择能够说明原来的分歧。它不是对所有物质、场景和使用目的的一次共同批准。",
+      "kind": "source-statement",
+      "scope": "Rosenbaum2008§2.1的参与者、物质试验集和模型协调过程。",
+      "evidenceIds": [
+        "ev-kb88-2008-comparison"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb88-2008-comparison",
+          "relation": "supports",
+          "rationale": "原文明确七模型按可计算环节比较、45种有机物、三次工作坊及轮间调整。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "试验集合不是随机抽取所有化学物质；并非每个模型都提供全部终点。",
+        "论文作者同时参与模型开发和协调；过程记录不等于独立经验验证。"
+      ],
+      "reasoning": "共识范围由实际参与过程与模型任务限定；不将作者组织的协调扩张为全共同体或全部用途认可。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-09",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-usetox-comparison-uncertainty",
+      "text": "协调后的模型差异缩小，提供的是一种有用但有限的检验。研究者能够把部分分歧追到箱体设置、介质连接及效应表示，USEtox的结果也可与参加比较的模型对照。不过，这些模型使用相同的输入资料；论文据模型间差异估计的范围，明确没有包括输入参数的不确定性。因而，“几个模型更接近了”支持对某些结构选择的解释，不能直接译成“已经更接近真实病例”，也不能作为所有后续版本统一的误差界限。",
+      "kind": "interpretation",
+      "scope": "Rosenbaum2008§§3.1–4.2、Table2的模型间比较与未纳入参数不确定性。",
+      "evidenceIds": [
+        "ev-kb88-2008-agreement-limits"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb88-2008-agreement-limits",
+          "relation": "supports",
+          "rationale": "实际图3–6、讨论及Table2邻文界定协调差异和参数不确定性遗漏。"
+        }
+      ],
+      "premiseIds": [
+        "cl-usetox-model-comparison"
+      ],
+      "caveats": [
+        "未重新求得原模型结果或读取全部补充表；不把原文不同统计量合成通用百分比。",
+        "这些比较不能验证后来的室内、作物残留或其他新增模块。"
+      ],
+      "reasoning": "模型间一致性与对独立观察的符合是不同检验；共同输入使参数不确定性未由模型间分散量覆盖。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-09",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-usetox-boxes-and-time",
+      "text": "这种比较依靠环境的概括。USEtox2.0文档以嵌套箱体和质量平衡联系介质，迁移计算面向月到年的长期尺度，暴露计算假定接触期间介质浓度稳定。它让分散排放能够沿一致的路径计算，但相应地舍去了精细的空间和时间变化。若所问的是短时峰值、季节事件或紧邻排放源的人群暴露，这些概括是否足够，就成为使用前必须判断的条件；一个带有地区名称的结果不会自行补回这些细节。",
+      "kind": "interpretation",
+      "scope": "USEtox2.0文档的空间结构和时间适用条件",
+      "evidenceIds": [
+        "ev-usetox-boxes-and-time"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-usetox-boxes-and-time",
+          "relation": "supports",
+          "rationale": "所读模型概念与适用性小节直接提供箱体、尺度和稳定浓度假设；正文没有把其推广到所有毒性模型。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "模型结构的说明不等于稳态、动态或现场表现已被验证。",
+        "室内与局地能力需要结合文档内部冲突及具体发行版确认。"
+      ],
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-09",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-usetox-internal-feature-conflict",
+      "text": "模型是否包含一条路径，须按版本和模块判断。USEtox2.0文档把2011年论文明确对应到1.01的一般暴露模型，说明后来增加了室内暴露和作物残留模块；局限章节却仍列出与该论文相近的室内吸入、直接施用农药残留暴露排除项。这些对照支持旧文字沿用的解释，也说明不能只据旧清单否定另处明列的新模块。文献对照尚不能确定编辑缘由或具体发行包的行为，使用因子表仍要核对版本、模块和情景。",
+      "kind": "interpretation",
+      "scope": "所获USEtox2.0 Documentation v1.1载体的内部表述冲突",
+      "evidenceIds": [
+        "ev-usetox-internal-feature-conflict",
+        "ev-kb88-2011-exclusions",
+        "ev-kb88-v11-version-additions"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-usetox-internal-feature-conflict",
+          "relation": "supports",
+          "rationale": "原更新表、模块介绍与p177排除表述仍保留，未删除反证。"
+        },
+        {
+          "evidenceId": "ev-kb88-2011-exclusions",
+          "relation": "context",
+          "rationale": "2011p725提供较早排除表述和室内扩展尚在开发的历史语境；未推断所有版本能力。"
+        },
+        {
+          "evidenceId": "ev-kb88-v11-version-additions",
+          "relation": "supports",
+          "rationale": "手册p125直接把2011文献归于1.01并明示2.0两项新增；与两侧原文共同支持有界沿用推断。"
+        }
+      ],
+      "premiseIds": [
+        "cl-usetox-fate-exposure-effect"
+      ],
+      "caveats": [
+        "2011原刊p725与手册p177对照；手册§6.1/p125的直接取文说明针对其后的一般暴露章节，不是针对§11.4.2的正式勘误。",
+        "手册§6.5和§7说明的模型对象不自动等于所有默认因子、第三方方法包或当地实际暴露。",
+        "所见手册正式引用2017，载体2026元数据不证明是2017原始字节或新的方法版次。"
+      ],
+      "reasoning": "较早原文的近同表述与手册明确的版本／新增关系支持沿用早期描述的解释；没有正式勘误或发行物运行证据，不能据此断言编辑意图或实际软件行为。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-10",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-usetox-missing-data-model-zero",
+      "text": "即使物质和介质已经对上，数值仍可能掩盖资料状态。文档把缺少毒理信息时将人体效应因子置零列为输入不确定性来源；这种零进入计算后，可以压低合计，却没有证明真实效应不存在。同页还列出另一种情况：生态毒性效应因子因未满足最低数据质量要求而被排除。人体的约定零、生态因子的排除、有依据的低效应和其他尚未表征的排放，不能只凭结果表中的一个零混为一谈。因此，比较两个结果时，需要同时知道哪些贡献已有资料、哪些因约定或缺项没有进入；把缺项的数值贡献当作零，并没有使两边获得同样完整的证据。",
+      "kind": "interpretation",
+      "scope": "该文档对缺失毒理输入的具体处理与结果解释",
+      "evidenceIds": [
+        "ev-usetox-missing-data-model-zero"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-usetox-missing-data-model-zero",
+          "relation": "supports",
+          "rationale": "§2.4.2/p28列出缺毒理时人体效应因子置零，也列出不满足最低数据质量时生态效应因子被排除；这些是不同输入状态，未审核实际数据库。"
+        }
+      ],
+      "premiseIds": [
+        "cl-usetox-fate-exposure-effect"
+      ],
+      "caveats": [
+        "这里依据文档陈述，不提供具体化学物质、癌症或非癌症数据及工作簿实现的独立验证。",
+        "区分信息状态是解释建议，不是外部标准新增要求。"
+      ],
+      "reasoning": "缺少输入时的模型约定与对真实效应的经验确认不是同一证据过程；作者本身将其列为不确定性来源，因此数值零不能独立证明效应不存在。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-10",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-usetox-factor-flags-and-conditions",
+      "text": "这份USEtox2.0文档将因子分为推荐（recommended）与指示（indicative）两类，表达可靠性差异。它先要求结合两类因子，因为一开始就略去指示因子，会让相关排放未被表征，相当于在合计中假定其贡献为零。只有指示因子主导结果时，文档才认为暂时排除这些因子的敏感性分析可能有用：排除会改变毒性得分，所要检验的是研究结论是否随之改变。若结论不变，仍须承认较大的不确定性；若结论改变，文档认为，排除那些贡献占主导、却用指示因子表征的排放可能有其理由。此时必须明说，报告中的结果已不再表征这些被排除的排放，而它们仍可能有显著贡献；解释结果时也须考虑这项排除。因此，指示标记不能直接译成“可不计算”；保留完整建议次序，才能看清使用这些信息的理由和代价。",
+      "kind": "source-statement",
+      "scope": "USEtox2.0文档§3.3.2完整建议序列",
+      "evidenceIds": [
+        "ev-usetox-factor-flags-and-conditions"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-usetox-factor-flags-and-conditions",
+          "relation": "supports",
+          "rationale": "证据覆盖建议跨页的四个项目，保留item1与item4之间的限定而非孤立引语。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "因子适用性和不确定性需要各自依据；粗略专家判断不等于计算得到的置信区间。",
+        "这些建议不能自动覆盖不同用途、方法或未来发行版本。"
+      ],
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-10",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-usetox-prioritization",
+      "text": "这些条件并不使比较失去用途。2008年论文提出，先从清单的各项表征贡献中辨认值得优先追查的物质，再返回产生排放的生命周期阶段或过程，分析归趋、暴露和效应中哪一环起主要作用。这样，最先获得的可以是调查和改进分析的重点，而不是几乎相同总分之间的精细名次。沿苯并[a]芘的两项记录返回：若变化来自排放量，应查过程活动和清单；若来自不同介质的因子，应查所表示的路径；若主要贡献依赖不充分的效应资料，就应检验资料和结论的敏感性。追问的位置随结果改变的原因而改变。",
+      "kind": "synthesis",
+      "scope": "2008原文比较筛选用途与本章匹配、路径、资料状态的有条件综合。",
+      "evidenceIds": [
+        "ev-kb88-2008-compartment-use",
+        "ev-kb88-v11-comparative-use"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb88-2008-compartment-use",
+          "relation": "supports",
+          "rationale": "§6.1先给出匹配原例，再明确追查阶段、组成和归趋／暴露／效应。"
+        },
+        {
+          "evidenceId": "ev-kb88-v11-comparative-use",
+          "relation": "qualifies",
+          "rationale": "§3.3.2及11.2.6限定比较、筛选和解释，不能转为现场绝对预测。"
+        }
+      ],
+      "premiseIds": [
+        "cl-usetox-matched-emissions",
+        "cl-usetox-intake-and-effects",
+        "cl-usetox-comparison-uncertainty",
+        "cl-usetox-factor-flags-and-conditions"
+      ],
+      "caveats": [
+        "不采用原文示意贡献比例作为本书通用截断线，也不把模型不确定性缩为一个固定倍数。",
+        "模型中的贡献线索需要实际清单、覆盖和技术证据才能支持具体改善行动。"
+      ],
+      "reasoning": "以来源提出的追查次序连接本章不同变化原因；给出分析方向，不自动认定某真实物质可排除或某工程方案可行。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-09",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-usetox-conclusion",
+      "text": "毒性路径因而为环境判断增加了一种可解释的关系：在说明物质、排放介质、模型和资料范围以后，可以比较所涵盖排放的潜势，识别哪些贡献值得进一步分析，并说明什么变化会动摇这个判断。覆盖缺口和敏感性应与结果一起交给使用者。至此，气候、水和毒性等指标都有各自的对象与形成路径；若一种选择在几类指标之间各有增减，接下来还要说明依据什么尺度、保护目标和取舍来判断。环境模型提供的后果信息，正是下一步讨论的起点。",
+      "kind": "synthesis",
+      "scope": "本章有条件比较所得与第四部到第五部的作者综合。",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-usetox-prioritization",
+        "cl-usetox-indicators-not-observed-cases",
+        "cl-usetox-missing-data-model-zero",
+        "cl-lcia-endpoint-units"
+      ],
+      "caveats": [
+        "不声称覆盖所有化学物质、环境路径、指标或用途；本章不是产品安全认证。",
+        "指标形成、价值选择与实际行动证据仍各有职责。"
+      ],
+      "reasoning": "来源支持指定路径的比较潜势和优先追查；不同指标的对象／单位不自动提供共同价值排序，下一步须解释尺度与选择。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-09",
+      "reviewKind": "agent-source-check"
+    }
+  ],
+  "scientificClosure": {
+    "claims": [
+      {
+        "id": "cl-lcia-endpoint-units",
+        "text": "终点的单位说明了模型最终保留什么：健康损害以伤残调整寿命年（DALY）表达，关注疾病或事故造成的健康寿命损失；生态质量从局地相对物种损失及其空间、时间尺度汇总；资源稀缺性则以未来额外开采成本表达。三者并非同一种“坏处”的天然刻度。即使结果都已到终点，也没有仅凭这些单位建立健康、物种和资源之间的统一价值排序。",
+        "kind": "interpretation",
+        "scope": "该论文的终点单位及其可解释范围",
+        "evidenceIds": [
+          "ev-lcia-endpoint-units"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-lcia-endpoint-units",
+            "relation": "supports",
+            "rationale": "§2.1逐项给出指标单位；不同单位不自行提供跨保护对象偏好尺度，是基于这些定义的有限解释。"
+          }
+        ],
+        "premiseIds": [
+          "cl-lcia-midpoint-pathway"
+        ],
+        "caveats": [
+          "额外开采成本不是全部自然价值，也不是市场价格估计。",
+          "该文的生态指标不等于全球灭绝总数。"
+        ],
+        "reasoning": "所列终点保留不同对象和单位；未观察到把它们自动转为同一偏好尺度的证据，因此不能从“均属终点”推出统一排序。",
+        "conceptIds": [
+          "cn-endpoint"
+        ],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-04",
+        "reviewKind": "agent-source-check"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-usetox-fate-exposure-effect",
+        "readingId": "rd-usetox-2-documentation-v11",
+        "passageId": "psg-usetox-v11-pathways-units",
+        "locator": "Readers Guide/Fig.1及§§2.1–2.2，印刷pp11、20–23，PDF indices10、19–22",
+        "summary": "文档把归趋、暴露和效应相连：排放在介质间分配/转化，接触或摄入形成暴露，再由效应关系连接毒性指标。",
+        "sourceId": "src-book-usetox-2-documentation-v11",
+        "appraisal": {
+          "basis": "OfficialUSEtox PDF downloaded unencrypted; title/imprint and selected framework/uncertainty/interpretation/limitations passages read; Fig.1/page11 and limitations/page177 visually inspected.",
+          "methodologicalScope": "Selected original method/developer documentation; source-bound interpretation, not independent scientific model validation or current normative authority.",
+          "independence": "Related model developers and shared toxicity data create dependence; two copies of the ReCiPe article are one artifact, not independent evidence.",
+          "limitations": [
+            "No full-document reading or numerical reproduction.",
+            "No model/workbook/database release was acquired or audited.",
+            "Internal feature/limitation inconsistency is observed; origin/runtime resolution remains open.",
+            "Mutable URL and2026carrier metadata do not establish edition history.",
+            "The acquired carrier retains a 2017 citation template but shows 2026 file metadata and current affiliations; it is not established to be byte- or content-identical to a 2017 archived original."
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        }
+      },
+      {
+        "id": "ev-usetox-indicators-not-observed-cases",
+        "readingId": "rd-usetox-2-documentation-v11",
+        "passageId": "psg-usetox-v11-pathways-units",
+        "locator": "§§2.1–2.2，印刷pp20–23，PDF indices19–22；适用性限定另见§11.2.6/p174",
+        "summary": "CTUh表示人群累计疾病病例潜势，CTUe表示受影响物种比例的体积/时间积分；终点另有严重程度/物种消失转换。",
+        "sourceId": "src-book-usetox-2-documentation-v11",
+        "appraisal": {
+          "basis": "OfficialUSEtox PDF downloaded unencrypted; title/imprint and selected framework/uncertainty/interpretation/limitations passages read; Fig.1/page11 and limitations/page177 visually inspected.",
+          "methodologicalScope": "Selected original method/developer documentation; source-bound interpretation, not independent scientific model validation or current normative authority.",
+          "independence": "Related model developers and shared toxicity data create dependence; two copies of the ReCiPe article are one artifact, not independent evidence.",
+          "limitations": [
+            "No full-document reading or numerical reproduction.",
+            "No model/workbook/database release was acquired or audited.",
+            "Internal feature/limitation inconsistency is observed; origin/runtime resolution remains open.",
+            "Mutable URL and2026carrier metadata do not establish edition history.",
+            "The acquired carrier retains a 2017 citation template but shows 2026 file metadata and current affiliations; it is not established to be byte- or content-identical to a 2017 archived original."
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        }
+      },
+      {
+        "id": "ev-usetox-boxes-and-time",
+        "readingId": "rd-usetox-2-documentation-v11",
+        "passageId": "psg-usetox-v11-space-time",
+        "locator": "§§2.3.1–2.3.5；§§11.2.1–11.2.2，印刷pp23–27、173，PDF indices22–26、172",
+        "summary": "模型使用嵌套的均匀混合箱体、质量平衡、长期平均迁移和暴露期间浓度稳定等条件；缺乏精细空间分辨率。",
+        "sourceId": "src-book-usetox-2-documentation-v11",
+        "appraisal": {
+          "basis": "OfficialUSEtox PDF downloaded unencrypted; title/imprint and selected framework/uncertainty/interpretation/limitations passages read; Fig.1/page11 and limitations/page177 visually inspected.",
+          "methodologicalScope": "Selected original method/developer documentation; source-bound interpretation, not independent scientific model validation or current normative authority.",
+          "independence": "Related model developers and shared toxicity data create dependence; two copies of the ReCiPe article are one artifact, not independent evidence.",
+          "limitations": [
+            "No full-document reading or numerical reproduction.",
+            "No model/workbook/database release was acquired or audited.",
+            "Internal feature/limitation inconsistency is observed; origin/runtime resolution remains open.",
+            "Mutable URL and2026carrier metadata do not establish edition history.",
+            "The acquired carrier retains a 2017 citation template but shows 2026 file metadata and current affiliations; it is not established to be byte- or content-identical to a 2017 archived original."
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        }
+      },
+      {
+        "id": "ev-usetox-missing-data-model-zero",
+        "readingId": "rd-usetox-2-documentation-v11",
+        "passageId": "psg-usetox-v11-uncertainty-and-missing-input",
+        "locator": "§2.4.2 Input uncertainties，印刷p28，PDF index27",
+        "summary": "文档把缺少毒理信息时将人体效应因子置零列为输入不确定性来源，另列数据、外推和线性反应假设。",
+        "sourceId": "src-book-usetox-2-documentation-v11",
+        "appraisal": {
+          "basis": "OfficialUSEtox PDF downloaded unencrypted; title/imprint and selected framework/uncertainty/interpretation/limitations passages read; Fig.1/page11 and limitations/page177 visually inspected.",
+          "methodologicalScope": "Selected original method/developer documentation; source-bound interpretation, not independent scientific model validation or current normative authority.",
+          "independence": "Related model developers and shared toxicity data create dependence; two copies of the ReCiPe article are one artifact, not independent evidence.",
+          "limitations": [
+            "No full-document reading or numerical reproduction.",
+            "No model/workbook/database release was acquired or audited.",
+            "Internal feature/limitation inconsistency is observed; origin/runtime resolution remains open.",
+            "Mutable URL and2026carrier metadata do not establish edition history.",
+            "The acquired carrier retains a 2017 citation template but shows 2026 file metadata and current affiliations; it is not established to be byte- or content-identical to a 2017 archived original."
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        }
+      },
+      {
+        "id": "ev-usetox-factor-flags-and-conditions",
+        "readingId": "rd-usetox-2-documentation-v11",
+        "passageId": "psg-usetox-v11-factor-flags",
+        "locator": "§3.1.4；§3.3.2及其items1–4，印刷pp36–37、41–42，PDF indices35–36、40–41",
+        "summary": "recommended/indicative反映可靠性差异；使用、主导项敏感性、必要时排除及明确说明限制是一整组有条件建议。",
+        "sourceId": "src-book-usetox-2-documentation-v11",
+        "appraisal": {
+          "basis": "OfficialUSEtox PDF downloaded unencrypted; title/imprint and selected framework/uncertainty/interpretation/limitations passages read; Fig.1/page11 and limitations/page177 visually inspected.",
+          "methodologicalScope": "Selected original method/developer documentation; source-bound interpretation, not independent scientific model validation or current normative authority.",
+          "independence": "Related model developers and shared toxicity data create dependence; two copies of the ReCiPe article are one artifact, not independent evidence.",
+          "limitations": [
+            "No full-document reading or numerical reproduction.",
+            "No model/workbook/database release was acquired or audited.",
+            "Internal feature/limitation inconsistency is observed; origin/runtime resolution remains open.",
+            "Mutable URL and2026carrier metadata do not establish edition history.",
+            "The acquired carrier retains a 2017 citation template but shows 2026 file metadata and current affiliations; it is not established to be byte- or content-identical to a 2017 archived original."
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        }
+      },
+      {
+        "id": "ev-usetox-internal-feature-conflict",
+        "readingId": "rd-usetox-2-documentation-v11",
+        "passageId": "psg-usetox-v11-feature-limit-conflict",
+        "locator": "§1.4/Table1、§7.1、§11.4.2，印刷pp18–19、144、177，PDF indices17–18、143、176",
+        "summary": "同一文档把室内环境与农作物农药残留列为2.0新增功能，却在局限章节仍将相关路径列为排除；原因及实现待核。",
+        "sourceId": "src-book-usetox-2-documentation-v11",
+        "appraisal": {
+          "basis": "OfficialUSEtox PDF downloaded unencrypted; title/imprint and selected framework/uncertainty/interpretation/limitations passages read; Fig.1/page11 and limitations/page177 visually inspected.",
+          "methodologicalScope": "Selected original method/developer documentation; source-bound interpretation, not independent scientific model validation or current normative authority.",
+          "independence": "Related model developers and shared toxicity data create dependence; two copies of the ReCiPe article are one artifact, not independent evidence.",
+          "limitations": [
+            "No full-document reading or numerical reproduction.",
+            "No model/workbook/database release was acquired or audited.",
+            "Internal feature/limitation inconsistency is observed; origin/runtime resolution remains open.",
+            "Mutable URL and2026carrier metadata do not establish edition history.",
+            "The acquired carrier retains a 2017 citation template but shows 2026 file metadata and current affiliations; it is not established to be byte- or content-identical to a 2017 archived original."
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        }
+      },
+      {
+        "id": "ev-usetox-comparative-applicability",
+        "readingId": "rd-usetox-2-documentation-v11",
+        "passageId": "psg-usetox-v11-comparative-scope",
+        "locator": "Chapter11、§§11.1–11.2.6，印刷pp171–174，PDF indices170–173",
+        "summary": "文档将USEtox定位为化学排放潜在影响的比较工具，不适合据此直接作人类健康或生态影响的绝对定量估计。",
+        "sourceId": "src-book-usetox-2-documentation-v11",
+        "appraisal": {
+          "basis": "OfficialUSEtox PDF downloaded unencrypted; title/imprint and selected framework/uncertainty/interpretation/limitations passages read; Fig.1/page11 and limitations/page177 visually inspected.",
+          "methodologicalScope": "Selected original method/developer documentation; source-bound interpretation, not independent scientific model validation or current normative authority.",
+          "independence": "Related model developers and shared toxicity data create dependence; two copies of the ReCiPe article are one artifact, not independent evidence.",
+          "limitations": [
+            "No full-document reading or numerical reproduction.",
+            "No model/workbook/database release was acquired or audited.",
+            "Internal feature/limitation inconsistency is observed; origin/runtime resolution remains open.",
+            "Mutable URL and2026carrier metadata do not establish edition history.",
+            "The acquired carrier retains a 2017 citation template but shows 2026 file metadata and current affiliations; it is not established to be byte- or content-identical to a 2017 archived original."
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        }
+      },
+      {
+        "id": "ev-kb88-2008-comparison",
+        "readingId": "rd-kb88-rosenbaum-2008",
+        "passageId": "psg-kb88-rosenbaum-2008-model-comparison",
+        "locator": "Rosenbaum2008 §2.1, journal pp534–535, PDF indices2–3",
+        "summary": "Seven models participate at calculable endpoints;45 non-dissociating/non-amphiphilic organic test substances; three workshops and inter-round changes aimed at removing unintended differences.",
+        "sourceId": "src-kb88-rosenbaum-2008",
+        "appraisal": {
+          "basis": "Publisher-formatted original PDF acquired from the Life Cycle Initiative public access listing. Selected passages read and Figs. 3–6, Table 2, §2.2 unit definitions and §6.1 worked expression visually inspected.",
+          "methodologicalScope": "Historical model development, shared-input inter-model comparison and author guidance on comparative use.",
+          "independence": "The participating developers compared and harmonized their models with shared inputs. Developer comparisons, the 2011 successor and the model manual belong to a related lineage.",
+          "limitations": [
+            "No complete article, electronic supplement or workbook reading is claimed.",
+            "Matched-emission guidance is used symbolically. The printed label discrepancy is retained and no numerical case is registered.",
+            "Model comparison is scoped to the represented substance properties, scenarios and assumptions. Parameter uncertainty, measured local impacts and later model releases are separate questions."
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-09"
+        }
+      },
+      {
+        "id": "ev-kb88-2008-agreement-limits",
+        "readingId": "rd-kb88-rosenbaum-2008",
+        "passageId": "psg-kb88-rosenbaum-2008-model-agreement",
+        "locator": "Rosenbaum2008 §§3.1–4.2, Figs3–6 and Table2, journal pp540–543, PDF indices8–11",
+        "summary": "Model differences narrow after harmonization; the shared-input comparison and Table2 estimates exclude parameter uncertainty and do not supply observed local impacts.",
+        "sourceId": "src-kb88-rosenbaum-2008",
+        "appraisal": {
+          "basis": "Publisher-formatted original PDF acquired from the Life Cycle Initiative public access listing. Selected passages read and Figs. 3–6, Table 2, §2.2 unit definitions and §6.1 worked expression visually inspected.",
+          "methodologicalScope": "Historical model development, shared-input inter-model comparison and author guidance on comparative use.",
+          "independence": "The participating developers compared and harmonized their models with shared inputs. Developer comparisons, the 2011 successor and the model manual belong to a related lineage.",
+          "limitations": [
+            "No complete article, electronic supplement or workbook reading is claimed.",
+            "Matched-emission guidance is used symbolically. The printed label discrepancy is retained and no numerical case is registered.",
+            "Model comparison is scoped to the represented substance properties, scenarios and assumptions. Parameter uncertainty, measured local impacts and later model releases are separate questions."
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-09"
+        }
+      },
+      {
+        "id": "ev-kb88-2008-compartment-use",
+        "readingId": "rd-kb88-rosenbaum-2008",
+        "passageId": "psg-kb88-rosenbaum-2008-use-guidance",
+        "locator": "Rosenbaum2008 §6.1, journal p544, PDF index12",
+        "summary": "The original benzo[a]pyrene example separately matches continental-air and freshwater emissions on a common functional-unit basis; guidance returns from contributions to lifecycle phases, components and fate/exposure/effect. Original printed unit discrepancy is preserved in the reading note.",
+        "sourceId": "src-kb88-rosenbaum-2008",
+        "appraisal": {
+          "basis": "Publisher-formatted original PDF acquired from the Life Cycle Initiative public access listing. Selected passages read and Figs. 3–6, Table 2, §2.2 unit definitions and §6.1 worked expression visually inspected.",
+          "methodologicalScope": "Historical model development, shared-input inter-model comparison and author guidance on comparative use.",
+          "independence": "The participating developers compared and harmonized their models with shared inputs. Developer comparisons, the 2011 successor and the model manual belong to a related lineage.",
+          "limitations": [
+            "No complete article, electronic supplement or workbook reading is claimed.",
+            "Matched-emission guidance is used symbolically. The printed label discrepancy is retained and no numerical case is registered.",
+            "Model comparison is scoped to the represented substance properties, scenarios and assumptions. Parameter uncertainty, measured local impacts and later model releases are separate questions."
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-09"
+        }
+      },
+      {
+        "id": "ev-kb88-2008-factor-units",
+        "readingId": "rd-kb88-rosenbaum-2008",
+        "passageId": "psg-kb88-rosenbaum-2008-factor-units",
+        "locator": "Rosenbaum2008 §2.2, journal pp536,538, PDF indices4,6",
+        "summary": "Human factors are defined per kilogram emitted; exposure routes and emission compartments differ, and the human combined metric equally weights cancer/non-cancer effects.",
+        "sourceId": "src-kb88-rosenbaum-2008",
+        "appraisal": {
+          "basis": "Publisher-formatted original PDF acquired from the Life Cycle Initiative public access listing. Selected passages read and Figs. 3–6, Table 2, §2.2 unit definitions and §6.1 worked expression visually inspected.",
+          "methodologicalScope": "Historical model development, shared-input inter-model comparison and author guidance on comparative use.",
+          "independence": "The participating developers compared and harmonized their models with shared inputs. Developer comparisons, the 2011 successor and the model manual belong to a related lineage.",
+          "limitations": [
+            "No complete article, electronic supplement or workbook reading is claimed.",
+            "Matched-emission guidance is used symbolically. The printed label discrepancy is retained and no numerical case is registered.",
+            "Model comparison is scoped to the represented substance properties, scenarios and assumptions. Parameter uncertainty, measured local impacts and later model releases are separate questions."
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-09"
+        }
+      },
+      {
+        "id": "ev-kb88-2011-exclusions",
+        "readingId": "rd-kb88-rosenbaum-2011",
+        "passageId": "psg-kb88-rosenbaum-2011-historical-omissions",
+        "locator": "Rosenbaum2011 §§4–5, journal p725, PDF index15",
+        "summary": "Earlier exposure-model discussion excludes indoor inhalation and directly applied pesticide residues and describes indoor extension as under development. Its wording closely matches manual p177; this is historical context, not current release coverage.",
+        "sourceId": "src-kb88-rosenbaum-2011",
+        "appraisal": {
+          "basis": "Read the specified original publisher-PDF passages and visually checked p.725. The article was independently listed on RIVM and matching passage text was visible via web extraction.",
+          "methodologicalScope": "Historical source comparison of the pre-2.0 exposure model and named limitations. No whole-article or equation-level validation.",
+          "independence": "Part of the same USEtox development lineage as the 2008 article and 2.0 manual. The RIVM copy represents the same work.",
+          "limitations": [
+            "Direct RIVM PDF acquisition timed out. Only the publisher PDF obtained without login is assigned the registered hash.",
+            "No official 2.0 documentation erratum, executable release, default table or scientific validation follows from the text comparison."
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-09"
+        }
+      },
+      {
+        "id": "ev-kb88-v11-version-additions",
+        "readingId": "rd-usetox-2-documentation-v11",
+        "passageId": "psg-kb88-usetox-v11-version-scope",
+        "locator": "USEtox2.0 Documentation v1.1 §6.1, printed p125, PDF index124",
+        "summary": "The manual directly associates Rosenbaum2011 with USEtox1.01 and says the general exposure model remains unchanged apart from added indoor exposure and crop residues, directing to §6.5 and Chapter7.",
+        "sourceId": "src-book-usetox-2-documentation-v11",
+        "appraisal": {
+          "basis": "2026-11-09 selected same-byte original PDF reinspection and direct source comparison. Exact passage scope and reading method are recorded in the bound dated passage event.",
+          "methodologicalScope": "Developer documentation of the named comparative mechanism, units or version distinction; not independent scientific model validation.",
+          "independence": "The manual and2008/2011 articles share the USEtox developer lineage and are not independent empirical confirmations.",
+          "limitations": [
+            "Original2017 formal citation is distinct from the observed2026 carrier metadata.",
+            "No model workbook, current default factor table, complete manual or actual local exposure was qualified.",
+            "The p177 exclusion wording remains without an identified official erratum; its earlier textual lineage does not prove author intent or runtime."
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-09"
+        }
+      },
+      {
+        "id": "ev-kb88-v11-intake-units",
+        "readingId": "rd-usetox-2-documentation-v11",
+        "passageId": "psg-kb88-usetox-v11-pathway-units-reinspection",
+        "locator": "USEtox2.0 Documentation v1.1 §§2.1–2.2,2.5–2.5.1, printed pp20–22,28–30, PDF indices19–21,27–29",
+        "summary": "Substance/compartment mass and CF define the score; human intake pathways aggregate to inhalation/oral routes before route- and effect-specific EF combines with iF. Emitted mass, intake mass, effect and comparative score keep their own units.",
+        "sourceId": "src-book-usetox-2-documentation-v11",
+        "appraisal": {
+          "basis": "2026-11-09 selected same-byte original PDF reinspection and direct source comparison. Exact passage scope and reading method are recorded in the bound dated passage event.",
+          "methodologicalScope": "Developer documentation of the named comparative mechanism, units or version distinction; not independent scientific model validation.",
+          "independence": "The manual and2008/2011 articles share the USEtox developer lineage and are not independent empirical confirmations.",
+          "limitations": [
+            "Original2017 formal citation is distinct from the observed2026 carrier metadata.",
+            "No model workbook, current default factor table, complete manual or actual local exposure was qualified.",
+            "The p177 exclusion wording remains without an identified official erratum; its earlier textual lineage does not prove author intent or runtime."
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-09"
+        }
+      },
+      {
+        "id": "ev-kb88-v11-comparative-use",
+        "readingId": "rd-usetox-2-documentation-v11",
+        "passageId": "psg-kb88-usetox-v11-comparative-use-reinspection",
+        "locator": "USEtox2.0 Documentation v1.1 §§3.1.4,3.3.2,11.1–11.2.6, printed pp36–37,41–42,171–174, PDF indices35–36,40–41,170–173",
+        "summary": "The complete recommended/indicative sequence retains conditional sensitivity, omission disclosure and interpretation; comparative screening/prioritization differs from absolute local human/ecosystem estimation.",
+        "sourceId": "src-book-usetox-2-documentation-v11",
+        "appraisal": {
+          "basis": "2026-11-09 selected same-byte original PDF reinspection and direct source comparison. Exact passage scope and reading method are recorded in the bound dated passage event.",
+          "methodologicalScope": "Developer documentation of the named comparative mechanism, units or version distinction; not independent scientific model validation.",
+          "independence": "The manual and2008/2011 articles share the USEtox developer lineage and are not independent empirical confirmations.",
+          "limitations": [
+            "Original2017 formal citation is distinct from the observed2026 carrier metadata.",
+            "No model workbook, current default factor table, complete manual or actual local exposure was qualified.",
+            "The p177 exclusion wording remains without an identified official erratum; its earlier textual lineage does not prove author intent or runtime."
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-09"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "src-book-usetox-2-documentation-v11",
+        "title": "USEtox®2.0 Documentation(Version1.1)",
+        "url": "https://usetox.org/sites/default/files/assets/USEtox_Documentation.pdf",
+        "version": "USEtox 2.0 Documentation, version 1.1（2017）；DOI 10.11581/DTU:00000011",
+        "publisher": "USEtox Team",
+        "accessedAt": "2026-11-04",
+        "accessStatus": "public-passages-inspected",
+        "rights": "文档允许完整注明来源后再现，商标及其他权利保留；此条件不等于数据集或软件的统一许可。",
+        "preservation": "引文依据所列版本与页码；原始文献由作者或出版机构提供，本书不转载原件。不同版本及再印文本的页码不能直接混用。",
+        "artifact": {
+          "mediaType": "application/pdf",
+          "sha256": "c84c5b1737bc821c7e251eb72bcad4fedbe292cdca6a0d880c3a00a701819116",
+          "resolvedUrl": "https://usetox.org/sites/default/files/assets/USEtox_Documentation.pdf",
+          "pageCount": 208
+        },
+        "reading": {
+          "status": "selected-passages",
+          "scope": "Title/imprint and Preface，印刷页 1;3–4；Readers Guide Fig.1; §§2.1–2.2，印刷页 11;20–23；§§2.3.1–2.3.5; §§11.2.1–11.2.2，印刷页 23–27;173；§§2.4.1–2.5，印刷页 27–28；§3.1.4; §3.3.2, including continuation items1–4，印刷页 36–37;41–42；§11 introduction and §11.1; §§11.2.3–11.2.6; §§11.3–11.4.4，印刷页 171–178；§1.4 Table1; §7.1; §11.4.2，印刷页 18–19;144;177",
+          "checkedAt": "2026-11-04",
+          "readingId": "rd-usetox-2-documentation-v11"
+        }
+      },
+      {
+        "id": "src-kb88-rosenbaum-2008",
+        "title": "USEtox—the UNEP-SETAC toxicity model: recommended characterisation factors for human toxicity and freshwater ecotoxicity in life cycle impact assessment",
+        "url": "https://www.lifecycleinitiative.org/wp-content/uploads/2012/12/USEtox-the-UNEP-SETAC-toxocity-model-recommended-characterisation-factors-for-human-toxicity-and-freshwater-ecotoxicity-in-life-cycle-impact-assessement.pdf",
+        "version": "Publisher-formatted journal article, Int J Life Cycle Assess 13(7), 532–546, published online 22 October 2008. DOI 10.1007/s11367-008-0038-4.",
+        "publisher": "Springer-Verlag",
+        "accessedAt": "2026-11-09",
+        "accessStatus": "public-passages-inspected",
+        "rights": "© Springer-Verlag 2008. The Life Cycle Initiative publicly lists the publisher-formatted copy under Public access Articles. Public access establishes selected reading access. No open redistribution license was verified. Only bibliographic details and authored annotations are registered.",
+        "preservation": "Only bibliographic metadata, authored paraphrases and selected locators are published. The original PDF remains with its rights holder; the acquired byte identity does not guarantee future availability or redistribution permission.",
+        "artifact": {
+          "mediaType": "application/pdf",
+          "sha256": "02ce35cd100ea27364d3e17babefe1efc4c9740c394bbfe663033eef353aeaa7",
+          "resolvedUrl": "https://www.lifecycleinitiative.org/wp-content/uploads/2012/12/USEtox-the-UNEP-SETAC-toxocity-model-recommended-characterisation-factors-for-human-toxicity-and-freshwater-ecotoxicity-in-life-cycle-impact-assessement.pdf",
+          "pageCount": 15
+        },
+        "reading": {
+          "status": "selected-passages",
+          "scope": "First page imprint and abstract continuation. Journal pages are aligned to the publisher range and the physical PDF sequence. Journal pp. 532–533; §2.1 Expert workshops, Model comparison and Development principles. Journal pp. 534–535; §2.2 Eq. 1 and continuation on the human toxicity potential. Visually checked both selected PDF pages. Journal pp. 536;538; §§3.1–4.2, Figs. 3–6 and Table 2, and §5 opening. Visually checked the figures and table on journal pp.541–543. Journal pp. 540–543; §§6.1–6.2, matched emission-scenario score and benzo[a]pyrene example. Visually checked journal p.544. Journal pp. 544",
+          "checkedAt": "2026-11-09",
+          "readingId": "rd-kb88-rosenbaum-2008"
+        }
+      },
+      {
+        "id": "src-kb88-rosenbaum-2011",
+        "title": "USEtox human exposure and toxicity factors for comparative assessment of toxic emissions in life cycle analysis: sensitivity to key chemical properties",
+        "url": "https://link.springer.com/content/pdf/10.1007/s11367-011-0316-4.pdf",
+        "version": "Original publisher PDF, Int J Life Cycle Assess 16(8), 710–727, published online 13 July 2011. DOI 10.1007/s11367-011-0316-4.",
+        "publisher": "Springer-Verlag",
+        "accessedAt": "2026-11-09",
+        "accessStatus": "public-passages-inspected",
+        "rights": "© Springer-Verlag 2011. The publisher endpoint returned the full PDF without login or payment. RIVM separately lists a public article copy. No open redistribution license was verified. Only bibliographic details and authored annotations are registered.",
+        "preservation": "Only bibliographic metadata, authored paraphrases and selected locators are published. The original PDF remains with its rights holder; the acquired byte identity does not guarantee future availability or redistribution permission.",
+        "artifact": {
+          "mediaType": "application/pdf",
+          "sha256": "76d5c0f9f15e93fcff9efb56e824486ba8396cc00a335483188642f7eef55f79",
+          "resolvedUrl": "https://link.springer.com/content/pdf/10.1007/s11367-011-0316-4.pdf",
+          "pageCount": 18
+        },
+        "reading": {
+          "status": "selected-passages",
+          "scope": "Title, DOI, journal date and copyright imprint. Journal pp. 710; Abstract continuation, Conclusions. Journal pp. 711; §4 Conclusions exclusion paragraph and adjacent discussion, and §5 Recommendations and perspectives. Visually checked journal p.725. Journal pp. 725",
+          "checkedAt": "2026-11-09",
+          "readingId": "rd-kb88-rosenbaum-2011"
+        }
+      }
+    ]
+  },
+  "research": {
+    "readings": [
+      {
+        "id": "rd-usetox-2-documentation-v11",
+        "workId": "work-usetox-2-documentation-v11",
+        "title": "USEtox®2.0 Documentation(Version1.1)",
+        "version": "Formal citation2017; acquired mutable208-page carrier metadata created/modified2026-01-24 (+08:00); DOI10.11581/DTU:00000011",
+        "url": "https://usetox.org/sites/default/files/assets/USEtox_Documentation.pdf",
+        "accessedAt": "2026-11-04",
+        "readAt": "2026-11-04",
+        "readingStatus": "selected-passages",
+        "question": "How do this source’s indicators, model boundaries, temporal/spatial assumptions and value choices constrain interpretation?",
+        "argumentSummary": "USEtox文档把因子连接为归趋、暴露和效应，区分比较性毒性潜势与损害指标。箱式空间和长期平均假设限制局地预测；recommended/indicative是可靠性分类而非自动排除许可。文档新增功能表与局限章节存在可定位冲突，不能直接当成某一可执行发行版的能力表。",
+        "artifacts": [
+          {
+            "id": "art-usetox-2-documentation-v11-carrier-2026",
+            "mediaType": "application/pdf",
+            "sha256": "c84c5b1737bc821c7e251eb72bcad4fedbe292cdca6a0d880c3a00a701819116",
+            "resolvedUrl": "https://usetox.org/sites/default/files/assets/USEtox_Documentation.pdf",
+            "pageCount": 208
+          }
+        ],
+        "passages": [
+          {
+            "id": "psg-usetox-v11-identity-rights",
+            "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+            "locator": "Title/imprint and Preface",
+            "printedPages": "1;3–4",
+            "pdfIndices": [
+              0,
+              2,
+              3
+            ],
+            "topics": [
+              "model/document version",
+              "rights",
+              "factor flags"
+            ],
+            "limits": [
+              "Downloaded carrier creation/modification metadata is January 2026 while formal citation/imprint says2017 v1.1. File hash fixes the observed carrier; it does not prove a new scientific edition or original2017 bytes."
+            ]
+          },
+          {
+            "id": "psg-usetox-v11-pathways-units",
+            "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+            "locator": "Readers Guide Fig.1; §§2.1–2.2",
+            "printedPages": "11;20–23",
+            "pdfIndices": [
+              10,
+              19,
+              20,
+              21,
+              22
+            ],
+            "topics": [
+              "fate",
+              "exposure",
+              "effects",
+              "midpoint units",
+              "endpoint units",
+              "value choices"
+            ],
+            "limits": [
+              "Figure1 visually checked. CTUh cases and CTUe PAF-volume-time are comparative potential indicators. Equal treatment of cancer/non-cancer at midpoint and disease-severity conversion at endpoint are distinct conventions. They do not establish actual local cases or safety."
+            ]
+          },
+          {
+            "id": "psg-usetox-v11-space-time",
+            "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+            "locator": "§§2.3.1–2.3.5; §§11.2.1–11.2.2",
+            "printedPages": "23–27;173",
+            "pdfIndices": [
+              22,
+              23,
+              24,
+              25,
+              26,
+              172
+            ],
+            "topics": [
+              "well-mixed compartments",
+              "spatial scales",
+              "mass balance",
+              "long-term average",
+              "steady-state"
+            ],
+            "limits": [
+              "Generic nested boxes and long-term average transport/exposure assumptions do not recover site-specific peaks, seasonal episodes or actual individual risk. No runtime steady-state solution was independently reproduced."
+            ]
+          },
+          {
+            "id": "psg-usetox-v11-uncertainty-and-missing-input",
+            "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+            "locator": "§§2.4.1–2.5",
+            "printedPages": "27–28",
+            "pdfIndices": [
+              26,
+              27
+            ],
+            "topics": [
+              "model uncertainty",
+              "parameter uncertainty",
+              "linear response",
+              "missing toxicity data",
+              "matrix framework"
+            ],
+            "limits": [
+              "The manual lists zero human effect factor when toxicology information is absent among input uncertainties. This is a documented modeling convention/limitation, not evidence that the true effect is zero; actual database flags/workbook implementation were not checked. No equation reproduction claimed."
+            ]
+          },
+          {
+            "id": "psg-usetox-v11-factor-flags",
+            "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+            "locator": "§3.1.4; §3.3.2, including continuation items1–4",
+            "printedPages": "36–37;41–42",
+            "pdfIndices": [
+              35,
+              36,
+              40,
+              41
+            ],
+            "topics": [
+              "recommended/indicative",
+              "uncertainty",
+              "sensitivity",
+              "excluded emissions"
+            ],
+            "limits": [
+              "Keep the whole sequence: initial use of both classes; sensitivity when indicative factors dominate; possible exclusion if conclusions change requires explicit omission and interpretation caveat. Do not quote the absolute-sounding item1 while dropping item4. Numeric uncertainty guidance is author rough expert judgment, not a measured confidence interval verified here."
+            ]
+          },
+          {
+            "id": "psg-usetox-v11-comparative-scope",
+            "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+            "locator": "§11 introduction and §11.1; §§11.2.3–11.2.6; §§11.3–11.4.4",
+            "printedPages": "171–178",
+            "pdfIndices": [
+              170,
+              171,
+              172,
+              173,
+              174,
+              175,
+              176,
+              177
+            ],
+            "topics": [
+              "comparative impact assessment",
+              "risk boundary",
+              "chemical coverage",
+              "exposure",
+              "uncertainty"
+            ],
+            "limits": [
+              "Authors restrict applicability to comparative potentials rather than absolute local health/ecosystem estimates. Chapter11 carries statements that conflict with explicit2.0 update/indoor chapters; use the conflict passage before promoting any omission claim."
+            ]
+          },
+          {
+            "id": "psg-usetox-v11-feature-limit-conflict",
+            "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+            "locator": "§1.4 Table1; §7.1; §11.4.2",
+            "printedPages": "18–19;144;177",
+            "pdfIndices": [
+              17,
+              18,
+              143,
+              176
+            ],
+            "topics": [
+              "source-internal conflict",
+              "indoor inhalation",
+              "pesticide crop residues",
+              "release verification"
+            ],
+            "limits": [
+              "Table1 explicitly adds residential/occupational indoor exposure and pesticide-residue pathways, and §7.1 describes indoor module; §11.4.2 still lists indoor inhalation and direct pesticide residues among excluded pathways. Textual conflict observed; its cause and executable behavior unresolved. Do not silently repair the source or infer that either paragraph applies to every version."
+            ]
+          },
+          {
+            "id": "psg-kb88-usetox-v11-imprint-reinspection",
+            "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+            "locator": "2026-11-09 same-byte reacquisition and selected reinspection of title page and p.3 imprint. Visually verified the acquired p.3.",
+            "printedPages": "1;3",
+            "pdfIndices": [
+              0,
+              2
+            ],
+            "topics": [
+              "carrier identity",
+              "formal citation",
+              "rights"
+            ],
+            "limits": [
+              "The exact acquired PDF has formal citation Version 1.1 and © USEtox Team, 2017 on p.3. A conflicting web-index extraction was corrected against the rendered page.",
+              "The conditional acknowledgment provision is distinct from a software or database license. Embedded metadata 2026-01-24 (+08:00) is a carrier timestamp."
+            ]
+          },
+          {
+            "id": "psg-kb88-usetox-v11-version-scope",
+            "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+            "locator": "2026-11-09 same-byte selected reinspection of §6.1, especially its paragraph linking the 2011 article to the 1.01 human exposure model.",
+            "printedPages": "125",
+            "pdfIndices": [
+              124
+            ],
+            "topics": [
+              "1.01 exposure model",
+              "2.0 exposure additions",
+              "version and object scope"
+            ],
+            "limits": [
+              "The manual explicitly names the 2011 paper as documentation of the 1.01 human exposure model. It distinguishes the general exposure model, which remains otherwise unchanged, from the 2.0 indoor and crop-residue additions in chapter 7 and §6.5.",
+              "The description of reusing earlier text refers to the sections following §6.1. It is not a provenance notice for §11.4.2 or a release runtime qualification."
+            ]
+          },
+          {
+            "id": "psg-kb88-usetox-v11-crop-module",
+            "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+            "locator": "2026-11-09 same-byte selected reinspection of §§6.5–6.5.2, crop harvest and soil-transfer descriptions and p.143 run-matrix statement. Visually checked p.140.",
+            "printedPages": "140–143",
+            "pdfIndices": [
+              139,
+              140,
+              141,
+              142
+            ],
+            "topics": [
+              "organic pesticides",
+              "crop harvest residues",
+              "direct application",
+              "applied mass basis"
+            ],
+            "limits": [
+              "The module describes selected crops, pesticide classes, dissipation, application timing and transfer. It names the harvest, air/soil transfer and food-processing values used in the model run matrix.",
+              "The crop residue route concerns dietary exposure after application to selected crops. This passage does not establish coverage of all crops, routes or occupational handling, or a particular factor-table implementation."
+            ]
+          },
+          {
+            "id": "psg-kb88-usetox-v11-indoor-module",
+            "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+            "locator": "2026-11-09 same-byte selected reinspection of §7.1, §7.2 fate and default switches, §§7.3–7.4 exposure and parameterization, and §7.5 outputs. Visually checked p.149 and Figure 11.",
+            "printedPages": "144–145;148–150;152–153",
+            "pdfIndices": [
+              143,
+              144,
+              147,
+              148,
+              149,
+              151,
+              152
+            ],
+            "topics": [
+              "household and occupational indoor air",
+              "default assumptions",
+              "inhalation",
+              "scenario parameterization"
+            ],
+            "limits": [
+              "The manual describes separately parameterized indoor settings and inhalation under a well-mixed assumption. Air exchange remains in the default. Gas-phase degradation and surface removal are optional processes omitted from the official indoor factors described here.",
+              "The equation is qualified for VOCs versus higher uncertainty for SVOCs, with gaseous dermal uptake discussed as a sensitivity issue. These scenario descriptions do not recover individual or site-specific exposure."
+            ]
+          },
+          {
+            "id": "psg-kb88-usetox-v11-release-limit-reinspection",
+            "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+            "locator": "2026-11-09 same-byte selected reinspection of §1.4 and Table 1 alongside §11.4.2. Visually checked pp.19 and 177.",
+            "printedPages": "18–19;176–177",
+            "pdfIndices": [
+              17,
+              18,
+              175,
+              176
+            ],
+            "topics": [
+              "2.0x updates",
+              "1.01 baseline",
+              "indoor and crop pathway statements",
+              "unqualified exclusion wording"
+            ],
+            "limits": [
+              "Section 1.4 and Table 1 state that both routes were added from 1.01 to 2.0x. Section 11.4.2 lists both as exclusions without an earlier-version qualifier.",
+              "Comparison with the 2011 article and §6.1 clarifies the earlier model scope. The surviving inconsistent wording does not establish a software defect or a formally issued correction."
+            ]
+          },
+          {
+            "id": "psg-kb88-usetox-v11-pathway-units-reinspection",
+            "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+            "locator": "2026-11-09 main selected reinspection, §§2.1–2.2 and §§2.5–2.5.1. Text read directly from same-byte acquired PDF; image p125 separately confirms the human chain. Exact intake-pathway to intake-route aggregation on pp29–30 read before authoring.",
+            "printedPages": "20–22;28–30",
+            "pdfIndices": [
+              19,
+              20,
+              21,
+              27,
+              28,
+              29
+            ],
+            "topics": [
+              "substance and emission matching",
+              "factor and score units",
+              "human intake pathways and routes",
+              "matrix factor composition"
+            ],
+            "limits": [
+              "Dated selected reinspection; original access/read/appraisal events and old passages remain unchanged.",
+              "Source-bound interpretation only; no substance workbook, default factor-table audit, independent empirical validation or whole-work reading."
+            ]
+          },
+          {
+            "id": "psg-kb88-usetox-v11-comparative-use-reinspection",
+            "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+            "locator": "2026-11-09 main selected text reinspection, §§3.1.4,3.3.2 and11.1–11.2.6, retaining the complete four-item sequence across pp41–42.",
+            "printedPages": "36–37;41–42;171–174",
+            "pdfIndices": [
+              35,
+              36,
+              40,
+              41,
+              170,
+              171,
+              172,
+              173
+            ],
+            "topics": [
+              "factor reliability classes",
+              "conditional sensitivity and exclusion",
+              "comparative use",
+              "risk applicability boundary"
+            ],
+            "limits": [
+              "Dated selected reinspection; original access/read/appraisal events and old passages remain unchanged.",
+              "Source-bound interpretation only; no substance workbook, default factor-table audit, independent empirical validation or whole-work reading."
+            ]
+          },
+          {
+            "id": "psg-kb88-usetox-v11-boxes-reinspection",
+            "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+            "locator": "2026-11-09 main selected text reinspection, §§2.3.1–2.4.1 continuation; selected pages24–27. No independent runtime reproduction.",
+            "printedPages": "24–27",
+            "pdfIndices": [
+              23,
+              24,
+              25,
+              26
+            ],
+            "topics": [
+              "compartment scales",
+              "transport and mixing",
+              "model assumptions"
+            ],
+            "limits": [
+              "Dated selected reinspection; original access/read/appraisal events and old passages remain unchanged.",
+              "Source-bound interpretation only; no substance workbook, default factor-table audit, independent empirical validation or whole-work reading."
+            ]
+          }
+        ],
+        "appraisal": {
+          "basis": "OfficialUSEtox PDF downloaded unencrypted; title/imprint and selected framework/uncertainty/interpretation/limitations passages read; Fig.1/page11 and limitations/page177 visually inspected.",
+          "methodologicalScope": "Selected original method/developer documentation; source-bound interpretation, not independent scientific model validation or current normative authority.",
+          "independence": "Related model developers and shared toxicity data create dependence; two copies of the ReCiPe article are one artifact, not independent evidence.",
+          "limitations": [
+            "No full-document reading or numerical reproduction.",
+            "No model/workbook/database release was acquired or audited.",
+            "Internal feature/limitation inconsistency is observed; origin/runtime resolution remains open.",
+            "Mutable URL and2026carrier metadata do not establish edition history.",
+            "The acquired carrier retains a 2017 citation template but shows 2026 file metadata and current affiliations; it is not established to be byte- or content-identical to a 2017 archived original."
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        },
+        "rights": "Imprintp3 and official documentation landing page authorize reproduction with full source acknowledgment; formal citation Fantke(ed.)et al.2017USEtox2.0DocumentationVersion1.1. All trademark/other rights retained; no blanket dataset/software license inferred. This proposal publishes authored annotations/locators only.",
+        "unread": [
+          "Most fate/exposure/effect derivations, appendices and substance databases.",
+          "Current model release, spreadsheet formulae, factors and exact database behavior."
+        ],
+        "sourceKeys": []
+      },
+      {
+        "id": "rd-kb88-rosenbaum-2008",
+        "workId": "lit-m06",
+        "title": "USEtox—the UNEP-SETAC toxicity model: recommended characterisation factors for human toxicity and freshwater ecotoxicity in life cycle impact assessment",
+        "version": "Publisher-formatted journal article, Int J Life Cycle Assess 13(7), 532–546, published online 22 October 2008. DOI 10.1007/s11367-008-0038-4.",
+        "url": "https://www.lifecycleinitiative.org/wp-content/uploads/2012/12/USEtox-the-UNEP-SETAC-toxocity-model-recommended-characterisation-factors-for-human-toxicity-and-freshwater-ecotoxicity-in-life-cycle-impact-assessement.pdf",
+        "accessedAt": "2026-11-09",
+        "readAt": "2026-11-09",
+        "readingStatus": "selected-passages",
+        "question": "What do the original inter-model comparison and application guidance support about conditional comparative toxicity?",
+        "argumentSummary": "七种模型按可计算的环节参加，开发者用共同试验物质比较中间过程和因子，经研讨协调缩小模型分歧。模型间离差只说明所比条件下的结构和选择差异。按排放介质配对求和与优先追查贡献是比较用途，原例的计量标签需与原文的量纲定义对读。",
+        "artifacts": [
+          {
+            "id": "art-kb88-rosenbaum-2008-pdf",
+            "mediaType": "application/pdf",
+            "sha256": "02ce35cd100ea27364d3e17babefe1efc4c9740c394bbfe663033eef353aeaa7",
+            "resolvedUrl": "https://www.lifecycleinitiative.org/wp-content/uploads/2012/12/USEtox-the-UNEP-SETAC-toxocity-model-recommended-characterisation-factors-for-human-toxicity-and-freshwater-ecotoxicity-in-life-cycle-impact-assessement.pdf",
+            "pageCount": 15
+          }
+        ],
+        "passages": [
+          {
+            "id": "psg-kb88-rosenbaum-2008-identity",
+            "artifactId": "art-kb88-rosenbaum-2008-pdf",
+            "locator": "First page imprint and abstract continuation. Journal pages are aligned to the publisher range and the physical PDF sequence.",
+            "printedPages": "532–533",
+            "pdfIndices": [
+              0,
+              1
+            ],
+            "topics": [
+              "original work identity",
+              "workshop purpose",
+              "rights"
+            ],
+            "limits": [
+              "The title, DOI and copyright were read in the acquired PDF. The abstract is background and does not replace the body evidence."
+            ]
+          },
+          {
+            "id": "psg-kb88-rosenbaum-2008-model-comparison",
+            "artifactId": "art-kb88-rosenbaum-2008-pdf",
+            "locator": "§2.1 Expert workshops, Model comparison and Development principles.",
+            "printedPages": "534–535",
+            "pdfIndices": [
+              2,
+              3
+            ],
+            "topics": [
+              "comparison design",
+              "chemical domain",
+              "model harmonization",
+              "development principles"
+            ],
+            "limits": [
+              "The seven models participated where they could calculate outputs. The 45 test substances were non-dissociating and non-amphiphilic organics selected to cover varied properties.",
+              "Three workshops and intervening model adjustments addressed unintended differences in modeled fate, exposure, effects and factors. The resulting developer agreement concerns model structure and comparative practice within this exercise."
+            ]
+          },
+          {
+            "id": "psg-kb88-rosenbaum-2008-factor-units",
+            "artifactId": "art-kb88-rosenbaum-2008-pdf",
+            "locator": "§2.2 Eq. 1 and continuation on the human toxicity potential. Visually checked both selected PDF pages.",
+            "printedPages": "536;538",
+            "pdfIndices": [
+              4,
+              6
+            ],
+            "topics": [
+              "factor dimensions",
+              "emission compartment",
+              "population-level potential",
+              "cancer and non-cancer weighting"
+            ],
+            "limits": [
+              "The human characterization factor relates modeled potential cases to mass emitted. The paper uses CTUₕ as shorthand for the factor and explicitly defines cases per kg emitted.",
+              "The original combined human metric equally weights cancer and non-cancer. Its continental air scenarios are distinguished as urban and rural."
+            ]
+          },
+          {
+            "id": "psg-kb88-rosenbaum-2008-model-agreement",
+            "artifactId": "art-kb88-rosenbaum-2008-pdf",
+            "locator": "§§3.1–4.2, Figs. 3–6 and Table 2, and §5 opening. Visually checked the figures and table on journal pp.541–543.",
+            "printedPages": "540–543",
+            "pdfIndices": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "topics": [
+              "human health comparison",
+              "freshwater ecotoxicity comparison",
+              "residual spread",
+              "uncertainty limits"
+            ],
+            "limits": [
+              "Figure 3 concerns continental rural-air emissions and human health. Figure 5 concerns freshwater emissions and aquatic ecotoxicity. Figures 4 and 6 compare model residual spread before and after harmonization.",
+              "The authors kept inputs fixed for the model comparison. Table 2 distinguishes indicators and emission scenarios and excludes parameter uncertainty. Model agreement measures shared-model disagreement, with no empirical validation or universal ranking/error guarantee established."
+            ]
+          },
+          {
+            "id": "psg-kb88-rosenbaum-2008-use-guidance",
+            "artifactId": "art-kb88-rosenbaum-2008-pdf",
+            "locator": "§§6.1–6.2, matched emission-scenario score and benzo[a]pyrene example. Visually checked journal p.544.",
+            "printedPages": "544",
+            "pdfIndices": [
+              12
+            ],
+            "topics": [
+              "matched emission compartments",
+              "functional unit",
+              "comparative prioritization",
+              "printed dimensional discrepancy"
+            ],
+            "limits": [
+              "The example matches the same substance to continental air and freshwater emission scenarios on one functional-unit basis. The article leaves that functional unit and the air subtype unspecified.",
+              "The example prints the factors with the CTUₕ shorthand and the final score with CTUₕ/kg. Following §2.2 dimensions cancels kg emitted and yields modeled potential cases per functional unit. This is an editorial dimensional interpretation. No formal erratum, versioned factor-table row or workbook calculation was verified.",
+              "The authors discuss screening and following up major contributions. The historical examples of contribution thresholds do not establish general decision thresholds."
+            ]
+          }
+        ],
+        "appraisal": {
+          "basis": "Publisher-formatted original PDF acquired from the Life Cycle Initiative public access listing. Selected passages read and Figs. 3–6, Table 2, §2.2 unit definitions and §6.1 worked expression visually inspected.",
+          "methodologicalScope": "Historical model development, shared-input inter-model comparison and author guidance on comparative use.",
+          "independence": "The participating developers compared and harmonized their models with shared inputs. Developer comparisons, the 2011 successor and the model manual belong to a related lineage.",
+          "limitations": [
+            "No complete article, electronic supplement or workbook reading is claimed.",
+            "Matched-emission guidance is used symbolically. The printed label discrepancy is retained and no numerical case is registered.",
+            "Model comparison is scoped to the represented substance properties, scenarios and assumptions. Parameter uncertainty, measured local impacts and later model releases are separate questions."
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-09"
+        },
+        "rights": "© Springer-Verlag 2008. The Life Cycle Initiative publicly lists the publisher-formatted copy under Public access Articles. Public access establishes selected reading access. No open redistribution license was verified. Only bibliographic details and authored annotations are registered.",
+        "unread": [
+          "Unselected methods and references.",
+          "Electronic supplements, factor tables, parameter files and executable implementation."
+        ],
+        "sourceKeys": []
+      },
+      {
+        "id": "rd-kb88-rosenbaum-2011",
+        "workId": "lit-kb88-rosenbaum-2011",
+        "title": "USEtox human exposure and toxicity factors for comparative assessment of toxic emissions in life cycle analysis: sensitivity to key chemical properties",
+        "version": "Original publisher PDF, Int J Life Cycle Assess 16(8), 710–727, published online 13 July 2011. DOI 10.1007/s11367-011-0316-4.",
+        "url": "https://link.springer.com/content/pdf/10.1007/s11367-011-0316-4.pdf",
+        "accessedAt": "2026-11-09",
+        "readAt": "2026-11-09",
+        "readingStatus": "selected-passages",
+        "question": "Which exclusions belong to the earlier human-exposure model and how does its description relate to the 2.0 documentation?",
+        "argumentSummary": "2011年论文把室内吸入与直接施用的农药残留列为未纳入路径，并把工业与住宅室内吸入列作开发中的扩展。2.0手册§6.1把这篇论文明确对应到1.01的人体暴露模型。",
+        "artifacts": [
+          {
+            "id": "art-kb88-rosenbaum-2011-pdf",
+            "mediaType": "application/pdf",
+            "sha256": "76d5c0f9f15e93fcff9efb56e824486ba8396cc00a335483188642f7eef55f79",
+            "resolvedUrl": "https://link.springer.com/content/pdf/10.1007/s11367-011-0316-4.pdf",
+            "pageCount": 18
+          }
+        ],
+        "passages": [
+          {
+            "id": "psg-kb88-rosenbaum-2011-identity",
+            "artifactId": "art-kb88-rosenbaum-2011-pdf",
+            "locator": "Title, DOI, journal date and copyright imprint.",
+            "printedPages": "710",
+            "pdfIndices": [
+              0
+            ],
+            "topics": [
+              "original work identity",
+              "publication date",
+              "rights"
+            ],
+            "limits": [
+              "Publisher PDF identity is distinct from the separate public RIVM copy. No RIVM byte hash was captured."
+            ]
+          },
+          {
+            "id": "psg-kb88-rosenbaum-2011-abstract",
+            "artifactId": "art-kb88-rosenbaum-2011-pdf",
+            "locator": "Abstract continuation, Conclusions.",
+            "printedPages": "711",
+            "pdfIndices": [
+              1
+            ],
+            "topics": [
+              "historical model scope",
+              "future exposure pathways"
+            ],
+            "limits": [
+              "The abstract places indoor inhalation, pesticide residues and dermal exposure among future additions. Its scope is historical."
+            ]
+          },
+          {
+            "id": "psg-kb88-rosenbaum-2011-historical-omissions",
+            "artifactId": "art-kb88-rosenbaum-2011-pdf",
+            "locator": "§4 Conclusions exclusion paragraph and adjacent discussion, and §5 Recommendations and perspectives. Visually checked journal p.725.",
+            "printedPages": "725",
+            "pdfIndices": [
+              15
+            ],
+            "topics": [
+              "indoor inhalation",
+              "directly applied pesticide residues",
+              "earlier exposure boundary",
+              "future indoor extension"
+            ],
+            "limits": [
+              "The exclusions include indoor inhalation and exposure to directly applied pesticide residues. The subsequent recommendation identifies indoor inhalation in homes and industry as an extension under development.",
+              "The exclusion wording and adjacent bioaccumulation and empirical-regression discussion closely match the later manual §11.4.2. This text comparison supports an inference of earlier wording carried forward. It does not identify the editorial decision or verify the implementation of any release."
+            ]
+          }
+        ],
+        "appraisal": {
+          "basis": "Read the specified original publisher-PDF passages and visually checked p.725. The article was independently listed on RIVM and matching passage text was visible via web extraction.",
+          "methodologicalScope": "Historical source comparison of the pre-2.0 exposure model and named limitations. No whole-article or equation-level validation.",
+          "independence": "Part of the same USEtox development lineage as the 2008 article and 2.0 manual. The RIVM copy represents the same work.",
+          "limitations": [
+            "Direct RIVM PDF acquisition timed out. Only the publisher PDF obtained without login is assigned the registered hash.",
+            "No official 2.0 documentation erratum, executable release, default table or scientific validation follows from the text comparison."
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-09"
+        },
+        "rights": "© Springer-Verlag 2011. The publisher endpoint returned the full PDF without login or payment. RIVM separately lists a public article copy. No open redistribution license was verified. Only bibliographic details and authored annotations are registered.",
+        "unread": [
+          "Unselected article pages, original model derivations and supplements.",
+          "Later version-specific implementation, factor tables and runtime."
+        ],
+        "sourceKeys": []
+      }
+    ],
+    "literature": [
+      {
+        "id": "lit-m06",
+        "title": "USEtox—the UNEP-SETAC toxicity model: recommended characterisation factors for human toxicity and freshwater ecotoxicity in life cycle impact assessment",
+        "contributors": "Rosenbaum et al.",
+        "year": "2008",
+        "kind": "method-article",
+        "goalSeedIds": [
+          "M06"
+        ],
+        "urls": [
+          {
+            "url": "https://link.springer.com/article/10.1007/s11367-008-0038-4",
+            "role": "出版商"
+          },
+          {
+            "url": "https://www.lifecycleinitiative.org/resources/articles/",
+            "role": "UNEP Life Cycle Initiative public access article listing"
+          },
+          {
+            "url": "https://www.lifecycleinitiative.org/wp-content/uploads/2012/12/USEtox-the-UNEP-SETAC-toxocity-model-recommended-characterisation-factors-for-human-toxicity-and-freshwater-ecotoxicity-in-life-cycle-impact-assessement.pdf",
+            "role": "publisher-formatted original PDF hosted by the Life Cycle Initiative"
+          }
+        ],
+        "identifiers": {
+          "doi": "10.1007/s11367-008-0038-4"
+        },
+        "volumes": [
+          "V5"
+        ],
+        "topics": [
+          "toxicity",
+          "characterization"
+        ],
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "international"
+        ],
+        "traditions": [
+          "UNEP-SETAC toxicity consensus"
+        ],
+        "discovery": {
+          "queryIds": [
+            "Q-SEED-IMPORT",
+            "q-kb88-usetox-2008-original"
+          ],
+          "reason": "Inherited candidate register §11 for V5 toxicity modelling, consensus formation and limits. The DOI search located the original through the Life Cycle Initiative public access listing. Selected reading is separately registered.",
+          "citationParents": [
+            "lit-com-17"
+          ]
+        },
+        "identityStatus": "verified",
+        "accessStatus": "public-fulltext-available",
+        "readingStatus": "not-close-read",
+        "accessedAt": "2026-11-03",
+        "lastCheckedAt": "2026-11-09",
+        "rights": "© Springer-Verlag 2008. The Life Cycle Initiative publicly lists the publisher-formatted copy under Public access Articles. Public access establishes selected reading access. No open redistribution license was verified. Only bibliographic details and authored annotations are registered.",
+        "limitations": [
+          "The 2026-11-03 seed inspection covered author list, abstract and references. The publisher article HTML displayed a subscription preview again on 2026-11-09. The Life Cycle Initiative publicly hosted the original PDF that day, with selected inspection recorded in rd-kb88-rosenbaum-2008.",
+          "Historical metadata/abstract/partial-page check inherited from 2026-11-03; original search strings and a complete access log were not recorded in the seed register.",
+          "Volume/region/tradition tags are provisional editorial discovery strata, not evidence of intellectual origin, influence or coverage."
+        ],
+        "catalogSourceIds": []
+      },
+      {
+        "id": "lit-kb88-rosenbaum-2011",
+        "title": "USEtox human exposure and toxicity factors for comparative assessment of toxic emissions in life cycle analysis: sensitivity to key chemical properties",
+        "contributors": "Ralph K. Rosenbaum, Mark A. J. Huijbregts, Andrew D. Henderson, Manuele Margni, Thomas E. McKone, Dik van de Meent, Michael Z. Hauschild, Shanna Shaked, Ding Sheng Li, Lois S. Gold and Olivier Jolliet",
+        "year": "2011",
+        "kind": "method-article",
+        "goalSeedIds": [],
+        "urls": [
+          {
+            "url": "https://link.springer.com/article/10.1007/s11367-011-0316-4",
+            "role": "publisher article"
+          },
+          {
+            "url": "https://link.springer.com/content/pdf/10.1007/s11367-011-0316-4.pdf",
+            "role": "publisher PDF endpoint used for byte-fixed acquisition"
+          },
+          {
+            "url": "https://www.rivm.nl/documenten/article-usetox-human-exposure-and-toxicity-factors-for-comparative",
+            "role": "RIVM public article listing"
+          },
+          {
+            "url": "https://www.rivm.nl/sites/default/files/2018-11/USEtox%20human%20exposure%20and%20toxicity%20factors%20for%20comparative.pdf",
+            "role": "RIVM public PDF, inspected via web extraction for comparison only"
+          }
+        ],
+        "identifiers": {
+          "doi": "10.1007/s11367-011-0316-4"
+        },
+        "volumes": [
+          "V5"
+        ],
+        "topics": [
+          "toxicity",
+          "human exposure",
+          "historical pathway coverage"
+        ],
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "international"
+        ],
+        "traditions": [
+          "UNEP-SETAC toxicity consensus"
+        ],
+        "discovery": {
+          "queryIds": [
+            "q-kb88-usetox-2011-original",
+            "q-kb88-usetox-scope-erratum"
+          ],
+          "reason": "The manual §6.1 cites this work for the 1.01 human exposure model. Targeted discovery located the dated exclusion and indoor-extension passages for comparison with 2.0.",
+          "citationParents": [
+            "work-usetox-2-documentation-v11"
+          ]
+        },
+        "identityStatus": "verified",
+        "accessStatus": "public-fulltext-available",
+        "readingStatus": "not-close-read",
+        "accessedAt": "2026-11-09",
+        "lastCheckedAt": "2026-11-09",
+        "rights": "© Springer-Verlag 2011. The publisher endpoint returned the full PDF without login or payment. RIVM separately lists a public article copy. No open redistribution license was verified. Only bibliographic details and authored annotations are registered.",
+        "limitations": [
+          "Separate selected reading rd-kb88-rosenbaum-2011 binds the publisher PDF. The RIVM PDF returned selected text through the web service but direct file acquisition timed out, so the publisher hash is not assigned to the RIVM carrier.",
+          "The historical exclusion statement does not specify the coverage of USEtox 2.0 or a later release."
+        ],
+        "catalogSourceIds": []
+      },
+      {
+        "id": "work-usetox-2-documentation-v11",
+        "title": "USEtox®2.0 Documentation(Version1.1)",
+        "contributors": "Peter Fantke (editor); Marian Bijster; Cécile Guignard; Michael Hauschild; Mark Huijbregts; Olivier Jolliet; Anna Kounina; Violaine Magaud; Manuele Margni; Tom McKone; Leo Posthuma; Ralph K. Rosenbaum; Dik van de Meent; Rosalie van Zelm (contributing authors)",
+        "year": "2017 formal citation; observed carrier2026 metadata",
+        "kind": "method-documentation",
+        "goalSeedIds": [],
+        "urls": [
+          {
+            "url": "https://usetox.org/sites/default/files/assets/USEtox_Documentation.pdf",
+            "role": "official documentation carrier"
+          },
+          {
+            "url": "https://usetox.org/model/documentation",
+            "role": "official identity/rights page"
+          }
+        ],
+        "identifiers": {
+          "doi": "10.11581/DTU:00000011",
+          "isbn": "978-87-998335-0-4"
+        },
+        "volumes": [
+          "V5",
+          "V8"
+        ],
+        "topics": [
+          "fate/exposure/effect",
+          "toxicity",
+          "comparative scope",
+          "uncertainty",
+          "version conflicts"
+        ],
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "international"
+        ],
+        "traditions": [
+          "LCIA method developer documentation"
+        ],
+        "discovery": {
+          "queryIds": [
+            "q-lcia-usetox-doc-2026-11-04"
+          ],
+          "reason": "Distinct work from lit-m06Rosenbaum2008 method article; original model manual inspected rather than treating portal metadata as model evidence.",
+          "citationParents": []
+        },
+        "identityStatus": "verified",
+        "accessStatus": "public-fulltext-available",
+        "readingStatus": "not-close-read",
+        "accessedAt": "2026-11-04",
+        "lastCheckedAt": "2026-11-04",
+        "rights": "See specific selected-reading carrier/rights record; no third-party relicense inferred.",
+        "limitations": [
+          "Work identity distinct from similarly named model releases, reports, factor packages and software implementations.",
+          "Actual selected reading is recorded separately as rd-usetox-2-documentation-v11; acquisition or overlapping passages do not establish full-work reading."
+        ],
+        "catalogSourceIds": [
+          "src-book-usetox-2-documentation-v11"
+        ]
+      }
+    ],
+    "gaps": [
+      {
+        "id": "gap-lcia-usetox-internal-scope-conflict",
+        "description": "Partial documentary resolution on 2026-11-09. USEtox 2.0 v1.1 §6.1 explicitly identifies the 2011 article with the 1.01 human-exposure model and distinguishes the 2.0 indoor and crop additions. The v1.1 exclusion wording closely tracks the 2011 paper. The same carrier still has an unqualified §11.4.2 exclusion. Official erratum, author intent and workbook coverage remain unresolved.",
+        "affectedUnits": [
+          "V5",
+          "V7",
+          "V8"
+        ],
+        "nextAction": "Keep the located inclusion and exclusion evidence. Reopen the residual gap on an identified official erratum or an exact lawful model, database and factor release relevant to the intended scenario. The checked public 2.12–2.14 release notes did not identify this wording correction. The 2.0 and 2.14 archives redirected to login, and the standalone older support manual returned HTTP 404. No runtime audit or exhaustive erratum search was completed."
+      }
+    ],
+    "revisions": [
+      {
+        "id": "rev-kb88-rosenbaum-original-selected-reading",
+        "before": "Manual unread field: Original Rosenbaum2008 article full text remains unacquired; its abstract is not substituted for this manual. The M06 discovery record had abstract-or-excerpt access based on the 2026-11-03 author-list, abstract and references inspection.",
+        "after": "On 2026-11-09 the Life Cycle Initiative public copy enabled selected body reading of the 2008 comparison, model-agreement limits and matched-emission guidance. A separate selected 2011 original reading records the earlier exclusions. The stale 2008 access item is removed from the manual unread list. Its original access, reading and appraisal dates and original seven passages are preserved.",
+        "reasoning": "A public original PDF resolves the 2008 access gap for the selected material. The publisher article route still showed a subscription preview. The acquired 2011 carrier is publisher PDF, while direct byte acquisition from the public RIVM route timed out. Original comparison evidence supports conditional prioritization. The example’s printed unit discrepancy is recorded separately from any numerical case or formal erratum.",
+        "status": "Selected original readings and editorial dimensional check recorded. Supplements, complete reading and version-specific implementation remain outside scope.",
+        "triggerPassageIds": [
+          "psg-kb88-rosenbaum-2008-identity",
+          "psg-kb88-rosenbaum-2008-model-comparison",
+          "psg-kb88-rosenbaum-2008-model-agreement",
+          "psg-kb88-rosenbaum-2008-factor-units",
+          "psg-kb88-rosenbaum-2008-use-guidance",
+          "psg-kb88-rosenbaum-2011-historical-omissions"
+        ],
+        "affectedUnits": [
+          "B19",
+          "C27",
+          "V5"
+        ]
+      },
+      {
+        "id": "rev-kb88-usetox-documentary-scope",
+        "before": "USEtoxv1.1pp19/144 add indoor/crop residue features whilep177lists these among exclusions. Check official errata and exact executable/model/database release; trace original feature papers. Keep both located statements until resolved.",
+        "after": "On 2026-11-09 the same official 208-page PDF was reacquired. Added selected reading events for the title and imprint, 1.01/2.0 scope, the added crop and indoor modules, and the update/limitations comparison. The manual wording and the 2011 exclusion remain separately attributable.",
+        "reasoning": "The manual links the 2011 work to 1.01 and explicitly documents two additions to 2.0. The close earlier wording supports a carry-forward inference. The manual does not say why the later limitations paragraph retained the wording. The positive module evidence qualifies the old exclusion without validating current default output.",
+        "status": "Partial documentary resolution. The precise editorial history, official erratum and runtime coverage remain unverified.",
+        "triggerPassageIds": [
+          "psg-usetox-v11-feature-limit-conflict",
+          "psg-kb88-rosenbaum-2011-historical-omissions",
+          "psg-kb88-usetox-v11-imprint-reinspection",
+          "psg-kb88-usetox-v11-version-scope",
+          "psg-kb88-usetox-v11-crop-module",
+          "psg-kb88-usetox-v11-indoor-module",
+          "psg-kb88-usetox-v11-release-limit-reinspection"
+        ],
+        "affectedUnits": [
+          "B19",
+          "C27",
+          "V5",
+          "V7",
+          "V8"
+        ]
+      },
+      {
+        "id": "rev-kb88-main-pathway-reinspection",
+        "before": "Original manual reading and prior source investigation retain their own dates, passages and bounds.",
+        "after": "2026-11-09 main reread the listed pathway, intake aggregation, unit, factor-guidance and applicability pages from the same-byte acquired carrier; new passage events support actual authoring. Main additionally inspected p3 and p125 images and Rosenbaum2008 p544 image; these are separate from the source investigator’s broader visual checks.",
+        "reasoning": "The manuscript requires exact intake pathway/route and conditional use distinctions, beyond a generic three-factor description.",
+        "status": "selected-source reinspection; candidate source/reader and publication acceptance remains pending",
+        "affectedUnits": [
+          "V5-03",
+          "V8"
+        ],
+        "level": "R1",
+        "triggerPassageIds": [
+          "psg-kb88-usetox-v11-pathway-units-reinspection",
+          "psg-kb88-usetox-v11-comparative-use-reinspection",
+          "psg-kb88-usetox-v11-boxes-reinspection"
+        ]
+      }
+    ],
+    "queries": [
+      {
+        "id": "q-kb88-usetox-2008-original",
+        "query": "\"10.1007/s11367-008-0038-4\" pdf full text Rosenbaum",
+        "date": "2026-11-09",
+        "channel": "public-web-search"
+      },
+      {
+        "id": "q-kb88-usetox-2011-original",
+        "query": "\"10.1007/s11367-011-0316-4\" filetype:pdf Rosenbaum USEtox human exposure",
+        "date": "2026-11-09",
+        "channel": "public-web-search"
+      },
+      {
+        "id": "q-kb88-usetox-scope-erratum",
+        "query": "site:usetox.org \"11.4.2\" \"excluded\" \"indoor\" correction documentation",
+        "date": "2026-11-09",
+        "channel": "public-web-search"
+      }
+    ]
+  },
+  "b32Consumers": [
+    {
+      "id": "cl-connect-zero-needs-origin",
+      "rationale": "The renewed missing-data paragraph retains the documented missing-toxicology human effect-factor zero and distinguishes it from exclusion or low supported effect. The unchanged B32 consumer still names that human convention among distinct zero meanings, without inferring missing magnitude or verified substance/workbook behavior. Original evidence and premise identities remain unchanged."
+    },
+    {
+      "id": "cl-connect-proxy-and-outcome",
+      "rationale": "The renewed pathway and indicator paragraphs retain the separation between modeled fate/exposure/effect potentials and observed local outcomes. Added route detail does not make a social proxy equivalent to the toxicity model or transfer validation to a site. The unchanged consumer preserves these two distinct inference boundaries and its exact source/premise identities."
+    }
+  ],
+  "reviewEvidence": [
+    {
+      "kind": "independent-source-v2-and-public-registry",
+      "reportSha256": "6f678a241864decc3782541fe1e088933c1c96e754f0131192bc43267e34574e",
+      "receiptSha256": "2129261a152c497c6ab2dbee891866f2f9783a9f13082604bed6c10911cc7a15"
+    },
+    {
+      "kind": "independent-final-three-paragraph-source-check",
+      "reportSha256": "15b279c0a6bb7cde74e9582ce00f272a4e37f7653e0172103eb802fdcde01faf",
+      "receiptSha256": "7bff9de103dcb42d9345d10a8f063dec8d4133bd9fef3732c711685836ccc4e8"
+    },
+    {
+      "kind": "local-app-continuous-reader-and-final-delta",
+      "reportSha256": "55fe8273d58c91cb687f3755b5ad6268a647cd62241812bb3fe6bb7c1ce79983",
+      "receiptSha256": "41f75b01480dd2bf6ca74b3eb943ef8400f9c5644b7e5cc4c49e984b7d4ba3e6"
+    },
+    {
+      "kind": "independent-engineering-final-guard-and-private-export",
+      "reportSha256": "e0300daf47daf1033d8a00bced0708a93d12c701b49b5c3dcc26f1eb30d35f3b",
+      "receiptSha256": "3bb8b1e21625e0b7c9f969350c50e4f342b74be207938ddd7f0fb1874f9d5387"
+    }
+  ]
+}

@@ -510,6 +510,9 @@ function validateRenderedDataApplicability(document, path, catalog, accepted, in
   return errors;
 }
 export {
+  concealedText,
+  qualifyHeadingCopyButtons,
+  trustedFrameworkSvg,
   assertDataApplicabilityAccepted,
   assertDataApplicabilityHeadingOriginal,
   assertDataApplicabilityOriginal,

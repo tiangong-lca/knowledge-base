@@ -16,11 +16,33 @@ checkPaths:
   - "scripts/**"
   - "package.json"
   - ".github/**"
-lastReviewedAt: 2026-11-09
-lastReviewedCommit: c919f1ffc9f61cafa7860880337c87406d624295
+lastReviewedAt: 2026-11-10
+lastReviewedCommit: 6e9b5b88e50c2606535bbc5da4fda695bd1f8eb8
 ---
 
 # Publication architecture
+
+## Toxicity pathway publication
+
+`scripts/reader-toxicity-pathways.mjs` binds the single shared C27/B19 source to
+its reviewed twelve-paragraph, three-section manuscript. The immutable c919
+inventory retains the original six propositions, seven evidence records, manual
+identity, eighteen numerical inputs and original citation scopes. A separately
+pinned acceptance binds current records and selected research additions, including
+the exact gap, three revision events and three search queries. Unrelated register
+growth remains possible; B25 protects its relevant work instead of freezing the
+entire literature inventory.
+
+Three actual captured print headings supplement the 4,146 earlier obligations.
+Old six-note groups and two-note sections keep their dated source identity and
+exact destinations. Runtime, export and actual-output checks share the qualified
+map while separately checking text, annotation meaning, numbers and native
+controls. Output admission rejects altered ordered-list ordinals, duplicate note
+lists, missing copy controls and wrong heading self-links. The three changed B32
+premises require a separate toxicity acceptance and two explicit consumer
+judgments; earlier climate/data acceptance and original closures remain unchanged.
+An engineering fixture cannot admit a pending production record or supply source,
+reader, empirical or hosted-publication approval.
 
 ## Original CML examples
 

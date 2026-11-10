@@ -11,6 +11,7 @@ import { publicResearch } from "./research.mjs";
 import { citationHref, citationSourceHref } from "./reader-citations.mjs";
 import { createChapterNotePlan, createChapterAnnotationPlan, createChapterReferenceIndex, printUnitAnchor, splitReferenceTail } from "./reader-book.mjs";
 import { assertDataApplicabilityOriginal, assertDataApplicabilityHeadingOriginal, assertDataApplicabilityRegistration, assertDataApplicabilityAccepted, inspectDataApplicabilitySource, validateDataApplicabilityCoverage, dataApplicabilityKey as key, dataApplicabilityManuscript as manuscript, dataApplicabilityRoutes as routes, dataApplicabilityTitles as titles, dataApplicabilityDigest as digest, dataApplicabilityOriginalEntries, dataApplicabilityHeadingEntries, remapDataApplicabilityCitations, validateRenderedDataApplicability, dataApplicabilityBookHref } from "./reader-data-applicability.mjs";
+import { toxicityPathwaysDigest, toxicityPathwaysHeadingEntries } from './reader-toxicity-pathways.mjs';
 import { assertClosingSynthesisCurrentAccepted, closingSynthesisDigest, validateClosingSynthesisCoverage, closingSynthesisManuscript, closingSynthesisRoutes, closingSynthesisSections } from "./reader-closing-synthesis.mjs";
 const json = async (path) => JSON.parse(await readFile(new URL(`../${path}.json`, import.meta.url), "utf8"));
 const [original,captured,edition,catalog,literature,readings,pending] = await Promise.all(["config/data-applicability-original","config/data-applicability-heading-original","config/book-edition","knowledge/catalog","knowledge/research/literature-map","knowledge/research/readings","config/data-applicability-accepted"].map(json));
@@ -125,6 +126,10 @@ test("complete production history composition preserves all4140 earlier addresse
     if (!affected.has(address)) assert.deepEqual(entry, beforeClimate.get(address));
   }
   assert.equal(current2.filter((row) => !beforeClimate.has(row.path + "#" + row.id)).length, 6);
+  const toxicityOriginal = await cfg("toxicity-pathways-original");
+  assert.equal(toxicityPathwaysDigest(current2), toxicityOriginal.publication.history.existingGlobalEntriesDigest);
+  const withToxicityHeadings = [...current2, ...toxicityPathwaysHeadingEntries()];
+  assert.equal(new Set(withToxicityHeadings.map(row => row.path + "#" + row.id)).size, 4149);
 });
 
 test("all18 public teaching inputs and immutable case bindings retain their original byte identity",async()=>{
@@ -147,9 +152,24 @@ test("new evidence cannot drift coherently in catalog and rendered notes outside
  const changed=structuredClone(accepted);changed.scientificClosure.evidence.find(row=>row.id===original.scientificClosure.evidence[0].id).locator+="changed";assert.throws(()=>assertDataApplicabilityAccepted(changed,digest(changed)),/unchanged originals/);
 });
 
-test("all unrelated original/acceptance registries, immutable figure and literature inventory retain frozen bytes",async()=>{
- const mutable=new Set(["config/book-edition.json","config/reader-numbering.json","config/closing-synthesis-current-accepted.json"]),frozen=Object.entries(original.frozenFileHashes).filter(([path])=>(path.startsWith("config/")&&!mutable.has(path))||path==="public/book-figures/climate-response-and-integral.svg"||path==="knowledge/research/literature-map.json");
+test("unrelated original/acceptance registries and the climate figure retain frozen bytes",async()=>{
+ const mutable=new Set(["config/book-edition.json","config/reader-numbering.json","config/closing-synthesis-current-accepted.json"]),frozen=Object.entries(original.frozenFileHashes).filter(([path])=>(path.startsWith("config/")&&!mutable.has(path))||path==="public/book-figures/climate-response-and-integral.svg");
  for(const [path,hash] of frozen)assert.equal(createHash("sha256").update(await readFile(new URL(`../${path}`,import.meta.url))).digest("hex"),hash,path);
+});
+
+test("B25 retains its exact c919 source, selected reading and work records when the research register grows",()=>{
+ const [source]=original.scientificClosure.sources;
+ const actualSources=catalog.sources.filter(row=>row.id===source.id);
+ assert.deepEqual(actualSources,[source]);
+ const matches=readings.readings.filter(row=>row.id===source.reading.readingId);
+ assert.equal(matches.length,1);
+ const [reading]=matches, works=literature.records.filter(row=>row.id===reading.workId||row.workId===reading.workId);
+ assert.equal(works.length,1);
+ assert.deepEqual(works[0].catalogSourceIds,[source.id]);
+ const digest=row=>createHash("sha256").update(JSON.stringify(row)).digest("hex");
+ // Independent record digests taken from the immutable c919 research registers.
+ assert.equal(digest(reading),"d41d418efe6972185cf74c7e9a8cac006e77e64daee6f6d93144a7fec0640063");
+ assert.equal(digest(works[0]),"382669cc14440bd2b96295ffff21b0cf94a89656cd3e0b77df1ceee539fa0056");
 });
 
 // Reuse the repository's actual nested ChapterProse component; Paragraph retains
