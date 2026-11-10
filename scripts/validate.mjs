@@ -1,3 +1,4 @@
+import { pmSelectionCasePaths, validatePmSelectionCaseBytes, validatePmSelectionCoverage } from './reader-pm-selection.mjs';
 import { validateToxicityPathwaysCoverage } from './reader-toxicity-pathways.mjs';
 import { assertDataApplicabilityOriginal, assertDataApplicabilityHeadingOriginal, validateDataApplicabilityCoverage } from './reader-data-applicability.mjs';
 import { assertClimateAssemblyOriginal, assertClimateAssemblyHeadingOriginal, validateClimateAssemblyArtifactBytes, validateClimateAssemblyCoverage } from './reader-climate-assembly.mjs';
@@ -107,6 +108,7 @@ export async function validateRepository(root) {
     const dataAccepted = await readOptional('config/data-applicability-accepted.json');
     const climateAccepted = await readOptional('config/climate-assembly-accepted.json');
     const toxicityAccepted = await readOptional('config/toxicity-pathways-accepted.json');
+    const pmAccepted = await readOptional('config/pm-selection-accepted.json');
     const [closingHistory,closingProse] = await Promise.all(['heading-history','prose-accepted'].map(name=>readOptional(`config/closing-synthesis-${name}.json`)));
     const [jointOriginal,jointHeadings,jointProse] = await Promise.all(['original','heading-history','prose-accepted'].map(name=>readOptional(`config/joint-production-${name}.json`)));
     const [wallOriginal,wallHeadings,wallAccepted] = await Promise.all(['original','heading-history','accepted'].map(name=>readOptional(`config/wall-selection-${name}.json`)));
@@ -119,6 +121,9 @@ export async function validateRepository(root) {
       sources.set(route,await readFile(file,'utf8'));
     }
     try {
+      errors.push(...validatePmSelectionCoverage(edition, sources, data, pmAccepted, undefined, { readings, literature }));
+      const pmCaseBytes = Object.fromEntries(await Promise.all(pmSelectionCasePaths.map(async path => [path, await readFile(resolve(root, path))])));
+      errors.push(...validatePmSelectionCaseBytes(pmCaseBytes));
       assertDataApplicabilityOriginal(); assertDataApplicabilityHeadingOriginal();
       errors.push(...validateDataApplicabilityCoverage(edition,sources,data,dataAccepted));
       assertClimateAssemblyOriginal(); assertClimateAssemblyHeadingOriginal();

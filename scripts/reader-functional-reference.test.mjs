@@ -44,7 +44,7 @@ test('B06 source and actual eight-heading capture are independently pinned', () 
 });
 
 test('exact C08+S03 consumption conserves all other sources in the current 39-unit mixed roster', () => {
-  assert.equal(currentEditionKeys(edition, available, baseline, placements).length, 39);
+  assert.equal(currentEditionKeys(edition, available, baseline, placements).length, 40);
   for (const mutate of [
     copy => copy.units = copy.units.filter(unit => unit.key !== route),
     copy => copy.units.find(unit => unit.key === route).coverage = [],

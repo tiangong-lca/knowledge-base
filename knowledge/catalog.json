@@ -17697,10 +17697,10 @@
         "methodologicalScope": "历史健康效应与表征方法的选段核读；覆盖原文选择、汇总和已发布因子的算术。",
         "independence": "ACS CPS-II、Humbert摄入比例和GBD2010严重度是分别输入的来源；表征因子继承这些证据及其限制。",
         "limitations": [
-          "图表和正文比较的是两条模型估算路径；相同健康因子下实质是摄入比较，县域排放受体可在县外。"
+          "图表和正文比较两条模型估算路径；逐县采用共同健康推导，实质主要检验吸入估计。县源所影响的受体可在县外；不能把所有县误读为统一套用WHO默认78。"
         ],
         "reviewKind": "agent-source-check",
-        "checkedAt": "2026-11-05"
+        "checkedAt": "2026-11-10"
       }
     },
     {
@@ -25588,6 +25588,46 @@
         ],
         "reviewKind": "agent-source-check",
         "checkedAt": "2026-11-09"
+      }
+    },
+    {
+      "id": "ev-kb90-glam-pm2024-aus-matched-scenario",
+      "sourceId": "src-kb46-glam-pm2024",
+      "readingId": "rd-kb46-glam-pm2024",
+      "passageId": "psg-kb90-glam-pm2024-aus-matched-scenario",
+      "locator": "GLAM V1.0.2024.10 PM成员；lciamethods_CF!A1:R1、A1299:R1299、A1347:R1347、A1395:R1395及lciamethods_CF_GLAM!A1:V1、A883:V883、A888:V888。",
+      "summary": "澳大利亚初级PM₂.₅的原始近地面平均因子在Urban与Rural行不同；匹配表中标为城市和非城市近地面的两个particles (PM2.5)行均采用Average，情景均为Unspecified，且给出相同因子。该例中，保留清单类别标签没有保留原始情景间的因子差异。",
+      "relation": "supports",
+      "appraisal": {
+        "basis": "从SHA256为ed1e2e4a33e6a3f62682ed66a827e2d9ef7c22be2bd93e187fae0a0030e99ecf的官方ZIP解出SHA256为86ff3e060ac78b0c6ed57f0d1d07328dae937fd8362789079a41b62fdfc3c99b的PM成员。2026-11-10直接核原始OOXML和字段。原始AUS/Ground_level/Average/Original的Urban E1347为2.0560412767302999E-4，Rural E1395为7.9809452058889692E-6，Unspecified E1299为8.3537521437087702E-6。匹配AUS行883与888的M列分别是Emissions to non-urban air close to ground及Emissions to urban air close to ground，G列均为8.3537999999999995E-6，P–U均为Average、Unspecified、Matched、Clear matching、Matching assumed、Damage level。所列数值单位均为DALY/kg。",
+        "methodologicalScope": "比较该版本原始与匹配两表中限定的AUS近地面PM₂.₅条目，核对清单类别、情景字段和所交付因子。",
+        "independence": "两个工作表属于同一官方发布成员，反映发布物内部不同处理层次。不是两套模型或两组独立经验观测。",
+        "limitations": [
+          "只核验选定行。匹配数值与原始Unspecified行的舍入一致不能证明生成算法或实际软件调用行为。",
+          "不能据此推断所有流、地点、源高、软件版本或其他发布的匹配关系，也不能估计特定排放点的影响。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-10"
+      }
+    },
+    {
+      "id": "ev-kb90-fantke2017-current-carrier",
+      "sourceId": "src-kb46-fantke2017",
+      "readingId": "rd-kb46-fantke2017",
+      "passageId": "psg-kb90-fantke2017-selected-reinspection",
+      "locator": "2017年期刊正式版，DTU Orbit 13页载体（封面所列下载日期2026-11-10）；期刊pp9089–9098，图1、表1、式(1)、p9096图3／表3、p9097效应连接及p9098覆盖限制。",
+      "summary": "同一2017原刊版本的新取得DTU载体说明城乡室内外四区室耦合、传输与吸入，以及与健康效应连接的相容约定。城市室外源估算采用近地初级颗粒资料；高架源和二次颗粒仍需扩展。",
+      "relation": "supports",
+      "appraisal": {
+        "basis": "新取得13页DTU载体SHA256 19f9b0863249baab13058ed011774683f06802e561afb9a1d1d73ffe5a176007，按指定期刊页与图表复核；旧载体及旧阅读事件不变。",
+        "methodologicalScope": "2017原刊指定模型结构、初级颗粒覆盖及暴露／效应连接。",
+        "independence": "同一作品的另一取得载体，不是独立研究或独立经验确认。",
+        "limitations": [
+          "载体有新封面日期和不同字节；没有旧文件逐字节比较，不能归因全部差异。",
+          "未读取独立补充材料、底层数据或执行模型；文献说明不证明软件实现。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-10"
       }
     }
   ],
@@ -44469,7 +44509,7 @@
     },
     {
       "id": "cl-pm-opening",
-      "text": "一千克颗粒物排入空气，怎样进入生命周期评价中的健康损害？排放后留在空气中的质量、某些人吸入的质量，以及模型所估计的健康损失，是这条路径上的不同量。排放发生在哪里、离人群多远、经过哪些转化，以及采用哪种健康响应，都会参与它们之间的连接。先把这些连接说清，才知道一个“每千克”的因子究竟把什么接到了什么。",
+      "text": "清单里的一千克排放，还不是一千克被人吸入的颗粒，也不是一份已经发生的健康损失。要把排放变成健康表征，须先追踪它怎样形成或携带颗粒、怎样与人群接触，再说明健康研究如何把暴露接到疾病和损害。这里先沿两项明确相接的历史方法走完一条计算，再回到这条连接的证据和适用条件。",
       "kind": "interpretation",
       "scope": "同样一千克，路径从哪里开始中的具名方法与证据范围",
       "evidenceIds": [
@@ -44497,7 +44537,7 @@
       "caveats": [],
       "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
       "status": "reviewed",
-      "reviewedAt": "2026-11-05",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     },
     {
@@ -44538,7 +44578,7 @@
     },
     {
       "id": "cl-pm-precursor-denominator",
-      "text": "在前体路径中，排出的SO₂、NOₓ或NH₃可以参与硫酸铵、硝酸铵等颗粒的形成，随后被吸入的却是颗粒物。因此，“每千克SO₂排放对应多少PM₂.₅吸入”同时保留了两种物质身份。此前体吸入比例已经合并了形成、传输与被人群吸入的过程，不能再把它当作只计算形成后的吸入份额而重复乘一次形成率。形成率还受温度和共存前体等环境条件影响；仅凭一种前体的化学式，不能推出它在任意地点都会形成相同的颗粒质量。",
+      "text": "这条链也可以从一种气体排放开始。SO₂、NOₓ和NH₃参与二次细颗粒的形成，之后被吸入的是颗粒物，所以前体iF同时保留“排出了哪种气体”和“吸入了哪种颗粒”的质量身份。Humbert表中的此前体比例已包含形成、传输和吸入，不能再重复乘一次形成率。形成又受温度和共存前体等条件影响，化学式本身并不给出适用于所有地点的颗粒产率。",
       "kind": "interpretation",
       "scope": "同样一千克，路径从哪里开始中的具名方法与证据范围",
       "evidenceIds": [
@@ -44567,12 +44607,12 @@
       "caveats": [],
       "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
       "status": "reviewed",
-      "reviewedAt": "2026-11-05",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     },
     {
       "id": "cl-pm-intake-definition",
-      "text": "吸入比例（inhalation intake fraction，iF；也译作摄入比例，此处仅指吸入）以人群最终吸入的颗粒质量除以源排放的质量。Humbert的定义先取这项排放造成的增量浓度，再乘各人的呼吸量，并沿人群和时间汇集。这里需要的是可归于该源的浓度贡献，不能把当地原本就有的全部颗粒浓度都归给新加入的一项排放。吸入也还没有表示颗粒在肺内的沉积或身体吸收。",
+      "text": "连接排放与人群的一个量是吸入比例（inhalation intake fraction，iF；也译作摄入比例，此处仅指吸入）：人群最终吸入的颗粒质量，除以源排放的质量。Humbert的定义从该源造成的增量浓度出发，乘各人的呼吸量，再沿人群和时间汇集。当地原本存在的全部颗粒浓度不能都归给这项排放；吸入量也还不是肺内沉积量或身体吸收量。",
       "kind": "interpretation",
       "scope": "从空气中的增量到人群吸入中的具名方法与证据范围",
       "evidenceIds": [
@@ -44593,7 +44633,7 @@
       "caveats": [],
       "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
       "status": "reviewed",
-      "reviewedAt": "2026-11-05",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     },
     {
@@ -44632,7 +44672,7 @@
     },
     {
       "id": "cl-pm-receptor-boundary",
-      "text": "这份合计吸入量可以分布在许多人、多个地点和一段时间之中。2011年城市原型把城区内的吸入与污染物移出城区后造成的更远吸入一起计算；“城市排放”描述源的位置，并没有把受影响的人群限制在同一城市。由此得到的人群合计吸入质量与排放质量之比，也没有告诉我们某一个人吸入了多少。",
+      "text": "这个比例把源与受体连接起来，却不把二者放在同一地点。2011年城市原型既计城区内的吸入，也计污染物移出城区后的更远吸入；“城市排放”说的是源的位置。合计的吸入质量可以分布在许多人、多个地点和一段时间里，尚不能据此说某个人吸入了多少。",
       "kind": "interpretation",
       "scope": "从空气中的增量到人群吸入中的具名方法与证据范围",
       "evidenceIds": [
@@ -44659,7 +44699,7 @@
       "caveats": [],
       "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
       "status": "reviewed",
-      "reviewedAt": "2026-11-05",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     },
     {
@@ -44820,7 +44860,7 @@
     },
     {
       "id": "cl-pm-cohort-design",
-      "text": "健康关系的证据起点又与扩散模型不同。Pope等2002年研究使用美国癌症协会的前瞻队列，随访入组成人的死亡情况。参与者按入组地址和三位邮政编码归入都会区，再分配该地区监测所得的空气污染均值；分析调整吸烟、职业、饮食等个体因素，并考察空间结构。这是一项把长期暴露差异与死亡联系起来的观察研究；分析使用的是地区监测均值，并非每个人的终身吸入质量。",
+      "text": "健康一侧的起点则是对人群的观察。Pope等2002年使用美国癌症协会前瞻队列，随访入组成人的死亡；按入组地址和三位邮政编码归入都会区，分配地区监测得到的污染均值，并调整吸烟、职业、饮食等因素及考察空间结构。它研究长期暴露差异与死亡的关联，地区监测均值并不是每位参与者的终身吸入质量。",
       "kind": "source-statement",
       "scope": "健康因子怎样从研究证据中形成中的具名方法与证据范围",
       "evidenceIds": [
@@ -44839,12 +44879,12 @@
       "caveats": [],
       "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
       "status": "reviewed",
-      "reviewedAt": "2026-11-05",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     },
     {
       "id": "cl-pm-cohort-association",
-      "text": "原研究的早期暴露分析把心肺与肺癌死亡分别联系到PM₂.₅浓度，并报告调整后的相对风险。论文另用早、晚两个时期的平均暴露绘制平滑响应关系，在观察范围内接近单调线性；这不是单独早期暴露列的同一分析。作者没有排除更高浓度下趋平或变陡的可能，也承认遗漏因素与入组后行为变化的限制。后续LCA所用的“每单位吸入质量对应多少效应”，是在这样的研究关系之上另作换算与迁移，不能把这两层证据合并成一次直接实验。",
+      "text": "原研究早期暴露分析分别报告PM₂.₅与心肺、肺癌死亡的调整后相对风险；用早晚两期平均暴露绘出的平滑响应，在观察范围内接近单调线性，却是另一项分析。作者没有排除更高浓度下趋平或变陡，也保留遗漏因素及入组后行为变化的限制。因此，后来的DALY/kg吸入量不能倒写成队列直接测出的量：从关联到效应因子，还要经过基线、呼吸量和严重度的换算。",
       "kind": "interpretation",
       "scope": "健康因子怎样从研究证据中形成中的具名方法与证据范围",
       "evidenceIds": [
@@ -44877,12 +44917,12 @@
       "caveats": [],
       "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
       "status": "reviewed",
-      "reviewedAt": "2026-11-05",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     },
     {
       "id": "cl-pm-effect-baseline",
-      "text": "Gronlund等2015年建立表征因子时，专门处理了这种迁移。他们采用与原风险研究年代和人群相近的美国死亡率及63个都会区的浓度、人口资料，再按年龄与死因组织响应。这63个地区是后续基线计算的口径，不应与Pope论文里因污染物和时期而不同的分析子集混为一谈。将结果按世界标准人口年龄分布加权，也没有把原来的美国队列和疾病资料变成各国独立调查。",
+      "text": "Gronlund为这项换算选择与原风险研究年代和人群相近的美国死亡率，以及63个都会区的浓度和人口，再按年龄与死因组织响应。这63个地区属于后续基线计算，不能与Pope因污染物和时期而异的分析子集合并。世界标准人口提供的是汇总用的年龄权重；它没有把原美国队列和疾病资料变成各国独立调查。",
       "kind": "interpretation",
       "scope": "健康因子怎样从研究证据中形成中的具名方法与证据范围",
       "evidenceIds": [
@@ -44915,12 +44955,12 @@
       "caveats": [],
       "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
       "status": "reviewed",
-      "reviewedAt": "2026-11-05",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     },
     {
       "id": "cl-pm-effect-definition",
-      "text": "在这个框架里，效应因子（effect factor）还包含两步：先把吸入量换成所研究的死亡响应，再乘以相应病例的严重度。作者采用的严重度是每例死亡对应的DALY，其中已按其代理假设计入疾病伤残损失，因而不同于只计死亡寿命损失的YLL/死亡，也不是单独的伤残权重。Gronlund采用高收入北美的疾病资料，并假定某病全部原因的DALY/死亡比可以代表该病中归于PM₂.₅的部分。在这组历史算例中，先把iF换成kg吸入PM₂.₅/kg原排放物，再乘以已含严重度的效应因子EF，得到表征因子CF：EF的分母是千克被吸入的PM₂.₅，CF的分母是千克所列原排放物。因子因此携带疾病分类、年龄、严重度与代理假设，并非仅由颗粒质量决定。",
+      "text": "接下来，Gronlund等2015年的效应因子（effect factor，EF）把单位吸入量对应的死亡响应，与每例死亡的严重度相乘。这里的严重度以DALY/死亡表示，已按作者的代理假设计入疾病伤残，既不是只计寿命损失的YLL/死亡，也不是单独的伤残权重。作者采用高收入北美疾病资料，并以某病全部原因的DALY/死亡比代表其中归于PM₂.₅的部分。因而，iF乘这个已含严重度的EF，才得到以原排放质量为分母的表征因子CF；疾病、年龄和代理假设都随乘法保留下来。",
       "kind": "interpretation",
       "scope": "健康因子怎样从研究证据中形成中的具名方法与证据范围",
       "evidenceIds": [
@@ -44946,7 +44986,7 @@
       "caveats": [],
       "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
       "status": "reviewed",
-      "reviewedAt": "2026-11-05",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     },
     {
@@ -45133,7 +45173,7 @@
     },
     {
       "id": "cl-pm-burden-check",
-      "text": "因子相乘能够核对单位和公布结果，接近现实还需要别的检验。Gronlund另从2005年美国排放清单和环境浓度分别估计人群吸入；排放途径的合计约为浓度途径的2.2倍。在同县比较时，一条途径按该县排放影响到的受体汇总，另一条按当地人群接触的浓度汇总，两者边界本来就不同。这个比较帮助发现吸入估计的一致性问题，却不能因为使用了同一健康因子就独立验证健康响应，更不是一次减排干预的实测结果。",
+      "text": "因子相乘能够核对单位和公布结果，接近现实还需要别的检验。Gronlund另从2005年美国排放清单和环境浓度分别估计人群吸入；排放途径的合计约为浓度途径的2.2倍。在同县比较时，一条途径按该县排放影响到的受体汇总，另一条按当地人群接触的浓度汇总，两者边界本来就不同。两途径共享健康响应和严重度的推导，比较主要暴露出吸入估计的一致性问题；它不独立验证健康响应，也不是一次减排干预的实测结果。",
       "kind": "interpretation",
       "scope": "把吸入量与健康损害接起来中的具名方法与证据范围",
       "evidenceIds": [
@@ -45154,12 +45194,12 @@
       "caveats": [],
       "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
       "status": "reviewed",
-      "reviewedAt": "2026-11-05",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     },
     {
       "id": "cl-pm-population-meaning",
-      "text": "所以，每千克排放对应的DALY应读作具名模型下的人群健康损失表征。它可以进入一项产品清单的加权计算，但不会指出某位受影响者，也不保证现实中恰好发生同样的病例或寿命损失。要估计特定地区的实际负担，还需相应的暴露分布、人群与疾病基线、参照状态及时间；从一张历史默认表换到这项现实判断，信息责任并没有消失。",
+      "text": "这样得到的、以DALY/kg排放物表示的表征因子，可以与产品清单中相应的排放量逐项相乘并汇总，得到所选模型所覆盖路径的潜在健康负担及各项贡献。它既不指出某一受影响者，也不保证现实恰好出现同数值的病例或寿命损失。若要估计某地实际负担，须另有相应暴露分布、人群、疾病基线、参照和时间，不能直接把历史默认表改称现场结果。",
       "kind": "synthesis",
       "scope": "把吸入量与健康损害接起来中的具名方法与证据范围",
       "evidenceIds": [
@@ -45188,17 +45228,18 @@
       "caveats": [],
       "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
       "status": "reviewed",
-      "reviewedAt": "2026-11-05",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     },
     {
       "id": "cl-pm-indoor-location",
-      "text": "排放在室外，并不意味着接触也发生在室外。Fantke等2017年将城乡各自的室内空气和室外空气连接起来，描述颗粒进入建筑、移出建筑、沉积或被吸入的过程。人在哪里活动、建筑怎样换气和过滤，会改变同一室外排放所对应的合计吸入；室内源排出的颗粒也可能离开建筑后继续形成暴露。",
+      "text": "暴露一侧同样需要与健康关系接合。室外排放的颗粒可以进入建筑，人在哪里活动、建筑怎样换气和过滤，都会改变合计吸入；室内排放也可能移到室外继续造成接触。Fantke等2017年把城乡的室内外空气连接为区室模型，分别追踪传输、沉积和吸入。把室内外合起来，增加的是实际暴露路径的表达，并非只替换一组因子数值。",
       "kind": "interpretation",
       "scope": "室内外不是两条彼此隔开的路中的具名方法与证据范围",
       "evidenceIds": [
         "ev-kb46-fantke2017-matrix",
-        "ev-kb46-fantke2017-compartments"
+        "ev-kb46-fantke2017-compartments",
+        "ev-kb90-fantke2017-current-carrier"
       ],
       "evidenceLinks": [
         {
@@ -45210,6 +45251,11 @@
           "evidenceId": "ev-kb46-fantke2017-compartments",
           "relation": "supports",
           "rationale": "排放场所与吸入场所的双向关系。"
+        },
+        {
+          "evidenceId": "ev-kb90-fantke2017-current-carrier",
+          "relation": "supports",
+          "rationale": "本轮同一原刊版本的新载体选段复核，直接支持四区室连接或城市室外近地初级颗粒覆盖；旧载体证据仍保留。"
         }
       ],
       "premiseIds": [
@@ -45220,7 +45266,7 @@
       "caveats": [],
       "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
       "status": "reviewed",
-      "reviewedAt": "2026-11-05",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     },
     {
@@ -45297,7 +45343,7 @@
     },
     {
       "id": "cl-pm-compatible-population",
-      "text": "人口口径也能改变中间量的含义。LC-IMPACT v1.0的颗粒物章在吸入环节使用30岁及以上的受体人口，效应环节再以浓度响应除以同一呼吸率；把两环相乘时，这个共同呼吸率可以相消。Gronlund默认因子的吸入分母却包含所有年龄。相消成立的前提是同一模型内部定义相容，不能据此拿任意现成的吸入比例和效应因子交叉配对；人口、疾病和严重度的条件仍然保留。该报告的EF只到每千克吸入对应的结局计数，此处实际采用的是心肺疾病与肺癌的死亡数，还需另乘每例死亡对应的损害；前面Gronlund的合并因子则已包含严重度，不能只按同一个缩写互换。",
+      "text": "相容还包括人口和效应终点。LC-IMPACT v1.0的颗粒物章在吸入环节采用30岁及以上人口，效应环节将浓度响应除以同一呼吸率；内部相乘时呼吸率可以消去。它所用EF到心肺疾病与肺癌死亡数，还要另乘每例死亡的损害。前面的Gronlund因子却以全龄吸入量作分母，并已含严重度。因此，符号相同或一个中间量能相消，都不足以许可从不同方法各取一半拼在一起。",
       "kind": "synthesis",
       "scope": "室内外不是两条彼此隔开的路中的具名方法与证据范围",
       "evidenceIds": [
@@ -45330,7 +45376,7 @@
       "caveats": [],
       "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
       "status": "reviewed",
-      "reviewedAt": "2026-11-05",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     },
     {
@@ -45367,12 +45413,13 @@
     },
     {
       "id": "cl-pm-exposure-coverage",
-      "text": "模型更新也有具体的覆盖方向。2017年的耦合研究处理初级PM₂.₅，并以城市地面排放资料为基础；高架源、二次无机颗粒与二次有机颗粒另需扩展。它改善室内外的连接，不等于已经替代2011年表中所有前体和高度条目。选择方法时，应把“增加了哪种路径”和“仍缺哪种路径”同时列明，而不是按年份把一个整表换成另一个。",
+      "text": "新模型的覆盖也须按增加的路径来理解。2017年的耦合研究处理初级PM₂.₅，其中城市室外源的估算以近地排放资料为基础；高架源、二次无机与二次有机颗粒仍需扩展。它说明怎样更完整地连接室内外，却没有替代2011年表中的全部前体和源高情景。使用者可以据此选择所需能力，而不能仅按年份把整表视为可互换。",
       "kind": "interpretation",
       "scope": "室内外不是两条彼此隔开的路中的具名方法与证据范围",
       "evidenceIds": [
         "ev-kb46-fantke2017-coverage",
-        "ev-kb46-humbert2011-intake-table"
+        "ev-kb46-humbert2011-intake-table",
+        "ev-kb90-fantke2017-current-carrier"
       ],
       "evidenceLinks": [
         {
@@ -45384,6 +45431,11 @@
           "evidenceId": "ev-kb46-humbert2011-intake-table",
           "relation": "context",
           "rationale": "历史框架的不同覆盖。"
+        },
+        {
+          "evidenceId": "ev-kb90-fantke2017-current-carrier",
+          "relation": "supports",
+          "rationale": "本轮同一原刊版本的新载体选段复核，直接支持四区室连接或城市室外近地初级颗粒覆盖；旧载体证据仍保留。"
         }
       ],
       "premiseIds": [
@@ -45394,12 +45446,12 @@
       "caveats": [],
       "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
       "status": "reviewed",
-      "reviewedAt": "2026-11-05",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     },
     {
       "id": "cl-pm-nonlinear-response",
-      "text": "健康响应不一定保持相同斜率。Fantke等2019年采用分年龄、分死因的整合暴露—响应模型（IER），把浓度与相对风险联系起来，再结合地区死亡率、严重度和吸入约定构造效应因子。其缺血性心脏病和卒中分支按25岁起的年龄组建模，另有成年慢阻肺、肺癌及幼儿急性下呼吸道感染，已经不沿用前例30岁以上心肺/肺癌的相同覆盖。在这样的非线性关系中，相同的吸入增量若发生在不同背景上，可以对应不同的模型健康变化；背景浓度之外，疾病基线和所用响应函数也参与结果。",
+      "text": "前面的历史计算采用固定EF。若健康关系是曲线，相同吸入增量在不同背景上便可能对应不同变化。Fantke等2019年以分年龄、分死因的整合暴露—响应模型（IER）构造效应因子，同时使用地区死亡率、严重度和吸入约定；其缺血性心脏病和卒中从25岁年龄组起，另含成年慢阻肺、肺癌及幼儿急性下呼吸道感染。这既改变响应的形式，也改变了历史心肺／肺癌算例的健康覆盖。",
       "kind": "interpretation",
       "scope": "平均与边际在比较哪两个状态中的具名方法与证据范围",
       "evidenceIds": [
@@ -45437,12 +45489,12 @@
       ],
       "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
       "status": "reviewed",
-      "reviewedAt": "2026-11-05",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     },
     {
       "id": "cl-pm-risk-reference",
-      "text": "这里至少要区分两个浓度：现有暴露是曲线的工作点，理论最低风险暴露则是该模型使用的反事实参照。后者不能凭名称被读成已经证明的生物学安全阈值，也不是空气质量法规限值。更换反事实参照，会改变“相对于什么计算负担”；更换工作点，则改变“从什么状态考察变化”。两者回答的问题不同。",
+      "text": "读这种曲线，先分清现有暴露与理论最低风险暴露。现有暴露是考察变化的工作点；理论最低风险暴露是模型计算可归因负担时的反事实参照，不能凭名称认作已经证明的生物安全阈值或法规限值。换参照是在改变“相对于什么计算”，换工作点是在改变“从哪里出发”。两个选择都能改变结果，但改变的是不同关系。",
       "kind": "interpretation",
       "scope": "平均与边际在比较哪两个状态中的具名方法与证据范围",
       "evidenceIds": [
@@ -45477,12 +45529,12 @@
       "caveats": [],
       "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
       "status": "reviewed",
-      "reviewedAt": "2026-11-05",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     },
     {
       "id": "cl-pm-slope-meaning",
-      "text": "固定同一人群与其他基线条件，边际效应考察工作点附近的一小步：模型健康负担增加多少，除以相应吸入量增加多少。平均效应则把反事实参照到工作点之间的负担差，除以这整个区间的吸入量差。前者接近曲线的局部斜率，后者是选定两端点之间的斜率。在同一条直线关系上，两者相同；曲线弯曲时，不能预设它们相同。共同的DALY/kg单位并不能消除端点选择。",
+      "text": "在同一人群、其余基线固定时，边际效应取工作点附近的一小步：健康负担增量除以相应吸入增量，接近局部斜率。平均效应则取反事实参照到工作点的整个区间，以负担差除以吸入量差，是连接两端的斜率。直线关系下二者相同，弯曲关系下未必如此；共同的DALY/kg吸入PM₂.₅单位并没有说明选了哪两个端点。",
       "kind": "interpretation",
       "scope": "平均与边际在比较哪两个状态中的具名方法与证据范围",
       "evidenceIds": [
@@ -45507,17 +45559,18 @@
       ],
       "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
       "status": "reviewed",
-      "reviewedAt": "2026-11-05",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     },
     {
       "id": "cl-pm-finite-change",
-      "text": "这一区别也限定了怎样使用因子。一个很大的暴露变化若跨过弯曲明显的区间，不能把起点的局部斜率一直乘到终点；而从反事实到现状的平均斜率，也不必等于任意两种实际政策情景之间的平均斜率。2019年论文据研究目的讨论把现有负担归于产品系统的归因视角，以及考察选择某方案后环境怎样改变的后果视角，但实际应用仍需说明所比较的两个状态。方法标签提供不了尚未给出的暴露差和人群条件。",
+      "text": "因此，暴露变化若跨过弯曲明显的区间，不能把起点的局部斜率一直乘到终点；从反事实到现状的平均斜率，也未必适用于实际情景A到B的区间。比较A与B，负担差和吸入量差都须对应这两个状态。2019年论文据目的讨论归因与后果视角，但名称不能代替端点定义。酸化与营养章中的局部／区间思想有相似的数学作用，其生态目标或其他参照仍须留在原来的响应系统里。",
       "kind": "synthesis",
       "scope": "平均与边际在比较哪两个状态中的具名方法与证据范围",
       "evidenceIds": [
         "ev-kb46-fantke2019-slope",
-        "ev-kb46-fantke2019-comparison"
+        "ev-kb46-fantke2019-comparison",
+        "ev-path-response"
       ],
       "evidenceLinks": [
         {
@@ -45529,17 +45582,23 @@
           "evidenceId": "ev-kb46-fantke2019-comparison",
           "relation": "supports",
           "rationale": "作者对变化幅度和使用视角的讨论。"
+        },
+        {
+          "evidenceId": "ev-path-response",
+          "relation": "context",
+          "rationale": "酸化与营养的平均／边际关系有自己的生态响应与参照；这里只建立有条件的数学联系，不将其参照转移到健康模型。"
         }
       ],
       "premiseIds": [
-        "cl-pm-slope-meaning"
+        "cl-pm-slope-meaning",
+        "cl-pm-slope-context"
       ],
       "conceptIds": [],
       "mappingIds": [],
       "caveats": [],
       "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
       "status": "reviewed",
-      "reviewedAt": "2026-11-05",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     },
     {
@@ -45582,7 +45641,7 @@
     },
     {
       "id": "cl-pm-ier-evidence",
-      "text": "曲线形状还取决于怎样整合经验资料。Burnett等2014年的IER把环境空气、家庭燃料烟、二手烟和主动吸烟的风险资料放入共同框架，借助吸入质量的等效换算扩展暴露范围，并作出等量颗粒毒性和暴露间无交互等假设。它不是把每一种暴露都直接观察成同一种环境空气浓度；高暴露端的形状和不确定性，应连同这种跨来源整合一起理解。",
+      "text": "曲线为何弯曲，又要回到资料如何组合。Burnett等2014年的IER将环境空气、家庭燃料烟、二手烟和主动吸烟的风险资料置于共同框架，借吸入质量换算扩展暴露范围，并假定相同吸入质量具有相同毒性、不同暴露之间无交互等。高暴露端并非处处都有相应环境空气的直接观察；响应形状连同跨来源换算，才是这项证据的实际含义。",
       "kind": "interpretation",
       "scope": "平均与边际在比较哪两个状态中的具名方法与证据范围",
       "evidenceIds": [
@@ -45609,12 +45668,12 @@
       "caveats": [],
       "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
       "status": "reviewed",
-      "reviewedAt": "2026-11-05",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     },
     {
       "id": "cl-pm-gemm-alternative",
-      "text": "2018年的GEMM改用室外空气长期队列，分别形成较广的非传染性疾病加下呼吸道感染模型，以及限定五种死因的模型。这减少了把吸烟和家庭燃料暴露搬到室外风险曲线的依赖，却仍需要反事实、曲线形式和高浓度资料的判断。它与IER还共享部分队列和作者，比较中也可以共用国家暴露及死亡资料。结果差异要同时检查响应形状和健康覆盖，不能简单称为两套完全独立实验对同一结论的投票。",
+      "text": "Burnett等2018年的GEMM改用室外空气长期队列，以非意外死亡拟合较宽的风险曲线，再用来估计成人非传染性疾病和下呼吸道感染负担，另为五种死因分别建模。它减少了从烟草和家庭燃料外推室外风险的依赖，仍需判断反事实、曲线形式和有限的高浓度资料。与IER比较时，部分队列、作者以及用于对照的国家暴露和死亡资料相互重叠；先对齐健康覆盖，才可能把差别归于响应表示，而不是把较多结局误算成较高风险。",
       "kind": "interpretation",
       "scope": "平均与边际在比较哪两个状态中的具名方法与证据范围",
       "evidenceIds": [
@@ -45653,12 +45712,12 @@
       "caveats": [],
       "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
       "status": "reviewed",
-      "reviewedAt": "2026-11-05",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     },
     {
       "id": "cl-pm-factor-correction",
-      "text": "实际取用数字，还须分清论文、补充表和勘误。2019年效应论文的正式勘误明确将修订表中的F:P列标为平均、R:AB列标为边际，纠正此前的列标签。这种错误不会因为两组数值都写着DALY/kg而自动暴露。版本、列的含义以及具体地点和情景，共同构成一个可使用的因子身份。",
+      "text": "实际取用数字，还须分清论文、补充表和勘误。Fantke等2019年效应论文的正式勘误明确将修订表中的F:P列标为平均、R:AB列标为边际，纠正此前的列标签。这种错误不会因为两组数值都写着DALY/kg吸入PM₂.₅而自动暴露。版本、列的含义以及具体地点和情景，共同构成一个可使用的因子身份。",
       "kind": "interpretation",
       "scope": "平均与边际在比较哪两个状态中的具名方法与证据范围",
       "evidenceIds": [
@@ -45693,7 +45752,7 @@
       "caveats": [],
       "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
       "status": "reviewed",
-      "reviewedAt": "2026-11-05",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     },
     {
@@ -45734,7 +45793,7 @@
     },
     {
       "id": "cl-pm-chemistry-background",
-      "text": "健康响应的非线性之外，前体怎样形成颗粒也有自己的状态依赖。Guo等2018年以荷兰Cabauw的气相和颗粒组分观测约束无机气溶胶平衡模型，再考察不同季节及其他场地条件。这里的观测帮助检验气粒分配，颗粒酸度等量仍由模型估计；它与直接给某排放源套用一个全球健康系数，证据对象并不相同。",
+      "text": "状态依赖还可能发生在健康响应之前。Guo等2018年用荷兰Cabauw的气相与颗粒组分观测约束无机气溶胶平衡模型，考察前体条件怎样改变气粒分配；颗粒酸度等量仍由模型估计。这里问的是无机离子有多少留在颗粒相，尚不是这些颗粒造成多少健康损失。",
       "kind": "interpretation",
       "scope": "形成过程也有自己的背景中的具名方法与证据范围",
       "evidenceIds": [
@@ -45761,12 +45820,12 @@
       "caveats": [],
       "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
       "status": "reviewed",
-      "reviewedAt": "2026-11-05",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     },
     {
       "id": "cl-pm-chemistry-perturbation",
-      "text": "在该研究的Cabauw年平均和冬季情景中，只降低环境总NHₓ（NH₃与NH₄⁺之和）、保持其他输入固定时，无机粒子离子质量在约70%的降低之前响应较弱；夏季和美国东北冬季的对应关系又不同。这里的百分比作用于平衡模型的环境输入，不能直接换写为“源排放NH₃减掉70%才有效”，输出也不是健康损失。它揭示的是有限变化可能跨越不同化学状态，不能无条件延长一个局部系数。",
+      "text": "在该研究的Cabauw年平均和冬季情景中，保持其他输入固定而降低环境总NHₓ时，无机粒子离子质量浓度在约70%降低之前响应较弱；夏季和美国东北冬季的关系又不同。这个百分比作用于环境NH₃与NH₄⁺的总量，不能改写成源排放NH₃减掉70%才有效。它说明有限变化可能跨越不同化学状态；把局部系数延长到整个变化区间，需要与这种气粒分配相称的依据。",
       "kind": "interpretation",
       "scope": "形成过程也有自己的背景中的具名方法与证据范围",
       "evidenceIds": [
@@ -45793,7 +45852,7 @@
       "caveats": [],
       "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
       "status": "reviewed",
-      "reviewedAt": "2026-11-05",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     },
     {
@@ -45872,7 +45931,7 @@
     },
     {
       "id": "cl-pm-concentration-route",
-      "text": "GLAM说明的室外实现还展示了另一种写法：先算每单位原排放速率在各受体格点造成的PM₂.₅浓度变化，再乘以每单位浓度变化对应的健康损失速率，并跨受体求和。这样也能得到DALY/kg原排放物，不必把“吸入质量”显式保留成一列中间结果。此时文中称为效应因子的量，已与前面“每千克吸入”的效应因子使用不同分母；要靠方程和单位识别，不能仅按EF这个缩写连接。",
+      "text": "实际采用因子时，先辨认它把哪一段关系算在里面。GLAM说明的室外方案先求每单位原排放速率造成的受体格点PM₂.₅浓度变化，再乘每单位浓度变化对应的健康损失速率；跨受体求和，并另加250千米以外的简化归趋与全球平均效应项，得到DALY/kg原排放物。吸入质量不必显式列作中间量；此处称为EF的量与“每千克吸入”的EF分母不同，须依方程和单位识别连接。",
       "kind": "interpretation",
       "scope": "方法说明与实际发行的因子中的具名方法与证据范围",
       "evidenceIds": [
@@ -45903,7 +45962,7 @@
       "caveats": [],
       "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
       "status": "reviewed",
-      "reviewedAt": "2026-11-05",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     },
     {
@@ -46041,7 +46100,7 @@
     },
     {
       "id": "cl-pm-matched-scope",
-      "text": "实际采用时，还要辨认拿到的是原始情景表，还是把清单流名称和类别映射到因子条目的软件流匹配表。这个工作簿的原始表含多种室外斜率和室内初级颗粒情景，而匹配表只保留室外平均法条目；已列指标均以健康损害表示。选择文件、工作表和流映射，实际选择了一部分方法能力，不能仅凭方法总说明推断所用软件已经提供全部路径和情景。",
+      "text": "发行表又会进一步限定可用能力。GLAM这份工作簿的原始表同时包含多种室外斜率与室内初级颗粒情景，软件流匹配表却只提供室外平均法，已列结果均是健康损害。选用某个流名、工作表和映射，实际选用了方法的一部分。模型说明中的能力，不能自动视为所用软件已经提供的因子。",
       "kind": "interpretation",
       "scope": "方法说明与实际发行的因子中的具名方法与证据范围",
       "evidenceIds": [
@@ -46071,12 +46130,12 @@
       "caveats": [],
       "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
       "status": "reviewed",
-      "reviewedAt": "2026-11-05",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     },
     {
       "id": "cl-pm-uncovered-pathways",
-      "text": "同样，PM₁₀清单与PM₂.₅因子不能仅凭粒级名称相近而直接互换。GLAM讨论先确定其中的PM₂.₅质量，必要时再用其具名的缺省分数；那是该方法的数据处理选择，并不是所有来源都具有同样粒径组成的自然定律。另有几种不同的边界：效应模型把不同颗粒组成按共同的质量响应处理，并非把这些组成从PM₂.₅质量中删去；部分二次有机形成路径未覆盖，一些健康结局也未纳入。共同处理、路径缺失和结局缺失需要分别识别。没有对应因子的一行清单，不能自动解释成没有影响。",
+      "text": "未覆盖的对象也必须随结果说明。PM₁₀不能仅凭粒级相近直接乘PM₂.₅因子；GLAM建议先确定其中PM₂.₅质量，难以确定时采用其具名缺省分数，这属于方法的数据处理选择。另要分开三件事：不同颗粒组成按共同质量响应处理，并未从质量里删掉这些组成；部分二次有机形成路径没有计算；某些健康结局没有纳入。共同处理、路径缺失和结局缺失，对结果的限制各不相同。清单有未适配因子的排放时，合计只代表已表征的部分，缺少因子不能读作没有影响。",
       "kind": "interpretation",
       "scope": "方法说明与实际发行的因子中的具名方法与证据范围",
       "evidenceIds": [
@@ -46110,12 +46169,12 @@
       "caveats": [],
       "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
       "status": "reviewed",
-      "reviewedAt": "2026-11-05",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     },
     {
       "id": "cl-pm-conclusion",
-      "text": "一项颗粒物结果因而有一条可以逐段追问的来路：排放的物质和位置决定形成与传输的问题，人群接触连接空气与吸入，健康研究与基线把暴露转成潜在负担，发行物又决定实际使用了哪些因子。把清单乘完，只完成了这些条件下的计算。若问题转向一项实际减排将改变谁的暴露、何时改变以及产生多少健康收益，就还需要相应的变化情景和因果证据；历史默认、局部复算或文件中的标签都不能代替它们。",
+      "text": "颗粒物表征把排放质量接到有受体、有健康关系的后果，也让结果差异有处可寻：来自排放分布、暴露连接、响应曲线，还是实际所用因子。对作为服务替代方案的产品比较，先说明共同服务，再对齐排放、受体、健康结局、参照与因子版本，才有条件解释所覆盖负担及其贡献。若问一次减排会给谁带来多少健康收益，还须建立变化情景和因果证据。下一章转向水，考察另一种清单量如何获得有参照的含义。",
       "kind": "synthesis",
       "scope": "一项表征结果能够回答到哪里中的具名方法与证据范围",
       "evidenceIds": [
@@ -46150,14 +46209,17 @@
         "cl-pm-population-meaning",
         "cl-pm-finite-change",
         "cl-pm-chemistry-model-check",
-        "cl-pm-uncovered-pathways"
+        "cl-pm-uncovered-pathways",
+        "cl-book-service-contract",
+        "cl-pm-precursor-health",
+        "cl-pm-matched-scenario"
       ],
       "conceptIds": [],
       "mappingIds": [],
       "caveats": [],
       "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
       "status": "reviewed",
-      "reviewedAt": "2026-11-05",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     },
     {
@@ -54405,6 +54467,242 @@
       "conceptIds": [],
       "status": "reviewed",
       "reviewedAt": "2026-11-09",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-pm-source-distribution",
+      "text": "同量排放的比较还须带上源的分布。Humbert表中，在每一种相同源高下，城市细颗粒的吸入比例都高于粗颗粒；分别按两类颗粒实际采用的来源份额混合后，次序却倒转了，因为粗颗粒更集中于近地排放。这个反例比较的是暴露及其权重，不能说明粗颗粒健康毒性更强，也不授权把美国来源份额当成所有产品的通用分布。",
+      "premiseIds": [
+        "cl-pm-source-height",
+        "cl-pm-mixture-inputs",
+        "cl-pm-mixture-results"
+      ],
+      "evidenceIds": [
+        "ev-kb46-humbert2011-intake-table",
+        "ev-kb46-humbert2011-height-weights",
+        "ev-kb46-humbert2011-model-lineage"
+      ],
+      "scope": "Humbert2011具名城市细／粗颗粒原型和来源份额的条件性比较",
+      "caveats": [
+        "源高因子本身依赖同一锚定关系；加权吻合是内部一致性，不是独立经验验证。"
+      ],
+      "kind": "synthesis",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb46-humbert2011-intake-table",
+          "relation": "supports",
+          "rationale": "表3同源高细／粗条目及脚注b明确列出混合后次序倒转。"
+        },
+        {
+          "evidenceId": "ev-kb46-humbert2011-height-weights",
+          "relation": "supports",
+          "rationale": "SI表S2给出两种排放的不同来源份额及道路扬尘、排除条件。"
+        },
+        {
+          "evidenceId": "ev-kb46-humbert2011-model-lineage",
+          "relation": "qualifies",
+          "rationale": "SI表S6–S7显示高度值的共同锚定与推导方向，回算不成为独立验证。"
+        }
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "reasoning": "从具名原始方法及既有受限定的前提形成章内解释；不同问题、资料共享和未知关系分别保留。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-10",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-pm-evidence-levels",
+      "text": "计算能够相接，并不表示两端已经由同一种证据验证。历史吸入比例来自协调过参数的模型和文献，统一列表仍保留不同来源和未覆盖的不确定性。Gronlund用排放清单与环境浓度另作对照时，两途径共享健康关系，且源与受体的汇总边界不同，差别主要检验吸入估计。对输入的协调、模型之间的接近和人群健康的独立观察，因而承担不同的证明责任。",
+      "premiseIds": [
+        "cl-pm-exposure-evidence",
+        "cl-pm-burden-check"
+      ],
+      "evidenceIds": [
+        "ev-kb46-humbert2011-model-lineage",
+        "ev-kb46-humbert2011-limitations",
+        "ev-kb46-gronlund2015-burden-comparison"
+      ],
+      "scope": "所选历史暴露模型协调与Gronlund2005美国负担途径比较的证据对象",
+      "caveats": [
+        "模型间比较与途径一致性不建立独立健康因果验证。"
+      ],
+      "kind": "synthesis",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb46-humbert2011-model-lineage",
+          "relation": "supports",
+          "rationale": "原文给出协调参数与不同模型来源，限定统一表格的证据性质。"
+        },
+        {
+          "evidenceId": "ev-kb46-humbert2011-limitations",
+          "relation": "qualifies",
+          "rationale": "模型间离散、地点差异和未覆盖不确定性分别说明。"
+        },
+        {
+          "evidenceId": "ev-kb46-gronlund2015-burden-comparison",
+          "relation": "supports",
+          "rationale": "两途径比较共享健康推导而源／受体汇总不同，不能独立验证健康响应。"
+        }
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "reasoning": "从具名原始方法及既有受限定的前提形成章内解释；不同问题、资料共享和未知关系分别保留。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-10",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-pm-regional-summary",
+      "text": "空间汇总也有自己的权重。GLAM室外方案按源位置与高度、受体和背景计算，再作区域平均；其所述空间均值未按人口密度或实际排放强度加权。它与响应曲线上从参照到工作点的平均、历史例按源高排放份额求的平均，是三个不同层次。国家、城市或乡村标签先限定源的分组，受体可以分布在多处；同一个国家名并不恢复一座实际烟囱或一个行业的排放分布。",
+      "premiseIds": [
+        "cl-pm-regional-factor",
+        "cl-pm-mixture-results",
+        "cl-pm-slope-meaning"
+      ],
+      "evidenceIds": [
+        "ev-kb46-glam2026-outdoor-equation",
+        "ev-kb46-glam2026-outdoor-scales",
+        "ev-kb46-humbert2011-height-weights"
+      ],
+      "scope": "GLAM所述室外区域汇总与本章另两种平均运算的区别",
+      "caveats": [
+        "空间汇总、健康响应平均和源高加权不因名称相同而成为同一操作。"
+      ],
+      "kind": "synthesis",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb46-glam2026-outdoor-equation",
+          "relation": "supports",
+          "rationale": "室外方程按发射位置及受体求和，保持两侧身份。"
+        },
+        {
+          "evidenceId": "ev-kb46-glam2026-outdoor-scales",
+          "relation": "supports",
+          "rationale": "空间均值、未施加的权重及平均／边际响应定义分别出现。"
+        },
+        {
+          "evidenceId": "ev-kb46-humbert2011-height-weights",
+          "relation": "context",
+          "rationale": "历史源高混合按排放质量份额加权，提供另一层平均的对照。"
+        }
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "reasoning": "从具名原始方法及既有受限定的前提形成章内解释；不同问题、资料共享和未知关系分别保留。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-10",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-pm-factor-order",
+      "text": "一份实际发行物还可以检验对名称的概括。在GLAM V1.0.2024.10原始表的澳大利亚近地初级PM₂.₅条目中，城市情景的平均值低于边际值，乡村情景却相反。四项数值都是已表征的损害，不能再乘历史例子的效应因子。这个有界对照足以排除“平均总大于边际”的说法，却不能只凭表中结果解释差异究竟由曲线、背景或空间汇总的哪一步造成。",
+      "premiseIds": [
+        "cl-pm-modern-values",
+        "cl-pm-modern-ratios"
+      ],
+      "evidenceIds": [
+        "ev-kb46-glam-pm2024-aus-ground-factors",
+        "ev-kb46-glam-pm2024-archive-member",
+        "ev-kb46-glam2026-outdoor-scales"
+      ],
+      "scope": "GLAM V1.0.2024.10四个具名AUS原始条目的定性次序比较",
+      "caveats": [
+        "仅此发行物、物质、源高、地域与情景；未据排序归因于某个未检验的生成步骤。"
+      ],
+      "kind": "synthesis",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb46-glam-pm2024-aus-ground-factors",
+          "relation": "supports",
+          "rationale": "四个指定原始行直接给出两种相反的平均／边际次序。"
+        },
+        {
+          "evidenceId": "ev-kb46-glam-pm2024-archive-member",
+          "relation": "supports",
+          "rationale": "核定2024.10官方ZIP中的PM工作簿身份。"
+        },
+        {
+          "evidenceId": "ev-kb46-glam2026-outdoor-scales",
+          "relation": "qualifies",
+          "rationale": "背景、响应和空间汇总共同进入因子，四值不能单独分解差异成因。"
+        }
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "reasoning": "从具名原始方法及既有受限定的前提形成章内解释；不同问题、资料共享和未知关系分别保留。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-10",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-pm-matched-scenario",
+      "text": "这种收窄可以在具体行中看到。原始表的澳大利亚近地PM₂.₅平均因子，Urban与Rural情景数值不同；匹配表中的城市和非城市近地particles (PM2.5)条目却给出相同因子，情景字段都写Unspecified。类别文字仍有城乡区别，原情景的数值差异却没有随之保留。因此，读者需要查到实际选中的条目；这个表内对照尚不能说明匹配算法怎样生成它们，也不等于检查过某个软件的运行结果。",
+      "premiseIds": [
+        "cl-pm-matched-scope",
+        "cl-pm-modern-values"
+      ],
+      "evidenceIds": [
+        "ev-kb90-glam-pm2024-aus-matched-scenario"
+      ],
+      "scope": "GLAM V1.0.2024.10 PM成员的指定AUS近地PM2.5原始／匹配行",
+      "caveats": [
+        "仅对应所列工作表和行；没有据数值一致推出生成算法、所有映射或软件运行等价。"
+      ],
+      "kind": "synthesis",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb90-glam-pm2024-aus-matched-scenario",
+          "relation": "supports",
+          "rationale": "指定原始Urban／Rural平均行不同；两个匹配近地类别同值且均为Unspecified，仅说明此表内结果。"
+        }
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "reasoning": "从具名原始方法及既有受限定的前提形成章内解释；不同问题、资料共享和未知关系分别保留。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-10",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-pm-version-and-model",
+      "text": "数值的名称与生成关系也要分别有据。另一个例子来自Fantke等2019年按千克吸入PM₂.₅计的效应因子：正式勘误改正了平均与边际的列标签；修订补充工作簿的操作式、列位说明与同城发布汇总之间，却仍有未闭合关系。已经更正查表标签，不等于重现了整条生成链。引用发布因子应保留版本和情景；解释操作模型时，则不能用文件里的一列结果替代对公式和输入的说明。",
+      "premiseIds": [
+        "cl-pm-factor-correction",
+        "cl-pm-implementation-layer"
+      ],
+      "evidenceIds": [
+        "ev-kb46-fantke2019-correction-columns",
+        "ev-kb46-fantke2019-correction-model-discrepancy",
+        "ev-kb46-fantke2019-slope"
+      ],
+      "scope": "Fantke2019正式列位更正与已登记操作／汇总差异的不同资格",
+      "caveats": [
+        "未判定差异原因、哪一结果应替代另一结果，或完整原生生成程序已重现。"
+      ],
+      "kind": "synthesis",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-kb46-fantke2019-correction-columns",
+          "relation": "supports",
+          "rationale": "正式勘误更正发布汇总列的平均／边际标签。"
+        },
+        {
+          "evidenceId": "ev-kb46-fantke2019-correction-model-discrepancy",
+          "relation": "supports",
+          "rationale": "实际操作式、列位说明及Geneve发布汇总保留未闭合关系。"
+        },
+        {
+          "evidenceId": "ev-kb46-fantke2019-slope",
+          "relation": "context",
+          "rationale": "主文斜率方程是另一明确的计算表达，不能由一个发布值替代。"
+        }
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "reasoning": "从具名原始方法及既有受限定的前提形成章内解释；不同问题、资料共享和未知关系分别保留。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-10",
       "reviewKind": "agent-source-check"
     }
   ],

@@ -8,10 +8,10 @@ import { assertNumberingToc, assertReaderNumbering, getContinuationLink, getHead
 const route = '/docs/book/service-and-reference';
 const html = (number='6.1',title='服务要求') => `<h2 data-reader-heading-key="服务要求"><a href="#服务要求"><span data-reader-number="">${number}</span> <span data-reader-heading-title="">${title}</span></a><button>复制章节链接</button></h2>`;
 
-test('current book retains 39 actual units, 32 chapters and all seven real part groups', () => {
+test('current book retains 40 actual units, 32 chapters and all seven real part groups', () => {
   const units=getPresentationUnits('book');
-  assert.equal(units.length,39);
-  assert.deepEqual(['front-matter','chapter','topic','appendix'].map(kind=>units.filter(unit=>unit.kind===kind).length),[2,32,2,3]);
+  assert.equal(units.length,40);
+  assert.deepEqual(['front-matter','chapter','topic','appendix'].map(kind=>units.filter(unit=>unit.kind===kind).length),[2,32,2,4]);
   assert.deepEqual([1,2,3,4,5,6,7].map(part=>units.filter(unit=>unit.part===part).length),[5,4,4,6,5,4,4]);
   assert.equal(getUnitNumbering('book',route).label,'第6章');
   assert.equal(getUnitNumbering('book','/docs/book/inventory-calculation').label,'第7章');
@@ -24,14 +24,15 @@ test('current book retains 39 actual units, 32 chapters and all seven real part 
   assert.equal(getUnitNumbering('book','/docs/appendices/container-energy-check').label,'附录 A');
   assert.equal(getUnitNumbering('book','/docs/appendices/cml-framework-calculations').label,'附录 B');
   assert.equal(getUnitNumbering('book','/docs/appendices/climate-numerical-reconstruction').label,'附录 C');
+  assert.equal(getUnitNumbering('book','/docs/appendices/particulate-factor-calculations').label,'附录 D');
   assert.equal(getUnitNumbering('book','/docs').label,null);
 });
 
 test('website numbering retains 37 fine pages and five independent topic entries',()=>{
   const web=getPresentationUnits('web');
-  assert.equal(web.length,47);
+  assert.equal(web.length,48);
   assert.equal(web.filter(unit=>unit.kind==='chapter').length,37);
-  assert.equal(new Set(web.map(unit=>unit.key)).size,47);
+  assert.equal(new Set(web.map(unit=>unit.key)).size,48);
   assert.equal(getUnitNumbering('web',route).label,'第7篇');
   assert.equal(getUnitNumbering('web','/docs/book/framework-history').label,'第4篇');
   assert.equal(getUnitNumbering('web','/docs/book/cml-computation-judgment-and-improvement').label,'第5篇');

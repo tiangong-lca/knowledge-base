@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-10
-lastReviewedCommit: bb12fa4bce7a68a3f5725f6ffa6a8a1ffe8c059c
+lastReviewedCommit: fa57408475e225c62dc5c23bbc36699dbf34ddc6
 ---
 
 # Publication architecture
@@ -329,9 +329,31 @@ Mixed retrieved carriers now expose the exact cited artifact link in annotations
 
 `config/pm-selection-original.json` records the clean bb12 manuscript, its
 scientific and reading closure, case-file identities and retained captured
-citation scopes before Issue90 authoring. It supplies immutable comparison
-evidence; no new renderer, migration or production acceptance is implied by
-this inventory. The existing case and citation guards continue to apply.
+citation scopes before Issue90 authoring. The separately pinned
+`pm-selection-accepted.json` admits37chapter and17appendix records, exact MDX
+block order, current scientific records and bounded research additions. The
+original48records,18case input/publication pairs and earlier acceptance files
+remain immutable. The Gronlund evidence successor is limited to the reviewed
+county-health qualification and check date; the new DTU carrier has its own
+identity and never replaces its earlier reading event.
+
+`reader-pm-selection.mjs` protects the shared chapter and fourth real appendix
+in runtime, source validation and actual output. The9captured bb12print headings
+extend4149prior obligations to4158. Original48-note groups and each old section
+retain ordered exact subsets, with native aliases or no-script destinations.
+Current edition/numbering registration adds only this appendix and the PM
+title/sections:40book units,48website units,32chapters and155formal chapter
+sections. The120-section goal and full-book publication remain incomplete.
+
+The current catalog gate compares both exact frozen external consumers and the
+published reverse premise/evidence/concept rosters. Unpublished drafts do not
+gain publication qualification, and a new published use requires an explicit
+reviewed disposition. Exact ordered-list and note attributes prevent `start`,
+`reversed`, `value` or list-style changes from silently changing visible note
+numbers while links still point to the correct records. Body, notes, native
+heading/copy controls and ordinary appendix links have separate output checks.
+These guards cannot establish source entailment, reader comprehension, actual
+hosting or empirical validity; those rely on their separately bound evidence.
 
 The static `particulate-health` adapter registers 30 fixed source tuples through
 the existing case publication interface and exact-rational evaluator. It

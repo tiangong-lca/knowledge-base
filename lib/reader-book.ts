@@ -1,3 +1,5 @@
+import pmAccepted from '@/config/pm-selection-accepted.json';
+import { pmSelectionAppendix, pmSelectionCitationLabel, pmSelectionHeadingEntries, pmSelectionRoute, remapPmSelectionCitations, validatePmSelectionCoverage } from '@/scripts/reader-pm-selection.mjs';
 import toxicityAccepted from '@/config/toxicity-pathways-accepted.json';
 import readings from '@/knowledge/research/readings.json';
 import literature from '@/knowledge/research/literature-map.json';
@@ -79,7 +81,8 @@ const historical = [...createLegacyCitationEntries(baseline, placements, history
     edition:{sourceCommit:headingHistory.sourceCommit,sourceDate:'2026-11-07'}}))];
 const earlierEntries: LegacyEntry[] = remapDataApplicabilityCitations(remapClimateAssemblyCitations(remapClosingSynthesisCitations(remapWallSelectionCitations(remapJointProductionCitations(remapHybridInventoryCitations(remapExchangeSemanticsCitations(remapProcessNetworkCitations(remapFunctionalReferenceCitations(remapCleanerProductionCitations(
   remapBookCitations([...historical, ...cleanerProductionHeadingEntries(cleanerHeadingHistory), ...functionalReferenceHeadingEntries(functionalHeadings), ...processNetworkHeadingEntries(processHeadings), ...exchangeSemanticsHeadingEntries(), ...hybridInventoryHeadingEntries(hybridHeadings), ...jointProductionHeadingEntries(jointHeadings), ...wallSelectionHeadingEntries(wallHeadings), ...closingSynthesisHeadingEntries(closingHistory), ...climateAssemblyHeadingEntries(), ...dataApplicabilityHeadingEntries()], edition, accepted, placements), cleanerAccepted, cleanerHeadingHistory), functionalAccepted, functionalHeadings), processAccepted, processHeadings)), hybridAccepted, hybridHeadings), jointOriginal, jointHeadings, jointProse), wallOriginal, wallHeadings, wallAccepted), closingHistory, closingProse), climateAccepted), dataAccepted);
-const legacyEntries = remapToxicityPathwaysCitations([...earlierEntries, ...toxicityPathwaysHeadingEntries()], toxicityAccepted);
+const toxicityEntries = remapToxicityPathwaysCitations([...earlierEntries, ...toxicityPathwaysHeadingEntries()], toxicityAccepted);
+const legacyEntries = remapPmSelectionCitations([...toxicityEntries, ...pmSelectionHeadingEntries()], pmAccepted);
 export function getLegacyCitations(route: string, print: boolean) {
   const path = print ? '/print' : route, aliases = new Map<string, LegacyEntry[]>(), notices: LegacyEntry[] = [], scopes = new Map<string, LegacyEntry>();
   for (const entry of legacyEntries) {
@@ -99,6 +102,8 @@ export const getChapterReferenceIndex = cache(async (print = false) => {
   const cleanerErrors = validateCleanerProductionCoverage(edition, new Map(rawPages.map(page => [page.url, page.raw])), cleanerAccepted, catalog);
   if (cleanerErrors.length) throw new Error(cleanerErrors.join('\n'));
   const rawSources = new Map(await Promise.all([...source.getPages(),...monographSource.getPages()].map(async page=>[page.url,await page.data.getText('raw')] as const)));
+  const pmErrors = validatePmSelectionCoverage(edition, rawSources, catalog, pmAccepted, undefined, { projection: 'public', readings, literature });
+  if (pmErrors.length) throw new Error(pmErrors.join('\n'));
   const dataErrors = validateDataApplicabilityCoverage(edition, rawSources, catalog, dataAccepted, undefined, 'public');
   if (dataErrors.length) throw new Error(dataErrors.join('\n'));
   const climateErrors = validateClimateAssemblyCoverage(edition, rawSources, catalog, climateAccepted, undefined, 'public');
@@ -126,6 +131,7 @@ export const getChapterReferenceIndex = cache(async (print = false) => {
   return createChapterReferenceIndex(rawPages.map(page => ({ ...page, raw: projectExchangeSemanticsRaw(page.url, page.raw, print) })), {print});
 });
 export async function getCitationLabel(target: Destination) {
+  if ([pmSelectionRoute, pmSelectionAppendix].includes(target.route)) return pmSelectionCitationLabel(target, pmAccepted);
   const print = target.path === '/print';
   if (target.kind === 'note') {
     const index = await getChapterReferenceIndex(print);

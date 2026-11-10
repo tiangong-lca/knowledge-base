@@ -10,9 +10,9 @@ const routeKey = value => typeof value === 'string' ? value.replace(/\/+$/, '') 
 const chinese = ['', '一', '二', '三', '四', '五', '六', '七'];
 // Main owns the independently reviewed current-edition pin, separate from immutable histories.
 /** @type {string|null} */
-export const readerNumberingDigest = "14ee05a052bfcbd165d9f4872cce4d6cd9a8e054459724b2b0c9ccdf81b0589e";
+export const readerNumberingDigest = "3fcb91154d373fc928e9dcfad898b82540b536b7734b03efdbe14910f5a77fbd";
 export function assertReaderNumbering(value = numbering, independentDigest = readerNumberingDigest) {
-  if (createHash('sha256').update(JSON.stringify(value)).digest('hex') !== independentDigest) throw new Error('Reader numbering differs from the independently pinned actual 39-unit/32-chapter/47-web-unit toxicity pathways heading and part inventory');
+  if (createHash('sha256').update(JSON.stringify(value)).digest('hex') !== independentDigest) throw new Error('Reader numbering differs from the independently pinned actual 40-unit/32-chapter/48-web-unit heading and part inventory');
 }
 export const readerNumberingManifest = numbering;
 export const readerParts = numbering.parts.map(part => ({ ...part, label: `第${chinese[part.number]}部` }));

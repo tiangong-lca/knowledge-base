@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-10
-lastReviewedCommit: bb12fa4bce7a68a3f5725f6ffa6a8a1ffe8c059c
+lastReviewedCommit: fa57408475e225c62dc5c23bbc36699dbf34ddc6
 ---
 
 # Publication contract
@@ -207,3 +207,13 @@ scope against its own immutable source or actual captured edition, preserve the
 original claim subset and expose its dated context at the native heading.
 Inherited citations are remapped by their actual destination identity; the source
 route alone cannot determine where a subsequently moved note belongs.
+
+The particulate chapter and its calculation appendix share canonical records.
+The complete original48propositions and10numerical templates remain present,
+with current six explanatory additions separately accepted. Exact old chapter,
+section and note scopes remain readable across the new destinations. The
+specific original/matched AUS comparison qualifies the stated rows and labels,
+not the mapping algorithm, a current package other than the named release, or
+software execution. A final source/reader/engineering acceptance binds the
+current scientific records and audit additions; real output, hosting and
+delivery still require their own evidence.

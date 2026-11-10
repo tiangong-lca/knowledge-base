@@ -159,7 +159,7 @@ test('both actual closing-consumer premises retain current hybrid title/numbers 
 
 test('production roster admission rejects coordinated B09 source and registration deletion in the current39-unit roster',()=>{
   const available=edition.units.flatMap(unit=>[unit.source,...unit.coverage??[]]);
-  assert.equal(currentEditionKeys(edition,available,baseline,placements).length,39);
+  assert.equal(currentEditionKeys(edition,available,baseline,placements).length,40);
   const deleted=structuredClone(edition);deleted.units=deleted.units.filter(unit=>unit.key!==route);
   assert.throws(()=>currentEditionKeys(deleted,available.filter(source=>source!==route),baseline,placements),/B09/);
   assert.throws(()=>currentEditionKeys(edition,available.filter(source=>source!==route),baseline,placements),/Missing book source/);
