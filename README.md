@@ -14,11 +14,20 @@ checkPaths:
   - "package.json"
   - "app/**"
   - "scripts/**"
-lastReviewedAt: 2026-11-09
-lastReviewedCommit: feb051601a63507f17a6ca6c881440b0d7adbb6c
+lastReviewedAt: 2026-11-10
+lastReviewedCommit: 6e9b5b88e50c2606535bbc5da4fda695bd1f8eb8
 ---
 
 # LCA Living Knowledge Base and Review
+
+[Toxicity pathways #88](https://github.com/tiangong-lca/knowledge-base/issues/88)
+uses one shared three-section, twelve-paragraph C27/B19 source. Its
+[protocol](_docs/editorial/2026-11-09-toxicity-pathways.md) separates original
+model comparison, selected version evidence and conditional use from independent
+reader and publication qualification. Original six-note scopes and three actual
+captured print headings are protected without changing numerical case inputs.
+The production gate requires a separately reviewed acceptance; source checking
+does not establish workbook execution or empirical validity.
 
 中文 LCA 动态知识库与研究评论：从问题起源、概念含义、方法选择到数据与软件表达，沿可核查的证据链阅读。已从四个语义样板专题进入全书研究和正文扩充；文献地图与选段阅读台账明确保留全球历史、标准与文献覆盖缺口。
 

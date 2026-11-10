@@ -1,0 +1,2338 @@
+{
+  "version": 1,
+  "status": "original-snapshot-not-final-acceptance",
+  "baseCommit": "c919f1ffc9f61cafa7860880337c87406d624295",
+  "baseTree": "ba23f937307450fa4dc205565e1699bd3c65419f",
+  "sourceFiles": {
+    "content/docs/book/usetox-pathways-and-boundaries.mdx": {
+      "sha256": "c163101e10fb42227bda7dfdae6f780454341e3b0c9a74b5750640ef662d4e9c",
+      "text": "---\ntitle: 化学物质怎样走到受体：USEtox的路径与边界\ndescription: 以USEtox2.0文档v1.1的归趋、暴露和效应链解释比较性潜势、因子分类与模型边界。\n---\n\n## 从环境介质到比较性毒性指标\n\n<Prose ids=\"cl-usetox-fate-exposure-effect cl-usetox-indicators-not-observed-cases\" />\n\n## 箱体、长期平均与缺失信息\n\n<Prose ids=\"cl-usetox-boxes-and-time cl-usetox-missing-data-model-zero\" />\n\n## 因子分类与文档中的能力冲突\n\n<Prose ids=\"cl-usetox-factor-flags-and-conditions cl-usetox-internal-feature-conflict\" />\n",
+      "title": "化学物质怎样走到受体：USEtox的路径与边界",
+      "description": "以USEtox2.0文档v1.1的归趋、暴露和效应链解释比较性潜势、因子分类与模型边界。"
+    }
+  },
+  "orderedClaimIds": [
+    "cl-usetox-fate-exposure-effect",
+    "cl-usetox-indicators-not-observed-cases",
+    "cl-usetox-boxes-and-time",
+    "cl-usetox-missing-data-model-zero",
+    "cl-usetox-factor-flags-and-conditions",
+    "cl-usetox-internal-feature-conflict"
+  ],
+  "sectionScopes": [
+    {
+      "title": "从环境介质到比较性毒性指标",
+      "explicitId": null,
+      "claimIds": [
+        "cl-usetox-fate-exposure-effect",
+        "cl-usetox-indicators-not-observed-cases"
+      ]
+    },
+    {
+      "title": "箱体、长期平均与缺失信息",
+      "explicitId": null,
+      "claimIds": [
+        "cl-usetox-boxes-and-time",
+        "cl-usetox-missing-data-model-zero"
+      ]
+    },
+    {
+      "title": "因子分类与文档中的能力冲突",
+      "explicitId": null,
+      "claimIds": [
+        "cl-usetox-factor-flags-and-conditions",
+        "cl-usetox-internal-feature-conflict"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "cl-usetox-fate-exposure-effect",
+      "text": "一种物质排入环境，不会只靠名称和质量直接变成毒性分数。USEtox2.0文档把路径拆为归趋、暴露和效应：归趋模型描述它在空气、水和土壤等介质中的迁移与转化；暴露模型连接介质与人群摄入或生态接触；效应模型再把摄入或浓度联系到相应指标。这个分解让“排了多少”与“谁可能怎样接触”保持区别。",
+      "kind": "source-statement",
+      "scope": "USEtox2.0 Documentation v1.1，所获208页载体的模型框架",
+      "evidenceIds": [
+        "ev-usetox-fate-exposure-effect"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-usetox-fate-exposure-effect",
+          "relation": "supports",
+          "rationale": "正文和Fig.1直接展示三类过程及相互连接；并未把介质浓度、摄入量和效应当作同一个量。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "路径框架不等于多数过程公式已被复现或验证。",
+        "文档正式引用 2017；文件的 2026 元数据不证明正文是新的方法版本。"
+      ],
+      "conceptIds": [
+        "cn-toxic-pathway"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-04",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-usetox-indicators-not-observed-cases",
+      "text": "毒性指标的单位仍须与用途一起读。文档在人类毒性中用累计疾病病例潜势表达中点，在淡水生态毒性中用潜在受影响物种比例的体积和时间积分表达中点，再经严重程度等关系转换到损害指标。这里的“病例”不是已经观察到某地点真实发生的人数；比较性模型给出的潜势不能直接替代对具体人群和地点的风险调查。",
+      "kind": "interpretation",
+      "scope": "USEtox2.0文档的指标定义与比较用途",
+      "evidenceIds": [
+        "ev-usetox-indicators-not-observed-cases",
+        "ev-usetox-comparative-applicability"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-usetox-indicators-not-observed-cases",
+          "relation": "supports",
+          "rationale": "§2.2给出单位和转换，Chapter11明确限制绝对定量估计；两者共同约束“病例”单位的解释。"
+        },
+        {
+          "evidenceId": "ev-usetox-comparative-applicability",
+          "relation": "supports",
+          "rationale": "适用性小节明确限制绝对估计；与指标定义共同支持对“病例”单位的有界解释。"
+        }
+      ],
+      "premiseIds": [
+        "cl-usetox-fate-exposure-effect"
+      ],
+      "caveats": [
+        "效应数据、严重程度因子与实际病例预测之间还有模型假设；没有校准现场风险。",
+        "不同保护对象和指标不能因都叫毒性而直接相加。"
+      ],
+      "reasoning": "模型输出由泛化介质/暴露/效应计算而来，且文档限制其绝对估计用途；因此单位有病例并不建立对特定现场病例的观测或预测证明。",
+      "conceptIds": [
+        "cn-toxic-pathway"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-04",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-usetox-boxes-and-time",
+      "text": "为了在大量排放之间保持可计算的比较，模型把环境概括为嵌套的箱体，并以质量平衡联系介质。文档同时说明，迁移模型面向月到年的长期尺度，暴露计算假设接触期间介质浓度保持稳定。这些条件有助于解释平均路径，却不会自行恢复短时峰值、季节事件或紧邻排放源的暴露细节。空间或时间信息越关键，越需要检查这种概括是否足够。",
+      "kind": "interpretation",
+      "scope": "USEtox2.0文档的空间结构和时间适用条件",
+      "evidenceIds": [
+        "ev-usetox-boxes-and-time"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-usetox-boxes-and-time",
+          "relation": "supports",
+          "rationale": "所读模型概念与适用性小节直接提供箱体、尺度和稳定浓度假设；正文没有把其推广到所有毒性模型。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "模型结构的说明不等于稳态、动态或现场表现已被验证。",
+        "室内与局地能力需要结合文档内部冲突及具体发行版确认。"
+      ],
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-04",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-usetox-missing-data-model-zero",
+      "text": "模型得到零，也需要知道这个零怎样产生。文档把缺少毒理信息时将人体效应因子置零列为输入不确定性来源之一，而不是无毒性已经得到证明。这样的约定可以改变所计算的合计，却不能填补知识缺口。报告结果时，已知效应低、缺少数据、尚未表征以及因计算约定置零，应当保留各自依据，避免让相同数值掩盖不同信息状态。",
+      "kind": "interpretation",
+      "scope": "该文档对缺失毒理输入的具体处理与结果解释",
+      "evidenceIds": [
+        "ev-usetox-missing-data-model-zero"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-usetox-missing-data-model-zero",
+          "relation": "supports",
+          "rationale": "§2.4.2直接列出这一置零问题；由其不确定性定位推导零不构成无效应证据，未声称审核了实际数据库。"
+        }
+      ],
+      "premiseIds": [
+        "cl-usetox-fate-exposure-effect"
+      ],
+      "caveats": [
+        "这里依据文档陈述，不提供具体化学物质、癌症或非癌症数据及工作簿实现的独立验证。",
+        "区分信息状态是解释建议，不是外部标准新增要求。"
+      ],
+      "reasoning": "缺少输入时的模型约定与对真实效应的经验确认不是同一证据过程；作者本身将其列为不确定性来源，因此数值零不能独立证明效应不存在。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-04",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-usetox-factor-flags-and-conditions",
+      "text": "recommended与indicative在这份指南中表达可靠性差异，不能直接翻成“有影响”与“可不计算”。完整建议先要求结合两类因子，再讨论指示因子主导时的敏感性检查；如果结论随处理改变，后续条款又保留有条件排除，并要求明确说明这些排放可能仍有显著贡献。只摘一句绝对措辞，或只保留排除选项，都会改变指南原有的条件关系。",
+      "kind": "source-statement",
+      "scope": "USEtox2.0文档§3.3.2完整建议序列",
+      "evidenceIds": [
+        "ev-usetox-factor-flags-and-conditions"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-usetox-factor-flags-and-conditions",
+          "relation": "supports",
+          "rationale": "证据覆盖建议跨页的四个项目，保留item1与item4之间的限定而非孤立引语。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "因子适用性和不确定性需要各自依据；粗略专家判断不等于计算得到的置信区间。",
+        "这些建议不能自动覆盖不同用途、方法或未来发行版本。"
+      ],
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-04",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-usetox-internal-feature-conflict",
+      "text": "即使来自同一官方文档，能力说明也可能需要对读。更新表把住宅与职业室内暴露、农作物农药残留列为2.0新增内容，室内章节还介绍了相应模块；但局限章节仍把室内吸入和直接农药残留列作排除路径。室内路径的这组表述至少在文字层面不一致，适用范围是否相同仍需核对。它究竟源于遗留文字、范围差别还是实现问题，尚未核实，因而不能任选一段写成所有USEtox版本的能力清单。",
+      "kind": "interpretation",
+      "scope": "所获USEtox2.0 Documentation v1.1载体的内部表述冲突",
+      "evidenceIds": [
+        "ev-usetox-internal-feature-conflict"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-usetox-internal-feature-conflict",
+          "relation": "supports",
+          "rationale": "更新表、模块说明与限制段均有具体页码；p177页面图像确认不是提取误拼。结论只保留冲突，不推断作者意图或可执行行为。"
+        }
+      ],
+      "premiseIds": [
+        "cl-usetox-fate-exposure-effect"
+      ],
+      "caveats": [
+        "文字冲突不能代替正式勘误、功能论文或可执行发行包的能力说明。",
+        "文件创建于 2026 的元数据不使每段都成为 2026 年能力声明。"
+      ],
+      "reasoning": "新增功能表与模块章节明列室内能力，而同载体局限段仍列为排除；存在足够文本冲突阻止单段能力断言，但尚不足以判定实际实现或冲突原因。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-04",
+      "reviewKind": "agent-source-check"
+    }
+  ],
+  "scientificClosure": {
+    "claims": [],
+    "evidence": [
+      {
+        "id": "ev-usetox-fate-exposure-effect",
+        "readingId": "rd-usetox-2-documentation-v11",
+        "passageId": "psg-usetox-v11-pathways-units",
+        "locator": "Readers Guide/Fig.1及§§2.1–2.2，印刷pp11、20–23，PDF indices10、19–22",
+        "summary": "文档把归趋、暴露和效应相连：排放在介质间分配/转化，接触或摄入形成暴露，再由效应关系连接毒性指标。",
+        "sourceId": "src-book-usetox-2-documentation-v11",
+        "appraisal": {
+          "basis": "OfficialUSEtox PDF downloaded unencrypted; title/imprint and selected framework/uncertainty/interpretation/limitations passages read; Fig.1/page11 and limitations/page177 visually inspected.",
+          "methodologicalScope": "Selected original method/developer documentation; source-bound interpretation, not independent scientific model validation or current normative authority.",
+          "independence": "Related model developers and shared toxicity data create dependence; two copies of the ReCiPe article are one artifact, not independent evidence.",
+          "limitations": [
+            "No full-document reading or numerical reproduction.",
+            "No model/workbook/database release was acquired or audited.",
+            "Internal feature/limitation inconsistency is observed; origin/runtime resolution remains open.",
+            "Mutable URL and2026carrier metadata do not establish edition history.",
+            "The acquired carrier retains a 2017 citation template but shows 2026 file metadata and current affiliations; it is not established to be byte- or content-identical to a 2017 archived original."
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        }
+      },
+      {
+        "id": "ev-usetox-indicators-not-observed-cases",
+        "readingId": "rd-usetox-2-documentation-v11",
+        "passageId": "psg-usetox-v11-pathways-units",
+        "locator": "§§2.1–2.2，印刷pp20–23，PDF indices19–22；适用性限定另见§11.2.6/p174",
+        "summary": "CTUh表示人群累计疾病病例潜势，CTUe表示受影响物种比例的体积/时间积分；终点另有严重程度/物种消失转换。",
+        "sourceId": "src-book-usetox-2-documentation-v11",
+        "appraisal": {
+          "basis": "OfficialUSEtox PDF downloaded unencrypted; title/imprint and selected framework/uncertainty/interpretation/limitations passages read; Fig.1/page11 and limitations/page177 visually inspected.",
+          "methodologicalScope": "Selected original method/developer documentation; source-bound interpretation, not independent scientific model validation or current normative authority.",
+          "independence": "Related model developers and shared toxicity data create dependence; two copies of the ReCiPe article are one artifact, not independent evidence.",
+          "limitations": [
+            "No full-document reading or numerical reproduction.",
+            "No model/workbook/database release was acquired or audited.",
+            "Internal feature/limitation inconsistency is observed; origin/runtime resolution remains open.",
+            "Mutable URL and2026carrier metadata do not establish edition history.",
+            "The acquired carrier retains a 2017 citation template but shows 2026 file metadata and current affiliations; it is not established to be byte- or content-identical to a 2017 archived original."
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        }
+      },
+      {
+        "id": "ev-usetox-boxes-and-time",
+        "readingId": "rd-usetox-2-documentation-v11",
+        "passageId": "psg-usetox-v11-space-time",
+        "locator": "§§2.3.1–2.3.5；§§11.2.1–11.2.2，印刷pp23–27、173，PDF indices22–26、172",
+        "summary": "模型使用嵌套的均匀混合箱体、质量平衡、长期平均迁移和暴露期间浓度稳定等条件；缺乏精细空间分辨率。",
+        "sourceId": "src-book-usetox-2-documentation-v11",
+        "appraisal": {
+          "basis": "OfficialUSEtox PDF downloaded unencrypted; title/imprint and selected framework/uncertainty/interpretation/limitations passages read; Fig.1/page11 and limitations/page177 visually inspected.",
+          "methodologicalScope": "Selected original method/developer documentation; source-bound interpretation, not independent scientific model validation or current normative authority.",
+          "independence": "Related model developers and shared toxicity data create dependence; two copies of the ReCiPe article are one artifact, not independent evidence.",
+          "limitations": [
+            "No full-document reading or numerical reproduction.",
+            "No model/workbook/database release was acquired or audited.",
+            "Internal feature/limitation inconsistency is observed; origin/runtime resolution remains open.",
+            "Mutable URL and2026carrier metadata do not establish edition history.",
+            "The acquired carrier retains a 2017 citation template but shows 2026 file metadata and current affiliations; it is not established to be byte- or content-identical to a 2017 archived original."
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        }
+      },
+      {
+        "id": "ev-usetox-missing-data-model-zero",
+        "readingId": "rd-usetox-2-documentation-v11",
+        "passageId": "psg-usetox-v11-uncertainty-and-missing-input",
+        "locator": "§2.4.2 Input uncertainties，印刷p28，PDF index27",
+        "summary": "文档把缺少毒理信息时将人体效应因子置零列为输入不确定性来源，另列数据、外推和线性反应假设。",
+        "sourceId": "src-book-usetox-2-documentation-v11",
+        "appraisal": {
+          "basis": "OfficialUSEtox PDF downloaded unencrypted; title/imprint and selected framework/uncertainty/interpretation/limitations passages read; Fig.1/page11 and limitations/page177 visually inspected.",
+          "methodologicalScope": "Selected original method/developer documentation; source-bound interpretation, not independent scientific model validation or current normative authority.",
+          "independence": "Related model developers and shared toxicity data create dependence; two copies of the ReCiPe article are one artifact, not independent evidence.",
+          "limitations": [
+            "No full-document reading or numerical reproduction.",
+            "No model/workbook/database release was acquired or audited.",
+            "Internal feature/limitation inconsistency is observed; origin/runtime resolution remains open.",
+            "Mutable URL and2026carrier metadata do not establish edition history.",
+            "The acquired carrier retains a 2017 citation template but shows 2026 file metadata and current affiliations; it is not established to be byte- or content-identical to a 2017 archived original."
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        }
+      },
+      {
+        "id": "ev-usetox-factor-flags-and-conditions",
+        "readingId": "rd-usetox-2-documentation-v11",
+        "passageId": "psg-usetox-v11-factor-flags",
+        "locator": "§3.1.4；§3.3.2及其items1–4，印刷pp36–37、41–42，PDF indices35–36、40–41",
+        "summary": "recommended/indicative反映可靠性差异；使用、主导项敏感性、必要时排除及明确说明限制是一整组有条件建议。",
+        "sourceId": "src-book-usetox-2-documentation-v11",
+        "appraisal": {
+          "basis": "OfficialUSEtox PDF downloaded unencrypted; title/imprint and selected framework/uncertainty/interpretation/limitations passages read; Fig.1/page11 and limitations/page177 visually inspected.",
+          "methodologicalScope": "Selected original method/developer documentation; source-bound interpretation, not independent scientific model validation or current normative authority.",
+          "independence": "Related model developers and shared toxicity data create dependence; two copies of the ReCiPe article are one artifact, not independent evidence.",
+          "limitations": [
+            "No full-document reading or numerical reproduction.",
+            "No model/workbook/database release was acquired or audited.",
+            "Internal feature/limitation inconsistency is observed; origin/runtime resolution remains open.",
+            "Mutable URL and2026carrier metadata do not establish edition history.",
+            "The acquired carrier retains a 2017 citation template but shows 2026 file metadata and current affiliations; it is not established to be byte- or content-identical to a 2017 archived original."
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        }
+      },
+      {
+        "id": "ev-usetox-internal-feature-conflict",
+        "readingId": "rd-usetox-2-documentation-v11",
+        "passageId": "psg-usetox-v11-feature-limit-conflict",
+        "locator": "§1.4/Table1、§7.1、§11.4.2，印刷pp18–19、144、177，PDF indices17–18、143、176",
+        "summary": "同一文档把室内环境与农作物农药残留列为2.0新增功能，却在局限章节仍将相关路径列为排除；原因及实现待核。",
+        "sourceId": "src-book-usetox-2-documentation-v11",
+        "appraisal": {
+          "basis": "OfficialUSEtox PDF downloaded unencrypted; title/imprint and selected framework/uncertainty/interpretation/limitations passages read; Fig.1/page11 and limitations/page177 visually inspected.",
+          "methodologicalScope": "Selected original method/developer documentation; source-bound interpretation, not independent scientific model validation or current normative authority.",
+          "independence": "Related model developers and shared toxicity data create dependence; two copies of the ReCiPe article are one artifact, not independent evidence.",
+          "limitations": [
+            "No full-document reading or numerical reproduction.",
+            "No model/workbook/database release was acquired or audited.",
+            "Internal feature/limitation inconsistency is observed; origin/runtime resolution remains open.",
+            "Mutable URL and2026carrier metadata do not establish edition history.",
+            "The acquired carrier retains a 2017 citation template but shows 2026 file metadata and current affiliations; it is not established to be byte- or content-identical to a 2017 archived original."
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        }
+      },
+      {
+        "id": "ev-usetox-comparative-applicability",
+        "readingId": "rd-usetox-2-documentation-v11",
+        "passageId": "psg-usetox-v11-comparative-scope",
+        "locator": "Chapter11、§§11.1–11.2.6，印刷pp171–174，PDF indices170–173",
+        "summary": "文档将USEtox定位为化学排放潜在影响的比较工具，不适合据此直接作人类健康或生态影响的绝对定量估计。",
+        "sourceId": "src-book-usetox-2-documentation-v11",
+        "appraisal": {
+          "basis": "OfficialUSEtox PDF downloaded unencrypted; title/imprint and selected framework/uncertainty/interpretation/limitations passages read; Fig.1/page11 and limitations/page177 visually inspected.",
+          "methodologicalScope": "Selected original method/developer documentation; source-bound interpretation, not independent scientific model validation or current normative authority.",
+          "independence": "Related model developers and shared toxicity data create dependence; two copies of the ReCiPe article are one artifact, not independent evidence.",
+          "limitations": [
+            "No full-document reading or numerical reproduction.",
+            "No model/workbook/database release was acquired or audited.",
+            "Internal feature/limitation inconsistency is observed; origin/runtime resolution remains open.",
+            "Mutable URL and2026carrier metadata do not establish edition history.",
+            "The acquired carrier retains a 2017 citation template but shows 2026 file metadata and current affiliations; it is not established to be byte- or content-identical to a 2017 archived original."
+          ],
+          "reviewKind": "agent-source-check",
+          "checkedAt": "2026-11-04"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "src-book-usetox-2-documentation-v11",
+        "title": "USEtox®2.0 Documentation(Version1.1)",
+        "url": "https://usetox.org/sites/default/files/assets/USEtox_Documentation.pdf",
+        "version": "USEtox 2.0 Documentation, version 1.1（2017）；DOI 10.11581/DTU:00000011",
+        "publisher": "USEtox Team",
+        "accessedAt": "2026-11-04",
+        "accessStatus": "public-passages-inspected",
+        "rights": "文档允许完整注明来源后再现，商标及其他权利保留；此条件不等于数据集或软件的统一许可。",
+        "preservation": "引文依据所列版本与页码；原始文献由作者或出版机构提供，本书不转载原件。不同版本及再印文本的页码不能直接混用。",
+        "artifact": {
+          "mediaType": "application/pdf",
+          "sha256": "c84c5b1737bc821c7e251eb72bcad4fedbe292cdca6a0d880c3a00a701819116",
+          "resolvedUrl": "https://usetox.org/sites/default/files/assets/USEtox_Documentation.pdf",
+          "pageCount": 208
+        },
+        "reading": {
+          "status": "selected-passages",
+          "scope": "Title/imprint and Preface，印刷页 1;3–4；Readers Guide Fig.1; §§2.1–2.2，印刷页 11;20–23；§§2.3.1–2.3.5; §§11.2.1–11.2.2，印刷页 23–27;173；§§2.4.1–2.5，印刷页 27–28；§3.1.4; §3.3.2, including continuation items1–4，印刷页 36–37;41–42；§11 introduction and §11.1; §§11.2.3–11.2.6; §§11.3–11.4.4，印刷页 171–178；§1.4 Table1; §7.1; §11.4.2，印刷页 18–19;144;177",
+          "checkedAt": "2026-11-04",
+          "readingId": "rd-usetox-2-documentation-v11"
+        }
+      }
+    ]
+  },
+  "originalReadingRecords": [
+    {
+      "id": "rd-usetox-2-documentation-v11",
+      "workId": "work-usetox-2-documentation-v11",
+      "title": "USEtox®2.0 Documentation(Version1.1)",
+      "version": "Formal citation2017; acquired mutable208-page carrier metadata created/modified2026-01-24 (+08:00); DOI10.11581/DTU:00000011",
+      "url": "https://usetox.org/sites/default/files/assets/USEtox_Documentation.pdf",
+      "accessedAt": "2026-11-04",
+      "readAt": "2026-11-04",
+      "readingStatus": "selected-passages",
+      "question": "How do this source’s indicators, model boundaries, temporal/spatial assumptions and value choices constrain interpretation?",
+      "argumentSummary": "USEtox文档把因子连接为归趋、暴露和效应，区分比较性毒性潜势与损害指标。箱式空间和长期平均假设限制局地预测；recommended/indicative是可靠性分类而非自动排除许可。文档新增功能表与局限章节存在可定位冲突，不能直接当成某一可执行发行版的能力表。",
+      "artifacts": [
+        {
+          "id": "art-usetox-2-documentation-v11-carrier-2026",
+          "mediaType": "application/pdf",
+          "sha256": "c84c5b1737bc821c7e251eb72bcad4fedbe292cdca6a0d880c3a00a701819116",
+          "resolvedUrl": "https://usetox.org/sites/default/files/assets/USEtox_Documentation.pdf",
+          "pageCount": 208
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-usetox-v11-identity-rights",
+          "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+          "locator": "Title/imprint and Preface",
+          "printedPages": "1;3–4",
+          "pdfIndices": [
+            0,
+            2,
+            3
+          ],
+          "topics": [
+            "model/document version",
+            "rights",
+            "factor flags"
+          ],
+          "limits": [
+            "Downloaded carrier creation/modification metadata is January 2026 while formal citation/imprint says2017 v1.1. File hash fixes the observed carrier; it does not prove a new scientific edition or original2017 bytes."
+          ]
+        },
+        {
+          "id": "psg-usetox-v11-pathways-units",
+          "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+          "locator": "Readers Guide Fig.1; §§2.1–2.2",
+          "printedPages": "11;20–23",
+          "pdfIndices": [
+            10,
+            19,
+            20,
+            21,
+            22
+          ],
+          "topics": [
+            "fate",
+            "exposure",
+            "effects",
+            "midpoint units",
+            "endpoint units",
+            "value choices"
+          ],
+          "limits": [
+            "Figure1 visually checked. CTUh cases and CTUe PAF-volume-time are comparative potential indicators. Equal treatment of cancer/non-cancer at midpoint and disease-severity conversion at endpoint are distinct conventions. They do not establish actual local cases or safety."
+          ]
+        },
+        {
+          "id": "psg-usetox-v11-space-time",
+          "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+          "locator": "§§2.3.1–2.3.5; §§11.2.1–11.2.2",
+          "printedPages": "23–27;173",
+          "pdfIndices": [
+            22,
+            23,
+            24,
+            25,
+            26,
+            172
+          ],
+          "topics": [
+            "well-mixed compartments",
+            "spatial scales",
+            "mass balance",
+            "long-term average",
+            "steady-state"
+          ],
+          "limits": [
+            "Generic nested boxes and long-term average transport/exposure assumptions do not recover site-specific peaks, seasonal episodes or actual individual risk. No runtime steady-state solution was independently reproduced."
+          ]
+        },
+        {
+          "id": "psg-usetox-v11-uncertainty-and-missing-input",
+          "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+          "locator": "§§2.4.1–2.5",
+          "printedPages": "27–28",
+          "pdfIndices": [
+            26,
+            27
+          ],
+          "topics": [
+            "model uncertainty",
+            "parameter uncertainty",
+            "linear response",
+            "missing toxicity data",
+            "matrix framework"
+          ],
+          "limits": [
+            "The manual lists zero human effect factor when toxicology information is absent among input uncertainties. This is a documented modeling convention/limitation, not evidence that the true effect is zero; actual database flags/workbook implementation were not checked. No equation reproduction claimed."
+          ]
+        },
+        {
+          "id": "psg-usetox-v11-factor-flags",
+          "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+          "locator": "§3.1.4; §3.3.2, including continuation items1–4",
+          "printedPages": "36–37;41–42",
+          "pdfIndices": [
+            35,
+            36,
+            40,
+            41
+          ],
+          "topics": [
+            "recommended/indicative",
+            "uncertainty",
+            "sensitivity",
+            "excluded emissions"
+          ],
+          "limits": [
+            "Keep the whole sequence: initial use of both classes; sensitivity when indicative factors dominate; possible exclusion if conclusions change requires explicit omission and interpretation caveat. Do not quote the absolute-sounding item1 while dropping item4. Numeric uncertainty guidance is author rough expert judgment, not a measured confidence interval verified here."
+          ]
+        },
+        {
+          "id": "psg-usetox-v11-comparative-scope",
+          "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+          "locator": "§11 introduction and §11.1; §§11.2.3–11.2.6; §§11.3–11.4.4",
+          "printedPages": "171–178",
+          "pdfIndices": [
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            177
+          ],
+          "topics": [
+            "comparative impact assessment",
+            "risk boundary",
+            "chemical coverage",
+            "exposure",
+            "uncertainty"
+          ],
+          "limits": [
+            "Authors restrict applicability to comparative potentials rather than absolute local health/ecosystem estimates. Chapter11 carries statements that conflict with explicit2.0 update/indoor chapters; use the conflict passage before promoting any omission claim."
+          ]
+        },
+        {
+          "id": "psg-usetox-v11-feature-limit-conflict",
+          "artifactId": "art-usetox-2-documentation-v11-carrier-2026",
+          "locator": "§1.4 Table1; §7.1; §11.4.2",
+          "printedPages": "18–19;144;177",
+          "pdfIndices": [
+            17,
+            18,
+            143,
+            176
+          ],
+          "topics": [
+            "source-internal conflict",
+            "indoor inhalation",
+            "pesticide crop residues",
+            "release verification"
+          ],
+          "limits": [
+            "Table1 explicitly adds residential/occupational indoor exposure and pesticide-residue pathways, and §7.1 describes indoor module; §11.4.2 still lists indoor inhalation and direct pesticide residues among excluded pathways. Textual conflict observed; its cause and executable behavior unresolved. Do not silently repair the source or infer that either paragraph applies to every version."
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "OfficialUSEtox PDF downloaded unencrypted; title/imprint and selected framework/uncertainty/interpretation/limitations passages read; Fig.1/page11 and limitations/page177 visually inspected.",
+        "methodologicalScope": "Selected original method/developer documentation; source-bound interpretation, not independent scientific model validation or current normative authority.",
+        "independence": "Related model developers and shared toxicity data create dependence; two copies of the ReCiPe article are one artifact, not independent evidence.",
+        "limitations": [
+          "No full-document reading or numerical reproduction.",
+          "No model/workbook/database release was acquired or audited.",
+          "Internal feature/limitation inconsistency is observed; origin/runtime resolution remains open.",
+          "Mutable URL and2026carrier metadata do not establish edition history.",
+          "The acquired carrier retains a 2017 citation template but shows 2026 file metadata and current affiliations; it is not established to be byte- or content-identical to a 2017 archived original."
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-04"
+      },
+      "rights": "Imprintp3 and official documentation landing page authorize reproduction with full source acknowledgment; formal citation Fantke(ed.)et al.2017USEtox2.0DocumentationVersion1.1. All trademark/other rights retained; no blanket dataset/software license inferred. This proposal publishes authored annotations/locators only.",
+      "unread": [
+        "Most fate/exposure/effect derivations, appendices and substance databases.",
+        "Original Rosenbaum2008 article full text remains unacquired; its abstract is not substituted for this manual.",
+        "Current model release, spreadsheet formulae, factors and exact database behavior."
+      ],
+      "sourceKeys": []
+    }
+  ],
+  "originalLiteratureRecords": [
+    {
+      "id": "work-usetox-2-documentation-v11",
+      "title": "USEtox®2.0 Documentation(Version1.1)",
+      "contributors": "Peter Fantke (editor); Marian Bijster; Cécile Guignard; Michael Hauschild; Mark Huijbregts; Olivier Jolliet; Anna Kounina; Violaine Magaud; Manuele Margni; Tom McKone; Leo Posthuma; Ralph K. Rosenbaum; Dik van de Meent; Rosalie van Zelm (contributing authors)",
+      "year": "2017 formal citation; observed carrier2026 metadata",
+      "kind": "method-documentation",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://usetox.org/sites/default/files/assets/USEtox_Documentation.pdf",
+          "role": "official documentation carrier"
+        },
+        {
+          "url": "https://usetox.org/model/documentation",
+          "role": "official identity/rights page"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.11581/DTU:00000011",
+        "isbn": "978-87-998335-0-4"
+      },
+      "volumes": [
+        "V5",
+        "V8"
+      ],
+      "topics": [
+        "fate/exposure/effect",
+        "toxicity",
+        "comparative scope",
+        "uncertainty",
+        "version conflicts"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "international"
+      ],
+      "traditions": [
+        "LCIA method developer documentation"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-lcia-usetox-doc-2026-11-04"
+        ],
+        "reason": "Distinct work from lit-m06Rosenbaum2008 method article; original model manual inspected rather than treating portal metadata as model evidence.",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-04",
+      "lastCheckedAt": "2026-11-04",
+      "rights": "See specific selected-reading carrier/rights record; no third-party relicense inferred.",
+      "limitations": [
+        "Work identity distinct from similarly named model releases, reports, factor packages and software implementations.",
+        "Actual selected reading is recorded separately as rd-usetox-2-documentation-v11; acquisition or overlapping passages do not establish full-work reading."
+      ],
+      "catalogSourceIds": [
+        "src-book-usetox-2-documentation-v11"
+      ]
+    }
+  ],
+  "directPremiseConsumers": [
+    {
+      "id": "cl-connect-zero-needs-origin",
+      "text": "结果表里的零尤其需要这样的说明。有依据的清单零、显示中与零相混的缺失记录，以及USEtox文档所述缺少毒理资料时按约定置零的人体效应因子，具有不同的信息状态。社会量表的零可以表示合规，仪表盘的零可以处在相对最差端；正负项目相抵的净零又要靠各分项解释。因此，数值宜连同生成方式保留：未知项指回覆盖缺口，参照分数指回量表，净额保留相抵的各项。由此可以判断哪些信息可用于眼前的问题、哪些仍须补充，缺项的实际大小却不会由这个分类自动得出。",
+      "kind": "proposal",
+      "scope": "清单、缺失值、毒性约定、社会量表与抵消结果中零的不同含义；作者记录建议。",
+      "evidenceIds": [
+        "ev-db2011-aggregation-gaps",
+        "ev-usetox-missing-data-model-zero",
+        "ev-sustainability-slca-scale-meaning",
+        "ev-sustainability-lcsa-relative-dashboard"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db2011-aggregation-gaps",
+          "relation": "supports",
+          "rationale": "2011指南明确要求区分缺失与真实零，支撑信息状态不应被数值掩盖。"
+        },
+        {
+          "evidenceId": "ev-usetox-missing-data-model-zero",
+          "relation": "supports",
+          "rationale": "USEtox文档将缺毒理资料时按约定把人体效应因子置零列为输入不确定性；该计算零不证明无毒性。"
+        },
+        {
+          "evidenceId": "ev-sustainability-slca-scale-meaning",
+          "relation": "supports",
+          "rationale": "2020指南区分合规赋零、序数赋分及正负抵消的语义。"
+        },
+        {
+          "evidenceId": "ev-sustainability-lcsa-relative-dashboard",
+          "relation": "supports",
+          "rationale": "2010仪表盘的零取决于比较集合且缺失另示，支撑相对评分零的单独解释。"
+        }
+      ],
+      "premiseIds": [
+        "cl-db2011-missing-and-zero",
+        "cl-usetox-missing-data-model-zero",
+        "cl-sustainability-ordinal-zero-and-net-zero",
+        "cl-sustainability-dashboard-zero-is-relative"
+      ],
+      "caveats": [
+        "状态并列是一项记录建议，不要求所有软件采用相同编码。",
+        "真实零仍须有对应测量或模型适用依据；信息状态区分不验证任何具体零值。"
+      ],
+      "reasoning": "同一数字可由不同生成过程得到；保存生成状态可阻止错误解释，但不建立跨量表转换或补足未知事实。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-09",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-connect-proxy-and-outcome",
+      "text": "一个非零结果同样有它的对象边界。部门或国家资料可以提示社会风险，判断某一家工厂的实际行为却需要相应地点和对象的资料。USEtox的比较性毒性潜势由归趋、暴露和效应模型形成；将它用于某地人群的判断，还须核对模型用途、假设以及当地暴露和后果证据。前者主要涉及代理资料的分辨率，后者还涉及模型量与观察结果的关系。两类信息都能指出值得追查的线索，线索通向哪种判断，要看下一段证据是否接得上。",
+      "kind": "synthesis",
+      "scope": "社会风险代理与比较性毒性潜势的不同推断边界；作者综合，不建立数值对应。",
+      "evidenceIds": [
+        "ev-sustainability-slca-scale-meaning",
+        "ev-sustainability-slca-assessment-families",
+        "ev-usetox-fate-exposure-effect",
+        "ev-usetox-comparative-applicability"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-sustainability-slca-scale-meaning",
+          "relation": "supports",
+          "rationale": "2020指南以具体资料/粗粒度资料区分表现与风险代理。"
+        },
+        {
+          "evidenceId": "ev-sustainability-slca-assessment-families",
+          "relation": "qualifies",
+          "rationale": "社会路径可采用因果或相关关系，不能只凭路径名称认定因果已识别。"
+        },
+        {
+          "evidenceId": "ev-usetox-fate-exposure-effect",
+          "relation": "supports",
+          "rationale": "USEtox具体模型路径说明其潜势并非直接观测。"
+        },
+        {
+          "evidenceId": "ev-usetox-comparative-applicability",
+          "relation": "qualifies",
+          "rationale": "文档对绝对定量健康和生态估计的适用限制，约束将比较潜势当成现场事实。"
+        }
+      ],
+      "premiseIds": [
+        "cl-sustainability-risk-not-facility-performance",
+        "cl-sustainability-social-impact-pathways",
+        "cl-usetox-fate-exposure-effect",
+        "cl-usetox-indicators-not-observed-cases"
+      ],
+      "caveats": [
+        "未检验真实工厂行为、因果识别或现场暴露。",
+        "没有提出社会风险与毒性潜势之间的数值对应。"
+      ],
+      "reasoning": "共同失败方式是越过对象层级；连接只提供追查层级的阅读办法，不抹平代理分辨率与机制模型之间的差别。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-09",
+      "reviewKind": "agent-source-check"
+    }
+  ],
+  "directExternalEvidenceConsumerIds": [
+    "cl-connect-zero-needs-origin",
+    "cl-connect-proxy-and-outcome",
+    "cl-pm-indoor-matrix"
+  ],
+  "conceptUses": {
+    "concepts": [
+      {
+        "id": "cn-toxic-pathway",
+        "label": "归趋、暴露与效应",
+        "english": "Fate, exposure and effect",
+        "definitionClaimIds": [
+          "cl-usetox-fate-exposure-effect",
+          "cl-usetox-indicators-not-observed-cases"
+        ],
+        "aliases": [
+          "USEtox",
+          "CTU",
+          "毒性潜势"
+        ]
+      }
+    ],
+    "mappings": [
+      {
+        "id": "map-pm-intake-toxic-pathway",
+        "from": "cn-pm-intake-fraction",
+        "to": "cn-toxic-pathway",
+        "relation": "related",
+        "conditions": [
+          "共同的路径分解仅支持按阶段追问；物质、介质、吸入定义和健康覆盖仍须由各自方法确定，不能直接互换因子。"
+        ],
+        "claimIds": [
+          "cl-pm-indoor-matrix",
+          "cl-pm-exposure-compatible"
+        ]
+      }
+    ],
+    "adjacentConcepts": [
+      {
+        "id": "cn-pm-intake-fraction",
+        "label": "颗粒物的人群吸入比例",
+        "english": "Population inhalation intake fraction",
+        "definitionClaimIds": [
+          "cl-pm-intake-definition",
+          "cl-pm-intake-unit",
+          "cl-pm-compatible-population"
+        ],
+        "aliases": [
+          "颗粒物摄入比例",
+          "PM intake fraction",
+          "iF"
+        ]
+      }
+    ],
+    "adjacentClaims": [
+      {
+        "id": "cl-pm-indoor-matrix",
+        "text": "接着，XF描述各区室空气体积在单位时间内被相应人群吸入的份额；它与保留停留时间及多次传输关系的FF相乘，得到iF。这样，“颗粒留在空气中多久”与“空气怎样被人吸入”有了分别可查的参数。共同使用“归趋—暴露—效应”的分解，可以帮助阅读毒性模型和颗粒物模型，但不使它们的物质范围、因子或健康终点自动相同。",
+        "kind": "interpretation",
+        "scope": "室内外不是两条彼此隔开的路中的具名方法与证据范围",
+        "evidenceIds": [
+          "ev-kb46-fantke2017-matrix",
+          "ev-usetox-fate-exposure-effect"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-kb46-fantke2017-matrix",
+            "relation": "supports",
+            "rationale": "式(1)、K矩阵和FF/XF定义。"
+          },
+          {
+            "evidenceId": "ev-usetox-fate-exposure-effect",
+            "relation": "context",
+            "rationale": "与既有USEtox路径分解的有限语义联系。"
+          }
+        ],
+        "premiseIds": [
+          "cl-pm-concentration-balance"
+        ],
+        "conceptIds": [
+          "cn-pm-intake-fraction",
+          "cn-toxic-pathway"
+        ],
+        "mappingIds": [
+          "map-pm-intake-toxic-pathway"
+        ],
+        "caveats": [],
+        "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-05",
+        "reviewKind": "agent-source-check"
+      },
+      {
+        "id": "cl-pm-exposure-compatible",
+        "text": "连接健康因子时，这些约定必须继续跟随数据。若吸入模型已经计入人在室内的时间、颗粒渗透和呼吸量，健康效应的换算也应采用相容定义，否则可能遗漏或重复同一调整。2017年论文专门讨论了这一连接；2019年的效应研究也要求两侧的相关约定一致。因此，前面的2011—2015算例不能仅替换一个看似更新的数字，就被称为同一方法的新版本。",
+        "kind": "interpretation",
+        "scope": "室内外不是两条彼此隔开的路中的具名方法与证据范围",
+        "evidenceIds": [
+          "ev-kb46-fantke2017-health-join",
+          "ev-kb46-fantke2019-inputs"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-kb46-fantke2017-health-join",
+            "relation": "supports",
+            "rationale": "室内渗透及健康连接条件。"
+          },
+          {
+            "evidenceId": "ev-kb46-fantke2019-inputs",
+            "relation": "supports",
+            "rationale": "呼吸/暴露约定相容与相消的明确要求。"
+          }
+        ],
+        "premiseIds": [
+          "cl-pm-indoor-matrix",
+          "cl-pm-urban-health"
+        ],
+        "conceptIds": [],
+        "mappingIds": [
+          "map-pm-intake-toxic-pathway"
+        ],
+        "caveats": [],
+        "reasoning": "沿实际来源的对象、分母、条件及证据层次解释；来源陈述、模型计算和有限综合分别标识。局部算术或方法比较不扩展为个体健康、经验干预或全部模型有效性的证明。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-05",
+        "reviewKind": "agent-source-check"
+      }
+    ]
+  },
+  "b32AffectedOriginalIds": {
+    "claims": [
+      "cl-usetox-fate-exposure-effect",
+      "cl-usetox-indicators-not-observed-cases",
+      "cl-usetox-missing-data-model-zero"
+    ],
+    "evidence": [
+      "ev-usetox-fate-exposure-effect",
+      "ev-usetox-indicators-not-observed-cases",
+      "ev-usetox-missing-data-model-zero",
+      "ev-usetox-comparative-applicability"
+    ],
+    "sources": [
+      "src-book-usetox-2-documentation-v11"
+    ]
+  },
+  "caseInputHashes": [
+    {
+      "file": "knowledge/cases/climate-metrics-v1.json",
+      "sha256": "c6712d1c48605c0102eecbd6921fb3b3883e3d4e0d60c5d3d9fc69f62570ece6",
+      "publicationFile": "knowledge/cases/climate-metrics-v1.publication.json",
+      "publicationSha256": "d2d43466eed396def6c5f5d08ab7ee8177d94452809f2131b51f5fb2bb58e5d7",
+      "canonicalSha256": "0491866fc3fd0de3e59db3be3c28ff80c27e4c247601cbcad85dfab27b434c74"
+    },
+    {
+      "file": "knowledge/cases/cml-framework-examples-v1.json",
+      "sha256": "d84fdd5e93d29dc8890e2b647d8f58c1d5dafca2cd9f04c703697bc987fdbed5",
+      "publicationFile": "knowledge/cases/cml-framework-examples-v1.publication.json",
+      "publicationSha256": "e5d59602d0e0cf391d9abb9b5e8a8f2fad087d7a46fa83d3f4f96ccedc8d41f0",
+      "canonicalSha256": "d84fdd5e93d29dc8890e2b647d8f58c1d5dafca2cd9f04c703697bc987fdbed5"
+    },
+    {
+      "file": "knowledge/cases/dairy-rules-v1.json",
+      "sha256": "2d93b03bc866eaaf59538ca424f873593a0dfac11fd85675352830a2822b0f27",
+      "publicationFile": "knowledge/cases/dairy-rules-v1.publication.json",
+      "publicationSha256": "38186d4c239e68278465ffa844efefbabdee2f5a46a811a21003a1d26621776d",
+      "canonicalSha256": "2d93b03bc866eaaf59538ca424f873593a0dfac11fd85675352830a2822b0f27"
+    },
+    {
+      "file": "knowledge/cases/ecological-scarcity-v1.json",
+      "sha256": "2128ddd473a54c6dd696ed1fff28b61cdce93a137c390ff26ecc5c4e640700de",
+      "publicationFile": "knowledge/cases/ecological-scarcity-v1.publication.json",
+      "publicationSha256": "3131acbb94e025ccadb6f1ad38148dca915fccdd89bb06e49d3529580d7d3901",
+      "canonicalSha256": "2128ddd473a54c6dd696ed1fff28b61cdce93a137c390ff26ecc5c4e640700de"
+    },
+    {
+      "file": "knowledge/cases/electricity-service-v1.json",
+      "sha256": "ea3923170eadd0b16fface8a178f6fd6b32a4cb50fa46588638c166be02d9e4c",
+      "publicationFile": "knowledge/cases/electricity-service-v1.publication.json",
+      "publicationSha256": "e55a0a9dcfbca702d7275e241d3976ec93c610ac4361e92aadcd02b4cfee1f46",
+      "canonicalSha256": "ea3923170eadd0b16fface8a178f6fd6b32a4cb50fa46588638c166be02d9e4c"
+    },
+    {
+      "file": "knowledge/cases/historical-glass-v1.json",
+      "sha256": "56e6028764e85278fa73143d2321ab20b4ad8cd8d64ff9a75e2c871fb7448d7c",
+      "publicationFile": "knowledge/cases/historical-glass-v1.publication.json",
+      "publicationSha256": "8f3aa7d4064791107b0510beae377bb1b4936554d79f62bbee104546728e83f5",
+      "canonicalSha256": "56e6028764e85278fa73143d2321ab20b4ad8cd8d64ff9a75e2c871fb7448d7c"
+    },
+    {
+      "file": "knowledge/cases/hybrid-overlap-v1.json",
+      "sha256": "449be3b1eff749a1b10d55f9717fec06fd2ddbf4d86b623a9a64e6db5a09137e",
+      "publicationFile": "knowledge/cases/hybrid-overlap-v1.publication.json",
+      "publicationSha256": "99161dad7359c503717bd9b626d25d035a22f8b3a23cb8087e279ad7aceb08bf",
+      "canonicalSha256": "449be3b1eff749a1b10d55f9717fec06fd2ddbf4d86b623a9a64e6db5a09137e"
+    },
+    {
+      "file": "knowledge/cases/joint-batch-v1.json",
+      "sha256": "569797a9cc454583cd9397a468145f24b22f57fd9e5a8c98971138e779b3c773",
+      "publicationFile": "knowledge/cases/joint-batch-v1.publication.json",
+      "publicationSha256": "4e96e27e16d2cc145ea965617c62ba521d3adb4759e9edbd538ea1871e47e401",
+      "canonicalSha256": "569797a9cc454583cd9397a468145f24b22f57fd9e5a8c98971138e779b3c773"
+    },
+    {
+      "file": "knowledge/cases/lime-valuation-v1.json",
+      "sha256": "9ffb5aab14187f8689ff8ee8897e48f60b6a584f52db0d7f56eb08c788409269",
+      "publicationFile": "knowledge/cases/lime-valuation-v1.publication.json",
+      "publicationSha256": "5d9b48aa774704dfece42984d93e7e5680163d16343ed39d59454d8c405dd718",
+      "canonicalSha256": "9ffb5aab14187f8689ff8ee8897e48f60b6a584f52db0d7f56eb08c788409269"
+    },
+    {
+      "file": "knowledge/cases/market-response-v1.json",
+      "sha256": "a58663c4648adee29c1c8236907d436ad42304ff3728aae8d3c133ba23e6a81e",
+      "publicationFile": "knowledge/cases/market-response-v1.publication.json",
+      "publicationSha256": "e757e0fd5c6e38c70ef2b2bd8837ae3a337b07d1280f6eb314ab54475d20764c",
+      "canonicalSha256": "a58663c4648adee29c1c8236907d436ad42304ff3728aae8d3c133ba23e6a81e"
+    },
+    {
+      "file": "knowledge/cases/native-exchange-v1.json",
+      "sha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505",
+      "publicationFile": "knowledge/cases/native-exchange-v1.publication.json",
+      "publicationSha256": "edc91ba0ceb5f8d1ab87cdd7ce3e3486ff00c91765fecd22e67dc8dd0e58c37b",
+      "canonicalSha256": "188c6724310a17fa9bee7ca91b1838c0e0e2193ca8aed345124a94fd848fe505"
+    },
+    {
+      "file": "knowledge/cases/pack-study-v1.json",
+      "sha256": "d6517e87198308d50d00d9d84ccf13f1fea174db062139994b122ea170921149",
+      "publicationFile": "knowledge/cases/pack-study-v1.publication.json",
+      "publicationSha256": "a011306d63536143b32d1f7eb94ce778edde789424087bacef7ce66af19498a8",
+      "canonicalSha256": "d6517e87198308d50d00d9d84ccf13f1fea174db062139994b122ea170921149"
+    },
+    {
+      "file": "knowledge/cases/particulate-health-v1.json",
+      "sha256": "cf130fd22b311b6d3bd18b251b2b5a5a9d62cd694b409f9ed3dd520aee9301ce",
+      "publicationFile": "knowledge/cases/particulate-health-v1.publication.json",
+      "publicationSha256": "4c5efdfcb5a390bdc723db4da978cdaaef881a40149b1a86e3cc4829d0a0e22e",
+      "canonicalSha256": "cf130fd22b311b6d3bd18b251b2b5a5a9d62cd694b409f9ed3dd520aee9301ce"
+    },
+    {
+      "file": "knowledge/cases/pedigree-calibration-v1.json",
+      "sha256": "a16d272426d1fd295db51cb0195c8c3fb8d3d7835249e32d8682f58f6e614171",
+      "publicationFile": "knowledge/cases/pedigree-calibration-v1.publication.json",
+      "publicationSha256": "09444a71cb70573bcd53640805d0f6107b82ddc5e155f5b29ab0a560c08bcd2f",
+      "canonicalSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab"
+    },
+    {
+      "file": "knowledge/cases/phosphorus-boundary-v1.json",
+      "sha256": "05f1d0fe71ee5a1461e64987fb0cbc40cba7b0d96145ee9cc8017b647343dc39",
+      "publicationFile": "knowledge/cases/phosphorus-boundary-v1.publication.json",
+      "publicationSha256": "76c25ff98b73a149e5a36de6fb3033642af57328f66a45840a69f1a614614b2e",
+      "canonicalSha256": "05f1d0fe71ee5a1461e64987fb0cbc40cba7b0d96145ee9cc8017b647343dc39"
+    },
+    {
+      "file": "knowledge/cases/recovered-paper-v1.json",
+      "sha256": "81bff4219c7d2bdcc978da1e5acc5135064a56a37a7052ba44c80de05d5da4b9",
+      "publicationFile": "knowledge/cases/recovered-paper-v1.publication.json",
+      "publicationSha256": "2965099e5016a448aa6d9d418d9ea2d48240a2af2375baaa99a74694c2534123",
+      "canonicalSha256": "81bff4219c7d2bdcc978da1e5acc5135064a56a37a7052ba44c80de05d5da4b9"
+    },
+    {
+      "file": "knowledge/cases/wall-coating-v1.json",
+      "sha256": "c6f03091e388fd03de343883ec09f5bcedc001be62578ded1c423d15782af732",
+      "publicationFile": "knowledge/cases/wall-coating-v1.publication.json",
+      "publicationSha256": "c59264fc995837323f9a4fb80db28317ae6ca510aebff41763d926ec3d23cb12",
+      "canonicalSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285"
+    },
+    {
+      "file": "knowledge/cases/water-locality-v1.json",
+      "sha256": "5217aa07949fc4b5990f1129aa428958e60ef01713f7198da4a286ab66b7bca9",
+      "publicationFile": "knowledge/cases/water-locality-v1.publication.json",
+      "publicationSha256": "047894167ddebd40f17ac4123f4f57885a54b96df1d0823ccefd1ee70a613077",
+      "canonicalSha256": "5217aa07949fc4b5990f1129aa428958e60ef01713f7198da4a286ab66b7bca9"
+    }
+  ],
+  "acceptedBoundaryArtifactHashes": {
+    "config/climate-assembly-accepted.json": {
+      "sha256": "eeb33ea8c625bdc4275e76465a80d90bb0bb14070e09d9141b46e8e4addb04f8",
+      "parsedSha256": "4ff898b414ec6d779c5d1dbb648a8bf912c7513bb4833f4b6e2a3e85f13b4ea7"
+    },
+    "config/climate-assembly-heading-original.json": {
+      "sha256": "c83b49ccb344a366821bd42a58ca63dd3861af83008261961edd329fcda1ef13",
+      "parsedSha256": "103a3c90c519d0e6e47d9979391b69d85d1ab39ad246b306bb714770b85df263"
+    },
+    "config/climate-assembly-original.json": {
+      "sha256": "f79eee42ad64fe8ba670020875d928bd6e57c05f06a66ee42e8356a61fd0b214",
+      "parsedSha256": "f3a653ef5b73e4be49e562ed578c8d279786734bebb49a4a44b987d04fe52c8b"
+    },
+    "config/closing-synthesis-current-accepted.json": {
+      "sha256": "5fcd10770dd2fc9f7a372de9e8916e2fc270e237bdaa6d4e788923b45cb09917",
+      "parsedSha256": "c3e919df1c4e19a8bdfea73ec0217af42ca818c57393cb05d6668be1fb737c08"
+    },
+    "config/closing-synthesis-heading-history.json": {
+      "sha256": "e9363729726b26c40c14283d63ba9288b65107dcaf175572959a0cf0b9de09c0",
+      "parsedSha256": "73c45aaf40001377b9ca10dcb09e7bd698724508174a2a323211cd63a052e074"
+    },
+    "config/closing-synthesis-original.json": {
+      "sha256": "b3eea24a93af1b78c9fafac443e3ff0d86b5f12377fc7127d953912af19c59bb",
+      "parsedSha256": "febb6e039e8c1af69ea31bf88325785fa73b957b6f50183a87f3139089bc9325"
+    },
+    "config/closing-synthesis-prose-accepted.json": {
+      "sha256": "813dd62c967a33dfe9e0ed5385e5ad14454c1a3035d93a38e3a01f0fd989aca7",
+      "parsedSha256": "55d62ac04b9c4ceec33cc6fec8b50dd0bce85232c88ddb7093ffeb1c8069a1f3"
+    },
+    "config/data-applicability-accepted.json": {
+      "sha256": "929a89e6cbbd714d258cba6a6c2d26c146df853721a350d4ff1bac2bdae8df16",
+      "parsedSha256": "14cb4efe8d8f1869ca7b05d8795257ba322ddd0d619afdcc19bb53b17c60ee40"
+    },
+    "config/data-applicability-heading-original.json": {
+      "sha256": "115cbe1cf982d762b84119eb55b3c8b14d30de37e7e64f7d9e9eee6058b56a0c",
+      "parsedSha256": "a02cbe0de04408d94c5fc0e7e15bfc4575b27892537ce01981aa6fb60c3a2051"
+    },
+    "config/data-applicability-original.json": {
+      "sha256": "4dca4a39c5ebae5f9262aec23b551eb33aedd8b54a1cefea3c2d427915479bc3",
+      "parsedSha256": "488161a7f37b84d8ccaacf8cd4801ec415ec2e029a6642779a86c61d576fde96"
+    }
+  },
+  "publication": {
+    "route": "/docs/book/usetox-pathways-and-boundaries",
+    "source": "/docs/book/usetox-pathways-and-boundaries",
+    "editorialSourceUnit": "C27",
+    "editorialBookChapter": "B19",
+    "bookEdition": {
+      "key": "/docs/book/usetox-pathways-and-boundaries",
+      "source": "/docs/book/usetox-pathways-and-boundaries",
+      "kind": "chapter",
+      "part": "环境后果"
+    },
+    "webNumbering": {
+      "key": "/docs/book/usetox-pathways-and-boundaries",
+      "source": "/docs/book/usetox-pathways-and-boundaries",
+      "kind": "chapter",
+      "part": 4,
+      "title": "化学物质怎样走到受体：USEtox的路径与边界"
+    },
+    "bookNumbering": {
+      "key": "/docs/book/usetox-pathways-and-boundaries",
+      "source": "/docs/book/usetox-pathways-and-boundaries",
+      "kind": "chapter",
+      "part": 4,
+      "title": "化学物质怎样走到受体：USEtox的路径与边界"
+    },
+    "headingNumbering": [
+      {
+        "key": "从环境介质到比较性毒性指标",
+        "id": "从环境介质到比较性毒性指标",
+        "title": "从环境介质到比较性毒性指标",
+        "depth": 2,
+        "type": "mdx"
+      },
+      {
+        "key": "箱体长期平均与缺失信息",
+        "id": "箱体长期平均与缺失信息",
+        "title": "箱体、长期平均与缺失信息",
+        "depth": 2,
+        "type": "mdx"
+      },
+      {
+        "key": "因子分类与文档中的能力冲突",
+        "id": "因子分类与文档中的能力冲突",
+        "title": "因子分类与文档中的能力冲突",
+        "depth": 2,
+        "type": "mdx"
+      }
+    ],
+    "originalSourceIdentities": [
+      {
+        "commit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+        "path": "content/docs/book/usetox-pathways-and-boundaries.mdx",
+        "sha256": "c163101e10fb42227bda7dfdae6f780454341e3b0c9a74b5750640ef662d4e9c",
+        "title": "化学物质怎样走到受体：USEtox的路径与边界",
+        "claimIds": [
+          "cl-usetox-fate-exposure-effect",
+          "cl-usetox-indicators-not-observed-cases",
+          "cl-usetox-boxes-and-time",
+          "cl-usetox-missing-data-model-zero",
+          "cl-usetox-factor-flags-and-conditions",
+          "cl-usetox-internal-feature-conflict"
+        ],
+        "sections": [
+          {
+            "title": "从环境介质到比较性毒性指标",
+            "explicitId": null,
+            "claimIds": [
+              "cl-usetox-fate-exposure-effect",
+              "cl-usetox-indicators-not-observed-cases"
+            ]
+          },
+          {
+            "title": "箱体、长期平均与缺失信息",
+            "explicitId": null,
+            "claimIds": [
+              "cl-usetox-boxes-and-time",
+              "cl-usetox-missing-data-model-zero"
+            ]
+          },
+          {
+            "title": "因子分类与文档中的能力冲突",
+            "explicitId": null,
+            "claimIds": [
+              "cl-usetox-factor-flags-and-conditions",
+              "cl-usetox-internal-feature-conflict"
+            ]
+          }
+        ]
+      },
+      {
+        "commit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+        "path": "content/docs/book/usetox-pathways-and-boundaries.mdx",
+        "sha256": "c163101e10fb42227bda7dfdae6f780454341e3b0c9a74b5750640ef662d4e9c",
+        "title": "化学物质怎样走到受体：USEtox的路径与边界",
+        "claimIds": [
+          "cl-usetox-fate-exposure-effect",
+          "cl-usetox-indicators-not-observed-cases",
+          "cl-usetox-boxes-and-time",
+          "cl-usetox-missing-data-model-zero",
+          "cl-usetox-factor-flags-and-conditions",
+          "cl-usetox-internal-feature-conflict"
+        ],
+        "sections": [
+          {
+            "title": "从环境介质到比较性毒性指标",
+            "explicitId": null,
+            "claimIds": [
+              "cl-usetox-fate-exposure-effect",
+              "cl-usetox-indicators-not-observed-cases"
+            ]
+          },
+          {
+            "title": "箱体、长期平均与缺失信息",
+            "explicitId": null,
+            "claimIds": [
+              "cl-usetox-boxes-and-time",
+              "cl-usetox-missing-data-model-zero"
+            ]
+          },
+          {
+            "title": "因子分类与文档中的能力冲突",
+            "explicitId": null,
+            "claimIds": [
+              "cl-usetox-factor-flags-and-conditions",
+              "cl-usetox-internal-feature-conflict"
+            ]
+          }
+        ]
+      },
+      {
+        "commit": "c919f1ffc9f61cafa7860880337c87406d624295",
+        "path": "content/docs/book/usetox-pathways-and-boundaries.mdx",
+        "sha256": "c163101e10fb42227bda7dfdae6f780454341e3b0c9a74b5750640ef662d4e9c",
+        "title": "化学物质怎样走到受体：USEtox的路径与边界",
+        "claimIds": [
+          "cl-usetox-fate-exposure-effect",
+          "cl-usetox-indicators-not-observed-cases",
+          "cl-usetox-boxes-and-time",
+          "cl-usetox-missing-data-model-zero",
+          "cl-usetox-factor-flags-and-conditions",
+          "cl-usetox-internal-feature-conflict"
+        ],
+        "sections": [
+          {
+            "title": "从环境介质到比较性毒性指标",
+            "explicitId": null,
+            "claimIds": [
+              "cl-usetox-fate-exposure-effect",
+              "cl-usetox-indicators-not-observed-cases"
+            ]
+          },
+          {
+            "title": "箱体、长期平均与缺失信息",
+            "explicitId": null,
+            "claimIds": [
+              "cl-usetox-boxes-and-time",
+              "cl-usetox-missing-data-model-zero"
+            ]
+          },
+          {
+            "title": "因子分类与文档中的能力冲突",
+            "explicitId": null,
+            "claimIds": [
+              "cl-usetox-factor-flags-and-conditions",
+              "cl-usetox-internal-feature-conflict"
+            ]
+          }
+        ]
+      }
+    ],
+    "actualHostedCapture": {
+      "origin": "https://prism.tiangong.earth",
+      "sourceCommit": "c919f1ffc9f61cafa7860880337c87406d624295",
+      "sourceTree": "ba23f937307450fa4dc205565e1699bd3c65419f",
+      "sourceDate": "2026-11-09",
+      "capturedAt": "2026-11-08T22:59:41.596Z",
+      "manifestSha256": "cc08ffb3d6b02e53095aa86d6c793a0793c4dbd6859a7bcafb9bcdeb4272a2cf",
+      "files": [
+        {
+          "file": "docs/book/usetox-pathways-and-boundaries/index.html",
+          "sha256": "c8a2ad681d2fc3870824045f3a79eb394bb47572e94a7504d1b4f763341edcfd",
+          "bytes": 799322
+        },
+        {
+          "file": "print/index.html",
+          "sha256": "2435bfa06b0f2831fce2d43355af34416634d5b0f5755ab9ba6c9f20ddd0a333",
+          "bytes": 8353358
+        }
+      ],
+      "views": [
+        {
+          "path": "/docs/book/usetox-pathways-and-boundaries",
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "articleId": "nd-page",
+          "articleTitle": "化学物质怎样走到受体：USEtox的路径与边界",
+          "titleIdentity": {
+            "tag": "H1",
+            "id": "main-content",
+            "text": "第22篇 化学物质怎样走到受体：USEtox的路径与边界",
+            "key": "@unit"
+          },
+          "sections": [
+            {
+              "tag": "H2",
+              "id": "从环境介质到比较性毒性指标",
+              "key": "从环境介质到比较性毒性指标",
+              "visibleText": "22.1 从环境介质到比较性毒性指标复制章节链接",
+              "title": "从环境介质到比较性毒性指标",
+              "number": "22.1",
+              "inExistingHistory": true,
+              "claimIds": [
+                "cl-usetox-fate-exposure-effect",
+                "cl-usetox-indicators-not-observed-cases"
+              ]
+            },
+            {
+              "tag": "H2",
+              "id": "箱体长期平均与缺失信息",
+              "key": "箱体长期平均与缺失信息",
+              "visibleText": "22.2 箱体、长期平均与缺失信息复制章节链接",
+              "title": "箱体、长期平均与缺失信息",
+              "number": "22.2",
+              "inExistingHistory": true,
+              "claimIds": [
+                "cl-usetox-boxes-and-time",
+                "cl-usetox-missing-data-model-zero"
+              ]
+            },
+            {
+              "tag": "H2",
+              "id": "因子分类与文档中的能力冲突",
+              "key": "因子分类与文档中的能力冲突",
+              "visibleText": "22.3 因子分类与文档中的能力冲突复制章节链接",
+              "title": "因子分类与文档中的能力冲突",
+              "number": "22.3",
+              "inExistingHistory": true,
+              "claimIds": [
+                "cl-usetox-factor-flags-and-conditions",
+                "cl-usetox-internal-feature-conflict"
+              ]
+            }
+          ],
+          "references": [
+            {
+              "id": "cl-usetox-fate-exposure-effect",
+              "href": "#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-fate-exposure-effect",
+              "label": "注 1",
+              "text": "[1]",
+              "paragraphSha256": "f904feeb7d72384938b89612371a5b9be517dd56a7c85e5ea693f73a22f5a74c"
+            },
+            {
+              "id": "cl-usetox-indicators-not-observed-cases",
+              "href": "#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-indicators-not-observed-cases",
+              "label": "注 2",
+              "text": "[2]",
+              "paragraphSha256": "49bf11d1b6002dbe265b0be2c06e0538f71b92390d84f9c14a297d81461c7648"
+            },
+            {
+              "id": "cl-usetox-boxes-and-time",
+              "href": "#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-boxes-and-time",
+              "label": "注 3",
+              "text": "[3]",
+              "paragraphSha256": "78f1eb77f1bb99d646fb6810366d073fd703c708854ca03c171cb7888e85d2c6"
+            },
+            {
+              "id": "cl-usetox-missing-data-model-zero",
+              "href": "#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-missing-data-model-zero",
+              "label": "注 4",
+              "text": "[4]",
+              "paragraphSha256": "3d8b5d26d61146504ca35370ceba8431f8962d287404cc2eb4f13a6594942c49"
+            },
+            {
+              "id": "cl-usetox-factor-flags-and-conditions",
+              "href": "#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-factor-flags-and-conditions",
+              "label": "注 5",
+              "text": "[5]",
+              "paragraphSha256": "906355db64402fd3648b40b7f86790e774b4b079c69601707fc1e38e36d1723f"
+            },
+            {
+              "id": "cl-usetox-internal-feature-conflict",
+              "href": "#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-internal-feature-conflict",
+              "label": "注 6",
+              "text": "[6]",
+              "paragraphSha256": "7f4626e6a6f6d983c2f7a1ab1f5aa22e3565eaed2048dfbf8991a5580ffa88b2"
+            }
+          ],
+          "notes": [
+            {
+              "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-fate-exposure-effect",
+              "tag": "LI",
+              "claimId": "cl-usetox-fate-exposure-effect"
+            },
+            {
+              "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-indicators-not-observed-cases",
+              "tag": "LI",
+              "claimId": "cl-usetox-indicators-not-observed-cases"
+            },
+            {
+              "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-boxes-and-time",
+              "tag": "LI",
+              "claimId": "cl-usetox-boxes-and-time"
+            },
+            {
+              "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-missing-data-model-zero",
+              "tag": "LI",
+              "claimId": "cl-usetox-missing-data-model-zero"
+            },
+            {
+              "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-factor-flags-and-conditions",
+              "tag": "LI",
+              "claimId": "cl-usetox-factor-flags-and-conditions"
+            },
+            {
+              "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-internal-feature-conflict",
+              "tag": "LI",
+              "claimId": "cl-usetox-internal-feature-conflict"
+            }
+          ],
+          "groups": [
+            {
+              "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-annotations",
+              "tag": "H2",
+              "text": "注释",
+              "endnotesRole": "OL",
+              "claimIds": [
+                "cl-usetox-fate-exposure-effect",
+                "cl-usetox-indicators-not-observed-cases",
+                "cl-usetox-boxes-and-time",
+                "cl-usetox-missing-data-model-zero",
+                "cl-usetox-factor-flags-and-conditions",
+                "cl-usetox-internal-feature-conflict"
+              ],
+              "noteIds": [
+                "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-fate-exposure-effect",
+                "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-indicators-not-observed-cases",
+                "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-boxes-and-time",
+                "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-missing-data-model-zero",
+                "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-factor-flags-and-conditions",
+                "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-internal-feature-conflict"
+              ]
+            }
+          ],
+          "inheritedHistoryAddresses": [
+            "/docs/book/usetox-pathways-and-boundaries#从环境介质到比较性毒性指标",
+            "/docs/book/usetox-pathways-and-boundaries#箱体长期平均与缺失信息",
+            "/docs/book/usetox-pathways-and-boundaries#因子分类与文档中的能力冲突",
+            "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-note-1",
+            "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-note-2",
+            "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-note-3",
+            "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-note-4",
+            "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-note-5",
+            "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-note-6",
+            "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-notes",
+            "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-fate-exposure-effect",
+            "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-indicators-not-observed-cases",
+            "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-boxes-and-time",
+            "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-missing-data-model-zero",
+            "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-factor-flags-and-conditions",
+            "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-internal-feature-conflict",
+            "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-annotations"
+          ]
+        },
+        {
+          "path": "/print",
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "articleId": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573",
+          "articleTitle": "化学物质怎样走到受体：USEtox的路径与边界",
+          "titleIdentity": {
+            "tag": "H3",
+            "id": "",
+            "text": "第19章 化学物质怎样走到受体：USEtox的路径与边界",
+            "key": "@unit"
+          },
+          "sections": [
+            {
+              "tag": "H4",
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-从环境介质到比较性毒性指标",
+              "key": "从环境介质到比较性毒性指标",
+              "visibleText": "19.1 从环境介质到比较性毒性指标",
+              "title": "从环境介质到比较性毒性指标",
+              "number": "19.1",
+              "inExistingHistory": false,
+              "claimIds": [
+                "cl-usetox-fate-exposure-effect",
+                "cl-usetox-indicators-not-observed-cases"
+              ]
+            },
+            {
+              "tag": "H4",
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-箱体长期平均与缺失信息",
+              "key": "箱体长期平均与缺失信息",
+              "visibleText": "19.2 箱体、长期平均与缺失信息",
+              "title": "箱体、长期平均与缺失信息",
+              "number": "19.2",
+              "inExistingHistory": false,
+              "claimIds": [
+                "cl-usetox-boxes-and-time",
+                "cl-usetox-missing-data-model-zero"
+              ]
+            },
+            {
+              "tag": "H4",
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-因子分类与文档中的能力冲突",
+              "key": "因子分类与文档中的能力冲突",
+              "visibleText": "19.3 因子分类与文档中的能力冲突",
+              "title": "因子分类与文档中的能力冲突",
+              "number": "19.3",
+              "inExistingHistory": false,
+              "claimIds": [
+                "cl-usetox-factor-flags-and-conditions",
+                "cl-usetox-internal-feature-conflict"
+              ]
+            }
+          ],
+          "references": [
+            {
+              "id": "cl-usetox-fate-exposure-effect",
+              "href": "#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-fate-exposure-effect",
+              "label": "注 1",
+              "text": "[1]",
+              "paragraphSha256": "f904feeb7d72384938b89612371a5b9be517dd56a7c85e5ea693f73a22f5a74c"
+            },
+            {
+              "id": "cl-usetox-indicators-not-observed-cases",
+              "href": "#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-indicators-not-observed-cases",
+              "label": "注 2",
+              "text": "[2]",
+              "paragraphSha256": "49bf11d1b6002dbe265b0be2c06e0538f71b92390d84f9c14a297d81461c7648"
+            },
+            {
+              "id": "cl-usetox-boxes-and-time",
+              "href": "#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-boxes-and-time",
+              "label": "注 3",
+              "text": "[3]",
+              "paragraphSha256": "78f1eb77f1bb99d646fb6810366d073fd703c708854ca03c171cb7888e85d2c6"
+            },
+            {
+              "id": "cl-usetox-missing-data-model-zero",
+              "href": "#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-missing-data-model-zero",
+              "label": "注 4",
+              "text": "[4]",
+              "paragraphSha256": "3d8b5d26d61146504ca35370ceba8431f8962d287404cc2eb4f13a6594942c49"
+            },
+            {
+              "id": "cl-usetox-factor-flags-and-conditions",
+              "href": "#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-factor-flags-and-conditions",
+              "label": "注 5",
+              "text": "[5]",
+              "paragraphSha256": "906355db64402fd3648b40b7f86790e774b4b079c69601707fc1e38e36d1723f"
+            },
+            {
+              "id": "cl-usetox-internal-feature-conflict",
+              "href": "#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-internal-feature-conflict",
+              "label": "注 6",
+              "text": "[6]",
+              "paragraphSha256": "7f4626e6a6f6d983c2f7a1ab1f5aa22e3565eaed2048dfbf8991a5580ffa88b2"
+            }
+          ],
+          "notes": [
+            {
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-fate-exposure-effect",
+              "tag": "LI",
+              "claimId": "cl-usetox-fate-exposure-effect"
+            },
+            {
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-indicators-not-observed-cases",
+              "tag": "LI",
+              "claimId": "cl-usetox-indicators-not-observed-cases"
+            },
+            {
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-boxes-and-time",
+              "tag": "LI",
+              "claimId": "cl-usetox-boxes-and-time"
+            },
+            {
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-missing-data-model-zero",
+              "tag": "LI",
+              "claimId": "cl-usetox-missing-data-model-zero"
+            },
+            {
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-factor-flags-and-conditions",
+              "tag": "LI",
+              "claimId": "cl-usetox-factor-flags-and-conditions"
+            },
+            {
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-internal-feature-conflict",
+              "tag": "LI",
+              "claimId": "cl-usetox-internal-feature-conflict"
+            }
+          ],
+          "groups": [
+            {
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-annotations",
+              "tag": "H4",
+              "text": "注释",
+              "endnotesRole": "OL",
+              "claimIds": [
+                "cl-usetox-fate-exposure-effect",
+                "cl-usetox-indicators-not-observed-cases",
+                "cl-usetox-boxes-and-time",
+                "cl-usetox-missing-data-model-zero",
+                "cl-usetox-factor-flags-and-conditions",
+                "cl-usetox-internal-feature-conflict"
+              ],
+              "noteIds": [
+                "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-fate-exposure-effect",
+                "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-indicators-not-observed-cases",
+                "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-boxes-and-time",
+                "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-missing-data-model-zero",
+                "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-factor-flags-and-conditions",
+                "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-internal-feature-conflict"
+              ]
+            }
+          ],
+          "inheritedHistoryAddresses": [
+            "/print#print-chapter-27",
+            "/print#print-chapter-27-从环境介质到比较性毒性指标",
+            "/print#print-chapter-27-箱体长期平均与缺失信息",
+            "/print#print-chapter-27-因子分类与文档中的能力冲突",
+            "/print#print-chapter-27-note-1",
+            "/print#print-chapter-27-note-2",
+            "/print#print-chapter-27-note-3",
+            "/print#print-chapter-27-note-4",
+            "/print#print-chapter-27-note-5",
+            "/print#print-chapter-27-note-6",
+            "/print#print-chapter-27-notes",
+            "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573",
+            "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-fate-exposure-effect",
+            "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-indicators-not-observed-cases",
+            "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-boxes-and-time",
+            "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-missing-data-model-zero",
+            "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-factor-flags-and-conditions",
+            "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-internal-feature-conflict",
+            "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-annotations"
+          ]
+        }
+      ]
+    },
+    "history": {
+      "existingGlobalCount": 4146,
+      "existingGlobalEntriesDigest": "95d3cf006c7cb28faf5f3a6cd3babf2043ee05fd28510937fe04a67b018c0005",
+      "existingAffectedEntries": [
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/docs/book/usetox-pathways-and-boundaries",
+          "id": "从环境介质到比较性毒性指标",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/docs/book/usetox-pathways-and-boundaries",
+              "id": "从环境介质到比较性毒性指标",
+              "kind": "heading"
+            }
+          ],
+          "mode": "retained",
+          "edition": {
+            "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/docs/book/usetox-pathways-and-boundaries",
+          "id": "箱体长期平均与缺失信息",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/docs/book/usetox-pathways-and-boundaries",
+              "id": "箱体长期平均与缺失信息",
+              "kind": "heading"
+            }
+          ],
+          "mode": "retained",
+          "edition": {
+            "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/docs/book/usetox-pathways-and-boundaries",
+          "id": "因子分类与文档中的能力冲突",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/docs/book/usetox-pathways-and-boundaries",
+              "id": "因子分类与文档中的能力冲突",
+              "kind": "heading"
+            }
+          ],
+          "mode": "retained",
+          "edition": {
+            "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/docs/book/usetox-pathways-and-boundaries",
+          "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-note-1",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/docs/book/usetox-pathways-and-boundaries",
+              "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-fate-exposure-effect",
+              "kind": "note",
+              "claimId": "cl-usetox-fate-exposure-effect"
+            }
+          ],
+          "mode": "alias",
+          "edition": {
+            "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/docs/book/usetox-pathways-and-boundaries",
+          "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-note-2",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/docs/book/usetox-pathways-and-boundaries",
+              "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-indicators-not-observed-cases",
+              "kind": "note",
+              "claimId": "cl-usetox-indicators-not-observed-cases"
+            }
+          ],
+          "mode": "alias",
+          "edition": {
+            "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/docs/book/usetox-pathways-and-boundaries",
+          "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-note-3",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/docs/book/usetox-pathways-and-boundaries",
+              "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-boxes-and-time",
+              "kind": "note",
+              "claimId": "cl-usetox-boxes-and-time"
+            }
+          ],
+          "mode": "alias",
+          "edition": {
+            "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/docs/book/usetox-pathways-and-boundaries",
+          "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-note-4",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/docs/book/usetox-pathways-and-boundaries",
+              "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-missing-data-model-zero",
+              "kind": "note",
+              "claimId": "cl-usetox-missing-data-model-zero"
+            }
+          ],
+          "mode": "alias",
+          "edition": {
+            "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/docs/book/usetox-pathways-and-boundaries",
+          "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-note-5",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/docs/book/usetox-pathways-and-boundaries",
+              "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-factor-flags-and-conditions",
+              "kind": "note",
+              "claimId": "cl-usetox-factor-flags-and-conditions"
+            }
+          ],
+          "mode": "alias",
+          "edition": {
+            "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/docs/book/usetox-pathways-and-boundaries",
+          "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-note-6",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/docs/book/usetox-pathways-and-boundaries",
+              "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-internal-feature-conflict",
+              "kind": "note",
+              "claimId": "cl-usetox-internal-feature-conflict"
+            }
+          ],
+          "mode": "alias",
+          "edition": {
+            "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/docs/book/usetox-pathways-and-boundaries",
+          "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-notes",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/docs/book/usetox-pathways-and-boundaries",
+              "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-annotations",
+              "kind": "note-group"
+            }
+          ],
+          "mode": "alias",
+          "edition": {
+            "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/print",
+          "id": "print-chapter-27",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/print",
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573",
+              "kind": "chapter"
+            }
+          ],
+          "mode": "alias",
+          "edition": {
+            "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/print",
+          "id": "print-chapter-27-从环境介质到比较性毒性指标",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/print",
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-从环境介质到比较性毒性指标",
+              "kind": "heading"
+            }
+          ],
+          "mode": "alias",
+          "edition": {
+            "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/print",
+          "id": "print-chapter-27-箱体长期平均与缺失信息",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/print",
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-箱体长期平均与缺失信息",
+              "kind": "heading"
+            }
+          ],
+          "mode": "alias",
+          "edition": {
+            "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/print",
+          "id": "print-chapter-27-因子分类与文档中的能力冲突",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/print",
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-因子分类与文档中的能力冲突",
+              "kind": "heading"
+            }
+          ],
+          "mode": "alias",
+          "edition": {
+            "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/print",
+          "id": "print-chapter-27-note-1",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/print",
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-fate-exposure-effect",
+              "kind": "note",
+              "claimId": "cl-usetox-fate-exposure-effect"
+            }
+          ],
+          "mode": "alias",
+          "edition": {
+            "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/print",
+          "id": "print-chapter-27-note-2",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/print",
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-indicators-not-observed-cases",
+              "kind": "note",
+              "claimId": "cl-usetox-indicators-not-observed-cases"
+            }
+          ],
+          "mode": "alias",
+          "edition": {
+            "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/print",
+          "id": "print-chapter-27-note-3",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/print",
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-boxes-and-time",
+              "kind": "note",
+              "claimId": "cl-usetox-boxes-and-time"
+            }
+          ],
+          "mode": "alias",
+          "edition": {
+            "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/print",
+          "id": "print-chapter-27-note-4",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/print",
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-missing-data-model-zero",
+              "kind": "note",
+              "claimId": "cl-usetox-missing-data-model-zero"
+            }
+          ],
+          "mode": "alias",
+          "edition": {
+            "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/print",
+          "id": "print-chapter-27-note-5",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/print",
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-factor-flags-and-conditions",
+              "kind": "note",
+              "claimId": "cl-usetox-factor-flags-and-conditions"
+            }
+          ],
+          "mode": "alias",
+          "edition": {
+            "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/print",
+          "id": "print-chapter-27-note-6",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/print",
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-internal-feature-conflict",
+              "kind": "note",
+              "claimId": "cl-usetox-internal-feature-conflict"
+            }
+          ],
+          "mode": "alias",
+          "edition": {
+            "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/print",
+          "id": "print-chapter-27-notes",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/print",
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-annotations",
+              "kind": "note-group"
+            }
+          ],
+          "mode": "alias",
+          "edition": {
+            "sourceCommit": "dd715663c3438aa730eef0da1696dc376a7715f1",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/docs/book/usetox-pathways-and-boundaries",
+          "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-fate-exposure-effect",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/docs/book/usetox-pathways-and-boundaries",
+              "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-fate-exposure-effect",
+              "kind": "note",
+              "claimId": "cl-usetox-fate-exposure-effect"
+            }
+          ],
+          "mode": "retained",
+          "edition": {
+            "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/docs/book/usetox-pathways-and-boundaries",
+          "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-indicators-not-observed-cases",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/docs/book/usetox-pathways-and-boundaries",
+              "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-indicators-not-observed-cases",
+              "kind": "note",
+              "claimId": "cl-usetox-indicators-not-observed-cases"
+            }
+          ],
+          "mode": "retained",
+          "edition": {
+            "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/docs/book/usetox-pathways-and-boundaries",
+          "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-boxes-and-time",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/docs/book/usetox-pathways-and-boundaries",
+              "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-boxes-and-time",
+              "kind": "note",
+              "claimId": "cl-usetox-boxes-and-time"
+            }
+          ],
+          "mode": "retained",
+          "edition": {
+            "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/docs/book/usetox-pathways-and-boundaries",
+          "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-missing-data-model-zero",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/docs/book/usetox-pathways-and-boundaries",
+              "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-missing-data-model-zero",
+              "kind": "note",
+              "claimId": "cl-usetox-missing-data-model-zero"
+            }
+          ],
+          "mode": "retained",
+          "edition": {
+            "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/docs/book/usetox-pathways-and-boundaries",
+          "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-factor-flags-and-conditions",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/docs/book/usetox-pathways-and-boundaries",
+              "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-factor-flags-and-conditions",
+              "kind": "note",
+              "claimId": "cl-usetox-factor-flags-and-conditions"
+            }
+          ],
+          "mode": "retained",
+          "edition": {
+            "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/docs/book/usetox-pathways-and-boundaries",
+          "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-internal-feature-conflict",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/docs/book/usetox-pathways-and-boundaries",
+              "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-internal-feature-conflict",
+              "kind": "note",
+              "claimId": "cl-usetox-internal-feature-conflict"
+            }
+          ],
+          "mode": "retained",
+          "edition": {
+            "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/docs/book/usetox-pathways-and-boundaries",
+          "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-annotations",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/docs/book/usetox-pathways-and-boundaries",
+              "id": "chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-annotations",
+              "kind": "note-group"
+            }
+          ],
+          "mode": "retained",
+          "edition": {
+            "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/print",
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573",
+              "kind": "chapter"
+            }
+          ],
+          "mode": "retained",
+          "edition": {
+            "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-fate-exposure-effect",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/print",
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-fate-exposure-effect",
+              "kind": "note",
+              "claimId": "cl-usetox-fate-exposure-effect"
+            }
+          ],
+          "mode": "retained",
+          "edition": {
+            "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-indicators-not-observed-cases",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/print",
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-indicators-not-observed-cases",
+              "kind": "note",
+              "claimId": "cl-usetox-indicators-not-observed-cases"
+            }
+          ],
+          "mode": "retained",
+          "edition": {
+            "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-boxes-and-time",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/print",
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-boxes-and-time",
+              "kind": "note",
+              "claimId": "cl-usetox-boxes-and-time"
+            }
+          ],
+          "mode": "retained",
+          "edition": {
+            "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-missing-data-model-zero",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/print",
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-missing-data-model-zero",
+              "kind": "note",
+              "claimId": "cl-usetox-missing-data-model-zero"
+            }
+          ],
+          "mode": "retained",
+          "edition": {
+            "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-factor-flags-and-conditions",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/print",
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-factor-flags-and-conditions",
+              "kind": "note",
+              "claimId": "cl-usetox-factor-flags-and-conditions"
+            }
+          ],
+          "mode": "retained",
+          "edition": {
+            "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-internal-feature-conflict",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/print",
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-internal-feature-conflict",
+              "kind": "note",
+              "claimId": "cl-usetox-internal-feature-conflict"
+            }
+          ],
+          "mode": "retained",
+          "edition": {
+            "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+            "sourceDate": "2026-11-07"
+          }
+        },
+        {
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "path": "/print",
+          "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-annotations",
+          "targets": [
+            {
+              "route": "/docs/book/usetox-pathways-and-boundaries",
+              "path": "/print",
+              "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-annotations",
+              "kind": "note-group"
+            }
+          ],
+          "mode": "retained",
+          "edition": {
+            "sourceCommit": "a36597d72f8cd89beb285d5d5b439b4aa10e89a3",
+            "sourceDate": "2026-11-07"
+          }
+        }
+      ],
+      "additionalActualPrintHeadings": [
+        {
+          "path": "/print",
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-从环境介质到比较性毒性指标",
+          "title": "从环境介质到比较性毒性指标",
+          "claimIds": [
+            "cl-usetox-fate-exposure-effect",
+            "cl-usetox-indicators-not-observed-cases"
+          ],
+          "tag": "H4",
+          "visibleText": "19.1 从环境介质到比较性毒性指标"
+        },
+        {
+          "path": "/print",
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-箱体长期平均与缺失信息",
+          "title": "箱体、长期平均与缺失信息",
+          "claimIds": [
+            "cl-usetox-boxes-and-time",
+            "cl-usetox-missing-data-model-zero"
+          ],
+          "tag": "H4",
+          "visibleText": "19.2 箱体、长期平均与缺失信息"
+        },
+        {
+          "path": "/print",
+          "route": "/docs/book/usetox-pathways-and-boundaries",
+          "id": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-因子分类与文档中的能力冲突",
+          "title": "因子分类与文档中的能力冲突",
+          "claimIds": [
+            "cl-usetox-factor-flags-and-conditions",
+            "cl-usetox-internal-feature-conflict"
+          ],
+          "tag": "H4",
+          "visibleText": "19.3 因子分类与文档中的能力冲突"
+        }
+      ]
+    }
+  }
+}
