@@ -6,7 +6,7 @@ import { ChapterContent, LegacyCitationAliases } from '@/components/chapter-cont
 import { NumberedHeading, NumberedTitle } from '@/components/numbered-heading';
 import { PrintButton } from '@/components/print-button';
 import { PublicationShell } from '@/components/publication-shell';
-import { getPresentationUnits, getUnitHeadingPlan, readerParts } from '@/scripts/reader-numbering.mjs';
+import { getPresentationUnits, getUnitHeadingPlan, printReadingEntryAnchor, readerParts } from '@/scripts/reader-numbering.mjs';
 import { printUnitAnchor } from '@/scripts/reader-book.mjs';
 
 export const metadata = { title: '书籍目录、连续阅读与打印' };
@@ -19,16 +19,17 @@ export default function Page() {
   const topics = units.filter(unit=>unit.kind==='topic');
   const appendices = units.filter(unit=>unit.kind==='appendix');
   const tocLinks = (items: typeof units) => items.map(unit =>
-    <li key={unit.key}><a href={`#${printUnitAnchor(unit.key)}`} data-reader-toc-unit={unit.key}><NumberedTitle number={unit.label}>{unit.title}</NumberedTitle></a>
+    <li key={unit.key}><a href={`#${printReadingEntryAnchor(unit.key)}`} data-reader-toc-unit={unit.key}><NumberedTitle number={unit.label}>{unit.title}</NumberedTitle></a>
       {getUnitHeadingPlan('book',unit.key).some(heading=>heading.type==='mdx') && <ul>{getUnitHeadingPlan('book',unit.key).filter(heading=>heading.type==='mdx').map(heading=><li key={heading.key}><a href={`#${printUnitAnchor(unit.key)}-${heading.id}`} data-reader-route={unit.key} data-reader-toc-heading={heading.key}><NumberedTitle number={heading.number}>{heading.title}</NumberedTitle></a></li>)}</ul>}
     </li>);
   const article = (unit: typeof units[number]) => {
     const page = byKey.get(unit.key);
     if (!page || page.data.title!==unit.title) throw new Error(`Actual book title differs from numbering inventory: ${unit.key}`);
     const id = printUnitAnchor(unit.key);
+    const entry = printReadingEntryAnchor(unit.key);
     return <article className="print-chapter prose" key={unit.key} id={id} data-reader-route={unit.key} data-reader-title={page.data.title}>
       <LegacyCitationAliases ids={getLegacyCitations(page.url,true).aliases.get(id)} target={id} />
-      <NumberedHeading level={unit.kind==='front-matter'?2:3} number={unit.label} data-reader-heading-key="@unit">{page.data.title}</NumberedHeading>
+      <NumberedHeading level={unit.kind==='front-matter'?2:3} number={unit.label} id={entry===id?undefined:entry} tabIndex={entry===id?undefined:-1} data-reader-heading-key="@unit">{page.data.title}</NumberedHeading>
       {unit.kind!=='front-matter' && <p>{page.data.description}</p>}
       <ChapterContent page={page} print />
     </article>;

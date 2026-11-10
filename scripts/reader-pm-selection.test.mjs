@@ -11,6 +11,7 @@ import edition from '../config/book-edition.json' with { type: 'json' };
 import rawCatalog from '../knowledge/catalog.json' with { type: 'json' };
 import { getClaimEvidence, publicCatalog } from './knowledge.mjs';
 import { publicResearch } from './research.mjs';
+import { printReadingEntryAnchor } from './reader-numbering.mjs';
 import { createChapterAnnotationPlan, createChapterNotePlan, createChapterReferenceIndex, printUnitAnchor } from './reader-book.mjs';
 import { citationHref, citationSourceHref } from './reader-citations.mjs';
 import {
@@ -177,6 +178,10 @@ test('historical splits preserve every address and exact ordered original scope 
   const heading = chapters[1].sections[0].id;
   assert.equal(pmSelectionBookHref(`${pmSelectionAppendix}#${encodeURIComponent(heading)}`, pmSelectionRoute), `#${printUnitAnchor(pmSelectionAppendix)}-${heading}`);
   assert.equal(pmSelectionBookHref(`${pmSelectionAppendix}#${heading}`, '/docs/other'), `${pmSelectionAppendix}#${heading}`);
+  assert.equal(pmSelectionBookHref(pmSelectionRoute, pmSelectionAppendix), `#${printReadingEntryAnchor(pmSelectionRoute)}`);
+  assert.equal(pmSelectionBookHref(pmSelectionAppendix+'/', pmSelectionRoute), `#${printReadingEntryAnchor(pmSelectionAppendix)}`);
+  const explicitOld=`/print/#${printUnitAnchor(pmSelectionRoute)}`;
+  assert.equal(pmSelectionBookHref(explicitOld,pmSelectionAppendix),explicitOld);
 });
 
 test('all original inputs and publication templates retain exact raw bytes', async () => {
@@ -228,7 +233,7 @@ function printFixture() {
     const notes = plan.notes.map(note => `<li id="${note.anchor}" data-reader-claim="${note.id}">${alias(note.anchor)}${renderToStaticMarkup(createElement(ClaimAnnotation, { id: note.id, ...annotations.get(note.id) }))}</li>`).join('');
     const notices = entries.filter(row => row.route === unit.route && row.mode === 'notice').map(renderScope).join('');
     const group = `${prefix}-annotations`;
-    return `<article id="${prefix}" data-reader-route="${unit.route}" data-reader-title="${unit.title}"><h2 data-reader-heading-key="@unit">${unit.title}</h2><p>${unit.description}</p>${scope(prefix)}${content}<section class="chapter-notes" aria-labelledby="${group}"><h3 id="${group}">注释</h3>${scope(group)}<ol>${notes}</ol></section>${notices}</article>`;
+    return `<article id="${prefix}" data-reader-route="${unit.route}" data-reader-title="${unit.title}"><h2 id="${printReadingEntryAnchor(unit.route)}" tabindex="-1" data-reader-heading-key="@unit">${unit.title}</h2><p>${unit.description}</p>${scope(prefix)}${content}<section class="chapter-notes" aria-labelledby="${group}"><h3 id="${group}">注释</h3>${scope(group)}<ol>${notes}</ol></section>${notices}</article>`;
   }).join('');
 }
 
@@ -236,6 +241,7 @@ test('actual print paragraphs, headings, notes, historical scope and ordinary lo
   const html = printFixture(), check = input => validateRenderedPmSelection(htmlParser.parse(input), '/print', published, accepted, pin);
   assert.deepEqual(check(html), []);
   const actual = htmlParser.parse(html), heading = actual.querySelector('h3[data-reader-heading-key]');
+  const currentTitle = actual.querySelector('[data-reader-heading-key="@unit"]');
   const paragraph = actual.querySelector('[role="doc-noteref"]').closest('p');
   const historical = actual.querySelector('[data-legacy-scope]');
   const ordinary = actual.querySelector('.scholarly-prose').nextElementSibling.querySelector('a');
@@ -245,6 +251,9 @@ test('actual print paragraphs, headings, notes, historical scope and ordinary lo
     [html.replace(historical.outerHTML, ''), 'historical source scope'],
     [html.replace(ordinary.outerHTML, ordinary.outerHTML.replace(/href="[^"]+"/, 'href="#wrong"')), 'ordinary navigation paragraph'],
     [html.replace('测试替代命题。', '改动正文。'), 'canonical paragraph or note marker'],
+    [html.replace(currentTitle.outerHTML, currentTitle.outerHTML.replace(' tabindex="-1"', '')), 'actual title or unit identity'],
+    [html.replace(currentTitle.outerHTML, currentTitle.outerHTML.replace(/ id="[^"]+"/, '')), 'actual title or unit identity'],
+    [html.replace(currentTitle.outerHTML, `<span id="${currentTitle.id}"></span>` + currentTitle.outerHTML), 'actual title or unit identity'],
     [html.replace('<ol>', '<ol start="88">'), 'continuous note group'],
     [html.replace('<ol>', '<ol reversed>'), 'continuous note group'],
     [html.replace('<ol>', '<ol type="A">'), 'continuous note group'],

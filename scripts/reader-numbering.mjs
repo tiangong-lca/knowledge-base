@@ -17,6 +17,17 @@ export function assertReaderNumbering(value = numbering, independentDigest = rea
 export const readerNumberingManifest = numbering;
 export const readerParts = numbering.parts.map(part => ({ ...part, label: `第${chinese[part.number]}部` }));
 
+// Current PM reading links must not select the retained historical article scope.
+// All other units keep their established entry contract in this bounded change.
+const separatePrintEntries = new Set([
+  '/docs/book/particulate-emissions-and-health',
+  '/docs/appendices/particulate-factor-calculations',
+]);
+export function printReadingEntryAnchor(key) {
+  const historical = printUnitAnchor(key);
+  return separatePrintEntries.has(key) ? historical.replace(/^print-unit-/, 'print-reading-unit-') : historical;
+}
+
 /** Publication numbers belong to a view/edition; routes and claim IDs do not.
  * @returns {NumberingUnit[]}
  */

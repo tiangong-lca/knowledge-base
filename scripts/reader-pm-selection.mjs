@@ -6,6 +6,7 @@ import { chapterAnchorPrefix, chapterNoteAnchor, collectChapterClaimOccurrences,
 import { concealedText, qualifyHeadingCopyButtons, trustedFrameworkSvg } from './reader-data-applicability.mjs';
 import { unaccountedReaderText, validateExchangeAnnotationOutput } from './reader-exchange-semantics.mjs';
 import { isVerifiedReaderPagination } from './reader-numbering-output.mjs';
+import { printReadingEntryAnchor } from './reader-numbering.mjs';
 import { readerParagraphText, validateReaderHistoricalText } from './reader-publication-text.mjs';
 
 export const pmSelectionRoute = '/docs/book/particulate-emissions-and-health';
@@ -239,7 +240,7 @@ export function validatePmSelectionCoverage(edition, sources, catalog, accepted,
   }
   const navigation = accepted.units.map(unit => unit.blocks.filter(block => block.kind === 'navigation').flatMap(block => block.links));
   if (sections(accepted.units[1]).some(section => !navigation[0].some(link => pmSelectionBookHref(link.href, pmSelectionRoute) === `#${printUnitAnchor(pmSelectionAppendix)}-${section.id}`))
-      || !navigation[1].some(link => pmSelectionBookHref(link.href, pmSelectionAppendix) === `#${printUnitAnchor(pmSelectionRoute)}`))
+      || !navigation[1].some(link => pmSelectionBookHref(link.href, pmSelectionAppendix) === `#${printReadingEntryAnchor(pmSelectionRoute)}`))
     errors.push('PM selection actual chapter-to-appendix coverage or appendix return link differs');
   return errors;
 }
@@ -258,7 +259,7 @@ export function pmSelectionBookHref(href, currentRoute) {
   const [path, fragment] = href.split('#');
   const target = path.replace(/\/$/, '');
   if (!routes.includes(target)) return href;
-  try { return `#${printUnitAnchor(target)}${fragment ? `-${decodeURIComponent(fragment)}` : ''}`; }
+  try { return fragment ? `#${printUnitAnchor(target)}-${decodeURIComponent(fragment)}` : `#${printReadingEntryAnchor(target)}`; }
   catch { return href; }
 }
 
@@ -385,7 +386,9 @@ export function validateRenderedPmSelection(document, path, catalog, accepted, i
     const title = unit.querySelector('[data-reader-heading-key="@unit"]');
     const description = title?.nextElementSibling;
     verify(title, title?.parentNode === unit && title.tagName === (print ? 'H2' : 'H1') && title.text === record.title
-      && unit.getAttribute('data-reader-title') === record.title && (!print || unit.id === prefix), 'actual title or unit identity');
+      && unit.getAttribute('data-reader-title') === record.title && (!print || unit.id === prefix
+        && title.id === printReadingEntryAnchor(route) && title.getAttribute('tabindex') === '-1'
+        && pathIds.get(title.id)?.length === 1), 'actual title or unit identity');
     verify(description, description?.tagName === 'P' && description.text === record.description, 'actual description');
     if (!print) {
       const footers = unit.querySelectorAll('.docs-pagination');

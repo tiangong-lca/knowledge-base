@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-10
-lastReviewedCommit: fa57408475e225c62dc5c23bbc36699dbf34ddc6
+lastReviewedCommit: ef8dbfa1a18920a2fe490b57f72dbea4127674b4
 ---
 
 # Publication architecture
@@ -354,6 +354,16 @@ numbers while links still point to the correct records. Body, notes, native
 heading/copy controls and ordinary appendix links have separate output checks.
 These guards cannot establish source entailment, reader comprehension, actual
 hosting or empirical validity; those rely on their separately bound evidence.
+
+For the two PM units, `printReadingEntryAnchor` in the numbering module gives
+the existing printed title a separate `print-reading-unit-` identity and
+`tabIndex=-1`. Current TOC entries and whole-unit prose links use this title;
+the article keeps its historical `print-unit-` identity and dated `:target`
+scope. Section, note and explicit historical print links retain their meaning.
+Numbering and PM output gates require the unique focusable title to be owned
+by the correct article. Other38current unit entries remain unchanged. This
+prevents the PM current TOC arrival from expanding its old48-note scope; no
+CSS or JavaScript disclosure change is used.
 
 The static `particulate-health` adapter registers 30 fixed source tuples through
 the existing case publication interface and exact-rational evaluator. It
