@@ -1,6 +1,6 @@
 ---
 lastReviewedAt: 2026-11-11
-lastReviewedCommit: bb12fa4bce7a68a3f5725f6ffa6a8a1ffe8c059c
+lastReviewedCommit: b2f8a942ad45510cfc67e4e61b5b3ad9c820ae19
 title: 把 LCA 知识写成一本可研读的书
 docType: contract
 scope: repo
