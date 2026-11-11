@@ -13,8 +13,8 @@ checkPaths:
   - "content/**"
   - "knowledge/**"
   - "releases/**"
-lastReviewedAt: 2026-11-10
-lastReviewedCommit: 6e9b5b88e50c2606535bbc5da4fda695bd1f8eb8
+lastReviewedAt: 2026-11-11
+lastReviewedCommit: bb12fa4bce7a68a3f5725f6ffa6a8a1ffe8c059c
 ---
 
 # Editorial and living review protocol
@@ -93,7 +93,7 @@ The joint-product chapter first reconstructs the positive physical alternatives 
 
 ## Finished prose is the publication gate
 
-Apply `_docs/reader-publication-contract.md` to every new or revised chapter. Source discipline alone does not qualify a reader deliverable: the argument must progress continuously and finish its declared question. Remove author-workflow narration, repeated status templates and development promises; retain real scientific conditions, disagreements and explicit invented data. Archive the removed process history in development Markdown. Each actual book chapter requires one continuous annotation sequence. Website navigation and book/print order may differ while sharing canonical prose and evidence; migrate note plans to the actual assembled chapter boundaries. The current runtime explicitly registers retained source units, shared prose front matter, independently authored framework and joint-production chapters, and two calculation appendices. B04 and B10 each interleave canonical prose with one actual chapter note plan. The current numbered seven-part order does not complete the independently authored32chapter assembly, which remains pending. Independent reader judgment checks what automated validation cannot.
+Apply `_docs/reader-publication-contract.md` and the [writing and teaching guide](editorial/readable-writing-and-teaching.md) to every new or revised chapter. Use a concrete reader task to check whether the actual chapter supplies what a reader needs to explain or judge. Keep source review separate from continuous reading and rendered-output checks. Source discipline alone does not qualify a reader deliverable: the argument must progress continuously and finish its declared question. Remove author-workflow narration, repeated status templates and development promises; retain real scientific conditions, disagreements and explicit invented data. Archive the removed process history in development Markdown. Each actual book chapter requires one continuous annotation sequence. Website navigation and book/print order may differ while sharing canonical prose and evidence; migrate note plans to the actual assembled chapter boundaries. The current runtime explicitly registers retained source units, shared prose front matter, independently authored framework and joint-production chapters, and two calculation appendices. B04 and B10 each interleave canonical prose with one actual chapter note plan. The current numbered seven-part order does not complete the independently authored32chapter assembly, which remains pending. Independent reader judgment checks what automated validation cannot.
 
 ## Historical numerical reconstruction
 

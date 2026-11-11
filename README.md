@@ -14,8 +14,8 @@ checkPaths:
   - "package.json"
   - "app/**"
   - "scripts/**"
-lastReviewedAt: 2026-11-10
-lastReviewedCommit: 6e9b5b88e50c2606535bbc5da4fda695bd1f8eb8
+lastReviewedAt: 2026-11-11
+lastReviewedCommit: bb12fa4bce7a68a3f5725f6ffa6a8a1ffe8c059c
 ---
 
 # LCA Living Knowledge Base and Review
@@ -218,3 +218,8 @@ headings remain protected within4146historical obligations. Two new evidence
 records receive their own current acceptance; no earlier source/reading event or
 case input is overwritten. Source, actual output, hosting and integration remain
 separate gates, and32current chapters do not establish the full-book edition.
+
+
+## Readable-writing pilot
+
+[Issue91](https://github.com/tiangong-lca/knowledge-base/issues/91) adopts the writing/teaching guide and revises chapter27 under a frozen source and numerical-input identity. The dated guide assessment is not current scientific approval. See [the standard](_docs/editorial/readable-writing-and-teaching.md) and [unit protocol](_docs/editorial/2026-11-11-readable-pedigree.md). The pre-edit inventory lives in `config/readable-pedigree-original.json`; it does not grant acceptance of a later manuscript.

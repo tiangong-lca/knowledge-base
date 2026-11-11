@@ -16,8 +16,8 @@ checkPaths:
   - "scripts/**"
   - "package.json"
   - ".github/**"
-lastReviewedAt: 2026-11-10
-lastReviewedCommit: 6e9b5b88e50c2606535bbc5da4fda695bd1f8eb8
+lastReviewedAt: 2026-11-11
+lastReviewedCommit: bb12fa4bce7a68a3f5725f6ffa6a8a1ffe8c059c
 ---
 
 # Publication architecture
@@ -698,3 +698,8 @@ body element must be the reviewed continuation. Extra nesting, attributes,
 substantive intervening content or relocation fail. Actual-component fixtures
 supplement generated-output checks, preventing an artificial direct-paragraph
 fixture from defining the production renderer's structure.
+
+
+## Readable-writing pilot
+
+[Issue91](https://github.com/tiangong-lca/knowledge-base/issues/91) adopts the writing/teaching guide and revises chapter27 under a frozen source and numerical-input identity. The dated guide assessment is not current scientific approval. See [the standard](editorial/readable-writing-and-teaching.md) and [unit protocol](editorial/2026-11-11-readable-pedigree.md). The pre-edit inventory lives in `config/readable-pedigree-original.json`; it does not grant acceptance of a later manuscript.
