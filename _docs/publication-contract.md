@@ -16,8 +16,8 @@ checkPaths:
   - "content/**"
   - "scripts/**"
   - "releases/**"
-lastReviewedAt: 2026-11-10
-lastReviewedCommit: 6e9b5b88e50c2606535bbc5da4fda695bd1f8eb8
+lastReviewedAt: 2026-11-11
+lastReviewedCommit: b2f8a942ad45510cfc67e4e61b5b3ad9c820ae19
 ---
 
 # Publication contract
@@ -207,3 +207,8 @@ scope against its own immutable source or actual captured edition, preserve the
 original claim subset and expose its dated context at the native heading.
 Inherited citations are remapped by their actual destination identity; the source
 route alone cannot determine where a subsequently moved note belongs.
+
+
+## Readable-writing adoption
+
+The user-adopted [writing and teaching standard](editorial/readable-writing-and-teaching.md) governs Chinese manuscript revision. Reader-essential conditions stay with their claims; source fidelity and comprehension remain independent checks. Its dated assessment and illustrative edits do not acquire scientific approval through adoption. A prose-only revision of a numerical case may retain its immutable input while renewing the exact publication templates, canonical materialization and affected-consumer acceptance. Original snapshots and all unrelated input/publication identities remain protected.

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-09",
+  "updatedAt": "2026-11-11",
   "readings": [
     {
       "id": "rd-cml-2001-part1",
@@ -29833,6 +29833,55 @@
         "psg-kb88-usetox-v11-pathway-units-reinspection",
         "psg-kb88-usetox-v11-comparative-use-reinspection",
         "psg-kb88-usetox-v11-boxes-reinspection"
+      ]
+    },
+    {
+      "id": "rev-kb91-pedigree-source-reinspection",
+      "before": "第27章以2026-11-05所登记的原件和选段支持杯重、评分校准、概率算例与评分测试。",
+      "after": "2026-11-11独立重新取得并选读2008和2016出版商PDF、2012报告及2018出版商ESM1，字节与登记一致。另重读2018 PMC作者稿相关小节，当前响应哈希与既有记录不同。复核所列来源位置及候选中的统计对象和公式。",
+      "reasoning": "抽样脚注区分在售和售出份额；整群门店的位置是报告观察到的潜在偏差条件；层份额是层均值的权重；后分层精度计算使用原文显示值。完整性比值、平方GSD及评分互补立场保留其各自限定。",
+      "status": "2026-11-11 agent-source-check；指定选段和公开汇总算术已复核；原始观察、校准明细、作者转换过程及人类领域审查仍开放",
+      "triggerPassageIds": [
+        "psg-ped2008-population",
+        "psg-ped2008-design",
+        "psg-ped2008-estimators",
+        "psg-ped2008-results",
+        "psg-ped2008-discussion",
+        "psg-ped2012-completeness-subsets",
+        "psg-ped2012-completeness-factors",
+        "psg-ped2012-cup-database",
+        "psg-ped2012-gsd-definition",
+        "psg-ped2012-reliability-cv-trace",
+        "psg-ped2016-gsd-combination",
+        "psg-ped2016-ratio-rule",
+        "psg-ped2016-summary",
+        "psg-ei2018-alongside",
+        "psg-ei2018-reuse-limits",
+        "psg-ped-ei2018-test-design",
+        "psg-ped-ei2018-test-results"
+      ],
+      "affectedUnits": [
+        "V4-06",
+        "V7-02",
+        "A05"
+      ]
+    },
+    {
+      "id": "rev-kb91-reader-wording-disposition",
+      "before": "第27章v2已完成原件选段及数量复核，独立读者继续检查其连续解释。",
+      "after": "独立读者未报告可证实材料错误，提出因果归因和方向措辞建议。最终去掉未证作者因果动机，明确固定N和样本方差时方差项不增，收紧总体杯重与方差降幅的指称；注释同步只称原文显示的方差估计。",
+      "reasoning": "局部改写保持调查、公式、来源差异、所有数值和模型条件；固定样本方差是代数比较条件，不推论新增观察总能降低估计方差。",
+      "status": "2026-11-11 agent-source-check and bounded independent reader review; four final wording changes separately source-checked; no human learner or empirical validation",
+      "triggerPassageIds": [
+        "psg-ped2008-estimators",
+        "psg-ped2008-results",
+        "psg-ped2008-population",
+        "psg-ciroth2012-scores-factors"
+      ],
+      "affectedUnits": [
+        "V4-06",
+        "V7-02",
+        "A05"
       ]
     }
   ]

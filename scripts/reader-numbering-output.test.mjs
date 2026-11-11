@@ -10,7 +10,7 @@ import {mkdtemp,mkdir,writeFile,rm} from 'node:fs/promises';
 import {join} from 'node:path';
 import {tmpdir} from 'node:os';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
-import {readerNumberingManifest as manifest,getPresentationUnits,getUnitHeadingPlan,readerParts,readerContinuationContracts,getContinuationLink} from './reader-numbering.mjs';
+import {readerNumberingManifest as manifest,getPresentationUnits,getUnitHeadingPlan,printReadingEntryAnchor,readerParts,readerContinuationContracts,getContinuationLink} from './reader-numbering.mjs';
 import {printUnitAnchor} from './reader-book.mjs';
 import {readReaderNumberingArtifact,validateReaderNumberingSources,validateReaderNumberingDocument,prepareNumberedReaderDocument,validateReaderNumberingOutput,isVerifiedReaderPagination} from './reader-numbering-output.mjs';
 const esc=text=>String(text).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
@@ -19,8 +19,10 @@ const book=getPresentationUnits('book'),web=getPresentationUnits('web'),sources=
 const edition={units:manifest.book.map(({key,source,kind})=>({key,source,kind}))};
 const heading=(view,unit,slot)=>`<h${view==='book'?Math.min(slot.depth+2,6):slot.depth} ${slot.id?`id="${esc(view==='book'?printUnitAnchor(unit.key)+'-'+slot.id:slot.id)}"`:''} data-reader-heading-key="${esc(slot.key)}">${numbered(slot.number,slot.title)}</h${view==='book'?Math.min(slot.depth+2,6):slot.depth}>`;
 function continuation(view,unit){return readerContinuationContracts.filter(row=>(view==='book'?row.bookSource??row.route:row.route)===unit.source).map(row=>{const link=getContinuationLink(view,view==='book'?row.bookSourceKey??row.route:row.route,row.sourceHref,row.sourceLabel),context=view==='book'?row.bookContext:row.webContext;return `<p>${esc(context).replace(esc(link.label),`<a href="${esc(link.href)}">${esc(link.label)}</a>`)}</p>`;}).join('');}
-const unit=(view,record)=>{const level=view==='book'?(record.kind==='front-matter'?2:3):1,prefix=view==='book'?printUnitAnchor(record.key):'chapter';return `<article ${view==='book'?`id="${prefix}"`:''} data-reader-route="${record.key}" data-reader-title="${esc(record.title)}">${view==='web'?`<p class="reader-view-label">网页细读目录${record.partTitle?` · ${record.partLabel} ${record.partTitle}`:''} · <a href="/print/">书籍目录与连续阅读</a></p>`:''}<h${level} data-reader-heading-key="@unit">${numbered(record.label,record.title)}</h${level}><p>fixture</p>${getUnitHeadingPlan(view,record.key).map(slot=>heading(view,record,slot)).join('')}${continuation(view,record)}${record.kind==='front-matter'?'':`<section class="chapter-notes"><h${view==='book'?4:2}>注释</h${view==='book'?4:2}></section>`}${view==='web'?footer(record):''}</article>`;};
-function tocUnit(record){return `<li><a data-reader-toc-unit="${record.key}" href="#${printUnitAnchor(record.key)}">${numbered(record.label,record.title)}</a><ul>${getUnitHeadingPlan('book',record.key).filter(slot=>slot.type==='mdx').map(slot=>`<li><a data-reader-toc-heading="${esc(slot.key)}" data-reader-route="${record.key}" href="#${esc(printUnitAnchor(record.key)+'-'+slot.id)}">${numbered(slot.number,slot.title)}</a></li>`).join('')}</ul></li>`;}
+const currentEntryAttributes = (view, record) => view === 'book' && printReadingEntryAnchor(record.key) !== printUnitAnchor(record.key)
+  ? ` id="${printReadingEntryAnchor(record.key)}" tabindex="-1"` : '';
+const unit=(view,record)=>{const level=view==='book'?(record.kind==='front-matter'?2:3):1,prefix=view==='book'?printUnitAnchor(record.key):'chapter';return `<article ${view==='book'?`id="${prefix}"`:''} data-reader-route="${record.key}" data-reader-title="${esc(record.title)}">${view==='web'?`<p class="reader-view-label">网页细读目录${record.partTitle?` · ${record.partLabel} ${record.partTitle}`:''} · <a href="/print/">书籍目录与连续阅读</a></p>`:''}<h${level}${currentEntryAttributes(view,record)} data-reader-heading-key="@unit">${numbered(record.label,record.title)}</h${level}><p>fixture</p>${getUnitHeadingPlan(view,record.key).map(slot=>heading(view,record,slot)).join('')}${continuation(view,record)}${record.kind==='front-matter'?'':`<section class="chapter-notes"><h${view==='book'?4:2}>注释</h${view==='book'?4:2}></section>`}${view==='web'?footer(record):''}</article>`;};
+function tocUnit(record){return `<li><a data-reader-toc-unit="${record.key}" href="#${printReadingEntryAnchor(record.key)}">${numbered(record.label,record.title)}</a><ul>${getUnitHeadingPlan('book',record.key).filter(slot=>slot.type==='mdx').map(slot=>`<li><a data-reader-toc-heading="${esc(slot.key)}" data-reader-route="${record.key}" href="#${esc(printUnitAnchor(record.key)+'-'+slot.id)}">${numbered(slot.number,slot.title)}</a></li>`).join('')}</ul></li>`;}
 function bookHtml(){return `<nav data-reader-contents="book"><ul>${book.filter(record=>record.kind==='front-matter').map(tocUnit).join('')}</ul>${readerParts.map(part=>`<section><h3 data-reader-toc-part="${part.number}"><a href="#print-part-${part.number}">${numbered(part.label,part.title)}</a></h3><ul>${book.filter(record=>record.part===part.number).map(tocUnit).join('')}</ul></section>`).join('')}${book.filter(record=>['topic','appendix'].includes(record.kind)).map(tocUnit).join('')}</nav><main>${book.filter(record=>record.kind==='front-matter').map(record=>unit('book',record)).join('')}${readerParts.map(part=>`<section data-reader-part-group="${part.number}"><h2 id="print-part-${part.number}" data-reader-part="${part.number}">${numbered(part.label,part.title)}</h2><p class="print-part-introduction">${esc(part.introduction)}</p>${book.filter(record=>record.part===part.number).map(record=>unit('book',record)).join('')}</section>`).join('')}${book.filter(record=>['topic','appendix'].includes(record.kind)).map(record=>unit('book',record)).join('')}</main>`;}
 function footer(record){if(record.key==='/docs')return '';const at=web.findIndex(unit=>unit.key===record.key);return `<div class="docs-pagination">${[web[at-1],web[at+1]].filter(Boolean).map(neighbor=>`<a href="${neighbor.key}/"><span data-reader-unit-name="${neighbor.key}">${numbered(neighbor.label,neighbor.title)}</span><p>fixture</p></a>`).join('')}</div>`;}
 // Installed Fumadocs16.17.10: native Collapsible root, trigger and controlled
@@ -53,6 +55,53 @@ test('only exact validated marker pairs become semantic plain titles and legacy 
  const record=book.find(unit=>unit.key==='book-joint-production'),article=prepared.document.querySelector(`article[data-reader-route="${record.key}"]`);assert.equal(article.querySelector('[data-reader-heading-key="@unit"]').tagName,'H2');assert.equal(article.querySelector('[data-reader-heading-key="信息目的"]').tagName,'H3');assert.equal(article.querySelector('[data-reader-heading-key="@case:joint:title"]').tagName,'H4');assert.equal(article.querySelector('[data-reader-heading-key="@case:joint:routes"]').tagName,'H5');assert.equal(article.querySelector('.chapter-notes').querySelector('h3').text,'注释');
  const node=raw.querySelector('[data-reader-heading-key="信息目的"]');for(const changed of [node.outerHTML.replace('>10.1<','>11.1<'),node.outerHTML.replace('</span> <span','</span>  <span'),node.outerHTML.replace('data-reader-heading-title=""','data-reader-heading-title="false"')]){const result=prepareNumberedReaderDocument(htmlParser.parse(html.replace(node.outerHTML,changed)),'/print',{sources});assert(result.errors.length);assert.equal(result.document,null);}
 });
+test('only B27 uses a focusable title for its current print entry and retains its historical article', () => {
+  const route = '/docs/book/data-quality-and-probability';
+  const html = bookHtml();
+  const document = htmlParser.parse(html);
+  const article = document.querySelector(`article[data-reader-route="${route}"]`);
+  const heading = article.querySelector('[data-reader-heading-key="@unit"]');
+  const toc = document.querySelector(`[data-reader-toc-unit="${route}"]`);
+  const historical = printUnitAnchor(route);
+  const current = printReadingEntryAnchor(route);
+  assert.match(current, /^print-reading-unit-/);
+  assert.notEqual(current, historical);
+  assert.equal(article.id, historical);
+  assert.equal(heading.id, current);
+  assert.equal(heading.parentNode, article);
+  assert.equal(heading.getAttribute('tabindex'), '-1');
+  assert.equal(toc.getAttribute('href'), '#' + current);
+  assert.deepEqual(check(html, '/print'), []);
+
+  const otherRoutes = book.map(unit => unit.key).filter(key => key !== route);
+  assert.equal(otherRoutes.length, 38);
+  for (const key of otherRoutes) {
+    assert.equal(printReadingEntryAnchor(key), printUnitAnchor(key));
+    assert.equal(document.querySelector(`[data-reader-toc-unit="${key}"]`).getAttribute('href'), '#' + printUnitAnchor(key));
+  }
+  const otherTitle = document.querySelector(`article[data-reader-route="${otherRoutes[0]}"] [data-reader-heading-key="@unit"]`);
+  const badHeading = [
+    heading.outerHTML.replace(`id="${current}"`, 'id="misnamed"'),
+    heading.outerHTML.replace('tabindex="-1"', 'tabindex="0"'),
+    `<div>${heading.outerHTML}</div>`,
+  ];
+  for (const changed of badHeading) {
+    assert(check(html.replace(heading.outerHTML, changed), '/print').some(error => error.includes('reading heading target')));
+  }
+  const duplicated = html + `<div id="${current}"></div>`;
+  assert(check(duplicated, '/print').some(error => error.includes('must resolve to one actual native target')));
+  const oldHref = html.replace(toc.outerHTML, toc.outerHTML.replace(current, historical));
+  assert(check(oldHref, '/print').some(error => error.includes('Wrong book contents unit href')));
+  const movedOtherTitle = html.replace(otherTitle.outerHTML, otherTitle.outerHTML.replace(' data-reader-heading-key', ' id="print-reading-unit-other" data-reader-heading-key'));
+  assert(check(movedOtherTitle, '/print').some(error => error.includes('reading anchors differ')));
+
+  const normalized = prepareNumberedReaderDocument(document, '/print', { sources });
+  assert.deepEqual(normalized.errors, []);
+  const articleAfter = normalized.document.querySelector(`article[data-reader-route="${route}"]`);
+  assert.equal(articleAfter.id, historical);
+  assert.equal(articleAfter.querySelector('[data-reader-heading-key="@unit"]').id, current);
+});
+
 test('both website views retain separate numbering,full sidebar and local native heading TOC',()=>{
  for(const route of ['/docs/book/allocation-and-substitution','/docs/book/emission-time-and-assessment','/docs/flows','/docs/appendices/container-energy-check','/docs']){const record=web.find(unit=>unit.key===route),html=webHtml(record);assert.deepEqual(check(html,route),[]);}
  const record=web.find(unit=>unit.key==='/docs/book/allocation-and-substitution'),html=webHtml(record),doc=htmlParser.parse(html),toc=doc.querySelector('#nd-toc a'),header=doc.querySelector('article h1'),sidebarName=doc.querySelector('#nd-sidebar [data-reader-unit-name]');

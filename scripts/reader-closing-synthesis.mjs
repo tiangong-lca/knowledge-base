@@ -1,3 +1,4 @@
+import { readablePedigreeClosingRecords, readablePedigreeAcceptedDigest } from './reader-readable-pedigree.mjs';
 import { toxicityB32CurrentRecords, toxicityPathwaysAcceptedDigest } from './reader-toxicity-pathways.mjs';
 import { publicCatalog } from './knowledge.mjs';
 import { createHash } from 'node:crypto';
@@ -77,8 +78,8 @@ export function assertClosingSynthesisProseAccepted(prose,independentDigest=clos
   for(const page of prose.website){const raw=original.sourceFiles[`content${page.route}.mdx`]?.text,expected=raw&&sections(raw);if(!expected||!same(page.claimIds,collectChapterClaimOccurrences(raw))||!same(page.occurrences,expected.occurrences))throw new Error('B32 fine-page8/14 membership and original heading placement must remain exact');}
   if(prose.sources.some(source=>!nonempty(source.title)||!nonempty(source.description)||!/^[a-f0-9]{64}$/.test(source.mdxSha256)||!Array.isArray(source.headings)||!Array.isArray(source.ordinary)||source.ordinary.length))throw new Error('B32 final source metadata/hash/ordinary prose receipt is incomplete');
 }
-/** @param {any} edition @param {Map<string,string>} sources @param {any} catalog @param {any} prose @param {string|null} independentDigest @param {'raw'|'public'} catalogProjection @param {any} currentAcceptance @param {string|null} currentDigest @param {any} toxicityAcceptance @param {string|null} toxicityDigest */
-export function validateClosingSynthesisCoverage(edition,sources,catalog,prose,independentDigest=closingSynthesisProseDigest,catalogProjection='raw',currentAcceptance=currentScientific,currentDigest=closingSynthesisCurrentDigest,toxicityAcceptance=null,toxicityDigest=toxicityPathwaysAcceptedDigest) {
+/** @param {any} edition @param {Map<string,string>} sources @param {any} catalog @param {any} prose @param {string|null} independentDigest @param {'raw'|'public'} catalogProjection @param {any} currentAcceptance @param {string|null} currentDigest @param {any} toxicityAcceptance @param {string|null} toxicityDigest @param {any} pedigreeAcceptance @param {string|null} pedigreeDigest */
+export function validateClosingSynthesisCoverage(edition,sources,catalog,prose,independentDigest=closingSynthesisProseDigest,catalogProjection='raw',currentAcceptance=currentScientific,currentDigest=closingSynthesisCurrentDigest,toxicityAcceptance=null,toxicityDigest=toxicityPathwaysAcceptedDigest,pedigreeAcceptance=null,pedigreeDigest=readablePedigreeAcceptedDigest) {
   assertClosingSynthesisOriginal();assertClosingSynthesisRegistration(edition);assertClosingSynthesisProseAccepted(prose,independentDigest);
   const errors=[];
   let currentRecords=new Map();
@@ -95,6 +96,18 @@ export function validateClosingSynthesisCoverage(edition,sources,catalog,prose,i
       if(!sameRecord(prose.claims.find(row=>row.id===consumer.id),consumer))throw new Error(`B32 toxicity consumer differs from its immutable reviewed prose: ${consumer.id}`);
       toxicityConsumers.push(consumer);
     }
+  }
+  const pedigreeConsumers=[];
+  if(pedigreeAcceptance!==null){
+    const pedigree=readablePedigreeClosingRecords(pedigreeAcceptance,pedigreeDigest);
+    for(const {old,current} of pedigree.changes){
+      const fixed=original.scientificClosure.claims.find(row=>row.id===old.id);
+      if(!sameRecord(fixed,old)||currentRecords.has(old.id))throw new Error(`B32 pedigree replacement is outside its exact immutable closure: ${old.id}`);
+      currentRecords.set(old.id,current);
+    }
+    if(!sameRecord(prose.claims.find(row=>row.id===pedigree.consumer.id),pedigree.consumer))
+      throw new Error(`B32 pedigree consumer differs from its immutable reviewed prose: ${pedigree.consumer.id}`);
+    pedigreeConsumers.push(pedigree.consumer);
   }
   const currentClosure={...original.scientificClosure,claims:original.scientificClosure.claims.map(row=>currentRecords.get(row.id)??row)};
   for(const source of prose.sources){const raw=sources.get(source.route);if(typeof raw!=='string'||rawDigest(raw)!==source.mdxSha256){errors.push(`B32 source differs from independently reviewed MDX: ${source.route}`);continue;}const actual=sections(raw);if(!sameRecord(metadata(raw),{title:source.title,description:source.description})||!same(actual.headings,source.headings))errors.push(`B32 actual source metadata/headings differ: ${source.route}`);const expected=source.route===closingSynthesisManuscript?closingSynthesisSections.flatMap(section=>section.claimIds.map(id=>({id,section:section.id}))):prose.website.find(page=>page.route===source.route)?.occurrences;if(!same(actual.occurrences,expected)||collectChapterClaimOccurrences(raw).length!==expected?.length)errors.push(`B32 body missing, duplicated, reordered, outside sections or misplaced: ${source.route}`);}
@@ -116,7 +129,7 @@ export function validateClosingSynthesisCoverage(edition,sources,catalog,prose,i
   // Independently reviewed current dependencies use separate acceptances. All other scientific records remain exact.
   for(const [kind,records] of Object.entries(currentClosure))for(const fixed of records){const found=catalog?.[kind]?.filter(row=>row.id===fixed.id)??[];if(found.length!==1||!sameRecord(found[0],expected(kind,fixed)))errors.push(`B32 original scientific ${kind} closure differs: ${fixed.id}`);}
   const earlierConsumers=currentAcceptance?.status==='reviewed'?currentAcceptance.consumers.map(row=>row.record):[];
-  for(const consumer of new Map([...earlierConsumers,...toxicityConsumers].map(row=>[row.id,row])).values()){
+  for(const consumer of new Map([...earlierConsumers,...toxicityConsumers,...pedigreeConsumers].map(row=>[row.id,row])).values()){
     const found=catalog?.claims?.filter(row=>row.id===consumer.id)??[];
     const reference={...catalog,claims:catalog.claims.filter(row=>row.id!==consumer.id).concat(consumer)};
     const wanted=catalogProjection==='public'?publicCatalog(reference).claims.find(row=>row.id===consumer.id):consumer;

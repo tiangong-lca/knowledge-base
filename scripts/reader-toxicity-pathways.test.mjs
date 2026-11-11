@@ -1,3 +1,5 @@
+import pedigreeAccepted from '../config/readable-pedigree-accepted.json' with { type: 'json' };
+import { readablePedigreeCaseExpectation } from './reader-readable-pedigree.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
@@ -290,9 +292,9 @@ test('rendered web headings require the native self-link and exactly one qualifi
   }
 });
 
-test('18 case inputs and all ten existing B32, climate and data artifact files retain their frozen bytes', async () => {
+test('18 case inputs, unrelated bindings and ten B32, climate and data artifacts retain frozen bytes', async () => {
   assert.equal(original.caseInputHashes.length, 18);
   const cases = original.caseInputHashes.flatMap(row => [[row.file, row.sha256], [row.publicationFile, row.publicationSha256]]);
   const boundaries = Object.entries(original.acceptedBoundaryArtifactHashes).map(([file, row]) => [file, row.sha256]);
-  for (const [file, expected] of [...cases, ...boundaries]) assert.equal(sha(await read(file)), expected, file);
+  for (const [file, expected] of [...cases, ...boundaries]) assert.equal(sha(await read(file)), readablePedigreeCaseExpectation(file, expected, pedigreeAccepted), file);
 });

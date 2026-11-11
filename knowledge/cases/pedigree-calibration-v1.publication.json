@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "inputFile": "pedigree-calibration-v1.json",
   "approvedInputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
-  "reviewedAt": "2026-11-05",
+  "reviewedAt": "2026-11-11",
   "reviewKind": "agent-source-check",
   "claims": [
     {
@@ -37,7 +37,7 @@
         "g²按以g计的均值估计量及方差公式确定；不代表原文另有更精确的测量数据。"
       ],
       "reasoning": "由印刷方差开方、除以同一估计均值并乘100；来源汇总量与作者复算明确区分。",
-      "textTemplate": "公开的汇总结果足以把一个精度数算明白。整群路线报告平均杯重{{input.facts.clusterMean.value}} g，均值估计的方差为{{input.facts.clusterVariance.value}} g²。取平方根，标准误约为{{evaluated.sampling.cluster.standardDeviation.fixed6}} g；再除以平均值，得到相对标准误约{{evaluated.sampling.cluster.cvPercent.fixed4}}%，与原文显示的约1.5%相合。这个百分数回答的是平均杯重估计的相对精度，不是每只杯子的质量都只在平均值附近变动这么多。"
+      "textTemplate": "整群路线报告的平均杯重是{{input.facts.clusterMean.value}} g，均值估计的方差是{{input.facts.clusterVariance.value}} g²。方差的单位是平方克，开方后回到克，得到标准误约{{evaluated.sampling.cluster.standardDeviation.fixed4}} g。再除以平均杯重，相对标准误约为{{evaluated.sampling.cluster.cvPercent.fixed4}}%，与原文显示的约1.5%相合。这个百分数回答的是用这种抽样办法估计平均杯重有多精确。"
     },
     {
       "id": "cl-ped-poststratification",
@@ -65,10 +65,10 @@
       ],
       "conceptIds": [],
       "caveats": [
-        "方差降低比例由已舍入的汇总数计算，不是从观察值重新估计的设计效应，也不证明任何后分层都会降低误差。"
+        "方差降低比例由原文列出的两个方差估计值计算，不是从观察值重新估计的设计效应，也不证明任何后分层都会降低误差。"
       ],
       "reasoning": "复算平方根与相对标准误，并用1−0.0014/0.0072描述所列汇总量的差异。",
-      "textTemplate": "同一批整群观察还可以按杯型属性重新分层。原文的后分层步骤沿用这些观察值，并引入分层路线所得的总体份额。报告的平均值变为{{input.facts.postMean.value}} g，估计方差为{{input.facts.postVariance.value}} g²；相应标准误约{{evaluated.sampling.poststratified.standardDeviation.fixed6}} g，相对标准误约{{evaluated.sampling.poststratified.cvPercent.fixed4}}%。仅比较这两项已显示的方差，后者比整群原估计低约{{evaluated.sampling.poststratifiedVarianceReductionPercent.fixed4}}%。均值也随重新加权而改变；这里展示的是估计程序和所用信息的作用，并非又取得了一批独立的杯子。"
+      "textTemplate": "只改变原有观察的用法，也会改变均值和它的估计精度。作者把同一批整群观察按杯型属性重新分层，再用分层路线得到的总体份额加权。这道后分层程序给出平均值{{input.facts.postMean.value}} g、均值估计方差{{input.facts.postVariance.value}} g²，开方得标准误约{{evaluated.sampling.poststratified.standardDeviation.fixed4}} g，除以该平均值则得相对标准误约{{evaluated.sampling.poststratified.cvPercent.fixed4}}%。用原文列出的新旧两个方差相比，再以1减去这个比值，得到约{{evaluated.sampling.poststratifiedVarianceReductionPercent.fixed4}}%的方差降幅。重加权前后用的是同一批杯重观察，差异体现了估计程序和层份额信息的作用。"
     },
     {
       "id": "cl-ped-population-spread",
@@ -101,7 +101,7 @@
         "这里所称总体沿用该研究的杯型×门店口径；不是全市场普查，也不是销量加权变异。"
       ],
       "reasoning": "将总体散布与均值估计方差分别开方和解释，不交换两个估计对象。",
-      "textTemplate": "同页还给出总体杯重散布的方差{{input.facts.populationVariance.value}} g²。它的平方根约{{evaluated.sampling.population.standardDeviation.fixed6}} g；以报告的分层平均值{{input.facts.stratifiedMean.value}} g作分母，得到约{{evaluated.sampling.population.cvPercent.fixed4}}%，与原文约15%的说明相合。这一散布远大于上面的平均值估计精度，并不矛盾：总体可以包含轻重明显不同的杯型，而有信息的抽样仍可能较精确地估计它们的平均值。给平均值一个窄范围，不能据此给某个具体杯型同样窄的范围。"
+      "textTemplate": "若关心柏林调查所定义的总体中，杯重彼此相差多大，就要看另一个方差。原文同页报告的总体杯重方差为{{input.facts.populationVariance.value}} g²，开方得到标准差约{{evaluated.sampling.population.standardDeviation.fixed4}} g。以报告的分层平均杯重{{input.facts.stratifiedMean.value}} g为分母，得到约{{evaluated.sampling.population.cvPercent.fixed4}}%，与原文的约15%相合。杯型有轻有重，平均杯重估计的相对标准误仍可远小于杯重的相对标准差。标准误再小，也不能用它代替杯重的标准差来描述一个具体杯型。"
     },
     {
       "id": "cl-ped-stratified-conflict",
@@ -137,7 +137,7 @@
         "未确定差异原因，没有更正原作或替换原始参数；不由此推断整项研究或抽样方法失效。"
       ],
       "reasoning": "保留两处原文身份和各自数值，仅演算显示值蕴含的相对标准误。",
-      "textTemplate": "这些汇总数也需要彼此核对。结果页把分层均值列为{{input.facts.stratifiedMean.value}} g、其估计方差列为{{input.facts.stratifiedVariance.value}} g²；按同样的开方和相除步骤，相对标准误约为{{evaluated.sampling.stratified.cvPercent.fixed4}}%。但后面的讨论把它写成{{input.facts.conflictingStratifiedCv.value}}%。这两种显示不能由同一次简单换算协调。原始层统计量和计算记录不足以决定哪一处应改，因此能够确认的是汇总值的运算及其不一致，不能把较小的百分数写成已经复现的调查精度。"
+      "textTemplate": "原文的分层路线还有一处数值需要辨明。用结果页的分层平均值{{input.facts.stratifiedMean.value}} g和均值估计方差{{input.facts.stratifiedVariance.value}} g²，先开方再除以均值，可得相对标准误约{{evaluated.sampling.stratified.cvPercent.fixed4}}%。讨论部分写的却是{{input.facts.conflictingStratifiedCv.value}}%。两处显示值无法由同一个简单换算得到。依据已给汇总量，可以核对这个差异。要判定哪一处应改，还缺原始层统计量和计算记录。"
     },
     {
       "id": "cl-ped-factor-values",
@@ -173,7 +173,7 @@
         "这是表内运算和版本对照，没有从原始样本重建多位小数因子；更多显示位数不构成更强的经验精度证明。"
       ],
       "reasoning": "逐项核对显示值的舍入与后继表的数量身份，不把同一数据链算作独立重复验证。",
-      "textTemplate": "报告据图20、21所展示的GSD比值比较，先列出等级2、3、4的暂定GSD因子{{input.facts.preciseScoreTwo.value}}、{{input.facts.preciseScoreThree.value}}、{{input.facts.preciseScoreFour.value}}，随后以{{input.facts.roundedScoreTwo.value}}、{{input.facts.roundedScoreThree.value}}、{{input.facts.roundedScoreFour.value}}提出舍入后的建议。多条超市链怎样汇成单一精细显示值，报告没有展开；接下来可核对的是舍入这一步。按显示值保留两位小数，确实得到这组三个数。2016卷期论文沿用这组建议，其中等级2仍为{{input.facts.journalScoreTwo.value}}，表头也标作GSD。等级5没有可用值；空缺不能被自动填成1。"
+      "textTemplate": "报告先在图20比较不同子样本的比值，再在图21按完整性等级展示，并据图21把等级2、3、4的暂定GSD因子分别列为{{input.facts.preciseScoreTwo.value}}、{{input.facts.preciseScoreThree.value}}、{{input.facts.preciseScoreFour.value}}。这些是报告的显示值。保留两位小数，分别得到报告建议的{{input.facts.roundedScoreTwo.value}}、{{input.facts.roundedScoreThree.value}}、{{input.facts.roundedScoreFour.value}}。2016年卷期论文沿用了这组建议，表头仍为GSD，等级2仍列{{input.facts.journalScoreTwo.value}}。等级5标为无可用值；将它填成1会另行赋予一个因子，表中没有提供这样的取值依据。"
     },
     {
       "id": "cl-ped-ratio-example",
@@ -203,7 +203,7 @@
         "不把示例值标成实测杯重校准结果。"
       ],
       "reasoning": "从作者设定的两组GSD复算比值，并保留候选到建议的用途区别。",
-      "textTemplate": "作者用时间相关性的一个假想例说明这一步：最佳组GSD设为{{input.facts.idealGsd.value}}，另一个等级组设为{{input.facts.otherGsd.value}}，两者相除得到R≈{{evaluated.ratioIllustration.sourceGenericRatio.fixed6}}。这个例子把候选因子的算法展示出来，但这些数不是酸奶杯观察值。不同数据来源可以给出不同候选值，再经过比较形成最终建议；“算出一个比值”和“证明它适用于新清单”仍是两项工作。"
+      "textTemplate": "论文以时间相关性为题，给出一组假想数：最佳组的GSD为{{input.facts.idealGsd.value}}，另一等级组为{{input.facts.otherGsd.value}}，后者较大，两数直接相除得R≈{{evaluated.ratioIllustration.sourceGenericRatio.fixed4}}。这两个输入来自论文的假想例，和柏林杯重观察无关。换一组资料可能算出另一个候选比值，最终提出什么值，还得比较各资料来源。得到比值之后，清单建模还有一步：规定这个数在分布里代表什么。"
     },
     {
       "id": "cl-ped-ratio-residual",
@@ -235,7 +235,7 @@
         "只适用于目标GSD不小于基准时的非负对数方差差额；没有经验验证或替代因子建议。"
       ],
       "reasoning": "把不同问题的数学条件显式分开：候选比值规则与恰好恢复既定组间散布的独立分量要求并非同一恒等式。",
-      "textTemplate": "这也显示了比值与独立额外分量的区别。另加一个要求：把GSD＝{{input.facts.idealGsd.value}}当作基准，要通过一个独立乘性分量恰好恢复总GSD＝{{input.facts.otherGsd.value}}。在这个额外条件下，所需分量应为exp{√[[ln({{input.facts.otherGsd.value}})]²−[ln({{input.facts.idealGsd.value}})]²]}≈{{evaluated.ratioIllustration.authorConditionalIndependentResidualGsd.fixed6}}，而不是两组GSD直接相除得到的R。若把R直接当作该独立分量，合成GSD约为{{evaluated.ratioIllustration.baselineCombinedWithSourceRatioGsd.fixed6}}；用方差差额构造的分量则返回{{evaluated.ratioIllustration.baselineCombinedWithResidualGsd.fixed4}}。这是一项附加模型条件下的代数对照，不是为原文另造一个应当采用的新默认因子。"
+      "textTemplate": "回到时间相关性的假想数字，本书另设一个问题：把GSD＝{{input.facts.idealGsd.value}}设为基准，要加入多大的独立乘性分量，才能恰好使总GSD等于{{input.facts.otherGsd.value}}？只在目标GSD不小于基准时，才有非负的对数方差差额可分给新分量。本例先取总对数方差与基准对数方差之差，再开方并取指数，得到exp{√[[ln({{input.facts.otherGsd.value}})]²−[ln({{input.facts.idealGsd.value}})]²]}≈{{evaluated.ratioIllustration.authorConditionalIndependentResidualGsd.fixed4}}。若把论文的候选比值R当作独立分量，合成GSD约为{{evaluated.ratioIllustration.baselineCombinedWithSourceRatioGsd.fixed4}}；按方差差额求出的分量才会还原{{evaluated.ratioIllustration.baselineCombinedWithResidualGsd.fixed4}}。两个算法回答的问题不同。基准和目标是为这项代数比较设置的，并未据此推荐另一个默认因子。"
     },
     {
       "id": "cl-ped-factor-conventions",
@@ -274,7 +274,7 @@
         "只说明明确规定U＝g²时的代数转换；未认证任何软件字段、当前数据库版本或全部来源表的用途。"
       ],
       "reasoning": "将同一独立乘性模型的全部GSD同时平方，聚合式两侧保持U_T＝g_T²。",
-      "textTemplate": "同一个公式还可能采用不同的参数口径。期刊的建议表标为GSD，而其聚合式把基本、额外和总因子U写为GSD的平方。若以g表示GSD，则U＝g²、ln(U)＝2ln(g)，全套一致换算后仍描述同一分布。以暂定完整性因子g＝{{input.facts.roundedScoreTwo.value}}为例，进入平方GSD槽的数应为{{evaluated.completeness.chosenSquaredGsd.fixed4}}。把g直接填入定义为U的槽，就悄悄换了分布宽度；相似的字段名或公式外形不能替代量的定义。"
+      "textTemplate": "即使已确定要表示哪一种散布，填入公式的数也要看参数定义。期刊的建议表列的是GSD，聚合式中的基础、额外和总因子U却用GSD的平方表示。若GSD为g，那么U＝g²、ln(U)＝2ln(g)。基础项、额外项和总量一起换算，散布保持不变，在相同中心设定下描述的仍是同一分布。例如暂定完整性因子g＝{{input.facts.roundedScoreTwo.value}}，写进以平方GSD定义的参数时应为{{evaluated.completeness.chosenSquaredGsd.fixed4}}；照抄g的数值会改变所指定的分布。"
     },
     {
       "id": "cl-ped-inventory-assumptions",
@@ -305,7 +305,7 @@
         "不是柏林杯重均值的抽样分布，不是实测工业参数，也不是完整产品生命周期模型。"
       ],
       "reasoning": "把有来源的暂定因子与作者设定的分布、中心、基础项、评级和独立性分开。",
-      "textTemplate": "现在可以在一组完整说明的假定下算到清单参数。设一个虚构单位过程的材料投入参数X，以kg/件规定产品计；用对数正态分布表达对它的不确定认识，中位数设为{{input.illustration.median}}，基础GSD设为{{input.illustration.basicGsd}}。再假定完整性评为等级{{input.illustration.selectedCompletenessScore}}，暂取已发表的g＝{{input.facts.roundedScoreTwo.value}}作额外GSD，其他额外因子均设为1，各对数分量独立。这些中心值、基础项、评级和依赖条件都是演算设定；引用一个已发表的因子，尚未证明这条虚构清单满足它的经验适用范围。"
+      "textTemplate": "用一项虚构的清单参数，可以算清这些设定怎样形成分布。设某单位过程生产一件规定产品所需的材料投入为X，单位为kg/件。用对数正态分布表达对X的不确定认识，设其中位数为{{input.illustration.median}}、基础GSD为{{input.illustration.basicGsd}}。假定完整性评为等级{{input.illustration.selectedCompletenessScore}}，暂用已发表的g＝{{input.facts.roundedScoreTwo.value}}作额外GSD，其余额外因子均为1，各对数分量独立。这里的中心、基础项、评级和依赖关系都是演算假定。发表过的完整性因子在此说明怎样参与运算，它对某项真实材料投入是否适用仍需判断。"
     },
     {
       "id": "cl-ped-inventory-combination",
@@ -342,7 +342,7 @@
         "计算使用印刷因子及作者固定条件；没有传播因子校准误差或验证真实分布。"
       ],
       "reasoning": "对数方差相加、指数还原；额外GSD为1时其对数方差贡献为0。",
-      "textTemplate": "按这些条件，对数标准差σ＝√{[ln({{input.illustration.basicGsd}})]²＋[ln({{input.facts.roundedScoreTwo.value}})]²}≈{{evaluated.illustration.logSigma.fixed6}}；总GSD g_T＝exp(σ)≈{{evaluated.illustration.totalGsd.fixed6}}，平方GSD U_T≈{{evaluated.illustration.squaredGsd.fixed6}}。把所有额外因子改为1时，它们的对数都为零，总GSD就退回基础GSD，而不会归零。这个结果让“最佳评级仍有基础不确定性”成为可检查的运算，也把它成立所依赖的模型写了出来。"
+      "textTemplate": "合成时，先把基础与完整性GSD换成对数标准差。把它们平方相加再开方，得σ＝√{[ln({{input.illustration.basicGsd}})]²＋[ln({{input.facts.roundedScoreTwo.value}})]²}≈{{evaluated.illustration.logSigma.fixed4}}。取指数得总GSD g_T≈{{evaluated.illustration.totalGsd.fixed4}}，平方得U_T≈{{evaluated.illustration.squaredGsd.fixed4}}。其余因子的GSD为1，对数为零。若完整性额外因子也改成1，就只剩基础项，总GSD回到基础GSD。"
     },
     {
       "id": "cl-ped-inventory-interval",
@@ -374,7 +374,7 @@
         "不将两标准差范围写成无条件或精确95%的经验覆盖保证；不是已估计总体均值的置信区间。"
       ],
       "reasoning": "由定义U_T＝exp(2σ_log)，指数还原对数区间得到中位数除/乘U_T。",
-      "textTemplate": "在同一假定分布中，对数中心两侧各取两个对数标准差σ，回到原尺度便得到{{input.illustration.median}}/U_T至{{input.illustration.median}}×U_T，即约{{evaluated.illustration.logCenterTwoSigmaLower.fixed4}}至{{evaluated.illustration.logCenterTwoSigmaUpper.fixed4}} kg/件。这是所设参数分布的一个中央范围，不是对柏林平均杯重计算出来的置信区间。它也不会把其他材料、排放和表征因子的未知关系一起解决；若要继续传播到整个LCA结果，仍须给出其余模型及依赖结构。"
+      "textTemplate": "在对数尺度上，离中心一个σ，回到原尺度就相当于把中位数乘以或除以总GSD。在对数中心两侧各取两个σ，取指数后，中位数分别除以和乘以exp(2σ)＝U_T，范围就是{{input.illustration.median}}/U_T至{{input.illustration.median}}×U_T，约{{evaluated.illustration.logCenterTwoSigmaLower.fixed4}}至{{evaluated.illustration.logCenterTwoSigmaUpper.fixed4}} kg/件。这个中央范围描述所设材料投入参数的分布；柏林调查的标准误描述平均杯重的抽样精度。若要把参数不确定性传播到整个LCA结果，还须给出其余材料、排放与表征因子所在的模型及依赖关系。"
     },
     {
       "id": "cl-ped-inventory-center",
@@ -399,7 +399,7 @@
         "这是所设分布的数学性质，不是对原调查均值的再估计；没有推断实际软件采用哪种中心值。"
       ],
       "reasoning": "由正态指数矩E(expY)＝exp(μ＋σ²/2)推导算术均值，并保持本例中位数固定。",
-      "textTemplate": "中心值也必须随定义保持一致。上面把{{input.illustration.median}}设为中位数和几何均值；在这组对数正态条件下，算术均值是{{input.illustration.median}}exp(σ²/2)≈{{evaluated.illustration.arithmeticMean.fixed4}} kg/件。若已有清单提供的是算术均值，对数中心应取μ＝ln(算术均值)−σ²/2；不能既保留原来的σ，又把同一个数同时当作算术均值和中位数。分布的中心、散布和所要估计的对象，应一起进入参数说明。"
+      "textTemplate": "投入量的分布在对数尺度上关于中心对称，回到kg/件后，两端与中位数相隔的是相同倍数。例中的{{input.illustration.median}}既是中位数也是几何均值，算术均值则为{{input.illustration.median}}exp(σ²/2)≈{{evaluated.illustration.arithmeticMean.fixed4}} kg/件。若清单给出的是算术均值，又要采用同一个σ，就应把对数中心设为μ＝ln(算术均值)−σ²/2。中心值的种类一旦改变，直接沿用同一数字作中位数会给出另一个分布。"
     },
     {
       "id": "cl-unc-table-conflict",
@@ -430,7 +430,7 @@
       ],
       "reasoning": "把GSD、CV比例及采用状态分别定位；数学换算与推荐资格是不同问题。",
       "conceptIds": [],
-      "textTemplate": "数值的含义明确后，还要核对采用状态。2012报告中，GEMIS资料给出可靠性等级5的候选GSD {{input.facts.reliabilityCandidateGsd.value}}；第27页结论认为它可能过高而不推荐，第49页总结表便记为无可用值。第55页转换表却仍列{{input.facts.reliabilityReportedCv.value}}，这里是CV＝标准差/均值的比例口径，不是GSD，也不是百分数。2016期刊汇总仍把这一等级记为无可用值，不能仅从后表出现了数值，就把它恢复为推荐参数。"
+      "textTemplate": "代数换算可以让因子与参数的定义吻合。一个数有没有被推荐使用，却要看报告怎样评价它。2012年报告从GEMIS资料得到的可靠性等级5候选GSD为{{input.facts.reliabilityCandidateGsd.value}}。第27页的结论认为该值可能过高，不予推荐，第49页总结表也列为无可用值。第55页的转换表却列了{{input.facts.reliabilityReportedCv.value}}。这列是变异系数CV，即标准差除以均值的比例，表中按比例列数，并未乘100写成百分数。2016年论文的汇总表仍把该等级记作无可用值。"
     },
     {
       "id": "cl-ped-reliability-cv-trace",
@@ -456,7 +456,7 @@
         "没有恢复被拒绝候选的推荐状态、经验适用性或原始统计数据。"
       ],
       "reasoning": "按原报告CV＝sqrt(exp([lnG]²)−1)分别计算未舍入GSD与作者先舍入到两位小数的路径，再比较CV显示值，区分数值关联与原程序/资格证据。",
-      "textTemplate": "按报告第54页的对数正态换算式，可以进一步检验这两个数的联系：CV＝√{exp([ln(g)]²)−1}。若先把上面的候选GSD舍入至{{evaluated.reliabilityTrace.authorRoundedGsd}}，得到CV≈{{evaluated.reliabilityTrace.cvFromRounded.fixed6}}，再显示到两位小数，便与{{input.facts.reliabilityReportedCv.value}}相合；直接使用未舍入候选值，则得到约{{evaluated.reliabilityTrace.cvFromUnrounded.fixed6}}。这建立了一条“先舍入、再转换”的条件性数值路径，仍不能确认原表实际采用的舍入程序，也没有解释被拒候选为何保留在转换表中。数学上的联系与使用上的正当性，需要分别回答。"
+      "textTemplate": "能否从被拒候选的GSD算出转换表中的CV？报告第54页给出的对数正态换算式是CV＝√{exp([ln(g)]²)−1}。若先把候选GSD舍入为{{evaluated.reliabilityTrace.authorRoundedGsd}}，再按这个式子转换，得到的CV约为{{evaluated.reliabilityTrace.cvFromRounded.fixed4}}，保留两位小数与表列{{input.facts.reliabilityReportedCv.value}}相合。直接用未舍入的候选GSD，算出的CV约为{{evaluated.reliabilityTrace.cvFromUnrounded.fixed4}}。两种算式的结果说明先舍入会改变换算值。数值相合还不能确认原表的程序，也没有解释为何一项未获推荐的候选仍在转换表中留下数值。"
     }
   ]
 }

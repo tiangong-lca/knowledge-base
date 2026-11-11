@@ -1,0 +1,1509 @@
+{
+  "schemaVersion": 1,
+  "status": "reviewed",
+  "route": "/docs/book/data-quality-and-probability",
+  "title": "质量评分与概率",
+  "description": "柏林的杯重调查估计了平均值，也显示了杯型重量的散布。两种量的区别，关系到怎样用这批资料提出完整性因子，以及要在什么条件下才能给清单参数赋予概率。",
+  "originalDigest": "67f38b591713ec9d6def1ff1c7ab26080c6126ab107d8627562807d91d74508b",
+  "headingHistoryDigest": "61b5e5a55d8b694a189bc8c77a0778ccb2737a372e58d5f4051228c34ea1949e",
+  "researchOriginalDigest": "30ebc67a78e09269f8be8c7509b699bb4afe659f823dc69ad7d30d1ecba5a42b",
+  "sections": [
+    {
+      "id": "杯重调查与估计",
+      "title": "杯重调查与估计",
+      "claimIds": [
+        "cl-ped-study-question",
+        "cl-ped-population",
+        "cl-ped-design",
+        "cl-ped-weighted-mean",
+        "cl-ped-design-variance"
+      ]
+    },
+    {
+      "id": "散布与估计精度",
+      "title": "散布与估计精度",
+      "claimIds": [
+        "cl-ped-cluster-arithmetic",
+        "cl-ped-population-spread",
+        "cl-ped-poststratification",
+        "cl-ped-stratified-conflict",
+        "cl-ped-estimate-boundary"
+      ]
+    },
+    {
+      "id": "完整性评分的校准",
+      "title": "完整性评分的校准",
+      "claimIds": [
+        "cl-unc-scores",
+        "cl-unc-calibration",
+        "cl-ped-subsets",
+        "cl-ped-score-mapping",
+        "cl-ped-gsd-definition",
+        "cl-ped-completeness-ratio",
+        "cl-ped-factor-values",
+        "cl-ped-calibration-boundary",
+        "cl-unc-calibration-limits"
+      ]
+    },
+    {
+      "id": "概率模型与参数",
+      "title": "概率模型与参数",
+      "claimIds": [
+        "cl-ped-ratio-rule",
+        "cl-ped-ratio-example",
+        "cl-ped-independent-product",
+        "cl-ped-ratio-residual",
+        "cl-ped-factor-conventions",
+        "cl-unc-baseline",
+        "cl-ped-inventory-assumptions",
+        "cl-ped-inventory-combination",
+        "cl-ped-inventory-interval",
+        "cl-ped-inventory-center"
+      ]
+    },
+    {
+      "id": "评分的检验与适用",
+      "title": "评分的检验与适用",
+      "claimIds": [
+        "cl-unc-table-conflict",
+        "cl-ped-reliability-cv-trace",
+        "cl-ped-score-test-design",
+        "cl-ped-score-test-results",
+        "cl-ped-three-tests",
+        "cl-unc-alongside",
+        "cl-unc-context",
+        "cl-unc-synthesis"
+      ]
+    }
+  ],
+  "mdxSha256": "4200a18a0bcf14b414103b5577e2e0e8928fe19536bf7f3c18999036759a0ff9",
+  "casePublicationSha256": "7f771d6505d6d4c5da358e69e338d8d470cbca59c70724c19a6445236c489c1e",
+  "claims": [
+    {
+      "id": "cl-ped-study-question",
+      "kind": "interpretation",
+      "scope": "2008原调查的目标和称量对象；末两句解释其与清单参数的关系",
+      "evidenceIds": [
+        "ev-ped-sampling-population",
+        "ev-ped-sampling-design"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-sampling-population",
+          "relation": "supports",
+          "rationale": "§§3.1–3.2规定抽样日、市场、150g内容物与塑料杯对象；其清单/完整功能条件区别是本段解释。"
+        },
+        {
+          "evidenceId": "ev-ped-sampling-design",
+          "relation": "supports",
+          "rationale": "§3.3明确购入、清空、去标签和称重步骤，支撑容器质量与内容物量的区别。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [],
+      "caveats": [
+        "仅针对原文所述塑料杯与抽样日，不把150 g写成容器质量。"
+      ],
+      "reasoning": "从原文的抽样目标与称量程序区分内容物参照、容器质量与完整功能条件。",
+      "text": "柏林门店供应的150 g装酸奶，塑料杯平均有多重？Ciroth 与 Srocka 在2008年报告了这项调查。150 g是酸奶的装量，称的是清空并去除标签的杯子。作者讨论的是功能单位中的一个参数。平均杯重可以给材料清单提供用量依据，包装应提供什么功能，还需另行规定。要为这个平均数说明精度，得先弄清究竟在对哪些杯子取平均。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-ped-population",
+      "kind": "source-statement",
+      "scope": "原文§3.2的总体元素与p273脚注7的销售口径限定",
+      "evidenceIds": [
+        "ev-ped-sampling-population"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-sampling-population",
+          "relation": "supports",
+          "rationale": "总体元素是某日某门店提供的一种150g塑料酸奶杯，区别于销售件数。 本段保留所列版本、对象和披露范围，不据此增加来源没有作出的普适结论。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-study-question"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "门店陈列/提供的杯型份额与售出件数份额不能直接互换。"
+      ],
+      "text": "调查以抽样日的一次“杯型在门店的出现”为总体中的一个元素。同一家门店里，即使同一杯型摆了许多只，也只记一次。另一家门店提供了同一杯型，就再记一次。这样算出的平均杯重反映杯型在各门店的提供情况。原文脚注区分了在售杯型所占份额和按售出件数计算的份额。若要估计按销量加权的平均杯重，就需要各杯型的售出件数。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-ped-design",
+      "kind": "source-statement",
+      "scope": "原调查的两阶段门店/杯型设计",
+      "evidenceIds": [
+        "ev-ped-sampling-design"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-sampling-design",
+          "relation": "supports",
+          "rationale": "市场抽样、整群与杯型分层分别组织观察；不能只用样本量代替设计。 本段保留所列版本、对象和披露范围，不据此增加来源没有作出的普适结论。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-population"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "原文有门店关闭、替换及抽样位置限制；此处不据名义抽样比例证明实际无偏性或完整覆盖。"
+      ],
+      "text": "抽样从门店开始。作者整理了1,215家门店，按品牌分层抽取。进入门店之后，研究分两条路线取样。整群路线从已选门店再抽取16家，以店为群，记录所选门店内符合条件的杯型。分层路线按材料、透明程度、宽窄和有无杯脚给杯型分层，再从各层取样。用门店作群，利用的是现成的门店名单；按杯型分层，则利用了可能与杯重有关的属性。原文记有门店关闭和替换，并指出整群样本中的门店位于市中心以外。若门店位置与杯重有关，这种分布就可能影响估计。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-ped-weighted-mean",
+      "kind": "interpretation",
+      "scope": "依据原附录区分阶段和加权杯重均值",
+      "evidenceIds": [
+        "ev-ped-sampling-estimator"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-sampling-estimator",
+          "relation": "supports",
+          "rationale": "附录分别给出门店阶段和杯重阶段加权估计；本段用Wₖ简写杯型份额，保留其来自前阶段估计的条件。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-design"
+      ],
+      "conceptIds": [
+        "cn-estimated-mean-precision"
+      ],
+      "caveats": [
+        "总体份额由前阶段资料估计；此处没有重建全部份额，也没有证明其估计误差已完全传播。"
+      ],
+      "reasoning": "逐项解释附录的阶段特定符号，不把第一阶段门店计数变量当作第二阶段质量。",
+      "text": "估计总体平均杯重时，杯型在总体中出现得多寡会改变它在计算中的分量。设第k个杯型层在总体中的份额为Wₖ，层内样本的平均杯重为ȳₖ，原文附录给出的分层平均杯重为ȳ＝ΣₖWₖȳₖ。某层的份额越大，该层均值在这个加权式中所占的权重越大；所用份额来自前一阶段的资料。附录里还有一个形式相近的加权平均，算的是每家门店平均有多少种杯型，单位是杯型数。到了杯重阶段，每个观察值是一种杯型在一家门店所对应的杯重，单位是克。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-ped-design-variance",
+      "kind": "interpretation",
+      "scope": "对原附录分层方差与整群比值估计的解释",
+      "evidenceIds": [
+        "ev-ped-sampling-estimator",
+        "ev-ped-sampling-results"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-sampling-estimator",
+          "relation": "supports",
+          "rationale": "附录给出杯型层有限总体方差和整群总量比值；本段解释各项作用，未额外证明权重不确定性已完整传播。"
+        },
+        {
+          "evidenceId": "ev-ped-sampling-results",
+          "relation": "qualifies",
+          "rationale": "p271原结果页公式下仍使用门店/杯型数定义；本段明确按附录p276的杯重阶段定义解释，不猜测不一致成因。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-weighted-mean"
+      ],
+      "conceptIds": [
+        "cn-estimated-mean-precision"
+      ],
+      "caveats": [
+        "原始观测、全部层样本量/均值/方差未披露；原式的阶段权重和份额估计不能视为已审计的完整抽样实现。"
+      ],
+      "reasoning": "解释原文给定设计下的表达式，未将其推广成任意抽样的标准误公式。",
+      "text": "权重还决定了各层的抽样误差怎样进入总体均值。按附录3.5.3的杯重阶段定义，在给定层权重时，均值估计的方差含有ΣₖWₖ²(1−nₖ/Nₖ)sₖ²/nₖ。sₖ²是第k层的样本杯重方差，nₖ是该层样本量，Nₖ是层总体量。层内杯重越分散，sₖ²越大。若固定Nₖ和sₖ²，增加nₖ会减小(1−nₖ/Nₖ)/nₖ，因而这一方差项不会增大。Wₖ²则决定该层的方差项以多大权重进入总和。整群路线用各所选门店的杯重总和除以杯型出现数总和，因此杯型多的店在比值中占得更重。即使知道总共称了多少个杯子，也还得知道杯子怎样分在各层和各群中，才能讨论估计精度。原文结果页公式下的符号表仍沿用第一阶段的杯型数等定义，与附录的杯重阶段定义未完全协调。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-ped-cluster-arithmetic",
+      "kind": "calculation",
+      "scope": "原文整群均值/估计方差的显示值算术",
+      "evidenceIds": [
+        "ev-ped-sampling-results",
+        "ev-ped-sampling-estimator"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-sampling-results",
+          "relation": "supports",
+          "rationale": "p271提供5.6589与0.0072及1.5%显示值；开方和相除是本书基于这些显示量的复算。"
+        },
+        {
+          "evidenceId": "ev-ped-sampling-estimator",
+          "relation": "supports",
+          "rationale": "附录确定均值估计方差与总体散布的不同对象，支撑标准误而非个体变动的解释。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-design-variance"
+      ],
+      "conceptIds": [
+        "cn-estimated-mean-precision"
+      ],
+      "caveats": [
+        "g²按以g计的均值估计量及方差公式确定；不代表原文另有更精确的测量数据。"
+      ],
+      "reasoning": "由印刷方差开方、除以同一估计均值并乘100；来源汇总量与作者复算明确区分。",
+      "text": "整群路线报告的平均杯重是5.6589 g，均值估计的方差是0.0072 g²。方差的单位是平方克，开方后回到克，得到标准误约0.0849 g。再除以平均杯重，相对标准误约为1.4995%，与原文显示的约1.5%相合。这个百分数回答的是用这种抽样办法估计平均杯重有多精确。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-PEDIGREE-CALIBRATION",
+        "version": "1.0.0",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
+        "inputFile": "pedigree-calibration-v1.json"
+      }
+    },
+    {
+      "id": "cl-ped-population-spread",
+      "kind": "calculation",
+      "scope": "原文总体方差相对于所报告分层均值的显示值复算",
+      "evidenceIds": [
+        "ev-ped-sampling-results",
+        "ev-ped-sampling-estimator"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-sampling-results",
+          "relation": "supports",
+          "rationale": "p271提供总体方差0.72及约15%的表述；本书以已报告5.6474作分母核对显示值。"
+        },
+        {
+          "evidenceId": "ev-ped-sampling-estimator",
+          "relation": "supports",
+          "rationale": "§3.5.5将均值估计精度与总体散布分开；不由小标准误推断个体杯型质量区间。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-cluster-arithmetic",
+        "cl-unc-target"
+      ],
+      "conceptIds": [
+        "cn-estimated-mean-precision"
+      ],
+      "caveats": [
+        "这里所称总体沿用该研究的杯型×门店口径；不是全市场普查，也不是销量加权变异。"
+      ],
+      "reasoning": "将总体散布与均值估计方差分别开方和解释，不交换两个估计对象。",
+      "text": "若关心柏林调查所定义的总体中，杯重彼此相差多大，就要看另一个方差。原文同页报告的总体杯重方差为0.72 g²，开方得到标准差约0.8485 g。以报告的分层平均杯重5.6474 g为分母，得到约15.0251%，与原文的约15%相合。杯型有轻有重，平均杯重估计的相对标准误仍可远小于杯重的相对标准差。标准误再小，也不能用它代替杯重的标准差来描述一个具体杯型。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-PEDIGREE-CALIBRATION",
+        "version": "1.0.0",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
+        "inputFile": "pedigree-calibration-v1.json"
+      }
+    },
+    {
+      "id": "cl-ped-poststratification",
+      "kind": "calculation",
+      "scope": "已报告后分层结果及显示方差的相对变化",
+      "evidenceIds": [
+        "ev-ped-sampling-results",
+        "ev-ped-sampling-estimator"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-sampling-results",
+          "relation": "supports",
+          "rationale": "p271提供后分层5.7245与0.0014；标准误、相对标准误和显示方差下降比例由本书计算。"
+        },
+        {
+          "evidenceId": "ev-ped-sampling-estimator",
+          "relation": "supports",
+          "rationale": "§3.5.4明示复用整群观察及杯型层份额，不是新增独立样本。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-cluster-arithmetic",
+        "cl-ped-weighted-mean"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "方差降低比例由原文列出的两个方差估计值计算，不是从观察值重新估计的设计效应，也不证明任何后分层都会降低误差。"
+      ],
+      "reasoning": "复算平方根与相对标准误，并用1−0.0014/0.0072描述所列汇总量的差异。",
+      "text": "只改变原有观察的用法，也会改变均值和它的估计精度。作者把同一批整群观察按杯型属性重新分层，再用分层路线得到的总体份额加权。这道后分层程序给出平均值5.7245 g、均值估计方差0.0014 g²，开方得标准误约0.0374 g，除以该平均值则得相对标准误约0.6536%。用原文列出的新旧两个方差相比，再以1减去这个比值，得到约80.5556%的方差降幅。重加权前后用的是同一批杯重观察，差异体现了估计程序和层份额信息的作用。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-PEDIGREE-CALIBRATION",
+        "version": "1.0.0",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
+        "inputFile": "pedigree-calibration-v1.json"
+      }
+    },
+    {
+      "id": "cl-ped-stratified-conflict",
+      "kind": "calculation",
+      "scope": "同一2008原件p271与p273的数量对照",
+      "evidenceIds": [
+        "ev-ped-sampling-results",
+        "ev-ped-sampling-conflict",
+        "ev-ped-sampling-estimator"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-sampling-results",
+          "relation": "supports",
+          "rationale": "p271原图提供5.6474和0.0034；约1.0325%是这些印刷量的明确计算结果。"
+        },
+        {
+          "evidenceId": "ev-ped-sampling-conflict",
+          "relation": "supports",
+          "rationale": "p273原图确实写0.07%；只确认差异，没有确认错误成因或应替换哪一个值。"
+        },
+        {
+          "evidenceId": "ev-ped-sampling-estimator",
+          "relation": "supports",
+          "rationale": "附录提供相应杯重均值/方差语义；不把p271门店变量说明错误移入杯重计算。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-cluster-arithmetic"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "未确定差异原因，没有更正原作或替换原始参数；不由此推断整项研究或抽样方法失效。"
+      ],
+      "reasoning": "保留两处原文身份和各自数值，仅演算显示值蕴含的相对标准误。",
+      "text": "原文的分层路线还有一处数值需要辨明。用结果页的分层平均值5.6474 g和均值估计方差0.0034 g²，先开方再除以均值，可得相对标准误约1.0325%。讨论部分写的却是0.07%。两处显示值无法由同一个简单换算得到。依据已给汇总量，可以核对这个差异。要判定哪一处应改，还缺原始层统计量和计算记录。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-PEDIGREE-CALIBRATION",
+        "version": "1.0.0",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
+        "inputFile": "pedigree-calibration-v1.json"
+      }
+    },
+    {
+      "id": "cl-ped-estimate-boundary",
+      "kind": "synthesis",
+      "scope": "调查设计、已报告估计与原始数据复现的层次",
+      "evidenceIds": [
+        "ev-ped-sampling-estimator",
+        "ev-ped-sampling-results"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-sampling-estimator",
+          "relation": "supports",
+          "rationale": "阶段特定的权重、整群比值与后分层；估计量方差与总体散布分别定义。 本段保留所列版本、对象和披露范围，不据此增加来源没有作出的普适结论。"
+        },
+        {
+          "evidenceId": "ev-ped-sampling-results",
+          "relation": "supports",
+          "rationale": "原文给出三种均值/估计方差及总体方差；可复核汇总算术，不能重建缺失观测。 本段保留所列版本、对象和披露范围，不据此增加来源没有作出的普适结论。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-population",
+        "cl-ped-design-variance",
+        "cl-ped-poststratification",
+        "cl-ped-stratified-conflict"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "原始数据库未取得；没有通过反推或图像数字化补造观察值。"
+      ],
+      "reasoning": "由已读附录和结果的披露范围总结可重建层次。",
+      "text": "这项调查让人看到，均值如何代表总体，取决于把什么算作一次出现，以及怎样取得和加权这些观察。附录给出了估计形式，但未列出全部杯重、各杯型层的统计量和门店—杯型份额。已报告的汇总量足以检验开方和相除，也能辨认结果指向杯型散布还是均值精度。要从原始称量记录重算均值和方差，还需要观察记录和设计资料。2012年的研究把杯重调查用于另一个问题时，同样要分清哪一步能从已给材料追到。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-unc-scores",
+      "text": "清单资料有多完整，是谱系矩阵（pedigree matrix）要评价的一个方面。Ciroth 的2012年方法开发报告还列出可靠性、时间、地理和技术指标。观测有没有经过核对，资料与所需时间、地点或技术相距多远，都可以按指标分级。这样的等级说明资料有什么特征。报告另给不确定性因子和转换步骤。仅凭一个等级，还无法知道观测的标准差是多少，或者应怎样给参数分配概率。",
+      "kind": "interpretation",
+      "scope": "May2012 Version7.1 报告所示 pedigree 方案；不是 1996 原论文的重建。",
+      "evidenceIds": [
+        "ev-unc-ciroth-scores"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-unc-ciroth-scores",
+          "relation": "supports",
+          "rationale": "报告实际pp6–8明确区分矩阵的数字评分、另列因子及用于组合的公式；Figure1逐项列出评级内容。"
+        }
+      ],
+      "premiseIds": [
+        "cl-unc-parameters"
+      ],
+      "caveats": [
+        "2012 后继报告的说明不能替代 Weidema 与 Wesnæs 1996 原文的每项定义。"
+      ],
+      "conceptIds": [
+        "cn-quality-rating"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-unc-calibration",
+      "text": "报告尝试用各等级所对应资料的离散程度，为因子提供经验依据。它先处理资料的单位和数量尺度，按某一指标的条件筛选或分组，再比较各组和参照组的散布，还试图用不同资料来源交叉考察。对完整性而言，杯重资料提供了一种具体的比较机会：从已有观察中取出一部分，看看少了资料之后，组内散布怎样改变。",
+      "kind": "interpretation",
+      "scope": "2012 报告 §§4.4–4.5 的校准方法说明；不是独立统计复算。",
+      "evidenceIds": [
+        "ev-unc-ciroth-calibration",
+        "ev-unc-ciroth-empirical"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-unc-ciroth-calibration",
+          "relation": "supports",
+          "rationale": "实际pp15–20说明尺度处理、按指标条件构造数据子集及多来源三角核对，支撑这条有条件的路径。"
+        },
+        {
+          "evidenceId": "ev-unc-ciroth-empirical",
+          "relation": "qualifies",
+          "rationale": "后续p27指出来源数据还可能混杂其他差异，限制把组间离散程度直接当成单个评分的纯粹作用。"
+        }
+      ],
+      "premiseIds": [
+        "cl-unc-scores"
+      ],
+      "caveats": [
+        "几何标准差、对数标准差、平方因子与区间参数不能按名称混用。"
+      ],
+      "conceptIds": [
+        "cn-quality-calibration"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-ped-subsets",
+      "kind": "source-statement",
+      "scope": "2012所选完整性再分析的参照组与子集",
+      "evidenceIds": [
+        "ev-ped-completeness-subsets",
+        "ev-ped-completeness-data"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-completeness-subsets",
+          "relation": "supports",
+          "rationale": "可用样本子集、完整性等级及GSD比值的具体映射；不等于完成经验重建。 本段保留所列版本、对象和披露范围，不据此增加来源没有作出的普适结论。"
+        },
+        {
+          "evidenceId": "ev-ped-completeness-data",
+          "relation": "supports",
+          "rationale": "内部数据库、不同排序/子集方式；可用总体本身仍是市场样本。 本段保留所列版本、对象和披露范围，不据此增加来源没有作出的普适结论。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-estimate-boundary"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "没有取得子集成员、全部重复抽样方式或原始数据库。"
+      ],
+      "text": "2012年报告从可用杯重资料中构造了25%、50%、75%和100%的子集，对照各组的方差和几何标准差。这里的100%指当时可用资料的全部。附录指出，这批资料仍只是柏林市场的一个样本。所谓完整性首先要说明相对于什么，取齐已有资料与覆盖调查所指的柏林市场是两回事。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-ped-score-mapping",
+      "kind": "interpretation",
+      "scope": "具体完整性子集与评分阈值的来源内解释",
+      "evidenceIds": [
+        "ev-ped-completeness-subsets",
+        "ev-ped-completeness-data"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-completeness-subsets",
+          "relation": "supports",
+          "rationale": "p29正文及脚注分别给出实际100/75/50%映射、代表性补偿与等级描述；图中的25%不自动证明一家超市的子集身份。"
+        },
+        {
+          "evidenceId": "ev-ped-completeness-data",
+          "relation": "supports",
+          "rationale": "附录说采用多种排序/子集选择方式，却没有给出逐个成员及完整选择程序。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-subsets",
+        "cl-unc-scores"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "不把这次操作化推广为所有资料集的自动评分规则；保留图文构造关系未完整披露的边界。"
+      ],
+      "reasoning": "将评级描述、实际使用比例和子集身份分别追踪。",
+      "text": "资料取了多少，还得解释成评分规则中的等级。报告把100%、75%和50%分别配到等级1、2和3，并用一家超市的样本说明等级4。作者解释，等级3取50%是为了补偿所考察超市代表性不足。原评级描述把比例条件与代表性假设放在一起，所以从比例到等级需要判断资料怎样代表目标。图中25%与文字所说“一家超市”的对应关系，仍不足以辨明各个子集实际包含哪些观察。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-ped-gsd-definition",
+      "kind": "interpretation",
+      "scope": "所读报告/论文的n分母经验GSD及其正比例尺度性质",
+      "evidenceIds": [
+        "ev-ped-gsd-definition",
+        "ev-ped-journal-gsd"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-gsd-definition",
+          "relation": "supports",
+          "rationale": "Annex B§2.2给出G＝exp(SD(logX))及n分母定义；正比例不变性由相同比值或对数平移直接推出。"
+        },
+        {
+          "evidenceId": "ev-ped-journal-gsd",
+          "relation": "supports",
+          "rationale": "期刊同页提供GSD定义；其任意加法平移不变式未被本段接受，限制来自对该定义的数学检验。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-subsets"
+      ],
+      "conceptIds": [
+        "cn-geometric-standard-deviation"
+      ],
+      "caveats": [
+        "要求正值；n分母是此处定义，不能无说明改成n−1。",
+        "期刊印刷的任意仿射不变性不成立；此处仅使用原定义可推出的正比例性质。"
+      ],
+      "reasoning": "由原定义逐步解释对数标准差、指数与单位换算；分布假设另行陈述。",
+      "text": "方差描述的是加法尺度上的散布。若要比较杯重相差的倍数，可以对正值资料计算几何标准差（GSD）。把第i个值写作xᵢ，几何均值写作x_g，这里用G＝exp{√[Σᵢ(ln(xᵢ/x_g))²/n]}。先对各观测与几何均值的比值取对数，求平方的平均数并开方，再取指数。得到的G没有单位，最小为1。克换算成千克时，观测与几何均值同乘一个正数，比值不变；给每个观测都加上同一重量，并无这种保证。这里的分母是n，所得G是对现有数据的描述，单凭它还不能判定数据服从对数正态分布。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-ped-completeness-ratio",
+      "kind": "interpretation",
+      "scope": "2012完整性GSD比值与一般因子之间的解释边界",
+      "evidenceIds": [
+        "ev-ped-completeness-subsets",
+        "ev-ped-completeness-factors"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-completeness-subsets",
+          "relation": "supports",
+          "rationale": "可用样本子集、完整性等级及GSD比值的具体映射；不等于完成经验重建。 本段保留所列版本、对象和披露范围，不据此增加来源没有作出的普适结论。"
+        },
+        {
+          "evidenceId": "ev-ped-completeness-factors",
+          "relation": "supports",
+          "rationale": "暂定完整性GSD因子的精细显示值和舍入值；单一同质样本和因子自身变动受限。 本段保留所列版本、对象和披露范围，不据此增加来源没有作出的普适结论。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-score-mapping",
+        "cl-ped-gsd-definition"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "样本GSD与总体GSD的确切计算、重复次数及汇总权重没有由这些图恢复。"
+      ],
+      "reasoning": "按比值的定义说明所比较的对象，不把离散程度比值改写为已测量误差概率。",
+      "text": "完整性再分析比较的是两组资料的散布。2012年报告明写用可用总体的GSD除以子样本的GSD，按超市链展示结果，也指出比值本身会变。这个比值给出的是可用总体的乘法散布与子样本乘法散布的相对大小。若要用它说明某个清单参数离真值有多远，还缺把组内散布与参数误差联系起来的依据。即使只用它提出评分因子，也得说明用哪组作参照、怎样分组，以及怎样从各组的比值概括出一个数。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-ped-factor-values",
+      "kind": "calculation",
+      "scope": "所选原报告精细显示值到建议值的舍入及后续表头核对",
+      "evidenceIds": [
+        "ev-ped-completeness-factors",
+        "ev-ped-journal-summary",
+        "ev-ped-completeness-subsets"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-completeness-factors",
+          "relation": "supports",
+          "rationale": "Tables6–7提供对应精细显示/建议值；舍入是本书核对，不能替代原始子集到因子的估计。"
+        },
+        {
+          "evidenceId": "ev-ped-journal-summary",
+          "relation": "supports",
+          "rationale": "Table6标作GSD并保留完整性建议序列及等级5空缺；它不构成独立新杯重实验。"
+        },
+        {
+          "evidenceId": "ev-ped-completeness-subsets",
+          "relation": "supports",
+          "rationale": "2012报告p30 Figures20–21直接给出本文所指的GSD比值比较；p31 Tables6–7的暂定值/舍入另由相邻证据定位，未把图示当成完整可重建的汇总程序。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-completeness-ratio"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "这是表内运算和版本对照，没有从原始样本重建多位小数因子；更多显示位数不构成更强的经验精度证明。"
+      ],
+      "reasoning": "逐项核对显示值的舍入与后继表的数量身份，不把同一数据链算作独立重复验证。",
+      "text": "报告先在图20比较不同子样本的比值，再在图21按完整性等级展示，并据图21把等级2、3、4的暂定GSD因子分别列为1.032982251、1.041623865、1.084355355。这些是报告的显示值。保留两位小数，分别得到报告建议的1.03、1.04、1.08。2016年卷期论文沿用了这组建议，表头仍为GSD，等级2仍列1.03。等级5标为无可用值；将它填成1会另行赋予一个因子，表中没有提供这样的取值依据。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-PEDIGREE-CALIBRATION",
+        "version": "1.0.0",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
+        "inputFile": "pedigree-calibration-v1.json"
+      }
+    },
+    {
+      "id": "cl-ped-calibration-boundary",
+      "kind": "synthesis",
+      "scope": "同一经验材料的报告与期刊版本关系",
+      "evidenceIds": [
+        "ev-ped-completeness-data",
+        "ev-ped-completeness-factors",
+        "ev-ped-journal-summary"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-completeness-data",
+          "relation": "supports",
+          "rationale": "内部数据库、不同排序/子集方式；可用总体本身仍是市场样本。 本段保留所列版本、对象和披露范围，不据此增加来源没有作出的普适结论。"
+        },
+        {
+          "evidenceId": "ev-ped-completeness-factors",
+          "relation": "supports",
+          "rationale": "暂定完整性GSD因子的精细显示值和舍入值；单一同质样本和因子自身变动受限。 本段保留所列版本、对象和披露范围，不据此增加来源没有作出的普适结论。"
+        },
+        {
+          "evidenceId": "ev-ped-journal-summary",
+          "relation": "supports",
+          "rationale": "后续期刊给出同一暂定完整性因子序列，标作GSD；等级5没有可用值。 本段保留所列版本、对象和披露范围，不据此增加来源没有作出的普适结论。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-estimate-boundary",
+        "cl-ped-factor-values"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "未找到或未取得的数据库不等于不存在；不据取得论文推断已取得原始数据。"
+      ],
+      "reasoning": "综合已读材料的引用和披露范围，区分来源链延续与独立经验验证。",
+      "text": "这条材料链能追到建议值的舍入，却无法从杯重观察重算暂定因子。报告没有列全子集成员、每次选择的确切规则和把不同超市链结果汇成暂定因子的数值程序。后续论文把完整性分析的这些细节指回报告，使用的仍是同一项调查，并未提供独立的杯重实验。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-unc-calibration-limits",
+      "text": "这份报告还给出了两种限制。比较可靠性时，各资料来源给出的因子不一致。作者指出，采用实测的项目与采用估计的项目可能本来就不同，因而组间散布之差可能还来自可靠性以外的区别。完整性因子则来自一次针对同类酸奶杯的调查，所以作者把结论留在暂定层面。这项分析说明了哪些比较可用来提出因子；把同一组因子用于其他行业，仍需与该行业资料相称的证据。",
+      "kind": "source-statement",
+      "scope": "2012报告实际pp27–31的分析结论；不描述其后所有改进。",
+      "evidenceIds": [
+        "ev-unc-ciroth-empirical"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-unc-ciroth-empirical",
+          "relation": "supports",
+          "rationale": "p27说明数据源差异和混杂问题；p31明确完整性结果来自一个同质样本并保留暂定状态。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "这些资料来源与抽样结论不构成跨行业有效性的独立验证。"
+      ],
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-ped-ratio-rule",
+      "kind": "interpretation",
+      "scope": "2016§2.6通用候选比值的方向及参照含义",
+      "evidenceIds": [
+        "ev-ped-ratio-rule"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-ratio-rule",
+          "relation": "supports",
+          "rationale": "§2.6实际给出正向/倒数两支、R至少为1及最佳等级因子1；方向信息的解释由这条式子直接推出。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-gsd-definition",
+        "cl-ped-completeness-ratio"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "这是原文建议的候选规则，不是质量等级对误差的因果效应估计。"
+      ],
+      "reasoning": "直接解释max比值在两个方向下的结果及其信息损失。",
+      "text": "从各组散布提出候选因子，期刊论文给出一条通用规则。对同一个质量指标，把最佳等级组的GSD记为G₁，第j等级组的记为Gⱼ，取R＝max(Gⱼ/G₁，G₁/Gⱼ)。选比值和倒数中的较大者，R就总是不小于1。最佳组与自身比较得1，即使组内仍有散布。若最佳组反而更分散，规则会取倒数，R也大于1，因此它只保留相差的倍数，原来哪一组更分散须回看G₁与Gⱼ。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-ped-ratio-example",
+      "kind": "calculation",
+      "scope": "原文时间相关性假想数值的比值复算",
+      "evidenceIds": [
+        "ev-ped-ratio-example",
+        "ev-ped-ratio-rule"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-ratio-example",
+          "relation": "supports",
+          "rationale": "p1345明确以假想时间相关性数值3.2和1.3举例；本书只复算比值，不把它们改作杯重观测。"
+        },
+        {
+          "evidenceId": "ev-ped-ratio-rule",
+          "relation": "supports",
+          "rationale": "候选因子到最终建议需要比较不同资料来源；没有新清单适用性保证。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-ratio-rule"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "不把示例值标成实测杯重校准结果。"
+      ],
+      "reasoning": "从作者设定的两组GSD复算比值，并保留候选到建议的用途区别。",
+      "text": "论文以时间相关性为题，给出一组假想数：最佳组的GSD为1.3，另一等级组为3.2，后者较大，两数直接相除得R≈2.4615。这两个输入来自论文的假想例，和柏林杯重观察无关。换一组资料可能算出另一个候选比值，最终提出什么值，还得比较各资料来源。得到比值之后，清单建模还有一步：规定这个数在分布里代表什么。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-PEDIGREE-CALIBRATION",
+        "version": "1.0.0",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
+        "inputFile": "pedigree-calibration-v1.json"
+      }
+    },
+    {
+      "id": "cl-ped-independent-product",
+      "kind": "interpretation",
+      "scope": "独立对数正态乘性分量的条件性聚合",
+      "evidenceIds": [
+        "ev-ped-log-product",
+        "ev-ped-journal-combination"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-log-product",
+          "relation": "supports",
+          "rationale": "Equations8-1/8-2把聚合联系到独立对数正态乘积；对数正态及独立性保留为条件。"
+        },
+        {
+          "evidenceId": "ev-ped-journal-combination",
+          "relation": "supports",
+          "rationale": "Equation1提供平方GSD约定下的同形聚合；本段先用GSD口径推导，再在后段统一换算。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-gsd-definition"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "实际资料是否满足分布、独立性与中心值设定需另外判断；未测量真实协方差。"
+      ],
+      "reasoning": "由对数乘积和独立正态方差相加说明聚合公式，不将经验分组比值自动识别为独立分量。",
+      "text": "设清单参数X是若干乘性分量的乘积，并假定各分量相互独立、各自的对数服从正态分布。对X取对数，乘积就成了和。各项独立，协方差项为零，和的方差等于各项方差之和。以g_b表示基础分量的GSD，gᵢ表示第i个额外分量的GSD，合成的GSD g_T满足[ln(g_T)]²＝[ln(g_b)]²＋Σᵢ[ln(gᵢ)]²。这里的方差是对数标准差的平方。若各分量相关，还需要知道对数尺度上的协方差，单凭各项GSD无法算出同一个总散布。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-ped-ratio-residual",
+      "kind": "calculation",
+      "scope": "本书附加独立分量复现要求下的比值/对数方差差额对照",
+      "evidenceIds": [
+        "ev-ped-ratio-example",
+        "ev-ped-log-product"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-ratio-example",
+          "relation": "supports",
+          "rationale": "原文仅提供示例的两组GSD；把最佳组指定为基准并要求独立分量恢复总散布是本书额外条件。"
+        },
+        {
+          "evidenceId": "ev-ped-log-product",
+          "relation": "supports",
+          "rationale": "独立乘积对数方差相加支持附加条件下的差额推导；所得残余不是原文提出的新默认因子。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-ratio-example",
+        "cl-ped-independent-product"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "原文没有把最佳组GSD必然指定为任何真实清单的基础项；该基准选择属于此处条件。",
+        "只适用于目标GSD不小于基准时的非负对数方差差额；没有经验验证或替代因子建议。"
+      ],
+      "reasoning": "把不同问题的数学条件显式分开：候选比值规则与恰好恢复既定组间散布的独立分量要求并非同一恒等式。",
+      "text": "回到时间相关性的假想数字，本书另设一个问题：把GSD＝1.3设为基准，要加入多大的独立乘性分量，才能恰好使总GSD等于3.2？只在目标GSD不小于基准时，才有非负的对数方差差额可分给新分量。本例先取总对数方差与基准对数方差之差，再开方并取指数，得到exp{√[[ln(3.2)]²−[ln(1.3)]²]}≈3.1055。若把论文的候选比值R当作独立分量，合成GSD约为2.5554；按方差差额求出的分量才会还原3.2000。两个算法回答的问题不同。基准和目标是为这项代数比较设置的，并未据此推荐另一个默认因子。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-PEDIGREE-CALIBRATION",
+        "version": "1.0.0",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
+        "inputFile": "pedigree-calibration-v1.json"
+      }
+    },
+    {
+      "id": "cl-ped-factor-conventions",
+      "kind": "calculation",
+      "scope": "GSD、平方GSD和对数标准差的定义一致变换",
+      "evidenceIds": [
+        "ev-ped-journal-combination",
+        "ev-ped-journal-summary",
+        "ev-ped-completeness-factors"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-journal-combination",
+          "relation": "supports",
+          "rationale": "式后明确把U_b、U_i、U_T写作GSD²；本书据此保持全套量纲/统计约定一致。"
+        },
+        {
+          "evidenceId": "ev-ped-journal-summary",
+          "relation": "supports",
+          "rationale": "新建议表头标作GSD，必须区别于Equation1所用U口径。"
+        },
+        {
+          "evidenceId": "ev-ped-completeness-factors",
+          "relation": "supports",
+          "rationale": "Table7提供所选1.03GSD；平方1.0609是定义变换，不是新的经验因子。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-factor-values",
+        "cl-ped-independent-product"
+      ],
+      "conceptIds": [
+        "cn-squared-gsd-factor"
+      ],
+      "caveats": [
+        "只说明明确规定U＝g²时的代数转换；未认证任何软件字段、当前数据库版本或全部来源表的用途。"
+      ],
+      "reasoning": "将同一独立乘性模型的全部GSD同时平方，聚合式两侧保持U_T＝g_T²。",
+      "text": "即使已确定要表示哪一种散布，填入公式的数也要看参数定义。期刊的建议表列的是GSD，聚合式中的基础、额外和总因子U却用GSD的平方表示。若GSD为g，那么U＝g²、ln(U)＝2ln(g)。基础项、额外项和总量一起换算，散布保持不变，在相同中心设定下描述的仍是同一分布。例如暂定完整性因子g＝1.03，写进以平方GSD定义的参数时应为1.0609；照抄g的数值会改变所指定的分布。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-PEDIGREE-CALIBRATION",
+        "version": "1.0.0",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
+        "inputFile": "pedigree-calibration-v1.json"
+      }
+    },
+    {
+      "id": "cl-unc-baseline",
+      "text": "基础项有自己的依据。按2012年报告的扩展设定，去掉所有额外不确定性，结果回到基础不确定性。因此，即便各指标都评为最佳等级，也还有基础项。报告总结说明，项目并未对基础因子完成经验校准，也未明确分析指标间的相关性。把指标分量当作独立项合成，需要把独立性作为模型假定写清楚。",
+      "kind": "interpretation",
+      "scope": "2012年方法开发报告的基础项与假设；不据此判定现行ecoinvent版本。",
+      "evidenceIds": [
+        "ev-unc-ciroth-baseline",
+        "ev-unc-ciroth-summary",
+        "ev-unc-ciroth-calibration"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-unc-ciroth-baseline",
+          "relation": "supports",
+          "rationale": "实际pp52–53将最佳评分下的总不确定性设为基础项，并给出分布扩展所采用的条件。"
+        },
+        {
+          "evidenceId": "ev-unc-ciroth-summary",
+          "relation": "qualifies",
+          "rationale": "实际pp48–49承认基础项未经验调查、相关性未明确分析；本段不把其假设升级为检验结果。"
+        },
+        {
+          "evidenceId": "ev-unc-ciroth-calibration",
+          "relation": "context",
+          "rationale": "§4.5实际p17明确将指标视为独立，提供该假设所在的位置。"
+        }
+      ],
+      "premiseIds": [
+        "cl-unc-scores",
+        "cl-unc-calibration",
+        "cl-unc-calibration-limits"
+      ],
+      "caveats": [
+        "报告的对数正态及中心值处理也是设定；没有检验真实资料的分布族或协方差。"
+      ],
+      "conceptIds": [
+        "cn-quality-calibration"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-ped-inventory-assumptions",
+      "kind": "proposal",
+      "scope": "明确虚构的单位过程材料参数及独立对数正态条件",
+      "evidenceIds": [
+        "ev-ped-completeness-factors",
+        "ev-ped-log-product"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-completeness-factors",
+          "relation": "supports",
+          "rationale": "仅提供已发表的暂定1.03因子；中位数10、基础1.2、评级和新清单适用均不来自该调查。"
+        },
+        {
+          "evidenceId": "ev-ped-log-product",
+          "relation": "supports",
+          "rationale": "提供独立对数正态乘积的条件模型背景；本书明示采用这些条件作演算。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-factor-conventions",
+        "cl-ped-calibration-boundary"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "不是柏林杯重均值的抽样分布，不是实测工业参数，也不是完整产品生命周期模型。"
+      ],
+      "reasoning": "把有来源的暂定因子与作者设定的分布、中心、基础项、评级和独立性分开。",
+      "text": "用一项虚构的清单参数，可以算清这些设定怎样形成分布。设某单位过程生产一件规定产品所需的材料投入为X，单位为kg/件。用对数正态分布表达对X的不确定认识，设其中位数为10、基础GSD为1.2。假定完整性评为等级2，暂用已发表的g＝1.03作额外GSD，其余额外因子均为1，各对数分量独立。这里的中心、基础项、评级和依赖关系都是演算假定。发表过的完整性因子在此说明怎样参与运算，它对某项真实材料投入是否适用仍需判断。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-PEDIGREE-CALIBRATION",
+        "version": "1.0.0",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
+        "inputFile": "pedigree-calibration-v1.json"
+      }
+    },
+    {
+      "id": "cl-ped-inventory-combination",
+      "kind": "calculation",
+      "scope": "所设独立对数正态分量的合成",
+      "evidenceIds": [
+        "ev-ped-log-product",
+        "ev-ped-journal-combination",
+        "ev-ped-completeness-factors"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-log-product",
+          "relation": "supports",
+          "rationale": "独立对数方差相加及额外因子为1时退回基础项，支撑条件计算。"
+        },
+        {
+          "evidenceId": "ev-ped-journal-combination",
+          "relation": "supports",
+          "rationale": "平方GSD表示支持U_T＝g_T²的一致转换。"
+        },
+        {
+          "evidenceId": "ev-ped-completeness-factors",
+          "relation": "supports",
+          "rationale": "提供作为演算输入的暂定因子；不提供本例中位数、基础量或经验覆盖证明。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-inventory-assumptions",
+        "cl-unc-baseline"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "计算使用印刷因子及作者固定条件；没有传播因子校准误差或验证真实分布。"
+      ],
+      "reasoning": "对数方差相加、指数还原；额外GSD为1时其对数方差贡献为0。",
+      "text": "合成时，先把基础与完整性GSD换成对数标准差。把它们平方相加再开方，得σ＝√{[ln(1.2)]²＋[ln(1.03)]²}≈0.1847。取指数得总GSD g_T≈1.2029，平方得U_T≈1.4469。其余因子的GSD为1，对数为零。若完整性额外因子也改成1，就只剩基础项，总GSD回到基础GSD。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-PEDIGREE-CALIBRATION",
+        "version": "1.0.0",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
+        "inputFile": "pedigree-calibration-v1.json"
+      }
+    },
+    {
+      "id": "cl-ped-inventory-interval",
+      "kind": "calculation",
+      "scope": "所设对数正态参数分布的对数中心±2σ范围",
+      "evidenceIds": [
+        "ev-ped-log-product",
+        "ev-ped-journal-combination"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-log-product",
+          "relation": "supports",
+          "rationale": "独立对数正态乘积给出本例σ_log；中心±2σ范围是基于明确分布与中位数条件的作者推导。"
+        },
+        {
+          "evidenceId": "ev-ped-journal-combination",
+          "relation": "supports",
+          "rationale": "U_T为平方GSD的表示支持中位数除/乘U_T；不据原文把这个范围冒充实证均值置信区间。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-inventory-assumptions",
+        "cl-ped-inventory-combination",
+        "cl-unc-parameters"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "不将两标准差范围写成无条件或精确95%的经验覆盖保证；不是已估计总体均值的置信区间。"
+      ],
+      "reasoning": "由定义U_T＝exp(2σ_log)，指数还原对数区间得到中位数除/乘U_T。",
+      "text": "在对数尺度上，离中心一个σ，回到原尺度就相当于把中位数乘以或除以总GSD。在对数中心两侧各取两个σ，取指数后，中位数分别除以和乘以exp(2σ)＝U_T，范围就是10/U_T至10×U_T，约6.9115至14.4687 kg/件。这个中央范围描述所设材料投入参数的分布；柏林调查的标准误描述平均杯重的抽样精度。若要把参数不确定性传播到整个LCA结果，还须给出其余材料、排放与表征因子所在的模型及依赖关系。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-PEDIGREE-CALIBRATION",
+        "version": "1.0.0",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
+        "inputFile": "pedigree-calibration-v1.json"
+      }
+    },
+    {
+      "id": "cl-ped-inventory-center",
+      "kind": "calculation",
+      "scope": "本书所设对数正态模型的中心值含义及均值推导",
+      "evidenceIds": [
+        "ev-ped-log-product"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-log-product",
+          "relation": "context",
+          "rationale": "本来源提供条件性对数正态模型背景；均值表达式由正文假设与正态指数矩推导，并非来源给出的新工业实测量。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-inventory-assumptions",
+        "cl-ped-inventory-combination"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "这是所设分布的数学性质，不是对原调查均值的再估计；没有推断实际软件采用哪种中心值。"
+      ],
+      "reasoning": "由正态指数矩E(expY)＝exp(μ＋σ²/2)推导算术均值，并保持本例中位数固定。",
+      "text": "投入量的分布在对数尺度上关于中心对称，回到kg/件后，两端与中位数相隔的是相同倍数。例中的10既是中位数也是几何均值，算术均值则为10exp(σ²/2)≈10.1720 kg/件。若清单给出的是算术均值，又要采用同一个σ，就应把对数中心设为μ＝ln(算术均值)−σ²/2。中心值的种类一旦改变，直接沿用同一数字作中位数会给出另一个分布。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-PEDIGREE-CALIBRATION",
+        "version": "1.0.0",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
+        "inputFile": "pedigree-calibration-v1.json"
+      }
+    },
+    {
+      "id": "cl-unc-table-conflict",
+      "kind": "interpretation",
+      "scope": "2012可靠性等级5候选GSD、CV表值和推荐状态的原文对照",
+      "evidenceIds": [
+        "ev-ped-reliability-cv-trace",
+        "ev-ped-journal-summary"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-reliability-cv-trace",
+          "relation": "supports",
+          "rationale": "原页分别提供GEMIS候选GSD、拒绝推荐/n.a.状态、CV定义与后表值；本段只归属这些实际表述。"
+        },
+        {
+          "evidenceId": "ev-ped-journal-summary",
+          "relation": "qualifies",
+          "rationale": "2016Table6同一可靠性等级仍为n.a.，不能据CV表有数值认定推荐恢复。"
+        }
+      ],
+      "premiseIds": [
+        "cl-unc-scores",
+        "cl-ped-factor-conventions"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "未解释被拒候选为何在后续转换表保留数值；不据此推断所有因子无效或给出可采用参数。"
+      ],
+      "reasoning": "把GSD、CV比例及采用状态分别定位；数学换算与推荐资格是不同问题。",
+      "text": "代数换算可以让因子与参数的定义吻合。一个数有没有被推荐使用，却要看报告怎样评价它。2012年报告从GEMIS资料得到的可靠性等级5候选GSD为43.55207485。第27页的结论认为该值可能过高，不予推荐，第49页总结表也列为无可用值。第55页的转换表却列了1237.93。这列是变异系数CV，即标准差除以均值的比例，表中按比例列数，并未乘100写成百分数。2016年论文的汇总表仍把该等级记作无可用值。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-PEDIGREE-CALIBRATION",
+        "version": "1.0.0",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
+        "inputFile": "pedigree-calibration-v1.json"
+      }
+    },
+    {
+      "id": "cl-ped-reliability-cv-trace",
+      "kind": "calculation",
+      "scope": "本书附加条件下的先舍入GSD再按对数正态式转换CV；并非恢复原表算法",
+      "evidenceIds": [
+        "ev-ped-reliability-cv-trace"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-reliability-cv-trace",
+          "relation": "supports",
+          "rationale": "提供未舍入候选GSD、CV公式和后表目标值；两位小数预舍入是本书明确附加的条件，不归因于原作者。"
+        }
+      ],
+      "premiseIds": [
+        "cl-unc-table-conflict",
+        "cl-ped-factor-conventions"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "先舍入再转换的数值吻合不能证明原表实际采用该算法；直接使用未舍入候选值给出不同结果。",
+        "没有恢复被拒绝候选的推荐状态、经验适用性或原始统计数据。"
+      ],
+      "reasoning": "按原报告CV＝sqrt(exp([lnG]²)−1)分别计算未舍入GSD与作者先舍入到两位小数的路径，再比较CV显示值，区分数值关联与原程序/资格证据。",
+      "text": "能否从被拒候选的GSD算出转换表中的CV？报告第54页给出的对数正态换算式是CV＝√{exp([ln(g)]²)−1}。若先把候选GSD舍入为43.55，再按这个式子转换，得到的CV约为1237.9312，保留两位小数与表列1237.93相合。直接用未舍入的候选GSD，算出的CV约为1238.1538。两种算式的结果说明先舍入会改变换算值。数值相合还不能确认原表的程序，也没有解释为何一项未获推荐的候选仍在转换表中留下数值。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-PEDIGREE-CALIBRATION",
+        "version": "1.0.0",
+        "inputSha256": "bdba93d860cdc3083a03b8a6f2bdac48a443edabbd6b5678af7ed829b61648ab",
+        "inputFile": "pedigree-calibration-v1.json"
+      }
+    },
+    {
+      "id": "cl-ped-score-test-design",
+      "kind": "source-statement",
+      "scope": "2018论文官方附件所述单数据集、具名方法的多使用者测试",
+      "evidenceIds": [
+        "ev-ped-score-test-design"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-score-test-design",
+          "relation": "supports",
+          "rationale": "附件Methods直接规定12名机构相关参与者、同一数据集四项输入、两种具名矩阵及不预设正确分数。"
+        }
+      ],
+      "premiseIds": [
+        "cl-unc-scores"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "参与者不是全部LCA用户的随机样本；计划评分项数不等于有效完整响应数。",
+        "它没有检验新修订EPA矩阵的有效性、杯重因子或培训干预。",
+        "这是同一批参与者的两体系设计要求；实际缺填和错误另述，不能据计划断言所有评分均完整。"
+      ],
+      "text": "因子表之外，还有赋予等级这一步。Edelen 与 Ingwersen 的测试附件报告，12名美国EPA员工或承包人员依据同一数据集和背景文件，评价其中四项输入流。测试要求同一批参与者分别用Weidema 2013的五指标体系和Cooper—Kahn 2012的七指标A/B体系各评一次。测试事先没有规定正确分数，而是观察实际评分怎样分布。它考察的是不同人能否把规则理解并用在同样的资料上。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-ped-score-test-results",
+      "kind": "source-statement",
+      "scope": "原附件结果与比较设计的界限",
+      "evidenceIds": [
+        "ev-ped-score-test-results",
+        "ev-ped-score-test-design"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-score-test-results",
+          "relation": "supports",
+          "rationale": "Results及图显示缺填、错误和指标/流间分布差异；没有逐人响应或可直接重算的统一统计量。"
+        },
+        {
+          "evidenceId": "ev-ped-score-test-design",
+          "relation": "supports",
+          "rationale": "两套体系的指标和刻度同时不同，不能据比较隔离类别数的因果效果。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-score-test-design"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "没有从图像数字化响应频数；不能把作者所报经验分组结论扩成一般人群规律。",
+        "没有前后培训试验，不能把分歧减少归因于已验证的培训措施。"
+      ],
+      "text": "实际填写中，有人未能完成全部指标，也有人给参考流评分，或填出超出量表范围的分数。评分集中到什么程度，随指标和输入流而变。作者认为A/B体系的重复性较高，但其中仍有明显分歧。两套体系的指标定义也不同，观察到的差异无法单独归因于量表类别数。附件也未提供逐人的原始响应表或可直接重算的统一一致性系数。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-ped-three-tests",
+      "kind": "synthesis",
+      "scope": "评分重复性、经验因子与概率模型适用性的推理关系",
+      "evidenceIds": [
+        "ev-ped-score-test-design",
+        "ev-ped-score-test-results",
+        "ev-ped-completeness-factors"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-score-test-design",
+          "relation": "supports",
+          "rationale": "没有正确分数或概率覆盖判据，明确了评分测试的问题。"
+        },
+        {
+          "evidenceId": "ev-ped-score-test-results",
+          "relation": "supports",
+          "rationale": "使用者间分歧支持独立检查赋级过程；不等于经验校准不可能。"
+        },
+        {
+          "evidenceId": "ev-ped-completeness-factors",
+          "relation": "supports",
+          "rationale": "暂定经验因子及有限同质来源说明概率适用性仍是另一项需要证据的判断。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-score-test-design",
+        "cl-ped-score-test-results",
+        "cl-ped-calibration-boundary",
+        "cl-ped-inventory-assumptions"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "不是统一验收标准或方法优劣排名；未完成跨行业外部有效性检验。"
+      ],
+      "reasoning": "分别指出各测试的对象，避免由一个环节的结果替代另一个环节的证据。",
+      "text": "从这项测试回看完整性因子的推导，可以分清三种需要检验的联系。首先是资料与等级，检验不同使用者按规则评价时能否给出相近的结果。其次是等级与散布，检验某一级是否有适用于这类资料的经验因子。最后是因子与目标参数的分布，检验总体、中心和依赖关系等模型条件是否合适。评分一致只为第一种联系提供依据；评分分歧提示要检查赋级过程，其结果还不能决定因子能否校准。因子有来源，也只解决了建模所需的一部分依据。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-unc-alongside",
+      "text": "Edelen 与 Ingwersen 在2018年卷期论文的PMC作者手稿中，提出把数据质量评价与不确定性分析互补使用。前者说明资料是什么样、与用途是否相称，后者说明数据或模型的不确定性在结论中有何影响。两项分析可以互相提示该补哪一类证据。按这一建议，资料的适用性仍可独立评价。",
+      "kind": "source-statement",
+      "scope": "2017在线发表、2018卷期论文的PMC作者手稿§2.4；作为一种明确的方法立场。",
+      "evidenceIds": [
+        "ev-unc-ei-alongside"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-unc-ei-alongside",
+          "relation": "supports",
+          "rationale": "HTML§2.4直接主张DQA alongside quantitative uncertainty并说明互补关系；不是由摘要推断。"
+        }
+      ],
+      "premiseIds": [],
+      "caveats": [
+        "这是作者建议，不是所有学者已达成一致或所有条件校准均不可能的证明。"
+      ],
+      "conceptIds": [
+        "cn-quality-calibration"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-unc-context",
+      "text": "与使用情境有关的评级，要连同评价目标一起交给下一位研究者。时间、地理和技术指标都要拿资料和所需情境相比，评价目标变了，原来的评分规则即使名称相同，仍需重新判断该资料是否适用。Edelen 与 Ingwersen 因此强调保留原始资料的描述、评分依据和目标。这样，资料换了用途，使用者还有根据重作判断。",
+      "kind": "interpretation",
+      "scope": "作者手稿关于情境性评分、原始描述和元数据保留的讨论",
+      "evidenceIds": [
+        "ev-unc-ei-metadata",
+        "ev-unc-ei-reuse"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-unc-ei-metadata",
+          "relation": "supports",
+          "rationale": "§§1.5–1.6把描述、层次和目标与分数区分，并说明只留评分可能丢失重新评价所需的信息。"
+        },
+        {
+          "evidenceId": "ev-unc-ei-reuse",
+          "relation": "qualifies",
+          "rationale": "§2.6与§3.1要求对情境性指标重新评价，限制直接沿用或翻译旧分数。"
+        }
+      ],
+      "premiseIds": [
+        "cl-unc-scores",
+        "cl-unc-alongside"
+      ],
+      "caveats": [
+        "评分的情境性不等于已有跨体系映射，也不保证数据库或软件完整保存所需信息。"
+      ],
+      "conceptIds": [
+        "cn-quality-rating"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-unc-synthesis",
+      "text": "柏林调查中，按门店与杯型定义总体，再按相应设计加权，可以估计平均杯重，也可以辨明均值精度与杯型散布。用这批资料提出完整性因子，依据是子集与参照组的散布比较，还要说明由覆盖程度怎样赋级。若因子要进入清单参数的概率分布，还须交代所用参数口径、基础项、中心和各分量的依赖关系。沿着这条关系往回看，便能判断一个给定的结果究竟有抽样、校准还是模型的依据，下一步该补的也可能是观察、评分规则或对模型的验证。评分保留了资料适用性的判断，概率则要由相应的数据与模型支撑。",
+      "kind": "synthesis",
+      "scope": "资料描述、目标相关评分、概率依据与不确定性传播的分析框架；不是外部标准或自动评分政策。",
+      "evidenceIds": [
+        "ev-unc-ciroth-calibration",
+        "ev-unc-ei-alongside"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-unc-ciroth-calibration",
+          "relation": "context",
+          "rationale": "校准方法提供建立联系的一种有条件路线，而不是无需论证的分数转换。"
+        },
+        {
+          "evidenceId": "ev-unc-ei-alongside",
+          "relation": "qualifies",
+          "rationale": "互补分析的作者立场限制把全部质量问题收进一种概率参数的写法。"
+        }
+      ],
+      "premiseIds": [
+        "cl-unc-types",
+        "cl-unc-model",
+        "cl-unc-sd-sem",
+        "cl-unc-numerical",
+        "cl-unc-scores",
+        "cl-unc-calibration-limits",
+        "cl-unc-baseline",
+        "cl-unc-table-conflict",
+        "cl-unc-alongside",
+        "cl-unc-context",
+        "cl-ped-estimate-boundary",
+        "cl-ped-calibration-boundary",
+        "cl-ped-factor-conventions",
+        "cl-ped-inventory-center",
+        "cl-ped-three-tests",
+        "cl-ped-reliability-cv-trace"
+      ],
+      "caveats": [
+        "这些方法立场和有限校准材料不足以宣布方法优劣已定。"
+      ],
+      "reasoning": "以本章实际调查、建议因子、条件分布和评分测试组织连续数量链；不将各环节的不同证据要求混成一个分数。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-11",
+      "reviewKind": "agent-source-check"
+    }
+  ],
+  "closingConsumer": {
+    "record": {
+      "id": "cl-connect-evidence-to-probability",
+      "text": "概率解释也要经过这一步连接。2012年的校准研究尝试由资料质量特征走向分布的离散参数，其中有数据处理、分组、参考状态与假设；2018年的方法论文则明确建议把质量评价与定量不确定性互补使用。这些立场不能合成一项“评分即概率”的共识，也不能据后一项建议否定一切有依据的校准。质量描述可以定位薄弱处，有根据的分布可以用于传播参数不确定性，情景则可以揭示研究选择的后果。是否把它们放进联合计算，需要分别说明依据；列出几个未来、运行一次模拟或给情景同样的权重，都没有独自证明发生概率。",
+      "kind": "synthesis",
+      "scope": "质量描述、概率参数与未来情景之间的证据连接；作者综合，不建立联合概率模型。",
+      "evidenceIds": [
+        "ev-unc-ciroth-calibration",
+        "ev-unc-ei-alongside",
+        "ev-unc-huij-choices",
+        "ev-time-gie-scenarios"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-unc-ciroth-calibration",
+          "relation": "supports",
+          "rationale": "2012报告对分组、尺度及参考状态的处理展示评分转为离散程度需要额外校准步骤。"
+        },
+        {
+          "evidenceId": "ev-unc-ei-alongside",
+          "relation": "qualifies",
+          "rationale": "2018论文提出质量评价与定量不确定性互补，防止把校准路径说成唯一共识。"
+        },
+        {
+          "evidenceId": "ev-unc-huij-choices",
+          "relation": "supports",
+          "rationale": "研究选择另以情景考察，为不混同参数分布和选择差异提供依据。"
+        },
+        {
+          "evidenceId": "ev-time-gie-scenarios",
+          "relation": "supports",
+          "rationale": "2020论文讨论情景生成及深度不确定性，限制由列出未来直接获得概率的推断。"
+        }
+      ],
+      "premiseIds": [
+        "cl-unc-calibration",
+        "cl-unc-alongside",
+        "cl-unc-choices",
+        "cl-future-scenarios"
+      ],
+      "caveats": [
+        "没有否定有经验依据的概率预测；未建立或验证联合分布。",
+        "2012校准经验限制及表格争议仍保留，不引入通用默认因子。"
+      ],
+      "reasoning": "共同点是从描述到概率都存在需要证据的中间环节；不同分析可互补，并不因共现就取得共同概率模型。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-09",
+      "reviewKind": "agent-source-check"
+    },
+    "rationale": "The unchanged closing synthesis retains the distinct empirical-calibration and independent complementary-use positions. The three replaced prerequisite records preserve their exact propositions, evidence roles and qualifications; the actual dependent claim and the broader scenario evidence were independently reinspected. Acceptance is bounded to the stated source and reader checks, not empirical or human approval."
+  },
+  "reviewEvidence": [
+    {
+      "kind": "selected-originals-and-candidate-entailment",
+      "reportSha256": "cdc765ef1f11ab106f3da62dc12ea860e1d2ceb228f03810b01cce144e04f585",
+      "receiptSha256": "3bced7f9b48c9954e126e96a23bf3756375a7cf63c34c7e17cd0c8705c860cd5"
+    },
+    {
+      "kind": "primary-continuous-reading-local-candidate",
+      "reportSha256": "0e85bee09f40c98c0d7584c12f52f316013fa4b4b20d1701e718b9ee8649524d",
+      "receiptSha256": "a1cfdc73abfc04599b5c3538c7ef5c05ad95403adc0520abb3467db043bacae0"
+    },
+    {
+      "kind": "independent-engineering-with-four-reproduced-fixes",
+      "reportSha256": "2d33d802dd744c2e21dedc4a885d8c4888c24c015dde6ca546c1ee06e249e1a1",
+      "receiptSha256": "a1cfdc73abfc04599b5c3538c7ef5c05ad95403adc0520abb3467db043bacae0"
+    },
+    {
+      "kind": "exact-source-precision-caveat-correction",
+      "reportSha256": "9499cec91ac180dd0494b7429fe422c60aca0bbefcb1254b9d2c5e5c414fa8d8",
+      "receiptSha256": "3bced7f9b48c9954e126e96a23bf3756375a7cf63c34c7e17cd0c8705c860cd5"
+    },
+    {
+      "kind": "deepseek-fresh-context-bounded-reader-and-disposition",
+      "reportSha256": "6d5c2f78d76b4ba2e6852f5e57b720a4effb22a9ab0f33d292737db7529b3668",
+      "receiptSha256": "5a06785081d295362db552b708e82a0b8fb5f454e9ea68c1adecc3ea28098bc7"
+    },
+    {
+      "kind": "independent-source-check-of-four-final-wording-edits",
+      "reportSha256": "825742550e0da26994e159f7e8cbdf647b323807f66637ca3471de84ba6ce697",
+      "receiptSha256": "5a06785081d295362db552b708e82a0b8fb5f454e9ea68c1adecc3ea28098bc7"
+    },
+    {
+      "kind": "independent-real-html-and-current-entry-verification",
+      "reportSha256": "ea47790b81733162937f8f64a11764622f13cf33d5f6ea8efbd7de9fc20d8dcf",
+      "receiptSha256": "a1cfdc73abfc04599b5c3538c7ef5c05ad95403adc0520abb3467db043bacae0"
+    }
+  ]
+}

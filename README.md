@@ -14,8 +14,8 @@ checkPaths:
   - "package.json"
   - "app/**"
   - "scripts/**"
-lastReviewedAt: 2026-11-10
-lastReviewedCommit: 6e9b5b88e50c2606535bbc5da4fda695bd1f8eb8
+lastReviewedAt: 2026-11-11
+lastReviewedCommit: b2f8a942ad45510cfc67e4e61b5b3ad9c820ae19
 ---
 
 # LCA Living Knowledge Base and Review
@@ -176,7 +176,7 @@ completion remain separate from the research and integrity checks.
 The website's fine reading sequence and the book's assembled chapters use separate,
 explicitly named numbering. Both follow the seven-part reading argument. The current
 book contains32 actual chapters plus front matter, topics and three appendices.
-B25 consumes C14/C15 in one authored14-note chapter. Its160formal chapter sections
+B25 consumes C14/C15 in one authored14-note chapter. Its157formal chapter sections
 still exceed the120-section goal; whole-book authoring and formal publication remain
 editorial work. Display numbers never replace stable heading or citation IDs.
 `config/reader-numbering.json` and the source/output validators bind each actual
@@ -218,3 +218,8 @@ headings remain protected within4146historical obligations. Two new evidence
 records receive their own current acceptance; no earlier source/reading event or
 case input is overwritten. Source, actual output, hosting and integration remain
 separate gates, and32current chapters do not establish the full-book edition.
+
+
+## Readable-writing pilot
+
+[Issue91](https://github.com/tiangong-lca/knowledge-base/issues/91) adopts the writing/teaching guide and revises chapter27 under a frozen source and numerical-input identity. The dated guide assessment is not current scientific approval. See [the standard](_docs/editorial/readable-writing-and-teaching.md) and [unit protocol](_docs/editorial/2026-11-11-readable-pedigree.md). The pre-edit inventory lives in `config/readable-pedigree-original.json`; it does not grant acceptance of a later manuscript.

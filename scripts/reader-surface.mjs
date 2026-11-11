@@ -1,3 +1,4 @@
+import { assertReadablePedigreeAccepted, readablePedigreeHeadingEntries, remapReadablePedigreeCitations, validateReadablePedigreeCaseBytes, validateReadablePedigreeCoverage, validateRenderedReadablePedigree } from './reader-readable-pedigree.mjs';
 import { assertToxicityPathwaysAccepted, remapToxicityPathwaysCitations, toxicityPathwaysHeadingEntries, validateToxicityPathwaysCoverage, validateRenderedToxicityPathways } from './reader-toxicity-pathways.mjs';
 import { assertDataApplicabilityOriginal, assertDataApplicabilityHeadingOriginal, assertDataApplicabilityAccepted, dataApplicabilityHeadingEntries, remapDataApplicabilityCitations, validateDataApplicabilityCoverage, validateRenderedDataApplicability } from './reader-data-applicability.mjs';
 import { assertClimateAssemblyOriginal, assertClimateAssemblyHeadingOriginal, assertClimateAssemblyAccepted, validateClimateAssemblyArtifactBytes, climateAssemblyHeadingEntries, remapClimateAssemblyCitations, validateClimateAssemblyCoverage, validateRenderedClimateAssembly } from './reader-climate-assembly.mjs';
@@ -230,7 +231,10 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
     ...(history ? createCanonicalCitationEntries(history, locations, historicPrintRoutes) : [])];
   if (book) entries = remapDataApplicabilityCitations(remapClimateAssemblyCitations(remapClosingSynthesisCitations(remapWallSelectionCitations(remapJointProductionCitations(remapHybridInventoryCitations(remapExchangeSemanticsCitations(remapProcessNetworkCitations(remapFunctionalReferenceCitations(remapCleanerProductionCitations(remapBookCitations(
     [...entries,...publishedHeadingEntries(book.headingHistory),...cleanerProductionHeadingEntries(book.cleanerHeadingHistory),...functionalReferenceHeadingEntries(book.functionalHeadings),...processNetworkHeadingEntries(book.processHeadings),...exchangeSemanticsHeadingEntries(book.exchangeHeadings),...hybridInventoryHeadingEntries(book.hybridHeadings),...jointProductionHeadingEntries(book.jointHeadings),...wallSelectionHeadingEntries(book.wallHeadings),...closingSynthesisHeadingEntries(book.closingHistory),...climateAssemblyHeadingEntries(),...dataApplicabilityHeadingEntries()],book.edition,book.accepted,locations),book.cleanerAccepted,book.cleanerHeadingHistory),book.functionalAccepted,book.functionalHeadings),book.processAccepted,book.processHeadings),book.exchangeOriginal,book.exchangeHeadings,book.exchangePartial,book.exchangeCitations),book.hybridAccepted,book.hybridHeadings),book.jointOriginal,book.jointHeadings,book.jointProse),book.wallOriginal,book.wallHeadings,book.wallAccepted),book.closingHistory,book.closingProse),book.climateAccepted),book.dataAccepted);
-  if (book) entries = remapToxicityPathwaysCitations([...entries, ...toxicityPathwaysHeadingEntries()],book.toxicityAccepted);
+  if (book) {
+    entries = remapToxicityPathwaysCitations([...entries, ...toxicityPathwaysHeadingEntries()],book.toxicityAccepted);
+    entries = remapReadablePedigreeCitations([...entries, ...readablePedigreeHeadingEntries()], book.pedigreeAccepted);
+  }
   const addresses = new Set();
   for (const entry of entries) {
     const address = `${entry.path}#${entry.id}`;
@@ -252,7 +256,10 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
     if (!document) { errors.push(`${path}: missing independently verified numbered semantic document`); continue; }
     const surface = readCitationSurface(document, path);
     if (book) errors.push(...validateRenderedDataApplicability(document,path,book.catalog,book.dataAccepted,undefined,"raw"), ...validateRenderedClimateAssembly(document,path,book.catalog,book.climateAccepted), ...validateRenderedClosingSynthesis(document,path,book.catalog,book.closingProse,book.closingHistory), ...validateRenderedWallSelection(document,path,book.wallOriginal,book.catalog,book.wallAccepted), ...validateRenderedJointProduction(document,path,book.jointOriginal,book.catalog,book.jointProse), ...validateRenderedCleanerProduction(document,path,book.cleanerAccepted,book.catalog), ...validateRenderedFunctionalReference(document,path,book.functionalAccepted,book.catalog,book.functionalProse), ...validateRenderedProcessNetwork(document,path,book.processAccepted,book.catalog,book.processProse), ...validateRenderedExchangeSemantics(document,path,book.exchangeOriginal,book.catalog,book.exchangeProse,book.exchangePartial), ...validateRenderedHybridInventory(document,path,book.hybridAccepted,book.catalog,book.hybridProse));
-    if (book) errors.push(...validateRenderedToxicityPathways(document,path,book.catalog,book.toxicityAccepted));
+    if (book) {
+      errors.push(...validateRenderedToxicityPathways(document,path,book.catalog,book.toxicityAccepted));
+      errors.push(...validateRenderedReadablePedigree(document, path, book.catalog, book.pedigreeAccepted, undefined, book.readings));
+    }
     if (!surface.ids.has('main-content')) errors.push(`${path}: missing main-content fragment`);
     pages.set(path, surface);
     errors.push(...surface.errors);
@@ -304,7 +311,8 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
     errors.push(...validateToxicityPathwaysCoverage(book.edition,book.sources,book.catalog,book.toxicityAccepted,undefined,{ readings:book.readings, literature:book.literature }));
     errors.push(...validateDataApplicabilityCoverage(book.edition,book.sources,book.catalog,book.dataAccepted));
     errors.push(...validateClimateAssemblyCoverage(book.edition,book.sources,book.catalog,book.climateAccepted));
-    errors.push(...validateClosingSynthesisCoverage(book.edition,book.sources,book.catalog,book.closingProse,undefined,'raw',undefined,undefined,book.toxicityAccepted));
+    errors.push(...validateReadablePedigreeCoverage(book.edition, book.sources, book.catalog, book.pedigreeAccepted, undefined, 'raw', book.readings));
+    errors.push(...validateClosingSynthesisCoverage(book.edition,book.sources,book.catalog,book.closingProse,undefined,'raw',undefined,undefined,book.toxicityAccepted,undefined,book.pedigreeAccepted));
     errors.push(...validateWallSelectionCoverage(book.edition,book.sources,book.wallOriginal,book.catalog,book.wallAccepted));
     errors.push(...validateJointProductionCoverage(book.edition,book.sources,book.jointOriginal,book.catalog,book.jointProse));
     errors.push(...validateFrameworkCoverage(book.edition,book.sources,book.accepted));
@@ -377,6 +385,7 @@ export async function validateReaderOutput(root, { knownIds = new Set() } = {}) 
     const dataAccepted = await readConfig('data-applicability-accepted.json');
     const climateAccepted = await readConfig('climate-assembly-accepted.json');
     const toxicityAccepted = await readConfig('toxicity-pathways-accepted.json');
+    const pedigreeAccepted = await readConfig('readable-pedigree-accepted.json');
     const [closingHistory,closingProse] = await Promise.all(['heading-history','prose-accepted'].map(name=>readConfig(`closing-synthesis-${name}.json`)));
     const [jointOriginal,jointHeadings,jointProse] = await Promise.all(['original','heading-history','prose-accepted'].map(name=>readConfig(`joint-production-${name}.json`)));
     const [wallOriginal,wallHeadings,wallAccepted] = await Promise.all(['original','heading-history','accepted'].map(name=>readConfig(`wall-selection-${name}.json`)));
@@ -417,8 +426,14 @@ export async function validateReaderOutput(root, { knownIds = new Set() } = {}) 
       assertProcessNetworkProseAccepted(processProse);
       assertExchangeSemanticsOriginal(exchangeOriginal); assertExchangeSemanticsHeadingHistory(exchangeHeadings); assertExchangeSemanticsCitationSources(exchangeCitations); assertExchangeSemanticsPartialHistory(exchangePartial); assertExchangeSemanticsProseAccepted(exchangeProse);
       assertToxicityPathwaysAccepted(toxicityAccepted);
+      assertReadablePedigreeAccepted(pedigreeAccepted);
+      const [pedigreeInput, pedigreePublication] = await Promise.all([
+        readFile(resolve(root, '..', 'knowledge/cases/pedigree-calibration-v1.json')),
+        readFile(resolve(root, '..', 'knowledge/cases/pedigree-calibration-v1.publication.json')),
+      ]);
+      errors.push(...validateReadablePedigreeCaseBytes(pedigreeAccepted, { input: pedigreeInput, publication: pedigreePublication }));
       const [readings,literature]=await Promise.all(['readings','literature-map'].map(async name=>JSON.parse(await readFile(resolve(root,'..','knowledge','research',name+'.json'),'utf8'))));
-      book={toxicityAccepted,readings,literature,dataAccepted,climateAccepted,closingHistory,closingProse,wallOriginal,wallHeadings,wallAccepted,jointOriginal,jointHeadings,jointProse,hybridAccepted,hybridHeadings,hybridProse,edition,accepted,headingHistory,cleanerAccepted,cleanerHeadingHistory,functionalAccepted,functionalHeadings,functionalProse,processAccepted,processHeadings,processProse,exchangeOriginal,exchangeHeadings,exchangeCitations,exchangePartial,exchangeProse,sources,catalog};
+      book={toxicityAccepted,pedigreeAccepted,readings,literature,dataAccepted,climateAccepted,closingHistory,closingProse,wallOriginal,wallHeadings,wallAccepted,jointOriginal,jointHeadings,jointProse,hybridAccepted,hybridHeadings,hybridProse,edition,accepted,headingHistory,cleanerAccepted,cleanerHeadingHistory,functionalAccepted,functionalHeadings,functionalProse,processAccepted,processHeadings,processProse,exchangeOriginal,exchangeHeadings,exchangeCitations,exchangePartial,exchangeProse,sources,catalog};
       sourceRoutes.splice(0,sourceRoutes.length,...sources.keys());
     }
     errors.push(...await validateLegacyCitationOutput(root, baseline, placements, hasReaderSource ? sourceRoutes : null, history,book));

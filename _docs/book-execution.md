@@ -22,6 +22,39 @@ related:
 
 # Approved book execution
 
+## 2026-11-11 resumption: readable-writing standard and chapter27
+
+The user explicitly resumed manuscript revision and authorized adoption of the
+completed writing/teaching guide, followed by one full chapter rewrite and an
+independent DeepSeek Harness review. [Issue91](https://github.com/tiangong-lca/knowledge-base/issues/91)
+starts from current Main `bb12fa4bce7a68a3f5725f6ffa6a8a1ffe8c059c`.
+The [adopted standard](editorial/readable-writing-and-teaching.md) keeps its
+dated candidate assessment separate from current authoring rules. The
+[unit protocol](editorial/2026-11-11-readable-pedigree.md) records the question,
+material roles, frozen37claims/43premise closure and source/reader/output checks.
+
+Chapter27 is selected because its cup-weight study and complete numerical example
+can test whether clearer explanation retains statistical objects, source
+discrepancies and explicit probability assumptions. The intended title is
+“质量评分与概率”, with five substantive sections and a full prose revision.
+The 2026-11-10 pause and 2026-11-11 read-only audits are historical states; this
+new instruction resumes revision without creating an application goal or
+claiming completion of the whole book. The original eight research domains,
+twelve appendix responsibilities and42-item migration obligations remain.
+
+The prior PM unit#90 remains separately saved and pushed at
+`codex/book-pm-selection` / `3d938f32bf25362973ded448807d302c4a0d0ef4`.
+Its pending PR/publication/integration is not silently included or completed here.
+This unit uses `codex/book-readable-pedigree` -> `main`; source/main, hosted
+publication and exact workspace integration are recorded when actually complete.
+The standard and37-passage/five-section rewrite now have source, primary reader,
+bounded DeepSeek and independent engineering checks. The protocol distinguishes
+the interrupted initial app turn from its completed report and records the four
+final wording changes separately. Current/legacy entry behavior,37notes and178
+chapter addresses were checked on actual rebuilt output; the final exact-head
+checks and remote delivery remain separate. Programme9 remains open and its
+current durable body records this resumption.
+
 ## 2026-11-09 current unit: toxicity pathways and comparative use
 
 Data applicability86/PR87 is fully delivered at Main

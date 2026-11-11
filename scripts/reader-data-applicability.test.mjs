@@ -1,3 +1,5 @@
+import pedigreeAccepted from '../config/readable-pedigree-accepted.json' with { type: 'json' };
+import { readablePedigreeCaseExpectation, readablePedigreeHeadingEntries, readablePedigreeOriginalEntries, remapReadablePedigreeCitations } from './reader-readable-pedigree.mjs';
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
@@ -11,7 +13,7 @@ import { publicResearch } from "./research.mjs";
 import { citationHref, citationSourceHref } from "./reader-citations.mjs";
 import { createChapterNotePlan, createChapterAnnotationPlan, createChapterReferenceIndex, printUnitAnchor, splitReferenceTail } from "./reader-book.mjs";
 import { assertDataApplicabilityOriginal, assertDataApplicabilityHeadingOriginal, assertDataApplicabilityRegistration, assertDataApplicabilityAccepted, inspectDataApplicabilitySource, validateDataApplicabilityCoverage, dataApplicabilityKey as key, dataApplicabilityManuscript as manuscript, dataApplicabilityRoutes as routes, dataApplicabilityTitles as titles, dataApplicabilityDigest as digest, dataApplicabilityOriginalEntries, dataApplicabilityHeadingEntries, remapDataApplicabilityCitations, validateRenderedDataApplicability, dataApplicabilityBookHref } from "./reader-data-applicability.mjs";
-import { toxicityPathwaysDigest, toxicityPathwaysHeadingEntries } from './reader-toxicity-pathways.mjs';
+import { remapToxicityPathwaysCitations, toxicityPathwaysDigest, toxicityPathwaysHeadingEntries } from './reader-toxicity-pathways.mjs';
 import { assertClosingSynthesisCurrentAccepted, closingSynthesisDigest, validateClosingSynthesisCoverage, closingSynthesisManuscript, closingSynthesisRoutes, closingSynthesisSections } from "./reader-closing-synthesis.mjs";
 const json = async (path) => JSON.parse(await readFile(new URL(`../${path}.json`, import.meta.url), "utf8"));
 const [original,captured,edition,catalog,literature,readings,pending] = await Promise.all(["config/data-applicability-original","config/data-applicability-heading-original","config/book-edition","knowledge/catalog","knowledge/research/literature-map","knowledge/research/readings","config/data-applicability-accepted"].map(json));
@@ -85,7 +87,7 @@ test("actual full canonical body, continuous14 notes, source/caveat/premise anno
  for(const style of ['opacity:0.0','visibility:collapse','content-visibility:hidden','clip-path:inset(100%)'])assert(check(html.replace(paragraph.outerHTML,paragraph.outerHTML.replace("<p>",`<p style="${style}">`))).length);
 });
 
-test("complete production history composition preserves all4140 earlier addresses and adds only6 actual46b headings", async () => {
+test("production history preserves prior addresses and adds only the captured headings", async () => {
   const cfg = async (name) => json("config/" + name), { createLegacyCitationEntries, createCanonicalCitationEntries } = await import("./reader-citations.mjs"), { publishedHeadingEntries, remapBookCitations } = await import("./reader-edition.mjs"), baseline = await cfg("citation-baseline"), placements = await cfg("citation-placements"), history = await cfg("citation-history");
   const names = ["cleaner-production", "functional-reference", "process-network", "exchange-semantics", "hybrid-inventory", "joint-production", "wall-selection", "closing-synthesis"], modules = /* @__PURE__ */ new Map(), configs = /* @__PURE__ */ new Map();
   for (const name of names) {
@@ -130,11 +132,20 @@ test("complete production history composition preserves all4140 earlier addresse
   assert.equal(toxicityPathwaysDigest(current2), toxicityOriginal.publication.history.existingGlobalEntriesDigest);
   const withToxicityHeadings = [...current2, ...toxicityPathwaysHeadingEntries()];
   assert.equal(new Set(withToxicityHeadings.map(row => row.path + "#" + row.id)).size, 4149);
+  const afterToxicity = remapToxicityPathwaysCitations(withToxicityHeadings, await cfg("toxicity-pathways-accepted"));
+  const address = row => row.path + "#" + row.id;
+  const unaffected = new Map(afterToxicity.map(row => [address(row), row]));
+  const pedigreeOld = new Set(readablePedigreeOriginalEntries().map(address));
+  const afterPedigree = remapReadablePedigreeCitations([...afterToxicity, ...readablePedigreeHeadingEntries()], pedigreeAccepted);
+  assert.equal(afterPedigree.length, 4157);
+  assert.equal(new Set(afterPedigree.map(address)).size, 4157);
+  assert.equal(afterPedigree.filter(row => !unaffected.has(address(row))).length, 8);
+  for (const row of afterPedigree) if (!pedigreeOld.has(address(row))) assert.deepEqual(row, unaffected.get(address(row)));
 });
 
-test("all18 public teaching inputs and immutable case bindings retain their original byte identity",async()=>{
+test("all 18 teaching inputs and unrelated bindings retain their original byte identity",async()=>{
  const frozen=Object.entries(original.frozenFileHashes).filter(([path])=>path.startsWith("knowledge/cases/"));assert.equal(frozen.filter(([path])=>!path.endsWith(".publication.json")).length,18);assert.equal(frozen.length,36);
- for(const [path,hash] of frozen)assert.equal(createHash("sha256").update(await readFile(new URL(`../${path}`,import.meta.url))).digest("hex"),hash,path);
+ for(const [path,hash] of frozen)assert.equal(createHash("sha256").update(await readFile(new URL(`../${path}`,import.meta.url))).digest("hex"),readablePedigreeCaseExpectation(path, hash, pedigreeAccepted),path);
 });
 
 test("new evidence cannot drift coherently in catalog and rendered notes outside the accepted closure",()=>{
