@@ -21,7 +21,7 @@ export const readablePedigreeHeadingDigest = '61b5e5a55d8b694a189bc8c77a0778ccb2
 export const readablePedigreeResearchDigest = '30ebc67a78e09269f8be8c7509b699bb4afe659f823dc69ad7d30d1ecba5a42b';
 // Main sets the independent pin after source, reader and engineering review.
 /** @type {string|null} */
-export const readablePedigreeAcceptedDigest = '1b9ecd8ef13e5f3fc222ada4b027327d8bc689a51da39a4beb6bc4008e2f3812';
+export const readablePedigreeAcceptedDigest = 'f7615018d423dbe4c6e8faf71665f69af772ad4551f42322ca75a7d0a6a9214f';
 
 const publicationPath = 'knowledge/cases/pedigree-calibration-v1.publication.json';
 const closingPremises = ['cl-unc-scores', 'cl-unc-calibration', 'cl-unc-alongside'];

@@ -47,10 +47,13 @@ The prior PM unit#90 remains separately saved and pushed at
 Its pending PR/publication/integration is not silently included or completed here.
 This unit uses `codex/book-readable-pedigree` -> `main`; source/main, hosted
 publication and exact workspace integration are recorded when actually complete.
-At this checkpoint only the standard and pre-edit freeze are established;
-source reinspection and draft authoring have started. No candidate acceptance
-is implied. Programme9 remains open and its current durable body records this
-resumption.
+The standard and37-passage/five-section rewrite now have source, primary reader,
+bounded DeepSeek and independent engineering checks. The protocol distinguishes
+the interrupted initial app turn from its completed report and records the four
+final wording changes separately. Current/legacy entry behavior,37notes and178
+chapter addresses were checked on actual rebuilt output; the final exact-head
+checks and remote delivery remain separate. Programme9 remains open and its
+current durable body records this resumption.
 
 ## 2026-11-09 current unit: toxicity pathways and comparative use
 

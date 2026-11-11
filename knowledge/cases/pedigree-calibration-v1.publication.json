@@ -68,7 +68,7 @@
         "方差降低比例由原文列出的两个方差估计值计算，不是从观察值重新估计的设计效应，也不证明任何后分层都会降低误差。"
       ],
       "reasoning": "复算平方根与相对标准误，并用1−0.0014/0.0072描述所列汇总量的差异。",
-      "textTemplate": "只改变原有观察的用法，也会改变均值和它的估计精度。作者把同一批整群观察按杯型属性重新分层，再用分层路线得到的总体份额加权。这道后分层程序给出平均值{{input.facts.postMean.value}} g、均值估计方差{{input.facts.postVariance.value}} g²，开方得标准误约{{evaluated.sampling.poststratified.standardDeviation.fixed4}} g，除以该平均值则得相对标准误约{{evaluated.sampling.poststratified.cvPercent.fixed4}}%。用原文列出的新旧两个方差相比，再以1减去这个比值，得到约{{evaluated.sampling.poststratifiedVarianceReductionPercent.fixed4}}%的降幅。重加权前后用的是同一批杯重观察，差异体现了估计程序和层份额信息的作用。"
+      "textTemplate": "只改变原有观察的用法，也会改变均值和它的估计精度。作者把同一批整群观察按杯型属性重新分层，再用分层路线得到的总体份额加权。这道后分层程序给出平均值{{input.facts.postMean.value}} g、均值估计方差{{input.facts.postVariance.value}} g²，开方得标准误约{{evaluated.sampling.poststratified.standardDeviation.fixed4}} g，除以该平均值则得相对标准误约{{evaluated.sampling.poststratified.cvPercent.fixed4}}%。用原文列出的新旧两个方差相比，再以1减去这个比值，得到约{{evaluated.sampling.poststratifiedVarianceReductionPercent.fixed4}}%的方差降幅。重加权前后用的是同一批杯重观察，差异体现了估计程序和层份额信息的作用。"
     },
     {
       "id": "cl-ped-population-spread",
@@ -101,7 +101,7 @@
         "这里所称总体沿用该研究的杯型×门店口径；不是全市场普查，也不是销量加权变异。"
       ],
       "reasoning": "将总体散布与均值估计方差分别开方和解释，不交换两个估计对象。",
-      "textTemplate": "若关心各门店供应的杯型在重量上相差多大，就要看另一个方差。原文同页报告的总体杯重方差为{{input.facts.populationVariance.value}} g²，开方得到标准差约{{evaluated.sampling.population.standardDeviation.fixed4}} g。以报告的分层平均杯重{{input.facts.stratifiedMean.value}} g为分母，得到约{{evaluated.sampling.population.cvPercent.fixed4}}%，与原文的约15%相合。杯型有轻有重，平均杯重估计的相对标准误仍可远小于杯重的相对标准差。标准误再小，也不能用它代替杯重的标准差来描述一个具体杯型。"
+      "textTemplate": "若关心柏林调查所定义的总体中，杯重彼此相差多大，就要看另一个方差。原文同页报告的总体杯重方差为{{input.facts.populationVariance.value}} g²，开方得到标准差约{{evaluated.sampling.population.standardDeviation.fixed4}} g。以报告的分层平均杯重{{input.facts.stratifiedMean.value}} g为分母，得到约{{evaluated.sampling.population.cvPercent.fixed4}}%，与原文的约15%相合。杯型有轻有重，平均杯重估计的相对标准误仍可远小于杯重的相对标准差。标准误再小，也不能用它代替杯重的标准差来描述一个具体杯型。"
     },
     {
       "id": "cl-ped-stratified-conflict",
