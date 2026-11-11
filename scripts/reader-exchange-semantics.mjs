@@ -172,9 +172,9 @@ function withoutCarrierText(node) {
   if(node.nodeType!==1 || node.classList?.contains('source-reading'))return '';
   return node.childNodes.map(withoutCarrierText).join('');
 }
-function expectedPassageArtifact(catalog,evidence) {
+function expectedPassageArtifact(catalog,evidence,readings) {
   if(!evidence.readingId || !evidence.passageId)return null;
-  const reading=readingRegister.readings.find(row=>row.id===evidence.readingId),passage=reading?.passages.find(row=>row.id===evidence.passageId),artifact=reading?.artifacts.find(row=>row.id===passage?.artifactId);
+  const reading=readings.readings.find(row=>row.id===evidence.readingId),passage=reading?.passages.find(row=>row.id===evidence.passageId),artifact=reading?.artifacts.find(row=>row.id===passage?.artifactId);
   if(!passage || !artifact)throw new Error(`B08 unresolved actual annotation passage: ${evidence.id}`);
   const sourceArtifact=catalog.sources.find(source=>source.id===evidence.sourceId)?.artifact;
   return artifact.kind!=='derived-text'&&sourceArtifact&&sourceArtifact.kind!=='derived-text'&&artifact.sha256===sourceArtifact.sha256&&artifact.resolvedUrl===sourceArtifact.resolvedUrl?null:artifact;
@@ -203,7 +203,7 @@ export function unaccountedReaderText(root, checkedNodes) {
 }
 
 /** Match ClaimAnnotation's actual public projection, including per-unit input deduplication. */
-export function validateExchangeAnnotationOutput(document,unit,route,catalog,{print=false,claimIds=null}={}) {
+export function validateExchangeAnnotationOutput(document,unit,route,catalog,{print=false,claimIds=null,readings=readingRegister}={}) {
   const errors=[],prefix=print?printUnitAnchor(route):chapterAnchorPrefix(route),allNotes=unit.querySelectorAll('[data-reader-claim]'),ids=allNotes.map(note=>note.getAttribute('data-reader-claim'));
   const byId=new Map((catalog?.claims??[]).map(claim=>[claim.id,claim])),references=print?printedReferenceIndex(document):new Map(),seenInputs=new Set();
   for(const note of allNotes) {
@@ -223,7 +223,7 @@ export function validateExchangeAnnotationOutput(document,unit,route,catalog,{pr
     evidence.forEach(({evidence:item,relation},index)=>{
       const source=catalog.sources.find(source=>source.id===item.sourceId),li=sourceItems[index],link=li?.querySelector('a'),expectedText=source?`${source.title}。${item.locator.replace(/。+$/u,'')}。${relation!=='supports'?`（${annotationRelations[relation]}）`:''}`:'';
       if(!source||!li||link?.getAttribute('href')!==`/sources/#${item.id}`||link.text!==source.title||compact(withoutCarrierText(li))!==compact(expectedText)) {fail(`source, locator or relation missing or changed (${item.id})`);return;}
-      const artifact=expectedPassageArtifact(catalog,item),carriers=li.querySelectorAll('.source-reading');
+      const artifact=expectedPassageArtifact(catalog,item,readings),carriers=li.querySelectorAll('.source-reading');
       if(carriers.length!==(artifact?1:0)){fail(`actual carrier context missing or changed (${item.id})`);return;}
       if(artifact){const derived=artifact.kind==='derived-text',carrier=carriers[0],links=carrier.querySelectorAll('a'),expected=derived?'引文依据官方文档的文字摘录，引用限于所列文字与数值。该摘录记录本身不代表原始 PDF 字节或表格图像的核对。':'文献文本查看引用版本';
         if(links.length!==1||links[0].getAttribute('href')!==(derived?artifact.originUrl:artifact.resolvedUrl)||links[0].text!==(derived?'官方文档':'查看引用版本')||compact(carrier.text)!==compact(expected))fail(`actual carrier link or limits missing or changed (${item.id})`);

@@ -1,3 +1,4 @@
+import { validateReadablePedigreeCoverage, validateReadablePedigreeCaseBytes } from './reader-readable-pedigree.mjs';
 import { validateToxicityPathwaysCoverage } from './reader-toxicity-pathways.mjs';
 import { assertDataApplicabilityOriginal, assertDataApplicabilityHeadingOriginal, validateDataApplicabilityCoverage } from './reader-data-applicability.mjs';
 import { assertClimateAssemblyOriginal, assertClimateAssemblyHeadingOriginal, validateClimateAssemblyArtifactBytes, validateClimateAssemblyCoverage } from './reader-climate-assembly.mjs';
@@ -107,6 +108,7 @@ export async function validateRepository(root) {
     const dataAccepted = await readOptional('config/data-applicability-accepted.json');
     const climateAccepted = await readOptional('config/climate-assembly-accepted.json');
     const toxicityAccepted = await readOptional('config/toxicity-pathways-accepted.json');
+    const pedigreeAccepted = await readOptional('config/readable-pedigree-accepted.json');
     const [closingHistory,closingProse] = await Promise.all(['heading-history','prose-accepted'].map(name=>readOptional(`config/closing-synthesis-${name}.json`)));
     const [jointOriginal,jointHeadings,jointProse] = await Promise.all(['original','heading-history','prose-accepted'].map(name=>readOptional(`config/joint-production-${name}.json`)));
     const [wallOriginal,wallHeadings,wallAccepted] = await Promise.all(['original','heading-history','accepted'].map(name=>readOptional(`config/wall-selection-${name}.json`)));
@@ -125,7 +127,13 @@ export async function validateRepository(root) {
       errors.push(...validateClimateAssemblyCoverage(edition,sources,data,climateAccepted));
       errors.push(...validateClimateAssemblyArtifactBytes({figure:await readFile(resolve(root,'public/book-figures/climate-response-and-integral.svg')),input:await readFile(resolve(root,'knowledge/cases/climate-metrics-v1.json'))}));
       assertClosingSynthesisOriginal(); assertClosingSynthesisHeadingHistory(closingHistory);
-      errors.push(...validateClosingSynthesisCoverage(edition,sources,data,closingProse,undefined,'raw',undefined,undefined,toxicityAccepted));
+      errors.push(...validateReadablePedigreeCoverage(edition, sources, data, pedigreeAccepted, undefined, 'raw', readings));
+      const [pedigreeInput, pedigreePublication] = await Promise.all([
+        readFile(resolve(root, 'knowledge/cases/pedigree-calibration-v1.json')),
+        readFile(resolve(root, 'knowledge/cases/pedigree-calibration-v1.publication.json')),
+      ]);
+      errors.push(...validateReadablePedigreeCaseBytes(pedigreeAccepted, { input: pedigreeInput, publication: pedigreePublication }));
+      errors.push(...validateClosingSynthesisCoverage(edition,sources,data,closingProse,undefined,'raw',undefined,undefined,toxicityAccepted,undefined,pedigreeAccepted));
       if (!numbering) throw new Error('Current reader publication requires its independently pinned reader-numbering.json');
       errors.push(...validateReaderNumberingSources(numbering,sources,edition));
       const missingWall = [['original',wallOriginal],['heading-history',wallHeadings],['accepted',wallAccepted]].filter(([,value])=>!value).map(([name])=>`wall-selection-${name}.json`);

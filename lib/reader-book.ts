@@ -1,3 +1,5 @@
+import pedigreeAccepted from '@/config/readable-pedigree-accepted.json';
+import { readablePedigreeCitationLabel, readablePedigreeHeadingEntries, readablePedigreeRoute, remapReadablePedigreeCitations, validateReadablePedigreeCoverage } from '@/scripts/reader-readable-pedigree.mjs';
 import toxicityAccepted from '@/config/toxicity-pathways-accepted.json';
 import readings from '@/knowledge/research/readings.json';
 import literature from '@/knowledge/research/literature-map.json';
@@ -79,7 +81,8 @@ const historical = [...createLegacyCitationEntries(baseline, placements, history
     edition:{sourceCommit:headingHistory.sourceCommit,sourceDate:'2026-11-07'}}))];
 const earlierEntries: LegacyEntry[] = remapDataApplicabilityCitations(remapClimateAssemblyCitations(remapClosingSynthesisCitations(remapWallSelectionCitations(remapJointProductionCitations(remapHybridInventoryCitations(remapExchangeSemanticsCitations(remapProcessNetworkCitations(remapFunctionalReferenceCitations(remapCleanerProductionCitations(
   remapBookCitations([...historical, ...cleanerProductionHeadingEntries(cleanerHeadingHistory), ...functionalReferenceHeadingEntries(functionalHeadings), ...processNetworkHeadingEntries(processHeadings), ...exchangeSemanticsHeadingEntries(), ...hybridInventoryHeadingEntries(hybridHeadings), ...jointProductionHeadingEntries(jointHeadings), ...wallSelectionHeadingEntries(wallHeadings), ...closingSynthesisHeadingEntries(closingHistory), ...climateAssemblyHeadingEntries(), ...dataApplicabilityHeadingEntries()], edition, accepted, placements), cleanerAccepted, cleanerHeadingHistory), functionalAccepted, functionalHeadings), processAccepted, processHeadings)), hybridAccepted, hybridHeadings), jointOriginal, jointHeadings, jointProse), wallOriginal, wallHeadings, wallAccepted), closingHistory, closingProse), climateAccepted), dataAccepted);
-const legacyEntries = remapToxicityPathwaysCitations([...earlierEntries, ...toxicityPathwaysHeadingEntries()], toxicityAccepted);
+const toxicityEntries = remapToxicityPathwaysCitations([...earlierEntries, ...toxicityPathwaysHeadingEntries()], toxicityAccepted);
+const legacyEntries = remapReadablePedigreeCitations([...toxicityEntries, ...readablePedigreeHeadingEntries()], pedigreeAccepted);
 export function getLegacyCitations(route: string, print: boolean) {
   const path = print ? '/print' : route, aliases = new Map<string, LegacyEntry[]>(), notices: LegacyEntry[] = [], scopes = new Map<string, LegacyEntry>();
   for (const entry of legacyEntries) {
@@ -105,7 +108,9 @@ export const getChapterReferenceIndex = cache(async (print = false) => {
   if (climateErrors.length) throw new Error(climateErrors.join('\n'));
   const toxicityErrors = validateToxicityPathwaysCoverage(edition, rawSources, catalog, toxicityAccepted, undefined, { projection: 'public', readings, literature });
   if (toxicityErrors.length) throw new Error(toxicityErrors.join('\n'));
-  const closingErrors = validateClosingSynthesisCoverage(edition, rawSources, catalog, closingProse, undefined, 'public', undefined, undefined, toxicityAccepted);
+  const pedigreeErrors = validateReadablePedigreeCoverage(edition, rawSources, catalog, pedigreeAccepted, undefined, 'public', readings);
+  if (pedigreeErrors.length) throw new Error(pedigreeErrors.join('\n'));
+  const closingErrors = validateClosingSynthesisCoverage(edition, rawSources, catalog, closingProse, undefined, 'public', undefined, undefined, toxicityAccepted, undefined, pedigreeAccepted);
   if (closingErrors.length) throw new Error(closingErrors.join('\n'));
   const jointErrors = validateJointProductionCoverage(edition,rawSources,jointOriginal,catalog,jointProse);
   const wallErrors = validateWallSelectionCoverage(edition,rawSources,wallOriginal,catalog,wallAccepted);
@@ -135,6 +140,7 @@ export async function getCitationLabel(target: Destination) {
   }
   const page = print ? getPrintPages().find(page=>page.url===target.route) : source.getPages().find(page=>page.url===target.route);
   if (!page) throw new Error(`Missing citation destination ${target.route}`);
+  if (target.kind === 'heading' && target.route === readablePedigreeRoute) return readablePedigreeCitationLabel(target, pedigreeAccepted);
   if (target.kind === 'heading' && target.route === toxicityPathwaysRoute) return toxicityPathwaysCitationLabel(target, toxicityAccepted);
   if (target.kind === 'heading' && [dataApplicabilityKey, ...dataApplicabilityRoutes, climateAssemblyKey, ...climateAssemblyRoutes, climateAssemblyAppendix].includes(target.route)) {
     const section = print ? target.id.slice(printUnitAnchor(target.route).length + 1) : target.id;

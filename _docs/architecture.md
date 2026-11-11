@@ -393,7 +393,7 @@ share its MDX placement and the canonical paragraph-note sequence.
 
 The Node-only `scripts/reader-citation-baseline.mjs` independently pins the parsed complete baseline digest, including source identity, and exact preface/guide order. Both server roster derivation and export validation call it before deriving expectations. The public frozen inventory has2254addresses; its body content is not duplicated. `scripts/reader-surface.mjs` checks emitted target claim identity, native link destination, alias adjacency, uniqueness, date/source context, note numbers and original print order. A real book source or output requires both configs; generic non-book fixtures retain their separate scope. Deliberate truncation and front-matter mutation tests guard against circular self-validation.
 
-Legacy context appears when an old fragment is targeted, with the preserved source date and immutable GitHub tree. It cannot infer another historical unversioned edition and does not claim hosted archives. The current39 print articles comprise two front-matter units,32 chapters (including B04/B10/B15/B25/B32 assemblies and shared B06/B08), two retained topics and three appendices. Each actual assembly has its own continuous book note plan;160formal chapter sections, retained topics and incomplete research/authoring keep the full edition unfinished.
+Legacy context appears when an old fragment is targeted, with the preserved source date and immutable GitHub tree. It cannot infer another historical unversioned edition and does not claim hosted archives. The current39 print articles comprise two front-matter units,32 chapters (including B04/B10/B15/B25/B32 assemblies and shared B06/B08), two retained topics and three appendices. Each actual assembly has its own continuous book note plan;157formal chapter sections, retained topics and incomplete research/authoring keep the full edition unfinished.
 
 
 Current appendix registration is deliberately separate from the immutable citation baseline. `createCurrentPrintRoutes` validates allowed appendix additions, uniqueness and registered source existence, then compares the resulting roster against actual source pages. Runtime uses `source.getPages()`; export independently discovers MD/MDX files under `content/docs`. Thus deleting both a registration and its exported article cannot silently omit an existing source. The folder's navigation index is excluded, while its article descendants remain mandatory. Print presents appendices separately from the two retained topics, and stable note/premise anchors remain scoped to actual source occurrences. This original appendix registration remains part of the current mixed-edition conservation checks; the bounded B04 assembly below adds a separate manuscript source without claiming the complete32chapter edition.
@@ -703,3 +703,21 @@ fixture from defining the production renderer's structure.
 ## Readable-writing pilot
 
 [Issue91](https://github.com/tiangong-lca/knowledge-base/issues/91) adopts the writing/teaching guide and revises chapter27 under a frozen source and numerical-input identity. The dated guide assessment is not current scientific approval. See [the standard](editorial/readable-writing-and-teaching.md) and [unit protocol](editorial/2026-11-11-readable-pedigree.md). The pre-edit inventory lives in `config/readable-pedigree-original.json`; it does not grant acceptance of a later manuscript.
+
+
+The quality-score pilot uses `scripts/reader-readable-pedigree.mjs` to bind the
+shared five-section manuscript,37canonical records and14publication templates.
+The original source/scientific closure, actual Main heading capture and scoped
+research receipts are separate immutable inputs. Selected6readings/28passages/
+7artifacts are verified from the actual runtime/export reading register;
+unrelated reading and revision growth remains possible. The transitive claim
+graph must retain its one external consumer. A narrow reviewed correction
+changes only one variance-display caveat, preserving its original in the snapshot.
+
+Historical output admission checks each178source node's identity, location,
+visibility and precise scope, not just the destinations. Closed wrappers cannot
+hide body prose; legitimate annotation details remain usable. CurrentB27
+print navigation targets its uniquely focusable title while the historical
+article target still selects the dated37-note scope. The other38current reading
+entries remain unchanged. The retained PM branch must later merge its own two
+entry choices with this one explicitly; this delivery does not includePMscope.

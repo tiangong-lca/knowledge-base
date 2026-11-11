@@ -176,7 +176,7 @@ completion remain separate from the research and integrity checks.
 The website's fine reading sequence and the book's assembled chapters use separate,
 explicitly named numbering. Both follow the seven-part reading argument. The current
 book contains32 actual chapters plus front matter, topics and three appendices.
-B25 consumes C14/C15 in one authored14-note chapter. Its160formal chapter sections
+B25 consumes C14/C15 in one authored14-note chapter. Its157formal chapter sections
 still exceed the120-section goal; whole-book authoring and formal publication remain
 editorial work. Display numbers never replace stable heading or citation IDs.
 `config/reader-numbering.json` and the source/output validators bind each actual
