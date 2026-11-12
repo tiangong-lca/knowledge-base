@@ -327,6 +327,51 @@ Mixed retrieved carriers now expose the exact cited artifact link in annotations
 
 ## Particulate-health reconstruction
 
+`config/pm-selection-original.json` records the clean bb12 manuscript, its
+scientific and reading closure, case-file identities and retained captured
+citation scopes before Issue90 authoring. The separately pinned
+`pm-selection-accepted.json` admits37chapter and17appendix records, exact MDX
+block order, current scientific records and bounded research additions. The
+original48records,18case input/publication pairs and earlier acceptance files
+remain immutable. The Gronlund evidence successor is limited to the reviewed
+county-health qualification and check date; the new DTU carrier has its own
+identity and never replaces its earlier reading event.
+
+`reader-pm-selection.mjs` protects the shared chapter and fourth real appendix
+in runtime, source validation and actual output. The9captured bb12print headings
+extend4149prior obligations to4158. Original48-note groups and each old section
+retain ordered exact subsets, with native aliases or no-script destinations.
+The saved particulate candidate registered 40 book units, 48 website units,
+32 chapters and 155 formal chapter sections. With the separately reviewed
+quality-score chapter, the combined edition has 152 formal chapter sections.
+The 120-section goal and full-book publication remain incomplete.
+
+The PM original inventory retains all 36 historical case file digests.
+The source and export gates resolve the single pedigree publication successor
+through its independently accepted record and compare the other 35 files to
+PM's original digests. All 18 numerical inputs keep their original bytes.
+
+The current catalog gate compares both exact frozen external consumers and the
+published reverse premise/evidence/concept rosters. Unpublished drafts do not
+gain publication qualification, and a new published use requires an explicit
+reviewed disposition. Exact ordered-list and note attributes prevent `start`,
+`reversed`, `value` or list-style changes from silently changing visible note
+numbers while links still point to the correct records. Body, notes, native
+heading/copy controls and ordinary appendix links have separate output checks.
+These guards cannot establish source entailment, reader comprehension, actual
+hosting or empirical validity; those rely on their separately bound evidence.
+
+For the two PM units, `printReadingEntryAnchor` in the numbering module gives
+the existing printed title a separate `print-reading-unit-` identity and
+`tabIndex=-1`. Current TOC entries and whole-unit prose links use this title;
+the article keeps its historical `print-unit-` identity and dated `:target`
+scope. Section, note and explicit historical print links retain their meaning.
+Numbering and PM output gates require the unique focusable title to be owned
+by the correct article. The combined edition uses separate title entries for
+the two PM units and the quality-score chapter. This keeps the old 48-note PM
+scope available from its historical fragment and collapsed during current
+reading.
+
 The static `particulate-health` adapter registers 30 fixed source tuples through
 the existing case publication interface and exact-rational evaluator. It
 separates the explicitly joined Humbert/Gronlund historical factors, a rounded
@@ -393,7 +438,7 @@ share its MDX placement and the canonical paragraph-note sequence.
 
 The Node-only `scripts/reader-citation-baseline.mjs` independently pins the parsed complete baseline digest, including source identity, and exact preface/guide order. Both server roster derivation and export validation call it before deriving expectations. The public frozen inventory has2254addresses; its body content is not duplicated. `scripts/reader-surface.mjs` checks emitted target claim identity, native link destination, alias adjacency, uniqueness, date/source context, note numbers and original print order. A real book source or output requires both configs; generic non-book fixtures retain their separate scope. Deliberate truncation and front-matter mutation tests guard against circular self-validation.
 
-Legacy context appears when an old fragment is targeted, with the preserved source date and immutable GitHub tree. It cannot infer another historical unversioned edition and does not claim hosted archives. The current39 print articles comprise two front-matter units,32 chapters (including B04/B10/B15/B25/B32 assemblies and shared B06/B08), two retained topics and three appendices. Each actual assembly has its own continuous book note plan;157formal chapter sections, retained topics and incomplete research/authoring keep the full edition unfinished.
+Legacy context appears when an old fragment is targeted, with the preserved source date and immutable GitHub tree. It cannot infer another historical unversioned edition and does not claim hosted archives. The current 40 print articles comprise two front-matter units, 32 chapters (including B04/B10/B15/B25/B32 assemblies and shared B06/B08), two retained topics and four appendices. Each assembly has its own continuous book note plan. The 152 formal chapter sections still exceed the 120-section goal.
 
 
 Current appendix registration is deliberately separate from the immutable citation baseline. `createCurrentPrintRoutes` validates allowed appendix additions, uniqueness and registered source existence, then compares the resulting roster against actual source pages. Runtime uses `source.getPages()`; export independently discovers MD/MDX files under `content/docs`. Thus deleting both a registration and its exported article cannot silently omit an existing source. The folder's navigation index is excluded, while its article descendants remain mandatory. Print presents appendices separately from the two retained topics, and stable note/premise anchors remain scoped to actual source occurrences. This original appendix registration remains part of the current mixed-edition conservation checks; the bounded B04 assembly below adds a separate manuscript source without claiming the complete32chapter edition.
@@ -502,9 +547,10 @@ print pages without clipping, truncating or changing the cited source identity.
 `config/reader-numbering.json` binds the actual current source titles, heading
 identities, seven parts and separate book/website orders. Its independent code
 pin supplements discovered-source and edition-coverage checks; it is not the
-editorial 32-chapter plan made executable by inference. The current39-unit book
-contains32 real chapters, two front units, two retained topics and three appendices.
-B25 now consumes C14/C15 under four authored sections with14continuous notes. The website keeps37 fine chapters in47 reading units.
+editorial 32-chapter plan made executable by inference. The current 40-unit book
+contains 32 chapters, two front units, two retained topics and four appendices.
+B25 combines C14/C15 under four sections with 14 continuous notes. The website
+keeps 37 fine chapters in 48 reading units.
 
 `reader-numbering.mjs` derives edition/view labels and complete heading plans,
 including actual case subheadings. `NumberedTitle` and `NumberedHeading` render a
@@ -718,6 +764,6 @@ Historical output admission checks each178source node's identity, location,
 visibility and precise scope, not just the destinations. Closed wrappers cannot
 hide body prose; legitimate annotation details remain usable. CurrentB27
 print navigation targets its uniquely focusable title while the historical
-article target still selects the dated37-note scope. The other38current reading
-entries remain unchanged. The retained PM branch must later merge its own two
-entry choices with this one explicitly; this delivery does not includePMscope.
+article target still selects the dated 37-note scope. The combined edition also
+uses separate title entries for the PM chapter and its calculation appendix.
+The other 37 reading units continue to use their original entry targets.

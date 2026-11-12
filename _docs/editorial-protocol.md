@@ -276,3 +276,16 @@ Independent reading of the opening and completed final part is a bounded coheren
 check. Its omissions must be named, and optional ideas for other chapters do not
 become fabricated new cases or proof of whole-book approval. Cached selected text
 rereading is recorded separately from new acquisition and visual original review.
+
+For particulate selection, keep the original intake-to-damage example intact
+while moving complete technical explanations to a real reader appendix. A
+source-height mixture reversal concerns exposure weights, not comparative
+particle toxicity. IER/GEMM comparisons distinguish the fitted outcome from the
+burden subsequently estimated, and retain shared data and parameter eras.
+Nonlinear finite changes require the actual interval; ambient chemical inputs
+are not source-emission interventions. An original-versus-matched factor-table
+comparison can establish a specific delivered difference without establishing
+the mapping algorithm or a software runtime. A newly generated carrier of the
+same work gets a separate artifact and reading event. Reader clarification of
+emission-by-CF summation receives a bounded source recheck; it does not reopen
+or rewrite the immutable numerical templates.

@@ -1,4 +1,5 @@
 import { assertReadablePedigreeAccepted, readablePedigreeHeadingEntries, remapReadablePedigreeCitations, validateReadablePedigreeCaseBytes, validateReadablePedigreeCoverage, validateRenderedReadablePedigree } from './reader-readable-pedigree.mjs';
+import { assertPmSelectionAccepted, pmSelectionAppendix, pmSelectionCasePaths, pmSelectionHeadingEntries, remapPmSelectionCitations, validatePmSelectionCaseBytes, validatePmSelectionCoverage, validateRenderedPmSelection } from './reader-pm-selection.mjs';
 import { assertToxicityPathwaysAccepted, remapToxicityPathwaysCitations, toxicityPathwaysHeadingEntries, validateToxicityPathwaysCoverage, validateRenderedToxicityPathways } from './reader-toxicity-pathways.mjs';
 import { assertDataApplicabilityOriginal, assertDataApplicabilityHeadingOriginal, assertDataApplicabilityAccepted, dataApplicabilityHeadingEntries, remapDataApplicabilityCitations, validateDataApplicabilityCoverage, validateRenderedDataApplicability } from './reader-data-applicability.mjs';
 import { assertClimateAssemblyOriginal, assertClimateAssemblyHeadingOriginal, assertClimateAssemblyAccepted, validateClimateAssemblyArtifactBytes, climateAssemblyHeadingEntries, remapClimateAssemblyCitations, validateClimateAssemblyCoverage, validateRenderedClimateAssembly } from './reader-climate-assembly.mjs';
@@ -234,6 +235,7 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
   if (book) {
     entries = remapToxicityPathwaysCitations([...entries, ...toxicityPathwaysHeadingEntries()],book.toxicityAccepted);
     entries = remapReadablePedigreeCitations([...entries, ...readablePedigreeHeadingEntries()], book.pedigreeAccepted);
+    entries = remapPmSelectionCitations([...entries, ...pmSelectionHeadingEntries()], book.pmAccepted);
   }
   const addresses = new Set();
   for (const entry of entries) {
@@ -243,7 +245,7 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
   }
   const pages = new Map();
   const errors = [];
-  for (const path of new Set([...sourceBaseline.pages.map(page => page.route), ...(history?.pages ?? []).map(page => page.route), ...(locations.printAdditions ?? []).map(page => page.route), '/print'])) {
+  for (const path of new Set([...sourceBaseline.pages.map(page => page.route), ...(history?.pages ?? []).map(page => page.route), ...(locations.printAdditions ?? []).map(page => page.route), ...(book ? [pmSelectionAppendix] : []), '/print'])) {
     const html = await readFile(join(root, path.slice(1), 'index.html'), 'utf8').catch(error => {
       if (error.code !== 'ENOENT') throw error;
       return null;
@@ -259,6 +261,7 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
     if (book) {
       errors.push(...validateRenderedToxicityPathways(document,path,book.catalog,book.toxicityAccepted));
       errors.push(...validateRenderedReadablePedigree(document, path, book.catalog, book.pedigreeAccepted, undefined, book.readings));
+      errors.push(...validateRenderedPmSelection(document, path, book.catalog, book.pmAccepted));
     }
     if (!surface.ids.has('main-content')) errors.push(`${path}: missing main-content fragment`);
     pages.set(path, surface);
@@ -308,6 +311,7 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
     if (title && actual?.title && title !== actual.title) errors.push(`${path}: wrong destination note title ${link.href}`);
   }
   if (book?.sources) {
+    errors.push(...validatePmSelectionCoverage(book.edition, book.sources, book.catalog, book.pmAccepted, undefined, { readings: book.readings, literature: book.literature }));
     errors.push(...validateToxicityPathwaysCoverage(book.edition,book.sources,book.catalog,book.toxicityAccepted,undefined,{ readings:book.readings, literature:book.literature }));
     errors.push(...validateDataApplicabilityCoverage(book.edition,book.sources,book.catalog,book.dataAccepted));
     errors.push(...validateClimateAssemblyCoverage(book.edition,book.sources,book.catalog,book.climateAccepted));
@@ -386,6 +390,7 @@ export async function validateReaderOutput(root, { knownIds = new Set() } = {}) 
     const climateAccepted = await readConfig('climate-assembly-accepted.json');
     const toxicityAccepted = await readConfig('toxicity-pathways-accepted.json');
     const pedigreeAccepted = await readConfig('readable-pedigree-accepted.json');
+    const pmAccepted = await readConfig('pm-selection-accepted.json');
     const [closingHistory,closingProse] = await Promise.all(['heading-history','prose-accepted'].map(name=>readConfig(`closing-synthesis-${name}.json`)));
     const [jointOriginal,jointHeadings,jointProse] = await Promise.all(['original','heading-history','prose-accepted'].map(name=>readConfig(`joint-production-${name}.json`)));
     const [wallOriginal,wallHeadings,wallAccepted] = await Promise.all(['original','heading-history','accepted'].map(name=>readConfig(`wall-selection-${name}.json`)));
@@ -426,6 +431,9 @@ export async function validateReaderOutput(root, { knownIds = new Set() } = {}) 
       assertProcessNetworkProseAccepted(processProse);
       assertExchangeSemanticsOriginal(exchangeOriginal); assertExchangeSemanticsHeadingHistory(exchangeHeadings); assertExchangeSemanticsCitationSources(exchangeCitations); assertExchangeSemanticsPartialHistory(exchangePartial); assertExchangeSemanticsProseAccepted(exchangeProse);
       assertToxicityPathwaysAccepted(toxicityAccepted);
+      assertPmSelectionAccepted(pmAccepted);
+      const pmCaseBytes = Object.fromEntries(await Promise.all(pmSelectionCasePaths.map(async path => [path, await readFile(resolve(root, '..', path))])));
+      errors.push(...validatePmSelectionCaseBytes(pmCaseBytes, pedigreeAccepted));
       assertReadablePedigreeAccepted(pedigreeAccepted);
       const [pedigreeInput, pedigreePublication] = await Promise.all([
         readFile(resolve(root, '..', 'knowledge/cases/pedigree-calibration-v1.json')),
@@ -433,7 +441,7 @@ export async function validateReaderOutput(root, { knownIds = new Set() } = {}) 
       ]);
       errors.push(...validateReadablePedigreeCaseBytes(pedigreeAccepted, { input: pedigreeInput, publication: pedigreePublication }));
       const [readings,literature]=await Promise.all(['readings','literature-map'].map(async name=>JSON.parse(await readFile(resolve(root,'..','knowledge','research',name+'.json'),'utf8'))));
-      book={toxicityAccepted,pedigreeAccepted,readings,literature,dataAccepted,climateAccepted,closingHistory,closingProse,wallOriginal,wallHeadings,wallAccepted,jointOriginal,jointHeadings,jointProse,hybridAccepted,hybridHeadings,hybridProse,edition,accepted,headingHistory,cleanerAccepted,cleanerHeadingHistory,functionalAccepted,functionalHeadings,functionalProse,processAccepted,processHeadings,processProse,exchangeOriginal,exchangeHeadings,exchangeCitations,exchangePartial,exchangeProse,sources,catalog};
+      book={pmAccepted,toxicityAccepted,pedigreeAccepted,readings,literature,dataAccepted,climateAccepted,closingHistory,closingProse,wallOriginal,wallHeadings,wallAccepted,jointOriginal,jointHeadings,jointProse,hybridAccepted,hybridHeadings,hybridProse,edition,accepted,headingHistory,cleanerAccepted,cleanerHeadingHistory,functionalAccepted,functionalHeadings,functionalProse,processAccepted,processHeadings,processProse,exchangeOriginal,exchangeHeadings,exchangeCitations,exchangePartial,exchangeProse,sources,catalog};
       sourceRoutes.splice(0,sourceRoutes.length,...sources.keys());
     }
     errors.push(...await validateLegacyCitationOutput(root, baseline, placements, hasReaderSource ? sourceRoutes : null, history,book));

@@ -22,6 +22,21 @@ related:
 
 # Approved book execution
 
+## 2026-11-12 full manuscript revision and particulate integration
+
+[Issue93](https://github.com/tiangong-lca/knowledge-base/issues/93) resumes the full
+manuscript under the [revision protocol](editorial/2026-11-12-complete-readable-book.md).
+The source candidate combines the saved [Issue90](https://github.com/tiangong-lca/knowledge-base/issues/90)
+particulate manuscript with Main's chapter27. The two original and accepted
+inventories retain their identities. The combined source has 40 print units,
+48 web units, 32 chapters and 152 formal chapter sections. The particulate
+chapter and appendix carry 37 and 17 notes respectively. The case guard follows
+the independently reviewed pedigree publication successor at its one path.
+All 18 numerical inputs retain their original bytes.
+
+The earlier particulate and pedigree reviews apply to their documented scopes.
+The whole-book revision, independent reader review and delivery remain open.
+
 ## 2026-11-11 resumption: readable-writing standard and chapter27
 
 The user explicitly resumed manuscript revision and authorized adoption of the
@@ -912,3 +927,42 @@ an actual Prose-wrapper export rejection were repaired with their evidence
 preserved. Next compilation and repaired actual export pass as a working preview.
 Clean commit/build, actual browser, hosted identity, sourcePR/CI/merge and exact
 root integration remain pending; no local service or container was started.
+
+### Issues88 and90: completed toxicity delivery, then particulate selection
+
+The earlier candidate notices retain their historical stage. Data86/PR87
+completed at Main`c919f1ffc9f61cafa7860880337c87406d624295`, integrated by
+workspace2310/PR2311 at`4e8c6695b3c58d50b50715c38d76305e1e6449a6`.
+Toxicity88/PR89 subsequently completed at
+Main`bb12fa4bce7a68a3f5725f6ffa6a8a1ffe8c059c`, with exact
+workspace2312/PR2313 integration at`9de913c9db488e7ca7f2ddeae6ae41d11e2e96a6`.
+Normal source/root terminal handoffs completed, and the immutable source,
+hosted and resource evidence remains in those records and programme9.
+
+[Issue90](https://github.com/tiangong-lca/knowledge-base/issues/90) starts from
+bb12 on`codex/book-pm-selection`, targetmain. Its
+[protocol](editorial/2026-11-10-pm-selection.md) and original48-record freeze
+were committed/pushed as`fa57408475e225c62dc5c23bbc36699dbf34ddc6` before new
+selected original reading and rewriting. The candidate now has a shared
+four-section37-note chapter and real four-section17-note appendix, preserving
+the48original propositions once and adding six explanatory records. All18
+input/publication pairs and the two toxicity-bound PM records remain unchanged.
+
+The new source reads preserve old acquisition and reading events. Separate
+health and pathway checks resolved concrete source-scope issues; the dated
+original/matched AUS rows give a qualitative comparison without new numerical
+inputs. A fresh local-app reader read89body paragraphs and all notes across the
+two neighboring chapters, the candidate and its appendix. No mandatory issue
+was found; one phrase now states emission-by-CF multiplication and summation
+explicitly, with a bounded source and reader difference check. This is not
+human expert, empirical or whole-book approval.
+
+Independent engineering review reproduced and helped close missing reverse
+consumer and visible note-ordinal checks. Its exact candidate fixture passes
+460tests, static export,4158historical addresses and bounded browser checks.
+Source/reader/engineering admission is separate from the real production
+build and delivery: current source statistics are32chapters,40book units,
+155formal chapter sections and48website units; the120-section goal and all
+remaining research, part-level and final-edition requirements stay open.
+Actual clean build/browser, hosted identity, sourcePR/CI/merge and exact root
+integration remain the next work for Issue90.

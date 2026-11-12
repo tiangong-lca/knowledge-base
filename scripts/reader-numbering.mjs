@@ -10,16 +10,19 @@ const routeKey = value => typeof value === 'string' ? value.replace(/\/+$/, '') 
 const chinese = ['', '一', '二', '三', '四', '五', '六', '七'];
 // Main owns the independently reviewed current-edition pin, separate from immutable histories.
 /** @type {string|null} */
-export const readerNumberingDigest = "70bf9fcf0e2d791d236fec9d0c5146216555d9093562f7b16880d145f95046a1";
+export const readerNumberingDigest = "edf363ea6a65b1f4093a224ec17124b618ac34405f6f4abdd6127bccacd01306";
 export function assertReaderNumbering(value = numbering, independentDigest = readerNumberingDigest) {
-  if (createHash('sha256').update(JSON.stringify(value)).digest('hex') !== independentDigest) throw new Error('Reader numbering differs from the independently pinned actual 39-unit/32-chapter/47-web-unit quality-score heading and part inventory');
+  if (createHash('sha256').update(JSON.stringify(value)).digest('hex') !== independentDigest) throw new Error('Reader numbering differs from the independently pinned actual 40-unit/32-chapter/48-web-unit heading and part inventory');
 }
 export const readerNumberingManifest = numbering;
 export const readerParts = numbering.parts.map(part => ({ ...part, label: `第${chinese[part.number]}部` }));
 
-// These units keep separate current and historical print entries. When the
-// particulate chapter and appendix land, merge their entries into this set.
-const separatePrintEntries = new Set(['/docs/book/data-quality-and-probability']);
+// Current reading links land on the title while historical links retain the article scope.
+const separatePrintEntries = new Set([
+  '/docs/book/data-quality-and-probability',
+  '/docs/book/particulate-emissions-and-health',
+  '/docs/appendices/particulate-factor-calculations',
+]);
 
 export function printReadingEntryAnchor(key) {
   const historical = printUnitAnchor(key);

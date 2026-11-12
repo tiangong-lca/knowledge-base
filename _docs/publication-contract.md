@@ -209,6 +209,16 @@ Inherited citations are remapped by their actual destination identity; the sourc
 route alone cannot determine where a subsequently moved note belongs.
 
 
+The particulate chapter and its calculation appendix share canonical records.
+The complete original48propositions and10numerical templates remain present,
+with current six explanatory additions separately accepted. Exact old chapter,
+section and note scopes remain readable across the new destinations. The
+specific original/matched AUS comparison qualifies the stated rows and labels,
+not the mapping algorithm, a current package other than the named release, or
+software execution. A final source/reader/engineering acceptance binds the
+current scientific records and audit additions; real output, hosting and
+delivery still require their own evidence.
+
 ## Readable-writing adoption
 
 The user-adopted [writing and teaching standard](editorial/readable-writing-and-teaching.md) governs Chinese manuscript revision. Reader-essential conditions stay with their claims; source fidelity and comprehension remain independent checks. Its dated assessment and illustrative edits do not acquire scientific approval through adoption. A prose-only revision of a numerical case may retain its immutable input while renewing the exact publication templates, canonical materialization and affected-consumer acceptance. Original snapshots and all unrelated input/publication identities remain protected.

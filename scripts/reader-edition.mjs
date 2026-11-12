@@ -1,3 +1,4 @@
+import { assertPmSelectionRegistration, pmSelectionAppendix, pmSelectionBookHref } from './reader-pm-selection.mjs';
 import { assertDataApplicabilityRegistration, dataApplicabilityKey, dataApplicabilityRoutes, dataApplicabilityBookHref } from './reader-data-applicability.mjs';
 import { assertClimateAssemblyRegistration, climateAssemblyKey, climateAssemblyRoutes, climateAssemblyBookHref } from './reader-climate-assembly.mjs';
 import { assertClosingSynthesisRegistration, closingSynthesisKey, closingSynthesisRoutes, closingSynthesisBookHref } from './reader-closing-synthesis.mjs';
@@ -13,7 +14,7 @@ import { collectChapterClaimOccurrences, printUnitAnchor } from './reader-book.m
 
 // Main sets this current-roster pin after independently qualifying the actual edition.
 /** @type {string|null} */
-export const currentEditionRosterDigest = "154057d78802d39927500b5f453ea5865eb7321f80a70c31463573d949a7105b";
+export const currentEditionRosterDigest = "2c44f60ddcf623a8de9d3137ee243895a86f92e3c73bfdf3d8f875737256c572";
 export const frameworkUnitKey = 'book-framework-responsibilities';
 export const frameworkManuscript = '/monograph/framework-responsibilities';
 export const frameworkAppendix = '/docs/appendices/cml-framework-calculations';
@@ -32,6 +33,7 @@ export function currentEditionKeys(edition, availableSources, baseline, placemen
   const units = edition.units;
   if (!Array.isArray(units) || new Set(units.map(unit => unit.key)).size !== units.length)
     throw new Error('Book edition has missing or duplicate units');
+  assertPmSelectionRegistration(edition);
   assertDataApplicabilityRegistration(edition);
   assertClimateAssemblyRegistration(edition);
   assertJointProductionRegistration(edition);
@@ -58,7 +60,7 @@ export function currentEditionKeys(edition, availableSources, baseline, placemen
   }
   const navigation = new Set(['/docs/appendices']);
   for (const source of available) if (!navigation.has(source) && !covered.has(source)) throw new Error(`Reader source has no current book registration: ${source}`);
-  const retained = [...placements.frontMatter, ...baseline.pages.filter(page => page.printOrdinal !== undefined).sort((a,b) => a.printOrdinal-b.printOrdinal).map(page => page.route), ...(placements.printAdditions ?? []).map(unit => unit.route)];
+  const retained = [...placements.frontMatter, ...baseline.pages.filter(page => page.printOrdinal !== undefined).sort((a,b) => a.printOrdinal-b.printOrdinal).map(page => page.route), ...(placements.printAdditions ?? []).map(unit => unit.route), pmSelectionAppendix];
   const expected = retained.filter(route => route !== dataApplicabilityRoutes[1] && route !== climateAssemblyRoutes[1] && route !== closingSynthesisRoutes[1] && route !== jointProductionRoutes[1] && route !== expectedCoverage[1] && route !== functionalReferenceSupplement && route !== '/docs/flows' && route !== '/docs/characterization').map(route => route === dataApplicabilityRoutes[0] ? dataApplicabilityKey : route === climateAssemblyRoutes[0] ? climateAssemblyKey : route === closingSynthesisRoutes[0] ? closingSynthesisKey : route === expectedCoverage[0] ? frameworkUnitKey : route === jointProductionRoutes[0] ? jointProductionKey : route);
   if (JSON.stringify(units.map(unit => unit.key).sort()) !== JSON.stringify([...expected].sort())) throw new Error('Book edition omitted or misclassified an accepted retained unit');
   const presentation = getPresentationUnits('book');
@@ -73,7 +75,7 @@ export function currentEditionKeys(edition, availableSources, baseline, placemen
   }
   const roster = units.map(({key,source,kind})=>({key,source,kind}));
   if (digest(roster) !== currentEditionRosterDigest)
-    throw new Error('Current reading roster differs from the independently accepted 39-unit/32-chapter data-applicability edition');
+    throw new Error('Current reading roster differs from the independently pinned 40-unit/32-chapter edition');
   return units.map(unit => unit.key);
 }
 
@@ -159,6 +161,7 @@ export function publishedHeadingEntries(history) {
 /** Qualified links for the bounded assembly; ambiguous old scopes keep their website meaning. */
 export function frameworkBookHref(href, currentKey) {
   if (typeof href !== 'string') return href;
+  href = pmSelectionBookHref(href, currentKey);
   href = dataApplicabilityBookHref(climateAssemblyBookHref(closingSynthesisBookHref(jointProductionBookHref(href)), currentKey), currentKey);
   if (href.startsWith('/print/#')) return href.slice('/print/'.length);
   const [path,fragment] = href.split('#');
