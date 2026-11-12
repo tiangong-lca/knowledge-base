@@ -28,7 +28,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "复算原表显示整数的P+I-E及终端消费+线损；不恢复未报告精度、原始计量或电压层级清单。",
-      "textTemplate": "用原报告的瑞士1995年数据可以把 M3 展开：发电量{{input.facts.production.value}} GWh，加进口{{input.facts.imports.value}} GWh，减出口{{input.facts.exports.value}} GWh，得到{{evaluated.historical.denominatorGWh.exact}} GWh。表 A.1把终端消费（Verbrauch）与线损（Verluste）分列；式中 V沿用报告正文的含线损定义，对应表内这两项之和，因此这个分母包括{{input.facts.finalConsumption.value}} GWh终端消费和{{input.facts.losses.value}} GWh线损。用{{input.facts.finalConsumption.value}}作分母却仍保留含损耗的全部分子，所得各比值就不再是加总为一的来源份额。若要转到终端用电口径，还须说明损耗如何分摊以及对应的交付边界，不能只换分母便称为电表处的来源组合。本例保持含线损的混合平衡。"
+      "textTemplate": "现在用报告的瑞士1995年数据按M3记账。发电量{{input.facts.production.value}} GWh，加进口{{input.facts.imports.value}} GWh，减出口{{input.facts.exports.value}} GWh，得到{{evaluated.historical.denominatorGWh.exact}} GWh。表 A.1把终端消费（Verbrauch）与线损（Verluste）分列；式中 V沿用报告正文的含线损定义，对应表内这两项之和，因此这个分母包括{{input.facts.finalConsumption.value}} GWh终端消费和{{input.facts.losses.value}} GWh线损。用{{input.facts.finalConsumption.value}}作分母却仍保留含损耗的全部分子，所得各比值就不再是加总为一的来源份额。若要转到终端用电口径，还须说明损耗如何分摊以及对应的交付边界，不能只换分母便称为电表处的来源组合。本例保持含线损的混合平衡。"
     },
     {
       "id": "cl-market-m3-origins",
@@ -51,7 +51,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "在已列明的来源前提或本书明示条件内作连接解释；不将条件演算提升为经验因果识别。",
-      "textTemplate": "M3 留在国内的本国发电是{{input.facts.production.value}}−{{input.facts.exports.value}}＝{{evaluated.historical.domesticAfterExportGWh.exact}} GWh。再加德国{{input.facts.de.value}}、法国{{input.facts.fr.value}}、奥地利{{input.facts.at.value}}和意大利{{input.facts.it.value}} GWh，恰好回到{{evaluated.historical.denominatorGWh.exact}} GWh。各项除以这个分母，依次约为{{evaluated.historical.origins.CH.percentFixed4}}%、{{evaluated.historical.origins.DE.percentFixed4}}%、{{evaluated.historical.origins.FR.percentFixed4}}%、{{evaluated.historical.origins.AT.percentFixed4}}%和{{evaluated.historical.origins.IT.percentFixed4}}%。这些份额复现了公开报告中的整数电量与指定规则之间的关系；它们并不说明新增需求也按这些比例分给五个来源。"
+      "textTemplate": "先从本国发电中扣掉出口。M3留在国内的本国发电是{{input.facts.production.value}}−{{input.facts.exports.value}}＝{{evaluated.historical.domesticAfterExportGWh.exact}} GWh。再加德国{{input.facts.de.value}}、法国{{input.facts.fr.value}}、奥地利{{input.facts.at.value}}和意大利{{input.facts.it.value}} GWh，恰好回到{{evaluated.historical.denominatorGWh.exact}} GWh。各项除以这个分母，依次约为{{evaluated.historical.origins.CH.percentFixed4}}%、{{evaluated.historical.origins.DE.percentFixed4}}%、{{evaluated.historical.origins.FR.percentFixed4}}%、{{evaluated.historical.origins.AT.percentFixed4}}%和{{evaluated.historical.origins.IT.percentFixed4}}%。这些份额复现了公开报告中的整数电量与指定规则之间的关系；它们并不说明新增需求也按这些比例分给五个来源。"
     },
     {
       "id": "cl-market-toy-service",
@@ -75,7 +75,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "明确规定材料响应与电力子系统的条件；比较两种响应机制时新增服务不变，基线仅用于定义增量。",
-      "textTemplate": "下面只计算一种虚构材料的新增需求所引起的电力后果。设同一地点、期间和品级要求下，新增1 kg材料需求由选定工厂恰好增产1 kg满足，每千克增产固定用电10 kWh。这项“需求转为该厂增产”的关系也是本书设定，不由工厂的位置或采购凭证推出。比较的两种响应情景都满足这同一新增材料服务，其他用户均继续使用100 kWh；基线则没有这1 kg增产。基线与干预不是等服务替代路线，而是用来求同一新增服务的变化量。"
+      "textTemplate": "下面固定新增的材料服务，只比较两种假想供电响应。设同一地点、期间和品级要求下，新增1 kg材料需求由选定工厂恰好增产1 kg满足，每千克增产固定用电10 kWh。这项“需求转为该厂增产”的关系也是本书设定，不由工厂的位置或采购凭证推出。比较的两种响应情景都满足这同一新增材料服务，其他用户均继续使用100 kWh；基线则没有这1 kg增产。基线与干预不是等服务替代路线，而是用来求同一新增服务的变化量。"
     },
     {
       "id": "cl-market-toy-boundary",
@@ -90,7 +90,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "在已列明的来源前提或本书明示条件内作连接解释；不将条件演算提升为经验因果识别。",
-      "textTemplate": "为看清这个子系统，设电源 H、G 的电量可在此市场内互换，没有输电约束、进口、出口或线损；不计材料生产的其他投入、共产品和需求反馈。H、G 只是两类虚构电源，不代表现实水电或化石电力的因子。再规定其每千瓦时 CO2 清单分别为{{input.illustration.hCO2KgPerKWh}} kg和{{input.illustration.gCO2KgPerKWh}} kg，随活动量线性变化。两种情景共用这些系数和边界，只改变本次需求下所规定的实际供给响应：一例 H总量固定、G增产；另一例 H增产、G不变。两者都是同一抽象期间的静态前后比较，未另行识别调度或扩建机制。所得是限定电力子系统的 CO2 变化，不是完整材料足迹、气候影响得分或当前市场预测。"
+      "textTemplate": "先划清这个供电子系统。设电源 H、G 的电量可在此市场内互换，没有输电约束、进口、出口或线损；不计材料生产的其他投入、共产品和需求反馈。H、G 只是两类虚构电源，不代表现实水电或化石电力的因子。再规定其每千瓦时 CO2 清单分别为{{input.illustration.hCO2KgPerKWh}} kg和{{input.illustration.gCO2KgPerKWh}} kg，随活动量线性变化。两种情景共用这些系数和边界，只改变本次需求下所规定的实际供给响应：一例 H总量固定、G增产；另一例 H增产、G不变。两者都是同一抽象期间的静态前后比较，未另行识别调度或扩建机制。所得是限定电力子系统的 CO2 变化，不是完整材料足迹、气候影响得分或当前市场预测。"
     },
     {
       "id": "cl-market-toy-reference",
@@ -105,7 +105,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "在已列明的来源前提或本书明示条件内作连接解释；不将条件演算提升为经验因果识别。",
-      "textTemplate": "基线中，其他用户从 H 取得40 kWh，从 G 取得60 kWh，总计100 kWh；选定工厂没有本例的增量用电。按虚构系数，基线 CO2 为40×{{input.illustration.hCO2KgPerKWh}}＋60×{{input.illustration.gCO2KgPerKWh}}＝{{evaluated.illustration.baseline.totalCO2Kg.exact}} kg。以下每个情景先完整列出正的供电活动，再减去这一基线。买方名下的电量分配与全系统实际增加的发电，要在这一步分开。"
+      "textTemplate": "从没有材料增产的基线算起。此时，其他用户从 H 取得40 kWh，从 G 取得60 kWh，总计100 kWh；选定工厂没有本例的增量用电。按虚构系数，基线 CO2 为40×{{input.illustration.hCO2KgPerKWh}}＋60×{{input.illustration.gCO2KgPerKWh}}＝{{evaluated.illustration.baseline.totalCO2Kg.exact}} kg。以下每个情景先完整列出正的供电活动，再减去这一基线。买方名下的电量分配与全系统实际增加的发电，要在这一步分开。"
     },
     {
       "id": "cl-market-toy-constrained",
@@ -120,7 +120,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "在已列明的来源前提或本书明示条件内作连接解释；不将条件演算提升为经验因果识别。",
-      "textTemplate": "第一种情景规定 H 总供给锁定为40 kWh。工厂获得其中10 kWh之后，其他用户只能取得30 kWh的 H；为了保持100 kWh用电，他们还需70 kWh的 G。干预后整个系统因此是 H40＋G70＝110 kWh，CO2 为40×{{input.illustration.hCO2KgPerKWh}}＋70×{{input.illustration.gCO2KgPerKWh}}＝{{evaluated.illustration.constrained.totalCO2Kg.exact}} kg。与基线相比，H没有增加，G增加10 kWh，CO2增加{{evaluated.illustration.constrained.totalCO2ChangeKg.exact}} kg。这里没有负的发电厂；减少的是分给其他用户的 H，新增的正活动则是 G。"
+      "textTemplate": "现在让工厂拿到所需的电。第一种情景规定 H 总供给锁定为40 kWh。工厂获得其中10 kWh之后，其他用户只能取得30 kWh的 H；为了保持100 kWh用电，他们还需70 kWh的 G。干预后整个系统因此是 H40＋G70＝110 kWh，CO2 为40×{{input.illustration.hCO2KgPerKWh}}＋70×{{input.illustration.gCO2KgPerKWh}}＝{{evaluated.illustration.constrained.totalCO2Kg.exact}} kg。与基线相比，H没有增加，G增加10 kWh，CO2增加{{evaluated.illustration.constrained.totalCO2ChangeKg.exact}} kg。这里没有负的发电厂；减少的是分给其他用户的 H，新增的正活动则是 G。"
     },
     {
       "id": "cl-market-toy-expandable",
@@ -135,7 +135,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "在已列明的来源前提或本书明示条件内作连接解释；不将条件演算提升为经验因果识别。",
-      "textTemplate": "第二种情景规定 H 实际新增10 kWh供给工厂，G仍为60 kWh。其他用户仍由 H40＋G60满足，工厂另由 H10供电，于是整个系统变为 H50＋G60＝110 kWh，CO2 为50×{{input.illustration.hCO2KgPerKWh}}＋60×{{input.illustration.gCO2KgPerKWh}}＝{{evaluated.illustration.expandable.totalCO2Kg.exact}} kg；相对于基线增加{{evaluated.illustration.expandable.totalCO2ChangeKg.exact}} kg。新增材料服务、总电力服务和清单系数均与第一种情景相同，变化的是哪类供给实际增加。仅这一响应条件，就使两种增量相差{{evaluated.illustration.differenceBetweenScenarioIncrementsKg.exact}} kg。"
+      "textTemplate": "再让同一项供给能够扩张。第二种情景规定 H 实际新增10 kWh供给工厂，G仍为60 kWh。其他用户仍由 H40＋G60满足，工厂另由 H10供电，于是整个系统变为 H50＋G60＝110 kWh，CO2 为50×{{input.illustration.hCO2KgPerKWh}}＋60×{{input.illustration.gCO2KgPerKWh}}＝{{evaluated.illustration.expandable.totalCO2Kg.exact}} kg；相对于基线增加{{evaluated.illustration.expandable.totalCO2ChangeKg.exact}} kg。新增材料服务、总电力服务和清单系数均与第一种情景相同，变化的是哪类供给实际增加。仅这一响应条件，就使两种增量相差{{evaluated.illustration.differenceBetweenScenarioIncrementsKg.exact}} kg。"
     },
     {
       "id": "cl-market-toy-purchase",
@@ -151,7 +151,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "在已列明的来源前提或本书明示条件内作连接解释；不将条件演算提升为经验因果识别。",
-      "textTemplate": "若把工厂买到的 H10 kWh乘以 H的系数，两种情景都会记为{{evaluated.illustration.constrained.producerAssignedCO2Kg.exact}} kg。这个乘法回答的是所指定采购电量的清单归属；它恰好等于第二种情景的系统增量，却不等于第一种情景的{{evaluated.illustration.constrained.totalCO2ChangeKg.exact}} kg。第一种情景中，工厂取得 H并未使 H增产。等式能否成立，取决于活动响应，而非凭证上是否出现同一个电源名。"
+      "textTemplate": "回到工厂的购电记录。若把买到的 H10 kWh乘以 H的系数，两种情景都会记为{{evaluated.illustration.constrained.producerAssignedCO2Kg.exact}} kg。这个乘法回答的是所指定采购电量的清单归属；它恰好等于第二种情景的系统增量，却不等于第一种情景的{{evaluated.illustration.constrained.totalCO2ChangeKg.exact}} kg。第一种情景中，工厂取得 H并未使 H增产。等式能否成立，取决于活动响应，而非凭证上是否出现同一个电源名。"
     }
   ],
   "approvedInputSha256": "a58663c4648adee29c1c8236907d436ad42304ff3728aae8d3c133ba23e6a81e"

@@ -15,17 +15,19 @@ checkPaths:
   - "app/**"
   - "scripts/**"
 lastReviewedAt: 2026-11-12
-lastReviewedCommit: 7022b4f79d29d0cdff873d85fc746245c4a789cd
+lastReviewedCommit: f650600e6303352252e8d6fad14607c2061a9f58
 ---
 
 # LCA Living Knowledge Base and Review
 
 [Complete manuscript revision #93](https://github.com/tiangong-lca/knowledge-base/issues/93)
 follows the [whole-book protocol](_docs/editorial/2026-11-12-complete-readable-book.md).
-Its current-edition checks bind exact source changes, review evidence and actual
-output while retaining the original chapter and citation histories. Pending
-acceptance does not publish the new manuscript. Direct production Next builds
-run the same source gate as the normal build command.
+Its reviewed current edition contains 32 chapters and 120 formal sections in 40 book
+units, with 48 website units over shared canonical records. Source, reader and
+actual-output receipts bind exact changes while retaining earlier chapter and
+citation histories. Direct production Next builds run the same source gate as
+the normal build command. Main, hosting and workspace delivery are qualified
+separately in the execution ledger.
 
 [Particulate selection #90](https://github.com/tiangong-lca/knowledge-base/issues/90)
 uses the [source and material protocol](_docs/editorial/2026-11-10-pm-selection.md)
@@ -113,7 +115,18 @@ The expanded `/docs/book/allocation-and-substitution/` also contains CASE-JOINT-
 
 ## Reader delivery policy
 
-Read [_docs/reader-publication-contract.md](_docs/reader-publication-contract.md). Published pages are finished book prose with scholarly notes; research/development logs and TODOs stay in development Markdown. Layout matches the owning docs site. Current rendering shares canonical prose between website and book while generating notes for each actual surface unit. The explicit mixed40-unit roster contains shared front matter, retained sources, the independently authored B04/B10/B15/B25/B32 assemblies and four calculation appendices. B05 uses one genuine shared MDX chapter with three adopted sections and six notes; B06 consumes two original sources in one shared seventeen-note chapter. B08 integrates the exchange/flow/characterization sources in one four-section chapter; the fine website entrances remain. S01 keeps its historical-method prose and APOS paragraph, with eight explicit print cross-references to their actual chapter notes. Whole-book authoring, the120-section goal and formal edition qualification remain separate work, with conservation and generation-specific historical references required at each migration. The public `/research/` route is a bibliography. Preserve actual source/assumption limitations, and assess reader/layout quality independently from source and code validation.
+Read [_docs/reader-publication-contract.md](_docs/reader-publication-contract.md). Published pages are finished book prose with scholarly notes; research/development logs and TODOs stay in development Markdown. Layout matches the owning docs site. Current rendering shares canonical prose between website and book while generating
+notes for each actual surface unit. The 40-unit roster contains two front units,
+32 chapters, two method notes and four calculation appendices; the website retains
+48 fine-reading units and its distinct numbered navigation. B04/B10/B15/B25/B32
+are independently authored assemblies, and the remaining chapters use shared
+sources. T1 supplies historical-method explanation and eight precise print
+cross-references; T2 explains system-model choices. All 40 current book entries
+land on focusable titles, while historical fragments retain their own original
+scope. The complete revision meets the 120-section structure and has bounded
+whole-book reader acceptance. Broader research, formal publication and human
+expert/teaching qualification remain separate. Public `/research/` is a reader
+bibliography; actual source/assumption limits stay accessible in the notes.
 
 The water-locality and phosphorus-boundary examples publish versioned inputs and exact evaluated receipts under `/downloads/cases/`, linked from their chapter notes. They are static explanatory examples: water values are synthetic; the phosphorus default is source-bound and conditional, with characterization left symbolic. Use their registered case identities with `scripts/impact.mjs` for affected-claim review.
 

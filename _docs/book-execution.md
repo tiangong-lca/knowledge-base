@@ -24,18 +24,40 @@ related:
 
 ## 2026-11-12 full manuscript revision and particulate integration
 
-[Issue93](https://github.com/tiangong-lca/knowledge-base/issues/93) resumes the full
+[Issue 93](https://github.com/tiangong-lca/knowledge-base/issues/93) resumes the full
 manuscript under the [revision protocol](editorial/2026-11-12-complete-readable-book.md).
-The source candidate combines the saved [Issue90](https://github.com/tiangong-lca/knowledge-base/issues/90)
-particulate manuscript with Main's chapter27. The two original and accepted
-inventories retain their identities. The combined source has 40 print units,
-48 web units, 32 chapters and 152 formal chapter sections. The particulate
-chapter and appendix carry 37 and 17 notes respectively. The case guard follows
-the independently reviewed pedigree publication successor at its one path.
-All 18 numerical inputs retain their original bytes.
+The complete revised manuscript incorporates the saved [Issue 90](https://github.com/tiangong-lca/knowledge-base/issues/90)
+particulate work through the verified `07e4de7` join and retains Main's original
+chapter 27 acceptance. Both source histories and the immutable c8/07e4 inventories
+remain separate. The final manuscript has 32 chapters, 120 real formal sections,
+40 book units and 48 website units over 53 distinct MDX sources. Two method notes
+and four substantive appendices retain the original 42 responsibilities.
 
-The earlier particulate and pedigree reviews apply to their documented scopes.
-The whole-book revision, independent reader review and delivery remain open.
+Source, reader and actual-output acceptance is recorded in
+`_docs/editorial/review-evidence/complete-readable-book-20261112/` and the
+independently pinned `config/readable-book-current.json`. Three source/meaning
+batches cover every unit; DeepSeek read the three body batches, the actual full
+40-unit book with seven part introductions and five companion pages, eight
+changed units, and the final original-table/formula clarifications. Actual scope,
+selected notes and uninspected originals remain explicit. The original reviewer
+reports and corrected conclusions are preserved; model agreement is not proof.
+
+The final source has 857 public claims, including eight explicitly bounded author
+syntheses. 603 existing records were revised or clarified, while 18 numerical inputs
+retain their 07e4 bytes and 231 templates materialize exactly. 246 external consumers,
+710 historical migrations and 336 ordinary-content positions have individual
+semantic dispositions. The 408-page private A4 sample, website/book/no-script,
+current/old entry, keyboard, search and responsive checks support the accepted
+reader output. The sample retains local preview links and is not a formal
+shareable PDF edition.
+
+Adoption into the production worktree is complete. Required final production
+build, source CI/PR/Main, live artifact qualification and exact root integration
+remain delivery steps; the two Issues require separate verified source bindings
+to the same merged delivery. Programme 9 remains open for its broader research,
+human review, empirical teaching and formal-edition obligations. Earlier counts
+and pending states below record their original milestones rather than current
+manuscript status.
 
 ## 2026-11-11 resumption: readable-writing standard and chapter27
 

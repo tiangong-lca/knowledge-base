@@ -41,7 +41,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "将一户对整体变化的边际金额聚合后换成每吨，并与原表分别记录。",
-      "textTemplate": "作者把每户金额扩展到 {{input.facts.households.value}} 户，再除以损害编码所代表的一亿吨。用未先行舍入的系数比计算，得到每吨约 {{evaluated.reconstruction.primary.reconstructedMagnitude.fixed6}} 日元，表 7 公布的是每吨 {{input.facts.publishedPrimary2003.value}} 日元。户数是全国汇总的乘数；估计系数所依据的 306 人是调查分母。全国户数写得再精确，也不能替东京样本补上全国抽样。"
+      "textTemplate": "从每户金额到每吨金额，还要乘全国 {{input.facts.households.value}} 户，再除以一个损害编码单位代表的一亿吨。若不先舍入系数比，得到约 {{evaluated.reconstruction.primary.reconstructedMagnitude.fixed6}} 日元/吨，日文表7公布 {{input.facts.publishedPrimary2003.value}} 日元/吨。户数是金额的扩展乘数，东京的306个回答者才是调查样本；把金额扩展到全国并不会扩展样本。"
     },
     {
       "id": "cl-lime-health",
@@ -83,7 +83,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "检验系数比乘 365 的数值，保留从每人变化到家庭支付的未披露条件。",
-      "textTemplate": "健康一行的“日”已经是按人展示的日数。其系数除以税金系数，量值约为 1,567.74。只乘每年 365 天，便得到约 57.22 万日元，在表列精度下接近每 DALY {{input.facts.publishedHealth2003.value}} 日元。但问卷中的一天是每个人的一天，支付问题却对每户提问。原文没有在这一行逐步展示户数、受影响人数和人均日数怎样折算。数值能够对上这一种算法，聚合关系仍须单独说明。"
+      "textTemplate": "健康一行不能照抄吨数的换法。健康系数除以税金系数，量值约1,567.74；只乘一年365天，约得57.22万日元，在表列精度下接近每DALY {{input.facts.publishedHealth2003.value}} 日元。可是问卷展示的是每人的日数，支付问题按户提问。原文未逐步列出户数、受影响人数和人均日数的关系。能找到一个与表值相合的算法，仍不能确定作者怎样做了聚合。"
     },
     {
       "id": "cl-lime-mismatch",
@@ -164,7 +164,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "将表 3 社会资产的百万日元单位转为表 7 的千日元单位，然后相乘。",
-      "textTemplate": "表 7 中每一行的钱都有自己的分母。要回答“日本一年环境负荷所对应的四项损害中，健康占多少”，必须先把各行乘回各自的年度损害量。例如，143 万 DALY 乘每 DALY 57.2 万日元，约为 8.18×10¹¹ 日元。社会资产列的 54,400 是以百万日元计的损失；换成一千日元一份，共有 {{evaluated.annualReference.socialNormalization1000JPYBlocks.exact}} 份，再乘每份 4,460 日元，约为 2.43×10¹¹ 日元。只有在都换为同一货币量后，才能取它们的合计作分母。"
+      "textTemplate": "每DALY的日元权重和无量纲的健康份额回答不同的问题。若要问日本一年环境负荷所对应的四项损害中，健康贡献占多少，就先把各项单价乘回相应年度损害量。143万DALY乘每DALY 57.2万日元，约为8.18×10¹¹日元。社会资产列的54,400以百万日元计；换成每份一千日元，共 {{evaluated.annualReference.socialNormalization1000JPYBlocks.exact}} 份，乘每份4,460日元，约为2.43×10¹¹日元。四项都成为金额，才可以把总金额作为份额的分母。"
     },
     {
       "id": "cl-lime-shares",
@@ -203,7 +203,7 @@
       ],
       "caveats": [],
       "reasoning": "以同一年度四项货币金额总和为分母，依次核对表 8。",
-      "textTemplate": "同样计算初级生产与物种损失，分别约为 2.74×10¹¹ 和 3.84×10¹¹ 日元。用各项未先行舍入的乘积除以四项乘积之和，健康所占约为 {{evaluated.annualReference.rows.health.shareOfUnroundedAmounts.fixed6}}，按两位小数写为 0.48。另三项分别为 0.14、0.16 和 0.22。0.48 同时包含对健康的估值和所取年度参照中的健康损害规模。它并不等于 48% 的人选择健康，也不能解释为所有产品的总损害都应有 48% 归给健康。"
+      "textTemplate": "按日文表3的年度损害参照，154亿干吨初级生产损失乘17.8日元/干吨，约为2.74×10¹¹日元；0.5种物种损失乘每种7.68×10¹¹日元，为3.84×10¹¹日元。用各项未先行舍入的乘积除以四项乘积之和，健康所占约为 {{evaluated.annualReference.rows.health.shareOfUnroundedAmounts.fixed6}}，按两位小数写为 0.48。另三项分别为 0.14、0.16 和 0.22。0.48 同时包含对健康的估值和所取年度参照中的健康损害规模。它并不等于 48% 的人选择健康，也不能解释为所有产品的总损害都应有 48% 归给健康。"
     },
     {
       "id": "cl-lime-service",
@@ -219,7 +219,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "共同固定损害的计量与活动条件，将比较限定为两套评价权重的作用。",
-      "textTemplate": "假设有两条路线，都在同一交货日向日本同一工厂交付 {{input.service.amount}} 公吨同等级产品。为单独研究最后的估值步骤，约定前面已经用同一损害口径算得：甲造成人体健康损失 {{input.illustration.A.health}} DALY、初级生产损失 {{input.illustration.A.primaryProduction}} 干吨；乙分别为 {{input.illustration.B.health}} DALY 和 {{input.illustration.B.primaryProduction}} 干吨。其余各项相同。这四个损害数和服务等效条件是本例的设定，实际建模还需建立排放到这些损害的关系。"
+      "textTemplate": "这些表值差异在产品比较中会改变什么？设两条路线同日在日本同一工厂交付 {{input.service.amount}} 公吨同等级产品。只考察最后的估值步骤，假定按同一损害口径，甲损失 {{input.illustration.A.health}} DALY和 {{input.illustration.A.primaryProduction}} 干吨初级生产，乙损失 {{input.illustration.B.health}} DALY和 {{input.illustration.B.primaryProduction}} 干吨。其他损害相同。共同服务和四个损害量都是教学设定，未用实际排放建模。"
     },
     {
       "id": "cl-lime-japan-route",
@@ -257,7 +257,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "在 p 为正的两套权重下将差额设为零，分别判断两侧的次序。",
-      "textTemplate": "哪种路线较低，其实可以在查第二张表之前判定条件。从甲换到乙，多损失 0.003 DALY，同时少损失 90 干吨初级生产。设一个 DALY 的权重为 h 日元，一干吨初级生产损失的权重为 p 日元，两项分差就是 0.003h − 90p。两者相等需要 h/p = {{evaluated.illustration.tieHealthToPrimaryFactorRatio.exact}} 干吨/DALY。日文表的比值约为 32,135，略高于分界，因此少损失健康时间的甲占优。分界是这两条路线怎样取舍的结果，换一组损害量，也会换一个分界。"
+      "textTemplate": "为什么换表可能倒转结果？从甲改用乙，多损失0.003 DALY，少损失90干吨初级生产。设健康权重为每DALY h日元，初级生产权重为每干吨p日元，乙减甲就是0.003h − 90p。两项恰好抵消时，h/p = {{evaluated.illustration.tieHealthToPrimaryFactorRatio.exact}} 干吨/DALY。日文表约32,135，略高于这道分界，所以按这两项计算，健康损失较少的甲得分更低。分界由两路线的损害差确定，换一组损害差要重新求。"
     },
     {
       "id": "cl-lime-english-route",

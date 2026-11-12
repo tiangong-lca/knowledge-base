@@ -1,6 +1,6 @@
 'use client';
 
-import { useId, useState } from 'react';
+import { useEffect, useId, useState } from 'react';
 import { NumberedHeading, type CaseHeadingNumber } from './numbered-heading';
 import { printUnitAnchor } from '../scripts/reader-book.mjs';
 
@@ -24,7 +24,8 @@ const vector = (values: string[]) => `(${values.join(', ')})ᵀ`;
 const ordering = (value: CaseResult['comparison']['strictOrdering']) => value === 'A-lower'
   ? 'A 在整个允许范围内严格较低' : value === 'B-lower' ? 'B 在整个允许范围内严格较低' : '未建立全域严格排序';
 
-function PairedChart({ result, id, teachingCase, publishedCaseResults }: {
+function PairedChart({ result, id, teachingCase, publishedCaseResults, interactive }: {
+  interactive: boolean;
   result: CaseResult; id: string; teachingCase: TeachingCaseSpec; publishedCaseResults: ReturnType<typeof publishedResults>;
 }) {
   // Number conversion is limited to plotting. Results and predicates use the exact engine.
@@ -40,7 +41,7 @@ function PairedChart({ result, id, teachingCase, publishedCaseResults }: {
   const ticks = [...new Set([negativeTolerance, '0', tolerance, highest])];
   const x = (value: string) => 62 + (Number(value) - Number(thetaLow)) / (Number(thetaHigh) - Number(thetaLow) || 1) * 430;
   const y = (value: string) => 235 - (Number(value) - yLow) / (yHigh - yLow) * 195;
-  return <figure className="teaching-case-chart teaching-case-live" tabIndex={0} aria-label="共同参数与配对差值图，可横向滚动">
+  return <figure hidden={!interactive} className="teaching-case-chart teaching-case-live" tabIndex={0} aria-label="共同参数与配对差值图，可横向滚动">
     <svg viewBox="0 0 550 295" role="img" aria-labelledby={`${id}-chart-title ${id}-chart-desc`}>
       <title id={`${id}-chart-title`}>配对差值 Δ = I_B − I_A 与共同 θ</title>
       <desc id={`${id}-chart-desc`}>横轴 θ 从 {thetaLow} 到 {thetaHigh}，单位 {teachingCase.uncertainty.unit}；纵轴为每项规定服务的 kg CO2-eq。阴影为固定 ±{tolerance} 容差带。实线为平整基底，虚线为粗糙基底，圆点为当前场景与 θ。{publishedCaseResults.map(({ scenario, points }) => `${scenarioNames[scenario]}范围 ${range(points[1].comparison.range)}`).join('；')}。</desc>
@@ -68,7 +69,7 @@ function Trace({ result, alternative, teachingCase, print, numbering }: { result
     <CaseHeading slot={alternative} numbering={numbering} print={print}>{names[alternative]}：f → s → g → I</CaseHeading>
     <div className="teaching-case-table" role="region" aria-label={`${names[alternative]}的完整计算轨迹`} tabIndex={0}>
       <table><caption>{names[alternative]} · {scenarioNames[result.scenario]} · θ={result.theta}；每项结果对应同一 100 m²、十年规定服务。</caption>
-        <thead><tr><th scope="col">计算量与坐标</th><th scope="col">当前值与完整算式</th></tr></thead>
+        <thead><tr><th scope="col">计算量与坐标</th><th scope="col">数值与完整算式</th></tr></thead>
         <tbody>
           <tr><th scope="row">最终需求 f<br />kg A、kg B、m² 准备、kWh 电力</th><td>{vector(value.demand)}</td></tr>
           <tr><th scope="row">A s = f 的解 s<br />P-A、P-B、P-P、P-E 操作次数</th><td>{vector(value.activities)}；各次操作的基准见矩阵列标题。</td></tr>
@@ -87,6 +88,9 @@ export function TeachingCaseClient({ spec: teachingCase, print = false, numberin
   const { caseId: id, version } = teachingCase;
   assertTeachingCaseIdentity(teachingCase, id, version);
   const instance = useId();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const interactive = mounted && !print;
   const [scenario, setScenario] = useState<CaseScenario>('smooth');
   const [theta, setTheta] = useState(teachingCase.uncertainty.displayPoint);
   const result = evaluateCase(teachingCase, scenario, theta);
@@ -108,7 +112,8 @@ export function TeachingCaseClient({ spec: teachingCase, print = false, numberin
     </div>
     <p className="teaching-case-note">假定无损耗、瞬时重涂且无停用、性能与技术十年不变、A 重涂无需先去除旧涂层。施工设备、劳动、处置与回收等被刻意省略；只追踪两种排放和一个气候指标。未覆盖的活动、流和影响类别不能视为零，也不能由此推断实际涂料性能或完整生命周期结论。</p>
 
-    <div className="teaching-case-controls teaching-case-live">
+    <p>θ ∈ {range(teachingCase.uncertainty.closedRange)}；同一个值同时用于 A、B。它是不确定但固定的电力排放强度参数，不是两次独立抽样。容差与表征因子由本版本固定。</p>
+    <div hidden={!interactive} className="teaching-case-controls teaching-case-live">
       <label htmlFor={`${instance}-scenario`}>基底初始情景
         <select id={`${instance}-scenario`} value={scenario} onChange={event => setScenario(event.target.value as CaseScenario)}>
           <option value="smooth">平整基底 smooth</option><option value="rough">粗糙基底 rough</option>
@@ -117,13 +122,13 @@ export function TeachingCaseClient({ spec: teachingCase, print = false, numberin
       <label htmlFor={`${instance}-theta`}>共同 θ：{theta} kg CO2/kWh
         <input id={`${instance}-theta`} type="range" min={teachingCase.uncertainty.closedRange[0]} max={teachingCase.uncertainty.closedRange[1]} step="0.01" value={theta} onChange={event => setTheta(event.target.value)} aria-describedby={`${instance}-theta-note`} />
       </label>
-      <p id={`${instance}-theta-note`}>θ ∈ {range(teachingCase.uncertainty.closedRange)}；同一个值同时用于 A、B。它是不确定但固定的电力排放强度参数，不是两次独立抽样。容差与表征因子由本版本固定。</p>
+      <p id={`${instance}-theta-note`}>滑块步长为 0.01；精确交点以计算值为准。控件只改变演算示例，固定情景表可用于对照。</p>
     </div>
     <div className="teaching-case-current">
-      <CaseHeading slot="current" numbering={numbering} print={print}>当前计算：{scenarioNames[scenario]} · θ={result.theta}</CaseHeading>
+      <CaseHeading slot="current" numbering={numbering} print={print}>计算示例：{scenarioNames[scenario]} · θ={result.theta}</CaseHeading>
       <p>{scenario === 'smooth' ? '已有平整完好基底：A、B 均无准备需求。' : '粗糙完好基底：假定 A 可直接使用，B 需先准备全部 100 m²；最终服务不变。'} 情景版本 {result.scenarioVersion}。</p>
-      <p className="teaching-case-announcement teaching-case-live" role="status" aria-live="polite" aria-atomic="true">A：{result.alternatives.paintA.indicator}；B：{result.alternatives.paintB.indicator}；配对 Δ：{comparison.difference} kg CO2-eq / 规定服务。</p>
-      <PairedChart result={result} id={instance} teachingCase={teachingCase} publishedCaseResults={publishedCaseResults} />
+      <p hidden={!interactive} className="teaching-case-announcement teaching-case-live" role="status" aria-live="polite" aria-atomic="true">A：{result.alternatives.paintA.indicator}；B：{result.alternatives.paintB.indicator}；配对 Δ：{comparison.difference} kg CO2-eq / 规定服务。</p>
+      <PairedChart interactive={interactive} result={result} id={instance} teachingCase={teachingCase} publishedCaseResults={publishedCaseResults} />
       <div className="teaching-case-table" role="region" aria-label="技术矩阵 A 和排放矩阵 B" tabIndex={0}>
         <table><caption>A：正数为产出，负数为中间投入；每列为一次指定操作，行单位保留。s 为这些操作的次数。</caption>
           <thead><tr><th scope="col">A 的行（单位）</th>{operations.map(name => <th scope="col" key={name}>{name} / 次操作</th>)}</tr></thead>
@@ -142,11 +147,12 @@ export function TeachingCaseClient({ spec: teachingCase, print = false, numberin
         <li>全域容差内：<strong>{comparison.robustWithinTolerance ? '成立' : '不成立'}</strong>，检验所有允许 θ 下 |Δ| ≤ {comparison.tolerance}。</li>
         <li>全域容差外：<strong>{comparison.allOutsideTolerance ? '成立' : '不成立'}</strong>，检验所有允许 θ 下 |Δ| &gt; {comparison.tolerance}。仅仅“未能证明全域容差内”不能证明全域容差外。</li>
       </ul>
-      <p>共同 θ 下的精确配对范围：<strong>{range(comparison.range)}</strong>；独立边际极端相减的保守外包络：{range(comparison.independentExtremesRange)}，后者未保留共同参数关系。{comparison.crossoverInDomain ? `θ=${comparison.crossoverTheta} 时 Δ=0；滑块步长未必取到交点。` : '允许 θ 域内无 Δ=0 交点。'} 两种范围的区别见<a href={sectionHref('配对判断')}>配对判断</a>。</p>
+      <p>共同 θ 下的精确配对范围：<strong>{range(comparison.range)}</strong>；独立边际极端相减的保守外包络：{range(comparison.independentExtremesRange)}，后者未保留共同参数关系。{comparison.crossoverInDomain ? `θ=${comparison.crossoverTheta} 时 Δ=0。` : '允许 θ 范围内，Δ 无零点。'} 两种范围的区别见<a href={sectionHref('配对判断')}>配对判断</a>。</p>
     </div>
 
+    <p>连线是此固定模型的仿射关系，范围没有概率含义。</p>
     <CaseHeading slot="baseline" numbering={numbering} print={print}>固定结果与全域判断</CaseHeading>
-    <p>以下两种情景的固定值始终保留，不随上方控件变化；打印和无脚本阅读也可复核。数值单位均为 kg CO2-eq / 同一 100 m²、十年规定服务。</p>
+    <p>下表列出平整和粗糙两种基底的固定结果。指标与差值均按同一项 100 m²、十年墙面服务报告，单位为 kg CO2-eq。每个情景内，两方案采用同一个 θ。</p>
     <div className="teaching-case-table" role="region" aria-label="两个情景的固定基线数值" tabIndex={0}>
       <table><caption>版本 1.0.0 的精确计算值。范围为共同 θ 的闭区间端点极值，非置信区间。</caption>
         <thead><tr><th scope="col">情景</th><th scope="col">共同 θ</th><th scope="col">I_A</th><th scope="col">I_B</th><th scope="col">Δ = I_B − I_A</th></tr></thead>

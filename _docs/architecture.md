@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-12
-lastReviewedCommit: 7022b4f79d29d0cdff873d85fc746245c4a789cd
+lastReviewedCommit: f650600e6303352252e8d6fad14607c2061a9f58
 ---
 
 # Publication architecture
@@ -75,6 +75,19 @@ actual output verifies every cell, header role, row order, ordinary paragraph,
 position and visibility. Unregistered tables and extra text remain errors. The
 shared helper does not relax either chapter's original source, case-input,
 canonical-note, research or historical-scope checks.
+
+Historical regression suites carry an explicit, content-hashed f650600 data
+fixture and execute the current validator code in an isolated temporary
+directory. The original individual negative tests remain registered. The fixture
+is available without Git history or network access; production has no switch to
+select it. Current numbering and source-admission tests run against the actual
+reviewed edition, including rejection of a changed accepted paragraph.
+
+The generated `.reader-review-output/` directory is ignored alongside normal
+build output. Tailwind source detection must not scan a prior compiled preview.
+Clean production and isolated preview compilation are compared by actual CSS
+bytes; a differing collection requires a reviewed output amendment, never an
+automatic refresh of the acceptance hash.
 
 ## Toxicity pathway publication
 
@@ -492,7 +505,7 @@ share its MDX placement and the canonical paragraph-note sequence.
 
 The Node-only `scripts/reader-citation-baseline.mjs` independently pins the parsed complete baseline digest, including source identity, and exact preface/guide order. Both server roster derivation and export validation call it before deriving expectations. The public frozen inventory has2254addresses; its body content is not duplicated. `scripts/reader-surface.mjs` checks emitted target claim identity, native link destination, alias adjacency, uniqueness, date/source context, note numbers and original print order. A real book source or output requires both configs; generic non-book fixtures retain their separate scope. Deliberate truncation and front-matter mutation tests guard against circular self-validation.
 
-Legacy context appears when an old fragment is targeted, with the preserved source date and immutable GitHub tree. It cannot infer another historical unversioned edition and does not claim hosted archives. The current 40 print articles comprise two front-matter units, 32 chapters (including B04/B10/B15/B25/B32 assemblies and shared B06/B08), two retained topics and four appendices. Each assembly has its own continuous book note plan. The 152 formal chapter sections still exceed the 120-section goal.
+Legacy context appears when an old fragment is targeted, with the preserved source date and immutable GitHub tree. It cannot infer another historical unversioned edition and does not claim hosted archives. The current 40 print articles comprise two front-matter units,32 chapters (including B04/B10/B15/B25/B32 assemblies and shared B06/B08), two method notes and four appendices. Each assembly has its own continuous book note plan. The complete revision has 120 actual formal chapter sections, separately qualified by source, reader and output evidence.
 
 
 Current appendix registration is deliberately separate from the immutable citation baseline. `createCurrentPrintRoutes` validates allowed appendix additions, uniqueness and registered source existence, then compares the resulting roster against actual source pages. Runtime uses `source.getPages()`; export independently discovers MD/MDX files under `content/docs`. Thus deleting both a registration and its exported article cannot silently omit an existing source. The folder's navigation index is excluded, while its article descendants remain mandatory. Print presents appendices separately from the two retained topics, and stable note/premise anchors remain scoped to actual source occurrences. This original appendix registration remains part of the current mixed-edition conservation checks; the bounded B04 assembly below adds a separate manuscript source without claiming the complete32chapter edition.
@@ -602,7 +615,7 @@ print pages without clipping, truncating or changing the cited source identity.
 identities, seven parts and separate book/website orders. Its independent code
 pin supplements discovered-source and edition-coverage checks; it is not the
 editorial 32-chapter plan made executable by inference. The current 40-unit book
-contains 32 chapters, two front units, two retained topics and four appendices.
+contains 32 chapters, two front units, two method notes and four appendices, with 120 actual formal chapter sections.
 B25 combines C14/C15 under four sections with 14 continuous notes. The website
 keeps 37 fine chapters in 48 reading units.
 
@@ -820,4 +833,4 @@ hide body prose; legitimate annotation details remain usable. CurrentB27
 print navigation targets its uniquely focusable title while the historical
 article target still selects the dated 37-note scope. The combined edition also
 uses separate title entries for the PM chapter and its calculation appendix.
-The other 37 reading units continue to use their original entry targets.
+The complete-edition qualification subsequently gives all40reading units their own current title entry; every old article target retains its edition-specific meaning.

@@ -14,7 +14,7 @@ checkPaths:
   - "knowledge/**"
   - "releases/**"
 lastReviewedAt: 2026-11-12
-lastReviewedCommit: 07e4de733f37171a59be2fc93082e182c8dac67c
+lastReviewedCommit: f650600e6303352252e8d6fad14607c2061a9f58
 ---
 
 # Editorial and living review protocol
@@ -93,7 +93,7 @@ The joint-product chapter first reconstructs the positive physical alternatives 
 
 ## Finished prose is the publication gate
 
-Apply `_docs/reader-publication-contract.md` and the [writing and teaching guide](editorial/readable-writing-and-teaching.md) to every new or revised chapter. Use a concrete reader task to check whether the actual chapter supplies what a reader needs to explain or judge. Keep source review separate from continuous reading and rendered-output checks. Source discipline alone does not qualify a reader deliverable: the argument must progress continuously and finish its declared question. Remove author-workflow narration, repeated status templates and development promises; retain real scientific conditions, disagreements and explicit invented data. Archive the removed process history in development Markdown. Each actual book chapter requires one continuous annotation sequence. Website navigation and book/print order may differ while sharing canonical prose and evidence; migrate note plans to the actual assembled chapter boundaries. The current mixed book roster contains39units: two front-matter units,32chapters, two retained topics and three calculation appendices. B04/B10/B15/B25/B32 are independently assembled chapters; B27 uses one shared source with a continuous37-note plan. The numbered seven-part order and this pilot do not complete the whole-book authoring or120-section obligation. Independent reader judgment checks what automated validation cannot.
+Apply `_docs/reader-publication-contract.md` and the [writing and teaching guide](editorial/readable-writing-and-teaching.md) to every new or revised chapter. Use a concrete reader task to check whether the actual chapter supplies what a reader needs to explain or judge. Keep source review separate from continuous reading and rendered-output checks. Source discipline alone does not qualify a reader deliverable: the argument must progress continuously and finish its declared question. Remove author-workflow narration, repeated status templates and development promises; retain real scientific conditions, disagreements and explicit invented data. Archive the removed process history in development Markdown. Each actual book chapter requires one continuous annotation sequence. Website navigation and book/print order may differ while sharing canonical prose and evidence; migrate note plans to the actual assembled chapter boundaries. The reviewed complete edition contains 40 units: two front-matter units,32 chapters, two substantive method notes and four calculation appendices. B04/B10/B15/B25/B32 are independently assembled chapters; B27 uses one shared source with a continuous 37-note plan and a separately reviewed study table. The 120 formal sections are actual argument units. Whole-book acceptance requires the recorded continuous reader review and explicit dispositions; structural counts alone still cannot complete research, empirical teaching or formal-edition obligations.
 
 ## Historical numerical reconstruction
 

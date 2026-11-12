@@ -46,7 +46,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "区分原文规定、发布材料、条件计算与解释；每一连接保留其对象、版本和证据范围，不由局部一致性推断整体合规或实际环境改善。",
-      "textTemplate": "对这个{{input.facts.milkFuMl.value}}毫升参考量，杯数是{{evaluated.washing.glasses.exact}}。每只杯子分配{{input.facts.washSharePercent.value}}%的洗碗周期，于是得到{{evaluated.washing.glasses.exact}} × {{input.facts.washSharePercent.value}}% = {{evaluated.washing.cyclesRounded}}个周期。公开代表产品工作簿的液态奶流程图也标出{{evaluated.washing.diagram.cycles.exact}}个周期。这是分配给该产品服务的活动量，并不是观察到洗碗机真的只运行了一个周期的一小部分。"
+      "textTemplate": "每{{input.facts.milkFuMl.value}}毫升用{{evaluated.washing.glasses.exact}}只杯子，一只杯子分到{{input.facts.washSharePercent.value}}%的洗碗周期。因此这一升牛奶分到{{evaluated.washing.glasses.exact}} × {{input.facts.washSharePercent.value}}% = {{evaluated.washing.cyclesRounded}}个周期。公开工作簿的液态奶流程图也标{{evaluated.washing.diagram.cycles.exact}}个周期。小数表示从一个完整周期分给这项服务的份额，并不是机器实际只运行了不到一个周期的观测值。"
     },
     {
       "id": "cl-rule-wash-inputs",
@@ -90,7 +90,7 @@
         "一般方法Milk默认另含饮用玻璃杯自身生命周期。本段只追洗涤活动，未单独闭合杯子制造与寿命终点；包装玻璃瓶、饮用玻璃杯与洗碗机不是同一对象。"
       ],
       "reasoning": "区分原文规定、发布材料、条件计算与解释；每一连接保留其对象、版本和证据范围，不由局部一致性推断整体合规或实际环境改善。",
-      "textTemplate": "再沿这条分支往下走。通用默认每周期使用{{input.facts.washWaterL.value}}升水、{{input.facts.washSoapG.value}}克肥皂和{{input.facts.washEnergyKwh.value}}千瓦时电。乘上{{evaluated.washing.cyclesRounded}}个周期，得到{{evaluated.washing.waterL.exact}}升水、{{evaluated.washing.soapKg.exact}}千克肥皂和{{evaluated.washing.electricityMjRounded}}兆焦电力。图示肥皂量与上述计算相符；供电与电压转换两个直接输入节点也各标同一个电力数值。数值相等尚未解释两项模型投入各自承担的角色，不能由此把它们当成两份独立耗电相加。算出这些投入，还没有算出它们的环境影响；电力来源、设备、材料生产和处理过程仍须进入模型。"
+      "textTemplate": "知道分到多少周期，就能分配一个完整周期的投入。通用默认每周期使用{{input.facts.washWaterL.value}}升水、{{input.facts.washSoapG.value}}克肥皂和{{input.facts.washEnergyKwh.value}}千瓦时电；各乘{{evaluated.washing.cyclesRounded}}个周期，得到{{evaluated.washing.waterL.exact}}升水、{{evaluated.washing.soapKg.exact}}千克肥皂和{{evaluated.washing.electricityMjRounded}}兆焦电力。流程图的肥皂量相符，供电与电压转换两个直接输入节点也标同一电量。尚未查明两个节点各自的角色，不能把它们当作两笔独立耗电相加。要从这些投入得到环境结果，还需要电力、设备、材料生产和处理过程的模型。"
     },
     {
       "id": "cl-rule-use-result",
@@ -162,7 +162,7 @@
         "工作簿逐行气候总和与Info总值约有1.88×10⁻⁹kg CO₂eq差异，未确定原因；这里的显示对应不构成逐位原生复现。"
       ],
       "reasoning": "区分原文规定、发布材料、条件计算与解释；每一连接保留其对象、版本和证据范围，不由局部一致性推断整体合规或实际环境改善。",
-      "textTemplate": "工作簿包含使用阶段的全生命周期气候变化结果约为{{evaluated.reportedClimate.wholeRounded}}千克二氧化碳当量。使用阶段约占{{evaluated.reportedClimate.useSharePercentRounded}}%；扣除这部分后约为{{evaluated.reportedClimate.excludingUseRounded}}，与表45“不含使用阶段”一列的显示量一致。PEF方法要求报告完整生命周期和排除使用阶段的口径，读者因此必须先看列的边界。后一列更小，是报表范围不同，不是牛奶生产或消费者行为已经带来了减排。"
+      "textTemplate": "再看它占整个生命周期多少。工作簿含使用阶段的气候变化结果约为{{evaluated.reportedClimate.wholeRounded}}千克二氧化碳当量，使用阶段约占{{evaluated.reportedClimate.useSharePercentRounded}}%；扣除后约为{{evaluated.reportedClimate.excludingUseRounded}}，与表45不含使用阶段一列的显示量相合。PEF要求同时报告完整生命周期和排除使用阶段的结果。两列的差表示把使用阶段移入或移出报告范围，没有描述实际生产或家庭行为的减排。"
     },
     {
       "id": "cl-rule-quantity-scale",

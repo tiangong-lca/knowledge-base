@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-11",
+  "updatedAt": "2026-11-12",
   "readings": [
     {
       "id": "rd-cml-2001-part1",
@@ -2400,6 +2400,25 @@
           "limits": [
             "与期刊存档属于同一项署名增补，不能算作独立确认；未取得原论文及2010再讨论正文。"
           ]
+        },
+        {
+          "id": "psg-readable-addendum-branches",
+          "locator": "2026-11-12 dated selected reinspection: 增补全文，尤其第一页规则1及第二页规则2–4",
+          "printedPages": "1–2",
+          "pdfIndices": [
+            0,
+            1
+          ],
+          "topics": [
+            "conditional rule branches",
+            "full attribution",
+            "downstream differences"
+          ],
+          "limits": [
+            "后续差别的归A说明位于规则2，不是跨规则的无条件主张。",
+            "本次只重新核读所列范围；原获取日期、初次阅读事件与原选段保持不变。不增加一项独立研究或原作。"
+          ],
+          "artifactId": "art-weidema-2001-addendum-yale"
         }
       ],
       "appraisal": {
@@ -3270,6 +3289,26 @@
           "limits": [
             "Regional differentiation is limited to named categories. Ecosystem damage is aggregated local species loss, not a verified global extinction count. Article describes 17 midpoint categories; do not substitute a later 18-category release or current software behavior. Indoor/direct-pesticide omissions are this publication scope only."
           ]
+        },
+        {
+          "id": "psg-readable-recipe-land-units",
+          "locator": "2026-11-12 dated selected reinspection: Table1；§3.1.10；§§3.2.10、3.2.12",
+          "printedPages": "141–142、144",
+          "pdfIndices": [
+            3,
+            4,
+            6
+          ],
+          "topics": [
+            "land-use midpoint unit",
+            "relative local species loss",
+            "midpoint-to-endpoint exception"
+          ],
+          "limits": [
+            "因子的依据与报告单位不同；不能据转换步数判定层级普遍优劣。",
+            "本次只重新核读所列范围；原获取日期、初次阅读事件与原选段保持不变。不增加一项独立研究或原作。"
+          ],
+          "artifactId": "art-recipe-2017-primary-article-pdf"
         }
       ],
       "appraisal": {
@@ -30468,6 +30507,32 @@
         "V4-06",
         "V7-02",
         "A05"
+      ]
+    },
+    {
+      "id": "rev-readable-20261112-recipe-unit-precision",
+      "before": "原稿以“局地物种损失表达中点”概括转换例外，可能混淆表征依据与报告单位。",
+      "after": "合读Table1及两个土地利用小节，明确局地相对物种损失是因子依据，结果按年作物等效m²·yr报告，转换不添因果步骤。",
+      "reasoning": "修订不改变原模型或数值，补足原句中两个不同层次及精确引注；保留原阅读与原证据事件。",
+      "status": "2026-11-12 independent and primary agent selected-source review; not empirical validation",
+      "triggerPassageIds": [
+        "psg-readable-recipe-land-units"
+      ],
+      "affectedUnits": [
+        "B14"
+      ]
+    },
+    {
+      "id": "rev-readable-20261112-conditional-addendum",
+      "before": "改写稿略去100%并把后续变化说明放在规则3之后，读者可能将它概括为所有分支共用规则。",
+      "after": "恢复100%，将后续变化归A明确放回充分利用的规则2，再述规则3。",
+      "reasoning": "依据两页原件的实际分支和指称，保留本书假想X/Y模型与原A/B定义的区别。",
+      "status": "2026-11-12 independent and primary agent original rereading; no new numerical model",
+      "triggerPassageIds": [
+        "psg-readable-addendum-branches"
+      ],
+      "affectedUnits": [
+        "B10"
       ]
     }
   ]
