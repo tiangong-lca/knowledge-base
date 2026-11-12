@@ -1,3 +1,4 @@
+import { blocksReaderText, inspectReviewedStaticTable, removeReviewedProse, validateReviewedStaticTable } from './reader-reviewed-static-table.mjs';
 import { currentBookFileMatches, currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import { createHash } from 'node:crypto';
 import { isDeepStrictEqual } from 'node:util';
@@ -10,7 +11,7 @@ import placements from '../config/citation-placements.json' with { type: 'json' 
 import { chapterAnchorPrefix, collectChapterClaimOccurrences, printUnitAnchor } from './reader-book.mjs';
 import { createCanonicalCitationEntries, createLegacyCitationEntries } from './reader-citations.mjs';
 import { affectedClaims, publicCatalog } from './knowledge.mjs';
-import { concealedText, qualifyHeadingCopyButtons, trustedFrameworkSvg } from './reader-data-applicability.mjs';
+import { qualifyHeadingCopyButtons, trustedFrameworkSvg } from './reader-data-applicability.mjs';
 import { isVerifiedReaderPagination } from './reader-numbering-output.mjs';
 import { printReadingEntryAnchor } from './reader-numbering.mjs';
 import { unaccountedReaderText, validateExchangeAnnotationOutput } from './reader-exchange-semantics.mjs';
@@ -181,24 +182,39 @@ export function validateReadablePedigreeCaseBytes(accepted, { input, publication
     ? currentBookFileMatches(publicationPath, expected, hash(bytes)) : hash(bytes) === expected) ? [] : [`Readable pedigree ${name} bytes differ`]);
 }
 
-function inspectSource(raw) {
+const studyTableShape = {
+  name: 'Readable pedigree', section: '散布与估计精度', rowCount: 4,
+  previousClaim: 'cl-ped-stratified-conflict', nextClaim: 'cl-ped-estimate-boundary',
+};
+
+/** The current layout may add one bounded study table to this chapter. */
+export function inspectReadablePedigreeSource(raw) {
   const front = /^---\n([\s\S]*?)\n---\n/.exec(raw);
   if (!front) return null;
   const field = name => new RegExp(`^${name}:\\s*(.+)$`, 'm').exec(front[1])?.[1].replace(/^(['"])(.*)\1$/, '$2');
   const blocks = raw.slice(front[0].length).split(/^## (.+)$/m);
   if (blocks[0].trim()) return null;
   const sections = [];
+  let studyTable;
   for (let i = 1; i < blocks.length; i += 2) {
     const explicit = /^(.*?)\s+\[#([^\]]+)\]$/.exec(blocks[i]);
-    const body = blocks[i + 1];
-    if (body.replace(/<Prose ids="[^"]+"\s*\/>/g, '').trim()) return null;
-    sections.push({ id: explicit?.[2] ?? blocks[i], title: explicit?.[1] ?? blocks[i], claimIds: collectChapterClaimOccurrences(body) });
+    const id = explicit?.[2] ?? blocks[i], body = blocks[i + 1];
+    if (removeReviewedProse(body).trim()) {
+      if (id !== studyTableShape.section || studyTable) return null;
+      studyTable = inspectReviewedStaticTable(body, studyTableShape);
+      if (!studyTable) return null;
+    }
+    sections.push({ id, title: explicit?.[1] ?? blocks[i], claimIds: collectChapterClaimOccurrences(body) });
   }
-  return { title: field('title'), description: field('description'), sections };
+  return { title: field('title'), description: field('description'), sections, ...(studyTable ? { studyTable } : {}) };
 }
 
-function reviewedPedigreeLayout({ title, description, sections }) {
-  return currentBookLayout('B27:reader-source', { title, description, sections });
+function reviewedPedigreeLayout(accepted) {
+  const { title, description, sections } = accepted;
+  const layout = currentBookLayout('B27:reader-source', { title, description, sections });
+  if (!same(sectionOccurrences(layout.sections).map(row => row.id), accepted.claims.map(row => row.id)))
+    throw new Error('Readable pedigree current layout must preserve the exact 37 canonical note identities in order');
+  return layout;
 }
 
 function validateCatalog(catalog, accepted, projection) {
@@ -236,7 +252,7 @@ export function validateReadablePedigreeCoverage(edition, sources, catalog, acce
   const errors = [...validateCatalog(catalog, accepted, projection), ...validateReadablePedigreeResearch(readings)];
   const raw = sources.get(readablePedigreeRoute)?.replaceAll('\r\n', '\n');
   if (!raw || !currentBookMdxMatches(readablePedigreeRoute, accepted.mdxSha256, hash(raw))
-      || !same(inspectSource(raw), reviewedPedigreeLayout(accepted)))
+      || !same(inspectReadablePedigreeSource(raw), reviewedPedigreeLayout(accepted)))
     errors.push('Readable pedigree actual MDX title, description, sections or claim order differs');
   return errors;
 }
@@ -324,8 +340,6 @@ export function readablePedigreeCitationLabel(target, accepted) {
   return `《${accepted.title}》${suffix}`;
 }
 
-const blocksReading = node => concealedText(node) || Boolean(node.closest('details:not([open]),template'));
-
 function validateHistoricalLocations(document, unit, path, entries) {
   const expected = entries.filter(entry => entry.path === path);
   const sources = new Map(expected.map(entry => [entry.id, []]));
@@ -347,7 +361,7 @@ function validateHistoricalLocations(document, unit, path, entries) {
     const target = entry.targets[0];
     const [node] = found;
     let positioned = false;
-    if (found.length === 1 && inUnit(node) && !blocksReading(node)) {
+    if (found.length === 1 && inUnit(node) && !blocksReaderText(node)) {
       if (entry.mode === 'notice') positioned = node.tagName === 'DIV'
         && node.hasAttribute('data-legacy-notice') && node.parentNode === body;
       else if (entry.mode === 'alias') positioned = node.tagName === 'SPAN'
@@ -364,11 +378,15 @@ function validateHistoricalLocations(document, unit, path, entries) {
       const attached = context && (target.kind === 'chapter'
         ? context.parentNode === node
         : context.previousElementSibling === node && context.parentNode === node?.parentNode);
-      if (contexts.length !== 1 || !attached || !inUnit(context) || blocksReading(context))
+      if (contexts.length !== 1 || !attached || !inUnit(context) || blocksReaderText(context))
         errors.push(`${path}: Readable pedigree retained historical scope is missing, repeated, hidden or detached: ${entry.id}`);
     } else if (contexts.length) errors.push(`${path}: Readable pedigree unexpected retained historical scope: ${entry.id}`);
   }
   return errors;
+}
+
+export function validateReadablePedigreeStudyTable(unit, path, expected) {
+  return validateReviewedStaticTable(unit, path, expected, studyTableShape);
 }
 
 /** Check the fully numbered and normalized DOM used by the citation export verifier. */
@@ -385,7 +403,7 @@ export function validateRenderedReadablePedigree(document, path, catalog, accept
   const errors = [];
   const checked = new Set();
   const check = (node, valid, label) => {
-    if (!node || !valid || blocksReading(node)) errors.push(`${path}: Readable pedigree ${label} differs or is hidden`);
+    if (!node || !valid || blocksReaderText(node)) errors.push(`${path}: Readable pedigree ${label} differs or is hidden`);
     else checked.add(node);
   };
   const title = unit.querySelector('[data-reader-heading-key="@unit"]');
@@ -449,6 +467,9 @@ export function validateRenderedReadablePedigree(document, path, catalog, accept
     const annotation = note.querySelector('.claim-annotation');
     check(annotation, Boolean(annotation), 'annotation content');
   }
+  const study = validateReadablePedigreeStudyTable(unit, path, layout.studyTable);
+  errors.push(...study.errors);
+  for (const node of study.checked) checked.add(node);
   const entries = applyCurrentHistoricalEntries(document, remapReadablePedigreeCitations(readablePedigreeOriginalEntries(), accepted, independentDigest));
   errors.push(...validateHistoricalLocations(document, unit, path, entries));
   const historical = validateReaderHistoricalText(unit, entries, path, target => readablePedigreeCitationLabel(target, accepted));

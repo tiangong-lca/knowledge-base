@@ -26,7 +26,8 @@ import {
   assertReadablePedigreeAccepted, assertReadablePedigreeHeadingHistory, assertReadablePedigreeOriginal, assertReadablePedigreeResearchOriginal,
   readablePedigreeCaseExpectation, readablePedigreeCitationLabel, readablePedigreeClosingRecords, readablePedigreeDigest, readablePedigreeHeadingEntries,
   readablePedigreeOriginalEntries, readablePedigreeRoute, remapReadablePedigreeCitations,
-  validateReadablePedigreeCaseBytes, validateReadablePedigreeCoverage, validateReadablePedigreeResearch, validateRenderedReadablePedigree,
+  inspectReadablePedigreeSource, validateReadablePedigreeCaseBytes, validateReadablePedigreeCoverage,
+  validateReadablePedigreeResearch, validateReadablePedigreeStudyTable, validateRenderedReadablePedigree,
 } from './reader-readable-pedigree.mjs';
 
 const read = path => readFile(new URL(`../${path}`, import.meta.url));
@@ -277,4 +278,68 @@ test('actual pedigree output requires each old source in its chapter and leaves 
     .some(error => error.includes('paragraph or note marker')));
   assert(check(html.replace(paragraph, `<template>${paragraph}</template>`))
     .some(error => error.includes('paragraph or note marker')));
+});
+
+
+test('the optional study table has exact source blocks and a fixed place in the 37-note chapter', () => {
+  const markdown = [
+    '试验说明。',
+    '| 所问 | 显示量 | 复算 |\n| --- | --- | --- |\n| 均值 | 1 | 2 |\n| 散布 | 3 | 4 |\n| 后分层 | 5 | 6 |\n| 分层 | 7 | 8 |',
+    '试验限度。',
+  ].join('\n\n');
+  const raw = [
+    '---', `title: ${fixture.title}`, `description: ${fixture.description}`, '---', '',
+    ...fixture.sections.map(section => `## ${section.id}\n\n<Prose ids="${section.claimIds.join(' ')}" />\n`),
+  ].join('\n');
+  const nextClaim = ' cl-ped-estimate-boundary" />';
+  assert(raw.includes(nextClaim));
+  const withStudy = raw.replace(nextClaim, '" />\n\n' + markdown + '\n\n<Prose ids="cl-ped-estimate-boundary" />');
+  const oldLayout = inspectReadablePedigreeSource(raw);
+  const { studyTable, ...existing } = inspectReadablePedigreeSource(withStudy);
+  assert.deepEqual(existing, oldLayout);
+  assert.deepEqual(studyTable.headers, ['所问', '显示量', '复算']);
+  assert.deepEqual(studyTable.rows[3], ['分层', '7', '8']);
+  assert.equal(studyTable.introduction, '试验说明。');
+  assert.equal(studyTable.explanation, '试验限度。');
+  for (const changed of [
+    withStudy.replace('试验说明。', '试验说明。\n\n额外段落。'),
+    withStudy.replace('| 均值 | 1 | 2 |', '| 均值 | 1 |'),
+    withStudy.replace('试验限度。', '<span>试验限度。</span>'),
+    raw.replace('## 杯重调查与估计', markdown + '\n\n## 杯重调查与估计'),
+  ]) assert.equal(inspectReadablePedigreeSource(changed), null);
+});
+
+test('an admitted study table checks every rendered cell, label, placement and both visible explanations', () => {
+  const study = {
+    introduction: '试验说明。', headers: ['所问', '显示量', '复算'],
+    rows: [['均值', '1', '2'], ['散布', '3', '4'], ['后分层', '5', '6'], ['分层', '7', '8']],
+    explanation: '试验限度。',
+  };
+  const table = '<table><thead><tr>' + study.headers.map(cell => '<th scope="col">' + cell + '</th>').join('')
+    + '</tr></thead><tbody>' + study.rows.map(row => '<tr>' + row.map(cell => '<td>' + cell + '</td>').join('') + '</tr>').join('')
+    + '</tbody></table>';
+  const mark = id => '<p>规范段落<sup><a role="doc-noteref" data-reader-reference="' + id + '">[注]</a></sup></p>';
+  const html = '<article><h3 data-reader-heading-key="散布与估计精度">散布与估计精度</h3>'
+    + mark('cl-ped-stratified-conflict') + '<p>试验说明。</p><div>' + table + '</div><p>试验限度。</p>'
+    + mark('cl-ped-estimate-boundary') + '</article>';
+  const verify = (value, expected = study) =>
+    validateReadablePedigreeStudyTable(htmlParser.parse(value).querySelector('article'), '/print', expected);
+  assert.deepEqual(verify(html).errors, []);
+  assert.equal(verify(html).checked.size, 3);
+  const unapproved = validateReadablePedigreeStudyTable(htmlParser.parse(html).querySelector('article'), '/print', null);
+  assert.match(unapproved.errors.join(), /unreviewed table/);
+  for (const changed of [
+    html.replace('<td>8</td>', '<td>9</td>'),
+    html.replace('<th scope="col">所问</th>', '<td>所问</td>'),
+    html.replace('<th scope="col">所问</th>', '<th scope="col" aria-label="另一个量">所问</th>'),
+    html.replace('<td>1</td>', '<td rowspan="2">1</td>'),
+    html.replace('<thead>', '未审文字<thead>'),
+    html.replace('<td>散布</td>', '<td aria-hidden="true">散布</td>'),
+    html.replace('<div><table>', '<div hidden><table>'),
+    html.replace('</table>', '</table><table></table>'),
+    html.replace('cl-ped-stratified-conflict', 'cl-ped-population-spread'),
+    html.replace('<p>试验限度。</p>', '<p hidden>试验限度。</p>'),
+    html.replace('<p>试验说明。</p>', '<p>未审段落。</p><p>试验说明。</p>'),
+    html.replace('data-reader-heading-key="散布与估计精度"', 'data-reader-heading-key="其他章节"'),
+  ]) assert(verify(changed).errors.length);
 });

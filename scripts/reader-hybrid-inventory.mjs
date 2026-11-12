@@ -1,3 +1,4 @@
+import { inspectReviewedStaticTable, removeReviewedProse, validateReviewedStaticTable } from './reader-reviewed-static-table.mjs';
 import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import { isVerifiedReaderPagination } from './reader-numbering-output.mjs';
 import { validateReaderHistoricalText } from './reader-publication-text.mjs';
@@ -16,6 +17,30 @@ const ordered = value => Array.isArray(value) ? value.map(ordered) : value && ty
 const sameRecord = (a, b) => same(ordered(a), ordered(b));
 const digest = value => createHash('sha256').update(JSON.stringify(value)).digest('hex');
 const mdxDigest = raw => createHash('sha256').update(raw.replaceAll('\r\n', '\n')).digest('hex');
+
+const invoiceTableShape = {
+  name: 'B09', section: '双向账户', rowCount: 5,
+  previousClaim: 'cl-hyb-swap', nextClaim: 'cl-hyb-swap-result',
+};
+
+/** null is the prior table-free layout; undefined is unqualified extra source. */
+export function inspectHybridInventoryInvoiceTable(raw) {
+  const sections = raw.replaceAll('\r\n', '\n').split(/^## (.+)\s*$/m);
+  let table = null;
+  for (let i = 1; i < sections.length; i += 2) {
+    const body = sections[i + 1];
+    if (!removeReviewedProse(body).trim()) continue;
+    if (readSourceHeading(sections[i]).id !== invoiceTableShape.section || table) return undefined;
+    table = inspectReviewedStaticTable(body, invoiceTableShape);
+    if (!table) return undefined;
+  }
+  return table;
+}
+
+export function validateHybridInventoryInvoiceTable(unit, path, expected) {
+  return validateReviewedStaticTable(unit, path, expected, invoiceTableShape);
+}
+
 
 export function assertHybridInventoryAccepted(accepted) {
   if (digest(accepted) !== '21e8a1c953ae3ea54e36542e629f594907998c424b8717c9c96c4659e56c7409') throw new Error('Accepted B09 original38/one-source-reviewed-addition and mapped-three-section occurrence inventory differs from clean 0aed5f6');
@@ -61,6 +86,8 @@ export function validateHybridInventoryCoverage(edition, sources, accepted, cata
     actual.push(...collectChapterClaimOccurrences(split[i + 1]).map(id => ({ id, section })));
   }
   const expected = currentBookLayout('B09:occurrences', accepted.sections.flatMap(section => section.claimIds.map(id => ({ id, section: section.id }))));
+  if (!sameRecord(inspectHybridInventoryInvoiceTable(raw), currentBookLayout('B09:invoice-table', null)))
+    errors.push('B09 actual invoice table and its explanations differ from reviewed source');
   if (!same(headings, currentBookLayout('B09:headings', titles.map(title => ({ id: title, title }))))) errors.push('B09 source must have exactly three actual adopted formal sections');
   if (collectChapterClaimOccurrences(raw).length !== actual.length || !same(actual, expected)) errors.push('B09 propositions missing, duplicated, reordered, replaced, outside sections or misplaced');
   if (catalog) {
@@ -188,6 +215,9 @@ function validateHybridInventoryTextCoverage(unit, path, accepted, prose, {legac
   const contexts = validateReaderHistoricalText(unit, entries, path, label);
   errors.push(...contexts.errors);
   for (const node of contexts.checked) checked.add(node);
+  const invoiceTable = validateHybridInventoryInvoiceTable(unit, path, currentBookLayout('B09:invoice-table', null));
+  errors.push(...invoiceTable.errors);
+  for (const node of invoiceTable.checked) checked.add(node);
   if (unaccountedReaderText(unit, checked).length) errors.push(`${path}: B09 contains unexpected unreviewed body text`);
   return errors;
 }

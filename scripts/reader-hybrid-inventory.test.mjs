@@ -10,7 +10,11 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 import { publicCatalog, getClaimEvidence } from './knowledge.mjs';
 import { publicResearch } from './research.mjs';
-import { assertHybridInventoryAccepted, assertHybridInventoryHeadingHistory, assertHybridInventoryRegistration, assertHybridInventoryProseAccepted, hybridInventoryRoute as route, hybridInventoryHeadingEntries, remapHybridInventoryCitations, validateHybridInventoryCoverage, validateRenderedHybridInventory } from './reader-hybrid-inventory.mjs';
+import {
+  assertHybridInventoryAccepted, assertHybridInventoryHeadingHistory, assertHybridInventoryRegistration, assertHybridInventoryProseAccepted,
+  hybridInventoryRoute as route, hybridInventoryHeadingEntries, inspectHybridInventoryInvoiceTable, remapHybridInventoryCitations,
+  validateHybridInventoryCoverage, validateHybridInventoryInvoiceTable, validateRenderedHybridInventory,
+} from './reader-hybrid-inventory.mjs';
 import { createLegacyCitationEntries, createCanonicalCitationEntries, citationHref } from './reader-citations.mjs';
 import { currentEditionKeys, publishedHeadingEntries, remapBookCitations } from './reader-edition.mjs';
 import { cleanerProductionHeadingEntries, remapCleanerProductionCitations } from './reader-cleaner-production.mjs';
@@ -270,5 +274,38 @@ test('exact legitimate historical group/unit/notice text remains accounted for w
       for(const added of ['额外断言。','<div>额外断言。</div>','<ul><li>额外断言。</li></ul>'])assert(check(changed.replace(context,context.replace(/<\/div>$/,added+'</div>'))).some(error=>/historical output context/.test(error)));
     }
     assert(chosen.length>=2);
+  }
+});
+
+
+test('the B09 invoice table is independently tied to the supplier swap and comparison on both views', () => {
+  const markdown = [
+    '试验发票说明。',
+    '| 卖方 | 原发票 | 另一组发票 |\n| --- | --- | --- |\n| F | 10 | 0 |\n| G | 10 | 20 |\n| S1 | 20 | 20 |\n| S2 | 30 | 30 |\n| S3 | 20 | 20 |',
+    '试验部门合计。',
+  ].join('\n\n');
+  const next = ' cl-hyb-swap-result" />';
+  assert(raw.includes(next));
+  const candidate = raw.replace(next, '" />\n\n' + markdown + '\n\n<Prose ids="cl-hyb-swap-result" />');
+  const invoice = inspectHybridInventoryInvoiceTable(candidate);
+  assert.equal(inspectHybridInventoryInvoiceTable(raw), null);
+  assert.equal(invoice.rows.length, 5);
+  assert.deepEqual(invoice.rows[1], ['G', '10', '20']);
+  assert.equal(inspectHybridInventoryInvoiceTable(candidate.replace('cl-hyb-swap"', 'cl-hyb-raw"')), undefined);
+  assert.equal(inspectHybridInventoryInvoiceTable(candidate.replace('| S3 | 20 | 20 |\n', '')), undefined);
+
+  const mark = id => `<p><a role="doc-noteref" data-reader-reference="${id}">注</a></p>`;
+  const table = '<table><thead><tr>' + invoice.headers.map(cell => '<th>' + cell + '</th>').join('')
+    + '</tr></thead><tbody>' + invoice.rows.map(row => '<tr>' + row.map(cell => '<td>' + cell + '</td>').join('') + '</tr>').join('') + '</tbody></table>';
+  for (const path of [route, '/print']) {
+    const chapter = `<article><h3 data-reader-heading-key="双向账户">双向账户</h3>${mark('cl-hyb-swap')}`
+      + '<p>试验发票说明。</p>' + table + '<p>试验部门合计。</p>' + mark('cl-hyb-swap-result') + '</article>';
+    const verify = (source, expectation = invoice) => validateHybridInventoryInvoiceTable(
+      htmlParser.parse(source).querySelector('article'), path, expectation,
+    ).errors;
+    assert.deepEqual(verify(chapter), []);
+    assert(verify(chapter.replace('<td>G</td>', '<td>F</td>')).length);
+    assert(verify(chapter.replace('cl-hyb-swap-result', 'cl-hyb-raw')).length);
+    assert(verify(chapter, null).some(error => error.includes('unreviewed table')));
   }
 });

@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-12
-lastReviewedCommit: 69138eb11aa6fe81c4d338bd473452794bcdf005
+lastReviewedCommit: 7022b4f79d29d0cdff873d85fc746245c4a789cd
 ---
 
 # Publication architecture
@@ -67,6 +67,14 @@ fragment; note, section, external and unknown fragments remain unchanged.
 Historical references use their own renderer and keep the original scoped
 destination. The website and book ordinary-navigation guards apply the same
 bounded transformation before comparing actual labels and targets.
+
+The B09 invoice comparison and B27 cup-study summary may each include one
+explicitly reviewed static table with two accompanying paragraphs. Their source
+parsers bind the exact section, adjacent canonical claims and table dimensions;
+actual output verifies every cell, header role, row order, ordinary paragraph,
+position and visibility. Unregistered tables and extra text remain errors. The
+shared helper does not relax either chapter's original source, case-input,
+canonical-note, research or historical-scope checks.
 
 ## Toxicity pathway publication
 
