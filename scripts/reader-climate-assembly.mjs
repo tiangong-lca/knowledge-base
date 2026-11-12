@@ -1,3 +1,4 @@
+import { projectOrdinaryReaderNavigation } from './reader-edition.mjs';
 import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import { createHash } from "node:crypto";
 import original from "../config/climate-assembly-original.json" with { type: "json" };
@@ -497,7 +498,7 @@ function validateRenderedClimateAssembly(document, path, catalog, accepted, inde
           || sequence[index - 1]?.getAttribute("data-reader-reference") !== "cl-climate-reference-illustration"
           || sequence[index + 1]?.getAttribute("data-reader-reference") !== "cl-climate-reference-limits") errors.push(`${path}: Climate response figure loses its actual explanatory paragraph placement`);
     }
-    const expectedOrdinary = source.ordinary.map((row) => ({ ...row, links: row.links.map((link) => ({ ...link, href: print ? climateAssemblyBookHref(link.href, route) : link.href })) }));
+    const expectedOrdinary = source.ordinary.map(row => projectOrdinaryReaderNavigation(row, route, print));
     if (!sameOrdinaryNavigation(ordinary, expectedOrdinary)
         || unit.querySelectorAll("figure").length !== (source.figure ? 1 : 0)) errors.push(`${path}: Climate reviewed ordinary navigation/figure count differs: ${route}`);
     const notes = unit.querySelectorAll("[data-reader-claim]");

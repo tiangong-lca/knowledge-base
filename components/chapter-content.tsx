@@ -50,7 +50,7 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
   function ReaderSection({ id: section }: { id: string }) {
     const id = print ? `${prefix}-${section}` : section;
     return <><LegacyCitationAliases ids={legacy.aliases.get(id)} target={id} />
-      <span id={id} data-reader-section={id} className="reader-section-target" /></>;
+      <span id={id} data-reader-section={id} className="reader-section-target" /><RetainedScope entry={legacy.scopes.get(id)} /></>;
   }
   function ChapterTeachingCase(props: Parameters<typeof TeachingCase>[0]) { return <TeachingCase {...props} print={print} numbering={getUnitHeadingPlan(view, page.url).filter(heading=>heading.type==='case')} />; }
   const MDX = page.data.body;

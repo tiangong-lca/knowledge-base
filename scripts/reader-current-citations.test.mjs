@@ -90,3 +90,51 @@ test('retained titles and ordinary blocks both require explicit migration', () =
   assert.match(validateReadableBookOrdinaryDestinations(target(['cl-unrelated']), migrated, migration.address)[0], /actual ordinary-content destination/);
   assert.deepEqual(validateReadableBookOrdinaryDestinations(target(['cl-current']), migrated, migration.address), []);
 });
+
+test('current historical context uses the actual destination title and ordinal without excusing extra copy', async () => {
+  const { qualifyCurrentHistoricalDocument, validateReaderHistoricalText } = await import('./reader-publication-text.mjs');
+  const { citationSourceHref } = await import('./reader-citations.mjs');
+  const target = { path, route, id: 'present-note', kind: 'note', claimId: 'cl-current' };
+  const entry = { path, route, id: 'historic-note', mode: 'notice', edition, targets: [target], scope: { text: '旧注的公开去向。', targets: [target] } };
+  const locations = new Map([[path, { ids: new Map([[target.id, { route, claimId: 'cl-current', number: 7, title: '现行题名' }]]) }]]);
+  const render = label => parser.parse(
+    `<article data-reader-route="${route}"><div id="historic-note" data-legacy-notice="">
+      <p>此链接按 <time>${edition.sourceDate}</time> 留存文本定位。其他历史版本的引用需核对各自源文件。<a href="${citationSourceHref(edition.sourceCommit)}">查看这一版本的源文件</a></p>
+      <p>旧注的公开去向。</p><a href="#present-note">${label}</a></div></article>`,
+  );
+  for (const [label, passes] of [['《现行题名》注 7', true], ['《现行题名》注 8', false], ['《现行题名》注 7 补写', false]]) {
+    const document = render(label);
+    qualifyCurrentHistoricalDocument(document, [entry], [{ address: '/print#historic-note' }], locations);
+    const result = validateReaderHistoricalText(document.querySelector('article'), [], path, () => '旧签收题名');
+    assert.equal(result.errors.length === 0, passes);
+    assert.equal(result.checked.size, passes ? 1 : 0);
+  }
+});
+
+test('the whole document rejects unreviewed prose on a generic container-history anchor', async () => {
+  const { qualifyCurrentHistoricalDocument, validateCurrentHistoricalContexts } = await import('./reader-publication-text.mjs');
+  const { citationSourceHref } = await import('./reader-citations.mjs');
+  const path = '/docs/book/early-container-comparisons';
+  const id = '过程和能源在原报告中的含义';
+  const target = { path, route: path, id, kind: 'heading', label: '《饮料容器账本》·过程和能源' };
+  const scope = { text: '此处保留旧节所说明的内容。', targets: [target] };
+  const entry = { path, route: path, id, mode: 'retained', edition, targets: [target], scope };
+  const render = (extra = '', owner = path) => parser.parse(
+    `<article data-reader-route="${owner}"><span id="${id}" data-reader-section="${id}"></span>
+      <div data-legacy-scope="${id}"><p>此链接按 <time datetime="${edition.sourceDate}">${edition.sourceDate}</time> 留存文本定位。其他历史版本的引用需核对各自源文件。<a href="${citationSourceHref(edition.sourceCommit)}">查看这一版本的源文件</a></p>
+      <p>${scope.text}${extra}</p><ul><li><a href="#${encodeURIComponent(id)}" data-legacy-scope-destination="">${target.label}</a></li></ul></div></article>`,
+  );
+  for (const [document, error] of [
+    [render(), null],
+    [render('据此可以证明所有容器的全生命周期排序恒定。'), /unexpected content/],
+    [render('', '/docs/book/another-unit'), /wrong reading unit/],
+  ]) {
+    const surface = readCitationSurface(document, path);
+    // The exploit retains the date, original text and all destinations.
+    assert.deepEqual(validateHistoricalScope(surface.ids.get(id), entry), []);
+    qualifyCurrentHistoricalDocument(document, [entry], [{ address: `${path}#${id}` }], new Map([[path, surface]]));
+    const result = validateCurrentHistoricalContexts(document, [entry], path);
+    if (error) assert.match(result.join('\n'), error);
+    else assert.deepEqual(result, []);
+  }
+});

@@ -1,4 +1,5 @@
-import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
+import { currentBookFileMatches, currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
+import { frameworkBookHref } from './reader-edition.mjs';
 import { closingSynthesisKey, closingSynthesisRoutes } from './reader-closing-synthesis.mjs';
 import { isVerifiedReaderPagination, prepareNumberedCaseElement } from './reader-numbering-output.mjs';
 import { createHash } from 'node:crypto';
@@ -73,6 +74,14 @@ const caseNavigation = print => print ? [
   {text:'先保留两项服务，再看替代减项',href:'#先保留两项服务再看替代减项'},
   {text:'部分利用时，重新交代活动与去向',href:'#部分利用时重新交代活动与去向'},
 ];
+function currentCaseNavigation(print) {
+  const previous = caseNavigation(print);
+  const current = currentBookLayout(`B10:case-navigation:${print ? 'book' : 'web'}`, previous);
+  if (!same(current.map(link => link.href), previous.map(link => link.href))
+      || current.some(link => typeof link.text !== 'string' || !link.text.trim()))
+    throw new Error('B10 reviewed case navigation must preserve the exact native destination identities');
+  return current;
+}
 /** This bounded disposition validates editorial execution, not scientific entailment. */
 export function assertJointProductionCaseSelection(prose) {
   const selection=prose?.caseSelection, spec=original.case;
@@ -107,10 +116,10 @@ export function assertJointProductionCaseSelection(prose) {
 export function validateJointProductionArtifactBytes(prose, { component, input }) {
   assertJointProductionCaseSelection(prose);
   const errors = [];
-  for (const [label, bytes, expected] of [
-    ['component', component, prose.caseSelection.componentSha256],
-    ['input', input, original.case.inputSha256],
-  ]) if (createHash('sha256').update(bytes).digest('hex') !== expected) errors.push(`B10 reviewed case ${label} bytes differ`);
+  const hash = bytes => createHash('sha256').update(bytes).digest('hex');
+  if (!currentBookFileMatches('components/joint-production-case.tsx', prose.caseSelection.componentSha256, hash(component)))
+    errors.push('B10 reviewed case component bytes differ');
+  if (hash(input) !== original.case.inputSha256) errors.push('B10 reviewed case input bytes differ');
   return errors;
 }
 
@@ -225,10 +234,13 @@ export function validateJointProductionCaseOutput(unit, {print = false, section 
   const heading = node.querySelector(`[id="${spec.headingId}"]`);
   if (!heading || heading.tagName !== (print?'H4':'H3') || heading.text !== spec.headingText || node.getAttribute('aria-labelledby') !== spec.headingId || unit.querySelectorAll(`[id="${spec.headingId}"]`).length !== 1) errors.push('B10 actual case heading/accessible identity differs');
   if (section !== null && section !== (print?spec.section:spec.websiteSection)) errors.push('B10 actual case is outside its adopted section');
-  if (node.text !== presentation.text) errors.push('B10 actual case text differs from independently reviewed selection');
+  const navigation = currentCaseNavigation(print);
+  const oldNavigation = caseNavigation(print);
+  const expectedText = oldNavigation.reduce((text, old, index) => text.replace(old.text, navigation[index].text), presentation.text);
+  if (node.text !== expectedText) errors.push('B10 actual case text differs from independently reviewed selection');
   const tables = node.querySelectorAll('table');
   if (tables.length !== spec.tables.length || tables.some((table,index) => !same(table.querySelectorAll('tr').map(row=>row.querySelectorAll('th,td').map(cell=>compact(cell.text))),spec.tables[index].rows.map(row=>row.map(compact))))) errors.push('B10 actual case tables differ');
-  if (!same(node.querySelectorAll('a').map(link=>({text:link.text,href:link.getAttribute('href')})),presentation.links)) errors.push('B10 actual case native navigation/downloads differ');
+  if (!same(node.querySelectorAll('a').map(link=>({text:link.text,href:link.getAttribute('href')})),[...navigation, ...presentation.links.slice(oldNavigation.length)])) errors.push('B10 actual case native navigation/downloads differ');
   if (!same(node.querySelectorAll('h1,h2,h3,h4,h5,h6').map(heading=>({tag:heading.tagName,id:heading.id??'',text:heading.text})),presentation.headings)) errors.push('B10 actual case heading roster/hierarchy differs');
   const conditions=node.querySelectorAll('.teaching-case-conditions'),items=node.querySelectorAll('li');
   if (conditions.length!==1||conditions[0].querySelector('strong')?.text!=='计算前提与适用范围'
@@ -252,7 +264,7 @@ function validateOrdinary(unit, rows, print, checked, route = jointProductionKey
   for (const row of rows) {
     const found=unit.querySelectorAll('p').filter(node=>!node.closest('.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope],.teaching-case,.docs-pagination')&&!node.querySelector('a[role="doc-noteref"]')&&compact(node.text)===compact(row.text));
     if (found.length!==1) {errors.push('B10 reviewed ordinary paragraph missing, repeated or changed');continue;}
-    const node=found[0],links=node.querySelectorAll('a'),wanted=(row.navigation??[]).map(link=>({...link,href:print?jointProductionBookHref(link.href):link.href}));
+    const node=found[0],links=node.querySelectorAll('a'),wanted=(row.navigation??[]).map(link=>({...link,href:print?frameworkBookHref(link.href,route):link.href}));
     if (!same(links.map(link=>({text:link.text,href:decodeURI(link.getAttribute('href')??'')})),wanted.map(link=>({...link,href:decodeURI(link.href)}))))errors.push('B10 reviewed ordinary navigation differs');
     else {
       if (row.section) {
@@ -290,7 +302,7 @@ export function validateRenderedJointProduction(document,path,value = original,c
   for(const node of unit.querySelectorAll('h1,h2,h3,h4,h5,h6,a[role="doc-noteref"],.teaching-case')){
     if(node.closest('[data-legacy-for],[data-legacy-notice],[data-legacy-scope]'))continue;
     if(node.classList?.contains('teaching-case')){const caseErrors=validateJointProductionCaseOutput(unit,{print,section,prose,independentDigest});errors.push(...caseErrors);if(!caseErrors.length)checked.add(node);
-      for(const link of caseNavigation(print)){const id=link.href.slice(1),found=unit.querySelectorAll(`[id="${id}"]`);if(found.length!==1||found[0].tagName!==(print?'H3':'H2')||found[0].text.replace(/复制章节链接$/,'')!==link.text)errors.push(`${path}: B10 case navigation lacks its exact native body section`);}continue;}
+      for(const link of currentCaseNavigation(print)){const id=link.href.slice(1),found=unit.querySelectorAll(`[id="${id}"]`);if(found.length!==1||found[0].tagName!==(print?'H3':'H2')||found[0].text.replace(/复制章节链接$/,'')!==link.text)errors.push(`${path}: B10 case navigation lacks its exact native body section`);}continue;}
     if(node.closest('.teaching-case'))continue;
     if(node.getAttribute('role')==='doc-noteref'){
       const id=node.getAttribute('data-reader-reference'),paragraph=node.closest('p'),claim=claims.get(id);actual.push({id,section});

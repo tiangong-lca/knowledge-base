@@ -12,6 +12,10 @@ function routesForChanges(current, sources) {
   const routes = new Set();
   if (current.changes.file.has('app/global.css')) for (const route of sources.keys()) routes.add(route);
   if (current.changes.file.has('components/teaching-case-client.tsx')) routes.add('/docs/book/wall-service-to-comparison');
+  if (current.changes.file.has('components/joint-production-case.tsx')) {
+    routes.add('/docs/book/allocation-and-substitution');
+    routes.add('/monograph/joint-production');
+  }
   for (const path of current.changes.file.keys()) {
     if (!/^content\/.+\.mdx?$/.test(path)) continue;
     routes.add(path.slice('content'.length).replace(/\.mdx?$/, '').replace(/\/index$/, ''));

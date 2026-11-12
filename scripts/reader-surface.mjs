@@ -11,7 +11,7 @@ import { assertReaderNumbering } from './reader-numbering.mjs';
 import { validateReadableBookCurrent } from './reader-current-edition-files.mjs';
 import { qualifyReadableBookCitations } from './reader-current-citations.mjs';
 import { validateReadableBookPublicArtifacts, validateReadableBookReviewedOutput } from './reader-current-output.mjs';
-import { qualifyCurrentHistoricalDocument } from './reader-publication-text.mjs';
+import { qualifyCurrentHistoricalDocument, validateCurrentHistoricalContexts } from './reader-publication-text.mjs';
 import { assertJointProductionOriginal, assertJointProductionHeadingHistory, assertJointProductionProseAccepted, jointProductionHeadingEntries, remapJointProductionCitations, validateJointProductionCoverage, validateRenderedJointProduction } from './reader-joint-production.mjs';
 import { assertHybridInventoryAccepted, assertHybridInventoryHeadingHistory, assertHybridInventoryProseAccepted, hybridInventoryHeadingEntries, remapHybridInventoryCitations, validateHybridInventoryCoverage, validateRenderedHybridInventory } from './reader-hybrid-inventory.mjs';
 import { assertExchangeSemanticsOriginal, assertExchangeSemanticsHeadingHistory, assertExchangeSemanticsCitationSources, assertExchangeSemanticsPartialHistory, assertExchangeSemanticsProseAccepted, exchangeSemanticsHeadingEntries, remapExchangeSemanticsCitations, validateExchangeSemanticsCoverage, validateRenderedExchangeSemantics } from './reader-exchange-semantics.mjs';
@@ -336,12 +336,12 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
     if (addresses.has(address)) throw new Error(`Duplicate historical citation address: ${address}`);
     addresses.add(address);
   }
-  const pages = new Map();
+  const pages = new Map(), documents = new Map();
   const errors = book ? [
     ...validateReadableBookReviewedOutput(book.current, numbered?.documents, book.sources, book.edition, book.catalog, book.readings),
     ...await validateReadableBookPublicArtifacts(root, book.current, book),
   ] : [];
-  for (const path of new Set([...sourceBaseline.pages.map(page => page.route), ...(history?.pages ?? []).map(page => page.route), ...(locations.printAdditions ?? []).map(page => page.route), ...(book ? [pmSelectionAppendix, ...entries.flatMap(entry => [entry.path, ...entry.targets.map(target => target.path), ...entry.scope?.targets?.map(target => target.path) ?? []])] : []), '/print'])) {
+  for (const path of new Set([...sourceBaseline.pages.map(page => page.route), ...(history?.pages ?? []).map(page => page.route), ...(locations.printAdditions ?? []).map(page => page.route), ...(book ? [...numbered.documents.keys(), pmSelectionAppendix, ...entries.flatMap(entry => [entry.path, ...entry.targets.map(target => target.path), ...entry.scope?.targets?.map(target => target.path) ?? []])] : []), '/print'])) {
     const html = await readFile(join(root, path.slice(1), 'index.html'), 'utf8').catch(error => {
       if (error.code !== 'ENOENT') throw error;
       return null;
@@ -352,17 +352,22 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
     }
     const document = numbered ? numbered.documents.get(path) : htmlParser.parse(html);
     if (!document) { errors.push(`${path}: missing independently verified numbered semantic document`); continue; }
-    qualifyCurrentHistoricalDocument(document, entries, book?.current?.migrations);
+    documents.set(path, document);
     const surface = readCitationSurface(document, path);
+    if (!surface.ids.has('main-content')) errors.push(`${path}: missing main-content fragment`);
+    pages.set(path, surface);
+    errors.push(...surface.errors);
+  }
+  for (const [path, document] of documents) {
+    qualifyCurrentHistoricalDocument(document, entries, book?.current?.migrations, pages);
+    if (book?.current?.migrations?.length)
+      errors.push(...validateCurrentHistoricalContexts(document, entries, path));
     if (book) errors.push(...validateRenderedDataApplicability(document,path,book.catalog,book.dataAccepted,undefined,"raw"), ...validateRenderedClimateAssembly(document,path,book.catalog,book.climateAccepted), ...validateRenderedClosingSynthesis(document,path,book.catalog,book.closingProse,book.closingHistory), ...validateRenderedWallSelection(document,path,book.wallOriginal,book.catalog,book.wallAccepted), ...validateRenderedJointProduction(document,path,book.jointOriginal,book.catalog,book.jointProse), ...validateRenderedCleanerProduction(document,path,book.cleanerAccepted,book.catalog), ...validateRenderedFunctionalReference(document,path,book.functionalAccepted,book.catalog,book.functionalProse), ...validateRenderedProcessNetwork(document,path,book.processAccepted,book.catalog,book.processProse), ...validateRenderedExchangeSemantics(document,path,book.exchangeOriginal,book.catalog,book.exchangeProse,book.exchangePartial), ...validateRenderedHybridInventory(document,path,book.hybridAccepted,book.catalog,book.hybridProse));
     if (book) {
       errors.push(...validateRenderedToxicityPathways(document,path,book.catalog,book.toxicityAccepted));
       errors.push(...validateRenderedReadablePedigree(document, path, book.catalog, book.pedigreeAccepted, undefined, book.readings));
       errors.push(...validateRenderedPmSelection(document, path, book.catalog, book.pmAccepted));
     }
-    if (!surface.ids.has('main-content')) errors.push(`${path}: missing main-content fragment`);
-    pages.set(path, surface);
-    errors.push(...surface.errors);
   }
   const print = pages.get('/print');
   if (print) {

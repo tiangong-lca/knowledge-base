@@ -13,7 +13,7 @@ import { climateAssemblyKey, climateAssemblyRoutes, climateAssemblyAppendix, cli
 import closingHistory from '@/config/closing-synthesis-heading-history.json';
 import closingProse from '@/config/closing-synthesis-prose-accepted.json';
 import { closingSynthesisHeadingEntries, remapClosingSynthesisCitations, validateClosingSynthesisCoverage } from '@/scripts/reader-closing-synthesis.mjs';
-import { getPresentationUnits } from '@/scripts/reader-numbering.mjs';
+import { getHeadingNumbering, getPresentationUnits } from '@/scripts/reader-numbering.mjs';
 import jointOriginal from '@/config/joint-production-original.json';
 import wallOriginal from '@/config/wall-selection-original.json';
 import wallHeadings from '@/config/wall-selection-heading-history.json';
@@ -157,6 +157,18 @@ export async function getCitationLabel(target: Destination) {
   }
   const page = print ? getPrintPages().find(page=>page.url===target.route) : source.getPages().find(page=>page.url===target.route);
   if (!page) throw new Error(`Missing citation destination ${target.route}`);
+  if (currentBookPlan.migrations.length) {
+    if (target.kind === 'heading') {
+      const prefix = `${printUnitAnchor(target.route)}-`;
+      const key = print && target.id.startsWith(prefix) ? target.id.slice(prefix.length) : target.id;
+      const heading = getHeadingNumbering(print ? 'book' : 'web', target.route, key)?.title
+        ?? (key === 'wall-case-reference' ? '计算表与参数'
+          : key === 'joint-batch-case-heading' ? '同一批共产品：份额、路线与比较残余' : null);
+      return `《${page.data.title}》${heading ? `·${heading}` : ''}`;
+    }
+    return `《${page.data.title}》${target.kind === 'note-group' ? '注释' : ''}`;
+  }
+
   if ([pmSelectionRoute, pmSelectionAppendix].includes(target.route)) return pmSelectionCitationLabel(target, pmAccepted);
   if (target.kind === 'heading' && target.route === readablePedigreeRoute) return readablePedigreeCitationLabel(target, pedigreeAccepted);
   if (target.kind === 'heading' && target.route === toxicityPathwaysRoute) return toxicityPathwaysCitationLabel(target, toxicityAccepted);

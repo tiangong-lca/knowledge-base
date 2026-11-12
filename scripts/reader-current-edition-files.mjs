@@ -7,7 +7,7 @@ import { readableBookBaselineDigest, readableBookAcceptancePins } from './reader
 export function isReadableBookMutableFile(path) {
   return /^content\/.+\.(mdx?|json)$/.test(path)
     || /^knowledge\/cases\/[^/]+\.publication\.json$/.test(path)
-    || ['config/book-edition.json', 'config/reader-numbering.json', 'components/teaching-case-client.tsx', 'app/global.css'].includes(path);
+    || ['config/book-edition.json', 'config/reader-numbering.json', 'components/teaching-case-client.tsx', 'components/joint-production-case.tsx', 'app/global.css'].includes(path);
 }
 
 export async function readReadableBookFiles(root, fixedFiles) {
@@ -20,7 +20,7 @@ export async function readReadableBookFiles(root, fixedFiles) {
     }
   }
   await Promise.all([discover('content'), discover('knowledge/cases')]);
-  for (const path of ['config/book-edition.json', 'config/reader-numbering.json', 'components/teaching-case-client.tsx', 'app/global.css']) result.set(path, await readFile(join(root, path)));
+  for (const path of ['config/book-edition.json', 'config/reader-numbering.json', 'components/teaching-case-client.tsx', 'components/joint-production-case.tsx', 'app/global.css']) result.set(path, await readFile(join(root, path)));
   return result;
 }
 

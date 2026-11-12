@@ -1,3 +1,4 @@
+import { projectOrdinaryReaderNavigation } from './reader-edition.mjs';
 import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import { createHash } from "node:crypto";
 import original from "../config/data-applicability-original.json" with { type: "json" };
@@ -476,7 +477,7 @@ function validateRenderedDataApplicability(document, path, catalog, accepted, in
           || continuation?.tagName !== "P" || continuation.text !== source.ordinary[0].text)
         errors.push(`${path}: Data applicability continuation loses actual final-proposition placement`);
     }
-    const expectedOrdinary = source.ordinary.map((row) => ({ ...row, links: row.links.map((link) => ({ ...link, href: print ? dataApplicabilityBookHref(link.href, route) : link.href })) }));
+    const expectedOrdinary = source.ordinary.map(row => projectOrdinaryReaderNavigation(row, route, print));
     if (!sameOrdinaryNavigation(ordinary, expectedOrdinary)
         || unit.querySelectorAll("figure").length !== (source.figure ? 1 : 0)) errors.push(`${path}: Data applicability reviewed ordinary navigation/figure count differs: ${route}`);
     const notes = unit.querySelectorAll("[data-reader-claim]");

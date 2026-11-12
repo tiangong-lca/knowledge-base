@@ -146,7 +146,7 @@ const knownLayouts = new Set([
   'B04:sections', 'B04:appendix-claims', 'B05:addition-metadata:cl-regional-sun-development-agenda',
   'B06:/docs/book/service-and-reference:navigation', 'B06:/docs/functional-unit:navigation', 'S03:web-headings',
   'B08:title', 'B08:headings', 'B08:ordinary-dispositions', 'S01:print-kind', 'S01:ordinary', 'S01:print-headings',
-  'B09:description', 'B10:headings', 'B10:registered-sections', 'B15:registered-sections', 'B25:registered-sections', 'B32:registered-sections',
+  'B09:description', 'B10:headings', 'B10:registered-sections', 'B10:case-navigation:web', 'B10:case-navigation:book', 'B15:registered-sections', 'B25:registered-sections', 'B32:registered-sections',
   'B17:reverse-premise-consumers', 'B17:reverse-evidence-consumers', 'B17:reverse-concept-consumers',
   'B19:reader-source', 'B27:reader-source', 'B27:external-consumers',
   'B29:reader-source', 'B29:interaction-mode', 'B29:case-copy:web', 'B29:case-copy:book', 'B29:trace-column-label',
@@ -290,7 +290,7 @@ export function qualifyReadableBookEdition(baseline, baselineDigest, acceptance,
         || unit.readingEntries.some(key => !nonempty(key) || !hasScope(unit.scope, key) || !actual.bookUnitKeys?.includes(key))))
       throw new Error(`Readable book unit has an unscoped current reading entry: ${unit.id}`);
     if ((unit.changes.some(row => row.kind === 'file' && (/^content\/.+\.mdx?$/.test(row.key)
-          || ['app/global.css', 'components/teaching-case-client.tsx'].includes(row.key)))
+          || ['app/global.css', 'components/teaching-case-client.tsx', 'components/joint-production-case.tsx'].includes(row.key)))
         || unit.changes.some(row => row.kind === 'record' && row.key.startsWith('claims:')))
         && (!Array.isArray(unit.outputs) || !unit.outputs.length))
       throw new Error(`Readable book unit lacks actual output receipts: ${unit.id}`);

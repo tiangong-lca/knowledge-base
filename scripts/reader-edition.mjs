@@ -3,7 +3,7 @@ import { assertPmSelectionRegistration, pmSelectionAppendix, pmSelectionBookHref
 import { assertDataApplicabilityRegistration, dataApplicabilityKey, dataApplicabilityRoutes, dataApplicabilityBookHref } from './reader-data-applicability.mjs';
 import { assertClimateAssemblyRegistration, climateAssemblyKey, climateAssemblyRoutes, climateAssemblyBookHref } from './reader-climate-assembly.mjs';
 import { assertClosingSynthesisRegistration, closingSynthesisKey, closingSynthesisRoutes, closingSynthesisBookHref } from './reader-closing-synthesis.mjs';
-import { getPresentationUnits, printReadingEntryAnchor, readerParts } from './reader-numbering.mjs';
+import { getContinuationLink, getPresentationUnits, printReadingEntryAnchor, readerParts } from './reader-numbering.mjs';
 import { assertJointProductionRegistration, jointProductionKey, jointProductionRoutes, jointProductionBookHref } from './reader-joint-production.mjs';
 import { assertHybridInventoryRegistration } from './reader-hybrid-inventory.mjs';
 import { assertExchangeSemanticsRegistration, exchangeSemanticsRoute, exchangeSemanticsTitles } from './reader-exchange-semantics.mjs';
@@ -201,4 +201,16 @@ export function validateRenderedFrameworkCoverage(bodyClaims, accepted) {
     for (const id of ids) if (actual.filter(claim=>claim===id).length!==1) errors.push(`Rendered framework body missing or duplicated: ${key} ${id}`);
   }
   return errors;
+}
+
+/** Match the runtime's two link rules when checking a signed ordinary paragraph. */
+export function projectOrdinaryReaderNavigation(row, route, print) {
+  const field = row.links ? 'links' : 'navigation';
+  let text = row.text;
+  const links = (row[field] ?? []).map(link => {
+    const continuation = getContinuationLink(print ? 'book' : 'web', route, link.href, link.text);
+    if (continuation && continuation.label !== link.text) text = text.replace(link.text, continuation.label);
+    return { text: continuation?.label ?? link.text, href: continuation?.href ?? (print ? frameworkBookHref(link.href, route) : link.href) };
+  });
+  return { ...row, text, [field]: links };
 }

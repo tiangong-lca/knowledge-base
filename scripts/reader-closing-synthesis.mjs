@@ -1,3 +1,4 @@
+import { projectOrdinaryReaderNavigation } from './reader-edition.mjs';
 import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import { readablePedigreeClosingRecords, readablePedigreeAcceptedDigest } from './reader-readable-pedigree.mjs';
 import { toxicityB32CurrentRecords, toxicityPathwaysAcceptedDigest } from './reader-toxicity-pathways.mjs';
@@ -8,7 +9,7 @@ import captured from '../config/closing-synthesis-heading-history.json' with { t
 import currentScientific from '../config/closing-synthesis-current-accepted.json' with { type: 'json' };
 import climateOriginal from '../config/climate-assembly-original.json' with { type: 'json' };
 import dataOriginal from '../config/data-applicability-original.json' with { type: 'json' };
-import { chapterAnchorPrefix, collectChapterClaimOccurrences, printUnitAnchor } from './reader-book.mjs';
+import { chapterAnchorPrefix, collectChapterClaimOccurrences, printUnitAnchor, readSourceHeading } from './reader-book.mjs';
 import { validateExchangeAnnotationOutput, unaccountedReaderText } from './reader-exchange-semantics.mjs';
 import { isVerifiedReaderPagination } from './reader-numbering-output.mjs';
 import { applyCurrentHistoricalEntries, readerParagraphText, validateReaderHistoricalText } from './reader-publication-text.mjs';
@@ -57,6 +58,24 @@ function sections(raw) {
   for(let i=1;i<pieces.length;i+=2){const explicit=/^(.*?)\s+\[#([^\]]+)\]$/.exec(pieces[i]),title=explicit?explicit[1]:pieces[i],id=explicit?explicit[2]:title;headings.push({id,title});occurrences.push(...collectChapterClaimOccurrences(pieces[i+1]).map(claim=>({id:claim,section:id})));}
   return {headings,occurrences};
 }
+function closingOrdinarySource(raw) {
+  const body = raw.replace(/^---\r?\n[\s\S]*?\r?\n---/, '');
+  const pieces = body.split(/^## (.+)\s*$/m);
+  const ordinary = [];
+  for (let index = 0; index < pieces.length; index += 2) {
+    const section = index ? readSourceHeading(pieces[index - 1]).id : null;
+    const remainder = pieces[index].replace(/<(?:Prose|Claim)\b[^>]*\/>/g, '');
+    for (const paragraph of remainder.split(/\n\s*\n/).map(value => value.trim()).filter(Boolean)) {
+      ordinary.push({
+        section,
+        text: paragraph.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1'),
+        links: [...paragraph.matchAll(/\[([^\]]+)\]\(([^)]+)\)/g)].map(match => ({ text: match[1], href: match[2] })),
+      });
+    }
+  }
+  return ordinary;
+}
+
 /** @param {any} value */
 export function assertClosingSynthesisOriginal(value=original) {
   if(closingSynthesisDigest(value)!=='febb6e039e8c1af69ea31bf88325785fa73b957b6f50183a87f3139089bc9325')throw new Error('B32 immutable original22/scientific closure differs from qualified 862e2fe');
@@ -128,6 +147,8 @@ export function validateClosingSynthesisCoverage(edition,sources,catalog,prose,i
     const actual = sections(raw);
     if (!sameRecord(metadata(raw), { title: source.title, description: source.description }) || !same(actual.headings, source.headings))
       errors.push(`B32 actual source metadata/headings differ: ${frozen.route}`);
+    if (!sameRecord(closingOrdinarySource(raw), source.ordinary))
+      errors.push(`B32 actual ordinary text differs from its reviewed source layout: ${frozen.route}`);
     if (!same(actual.occurrences, occurrences) || collectChapterClaimOccurrences(raw).length !== occurrences?.length)
       errors.push(`B32 body missing, duplicated, reordered, outside sections or misplaced: ${frozen.route}`);
   }
@@ -241,6 +262,25 @@ export function validateRenderedClosingSynthesis(document,path,catalog,prose,his
     else if(node!==title){const id=print?node.id.slice(prefix.length+1):node.id;section=id;headings.push({id,title:node.text.replace(/复制章节链接$/,'')});if(node.tagName!==(print?'H3':'H2')||closingHeadingConcealedText(node,unit))errors.push(`${path}: B32 actual formal heading differs or is hidden`);else checked.add(node);}
   }
   if(!same(actual,expected)||!same(headings,source.headings))errors.push(`${path}: B32 actual body order/sections/identity differ`);
+  const ordinary = [];
+  let ordinarySection = null;
+  for (const node of unit.querySelectorAll('h2,h3,p')) {
+    if (node.closest('.chapter-notes,.docs-pagination,[data-legacy-for],[data-legacy-notice],[data-legacy-scope]')) continue;
+    if (node !== title && node.tagName === (print ? 'H3' : 'H2')) {
+      ordinarySection = print ? node.id.slice(prefix.length + 1) : node.id;
+    }
+    if (node.tagName === 'P' && !checked.has(node) && !node.querySelector('[role="doc-noteref"]')) {
+      ordinary.push({
+        section: ordinarySection,
+        text: node.text,
+        links: node.querySelectorAll('a[href]').map(link => ({ text: link.text, href: link.getAttribute('href') })),
+      });
+      if (concealedText(node,unit)) errors.push(`${path}: B32 ordinary paragraph is hidden`);
+      else checked.add(node);
+    }
+  }
+  if (!sameRecord(ordinary, source.ordinary.map(row => projectOrdinaryReaderNavigation(row, route, print))))
+    errors.push(`${path}: B32 actual ordinary paragraphs differ from their reviewed source layout`);
   const groups=unit.querySelectorAll('.chapter-notes'),notes=unit.querySelectorAll('[data-reader-claim]');if(groups.length!==1||!same(notes.map(node=>node.getAttribute('data-reader-claim')),expected.map(row=>row.id)))errors.push(`${path}: B32 exact continuous note plan differs`);
   const annotationErrors=validateExchangeAnnotationOutput(document,unit,route,catalog,{print});errors.push(...annotationErrors);if(!annotationErrors.length)for(const note of notes){const annotation=note.querySelector('.claim-annotation');if(concealed(note,unit)||concealedText(annotation,unit))errors.push(`${path}: B32 annotation is hidden`);else checked.add(annotation);}
   const entries=applyCurrentHistoricalEntries(document, remapClosingSynthesisCitations([...history.originalHistoricalEntries,...closingSynthesisHeadingEntries(history,headingDigest)],history,prose,independentDigest,headingDigest)),unitEntries=entries.filter(entry=>entry.path===path&&entry.route===route);

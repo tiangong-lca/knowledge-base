@@ -1,3 +1,4 @@
+import { frameworkBookHref } from './reader-edition.mjs';
 import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import { createHash } from 'node:crypto';
 import { readSourceHeading, chapterAnchorPrefix, collectChapterClaimOccurrences, printUnitAnchor } from './reader-book.mjs';
@@ -185,7 +186,7 @@ export function validateRenderedFunctionalReference(document, path, accepted, ca
     for (const navigation of currentBookLayout(`B06:${route}:navigation`, prose.navigation.filter(navigation => navigation.route === route))) {
       const nodes = unit.querySelectorAll('p,a[role="doc-noteref"]');
       const paragraphs = nodes.filter(node => node.tagName === 'P' && !node.closest('.chapter-notes,[data-legacy-notice],[data-legacy-for],[data-legacy-scope]') && !node.querySelector('[role="doc-noteref"]')
-        && node.text === navigation.text && node.querySelectorAll('a').length === 1 && node.querySelector('a')?.getAttribute('href') === navigation.href && node.querySelector('a')?.text === navigation.linkText);
+        && node.text === navigation.text && node.querySelectorAll('a').length === 1 && node.querySelector('a')?.getAttribute('href') === (print ? frameworkBookHref(navigation.href, route) : navigation.href) && node.querySelector('a')?.text === navigation.linkText);
       const paragraph = paragraphs[0], index = nodes.indexOf(paragraph);
       const before = nodes.slice(0,index).filter(node => node.getAttribute('role') === 'doc-noteref').at(-1)?.getAttribute('data-reader-reference');
       const after = nodes.slice(index + 1).find(node => node.getAttribute('role') === 'doc-noteref')?.getAttribute('data-reader-reference');
@@ -193,6 +194,6 @@ export function validateRenderedFunctionalReference(document, path, accepted, ca
     }
   }
   const authoredLinks = unit.querySelectorAll('a[href]').filter(node => !node.closest('.chapter-notes,[data-legacy-notice],[data-legacy-for],[data-legacy-scope]'));
-  for (const href of ['/sources/#src-ilcd-process', '/concepts/#cn-fu', '/concepts/#cn-reference-flow', '/docs/book/wall-service-to-comparison/']) if (!authoredLinks.some(node => node.getAttribute('href') === href)) errors.push(`${path}: missing actual authored source/concept/wall link ${href}`);
+  for (const href of ['/sources/#src-ilcd-process', '/concepts/#cn-fu', '/concepts/#cn-reference-flow', '/docs/book/wall-service-to-comparison/']) if (!authoredLinks.some(node => node.getAttribute('href') === (print ? frameworkBookHref(href, route) : href))) errors.push(`${path}: missing actual authored source/concept/wall link ${href}`);
   return errors;
 }

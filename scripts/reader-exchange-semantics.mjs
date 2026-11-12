@@ -340,7 +340,7 @@ export function validateRenderedExchangeSemantics(document,path,accepted=origina
       const paragraphSections=new Map();let sourceSection=null;
       for(const node of unit.querySelectorAll(`h${print?3:2},p`)) {
         if(node.closest('[data-legacy-for],[data-legacy-notice],[data-legacy-scope],.chapter-notes'))continue;
-        if(node.tagName===(print?'H3':'H2'))sourceSection=node.text.replace(/复制章节链接$/,'');
+        if(node.tagName===(print?'H3':'H2'))sourceSection=print?node.id.slice(printUnitAnchor(historyRoute).length+1):node.id;
         else paragraphSections.set(node,sourceSection);
       }
       for(const block of currentBookLayout('S01:ordinary', partial.ordinary)){
