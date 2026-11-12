@@ -41,6 +41,19 @@ export function printReadingEntryAnchor(key) {
   return separatePrintEntries.has(key) ? historical.replace(/^print-unit-/, 'print-reading-unit-') : historical;
 }
 
+/** Authored reading links enter the current title; historical citation links
+ * use their own renderer and retain the original article fragment. */
+export function currentPrintReadingHref(href, print = false) {
+  if (typeof href !== 'string') return href;
+  const prefix = href.startsWith('/print/#') ? '/print/#' : print && href.startsWith('#') ? '#' : null;
+  if (!prefix) return href;
+  const fragment = href.slice(prefix.length);
+  for (const key of separatePrintEntries) {
+    if (fragment === printUnitAnchor(key)) return `${prefix}${printReadingEntryAnchor(key)}`;
+  }
+  return href;
+}
+
 /** Publication numbers belong to a view/edition; routes and claim IDs do not.
  * @returns {NumberingUnit[]}
  */

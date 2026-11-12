@@ -1,3 +1,4 @@
+import { currentPrintReadingHref } from './reader-numbering.mjs';
 import { currentBookFileMatches, currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import { frameworkBookHref } from './reader-edition.mjs';
 import { closingSynthesisKey, closingSynthesisRoutes } from './reader-closing-synthesis.mjs';
@@ -264,7 +265,7 @@ function validateOrdinary(unit, rows, print, checked, route = jointProductionKey
   for (const row of rows) {
     const found=unit.querySelectorAll('p').filter(node=>!node.closest('.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope],.teaching-case,.docs-pagination')&&!node.querySelector('a[role="doc-noteref"]')&&compact(node.text)===compact(row.text));
     if (found.length!==1) {errors.push('B10 reviewed ordinary paragraph missing, repeated or changed');continue;}
-    const node=found[0],links=node.querySelectorAll('a'),wanted=(row.navigation??[]).map(link=>({...link,href:print?frameworkBookHref(link.href,route):link.href}));
+    const node=found[0],links=node.querySelectorAll('a'),wanted=(row.navigation??[]).map(link=>({...link,href:print?frameworkBookHref(link.href,route):currentPrintReadingHref(link.href)}));
     if (!same(links.map(link=>({text:link.text,href:decodeURI(link.getAttribute('href')??'')})),wanted.map(link=>({...link,href:decodeURI(link.href)}))))errors.push('B10 reviewed ordinary navigation differs');
     else {
       if (row.section) {

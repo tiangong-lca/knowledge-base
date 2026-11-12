@@ -3,9 +3,20 @@ import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
 import { Fragment, jsx, jsxs } from 'react/jsx-runtime';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
-import { assertNumberingToc, assertReaderNumbering, getContinuationLink, getHeadingNumbering, getPresentationUnits, getUnitHeadingPlan, getUnitNumbering, readNumberedHeading, readerNumberingManifest } from './reader-numbering.mjs';
+import { assertNumberingToc, assertReaderNumbering, currentPrintReadingHref, getContinuationLink, getHeadingNumbering, getPresentationUnits, getUnitHeadingPlan, getUnitNumbering, printReadingEntryAnchor, readNumberedHeading, readerNumberingManifest } from './reader-numbering.mjs';
+import { printUnitAnchor } from './reader-book.mjs';
 
 const route = '/docs/book/service-and-reference';
+test('authored full-unit links use current reading entries without changing scoped citations', () => {
+  const key='/docs/book/data-quality-and-probability', old=printUnitAnchor(key), current=printReadingEntryAnchor(key);
+  assert.notEqual(old,current);
+  assert.equal(currentPrintReadingHref(`/print/#${old}`),`/print/#${current}`);
+  assert.equal(currentPrintReadingHref(`#${old}`,true),`#${current}`);
+  assert.equal(currentPrintReadingHref(`#${old}`),`#${old}`);
+  assert.equal(currentPrintReadingHref(`/print/#${old}-claim-cl-ped-estimate-boundary`),`/print/#${old}-claim-cl-ped-estimate-boundary`);
+  assert.equal(currentPrintReadingHref('/sources/#src-example'),'/sources/#src-example');
+  assert.equal(currentPrintReadingHref('/print/#not-a-declared-unit'),'/print/#not-a-declared-unit');
+});
 const html = (number='6.1',title='服务要求') => `<h2 data-reader-heading-key="服务要求"><a href="#服务要求"><span data-reader-number="">${number}</span> <span data-reader-heading-title="">${title}</span></a><button>复制章节链接</button></h2>`;
 
 test('current book retains 40 actual units, 32 chapters and all seven real part groups', () => {

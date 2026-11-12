@@ -1,3 +1,4 @@
+import { currentPrintReadingHref } from './reader-numbering.mjs';
 import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import readingRegister from '../knowledge/research/readings.json' with { type: 'json' };
 import { getClaimEvidence } from './knowledge.mjs';
@@ -344,7 +345,7 @@ export function validateRenderedExchangeSemantics(document,path,accepted=origina
         else paragraphSections.set(node,sourceSection);
       }
       for(const block of currentBookLayout('S01:ordinary', partial.ordinary)){
-        const found=bodyParagraphs.filter(node=>normalize(node.text)===normalize(plain(block.text))),expectedLinks=[...block.text.matchAll(/\[([^\]]+)\]\(([^)]*)\)/g)].map(match=>({text:match[1],href:print?frameworkBookHref(match[2],historyRoute):match[2]}));
+        const found=bodyParagraphs.filter(node=>normalize(node.text)===normalize(plain(block.text))),expectedLinks=[...block.text.matchAll(/\[([^\]]+)\]\(([^)]*)\)/g)].map(match=>({text:match[1],href:print?frameworkBookHref(match[2],historyRoute):currentPrintReadingHref(match[2])}));
         if(found.length!==1||paragraphSections.get(found[0])!==block.sourceHeading)errors.push(`${path}: S01 retained ordinary content missing, repeated or misplaced: ${block.block}`);
         else if(!same(found[0].querySelectorAll('a').map(node=>({text:node.text,href:node.getAttribute('href')})),expectedLinks))errors.push(`${path}: S01 retained ordinary navigation label or target missing or changed: ${block.block}`);
       }

@@ -3,7 +3,7 @@ import { assertPmSelectionRegistration, pmSelectionAppendix, pmSelectionBookHref
 import { assertDataApplicabilityRegistration, dataApplicabilityKey, dataApplicabilityRoutes, dataApplicabilityBookHref } from './reader-data-applicability.mjs';
 import { assertClimateAssemblyRegistration, climateAssemblyKey, climateAssemblyRoutes, climateAssemblyBookHref } from './reader-climate-assembly.mjs';
 import { assertClosingSynthesisRegistration, closingSynthesisKey, closingSynthesisRoutes, closingSynthesisBookHref } from './reader-closing-synthesis.mjs';
-import { getContinuationLink, getPresentationUnits, printReadingEntryAnchor, readerParts } from './reader-numbering.mjs';
+import { currentPrintReadingHref, getContinuationLink, getPresentationUnits, printReadingEntryAnchor, readerParts } from './reader-numbering.mjs';
 import { assertJointProductionRegistration, jointProductionKey, jointProductionRoutes, jointProductionBookHref } from './reader-joint-production.mjs';
 import { assertHybridInventoryRegistration } from './reader-hybrid-inventory.mjs';
 import { assertExchangeSemanticsRegistration, exchangeSemanticsRoute, exchangeSemanticsTitles } from './reader-exchange-semantics.mjs';
@@ -165,10 +165,12 @@ export function publishedHeadingEntries(history) {
 /** Qualified links for the bounded assembly; ambiguous old scopes keep their website meaning. */
 export function frameworkBookHref(href, currentKey) {
   if (typeof href !== 'string') return href;
+  href = currentPrintReadingHref(href, true);
   const readingRoute = href.replace(/\/$/, '');
   if (currentBookPlan.readingEntries.has(readingRoute)) return `#${printReadingEntryAnchor(readingRoute)}`;
   href = pmSelectionBookHref(href, currentKey);
   href = dataApplicabilityBookHref(climateAssemblyBookHref(closingSynthesisBookHref(jointProductionBookHref(href)), currentKey), currentKey);
+  href = currentPrintReadingHref(href, true);
   if (href.startsWith('/print/#')) return href.slice('/print/'.length);
   const [path,fragment] = href.split('#');
   const route = path.replace(/\/$/,'');

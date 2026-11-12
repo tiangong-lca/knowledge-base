@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-12
-lastReviewedCommit: 4f664864c58443cb6811f28949a0efb0e0c04590
+lastReviewedCommit: 69138eb11aa6fe81c4d338bd473452794bcdf005
 ---
 
 # Publication architecture
@@ -60,6 +60,13 @@ validator/exporter refuses preview state. Generic test fixtures have a separate
 entry point and cannot be enabled by renaming the real package. The chapter
 sections below retain their original generation-specific obligations; current
 amendments must pass the complete-edition checks in addition to those duties.
+
+Authored full-unit `/print/#...` links resolve through the declared current
+reading entries. The transformation matches only an exact registered unit
+fragment; note, section, external and unknown fragments remain unchanged.
+Historical references use their own renderer and keep the original scoped
+destination. The website and book ordinary-navigation guards apply the same
+bounded transformation before comparing actual labels and targets.
 
 ## Toxicity pathway publication
 
