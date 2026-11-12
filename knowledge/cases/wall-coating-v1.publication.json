@@ -9,7 +9,7 @@
   "claims": [
     {
       "id": "cl-wall-question",
-      "textTemplate": "现在把比较完整地做一遍：让 {{input.service.area}} m² 干燥室内墙面在 {{input.service.intervalYears}} 年内连续保持指定的均匀颜色和至少 0.98 的假定遮盖率，应分别启动哪些活动，最后能够怎样比较？涂料 A、B 的身份、性能、涂装计划、投入、排放量、基底适配、电力参数范围与比较容差均为教学假定；CO2 与化石来源 CH4 保留真实的物质身份，表征因子采用注明出处的数值。先从已有平整、完好的基底开始，再考察粗糙基底会改变什么。",
+      "textTemplate": "先固定要使用的墙，而不是要购买多少漆。设 {{input.service.area}} m² 干燥室内墙面，要在 {{input.service.intervalYears}} 年内连续保持指定的均匀颜色和至少0.98的遮盖率。换一种漆，涂装计划、用量和供电会怎样变？涂料A、B的身份、性能、涂装计划、投入、排放量、基底适配、电力参数范围和比较容差都是教学设定；CO2和化石CH4仍是具名物质，表征因子采用有出处的数值。先算完好的平整墙面，再换粗糙基底。",
       "kind": "proposal",
       "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
       "evidenceIds": [],
@@ -70,7 +70,7 @@
     },
     {
       "id": "cl-wall-same-mass",
-      "textTemplate": "先用一个会改错问题的做法检验这条联系。若两者都只取 {{input.countercase.massKg}} kg，A 为了维持十年仍须分两次使用，只能服务 {{smooth.low.sameMass.alternatives.paintA.serviceArea}} m²；B 却服务 {{smooth.low.sameMass.alternatives.paintB.serviceArea}} m²。在共同 θ＝{{smooth.low.theta}} 时，二者指标分别是 {{smooth.low.sameMass.alternatives.paintA.indicator}} 与 {{smooth.low.sameMass.alternatives.paintB.indicator}} kg CO2-eq。这个“等质量”结果回答的是各供给这份质量的负担，伴随的十年墙面服务并不相同。把 A 恢复到规定面积后，其结果变为 {{smooth.low.alternatives.paintA.indicator}}，B 仍为 {{smooth.low.alternatives.paintB.indicator}}；看似较低的一方随之反转。我们还没有因此得到真实涂料优劣，而是找出了改变比较对象的那一步：把服务相等换成了采购质量相等。",
+      "textTemplate": "如果只对齐买来的质量，会发生什么？同样取 {{input.countercase.massKg}} kg，A要分两次才能维持十年，只够涂 {{smooth.low.sameMass.alternatives.paintA.serviceArea}} m²；B能涂 {{smooth.low.sameMass.alternatives.paintB.serviceArea}} m²。在共同 θ＝{{smooth.low.theta}} 时，供给同一质量的指标分别为 {{smooth.low.sameMass.alternatives.paintA.indicator}} 和 {{smooth.low.sameMass.alternatives.paintB.indicator}} kg CO2-eq，A较低。恢复相同的墙面服务后，A成为 {{smooth.low.alternatives.paintA.indicator}}，B仍为 {{smooth.low.alternatives.paintB.indicator}}，较低的一方变成B。改变的首先是比较对象：等质量没有实现等面积的十年服务。两次结果都只属于这个教学模型。",
       "kind": "calculation",
       "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
       "evidenceIds": [],
@@ -125,7 +125,7 @@
     },
     {
       "id": "cl-wall-activities",
-      "textTemplate": "逐行解 As＝f 比先背逆矩阵更容易看见工作怎样发生。前三行直接给出涂料与准备次数，电力行再要求所供电力抵消前三列的消耗。A 因而启动 {{smooth.display.alternatives.paintA.activities.0}} 次 P-A 和 {{smooth.display.alternatives.paintA.activities.3}} 次 P-E；B 启动 {{smooth.display.alternatives.paintB.activities.1}} 次 P-B 和 {{smooth.display.alternatives.paintB.activities.3}} 次 P-E。核对 B 的电力行，就是 {{input.technosphere.matrix.3.1}} kWh/次 × {{smooth.display.alternatives.paintB.activities.1}} 次＋1 kWh/次 × {{smooth.display.alternatives.paintB.activities.3}} 次＝0 kWh；B 产品行却留下所需的 {{smooth.display.alternatives.paintB.balance.1}} kg。最终电力需求为零与实际使用电力完全相容。计算器逐项展示 f → s 的全部轨迹，读者可以把解乘回矩阵检查这两种净交付。",
+      "textTemplate": "从上到下解As＝f。前三行给出涂料和准备的次数；到电力行，P-E必须供应恰能抵消前三列消耗的电。A启动 {{smooth.display.alternatives.paintA.activities.0}} 次P-A和 {{smooth.display.alternatives.paintA.activities.3}} 次P-E；B启动 {{smooth.display.alternatives.paintB.activities.1}} 次P-B和 {{smooth.display.alternatives.paintB.activities.3}} 次P-E。以B为例，电力行是 {{input.technosphere.matrix.3.1}} kWh/次 × {{smooth.display.alternatives.paintB.activities.1}} 次＋1 kWh/次 × {{smooth.display.alternatives.paintB.activities.3}} 次＝0 kWh；B产品行交付 {{smooth.display.alternatives.paintB.balance.1}} kg。电力全部供给内部活动，最终电力需求为零。计算表列出各步，可以把s乘回矩阵核对净交付。",
       "kind": "calculation",
       "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
       "evidenceIds": [
@@ -286,7 +286,7 @@
     },
     {
       "id": "cl-wall-metric-meaning",
-      "textTemplate": "要读懂这个正面的测量对象，可以把 GWP 看成一个特定比较：在选定时间范围内，某气体理想化单位脉冲排放所产生的时间积分辐射强迫，与 CO2 参照脉冲相比较。这个物理比值本身无量纲；计算中保留 kg CO2-eq/kg 气体的写法，是为了交代质量与参照身份。因此刚算出的 I 表达这个相对积分强迫尺度上的模型化潜势。它没有给出实际排放了多少千克 CO2、当地观察到多少损害、排放后第 100 年的温升，或一个终点损害数；这些对象需要不同的模型与证据。",
+      "textTemplate": "要读懂这一指标，可以把 GWP 看成一个特定比较：在选定时间范围内，某气体理想化单位脉冲排放所产生的时间积分辐射强迫，与 CO2 参照脉冲相比较。这个物理比值本身无量纲；计算中保留 kg CO2-eq/kg 气体的写法，是为了交代质量与参照身份。因此刚算出的 I 表达这个相对积分强迫尺度上的模型化潜势。它没有给出实际排放了多少千克 CO2、当地观察到多少损害、排放后第 100 年的温升，或一个终点损害数；这些对象需要不同的模型与证据。",
       "kind": "interpretation",
       "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
       "evidenceIds": [
@@ -349,7 +349,7 @@
     },
     {
       "id": "cl-wall-paired-range",
-      "textTemplate": "先在同一个 θ 下作差，就能保住已知的关系。由排放和用电次数，平整基底的差值整理成 Δ(θ)＝{{smooth.display.comparison.affine.intercept}}＋{{smooth.display.comparison.affine.slope}}θ，单位为 kg CO2-eq/规定服务。它是斜率为正的仿射函数，所以整个闭区间的最小值和最大值就在两端，而不靠抽查三个展示点来猜测。端点给出 [{{smooth.display.comparison.range.0}}, {{smooth.display.comparison.range.1}}]。差值在 θ＝{{smooth.display.comparison.crossoverTheta}} 穿过零，故在允许范围的一侧 B 较低、另一侧 A 较低；展示点的 A 较低尚不能升级为整个范围的严格排序。图中的连线表达的正是这条由模型推出的关系。",
+      "textTemplate": "同一供电条件下，先用B的指标减A。由两种排放与用电次数得到平整基底的Δ(θ)＝{{smooth.display.comparison.affine.intercept}}＋{{smooth.display.comparison.affine.slope}}θ，单位为kg CO2-eq/规定服务。斜率为正，最小值和最大值因此出现在允许范围的两个端点：配对差值为 [{{smooth.display.comparison.range.0}}, {{smooth.display.comparison.range.1}}]。θ＝{{smooth.display.comparison.crossoverTheta}} 时Δ恰为零，低于交点时B较低，高于交点时A较低。展示点只落在其中一侧，不能替整个范围判定严格排序。",
       "kind": "calculation",
       "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
       "evidenceIds": [],
@@ -399,7 +399,7 @@
     },
     {
       "id": "cl-wall-rough-demand",
-      "textTemplate": "最后只换墙面的初始条件：基底粗糙但完好，作者假定 A 能直接达到原服务，B 必须先对全部 {{input.service.area}} m² 做一次准备。最终面积、期间、涂料质量、耐久假设、所有过程系数、共同 θ、因子版本和容差都不变。因而 B 的需求第三坐标从 {{smooth.display.alternatives.paintB.demand.2}} 变为 {{rough.display.alternatives.paintB.demand.2}} m²，P-P 从零活动变为 {{rough.display.alternatives.paintB.activities.2}} 次，供电次数随之从 {{smooth.display.alternatives.paintB.activities.3}} 增至 {{rough.display.alternatives.paintB.activities.3}}。这是服务实现条件激活了一个过程：矩阵事先留有该列，平整情景不用它，粗糙情景要用它。把旧结果除以另一种面积或期间，仍会让准备次数留在零，产生不了这笔新投入。",
+      "textTemplate": "现在只把基底由平整改为粗糙，仍假定它完好。A直接达到原服务，B须先准备全部 {{input.service.area}} m²。最终面积、期间、涂料质量、耐久假设、过程系数、共同θ、因子版本和容差都保持不变。B的需求第三坐标由 {{smooth.display.alternatives.paintB.demand.2}} 增至 {{rough.display.alternatives.paintB.demand.2}} m²，因而启动 {{rough.display.alternatives.paintB.activities.2}} 次P-P，供电从 {{smooth.display.alternatives.paintB.activities.3}} 次增至 {{rough.display.alternatives.paintB.activities.3}} 次。准备列原本就在矩阵里，需求变动才使它启动。改用每平方米表示旧结果，不会凭空增加准备操作。",
       "kind": "calculation",
       "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
       "evidenceIds": [],
@@ -433,7 +433,7 @@
     },
     {
       "id": "cl-wall-exercise",
-      "textTemplate": "读者可以先遮住答案，试做一个接续任务。有人建议：“既然展示点上 A 较低，平整墙面也选 A；把粗糙墙面的结果折成每 m²，就能和原平整结果合并。至于误差，分别减两个结果范围的极端就够了。”请沿本例指出三处操作各自需要哪项前提，再在不改变输入的情况下给出能成立的比较。同时独立复核粗糙情景 B 的电力行与两项排放和：从新增准备需求开始，不要只复制已经显示的最终指标。",
+      "textTemplate": "试着回应三项建议：“展示点上A较低，平整墙面也选A。粗糙墙面改报每平方米，就能与平整墙面合并。最后，把两方案各自的范围取极端值相减，就足以判断差异。”逐项说明它们需要什么前提，再用同一模型给出支持得住的判断。再从B新增的准备需求起算，复核粗糙情景的电力平衡和两种气体各自的排放总量。",
       "kind": "proposal",
       "scope": "墙面涂装教学算例：固定的服务、活动与排放假设，以及具名来源的表征因子。",
       "evidenceIds": [],

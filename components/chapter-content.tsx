@@ -1,5 +1,5 @@
 import { NumberedTitle } from '@/components/numbered-heading';
-import { assertNumberingToc, getContinuationLink, getHeadingNumbering, getUnitHeadingPlan } from '@/scripts/reader-numbering.mjs';
+import { assertNumberingToc, currentPrintReadingHref, getContinuationLink, getHeadingNumbering, getUnitHeadingPlan } from '@/scripts/reader-numbering.mjs';
 import { TeachingCase } from '@/components/teaching-case';
 import { projectExchangeSemanticsRaw, historyPrintCrossReference, historyPrintDestination } from '@/scripts/reader-exchange-semantics.mjs';
 import Link from 'next/link';
@@ -50,13 +50,13 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
   function ReaderSection({ id: section }: { id: string }) {
     const id = print ? `${prefix}-${section}` : section;
     return <><LegacyCitationAliases ids={legacy.aliases.get(id)} target={id} />
-      <span id={id} data-reader-section={id} className="reader-section-target" /></>;
+      <span id={id} data-reader-section={id} className="reader-section-target" /><RetainedScope entry={legacy.scopes.get(id)} /></>;
   }
   function ChapterTeachingCase(props: Parameters<typeof TeachingCase>[0]) { return <TeachingCase {...props} print={print} numbering={getUnitHeadingPlan(view, page.url).filter(heading=>heading.type==='case')} />; }
   const MDX = page.data.body;
   function ReaderLink(props: AnchorHTMLAttributes<HTMLAnchorElement>) {
     const continuation = typeof props.children==='string' ? getContinuationLink(view, page.url, props.href, props.children) : null;
-    return <a {...props} href={continuation?.href ?? (print ? frameworkBookHref(props.href, page.url) : props.href)}>{continuation?.label ?? props.children}</a>;
+    return <a {...props} href={continuation?.href ?? (print ? frameworkBookHref(props.href, page.url) : currentPrintReadingHref(props.href))}>{continuation?.label ?? props.children}</a>;
   }
   const defaults = getMDXComponents();
   const headings = Object.fromEntries(([1, 2, 3, 4, 5, 6] as const).map(level => {

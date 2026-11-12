@@ -36,7 +36,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "以相同时间尺度约去权重比的单位，仅在归一化时作吨到克换算。",
-      "textTemplate": "现在可以算一克排入空气的 NMVOC 该记多少点。这里采用表 14 中排除甲烷、氯氟烃的一般 NMVOC 项，苯等有专用因子的物质另行辨认。2013 年版的归一化流与现状流都是每年 89,025 吨，临界流是每年 81,000 吨。归一化时把吨换成克，权重中分子分母的吨则可直接相消。计算 10¹² ÷ (89,025 × 10⁶) × (89,025/81,000)²，得 {{evaluated.reconstruction.nmvoc.reconstructedFactor.fixed6}} UBP/g。报告公布的因子为 {{input.facts.nmvocPublishedFactor.value}} UBP/g。多列出的几位小数只展示算术过程。"
+      "textTemplate": "以2013年版表14为例，计算的是一克排入空气的一般NMVOC，排除甲烷、氯氟烃；苯等另有专用因子的物质还要分别匹配。归一化流和现状流均为每年89,025吨，临界流为每年81,000吨。归一化流89,025吨/年等于89,025×10⁶克/年。1 UBP除以这个年度流，单位为UBP·年/克，再乘c的每年10¹²，年便相消；权重中两项吨/年之比也没有单位。代入数值：10¹² ÷ (89,025 × 10⁶) × (89,025/81,000)² = {{evaluated.reconstruction.nmvoc.reconstructedFactor.fixed6}} UBP/g。表中公布 {{input.facts.nmvocPublishedFactor.value}} UBP/g；多出的数位只用于展示重算。"
     },
     {
       "id": "cl-es-nox",
@@ -66,7 +66,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "以原始年度量计算，不从表内已舍入权重反推。",
-      "textTemplate": "表 15 的 NOx 按 NO₂ 质量计。归一化流和现状流均为每年 78,704 吨，临界流为每年 45,000 吨。相除再平方得到约 {{evaluated.reconstruction.nox.squaredWeighting.fixed6}} 的权重，把它乘上 10¹² ÷ (78,704 × 10⁶)，得到 {{evaluated.reconstruction.nox.reconstructedFactor.fixed6}} UBP/g，原表公布 {{input.facts.noxPublishedFactor.value}} UBP/g。“按 NO₂ 计”限定的是这克排放的质量口径；它没有给出街道旁的 NO₂ 浓度。"
+      "textTemplate": "表15的NOx按NO₂质量计。归一化流和现状流均为每年78,704吨，临界流为每年45,000吨。先用现状流除以临界流，再平方，得权重约 {{evaluated.reconstruction.nox.squaredWeighting.fixed6}}；归一化流78,704吨/年换成78,704×10⁶克/年。1 UBP除以这个年度流所得的年因子，与同一尺度常数c中的年⁻¹相消。乘上归一化及尺度项10¹² ÷ (78,704 × 10⁶)，得 {{evaluated.reconstruction.nox.reconstructedFactor.fixed6}} UBP/g。原表公布 {{input.facts.noxPublishedFactor.value}} UBP/g。按NO₂计说明排放质量的口径，不能由此读出居民吸入的NO₂浓度。"
     },
     {
       "id": "cl-es-service",
@@ -82,7 +82,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "指定共同服务，仅将两行清单作为方案间可变部分。",
-      "textTemplate": "回到涂装。约定在瑞士同一基底上完成 {{input.service.amount}} 平方米涂装，遮盖效果、耐久性和质量相同。只设两项排入空气的流量有差异，其余活动和流量相同。甲每次服务排放 {{input.illustration.A.nmvoc}} 克一般 NMVOC 和 {{input.illustration.A.nox}} 克按 NO₂ 计的 NOx；乙分别排放 {{input.illustration.B.nmvoc}} 克和 {{input.illustration.B.nox}} 克。假定这里的一般 NMVOC 均适用表 14。服务等效和清单克数都是教学设定。"
+      "textTemplate": "现在回到章首的涂装。设甲乙在瑞士同一基底上完成 {{input.service.amount}} 平方米涂装，遮盖效果、耐久性和质量相同，其他活动和流量相同。每次服务，甲排放 {{input.illustration.A.nmvoc}} 克一般NMVOC和 {{input.illustration.A.nox}} 克按NO₂计的NOx，乙分别排放 {{input.illustration.B.nmvoc}} 克和 {{input.illustration.B.nox}} 克。服务等效、两行克数以及一般NMVOC均适用表14，都是这次教学比较的设定。"
     },
     {
       "id": "cl-es-score",
@@ -97,7 +97,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "按克数乘各自表列因子并加总，比较乙减甲；共同项相消。",
-      "textTemplate": "按公布值给两行排放分别计分。甲的 NMVOC 贡献 4 × 14 = {{evaluated.illustration.baseline.A.nmvocContribution.exact}} 点，NOx 贡献 1 × 39 = {{evaluated.illustration.baseline.A.noxContribution.exact}} 点，共 {{evaluated.illustration.baseline.A.total.exact}} 点。乙的两项贡献分别为 {{evaluated.illustration.baseline.B.nmvocContribution.exact}} 和 {{evaluated.illustration.baseline.B.noxContribution.exact}} 点，共 {{evaluated.illustration.baseline.B.total.exact}} 点。从甲改用乙，少排两克 NMVOC 省下 28 点，多排一克 NOx 增加 39 点，合计增加 {{evaluated.illustration.baseline.differenceBMinusA.exact}} 点。这是两项差异流的分数；若还有相同的背景负担，两边都应加上它，分差仍是 11 点。"
+      "textTemplate": "先用2013年表列因子算两个总数。甲的NMVOC贡献4 × 14 = {{evaluated.illustration.baseline.A.nmvocContribution.exact}} 点，NOx贡献1 × 39 = {{evaluated.illustration.baseline.A.noxContribution.exact}} 点，共 {{evaluated.illustration.baseline.A.total.exact}} 点。乙的两项贡献分别为 {{evaluated.illustration.baseline.B.nmvocContribution.exact}} 点和 {{evaluated.illustration.baseline.B.noxContribution.exact}} 点，共 {{evaluated.illustration.baseline.B.total.exact}} 点。再看分差的来源：乙少排两克NMVOC省下28点，多排一克NOx增加39点，净增 {{evaluated.illustration.baseline.differenceBMinusA.exact}} 点。若有相同的背景负担，两边各自加上同样的分数，分差仍是11点。"
     },
     {
       "id": "cl-es-scale",
@@ -112,7 +112,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "共同正尺度可以从总和和分差中提出。",
-      "textTemplate": "如果把两个因子都乘 {{input.illustration.commonFactorMultiplier}}，甲变成 {{evaluated.illustration.commonScaling.A.total.exact}} 点，乙变成 {{evaluated.illustration.commonScaling.B.total.exact}} 点。这样重定了点数的尺度，但乙少排两克 NMVOC 所换来的收益与多排一克 NOx 所付的代价仍是原来的比例。对两个总分同乘任何正数，次序都能保留。"
+      "textTemplate": "假如只想改点数的大小，把两项因子都乘 {{input.illustration.commonFactorMultiplier}}，甲乙分别成为 {{evaluated.illustration.commonScaling.A.total.exact}} 点和 {{evaluated.illustration.commonScaling.B.total.exact}} 点。少排两克NMVOC的收益和多排一克NOx的代价按相同比例放大。两项都乘同一个正数，排序就不会变。"
     },
     {
       "id": "cl-es-threshold",
@@ -128,7 +128,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "令两行贡献的差额为零，并检查斜率为正。",
-      "textTemplate": "另一种试验只改变两项负担的相对重要性。保持两行清单及公布的 NMVOC 因子不动，把公布的 NOx 因子乘一个正数 x。乙减甲现在是 39x − 28 点。在 x = {{evaluated.illustration.sensitivity.tieMultiplier.exact}} 时，多排一克 NOx 恰好抵消少排两克 NMVOC，两种工艺的这部分分数都为 84。x 更大时甲较低，x 更小时乙较低。这个临界点属于采用表列整数因子的比较；改用未舍入的重算值，临界点也会略有不同。"
+      "textTemplate": "要看什么会改变排序，只把NOx因子乘正数x，清单和NMVOC因子保持不变。乙比甲多出的NOx贡献为39x点，少掉的NMVOC贡献是28点，乙减甲就是39x − 28。令两部分相抵，得到x = {{evaluated.illustration.sensitivity.tieMultiplier.exact}}，此时两方案的差异流都计84点。x较大时甲的分数较低，x较小时乙较低。这里用的是表列整数因子；用未舍入的重算值，交点也会略变。"
     },
     {
       "id": "cl-es-test",
@@ -143,7 +143,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "固定两行清单和一个因子，把另一个因子折半。",
-      "textTemplate": "取 x = {{input.illustration.sensitivity.displayPoint}}，只把 NOx 的计分因子改成 {{evaluated.illustration.sensitivity.noxFactorAtDisplay.exact}} UBP/g。甲得到 {{evaluated.illustration.sensitivity.display.A.total.exact}} 点，乙得到 {{evaluated.illustration.sensitivity.display.B.total.exact}} 点。前后两次比较使用完全一样的排放克数。次序改变，说明这个具体取舍依赖于两项因子的相对大小。x 是我们为找出分界而引入的教学参数，没有替瑞士改写减排目标，也没有为未来政策赋予概率。"
+      "textTemplate": "例如取x = {{input.illustration.sensitivity.displayPoint}}，NOx因子改为 {{evaluated.illustration.sensitivity.noxFactorAtDisplay.exact}} UBP/g。清单不动，甲成为 {{evaluated.illustration.sensitivity.display.A.total.exact}} 点，乙成为 {{evaluated.illustration.sensitivity.display.B.total.exact}} 点。原先是甲分数较低，现在变成乙较低。这里故意只动一项因子来找分界；x不代表瑞士已经改变的政策，也没有概率含义。"
     }
   ]
 }

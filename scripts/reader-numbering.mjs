@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import { Fragment, isValidElement } from 'react';
 import { printUnitAnchor } from './reader-book.mjs';
 import numbering from '../config/reader-numbering.json' with { type: 'json' };
+import { currentBookLayout, currentBookPlan } from './reader-current-expectations.mjs';
 
 /** @typedef {{key:string,source:string,kind:string,title:string,part?:number,label:string|null,prefix:string|null,ordinal:number|null,partLabel:string|null,partTitle?:string|null}} NumberingUnit */
 /** @typedef {{key:string,id?:string,title:string,depth:number,type:string,number:string}} HeadingNumber */
@@ -10,20 +11,47 @@ const routeKey = value => typeof value === 'string' ? value.replace(/\/+$/, '') 
 const chinese = ['', '一', '二', '三', '四', '五', '六', '七'];
 // Main owns the independently reviewed current-edition pin, separate from immutable histories.
 /** @type {string|null} */
-export const readerNumberingDigest = "70bf9fcf0e2d791d236fec9d0c5146216555d9093562f7b16880d145f95046a1";
-export function assertReaderNumbering(value = numbering, independentDigest = readerNumberingDigest) {
-  if (createHash('sha256').update(JSON.stringify(value)).digest('hex') !== independentDigest) throw new Error('Reader numbering differs from the independently pinned actual 39-unit/32-chapter/47-web-unit quality-score heading and part inventory');
+export const readerNumberingDigest = "edf363ea6a65b1f4093a224ec17124b618ac34405f6f4abdd6127bccacd01306";
+export function assertReaderNumbering(value = numbering, independentDigest = currentBookLayout('book:numbering-pin', readerNumberingDigest)) {
+  if (createHash('sha256').update(JSON.stringify(value)).digest('hex') !== independentDigest) throw new Error('Reader numbering differs from the independently pinned actual heading and part inventory');
+  if (currentBookLayout('book:formal-section-budget', false)) {
+    const counts = value.book.filter(unit => unit.kind === 'chapter').map(unit =>
+      value.headings[unit.source]?.filter(slot => slot.type === 'mdx' && slot.depth === 2).length ?? 0);
+    if (counts.length !== 32 || counts.some(count => count < 3 || count > 5)
+        || counts.reduce((sum, count) => sum + count, 0) > 120)
+      throw new Error('Final book requires 32 chapters with three to five formal sections each and at most 120 in total');
+  }
 }
 export const readerNumberingManifest = numbering;
+export const bookTopicPresentation = currentBookLayout('book:notes-presentation', {
+  title: '概念与实践专题', labelPrefix: '专题', keepPrefix: false,
+});
 export const readerParts = numbering.parts.map(part => ({ ...part, label: `第${chinese[part.number]}部` }));
 
-// These units keep separate current and historical print entries. When the
-// particulate chapter and appendix land, merge their entries into this set.
-const separatePrintEntries = new Set(['/docs/book/data-quality-and-probability']);
+// Current reading links land on the title while historical links retain the article scope.
+const separatePrintEntries = new Set([
+  '/docs/book/data-quality-and-probability',
+  '/docs/book/particulate-emissions-and-health',
+  '/docs/appendices/particulate-factor-calculations',
+  ...currentBookPlan.readingEntries,
+]);
 
 export function printReadingEntryAnchor(key) {
   const historical = printUnitAnchor(key);
   return separatePrintEntries.has(key) ? historical.replace(/^print-unit-/, 'print-reading-unit-') : historical;
+}
+
+/** Authored reading links enter the current title; historical citation links
+ * use their own renderer and retain the original article fragment. */
+export function currentPrintReadingHref(href, print = false) {
+  if (typeof href !== 'string') return href;
+  const prefix = href.startsWith('/print/#') ? '/print/#' : print && href.startsWith('#') ? '#' : null;
+  if (!prefix) return href;
+  const fragment = href.slice(prefix.length);
+  for (const key of separatePrintEntries) {
+    if (fragment === printUnitAnchor(key)) return `${prefix}${printReadingEntryAnchor(key)}`;
+  }
+  return href;
 }
 
 /** Publication numbers belong to a view/edition; routes and claim IDs do not.
@@ -39,7 +67,7 @@ export function getPresentationUnits(view) {
     const ordinal = ++counts[unit.kind];
     if (!Number.isInteger(ordinal)) throw new TypeError(`Unknown reading unit kind: ${unit.kind}`);
     const prefix = unit.kind === 'chapter' ? String(ordinal) : unit.kind === 'topic' ? `T${ordinal}` : String.fromCharCode(64 + ordinal);
-    const label = unit.kind === 'chapter' ? `第${ordinal}${view === 'book' ? '章' : '篇'}` : unit.kind === 'topic' ? `专题${ordinal}` : `附录 ${prefix}`;
+    const label = unit.kind === 'chapter' ? `第${ordinal}${view === 'book' ? '章' : '篇'}` : unit.kind === 'topic' ? (view === 'book' ? `${bookTopicPresentation.labelPrefix}${bookTopicPresentation.keepPrefix ? prefix : ordinal}` : `专题${ordinal}`) : `附录 ${prefix}`;
     return { ...unit, label, prefix, ordinal, partLabel: part?.label ?? null, partTitle: part?.title ?? null };
   });
 }
@@ -122,15 +150,15 @@ export const getUnitHeadingPlan = getHeadingNumberPlan;
 
 
 /** Source-qualified continuations; other old scopes keep their own meaning. */
-export const readerContinuationContracts = [
+export const readerContinuationContracts = currentBookLayout('book:continuations', [
   { key: 'data-to-uncertainty', route: '/docs/book/review-support-and-version-boundaries', bookSource: '/monograph/data-applicability', bookSourceKey: 'book-data-applicability', sourceHref: '/docs/book/uncertainty-and-variability', sourceLabel: '不确定性', bookKey: '/docs/book/uncertainty-and-variability', bookLabel: '不确定性', webContext: '继续阅读：不确定性。', bookContext: '继续阅读：不确定性。' },
   { key: 'policy-to-framework', route: '/docs/book/early-container-policy-and-systems', sourceHref: '/docs/book/framework-history/', sourceLabel: '评价框架的形成', bookKey: 'book-framework-responsibilities', bookLabel: '框架职责', webContext: '沿着这些职责，下一章进入评价框架的形成。', bookContext: '沿着这些职责，下一章进入框架职责。' },
   { key: 'emission-time-to-future', route: '/docs/book/emission-time-and-assessment', bookSource: '/monograph/climate-equivalence', bookSourceKey: 'book-climate-equivalence', sourceHref: '/docs/book/future-technology-and-context/', sourceLabel: '未来技术置于怎样的世界', bookKey: '/docs/book/future-technology-and-context', bookLabel: '未来技术置于怎样的世界', webContext: '前瞻技术的情景设定，见未来技术置于怎样的世界。', bookContext: '未来清单的技术与背景设定，另见后面的未来技术置于怎样的世界。' },
-];
+]);
 
 export function getContinuationLink(view, route, href, label) {
   if (view !== 'book' && view !== 'web') throw new TypeError(`Unknown reading view: ${view}`);
   const contract = readerContinuationContracts.find(row => (view === 'book' ? row.bookSourceKey ?? row.route : row.route) === routeKey(route) && row.sourceHref === href && row.sourceLabel === label);
   if (!contract) return null;
-  return { key: contract.key, href: view === 'book' ? `#${printUnitAnchor(contract.bookKey)}` : contract.sourceHref, label: view === 'book' ? contract.bookLabel : contract.sourceLabel };
+  return { key: contract.key, href: view === 'book' ? `#${printReadingEntryAnchor(contract.bookKey)}` : contract.sourceHref, label: view === 'book' ? contract.bookLabel : contract.sourceLabel };
 }

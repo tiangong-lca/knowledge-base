@@ -1,3 +1,5 @@
+import { projectOrdinaryReaderNavigation } from './reader-edition.mjs';
+import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import { createHash } from "node:crypto";
 import original from "../config/data-applicability-original.json" with { type: "json" };
 import captured from "../config/data-applicability-heading-original.json" with { type: "json" };
@@ -10,7 +12,7 @@ import { chapterAnchorPrefix, collectChapterClaimOccurrences, printUnitAnchor } 
 import { publicCatalog } from "./knowledge.mjs";
 import { validateExchangeAnnotationOutput, unaccountedReaderText } from "./reader-exchange-semantics.mjs";
 import { isVerifiedReaderPagination } from "./reader-numbering-output.mjs";
-import { readerParagraphText, validateReaderHistoricalText } from "./reader-publication-text.mjs";
+import { applyCurrentHistoricalEntries, readerParagraphText, validateReaderHistoricalText } from "./reader-publication-text.mjs";
 const dataApplicabilityKey = "book-data-applicability";
 const dataApplicabilityManuscript = "/monograph/data-applicability";
 const dataApplicabilityTitle = "数据适用性";
@@ -40,7 +42,7 @@ function assertDataApplicabilityRegistration(edition) {
   const units = edition?.units ?? [], matches = units.filter(row => row.key === dataApplicabilityKey), unit = matches[0];
   if (matches.length !== 1 || unit.source !== dataApplicabilityManuscript || unit.kind !== "chapter"
       || unit.part !== "证据分量" || !same(unit.coverage, dataApplicabilityRoutes)
-      || !same(unit.sections, plainSections(dataApplicabilityTitles)) || units.some(row => dataApplicabilityRoutes.includes(row.key)))
+      || !same(unit.sections, currentBookLayout('B25:registered-sections', plainSections(dataApplicabilityTitles))) || units.some(row => dataApplicabilityRoutes.includes(row.key)))
     throw new Error("Data applicability requires actual four-section/two-source book assembly");
 }
 /** Inspect only the bounded static MDX shape used by these three authored sources. */
@@ -115,20 +117,26 @@ function assertDataApplicabilityAccepted(accepted, independentDigest = dataAppli
   if (!same(accepted.sources[0].ordinary, []) || !same(accepted.sources[1].ordinary, continuation) || !same(accepted.sources[2].ordinary, continuation))
     throw new Error("Data applicability requires its exact final uncertainty continuation");
 }
+function reviewedDataApplicabilitySource(accepted, route) {
+  const source = accepted.sources.find(row => row.route === route);
+  const occurrences = route === dataApplicabilityManuscript ? accepted.sections.flatMap(section => section.claimIds.map(id => ({ id, section: section.id }))) : accepted.website.find(page => page.route === route).occurrences;
+  return currentBookLayout(`B25:${route}:reader-source`, { source, occurrences });
+}
 /** Keep original external scientific records exact; only the separately reviewed14 are authored here. */
 function validateDataApplicabilityCoverage(edition, sources, catalog, accepted, independentDigest = dataApplicabilityAcceptedDigest, catalogProjection = "raw") {
   assertDataApplicabilityRegistration(edition);
   assertDataApplicabilityAccepted(accepted, independentDigest);
   if (!["raw", "public"].includes(catalogProjection)) throw new Error("Data applicability requires explicit raw or public catalog projection");
   const errors = [];
-  for (const source of accepted.sources) {
-    const raw = sources.get(source.route);
+  for (const frozen of accepted.sources) {
+    const raw = sources.get(frozen.route);
     if (typeof raw !== "string") {
-      errors.push(`Data applicability missing source: ${source.route}`);
+      errors.push(`Data applicability missing source: ${frozen.route}`);
       continue;
     }
-    const found = inspectDataApplicabilitySource(raw), expectedOccurrences = source.route === dataApplicabilityManuscript ? accepted.sections.flatMap((section) => section.claimIds.map((id) => ({ id, section: section.id }))) : accepted.website.find((page) => page.route === source.route).occurrences;
-    if (rawDigest(raw) !== source.mdxSha256
+    const { source, occurrences: expectedOccurrences } = reviewedDataApplicabilitySource(accepted, frozen.route);
+    const found = inspectDataApplicabilitySource(raw);
+    if (!currentBookMdxMatches(frozen.route, frozen.mdxSha256, rawDigest(raw))
         || !sameRecord({ title: found.title, description: found.description, headings: found.headings, ordinary: found.ordinary, figure: found.figure }, { title: source.title, description: source.description, headings: source.headings, ordinary: source.ordinary, figure: source.figure })
         || found.outsideOccurrences.length
         || found.figureCount !== (source.figure ? 1 : 0)
@@ -149,7 +157,7 @@ function validateDataApplicabilityCatalog(catalog, accepted, catalogProjection) 
   const expected = catalogProjection === "public" ? publicCatalog(reference) : reference;
   for (const [kind, records] of groups) for (const fixed of records) {
     const found = catalog?.[kind]?.filter((row) => row.id === fixed.id) ?? [], wanted = expected[kind].find((row) => row.id === fixed.id);
-    if (found.length !== 1 || !sameRecord(found[0], wanted)) errors.push(`Data applicability reviewed ${kind} record differs: ${fixed.id}`);
+    if (found.length !== 1 || !currentBookRecordMatches(kind, wanted, found[0], catalogProjection)) errors.push(`Data applicability reviewed ${kind} record differs: ${fixed.id}`);
   }
   return errors;
 }
@@ -385,7 +393,7 @@ function continuationAfterFinalParagraph(paragraph, unit) {
 function validateRenderedDataApplicability(document, path, catalog, accepted, independentDigest = dataApplicabilityAcceptedDigest, catalogProjection = "public") {
   if (![...dataApplicabilityRoutes, "/print"].includes(path)) return [];
   assertDataApplicabilityAccepted(accepted, independentDigest);
-  const print = path === "/print", routes = print ? [dataApplicabilityKey] : [path], errors = validateDataApplicabilityCatalog(catalog, accepted, catalogProjection), entries = remapDataApplicabilityCitations(dataApplicabilityOriginalEntries(), accepted, independentDigest);
+  const print = path === "/print", routes = print ? [dataApplicabilityKey] : [path], errors = validateDataApplicabilityCatalog(catalog, accepted, catalogProjection), entries = applyCurrentHistoricalEntries(document, remapDataApplicabilityCitations(dataApplicabilityOriginalEntries(), accepted, independentDigest));
   if (errors.length) return errors;
   for (const route of routes) {
     const units = print ? document.querySelectorAll(`article[data-reader-route="${route}"]`) : document.querySelectorAll("article");
@@ -393,7 +401,8 @@ function validateRenderedDataApplicability(document, path, catalog, accepted, in
       errors.push(`${path}: Data applicability actual reading unit missing/repeated: ${route}`);
       continue;
     }
-    const unit = units[0], source = accepted.sources.find((row) => row.route === (route === dataApplicabilityKey ? dataApplicabilityManuscript : route)), prefix = location(route, path), checked = /* @__PURE__ */ new Set(), children = unit.childNodes.filter((node) => node.nodeType === 1), title = children.find((node) => node.tagName === (print ? "H2" : "H1")), expected = route === dataApplicabilityKey ? accepted.sections.flatMap((section2) => section2.claimIds.map((id) => ({ id, section: section2.id }))) : accepted.website.find((row) => row.route === route).occurrences;
+    const { source, occurrences: expected } = reviewedDataApplicabilitySource(accepted, route === dataApplicabilityKey ? dataApplicabilityManuscript : route);
+    const unit = units[0], prefix = location(route, path), checked = /* @__PURE__ */ new Set(), children = unit.childNodes.filter((node) => node.nodeType === 1), title = children.find((node) => node.tagName === (print ? "H2" : "H1"));
     if (!print) qualifyHeadingCopyButtons(unit, source);
     if (!title
         || title.text !== source.title
@@ -424,8 +433,8 @@ function validateRenderedDataApplicability(document, path, catalog, accepted, in
             || node.getAttribute("href") !== `#${prefix}-claim-${id}`
             || node.text !== `[${expected.findIndex(row => row.id === id) + 1}]`
             || node.getAttribute("aria-label") !== `注 ${expected.findIndex(row => row.id === id) + 1}`
-            || readerParagraphText(paragraph, node) !== fixed?.text
-            || !sameRecord(found[0], fixed)
+            || readerParagraphText(paragraph, node) !== found[0]?.text
+            || !currentBookRecordMatches('claims', fixed, found[0])
             || concealedText(paragraph)) errors.push(`${path}: Data applicability canonical body differs or hidden: ${id}`);
         else checked.add(paragraph);
       } else if (node.closest(".chapter-notes")) {
@@ -468,7 +477,7 @@ function validateRenderedDataApplicability(document, path, catalog, accepted, in
           || continuation?.tagName !== "P" || continuation.text !== source.ordinary[0].text)
         errors.push(`${path}: Data applicability continuation loses actual final-proposition placement`);
     }
-    const expectedOrdinary = source.ordinary.map((row) => ({ ...row, links: row.links.map((link) => ({ ...link, href: print ? dataApplicabilityBookHref(link.href, route) : link.href })) }));
+    const expectedOrdinary = source.ordinary.map(row => projectOrdinaryReaderNavigation(row, route, print));
     if (!sameOrdinaryNavigation(ordinary, expectedOrdinary)
         || unit.querySelectorAll("figure").length !== (source.figure ? 1 : 0)) errors.push(`${path}: Data applicability reviewed ordinary navigation/figure count differs: ${route}`);
     const notes = unit.querySelectorAll("[data-reader-claim]");

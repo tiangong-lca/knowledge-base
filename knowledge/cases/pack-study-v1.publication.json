@@ -30,7 +30,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "把给定物品运输服务与每只袋的容量及使用次数对应。",
-      "textTemplate": "报告把功能单位写成在英国用袋子将一个月的 {{input.facts.serviceItems.value}} 件购物物品从超市运回家。因此，直接比较“一只厚袋”和“一只薄袋”的生产负担还不够。较大的袋子可能一次装得更多，同一只袋子也可能再次购物。体积、实际装填和使用次数都参与决定需要生产多少只袋。原报告的初始参考流先处理容量，主要用途的实际复用次数因缺少独立数据而留作另一层问题。"
+      "textTemplate": "要比较的是一项运输服务。报告的功能单位是在英国用提袋把一个月的 {{input.facts.serviceItems.value}} 件购物物品从超市运回家。较大的袋子可以一次多装，同一只袋也可能重复用。初始参考流先按装填量确定要用多少只袋子，主要用途的实际复用次数缺少独立资料，留到后来作条件比较。单比一只厚袋和一只薄袋，不能让运输的物品件数自动相等。"
     },
     {
       "id": "cl-pack-capacity",
@@ -86,7 +86,7 @@
         "版本化计算输入另列未舍入除法与原表显示值的差额。"
       ],
       "reasoning": "分别计算483/容量，材料量采用公布参考流与公布袋质量相乘。",
-      "textTemplate": "将 483 件除以采用的容量，轻薄袋需要约 {{input.facts.hdpeReferenceFlow.value}} 只，LDPE 袋需要约 {{input.facts.ldpeReferenceFlow.value}} 只。这里的小数是提供平均服务的模型量。再把表列袋数与每只 8.12 g、34.94 g 相乘，得到约 667 g 和 2,120 g 的袋材。在这一步，较少的厚袋仍对应较多的材料。用未经舍入的除法结果继续计算，末位会略有差别；这些公开算式能核对参考流之间的关系，却还没有计算原料、能源和处置的完整清单。"
+      "textTemplate": "把483件除以采用的装填量，轻薄袋需要约 {{input.facts.hdpeReferenceFlow.value}} 只，LDPE袋约 {{input.facts.ldpeReferenceFlow.value}} 只。小数表示完成平均服务的模型用量。再用表列袋数乘每只的质量，分别用8.12 g和34.94 g，得到约667 g轻薄袋材和2,120 g厚袋材。厚袋用得少，袋材却更多。用未经舍入的除法继续计算，末位会略变；算到这里还只得到所需袋材，尚未算原料、能源和处置清单。"
     },
     {
       "id": "cl-pack-mapping",
@@ -116,7 +116,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "重算报告的乘积，并用原问题界定它并非逐袋观测比例。",
-      "textTemplate": "报告先采用总体约 76% 的袋子再次使用的估计，再乘厨房内衬的 53%，得 {{evaluated.secondaryReuse.reportMultiplication.exact}}，即 40.28%。这一乘法把受访者关于是否有某种用途的回答，接到了逐袋的分配上。若有的人留用很多袋、有的人只留一只，二者在回答人数里各算一人，实际避免的内衬袋量却可能不同。要把这一步检验得更牢，需要袋量与用途在同一家庭、同一期间的联合记录。"
+      "textTemplate": "报告先估计约76%的袋子得到再使用，再乘报告所用的厨房内衬比例53%，得 {{evaluated.secondaryReuse.reportMultiplication.exact}}，即40.28%。问题在第二项原本是受访者比例，算式却把它用在袋子上。留用很多袋子的人和只留一只的人在问卷里都算一人，对内衬袋购买的影响却可能不同。要核实这一步，需要同一家庭、同一期间的袋量与用途记录。"
     },
     {
       "id": "cl-pack-baseline",
@@ -145,7 +145,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "从两个公布端点求斜率和中间值，只检验公开结果之间的一致性。",
-      "textTemplate": "这项假定在结果中有多大作用，可以从报告自己的敏感性表看清。按一月购物服务，HDPE 在不计内衬替代时为 2.082 kg CO₂ eq，全部获得替代收益时为 0.830 kg CO₂ eq。两端相差 1.252。只作为两端输出的线性核对，写成 D(r)=2.082−1.252r，代入 r=0.4028，得到 {{evaluated.creditInterpolation.atReportMultipliedShare.exact}}，与表列 1.578 的精度相符。这个核对解释了输出怎样随抵扣比例变化，原来的制袋和废物模型还需要独立输入才能复跑。"
+      "textTemplate": "能先核对的是这项抵扣怎样改动已发表的结果。按一个月购物服务，完全不计内衬替代时，HDPE为2.082 kg CO₂ eq；全部计入时为0.830 kg CO₂ eq，相差1.252。在线性核对中，设替代比例为r，写成D(r)=2.082−1.252r。代入0.4028，得到 {{evaluated.creditInterpolation.atReportMultipliedShare.exact}}，与表列1.578的精度相符。两端输出与中间值相合，不表示已经复跑了制袋和废物模型。"
     },
     {
       "id": "cl-pack-uses",
@@ -182,7 +182,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "按报告的 B/n 关系逐次检验严格不等式，解释整数与第一次使用。",
-      "textTemplate": "厚 LDPE 袋在不重复购物使用时，这一服务的气候结果为 6.924 kg CO₂ eq。若同一批厚袋总共用于购物 n 次，而其他条件按报告的缩放方式处理，分摊到同样服务的结果就是 6.924/n。与轻薄袋的 1.578 相比，要满足严格小于，n 必须大于 6.924/1.578。最小整数是 {{evaluated.thresholds.ldpe.reportedCredit.minimumTotalUses}}。这里算的是包含第一次在内的总使用次数，意味着之后至少再使用四次。"
+      "textTemplate": "现在可以求厚袋的门槛。只用一次，LDPE每月服务的气候指标为6.924 kg CO₂ eq。若同一批袋总共购物n次，且按报告的其他条件缩放，分到同样一个月服务的结果是6.924/n。要严格低于轻薄袋的1.578，须有n > 6.924/1.578；最小整数是 {{evaluated.thresholds.ldpe.reportedCredit.minimumTotalUses}}。它包括第一次，所以至少要再用四次。这里求的是需要达到多少次，还不知道现实中是否达到。"
     },
     {
       "id": "cl-pack-shift",
@@ -213,7 +213,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "保持厚袋B不动，分别代入三个D，求严格整数门槛。",
-      "textTemplate": "基准的用途一改，门槛也跟着移动。若轻薄袋没有内衬替代收益，LDPE 所需总次数为 {{evaluated.thresholds.ldpe.noCredit.minimumTotalUses}}；若轻薄袋全部替代内衬袋，则需 {{evaluated.thresholds.ldpe.fullCredit.minimumTotalUses}}。这三种情景回答“如果比例如此，会怎样”。零到百分之百并不是调查估出的置信区间，算出九次也没有证明厚袋使用者会做到九次。"
+      "textTemplate": "轻薄袋原来承担的服务变了，门槛就会移动。若无内衬替代收益，厚袋所需总次数降至 {{evaluated.thresholds.ldpe.noCredit.minimumTotalUses}}；若轻薄袋全都替代内衬袋，则增至 {{evaluated.thresholds.ldpe.fullCredit.minimumTotalUses}}。零到百分之百只是对照条件，不是调查得出的置信区间；厚袋用九次是模型要求，不是已经观察到的行为。"
     },
     {
       "id": "cl-pack-three",
@@ -283,7 +283,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "比较B/327与显示D，求严格最小整数并保留来源差异。",
-      "textTemplate": "接近边界时，显示精度也会影响整数。棉袋的公布结果是 271.533，全部内衬替代时的轻薄袋基准是 0.830；只拿这两个显示值相除，严格低于需 {{evaluated.thresholds.cottonFullCredit.minimumTotalUses}} 次，而表 8.1 印的是 327 次。在 327 次时，按显示值算约为 {{evaluated.thresholds.cottonFullCredit.burdenAtSourceReportedCount.fixed6}}，仍稍高于 0.830。未显示的原始精度可能改变这一下界，但它没有随这张表披露。研究解释要说明用了哪组精度，避免把一个末位差额扩成确定的实物寿命。"
+      "textTemplate": "接近边界时，显示精度也会影响整数。棉袋只购物使用一次时，所对应一个月运输服务的气候指标公布为 271.533 kg CO₂ eq；全部内衬替代时的轻薄袋基准是 0.830 kg CO₂ eq；只拿这两个显示值相除，严格低于需 {{evaluated.thresholds.cottonFullCredit.minimumTotalUses}} 次，而表 8.1 印的是 327 次。在 327 次时，按显示值算约为 {{evaluated.thresholds.cottonFullCredit.burdenAtSourceReportedCount.fixed6}}，仍稍高于 0.830。未显示的原始精度可能改变这一下界，但它没有随这张表披露。研究解释要说明用了哪组精度，避免把一个末位差额扩成确定的实物寿命。"
     },
     {
       "id": "cl-pack-categories",
@@ -312,7 +312,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "同类别一一比较，保留单位，不跨类别相加或按数目表决。",
-      "textTemplate": "使用五次的 LDPE，气候值 6.924/5={{evaluated.categoryComparison.categories.gwp.ldpeAtFiveUsesCalculated.exact}}，报告舍为 1.385，低于 HDPE 的 1.578。非生物资源耗竭却是 82.711/5={{evaluated.categoryComparison.categories.abiotic.ldpeAtFiveUsesCalculated.exact}} g Sb eq，略高于基准 16.227。独立逐行核对，厚袋在 {{evaluated.categoryComparison.totalCategories}} 项中有 {{evaluated.categoryComparison.lowerCategoriesFromCalculatedDivision}} 项较低，恰有这一项较高。八项对一项不能自动变成八票对一票；这一步给出的是取舍的形状，是否值得接受还要回到问题和保护目标。"
+      "textTemplate": "越过气候门槛后，另一项指标仍可能更高。厚LDPE用五次，气候值6.924/5={{evaluated.categoryComparison.categories.gwp.ldpeAtFiveUsesCalculated.exact}} kg CO₂ eq，报告舍为1.385，低于轻薄袋的1.578。非生物资源耗竭却是82.711/5={{evaluated.categoryComparison.categories.abiotic.ldpeAtFiveUsesCalculated.exact}} g Sb eq，略高于基准16.227。逐行对照，厚袋在 {{evaluated.categoryComparison.totalCategories}} 项中有 {{evaluated.categoryComparison.lowerCategoriesFromCalculatedDivision}} 项较低。这个结果说明哪些指标同向、哪一项仍需取舍，不能把指标的行数当票数。"
     }
   ]
 }

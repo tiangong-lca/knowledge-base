@@ -1,3 +1,5 @@
+import { projectOrdinaryReaderNavigation } from './reader-edition.mjs';
+import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import { readablePedigreeClosingRecords, readablePedigreeAcceptedDigest } from './reader-readable-pedigree.mjs';
 import { toxicityB32CurrentRecords, toxicityPathwaysAcceptedDigest } from './reader-toxicity-pathways.mjs';
 import { publicCatalog } from './knowledge.mjs';
@@ -7,10 +9,10 @@ import captured from '../config/closing-synthesis-heading-history.json' with { t
 import currentScientific from '../config/closing-synthesis-current-accepted.json' with { type: 'json' };
 import climateOriginal from '../config/climate-assembly-original.json' with { type: 'json' };
 import dataOriginal from '../config/data-applicability-original.json' with { type: 'json' };
-import { chapterAnchorPrefix, collectChapterClaimOccurrences, printUnitAnchor } from './reader-book.mjs';
+import { chapterAnchorPrefix, collectChapterClaimOccurrences, printUnitAnchor, readSourceHeading } from './reader-book.mjs';
 import { validateExchangeAnnotationOutput, unaccountedReaderText } from './reader-exchange-semantics.mjs';
 import { isVerifiedReaderPagination } from './reader-numbering-output.mjs';
-import { readerParagraphText, validateReaderHistoricalText } from './reader-publication-text.mjs';
+import { applyCurrentHistoricalEntries, readerParagraphText, validateReaderHistoricalText } from './reader-publication-text.mjs';
 
 export const closingSynthesisKey = 'book-revisable-judgment';
 export const closingSynthesisManuscript = '/monograph/revisable-judgment';
@@ -56,6 +58,24 @@ function sections(raw) {
   for(let i=1;i<pieces.length;i+=2){const explicit=/^(.*?)\s+\[#([^\]]+)\]$/.exec(pieces[i]),title=explicit?explicit[1]:pieces[i],id=explicit?explicit[2]:title;headings.push({id,title});occurrences.push(...collectChapterClaimOccurrences(pieces[i+1]).map(claim=>({id:claim,section:id})));}
   return {headings,occurrences};
 }
+function closingOrdinarySource(raw) {
+  const body = raw.replace(/^---\r?\n[\s\S]*?\r?\n---/, '');
+  const pieces = body.split(/^## (.+)\s*$/m);
+  const ordinary = [];
+  for (let index = 0; index < pieces.length; index += 2) {
+    const section = index ? readSourceHeading(pieces[index - 1]).id : null;
+    const remainder = pieces[index].replace(/<(?:Prose|Claim)\b[^>]*\/>/g, '');
+    for (const paragraph of remainder.split(/\n\s*\n/).map(value => value.trim()).filter(Boolean)) {
+      ordinary.push({
+        section,
+        text: paragraph.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1'),
+        links: [...paragraph.matchAll(/\[([^\]]+)\]\(([^)]+)\)/g)].map(match => ({ text: match[1], href: match[2] })),
+      });
+    }
+  }
+  return ordinary;
+}
+
 /** @param {any} value */
 export function assertClosingSynthesisOriginal(value=original) {
   if(closingSynthesisDigest(value)!=='febb6e039e8c1af69ea31bf88325785fa73b957b6f50183a87f3139089bc9325')throw new Error('B32 immutable original22/scientific closure differs from qualified 862e2fe');
@@ -68,7 +88,7 @@ export function assertClosingSynthesisHeadingHistory(value=captured,independentD
 /** @param {any} edition */
 export function assertClosingSynthesisRegistration(edition) {
   const units=edition?.units??[],found=units.filter(unit=>unit.key===closingSynthesisKey),unit=found[0];
-  if(found.length!==1||unit.source!==closingSynthesisManuscript||unit.kind!=='chapter'||unit.part!=='判断边界'||!same(unit.coverage,closingSynthesisRoutes)||!same(unit.sections,closingSynthesisSections.map(({id,title})=>({id,title})))||units.some(unit=>closingSynthesisRoutes.includes(unit.key)))throw new Error('B32 requires its actual four-section book assembly and exact two-source coverage');
+  if(found.length!==1||unit.source!==closingSynthesisManuscript||unit.kind!=='chapter'||unit.part!=='判断边界'||!same(unit.coverage,closingSynthesisRoutes)||!same(unit.sections,currentBookLayout('B32:registered-sections',closingSynthesisSections.map(({id,title})=>({id,title}))))||units.some(unit=>closingSynthesisRoutes.includes(unit.key)))throw new Error('B32 requires its actual four-section book assembly and exact two-source coverage');
 }
 /** @param {any} prose @param {string|null} independentDigest */
 export function assertClosingSynthesisProseAccepted(prose,independentDigest=closingSynthesisProseDigest) {
@@ -77,6 +97,13 @@ export function assertClosingSynthesisProseAccepted(prose,independentDigest=clos
   if(!same(prose.sections,closingSynthesisSections)||!same(prose.claims?.map(row=>row.id),allIds)||!same(prose.website?.map(row=>row.route),closingSynthesisRoutes)||!same(prose.sources?.map(row=>row.route),[...closingSynthesisRoutes,closingSynthesisManuscript]))throw new Error('B32 accepted22/order/website/shared canonical source closure differs');
   for(const page of prose.website){const raw=original.sourceFiles[`content${page.route}.mdx`]?.text,expected=raw&&sections(raw);if(!expected||!same(page.claimIds,collectChapterClaimOccurrences(raw))||!same(page.occurrences,expected.occurrences))throw new Error('B32 fine-page8/14 membership and original heading placement must remain exact');}
   if(prose.sources.some(source=>!nonempty(source.title)||!nonempty(source.description)||!/^[a-f0-9]{64}$/.test(source.mdxSha256)||!Array.isArray(source.headings)||!Array.isArray(source.ordinary)||source.ordinary.length))throw new Error('B32 final source metadata/hash/ordinary prose receipt is incomplete');
+}
+function reviewedClosingSource(prose, route) {
+  const source = prose.sources.find(row => row.route === route);
+  const occurrences = route === closingSynthesisManuscript
+    ? closingSynthesisSections.flatMap(section => section.claimIds.map(id => ({ id, section: section.id })))
+    : prose.website.find(page => page.route === route)?.occurrences;
+  return currentBookLayout(`B32:${route}:reader-source`, { source, occurrences });
 }
 /** @param {any} edition @param {Map<string,string>} sources @param {any} catalog @param {any} prose @param {string|null} independentDigest @param {'raw'|'public'} catalogProjection @param {any} currentAcceptance @param {string|null} currentDigest @param {any} toxicityAcceptance @param {string|null} toxicityDigest @param {any} pedigreeAcceptance @param {string|null} pedigreeDigest */
 export function validateClosingSynthesisCoverage(edition,sources,catalog,prose,independentDigest=closingSynthesisProseDigest,catalogProjection='raw',currentAcceptance=currentScientific,currentDigest=closingSynthesisCurrentDigest,toxicityAcceptance=null,toxicityDigest=toxicityPathwaysAcceptedDigest,pedigreeAcceptance=null,pedigreeDigest=readablePedigreeAcceptedDigest) {
@@ -110,7 +137,21 @@ export function validateClosingSynthesisCoverage(edition,sources,catalog,prose,i
     pedigreeConsumers.push(pedigree.consumer);
   }
   const currentClosure={...original.scientificClosure,claims:original.scientificClosure.claims.map(row=>currentRecords.get(row.id)??row)};
-  for(const source of prose.sources){const raw=sources.get(source.route);if(typeof raw!=='string'||rawDigest(raw)!==source.mdxSha256){errors.push(`B32 source differs from independently reviewed MDX: ${source.route}`);continue;}const actual=sections(raw);if(!sameRecord(metadata(raw),{title:source.title,description:source.description})||!same(actual.headings,source.headings))errors.push(`B32 actual source metadata/headings differ: ${source.route}`);const expected=source.route===closingSynthesisManuscript?closingSynthesisSections.flatMap(section=>section.claimIds.map(id=>({id,section:section.id}))):prose.website.find(page=>page.route===source.route)?.occurrences;if(!same(actual.occurrences,expected)||collectChapterClaimOccurrences(raw).length!==expected?.length)errors.push(`B32 body missing, duplicated, reordered, outside sections or misplaced: ${source.route}`);}
+  for (const frozen of prose.sources) {
+    const raw = sources.get(frozen.route);
+    if (typeof raw !== 'string' || !currentBookMdxMatches(frozen.route, frozen.mdxSha256, rawDigest(raw))) {
+      errors.push(`B32 source differs from independently reviewed MDX: ${frozen.route}`);
+      continue;
+    }
+    const { source, occurrences } = reviewedClosingSource(prose, frozen.route);
+    const actual = sections(raw);
+    if (!sameRecord(metadata(raw), { title: source.title, description: source.description }) || !same(actual.headings, source.headings))
+      errors.push(`B32 actual source metadata/headings differ: ${frozen.route}`);
+    if (!sameRecord(closingOrdinarySource(raw), source.ordinary))
+      errors.push(`B32 actual ordinary text differs from its reviewed source layout: ${frozen.route}`);
+    if (!same(actual.occurrences, occurrences) || collectChapterClaimOccurrences(raw).length !== occurrences?.length)
+      errors.push(`B32 body missing, duplicated, reordered, outside sections or misplaced: ${frozen.route}`);
+  }
   if(!['raw','public'].includes(catalogProjection))throw new Error('B32 catalog comparison requires an explicit raw or public projection');
   // Runtime receives lib/catalog's allowlisted projection. Reconstruct only the
   // frozen/accepted records and run the established projector over that complete
@@ -125,15 +166,15 @@ export function validateClosingSynthesisCoverage(edition,sources,catalog,prose,i
     expectedPublic=publicCatalog(reference);
   }
   const expected=(kind,fixed)=>expectedPublic?expectedPublic[kind].find(record=>record.id===fixed.id):fixed;
-  for(const fixed of prose.claims){const found=catalog?.claims?.filter(row=>row.id===fixed.id)??[];if(found.length!==1||found[0].status!=='reviewed'||!sameRecord(found[0],expected('claims',fixed)))errors.push(`B32 canonical record differs from independently reviewed manuscript: ${fixed.id}`);}
+  for(const fixed of prose.claims){const found=catalog?.claims?.filter(row=>row.id===fixed.id)??[];if(found.length!==1||found[0].status!=='reviewed'||!currentBookRecordMatches('claims', expected('claims', fixed), found[0], catalogProjection))errors.push(`B32 canonical record differs from independently reviewed manuscript: ${fixed.id}`);}
   // Independently reviewed current dependencies use separate acceptances. All other scientific records remain exact.
-  for(const [kind,records] of Object.entries(currentClosure))for(const fixed of records){const found=catalog?.[kind]?.filter(row=>row.id===fixed.id)??[];if(found.length!==1||!sameRecord(found[0],expected(kind,fixed)))errors.push(`B32 original scientific ${kind} closure differs: ${fixed.id}`);}
+  for(const [kind,records] of Object.entries(currentClosure))for(const fixed of records){const found=catalog?.[kind]?.filter(row=>row.id===fixed.id)??[];if(found.length!==1||!currentBookRecordMatches(kind, expected(kind, fixed), found[0], catalogProjection))errors.push(`B32 original scientific ${kind} closure differs: ${fixed.id}`);}
   const earlierConsumers=currentAcceptance?.status==='reviewed'?currentAcceptance.consumers.map(row=>row.record):[];
   for(const consumer of new Map([...earlierConsumers,...toxicityConsumers,...pedigreeConsumers].map(row=>[row.id,row])).values()){
     const found=catalog?.claims?.filter(row=>row.id===consumer.id)??[];
     const reference={...catalog,claims:catalog.claims.filter(row=>row.id!==consumer.id).concat(consumer)};
     const wanted=catalogProjection==='public'?publicCatalog(reference).claims.find(row=>row.id===consumer.id):consumer;
-    if(found.length!==1||!sameRecord(found[0],wanted))errors.push(`B32 renewed consumer differs: ${consumer.id}`);
+    if(found.length!==1||!currentBookRecordMatches('claims', wanted, found[0], catalogProjection))errors.push(`B32 renewed consumer differs: ${consumer.id}`);
   }
   return errors;
 }
@@ -207,7 +248,8 @@ export function validateRenderedClosingSynthesis(document,path,catalog,prose,his
   assertClosingSynthesisProseAccepted(prose,independentDigest);assertClosingSynthesisHeadingHistory(history,headingDigest);
   const print=path==='/print',route=print?closingSynthesisKey:path,units=print?document.querySelectorAll(`article[data-reader-route="${route}"]`):document.querySelectorAll('article');
   if(units.length!==1)return [`${path}: B32 actual reading unit missing or repeated`];
-  const unit=units[0],errors=[],checked=new Set(),source=prose.sources.find(row=>row.route===(print?closingSynthesisManuscript:route)),expected=print?closingSynthesisSections.flatMap(section=>section.claimIds.map(id=>({id,section:section.id}))):prose.website.find(row=>row.route===route).occurrences,prefix=location(route,path),claims=new Map((catalog?.claims??[]).map(row=>[row.id,row]));
+  const { source, occurrences: expected } = reviewedClosingSource(prose, print ? closingSynthesisManuscript : route);
+  const unit=units[0],errors=[],checked=new Set(),prefix=location(route,path),claims=new Map((catalog?.claims??[]).map(row=>[row.id,row]));
   const children=unit.childNodes.filter(node=>node.nodeType===1),title=children.find(node=>node.tagName===(print?'H2':'H1'));
   if(!title||title.text!==source.title||(print&&unit.getAttribute('data-reader-title')!==source.title)||concealedText(title,unit))errors.push(`${path}: B32 actual title differs or is hidden`);else checked.add(title);
   const description=title&&children[children.indexOf(title)+1];if(description?.tagName!=='P'||description.text!==source.description||concealedText(description,unit))errors.push(`${path}: B32 actual description differs or is hidden`);else checked.add(description);
@@ -215,14 +257,33 @@ export function validateRenderedClosingSynthesis(document,path,catalog,prose,his
   const actual=[],headings=[];let section=null;
   for(const node of unit.querySelectorAll('h1,h2,h3,h4,h5,h6,a[role="doc-noteref"]')){
     if(node.closest('[data-legacy-for],[data-legacy-notice],[data-legacy-scope]'))continue;
-    if(node.getAttribute('role')==='doc-noteref'){const id=node.getAttribute('data-reader-reference'),paragraph=node.closest('p'),claim=claims.get(id);actual.push({id,section});if(!paragraph||!claim||readerParagraphText(paragraph,node)!==claim.text||!sameRecord(claim,prose.claims.find(row=>row.id===id))||concealedText(paragraph,unit)||concealed(node,unit))errors.push(`${path}: B32 canonical body missing, changed or hidden: ${id}`);else checked.add(paragraph);}
+    if(node.getAttribute('role')==='doc-noteref'){const id=node.getAttribute('data-reader-reference'),paragraph=node.closest('p'),claim=claims.get(id);actual.push({id,section});if(!paragraph||!claim||readerParagraphText(paragraph,node)!==claim.text||!currentBookRecordMatches('claims', prose.claims.find(row=>row.id===id), claim)||concealedText(paragraph,unit)||concealed(node,unit))errors.push(`${path}: B32 canonical body missing, changed or hidden: ${id}`);else checked.add(paragraph);}
     else if(node.closest('.chapter-notes')){section=null;if(node.id===`${prefix}-annotations`&&node.text==='注释'&&node.tagName===(print?'H3':'H2')&&!concealedText(node,unit))checked.add(node);else errors.push(`${path}: B32 annotation heading differs`);}
     else if(node!==title){const id=print?node.id.slice(prefix.length+1):node.id;section=id;headings.push({id,title:node.text.replace(/复制章节链接$/,'')});if(node.tagName!==(print?'H3':'H2')||closingHeadingConcealedText(node,unit))errors.push(`${path}: B32 actual formal heading differs or is hidden`);else checked.add(node);}
   }
   if(!same(actual,expected)||!same(headings,source.headings))errors.push(`${path}: B32 actual body order/sections/identity differ`);
+  const ordinary = [];
+  let ordinarySection = null;
+  for (const node of unit.querySelectorAll('h2,h3,p')) {
+    if (node.closest('.chapter-notes,.docs-pagination,[data-legacy-for],[data-legacy-notice],[data-legacy-scope]')) continue;
+    if (node !== title && node.tagName === (print ? 'H3' : 'H2')) {
+      ordinarySection = print ? node.id.slice(prefix.length + 1) : node.id;
+    }
+    if (node.tagName === 'P' && !checked.has(node) && !node.querySelector('[role="doc-noteref"]')) {
+      ordinary.push({
+        section: ordinarySection,
+        text: node.text,
+        links: node.querySelectorAll('a[href]').map(link => ({ text: link.text, href: link.getAttribute('href') })),
+      });
+      if (concealedText(node,unit)) errors.push(`${path}: B32 ordinary paragraph is hidden`);
+      else checked.add(node);
+    }
+  }
+  if (!sameRecord(ordinary, source.ordinary.map(row => projectOrdinaryReaderNavigation(row, route, print))))
+    errors.push(`${path}: B32 actual ordinary paragraphs differ from their reviewed source layout`);
   const groups=unit.querySelectorAll('.chapter-notes'),notes=unit.querySelectorAll('[data-reader-claim]');if(groups.length!==1||!same(notes.map(node=>node.getAttribute('data-reader-claim')),expected.map(row=>row.id)))errors.push(`${path}: B32 exact continuous note plan differs`);
   const annotationErrors=validateExchangeAnnotationOutput(document,unit,route,catalog,{print});errors.push(...annotationErrors);if(!annotationErrors.length)for(const note of notes){const annotation=note.querySelector('.claim-annotation');if(concealed(note,unit)||concealedText(annotation,unit))errors.push(`${path}: B32 annotation is hidden`);else checked.add(annotation);}
-  const entries=remapClosingSynthesisCitations([...history.originalHistoricalEntries,...closingSynthesisHeadingEntries(history,headingDigest)],history,prose,independentDigest,headingDigest),unitEntries=entries.filter(entry=>entry.path===path&&entry.route===route);
+  const entries=applyCurrentHistoricalEntries(document, remapClosingSynthesisCitations([...history.originalHistoricalEntries,...closingSynthesisHeadingEntries(history,headingDigest)],history,prose,independentDigest,headingDigest)),unitEntries=entries.filter(entry=>entry.path===path&&entry.route===route);
   const label=destination=>{const ids=destination.path==='/print'?allIds:prose.website.find(row=>row.route===destination.route)?.claimIds??[],name=destination.path==='/print'?closingSynthesisTitle:prose.sources.find(row=>row.route===destination.route)?.title;return `《${name}》${destination.kind==='note'?`注 ${ids.indexOf(destination.claimId)+1}`:destination.kind==='heading'&&destination.path==='/print'?`·${destination.id.slice(printUnitAnchor(destination.route).length+1)}`:destination.kind==='note-group'?'注释':''}`;};
   for(const entry of unitEntries){if(entry.mode==='notice'&&unit.querySelectorAll(`[id="${entry.id}"][data-legacy-notice]`).length!==1)errors.push(`${path}: B32 exact historical notice missing or repeated: ${entry.id}`);if(entry.mode==='retained'&&entry.scope){const contexts=unit.querySelectorAll(`[data-legacy-scope="${entry.id}"]`),context=contexts[0];if(contexts.length!==1||!((context.parentNode===unit&&unit.id===entry.id)||(context.previousElementSibling?.id===entry.id&&context.parentNode===context.previousElementSibling.parentNode)))errors.push(`${path}: B32 exact retained subset scope missing or detached: ${entry.id}`);}}
   const historical=validateReaderHistoricalText(unit,unitEntries,path,label);errors.push(...historical.errors);for(const node of historical.checked){if(concealedText(node,unit))errors.push(`${path}: B32 historical context is hidden`);else checked.add(node);}

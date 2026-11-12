@@ -3,14 +3,13 @@ title: 混合清单
 description: 沿烤面包器、三家供应者与泵的账户，辨认过程和经济数据的内部边界、重复覆盖与误差来源。
 ---
 
-## 过程经济边界
+## 过程经济边界 [#过程经济边界]
 
 <Prose ids="cl-inv-boundary-carrier cl-inv-small-cuts cl-hyb-question cl-inv-io-limits" />
 
 <Prose ids="cl-inv-hybrid-forms cl-inv-double-counting cl-hyb-object cl-hyb-sign" />
 
-
-## 双向账户
+## 双向账户 [#双向账户]
 
 <Prose ids="cl-hyb-upstream cl-hyb-downstream cl-hyb-balance cl-hyb-inventory" />
 
@@ -22,10 +21,21 @@ description: 沿烤面包器、三家供应者与泵的账户，辨认过程和�
 
 <Prose ids="cl-hyb-equations cl-hyb-corrected cl-hyb-naive-result cl-hyb-swap" />
 
+两组发票都属于教学设定。F、G 是两家发电方，S 是服务方。下表金额为 CU/年。
+
+| 卖方 → 买方 | 原发票 | 另一组发票 |
+| --- | --- | --- |
+| F → S（电） | 10 | 0 |
+| G → S（电） | 10 | 20 |
+| S → F（服务） | 20 | 20 |
+| S → G（服务） | 30 | 30 |
+| S → S（自用） | 20 | 20 |
+
+把 F、G 合成电力部门 E，两组账都显示 E 向 S 售电 20 CU/年，S 向 E 售服务 50 CU/年。部门表无法区分供电者。
+
 <Prose ids="cl-hyb-swap-result" />
 
-
-## 误差来源
+## 误差来源 [#误差来源]
 
 <Prose ids="cl-hyb-pump cl-hyb-bpc cl-hyb-paths cl-hyb-popcorn" />
 

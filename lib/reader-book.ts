@@ -1,5 +1,7 @@
 import pedigreeAccepted from '@/config/readable-pedigree-accepted.json';
 import { readablePedigreeCitationLabel, readablePedigreeHeadingEntries, readablePedigreeRoute, remapReadablePedigreeCitations, validateReadablePedigreeCoverage } from '@/scripts/reader-readable-pedigree.mjs';
+import pmAccepted from '@/config/pm-selection-accepted.json';
+import { pmSelectionAppendix, pmSelectionCitationLabel, pmSelectionHeadingEntries, pmSelectionRoute, remapPmSelectionCitations, validatePmSelectionCoverage } from '@/scripts/reader-pm-selection.mjs';
 import toxicityAccepted from '@/config/toxicity-pathways-accepted.json';
 import readings from '@/knowledge/research/readings.json';
 import literature from '@/knowledge/research/literature-map.json';
@@ -11,7 +13,7 @@ import { climateAssemblyKey, climateAssemblyRoutes, climateAssemblyAppendix, cli
 import closingHistory from '@/config/closing-synthesis-heading-history.json';
 import closingProse from '@/config/closing-synthesis-prose-accepted.json';
 import { closingSynthesisHeadingEntries, remapClosingSynthesisCitations, validateClosingSynthesisCoverage } from '@/scripts/reader-closing-synthesis.mjs';
-import { getPresentationUnits } from '@/scripts/reader-numbering.mjs';
+import { getHeadingNumbering, getPresentationUnits } from '@/scripts/reader-numbering.mjs';
 import jointOriginal from '@/config/joint-production-original.json';
 import wallOriginal from '@/config/wall-selection-original.json';
 import wallHeadings from '@/config/wall-selection-heading-history.json';
@@ -39,6 +41,9 @@ import { source } from '@/lib/source';
 import { monographSource } from '@/lib/monograph-source';
 import { cache } from 'react';
 import baseline from '@/config/citation-baseline.json';
+import hostedHistory from '@/config/readable-book-hosted-history.json';
+import { qualifyReadableBookCitations } from '@/scripts/reader-current-citations.mjs';
+import { currentBookPlan, isReadableBookReviewPreview } from '@/scripts/reader-current-expectations.mjs';
 import placements from '@/config/citation-placements.json';
 import history from '@/config/citation-history.json';
 import edition from '@/config/book-edition.json';
@@ -82,7 +87,9 @@ const historical = [...createLegacyCitationEntries(baseline, placements, history
 const earlierEntries: LegacyEntry[] = remapDataApplicabilityCitations(remapClimateAssemblyCitations(remapClosingSynthesisCitations(remapWallSelectionCitations(remapJointProductionCitations(remapHybridInventoryCitations(remapExchangeSemanticsCitations(remapProcessNetworkCitations(remapFunctionalReferenceCitations(remapCleanerProductionCitations(
   remapBookCitations([...historical, ...cleanerProductionHeadingEntries(cleanerHeadingHistory), ...functionalReferenceHeadingEntries(functionalHeadings), ...processNetworkHeadingEntries(processHeadings), ...exchangeSemanticsHeadingEntries(), ...hybridInventoryHeadingEntries(hybridHeadings), ...jointProductionHeadingEntries(jointHeadings), ...wallSelectionHeadingEntries(wallHeadings), ...closingSynthesisHeadingEntries(closingHistory), ...climateAssemblyHeadingEntries(), ...dataApplicabilityHeadingEntries()], edition, accepted, placements), cleanerAccepted, cleanerHeadingHistory), functionalAccepted, functionalHeadings), processAccepted, processHeadings)), hybridAccepted, hybridHeadings), jointOriginal, jointHeadings, jointProse), wallOriginal, wallHeadings, wallAccepted), closingHistory, closingProse), climateAccepted), dataAccepted);
 const toxicityEntries = remapToxicityPathwaysCitations([...earlierEntries, ...toxicityPathwaysHeadingEntries()], toxicityAccepted);
-const legacyEntries = remapReadablePedigreeCitations([...toxicityEntries, ...readablePedigreeHeadingEntries()], pedigreeAccepted);
+const pedigreeEntries = remapReadablePedigreeCitations([...toxicityEntries, ...readablePedigreeHeadingEntries()], pedigreeAccepted);
+const integratedEntries = remapPmSelectionCitations([...pedigreeEntries, ...pmSelectionHeadingEntries()], pmAccepted);
+const legacyEntries: LegacyEntry[] = qualifyReadableBookCitations(integratedEntries, hostedHistory, currentBookPlan.migrations);
 export function getLegacyCitations(route: string, print: boolean) {
   const path = print ? '/print' : route, aliases = new Map<string, LegacyEntry[]>(), notices: LegacyEntry[] = [], scopes = new Map<string, LegacyEntry>();
   for (const entry of legacyEntries) {
@@ -99,9 +106,18 @@ export function getLegacyCitations(route: string, print: boolean) {
 export const getChapterReferenceIndex = cache(async (print = false) => {
   const pages = print ? getPrintPages() : getOrderedPages();
   const rawPages = await Promise.all(pages.map(async(page,index)=>({url:page.url,title:page.data.title,raw:await page.data.getText('raw'),printOrder:index})));
+  const index = () => createChapterReferenceIndex(rawPages.map(page => ({
+    ...page, raw: projectExchangeSemanticsRaw(page.url, page.raw, print),
+  })), { print });
+  // Draft output is for reading and visual inspection. Public admission below
+  // and the independent export never run under this preview control.
+  if (isReadableBookReviewPreview) return index();
+
   const cleanerErrors = validateCleanerProductionCoverage(edition, new Map(rawPages.map(page => [page.url, page.raw])), cleanerAccepted, catalog);
   if (cleanerErrors.length) throw new Error(cleanerErrors.join('\n'));
   const rawSources = new Map(await Promise.all([...source.getPages(),...monographSource.getPages()].map(async page=>[page.url,await page.data.getText('raw')] as const)));
+  const pmErrors = validatePmSelectionCoverage(edition, rawSources, catalog, pmAccepted, undefined, { projection: 'public', readings, literature });
+  if (pmErrors.length) throw new Error(pmErrors.join('\n'));
   const dataErrors = validateDataApplicabilityCoverage(edition, rawSources, catalog, dataAccepted, undefined, 'public');
   if (dataErrors.length) throw new Error(dataErrors.join('\n'));
   const climateErrors = validateClimateAssemblyCoverage(edition, rawSources, catalog, climateAccepted, undefined, 'public');
@@ -128,9 +144,10 @@ export const getChapterReferenceIndex = cache(async (print = false) => {
   }
   const exchangeErrors = validateExchangeSemanticsCoverage(edition, rawSources, undefined, catalog, exchangeProse);
   if (exchangeErrors.length) throw new Error(exchangeErrors.join("\n"));
-  return createChapterReferenceIndex(rawPages.map(page => ({ ...page, raw: projectExchangeSemanticsRaw(page.url, page.raw, print) })), {print});
+  return index();
 });
 export async function getCitationLabel(target: Destination) {
+  if (target.label) return target.label;
   const print = target.path === '/print';
   if (target.kind === 'note') {
     const index = await getChapterReferenceIndex(print);
@@ -140,6 +157,19 @@ export async function getCitationLabel(target: Destination) {
   }
   const page = print ? getPrintPages().find(page=>page.url===target.route) : source.getPages().find(page=>page.url===target.route);
   if (!page) throw new Error(`Missing citation destination ${target.route}`);
+  if (currentBookPlan.migrations.length) {
+    if (target.kind === 'heading') {
+      const prefix = `${printUnitAnchor(target.route)}-`;
+      const key = print && target.id.startsWith(prefix) ? target.id.slice(prefix.length) : target.id;
+      const heading = getHeadingNumbering(print ? 'book' : 'web', target.route, key)?.title
+        ?? (key === 'wall-case-reference' ? '计算表与参数'
+          : key === 'joint-batch-case-heading' ? '同一批共产品：份额、路线与比较残余' : null);
+      return `《${page.data.title}》${heading ? `·${heading}` : ''}`;
+    }
+    return `《${page.data.title}》${target.kind === 'note-group' ? '注释' : ''}`;
+  }
+
+  if ([pmSelectionRoute, pmSelectionAppendix].includes(target.route)) return pmSelectionCitationLabel(target, pmAccepted);
   if (target.kind === 'heading' && target.route === readablePedigreeRoute) return readablePedigreeCitationLabel(target, pedigreeAccepted);
   if (target.kind === 'heading' && target.route === toxicityPathwaysRoute) return toxicityPathwaysCitationLabel(target, toxicityAccepted);
   if (target.kind === 'heading' && [dataApplicabilityKey, ...dataApplicabilityRoutes, climateAssemblyKey, ...climateAssemblyRoutes, climateAssemblyAppendix].includes(target.route)) {

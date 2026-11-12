@@ -3,22 +3,35 @@ title: 质量评分与概率
 description: 柏林的杯重调查估计了平均值，也显示了杯型重量的散布。两种量的区别，关系到怎样用这批资料提出完整性因子，以及要在什么条件下才能给清单参数赋予概率。
 ---
 
-## 杯重调查与估计
+## 杯重调查与估计 [#杯重调查与估计]
 
 <Prose ids="cl-ped-study-question cl-ped-population cl-ped-design cl-ped-weighted-mean cl-ped-design-variance" />
 
-## 散布与估计精度
+## 散布与估计精度 [#散布与估计精度]
 
-<Prose ids="cl-ped-cluster-arithmetic cl-ped-population-spread cl-ped-poststratification cl-ped-stratified-conflict cl-ped-estimate-boundary" />
+<Prose ids="cl-ped-cluster-arithmetic cl-ped-population-spread cl-ped-poststratification cl-ped-stratified-conflict" />
 
-## 完整性评分的校准
+下表把同一调查中的几种量放在一起。均值和方差取原报告的显示值，标准差、标准误及百分比按上文算式复算；总体元素仍是杯型在门店的出现。
+
+| 所问的量 | 所用显示量 | 开方、相除所得 |
+| --- | --- | --- |
+| 整群路线的均值精度 | 均值5.6589 g；均值估计方差0.0072 g² | 标准误约0.0849 g；相对标准误约1.4995% |
+| 总体杯重的散布 | 杯重方差0.72 g²；以5.6474 g为比较分母 | 标准差约0.8485 g；相对标准差约15.0251% |
+| 后分层的均值精度 | 均值5.7245 g；均值估计方差0.0014 g² | 标准误约0.0374 g；相对标准误约0.6536% |
+| 分层路线的均值精度 | 均值5.6474 g；均值估计方差0.0034 g² | 相对标准误约1.0325%；原文讨论写0.07%，尚不相合 |
+
+读表时先选所问的量：杯型彼此的重量差异看第二行；平均杯重估计的精度看其余三行。它们不能因都写成百分数而互换。
+
+<Prose ids="cl-ped-estimate-boundary" />
+
+## 完整性评分的校准 [#完整性评分的校准]
 
 <Prose ids="cl-unc-scores cl-unc-calibration cl-ped-subsets cl-ped-score-mapping cl-ped-gsd-definition cl-ped-completeness-ratio cl-ped-factor-values cl-ped-calibration-boundary cl-unc-calibration-limits" />
 
-## 概率模型与参数
+## 概率模型与参数 [#概率模型与参数]
 
 <Prose ids="cl-ped-ratio-rule cl-ped-ratio-example cl-ped-independent-product cl-ped-ratio-residual cl-ped-factor-conventions cl-unc-baseline cl-ped-inventory-assumptions cl-ped-inventory-combination cl-ped-inventory-interval cl-ped-inventory-center" />
 
-## 评分的检验与适用
+## 评分的检验与适用 [#评分的检验与适用]
 
 <Prose ids="cl-unc-table-conflict cl-ped-reliability-cv-trace cl-ped-score-test-design cl-ped-score-test-results cl-ped-three-tests cl-unc-alongside cl-unc-context cl-unc-synthesis" />

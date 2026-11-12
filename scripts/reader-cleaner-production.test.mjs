@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile, mkdtemp, mkdir, writeFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { validateReaderOutput } from './reader-surface.mjs';
+import { validateReaderOutputFixture } from './reader-surface.mjs';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 import { assertCleanerProductionAccepted, assertCleanerProductionHeadingHistory, assertCleanerProductionRegistration, cleanerProductionHeadingEntries, cleanerProductionRoute as route, remapCleanerProductionCitations, validateCleanerProductionCoverage, validateRenderedCleanerProduction } from './reader-cleaner-production.mjs';
 import { currentEditionKeys, publishedHeadingEntries, remapBookCitations } from './reader-edition.mjs';
@@ -41,7 +41,7 @@ test('original B05 identity and actual hosted capture are independently fixed', 
 
 test('B05 stays one shared source with explicit metadata in the current39 mixed roster', () => {
   const available = edition.units.flatMap(unit => [unit.source, ...unit.coverage ?? []]);
-  assert.equal(currentEditionKeys(edition, available, baseline, placements).length, 39);
+  assert.equal(currentEditionKeys(edition, available, baseline, placements).length, 40);
   for (const change of [
     copy => copy.units = copy.units.filter(unit => unit.key !== route),
     copy => copy.units.find(unit => unit.key === route).source = '/monograph/empty-b05',
@@ -169,8 +169,8 @@ test('co-deleting B05 accepted/captured configs cannot bypass export admission',
     await mkdir(out); await mkdir(config);
     for (const name of ['book-edition','framework-accepted','framework-heading-history','citation-baseline','citation-placements','citation-history'])
       await writeFile(join(config, `${name}.json`), JSON.stringify(await json(name)));
-    await assert.rejects(validateReaderOutput(out), /requires its accepted proposition and published heading inventories/);
+    await assert.rejects(validateReaderOutputFixture(out), /requires its accepted proposition and published heading inventories/);
     await writeFile(join(config, 'cleaner-production-accepted.json'), JSON.stringify(accepted));
-    await assert.rejects(validateReaderOutput(out), /requires its accepted proposition and published heading inventories/);
+    await assert.rejects(validateReaderOutputFixture(out), /requires its accepted proposition and published heading inventories/);
   } finally { await rm(root, { recursive: true, force: true }); }
 });

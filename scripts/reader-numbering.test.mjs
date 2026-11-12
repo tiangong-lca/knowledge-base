@@ -3,15 +3,26 @@ import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
 import { Fragment, jsx, jsxs } from 'react/jsx-runtime';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
-import { assertNumberingToc, assertReaderNumbering, getContinuationLink, getHeadingNumbering, getPresentationUnits, getUnitHeadingPlan, getUnitNumbering, readNumberedHeading, readerNumberingManifest } from './reader-numbering.mjs';
+import { assertNumberingToc, assertReaderNumbering, currentPrintReadingHref, getContinuationLink, getHeadingNumbering, getPresentationUnits, getUnitHeadingPlan, getUnitNumbering, printReadingEntryAnchor, readNumberedHeading, readerNumberingManifest } from './reader-numbering.mjs';
+import { printUnitAnchor } from './reader-book.mjs';
 
 const route = '/docs/book/service-and-reference';
+test('authored full-unit links use current reading entries without changing scoped citations', () => {
+  const key='/docs/book/data-quality-and-probability', old=printUnitAnchor(key), current=printReadingEntryAnchor(key);
+  assert.notEqual(old,current);
+  assert.equal(currentPrintReadingHref(`/print/#${old}`),`/print/#${current}`);
+  assert.equal(currentPrintReadingHref(`#${old}`,true),`#${current}`);
+  assert.equal(currentPrintReadingHref(`#${old}`),`#${old}`);
+  assert.equal(currentPrintReadingHref(`/print/#${old}-claim-cl-ped-estimate-boundary`),`/print/#${old}-claim-cl-ped-estimate-boundary`);
+  assert.equal(currentPrintReadingHref('/sources/#src-example'),'/sources/#src-example');
+  assert.equal(currentPrintReadingHref('/print/#not-a-declared-unit'),'/print/#not-a-declared-unit');
+});
 const html = (number='6.1',title='服务要求') => `<h2 data-reader-heading-key="服务要求"><a href="#服务要求"><span data-reader-number="">${number}</span> <span data-reader-heading-title="">${title}</span></a><button>复制章节链接</button></h2>`;
 
-test('current book retains 39 actual units, 32 chapters and all seven real part groups', () => {
+test('current book retains 40 actual units, 32 chapters, 120 formal sections and seven real parts', () => {
   const units=getPresentationUnits('book');
-  assert.equal(units.length,39);
-  assert.deepEqual(['front-matter','chapter','topic','appendix'].map(kind=>units.filter(unit=>unit.kind===kind).length),[2,32,2,3]);
+  assert.equal(units.length,40);
+  assert.deepEqual(['front-matter','chapter','topic','appendix'].map(kind=>units.filter(unit=>unit.kind===kind).length),[2,32,2,4]);
   assert.deepEqual([1,2,3,4,5,6,7].map(part=>units.filter(unit=>unit.part===part).length),[5,4,4,6,5,4,4]);
   assert.equal(getUnitNumbering('book',route).label,'第6章');
   assert.equal(getUnitNumbering('book','/docs/book/inventory-calculation').label,'第7章');
@@ -20,18 +31,28 @@ test('current book retains 39 actual units, 32 chapters and all seven real part 
   assert.equal(getUnitNumbering('book','book-climate-equivalence').label,'第15章');
   assert.equal(getUnitNumbering('book','/docs/book/wall-service-to-comparison').label,'第29章');
   assert.equal(getUnitNumbering('book','book-revisable-judgment').label,'第32章');
-  assert.equal(getUnitNumbering('book','/docs/allocation').label,'专题2');
+  assert.equal(getUnitNumbering('book','/docs/history').label,'附记 T1');
+  assert.equal(getUnitNumbering('book','/docs/allocation').label,'附记 T2');
+  const sections = units.filter(unit=>unit.kind==='chapter')
+    .map(unit=>getUnitHeadingPlan('book',unit.key).filter(row=>row.type==='mdx'&&row.depth===2).length);
+  assert.equal(sections.reduce((sum,count)=>sum+count,0),120);
+  assert(sections.every(count=>count>=3&&count<=5));
+  for (const {key} of units) {
+    const historical = printUnitAnchor(key);
+    assert.equal(printReadingEntryAnchor(key),historical.replace('print-unit-','print-reading-unit-'));
+  }
   assert.equal(getUnitNumbering('book','/docs/appendices/container-energy-check').label,'附录 A');
   assert.equal(getUnitNumbering('book','/docs/appendices/cml-framework-calculations').label,'附录 B');
   assert.equal(getUnitNumbering('book','/docs/appendices/climate-numerical-reconstruction').label,'附录 C');
+  assert.equal(getUnitNumbering('book','/docs/appendices/particulate-factor-calculations').label,'附录 D');
   assert.equal(getUnitNumbering('book','/docs').label,null);
 });
 
 test('website numbering retains 37 fine pages and five independent topic entries',()=>{
   const web=getPresentationUnits('web');
-  assert.equal(web.length,47);
+  assert.equal(web.length,48);
   assert.equal(web.filter(unit=>unit.kind==='chapter').length,37);
-  assert.equal(new Set(web.map(unit=>unit.key)).size,47);
+  assert.equal(new Set(web.map(unit=>unit.key)).size,48);
   assert.equal(getUnitNumbering('web',route).label,'第7篇');
   assert.equal(getUnitNumbering('web','/docs/book/framework-history').label,'第4篇');
   assert.equal(getUnitNumbering('web','/docs/book/cml-computation-judgment-and-improvement').label,'第5篇');
@@ -48,7 +69,7 @@ test('actual case detail keeps its source sibling hierarchy and stays outside fo
   assert.equal(joint.filter(row=>row.type==='mdx').length,4);
   const wall=getUnitHeadingPlan('book','/docs/book/wall-service-to-comparison');
   assert.deepEqual(wall.filter(row=>row.type==='case').map(row=>[row.depth,row.number]),[[3,'29.4.1'],[4,'29.4.1.1'],[4,'29.4.1.2'],[4,'29.4.1.3'],[4,'29.4.1.4']]);
-  assert.equal(wall.find(row=>row.key==='@case:wall:current').title,'当前计算：平整基底 smooth · θ=0.3');
+  assert.equal(wall.find(row=>row.key==='@case:wall:current').title,'计算示例：平整基底 smooth · θ=0.3');
   assert.equal(wall.filter(row=>row.type==='mdx')[2].number,'29.3');
   assert.deepEqual(wall.filter(row=>row.type==='mdx').map(row=>[row.title,row.number]),[['功能实现','29.1'],['清单形成','29.2'],['指标含义','29.3'],['配对判断','29.4']]);
   assert.equal(getUnitNumbering('web','/docs/book/wall-service-to-comparison').title,'墙面服务比较');
@@ -128,16 +149,22 @@ test('manifest contains every actual source and does not silently hide authored 
 });
 
 
-test('only two exact source-qualified continuations change in the book view',()=>{
-  const policy='/docs/book/early-container-policy-and-systems',framework='/docs/book/framework-history/';
-  const web=getContinuationLink('web',policy,framework,'评价框架的形成');
-  const book=getContinuationLink('book',policy,framework,'评价框架的形成');
-  assert.deepEqual(web,{key:'policy-to-framework',href:framework,label:'评价框架的形成'});
-  assert.equal(book.label,'框架职责');
-  assert.equal(book.href,'#print-unit-626f6f6b2d6672616d65776f726b2d726573706f6e736962696c6974696573');
-  const time='/docs/book/emission-time-and-assessment',future='/docs/book/future-technology-and-context/';
-  assert.deepEqual(getContinuationLink('web',time,future,'未来技术置于怎样的世界'),{key:'emission-time-to-future',href:future,label:'未来技术置于怎样的世界'});
-  assert.equal(getContinuationLink('book','book-climate-equivalence',future,'未来技术置于怎样的世界').href,'#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874');
-  assert.equal(getContinuationLink('book',time,future,'未来技术置于怎样的世界'),null);
-  for(const [route,href,label] of [[policy,framework+'#history','评价框架的形成'],[policy,framework,'不同标题'],[time,framework,'评价框架的形成'],['/docs/history',future,'未来技术置于怎样的世界']])assert.equal(getContinuationLink('book',route,href,label),null);
+test('the three exact source-qualified continuations keep their own website and current book targets',()=>{
+  const cases = [
+    ['policy-to-framework','/docs/book/early-container-policy-and-systems','/docs/book/early-container-policy-and-systems',
+      '/docs/book/framework-history/','评价框架的形成','book-framework-responsibilities','框架职责'],
+    ['emission-time-to-future','/docs/book/emission-time-and-assessment','book-climate-equivalence',
+      '/docs/book/future-technology-and-context/','未来技术与情景','/docs/book/future-technology-and-context','未来技术与情景'],
+    ['data-to-uncertainty','/docs/book/review-support-and-version-boundaries','book-data-applicability',
+      '/docs/book/uncertainty-and-variability','变异与不确定性','/docs/book/uncertainty-and-variability','变异与不确定性'],
+  ];
+  for (const [key, webSource, bookSource, href, webLabel, destination, bookLabel] of cases) {
+    assert.deepEqual(getContinuationLink('web',webSource,href,webLabel),{key,href,label:webLabel});
+    const current = printReadingEntryAnchor(destination);
+    assert.notEqual(current, printUnitAnchor(destination));
+    assert.deepEqual(getContinuationLink('book',bookSource,href,webLabel),{key,href:'#'+current,label:bookLabel});
+    for (const [route, target, label] of [[bookSource,href+'#history',webLabel],[bookSource,href,'不同标题'],['/docs/history',href,webLabel]])
+      assert.equal(getContinuationLink('book',route,target,label),null);
+    if (webSource!==bookSource) assert.equal(getContinuationLink('book',webSource,href,webLabel),null);
+  }
 });

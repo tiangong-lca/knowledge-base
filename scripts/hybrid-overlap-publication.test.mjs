@@ -160,13 +160,13 @@ test('the seven previous cases retain their reviewed canonical hashes and ordina
 });
 
 test('repository discovery binds the real parent and exporter refuses missing-parent input before writing output', async () => {
-  const { validateRepository } = await import('./validate.mjs');
+  const { validateRepositoryFixture } = await import('./validate.mjs');
   await withRepository(async (root, f) => {
     const entries = await loadCasePublications(root);
     assert.deepEqual(validateCasePublications(entries, f.catalog), []);
-    assert.deepEqual(await validateRepository(root), []);
+    assert.deepEqual(await validateRepositoryFixture(root), []);
     await rm(join(root, 'knowledge/cases/wall-coating-v1.publication.json'));
-    assert((await validateRepository(root)).some(error => /hybrid overlap parent:/.test(error)));
+    assert((await validateRepositoryFixture(root)).some(error => /hybrid overlap parent:/.test(error)));
     // Export runs the same entry-based gate independently; refusal occurs before
     // source Git inspection or creation of downloadable output. No Git fixture.
     await mkdir(join(root, 'knowledge/research'));

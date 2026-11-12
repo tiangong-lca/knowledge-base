@@ -4,7 +4,7 @@ import { mkdtemp, mkdir, writeFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { validateResearch, publicResearch } from './research.mjs';
-import { validateRepository } from './validate.mjs';
+import { validateRepositoryFixture } from './validate.mjs';
 
 function fixture() {
   const date = '2026-11-04';
@@ -137,14 +137,14 @@ test('repository validation discovers registers while retaining legacy repositor
     await mkdir(join(root, 'knowledge/research'), { recursive: true }); await mkdir(join(root, 'content'));
     const catalog = { schemaVersion: 1, sources: [], evidence: [], claims: [], concepts: [], mappings: [], coverage: [] };
     await writeFile(join(root, 'knowledge/catalog.json'), JSON.stringify(catalog));
-    assert.deepEqual(await validateRepository(root), []);
+    assert.deepEqual(await validateRepositoryFixture(root), []);
     const f = fixture(); f.literature.records[0].catalogSourceIds = [];
     await writeFile(join(root, 'knowledge/research/literature-map.json'), JSON.stringify(f.literature));
     await writeFile(join(root, 'knowledge/research/readings.json'), JSON.stringify(f.readings));
-    assert.deepEqual(await validateRepository(root), []);
+    assert.deepEqual(await validateRepositoryFixture(root), []);
     f.readings.readings[0].passages[0].pdfIndices = [3];
     await writeFile(join(root, 'knowledge/research/readings.json'), JSON.stringify(f.readings));
-    assert((await validateRepository(root)).some(error => /outside artifact pageCount/.test(error)));
+    assert((await validateRepositoryFixture(root)).some(error => /outside artifact pageCount/.test(error)));
   } finally { await rm(root, { recursive: true, force: true }); }
 });
 

@@ -14,11 +14,29 @@ checkPaths:
   - "package.json"
   - "app/**"
   - "scripts/**"
-lastReviewedAt: 2026-11-11
-lastReviewedCommit: b2f8a942ad45510cfc67e4e61b5b3ad9c820ae19
+lastReviewedAt: 2026-11-12
+lastReviewedCommit: f650600e6303352252e8d6fad14607c2061a9f58
 ---
 
 # LCA Living Knowledge Base and Review
+
+[Complete manuscript revision #93](https://github.com/tiangong-lca/knowledge-base/issues/93)
+follows the [whole-book protocol](_docs/editorial/2026-11-12-complete-readable-book.md).
+Its reviewed current edition contains 32 chapters and 120 formal sections in 40 book
+units, with 48 website units over shared canonical records. Source, reader and
+actual-output receipts bind exact changes while retaining earlier chapter and
+citation histories. Direct production Next builds run the same source gate as
+the normal build command. Main, hosting and workspace delivery are qualified
+separately in the execution ledger.
+
+[Particulate selection #90](https://github.com/tiangong-lca/knowledge-base/issues/90)
+uses the [source and material protocol](_docs/editorial/2026-11-10-pm-selection.md)
+and an immutable original inventory at `config/pm-selection-original.json`.
+The shared four-section chapter has37notes; its actual four-section appendix
+has17. All48original propositions have a substantive destination, with six new
+explanations and unchanged particulate case inputs and templates. Separate source, reader
+and engineering evidence admits the current manuscript; actual production
+output, hosting and tracked delivery retain their own qualification gates.
 
 [Toxicity pathways #88](https://github.com/tiangong-lca/knowledge-base/issues/88)
 uses one shared three-section, twelve-paragraph C27/B19 source. Its
@@ -60,6 +78,13 @@ node scripts/snapshot.mjs <edition-id> <new-absolute-directory>
 
 Impact analysis reports claims needing review without granting approval or automatically changing editorial decisions. Freeze editions only after a clean committed build. Use `/print/` for the complete narrative with evidence and references.
 
+An explicitly prepared `status: "preview"` manuscript may be rendered with
+`READABLE_BOOK_REVIEW_PREVIEW=1 pnpm exec next build` in an isolated candidate
+checkout. Its artifacts go to `.reader-review-output`, never production `out`.
+The normal validator and exporter reject this preview as a publication. Review
+files and independently pinned acceptance are required before a production
+build; the flag does not approve source meaning, reader quality or output.
+
 ## Delivery
 
 This is an M1 main repository. The approved book programme is coordinated in [knowledge-base #9](https://github.com/tiangong-lca/knowledge-base/issues/9); the first research/manuscript wave [#10](https://github.com/tiangong-lca/knowledge-base/issues/10) is integrated, the methods/models expansion is [#12](https://github.com/tiangong-lca/knowledge-base/issues/12), and subsequent wave identities and progress are maintained in [the execution ledger](_docs/book-execution.md). Initial onboarding #1/workspace #2172 remains historical evidence. Use the workspace lifecycle controller for delivery records. A merged child PR requires separate exact workspace integration.
@@ -90,7 +115,18 @@ The expanded `/docs/book/allocation-and-substitution/` also contains CASE-JOINT-
 
 ## Reader delivery policy
 
-Read [_docs/reader-publication-contract.md](_docs/reader-publication-contract.md). Published pages are finished book prose with scholarly notes; research/development logs and TODOs stay in development Markdown. Layout matches the owning docs site. Current rendering shares canonical prose between website and book while generating notes for each actual surface unit. The explicit mixed39-unit roster contains shared front matter, retained sources, the independently authored B04/B10/B15/B25/B32 assemblies and three calculation appendices. B05 uses one genuine shared MDX chapter with three adopted sections and six notes; B06 consumes two original sources in one shared seventeen-note chapter. B08 integrates the exchange/flow/characterization sources in one four-section chapter; the fine website entrances remain. S01 keeps its historical-method prose and APOS paragraph, with eight explicit print cross-references to their actual chapter notes. Whole-book authoring, the120-section goal and formal edition qualification remain separate work, with conservation and generation-specific historical references required at each migration. The public `/research/` route is a bibliography. Preserve actual source/assumption limitations, and assess reader/layout quality independently from source and code validation.
+Read [_docs/reader-publication-contract.md](_docs/reader-publication-contract.md). Published pages are finished book prose with scholarly notes; research/development logs and TODOs stay in development Markdown. Layout matches the owning docs site. Current rendering shares canonical prose between website and book while generating
+notes for each actual surface unit. The 40-unit roster contains two front units,
+32 chapters, two method notes and four calculation appendices; the website retains
+48 fine-reading units and its distinct numbered navigation. B04/B10/B15/B25/B32
+are independently authored assemblies, and the remaining chapters use shared
+sources. T1 supplies historical-method explanation and eight precise print
+cross-references; T2 explains system-model choices. All 40 current book entries
+land on focusable titles, while historical fragments retain their own original
+scope. The complete revision meets the 120-section structure and has bounded
+whole-book reader acceptance. Broader research, formal publication and human
+expert/teaching qualification remain separate. Public `/research/` is a reader
+bibliography; actual source/assumption limits stay accessible in the notes.
 
 The water-locality and phosphorus-boundary examples publish versioned inputs and exact evaluated receipts under `/downloads/cases/`, linked from their chapter notes. They are static explanatory examples: water values are synthetic; the phosphorus default is source-bound and conditional, with characterization left symbolic. Use their registered case identities with `scripts/impact.mjs` for affected-claim review.
 
@@ -139,7 +175,7 @@ does not reproduce the 2025 correction or establish empirical climate validity.
 
 The [2026-11-06 monograph organization](_docs/editorial/2026-11-06-monograph-structure.md) records the adopted working argument, complete proposed TOC and content-preserving migration map. It is an editorial baseline under Issue58; actual prose rewriting, independent website/book organization and full-book research/qualification remain separate work. Its source branch now includes the accepted goal amendment from Issue56/PR57 at Main2bc7f4f. The revised full-book Goal is active as of2026-11-07; source and exact integration qualification remain separate gates.
 
-The opening and final synthesis use stable claim-occurrence note anchors with consecutive visible numbers. Old2026-11-07baseline addresses remain native aliases or explicit relocation links, including the two moved carrier-bag conclusions. `config/citation-baseline.json` is frozen and independently checked; do not regenerate it from current MDX. Six container calculation notes now relocate to `/docs/appendices/container-energy-check/`, with an explicit current print position and independent source-coverage checks. The current mixed39article print view includes the independently authored B04/B10/B15/B25/B32 assemblies, shared B06/B08 chapters and three appendices; the full monograph and formal edition remain separate.
+The opening and final synthesis use stable claim-occurrence note anchors with consecutive visible numbers. Old2026-11-07baseline addresses remain native aliases or explicit relocation links, including the two moved carrier-bag conclusions. `config/citation-baseline.json` is frozen and independently checked; do not regenerate it from current MDX. Six container calculation notes now relocate to `/docs/appendices/container-energy-check/`, with an explicit current print position and independent source-coverage checks. The current mixed40article print view includes the independently authored B04/B10/B15/B25/B32 assemblies, shared B06/B08 chapters and four appendices; the full monograph and formal edition remain separate.
 
 
 [Container monograph Issue62](https://github.com/tiangong-lca/knowledge-base/issues/62) implements the two historical chapters and their energy appendix under the [source and publication protocol](_docs/research-waves/2026-11-07-container-monograph.md). All36original claims and historical numerical input identities remain; a separate local-path synthesis supports continuous main-text reading. Current implementation and local validation do not substitute for independent reader assessment, exact source/Main/hosted qualification or workspace integration.
@@ -175,9 +211,9 @@ completion remain separate from the research and integrity checks.
 
 The website's fine reading sequence and the book's assembled chapters use separate,
 explicitly named numbering. Both follow the seven-part reading argument. The current
-book contains32 actual chapters plus front matter, topics and three appendices.
-B25 consumes C14/C15 in one authored14-note chapter. Its157formal chapter sections
-still exceed the120-section goal; whole-book authoring and formal publication remain
+book contains 32 chapters, two front matter units, two topics and four appendices.
+B25 combines C14/C15 in one chapter with 14 notes. The current 152 formal chapter sections
+still exceed the 120-section goal; whole-book authoring and formal publication remain
 editorial work. Display numbers never replace stable heading or citation IDs.
 `config/reader-numbering.json` and the source/output validators bind each actual
 number, title, hierarchy and navigation target. See the reader publication contract

@@ -170,3 +170,10 @@ export function createChapterAnnotationPlan(notePlan, claims, referenceIndex, { 
   }
   return result;
 }
+
+/** Fumadocs's explicit MDX anchor remains separate from the visible heading. */
+export function readSourceHeading(raw) {
+  const text = raw.trim();
+  const explicit = /^(.*?)\s+\[#([^\]]+)\]$/.exec(text);
+  return explicit ? { id: explicit[2], title: explicit[1] } : { id: text, title: text };
+}

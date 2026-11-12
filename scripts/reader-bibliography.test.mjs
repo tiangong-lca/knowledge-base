@@ -4,7 +4,6 @@ import { readFileSync } from 'node:fs';
 import { mkdtemp, mkdir, readFile, writeFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 import { readerBibliography } from './reader-bibliography.mjs';
 
@@ -87,7 +86,13 @@ test('actual export writes identical schema2 bibliography aliases and enforces t
     // repository under review and no remotes, branches or delivery operations.
     execFileSync('git', ['init', '-q'], { cwd: root });
     execFileSync('git', ['-c', 'user.name=Fixture', '-c', 'user.email=fixture@example.org', 'commit', '--allow-empty', '-qm', 'Fixture'], { cwd: root });
-    const run = () => execFileSync(process.execPath, [fileURLToPath(new URL('./export.mjs', import.meta.url))], { cwd: root, encoding: 'utf8', stdio: 'pipe' });
+    const fixtureRunner = `
+      import { exportArtifacts } from ${JSON.stringify(new URL('./export.mjs', import.meta.url).href)};
+      import { validateRepositoryFixture } from ${JSON.stringify(new URL('./validate.mjs', import.meta.url).href)};
+      import { validateReaderOutputFixture } from ${JSON.stringify(new URL('./reader-surface.mjs', import.meta.url).href)};
+      await exportArtifacts(validateRepositoryFixture, validateReaderOutputFixture);
+    `;
+    const run = () => execFileSync(process.execPath, ['--input-type=module', '-e', fixtureRunner], { cwd: root, encoding: 'utf8', stdio: 'pipe' });
     run();
     const current = await readFile(join(root, 'out/downloads/bibliography.json'), 'utf8');
     assert.equal(current, await readFile(join(root, 'out/downloads/research.json'), 'utf8'));

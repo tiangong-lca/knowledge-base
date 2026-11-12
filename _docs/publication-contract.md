@@ -16,8 +16,8 @@ checkPaths:
   - "content/**"
   - "scripts/**"
   - "releases/**"
-lastReviewedAt: 2026-11-11
-lastReviewedCommit: b2f8a942ad45510cfc67e4e61b5b3ad9c820ae19
+lastReviewedAt: 2026-11-12
+lastReviewedCommit: f650600e6303352252e8d6fad14607c2061a9f58
 ---
 
 # Publication contract
@@ -63,6 +63,19 @@ Reused original works receive precise additional passage/visual-check records wh
 The2026-11-08 whole-book selection decision in `editorial/2026-11-08-argument-and-selection.md` separates evidence eligibility from main-text inclusion. Faithful source support does not require publication of every inspected detail. Preserve coverage obligations, reader-essential conditions, counterevidence and immutable source/release identity while permitting explicitly reviewed mergers, notes, appendices, useful website topics and corrections. A current paragraph's removal from the main text requires a documented semantic destination or correction, dependent-use review and actual historical-link qualification; retaining an empty anchor or changing a baseline hash is insufficient. Existing code guards remain binding until those bounded dispositions are implemented and reviewed. Editorial agreement is not scientific consensus or human expert approval.
 
 ## Reader publication boundary
+
+Complete-manuscript acceptance binds the actual before/after source, ordered
+public and research records, and both dependency graphs. Unchanged URLs do not
+waive old title, note-subset or ordinary-content obligations. Migrations require
+exact, accessible destinations and separately reviewed semantic dispositions.
+Source, reader and actual-output reports must be real preserved artifacts bound
+to the same unit; a review hash alone is insufficient. Production inputs and
+public indexes/downloads must belong to the qualified current generation.
+
+Private preview artifacts are an editorial aid, not a publication acceptance.
+The production build and export gates cannot be disabled by package metadata or
+the preview flag. These integrity conditions do not turn an agent judgment into
+human expert approval or empirical model validation.
 
 The user-approved `_docs/reader-publication-contract.md` governs every delivered reading page. Public prose is finished exposition; all research/development process logs and TODOs stay in `_docs/`. Scientific scope, source identity, counterevidence and hypothetical assumptions remain reader-accessible. Stable machine identities and validation receipts do not become visible prose labels. Source/reader review and actual visual verification supplement software checks.
 
@@ -208,6 +221,16 @@ original claim subset and expose its dated context at the native heading.
 Inherited citations are remapped by their actual destination identity; the source
 route alone cannot determine where a subsequently moved note belongs.
 
+
+The particulate chapter and its calculation appendix share canonical records.
+The complete original48propositions and10numerical templates remain present,
+with current six explanatory additions separately accepted. Exact old chapter,
+section and note scopes remain readable across the new destinations. The
+specific original/matched AUS comparison qualifies the stated rows and labels,
+not the mapping algorithm, a current package other than the named release, or
+software execution. A final source/reader/engineering acceptance binds the
+current scientific records and audit additions; real output, hosting and
+delivery still require their own evidence.
 
 ## Readable-writing adoption
 

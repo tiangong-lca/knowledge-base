@@ -1,4 +1,5 @@
 import { validateReadablePedigreeCoverage, validateReadablePedigreeCaseBytes } from './reader-readable-pedigree.mjs';
+import { pmSelectionCasePaths, validatePmSelectionCaseBytes, validatePmSelectionCoverage } from './reader-pm-selection.mjs';
 import { validateToxicityPathwaysCoverage } from './reader-toxicity-pathways.mjs';
 import { assertDataApplicabilityOriginal, assertDataApplicabilityHeadingOriginal, validateDataApplicabilityCoverage } from './reader-data-applicability.mjs';
 import { assertClimateAssemblyOriginal, assertClimateAssemblyHeadingOriginal, validateClimateAssemblyArtifactBytes, validateClimateAssemblyCoverage } from './reader-climate-assembly.mjs';
@@ -17,6 +18,7 @@ import { fileURLToPath } from 'node:url';
 import { publicCatalog, validateCatalog } from './knowledge.mjs';
 import { validateResearch } from './research.mjs';
 import { loadCasePublications, validateCasePublications } from './case-publication.mjs';
+import { validateReadableBookCurrent } from './reader-current-edition-files.mjs';
 import { currentEditionKeys, validateFrameworkCoverage, assertFrameworkHeadingHistory } from './reader-edition.mjs';
 import { readerInternalIds, validateReaderClaims, validateReaderMdx } from './reader-surface.mjs';
 
@@ -74,7 +76,7 @@ async function mdxFiles(path) {
   return result;
 }
 
-export async function validateRepository(root) {
+async function validatePublication(root, requireCurrent) {
   const data = JSON.parse(await readFile(resolve(root, 'knowledge/catalog.json'), 'utf8'));
   const errors = validateCatalog(data);
   const readOptional = async path => {
@@ -100,6 +102,13 @@ export async function validateRepository(root) {
   const numbering = await readOptional('config/reader-numbering.json');
   if (numbering && !edition) errors.push('Current numbered reader publication requires its explicit book edition');
   if (!edition && await readOptional('content/docs/book/meta.json')) errors.push('Book source requires its current edition and accepted publication inventories');
+  if (requireCurrent) {
+    if (!edition) errors.push('Current reader publication requires its explicit book edition');
+    try {
+      const current = await validateReadableBookCurrent(root, data, readings, literature);
+      errors.push(...current.errors);
+    } catch (error) { errors.push(error.message); }
+  }
   if (edition) {
     const [accepted,baseline,placements,headings]=await Promise.all(['framework-accepted','citation-baseline','citation-placements','framework-heading-history'].map(name=>readOptional(`config/${name}.json`)));
     const [functionalAccepted,functionalHeadingHistory,functionalProse]=await Promise.all(['functional-reference-accepted','functional-reference-heading-history','functional-reference-prose-accepted'].map(name=>readOptional(`config/${name}.json`)));
@@ -109,6 +118,7 @@ export async function validateRepository(root) {
     const climateAccepted = await readOptional('config/climate-assembly-accepted.json');
     const toxicityAccepted = await readOptional('config/toxicity-pathways-accepted.json');
     const pedigreeAccepted = await readOptional('config/readable-pedigree-accepted.json');
+    const pmAccepted = await readOptional('config/pm-selection-accepted.json');
     const [closingHistory,closingProse] = await Promise.all(['heading-history','prose-accepted'].map(name=>readOptional(`config/closing-synthesis-${name}.json`)));
     const [jointOriginal,jointHeadings,jointProse] = await Promise.all(['original','heading-history','prose-accepted'].map(name=>readOptional(`config/joint-production-${name}.json`)));
     const [wallOriginal,wallHeadings,wallAccepted] = await Promise.all(['original','heading-history','accepted'].map(name=>readOptional(`config/wall-selection-${name}.json`)));
@@ -121,6 +131,9 @@ export async function validateRepository(root) {
       sources.set(route,await readFile(file,'utf8'));
     }
     try {
+      errors.push(...validatePmSelectionCoverage(edition, sources, data, pmAccepted, undefined, { readings, literature }));
+      const pmCaseBytes = Object.fromEntries(await Promise.all(pmSelectionCasePaths.map(async path => [path, await readFile(resolve(root, path))])));
+      errors.push(...validatePmSelectionCaseBytes(pmCaseBytes, pedigreeAccepted));
       assertDataApplicabilityOriginal(); assertDataApplicabilityHeadingOriginal();
       errors.push(...validateDataApplicabilityCoverage(edition,sources,data,dataAccepted));
       assertClimateAssemblyOriginal(); assertClimateAssemblyHeadingOriginal();
@@ -172,6 +185,9 @@ export async function validateRepository(root) {
   }
   return errors;
 }
+
+export const validateRepository = root => validatePublication(root, true);
+export const validateRepositoryFixture = root => validatePublication(root, false);
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   try {
