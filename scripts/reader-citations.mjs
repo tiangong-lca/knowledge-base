@@ -2,9 +2,9 @@ import { chapterAnchorPrefix, chapterNoteAnchor, printUnitAnchor } from './reade
 
 /** @typedef {{ route: string, headingIds: string[], noteClaims: string[], printOrdinal?: number }} BaselinePage */
 /** @typedef {{ notes: { from: string, claimId: string, to: string }[], frontMatter: string[], printAdditions?: { route: string, kind: string }[] }} Placements */
-/** @typedef {{ route: string, path: string, id: string, kind: 'chapter' | 'heading' | 'note' | 'note-group', claimId?: string }} Destination */
+/** @typedef {{ route: string, path: string, id: string, kind: 'chapter' | 'heading' | 'note' | 'note-group', claimId?: string, label?: string }} Destination */
 /** @typedef {{ sourceCommit: string, sourceDate: string }} CitationEdition */
-/** @typedef {{ route: string, path: string, id: string, targets: Destination[], mode: 'retained' | 'alias' | 'notice', edition: CitationEdition, scope?: { text: string, targets: Destination[] } }} LegacyEntry */
+/** @typedef {{ route: string, path: string, id: string, targets: Destination[], mode: 'retained' | 'alias' | 'notice', edition: CitationEdition, scope?: { text: string, targets: Destination[] }, capturedScope?: { title: string | null, claimIds: string[], ordinaryHashes: string[] }, ordinaryDispositions?: { oldSha256: string, rationale: string, destinations: { address: string, currentSha256?: string, claimId?: string }[] }[] }} LegacyEntry */
 /** @typedef {{ sourceCommit: string, sourceDate: string, pages: { route: string, noteClaims: string[], printOrdinal?: number }[] }} CanonicalHistory */
 
 /** @param {string} route @param {boolean} print */

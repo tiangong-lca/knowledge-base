@@ -1,5 +1,6 @@
+import { currentBookLayout } from './reader-current-expectations.mjs';
 import { createHash } from 'node:crypto';
-import { collectChapterClaimOccurrences, printUnitAnchor } from './reader-book.mjs';
+import { readSourceHeading, collectChapterClaimOccurrences, printUnitAnchor } from './reader-book.mjs';
 
 export const cleanerProductionRoute = '/docs/book/cleaner-production-purpose-and-prospects';
 const sectionTitles = ['预防目的', '应用设想', '发展条件'];
@@ -20,7 +21,7 @@ export function assertCleanerProductionHeadingHistory(history) {
 export function assertCleanerProductionRegistration(edition) {
   const unit = edition.units.find(unit => unit.key === cleanerProductionRoute);
   if (!unit || unit.source !== cleanerProductionRoute || unit.kind !== 'chapter' || unit.coverage?.length
-    || unit.part !== '问题的来路' || !same(unit.sections, sectionTitles.map(title => ({ id: title, title }))))
+    || unit.part !== '问题的来路' || !same(unit.sections, currentBookLayout('B05:headings', sectionTitles.map(title => ({ id: title, title })))))
     throw new Error('Missing or changed shared B05 chapter/part/three-section registration');
 }
 
@@ -35,14 +36,15 @@ export function validateCleanerProductionCoverage(edition, sources, accepted, ca
   const errors = [];
   const frontMatter = /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/.exec(raw)?.[1] ?? '';
   const title = /^title:\s*(.+?)\s*$/m.exec(frontMatter)?.[1]?.replace(/^(['"])(.*)\1$/, '$2');
-  if (title !== accepted.title) errors.push('B05 shared source has the wrong adopted title');
+  if (title !== currentBookLayout('B05:title', accepted.title)) errors.push('B05 shared source has the wrong adopted title');
   const split = raw.split(/^## (.+)\s*$/m), headings = [], actual = [];
   for (let i = 1; i < split.length; i += 2) {
-    const section = split[i].trim(); headings.push(section);
+    const heading = readSourceHeading(split[i]); headings.push(heading);
+    const section = heading.id;
     for (const id of collectChapterClaimOccurrences(split[i + 1])) actual.push({ id, section });
   }
-  const expected = accepted.sections.flatMap(section => section.claimIds.map(id => ({ id, section: section.id })));
-  if (!same(headings, sectionTitles)) errors.push('B05 source must have three actual adopted formal sections');
+  const expected = currentBookLayout('B05:occurrences', accepted.sections.flatMap(section => section.claimIds.map(id => ({ id, section: section.id }))));
+  if (!same(headings, currentBookLayout('B05:headings', sectionTitles.map(title => ({ id: title, title }))))) errors.push('B05 source must have three actual adopted formal sections');
   if (collectChapterClaimOccurrences(raw).length !== actual.length) errors.push('B05 has body propositions outside formal sections');
   if (!same(actual, expected)) errors.push('B05 original propositions missing, duplicated, reordered, replaced or misplaced');
   if (catalog) {
@@ -51,7 +53,9 @@ export function validateCleanerProductionCoverage(edition, sources, accepted, ca
     }
     for (const addition of accepted.additions) {
       const record = catalog.claims.find(claim => claim.id === addition.id);
-      if (!record || ['kind','evidenceIds','premiseIds','reviewedAt','reviewKind'].some(field => !same(record[field], addition[field])))
+      const fields = ['kind','evidenceIds','premiseIds','reviewedAt','reviewKind'];
+      const wanted = currentBookLayout(`B05:addition-metadata:${addition.id}`, Object.fromEntries(fields.map(field => [field, addition[field]])));
+      if (!record || fields.some(field => !same(record[field], wanted[field])))
         errors.push(`B05 addition differs from its reviewed type/evidence/premise binding: ${addition.id}`);
     }
   }
@@ -119,8 +123,9 @@ export function validateRenderedCleanerProduction(document, path, accepted, cata
   const errors = [], title = print ? unit.getAttribute('data-reader-title') : unit.querySelector('h1')?.text;
   if (!Array.isArray(catalog?.claims)) return [`${path}: actual B05 body validation requires the canonical catalog`];
   const claims = new Map(catalog.claims.map(claim => [claim.id, claim]));
-  if (title !== accepted.title) errors.push(`${path}: wrong actual B05 title`);
+  if (title !== currentBookLayout('B05:title', accepted.title)) errors.push(`${path}: wrong actual B05 title`);
   let section = null;
+  const currentHeadings = currentBookLayout('B05:headings', sectionTitles.map(title => ({ id: title, title })));
   const headings = [], actual = [];
   for (const node of unit.querySelectorAll('h1,h2,h3,h4,h5,h6,a[role="doc-noteref"]')) {
     if (node.getAttribute('role') === 'doc-noteref') {
@@ -129,14 +134,14 @@ export function validateRenderedCleanerProduction(document, path, accepted, cata
       const paragraph = node.closest('p'), claim = claims.get(id);
       if (!paragraph || !claim || typeof claim.text !== 'string' || paragraphBodyText(paragraph, node) !== claim.text)
         errors.push(`${path}: actual B05 paragraph body missing or different from canonical claim text: ${id}`);
-    } else if (node.id?.startsWith(prefix) && sectionTitles.includes(node.id.slice(prefix.length))) {
-      section = node.id.slice(prefix.length); headings.push(section);
-      if (node.tagName !== (print ? 'H3' : 'H2') || node.text.replace(/复制章节链接$/, '') !== section) errors.push(`${path}: wrong actual B05 formal heading ${node.id}`);
+    } else if (node.id?.startsWith(prefix) && currentHeadings.some(heading => heading.id === node.id.slice(prefix.length))) {
+      section = node.id.slice(prefix.length); headings.push({ id: section, title: node.text.replace(/复制章节链接$/, '') });
+      if (node.tagName !== (print ? 'H3' : 'H2') || node.text.replace(/复制章节链接$/, '') !== currentHeadings.find(heading => heading.id === section)?.title) errors.push(`${path}: wrong actual B05 formal heading ${node.id}`);
     } else if (node.closest('.chapter-notes')) section = null;
     else if (node.tagName !== (print ? 'H2' : 'H1')) errors.push(`${path}: unexpected B05 body heading ${node.id}`);
   }
-  if (!same(headings, sectionTitles)) errors.push(`${path}: missing, duplicated or reordered actual B05 formal sections`);
-  const expected = accepted.sections.flatMap(section => section.claimIds.map(id => ({ id, section: section.id })));
+  if (!same(headings, currentHeadings)) errors.push(`${path}: missing, duplicated or reordered actual B05 formal sections`);
+  const expected = currentBookLayout('B05:occurrences', accepted.sections.flatMap(section => section.claimIds.map(id => ({ id, section: section.id }))));
   if (!same(actual, expected)) errors.push(`${path}: actual B05 body propositions missing, duplicated, reordered, replaced or in the wrong section`);
   return errors;
 }

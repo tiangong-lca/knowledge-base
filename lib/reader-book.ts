@@ -41,6 +41,9 @@ import { source } from '@/lib/source';
 import { monographSource } from '@/lib/monograph-source';
 import { cache } from 'react';
 import baseline from '@/config/citation-baseline.json';
+import hostedHistory from '@/config/readable-book-hosted-history.json';
+import { qualifyReadableBookCitations } from '@/scripts/reader-current-citations.mjs';
+import { currentBookPlan, isReadableBookReviewPreview } from '@/scripts/reader-current-expectations.mjs';
 import placements from '@/config/citation-placements.json';
 import history from '@/config/citation-history.json';
 import edition from '@/config/book-edition.json';
@@ -85,7 +88,8 @@ const earlierEntries: LegacyEntry[] = remapDataApplicabilityCitations(remapClima
   remapBookCitations([...historical, ...cleanerProductionHeadingEntries(cleanerHeadingHistory), ...functionalReferenceHeadingEntries(functionalHeadings), ...processNetworkHeadingEntries(processHeadings), ...exchangeSemanticsHeadingEntries(), ...hybridInventoryHeadingEntries(hybridHeadings), ...jointProductionHeadingEntries(jointHeadings), ...wallSelectionHeadingEntries(wallHeadings), ...closingSynthesisHeadingEntries(closingHistory), ...climateAssemblyHeadingEntries(), ...dataApplicabilityHeadingEntries()], edition, accepted, placements), cleanerAccepted, cleanerHeadingHistory), functionalAccepted, functionalHeadings), processAccepted, processHeadings)), hybridAccepted, hybridHeadings), jointOriginal, jointHeadings, jointProse), wallOriginal, wallHeadings, wallAccepted), closingHistory, closingProse), climateAccepted), dataAccepted);
 const toxicityEntries = remapToxicityPathwaysCitations([...earlierEntries, ...toxicityPathwaysHeadingEntries()], toxicityAccepted);
 const pedigreeEntries = remapReadablePedigreeCitations([...toxicityEntries, ...readablePedigreeHeadingEntries()], pedigreeAccepted);
-const legacyEntries = remapPmSelectionCitations([...pedigreeEntries, ...pmSelectionHeadingEntries()], pmAccepted);
+const integratedEntries = remapPmSelectionCitations([...pedigreeEntries, ...pmSelectionHeadingEntries()], pmAccepted);
+const legacyEntries: LegacyEntry[] = qualifyReadableBookCitations(integratedEntries, hostedHistory, currentBookPlan.migrations);
 export function getLegacyCitations(route: string, print: boolean) {
   const path = print ? '/print' : route, aliases = new Map<string, LegacyEntry[]>(), notices: LegacyEntry[] = [], scopes = new Map<string, LegacyEntry>();
   for (const entry of legacyEntries) {
@@ -102,6 +106,13 @@ export function getLegacyCitations(route: string, print: boolean) {
 export const getChapterReferenceIndex = cache(async (print = false) => {
   const pages = print ? getPrintPages() : getOrderedPages();
   const rawPages = await Promise.all(pages.map(async(page,index)=>({url:page.url,title:page.data.title,raw:await page.data.getText('raw'),printOrder:index})));
+  const index = () => createChapterReferenceIndex(rawPages.map(page => ({
+    ...page, raw: projectExchangeSemanticsRaw(page.url, page.raw, print),
+  })), { print });
+  // Draft output is for reading and visual inspection. Public admission below
+  // and the independent export never run under this preview control.
+  if (isReadableBookReviewPreview) return index();
+
   const cleanerErrors = validateCleanerProductionCoverage(edition, new Map(rawPages.map(page => [page.url, page.raw])), cleanerAccepted, catalog);
   if (cleanerErrors.length) throw new Error(cleanerErrors.join('\n'));
   const rawSources = new Map(await Promise.all([...source.getPages(),...monographSource.getPages()].map(async page=>[page.url,await page.data.getText('raw')] as const)));
@@ -133,10 +144,10 @@ export const getChapterReferenceIndex = cache(async (print = false) => {
   }
   const exchangeErrors = validateExchangeSemanticsCoverage(edition, rawSources, undefined, catalog, exchangeProse);
   if (exchangeErrors.length) throw new Error(exchangeErrors.join("\n"));
-  return createChapterReferenceIndex(rawPages.map(page => ({ ...page, raw: projectExchangeSemanticsRaw(page.url, page.raw, print) })), {print});
+  return index();
 });
 export async function getCitationLabel(target: Destination) {
-  if ([pmSelectionRoute, pmSelectionAppendix].includes(target.route)) return pmSelectionCitationLabel(target, pmAccepted);
+  if (target.label) return target.label;
   const print = target.path === '/print';
   if (target.kind === 'note') {
     const index = await getChapterReferenceIndex(print);
@@ -146,6 +157,7 @@ export async function getCitationLabel(target: Destination) {
   }
   const page = print ? getPrintPages().find(page=>page.url===target.route) : source.getPages().find(page=>page.url===target.route);
   if (!page) throw new Error(`Missing citation destination ${target.route}`);
+  if ([pmSelectionRoute, pmSelectionAppendix].includes(target.route)) return pmSelectionCitationLabel(target, pmAccepted);
   if (target.kind === 'heading' && target.route === readablePedigreeRoute) return readablePedigreeCitationLabel(target, pedigreeAccepted);
   if (target.kind === 'heading' && target.route === toxicityPathwaysRoute) return toxicityPathwaysCitationLabel(target, toxicityAccepted);
   if (target.kind === 'heading' && [dataApplicabilityKey, ...dataApplicabilityRoutes, climateAssemblyKey, ...climateAssemblyRoutes, climateAssemblyAppendix].includes(target.route)) {

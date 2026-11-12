@@ -10,7 +10,7 @@ import { cleanerProductionHeadingEntries, remapCleanerProductionCitations } from
 import { functionalReferenceHeadingEntries, remapFunctionalReferenceCitations } from './reader-functional-reference.mjs';
 import { createLegacyCitationEntries, createCanonicalCitationEntries, citationHref } from './reader-citations.mjs';
 import { chapterAnchorPrefix, printUnitAnchor, splitReferenceTail, createChapterNotePlan } from './reader-book.mjs';
-import { readCitationSurface, validateHistoricalScope, validateReaderOutput } from './reader-surface.mjs';
+import { readCitationSurface, validateHistoricalScope, validateReaderOutputFixture } from './reader-surface.mjs';
 const json = async name => JSON.parse(await readFile(new URL(`../config/${name}.json`, import.meta.url), 'utf8'));
 const [accepted, captured, edition, baseline, placements, history, framework, frameworkHeadings, cleaner, cleanerHeadings, functional, functionalHeadings] = await Promise.all(['process-network-accepted','process-network-heading-history','book-edition','citation-baseline','citation-placements','citation-history','framework-accepted','framework-heading-history','cleaner-production-accepted','cleaner-production-heading-history','functional-reference-accepted','functional-reference-heading-history'].map(json));
 const ids = accepted.sections.flatMap(section => section.claimIds), old = accepted.source.claimIds;
@@ -99,7 +99,7 @@ test('co-deleting B07 acceptance, actual capture or final prose receipt cannot b
   try{const out=join(root,'out'),config=join(root,'config');await mkdir(out);await mkdir(config);
     for(const name of ['book-edition','framework-accepted','framework-heading-history','citation-baseline','citation-placements','citation-history','cleaner-production-accepted','cleaner-production-heading-history','functional-reference-accepted','functional-reference-heading-history','functional-reference-prose-accepted'])await writeFile(join(config,`${name}.json`),JSON.stringify(await json(name)));
     const files=['process-network-accepted','process-network-heading-history','process-network-prose-accepted'];
-    for(const missing of [null,...files]){for(const name of files){const file=join(config,`${name}.json`);if(missing===null||missing===name)await rm(file,{force:true});else await writeFile(file,JSON.stringify(name==='process-network-accepted'?accepted:name==='process-network-heading-history'?captured:reviewed));}await assert.rejects(validateReaderOutput(out),/requires its accepted proposition and published heading inventories/);}
+    for(const missing of [null,...files]){for(const name of files){const file=join(config,`${name}.json`);if(missing===null||missing===name)await rm(file,{force:true});else await writeFile(file,JSON.stringify(name==='process-network-accepted'?accepted:name==='process-network-heading-history'?captured:reviewed));}await assert.rejects(validateReaderOutputFixture(out),/requires its accepted proposition and published heading inventories/);}
   }finally{await rm(root,{recursive:true,force:true});}
 });
 

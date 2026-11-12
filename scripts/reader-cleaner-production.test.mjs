@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile, mkdtemp, mkdir, writeFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { validateReaderOutput } from './reader-surface.mjs';
+import { validateReaderOutputFixture } from './reader-surface.mjs';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 import { assertCleanerProductionAccepted, assertCleanerProductionHeadingHistory, assertCleanerProductionRegistration, cleanerProductionHeadingEntries, cleanerProductionRoute as route, remapCleanerProductionCitations, validateCleanerProductionCoverage, validateRenderedCleanerProduction } from './reader-cleaner-production.mjs';
 import { currentEditionKeys, publishedHeadingEntries, remapBookCitations } from './reader-edition.mjs';
@@ -169,8 +169,8 @@ test('co-deleting B05 accepted/captured configs cannot bypass export admission',
     await mkdir(out); await mkdir(config);
     for (const name of ['book-edition','framework-accepted','framework-heading-history','citation-baseline','citation-placements','citation-history'])
       await writeFile(join(config, `${name}.json`), JSON.stringify(await json(name)));
-    await assert.rejects(validateReaderOutput(out), /requires its accepted proposition and published heading inventories/);
+    await assert.rejects(validateReaderOutputFixture(out), /requires its accepted proposition and published heading inventories/);
     await writeFile(join(config, 'cleaner-production-accepted.json'), JSON.stringify(accepted));
-    await assert.rejects(validateReaderOutput(out), /requires its accepted proposition and published heading inventories/);
+    await assert.rejects(validateReaderOutputFixture(out), /requires its accepted proposition and published heading inventories/);
   } finally { await rm(root, { recursive: true, force: true }); }
 });

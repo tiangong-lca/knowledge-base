@@ -16,7 +16,7 @@ import { functionalReferenceHeadingEntries, remapFunctionalReferenceCitations } 
 import { processNetworkHeadingEntries, remapProcessNetworkCitations } from './reader-process-network.mjs';
 import { createLegacyCitationEntries, createCanonicalCitationEntries, citationHref } from './reader-citations.mjs';
 import { collectChapterClaimOccurrences, chapterAnchorPrefix, printUnitAnchor, splitReferenceTail, createChapterNotePlan, createChapterReferenceIndex, createChapterAnnotationPlan } from './reader-book.mjs';
-import { validateHistoricalScope, readCitationSurface, validateReaderOutput } from './reader-surface.mjs';
+import { validateHistoricalScope, readCitationSurface, validateReaderOutputFixture } from './reader-surface.mjs';
 const json=async name=>JSON.parse(await readFile(new URL(`../config/${name}.json`,import.meta.url),'utf8'));
 const [original,captured,partial,frozen,edition,baseline,placements,history,framework,frameworkHeadings,cleaner,cleanerHeadings,functional,functionalHeadings,process,processHeadings]=await Promise.all(['exchange-semantics-original','exchange-semantics-heading-history','exchange-semantics-partial-history','exchange-semantics-citation-sources','book-edition','citation-baseline','citation-placements','citation-history','framework-accepted','framework-heading-history','cleaner-production-accepted','cleaner-production-heading-history','functional-reference-accepted','functional-reference-heading-history','process-network-accepted','process-network-heading-history'].map(json));
 const ids=original.sections.flatMap(section=>section.claimIds),raw=`---\ntitle: 交换语义\n---\n${original.sections.map(section=>`## ${section.id}\n<Prose ids="${section.claimIds.join(' ')}" />`).join('\n')}`;
@@ -119,7 +119,7 @@ test('retained original source scopes reject broadened or context-free annotatio
 });
 
 test('export admission rejects co-deleted B08 originals, capture, partial ledger or unreviewed manuscript',async()=>{
- const root=await mkdtemp(join(tmpdir(),'reader-b08-admission-'));try{await mkdir(join(root,'out'));await mkdir(join(root,'config'));const all=['book-edition','framework-accepted','framework-heading-history','citation-baseline','citation-placements','citation-history','cleaner-production-accepted','cleaner-production-heading-history','functional-reference-accepted','functional-reference-heading-history','functional-reference-prose-accepted','process-network-accepted','process-network-heading-history','process-network-prose-accepted',...['original','heading-history','citation-sources','partial-history','prose-accepted'].map(name=>`exchange-semantics-${name}`)];for(const name of all)await writeFile(join(root,'config',`${name}.json`),JSON.stringify(await json(name)));for(const name of all.filter(name=>name.startsWith('exchange-'))){const file=join(root,'config',`${name}.json`);await rm(file);await assert.rejects(validateReaderOutput(join(root,'out')),/requires its accepted proposition and published heading inventories/);await writeFile(file,JSON.stringify(await json(name)));}}finally{await rm(root,{recursive:true,force:true});}
+ const root=await mkdtemp(join(tmpdir(),'reader-b08-admission-'));try{await mkdir(join(root,'out'));await mkdir(join(root,'config'));const all=['book-edition','framework-accepted','framework-heading-history','citation-baseline','citation-placements','citation-history','cleaner-production-accepted','cleaner-production-heading-history','functional-reference-accepted','functional-reference-heading-history','functional-reference-prose-accepted','process-network-accepted','process-network-heading-history','process-network-prose-accepted',...['original','heading-history','citation-sources','partial-history','prose-accepted'].map(name=>`exchange-semantics-${name}`)];for(const name of all)await writeFile(join(root,'config',`${name}.json`),JSON.stringify(await json(name)));for(const name of all.filter(name=>name.startsWith('exchange-'))){const file=join(root,'config',`${name}.json`);await rm(file);await assert.rejects(validateReaderOutputFixture(join(root,'out')),/requires its accepted proposition and published heading inventories/);await writeFile(file,JSON.stringify(await json(name)));}}finally{await rm(root,{recursive:true,force:true});}
 });
 
 test('co-deleting every book inventory cannot downgrade a cached actual book to a standalone legacy fixture',async()=>{
@@ -127,7 +127,7 @@ test('co-deleting every book inventory cannot downgrade a cached actual book to 
  try{const config=join(root,'config'),out=join(root,'out');await mkdir(config);await mkdir(join(out,'docs','book','exchange'),{recursive:true});
  for(const name of ['citation-baseline','citation-placements','citation-history'])await writeFile(join(config,`${name}.json`),JSON.stringify(await json(name)));
  await writeFile(join(out,'docs','book','exchange','index.html'),'<article>保留的书章</article>');
- await assert.rejects(validateReaderOutput(out),/requires its accepted proposition and published heading inventories/);
+ await assert.rejects(validateReaderOutputFixture(out),/requires its accepted proposition and published heading inventories/);
  }finally{await rm(root,{recursive:true,force:true});}
 });
 

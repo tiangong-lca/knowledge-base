@@ -20,6 +20,13 @@ lastReviewedCommit: 07e4de733f37171a59be2fc93082e182c8dac67c
 
 # LCA Living Knowledge Base and Review
 
+[Complete manuscript revision #93](https://github.com/tiangong-lca/knowledge-base/issues/93)
+follows the [whole-book protocol](_docs/editorial/2026-11-12-complete-readable-book.md).
+Its current-edition checks bind exact source changes, review evidence and actual
+output while retaining the original chapter and citation histories. Pending
+acceptance does not publish the new manuscript. Direct production Next builds
+run the same source gate as the normal build command.
+
 [Particulate selection #90](https://github.com/tiangong-lca/knowledge-base/issues/90)
 uses the [source and material protocol](_docs/editorial/2026-11-10-pm-selection.md)
 and an immutable original inventory at `config/pm-selection-original.json`.
@@ -68,6 +75,13 @@ node scripts/snapshot.mjs <edition-id> <new-absolute-directory>
 ```
 
 Impact analysis reports claims needing review without granting approval or automatically changing editorial decisions. Freeze editions only after a clean committed build. Use `/print/` for the complete narrative with evidence and references.
+
+An explicitly prepared `status: "preview"` manuscript may be rendered with
+`READABLE_BOOK_REVIEW_PREVIEW=1 pnpm exec next build` in an isolated candidate
+checkout. Its artifacts go to `.reader-review-output`, never production `out`.
+The normal validator and exporter reject this preview as a publication. Review
+files and independently pinned acceptance are required before a production
+build; the flag does not approve source meaning, reader quality or output.
 
 ## Delivery
 

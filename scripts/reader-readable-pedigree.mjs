@@ -1,3 +1,4 @@
+import { currentBookFileMatches, currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import { createHash } from 'node:crypto';
 import { isDeepStrictEqual } from 'node:util';
 import original from '../config/readable-pedigree-original.json' with { type: 'json' };
@@ -13,7 +14,7 @@ import { concealedText, qualifyHeadingCopyButtons, trustedFrameworkSvg } from '.
 import { isVerifiedReaderPagination } from './reader-numbering-output.mjs';
 import { printReadingEntryAnchor } from './reader-numbering.mjs';
 import { unaccountedReaderText, validateExchangeAnnotationOutput } from './reader-exchange-semantics.mjs';
-import { readerParagraphText, validateReaderHistoricalText } from './reader-publication-text.mjs';
+import { applyCurrentHistoricalEntries, readerParagraphText, validateReaderHistoricalText } from './reader-publication-text.mjs';
 
 export const readablePedigreeRoute = '/docs/book/data-quality-and-probability';
 export const readablePedigreeOriginalDigest = '67f38b591713ec9d6def1ff1c7ab26080c6126ab107d8627562807d91d74508b';
@@ -176,7 +177,8 @@ export function validateReadablePedigreeCaseBytes(accepted, { input, publication
   return [
     ['input', input, original.caseInputSha256],
     ['publication', publication, expectedPublication],
-  ].flatMap(([name, bytes, expected]) => bytes && hash(bytes) === expected ? [] : [`Readable pedigree ${name} bytes differ`]);
+  ].flatMap(([name, bytes, expected]) => bytes && (name === 'publication'
+    ? currentBookFileMatches(publicationPath, expected, hash(bytes)) : hash(bytes) === expected) ? [] : [`Readable pedigree ${name} bytes differ`]);
 }
 
 function inspectSource(raw) {
@@ -195,6 +197,10 @@ function inspectSource(raw) {
   return { title: field('title'), description: field('description'), sections };
 }
 
+function reviewedPedigreeLayout({ title, description, sections }) {
+  return currentBookLayout('B27:reader-source', { title, description, sections });
+}
+
 function validateCatalog(catalog, accepted, projection) {
   if (!['raw', 'public'].includes(projection)) throw new Error('Readable pedigree needs an explicit catalog projection');
   const groups = {
@@ -211,11 +217,11 @@ function validateCatalog(catalog, accepted, projection) {
   const errors = [];
   for (const [kind, rows] of Object.entries(groups)) for (const row of rows) {
     const actual = catalog[kind].filter(record => record.id === row.id);
-    if (!same(actual, [expected[kind].find(record => record.id === row.id)]))
+    if (actual.length !== 1 || !currentBookRecordMatches(kind, expected[kind].find(record => record.id === row.id), actual[0], projection))
       errors.push(`Readable pedigree reviewed ${kind} record differs: ${row.id}`);
   }
   const consumers = affectedClaims(catalog, original.chapterIds).filter(id => !original.chapterIds.includes(id));
-  if (!same(consumers, [consumerId]))
+  if (!same(consumers, currentBookLayout('B27:external-consumers', [consumerId])))
     errors.push('Readable pedigree exact external consumer set differs');
   return errors;
 }
@@ -229,8 +235,8 @@ export function validateReadablePedigreeCoverage(edition, sources, catalog, acce
     throw new Error('Readable pedigree must retain its shared book and website source identity');
   const errors = [...validateCatalog(catalog, accepted, projection), ...validateReadablePedigreeResearch(readings)];
   const raw = sources.get(readablePedigreeRoute)?.replaceAll('\r\n', '\n');
-  if (!raw || hash(raw) !== accepted.mdxSha256
-      || !same(inspectSource(raw), { title: accepted.title, description: accepted.description, sections: accepted.sections }))
+  if (!raw || !currentBookMdxMatches(readablePedigreeRoute, accepted.mdxSha256, hash(raw))
+      || !same(inspectSource(raw), reviewedPedigreeLayout(accepted)))
     errors.push('Readable pedigree actual MDX title, description, sections or claim order differs');
   return errors;
 }
@@ -369,6 +375,7 @@ function validateHistoricalLocations(document, unit, path, entries) {
 export function validateRenderedReadablePedigree(document, path, catalog, accepted, independentDigest = readablePedigreeAcceptedDigest, readings) {
   if (![readablePedigreeRoute, '/print'].includes(path)) return [];
   assertReadablePedigreeAccepted(accepted, independentDigest);
+  const layout = reviewedPedigreeLayout(accepted);
   const researchErrors = validateReadablePedigreeResearch(readings);
   if (researchErrors.length) return researchErrors;
   const units = document.querySelectorAll(`article[data-reader-route="${readablePedigreeRoute}"]`);
@@ -382,21 +389,22 @@ export function validateRenderedReadablePedigree(document, path, catalog, accept
     else checked.add(node);
   };
   const title = unit.querySelector('[data-reader-heading-key="@unit"]');
-  check(title, title?.tagName === (print ? 'H2' : 'H1') && title.text === accepted.title
-    && unit.getAttribute('data-reader-title') === accepted.title, 'chapter title');
+  check(title, title?.tagName === (print ? 'H2' : 'H1') && title.text === layout.title
+    && unit.getAttribute('data-reader-title') === layout.title, 'chapter title');
   if (print) check(title, unit.id === prefix(path) && title?.parentNode === unit
     && title.id === printReadingEntryAnchor(readablePedigreeRoute) && title.getAttribute('tabindex') === '-1', 'current printed heading or historical chapter target');
   const description = title?.nextElementSibling;
-  check(description, description?.tagName === 'P' && description.text === accepted.description, 'chapter description');
+  check(description, description?.tagName === 'P' && description.text === layout.description, 'chapter description');
   if (!print) {
     const pagination = unit.querySelectorAll('.docs-pagination');
     check(pagination[0], pagination.length === 1 && isVerifiedReaderPagination(pagination[0]), 'independently qualified pagination');
-    qualifyHeadingCopyButtons(unit, { headings: accepted.sections });
+    qualifyHeadingCopyButtons(unit, { headings: layout.sections });
   }
   const headings = [];
   const occurrences = [];
   let section = null;
-  const claims = new Map(accepted.claims.map(row => [row.id, row]));
+  const frozenClaims = new Map(accepted.claims.map(row => [row.id, row]));
+  const claims = new Map((catalog?.claims ?? []).map(row => [row.id, row]));
   for (const node of unit.querySelectorAll('h1,h2,h3,h4,h5,h6,a[role="doc-noteref"]')) {
     if (node === title || node.closest('[data-legacy-for],[data-legacy-notice],[data-legacy-scope]')) continue;
     if (node.getAttribute('role') === 'doc-noteref') {
@@ -406,6 +414,7 @@ export function validateRenderedReadablePedigree(document, path, catalog, accept
       occurrences.push({ id, section });
       check(paragraph, paragraph && !node.closest('.chapter-notes') && paragraph.querySelectorAll('a').length === 1
         && readerParagraphText(paragraph, node) === claims.get(id)?.text
+        && currentBookRecordMatches('claims', frozenClaims.get(id), claims.get(id))
         && node.getAttribute('href') === `#${prefix(path)}-claim-${id}`
         && node.getAttribute('aria-label') === `注 ${number}` && node.text === `[${number}]`, `paragraph or note marker ${id}`);
     } else if (node.closest('.chapter-notes')) {
@@ -423,7 +432,7 @@ export function validateRenderedReadablePedigree(document, path, catalog, accept
           && node.querySelectorAll('a,button').length === 2 && Boolean(icon) && trustedFrameworkSvg(icon))), 'formal section');
     }
   }
-  if (!same(headings, accepted.sections.map(({ id, title }) => ({ id, title }))) || !same(occurrences, sectionOccurrences(accepted.sections)))
+  if (!same(headings, layout.sections.map(({ id, title }) => ({ id, title }))) || !same(occurrences, sectionOccurrences(layout.sections)))
     errors.push(`${path}: Readable pedigree actual section membership or order differs`);
 
   const groups = unit.querySelectorAll('.chapter-notes');
@@ -432,7 +441,7 @@ export function validateRenderedReadablePedigree(document, path, catalog, accept
   const direct = lists[0]?.childNodes.filter(node => node.nodeType === 1) ?? [];
   if (groups.length !== 1 || groups[0].getAttribute('aria-labelledby') !== `${prefix(path)}-annotations`
       || lists.length !== 1 || lists[0].parentNode !== groups[0]
-      || !same(notes.map(node => node.getAttribute('data-reader-claim')), [...claims.keys()])
+      || !same(notes.map(node => node.getAttribute('data-reader-claim')), sectionOccurrences(layout.sections).map(row => row.id))
       || notes.length !== direct.length || notes.some((note, index) => note !== direct[index] || note.tagName !== 'LI'))
     errors.push(`${path}: Readable pedigree continuous note list differs`);
   errors.push(...validateExchangeAnnotationOutput(document, unit, readablePedigreeRoute, catalog, { print, readings }));
@@ -440,7 +449,7 @@ export function validateRenderedReadablePedigree(document, path, catalog, accept
     const annotation = note.querySelector('.claim-annotation');
     check(annotation, Boolean(annotation), 'annotation content');
   }
-  const entries = remapReadablePedigreeCitations(readablePedigreeOriginalEntries(), accepted, independentDigest);
+  const entries = applyCurrentHistoricalEntries(document, remapReadablePedigreeCitations(readablePedigreeOriginalEntries(), accepted, independentDigest));
   errors.push(...validateHistoricalLocations(document, unit, path, entries));
   const historical = validateReaderHistoricalText(unit, entries, path, target => readablePedigreeCitationLabel(target, accepted));
   errors.push(...historical.errors);

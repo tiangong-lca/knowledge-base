@@ -1,10 +1,11 @@
+import { currentBookFileMatches, currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import { createHash } from 'node:crypto';
 import original from '../config/wall-selection-original.json' with { type: 'json' };
 import captured from '../config/wall-selection-heading-history.json' with { type: 'json' };
 import { chapterAnchorPrefix, collectChapterClaimOccurrences, printUnitAnchor } from './reader-book.mjs';
 import { prepareNumberedCaseElement, isVerifiedReaderPagination } from './reader-numbering-output.mjs';
 import { validateExchangeAnnotationOutput, unaccountedReaderText } from './reader-exchange-semantics.mjs';
-import { readerParagraphText, validateReaderHistoricalText } from './reader-publication-text.mjs';
+import { applyCurrentHistoricalEntries, readerParagraphText, validateReaderHistoricalText } from './reader-publication-text.mjs';
 
 export const wallSelectionRoute = '/docs/book/wall-service-to-comparison';
 export const wallSelectionTitles = ['功能实现', '清单形成', '指标含义', '配对判断'];
@@ -94,12 +95,16 @@ export function assertWallSelectionAccepted(accepted, independentDigest = wallSe
 export function validateWallSelectionArtifactBytes(accepted, {component,input,publication,engine,clientEngine} = {}, independentDigest = wallSelectionAcceptedDigest) {
   assertWallSelectionAccepted(accepted,independentDigest);
   const sources=new Map(original.sourceFiles.map(file=>[file.path,file.sha256])),errors=[];
-  for (const [label,bytes,expected] of [
-    ['component',component,accepted.componentSha256],['input',input,original.case.rawInputSha256],
-    ['publication',publication,sources.get('knowledge/cases/wall-coating-v1.publication.json')],
-    ['engine',engine,sources.get('scripts/teaching-case.mjs')],['clientEngine',clientEngine,sources.get('lib/teaching-case.ts')],
-  ]) if ((typeof bytes!=='string'&&!Buffer.isBuffer(bytes))||rawDigest(bytes)!==expected) errors.push(`Wall selection reviewed ${label} bytes differ or are missing`);
+  for (const [label,path,bytes,expected] of [
+    ['component','components/teaching-case-client.tsx',component,accepted.componentSha256],['input','knowledge/cases/wall-coating-v1.json',input,original.case.rawInputSha256],
+    ['publication','knowledge/cases/wall-coating-v1.publication.json',publication,sources.get('knowledge/cases/wall-coating-v1.publication.json')],
+    ['engine','scripts/teaching-case.mjs',engine,sources.get('scripts/teaching-case.mjs')],['clientEngine','lib/teaching-case.ts',clientEngine,sources.get('lib/teaching-case.ts')],
+  ]) if ((typeof bytes!=='string'&&!Buffer.isBuffer(bytes))||!currentBookFileMatches(path, expected, rawDigest(bytes))) errors.push(`Wall selection reviewed ${label} bytes differ or are missing`);
   return errors;
+}
+
+function reviewedWallLayout(accepted) {
+  return currentBookLayout('B29:reader-source', { title: accepted.title, description: accepted.description, ordinary: accepted.ordinary, sections: original.sections });
 }
 
 function sections(raw) {
@@ -117,16 +122,17 @@ export function validateWallSelectionCoverage(edition,sources,value=original,cat
   if(units.length!==1||units[0].source!==wallSelectionRoute||units[0].kind!=='chapter')errors.push('Wall selection needs its original single source/book identity');
   const raw=sources.get(wallSelectionRoute);
   if(typeof raw!=='string')return [...errors,'Wall selection actual MDX missing'];
-  if(rawDigest(raw.replaceAll('\r\n','\n'))!==accepted.mdxSha256)errors.push('Wall selection MDX differs from independently reviewed source');
+  if(!currentBookMdxMatches(wallSelectionRoute, accepted.mdxSha256, rawDigest(raw.replaceAll('\r\n','\n'))))errors.push('Wall selection MDX differs from independently reviewed source');
+  const layout = reviewedWallLayout(accepted);
   const front=/^---\r?\n([\s\S]*?)\r?\n---/.exec(raw)?.[1]??'';
-  for(const field of ['title','description'])if(new RegExp(`^${field}:\\s*(.+)$`,'m').exec(front)?.[1]?.replace(/^(['"])(.*)\1$/,'$2')!==accepted[field])errors.push(`Wall selection actual ${field} differs`);
-  const actual=sections(raw),expected=original.sections.flatMap(section=>section.claimIds.map(id=>({id,section:section.id})));
-  if(!same(actual.headings,original.sections.map(({id,title})=>({id,title})))||!same(actual.occurrences,expected)||!same(collectChapterClaimOccurrences(raw),original.claimIds))errors.push('Wall selection actual four sections/original22 order/placement differs');
+  for(const field of ['title','description'])if(new RegExp(`^${field}:\\s*(.+)$`,'m').exec(front)?.[1]?.replace(/^(['"])(.*)\1$/,'$2')!==layout[field])errors.push(`Wall selection actual ${field} differs`);
+  const actual=sections(raw),expected=layout.sections.flatMap(section=>section.claimIds.map(id=>({id,section:section.id})));
+  if(!same(actual.headings,layout.sections.map(({id,title})=>({id,title})))||!same(actual.occurrences,expected)||!same(collectChapterClaimOccurrences(raw), expected.map(row => row.id)))errors.push('Wall selection actual four sections/original22 order/placement differs');
   const literals=[...raw.matchAll(/<TeachingCase\s+id="CASE-WALL-CONNECT"\s+version="1\.0\.0"\s*\/>/g)],after=raw.indexOf(original.case.placementAfter),before=raw.indexOf(original.case.placementBefore);
   if(literals.length!==1||literals[0].index<after||literals[0].index>before||after<0||before<0)errors.push('Wall selection case must follow rough comparison and precede exercise/answer exactly once');
   if(!catalog)errors.push('Wall selection reviewed canonical catalog is required');
-  else for(const fixed of original.claims){const found=catalog.claims.filter(claim=>claim.id===fixed.id);if(found.length!==1||!sameRecord(found[0],fixed))errors.push(`Wall selection original canonical record differs: ${fixed.id}`);}
-  if(catalog)for(const [kind,records] of [['claims',original.scientificClosure.premises],['evidence',original.scientificClosure.evidence],['sources',original.scientificClosure.sources]])for(const fixed of records){const found=(catalog[kind]??[]).filter(row=>row.id===fixed.id);if(found.length!==1||!sameRecord(found[0],fixed))errors.push(`Wall selection original scientific ${kind} closure differs: ${fixed.id}`);}
+  else for(const fixed of original.claims){const found=catalog.claims.filter(claim=>claim.id===fixed.id);if(found.length!==1||!currentBookRecordMatches('claims', fixed, found[0]))errors.push(`Wall selection original canonical record differs: ${fixed.id}`);}
+  if(catalog)for(const [kind,records] of [['claims',original.scientificClosure.premises],['evidence',original.scientificClosure.evidence],['sources',original.scientificClosure.sources]])for(const fixed of records){const found=(catalog[kind]??[]).filter(row=>row.id===fixed.id);if(found.length!==1||!currentBookRecordMatches(kind, fixed, found[0]))errors.push(`Wall selection original scientific ${kind} closure differs: ${fixed.id}`);}
   return errors;
 }
 
@@ -181,12 +187,27 @@ export function validateWallSelectionCaseOutput(unit,{print=false,accepted=null,
   const errors=[],nodes=unit.querySelectorAll('[data-case-id]'),presentation=accepted.caseSelection.currentPresentation[print?'book':'web'];
   if(nodes.length!==1||nodes[0].getAttribute('data-case-id')!==original.case.caseId||nodes[0].getAttribute('data-case-version')!==original.case.version)return ['Wall selection actual case missing, repeated or changed'];
   let node=nodes[0];
-  if([node,...node.querySelectorAll('*')].some(n=>concealed(n,unit)))errors.push('Wall selection actual case/conditions must remain visible');
+  const view = print ? 'book' : 'web';
+  const readerMode = currentBookLayout('B29:interaction-mode', 'always-rendered');
+  const interaction = node.querySelectorAll('.teaching-case-controls,.teaching-case-chart,.teaching-case-announcement');
+  if (!['always-rendered', 'mounted-only'].includes(readerMode)) errors.push('Wall selection unknown interaction presentation');
+  if (readerMode === 'mounted-only' && (interaction.length !== 3 || interaction.some(root => !root.hasAttribute('hidden'))))
+    errors.push('Wall selection static rendering must hide only the unmounted interactive controls, graph and announcement');
+  const concealedReader = readerMode === 'mounted-only'
+    ? [node, ...node.querySelectorAll('*')].filter(candidate => !interaction.some(root => candidate === root || candidate.closest('.teaching-case-controls,.teaching-case-chart,.teaching-case-announcement') === root))
+    : [node, ...node.querySelectorAll('*')];
+  if (concealedReader.some(candidate => concealed(candidate,unit))) errors.push('Wall selection actual case/conditions must remain visible');
   if(node.querySelector('[data-reader-number],[data-reader-heading-title]')){const prepared=prepareNumberedCaseElement(node,print?'book':'web',wallSelectionRoute);if(prepared.errors.length)return prepared.errors.map(error=>`Wall selection numbered case: ${error}`);node=prepared.element;}
   const heading=node.querySelector(`[id="${wallSelectionCaseHeadingId(print)}"]`);
   if(!heading||node.getAttribute('aria-labelledby')!==heading.id||unit.querySelectorAll(`[id="${heading.id}"]`).length!==1)errors.push('Wall selection actual accessible deterministic case title differs');
-  if(node.text!==presentation.text||!same(node.querySelectorAll('h1,h2,h3,h4,h5,h6').map(h=>({tag:h.tagName,id:h.id??'',text:h.text})),presentation.headings))errors.push('Wall selection actual complete case text/headings differ');
-  if(!sameRecord(node.querySelectorAll('table').map(tableData),presentation.tables))errors.push('Wall selection actual seven complete tables/captions/cell semantics differ');
+  const copy = currentBookLayout(`B29:case-copy:${view}`, { text: presentation.text, headings: presentation.headings });
+  if(node.text!==copy.text||!same(node.querySelectorAll('h1,h2,h3,h4,h5,h6').map(h=>({tag:h.tagName,id:h.id??'',text:h.text})),copy.headings))errors.push('Wall selection actual complete case text/headings differ');
+  const expectedTables = structuredClone(presentation.tables);
+  const traceLabel = currentBookLayout('B29:trace-column-label', '当前值与完整算式');
+  for (const table of expectedTables) {
+    if (table.rows[0][1] === '当前值与完整算式') table.rows[0][1] = traceLabel;
+  }
+  if(!sameRecord(node.querySelectorAll('table').map(tableData),expectedTables))errors.push('Wall selection actual seven complete tables/captions/cell semantics differ');
   if(!same(node.querySelectorAll('a').map(a=>({text:a.text,href:a.getAttribute('href')})),presentation.links))errors.push('Wall selection actual native case links differ');
   const visible=node.querySelectorAll('p,li,figcaption');
   for(const condition of accepted.caseSelection.conditions)if(!visible.some(n=>n.text.includes(condition.text)&&!concealed(n,node)))errors.push(`Wall selection actual local condition missing: ${condition.id}`);
@@ -208,12 +229,13 @@ function targetLabel(destination){if(destination.kind==='note')return `《${orig
 export function validateRenderedWallSelection(document,path,value=original,catalog=null,accepted=null,independentDigest=wallSelectionAcceptedDigest) {
   if(path!==wallSelectionRoute&&path!=='/print')return [];
   assertWallSelectionOriginal(value);assertWallSelectionAccepted(accepted,independentDigest);
+  const layout = reviewedWallLayout(accepted);
   const print=path==='/print',units=print?document.querySelectorAll(`article[data-reader-route="${wallSelectionRoute}"]`):document.querySelectorAll('article');
   if(units.length!==1)return [`${path}: Wall selection actual unit missing or repeated`];
-  const unit=units[0],errors=[],checked=new Set(),claims=new Map((catalog?.claims??[]).map(claim=>[claim.id,claim])),expected=original.sections.flatMap(section=>section.claimIds.map(id=>({id,section:section.id}))),actual=[],headings=[];
+  const unit=units[0],errors=[],checked=new Set(),claims=new Map((catalog?.claims??[]).map(claim=>[claim.id,claim])),expected=layout.sections.flatMap(section=>section.claimIds.map(id=>({id,section:section.id}))),actual=[],headings=[];
   const children=unit.childNodes.filter(n=>n.nodeType===1),title=children.find(n=>n.tagName===(print?'H2':'H1'));
-  if(!title||title.text!==accepted.title||unit.getAttribute('data-reader-title')!==accepted.title||concealed(title,unit))errors.push(`${path}: Wall selection actual title differs`);else checked.add(title);
-  const description=title&&children[children.indexOf(title)+1];if(description?.tagName!=='P'||description.text!==accepted.description||concealed(description,unit))errors.push(`${path}: Wall selection actual description differs`);else checked.add(description);
+  if(!title||title.text!==layout.title||unit.getAttribute('data-reader-title')!==layout.title||concealed(title,unit))errors.push(`${path}: Wall selection actual title differs`);else checked.add(title);
+  const description=title&&children[children.indexOf(title)+1];if(description?.tagName!=='P'||description.text!==layout.description||concealed(description,unit))errors.push(`${path}: Wall selection actual description differs`);else checked.add(description);
   let section=null,lastClaim=null,caseSeen=false;
   for(const node of unit.querySelectorAll('h1,h2,h3,h4,h5,h6,a[role="doc-noteref"],.teaching-case')){
     if(node.closest('[data-legacy-for],[data-legacy-notice],[data-legacy-scope]'))continue;
@@ -221,12 +243,12 @@ export function validateRenderedWallSelection(document,path,value=original,catal
     if(node.closest('.teaching-case'))continue;
     if(node.getAttribute('role')==='doc-noteref'){
       const id=node.getAttribute('data-reader-reference'),p=node.closest('p'),claim=claims.get(id);actual.push({id,section});if(caseSeen&&lastClaim===original.case.placementAfter&&id!==original.case.placementBefore)errors.push(`${path}: Wall selection exercise must immediately follow case`);lastClaim=id;
-      if(!p||!claim||readerParagraphText(p,node)!==claim.text||!sameRecord(claim,original.claims.find(f=>f.id===id))||concealed(p,unit))errors.push(`${path}: Wall selection actual canonical paragraph missing/changed/hidden: ${id}`);else checked.add(p);
+      if(!p||!claim||readerParagraphText(p,node)!==claim.text||!currentBookRecordMatches('claims', original.claims.find(f=>f.id===id), claim)||concealed(p,unit))errors.push(`${path}: Wall selection actual canonical paragraph missing/changed/hidden: ${id}`);else checked.add(p);
     }else if(node.closest('.chapter-notes')){section=null;if(node.id===`${prefix(path)}-annotations`&&node.text==='注释'&&node.tagName===(print?'H3':'H2'))checked.add(node);else errors.push(`${path}: Wall selection annotation heading differs`);}
     else if(node!==title){const local=print?node.id.slice(prefix(path).length+1):node.id;headings.push(local);section=local;if(node.tagName!==(print?'H3':'H2')||node.text.replace(/复制章节链接$/,'')!==local||!wallSelectionTitles.includes(local)||concealed(node,unit))errors.push(`${path}: Wall selection formal heading differs`);else checked.add(node);}
   }
   if(!same(actual,expected)||!same(headings,wallSelectionTitles)||!caseSeen)errors.push(`${path}: Wall selection actual22/order/four-section/case closure differs`);
-  for(const row of accepted.ordinary[print?'book':'web']){
+  for(const row of layout.ordinary[print?'book':'web']){
     const found=unit.querySelectorAll('p').filter(n=>!n.closest('.teaching-case,.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope]')&&!n.querySelector('a[role="doc-noteref"]')&&n.text===row.text);
     if(found.length!==1){errors.push(`${path}: Wall selection reviewed ordinary prose missing or repeated`);continue;}const p=found[0];
     if(concealed(p,unit)||!same(p.querySelectorAll('a').map(a=>({text:a.text,href:decodeURI(a.getAttribute('href')??'')})),row.navigation.map(a=>({...a,href:decodeURI(a.href)}))))errors.push(`${path}: Wall selection native ordinary navigation differs`);
@@ -235,9 +257,9 @@ export function validateRenderedWallSelection(document,path,value=original,catal
     if(row.navigation.some(link=>link.href===`#${wallSelectionCaseHeadingId(print)}`)){const sequence=unit.querySelectorAll('a[role="doc-noteref"],p').filter(n=>n===p||(n.getAttribute('role')==='doc-noteref'&&!n.closest('.teaching-case,.chapter-notes'))),prior=sequence.slice(0,sequence.indexOf(p)).at(-1);if(prior?.getAttribute('data-reader-reference')!=='cl-wall-coordinates')errors.push(`${path}: Wall selection matrix entry must immediately follow coordinates`);}
     for(const link of row.navigation)if(link.href.startsWith('#')&&(link.href===`#${wallSelectionCaseHeadingId(print)}`?unit:document).querySelectorAll(`[id="${decodeURIComponent(link.href.slice(1))}"]`).length!==1)errors.push(`${path}: Wall selection native ordinary target missing`);checked.add(p);
   }
-  const groups=unit.querySelectorAll('.chapter-notes');if(groups.length!==1||groups.some(n=>concealed(n,unit))||unit.querySelectorAll('.claim-annotation').some(n=>concealed(n,unit))||!same(unit.querySelectorAll('[data-reader-claim]').map(n=>n.getAttribute('data-reader-claim')),original.claimIds))errors.push(`${path}: Wall selection original22 note plan differs`);
+  const groups=unit.querySelectorAll('.chapter-notes');if(groups.length!==1||groups.some(n=>concealed(n,unit))||unit.querySelectorAll('.claim-annotation').some(n=>concealed(n,unit))||!same(unit.querySelectorAll('[data-reader-claim]').map(n=>n.getAttribute('data-reader-claim')),expected.map(row=>row.id)))errors.push(`${path}: Wall selection original22 note plan differs`);
   const annotations=validateExchangeAnnotationOutput(document,unit,wallSelectionRoute,catalog,{print});errors.push(...annotations);if(!annotations.length)for(const n of unit.querySelectorAll('.claim-annotation'))checked.add(n);
-  const entries=remapWallSelectionCitations([...original.originalHistoricalEntries,...wallSelectionHeadingEntries()],value,captured);
+  const entries=applyCurrentHistoricalEntries(document, remapWallSelectionCitations([...original.originalHistoricalEntries,...wallSelectionHeadingEntries()],value,captured));
   for(const entry of entries.filter(e=>e.path===path)){
     if(entry.mode==='notice'&&(unit.querySelectorAll(`[id="${entry.id}"][data-legacy-notice]`).length!==1||concealed(unit.querySelector(`[id="${entry.id}"][data-legacy-notice]`),unit)))errors.push(`${path}: Wall selection actual old-scope notice missing/repeated: ${entry.id}`);
     if(entry.mode==='retained'&&entry.scope){const contexts=unit.querySelectorAll(`[data-legacy-scope="${entry.id}"]`),context=contexts[0];if(contexts.length!==1||concealed(context,unit)||!((context.parentNode===unit&&unit.id===entry.id)||(context.previousElementSibling?.id===entry.id&&context.parentNode===context.previousElementSibling.parentNode)))errors.push(`${path}: Wall selection original22 retained context missing/detached`);}

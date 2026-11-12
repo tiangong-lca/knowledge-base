@@ -1,3 +1,4 @@
+import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import { createHash } from 'node:crypto';
 import original from '../config/toxicity-pathways-original.json' with { type: 'json' };
 import { chapterAnchorPrefix, collectChapterClaimOccurrences, printUnitAnchor } from './reader-book.mjs';
@@ -5,7 +6,7 @@ import { publicCatalog } from './knowledge.mjs';
 import { concealedText, qualifyHeadingCopyButtons, trustedFrameworkSvg } from './reader-data-applicability.mjs';
 import { isVerifiedReaderPagination } from './reader-numbering-output.mjs';
 import { unaccountedReaderText, validateExchangeAnnotationOutput } from './reader-exchange-semantics.mjs';
-import { readerParagraphText, validateReaderHistoricalText } from './reader-publication-text.mjs';
+import { applyCurrentHistoricalEntries, readerParagraphText, validateReaderHistoricalText } from './reader-publication-text.mjs';
 
 export const toxicityPathwaysRoute = '/docs/book/usetox-pathways-and-boundaries';
 export const toxicityPathwaysTitle = '毒性路径';
@@ -170,10 +171,14 @@ function validateCatalog(catalog, accepted, projection) {
   const errors = [];
   for (const [kind, rows] of Object.entries(groups)) for (const row of rows) {
     const actual = catalog[kind]?.filter(record => record.id === row.id) ?? [];
-    if (actual.length !== 1 || !sameRecord(actual[0], expected[kind].find(record => record.id === row.id)))
+    if (actual.length !== 1 || !currentBookRecordMatches(kind, expected[kind].find(record => record.id === row.id), actual[0], projection))
       errors.push(`Toxicity pathways reviewed ${kind} record differs: ${row.id}`);
   }
   return errors;
+}
+
+function reviewedToxicityLayout(accepted) {
+  return currentBookLayout('B19:reader-source', { title: accepted.title, description: accepted.source.description, sections });
 }
 
 /** @param {any} edition @param {Map<string,string>} sources @param {any} catalog @param {any} accepted @param {string|null} independentDigest @param {{projection?:'raw'|'public',readings?:any,literature?:any}} options */
@@ -186,8 +191,8 @@ export function validateToxicityPathwaysCoverage(edition, sources, catalog, acce
   const errors = validateCatalog(catalog, accepted, projection);
   const raw = sources.get(toxicityPathwaysRoute)?.replaceAll('\r\n', '\n');
   const actual = raw && inspectSource(raw);
-  if (!actual || hash(raw) !== accepted.source.mdxSha256
-      || !sameRecord(actual, { title: accepted.title, description: accepted.source.description, sections }))
+  if (!actual || !currentBookMdxMatches(toxicityPathwaysRoute, accepted.source.mdxSha256, hash(raw))
+      || !sameRecord(actual, reviewedToxicityLayout(accepted)))
     errors.push('Toxicity pathways actual MDX title, description, body or section order differs');
   const researchRows = {
     readings: readings?.readings,
@@ -200,7 +205,7 @@ export function validateToxicityPathwaysCoverage(edition, sources, catalog, acce
     const frozenRows = accepted.research[kind];
     for (const row of frozenRows) {
       const found = actualRows?.filter(record => record.id === row.id);
-      if (found?.length !== 1 || !sameRecord(found[0], row)) errors.push('Toxicity pathways reviewed research record differs: ' + row.id);
+      if (found?.length !== 1 || !currentBookRecordMatches(kind, row, found[0], 'raw')) errors.push('Toxicity pathways reviewed research record differs: ' + row.id);
     }
   }
   return errors;
@@ -295,6 +300,8 @@ export function validateRenderedToxicityPathways(document, path, catalog, accept
     independentDigest = toxicityPathwaysAcceptedDigest, projection = 'raw') {
   if (![toxicityPathwaysRoute, '/print'].includes(path)) return [];
   assertToxicityPathwaysAccepted(accepted, independentDigest);
+  const layout = reviewedToxicityLayout(accepted);
+  const currentIds = layout.sections.flatMap(section => section.claimIds);
   const errors = validateCatalog(catalog, accepted, projection);
   const print = path === '/print';
   const units = document.querySelectorAll(`article[data-reader-route="${toxicityPathwaysRoute}"]`);
@@ -307,15 +314,15 @@ export function validateRenderedToxicityPathways(document, path, catalog, accept
     if (!valid || concealedText(node)) errors.push(`${path}: Toxicity pathways ${subject} differs or is hidden`);
     else checked.add(node);
   };
-  checkText(title, title?.text === accepted.title && unit.getAttribute('data-reader-title') === accepted.title
+  checkText(title, title?.text === layout.title && unit.getAttribute('data-reader-title') === layout.title
     && (!print || unit.id === prefix), 'actual title or chapter identity');
-  checkText(description, description?.tagName === 'P' && description.text === accepted.source.description, 'actual description');
+  checkText(description, description?.tagName === 'P' && description.text === layout.description, 'actual description');
   if (!print) {
     const pagination = unit.querySelectorAll('.docs-pagination');
     if (pagination.length !== 1 || !isVerifiedReaderPagination(pagination[0]))
       errors.push(`${path}: Toxicity pathways website pagination lacks independent qualification`);
     else checked.add(pagination[0]);
-    qualifyHeadingCopyButtons(unit, { headings: sections });
+    qualifyHeadingCopyButtons(unit, { headings: layout.sections });
   }
 
   const group = unit.querySelectorAll('.chapter-notes'), notes = unit.querySelectorAll('[data-reader-claim]');
@@ -326,9 +333,9 @@ export function validateRenderedToxicityPathways(document, path, catalog, accept
   if (group.length !== 1 || group[0].getAttribute('aria-labelledby') !== groupId
       || lists.length !== 1 || list.parentNode !== group[0] || Object.keys(list.attributes).length !== 0
       || groupNotes.length !== notes.length || groupNotes.some((node, index) => node !== notes[index])
-      || notes.length !== ids.length || notes.some((node, index) => node.tagName !== 'LI' || !sameRecord(node.attributes, {
-        id: `${prefix}-claim-${ids[index]}`,
-        'data-reader-claim': ids[index],
+      || notes.length !== currentIds.length || notes.some((node, index) => node.tagName !== 'LI' || !sameRecord(node.attributes, {
+        id: `${prefix}-claim-${currentIds[index]}`,
+        'data-reader-claim': currentIds[index],
       })))
     errors.push(`${path}: Toxicity pathways exact continuous note group differs`);
 
@@ -359,8 +366,8 @@ export function validateRenderedToxicityPathways(document, path, catalog, accept
         && (print || hasNativeHeadingLink(node, titleText)), 'formal heading');
     }
   }
-  if (!same(headings, sections.map(({ id, title }) => ({ id, title })))
-      || !same(occurrences, sections.flatMap(({ id, claimIds }) => claimIds.map(claimId => ({ id: claimId, section: id })))))
+  if (!same(headings, layout.sections.map(({ id, title }) => ({ id, title })))
+      || !same(occurrences, layout.sections.flatMap(({ id, claimIds }) => claimIds.map(claimId => ({ id: claimId, section: id })))))
     errors.push(`${path}: Toxicity pathways actual chapter sections and body order differ`);
 
   errors.push(...validateExchangeAnnotationOutput(document, unit, toxicityPathwaysRoute, catalog, { print }));
@@ -372,7 +379,7 @@ export function validateRenderedToxicityPathways(document, path, catalog, accept
       || unit.querySelectorAll('svg').some(node => !trustedFrameworkSvg(node)))
     errors.push(`${path}: Toxicity pathways unreviewed visual or media content`);
 
-  const entries = remapToxicityPathwaysCitations(toxicityPathwaysOriginalEntries(), accepted, independentDigest).filter(entry => entry.path === path);
+  const entries = applyCurrentHistoricalEntries(document, remapToxicityPathwaysCitations(toxicityPathwaysOriginalEntries(), accepted, independentDigest)).filter(entry => entry.path === path);
   for (const entry of entries) {
     if (entry.mode !== 'retained') {
       const marker = entry.mode === 'alias' ? 'data-legacy-for' : 'data-legacy-notice';

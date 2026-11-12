@@ -1,8 +1,9 @@
+import { currentBookLayout, currentBookPlan } from './reader-current-expectations.mjs';
 import { assertPmSelectionRegistration, pmSelectionAppendix, pmSelectionBookHref } from './reader-pm-selection.mjs';
 import { assertDataApplicabilityRegistration, dataApplicabilityKey, dataApplicabilityRoutes, dataApplicabilityBookHref } from './reader-data-applicability.mjs';
 import { assertClimateAssemblyRegistration, climateAssemblyKey, climateAssemblyRoutes, climateAssemblyBookHref } from './reader-climate-assembly.mjs';
 import { assertClosingSynthesisRegistration, closingSynthesisKey, closingSynthesisRoutes, closingSynthesisBookHref } from './reader-closing-synthesis.mjs';
-import { getPresentationUnits, readerParts } from './reader-numbering.mjs';
+import { getPresentationUnits, printReadingEntryAnchor, readerParts } from './reader-numbering.mjs';
 import { assertJointProductionRegistration, jointProductionKey, jointProductionRoutes, jointProductionBookHref } from './reader-joint-production.mjs';
 import { assertHybridInventoryRegistration } from './reader-hybrid-inventory.mjs';
 import { assertExchangeSemanticsRegistration, exchangeSemanticsRoute, exchangeSemanticsTitles } from './reader-exchange-semantics.mjs';
@@ -10,7 +11,7 @@ import { assertProcessNetworkRegistration } from './reader-process-network.mjs';
 import { assertFunctionalReferenceRegistration, functionalReferenceSupplement } from './reader-functional-reference.mjs';
 import { createHash } from 'node:crypto';
 import { assertCleanerProductionRegistration } from './reader-cleaner-production.mjs';
-import { collectChapterClaimOccurrences, printUnitAnchor } from './reader-book.mjs';
+import { collectChapterClaimOccurrences, printUnitAnchor, readSourceHeading } from './reader-book.mjs';
 
 // Main sets this current-roster pin after independently qualifying the actual edition.
 /** @type {string|null} */
@@ -62,7 +63,7 @@ export function currentEditionKeys(edition, availableSources, baseline, placemen
   for (const source of available) if (!navigation.has(source) && !covered.has(source)) throw new Error(`Reader source has no current book registration: ${source}`);
   const retained = [...placements.frontMatter, ...baseline.pages.filter(page => page.printOrdinal !== undefined).sort((a,b) => a.printOrdinal-b.printOrdinal).map(page => page.route), ...(placements.printAdditions ?? []).map(unit => unit.route), pmSelectionAppendix];
   const expected = retained.filter(route => route !== dataApplicabilityRoutes[1] && route !== climateAssemblyRoutes[1] && route !== closingSynthesisRoutes[1] && route !== jointProductionRoutes[1] && route !== expectedCoverage[1] && route !== functionalReferenceSupplement && route !== '/docs/flows' && route !== '/docs/characterization').map(route => route === dataApplicabilityRoutes[0] ? dataApplicabilityKey : route === climateAssemblyRoutes[0] ? climateAssemblyKey : route === closingSynthesisRoutes[0] ? closingSynthesisKey : route === expectedCoverage[0] ? frameworkUnitKey : route === jointProductionRoutes[0] ? jointProductionKey : route);
-  if (JSON.stringify(units.map(unit => unit.key).sort()) !== JSON.stringify([...expected].sort())) throw new Error('Book edition omitted or misclassified an accepted retained unit');
+  if (JSON.stringify(units.map(unit => unit.key).sort()) !== JSON.stringify([...currentBookLayout('book:unit-keys', expected)].sort())) throw new Error('Book edition omitted or misclassified an accepted retained unit');
   const presentation = getPresentationUnits('book');
   if (JSON.stringify(units.map(({key,source,kind})=>({key,source,kind}))) !== JSON.stringify(presentation.map(({key,source,kind})=>({key,source,kind})))) throw new Error('Book edition differs from the explicit current seven-part numbered order');
   for (const unit of units) {
@@ -70,11 +71,12 @@ export function currentEditionKeys(edition, availableSources, baseline, placemen
     if (unit.kind === 'chapter' && unit.part !== readerParts.find(part => part.number === declared.part)?.title) throw new Error(`Book unit has incorrect current part: ${unit.key}`);
   }
   for (const unit of units.filter(unit => unit.key !== dataApplicabilityKey && unit.key !== climateAssemblyKey && unit.key !== closingSynthesisKey && unit.key !== frameworkUnitKey && unit.key !== jointProductionKey)) {
-    const kind = placements.frontMatter.includes(unit.key) ? 'front-matter' : unit.key.startsWith('/docs/book/') ? 'chapter' : unit.key.startsWith('/docs/appendices/') ? 'appendix' : 'topic';
-    if (unit.source !== unit.key || unit.kind !== kind) throw new Error(`Book unit has incorrect source or kind: ${unit.key}`);
+    const legacyKind = placements.frontMatter.includes(unit.key) ? 'front-matter' : unit.key.startsWith('/docs/book/') ? 'chapter' : unit.key.startsWith('/docs/appendices/') ? 'appendix' : 'topic';
+    const { source, kind } = currentBookLayout(`book:unit-kind:${unit.key}`, { source: unit.key, kind: legacyKind });
+    if (unit.source !== source || unit.kind !== kind) throw new Error(`Book unit has incorrect source or kind: ${unit.key}`);
   }
   const roster = units.map(({key,source,kind})=>({key,source,kind}));
-  if (digest(roster) !== currentEditionRosterDigest)
+  if (digest(roster) !== currentBookLayout('book:roster-pin', currentEditionRosterDigest))
     throw new Error('Current reading roster differs from the independently pinned 40-unit/32-chapter edition');
   return units.map(unit => unit.key);
 }
@@ -88,18 +90,20 @@ export function validateFrameworkCoverage(edition, sources, accepted, catalog = 
   const units = edition.units;
   const b04 = units.find(unit => unit.key === frameworkUnitKey);
   if (!b04) return ['Missing accepted B04 registration'];
-  if (JSON.stringify(b04.sections) !== JSON.stringify(accepted.sections.map(({id,title}) => ({id,title})))) errors.push('B04 formal sections differ from accepted five-section contract');
+  const sections = currentBookLayout('B04:sections', accepted.sections);
+  const appendixClaims = currentBookLayout('B04:appendix-claims', accepted.appendix.claimIds);
+  if (JSON.stringify(b04.sections) !== JSON.stringify(sections.map(({id,title}) => ({id,title})))) errors.push('B04 formal sections differ from accepted five-section contract');
   const split = manuscript.split(/^## (.+)\s*$/m), headings = [];
   const occurrences = [];
   for (let i = 1; i < split.length; i += 2) {
-    const section = split[i].trim(); headings.push(section);
-    for (const id of collectChapterClaimOccurrences(split[i+1])) occurrences.push({id,section});
+    const heading = readSourceHeading(split[i]); headings.push(heading);
+    for (const id of collectChapterClaimOccurrences(split[i+1])) occurrences.push({id,section:heading.id});
   }
   const all = collectChapterClaimOccurrences(manuscript);
   if (occurrences.length !== all.length) errors.push('B04 has body propositions outside formal sections');
-  if (JSON.stringify(headings) !== JSON.stringify(accepted.sections.map(section=>section.id))) errors.push('B04 manuscript must have five actual formal sections');
+  if (JSON.stringify(headings) !== JSON.stringify(sections.map(({id,title})=>({id,title})))) errors.push('B04 manuscript must have five actual formal sections');
   const actual = [...occurrences.map(item=>({...item,key:frameworkUnitKey})), ...collectChapterClaimOccurrences(appendix).map(id=>({id,key:frameworkAppendix}))];
-  const expected = [...accepted.sections.flatMap(section=>section.claimIds.map(id=>({id,section:section.id,key:frameworkUnitKey}))), ...accepted.appendix.claimIds.map(id=>({id,key:frameworkAppendix}))];
+  const expected = [...sections.flatMap(section=>section.claimIds.map(id=>({id,section:section.id,key:frameworkUnitKey}))), ...appendixClaims.map(id=>({id,key:frameworkAppendix}))];
   for (const wanted of expected) {
     const found = actual.filter(item=>item.id===wanted.id);
     if (found.length !== 1 || found[0]?.key !== wanted.key || found[0]?.section !== wanted.section) errors.push(`Framework occurrence missing, duplicated or misplaced: ${wanted.id}`);
@@ -161,6 +165,8 @@ export function publishedHeadingEntries(history) {
 /** Qualified links for the bounded assembly; ambiguous old scopes keep their website meaning. */
 export function frameworkBookHref(href, currentKey) {
   if (typeof href !== 'string') return href;
+  const readingRoute = href.replace(/\/$/, '');
+  if (currentBookPlan.readingEntries.has(readingRoute)) return `#${printReadingEntryAnchor(readingRoute)}`;
   href = pmSelectionBookHref(href, currentKey);
   href = dataApplicabilityBookHref(climateAssemblyBookHref(closingSynthesisBookHref(jointProductionBookHref(href)), currentKey), currentKey);
   if (href.startsWith('/print/#')) return href.slice('/print/'.length);
@@ -190,7 +196,7 @@ export function frameworkBookHref(href, currentKey) {
 export function validateRenderedFrameworkCoverage(bodyClaims, accepted) {
   assertFrameworkAccepted(accepted);
   const errors=[];
-  for (const [key,ids] of [[frameworkUnitKey,accepted.sections.flatMap(section=>section.claimIds)],[frameworkAppendix,accepted.appendix.claimIds]]) {
+  for (const [key,ids] of [[frameworkUnitKey,currentBookLayout('B04:sections', accepted.sections).flatMap(section=>section.claimIds)],[frameworkAppendix,currentBookLayout('B04:appendix-claims', accepted.appendix.claimIds)]]) {
     const actual=bodyClaims.get(key)??[];
     for (const id of ids) if (actual.filter(claim=>claim===id).length!==1) errors.push(`Rendered framework body missing or duplicated: ${key} ${id}`);
   }

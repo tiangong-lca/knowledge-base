@@ -7,7 +7,7 @@ import { assertCitationHistory } from './reader-citation-history.mjs';
 import { assertCitationBaseline } from './reader-citation-baseline.mjs';
 import { citationSourceHref, createCanonicalCitationEntries, createCurrentPrintRoutes, createLegacyCitationEntries } from './reader-citations.mjs';
 import { chapterAnchorPrefix, chapterNoteAnchor, printUnitAnchor } from './reader-book.mjs';
-import { validateLegacyCitationOutput, validateReaderOutput } from './reader-surface.mjs';
+import { validateLegacyCitationOutput, validateReaderOutputFixture } from './reader-surface.mjs';
 
 const json = async name => JSON.parse(await readFile(new URL(`../config/${name}.json`, import.meta.url), 'utf8'));
 
@@ -47,7 +47,7 @@ test('canonical history truncation, substitutions, duplicate occurrences and fal
     await writeFile(join(out, 'index.html'), '<main>A fixture without historical outputs</main>');
     await writeFile(join(config, 'citation-baseline.json'), JSON.stringify(baseline));
     await writeFile(join(config, 'citation-placements.json'), JSON.stringify(placements));
-    assert((await validateReaderOutput(out)).some(error => error.includes('requires the historical canonical citation inventory')));
+    assert((await validateReaderOutputFixture(out)).some(error => error.includes('requires the historical canonical citation inventory')));
     const mutations = [
       changed => { changed.pages = []; },
       changed => { changed.pages.find(page => page.noteClaims.length).noteClaims.pop(); },
@@ -62,7 +62,7 @@ test('canonical history truncation, substitutions, duplicate occurrences and fal
     for (const mutate of mutations) {
       const changed = structuredClone(history); mutate(changed);
       await writeFile(join(config, 'citation-history.json'), JSON.stringify(changed));
-      await assert.rejects(validateReaderOutput(out), /canonical citation history differs from the published a36597d reconstruction/);
+      await assert.rejects(validateReaderOutputFixture(out), /canonical citation history differs from the published a36597d reconstruction/);
     }
   } finally { await rm(root, { recursive: true, force: true }); }
 });

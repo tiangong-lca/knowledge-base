@@ -1,0 +1,2 @@
+export const readableBookBaselineDigest = 'dc3fe191e880511ecac93d752ea3bab04575f08fa7f7159aca526f70e0a56f1a';
+export const readableBookAcceptancePins = {};

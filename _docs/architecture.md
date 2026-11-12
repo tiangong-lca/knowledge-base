@@ -22,6 +22,45 @@ lastReviewedCommit: 07e4de733f37171a59be2fc93082e182c8dac67c
 
 # Publication architecture
 
+## Complete-manuscript current edition
+
+`readable-book-original.json` retains the c8 Main inventory;
+`readable-book-baseline.json` separately freezes the exact 07e4 PM/Main join.
+`reader-current-edition.mjs` compares actual files, raw and public records,
+ordered record families, research metadata and the dependency graph. The graph
+includes work, source, reading, passage, evidence and claim relationships.
+Original numerical inputs and chapter-specific scientific predicates remain
+independent obligations. Current acceptance cannot silently replace them.
+
+Each accepted unit names its exact changes, layout amendments, historical
+migrations, current reading entries and affected consumers. Three actual JSON
+artifact/report pairs under `_docs/editorial/review-evidence/` bind source,
+reader and output judgments to that unit's precise subject. The output subject
+also includes actual article and public-artifact fingerprints. Independent pins
+in `reader-current-edition-pins.mjs` are recorded only after substantive review;
+neither a copied digest nor a changed review date grants acceptance.
+
+`readable-book-hosted-history.json` is a separately qualified capture of c8
+hosting. Old titles, ordered note subsets and ordinary-content ranges are
+compared with actual output even when a native address survives. A changed
+ordinary block needs its old digest and a reviewed destination containing the
+specified current block digest or canonical claim. Source and consumer meaning
+remain human/agent review questions; these checks establish the exact objects
+on which those judgments were made.
+
+Actual output checks include all affected book/web articles, compiled CSS when
+changed, the public source/claim/concept/research views and their corresponding
+downloads. Public HTML is checked against current record fields in addition to
+its accepted bytes, so mixed generations cannot pass merely by listing their
+hashes. `changes` verifies real Git identity separately from manuscript content.
+
+The Next production configuration invokes the source gate directly. Explicit
+private review uses a preview plan and `.reader-review-output`; the production
+validator/exporter refuses preview state. Generic test fixtures have a separate
+entry point and cannot be enabled by renaming the real package. The chapter
+sections below retain their original generation-specific obligations; current
+amendments must pass the complete-edition checks in addition to those duties.
+
 ## Toxicity pathway publication
 
 `scripts/reader-toxicity-pathways.mjs` binds the single shared C27/B19 source to

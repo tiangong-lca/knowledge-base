@@ -6,7 +6,7 @@ import { ChapterContent, LegacyCitationAliases } from '@/components/chapter-cont
 import { NumberedHeading, NumberedTitle } from '@/components/numbered-heading';
 import { PrintButton } from '@/components/print-button';
 import { PublicationShell } from '@/components/publication-shell';
-import { getPresentationUnits, getUnitHeadingPlan, printReadingEntryAnchor, readerParts } from '@/scripts/reader-numbering.mjs';
+import { bookTopicPresentation, getPresentationUnits, getUnitHeadingPlan, printReadingEntryAnchor, readerParts } from '@/scripts/reader-numbering.mjs';
 import { printUnitAnchor } from '@/scripts/reader-book.mjs';
 
 export const metadata = { title: '书籍目录、连续阅读与打印' };
@@ -34,14 +34,14 @@ export default function Page() {
       <ChapterContent page={page} print />
     </article>;
   };
-  return <PublicationShell title="生命周期评价的前世今生" description="书籍目录与连续阅读。正文按部、章、节展开，专题与附录分别列后，注释随章。">
+  return <PublicationShell title="生命周期评价的前世今生" description="书籍目录与连续阅读。正文按部、章、节展开，补充篇目与附录分别列后，注释随章。">
     <div className="print-controls"><PrintButton /><p>书籍按连续章次编排；<Link href="/#web-contents">网页细读目录</Link>保留细分篇章。引用时请记录篇名、网址、版本和访问日期。</p></div>
     <PublicationNote />
     <nav aria-label="书籍目录" data-reader-contents="book" className="reader-book-contents">
       <h2>书籍目录</h2>
       <ul>{tocLinks(frontMatter)}</ul>
       {readerParts.map(part=><section key={part.number}><h3 data-reader-toc-part={part.number}><a href={`#print-part-${part.number}`}><NumberedTitle number={part.label}>{part.title}</NumberedTitle></a></h3><ul>{tocLinks(units.filter(unit=>unit.part===part.number))}</ul></section>)}
-      <h3>概念与实践专题</h3><ul>{tocLinks(topics)}</ul>
+      <h3 data-reader-book-notes-heading="contents">{bookTopicPresentation.title}</h3><ul>{tocLinks(topics)}</ul>
       <h3>附录</h3><ul>{tocLinks(appendices)}</ul>
       <p><a href="#print-references">参考文献</a></p>
     </nav>
@@ -52,7 +52,7 @@ export default function Page() {
         <p className="print-part-introduction">{part.introduction}</p>
         {units.filter(unit=>unit.part===part.number).map(article)}
       </section>)}
-      <section className="print-part"><h2>概念与实践专题</h2>{topics.map(article)}</section>
+      <section className="print-part"><h2 data-reader-book-notes-heading="body">{bookTopicPresentation.title}</h2>{topics.map(article)}</section>
       <section className="print-part"><h2>附录</h2>{appendices.map(article)}</section>
       <section className="print-chapter" id="print-references"><h2>参考文献</h2>{catalog.sources.map(item=><div className="evidence-item" key={item.id}><strong>{item.title}</strong><p>{item.publisher}。{item.version}。</p><a href={item.url}>文献链接</a></div>)}</section>
     </div>

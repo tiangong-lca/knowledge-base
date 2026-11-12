@@ -2,8 +2,8 @@ import { readFile } from 'node:fs/promises';
 import { resolve, join } from 'node:path';
 import { createHash } from 'node:crypto';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
-import { assertReaderNumbering, readerNumberingManifest, readerParts, getPresentationUnits, getUnitNumbering, getUnitHeadingPlan, printReadingEntryAnchor, readNumberedHeading, readerContinuationContracts, getContinuationLink } from './reader-numbering.mjs';
-import { printUnitAnchor } from './reader-book.mjs';
+import { assertReaderNumbering, bookTopicPresentation, readerNumberingManifest, readerParts, getPresentationUnits, getUnitNumbering, getUnitHeadingPlan, printReadingEntryAnchor, readNumberedHeading, readerContinuationContracts, getContinuationLink } from './reader-numbering.mjs';
+import { printUnitAnchor, readSourceHeading } from './reader-book.mjs';
 
 const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b), compact=text=>text.replace(/\s+/g,''), hash=text=>createHash('sha256').update(text).digest('hex');
 const apparatus='.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope]';
@@ -29,7 +29,7 @@ export function validateReaderNumberingSources(value,sources,edition){
     const titles=[...new Set(units.filter(unit=>unit.source===route).map(unit=>unit.title))];if(titles.length!==1||metadata(raw).title!==titles[0])errors.push(`Actual source title differs from pinned reader numbering: ${route}`);
     const actual=[];let fence=null;
     for(const line of raw.split(/\r?\n/)){const mark=/^\s*(`{3,}|~{3,})/.exec(line);if(mark){if(!fence)fence=mark[1][0];else if(fence===mark[1][0])fence=null;continue;}if(fence)continue;
-      const heading=/^(#{1,6})\s+(.+?)\s*$/.exec(line);if(!heading)continue;const explicit=/^(.*?)\s+\[#([^\]]+)\]$/.exec(heading[2]);actual.push({title:explicit?explicit[1]:heading[2],depth:heading[1].length,...(explicit?{id:explicit[2]}:{})});}
+      const heading=/^(#{1,6})\s+(.+?)\s*$/.exec(line);if(!heading)continue;const {title,id}=readSourceHeading(heading[2]);actual.push({title,depth:heading[1].length,...(title!==heading[2]?{id}:{})});}
     const expected=value.headings[route]?.filter(heading=>heading.type==='mdx')??[];
     if(actual.length!==expected.length||actual.some((heading,index)=>heading.title!==expected[index].title||heading.depth!==expected[index].depth||(heading.id!==undefined&&heading.id!==expected[index].id)))errors.push(`Actual source heading roster differs from pinned numbered hierarchy: ${route}`);
   }
@@ -116,7 +116,7 @@ function validation(document,path,sources){
       const wanted=getContinuationLink(view,print?contract.bookSourceKey??contract.route:contract.route,contract.sourceHref,contract.sourceLabel),context=print?contract.bookContext:contract.webContext;
       const candidates=node.querySelectorAll('p a[href]').filter(link=>!link.closest(`${apparatus},.docs-pagination`)&&(link.getAttribute('href')===wanted.href||link.getAttribute('href')===contract.sourceHref||link.text===contract.sourceLabel||link.text===contract.bookLabel));
       if(candidates.length!==1||candidates[0].getAttribute('href')!==wanted.href||candidates[0].text!==wanted.label||candidates[0].closest('p')?.text!==context||candidates[0].closest('p')?.querySelectorAll('a').length!==1)fail(`Qualified ordinary continuation differs: ${contract.key}`);
-      if(print)targetExists(printUnitAnchor(contract.bookKey),`Continuation ${contract.key}`);
+      if(print)targetExists(printReadingEntryAnchor(contract.bookKey),`Continuation ${contract.key}`);
     }
     for(const notes of node.querySelectorAll('.chapter-notes')){const headings=notes.querySelectorAll('h1,h2,h3,h4,h5,h6');if(headings.length!==1||headings[0].tagName!==(print?'H4':'H2')||headings[0].text!=='注释'||headings[0].querySelector('[data-reader-number],[data-reader-heading-title]')||headings[0].getAttribute('data-reader-heading-key'))fail(`Annotation apparatus may not acquire content numbering: ${record.key}`);else if(print)normalizedHeadings.push({node:headings[0],tag:'h3'});}
   }
@@ -134,6 +134,16 @@ function validation(document,path,sources){
     if(!same(groups.map(node=>node.getAttribute('data-reader-part-group')),readerParts.map(part=>String(part.number)))||!same(parts.map(node=>node.getAttribute('data-reader-part')),readerParts.map(part=>String(part.number))))fail('Actual seven-part body order differs');
     readerParts.forEach((part,index)=>{const heading=parts[index],group=groups[index];if(heading?.tagName!=='H2'||heading.id!==`print-part-${part.number}`||heading.closest('[data-reader-part-group]')!==group)fail(`Wrong actual part heading/target ${part.number}`);numbered(heading,{number:part.label,title:part.title},`part ${part.number}`);const intro=group?.querySelectorAll('.print-part-introduction');if(intro?.length!==1||intro[0].text!==part.introduction)fail(`Part ${part.number} introduction differs`);});
     const navs=document.querySelectorAll('nav[data-reader-contents="book"]');if(navs.length!==1)fail('Exactly one actual book contents is required');
+    const noteUnits = expected.filter(unit => unit.kind === 'topic').map(unit => unit.key);
+    const noteHeadings = document.querySelectorAll('[data-reader-book-notes-heading]');
+    const contentsNotes = noteHeadings.find(node => node.getAttribute('data-reader-book-notes-heading') === 'contents');
+    const bodyNotes = noteHeadings.find(node => node.getAttribute('data-reader-book-notes-heading') === 'body');
+    if (noteHeadings.length !== 2 || contentsNotes?.tagName !== 'H3' || bodyNotes?.tagName !== 'H2'
+        || contentsNotes?.text !== bookTopicPresentation.title || bodyNotes?.text !== bookTopicPresentation.title
+        || contentsNotes.closest('nav') !== navs[0]
+        || !same(contentsNotes.nextElementSibling?.querySelectorAll('[data-reader-toc-unit]').map(node => node.getAttribute('data-reader-toc-unit')), noteUnits)
+        || !same(bodyNotes.parentNode?.querySelectorAll('article[data-reader-route]').map(node => node.getAttribute('data-reader-route')), noteUnits))
+      fail('Actual book supplemental note headings or membership differ');
     const nav=navs[0];if(nav){const links=nav.querySelectorAll('[data-reader-toc-unit]');if(!same(links.map(link=>link.getAttribute('data-reader-toc-unit')),expected.map(unit=>unit.key)))fail('Complete book contents unit order differs');expected.forEach((record,index)=>{const link=links[index],id=printReadingEntryAnchor(record.key);if(link?.tagName!=='A'||fragment(link.getAttribute('href'))!==id)fail(`Wrong book contents unit href ${record.key}`);titleContainer(link,record,`contents unit ${record.key}`);if(record.part&&link?.closest('section')?.querySelector('[data-reader-toc-part]')?.getAttribute('data-reader-toc-part')!==String(record.part))fail(`Wrong hierarchical contents part: ${record.key}`);targetExists(id,'Book contents');});
       const wanted=expected.flatMap(record=>getUnitHeadingPlan('book',record.key).filter(slot=>slot.type==='mdx').map(slot=>({record,slot}))),headings=nav.querySelectorAll('[data-reader-toc-heading]');if(headings.length!==wanted.length)fail('Complete book section contents differs');wanted.forEach(({record,slot},index)=>{const link=headings[index],id=`${printUnitAnchor(record.key)}-${slot.id}`;if(link?.tagName!=='A'||link.getAttribute('data-reader-route')!==record.key||link.getAttribute('data-reader-toc-heading')!==slot.key||fragment(link.getAttribute('href'))!==id)fail(`Wrong native section contents target/order ${record.key} ${slot.key}`);numbered(link,{number:slot.number,title:slot.title},`contents heading ${record.key} ${slot.key}`);let owner=link?.parentNode,ownerKey=null;while(owner&&owner!==nav){const parentLink=owner.childNodes?.find(node=>node.tagName==='A'&&node.hasAttribute('data-reader-toc-unit'));if(parentLink){ownerKey=parentLink.getAttribute('data-reader-toc-unit');break;}owner=owner.parentNode;}if(ownerKey!==record.key)fail(`Wrong contents section parent: ${record.key} ${slot.key}`);targetExists(id,'Section contents');});
       const partLinks=nav.querySelectorAll('[data-reader-toc-part]');if(!same(partLinks.map(node=>node.getAttribute('data-reader-toc-part')),readerParts.map(part=>String(part.number))))fail('Book part contents order differs');readerParts.forEach((part,index)=>{const parent=partLinks[index],link=parent?.querySelector('a');if(parent?.tagName!=='H3'||fragment(link?.getAttribute('href'))!==`print-part-${part.number}`)fail(`Wrong part contents target ${part.number}`);numbered(link,{number:part.label,title:part.title},`part contents ${part.number}`);});

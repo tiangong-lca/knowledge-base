@@ -64,6 +64,19 @@ The2026-11-08 whole-book selection decision in `editorial/2026-11-08-argument-an
 
 ## Reader publication boundary
 
+Complete-manuscript acceptance binds the actual before/after source, ordered
+public and research records, and both dependency graphs. Unchanged URLs do not
+waive old title, note-subset or ordinary-content obligations. Migrations require
+exact, accessible destinations and separately reviewed semantic dispositions.
+Source, reader and actual-output reports must be real preserved artifacts bound
+to the same unit; a review hash alone is insufficient. Production inputs and
+public indexes/downloads must belong to the qualified current generation.
+
+Private preview artifacts are an editorial aid, not a publication acceptance.
+The production build and export gates cannot be disabled by package metadata or
+the preview flag. These integrity conditions do not turn an agent judgment into
+human expert approval or empirical model validation.
+
 The user-approved `_docs/reader-publication-contract.md` governs every delivered reading page. Public prose is finished exposition; all research/development process logs and TODOs stay in `_docs/`. Scientific scope, source identity, counterevidence and hypothetical assumptions remain reader-accessible. Stable machine identities and validation receipts do not become visible prose labels. Source/reader review and actual visual verification supplement software checks.
 
 Static prose examples retain versioned public inputs and exact materialized claims even when they do not use a calculator widget. Water-locality numbers are synthetic; the phosphorus example binds a source-derived inventory-estimation coefficient and leaves its LCIA factor symbolic. The registered adapter fixes each numerical-source policy; an input flag cannot suppress required source evidence. Changed v1 tuples require renewed model/version and complete affected-prose review.

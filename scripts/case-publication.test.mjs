@@ -8,7 +8,7 @@ import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { publicTeachingCase, canonicalCaseInput, caseInputSha256, caseTemplateContext, materializeCaseClaims, validateCasePublication, validateCasePublications, loadCasePublications, caseEvaluationReceipt } from './case-publication.mjs';
-import { validateRepository, validateTeachingCaseReferences } from './validate.mjs';
+import { validateRepositoryFixture, validateTeachingCaseReferences } from './validate.mjs';
 
 function fixture() {
   const spec = JSON.parse(readFileSync(new URL('../knowledge/cases/wall-coating-v1.json', import.meta.url), 'utf8'));
@@ -132,13 +132,13 @@ test('TeachingCase MDX requires literal, unique id/version and rejects malformed
 
 test('repository validation discovers optional manifests and retains legacy fixtures without cases', async () => {
   await withRepository(async (root, f) => {
-    assert.deepEqual(await validateRepository(root), []);
+    assert.deepEqual(await validateRepositoryFixture(root), []);
     await writeFile(join(root, 'content/test.mdx'), '<TeachingCase id="CASE-WALL-CONNECT" version="1.0.0" />');
-    assert.deepEqual(await validateRepository(root), []);
+    assert.deepEqual(await validateRepositoryFixture(root), []);
     f.spec.comparison.tolerance = '5'; await writeJson(root, 'knowledge/cases/wall-coating-v1.json', f.spec);
-    assert((await validateRepository(root)).some(error => /stale or unapproved/.test(error)));
+    assert((await validateRepositoryFixture(root)).some(error => /stale or unapproved/.test(error)));
   });
-  await withRepository(async root => { assert.deepEqual(await validateRepository(root), []); }, false);
+  await withRepository(async root => { assert.deepEqual(await validateRepositoryFixture(root), []); }, false);
 });
 
 test('manifest discovery refuses traversal, wrong filenames and symbolic-link inputs', async () => {
@@ -176,7 +176,13 @@ test('export independently rejects stale joins and emits exact public input byte
     }
     execFileSync('git', ['init', '-q'], { cwd: root });
     execFileSync('git', ['-c', 'user.name=Fixture', '-c', 'user.email=fixture@example.org', 'commit', '--allow-empty', '-qm', 'Fixture'], { cwd: root });
-    const run = () => execFileSync(process.execPath, [fileURLToPath(new URL('./export.mjs', import.meta.url))], { cwd: root, encoding: 'utf8', stdio: 'pipe' });
+    const fixtureRunner = `
+      import { exportArtifacts } from ${JSON.stringify(new URL('./export.mjs', import.meta.url).href)};
+      import { validateRepositoryFixture } from ${JSON.stringify(new URL('./validate.mjs', import.meta.url).href)};
+      import { validateReaderOutputFixture } from ${JSON.stringify(new URL('./reader-surface.mjs', import.meta.url).href)};
+      await exportArtifacts(validateRepositoryFixture, validateReaderOutputFixture);
+    `;
+    const run = () => execFileSync(process.execPath, ['--input-type=module', '-e', fixtureRunner], { cwd: root, encoding: 'utf8', stdio: 'pipe' });
     f.catalog.claims[0].text += ' stale'; await writeJson(root, 'knowledge/catalog.json', f.catalog);
     assert.throws(run, /stale text, metadata or caseBinding/);
     f.catalog.claims = structuredClone(materializeCaseClaims(f.spec, f.publication)); await writeJson(root, 'knowledge/catalog.json', f.catalog);
@@ -321,7 +327,7 @@ test('wall and joint publications coexist with their own literal MDX identities 
     await writeJson(root, 'knowledge/cases/joint-batch-v1.json', joint.spec);
     await writeJson(root, 'knowledge/cases/joint-batch-v1.publication.json', joint.publication);
     await writeFile(join(root, 'content/test.mdx'), '<TeachingCase id="CASE-WALL-CONNECT" version="1.0.0" />\n<TeachingCase id="CASE-JOINT-BATCH" version="1.0.0" />');
-    assert.deepEqual(await validateRepository(root), []);
+    assert.deepEqual(await validateRepositoryFixture(root), []);
     const entries = await loadCasePublications(root);
     assert.equal(entries.length, 2);
     assert.deepEqual(validateCasePublications(entries, catalog), []);
@@ -618,10 +624,10 @@ test('repository validation carries the actual register into historical carrier 
       await writeJson(root, `knowledge/cases/${inputFile}`, spec);
       await writeJson(root, `knowledge/cases/${inputFile.slice(0, -5)}.publication.json`, publication);
     }
-    assert.deepEqual(await validateRepository(root), []);
+    assert.deepEqual(await validateRepositoryFixture(root), []);
     f.catalog.evidence.find(record => record.id === 'ev-hist-demand').passageId = 'psg-epa-1974-identity';
     await writeJson(root, 'knowledge/catalog.json', f.catalog);
-    assert((await validateRepository(root)).some(error => /PDF passage carrier/.test(error)));
+    assert((await validateRepositoryFixture(root)).some(error => /PDF passage carrier/.test(error)));
   } finally { await rm(root, { recursive: true, force: true }); }
 });
 

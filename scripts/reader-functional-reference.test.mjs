@@ -10,7 +10,7 @@ import { currentEditionKeys, publishedHeadingEntries, remapBookCitations } from 
 import { cleanerProductionHeadingEntries, remapCleanerProductionCitations } from './reader-cleaner-production.mjs';
 import { createLegacyCitationEntries, createCanonicalCitationEntries } from './reader-citations.mjs';
 import { chapterAnchorPrefix, printUnitAnchor, splitReferenceTail, createChapterNotePlan } from './reader-book.mjs';
-import { validateReaderOutput, readCitationSurface, validateHistoricalScope } from './reader-surface.mjs';
+import { validateReaderOutputFixture, readCitationSurface, validateHistoricalScope } from './reader-surface.mjs';
 const json = async name => JSON.parse(await readFile(new URL(`../config/${name}.json`, import.meta.url), 'utf8'));
 const [accepted, captured, edition, baseline, placements, history, framework, frameworkHeadings, cleaner, cleanerHeadings] = await Promise.all([
   'functional-reference-accepted','functional-reference-heading-history','book-edition','citation-baseline','citation-placements','citation-history','framework-accepted','framework-heading-history','cleaner-production-accepted','cleaner-production-heading-history',
@@ -130,10 +130,10 @@ test('co-deleting B06 acceptance/capture/prose configs cannot bypass book export
   try {
     const out = join(root,'out'), config = join(root,'config'); await mkdir(out); await mkdir(config);
     for (const name of ['book-edition','framework-accepted','framework-heading-history','citation-baseline','citation-placements','citation-history','cleaner-production-accepted','cleaner-production-heading-history']) await writeFile(join(config,`${name}.json`),JSON.stringify(await json(name)));
-    await assert.rejects(validateReaderOutput(out), /requires its accepted proposition and published heading inventories/);
+    await assert.rejects(validateReaderOutputFixture(out), /requires its accepted proposition and published heading inventories/);
     for (const name of ['functional-reference-accepted','functional-reference-heading-history']) {
       await writeFile(join(config,`${name}.json`),JSON.stringify(await json(name)));
-      await assert.rejects(validateReaderOutput(out), /requires its accepted proposition and published heading inventories/);
+      await assert.rejects(validateReaderOutputFixture(out), /requires its accepted proposition and published heading inventories/);
     }
   } finally { await rm(root,{recursive:true,force:true}); }
 });
@@ -152,13 +152,13 @@ test('native retained source scopes reject missing, broadened, displaced, duplic
 
 
 test('co-deleting the current edition itself cannot turn book source into an ungoverned fixture', async () => {
-  const { validateRepository } = await import('./validate.mjs');
+  const { validateRepositoryFixture } = await import('./validate.mjs');
   const root = await mkdtemp(join(tmpdir(),'reader-b06-edition-required-'));
   try {
     await mkdir(join(root,'knowledge'),{recursive:true}); await mkdir(join(root,'content/docs/book'),{recursive:true});
     await writeFile(join(root,'knowledge/catalog.json'),JSON.stringify({schemaVersion:1,sources:[],evidence:[],claims:[],concepts:[],mappings:[],coverage:[]}));
     await writeFile(join(root,'content/docs/book/meta.json'),'{}');
-    assert((await validateRepository(root)).some(error=>/requires its current edition/.test(error)));
+    assert((await validateRepositoryFixture(root)).some(error=>/requires its current edition/.test(error)));
   } finally { await rm(root,{recursive:true,force:true}); }
 });
 

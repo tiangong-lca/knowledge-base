@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { mkdtemp, mkdir, readFile, writeFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { readerInternalIds, validateLegacyCitationOutput, validateReaderClaims, validateReaderHtml, validateReaderIndex, validateReaderMdx, validateReaderOutput, validateReaderText } from './reader-surface.mjs';
+import { readerInternalIds, validateLegacyCitationOutput, validateReaderClaims, validateReaderHtml, validateReaderIndex, validateReaderMdx, validateReaderOutputFixture, validateReaderText } from './reader-surface.mjs';
 import { chapterAnchorPrefix, chapterNoteAnchor, printUnitAnchor } from './reader-book.mjs';
 import { assertCitationBaseline, assertPrintFrontMatter } from './reader-citation-baseline.mjs';
 import { citationSourceHref } from './reader-citations.mjs';
@@ -90,11 +90,11 @@ test('output scan checks actual HTML and index, excludes machine JSON and refuse
     await writeFile(join(root, 'changes/index.html'), '<p>来源核查由 AI 辅助完成。</p>');
     await writeFile(join(root, 'downloads/catalog.json'), JSON.stringify({ process: '本轮', reviewKind: 'agent-source-check', id: 'cl-reader-known' }));
     await writeFile(join(root, 'llms.txt'), '# 生命周期评价的前世今生\n[书目](/downloads/bibliography.json)');
-    assert.deepEqual(await validateReaderOutput(root, { knownIds }), []);
+    assert.deepEqual(await validateReaderOutputFixture(root, { knownIds }), []);
     await writeFile(join(root, 'index.html'), '<main>研究进行中</main>');
-    assert((await validateReaderOutput(root, { knownIds })).some(error => /index.html.*process prose/.test(error)));
+    assert((await validateReaderOutputFixture(root, { knownIds })).some(error => /index.html.*process prose/.test(error)));
     await mkdir(join(root, '_docs')); await writeFile(join(root, '_docs/task.md'), 'Internal development');
-    assert((await validateReaderOutput(root)).some(error => /outside public output/.test(error)));
+    assert((await validateReaderOutputFixture(root)).some(error => /outside public output/.test(error)));
   } finally { await rm(root, { recursive: true, force: true }); }
 });
 
@@ -152,11 +152,11 @@ test('real or cached book output cannot bypass citation validation by omitting b
   try {
     await mkdir(print, { recursive: true });
     await writeFile(join(print, 'index.html'), '<article class="print-chapter prose"><h2>一章</h2></article>');
-    assert((await validateReaderOutput(out)).some(error => error.includes('requires both the reader citation')));
+    assert((await validateReaderOutputFixture(out)).some(error => error.includes('requires both the reader citation')));
     await writeFile(join(print, 'index.html'), '<html>Fixture</html>');
     await mkdir(book, { recursive: true });
     await writeFile(join(book, 'meta.json'), '{"pages":[]}');
-    assert((await validateReaderOutput(out)).some(error => error.includes('requires both the reader citation')));
+    assert((await validateReaderOutputFixture(out)).some(error => error.includes('requires both the reader citation')));
   } finally { await rm(repository, { recursive: true, force: true }); }
 });
 
@@ -188,12 +188,12 @@ test('the export rejects a truncated or changed frozen inventory before using it
       const changed = structuredClone(baseline);
       mutate(changed);
       await writeFile(join(config, 'citation-baseline.json'), JSON.stringify(changed));
-      await assert.rejects(validateReaderOutput(out), /baseline differs from the frozen 2026-11-07 edition/, description);
+      await assert.rejects(validateReaderOutputFixture(out), /baseline differs from the frozen 2026-11-07 edition/, description);
     }
     await writeFile(join(config, 'citation-baseline.json'), capture);
     for (const frontMatter of [[], ['/docs/book', '/docs'], ['/docs', '/docs/book', '/docs/flows']]) {
       await writeFile(join(config, 'citation-placements.json'), JSON.stringify({ frontMatter, notes: [] }));
-      await assert.rejects(validateReaderOutput(out), /Printed front matter must contain the preface and guide in their approved order/);
+      await assert.rejects(validateReaderOutputFixture(out), /Printed front matter must contain the preface and guide in their approved order/);
     }
   } finally { await rm(repository, { recursive: true, force: true }); }
 });
@@ -220,11 +220,11 @@ test('a source appendix cannot disappear by deleting both its registration and e
     await writeFile(join(config, 'citation-baseline.json'), JSON.stringify(baseline));
     await writeFile(join(config, 'citation-placements.json'), JSON.stringify({ frontMatter: ['/docs', '/docs/book'], notes: [] }));
     await writeFile(join(out, 'index.html'), '<main>一份书稿</main>');
-    await assert.rejects(validateReaderOutput(out), /Reader source has no current print registration: \/docs\/appendices\/energy-check/);
+    await assert.rejects(validateReaderOutputFixture(out), /Reader source has no current print registration: \/docs\/appendices\/energy-check/);
     await rm(join(content, 'appendices/energy-check.mdx'));
     await writeFile(join(config, 'citation-placements.json'), JSON.stringify({ frontMatter: ['/docs', '/docs/book'], notes: [],
       printAdditions: [{ route: appendix, kind: 'appendix' }] }));
-    await assert.rejects(validateReaderOutput(out), /Missing printed unit: \/docs\/appendices\/energy-check/);
+    await assert.rejects(validateReaderOutputFixture(out), /Missing printed unit: \/docs\/appendices\/energy-check/);
   } finally { await rm(repository, { recursive: true, force: true }); }
 });
 

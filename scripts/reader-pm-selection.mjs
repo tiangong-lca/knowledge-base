@@ -1,3 +1,4 @@
+import { currentBookLayout, currentBookMdxMatches, currentBookFileMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import { createHash } from 'node:crypto';
 import { isDeepStrictEqual as same } from 'node:util';
 import original from '../config/pm-selection-original.json' with { type: 'json' };
@@ -8,7 +9,7 @@ import { unaccountedReaderText, validateExchangeAnnotationOutput } from './reade
 import { isVerifiedReaderPagination } from './reader-numbering-output.mjs';
 import { printReadingEntryAnchor } from './reader-numbering.mjs';
 import { readablePedigreeCaseExpectation } from './reader-readable-pedigree.mjs';
-import { readerParagraphText, validateReaderHistoricalText } from './reader-publication-text.mjs';
+import { applyCurrentHistoricalEntries, readerParagraphText, validateReaderHistoricalText } from './reader-publication-text.mjs';
 
 export const pmSelectionRoute = '/docs/book/particulate-emissions-and-health';
 export const pmSelectionAppendix = '/docs/appendices/particulate-factor-calculations';
@@ -171,7 +172,7 @@ export function assertPmSelectionRegistration(edition, accepted) {
   if (!matches || matches.length !== 2 || !same(matches.map(unit => unit.key), routes)
       || matches.some((unit, index) => unit.key !== unit.source || unit.kind !== (index ? 'appendix' : 'chapter') || unit.coverage)
       || matches[0].part !== '环境后果' || matches[1].part
-      || accepted && matches.some((unit, index) => !same(unit.sections, sections(accepted.units[index]))))
+      || accepted && matches.some((unit, index) => !same(unit.sections, sections(currentBookLayout(`B17:${unit.key}:source`, accepted.units[index])))))
     throw new Error('PM selection requires the shared PM chapter and calculation appendix registration');
 }
 
@@ -193,7 +194,7 @@ function validatePmCatalog(catalog, accepted, projection) {
   const errors = [];
   for (const [kind, rows] of Object.entries(groups)) {
     const actual = byId(catalog[kind]), reviewed = byId(expected[kind]);
-    for (const row of byId(rows).values()) if (!same(actual.get(row.id), reviewed.get(row.id)))
+    for (const row of byId(rows).values()) if (!currentBookRecordMatches(kind, reviewed.get(row.id), actual.get(row.id), projection))
       errors.push(`PM selection reviewed ${kind} record differs: ${row.id}`);
   }
   // A preserved record list alone cannot detect a newly added dependent use.
@@ -209,7 +210,7 @@ function validatePmCatalog(catalog, accepted, projection) {
   for (const [kind, field, referenced, frozen] of reverseUses) {
     const actual = catalog.claims.filter(row => row.status === 'reviewed' && !pmIds.has(row.id)
       && row[field].some(id => referenced.has(id)));
-    if (!exactIds(actual, frozen.filter(row => row.status === 'reviewed').map(row => row.id)))
+    if (!exactIds(actual, currentBookLayout(`B17:reverse-${kind}-consumers`, frozen.filter(row => row.status === 'reviewed').map(row => row.id))))
       errors.push(`PM selection unreviewed external ${kind} consumer roster differs`);
   }
   const reviewedPm = catalog.claims.filter(row => row.id.startsWith('cl-pm-'));
@@ -225,7 +226,9 @@ export function validatePmSelectionCoverage(edition, sources, catalog, accepted,
   const errors = validatePmCatalog(catalog, accepted, projection);
   for (const unit of accepted.units) {
     try {
-      if (!same(inspectPmSelectionSource(unit.route, sources.get(unit.route)), unit)) throw new Error(`PM selection actual title, description, heading, prose or navigation differs: ${unit.route}`);
+      const raw = sources.get(unit.route);
+      const expected = currentBookLayout(`B17:${unit.route}:source`, unit);
+      if (!raw || !currentBookMdxMatches(unit.route, unit.mdxSha256, hash(raw)) || !same(inspectPmSelectionSource(unit.route, raw), expected)) throw new Error(`PM selection actual title, description, heading, prose or navigation differs: ${unit.route}`);
     } catch (error) { errors.push(error.message); }
   }
   for (const [route, source] of sources) {
@@ -252,7 +255,7 @@ export function validatePmSelectionCaseBytes(artifacts, pedigreeAccepted) {
   return original.caseInputHashes.flatMap(row => [[row.file, row.sha256], [row.publicationFile, row.publicationSha256]])
     .filter(([file, frozenDigest]) => {
       const expected = readablePedigreeCaseExpectation(file, frozenDigest, pedigreeAccepted);
-      return !artifacts[file] || hash(artifacts[file]) !== expected;
+      return !artifacts[file] || !currentBookFileMatches(file, expected, hash(artifacts[file]));
     })
     .map(([file]) => `PM selection case bytes differ: ${file}`);
 }
@@ -369,16 +372,17 @@ export function validateRenderedPmSelection(document, path, catalog, accepted, i
   assertPmSelectionAccepted(accepted, independentDigest);
   const print = path === '/print';
   const originals = [...original.publication.history.existingAffectedEntries, ...pmSelectionHeadingEntries()];
-  const history = remapPmSelectionCitations(originals, accepted, independentDigest).filter(row => row.path === path);
-  const errors = [], claims = byId(accepted.claims);
+  const history = applyCurrentHistoricalEntries(document, remapPmSelectionCitations(originals, accepted, independentDigest)).filter(row => row.path === path);
+  const errors = [], claims = byId(catalog.claims), frozenClaims = byId(accepted.claims);
   const pathIds = new Map();
   for (const node of document.querySelectorAll('[id]')) {
     const occurrences = pathIds.get(node.id) ?? [];
     occurrences.push(node);
     pathIds.set(node.id, occurrences);
   }
-  for (const record of accepted.units.filter(unit => print || unit.route === path)) {
-    const { route } = record, prefix = prefixFor(route, path), subject = `${path}: PM selection ${route}`;
+  for (const frozen of accepted.units.filter(unit => print || unit.route === path)) {
+    const { route } = frozen;
+    const record = currentBookLayout(`B17:${route}:source`, frozen), prefix = prefixFor(route, path), subject = `${path}: PM selection ${route}`;
     const units = document.querySelectorAll(`article[data-reader-route="${route}"]`);
     const fail = message => errors.push(`${subject} ${message}`);
     if (units.length !== 1) { fail('actual unit missing or repeated'); continue; }
@@ -436,7 +440,8 @@ export function validateRenderedPmSelection(document, path, catalog, accepted, i
           verify(paragraph, paragraph?.tagName === 'P' && paragraph.querySelectorAll('a').length === 1 && markers.length === 1
             && marker.getAttribute('data-reader-reference') === id && marker.getAttribute('href') === `#${chapterNoteAnchor(prefix, id)}`
             && marker.getAttribute('aria-label') === `注 ${number}` && marker.text === `[${number}]`
-            && readerParagraphText(paragraph, marker) === claims.get(id).text, `canonical paragraph or note marker ${id}`);
+            && readerParagraphText(paragraph, marker) === claims.get(id)?.text
+            && currentBookRecordMatches('claims', frozenClaims.get(id), claims.get(id)), `canonical paragraph or note marker ${id}`);
         }
       } else if (block.kind === 'navigation') {
         const expected = block.links.map(link => ({ label: link.label, href: hrefIdentity(print ? pmSelectionBookHref(link.href, route) : link.href) }));

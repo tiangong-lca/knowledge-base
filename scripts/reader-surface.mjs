@@ -1,3 +1,4 @@
+import { editionDigest } from './reader-current-edition.mjs';
 import { assertReadablePedigreeAccepted, readablePedigreeHeadingEntries, remapReadablePedigreeCitations, validateReadablePedigreeCaseBytes, validateReadablePedigreeCoverage, validateRenderedReadablePedigree } from './reader-readable-pedigree.mjs';
 import { assertPmSelectionAccepted, pmSelectionAppendix, pmSelectionCasePaths, pmSelectionHeadingEntries, remapPmSelectionCitations, validatePmSelectionCaseBytes, validatePmSelectionCoverage, validateRenderedPmSelection } from './reader-pm-selection.mjs';
 import { assertToxicityPathwaysAccepted, remapToxicityPathwaysCitations, toxicityPathwaysHeadingEntries, validateToxicityPathwaysCoverage, validateRenderedToxicityPathways } from './reader-toxicity-pathways.mjs';
@@ -7,6 +8,10 @@ import { assertClosingSynthesisOriginal, assertClosingSynthesisHeadingHistory, a
 import { assertWallSelectionOriginal, assertWallSelectionHeadingHistory, assertWallSelectionAccepted, wallSelectionHeadingEntries, remapWallSelectionCitations, validateWallSelectionCoverage, validateRenderedWallSelection } from './reader-wall-selection.mjs';
 import { validateReaderNumberingOutput } from './reader-numbering-output.mjs';
 import { assertReaderNumbering } from './reader-numbering.mjs';
+import { validateReadableBookCurrent } from './reader-current-edition-files.mjs';
+import { qualifyReadableBookCitations } from './reader-current-citations.mjs';
+import { validateReadableBookPublicArtifacts, validateReadableBookReviewedOutput } from './reader-current-output.mjs';
+import { qualifyCurrentHistoricalDocument } from './reader-publication-text.mjs';
 import { assertJointProductionOriginal, assertJointProductionHeadingHistory, assertJointProductionProseAccepted, jointProductionHeadingEntries, remapJointProductionCitations, validateJointProductionCoverage, validateRenderedJointProduction } from './reader-joint-production.mjs';
 import { assertHybridInventoryAccepted, assertHybridInventoryHeadingHistory, assertHybridInventoryProseAccepted, hybridInventoryHeadingEntries, remapHybridInventoryCitations, validateHybridInventoryCoverage, validateRenderedHybridInventory } from './reader-hybrid-inventory.mjs';
 import { assertExchangeSemanticsOriginal, assertExchangeSemanticsHeadingHistory, assertExchangeSemanticsCitationSources, assertExchangeSemanticsPartialHistory, assertExchangeSemanticsProseAccepted, exchangeSemanticsHeadingEntries, remapExchangeSemanticsCitations, validateExchangeSemanticsCoverage, validateRenderedExchangeSemantics } from './reader-exchange-semantics.mjs';
@@ -148,10 +153,58 @@ function aliasDestination(node) {
   return sibling?.id === target ? target : null;
 }
 
+const citationScopeExclusions = '.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope],.docs-pagination,.reader-view-label,.teaching-case';
+const ordinaryCitationBlocks = 'p,ul,ol,dl,blockquote,pre,table,figure';
+
+function nativeCitationScopes(document) {
+  const scopes = new Map();
+  for (const article of document.querySelectorAll('article[data-reader-route]')) {
+    const stack = [];
+    const chapter = { claimIds: new Set(), ordinaryHashes: [] };
+    for (const node of article.querySelectorAll(`[data-reader-heading-key],[data-reader-section][id],a[role="doc-noteref"],${ordinaryCitationBlocks}`)) {
+      if (node.closest(citationScopeExclusions)) continue;
+      const key = node.getAttribute('data-reader-heading-key');
+      const marker = node.hasAttribute('data-reader-section');
+      if (key === '@unit') continue;
+      if (key !== undefined || marker) {
+        const depth = marker ? 100 : Number(node.tagName.slice(1));
+        if (!Number.isInteger(depth)) continue;
+        while (stack.length && stack.at(-1).depth >= depth) stack.pop();
+        if (!node.id) continue;
+        const scope = { claimIds: new Set(), ordinaryHashes: [] };
+        scopes.set(node.id, scope);
+        stack.push({ depth, scope });
+      } else {
+        const active = [chapter, ...stack.map(row => row.scope)];
+        const id = node.getAttribute('data-reader-reference');
+        if (id) {
+          for (const scope of active) scope.claimIds.add(id);
+        } else if (!node.querySelector('a[role="doc-noteref"]')
+            && !node.parentNode?.closest(ordinaryCitationBlocks)) {
+          const links = node.querySelectorAll('a[href]').map(link => [link.text, link.getAttribute('href')]);
+          const text = node.text.replace(/\s+/g, ' ').trim();
+          if (!text) continue;
+          const digest = editionDigest({ tag: node.tagName, text, links });
+          for (const scope of active) scope.ordinaryHashes.push(digest);
+        }
+      }
+    }
+    if (article.id) scopes.set(article.id, chapter);
+    for (const group of article.querySelectorAll('.chapter-notes')) {
+      const id = group.getAttribute('aria-labelledby');
+      if (id) scopes.set(id, {
+        claimIds: new Set(group.querySelectorAll('li[data-reader-claim]').map(note => note.getAttribute('data-reader-claim'))),
+        ordinaryHashes: [],
+      });
+    }
+  }
+  return scopes;
+}
+
 export function readCitationSurface(document, path) {
   const ids = new Map();
   const errors = [];
-  const noteNumbers = new Map();
+  const noteNumbers = new Map(), nativeScopes = nativeCitationScopes(document);
   for (const section of document.querySelectorAll('.chapter-notes')) {
     const route = path === '/print' ? section.closest('article[data-reader-route]')?.getAttribute('data-reader-route') : path;
     if (!route) {
@@ -203,7 +256,11 @@ export function readCitationSurface(document, path) {
     const scope = scopeNodes.length === 1 ? scopeNodes[0] : null;
     const scopeLink = scope?.querySelector('a');
     const scopeDate = scope?.querySelector('time');
-    ids.set(node.id, { scopeAttached: scope && (node.tagName === 'ARTICLE' ? scope.parentNode === node : scope.previousElementSibling === node && scope.parentNode === node.parentNode), scopeCount: scopeNodes.length, scopeText: scope?.text, scopeEdition: scopeLink?.getAttribute('href'), scopeDate: scopeDate?.text === scopeDate?.getAttribute('datetime') ? scopeDate?.text : null, scopeLinks: scope?.querySelectorAll('a[data-legacy-scope-destination]').map(link=>link.getAttribute('href')), noticeText: context?.text, title, route, claimId, section, tag: node.tagName, notice, alias, edition, editionDate, links, number: noteNumbers.get(node.id) });
+    ids.set(node.id, { claimIds: [...(nativeScopes.get(node.id)?.claimIds ?? (claimId ? [claimId] : []))],
+      ordinaryHashes: nativeScopes.get(node.id)?.ordinaryHashes ?? [],
+      visibleHeading: /^H[1-6]$/.test(node.tagName)
+        ? (node.querySelector('[data-reader-heading-title]')?.text ?? node.text.replace(/复制章节链接$/, '')) : null,
+      scopeAttached: scope && (node.tagName === 'ARTICLE' ? scope.parentNode === node : scope.previousElementSibling === node && scope.parentNode === node.parentNode), scopeCount: scopeNodes.length, scopeText: scope?.text, scopeEdition: scopeLink?.getAttribute('href'), scopeDate: scopeDate?.text === scopeDate?.getAttribute('datetime') ? scopeDate?.text : null, scopeLinks: scope?.querySelectorAll('a[data-legacy-scope-destination]').map(link=>link.getAttribute('href')), noticeText: context?.text, title, route, claimId, section, tag: node.tagName, notice, alias, edition, editionDate, links, number: noteNumbers.get(node.id) });
   }
   const printOrder = path === '/print' ? document.querySelectorAll('article[data-reader-route]').map(article => article.getAttribute('data-reader-route')) : [];
   const noteLinks = document.querySelectorAll('a[href]').map(link=>({href:link.getAttribute('href'),label:link.text})).filter(link=>/-claim-[A-Za-z0-9]/.test(link.href) && /注\s*\d+/.test(link.label));
@@ -211,8 +268,22 @@ export function readCitationSurface(document, path) {
 }
 
 /** Verify native source-subset context independently of the target's existence. */
+function matchesCapturedScope(source, entry) {
+  const { capturedScope: captured } = entry;
+  if (!captured || !source) return !captured;
+  return JSON.stringify(source.claimIds) === JSON.stringify(captured.claimIds)
+    && JSON.stringify(source.ordinaryHashes) === JSON.stringify(captured.ordinaryHashes ?? [])
+    && (entry.targets[0]?.kind !== 'heading' || source.visibleHeading === captured.title)
+    && (!['chapter', 'note-group'].includes(entry.targets[0]?.kind) || source.title === captured.title);
+}
+
 export function validateHistoricalScope(source, entry, address = `${entry.path}/#${entry.id}`) {
-  if (!entry.scope) return [];
+  if (!entry.scope) {
+    if (entry.mode === 'retained' && entry.capturedScope
+        && !matchesCapturedScope(source, entry))
+      return [`${address}: old ${entry.capturedScope.title} scope changed without a reviewed migration`];
+    return [];
+  }
   if (entry.mode === 'retained') {
     if (!source.scopeAttached || source.scopeCount !== 1 || !source.scopeText?.includes(entry.scope.text)
       || source.scopeEdition !== citationSourceHref(entry.edition.sourceCommit) || source.scopeDate !== entry.edition.sourceDate
@@ -222,12 +293,7 @@ export function validateHistoricalScope(source, entry, address = `${entry.path}/
   return [];
 }
 
-export async function validateLegacyCitationOutput(root, sourceBaseline, locations, availableRoutes = null, history = null, book = null) {
-  const numbered = book ? await validateReaderNumberingOutput(root,{sources:book.sources,edition:book.edition}) : null;
-  if (numbered?.errors.length) return numbered.errors;
-  const sourceRoutes = availableRoutes ?? [...sourceBaseline.pages.map(page => page.route), ...(locations.printAdditions ?? []).map(page => page.route)];
-  const printRoutes = book ? currentEditionKeys(book.edition, sourceRoutes, sourceBaseline, locations) : createCurrentPrintRoutes(sourceBaseline, locations, sourceRoutes);
-  const historicPrintRoutes = book ? [...sourceBaseline.pages.filter(page=>page.printOrdinal!==undefined).map(page=>page.route),...locations.frontMatter,...(locations.printAdditions??[]).map(unit=>unit.route)] : printRoutes;
+export function getHistoricalCitationEntries(sourceBaseline, locations, history, historicPrintRoutes, book) {
   let entries = [...createLegacyCitationEntries(sourceBaseline, locations, history?.pages),
     ...(history ? createCanonicalCitationEntries(history, locations, historicPrintRoutes) : [])];
   if (book) entries = remapDataApplicabilityCitations(remapClimateAssemblyCitations(remapClosingSynthesisCitations(remapWallSelectionCitations(remapJointProductionCitations(remapHybridInventoryCitations(remapExchangeSemanticsCitations(remapProcessNetworkCitations(remapFunctionalReferenceCitations(remapCleanerProductionCitations(remapBookCitations(
@@ -236,7 +302,34 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
     entries = remapToxicityPathwaysCitations([...entries, ...toxicityPathwaysHeadingEntries()],book.toxicityAccepted);
     entries = remapReadablePedigreeCitations([...entries, ...readablePedigreeHeadingEntries()], book.pedigreeAccepted);
     entries = remapPmSelectionCitations([...entries, ...pmSelectionHeadingEntries()], book.pmAccepted);
+    if (book.hostedHistory) entries = qualifyReadableBookCitations(entries, book.hostedHistory, book.current?.migrations);
   }
+  return entries;
+}
+
+export function validateReadableBookOrdinaryDestinations(pages, entry, address) {
+  const errors = [];
+  for (const row of entry.ordinaryDispositions ?? []) {
+    for (const destination of row.destinations) {
+      const target = (entry.scope?.targets ?? entry.targets).find(item => `${item.path}#${item.id}` === destination.address);
+      const actual = target && pages.get(target.path)?.ids.get(target.id);
+      if (!actual || (destination.currentSha256
+        ? !actual.ordinaryHashes.includes(destination.currentSha256)
+        : !actual.claimIds.includes(destination.claimId))) {
+        errors.push(`${address}: actual ordinary-content destination differs: ${destination.address}`);
+      }
+    }
+  }
+  return errors;
+}
+
+export async function validateLegacyCitationOutput(root, sourceBaseline, locations, availableRoutes = null, history = null, book = null) {
+  const numbered = book ? await validateReaderNumberingOutput(root,{sources:book.sources,edition:book.edition}) : null;
+  if (numbered?.errors.length) return numbered.errors;
+  const sourceRoutes = availableRoutes ?? [...sourceBaseline.pages.map(page => page.route), ...(locations.printAdditions ?? []).map(page => page.route)];
+  const printRoutes = book ? currentEditionKeys(book.edition, sourceRoutes, sourceBaseline, locations) : createCurrentPrintRoutes(sourceBaseline, locations, sourceRoutes);
+  const historicPrintRoutes = book ? [...sourceBaseline.pages.filter(page=>page.printOrdinal!==undefined).map(page=>page.route),...locations.frontMatter,...(locations.printAdditions??[]).map(unit=>unit.route)] : printRoutes;
+  const entries = getHistoricalCitationEntries(sourceBaseline, locations, history, historicPrintRoutes, book);
   const addresses = new Set();
   for (const entry of entries) {
     const address = `${entry.path}#${entry.id}`;
@@ -244,8 +337,11 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
     addresses.add(address);
   }
   const pages = new Map();
-  const errors = [];
-  for (const path of new Set([...sourceBaseline.pages.map(page => page.route), ...(history?.pages ?? []).map(page => page.route), ...(locations.printAdditions ?? []).map(page => page.route), ...(book ? [pmSelectionAppendix] : []), '/print'])) {
+  const errors = book ? [
+    ...validateReadableBookReviewedOutput(book.current, numbered?.documents, book.sources, book.edition, book.catalog, book.readings),
+    ...await validateReadableBookPublicArtifacts(root, book.current, book),
+  ] : [];
+  for (const path of new Set([...sourceBaseline.pages.map(page => page.route), ...(history?.pages ?? []).map(page => page.route), ...(locations.printAdditions ?? []).map(page => page.route), ...(book ? [pmSelectionAppendix, ...entries.flatMap(entry => [entry.path, ...entry.targets.map(target => target.path), ...entry.scope?.targets?.map(target => target.path) ?? []])] : []), '/print'])) {
     const html = await readFile(join(root, path.slice(1), 'index.html'), 'utf8').catch(error => {
       if (error.code !== 'ENOENT') throw error;
       return null;
@@ -256,6 +352,7 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
     }
     const document = numbered ? numbered.documents.get(path) : htmlParser.parse(html);
     if (!document) { errors.push(`${path}: missing independently verified numbered semantic document`); continue; }
+    qualifyCurrentHistoricalDocument(document, entries, book?.current?.migrations);
     const surface = readCitationSurface(document, path);
     if (book) errors.push(...validateRenderedDataApplicability(document,path,book.catalog,book.dataAccepted,undefined,"raw"), ...validateRenderedClimateAssembly(document,path,book.catalog,book.climateAccepted), ...validateRenderedClosingSynthesis(document,path,book.catalog,book.closingProse,book.closingHistory), ...validateRenderedWallSelection(document,path,book.wallOriginal,book.catalog,book.wallAccepted), ...validateRenderedJointProduction(document,path,book.jointOriginal,book.catalog,book.jointProse), ...validateRenderedCleanerProduction(document,path,book.cleanerAccepted,book.catalog), ...validateRenderedFunctionalReference(document,path,book.functionalAccepted,book.catalog,book.functionalProse), ...validateRenderedProcessNetwork(document,path,book.processAccepted,book.catalog,book.processProse), ...validateRenderedExchangeSemantics(document,path,book.exchangeOriginal,book.catalog,book.exchangeProse,book.exchangePartial), ...validateRenderedHybridInventory(document,path,book.hybridAccepted,book.catalog,book.hybridProse));
     if (book) {
@@ -290,6 +387,7 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
       if (!source.notice || JSON.stringify(source.links) !== JSON.stringify(expected)) errors.push(`${address}: migration notice has the wrong native links`);
     }
     errors.push(...validateHistoricalScope(source, entry, address));
+    errors.push(...validateReadableBookOrdinaryDestinations(pages, entry, address));
     for (const target of [...entry.targets, ...(entry.scope?.targets ?? [])]) {
       const actual = pages.get(target.path)?.ids.get(target.id);
       const semanticMatch = actual?.route === target.route && (
@@ -297,6 +395,10 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
         target.kind === 'chapter' ? actual.tag === 'ARTICLE' :
         target.kind === 'note-group' ? /^H[23]$/.test(actual.tag) : actual.section);
       if (!semanticMatch) errors.push(`${address}: wrong or missing ${target.kind} destination ${target.path}/#${target.id}`);
+      if (entry.mode === 'alias' && !entry.scope && entry.capturedScope
+          && !matchesCapturedScope(actual, entry))
+        errors.push(`${address}: old ${entry.capturedScope.title} aliased scope changed without a reviewed migration`);
+
     }
   }
   // Every displayed cross-unit note label must use the actual destination plan.
@@ -330,7 +432,7 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
   return errors;
 }
 
-export async function validateReaderOutput(root, { knownIds = new Set() } = {}) {
+async function validatePublicationOutput(root, { knownIds = new Set(), sourceCommit }, requireCurrent) {
   const errors = [];
   let bookOutput = false;
   async function visit(directory) {
@@ -441,11 +543,23 @@ export async function validateReaderOutput(root, { knownIds = new Set() } = {}) 
       ]);
       errors.push(...validateReadablePedigreeCaseBytes(pedigreeAccepted, { input: pedigreeInput, publication: pedigreePublication }));
       const [readings,literature]=await Promise.all(['readings','literature-map'].map(async name=>JSON.parse(await readFile(resolve(root,'..','knowledge','research',name+'.json'),'utf8'))));
-      book={pmAccepted,toxicityAccepted,pedigreeAccepted,readings,literature,dataAccepted,climateAccepted,closingHistory,closingProse,wallOriginal,wallHeadings,wallAccepted,jointOriginal,jointHeadings,jointProse,hybridAccepted,hybridHeadings,hybridProse,edition,accepted,headingHistory,cleanerAccepted,cleanerHeadingHistory,functionalAccepted,functionalHeadings,functionalProse,processAccepted,processHeadings,processProse,exchangeOriginal,exchangeHeadings,exchangeCitations,exchangePartial,exchangeProse,sources,catalog};
+      const sourceRoot = resolve(root, '..');
+      let current, hostedHistory;
+      if (requireCurrent) {
+        current = await validateReadableBookCurrent(sourceRoot, catalog, readings, literature);
+        hostedHistory = await readConfig('readable-book-hosted-history.json');
+        if (!hostedHistory) throw new Error('Current reader publication requires its verified hosted history');
+        errors.push(...current.errors);
+      }
+      book={current,hostedHistory,sourceCommit,pmAccepted,toxicityAccepted,pedigreeAccepted,readings,literature,dataAccepted,climateAccepted,closingHistory,closingProse,wallOriginal,wallHeadings,wallAccepted,jointOriginal,jointHeadings,jointProse,hybridAccepted,hybridHeadings,hybridProse,edition,accepted,headingHistory,cleanerAccepted,cleanerHeadingHistory,functionalAccepted,functionalHeadings,functionalProse,processAccepted,processHeadings,processProse,exchangeOriginal,exchangeHeadings,exchangeCitations,exchangePartial,exchangeProse,sources,catalog};
       sourceRoutes.splice(0,sourceRoutes.length,...sources.keys());
     }
     errors.push(...await validateLegacyCitationOutput(root, baseline, placements, hasReaderSource ? sourceRoutes : null, history,book));
     if (!history) errors.push('The book export requires the historical canonical citation inventory');
   } else if (baseline || placements || history || bookSource || bookOutput || numberingArtifact) errors.push('The book export requires both the reader citation baseline and placement files');
+  if (requireCurrent && (!bookOutput || !baseline || !placements || !history || !numberingArtifact)) errors.push('Current reader publication requires its actual numbered book output');
   return [...new Set(errors)];
 }
+
+export const validateReaderOutput = (root, options = {}) => validatePublicationOutput(root, options, true);
+export const validateReaderOutputFixture = (root, options = {}) => validatePublicationOutput(root, options, false);

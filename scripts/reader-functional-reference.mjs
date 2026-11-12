@@ -1,5 +1,6 @@
+import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import { createHash } from 'node:crypto';
-import { chapterAnchorPrefix, collectChapterClaimOccurrences, printUnitAnchor } from './reader-book.mjs';
+import { readSourceHeading, chapterAnchorPrefix, collectChapterClaimOccurrences, printUnitAnchor } from './reader-book.mjs';
 
 export const functionalReferenceRoute = '/docs/book/service-and-reference';
 export const functionalReferenceSupplement = '/docs/functional-unit';
@@ -18,7 +19,7 @@ export function assertFunctionalReferenceHeadingHistory(history) {
 export function assertFunctionalReferenceRegistration(edition) {
   const unit = edition.units.find(unit => unit.key === functionalReferenceRoute);
   if (!unit || unit.source !== functionalReferenceRoute || unit.kind !== 'chapter' || unit.part !== '可比世界'
-    || !same(unit.coverage, [functionalReferenceSupplement]) || !same(unit.sections, titles.map(title => ({ id: title, title })))
+    || !same(unit.coverage, [functionalReferenceSupplement]) || !same(unit.sections, currentBookLayout('B06:headings', titles.map(title => ({ id: title, title }))))
     || edition.units.some(unit => unit.key === functionalReferenceSupplement)) throw new Error('Missing or changed shared B06 chapter/exact two-source consumption');
 }
 
@@ -39,14 +40,15 @@ export function validateFunctionalReferenceCoverage(edition, sources, accepted, 
   const errors = [], raw = sources.get(functionalReferenceRoute), supplement = sources.get(functionalReferenceSupplement);
   if (raw === undefined || supplement === undefined) return ['Missing B06 primary or retained S03 website source'];
   const title = /^title:\s*(.+?)\s*$/m.exec(raw)?.[1]?.replace(/^(['"])(.*)\1$/, '$2');
-  if (title !== accepted.title) errors.push('B06 source has the wrong adopted title');
+  if (title !== currentBookLayout('B06:title', accepted.title)) errors.push('B06 source has the wrong adopted title');
   const split = raw.split(/^## (.+)\s*$/m), headings = [], actual = [];
   for (let i = 1; i < split.length; i += 2) {
-    const section = split[i].trim(); headings.push(section);
+    const heading = readSourceHeading(split[i]); headings.push(heading);
+    const section = heading.id;
     actual.push(...collectChapterClaimOccurrences(split[i + 1]).map(id => ({ id, section })));
   }
-  const expected = accepted.sections.flatMap(section => section.claimIds.map(id => ({ id, section: section.id })));
-  if (!same(headings, titles)) errors.push('B06 source must have exactly three actual adopted formal sections');
+  const expected = currentBookLayout('B06:occurrences', accepted.sections.flatMap(section => section.claimIds.map(id => ({ id, section: section.id }))));
+  if (!same(headings, currentBookLayout('B06:headings', titles.map(title => ({ id: title, title }))))) errors.push('B06 source must have exactly three actual adopted formal sections');
   if (collectChapterClaimOccurrences(raw).length !== actual.length || !same(actual, expected)) errors.push('B06 propositions missing, duplicated, reordered, replaced or misplaced');
   const supplementIds = collectChapterClaimOccurrences(supplement), oldIds = accepted.sources[1].claimIds;
   if (!same(supplementIds, [...oldIds, ...accepted.additions]) || !same(supplementIds.filter(id => oldIds.includes(id)), oldIds) || supplementIds.some(id => !oldIds.includes(id) && !accepted.additions.includes(id))
@@ -60,11 +62,11 @@ export function validateFunctionalReferenceCoverage(edition, sources, accepted, 
     for (const { id } of expected) if (catalog.claims.find(claim => claim.id === id)?.status !== 'reviewed') errors.push(`Unreviewed B06 proposition: ${id}`);
     assertFunctionalReferenceProseAccepted(prose);
     if (!same(prose.sources.map(source => source.route), accepted.sources.map(source => source.route))) errors.push('B06 accepted MDX sources differ from exact consumed pair');
-    for (const source of prose.sources) if (!sources.has(source.route) || mdxDigest(sources.get(source.route)) !== source.mdxSha256) errors.push(`B06 source differs from independently reviewed MDX: ${source.route}`);
-    if (!same(prose.claims.map(claim => claim.id), expected.map(claim => claim.id))) errors.push('B06 accepted canonical prose has the wrong occurrence order');
+    for (const source of prose.sources) if (!sources.has(source.route) || !currentBookMdxMatches(source.route, source.mdxSha256, mdxDigest(sources.get(source.route)))) errors.push(`B06 source differs from independently reviewed MDX: ${source.route}`);
+    if (!same(prose.claims.map(claim => claim.id), accepted.sections.flatMap(section => section.claimIds))) errors.push('B06 accepted canonical prose has the wrong occurrence order');
     for (const fixed of prose.claims) {
       const claim = catalog.claims.find(claim => claim.id === fixed.id);
-      if (!claim || !sameRecord(claim, fixed)) errors.push(`B06 canonical proposition differs from independently reviewed draft: ${fixed.id}`);
+      if (!claim || !currentBookRecordMatches('claims', fixed, claim)) errors.push(`B06 canonical proposition differs from independently reviewed draft: ${fixed.id}`);
     }
   }
   return errors;
@@ -151,35 +153,36 @@ export function validateRenderedFunctionalReference(document, path, accepted, ca
   const claims = new Map(catalog.claims.map(claim => [claim.id, claim]));
   const reviewedClaims = prose ? new Map(prose.claims.map(claim => [claim.id, claim])) : null;
   let section = null;
+  const currentHeadings = currentBookLayout('B06:headings', titles.map(title => ({ id: title, title })));
   const actual = [], headings = [];
   for (const node of unit.querySelectorAll('h1,h2,h3,h4,h5,h6,a[role="doc-noteref"]')) {
     if (node.closest('[data-legacy-for],[data-legacy-notice],[data-legacy-scope]')) continue;
     if (node.getAttribute('role') === 'doc-noteref') {
       const id = node.getAttribute('data-reader-reference'), paragraph = node.closest('p');
       actual.push({ id, section });
-      if (reviewedClaims && !sameRecord(claims.get(id), reviewedClaims.get(id))) errors.push(`${path}: actual canonical record differs from independently reviewed B06 draft: ${id}`);
+      if (reviewedClaims && !currentBookRecordMatches('claims', reviewedClaims.get(id), claims.get(id))) errors.push(`${path}: actual canonical record differs from independently reviewed B06 draft: ${id}`);
       if (!paragraph || !claims.get(id) || bodyText(paragraph, node) !== claims.get(id).text) errors.push(`${path}: B06/S03 actual paragraph differs from canonical text: ${id}`);
     } else if (route === functionalReferenceRoute) {
       if (node.closest('.chapter-notes')) { section = null; continue; }
-      if (titles.includes(node.id.slice(prefix.length))) {
-        section = node.id.slice(prefix.length); headings.push(section);
-        if (node.tagName !== (print ? 'H3' : 'H2') || node.text.replace(/复制章节链接$/, '') !== section) errors.push(`${path}: wrong actual B06 formal heading`);
+      if (currentHeadings.some(heading => heading.id === node.id.slice(prefix.length))) {
+        section = node.id.slice(prefix.length); headings.push({ id: section, title: node.text.replace(/复制章节链接$/, '') });
+        if (node.tagName !== (print ? 'H3' : 'H2') || node.text.replace(/复制章节链接$/, '') !== currentHeadings.find(heading => heading.id === section)?.title) errors.push(`${path}: wrong actual B06 formal heading`);
       } else if (node.tagName !== (print ? 'H2' : 'H1')) errors.push(`${path}: unexpected actual B06 body heading`);
     }
   }
   if (route === functionalReferenceRoute) {
     const title = print ? unit.getAttribute('data-reader-title') : unit.querySelector('h1')?.text;
-    if (title !== accepted.title || !same(headings, titles)) errors.push(`${path}: wrong actual B06 title or formal sections`);
-    if (!same(actual, accepted.sections.flatMap(section => section.claimIds.map(id => ({ id, section: section.id }))))) errors.push(`${path}: actual B06 body claims missing, duplicated, reordered or misplaced`);
+    if (title !== currentBookLayout('B06:title', accepted.title) || !same(headings, currentHeadings)) errors.push(`${path}: wrong actual B06 title or formal sections`);
+    if (!same(actual, currentBookLayout('B06:occurrences', accepted.sections.flatMap(section => section.claimIds.map(id => ({ id, section: section.id })))))) errors.push(`${path}: actual B06 body claims missing, duplicated, reordered or misplaced`);
   } else {
     const ids = actual.map(item => item.id), expected = accepted.sources[1].claimIds;
     const sourceHeadings = accepted.sourceHeadings.filter(heading => heading.route === route);
     const nativeHeadings = unit.querySelectorAll('h2').filter(node => !node.closest('.chapter-notes,[data-legacy-for],[data-legacy-notice]'));
-    if (!same(nativeHeadings.map(node => ({ id: node.id, title: node.text.replace(/复制章节链接$/, '') })), sourceHeadings.map(heading => ({ id: heading.id, title: heading.title })))) errors.push(`${path}: actual S03 fine website headings changed`);
+    if (!same(nativeHeadings.map(node => ({ id: node.id, title: node.text.replace(/复制章节链接$/, '') })), currentBookLayout('S03:web-headings', sourceHeadings.map(heading => ({ id: heading.id, title: heading.title }))))) errors.push(`${path}: actual S03 fine website headings changed`);
     if (!same(ids, [...expected, ...accepted.additions]) || !same(ids.filter(id => expected.includes(id)), expected) || new Set(ids).size !== ids.length || ids.some(id => !expected.includes(id) && !accepted.additions.includes(id))) errors.push(`${path}: actual S03 original body claims missing, duplicated or replaced`);
   }
   if (prose) {
-    for (const navigation of prose.navigation.filter(navigation => navigation.route === route)) {
+    for (const navigation of currentBookLayout(`B06:${route}:navigation`, prose.navigation.filter(navigation => navigation.route === route))) {
       const nodes = unit.querySelectorAll('p,a[role="doc-noteref"]');
       const paragraphs = nodes.filter(node => node.tagName === 'P' && !node.closest('.chapter-notes,[data-legacy-notice],[data-legacy-for],[data-legacy-scope]') && !node.querySelector('[role="doc-noteref"]')
         && node.text === navigation.text && node.querySelectorAll('a').length === 1 && node.querySelector('a')?.getAttribute('href') === navigation.href && node.querySelector('a')?.text === navigation.linkText);

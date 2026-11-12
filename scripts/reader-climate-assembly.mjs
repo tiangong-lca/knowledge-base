@@ -1,3 +1,4 @@
+import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import { createHash } from "node:crypto";
 import original from "../config/climate-assembly-original.json" with { type: "json" };
 import captured from "../config/climate-assembly-heading-original.json" with { type: "json" };
@@ -10,7 +11,7 @@ import { chapterAnchorPrefix, collectChapterClaimOccurrences, printUnitAnchor } 
 import { publicCatalog } from "./knowledge.mjs";
 import { validateExchangeAnnotationOutput, unaccountedReaderText } from "./reader-exchange-semantics.mjs";
 import { isVerifiedReaderPagination } from "./reader-numbering-output.mjs";
-import { readerParagraphText, validateReaderHistoricalText } from "./reader-publication-text.mjs";
+import { applyCurrentHistoricalEntries, readerParagraphText, validateReaderHistoricalText } from "./reader-publication-text.mjs";
 const climateAssemblyKey = "book-climate-equivalence";
 const climateAssemblyManuscript = "/monograph/climate-equivalence";
 const climateAssemblyTitle = "气候当量";
@@ -46,7 +47,7 @@ function assertClimateAssemblyRegistration(edition) {
       || unit.kind !== "chapter"
       || unit.part !== "环境后果"
       || !same(unit.coverage, climateAssemblyRoutes)
-      || !same(unit.sections, plainSections(climateAssemblyTitles))
+      || !same(unit.sections, currentBookLayout('B15:registered-sections', plainSections(climateAssemblyTitles)))
       || units.some((row) => climateAssemblyRoutes.includes(row.key))
       || appendices.length !== 1
       || appendices[0].source !== climateAssemblyAppendix
@@ -124,20 +125,26 @@ function assertClimateAssemblyAccepted(accepted, independentDigest = climateAsse
     if (figureExpected ? !sameRecord(row.figure, { section: "响应与指标", src: "/book-figures/climate-response-and-integral.svg", alt: "相同CO₂响应的两种量：上图显示大气中剩余的比例，下图显示到各时点的累计面积。", width: "700", height: "800", caption: "同一响应的剩余比例与时间积分" }) : row.figure !== null) throw new Error("Climate original response figure needs exact reviewed placement and identity");
   }
 }
+function reviewedClimateAssemblySource(accepted, route) {
+  const source = accepted.sources.find(row => row.route === route);
+  const occurrences = route === climateAssemblyManuscript ? accepted.sections.flatMap(section => section.claimIds.map(id => ({ id, section: section.id }))) : route === climateAssemblyAppendix ? accepted.appendix.sections.flatMap(section => section.claimIds.map(id => ({ id, section: section.id }))) : accepted.website.find(page => page.route === route).occurrences;
+  return currentBookLayout(`B15:${route}:reader-source`, { source, occurrences });
+}
 /** Keep original external scientific records exact; only the separately reviewed49 are authored here. */
 function validateClimateAssemblyCoverage(edition, sources, catalog, accepted, independentDigest = climateAssemblyAcceptedDigest, catalogProjection = "raw") {
   assertClimateAssemblyRegistration(edition);
   assertClimateAssemblyAccepted(accepted, independentDigest);
   if (!["raw", "public"].includes(catalogProjection)) throw new Error("Climate requires explicit raw or public catalog projection");
   const errors = [];
-  for (const source of accepted.sources) {
-    const raw = sources.get(source.route);
+  for (const frozen of accepted.sources) {
+    const raw = sources.get(frozen.route);
     if (typeof raw !== "string") {
-      errors.push(`Climate missing source: ${source.route}`);
+      errors.push(`Climate missing source: ${frozen.route}`);
       continue;
     }
-    const found = inspectClimateAssemblySource(raw), expectedOccurrences = source.route === climateAssemblyManuscript ? accepted.sections.flatMap((section) => section.claimIds.map((id) => ({ id, section: section.id }))) : source.route === climateAssemblyAppendix ? accepted.appendix.sections.flatMap((section) => section.claimIds.map((id) => ({ id, section: section.id }))) : accepted.website.find((page) => page.route === source.route).occurrences;
-    if (rawDigest(raw) !== source.mdxSha256
+    const { source, occurrences: expectedOccurrences } = reviewedClimateAssemblySource(accepted, frozen.route);
+    const found = inspectClimateAssemblySource(raw);
+    if (!currentBookMdxMatches(frozen.route, frozen.mdxSha256, rawDigest(raw))
         || !sameRecord({ title: found.title, description: found.description, headings: found.headings, ordinary: found.ordinary, figure: found.figure }, { title: source.title, description: source.description, headings: source.headings, ordinary: source.ordinary, figure: source.figure })
         || found.outsideOccurrences.length
         || found.figureCount !== (source.figure ? 1 : 0)
@@ -152,7 +159,7 @@ function validateClimateAssemblyCoverage(edition, sources, catalog, accepted, in
   const expected = catalogProjection === "public" ? publicCatalog(reference) : reference;
   for (const [kind, records] of groups) for (const fixed of records) {
     const found = catalog?.[kind]?.filter((row) => row.id === fixed.id) ?? [], wanted = expected[kind].find((row) => row.id === fixed.id);
-    if (found.length !== 1 || !sameRecord(found[0], wanted)) errors.push(`Climate reviewed ${kind} record differs: ${fixed.id}`);
+    if (found.length !== 1 || !currentBookRecordMatches(kind, wanted, found[0], catalogProjection)) errors.push(`Climate reviewed ${kind} record differs: ${fixed.id}`);
   }
   return errors;
 }
@@ -396,14 +403,15 @@ function headingConcealed(node) {
 function validateRenderedClimateAssembly(document, path, catalog, accepted, independentDigest = climateAssemblyAcceptedDigest) {
   if (![...climateAssemblyRoutes, climateAssemblyAppendix, "/print"].includes(path)) return [];
   assertClimateAssemblyAccepted(accepted, independentDigest);
-  const print = path === "/print", routes = print ? [climateAssemblyKey, climateAssemblyAppendix] : [path], errors = [], entries = remapClimateAssemblyCitations(climateAssemblyOriginalEntries(), accepted, independentDigest);
+  const print = path === "/print", routes = print ? [climateAssemblyKey, climateAssemblyAppendix] : [path], errors = [], entries = applyCurrentHistoricalEntries(document, remapClimateAssemblyCitations(climateAssemblyOriginalEntries(), accepted, independentDigest));
   for (const route of routes) {
     const units = print ? document.querySelectorAll(`article[data-reader-route="${route}"]`) : document.querySelectorAll("article");
     if (units.length !== 1) {
       errors.push(`${path}: Climate actual reading unit missing/repeated: ${route}`);
       continue;
     }
-    const unit = units[0], source = accepted.sources.find((row) => row.route === (route === climateAssemblyKey ? climateAssemblyManuscript : route)), prefix = location(route, path), checked = /* @__PURE__ */ new Set(), children = unit.childNodes.filter((node) => node.nodeType === 1), title = children.find((node) => node.tagName === (print ? "H2" : "H1")), expected = route === climateAssemblyKey ? accepted.sections.flatMap((section2) => section2.claimIds.map((id) => ({ id, section: section2.id }))) : route === climateAssemblyAppendix ? accepted.appendix.sections.flatMap((section2) => section2.claimIds.map((id) => ({ id, section: section2.id }))) : accepted.website.find((row) => row.route === route).occurrences;
+    const { source, occurrences: expected } = reviewedClimateAssemblySource(accepted, route === climateAssemblyKey ? climateAssemblyManuscript : route);
+    const unit = units[0], prefix = location(route, path), checked = /* @__PURE__ */ new Set(), children = unit.childNodes.filter((node) => node.nodeType === 1), title = children.find((node) => node.tagName === (print ? "H2" : "H1"));
     if (!print) qualifyHeadingCopyButtons(unit, source);
     if (!title
         || title.text !== source.title
@@ -431,8 +439,8 @@ function validateRenderedClimateAssembly(document, path, catalog, accepted, inde
         actual.push({ id, section });
         if (!paragraph
             || found.length !== 1
-            || readerParagraphText(paragraph, node) !== fixed?.text
-            || !sameRecord(found[0], fixed)
+            || readerParagraphText(paragraph, node) !== found[0]?.text
+            || !currentBookRecordMatches('claims', fixed, found[0])
             || concealedText(paragraph)) errors.push(`${path}: Climate canonical body differs or hidden: ${id}`);
         else checked.add(paragraph);
       } else if (node.closest(".chapter-notes")) {

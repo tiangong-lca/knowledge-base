@@ -18,7 +18,7 @@ import { functionalReferenceHeadingEntries, remapFunctionalReferenceCitations } 
 import { processNetworkHeadingEntries, remapProcessNetworkCitations } from './reader-process-network.mjs';
 import { exchangeSemanticsHeadingEntries, remapExchangeSemanticsCitations, validateExchangeAnnotationOutput } from './reader-exchange-semantics.mjs';
 import { chapterAnchorPrefix, printUnitAnchor, splitReferenceTail, createChapterNotePlan, createChapterReferenceIndex, createChapterAnnotationPlan } from './reader-book.mjs';
-import { readCitationSurface, validateHistoricalScope, validateReaderOutput } from './reader-surface.mjs';
+import { readCitationSurface, validateHistoricalScope, validateReaderOutputFixture } from './reader-surface.mjs';
 const json = async name => JSON.parse(await readFile(new URL(`../config/${name}.json`, import.meta.url), 'utf8'));
 const [accepted,captured,currentEdition,baseline,placements,history,framework,frameworkHeadings,cleaner,cleanerHeadings,functional,functionalHeadings,processAccepted,processHeadings] = await Promise.all(['hybrid-inventory-accepted','hybrid-inventory-heading-history','book-edition','citation-baseline','citation-placements','citation-history','framework-accepted','framework-heading-history','cleaner-production-accepted','cleaner-production-heading-history','functional-reference-accepted','functional-reference-heading-history','process-network-accepted','process-network-heading-history'].map(json));
 const ids = accepted.sections.flatMap(section => section.claimIds), old = accepted.source.claimIds;
@@ -179,13 +179,13 @@ test('production export admission requires each independent B09 inventory even w
         if(missing===name)await rm(join(config,file),{force:true});
         else await copyFile(new URL(file,configRoot),join(config,file));
       }
-      await assert.rejects(validateReaderOutput(out),error=>/independent B09/.test(error.message)&&error.message.includes('hybrid-inventory-prose-accepted.json')&&(!missing||error.message.includes(`hybrid-inventory-${missing}.json`)));
+      await assert.rejects(validateReaderOutputFixture(out),error=>/independent B09/.test(error.message)&&error.message.includes('hybrid-inventory-prose-accepted.json')&&(!missing||error.message.includes(`hybrid-inventory-${missing}.json`)));
     }
     // Source and registration cannot be jointly removed to turn the retained
     // book export into a supposedly unrelated standalone fixture.
     const deleted=structuredClone(edition);deleted.units=deleted.units.filter(unit=>unit.key!==route);
     await writeFile(join(config,'book-edition.json'),JSON.stringify(deleted));
-    await assert.rejects(validateReaderOutput(out),/independent B09/);
+    await assert.rejects(validateReaderOutputFixture(out),/independent B09/);
   } finally {await rm(root,{recursive:true,force:true});}
 });
 

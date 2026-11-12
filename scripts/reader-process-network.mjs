@@ -1,5 +1,6 @@
+import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import { createHash } from 'node:crypto';
-import { chapterAnchorPrefix, collectChapterClaimOccurrences, printUnitAnchor } from './reader-book.mjs';
+import { readSourceHeading, chapterAnchorPrefix, collectChapterClaimOccurrences, printUnitAnchor } from './reader-book.mjs';
 
 export const processNetworkRoute = '/docs/book/inventory-calculation';
 const titles = ['数量坐标', '需求平衡', '反馈边界'];
@@ -18,7 +19,7 @@ export function assertProcessNetworkHeadingHistory(history) {
 export function assertProcessNetworkRegistration(edition) {
   const unit = edition.units.find(unit => unit.key === processNetworkRoute);
   if (!unit || unit.source !== processNetworkRoute || unit.kind !== 'chapter' || unit.coverage?.length || unit.part !== '可比世界'
-    || !same(unit.sections, titles.map(title => ({ id: title, title })))) throw new Error('Missing or changed shared B07 chapter/part/three-section registration');
+    || !same(unit.sections, currentBookLayout('B07:headings', titles.map(title => ({ id: title, title }))))) throw new Error('Missing or changed shared B07 chapter/part/three-section registration');
 }
 
 /** Final reviewed manuscript receipt is independent of the original occurrence inventory.
@@ -41,23 +42,24 @@ export function validateProcessNetworkCoverage(edition, sources, accepted, catal
   if (raw === undefined) return ['Missing accepted shared B07 source'];
   const frontMatter = /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/.exec(raw)?.[1] ?? '';
   const title = /^title:\s*(.+?)\s*$/m.exec(frontMatter)?.[1]?.replace(/^(['"])(.*)\1$/, '$2');
-  if (title !== accepted.title) errors.push('B07 shared source has the wrong adopted title');
+  if (title !== currentBookLayout('B07:title', accepted.title)) errors.push('B07 shared source has the wrong adopted title');
   const split = raw.split(/^## (.+)\s*$/m), headings = [], actual = [];
   for (let i = 1; i < split.length; i += 2) {
-    const section = split[i].trim(); headings.push(section);
+    const heading = readSourceHeading(split[i]); headings.push(heading);
+    const section = heading.id;
     actual.push(...collectChapterClaimOccurrences(split[i + 1]).map(id => ({ id, section })));
   }
-  const expected = accepted.sections.flatMap(section => section.claimIds.map(id => ({ id, section: section.id })));
-  if (!same(headings, titles)) errors.push('B07 source must have exactly three actual adopted formal sections');
+  const expected = currentBookLayout('B07:occurrences', accepted.sections.flatMap(section => section.claimIds.map(id => ({ id, section: section.id }))));
+  if (!same(headings, currentBookLayout('B07:headings', titles.map(title => ({ id: title, title }))))) errors.push('B07 source must have exactly three actual adopted formal sections');
   if (collectChapterClaimOccurrences(raw).length !== actual.length || !same(actual, expected)) errors.push('B07 propositions missing, duplicated, reordered, replaced, outside sections or misplaced');
   if (catalog) {
     assertProcessNetworkProseAccepted(prose);
     if (!same(prose.sources.map(source => source.route), [processNetworkRoute])) errors.push('B07 accepted MDX source differs from exact shared C17 source');
-    for (const source of prose.sources) if (!sources.has(source.route) || mdxDigest(sources.get(source.route)) !== source.mdxSha256) errors.push(`B07 source differs from independently reviewed MDX: ${source.route}`);
-    if (!same(prose.claims.map(claim => claim.id), expected.map(claim => claim.id))) errors.push('B07 accepted canonical prose has the wrong occurrence order');
+    for (const source of prose.sources) if (!sources.has(source.route) || !currentBookMdxMatches(source.route, source.mdxSha256, mdxDigest(sources.get(source.route)))) errors.push(`B07 source differs from independently reviewed MDX: ${source.route}`);
+    if (!same(prose.claims.map(claim => claim.id), accepted.sections.flatMap(section => section.claimIds))) errors.push('B07 accepted canonical prose has the wrong occurrence order');
     for (const fixed of prose.claims) {
       const claim = catalog.claims.find(claim => claim.id === fixed.id);
-      if (!claim || claim.status !== 'reviewed' || !sameRecord(claim, fixed)) errors.push(`B07 canonical proposition differs from independently reviewed draft: ${fixed.id}`);
+      if (!claim || claim.status !== 'reviewed' || !currentBookRecordMatches('claims', fixed, claim)) errors.push(`B07 canonical proposition differs from independently reviewed draft: ${fixed.id}`);
     }
   }
   return errors;
@@ -133,7 +135,8 @@ export function validateRenderedProcessNetwork(document, path, accepted, catalog
   const unit = units[0], errors = [], title = print ? unit.getAttribute('data-reader-title') : unit.querySelector('h1')?.text;
   if (!Array.isArray(catalog?.claims)) return [`${path}: actual B07 body validation requires the canonical catalog`];
   const claims = new Map(catalog.claims.map(claim => [claim.id, claim]));
-  if (title !== accepted.title) errors.push(`${path}: wrong actual B07 title`);
+  if (title !== currentBookLayout('B07:title', accepted.title)) errors.push(`${path}: wrong actual B07 title`);
+  const currentHeadings = currentBookLayout('B07:headings', titles.map(title => ({ id: title, title })));
   const headings = [], actual = []; let section = null;
   for (const node of unit.querySelectorAll('h1,h2,h3,h4,h5,h6,a[role="doc-noteref"]')) {
     if (node.closest('[data-legacy-for],[data-legacy-notice],[data-legacy-scope]')) continue;
@@ -141,18 +144,18 @@ export function validateRenderedProcessNetwork(document, path, accepted, catalog
       const id = node.getAttribute('data-reader-reference'), paragraph = node.closest('p'), claim = claims.get(id);
       actual.push({ id, section });
       if (!paragraph || !claim || typeof claim.text !== 'string' || paragraphText(paragraph, node) !== claim.text) errors.push(`${path}: B07 actual paragraph differs from canonical text: ${id}`);
-      if (prose && !sameRecord(claim, prose.claims.find(fixed => fixed.id === id))) errors.push(`${path}: actual canonical record differs from independently reviewed B07 draft: ${id}`);
+      if (prose && !currentBookRecordMatches('claims', prose.claims.find(fixed => fixed.id === id), claim)) errors.push(`${path}: actual canonical record differs from independently reviewed B07 draft: ${id}`);
     } else if (node.closest('.chapter-notes')) section = null;
-    else if (titles.includes(node.id.slice(prefix.length))) {
-      section = node.id.slice(prefix.length); headings.push(section);
-      if (node.tagName !== (print ? 'H3' : 'H2') || node.text.replace(/复制章节链接$/, '') !== section) errors.push(`${path}: wrong actual B07 formal heading`);
+    else if (currentHeadings.some(heading => heading.id === node.id.slice(prefix.length))) {
+      section = node.id.slice(prefix.length); headings.push({ id: section, title: node.text.replace(/复制章节链接$/, '') });
+      if (node.tagName !== (print ? 'H3' : 'H2') || node.text.replace(/复制章节链接$/, '') !== currentHeadings.find(heading => heading.id === section)?.title) errors.push(`${path}: wrong actual B07 formal heading`);
     } else if (node.tagName !== (print ? 'H2' : 'H1')) errors.push(`${path}: unexpected actual B07 body heading`);
   }
-  if (!same(headings, titles)) errors.push(`${path}: missing, duplicated or reordered actual B07 formal sections`);
-  if (!same(actual, accepted.sections.flatMap(section => section.claimIds.map(id => ({ id, section: section.id }))))) errors.push(`${path}: actual B07 propositions missing, duplicated, reordered, replaced or misplaced`);
+  if (!same(headings, currentHeadings)) errors.push(`${path}: missing, duplicated or reordered actual B07 formal sections`);
+  if (!same(actual, currentBookLayout('B07:occurrences', accepted.sections.flatMap(section => section.claimIds.map(id => ({ id, section: section.id })))))) errors.push(`${path}: actual B07 propositions missing, duplicated, reordered, replaced or misplaced`);
   const groups = unit.querySelectorAll('.chapter-notes');
   if (groups.length !== 1 || groups[0].querySelector('h2,h3')?.id !== `${print ? printUnitAnchor(processNetworkRoute) : chapterAnchorPrefix(processNetworkRoute)}-annotations`) errors.push(`${path}: missing or repeated actual B07 annotation group`);
   const notes = unit.querySelectorAll('[data-reader-claim]').map(node => node.getAttribute('data-reader-claim'));
-  if (!same(notes, accepted.sections.flatMap(section => section.claimIds))) errors.push(`${path}: actual B07 endnotes differ from the ten-claim continuous plan`);
+  if (!same(notes, currentBookLayout('B07:occurrences', accepted.sections.flatMap(section => section.claimIds.map(id => ({ id, section: section.id })))).map(row => row.id))) errors.push(`${path}: actual B07 endnotes differ from the ten-claim continuous plan`);
   return errors;
 }

@@ -18,6 +18,7 @@ import { fileURLToPath } from 'node:url';
 import { publicCatalog, validateCatalog } from './knowledge.mjs';
 import { validateResearch } from './research.mjs';
 import { loadCasePublications, validateCasePublications } from './case-publication.mjs';
+import { validateReadableBookCurrent } from './reader-current-edition-files.mjs';
 import { currentEditionKeys, validateFrameworkCoverage, assertFrameworkHeadingHistory } from './reader-edition.mjs';
 import { readerInternalIds, validateReaderClaims, validateReaderMdx } from './reader-surface.mjs';
 
@@ -75,7 +76,7 @@ async function mdxFiles(path) {
   return result;
 }
 
-export async function validateRepository(root) {
+async function validatePublication(root, requireCurrent) {
   const data = JSON.parse(await readFile(resolve(root, 'knowledge/catalog.json'), 'utf8'));
   const errors = validateCatalog(data);
   const readOptional = async path => {
@@ -101,6 +102,13 @@ export async function validateRepository(root) {
   const numbering = await readOptional('config/reader-numbering.json');
   if (numbering && !edition) errors.push('Current numbered reader publication requires its explicit book edition');
   if (!edition && await readOptional('content/docs/book/meta.json')) errors.push('Book source requires its current edition and accepted publication inventories');
+  if (requireCurrent) {
+    if (!edition) errors.push('Current reader publication requires its explicit book edition');
+    try {
+      const current = await validateReadableBookCurrent(root, data, readings, literature);
+      errors.push(...current.errors);
+    } catch (error) { errors.push(error.message); }
+  }
   if (edition) {
     const [accepted,baseline,placements,headings]=await Promise.all(['framework-accepted','citation-baseline','citation-placements','framework-heading-history'].map(name=>readOptional(`config/${name}.json`)));
     const [functionalAccepted,functionalHeadingHistory,functionalProse]=await Promise.all(['functional-reference-accepted','functional-reference-heading-history','functional-reference-prose-accepted'].map(name=>readOptional(`config/${name}.json`)));
@@ -177,6 +185,9 @@ export async function validateRepository(root) {
   }
   return errors;
 }
+
+export const validateRepository = root => validatePublication(root, true);
+export const validateRepositoryFixture = root => validatePublication(root, false);
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   try {
