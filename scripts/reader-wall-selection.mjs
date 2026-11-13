@@ -1,3 +1,4 @@
+import { restoreWallStaticCopy, wallStaticCopy } from './reader-copyedit.mjs';
 import { currentBookFileMatches, currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import { createHash } from 'node:crypto';
 import original from '../config/wall-selection-original.json' with { type: 'json' };
@@ -99,7 +100,14 @@ export function validateWallSelectionArtifactBytes(accepted, {component,input,pu
     ['component','components/teaching-case-client.tsx',component,accepted.componentSha256],['input','knowledge/cases/wall-coating-v1.json',input,original.case.rawInputSha256],
     ['publication','knowledge/cases/wall-coating-v1.publication.json',publication,sources.get('knowledge/cases/wall-coating-v1.publication.json')],
     ['engine','scripts/teaching-case.mjs',engine,sources.get('scripts/teaching-case.mjs')],['clientEngine','lib/teaching-case.ts',clientEngine,sources.get('lib/teaching-case.ts')],
-  ]) if ((typeof bytes!=='string'&&!Buffer.isBuffer(bytes))||!currentBookFileMatches(path, expected, rawDigest(bytes))) errors.push(`Wall selection reviewed ${label} bytes differ or are missing`);
+  ]) {
+    const validBytes = typeof bytes === 'string' || Buffer.isBuffer(bytes);
+    const matches = validBytes && currentBookFileMatches(path, expected, rawDigest(bytes));
+    const expectedCaption = path === wallStaticCopy.path
+      ? currentBookLayout(wallStaticCopy.layout, wallStaticCopy.from) : null;
+    if (!matches || expectedCaption === wallStaticCopy.to && restoreWallStaticCopy(bytes) === null)
+      errors.push(`Wall selection reviewed ${label} bytes differ or are missing`);
+  }
   return errors;
 }
 
@@ -201,7 +209,20 @@ export function validateWallSelectionCaseOutput(unit,{print=false,accepted=null,
   const heading=node.querySelector(`[id="${wallSelectionCaseHeadingId(print)}"]`);
   if(!heading||node.getAttribute('aria-labelledby')!==heading.id||unit.querySelectorAll(`[id="${heading.id}"]`).length!==1)errors.push('Wall selection actual accessible deterministic case title differs');
   const copy = currentBookLayout(`B29:case-copy:${view}`, { text: presentation.text, headings: presentation.headings });
-  if(node.text!==copy.text||!same(node.querySelectorAll('h1,h2,h3,h4,h5,h6').map(h=>({tag:h.tagName,id:h.id??'',text:h.text})),copy.headings))errors.push('Wall selection actual complete case text/headings differ');
+  const caption = currentBookLayout(wallStaticCopy.layout, wallStaticCopy.from);
+  let expectedText = copy.text;
+  if (caption === wallStaticCopy.to) {
+    const nextTitle = '固定结果与全域判断';
+    const previous = wallStaticCopy.from + nextTitle;
+    const literal = node.querySelectorAll('p').filter(paragraph =>
+      paragraph.parentNode === node && paragraph.text === caption && paragraph.childNodes.length === 1
+      && paragraph.childNodes[0].nodeType === 3 && Object.keys(paragraph.attributes).length === 0
+      && paragraph.nextElementSibling?.text === nextTitle);
+    if (copy.text.split(previous).length !== 2 || literal.length !== 1)
+      errors.push('Wall selection actual standalone affine caption differs from its exact reviewed position');
+    expectedText = copy.text.replace(previous, caption + nextTitle);
+  }
+  if(node.text!==expectedText||!same(node.querySelectorAll('h1,h2,h3,h4,h5,h6').map(h=>({tag:h.tagName,id:h.id??'',text:h.text})),copy.headings))errors.push('Wall selection actual complete case text/headings differ');
   const expectedTables = structuredClone(presentation.tables);
   const traceLabel = currentBookLayout('B29:trace-column-label', '当前值与完整算式');
   for (const table of expectedTables) {
@@ -210,7 +231,11 @@ export function validateWallSelectionCaseOutput(unit,{print=false,accepted=null,
   if(!sameRecord(node.querySelectorAll('table').map(tableData),expectedTables))errors.push('Wall selection actual seven complete tables/captions/cell semantics differ');
   if(!same(node.querySelectorAll('a').map(a=>({text:a.text,href:a.getAttribute('href')})),presentation.links))errors.push('Wall selection actual native case links differ');
   const visible=node.querySelectorAll('p,li,figcaption');
-  for(const condition of accepted.caseSelection.conditions)if(!visible.some(n=>n.text.includes(condition.text)&&!concealed(n,node)))errors.push(`Wall selection actual local condition missing: ${condition.id}`);
+  for (const condition of accepted.caseSelection.conditions) {
+    const text = condition.id === 'no-probability' && condition.text === wallStaticCopy.from ? caption : condition.text;
+    if (!visible.some(n => n.text.includes(text) && !concealed(n, node)))
+      errors.push(`Wall selection actual local condition missing: ${condition.id}`);
+  }
   const selects=node.querySelectorAll('select'),ranges=node.querySelectorAll('input[type="range"]');
   if(selects.length!==1||!same(selects[0].querySelectorAll('option').map(n=>n.getAttribute('value')),['smooth','rough'])||ranges.length!==1||ranges[0].getAttribute('min')!=='0.1'||ranges[0].getAttribute('max')!=='0.5'||ranges[0].getAttribute('step')!=='0.01'||ranges[0].getAttribute('value')!=='0.3')errors.push('Wall selection actual fixed scenario/shared parameter controls differ');
   const ids=new Map();for(const n of unit.querySelectorAll('[id]'))ids.set(n.id,(ids.get(n.id)??0)+1);

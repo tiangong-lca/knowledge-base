@@ -16,8 +16,8 @@ checkPaths:
   - "content/**"
   - "scripts/**"
   - "releases/**"
-lastReviewedAt: 2026-11-12
-lastReviewedCommit: f650600e6303352252e8d6fad14607c2061a9f58
+lastReviewedAt: 2026-11-13
+lastReviewedCommit: ccb24fea950f8c584c3215be6a74265482d659cc
 ---
 
 # Publication contract
@@ -235,3 +235,21 @@ delivery still require their own evidence.
 ## Readable-writing adoption
 
 The user-adopted [writing and teaching standard](editorial/readable-writing-and-teaching.md) governs Chinese manuscript revision. Reader-essential conditions stay with their claims; source fidelity and comprehension remain independent checks. Its dated assessment and illustrative edits do not acquire scientific approval through adoption. A prose-only revision of a numerical case may retain its immutable input while renewing the exact publication templates, canonical materialization and affected-consumer acceptance. Original snapshots and all unrelated input/publication identities remain protected.
+
+The #95 language successor starts from the actual published Main8148 generation,
+not from a rewritten original inventory. The previous accepted unit and its
+receipts remain immutable. Current source/reader/output acceptance names the real
+before/after text, affected consumers and preserved scientific meaning. Supporting
+summaries must exist as independently bound public files; private source originals
+and full classroom material are not substitutes and remain outside the repository.
+Hashes, dates and complete output coverage cannot themselves prove that a language
+change preserves a source's meaning. The review must check subjects, quantities,
+comparison pairs, conditions, attribution, negation and each table column. A
+newly found source question returns to its actual evidence before publication.
+
+A #95 print-only container cross-reference amendment must bind each exact
+authored origin and fragment to its corresponding native printed section. The
+actual 8148 web and print captures establish the preserved destination scope;
+current output verifies the source paragraph and native target. The amendment
+changes the reading view of two links while preserving scientific records,
+authored web links and earlier citation scopes.

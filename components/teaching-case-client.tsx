@@ -150,7 +150,7 @@ export function TeachingCaseClient({ spec: teachingCase, print = false, numberin
       <p>共同 θ 下的精确配对范围：<strong>{range(comparison.range)}</strong>；独立边际极端相减的保守外包络：{range(comparison.independentExtremesRange)}，后者未保留共同参数关系。{comparison.crossoverInDomain ? `θ=${comparison.crossoverTheta} 时 Δ=0。` : '允许 θ 范围内，Δ 无零点。'} 两种范围的区别见<a href={sectionHref('配对判断')}>配对判断</a>。</p>
     </div>
 
-    <p>连线是此固定模型的仿射关系，范围没有概率含义。</p>
+    <p>在这个固定模型中，配对差值 Δ 与共同参数 θ 呈仿射关系；这里没有为 θ 指定概率分布。</p>
     <CaseHeading slot="baseline" numbering={numbering} print={print}>固定结果与全域判断</CaseHeading>
     <p>下表列出平整和粗糙两种基底的固定结果。指标与差值均按同一项 100 m²、十年墙面服务报告，单位为 kg CO2-eq。每个情景内，两方案采用同一个 θ。</p>
     <div className="teaching-case-table" role="region" aria-label="两个情景的固定基线数值" tabIndex={0}>

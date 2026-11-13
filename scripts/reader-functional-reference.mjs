@@ -19,7 +19,7 @@ export function assertFunctionalReferenceHeadingHistory(history) {
 }
 export function assertFunctionalReferenceRegistration(edition) {
   const unit = edition.units.find(unit => unit.key === functionalReferenceRoute);
-  if (!unit || unit.source !== functionalReferenceRoute || unit.kind !== 'chapter' || unit.part !== '可比世界'
+  if (!unit || unit.source !== functionalReferenceRoute || unit.kind !== 'chapter' || unit.part !== currentBookLayout('book:part-title:2', '可比世界')
     || !same(unit.coverage, [functionalReferenceSupplement]) || !same(unit.sections, currentBookLayout('B06:headings', titles.map(title => ({ id: title, title }))))
     || edition.units.some(unit => unit.key === functionalReferenceSupplement)) throw new Error('Missing or changed shared B06 chapter/exact two-source consumption');
 }

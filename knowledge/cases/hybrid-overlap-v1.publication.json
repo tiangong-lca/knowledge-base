@@ -29,7 +29,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "从墙面服务的平整基底 A 路线提取电力需要，单独说明新增前景和核算对象。",
-      "textTemplate": "接下来用一套同时看得到买方与卖方的小账，检验如何分开重叠。服务采用第29章完整墙面例的平整基底A方案，这里只算用电部分。平整的 {{evaluated.linkedService.areaM2}} m² 墙面在十年中分两次涂刷，每次用 A 涂料 {{evaluated.linkedService.paintKgPerTreatment.exact}} kg。按生产每千克涂料用电 2 kWh，合计 {{evaluated.linkedService.fixedElectricityDeliveryKWh.exact}} kWh。指定这批电由 F 交付，再用三家供应者的账目计算供电子系统的 CO₂ 清单。墙面计划在这里仅确定交付量，不能把所得结果当作完整墙面足迹。以下交易、技术、地区、价格和排放均由本书设定。"
+      "textTemplate": "下面用一组同时记下买方和卖方的账，看看同一笔交易为何会被算两次。沿用第29章完整墙面例中平整基底的 A 方案，这里只算用电。平整的 {{evaluated.linkedService.areaM2}} m² 墙面在十年中分两次涂刷，每次用 A 涂料 {{evaluated.linkedService.paintKgPerTreatment.exact}} kg。生产每千克涂料用电 2 kWh，合计 {{evaluated.linkedService.fixedElectricityDeliveryKWh.exact}} kWh。设 F 交付这批电，再用三家供应者的账目算这套供电系统的 CO₂ 清单。墙面计划只用于确定交付量，算出的排放也只包括这套模型所列的供电活动。下文的交易、技术、地区、价格和排放均为本书的设定。"
     },
     {
       "id": "cl-hyb-ledger",
@@ -74,7 +74,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "合并 F、G 的年度记录，再分别按各部门产出归一化。",
-      "textTemplate": "将两家发电方合成电力部门E以后，个别发票信息会消失。原表便只显示 E 产出 200 CU、S 产出 100 CU。使用表以卖方为行、买方为列。S 买电合计 20，电力部门买服务合计 50，服务部门自用服务 20，均为 CU/年。按买方的总产出除各列，就得到 E 每元产出购入 0.25 CU 服务，S 每元产出购入 0.2 CU 电和 0.2 CU 服务。E 的直接 CO₂ 强度是 (40＋120)/200＝0.8 kg/CU，S 为 30/100＝0.3 kg/CU。这张部门表已经包含 F 的生产、购销和排放。稍后把 F 单列为过程时，不能当作它此前完全不在背景里。"
+      "textTemplate": "把两家发电方合成电力部门 E 后，部门表就看不出每笔发票是谁开给谁的。表上只显示 E 产出 200 CU、S 产出 100 CU。使用表按卖方排列各行，按买方排列各列。S 买电合计 20，电力部门买服务合计 50，S 自用服务 20，均以 CU/年计。用每列买方的总产出作分母，得到 E 每元产出购入 0.25 CU 服务，S 每元产出购入 0.2 CU 电和 0.2 CU 服务。E 的直接 CO₂ 强度为 (40＋120)/200＝0.8 kg/CU，S 为 30/100＝0.3 kg/CU。稍后把 F 单列为过程时，要记住这张部门表已经包含 F 的生产、购销和排放。"
     },
     {
       "id": "cl-hyb-naive",
@@ -89,7 +89,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "把明确的下游连接和仍然包含该笔电的原表列并列，按同一价格还原到年度交易。",
-      "textTemplate": "可以先试着不拆部门总账。若只算F直接供电，这 20 kWh 对应 {{evaluated.processOnly.totalCO2Kg.exact}} kg CO₂。缺掉的服务看起来可以由经济表补上。发票给出每 1 kWh 的 F 出力需要 0.2 CU 服务，S 每 1 CU 产出需要 F 供 0.1 kWh。若接上这两条关系又照用整张原表，生产 100 CU 服务便会同时要求原表中的 20 CU 电和单列的 10 kWh 的 F 电。按同一价格相加是 {{evaluated.naive.servicePowerPurchasePer100CU.exact}} CU，而发票合计只有 {{evaluated.naive.actualLedgerPowerPurchasePer100CU.exact}} CU。多出来的需求可以追到一笔具体交付：F 卖给 S 的电既在 E 中，又被单列一次。"
+      "textTemplate": "先看看不拆部门账会发生什么。只算 F 的直接排放，这 20 kWh 对应 {{evaluated.processOnly.totalCO2Kg.exact}} kg CO₂。F 用的服务似乎可以用经济表补上。发票显示，F 每发 1 kWh 需要 0.2 CU 服务，S 每产出 1 CU 就需要 F 供 0.1 kWh。若接上这两笔交易又照用原表，生产 100 CU 服务便会同时要求原表中的 20 CU 电和单列的 10 kWh F 电。按同一价格相加是 {{evaluated.naive.servicePowerPurchasePer100CU.exact}} CU，发票合计却只有 {{evaluated.naive.actualLedgerPowerPurchasePer100CU.exact}} CU。多算的正是 F 卖给 S 的电，这笔交易既在 E 的账里，又被单列了一次。"
     },
     {
       "id": "cl-hyb-remove",
@@ -197,7 +197,7 @@
       ],
       "caveats": [],
       "reasoning": "更换送电对象后重建连接项和剩余表，对比同一交付的结果及分供应者残差。",
-      "textTemplate": "按第二套发票重新算，F 仍采购服务，却没有向 S 供电，因此 u＝20。G 要供应 S 的全部购电，故 v＝0.2w。再代入服务平衡得 w＝{{evaluated.sameAggregateCounterworld.corrected.activities.2.exact}}，v＝{{evaluated.sameAggregateCounterworld.corrected.activities.1.exact}}，供电清单为 {{evaluated.sameAggregateCounterworld.corrected.totalCO2Kg.exact}} kg CO₂，约 {{evaluated.sameAggregateCounterworld.corrected.totalCO2Kg.fixed6}} kg。若因部门总表相同而把第一组的计算结果用于这组实际采购关系，就会低估 {{evaluated.ambiguity.trueCounterworldCO2MinusIdentifiedWorldKg.fixed6}} kg。原来的解代入这一组供应者账目，F 多记了 8/15 kWh，G 少记了 8/15 kWh 的供给。仍按 1 CU/kWh 折合后，两个供给残差在合并电力行中恰好抵消，具体供应者却错了，而且两者排放强度不同。总表的一致性因此不能代替供应者身份的证据。"
+      "textTemplate": "按第二套发票重新算，F 仍采购服务，但不再向 S 供电；它在电力行中只需满足墙面所需的 20 kWh，因此 u＝20。G 要供应 S 的全部购电，故 v＝0.2w。再代入服务平衡得 w＝{{evaluated.sameAggregateCounterworld.corrected.activities.2.exact}}，v＝{{evaluated.sameAggregateCounterworld.corrected.activities.1.exact}}，供电清单为 {{evaluated.sameAggregateCounterworld.corrected.totalCO2Kg.exact}} kg CO₂，约 {{evaluated.sameAggregateCounterworld.corrected.totalCO2Kg.fixed6}} kg。若因部门总表相同而把第一组的计算结果用于这组实际采购关系，就会低估 {{evaluated.ambiguity.trueCounterworldCO2MinusIdentifiedWorldKg.fixed6}} kg。把第一组的活动量全部保持不变，包括 w＝16/3，再代入第二套供应者平衡式，F 的供给余量为 8/15 kWh，G 按货币产出行计的供给缺口为 8/15 CU。这里比较的是同一组活动量在第二套平衡式中的供需余缺，不是两组分别求解后的活动量之差。按本例统一电价 1 CU/kWh，把 F 的余量折成 8/15 CU 后，两个供给残差在合并电力行中恰好抵消，具体供应者却错了，而且两者排放强度不同。总表的一致性因此不能代替供应者身份的证据。"
     }
   ]
 }

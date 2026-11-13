@@ -6,6 +6,7 @@ import { join } from 'node:path';
 import { validateReaderOutputFixture } from './reader-surface.mjs';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 import { assertCleanerProductionAccepted, assertCleanerProductionHeadingHistory, assertCleanerProductionRegistration, cleanerProductionHeadingEntries, cleanerProductionRoute as route, remapCleanerProductionCitations, validateCleanerProductionCoverage, validateRenderedCleanerProduction } from './reader-cleaner-production.mjs';
+import { getUnitNumbering } from './reader-numbering.mjs';
 import { currentEditionKeys, publishedHeadingEntries, remapBookCitations } from './reader-edition.mjs';
 import { createCanonicalCitationEntries, createLegacyCitationEntries } from './reader-citations.mjs';
 import { chapterAnchorPrefix, createChapterNotePlan, printUnitAnchor, splitReferenceTail } from './reader-book.mjs';
@@ -16,7 +17,14 @@ const [accepted, captured, edition, baseline, placements, history, framework, fr
 ].map(json));
 const actualCatalog = JSON.parse(await readFile(new URL('../knowledge/catalog.json', import.meta.url), 'utf8'));
 const body = ids => `<Prose ids="${ids.join(' ')}" />`;
-const raw = `---\ntitle: 清洁生产的期待\n---\n${accepted.sections.map(section => `## ${section.title}\n${body(section.claimIds)}`).join('\n')}`;
+const current = edition.units.find(unit => unit.key === route);
+const title = getUnitNumbering('web', route).title;
+const currentHeading = section => current.sections.find(heading => heading.id === section.id);
+const headingSource = section => {
+  const { id, title } = currentHeading(section);
+  return `## ${title} [#${id}]`;
+};
+const raw = `---\ntitle: ${title}\n---\n${accepted.sections.map(section => `${headingSource(section)}\n${body(section.claimIds)}`).join('\n')}`;
 const sources = text => new Map([[route, text]]);
 const allEntries = () => [
   ...createLegacyCitationEntries(baseline, placements, history.pages),
@@ -64,10 +72,13 @@ test('source occurrence guard rejects omissions, duplicates, replacements, wrong
   const first = accepted.source.claimIds[0];
   for (const changed of [
     raw.replace(first, 'cl-other-reviewed'),
-    raw.replace(first, '').replace('## 应用设想', `## 应用设想\n${body([first])}`),
+    raw.replace(first, '').replace(headingSource(accepted.sections[1]), `${headingSource(accepted.sections[1])}\n${body([first])}`),
     `${body([first])}\n${raw.replace(first, '')}`,
-    raw.replace('## 预防目的', '## 未登记节'), raw.replace('title: 清洁生产的期待', 'title: 旧标题'),
-  ]) assert(validateCleanerProductionCoverage(edition, sources(changed), accepted).length);
+    raw.replace(headingSource(accepted.sections[0]), '## 未登记节'), raw.replace(`title: ${title}`, 'title: 旧标题'),
+  ]) {
+    assert.notEqual(changed, raw);
+    assert(validateCleanerProductionCoverage(edition, sources(changed), accepted).length);
+  }
   const catalog = { claims: accepted.sections.flatMap(section => section.claimIds).map(id => ({ id, status: 'reviewed', kind: 'source-statement', ...accepted.additions.find(addition => addition.id === id) })) };
   assert.deepEqual(validateCleanerProductionCoverage(edition, sources(raw), accepted, catalog), []);
   const addition = catalog.claims.at(-1);
@@ -115,9 +126,9 @@ function renderedParagraph(id, print, catalog = actualCatalog, text = catalog.cl
 }
 function rendered(print, catalog = actualCatalog) {
   const prefix = print ? printUnitAnchor(route) : chapterAnchorPrefix(route), headingPrefix = print ? `${prefix}-` : '';
-  const headings = accepted.sections.map(section => `<h${print ? 3 : 2} id="${headingPrefix}${section.id}">${section.title}</h${print ? 3 : 2}>${section.claimIds.map(id => renderedParagraph(id, print, catalog)).join('')}`).join('');
+  const headings = accepted.sections.map(section => `<h${print ? 3 : 2} id="${headingPrefix}${section.id}">${escapeText(currentHeading(section).title)}</h${print ? 3 : 2}>${section.claimIds.map(id => renderedParagraph(id, print, catalog)).join('')}`).join('');
   const notes = `<section class="chapter-notes"><h${print ? 3 : 2} id="${prefix}-annotations">注释</h${print ? 3 : 2}><ol>${accepted.sections.flatMap(section => section.claimIds).map(id => `<li id="${prefix}-claim-${id}" data-reader-claim="${id}">仍在的注释</li>`).join('')}</ol></section>`;
-  return print ? `<article data-reader-route="${route}" data-reader-title="清洁生产的期待"><h2>5　清洁生产的期待</h2>${headings}${notes}</article>` : `<article><h1>清洁生产的期待</h1>${headings}${notes}</article>`;
+  return print ? `<article data-reader-route="${route}" data-reader-title="${escapeText(title)}"><h2>5　${escapeText(title)}</h2>${headings}${notes}</article>` : `<article><h1>${escapeText(title)}</h1>${headings}${notes}</article>`;
 }
 
 test('actual web/print paragraphs must retain canonical text even when every marker and note survives', () => {
@@ -130,8 +141,11 @@ test('actual web/print paragraphs must retain canonical text even when every mar
       html.replace(paragraph, ''), html.replace(paragraph, paragraph + paragraph),
       html.replace(paragraph, '').replace('<section class="chapter-notes">', `${paragraph}<section class="chapter-notes">`),
       html.replace(`data-reader-reference="${first}"`, 'data-reader-reference="cl-other-reviewed"'),
-      html.replace('>预防目的</h', '>发展条件</h'),
-    ]) assert(check(changed).length);
+      html.replace(`>${escapeText(currentHeading(accepted.sections[0]).title)}</h`, `>${escapeText(currentHeading(accepted.sections[2]).title)}</h`),
+    ]) {
+      assert.notEqual(changed, html);
+      assert(check(changed).length);
+    }
     for (const id of accepted.sections.flatMap(section => section.claimIds)) {
       const original = renderedParagraph(id, print);
       for (const altered of ['', actualCatalog.claims.find(claim => claim.id === id).text + '误增']) {

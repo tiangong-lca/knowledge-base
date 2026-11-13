@@ -41,7 +41,7 @@ function assertDataApplicabilityHeadingOriginal(value = captured) {
 function assertDataApplicabilityRegistration(edition) {
   const units = edition?.units ?? [], matches = units.filter(row => row.key === dataApplicabilityKey), unit = matches[0];
   if (matches.length !== 1 || unit.source !== dataApplicabilityManuscript || unit.kind !== "chapter"
-      || unit.part !== "证据分量" || !same(unit.coverage, dataApplicabilityRoutes)
+      || unit.part !== currentBookLayout('book:part-title:6', "证据分量") || !same(unit.coverage, dataApplicabilityRoutes)
       || !same(unit.sections, currentBookLayout('B25:registered-sections', plainSections(dataApplicabilityTitles))) || units.some(row => dataApplicabilityRoutes.includes(row.key)))
     throw new Error("Data applicability requires actual four-section/two-source book assembly");
 }

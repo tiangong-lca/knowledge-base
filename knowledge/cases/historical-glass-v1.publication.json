@@ -36,7 +36,7 @@
         "瓶重是作者的典型值；所示精确小数只是按这些输入的算术。"
       ],
       "reasoning": "以百万×瓶重/2000得到305和205；新回用玻璃再除10，保留30与30.5的不同显示。",
-      "textTemplate": "先从新瓶用量算起。报告按每短吨{{input.facts.poundsPerShortTon.value}}磅计算ton。回用瓶的典型重量写为{{input.facts.returnablePounds.value}}磅，百万次灌装对应累计通过灌装的玻璃量{{evaluated.demand.returnableFillingTon}}短吨；使用{{input.facts.uses.value}}次时，新制造量为{{evaluated.demand.returnableFillingTon}}/{{input.facts.uses.value}}＝{{evaluated.demand.returnableManufactureTon}}短吨。一次性瓶按每只{{input.facts.oneWayPounds.value}}磅计算，所需新玻璃为{{evaluated.demand.oneWayManufactureTon}}短吨。第二卷Table6把十次系统显示为{{input.facts.sourceCoarseRetGlass.value}}短吨；这个显示量不能不加说明地替代公式给出的{{evaluated.demand.returnableManufactureTon}}。"
+      "textTemplate": "先计算所需的新瓶量。报告以短吨（ton）计量，1 短吨等于 {{input.facts.poundsPerShortTon.value}} 磅。报告所列回用瓶的典型重量为 {{input.facts.returnablePounds.value}} 磅，百万次灌装对应累计通过灌装的玻璃量为 {{evaluated.demand.returnableFillingTon}} 短吨；使用 {{input.facts.uses.value}} 次时，新制造量为 {{evaluated.demand.returnableFillingTon}}/{{input.facts.uses.value}}＝{{evaluated.demand.returnableManufactureTon}} 短吨。一次性瓶按每只 {{input.facts.oneWayPounds.value}} 磅计算，所需新玻璃为 {{evaluated.demand.oneWayManufactureTon}} 短吨。第二卷 Table 6 将十次系统显示为 {{input.facts.sourceCoarseRetGlass.value}} 短吨；使用这个表列值时，须同时说明它与公式所得 {{evaluated.demand.returnableManufactureTon}} 的区别。"
     },
     {
       "id": "cl-hist-flow-bases",
@@ -65,7 +65,7 @@
         "这条物量关系没有确定每段运输距离、装载率或回收行为。"
       ],
       "reasoning": "N作用于新瓶补充，累计灌装量保持305，返回为305−305/N。",
-      "textTemplate": "从灌装量扣除新瓶量，可以找到返回流。新回用瓶为{{evaluated.demand.newReturnableBottles}}只，完成的仍是百万次灌装。Figure4将{{evaluated.demand.returnableFillingTon}}短吨放在灌装环节，将{{evaluated.demand.returnableManufactureTon}}短吨放在新制造与最终处置环节，返回流则为{{evaluated.demand.returnableFillingTon}}−{{evaluated.demand.returnableManufactureTon}}＝{{evaluated.demand.returnableReturnedTon}}短吨。这里的灌装和返回量是这一组交付活动中的累计通过量，不是同时存在的瓶子库存。制造量除以N，并不意味着每个环节都可以一起除以N。"
+      "textTemplate": "从灌装量扣除新瓶量，可以找到返回流。新回用瓶为 {{evaluated.demand.newReturnableBottles}} 只，完成的仍是百万次灌装。Figure 4 将 {{evaluated.demand.returnableFillingTon}} 短吨放在灌装环节，将 {{evaluated.demand.returnableManufactureTon}} 短吨放在新制造与最终处置环节，返回流则为 {{evaluated.demand.returnableFillingTon}}−{{evaluated.demand.returnableManufactureTon}}＝{{evaluated.demand.returnableReturnedTon}} 短吨。这里的灌装和返回量是这一组交付活动中的累计通过量，不是同时存在的瓶子库存。制造量除以 N，并不意味着每个环节都可以一起除以 N。"
     },
     {
       "id": "cl-hist-electricity-basis",
@@ -95,7 +95,7 @@
       "caveats": [
         "正文按原表标年叙述；p49/Table4标1972而参考文献78标1970，底层资料年份没有被独立核实或改写。"
       ],
-      "textTemplate": "以供电项为例，第二卷Table4把每1000kWh复合电力的供给能源列为{{input.facts.electricityFactor.value}}百万Btu。该表标作1972年的美国组合，并对水力与核能另设能量等效。这里相乘的不是把终端电量换一个单位，而是用所选供电背景给出它对应的资源需求。改变供电背景、等效约定或资料版本，结果的含义也会随之变化。"
+      "textTemplate": "以供电项为例，第二卷 Table 4 将每 1000 kWh 复合电力的供给能源列为 {{input.facts.electricityFactor.value}} 百万 Btu。该表采用标作 1972 年的美国供电组合，并对水力和核能另设能量等效约定。这里的换算并非只改变终端电量的单位，而是按选定的供电背景计算相应资源需求。供电背景、等效约定或资料版本改变，结果的含义也可能改变。"
     },
     {
       "id": "cl-hist-glass-inputs",
@@ -119,7 +119,7 @@
       "caveats": [
         "这五项输入不等于全部玻璃系统的数据，也不表示各地玻璃厂都具有相同需求。"
       ],
-      "textTemplate": "先核对玻璃容器制造工序。这里的分母是一短吨成品玻璃容器。第二卷Table22按每短吨玻璃容器列出：馏分油{{input.facts.glassInputDistillate.value}}加仑、残余油{{input.facts.glassInputResidual.value}}加仑、天然气{{input.facts.glassInputGas.value}}立方英尺、汽油{{input.facts.glassInputGasoline.value}}加仑和电力{{input.facts.glassInputElectricity.value}}kWh。数量、载能体和每短吨的分母必须一起保留；相同的数值若改接到“每只瓶”或“每次灌装”，就已是另一道计算。"
+      "textTemplate": "先核对玻璃容器制造工序。这里的分母是一短吨成品玻璃容器。第二卷 Table 22按每短吨玻璃容器列出：馏分油{{input.facts.glassInputDistillate.value}}加仑、残余油{{input.facts.glassInputResidual.value}}加仑、天然气{{input.facts.glassInputGas.value}}立方英尺、汽油{{input.facts.glassInputGasoline.value}}加仑和电力{{input.facts.glassInputElectricity.value}}kWh。解读数值时，须同时说明载能体及每短吨的计量基准；若把同一数值直接用作“每只瓶”或“每次灌装”，就改变了原数值的含义。"
     },
     {
       "id": "cl-hist-fuel-multiplication",
@@ -163,7 +163,7 @@
         "因子分母分别为1000gal、1000ft³和1000kWh；计算位数不代表观测精度。吻合总能源没有同时证明其process/transport分列已重建。"
       ],
       "reasoning": "逐项按原单位相乘，合计15.6679627，按明确小数显示规则得到15.668。",
-      "textTemplate": "原Table1总因子的单位，液体燃料为百万Btu/千加仑，天然气为百万Btu/千立方英尺；Table4的电力因子为百万Btu/千kWh。输入是按加仑、立方英尺或千瓦时给出的，先把它们各除以一千。五项贡献分别为：{{input.facts.glassInputDistillate.value}}×{{input.facts.fuelFactorDistillate.value}}/1000、{{input.facts.glassInputResidual.value}}×{{input.facts.fuelFactorResidual.value}}/1000、{{input.facts.glassInputGas.value}}×{{input.facts.fuelFactorGas.value}}/1000、{{input.facts.glassInputGasoline.value}}×{{input.facts.fuelFactorGasoline.value}}/1000，以及{{input.facts.glassInputElectricity.value}}×{{input.facts.electricityFactor.value}}/1000。各项单位都是百万Btu/短吨玻璃，相加得到{{evaluated.fabrication.total}}；保留三位小数为{{evaluated.fabrication.rounded3}}，与Table14的玻璃制造总能源{{input.facts.glassFabricationReported.value}}相合。"
+      "textTemplate": "原报告 Table 1 所列总因子的单位，液体燃料为百万Btu/千加仑，天然气为百万Btu/千立方英尺；Table 4 的电力因子为百万Btu/千kWh。输入量以加仑、立方英尺或千瓦时表示，换算时先各除以一千，使其与因子的计量基准一致。五项贡献分别为：{{input.facts.glassInputDistillate.value}}×{{input.facts.fuelFactorDistillate.value}}/1000、{{input.facts.glassInputResidual.value}}×{{input.facts.fuelFactorResidual.value}}/1000、{{input.facts.glassInputGas.value}}×{{input.facts.fuelFactorGas.value}}/1000、{{input.facts.glassInputGasoline.value}}×{{input.facts.fuelFactorGasoline.value}}/1000，以及{{input.facts.glassInputElectricity.value}}×{{input.facts.electricityFactor.value}}/1000。换算后各项均为百万Btu/短吨玻璃，相加得到{{evaluated.fabrication.total}}；按三位小数显示为{{evaluated.fabrication.rounded3}}，与 Table 14 的玻璃制造总能源{{input.facts.glassFabricationReported.value}}相合。"
     },
     {
       "id": "cl-hist-glass-branch",
@@ -194,7 +194,7 @@
         "各值按Table8共同系统基准，不是将各过程一短吨产出的系数直接相加。该支路不包含完整包装、瓶盖、灌装、处置和独列系统运输。"
       ],
       "reasoning": "按同一Table8参考量求和八项；不把已包含的玻璃制造重复计入。",
-      "textTemplate": "工序算清以后，可以用第二卷Table8追到包含上游原料的玻璃支路。该表以一短吨一次性玻璃容器系统（OWG）为共同基准，各分项已经按这一系统所需的物量组织，并非每道工序各产出一短吨。长石开采、玻璃砂开采、天然纯碱开采、纯碱制造、石灰制造、石灰石开采、盐开采与玻璃容器制造这八项，按该表的每短吨系统基准分别列为{{input.facts.componentFeldspar.value}}、{{input.facts.componentSand.value}}、{{input.facts.componentNaturalSodaAsh.value}}、{{input.facts.componentSodaAshManufacture.value}}、{{input.facts.componentLime.value}}、{{input.facts.componentLimestone.value}}、{{input.facts.componentSalt.value}}与{{input.facts.componentGlassFabrication.value}}百万Btu，合计{{evaluated.glassBranch.factor}}。这个合计已包含前面的玻璃制造分项，不能再把{{input.facts.glassFabricationReported.value}}额外加一次。"
+      "textTemplate": "算出玻璃制造工序的能源后，可以用第二卷 Table 8 核算玻璃制造及其上游原料供应。该表以一短吨一次性玻璃容器系统（OWG）为共同基准，各分项已经按这一系统所需的物量组织，并非每道工序各产出一短吨。长石开采、玻璃砂开采、天然纯碱开采、纯碱制造、石灰制造、石灰石开采、盐开采与玻璃容器制造这八项，按该表的每短吨系统基准分别列为{{input.facts.componentFeldspar.value}}、{{input.facts.componentSand.value}}、{{input.facts.componentNaturalSodaAsh.value}}、{{input.facts.componentSodaAshManufacture.value}}、{{input.facts.componentLime.value}}、{{input.facts.componentLimestone.value}}、{{input.facts.componentSalt.value}}与{{input.facts.componentGlassFabrication.value}}百万Btu，合计{{evaluated.glassBranch.factor}}。这一合计已包含玻璃制造分项，不能再将{{input.facts.glassFabricationReported.value}}加一次。"
     },
     {
       "id": "cl-hist-branch-scaling",
@@ -226,7 +226,7 @@
         "没有把同一缩放因子用于灌装、包装回流或所有运输。"
       ],
       "reasoning": "分别将玻璃支路18.523乘30.5和205，保留整个系统其他项。",
-      "textTemplate": "两个周转情境的支路系数相同，改变的是需要新造多少玻璃。用系数乘新制造量，十次使用情境得到{{evaluated.demand.returnableManufactureTon}}×{{evaluated.glassBranch.factor}}＝{{evaluated.glassBranch.ret}}百万Btu；一次性情境得到{{evaluated.demand.oneWayManufactureTon}}×{{evaluated.glassBranch.factor}}＝{{evaluated.glassBranch.owg}}百万Btu。两者仍以同一组百万次灌装为参照。这一步显示了使用次数怎样进入新玻璃支路，却还没有算完两个容器系统。"
+      "textTemplate": "以下复算对两种情境都沿用上一段按一短吨系统汇总的能源系数，新瓶制造量按短吨计。用系数乘新制造量，十次使用情境得到{{evaluated.demand.returnableManufactureTon}}×{{evaluated.glassBranch.factor}}＝{{evaluated.glassBranch.ret}}百万Btu；一次性情境得到{{evaluated.demand.oneWayManufactureTon}}×{{evaluated.glassBranch.factor}}＝{{evaluated.glassBranch.owg}}百万Btu。两者仍以同一组百万次灌装为参照。两套系统的瓶重和使用次数都不同，这两个结果并未隔离使用次数的影响。复算范围仍限于玻璃制造及原料供应，尚不包括两个容器系统的全部活动。"
     },
     {
       "id": "cl-hist-branch-check",
@@ -269,7 +269,7 @@
         "同一报告内的吻合不是独立实证重复。"
       ],
       "reasoning": "61×18.523=1129.903，与表列整数1130相合。",
-      "textTemplate": "还可以用第三个情境检查这一算法。瓶子使用{{input.facts.fiveTripUses.value}}次时，新玻璃为{{evaluated.demand.fiveTripManufactureTon}}短吨；{{evaluated.demand.fiveTripManufactureTon}}×{{evaluated.glassBranch.factor}}＝{{evaluated.glassBranch.fiveTrip}}百万Btu，取整为{{evaluated.glassBranch.fiveTripRounded}}，对应Table9中“瓶系统”一列的{{input.facts.fiveTripGlassBranch.value}}。这个吻合核对的是该支路，没有把同表其余列或五次体系的全部计算一并验证。"
+      "textTemplate": "还可以用第三个情境核对这一换算。瓶子使用{{input.facts.fiveTripUses.value}}次时，新玻璃为{{evaluated.demand.fiveTripManufactureTon}}短吨；{{evaluated.demand.fiveTripManufactureTon}}×{{evaluated.glassBranch.factor}}＝{{evaluated.glassBranch.fiveTrip}}百万Btu，取整为{{evaluated.glassBranch.fiveTripRounded}}，对应 Table 9 中“瓶系统”一列的{{input.facts.fiveTripGlassBranch.value}}。这次相合仅核对玻璃制造及原料供应部分，没有验证同表其余分项或整个五次使用系统。"
     },
     {
       "id": "cl-hist-reported-summaries",
@@ -406,7 +406,7 @@
         "未假定概率分布，不推断全部差异的原因；固定205是该检验的前提。"
       ],
       "reasoning": "三角不等式给出13个半末位误差之和×固定质量；与公开表差额比较。",
-      "textTemplate": "整表组装比原报告少了70.09百万Btu。下面求一个上界，检验显示舍入最多能解释多少。假定只有该组装所用Table8十三个三位小数系数各自发生不超过{{input.coefficientRounding.halfWidth}}的四舍五入误差，仍把{{evaluated.demand.oneWayManufactureTon}}短吨固定不动，则总和误差上限为13×{{input.coefficientRounding.halfWidth}}×{{evaluated.demand.oneWayManufactureTon}}＝{{evaluated.assembly.coefficientOnlyBound}}百万Btu，小于{{evaluated.assembly.gap}}的差额。这只排除了“在这些固定条件下，单靠所列系数的显示舍入就足够”的解释；它没有计入瓶重的未披露精度，也不是经验不确定性区间。"
+      "textTemplate": "整表组装比原报告少了70.09百万Btu。下面计算误差上界，考察显示舍入最多能够解释多少差额。假定只有该组装所用 Table 8 的十三个三位小数系数各自发生不超过{{input.coefficientRounding.halfWidth}}的四舍五入误差，仍把{{evaluated.demand.oneWayManufactureTon}}短吨固定不动，则总和误差上限为13×{{input.coefficientRounding.halfWidth}}×{{evaluated.demand.oneWayManufactureTon}}＝{{evaluated.assembly.coefficientOnlyBound}}百万Btu，小于{{evaluated.assembly.gap}}的差额。这只排除了“在这些固定条件下，单靠所列系数的显示舍入就足够”的解释；它没有计入瓶重的未披露精度，也不是经验不确定性区间。"
     },
     {
       "id": "cl-hist-package-sensitivity",

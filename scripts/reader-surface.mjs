@@ -1,3 +1,6 @@
+import { copyeditHistoryEntries, copyeditHistoryPlan, validateCopyeditHistory } from './reader-copyedit-history.mjs';
+import { observeCopyeditHistory } from './reader-copyedit-observation.mjs';
+import { readerNumberingManifest } from './reader-numbering.mjs';
 import { editionDigest } from './reader-current-edition.mjs';
 import { assertReadablePedigreeAccepted, readablePedigreeHeadingEntries, remapReadablePedigreeCitations, validateReadablePedigreeCaseBytes, validateReadablePedigreeCoverage, validateRenderedReadablePedigree } from './reader-readable-pedigree.mjs';
 import { assertPmSelectionAccepted, pmSelectionAppendix, pmSelectionCasePaths, pmSelectionHeadingEntries, remapPmSelectionCitations, validatePmSelectionCaseBytes, validatePmSelectionCoverage, validateRenderedPmSelection } from './reader-pm-selection.mjs';
@@ -19,7 +22,7 @@ import { assertProcessNetworkProseAccepted, processNetworkHeadingEntries, remapP
 import { assertFunctionalReferenceProseAccepted, functionalReferenceHeadingEntries, remapFunctionalReferenceCitations, validateFunctionalReferenceCoverage, validateRenderedFunctionalReference } from './reader-functional-reference.mjs';
 import { cleanerProductionHeadingEntries, remapCleanerProductionCitations, validateCleanerProductionCoverage, validateRenderedCleanerProduction } from './reader-cleaner-production.mjs';
 import { access, readdir, readFile } from 'node:fs/promises';
-import { join, relative, resolve } from 'node:path';
+import { basename, join, relative, resolve } from 'node:path';
 import { chapterAnchorPrefix, chapterNoteAnchor, printUnitAnchor } from './reader-book.mjs';
 import { assertCitationHistory } from './reader-citation-history.mjs';
 import { assertCitationBaseline, assertPrintFrontMatter } from './reader-citation-baseline.mjs';
@@ -153,7 +156,7 @@ function aliasDestination(node) {
   return sibling?.id === target ? target : null;
 }
 
-const citationScopeExclusions = '.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope],.docs-pagination,.reader-view-label,.teaching-case';
+const citationScopeExclusions = '.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope],[data-copyedit-history],.docs-pagination,.reader-view-label,.teaching-case';
 const ordinaryCitationBlocks = 'p,ul,ol,dl,blockquote,pre,table,figure';
 
 function nativeCitationScopes(document) {
@@ -269,7 +272,7 @@ export function readCitationSurface(document, path) {
 
 /** Verify native source-subset context independently of the target's existence. */
 function matchesCapturedScope(source, entry) {
-  const { capturedScope: captured } = entry;
+  const captured = entry.currentCapturedScope ?? entry.capturedScope;
   if (!captured || !source) return !captured;
   return JSON.stringify(source.claimIds) === JSON.stringify(captured.claimIds)
     && JSON.stringify(source.ordinaryHashes) === JSON.stringify(captured.ordinaryHashes ?? [])
@@ -323,13 +326,14 @@ export function validateReadableBookOrdinaryDestinations(pages, entry, address) 
   return errors;
 }
 
-export async function validateLegacyCitationOutput(root, sourceBaseline, locations, availableRoutes = null, history = null, book = null) {
+async function validateCitationOutput(root, sourceBaseline, locations, availableRoutes, history, book, validateArtifacts) {
   const numbered = book ? await validateReaderNumberingOutput(root,{sources:book.sources,edition:book.edition}) : null;
   if (numbered?.errors.length) return numbered.errors;
   const sourceRoutes = availableRoutes ?? [...sourceBaseline.pages.map(page => page.route), ...(locations.printAdditions ?? []).map(page => page.route)];
   const printRoutes = book ? currentEditionKeys(book.edition, sourceRoutes, sourceBaseline, locations) : createCurrentPrintRoutes(sourceBaseline, locations, sourceRoutes);
   const historicPrintRoutes = book ? [...sourceBaseline.pages.filter(page=>page.printOrdinal!==undefined).map(page=>page.route),...locations.frontMatter,...(locations.printAdditions??[]).map(unit=>unit.route)] : printRoutes;
-  const entries = getHistoricalCitationEntries(sourceBaseline, locations, history, historicPrintRoutes, book);
+  const copyedit = copyeditHistoryPlan(book?.current?.copyedit);
+  const entries = copyeditHistoryEntries(getHistoricalCitationEntries(sourceBaseline, locations, history, historicPrintRoutes, book), copyedit);
   const addresses = new Set();
   for (const entry of entries) {
     const address = `${entry.path}#${entry.id}`;
@@ -339,7 +343,7 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
   const pages = new Map(), documents = new Map();
   const errors = book ? [
     ...validateReadableBookReviewedOutput(book.current, numbered?.documents, book.sources, book.edition, book.catalog, book.readings),
-    ...await validateReadableBookPublicArtifacts(root, book.current, book),
+    ...await validateArtifacts(root, book.current, book),
   ] : [];
   for (const path of new Set([...sourceBaseline.pages.map(page => page.route), ...(history?.pages ?? []).map(page => page.route), ...(locations.printAdditions ?? []).map(page => page.route), ...(book ? [...numbered.documents.keys(), pmSelectionAppendix, ...entries.flatMap(entry => [entry.path, ...entry.targets.map(target => target.path), ...entry.scope?.targets?.map(target => target.path) ?? []])] : []), '/print'])) {
     const html = await readFile(join(root, path.slice(1), 'index.html'), 'utf8').catch(error => {
@@ -357,6 +361,17 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
     if (!surface.ids.has('main-content')) errors.push(`${path}: missing main-content fragment`);
     pages.set(path, surface);
     errors.push(...surface.errors);
+  }
+  if (copyedit) {
+    const copyeditErrors = validateCopyeditHistory(documents,
+      observeCopyeditHistory(documents, readerNumberingManifest, readCitationSurface), copyedit, book.current.copyedit.printParts);
+    errors.push(...copyeditErrors);
+    // Article fingerprints already checked the complete normalized output.
+    // Earlier chapter predicates inspect a prose projection after the new
+    // historical apparatus has independently passed its exact DOM checks.
+    if (!copyeditErrors.length) for (const document of documents.values()) {
+      for (const notice of document.querySelectorAll('[data-copyedit-history]')) notice.remove();
+    }
   }
   for (const [path, document] of documents) {
     qualifyCurrentHistoricalDocument(document, entries, book?.current?.migrations, pages);
@@ -435,6 +450,16 @@ export async function validateLegacyCitationOutput(root, sourceBaseline, locatio
   }
   if (book && print) errors.push(...validateRenderedFrameworkCoverage(print.bodyClaims,book.accepted));
   return errors;
+}
+
+export function validateLegacyCitationOutput(root, sourceBaseline, locations, availableRoutes = null, history = null, book = null) {
+  return validateCitationOutput(root, sourceBaseline, locations, availableRoutes, history, book, validateReadableBookPublicArtifacts);
+}
+
+export function validateCopyeditPreviewOutput(root, sourceBaseline, locations, availableRoutes, history, book) {
+  if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1' || basename(root) !== '.reader-review-output' || !book.current?.copyedit)
+    throw new Error('Expected isolated reader copyedit preview output');
+  return validateCitationOutput(root, sourceBaseline, locations, availableRoutes, history, book, () => []);
 }
 
 async function validatePublicationOutput(root, { knownIds = new Set(), sourceCommit }, requireCurrent) {

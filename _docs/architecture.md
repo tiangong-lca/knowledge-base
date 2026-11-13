@@ -16,11 +16,63 @@ checkPaths:
   - "scripts/**"
   - "package.json"
   - ".github/**"
-lastReviewedAt: 2026-11-12
-lastReviewedCommit: f650600e6303352252e8d6fad14607c2061a9f58
+lastReviewedAt: 2026-11-13
+lastReviewedCommit: ccb24fea950f8c584c3215be6a74265482d659cc
 ---
 
 # Publication architecture
+
+## Chinese expression successor
+
+The #95 copyedit keeps the accepted complete-readable-book generation intact.
+`reader-copyedit-8148-capture.json` is separately pinned to the actual 50 saved
+HTML documents, 2,401 native addresses, source tree and hosted manifest of Main
+`8148f71`. The reviewed `chinese-expression-95` unit is admitted by its independent
+pin and ten real source/reader/output evidence files. An inactive or private
+preview overlay still carries no production acceptance; the production source
+gate and exporter refuse a preview. Production and hosted output are checked
+separately against the admitted manuscript.
+
+The successor compares exact 8148 file and record fingerprints with actual new
+values, then verifies the old accepted generation through its original
+fingerprints. Ordered claim occurrences, research and scientific metadata,
+claim/template scope and caveats, numerical inputs, template slots and protected
+component structure remain fixed. Layout changes use explicit reader-text keys
+and preserve their field shapes, members, native IDs and destinations. A language
+unit cannot override scientific, consumer-membership or interaction-mode keys.
+
+Ordinary links retain their actual destinations in each original block, including
+empty positions; preserving an article-wide link list is insufficient. Handwritten
+table bodies retain their data, units and positions. Table-header wording still
+needs independent review of each column's meaning. A changed title retains its
+native address and a bounded, accessible statement of the 8148 title and source;
+unchanged wording does not add a reader notice. The actual seven print-part
+headers include their titles, introductions and history disclosure in the output
+fingerprints. Reader controls and their ancestors must remain available in the
+intended screen/fragment context; ordinary print-media hiding is separate.
+
+The #95 container cross-references have one explicit layout amendment,
+`B02:appendix-print-links`. It applies to the exact B02-to-appendix A and
+appendix A-to-B02 source and fragment pairs in `frameworkBookHref`. Each local
+print ID combines the target's existing `printUnitAnchor` and section ID. The
+history validator checks the captured web and print section titles, ordered
+claim scopes and ordinary-block counts, then verifies the actual current
+native targets and the two links in their original paragraph positions. The
+private preview or reviewed successor must carry this amendment. Inactive
+builds retain the 8148 destinations, and the website and historical citation
+renderers continue to use their original routes.
+
+Three new artifact/report pairs bind source, reader and output subjects after
+the predecessor's date. Their supporting files are the four fixed, real JSON
+summaries under `_docs/editorial/review-evidence/chinese-expression-95/`:
+`before-after`, `source-meaning-review`, `reader-review` and `actual-output-review`.
+The loader checks bytes, role, unit, subject, date and regular-file identity;
+missing files, symlinks, duplicate roles and arbitrary paths fail. Source evidence
+binds changes and affected consumers. Reader evidence accounts for every actual
+book/web article, including reasoned retention. Output evidence covers all 88
+articles, nine public artifacts and seven print parts, with unchanged outputs
+explicitly retained. These checks identify the reviewed objects; the main
+reviewer remains responsible for the reports' substantive truth.
 
 ## Complete-manuscript current edition
 
@@ -559,7 +611,7 @@ The two-process numerical example remains author-stipulated prose with its exist
 
 B08 consumes C18, S02 and S05 in one four-section shared MDX source while preserving the fine website pages. `exchange-semantics-original.json` separately binds60original occurrences/56identities,14ordinary blocks and33case-bound responsibilities. The final-prose receipt binds full canonical records, actual section order, four source hashes and each ordinary block's reviewed explanation or navigation. Original conservation does not grant manuscript acceptance.
 
-S01 remains a registered whole source. A separately pinned partial plan replaces eight print-only canonical occurrences with meaningful native cross-references to accepted B02/B03/B04/B08 notes; APOS and all six ordinary paragraphs remain. The same projection drives body rendering, note planning and the global reference index. The final receipt binds all eight full destination records and the unchanged complete S01 website bytes. M01/M02 responsibilities and the transitional APOS repetition remain explicit development obligations, not hidden whole-source completion.
+S01 remains a registered whole source. A separately pinned partial plan replaces eight print-only canonical occurrences with meaningful native cross-references to accepted B02/B03/B04/B08 notes; APOS and all six ordinary paragraphs remain. The same projection drives body rendering, note planning and the global reference index. The #95 `S01:current-print-pointer-titles` amendment can update the chapter titles displayed by six of the eight current print pointers. It checks the complete original and revised rows and compares the labels with the actual book numbering. The eight paragraph positions, canonical claim identities, native note destinations and earlier citation titles remain bound to the existing partial plan. The final receipt binds all eight full destination records and the unchanged complete S01 website bytes. M01/M02 responsibilities and the transitional APOS repetition remain explicit development obligations, not hidden whole-source completion.
 
 The original347affected historical records, including three incoming front-matter links, are checked exactly before remapping. Nineteen actual c0hosted print headings extend4,076prior obligations to4,095. Old43/9/7/9-note groups retain their own title, edition and exact subset destinations; S01's method headings remain where its ordinary explanations still live. No earlier frozen acceptance or citation inventory is regenerated.
 

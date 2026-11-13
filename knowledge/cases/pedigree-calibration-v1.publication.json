@@ -68,7 +68,7 @@
         "方差降低比例由原文列出的两个方差估计值计算，不是从观察值重新估计的设计效应，也不证明任何后分层都会降低误差。"
       ],
       "reasoning": "复算平方根与相对标准误，并用1−0.0014/0.0072描述所列汇总量的差异。",
-      "textTemplate": "只改变原有观察的用法，也会改变均值和它的估计精度。作者把同一批整群观察按杯型属性重新分层，再用分层路线得到的总体份额加权。这道后分层程序给出平均值{{input.facts.postMean.value}} g、均值估计方差{{input.facts.postVariance.value}} g²，开方得标准误约{{evaluated.sampling.poststratified.standardDeviation.fixed4}} g，除以该平均值则得相对标准误约{{evaluated.sampling.poststratified.cvPercent.fixed4}}%。用原文列出的新旧两个方差相比，再以1减去这个比值，得到约{{evaluated.sampling.poststratifiedVarianceReductionPercent.fixed4}}%的方差降幅。重加权前后用的是同一批杯重观察，差异体现了估计程序和层份额信息的作用。"
+      "textTemplate": "改变同一批观测的加权方法，也会改变平均杯重的估计值和估计精度。作者把整群观测按杯型属性重新分层，再用分层路线估计的总体份额加权。经过后分层，平均杯重为 {{input.facts.postMean.value}} g，均值估计方差为 {{input.facts.postVariance.value}} g²。开方得到标准误约 {{evaluated.sampling.poststratified.standardDeviation.fixed4}} g，再除以该平均杯重，得到相对标准误约 {{evaluated.sampling.poststratified.cvPercent.fixed4}}%。用 1 减去原文所列新方差与旧方差之比，得到方差降幅约 {{evaluated.sampling.poststratifiedVarianceReductionPercent.fixed4}}%。前后使用的是同一批杯重观测，差异来自估计方法及新用到的各层份额。"
     },
     {
       "id": "cl-ped-population-spread",
@@ -101,7 +101,7 @@
         "这里所称总体沿用该研究的杯型×门店口径；不是全市场普查，也不是销量加权变异。"
       ],
       "reasoning": "将总体散布与均值估计方差分别开方和解释，不交换两个估计对象。",
-      "textTemplate": "若关心柏林调查所定义的总体中，杯重彼此相差多大，就要看另一个方差。原文同页报告的总体杯重方差为{{input.facts.populationVariance.value}} g²，开方得到标准差约{{evaluated.sampling.population.standardDeviation.fixed4}} g。以报告的分层平均杯重{{input.facts.stratifiedMean.value}} g为分母，得到约{{evaluated.sampling.population.cvPercent.fixed4}}%，与原文的约15%相合。杯型有轻有重，平均杯重估计的相对标准误仍可远小于杯重的相对标准差。标准误再小，也不能用它代替杯重的标准差来描述一个具体杯型。"
+      "textTemplate": "如果要知道柏林调查所定义的总体中杯重彼此相差多大，就要看总体杯重的方差。原文同页报告的方差是 {{input.facts.populationVariance.value}} g²，开方得到标准差约 {{evaluated.sampling.population.standardDeviation.fixed4}} g。以报告的分层平均杯重 {{input.facts.stratifiedMean.value}} g 为分母，得到相对标准差约 {{evaluated.sampling.population.cvPercent.fixed4}}%，与原文的约 15% 相合。杯型重量相差较大时，平均杯重的相对标准误仍可以远小于杯重的相对标准差。标准差说明这个总体的杯重在均值周围有多分散。均值的标准误则说明平均杯重估计得有多精确。"
     },
     {
       "id": "cl-ped-stratified-conflict",
@@ -137,7 +137,7 @@
         "未确定差异原因，没有更正原作或替换原始参数；不由此推断整项研究或抽样方法失效。"
       ],
       "reasoning": "保留两处原文身份和各自数值，仅演算显示值蕴含的相对标准误。",
-      "textTemplate": "原文的分层路线还有一处数值需要辨明。用结果页的分层平均值{{input.facts.stratifiedMean.value}} g和均值估计方差{{input.facts.stratifiedVariance.value}} g²，先开方再除以均值，可得相对标准误约{{evaluated.sampling.stratified.cvPercent.fixed4}}%。讨论部分写的却是{{input.facts.conflictingStratifiedCv.value}}%。两处显示值无法由同一个简单换算得到。依据已给汇总量，可以核对这个差异。要判定哪一处应改，还缺原始层统计量和计算记录。"
+      "textTemplate": "分层路线在原文中有一处数值不一致。用结果页的分层平均杯重 {{input.facts.stratifiedMean.value}} g 和均值估计方差 {{input.facts.stratifiedVariance.value}} g²，先对方差开方，再除以均值，得到相对标准误约 {{evaluated.sampling.stratified.cvPercent.fixed4}}%。讨论部分写的却是 {{input.facts.conflictingStratifiedCv.value}}%。依据已给汇总量可以核对这一差异。要判定哪一处应改，还缺原始层统计量和计算记录。"
     },
     {
       "id": "cl-ped-factor-values",
@@ -203,7 +203,7 @@
         "不把示例值标成实测杯重校准结果。"
       ],
       "reasoning": "从作者设定的两组GSD复算比值，并保留候选到建议的用途区别。",
-      "textTemplate": "论文以时间相关性为题，给出一组假想数：最佳组的GSD为{{input.facts.idealGsd.value}}，另一等级组为{{input.facts.otherGsd.value}}，后者较大，两数直接相除得R≈{{evaluated.ratioIllustration.sourceGenericRatio.fixed4}}。这两个输入来自论文的假想例，和柏林杯重观察无关。换一组资料可能算出另一个候选比值，最终提出什么值，还得比较各资料来源。得到比值之后，清单建模还有一步：规定这个数在分布里代表什么。"
+      "textTemplate": "论文用资料质量指标“时间相关性”（temporal correlation）举例，这里衡量的是资料时期与研究所需时期的接近程度，不是时间序列的自相关。作者给出一组假想数：最佳组的 GSD 为{{input.facts.idealGsd.value}}，另一等级组为{{input.facts.otherGsd.value}}，后者较大，两数直接相除得 R≈{{evaluated.ratioIllustration.sourceGenericRatio.fixed4}}。这两个输入来自论文的假想例，和柏林杯重观察无关。换一组资料可能算出另一个候选比值，最终提出什么值，还得比较各资料来源。得到比值之后，清单建模还有一步：规定这个数在分布里代表什么。"
     },
     {
       "id": "cl-ped-ratio-residual",

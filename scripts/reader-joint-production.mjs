@@ -32,7 +32,7 @@ export function assertJointProductionHeadingHistory(value = captured) {
 }
 export function assertJointProductionRegistration(edition) {
   const unit = edition?.units?.find(unit => unit.key === jointProductionKey);
-  if (!unit || unit.source !== jointProductionManuscript || unit.kind !== 'chapter' || unit.part !== original.part
+  if (!unit || unit.source !== jointProductionManuscript || unit.kind !== 'chapter' || unit.part !== currentBookLayout('book:part-title:3', original.part)
     || !same(unit.coverage, jointProductionRoutes) || !same(unit.sections, currentBookLayout('B10:registered-sections', original.sections)) || edition.units.some(unit => jointProductionRoutes.includes(unit.key)))
     throw new Error('Missing or changed B10 book assembly/exact two-source coverage/four-section registration');
 }

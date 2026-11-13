@@ -1,3 +1,4 @@
+import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
 import { PublicationNote } from '@/components/publication-note';
 import Link from 'next/link';
 import catalog from '@/lib/catalog';
@@ -48,7 +49,8 @@ export default function Page() {
     <div className="print-book">
       {frontMatter.map(article)}
       {readerParts.map(part=><section className="print-part" data-reader-part-group={part.number} key={part.number}>
-        <h2 id={`print-part-${part.number}`} data-reader-part={part.number}><NumberedTitle number={part.label}>{part.title}</NumberedTitle></h2>
+        <><h2 id={`print-part-${part.number}`} data-reader-part={part.number}><NumberedTitle number={part.label}>{part.title}</NumberedTitle></h2>
+          <CopyeditHistoricalTitle path="/print" id={`print-part-${part.number}`} /></>
         <p className="print-part-introduction">{part.introduction}</p>
         {units.filter(unit=>unit.part===part.number).map(article)}
       </section>)}

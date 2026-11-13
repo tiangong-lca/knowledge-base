@@ -173,18 +173,22 @@ test('the actual adopted source is independently qualified and a changed reviewe
   const root = fileURLToPath(new URL('../', import.meta.url));
   const read = async path => JSON.parse(await readFile(new URL('../' + path, import.meta.url), 'utf8'));
   assert.deepEqual(await validateRepository(root), []);
-  const [acceptance, catalog, readings, literature] = await Promise.all([
-    read('config/readable-book-current.json'), read('knowledge/catalog.json'),
+  const [acceptance, copyedit, catalog, readings, literature] = await Promise.all([
+    read('config/readable-book-current.json'), read('config/reader-copyedit-current.json'), read('knowledge/catalog.json'),
     read('knowledge/research/readings.json'), read('knowledge/research/literature-map.json'),
   ]);
   assert.equal(acceptance.status, 'reviewed');
-  const changed = acceptance.units.flatMap(unit => unit.changes)
+  const currentChanges = copyedit.status === 'reviewed' ? copyedit.unit.changes : acceptance.units.flatMap(unit => unit.changes);
+  const changed = currentChanges
     .find(row => row.kind === 'record' && row.key.startsWith('claims:') && row.from !== null);
   assert(changed, 'the actual edition contains a reviewed change to an existing paragraph');
   const id = changed.key.slice('claims:'.length);
   const claim = catalog.claims.find(row => row.id === id);
   assert(claim);
   claim.text += '未受审的补充。';
+  const rejection = copyedit.status === 'reviewed'
+    ? 'Reader copyedit successor differs from actual source'
+    : 'stale predecessor, missing successor or mismatched result';
   await assert.rejects(validateReadableBookCurrent(root, catalog, readings, literature), error =>
-    error.message.includes('stale predecessor, missing successor or mismatched result') && error.message.includes(id));
+    error.message.includes(rejection) && error.message.includes(changed.key));
 });

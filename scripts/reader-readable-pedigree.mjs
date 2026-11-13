@@ -247,7 +247,7 @@ export function validateReadablePedigreeCoverage(edition, sources, catalog, acce
     independentDigest = readablePedigreeAcceptedDigest, projection = 'raw', readings) {
   assertReadablePedigreeAccepted(accepted, independentDigest);
   const units = edition.units.filter(unit => unit.key === readablePedigreeRoute || unit.source === readablePedigreeRoute);
-  if (!same(units, [{ key: readablePedigreeRoute, source: readablePedigreeRoute, kind: 'chapter', part: '证据分量' }]))
+  if (!same(units, [{ key: readablePedigreeRoute, source: readablePedigreeRoute, kind: 'chapter', part: currentBookLayout('book:part-title:6', '证据分量') }]))
     throw new Error('Readable pedigree must retain its shared book and website source identity');
   const errors = [...validateCatalog(catalog, accepted, projection), ...validateReadablePedigreeResearch(readings)];
   const raw = sources.get(readablePedigreeRoute)?.replaceAll('\r\n', '\n');

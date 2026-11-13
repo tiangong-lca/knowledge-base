@@ -83,7 +83,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "检验系数比乘 365 的数值，保留从每人变化到家庭支付的未披露条件。",
-      "textTemplate": "健康一行不能照抄吨数的换法。健康系数除以税金系数，量值约1,567.74；只乘一年365天，约得57.22万日元，在表列精度下接近每DALY {{input.facts.publishedHealth2003.value}} 日元。可是问卷展示的是每人的日数，支付问题按户提问。原文未逐步列出户数、受影响人数和人均日数的关系。能找到一个与表值相合的算法，仍不能确定作者怎样做了聚合。"
+      "textTemplate": "健康损害的问卷单位是日数，须另看怎样折算为DALY。健康系数除以税金系数，量值约1,567.74；只乘一年365天，约得57.22万日元，在表列精度下接近每DALY {{input.facts.publishedHealth2003.value}} 日元。可是问卷展示的是每人的日数，支付问题按户提问。原文未逐步列出户数、受影响人数和人均日数的关系。能找到一个与表值相合的算法，仍不能确定作者怎样做了聚合。"
     },
     {
       "id": "cl-lime-mismatch",
@@ -164,7 +164,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "将表 3 社会资产的百万日元单位转为表 7 的千日元单位，然后相乘。",
-      "textTemplate": "每DALY的日元权重和无量纲的健康份额回答不同的问题。若要问日本一年环境负荷所对应的四项损害中，健康贡献占多少，就先把各项单价乘回相应年度损害量。143万DALY乘每DALY 57.2万日元，约为8.18×10¹¹日元。社会资产列的54,400以百万日元计；换成每份一千日元，共 {{evaluated.annualReference.socialNormalization1000JPYBlocks.exact}} 份，乘每份4,460日元，约为2.43×10¹¹日元。四项都成为金额，才可以把总金额作为份额的分母。"
+      "textTemplate": "每DALY的日元权重和无量纲的健康份额回答不同的问题。若要问日本一年环境负荷所对应的四项损害中，健康贡献占多少，就先把各项单价乘回相应年度损害量。143万DALY乘每DALY 57.2万日元，约为8.18×10¹¹日元。社会资产列的54,400以百万日元计；换成每份一千日元，共 {{evaluated.annualReference.socialNormalization1000JPYBlocks.exact}} 份，乘每份4,460日元，约为2.43×10¹¹日元。四项损害分别估值后，以合计金额为分母，就能求出各项金额所占份额。"
     },
     {
       "id": "cl-lime-shares",
@@ -242,7 +242,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "分别按损害单位乘以相应的单位估值，同服务比较。",
-      "textTemplate": "先把两行损害一起交给 2003 年日文表 7。甲的健康一项是 0.001 × 572,000 = {{evaluated.illustration.published2003.A.healthContribution.exact}} 日元，初级生产一项是 100 × 17.8 = {{evaluated.illustration.published2003.A.primaryProductionContribution.exact}} 日元，合为 {{evaluated.illustration.published2003.A.total.exact}} 日元。乙的两项分别为 2,288 和 178 日元，合为 {{evaluated.illustration.published2003.B.total.exact}} 日元。这两项合计，乙比甲高 114 日元。相同的其他损害无论增加多少共同金额，都不改变这个分差。"
+      "textTemplate": "先用 2003 年日文表 7 的权重，对两条路线的损害分别估值。甲的健康一项是 0.001 × 572,000 = {{evaluated.illustration.published2003.A.healthContribution.exact}} 日元，初级生产一项是 100 × 17.8 = {{evaluated.illustration.published2003.A.primaryProductionContribution.exact}} 日元，合为 {{evaluated.illustration.published2003.A.total.exact}} 日元。乙的两项分别为 2,288 和 178 日元，合为 {{evaluated.illustration.published2003.B.total.exact}} 日元。这两项合计，乙比甲高 114 日元。相同的其他损害无论增加多少共同金额，都不改变这个分差。"
     },
     {
       "id": "cl-lime-break-even",
@@ -290,7 +290,7 @@
         "两个货币分数分别属于各自发表所用的计值条件。本例没有对价格年、货币购买力或方法代际作统一校准。"
       ],
       "reasoning": "在固定损害向量上同时采用 2004 年两行公布值，再比较该组权重的相对比值。",
-      "textTemplate": "现在把同样的两行损害一起交给 2004 年英文表 7。甲的健康与初级生产贡献分别为 9,700 和 2,020,000 日元，合计 {{evaluated.illustration.published2004.A.total.exact}} 日元；乙的贡献为 38,800 和 202,000 日元，合计 {{evaluated.illustration.published2004.B.total.exact}} 日元。这套表的 h/p 约为 480 干吨/DALY，落在分界的另一侧，因而乙较低。两轮比较都用了同一对虚构损害量，每一轮内部都只用一份表。由此能辨认结论对表的选择有多敏感，但这是两份发表值在同一算例中的对照。两份论文的样本表都指向 2002 年 1 月，不能把这次换位读成一次跨年的偏好测量。"
+      "textTemplate": "再用 2004 年英文表 7 的权重，给同样的损害量估值。甲的健康与初级生产贡献分别为 9,700 和 2,020,000 日元，合计 {{evaluated.illustration.published2004.A.total.exact}} 日元；乙的贡献为 38,800 和 202,000 日元，合计 {{evaluated.illustration.published2004.B.total.exact}} 日元。这套表的 h/p 约为 480 干吨/DALY，落在分界的另一侧，因而乙较低。两轮比较都用了同一对虚构损害量，每一轮内部都只用一份表。在这组损害量下，选用哪份权重表会决定哪条路线的两项损害估值较低。两份论文的样本表都指向 2002 年 1 月，不能把这次换位读成一次跨年的偏好测量。"
     }
   ]
 }

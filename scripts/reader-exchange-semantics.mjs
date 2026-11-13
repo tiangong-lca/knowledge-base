@@ -1,4 +1,5 @@
-import { currentPrintReadingHref } from './reader-numbering.mjs';
+import { historyPrintPointerTitleLayout } from './reader-copyedit.mjs';
+import { currentPrintReadingHref, getUnitNumbering } from './reader-numbering.mjs';
 import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import readingRegister from '../knowledge/research/readings.json' with { type: 'json' };
 import { getClaimEvidence } from './knowledge.mjs';
@@ -27,7 +28,7 @@ export function assertExchangeSemanticsCitationSources(value=citationSources) { 
 export function assertExchangeSemanticsPartialHistory(value=partialHistory) { assertPin(value,'partial','partial S01 source plan'); }
 export function assertExchangeSemanticsRegistration(edition) {
   const unit=edition?.units?.find(unit=>unit.key===exchangeSemanticsRoute);
-  if (!unit || unit.source!==exchangeSemanticsRoute || unit.kind!=='chapter' || unit.part!=='可比世界' || !same(unit.sections,currentBookLayout('B08:headings',exchangeSemanticsTitles.map(title=>({id:title,title})))) || !same(unit.coverage,['/docs/flows','/docs/characterization'])) throw new Error('Missing or changed shared B08 four-section / exclusive S02/S05 registration');
+  if (!unit || unit.source!==exchangeSemanticsRoute || unit.kind!=='chapter' || unit.part!==currentBookLayout('book:part-title:2', '可比世界') || !same(unit.sections,currentBookLayout('B08:headings',exchangeSemanticsTitles.map(title=>({id:title,title})))) || !same(unit.coverage,['/docs/flows','/docs/characterization'])) throw new Error('Missing or changed shared B08 four-section / exclusive S02/S05 registration');
   const history=edition.units.find(unit=>unit.key===historyRoute);
   if (!history || history.source!==historyRoute || history.kind!==currentBookLayout('S01:print-kind', 'topic') || history.coverage?.length || edition.units.some(unit=>unit.coverage?.includes(historyRoute))) throw new Error('S01 must remain a complete registered source with separately bounded print projection');
 }
@@ -39,10 +40,19 @@ export function assertExchangeSemanticsProseAccepted(prose) {
   if (!finalProsePin || !prose || prose.status!=='reviewed' || !Array.isArray(prose.claims) || !Array.isArray(prose.sections) || !Array.isArray(prose.sources) || !Array.isArray(prose.ordinaryDispositions) || !prose.sourceReview || !prose.readerReview || !prose.partialSourceReview || !/^[a-f0-9]{64}$/.test(prose.readerDraftSha256??'') || exchangeDigest(prose)!==finalProsePin) throw new Error('B08 requires its separately reviewed final canonical manuscript, navigation and partial-source receipt; acceptance is missing or differs');
 }
 
+function currentHistoryPrintPointers(partial) {
+  const pointers = currentBookLayout(historyPrintPointerTitleLayout, partial.projection);
+  if (pointers !== partial.projection && pointers.some(row => {
+    const title = getUnitNumbering('book', row.route)?.title;
+    return !title || !row.text.endsWith(`见《${title}》的相应论述与注释。`);
+  })) throw new Error('S01 printed pointer title differs from the actual current book title');
+  return pointers;
+}
+
 /** One route-limited projection drives raw occurrence planning and actual rendering. */
 export function historyPrintCrossReference(route,id,print=true,partial=partialHistory) {
   assertExchangeSemanticsPartialHistory(partial);
-  return print && route===historyRoute ? partial.projection.find(item=>item.claimId===id) ?? null : null;
+  return print && route===historyRoute ? currentHistoryPrintPointers(partial).find(item=>item.claimId===id) ?? null : null;
 }
 export function projectExchangeSemanticsRaw(route,raw,print=true,partial=partialHistory) {
   assertExchangeSemanticsPartialHistory(partial);
@@ -93,7 +103,7 @@ export function validateExchangeSemanticsCoverage(edition,sources,accepted=origi
   const history=sources.get(historyRoute);
   if(history===undefined || !currentBookMdxMatches(partial.sourceRoute, partial.websiteSourceSha256, textDigest(history)) || !same(collectChapterClaimOccurrences(history),partial.claimIds))errors.push('S01 complete website source, nine claims or six ordinary blocks changed');
   else if(!same(collectChapterClaimOccurrences(projectExchangeSemanticsRaw(historyRoute,history,true,partial)),partial.retainedClaimIds))errors.push('S01 projected occurrence / note plan differs from retained APOS');
-  for(const item of partial.projection) {
+  for(const item of currentHistoryPrintPointers(partial)) {
     const actual=sources.get(sourceRouteForKey(item.route,edition));
     if(actual===undefined || collectChapterClaimOccurrences(actual).filter(id=>id===item.claimId).length!==1)errors.push(`S01 partial destination missing or duplicated: ${item.claimId}`);
     if(item.section && actual!==undefined && !sectionOccurrences(actual).occurrences.some(row=>row.id===item.claimId&&row.section===item.section))errors.push(`S01 partial destination has wrong actual section: ${item.claimId}`);
@@ -351,8 +361,9 @@ export function validateRenderedExchangeSemantics(document,path,accepted=origina
       }
       errors.push(...validateExchangeAnnotationOutput(document,unit,historyRoute,catalog,{print}));
       if(print) {
-        const cross=unit.querySelectorAll('[data-reader-partial-claim]');if(!same(cross.map(node=>node.getAttribute('data-reader-partial-claim')),partial.projection.map(item=>item.claimId)))errors.push('/print: S01 explicit cross-reference occurrences missing, duplicated or reordered');
-        for(const item of partial.projection){const node=cross.find(node=>node.getAttribute('data-reader-partial-claim')===item.claimId);if(!node||paragraphSections.get(node)!==item.sourceHeading||normalize(node.text)!==normalize(item.text)||node.querySelectorAll('a').length!==1||node.querySelector('a')?.getAttribute('href')!==`#${historyPrintDestination(item).id}`)errors.push(`/print: S01 cross-reference lacks exact meaningful native destination: ${item.claimId}`);}
+        const cross=unit.querySelectorAll('[data-reader-partial-claim]'), pointers=currentHistoryPrintPointers(partial);
+        if(!same(cross.map(node=>node.getAttribute('data-reader-partial-claim')),pointers.map(item=>item.claimId)))errors.push('/print: S01 explicit cross-reference occurrences missing, duplicated or reordered');
+        for(const item of pointers){const node=cross.find(node=>node.getAttribute('data-reader-partial-claim')===item.claimId);if(!node||paragraphSections.get(node)!==item.sourceHeading||normalize(node.text)!==normalize(item.text)||node.querySelectorAll('a').length!==1||node.querySelector('a')?.getAttribute('href')!==`#${historyPrintDestination(item).id}`)errors.push(`/print: S01 cross-reference lacks exact meaningful native destination: ${item.claimId}`);}
         for(const heading of currentBookLayout('S01:print-headings', partial.printedHeadings)){const node=unit.querySelectorAll('h3').find(node=>node.id===heading.id);if(!node||node.text!==heading.text)errors.push(`/print: S01 ordinary heading meaning changed: ${heading.id}`);}
       }
     }

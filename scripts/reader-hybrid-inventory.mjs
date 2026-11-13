@@ -50,7 +50,7 @@ export function assertHybridInventoryHeadingHistory(history) {
 }
 export function assertHybridInventoryRegistration(edition) {
   const unit = edition.units.find(unit => unit.key === hybridInventoryRoute);
-  if (!unit || unit.source !== hybridInventoryRoute || unit.kind !== 'chapter' || unit.coverage?.length || unit.part !== '可比世界'
+  if (!unit || unit.source !== hybridInventoryRoute || unit.kind !== 'chapter' || unit.coverage?.length || unit.part !== currentBookLayout('book:part-title:2', '可比世界')
     || !same(unit.sections, currentBookLayout('B09:headings', titles.map(title => ({ id: title, title }))))) throw new Error('Missing or changed shared B09 chapter/part/three-section registration');
 }
 

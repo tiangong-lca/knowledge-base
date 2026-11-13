@@ -18,7 +18,7 @@ export function assertProcessNetworkHeadingHistory(history) {
 }
 export function assertProcessNetworkRegistration(edition) {
   const unit = edition.units.find(unit => unit.key === processNetworkRoute);
-  if (!unit || unit.source !== processNetworkRoute || unit.kind !== 'chapter' || unit.coverage?.length || unit.part !== '可比世界'
+  if (!unit || unit.source !== processNetworkRoute || unit.kind !== 'chapter' || unit.coverage?.length || unit.part !== currentBookLayout('book:part-title:2', '可比世界')
     || !same(unit.sections, currentBookLayout('B07:headings', titles.map(title => ({ id: title, title }))))) throw new Error('Missing or changed shared B07 chapter/part/three-section registration');
 }
 

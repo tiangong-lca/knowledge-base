@@ -1,7 +1,9 @@
-import { lstat, readdir, readFile } from 'node:fs/promises';
-import { join } from 'node:path';
-import { editionDigest, inspectReadableBookEdition, qualifyReadableBookEdition, validReadableBookReviewFile } from './reader-current-edition.mjs';
+import { lstat, readdir, readFile, realpath } from 'node:fs/promises';
+import { join, resolve } from 'node:path';
+import { editionDigest, inspectReadableBookEdition, qualifyReadableBookEdition, readableBookReviewPlan, pinnedReadableBookUnits, validReadableBookReviewFile, verifyReadableBookReviewReceipts } from './reader-current-edition.mjs';
 
+import { copyeditSourceStructure, effectiveReaderCopyedit, qualifyReaderCopyedit, readerCopyeditSupportReferences, selectReaderCopyedit } from './reader-copyedit.mjs';
+import { readerCopyeditUnitPin, readerCopyeditCaptureDigest } from './reader-copyedit-pins.mjs';
 import { readableBookBaselineDigest, readableBookAcceptancePins } from './reader-current-edition-pins.mjs';
 
 export function isReadableBookMutableFile(path) {
@@ -30,7 +32,10 @@ export async function validateReadableBookCurrent(root, catalog, readings, liter
   const acceptance = await readConfig('readable-book-current.json');
   if (editionDigest(baseline) !== readableBookBaselineDigest) throw new Error('Readable book integration baseline differs');
   const files = await readReadableBookFiles(root, baseline.fixedFiles);
-  const reviewFiles = new Set((acceptance.units ?? []).flatMap(unit =>
+  const config = await readConfig('reader-copyedit-current.json');
+  const unit = selectReaderCopyedit(config, readerCopyeditUnitPin);
+  const reviewUnits = unit ? [...acceptance.units, unit] : acceptance.units;
+  const reviewFiles = new Set((reviewUnits ?? []).flatMap(unit =>
     (unit.reviewEvidence ?? []).flatMap(row => [row.reportFile, row.artifactFile])));
   const artifacts = new Map();
   for (const name of reviewFiles) {
@@ -40,6 +45,23 @@ export async function validateReadableBookCurrent(root, catalog, readings, liter
     artifacts.set(name, await readFile(path));
   }
 
-  return qualifyReadableBookEdition(baseline, readableBookBaselineDigest, acceptance, readableBookAcceptancePins,
-    inspectReadableBookEdition({ catalog, readings, literature, files }), artifacts);
+  const actual = inspectReadableBookEdition({ catalog, readings, literature, files });
+  if (!unit) return qualifyReadableBookEdition(baseline, readableBookBaselineDigest, acceptance, readableBookAcceptancePins, actual, artifacts);
+
+  if (!verifyReadableBookReviewReceipts(unit, artifacts)) throw new Error('Reader copyedit requires exact primary review evidence');
+  const realRoot = await realpath(root);
+  for (const { file } of readerCopyeditSupportReferences(unit, artifacts)) {
+    const path = resolve(realRoot, file);
+    if (!(await lstat(path)).isFile() || await realpath(path) !== path)
+      throw new Error(`Reader copyedit supporting evidence must be a regular file in its review directory: ${file}`);
+    artifacts.set(file, await readFile(path));
+  }
+  const capture = await readConfig('reader-copyedit-8148-capture.json');
+  if (editionDigest(capture) !== readerCopyeditCaptureDigest) throw new Error('Reader copyedit differs from its independently pinned 8148 capture');
+  const previousUnits = pinnedReadableBookUnits(acceptance, readableBookBaselineDigest, readableBookAcceptancePins);
+  const previous = readableBookReviewPlan(previousUnits);
+  const { previousState } = qualifyReaderCopyedit({ unit, actual, previous, capture, artifacts,
+    sourceStructure: copyeditSourceStructure({ catalog, files }) });
+  const qualified = qualifyReadableBookEdition(baseline, readableBookBaselineDigest, acceptance, readableBookAcceptancePins, previousState, artifacts);
+  return effectiveReaderCopyedit(qualified, unit);
 }

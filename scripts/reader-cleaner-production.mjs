@@ -21,7 +21,7 @@ export function assertCleanerProductionHeadingHistory(history) {
 export function assertCleanerProductionRegistration(edition) {
   const unit = edition.units.find(unit => unit.key === cleanerProductionRoute);
   if (!unit || unit.source !== cleanerProductionRoute || unit.kind !== 'chapter' || unit.coverage?.length
-    || unit.part !== '问题的来路' || !same(unit.sections, currentBookLayout('B05:headings', sectionTitles.map(title => ({ id: title, title })))))
+    || unit.part !== currentBookLayout('book:part-title:1', '问题的来路') || !same(unit.sections, currentBookLayout('B05:headings', sectionTitles.map(title => ({ id: title, title })))))
     throw new Error('Missing or changed shared B05 chapter/part/three-section registration');
 }
 

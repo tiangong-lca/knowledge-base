@@ -340,6 +340,7 @@ export function validateRenderedToxicityPathways(document, path, catalog, accept
     errors.push(`${path}: Toxicity pathways exact continuous note group differs`);
 
   const claims = new Map(accepted.claims.map(row => [row.id, row]));
+  const currentClaims = new Map(catalog.claims.map(row => [row.id, row]));
   const headings = [], occurrences = [];
   let section = null;
   for (const node of unit.querySelectorAll('h1,h2,h3,h4,h5,h6,a[role="doc-noteref"]')) {
@@ -350,7 +351,8 @@ export function validateRenderedToxicityPathways(document, path, catalog, accept
       const paragraph = node.closest('p');
       checkText(paragraph, paragraph && !node.closest('.chapter-notes')
         && paragraph.querySelectorAll('a').length === 1 && claims.has(id)
-        && readerParagraphText(paragraph, node) === claims.get(id).text
+        && currentBookRecordMatches('claims', claims.get(id), currentClaims.get(id))
+        && readerParagraphText(paragraph, node) === currentClaims.get(id).text
         && node.getAttribute('href') === `#${prefix}-claim-${id}`
         && node.getAttribute('aria-label') === `注 ${number}` && node.text === `[${number}]`,
       `actual canonical paragraph or note marker ${id}`);

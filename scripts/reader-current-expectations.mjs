@@ -1,13 +1,19 @@
 import acceptance from '../config/readable-book-current.json' with { type: 'json' };
+import copyeditConfig from '../config/reader-copyedit-current.json' with { type: 'json' };
 import { readableBookAcceptancePins, readableBookBaselineDigest } from './reader-current-edition-pins.mjs';
+import { readerCopyeditUnitPin } from './reader-copyedit-pins.mjs';
+import { copyeditChanges, copyeditLayout, selectReaderCopyedit } from './reader-copyedit.mjs';
 import { editionDigest, matchesAcceptedFile, matchesAcceptedRecord, pinnedReadableBookUnits, readableBookReviewPlan } from './reader-current-edition.mjs';
 
-// Static draft rendering is available only by explicit opt-in. Repository
-// validation and public export still require separately reviewed production pins.
-export const isReadableBookReviewPreview = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1' && acceptance.status === 'preview';
-export const currentBookPlan = readableBookReviewPlan(isReadableBookReviewPreview
+// Preview never bypasses the old reviewed pin when rendering a #95 successor.
+const preview = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1';
+const oldPreview = preview && acceptance.status === 'preview';
+export const currentCopyedit = selectReaderCopyedit(copyeditConfig, readerCopyeditUnitPin, preview);
+export const isReadableBookReviewPreview = oldPreview || preview && copyeditConfig.status === 'preview';
+const previousPlan = readableBookReviewPlan(oldPreview
   ? acceptance.units
   : pinnedReadableBookUnits(acceptance, readableBookBaselineDigest, readableBookAcceptancePins));
+export const currentBookPlan = { ...previousPlan, changes: copyeditChanges(previousPlan.changes, currentCopyedit) };
 
 export function currentBookRecordMatches(kind, previous, current, projection) {
   if (projection !== undefined) return matchesAcceptedRecord(currentBookPlan, kind, previous, current, projection);
@@ -26,8 +32,7 @@ export function currentBookMdxMatches(route, previousDigest, currentDigest) {
 
 /** A reviewed predicate amendment keeps its own old input and semantic scope. */
 export function currentBookLayout(key, previous) {
-  const row = currentBookPlan.layouts.get(key);
-  if (!row) return previous;
-  if (row.from !== editionDigest(previous)) throw new Error(`Readable book layout has stale predecessor: ${key}`);
-  return row.to;
+  const row = previousPlan.layouts.get(key);
+  if (row && row.from !== editionDigest(previous)) throw new Error(`Readable book layout has stale predecessor: ${key}`);
+  return copyeditLayout(key, row ? row.to : previous, currentCopyedit);
 }

@@ -34,7 +34,7 @@
     },
     {
       "id": "cl-pm-source-height",
-      "textTemplate": "源高也是这组原型的一部分。同一城市细颗粒在高烟囱、低烟囱与地面源下，表列吸入比例依次为{{input.facts.primaryUrbanHigh.value}}、{{input.facts.primaryUrbanLow.value}}和{{input.facts.primaryUrbanGround.value}} mg/kg。同表城市粗颗粒的对应值为{{input.facts.coarseUrbanHigh.value}}、{{input.facts.coarseUrbanLow.value}}和{{input.facts.coarseUrbanGround.value}} mg/kg。这里的地面源指该方法的近地排放原型。这些数值将代表性的扩散和人群条件带入模型，说明排放质量相同仍可有不同的人群接触；它们不提供任意实际烟囱的预测，也不单独给出改变烟囱高度的总环境后果。",
+      "textTemplate": "源高也是这组原型的一部分。同一城市原型的细颗粒若分别从高烟囱、低烟囱或地面源排出，表列吸入比例依次为{{input.facts.primaryUrbanHigh.value}}、{{input.facts.primaryUrbanLow.value}}和{{input.facts.primaryUrbanGround.value}} mg/kg。同表城市粗颗粒的对应值为{{input.facts.coarseUrbanHigh.value}}、{{input.facts.coarseUrbanLow.value}}和{{input.facts.coarseUrbanGround.value}} mg/kg。这里的地面源指该方法的近地排放原型。这些数值将代表性的扩散和人群条件带入模型，说明排放质量相同仍可有不同的人群接触；它们不提供任意实际烟囱的预测，也不单独给出改变烟囱高度的总环境后果。",
       "kind": "source-statement",
       "scope": "从空气中的增量到人群吸入中的具名方法与证据范围",
       "evidenceIds": [
@@ -63,7 +63,7 @@
     },
     {
       "id": "cl-pm-mixture-inputs",
-      "textTemplate": "把不同排放源混合以后，比较对象又变了。该方法用来构造高度平均值的美国来源资料中，细颗粒的高、低、地面源质量份额为{{input.facts.fineHighShare.value}}、{{input.facts.fineLowShare.value}}、{{input.facts.fineGroundShare.value}}；粗颗粒则为{{input.facts.coarseHighShare.value}}、{{input.facts.coarseLowShare.value}}、{{input.facts.coarseGroundShare.value}}。粗颗粒更集中在地面源，其中道路扬尘占有重要位置。这组资料排除了野火和其他杂项；清单若不含道路扬尘，也应按原文条件重新处理权重。",
+      "textTemplate": "如果要比较混合源的吸入比例，还要知道各类源排放的质量份额。该方法用来构造高度平均值的美国来源资料中，细颗粒的高、低、地面源质量份额为{{input.facts.fineHighShare.value}}、{{input.facts.fineLowShare.value}}、{{input.facts.fineGroundShare.value}}；粗颗粒则为{{input.facts.coarseHighShare.value}}、{{input.facts.coarseLowShare.value}}、{{input.facts.coarseGroundShare.value}}。粗颗粒更集中在地面源，其中道路扬尘占有重要位置。这组资料排除了野火和其他杂项；清单若不含道路扬尘，也应按原文条件重新处理权重。",
       "kind": "source-statement",
       "scope": "从空气中的增量到人群吸入中的具名方法与证据范围",
       "evidenceIds": [
@@ -86,7 +86,7 @@
     },
     {
       "id": "cl-pm-mixture-results",
-      "textTemplate": "按上述份额对表中显示值加权，城市细颗粒为 {{input.facts.fineHighShare.value}} × {{input.facts.primaryUrbanHigh.value}} + {{input.facts.fineLowShare.value}} × {{input.facts.primaryUrbanLow.value}} + {{input.facts.fineGroundShare.value}} × {{input.facts.primaryUrbanGround.value}} = {{evaluated.heightMixtures.fine.weighted.exact}} mg/kg；粗颗粒为 {{input.facts.coarseHighShare.value}} × {{input.facts.coarseUrbanHigh.value}} + {{input.facts.coarseLowShare.value}} × {{input.facts.coarseUrbanLow.value}} + {{input.facts.coarseGroundShare.value}} × {{input.facts.coarseUrbanGround.value}} = {{evaluated.heightMixtures.coarse.weighted.exact}} mg/kg。原表相应发布{{input.facts.primaryUrbanReportedAverage.value}}和{{input.facts.coarseUrbanReportedAverage.value}}。虽然每一种同高度条件下的细颗粒比例都较高，混合后的次序却因两类颗粒的来源构成不同而倒转。这是在核对既有原型的加权关系；高度因子本身也由未知高度的锚定值及比例推得，不能把回算一致当成一次独立模型验证，更不能据此断言粗颗粒的健康毒性较强。",
+      "textTemplate": "按上述份额对表中显示值加权，城市细颗粒为 {{input.facts.fineHighShare.value}} × {{input.facts.primaryUrbanHigh.value}} + {{input.facts.fineLowShare.value}} × {{input.facts.primaryUrbanLow.value}} + {{input.facts.fineGroundShare.value}} × {{input.facts.primaryUrbanGround.value}} = {{evaluated.heightMixtures.fine.weighted.exact}} mg/kg；粗颗粒为 {{input.facts.coarseHighShare.value}} × {{input.facts.coarseUrbanHigh.value}} + {{input.facts.coarseLowShare.value}} × {{input.facts.coarseUrbanLow.value}} + {{input.facts.coarseGroundShare.value}} × {{input.facts.coarseUrbanGround.value}} = {{evaluated.heightMixtures.coarse.weighted.exact}} mg/kg。原表相应发布{{input.facts.primaryUrbanReportedAverage.value}}和{{input.facts.coarseUrbanReportedAverage.value}}。虽然每一种同高度条件下的细颗粒比例都较高，混合后的次序却因两类颗粒的来源构成不同而倒转。这一步核对了既有原型怎样按源高份额加权。各源高的因子本身也是根据未知高度的锚定值和相应比例推得的，重算吻合只说明加权关系一致。这里比较的是吸入比例，无法据此判断粗颗粒是否有更强的健康毒性。",
       "kind": "calculation",
       "scope": "从空气中的增量到人群吸入中的具名方法与证据范围",
       "evidenceIds": [
@@ -123,7 +123,7 @@
     },
     {
       "id": "cl-pm-effect-default",
-      "textTemplate": "论文发布的心肺疾病与肺癌合并默认效应为{{input.facts.effect.value}} DALY/kg吸入PM₂.₅。它在年龄与死因层次先计算，再以WHO世界标准人口年龄权重汇总；总吸入量的分母包括所有年龄，而未满30岁的效应在这一构造中设为零。这个零属于选定模型的覆盖约定，不能解释为儿童没有健康影响。使用汇总因子时，也应保留其已完成的分组与加权顺序，不能拿另外几项舍入后的表值随意重新拼装。",
+      "textTemplate": "论文发布的心肺疾病与肺癌合并默认效应为{{input.facts.effect.value}} DALY/kg吸入PM₂.₅。作者先分年龄和死因计算，再用WHO世界标准人口的年龄权重汇总。分母的吸入量包括所有年龄，未满30岁的效应则按这一模型约定设为零。这个零属于选定模型的覆盖约定，不能解释为儿童没有健康影响。使用汇总因子时，也应保留其已完成的分组与加权顺序，不能拿另外几项舍入后的表值随意重新拼装。",
       "kind": "source-statement",
       "scope": "健康因子怎样从研究证据中形成中的具名方法与证据范围",
       "evidenceIds": [
@@ -154,7 +154,7 @@
     },
     {
       "id": "cl-pm-urban-health",
-      "textTemplate": "现在可以沿两篇明确相接的历史方法完成计算。城市近地初级PM₂.₅的{{input.facts.primaryUrbanGround.value}} mg/kg先换成{{evaluated.historical.factors.primaryUrban.intakeKgPerKg.exact}} kg吸入/kg排放，再乘{{input.facts.effect.value}} DALY/kg吸入，得到{{evaluated.historical.factors.primaryUrban.calculated.exact}} DALY/kg排放。吸入质量在乘法中消去，留下的分母是排放质量；Gronlund表2按其显示精度给出{{input.facts.reportedPrimaryUrban.value}}。这条算式重建的是发布因子的连接，不是用新观测重新估计它的健康关系。",
+      "textTemplate": "把吸入比例和效应因子相乘，就能重算历史例子中的表征因子。城市近地初级PM₂.₅的{{input.facts.primaryUrbanGround.value}} mg/kg先换成{{evaluated.historical.factors.primaryUrban.intakeKgPerKg.exact}} kg吸入/kg排放，再乘{{input.facts.effect.value}} DALY/kg吸入，得到{{evaluated.historical.factors.primaryUrban.calculated.exact}} DALY/kg排放。吸入质量在乘法中消去，留下的分母是排放质量；Gronlund表2按其显示精度给出{{input.facts.reportedPrimaryUrban.value}}。这个算式重现了发布值的计算关系。健康效应仍来自原研究所用的资料和模型。",
       "kind": "calculation",
       "scope": "把吸入量与健康损害接起来中的具名方法与证据范围",
       "evidenceIds": [
@@ -198,7 +198,7 @@
     },
     {
       "id": "cl-pm-rural-health",
-      "textTemplate": "保留同一个效应因子EF，把源改成该方法的乡村近地原型，吸入比例{{input.facts.primaryRuralGround.value}} mg/kg给出{{evaluated.historical.factors.primaryRural.calculated.exact}} DALY/kg；偏远原型的{{input.facts.primaryRemoteGround.value}} mg/kg给出{{evaluated.historical.factors.primaryRemote.calculated.exact}} DALY/kg。原表分别发布{{input.facts.reportedPrimaryRural.value}}和{{input.facts.reportedPrimaryRemote.value}}。按表列吸入比例 {{input.facts.primaryUrbanGround.value}} / {{input.facts.primaryRuralGround.value}} 比较，而不再对两项已舍入的发布表征值相除，城市/乡村比约为{{evaluated.historical.urbanRuralRatioReaderRounded}}；因为该效应因子固定，这个差别在该算例中完全来自吸入比例，不能称为实测的城乡健康损失倍数。",
+      "textTemplate": "用同一个效应因子EF计算乡村近地原型，吸入比例{{input.facts.primaryRuralGround.value}} mg/kg给出{{evaluated.historical.factors.primaryRural.calculated.exact}} DALY/kg；偏远原型的{{input.facts.primaryRemoteGround.value}} mg/kg给出{{evaluated.historical.factors.primaryRemote.calculated.exact}} DALY/kg。原表分别发布{{input.facts.reportedPrimaryRural.value}}和{{input.facts.reportedPrimaryRemote.value}}。按表列吸入比例 {{input.facts.primaryUrbanGround.value}} / {{input.facts.primaryRuralGround.value}} 比较，而不再对两项已舍入的发布表征值相除，城市/乡村比约为{{evaluated.historical.urbanRuralRatioReaderRounded}}；因为该效应因子固定，这个差别在该算例中完全来自吸入比例，不能称为实测的城乡健康损失倍数。",
       "kind": "calculation",
       "scope": "把吸入量与健康损害接起来中的具名方法与证据范围",
       "evidenceIds": [
@@ -233,7 +233,7 @@
     },
     {
       "id": "cl-pm-precursor-health",
-      "textTemplate": "SO₂的路径则需要一直保留前体分母。城市条目的{{input.facts.so2Urban.value}} mg吸入PM₂.₅/kg排放SO₂，乘上同一健康效应后得到{{evaluated.historical.factors.so2Urban.calculated.exact}} DALY/kg排放SO₂，与原表{{input.facts.reportedSo2Urban.value}}的精度相符。另外两项的表列比例为：NOₓ {{input.facts.noxUrban.value}}、NH₃ {{input.facts.nh3Urban.value}} mg吸入PM₂.₅/kg各自前体排放。同样的连接给出城市NOₓ的{{evaluated.historical.factors.noxUrban.calculated.exact}}、NH₃的{{evaluated.historical.factors.nh3Urban.calculated.exact}} DALY/kg各自排放物。这些数值表达经颗粒形成路径估计的损害，不能当作直接吸入三种气体的健康因子；这些系数可以比较指定模型对各类排放的表征，却不能独自比较产生它们的产品，产品服务和相应排放量仍需清单给出。",
+      "textTemplate": "从SO₂排放开始计算时，吸入比例和最终表征因子都以排出的SO₂质量为分母，健康效应因子则以吸入的PM₂.₅质量为分母。城市条目的吸入比例为{{input.facts.so2Urban.value}} mg吸入PM₂.₅/kg排放SO₂。将分子中的毫克换算为千克，再乘同一健康效应因子，得到{{evaluated.historical.factors.so2Urban.calculated.exact}} DALY/kg排放SO₂，与原表{{input.facts.reportedSo2Urban.value}}的精度相符。另外两项的表列比例为：NOₓ {{input.facts.noxUrban.value}}、NH₃ {{input.facts.nh3Urban.value}} mg吸入PM₂.₅/kg各自前体排放。按同样的方法相乘，得到城市NOₓ的{{evaluated.historical.factors.noxUrban.calculated.exact}}、NH₃的{{evaluated.historical.factors.nh3Urban.calculated.exact}} DALY/kg各自排放物。这些数值表达经颗粒形成路径估计的损害，不能当作直接吸入三种气体的健康因子；这些系数可以比较指定模型对各类排放的表征，却不能独自比较产生它们的产品，产品服务和相应排放量仍需清单给出。",
       "kind": "calculation",
       "scope": "把吸入量与健康损害接起来中的具名方法与证据范围",
       "evidenceIds": [
@@ -269,7 +269,7 @@
     },
     {
       "id": "cl-pm-modern-values",
-      "textTemplate": "例如，在这份2024年原始表的澳大利亚地面初级PM₂.₅条目中，把单位改写成微DALY/kg排放物，城市情景的边际、平均值分别约为{{evaluated.glam.factors.urbanMarginal.microDalyPerKgReaderRounded}}和{{evaluated.glam.factors.urbanAverage.microDalyPerKgReaderRounded}}；乡村情景分别约为{{evaluated.glam.factors.ruralMarginal.microDalyPerKgReaderRounded}}和{{evaluated.glam.factors.ruralAverage.microDalyPerKgReaderRounded}}。微DALY是百万分之一DALY，这里只是缩短数值的写法，分母始终是一千克所列排放物。这四个量已经是表征结果，不再乘前面历史例子的{{input.facts.effect.value}}。",
+      "textTemplate": "例如，在这份2024年原始表的澳大利亚地面初级PM₂.₅条目中，把单位改写成微DALY/kg排放物，城市情景的边际、平均值分别约为{{evaluated.glam.factors.urbanMarginal.microDalyPerKgReaderRounded}}和{{evaluated.glam.factors.urbanAverage.microDalyPerKgReaderRounded}}；乡村情景分别约为{{evaluated.glam.factors.ruralMarginal.microDalyPerKgReaderRounded}}和{{evaluated.glam.factors.ruralAverage.microDalyPerKgReaderRounded}}。微DALY是百万分之一DALY，这里只是缩短数值的写法，分母始终是一千克所列排放物。这四个因子已经按原排放物质量表示损害，计算时不能再乘前面历史例子的{{input.facts.effect.value}}。",
       "kind": "calculation",
       "scope": "方法说明与实际发行的因子中的具名方法与证据范围",
       "evidenceIds": [
@@ -305,7 +305,7 @@
     },
     {
       "id": "cl-pm-modern-ratios",
-      "textTemplate": "用未舍入的原表值计算，平均/边际比在城市情景约为{{evaluated.glam.ratios.urbanAverageMarginal.readerRounded}}，在乡村情景约为{{evaluated.glam.ratios.ruralAverageMarginal.readerRounded}}。一个小于一，一个大于一。它们不能单独解释差别究竟由哪项背景或汇总条件造成，却足以限定“平均一定大于边际”的概括。相同数学名称仍须跟随各方法的曲线、参考状态和区域聚合，不能脱离这些条件给出固定排序。",
+      "textTemplate": "用未舍入的原表值计算，平均/边际比在城市情景约为{{evaluated.glam.ratios.urbanAverageMarginal.readerRounded}}，在乡村情景约为{{evaluated.glam.ratios.ruralAverageMarginal.readerRounded}}。一个小于一，一个大于一。它们不能单独解释差别究竟由哪项背景或汇总条件造成，却足以限定“平均一定大于边际”的概括。比较两类因子时，仍须看具体方法采用的响应曲线、参考状态和区域汇总方式。",
       "kind": "calculation",
       "scope": "方法说明与实际发行的因子中的具名方法与证据范围",
       "evidenceIds": [
