@@ -1,3 +1,4 @@
+import partialHistory from '../config/exchange-semantics-partial-history.json' with { type: 'json' };
 import { printUnitAnchor } from './reader-book.mjs';
 import { editionDigest, readableBookReviewSubject, sha256, verifyReadableBookReviewReceipts } from './reader-current-edition.mjs';
 import { readerCopyeditSource } from './reader-copyedit-pins.mjs';
@@ -76,7 +77,19 @@ export const containerPrintLinks = Object.freeze([
   source, target, fragment, href: `${target}/#${fragment}`, printId: `${printUnitAnchor(target)}-${fragment}`,
 })));
 
+export const historyPrintPointerTitleLayout = 'S01:current-print-pointer-titles';
+const historyPointerTitles = new Map([
+  ['/docs/book/early-container-policy-and-systems', ['政策尺度', '容器比较与政策判断']],
+  ['book-framework-responsibilities', ['框架职责', '评价框架与分析步骤']],
+]);
+export const historyPrintPointerTitleCopy = Object.freeze(partialHistory.projection.map(row => {
+  const titles = historyPointerTitles.get(row.route);
+  return Object.freeze(titles ? { ...row, text: row.text.replace(`见《${titles[0]}》`, `见《${titles[1]}》`) } : { ...row });
+}));
+
 const copyeditLayouts = new Map([
+  [historyPrintPointerTitleLayout, (before, after) => same(before, partialHistory.projection)
+    && same(after, historyPrintPointerTitleCopy)],
   [containerPrintLinkLayout, (before, after) => same(before, []) && same(after, containerPrintLinks)],
   ['book:numbering-pin', (before, after) => hash(before) && hash(after)],
   ['book:continuations', rowCopy({

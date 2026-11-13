@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-13
-lastReviewedCommit: 8026b46658c8cf0af31bd28f04e00c6a3cd660c5
+lastReviewedCommit: c6aeb8c0685a0f304956d5cdb675e14512e8f945
 ---
 
 # Publication architecture
@@ -609,7 +609,7 @@ The two-process numerical example remains author-stipulated prose with its exist
 
 B08 consumes C18, S02 and S05 in one four-section shared MDX source while preserving the fine website pages. `exchange-semantics-original.json` separately binds60original occurrences/56identities,14ordinary blocks and33case-bound responsibilities. The final-prose receipt binds full canonical records, actual section order, four source hashes and each ordinary block's reviewed explanation or navigation. Original conservation does not grant manuscript acceptance.
 
-S01 remains a registered whole source. A separately pinned partial plan replaces eight print-only canonical occurrences with meaningful native cross-references to accepted B02/B03/B04/B08 notes; APOS and all six ordinary paragraphs remain. The same projection drives body rendering, note planning and the global reference index. The final receipt binds all eight full destination records and the unchanged complete S01 website bytes. M01/M02 responsibilities and the transitional APOS repetition remain explicit development obligations, not hidden whole-source completion.
+S01 remains a registered whole source. A separately pinned partial plan replaces eight print-only canonical occurrences with meaningful native cross-references to accepted B02/B03/B04/B08 notes; APOS and all six ordinary paragraphs remain. The same projection drives body rendering, note planning and the global reference index. The #95 `S01:current-print-pointer-titles` amendment can update the chapter titles displayed by six of the eight current print pointers. It checks the complete original and revised rows and compares the labels with the actual book numbering. The eight paragraph positions, canonical claim identities, native note destinations and earlier citation titles remain bound to the existing partial plan. The final receipt binds all eight full destination records and the unchanged complete S01 website bytes. M01/M02 responsibilities and the transitional APOS repetition remain explicit development obligations, not hidden whole-source completion.
 
 The original347affected historical records, including three incoming front-matter links, are checked exactly before remapping. Nineteen actual c0hosted print headings extend4,076prior obligations to4,095. Old43/9/7/9-note groups retain their own title, edition and exact subset destinations; S01's method headings remain where its ordinary explanations still live. No earlier frozen acceptance or citation inventory is regenerated.
 

@@ -1,10 +1,11 @@
+import partialHistory from '../config/exchange-semantics-partial-history.json' with { type: 'json' };
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 import capture from '../config/reader-copyedit-8148-capture.json' with { type: 'json' };
 import { editionDigest, matchesAcceptedFile, readableBookReviewSubject, sha256 } from './reader-current-edition.mjs';
-import { containerPrintLinkLayout, containerPrintLinks, copyeditChanges, copyeditLayout, copyeditOutput, copyeditSourceStructure, egridTableCopy, qualifyReaderCopyedit, readerCopyeditSupportReferences, restoreWallStaticCopy, selectReaderCopyedit, verifyReaderCopyeditSupport, wallStaticCopy } from './reader-copyedit.mjs';
+import { containerPrintLinkLayout, containerPrintLinks, copyeditChanges, copyeditLayout, copyeditOutput, copyeditSourceStructure, egridTableCopy, historyPrintPointerTitleCopy, historyPrintPointerTitleLayout, qualifyReaderCopyedit, readerCopyeditSupportReferences, restoreWallStaticCopy, selectReaderCopyedit, verifyReaderCopyeditSupport, wallStaticCopy } from './reader-copyedit.mjs';
 import { copyeditHistoryEntries, copyeditHistoryPlan, fingerprintCopyeditPrintParts, validateCopyeditHistory } from './reader-copyedit-history.mjs';
 import { readerCopyeditCaptureDigest, readerCopyeditSource } from './reader-copyedit-pins.mjs';
 
@@ -335,4 +336,21 @@ test('the container print pair accepts only its two fixed authored links and mat
   const scope = observed['/print#' + target.printId];
   scope.claimIds = ['different-claim'];
   assert(validateCopyeditHistory(new Map(), observed, plan).some(error => error.includes('ordered scope')));
+});
+
+test('S01 current print pointer layout permits only the six exact title substitutions', () => {
+  const from = partialHistory.projection;
+  const to = historyPrintPointerTitleCopy;
+  assert.equal(to.length, 8);
+  assert.deepEqual(to.filter((row, index) => row.text !== from[index].text).map(row => row.claimId), [
+    'cl-early-policy-question-version', 'cl-book-framework-project', 'cl-book-framework-epa1993',
+    'cl-book-framework-unep', 'cl-book-framework-guide', 'cl-book-framework-epa2006',
+  ]);
+  const layout = { key: historyPrintPointerTitleLayout, from: editionDigest(from), to };
+  assert.deepEqual(copyeditLayout(historyPrintPointerTitleLayout, from, { layouts: [layout] }), to);
+  for (const change of [{ text: from[0].text }, { route: from[1].route }, { sourceHeading: '错误位置' }, { claimId: 'cl-other' }]) {
+    assert.throws(() => copyeditLayout(historyPrintPointerTitleLayout, from, {
+      layouts: [{ ...layout, to: [{ ...to[0], ...change }, ...to.slice(1)] }],
+    }), /protected structure/);
+  }
 });
