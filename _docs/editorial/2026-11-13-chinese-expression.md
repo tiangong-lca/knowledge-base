@@ -98,6 +98,10 @@ resources only when a specific necessary gap is established. Programme9's wider
 research, formal-edition and human-review duties remain open unless separately
 completed with their own evidence.
 
+The completed [inventory](2026-11-13-research-inventory.md) records current
+coverage, prioritized gaps, actual candidate inspections and access limits. It
+does not modify the original research registers or publish private originals.
+
 ## Current state
 
 The writing requirements are committed and pushed as `77c2d54`. A complete first

@@ -46,6 +46,16 @@ reading scope, formal publication and human validation remain distinct. The
 paragraph below describing pre-merge delivery steps is a historical checkpoint;
 the linked Issue/PR/controller records own the completed outcome.
 
+The [research and candidate inventory](editorial/2026-11-13-research-inventory.md)
+maps all eight domains and twelve appendix responsibilities to current evidence
+and concrete gaps. Its 226 work records resolve to 171 works with bounded
+readings and 55 without a corresponding reading; duplicate and historical gap
+rows are not counted as independent open problems. Candidate identity checks
+separate actual publisher/official-carrier inspection from the unlocated private
+course originals. No new canonical reading status, source rights or candidate
+adoption follows from the inventory. Current copyediting can proceed without
+the user supplying materials or purchasing access.
+
 ## 2026-11-12 full manuscript revision and particulate integration
 
 [Issue 93](https://github.com/tiangong-lca/knowledge-base/issues/93) resumes the full
