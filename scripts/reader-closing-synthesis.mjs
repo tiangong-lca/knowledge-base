@@ -88,7 +88,7 @@ export function assertClosingSynthesisHeadingHistory(value=captured,independentD
 /** @param {any} edition */
 export function assertClosingSynthesisRegistration(edition) {
   const units=edition?.units??[],found=units.filter(unit=>unit.key===closingSynthesisKey),unit=found[0];
-  if(found.length!==1||unit.source!==closingSynthesisManuscript||unit.kind!=='chapter'||unit.part!=='判断边界'||!same(unit.coverage,closingSynthesisRoutes)||!same(unit.sections,currentBookLayout('B32:registered-sections',closingSynthesisSections.map(({id,title})=>({id,title}))))||units.some(unit=>closingSynthesisRoutes.includes(unit.key)))throw new Error('B32 requires its actual four-section book assembly and exact two-source coverage');
+  if(found.length!==1||unit.source!==closingSynthesisManuscript||unit.kind!=='chapter'||unit.part!==currentBookLayout('book:part-title:7', '判断边界')||!same(unit.coverage,closingSynthesisRoutes)||!same(unit.sections,currentBookLayout('B32:registered-sections',closingSynthesisSections.map(({id,title})=>({id,title}))))||units.some(unit=>closingSynthesisRoutes.includes(unit.key)))throw new Error('B32 requires its actual four-section book assembly and exact two-source coverage');
 }
 /** @param {any} prose @param {string|null} independentDigest */
 export function assertClosingSynthesisProseAccepted(prose,independentDigest=closingSynthesisProseDigest) {

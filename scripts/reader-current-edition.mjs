@@ -113,7 +113,7 @@ export function readableBookReviewSubject(unit, kind) {
 export const validReadableBookReviewFile = path => typeof path === 'string'
   && /^_docs\/editorial\/review-evidence\/[a-z0-9-]+\/[a-z0-9-]+\.json$/.test(path);
 
-function reviewReceipts(unit, artifacts) {
+export function verifyReadableBookReviewReceipts(unit, artifacts) {
   if (!Array.isArray(unit.reviewEvidence) || unit.reviewEvidence.length !== 3 || !(artifacts instanceof Map)) return false;
   const kinds = new Set(unit.reviewEvidence.map(row => row.kind));
   if (!['source', 'reader', 'output'].every(kind => kinds.has(kind))) return false;
@@ -268,7 +268,7 @@ export function qualifyReadableBookEdition(baseline, baselineDigest, acceptance,
   for (const unit of units) {
     if (!nonempty(unit.rationale) || !Array.isArray(unit.scope) || !unit.scope.length
         || unit.scope.some(key => !nonempty(key)) || new Set(unit.scope).size !== unit.scope.length
-        || !Array.isArray(unit.changes) || !unit.changes.length || !Array.isArray(unit.consumers) || !reviewReceipts(unit, reviewArtifacts))
+        || !Array.isArray(unit.changes) || !unit.changes.length || !Array.isArray(unit.consumers) || !verifyReadableBookReviewReceipts(unit, reviewArtifacts))
       throw new Error(`Readable book unit lacks complete scope, change or review evidence: ${unit.id}`);
     for (const row of unit.changes) {
       if (!Object.hasOwn(expected, row.kind) || !nonempty(row.key) || !hasScope(unit.scope, row.key)
@@ -321,12 +321,12 @@ export function matchesAcceptedRecord(qualification, kind, expected, actual, pro
   if (same(expected, actual)) return true;
   if (!qualification || qualification.errors?.length || !actual || expected && expected.id !== actual.id) return false;
   const change = qualification.changes.record.get(`${kind}:${actual.id}`);
-  return Boolean(change && (expected ? change.from?.[projection] === editionDigest(expected) : change.from === null)
+  return Boolean(change && (expected ? [change.from?.[projection], change.intermediate?.[projection]].includes(editionDigest(expected)) : change.from === null)
     && change.to?.[projection] === editionDigest(actual));
 }
 
 export function matchesAcceptedFile(qualification, path, expectedHash, actualHash) {
   if (expectedHash === actualHash) return true;
   const change = !qualification?.errors?.length && qualification?.changes.file.get(path);
-  return Boolean(change && change.from === expectedHash && change.to === actualHash);
+  return Boolean(change && [change.from, change.intermediate].includes(expectedHash) && change.to === actualHash);
 }

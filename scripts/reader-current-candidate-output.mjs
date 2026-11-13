@@ -2,6 +2,7 @@ import { readdir, readFile } from 'node:fs/promises';
 import { join, relative, resolve } from 'node:path';
 import { getPresentationUnits } from './reader-numbering.mjs';
 import { validateReaderNumberingOutput } from './reader-numbering-output.mjs';
+import { fingerprintCopyeditPrintParts } from './reader-copyedit-history.mjs';
 import { sha256 } from './reader-current-edition.mjs';
 import { fingerprintReaderCss, readerCssArtifact, fingerprintReadableBookPublicArtifact, readableBookPublicCatalogPaths, readableBookPublicResearchPaths, readerPublicDownloads } from './reader-current-output.mjs';
 
@@ -44,4 +45,4 @@ for (const path of [...readableBookPublicCatalogPaths, ...readableBookPublicRese
   publicArtifacts.push({ path, sha256: fingerprintReadableBookPublicArtifact(path, bytes) });
 }
 publicArtifacts.push({ path: readerCssArtifact, sha256: await fingerprintReaderCss(root) });
-console.log(JSON.stringify({ status: 'observed-output', articles: results, publicArtifacts }, null, 2));
+console.log(JSON.stringify({ status: 'observed-output', articles: results, publicArtifacts, printParts: fingerprintCopyeditPrintParts(documents.get('/print')) }, null, 2));

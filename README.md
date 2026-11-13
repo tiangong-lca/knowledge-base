@@ -14,11 +14,19 @@ checkPaths:
   - "package.json"
   - "app/**"
   - "scripts/**"
-lastReviewedAt: 2026-11-12
-lastReviewedCommit: f650600e6303352252e8d6fad14607c2061a9f58
+lastReviewedAt: 2026-11-13
+lastReviewedCommit: 77c2d548e68aa9578b68baf5e18d69f050443444
 ---
 
 # LCA Living Knowledge Base and Review
+
+[Chinese expression revision #95](https://github.com/tiangong-lca/knowledge-base/issues/95)
+adds explicit language requirements, a complete first-part sample and independent
+review before whole-manuscript copyediting. Its
+[protocol](_docs/editorial/2026-11-13-chinese-expression.md) keeps research inventory,
+source meaning, reader assessment and publication evidence separate. The 8148
+successor mechanism preserves all prior acceptance and is inactive until the
+actual new source/reader/output evidence and independent pin are recorded.
 
 [Complete manuscript revision #93](https://github.com/tiangong-lca/knowledge-base/issues/93)
 follows the [whole-book protocol](_docs/editorial/2026-11-12-complete-readable-book.md).
@@ -84,6 +92,13 @@ checkout. Its artifacts go to `.reader-review-output`, never production `out`.
 The normal validator and exporter reject this preview as a publication. Review
 files and independently pinned acceptance are required before a production
 build; the flag does not approve source meaning, reader quality or output.
+
+For #95, the preview is a separate `reader-copyedit-current.json` overlay; do not
+turn the old accepted generation back into a draft. The source and output
+observation commands in `scripts/reader-copyedit-observe.mjs` collect candidate
+evidence without approving it. A production successor additionally requires four
+real supporting summaries and complete 88-article/nine-artifact/seven-part output
+coverage. See the architecture contract for exact protection boundaries.
 
 ## Delivery
 
@@ -212,9 +227,10 @@ completion remain separate from the research and integrity checks.
 The website's fine reading sequence and the book's assembled chapters use separate,
 explicitly named numbering. Both follow the seven-part reading argument. The current
 book contains 32 chapters, two front matter units, two topics and four appendices.
-B25 combines C14/C15 in one chapter with 14 notes. The current 152 formal chapter sections
-still exceed the 120-section goal; whole-book authoring and formal publication remain
-editorial work. Display numbers never replace stable heading or citation IDs.
+B25 combines C14/C15 in one chapter with 14 notes. The accepted Main8148 manuscript
+has 120 formal chapter sections; the earlier 152-section count belongs to the
+pre-revision generation. Broader research and formal-edition qualification remain
+open. Display numbers never replace stable heading or citation IDs.
 `config/reader-numbering.json` and the source/output validators bind each actual
 number, title, hierarchy and navigation target. See the reader publication contract
 for the user's numbering requirements and the continuing full-book scope.

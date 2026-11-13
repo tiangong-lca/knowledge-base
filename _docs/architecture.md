@@ -16,11 +16,50 @@ checkPaths:
   - "scripts/**"
   - "package.json"
   - ".github/**"
-lastReviewedAt: 2026-11-12
-lastReviewedCommit: f650600e6303352252e8d6fad14607c2061a9f58
+lastReviewedAt: 2026-11-13
+lastReviewedCommit: 77c2d548e68aa9578b68baf5e18d69f050443444
 ---
 
 # Publication architecture
+
+## Chinese expression successor
+
+The #95 copyedit keeps the accepted complete-readable-book generation intact.
+`reader-copyedit-8148-capture.json` is separately pinned to the actual 50 saved
+HTML documents, 2,401 native addresses, source tree and hosted manifest of Main
+`8148f71`. `reader-copyedit-current.json` is inactive until its independent unit
+pin and real review evidence are supplied. Private rendering uses an isolated
+preview overlay; the production source gate and exporter refuse it.
+
+The successor compares exact 8148 file and record fingerprints with actual new
+values, then verifies the old accepted generation through its original
+fingerprints. Ordered claim occurrences, research and scientific metadata,
+claim/template scope and caveats, numerical inputs, template slots and protected
+component structure remain fixed. Layout changes use explicit reader-text keys
+and preserve their field shapes, members, native IDs and destinations. A language
+unit cannot override scientific, consumer-membership or interaction-mode keys.
+
+Ordinary links retain their actual destinations in each original block, including
+empty positions; preserving an article-wide link list is insufficient. Handwritten
+table bodies retain their data, units and positions. Table-header wording still
+needs independent review of each column's meaning. A changed title retains its
+native address and a bounded, accessible statement of the 8148 title and source;
+unchanged wording does not add a reader notice. The actual seven print-part
+headers include their titles, introductions and history disclosure in the output
+fingerprints. Reader controls and their ancestors must remain available in the
+intended screen/fragment context; ordinary print-media hiding is separate.
+
+Three new artifact/report pairs bind source, reader and output subjects after
+the predecessor's date. Their supporting files are the four fixed, real JSON
+summaries under `_docs/editorial/review-evidence/chinese-expression-95/`:
+`before-after`, `source-meaning-review`, `reader-review` and `actual-output-review`.
+The loader checks bytes, role, unit, subject, date and regular-file identity;
+missing files, symlinks, duplicate roles and arbitrary paths fail. Source evidence
+binds changes and affected consumers. Reader evidence accounts for every actual
+book/web article, including reasoned retention. Output evidence covers all 88
+articles, nine public artifacts and seven print parts, with unchanged outputs
+explicitly retained. These checks identify the reviewed objects; the main
+reviewer remains responsible for the reports' substantive truth.
 
 ## Complete-manuscript current edition
 

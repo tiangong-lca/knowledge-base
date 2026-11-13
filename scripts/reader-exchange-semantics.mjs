@@ -27,7 +27,7 @@ export function assertExchangeSemanticsCitationSources(value=citationSources) { 
 export function assertExchangeSemanticsPartialHistory(value=partialHistory) { assertPin(value,'partial','partial S01 source plan'); }
 export function assertExchangeSemanticsRegistration(edition) {
   const unit=edition?.units?.find(unit=>unit.key===exchangeSemanticsRoute);
-  if (!unit || unit.source!==exchangeSemanticsRoute || unit.kind!=='chapter' || unit.part!=='可比世界' || !same(unit.sections,currentBookLayout('B08:headings',exchangeSemanticsTitles.map(title=>({id:title,title})))) || !same(unit.coverage,['/docs/flows','/docs/characterization'])) throw new Error('Missing or changed shared B08 four-section / exclusive S02/S05 registration');
+  if (!unit || unit.source!==exchangeSemanticsRoute || unit.kind!=='chapter' || unit.part!==currentBookLayout('book:part-title:2', '可比世界') || !same(unit.sections,currentBookLayout('B08:headings',exchangeSemanticsTitles.map(title=>({id:title,title})))) || !same(unit.coverage,['/docs/flows','/docs/characterization'])) throw new Error('Missing or changed shared B08 four-section / exclusive S02/S05 registration');
   const history=edition.units.find(unit=>unit.key===historyRoute);
   if (!history || history.source!==historyRoute || history.kind!==currentBookLayout('S01:print-kind', 'topic') || history.coverage?.length || edition.units.some(unit=>unit.coverage?.includes(historyRoute))) throw new Error('S01 must remain a complete registered source with separately bounded print projection');
 }

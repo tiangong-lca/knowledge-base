@@ -1,5 +1,6 @@
+import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
 import { NumberedTitle } from '@/components/numbered-heading';
-import { assertNumberingToc, currentPrintReadingHref, getContinuationLink, getHeadingNumbering, getUnitHeadingPlan } from '@/scripts/reader-numbering.mjs';
+import { assertNumberingToc, currentPrintReadingHref, printReadingEntryAnchor, getContinuationLink, getHeadingNumbering, getUnitHeadingPlan } from '@/scripts/reader-numbering.mjs';
 import { TeachingCase } from '@/components/teaching-case';
 import { projectExchangeSemanticsRaw, historyPrintCrossReference, historyPrintDestination } from '@/scripts/reader-exchange-semantics.mjs';
 import Link from 'next/link';
@@ -68,16 +69,17 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
       const headingProps: HTMLAttributes<HTMLHeadingElement> & {'data-reader-heading-key': string} = { ...props, id, 'data-reader-heading-key': numbered.key };
       if (print && level+2>6) throw new Error(`Book heading exceeds the available HTML hierarchy: ${page.url} ${props.id}`);
       const heading = createElement(print ? `h${level + 2}` : defaults[name] ?? name, headingProps, <NumberedTitle number={numbered.number}>{props.children}</NumberedTitle>);
-      return id ? <><LegacyCitationAliases ids={legacy.aliases.get(id)} target={id} />{heading}<RetainedScope entry={legacy.scopes.get(id)} /></> : heading;
+      return id ? <><LegacyCitationAliases ids={legacy.aliases.get(id)} target={id} />{heading}<RetainedScope entry={legacy.scopes.get(id)} /><CopyeditHistoricalTitle path={print ? '/print' : page.url} id={id} /></> : heading;
     }];
   }));
-  async function RetainedScope({ entry }: { entry?: LegacyEntry }) {
-    if (!entry?.scope) return null;
+  async function RetainedScope({ entry, readingTitle }: { entry?: LegacyEntry; readingTitle?: string }) {
+    const history = readingTitle ? <CopyeditHistoricalTitle path="/print" id={readingTitle} /> : null;
+    if (!entry?.scope) return history;
     const links = await Promise.all(entry.scope.targets.map(async target => ({ href: citationHref(target, entry.path), label: await getCitationLabel(target) })));
-    return <div data-legacy-scope={entry.id} className="legacy-citation-context">
+    return <><div data-legacy-scope={entry.id} className="legacy-citation-context">
       <p><CitationVersion edition={entry.edition} /></p><p>{entry.scope.text}</p>
       <ul>{links.map(link => <li key={link.href}><a href={link.href} data-legacy-scope-destination="">{link.label}</a></li>)}</ul>
-    </div>;
+    </div>{history}</>;
   }
   const notices = await Promise.all(legacy.notices.map(async notice => ({
     ...notice,
@@ -88,7 +90,7 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
   })));
 
   return <>
-    <RetainedScope entry={legacy.scopes.get(prefix)} />
+    <RetainedScope entry={legacy.scopes.get(prefix)} readingTitle={print ? printReadingEntryAnchor(page.url) : undefined} />
     <MDX components={getMDXComponents({ Prose: ChapterProse, Claim: Paragraph, ReaderSection, TeachingCase: ChapterTeachingCase, a: ReaderLink, ...headings })} />
     {plan.notes.length > 0 && <section className="chapter-notes not-prose" aria-labelledby={plan.headingId}>
       <LegacyCitationAliases ids={legacy.aliases.get(plan.headingId)} target={plan.headingId} />

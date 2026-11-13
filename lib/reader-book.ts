@@ -43,7 +43,8 @@ import { cache } from 'react';
 import baseline from '@/config/citation-baseline.json';
 import hostedHistory from '@/config/readable-book-hosted-history.json';
 import { qualifyReadableBookCitations } from '@/scripts/reader-current-citations.mjs';
-import { currentBookPlan, isReadableBookReviewPreview } from '@/scripts/reader-current-expectations.mjs';
+import { copyeditHistoryEntries, copyeditHistoryPlan } from '@/scripts/reader-copyedit-history.mjs';
+import { currentBookPlan, currentCopyedit, isReadableBookReviewPreview } from '@/scripts/reader-current-expectations.mjs';
 import placements from '@/config/citation-placements.json';
 import history from '@/config/citation-history.json';
 import edition from '@/config/book-edition.json';
@@ -89,7 +90,8 @@ const earlierEntries: LegacyEntry[] = remapDataApplicabilityCitations(remapClima
 const toxicityEntries = remapToxicityPathwaysCitations([...earlierEntries, ...toxicityPathwaysHeadingEntries()], toxicityAccepted);
 const pedigreeEntries = remapReadablePedigreeCitations([...toxicityEntries, ...readablePedigreeHeadingEntries()], pedigreeAccepted);
 const integratedEntries = remapPmSelectionCitations([...pedigreeEntries, ...pmSelectionHeadingEntries()], pmAccepted);
-const legacyEntries: LegacyEntry[] = qualifyReadableBookCitations(integratedEntries, hostedHistory, currentBookPlan.migrations);
+const legacyEntries: LegacyEntry[] = copyeditHistoryEntries(
+  qualifyReadableBookCitations(integratedEntries, hostedHistory, currentBookPlan.migrations), copyeditHistoryPlan(currentCopyedit));
 export function getLegacyCitations(route: string, print: boolean) {
   const path = print ? '/print' : route, aliases = new Map<string, LegacyEntry[]>(), notices: LegacyEntry[] = [], scopes = new Map<string, LegacyEntry>();
   for (const entry of legacyEntries) {

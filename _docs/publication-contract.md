@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-13
-lastReviewedCommit: 8148f71d1b57ea06ee2ef44c6fe3477ed8f253ac
+lastReviewedCommit: 77c2d548e68aa9578b68baf5e18d69f050443444
 ---
 
 # Publication contract
@@ -235,3 +235,14 @@ delivery still require their own evidence.
 ## Readable-writing adoption
 
 The user-adopted [writing and teaching standard](editorial/readable-writing-and-teaching.md) governs Chinese manuscript revision. Reader-essential conditions stay with their claims; source fidelity and comprehension remain independent checks. Its dated assessment and illustrative edits do not acquire scientific approval through adoption. A prose-only revision of a numerical case may retain its immutable input while renewing the exact publication templates, canonical materialization and affected-consumer acceptance. Original snapshots and all unrelated input/publication identities remain protected.
+
+The #95 language successor starts from the actual published Main8148 generation,
+not from a rewritten original inventory. The previous accepted unit and its
+receipts remain immutable. Current source/reader/output acceptance names the real
+before/after text, affected consumers and preserved scientific meaning. Supporting
+summaries must exist as independently bound public files; private source originals
+and full classroom material are not substitutes and remain outside the repository.
+Hashes, dates and complete output coverage cannot themselves prove that a language
+change preserves a source's meaning. The review must check subjects, quantities,
+comparison pairs, conditions, attribution, negation and each table column. A
+newly found source question returns to its actual evidence before publication.

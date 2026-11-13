@@ -171,7 +171,7 @@ export function assertPmSelectionRegistration(edition, accepted) {
   const matches = edition?.units?.filter(unit => routes.includes(unit.key) || routes.includes(unit.source));
   if (!matches || matches.length !== 2 || !same(matches.map(unit => unit.key), routes)
       || matches.some((unit, index) => unit.key !== unit.source || unit.kind !== (index ? 'appendix' : 'chapter') || unit.coverage)
-      || matches[0].part !== '环境后果' || matches[1].part
+      || matches[0].part !== currentBookLayout('book:part-title:4', '环境后果') || matches[1].part
       || accepted && matches.some((unit, index) => !same(unit.sections, sections(currentBookLayout(`B17:${unit.key}:source`, accepted.units[index])))))
     throw new Error('PM selection requires the shared PM chapter and calculation appendix registration');
 }

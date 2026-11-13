@@ -100,7 +100,16 @@ completed with their own evidence.
 
 ## Current state
 
-The task is started and the baseline frozen. The language requirements are
-added in the initial documentation milestone; the first-part revision, independent review, whole-book extension,
-inventory, new acceptance and delivery have not yet been completed. Current
-progress and remaining criteria are maintained in Issue95.
+The writing requirements are committed and pushed as `77c2d54`. A complete first
+part candidate has independent before/after meaning review and actual web/book
+output. DeepSeek has read all five book chapters and six website pages; its
+source questions and language findings are being resolved against actual primary
+passages and revised text. The whole-book extension has not yet begun.
+
+The same-member language-successor mechanism has independent production-path and
+mutation checks. It keeps its production state inactive, with no new acceptance
+pin. Original scientific inputs and old accepted artifacts remain unchanged.
+Research and candidate inventory reports are prepared for the tracked handoff;
+they do not change canonical reading status or complete the wider programme.
+New source/reader/output acceptance, source/main/hosting and exact root delivery
+remain pending. Issue95 records current progress and remaining criteria.

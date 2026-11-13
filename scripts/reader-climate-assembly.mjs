@@ -46,7 +46,7 @@ function assertClimateAssemblyRegistration(edition) {
   if (matches.length !== 1
       || unit.source !== climateAssemblyManuscript
       || unit.kind !== "chapter"
-      || unit.part !== "环境后果"
+      || unit.part !== currentBookLayout('book:part-title:4', "环境后果")
       || !same(unit.coverage, climateAssemblyRoutes)
       || !same(unit.sections, currentBookLayout('B15:registered-sections', plainSections(climateAssemblyTitles)))
       || units.some((row) => climateAssemblyRoutes.includes(row.key))
