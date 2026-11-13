@@ -13,8 +13,8 @@ checkPaths:
   - "AGENTS.md"
   - ".docpact/config.yaml"
   - "_docs/**"
-lastReviewedAt: 2026-11-12
-lastReviewedCommit: f650600e6303352252e8d6fad14607c2061a9f58
+lastReviewedAt: 2026-11-13
+lastReviewedCommit: 8148f71d1b57ea06ee2ef44c6fe3477ed8f253ac
 ---
 
 # Knowledge Base contributor contract

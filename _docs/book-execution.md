@@ -22,6 +22,30 @@ related:
 
 # Approved book execution
 
+## 2026-11-13 Chinese expression revision and research inventory
+
+The user authorized the [Chinese expression task95](https://github.com/tiangong-lca/knowledge-base/issues/95):
+extend the writing guide, revise Part I as a complete sample, obtain independent
+DeepSeek review, then copyedit the whole manuscript. Literature gaps and the three
+retained candidate materials are inventoried in parallel. The
+[revision protocol](editorial/2026-11-13-chinese-expression.md) preserves current
+Main `8148f71d1b57ea06ee2ef44c6fe3477ed8f253ac` and all original scientific inputs,
+historical identities and earlier acceptance evidence. The task uses
+`codex/chinese-expression-95` to `main`; new source/root delivery is separate.
+
+Prior Issues90/93 and source PR94 are fully delivered, including live artifact
+qualification and exact root2340/PR2342. The source and root ordinary completion
+receipts returned delivery_complete:true with both source handoffs complete.
+The merge is not undone by newly observed language defects. Conversely, source,
+numerical and engineering checks do not prove that every Chinese expression is
+natural. The 2026-11-12 diagnosis and new revision preserve that distinction.
+
+The new task does not resume an application goal or claim completion of the
+seven broader programme responsibilities. Private candidate rights, actual
+reading scope, formal publication and human validation remain distinct. The
+paragraph below describing pre-merge delivery steps is a historical checkpoint;
+the linked Issue/PR/controller records own the completed outcome.
+
 ## 2026-11-12 full manuscript revision and particulate integration
 
 [Issue 93](https://github.com/tiangong-lca/knowledge-base/issues/93) resumes the full
