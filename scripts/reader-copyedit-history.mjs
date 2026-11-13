@@ -1,3 +1,4 @@
+import { containerPrintLinkLayout, copyeditLayout, egridTableCopy } from './reader-copyedit.mjs';
 import capture from '../config/reader-copyedit-8148-capture.json' with { type: 'json' };
 import { editionDigest } from './reader-current-edition.mjs';
 import { citationSourceHref } from './reader-citations.mjs';
@@ -7,10 +8,6 @@ const addressOf = target => `${target.path}#${target.id}`;
 const hash = value => typeof value === 'string' && /^[a-f0-9]{64}$/.test(value);
 const text = value => typeof value === 'string' && Boolean(value.trim());
 const same = (a, b) => editionDigest(a ?? null) === editionDigest(b ?? null);
-
-export function readerCopyeditTitleText(row) {
-  return `此处在 ${readerCopyeditSource.capturedAt} 版题为“${row.from}”。查看该版源文件`;
-}
 
 /** The frozen capture remains independent of both current content and acceptance. */
 export function copyeditHistoryPlan(unit, observed = capture, pin = readerCopyeditCaptureDigest) {
@@ -39,7 +36,16 @@ export function copyeditHistoryPlan(unit, observed = capture, pin = readerCopyed
       throw new Error(`Reader copyedit ordinary block differs from its 8148 position: ${key}`);
     ordinary.set(key, row);
   }
-  return { titles, ordinary, chapterTitles, observed };
+  const printLinks = copyeditLayout(containerPrintLinkLayout, [], unit);
+  for (const link of printLinks) {
+    const web = observed.addresses[`${link.target}#${link.fragment}`];
+    const print = observed.addresses[`/print#${link.printId}`];
+    if (web?.kind !== 'heading' || print?.kind !== 'heading' || web.route !== link.target || print.route !== link.target
+        || !web.claimIds.length || !same(web.claimIds, print.claimIds) || web.title !== print.title
+        || web.ordinary.length !== print.ordinary.length)
+      throw new Error('Reader copyedit container links require the exact captured web and print section scopes');
+  }
+  return { titles, ordinary, chapterTitles, observed, printLinks, egrid: copyeditLayout(egridTableCopy.key, egridTableCopy.from, unit) };
 }
 
 export function copyeditHistoryEntries(entries, plan) {
@@ -124,6 +130,24 @@ function historyControlVisible(node) {
 
 const attrs = (node, ...keys) => same(Object.keys(node.attributes).map(key => key.toLowerCase()).sort(), keys.sort());
 
+function matchesDisclosureChildren(node, summary, time, link, row) {
+  if (summary?.tagName !== 'SUMMARY' || link?.tagName !== 'A' || time?.tagName !== 'TIME') return false;
+  const content = parent => parent.childNodes.filter(child => child.nodeType !== 8);
+  const textOnly = parent => content(parent).every(child => child.nodeType === 3);
+  const detailsChildren = content(node), summaryChildren = content(summary);
+  const datePosition = summaryChildren.indexOf(time);
+  const inlineText = children => children.map(child => child.text).join('');
+  return detailsChildren.length === 2 && detailsChildren[0] === summary && detailsChildren[1] === link
+    && !Object.keys(summary.attributes).length
+    && summaryChildren.every(child => child === time || child.nodeType === 3)
+    && inlineText(summaryChildren.slice(0, datePosition)) === '此处在 '
+    && inlineText(summaryChildren.slice(datePosition + 1)) === ` 版题为“${row.from}”。`
+    && textOnly(time) && attrs(time, 'datetime') && time.getAttribute('datetime') === readerCopyeditSource.capturedAt
+    && time.text === readerCopyeditSource.capturedAt
+    && textOnly(link) && attrs(link, 'href') && link.getAttribute('href') === citationSourceHref(readerCopyeditSource.commit)
+    && link.text === '查看该版源文件';
+}
+
 export function validateCopyeditHistory(documents, addresses, plan, printParts) {
   if (!plan) return [];
   const errors = [];
@@ -137,7 +161,24 @@ export function validateCopyeditHistory(documents, addresses, plan, printParts) 
       errors.push(`Reader copyedit changed a native 8148 address or its ordered scope: ${address}`);
       continue;
     }
-    if (!same(actual.bindings, fixed.bindings))
+    let expectedBindings = fixed.bindings;
+    if (fixed.kind === 'chapter' && fixed.route === egridTableCopy.route && plan.egrid === egridTableCopy.to) {
+      expectedBindings = structuredClone(expectedBindings);
+      const row = expectedBindings.tables[0]?.body[0];
+      if (row?.[0].text !== egridTableCopy.label || row?.[1].text !== egridTableCopy.from)
+        throw new Error('Reader copyedit lacks the original eGRID table description at its exact cell');
+      row[1].text = plan.egrid;
+    }
+    const localLink = fixed.kind === 'chapter' && address.startsWith('/print#')
+      ? plan.printLinks.find(link => link.source === fixed.route) : null;
+    if (localLink) {
+      const originalHref = encodeURI(localLink.href);
+      if (expectedBindings.links.flat().filter(href => href === originalHref).length !== 1)
+        throw new Error('Reader copyedit lacks the original container link at its exact paragraph position');
+      expectedBindings = { ...expectedBindings, links: expectedBindings.links.map(block =>
+        block.map(href => href === originalHref ? `#${localLink.printId}` : href)) };
+    }
+    if (!same(actual.bindings, expectedBindings))
       errors.push(`Reader copyedit changed protected ordinary link destinations or table data: ${address}`);
     const change = plan.titles.get(address);
     const chapter = fixed.kind === 'note' || fixed.kind === 'note-group'
@@ -156,10 +197,8 @@ export function validateCopyeditHistory(documents, addresses, plan, printParts) 
       const id = node.getAttribute('data-copyedit-history');
       const address = `${path}#${id}`;
       const row = plan.titles.get(address);
-      const summaries = node.querySelectorAll('summary');
-      const summary = summaries[0];
-      const time = node.querySelectorAll('time');
-      const links = node.querySelectorAll('a');
+      const [summary, link] = node.childNodes.filter(child => child.nodeType === 1);
+      const time = summary?.childNodes.find(child => child.nodeType === 1);
       const target = document.querySelectorAll('[id]').find(candidate => candidate.id === id);
       const native = plan.observed.addresses[address];
       const previous = node.previousElementSibling;
@@ -169,14 +208,8 @@ export function validateCopyeditHistory(documents, addresses, plan, printParts) 
         || native?.kind === 'reading-title' && node.parentNode === target?.parentNode && (articleScope || articleDescription);
       if (!row || used.has(address) || !target || node.tagName !== 'DETAILS'
           || !attrs(node, 'class', 'data-copyedit-history') || node.getAttribute('class') !== 'legacy-citation-context'
-          || summaries.length !== 1 || summary !== node.childNodes.find(child => child.nodeType === 1) || !attrs(summary)
-          || !historyControlVisible(summary) || !historyControlVisible(target) || !nextToTarget
-          || node.text.replace(/\s+/g, '') !== readerCopyeditTitleText(row).replace(/\s+/g, '')
-          || time.length !== 1 || time[0].parentNode !== summary || !attrs(time[0], 'datetime')
-          || time[0].getAttribute('datetime') !== readerCopyeditSource.capturedAt
-          || time[0].text !== readerCopyeditSource.capturedAt
-          || links.length !== 1 || links[0].parentNode !== node || !attrs(links[0], 'href')
-          || links[0].getAttribute('href') !== citationSourceHref(readerCopyeditSource.commit))
+          || !matchesDisclosureChildren(node, summary, time, link, row)
+          || !historyControlVisible(summary) || !historyControlVisible(target) || !nextToTarget)
         errors.push(`Reader copyedit historical title has unexpected text, position or source: ${address}`);
       used.add(address);
     }

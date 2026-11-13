@@ -362,6 +362,17 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
     pages.set(path, surface);
     errors.push(...surface.errors);
   }
+  if (copyedit) {
+    const copyeditErrors = validateCopyeditHistory(documents,
+      observeCopyeditHistory(documents, readerNumberingManifest, readCitationSurface), copyedit, book.current.copyedit.printParts);
+    errors.push(...copyeditErrors);
+    // Article fingerprints already checked the complete normalized output.
+    // Earlier chapter predicates inspect a prose projection after the new
+    // historical apparatus has independently passed its exact DOM checks.
+    if (!copyeditErrors.length) for (const document of documents.values()) {
+      for (const notice of document.querySelectorAll('[data-copyedit-history]')) notice.remove();
+    }
+  }
   for (const [path, document] of documents) {
     qualifyCurrentHistoricalDocument(document, entries, book?.current?.migrations, pages);
     if (book?.current?.migrations?.length)
@@ -373,7 +384,6 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
       errors.push(...validateRenderedPmSelection(document, path, book.catalog, book.pmAccepted));
     }
   }
-  if (copyedit) errors.push(...validateCopyeditHistory(documents, observeCopyeditHistory(documents, readerNumberingManifest, readCitationSurface), copyedit, book.current.copyedit.printParts));
   const print = pages.get('/print');
   if (print) {
     if (JSON.stringify(print.printOrder) !== JSON.stringify(printRoutes)) errors.push('/print: printed unit order differs from the explicit current reading edition');

@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-13
-lastReviewedCommit: 77c2d548e68aa9578b68baf5e18d69f050443444
+lastReviewedCommit: 8026b46658c8cf0af31bd28f04e00c6a3cd660c5
 ---
 
 # Publication architecture
@@ -48,6 +48,17 @@ unchanged wording does not add a reader notice. The actual seven print-part
 headers include their titles, introductions and history disclosure in the output
 fingerprints. Reader controls and their ancestors must remain available in the
 intended screen/fragment context; ordinary print-media hiding is separate.
+
+The #95 container cross-references have one explicit layout amendment,
+`B02:appendix-print-links`. It applies to the exact B02-to-appendix A and
+appendix A-to-B02 source and fragment pairs in `frameworkBookHref`. Each local
+print ID combines the target's existing `printUnitAnchor` and section ID. The
+history validator checks the captured web and print section titles, ordered
+claim scopes and ordinary-block counts, then verifies the actual current
+native targets and the two links in their original paragraph positions. The
+private preview or reviewed successor must carry this amendment. Inactive
+builds retain the 8148 destinations, and the website and historical citation
+renderers continue to use their original routes.
 
 Three new artifact/report pairs bind source, reader and output subjects after
 the predecessor's date. Their supporting files are the four fixed, real JSON

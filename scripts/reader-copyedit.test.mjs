@@ -1,9 +1,10 @@
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 import capture from '../config/reader-copyedit-8148-capture.json' with { type: 'json' };
 import { editionDigest, matchesAcceptedFile, readableBookReviewSubject, sha256 } from './reader-current-edition.mjs';
-import { copyeditChanges, copyeditLayout, copyeditOutput, copyeditSourceStructure, qualifyReaderCopyedit, readerCopyeditSupportReferences, selectReaderCopyedit, verifyReaderCopyeditSupport } from './reader-copyedit.mjs';
+import { containerPrintLinkLayout, containerPrintLinks, copyeditChanges, copyeditLayout, copyeditOutput, copyeditSourceStructure, egridTableCopy, qualifyReaderCopyedit, readerCopyeditSupportReferences, restoreWallStaticCopy, selectReaderCopyedit, verifyReaderCopyeditSupport, wallStaticCopy } from './reader-copyedit.mjs';
 import { copyeditHistoryEntries, copyeditHistoryPlan, fingerprintCopyeditPrintParts, validateCopyeditHistory } from './reader-copyedit-history.mjs';
 import { readerCopyeditCaptureDigest, readerCopyeditSource } from './reader-copyedit-pins.mjs';
 
@@ -96,12 +97,18 @@ test('a renamed retained section must show its exact original title and source i
   const valid = `<article><h2 id="${id}">${row.to}</h2><details class="legacy-citation-context" data-copyedit-history="${id}"><summary>此处在 <time datetime="2026-11-12">2026-11-12</time> 版题为“${row.from}”。</summary><a href="https://github.com/tiangong-lca/knowledge-base/tree/${source.commit}">查看该版源文件</a></details></article>`;
   const verify = value => validateCopyeditHistory(new Map([[path, htmlParser.parse(value)]]), surfaces, plan);
   assert.deepEqual(verify(valid), []);
+  assert.deepEqual(verify(valid.replace(' 版题为', '<!-- --> 版题为')), []);
   assert(verify(valid.replace(row.from, id)).some(error => error.includes('historical title')));
   assert(verify(valid.replace(source.commit, 'another-commit')).some(error => error.includes('historical title')));
   for (const suppressed of [
     valid.replace('<details ', '<details hidden '),
     valid.replace('<details ', '<details aria-hidden="true" style="display:none" '),
     valid.replace('<summary>', '<summary tabindex="-1">'),
+    valid.replace(row.from, `<span hidden>${row.from}</span>`),
+    valid.replace(row.from, `<span>${row.from}</span>`),
+    valid.replace('</time>', '<span></span></time>'),
+    valid.replace('查看该版源文件', '<span>查看该版源文件</span>'),
+    valid.replace('</summary>', '</summary><span></span>'),
     valid.replace('<article>', '<article inert>'),
     valid.replace('<article>', '<article style="visibility:hidden!important">'),
   ]) assert(verify(suppressed).some(error => error.includes('historical title')));
@@ -235,4 +242,97 @@ test('supporting receipts resolve exact, nonrecursive bytes with their own subje
     const invalid = new Map(artifacts).set(artifactFile('source'), JSON.stringify({ supportingEvidence: items }));
     assert.throws(() => readerCopyeditSupportReferences(subject, invalid), /supporting evidence/);
   }
+});
+
+test('the wall caption permits only its exact source bytes and its matching static display transition', () => {
+  const original = readFileSync(new URL('../' + wallStaticCopy.path, import.meta.url), 'utf8');
+  const frozen = restoreWallStaticCopy(original) ?? original;
+  assert.equal(sha256(frozen), wallStaticCopy.beforeSha256);
+  const revised = frozen.replace(`<p>${wallStaticCopy.from}</p>`, `<p>${wallStaticCopy.to}</p>`);
+  assert.equal(sha256(revised), wallStaticCopy.afterSha256);
+  assert.equal(restoreWallStaticCopy(revised), frozen);
+  assert.equal(restoreWallStaticCopy(revised.replace(`${wallStaticCopy.from}</figcaption>`, `${wallStaticCopy.to}</figcaption>`)), null);
+  assert.equal(restoreWallStaticCopy(revised + '\n'), null);
+
+  const change = { kind: 'file', key: wallStaticCopy.path, from: wallStaticCopy.beforeSha256, to: wallStaticCopy.afterSha256, rationale: 'Static caption only' };
+  const layout = { key: wallStaticCopy.layout, from: editionDigest(wallStaticCopy.from), to: wallStaticCopy.to, rationale: 'Static caption only' };
+  const previous = { file: new Map(), record: new Map() };
+  assert.equal(copyeditChanges(previous, { changes: [change], layouts: [layout] }).file.get(change.key).to, change.to);
+  for (const candidate of [
+    { changes: [change], layouts: [] },
+    { changes: [], layouts: [layout] },
+    { changes: [{ ...change, to: sha256(revised + '\n') }], layouts: [layout] },
+    { changes: [change], layouts: [{ ...layout, to: '其他任意句子' }] },
+  ]) assert.throws(() => copyeditChanges(previous, candidate), /exact paired wall static-caption/);
+});
+
+test('display successor preserves wrapped claim order, navigation and static table values', () => {
+  const compare = (key, from, to) => copyeditLayout(key, from, { layouts: [{ key, from: editionDigest(from), to }] });
+  const key = 'B15:/docs/book/climate-response-and-metrics:reader-source';
+  const href = '/docs/appendices/climate-numerical-reconstruction/';
+  const from = { source: { title: '气候指标', mdxSha256: 'a'.repeat(64),
+    ordinary: [{ section: '旧节', text: '旧句', links: [{ text: '旧链接', href }] }],
+    figure: { src: '/figure.svg', width: '700' } },
+    occurrences: [{ id: 'cl-first', section: '旧节' }] };
+  const to = structuredClone(from);
+  to.source.title = '气候响应';
+  to.source.ordinary[0].text = '新句';
+  to.source.ordinary[0].links[0].text = '新链接';
+  assert.deepEqual(compare(key, from, to), to);
+  for (const mutate of [
+    value => value.occurrences[0].id = 'another',
+    value => value.source.mdxSha256 = 'b'.repeat(64),
+    value => value.source.ordinary[0].links[0].href = '/docs/',
+    value => value.source.figure.width = '1',
+  ]) {
+    const invalid = structuredClone(to);
+    mutate(invalid);
+    assert.throws(() => compare(key, from, invalid), /protected structure/);
+  }
+  const table = { introduction: '旧导语', headers: ['旧题'], rows: [['5965.910 Btu']], explanation: '旧解释' };
+  assert.doesNotThrow(() => compare('B09:invoice-table', table, { ...table, headers: ['新题'] }));
+  assert.throws(() => compare('B09:invoice-table', table, { ...table, rows: [['9999 Btu']] }), /protected structure/);
+});
+
+test('eGRID data table permits only the independently reviewed text in its known cell', () => {
+  const table = text => `| 资料 | 用途 |\n| --- | --- |\n| ${egridTableCopy.label} | ${text} |\n| 另一资料 | 固定数据与单位 |`;
+  const structure = value => copyeditSourceStructure({ catalog: { claims: [] },
+    files: new Map([[egridTableCopy.path, Buffer.from(value)]]) });
+  const from = table(egridTableCopy.from), to = table(egridTableCopy.to);
+  assert.deepEqual(structure(from), structure(to));
+  assert.notDeepEqual(structure(from), structure(to.replace('年净发电量','用户购电量')));
+  assert.notDeepEqual(structure(from), structure(to.replace('固定数据与单位','另一个单位')));
+
+  const plan = copyeditHistoryPlan({ ...unit,
+    layouts: [{ key: egridTableCopy.key, from: editionDigest(egridTableCopy.from), to: egridTableCopy.to }] });
+  const observed = structuredClone(capture.addresses);
+  for (const row of Object.values(observed).filter(item => item.route === egridTableCopy.route && item.kind === 'chapter'))
+    row.bindings.tables[0].body[0][1].text = egridTableCopy.to;
+  assert.deepEqual(validateCopyeditHistory(new Map(), observed, plan), []);
+  const web = observed[egridTableCopy.route + '#nd-page'];
+  web.bindings.tables[0].body[1][1].text = '另外一个单位';
+  assert(validateCopyeditHistory(new Map(), observed, plan).some(error => error.includes('table data')));
+});
+
+test('the container print pair accepts only its two fixed authored links and matched 8148 section scopes', () => {
+  const layout = { key: containerPrintLinkLayout, from: editionDigest([]), to: containerPrintLinks };
+  const candidate = { ...unit, layouts: [layout] };
+  const plan = copyeditHistoryPlan(candidate);
+  assert.equal(plan.printLinks.length, 2);
+  assert.throws(() => copyeditLayout(containerPrintLinkLayout, [], {
+    layouts: [{ ...layout, to: [{ ...containerPrintLinks[0], printId: containerPrintLinks[1].printId }, containerPrintLinks[1]] }],
+  }), /protected structure/);
+  const observed = structuredClone(capture.addresses);
+  for (const link of containerPrintLinks) {
+    const entry = Object.entries(observed).find(([address, row]) =>
+      address.startsWith('/print#') && row.kind === 'chapter' && row.route === link.source)?.[1];
+    assert(entry);
+    entry.bindings.links = entry.bindings.links.map(block =>
+      block.map(href => href === encodeURI(link.href) ? '#' + link.printId : href));
+  }
+  assert.deepEqual(validateCopyeditHistory(new Map(), observed, plan), []);
+  const target = containerPrintLinks[0];
+  const scope = observed['/print#' + target.printId];
+  scope.claimIds = ['different-claim'];
+  assert(validateCopyeditHistory(new Map(), observed, plan).some(error => error.includes('ordered scope')));
 });

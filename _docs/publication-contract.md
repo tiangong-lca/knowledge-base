@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-13
-lastReviewedCommit: bf2a54530ee783b6cacf0eca2a0e573d48fce9da
+lastReviewedCommit: 8026b46658c8cf0af31bd28f04e00c6a3cd660c5
 ---
 
 # Publication contract
@@ -246,3 +246,10 @@ Hashes, dates and complete output coverage cannot themselves prove that a langua
 change preserves a source's meaning. The review must check subjects, quantities,
 comparison pairs, conditions, attribution, negation and each table column. A
 newly found source question returns to its actual evidence before publication.
+
+A #95 print-only container cross-reference amendment must bind each exact
+authored origin and fragment to its corresponding native printed section. The
+actual 8148 web and print captures establish the preserved destination scope;
+current output verifies the source paragraph and native target. The amendment
+changes the reading view of two links while preserving scientific records,
+authored web links and earlier citation scopes.

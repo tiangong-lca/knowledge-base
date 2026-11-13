@@ -1,3 +1,4 @@
+import { containerPrintLinkLayout } from './reader-copyedit.mjs';
 import { currentBookLayout, currentBookPlan } from './reader-current-expectations.mjs';
 import { assertPmSelectionRegistration, pmSelectionAppendix, pmSelectionBookHref } from './reader-pm-selection.mjs';
 import { assertDataApplicabilityRegistration, dataApplicabilityKey, dataApplicabilityRoutes, dataApplicabilityBookHref } from './reader-data-applicability.mjs';
@@ -165,6 +166,8 @@ export function publishedHeadingEntries(history) {
 /** Qualified links for the bounded assembly; ambiguous old scopes keep their website meaning. */
 export function frameworkBookHref(href, currentKey) {
   if (typeof href !== 'string') return href;
+  const local = currentBookLayout(containerPrintLinkLayout, []).find(row => row.source === currentKey && (row.href === href || encodeURI(row.href) === href));
+  if (local) return `#${local.printId}`;
   href = currentPrintReadingHref(href, true);
   const readingRoute = href.replace(/\/$/, '');
   if (currentBookPlan.readingEntries.has(readingRoute)) return `#${printReadingEntryAnchor(readingRoute)}`;

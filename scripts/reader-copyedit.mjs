@@ -1,3 +1,4 @@
+import { printUnitAnchor } from './reader-book.mjs';
 import { editionDigest, readableBookReviewSubject, sha256, verifyReadableBookReviewReceipts } from './reader-current-edition.mjs';
 import { readerCopyeditSource } from './reader-copyedit-pins.mjs';
 
@@ -5,20 +6,78 @@ const same = (a, b) => editionDigest(a ?? null) === editionDigest(b ?? null);
 const hash = value => typeof value === 'string' && /^[a-f0-9]{64}$/.test(value);
 const text = value => typeof value === 'string' && Boolean(value.trim());
 
+export const wallStaticCopy = Object.freeze({
+  path: 'components/teaching-case-client.tsx',
+  layout: 'B29:static-affine-caption',
+  from: '连线是此固定模型的仿射关系，范围没有概率含义。',
+  to: '在这个固定模型中，配对差值 Δ 与共同参数 θ 呈仿射关系；这里没有为 θ 指定概率分布。',
+  beforeSha256: 'cf0e981ffe047f8b7fc47c9849342090a1eff91146482d226062ef0f1d3622f3',
+  afterSha256: '6696b636d97d3e89df1871dfcb565d85a79f639268118136b1479a134468f465',
+});
+
+export function restoreWallStaticCopy(bytes) {
+  const { from, to, beforeSha256, afterSha256 } = wallStaticCopy;
+  if (sha256(bytes) !== afterSha256) return null;
+  const restored = bytes.toString().replace(`<p>${to}</p>`, `<p>${from}</p>`);
+  return sha256(restored) === beforeSha256 ? restored : null;
+}
+
+function assertWallStaticCopyPlan(unit) {
+  const row = unit.changes.find(change => change.kind === 'file' && change.key === wallStaticCopy.path);
+  const layout = unit.layouts?.find(layout => layout.key === wallStaticCopy.layout);
+  if (Boolean(row) !== Boolean(layout) || row && (row.from !== wallStaticCopy.beforeSha256
+      || row.to !== wallStaticCopy.afterSha256 || layout.from !== editionDigest(wallStaticCopy.from)
+      || layout.to !== wallStaticCopy.to))
+    throw new Error('Reader copyedit requires the exact paired wall static-caption source and display transition');
+}
+
 const sameDestination = (before, after) => {
   const destinations = value => [...value.matchAll(/\[[^\]]+\]\(([^)]*)\)/g)].map(match => match[1]);
   return text(after) && same(destinations(before), destinations(after));
 };
-const rowCopy = fields => (before, after) => Array.isArray(before) && Array.isArray(after)
-  && before.length === after.length && before.every((original, index) => {
-    const revised = after[index];
-    if (!revised || !same(Object.keys(original).sort(), Object.keys(revised).sort())) return false;
-    return Object.keys(original).every(key => Object.hasOwn(fields, key)
-      ? fields[key](original[key], revised[key])
-      : same(original[key], revised[key]));
-  });
+const wording = (_before, after) => text(after);
+const objectCopy = fields => (before, after) => before && after && typeof before === 'object'
+  && typeof after === 'object' && !Array.isArray(before) && !Array.isArray(after)
+  && same(Object.keys(before).sort(), Object.keys(after).sort())
+  && Object.keys(before).every(key => Object.hasOwn(fields, key) ? fields[key](before[key], after[key]) : same(before[key], after[key]));
+const arrayCopy = row => (before, after) => Array.isArray(before) && Array.isArray(after)
+  && before.length === after.length && before.every((original, index) => row(original, after[index]));
+const rowCopy = fields => arrayCopy(objectCopy(fields));
+const linkCopy = rowCopy({ text: wording, label: wording, title: wording, description: wording });
+const ordinaryCopy = rowCopy({ text: wording, links: linkCopy, navigation: linkCopy });
+const sectionCopy = rowCopy({ title: wording });
+const headingCopy = rowCopy({ title: wording, text: wording });
+const sourceCopy = objectCopy({
+  title: wording, description: wording,
+  headings: headingCopy, ordinary: ordinaryCopy, navigation: linkCopy,
+});
+const readerSourceCopy = objectCopy({ source: sourceCopy });
+const pmSourceCopy = objectCopy({
+  title: wording, description: wording,
+  blocks: rowCopy({ title: wording, text: wording, links: linkCopy }),
+});
+
+export const egridTableCopy = Object.freeze({
+  path: 'content/docs/book/electricity-service-and-response.mdx',
+  route: '/docs/book/electricity-service-and-response',
+  key: 'B12:egrid-table-description',
+  label: 'eGRID2023 修订 2',
+  from: '区域电厂的直接 CO₂ 年平均。分母是年净发电量。',
+  to: '区域电厂的直接 CO₂ 年平均排放率，以年净发电量为分母。',
+});
+
+const containerChapter = '/docs/book/early-container-comparisons';
+const containerAppendix = '/docs/appendices/container-energy-check';
+export const containerPrintLinkLayout = 'B02:appendix-print-links';
+export const containerPrintLinks = Object.freeze([
+  [containerChapter, containerAppendix, '舍入界限'],
+  [containerAppendix, containerChapter, '明细表能否重新组装总量'],
+].map(([source, target, fragment]) => Object.freeze({
+  source, target, fragment, href: `${target}/#${fragment}`, printId: `${printUnitAnchor(target)}-${fragment}`,
+})));
 
 const copyeditLayouts = new Map([
+  [containerPrintLinkLayout, (before, after) => same(before, []) && same(after, containerPrintLinks)],
   ['book:numbering-pin', (before, after) => hash(before) && hash(after)],
   ['book:continuations', rowCopy({
     sourceLabel: (_before, after) => text(after),
@@ -29,8 +88,39 @@ const copyeditLayouts = new Map([
   ...Array.from({ length: 7 }, (_, index) => [`book:part-title:${index + 1}`, (_before, after) => text(after)]),
   ['B04:sections', rowCopy({ title: (_before, after) => text(after) })],
   ['B05:title', (_before, after) => text(after)],
-  ['B05:headings', rowCopy({ title: (_before, after) => text(after) })],
+  ...['B05:headings', 'B09:headings', 'B25:registered-sections', 'B32:registered-sections']
+    .map(key => [key, rowCopy({ title: (_before, after) => text(after) })]),
   ['S01:ordinary', rowCopy({ text: sameDestination })],
+  ['B06:/docs/book/service-and-reference:navigation', rowCopy({ text: wording, linkText: wording })],
+  ['B06:/docs/functional-unit:navigation', rowCopy({ text: wording, linkText: wording })],
+  ['B08:ordinary-dispositions', rowCopy({ navigation: linkCopy })],
+  ['B09:description', wording],
+  ['B09:invoice-table', objectCopy({ introduction: wording, headers: arrayCopy(wording), explanation: wording })],
+  ['B10:/docs/book/allocation-and-substitution:source', sourceCopy],
+  ['B10:/docs/book/allocation-judgment-and-corrections:source', sourceCopy],
+  ['B10:/monograph/joint-production:source', sourceCopy],
+  ['B10:/docs/allocation:source', sourceCopy],
+  ...[
+    'B15:/docs/book/climate-response-and-metrics:reader-source',
+    'B15:/docs/book/emission-time-and-assessment:reader-source',
+    'B15:/monograph/climate-equivalence:reader-source',
+    'B15:/docs/appendices/climate-numerical-reconstruction:reader-source',
+    'B25:/docs/book/database-fitness-and-documentation:reader-source',
+    'B25:/docs/book/review-support-and-version-boundaries:reader-source',
+    'B25:/monograph/data-applicability:reader-source',
+    'B32:/docs/book/connecting-objects-references-and-time:reader-source',
+    'B32:/docs/book/from-connected-results-to-conditional-judgment:reader-source',
+    'B32:/monograph/revisable-judgment:reader-source',
+  ].map(key => [key, readerSourceCopy]),
+  ['B17:/docs/book/particulate-emissions-and-health:source', pmSourceCopy],
+  ['B17:/docs/appendices/particulate-factor-calculations:source', pmSourceCopy],
+  ['B19:reader-source', objectCopy({ title: wording, description: wording, sections: sectionCopy })],
+  ['B27:reader-source', objectCopy({ title: wording, description: wording, sections: sectionCopy,
+    studyTable: objectCopy({ introduction: wording, headers: arrayCopy(wording), explanation: wording }) })],
+  ['B29:reader-source', objectCopy({ title: wording, description: wording, sections: sectionCopy,
+    ordinary: objectCopy({ web: ordinaryCopy, book: ordinaryCopy }) })],
+  [egridTableCopy.key, (before, after) => before === egridTableCopy.from && after === egridTableCopy.to],
+  [wallStaticCopy.layout, (before, after) => before === wallStaticCopy.from && after === wallStaticCopy.to],
 ]);
 
 function assertCopyeditLayouts(rows) {
@@ -54,6 +144,7 @@ export function selectReaderCopyedit(config, pin, preview = false) {
       || !Array.isArray(unit.outputs) || !Array.isArray(unit.publicArtifacts))
     throw new Error('Reader copyedit requires its exact #95 predecessor and plan');
   assertCopyeditLayouts(unit.layouts);
+  assertWallStaticCopyPlan(unit);
   if (preview && config.status === 'preview' && pin === null && unit.reviewEvidence === undefined) return unit;
   if (config.status !== 'reviewed' || !hash(pin) || editionDigest(unit) !== pin)
     throw new Error('Reader copyedit is not independently accepted');
@@ -113,7 +204,9 @@ export function copyeditSourceStructure({ catalog, files }) {
       result.files[path] = editionDigest({
         frontMatter: metadata.split(/\r?\n/).filter(line => !/^(title|description):/.test(line)),
         components,
-        tableBodies: handwrittenTableRows(source),
+        tableBodies: handwrittenTableRows(path === egridTableCopy.path
+          ? source.replace(`| ${egridTableCopy.label} | ${egridTableCopy.to} |`, `| ${egridTableCopy.label} | ${egridTableCopy.from} |`)
+          : source),
       });
     }
   }
@@ -132,12 +225,13 @@ export function copyeditLayout(key, previous, unit) {
 /** Preserve both the early predicate's starting value and the exact intermediate value. */
 export function copyeditChanges(previous, unit) {
   if (!unit) return previous;
+  assertWallStaticCopyPlan(unit);
   const result = { file: new Map(previous.file), record: new Map(previous.record) };
   const used = new Set();
   for (const row of unit.changes) {
     const table = result[row.kind], id = `${row.kind}:${row.key}`;
     if (!table || used.has(id) || !text(row.rationale)
-        || !(row.kind === 'file' ? copyeditPath(row.key) : row.key.startsWith('claims:'))
+        || !(row.kind === 'file' ? copyeditPath(row.key) || row.key === wallStaticCopy.path : row.key.startsWith('claims:'))
         || row.from === null || row.to === null || same(row.from, row.to)
         || row.kind === 'record' && (!hash(row.from?.protected) || row.from.protected !== row.to?.protected))
       throw new Error(`Reader copyedit has an invalid change: ${id}`);
@@ -272,6 +366,9 @@ export function verifyReaderCopyeditSource({ unit, actual, sourceStructure, capt
     throw new Error('Reader copyedit predecessor differs from the actual 8148 source');
 
   assertCopyeditLayouts(unit.layouts);
+  const egridLayout = unit.layouts.find(row => row.key === egridTableCopy.key);
+  if (egridLayout && !unit.changes.some(row => row.kind === 'file' && row.key === egridTableCopy.path))
+    throw new Error('Reader copyedit eGRID table text requires its exact source transition');
   const changedClaimIds = new Set(unit.changes.filter(row => row.kind === 'record').map(row => row.key.slice(7)));
   const consumers = new Set(changedClaimIds), queue = [...changedClaimIds];
   for (const id of queue) for (const dependent of actual.dependencies[id] ?? []) {

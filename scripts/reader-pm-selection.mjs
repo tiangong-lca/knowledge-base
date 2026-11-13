@@ -228,7 +228,8 @@ export function validatePmSelectionCoverage(edition, sources, catalog, accepted,
     try {
       const raw = sources.get(unit.route);
       const expected = currentBookLayout(`B17:${unit.route}:source`, unit);
-      if (!raw || !currentBookMdxMatches(unit.route, unit.mdxSha256, hash(raw)) || !same(inspectPmSelectionSource(unit.route, raw), expected)) throw new Error(`PM selection actual title, description, heading, prose or navigation differs: ${unit.route}`);
+      const actual = raw && inspectPmSelectionSource(unit.route, raw);
+      if (!actual || !currentBookMdxMatches(unit.route, unit.mdxSha256, actual.mdxSha256) || !same({ ...actual, mdxSha256: expected.mdxSha256 }, expected)) throw new Error(`PM selection actual title, description, heading, prose or navigation differs: ${unit.route}`);
     } catch (error) { errors.push(error.message); }
   }
   for (const [route, source] of sources) {
