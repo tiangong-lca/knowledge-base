@@ -48,7 +48,7 @@
     },
     {
       "id": "cl-power-egrid-rate",
-      "textTemplate": "以修订2工作簿为准，先复算名为ERCT的eGRID子区域输出率。该行给出约{{evaluated.egrid.co2Output.generationMWh.fixed3}} MWh净发电和{{evaluated.egrid.co2Output.massUSShortTon.fixed3}}美国短吨CO₂。每短吨为2000磅，把分子换成磅再除以这份净发电，得到约{{evaluated.egrid.co2Output.calculatedLbPerGenerationMWh.fixed4}} lb CO₂/MWh；原表公布值为{{evaluated.egrid.co2Output.publishedAtDisplay}}。这个一致性检验保留了分子、分母和显示精度，却没有把发电年平均变成任意一小时减少用电的响应。",
+      "textTemplate": "用修订 2 工作簿复算 eGRID 子区域 ERCT 的平均排放率。该行列出约 {{evaluated.egrid.co2Output.generationMWh.fixed3}} MWh 净发电量和 {{evaluated.egrid.co2Output.massUSShortTon.fixed3}} 美国短吨 CO₂。每短吨为 2000 磅。先把排放量换成磅，再除以净发电量，得到约 {{evaluated.egrid.co2Output.calculatedLbPerGenerationMWh.fixed4}} lb CO₂/MWh，原表公布值为 {{evaluated.egrid.co2Output.publishedAtDisplay}}。这项复算检验的是按该表分子和分母得到的年平均及其显示精度。某一小时少用电会减少多少排放，还需响应资料。",
       "kind": "calculation",
       "scope": "年度发电账包含什么；具名历史资料、原始模型与明确假设的范围",
       "evidenceIds": [
@@ -208,7 +208,7 @@
     },
     {
       "id": "cl-power-native-output",
-      "textTemplate": "计算结果可以同时核对发电和排放。原函数所得全年机组发电合计变化为{{evaluated.native.flat.modeledGenerationChangeMWh.fixed4}} MWh，直接CO₂变化为{{evaluated.native.flat.modeledDirectCo2ChangeUSShortTon.fixed4}}美国短吨。它们是把各机组结果先汇为每月区域总量、逐月计算“情景减基线”，再加总月差得到的模型输出。尤其要注意，发电合计变化与前面的请求化石负荷变化相差约{{evaluated.native.flat.modeledMinusRequestedFossilChangeMWh.fixed4}} MWh：插值得到的各机组响应没有逐档强制合计等于请求负荷，这个差额不能再解释成一项额外网损。",
+      "textTemplate": "原函数给出的全年机组发电合计变化为 {{evaluated.native.flat.modeledGenerationChangeMWh.fixed4}} MWh，直接 CO₂ 变化为 {{evaluated.native.flat.modeledDirectCo2ChangeUSShortTon.fixed4}} 美国短吨。程序先把各机组结果汇成每月区域总量，再逐月用情景总量减去基线总量，最后把各月差值相加。发电合计的变化与先前请求的化石负荷变化相差约 {{evaluated.native.flat.modeledMinusRequestedFossilChangeMWh.fixed4}} MWh。插值时没有逐档要求各机组响应之和等于请求负荷，所以这项差额不能再当成一项网损。",
       "kind": "calculation",
       "scope": "把一次用电变化送入原始模型；具名历史资料、原始模型与明确假设的范围",
       "evidenceIds": [
@@ -246,7 +246,7 @@
     },
     {
       "id": "cl-power-native-ratios",
-      "textTemplate": "要写成每MWh的比值，先决定分母。用1美国短吨=907.18474 kg换算，模型给出的CO₂减少量约为{{evaluated.native.flat.avoidedDirectCo2Kg.fixed2}} kg。将它除以规定的终端减少量，约为{{evaluated.native.flat.avoidedDirectCo2KgPerTerminalMWh.fixed2}} kg/MWh；除以模型发电减少量的绝对值，则约为{{evaluated.native.flat.avoidedDirectCo2KgPerModeledGenerationMWh.fixed2}} kg/MWh。同一分子产生两个数，因为两个分母回答不同问题。不能把它们的差直接当成两种算法对同一排放因子的分歧。",
+      "textTemplate": "同一项排放变化可以用两种电量作分母。按 1 美国短吨＝907.18474 kg 换算，模型给出的 CO₂ 减少量约为 {{evaluated.native.flat.avoidedDirectCo2Kg.fixed2}} kg。除以规定的终端用电减少量，约为 {{evaluated.native.flat.avoidedDirectCo2KgPerTerminalMWh.fixed2}} kg/MWh；除以模型发电减少量的绝对值，则约为 {{evaluated.native.flat.avoidedDirectCo2KgPerModeledGenerationMWh.fixed2}} kg/MWh。第一个数按少用的电量计，第二个数按模型算出的少发电量计。两者之差来自分母不同。",
       "kind": "calculation",
       "scope": "把一次用电变化送入原始模型；具名历史资料、原始模型与明确假设的范围",
       "evidenceIds": [
@@ -360,7 +360,7 @@
     },
     {
       "id": "cl-power-future-balance",
-      "textTemplate": "先核对发电和交换是否与母线负荷相合。从同一发布包中MidCase情景、ERCOT情景地区、2025模拟年这一行看母线电量：区域发电{{input.facts.cambiumGeneration.value}} MWh，加进口{{input.facts.cambiumImports.value}}，减出口{{input.facts.cambiumExports.value}}，得到{{evaluated.cambium.balances.supplyMWh.exact}} MWh。表列母线负荷为{{evaluated.cambium.balances.publishedBusbarLoadMWh.exact}} MWh，前式减去表列值为{{evaluated.cambium.balances.supplyResidualMWh.exact}} MWh。这个很小但非零的差额应保留；已公布数值只支持近似闭合，不能据总量接近就断言已重建原始求解精度。",
+      "textTemplate": "公开的年度电量能够近似配平。以同一发布包中 MidCase 情景、ERCOT 情景地区、2025 模拟年的一行为例。区域发电 {{input.facts.cambiumGeneration.value}} MWh，加进口 {{input.facts.cambiumImports.value}}，减出口 {{input.facts.cambiumExports.value}}，得到 {{evaluated.cambium.balances.supplyMWh.exact}} MWh。表列母线负荷为 {{evaluated.cambium.balances.publishedBusbarLoadMWh.exact}} MWh。用前一个量减去表列负荷，差为 {{evaluated.cambium.balances.supplyResidualMWh.exact}} MWh。差额虽小，仍应保留。用这些公开数字只能核对到近似平衡，原始求解精度仍无法由此重建。",
       "kind": "calculation",
       "scope": "未来需求还会改变哪些资产；具名历史资料、原始模型与明确假设的范围",
       "evidenceIds": [
@@ -392,7 +392,7 @@
     },
     {
       "id": "cl-power-future-load-parts",
-      "textTemplate": "母线把发电、用电和其他电网活动连接起来。这本账在这个连接点计算负荷。母线负荷还不全是送去完成终端服务的电量。同一行中，为终端供电所需的母线量为{{input.facts.cambiumBusbarLoadForEndUse.value}} MWh，另列区域间输电损耗{{input.facts.cambiumTransmissionLosses.value}}、电池充电{{input.facts.cambiumBatteryCharging.value}}和抽蓄充电{{input.facts.cambiumPumpedStorageCharging.value}} MWh。四项相加比表列母线负荷高{{evaluated.cambium.balances.allocationResidualMWh.exact}} MWh。这次由用途分项回算母线负荷，上一段则由发电和交换回算；两项核对各有小幅未闭合，现有显示值尚不能说明差值来由。另须辨认交付口径：这里的终端负荷包括表后光伏供电，即位于用户电表内侧、直接服务该用户的发电。为终端服务所列的母线量，将这部分电量也按配电损耗转换为相应的母线等效量；表后光伏并未实际经过对应网络，因此这组等效量不全是电网表计测得的外购电。充电、输电损失和终端服务有各自位置，不能把整个母线负荷都当成用户交付量。",
+      "textTemplate": "上一段从发电和交换回算母线负荷，这里改从母线上的用电去向回算。同一行里，为终端供电所需的母线量为 {{input.facts.cambiumBusbarLoadForEndUse.value}} MWh，另外还有区域间输电损耗 {{input.facts.cambiumTransmissionLosses.value}}、电池充电 {{input.facts.cambiumBatteryCharging.value}} 和抽蓄充电 {{input.facts.cambiumPumpedStorageCharging.value}} MWh。四项相加，比表列母线负荷高 {{evaluated.cambium.balances.allocationResidualMWh.exact}} MWh。两种算法各有一项小差额，凭现有显示值还不能确定原因。终端用电中还计入表后光伏，也就是在用户电表内侧发出并直接供给用户的电。表里为终端服务计的母线量，把这部分电也按配电损耗折算为母线等效量。表后光伏实际没有经过相应网络，所以其中的表后光伏等效量不能算作电网表计所测得的外购电。母线负荷中还计有输电损耗和充电，不能把它整个算成终端交付量。",
       "kind": "calculation",
       "scope": "未来需求还会改变哪些资产；具名历史资料、原始模型与明确假设的范围",
       "evidenceIds": [
@@ -498,7 +498,7 @@
     },
     {
       "id": "cl-power-future-three-questions",
-      "textTemplate": "换到较广的指标时，燃烧前过程也进入清单，CH₄和N₂O还要换成CO₂e。在同一MidCase模拟行中，这种较广范围的终端平均排放率为{{input.facts.cambiumAverageEndUseCo2e.value}}、短期边际率为{{input.facts.cambiumShortRunEndUseCo2e.value}}、长期边际率为{{input.facts.cambiumLongRunEndUseCo2e.value}} kg CO₂e/MWh。三者的单位和终端分母形式相同，估计对象却不同：一个归属既有情景供电的排放，一个估计固定资本下的变化，一个允许资本随负荷扰动变化。它们不能作为三种任选其一的答案，也不能只按大小判定哪个模型更正确。",
+      "textTemplate": "范围再放宽一些，清单就会纳入燃烧前的过程，还要把 CH₄ 和 N₂O 换算为 CO₂e。同一 MidCase 模拟行中，按这种较广的范围算出的终端平均排放率为 {{input.facts.cambiumAverageEndUseCo2e.value}}、短期边际率为 {{input.facts.cambiumShortRunEndUseCo2e.value}}、长期边际率为 {{input.facts.cambiumLongRunEndUseCo2e.value}} kg CO₂e/MWh。三个数都按终端电量给出，第一项把情景中的供电排放归到用电一侧，第二项估计资本设备固定时的排放变化，第三项允许设备容量随负荷改变。应根据要回答的问题选用，数值大小本身不能说明哪种模型更正确。",
       "kind": "interpretation",
       "scope": "未来需求还会改变哪些资产；具名历史资料、原始模型与明确假设的范围",
       "evidenceIds": [

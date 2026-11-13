@@ -111,7 +111,7 @@
     },
     {
       "id": "cl-joint-rival-criteria",
-      "textTemplate": "先看两项文献各自在什么问题上给了理由。2005年论文为特定成因描述目的给出理由，1998年学位论文则追问与外部竞争品比较的条件；收入归属没有自动回答后一问，也没有因此失去全部用途。这是把两项具名论证放在一起分析，不是断言两组作者曾针对这些段落直接交锋。回到J，如果要记录已有批次，必须说明分担约定；如果要解释换一种供给会怎样，就需要把会改变的活动列出来。下一步从份额转向供给路线，正是因为问题已经改变。",
+      "textTemplate": "2005 年论文在所引的 §3.1 中讨论如何描述负担的成因，1998 年学位论文的对应段落则讨论如何与外部竞争产品比较。把负担按收入分给产品，在前一个问题上可以有理由，后一问仍需要竞争产品的信息。本书在这里对读两项论证，没有证据据此认定两组作者曾就这些段落直接交锋。回到 J，若要记录已有批次，应说明按什么规则分担；若要解释改换供给的后果，接下来就要列出会变动的活动。",
       "kind": "synthesis",
       "scope": "两项具名来源的评价目的对照及其与虚构案例的问题区分",
       "evidenceIds": [
@@ -198,7 +198,7 @@
     },
     {
       "id": "cl-joint-negative-meaning",
-      "textTemplate": "残余出现负数，先回到它扣掉了哪一项供给。J仍排放{{input.inventoryPerOperation.joint.0}} kg CO2和{{input.inventoryPerOperation.joint.1}} g SO2；它没有从空气中吸收这些物质。负残余来自扣除特定S-Y供给后的比较，离不开那组Y服务、S-Y技术及供应可以减少的条件。仅比较两条功能匹配路线时，这个代数关系已经成立；要把它解释为真实市场变化，还须证明供应者会怎样反应。此例直接规定了反应，不能再拿减法的结果作为该反应已经发生的证据，也不能把残余当作X脱离情境的固有属性。",
+      "textTemplate": "残余是负数时，要先看从哪项排放中扣掉了什么。J 仍排放 {{input.inventoryPerOperation.joint.0}} kg CO2 和 {{input.inventoryPerOperation.joint.1}} g SO2，并没有从空气中吸收这些物质。负残余来自比较时扣除特定 S-Y 供给，数值随 Y 服务和参照技术而定。比较两条功能匹配的路线时，代数关系已经成立。若要把差值解释为市场上实际发生的变化，还得证明相应的 S-Y 供应确实能够减少、供应者会怎样反应。本例把反应作为条件给定，减法的结果不能为反应本身作证，残余也不能当作 X 脱离这个情境的固有属性。",
       "kind": "interpretation",
       "scope": "虚构案例中负残余的参照依赖性与供应反应条件",
       "evidenceIds": [],
@@ -360,7 +360,7 @@
     },
     {
       "id": "cl-joint-answer",
-      "textTemplate": "先验账，再验服务和活动。份额相加只说明所列负担分完了，替代还需要服务匹配与独立供应减少的条件或证据。负残余来自扣除参照，J的正排放没有消失。半利用路线须列{{evaluated.scenarios.half.activities.joint}}J＋{{evaluated.scenarios.half.activities.standaloneY}}S-Y＋{{evaluated.scenarios.half.activities.wasteY}}W-Y，其差值为（{{evaluated.scenarios.half.changeJointMinusReference.0}}，{{evaluated.scenarios.half.changeJointMinusReference.1}}）；简化残余中不再出现正补足项，是与参照Y抵消后的结果。q＝{{evaluated.scenarios.none.q}}时，仍有{{evaluated.scenarios.none.activities.joint}}J，另需{{evaluated.scenarios.none.activities.standaloneY}}S-Y补足服务、{{evaluated.scenarios.none.activities.wasteY}}W-Y处理未用产出，得到（{{evaluated.scenarios.none.jointRoute.0}}，{{evaluated.scenarios.none.jointRoute.1}}），与独立路线的差值为（{{evaluated.scenarios.none.changeJointMinusReference.0}}，{{evaluated.scenarios.none.changeJointMinusReference.1}}）。要把这个构造用于真实供应，还需实际产率、服务等效、未用物去向、替代技术、供应反应与边界证据；若要报告产品份额，则仍须解释选择归属规则的理由。",
+      "textTemplate": "先核对各产品分担的排放能否加回整批，再核对两条路线各交付了什么服务、列入了哪些活动。份额相加只说明所列负担分完了，替代还需要服务匹配与独立供应减少的条件或证据。负残余来自扣除参照，J的正排放没有消失。半利用路线须列{{evaluated.scenarios.half.activities.joint}}J＋{{evaluated.scenarios.half.activities.standaloneY}}S-Y＋{{evaluated.scenarios.half.activities.wasteY}}W-Y，其差值为（{{evaluated.scenarios.half.changeJointMinusReference.0}}，{{evaluated.scenarios.half.changeJointMinusReference.1}}）；简化残余中不再出现正补足项，是与参照Y抵消后的结果。q＝{{evaluated.scenarios.none.q}}时，仍有{{evaluated.scenarios.none.activities.joint}}J，另需{{evaluated.scenarios.none.activities.standaloneY}}S-Y补足服务、{{evaluated.scenarios.none.activities.wasteY}}W-Y处理未用产出，得到（{{evaluated.scenarios.none.jointRoute.0}}，{{evaluated.scenarios.none.jointRoute.1}}），与独立路线的差值为（{{evaluated.scenarios.none.changeJointMinusReference.0}}，{{evaluated.scenarios.none.changeJointMinusReference.1}}）。要把这个构造用于真实供应，还需实际产率、服务等效、未用物去向、替代技术、供应反应与边界证据；若要报告产品份额，则仍须解释选择归属规则的理由。",
       "kind": "calculation",
       "scope": "虚构练习解答：半利用与零利用的路线重建及真实应用所需证据",
       "evidenceIds": [],

@@ -46,7 +46,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "区分原文规定、发布材料、条件计算与解释；每一连接保留其对象、版本和证据范围，不由局部一致性推断整体合规或实际环境改善。",
-      "textTemplate": "每{{input.facts.milkFuMl.value}}毫升用{{evaluated.washing.glasses.exact}}只杯子，一只杯子分到{{input.facts.washSharePercent.value}}%的洗碗周期。因此这一升牛奶分到{{evaluated.washing.glasses.exact}} × {{input.facts.washSharePercent.value}}% = {{evaluated.washing.cyclesRounded}}个周期。公开工作簿的液态奶流程图也标{{evaluated.washing.diagram.cycles.exact}}个周期。小数表示从一个完整周期分给这项服务的份额，并不是机器实际只运行了不到一个周期的观测值。"
+      "textTemplate": "每 {{input.facts.milkFuMl.value}} 毫升用 {{evaluated.washing.glasses.exact}} 只杯子，每只杯子分担一个洗碗周期的 {{input.facts.washSharePercent.value}}%。因此，这一升牛奶分担 {{evaluated.washing.glasses.exact}} × {{input.facts.washSharePercent.value}}% = {{evaluated.washing.cyclesRounded}} 个周期。公开工作簿的液态奶流程图也把分给这项服务的份额标为 {{evaluated.washing.diagram.cycles.exact}} 个周期。这里复算的是分担份额。家庭实际运行了多少个洗碗周期，仍须另行观测。"
     },
     {
       "id": "cl-rule-wash-inputs",
@@ -162,7 +162,7 @@
         "工作簿逐行气候总和与Info总值约有1.88×10⁻⁹kg CO₂eq差异，未确定原因；这里的显示对应不构成逐位原生复现。"
       ],
       "reasoning": "区分原文规定、发布材料、条件计算与解释；每一连接保留其对象、版本和证据范围，不由局部一致性推断整体合规或实际环境改善。",
-      "textTemplate": "再看它占整个生命周期多少。工作簿含使用阶段的气候变化结果约为{{evaluated.reportedClimate.wholeRounded}}千克二氧化碳当量，使用阶段约占{{evaluated.reportedClimate.useSharePercentRounded}}%；扣除后约为{{evaluated.reportedClimate.excludingUseRounded}}，与表45不含使用阶段一列的显示量相合。PEF要求同时报告完整生命周期和排除使用阶段的结果。两列的差表示把使用阶段移入或移出报告范围，没有描述实际生产或家庭行为的减排。"
+      "textTemplate": "这两项加在一起，占整个生命周期结果的多少？工作簿中，含使用阶段的气候变化结果约为 {{evaluated.reportedClimate.wholeRounded}} 千克二氧化碳当量，使用阶段约占 {{evaluated.reportedClimate.useSharePercentRounded}}%。扣除使用阶段后，结果约为 {{evaluated.reportedClimate.excludingUseRounded}}，与表 45 不含使用阶段一列的显示量相合。PEF 要求同时报告完整生命周期与排除使用阶段的结果。两列之差只反映报告是否计入使用阶段，实际生产和家庭使用方式在这里并未改变。"
     },
     {
       "id": "cl-rule-quantity-scale",
@@ -226,7 +226,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "区分原文规定、发布材料、条件计算与解释；每一连接保留其对象、版本和证据范围，不由局部一致性推断整体合规或实际环境改善。",
-      "textTemplate": "洗碗机本身也留下了一个更具体的差异。通用默认假定设备寿命为{{input.facts.dishwasherLife.value}}个周期，另发的LCI附件也以文本列出每周期分配{{input.facts.lciCapitalNumerator.value}}/{{input.facts.lciCapitalDenominator.value}}台。沿前述规则推得且与图示相符的{{evaluated.washing.cyclesRounded}}个周期计算，设备份额约为{{evaluated.washing.capital.conditionalDefaultDevicesRounded}}台；公开流程图的节点却是{{evaluated.washing.capital.diagramDevices.exact}}台，约少一个数量级。图和LCI来自不同的文件，尚不能仅据这项对读判定是哪一版本、分担或导出造成差异，也不能据此给出“修正后的”环境结果。"
+      "textTemplate": "公开资料中的洗碗机分担量也有差异。通用默认假定洗碗机可用 {{input.facts.dishwasherLife.value}} 个周期，另行发布的生命周期清单（LCI）附件也列出每周期分配 {{input.facts.lciCapitalNumerator.value}}/{{input.facts.lciCapitalDenominator.value}} 台。按前面推得且与图示相符的 {{evaluated.washing.cyclesRounded}} 个周期计算，设备份额约为 {{evaluated.washing.capital.conditionalDefaultDevicesRounded}} 台。公开流程图的节点却写着 {{evaluated.washing.capital.diagramDevices.exact}} 台，约少一个数量级。图和 LCI 来自不同文件，仅凭两份文件还不能判定差异来自版本、分担办法还是导出过程，也无法据此修正环境结果。"
     },
     {
       "id": "cl-rule-storage-gap",

@@ -1,0 +1,973 @@
+{
+  "schemaVersion": 1,
+  "kind": "reader",
+  "unit": "chinese-expression-95",
+  "subjectSha256": "373823e0e1eb9ed5d1832c141ab6abf7d2af215b429409c3769ef0866669620d",
+  "date": "2026-11-13",
+  "role": "reader-review",
+  "summary": "先完成第一部五书章/六网页的新上下文审读，再通读实际整本40单元、七部引言及13份独立伴随网页。模型读者原12项发现逐项裁定，并对九段及最后两处澄清复查；未读原页的模型不被记作原件复核。",
+  "sessions": [
+    {
+      "phase": "Part I",
+      "model": "DeepSeek V4.1 Flash Max",
+      "thinking": "Max",
+      "permissions": "Full",
+      "workingDirectory": "verified isolated owning knowledge-base checkout",
+      "scope": "5 actual book chapters and 6 actual website pages; follow-up on nine changed paragraphs",
+      "duration": "5m45s initial; 2m12s follow-up"
+    },
+    {
+      "phase": "whole manuscript",
+      "model": "DeepSeek V4.1 Flash Max",
+      "thinking": "Max",
+      "permissions": "Full",
+      "workingDirectory": "verified isolated owning knowledge-base checkout",
+      "scope": "40 book units and seven part introductions, then 13 independently organized companion pages; 854 unique canonical body claims plus ordinary prose, tables and captions",
+      "duration": "8m49s initial; 4m00s bounded follow-up; final two-paragraph check separately bound"
+    }
+  ],
+  "coverage": [
+    {
+      "path": "/docs",
+      "route": "/docs",
+      "sha256": "5c99369ac93b04b4f6b37c15d551f0c44160169780acc2d993173dcb0d912f0a",
+      "title": "前言",
+      "source": "content/docs/index.mdx",
+      "sourceSha256": "43ad1fba5fd24d2bf96d3c26d0d498f6dac6a2704e9372794dd5424759b61b2c",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《前言》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：从具体比较、历史问题和证据依据理解生命周期评价。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book",
+      "route": "/docs/book",
+      "sha256": "1cb69f27e562b327fa834ace1c849047e9d9716238b05955013fac21b19020d6",
+      "title": "阅读导论",
+      "source": "content/docs/book/index.mdx",
+      "sourceSha256": "1a007883741a2cd7a0cede192ef97e6e9650ad85f4834caf5ba9f4eb5fcd4e71",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《阅读导论》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：按历史、比较对象、系统、环境路径和证据判断的顺序阅读，也可从具体案例查阅相关方法。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/integrative-ambitions",
+      "route": "/docs/book/integrative-ambitions",
+      "sha256": "251da85c1fa67529920e61f2b6784e006794ea6997da585dbaaa246abec097ed",
+      "title": "生命周期视角",
+      "source": "content/docs/book/integrative-ambitions.mdx",
+      "sourceSha256": "865602a44196e7d801cbade87b92564d771b5ae7ef6347e0d82ff4f637139aa6",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《生命周期视角》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：从同一服务的比较出发，理解系统范围、模型简化和决策依据，再回看早期研究。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/early-container-comparisons",
+      "route": "/docs/book/early-container-comparisons",
+      "sha256": "34fa24efe4025512116e45c86ed5f5e088eed29acd9eb0508b736d25e185127a",
+      "title": "饮料容器账本",
+      "source": "content/docs/book/early-container-comparisons.mdx",
+      "sourceSha256": "7d5f917675819ca18b4a504a7e591858c989a1c74777a6cafdbfded804800bd6",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《饮料容器账本》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：以1974年的容器比较为例，考察饮料供应、瓶子周转与能源核算，区分局部复算和完整系统重建。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/early-container-policy-and-systems",
+      "route": "/docs/book/early-container-policy-and-systems",
+      "sha256": "ec50a72507fcff5ad9ab1c8afbb5584f0b6e9168c49c0dc689e8a66409417b7e",
+      "title": "容器比较与政策判断",
+      "source": "content/docs/book/early-container-policy-and-systems.mdx",
+      "sourceSha256": "ac0b725f58c003f8932c4a4c72dfed1748a010eb8ef7843c1e1f35a0d83482ee",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《容器比较与政策判断》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：重读1972年的政策报告，区分容器比较、其他消费与全国政策判断，并核对同期能源问题的历史依据。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/framework-history",
+      "route": "/docs/book/framework-history",
+      "sha256": "8bb82e24c957a7135cb04fb41827e05c93e030e2e902a63ed42ad5e65d02ba22",
+      "title": "评价框架的形成",
+      "source": "content/docs/book/framework-history.mdx",
+      "sourceSha256": "243dc8a672f1cb62be2257138372263500dcc95ff099abc22f26ec815833522a",
+      "readerPath": "actual-companion-web-reading-and-bounded-final-deltas",
+      "judgment": "《评价框架的形成》按完整源稿及实际连续阅读核对：比较会议记录与不同指南，辨认清单、评价、改进和解释的分析任务及其历史安排。 其解释、例子和限定与本单元实际组织相称；网站独立开头、组织及具名续接另经实际网页审读。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/cml-computation-judgment-and-improvement",
+      "route": "/docs/book/cml-computation-judgment-and-improvement",
+      "sha256": "81a9d055ce89f22d49666adfe923b1b9fc7d52cfff779563d765d38956c8bcd3",
+      "title": "CML指南中的评价与改进",
+      "source": "content/docs/book/cml-computation-judgment-and-improvement.mdx",
+      "sourceSha256": "bef0ac4d548091c210e12d4f6a019b2d651e1ad98a7930847e1440c29b35de89",
+      "readerPath": "actual-companion-web-reading-and-bounded-final-deltas",
+      "judgment": "《CML指南中的评价与改进》按完整源稿及实际连续阅读核对：通过CML指南中的铝箔、椅子和包装算例，理解计算、取舍、改进建议与实际采用之间的关系。 其解释、例子和限定与本单元实际组织相称；网站独立开头、组织及具名续接另经实际网页审读。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/cleaner-production-purpose-and-prospects",
+      "route": "/docs/book/cleaner-production-purpose-and-prospects",
+      "sha256": "825bedce695fc158b2f156a55e2d0d6f153da4d3ea8a60156b3a84ab4da38d8e",
+      "title": "清洁生产中的生命周期评价",
+      "source": "content/docs/book/cleaner-production-purpose-and-prospects.mdx",
+      "sourceSha256": "1749f7f02b50ab837935af089f4a423bf15a21f74f451a2b774de2131189b064",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《清洁生产中的生命周期评价》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：依据孙启宏2002年的论述，理解生命周期评价在清洁生产中的用途、应用设想及研究条件，区分历史建议与效果证据。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/service-and-reference",
+      "route": "/docs/book/service-and-reference",
+      "sha256": "6f1b3df955b7b65569b11f8e97917bf67bccaab0cf2a5e277c2ba298d2ea2cd8",
+      "title": "功能参照",
+      "source": "content/docs/book/service-and-reference.mdx",
+      "sourceSha256": "bff3095f7f5432ab5637a8addd72eb77c1371f38376deae4f222824141d9da80",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《功能参照》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：先说明要提供的服务，再看每个方案要用多少产品，以及过程数据按什么量给出。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/inventory-calculation",
+      "route": "/docs/book/inventory-calculation",
+      "sha256": "24828375991070e9a846b0255d208276c1d3859c2492b4065fe2e78c50105afc",
+      "title": "过程网络",
+      "source": "content/docs/book/inventory-calculation.mdx",
+      "sourceSha256": "2cb4779b15030498c7f7c387a0efeb0ebc3fd13796b831c20bc7333db8829acf",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《过程网络》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：用两个互相供货的过程说明怎样算出各自的活动量，以及漏算反馈会少交付多少产品。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/exchange-semantics-and-conversion",
+      "route": "/docs/book/exchange-semantics-and-conversion",
+      "sha256": "9e7458f12b309c8d3aa18685ea98ee0194f94f67ea51cf2d20ff9e4b5ffe87bb",
+      "title": "交换语义",
+      "source": "content/docs/book/exchange-semantics-and-conversion.mdx",
+      "sourceSha256": "67bdfb445c7ada45872a48ac21afd9c2f1251926c4c5e533b661bfc245a7708d",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《交换语义》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：用瓶子和注塑两例，追查软件算了哪些处理活动、文件传递了多少需求，以及清单里哪些排放得到表征。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/inventory-boundary-and-hybrid",
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "sha256": "547758b39dbb41152e3f632cb8dd72a2faa414430d5638c3678e20f512cc4a45",
+      "title": "混合清单",
+      "source": "content/docs/book/inventory-boundary-and-hybrid.mdx",
+      "sourceSha256": "64380def6514103aaa3eb2e108a2f49b5c6e56e4ff13520e87e9d540104358ae",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《混合清单》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：过程清单缺少一项投入时，经济数据能补上什么？烤面包器的双向采购、三家供应者的发票和泵的用钢，说明了哪些活动可以补入，哪些可能算了两次。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/allocation-and-substitution",
+      "route": "/docs/book/allocation-and-substitution",
+      "sha256": "5fd940ca4b147d03c54cdf6c6797f529b40c2462586d1c180ab662c3418bd60c",
+      "title": "共产品的分配与替代",
+      "source": "content/docs/book/allocation-and-substitution.mdx",
+      "sourceSha256": "75c21e8b57706065ce5ec49197afc29186b46677d6d21946863df5a5c59a9bc2",
+      "readerPath": "actual-companion-web-reading-and-bounded-final-deltas",
+      "judgment": "《共产品的分配与替代》按完整源稿及实际连续阅读核对：用同一批假想共产品说明怎样分担排放，以及换一种供给路线后排放怎样变化。 其解释、例子和限定与本单元实际组织相称；网站独立开头、组织及具名续接另经实际网页审读。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/allocation-judgment-and-corrections",
+      "route": "/docs/book/allocation-judgment-and-corrections",
+      "sha256": "e15a334978f8fe602f51eafff346062f3fe30c485131930c0de5a7451f98fad8",
+      "title": "分配规则与修订",
+      "source": "content/docs/book/allocation-judgment-and-corrections.mdx",
+      "sourceSha256": "e2cde3381bffe115c497a66c8fcdd6492a161095ee562deb4ad5078ba40a6bbb",
+      "readerPath": "actual-companion-web-reading-and-bounded-final-deltas",
+      "judgment": "《分配规则与修订》按完整源稿及实际连续阅读核对：同一笔排放有几种分担办法。本页比较它们的理由、所需的资料，以及增补文件怎样修改了原规则。 其解释、例子和限定与本单元实际组织相称；网站独立开头、组织及具名续接另经实际网页审读。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/market-boundaries-and-response",
+      "route": "/docs/book/market-boundaries-and-response",
+      "sha256": "3a49e04f41d5f27b01a6d70554e264c3f248e1d8bc6781ca35261c119b32711c",
+      "title": "市场响应",
+      "source": "content/docs/book/market-boundaries-and-response.mdx",
+      "sourceSha256": "a91845e08f5ca445fca0283ca0c42e7ba908d36f986325047a84491ec2715f05",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《市场响应》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：比较瑞士电量账和两种假想供电情景，说明买到的电来自哪里，新增需求又会让谁多发电。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/electricity-service-and-response",
+      "route": "/docs/book/electricity-service-and-response",
+      "sha256": "819c7e6519c61eb7a9c1f00a1edc8738db484b842496cc7921b5d52bfdc5ab91",
+      "title": "供电系统",
+      "source": "content/docs/book/electricity-service-and-response.mdx",
+      "sourceSha256": "49c0434c2b14eadf6afbf141da47f1c34ffd2819eca27812c892441c89c3162a",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《供电系统》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：少用一度电会怎样改变排放？要看电在哪里交付、何时使用，以及用电变化会影响机组运行、设备容量，还是两者都会变。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/recycling-chains-and-accounting",
+      "route": "/docs/book/recycling-chains-and-accounting",
+      "sha256": "946969a1b293594e77bb8cbfc39929766c5e49d1e7cfd6fe9becf5fd682915a8",
+      "title": "材料循环",
+      "source": "content/docs/book/recycling-chains-and-accounting.mdx",
+      "sourceSha256": "744ac95559f3fc542d3951350d742cde76832d80107155ca511d98c5f4649c58",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《材料循环》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：以丹麦瓦楞纸为例，追查纸去了哪里、回收负担怎样分担，以及少焚烧一批纸会改变哪些纸品和能源供给。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/midpoint-endpoint-value-choices",
+      "route": "/docs/book/midpoint-endpoint-value-choices",
+      "sha256": "67ceba827e94d9c6ba131d9464066781150a674a402bb06369d768566d7afd68",
+      "title": "中点与终点",
+      "source": "content/docs/book/midpoint-endpoint-value-choices.mdx",
+      "sourceSha256": "09a10ae747b6ae2451095182e811d5c9f717d0deebb09c92193bad0d479fcfc6",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《中点与终点》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：中点和终点对应环境因果路径上的不同位置。指标能回答什么，还取决于模型怎样处理时间、地点和效应证据。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/climate-response-and-metrics",
+      "route": "/docs/book/climate-response-and-metrics",
+      "sha256": "da2176fd5ef2b56cf05ec1ddff466dcd8926c05f0a74af3ac6f4312dfdf2e4d5",
+      "title": "气候响应与当量",
+      "source": "content/docs/book/climate-response-and-metrics.mdx",
+      "sourceSha256": "d3f4b3bdb09b030a3cc5409f22573fc100c170317f0b27f36ec93eb0b6e97169",
+      "readerPath": "actual-companion-web-reading-and-bounded-final-deltas",
+      "judgment": "《气候响应与当量》按完整源稿及实际连续阅读核对：用辐射强迫和温度响应说明气候当量，并比较因子版本、排放时点和排放历史带来的差别。 其解释、例子和限定与本单元实际组织相称；网站独立开头、组织及具名续接另经实际网页审读。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/emission-time-and-assessment",
+      "route": "/docs/book/emission-time-and-assessment",
+      "sha256": "b075c114e7e8d69ce08892aadfbd786a395bff89ab565a121919bc642d2daff1",
+      "title": "排放时间与评价",
+      "source": "content/docs/book/emission-time-and-assessment.mdx",
+      "sourceSha256": "30ba85d1052688d030ee1f12bfa19a24c92272865c4bcdbb7303994f0379a4ce",
+      "readerPath": "actual-companion-web-reading-and-bounded-final-deltas",
+      "judgment": "《排放时间与评价》按完整源稿及实际连续阅读核对：区分两种评价时间设定，说明排放日期怎样影响动态表征。 其解释、例子和限定与本单元实际组织相称；网站独立开头、组织及具名续接另经实际网页审读。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/acidification-and-nutrient-pathways",
+      "route": "/docs/book/acidification-and-nutrient-pathways",
+      "sha256": "2448a20d23b21f4eed47188635c27c83f015e8b46e7e961cac96e068af292b8a",
+      "title": "酸化与营养富集",
+      "source": "content/docs/book/acidification-and-nutrient-pathways.mdx",
+      "sourceSha256": "fae6c7d560b238793d6c8532a60777893de1459beb318a380b464ad16b2f4dc2",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《酸化与营养富集》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：追踪排放怎样经空气、土壤或水体引起酸化与营养富集，并区分施用量、净排放和类别指标。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/particulate-emissions-and-health",
+      "route": "/docs/book/particulate-emissions-and-health",
+      "sha256": "dc1226a10bdb2c1eef8f8baf8b32a49124a2b245eaa9f1443825aa90c92efcea",
+      "title": "颗粒物排放与健康损害",
+      "source": "content/docs/book/particulate-emissions-and-health.mdx",
+      "sourceSha256": "e8ece01c776fda8134fd3e0972f604f848cd12a75c41ed0ba7e3002decb18c26",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《颗粒物排放与健康损害》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：从排放量算到人群吸入量和潜在健康损害，再看不同的暴露条件、响应参照和因子版本怎样影响比较。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/water-scarcity-and-reference",
+      "route": "/docs/book/water-scarcity-and-reference",
+      "sha256": "e96b848cf468066c685a9174e55cbd2eae8351497e0dae3d93d232ee83e38a16",
+      "title": "耗水与缺水潜势",
+      "source": "content/docs/book/water-scarcity-and-reference.mdx",
+      "sourceSha256": "8ae52be3d2f1e416c24397cfdab6750474141fefa33897b96d717031055bdcff",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《耗水与缺水潜势》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：以两处耗水为例，说明同样的耗水体积为何可能对应不同的缺水潜势。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/usetox-pathways-and-boundaries",
+      "route": "/docs/book/usetox-pathways-and-boundaries",
+      "sha256": "06c363445014c1d8e4566bd59dbeedea5ec3974d046a77bd392b0e31a8024015",
+      "title": "毒性路径",
+      "source": "content/docs/book/usetox-pathways-and-boundaries.mdx",
+      "sourceSha256": "4fda754b65812d8ebfababca222ed63ba078ad20c60bd85d1a7e7afdeed97537",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《毒性路径》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：说明USEtox怎样从排放估计暴露和效应，以及资料缺口和因子标记怎样影响毒性比较。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/ecological-scarcity-and-targets",
+      "route": "/docs/book/ecological-scarcity-and-targets",
+      "sha256": "5dd0f5a50cc117b43e4b15a8b221ed057f182a963911d1a3c89d03d6efb70d37",
+      "title": "生态稀缺赋权",
+      "source": "content/docs/book/ecological-scarcity-and-targets.mdx",
+      "sourceSha256": "4fce71eacd4f7b0feb0dda0b96c255b4bc8e9bc66bc283d640f5841661872df9",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《生态稀缺赋权》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：用同一涂装服务比较两种排放组合，说明政策目标和地域参照怎样影响生态点数。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/localization-evidence-and-denominators",
+      "route": "/docs/book/localization-evidence-and-denominators",
+      "sha256": "f2b8b5753a0a15790ea98f6dd3de6e733ba1e20c81e3b37c12aca44b9c8c4354",
+      "title": "影响评价本地化",
+      "source": "content/docs/book/localization-evidence-and-denominators.mdx",
+      "sourceSha256": "ca55dfc7f44945dab494938e84d9561cf36b4a0aae4a2cb1dea404717a5cd351",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《影响评价本地化》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：早期中文研究、后续政策研究和香港建材项目分别说明，本地化可以改变参照、权重或所用模型与资料。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/lime-preferences-and-damage-weights",
+      "route": "/docs/book/lime-preferences-and-damage-weights",
+      "sha256": "e64b4e4eaca07469a0a4a113aff290bc82c255a3ba79e8f8925e788e01c105ee",
+      "title": "环境损害估值",
+      "source": "content/docs/book/lime-preferences-and-damage-weights.mdx",
+      "sourceSha256": "b47c94e2216050e1206df7f6dfdbcd75657f34b20bed812ed61e507a19d16a53",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《环境损害估值》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：日本LIME研究用政策选择题估计损害权重。两份发表值用于同一算例时，可能给出不同的方案排序。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/social-assessment-objects-and-meaning",
+      "route": "/docs/book/social-assessment-objects-and-meaning",
+      "sha256": "eaf3d96ad76ee447bf3f3884671449c216e5c8fb7f72089a7e186039f9918600",
+      "title": "社会表现与影响",
+      "source": "content/docs/book/social-assessment-objects-and-meaning.mdx",
+      "sourceSha256": "6f0d3d9ec1ce717c3d933397c8bd5be88fcd0dafdb719cc31d4de522c2b88988",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《社会表现与影响》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：以工作服采购为例，区分产品与组织的参照、供应链风险、实际工作条件和社会影响。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/cost-perspectives-and-sustainability-combination",
+      "route": "/docs/book/cost-perspectives-and-sustainability-combination",
+      "sha256": "bbff95ad41dd19f23215ae3514e8775581ed15290a6c3bc698e1b8f5a48d15ee",
+      "title": "生命周期成本与综合评价",
+      "source": "content/docs/book/cost-perspectives-and-sustainability-combination.mdx",
+      "sourceSha256": "9363218bcfcd5710e3a733a5f87bbc3475e83a94f6bf0fc98015c5273de96b7f",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《生命周期成本与综合评价》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：沿用工作服采购，辨认成本由谁承担，再把环境、社会和成本结果放在同一决策中。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/database-fitness-and-documentation",
+      "route": "/docs/book/database-fitness-and-documentation",
+      "sha256": "d3276ca6f13917569e3cdc18959d99a8b4886be108ecf2796d24b5451d7b7fd2",
+      "title": "过程数据的用途",
+      "source": "content/docs/book/database-fitness-and-documentation.mdx",
+      "sourceSha256": "fdce28c48ceeb9f0349b2ec634fae64cb55a5a6be5072e24bab10ef2c78d8912",
+      "readerPath": "actual-companion-web-reading-and-bounded-final-deltas",
+      "judgment": "《过程数据的用途》按完整源稿及实际连续阅读核对：从一份煤电数据出发，说明怎样查清它代表什么过程、覆盖哪些清单流，以及能用来评价哪些影响。 其解释、例子和限定与本单元实际组织相称；网站独立开头、组织及具名续接另经实际网页审读。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/review-support-and-version-boundaries",
+      "route": "/docs/book/review-support-and-version-boundaries",
+      "sha256": "9e00a2a2224a5602e70cf48a0920b64d92b11253644fd02bcfe4275a58a272b6",
+      "title": "数据审查与版本",
+      "source": "content/docs/book/review-support-and-version-boundaries.mdx",
+      "sourceSha256": "30e18084061d6b5d77518e1194472a0653d1fbcdf526201d0443c3618081f569",
+      "readerPath": "actual-companion-web-reading-and-bounded-final-deltas",
+      "judgment": "《数据审查与版本》按完整源稿及实际连续阅读核对：核对审查采用的准则、实际检查过的资料和数据版本，判断换库、换用途或换版后还能沿用哪些审查结论。 其解释、例子和限定与本单元实际组织相称；网站独立开头、组织及具名续接另经实际网页审读。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/uncertainty-and-variability",
+      "route": "/docs/book/uncertainty-and-variability",
+      "sha256": "0df5ef6497b1f3357398307c6ecf026009fab2b3de7bd26de7b42456e8570b40",
+      "title": "变异与不确定性",
+      "source": "content/docs/book/uncertainty-and-variability.mdx",
+      "sourceSha256": "6f1a6d85e6acc49212fdecbea1bf5ad26b360ad7b1dd22a0e0a3a2007ba0642b",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《变异与不确定性》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：用工厂排放说明厂际差异与均值估计误差的区别，再看参数、模型选择和数值求解各怎样影响结果。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/data-quality-and-probability",
+      "route": "/docs/book/data-quality-and-probability",
+      "sha256": "7e2f6b2e74b83bc1b4b1f90fe6961c1dba4ee69bba2292e4d722734170491963",
+      "title": "质量评分与概率",
+      "source": "content/docs/book/data-quality-and-probability.mdx",
+      "sourceSha256": "b680113248c6f0865d66d9d9f11af74028e360cfc67acc3315d92ce0b5bad0cf",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《质量评分与概率》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：从柏林杯重调查看平均值的估计精度与杯重散布有何不同，再说明怎样用这批资料提出完整性因子，以及用因子建立概率分布需要哪些假定。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/product-footprint-rules-and-practice",
+      "route": "/docs/book/product-footprint-rules-and-practice",
+      "sha256": "d47a473dc3424c522fcc26e889b670f86341af1e745304b2fda73dcebd17a5a9",
+      "title": "产品足迹规则",
+      "source": "content/docs/book/product-footprint-rules-and-practice.mdx",
+      "sourceSha256": "6b33128bd63da692de45382f234beeddfa7af9eb2ea5657a1adff7c001075338",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《产品足迹规则》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：从一升牛奶的冷藏和洗涤出发，核对类别规则、活动用量、发布的气候结果及审查范围，再用两种甲烷算法说明乳制品 PEF 研究的比较声明为何要用同一种排放计算方法。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/wall-service-to-comparison",
+      "route": "/docs/book/wall-service-to-comparison",
+      "sha256": "161d5ad0696b5647eead197d21967355dbb1f0bd34ebdfc9f940026b7cd8adb7",
+      "title": "墙面服务比较",
+      "source": "content/docs/book/wall-service-to-comparison.mdx",
+      "sourceSha256": "312faf614488fab832e0aeee6bee44e867cc7208bf9c4a31f1dd9877aafb6b0a",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《墙面服务比较》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：比较两种涂料如何在同一片墙面维持十年的颜色和遮盖效果，逐步算出所需活动和气候指标，再看基底和共同供电条件怎样影响指标差。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/interpretation-and-limits",
+      "route": "/docs/book/interpretation-and-limits",
+      "sha256": "96c814bd9b8ceba5f2e0802120d268f360ef5b48b7b47414c81fb8cc1cc65549",
+      "title": "购物袋研究",
+      "source": "content/docs/book/interpretation-and-limits.mdx",
+      "sourceSha256": "a5dfeb957c9565f7d7899708cb9bd51d413e6f5f21afa80631c64f4c59de712e",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《购物袋研究》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：复算英国购物袋研究中厚袋需要使用多少次，查看垃圾桶内衬替代如何改变门槛，并区分气候结果、其他影响及审查能够确认的结论。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/future-technology-and-context",
+      "route": "/docs/book/future-technology-and-context",
+      "sha256": "a98f20ab472757104c23b446c866308cd91918841b1bc526b8ad5536a9e0bbad",
+      "title": "未来技术与情景",
+      "source": "content/docs/book/future-technology-and-context.mdx",
+      "sourceSha256": "aee084ca20f91aaf7f1709b97875e5adbb8c081909344169394a9e1f28b599b3",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《未来技术与情景》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：评价尚在开发的工艺时，怎样设定它未来的生产规模、同期竞争方案和供给条件？本章说明这些设定如何影响比较。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/connecting-objects-references-and-time",
+      "route": "/docs/book/connecting-objects-references-and-time",
+      "sha256": "f208986130d7c031d099b4a738b171347237b5d4eaee452d57f4bb6617981b3e",
+      "title": "服务、系统与时间",
+      "source": "content/docs/book/connecting-objects-references-and-time.mdx",
+      "sourceSha256": "6420fcf83079a82ab7f73980d905a7cd30246e1f9ed0815f10ff9b43aae3bc4b",
+      "readerPath": "actual-companion-web-reading-and-bounded-final-deltas",
+      "judgment": "《服务、系统与时间》按完整源稿及实际连续阅读核对：围绕服务要求、资料用途和时间设置，说明清单与模型能够比较、连接和复用的条件。 其解释、例子和限定与本单元实际组织相称；网站独立开头、组织及具名续接另经实际网页审读。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/book/from-connected-results-to-conditional-judgment",
+      "route": "/docs/book/from-connected-results-to-conditional-judgment",
+      "sha256": "a14c6d213502f1024226d7803c65b1059e854f1f7a109b4d2b42df57ae5962cf",
+      "title": "判断依据与修订",
+      "source": "content/docs/book/from-connected-results-to-conditional-judgment.mdx",
+      "sourceSha256": "d6d93874bacd8dc3d079e65d783d491f554ecc58d4df4241c1e21a374d8916cb",
+      "readerPath": "actual-companion-web-reading-and-bounded-final-deltas",
+      "judgment": "《判断依据与修订》按完整源稿及实际连续阅读核对：通过饮料容器、墙面和购物袋三个案例，辨认证据支持哪一项判断、新资料会改变哪一步。 其解释、例子和限定与本单元实际组织相称；网站独立开头、组织及具名续接另经实际网页审读。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/history",
+      "route": "/docs/history",
+      "sha256": "efcbd773bbb5aac7271f15523a2313a81f7403db5599fadda52ce790400ac8fc",
+      "title": "史料辨读",
+      "source": "content/docs/history.mdx",
+      "sourceSha256": "bcb99a0c8131d68a1d54e6b6f1544f45ebc2a0d0af1c1d7a763e0ae9ff26f876",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《史料辨读》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：对照早期容器与政策研究、框架活动、指南和软件版本，区分史料所记事项及其能支持的联系。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/flows",
+      "route": "/docs/flows",
+      "sha256": "7226501a00490eed02725032d27823b63fefc4aaef7ab78fbb690f1da3fb9677",
+      "title": "流、交换与废物表达",
+      "source": "content/docs/flows.mdx",
+      "sourceSha256": "7e2ec9a16203214e305af7ad947eb3654303a330f49a1f0cef455cf2442ce84c",
+      "readerPath": "actual-companion-web-reading-and-bounded-final-deltas",
+      "judgment": "《流、交换与废物表达》按完整源稿及实际连续阅读核对：从对象、过程角色和编码约定解释flow、exchange与两种废物处理表达。 其解释、例子和限定与本单元实际组织相称；网站独立开头、组织及具名续接另经实际网页审读。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/functional-unit",
+      "route": "/docs/functional-unit",
+      "sha256": "6fddf7e9c7d40d5ac26c9d42f73d65ff4d7406a32e369d7180c6647914d94341",
+      "title": "功能单位与参考流",
+      "source": "content/docs/functional-unit.mdx",
+      "sourceSha256": "3a795165332db92cf45770c41e4987b7567aa6487d96a3177040352436275124",
+      "readerPath": "actual-companion-web-reading-and-bounded-final-deltas",
+      "judgment": "《功能单位与参考流》按完整源稿及实际连续阅读核对：分开说明研究要求的服务、具体交换的定量参考，以及连接两者所需的性能假设。 其解释、例子和限定与本单元实际组织相称；网站独立开头、组织及具名续接另经实际网页审读。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/allocation",
+      "route": "/docs/allocation",
+      "sha256": "d24de0b4b5144d6580b41a541f7e6fd60b6b8b0d486bc423883280a9496c156b",
+      "title": "系统模型辨读",
+      "source": "content/docs/allocation.mdx",
+      "sourceSha256": "3f2e69919e1800edab7566d948c733973ed376a08ece8705eed2edf80483ea7f",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《系统模型辨读》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：通过 ecoinvent 的几种系统模型，说明哪些过程向谁供给，以及废物处理和再生生产的负担分别由谁承担。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/characterization",
+      "route": "/docs/characterization",
+      "sha256": "99bc85c455e2be6203829dd1ad4766fb656c01b474d0563f9a1f488c1feb9f75",
+      "title": "缺少表征因子不等于因子为零",
+      "source": "content/docs/characterization.mdx",
+      "sourceSha256": "89617cd78d17d0e6c09e3426a548fe1af82bce67842fa0ba3ff948ee55df38f7",
+      "readerPath": "actual-companion-web-reading-and-bounded-final-deltas",
+      "judgment": "《缺少表征因子不等于因子为零》按完整源稿及实际连续阅读核对：区分表征记录、覆盖状态和数值合计，保留结果解释所需的信息。 其解释、例子和限定与本单元实际组织相称；网站独立开头、组织及具名续接另经实际网页审读。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/appendices/container-energy-check",
+      "route": "/docs/appendices/container-energy-check",
+      "sha256": "dc6f7af4e98678cc48b1ca6911834f64020f65fb069a8e0bb430e3ff9ed2563b",
+      "title": "容器能源复核",
+      "source": "content/docs/appendices/container-energy-check.mdx",
+      "sourceSha256": "509943c7f5c02ef5c856479a3d32d7ee507a35f17d61afe75756410bb63953fc",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《容器能源复核》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：核对1974年报告的玻璃制造能源、原料供应及汇总，并计算显示舍入能够解释的差额范围。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/appendices/cml-framework-calculations",
+      "route": "/docs/appendices/cml-framework-calculations",
+      "sha256": "24494447fea5dbbeb6386ebb4557febe46b59593d53986a03f45371eb04512f3",
+      "title": "指南算例复核",
+      "source": "content/docs/appendices/cml-framework-calculations.mdx",
+      "sourceSha256": "c466cc6643f09e4b1e159ee882abf869f3138f27c9cede17d547236cc638fc46",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《指南算例复核》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：核对CML铝箔假想模型的原表与方程，区分局部和有限响应，再检查表征因子转为筛查分数后保留的信息。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/appendices/climate-numerical-reconstruction",
+      "route": "/docs/appendices/climate-numerical-reconstruction",
+      "sha256": "d1afa2275986540c1e3da100a8f4ae0a58adf80e7ddd1fbd589a82f76ef9a201",
+      "title": "气候数值的重建",
+      "source": "content/docs/appendices/climate-numerical-reconstruction.mdx",
+      "sourceSha256": "4503871c87193ec3aad4d0e58888688360905f11ed389607af700268b5d10a34",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《气候数值的重建》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：重算二氧化碳响应及其积分，并与论文表值对照。附录还复算历史程序的选定结果，考察结果对时间步长的敏感性。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/docs/appendices/particulate-factor-calculations",
+      "route": "/docs/appendices/particulate-factor-calculations",
+      "sha256": "2cbc1542d5ca0a5ac2ee4a3fa00b36b5ce348e3249d30c8741c243cc3c998045",
+      "title": "颗粒物因子的复算",
+      "source": "content/docs/appendices/particulate-factor-calculations.mdx",
+      "sourceSha256": "369a96bc470349f64021a02d159997df2b906f620eeb36c6bbd0c15e387bfbca",
+      "readerPath": "same-source-prose-context-review-plus-actual-web-output-check",
+      "judgment": "此网页《颗粒物因子的复算》复用已独立审读的同源正文；其源稿语境与实际网站输出另经核对：计算不同源高的加权吸入比例，说明区室模型，并核对发布因子与工作簿中的结果。 其解释、例子和限定与本单元实际组织相称；此网页复用已逐段读审的同源正文，网站题名、注释范围及具名续接另由源稿/实际出页核对。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs",
+      "sha256": "2afc38ec33836fd61f683a363b9ba5bc4c44c929a87a61b79cb8f2e326087ded",
+      "title": "前言",
+      "source": "content/docs/index.mdx",
+      "sourceSha256": "43ad1fba5fd24d2bf96d3c26d0d498f6dac6a2704e9372794dd5424759b61b2c",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《前言》按完整源稿及实际连续阅读核对：从具体比较、历史问题和证据依据理解生命周期评价。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book",
+      "sha256": "a9e606f53d0be582a4a90e7120b093f1b49cf0e62abf19d3a1e9a525f461b6ea",
+      "title": "阅读导论",
+      "source": "content/docs/book/index.mdx",
+      "sourceSha256": "1a007883741a2cd7a0cede192ef97e6e9650ad85f4834caf5ba9f4eb5fcd4e71",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《阅读导论》按完整源稿及实际连续阅读核对：按历史、比较对象、系统、环境路径和证据判断的顺序阅读，也可从具体案例查阅相关方法。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/integrative-ambitions",
+      "sha256": "114bf3e337a16fcf7a9894eed3c94ac7f8d275fd388faaad32ccc82d7f11b7dd",
+      "title": "生命周期视角",
+      "source": "content/docs/book/integrative-ambitions.mdx",
+      "sourceSha256": "865602a44196e7d801cbade87b92564d771b5ae7ef6347e0d82ff4f637139aa6",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《生命周期视角》按完整源稿及实际连续阅读核对：从同一服务的比较出发，理解系统范围、模型简化和决策依据，再回看早期研究。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/early-container-comparisons",
+      "sha256": "aac4e4265c0766cfd2b4e1aac7625caf80943377472ba18de8e1db7092cce0f9",
+      "title": "饮料容器账本",
+      "source": "content/docs/book/early-container-comparisons.mdx",
+      "sourceSha256": "7d5f917675819ca18b4a504a7e591858c989a1c74777a6cafdbfded804800bd6",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《饮料容器账本》按完整源稿及实际连续阅读核对：以1974年的容器比较为例，考察饮料供应、瓶子周转与能源核算，区分局部复算和完整系统重建。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/early-container-policy-and-systems",
+      "sha256": "12ced19a28429a9ff519fc4dde703c55f67cbb8ffe4fc7f59ed107009cff5a5d",
+      "title": "容器比较与政策判断",
+      "source": "content/docs/book/early-container-policy-and-systems.mdx",
+      "sourceSha256": "ac0b725f58c003f8932c4a4c72dfed1748a010eb8ef7843c1e1f35a0d83482ee",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《容器比较与政策判断》按完整源稿及实际连续阅读核对：重读1972年的政策报告，区分容器比较、其他消费与全国政策判断，并核对同期能源问题的历史依据。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "book-framework-responsibilities",
+      "sha256": "532b80e65e16733f1083d189a4e4a1fd174f7f64fb921f99a3877526879ab0e1",
+      "title": "评价框架与分析步骤",
+      "source": "content/monograph/framework-responsibilities.mdx",
+      "sourceSha256": "aede02111773a801ed0955d1f31fedd21fa3357ec3fb0a7f6ba86bf7d2ae5407",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《评价框架与分析步骤》按完整源稿及实际连续阅读核对：比较清单、评价、改进和解释的任务，考察各阶段结果如何支持判断，以及指南如何被其他研究采用。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/cleaner-production-purpose-and-prospects",
+      "sha256": "a6be0f80ef7ccb103e80cb1c48e2a3e79cc96ef1e9e7a3b522660b58542ce811",
+      "title": "清洁生产中的生命周期评价",
+      "source": "content/docs/book/cleaner-production-purpose-and-prospects.mdx",
+      "sourceSha256": "1749f7f02b50ab837935af089f4a423bf15a21f74f451a2b774de2131189b064",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《清洁生产中的生命周期评价》按完整源稿及实际连续阅读核对：依据孙启宏2002年的论述，理解生命周期评价在清洁生产中的用途、应用设想及研究条件，区分历史建议与效果证据。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/service-and-reference",
+      "sha256": "a25ba36bbd6f3a73e1a72ece4dab261a380e5820c50d3edd24202846ddc3d48d",
+      "title": "功能参照",
+      "source": "content/docs/book/service-and-reference.mdx",
+      "sourceSha256": "bff3095f7f5432ab5637a8addd72eb77c1371f38376deae4f222824141d9da80",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《功能参照》按完整源稿及实际连续阅读核对：先说明要提供的服务，再看每个方案要用多少产品，以及过程数据按什么量给出。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/inventory-calculation",
+      "sha256": "c97c1471dbf9bd5700c4951372cab50a767d7202c1be6359645af4704a7c2ebc",
+      "title": "过程网络",
+      "source": "content/docs/book/inventory-calculation.mdx",
+      "sourceSha256": "2cb4779b15030498c7f7c387a0efeb0ebc3fd13796b831c20bc7333db8829acf",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《过程网络》按完整源稿及实际连续阅读核对：用两个互相供货的过程说明怎样算出各自的活动量，以及漏算反馈会少交付多少产品。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/exchange-semantics-and-conversion",
+      "sha256": "ad0ade9e46395528762450349e2ad01aa6c4b60fadcf9d8f8aa81eac49057fe2",
+      "title": "交换语义",
+      "source": "content/docs/book/exchange-semantics-and-conversion.mdx",
+      "sourceSha256": "67bdfb445c7ada45872a48ac21afd9c2f1251926c4c5e533b661bfc245a7708d",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《交换语义》按完整源稿及实际连续阅读核对：用瓶子和注塑两例，追查软件算了哪些处理活动、文件传递了多少需求，以及清单里哪些排放得到表征。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/inventory-boundary-and-hybrid",
+      "sha256": "012033520d506caf4c4cd89d64032891d33ba4495433cfda45ee178ec47082b4",
+      "title": "混合清单",
+      "source": "content/docs/book/inventory-boundary-and-hybrid.mdx",
+      "sourceSha256": "64380def6514103aaa3eb2e108a2f49b5c6e56e4ff13520e87e9d540104358ae",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《混合清单》按完整源稿及实际连续阅读核对：过程清单缺少一项投入时，经济数据能补上什么？烤面包器的双向采购、三家供应者的发票和泵的用钢，说明了哪些活动可以补入，哪些可能算了两次。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "book-joint-production",
+      "sha256": "22853c13bff3262a37e45dcc5401789e5c6533cfa9d75bf693f5210df31283db",
+      "title": "共同生产",
+      "source": "content/monograph/joint-production.mdx",
+      "sourceSha256": "426a079e6a16c8876d78bcb351017689d5a9668fb091ac4765dc8ed87bee5e1b",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《共同生产》按完整源稿及实际连续阅读核对：一批共产品怎样分担排放？改用另一条路线供给同样的产品，又会怎样改变排放？两道问题各有条件。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/market-boundaries-and-response",
+      "sha256": "182987e012a36d33d9a5ef0f40c054990b6ecaf9c217fd5a6133a715e47644f8",
+      "title": "市场响应",
+      "source": "content/docs/book/market-boundaries-and-response.mdx",
+      "sourceSha256": "a91845e08f5ca445fca0283ca0c42e7ba908d36f986325047a84491ec2715f05",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《市场响应》按完整源稿及实际连续阅读核对：比较瑞士电量账和两种假想供电情景，说明买到的电来自哪里，新增需求又会让谁多发电。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/electricity-service-and-response",
+      "sha256": "f5c50d6291b2f2938c0df4d4f34262e9e98f500462e7f6156be5b54dd03bf670",
+      "title": "供电系统",
+      "source": "content/docs/book/electricity-service-and-response.mdx",
+      "sourceSha256": "49c0434c2b14eadf6afbf141da47f1c34ffd2819eca27812c892441c89c3162a",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《供电系统》按完整源稿及实际连续阅读核对：少用一度电会怎样改变排放？要看电在哪里交付、何时使用，以及用电变化会影响机组运行、设备容量，还是两者都会变。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/recycling-chains-and-accounting",
+      "sha256": "a74424569820b1b1aa7e9ec50178a30ccb863a4f5a74a83a2a0facb18c9367ae",
+      "title": "材料循环",
+      "source": "content/docs/book/recycling-chains-and-accounting.mdx",
+      "sourceSha256": "744ac95559f3fc542d3951350d742cde76832d80107155ca511d98c5f4649c58",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《材料循环》按完整源稿及实际连续阅读核对：以丹麦瓦楞纸为例，追查纸去了哪里、回收负担怎样分担，以及少焚烧一批纸会改变哪些纸品和能源供给。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/midpoint-endpoint-value-choices",
+      "sha256": "9b653d79cf5c1183932c6ab87354c19eece997ff0ede684f38113ef4c8b70c41",
+      "title": "中点与终点",
+      "source": "content/docs/book/midpoint-endpoint-value-choices.mdx",
+      "sourceSha256": "09a10ae747b6ae2451095182e811d5c9f717d0deebb09c92193bad0d479fcfc6",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《中点与终点》按完整源稿及实际连续阅读核对：中点和终点对应环境因果路径上的不同位置。指标能回答什么，还取决于模型怎样处理时间、地点和效应证据。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "book-climate-equivalence",
+      "sha256": "0c950352accbe70d77f6f2a92a537931262973b7c3cb2e89ebe1bb0c5c627054",
+      "title": "气候当量",
+      "source": "content/monograph/climate-equivalence.mdx",
+      "sourceSha256": "b5fceaa27f25f115fd1bb9f3235f13c8ad5fc1d25b5946c9baa329bf053602ec",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《气候当量》按完整源稿及实际连续阅读核对：两项排放的CO₂当量相同，意味着什么？气候响应、碳收支和排放时间会改变答案。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/acidification-and-nutrient-pathways",
+      "sha256": "00dff8950aa74a087f32ef1efa59ee8dfc586f09ee38d6407fea801ad8808b34",
+      "title": "酸化与营养富集",
+      "source": "content/docs/book/acidification-and-nutrient-pathways.mdx",
+      "sourceSha256": "fae6c7d560b238793d6c8532a60777893de1459beb318a380b464ad16b2f4dc2",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《酸化与营养富集》按完整源稿及实际连续阅读核对：追踪排放怎样经空气、土壤或水体引起酸化与营养富集，并区分施用量、净排放和类别指标。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/particulate-emissions-and-health",
+      "sha256": "8a527bbec06a94a7adb6843d55e814c8ee92f11748f5ff65d740c319fd61fdc3",
+      "title": "颗粒物排放与健康损害",
+      "source": "content/docs/book/particulate-emissions-and-health.mdx",
+      "sourceSha256": "e8ece01c776fda8134fd3e0972f604f848cd12a75c41ed0ba7e3002decb18c26",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《颗粒物排放与健康损害》按完整源稿及实际连续阅读核对：从排放量算到人群吸入量和潜在健康损害，再看不同的暴露条件、响应参照和因子版本怎样影响比较。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/water-scarcity-and-reference",
+      "sha256": "475db1815addf9a97da4bdbba87627b2a29d01ce706707ad02616be9aa900f67",
+      "title": "耗水与缺水潜势",
+      "source": "content/docs/book/water-scarcity-and-reference.mdx",
+      "sourceSha256": "8ae52be3d2f1e416c24397cfdab6750474141fefa33897b96d717031055bdcff",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《耗水与缺水潜势》按完整源稿及实际连续阅读核对：以两处耗水为例，说明同样的耗水体积为何可能对应不同的缺水潜势。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/usetox-pathways-and-boundaries",
+      "sha256": "d58e028f083444042a8873f1b7ba99e841aceabbf84fc987f3c9c690dd941747",
+      "title": "毒性路径",
+      "source": "content/docs/book/usetox-pathways-and-boundaries.mdx",
+      "sourceSha256": "4fda754b65812d8ebfababca222ed63ba078ad20c60bd85d1a7e7afdeed97537",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《毒性路径》按完整源稿及实际连续阅读核对：说明USEtox怎样从排放估计暴露和效应，以及资料缺口和因子标记怎样影响毒性比较。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/ecological-scarcity-and-targets",
+      "sha256": "22bca110347e851b36e8b7dd8138fa9c0110aff1ab844d06a32438b631301567",
+      "title": "生态稀缺赋权",
+      "source": "content/docs/book/ecological-scarcity-and-targets.mdx",
+      "sourceSha256": "4fce71eacd4f7b0feb0dda0b96c255b4bc8e9bc66bc283d640f5841661872df9",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《生态稀缺赋权》按完整源稿及实际连续阅读核对：用同一涂装服务比较两种排放组合，说明政策目标和地域参照怎样影响生态点数。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/localization-evidence-and-denominators",
+      "sha256": "2fc5eb0a73eafafed4fe1a1ac05ab20feebc4d3bb8c4de348e0386a6a8d83acc",
+      "title": "影响评价本地化",
+      "source": "content/docs/book/localization-evidence-and-denominators.mdx",
+      "sourceSha256": "ca55dfc7f44945dab494938e84d9561cf36b4a0aae4a2cb1dea404717a5cd351",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《影响评价本地化》按完整源稿及实际连续阅读核对：早期中文研究、后续政策研究和香港建材项目分别说明，本地化可以改变参照、权重或所用模型与资料。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/lime-preferences-and-damage-weights",
+      "sha256": "ab1d4ee01dfb38e598350ee26bec4dc33f0b5ef5f9261c5e5dd352541e03702c",
+      "title": "环境损害估值",
+      "source": "content/docs/book/lime-preferences-and-damage-weights.mdx",
+      "sourceSha256": "b47c94e2216050e1206df7f6dfdbcd75657f34b20bed812ed61e507a19d16a53",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《环境损害估值》按完整源稿及实际连续阅读核对：日本LIME研究用政策选择题估计损害权重。两份发表值用于同一算例时，可能给出不同的方案排序。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/social-assessment-objects-and-meaning",
+      "sha256": "acdf2db66f982d14b8cd58c5d4387bc6eee8255eb4c13e024942d38418d51493",
+      "title": "社会表现与影响",
+      "source": "content/docs/book/social-assessment-objects-and-meaning.mdx",
+      "sourceSha256": "6f0d3d9ec1ce717c3d933397c8bd5be88fcd0dafdb719cc31d4de522c2b88988",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《社会表现与影响》按完整源稿及实际连续阅读核对：以工作服采购为例，区分产品与组织的参照、供应链风险、实际工作条件和社会影响。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/cost-perspectives-and-sustainability-combination",
+      "sha256": "01eeda49c5f88d8357cb20d787989821b5b13339e35efc622dd1042b94781d18",
+      "title": "生命周期成本与综合评价",
+      "source": "content/docs/book/cost-perspectives-and-sustainability-combination.mdx",
+      "sourceSha256": "9363218bcfcd5710e3a733a5f87bbc3475e83a94f6bf0fc98015c5273de96b7f",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《生命周期成本与综合评价》按完整源稿及实际连续阅读核对：沿用工作服采购，辨认成本由谁承担，再把环境、社会和成本结果放在同一决策中。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "book-data-applicability",
+      "sha256": "2c1e069a601f2d7a9958db319b12caf2c61e726fd5a993774f21b1877aff0b7a",
+      "title": "数据适用性",
+      "source": "content/monograph/data-applicability.mdx",
+      "sourceSha256": "a30dc8aa8a418bf0f31a47905abef996b31f8dd338291cc9161181be0a2f9369",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《数据适用性》按完整源稿及实际连续阅读核对：一份过程数据能否用于当前研究，要看它代表什么技术、覆盖哪些清单流，还要核对质量文档、审查范围和换版后的变化。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/uncertainty-and-variability",
+      "sha256": "687aa617a04f8409ecef0b7b0c3b56246ef3ee846b63086c4fcda636d246db96",
+      "title": "变异与不确定性",
+      "source": "content/docs/book/uncertainty-and-variability.mdx",
+      "sourceSha256": "6f1a6d85e6acc49212fdecbea1bf5ad26b360ad7b1dd22a0e0a3a2007ba0642b",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《变异与不确定性》按完整源稿及实际连续阅读核对：用工厂排放说明厂际差异与均值估计误差的区别，再看参数、模型选择和数值求解各怎样影响结果。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/data-quality-and-probability",
+      "sha256": "d904a7df92c1a4306d80dc5475be6aa557015a48670e1988f2b2ab1c1e50170f",
+      "title": "质量评分与概率",
+      "source": "content/docs/book/data-quality-and-probability.mdx",
+      "sourceSha256": "b680113248c6f0865d66d9d9f11af74028e360cfc67acc3315d92ce0b5bad0cf",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《质量评分与概率》按完整源稿及实际连续阅读核对：从柏林杯重调查看平均值的估计精度与杯重散布有何不同，再说明怎样用这批资料提出完整性因子，以及用因子建立概率分布需要哪些假定。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/product-footprint-rules-and-practice",
+      "sha256": "b2c3892b5f8576381e12dedff4e6015d3eace8710e08efd50d61d8e1e3990f46",
+      "title": "产品足迹规则",
+      "source": "content/docs/book/product-footprint-rules-and-practice.mdx",
+      "sourceSha256": "6b33128bd63da692de45382f234beeddfa7af9eb2ea5657a1adff7c001075338",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《产品足迹规则》按完整源稿及实际连续阅读核对：从一升牛奶的冷藏和洗涤出发，核对类别规则、活动用量、发布的气候结果及审查范围，再用两种甲烷算法说明乳制品 PEF 研究的比较声明为何要用同一种排放计算方法。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/wall-service-to-comparison",
+      "sha256": "941e5e5925dbd1ddde1b1994ca66f4a3a9a1b26a12ae49b47d06cbd2548c9302",
+      "title": "墙面服务比较",
+      "source": "content/docs/book/wall-service-to-comparison.mdx",
+      "sourceSha256": "312faf614488fab832e0aeee6bee44e867cc7208bf9c4a31f1dd9877aafb6b0a",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《墙面服务比较》按完整源稿及实际连续阅读核对：比较两种涂料如何在同一片墙面维持十年的颜色和遮盖效果，逐步算出所需活动和气候指标，再看基底和共同供电条件怎样影响指标差。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/interpretation-and-limits",
+      "sha256": "af66967fe4769c01213eee50ebcb10b08e0460b42e39042b7d3c8ebd1af91e5f",
+      "title": "购物袋研究",
+      "source": "content/docs/book/interpretation-and-limits.mdx",
+      "sourceSha256": "a5dfeb957c9565f7d7899708cb9bd51d413e6f5f21afa80631c64f4c59de712e",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《购物袋研究》按完整源稿及实际连续阅读核对：复算英国购物袋研究中厚袋需要使用多少次，查看垃圾桶内衬替代如何改变门槛，并区分气候结果、其他影响及审查能够确认的结论。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/future-technology-and-context",
+      "sha256": "07d2d7c6488eb9e7d89450aeda2d7ea0ffda9dad57c7aa4fd6b5611fa948b913",
+      "title": "未来技术与情景",
+      "source": "content/docs/book/future-technology-and-context.mdx",
+      "sourceSha256": "aee084ca20f91aaf7f1709b97875e5adbb8c081909344169394a9e1f28b599b3",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《未来技术与情景》按完整源稿及实际连续阅读核对：评价尚在开发的工艺时，怎样设定它未来的生产规模、同期竞争方案和供给条件？本章说明这些设定如何影响比较。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "book-revisable-judgment",
+      "sha256": "431b2c8aaff55a43fa2d4f4923789c1978587075cac8e1de453e06aa91f1536f",
+      "title": "可修订的判断",
+      "source": "content/monograph/revisable-judgment.mdx",
+      "sourceSha256": "743e81e79a2d12fad580c66be7dc3923def57a2fe5b2b048b1b5e3926e928fd0",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《可修订的判断》按完整源稿及实际连续阅读核对：回到饮料容器、墙面和购物袋，说明比较结果可以支持什么判断，又该根据什么新证据修订结论。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/history",
+      "sha256": "36e5f6430f498836345e84d422d8b80ea163acee34809b43cdda500e5f24384e",
+      "title": "史料辨读",
+      "source": "content/docs/history.mdx",
+      "sourceSha256": "bcb99a0c8131d68a1d54e6b6f1544f45ebc2a0d0af1c1d7a763e0ae9ff26f876",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《史料辨读》按完整源稿及实际连续阅读核对：对照早期容器与政策研究、框架活动、指南和软件版本，区分史料所记事项及其能支持的联系。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/allocation",
+      "sha256": "ede79dc86837c2780d3583e58fb8567ee4b97ed0343804cffd840f5836d96d1f",
+      "title": "系统模型辨读",
+      "source": "content/docs/allocation.mdx",
+      "sourceSha256": "3f2e69919e1800edab7566d948c733973ed376a08ece8705eed2edf80483ea7f",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《系统模型辨读》按完整源稿及实际连续阅读核对：通过 ecoinvent 的几种系统模型，说明哪些过程向谁供给，以及废物处理和再生生产的负担分别由谁承担。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/appendices/container-energy-check",
+      "sha256": "c803488741470b044516beead9fa194ebe2facb90cf318a9a05bab23f568d5a0",
+      "title": "容器能源复核",
+      "source": "content/docs/appendices/container-energy-check.mdx",
+      "sourceSha256": "509943c7f5c02ef5c856479a3d32d7ee507a35f17d61afe75756410bb63953fc",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《容器能源复核》按完整源稿及实际连续阅读核对：核对1974年报告的玻璃制造能源、原料供应及汇总，并计算显示舍入能够解释的差额范围。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/appendices/cml-framework-calculations",
+      "sha256": "5a4e52805b8712058ba90a9dee2b87bf6997590d20c3bf98b15d16d34d8df8f5",
+      "title": "指南算例复核",
+      "source": "content/docs/appendices/cml-framework-calculations.mdx",
+      "sourceSha256": "c466cc6643f09e4b1e159ee882abf869f3138f27c9cede17d547236cc638fc46",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《指南算例复核》按完整源稿及实际连续阅读核对：核对CML铝箔假想模型的原表与方程，区分局部和有限响应，再检查表征因子转为筛查分数后保留的信息。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/appendices/climate-numerical-reconstruction",
+      "sha256": "2cbec153439a1385fed1035d7a9cdb49eac16dd208cb46b7f1ae54aa66d35a2e",
+      "title": "气候数值的重建",
+      "source": "content/docs/appendices/climate-numerical-reconstruction.mdx",
+      "sourceSha256": "4503871c87193ec3aad4d0e58888688360905f11ed389607af700268b5d10a34",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《气候数值的重建》按完整源稿及实际连续阅读核对：重算二氧化碳响应及其积分，并与论文表值对照。附录还复算历史程序的选定结果，考察结果对时间步长的敏感性。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/appendices/particulate-factor-calculations",
+      "sha256": "12f29f6659f905b878ffdfed6f872c4b85d6fceb63cd39526c8c88aed1afb66c",
+      "title": "颗粒物因子的复算",
+      "source": "content/docs/appendices/particulate-factor-calculations.mdx",
+      "sourceSha256": "369a96bc470349f64021a02d159997df2b906f620eeb36c6bbd0c15e387bfbca",
+      "readerPath": "actual-complete-book-and-bounded-final-deltas",
+      "judgment": "《颗粒物因子的复算》按完整源稿及实际连续阅读核对：计算不同源高的加权吸入比例，说明区室模型，并核对发布因子与工作簿中的结果。 其解释、例子和限定与本单元实际组织相称；合订本的标题、章间承接和连续注释分别检查。 后续只对已记录的改句与显示处置作有界复查，不把全站几何测量称作逐页全文阅读。"
+    }
+  ],
+  "readerFindings": {
+    "original": 12,
+    "resolvedMeaningOrClarified": 9,
+    "partlyEditorialOrOptional": 2,
+    "optionalTerminology": 1,
+    "lateClarifications": [
+      "F demand determines u=20; G residual is CU, explicitly convert the F kWh surplus before aggregating",
+      "Introduce original chair labels before referring to alternatives 1/2"
+    ]
+  },
+  "limits": [
+    "This is model-reader evaluation, not human expert certification or a teaching-effect experiment.",
+    "The whole-book model did not read all annotations or original documents; actual annotation projections were separately read in the source review.",
+    "Thirty-five direct website counterparts use already-reviewed same-source prose; independent companion reading and actual browser checks are described separately rather than falsely counted as 88 independent full rereadings.",
+    "No formal PDF edition or page-layout certification is claimed."
+  ],
+  "auditRecords": [
+    {
+      "record": "deepseek-part1/review.md",
+      "sha256": "00212954c85f27ac25b06ade0d086a86144c7bfbe6286c3d642f5cc8ae4cee9e"
+    },
+    {
+      "record": "deepseek-part1/coverage.json",
+      "sha256": "b0fe86feaf0b863c2ad77a2c0cdba3f35736f897f022830332cb57448158a8ba"
+    },
+    {
+      "record": "deepseek-part1-followup/followup-review.md",
+      "sha256": "8d731d687c2b169d68abe45aa45997efd6532cb9848f000840f79072e2d55548"
+    },
+    {
+      "record": "deepseek-whole/manifest.json",
+      "sha256": "945416ad054e0351800e2ed5f119802646b0cbdd012cc74d41af074dcffc2973"
+    },
+    {
+      "record": "deepseek-whole/review.md",
+      "sha256": "0825982c1d6d8f02a808a5d63e22a974b895573901b414d436311f75991a30fb"
+    },
+    {
+      "record": "deepseek-whole/coverage.json",
+      "sha256": "02bef9af4a1dc03f0985cf1bcb27c684e254e3f041d48f20f24bc7620bdd7d0f"
+    },
+    {
+      "record": "deepseek-whole-followup/manifest.json",
+      "sha256": "afd3282963c16e9ff26c9e08efcd65f087db55410db1e7b5af1cc123241f242d"
+    },
+    {
+      "record": "deepseek-whole-followup/followup-review.md",
+      "sha256": "28e0f0d3a1e7d783f64d7487916591c3cae5cbc1df27af0338f7a63dd4c41c9a"
+    },
+    {
+      "record": "deepseek-whole-followup/followup-coverage.json",
+      "sha256": "1d7cdef2c81b3ac124e7c996c23eadb6eb981ed91dacbe174ee1aa00d7257e59"
+    },
+    {
+      "record": "deepseek-whole-finalcheck/manifest.json",
+      "sha256": "2a36e13bad8adb1e88b805ee731f6da8c9828f0f359df181a9f4161d294d2f06"
+    },
+    {
+      "record": "deepseek-whole-finalcheck/final-two-review.md",
+      "sha256": "843c89421957c81186f3f16de75fd9fa74c5ea15e4801933caeaa826efc759c8"
+    }
+  ]
+}

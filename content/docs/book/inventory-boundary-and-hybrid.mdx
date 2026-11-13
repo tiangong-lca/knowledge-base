@@ -1,9 +1,9 @@
 ---
 title: 混合清单
-description: 沿烤面包器、三家供应者与泵的账户，辨认过程和经济数据的内部边界、重复覆盖与误差来源。
+description: 过程清单缺少一项投入时，经济数据能补上什么？烤面包器的双向采购、三家供应者的发票和泵的用钢，说明了哪些活动可以补入，哪些可能算了两次。
 ---
 
-## 过程经济边界 [#过程经济边界]
+## 过程清单与经济数据 [#过程经济边界]
 
 <Prose ids="cl-inv-boundary-carrier cl-inv-small-cuts cl-hyb-question cl-inv-io-limits" />
 
@@ -21,9 +21,9 @@ description: 沿烤面包器、三家供应者与泵的账户，辨认过程和�
 
 <Prose ids="cl-hyb-equations cl-hyb-corrected cl-hyb-naive-result cl-hyb-swap" />
 
-两组发票都属于教学设定。F、G 是两家发电方，S 是服务方。下表金额为 CU/年。
+表中列出两组假想发票的年度金额，单位是 CU/年。F、G 是两家发电方，S 提供服务。
 
-| 卖方 → 买方 | 原发票 | 另一组发票 |
+| 卖方 → 买方 | 第一组发票 | 第二组发票 |
 | --- | --- | --- |
 | F → S（电） | 10 | 0 |
 | G → S（电） | 10 | 20 |
@@ -31,7 +31,7 @@ description: 沿烤面包器、三家供应者与泵的账户，辨认过程和�
 | S → G（服务） | 30 | 30 |
 | S → S（自用） | 20 | 20 |
 
-把 F、G 合成电力部门 E，两组账都显示 E 向 S 售电 20 CU/年，S 向 E 售服务 50 CU/年。部门表无法区分供电者。
+把 F 和 G 合成电力部门 E，两组账都显示 E 每年向 S 售电 20 CU，S 每年向 E 售服务 50 CU。部门表因此看不出 S 的电是向 F 还是向 G 买的。
 
 <Prose ids="cl-hyb-swap-result" />
 

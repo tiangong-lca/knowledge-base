@@ -28,7 +28,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "复算原表显示整数的P+I-E及终端消费+线损；不恢复未报告精度、原始计量或电压层级清单。",
-      "textTemplate": "现在用报告的瑞士1995年数据按M3记账。发电量{{input.facts.production.value}} GWh，加进口{{input.facts.imports.value}} GWh，减出口{{input.facts.exports.value}} GWh，得到{{evaluated.historical.denominatorGWh.exact}} GWh。表 A.1把终端消费（Verbrauch）与线损（Verluste）分列；式中 V沿用报告正文的含线损定义，对应表内这两项之和，因此这个分母包括{{input.facts.finalConsumption.value}} GWh终端消费和{{input.facts.losses.value}} GWh线损。用{{input.facts.finalConsumption.value}}作分母却仍保留含损耗的全部分子，所得各比值就不再是加总为一的来源份额。若要转到终端用电口径，还须说明损耗如何分摊以及对应的交付边界，不能只换分母便称为电表处的来源组合。本例保持含线损的混合平衡。"
+      "textTemplate": "用报告的瑞士 1995 年数据按 M3 算一次。发电量 {{input.facts.production.value}} GWh，加进口 {{input.facts.imports.value}} GWh，减出口 {{input.facts.exports.value}} GWh，得到 {{evaluated.historical.denominatorGWh.exact}} GWh。报告表 A.1 分列终端消费（Verbrauch）与线损（Verluste）。式中的 V 沿用报告正文的定义，把 {{input.facts.finalConsumption.value}} GWh 终端消费和 {{input.facts.losses.value}} GWh 线损都计入分母。如果只用 {{input.facts.finalConsumption.value}} 作分母，却让各来源电量继续包括损耗，算出的份额就不能加总为一。若要给出终端电表处的来源组合，还须说明损耗如何分摊、电量交付到哪里。本例仍按包含线损的 V 计算。"
     },
     {
       "id": "cl-market-m3-origins",

@@ -102,18 +102,47 @@ The completed [inventory](2026-11-13-research-inventory.md) records current
 coverage, prioritized gaps, actual candidate inspections and access limits. It
 does not modify the original research registers or publish private originals.
 
-## Current state
+## Reviewed manuscript and remaining delivery
 
-The writing requirements are committed and pushed as `77c2d54`. A complete first
-part candidate has independent before/after meaning review and actual web/book
-output. DeepSeek has read all five book chapters and six website pages; its
-source questions and language findings are being resolved against actual primary
-passages and revised text. The whole-book extension has not yet begun.
+The first-part sample was independently reviewed in its five actual book
+chapters and six website pages before the whole-book extension. Material findings
+were resolved through precise rewriting or selected original-page checks.
+The final revision covers all 53 manuscript sources: 460 of 857 canonical
+paragraphs are revised, 397 retained, and 97 numerical templates synchronized.
+The 289 unchanged affected consumers have explicit review judgments. Retention
+is not inferred from a zero diff; the public evidence preserves whether a reason
+was recorded per paragraph, for a named paragraph group or at chapter level.
+All 18 numerical input files, scientific non-text fields, ordered memberships,
+research records and prior accepted units remain unchanged.
 
-The same-member language-successor mechanism has independent production-path and
-mutation checks. It keeps its production state inactive, with no new acceptance
-pin. Original scientific inputs and old accepted artifacts remain unchanged.
-Research and candidate inventory reports are prepared for the tracked handoff;
-they do not change canonical reading status or complete the wider programme.
-New source/reader/output acceptance, source/main/hosting and exact root delivery
-remain pending. Issue95 records current progress and remaining criteria.
+The full-book DeepSeek session read all 40 book units, seven part introductions
+and 13 independently organized companion pages from actual rendered output.
+Its 12 findings were adjudicated, followed by a bounded review of nine changed
+paragraphs and then the final two unit/numbering clarifications. Original input
+captures and reports remain separate. Primary and independent source checks
+resolved residual versus solution differences, the LIME dry-ton reference,
+shopping-survey attribution, CML chair reasoning and temporal data quality.
+A mistyped service equation in a private review aid was explicitly corrected;
+the manuscript and model always retained their original correct equation.
+These are model-reader and source-editorial checks, not human certification.
+
+[Before/after evidence](review-evidence/chinese-expression-95/before-after.json),
+[source meaning](review-evidence/chinese-expression-95/source-meaning-review.json),
+[reader assessment](review-evidence/chinese-expression-95/reader-review.json) and
+[actual output](review-evidence/chinese-expression-95/actual-output-review.json)
+are distinct, independently bound files. The new pin preserves the original
+8148 generation and qualifies all 88 articles, nine public-artifact identities
+and seven part headers. Five widths and two themes received 490 initial browser
+checks; 78 and 12 later checks covered the changed output. Current and historical
+keyboard/no-script destinations, both container appendix links and the wall
+interaction were checked separately. Candidate JSON files were actually written
+and reopened before admission; they are not mislabeled as a production export.
+
+The [research inventory](2026-11-13-research-inventory.md) supplies nine priorities,
+actual candidate identities and access limits. It changes neither canonical
+reading status nor the broader programme's research, formal-edition and human
+validation obligations. The local candidate server and QA context remain owned
+until final delivery; no containers, volumes or networks were created. Source
+PR/CI, the ordinary production exporter, merged-source live verification and
+exact root integration are separate delivery gates recorded on Issue95 and
+programme9. This section records manuscript admission, not their future outcome.

@@ -152,14 +152,15 @@ test('manifest contains every actual source and does not silently hide authored 
 test('the three exact source-qualified continuations keep their own website and current book targets',()=>{
   const cases = [
     ['policy-to-framework','/docs/book/early-container-policy-and-systems','/docs/book/early-container-policy-and-systems',
-      '/docs/book/framework-history/','评价框架的形成','book-framework-responsibilities','框架职责'],
+      '/docs/book/framework-history/','评价框架的形成','book-framework-responsibilities'],
     ['emission-time-to-future','/docs/book/emission-time-and-assessment','book-climate-equivalence',
-      '/docs/book/future-technology-and-context/','未来技术与情景','/docs/book/future-technology-and-context','未来技术与情景'],
+      '/docs/book/future-technology-and-context/','未来技术与情景','/docs/book/future-technology-and-context'],
     ['data-to-uncertainty','/docs/book/review-support-and-version-boundaries','book-data-applicability',
-      '/docs/book/uncertainty-and-variability','变异与不确定性','/docs/book/uncertainty-and-variability','变异与不确定性'],
+      '/docs/book/uncertainty-and-variability','变异与不确定性','/docs/book/uncertainty-and-variability'],
   ];
-  for (const [key, webSource, bookSource, href, webLabel, destination, bookLabel] of cases) {
+  for (const [key, webSource, bookSource, href, webLabel, destination] of cases) {
     assert.deepEqual(getContinuationLink('web',webSource,href,webLabel),{key,href,label:webLabel});
+    const bookLabel = getUnitNumbering('book', destination).title;
     const current = printReadingEntryAnchor(destination);
     assert.notEqual(current, printUnitAnchor(destination));
     assert.deepEqual(getContinuationLink('book',bookSource,href,webLabel),{key,href:'#'+current,label:bookLabel});

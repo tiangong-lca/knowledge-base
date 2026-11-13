@@ -15,18 +15,21 @@ checkPaths:
   - "app/**"
   - "scripts/**"
 lastReviewedAt: 2026-11-13
-lastReviewedCommit: 77c2d548e68aa9578b68baf5e18d69f050443444
+lastReviewedCommit: ccb24fea950f8c584c3215be6a74265482d659cc
 ---
 
 # LCA Living Knowledge Base and Review
 
 [Chinese expression revision #95](https://github.com/tiangong-lca/knowledge-base/issues/95)
-adds explicit language requirements, a complete first-part sample and independent
-review before whole-manuscript copyediting. Its
-[protocol](_docs/editorial/2026-11-13-chinese-expression.md) keeps research inventory,
-source meaning, reader assessment and publication evidence separate. The 8148
-successor mechanism preserves all prior acceptance and is inactive until the
-actual new source/reader/output evidence and independent pin are recorded.
+adds explicit language requirements and adopts the reviewed whole-manuscript
+revision after a complete Part I sample and independent reading. Its
+[protocol](_docs/editorial/2026-11-13-chinese-expression.md) records 460 revised
+canonical paragraphs, 97 matching templates and 289 reviewed retained consumers;
+all 18 numerical inputs and scientific metadata remain unchanged. The
+[separate source, reader and output evidence](_docs/editorial/review-evidence/chinese-expression-95/before-after.json)
+binds the 8148 successor while preserving prior acceptance. Production export,
+required CI, live publication and exact workspace integration remain separately
+qualified delivery steps; current state is recorded on Issue95.
 
 [Complete manuscript revision #93](https://github.com/tiangong-lca/knowledge-base/issues/93)
 follows the [whole-book protocol](_docs/editorial/2026-11-12-complete-readable-book.md).

@@ -141,14 +141,14 @@ test('native breadcrumb binds exact current folder and header order without acce
   html.replace(crumb.outerHTML,''),html.replace(crumb.outerHTML,crumb.outerHTML.repeat(2)),
   html.replace(crumb.outerHTML,crumb.outerHTML.replace('data-reader-part-name="3"','data-reader-part-name="2"')),
   html.replace(crumb.outerHTML,crumb.outerHTML.replace('第三部','第二部')),
-  html.replace(crumb.outerHTML,crumb.outerHTML.replace('归属争论','其他题名')),
+  html.replace(crumb.outerHTML,crumb.outerHTML.replace(esc(record.partTitle),'其他题名')),
   html.replace(crumb.outerHTML,crumb.outerHTML.replace(name.outerHTML,`<a href="${record.key}/">${name.outerHTML}</a>`)),
   html.replace(crumb.outerHTML,crumb.outerHTML.replace(name.outerHTML,name.outerHTML+'额外内容')),
   html.replace(crumb.outerHTML,'').replace(label.outerHTML,label.outerHTML+crumb.outerHTML),
   html.replace(crumb.outerHTML,'')+crumb.outerHTML,
   html+name.outerHTML,
  ];
- for(const changed of mutations){assert(check(changed,record.key).length);assert.equal(prepareNumberedReaderDocument(htmlParser.parse(changed),record.key,{sources}).document,null);}
+ for(const changed of mutations){assert.notEqual(changed,html);assert(check(changed,record.key).length);assert.equal(prepareNumberedReaderDocument(htmlParser.parse(changed),record.key,{sources}).document,null);}
  for(const [kind,wrong]of [['topic','附录'],['appendix','概念与实践专题']]){const unit=web.find(unit=>unit.kind===kind),base=webHtml(unit);assert.deepEqual(check(base,unit.key),[]);const crumb=htmlParser.parse(base).querySelector('article').firstChild;assert(check(base.replace(crumb.outerHTML,crumb.outerHTML.replace(kind==='topic'?'概念与实践专题':'附录',wrong)),unit.key).length);}
  const front=web.find(unit=>unit.kind==='front-matter');assert(check(webHtml(front).replace('<p class="reader-view-label">',crumb.outerHTML+'<p class="reader-view-label">'),front.key).length);
 });
@@ -178,7 +178,7 @@ test('native mobile contents title requires current route,exact name and unique 
   html.replace(root.outerHTML,'')+root.outerHTML,
   html+name.outerHTML,
  ];
- for(const changed of mutations){assert(check(changed,record.key).length);assert.equal(prepareNumberedReaderDocument(htmlParser.parse(changed),record.key,{sources}).document,null);}
+ for(const changed of mutations){assert.notEqual(changed,html);assert(check(changed,record.key).length);assert.equal(prepareNumberedReaderDocument(htmlParser.parse(changed),record.key,{sources}).document,null);}
  const normalized=prepareNumberedReaderDocument(doc,record.key,{sources});assert.deepEqual(normalized.errors,[]);assert.equal(normalized.document.querySelector('[data-toc-popover-trigger] [data-reader-number]'),null);
 });
 test('installed Fumadocs renderer supplies the qualified breadcrumb and mobile title for each native folder kind',()=>{

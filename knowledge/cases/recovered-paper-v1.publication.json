@@ -57,7 +57,7 @@
       "conceptIds": [],
       "reasoning": "按所引原文的对象、分母和条件展开关系；不将核算恒等式或模型输出当作实证因果验证。",
       "mappingIds": [],
-      "textTemplate": "沿年度账往上查，可以对照研究所据的统计图。所引2003年回收统计报告，在瓦楞包装图中以空包装供应加上已装货包装的净进口，得到 {{evaluated.upstreamStatistics.packagingSupply.exact}} 吨供应；再由国内工厂用料、回收纸净出口和库存变化重建 {{evaluated.upstreamStatistics.collected.exact}} 吨收集量。图中的收集率框却印成 {{evaluated.upstreamStatistics.printedRateNumerator.exact}} 吨，两者在显示精度上都约为 {{evaluated.upstreamStatistics.collectionPercentRounded1}}%。此外，底层统计的进口和工厂用量与后来模型不同。能够核对这层加减关系，不表示这些差异已经得到解释，更不能把两个相同年份的表无条件拼成一份精确清单。"
+      "textTemplate": "研究所用的年度账，还可以和它引用的统计图对照。2003 年回收统计报告的瓦楞包装图，把空包装供应加上已装货包装的净进口，得到 {{evaluated.upstreamStatistics.packagingSupply.exact}} 吨供应。再从国内工厂用料、回收纸净出口和库存变化算得 {{evaluated.upstreamStatistics.collected.exact}} 吨收集量，图中计算收集率的框内却印着 {{evaluated.upstreamStatistics.printedRateNumerator.exact}} 吨。按显示精度，两种收集量算出的收集率都约为 {{evaluated.upstreamStatistics.collectionPercentRounded1}}%。统计图中的进口和工厂用量，与后来模型采用的数值也不同。上述加减关系可以核对，但差异的来由还不清楚。两表即使都说同一年，也不能直接拼成一份精确清单。"
     },
     {
       "id": "cl-cycle-product-yield",
@@ -111,7 +111,7 @@
       "conceptIds": [],
       "reasoning": "按所引原文的对象、分母和条件展开关系；不将核算恒等式或模型输出当作实证因果验证。",
       "mappingIds": [],
-      "textTemplate": "现在将新增回收量接到原生纸参照。年度增加收集情景把进入国内回收的纸料增加 {{evaluated.annualSubstitution.extraRecoveredFeed.exact}} 吨，在进口和出口不变的条件下，同量纸料从焚烧转到回收，报告相应增加 {{evaluated.annualSubstitution.extraRecoveredProduct.exact}} 吨成品。随后采用 {{evaluated.annualSubstitution.linerFlutingStrengthRatio.exact}} 吨再生挂面/芯纸对应一吨原生挂面/芯纸的等强度假设，得到 {{evaluated.annualSubstitution.modelAvoidedVirginLinerFluting.exact}} 吨避免的模型原生生产。前一步是产出量，后一步是功能折算后的参照量。把折算改成一比一，会改变避免生产的账目，却不会凭空增加工厂已经产出的纸。"
+      "textTemplate": "看完参照纸级，可以把年度新增回收量换算成少生产的原生纸。在进口和出口不变的情景里，国内回收厂多收到 {{evaluated.annualSubstitution.extraRecoveredFeed.exact}} 吨纸料，原本送去焚烧的纸料相应减少，报告算出成品增加 {{evaluated.annualSubstitution.extraRecoveredProduct.exact}} 吨。再按报告的等强度假设，{{evaluated.annualSubstitution.linerFlutingStrengthRatio.exact}} 吨再生挂面纸和芯纸相当于一吨相应的原生纸，模型中避免的原生纸生产为 {{evaluated.annualSubstitution.modelAvoidedVirginLinerFluting.exact}} 吨。前一个结果是回收厂多产的纸，后一个结果是按相同强度折算后模型所计的原生纸减产量。若改成一比一，变的是所计的原生纸减产量，回收厂的成品量仍如前。"
     },
     {
       "id": "cl-cycle-grade-quality",
@@ -176,7 +176,7 @@
       "conceptIds": [],
       "reasoning": "按所引原文的对象、分母和条件展开关系；不将核算恒等式或模型输出当作实证因果验证。",
       "mappingIds": [],
-      "textTemplate": "同一批废纸若少送去焚烧，外供热和电也会改变。先看焚烧能交付多少。丹麦报告的焚烧分支以干物质92%的纸或纸板为基准，每千克模型输送前外供12.53 MJ热电，其中约四分之一为电、四分之三为热。再分别扣除电力和热量输送损失，得到电 {{evaluated.mixedEnergy.deliveredElectricity.exact}} MJ、热 {{evaluated.mixedEnergy.deliveredHeat.exact}} MJ，原报告分别写成 {{evaluated.mixedEnergy.reportedDeliveredElectricity.exact}} 和 {{evaluated.mixedEnergy.reportedDeliveredHeat.exact}}。两者同用MJ，却提供不同服务。"
+      "textTemplate": "同一批废纸少送去焚烧，能外供的热和电也会改变。丹麦报告的焚烧情景以干物质占 92% 的纸或纸板为基准，每千克在输送前可外供 12.53 MJ 的热和电，其中约四分之一为电、四分之三为热。分别扣除电和热的输送损失，交付电 {{evaluated.mixedEnergy.deliveredElectricity.exact}} MJ、热 {{evaluated.mixedEnergy.deliveredHeat.exact}} MJ，原报告分别写作 {{evaluated.mixedEnergy.reportedDeliveredElectricity.exact}} 和 {{evaluated.mixedEnergy.reportedDeliveredHeat.exact}}。虽然都以 MJ 计，电和热各提供一种服务。"
     },
     {
       "id": "cl-cycle-energy-mismatch",

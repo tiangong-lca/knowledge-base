@@ -97,7 +97,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "按克数乘各自表列因子并加总，比较乙减甲；共同项相消。",
-      "textTemplate": "先用2013年表列因子算两个总数。甲的NMVOC贡献4 × 14 = {{evaluated.illustration.baseline.A.nmvocContribution.exact}} 点，NOx贡献1 × 39 = {{evaluated.illustration.baseline.A.noxContribution.exact}} 点，共 {{evaluated.illustration.baseline.A.total.exact}} 点。乙的两项贡献分别为 {{evaluated.illustration.baseline.B.nmvocContribution.exact}} 点和 {{evaluated.illustration.baseline.B.noxContribution.exact}} 点，共 {{evaluated.illustration.baseline.B.total.exact}} 点。再看分差的来源：乙少排两克NMVOC省下28点，多排一克NOx增加39点，净增 {{evaluated.illustration.baseline.differenceBMinusA.exact}} 点。若有相同的背景负担，两边各自加上同样的分数，分差仍是11点。"
+      "textTemplate": "先用2013年表列因子算两个总数。甲的NMVOC贡献4 × 14 = {{evaluated.illustration.baseline.A.nmvocContribution.exact}} 点，NOx贡献1 × 39 = {{evaluated.illustration.baseline.A.noxContribution.exact}} 点，共 {{evaluated.illustration.baseline.A.total.exact}} 点。乙的两项贡献分别为 {{evaluated.illustration.baseline.B.nmvocContribution.exact}} 点和 {{evaluated.illustration.baseline.B.noxContribution.exact}} 点，共 {{evaluated.illustration.baseline.B.total.exact}} 点。再看分差的来源：乙少排两克NMVOC少计28点，多排一克NOx多计39点，净增 {{evaluated.illustration.baseline.differenceBMinusA.exact}} 点。若有相同的背景负担，两边各自加上同样的分数，分差仍是11点。"
     },
     {
       "id": "cl-es-scale",
@@ -112,7 +112,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "共同正尺度可以从总和和分差中提出。",
-      "textTemplate": "假如只想改点数的大小，把两项因子都乘 {{input.illustration.commonFactorMultiplier}}，甲乙分别成为 {{evaluated.illustration.commonScaling.A.total.exact}} 点和 {{evaluated.illustration.commonScaling.B.total.exact}} 点。少排两克NMVOC的收益和多排一克NOx的代价按相同比例放大。两项都乘同一个正数，排序就不会变。"
+      "textTemplate": "假如只想改点数的大小，把两项因子都乘 {{input.illustration.commonFactorMultiplier}}，甲乙分别成为 {{evaluated.illustration.commonScaling.A.total.exact}} 点和 {{evaluated.illustration.commonScaling.B.total.exact}} 点。少排两克NMVOC所减的点数和多排一克NOx所增的点数，按相同比例放大。两项都乘同一个正数，排序就不会变。"
     },
     {
       "id": "cl-es-threshold",

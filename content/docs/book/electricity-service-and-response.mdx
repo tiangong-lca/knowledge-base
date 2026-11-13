@@ -1,6 +1,6 @@
 ---
 title: 供电系统
-description: 从一度电的交付点追到年度与小时账户，解释运行和资本变化怎样进入生命周期比较。
+description: 少用一度电会怎样改变排放？要看电在哪里交付、何时使用，以及用电变化会影响机组运行、设备容量，还是两者都会变。
 ---
 
 ## 交付链条 [#同一度电先问在哪里交付]
@@ -27,7 +27,7 @@ description: 从一度电的交付点追到年度与小时账户，解释运行�
 
 <Prose ids="cl-power-native-model cl-power-native-coordinate cl-power-native-scenario cl-power-native-loss cl-power-native-loss-document cl-power-native-interpolation cl-power-native-output cl-power-native-ratios cl-power-native-check-meaning cl-power-native-two-hours cl-power-native-pollutants cl-power-native-application" />
 
-## 未来资产 [#未来需求还会改变哪些资产]
+## 容量与长期响应 [#未来需求还会改变哪些资产]
 
 <Prose ids="cl-power-future-question cl-power-future-system cl-power-future-perturbation cl-power-future-postprocessing cl-power-future-storage-policy cl-power-future-balance cl-power-future-load-parts cl-power-future-distribution cl-power-future-direct-rates cl-power-future-three-questions cl-power-future-gases cl-power-future-gases-total cl-power-future-scenario cl-power-future-time cl-power-future-formula" />
 
@@ -35,16 +35,16 @@ description: 从一度电的交付点追到年度与小时账户，解释运行�
 
 <Prose ids="cl-power-alternative-lca cl-power-validation-objects" />
 
-先按问题找资料，再核对区域、时段和交付点。
+要用这些资料估计排放，先确定它们分别描述了什么，再核对区域、时段和交付点。
 
 | 资料 | 本章用它回答什么 |
 | --- | --- |
-| eGRID2023 修订 2 | 区域电厂的直接 CO₂ 年平均。分母是年净发电量。 |
+| eGRID2023 修订 2 | 区域电厂的直接 CO₂ 年平均排放率，以年净发电量为分母。 |
 | EIA-930（2023） | 逐小时记录发电、需求与区际交换的平均功率（MW），乘一小时得到电量（MWh）；时标为小时结束。 |
 | AVERT 4.3.0 | 在 2023 年 TE 的既有机组关系下，改变终端用电时，模型估计怎样的运行响应。 |
 | Cambium 2024 | 需求扰动允许运行和容量一起变化时，模型估计怎样的长期响应。本例取 2025 模拟年。 |
 
-四行涉及年度归属、小时平衡账、运行响应和长期情景。比较前要对齐所问的对象和分母。
+即使用同一个电量单位，年度排放归属、小时电量平衡、机组运行响应和长期情景仍各回答不同的问题。用这些资料比较排放率时，还要查各自是按电厂发出的电量还是按用户用掉的电量计算。
 
 <Prose ids="cl-power-connection" />
 

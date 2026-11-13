@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-13
-lastReviewedCommit: c6aeb8c0685a0f304956d5cdb675e14512e8f945
+lastReviewedCommit: ccb24fea950f8c584c3215be6a74265482d659cc
 ---
 
 # Publication architecture
@@ -27,9 +27,11 @@ lastReviewedCommit: c6aeb8c0685a0f304956d5cdb675e14512e8f945
 The #95 copyedit keeps the accepted complete-readable-book generation intact.
 `reader-copyedit-8148-capture.json` is separately pinned to the actual 50 saved
 HTML documents, 2,401 native addresses, source tree and hosted manifest of Main
-`8148f71`. `reader-copyedit-current.json` is inactive until its independent unit
-pin and real review evidence are supplied. Private rendering uses an isolated
-preview overlay; the production source gate and exporter refuse it.
+`8148f71`. The reviewed `chinese-expression-95` unit is admitted by its independent
+pin and ten real source/reader/output evidence files. An inactive or private
+preview overlay still carries no production acceptance; the production source
+gate and exporter refuse a preview. Production and hosted output are checked
+separately against the admitted manuscript.
 
 The successor compares exact 8148 file and record fingerprints with actual new
 values, then verifies the old accepted generation through its original

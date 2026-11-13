@@ -56,6 +56,31 @@ course originals. No new canonical reading status, source rights or candidate
 adoption follows from the inventory. Current copyediting can proceed without
 the user supplying materials or purchasing access.
 
+### Issue95 manuscript admission milestone
+
+The complete Part I sample and its independent source/DeepSeek findings were
+resolved before extending the method. All 53 sources now have contextual reading
+and revision or retention decisions. The current same-member successor revises
+460 canonical paragraphs and 97 templates, retains 397 paragraphs, and separately
+reviews 289 unchanged affected consumers. Original scientific metadata, graph,
+ordered memberships, 18 case inputs and all earlier acceptance records remain.
+
+Fresh whole-book reading covered 40 actual book units, seven introductions and
+13 distinct companion pages. Concrete source/reader findings and two bounded
+follow-ups are recorded in the [revision protocol](editorial/2026-11-13-chinese-expression.md)
+and its four supporting evidence summaries. Browser coverage was 490 initial
+viewport/theme checks plus 78 and 12 checks after the corresponding changes.
+Current/old native destinations, no-script reading and the original wall
+interaction were checked independently. The new source/reader/output admission
+binds 88 actual articles, nine public-artifact identities and seven part headers.
+It does not claim human teaching-effect validation or a formal PDF edition.
+
+At this milestone, ordinary source PR/CI/merge, production/live qualification,
+exact root integration and final resource cleanup still follow through Issue95.
+Programme9's broader research and edition scope remains open; the inventory does
+not silently close its seven original duties. Earlier milestone paragraphs
+retain their dated scope and are not completion evidence for this successor.
+
 ## 2026-11-12 full manuscript revision and particulate integration
 
 [Issue 93](https://github.com/tiangong-lca/knowledge-base/issues/93) resumes the full

@@ -1,0 +1,1303 @@
+{
+  "schemaVersion": 1,
+  "kind": "source",
+  "unit": "chinese-expression-95",
+  "subjectSha256": "373823e0e1eb9ed5d1832c141ab6abf7d2af215b429409c3769ef0866669620d",
+  "date": "2026-11-13",
+  "role": "source-meaning-review",
+  "summary": "独立来源含义检查覆盖全部改句、模板与受影响消费者；九处全书读者修订和最后两处单位/编号澄清再复核。原输入、非文字元数据及旧接受记录保持。原件仅在明确疑点上选段重读，不宣称本轮重新读完全部文献。",
+  "reviewLayers": [
+    "Part I full before/after source review and selected primary-page checks",
+    "Parts II–VII independent full source/annotation projection reviews and actual correction follow-ups",
+    "293 original retained affected consumers individually reviewed; final 289 after four became revised; final 31 affected retained consumers reread",
+    "Nine final claim/five-template/three-MDX corrections independently reviewed, followed by the last two exact clarifications"
+  ],
+  "sourceFacts": [
+    {
+      "source": "CML 1992 Guide",
+      "url": "https://scholarlypublications.universiteitleiden.nl/download/1887/8061/1?col=81522199420002711",
+      "sha256": "a57918005fdb6cc613c0cf82e63606ac5d299d2b08b29d3f957452d27b585bba",
+      "printedPages": [
+        "54",
+        "59"
+      ],
+      "finding": "Chair choice follows the reported qualitative panel reasoning; direct waste contribution and electricity use are different ratios."
+    },
+    {
+      "source": "Ciroth et al., 2016 journal carrier",
+      "url": "https://link.springer.com/content/pdf/10.1007/s11367-013-0670-5.pdf",
+      "sha256": "645ed4cb76c4c1773276bd1a52e2299592bb3f33971adab6db99e1e02bf3226f",
+      "printedPages": [
+        "1345"
+      ],
+      "finding": "Temporal correlation in the pedigree example concerns data-period fit to the target period; the 1.3 and 3.2 values are hypothetical."
+    },
+    {
+      "source": "Itsubo et al., 2003 Japanese paper, Kobe carrier",
+      "url": "https://da.lib.kobe-u.ac.jp/da/kernel/90004722/90004722.pdf",
+      "sha256": "4bfd13557da543b2cdc82e77b66ac199efecaaba6520bc4a816ff856dbfa0a41",
+      "printedPages": [
+        "361",
+        "362",
+        "363",
+        "365"
+      ],
+      "finding": "Dry-ton total 1.54e10, 17.8 JPY per dry ton and reported annual amount 2.74e11 agree in scale. Japanese annual environmental loading defines the reference. This later carrier differs from the old 24ffddba-prefixed bytes; old identity remains intact."
+    },
+    {
+      "source": "Environment Agency carrier-bag report",
+      "url": "https://assets.publishing.service.gov.uk/media/5a7bff74ed915d01ba1ca7c7/scho0711buan-e-e.pdf",
+      "printedPages": [
+        "17",
+        "18",
+        "Annex B.2"
+      ],
+      "finding": "The report cites 446 items over four weeks and defines 483 for one month without showing the conversion. TNS/Test Research attributions do not establish two independent studies. Common positive scaling leaves the five-use strict threshold unchanged."
+    }
+  ],
+  "dispositions": [
+    {
+      "id": "cl-hyb-swap-result",
+      "previousTextSha256": "585d615a4e3164c25b8b634b6cf6f7de21d245ceba3be7345de08b967df4d607",
+      "finalTextSha256": "a2fe70570a3d6b79361cb96b48f75e8b56cfa6b2be79c5c8de54578a409aa6f3",
+      "judgment": "第二套账只切换 S 的电力供应者。F 仍以 0.2 CU/kWh 购服务，墙面外需 20 kWh 且没有 F 对 S 的供电，所以 u＝20 kWh；G 和 S 用 CU 表示。固定第一组活动量代入时，F 余量为 8/15 kWh，G 缺口为 8/15 CU，按本例电价同为 8/15 CU 后抵消。以 0.2u＋0.3v＋0.2w 为服务需求重算，第二组活动量、排放与求解差额均与前稿相合。"
+    },
+    {
+      "id": "cl-cml-panel",
+      "previousTextSha256": "7103418e014d41759453facf4b26717f9948b05c6a66f8b805dc48184994475a",
+      "finalTextSha256": "a52f79644037ee99b20349e218c4a63bd16265bb99c47f4f2e57b633351e2158",
+      "judgment": "Guide 印刷 p54 用 alternative 1/2 区分两把椅子。新增一句在使用数字前交代两个编号；原例中更多项目有利于 1、2 占优的毒性更重要，以及酸化均较高因而偏好酸化较低的 1，关系保持。"
+    }
+  ],
+  "consumerJudgments": [
+    {
+      "id": "cl-flow-exchange-distinction",
+      "rationale": "以水为例的对象定义和过程内数量、单位、角色仍是两个层次，新交换段仍规定同一流可在不同过程中反复出现。"
+    },
+    {
+      "id": "cl-waste-no-universal",
+      "rationale": "沿实物去向再查两套记录的符号和端点；新交换定义未把输入输出或负号变成通用的废物判据。"
+    },
+    {
+      "id": "cl-ilcd-reference-flow",
+      "rationale": "这是共用参照概念的关联；引用交换 ID 的格式规则由 ILCD 字段证据给出，涂层新段仍把性能要求和实现量分开。"
+    },
+    {
+      "id": "cl-ilcd-fu",
+      "rationale": "ILCD 格式允许同时记功能说明和引用交换；涂层重述未赋予性能描述一条强制的流链接。"
+    },
+    {
+      "id": "cl-fu-example",
+      "rationale": "新段仍先定覆盖和耐久，后以各自单位耗用量求 2.0、2.5 kg；相同性能来自假设而非乘法。"
+    },
+    {
+      "id": "cl-model-not-format",
+      "rationale": "新系统模型段仍另定连接、负担和替代条件；cut-off 的后续系统与 consequential 的模型替代未降格成文件字段。 三条 ecoinvent 网页记录只有节定位，没有读取台账 passage；不能据本轮确认保全网页原句。"
+    },
+    {
+      "id": "cl-bw-direction",
+      "rationale": "共用概念关联不移植方向约定；新的 openLCA 交换解释仍说过程一端的角色，Brightway 节点定义另有文档支持。"
+    },
+    {
+      "id": "cl-bw-sign",
+      "rationale": "交换角色的重述不改变 Brightway 独立约定的生产正值、消费负值，也不凭正值识别目的。"
+    },
+    {
+      "id": "cl-book-function-boundary",
+      "rationale": "新肥皂段仍是假设增加保湿功能才重定比较对象；检查活动有条件，不能只换分母，也不要求一律扩边。"
+    },
+    {
+      "id": "cl-inv-environment-scaling",
+      "rationale": "新 A、B 说明仍使二者列对应同一过程，As=f 先确定倍率；按同一流身份做 Bs 保留线性和可加限定。"
+    },
+    {
+      "id": "cl-inv-example-inputs",
+      "rationale": "产品行、过程列和单位产出基准在新前提中仍分明；乙的最终需求 0 与 0.5 的内部需求未混同。"
+    },
+    {
+      "id": "cl-inv-example-solution",
+      "rationale": "用净交付等于各行外需的新版平衡说明，代入乙行后得 20/19、10/19；环境量只在 B 中相加。"
+    },
+    {
+      "id": "cl-inv-example-truncated",
+      "rationale": "把截断倍率代入仍得净甲 0.95，暴露出乙反向耗甲；5% 仍是虚构模型的截断误差。"
+    },
+    {
+      "id": "cl-inv-hybrid-forms",
+      "rationale": "新投入产出限制仍指出部门按货币合并异质产品；三种混合方式的分工和连接由 Suh §4 区分。"
+    },
+    {
+      "id": "cl-inv-double-counting",
+      "rationale": "部门覆盖和过程输入对齐仍需要证据；按部门归类不能证明重叠，扣除要追到同一笔运输或供给活动。"
+    },
+    {
+      "id": "cl-usetox-indicators-not-observed-cases",
+      "rationale": "新版把介质差别落实在归趋、暴露、效应链；模型淡水 PAF 和人体病例潜势仍非同一量，更非实测病例。"
+    },
+    {
+      "id": "cl-regional-method-origin-not-validity",
+      "rationale": "新本地化段仍要求查实际替换的数据、参数或价值权重；方法来源统计不能代替适用性检验。"
+    },
+    {
+      "id": "cl-regional-wf-ambiguity",
+      "rationale": "新版环境/资源两分支及人均基准仍分开；资源式怎样处理服务期仍不可由印刷式确定，故环境 WF 不能借资源含义。"
+    },
+    {
+      "id": "cl-regional-research-agenda-not-country-claim",
+      "rationale": "新版以实质参数更新界定本地化；调查与适用性证据未被研究议程替代，仍不能外推出居民偏好。"
+    },
+    {
+      "id": "cl-unc-scores",
+      "rationale": "新版要求为参数说明分布和可估计的相关性；这与可靠性等等级自身只描述资料特征相容。"
+    },
+    {
+      "id": "cl-unc-calibration",
+      "rationale": "新版先认估计量后认数据不确定性，允许用杯重子集散布提出因子；它不让分组或等级自动变成分布。"
+    },
+    {
+      "id": "cl-unc-baseline",
+      "rationale": "新版仍保留可靠性组混杂及完整性因子的暂定性，也要求考虑可估的相关性；基础项和独立性分别交代。"
+    },
+    {
+      "id": "cl-unc-table-conflict",
+      "rationale": "新版调查描述仍区分样本散布与均值精度，也明确不能原始复算；等级 5 的 GSD/CV 换算与是否推荐是另一个由报告支持的判断。"
+    },
+    {
+      "id": "cl-unc-alongside",
+      "rationale": "共用不确定性概念；新版校准限制仍提供因子迁移需另证的例子，与资料适用性及结论传播互补相容。"
+    },
+    {
+      "id": "cl-sustainability-reference-scale-performance",
+      "rationale": "新版 Type II 仍要求足够证据才从活动推到健康后果；Type I 用所选基准定位，不测长期福利或授予认证。"
+    },
+    {
+      "id": "cl-sustainability-risk-not-facility-performance",
+      "rationale": "新版影响路径保留从观察推到后果所需的证据门槛；粗粒度风险仅提示调查，不能代替工厂观察。"
+    },
+    {
+      "id": "cl-sustainability-ordinal-zero-and-net-zero",
+      "rationale": "新版 Type II 与 Type I 的用途仍可分，故量表排序、合规零及评分相抵不成为影响路径上的零后果。"
+    },
+    {
+      "id": "cl-sustainability-lcc-internalization-boundary",
+      "rationale": "新版货款仍是买方支出与卖方收入；主体视角下预期内部化要有依据，未计价健康后果仍不是零。"
+    },
+    {
+      "id": "cl-sustainability-conceptual-combination-not-sum",
+      "rationale": "新版同一穿用服务与各主体货币流的区分支持并列三种结果，仍需查健康后果是否重复计入。"
+    },
+    {
+      "id": "cl-sustainability-dashboard-zero-is-relative",
+      "rationale": "新版聚合仍要求先给转换规则和权重；仪表盘以组内极端计分，0 的意义不能从量表合规零或净零移植。"
+    },
+    {
+      "id": "cl-future-scenarios",
+      "rationale": "新版放大和同期对手都是有条件设定，现状可有据保留；情景可算并未提供发生概率。"
+    },
+    {
+      "id": "cl-wall-quantities",
+      "rationale": "新版明确 100 m²、[0,10) 连续遮盖服务；在原重涂假定下 A 两次、B 一次，右端第十年不计。"
+    },
+    {
+      "id": "cl-wall-same-mass",
+      "rationale": "新版参考段仍将墙面性能与涂料需求向量相接；6 kg 的 A 只够 60 m²，故排序反转并不针对同一服务。"
+    },
+    {
+      "id": "cl-wall-demand",
+      "rationale": "新版矩阵坐标仍区分涂料、准备、供电；10、6 kg 写入各产品行，电力净需求零不取消过程内用电。"
+    },
+    {
+      "id": "cl-wall-activities",
+      "rationale": "新版每列仍为一次操作、电力耗用记负；B 行的 -5×6+30=0 检验净外需，并不要求内部活动量为零。"
+    },
+    {
+      "id": "cl-wall-inventory",
+      "rationale": "新版列单位和活动依旧可追，26/27 kg CO2 与 0.07/0.09 kg CH4 按各自物种先求和。"
+    },
+    {
+      "id": "cl-wall-factor-choice",
+      "rationale": "新版清单段仍分别列化石 CO2 和化石 CH4、限定两气体覆盖；所用勘误因子及防止重复计氧化 CO2 由 IPCC 证据支持。"
+    },
+    {
+      "id": "cl-wall-characterization",
+      "rationale": "新版清单两种物质身份与活动范围保持，按物种因子消去质量单位再相加，分母仍是整项服务。"
+    },
+    {
+      "id": "cl-wall-paired-range",
+      "rationale": "新版供电强度是一次比较中两方案共用的固定未知量；[-0.438,3.562] 是允许值下的配对范围，不是抽样区间。"
+    },
+    {
+      "id": "cl-wall-pairing",
+      "rationale": "新版明确共用 θ 且无概率；独立极端差是外包络，不能代替共同 θ 下的精确差或容差检验。"
+    },
+    {
+      "id": "cl-wall-rough-demand",
+      "rationale": "新版各行仍有 m² 准备行；粗糙基底改变 B 的准备需求，非改单位，服务、涂料与容差保持。"
+    },
+    {
+      "id": "cl-wall-rough-comparison",
+      "rationale": "新版容差仍要求所有 θ 都满足绝对差界限；粗糙墙差值全为正且超过 +4，只是模型内结论。"
+    },
+    {
+      "id": "cl-wall-exercise",
+      "rationale": "新版区分演示点、共同 θ 与全域容差；练习三条建议都可用同一假想服务和新增准备活动检查。"
+    },
+    {
+      "id": "cl-framework-design-sideeffects",
+      "rationale": "新版设计段仍须按方案原定用途检验，墙面例仅类比功能边界；破损抵消材料收益的咖啡机制由 UNEP 支持。"
+    },
+    {
+      "id": "cl-allocation-2005-sales-purpose",
+      "rationale": "新版 2005 术语仍按信息目的区分而非时态；收入法只论特定成因归属，无法推出供应响应。"
+    },
+    {
+      "id": "cl-joint-question",
+      "rationale": "新版三问保留归属整批和固定服务的两条供给路线；4 kg X 和 6 kg Y 不因同用 kg 而可替换。"
+    },
+    {
+      "id": "cl-joint-typed-inventory",
+      "rationale": "新版三问仍把批次共同负担与替代路线区分，四操作仍按批次或每 kg 基准登记，不混气体行。"
+    },
+    {
+      "id": "cl-joint-boundary",
+      "rationale": "新版要区分固定生产与供给变化；虚构账边界仍只是所列运行活动，不得把未列清单写成物理零。"
+    },
+    {
+      "id": "cl-joint-mass-partition",
+      "rationale": "新版称份额须加回批次；质量份额 2/5、3/5 使两标签数值相同，但不支持服务等同。"
+    },
+    {
+      "id": "cl-joint-sales-partition",
+      "rationale": "新版归属问法仍只重记账；销售额 12、6 CU 改份额，原四操作的技术及物理排放没有改变。"
+    },
+    {
+      "id": "cl-joint-what-additivity-proves",
+      "rationale": "新版守住加总检验与供应证据之别；按标价变化的份额仍不能证明可以独立增产 X。"
+    },
+    {
+      "id": "cl-joint-fixed-basket",
+      "rationale": "新版并列成因归属与竞争品资料，固定篮仍明确品级、去向、时期及独立供应可退出；售出本身不足。"
+    },
+    {
+      "id": "cl-joint-positive-routes",
+      "rationale": "新版仍要列实际会动的活动；两条正路线都交付固定篮，(-28,-8) 只是比较差值。"
+    },
+    {
+      "id": "cl-joint-residual-derivation",
+      "rationale": "新版竞争品条件仍需要明示；从固定篮拆出 -6S-Y 得残余，括号内负值不是负的生产。"
+    },
+    {
+      "id": "cl-joint-different-questions",
+      "rationale": "新版仍区分归属和替代，故同单位 1、5/3、-2 不能互换，SO2 份额与固定篮差值可反向。"
+    },
+    {
+      "id": "cl-joint-double-credit",
+      "rationale": "新版仍要求归属可加而供给差回答另一问题；两个替代残余各认领全套节省，不能相加作产品标签。"
+    },
+    {
+      "id": "cl-joint-partial-use",
+      "rationale": "新版需供应证据的条件仍在；q 是达到指定用途的假设比例，处理和补足不因售出或相似而免除。"
+    },
+    {
+      "id": "cl-joint-partial-balances",
+      "rationale": "新版分别检验归属和固定服务；半利用路线 3 kg 补足与 3 kg 处理分别接服务账、去向账，未证明元素守恒。"
+    },
+    {
+      "id": "cl-joint-partial-inventory",
+      "rationale": "新版强调不同活动进入改换供给；两行 CO2、SO2 的方向可分歧，不能用一项综合环境结论取代。"
+    },
+    {
+      "id": "cl-joint-cancellation",
+      "rationale": "新版供给路线比较仍保持同一篮；补足项只在与参照作差时抵消，正路线仍有实际补足。"
+    },
+    {
+      "id": "cl-joint-version-boundary",
+      "rationale": "新版两项具名论证各守适用范围；本例先列处理和补足，没有移入 Weidema 共产品判定。"
+    },
+    {
+      "id": "cl-joint-exercise",
+      "rationale": "新版仍支持检验加总、减项、供应条件三问；q=0 仍需独立 Y 补足并处理全批未用 Y。"
+    },
+    {
+      "id": "cl-path-terrestrial",
+      "rationale": "新版淡水和近岸途径仍把受体与暴露分开；陆地氮沉降可不经水中耗氧，AE 超载和 EDIP 面积也不是物种损失数。"
+    },
+    {
+      "id": "cl-path-marginal-average",
+      "rationale": "新版单位仍区分中点和端点，未把工作点斜率混同目标到工作点的割线；PDF=0.2 仍只是替代设定。"
+    },
+    {
+      "id": "cl-path-background",
+      "rationale": "新版酸化土壤背景和端点对象仍具体，指南低于目标的零值是效应因子规则，不能读作零物种变化。"
+    },
+    {
+      "id": "cl-path-pdf",
+      "rationale": "新版仍限制具备当前条件的因子类别；淡水 PNOF 与海洋低氧 PAF 只有在资料代表接收系统时可解释为 PDF。"
+    },
+    {
+      "id": "cl-water-aware-question",
+      "rationale": "新版明确耗水是原流域用户不可再用的部分；AWARE 因此能谈缺水潜势，但仍不是水质或终点后果。"
+    },
+    {
+      "id": "cl-water-remaining-mechanism",
+      "rationale": "新版保留取水、返还和原流域关系；背景剩余量影响相同耗水的因子，而非测得生态损害。"
+    },
+    {
+      "id": "cl-water-input-basis",
+      "rationale": "新版物理量为概念关联；ActAvail 已含人类干预与 EWR 另扣来自 2025 模型定义，不能再扣一遍背景耗水。"
+    },
+    {
+      "id": "cl-water-reference-period",
+      "rationale": "新版要求知道来源和回水位置，未把耗水清单年份与因子水文参考期合并；因子的月份仍可基于多年背景。"
+    },
+    {
+      "id": "cl-water-time-and-aggregation",
+      "rationale": "新版流域对象仍是实际清单情境；粗汇总只按农/非农的已知分布形成，不能恢复缺失的月份和流域。"
+    },
+    {
+      "id": "cl-water-background-inventory",
+      "rationale": "新版取耗水区分不取消产品贡献与背景两层；小规模边际条件仍决定是否可线性使用既定因子。"
+    },
+    {
+      "id": "cl-water-case-input",
+      "rationale": "新版要求把各处耗水折到同一产品，题设同期原流域返还使两行分别为 2、1；其他过程缺失不能写零。"
+    },
+    {
+      "id": "cl-water-case-factors",
+      "rationale": "新版相对参照与物理体积区分保留；外给 r 与两处 AMD 只是配出 2、8，未称重建水文。"
+    },
+    {
+      "id": "cl-water-case-result",
+      "rationale": "新版 world-eq. 仍标参照尺度；各流耗水乘匹配因子得 12，与实际 3 m³/kg 及人数不是一量。"
+    },
+    {
+      "id": "cl-water-case-locality",
+      "rationale": "新版不同地区的对应因子可改变指数；单改 X 因子到 8 的 24 只是敏感性情景，未观测迁厂。"
+    },
+    {
+      "id": "cl-water-case-averaging",
+      "rationale": "新版用“可能不同”正确保留定义差别和偶合可能；本例 r 固定且 AMD 异质，算 8 与 12 确实不同。"
+    },
+    {
+      "id": "cl-water-version-and-boundary",
+      "rationale": "新版原流域和水去向仍保留；版本更新及背景近似由 2025 资料另证，未改成通用的大规模外推。"
+    },
+    {
+      "id": "cl-water-marginal-contexts",
+      "rationale": "新版生态端点各有受体和量纲，AWARE 仍以背景不被产品显著改变为适用条件；与生态响应切线不互换。"
+    },
+    {
+      "id": "cl-water-case-weighted-factor",
+      "rationale": "新版强调平均次序；按已知耗水直接平均两因子得 4，可复现 12，但不是未知地点的默认因子。"
+    },
+    {
+      "id": "cl-hist-reported-summaries",
+      "rationale": "新版制造/上游小计仍局限在玻璃支路；2026、6036 由两表报告，不声称是本次完整独立复算。"
+    },
+    {
+      "id": "cl-hist-normalization",
+      "rationale": "新版保持共同百万次十二液盎司灌装与各项能源单位；乘公开合并系数归一化，不假定更多精度。"
+    },
+    {
+      "id": "cl-hist-assembly-check",
+      "rationale": "新版八项 18.523 已包括 15.668，不可再加；用固定 205 短吨得 5965.910，差额不证明原报告错误。"
+    },
+    {
+      "id": "cl-hist-package-sensitivity",
+      "rationale": "新版 10-RET 身份仍明示瓶/包装分别计次；五次瓶的 1/2/3 次纸包装结果是原报告情景而非本次复算或通用曲线。"
+    },
+    {
+      "id": "cl-ped-design-variance",
+      "rationale": "新版权重单位仍区分第一阶段杯型数与第二阶段克；层方差公式和整群按出现数加权均依赖该区分。"
+    },
+    {
+      "id": "cl-ped-subsets",
+      "rationale": "新版柏林总体仍是门店—杯型出现；2012 年 100% 只是已有样本的全部，不等于普查柏林。"
+    },
+    {
+      "id": "cl-ped-score-mapping",
+      "rationale": "新版均值资料与暂定因子可复算范围仍分开；完整性等级用比例和代表性共同判断，25% 成员身份仍不明。"
+    },
+    {
+      "id": "cl-ped-gsd-definition",
+      "rationale": "新版明确已发表汇总量只够部分复算；对已知正杯重的 n 分母经验 GSD 不能用来证明对数正态。"
+    },
+    {
+      "id": "cl-ped-completeness-ratio",
+      "rationale": "新版仍区分杯重散布和均值估计精度；完整性再分析的 GSD 比只能比较组内散布，不等于清单参数误差。"
+    },
+    {
+      "id": "cl-ped-ratio-rule",
+      "rationale": "新版杯重资料局限未被一般 max 比值抹掉；比值大于等于 1 只表示倍差，不保留方向或基础散布。"
+    },
+    {
+      "id": "cl-ped-independent-product",
+      "rationale": "新版调查解释只是经验资料；对数方差合成仍明示对数正态、独立和相关时所缺协方差。"
+    },
+    {
+      "id": "cl-ped-score-test-results",
+      "rationale": "新版仍是同一 12 人各评两体系，无正确标准分；重复性差异不能只归因于类别数，也不能复算个体一致性。"
+    },
+    {
+      "id": "cl-ped-cluster-arithmetic",
+      "rationale": "新版保留整群与分层不同估计程序；√0.0072/5.6589 是平均杯重的相对标准误，非单杯相对散布。"
+    },
+    {
+      "id": "cl-ped-factor-values",
+      "rationale": "新版报告再分析范围仍是暂定；显示值可舍入，等级 5 缺值不能填 1，且没有原始子集复算证明。"
+    },
+    {
+      "id": "cl-ped-ratio-residual",
+      "rationale": "新版经验比值上下文未赋予独立分量地位；方差差额可恢复 3.2，直接用 R 只能合成约 2.5554。"
+    },
+    {
+      "id": "cl-ped-factor-conventions",
+      "rationale": "新版校准链仍未为因子作跨行业保证；g 与 g² 在一致变换时代表同一散布，直接照抄 1.03 则不同。"
+    },
+    {
+      "id": "cl-ped-inventory-assumptions",
+      "rationale": "新版明确只能复核建议值舍入；把 1.03 用于 10 kg/件对数正态例是演算，不能外推到真实材料。"
+    },
+    {
+      "id": "cl-ped-inventory-combination",
+      "rationale": "新版校准限制仍不取消独立假设；额外因子 GSD=1 在对数项为零，留下未被校准结论抹掉的基础项。"
+    },
+    {
+      "id": "cl-ped-inventory-interval",
+      "rationale": "新版估计对象及可传播参数区分保留；[6.9115,14.4687] 是假想分布的范围而非杯重均值标准误。"
+    },
+    {
+      "id": "cl-ped-inventory-center",
+      "rationale": "新版资料边界仍未实测本例中心；在相同 σ 下把算术均值数值直接当中位数会改变分布。"
+    },
+    {
+      "id": "cl-ped-reliability-cv-trace",
+      "rationale": "新版仍要求估计对象和来源分清；舍入至 43.55 可得到表 CV，却不能恢复表的程序或把被拒候选变成推荐值。"
+    },
+    {
+      "id": "cl-market-meaning",
+      "rationale": "新版程序仍先查时间、市场及技术约束；它与“小幅变化下活动量会改变”的定义相容，并不把先进程度当响应。"
+    },
+    {
+      "id": "cl-market-m3-origins",
+      "rationale": "新版 M3 明示 V 含 1680 GWh 线损；五来源总和等于含损分母 53247，份额没有被解释成增量响应。"
+    },
+    {
+      "id": "cl-market-toy-purchase",
+      "rationale": "新版消费组合只给平均来源；H 的 0.2 与系统增量数值可相等，但约束情景的 8 表明不能以采购记录推出响应。"
+    },
+    {
+      "id": "cl-hyb-accounts",
+      "rationale": "新版重复示例锁定 F 向 S 的同一笔售电；Suh 的年度供给、使用和环境账各需处理，而非只扣点排放。"
+    },
+    {
+      "id": "cl-hyb-ledger",
+      "rationale": "新版接的是墙面 A 的 20 kWh 总交付，年度账只定技术系数，不能把十年服务量再乘十。"
+    },
+    {
+      "id": "cl-hyb-invoices",
+      "rationale": "新版保留虚构基准的供应者身份；五张发票与 F/G 各 90、S 30 的最终余量使重叠可追。"
+    },
+    {
+      "id": "cl-hyb-remove",
+      "rationale": "新版把 F 的年产出、交易、排放明确包含在 E 中；先拆整个 F，再形成 G 强度与跨界连接，不按 20/100 预扣。"
+    },
+    {
+      "id": "cl-hyb-equations",
+      "rationale": "新版交易记录与最终需求不同层；两项 0.1 的单位不同，第一行交付 20 kWh，第二行外需零，第三行含自用。"
+    },
+    {
+      "id": "cl-hyb-corrected",
+      "rationale": "新版仍从固定 20 kWh 出发，额外 F 供 S 的量来自平衡反馈；拆账前后以逐笔身份重算一致。"
+    },
+    {
+      "id": "cl-hyb-naive-result",
+      "rationale": "新版原表与单列 F 的重复具体是同一 10 CU 发票；两式可闭合，结果差还含配方和强度变化。"
+    },
+    {
+      "id": "cl-hyb-swap",
+      "rationale": "新版 E 表聚合后看不出开票者；令 G 供应 S 的全部 20 CU，可以保留相同 E/S 总表并改变供应关系。"
+    },
+    {
+      "id": "cl-hyb-database",
+      "rationale": "新版区分可单独承接外需的过程与只合起来表示服务的数据；文献保留 Cᵈ 的框架，与实际只算 Cᵘ 不矛盾。"
+    },
+    {
+      "id": "cl-hyb-audit",
+      "rationale": "新版重复定位仍依赖买卖两端；同一总表无法裁定两套采购，查年份、电压、时段及发票后才能合并。"
+    },
+    {
+      "id": "cl-hyb-downstream-test",
+      "rationale": "新版将反馈范围限制到所需的同型服务，不能把烤面包对照外推到钢、电、处置或结构性电站变化。"
+    },
+    {
+      "id": "cl-es-question",
+      "rationale": "新版模型、输入、发行因子分别交代；溶剂和 NOx 的克数先是清单，对同服务的总分需另给计分规则。"
+    },
+    {
+      "id": "cl-es-three",
+      "rationale": "新版分开归一化和目标距离，即使 Fₙ 恰等于 F；F、Fₖ 是地区年度量，1 的含义是现状等于目标。"
+    },
+    {
+      "id": "cl-es-equation",
+      "rationale": "新版明确可混用瑞士归一化参照与他处目标权重，故式(4)各因子仍分开，产品克数不进入年度权重构造。"
+    },
+    {
+      "id": "cl-es-nmvoc",
+      "rationale": "新版临界流 81000 保留沿用依据；一般 NMVOC 的匹配范围和年度单位仍支持重算 13.568816/表列 14。"
+    },
+    {
+      "id": "cl-es-nox",
+      "rationale": "新版权重与归一化仍不同项；78,704/45,000 的平方与克数尺度给 39，按 NO₂ 表质量不能变成吸入浓度。"
+    },
+    {
+      "id": "cl-es-service",
+      "rationale": "新版同一地区目标和物质匹配仍保留；设定等效涂装服务才允许比较 4/1 与 2/2 两行清单。"
+    },
+    {
+      "id": "cl-es-threshold",
+      "rationale": "新版表列分差来自两项权重；共同正倍数不换位，只变 NOx 得 39x−28，交点依赖使用已公布整数。"
+    },
+    {
+      "id": "cl-es-test",
+      "rationale": "新版维持固定清单与共同背景；只改 x=0.5 的反转是构造敏感性，未表示实际政策或概率。"
+    },
+    {
+      "id": "cl-es-later",
+      "rationale": "新版 81000 仍是选定年度目标，非臭氧达标阈值；2021 同时更新 F、Fₙ，低于目标仍有正因子。"
+    },
+    {
+      "id": "cl-es-ranks",
+      "rationale": "新版统一抽样的是替代目标范围，并列明未变项目；32%、40% 是试验内的排名频率，非政策概率。"
+    },
+    {
+      "id": "cl-lime-policy-contrast",
+      "rationale": "新版瑞士点数依现有保护目标，LIME 卡却问假想后果与税额；两种政策作用并未混同。"
+    },
+    {
+      "id": "cl-lime-baseline",
+      "rationale": "新版年度四项金额先用日本年度损害量作参照；负荷地点并不能定义受访者或全国扩展户数。"
+    },
+    {
+      "id": "cl-lime-units",
+      "rationale": "新版联合分析前保留四个不同保护对象的损害量；资产的日元单位不是问卷户税，也不把干吨和 DALY 直接相加。"
+    },
+    {
+      "id": "cl-lime-display",
+      "rationale": "新版估值仍取决于问卷编码；全国 DALY 参照、人均日数与家庭税额三层不能当作同一分母。"
+    },
+    {
+      "id": "cl-lime-logit",
+      "rationale": "新版联合分析说明是假想方案选择；条件 logit 的随机项、概率和系数单位由独立模型证据给出。"
+    },
+    {
+      "id": "cl-lime-precision",
+      "rationale": "新版支付意愿仍是同效用下两个系数的比；共用税系数使误差传播要考虑协方差，个体异质性另论。"
+    },
+    {
+      "id": "cl-lime-households",
+      "rationale": "新版 38.31 日元仍是每户回避一亿吨；46607000 是扩展金额的户数，不把东京 306 变成全国调查人数。"
+    },
+    {
+      "id": "cl-lime-mismatch",
+      "rationale": "新版比值保留单位与扩展逻辑；资产和物种表差超末位舍入，缺处理资料，只能标明使用发表值。"
+    },
+    {
+      "id": "cl-lime-shares",
+      "rationale": "新版每 DALY 货币权重与年度健康份额仍分离；0.48 来自四项加权年度金额，不是参与者比例。"
+    },
+    {
+      "id": "cl-lime-two-forms",
+      "rationale": "新版先算年度各项金额份额；归一化后的同序须共用同一套未舍入分母，不能把 0.48 直接乘 DALY。"
+    },
+    {
+      "id": "cl-lime-different-card",
+      "rationale": "新版区分英刊所述 400 主调查和 306 分析表，八组逐格对应仅支持样本可对应，不能证明同编码或独立抽样。"
+    },
+    {
+      "id": "cl-lime-english",
+      "rationale": "新版日英文样本关联不抹去单位不同；英文资产 2.29×10¹² 与表 3.61×10¹² 差额保留，发表和单位要具名。"
+    },
+    {
+      "id": "cl-lime-english-basis",
+      "rationale": "新版日文日数—DALY 的近似匹配不恢复聚合程序；英文换资产作标尺仅是算术相容，不是已证作者方法。"
+    },
+    {
+      "id": "cl-lime-service",
+      "rationale": "新版把联合分析限于权重层；同等级同地同期交付和损害向量是教学设定，没有用真实排放估计。"
+    },
+    {
+      "id": "cl-lime-break-even",
+      "rationale": "新版日文差值 114 由同一组损害量和一份表计算；h/p 分界 30000 只跟本例损害差有关。"
+    },
+    {
+      "id": "cl-lime-edition",
+      "rationale": "新版样本表日期与人数对应、后版改变标尺；2003 的后版标签不能覆盖早期 2002 调查时间及英文表身份。"
+    },
+    {
+      "id": "cl-lime-validity",
+      "rationale": "新版边际 WTP 明示是在效用模型中；系数显著不能推出真实支付，仍需要可兑现实验。"
+    },
+    {
+      "id": "cl-lime-null",
+      "rationale": "新版支付意愿依选择模型；p=0.403 且同人被按独立处理，不足以主张假设与真钱等效。"
+    },
+    {
+      "id": "cl-lime-order",
+      "rationale": "新版效用比仍解释在特定选择任务；直接兑现组检验顺序作用，一致性压力保留为可能机制。"
+    },
+    {
+      "id": "cl-lime-decision",
+      "rationale": "新版英文与日文换位同用固定损害，不是跨年测偏好；转用前说明群体和用途，保留损害与权重异议可分。"
+    },
+    {
+      "id": "cl-pack-service",
+      "rationale": "新版保留同一购物服务和含首次的五次门槛；483 件与初始装填参考仍由报告给出，缺实测复用。"
+    },
+    {
+      "id": "cl-pack-capacity",
+      "rationale": "新版强调容量条件；1149 是调查人数，袋数和物品数另作装填分母，其他袋型用体积外推。"
+    },
+    {
+      "id": "cl-pack-count",
+      "rationale": "新版同服务要求仍在；483 除采用容量再乘袋重可得所需材料，尚非生命周期清单。"
+    },
+    {
+      "id": "cl-pack-credit",
+      "rationale": "新版五次结论仍条件于内衬替代；19.1/29.3 的体积折算依实际替代和用途等效。"
+    },
+    {
+      "id": "cl-pack-mapping",
+      "rationale": "新版把内衬替代列为条件，不使 53% 的受访者比例变成直接测得的袋比例；仍需同户同期袋量。"
+    },
+    {
+      "id": "cl-pack-baseline",
+      "rationale": "新版门槛依内衬情景；在发布的两端做 D(r) 插值只检验 1.578 的一致性，非复跑模型。"
+    },
+    {
+      "id": "cl-pack-uses",
+      "rationale": "新版明确总次数含首次，6.924/1.578 的严格整数门槛为五，未观察现实达到。"
+    },
+    {
+      "id": "cl-pack-shift",
+      "rationale": "新版替代仍属设定；从无到全的 4—9 是条件变动，不是置信区间或寿命实测。"
+    },
+    {
+      "id": "cl-pack-three",
+      "rationale": "新版五次适用其基准；把 HDPE 三次且四成再作内衬带入得十四，缺另一列条件不能把十二当等价。"
+    },
+    {
+      "id": "cl-pack-rounding",
+      "rationale": "新版门槛仍是模型结果，棉袋 327 与显示值严格下界 328 的差只说明公开精度不足。"
+    },
+    {
+      "id": "cl-pack-categories",
+      "rationale": "新版同服务的五次只定义气候门槛，非生物资源略高和九项中八项较低并未变成综合投票。"
+    },
+    {
+      "id": "cl-pack-hotspot",
+      "rationale": "新版容量、制袋及处置仍是条件；钛白粉高贡献指模型中的优先调查对象，改材料尚需性能和供给证据。"
+    },
+    {
+      "id": "cl-pack-data",
+      "rationale": "新版一致性检查区分真实差异与资料近似；进口组合可以合理，欧洲电力过程仍可能不代表当地技术。"
+    },
+    {
+      "id": "cl-pack-missing",
+      "rationale": "新版原研究用于英国 2006/07 且限定范围；气候排序不回答被排除的海滩垃圾、行为和社会经济后果。"
+    },
+    {
+      "id": "cl-pack-litter",
+      "rationale": "新版保留所问用途和年份的边界；西班牙散落指数提供另一个估计对象，未全算海洋损害，不能加到气候指标。"
+    },
+    {
+      "id": "cl-pack-environment",
+      "rationale": "新版排除影响不等于无影响；海水、土壤、露天所见的消失或碎裂是实验端点，不能由堆肥参数代证。"
+    },
+    {
+      "id": "cl-pack-review-capacity",
+      "rationale": "新版门槛依容量；附录补足计数及外推的可审查性，没有把纸袋或淀粉袋变成直接观测。"
+    },
+    {
+      "id": "cl-pack-recommendation",
+      "rationale": "新版明确 LDPE 五次和相同购物运输条件；次数逆算本身不证现实达到，推荐仍需性能、行为和原袋去向。"
+    },
+    {
+      "id": "cl-pack-later",
+      "rationale": "新版把反推次数与调查分开；2015 威尔士自报的截顶和混合类型仍不可直接验证历史英国纯棉购物寿命。"
+    },
+    {
+      "id": "cl-cn-characterization",
+      "rationale": "新版环境和资源分支分开，环境分支先表征再参照；EP 是类别潜值，尚不是人均比较。"
+    },
+    {
+      "id": "cl-cn-service-period",
+      "rationale": "新版1990同地人口参照仍在，T只对全服务期累计EP作年化，已经按年的EP不可再除。上游现已明确改用地区/时期可能改变比值，而不排除人均基准数值相同。"
+    },
+    {
+      "id": "cl-cn-target",
+      "rationale": "新版区分全球和本地分母；2000是目标而非实绩，与1990人口配用及全球项目匹配未知保留。上游现区分基准身份和数值，不再声称不同地区或年份必然给出不同年度人均数。"
+    },
+    {
+      "id": "cl-cn-weight-meaning",
+      "rationale": "人均基准定义依同地人口，只有共用非零人口才可约去，WF不是目标完成率或损害严重性。上游已允许不同基准数值相等：例如两个基准都为10时E/10不变，WF可为1。"
+    },
+    {
+      "id": "cl-cn-cancellation",
+      "rationale": "各步骤保留参照地区；B可约去要求是同一非零B，G仍由1990人口构造。上游已允许不同来源基准的数值偶合；数值碰巧相等不授权把定义不匹配的两个基准符号约掉。"
+    },
+    {
+      "id": "cl-cn-resource-meaning",
+      "rationale": "新版资源另按稀缺性评价；可再生资源的更新和净耗须回到地方，不能借全球市场的不可更新假设。"
+    },
+    {
+      "id": "cl-cn-later-critique",
+      "rationale": "新版精确区分 1998 会议和 1999 报告来源；2005 的批评针对它实际引用的报告，不补齐 2001 参数。"
+    },
+    {
+      "id": "cl-cn-hk-weights",
+      "rationale": "新版香港案例分别采用参照、数据和方法；工作坊权重和项目软件评阅不能当作早期政策模型已验证。"
+    },
+    {
+      "id": "cl-cn-standard-events",
+      "rationale": "新版仍明说后两项只是同期预期；实际发布、实施日期来自官方登记而不回写文章预期。"
+    },
+    {
+      "id": "cl-cycle-service-boundary",
+      "rationale": "新版强调纸级性能及替代工序；一千克收集纸是处理参照，不能代替等强度包装服务。"
+    },
+    {
+      "id": "cl-cycle-annual-routing",
+      "rationale": "新版仍指 2001 年纸料流与回收情景；275 含 66 千吨转换废料，进口出口后 183 不代表同地使用。"
+    },
+    {
+      "id": "cl-cycle-product-yield",
+      "rationale": "新版国内回收厂进出量仍是研究对象；183 作共同分母，0.087 是成品差额而非经组分证实的纤维损失。"
+    },
+    {
+      "id": "cl-cycle-fixed-cascade",
+      "rationale": "新版沿物料去向后再论分账；三个产品级联来自文献示意，不是丹麦观察同批纤维履历。"
+    },
+    {
+      "id": "cl-cycle-extraction-rule",
+      "rationale": "新版区分处理活动及负担归属；W₃ 的发生时点没有因计入 L₁ 而移动。"
+    },
+    {
+      "id": "cl-cycle-adjacent-rule",
+      "rationale": "新版允许同一实物过程问不同归属；首尾与相邻两端各按指定对象对分，加总不裁定选择理由。"
+    },
+    {
+      "id": "cl-cycle-printed-correction",
+      "rationale": "新版实物去向与账仍分开；正式勘误后余留 R₂/R₁ 差在相等时可数值抵消，原印与派生规则仍不同。"
+    },
+    {
+      "id": "cl-cycle-same-name",
+      "rationale": "新版强调每一步各有证据；相同 50/50 比例不合并实际活动负担和相对不回收的后果。"
+    },
+    {
+      "id": "cl-cycle-substitution-chain",
+      "rationale": "新版区分实际接收、原生参照和供应反应；同一 D 项正负相消是图示系统规则，不证明真实纤维轨迹。"
+    },
+    {
+      "id": "cl-cycle-virgin-reference",
+      "rationale": "新版性能相符也须核查外部减产；纯原生过程是模型参照，废纸送达不能证发生替代。"
+    },
+    {
+      "id": "cl-cycle-grade-quality",
+      "rationale": "新版年度 1.25 折算未改变产量；单位情景按纸级用 0.8 与 1，不把参照纸级合为通用原生纤维。"
+    },
+    {
+      "id": "cl-cycle-energy-mismatch",
+      "rationale": "新版分别保留热与电的交付；合计 10.34 MJ 在比例失配时不证明服务相等。"
+    },
+    {
+      "id": "cl-cycle-energy-matched",
+      "rationale": "新版明确分别交付 7.52 热、2.82 电；按热减产导致 4.7 电缺口，补足才是两项服务同量。"
+    },
+    {
+      "id": "cl-cycle-heat-only",
+      "rationale": "新版基准 12.53 为输送前，供热分支条件复算约 5.65 不恢复原报 6.04 或火用系数。"
+    },
+    {
+      "id": "cl-cycle-market-question",
+      "rationale": "新版强调多收纸需查别处回收和原生生产；全球净变动取决于市场与政策约束。"
+    },
+    {
+      "id": "cl-rule-default",
+      "rationale": "新版规则限规定类别和用途，洗涤分类依产品；五只杯是默认起点，不等于实际消费观察。"
+    },
+    {
+      "id": "cl-rule-niu-provenance",
+      "rationale": "新版把北欧同日粮算法试算与工作簿、饲喂实验分开；跨洲预测系数没有成为因果效应。"
+    },
+    {
+      "id": "cl-rule-ipcc-class",
+      "rationale": "新版同方法要求限乳品比较声明；固定 Ym 可复现图，但缺消化率不能独立认定 IPCC 档位。"
+    },
+    {
+      "id": "cl-rule-wash-inputs",
+      "rationale": "新版每升分配 0.125 周期仍有据；同电量的两个节点身份未明，不能擅自当两笔。"
+    },
+    {
+      "id": "cl-rule-use-result",
+      "rationale": "新版结果表读取已表征贡献；0.082341131 与发布显示值相合，不重建过程或实测家庭。"
+    },
+    {
+      "id": "cl-rule-quantity-scale",
+      "rationale": "新版先分结果与模型过程；1 L 和 0.001 m³ 同体积不能单独说明活动栏千倍差。"
+    },
+    {
+      "id": "cl-rule-storage-gap",
+      "rationale": "新版参考仍是一升家庭消费；9.69 与图 7.92 的差只指出公开默认和图示未闭合。"
+    },
+    {
+      "id": "cl-rule-ration-units",
+      "rationale": "新版北欧设计仍使用共同日粮；DMI 和 NDF 保持定义，335 g/kg 要换为 33.5 后入式。"
+    },
+    {
+      "id": "cl-rule-niu-result",
+      "rationale": "新版只比较具名预测式对日粮的响应；365 天外推的约 5.8 kg 是模型差而非观测年度减排。"
+    },
+    {
+      "id": "cl-rule-ipcc-result",
+      "rationale": "新版情景仍固定 DMI 及能量转换；两输出相同来自固定输入，不能推广到所有 IPCC 方法。"
+    },
+    {
+      "id": "cl-pm-intake-unit",
+      "rationale": "新版 iF 明确人群吸入源增量/源排放；44 mg/kg 是合计质量比的百万分率，非人口百分比或浓度。"
+    },
+    {
+      "id": "cl-pm-effect-baseline",
+      "rationale": "新版区分 ACS 地区暴露分配与个人吸入；63 都会区是 Gronlund 基线，不可与 Pope 分析子集或各国队列合并。"
+    },
+    {
+      "id": "cl-pm-indoor-time",
+      "rationale": "新版室内外区室保留传输、沉积、吸入；活动停后仍可能暴露，不能忽略残留按时长线性外推。"
+    },
+    {
+      "id": "cl-pm-nonlinear-response",
+      "rationale": "新版旧 EF 是死亡响应乘严重度，受疾病及年龄覆盖限制；IER 换曲线和结局集合，两率不能直接解释成同一对象。"
+    },
+    {
+      "id": "cl-pm-risk-reference",
+      "rationale": "新版旧队列关联只在观测范围作解释；工作点与理论最低风险反事实分别进入曲线运算，不推定安全阈值。"
+    },
+    {
+      "id": "cl-pm-slope-meaning",
+      "rationale": "新版 EF 仍以吸入质量连到负担；切线和割线单位相同且可碰巧同值，仍须说明两端点。"
+    },
+    {
+      "id": "cl-pm-finite-change",
+      "rationale": "新版比较生态和人体的工作点及参照，不能跨系统借目标；A→B 跨曲率时直接使用端点差。"
+    },
+    {
+      "id": "cl-pm-gemm-alternative",
+      "rationale": "新版 IER 仍明示吸烟等资料换算的等毒性等假定；GEMM 仅室外队列减少这类外推，须对齐结局和共享证据。"
+    },
+    {
+      "id": "cl-pm-factor-correction",
+      "rationale": "新版 EF 解释保留吸入分母；平均/边际可同单位，正式勘误的 F:P、R:AB 才决定实际列身份。"
+    },
+    {
+      "id": "cl-pm-chemistry-perturbation",
+      "rationale": "新版 Guo 是观测约束的气粒模型；70% 是环境 NHₓ 扰动，不能改成 NH₃ 源排放门槛。"
+    },
+    {
+      "id": "cl-pm-chemistry-model-check",
+      "rationale": "新版 Guo 的观测和模型估计有别；母模型比较只能测 TM5-FASST 近似，不证局地实际干预。"
+    },
+    {
+      "id": "cl-pm-regional-factor",
+      "rationale": "新版源与受体不同位置、EF 分母可为浓度；空间平均、响应割线与源高混合三种平均不可互换。"
+    },
+    {
+      "id": "cl-pm-activity-indicators",
+      "rationale": "新版工作簿区分模型可描述和流匹配表已发行能力；以死亡数表中点及按活动时长归一均不能据此假定已收录。"
+    },
+    {
+      "id": "cl-power-opening",
+      "rationale": "新版 AVERT 同一排放差分可用终端或机组电量分母，支持先问哪一度以及是归属还是响应。"
+    },
+    {
+      "id": "cl-power-service",
+      "rationale": "两个时点的相同100 MWh还须同服务且可实施，减电量本身不保证产量、照明或充电等效。原函数试验仍支持此判断，应用段现明确所调用的是AVERT4.3.0原数值函数，发布版Web不能手工提交自定义逐时曲线。"
+    },
+    {
+      "id": "cl-power-voltage-path",
+      "rationale": "新版网损按明确输入或输出计；实际电压路径与网段角色由挪威资料给出，不能从电压数独断。"
+    },
+    {
+      "id": "cl-power-grid-assets",
+      "rationale": "新版网损换算只给损失量；设施生产、维护、SF₆ 及报废由另一组清单给出，不由损失量推出。"
+    },
+    {
+      "id": "cl-power-norway-loss",
+      "rationale": "新版分母定义仍有 ℓ/(1−ℓ) 的补足量；挪威 6.3% 和 1.6% 按输入口径复现附件，不重算全网。"
+    },
+    {
+      "id": "cl-power-segment-denominators",
+      "rationale": "新版两种网损分母仍分明；两段输出各自为参照，有分流或注入不能直接套一个串联因子。"
+    },
+    {
+      "id": "cl-power-database-voltage",
+      "rationale": "新版不同网损层保留，挪威 11/22 kV 地方配电与 ecoinvent 电压类别是不同分类对象。"
+    },
+    {
+      "id": "cl-power-egrid-scope",
+      "rationale": "新版 733.862 明确以 ERCT 年净发电作分母，未自动包含贸易、交付损失或设施生命周期。"
+    },
+    {
+      "id": "cl-power-egrid-adjustments",
+      "rationale": "新版仍限定复算使用发布行的分子；调整前后、生物质和有用热归属由 eGRID 口径说明。"
+    },
+    {
+      "id": "cl-power-egrid-loss",
+      "rationale": "新版损失先辨分母；互联系统 ERCOT 年账排出口及直用的分母不是 ERCT 电厂净发电。"
+    },
+    {
+      "id": "cl-power-egrid-loss-conflict",
+      "rationale": "新版以分母和版本定义折算；FAQ 互换的异文仍保留，选择修订版不解决进口来源。"
+    },
+    {
+      "id": "cl-power-region-membership",
+      "rationale": "新版统计分母明确绑定子区域 ERCT；SRO/Tenaska 两条跨归属说明 TE、平衡区与州界不可互代。"
+    },
+    {
+      "id": "cl-power-eia-emissions",
+      "rationale": "新版 eGRID 年平均不等于 EIA 小时消费；流量平衡、估算排放和贸易归属须分别证实。"
+    },
+    {
+      "id": "cl-power-average-response",
+      "rationale": "新版年平均及 AVERT 两种变化率分母分开；少发电的状态差不由归属平均推出。"
+    },
+    {
+      "id": "cl-power-historical-generation",
+      "rationale": "新版 AVERT 模型差另于历史回归；CEMS 化石毛发电和排放一阶差的关联不证明一次节电后果。"
+    },
+    {
+      "id": "cl-power-historical-consumption",
+      "rationale": "新版区分终端需求与模型发电；FERC 消费回归可在共同系统响应，但外生性是因果假定。"
+    },
+    {
+      "id": "cl-power-price-versus-energy",
+      "rationale": "新版发电变化有量值分母；定价燃料出现频率不是增量能量或排放份额。"
+    },
+    {
+      "id": "cl-power-native-model",
+      "rationale": "新版排放差仍有终端和发电两率；AVERT 使用同版 2023 TE 机组负荷关系，未成为有输电约束的完整调度。"
+    },
+    {
+      "id": "cl-power-native-scenario",
+      "rationale": "两率分开，8760 MWh是设定的逐小时终端减量；零变化为程序对照而非实施项目观测。应用段现明确模型轮廓传给原数值函数，不把它写成发布版Web的手工输入能力。"
+    },
+    {
+      "id": "cl-power-native-loss",
+      "rationale": "新版网损公式仍以输入分母为 1/(1−ℓ)；按客户端转换所得约 -9180.3824 已调整，不能再乘一次。"
+    },
+    {
+      "id": "cl-power-native-loss-document",
+      "rationale": "新版明确输出作分母是损失率乘交付，故总输入应为 (1+ℓ)×交付；实际代码与手册脚注仍须分别记录。"
+    },
+    {
+      "id": "cl-power-native-interpolation",
+      "rationale": "新版率以同一次排放差计算；插值按前后负荷分别代入，不能从相同终端差推出相同响应。"
+    },
+    {
+      "id": "cl-power-native-check-meaning",
+      "rationale": "新版模型排放减少量作为模型产物；零变化和可插值检查只验证内部，非观测机组响应。"
+    },
+    {
+      "id": "cl-power-native-two-hours",
+      "rationale": "终端与机组变化的分母各自明确，两次100 MWh请求因时点负荷不同而给出不同CO₂。应用段现明确这两个单小时自定义变化来自原函数求值，不推为Web交互功能。"
+    },
+    {
+      "id": "cl-power-native-pollutants",
+      "rationale": "新版 CO₂ 率分母澄清未改变污染物范围；SO₂/NOₓ 排序另算，质量不是暴露或跨类别总结果。"
+    },
+    {
+      "id": "cl-power-future-question",
+      "rationale": "新版三个率共享终端分母但区分平均、固定资本、可调资本；未来年份本身不推出投资响应。"
+    },
+    {
+      "id": "cl-power-future-perturbation",
+      "rationale": "新版长期率允许设备随负荷改变；有限全国 1%/5% 扰动仍不是州或小时导数。"
+    },
+    {
+      "id": "cl-power-future-postprocessing",
+      "rationale": "新版仍把长期率放在情景及条件下；地区和小时的混合与剔除负净变化是后处理，不是因果再分配。"
+    },
+    {
+      "id": "cl-power-future-distribution",
+      "rationale": "新版母线各去向分开并记表后等效；配电层 3.5945% 不等同区域间输电损失，终端发布率不得再调。"
+    },
+    {
+      "id": "cl-power-future-direct-rates",
+      "rationale": "新版 eGRID 年净发电率和 Cambium 三率的系统及范围仍明；235.2→249.7 涉及多步，不是单一损耗。"
+    },
+    {
+      "id": "cl-power-future-gases",
+      "rationale": "新版燃烧和燃烧前范围明确，终端分母一致；各气体先换单位并乘该版 GWP，不能借墙面甲烷因子。"
+    },
+    {
+      "id": "cl-power-future-gases-total",
+      "rationale": "新版允许用发布两项核 547.3；燃烧前覆盖不含完整设施链，算术一致不等于重新求解。"
+    },
+    {
+      "id": "cl-power-future-scenario",
+      "rationale": "新版 Cambium 版次与模拟年有别；638.4−547.3 的情景差同时动多个条件，不能单归气价或当作事实预测。"
+    },
+    {
+      "id": "cl-power-future-time",
+      "rationale": "新版短期和长期对象仍不同；按时点 Δq 加权，移峰净量零时仍可改变排放且不能除零，时标先对齐。"
+    },
+    {
+      "id": "cl-power-future-formula",
+      "rationale": "新版损失分母须明确，小时平方和与年和平方有交叉项；印式疑点不直接证明发布程序或数据错。"
+    },
+    {
+      "id": "cl-power-alternative-lca",
+      "rationale": "新版 Cambium 只在特定燃料链和终端口径内；完整 LCA 要接技术背景，增长技术组合与双重求解各自成立。"
+    },
+    {
+      "id": "cl-power-validation-objects",
+      "rationale": "新版固定程序和模型率仍是条件结果；复算、模型内比较和旧版 2021 观测代理都不能验证新版资本反事实。"
+    },
+    {
+      "id": "cl-power-nonbaseload",
+      "rationale": "新版 ERCT 年平均及 TE 响应仍分开；非基荷容量因子是近似权重，不能认作真实小时机组。"
+    },
+    {
+      "id": "cl-power-native-coordinate",
+      "rationale": "新版终端减少和模型发电分母不同；核内负荷为所含化石机组 MW，小时量需乘时长，未求进口响应。"
+    },
+    {
+      "id": "cl-power-future-storage-policy",
+      "rationale": "新版终端率是归属处理之后的量；储能及受限能源分别追时段，政策排放属性转移不能当作逐笔证书。"
+    },
+    {
+      "id": "cl-native-record-and-link",
+      "rationale": "新版活动索引保留了“求解要看图里实际接入活动”的层次；默认提供者字段不是产品系统保存连接。"
+    },
+    {
+      "id": "cl-native-scale",
+      "rationale": "新版两种表达仍分别是正废物流输入/输出、负产品流反向；需求和参考同号取比，活动倍数为正。"
+    },
+    {
+      "id": "cl-native-matrix-sign",
+      "rationale": "新版每份参考量与符号角色仍可追；矩阵输入取反使两表示都为 −1000 与 +0.065，负元不是负处理质量。"
+    },
+    {
+      "id": "cl-native-allocation-held",
+      "rationale": "新版正反向记录仍只换编码；经济分配设置另查，NONE 控制了电、蒸汽和处理负担归属。"
+    },
+    {
+      "id": "cl-native-three-co2-quantities",
+      "rationale": "新版处理 Acenaphthene 贡献与同流全量示范仍区分层次；同理 CO₂ 因子为 1 不使过程、全流和类别结果相同。"
+    },
+    {
+      "id": "cl-native-allocation-result",
+      "rationale": "新版只比较编码时仍固定无分配及坐标；单改经济分配只改参考功能负担，不证明物理替代或活动减量。"
+    },
+    {
+      "id": "cl-native-printed-comparator",
+      "rationale": "新版保留核对的对象和条件各自有边界；截图显示精度一致不足以解决 Production/Usage 或分配身份。"
+    },
+    {
+      "id": "cl-native-missing-link",
+      "rationale": "新版明确教程和迁移副本的作用范围；断开保存连接使 0.065 kg 留为开放技术流，不自动成为自然排放。"
+    },
+    {
+      "id": "cl-native-missing-link-score",
+      "rationale": "新版局部与同流总清单区分仍在；处理活动消失可使分数降低，这不是实际改良。"
+    },
+    {
+      "id": "cl-native-jrc-scope",
+      "rationale": "新版数据库代表性按用途判断；JRC 固定 5×0.2 kg 仅为接口测试，不能外推注塑行业。"
+    },
+    {
+      "id": "cl-native-jrc-connectors",
+      "rationale": "新版两个电力实例可共用提供者但有各自连接；四个 1:1 连接只针对原 UUID/参考单位。"
+    },
+    {
+      "id": "cl-native-jrc-weight-control",
+      "rationale": "新版目标 1 kg 须按实用参数的 0.2 kg 换出五份；只改件重而铁路保持，识别的是公式固定项的件数效应。"
+    },
+    {
+      "id": "cl-native-jrc-bare-setup",
+      "rationale": "新版求解用到的实际活动与可见记录仍可不同；要隔离单件质量，必须显式采用 Baseline 并固定铁路。"
+    },
+    {
+      "id": "cl-native-jrc-source-discrepancy",
+      "rationale": "新版明确求解索引无末端处理，约 4e-6 kg 为开放技术流；CO₂、CO 差额可解释但未补入，非完整重现。"
+    },
+    {
+      "id": "cl-native-jrc-result-projection",
+      "rationale": "新版区分按准则核对与相应研究；保留清洗废物及无变量时两个 amount 不同，不擅改源基准。"
+    },
+    {
+      "id": "cl-native-jrc-version-reference",
+      "rationale": "新版“保留模型”逐项核身份、版本等；属性 UUID 相同且能量值相同仍不证明 28.00.000 已满足。"
+    },
+    {
+      "id": "cl-native-format-double-target",
+      "rationale": "新版先比目标和参考碰巧相等，才加倍作对照；eILCD 可求解也可能只恢复一半目标，不泛推所有读写实现。"
+    },
+    {
+      "id": "cl-native-result-direction",
+      "rationale": "新版格式试验只比较给定设置及可见输出；方向显示变化在两格式均见，过程交换和带符号清单相同仍不能确定唯一原因。"
+    },
+    {
+      "id": "cl-native-conversion-study",
+      "rationale": "新版保留“对象不同不能相互证明”；Lavoisier 数据集比较排除 eILCD 生命周期模型，也未完整比较 LCIA。"
+    },
+    {
+      "id": "cl-native-factor-probe",
+      "rationale": "新版清单层仍可选定全系统单一 CO₂ 流；×2 是无环境解释的受控匹配检查，非另造评价指标。"
+    },
+    {
+      "id": "cl-native-factor-zero-absent",
+      "rationale": "新版同流清单不因诊断因子记录变动；显式 0 与无记录的得分可同为 0，须查记录身份。"
+    },
+    {
+      "id": "cl-native-factor-report",
+      "rationale": "新版各清单层范围分清；报告仍须保留因子版本及匹配覆盖，零得分不能替代缺失/不适用判断。"
+    },
+    {
+      "id": "cl-cml-feasibility",
+      "rationale": "新版改进仍分识别、筛选和实施；局部只调铝产出不证技术可行，实施要联动核投入和排放。"
+    },
+    {
+      "id": "cl-cml-soot",
+      "rationale": "新版要求定义新产品变体再比；降温和洗涤都会改变其他活动，不能把只调烟尘当作工程结果。"
+    },
+    {
+      "id": "cl-cml-solvent-bins",
+      "rationale": "新版区分 POCP 乙烯当量与 EPA 档位；两个点值可给相符分数，不证所有条目的唯一抄录来源。"
+    },
+    {
+      "id": "cl-cml-methane-counter",
+      "rationale": "新版同样说明分档会丢原因子信息；甲烷点值落 7 分档而例表写 9，不能拿两溶剂成功反查盖过异文。"
+    },
+    {
+      "id": "cl-cml-operational-availability",
+      "rationale": "新版微小参数响应和原贡献分开；2001 分析类型及可省略依据来自 Guide，建议不等于工具可用或已执行。"
+    },
+    {
+      "id": "cl-climate-agwp",
+      "rationale": "新版同 GWP100 的脉冲改 GWP20 即不等；积分时限 H 是每次脉冲后的强迫面积，不是寿命或产品期间。"
+    },
+    {
+      "id": "cl-climate-agtp",
+      "rationale": "新版固定气体量但 GTP100 改为端点温度参照；卷积的脉冲响应单位和以 CO₂ 脉冲为分母仍清楚。"
+    },
+    {
+      "id": "cl-climate-rounded-ratio",
+      "rationale": "新版通用甲烷行不等同非化石行；26.2 与印数相除相容依舍入范围，不表示真实效应的置信范围。"
+    },
+    {
+      "id": "cl-climate-wall-reweighted",
+      "rationale": "新版固定同服务、θ=0.3 与两气体库存；换版本或时限改正因子，B 两排放较高仍保持同序。"
+    },
+    {
+      "id": "cl-climate-rate-aggregate",
+      "rationale": "新版共同历史边界及 112E−105E₋₂₀ 公式不变；年度和线性加总成立，C 的负量不是移除或全球绝对降温。"
+    },
+    {
+      "id": "cl-book-maintenance-condition",
+      "rationale": "新版换算仍依覆盖、寿命和维护；追加 B 一次维护需重算活动，不能沿用 2.5 kg 或混入改变性能。"
+    },
+    {
+      "id": "cl-hyb-downstream-zero",
+      "rationale": "新版只在具名模型范围讨论 Cᵈ 置零；是否保留反馈，与保留后移除部门重叠，依然是两项决定。"
+    },
+    {
+      "id": "cl-joint-conference-feedback",
+      "rationale": "新版 2005 术语仍按归属及决定变化区分；少外送要查外部补供，断网是激励假设并非已发生。"
+    },
+    {
+      "id": "cl-usetox-prioritization",
+      "rationale": "新版保留归趋、暴露、效应以及推荐/指示因子；先表征再依支配及敏感性判断排除，重点追踪不保证精细排序。"
+    },
+    {
+      "id": "cl-book-cost-ledgers",
+      "rationale": "新版同服务下货款分别为买方支出卖方收入；合并边界内不可当两笔资源消耗，未计价后果仍另记。"
+    },
+    {
+      "id": "cl-book-cost-health-overlap",
+      "rationale": "新版 Type II 仍需足够的路径证据；工人工作条件与居民排放健康潜势可共用名词而受体和后果不同。"
+    }
+  ],
+  "caseValidation": {
+    "registeredInputs": 18,
+    "byteAndApprovedCanonicalHashesUnchanged": true,
+    "allTemplatesMaterializeExactly": true,
+    "zeroFrozenValidatorErrors": true
+  },
+  "limits": [
+    "Scientific expert validation and human reader/teaching-effect studies were not performed.",
+    "Inherited chapter-level background scope in several notes and three ecoinvent web records without a reading/passage binding are retained and disclosed; no missing provenance is invented.",
+    "A service equation was mistyped in one private follow-up explanation; it was corrected explicitly in the next review input. The manuscript/model always used 0.2u+0.3v+0.2w and did not change."
+  ],
+  "auditRecords": [
+    {
+      "record": "part1-independent-meaning-review.json",
+      "sha256": "48a0cf3e1885e30f640d4205ef607f23fcd0e35e06d011ed2206acf1f12b3bb9"
+    },
+    {
+      "record": "part1-source-questions.json",
+      "sha256": "ea18863bef8486b2639e70d26859a78dcc82b8e72fa2cab76cba921bc339c9d1"
+    },
+    {
+      "record": "meaning-review-part23.json",
+      "sha256": "958c947b9f2fb24cae9cfdf105e0c7a88e0378a6e1f7274e36818e275d5c0f26"
+    },
+    {
+      "record": "meaning-review-part23-followup.json",
+      "sha256": "3a3264bbcd9725ee9985e1678fdccf628f97cda2394713f970d64f4e112d635d"
+    },
+    {
+      "record": "meaning-review-part45.json",
+      "sha256": "30178a3941eab8edcdeb0f6e0e554efc8d64f238b182b4fb3b1d0134c7306263"
+    },
+    {
+      "record": "meaning-review-part45-followup.json",
+      "sha256": "ccb478931c63a1182c437115a04aca19c5af6a35d6e0f28a8894bbc515878ff4"
+    },
+    {
+      "record": "meaning-review-part67.json",
+      "sha256": "a0d7200e78fde456a892f44de2f155b2a6a9de10d884e91a31d7e497523b32be"
+    },
+    {
+      "record": "meaning-review-part67-followup.json",
+      "sha256": "ce28904443910e16b3591db8a19af9d845c8649038408e2d604092011686ab7a"
+    },
+    {
+      "record": "consumer-review-followup.json",
+      "sha256": "890ae3bd3f82c843f8a810b71236ade229648e5a104e175478cc960aed03bbc8"
+    },
+    {
+      "record": "consolidated-source-judgments.json",
+      "sha256": "624857126d70b37348a73aacf8f83f92eb6e9c781de6dadcc10837eb625cb2ed"
+    },
+    {
+      "record": "consolidated-source-coverage-supplement.json",
+      "sha256": "4b52b7b8d901a6e8987a1c6a238c81deb6a0903825aa6bcbafbe196c2660e111"
+    },
+    {
+      "record": "consolidated-source-coverage-final-two-patch.json",
+      "sha256": "4527c8ac0673c8a037cde17bf38198a5eb072090a22d08cb638e1fda1b1aaba9"
+    },
+    {
+      "record": "whole-final-corrections-meaning-review.json",
+      "sha256": "8ddfe027aa10362ecb2dd87d500f9b9c6802053399032abec435dfdb0303b0e4"
+    },
+    {
+      "record": "numeric-reader-adjudication.json",
+      "sha256": "492ea74b0955f284c23bdb92109b80186e14205aaecf9df93f8fea73251094c7"
+    },
+    {
+      "record": "whole-source-facts.md",
+      "sha256": "56d2c2767142df2e296edc103633159dd54f26f172c0c6c40864f5bb7d799481"
+    }
+  ]
+}
