@@ -1,3 +1,4 @@
+import { projectFlowBoundaryHistory, validateFlowBoundaryHistoryOutput, flowBoundaryPreviousSurface, flowBoundaryCitationEntries } from './reader-flow-boundary.mjs';
 import { copyeditHistoryEntries, copyeditHistoryPlan, validateCopyeditHistory } from './reader-copyedit-history.mjs';
 import { observeCopyeditHistory } from './reader-copyedit-observation.mjs';
 import { readerNumberingManifest } from './reader-numbering.mjs';
@@ -156,7 +157,7 @@ function aliasDestination(node) {
   return sibling?.id === target ? target : null;
 }
 
-const citationScopeExclusions = '.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope],[data-copyedit-history],.docs-pagination,.reader-view-label,.teaching-case';
+const citationScopeExclusions = '.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope],[data-copyedit-history],[data-flow-boundary-history],.docs-pagination,.reader-view-label,.teaching-case';
 const ordinaryCitationBlocks = 'p,ul,ol,dl,blockquote,pre,table,figure';
 
 function nativeCitationScopes(document) {
@@ -310,7 +311,7 @@ export function getHistoricalCitationEntries(sourceBaseline, locations, history,
   return entries;
 }
 
-export function validateReadableBookOrdinaryDestinations(pages, entry, address) {
+export function validateReadableBookOrdinaryDestinations(pages, entry, address, flowBoundary) {
   const errors = [];
   for (const row of entry.ordinaryDispositions ?? []) {
     for (const destination of row.destinations) {
@@ -318,6 +319,7 @@ export function validateReadableBookOrdinaryDestinations(pages, entry, address) 
       const actual = target && pages.get(target.path)?.ids.get(target.id);
       if (!actual || (destination.currentSha256
         ? !actual.ordinaryHashes.includes(destination.currentSha256)
+          && !flowBoundaryPreviousSurface(destination.address, actual, flowBoundary).ordinaryHashes.includes(destination.currentSha256)
         : !actual.claimIds.includes(destination.claimId))) {
         errors.push(`${address}: actual ordinary-content destination differs: ${destination.address}`);
       }
@@ -333,7 +335,9 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
   const printRoutes = book ? currentEditionKeys(book.edition, sourceRoutes, sourceBaseline, locations) : createCurrentPrintRoutes(sourceBaseline, locations, sourceRoutes);
   const historicPrintRoutes = book ? [...sourceBaseline.pages.filter(page=>page.printOrdinal!==undefined).map(page=>page.route),...locations.frontMatter,...(locations.printAdditions??[]).map(unit=>unit.route)] : printRoutes;
   const copyedit = copyeditHistoryPlan(book?.current?.copyedit);
-  const entries = copyeditHistoryEntries(getHistoricalCitationEntries(sourceBaseline, locations, history, historicPrintRoutes, book), copyedit);
+  const entries = flowBoundaryCitationEntries(
+    copyeditHistoryEntries(getHistoricalCitationEntries(sourceBaseline, locations, history, historicPrintRoutes, book), copyedit),
+    book?.current?.flowBoundary);
   const addresses = new Set();
   for (const entry of entries) {
     const address = `${entry.path}#${entry.id}`;
@@ -362,15 +366,17 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
     pages.set(path, surface);
     errors.push(...surface.errors);
   }
+  errors.push(...validateFlowBoundaryHistoryOutput(documents, book?.current?.flowBoundary));
   if (copyedit) {
     const copyeditErrors = validateCopyeditHistory(documents,
-      observeCopyeditHistory(documents, readerNumberingManifest, readCitationSurface), copyedit, book.current.copyedit.printParts);
+      projectFlowBoundaryHistory(observeCopyeditHistory(documents, readerNumberingManifest, readCitationSurface), book.current.flowBoundary),
+      copyedit, book.current.copyedit.printParts);
     errors.push(...copyeditErrors);
     // Article fingerprints already checked the complete normalized output.
     // Earlier chapter predicates inspect a prose projection after the new
     // historical apparatus has independently passed its exact DOM checks.
     if (!copyeditErrors.length) for (const document of documents.values()) {
-      for (const notice of document.querySelectorAll('[data-copyedit-history]')) notice.remove();
+      for (const notice of document.querySelectorAll('[data-copyedit-history],[data-flow-boundary-history]')) notice.remove();
     }
   }
   for (const [path, document] of documents) {
@@ -406,8 +412,9 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
       const expected = entry.targets.map(target => citationHref(target, entry.path));
       if (!source.notice || JSON.stringify(source.links) !== JSON.stringify(expected)) errors.push(`${address}: migration notice has the wrong native links`);
     }
-    errors.push(...validateHistoricalScope(source, entry, address));
-    errors.push(...validateReadableBookOrdinaryDestinations(pages, entry, address));
+    errors.push(...validateHistoricalScope(
+      flowBoundaryPreviousSurface(`${entry.path}#${entry.id}`, source, book?.current?.flowBoundary), entry, address));
+    errors.push(...validateReadableBookOrdinaryDestinations(pages, entry, address, book?.current?.flowBoundary));
     for (const target of [...entry.targets, ...(entry.scope?.targets ?? [])]) {
       const actual = pages.get(target.path)?.ids.get(target.id);
       const semanticMatch = actual?.route === target.route && (
@@ -416,7 +423,7 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
         target.kind === 'note-group' ? /^H[23]$/.test(actual.tag) : actual.section);
       if (!semanticMatch) errors.push(`${address}: wrong or missing ${target.kind} destination ${target.path}/#${target.id}`);
       if (entry.mode === 'alias' && !entry.scope && entry.capturedScope
-          && !matchesCapturedScope(actual, entry))
+          && !matchesCapturedScope(flowBoundaryPreviousSurface(`${target.path}#${target.id}`, actual, book?.current?.flowBoundary), entry))
         errors.push(`${address}: old ${entry.capturedScope.title} aliased scope changed without a reviewed migration`);
 
     }

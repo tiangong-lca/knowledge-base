@@ -1,3 +1,5 @@
+import { currentFlowBoundary } from '@/scripts/reader-current-expectations.mjs';
+import { flowBoundaryOrdinaryId } from '@/scripts/reader-flow-boundary.mjs';
 import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
 import { PublicationNote } from '@/components/publication-note';
 import Link from 'next/link';
@@ -31,7 +33,7 @@ export default function Page() {
     return <article className="print-chapter prose" key={unit.key} id={id} data-reader-route={unit.key} data-reader-title={page.data.title}>
       <LegacyCitationAliases ids={getLegacyCitations(page.url,true).aliases.get(id)} target={id} />
       <NumberedHeading level={unit.kind==='front-matter'?2:3} number={unit.label} id={entry === id ? undefined : entry} tabIndex={entry === id ? undefined : -1} data-reader-heading-key="@unit">{page.data.title}</NumberedHeading>
-      {unit.kind!=='front-matter' && <p>{page.data.description}</p>}
+      {unit.kind!=='front-matter' && <p id={currentFlowBoundary ? flowBoundaryOrdinaryId(unit.key, true, 0) : undefined}>{page.data.description}</p>}
       <ChapterContent page={page} print />
     </article>;
   };

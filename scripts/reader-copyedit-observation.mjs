@@ -1,4 +1,4 @@
-const ordinaryExclusions = '.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope],[data-copyedit-history],.docs-pagination,.reader-view-label,.teaching-case';
+const ordinaryExclusions = '.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope],[data-copyedit-history],[data-flow-boundary-history],.docs-pagination,.reader-view-label,.teaching-case';
 
 const ordinaryBlocks = 'p,ul,ol,dl,blockquote,pre,table,figure';
 

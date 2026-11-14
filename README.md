@@ -14,11 +14,22 @@ checkPaths:
   - "package.json"
   - "app/**"
   - "scripts/**"
-lastReviewedAt: 2026-11-13
-lastReviewedCommit: ccb24fea950f8c584c3215be6a74265482d659cc
+lastReviewedAt: 2026-11-14
+lastReviewedCommit: 54ad9fdbb9d1f948977888c412bef36ae2e33898
 ---
 
 # LCA Living Knowledge Base and Review
+
+[Flow and boundary pilot #99](https://github.com/tiangong-lca/knowledge-base/issues/99)
+compares selected original standards, guidance, theoretical work, data formats
+and native-model evidence around five common questions. Its
+[comparison record](_docs/editorial/2026-11-14-flow-comparison-record.md) separates
+inventory-interface differences, conditional representation equivalence and
+information that numerical results cannot distinguish. The shared
+chapter and two fine reader pages preserve prior numerical inputs and citation
+identities. Scientific, reader and actual-output acceptance belong to the separate
+`flow-boundary-99` successor, not the earlier language-only unit. Current delivery
+and remaining wider research are recorded on Issue99 and programme9.
 
 [Chinese expression revision #95](https://github.com/tiangong-lca/knowledge-base/issues/95)
 adds explicit language requirements and adopts the reviewed whole-manuscript
@@ -102,6 +113,12 @@ observation commands in `scripts/reader-copyedit-observe.mjs` collect candidate
 evidence without approving it. A production successor additionally requires four
 real supporting summaries and complete 88-article/nine-artifact/seven-part output
 coverage. See the architecture contract for exact protection boundaries.
+
+The scientific pilot uses `config/reader-flow-boundary.json` and
+`scripts/reader-flow-boundary-observe.mjs`. Observations do not approve the unit.
+Its original predecessor, extended readings and old evidence remain protected;
+the formal output receipt requires actual exported public files, including the
+changed all-book navigation. Private forecast hashes are not production evidence.
 
 ## Delivery
 

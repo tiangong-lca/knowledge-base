@@ -1,3 +1,5 @@
+import { selectFlowBoundary, prepareFlowBoundarySource, effectiveFlowBoundary, verifyFlowBoundaryReceipts } from './reader-flow-boundary.mjs';
+import { flowBoundaryUnitPin, flowBoundaryPredecessorPin } from './reader-flow-boundary-pins.mjs';
 import { lstat, readdir, readFile, realpath } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { editionDigest, inspectReadableBookEdition, qualifyReadableBookEdition, readableBookReviewPlan, pinnedReadableBookUnits, validReadableBookReviewFile, verifyReadableBookReviewReceipts } from './reader-current-edition.mjs';
@@ -34,22 +36,28 @@ export async function validateReadableBookCurrent(root, catalog, readings, liter
   const files = await readReadableBookFiles(root, baseline.fixedFiles);
   const config = await readConfig('reader-copyedit-current.json');
   const unit = selectReaderCopyedit(config, readerCopyeditUnitPin);
-  const reviewUnits = unit ? [...acceptance.units, unit] : acceptance.units;
+  const flowBoundary = selectFlowBoundary(await readConfig('reader-flow-boundary.json'), flowBoundaryUnitPin);
+  if (flowBoundary && !unit) throw new Error('Flow boundary requires the accepted #95 language generation');
+  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary].filter(Boolean)];
+  const realRoot = await realpath(root);
   const reviewFiles = new Set((reviewUnits ?? []).flatMap(unit =>
     (unit.reviewEvidence ?? []).flatMap(row => [row.reportFile, row.artifactFile])));
   const artifacts = new Map();
   for (const name of reviewFiles) {
     if (!validReadableBookReviewFile(name)) throw new Error(`Invalid readable book review evidence path: ${name}`);
-    const path = join(root, name);
-    if (!(await lstat(path)).isFile()) throw new Error(`Readable book review evidence must be a regular file: ${name}`);
+    const path = resolve(realRoot, name);
+    if (!(await lstat(path)).isFile() || await realpath(path) !== path) throw new Error(`Readable book review evidence must be a regular file: ${name}`);
     artifacts.set(name, await readFile(path));
   }
 
   const actual = inspectReadableBookEdition({ catalog, readings, literature, files });
+  const structure = copyeditSourceStructure({ catalog, files });
+  if (flowBoundary && !verifyFlowBoundaryReceipts(flowBoundary, artifacts))
+    throw new Error('Flow boundary lacks exact independent source, reader, and output evidence');
+  const flow = flowBoundary && prepareFlowBoundarySource(flowBoundary, actual, structure, flowBoundaryPredecessorPin, { readings, catalog });
   if (!unit) return qualifyReadableBookEdition(baseline, readableBookBaselineDigest, acceptance, readableBookAcceptancePins, actual, artifacts);
 
   if (!verifyReadableBookReviewReceipts(unit, artifacts)) throw new Error('Reader copyedit requires exact primary review evidence');
-  const realRoot = await realpath(root);
   for (const { file } of readerCopyeditSupportReferences(unit, artifacts)) {
     const path = resolve(realRoot, file);
     if (!(await lstat(path)).isFile() || await realpath(path) !== path)
@@ -60,8 +68,9 @@ export async function validateReadableBookCurrent(root, catalog, readings, liter
   if (editionDigest(capture) !== readerCopyeditCaptureDigest) throw new Error('Reader copyedit differs from its independently pinned 8148 capture');
   const previousUnits = pinnedReadableBookUnits(acceptance, readableBookBaselineDigest, readableBookAcceptancePins);
   const previous = readableBookReviewPlan(previousUnits);
-  const { previousState } = qualifyReaderCopyedit({ unit, actual, previous, capture, artifacts,
-    sourceStructure: copyeditSourceStructure({ catalog, files }) });
+  const { previousState } = qualifyReaderCopyedit({ unit, actual: flow?.previous ?? actual, previous, capture, artifacts,
+    sourceStructure: flow?.previous.structure ?? structure });
   const qualified = qualifyReadableBookEdition(baseline, readableBookBaselineDigest, acceptance, readableBookAcceptancePins, previousState, artifacts);
-  return effectiveReaderCopyedit(qualified, unit);
+  flow?.verifyCurrentState();
+  return effectiveFlowBoundary(effectiveReaderCopyedit(qualified, unit), flowBoundary, flow?.affectedClaimIds ?? []);
 }
