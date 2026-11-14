@@ -16,8 +16,8 @@ checkPaths:
   - "content/**"
   - "scripts/**"
   - "releases/**"
-lastReviewedAt: 2026-11-13
-lastReviewedCommit: ccb24fea950f8c584c3215be6a74265482d659cc
+lastReviewedAt: 2026-11-14
+lastReviewedCommit: 0c8382182497e6110ac349c26f0139a21ae38008
 ---
 
 # Publication contract
@@ -61,6 +61,14 @@ Reused original works receive precise additional passage/visual-check records wh
 ## Editorial selection and historical continuity
 
 The2026-11-08 whole-book selection decision in `editorial/2026-11-08-argument-and-selection.md` separates evidence eligibility from main-text inclusion. Faithful source support does not require publication of every inspected detail. Preserve coverage obligations, reader-essential conditions, counterevidence and immutable source/release identity while permitting explicitly reviewed mergers, notes, appendices, useful website topics and corrections. A current paragraph's removal from the main text requires a documented semantic destination or correction, dependent-use review and actual historical-link qualification; retaining an empty anchor or changing a baseline hash is insufficient. Existing code guards remain binding until those bounded dispositions are implemented and reviewed. Editorial agreement is not scientific consensus or human expert approval.
+
+The [concept-led comparison contract](editorial/concept-led-comparison.md)
+separates a claim's faithful source support from adequate comparative coverage.
+Future claims of a completed cross-system comparison require aligned questions,
+objects, conditions and versions, actual evidence for the relationship and its
+consequences, and an explicit statement of unexamined scope. The existing source,
+reader and output gates remain necessary; their software success does not supply
+this research judgment. Earlier receipts retain their original bounded scope.
 
 ## Reader publication boundary
 

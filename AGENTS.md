@@ -13,8 +13,8 @@ checkPaths:
   - "AGENTS.md"
   - ".docpact/config.yaml"
   - "_docs/**"
-lastReviewedAt: 2026-11-13
-lastReviewedCommit: ccb24fea950f8c584c3215be6a74265482d659cc
+lastReviewedAt: 2026-11-14
+lastReviewedCommit: 0c8382182497e6110ac349c26f0139a21ae38008
 ---
 
 # Knowledge Base contributor contract
@@ -26,6 +26,8 @@ Use workspace delivery controller for Issue/PR/state writes. M1: branch from mai
 Read `_docs/reader-publication-contract.md` before any public writing or presentation change. The user requires finished book prose and docs.tiangong.earth layout parity. Research/development/process narration, execution logs and TODOs belong in development Markdown, not delivered pages. Preserve substantive evidence/assumption limits in reader notes; do not merely remove caution or rename draft status. Review source entailment, reader understanding and rendered layout separately. The 2026-11-06 monograph requirements in `_docs/lca-book-goal.md` §§2.7–2.12 govern the whole book: preserve research coverage and the complete old-to-new chapter map; build a continuous argument and authored prose; use distinct website/book organization over shared canonical content. Heading changes or hidden TOC levels alone do not satisfy this goal.
 
 The user resumed again on2026-11-08, prioritizing whole-book argument, material selection and consensus/disagreement presentation before further prose. Apply goal§2.13 and `_docs/editorial/2026-11-08-argument-and-selection.md`. Source support is necessary for assertions but is not sufficient for inclusion. Preserve coverage, counterevidence and citation identity without requiring every old paragraph to remain in the main text; actual migrations require reviewed dispositions and output checks.
+
+The 2026-11-14 user clarification makes concept/principle-led comparison of standards, guidance, scholarly methods, data and software the book's central research purpose. Apply [concept-led comparative writing](_docs/editorial/concept-led-comparison.md) for source selection, chapter design and acceptance. State the common question and actual comparative result; a completed language edit or publication check does not fill missing research. Historical/source-specific topics may retain named titles when their role and scope are explicit.
 
 For Chinese manuscript drafting, revision and reader review, apply [the writing and teaching guide](_docs/editorial/readable-writing-and-teaching.md) adopted on 2026-11-11. Follow the reader publication contract for independent review.
 
