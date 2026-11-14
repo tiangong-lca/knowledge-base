@@ -1,0 +1,3319 @@
+{
+  "schemaVersion": 1,
+  "kind": "output",
+  "unit": "flow-boundary-99",
+  "subjectSha256": "a6bb006f6fe9381c71507b8c89f6c56bdaeabbf7bd12ceec0f5ea8d800e8f517",
+  "date": "2026-11-14",
+  "scope": [
+    "content/docs/book/exchange-semantics-and-conversion.mdx",
+    "content/docs/characterization.mdx",
+    "content/docs/flows.mdx",
+    "config/book-edition.json",
+    "config/reader-numbering.json",
+    "sources:src-ilcd-process",
+    "sources:src-book-ilcd-2010",
+    "sources:src-book-cml-2001-part2a",
+    "sources:src-book-heijungs-suh-2002-author-sample",
+    "sources:src-suh-2004-functions-thesis-reprint",
+    "sources:src-kb44-ec2021",
+    "sources:src-kb50-jrc-flow-doc",
+    "sources:src-kb52-cml-2001-part3",
+    "concepts:cn-flow",
+    "concepts:cn-exchange",
+    "coverage:cov-flow",
+    "coverage:cov-standards",
+    "readings:rd-cml-2001-part2a",
+    "readings:rd-ilcd-2010",
+    "readings:rd-heijungs-suh-2002-author-sample",
+    "readings:rd-suh-2004-functions-thesis-reprint",
+    "readings:rd-kb44-ec2021",
+    "readings:rd-kb50-jrc-ilcd11",
+    "readings:rd-cml-2001-part3",
+    "gaps:gap-iso-authorized-text",
+    "gaps:gap-wave4-comparison-incomplete",
+    "gaps:gap-wave4-iso-text",
+    "gaps:gap-cn-standard-originals-and-1998-initiation",
+    "literature:lit-n01",
+    "literature:lit-n02",
+    "literature:work-kb50-jrc-ilcd11",
+    "researchMetadata:reading-ledger",
+    "researchMetadata:literature-map",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:order:sources",
+    "researchMetadata:order:readings",
+    "researchMetadata:order:gaps",
+    "researchMetadata:order:revisions",
+    "researchMetadata:order:literature",
+    "researchMetadata:order:queries",
+    "researchMetadata:public-projection",
+    "claims:cl-flow99-two-boundaries",
+    "claims:cl-flow99-elementary",
+    "claims:cl-flow99-landfill",
+    "claims:cl-flow99-boundary-consequence",
+    "claims:cl-flow99-agricultural-boundary",
+    "claims:cl-flow99-boundary-exceptions",
+    "claims:cl-flow99-record-and-instance",
+    "claims:cl-flow99-schema-levels",
+    "claims:cl-flow99-identity-example",
+    "claims:cl-flow99-waste-classification",
+    "claims:cl-flow99-material-and-service",
+    "claims:cl-flow99-direction-equivalence",
+    "claims:cl-flow99-reference-levels",
+    "claims:cl-flow99-basis-and-demand",
+    "claims:cl-flow99-pesticide-interface",
+    "claims:cl-flow99-interface-consequence",
+    "claims:cl-flow99-phosphorus-interface",
+    "claims:cl-flow99-zero-placeholder",
+    "claims:cl-flow99-zero-reasons",
+    "claims:cl-flow99-zero-reporting",
+    "claims:cl-flow99-conclusion",
+    "claims:cl-flow99-probe-reference",
+    "evidence:ev-flow-pilot-ilcd-boundaries",
+    "evidence:ev-flow-pilot-ilcd-agri",
+    "evidence:ev-flow-pilot-ilcd-waste",
+    "evidence:ev-flow-pilot-ilcd-reference",
+    "evidence:ev-flow-pilot-ilcd-classification",
+    "evidence:ev-flow-pilot-ilcd-flow-record",
+    "evidence:ev-flow-pilot-ilcd-process-record",
+    "evidence:ev-flow-pilot-ilcd-impact-factor",
+    "evidence:ev-flow-pilot-ef-1",
+    "evidence:ev-flow-pilot-ef-2",
+    "evidence:ev-flow-pilot-ef-3",
+    "evidence:ev-flow-pilot-ef-4",
+    "evidence:ev-flow-pilot-iso40-defs",
+    "evidence:ev-flow-pilot-iso44-scope",
+    "evidence:ev-flow-pilot-ef31-update",
+    "evidence:ev-kb99-cml2001-three-boundaries-and-landfill",
+    "evidence:ev-kb99-cml2001-agricultural-boundary",
+    "evidence:ev-kb99-cml2001-open-technosphere-flows",
+    "evidence:ev-kb99-cml2001-flow-vocabulary",
+    "evidence:ev-kb99-ilcd2010-boundary-and-partly-terminated",
+    "evidence:ev-kb99-ilcd2010-waste-boundary-and-service",
+    "evidence:ev-kb99-ilcd2010-agro-net-and-stock",
+    "evidence:ev-kb99-ilcd2010-flow-properties-and-coverage",
+    "evidence:ev-kb99-suh2004-functional-versus-material-direction",
+    "evidence:ev-kb99-suh2004-functional-demand-and-bases",
+    "evidence:ev-kb99-hs2002-reference-versus-demand",
+    "evidence:ev-kb99-hs2002-intensity-local-inconsistency",
+    "evidence:ev-flow-pilot-pef-pesticide",
+    "evidence:ev-flow-pilot-pef-fertilisers-metals",
+    "evidence:ev-flow-pilot-pef-impact",
+    "evidence:ev-flow-pilot-pef-eol",
+    "evidence:ev-flow99-ef-mass",
+    "evidence:ev-flow99-ef-mass-units",
+    "evidence:ev-flow99-ef-aluminium-name",
+    "sources:src-flow-pilot-ilcd-lcia-doc",
+    "sources:src-flow-pilot-ef31",
+    "sources:src-flow-pilot-iso40",
+    "sources:src-flow-pilot-iso44",
+    "sources:src-flow-pilot-ef31-update",
+    "readings:rd-flow-pilot-ef31",
+    "readings:rd-flow-pilot-iso40",
+    "readings:rd-flow-pilot-iso44",
+    "readings:rd-flow-pilot-ef31-update",
+    "gaps:gap-flow99-scope-remaining",
+    "revisions:rev-flow-boundary-pilot-99",
+    "literature:work-flow-pilot-ef31",
+    "literature:work-flow-pilot-ef31-update",
+    "queries:q-kb99-primary-flow-comparison-20261114"
+  ],
+  "observed": "Accepted the independently observed actual compiled/exported pilot surfaces and files after engineering review, negative mutations, real responsive/no-script/keyboard/search/print checks and final semantic comparison. Projected download hashes do not qualify. Main committed build, CI, live publication and exact workspace integration are separate subsequent delivery facts.",
+  "observations": {
+    "outputs": [
+      {
+        "path": "/docs",
+        "route": "/docs",
+        "from": "5c99369ac93b04b4f6b37c15d551f0c44160169780acc2d993173dcb0d912f0a",
+        "sha256": "55e31a77f3d3c6f533dc89023b4a61c3aeb770e6c213767f59ca1c6c3e188ef2",
+        "rationale": "当前章题、关联前提注号或历史指引随实际目标更新；所指稳定命题以及该文章既有责任保持。"
+      },
+      {
+        "path": "/docs/book/inventory-calculation",
+        "route": "/docs/book/inventory-calculation",
+        "from": "24828375991070e9a846b0255d208276c1d3859c2492b4065fe2e78c50105afc",
+        "sha256": "8dd756d02e853963fdd85d778e4b252aa718299cbd3b86895a0c7945ae083252",
+        "rationale": "当前章题、关联前提注号或历史指引随实际目标更新；所指稳定命题以及该文章既有责任保持。"
+      },
+      {
+        "path": "/docs/book/exchange-semantics-and-conversion",
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "from": "9e7458f12b309c8d3aa18685ea98ee0194f94f67ea51cf2d20ff9e4b5ffe87bb",
+        "sha256": "ab0771f820914a751c33644de883e8516f1dda87c84d8f1702c8490cb4874c71",
+        "rationale": "改写共享章的真实标题、四正式节及细分层级，加入新规范段，并核对实际正文、注号、证据关系与历史范围。"
+      },
+      {
+        "path": "/docs/book/inventory-boundary-and-hybrid",
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "from": "547758b39dbb41152e3f632cb8dd72a2faa414430d5638c3678e20f512cc4a45",
+        "sha256": "71d85da58f91ffbfd92b95102dd5c397d320170c0cc2df9e9b46bd95d87a79c0",
+        "rationale": "当前章题、关联前提注号或历史指引随实际目标更新；所指稳定命题以及该文章既有责任保持。"
+      },
+      {
+        "path": "/docs/book/wall-service-to-comparison",
+        "route": "/docs/book/wall-service-to-comparison",
+        "from": "161d5ad0696b5647eead197d21967355dbb1f0bd34ebdfc9f940026b7cd8adb7",
+        "sha256": "806c07803dccd9aaf17398cd97f97b8d89b641c8963f176706018711f60b49e3",
+        "rationale": "当前章题、关联前提注号或历史指引随实际目标更新；所指稳定命题以及该文章既有责任保持。"
+      },
+      {
+        "path": "/docs/book/connecting-objects-references-and-time",
+        "route": "/docs/book/connecting-objects-references-and-time",
+        "from": "f208986130d7c031d099b4a738b171347237b5d4eaee452d57f4bb6617981b3e",
+        "sha256": "a45ee568be8f26d3fe768c21640161763b85d9d352e81610aafa2e1dcae3108e",
+        "rationale": "当前章题、关联前提注号或历史指引随实际目标更新；所指稳定命题以及该文章既有责任保持。"
+      },
+      {
+        "path": "/docs/history",
+        "route": "/docs/history",
+        "from": "efcbd773bbb5aac7271f15523a2313a81f7403db5599fadda52ce790400ac8fc",
+        "sha256": "8a31dbff5f5e705c10258dab012df862b3790ec75f1b8130a01d83a38343d775",
+        "rationale": "核对固定 S01 章内位置和原生命题目标；B08 印本指引显示真实新章题。"
+      },
+      {
+        "path": "/docs/flows",
+        "route": "/docs/flows",
+        "from": "7226501a00490eed02725032d27823b63fefc4aaef7ab78fbb690f1da3fb9677",
+        "sha256": "46eb39567679688c0562901060eff6caa4f4e2c4a776857bf360edf8d8b62129",
+        "rationale": "流的身份与过程交换专题加入共用命题，说明过程图判断与处置表达，核对实际细页、注号与历史范围。"
+      },
+      {
+        "path": "/docs/functional-unit",
+        "route": "/docs/functional-unit",
+        "from": "6fddf7e9c7d40d5ac26c9d42f73d65ff4d7406a32e369d7180c6647914d94341",
+        "sha256": "b2d540cb99c95eec6da8d65c676341bfdff06057bb8bd48e0c286e5227023167",
+        "rationale": "当前章题、关联前提注号或历史指引随实际目标更新；所指稳定命题以及该文章既有责任保持。"
+      },
+      {
+        "path": "/docs/characterization",
+        "route": "/docs/characterization",
+        "from": "99bc85c455e2be6203829dd1ad4766fb656c01b474d0563f9a1f488c1feb9f75",
+        "sha256": "0956c53caf9ee7bad1ed391fb99f331ad6cc80b533fa2bc87384744eac256d6a",
+        "rationale": "表征专题加入零值、缺失与未定状态的共用命题，核对实际细页及旧引文去向。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "from": "ad0ade9e46395528762450349e2ad01aa6c4b60fadcf9d8f8aa81eac49057fe2",
+        "sha256": "34c4d8a9f9b4085e9289ac7c8eba6c3ef8f4882527e099e782ab47fcaf91f225",
+        "rationale": "改写共享章的真实标题、四正式节及细分层级，加入新规范段，并核对实际正文、注号、证据关系与历史范围。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/wall-service-to-comparison",
+        "from": "941e5e5925dbd1ddde1b1994ca66f4a3a9a1b26a12ae49b47d06cbd2548c9302",
+        "sha256": "44c2ecac009e1fbaaed4f7147870af54baab0a4deaba3445489a396eeae4922a",
+        "rationale": "当前章题、关联前提注号或历史指引随实际目标更新；所指稳定命题以及该文章既有责任保持。"
+      },
+      {
+        "path": "/print",
+        "route": "book-revisable-judgment",
+        "from": "431b2c8aaff55a43fa2d4f4923789c1978587075cac8e1de453e06aa91f1536f",
+        "sha256": "0e60ceed2e2ca58e6bcda08a3d8730f3a0de52450431b0b6a65e03234f2d6279",
+        "rationale": "当前章题、关联前提注号或历史指引随实际目标更新；所指稳定命题以及该文章既有责任保持。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/history",
+        "from": "36e5f6430f498836345e84d422d8b80ea163acee34809b43cdda500e5f24384e",
+        "sha256": "8dea9668b3f6b5b2428b9dba1f051b75cb125b314535d32c10f7a30b5cfaa5eb",
+        "rationale": "核对固定 S01 章内位置和原生命题目标；B08 印本指引显示真实新章题。"
+      }
+    ],
+    "publicArtifacts": [
+      {
+        "path": "claims/index.html",
+        "from": "05eb1f9a7f82b93c59a585485ed9a8338caf41759d1a5d6d04a3f88b08fc6c0b",
+        "sha256": "a0f485f744b1ccd604436d43e283dcbf34c66104e8bfe91f39a3c1201a49f2f5",
+        "rationale": "论述总览的公共记录与新规范段、中间前提和原注稳定身份一致。"
+      },
+      {
+        "path": "sources/index.html",
+        "from": "7ebc0b260de275725f9ce6a5ea6116a81d19c92df92897e9f914160693615bbe",
+        "sha256": "0cdf3a183f701746e2906b16d1e8978b7815a00a8ff489c9f0f2132ec3b76efd",
+        "rationale": "源索引增加新/已读位置及引文反链，保留原载体身份。"
+      },
+      {
+        "path": "concepts/index.html",
+        "from": "ae0f39ed5dd1fc4f7b408cab87d9d7c7b51aaf60aaf95bd1c7105fc4ac90ca1c",
+        "sha256": "da77e0c468f2164ce35432e36d58fb567fbd69707170b542c9ef71643ad143d2",
+        "rationale": "核对原流/交换概念及其限定与追加的一般定义。"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "from": "d0ebba95692aa876fb03b0140b1c5281626cd93e99dcd738d1e12f0e74466520",
+        "sha256": "e9c87b6f9584c25ae38b0319f6f26d8243a75d0fbe1ac04d5939965ddf333171",
+        "rationale": "与真实当前目录的已审公开闭包逐字段投影。"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "from": "2b0381bce1f5ee062cf338a753de074aae2fd5c166e671045d0ea431ac628777",
+        "sha256": "96d659c4db2e85cdae559c59e49ca5880f34b62e5f75cfa8ce6304da5d3e7ebe",
+        "rationale": "与真实目录的公开依赖图逐项投影。"
+      },
+      {
+        "path": "research/index.html",
+        "from": "2299a3c6a74ef84d6567e027c8c320a92ae1b96dd5aa2fc9026743282775df43",
+        "sha256": "bc09ef192442c13c42f648daee5e2ae69408e976ae7983d3ff5a9497ce38f664",
+        "rationale": "核对实际公共参考文献、限定读取状态和新加的证据定位。"
+      },
+      {
+        "path": "downloads/bibliography.json",
+        "from": "7f84c4ac43db0fd276b6b9fddd60487a1dd426aa9bd61a0a5104225133fe260f",
+        "sha256": "4d329e9739df2262c5fcb6c102f038f608976a028eaf9fdc462527c025fdaf89",
+        "rationale": "与真实公共目录和研读登记的书目联合投影。"
+      },
+      {
+        "path": "downloads/research.json",
+        "from": "7f84c4ac43db0fd276b6b9fddd60487a1dd426aa9bd61a0a5104225133fe260f",
+        "sha256": "4d329e9739df2262c5fcb6c102f038f608976a028eaf9fdc462527c025fdaf89",
+        "rationale": "保留读者公开的书目兼容下载，与正式书目投影一致。"
+      },
+      {
+        "path": "coverage/index.html",
+        "from": "3606ff3156773571ac6adf6aa93309f562d27fd217104771ff6a8a4d83b11c7a",
+        "sha256": "974111bc07499f4e001dd8da96ec482367669d607ebd5b90c0af778e1e64fb1e",
+        "rationale": "全书导览的实际章节与专题标题、简介和目标，与独立编号与源正文一致."
+      }
+    ],
+    "addresses": {
+      "/docs/book/exchange-semantics-and-conversion#nd-page": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "chapter",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-two-boundaries",
+          "cl-flow99-elementary",
+          "cl-flow99-landfill",
+          "cl-flow99-boundary-consequence",
+          "cl-flow99-agricultural-boundary",
+          "cl-flow99-boundary-exceptions",
+          "cl-flow99-record-and-instance",
+          "cl-flow-type",
+          "cl-exchange",
+          "cl-flow-exchange-distinction",
+          "cl-flow99-schema-levels",
+          "cl-flow99-identity-example",
+          "cl-flow99-waste-classification",
+          "cl-flow99-material-and-service",
+          "cl-native-opening",
+          "cl-native-record-and-link",
+          "cl-native-reference-and-target",
+          "cl-waste-material",
+          "cl-native-example-scope",
+          "cl-native-bottle-reference",
+          "cl-native-material",
+          "cl-waste-opposite",
+          "cl-native-opposite",
+          "cl-native-scale",
+          "cl-native-matrix-sign",
+          "cl-waste-no-universal",
+          "cl-bw-sign",
+          "cl-bw-direction",
+          "cl-native-allocation-held",
+          "cl-native-representation-result",
+          "cl-flow99-direction-equivalence",
+          "cl-native-small-inventory",
+          "cl-native-same-flow-total",
+          "cl-native-three-co2-quantities",
+          "cl-native-allocation-result",
+          "cl-native-printed-comparator",
+          "cl-native-missing-link",
+          "cl-native-missing-link-score",
+          "cl-native-jrc-scope",
+          "cl-native-jrc-instance",
+          "cl-native-jrc-connectors",
+          "cl-native-jrc-parameters",
+          "cl-native-jrc-weight-control",
+          "cl-native-jrc-bare-setup",
+          "cl-native-jrc-machine-edge",
+          "cl-native-jrc-machine-coordinate",
+          "cl-native-jrc-source-discrepancy",
+          "cl-native-jrc-partial-match",
+          "cl-native-jrc-result-projection",
+          "cl-native-jrc-version-reference",
+          "cl-flow99-reference-levels",
+          "cl-flow99-basis-and-demand",
+          "cl-native-format-scope",
+          "cl-waste-history",
+          "cl-native-format-original-target",
+          "cl-native-format-double-target",
+          "cl-native-format-result-scale",
+          "cl-native-result-direction",
+          "cl-native-conversion-study",
+          "cl-cf-context",
+          "cl-native-factor-context",
+          "cl-unmapped",
+          "cl-flow99-pesticide-interface",
+          "cl-flow99-interface-consequence",
+          "cl-flow99-phosphorus-interface",
+          "cl-zero-example",
+          "cl-flow99-zero-placeholder",
+          "cl-flow99-zero-reasons",
+          "cl-flow99-probe-reference",
+          "cl-native-factor-probe",
+          "cl-native-factor-zero-absent",
+          "cl-native-factor-real-gap",
+          "cl-missing-not-zero",
+          "cl-flow99-zero-reporting",
+          "cl-native-factor-report",
+          "cl-native-preservation-meaning",
+          "cl-native-service-meaning",
+          "cl-flow99-conclusion"
+        ],
+        "ordinary": [
+          "f2a29d0d789385cc0edb86b2a4eb207e78664d20559e14850e95d3b1ccebe243",
+          "b042a48ab9197aaa5f8d1481003245d178e3cda56f9717b539185871f98487c3",
+          "ab6f542bf3cf7c9d598c31f8c5a9ba079bd28161c0c44cfad2b7e75b926d052d"
+        ],
+        "bindings": {
+          "links": [
+            [],
+            [
+              "#%E8%AE%A1%E7%AE%97%E6%B4%BB%E5%8A%A8",
+              "#%E8%BD%AC%E6%8D%A2%E8%BE%B9%E7%95%8C",
+              "#%E8%A1%A8%E5%BE%81%E7%8A%B6%E6%80%81",
+              "/docs/allocation/"
+            ],
+            [
+              "/claims/",
+              "https://github.com/tiangong-lca/knowledge-base/blob/main/_docs/reproduction/native-exchange/README.md"
+            ]
+          ],
+          "tables": []
+        }
+      },
+      "/docs/book/exchange-semantics-and-conversion#main-content": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "reading-title",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-two-boundaries",
+          "cl-flow99-elementary",
+          "cl-flow99-landfill",
+          "cl-flow99-boundary-consequence",
+          "cl-flow99-agricultural-boundary",
+          "cl-flow99-boundary-exceptions",
+          "cl-flow99-record-and-instance",
+          "cl-flow-type",
+          "cl-exchange",
+          "cl-flow-exchange-distinction",
+          "cl-flow99-schema-levels",
+          "cl-flow99-identity-example",
+          "cl-flow99-waste-classification",
+          "cl-flow99-material-and-service",
+          "cl-native-opening",
+          "cl-native-record-and-link",
+          "cl-native-reference-and-target",
+          "cl-waste-material",
+          "cl-native-example-scope",
+          "cl-native-bottle-reference",
+          "cl-native-material",
+          "cl-waste-opposite",
+          "cl-native-opposite",
+          "cl-native-scale",
+          "cl-native-matrix-sign",
+          "cl-waste-no-universal",
+          "cl-bw-sign",
+          "cl-bw-direction",
+          "cl-native-allocation-held",
+          "cl-native-representation-result",
+          "cl-flow99-direction-equivalence",
+          "cl-native-small-inventory",
+          "cl-native-same-flow-total",
+          "cl-native-three-co2-quantities",
+          "cl-native-allocation-result",
+          "cl-native-printed-comparator",
+          "cl-native-missing-link",
+          "cl-native-missing-link-score",
+          "cl-native-jrc-scope",
+          "cl-native-jrc-instance",
+          "cl-native-jrc-connectors",
+          "cl-native-jrc-parameters",
+          "cl-native-jrc-weight-control",
+          "cl-native-jrc-bare-setup",
+          "cl-native-jrc-machine-edge",
+          "cl-native-jrc-machine-coordinate",
+          "cl-native-jrc-source-discrepancy",
+          "cl-native-jrc-partial-match",
+          "cl-native-jrc-result-projection",
+          "cl-native-jrc-version-reference",
+          "cl-flow99-reference-levels",
+          "cl-flow99-basis-and-demand",
+          "cl-native-format-scope",
+          "cl-waste-history",
+          "cl-native-format-original-target",
+          "cl-native-format-double-target",
+          "cl-native-format-result-scale",
+          "cl-native-result-direction",
+          "cl-native-conversion-study",
+          "cl-cf-context",
+          "cl-native-factor-context",
+          "cl-unmapped",
+          "cl-flow99-pesticide-interface",
+          "cl-flow99-interface-consequence",
+          "cl-flow99-phosphorus-interface",
+          "cl-zero-example",
+          "cl-flow99-zero-placeholder",
+          "cl-flow99-zero-reasons",
+          "cl-flow99-probe-reference",
+          "cl-native-factor-probe",
+          "cl-native-factor-zero-absent",
+          "cl-native-factor-real-gap",
+          "cl-missing-not-zero",
+          "cl-flow99-zero-reporting",
+          "cl-native-factor-report",
+          "cl-native-preservation-meaning",
+          "cl-native-service-meaning",
+          "cl-flow99-conclusion"
+        ],
+        "ordinary": [
+          "f2a29d0d789385cc0edb86b2a4eb207e78664d20559e14850e95d3b1ccebe243",
+          "b042a48ab9197aaa5f8d1481003245d178e3cda56f9717b539185871f98487c3",
+          "ab6f542bf3cf7c9d598c31f8c5a9ba079bd28161c0c44cfad2b7e75b926d052d"
+        ],
+        "chapter": "nd-page"
+      },
+      "/docs/book/exchange-semantics-and-conversion#对象与交换": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "heading",
+        "title": "系统边界与流的身份",
+        "claimIds": [
+          "cl-flow99-two-boundaries",
+          "cl-flow99-elementary",
+          "cl-flow99-landfill",
+          "cl-flow99-boundary-consequence",
+          "cl-flow99-agricultural-boundary",
+          "cl-flow99-boundary-exceptions",
+          "cl-flow99-record-and-instance",
+          "cl-flow-type",
+          "cl-exchange",
+          "cl-flow-exchange-distinction",
+          "cl-flow99-schema-levels",
+          "cl-flow99-identity-example"
+        ],
+        "ordinary": [
+          "b042a48ab9197aaa5f8d1481003245d178e3cda56f9717b539185871f98487c3"
+        ]
+      },
+      "/docs/book/exchange-semantics-and-conversion#填埋与农地的不同分界": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "heading",
+        "title": "填埋与农地的不同分界",
+        "claimIds": [
+          "cl-flow99-landfill",
+          "cl-flow99-boundary-consequence",
+          "cl-flow99-agricultural-boundary",
+          "cl-flow99-boundary-exceptions"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#对象定义与过程记录": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "heading",
+        "title": "对象定义与过程记录",
+        "claimIds": [
+          "cl-flow99-record-and-instance",
+          "cl-flow-type",
+          "cl-exchange",
+          "cl-flow-exchange-distinction",
+          "cl-flow99-schema-levels",
+          "cl-flow99-identity-example"
+        ],
+        "ordinary": [
+          "b042a48ab9197aaa5f8d1481003245d178e3cda56f9717b539185871f98487c3"
+        ]
+      },
+      "/docs/book/exchange-semantics-and-conversion#计算活动": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "heading",
+        "title": "物质方向与处理活动",
+        "claimIds": [
+          "cl-flow99-waste-classification",
+          "cl-flow99-material-and-service",
+          "cl-native-opening",
+          "cl-native-record-and-link",
+          "cl-native-reference-and-target",
+          "cl-waste-material",
+          "cl-native-example-scope",
+          "cl-native-bottle-reference",
+          "cl-native-material",
+          "cl-waste-opposite",
+          "cl-native-opposite",
+          "cl-native-scale",
+          "cl-native-matrix-sign",
+          "cl-waste-no-universal",
+          "cl-bw-sign",
+          "cl-bw-direction",
+          "cl-native-allocation-held",
+          "cl-native-representation-result",
+          "cl-flow99-direction-equivalence",
+          "cl-native-small-inventory",
+          "cl-native-same-flow-total",
+          "cl-native-three-co2-quantities",
+          "cl-native-allocation-result",
+          "cl-native-printed-comparator",
+          "cl-native-missing-link",
+          "cl-native-missing-link-score",
+          "cl-native-jrc-scope",
+          "cl-native-jrc-instance",
+          "cl-native-jrc-connectors",
+          "cl-native-jrc-parameters",
+          "cl-native-jrc-weight-control",
+          "cl-native-jrc-bare-setup",
+          "cl-native-jrc-machine-edge",
+          "cl-native-jrc-machine-coordinate",
+          "cl-native-jrc-source-discrepancy",
+          "cl-native-jrc-partial-match",
+          "cl-native-jrc-result-projection",
+          "cl-native-jrc-version-reference"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#同一处理的两种记法": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "heading",
+        "title": "处理活动的不同表示",
+        "claimIds": [
+          "cl-waste-material",
+          "cl-native-example-scope",
+          "cl-native-bottle-reference",
+          "cl-native-material",
+          "cl-waste-opposite",
+          "cl-native-opposite",
+          "cl-native-scale",
+          "cl-native-matrix-sign",
+          "cl-waste-no-universal",
+          "cl-bw-sign",
+          "cl-bw-direction",
+          "cl-native-allocation-held",
+          "cl-native-representation-result",
+          "cl-flow99-direction-equivalence"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#活动清单与类别结果": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "heading",
+        "title": "活动、清单与类别结果",
+        "claimIds": [
+          "cl-native-small-inventory",
+          "cl-native-same-flow-total",
+          "cl-native-three-co2-quantities",
+          "cl-native-allocation-result",
+          "cl-native-printed-comparator",
+          "cl-native-missing-link",
+          "cl-native-missing-link-score"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#连接保存以后仍可能漏算": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "heading",
+        "title": "连接保存以后仍可能漏算",
+        "claimIds": [
+          "cl-native-jrc-scope",
+          "cl-native-jrc-instance",
+          "cl-native-jrc-connectors",
+          "cl-native-jrc-parameters",
+          "cl-native-jrc-weight-control",
+          "cl-native-jrc-bare-setup",
+          "cl-native-jrc-machine-edge",
+          "cl-native-jrc-machine-coordinate",
+          "cl-native-jrc-source-discrepancy",
+          "cl-native-jrc-partial-match",
+          "cl-native-jrc-result-projection",
+          "cl-native-jrc-version-reference"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#转换边界": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "heading",
+        "title": "模型转换与参照",
+        "claimIds": [
+          "cl-flow99-reference-levels",
+          "cl-flow99-basis-and-demand",
+          "cl-native-format-scope",
+          "cl-waste-history",
+          "cl-native-format-original-target",
+          "cl-native-format-double-target",
+          "cl-native-format-result-scale",
+          "cl-native-result-direction",
+          "cl-native-conversion-study"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#表征状态": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "heading",
+        "title": "清单表征与零值",
+        "claimIds": [
+          "cl-cf-context",
+          "cl-native-factor-context",
+          "cl-unmapped",
+          "cl-flow99-pesticide-interface",
+          "cl-flow99-interface-consequence",
+          "cl-flow99-phosphorus-interface",
+          "cl-zero-example",
+          "cl-flow99-zero-placeholder",
+          "cl-flow99-zero-reasons",
+          "cl-flow99-probe-reference",
+          "cl-native-factor-probe",
+          "cl-native-factor-zero-absent",
+          "cl-native-factor-real-gap",
+          "cl-missing-not-zero",
+          "cl-flow99-zero-reporting",
+          "cl-native-factor-report",
+          "cl-native-preservation-meaning",
+          "cl-native-service-meaning",
+          "cl-flow99-conclusion"
+        ],
+        "ordinary": [
+          "ab6f542bf3cf7c9d598c31f8c5a9ba079bd28161c0c44cfad2b7e75b926d052d"
+        ]
+      },
+      "/docs/book/exchange-semantics-and-conversion#环境迁移由哪一侧计算": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "heading",
+        "title": "环境迁移由哪一侧计算",
+        "claimIds": [
+          "cl-flow99-pesticide-interface",
+          "cl-flow99-interface-consequence",
+          "cl-flow99-phosphorus-interface"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#数值为零以后还要辨明什么": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "heading",
+        "title": "数值为零以后还要辨明什么",
+        "claimIds": [
+          "cl-zero-example",
+          "cl-flow99-zero-placeholder",
+          "cl-flow99-zero-reasons",
+          "cl-flow99-probe-reference",
+          "cl-native-factor-probe",
+          "cl-native-factor-zero-absent",
+          "cl-native-factor-real-gap",
+          "cl-missing-not-zero",
+          "cl-flow99-zero-reporting",
+          "cl-native-factor-report",
+          "cl-native-preservation-meaning",
+          "cl-native-service-meaning",
+          "cl-flow99-conclusion"
+        ],
+        "ordinary": [
+          "ab6f542bf3cf7c9d598c31f8c5a9ba079bd28161c0c44cfad2b7e75b926d052d"
+        ]
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-annotations": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note-group",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-two-boundaries",
+          "cl-flow99-elementary",
+          "cl-flow99-landfill",
+          "cl-flow99-boundary-consequence",
+          "cl-flow99-agricultural-boundary",
+          "cl-flow99-boundary-exceptions",
+          "cl-flow99-record-and-instance",
+          "cl-flow-type",
+          "cl-exchange",
+          "cl-flow-exchange-distinction",
+          "cl-flow99-schema-levels",
+          "cl-flow99-identity-example",
+          "cl-flow99-waste-classification",
+          "cl-flow99-material-and-service",
+          "cl-native-opening",
+          "cl-native-record-and-link",
+          "cl-native-reference-and-target",
+          "cl-waste-material",
+          "cl-native-example-scope",
+          "cl-native-bottle-reference",
+          "cl-native-material",
+          "cl-waste-opposite",
+          "cl-native-opposite",
+          "cl-native-scale",
+          "cl-native-matrix-sign",
+          "cl-waste-no-universal",
+          "cl-bw-sign",
+          "cl-bw-direction",
+          "cl-native-allocation-held",
+          "cl-native-representation-result",
+          "cl-flow99-direction-equivalence",
+          "cl-native-small-inventory",
+          "cl-native-same-flow-total",
+          "cl-native-three-co2-quantities",
+          "cl-native-allocation-result",
+          "cl-native-printed-comparator",
+          "cl-native-missing-link",
+          "cl-native-missing-link-score",
+          "cl-native-jrc-scope",
+          "cl-native-jrc-instance",
+          "cl-native-jrc-connectors",
+          "cl-native-jrc-parameters",
+          "cl-native-jrc-weight-control",
+          "cl-native-jrc-bare-setup",
+          "cl-native-jrc-machine-edge",
+          "cl-native-jrc-machine-coordinate",
+          "cl-native-jrc-source-discrepancy",
+          "cl-native-jrc-partial-match",
+          "cl-native-jrc-result-projection",
+          "cl-native-jrc-version-reference",
+          "cl-flow99-reference-levels",
+          "cl-flow99-basis-and-demand",
+          "cl-native-format-scope",
+          "cl-waste-history",
+          "cl-native-format-original-target",
+          "cl-native-format-double-target",
+          "cl-native-format-result-scale",
+          "cl-native-result-direction",
+          "cl-native-conversion-study",
+          "cl-cf-context",
+          "cl-native-factor-context",
+          "cl-unmapped",
+          "cl-flow99-pesticide-interface",
+          "cl-flow99-interface-consequence",
+          "cl-flow99-phosphorus-interface",
+          "cl-zero-example",
+          "cl-flow99-zero-placeholder",
+          "cl-flow99-zero-reasons",
+          "cl-flow99-probe-reference",
+          "cl-native-factor-probe",
+          "cl-native-factor-zero-absent",
+          "cl-native-factor-real-gap",
+          "cl-missing-not-zero",
+          "cl-flow99-zero-reporting",
+          "cl-native-factor-report",
+          "cl-native-preservation-meaning",
+          "cl-native-service-meaning",
+          "cl-flow99-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-two-boundaries": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-two-boundaries"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-elementary": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-elementary"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-landfill": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-landfill"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-boundary-consequence": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-boundary-consequence"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-agricultural-boundary": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-agricultural-boundary"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-boundary-exceptions": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-boundary-exceptions"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-record-and-instance": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-record-and-instance"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow-type": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow-type"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-exchange": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-exchange"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow-exchange-distinction": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow-exchange-distinction"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-schema-levels": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-schema-levels"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-identity-example": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-identity-example"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-waste-classification": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-waste-classification"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-material-and-service": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-material-and-service"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-opening": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-opening"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-record-and-link": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-record-and-link"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-reference-and-target": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-reference-and-target"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-waste-material": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-waste-material"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-example-scope": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-example-scope"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-bottle-reference": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-bottle-reference"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-material": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-material"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-waste-opposite": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-waste-opposite"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-opposite": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-opposite"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-scale": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-scale"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-matrix-sign": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-matrix-sign"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-waste-no-universal": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-waste-no-universal"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-bw-sign": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-bw-sign"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-bw-direction": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-bw-direction"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-allocation-held": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-allocation-held"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-representation-result": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-representation-result"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-direction-equivalence": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-direction-equivalence"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-small-inventory": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-small-inventory"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-same-flow-total": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-same-flow-total"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-three-co2-quantities": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-three-co2-quantities"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-allocation-result": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-allocation-result"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-printed-comparator": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-printed-comparator"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-missing-link": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-missing-link"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-missing-link-score": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-missing-link-score"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-jrc-scope": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-jrc-scope"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-jrc-instance": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-jrc-instance"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-jrc-connectors": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-jrc-connectors"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-jrc-parameters": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-jrc-parameters"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-jrc-weight-control": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-jrc-weight-control"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-jrc-bare-setup": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-jrc-bare-setup"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-jrc-machine-edge": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-jrc-machine-edge"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-jrc-machine-coordinate": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-jrc-machine-coordinate"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-jrc-source-discrepancy": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-jrc-source-discrepancy"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-jrc-partial-match": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-jrc-partial-match"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-jrc-result-projection": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-jrc-result-projection"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-jrc-version-reference": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-jrc-version-reference"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-reference-levels": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-reference-levels"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-basis-and-demand": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-basis-and-demand"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-format-scope": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-format-scope"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-waste-history": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-waste-history"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-format-original-target": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-format-original-target"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-format-double-target": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-format-double-target"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-format-result-scale": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-format-result-scale"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-result-direction": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-result-direction"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-conversion-study": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-conversion-study"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-cf-context": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-cf-context"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-factor-context": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-factor-context"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-unmapped": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-unmapped"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-pesticide-interface": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-pesticide-interface"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-interface-consequence": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-interface-consequence"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-phosphorus-interface": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-phosphorus-interface"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-zero-example": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-zero-example"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-zero-placeholder": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-zero-placeholder"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-zero-reasons": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-zero-reasons"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-probe-reference": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-probe-reference"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-factor-probe": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-factor-probe"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-factor-zero-absent": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-factor-zero-absent"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-factor-real-gap": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-factor-real-gap"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-missing-not-zero": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-missing-not-zero"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-zero-reporting": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-zero-reporting"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-factor-report": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-factor-report"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-preservation-meaning": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-preservation-meaning"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-service-meaning": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-service-meaning"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/exchange-semantics-and-conversion#chapter-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-conclusion": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/docs/flows#nd-page": {
+        "route": "/docs/flows",
+        "kind": "chapter",
+        "title": "流的身份与过程交换",
+        "claimIds": [
+          "cl-flow99-two-boundaries",
+          "cl-flow99-elementary",
+          "cl-flow99-record-and-instance",
+          "cl-flow-type",
+          "cl-exchange",
+          "cl-flow-exchange-distinction",
+          "cl-flow99-schema-levels",
+          "cl-flow99-identity-example",
+          "cl-flow99-waste-classification",
+          "cl-flow99-material-and-service",
+          "cl-waste-material",
+          "cl-waste-opposite",
+          "cl-waste-no-universal",
+          "cl-bw-sign",
+          "cl-bw-direction",
+          "cl-flow99-direction-equivalence",
+          "cl-waste-history"
+        ],
+        "ordinary": [
+          "2c3120f02e85892720651354f1559f038fc50a6a7989680ede1101e6b5fff6a6",
+          "63e2a2be0f0e46233a69b08ef5a0f7c895f054a01410f0faedd84f5734179d69",
+          "867bf619effac61dd4f4ea28d82c55f87a072c45f87cd71913c05b72b140cb29"
+        ],
+        "bindings": {
+          "links": [
+            [],
+            [],
+            [
+              "/docs/book/exchange-semantics-and-conversion/",
+              "/docs/allocation/"
+            ]
+          ],
+          "tables": []
+        }
+      },
+      "/docs/flows#main-content": {
+        "route": "/docs/flows",
+        "kind": "reading-title",
+        "title": "流的身份与过程交换",
+        "claimIds": [
+          "cl-flow99-two-boundaries",
+          "cl-flow99-elementary",
+          "cl-flow99-record-and-instance",
+          "cl-flow-type",
+          "cl-exchange",
+          "cl-flow-exchange-distinction",
+          "cl-flow99-schema-levels",
+          "cl-flow99-identity-example",
+          "cl-flow99-waste-classification",
+          "cl-flow99-material-and-service",
+          "cl-waste-material",
+          "cl-waste-opposite",
+          "cl-waste-no-universal",
+          "cl-bw-sign",
+          "cl-bw-direction",
+          "cl-flow99-direction-equivalence",
+          "cl-waste-history"
+        ],
+        "ordinary": [
+          "2c3120f02e85892720651354f1559f038fc50a6a7989680ede1101e6b5fff6a6",
+          "63e2a2be0f0e46233a69b08ef5a0f7c895f054a01410f0faedd84f5734179d69",
+          "867bf619effac61dd4f4ea28d82c55f87a072c45f87cd71913c05b72b140cb29"
+        ],
+        "chapter": "nd-page"
+      },
+      "/docs/flows#一个对象与一次交换": {
+        "route": "/docs/flows",
+        "kind": "heading",
+        "title": "一个对象与一次交换",
+        "claimIds": [
+          "cl-flow99-two-boundaries",
+          "cl-flow99-elementary",
+          "cl-flow99-record-and-instance",
+          "cl-flow-type",
+          "cl-exchange",
+          "cl-flow-exchange-distinction",
+          "cl-flow99-schema-levels",
+          "cl-flow99-identity-example"
+        ],
+        "ordinary": []
+      },
+      "/docs/flows#两种废物表达": {
+        "route": "/docs/flows",
+        "kind": "heading",
+        "title": "废物与处置服务",
+        "claimIds": [
+          "cl-flow99-waste-classification",
+          "cl-flow99-material-and-service",
+          "cl-waste-material",
+          "cl-waste-opposite",
+          "cl-waste-no-universal",
+          "cl-bw-sign",
+          "cl-bw-direction",
+          "cl-flow99-direction-equivalence"
+        ],
+        "ordinary": []
+      },
+      "/docs/flows#版本怎样影响表达": {
+        "route": "/docs/flows",
+        "kind": "heading",
+        "title": "版本怎样影响表达",
+        "claimIds": [
+          "cl-waste-history"
+        ],
+        "ordinary": []
+      },
+      "/docs/flows#对应关系的边界": {
+        "route": "/docs/flows",
+        "kind": "heading",
+        "title": "对应关系的边界",
+        "claimIds": [],
+        "ordinary": [
+          "867bf619effac61dd4f4ea28d82c55f87a072c45f87cd71913c05b72b140cb29"
+        ]
+      },
+      "/docs/flows#chapter-2f646f63732f666c6f7773-annotations": {
+        "route": "/docs/flows",
+        "kind": "note-group",
+        "title": "流的身份与过程交换",
+        "claimIds": [
+          "cl-flow99-two-boundaries",
+          "cl-flow99-elementary",
+          "cl-flow99-record-and-instance",
+          "cl-flow-type",
+          "cl-exchange",
+          "cl-flow-exchange-distinction",
+          "cl-flow99-schema-levels",
+          "cl-flow99-identity-example",
+          "cl-flow99-waste-classification",
+          "cl-flow99-material-and-service",
+          "cl-waste-material",
+          "cl-waste-opposite",
+          "cl-waste-no-universal",
+          "cl-bw-sign",
+          "cl-bw-direction",
+          "cl-flow99-direction-equivalence",
+          "cl-waste-history"
+        ],
+        "ordinary": []
+      },
+      "/docs/flows#chapter-2f646f63732f666c6f7773-claim-cl-flow99-two-boundaries": {
+        "route": "/docs/flows",
+        "kind": "note",
+        "title": "流的身份与过程交换",
+        "claimIds": [
+          "cl-flow99-two-boundaries"
+        ],
+        "ordinary": []
+      },
+      "/docs/flows#chapter-2f646f63732f666c6f7773-claim-cl-flow99-elementary": {
+        "route": "/docs/flows",
+        "kind": "note",
+        "title": "流的身份与过程交换",
+        "claimIds": [
+          "cl-flow99-elementary"
+        ],
+        "ordinary": []
+      },
+      "/docs/flows#chapter-2f646f63732f666c6f7773-claim-cl-flow99-record-and-instance": {
+        "route": "/docs/flows",
+        "kind": "note",
+        "title": "流的身份与过程交换",
+        "claimIds": [
+          "cl-flow99-record-and-instance"
+        ],
+        "ordinary": []
+      },
+      "/docs/flows#chapter-2f646f63732f666c6f7773-claim-cl-flow-type": {
+        "route": "/docs/flows",
+        "kind": "note",
+        "title": "流的身份与过程交换",
+        "claimIds": [
+          "cl-flow-type"
+        ],
+        "ordinary": []
+      },
+      "/docs/flows#chapter-2f646f63732f666c6f7773-claim-cl-exchange": {
+        "route": "/docs/flows",
+        "kind": "note",
+        "title": "流的身份与过程交换",
+        "claimIds": [
+          "cl-exchange"
+        ],
+        "ordinary": []
+      },
+      "/docs/flows#chapter-2f646f63732f666c6f7773-claim-cl-flow-exchange-distinction": {
+        "route": "/docs/flows",
+        "kind": "note",
+        "title": "流的身份与过程交换",
+        "claimIds": [
+          "cl-flow-exchange-distinction"
+        ],
+        "ordinary": []
+      },
+      "/docs/flows#chapter-2f646f63732f666c6f7773-claim-cl-flow99-schema-levels": {
+        "route": "/docs/flows",
+        "kind": "note",
+        "title": "流的身份与过程交换",
+        "claimIds": [
+          "cl-flow99-schema-levels"
+        ],
+        "ordinary": []
+      },
+      "/docs/flows#chapter-2f646f63732f666c6f7773-claim-cl-flow99-identity-example": {
+        "route": "/docs/flows",
+        "kind": "note",
+        "title": "流的身份与过程交换",
+        "claimIds": [
+          "cl-flow99-identity-example"
+        ],
+        "ordinary": []
+      },
+      "/docs/flows#chapter-2f646f63732f666c6f7773-claim-cl-flow99-waste-classification": {
+        "route": "/docs/flows",
+        "kind": "note",
+        "title": "流的身份与过程交换",
+        "claimIds": [
+          "cl-flow99-waste-classification"
+        ],
+        "ordinary": []
+      },
+      "/docs/flows#chapter-2f646f63732f666c6f7773-claim-cl-flow99-material-and-service": {
+        "route": "/docs/flows",
+        "kind": "note",
+        "title": "流的身份与过程交换",
+        "claimIds": [
+          "cl-flow99-material-and-service"
+        ],
+        "ordinary": []
+      },
+      "/docs/flows#chapter-2f646f63732f666c6f7773-claim-cl-waste-material": {
+        "route": "/docs/flows",
+        "kind": "note",
+        "title": "流的身份与过程交换",
+        "claimIds": [
+          "cl-waste-material"
+        ],
+        "ordinary": []
+      },
+      "/docs/flows#chapter-2f646f63732f666c6f7773-claim-cl-waste-opposite": {
+        "route": "/docs/flows",
+        "kind": "note",
+        "title": "流的身份与过程交换",
+        "claimIds": [
+          "cl-waste-opposite"
+        ],
+        "ordinary": []
+      },
+      "/docs/flows#chapter-2f646f63732f666c6f7773-claim-cl-waste-no-universal": {
+        "route": "/docs/flows",
+        "kind": "note",
+        "title": "流的身份与过程交换",
+        "claimIds": [
+          "cl-waste-no-universal"
+        ],
+        "ordinary": []
+      },
+      "/docs/flows#chapter-2f646f63732f666c6f7773-claim-cl-bw-sign": {
+        "route": "/docs/flows",
+        "kind": "note",
+        "title": "流的身份与过程交换",
+        "claimIds": [
+          "cl-bw-sign"
+        ],
+        "ordinary": []
+      },
+      "/docs/flows#chapter-2f646f63732f666c6f7773-claim-cl-bw-direction": {
+        "route": "/docs/flows",
+        "kind": "note",
+        "title": "流的身份与过程交换",
+        "claimIds": [
+          "cl-bw-direction"
+        ],
+        "ordinary": []
+      },
+      "/docs/flows#chapter-2f646f63732f666c6f7773-claim-cl-flow99-direction-equivalence": {
+        "route": "/docs/flows",
+        "kind": "note",
+        "title": "流的身份与过程交换",
+        "claimIds": [
+          "cl-flow99-direction-equivalence"
+        ],
+        "ordinary": []
+      },
+      "/docs/flows#chapter-2f646f63732f666c6f7773-claim-cl-waste-history": {
+        "route": "/docs/flows",
+        "kind": "note",
+        "title": "流的身份与过程交换",
+        "claimIds": [
+          "cl-waste-history"
+        ],
+        "ordinary": []
+      },
+      "/docs/characterization#nd-page": {
+        "route": "/docs/characterization",
+        "kind": "chapter",
+        "title": "缺少表征因子不等于因子为零",
+        "claimIds": [
+          "cl-cf-context",
+          "cl-unmapped",
+          "cl-missing-not-zero",
+          "cl-zero-example",
+          "cl-flow99-zero-placeholder",
+          "cl-flow99-zero-reasons",
+          "cl-flow99-probe-reference",
+          "cl-native-factor-probe",
+          "cl-native-factor-zero-absent",
+          "cl-flow99-zero-reporting",
+          "cl-native-factor-report"
+        ],
+        "ordinary": [
+          "7a6d1bc08b37cfd6b673249b59c377cf32b6f075d0836023a11f9b335e364b38",
+          "c728e44e67bc49ff0144ebc6d96969ae245537dc9d61707020537c3816b957e7",
+          "5a34256770d565b3253dc010264e97beeb8921b6f9e7d71c143d7c9fb1b99cf9",
+          "267a0bd4685ff2cfb27e0cc77733c3f040bc711730a763c2dc571ae7e52893c4"
+        ],
+        "bindings": {
+          "links": [
+            [],
+            [],
+            [
+              "/docs/book/exchange-semantics-and-conversion/"
+            ],
+            [
+              "/claims/"
+            ]
+          ],
+          "tables": []
+        }
+      },
+      "/docs/characterization#main-content": {
+        "route": "/docs/characterization",
+        "kind": "reading-title",
+        "title": "缺少表征因子不等于因子为零",
+        "claimIds": [
+          "cl-cf-context",
+          "cl-unmapped",
+          "cl-missing-not-zero",
+          "cl-zero-example",
+          "cl-flow99-zero-placeholder",
+          "cl-flow99-zero-reasons",
+          "cl-flow99-probe-reference",
+          "cl-native-factor-probe",
+          "cl-native-factor-zero-absent",
+          "cl-flow99-zero-reporting",
+          "cl-native-factor-report"
+        ],
+        "ordinary": [
+          "7a6d1bc08b37cfd6b673249b59c377cf32b6f075d0836023a11f9b335e364b38",
+          "c728e44e67bc49ff0144ebc6d96969ae245537dc9d61707020537c3816b957e7",
+          "5a34256770d565b3253dc010264e97beeb8921b6f9e7d71c143d7c9fb1b99cf9",
+          "267a0bd4685ff2cfb27e0cc77733c3f040bc711730a763c2dc571ae7e52893c4"
+        ],
+        "chapter": "nd-page"
+      },
+      "/docs/characterization#一个因子需要什么上下文": {
+        "route": "/docs/characterization",
+        "kind": "heading",
+        "title": "一个因子需要什么上下文",
+        "claimIds": [
+          "cl-cf-context",
+          "cl-unmapped"
+        ],
+        "ordinary": []
+      },
+      "/docs/characterization#把信息状态明确留下来": {
+        "route": "/docs/characterization",
+        "kind": "heading",
+        "title": "把信息状态明确留下来",
+        "claimIds": [
+          "cl-missing-not-zero"
+        ],
+        "ordinary": []
+      },
+      "/docs/characterization#一个可以手算的例子": {
+        "route": "/docs/characterization",
+        "kind": "heading",
+        "title": "一个可以手算的例子",
+        "claimIds": [
+          "cl-zero-example",
+          "cl-flow99-zero-placeholder",
+          "cl-flow99-zero-reasons"
+        ],
+        "ordinary": []
+      },
+      "/docs/characterization#在原生模型中区分零与缺失": {
+        "route": "/docs/characterization",
+        "kind": "heading",
+        "title": "在原生模型中区分零与缺失",
+        "claimIds": [
+          "cl-flow99-probe-reference",
+          "cl-native-factor-probe",
+          "cl-native-factor-zero-absent"
+        ],
+        "ordinary": [
+          "5a34256770d565b3253dc010264e97beeb8921b6f9e7d71c143d7c9fb1b99cf9"
+        ]
+      },
+      "/docs/characterization#检查报告保留了什么": {
+        "route": "/docs/characterization",
+        "kind": "heading",
+        "title": "检查报告保留了什么",
+        "claimIds": [
+          "cl-flow99-zero-reporting",
+          "cl-native-factor-report"
+        ],
+        "ordinary": [
+          "267a0bd4685ff2cfb27e0cc77733c3f040bc711730a763c2dc571ae7e52893c4"
+        ]
+      },
+      "/docs/characterization#chapter-2f646f63732f636861726163746572697a6174696f6e-annotations": {
+        "route": "/docs/characterization",
+        "kind": "note-group",
+        "title": "缺少表征因子不等于因子为零",
+        "claimIds": [
+          "cl-cf-context",
+          "cl-unmapped",
+          "cl-missing-not-zero",
+          "cl-zero-example",
+          "cl-flow99-zero-placeholder",
+          "cl-flow99-zero-reasons",
+          "cl-flow99-probe-reference",
+          "cl-native-factor-probe",
+          "cl-native-factor-zero-absent",
+          "cl-flow99-zero-reporting",
+          "cl-native-factor-report"
+        ],
+        "ordinary": []
+      },
+      "/docs/characterization#chapter-2f646f63732f636861726163746572697a6174696f6e-claim-cl-cf-context": {
+        "route": "/docs/characterization",
+        "kind": "note",
+        "title": "缺少表征因子不等于因子为零",
+        "claimIds": [
+          "cl-cf-context"
+        ],
+        "ordinary": []
+      },
+      "/docs/characterization#chapter-2f646f63732f636861726163746572697a6174696f6e-claim-cl-unmapped": {
+        "route": "/docs/characterization",
+        "kind": "note",
+        "title": "缺少表征因子不等于因子为零",
+        "claimIds": [
+          "cl-unmapped"
+        ],
+        "ordinary": []
+      },
+      "/docs/characterization#chapter-2f646f63732f636861726163746572697a6174696f6e-claim-cl-missing-not-zero": {
+        "route": "/docs/characterization",
+        "kind": "note",
+        "title": "缺少表征因子不等于因子为零",
+        "claimIds": [
+          "cl-missing-not-zero"
+        ],
+        "ordinary": []
+      },
+      "/docs/characterization#chapter-2f646f63732f636861726163746572697a6174696f6e-claim-cl-zero-example": {
+        "route": "/docs/characterization",
+        "kind": "note",
+        "title": "缺少表征因子不等于因子为零",
+        "claimIds": [
+          "cl-zero-example"
+        ],
+        "ordinary": []
+      },
+      "/docs/characterization#chapter-2f646f63732f636861726163746572697a6174696f6e-claim-cl-flow99-zero-placeholder": {
+        "route": "/docs/characterization",
+        "kind": "note",
+        "title": "缺少表征因子不等于因子为零",
+        "claimIds": [
+          "cl-flow99-zero-placeholder"
+        ],
+        "ordinary": []
+      },
+      "/docs/characterization#chapter-2f646f63732f636861726163746572697a6174696f6e-claim-cl-flow99-zero-reasons": {
+        "route": "/docs/characterization",
+        "kind": "note",
+        "title": "缺少表征因子不等于因子为零",
+        "claimIds": [
+          "cl-flow99-zero-reasons"
+        ],
+        "ordinary": []
+      },
+      "/docs/characterization#chapter-2f646f63732f636861726163746572697a6174696f6e-claim-cl-flow99-probe-reference": {
+        "route": "/docs/characterization",
+        "kind": "note",
+        "title": "缺少表征因子不等于因子为零",
+        "claimIds": [
+          "cl-flow99-probe-reference"
+        ],
+        "ordinary": []
+      },
+      "/docs/characterization#chapter-2f646f63732f636861726163746572697a6174696f6e-claim-cl-native-factor-probe": {
+        "route": "/docs/characterization",
+        "kind": "note",
+        "title": "缺少表征因子不等于因子为零",
+        "claimIds": [
+          "cl-native-factor-probe"
+        ],
+        "ordinary": []
+      },
+      "/docs/characterization#chapter-2f646f63732f636861726163746572697a6174696f6e-claim-cl-native-factor-zero-absent": {
+        "route": "/docs/characterization",
+        "kind": "note",
+        "title": "缺少表征因子不等于因子为零",
+        "claimIds": [
+          "cl-native-factor-zero-absent"
+        ],
+        "ordinary": []
+      },
+      "/docs/characterization#chapter-2f646f63732f636861726163746572697a6174696f6e-claim-cl-flow99-zero-reporting": {
+        "route": "/docs/characterization",
+        "kind": "note",
+        "title": "缺少表征因子不等于因子为零",
+        "claimIds": [
+          "cl-flow99-zero-reporting"
+        ],
+        "ordinary": []
+      },
+      "/docs/characterization#chapter-2f646f63732f636861726163746572697a6174696f6e-claim-cl-native-factor-report": {
+        "route": "/docs/characterization",
+        "kind": "note",
+        "title": "缺少表征因子不等于因子为零",
+        "claimIds": [
+          "cl-native-factor-report"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "chapter",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-two-boundaries",
+          "cl-flow99-elementary",
+          "cl-flow99-landfill",
+          "cl-flow99-boundary-consequence",
+          "cl-flow99-agricultural-boundary",
+          "cl-flow99-boundary-exceptions",
+          "cl-flow99-record-and-instance",
+          "cl-flow-type",
+          "cl-exchange",
+          "cl-flow-exchange-distinction",
+          "cl-flow99-schema-levels",
+          "cl-flow99-identity-example",
+          "cl-flow99-waste-classification",
+          "cl-flow99-material-and-service",
+          "cl-native-opening",
+          "cl-native-record-and-link",
+          "cl-native-reference-and-target",
+          "cl-waste-material",
+          "cl-native-example-scope",
+          "cl-native-bottle-reference",
+          "cl-native-material",
+          "cl-waste-opposite",
+          "cl-native-opposite",
+          "cl-native-scale",
+          "cl-native-matrix-sign",
+          "cl-waste-no-universal",
+          "cl-bw-sign",
+          "cl-bw-direction",
+          "cl-native-allocation-held",
+          "cl-native-representation-result",
+          "cl-flow99-direction-equivalence",
+          "cl-native-small-inventory",
+          "cl-native-same-flow-total",
+          "cl-native-three-co2-quantities",
+          "cl-native-allocation-result",
+          "cl-native-printed-comparator",
+          "cl-native-missing-link",
+          "cl-native-missing-link-score",
+          "cl-native-jrc-scope",
+          "cl-native-jrc-instance",
+          "cl-native-jrc-connectors",
+          "cl-native-jrc-parameters",
+          "cl-native-jrc-weight-control",
+          "cl-native-jrc-bare-setup",
+          "cl-native-jrc-machine-edge",
+          "cl-native-jrc-machine-coordinate",
+          "cl-native-jrc-source-discrepancy",
+          "cl-native-jrc-partial-match",
+          "cl-native-jrc-result-projection",
+          "cl-native-jrc-version-reference",
+          "cl-flow99-reference-levels",
+          "cl-flow99-basis-and-demand",
+          "cl-native-format-scope",
+          "cl-waste-history",
+          "cl-native-format-original-target",
+          "cl-native-format-double-target",
+          "cl-native-format-result-scale",
+          "cl-native-result-direction",
+          "cl-native-conversion-study",
+          "cl-cf-context",
+          "cl-native-factor-context",
+          "cl-unmapped",
+          "cl-flow99-pesticide-interface",
+          "cl-flow99-interface-consequence",
+          "cl-flow99-phosphorus-interface",
+          "cl-zero-example",
+          "cl-flow99-zero-placeholder",
+          "cl-flow99-zero-reasons",
+          "cl-flow99-probe-reference",
+          "cl-native-factor-probe",
+          "cl-native-factor-zero-absent",
+          "cl-native-factor-real-gap",
+          "cl-missing-not-zero",
+          "cl-flow99-zero-reporting",
+          "cl-native-factor-report",
+          "cl-native-preservation-meaning",
+          "cl-native-service-meaning",
+          "cl-flow99-conclusion"
+        ],
+        "ordinary": [
+          "f2a29d0d789385cc0edb86b2a4eb207e78664d20559e14850e95d3b1ccebe243",
+          "4950fd2bf3d6bf961ad735b661f8be99e4463256b28e77fdd602c4626cfc7e2a",
+          "ab6f542bf3cf7c9d598c31f8c5a9ba079bd28161c0c44cfad2b7e75b926d052d"
+        ],
+        "bindings": {
+          "links": [
+            [],
+            [
+              "#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-计算活动",
+              "#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-转换边界",
+              "#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-表征状态",
+              "#print-reading-unit-2f646f63732f616c6c6f636174696f6e"
+            ],
+            [
+              "/claims/",
+              "https://github.com/tiangong-lca/knowledge-base/blob/main/_docs/reproduction/native-exchange/README.md"
+            ]
+          ],
+          "tables": []
+        }
+      },
+      "/print#print-reading-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "reading-title",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-two-boundaries",
+          "cl-flow99-elementary",
+          "cl-flow99-landfill",
+          "cl-flow99-boundary-consequence",
+          "cl-flow99-agricultural-boundary",
+          "cl-flow99-boundary-exceptions",
+          "cl-flow99-record-and-instance",
+          "cl-flow-type",
+          "cl-exchange",
+          "cl-flow-exchange-distinction",
+          "cl-flow99-schema-levels",
+          "cl-flow99-identity-example",
+          "cl-flow99-waste-classification",
+          "cl-flow99-material-and-service",
+          "cl-native-opening",
+          "cl-native-record-and-link",
+          "cl-native-reference-and-target",
+          "cl-waste-material",
+          "cl-native-example-scope",
+          "cl-native-bottle-reference",
+          "cl-native-material",
+          "cl-waste-opposite",
+          "cl-native-opposite",
+          "cl-native-scale",
+          "cl-native-matrix-sign",
+          "cl-waste-no-universal",
+          "cl-bw-sign",
+          "cl-bw-direction",
+          "cl-native-allocation-held",
+          "cl-native-representation-result",
+          "cl-flow99-direction-equivalence",
+          "cl-native-small-inventory",
+          "cl-native-same-flow-total",
+          "cl-native-three-co2-quantities",
+          "cl-native-allocation-result",
+          "cl-native-printed-comparator",
+          "cl-native-missing-link",
+          "cl-native-missing-link-score",
+          "cl-native-jrc-scope",
+          "cl-native-jrc-instance",
+          "cl-native-jrc-connectors",
+          "cl-native-jrc-parameters",
+          "cl-native-jrc-weight-control",
+          "cl-native-jrc-bare-setup",
+          "cl-native-jrc-machine-edge",
+          "cl-native-jrc-machine-coordinate",
+          "cl-native-jrc-source-discrepancy",
+          "cl-native-jrc-partial-match",
+          "cl-native-jrc-result-projection",
+          "cl-native-jrc-version-reference",
+          "cl-flow99-reference-levels",
+          "cl-flow99-basis-and-demand",
+          "cl-native-format-scope",
+          "cl-waste-history",
+          "cl-native-format-original-target",
+          "cl-native-format-double-target",
+          "cl-native-format-result-scale",
+          "cl-native-result-direction",
+          "cl-native-conversion-study",
+          "cl-cf-context",
+          "cl-native-factor-context",
+          "cl-unmapped",
+          "cl-flow99-pesticide-interface",
+          "cl-flow99-interface-consequence",
+          "cl-flow99-phosphorus-interface",
+          "cl-zero-example",
+          "cl-flow99-zero-placeholder",
+          "cl-flow99-zero-reasons",
+          "cl-flow99-probe-reference",
+          "cl-native-factor-probe",
+          "cl-native-factor-zero-absent",
+          "cl-native-factor-real-gap",
+          "cl-missing-not-zero",
+          "cl-flow99-zero-reporting",
+          "cl-native-factor-report",
+          "cl-native-preservation-meaning",
+          "cl-native-service-meaning",
+          "cl-flow99-conclusion"
+        ],
+        "ordinary": [
+          "f2a29d0d789385cc0edb86b2a4eb207e78664d20559e14850e95d3b1ccebe243",
+          "4950fd2bf3d6bf961ad735b661f8be99e4463256b28e77fdd602c4626cfc7e2a",
+          "ab6f542bf3cf7c9d598c31f8c5a9ba079bd28161c0c44cfad2b7e75b926d052d"
+        ],
+        "chapter": "print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e"
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-对象与交换": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "heading",
+        "title": "系统边界与流的身份",
+        "claimIds": [
+          "cl-flow99-two-boundaries",
+          "cl-flow99-elementary",
+          "cl-flow99-landfill",
+          "cl-flow99-boundary-consequence",
+          "cl-flow99-agricultural-boundary",
+          "cl-flow99-boundary-exceptions",
+          "cl-flow99-record-and-instance",
+          "cl-flow-type",
+          "cl-exchange",
+          "cl-flow-exchange-distinction",
+          "cl-flow99-schema-levels",
+          "cl-flow99-identity-example"
+        ],
+        "ordinary": [
+          "4950fd2bf3d6bf961ad735b661f8be99e4463256b28e77fdd602c4626cfc7e2a"
+        ]
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-填埋与农地的不同分界": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "heading",
+        "title": "填埋与农地的不同分界",
+        "claimIds": [
+          "cl-flow99-landfill",
+          "cl-flow99-boundary-consequence",
+          "cl-flow99-agricultural-boundary",
+          "cl-flow99-boundary-exceptions"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-对象定义与过程记录": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "heading",
+        "title": "对象定义与过程记录",
+        "claimIds": [
+          "cl-flow99-record-and-instance",
+          "cl-flow-type",
+          "cl-exchange",
+          "cl-flow-exchange-distinction",
+          "cl-flow99-schema-levels",
+          "cl-flow99-identity-example"
+        ],
+        "ordinary": [
+          "4950fd2bf3d6bf961ad735b661f8be99e4463256b28e77fdd602c4626cfc7e2a"
+        ]
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-计算活动": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "heading",
+        "title": "物质方向与处理活动",
+        "claimIds": [
+          "cl-flow99-waste-classification",
+          "cl-flow99-material-and-service",
+          "cl-native-opening",
+          "cl-native-record-and-link",
+          "cl-native-reference-and-target",
+          "cl-waste-material",
+          "cl-native-example-scope",
+          "cl-native-bottle-reference",
+          "cl-native-material",
+          "cl-waste-opposite",
+          "cl-native-opposite",
+          "cl-native-scale",
+          "cl-native-matrix-sign",
+          "cl-waste-no-universal",
+          "cl-bw-sign",
+          "cl-bw-direction",
+          "cl-native-allocation-held",
+          "cl-native-representation-result",
+          "cl-flow99-direction-equivalence",
+          "cl-native-small-inventory",
+          "cl-native-same-flow-total",
+          "cl-native-three-co2-quantities",
+          "cl-native-allocation-result",
+          "cl-native-printed-comparator",
+          "cl-native-missing-link",
+          "cl-native-missing-link-score",
+          "cl-native-jrc-scope",
+          "cl-native-jrc-instance",
+          "cl-native-jrc-connectors",
+          "cl-native-jrc-parameters",
+          "cl-native-jrc-weight-control",
+          "cl-native-jrc-bare-setup",
+          "cl-native-jrc-machine-edge",
+          "cl-native-jrc-machine-coordinate",
+          "cl-native-jrc-source-discrepancy",
+          "cl-native-jrc-partial-match",
+          "cl-native-jrc-result-projection",
+          "cl-native-jrc-version-reference"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-同一处理的两种记法": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "heading",
+        "title": "处理活动的不同表示",
+        "claimIds": [
+          "cl-waste-material",
+          "cl-native-example-scope",
+          "cl-native-bottle-reference",
+          "cl-native-material",
+          "cl-waste-opposite",
+          "cl-native-opposite",
+          "cl-native-scale",
+          "cl-native-matrix-sign",
+          "cl-waste-no-universal",
+          "cl-bw-sign",
+          "cl-bw-direction",
+          "cl-native-allocation-held",
+          "cl-native-representation-result",
+          "cl-flow99-direction-equivalence"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-活动清单与类别结果": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "heading",
+        "title": "活动、清单与类别结果",
+        "claimIds": [
+          "cl-native-small-inventory",
+          "cl-native-same-flow-total",
+          "cl-native-three-co2-quantities",
+          "cl-native-allocation-result",
+          "cl-native-printed-comparator",
+          "cl-native-missing-link",
+          "cl-native-missing-link-score"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-连接保存以后仍可能漏算": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "heading",
+        "title": "连接保存以后仍可能漏算",
+        "claimIds": [
+          "cl-native-jrc-scope",
+          "cl-native-jrc-instance",
+          "cl-native-jrc-connectors",
+          "cl-native-jrc-parameters",
+          "cl-native-jrc-weight-control",
+          "cl-native-jrc-bare-setup",
+          "cl-native-jrc-machine-edge",
+          "cl-native-jrc-machine-coordinate",
+          "cl-native-jrc-source-discrepancy",
+          "cl-native-jrc-partial-match",
+          "cl-native-jrc-result-projection",
+          "cl-native-jrc-version-reference"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-转换边界": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "heading",
+        "title": "模型转换与参照",
+        "claimIds": [
+          "cl-flow99-reference-levels",
+          "cl-flow99-basis-and-demand",
+          "cl-native-format-scope",
+          "cl-waste-history",
+          "cl-native-format-original-target",
+          "cl-native-format-double-target",
+          "cl-native-format-result-scale",
+          "cl-native-result-direction",
+          "cl-native-conversion-study"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-表征状态": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "heading",
+        "title": "清单表征与零值",
+        "claimIds": [
+          "cl-cf-context",
+          "cl-native-factor-context",
+          "cl-unmapped",
+          "cl-flow99-pesticide-interface",
+          "cl-flow99-interface-consequence",
+          "cl-flow99-phosphorus-interface",
+          "cl-zero-example",
+          "cl-flow99-zero-placeholder",
+          "cl-flow99-zero-reasons",
+          "cl-flow99-probe-reference",
+          "cl-native-factor-probe",
+          "cl-native-factor-zero-absent",
+          "cl-native-factor-real-gap",
+          "cl-missing-not-zero",
+          "cl-flow99-zero-reporting",
+          "cl-native-factor-report",
+          "cl-native-preservation-meaning",
+          "cl-native-service-meaning",
+          "cl-flow99-conclusion"
+        ],
+        "ordinary": [
+          "ab6f542bf3cf7c9d598c31f8c5a9ba079bd28161c0c44cfad2b7e75b926d052d"
+        ]
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-环境迁移由哪一侧计算": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "heading",
+        "title": "环境迁移由哪一侧计算",
+        "claimIds": [
+          "cl-flow99-pesticide-interface",
+          "cl-flow99-interface-consequence",
+          "cl-flow99-phosphorus-interface"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-数值为零以后还要辨明什么": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "heading",
+        "title": "数值为零以后还要辨明什么",
+        "claimIds": [
+          "cl-zero-example",
+          "cl-flow99-zero-placeholder",
+          "cl-flow99-zero-reasons",
+          "cl-flow99-probe-reference",
+          "cl-native-factor-probe",
+          "cl-native-factor-zero-absent",
+          "cl-native-factor-real-gap",
+          "cl-missing-not-zero",
+          "cl-flow99-zero-reporting",
+          "cl-native-factor-report",
+          "cl-native-preservation-meaning",
+          "cl-native-service-meaning",
+          "cl-flow99-conclusion"
+        ],
+        "ordinary": [
+          "ab6f542bf3cf7c9d598c31f8c5a9ba079bd28161c0c44cfad2b7e75b926d052d"
+        ]
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-annotations": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note-group",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-two-boundaries",
+          "cl-flow99-elementary",
+          "cl-flow99-landfill",
+          "cl-flow99-boundary-consequence",
+          "cl-flow99-agricultural-boundary",
+          "cl-flow99-boundary-exceptions",
+          "cl-flow99-record-and-instance",
+          "cl-flow-type",
+          "cl-exchange",
+          "cl-flow-exchange-distinction",
+          "cl-flow99-schema-levels",
+          "cl-flow99-identity-example",
+          "cl-flow99-waste-classification",
+          "cl-flow99-material-and-service",
+          "cl-native-opening",
+          "cl-native-record-and-link",
+          "cl-native-reference-and-target",
+          "cl-waste-material",
+          "cl-native-example-scope",
+          "cl-native-bottle-reference",
+          "cl-native-material",
+          "cl-waste-opposite",
+          "cl-native-opposite",
+          "cl-native-scale",
+          "cl-native-matrix-sign",
+          "cl-waste-no-universal",
+          "cl-bw-sign",
+          "cl-bw-direction",
+          "cl-native-allocation-held",
+          "cl-native-representation-result",
+          "cl-flow99-direction-equivalence",
+          "cl-native-small-inventory",
+          "cl-native-same-flow-total",
+          "cl-native-three-co2-quantities",
+          "cl-native-allocation-result",
+          "cl-native-printed-comparator",
+          "cl-native-missing-link",
+          "cl-native-missing-link-score",
+          "cl-native-jrc-scope",
+          "cl-native-jrc-instance",
+          "cl-native-jrc-connectors",
+          "cl-native-jrc-parameters",
+          "cl-native-jrc-weight-control",
+          "cl-native-jrc-bare-setup",
+          "cl-native-jrc-machine-edge",
+          "cl-native-jrc-machine-coordinate",
+          "cl-native-jrc-source-discrepancy",
+          "cl-native-jrc-partial-match",
+          "cl-native-jrc-result-projection",
+          "cl-native-jrc-version-reference",
+          "cl-flow99-reference-levels",
+          "cl-flow99-basis-and-demand",
+          "cl-native-format-scope",
+          "cl-waste-history",
+          "cl-native-format-original-target",
+          "cl-native-format-double-target",
+          "cl-native-format-result-scale",
+          "cl-native-result-direction",
+          "cl-native-conversion-study",
+          "cl-cf-context",
+          "cl-native-factor-context",
+          "cl-unmapped",
+          "cl-flow99-pesticide-interface",
+          "cl-flow99-interface-consequence",
+          "cl-flow99-phosphorus-interface",
+          "cl-zero-example",
+          "cl-flow99-zero-placeholder",
+          "cl-flow99-zero-reasons",
+          "cl-flow99-probe-reference",
+          "cl-native-factor-probe",
+          "cl-native-factor-zero-absent",
+          "cl-native-factor-real-gap",
+          "cl-missing-not-zero",
+          "cl-flow99-zero-reporting",
+          "cl-native-factor-report",
+          "cl-native-preservation-meaning",
+          "cl-native-service-meaning",
+          "cl-flow99-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-two-boundaries": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-two-boundaries"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-elementary": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-elementary"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-landfill": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-landfill"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-boundary-consequence": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-boundary-consequence"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-agricultural-boundary": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-agricultural-boundary"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-boundary-exceptions": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-boundary-exceptions"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-record-and-instance": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-record-and-instance"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow-type": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow-type"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-exchange": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-exchange"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow-exchange-distinction": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow-exchange-distinction"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-schema-levels": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-schema-levels"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-identity-example": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-identity-example"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-waste-classification": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-waste-classification"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-material-and-service": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-material-and-service"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-opening": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-opening"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-record-and-link": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-record-and-link"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-reference-and-target": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-reference-and-target"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-waste-material": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-waste-material"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-example-scope": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-example-scope"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-bottle-reference": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-bottle-reference"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-material": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-material"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-waste-opposite": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-waste-opposite"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-opposite": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-opposite"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-scale": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-scale"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-matrix-sign": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-matrix-sign"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-waste-no-universal": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-waste-no-universal"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-bw-sign": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-bw-sign"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-bw-direction": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-bw-direction"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-allocation-held": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-allocation-held"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-representation-result": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-representation-result"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-direction-equivalence": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-direction-equivalence"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-small-inventory": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-small-inventory"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-same-flow-total": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-same-flow-total"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-three-co2-quantities": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-three-co2-quantities"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-allocation-result": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-allocation-result"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-printed-comparator": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-printed-comparator"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-missing-link": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-missing-link"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-missing-link-score": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-missing-link-score"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-jrc-scope": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-jrc-scope"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-jrc-instance": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-jrc-instance"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-jrc-connectors": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-jrc-connectors"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-jrc-parameters": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-jrc-parameters"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-jrc-weight-control": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-jrc-weight-control"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-jrc-bare-setup": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-jrc-bare-setup"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-jrc-machine-edge": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-jrc-machine-edge"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-jrc-machine-coordinate": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-jrc-machine-coordinate"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-jrc-source-discrepancy": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-jrc-source-discrepancy"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-jrc-partial-match": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-jrc-partial-match"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-jrc-result-projection": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-jrc-result-projection"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-jrc-version-reference": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-jrc-version-reference"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-reference-levels": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-reference-levels"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-basis-and-demand": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-basis-and-demand"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-format-scope": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-format-scope"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-waste-history": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-waste-history"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-format-original-target": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-format-original-target"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-format-double-target": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-format-double-target"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-format-result-scale": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-format-result-scale"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-result-direction": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-result-direction"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-conversion-study": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-conversion-study"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-cf-context": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-cf-context"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-factor-context": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-factor-context"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-unmapped": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-unmapped"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-pesticide-interface": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-pesticide-interface"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-interface-consequence": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-interface-consequence"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-phosphorus-interface": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-phosphorus-interface"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-zero-example": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-zero-example"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-zero-placeholder": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-zero-placeholder"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-zero-reasons": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-zero-reasons"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-probe-reference": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-probe-reference"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-factor-probe": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-factor-probe"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-factor-zero-absent": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-factor-zero-absent"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-factor-real-gap": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-factor-real-gap"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-missing-not-zero": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-missing-not-zero"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-zero-reporting": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-zero-reporting"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-factor-report": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-factor-report"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-preservation-meaning": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-preservation-meaning"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-native-service-meaning": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-native-service-meaning"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e-claim-cl-flow99-conclusion": {
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "kind": "note",
+        "title": "流、交换与边界",
+        "claimIds": [
+          "cl-flow99-conclusion"
+        ],
+        "ordinary": []
+      }
+    },
+    "source": "actual-export",
+    "artifactFiles": [
+      {
+        "path": "claims/index.html",
+        "sha256": "a0f485f744b1ccd604436d43e283dcbf34c66104e8bfe91f39a3c1201a49f2f5",
+        "bytes": 5085591
+      },
+      {
+        "path": "sources/index.html",
+        "sha256": "0cdf3a183f701746e2906b16d1e8978b7815a00a8ff489c9f0f2132ec3b76efd",
+        "bytes": 4008226
+      },
+      {
+        "path": "concepts/index.html",
+        "sha256": "da77e0c468f2164ce35432e36d58fb567fbd69707170b542c9ef71643ad143d2",
+        "bytes": 1946341
+      },
+      {
+        "path": "downloads/catalog.json",
+        "sha256": "e9c87b6f9584c25ae38b0319f6f26d8243a75d0fbe1ac04d5939965ddf333171",
+        "bytes": 3116190
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "sha256": "96d659c4db2e85cdae559c59e49ca5880f34b62e5f75cfa8ce6304da5d3e7ebe",
+        "bytes": 330937
+      },
+      {
+        "path": "research/index.html",
+        "sha256": "bc09ef192442c13c42f648daee5e2ae69408e976ae7983d3ff5a9497ce38f664",
+        "bytes": 1381685
+      },
+      {
+        "path": "downloads/bibliography.json",
+        "sha256": "4d329e9739df2262c5fcb6c102f038f608976a028eaf9fdc462527c025fdaf89",
+        "bytes": 1065321
+      },
+      {
+        "path": "downloads/research.json",
+        "sha256": "4d329e9739df2262c5fcb6c102f038f608976a028eaf9fdc462527c025fdaf89",
+        "bytes": 1065321
+      },
+      {
+        "path": "coverage/index.html",
+        "sha256": "974111bc07499f4e001dd8da96ec482367669d607ebd5b90c0af778e1e64fb1e",
+        "bytes": 691187
+      }
+    ],
+    "engineering": {
+      "actualPredecessor": "Independent clean0496e14 hosting and all464 manifest paths were verified before the successor. Earlier #93/#95 receipts and numeric inputs remain unchanged.",
+      "technicalAcquisition": "An isolated checkout with temporary synthetic technical receipt envelopes ran the actual production source gate, Next build and exporter to obtain real bytes before final editorial signing. Those temporary envelopes carried no scientific, reader or live publication approval.",
+      "current": "Final compiled artifacts match227 native addresses,13 specific ordinary targets,14 affected articles and9 real public files;22 disclosure controls preserve26 prior ranges. The final article/member and artifact checks reject old guide substitution and hidden/lost links.",
+      "tests": "518 production-selection tests passed in the isolated final technical candidate. Main-checkout ordinary validation/build/CI and hosted identity are required separately after this precise admission."
+    },
+    "browser": {
+      "responsive": "40 scripted observations across390/1440/1633/2048/2560px, light/dark, three pages and print: no overflow or math clipping; actual root themes verified. No-script captures and keyboard history checks are separate.",
+      "keyboard": "20 ordinary-target and21 note-target keyboard activations across22 controls in the four reading surfaces, without JavaScript, reached unique visible targets.",
+      "search": "Actual combobox/option search for the new chapter title navigated from the flow topic to the correct current chapter; whole-book guide link and print media were checked.",
+      "print": "Current print chapter has78 notes; the tested794px viewport produces779px article content with no horizontal formula overflow. This is not full-book PDF pagination approval.",
+      "console": "No page errors in the scripted interaction check."
+    },
+    "reviewEvidence": {
+      "independent-successor-review.md": "93a0a09289fb0ff44f0ebd909b253678583614157196e97e67f75e27be01cbe3",
+      "followup-successor-review.md": "2bdebe60b0affaf86d9b77b10db9e024b3b59d4e811e70150f7bc2ad0c10d898",
+      "final-successor-review.md": "8f7e2de29b35f6269e6d689eecfee644b90291d2d5c802102cfe0d624aaaaa1b",
+      "browser-qa/responsive-script-enabled.json": "3f53ba1dc07c19ae58cb4a879a2c0039c61aa29055c3fe00a162b8a0acab1aab",
+      "browser-qa/interactions.json": "d945044f8133a947d841831bafd90bcbb8d97ae70db6c0d9ae17e65eea9165e0"
+    }
+  }
+}

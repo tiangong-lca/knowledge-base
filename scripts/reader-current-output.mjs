@@ -6,6 +6,8 @@ import { readerBibliography } from './reader-bibliography.mjs';
 import { collectChapterClaimOccurrences } from './reader-book.mjs';
 import { projectExchangeSemanticsRaw, validateExchangeAnnotationOutput } from './reader-exchange-semantics.mjs';
 import { editionDigest, sha256 } from './reader-current-edition.mjs';
+import { flowBoundaryGuide } from './reader-flow-boundary.mjs';
+import { getPresentationUnits } from './reader-numbering.mjs';
 import { readerParagraphText } from './reader-publication-text.mjs';
 
 function routesForChanges(current, sources) {
@@ -178,6 +180,34 @@ function validatePublicRecordOutput(path, document, published) {
   return JSON.stringify(actual) === JSON.stringify(expected) ? [] : ['Readable book actual source/evidence index differs from the current public catalog'];
 }
 
+export function validateReaderGuideOutput(document, sources) {
+  const main = document.querySelectorAll('main#main-content');
+  if (main.length !== 1 || main[0].querySelector('h1')?.text !== '全书导览')
+    return ['Flow boundary actual book guide lacks its reader landmark or title'];
+  const heading = label => main[0].querySelectorAll('h2').find(node => node.text === label);
+  const chapterList = heading('正文章节')?.nextElementSibling;
+  const topicList = heading('概念与实践专题')?.nextElementSibling;
+  const web = getPresentationUnits('web');
+  const titles = (list, descriptions) => list?.querySelectorAll('li').map(node => {
+    const link = node.querySelector('a');
+    return [link?.getAttribute('href'), link?.text, ...(descriptions ? [node.querySelector('p')?.text] : [])];
+  });
+  const description = route => {
+    const raw = sources.get(route);
+    const front = /^---\r?\n([\s\S]*?)\r?\n---/.exec(raw ?? '')?.[1] ?? '';
+    return /^description:\s*(.+?)\s*$/m.exec(front)?.[1]?.replace(/^(['"])(.*)\1$/, '$2');
+  };
+  const chapters = web.filter(unit => unit.key.startsWith('/docs/book/'))
+    .map(unit => [unit.key + '/', unit.title, description(unit.key)]);
+  const topics = web.filter(unit => /^\/docs\/[^/]+$/.test(unit.key) && unit.key !== '/docs/book')
+    .map(unit => [unit.key + '/', unit.title]);
+  if (chapterList?.tagName !== 'OL' || topicList?.tagName !== 'UL' || chapters.some(row => row[2] === undefined)
+      || JSON.stringify(titles(chapterList, true)) !== JSON.stringify(chapters)
+      || JSON.stringify(titles(topicList, false)) !== JSON.stringify(topics))
+    return ['Flow boundary actual book guide differs from the current titles, descriptions, or links'];
+  return [];
+}
+
 export const readerCssArtifact = 'asset:reader-css';
 
 export async function fingerprintReaderCss(root) {
@@ -210,6 +240,7 @@ export async function validateReadableBookPublicArtifacts(root, current, source)
   const required = new Set([
     ...(current.changes.record.size ? readableBookPublicCatalogPaths : []),
     ...(current.researchChanged ? readableBookPublicResearchPaths : []),
+    ...(current.flowBoundary ? [flowBoundaryGuide] : []),
     ...(current.changes.file.has('app/global.css') ? [readerCssArtifact] : []),
   ]);
   for (const path of required) {
@@ -221,7 +252,7 @@ export async function validateReadableBookPublicArtifacts(root, current, source)
       continue;
     }
 
-    if (![...readableBookPublicCatalogPaths, ...readableBookPublicResearchPaths].includes(path)) {
+    if (![...readableBookPublicCatalogPaths, ...readableBookPublicResearchPaths, flowBoundaryGuide].includes(path)) {
       errors.push(`Readable book public artifact receipt has an unknown path: ${path}`);
       continue;
     }
@@ -235,7 +266,8 @@ export async function validateReadableBookPublicArtifacts(root, current, source)
       if (bytes.toString() !== expectedDownloads.get(path)) errors.push(`Readable book public download disagrees with the current source projection: ${path}`);
     } else {
       const document = htmlParser.parse(bytes.toString());
-      if (path === 'research/index.html') errors.push(...validateReadableBookResearchOutput(document, published, source.literature, source.readings));
+      if (path === flowBoundaryGuide) errors.push(...validateReaderGuideOutput(document, source.sources));
+      else if (path === 'research/index.html') errors.push(...validateReadableBookResearchOutput(document, published, source.literature, source.readings));
       else errors.push(...validatePublicRecordOutput(path, document, published));
     }
 

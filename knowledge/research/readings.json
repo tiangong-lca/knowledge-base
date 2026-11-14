@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-12",
+  "updatedAt": "2026-11-14",
   "readings": [
     {
       "id": "rd-cml-2001-part1",
@@ -490,10 +490,55 @@
             23,
             24
           ]
+        },
+        {
+          "id": "psg-kb99-cml2001-open-technosphere-flows",
+          "artifactId": "art-cml-2001-part2a-pdf",
+          "locator": "Part 2a §§3.3.2–3.3.3 与§4.3.3.18；印刷与PDF pp29–32、71–72",
+          "printedPages": "29–32；71–72",
+          "pdfIndices": [
+            28,
+            29,
+            30,
+            31,
+            70,
+            71
+          ],
+          "topics": [
+            "污水",
+            "处置方向",
+            "开口技术流",
+            "报告和解释"
+          ],
+          "limits": [
+            "建议和报告强度依简化、详细及可选扩展而异。",
+            "环境干预与经济流不能靠是否入图来区分。"
+          ]
+        },
+        {
+          "id": "psg-kb99-cml2001-flow-vocabulary",
+          "artifactId": "art-cml-2001-part2a-pdf",
+          "locator": "Part 2a Appendix Terms and definitions 中 economic flow、elementary flow、environmental intervention、product、reference flow、waste (for treatment)；印刷与PDF pp93–94、97–99",
+          "printedPages": "93–94；97–99",
+          "pdfIndices": [
+            92,
+            93,
+            96,
+            97,
+            98
+          ],
+          "topics": [
+            "经济/产品/废物流",
+            "环境干预和基本流用词"
+          ],
+          "limits": [
+            "价值分类是该指南的术语语境，不推出法律废物身份或软件枚举。",
+            "指南词汇不是ISO原条款的直接引文。"
+          ]
         }
       ],
       "appraisal": {
-        "basis": "依据协作选段核读记录和固定 PDF 身份整理；公开网页 PDF 文本通道；截图请求未返回可核验图像。 2026-11-06新增机构文字选段，并以固定本地原PDF在Preview只读目视复核印刷pp77–90；未打印、导出、提取受限文本或更改权限。",
+        "basis": "依据协作选段核读记录和固定 PDF 身份整理；公开网页 PDF 文本通道；截图请求未返回可核验图像。 2026-11-06新增机构文字选段，并以固定本地原PDF在Preview只读目视复核印刷pp77–90；未打印、导出、提取受限文本或更改权限。 2026-11-14核对相同受保护PDF身份；本轮通过机构公开文字选读新增位置及术语，不声称本轮已逐页目视全部新位置。初始常规提取在确认权限后删除；旧只读目视事件原样保留。",
         "methodologicalScope": "该指南自身的分析取向与分层方法；不推广为当前通用规范。",
         "independence": "与 Part 1、2b 为同一作品；与其他指南存在 ISO 相关方法渊源，不能按独立实验计数。",
         "limitations": [
@@ -503,7 +548,7 @@
           "p22 的参考流例子采用覆盖墙面的表述；过程数据中的涂料体积不属于同一目标定义层。"
         ],
         "reviewKind": "agent-source-check",
-        "checkedAt": "2026-11-06"
+        "checkedAt": "2026-11-14"
       },
       "rights": "第三方原作保留权利。Leiden 项目页允许非商业使用并请求引用 2002 Handbook；这不使 2001 报告等同于该出版版本，也不授予商业再利用权。本仓仅刊载原创释义、元数据和定位，不重传原文、图像或表格。 此载体权限标志为禁止打印、复制、修改和加注；选段通过机构公开网页阅读。",
       "unread": [
@@ -1482,10 +1527,178 @@
             166,
             167
           ]
+        },
+        {
+          "id": "psg-flow-pilot-ilcd-boundaries",
+          "artifactId": "art-ilcd-2010-pdf",
+          "locator": "§6.6.1 pp93–94；§6.6.3 p102以下选段；§6.6 规定 III p105",
+          "topics": [
+            "系统边界",
+            "技术圈和自然环境界面"
+          ],
+          "limits": [
+            "指南力度与 ISO 原条款分别取证。"
+          ],
+          "printedPages": "93–94；102；105（选段）",
+          "pdfIndices": [
+            112,
+            113,
+            121,
+            124
+          ]
+        },
+        {
+          "id": "psg-flow-pilot-ilcd-agri",
+          "artifactId": "art-ilcd-2010-pdf",
+          "locator": "§7.4.4.1 pp233–234，System boundaries",
+          "topics": [
+            "管理地块",
+            "农药与化肥",
+            "蓄积镉"
+          ],
+          "limits": [
+            "规定是本版语境，不能概括成所有流只在离开地块时成排放。"
+          ],
+          "printedPages": "233–234",
+          "pdfIndices": [
+            252,
+            253
+          ]
+        },
+        {
+          "id": "psg-flow-pilot-ilcd-waste",
+          "artifactId": "art-ilcd-2010-pdf",
+          "locator": "§7.4.4.2 pp242–244，Complete modelling、Inventorying convention、Provisions I.a–c",
+          "topics": [
+            "废物",
+            "处理服务",
+            "例外"
+          ],
+          "limits": [
+            "p244 正式规定增加地下处置例外；签属软件行为另证。"
+          ],
+          "printedPages": "242–244",
+          "pdfIndices": [
+            261,
+            262,
+            263
+          ]
+        },
+        {
+          "id": "psg-flow-pilot-ilcd-reference",
+          "artifactId": "art-ilcd-2010-pdf",
+          "locator": "§6.4.1 pp60–61；§7.4.2.6 pp200–201",
+          "topics": [
+            "功能参照",
+            "产品/废物参照",
+            "默认一个单位"
+          ],
+          "limits": [
+            "重新选读同载体。"
+          ],
+          "printedPages": "60–61；200–201",
+          "pdfIndices": [
+            79,
+            80,
+            219,
+            220
+          ]
+        },
+        {
+          "id": "psg-flow-pilot-ilcd-classification",
+          "artifactId": "art-ilcd-2010-pdf",
+          "locator": "§8.2 pp276–281，Ensure a correct link、Missing factor、Provisions I–VI、脚注188和191",
+          "topics": [
+            "分类",
+            "表征",
+            "覆盖"
+          ],
+          "limits": [
+            "所选类别、非线性方法和潜在相关缺因子条件须保留。"
+          ],
+          "printedPages": "276–281",
+          "pdfIndices": [
+            295,
+            296,
+            297,
+            298,
+            299,
+            300
+          ]
+        },
+        {
+          "id": "psg-kb99-ilcd2010-waste-boundary-and-service",
+          "artifactId": "art-ilcd-2010-pdf",
+          "locator": "§6.4.1 印p61脚注37；§7.4.4.2 印pp242–244，含 Provisions I.a–c；PDF81、262–264",
+          "printedPages": "61；242–244",
+          "pdfIndices": [
+            80,
+            261,
+            262,
+            263
+          ],
+          "topics": [
+            "废物物质与处理服务方向",
+            "无控填埋/丢弃",
+            "放射性/地下沉积例外"
+          ],
+          "limits": [
+            "放射性废物及地下沉积/矿井回填等有例外。",
+            "两种写法的对应不证明任何软件转换或换模型后结果相同。"
+          ]
+        },
+        {
+          "id": "psg-kb99-ilcd2010-agro-net-and-stock",
+          "artifactId": "art-ilcd-2010-pdf",
+          "locator": "§7.4.4.1 印pp233–234、238–239；PDF253–254、258–259；正文和 Provisions I.a–d",
+          "printedPages": "233–234；238–239",
+          "pdfIndices": [
+            252,
+            253,
+            257,
+            258
+          ],
+          "topics": [
+            "农地技术圈",
+            "施用量和净干预",
+            "持久残留及侵蚀"
+          ],
+          "limits": [
+            "基线和受控条件须按归属/后果模型适用段理解。",
+            "不推导任何田间排放因子，也不等于全部施用都向环境排放或土壤积累都不属于干预。"
+          ]
+        },
+        {
+          "id": "psg-kb99-ilcd2010-flow-properties-and-coverage",
+          "artifactId": "art-ilcd-2010-pdf",
+          "locator": "§§7.1、7.4.5、7.8、6.7.4–6.7.5、8.2 相应选段；印pp111–112、153、244–245、252–253、277–279；PDF131–132、173、264–265、272–273、297–299",
+          "printedPages": "111–112；153；244–245；252–253；277–279",
+          "pdfIndices": [
+            130,
+            131,
+            172,
+            263,
+            264,
+            271,
+            272,
+            296,
+            297,
+            298
+          ],
+          "topics": [
+            "流身份与被测量",
+            "介质",
+            "连接和时空代表性",
+            "因子覆盖"
+          ],
+          "limits": [
+            "不将导则的历史软件连接描述视为任何当前实现规范。",
+            "不推定EF或具体源包实际覆盖，不以单次同分证明流一致。"
+          ]
         }
       ],
       "appraisal": {
-        "basis": "原始公开 PDF 的协作选段细读、排版保留文本与指定页面图像；固定载体而非单凭章节题名。",
+        "basis": "原始公开 PDF 的协作选段细读、排版保留文本与指定页面图像；固定载体而非单凭章节题名。 2026-11-14重取同一机构PDF，核读新增的环境边界、未接续交换、处置、农业净干预、参考、流属性与表征覆盖选段。新增位置见本轮passage；旧取得和阅读事件保留。",
         "methodologicalScope": "本版机构技术指导自身的规定与解释；不声称代表所有方法或现行普适政策。",
         "independence": "与 EPA/CML 共享 ISO 相关框架背景；一致表述不是独立实证验证。",
         "limitations": [
@@ -1494,7 +1707,7 @@
           "参考流可以采用与功能单位直接相关或产品导向的表达；需保留本版讨论的使用情境。"
         ],
         "reviewKind": "agent-source-check",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-14"
       },
       "rights": "PDF 法律页允许注明来源后再现；仍仅刊载本项目原创释义、元数据和定位，不收录原始 PDF、图像或表格。",
       "unread": [
@@ -2756,10 +2969,50 @@
             "本轮不将这些原例系数移作虚构甲乙算例输入，不由system-wide一词推出真实边界完整。",
             "p29以完整页面文本核读；此处另以p19和p30页面图像核对关键符号与系数，不声称所有选段逐页视觉检查。"
           ]
+        },
+        {
+          "id": "psg-kb99-hs2002-reference-versus-demand",
+          "artifactId": "art-heijungs-suh-2002-sample",
+          "locator": "§2.1印pp14–15及§2.3印pp20–23；PDF26–27及32–35；式(2.8)–(2.9)、定义4、定理1–2",
+          "printedPages": "14–15；20–23",
+          "pdfIndices": [
+            25,
+            26,
+            31,
+            32,
+            33,
+            34
+          ],
+          "topics": [
+            "参考量与向量",
+            "可加性和可逆条件"
+          ],
+          "limits": [
+            "固定线性稳态、同坐标及可加是前提；方且非奇异是全右端唯一逆解条件。",
+            "过程目标、软件字段和功能达标依据须另查。"
+          ]
+        },
+        {
+          "id": "psg-kb99-hs2002-intensity-local-inconsistency",
+          "artifactId": "art-heijungs-suh-2002-sample",
+          "locator": "§2.7 印pp29–30/PDF41–42，式(2.60)、(2.64)、(2.66)；并查2025-06-07作者勘误全文",
+          "printedPages": "29–30",
+          "pdfIndices": [
+            40,
+            41
+          ],
+          "topics": [
+            "算例重算",
+            "源本局部异文"
+          ],
+          "limits": [
+            "是样本内矛盾与算术校核，不指称所有载体皆如此。",
+            "主章不依赖这个数字，可将备注限于核读记录。"
+          ]
         }
       ],
       "appraisal": {
-        "basis": "Author institutional-page link to an openly downloadable unencrypted sample and errata; selected text read with surrounding qualifications, formulas on pp17/19/23 visually checked.",
+        "basis": "Author institutional-page link to an openly downloadable unencrypted sample and errata; selected text read with surrounding qualifications, formulas on pp17/19/23 visually checked. 2026-11-14重取同一作者公开样章，核读所追加参考、需求及基准推导位置，目视印刷pp29–30算式；这不扩展为整本书阅读。原局部不一致已有历史记录，不宣称新发现。",
         "methodologicalScope": "Original mathematical exposition of a basic model; conditional deduction, not an empirical validation or a normative compliance test.",
         "independence": "Suh coauthored both this book and the boundary article; agreement is not independent experimental replication.",
         "limitations": [
@@ -2768,7 +3021,7 @@
           "Published figures/tables and software were not redistributed."
         ],
         "reviewKind": "agent-source-check",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-14"
       },
       "rights": "Author explicitly offers table of contents and sample via his VU-affiliated page. Actual sample retains Springer all-rights-reserved notice. Public access to this bounded sample does not grant full-book acquisition or republication rights. Only concise original notes and locators proposed.",
       "unread": [
@@ -9024,10 +9277,33 @@
             "既有固定载体的新选读；原取得、readAt及历史评价保留；不是新取得或整部学位论文阅读。",
             "建议及背景完整性主张保持原作者归属；无经验真值验证、当前数据库全面判断或人类专家认证。"
           ]
+        },
+        {
+          "id": "psg-kb99-suh2004-functional-demand-and-bases",
+          "artifactId": "art-suh-2004-functions-thesis-leiden",
+          "locator": "Chapter III §§4–5，印pp50–55/PDF61–66，式(12)–(27)，重点是过程物量/期间、货币量和混合桥接",
+          "printedPages": "50–55",
+          "pdfIndices": [
+            60,
+            61,
+            62,
+            63,
+            64,
+            65
+          ],
+          "topics": [
+            "量与流率",
+            "技术与IO矩阵坐标",
+            "最终功能需求量"
+          ],
+          "limits": [
+            "固定系数、稳态近似和可逆分块模型为条件。",
+            "y并不自带功能质量、地点和其他元数据。"
+          ]
         }
       ],
       "appraisal": {
-        "basis": "依据同一机构 PDF 的指定正文、公式和表格选段；符号、横置表及关键页图像逐项核对。",
+        "basis": "依据同一机构 PDF 的指定正文、公式和表格选段；符号、横置表及关键页图像逐项核对。 2026-11-14重新取得相同Leiden论文PDF，选读ChapterIII印刷pp48–55功能、商品、方向、外部需求与基准，复核载体65页分块矩阵；旧事件保留。",
         "methodologicalScope": "原作者的集成混合模型与假设性 toaster 例；检查对象、单位、两向桥接及有条件的重叠处理，不证明真实经济数据正确或方法普遍更优。",
         "independence": "与 Chapter II 的 ES&T 多作者综述是不同作品；共用 Suh、同一学位论文载体及相关方法谱系，不构成独立模型检验。再印章与期刊文章也不计为两项独立确认。",
         "limitations": [
@@ -9038,7 +9314,7 @@
           "同一 PDF 含重复扫描页；所有 pdfIndices 为逐页核准的零基索引，不能套用全书统一偏移。"
         ],
         "reviewKind": "agent-source-check",
-        "checkedAt": "2026-11-05"
+        "checkedAt": "2026-11-14"
       },
       "sourceKeys": [
         "SUH2004-FUNCTIONS-THESIS-REPRINT"
@@ -14750,10 +15026,78 @@
           "limits": [
             "仅为指定条款，不证明所有食品功能等价或某个具体研究完全实施。"
           ]
+        },
+        {
+          "id": "psg-flow-pilot-pef-pesticide",
+          "artifactId": "art-kb44-ec2021-r01-pdf",
+          "locator": "Annex I §4.4.1.4, Pesticides（OJ L 144/37）",
+          "printedPages": "OJ L 144/37",
+          "pdfIndices": [
+            36
+          ],
+          "topics": [
+            "农药",
+            "默认介质比例",
+            "USEtox"
+          ],
+          "limits": [
+            "本规定只针对农药有效成分，不替代田间测量和其他类别流程。"
+          ]
+        },
+        {
+          "id": "psg-flow-pilot-pef-fertilisers-metals",
+          "artifactId": "art-kb44-ec2021-r01-pdf",
+          "locator": "Annex I §§4.4.1.5–6, Fertilisers; Heavy metal emissions（OJ L 144/37–39）",
+          "printedPages": "OJ L 144/37–39",
+          "pdfIndices": [
+            36,
+            37,
+            38
+          ],
+          "topics": [
+            "化肥",
+            "重金属",
+            "归趋"
+          ],
+          "limits": [
+            "磷的条件替代只在对应因子及缺数据前提下适用。"
+          ]
+        },
+        {
+          "id": "psg-flow-pilot-pef-impact",
+          "artifactId": "art-kb44-ec2021-r01-pdf",
+          "locator": "Annex I §§5.1.1–2, Classification and Characterisation（OJ L 144/87）",
+          "printedPages": "OJ L 144/87",
+          "pdfIndices": [
+            86
+          ],
+          "topics": [
+            "分类",
+            "表征"
+          ],
+          "limits": [
+            "更正重刊的规则与后来 EF 3.1 参考包个别因子分开。"
+          ]
+        },
+        {
+          "id": "psg-flow-pilot-pef-eol",
+          "artifactId": "art-kb44-ec2021-r01-pdf",
+          "locator": "Annex I §4.2.5, End of life；首三段（OJ L 144/35）",
+          "printedPages": "OJ L 144/35",
+          "pdfIndices": [
+            34
+          ],
+          "topics": [
+            "废物",
+            "寿命终止"
+          ],
+          "limits": [
+            "§4.4.8 的参数和具体适用范围未在此次补证复核。"
+          ]
         }
       ],
       "appraisal": {
-        "basis": "欧盟出版局固定 PDF 及相关官方元数据。关键页用排版文本与页图核对。",
+        "basis": "欧盟出版局固定 PDF 及相关官方元数据。关键页用排版文本与页图核对。 2026-11-14重取相同R(01)原PDF，选读农药、肥料/重金属和分类/表征所列段；原取得和阅读范围保留。",
         "methodologicalScope": "区分正文、PEF 方法、类别细化、代表产品以及审查和验证的对象。",
         "independence": "原刊、更正重刊及合并文本同出欧盟出版系统。它们是同一推荐的版本证据。",
         "limitations": [
@@ -14761,7 +15105,7 @@
           "斯洛伐克语更正限身份、范围及指定定位。未将该语种定点更改外推至英文条款。"
         ],
         "reviewKind": "agent-source-check",
-        "checkedAt": "2026-11-05"
+        "checkedAt": "2026-11-14"
       },
       "unread": [
         "Annex I–II 未列出的具体方法及附件数据，Annex III–IV 实质 OEF/OEFSR 技术要求。",
@@ -22329,6 +22673,12 @@
           "mediaType": "application/zip",
           "sha256": "8f931c7d1b8ac68579a31a05b8d2282b2cd6462488ede80472a950ab3b166506",
           "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/ILCD_Format_1.1_Documentation.zip"
+        },
+        {
+          "id": "art-flow-pilot-ilcd-lcia-doc",
+          "mediaType": "text/html",
+          "sha256": "4c98afcf52e434dfcb4da3a3bce14d65d3c719ad72b232662a0b9f60c2fb239c",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/ILCD_Format_1.1_Documentation.zip"
         }
       ],
       "passages": [
@@ -22399,17 +22749,57 @@
             "保留原2026-11-06取得及2026-11-07定量参考选读，未替换此前事件或字段定位。",
             "这些字段说明不证明JRC示例始终符合，也不证明任何导入器按该说明运行。"
           ]
+        },
+        {
+          "id": "psg-flow-pilot-ilcd-flow-record",
+          "artifactId": "art-kb50-jrc-flow-doc",
+          "locator": "ILCD_FlowDataSet.html eDocs 2-9-36-137、2-9-36-144、2-9-38-151、2-11-48-153、2-15-66-192",
+          "topics": [
+            "身份",
+            "介质",
+            "引用属性",
+            "流型"
+          ],
+          "limits": [
+            "字段解释不构成普适 LCA 或法律上的废物定义。"
+          ]
+        },
+        {
+          "id": "psg-flow-pilot-ilcd-process-record",
+          "artifactId": "art-kb50-jrc-process-doc",
+          "locator": "ILCD_ProcessDataSet.html eDocs 1-1-4-15…17、1-7-32-119…126",
+          "topics": [
+            "过程交换",
+            "定量参照",
+            "方向及数量"
+          ],
+          "limits": [
+            "结构与默认含义不证明任何软件实现。"
+          ]
+        },
+        {
+          "id": "psg-flow-pilot-ilcd-impact-factor",
+          "artifactId": "art-flow-pilot-ilcd-lcia-doc",
+          "locator": "ILCD_LCIAMethodDataSet.html eDocs 3-23-100-260…263，成员第1690–1739行",
+          "topics": [
+            "因子匹配",
+            "位置",
+            "0 占位"
+          ],
+          "limits": [
+            "当已知基本流具有相关贡献而本方法未提供因子时可用零记录；单个实际零记录的成因需另查。"
+          ]
         }
       ],
       "appraisal": {
-        "basis": "核对机构 HTML 原件及文档 ZIP 同名成员。",
+        "basis": "核对机构 HTML 原件及文档 ZIP 同名成员。 2026-11-14重新取得官方1.1文档ZIP，核对Flow/Process旧载体同字节，追加其指定字段与LCIA method成员的260–263字段。模式、flow、process各自定位；Model成员本轮未新增核读。",
         "methodologicalScope": "字段定义和默认含义，不能证明软件实现。",
         "independence": "同一 JRC 文档的网页和 ZIP 成员不是独立证据。",
         "limitations": [
           "文档含模型扩展说明，不能以通用 1.1 网页标题推断所有工具支持。"
         ],
         "reviewKind": "agent-source-check",
-        "checkedAt": "2026-11-06"
+        "checkedAt": "2026-11-14"
       },
       "rights": "公开机构文档。只登记原件身份、定位及原创释义，来源的原文件和图像继续适用其各自权利。",
       "unread": [
@@ -22418,7 +22808,8 @@
       "sourceKeys": [
         "src-ilcd-process",
         "src-kb50-jrc-model-doc",
-        "src-kb50-jrc-flow-doc"
+        "src-kb50-jrc-flow-doc",
+        "src-flow-pilot-ilcd-lcia-doc"
       ]
     },
     {
@@ -24640,10 +25031,52 @@
           "limits": [
             "分册编排差别不证明某一程序在方法中不存在，也不独立证明ISO任何条款。"
           ]
+        },
+        {
+          "id": "psg-kb99-cml2001-three-boundaries-and-landfill",
+          "artifactId": "art-cml-2001-part3-pdf",
+          "locator": "Part 3 §3.2 开端与图3.2.1、受控/无控填埋讨论、污水段；印刷与PDF pp87–90",
+          "printedPages": "87–90",
+          "pdfIndices": [
+            86,
+            87,
+            88,
+            89
+          ],
+          "topics": [
+            "技术圈—环境界面",
+            "截断和归属",
+            "无控填埋",
+            "污水"
+          ],
+          "limits": [
+            "仅限该报告的详细模型建议和明示条件。",
+            "无直接观测证明填埋、污水的任何现场结果。",
+            "不以其引述代替ISO、Nordic或其他报告原文。"
+          ]
+        },
+        {
+          "id": "psg-kb99-cml2001-agricultural-boundary",
+          "artifactId": "art-cml-2001-part3-pdf",
+          "locator": "Part 3 §3.2 农地、收获部分、农药和可选分界；印刷与PDF pp89–90，含p89脚注1",
+          "printedPages": "89–90",
+          "pdfIndices": [
+            88,
+            89
+          ],
+          "topics": [
+            "农地技术与生态边界",
+            "收获部分",
+            "施用与排放"
+          ],
+          "limits": [
+            "关于农药的因果措辞须保留其分界选择和例外。",
+            "不是关于实际土壤介质浓度、挥发比例或毒性的经验验证。"
+          ]
         }
       ],
       "appraisal": {
-        "basis": "Leiden 314页原始机构PDF固定哈希，按同一机构URL的公开文本视图核读选段及脚注。文本视图不提供自身哈希。另使用macOS Preview从固定本地载体只读目视复核印刷pp57–58、249–252和261–262；其余选段仅以机构文字读取，无导出、打印、提取或权限改动。",
+        "basis": "Leiden 314页原始机构PDF固定哈希，按同一机构URL的公开文本视图核读选段及脚注。文本视图不提供自身哈希。另使用macOS Preview从固定本地载体只读目视复核印刷pp57–58、249–252和261–262；其余选段仅以机构文字读取，无导出、打印、提取或权限改动。 2026-11-14核对相同受保护PDF身份；机构公开文字逐段核读§3.2，macOS Preview只读逐页目视印刷/物理pp87–90，含图3.2.1及脚注。初始常规提取/渲染在确认权限后删除，不以其替代本次只读复核。",
         "methodologicalScope": "作者对操作化、程序、评价与报告的历史说明；用于解释其职责安排。",
         "independence": "同一2001指南的Part 1、2a、2b、3分工不同；与1992报告有自述的修订关系，不能当作独立验证。",
         "limitations": [
@@ -24651,11 +25084,11 @@
           "无授权ISO全文、外部专家审定或实证验证。"
         ],
         "reviewKind": "agent-source-check",
-        "checkedAt": "2026-11-06"
+        "checkedAt": "2026-11-14"
       },
       "rights": "原作与第三方材料保留自身权利。Leiden项目页许可非商业使用并请求引用2002 Handbook；报告与书页码分开。PDF禁止打印、复制、修改与加注。本仓仅发表原创释义、必要事实与定位。",
       "unread": [
-        "未列章节未核读；pp57–58、249–252与261–262以外的图像未在本轮核验。",
+        "2026-11-06历史阅读仅目视pp57–58、249–252和261–262；2026-11-14另目视pp87–90。未列位置与其他图像不在这些核验范围内。",
         "2002出版书、勘误及授权ISO原文。"
       ],
       "sourceKeys": [
@@ -27058,6 +27491,349 @@
         "src-brightway-matrix"
       ],
       "rights": "原文、图像与数据适用来源声明的权利；这里只登记载体身份、选段定位及原创释义，不转授第三方材料的再分发许可。"
+    },
+    {
+      "id": "rd-flow-pilot-ef31",
+      "workId": "work-flow-pilot-ef31",
+      "title": "EF 3.1 reference package — selected flows and methods",
+      "version": "July 2022 reference release；2026-11-14 官方取包载体，成员哈希见记录",
+      "url": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip",
+      "accessedAt": "2026-11-14",
+      "readAt": "2026-11-14",
+      "readingStatus": "selected-passages",
+      "question": "同名同单位流能否产生不同字符化因子？",
+      "argumentSummary": "同名同单位铝离子不同介质、UUID和因子。实包存在字面零，规则或数值原因仍需另外核对。",
+      "artifacts": [
+        {
+          "id": "art-flow-pilot-ef-1c54ac00",
+          "mediaType": "application/xml",
+          "sha256": "56e500d20d49d526ecbbbb96a6dcd04860bb1dfa516a44dff0316261dea7c95e",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-flow-pilot-ef-5311ad70",
+          "mediaType": "application/xml",
+          "sha256": "6ddf58e2200fa1daf5c2e884318cb539b3c3414a041ef82967bb31c386ebf391",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-flow-pilot-ef-fe0acd60",
+          "mediaType": "application/xml",
+          "sha256": "2534b4ba76976938ee0ef5c0bbe9ebbc605131f761dd8f88e08c1704f03b634d",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-flow-pilot-ef-05316e7a",
+          "mediaType": "application/xml",
+          "sha256": "252fe760308a14b647ba2a32e8e056f9d8434235be9f1bf3b0d452afe4548cd4",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-flow-pilot-ef-6209b35f",
+          "mediaType": "application/xml",
+          "sha256": "c0fe31d3c045ae85b64bd85a3bfa41e1f246d664e8f8d463005f37dee003a5a8",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-flow-pilot-ef-dacd48b5",
+          "mediaType": "application/xml",
+          "sha256": "6ddbbb5a67a33caa8cbd3f6d7dc46bdce71e98830bcc73d6596a2f3b250ef26d",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-flow-pilot-ef-central",
+          "mediaType": "application/octet-stream",
+          "sha256": "f0242b3d4d870e93d1b9916ae315930fcd1fc0da73a01a4ad14927969f9a4a4d",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-flow99-ef-mass",
+          "mediaType": "application/xml",
+          "sha256": "8fed3fee7b905fe5eb1099880810842f32226966bad658cf25c4be49581e5eb4",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-flow99-ef-mass-units",
+          "mediaType": "application/xml",
+          "sha256": "588d32266c1de508bf38129d5de8aac10bfe96f19c90e129ab76d6e3f5a8a8d3",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-flow-pilot-ef-al-soil",
+          "artifactId": "art-flow-pilot-ef-1c54ac00",
+          "locator": "ILCD/flows/1c54ac00-a958-487b-918b-b25d6100aa7a.xml，flowInformation/quantitativeReference、administrativeInformation/publicationAndOwnership/common:dataSetVersion、flowProperties",
+          "topics": [
+            "流身份",
+            "农业土壤",
+            "kg"
+          ],
+          "limits": [
+            "单个发布条目。"
+          ]
+        },
+        {
+          "id": "psg-flow-pilot-ef-al-water",
+          "artifactId": "art-flow-pilot-ef-5311ad70",
+          "locator": "ILCD/flows/5311ad70-32a6-4a2f-8f1b-50501dba37fc.xml，flowInformation/quantitativeReference、administrativeInformation/publicationAndOwnership/common:dataSetVersion、flowProperties",
+          "topics": [
+            "流身份",
+            "长期未指定水体",
+            "kg"
+          ],
+          "limits": [
+            "单个发布条目。"
+          ]
+        },
+        {
+          "id": "psg-flow-pilot-ef-ecotox",
+          "artifactId": "art-flow-pilot-ef-05316e7a",
+          "locator": "ILCD/lciamethods/05316e7a-b254-4bea-9cf0-6bf33eb5c630.xml，行29–31、87、322648–322657、618328–618337、635218–635227",
+          "topics": [
+            "淡水生态毒性",
+            "包内因子",
+            "字面零"
+          ],
+          "limits": [
+            "两行 Calculated 且无备注，无法由此确定零值原因。"
+          ]
+        },
+        {
+          "id": "psg-flow-pilot-ef-climate",
+          "artifactId": "art-flow-pilot-ef-6209b35f",
+          "locator": "ILCD/lciamethods/6209b35f-9447-40b5-b68c-a1099e3674a0.xml，characterisationFactors 行81–11072，全1099个 factor",
+          "topics": [
+            "无记录",
+            "类别限定"
+          ],
+          "limits": [
+            "类别间无记录比较不代表存在覆盖缺口。"
+          ]
+        },
+        {
+          "id": "psg-flow99-ef-mass",
+          "artifactId": "art-flow99-ef-mass",
+          "locator": "EF-v3.1 (4)/ILCD/flowproperties/93a60a56-a3c8-11da-a746-0800200b9a66.xml；quantitativeReference及所引用数据集/单位ID，质量属性到单位组再到内部ID0的kg。",
+          "topics": [
+            "质量属性",
+            "参考单位链"
+          ],
+          "limits": [
+            "仅固定原包引用链，不声明其他单位或转换算法。"
+          ]
+        },
+        {
+          "id": "psg-flow99-ef-mass-units",
+          "artifactId": "art-flow99-ef-mass-units",
+          "locator": "EF-v3.1 (4)/ILCD/unitgroups/93a60a57-a4c8-11da-a746-0800200c9a66.xml；quantitativeReference及所引用数据集/单位ID，质量属性到单位组再到内部ID0的kg。",
+          "topics": [
+            "质量属性",
+            "参考单位链"
+          ],
+          "limits": [
+            "仅固定原包引用链，不声明其他单位或转换算法。"
+          ]
+        },
+        {
+          "id": "psg-flow99-ef-aluminium-name",
+          "artifactId": "art-flow-pilot-ef-fe0acd60",
+          "locator": "EF-v3.1 (4)/ILCD/flows/fe0acd60-3ddc-11dd-a72c-0050c2490048.xml；dataSetInformation/name与elementaryFlowCategorization，及所选05316e7a方法同UUID行。",
+          "topics": [
+            "不同流身份与相同因子",
+            "农业土壤"
+          ],
+          "limits": [
+            "实际名称与所选方法行的对照；不建立跨方法或全部化学形态的等价。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "2026-11-14 原载体选段与字段核对。",
+        "methodologicalScope": "HTTP 206 读原 ZIP 指定成员及索引，CRC/长度一致；没有整包哈希。",
+        "independence": "同一作品或同一数据包的预览、说明和成员不算独立证据。",
+        "limitations": [
+          "未全包审计、未运行 Look@LCI、未确定零值成因。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-14"
+      },
+      "rights": "成员原文件权利有待分别核定，仅登记标识、数值、定位与原创解释。",
+      "unread": [
+        "未全包审计、未运行 Look@LCI、未确定零值成因。"
+      ],
+      "sourceKeys": [
+        "src-flow-pilot-ef31"
+      ]
+    },
+    {
+      "id": "rd-flow-pilot-iso40",
+      "workId": "lit-n01",
+      "title": "ISO 14040:2006(E) — Principles and framework",
+      "version": "Edition 2 July 2006",
+      "url": "https://gso-sims-preview-doc-aws.s3-eu-west-1.amazonaws.com/iso-14040-2006-en.html",
+      "accessedAt": "2026-11-14",
+      "readAt": "2026-11-14",
+      "readingStatus": "web-sections",
+      "question": "边界、参照和因子的基本定义是什么？",
+      "argumentSummary": "仅所列条款；逐点释义见五题核读。",
+      "artifacts": [
+        {
+          "id": "art-flow-pilot-iso40",
+          "mediaType": "text/html",
+          "resolvedUrl": "https://gso-sims-preview-doc-aws.s3-eu-west-1.amazonaws.com/iso-14040-2006-en.html",
+          "sha256": "908987bbb94972a4ceb11b062f9eb7a32879a9d6c18e5630333764a8939fb67a"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-flow-pilot-iso40-defs",
+          "artifactId": "art-flow-pilot-iso40",
+          "locator": "§§3.9、3.12、3.18、3.20–29、3.32、3.35、3.37–39",
+          "topics": [
+            "基本流",
+            "产品系统",
+            "废物",
+            "因子"
+          ],
+          "limits": [
+            "未读完整版标准与修正件；14044 §4.4.2.3/4 未取得授权预览。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "2026-11-14 原载体选段与字段核对。",
+        "methodologicalScope": "在线授权原文选读。",
+        "independence": "同一作品或同一数据包的预览、说明和成员不算独立证据。",
+        "limitations": [
+          "未读完整版标准与修正件；14044 §4.4.2.3/4 未取得授权预览。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-14"
+      },
+      "rights": "ISO 保留版权；只读机构公开英语预览，公开材料只用原创释义和条号。",
+      "unread": [
+        "未读完整版标准与修正件；14044 §4.4.2.3/4 未取得授权预览。"
+      ],
+      "sourceKeys": [
+        "src-flow-pilot-iso40"
+      ]
+    },
+    {
+      "id": "rd-flow-pilot-iso44",
+      "workId": "lit-n02",
+      "title": "ISO 14044:2006(E) — Requirements and guidelines",
+      "version": "Edition 1 July 2006",
+      "url": "https://cdn.standards.iteh.ai/samples/38498/17324bfe9ec44e27a2f84e1a8ac3ca26/ISO-14044-2006.pdf",
+      "accessedAt": "2026-11-14",
+      "readAt": "2026-11-14",
+      "readingStatus": "selected-passages",
+      "question": "ISO 14044 在基本版中怎样规定功能参照及边界？",
+      "argumentSummary": "仅所列条款；逐点释义见五题核读。",
+      "artifacts": [
+        {
+          "id": "art-flow-pilot-iso44",
+          "mediaType": "application/pdf",
+          "resolvedUrl": "https://cdn.standards.iteh.ai/samples/38498/17324bfe9ec44e27a2f84e1a8ac3ca26/ISO-14044-2006.pdf",
+          "sha256": "794aa6df4ce7db7758f4ee3cf86106300ec867a0794f35479b3d68ad1e135a7a",
+          "pageCount": 15
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-flow-pilot-iso44-scope",
+          "artifactId": "art-flow-pilot-iso44",
+          "locator": "§§4.2.3.2、4.2.3.3.1–3、4.2.3.4，印刷 pp8–9",
+          "topics": [
+            "功能测度",
+            "建模边界",
+            "截断"
+          ],
+          "limits": [
+            "未读完整版标准与修正件；14044 §4.4.2.3/4 未取得授权预览。"
+          ],
+          "printedPages": "8–9",
+          "pdfIndices": [
+            13,
+            14
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "2026-11-14 原载体选段与字段核对。",
+        "methodologicalScope": "在线授权原文选读。",
+        "independence": "同一作品或同一数据包的预览、说明和成员不算独立证据。",
+        "limitations": [
+          "未读完整版标准与修正件；14044 §4.4.2.3/4 未取得授权预览。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-14"
+      },
+      "rights": "ISO 保留版权；只读机构公开英语预览，公开材料只用原创释义和条号。",
+      "unread": [
+        "未读完整版标准与修正件；14044 §4.4.2.3/4 未取得授权预览。"
+      ],
+      "sourceKeys": [
+        "src-flow-pilot-iso44"
+      ]
+    },
+    {
+      "id": "rd-flow-pilot-ef31-update",
+      "workId": "work-flow-pilot-ef31-update",
+      "title": "Updated characterisation and normalisation factors for the Environmental Footprint 3.1 method",
+      "version": "Andreasi Bassi 等，2023-02-06，EUR 31414 EN，JRC130796，DOI 10.2760/798894",
+      "url": "https://publications.jrc.ec.europa.eu/repository/bitstream/JRC130796/JRC130796_01.pdf",
+      "accessedAt": "2026-11-14",
+      "readAt": "2026-11-14",
+      "readingStatus": "selected-passages",
+      "question": "官方作者是否明确某些零值的理由并区分介质？",
+      "argumentSummary": "所读 Table 7 给出方法规定取零的例子；§3.4.2.5 将普通未指定水体因子对应淡水。这并未解释长期未指定介质的铝(III)记录。",
+      "artifacts": [
+        {
+          "id": "art-flow-pilot-ef31-jrc130796",
+          "mediaType": "application/pdf",
+          "sha256": "938d7272de6769e8d484bcfc10f8c9be3688caa4a718d298790e8df7b3a65c58",
+          "resolvedUrl": "https://publications.jrc.ec.europa.eu/repository/bitstream/JRC130796/JRC130796_01.pdf",
+          "pageCount": 57
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-flow-pilot-ef31-update",
+          "artifactId": "art-flow-pilot-ef31-jrc130796",
+          "locator": "§3.4.2.3 Table 7 p15，以及 §3.4.2.5 p16；印刷页15–16，PDF 第19–20页",
+          "printedPages": "15–16",
+          "pdfIndices": [
+            18,
+            19
+          ],
+          "topics": [
+            "方法规定取零",
+            "普通未指定水体与淡水",
+            "EF 3.0–3.1版本改变"
+          ],
+          "limits": [
+            "长期未指定水体铝(III)零值原因不由这两段确定。方法规定取零不能支持现实无效应的断言。未读其余章节。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "§3.4.2.3 Table 7 p15，以及 §3.4.2.5 p16；印刷页15–16，PDF 第19–20页",
+        "methodologicalScope": "EF 3.1 作者的版本改动和指定介质规则；按实包 XML 逐点核对。",
+        "independence": "报告作者和原包为同一方法与版本的互补资料。",
+        "limitations": [
+          "长期未指定水体铝(III)零值原因不由这两段确定。方法规定取零不能支持现实无效应的断言。未读其余章节。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-14"
+      },
+      "rights": "版权页 CC BY 4.0，须署名并标明改动；第三方材料另受其权利约束。",
+      "unread": [
+        "长期未指定水体铝(III)零值原因不由这两段确定。方法规定取零不能支持现实无效应的断言。未读其余章节。"
+      ],
+      "sourceKeys": [
+        "src-flow-pilot-ef31-update"
+      ]
     }
   ],
   "gaps": [
@@ -27122,7 +27898,7 @@
     },
     {
       "id": "gap-iso-authorized-text",
-      "description": "本轮没有读 ISO 授权全文，指南转述不能替代 ISO 条款核查。",
+      "description": "早期未取得ISO授权全文；2026-11-14已核读14040/14044:2006公开原文预览的指定定义和范围条款，指南转述不再是这些选段的唯一依据。预览外正文、修正件和完整目标版仍未核读。",
       "affectedUnits": [
         "V2",
         "V3",
@@ -27422,7 +28198,7 @@
     },
     {
       "id": "gap-wave4-comparison-incomplete",
-      "description": "尚不能完成一般LCA、数据库指导、PEF/OEF及类别/行业规则间的原文逐项比较；本轮只有UNEP2011实质阅读。",
+      "description": "第四轮当时仅有UNEP2011的指定实质阅读；此后的PEF与ISO指定原文选段另有阅读记录。一般LCA、数据库指导、PEF/OEF及类别/行业规则的完整逐项对照仍未完成。",
       "affectedUnits": [
         "V2",
         "V7"
@@ -27431,7 +28207,7 @@
     },
     {
       "id": "gap-wave4-iso-text",
-      "description": "UNEP原作中的ISO引文和改写不等于本轮取得ISO授权全文。",
+      "description": "第四轮UNEP中的ISO转述不构成ISO原件。2026-11-14指定2006基版预览选段已有直接依据；其余条款与修正件仍待合法取得和核读。",
       "affectedUnits": [
         "V2",
         "V4",
@@ -27706,7 +28482,7 @@
     },
     {
       "id": "gap-cn-standard-originals-and-1998-initiation",
-      "description": "尚未取得GB/T/ISO双方标准正文或1998年启动文件、2002年原始批准公告；不能比较条文或确认Sun的1998年制度启动叙述。",
+      "description": "尚未取得可对照的GB/T与ISO双方完整目标版正文或1998年启动文件、2002年原始批准公告；2026-11-14的ISO2006预览选段不完成中外条文对读或Sun的1998年制度启动叙述核验。",
       "nextAction": "在需要条文论证或1998启动因果史时，另行取得合法授权原件；此单元可在已读官方登记范围内停下。",
       "affectedUnits": [
         "V2-05",
@@ -27996,6 +28772,16 @@
         "B10",
         "V4",
         "V6"
+      ]
+    },
+    {
+      "id": "gap-flow99-scope-remaining",
+      "description": "已核2006 ISO公开预览指定条款、指南和方法接口；GB、ISO其余条款与修正件、真实填埋/农地验证、全部EF零成因和其他软件转换仍未核。",
+      "nextAction": "按会改变具体比较判断的缺口取得合法原文或外部验证，不以本轮出版通过代替研究。",
+      "affectedUnits": [
+        "B08",
+        "S02",
+        "S05"
       ]
     }
   ],
@@ -30533,6 +31319,51 @@
       ],
       "affectedUnits": [
         "B10"
+      ]
+    },
+    {
+      "id": "rev-flow-boundary-pilot-99",
+      "before": "定义入口主要依软件对象模型；已有条件编码对应与原生失配，跨规范、导则和理论的比较不足。",
+      "after": "新增原条款选读、真实边界差异、交易与计量分层以及零值占位的证据；既有案例和旧来源身份保留，正文与出版接受另审。",
+      "reasoning": "按共同问题对齐对象和条件；新增选段不代表完整作品或全领域共识。",
+      "status": "source-compared-candidate-prose-pending-independent-reader-review",
+      "triggerPassageIds": [
+        "psg-flow-pilot-ilcd-flow-record",
+        "psg-flow-pilot-ilcd-process-record",
+        "psg-flow-pilot-ilcd-impact-factor",
+        "psg-flow-pilot-ilcd-boundaries",
+        "psg-flow-pilot-ilcd-agri",
+        "psg-flow-pilot-ilcd-waste",
+        "psg-flow-pilot-ilcd-reference",
+        "psg-flow-pilot-ilcd-classification",
+        "psg-flow-pilot-ef-al-soil",
+        "psg-flow-pilot-ef-al-water",
+        "psg-flow-pilot-ef-ecotox",
+        "psg-flow-pilot-ef-climate",
+        "psg-flow-pilot-iso40-defs",
+        "psg-flow-pilot-iso44-scope",
+        "psg-flow-pilot-ef31-update",
+        "psg-kb99-cml2001-three-boundaries-and-landfill",
+        "psg-kb99-cml2001-agricultural-boundary",
+        "psg-kb99-cml2001-open-technosphere-flows",
+        "psg-kb99-cml2001-flow-vocabulary",
+        "psg-kb99-ilcd2010-waste-boundary-and-service",
+        "psg-kb99-ilcd2010-agro-net-and-stock",
+        "psg-kb99-ilcd2010-flow-properties-and-coverage",
+        "psg-kb99-suh2004-functional-demand-and-bases",
+        "psg-kb99-hs2002-reference-versus-demand",
+        "psg-kb99-hs2002-intensity-local-inconsistency",
+        "psg-flow-pilot-pef-pesticide",
+        "psg-flow-pilot-pef-fertilisers-metals",
+        "psg-flow-pilot-pef-impact",
+        "psg-flow-pilot-pef-eol"
+      ],
+      "affectedUnits": [
+        "B08",
+        "S02",
+        "S05",
+        "cn-flow",
+        "cn-exchange"
       ]
     }
   ]

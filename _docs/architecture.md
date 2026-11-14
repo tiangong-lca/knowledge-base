@@ -22,6 +22,45 @@ lastReviewedCommit: ccb24fea950f8c584c3215be6a74265482d659cc
 
 # Publication architecture
 
+## Flow and boundary scientific successor
+
+`reader-flow-boundary.mjs` admits only the separately reviewed `flow-boundary-99`
+unit. It compares independently observed current file/record/order/dependency
+and reader structures with the qualified0496e14 predecessor, then reconstructs
+the predecessor observations for the unchanged #95/#93 qualification. That reverse
+projection establishes the earlier generation only; actual candidate prose,
+annotations, source records, navigation and exported artifacts have their own
+current checks. Inactive and private-preview states never authorize production.
+
+The scoped source plan protects every earlier canonical claim and the33 native
+case templates/input. An extended old reading additionally preserves its original
+artifact/passage records and order, work and original reading/acquisition identity;
+matching whole-record successor hashes cannot waive this nested conservation.
+Appraisal and historically dated unread-scope clarifications are explicit deltas.
+The older pedigree reading qualification remains independently enforced, with
+only the exact admitted successor projected through its original metadata checks.
+
+Current B08 and its two fine pages use the same canonical records and numbering.
+The four retained formal section IDs may have newly accepted titles and members;
+new subordinate headings carry their actual numbered depth. Qualified former
+titles and note subsets remain accessible, including S01's precise reference to
+the retained waste-history claim. Each changed ordinary paragraph has its own
+actual target, content and link fingerprint; merely pointing several former blocks
+to an existing chapter address does not establish a semantic destination. The
+new dated paragraph IDs are publication identities whose future migration needs
+the same treatment. Closed history disclosures are permitted, hidden or inert
+controls, links and targets are not.
+
+Three real artifact/report pairs bind source, reader and output subjects. A
+formal output artifact names `actual-export` and the ordered real public files
+with byte sizes and hashes; forecast or `previewDownloads` observations are
+ineligible. A controlled isolated technical production run may supply actual
+bytes before final review, but its temporary test receipt is not a public or
+scientific acceptance. After substantive review the primary agent sets the
+separate unit pin and verifies ordinary production/export against the actual
+observations. Historical fixtures explicitly exercise their own generation;
+their archived inputs and negative cases are not rewritten for the new unit.
+
 ## Chinese expression successor
 
 The #95 copyedit keeps the accepted complete-readable-book generation intact.

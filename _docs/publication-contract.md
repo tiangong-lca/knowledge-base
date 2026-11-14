@@ -22,6 +22,29 @@ lastReviewedCommit: 0c8382182497e6110ac349c26f0139a21ae38008
 
 # Publication contract
 
+## Scoped scientific successors
+
+The flow/boundary pilot99 adds separately identified comparisons and selected
+original-source readings to the accepted #95 generation. Its exact source delta,
+reader judgment and actual-export evidence belong to an independently pinned
+successor; a copyedit acceptance cannot authorize new scientific meaning.
+Earlier claims, native inputs/templates, source identities, released receipts and
+historical citation scopes retain their original qualification.
+
+When this pilot extends an existing reading, its old artifacts and passages,
+their order, work identity and original access/reading events remain intact.
+New selected positions are appended. Precisely reviewed appraisal updates and
+dated unread-scope clarifications do not permit moving an old quotation locator
+or relabeling an old carrier. A genuine correction of such evidence requires its
+own explicit scientific disposition rather than a fresh whole-record hash.
+
+Source and method records identify their actual layers: a publicly accessible
+standard preview is not a complete amended standard; an original package member
+is not the entire archive; a stored zero is not its scientific explanation; an
+author-derived algebraic result is not a native run or environmental observation.
+The pilot's comparison and reader reviews are agent assessments, not human expert
+certification or empirical reader learning evidence.
+
 The initial release established bounded examples. The approved book programme now expands source-grounded chapters while retaining explicit incomplete coverage. Chinese prose retains original English labels. Public content is authored here; private experiments and restricted evidence remain in research. Only reviewed, explicitly publishable records enter public exports.
 
 Canonical knowledge is stored in knowledge/catalog.json; MDX renders claim statements by ID. Source, evidence, claim, concept, mapping and coverage identities are stable. Version changes never silently overwrite a released snapshot. Claims distinguish source-statement, interpretation, synthesis, calculation and proposal. Each evidence record identifies an exact locator. Claim-specific evidenceLinks assign support, qualification, contradiction or context plus rationale; legacy records retain their original evidence-level relation. Explicit links must exactly cover evidenceIds and never silently fall back to a legacy role. Claim scope, premises, caveats, review date and review kind remain explicit. AI review is never labeled human expert approval.

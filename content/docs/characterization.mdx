@@ -3,7 +3,7 @@ title: 缺少表征因子不等于因子为零
 description: 区分表征记录、覆盖状态和数值合计，保留结果解释所需的信息。
 ---
 
-查看某个流的表征结果时，需要区分已算得的零值与没有匹配到因子的情况。下面通过两个例子说明如何核对记录和数值，避免把缺失信息当作零。
+查看某个流的表征结果时，要把清单量、匹配记录和因子依据分别认清。零值记录也可能留下待解释的信息，数值合计本身无法说明原因。
 
 ## 一个因子需要什么上下文 [#一个因子需要什么上下文]
 
@@ -17,14 +17,16 @@ description: 区分表征记录、覆盖状态和数值合计，保留结果解�
 
 <Prose ids="cl-zero-example" />
 
+<Prose ids="cl-flow99-zero-placeholder cl-flow99-zero-reasons" />
+
 ## 在原生模型中区分零与缺失 [#在原生模型中区分零与缺失]
 
-[交换语义](/docs/book/exchange-semantics-and-conversion/)介绍下面使用的固定瓶子模型及计算条件；本页则用该模型的诊断方法，说明记录与数值之间的关系。
+[流、交换与边界](/docs/book/exchange-semantics-and-conversion/)介绍下面使用的固定瓶子模型及计算条件，也比较不同体系把哪些量送入表征；本页用该模型的诊断方法，说明记录与数值之间的关系。
 
-<Prose ids="cl-native-factor-probe cl-native-factor-zero-absent" />
+<Prose ids="cl-flow99-probe-reference cl-native-factor-probe cl-native-factor-zero-absent" />
 
 ## 检查报告保留了什么 [#检查报告保留了什么]
 
-<Prose ids="cl-native-factor-report" />
+<Prose ids="cl-flow99-zero-reporting cl-native-factor-report" />
 
 [注释与论证](/claims/)给出这些段落的来源、条件与建议性质，供读者分别核对。

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-10",
+  "updatedAt": "2026-11-14",
   "protocol": {
     "id": "community-classics-wave-2026-11-04",
     "questions": [
@@ -4870,6 +4870,12 @@
         "query": "\"10.1021/acs.est.9b01800\" \"correction\" Fantke supplemental operational model marginal mortality",
         "date": "2026-11-10",
         "channel": "public-web-search"
+      },
+      {
+        "id": "q-kb99-primary-flow-comparison-20261114",
+        "query": "沿原作与官方入口核读 ISO 14040/14044 public preview, ILCD Format1.1 flow/exchange/LCIA meanValue, ILCD2010 boundary/waste/agriculture, CML2001 Part3 §3.2, Suh2004 ChapterIII, EF3.1 reference package and JRC130796 selected sections",
+        "date": "2026-11-14",
+        "channel": "targeted-official-original-retrieval-and-cross-reading"
       }
     ],
     "limitations": [
@@ -6805,6 +6811,10 @@
         {
           "url": "https://www.iso.org/standard/37456.html",
           "role": "ISO正式记录"
+        },
+        {
+          "url": "https://gso-sims-preview-doc-aws.s3-eu-west-1.amazonaws.com/iso-14040-2006-en.html",
+          "role": "2026-11-14实际所读公开基版原文预览"
         }
       ],
       "identifiers": {
@@ -6832,23 +6842,27 @@
       ],
       "discovery": {
         "queryIds": [
-          "Q-SEED-IMPORT"
+          "Q-SEED-IMPORT",
+          "q-kb99-primary-flow-comparison-20261114"
         ],
-        "reason": "Inherited candidate register §11; retained for work-level discovery, not upgraded to passage evidence. 取得相关具体版本及修订件，建立条款证据；历史版另查",
+        "reason": "2026-11-03初始登记：Inherited candidate register §11; retained for work-level discovery, not upgraded to passage evidence. 取得相关具体版本及修订件，建立条款证据；历史版另查。2026-11-14已有指定公开预览原条款的选择性核读，见所绑定reading；仍未取得未显示正文与修正件。",
         "citationParents": []
       },
       "identityStatus": "verified",
-      "accessStatus": "metadata-only",
+      "accessStatus": "abstract-or-excerpt",
       "readingStatus": "not-close-read",
       "accessedAt": "2026-11-03",
-      "lastCheckedAt": "2026-11-03",
+      "lastCheckedAt": "2026-11-14",
       "rights": "Third-party sources retain their rights. Bibliographic facts and original project annotations are published here; source text, figures, datasets and software are not relicensed. Full-text access or borrowing does not grant redistribution permission. No source-specific open reuse license was verified in the inherited seed check.",
       "limitations": [
         "官方书目/摘要/修订入口；未读授权全文",
         "Historical metadata/abstract/partial-page check inherited from 2026-11-03; original search strings and a complete access log were not recorded in the seed register.",
-        "Volume/region/tradition tags are provisional editorial discovery strata, not evidence of intellectual origin, influence or coverage."
+        "Volume/region/tradition tags are provisional editorial discovery strata, not evidence of intellectual origin, influence or coverage.",
+        "2026-11-14已核读所登记公开预览选段；修正件和未展示条文仍未核读，不宣称完整标准或当前合并版资格。"
       ],
-      "catalogSourceIds": []
+      "catalogSourceIds": [
+        "src-flow-pilot-iso40"
+      ]
     },
     {
       "id": "lit-n02",
@@ -6863,6 +6877,10 @@
         {
           "url": "https://www.iso.org/standard/38498.html",
           "role": "ISO正式记录"
+        },
+        {
+          "url": "https://cdn.standards.iteh.ai/samples/38498/17324bfe9ec44e27a2f84e1a8ac3ca26/ISO-14044-2006.pdf",
+          "role": "2026-11-14实际所读公开基版原文预览"
         }
       ],
       "identifiers": {
@@ -6890,23 +6908,27 @@
       ],
       "discovery": {
         "queryIds": [
-          "Q-SEED-IMPORT"
+          "Q-SEED-IMPORT",
+          "q-kb99-primary-flow-comparison-20261114"
         ],
-        "reason": "Inherited candidate register §11; retained for work-level discovery, not upgraded to passage evidence. V2/V4/V6/V7 的规范核查；核查使用权限",
+        "reason": "2026-11-03初始登记：Inherited candidate register §11; retained for work-level discovery, not upgraded to passage evidence. V2/V4/V6/V7 的规范核查；核查使用权限。2026-11-14已有指定公开预览原条款的选择性核读，见所绑定reading；仍未取得未显示正文与修正件。",
         "citationParents": []
       },
       "identityStatus": "verified",
-      "accessStatus": "metadata-only",
+      "accessStatus": "abstract-or-excerpt",
       "readingStatus": "not-close-read",
       "accessedAt": "2026-11-03",
-      "lastCheckedAt": "2026-11-03",
+      "lastCheckedAt": "2026-11-14",
       "rights": "Third-party sources retain their rights. Bibliographic facts and original project annotations are published here; source text, figures, datasets and software are not relicensed. Full-text access or borrowing does not grant redistribution permission. No source-specific open reuse license was verified in the inherited seed check.",
       "limitations": [
         "同上；不由摘要推导条款",
         "Historical metadata/abstract/partial-page check inherited from 2026-11-03; original search strings and a complete access log were not recorded in the seed register.",
-        "Volume/region/tradition tags are provisional editorial discovery strata, not evidence of intellectual origin, influence or coverage."
+        "Volume/region/tradition tags are provisional editorial discovery strata, not evidence of intellectual origin, influence or coverage.",
+        "2026-11-14已核读所登记公开预览选段；修正件和未展示条文仍未核读，不宣称完整标准或当前合并版资格。"
       ],
-      "catalogSourceIds": []
+      "catalogSourceIds": [
+        "src-flow-pilot-iso44"
+      ]
     },
     {
       "id": "lit-n03",
@@ -18261,7 +18283,8 @@
       "catalogSourceIds": [
         "src-ilcd-process",
         "src-kb50-jrc-model-doc",
-        "src-kb50-jrc-flow-doc"
+        "src-kb50-jrc-flow-doc",
+        "src-flow-pilot-ilcd-lcia-doc"
       ]
     },
     {
@@ -19539,6 +19562,114 @@
         "节录所论单元过程的缩放与相加不能独立核准全文所有论证或本书的比较残余。"
       ],
       "catalogSourceIds": []
+    },
+    {
+      "id": "work-flow-pilot-ef31",
+      "title": "EF 3.1 reference package — selected flows and methods",
+      "contributors": "European Commission Joint Research Centre; authors as identified in the source",
+      "year": "2022",
+      "kind": "reference-package",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip",
+          "role": "official-selected-source"
+        }
+      ],
+      "identifiers": {
+        "version": "July 2022 reference release；2026-11-14 官方取包载体，成员哈希见记录"
+      },
+      "volumes": [
+        "V2",
+        "V4"
+      ],
+      "topics": [
+        "flow identity",
+        "characterisation",
+        "versioned representation"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "European Union"
+      ],
+      "traditions": [
+        "Environmental Footprint"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-kb99-primary-flow-comparison-20261114"
+        ],
+        "reason": "为检验同名同单位、介质与零值含义而定向选择原包及作者版本说明。",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-14",
+      "lastCheckedAt": "2026-11-14",
+      "rights": "成员原文件权利有待分别核定，仅登记标识、数值、定位与原创解释。",
+      "limitations": [
+        "未全包审计、未运行 Look@LCI、未确定零值成因。"
+      ],
+      "catalogSourceIds": [
+        "src-flow-pilot-ef31"
+      ]
+    },
+    {
+      "id": "work-flow-pilot-ef31-update",
+      "title": "Updated characterisation and normalisation factors for the Environmental Footprint 3.1 method",
+      "contributors": "European Commission Joint Research Centre; authors as identified in the source",
+      "year": "2023",
+      "kind": "technical-report",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://publications.jrc.ec.europa.eu/repository/bitstream/JRC130796/JRC130796_01.pdf",
+          "role": "official-selected-source"
+        }
+      ],
+      "identifiers": {
+        "version": "Andreasi Bassi 等，2023-02-06，EUR 31414 EN，JRC130796，DOI 10.2760/798894"
+      },
+      "volumes": [
+        "V2",
+        "V4"
+      ],
+      "topics": [
+        "flow identity",
+        "characterisation",
+        "versioned representation"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "European Union"
+      ],
+      "traditions": [
+        "Environmental Footprint"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-kb99-primary-flow-comparison-20261114"
+        ],
+        "reason": "为检验同名同单位、介质与零值含义而定向选择原包及作者版本说明。",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-14",
+      "lastCheckedAt": "2026-11-14",
+      "rights": "版权页 CC BY 4.0，须署名并标明改动；第三方材料另受其权利约束。",
+      "limitations": [
+        "长期未指定水体铝(III)零值原因不由这两段确定。方法规定取零不能支持现实无效应的断言。未读其余章节。"
+      ],
+      "catalogSourceIds": [
+        "src-flow-pilot-ef31-update"
+      ]
     }
   ],
   "gaps": [

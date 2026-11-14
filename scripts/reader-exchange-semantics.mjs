@@ -1,6 +1,6 @@
 import { historyPrintPointerTitleLayout } from './reader-copyedit.mjs';
-import { currentPrintReadingHref, getUnitNumbering } from './reader-numbering.mjs';
-import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
+import { currentPrintReadingHref, getHeadingNumbering, getUnitNumbering } from './reader-numbering.mjs';
+import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches, currentFlowBoundary } from './reader-current-expectations.mjs';
 import readingRegister from '../knowledge/research/readings.json' with { type: 'json' };
 import { getClaimEvidence } from './knowledge.mjs';
 import { frameworkBookHref } from './reader-edition.mjs';
@@ -41,10 +41,17 @@ export function assertExchangeSemanticsProseAccepted(prose) {
 }
 
 function currentHistoryPrintPointers(partial) {
-  const pointers = currentBookLayout(historyPrintPointerTitleLayout, partial.projection);
+  const oldPointers = currentBookLayout(historyPrintPointerTitleLayout, partial.projection);
+  const title = currentFlowBoundary?.numbering.titles.find(row=>row.route===exchangeSemanticsRoute);
+  const pointers = !title ? oldPointers : oldPointers.map(row=>{
+    if(row.route!==exchangeSemanticsRoute)return row;
+    const before=`见《${title.from}》的相应论述与注释。`;
+    if(!row.text.endsWith(before))throw new Error('S01 B08 pointer does not match its qualified predecessor');
+    return {...row,text:row.text.slice(0,-before.length)+`见《${title.to}》的相应论述与注释。`};
+  });
   if (pointers !== partial.projection && pointers.some(row => {
-    const title = getUnitNumbering('book', row.route)?.title;
-    return !title || !row.text.endsWith(`见《${title}》的相应论述与注释。`);
+    const current = getUnitNumbering('book', row.route)?.title;
+    return !current || !row.text.endsWith(`见《${current}》的相应论述与注释。`);
   })) throw new Error('S01 printed pointer title differs from the actual current book title');
   return pointers;
 }
@@ -94,11 +101,12 @@ export function validateExchangeSemanticsCoverage(edition,sources,accepted=origi
   if(title!==currentBookLayout('B08:title',accepted.title))errors.push('B08 shared source has the wrong adopted title');
   const {headings,occurrences}=sectionOccurrences(raw);
   if (!same(headings,currentBookLayout('B08:headings',exchangeSemanticsTitles.map(title=>({id:title,title})))) || occurrences.length!==collectChapterClaimOccurrences(raw).length) errors.push('B08 requires four actual formal sections with all canonical occurrences inside them');
+  const scientificSections = currentFlowBoundary?.chapterSections;
   const all=collectChapterClaimOccurrences(raw), originalIds=new Set(accepted.sections.flatMap(section=>section.claimIds));
-  for(const section of accepted.sections) for(const id of section.claimIds) {const found=occurrences.filter(item=>item.id===id);if(found.length!==1||found[0]?.section!==section.id)errors.push(`B08 original proposition missing, duplicated or misplaced: ${id}`);}
+  for(const section of (scientificSections ? [{ id: null, claimIds: [...originalIds] }] : accepted.sections)) for(const id of section.claimIds) {const found=occurrences.filter(item=>item.id===id);if(found.length!==1||(!scientificSections && found[0]?.section!==section.id))errors.push(`B08 original proposition missing, duplicated or misplaced: ${id}`);}
   for(const id of new Set(all))if(all.filter(value=>value===id).length!==1)errors.push(`B08 duplicate canonical occurrence: ${id}`);
   for(const source of accepted.sources.filter(source=>source.route!==exchangeSemanticsRoute)) {
-    const actual=sources.get(source.route);if(actual===undefined||!same(collectChapterClaimOccurrences(actual),source.claimIds))errors.push(`B08 retained website source occurrence order differs: ${source.route}`);
+    const actual=sources.get(source.route);if(actual===undefined||!same(collectChapterClaimOccurrences(actual),currentFlowBoundary?.occurrences.find(row=>row.key===`content${source.route}.mdx`)?.to??source.claimIds))errors.push(`B08 retained website source occurrence order differs: ${source.route}`);
   }
   const history=sources.get(historyRoute);
   if(history===undefined || !currentBookMdxMatches(partial.sourceRoute, partial.websiteSourceSha256, textDigest(history)) || !same(collectChapterClaimOccurrences(history),partial.claimIds))errors.push('S01 complete website source, nine claims or six ordinary blocks changed');
@@ -110,12 +118,18 @@ export function validateExchangeSemanticsCoverage(edition,sources,accepted=origi
   }
   if(catalog) {
     assertExchangeSemanticsProseAccepted(prose);
-    if(!same(prose.sections.map(({id,title})=>({id,title})),exchangeSemanticsTitles.map(title=>({id:title,title}))) || !same(occurrences,prose.sections.flatMap(section=>section.claimIds.map(id=>({id,section:section.id})))))errors.push('B08 actual occurrence order differs from reviewed manuscript');
-    if(!same(prose.claims.map(claim=>claim.id),all))errors.push('B08 reviewed full canonical records do not match actual occurrence order');
+    if(!same(prose.sections.map(({id,title})=>({id,title})),exchangeSemanticsTitles.map(title=>({id:title,title}))) || !same(occurrences,(scientificSections??prose.sections).flatMap(section=>section.claimIds.map(id=>({id,section:section.id})))))errors.push('B08 actual occurrence order differs from reviewed manuscript');
+    if(!scientificSections && !same(prose.claims.map(claim=>claim.id),all))errors.push('B08 reviewed full canonical records do not match actual occurrence order');
     for(const claim of prose.claims) {
       const actual=catalog.claims.find(row=>row.id===claim.id);
       if(!actual || actual.status!=='reviewed' || !currentBookRecordMatches('claims', claim, actual))errors.push(`B08 canonical record differs from reviewed manuscript: ${claim.id}`);
       if(!originalIds.has(claim.id) && !claim.evidenceIds?.length && !claim.premiseIds?.length)errors.push(`B08 explicit addition lacks evidence or premises: ${claim.id}`);
+    }
+    if(scientificSections) for(const id of all.filter(id=>!originalIds.has(id))) {
+      const actual=catalog.claims.find(claim=>claim.id===id);
+      if(!actual || actual.status!=='reviewed' || !currentBookRecordMatches('claims',null,actual)
+          || !actual.evidenceIds?.length && !actual.evidenceLinks?.length && !actual.premiseIds?.length)
+        errors.push(`B08 successor addition lacks an exact independently accepted record and supporting closure: ${id}`);
     }
     const partialReview=prose.partialSourceReview;
     if (partialReview.sourceSha256!==partial.websiteSourceSha256 || partialReview.ordinaryAction!=='retain-all-six' || !same(partialReview.destinations?.map(({claimId,route,section})=>({claimId,route,...(section?{section}:{})})),partial.projection.map(({claimId,route,section})=>({claimId,route,...(section?{section}:{})})))) errors.push('S01 final partial-source receipt does not bind all eight exact destinations and all retained ordinary content');
@@ -128,8 +142,12 @@ export function validateExchangeSemanticsCoverage(edition,sources,accepted=origi
     if(!same(prose.ordinaryDispositions.map(row=>`${row.oldUnit}:${row.block}`),accepted.ordinary.map(row=>`${row.oldUnit}:${row.block}`)))errors.push('B08 reviewed ordinary-content disposition must cover all fourteen original blocks in frozen order');
     for(const row of currentBookLayout('B08:ordinary-dispositions', prose.ordinaryDispositions)) {
       const obligation=accepted.ordinary.find(item=>item.oldUnit===row.oldUnit&&item.block===row.block);
-      if(!obligation || row.section!==obligation.section || !row.reviewRationale?.trim() || !(row.claimIds?.length||row.navigation?.length)) {errors.push(`B08 ordinary obligation lacks reviewed substantive destination: ${row.oldUnit}:${row.block}`);continue;}
-      for(const id of row.claimIds??[])if(!occurrences.some(item=>item.id===id&&item.section===row.section))errors.push(`B08 ordinary canonical destination missing or misplaced: ${id}`);
+      if(!obligation || (!currentFlowBoundary?.chapterOrdinary && row.section!==obligation.section) || !headings.some(heading=>heading.id===row.section) || !row.reviewRationale?.trim() || !(row.claimIds?.length||row.navigation?.length)) {errors.push(`B08 ordinary obligation lacks reviewed substantive destination: ${row.oldUnit}:${row.block}`);continue;}
+      const destinations = row.claimDestinations ?? (row.claimIds ?? []).map(id => ({ id, section: row.section }));
+      for(const { id, section } of destinations) {
+        if(!occurrences.some(item=>item.id===id&&item.section===section))
+          errors.push(`B08 ordinary canonical destination missing or misplaced: ${id}`);
+      }
       for(const link of row.navigation??[])if(!link.text?.trim()||!link.href?.trim()||!raw.includes(`[${link.text}](${link.href})`))errors.push(`B08 reviewed navigation missing: ${row.oldUnit}:${row.block}`);
     }
   }
@@ -322,14 +340,17 @@ export function validateRenderedExchangeSemantics(document,path,accepted=origina
       if(title!==currentBookLayout('B08:title',accepted.title))errors.push(`${path}: wrong actual B08 title`);
       for(const node of unit.querySelectorAll('h1,h2,h3,h4,h5,h6,a[role="doc-noteref"]')) {
         if(node.closest('[data-legacy-for],[data-legacy-notice],[data-legacy-scope]'))continue;
-        if(node.getAttribute('role')==='doc-noteref') {const id=node.getAttribute('data-reader-reference'),claim=claims.get(id),p=node.closest('p');actual.push({id,section});if(!p||!claim||paragraphText(p,node)!==claim.text)errors.push(`${path}: B08 actual paragraph differs from canonical text: ${id}`);if(prose&&!currentBookRecordMatches('claims', prose.claims.find(row=>row.id===id), claim))errors.push(`${path}: B08 actual record differs from independently reviewed manuscript: ${id}`);}
+        if(node.getAttribute('role')==='doc-noteref') {const id=node.getAttribute('data-reader-reference'),claim=claims.get(id),p=node.closest('p');actual.push({id,section});if(!p||!claim||paragraphText(p,node)!==claim.text)errors.push(`${path}: B08 actual paragraph differs from canonical text: ${id}`);if(prose&&!currentBookRecordMatches('claims', prose.claims.find(row=>row.id===id)??null, claim))errors.push(`${path}: B08 actual record differs from independently reviewed manuscript: ${id}`);}
         else if(node.closest('.chapter-notes'))section=null;
         else if(currentHeadings.some(row=>row.id===node.id.slice(prefix.length))) {section=node.id.slice(prefix.length);headings.push({id:section,title:node.text.replace(/复制章节链接$/,'')});if(node.tagName!==(print?'H3':'H2')||node.text.replace(/复制章节链接$/,'')!==currentHeadings.find(row=>row.id===section)?.title)errors.push(`${path}: wrong actual B08 formal heading`);}
+        else if(currentFlowBoundary && node.tagName===(print?'H4':'H3')
+          && getHeadingNumbering(print?'book':'web',exchangeSemanticsRoute,node.id.slice(prefix.length))?.type==='mdx')continue;
         else if(node.tagName!==(print?'H2':'H1'))errors.push(`${path}: unexpected actual B08 body heading`);
       }
       if(!same(headings,currentHeadings))errors.push(`${path}: B08 formal sections missing, duplicated or reordered`);
-      const expected=prose?.sections??accepted.sections;
-      for(const section of accepted.sections)for(const id of section.claimIds){const found=actual.filter(item=>item.id===id);if(found.length!==1||found[0].section!==section.id)errors.push(`${path}: actual B08 original proposition missing, duplicated or misplaced: ${id}`);}
+      const scientificSections=currentFlowBoundary?.chapterSections;
+      const expected=scientificSections??prose?.sections??accepted.sections;
+      for(const section of accepted.sections)for(const id of section.claimIds){const found=actual.filter(item=>item.id===id);if(found.length!==1||(!scientificSections && found[0].section!==section.id))errors.push(`${path}: actual B08 original proposition missing, duplicated or misplaced: ${id}`);}
       if(prose&&!same(actual,expected.flatMap(section=>section.claimIds.map(id=>({id,section:section.id})))))errors.push(`${path}: actual B08 occurrence order differs from reviewed manuscript`);
       const noteIds=unit.querySelectorAll('[data-reader-claim]').map(node=>node.getAttribute('data-reader-claim'));
       if(!same(noteIds,actual.map(item=>item.id)))errors.push(`${path}: B08 actual endnotes differ from body occurrence plan`);

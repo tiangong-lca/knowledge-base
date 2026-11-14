@@ -6,7 +6,7 @@ import { assertReaderNumbering, bookTopicPresentation, readerNumberingManifest, 
 import { printUnitAnchor, readSourceHeading } from './reader-book.mjs';
 
 const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b), compact=text=>text.replace(/\s+/g,''), hash=text=>createHash('sha256').update(text).digest('hex');
-const apparatus='.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope]';
+const apparatus='.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope],[data-flow-boundary-history]';
 const verifiedPagination=new WeakMap();
 /** Qualification cannot be forged with a DOM attribute or retained after mutation. */
 export const isVerifiedReaderPagination=node=>verifiedPagination.has(node)&&verifiedPagination.get(node)===hash(node.outerHTML);

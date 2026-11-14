@@ -22,6 +22,34 @@ related:
 
 # Approved book execution
 
+## 2026-11-14 flow, exchange and boundary pilot
+
+[Issue99](https://github.com/tiangong-lca/knowledge-base/issues/99) implements the
+user-authorized first comparison pilot. The [protocol](editorial/2026-11-14-flow-boundary-pilot.md)
+was committed before scientific editing from Main0496e14. The
+[comparison record](editorial/2026-11-14-flow-comparison-record.md) aligns five
+questions across selected ISO2006 original previews, CML2001, ILCD2010, Suh2004,
+ILCD Format1.1, the dated PEF rule and selected EF3.1 package members.
+
+The reviewed B08, “流、交换与边界”, contains22 new canonical paragraphs alongside
+all56 existing identities and33 unchanged native-case templates. Four formal
+sections retain their original addresses, with seven subordinate explanatory
+headings. The two fine reader pages and the flow/exchange concept definitions
+share the same records. Original-source comparisons distinguish actual inventory
+interface differences, conditional representation equivalence, data-instance and
+software mismatches, and zero-value information. Three authored algebraic checks
+are separate from the earlier native execution and from environmental validation.
+
+Independent comparison and source reviews have checked the five aligned questions
+and every new paragraph; limitations and corrections are recorded with their
+actual scope. Continuous reader assessment and publication engineering use the
+actual candidate outputs and a separately qualified scientific successor. Source,
+reader and actual-output acceptance, final production qualification, source PR
+and exact root integration remain separately recorded delivery steps. The earlier
+#95 language acceptance is not reused as scientific approval. Programme9's wider
+coverage, inaccessible standard portions, empirical validation and formal-edition
+duties remain open.
+
 ## 2026-11-14 comparative mission and writing design
 
 [Issue97](https://github.com/tiangong-lca/knowledge-base/issues/97) records the

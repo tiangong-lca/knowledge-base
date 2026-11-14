@@ -1,5 +1,5 @@
 import { blocksReaderText, inspectReviewedStaticTable, removeReviewedProse, validateReviewedStaticTable } from './reader-reviewed-static-table.mjs';
-import { currentBookFileMatches, currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
+import { currentBookFileMatches, currentBookLayout, currentBookMdxMatches, currentBookRecordMatches, currentFlowBoundary, currentFlowBoundaryRecordMatches } from './reader-current-expectations.mjs';
 import { createHash } from 'node:crypto';
 import { isDeepStrictEqual } from 'node:util';
 import original from '../config/readable-pedigree-original.json' with { type: 'json' };
@@ -103,7 +103,12 @@ export function validateReadablePedigreeResearch(register) {
       continue;
     }
     const { passages, artifacts, ...reading } = matches[0];
-    if (recordDigest(reading) !== fixed.sha256)
+    const predecessor = currentFlowBoundary?.pedigreeReadingMetadata?.find(row => row.id === fixed.id);
+    const retainedMetadata = predecessor?.before;
+    const carriesReviewedReading = retainedMetadata && retainedMetadata.id === fixed.id
+      && recordDigest(retainedMetadata) === fixed.sha256
+      && currentFlowBoundaryRecordMatches('readings', fixed.id, matches[0]);
+    if (recordDigest(reading) !== fixed.sha256 && !carriesReviewedReading)
       errors.push(`Readable pedigree selected reading metadata differs: ${fixed.id}`);
     for (const [kind, expected, actual] of [['passage', fixed.passages, passages], ['artifact', fixed.artifacts, artifacts]]) {
       for (const row of expected) {
