@@ -13,11 +13,25 @@ checkPaths:
   - "content/**"
   - "knowledge/**"
   - "releases/**"
-lastReviewedAt: 2026-11-13
-lastReviewedCommit: ccb24fea950f8c584c3215be6a74265482d659cc
+lastReviewedAt: 2026-11-14
+lastReviewedCommit: 0c8382182497e6110ac349c26f0139a21ae38008
 ---
 
 # Editorial and living review protocol
+
+## Concept-led comparative mission
+
+The user's 2026-11-14 clarification makes systematic comparison across LCA
+standards, guidance, scholarly methods, data and software central to the book.
+Apply [the comparative writing contract](editorial/concept-led-comparison.md)
+when selecting evidence, designing chapters and reviewing a claimed comparison.
+It owns the reusable question-dependent source-priority and proposition-alignment
+procedure. Keep normative applicability, evidence strength, implementation and
+empirical validity separate. Preserve legitimate differences and unresolved
+questions; institutional prestige or equal citation counts cannot resolve them.
+A language-only acceptance does not complete missing comparative research.
+The dated [gap analysis](editorial/2026-11-14-mission-gap-analysis.md) records the
+present diagnosis and the limited next pilot, not its completed implementation.
 
 ## Whole-book editorial priority
 

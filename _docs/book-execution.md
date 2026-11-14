@@ -22,6 +22,30 @@ related:
 
 # Approved book execution
 
+## 2026-11-14 comparative mission and writing design
+
+[Issue97](https://github.com/tiangong-lca/knowledge-base/issues/97) records the
+user's request to diagnose the gap between the manuscript and a concept/principle-led
+comparison of standards, guidance, scholarly work and software, and to preserve
+reusable writing requirements. The [dated diagnosis](editorial/2026-11-14-mission-gap-analysis.md)
+checks the approved a9ae501 baseline and subsequent requirements against actual
+Main0c838 source, the complete current title inventory and bounded substantive
+examples. It distinguishes execution drift, later style specification and the
+newly explicit priority of the comparative mission.
+
+The [comparative writing contract](editorial/concept-led-comparison.md) supplies
+question-dependent source selection, proposition/condition alignment, difference
+classification, consequence checks and separate research, prose and publication
+judgments. The goal and writing entry points use this shared procedure. No new
+scientific claim, numerical input, reader content or old acceptance is changed
+by this documentation task. Its delivery does not complete the proposed flow
+pilot or the full comparative rewrite. Programme9's seven wider duties stay open.
+
+Next research begins with the defined flow/exchange/boundary comparison pilot,
+using existing registered evidence and explicitly scoped missing originals,
+then extends by argument dependency. This is a recorded next problem, not a
+newly executed study or an implied purchase/access permission.
+
 ## 2026-11-13 Chinese expression revision and research inventory
 
 The user authorized the [Chinese expression task95](https://github.com/tiangong-lca/knowledge-base/issues/95):

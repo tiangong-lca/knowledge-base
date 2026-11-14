@@ -1,6 +1,6 @@
 ---
-lastReviewedAt: 2026-11-13
-lastReviewedCommit: ccb24fea950f8c584c3215be6a74265482d659cc
+lastReviewedAt: 2026-11-14
+lastReviewedCommit: 0c8382182497e6110ac349c26f0139a21ae38008
 title: Reader publication and layout contract
 docType: contract
 scope: repo
@@ -37,6 +37,12 @@ related:
 去向。普通段的迁移须指向读者可找到的具体新块或规范论述，不能只给一个碰巧存在
 的章节链接。来源支持、独立读者理解和真实网页／打印分别签收同一修订范围。
 私有预览只供审读，不能被称作已经发布；书目、注释及下载也须与实际正文属于同一版。
+
+2026-11-14用户将跨体系一致与分歧的系统刻画明确为全书根本出发点。后续章节遵守
+[比较写作契约](editorial/concept-led-comparison.md)：正文须让读者理解共同问题、
+可对齐的命题、条件、实质差异及后果；概念章不因中性题名或语言流畅就取得研究
+完成资格。历史与原典专题仍可具名，科学归属与旧引用身份保留。此次设计本身
+没有改动现有书稿，也没有续签其比较研究完整性。
 
 2026-11-13的[中文表达修订](editorial/2026-11-13-chinese-expression.md)先完成第一部样本及
 独立审读，再推广到全书。当前阅读采用自然、准确、平实的中文；短标题、词语变化和
