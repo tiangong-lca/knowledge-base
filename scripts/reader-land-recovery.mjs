@@ -11,7 +11,7 @@ import {
 export const landRecoveryId = 'land-recovery-111';
 export const landRecoveryChapter = '/docs/book/midpoint-endpoint-value-choices';
 /** @type {string|null} */
-export const landRecoveryUnitPin = null;
+export const landRecoveryUnitPin = 'b7ecb6ad3b07ef5a2c0b1c5989b1e3e548ca4d363fd6d056a29e736f0ca9909d';
 /** @type {string|null} */
 export const landRecoveryCapturePin = 'dc3ec1971222cb09836ecb72f8e741aa783add7eba6f927993664794506049fc';
 export const landRecoverySource = Object.freeze({
