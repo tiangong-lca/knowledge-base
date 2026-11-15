@@ -22,6 +22,39 @@ related:
 
 # Approved book execution
 
+## 2026-11-15 continuous comparative revision GOAL
+
+The user endorsed the pilot's writing and reasoning and explicitly requested an
+active GOAL to apply its retrospective corrections to every future modification
+and addition, then continue the earlier chapters and necessary new content.
+The application GOAL is active without an invented token/time budget. It retains
+the existing approved research, writing and normal reviewed delivery authority;
+no repeated outline permission is required. Programme9 remains the durable
+coordination record and its broader pending acceptance remains open.
+
+[Issue101](https://github.com/tiangong-lca/knowledge-base/issues/101) adopts the
+reusable lessons in the existing comparison/writing/editorial entry points and
+repairs stale startup instructions. The [current continuation inventory](editorial/2026-11-15-comparative-continuation.md)
+records all current book units, companion pages and retained coverage duties,
+its actual audit limits and dependency-based batches. It is not new scientific
+acceptance of every chapter. The first investigation connects functional
+requirements, process coordinates and model demand; it must add a genuine
+argument beyond the already published column-rescaling and target-loss examples.
+[Issue102](https://github.com/tiangong-lca/knowledge-base/issues/102) is the first
+bounded scientific unit: process representations that preserve or lose independent
+service-demand constraints. Its original-source investigation is separate from
+this rule-adoption delivery; public changes will start from freshly qualified
+Main after101. Each subsequent scientific unit needs its own create/start, original evidence,
+actual manuscript/reviews and exact source/root delivery.
+
+The pilot itself is complete: source Main `0fd2c7bea8733f426c46fff1dd175119a257b13a`
+(PR100), root Main `cb13d111d2c41ba8496c566f53fbac98094976a0` (PR2379), qualified
+live output and both ordinary completion/source-handoff receipts. No pending
+pilot task is inferred from the historical design sections below. Its remaining
+scientific unknowns remain in the existing records. New knowledge, corrections
+or affected reading responsibilities may reopen the specific question; a style
+preference or a new chapter's existence does not reopen all prior work.
+
 ## 2026-11-14 flow, exchange and boundary pilot
 
 [Issue99](https://github.com/tiangong-lca/knowledge-base/issues/99) implements the
@@ -69,10 +102,10 @@ scientific claim, numerical input, reader content or old acceptance is changed
 by this documentation task. Its delivery does not complete the proposed flow
 pilot or the full comparative rewrite. Programme9's seven wider duties stay open.
 
-Next research begins with the defined flow/exchange/boundary comparison pilot,
-using existing registered evidence and explicitly scoped missing originals,
-then extends by argument dependency. This is a recorded next problem, not a
-newly executed study or an implied purchase/access permission.
+At the time of Issue97, the next proposed research was the flow/exchange/boundary
+pilot. It was subsequently delivered through Issue99, as recorded above. This
+historical design grants neither purchase/access permission nor acceptance of
+any later scientific unit; use the current continuation section when resuming.
 
 ## 2026-11-13 Chinese expression revision and research inventory
 

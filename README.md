@@ -14,11 +14,20 @@ checkPaths:
   - "package.json"
   - "app/**"
   - "scripts/**"
-lastReviewedAt: 2026-11-14
-lastReviewedCommit: 54ad9fdbb9d1f948977888c412bef36ae2e33898
+lastReviewedAt: 2026-11-15
+lastReviewedCommit: 0fd2c7bea8733f426c46fff1dd175119a257b13a
 ---
 
 # LCA Living Knowledge Base and Review
+
+The user endorsed the flow pilot on 2026-11-15 and requested a continuing GOAL
+for all subsequent chapter revisions and additions. Apply the
+[comparison contract](_docs/editorial/concept-led-comparison.md) and
+[writing guide](_docs/editorial/readable-writing-and-teaching.md); use the
+[current continuation inventory](_docs/editorial/2026-11-15-comparative-continuation.md)
+and execution ledger to choose genuine new work. The completed pilot and earlier
+structural/language deliveries are not a reason to restart those tasks or to
+claim the whole book's comparative research is finished.
 
 [Flow and boundary pilot #99](https://github.com/tiangong-lca/knowledge-base/issues/99)
 compares selected original standards, guidance, theoretical work, data formats
@@ -130,7 +139,7 @@ Code is licensed under [MIT](LICENSE). Original narrative and knowledge records 
 
 ## Approved book programme
 
-The [LCA treatise design and AI goal](_docs/lca-book-goal.md) was approved on 2026-11-04 at baseline a9ae501. [Execution record](_docs/book-execution.md) preserves the authority to research, revise arguments from evidence and expand prose without repeated outline approval. The prologue, eight research domains and twelve appendix responsibilities remain the scope; a wave is not the completed book. The 2026-11-06 amendment prioritizes an authored monograph with one argument across the book, single-volume parts, complete content-preserving reorganization and independent website/book structures. After the earlier pause and bounded amendment, the user explicitly resumed execution on 2026-11-06. The first editorial deliverable is the whole-book argument, proposed TOC, alternatives, migration map, risks and self-checks, followed by actual prose and publication restructuring.
+The [LCA treatise design and AI goal](_docs/lca-book-goal.md) was approved on 2026-11-04 at baseline a9ae501. [Execution record](_docs/book-execution.md) preserves the authority to research, revise arguments from evidence and expand prose without repeated outline approval. The prologue, eight research domains and twelve appendix responsibilities remain the scope; a wave is not the completed book. The 2026-11-06 amendment prioritizes an authored monograph with one argument across the book, single-volume parts, complete content-preserving reorganization and independent website/book structures. After the earlier pause and bounded amendment, the user explicitly resumed execution on 2026-11-06. The initial editorial deliverable was the whole-book argument, proposed TOC, alternatives, migration map, risks and self-checks; it and later bounded prose/publication revisions have been delivered. Current work follows the 2026-11-15 continuing comparative GOAL and execution ledger.
 
 Read `/docs/book/` for published chapters and `/research/` for the reader bibliography and citation locations. Discovery queries, selected-passage readings, artifact hashes, gaps and evidence-driven revisions remain in `knowledge/research/` and development Markdown; downloaded originals remain outside Git. Discovery records do not claim whole-work reading. `/downloads/bibliography.json` exports the reader bibliography. The retained `/downloads/research.json` URL now returns the same schema2 bibliography, not the former research-workbench schema; execution records are retained in development Markdown.
 
