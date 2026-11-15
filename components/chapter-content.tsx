@@ -1,6 +1,7 @@
+import { circularFootprintHistoryControls, circularFootprintOrdinaryId, circularFootprintSource } from '@/scripts/reader-circular-footprint.mjs';
 import { loadShiftHistoryControls, loadShiftOrdinaryId, loadShiftSource } from '@/scripts/reader-load-shift.mjs';
 import { substitutionRulesHistoryControls, substitutionRulesOrdinaryId, substitutionRulesSource } from '@/scripts/reader-substitution-rules.mjs';
-import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift } from '@/scripts/reader-current-expectations.mjs';
+import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint } from '@/scripts/reader-current-expectations.mjs';
 import { flowBoundaryHistoryControls, flowBoundaryHistoryTargets, flowBoundaryOrdinaryTargets, flowBoundaryOrdinaryId } from '@/scripts/reader-flow-boundary.mjs';
 import { serviceConstraintsHistoryControls, serviceConstraintsOrdinaryId, serviceConstraintsSource } from '@/scripts/reader-service-constraints.mjs';
 import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
@@ -34,22 +35,25 @@ const histories = [
   { controls: serviceConstraintsHistoryControls(currentServiceConstraints), edition: serviceConstraintsSource, attribute: 'service-constraints' },
   { controls: substitutionRulesHistoryControls(currentSubstitutionRules), edition: substitutionRulesSource, attribute: 'substitution-rules' },
   { controls: loadShiftHistoryControls(currentLoadShift), edition: loadShiftSource, attribute: 'load-shift' },
+  { controls: circularFootprintHistoryControls(currentCircularFootprint), edition: circularFootprintSource, attribute: 'circular-footprint' },
 ];
 
 function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
   return (currentFlowBoundary && flowBoundaryOrdinaryId(route, print, index))
     || serviceConstraintsOrdinaryId(currentServiceConstraints, route, print, index)
     || substitutionRulesOrdinaryId(currentSubstitutionRules, route, print, index)
-    || loadShiftOrdinaryId(currentLoadShift, route, print, index);
+    || loadShiftOrdinaryId(currentLoadShift, route, print, index)
+    || circularFootprintOrdinaryId(currentCircularFootprint, route, print, index);
 }
 
-// Leave the B12 native fragment below the screen's sticky site header.
-const loadShiftScroll = { scrollMarginTop: '7rem' };
+// Leave versioned B12 and B13 native fragments below the screen's sticky site header.
+const scientificHistoryScroll = { scrollMarginTop: '7rem' };
 
 export function currentReaderOrdinaryAttributes(route: string, print: boolean, index: number) {
   const id = currentReaderOrdinaryId(route, print, index);
-  return id && id === loadShiftOrdinaryId(currentLoadShift, route, print, index)
-    ? { id, style: loadShiftScroll }
+  return id && (id === loadShiftOrdinaryId(currentLoadShift, route, print, index)
+      || id === circularFootprintOrdinaryId(currentCircularFootprint, route, print, index))
+    ? { id, style: scientificHistoryScroll }
     : { id };
 }
 
@@ -126,7 +130,7 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
   }
   const tableId = loadShiftOrdinaryId(currentLoadShift, page.url.replace(/\/$/, ''), print, 'table');
   function ReaderTable(props: HTMLAttributes<HTMLTableElement>) {
-    return createElement(defaults.table ?? 'table', { ...props, id: tableId, style: { ...props.style, ...loadShiftScroll } });
+    return createElement(defaults.table ?? 'table', { ...props, id: tableId, style: { ...props.style, ...scientificHistoryScroll } });
   }
   const headings = Object.fromEntries(([1, 2, 3, 4, 5, 6] as const).map(level => {
     const name = `h${level}` as const;

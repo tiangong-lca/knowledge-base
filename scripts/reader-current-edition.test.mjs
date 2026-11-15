@@ -169,17 +169,19 @@ test('the actual adopted source is independently qualified and a changed reviewe
   const { fileURLToPath } = await import('node:url');
   const { readFile } = await import('node:fs/promises');
   const { validateRepository } = await import('./validate.mjs');
-  const { validateReadableBookCurrent, validateServiceConstraintsReviewSources, validateSubstitutionRulesReviewSources, validateLoadShiftReviewSources } = await import('./reader-current-edition-files.mjs');
+  const { validateReadableBookCurrent, validateServiceConstraintsReviewSources, validateSubstitutionRulesReviewSources, validateLoadShiftReviewSources, validateCircularFootprintReviewSources } = await import('./reader-current-edition-files.mjs');
   const root = fileURLToPath(new URL('../', import.meta.url));
   const read = async path => JSON.parse(await readFile(new URL('../' + path, import.meta.url), 'utf8'));
   const serviceConstraints = await read('config/reader-service-constraints.json');
   const substitutionRules = await read('config/reader-substitution-rules.json');
   const loadShift = await read('config/reader-load-shift.json');
+  const footprint = await read('config/reader-circular-footprint.json');
+  const privateFootprint = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1' && footprint.status === 'preview';
   const privateLoadShift = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1' && loadShift.status === 'preview';
   const privateService = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1' && serviceConstraints.status === 'preview';
   const privateSubstitution = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1' && substitutionRules.status === 'preview';
-  if (privateService || privateSubstitution || privateLoadShift) {
-    const name = privateLoadShift ? 'Load shift' : privateService ? 'Service constraints' : 'Substitution rules';
+  if (privateService || privateSubstitution || privateLoadShift || privateFootprint) {
+    const name = privateFootprint ? 'Circular footprint' : privateLoadShift ? 'Load shift' : privateService ? 'Service constraints' : 'Substitution rules';
     assert((await validateRepository(root)).includes(`${name} is not independently accepted`));
   } else assert.deepEqual(await validateRepository(root), []);
   const [acceptance, copyedit, catalog, readings, literature] = await Promise.all([
@@ -187,9 +189,9 @@ test('the actual adopted source is independently qualified and a changed reviewe
     read('knowledge/research/readings.json'), read('knowledge/research/literature-map.json'),
   ]);
   assert.equal(acceptance.status, 'reviewed');
-  const qualify = privateLoadShift ? validateLoadShiftReviewSources : privateSubstitution ? validateSubstitutionRulesReviewSources
+  const qualify = privateFootprint ? validateCircularFootprintReviewSources : privateLoadShift ? validateLoadShiftReviewSources : privateSubstitution ? validateSubstitutionRulesReviewSources
     : privateService ? validateServiceConstraintsReviewSources : validateReadableBookCurrent;
-  if (privateService || privateSubstitution || privateLoadShift) assert.deepEqual((await qualify(root, catalog, readings, literature)).errors, []);
+  if (privateService || privateSubstitution || privateLoadShift || privateFootprint) assert.deepEqual((await qualify(root, catalog, readings, literature)).errors, []);
   const currentChanges = copyedit.status === 'reviewed' ? copyedit.unit.changes : acceptance.units.flatMap(unit => unit.changes);
   const changed = currentChanges
     .find(row => row.kind === 'record' && row.key.startsWith('claims:') && row.from !== null);
@@ -202,6 +204,9 @@ test('the actual adopted source is independently qualified and a changed reviewe
     ? 'Reader copyedit successor differs from actual source'
     : 'stale predecessor, missing successor or mismatched result';
   await assert.rejects(qualify(root, catalog, readings, literature), error => {
+    if (privateFootprint || footprint.status === 'reviewed') {
+      return error.message === 'Circular footprint did not recover the independently observed raw b7d8cd1 state';
+    }
     if (privateLoadShift || loadShift.status === 'reviewed') {
       return error.message === 'Load shift did not recover the independently observed raw 11e2978 state';
     }

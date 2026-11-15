@@ -1,3 +1,4 @@
+import { selectCircularFootprint, prepareCircularFootprintSource, effectiveCircularFootprint, verifyCircularFootprintReceipts } from './reader-circular-footprint.mjs';
 import { selectLoadShift, readLoadShiftCaseFiles, prepareLoadShiftSource, effectiveLoadShift, verifyLoadShiftReceipts } from './reader-load-shift.mjs';
 import { selectSubstitutionRules, prepareSubstitutionRulesSource, effectiveSubstitutionRules, verifySubstitutionRulesReceipts } from './reader-substitution-rules.mjs';
 import { loadCasePublications } from './case-publication.mjs';
@@ -42,6 +43,9 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const serviceConstraints = selectServiceConstraints(serviceConfig, undefined, preview === 'service');
   const substitutionConfig = await readConfig('reader-substitution-rules.json');
   const substitutionRules = selectSubstitutionRules(substitutionConfig, undefined, preview === 'substitution');
+  const circularConfig = await readConfig('reader-circular-footprint.json');
+  const circularFootprint = selectCircularFootprint(circularConfig, undefined, preview === 'circular-footprint');
+  if (preview === 'circular-footprint' && circularConfig.status !== 'preview') throw new Error('Circular footprint review requires a private preview state');
   const loadShiftConfig = await readConfig('reader-load-shift.json');
   const loadShift = selectLoadShift(loadShiftConfig, undefined, preview === 'load-shift');
   if (preview === 'load-shift' && loadShiftConfig.status !== 'preview') throw new Error('Load shift review requires a private preview state');
@@ -55,9 +59,10 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (serviceConstraints && !flowBoundary) throw new Error('Service constraints requires the accepted #99 generation');
   if (substitutionRules && !serviceConstraints) throw new Error('Substitution rules requires the accepted #102 generation');
   if (loadShift && !substitutionRules) throw new Error('Load shift requires the accepted #105 generation');
+  if (circularFootprint && !loadShift) throw new Error('Circular footprint requires the accepted #107 generation');
   for (const [path, bytes] of await readLoadShiftCaseFiles(root, loadShift)) files.set(path, bytes);
   for (const [path, bytes] of await readServiceConstraintsFiles(root, serviceConstraints)) files.set(path, bytes);
-  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift].filter(Boolean)];
+  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint].filter(Boolean)];
   const realRoot = await realpath(root);
   const reviewFiles = new Set((reviewUnits ?? []).flatMap(unit =>
     (unit.reviewEvidence ?? []).flatMap(row => [row.reportFile, row.artifactFile])));
@@ -72,7 +77,9 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const input = { catalog, readings, literature, files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
-  const shift = loadShift && prepareLoadShiftSource(loadShift, input, actual, structure);
+  const footprint = circularFootprint && prepareCircularFootprintSource(circularFootprint, input, actual, structure);
+  const shiftInput = footprint ? { ...footprint.previousRecords, files: footprint.files } : input;
+  const shift = loadShift && prepareLoadShiftSource(loadShift, shiftInput, footprint?.previous ?? actual, footprint?.structure ?? structure);
   shift?.verifyCurrentState();
   const substitutionInput = shift ? { ...shift.previousRecords, files: shift.files } : input;
   const substitution = substitutionRules && prepareSubstitutionRulesSource(substitutionRules, substitutionInput,
@@ -95,8 +102,13 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   }
   if (loadShift && preview !== 'load-shift') {
     const [cases, { readerPublicDownloads }] = await Promise.all([loadCasePublications(root), import('./reader-current-output.mjs')]);
-    if (!verifyLoadShiftReceipts(loadShift, artifacts, readerPublicDownloads(catalog, literature, readings), cases))
+    if (!verifyLoadShiftReceipts(loadShift, artifacts, readerPublicDownloads(shiftInput.catalog, shiftInput.literature, shiftInput.readings), cases))
       throw new Error('Load shift lacks exact independent source, reader, and output evidence');
+  }
+  if (circularFootprint && preview !== 'circular-footprint') {
+    const { readerPublicDownloads } = await import('./reader-current-output.mjs');
+    if (!verifyCircularFootprintReceipts(circularFootprint, artifacts, readerPublicDownloads(catalog, literature, readings)))
+      throw new Error('Circular footprint lacks exact independent source, reader, and output evidence');
   }
   const service = serviceConstraints && prepareServiceConstraintsSource(serviceConstraints, substitution?.previous ?? actual,
     substitution?.structure ?? structure, { ...previousRecords, files: substitutionInput.files });
@@ -123,7 +135,8 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const qualifiedFlow = effectiveFlowBoundary(effectiveReaderCopyedit(qualified, unit), flowBoundary, flow?.affectedClaimIds ?? []);
   const qualifiedService = effectiveServiceConstraints(qualifiedFlow, serviceConstraints, service?.affectedClaimIds);
   const qualifiedSubstitution = effectiveSubstitutionRules(qualifiedService, substitutionRules, substitution?.affectedClaimIds);
-  return effectiveLoadShift(qualifiedSubstitution, loadShift, shift?.affectedClaimIds);
+  const qualifiedShift = effectiveLoadShift(qualifiedSubstitution, loadShift, shift?.affectedClaimIds);
+  return effectiveCircularFootprint(qualifiedShift, circularFootprint, footprint?.affectedClaimIds);
 }
 
 export function validateReadableBookCurrent(root, catalog, readings, literature) {
@@ -145,4 +158,10 @@ export function validateSubstitutionRulesReviewSources(root, catalog, readings, 
 export function validateLoadShiftReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1') throw new Error('Load shift review requires the explicit private preview');
   return qualifyCurrentReaderSources(root, catalog, readings, literature, 'load-shift');
+}
+
+export function validateCircularFootprintReviewSources(root, catalog, readings, literature) {
+  if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
+    throw new Error('Circular footprint review requires the explicit private preview');
+  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'circular-footprint');
 }
