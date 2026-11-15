@@ -1,0 +1,2548 @@
+{
+  "schemaVersion": 1,
+  "kind": "output",
+  "unit": "load-shift-107",
+  "subjectSha256": "c26fc5bc8329069415e3ff98a217e01c268508eab0c687d694f2d9b0bb8e1b3e",
+  "date": "2026-11-15",
+  "scope": [
+    "scripts/case-publication.mjs",
+    "content/docs/book/electricity-service-and-response.mdx",
+    "knowledge/cases/finite-load-shift-v1.publication.json",
+    "knowledge/cases/finite-load-shift-v1.json",
+    "scripts/finite-load-shift-case.mjs",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:order:sources",
+    "researchMetadata:order:readings",
+    "researchMetadata:order:gaps",
+    "researchMetadata:order:revisions",
+    "researchMetadata:order:literature",
+    "researchMetadata:order:queries",
+    "researchMetadata:public-projection",
+    "claims:cl-shift107-complete-action",
+    "claims:cl-shift107-observed-proxy",
+    "claims:cl-shift107-screening-and-rate",
+    "claims:cl-shift107-model-range",
+    "claims:cl-shift107-joint-direction",
+    "claims:cl-shift107-service",
+    "claims:cl-shift107-supply",
+    "claims:cl-shift107-small",
+    "claims:cl-shift107-large",
+    "claims:cl-shift107-control",
+    "claims:cl-shift107-comparison-judgment",
+    "claims:cl-shift107-signal-comparison",
+    "evidence:ev-shift107-wind-design",
+    "evidence:ev-shift107-signal-screening",
+    "evidence:ev-shift107-study-limits",
+    "evidence:ev-shift107-model-range",
+    "evidence:ev-shift107-model-limits",
+    "sources:src-shift107-steinsultz-2024",
+    "sources:src-shift107-nilges-2025",
+    "readings:rd-shift107-steinsultz-2024",
+    "readings:rd-shift107-nilges-2025",
+    "gaps:gap-shift107-empirical-paired-intervention",
+    "revisions:rev-finite-load-shift-107",
+    "literature:work-shift107-steinsultz-2024",
+    "literature:work-shift107-nilges-2025",
+    "queries:q-shift107-model-and-field-20261115"
+  ],
+  "observed": "Completed scoped agent review of actual source, reader and preserved physical output evidence; no human or empirical certification.",
+  "observations": {
+    "outputs": [
+      {
+        "path": "/docs/book/market-boundaries-and-response",
+        "route": "/docs/book/market-boundaries-and-response",
+        "from": "e9c0ea46499e6687e263ae30bdff664e825f1a3dce7d5f08fe38c235eef7a628",
+        "sha256": "52873be17418f25ca6addeb7031c43975528b81c21d05306b1d729e314e9468f",
+        "rationale": "核对当代前提注号、上下游说明与网站导航。"
+      },
+      {
+        "path": "/docs/book/electricity-service-and-response",
+        "route": "/docs/book/electricity-service-and-response",
+        "from": "819c7e6519c61eb7a9c1f00a1edc8738db484b842496cc7921b5d52bfdc5ab91",
+        "sha256": "95fa790305bed48bc1e6362bdf2465c208d8fa4a69e97588c375966f917c72b0",
+        "rationale": "实际 B12 规范正文、真实章节注释、旧表和原范围，另有版本化静态 case 下载。"
+      },
+      {
+        "path": "/docs/book/recycling-chains-and-accounting",
+        "route": "/docs/book/recycling-chains-and-accounting",
+        "from": "946969a1b293594e77bb8cbfc39929766c5e49d1e7cfd6fe9becf5fd682915a8",
+        "sha256": "adfac9d7c757fa8f8611032ee7524811341e703ad92ece2efac80cc02154ac98",
+        "rationale": "核对当代前提注号、上下游说明与网站导航。"
+      },
+      {
+        "path": "/docs/book/climate-response-and-metrics",
+        "route": "/docs/book/climate-response-and-metrics",
+        "from": "da2176fd5ef2b56cf05ec1ddff466dcd8926c05f0a74af3ac6f4312dfdf2e4d5",
+        "sha256": "958d929ecba91b7fc9e4f7009d35e4729a68f98ec349c82158428e7b3dcc7e0e",
+        "rationale": "核对当代前提注号、上下游说明与网站导航。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/electricity-service-and-response",
+        "from": "f5c50d6291b2f2938c0df4d4f34262e9e98f500462e7f6156be5b54dd03bf670",
+        "sha256": "5a79646d8e702ac67bb5890c4eb0538cb7db4b84eb7ee58a01b3e4bae828edc0",
+        "rationale": "实际 B12 规范正文、真实章节注释、旧表和原范围，另有版本化静态 case 下载。"
+      },
+      {
+        "path": "/print",
+        "route": "book-climate-equivalence",
+        "from": "0c950352accbe70d77f6f2a92a537931262973b7c3cb2e89ebe1bb0c5c627054",
+        "sha256": "a5ff4f13fd2901d0e81944db2e0543b420da2c4244d8930692b2ae94c1254447",
+        "rationale": "核对当代前提注号、上下游说明与网站导航。"
+      }
+    ],
+    "publicArtifacts": [
+      {
+        "path": "claims/index.html",
+        "from": "3939c2ed45e1f9b459b7e128759afcc01955e78d35f57359db6670524fb6043a",
+        "sha256": "a44c85071e41b90bf4c8f361508ae0910d448f9a111a2db92939437ab64806ed",
+        "rationale": "核对实际当代公开内容与独立真实前态对应。"
+      },
+      {
+        "path": "sources/index.html",
+        "from": "5123abf0920da1acfd6bca502277d03c7d701e52b6b92fe996e0dcec02c827f6",
+        "sha256": "03f08658cd01c7ceae74fabb054a8fadb0bf93e000868ca5cb00828ad93ebecd",
+        "rationale": "核对实际当代公开内容与独立真实前态对应。"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "from": "b1e25933e8db13af3ef4a20f2ccf2128ec7e826ffe4d56581327892270f0d07a",
+        "sha256": "6f316f96f7a881fde6d114183ce9b433b87c7dd8f7a1b66915906ddbb159a03f",
+        "rationale": "核对实际当代公开内容与独立真实前态对应。"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "from": "bd0acf0382402abdd5ece242b30b2e00d13178684eae6a3a53f1a851f97a8179",
+        "sha256": "1da17367cf8bfdb687f8a14a15a3961e8376c08709c36c9366f1ffc231df59ef",
+        "rationale": "核对实际当代公开内容与独立真实前态对应。"
+      },
+      {
+        "path": "research/index.html",
+        "from": "dda215d4ff5bbb8008fce3759482bb6bef38b4347f9c542323a8ea83019a824c",
+        "sha256": "c6b909e71a87d4effd73cd32485533d6356fb3725dbcf92cca35a825e6929469",
+        "rationale": "核对实际当代公开内容与独立真实前态对应。"
+      },
+      {
+        "path": "downloads/bibliography.json",
+        "from": "032ea0118cba2a38f7cc2315fa9a5df0728923045a4b646cf99964035323e53b",
+        "sha256": "4121740fcb6c14e4edaed9a7541a8059bea9c5e300936d7b1c03e70a187fa44d",
+        "rationale": "核对实际当代公开内容与独立真实前态对应。"
+      },
+      {
+        "path": "downloads/research.json",
+        "from": "032ea0118cba2a38f7cc2315fa9a5df0728923045a4b646cf99964035323e53b",
+        "sha256": "4121740fcb6c14e4edaed9a7541a8059bea9c5e300936d7b1c03e70a187fa44d",
+        "rationale": "核对实际当代公开内容与独立真实前态对应。"
+      },
+      {
+        "path": "coverage/index.html",
+        "from": "52b248f884e6d2d35364911427fd5814b6ec26de63a0840890c79658f877d379",
+        "sha256": "0bcb0535119a5d091f1c10d19b5d019de57e0d7511c399fb540d806159e13e7a",
+        "rationale": "核对实际当代公开内容与独立真实前态对应。"
+      }
+    ],
+    "addresses": {
+      "/docs/book/electricity-service-and-response#nd-page": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "chapter",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-opening",
+          "cl-power-service",
+          "cl-power-coordinates",
+          "cl-power-voltage-path",
+          "cl-power-grid-assets",
+          "cl-power-loss-definition",
+          "cl-power-norway-loss",
+          "cl-power-segment-denominators",
+          "cl-power-database-voltage",
+          "cl-power-loss-proxy",
+          "cl-power-egrid-scope",
+          "cl-power-egrid-adjustments",
+          "cl-power-egrid-rate",
+          "cl-power-egrid-revision",
+          "cl-power-egrid-loss",
+          "cl-power-egrid-loss-conflict",
+          "cl-power-eia-balance",
+          "cl-power-eia-hours",
+          "cl-power-eia-quality",
+          "cl-power-eia-clock",
+          "cl-power-region-membership",
+          "cl-power-eia-emissions",
+          "cl-power-average-response",
+          "cl-power-nonbaseload",
+          "cl-power-historical-generation",
+          "cl-power-historical-consumption",
+          "cl-power-empirical-limits",
+          "cl-power-price-versus-energy",
+          "cl-power-native-model",
+          "cl-power-native-coordinate",
+          "cl-power-native-scenario",
+          "cl-power-native-loss",
+          "cl-power-native-loss-document",
+          "cl-power-native-interpolation",
+          "cl-power-native-output",
+          "cl-power-native-ratios",
+          "cl-power-native-check-meaning",
+          "cl-power-native-two-hours",
+          "cl-power-native-pollutants",
+          "cl-power-native-application",
+          "cl-shift107-complete-action",
+          "cl-shift107-observed-proxy",
+          "cl-shift107-screening-and-rate",
+          "cl-shift107-signal-comparison",
+          "cl-shift107-model-range",
+          "cl-shift107-joint-direction",
+          "cl-shift107-service",
+          "cl-shift107-supply",
+          "cl-shift107-small",
+          "cl-shift107-large",
+          "cl-shift107-control",
+          "cl-shift107-comparison-judgment",
+          "cl-power-future-question",
+          "cl-power-future-system",
+          "cl-power-future-perturbation",
+          "cl-power-future-postprocessing",
+          "cl-power-future-storage-policy",
+          "cl-power-future-balance",
+          "cl-power-future-load-parts",
+          "cl-power-future-distribution",
+          "cl-power-future-direct-rates",
+          "cl-power-future-three-questions",
+          "cl-power-future-gases",
+          "cl-power-future-gases-total",
+          "cl-power-future-scenario",
+          "cl-power-future-time",
+          "cl-power-future-formula",
+          "cl-power-alternative-lca",
+          "cl-power-validation-objects",
+          "cl-power-connection"
+        ],
+        "ordinary": [
+          "2cef4710bc89fbc4d788f730e7f6b3342a49fc35a836131823ed780960e4f7ea",
+          "eb7fd7e79f9c89601a935bbf2dcf3f77eca9896f9fe78affd8bc49dec0270bff",
+          "5cf77d412fe33b33adcc972313bc2a4d73fee67d99561014c70efa85f4bd4aa1",
+          "2878633cc16bdbb0524cebcfcd013b9299f7130c589d3130a8d1de2a00c25f9a",
+          "57f216e24e775d16f32b520e76ec34184b98149c697ccd5b7ff656f4f0583bf3"
+        ],
+        "bindings": {
+          "links": [
+            [],
+            [],
+            [],
+            [],
+            [
+              "https://github.com/tiangong-lca/knowledge-base/blob/main/_docs/reproduction/electricity/README-electricity-native.md"
+            ]
+          ],
+          "tables": [
+            {
+              "header": [
+                [
+                  {},
+                  {}
+                ]
+              ],
+              "body": [
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "eGRID2023 修订 2"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "区域电厂的直接 CO₂ 年平均排放率，以年净发电量为分母。"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "EIA-930（2023）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "逐小时记录发电、需求与区际交换的平均功率（MW），乘一小时得到电量（MWh）；时标为小时结束。"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "AVERT 4.3.0"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "在 2023 年 TE 的既有机组关系下，改变终端用电时，模型估计怎样的运行响应。"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "Cambium 2024"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "需求扰动允许运行和容量一起变化时，模型估计怎样的长期响应。本例取 2025 模拟年。"
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "/docs/book/electricity-service-and-response#main-content": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "reading-title",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-opening",
+          "cl-power-service",
+          "cl-power-coordinates",
+          "cl-power-voltage-path",
+          "cl-power-grid-assets",
+          "cl-power-loss-definition",
+          "cl-power-norway-loss",
+          "cl-power-segment-denominators",
+          "cl-power-database-voltage",
+          "cl-power-loss-proxy",
+          "cl-power-egrid-scope",
+          "cl-power-egrid-adjustments",
+          "cl-power-egrid-rate",
+          "cl-power-egrid-revision",
+          "cl-power-egrid-loss",
+          "cl-power-egrid-loss-conflict",
+          "cl-power-eia-balance",
+          "cl-power-eia-hours",
+          "cl-power-eia-quality",
+          "cl-power-eia-clock",
+          "cl-power-region-membership",
+          "cl-power-eia-emissions",
+          "cl-power-average-response",
+          "cl-power-nonbaseload",
+          "cl-power-historical-generation",
+          "cl-power-historical-consumption",
+          "cl-power-empirical-limits",
+          "cl-power-price-versus-energy",
+          "cl-power-native-model",
+          "cl-power-native-coordinate",
+          "cl-power-native-scenario",
+          "cl-power-native-loss",
+          "cl-power-native-loss-document",
+          "cl-power-native-interpolation",
+          "cl-power-native-output",
+          "cl-power-native-ratios",
+          "cl-power-native-check-meaning",
+          "cl-power-native-two-hours",
+          "cl-power-native-pollutants",
+          "cl-power-native-application",
+          "cl-shift107-complete-action",
+          "cl-shift107-observed-proxy",
+          "cl-shift107-screening-and-rate",
+          "cl-shift107-signal-comparison",
+          "cl-shift107-model-range",
+          "cl-shift107-joint-direction",
+          "cl-shift107-service",
+          "cl-shift107-supply",
+          "cl-shift107-small",
+          "cl-shift107-large",
+          "cl-shift107-control",
+          "cl-shift107-comparison-judgment",
+          "cl-power-future-question",
+          "cl-power-future-system",
+          "cl-power-future-perturbation",
+          "cl-power-future-postprocessing",
+          "cl-power-future-storage-policy",
+          "cl-power-future-balance",
+          "cl-power-future-load-parts",
+          "cl-power-future-distribution",
+          "cl-power-future-direct-rates",
+          "cl-power-future-three-questions",
+          "cl-power-future-gases",
+          "cl-power-future-gases-total",
+          "cl-power-future-scenario",
+          "cl-power-future-time",
+          "cl-power-future-formula",
+          "cl-power-alternative-lca",
+          "cl-power-validation-objects",
+          "cl-power-connection"
+        ],
+        "ordinary": [
+          "2cef4710bc89fbc4d788f730e7f6b3342a49fc35a836131823ed780960e4f7ea",
+          "eb7fd7e79f9c89601a935bbf2dcf3f77eca9896f9fe78affd8bc49dec0270bff",
+          "5cf77d412fe33b33adcc972313bc2a4d73fee67d99561014c70efa85f4bd4aa1",
+          "2878633cc16bdbb0524cebcfcd013b9299f7130c589d3130a8d1de2a00c25f9a",
+          "57f216e24e775d16f32b520e76ec34184b98149c697ccd5b7ff656f4f0583bf3"
+        ],
+        "chapter": "nd-page"
+      },
+      "/docs/book/electricity-service-and-response#同一度电先问在哪里交付": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "heading",
+        "title": "交付链条",
+        "claimIds": [
+          "cl-power-opening",
+          "cl-power-service",
+          "cl-power-coordinates",
+          "cl-power-voltage-path",
+          "cl-power-grid-assets",
+          "cl-power-loss-definition",
+          "cl-power-norway-loss",
+          "cl-power-segment-denominators",
+          "cl-power-database-voltage",
+          "cl-power-loss-proxy"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#交付点怎样带出输配活动": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [
+          "cl-power-voltage-path",
+          "cl-power-grid-assets",
+          "cl-power-loss-definition",
+          "cl-power-norway-loss",
+          "cl-power-segment-denominators",
+          "cl-power-database-voltage",
+          "cl-power-loss-proxy"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#年度发电账包含什么": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "heading",
+        "title": "电量账户",
+        "claimIds": [
+          "cl-power-egrid-scope",
+          "cl-power-egrid-adjustments",
+          "cl-power-egrid-rate",
+          "cl-power-egrid-revision",
+          "cl-power-egrid-loss",
+          "cl-power-egrid-loss-conflict",
+          "cl-power-eia-balance",
+          "cl-power-eia-hours",
+          "cl-power-eia-quality",
+          "cl-power-eia-clock",
+          "cl-power-region-membership",
+          "cl-power-eia-emissions"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#小时平衡怎样连接发电与需求": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [
+          "cl-power-eia-balance",
+          "cl-power-eia-hours",
+          "cl-power-eia-quality",
+          "cl-power-eia-clock",
+          "cl-power-region-membership",
+          "cl-power-eia-emissions"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#平均与响应为何不是同一个估计": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "heading",
+        "title": "运行响应",
+        "claimIds": [
+          "cl-power-average-response",
+          "cl-power-nonbaseload",
+          "cl-power-historical-generation",
+          "cl-power-historical-consumption",
+          "cl-power-empirical-limits",
+          "cl-power-price-versus-energy",
+          "cl-power-native-model",
+          "cl-power-native-coordinate",
+          "cl-power-native-scenario",
+          "cl-power-native-loss",
+          "cl-power-native-loss-document",
+          "cl-power-native-interpolation",
+          "cl-power-native-output",
+          "cl-power-native-ratios",
+          "cl-power-native-check-meaning",
+          "cl-power-native-two-hours",
+          "cl-power-native-pollutants",
+          "cl-power-native-application",
+          "cl-shift107-complete-action",
+          "cl-shift107-observed-proxy",
+          "cl-shift107-screening-and-rate",
+          "cl-shift107-signal-comparison",
+          "cl-shift107-model-range",
+          "cl-shift107-joint-direction",
+          "cl-shift107-service",
+          "cl-shift107-supply",
+          "cl-shift107-small",
+          "cl-shift107-large",
+          "cl-shift107-control",
+          "cl-shift107-comparison-judgment"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#把一次用电变化送入原始模型": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [
+          "cl-power-native-model",
+          "cl-power-native-coordinate",
+          "cl-power-native-scenario",
+          "cl-power-native-loss",
+          "cl-power-native-loss-document",
+          "cl-power-native-interpolation",
+          "cl-power-native-output",
+          "cl-power-native-ratios",
+          "cl-power-native-check-meaning",
+          "cl-power-native-two-hours",
+          "cl-power-native-pollutants",
+          "cl-power-native-application"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#时段信号与移峰幅度": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [
+          "cl-shift107-complete-action",
+          "cl-shift107-observed-proxy",
+          "cl-shift107-screening-and-rate",
+          "cl-shift107-signal-comparison",
+          "cl-shift107-model-range",
+          "cl-shift107-joint-direction",
+          "cl-shift107-service",
+          "cl-shift107-supply",
+          "cl-shift107-small",
+          "cl-shift107-large",
+          "cl-shift107-control",
+          "cl-shift107-comparison-judgment"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#未来需求还会改变哪些资产": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "heading",
+        "title": "容量与长期响应",
+        "claimIds": [
+          "cl-power-future-question",
+          "cl-power-future-system",
+          "cl-power-future-perturbation",
+          "cl-power-future-postprocessing",
+          "cl-power-future-storage-policy",
+          "cl-power-future-balance",
+          "cl-power-future-load-parts",
+          "cl-power-future-distribution",
+          "cl-power-future-direct-rates",
+          "cl-power-future-three-questions",
+          "cl-power-future-gases",
+          "cl-power-future-gases-total",
+          "cl-power-future-scenario",
+          "cl-power-future-time",
+          "cl-power-future-formula"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#把响应接回生命周期问题": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "heading",
+        "title": "生命周期连接",
+        "claimIds": [
+          "cl-power-alternative-lca",
+          "cl-power-validation-objects",
+          "cl-power-connection"
+        ],
+        "ordinary": [
+          "eb7fd7e79f9c89601a935bbf2dcf3f77eca9896f9fe78affd8bc49dec0270bff",
+          "5cf77d412fe33b33adcc972313bc2a4d73fee67d99561014c70efa85f4bd4aa1",
+          "2878633cc16bdbb0524cebcfcd013b9299f7130c589d3130a8d1de2a00c25f9a",
+          "57f216e24e775d16f32b520e76ec34184b98149c697ccd5b7ff656f4f0583bf3"
+        ]
+      },
+      "/docs/book/electricity-service-and-response#计算材料": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [],
+        "ordinary": [
+          "57f216e24e775d16f32b520e76ec34184b98149c697ccd5b7ff656f4f0583bf3"
+        ]
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-annotations": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note-group",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-opening",
+          "cl-power-service",
+          "cl-power-coordinates",
+          "cl-power-voltage-path",
+          "cl-power-grid-assets",
+          "cl-power-loss-definition",
+          "cl-power-norway-loss",
+          "cl-power-segment-denominators",
+          "cl-power-database-voltage",
+          "cl-power-loss-proxy",
+          "cl-power-egrid-scope",
+          "cl-power-egrid-adjustments",
+          "cl-power-egrid-rate",
+          "cl-power-egrid-revision",
+          "cl-power-egrid-loss",
+          "cl-power-egrid-loss-conflict",
+          "cl-power-eia-balance",
+          "cl-power-eia-hours",
+          "cl-power-eia-quality",
+          "cl-power-eia-clock",
+          "cl-power-region-membership",
+          "cl-power-eia-emissions",
+          "cl-power-average-response",
+          "cl-power-nonbaseload",
+          "cl-power-historical-generation",
+          "cl-power-historical-consumption",
+          "cl-power-empirical-limits",
+          "cl-power-price-versus-energy",
+          "cl-power-native-model",
+          "cl-power-native-coordinate",
+          "cl-power-native-scenario",
+          "cl-power-native-loss",
+          "cl-power-native-loss-document",
+          "cl-power-native-interpolation",
+          "cl-power-native-output",
+          "cl-power-native-ratios",
+          "cl-power-native-check-meaning",
+          "cl-power-native-two-hours",
+          "cl-power-native-pollutants",
+          "cl-power-native-application",
+          "cl-shift107-complete-action",
+          "cl-shift107-observed-proxy",
+          "cl-shift107-screening-and-rate",
+          "cl-shift107-signal-comparison",
+          "cl-shift107-model-range",
+          "cl-shift107-joint-direction",
+          "cl-shift107-service",
+          "cl-shift107-supply",
+          "cl-shift107-small",
+          "cl-shift107-large",
+          "cl-shift107-control",
+          "cl-shift107-comparison-judgment",
+          "cl-power-future-question",
+          "cl-power-future-system",
+          "cl-power-future-perturbation",
+          "cl-power-future-postprocessing",
+          "cl-power-future-storage-policy",
+          "cl-power-future-balance",
+          "cl-power-future-load-parts",
+          "cl-power-future-distribution",
+          "cl-power-future-direct-rates",
+          "cl-power-future-three-questions",
+          "cl-power-future-gases",
+          "cl-power-future-gases-total",
+          "cl-power-future-scenario",
+          "cl-power-future-time",
+          "cl-power-future-formula",
+          "cl-power-alternative-lca",
+          "cl-power-validation-objects",
+          "cl-power-connection"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-opening": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-opening"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-service": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-service"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-coordinates": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-coordinates"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-voltage-path": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-voltage-path"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-grid-assets": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-grid-assets"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-loss-definition": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-loss-definition"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-norway-loss": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-norway-loss"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-segment-denominators": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-segment-denominators"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-database-voltage": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-database-voltage"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-loss-proxy": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-loss-proxy"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-egrid-scope": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-egrid-scope"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-egrid-adjustments": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-egrid-adjustments"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-egrid-rate": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-egrid-rate"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-egrid-revision": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-egrid-revision"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-egrid-loss": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-egrid-loss"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-egrid-loss-conflict": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-egrid-loss-conflict"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-eia-balance": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-eia-balance"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-eia-hours": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-eia-hours"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-eia-quality": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-eia-quality"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-eia-clock": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-eia-clock"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-region-membership": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-region-membership"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-eia-emissions": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-eia-emissions"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-average-response": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-average-response"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-nonbaseload": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-nonbaseload"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-historical-generation": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-historical-generation"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-historical-consumption": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-historical-consumption"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-empirical-limits": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-empirical-limits"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-price-versus-energy": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-price-versus-energy"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-native-model": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-native-model"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-native-coordinate": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-native-coordinate"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-native-scenario": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-native-scenario"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-native-loss": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-native-loss"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-native-loss-document": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-native-loss-document"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-native-interpolation": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-native-interpolation"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-native-output": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-native-output"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-native-ratios": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-native-ratios"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-native-check-meaning": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-native-check-meaning"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-native-two-hours": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-native-two-hours"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-native-pollutants": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-native-pollutants"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-native-application": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-native-application"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-shift107-complete-action": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-shift107-complete-action"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-shift107-observed-proxy": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-shift107-observed-proxy"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-shift107-screening-and-rate": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-shift107-screening-and-rate"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-shift107-signal-comparison": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-shift107-signal-comparison"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-shift107-model-range": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-shift107-model-range"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-shift107-joint-direction": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-shift107-joint-direction"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-shift107-service": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-shift107-service"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-shift107-supply": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-shift107-supply"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-shift107-small": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-shift107-small"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-shift107-large": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-shift107-large"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-shift107-control": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-shift107-control"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-shift107-comparison-judgment": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-shift107-comparison-judgment"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-question": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-question"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-system": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-system"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-perturbation": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-perturbation"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-postprocessing": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-postprocessing"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-storage-policy": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-storage-policy"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-balance": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-balance"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-load-parts": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-load-parts"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-distribution": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-distribution"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-direct-rates": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-direct-rates"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-three-questions": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-three-questions"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-gases": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-gases"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-gases-total": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-gases-total"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-scenario": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-scenario"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-time": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-time"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-formula": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-formula"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-alternative-lca": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-alternative-lca"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-validation-objects": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-validation-objects"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-connection": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-connection"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "chapter",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-opening",
+          "cl-power-service",
+          "cl-power-coordinates",
+          "cl-power-voltage-path",
+          "cl-power-grid-assets",
+          "cl-power-loss-definition",
+          "cl-power-norway-loss",
+          "cl-power-segment-denominators",
+          "cl-power-database-voltage",
+          "cl-power-loss-proxy",
+          "cl-power-egrid-scope",
+          "cl-power-egrid-adjustments",
+          "cl-power-egrid-rate",
+          "cl-power-egrid-revision",
+          "cl-power-egrid-loss",
+          "cl-power-egrid-loss-conflict",
+          "cl-power-eia-balance",
+          "cl-power-eia-hours",
+          "cl-power-eia-quality",
+          "cl-power-eia-clock",
+          "cl-power-region-membership",
+          "cl-power-eia-emissions",
+          "cl-power-average-response",
+          "cl-power-nonbaseload",
+          "cl-power-historical-generation",
+          "cl-power-historical-consumption",
+          "cl-power-empirical-limits",
+          "cl-power-price-versus-energy",
+          "cl-power-native-model",
+          "cl-power-native-coordinate",
+          "cl-power-native-scenario",
+          "cl-power-native-loss",
+          "cl-power-native-loss-document",
+          "cl-power-native-interpolation",
+          "cl-power-native-output",
+          "cl-power-native-ratios",
+          "cl-power-native-check-meaning",
+          "cl-power-native-two-hours",
+          "cl-power-native-pollutants",
+          "cl-power-native-application",
+          "cl-shift107-complete-action",
+          "cl-shift107-observed-proxy",
+          "cl-shift107-screening-and-rate",
+          "cl-shift107-signal-comparison",
+          "cl-shift107-model-range",
+          "cl-shift107-joint-direction",
+          "cl-shift107-service",
+          "cl-shift107-supply",
+          "cl-shift107-small",
+          "cl-shift107-large",
+          "cl-shift107-control",
+          "cl-shift107-comparison-judgment",
+          "cl-power-future-question",
+          "cl-power-future-system",
+          "cl-power-future-perturbation",
+          "cl-power-future-postprocessing",
+          "cl-power-future-storage-policy",
+          "cl-power-future-balance",
+          "cl-power-future-load-parts",
+          "cl-power-future-distribution",
+          "cl-power-future-direct-rates",
+          "cl-power-future-three-questions",
+          "cl-power-future-gases",
+          "cl-power-future-gases-total",
+          "cl-power-future-scenario",
+          "cl-power-future-time",
+          "cl-power-future-formula",
+          "cl-power-alternative-lca",
+          "cl-power-validation-objects",
+          "cl-power-connection"
+        ],
+        "ordinary": [
+          "2cef4710bc89fbc4d788f730e7f6b3342a49fc35a836131823ed780960e4f7ea",
+          "eb7fd7e79f9c89601a935bbf2dcf3f77eca9896f9fe78affd8bc49dec0270bff",
+          "5cf77d412fe33b33adcc972313bc2a4d73fee67d99561014c70efa85f4bd4aa1",
+          "2878633cc16bdbb0524cebcfcd013b9299f7130c589d3130a8d1de2a00c25f9a",
+          "57f216e24e775d16f32b520e76ec34184b98149c697ccd5b7ff656f4f0583bf3"
+        ],
+        "bindings": {
+          "links": [
+            [],
+            [],
+            [],
+            [],
+            [
+              "https://github.com/tiangong-lca/knowledge-base/blob/main/_docs/reproduction/electricity/README-electricity-native.md"
+            ]
+          ],
+          "tables": [
+            {
+              "header": [
+                [
+                  {},
+                  {}
+                ]
+              ],
+              "body": [
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "eGRID2023 修订 2"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "区域电厂的直接 CO₂ 年平均排放率，以年净发电量为分母。"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "EIA-930（2023）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "逐小时记录发电、需求与区际交换的平均功率（MW），乘一小时得到电量（MWh）；时标为小时结束。"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "AVERT 4.3.0"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "在 2023 年 TE 的既有机组关系下，改变终端用电时，模型估计怎样的运行响应。"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "Cambium 2024"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "需求扰动允许运行和容量一起变化时，模型估计怎样的长期响应。本例取 2025 模拟年。"
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "/print#print-reading-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "reading-title",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-opening",
+          "cl-power-service",
+          "cl-power-coordinates",
+          "cl-power-voltage-path",
+          "cl-power-grid-assets",
+          "cl-power-loss-definition",
+          "cl-power-norway-loss",
+          "cl-power-segment-denominators",
+          "cl-power-database-voltage",
+          "cl-power-loss-proxy",
+          "cl-power-egrid-scope",
+          "cl-power-egrid-adjustments",
+          "cl-power-egrid-rate",
+          "cl-power-egrid-revision",
+          "cl-power-egrid-loss",
+          "cl-power-egrid-loss-conflict",
+          "cl-power-eia-balance",
+          "cl-power-eia-hours",
+          "cl-power-eia-quality",
+          "cl-power-eia-clock",
+          "cl-power-region-membership",
+          "cl-power-eia-emissions",
+          "cl-power-average-response",
+          "cl-power-nonbaseload",
+          "cl-power-historical-generation",
+          "cl-power-historical-consumption",
+          "cl-power-empirical-limits",
+          "cl-power-price-versus-energy",
+          "cl-power-native-model",
+          "cl-power-native-coordinate",
+          "cl-power-native-scenario",
+          "cl-power-native-loss",
+          "cl-power-native-loss-document",
+          "cl-power-native-interpolation",
+          "cl-power-native-output",
+          "cl-power-native-ratios",
+          "cl-power-native-check-meaning",
+          "cl-power-native-two-hours",
+          "cl-power-native-pollutants",
+          "cl-power-native-application",
+          "cl-shift107-complete-action",
+          "cl-shift107-observed-proxy",
+          "cl-shift107-screening-and-rate",
+          "cl-shift107-signal-comparison",
+          "cl-shift107-model-range",
+          "cl-shift107-joint-direction",
+          "cl-shift107-service",
+          "cl-shift107-supply",
+          "cl-shift107-small",
+          "cl-shift107-large",
+          "cl-shift107-control",
+          "cl-shift107-comparison-judgment",
+          "cl-power-future-question",
+          "cl-power-future-system",
+          "cl-power-future-perturbation",
+          "cl-power-future-postprocessing",
+          "cl-power-future-storage-policy",
+          "cl-power-future-balance",
+          "cl-power-future-load-parts",
+          "cl-power-future-distribution",
+          "cl-power-future-direct-rates",
+          "cl-power-future-three-questions",
+          "cl-power-future-gases",
+          "cl-power-future-gases-total",
+          "cl-power-future-scenario",
+          "cl-power-future-time",
+          "cl-power-future-formula",
+          "cl-power-alternative-lca",
+          "cl-power-validation-objects",
+          "cl-power-connection"
+        ],
+        "ordinary": [
+          "2cef4710bc89fbc4d788f730e7f6b3342a49fc35a836131823ed780960e4f7ea",
+          "eb7fd7e79f9c89601a935bbf2dcf3f77eca9896f9fe78affd8bc49dec0270bff",
+          "5cf77d412fe33b33adcc972313bc2a4d73fee67d99561014c70efa85f4bd4aa1",
+          "2878633cc16bdbb0524cebcfcd013b9299f7130c589d3130a8d1de2a00c25f9a",
+          "57f216e24e775d16f32b520e76ec34184b98149c697ccd5b7ff656f4f0583bf3"
+        ],
+        "chapter": "print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365"
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-同一度电先问在哪里交付": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "heading",
+        "title": "交付链条",
+        "claimIds": [
+          "cl-power-opening",
+          "cl-power-service",
+          "cl-power-coordinates",
+          "cl-power-voltage-path",
+          "cl-power-grid-assets",
+          "cl-power-loss-definition",
+          "cl-power-norway-loss",
+          "cl-power-segment-denominators",
+          "cl-power-database-voltage",
+          "cl-power-loss-proxy"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-交付点怎样带出输配活动": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [
+          "cl-power-voltage-path",
+          "cl-power-grid-assets",
+          "cl-power-loss-definition",
+          "cl-power-norway-loss",
+          "cl-power-segment-denominators",
+          "cl-power-database-voltage",
+          "cl-power-loss-proxy"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-年度发电账包含什么": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "heading",
+        "title": "电量账户",
+        "claimIds": [
+          "cl-power-egrid-scope",
+          "cl-power-egrid-adjustments",
+          "cl-power-egrid-rate",
+          "cl-power-egrid-revision",
+          "cl-power-egrid-loss",
+          "cl-power-egrid-loss-conflict",
+          "cl-power-eia-balance",
+          "cl-power-eia-hours",
+          "cl-power-eia-quality",
+          "cl-power-eia-clock",
+          "cl-power-region-membership",
+          "cl-power-eia-emissions"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-小时平衡怎样连接发电与需求": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [
+          "cl-power-eia-balance",
+          "cl-power-eia-hours",
+          "cl-power-eia-quality",
+          "cl-power-eia-clock",
+          "cl-power-region-membership",
+          "cl-power-eia-emissions"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-平均与响应为何不是同一个估计": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "heading",
+        "title": "运行响应",
+        "claimIds": [
+          "cl-power-average-response",
+          "cl-power-nonbaseload",
+          "cl-power-historical-generation",
+          "cl-power-historical-consumption",
+          "cl-power-empirical-limits",
+          "cl-power-price-versus-energy",
+          "cl-power-native-model",
+          "cl-power-native-coordinate",
+          "cl-power-native-scenario",
+          "cl-power-native-loss",
+          "cl-power-native-loss-document",
+          "cl-power-native-interpolation",
+          "cl-power-native-output",
+          "cl-power-native-ratios",
+          "cl-power-native-check-meaning",
+          "cl-power-native-two-hours",
+          "cl-power-native-pollutants",
+          "cl-power-native-application",
+          "cl-shift107-complete-action",
+          "cl-shift107-observed-proxy",
+          "cl-shift107-screening-and-rate",
+          "cl-shift107-signal-comparison",
+          "cl-shift107-model-range",
+          "cl-shift107-joint-direction",
+          "cl-shift107-service",
+          "cl-shift107-supply",
+          "cl-shift107-small",
+          "cl-shift107-large",
+          "cl-shift107-control",
+          "cl-shift107-comparison-judgment"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-把一次用电变化送入原始模型": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [
+          "cl-power-native-model",
+          "cl-power-native-coordinate",
+          "cl-power-native-scenario",
+          "cl-power-native-loss",
+          "cl-power-native-loss-document",
+          "cl-power-native-interpolation",
+          "cl-power-native-output",
+          "cl-power-native-ratios",
+          "cl-power-native-check-meaning",
+          "cl-power-native-two-hours",
+          "cl-power-native-pollutants",
+          "cl-power-native-application"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-时段信号与移峰幅度": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [
+          "cl-shift107-complete-action",
+          "cl-shift107-observed-proxy",
+          "cl-shift107-screening-and-rate",
+          "cl-shift107-signal-comparison",
+          "cl-shift107-model-range",
+          "cl-shift107-joint-direction",
+          "cl-shift107-service",
+          "cl-shift107-supply",
+          "cl-shift107-small",
+          "cl-shift107-large",
+          "cl-shift107-control",
+          "cl-shift107-comparison-judgment"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-未来需求还会改变哪些资产": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "heading",
+        "title": "容量与长期响应",
+        "claimIds": [
+          "cl-power-future-question",
+          "cl-power-future-system",
+          "cl-power-future-perturbation",
+          "cl-power-future-postprocessing",
+          "cl-power-future-storage-policy",
+          "cl-power-future-balance",
+          "cl-power-future-load-parts",
+          "cl-power-future-distribution",
+          "cl-power-future-direct-rates",
+          "cl-power-future-three-questions",
+          "cl-power-future-gases",
+          "cl-power-future-gases-total",
+          "cl-power-future-scenario",
+          "cl-power-future-time",
+          "cl-power-future-formula"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-把响应接回生命周期问题": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "heading",
+        "title": "生命周期连接",
+        "claimIds": [
+          "cl-power-alternative-lca",
+          "cl-power-validation-objects",
+          "cl-power-connection"
+        ],
+        "ordinary": [
+          "eb7fd7e79f9c89601a935bbf2dcf3f77eca9896f9fe78affd8bc49dec0270bff",
+          "5cf77d412fe33b33adcc972313bc2a4d73fee67d99561014c70efa85f4bd4aa1",
+          "2878633cc16bdbb0524cebcfcd013b9299f7130c589d3130a8d1de2a00c25f9a",
+          "57f216e24e775d16f32b520e76ec34184b98149c697ccd5b7ff656f4f0583bf3"
+        ]
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-计算材料": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [],
+        "ordinary": [
+          "57f216e24e775d16f32b520e76ec34184b98149c697ccd5b7ff656f4f0583bf3"
+        ]
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-annotations": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note-group",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-opening",
+          "cl-power-service",
+          "cl-power-coordinates",
+          "cl-power-voltage-path",
+          "cl-power-grid-assets",
+          "cl-power-loss-definition",
+          "cl-power-norway-loss",
+          "cl-power-segment-denominators",
+          "cl-power-database-voltage",
+          "cl-power-loss-proxy",
+          "cl-power-egrid-scope",
+          "cl-power-egrid-adjustments",
+          "cl-power-egrid-rate",
+          "cl-power-egrid-revision",
+          "cl-power-egrid-loss",
+          "cl-power-egrid-loss-conflict",
+          "cl-power-eia-balance",
+          "cl-power-eia-hours",
+          "cl-power-eia-quality",
+          "cl-power-eia-clock",
+          "cl-power-region-membership",
+          "cl-power-eia-emissions",
+          "cl-power-average-response",
+          "cl-power-nonbaseload",
+          "cl-power-historical-generation",
+          "cl-power-historical-consumption",
+          "cl-power-empirical-limits",
+          "cl-power-price-versus-energy",
+          "cl-power-native-model",
+          "cl-power-native-coordinate",
+          "cl-power-native-scenario",
+          "cl-power-native-loss",
+          "cl-power-native-loss-document",
+          "cl-power-native-interpolation",
+          "cl-power-native-output",
+          "cl-power-native-ratios",
+          "cl-power-native-check-meaning",
+          "cl-power-native-two-hours",
+          "cl-power-native-pollutants",
+          "cl-power-native-application",
+          "cl-shift107-complete-action",
+          "cl-shift107-observed-proxy",
+          "cl-shift107-screening-and-rate",
+          "cl-shift107-signal-comparison",
+          "cl-shift107-model-range",
+          "cl-shift107-joint-direction",
+          "cl-shift107-service",
+          "cl-shift107-supply",
+          "cl-shift107-small",
+          "cl-shift107-large",
+          "cl-shift107-control",
+          "cl-shift107-comparison-judgment",
+          "cl-power-future-question",
+          "cl-power-future-system",
+          "cl-power-future-perturbation",
+          "cl-power-future-postprocessing",
+          "cl-power-future-storage-policy",
+          "cl-power-future-balance",
+          "cl-power-future-load-parts",
+          "cl-power-future-distribution",
+          "cl-power-future-direct-rates",
+          "cl-power-future-three-questions",
+          "cl-power-future-gases",
+          "cl-power-future-gases-total",
+          "cl-power-future-scenario",
+          "cl-power-future-time",
+          "cl-power-future-formula",
+          "cl-power-alternative-lca",
+          "cl-power-validation-objects",
+          "cl-power-connection"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-opening": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-opening"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-service": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-service"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-coordinates": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-coordinates"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-voltage-path": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-voltage-path"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-grid-assets": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-grid-assets"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-loss-definition": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-loss-definition"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-norway-loss": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-norway-loss"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-segment-denominators": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-segment-denominators"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-database-voltage": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-database-voltage"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-loss-proxy": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-loss-proxy"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-egrid-scope": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-egrid-scope"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-egrid-adjustments": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-egrid-adjustments"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-egrid-rate": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-egrid-rate"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-egrid-revision": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-egrid-revision"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-egrid-loss": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-egrid-loss"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-egrid-loss-conflict": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-egrid-loss-conflict"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-eia-balance": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-eia-balance"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-eia-hours": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-eia-hours"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-eia-quality": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-eia-quality"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-eia-clock": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-eia-clock"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-region-membership": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-region-membership"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-eia-emissions": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-eia-emissions"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-average-response": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-average-response"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-nonbaseload": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-nonbaseload"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-historical-generation": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-historical-generation"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-historical-consumption": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-historical-consumption"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-empirical-limits": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-empirical-limits"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-price-versus-energy": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-price-versus-energy"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-native-model": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-native-model"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-native-coordinate": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-native-coordinate"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-native-scenario": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-native-scenario"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-native-loss": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-native-loss"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-native-loss-document": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-native-loss-document"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-native-interpolation": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-native-interpolation"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-native-output": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-native-output"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-native-ratios": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-native-ratios"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-native-check-meaning": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-native-check-meaning"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-native-two-hours": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-native-two-hours"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-native-pollutants": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-native-pollutants"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-native-application": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-native-application"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-shift107-complete-action": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-shift107-complete-action"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-shift107-observed-proxy": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-shift107-observed-proxy"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-shift107-screening-and-rate": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-shift107-screening-and-rate"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-shift107-signal-comparison": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-shift107-signal-comparison"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-shift107-model-range": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-shift107-model-range"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-shift107-joint-direction": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-shift107-joint-direction"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-shift107-service": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-shift107-service"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-shift107-supply": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-shift107-supply"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-shift107-small": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-shift107-small"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-shift107-large": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-shift107-large"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-shift107-control": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-shift107-control"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-shift107-comparison-judgment": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-shift107-comparison-judgment"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-question": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-question"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-system": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-system"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-perturbation": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-perturbation"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-postprocessing": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-postprocessing"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-storage-policy": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-storage-policy"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-balance": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-balance"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-load-parts": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-load-parts"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-distribution": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-distribution"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-direct-rates": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-direct-rates"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-three-questions": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-three-questions"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-gases": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-gases"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-gases-total": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-gases-total"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-scenario": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-scenario"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-time": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-time"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-future-formula": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-future-formula"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-alternative-lca": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-alternative-lca"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-validation-objects": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-validation-objects"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-claim-cl-power-connection": {
+        "route": "/docs/book/electricity-service-and-response",
+        "kind": "note",
+        "title": "供电系统",
+        "claimIds": [
+          "cl-power-connection"
+        ],
+        "ordinary": []
+      }
+    },
+    "source": "actual-export",
+    "sourceCommit": "2e69ae04f649ac4c05d2e0e1136b3dc4426b4fa4",
+    "capture": {
+      "sourceCommit": "2e69ae04f649ac4c05d2e0e1136b3dc4426b4fa4",
+      "dirty": true,
+      "status": "working-preview",
+      "manifestSha256": "8d520b97137348581a1b6bc21ef721a4d17af7062d7d8d2cc3d1fd0ef6566c62",
+      "normalizedProofSha256": "044f51d6dd6bf134c5254f2593d654f5db424fa65ff4c453790461d1b0e10885"
+    },
+    "articleFiles": [
+      {
+        "path": "docs/book/market-boundaries-and-response/index.html",
+        "sha256": "daab32ccc2dd8890853c6e878915e93d66603663cd994900b1cf01593b5be827",
+        "bytes": 1050452
+      },
+      {
+        "path": "docs/book/electricity-service-and-response/index.html",
+        "sha256": "c42e3f16d245e35cb7f2736acebb312209b44f8a51e8dfb0eaeb36e5be5cc3e5",
+        "bytes": 1470336
+      },
+      {
+        "path": "docs/book/recycling-chains-and-accounting/index.html",
+        "sha256": "5cfb5722db242cd8d92108cdd70ac8b7d5d3fa6dc5d84a0f66d020869a8ae3ed",
+        "bytes": 1088216
+      },
+      {
+        "path": "docs/book/climate-response-and-metrics/index.html",
+        "sha256": "81d33639ad9861965f8dfe74c376f6c7b92ba2ba9c7f551613d9bb2582d6063b",
+        "bytes": 1174939
+      },
+      {
+        "path": "print/index.html",
+        "sha256": "b73777d0b1d0850fd63eba441edaae47d6ea8cd415cb53a6fee693feacccc4c8",
+        "bytes": 13081362
+      }
+    ],
+    "artifactFiles": [
+      {
+        "path": "claims/index.html",
+        "bytes": 5293303,
+        "sha256": "3e5f31b70485bf2fba4a6aad5d37440ada8f4c3786c16ef64699c0e5296894e7",
+        "contentSha256": "a44c85071e41b90bf4c8f361508ae0910d448f9a111a2db92939437ab64806ed"
+      },
+      {
+        "path": "sources/index.html",
+        "bytes": 4101047,
+        "sha256": "2cd7ff698f828c780e22542003e2234f849bca2046281a92d1eb54b9c987c15f",
+        "contentSha256": "03f08658cd01c7ceae74fabb054a8fadb0bf93e000868ca5cb00828ad93ebecd"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "bytes": 3198802,
+        "sha256": "6f316f96f7a881fde6d114183ce9b433b87c7dd8f7a1b66915906ddbb159a03f",
+        "contentSha256": "6f316f96f7a881fde6d114183ce9b433b87c7dd8f7a1b66915906ddbb159a03f"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "bytes": 338585,
+        "sha256": "1da17367cf8bfdb687f8a14a15a3961e8376c08709c36c9366f1ffc231df59ef",
+        "contentSha256": "1da17367cf8bfdb687f8a14a15a3961e8376c08709c36c9366f1ffc231df59ef"
+      },
+      {
+        "path": "research/index.html",
+        "bytes": 1417034,
+        "sha256": "769085b8a311e0aee9d9ad429f56913880c614fffc7fca1f574a3c2456942b23",
+        "contentSha256": "c6b909e71a87d4effd73cd32485533d6356fb3725dbcf92cca35a825e6929469"
+      },
+      {
+        "path": "downloads/bibliography.json",
+        "bytes": 1087283,
+        "sha256": "4121740fcb6c14e4edaed9a7541a8059bea9c5e300936d7b1c03e70a187fa44d",
+        "contentSha256": "4121740fcb6c14e4edaed9a7541a8059bea9c5e300936d7b1c03e70a187fa44d"
+      },
+      {
+        "path": "downloads/research.json",
+        "bytes": 1087283,
+        "sha256": "4121740fcb6c14e4edaed9a7541a8059bea9c5e300936d7b1c03e70a187fa44d",
+        "contentSha256": "4121740fcb6c14e4edaed9a7541a8059bea9c5e300936d7b1c03e70a187fa44d"
+      },
+      {
+        "path": "coverage/index.html",
+        "bytes": 714391,
+        "sha256": "a9b8a10244e65c5915ce1c5245a9ed7d417e52005628f49847e3d9f705678799",
+        "contentSha256": "0bcb0535119a5d091f1c10d19b5d019de57e0d7511c399fb540d806159e13e7a"
+      },
+      {
+        "path": "downloads/cases/finite-load-shift-v1.json",
+        "bytes": 2915,
+        "sha256": "4729173e3d72668452d3f3db9150aa85434eb53931ff3018382995431cba02c1",
+        "contentSha256": "4729173e3d72668452d3f3db9150aa85434eb53931ff3018382995431cba02c1"
+      },
+      {
+        "path": "downloads/cases/finite-load-shift-v1.evaluated.json",
+        "bytes": 60645,
+        "sha256": "f31cab6bbbe4408cedba401e62b9a06a92e4eb7f13921c939ee9a6e41efdc86c",
+        "contentSha256": "7a48a25b36e1a9d23a32eecc3a2219ccfc3370baddd917af3502ceb38729bf01"
+      }
+    ],
+    "assessment": {
+      "engineeringCandidate": "faac57107510d96b8b60642dc92b1e8acfeade35",
+      "provenance": "Actual normal producer/exporter ran from a private file-copy fixture with read-only source Git identity and optional locks disabled, with before/after HEAD2e69 verification. Only the unsigned107 admission was temporarily opened for capture; earlier source/DOM/case guards remained. Temporary fixture admissions/envelopes never supplied this primary editorial acceptance. The actual capture is honestly dirty working-preview.",
+      "reconstruction": "The preceding actual MDX and registry bytes and removal of exactly three new case files reconstruct178 raw files plus the original catalog/literature/readings before105→102→99→95→93. Hash-only old maps and current JSON in old receipts fail. The original source/evidence identities and case semantics remain intact.",
+      "pairedCapture": "Primary and independent reviewers rehashed all468 current manifest members and19 selected raw files. Six route-qualified article fingerprints and four public HTML fingerprints were independently produced from the same raw capture and bound with raw digests, lengths, manifest, commit and dirty status. Swapping two print routes or inserting unsupported claims text and regenerating newest report/unit pins now fails both receipt and full ordinary-output gates.",
+      "cases": "Both new input/evaluation bytes are independently reconstructed with actual producer identity. The107-active retained B12 power-case check also rejects a wrong producer SHA, input binding or noncanonical input bytes. The other17 older-case producer headers were actually checked in this captured export; this change does not claim a new universal runtime header guard for every older case.",
+      "history": "Actual predecessor140 and current166 native B12 addresses retain original scopes. Table cells and exact native P/TABLE destinations, ReaderSection, ordinary explanation and note identities are separately checked; coordinated article rehashing cannot make a hidden table a valid historical destination. Earlier ordinary targets consume only the qualified predecessor projection.",
+      "browser": "First actual keyboard testing found that a DOM-visible table target landed behind a fixed header. Only107 versioned P/TABLE targets now have7rem scroll margin. A separate real export was captured after that renderer fix. Primary rerun:20 responsive observations at390/1440/1633/2048/2560 light/dark web/print, no overflow;8 no-script historical controls reached18 ordinary and8 note links, including four table activations. First TH/TD center hit-tests and bounds proved readable tables at roughly112px below97px/56px headers. Four versioned input/result downloads matched bytes; old power input, search, guide and print70 notes passed. Primary inspected actual mobile table/core and print screenshots.",
+      "testsAndLimits": "Independent strict private replay and full541-test run passed, plus primary seven focused model/publication tests. These technical results do not replace this real review. Subsequent ordinary clean build, final full tests/types/Docpact, requiredCI, source merge, hostedMain and root integration remain separate. No human, empirical or whole-book approval is claimed."
+    },
+    "independentReports": {
+      "independent-empirical-source-review.md": "cbaa0a9380788807c9db01a6447a775a135e2586033f8561d7630d954442404f",
+      "independent-model-source-review.md": "a6b038cccdbd9bfc80567f645d03c697a74c61085624617ffad6a489e05b0b0f",
+      "independent-reader-review.md": "0eb3d7484e73b3e1e5e66e8ed7b57bacc78eaadd6face7006b3748473d876725",
+      "independent-engineering-review.md": "719a0923673c55f78b9358fde44c82f1fd59ec145b172c18fa59353c650c0e70",
+      "model-implementation.md": "edeffe797f44334f3978295b1cdd9ecfc0791a9c465daf9e097be4b1c5114df5",
+      "primary-scroll-fixed-export-rehash.json": "03ec2a2d5213e4e22fb9249793386eeb6bbe3e1774394511d2803553cc789ae3",
+      "browser-qa-fixed/responsive-script-enabled.json": "679bf6e054e38b74542d4a396ab58b987c172f9a1562c2ec3482b1e808c6f074",
+      "browser-qa-fixed/interactions.json": "8bbb3d76733827dcee8c02d0411afba694bee6f5a2f739aff323c0b470d11ef4"
+    }
+  }
+}

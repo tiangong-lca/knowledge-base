@@ -1,0 +1,533 @@
+{
+  "schemaVersion": 1,
+  "kind": "source",
+  "unit": "load-shift-107",
+  "subjectSha256": "bfb63556e34e57fd3c1143f200a0b8d7c8a79c7a06884dcd823438c84d0ca979",
+  "date": "2026-11-15",
+  "scope": [
+    "scripts/case-publication.mjs",
+    "content/docs/book/electricity-service-and-response.mdx",
+    "knowledge/cases/finite-load-shift-v1.publication.json",
+    "knowledge/cases/finite-load-shift-v1.json",
+    "scripts/finite-load-shift-case.mjs",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:order:sources",
+    "researchMetadata:order:readings",
+    "researchMetadata:order:gaps",
+    "researchMetadata:order:revisions",
+    "researchMetadata:order:literature",
+    "researchMetadata:order:queries",
+    "researchMetadata:public-projection",
+    "claims:cl-shift107-complete-action",
+    "claims:cl-shift107-observed-proxy",
+    "claims:cl-shift107-screening-and-rate",
+    "claims:cl-shift107-model-range",
+    "claims:cl-shift107-joint-direction",
+    "claims:cl-shift107-service",
+    "claims:cl-shift107-supply",
+    "claims:cl-shift107-small",
+    "claims:cl-shift107-large",
+    "claims:cl-shift107-control",
+    "claims:cl-shift107-comparison-judgment",
+    "claims:cl-shift107-signal-comparison",
+    "evidence:ev-shift107-wind-design",
+    "evidence:ev-shift107-signal-screening",
+    "evidence:ev-shift107-study-limits",
+    "evidence:ev-shift107-model-range",
+    "evidence:ev-shift107-model-limits",
+    "sources:src-shift107-steinsultz-2024",
+    "sources:src-shift107-nilges-2025",
+    "readings:rd-shift107-steinsultz-2024",
+    "readings:rd-shift107-nilges-2025",
+    "gaps:gap-shift107-empirical-paired-intervention",
+    "revisions:rev-finite-load-shift-107",
+    "literature:work-shift107-steinsultz-2024",
+    "literature:work-shift107-nilges-2025",
+    "queries:q-shift107-model-and-field-20261115"
+  ],
+  "observed": "Completed scoped agent review of actual source, reader and preserved physical output evidence; no human or empirical certification.",
+  "observations": {
+    "state": {
+      "before": "7ff6019fb2a2b330d1d79308b5595dda1cc722b53ed115fe292d06519b535a2f",
+      "after": "c67647ef6596b4fe586d7d29b72974a9f3eae0a65287818b30113709c6a3e58a"
+    },
+    "changes": [
+      {
+        "kind": "file",
+        "key": "scripts/case-publication.mjs",
+        "from": "f8d7c828acccad296eb9d5b4ab05f5ce88397ad7f022ccaf98b6629da7ec5a81",
+        "to": "3fbb8b8ffca49d83bbea4fbe317dd2924717c1bbc3a126156a05b7676dd97ecf",
+        "rationale": "在原B12路线、58条旧命题和eGRID表不动的情况下，加入移时比较及经过独立绑定的固定作者算例。"
+      },
+      {
+        "kind": "file",
+        "key": "content/docs/book/electricity-service-and-response.mdx",
+        "from": "49c0434c2b14eadf6afbf141da47f1c34ffd2819eca27812c892441c89c3162a",
+        "to": "cc6cbecfff9f367eb029472af75b1b7d105d985d1d2469a8eaeb2878d5ada586",
+        "rationale": "在原B12路线、58条旧命题和eGRID表不动的情况下，加入移时比较及经过独立绑定的固定作者算例。"
+      },
+      {
+        "kind": "file",
+        "key": "knowledge/cases/finite-load-shift-v1.publication.json",
+        "from": null,
+        "to": "27cdd54c3431d74dc0326e67bd95ae7882e75154d60a88bb096afc01c63ead65",
+        "rationale": "在原B12路线、58条旧命题和eGRID表不动的情况下，加入移时比较及经过独立绑定的固定作者算例。"
+      },
+      {
+        "kind": "file",
+        "key": "knowledge/cases/finite-load-shift-v1.json",
+        "from": null,
+        "to": "4729173e3d72668452d3f3db9150aa85434eb53931ff3018382995431cba02c1",
+        "rationale": "在原B12路线、58条旧命题和eGRID表不动的情况下，加入移时比较及经过独立绑定的固定作者算例。"
+      },
+      {
+        "kind": "file",
+        "key": "scripts/finite-load-shift-case.mjs",
+        "from": null,
+        "to": "643fced7d706a9c0dfa87a7324b0f5246091e94f195d9fb6ad297edd7625042e",
+        "rationale": "在原B12路线、58条旧命题和eGRID表不动的情况下，加入移时比较及经过独立绑定的固定作者算例。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:claims",
+        "from": {
+          "raw": "8983cf55950aa7fecca12bd070bfce3b8af60b13ca575d4806b326582e42cce7",
+          "public": null,
+          "protected": "8983cf55950aa7fecca12bd070bfce3b8af60b13ca575d4806b326582e42cce7"
+        },
+        "to": {
+          "raw": "ff638728dcbf3debcb78cdd14a182c451879f470c9739ffbab600bc7934f279e",
+          "public": null,
+          "protected": "ff638728dcbf3debcb78cdd14a182c451879f470c9739ffbab600bc7934f279e"
+        },
+        "rationale": "复核由新记录生成的真实公开投影、稳定次序和依赖关系。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:evidence",
+        "from": {
+          "raw": "52f505ea9f2692a2f6d757eaf9e62fc65ce66247e24770fa7cb5c8421840cb84",
+          "public": null,
+          "protected": "52f505ea9f2692a2f6d757eaf9e62fc65ce66247e24770fa7cb5c8421840cb84"
+        },
+        "to": {
+          "raw": "94de46f47abcd90b6d806c72c6b89906938ad0b138b955b98a464960c1605589",
+          "public": null,
+          "protected": "94de46f47abcd90b6d806c72c6b89906938ad0b138b955b98a464960c1605589"
+        },
+        "rationale": "复核由新记录生成的真实公开投影、稳定次序和依赖关系。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:sources",
+        "from": {
+          "raw": "9a705870e99567b5c0054c9fb79185d141208e168f11671e88e43f3653d5c2a5",
+          "public": null,
+          "protected": "9a705870e99567b5c0054c9fb79185d141208e168f11671e88e43f3653d5c2a5"
+        },
+        "to": {
+          "raw": "b8ec3f4f8f20846da0529e00e627560eafdf6f7ea1c5000c57c3bc63826a5e4a",
+          "public": null,
+          "protected": "b8ec3f4f8f20846da0529e00e627560eafdf6f7ea1c5000c57c3bc63826a5e4a"
+        },
+        "rationale": "复核由新记录生成的真实公开投影、稳定次序和依赖关系。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:readings",
+        "from": {
+          "raw": "e7c0619f8afc147eb378d18230a4d0eae57247d1c736e24d94395e0048dd6504",
+          "public": null,
+          "protected": "e7c0619f8afc147eb378d18230a4d0eae57247d1c736e24d94395e0048dd6504"
+        },
+        "to": {
+          "raw": "a241c71dd6e4d8ca7c835b795e502d678c3b562e0bfafd918fed7f9fc5ea6a47",
+          "public": null,
+          "protected": "a241c71dd6e4d8ca7c835b795e502d678c3b562e0bfafd918fed7f9fc5ea6a47"
+        },
+        "rationale": "复核由新记录生成的真实公开投影、稳定次序和依赖关系。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:gaps",
+        "from": {
+          "raw": "0285152b12e020ba22d97b193f7c067aa6875e3113119b507dea883391cf0461",
+          "public": null,
+          "protected": "0285152b12e020ba22d97b193f7c067aa6875e3113119b507dea883391cf0461"
+        },
+        "to": {
+          "raw": "deb638faa49698ebc9bcfa5257b9b6e757d5ad6631678eed593a721de32bde7f",
+          "public": null,
+          "protected": "deb638faa49698ebc9bcfa5257b9b6e757d5ad6631678eed593a721de32bde7f"
+        },
+        "rationale": "复核由新记录生成的真实公开投影、稳定次序和依赖关系。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:revisions",
+        "from": {
+          "raw": "9511e1de99526747fbc530bc782813a83af6cbc3a3ca6853c2d380683f3eaade",
+          "public": null,
+          "protected": "9511e1de99526747fbc530bc782813a83af6cbc3a3ca6853c2d380683f3eaade"
+        },
+        "to": {
+          "raw": "2a157da5e5672f3fb5931f010603b4e4fa3319d4e8c3c57b094e02142198306e",
+          "public": null,
+          "protected": "2a157da5e5672f3fb5931f010603b4e4fa3319d4e8c3c57b094e02142198306e"
+        },
+        "rationale": "复核由新记录生成的真实公开投影、稳定次序和依赖关系。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:literature",
+        "from": {
+          "raw": "24c7d28c6975590aa559f6ef1751121f036f4f3550c860ef401da7d40a748c87",
+          "public": null,
+          "protected": "24c7d28c6975590aa559f6ef1751121f036f4f3550c860ef401da7d40a748c87"
+        },
+        "to": {
+          "raw": "39c2379322f345852d93909734109437ca5897b2248575c2275b573948c2195e",
+          "public": null,
+          "protected": "39c2379322f345852d93909734109437ca5897b2248575c2275b573948c2195e"
+        },
+        "rationale": "复核由新记录生成的真实公开投影、稳定次序和依赖关系。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:queries",
+        "from": {
+          "raw": "27fa487f68f192a4e1e7679309b45871917cc3e54785c68b7f120a0c8f316a68",
+          "public": null,
+          "protected": "27fa487f68f192a4e1e7679309b45871917cc3e54785c68b7f120a0c8f316a68"
+        },
+        "to": {
+          "raw": "3e917a410bafe242a0594c44ea708d0dea640eca91d8b99e09451aa7426c5dc4",
+          "public": null,
+          "protected": "3e917a410bafe242a0594c44ea708d0dea640eca91d8b99e09451aa7426c5dc4"
+        },
+        "rationale": "复核由新记录生成的真实公开投影、稳定次序和依赖关系。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:public-projection",
+        "from": {
+          "raw": "d4bfb10cb03ad1998ac6c35bb94fdac299c0e01cc84aa908369fc34630e9d543",
+          "public": null,
+          "protected": "d4bfb10cb03ad1998ac6c35bb94fdac299c0e01cc84aa908369fc34630e9d543"
+        },
+        "to": {
+          "raw": "a6e2a476eee6d2475e7735ffec434e28df81b706d3b30096cdb052a080272096",
+          "public": null,
+          "protected": "a6e2a476eee6d2475e7735ffec434e28df81b706d3b30096cdb052a080272096"
+        },
+        "rationale": "复核由新记录生成的真实公开投影、稳定次序和依赖关系。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-shift107-complete-action",
+        "from": null,
+        "to": {
+          "raw": "48fdde4e85ac52f679b25223d439016a2493dee3fa9f7792c360ef95ce671d47",
+          "public": "48fdde4e85ac52f679b25223d439016a2493dee3fa9f7792c360ef95ce671d47",
+          "protected": "af421dc961bc22f9c7dfddde52d31162fdffeebf535a2da70db7e5929bdd8a8e"
+        },
+        "rationale": "登记实际作者模型计算、原始来源范围或本书有条件比较，既有事实与案例继续独立。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-shift107-observed-proxy",
+        "from": null,
+        "to": {
+          "raw": "a25c110bd8bf915f273862f7df0220355ddf47bb73ea175b2256f553b43c33ed",
+          "public": "a25c110bd8bf915f273862f7df0220355ddf47bb73ea175b2256f553b43c33ed",
+          "protected": "8a8c90d220dcff759aab70d4509507a0760b28e34d11a97c1084b3bbba2c6ce6"
+        },
+        "rationale": "登记实际作者模型计算、原始来源范围或本书有条件比较，既有事实与案例继续独立。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-shift107-screening-and-rate",
+        "from": null,
+        "to": {
+          "raw": "5c4e5bef07c77f685df7d4770e006e323ff3bbcf7404bc909ec7e2a664928153",
+          "public": "5c4e5bef07c77f685df7d4770e006e323ff3bbcf7404bc909ec7e2a664928153",
+          "protected": "0b87e767609900f4eed622fcf406d6ddd69283a58a18c747fa786e05efd8279b"
+        },
+        "rationale": "登记实际作者模型计算、原始来源范围或本书有条件比较，既有事实与案例继续独立。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-shift107-model-range",
+        "from": null,
+        "to": {
+          "raw": "bffbfdf2744dcfd0f05ea5e24d16fbf1c4fd5a4cdf37a41789b011203c8b1d16",
+          "public": "bffbfdf2744dcfd0f05ea5e24d16fbf1c4fd5a4cdf37a41789b011203c8b1d16",
+          "protected": "2a183ea3848b26c009809cd775e20bcc1c7bfe2c4d9a3df1a0f917705dad5eec"
+        },
+        "rationale": "登记实际作者模型计算、原始来源范围或本书有条件比较，既有事实与案例继续独立。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-shift107-joint-direction",
+        "from": null,
+        "to": {
+          "raw": "8c4dfa630c0bb2f89600ebbdbd988af4a13495db78c616000ddee658cb7d57b9",
+          "public": "8c4dfa630c0bb2f89600ebbdbd988af4a13495db78c616000ddee658cb7d57b9",
+          "protected": "d0898cf2718baec1f840e9db360cbaa0ba11c8d1d6f7ce83a0d4e6aa1e3b969d"
+        },
+        "rationale": "登记实际作者模型计算、原始来源范围或本书有条件比较，既有事实与案例继续独立。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-shift107-service",
+        "from": null,
+        "to": {
+          "raw": "d1d2cfe399b5a95c772498bd47dfdc5fdeb407aff4d2774dba3c7a5977a4bfc8",
+          "public": "d1d2cfe399b5a95c772498bd47dfdc5fdeb407aff4d2774dba3c7a5977a4bfc8",
+          "protected": "835b48fbd7a2cf729cc566be6dedee39c8afeaeca3e2e3fb233a115fab0f127b"
+        },
+        "rationale": "登记实际作者模型计算、原始来源范围或本书有条件比较，既有事实与案例继续独立。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-shift107-supply",
+        "from": null,
+        "to": {
+          "raw": "9679b10d1d542f17b40bb8ec263d97b2c7d04624fd2ca52ad6043fd0df3ea69c",
+          "public": "9679b10d1d542f17b40bb8ec263d97b2c7d04624fd2ca52ad6043fd0df3ea69c",
+          "protected": "6f5894380143560b22dd5077b0e365f0b97d7f95ef26bc9cdd94c53f10514a47"
+        },
+        "rationale": "登记实际作者模型计算、原始来源范围或本书有条件比较，既有事实与案例继续独立。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-shift107-small",
+        "from": null,
+        "to": {
+          "raw": "1d4d7889779e8cd5a144bab534da711048fafc93b8832782c56387f205575ff8",
+          "public": "1d4d7889779e8cd5a144bab534da711048fafc93b8832782c56387f205575ff8",
+          "protected": "0ea1b34753c96b03725348d91e57cf46b9633edcf19ef261add892abd4b8948d"
+        },
+        "rationale": "登记实际作者模型计算、原始来源范围或本书有条件比较，既有事实与案例继续独立。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-shift107-large",
+        "from": null,
+        "to": {
+          "raw": "e9a6bcdd75a8c7fab92b269dee4b9a84ecd6e3f1a1ff2e62840e2f0a02aef3f2",
+          "public": "e9a6bcdd75a8c7fab92b269dee4b9a84ecd6e3f1a1ff2e62840e2f0a02aef3f2",
+          "protected": "49a24edfcb9ba3f82a6606ee80b09669d641db2f0c1e5ceb697e39b50d9ad5a8"
+        },
+        "rationale": "登记实际作者模型计算、原始来源范围或本书有条件比较，既有事实与案例继续独立。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-shift107-control",
+        "from": null,
+        "to": {
+          "raw": "46e76aeb304166566e8bf161b35eaf970784a5e474aa8cd46f7347553df58488",
+          "public": "46e76aeb304166566e8bf161b35eaf970784a5e474aa8cd46f7347553df58488",
+          "protected": "3ce874dd21fb263ef096d96a6bed0a8a427e768e57340d36942780d99924f6fc"
+        },
+        "rationale": "登记实际作者模型计算、原始来源范围或本书有条件比较，既有事实与案例继续独立。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-shift107-comparison-judgment",
+        "from": null,
+        "to": {
+          "raw": "c5ac5eeed5dbeaced3ea26c074d2df139f019b2736771820e94e7ea73ccf667a",
+          "public": "c5ac5eeed5dbeaced3ea26c074d2df139f019b2736771820e94e7ea73ccf667a",
+          "protected": "6f4fa9c41a7217fd8fe09ec81a77ee02cf4d605cbc930e5c608067cbb486b01e"
+        },
+        "rationale": "登记实际作者模型计算、原始来源范围或本书有条件比较，既有事实与案例继续独立。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-shift107-signal-comparison",
+        "from": null,
+        "to": {
+          "raw": "875b0c9c35ec1c2a2a026d91914c7988f9c2176acb79c7257bd9721fc2e3e968",
+          "public": "875b0c9c35ec1c2a2a026d91914c7988f9c2176acb79c7257bd9721fc2e3e968",
+          "protected": "d12cd3a0fda6f3ead5253778a2868efb65f5ecbf3ae55842d2d819dc83938e57"
+        },
+        "rationale": "登记实际作者模型计算、原始来源范围或本书有条件比较，既有事实与案例继续独立。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-shift107-wind-design",
+        "from": null,
+        "to": {
+          "raw": "397616aadd17bd31c1fdcba317daf524f322ac50c40c9db97ac9cfbafb6d6fb9",
+          "public": "397616aadd17bd31c1fdcba317daf524f322ac50c40c9db97ac9cfbafb6d6fb9",
+          "protected": "397616aadd17bd31c1fdcba317daf524f322ac50c40c9db97ac9cfbafb6d6fb9"
+        },
+        "rationale": "登记对时段比较、识别、观测量值或线性模型有限适用域等独立论述的位置。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-shift107-signal-screening",
+        "from": null,
+        "to": {
+          "raw": "982d6907caf82bbfa3a1d05b3d8a08faea2f68edaf5c98e9b3cb2d76c9bd4299",
+          "public": "982d6907caf82bbfa3a1d05b3d8a08faea2f68edaf5c98e9b3cb2d76c9bd4299",
+          "protected": "982d6907caf82bbfa3a1d05b3d8a08faea2f68edaf5c98e9b3cb2d76c9bd4299"
+        },
+        "rationale": "登记对时段比较、识别、观测量值或线性模型有限适用域等独立论述的位置。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-shift107-study-limits",
+        "from": null,
+        "to": {
+          "raw": "8ffea7fe795c6c38b9ffa66e663698f84aab7f3baeb45a1a083a7ba38f652850",
+          "public": "8ffea7fe795c6c38b9ffa66e663698f84aab7f3baeb45a1a083a7ba38f652850",
+          "protected": "8ffea7fe795c6c38b9ffa66e663698f84aab7f3baeb45a1a083a7ba38f652850"
+        },
+        "rationale": "登记对时段比较、识别、观测量值或线性模型有限适用域等独立论述的位置。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-shift107-model-range",
+        "from": null,
+        "to": {
+          "raw": "b1c919b0a0345a43a988a3f221580092743f439974fb17e4535d06909d14db7b",
+          "public": "b1c919b0a0345a43a988a3f221580092743f439974fb17e4535d06909d14db7b",
+          "protected": "b1c919b0a0345a43a988a3f221580092743f439974fb17e4535d06909d14db7b"
+        },
+        "rationale": "登记对时段比较、识别、观测量值或线性模型有限适用域等独立论述的位置。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-shift107-model-limits",
+        "from": null,
+        "to": {
+          "raw": "2659edee26b2064e64d0c48f750d804ee86239d728cdc391d9142e43dbaa8e83",
+          "public": "2659edee26b2064e64d0c48f750d804ee86239d728cdc391d9142e43dbaa8e83",
+          "protected": "2659edee26b2064e64d0c48f750d804ee86239d728cdc391d9142e43dbaa8e83"
+        },
+        "rationale": "登记对时段比较、识别、观测量值或线性模型有限适用域等独立论述的位置。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-shift107-steinsultz-2024",
+        "from": null,
+        "to": {
+          "raw": "1074741fdcc76971b0a75eaba38b86054e0ec71e77a0a4bb9c72c8c3752f1d10",
+          "public": "1074741fdcc76971b0a75eaba38b86054e0ec71e77a0a4bb9c72c8c3752f1d10",
+          "protected": "1074741fdcc76971b0a75eaba38b86054e0ec71e77a0a4bb9c72c8c3752f1d10"
+        },
+        "rationale": "登记实际核对的固定作品、引用位置、版本与合法取得范围。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-shift107-nilges-2025",
+        "from": null,
+        "to": {
+          "raw": "7640fa5964c426a54e8292a510c60021797d71fea668d8626e62f0d011cf8b07",
+          "public": "7640fa5964c426a54e8292a510c60021797d71fea668d8626e62f0d011cf8b07",
+          "protected": "7640fa5964c426a54e8292a510c60021797d71fea668d8626e62f0d011cf8b07"
+        },
+        "rationale": "登记实际核对的固定作品、引用位置、版本与合法取得范围。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-shift107-steinsultz-2024",
+        "from": null,
+        "to": {
+          "raw": "4dad17b411df729fa4401bed8bb73b1ed17ed9824876ef52fabe6478d381fc4c",
+          "public": null,
+          "protected": "4dad17b411df729fa4401bed8bb73b1ed17ed9824876ef52fabe6478d381fc4c"
+        },
+        "rationale": "登记核读位置，分开固定PDF原刊和实际网页派生文本载体，不将派生文本等同完整原件。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-shift107-nilges-2025",
+        "from": null,
+        "to": {
+          "raw": "053dbf116504b48faf6dbbdc726fc2904e0206197ea1cf24f0e2adcf2de207d8",
+          "public": null,
+          "protected": "053dbf116504b48faf6dbbdc726fc2904e0206197ea1cf24f0e2adcf2de207d8"
+        },
+        "rationale": "登记核读位置，分开固定PDF原刊和实际网页派生文本载体，不将派生文本等同完整原件。"
+      },
+      {
+        "kind": "record",
+        "key": "gaps:gap-shift107-empirical-paired-intervention",
+        "from": null,
+        "to": {
+          "raw": "e4dd8ade76a00d65b3d42974a78c8969a46196c61e5f1ffbc46d059600f1360c",
+          "public": null,
+          "protected": "e4dd8ade76a00d65b3d42974a78c8969a46196c61e5f1ffbc46d059600f1360c"
+        },
+        "rationale": "登记真实本轮检索、证据局限和对应处置。"
+      },
+      {
+        "kind": "record",
+        "key": "revisions:rev-finite-load-shift-107",
+        "from": null,
+        "to": {
+          "raw": "180fb7454c6282d2749774c89fe7dc77ab8fdce2a8c3e15f23bd3bdcfa973f17",
+          "public": null,
+          "protected": "180fb7454c6282d2749774c89fe7dc77ab8fdce2a8c3e15f23bd3bdcfa973f17"
+        },
+        "rationale": "登记真实本轮检索、证据局限和对应处置。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-shift107-steinsultz-2024",
+        "from": null,
+        "to": {
+          "raw": "d8b00c42b3b3ee24a3b969792458ab74486ca54e00ce766704180f769d9248a0",
+          "public": null,
+          "protected": "d8b00c42b3b3ee24a3b969792458ab74486ca54e00ce766704180f769d9248a0"
+        },
+        "rationale": "登记真实本轮检索、证据局限和对应处置。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-shift107-nilges-2025",
+        "from": null,
+        "to": {
+          "raw": "a9afc7e8cc6336412973e43950e24779c491282f55ad678b7cfe22480e3804bc",
+          "public": null,
+          "protected": "a9afc7e8cc6336412973e43950e24779c491282f55ad678b7cfe22480e3804bc"
+        },
+        "rationale": "登记真实本轮检索、证据局限和对应处置。"
+      },
+      {
+        "kind": "record",
+        "key": "queries:q-shift107-model-and-field-20261115",
+        "from": null,
+        "to": {
+          "raw": "114b421162ed7611d77b4cf4cd55af3b7c839d7589d9987bb2395567f00154eb",
+          "public": null,
+          "protected": "114b421162ed7611d77b4cf4cd55af3b7c839d7589d9987bb2395567f00154eb"
+        },
+        "rationale": "登记真实本轮检索、证据局限和对应处置。"
+      }
+    ],
+    "consumers": [],
+    "assessment": {
+      "scope": "Two original works: preserved Steinsultz2024 VOR PDF with selected evidence positions; Nilges2025 VOR public-web selected text preserved as two derived carriers, never represented as raw PDF bytes. No supplement, original empirical dataset or source-native SecMOD/AVERT load-shift run was obtained.",
+      "empirical": "The measured outcome aggregates CAMPD-covered ERCOT generators. Reported wind-potential HSL, normally forecast-based, is a conditional opposite-net-load proxy. Own tenth-percentile threshold groups, not a guaranteed exact10% or arbitrary hour pair, support the source-reported screening distinctions. G1 rate comparisons and residual biases, shared CAMPD, affiliated authors and selected clusters retain their limits.",
+      "model": "The paper supplies selected-basis one-coordinate ranges. The book extends the vector relation to a full signed intervention. Independent blocks and a verified common baseline response along the joint direction are sufficient routes; independence is not necessary, and an arbitrary affine joint ray does not make separately selected endpoint coefficients additive. Cost ties, one-sided derivatives and selected emissions remain qualified.",
+      "case": "The versioned author input fixes10 equal work units, two1h same-node lossless windows, fixed costs/capacities/rates and no intertemporal coupling. Paired dispatch preserves15MWh and10work units. At q=5/9/10, changes are−2000/0/+500kg versus original5500kg; the q10 initial-rate extrapolation is−4000kg. Receiving-rate equality across its dispatch switch does not keep the paired rate unchanged. All values are authored assumptions or exact deductions, not paper factors or field measurements.",
+      "conservation": "All earlier240 sources,864 evidence rows,897 claims and185 readings remain deeply equal to the qualified Main predecessor; two new works/sources/readings, five evidence records and twelve new claims have separate identities. All19 preceding case inputs and scientific evaluation contents were preserved; producer metadata changes belong to actual new exports.",
+      "review": "Independent original-source/model assessments, direct materialization of five templates, and primary integration checks support this scope. Reader and source findings were individually corrected; the final same-response clause and bounded q10 wording received a separate bounded source reread. Primary pure catalog/research/all20-case validation passed; that is distinct from the model reviewer’s direct single-case publication replay."
+    },
+    "independentReports": {
+      "independent-empirical-source-review.md": "cbaa0a9380788807c9db01a6447a775a135e2586033f8561d7630d954442404f",
+      "independent-model-source-review.md": "a6b038cccdbd9bfc80567f645d03c697a74c61085624617ffad6a489e05b0b0f",
+      "independent-reader-review.md": "0eb3d7484e73b3e1e5e66e8ed7b57bacc78eaadd6face7006b3748473d876725",
+      "independent-engineering-review.md": "719a0923673c55f78b9358fde44c82f1fd59ec145b172c18fa59353c650c0e70",
+      "model-implementation.md": "edeffe797f44334f3978295b1cdd9ecfc0791a9c465daf9e097be4b1c5114df5",
+      "primary-scroll-fixed-export-rehash.json": "03ec2a2d5213e4e22fb9249793386eeb6bbe3e1774394511d2803553cc789ae3",
+      "browser-qa-fixed/responsive-script-enabled.json": "679bf6e054e38b74542d4a396ab58b987c172f9a1562c2ec3482b1e808c6f074",
+      "browser-qa-fixed/interactions.json": "8bbb3d76733827dcee8c02d0411afba694bee6f5a2f739aff323c0b470d11ef4"
+    }
+  }
+}

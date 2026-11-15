@@ -20,6 +20,14 @@ lastReviewedCommit: 259a0f4c032f6716c263e45bb0355c87796cb0e1
 
 # LCA Living Knowledge Base and Review
 
+[Finite load shifts #107](https://github.com/tiangong-lca/knowledge-base/issues/107)
+connects observed time-window screening, marginal model conditions and a complete
+equal-service intervention. The [protocol and comparison record](_docs/editorial/2026-11-15-load-shift.md)
+separates the two original studies from the book's versioned authored dispatch
+case. Twelve new B12 explanations retain the original 58 and their case history.
+Source, reader and actual-output acceptance are separate from final production,
+CI, hosted Main and required workspace integration.
+
 [Substitution rules #105](https://github.com/tiangong-lca/knowledge-base/issues/105)
 compares complete-system reporting, reference residuals and the evidence required
 to choose a co-product substitute under ILCD and PEF. The

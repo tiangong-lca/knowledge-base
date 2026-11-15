@@ -24,6 +24,15 @@ lastReviewedCommit: 259a0f4c032f6716c263e45bb0355c87796cb0e1
 
 ## Scoped scientific successors
 
+The finite load-shift unit #107 separates an observational wind-potential proxy,
+a published model-basis condition and the book's own two-period dispatch example.
+The closed versioned input has stipulated service, energy, cost and emissions
+parameters. Its finite difference is not an empirical outcome or a source-native
+run. The second paper's retained text captures are derived carriers, not raw PDF
+bytes. Same units, a low signal group or an affine relation alone do not establish
+the required common response for a specific paired intervention. Earlier numerical
+and citation identities remain qualified independently of this new unit.
+
 The service-constraint unit #102 adds a source hypothetical and authored algebraic
 controls to B07. Original printed coefficients, values reconstructed from stated
 relationships and author examples remain distinguishable. A valid result for one

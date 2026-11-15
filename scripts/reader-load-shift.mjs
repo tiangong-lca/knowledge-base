@@ -14,7 +14,7 @@ export const loadShiftId = 'load-shift-107';
 export const loadShiftChapter = '/docs/book/electricity-service-and-response';
 export const loadShiftMarker = '时段信号与移峰幅度';
 /** @type {string|null} */
-export const loadShiftUnitPin = null;
+export const loadShiftUnitPin = 'bf8c97a86b04a4bb902c541ab13379254b375014a4da48076a427c6398f90d6b';
 /** @type {string|null} */
 export const loadShiftCapturePin = '5dae17582ad63458fb4446539b4ead8b3f433794fcf09434e1d723639ab28dd3';
 export const loadShiftSource = Object.freeze({
