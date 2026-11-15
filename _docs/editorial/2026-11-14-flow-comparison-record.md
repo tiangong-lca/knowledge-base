@@ -12,6 +12,8 @@ language: zh-CN
 
 本记录按 [试点协议](2026-11-14-flow-boundary-pilot.md)组织本轮所读原件。它先于长篇改稿接受独立检查；下表是有条件的研究判断，不是已取得的出版接受，也不是全领域共识。既有 `rd-ilcd-2010`、`rd-cml-2001-part3`、`rd-suh-2004-functions-thesis-reprint`、`rd-kb50-jrc-ilcd11` 和固定原生案例继续使用原身份，新位置追加到实际阅读记录。
 
+> 2026-11-15复盘说明：本文件保留试点成文前的比较记录及其当时表述，不代替最终已接受的正文。审查随后收窄了时间假设、模型估计量、必要条件和零值推断，并处理了读者指代问题；复用时应核对 [Main0fd2c7b的共享正文](https://github.com/tiangong-lca/knowledge-base/blob/0fd2c7bea8733f426c46fff1dd175119a257b13a/content/docs/book/exchange-semantics-and-conversion.mdx)及[源义签收](review-evidence/flow-boundary-99/source-report.json)，不把候选摘述重新升级为无条件事实。
+
 ## 1. 边界：选择过程与界定环境干预
 
 ISO 14040:2006 §3.12、3.22、3.32 分别界定基本流、中间流与系统边界，§3.27 另界定产品流；ISO 14044:2006 §4.2.3.3.1–3 把过程选择、理想边界所跨的基本流与产品流，以及截断的理由和影响分别处理。本轮仅在明确的公开预览中核读这些原条款，不把目录或导则转述算作未取得条文，也不声称已读 2017/2020 修正件及当前合并版。

@@ -13,8 +13,8 @@ checkPaths:
   - "AGENTS.md"
   - ".docpact/config.yaml"
   - "_docs/**"
-lastReviewedAt: 2026-11-14
-lastReviewedCommit: 54ad9fdbb9d1f948977888c412bef36ae2e33898
+lastReviewedAt: 2026-11-15
+lastReviewedCommit: 0fd2c7bea8733f426c46fff1dd175119a257b13a
 ---
 
 # Knowledge Base contributor contract
@@ -30,6 +30,15 @@ The user resumed again on2026-11-08, prioritizing whole-book argument, material 
 The 2026-11-14 user clarification makes concept/principle-led comparison of standards, guidance, scholarly methods, data and software the book's central research purpose. Apply [concept-led comparative writing](_docs/editorial/concept-led-comparison.md) for source selection, chapter design and acceptance. State the common question and actual comparative result; a completed language edit or publication check does not fill missing research. Historical/source-specific topics may retain named titles when their role and scope are explicit.
 
 For Chinese manuscript drafting, revision and reader review, apply [the writing and teaching guide](_docs/editorial/readable-writing-and-teaching.md) adopted on 2026-11-11. Follow the reader publication contract for independent review.
+
+On 2026-11-15 the user endorsed the completed flow pilot and explicitly authorized
+an active continuing GOAL to apply its retrospective corrections to every later
+revision and addition. Use the comparative contract, writing guide and current
+execution ledger for that work; do not restart the completed pilot or require
+repeated outline approval. A bounded pilot's conserved paragraphs/numbers are
+not a universal freeze: justified corrections and selection need their own
+evidence, historical disposition and affected-consumer review. Chapter delivery
+does not complete the remaining whole-book programme.
 
 Never publish private conversation/meeting text or licensed source originals. Source existence is not evidence of claim entailment. Distinguish source statements, synthesis, calculation, interpretation and proposal; retain uncertainty, negative evidence and conflicting views. Software tests do not establish scientific or human expert approval.
 

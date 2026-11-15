@@ -13,8 +13,8 @@ checkPaths:
   - "content/**"
   - "knowledge/**"
   - "releases/**"
-lastReviewedAt: 2026-11-14
-lastReviewedCommit: 54ad9fdbb9d1f948977888c412bef36ae2e33898
+lastReviewedAt: 2026-11-15
+lastReviewedCommit: 0fd2c7bea8733f426c46fff1dd175119a257b13a
 ---
 
 # Editorial and living review protocol
@@ -31,19 +31,21 @@ empirical validity separate. Preserve legitimate differences and unresolved
 questions; institutional prestige or equal citation counts cannot resolve them.
 A language-only acceptance does not complete missing comparative research.
 The dated [gap analysis](editorial/2026-11-14-mission-gap-analysis.md) records the
-present diagnosis and the limited next pilot, not its completed implementation.
+diagnosis and proposed pilot at that date. Issue99 subsequently delivered the
+bounded pilot; the 2026-11-15 continuation in `book-execution.md` is the current
+execution entry point. The design itself is not the scientific acceptance.
 
 ## Whole-book editorial priority
 
 The user's 2026-11-06 amendment governs the entire approved objective, including already published prose. Apply `lca-book-goal.md` §§2.7–2.12 and `reader-publication-contract.md`: establish a whole-book argument, preserve all 37 chapters and five supplemental topics through an explicit migration map, prefer one volume organized in parts, and observe the formal title/TOC constraints. Eight research domains and twelve appendix responsibilities remain coverage obligations, not a mandatory physical volume count.
 
-After the pause and bounded amendment, the user explicitly resumed execution on 2026-11-06. First deliver the argument, complete proposed book TOC, alternatives, complete mapping, risks and counts; reviewed source delivery and pending integration may proceed independently. Use the resulting argument gaps to select further research. Structure changes do not license invented facts or lost scope; later evidence-based additions remain possible with explicit revision records.
+After the pause and bounded amendment, the user explicitly resumed execution on 2026-11-06. That resumption first required the argument, proposed book TOC, alternatives, mapping, risks and counts; the original bounded editorial scope has since been delivered. Do not restart it as a prerequisite to each later paragraph. Reviewed source delivery and pending integration remain separate facts. Use the resulting argument gaps to select further research. Structure changes do not license invented facts or lost scope; later evidence-based additions remain possible with explicit revision records.
 
 Evaluate continuous prose and chapter-to-chapter transitions, not only headings. Source summaries, repeated templates and isolated claim paragraphs must become an actual argument with reader-relevant explanations, counterarguments and conclusions. Preserve scientific qualifications and author/source distinctions. Record source entailment, manuscript coherence, title statistics, content conservation and publication correctness separately; a positive model response is not human editorial or scientific approval.
 
 ## Argument, selection and synthesis before further authoring
 
-The user's 2026-11-08 resumption prioritizes a whole-manuscript argument and selection audit before further prose changes. Apply `lca-book-goal.md` §2.13 and [the argument and selection decision](editorial/2026-11-08-argument-and-selection.md). The existing centre, eight domains, twelve appendix responsibilities and42-item migration map remain; accessible or faithfully cited material has no automatic claim to main-text space.
+The user's 2026-11-08 resumption required an initial whole-manuscript argument and selection audit before further prose changes; that historical scope has been delivered. Its per-unit selection rules continue to apply, without requiring a new full-book audit before every local change. Apply `lca-book-goal.md` §2.13 and [the argument and selection decision](editorial/2026-11-08-argument-and-selection.md). The existing centre, eight domains, twelve appendix responsibilities and42-item migration map remain; accessible or faithfully cited material has no automatic claim to main-text space.
 
 Each unit's existing editorial record must establish four things: (1) its question, incoming premises, proposed conditional answer and downstream use before writing; (2) the role, evidence fitness, distinct contribution and destination of candidate material after reading; (3) a synthesis distinguishing common ground, different questions, real empirical/model/value/institutional disagreement and unknowns; (4) closure against the actual final prose, including deletion/repetition checks and a continuous review of each completed part. Record material moves/mergers/corrections by identity, but do not create a new platform or require every unchanged ledger entry to be rewritten.
 
@@ -59,11 +61,28 @@ The market-response unit reconstructs the original 1999 procedure, its contempor
 
 ## Historical pilot scope and evidence frame
 
-Publication starts with four bounded topics: flow/exchange/waste conventions; functional unit/reference flow in ILCD Format 1.1; ecoinvent system model overview; characterization coverage in openLCA. The history chapter is a research agenda with two source-bound software/database version nodes. The initial source frame is eight public official HTML documents, accessed 2026-11-03, selected for explanatory pilot value rather than a systematic literature search. No global recall or completeness estimate is claimed.
+The initial 2026-11-03 publication started with four bounded topics: flow/exchange/waste conventions; functional unit/reference flow in ILCD Format 1.1; ecoinvent system model overview; characterization coverage in openLCA. The history chapter is a research agenda with two source-bound software/database version nodes. The initial source frame is eight public official HTML documents, accessed 2026-11-03, selected for explanatory pilot value rather than a systematic literature search. No global recall or completeness estimate is claimed.
 
 That initial source set was not a systematic review. All eight URLs were inspected at the cited sections. Current web pages are mutable; this first set does not bundle source HTML or claim immutable preservation. Current manuals were not independently checked against historical executables. ISO full text, national standards, PCR/EPD rules, historical original reports and native software execution are outside the completed review scope. A blocked EUR-Lex page and a missing ILCD mirror enumeration page provided no evidence; the accessible JRC ILCD ProcessDataSet documentation supplies the cited quantitative-reference fields.
 
 ## Claim method
+
+The user-endorsed flow-pilot retrospective applies to every later revision and
+addition through `editorial/concept-led-comparison.md` and the writing guide.
+Before processing an original, check the permitted inspection, extraction and
+redistribution scope. Verify the actual returned carrier rather than trusting a
+filename or HTTP success: a home-page redirect, public preview, text capture and
+archive member have different evidential scopes. Record only the inspected
+pages/members/fields and the method used. Disjoint pages are not a continuous
+read range; shared works and repeat acquisitions are not independent support.
+
+Append a precise new reading event to the existing work/carrier identity where
+appropriate. Do not copy one work's appraisal into another, advance an uninspected
+member's reading date or silently move an old locator. Genuine corrections are
+allowed through an explicit correction/version disposition that preserves the
+earlier identity and reviews affected claims and outputs. Restricted originals
+and derivatives stay within their rights boundary. An unavailable source limits
+the corresponding claim and comparison, not every independent research unit.
 
 A source statement paraphrases only the cited content. Interpretation explains a source within its scope. Synthesis connects explicit premises, keeps their caveats and cannot create new normative authority. Calculation records assumptions and arithmetic; hypothetical values remain hypothetical. Proposals identify rationale and alternatives rather than pretending a source required the proposal. Reviewed means agent source checking for the stated scope; it is not human expert approval or certification.
 
@@ -83,7 +102,7 @@ Keep retrieval cutoff, evidence check date and substantive modification date dis
 
 Automated validation checks IDs, references, required reasoning, public dependency closure and update propagation. Substantive review checks source entailment, applicability, counterexamples, caveats and unintended normative claims. Browser review checks whether a reader can find this evidence. These checks are separate and none establishes environmental truth by itself.
 
-Next content tasks are version-bound primary-source acquisition, expanded national/sector standards coverage, historical original sources, native reference cases for waste conventions, and a domain-reviewed functional equivalence case. The coverage inventory records these gaps without equating source counts with field-wide completeness.
+The initial pilot proposed version-bound originals, wider standards/history, native waste examples and functional-equivalence work. Later units have addressed bounded portions, including the completed flow pilot. Select current gaps and next executable questions from the execution ledger and continuation inventory; do not repeat those examples merely because they were once future work. Counts still do not establish field-wide completeness.
 
 ## Approved research and manuscript expansion
 

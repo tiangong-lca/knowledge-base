@@ -16,13 +16,26 @@ checkPaths:
   - "content/**"
   - "scripts/**"
   - "releases/**"
-lastReviewedAt: 2026-11-14
-lastReviewedCommit: 54ad9fdbb9d1f948977888c412bef36ae2e33898
+lastReviewedAt: 2026-11-15
+lastReviewedCommit: 0fd2c7bea8733f426c46fff1dd175119a257b13a
 ---
 
 # Publication contract
 
 ## Scoped scientific successors
+
+The user endorsed the pilot method on2026-11-15 for every later modification and
+addition. Each task declares whether it changes scientific meaning, material
+selection, language or publication behavior and reviews the corresponding impact.
+The pilot's frozen paragraph and numeric inventories are scoped to that accepted
+generation. Record an explicit historical disposition for a correction, and use
+a new version where the changed claim or case requires it. Preserving old
+evidence does not authorize continued publication of a known error as the
+current conclusion.
+Conversely, a fresh digest or a self-consistent successor receipt cannot erase
+an old passage, carrier, meaning or unresolved source limitation. Apply the
+existing comparison/writing rules and actual source/reader/output gates in
+proportion to the change, without treating the pilot's test count as a template.
 
 The flow/boundary pilot99 adds separately identified comparisons and selected
 original-source readings to the accepted #95 generation. Its exact source delta,
