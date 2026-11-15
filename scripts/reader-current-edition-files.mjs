@@ -1,3 +1,4 @@
+import { selectSubstitutionRules, prepareSubstitutionRulesSource, effectiveSubstitutionRules, verifySubstitutionRulesReceipts } from './reader-substitution-rules.mjs';
 import { loadCasePublications } from './case-publication.mjs';
 import { selectServiceConstraints, readServiceConstraintsFiles, prepareServiceConstraintsSource, effectiveServiceConstraints, verifyServiceConstraintsReceipts } from './reader-service-constraints.mjs';
 import { selectFlowBoundary, prepareFlowBoundarySource, effectiveFlowBoundary, verifyFlowBoundaryReceipts } from './reader-flow-boundary.mjs';
@@ -30,22 +31,27 @@ export async function readReadableBookFiles(root, fixedFiles) {
   return result;
 }
 
-async function qualifyCurrentReaderSources(root, catalog, readings, literature, preview = false) {
+async function qualifyCurrentReaderSources(root, catalog, readings, literature, preview = null) {
   const readConfig = async name => JSON.parse(await readFile(join(root, 'config', name), 'utf8'));
   const baseline = await readConfig('readable-book-baseline.json');
   const acceptance = await readConfig('readable-book-current.json');
   if (editionDigest(baseline) !== readableBookBaselineDigest) throw new Error('Readable book integration baseline differs');
   const files = await readReadableBookFiles(root, baseline.fixedFiles);
   const serviceConfig = await readConfig('reader-service-constraints.json');
-  const serviceConstraints = selectServiceConstraints(serviceConfig, undefined, preview);
-  if (preview && serviceConfig.status !== 'preview') throw new Error('Service constraints review requires a private preview state');
+  const serviceConstraints = selectServiceConstraints(serviceConfig, undefined, preview === 'service');
+  const substitutionConfig = await readConfig('reader-substitution-rules.json');
+  const substitutionRules = selectSubstitutionRules(substitutionConfig, undefined, preview === 'substitution');
+  if (preview === 'substitution' && substitutionConfig.status !== 'preview')
+    throw new Error('Substitution rules review requires a private preview state');
+  if (preview === 'service' && serviceConfig.status !== 'preview') throw new Error('Service constraints review requires a private preview state');
   const config = await readConfig('reader-copyedit-current.json');
   const unit = selectReaderCopyedit(config, readerCopyeditUnitPin);
   const flowBoundary = selectFlowBoundary(await readConfig('reader-flow-boundary.json'), flowBoundaryUnitPin);
   if (flowBoundary && !unit) throw new Error('Flow boundary requires the accepted #95 language generation');
   if (serviceConstraints && !flowBoundary) throw new Error('Service constraints requires the accepted #99 generation');
+  if (substitutionRules && !serviceConstraints) throw new Error('Substitution rules requires the accepted #102 generation');
   for (const [path, bytes] of await readServiceConstraintsFiles(root, serviceConstraints)) files.set(path, bytes);
-  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints].filter(Boolean)];
+  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules].filter(Boolean)];
   const realRoot = await realpath(root);
   const reviewFiles = new Set((reviewUnits ?? []).flatMap(unit =>
     (unit.reviewEvidence ?? []).flatMap(row => [row.reportFile, row.artifactFile])));
@@ -57,18 +63,28 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
     artifacts.set(name, await readFile(path));
   }
 
-  const actual = inspectReadableBookEdition({ catalog, readings, literature, files });
-  const structure = copyeditSourceStructure({ catalog, files });
+  const input = { catalog, readings, literature, files };
+  const actual = inspectReadableBookEdition(input);
+  const structure = copyeditSourceStructure(input);
+  const substitution = substitutionRules && prepareSubstitutionRulesSource(substitutionRules, input, actual, structure);
+  substitution?.verifyCurrentState();
+  const previousRecords = substitution?.previousRecords ?? input;
   if (flowBoundary && !verifyFlowBoundaryReceipts(flowBoundary, artifacts))
     throw new Error('Flow boundary lacks exact independent source, reader, and output evidence');
-  if (serviceConstraints && !preview) {
+  if (serviceConstraints && preview !== 'service') {
     const [cases, { readerPublicDownloads }] = await Promise.all([
       loadCasePublications(root), import('./reader-current-output.mjs'),
     ]);
-    if (!verifyServiceConstraintsReceipts(serviceConstraints, artifacts, cases, readerPublicDownloads(catalog, literature, readings)))
+    if (!verifyServiceConstraintsReceipts(serviceConstraints, artifacts, cases, readerPublicDownloads(previousRecords.catalog, previousRecords.literature, previousRecords.readings)))
       throw new Error('Service constraints lacks exact independent source, reader, and output evidence');
   }
-  const service = serviceConstraints && prepareServiceConstraintsSource(serviceConstraints, actual, structure, { catalog, readings, files });
+  if (substitutionRules && preview !== 'substitution') {
+    const { readerPublicDownloads } = await import('./reader-current-output.mjs');
+    if (!verifySubstitutionRulesReceipts(substitutionRules, artifacts, readerPublicDownloads(catalog, literature, readings)))
+      throw new Error('Substitution rules lacks exact independent source, reader, and output evidence');
+  }
+  const service = serviceConstraints && prepareServiceConstraintsSource(serviceConstraints, substitution?.previous ?? actual,
+    substitution?.structure ?? structure, { ...previousRecords, files });
   const flow = flowBoundary && prepareFlowBoundarySource(flowBoundary, service?.previous ?? actual,
     service?.previous.structure ?? structure, flowBoundaryPredecessorPin, service?.previousRecords ?? { readings, catalog });
   if (!unit) return qualifyReadableBookEdition(baseline, readableBookBaselineDigest, acceptance, readableBookAcceptancePins, actual, artifacts);
@@ -90,7 +106,8 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   flow?.verifyCurrentState();
   service?.verifyCurrentState();
   const qualifiedFlow = effectiveFlowBoundary(effectiveReaderCopyedit(qualified, unit), flowBoundary, flow?.affectedClaimIds ?? []);
-  return effectiveServiceConstraints(qualifiedFlow, serviceConstraints, service?.affectedClaimIds);
+  const qualifiedService = effectiveServiceConstraints(qualifiedFlow, serviceConstraints, service?.affectedClaimIds);
+  return effectiveSubstitutionRules(qualifiedService, substitutionRules, substitution?.affectedClaimIds);
 }
 
 export function validateReadableBookCurrent(root, catalog, readings, literature) {
@@ -100,5 +117,11 @@ export function validateReadableBookCurrent(root, catalog, readings, literature)
 export function validateServiceConstraintsReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Service constraints review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, true);
+  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'service');
+}
+
+export function validateSubstitutionRulesReviewSources(root, catalog, readings, literature) {
+  if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
+    throw new Error('Substitution rules review requires the explicit private preview');
+  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'substitution');
 }

@@ -1,3 +1,5 @@
+import substitutionConfig from '../config/reader-substitution-rules.json' with { type: 'json' };
+import { selectSubstitutionRules, effectiveSubstitutionRules, substitutionRulesLayout } from './reader-substitution-rules.mjs';
 import serviceConstraintsConfig from '../config/reader-service-constraints.json' with { type: 'json' };
 import { selectServiceConstraints, effectiveServiceConstraints, serviceConstraintsLayout } from './reader-service-constraints.mjs';
 import flowBoundaryConfig from '../config/reader-flow-boundary.json' with { type: 'json' };
@@ -16,14 +18,16 @@ const oldPreview = preview && acceptance.status === 'preview';
 export const currentCopyedit = selectReaderCopyedit(copyeditConfig, readerCopyeditUnitPin, preview);
 export const currentFlowBoundary = selectFlowBoundary(flowBoundaryConfig, flowBoundaryUnitPin, preview);
 export const currentServiceConstraints = selectServiceConstraints(serviceConstraintsConfig, undefined, preview);
+export const currentSubstitutionRules = selectSubstitutionRules(substitutionConfig, undefined, preview);
 export const isReadableBookReviewPreview = oldPreview
-  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview');
+  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview');
 const previousPlan = readableBookReviewPlan(oldPreview
   ? acceptance.units
   : pinnedReadableBookUnits(acceptance, readableBookBaselineDigest, readableBookAcceptancePins));
 const acceptedCopyedit = effectiveReaderCopyedit(previousPlan, currentCopyedit);
 const acceptedFlow = effectiveFlowBoundary(acceptedCopyedit, currentFlowBoundary, []);
-export const currentBookPlan = effectiveServiceConstraints(acceptedFlow, currentServiceConstraints);
+const acceptedService = effectiveServiceConstraints(acceptedFlow, currentServiceConstraints);
+export const currentBookPlan = effectiveSubstitutionRules(acceptedService, currentSubstitutionRules);
 
 export function currentBookRecordMatches(kind, previous, current, projection) {
   if (projection !== undefined) return matchesAcceptedRecord(currentBookPlan, kind, previous, current, projection);
@@ -33,7 +37,11 @@ export function currentBookRecordMatches(kind, previous, current, projection) {
 
 export function currentFlowBoundaryRecordMatches(kind, key, actual) {
   const change = currentFlowBoundary?.changes.find(row => row.kind === 'record' && row.key === `${kind}:${key}`);
-  return change?.from != null && change.to?.raw === editionDigest(actual);
+  if (change?.from == null) return false;
+  const currentRaw = editionDigest(actual);
+  if (change.to.raw === currentRaw) return true;
+  const successor = currentBookPlan.changes.record.get(`${kind}:${key}`);
+  return successor?.to.raw === currentRaw && successor.predecessors?.some(row => row?.raw === change.to.raw);
 }
 
 export function currentBookFileMatches(path, previousDigest, currentDigest) {
@@ -53,5 +61,5 @@ export function currentBookLayout(key, previous) {
   if (key === 'B08:title') return flowBoundaryTitle(currentFlowBoundary, flowBoundaryChapter, copyedit);
   if (key === 'B08:headings') return flowBoundarySections(currentFlowBoundary, copyedit);
   if (key === 'B08:ordinary-dispositions') return flowBoundaryOrdinaryDispositions(currentFlowBoundary, copyedit);
-  return serviceConstraintsLayout(currentServiceConstraints, key, copyedit);
+  return substitutionRulesLayout(currentSubstitutionRules, key, serviceConstraintsLayout(currentServiceConstraints, key, copyedit));
 }

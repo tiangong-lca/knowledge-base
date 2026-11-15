@@ -1,0 +1,4863 @@
+{
+  "schemaVersion": 1,
+  "status": "preview",
+  "unit": {
+    "id": "substitution-rules-105",
+    "source": {
+      "commit": "f8751d57989bfca5f53b6beeab74895d54b594b2",
+      "tree": "0dd3ed9524b8fe8085f71afc962960ae309a62ce",
+      "manifest": "e5827ae9f67c232cee88e714d7ddc957687a1c2d534535cb144c78d548698f7e",
+      "date": "2026-11-15"
+    },
+    "routes": [
+      "book-joint-production",
+      "/docs/book/allocation-judgment-and-corrections"
+    ],
+    "rationale": "在已发布 B10 上比较 ILCD 与 PEF 的报告对象和替代过程证据，保留原案例、身份、旧引用与读者路径。",
+    "scope": [
+      "content/docs/book/allocation-judgment-and-corrections.mdx",
+      "content/monograph/joint-production.mdx",
+      "sources:src-book-ilcd-2010",
+      "sources:src-kb44-ec2021",
+      "readings:rd-ilcd-2010",
+      "readings:rd-kb44-ec2021",
+      "researchMetadata:order:claims",
+      "researchMetadata:order:evidence",
+      "researchMetadata:order:gaps",
+      "researchMetadata:order:revisions",
+      "researchMetadata:order:queries",
+      "researchMetadata:public-projection",
+      "claims:cl-sub105-two-uses",
+      "claims:cl-sub105-pef-report",
+      "claims:cl-sub105-ilcd-market",
+      "claims:cl-sub105-ilcd-absorption",
+      "claims:cl-sub105-pef-direct",
+      "claims:cl-sub105-evidence-example",
+      "claims:cl-sub105-fallbacks",
+      "claims:cl-sub105-conditional-results",
+      "claims:cl-sub105-reporting-objects",
+      "evidence:ev-sub105-ilcd-expansion",
+      "evidence:ev-sub105-ilcd-proxy-purpose",
+      "evidence:ev-sub105-ilcd-conditions",
+      "evidence:ev-sub105-pef-original",
+      "evidence:ev-sub105-pef-hierarchy",
+      "evidence:ev-sub105-pef-comparison-scope",
+      "gaps:gap-sub105-iso-use-permission",
+      "revisions:rev-substitution-rules-105",
+      "queries:q-sub105-multifunctionality-20261115"
+    ],
+    "changes": [
+      {
+        "kind": "file",
+        "key": "content/docs/book/allocation-judgment-and-corrections.mdx",
+        "from": "e2cde3381bffe115c497a66c8fcdd6492a161095ee562deb4ad5078ba40a6bbb",
+        "to": "b31195af5bdf1b6970351776b6eb885eb3e5200bdaf34f75aaaa285a8a5d5986",
+        "rationale": "在原章节路线、旧命题和 Joint Batch 案例不动的情况下增加两种方法的定性比较。"
+      },
+      {
+        "kind": "file",
+        "key": "content/monograph/joint-production.mdx",
+        "from": "426a079e6a16c8876d78bcb351017689d5a9668fb091ac4765dc8ed87bee5e1b",
+        "to": "652107e87723aaf4f5e033bfdbaf8b63cb5a84fed7e99f5dd8c4345feefcfa7c",
+        "rationale": "在原章节路线、旧命题和 Joint Batch 案例不动的情况下增加两种方法的定性比较。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-book-ilcd-2010",
+        "from": {
+          "raw": "80a491e831171515cc6b0995acdc5631c67543209d4263b8bb2f638fc1f0125a",
+          "public": "80a491e831171515cc6b0995acdc5631c67543209d4263b8bb2f638fc1f0125a",
+          "protected": "80a491e831171515cc6b0995acdc5631c67543209d4263b8bb2f638fc1f0125a"
+        },
+        "to": {
+          "raw": "7fa0f20438203046ac2865362271c2dd6573aa1c79ee1d4ca2023698b403d952",
+          "public": "7fa0f20438203046ac2865362271c2dd6573aa1c79ee1d4ca2023698b403d952",
+          "protected": "7fa0f20438203046ac2865362271c2dd6573aa1c79ee1d4ca2023698b403d952"
+        },
+        "rationale": "保留已发表原作品、原版本与载体，精确说明实际新增阅读位置。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-kb44-ec2021",
+        "from": {
+          "raw": "1faf5f81b0acc0f5c7a45b74dedff5902612bb60fb7ca9aa7160c6cbc8db327d",
+          "public": "1faf5f81b0acc0f5c7a45b74dedff5902612bb60fb7ca9aa7160c6cbc8db327d",
+          "protected": "1faf5f81b0acc0f5c7a45b74dedff5902612bb60fb7ca9aa7160c6cbc8db327d"
+        },
+        "to": {
+          "raw": "46acebb0fb98721504e448490fce705a466e89ae3aceda768abd0d134dd18bd0",
+          "public": "46acebb0fb98721504e448490fce705a466e89ae3aceda768abd0d134dd18bd0",
+          "protected": "46acebb0fb98721504e448490fce705a466e89ae3aceda768abd0d134dd18bd0"
+        },
+        "rationale": "保留已发表原作品、原版本与载体，精确说明实际新增阅读位置。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-ilcd-2010",
+        "from": {
+          "raw": "3b6845b0ebc871eb7a9b701e04a51b22c04548001dc5fb30a30b562f3374dbb6",
+          "public": null,
+          "protected": "3b6845b0ebc871eb7a9b701e04a51b22c04548001dc5fb30a30b562f3374dbb6"
+        },
+        "to": {
+          "raw": "13e258ec7cd731034e6fca3fb50ccf5810f5533e2d3d93f7cf7d1ceb782792c8",
+          "public": null,
+          "protected": "13e258ec7cd731034e6fca3fb50ccf5810f5533e2d3d93f7cf7d1ceb782792c8"
+        },
+        "rationale": "追加经核旧作品的新读位置，保留全部老载体、老阅读身份和已读位置。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-kb44-ec2021",
+        "from": {
+          "raw": "6c32c555e3213458825f61a22bd7e4581ace779bbc856698512e781e256a8104",
+          "public": null,
+          "protected": "6c32c555e3213458825f61a22bd7e4581ace779bbc856698512e781e256a8104"
+        },
+        "to": {
+          "raw": "81931f9b0757e322cda7a671df9399bff8769a07120cda9cffbfa6ff75e24503",
+          "public": null,
+          "protected": "81931f9b0757e322cda7a671df9399bff8769a07120cda9cffbfa6ff75e24503"
+        },
+        "rationale": "追加经核旧作品的新读位置，保留全部老载体、老阅读身份和已读位置。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:claims",
+        "from": {
+          "raw": "d4d4c7801033f0eb586f390824776e75942c71a28db1cc44c95c1f807bece403",
+          "public": null,
+          "protected": "d4d4c7801033f0eb586f390824776e75942c71a28db1cc44c95c1f807bece403"
+        },
+        "to": {
+          "raw": "8983cf55950aa7fecca12bd070bfce3b8af60b13ca575d4806b326582e42cce7",
+          "public": null,
+          "protected": "8983cf55950aa7fecca12bd070bfce3b8af60b13ca575d4806b326582e42cce7"
+        },
+        "rationale": "公开投影、原记录顺序、依赖关系或账本更新日随准确新记录而变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:evidence",
+        "from": {
+          "raw": "e78d9ab52d5e9bf64f7e252042d4f3fc2ae9e4e1560d1f882b040b2155b4fff5",
+          "public": null,
+          "protected": "e78d9ab52d5e9bf64f7e252042d4f3fc2ae9e4e1560d1f882b040b2155b4fff5"
+        },
+        "to": {
+          "raw": "52f505ea9f2692a2f6d757eaf9e62fc65ce66247e24770fa7cb5c8421840cb84",
+          "public": null,
+          "protected": "52f505ea9f2692a2f6d757eaf9e62fc65ce66247e24770fa7cb5c8421840cb84"
+        },
+        "rationale": "公开投影、原记录顺序、依赖关系或账本更新日随准确新记录而变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:gaps",
+        "from": {
+          "raw": "1fba1598593fd56aa2cb3fee0ccadd3aa7561118c775a0be2b6fd5ef2d221d57",
+          "public": null,
+          "protected": "1fba1598593fd56aa2cb3fee0ccadd3aa7561118c775a0be2b6fd5ef2d221d57"
+        },
+        "to": {
+          "raw": "0285152b12e020ba22d97b193f7c067aa6875e3113119b507dea883391cf0461",
+          "public": null,
+          "protected": "0285152b12e020ba22d97b193f7c067aa6875e3113119b507dea883391cf0461"
+        },
+        "rationale": "公开投影、原记录顺序、依赖关系或账本更新日随准确新记录而变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:revisions",
+        "from": {
+          "raw": "2d69ca926596314443218442effe6e4e2cdc8e97c081009a502fb9ad7c6edb82",
+          "public": null,
+          "protected": "2d69ca926596314443218442effe6e4e2cdc8e97c081009a502fb9ad7c6edb82"
+        },
+        "to": {
+          "raw": "9511e1de99526747fbc530bc782813a83af6cbc3a3ca6853c2d380683f3eaade",
+          "public": null,
+          "protected": "9511e1de99526747fbc530bc782813a83af6cbc3a3ca6853c2d380683f3eaade"
+        },
+        "rationale": "公开投影、原记录顺序、依赖关系或账本更新日随准确新记录而变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:queries",
+        "from": {
+          "raw": "bfab20389c11e6bb607515fee67d3747e7ab444f2185b4e1d53a85fc6dab06d2",
+          "public": null,
+          "protected": "bfab20389c11e6bb607515fee67d3747e7ab444f2185b4e1d53a85fc6dab06d2"
+        },
+        "to": {
+          "raw": "27fa487f68f192a4e1e7679309b45871917cc3e54785c68b7f120a0c8f316a68",
+          "public": null,
+          "protected": "27fa487f68f192a4e1e7679309b45871917cc3e54785c68b7f120a0c8f316a68"
+        },
+        "rationale": "公开投影、原记录顺序、依赖关系或账本更新日随准确新记录而变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:public-projection",
+        "from": {
+          "raw": "e4cea6da00263b540d011ea60791c5217303440b29cc3979b29d85cb057057f4",
+          "public": null,
+          "protected": "e4cea6da00263b540d011ea60791c5217303440b29cc3979b29d85cb057057f4"
+        },
+        "to": {
+          "raw": "d4bfb10cb03ad1998ac6c35bb94fdac299c0e01cc84aa908369fc34630e9d543",
+          "public": null,
+          "protected": "d4bfb10cb03ad1998ac6c35bb94fdac299c0e01cc84aa908369fc34630e9d543"
+        },
+        "rationale": "公开投影、原记录顺序、依赖关系或账本更新日随准确新记录而变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-sub105-two-uses",
+        "from": null,
+        "to": {
+          "raw": "63d04d67c688bb9d368083287149ec754f2da94799a058ae6351c64172105eef",
+          "public": "63d04d67c688bb9d368083287149ec754f2da94799a058ae6351c64172105eef",
+          "protected": "4856278204002296706d9528ed76ec9dfc3aeffca6316afe8fad3ad3e824f9b1"
+        },
+        "rationale": "以独立规范身份登记原规则解释和条件比较，保留旧书章及案例身份。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-sub105-pef-report",
+        "from": null,
+        "to": {
+          "raw": "ba165608aaf695f8b7dfe9a82fb40c06098121996836d579fe4bdbec3455b9c5",
+          "public": "ba165608aaf695f8b7dfe9a82fb40c06098121996836d579fe4bdbec3455b9c5",
+          "protected": "1a6be607bd23732eab80b56d33bccb460625344e618de3726ff12ebb1b365289"
+        },
+        "rationale": "以独立规范身份登记原规则解释和条件比较，保留旧书章及案例身份。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-sub105-ilcd-market",
+        "from": null,
+        "to": {
+          "raw": "d4368562d5f66ab2e183288fd329acb6f52844e89700474bfbb76a648ada990b",
+          "public": "d4368562d5f66ab2e183288fd329acb6f52844e89700474bfbb76a648ada990b",
+          "protected": "e7e3c3945a7c2e430eea0a4ce08dfa23573ae5e73c962b6640797e6935709093"
+        },
+        "rationale": "以独立规范身份登记原规则解释和条件比较，保留旧书章及案例身份。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-sub105-ilcd-absorption",
+        "from": null,
+        "to": {
+          "raw": "aefcaf13a7fd6db5335e491d5ed893d6e479560d7cbd1a90f444648baa70e400",
+          "public": "aefcaf13a7fd6db5335e491d5ed893d6e479560d7cbd1a90f444648baa70e400",
+          "protected": "8efa51a3c537647d5ecd3fa0cb3fdac826c016a2b6e66f1fe69823300f824199"
+        },
+        "rationale": "以独立规范身份登记原规则解释和条件比较，保留旧书章及案例身份。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-sub105-pef-direct",
+        "from": null,
+        "to": {
+          "raw": "e64a382d3d087bd6bad77c139447da16cd2259dc2951e2753cd3ea4edf03b58c",
+          "public": "e64a382d3d087bd6bad77c139447da16cd2259dc2951e2753cd3ea4edf03b58c",
+          "protected": "a9dfee4052072ca15c23b0ba7fc1c5fe9221b676fe0015cde299d20d4066908b"
+        },
+        "rationale": "以独立规范身份登记原规则解释和条件比较，保留旧书章及案例身份。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-sub105-evidence-example",
+        "from": null,
+        "to": {
+          "raw": "9015f903af4e07f24190960e1f43a85d0ea63bb5d0787565b8fdbe8d53c11256",
+          "public": "9015f903af4e07f24190960e1f43a85d0ea63bb5d0787565b8fdbe8d53c11256",
+          "protected": "c8132705891cd39e59e0557149115f59260a1697742c549d6c5bc8d25b2f971f"
+        },
+        "rationale": "以独立规范身份登记原规则解释和条件比较，保留旧书章及案例身份。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-sub105-fallbacks",
+        "from": null,
+        "to": {
+          "raw": "6bcf9e66e0b130eb0a51afc0e228d3554506756f0712026edfb5c52291566b45",
+          "public": "6bcf9e66e0b130eb0a51afc0e228d3554506756f0712026edfb5c52291566b45",
+          "protected": "4dc148908b3c1528643e6ecbb82983cce05fe670289cc3b19f9545a2355e68a8"
+        },
+        "rationale": "以独立规范身份登记原规则解释和条件比较，保留旧书章及案例身份。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-sub105-conditional-results",
+        "from": null,
+        "to": {
+          "raw": "b11d001239d27f0857c1d230078ed754907d8059a073623845652940e0394884",
+          "public": "b11d001239d27f0857c1d230078ed754907d8059a073623845652940e0394884",
+          "protected": "72fc0d00063940d92163e8b3d7f3007235535cef3c34dc1788da0b470e03d278"
+        },
+        "rationale": "以独立规范身份登记原规则解释和条件比较，保留旧书章及案例身份。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-sub105-reporting-objects",
+        "from": null,
+        "to": {
+          "raw": "a118b1f08972db9d7cce646516989fccdc78db963b2223ad923cf5f5909e7224",
+          "public": "a118b1f08972db9d7cce646516989fccdc78db963b2223ad923cf5f5909e7224",
+          "protected": "f656338e1bdbc4a38550f36fd3f94a912ba279683e8ca46847c33d88c31a5ce7"
+        },
+        "rationale": "以独立规范身份登记原规则解释和条件比较，保留旧书章及案例身份。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-sub105-ilcd-expansion",
+        "from": null,
+        "to": {
+          "raw": "409f1652dc9fb1cf4fcc4eba4a7b17d55aadddf76d24ef35cacc324f34bf8e7e",
+          "public": "409f1652dc9fb1cf4fcc4eba4a7b17d55aadddf76d24ef35cacc324f34bf8e7e",
+          "protected": "409f1652dc9fb1cf4fcc4eba4a7b17d55aadddf76d24ef35cacc324f34bf8e7e"
+        },
+        "rationale": "登记原 ILCD 或 PEF 文件实际核对的条款，限定版本、报告对象及选择证据。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-sub105-ilcd-proxy-purpose",
+        "from": null,
+        "to": {
+          "raw": "4f87397e6f923ea696e315356dc44bbe222ad4c1e0ffb0d7231db8ccbbf8f566",
+          "public": "4f87397e6f923ea696e315356dc44bbe222ad4c1e0ffb0d7231db8ccbbf8f566",
+          "protected": "4f87397e6f923ea696e315356dc44bbe222ad4c1e0ffb0d7231db8ccbbf8f566"
+        },
+        "rationale": "登记原 ILCD 或 PEF 文件实际核对的条款，限定版本、报告对象及选择证据。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-sub105-ilcd-conditions",
+        "from": null,
+        "to": {
+          "raw": "62a87906c57645198efb2d6c4fd140f8b504549968f96b0a4d45844500813f72",
+          "public": "62a87906c57645198efb2d6c4fd140f8b504549968f96b0a4d45844500813f72",
+          "protected": "62a87906c57645198efb2d6c4fd140f8b504549968f96b0a4d45844500813f72"
+        },
+        "rationale": "登记原 ILCD 或 PEF 文件实际核对的条款，限定版本、报告对象及选择证据。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-sub105-pef-original",
+        "from": null,
+        "to": {
+          "raw": "8d7afc99fa5c160b489592aa0126d78cf6ca68a91fe9a98b60c0d4ce04a046bb",
+          "public": "8d7afc99fa5c160b489592aa0126d78cf6ca68a91fe9a98b60c0d4ce04a046bb",
+          "protected": "8d7afc99fa5c160b489592aa0126d78cf6ca68a91fe9a98b60c0d4ce04a046bb"
+        },
+        "rationale": "登记原 ILCD 或 PEF 文件实际核对的条款，限定版本、报告对象及选择证据。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-sub105-pef-hierarchy",
+        "from": null,
+        "to": {
+          "raw": "f76a85d831d1cb623903e613f2f7c17e288283318863289d4a8e75425b7bb2c2",
+          "public": "f76a85d831d1cb623903e613f2f7c17e288283318863289d4a8e75425b7bb2c2",
+          "protected": "f76a85d831d1cb623903e613f2f7c17e288283318863289d4a8e75425b7bb2c2"
+        },
+        "rationale": "登记原 ILCD 或 PEF 文件实际核对的条款，限定版本、报告对象及选择证据。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-sub105-pef-comparison-scope",
+        "from": null,
+        "to": {
+          "raw": "7b2dea19445992d3f01310ba9479c1731b65bb9b920f41355915d11fb0c5de31",
+          "public": "7b2dea19445992d3f01310ba9479c1731b65bb9b920f41355915d11fb0c5de31",
+          "protected": "7b2dea19445992d3f01310ba9479c1731b65bb9b920f41355915d11fb0c5de31"
+        },
+        "rationale": "登记原 ILCD 或 PEF 文件实际核对的条款，限定版本、报告对象及选择证据。"
+      },
+      {
+        "kind": "record",
+        "key": "gaps:gap-sub105-iso-use-permission",
+        "from": null,
+        "to": {
+          "raw": "5e302ab83dd3672d270a72aeb6e10ba967baa8170e0d021d7277612b63b35545",
+          "public": null,
+          "protected": "5e302ab83dd3672d270a72aeb6e10ba967baa8170e0d021d7277612b63b35545"
+        },
+        "rationale": "登记本轮获得且实际核对的研究范围、检索或见证。"
+      },
+      {
+        "kind": "record",
+        "key": "revisions:rev-substitution-rules-105",
+        "from": null,
+        "to": {
+          "raw": "0b073ab9b214a9d1480939355a04d5f83b83d4b9ce2fa42d9a40402f1dbfe91e",
+          "public": null,
+          "protected": "0b073ab9b214a9d1480939355a04d5f83b83d4b9ce2fa42d9a40402f1dbfe91e"
+        },
+        "rationale": "登记本轮获得且实际核对的研究范围、检索或见证。"
+      },
+      {
+        "kind": "record",
+        "key": "queries:q-sub105-multifunctionality-20261115",
+        "from": null,
+        "to": {
+          "raw": "8f2de60d679b61cff95fd171d90a8be3da65dc6a47fb2193ddcb331c315116b0",
+          "public": null,
+          "protected": "8f2de60d679b61cff95fd171d90a8be3da65dc6a47fb2193ddcb331c315116b0"
+        },
+        "rationale": "登记本轮获得且实际核对的研究范围、检索或见证。"
+      }
+    ],
+    "consumers": [
+      {
+        "id": "cl-flow-type",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-exchange",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-flow-exchange-distinction",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-waste-no-universal",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-ilcd-reference-flow",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-ilcd-fu",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-fu-distinction",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-fu-example",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-bw-direction",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-bw-sign",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-book-service",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-book-service-contract",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-book-ilcd-reference",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-book-reference-reading",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-book-comparison-more",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-book-three-comparisons",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-book-interpret-iterate",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-book-not-equivalent",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-book-conclusion-conditions",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-book-integrative-function",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-book-integrative-iteration",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-book-integrative-path",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-db2011-review-relative-to-criteria",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-db2011-validation-context",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-db2011-versioned-confidence",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-future-definition",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-future-scale-up",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-future-incumbent",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-future-scenarios",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-future-background",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-future-impact-limits",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-future-comparison-conditions",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-connect-object-before-unit",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-connect-service-changes-system",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-connect-three-scalings",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-connect-time-relations",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-connect-prospective-two-questions",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-connect-reuse-keeps-relation",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-connect-evidence-to-probability",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-connect-useful-without-winner",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-connect-review-does-not-transfer",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-connect-next-evidence-at-link",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-wall-question",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-wall-quantities",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-wall-reference",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-wall-same-mass",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-wall-coordinates",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-wall-demand",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-wall-activities",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-wall-balance-meaning",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-wall-inventory",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-wall-inventory-boundary",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-wall-factor-choice",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-wall-characterization",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-wall-metric-meaning",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-wall-time",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-wall-unknown",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-wall-paired-range",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-wall-pairing",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-wall-tolerance",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-wall-rough-demand",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-wall-rough-comparison",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-wall-exercise",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-wall-answer",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-framework-design-sideeffects",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-framework-reader-work-product",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-hyb-accounts",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-hyb-service",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-hyb-ledger",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-hyb-invoices",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-hyb-raw",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-hyb-naive",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-hyb-remove",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-hyb-equations",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-hyb-corrected",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-hyb-naive-result",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-hyb-swap",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-hyb-swap-result",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-hyb-audit",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-pack-limits",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-opening",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、src-kb44-ec2021、rd-ilcd-2010、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-rp",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-why-chain",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-force",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-category",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-version",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-use-boundary",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-default",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-results-layer",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-reconstruction-limit",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-review-objects",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-review-2018",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-review-2024",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-review-identity",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-validity",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-methane-rule",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-nordic-design",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-niu-provenance",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-ipcc-class",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-model-meaning",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-comparison-limits",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-evidence-judgment",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-conclusion",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-wash-cycles",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-wash-inputs",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-use-result",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-report-split",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-quantity-scale",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-capital-gap",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-storage-gap",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-ration-units",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-niu-result",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-ipcc-result",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-rule-issuer",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-pm-factor-correction",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-pm-implementation-layer",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-pm-matched-scope",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-pm-uncovered-pathways",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-pm-conclusion",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-pm-activity-indicators",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-opening",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-service",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-coordinates",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-voltage-path",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-grid-assets",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-loss-definition",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-norway-loss",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-segment-denominators",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-database-voltage",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-loss-proxy",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-egrid-scope",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-egrid-adjustments",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-egrid-rate",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-egrid-loss",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-egrid-loss-conflict",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-region-membership",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-eia-emissions",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-average-response",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-historical-generation",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-historical-consumption",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-empirical-limits",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-price-versus-energy",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-native-model",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-native-scenario",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-native-loss",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-native-loss-document",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-native-interpolation",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-native-output",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-native-ratios",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-native-check-meaning",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-native-two-hours",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-native-pollutants",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-native-application",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-future-question",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-future-system",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-future-perturbation",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-future-postprocessing",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-future-balance",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-future-load-parts",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-future-distribution",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-future-direct-rates",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-future-three-questions",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-future-gases",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-future-gases-total",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-future-scenario",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-future-time",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-future-formula",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-alternative-lca",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-validation-objects",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-connection",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-nonbaseload",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-native-coordinate",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-power-future-storage-policy",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-opening",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-record-and-link",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-bottle-reference",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-example-scope",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-opposite",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-scale",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-matrix-sign",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-allocation-held",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-representation-result",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-small-inventory",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-same-flow-total",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-three-co2-quantities",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-allocation-result",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-printed-comparator",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-missing-link",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-missing-link-score",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-jrc-instance",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、src-kb44-ec2021、rd-ilcd-2010、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-jrc-connectors",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-jrc-parameters",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-jrc-weight-control",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-jrc-bare-setup",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-jrc-machine-edge",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-jrc-machine-coordinate",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-jrc-source-discrepancy",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-jrc-partial-match",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-jrc-result-projection",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-jrc-version-reference",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-format-scope",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、src-kb44-ec2021、rd-ilcd-2010、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-format-original-target",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-format-double-target",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、src-kb44-ec2021、rd-ilcd-2010、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-format-result-scale",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-result-direction",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、src-kb44-ec2021、rd-ilcd-2010、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-conversion-study",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-factor-probe",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-factor-zero-absent",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-factor-real-gap",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-factor-report",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-preservation-meaning",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-native-service-meaning",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-climate-wall-fixed",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-climate-wall-reweighted",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-climate-comparison-criteria",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-climate-conclusion",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-closing-wall-substrate",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-closing-historical-return",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-book-maintenance-condition",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-book-record-model-limit",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-inv-service-to-demand",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-db2011-conditional-use",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-pm-matched-scenario",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-pm-version-and-model",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-book-future-scenario-matrix",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-book-future-decision",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-flow99-two-boundaries",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-flow99-elementary",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-flow99-landfill",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-flow99-boundary-consequence",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-flow99-agricultural-boundary",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-flow99-boundary-exceptions",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-flow99-record-and-instance",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-flow99-schema-levels",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-flow99-identity-example",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-flow99-waste-classification",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-flow99-material-and-service",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-flow99-direction-equivalence",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-flow99-reference-levels",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-flow99-basis-and-demand",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-flow99-pesticide-interface",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、src-kb44-ec2021、rd-ilcd-2010、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-flow99-interface-consequence",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-flow99-phosphorus-interface",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-kb44-ec2021、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-flow99-zero-placeholder",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-flow99-zero-reasons",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-flow99-zero-reporting",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-flow99-conclusion",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、src-kb44-ec2021、rd-ilcd-2010、rd-kb44-ec2021影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-flow99-probe-reference",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-service102-row-map",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-service102-service-meaning",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-service102-redundant",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      },
+      {
+        "id": "cl-service102-residual-condition",
+        "rationale": "逐项保留原论述、前提与实际证据位置。此次扩读在关系图上经src-book-ilcd-2010、rd-ilcd-2010影响此项的复核范围；原来源、载体及读取位置仍保持。"
+      }
+    ],
+    "state": {
+      "before": "40319e429ee4aa78c6eeefcdbbd1f751746253538862fb0cffb6c767a1696b88",
+      "after": "7ff6019fb2a2b330d1d79308b5595dda1cc722b53ed115fe292d06519b535a2f"
+    },
+    "rawRecords": [
+      {
+        "path": "catalog.sources",
+        "id": "src-book-ilcd-2010",
+        "from": {
+          "id": "src-book-ilcd-2010",
+          "title": "ILCD Handbook — General guide for Life Cycle Assessment — Detailed guidance",
+          "url": "https://eplca.jrc.ec.europa.eu/uploads/ILCD-Handbook-General-guide-for-LCA-DETAILED-GUIDANCE-12March2010-ISBN-fin-v1.0-EN.pdf",
+          "version": "First edition, March 2010；EUR 24708 EN；JRC48157；DOI 10.2788/38479；ISBN 978-92-79-19092-6",
+          "publisher": "European Commission, Joint Research Centre",
+          "accessedAt": "2026-11-04",
+          "accessStatus": "public-passages-inspected",
+          "rights": "法律页允许注明来源后再现，以原文条件为准；第三方材料的权利单独适用。",
+          "preservation": "引文依据所列版本与页码；原始文献由作者或出版机构提供，本书不转载原件。不同版本及再印文本的页码不能直接混用。",
+          "artifact": {
+            "mediaType": "application/pdf",
+            "sha256": "7de4b9126536894b0b2594ab268b23b4de7de228146390ed6ade9954625e0c0f",
+            "resolvedUrl": "https://eplca.jrc.ec.europa.eu/uploads/ILCD-Handbook-General-guide-for-LCA-DETAILED-GUIDANCE-12March2010-ISBN-fin-v1.0-EN.pdf",
+            "pageCount": 417
+          },
+          "reading": {
+            "status": "selected-passages",
+            "scope": "版权、引用方式与 Preface，印刷页 i–ii；§§2.3–2.4，印刷页 17–20；Chapter 4，Figures 4–5 及限制与规定，印刷页 25–28；§5.1 与 §§5.2.1–5.2.2 局部；所列四页全文，印刷页 29–32；§§6.4.1–6.4.7；Table 4 与 footnote 39；规定；§6.5.1 开头，印刷页 59–70；§6.6.1，含 foreground/background 上下文，印刷页 93–98；§§6.10.1–6.10.8；比较研究规定的开头，印刷页 140–145；§9.1 解释概述，印刷页 285；§6.4.1 概念框；已列 pp59–70 内的细定位，印刷页 60 2026-11-07本轮来源检查代理重新读取既有PDF封面、法律页、Preface，印刷pp59–65和pp140–148（比较规定框止于XIV）；p60、p64、p143、pp145–147图像核对。原取得及历史阅读范围、日期均保留；不包含所引完整建模和review文献。 2026-11-14追加本来源载体选读：§6.6.1 pp93–94；§6.6.3 p102以下选段；§6.6 规定 III p105；§7.4.4.1 pp233–234，System boundaries；§7.4.4.2 pp242–244，Complete modelling、Inventorying convention、Provisions I.a–c；§6.4.1 pp60–61；§7.4.2.6 pp200–201；§8.2 pp276–281，Ensure a correct link、Missing factor、Provisions I–VI、脚注188和191；§6.4.1 印p61脚注37；§7.4.4.2 印pp242–244，含 Provisions I.a–c；PDF81、262–264；§7.4.4.1 印pp233–234、238–239；PDF253–254、258–259；正文和 Provisions I.a–d；§§7.1、7.4.5、7.8、6.7.4–6.7.5、8.2 相应选段；印pp111–112、153、244–245、252–253、277–279；PDF131–132、173、264–265、272–273、297–299。本次检查限这些位置和必要上下文，保留旧取得与阅读事件。",
+            "checkedAt": "2026-11-14",
+            "readingId": "rd-ilcd-2010"
+          }
+        }
+      },
+      {
+        "path": "catalog.sources",
+        "id": "src-kb44-ec2021",
+        "from": {
+          "id": "src-kb44-ec2021",
+          "title": "Commission Recommendation (EU) 2021/2279 of 15 December 2021 on the use of the Environmental Footprint methods to measure and communicate the life cycle environmental performance of products and organisations",
+          "url": "https://publications.europa.eu/resource/cellar/ca3eccfd-da68-11ec-a95f-01aa75ed71a1.0006.01/DOC_1",
+          "version": "15 December 2021；英文重刊文本 CELEX 32021H2279R(01)，OJ L 144，23 May 2022",
+          "publisher": "European Commission; Publications Office of the European Union",
+          "accessedAt": "2026-11-05",
+          "accessStatus": "public-passages-inspected",
+          "rights": "欧盟出版局 Cellar 公开提供所列官方载体。欧盟委员会一般再利用政策保留例外与第三方权利。公开交接限来源标识、定位及原创释义。",
+          "preservation": "技术条款锚定英文更正重刊 PDF 的 SHA-256。阅读另存原刊、英文合并与斯洛伐克语更正的载体身份。原刊附件运行页码与 PDF 物理页有偏移，需同时注明。",
+          "artifact": {
+            "mediaType": "application/pdf",
+            "sha256": "42445138f591d8052c0096384db30db513c11da918d0de2e9955baa33264faa7",
+            "resolvedUrl": "https://publications.europa.eu/resource/cellar/ca3eccfd-da68-11ec-a95f-01aa75ed71a1.0006.01/DOC_1",
+            "pageCount": 384
+          },
+          "reading": {
+            "status": "selected-passages",
+            "scope": "2022 英文更正指令、推荐正文首尾、Annex I–IV 起页和终页；2021 英文原刊 act item 首叶、正文末页、两组附件起始及终叶；2021 英文原刊整期的封面、正文末页、两组附件起始及终叶；02021H2279-20211230 英文合并文本首叶；2024 斯洛伐克语更正首末页及编号范围；推荐主文 §§1.1–1.3、2(a)、2(e)、3.1、4.1、7.1；Annex I §§1–1.1；Annex II Part A 开头；Annex I §4.4.7，使用阶段建模要求（至 §4.4.7.1 之前）；Annex I §4.4.7.2；Annex II Part D 说明及 Milk、Chilled storage (in a fridge, at home)、Dishwashing (at home) 行；Annex II §A.5.1 Benchmark；Annex II §§A.2.10–A.2.10.1，最终草案提交与代表产品 Excel 模型；Annex II §§A.2.9.1–.2、A.2.9.3–.4，类别规则审查的对象、准则和报告；Annex II §A.2，部分修订条件与流程；Annex I §§8.1、8.4–8.4.1、8.5.1–8.5.3；Annex II §§A.8.1–A.8.3.3，研究层验证；Annex II §A.2.3，代表产品定义；Annex II §§A.3.2.3–A.3.2.5，代表产品、功能单位、参考流与边界 2026-11-14追加本来源载体选读：Annex I §4.4.1.4, Pesticides（OJ L 144/37）；Annex I §§4.4.1.5–6, Fertilisers; Heavy metal emissions（OJ L 144/37–39）；Annex I §§5.1.1–2, Classification and Characterisation（OJ L 144/87）；Annex I §4.2.5, End of life；首三段（OJ L 144/35）。本次检查限这些位置和必要上下文，保留旧取得与阅读事件。",
+            "checkedAt": "2026-11-14",
+            "readingId": "rd-kb44-ec2021"
+          }
+        }
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-sub105-ilcd-expansion",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-sub105-ilcd-proxy-purpose",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-sub105-ilcd-conditions",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-sub105-pef-original",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-sub105-pef-hierarchy",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-sub105-pef-comparison-scope",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-sub105-two-uses",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-sub105-pef-report",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-sub105-ilcd-market",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-sub105-ilcd-absorption",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-sub105-pef-direct",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-sub105-evidence-example",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-sub105-fallbacks",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-sub105-conditional-results",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-sub105-reporting-objects",
+        "from": null
+      },
+      {
+        "path": "readings.readings",
+        "id": "rd-ilcd-2010",
+        "from": {
+          "id": "rd-ilcd-2010",
+          "workId": "work-ilcd-2010-detailed-guide",
+          "title": "ILCD Handbook — General guide for Life Cycle Assessment — Detailed guidance",
+          "version": "First edition March 2010；EUR 24708 EN；JRC48157；DOI 10.2788/38479；ISBN 978-92-79-19092-6；2011 仓储/文件日期不等于新版本",
+          "url": "https://eplca.jrc.ec.europa.eu/uploads/ILCD-Handbook-General-guide-for-LCA-DETAILED-GUIDANCE-12March2010-ISBN-fin-v1.0-EN.pdf",
+          "accessedAt": "2026-11-04",
+          "readAt": "2026-11-04",
+          "readingStatus": "selected-passages",
+          "question": "功能单位、参考流、迭代与比较结论在本版技术指导中怎样连接？",
+          "argumentSummary": "功能同时有定量、定性及期间条件，参考流连接具体实现；应用未定的数据集可用声明单位。解释检查贯穿迭代；高不确定性可能遮蔽相关差异；关键数据、资源或经费不足不能成为断言差异不显著的理由。本版也标明与 ISO 的不同关系。",
+          "artifacts": [
+            {
+              "id": "art-ilcd-2010-pdf",
+              "mediaType": "application/pdf",
+              "sha256": "7de4b9126536894b0b2594ab268b23b4de7de228146390ed6ade9954625e0c0f",
+              "resolvedUrl": "https://eplca.jrc.ec.europa.eu/uploads/ILCD-Handbook-General-guide-for-LCA-DETAILED-GUIDANCE-12March2010-ISBN-fin-v1.0-EN.pdf",
+              "pageCount": 417
+            }
+          ],
+          "passages": [
+            {
+              "id": "psg-ilcd-2010-identity",
+              "artifactId": "art-ilcd-2010-pdf",
+              "locator": "版权、引用方式与 Preface",
+              "printedPages": "i–ii",
+              "topics": [
+                "版本身份",
+                "权利",
+                "指南定位"
+              ],
+              "limits": [
+                "出版年份与仓储记录日期分开。"
+              ],
+              "pdfIndices": [
+                1,
+                2
+              ]
+            },
+            {
+              "id": "psg-ilcd-2010-status",
+              "artifactId": "art-ilcd-2010-pdf",
+              "locator": "§§2.3–2.4",
+              "printedPages": "17–20",
+              "topics": [
+                "要求用语",
+                "ISO 关系标记",
+                "有条件符合性"
+              ],
+              "limits": [
+                "本手册新增或更严格规定不能直接写成 ISO 原文规定。"
+              ],
+              "pdfIndices": [
+                36,
+                37,
+                38,
+                39
+              ]
+            },
+            {
+              "id": "psg-ilcd-2010-iteration",
+              "artifactId": "art-ilcd-2010-pdf",
+              "locator": "Chapter 4，Figures 4–5 及限制与规定",
+              "printedPages": "25–28",
+              "topics": [
+                "迭代",
+                "缺失资源",
+                "高不确定性",
+                "可支持结论"
+              ],
+              "limits": [
+                "Figure 4 的 p25/index44 图像核验；资源不足不能证明差异不显著。"
+              ],
+              "pdfIndices": [
+                44,
+                45,
+                46,
+                47
+              ]
+            },
+            {
+              "id": "psg-ilcd-2010-goal",
+              "artifactId": "art-ilcd-2010-pdf",
+              "locator": "§5.1 与 §§5.2.1–5.2.2 局部；所列四页全文",
+              "printedPages": "29–32",
+              "topics": [
+                "目的",
+                "预期用途",
+                "方法选择"
+              ],
+              "limits": [
+                "不是整个 Chapter 5。"
+              ],
+              "pdfIndices": [
+                48,
+                49,
+                50,
+                51
+              ]
+            },
+            {
+              "id": "psg-ilcd-2010-function",
+              "artifactId": "art-ilcd-2010-pdf",
+              "locator": "§§6.4.1–6.4.7；Table 4 与 footnote 39；规定；§6.5.1 开头",
+              "printedPages": "59–70",
+              "topics": [
+                "功能单位",
+                "参考流",
+                "期间",
+                "定量与定性条件",
+                "声明单位",
+                "方案比较"
+              ],
+              "limits": [
+                "p64/index83 的表和脚注图像核验；没有把声明单位推广为所有比较研究的充分基础。"
+              ],
+              "pdfIndices": [
+                78,
+                79,
+                80,
+                81,
+                82,
+                83,
+                84,
+                85,
+                86,
+                87,
+                88,
+                89
+              ]
+            },
+            {
+              "id": "psg-ilcd-2010-boundary",
+              "artifactId": "art-ilcd-2010-pdf",
+              "locator": "§6.6.1，含 foreground/background 上下文",
+              "printedPages": "93–98",
+              "topics": [
+                "系统边界",
+                "前景背景"
+              ],
+              "limits": [
+                "仅所列页；不是所有建模规则。"
+              ],
+              "pdfIndices": [
+                112,
+                113,
+                114,
+                115,
+                116,
+                117
+              ]
+            },
+            {
+              "id": "psg-ilcd-2010-comparison",
+              "artifactId": "art-ilcd-2010-pdf",
+              "locator": "§§6.10.1–6.10.8；比较研究规定的开头",
+              "printedPages": "140–145",
+              "topics": [
+                "比较前提",
+                "方案选择",
+                "一致性"
+              ],
+              "limits": [
+                "未读 p145 后的规定续文。"
+              ],
+              "pdfIndices": [
+                159,
+                160,
+                161,
+                162,
+                163,
+                164
+              ]
+            },
+            {
+              "id": "psg-ilcd-2010-interpretation",
+              "artifactId": "art-ilcd-2010-pdf",
+              "locator": "§9.1 解释概述",
+              "printedPages": "285",
+              "topics": [
+                "解释",
+                "结论边界"
+              ],
+              "limits": [
+                "未完成整个 Chapter 9 或审查方案。"
+              ],
+              "pdfIndices": [
+                304
+              ]
+            },
+            {
+              "id": "psg-ilcd-2010-reference-representation",
+              "artifactId": "art-ilcd-2010-pdf",
+              "locator": "§6.4.1 概念框；已列 pp59–70 内的细定位",
+              "printedPages": "60",
+              "pdfIndices": [
+                79
+              ],
+              "topics": [
+                "功能关联表述",
+                "产品导向表述",
+                "参考流用途"
+              ],
+              "limits": [
+                "同一已读范围的细定位，不增加独立证据或阅读覆盖。",
+                "本页允许的两种表述依赖用途；不据此提出所有体系的单一数量字段定义。"
+              ]
+            },
+            {
+              "id": "psg-kb70-ilcd2010-identity-reinspection",
+              "artifactId": "art-ilcd-2010-pdf",
+              "locator": "封面、法律页及Preface",
+              "topics": [
+                "版本身份",
+                "来源署名与权利",
+                "指南对象"
+              ],
+              "limits": [
+                "2026-11-07重新检查既有固定载体选段；原取得与既有阅读事件保留，不新增独立作品或全篇阅读资格。",
+                "本轮来源检查代理读取；依本载体法律页说明使用，仍不把源原件、图像或表格纳入公开书稿。"
+              ],
+              "printedPages": "封面；i–ii",
+              "pdfIndices": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "id": "psg-kb70-ilcd2010-function-reinspection",
+              "artifactId": "art-ilcd-2010-pdf",
+              "locator": "§6.4开始至§6.4.6开头，印刷pp59–65；含p64 Table4与footnote39",
+              "topics": [
+                "服务条件",
+                "定量与定性要求",
+                "功能接受",
+                "维护反例",
+                "测量适用性"
+              ],
+              "limits": [
+                "2026-11-07重新检查既有固定载体选段；原取得与既有阅读事件保留，不新增独立作品或全篇阅读资格。",
+                "本轮来源检查代理通过排版文本读取pp59–65，对p60概念框、p64表4及脚注39实际图像复核。",
+                "维护可能引入去除旧漆等额外过程；未来重涂未必重复旧漆。表内示例、作者10m²算例与墙面案例保持各自身份。",
+                "p65的§6.4.6仅开头；不声称此次重新读完该节、全部§6.4或其全部规定。"
+              ],
+              "printedPages": "59–65",
+              "pdfIndices": [
+                78,
+                79,
+                80,
+                81,
+                82,
+                83,
+                84
+              ]
+            },
+            {
+              "id": "psg-kb70-ilcd2010-reference-expression",
+              "artifactId": "art-ilcd-2010-pdf",
+              "locator": "§6.4.1概念框，印刷p60，及p61开头位置说明续文",
+              "topics": [
+                "依用途的参考流表述",
+                "其他交换的定量关系",
+                "数据用途和位置"
+              ],
+              "limits": [
+                "2026-11-07重新检查既有固定载体选段；原取得与既有阅读事件保留，不新增独立作品或全篇阅读资格。",
+                "本轮来源检查代理实际检查范围内的精确子定位；p60图像核对，p61续文为排版文本读取。",
+                "可用功能相关或产品导向表达；产品用途与软件连接影响选择，不证明跨体系数据可直接互换。"
+              ],
+              "printedPages": "60–61",
+              "pdfIndices": [
+                79,
+                80
+              ]
+            },
+            {
+              "id": "psg-kb70-ilcd2010-comparison-complete-box",
+              "artifactId": "art-ilcd-2010-pdf",
+              "locator": "§§6.10.1–6.10.8及比较研究规定框完整续文，印刷pp140–148（止于XIV）",
+              "topics": [
+                "有条件功能可比性",
+                "寿命与情景",
+                "方法和数据一致性",
+                "不确定性",
+                "选择性指标的限度"
+              ],
+              "limits": [
+                "2026-11-07重新检查既有固定载体选段；原取得与既有阅读事件保留，不新增独立作品或全篇阅读资格。",
+                "本轮来源检查代理通过排版文本读取pp140–148，对p143、pp145–147图像核对；含p142脚注107、p144脚注108、p147脚注109。",
+                "比较类别可含不同功能；意图功能可比的系统须保留利益相关者接受与适用建模条件。",
+                "完整读完本处规定框不等于完成所引§6.5.4、建模章节或独立review文献；§6.11正文不列入本段阅读资格。",
+                "p146的随机不确定性计算例外及pp147–148情景区别保留；选定影响指标不自动支持整体环境优越性。"
+              ],
+              "printedPages": "140–148",
+              "pdfIndices": [
+                159,
+                160,
+                161,
+                162,
+                163,
+                164,
+                165,
+                166,
+                167
+              ]
+            },
+            {
+              "id": "psg-flow-pilot-ilcd-boundaries",
+              "artifactId": "art-ilcd-2010-pdf",
+              "locator": "§6.6.1 pp93–94；§6.6.3 p102以下选段；§6.6 规定 III p105",
+              "topics": [
+                "系统边界",
+                "技术圈和自然环境界面"
+              ],
+              "limits": [
+                "指南力度与 ISO 原条款分别取证。"
+              ],
+              "printedPages": "93–94；102；105（选段）",
+              "pdfIndices": [
+                112,
+                113,
+                121,
+                124
+              ]
+            },
+            {
+              "id": "psg-flow-pilot-ilcd-agri",
+              "artifactId": "art-ilcd-2010-pdf",
+              "locator": "§7.4.4.1 pp233–234，System boundaries",
+              "topics": [
+                "管理地块",
+                "农药与化肥",
+                "蓄积镉"
+              ],
+              "limits": [
+                "规定是本版语境，不能概括成所有流只在离开地块时成排放。"
+              ],
+              "printedPages": "233–234",
+              "pdfIndices": [
+                252,
+                253
+              ]
+            },
+            {
+              "id": "psg-flow-pilot-ilcd-waste",
+              "artifactId": "art-ilcd-2010-pdf",
+              "locator": "§7.4.4.2 pp242–244，Complete modelling、Inventorying convention、Provisions I.a–c",
+              "topics": [
+                "废物",
+                "处理服务",
+                "例外"
+              ],
+              "limits": [
+                "p244 正式规定增加地下处置例外；签属软件行为另证。"
+              ],
+              "printedPages": "242–244",
+              "pdfIndices": [
+                261,
+                262,
+                263
+              ]
+            },
+            {
+              "id": "psg-flow-pilot-ilcd-reference",
+              "artifactId": "art-ilcd-2010-pdf",
+              "locator": "§6.4.1 pp60–61；§7.4.2.6 pp200–201",
+              "topics": [
+                "功能参照",
+                "产品/废物参照",
+                "默认一个单位"
+              ],
+              "limits": [
+                "重新选读同载体。"
+              ],
+              "printedPages": "60–61；200–201",
+              "pdfIndices": [
+                79,
+                80,
+                219,
+                220
+              ]
+            },
+            {
+              "id": "psg-flow-pilot-ilcd-classification",
+              "artifactId": "art-ilcd-2010-pdf",
+              "locator": "§8.2 pp276–281，Ensure a correct link、Missing factor、Provisions I–VI、脚注188和191",
+              "topics": [
+                "分类",
+                "表征",
+                "覆盖"
+              ],
+              "limits": [
+                "所选类别、非线性方法和潜在相关缺因子条件须保留。"
+              ],
+              "printedPages": "276–281",
+              "pdfIndices": [
+                295,
+                296,
+                297,
+                298,
+                299,
+                300
+              ]
+            },
+            {
+              "id": "psg-kb99-ilcd2010-waste-boundary-and-service",
+              "artifactId": "art-ilcd-2010-pdf",
+              "locator": "§6.4.1 印p61脚注37；§7.4.4.2 印pp242–244，含 Provisions I.a–c；PDF81、262–264",
+              "printedPages": "61；242–244",
+              "pdfIndices": [
+                80,
+                261,
+                262,
+                263
+              ],
+              "topics": [
+                "废物物质与处理服务方向",
+                "无控填埋/丢弃",
+                "放射性/地下沉积例外"
+              ],
+              "limits": [
+                "放射性废物及地下沉积/矿井回填等有例外。",
+                "两种写法的对应不证明任何软件转换或换模型后结果相同。"
+              ]
+            },
+            {
+              "id": "psg-kb99-ilcd2010-agro-net-and-stock",
+              "artifactId": "art-ilcd-2010-pdf",
+              "locator": "§7.4.4.1 印pp233–234、238–239；PDF253–254、258–259；正文和 Provisions I.a–d",
+              "printedPages": "233–234；238–239",
+              "pdfIndices": [
+                252,
+                253,
+                257,
+                258
+              ],
+              "topics": [
+                "农地技术圈",
+                "施用量和净干预",
+                "持久残留及侵蚀"
+              ],
+              "limits": [
+                "基线和受控条件须按归属/后果模型适用段理解。",
+                "不推导任何田间排放因子，也不等于全部施用都向环境排放或土壤积累都不属于干预。"
+              ]
+            },
+            {
+              "id": "psg-kb99-ilcd2010-flow-properties-and-coverage",
+              "artifactId": "art-ilcd-2010-pdf",
+              "locator": "§§7.1、7.4.5、7.8、6.7.4–6.7.5、8.2 相应选段；印pp111–112、153、244–245、252–253、277–279；PDF131–132、173、264–265、272–273、297–299",
+              "printedPages": "111–112；153；244–245；252–253；277–279",
+              "pdfIndices": [
+                130,
+                131,
+                172,
+                263,
+                264,
+                271,
+                272,
+                296,
+                297,
+                298
+              ],
+              "topics": [
+                "流身份与被测量",
+                "介质",
+                "连接和时空代表性",
+                "因子覆盖"
+              ],
+              "limits": [
+                "不将导则的历史软件连接描述视为任何当前实现规范。",
+                "不推定EF或具体源包实际覆盖，不以单次同分证明流一致。"
+              ]
+            }
+          ],
+          "appraisal": {
+            "basis": "原始公开 PDF 的协作选段细读、排版保留文本与指定页面图像；固定载体而非单凭章节题名。 2026-11-14重取同一机构PDF，核读新增的环境边界、未接续交换、处置、农业净干预、参考、流属性与表征覆盖选段。新增位置见本轮passage；旧取得和阅读事件保留。",
+            "methodologicalScope": "本版机构技术指导自身的规定与解释；不声称代表所有方法或现行普适政策。",
+            "independence": "与 EPA/CML 共享 ISO 相关框架背景；一致表述不是独立实证验证。",
+            "limitations": [
+              "未阅读全部技术章节或完整 review schemes。",
+              "未取得所引 ISO 标准授权全文。",
+              "参考流可以采用与功能单位直接相关或产品导向的表达；需保留本版讨论的使用情境。"
+            ],
+            "reviewKind": "agent-source-check",
+            "checkedAt": "2026-11-14"
+          },
+          "rights": "PDF 法律页允许注明来源后再现；仍仅刊载本项目原创释义、元数据和定位，不收录原始 PDF、图像或表格。",
+          "unread": [
+            "Chapter 5–9 未列出的部分、完整 Annex 15、独立审查方案与后续版本。"
+          ],
+          "sourceKeys": [
+            "ILCD2010",
+            "N03"
+          ]
+        }
+      },
+      {
+        "path": "readings.readings",
+        "id": "rd-kb44-ec2021",
+        "from": {
+          "id": "rd-kb44-ec2021",
+          "workId": "lit-n04",
+          "title": "Commission Recommendation (EU) 2021/2279 of 15 December 2021 on the use of the Environmental Footprint methods to measure and communicate the life cycle environmental performance of products and organisations",
+          "version": "15 December 2021；英文重刊文本 CELEX 32021H2279R(01)，OJ L 144，23 May 2022",
+          "url": "https://publications.europa.eu/resource/cellar/ca3eccfd-da68-11ec-a95f-01aa75ed71a1.0006.01/DOC_1",
+          "accessedAt": "2026-11-05",
+          "readAt": "2026-11-05",
+          "readingStatus": "selected-passages",
+          "question": "推荐正文与 PEF 研究、类别规则、代表产品模型及审查分别提出哪些要求？",
+          "argumentSummary": "推荐正文给出对象和适用范围。Annex I 给出 PEF 通用方法，Annex II 给出类别细化、代表产品及审查安排。使用阶段的边界选择、默认情景、双口径结果和模型交付分别留下可追溯证据。",
+          "artifacts": [
+            {
+              "id": "art-kb44-ec2021-r01-pdf",
+              "mediaType": "application/pdf",
+              "sha256": "42445138f591d8052c0096384db30db513c11da918d0de2e9955baa33264faa7",
+              "resolvedUrl": "https://publications.europa.eu/resource/cellar/ca3eccfd-da68-11ec-a95f-01aa75ed71a1.0006.01/DOC_1",
+              "pageCount": 384
+            },
+            {
+              "id": "art-kb44-ec2021-original-pdf",
+              "mediaType": "application/pdf",
+              "sha256": "af28de0896bfcfd8d627e758c97c83fd7d4bab94f2005ce5ea2079df42da39e3",
+              "resolvedUrl": "https://publications.europa.eu/resource/cellar/af96b549-6912-11ec-9136-01aa75ed71a1.0006.01/DOC_1",
+              "pageCount": 396
+            },
+            {
+              "id": "art-kb44-ec2021-original-issue-pdf",
+              "mediaType": "application/pdf",
+              "sha256": "571e310ca6bb1baccf8817316743e9bc605eb2f4e73180cb2b8783afb48335b1",
+              "resolvedUrl": "https://publications.europa.eu/resource/cellar/1dab5c81-6912-11ec-9136-01aa75ed71a1.0006.01/DOC_1",
+              "pageCount": 400
+            },
+            {
+              "id": "art-kb44-ec2021-consolidated-en-pdf",
+              "mediaType": "application/pdf",
+              "sha256": "4186fa4ad9b643a5c9074629e3c7a5ca25bb23105a34f2e16f37c0788f28b877",
+              "resolvedUrl": "https://publications.europa.eu/resource/cellar/8b03ecf0-01d7-11ed-acce-01aa75ed71a1.0008.03/DOC_1",
+              "pageCount": 491
+            },
+            {
+              "id": "art-kb44-ec2021-r02-sk-pdf",
+              "mediaType": "application/pdf",
+              "sha256": "d77dc2b7a281937140970a3e75f630812d87b6a407b2447d124510c0d03f20ab",
+              "resolvedUrl": "https://publications.europa.eu/resource/cellar/4093e674-4ae7-11ef-acbc-01aa75ed71a1.0001.01/DOC_1",
+              "pageCount": 8
+            }
+          ],
+          "passages": [
+            {
+              "id": "psg-kb44-ec2021-identity",
+              "artifactId": "art-kb44-ec2021-r01-pdf",
+              "locator": "2022 英文更正指令、推荐正文首尾、Annex I–IV 起页和终页",
+              "printedPages": "OJ L 144/1–2, 7–8, 111, 198, 302, 384",
+              "pdfIndices": [
+                0,
+                1,
+                6,
+                7,
+                110,
+                197,
+                301,
+                383
+              ],
+              "topics": [
+                "版本关系",
+                "英文更正"
+              ],
+              "limits": [
+                "重刊结构可核对。所有技术改动与文字差异未穷尽。"
+              ]
+            },
+            {
+              "id": "psg-kb44-ec2021-original",
+              "artifactId": "art-kb44-ec2021-original-pdf",
+              "locator": "2021 英文原刊 act item 首叶、正文末页、两组附件起始及终叶",
+              "printedPages": "OJ L 471/1, 6, 204, 401, 593",
+              "pdfIndices": [
+                0,
+                5,
+                6,
+                203,
+                395
+              ],
+              "topics": [
+                "原刊",
+                "页码"
+              ],
+              "limits": [
+                "记录英文载体的物理页与印刷运行页码。"
+              ]
+            },
+            {
+              "id": "psg-kb44-ec2021-issue",
+              "artifactId": "art-kb44-ec2021-original-issue-pdf",
+              "locator": "2021 英文原刊整期的封面、正文末页、两组附件起始及终叶",
+              "printedPages": "封面及 OJ L 471/6, 204, 401, 593",
+              "pdfIndices": [
+                0,
+                7,
+                8,
+                205,
+                397
+              ],
+              "topics": [
+                "原刊整期",
+                "页码"
+              ],
+              "limits": [
+                "仅核对身份、结构与摘取文字的逐页对应。"
+              ]
+            },
+            {
+              "id": "psg-kb44-ec2021-consolidation",
+              "artifactId": "art-kb44-ec2021-consolidated-en-pdf",
+              "locator": "02021H2279-20211230 英文合并文本首叶",
+              "printedPages": "PDF p. 1",
+              "pdfIndices": [
+                0
+              ],
+              "topics": [
+                "合并文本",
+                "文书身份"
+              ],
+              "limits": [
+                "技术条款以更正重刊 OJ 载体定位。"
+              ]
+            },
+            {
+              "id": "psg-kb44-ec2021-r02",
+              "artifactId": "art-kb44-ec2021-r02-sk-pdf",
+              "locator": "2024 斯洛伐克语更正首末页及编号范围",
+              "printedPages": "OJ L 2024/90454, pp. 1, 8",
+              "pdfIndices": [
+                0,
+                7
+              ],
+              "topics": [
+                "语言版本",
+                "定点更正"
+              ],
+              "limits": [
+                "仅用首末页及官方语言元数据识别范围；未逐条翻译。"
+              ]
+            },
+            {
+              "id": "psg-kb44-ec2021-scope",
+              "artifactId": "art-kb44-ec2021-r01-pdf",
+              "locator": "推荐主文 §§1.1–1.3、2(a)、2(e)、3.1、4.1、7.1",
+              "printedPages": "OJ L 144/4–6",
+              "pdfIndices": [
+                3,
+                4,
+                5
+              ],
+              "topics": [
+                "推荐对象",
+                "适用范围",
+                "第三方披露"
+              ],
+              "limits": [
+                "其他立法或方案的纳入和约束条件需要其自身文书。"
+              ]
+            },
+            {
+              "id": "psg-kb44-ec2021-category",
+              "artifactId": "art-kb44-ec2021-r01-pdf",
+              "locator": "Annex I §§1–1.1；Annex II Part A 开头",
+              "printedPages": "OJ L 144/23–24, 111",
+              "pdfIndices": [
+                22,
+                23,
+                110
+              ],
+              "topics": [
+                "PEF 通用方法",
+                "PEFCR",
+                "比较条件"
+              ],
+              "limits": [
+                "Annex II Part B 模板有另行表述。具体适用须识别对象、文件版本与研究用途。"
+              ]
+            },
+            {
+              "id": "psg-kb44-ec2021-use",
+              "artifactId": "art-kb44-ec2021-r01-pdf",
+              "locator": "Annex I §4.4.7，使用阶段建模要求（至 §4.4.7.1 之前）",
+              "printedPages": "OJ L 144/52–53",
+              "pdfIndices": [
+                51,
+                52
+              ],
+              "topics": [
+                "使用阶段",
+                "系统边界",
+                "双口径报告"
+              ],
+              "limits": [
+                "过程归类须与具体设计、分销或生产者使用说明相连。"
+              ]
+            },
+            {
+              "id": "psg-kb44-ec2021-defaults",
+              "artifactId": "art-kb44-ec2021-r01-pdf",
+              "locator": "Annex I §4.4.7.2；Annex II Part D 说明及 Milk、Chilled storage (in a fridge, at home)、Dishwashing (at home) 行",
+              "printedPages": "OJ L 144/54, 187–189",
+              "pdfIndices": [
+                53,
+                186,
+                187,
+                188
+              ],
+              "topics": [
+                "使用阶段默认数据",
+                "牛奶",
+                "家庭冷藏",
+                "家庭洗碗"
+              ],
+              "limits": [
+                "默认情景和设备量以表中各自单位及条件为准。具体消费行为、类别细化和模型中的参数取值另行核对。"
+              ]
+            },
+            {
+              "id": "psg-kb44-ec2021-results",
+              "artifactId": "art-kb44-ec2021-r01-pdf",
+              "locator": "Annex II §A.5.1 Benchmark",
+              "printedPages": "OJ L 144/148",
+              "pdfIndices": [
+                147
+              ],
+              "topics": [
+                "代表产品基准",
+                "表征、归一化及加权",
+                "双口径报告"
+              ],
+              "limits": [
+                "中间产品可排除基准；其中间代表产品的结果在研究与报告中仍有报告要求。"
+              ]
+            },
+            {
+              "id": "psg-kb44-ec2021-model",
+              "artifactId": "art-kb44-ec2021-r01-pdf",
+              "locator": "Annex II §§A.2.10–A.2.10.1，最终草案提交与代表产品 Excel 模型",
+              "printedPages": "OJ L 144/124",
+              "pdfIndices": [
+                123
+              ],
+              "topics": [
+                "代表产品模型",
+                "Excel 模板",
+                "多子模型"
+              ],
+              "limits": [
+                "表格文件是否包含完整计算及依赖，须对实际载体另行核验。"
+              ]
+            },
+            {
+              "id": "psg-kb44-ec2021-review",
+              "artifactId": "art-kb44-ec2021-r01-pdf",
+              "locator": "Annex II §§A.2.9.1–.2、A.2.9.3–.4，类别规则审查的对象、准则和报告",
+              "printedPages": "OJ L 144/120–121, 123–124",
+              "pdfIndices": [
+                119,
+                120,
+                122,
+                123
+              ],
+              "topics": [
+                "外部评审",
+                "类别规则",
+                "代表产品",
+                "公开和保密证据"
+              ],
+              "limits": [
+                "条款说明应当检查和公开的内容。个别评审的实见对象与回复须凭版本化记录核对。"
+              ]
+            },
+            {
+              "id": "psg-kb44-ec2021-revision",
+              "artifactId": "art-kb44-ec2021-r01-pdf",
+              "locator": "Annex II §A.2，部分修订条件与流程",
+              "printedPages": "OJ L 144/116–117",
+              "pdfIndices": [
+                115,
+                116
+              ],
+              "topics": [
+                "部分修订",
+                "代表产品变化阈值",
+                "审查与批准"
+              ],
+              "limits": [
+                "文本使用严格小于及严格大于的判据，等于阈值的处理留待另证。具体修订是否满足条件须有比较及版本证据。"
+              ]
+            },
+            {
+              "id": "psg-kb44-ec2021-verification",
+              "artifactId": "art-kb44-ec2021-r01-pdf",
+              "locator": "Annex I §§8.1、8.4–8.4.1、8.5.1–8.5.3；Annex II §§A.8.1–A.8.3.3，研究层验证",
+              "printedPages": "OJ L 144/95, 98–99, 101–102, 150–151",
+              "pdfIndices": [
+                94,
+                97,
+                98,
+                100,
+                101,
+                149,
+                150
+              ],
+              "topics": [
+                "外部沟通",
+                "研究验证",
+                "精确报告版本"
+              ],
+              "limits": [
+                "特定政策验证规定可能适用。是否开展了实际抽查、模型访问及后续纠正须有个案记录。"
+              ]
+            },
+            {
+              "id": "psg-kb44-ec2021-rp-definition",
+              "artifactId": "art-kb44-ec2021-r01-pdf",
+              "locator": "Annex II §A.2.3，代表产品定义",
+              "printedPages": "118",
+              "pdfIndices": [
+                117
+              ],
+              "topics": [
+                "representative product",
+                "market weighting"
+              ],
+              "limits": [
+                "一般方法的要求不证明特定代表产品的实际代表性。"
+              ]
+            },
+            {
+              "id": "psg-kb44-ec2021-fu-boundary",
+              "artifactId": "art-kb44-ec2021-r01-pdf",
+              "locator": "Annex II §§A.3.2.3–A.3.2.5，代表产品、功能单位、参考流与边界",
+              "printedPages": "127,128",
+              "pdfIndices": [
+                126,
+                127
+              ],
+              "topics": [
+                "functional unit",
+                "reference flow",
+                "category specification"
+              ],
+              "limits": [
+                "仅为指定条款，不证明所有食品功能等价或某个具体研究完全实施。"
+              ]
+            },
+            {
+              "id": "psg-flow-pilot-pef-pesticide",
+              "artifactId": "art-kb44-ec2021-r01-pdf",
+              "locator": "Annex I §4.4.1.4, Pesticides（OJ L 144/37）",
+              "printedPages": "OJ L 144/37",
+              "pdfIndices": [
+                36
+              ],
+              "topics": [
+                "农药",
+                "默认介质比例",
+                "USEtox"
+              ],
+              "limits": [
+                "本规定只针对农药有效成分，不替代田间测量和其他类别流程。"
+              ]
+            },
+            {
+              "id": "psg-flow-pilot-pef-fertilisers-metals",
+              "artifactId": "art-kb44-ec2021-r01-pdf",
+              "locator": "Annex I §§4.4.1.5–6, Fertilisers; Heavy metal emissions（OJ L 144/37–39）",
+              "printedPages": "OJ L 144/37–39",
+              "pdfIndices": [
+                36,
+                37,
+                38
+              ],
+              "topics": [
+                "化肥",
+                "重金属",
+                "归趋"
+              ],
+              "limits": [
+                "磷的条件替代只在对应因子及缺数据前提下适用。"
+              ]
+            },
+            {
+              "id": "psg-flow-pilot-pef-impact",
+              "artifactId": "art-kb44-ec2021-r01-pdf",
+              "locator": "Annex I §§5.1.1–2, Classification and Characterisation（OJ L 144/87）",
+              "printedPages": "OJ L 144/87",
+              "pdfIndices": [
+                86
+              ],
+              "topics": [
+                "分类",
+                "表征"
+              ],
+              "limits": [
+                "更正重刊的规则与后来 EF 3.1 参考包个别因子分开。"
+              ]
+            },
+            {
+              "id": "psg-flow-pilot-pef-eol",
+              "artifactId": "art-kb44-ec2021-r01-pdf",
+              "locator": "Annex I §4.2.5, End of life；首三段（OJ L 144/35）",
+              "printedPages": "OJ L 144/35",
+              "pdfIndices": [
+                34
+              ],
+              "topics": [
+                "废物",
+                "寿命终止"
+              ],
+              "limits": [
+                "§4.4.8 的参数和具体适用范围未在此次补证复核。"
+              ]
+            }
+          ],
+          "appraisal": {
+            "basis": "欧盟出版局固定 PDF 及相关官方元数据。关键页用排版文本与页图核对。 2026-11-14重取相同R(01)原PDF，选读农药、肥料/重金属和分类/表征所列段；原取得和阅读范围保留。",
+            "methodologicalScope": "区分正文、PEF 方法、类别细化、代表产品以及审查和验证的对象。",
+            "independence": "原刊、更正重刊及合并文本同出欧盟出版系统。它们是同一推荐的版本证据。",
+            "limitations": [
+              "所读条款支持规则范围。某次研究的数据质量、适用性和实施须另取证。",
+              "斯洛伐克语更正限身份、范围及指定定位。未将该语种定点更改外推至英文条款。"
+            ],
+            "reviewKind": "agent-source-check",
+            "checkedAt": "2026-11-14"
+          },
+          "unread": [
+            "Annex I–II 未列出的具体方法及附件数据，Annex III–IV 实质 OEF/OEFSR 技术要求。",
+            "不同载体间完整条文、公式及全部语言版本的差异，正式 OJ 分发签名。",
+            "具体乳制品研究的技术执行、审批、行业或法定合规。"
+          ],
+          "rights": "欧盟出版局 Cellar 公开提供所列官方载体。欧盟委员会一般再利用政策保留例外与第三方权利。公开交接限来源标识、定位及原创释义。",
+          "sourceKeys": []
+        }
+      },
+      {
+        "path": "readings.gaps",
+        "id": "gap-sub105-iso-use-permission",
+        "from": null
+      },
+      {
+        "path": "readings.revisions",
+        "id": "rev-substitution-rules-105",
+        "from": null
+      },
+      {
+        "path": "literature.protocol.queries",
+        "id": "q-sub105-multifunctionality-20261115",
+        "from": null
+      }
+    ],
+    "rawFields": [],
+    "previousOccurrences": {
+      "content/monograph/joint-production.mdx": [
+        "cl-allocation-problem-and-procedure",
+        "cl-allocation-information-and-ethics",
+        "cl-allocation-causal-directions",
+        "cl-allocation-cascade-level",
+        "cl-allocation-alternative-supply",
+        "cl-allocation-fixed-proportions",
+        "cl-allocation-three-responsibilities",
+        "cl-joint-question",
+        "cl-joint-typed-inventory",
+        "cl-joint-boundary",
+        "cl-joint-mass-partition",
+        "cl-joint-sales-partition",
+        "cl-joint-what-additivity-proves",
+        "cl-allocation-market-and-agents",
+        "cl-allocation-2005-sales-purpose",
+        "cl-allocation-1998-sales-criterion",
+        "cl-joint-rival-criteria",
+        "cl-joint-fixed-basket",
+        "cl-joint-positive-routes",
+        "cl-joint-residual-derivation",
+        "cl-joint-negative-meaning",
+        "cl-joint-different-questions",
+        "cl-joint-double-credit",
+        "cl-joint-partial-use",
+        "cl-joint-partial-balances",
+        "cl-joint-partial-inventory",
+        "cl-joint-cancellation",
+        "cl-allocation-fairness-interpretations",
+        "cl-allocation-feasibility-tradeoff",
+        "cl-allocation-limits-on-both-sides",
+        "cl-joint-conference-feedback",
+        "cl-allocation-addendum-substantive",
+        "cl-allocation-addendum-substitution-duty",
+        "cl-joint-version-boundary",
+        "cl-joint-exercise",
+        "cl-joint-answer",
+        "cl-allocation-reading-a-rule"
+      ],
+      "content/docs/book/allocation-judgment-and-corrections.mdx": [
+        "cl-allocation-fairness-interpretations",
+        "cl-allocation-feasibility-tradeoff",
+        "cl-allocation-information-and-ethics",
+        "cl-allocation-limits-on-both-sides",
+        "cl-joint-conference-feedback",
+        "cl-allocation-addendum-substantive",
+        "cl-allocation-addendum-substitution-duty",
+        "cl-allocation-reading-a-rule"
+      ]
+    },
+    "layouts": [
+      {
+        "key": "B10:/monograph/joint-production:occurrences",
+        "from": "c24516478e0bb99a8fa12bb20eccca61ee5a63ff01716f741fbc279d94262014",
+        "to": [
+          {
+            "id": "cl-allocation-problem-and-procedure",
+            "section": "信息目的"
+          },
+          {
+            "id": "cl-allocation-information-and-ethics",
+            "section": "信息目的"
+          },
+          {
+            "id": "cl-allocation-causal-directions",
+            "section": "信息目的"
+          },
+          {
+            "id": "cl-allocation-cascade-level",
+            "section": "信息目的"
+          },
+          {
+            "id": "cl-allocation-alternative-supply",
+            "section": "信息目的"
+          },
+          {
+            "id": "cl-allocation-fixed-proportions",
+            "section": "信息目的"
+          },
+          {
+            "id": "cl-allocation-three-responsibilities",
+            "section": "信息目的"
+          },
+          {
+            "id": "cl-joint-question",
+            "section": "负担份额"
+          },
+          {
+            "id": "cl-joint-typed-inventory",
+            "section": "负担份额"
+          },
+          {
+            "id": "cl-joint-boundary",
+            "section": "负担份额"
+          },
+          {
+            "id": "cl-joint-mass-partition",
+            "section": "负担份额"
+          },
+          {
+            "id": "cl-joint-sales-partition",
+            "section": "负担份额"
+          },
+          {
+            "id": "cl-joint-what-additivity-proves",
+            "section": "负担份额"
+          },
+          {
+            "id": "cl-allocation-market-and-agents",
+            "section": "负担份额"
+          },
+          {
+            "id": "cl-allocation-2005-sales-purpose",
+            "section": "负担份额"
+          },
+          {
+            "id": "cl-allocation-1998-sales-criterion",
+            "section": "负担份额"
+          },
+          {
+            "id": "cl-joint-rival-criteria",
+            "section": "负担份额"
+          },
+          {
+            "id": "cl-joint-fixed-basket",
+            "section": "参照供给"
+          },
+          {
+            "id": "cl-joint-positive-routes",
+            "section": "参照供给"
+          },
+          {
+            "id": "cl-joint-residual-derivation",
+            "section": "参照供给"
+          },
+          {
+            "id": "cl-joint-negative-meaning",
+            "section": "参照供给"
+          },
+          {
+            "id": "cl-joint-different-questions",
+            "section": "参照供给"
+          },
+          {
+            "id": "cl-joint-double-credit",
+            "section": "参照供给"
+          },
+          {
+            "id": "cl-joint-partial-use",
+            "section": "参照供给"
+          },
+          {
+            "id": "cl-joint-partial-balances",
+            "section": "参照供给"
+          },
+          {
+            "id": "cl-joint-partial-inventory",
+            "section": "参照供给"
+          },
+          {
+            "id": "cl-joint-cancellation",
+            "section": "参照供给"
+          },
+          {
+            "id": "cl-allocation-fairness-interpretations",
+            "section": "规则边界"
+          },
+          {
+            "id": "cl-allocation-feasibility-tradeoff",
+            "section": "规则边界"
+          },
+          {
+            "id": "cl-allocation-limits-on-both-sides",
+            "section": "规则边界"
+          },
+          {
+            "id": "cl-joint-conference-feedback",
+            "section": "规则边界"
+          },
+          {
+            "id": "cl-allocation-addendum-substantive",
+            "section": "规则边界"
+          },
+          {
+            "id": "cl-allocation-addendum-substitution-duty",
+            "section": "规则边界"
+          },
+          {
+            "id": "cl-joint-version-boundary",
+            "section": "规则边界"
+          },
+          {
+            "id": "cl-sub105-two-uses",
+            "section": "规则边界"
+          },
+          {
+            "id": "cl-sub105-pef-report",
+            "section": "规则边界"
+          },
+          {
+            "id": "cl-sub105-ilcd-market",
+            "section": "规则边界"
+          },
+          {
+            "id": "cl-sub105-ilcd-absorption",
+            "section": "规则边界"
+          },
+          {
+            "id": "cl-sub105-pef-direct",
+            "section": "规则边界"
+          },
+          {
+            "id": "cl-sub105-evidence-example",
+            "section": "规则边界"
+          },
+          {
+            "id": "cl-sub105-fallbacks",
+            "section": "规则边界"
+          },
+          {
+            "id": "cl-sub105-conditional-results",
+            "section": "规则边界"
+          },
+          {
+            "id": "cl-joint-exercise",
+            "section": "规则边界"
+          },
+          {
+            "id": "cl-joint-answer",
+            "section": "规则边界"
+          },
+          {
+            "id": "cl-allocation-reading-a-rule",
+            "section": "规则边界"
+          },
+          {
+            "id": "cl-sub105-reporting-objects",
+            "section": "规则边界"
+          }
+        ],
+        "rationale": "保持全部旧位置，新增段落分配到既有细页和印文章节，合计共同覆盖。"
+      },
+      {
+        "key": "B10:/docs/book/allocation-judgment-and-corrections:occurrences",
+        "from": "2e1bade289077dc80183723dd6a91aabaa3a12d9a486418b221919902d7d9805",
+        "to": [
+          {
+            "id": "cl-allocation-fairness-interpretations",
+            "section": "公平可接受性和可操作性"
+          },
+          {
+            "id": "cl-allocation-feasibility-tradeoff",
+            "section": "公平可接受性和可操作性"
+          },
+          {
+            "id": "cl-allocation-information-and-ethics",
+            "section": "方法选择索取怎样的信息"
+          },
+          {
+            "id": "cl-allocation-limits-on-both-sides",
+            "section": "方法选择索取怎样的信息"
+          },
+          {
+            "id": "cl-joint-conference-feedback",
+            "section": "方法选择索取怎样的信息"
+          },
+          {
+            "id": "cl-allocation-addendum-substantive",
+            "section": "修订怎样改变规则的适用范围"
+          },
+          {
+            "id": "cl-allocation-addendum-substitution-duty",
+            "section": "修订怎样改变规则的适用范围"
+          },
+          {
+            "id": "cl-sub105-two-uses",
+            "section": "修订怎样改变规则的适用范围"
+          },
+          {
+            "id": "cl-sub105-pef-report",
+            "section": "修订怎样改变规则的适用范围"
+          },
+          {
+            "id": "cl-sub105-ilcd-market",
+            "section": "修订怎样改变规则的适用范围"
+          },
+          {
+            "id": "cl-sub105-ilcd-absorption",
+            "section": "修订怎样改变规则的适用范围"
+          },
+          {
+            "id": "cl-sub105-pef-direct",
+            "section": "修订怎样改变规则的适用范围"
+          },
+          {
+            "id": "cl-sub105-evidence-example",
+            "section": "修订怎样改变规则的适用范围"
+          },
+          {
+            "id": "cl-sub105-fallbacks",
+            "section": "修订怎样改变规则的适用范围"
+          },
+          {
+            "id": "cl-sub105-conditional-results",
+            "section": "修订怎样改变规则的适用范围"
+          },
+          {
+            "id": "cl-allocation-reading-a-rule",
+            "section": "修订怎样改变规则的适用范围"
+          },
+          {
+            "id": "cl-sub105-reporting-objects",
+            "section": "修订怎样改变规则的适用范围"
+          }
+        ],
+        "rationale": "保持全部旧位置，新增段落分配到既有细页和印文章节，合计共同覆盖。"
+      },
+      {
+        "key": "B10:/docs/book/allocation-judgment-and-corrections:source",
+        "from": "32af1ae2dbd71fe8fd7a4b53a3c9d9bb63ff32cc371c643b2616c480c70341cf",
+        "to": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "mdxSha256": "005f84cf46aa1ae13ac9ce087735ecf6adec89354d67dc107fca0b92cff9759e",
+          "title": "分配规则与修订",
+          "description": "比较共同生产的分担理由、替代证据和报告对象，并辨认规则修订改变了哪些条件。",
+          "ordinary": [
+            {
+              "text": "按质量或按收入，都能把同一笔排放分完，却可能给同一产品记下不同的份额。要读懂结果，先看各条规则凭什么让这些产品承担负担。若规则经过修订，还要查计算时实际用了哪一版。",
+              "navigation": []
+            },
+            {
+              "text": "共产品的分配与替代给出了两条供给路线、比较残余和共产品只用掉一部分时的计算。两页的论证在合订本的共同生产一章中接续展开。",
+              "navigation": [
+                {
+                  "text": "共产品的分配与替代",
+                  "href": "/docs/book/allocation-and-substitution/"
+                },
+                {
+                  "text": "共同生产",
+                  "href": "/print/#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e"
+                }
+              ],
+              "section": "修订怎样改变规则的适用范围"
+            }
+          ],
+          "navigation": [
+            {
+              "href": "/docs/book/allocation-and-substitution/",
+              "title": "分配与替代：问题、系统与决策",
+              "description": "从分配论争进入同一批共产品的精确推演，区分份额、配对路线、负残余与实际供应变化。"
+            },
+            {
+              "href": "/docs/book/market-boundaries-and-response/",
+              "title": "需求改变以后：市场边界与供给响应",
+              "description": "从1999年的原始争论、平均供电模型与后续程序，辨认新增需求、采购归属和实际活动响应的不同含义。"
+            }
+          ],
+          "headings": [
+            {
+              "id": "公平可接受性和可操作性",
+              "text": "责任与可行性"
+            },
+            {
+              "id": "方法选择索取怎样的信息",
+              "text": "所需信息"
+            },
+            {
+              "id": "修订怎样改变规则的适用范围",
+              "text": "增补与适用范围"
+            }
+          ]
+        },
+        "rationale": "实际新简介标明报告对象与替代证据；细页开篇说明质量/收入分担各有何后果，原读者所问和链接保持。"
+      }
+    ],
+    "history": {
+      "previousAddresses": {
+        "/docs/book/allocation-judgment-and-corrections#nd-page": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "chapter",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-allocation-fairness-interpretations",
+            "cl-allocation-feasibility-tradeoff",
+            "cl-allocation-information-and-ethics",
+            "cl-allocation-limits-on-both-sides",
+            "cl-joint-conference-feedback",
+            "cl-allocation-addendum-substantive",
+            "cl-allocation-addendum-substitution-duty",
+            "cl-allocation-reading-a-rule"
+          ],
+          "ordinary": [
+            "8946a3ca589c9170acf4eab56f87288e96018720b6b2301e2727c4486aa113fb",
+            "549ff1142f892b42bcfc78fa2543d05ef78f233b96d18e9b56989faecb12c3f3",
+            "9dfb233fc032363486048b7630b00d622833bf539d87053e9fa9c8548ffe10e5"
+          ],
+          "bindings": {
+            "links": [
+              [],
+              [],
+              [
+                "/docs/book/allocation-and-substitution/",
+                "/print/#print-reading-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e"
+              ]
+            ],
+            "tables": []
+          }
+        },
+        "/docs/book/allocation-judgment-and-corrections#main-content": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "reading-title",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-allocation-fairness-interpretations",
+            "cl-allocation-feasibility-tradeoff",
+            "cl-allocation-information-and-ethics",
+            "cl-allocation-limits-on-both-sides",
+            "cl-joint-conference-feedback",
+            "cl-allocation-addendum-substantive",
+            "cl-allocation-addendum-substitution-duty",
+            "cl-allocation-reading-a-rule"
+          ],
+          "ordinary": [
+            "8946a3ca589c9170acf4eab56f87288e96018720b6b2301e2727c4486aa113fb",
+            "549ff1142f892b42bcfc78fa2543d05ef78f233b96d18e9b56989faecb12c3f3",
+            "9dfb233fc032363486048b7630b00d622833bf539d87053e9fa9c8548ffe10e5"
+          ],
+          "chapter": "nd-page"
+        },
+        "/docs/book/allocation-judgment-and-corrections#公平可接受性和可操作性": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "heading",
+          "title": "责任与可行性",
+          "claimIds": [
+            "cl-allocation-fairness-interpretations",
+            "cl-allocation-feasibility-tradeoff"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#方法选择索取怎样的信息": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "heading",
+          "title": "所需信息",
+          "claimIds": [
+            "cl-allocation-information-and-ethics",
+            "cl-allocation-limits-on-both-sides",
+            "cl-joint-conference-feedback"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#修订怎样改变规则的适用范围": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "heading",
+          "title": "增补与适用范围",
+          "claimIds": [
+            "cl-allocation-addendum-substantive",
+            "cl-allocation-addendum-substitution-duty",
+            "cl-allocation-reading-a-rule"
+          ],
+          "ordinary": [
+            "9dfb233fc032363486048b7630b00d622833bf539d87053e9fa9c8548ffe10e5"
+          ]
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-annotations": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note-group",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-allocation-fairness-interpretations",
+            "cl-allocation-feasibility-tradeoff",
+            "cl-allocation-information-and-ethics",
+            "cl-allocation-limits-on-both-sides",
+            "cl-joint-conference-feedback",
+            "cl-allocation-addendum-substantive",
+            "cl-allocation-addendum-substitution-duty",
+            "cl-allocation-reading-a-rule"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-claim-cl-allocation-fairness-interpretations": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-allocation-fairness-interpretations"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-claim-cl-allocation-feasibility-tradeoff": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-allocation-feasibility-tradeoff"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-claim-cl-allocation-information-and-ethics": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-allocation-information-and-ethics"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-claim-cl-allocation-limits-on-both-sides": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-allocation-limits-on-both-sides"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-claim-cl-joint-conference-feedback": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-joint-conference-feedback"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-claim-cl-allocation-addendum-substantive": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-allocation-addendum-substantive"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-claim-cl-allocation-addendum-substitution-duty": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-allocation-addendum-substitution-duty"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-claim-cl-allocation-reading-a-rule": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-allocation-reading-a-rule"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e": {
+          "route": "book-joint-production",
+          "kind": "chapter",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-problem-and-procedure",
+            "cl-allocation-information-and-ethics",
+            "cl-allocation-causal-directions",
+            "cl-allocation-cascade-level",
+            "cl-allocation-alternative-supply",
+            "cl-allocation-fixed-proportions",
+            "cl-allocation-three-responsibilities",
+            "cl-joint-question",
+            "cl-joint-typed-inventory",
+            "cl-joint-boundary",
+            "cl-joint-mass-partition",
+            "cl-joint-sales-partition",
+            "cl-joint-what-additivity-proves",
+            "cl-allocation-market-and-agents",
+            "cl-allocation-2005-sales-purpose",
+            "cl-allocation-1998-sales-criterion",
+            "cl-joint-rival-criteria",
+            "cl-joint-fixed-basket",
+            "cl-joint-positive-routes",
+            "cl-joint-residual-derivation",
+            "cl-joint-negative-meaning",
+            "cl-joint-different-questions",
+            "cl-joint-double-credit",
+            "cl-joint-partial-use",
+            "cl-joint-partial-balances",
+            "cl-joint-partial-inventory",
+            "cl-joint-cancellation",
+            "cl-allocation-fairness-interpretations",
+            "cl-allocation-feasibility-tradeoff",
+            "cl-allocation-limits-on-both-sides",
+            "cl-joint-conference-feedback",
+            "cl-allocation-addendum-substantive",
+            "cl-allocation-addendum-substitution-duty",
+            "cl-joint-version-boundary",
+            "cl-joint-exercise",
+            "cl-joint-answer",
+            "cl-allocation-reading-a-rule"
+          ],
+          "ordinary": [
+            "25c22ff519518b0dbb492c8070506869a2cdde6028066a5ad10b939103e69f20",
+            "34e74adfe258824c85581df80593ac1653f987765ea1910129db8f5a7e954d96"
+          ],
+          "bindings": {
+            "links": [
+              [],
+              [
+                "#print-reading-unit-2f646f63732f626f6f6b2f6d61726b65742d626f756e6461726965732d616e642d726573706f6e7365"
+              ]
+            ],
+            "tables": []
+          }
+        },
+        "/print#print-reading-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e": {
+          "route": "book-joint-production",
+          "kind": "reading-title",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-problem-and-procedure",
+            "cl-allocation-information-and-ethics",
+            "cl-allocation-causal-directions",
+            "cl-allocation-cascade-level",
+            "cl-allocation-alternative-supply",
+            "cl-allocation-fixed-proportions",
+            "cl-allocation-three-responsibilities",
+            "cl-joint-question",
+            "cl-joint-typed-inventory",
+            "cl-joint-boundary",
+            "cl-joint-mass-partition",
+            "cl-joint-sales-partition",
+            "cl-joint-what-additivity-proves",
+            "cl-allocation-market-and-agents",
+            "cl-allocation-2005-sales-purpose",
+            "cl-allocation-1998-sales-criterion",
+            "cl-joint-rival-criteria",
+            "cl-joint-fixed-basket",
+            "cl-joint-positive-routes",
+            "cl-joint-residual-derivation",
+            "cl-joint-negative-meaning",
+            "cl-joint-different-questions",
+            "cl-joint-double-credit",
+            "cl-joint-partial-use",
+            "cl-joint-partial-balances",
+            "cl-joint-partial-inventory",
+            "cl-joint-cancellation",
+            "cl-allocation-fairness-interpretations",
+            "cl-allocation-feasibility-tradeoff",
+            "cl-allocation-limits-on-both-sides",
+            "cl-joint-conference-feedback",
+            "cl-allocation-addendum-substantive",
+            "cl-allocation-addendum-substitution-duty",
+            "cl-joint-version-boundary",
+            "cl-joint-exercise",
+            "cl-joint-answer",
+            "cl-allocation-reading-a-rule"
+          ],
+          "ordinary": [
+            "25c22ff519518b0dbb492c8070506869a2cdde6028066a5ad10b939103e69f20",
+            "34e74adfe258824c85581df80593ac1653f987765ea1910129db8f5a7e954d96"
+          ],
+          "chapter": "print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e"
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-信息目的": {
+          "route": "book-joint-production",
+          "kind": "heading",
+          "title": "信息目的",
+          "claimIds": [
+            "cl-allocation-problem-and-procedure",
+            "cl-allocation-information-and-ethics",
+            "cl-allocation-causal-directions",
+            "cl-allocation-cascade-level",
+            "cl-allocation-alternative-supply",
+            "cl-allocation-fixed-proportions",
+            "cl-allocation-three-responsibilities"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-负担份额": {
+          "route": "book-joint-production",
+          "kind": "heading",
+          "title": "负担份额",
+          "claimIds": [
+            "cl-joint-question",
+            "cl-joint-typed-inventory",
+            "cl-joint-boundary",
+            "cl-joint-mass-partition",
+            "cl-joint-sales-partition",
+            "cl-joint-what-additivity-proves",
+            "cl-allocation-market-and-agents",
+            "cl-allocation-2005-sales-purpose",
+            "cl-allocation-1998-sales-criterion",
+            "cl-joint-rival-criteria"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-参照供给": {
+          "route": "book-joint-production",
+          "kind": "heading",
+          "title": "参照供给",
+          "claimIds": [
+            "cl-joint-fixed-basket",
+            "cl-joint-positive-routes",
+            "cl-joint-residual-derivation",
+            "cl-joint-negative-meaning",
+            "cl-joint-different-questions",
+            "cl-joint-double-credit",
+            "cl-joint-partial-use",
+            "cl-joint-partial-balances",
+            "cl-joint-partial-inventory",
+            "cl-joint-cancellation"
+          ],
+          "ordinary": []
+        },
+        "/print#joint-batch-case-heading": {
+          "route": "book-joint-production",
+          "kind": "note-group",
+          "title": "共同生产",
+          "claimIds": [],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-规则边界": {
+          "route": "book-joint-production",
+          "kind": "heading",
+          "title": "规则边界",
+          "claimIds": [
+            "cl-allocation-fairness-interpretations",
+            "cl-allocation-feasibility-tradeoff",
+            "cl-allocation-limits-on-both-sides",
+            "cl-joint-conference-feedback",
+            "cl-allocation-addendum-substantive",
+            "cl-allocation-addendum-substitution-duty",
+            "cl-joint-version-boundary",
+            "cl-joint-exercise",
+            "cl-joint-answer",
+            "cl-allocation-reading-a-rule"
+          ],
+          "ordinary": [
+            "34e74adfe258824c85581df80593ac1653f987765ea1910129db8f5a7e954d96"
+          ]
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-annotations": {
+          "route": "book-joint-production",
+          "kind": "note-group",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-problem-and-procedure",
+            "cl-allocation-information-and-ethics",
+            "cl-allocation-causal-directions",
+            "cl-allocation-cascade-level",
+            "cl-allocation-alternative-supply",
+            "cl-allocation-fixed-proportions",
+            "cl-allocation-three-responsibilities",
+            "cl-joint-question",
+            "cl-joint-typed-inventory",
+            "cl-joint-boundary",
+            "cl-joint-mass-partition",
+            "cl-joint-sales-partition",
+            "cl-joint-what-additivity-proves",
+            "cl-allocation-market-and-agents",
+            "cl-allocation-2005-sales-purpose",
+            "cl-allocation-1998-sales-criterion",
+            "cl-joint-rival-criteria",
+            "cl-joint-fixed-basket",
+            "cl-joint-positive-routes",
+            "cl-joint-residual-derivation",
+            "cl-joint-negative-meaning",
+            "cl-joint-different-questions",
+            "cl-joint-double-credit",
+            "cl-joint-partial-use",
+            "cl-joint-partial-balances",
+            "cl-joint-partial-inventory",
+            "cl-joint-cancellation",
+            "cl-allocation-fairness-interpretations",
+            "cl-allocation-feasibility-tradeoff",
+            "cl-allocation-limits-on-both-sides",
+            "cl-joint-conference-feedback",
+            "cl-allocation-addendum-substantive",
+            "cl-allocation-addendum-substitution-duty",
+            "cl-joint-version-boundary",
+            "cl-joint-exercise",
+            "cl-joint-answer",
+            "cl-allocation-reading-a-rule"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-problem-and-procedure": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-problem-and-procedure"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-information-and-ethics": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-information-and-ethics"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-causal-directions": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-causal-directions"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-cascade-level": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-cascade-level"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-alternative-supply": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-alternative-supply"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-fixed-proportions": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-fixed-proportions"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-three-responsibilities": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-three-responsibilities"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-question": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-question"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-typed-inventory": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-typed-inventory"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-boundary": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-boundary"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-mass-partition": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-mass-partition"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-sales-partition": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-sales-partition"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-what-additivity-proves": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-what-additivity-proves"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-market-and-agents": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-market-and-agents"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-2005-sales-purpose": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-2005-sales-purpose"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-1998-sales-criterion": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-1998-sales-criterion"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-rival-criteria": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-rival-criteria"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-fixed-basket": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-fixed-basket"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-positive-routes": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-positive-routes"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-residual-derivation": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-residual-derivation"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-negative-meaning": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-negative-meaning"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-different-questions": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-different-questions"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-double-credit": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-double-credit"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-partial-use": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-partial-use"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-partial-balances": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-partial-balances"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-partial-inventory": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-partial-inventory"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-cancellation": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-cancellation"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-fairness-interpretations": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-fairness-interpretations"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-feasibility-tradeoff": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-feasibility-tradeoff"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-limits-on-both-sides": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-limits-on-both-sides"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-conference-feedback": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-conference-feedback"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-addendum-substantive": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-addendum-substantive"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-addendum-substitution-duty": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-addendum-substitution-duty"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-version-boundary": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-version-boundary"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-exercise": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-exercise"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-answer": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-answer"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-reading-a-rule": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-reading-a-rule"
+          ],
+          "ordinary": []
+        }
+      },
+      "currentAddresses": {
+        "/docs/book/allocation-judgment-and-corrections#nd-page": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "chapter",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-allocation-fairness-interpretations",
+            "cl-allocation-feasibility-tradeoff",
+            "cl-allocation-information-and-ethics",
+            "cl-allocation-limits-on-both-sides",
+            "cl-joint-conference-feedback",
+            "cl-allocation-addendum-substantive",
+            "cl-allocation-addendum-substitution-duty",
+            "cl-sub105-two-uses",
+            "cl-sub105-pef-report",
+            "cl-sub105-ilcd-market",
+            "cl-sub105-ilcd-absorption",
+            "cl-sub105-pef-direct",
+            "cl-sub105-evidence-example",
+            "cl-sub105-fallbacks",
+            "cl-sub105-conditional-results",
+            "cl-allocation-reading-a-rule",
+            "cl-sub105-reporting-objects"
+          ],
+          "ordinary": [
+            "371e64f6ad769e50a78bacee2dcfe9e7bac2f599358dab7ede169f9917c35131",
+            "173475986a5f1881d5d53526bf58c06c5f8eb5ee9b4f31c80a10e7d24f29a629",
+            "9dfb233fc032363486048b7630b00d622833bf539d87053e9fa9c8548ffe10e5"
+          ],
+          "bindings": {
+            "links": [
+              [],
+              [],
+              [
+                "/docs/book/allocation-and-substitution/",
+                "/print/#print-reading-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e"
+              ]
+            ],
+            "tables": []
+          }
+        },
+        "/docs/book/allocation-judgment-and-corrections#main-content": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "reading-title",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-allocation-fairness-interpretations",
+            "cl-allocation-feasibility-tradeoff",
+            "cl-allocation-information-and-ethics",
+            "cl-allocation-limits-on-both-sides",
+            "cl-joint-conference-feedback",
+            "cl-allocation-addendum-substantive",
+            "cl-allocation-addendum-substitution-duty",
+            "cl-sub105-two-uses",
+            "cl-sub105-pef-report",
+            "cl-sub105-ilcd-market",
+            "cl-sub105-ilcd-absorption",
+            "cl-sub105-pef-direct",
+            "cl-sub105-evidence-example",
+            "cl-sub105-fallbacks",
+            "cl-sub105-conditional-results",
+            "cl-allocation-reading-a-rule",
+            "cl-sub105-reporting-objects"
+          ],
+          "ordinary": [
+            "371e64f6ad769e50a78bacee2dcfe9e7bac2f599358dab7ede169f9917c35131",
+            "173475986a5f1881d5d53526bf58c06c5f8eb5ee9b4f31c80a10e7d24f29a629",
+            "9dfb233fc032363486048b7630b00d622833bf539d87053e9fa9c8548ffe10e5"
+          ],
+          "chapter": "nd-page"
+        },
+        "/docs/book/allocation-judgment-and-corrections#公平可接受性和可操作性": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "heading",
+          "title": "责任与可行性",
+          "claimIds": [
+            "cl-allocation-fairness-interpretations",
+            "cl-allocation-feasibility-tradeoff"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#方法选择索取怎样的信息": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "heading",
+          "title": "所需信息",
+          "claimIds": [
+            "cl-allocation-information-and-ethics",
+            "cl-allocation-limits-on-both-sides",
+            "cl-joint-conference-feedback"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#修订怎样改变规则的适用范围": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "heading",
+          "title": "增补与适用范围",
+          "claimIds": [
+            "cl-allocation-addendum-substantive",
+            "cl-allocation-addendum-substitution-duty",
+            "cl-sub105-two-uses",
+            "cl-sub105-pef-report",
+            "cl-sub105-ilcd-market",
+            "cl-sub105-ilcd-absorption",
+            "cl-sub105-pef-direct",
+            "cl-sub105-evidence-example",
+            "cl-sub105-fallbacks",
+            "cl-sub105-conditional-results",
+            "cl-allocation-reading-a-rule",
+            "cl-sub105-reporting-objects"
+          ],
+          "ordinary": [
+            "9dfb233fc032363486048b7630b00d622833bf539d87053e9fa9c8548ffe10e5"
+          ]
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-annotations": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note-group",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-allocation-fairness-interpretations",
+            "cl-allocation-feasibility-tradeoff",
+            "cl-allocation-information-and-ethics",
+            "cl-allocation-limits-on-both-sides",
+            "cl-joint-conference-feedback",
+            "cl-allocation-addendum-substantive",
+            "cl-allocation-addendum-substitution-duty",
+            "cl-sub105-two-uses",
+            "cl-sub105-pef-report",
+            "cl-sub105-ilcd-market",
+            "cl-sub105-ilcd-absorption",
+            "cl-sub105-pef-direct",
+            "cl-sub105-evidence-example",
+            "cl-sub105-fallbacks",
+            "cl-sub105-conditional-results",
+            "cl-allocation-reading-a-rule",
+            "cl-sub105-reporting-objects"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-claim-cl-allocation-fairness-interpretations": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-allocation-fairness-interpretations"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-claim-cl-allocation-feasibility-tradeoff": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-allocation-feasibility-tradeoff"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-claim-cl-allocation-information-and-ethics": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-allocation-information-and-ethics"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-claim-cl-allocation-limits-on-both-sides": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-allocation-limits-on-both-sides"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-claim-cl-joint-conference-feedback": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-joint-conference-feedback"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-claim-cl-allocation-addendum-substantive": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-allocation-addendum-substantive"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-claim-cl-allocation-addendum-substitution-duty": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-allocation-addendum-substitution-duty"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-claim-cl-sub105-two-uses": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-sub105-two-uses"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-claim-cl-sub105-pef-report": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-sub105-pef-report"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-claim-cl-sub105-ilcd-market": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-sub105-ilcd-market"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-claim-cl-sub105-ilcd-absorption": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-sub105-ilcd-absorption"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-claim-cl-sub105-pef-direct": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-sub105-pef-direct"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-claim-cl-sub105-evidence-example": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-sub105-evidence-example"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-claim-cl-sub105-fallbacks": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-sub105-fallbacks"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-claim-cl-sub105-conditional-results": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-sub105-conditional-results"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-claim-cl-allocation-reading-a-rule": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-allocation-reading-a-rule"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-claim-cl-sub105-reporting-objects": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "kind": "note",
+          "title": "分配规则与修订",
+          "claimIds": [
+            "cl-sub105-reporting-objects"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e": {
+          "route": "book-joint-production",
+          "kind": "chapter",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-problem-and-procedure",
+            "cl-allocation-information-and-ethics",
+            "cl-allocation-causal-directions",
+            "cl-allocation-cascade-level",
+            "cl-allocation-alternative-supply",
+            "cl-allocation-fixed-proportions",
+            "cl-allocation-three-responsibilities",
+            "cl-joint-question",
+            "cl-joint-typed-inventory",
+            "cl-joint-boundary",
+            "cl-joint-mass-partition",
+            "cl-joint-sales-partition",
+            "cl-joint-what-additivity-proves",
+            "cl-allocation-market-and-agents",
+            "cl-allocation-2005-sales-purpose",
+            "cl-allocation-1998-sales-criterion",
+            "cl-joint-rival-criteria",
+            "cl-joint-fixed-basket",
+            "cl-joint-positive-routes",
+            "cl-joint-residual-derivation",
+            "cl-joint-negative-meaning",
+            "cl-joint-different-questions",
+            "cl-joint-double-credit",
+            "cl-joint-partial-use",
+            "cl-joint-partial-balances",
+            "cl-joint-partial-inventory",
+            "cl-joint-cancellation",
+            "cl-allocation-fairness-interpretations",
+            "cl-allocation-feasibility-tradeoff",
+            "cl-allocation-limits-on-both-sides",
+            "cl-joint-conference-feedback",
+            "cl-allocation-addendum-substantive",
+            "cl-allocation-addendum-substitution-duty",
+            "cl-joint-version-boundary",
+            "cl-sub105-two-uses",
+            "cl-sub105-pef-report",
+            "cl-sub105-ilcd-market",
+            "cl-sub105-ilcd-absorption",
+            "cl-sub105-pef-direct",
+            "cl-sub105-evidence-example",
+            "cl-sub105-fallbacks",
+            "cl-sub105-conditional-results",
+            "cl-joint-exercise",
+            "cl-joint-answer",
+            "cl-allocation-reading-a-rule",
+            "cl-sub105-reporting-objects"
+          ],
+          "ordinary": [
+            "25c22ff519518b0dbb492c8070506869a2cdde6028066a5ad10b939103e69f20",
+            "34e74adfe258824c85581df80593ac1653f987765ea1910129db8f5a7e954d96"
+          ],
+          "bindings": {
+            "links": [
+              [],
+              [
+                "#print-reading-unit-2f646f63732f626f6f6b2f6d61726b65742d626f756e6461726965732d616e642d726573706f6e7365"
+              ]
+            ],
+            "tables": []
+          }
+        },
+        "/print#print-reading-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e": {
+          "route": "book-joint-production",
+          "kind": "reading-title",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-problem-and-procedure",
+            "cl-allocation-information-and-ethics",
+            "cl-allocation-causal-directions",
+            "cl-allocation-cascade-level",
+            "cl-allocation-alternative-supply",
+            "cl-allocation-fixed-proportions",
+            "cl-allocation-three-responsibilities",
+            "cl-joint-question",
+            "cl-joint-typed-inventory",
+            "cl-joint-boundary",
+            "cl-joint-mass-partition",
+            "cl-joint-sales-partition",
+            "cl-joint-what-additivity-proves",
+            "cl-allocation-market-and-agents",
+            "cl-allocation-2005-sales-purpose",
+            "cl-allocation-1998-sales-criterion",
+            "cl-joint-rival-criteria",
+            "cl-joint-fixed-basket",
+            "cl-joint-positive-routes",
+            "cl-joint-residual-derivation",
+            "cl-joint-negative-meaning",
+            "cl-joint-different-questions",
+            "cl-joint-double-credit",
+            "cl-joint-partial-use",
+            "cl-joint-partial-balances",
+            "cl-joint-partial-inventory",
+            "cl-joint-cancellation",
+            "cl-allocation-fairness-interpretations",
+            "cl-allocation-feasibility-tradeoff",
+            "cl-allocation-limits-on-both-sides",
+            "cl-joint-conference-feedback",
+            "cl-allocation-addendum-substantive",
+            "cl-allocation-addendum-substitution-duty",
+            "cl-joint-version-boundary",
+            "cl-sub105-two-uses",
+            "cl-sub105-pef-report",
+            "cl-sub105-ilcd-market",
+            "cl-sub105-ilcd-absorption",
+            "cl-sub105-pef-direct",
+            "cl-sub105-evidence-example",
+            "cl-sub105-fallbacks",
+            "cl-sub105-conditional-results",
+            "cl-joint-exercise",
+            "cl-joint-answer",
+            "cl-allocation-reading-a-rule",
+            "cl-sub105-reporting-objects"
+          ],
+          "ordinary": [
+            "25c22ff519518b0dbb492c8070506869a2cdde6028066a5ad10b939103e69f20",
+            "34e74adfe258824c85581df80593ac1653f987765ea1910129db8f5a7e954d96"
+          ],
+          "chapter": "print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e"
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-信息目的": {
+          "route": "book-joint-production",
+          "kind": "heading",
+          "title": "信息目的",
+          "claimIds": [
+            "cl-allocation-problem-and-procedure",
+            "cl-allocation-information-and-ethics",
+            "cl-allocation-causal-directions",
+            "cl-allocation-cascade-level",
+            "cl-allocation-alternative-supply",
+            "cl-allocation-fixed-proportions",
+            "cl-allocation-three-responsibilities"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-负担份额": {
+          "route": "book-joint-production",
+          "kind": "heading",
+          "title": "负担份额",
+          "claimIds": [
+            "cl-joint-question",
+            "cl-joint-typed-inventory",
+            "cl-joint-boundary",
+            "cl-joint-mass-partition",
+            "cl-joint-sales-partition",
+            "cl-joint-what-additivity-proves",
+            "cl-allocation-market-and-agents",
+            "cl-allocation-2005-sales-purpose",
+            "cl-allocation-1998-sales-criterion",
+            "cl-joint-rival-criteria"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-参照供给": {
+          "route": "book-joint-production",
+          "kind": "heading",
+          "title": "参照供给",
+          "claimIds": [
+            "cl-joint-fixed-basket",
+            "cl-joint-positive-routes",
+            "cl-joint-residual-derivation",
+            "cl-joint-negative-meaning",
+            "cl-joint-different-questions",
+            "cl-joint-double-credit",
+            "cl-joint-partial-use",
+            "cl-joint-partial-balances",
+            "cl-joint-partial-inventory",
+            "cl-joint-cancellation"
+          ],
+          "ordinary": []
+        },
+        "/print#joint-batch-case-heading": {
+          "route": "book-joint-production",
+          "kind": "note-group",
+          "title": "共同生产",
+          "claimIds": [],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-规则边界": {
+          "route": "book-joint-production",
+          "kind": "heading",
+          "title": "规则边界",
+          "claimIds": [
+            "cl-allocation-fairness-interpretations",
+            "cl-allocation-feasibility-tradeoff",
+            "cl-allocation-limits-on-both-sides",
+            "cl-joint-conference-feedback",
+            "cl-allocation-addendum-substantive",
+            "cl-allocation-addendum-substitution-duty",
+            "cl-joint-version-boundary",
+            "cl-sub105-two-uses",
+            "cl-sub105-pef-report",
+            "cl-sub105-ilcd-market",
+            "cl-sub105-ilcd-absorption",
+            "cl-sub105-pef-direct",
+            "cl-sub105-evidence-example",
+            "cl-sub105-fallbacks",
+            "cl-sub105-conditional-results",
+            "cl-joint-exercise",
+            "cl-joint-answer",
+            "cl-allocation-reading-a-rule",
+            "cl-sub105-reporting-objects"
+          ],
+          "ordinary": [
+            "34e74adfe258824c85581df80593ac1653f987765ea1910129db8f5a7e954d96"
+          ]
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-annotations": {
+          "route": "book-joint-production",
+          "kind": "note-group",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-problem-and-procedure",
+            "cl-allocation-information-and-ethics",
+            "cl-allocation-causal-directions",
+            "cl-allocation-cascade-level",
+            "cl-allocation-alternative-supply",
+            "cl-allocation-fixed-proportions",
+            "cl-allocation-three-responsibilities",
+            "cl-joint-question",
+            "cl-joint-typed-inventory",
+            "cl-joint-boundary",
+            "cl-joint-mass-partition",
+            "cl-joint-sales-partition",
+            "cl-joint-what-additivity-proves",
+            "cl-allocation-market-and-agents",
+            "cl-allocation-2005-sales-purpose",
+            "cl-allocation-1998-sales-criterion",
+            "cl-joint-rival-criteria",
+            "cl-joint-fixed-basket",
+            "cl-joint-positive-routes",
+            "cl-joint-residual-derivation",
+            "cl-joint-negative-meaning",
+            "cl-joint-different-questions",
+            "cl-joint-double-credit",
+            "cl-joint-partial-use",
+            "cl-joint-partial-balances",
+            "cl-joint-partial-inventory",
+            "cl-joint-cancellation",
+            "cl-allocation-fairness-interpretations",
+            "cl-allocation-feasibility-tradeoff",
+            "cl-allocation-limits-on-both-sides",
+            "cl-joint-conference-feedback",
+            "cl-allocation-addendum-substantive",
+            "cl-allocation-addendum-substitution-duty",
+            "cl-joint-version-boundary",
+            "cl-sub105-two-uses",
+            "cl-sub105-pef-report",
+            "cl-sub105-ilcd-market",
+            "cl-sub105-ilcd-absorption",
+            "cl-sub105-pef-direct",
+            "cl-sub105-evidence-example",
+            "cl-sub105-fallbacks",
+            "cl-sub105-conditional-results",
+            "cl-joint-exercise",
+            "cl-joint-answer",
+            "cl-allocation-reading-a-rule",
+            "cl-sub105-reporting-objects"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-problem-and-procedure": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-problem-and-procedure"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-information-and-ethics": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-information-and-ethics"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-causal-directions": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-causal-directions"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-cascade-level": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-cascade-level"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-alternative-supply": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-alternative-supply"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-fixed-proportions": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-fixed-proportions"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-three-responsibilities": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-three-responsibilities"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-question": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-question"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-typed-inventory": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-typed-inventory"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-boundary": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-boundary"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-mass-partition": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-mass-partition"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-sales-partition": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-sales-partition"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-what-additivity-proves": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-what-additivity-proves"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-market-and-agents": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-market-and-agents"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-2005-sales-purpose": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-2005-sales-purpose"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-1998-sales-criterion": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-1998-sales-criterion"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-rival-criteria": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-rival-criteria"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-fixed-basket": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-fixed-basket"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-positive-routes": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-positive-routes"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-residual-derivation": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-residual-derivation"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-negative-meaning": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-negative-meaning"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-different-questions": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-different-questions"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-double-credit": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-double-credit"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-partial-use": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-partial-use"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-partial-balances": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-partial-balances"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-partial-inventory": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-partial-inventory"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-cancellation": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-cancellation"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-fairness-interpretations": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-fairness-interpretations"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-feasibility-tradeoff": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-feasibility-tradeoff"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-limits-on-both-sides": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-limits-on-both-sides"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-conference-feedback": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-conference-feedback"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-addendum-substantive": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-addendum-substantive"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-addendum-substitution-duty": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-addendum-substitution-duty"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-version-boundary": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-version-boundary"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-sub105-two-uses": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-sub105-two-uses"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-sub105-pef-report": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-sub105-pef-report"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-sub105-ilcd-market": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-sub105-ilcd-market"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-sub105-ilcd-absorption": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-sub105-ilcd-absorption"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-sub105-pef-direct": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-sub105-pef-direct"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-sub105-evidence-example": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-sub105-evidence-example"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-sub105-fallbacks": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-sub105-fallbacks"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-sub105-conditional-results": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-sub105-conditional-results"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-exercise": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-exercise"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-joint-answer": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-joint-answer"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-allocation-reading-a-rule": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-allocation-reading-a-rule"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-claim-cl-sub105-reporting-objects": {
+          "route": "book-joint-production",
+          "kind": "note",
+          "title": "共同生产",
+          "claimIds": [
+            "cl-sub105-reporting-objects"
+          ],
+          "ordinary": []
+        }
+      },
+      "history": [
+        {
+          "address": "/docs/book/allocation-judgment-and-corrections#nd-page",
+          "from": "52834d057329c0860f29f4fa13696405f9a390380274f6387e3ca32b7039bee0",
+          "ordinary": [
+            {
+              "from": "8946a3ca589c9170acf4eab56f87288e96018720b6b2301e2727c4486aa113fb",
+              "to": "371e64f6ad769e50a78bacee2dcfe9e7bac2f599358dab7ede169f9917c35131",
+              "address": "/docs/book/allocation-judgment-and-corrections#nd-page",
+              "targetId": "chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-sub-105-ordinary-0",
+              "rationale": "新简介明示替代证据、报告对象和规则修订；原来解释分担理由的作用维持。"
+            },
+            {
+              "from": "549ff1142f892b42bcfc78fa2543d05ef78f233b96d18e9b56989faecb12c3f3",
+              "to": "173475986a5f1881d5d53526bf58c06c5f8eb5ee9b4f31c80a10e7d24f29a629",
+              "address": "/docs/book/allocation-judgment-and-corrections#nd-page",
+              "targetId": "chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-sub-105-ordinary-1",
+              "rationale": "明确原来提到的两种分担分别按质量或收入，保留总量可分尽且单品份额可能不同。"
+            },
+            {
+              "from": "9dfb233fc032363486048b7630b00d622833bf539d87053e9fa9c8548ffe10e5",
+              "to": "9dfb233fc032363486048b7630b00d622833bf539d87053e9fa9c8548ffe10e5",
+              "address": "/docs/book/allocation-judgment-and-corrections#nd-page",
+              "targetId": "chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-sub-105-ordinary-2",
+              "rationale": "前版普通说明原样保留，按实际完整文字与链接定位。"
+            }
+          ],
+          "rationale": "保留真实前版题名和原有顺序范围，新增规则比较拥有自己的引用。"
+        },
+        {
+          "address": "/docs/book/allocation-judgment-and-corrections#main-content",
+          "from": "0c7d4306bdedab1df0b9ca3c92fc23b07ff3f3351b733ed0b562ee09f1c563a4",
+          "ordinary": [
+            {
+              "from": "8946a3ca589c9170acf4eab56f87288e96018720b6b2301e2727c4486aa113fb",
+              "to": "371e64f6ad769e50a78bacee2dcfe9e7bac2f599358dab7ede169f9917c35131",
+              "address": "/docs/book/allocation-judgment-and-corrections#main-content",
+              "targetId": "chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-sub-105-ordinary-0",
+              "rationale": "新简介明示替代证据、报告对象和规则修订；原来解释分担理由的作用维持。"
+            },
+            {
+              "from": "549ff1142f892b42bcfc78fa2543d05ef78f233b96d18e9b56989faecb12c3f3",
+              "to": "173475986a5f1881d5d53526bf58c06c5f8eb5ee9b4f31c80a10e7d24f29a629",
+              "address": "/docs/book/allocation-judgment-and-corrections#main-content",
+              "targetId": "chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-sub-105-ordinary-1",
+              "rationale": "明确原来提到的两种分担分别按质量或收入，保留总量可分尽且单品份额可能不同。"
+            },
+            {
+              "from": "9dfb233fc032363486048b7630b00d622833bf539d87053e9fa9c8548ffe10e5",
+              "to": "9dfb233fc032363486048b7630b00d622833bf539d87053e9fa9c8548ffe10e5",
+              "address": "/docs/book/allocation-judgment-and-corrections#main-content",
+              "targetId": "chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-sub-105-ordinary-2",
+              "rationale": "前版普通说明原样保留，按实际完整文字与链接定位。"
+            }
+          ],
+          "rationale": "保留真实前版题名和原有顺序范围，新增规则比较拥有自己的引用。"
+        },
+        {
+          "address": "/docs/book/allocation-judgment-and-corrections#修订怎样改变规则的适用范围",
+          "from": "fbae851cb9a027d5e1a0ee397e2c11ae681adc6aa6bd66596d29c7e428e4957b",
+          "ordinary": [
+            {
+              "from": "9dfb233fc032363486048b7630b00d622833bf539d87053e9fa9c8548ffe10e5",
+              "to": "9dfb233fc032363486048b7630b00d622833bf539d87053e9fa9c8548ffe10e5",
+              "address": "/docs/book/allocation-judgment-and-corrections#修订怎样改变规则的适用范围",
+              "targetId": "chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-sub-105-ordinary-2",
+              "rationale": "前版普通说明原样保留，按实际完整文字与链接定位。"
+            }
+          ],
+          "rationale": "保留真实前版题名和原有顺序范围，新增规则比较拥有自己的引用。"
+        },
+        {
+          "address": "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-annotations",
+          "from": "8040320fc0564f02b66d47ce58d0cb1f084d416c042fd5c94c9680dd99180066",
+          "ordinary": [],
+          "rationale": "保留真实前版题名和原有顺序范围，新增规则比较拥有自己的引用。"
+        },
+        {
+          "address": "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e",
+          "from": "83fee41569b75843c5505b5c187a92a570d7b82a37947e2bc3df50904d9b11e2",
+          "ordinary": [
+            {
+              "from": "25c22ff519518b0dbb492c8070506869a2cdde6028066a5ad10b939103e69f20",
+              "to": "25c22ff519518b0dbb492c8070506869a2cdde6028066a5ad10b939103e69f20",
+              "address": "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e",
+              "targetId": "print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-sub-105-ordinary-0",
+              "rationale": "前版普通说明原样保留，按实际完整文字与链接定位。"
+            },
+            {
+              "from": "34e74adfe258824c85581df80593ac1653f987765ea1910129db8f5a7e954d96",
+              "to": "34e74adfe258824c85581df80593ac1653f987765ea1910129db8f5a7e954d96",
+              "address": "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e",
+              "targetId": "print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-sub-105-ordinary-1",
+              "rationale": "前版普通说明原样保留，按实际完整文字与链接定位。"
+            }
+          ],
+          "rationale": "保留真实前版题名和原有顺序范围，新增规则比较拥有自己的引用。"
+        },
+        {
+          "address": "/print#print-reading-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e",
+          "from": "f8de6cf073d5a62d60288634412b2fbd9c980057e4d409e25274559e8e7ada8d",
+          "ordinary": [
+            {
+              "from": "25c22ff519518b0dbb492c8070506869a2cdde6028066a5ad10b939103e69f20",
+              "to": "25c22ff519518b0dbb492c8070506869a2cdde6028066a5ad10b939103e69f20",
+              "address": "/print#print-reading-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e",
+              "targetId": "print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-sub-105-ordinary-0",
+              "rationale": "前版普通说明原样保留，按实际完整文字与链接定位。"
+            },
+            {
+              "from": "34e74adfe258824c85581df80593ac1653f987765ea1910129db8f5a7e954d96",
+              "to": "34e74adfe258824c85581df80593ac1653f987765ea1910129db8f5a7e954d96",
+              "address": "/print#print-reading-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e",
+              "targetId": "print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-sub-105-ordinary-1",
+              "rationale": "前版普通说明原样保留，按实际完整文字与链接定位。"
+            }
+          ],
+          "rationale": "保留真实前版题名和原有顺序范围，新增规则比较拥有自己的引用。"
+        },
+        {
+          "address": "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-规则边界",
+          "from": "c821f392e6d4b473f2925a6ca0c1f330407bb4bc37da0c378f2f0dd63cf3d599",
+          "ordinary": [
+            {
+              "from": "34e74adfe258824c85581df80593ac1653f987765ea1910129db8f5a7e954d96",
+              "to": "34e74adfe258824c85581df80593ac1653f987765ea1910129db8f5a7e954d96",
+              "address": "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-规则边界",
+              "targetId": "print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-sub-105-ordinary-1",
+              "rationale": "前版普通说明原样保留，按实际完整文字与链接定位。"
+            }
+          ],
+          "rationale": "保留真实前版题名和原有顺序范围，新增规则比较拥有自己的引用。"
+        },
+        {
+          "address": "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-annotations",
+          "from": "8a904520da1c9df2b400f4061a210db53ceaa79e502d6247437694164080800a",
+          "ordinary": [],
+          "rationale": "保留真实前版题名和原有顺序范围，新增规则比较拥有自己的引用。"
+        }
+      ],
+      "ordinaryTargets": {
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-sub-105-ordinary-0": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "sha256": "371e64f6ad769e50a78bacee2dcfe9e7bac2f599358dab7ede169f9917c35131"
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-sub-105-ordinary-1": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "sha256": "173475986a5f1881d5d53526bf58c06c5f8eb5ee9b4f31c80a10e7d24f29a629"
+        },
+        "/docs/book/allocation-judgment-and-corrections#chapter-2f646f63732f626f6f6b2f616c6c6f636174696f6e2d6a7564676d656e742d616e642d636f7272656374696f6e73-sub-105-ordinary-2": {
+          "route": "/docs/book/allocation-judgment-and-corrections",
+          "sha256": "9dfb233fc032363486048b7630b00d622833bf539d87053e9fa9c8548ffe10e5"
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-sub-105-ordinary-0": {
+          "route": "book-joint-production",
+          "sha256": "25c22ff519518b0dbb492c8070506869a2cdde6028066a5ad10b939103e69f20"
+        },
+        "/print#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e-sub-105-ordinary-1": {
+          "route": "book-joint-production",
+          "sha256": "34e74adfe258824c85581df80593ac1653f987765ea1910129db8f5a7e954d96"
+        }
+      }
+    },
+    "outputs": [
+      {
+        "path": "/docs/book/allocation-and-substitution",
+        "route": "/docs/book/allocation-and-substitution",
+        "from": "5fd940ca4b147d03c54cdf6c6797f529b40c2462586d1c180ab662c3418bd60c",
+        "sha256": "468f7d3496321883f167c7eb2f8b93a3cd367f5f4e7bec9340df5c920236fb1d",
+        "rationale": "核对当代前提注号、上下游说明与网站导航。"
+      },
+      {
+        "path": "/docs/book/allocation-judgment-and-corrections",
+        "route": "/docs/book/allocation-judgment-and-corrections",
+        "from": "e15a334978f8fe602f51eafff346062f3fe30c485131930c0de5a7451f98fad8",
+        "sha256": "bb864f72945e03b6489fc0dd58b43c406fbd5439f3c56d5f9a5787fb478d9668",
+        "rationale": "实际 B10 规范正文、全文注释、准确旧范围与 case 保留。"
+      },
+      {
+        "path": "/docs/book/market-boundaries-and-response",
+        "route": "/docs/book/market-boundaries-and-response",
+        "from": "3a49e04f41d5f27b01a6d70554e264c3f248e1d8bc6781ca35261c119b32711c",
+        "sha256": "e9c0ea46499e6687e263ae30bdff664e825f1a3dce7d5f08fe38c235eef7a628",
+        "rationale": "核对当代前提注号、上下游说明与网站导航。"
+      },
+      {
+        "path": "/print",
+        "route": "book-joint-production",
+        "from": "22853c13bff3262a37e45dcc5401789e5c6533cfa9d75bf693f5210df31283db",
+        "sha256": "3054739c7bf56681731ad5885c5be651a28dbf5aa90866c3b4b343d3cf1e50ca",
+        "rationale": "实际 B10 规范正文、全文注释、准确旧范围与 case 保留。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/market-boundaries-and-response",
+        "from": "182987e012a36d33d9a5ef0f40c054990b6ecaf9c217fd5a6133a715e47644f8",
+        "sha256": "d6f486cd552723349f9b7f7777eda91392aa6b073e4a335e802215d122c7961a",
+        "rationale": "核对当代前提注号、上下游说明与网站导航。"
+      }
+    ],
+    "publicArtifacts": [
+      {
+        "path": "claims/index.html",
+        "from": "e32483e6e280ca8038c03ec9e99c052af3158f440b89216f032fa92617267ddf",
+        "sha256": "3939c2ed45e1f9b459b7e128759afcc01955e78d35f57359db6670524fb6043a",
+        "rationale": "核对实际当代公开内容与独立真实前态对应。"
+      },
+      {
+        "path": "sources/index.html",
+        "from": "fd74d9ebeeeb5492dece78d0a51d6fce46fc08b3aaab52d74ab05bf260671aab",
+        "sha256": "5123abf0920da1acfd6bca502277d03c7d701e52b6b92fe996e0dcec02c827f6",
+        "rationale": "核对实际当代公开内容与独立真实前态对应。"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "from": "4572f4e840b8db4395e9afd8289933dbfe38244d80e4ad0d3466791f7f3c9d0a",
+        "sha256": "b1e25933e8db13af3ef4a20f2ccf2128ec7e826ffe4d56581327892270f0d07a",
+        "rationale": "核对实际当代公开内容与独立真实前态对应。"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "from": "b70551694b148f299288926a6d63be3c10e6b676773fb6baa8634cfd2562830b",
+        "sha256": "bd0acf0382402abdd5ece242b30b2e00d13178684eae6a3a53f1a851f97a8179",
+        "rationale": "核对实际当代公开内容与独立真实前态对应。"
+      },
+      {
+        "path": "research/index.html",
+        "from": "b4f2b236f43663a20bfd4afcfc5891a10b4ab06fd199f07e6b83e83fd12900d3",
+        "sha256": "dda215d4ff5bbb8008fce3759482bb6bef38b4347f9c542323a8ea83019a824c",
+        "rationale": "核对实际当代公开内容与独立真实前态对应。"
+      },
+      {
+        "path": "downloads/bibliography.json",
+        "from": "413e8d88b324fb252cd35c50882da2a8c2eb5e1cdad7fc92ada83de7f4d5839d",
+        "sha256": "032ea0118cba2a38f7cc2315fa9a5df0728923045a4b646cf99964035323e53b",
+        "rationale": "核对实际当代公开内容与独立真实前态对应。"
+      },
+      {
+        "path": "downloads/research.json",
+        "from": "413e8d88b324fb252cd35c50882da2a8c2eb5e1cdad7fc92ada83de7f4d5839d",
+        "sha256": "032ea0118cba2a38f7cc2315fa9a5df0728923045a4b646cf99964035323e53b",
+        "rationale": "核对实际当代公开内容与独立真实前态对应。"
+      },
+      {
+        "path": "coverage/index.html",
+        "from": "4981cb261db710555bdb7fed55028538d085e4758cad3a8fcc1a2ce7505e420e",
+        "sha256": "52b248f884e6d2d35364911427fd5814b6ec26de63a0840890c79658f877d379",
+        "rationale": "核对实际当代公开内容与独立真实前态对应。"
+      }
+    ],
+    "outputCapture": {
+      "sourceCommit": "e5057ac9a9a12517f51879e13728a28c8f200010",
+      "dirty": true,
+      "status": "working-preview",
+      "manifestSha256": "3b8525f73d75246332f0f9e9fc6688e8d42db03a79ed4d14b34ed7b07d70f859"
+    }
+  }
+}

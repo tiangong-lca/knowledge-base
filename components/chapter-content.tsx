@@ -1,4 +1,5 @@
-import { currentFlowBoundary, currentServiceConstraints } from '@/scripts/reader-current-expectations.mjs';
+import { substitutionRulesHistoryControls, substitutionRulesOrdinaryId, substitutionRulesSource } from '@/scripts/reader-substitution-rules.mjs';
+import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules } from '@/scripts/reader-current-expectations.mjs';
 import { flowBoundaryHistoryControls, flowBoundaryHistoryTargets, flowBoundaryOrdinaryTargets, flowBoundaryOrdinaryId } from '@/scripts/reader-flow-boundary.mjs';
 import { serviceConstraintsHistoryControls, serviceConstraintsOrdinaryId, serviceConstraintsSource } from '@/scripts/reader-service-constraints.mjs';
 import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
@@ -30,11 +31,13 @@ export function LegacyCitationAliases({ ids, target }: { ids?: LegacyEntry[]; ta
 const histories = [
   { controls: flowBoundaryHistoryControls(currentFlowBoundary), edition: currentFlowBoundary?.source, attribute: 'flow-boundary' },
   { controls: serviceConstraintsHistoryControls(currentServiceConstraints), edition: serviceConstraintsSource, attribute: 'service-constraints' },
+  { controls: substitutionRulesHistoryControls(currentSubstitutionRules), edition: substitutionRulesSource, attribute: 'substitution-rules' },
 ];
 
 export function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
   return (currentFlowBoundary && flowBoundaryOrdinaryId(route, print, index))
-    || serviceConstraintsOrdinaryId(currentServiceConstraints, route, print, index);
+    || serviceConstraintsOrdinaryId(currentServiceConstraints, route, print, index)
+    || substitutionRulesOrdinaryId(currentSubstitutionRules, route, print, index);
 }
 
 async function HistoricalRange({ path, id, history }: { path: string; id: string; history: typeof histories[number] }) {
