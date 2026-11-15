@@ -321,12 +321,12 @@ export function matchesAcceptedRecord(qualification, kind, expected, actual, pro
   if (same(expected, actual)) return true;
   if (!qualification || qualification.errors?.length || !actual || expected && expected.id !== actual.id) return false;
   const change = qualification.changes.record.get(`${kind}:${actual.id}`);
-  return Boolean(change && (expected ? [change.from?.[projection], change.intermediate?.[projection]].includes(editionDigest(expected)) : change.from === null)
+  return Boolean(change && (expected ? (change.predecessors ?? [change.from, change.intermediate]).some(record => record?.[projection] === editionDigest(expected)) : change.from === null)
     && change.to?.[projection] === editionDigest(actual));
 }
 
 export function matchesAcceptedFile(qualification, path, expectedHash, actualHash) {
   if (expectedHash === actualHash) return true;
   const change = !qualification?.errors?.length && qualification?.changes.file.get(path);
-  return Boolean(change && [change.from, change.intermediate].includes(expectedHash) && change.to === actualHash);
+  return Boolean(change && (change.predecessors ?? [change.from, change.intermediate]).includes(expectedHash) && change.to === actualHash);
 }

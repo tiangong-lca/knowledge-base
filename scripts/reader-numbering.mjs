@@ -2,8 +2,9 @@ import { createHash } from 'node:crypto';
 import { Fragment, isValidElement } from 'react';
 import { printUnitAnchor } from './reader-book.mjs';
 import numbering from '../config/reader-numbering.json' with { type: 'json' };
+import { projectServiceConstraintsNumbering } from './reader-service-constraints.mjs';
 import { flowBoundaryNumbering } from './reader-flow-boundary.mjs';
-import { currentBookLayout, currentBookPlan, currentFlowBoundary } from './reader-current-expectations.mjs';
+import { currentBookLayout, currentBookPlan, currentFlowBoundary, currentServiceConstraints } from './reader-current-expectations.mjs';
 
 /** @typedef {{key:string,source:string,kind:string,title:string,part?:number,label:string|null,prefix:string|null,ordinal:number|null,partLabel:string|null,partTitle?:string|null}} NumberingUnit */
 /** @typedef {{key:string,id?:string,title:string,depth:number,type:string,number:string}} HeadingNumber */
@@ -14,7 +15,8 @@ const chinese = ['', '一', '二', '三', '四', '五', '六', '七'];
 /** @type {string|null} */
 export const readerNumberingDigest = "edf363ea6a65b1f4093a224ec17124b618ac34405f6f4abdd6127bccacd01306";
 export function assertReaderNumbering(value = numbering, independentDigest = currentBookLayout('book:numbering-pin', readerNumberingDigest)) {
-  if (createHash('sha256').update(JSON.stringify(value)).digest('hex') !== flowBoundaryNumbering(currentFlowBoundary, value, independentDigest)) throw new Error('Reader numbering differs from the independently pinned actual heading and part inventory');
+  const previous = projectServiceConstraintsNumbering(currentServiceConstraints, value);
+  if (createHash('sha256').update(JSON.stringify(previous)).digest('hex') !== flowBoundaryNumbering(currentFlowBoundary, previous, independentDigest)) throw new Error('Reader numbering differs from the independently pinned actual heading and part inventory');
   if (currentBookLayout('book:formal-section-budget', false)) {
     const counts = value.book.filter(unit => unit.kind === 'chapter').map(unit =>
       value.headings[unit.source]?.filter(slot => slot.type === 'mdx' && slot.depth === 2).length ?? 0);

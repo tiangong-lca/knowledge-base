@@ -15,10 +15,19 @@ checkPaths:
   - "app/**"
   - "scripts/**"
 lastReviewedAt: 2026-11-15
-lastReviewedCommit: 0fd2c7bea8733f426c46fff1dd175119a257b13a
+lastReviewedCommit: 7974ab205e5218e6c3a1d49dc34be6ea5b21c345
 ---
 
 # LCA Living Knowledge Base and Review
+
+[Service constraints #102](https://github.com/tiangong-lca/knowledge-base/issues/102)
+extends the shared process-network chapter with a comparison of natural-unit and
+monetary representations, preserved constraints and redundant-row counterexamples.
+Its [protocol](_docs/editorial/2026-11-15-service-constraints.md) separates original
+printed data, declared-formula reconstruction, reader judgments and actual output.
+The independently qualified successor retains earlier citation generations and
+adds paired versioned input/result downloads. Source merge, hosting and required
+workspace integration remain separate tracked steps; wider programme #9 is open.
 
 The user endorsed the flow pilot on 2026-11-15 and requested a continuing GOAL
 for all subsequent chapter revisions and additions. Apply the

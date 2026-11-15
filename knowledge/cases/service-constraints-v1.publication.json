@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "caseId": "CASE-SERVICE-CONSTRAINTS",
+  "version": "1.0.0",
+  "inputFile": "service-constraints-v1.json",
+  "approvedInputSha256": "053e317c3bf53fa926c44408a686bcc1c5739fc3b57d3bf9c5778ee54b61671c",
+  "reviewedAt": "2026-11-15",
+  "reviewKind": "agent-source-check",
+  "claims": [
+    {
+      "id": "cl-service102-activities",
+      "kind": "calculation",
+      "scope": "Heijungs、Settanni 与 Guinée 的假设椅子案例，从一年坐用求各过程的活动量",
+      "evidenceIds": [
+        "ev-service102-hsg-model"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-service102-hsg-model",
+          "relation": "supports",
+          "rationale": "图1、表1至3与式(5)至(8)给出流程、处置及使用活动基准、最终需求和按需求缩放的活动。"
+        }
+      ],
+      "premiseIds": [
+        "cl-inv-demand-balance"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "这是论文设定的线性案例，坐用年数及其投入属于假设数据。"
+      ],
+      "reasoning": "先由坐用行确定使用活动，继而平衡椅子、报废椅、用电和用木，逐行以各自单位核对自然单位残差。",
+      "textTemplate": "Heijungs、Settanni 与 Guinée 用一个假设的椅子案例计算交付一年坐用需要的活动量。按他们的数据，每份使用记录以5把椅子为投入，提供{{evaluated.authorControls.restoration.sittingPerUseActivity.exact}}年坐用并产生5把报废椅。为交付{{evaluated.authorControls.restoration.requiredSitting.exact}}年坐用，使用活动取{{evaluated.naturalUnits.publishedActivities.3.exact}}。制椅以产出1把椅子为活动基准，活动量取{{evaluated.naturalUnits.publishedActivities.2.exact}}。处置以接收1把报废椅为活动基准，活动量取{{evaluated.naturalUnits.publishedActivities.4.exact}}。整个过程网络于是需要{{evaluated.naturalUnits.publishedActivities.0.exact}} MJ电力和{{evaluated.naturalUnits.publishedActivities.1.exact}} kg木材。"
+    },
+    {
+      "id": "cl-service102-printed-conflict",
+      "kind": "calculation",
+      "scope": "椅子案例的原印处置金额、声明的行定价推导值及逐项核对",
+      "evidenceIds": [
+        "ev-service102-hsg-model",
+        "ev-service102-hsg-price",
+        "ev-service102-hsg-conflict"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-service102-hsg-model",
+          "relation": "supports",
+          "rationale": "式(5)给出处置每次接收一把报废椅的物量，表2给出实际活动量。"
+        },
+        {
+          "evidenceId": "ev-service102-hsg-price",
+          "relation": "supports",
+          "rationale": "式(9)给出报废椅的负价格，表6重申以同一行价格换算。"
+        },
+        {
+          "evidenceId": "ev-service102-hsg-conflict",
+          "relation": "supports",
+          "rationale": "原印式(10)与式(12)、表3的同一位置有可定位的冲突。表4前的文字与表3还互换了电力和木材的成本金额。"
+        }
+      ],
+      "premiseIds": [
+        "cl-service102-activities"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "原文第1726页把木材和电力的制椅成本分别写成5和2.5欧元。表3对应的木材和电力分别为2.5和5欧元，两项合计均为7.5欧元。",
+        "原印值与按原作声明关系推导的值分别保留。推导值的依据是原作量价和缩放关系，其正式勘误状态尚未核实。"
+      ],
+      "reasoning": "对报废椅行按每件负价格乘各列的有符号物量，并把两套未缩放的处置系数分别乘原活动量。",
+      "textTemplate": "论文把报废椅定价为每把−2欧元。每次处置接收一把，在数量表上记为−1，相乘应记为收入{{evaluated.declaredRelationship.disposalEntry.exact}}欧元。式(10)的这一格印成{{evaluated.printed.disposalEntry.exact}}。照印出的数字乘处置活动量，会算出处置方收入{{evaluated.printed.scaledDisposalReceipt.exact}}欧元，超出使用方支付的1欧元，报废椅一行便留下{{evaluated.printed.residualAtPublishedActivities.3.exact}}欧元差额。按原文声明的价量关系重算，处置方收到{{evaluated.declaredRelationship.scaledDisposalReceipt.exact}}欧元，与式(12)和表3一致。"
+    },
+    {
+      "id": "cl-service102-zero-price",
+      "kind": "calculation",
+      "scope": "按原作声明的逐行定价，零价坐用导致服务约束丢失",
+      "evidenceIds": [
+        "ev-service102-hsg-model",
+        "ev-service102-hsg-price"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-service102-hsg-model",
+          "relation": "supports",
+          "rationale": "式(5)与式(6)保留自然单位的坐用产出和最终需求。"
+        },
+        {
+          "evidenceId": "ev-service102-hsg-price",
+          "relation": "supports",
+          "rationale": "式(9)、式(11)、§3.5和表6给出零价、零金额需求和先用自然单位求规模的原则。"
+        }
+      ],
+      "premiseIds": [
+        "cl-service102-activities",
+        "cl-service102-printed-conflict"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "零价只描述该设定中坐用没有市场交易。使用者仍需购买椅子并承担报废处置费用。"
+      ],
+      "reasoning": "将坐用行的供应和需求都乘零，再分别代入原作的活动向量和全零活动，对照自然单位和金额残差。",
+      "textTemplate": "在这组假设数据中，坐用没有市场交易，原作将每年坐用服务的单价记为{{input.declaredRelationship.priceVector.4}}欧元。把坐用行和一年最终需求都乘以这个价格，原来对坐用量的要求变成0＝0。按声明的价量关系正确换算，原活动和所有活动都为零这两种情形都能让金额平衡。回到物量表，零活动的坐用残差却是{{evaluated.naturalUnits.residualAtZeroActivities.4.exact}}年，正好少交付一年坐用。"
+    },
+    {
+      "id": "cl-service102-restored",
+      "kind": "calculation",
+      "scope": "对声明的价量变换，重新附加原坐用方程恢复原活动量",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-service102-activities",
+        "cl-service102-zero-price"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "恢复结论使用按声明价量关系构造的四条金额方程。若改用式(10)原印的20欧元，补回坐用条件会使处置活动取0.05，仍剩0.45把报废椅。"
+      ],
+      "reasoning": "给金额关系附加原坐用行和需求。四条非零价的行可分别除以价格，恢复对应物量方程。",
+      "textTemplate": "对按声明价量关系重建的金额矩阵，补回一年坐用的原方程可以恢复原活动量。每份使用记录提供{{evaluated.authorControls.restoration.sittingPerUseActivity.exact}}年坐用，要求{{evaluated.authorControls.restoration.requiredSitting.exact}}年，就得到使用活动{{evaluated.authorControls.restoration.declaredActivities.3.exact}}。其余四行的价格都非零，各自除以单价便恢复物量约束，制椅活动为{{evaluated.authorControls.restoration.declaredActivities.2.exact}}，处置活动为{{evaluated.authorControls.restoration.declaredActivities.4.exact}}。若沿用原印的{{evaluated.printed.disposalEntry.exact}}，同样补回坐用要求，处置活动却只有{{evaluated.authorControls.restoration.printedActivities.4.exact}}，代回物量表仍剩{{evaluated.authorControls.restoration.printedNaturalResidual.3.exact}}把报废椅。补服务约束与纠正不相容的金额系数，是分别要做的事。"
+    },
+    {
+      "id": "cl-service102-redundant",
+      "kind": "calculation",
+      "scope": "本书设定的单活动对照，删除一条冗余平衡行后解不变",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-service102-row-map"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "第二行完整复制第一条约束的倍数关系，包括需求端。"
+      ],
+      "reasoning": "两行残差为 x−1 与 2x−2。只要第一行等于零，第二行一定也等于零。把第二行映成0不改变解。",
+      "textTemplate": "删去一行有时不影响解。设只有一个活动，第一行要求完成1个单位，第二行把同一供需两边都乘{{evaluated.authorControls.redundant.secondResidualMultiplier.exact}}。把第二行改成0＝0，即使这一步无法用逆矩阵还原，唯一解仍是活动量{{evaluated.authorControls.redundant.activity.exact}}。第一行满足时，第二行也必然满足。"
+    },
+    {
+      "id": "cl-service102-residual-condition",
+      "kind": "synthesis",
+      "scope": "固定活动集合、平衡和最终需求时，线性行映射保留解的必要充分条件",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-service102-zero-price",
+        "cl-service102-restored",
+        "cl-service102-redundant"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "条件只比较固定模型内可取活动量满足的数值平衡。现实服务的性能与使用条件还需要另行核对。"
+      ],
+      "reasoning": "线性变换将每个原残差 r＝As−f 变成 Rr。原解始终满足变换式。两组解相同，当且仅当固定模型可达残差中没有非零向量被 R 映为零。",
+      "textTemplate": "判断一次行变换有没有放宽要求，要看它会不会把原来通不过的活动也判成平衡。固定活动集合和最终需求，把每组活动的供给减去需求，所得差额就是残差。对供给和需求施加同一个线性行变换后，原来的解仍是解。两组解恰好相同，当且仅当由模型允许的活动量产生的任何非零残差都不会被映成零。可逆变换满足这个条件。即使变换不可逆，保留下来的条件也可能已经足够，例如删去一条完全冗余的平衡行。"
+    }
+  ]
+}

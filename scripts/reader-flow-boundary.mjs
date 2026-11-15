@@ -349,7 +349,10 @@ export function projectFlowBoundaryHistory(addresses, unit) {
 }
 
 export function flowBoundaryHistoryControls(unit) {
-  const ranges = flowBoundaryHistory(unit);
+  return groupHistoricalRanges(flowBoundaryHistory(unit));
+}
+
+export function groupHistoricalRanges(ranges) {
   const controls = new Map();
   for (const [address, row] of ranges) {
     const pair = ['chapter', 'reading-title'].includes(row.previous.kind)
@@ -393,7 +396,7 @@ export function flowBoundaryOrdinaryDigest(node) {
   return editionDigest({ tag: node.tagName, text: node.text.replace(/\s+/g, ' ').trim(), links });
 }
 
-function visibleHistoryControl(node, expandable = null) {
+export function visibleHistoryControl(node, expandable = null) {
   for (let current = node; current?.nodeType === 1; current = current.parentNode) {
     if (current.hasAttribute('hidden') || current.hasAttribute('inert') || current.getAttribute('aria-hidden')?.toLowerCase() === 'true'
         || /(?:^|[;\s])(?:display\s*:\s*none|visibility\s*:\s*(?:hidden|collapse)|opacity\s*:\s*0(?:[;\s]|$)|content-visibility\s*:\s*hidden)/i.test(current.getAttribute('style') ?? '')
@@ -406,24 +409,31 @@ function visibleHistoryControl(node, expandable = null) {
 
 export function validateFlowBoundaryHistoryOutput(documents, unit) {
   if (!unit) return [];
-  const expected = flowBoundaryHistoryControls(unit);
+  return validateDatedHistoryOutput(documents, {
+    expected: flowBoundaryHistoryControls(unit), source: flowBoundarySource, attribute: 'flow-boundary',
+    ordinaryPattern: /-flow-99-ordinary-\d+$/, ordinaryTargets: unit.ordinaryTargets, label: 'Flow boundary',
+  });
+}
+
+export function validateDatedHistoryOutput(documents, { expected, source, attribute, ordinaryPattern, ordinaryTargets: expectedOrdinary, label }) {
   const observed = new Set(), ordinary = {};
   const errors = [];
   for (const [path, document] of documents) {
-    for (const block of document.querySelectorAll('p[id]').filter(node => /-flow-99-ordinary-\d+$/.test(node.id))) {
+    for (const block of document.querySelectorAll('p[id]').filter(node => ordinaryPattern.test(node.id))) {
       ordinary[`${path}#${block.id}`] = flowBoundaryOrdinaryDigest(block);
     }
     const native = new Map(document.querySelectorAll('[id]').map(node => [node.id, node]));
-    for (const notice of document.querySelectorAll('[data-flow-boundary-history]')) {
-      const id = notice.getAttribute('data-flow-boundary-history');
+    for (const notice of document.querySelectorAll(`[data-${attribute}-history]`)) {
+      const id = notice.getAttribute(`data-${attribute}-history`);
       const key = `${path}#${id}`;
       const control = expected.get(key), row = control?.row, target = native.get(id);
       const time = notice.querySelector('time');
-      const sourceLinks = notice.querySelectorAll('a[data-flow-boundary-source]');
-      const notes = notice.querySelectorAll('a[data-flow-boundary-note]');
+      const sourceLinks = notice.querySelectorAll(`a[data-${attribute}-source]`);
+      const notes = notice.querySelectorAll(`a[data-${attribute}-note]`);
       const links = notes.map(link => link.getAttribute('href'));
+      const noteTargets = row ? flowBoundaryHistoryTargets(row) : [];
       const summary = notice.querySelector('summary');
-      const ordinaryLinks = notice.querySelectorAll('a[data-flow-boundary-ordinary]');
+      const ordinaryLinks = notice.querySelectorAll(`a[data-${attribute}-ordinary]`);
       const ordinaryTargets = row ? flowBoundaryOrdinaryTargets(row) : [];
 
       let previous = notice.previousElementSibling;
@@ -434,17 +444,23 @@ export function validateFlowBoundaryHistoryOutput(documents, unit) {
         || ['chapter', 'reading-title'].includes(row?.previous.kind) && target.closest('article') === notice.closest('article'));
       const origins = control?.addresses.map(address => address.slice(path.length + 1));
       if (!row || observed.has(key) || !attached || notice.tagName !== 'DETAILS'
-          || notice.getAttribute('data-flow-boundary-origins') !== origins.join(' ')
+          || notice.getAttribute(`data-${attribute}-origins`) !== origins.join(' ')
           || origins.some(origin => {
             const node = native.get(origin);
             return !visibleHistoryControl(node) || node.closest('article') !== notice.closest('article');
           })
-          || summary?.text !== `${flowBoundarySource.date} 版「${row.previous.title}」的引用范围`
-          || time?.text !== flowBoundarySource.date || time.getAttribute('datetime') !== flowBoundarySource.date
+          || summary?.text !== `${source.date} 版「${row.previous.title}」的引用范围`
+          || time?.text !== source.date || time.getAttribute('datetime') !== source.date
           || sourceLinks.length !== 1 || sourceLinks[0].getAttribute('href')
-            !== `https://github.com/tiangong-lca/knowledge-base/tree/${flowBoundarySource.commit}`
+            !== `https://github.com/tiangong-lca/knowledge-base/tree/${source.commit}`
           || [...sourceLinks, ...notes, ...ordinaryLinks].some(link => !visibleHistoryControl(link, notice))
-          || !same(links, flowBoundaryHistoryTargets(row).map(item => `#${encodeURIComponent(item.id)}`))
+          || !same(links, noteTargets.map(item => `#${encodeURIComponent(item.id)}`))
+          || noteTargets.some(item => {
+            const targets = documents.get(item.path)?.querySelectorAll('[id]').filter(node => node.id === item.id) ?? [];
+            const node = targets[0];
+            return targets.length !== 1 || !visibleHistoryControl(node) || node.tagName !== 'LI'
+              || node.getAttribute('data-reader-claim') !== item.claimId;
+          })
           || !same(ordinaryLinks.map(link => link.getAttribute('href')), ordinaryTargets.map(item =>
             `${item.path === path ? '' : `${item.path}/`}#${encodeURIComponent(item.id)}`))
           || ordinaryTargets.some(item => {
@@ -456,13 +472,13 @@ export function validateFlowBoundaryHistoryOutput(documents, unit) {
           })
           || !same(ordinaryLinks.map(link => link.text), ordinaryTargets.map(item => item.label))
           || !visibleHistoryControl(summary) || !visibleHistoryControl(target))
-        errors.push(`Flow boundary has a missing or invalid dated scope control: ${key}`);
+        errors.push(`${label} has a missing or invalid dated scope control: ${key}`);
       observed.add(key);
     }
   }
-  if (!same(ordinary, unit.ordinaryTargets))
-    errors.push('Flow boundary actual versioned ordinary targets differ from the reviewed inventory');
-  for (const key of expected.keys()) if (!observed.has(key)) errors.push(`Flow boundary historical range was not rendered: ${key}`);
+  if (!same(ordinary, expectedOrdinary))
+    errors.push(`${label} actual versioned ordinary targets differ from the reviewed inventory`);
+  for (const key of expected.keys()) if (!observed.has(key)) errors.push(`${label} historical range was not rendered: ${key}`);
   return errors;
 }
 
@@ -497,9 +513,13 @@ export function flowBoundaryOrdinaryDispositions(unit, previous) {
 /** Dated text and native destinations are retained; labels describe the
  * current headings and note numbers on the actual destination surface. */
 export function flowBoundaryCitationEntries(entries, unit) {
-  if (!unit) return entries;
+  return relabelHistoricalTargets(entries, unit ? flowBoundaryRoutes : []);
+}
+
+export function relabelHistoricalTargets(entries, routes) {
+  if (!routes.length) return entries;
   function currentLabel(target) {
-    if (!target.label || !flowBoundaryRoutes.includes(target.route)) return target;
+    if (!target.label || !routes.includes(target.route)) return target;
     const { label, ...destination } = target;
     return destination;
   }

@@ -16,11 +16,44 @@ checkPaths:
   - "scripts/**"
   - "package.json"
   - ".github/**"
-lastReviewedAt: 2026-11-14
-lastReviewedCommit: 54ad9fdbb9d1f948977888c412bef36ae2e33898
+lastReviewedAt: 2026-11-15
+lastReviewedCommit: 7974ab205e5218e6c3a1d49dc34be6ea5b21c345
 ---
 
 # Publication architecture
+
+## Service-constraint successor
+
+`reader-service-constraints.mjs` admits the separately reviewed #102 unit after
+#99. It verifies the exact 10dc686 source state and captured B07 native scopes,
+then projects its bounded additions back through the original #99/#95/#93 gates.
+Current raw case input, publication binding, evaluator and exact registry addition
+join the observed source set. Ordered predecessor fingerprints retain legitimate
+intermediate generations; they do not authorize an arbitrary earlier value.
+The shared B07 keeps its three section IDs and original ten claims while adding
+nine independently reviewed explanations. Its earlier eight-note and captured
+ten-note scopes retain their distinct native destinations.
+
+The static CASE-SERVICE-CONSTRAINTS keeps the original printed monetary matrix,
+the matrix derived from the paper's stated relation and author controls separate.
+Its closed exact-rational evaluator does not run the author's software. Full
+numeric facts include quantity and basis and bind the actual selected PDF passage.
+Both views provide versioned input and evaluated-result links for this case;
+actual DOM qualification checks the precise pair, version and visible targets.
+Existing cases retain their own input and rendering contracts.
+
+Each dated historical note is checked at its unique visible native claim node,
+in addition to checking its link and disclosure. Re-capturing an article digest
+cannot make a hidden historical target valid. Source, reader and actual-output
+reports have separate subject bindings. Ordinary public JSON is reconstructed
+from current records to check both its raw digest and UTF-8 byte length. New case
+results are reconstructed using the recorded capture commit: their complete raw
+bytes differ from the scientific content digest that excludes only sourceCommit.
+HTML raw capture digests are retained as observed evidence, while normalized
+article fingerprints and current DOM semantics are validated independently.
+A technical export is an actual artifact but its temporary test acceptance is
+never a scientific or reader approval. Ordinary production still rejects preview.
+
 
 ## Flow and boundary scientific successor
 

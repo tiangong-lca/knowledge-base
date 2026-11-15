@@ -1,5 +1,6 @@
-import { currentFlowBoundary } from '@/scripts/reader-current-expectations.mjs';
+import { currentFlowBoundary, currentServiceConstraints } from '@/scripts/reader-current-expectations.mjs';
 import { flowBoundaryHistoryControls, flowBoundaryHistoryTargets, flowBoundaryOrdinaryTargets, flowBoundaryOrdinaryId } from '@/scripts/reader-flow-boundary.mjs';
+import { serviceConstraintsHistoryControls, serviceConstraintsOrdinaryId, serviceConstraintsSource } from '@/scripts/reader-service-constraints.mjs';
 import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
 import { NumberedTitle } from '@/components/numbered-heading';
 import { assertNumberingToc, currentPrintReadingHref, printReadingEntryAnchor, getContinuationLink, getHeadingNumbering, getUnitHeadingPlan } from '@/scripts/reader-numbering.mjs';
@@ -26,25 +27,42 @@ export function LegacyCitationAliases({ ids, target }: { ids?: LegacyEntry[]; ta
   </span>);
 }
 
-const flowHistory = flowBoundaryHistoryControls(currentFlowBoundary);
-async function FlowBoundaryHistoricalRange({ path, id }: { path: string; id: string }) {
-  const control = flowHistory.get(`${path}#${id}`);
-  if (!control) return null;
+const histories = [
+  { controls: flowBoundaryHistoryControls(currentFlowBoundary), edition: currentFlowBoundary?.source, attribute: 'flow-boundary' },
+  { controls: serviceConstraintsHistoryControls(currentServiceConstraints), edition: serviceConstraintsSource, attribute: 'service-constraints' },
+];
+
+export function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
+  return (currentFlowBoundary && flowBoundaryOrdinaryId(route, print, index))
+    || serviceConstraintsOrdinaryId(currentServiceConstraints, route, print, index);
+}
+
+async function HistoricalRange({ path, id, history }: { path: string; id: string; history: typeof histories[number] }) {
+  const { controls, edition, attribute } = history;
+  const control = controls.get(`${path}#${id}`);
+  if (!control || !edition) return null;
   const { row, addresses } = control;
-  const edition = currentFlowBoundary!.source;
   const notes = await Promise.all(flowBoundaryHistoryTargets(row).map(async (target: LegacyEntry['targets'][number]) => ({
     href: citationHref(target, path), label: await getCitationLabel(target),
   })));
   const ordinary = flowBoundaryOrdinaryTargets(row);
-  return <details className="legacy-citation-context" data-flow-boundary-history={id} data-flow-boundary-origins={addresses.map((address: string) => address.slice(path.length + 1)).join(' ')}>
+  return <details className="legacy-citation-context" {...{
+    [`data-${attribute}-history`]: id,
+    [`data-${attribute}-origins`]: addresses.map((address: string) => address.slice(path.length + 1)).join(' '),
+  }}>
     <summary><time dateTime={edition.date}>{edition.date}</time> 版「{row.previous.title}」的引用范围</summary>
-    <p><a href={citationSourceHref(edition.commit)} data-flow-boundary-source="">查看该版源文件</a></p>
+    <p><a href={citationSourceHref(edition.commit)} {...{ [`data-${attribute}-source`]: '' }}>查看该版源文件</a></p>
     {ordinary.length > 0 && <ul>{ordinary.map((target: { path: string; id: string; label: string }) => {
       const href = `${target.path === path ? '' : `${target.path}/`}#${encodeURIComponent(target.id)}`;
-      return <li key={target.label}><a href={href} data-flow-boundary-ordinary="">{target.label}</a></li>;
+      return <li key={target.label}><a href={href} {...{ [`data-${attribute}-ordinary`]: '' }}>{target.label}</a></li>;
     })}</ul>}
-    {notes.length > 0 && <ul>{notes.map(note => <li key={note.href}><a href={note.href} data-flow-boundary-note="">{note.label}</a></li>)}</ul>}
+    {notes.length > 0 && <ul>{notes.map(note => <li key={note.href}><a href={note.href} {...{ [`data-${attribute}-note`]: '' }}>{note.label}</a></li>)}</ul>}
   </details>;
+}
+
+function historyAt(path: string, id: string) {
+  return histories.filter(history => history.controls.has(`${path}#${id}`))
+    .map(history => <HistoricalRange key={history.attribute} path={path} id={id} history={history} />);
 }
 
 /** One renderer for a website page and its corresponding continuous print unit. */
@@ -86,7 +104,7 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
   const defaults = getMDXComponents();
   let ordinaryIndex = 0;
   function ReaderParagraph(props: HTMLAttributes<HTMLParagraphElement>) {
-    const id = flowBoundaryOrdinaryId(page.url.replace(/\/$/, ''), print, ++ordinaryIndex);
+    const id = currentReaderOrdinaryId(page.url.replace(/\/$/, ''), print, ++ordinaryIndex);
     return createElement(defaults.p ?? 'p', { ...props, id });
   }
   const headings = Object.fromEntries(([1, 2, 3, 4, 5, 6] as const).map(level => {
@@ -98,7 +116,7 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
       const headingProps: HTMLAttributes<HTMLHeadingElement> & {'data-reader-heading-key': string} = { ...props, id, 'data-reader-heading-key': numbered.key };
       if (print && level+2>6) throw new Error(`Book heading exceeds the available HTML hierarchy: ${page.url} ${props.id}`);
       const heading = createElement(print ? `h${level + 2}` : defaults[name] ?? name, headingProps, <NumberedTitle number={numbered.number}>{props.children}</NumberedTitle>);
-      return id ? <><LegacyCitationAliases ids={legacy.aliases.get(id)} target={id} />{heading}<RetainedScope entry={legacy.scopes.get(id)} /><CopyeditHistoricalTitle path={print ? '/print' : page.url} id={id} />{flowHistory.has(`${historyPath}#${id}`) && <FlowBoundaryHistoricalRange path={historyPath} id={id} />}</> : heading;
+      return id ? <><LegacyCitationAliases ids={legacy.aliases.get(id)} target={id} />{heading}<RetainedScope entry={legacy.scopes.get(id)} /><CopyeditHistoricalTitle path={print ? '/print' : page.url} id={id} />{historyAt(historyPath, id)}</> : heading;
     }];
   }));
   async function RetainedScope({ entry, readingTitle }: { entry?: LegacyEntry; readingTitle?: string }) {
@@ -120,17 +138,14 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
 
   return <>
     <RetainedScope entry={legacy.scopes.get(prefix)} readingTitle={print ? printReadingEntryAnchor(page.url) : undefined} />
-    {flowHistory.has(`${historyPath}#${print ? prefix : 'nd-page'}`) &&
-      <FlowBoundaryHistoricalRange path={historyPath} id={print ? prefix : 'nd-page'} />}
-    {flowHistory.has(`${historyPath}#${print ? printReadingEntryAnchor(page.url) : 'main-content'}`) &&
-      <FlowBoundaryHistoricalRange path={historyPath} id={print ? printReadingEntryAnchor(page.url) : 'main-content'} />}
-    <MDX components={getMDXComponents({ Prose: ChapterProse, Claim: Paragraph, ReaderSection, TeachingCase: ChapterTeachingCase, a: ReaderLink, ...(currentFlowBoundary && flowBoundaryOrdinaryId(page.url.replace(/\/$/, ''), print, 0) ? { p: ReaderParagraph } : {}), ...headings })} />
+    {historyAt(historyPath, print ? prefix : 'nd-page')}
+    {historyAt(historyPath, print ? printReadingEntryAnchor(page.url) : 'main-content')}
+    <MDX components={getMDXComponents({ Prose: ChapterProse, Claim: Paragraph, ReaderSection, TeachingCase: ChapterTeachingCase, a: ReaderLink, ...(currentReaderOrdinaryId(page.url.replace(/\/$/, ''), print, 0) ? { p: ReaderParagraph } : {}), ...headings })} />
     {plan.notes.length > 0 && <section className="chapter-notes not-prose" aria-labelledby={plan.headingId}>
       <LegacyCitationAliases ids={legacy.aliases.get(plan.headingId)} target={plan.headingId} />
       {print ? <h4 id={plan.headingId}>注释</h4> : <h2 id={plan.headingId}>注释</h2>}
       <RetainedScope entry={legacy.scopes.get(plan.headingId)} />
-      {flowHistory.has(`${historyPath}#${plan.headingId}`) &&
-        <FlowBoundaryHistoricalRange path={historyPath} id={plan.headingId} />}
+      {historyAt(historyPath, plan.headingId)}
       <ol>{plan.notes.map(note => <li id={note.anchor} data-reader-claim={note.id} key={note.id}>
         <LegacyCitationAliases ids={legacy.aliases.get(note.anchor)} target={note.anchor} />
         <ClaimAnnotation id={note.id} {...annotations.get(note.id)} />

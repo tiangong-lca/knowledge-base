@@ -1,3 +1,4 @@
+import { serviceConstraintsEvaluationFile } from '@/scripts/reader-service-constraints.mjs';
 import Link from 'next/link';
 import rawMap from '@/knowledge/research/literature-map.json';
 import rawLedger from '@/knowledge/research/readings.json';
@@ -48,6 +49,7 @@ export function ClaimAnnotation({ id, showCaseInput = true, premiseReferences }:
   const claim = catalog.claims.find(item => item.id === id);
   if (!claim) { if (isKnownClaim(id)) return <ReviewNotice />; throw new Error(`Unknown claim: ${id}`); }
   const evidence = getClaimEvidence(catalog, claim);
+  const evaluation = serviceConstraintsEvaluationFile(claim.caseBinding);
   return <div className="claim-annotation">
     <p><strong>{kinds[claim.kind]}。</strong> {claim.scope}</p>
     {evidence.length > 0 && <ul className="annotation-sources">{evidence.map(({ evidence: item, relation }) => {
@@ -65,7 +67,7 @@ export function ClaimAnnotation({ id, showCaseInput = true, premiseReferences }:
       const reference = premiseReferences?.get(premise);
       return <li key={premise}><Link href={reference?.href ?? `/claims/#${premise}`}>{reference?.label ?? linked.text}</Link></li>;
     })}</ul></details>}
-    {showCaseInput && claim.caseBinding?.inputFile && <p><a href={`/downloads/cases/${claim.caseBinding.inputFile}`} download={claim.caseBinding.inputFile}>下载计算输入（版本 {claim.caseBinding.version}）</a></p>}
+    {showCaseInput && claim.caseBinding?.inputFile && <p><a href={`/downloads/cases/${claim.caseBinding.inputFile}`} download={claim.caseBinding.inputFile}>下载计算输入（版本 {claim.caseBinding.version}）</a>{evaluation && <> <a href={`/downloads/cases/${evaluation}`} download={evaluation}>下载计算结果（版本 {claim.caseBinding.version}）</a></>}</p>}
   </div>;
 }
 

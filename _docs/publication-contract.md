@@ -17,12 +17,23 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-15
-lastReviewedCommit: 0b07d7b914bc542d87540fc4faf18dc63498f534
+lastReviewedCommit: 7974ab205e5218e6c3a1d49dc34be6ea5b21c345
 ---
 
 # Publication contract
 
 ## Scoped scientific successors
+
+The service-constraint unit #102 adds a source hypothetical and authored algebraic
+controls to B07. Original printed coefficients, values reconstructed from stated
+relationships and author examples remain distinguishable. A valid result for one
+matrix cannot silently qualify another printed matrix. Zero service price,
+consumer expenditure and service adequacy are separate quantities and judgments.
+Preserving solutions inside a fixed model does not prove real service performance,
+original-software behavior or the suitability of a monetary research question.
+The new static case and scientific successor retain earlier numerical inputs and
+acceptance identities, with independently reviewed current source/reader/output.
+
 
 The user endorsed the pilot method on2026-11-15 for every later modification and
 addition. Each task declares whether it changes scientific meaning, material

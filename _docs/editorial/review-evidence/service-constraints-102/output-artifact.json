@@ -1,0 +1,829 @@
+{
+  "schemaVersion": 1,
+  "kind": "output",
+  "unit": "service-constraints-102",
+  "subjectSha256": "0a7b607c38dcb2a37e1bf4877eead92287e444bdcc88c9020b019fb15590080d",
+  "date": "2026-11-15",
+  "scope": [
+    "scripts/case-publication.mjs",
+    "content/docs/book/inventory-calculation.mdx",
+    "knowledge/cases/service-constraints-v1.publication.json",
+    "knowledge/cases/service-constraints-v1.json",
+    "scripts/service-constraints-case.mjs",
+    "researchMetadata:reading-ledger",
+    "researchMetadata:literature-map",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:order:sources",
+    "researchMetadata:order:readings",
+    "researchMetadata:order:revisions",
+    "researchMetadata:order:literature",
+    "researchMetadata:order:queries",
+    "researchMetadata:public-projection",
+    "claims:cl-service102-row-map",
+    "claims:cl-service102-cost-purpose",
+    "claims:cl-service102-service-meaning",
+    "claims:cl-service102-activities",
+    "claims:cl-service102-printed-conflict",
+    "claims:cl-service102-zero-price",
+    "claims:cl-service102-restored",
+    "claims:cl-service102-redundant",
+    "claims:cl-service102-residual-condition",
+    "evidence:ev-service102-hsg-model",
+    "evidence:ev-service102-hsg-price",
+    "evidence:ev-service102-hsg-conflict",
+    "sources:src-hsg2013-lca-lcc",
+    "readings:rd-service102-hsg-selected",
+    "revisions:rev-service-constraints-102",
+    "literature:work-hsg2013-lca-lcc",
+    "queries:q-service102-hsg-targeted-20261115"
+  ],
+  "observed": "Completed scoped agent review and preserved actual evidence; no human or empirical certification.",
+  "observations": {
+    "outputs": [
+      {
+        "path": "/docs/book/service-and-reference",
+        "route": "/docs/book/service-and-reference",
+        "from": "6f1b3df955b7b65569b11f8e97917bf67bccaab0cf2a5e277c2ba298d2ea2cd8",
+        "sha256": "2a81c6dba68ffbcbfdb494bce8bb0fca101ddee4ec3ac6eaa5a96971093f24d8",
+        "rationale": "核对下游注释、导航或所指的当代正文及对应编号。"
+      },
+      {
+        "path": "/docs/book/inventory-calculation",
+        "route": "/docs/book/inventory-calculation",
+        "from": "8dd756d02e853963fdd85d778e4b252aa718299cbd3b86895a0c7945ae083252",
+        "sha256": "449ada1dfd1d9b784471c9230952ebb2ee4b539ee72ef187825f5a5a9a74e027",
+        "rationale": "实际过程网络的连续正规段、章内注释、永续旧范围与静态输入资格。"
+      },
+      {
+        "path": "/docs/book/exchange-semantics-and-conversion",
+        "route": "/docs/book/exchange-semantics-and-conversion",
+        "from": "ab0771f820914a751c33644de883e8516f1dda87c84d8f1702c8490cb4874c71",
+        "sha256": "40fb45c4599d2eb30c6e5d036e95cebeff2728d2096eb3bde0c9e2cea4e593e6",
+        "rationale": "核对下游注释、导航或所指的当代正文及对应编号。"
+      },
+      {
+        "path": "/docs/book/inventory-boundary-and-hybrid",
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "from": "71d85da58f91ffbfd92b95102dd5c397d320170c0cc2df9e9b46bd95d87a79c0",
+        "sha256": "640cd6d2a90c7aefd67c51e0e604df51e5e87fef8ceee4da23bf2c8577d28bc2",
+        "rationale": "核对下游注释、导航或所指的当代正文及对应编号。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/inventory-calculation",
+        "from": "c97c1471dbf9bd5700c4951372cab50a767d7202c1be6359645af4704a7c2ebc",
+        "sha256": "294e4c77b9d58b96317ccf6e37657f0417d98fc6f186c2facc01af7855a2adb9",
+        "rationale": "实际过程网络的连续正规段、章内注释、永续旧范围与静态输入资格。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "from": "012033520d506caf4c4cd89d64032891d33ba4495433cfda45ee178ec47082b4",
+        "sha256": "3febc839d203672907e760dc45dcee2f65d632afe2370243908eea9989c5afb3",
+        "rationale": "核对下游注释、导航或所指的当代正文及对应编号。"
+      }
+    ],
+    "publicArtifacts": [
+      {
+        "path": "claims/index.html",
+        "from": "a0f485f744b1ccd604436d43e283dcbf34c66104e8bfe91f39a3c1201a49f2f5",
+        "sha256": "e32483e6e280ca8038c03ec9e99c052af3158f440b89216f032fa92617267ddf",
+        "rationale": "独立观察当前读者索引、资料或实际内容指纹与正式前态的差异。"
+      },
+      {
+        "path": "sources/index.html",
+        "from": "0cdf3a183f701746e2906b16d1e8978b7815a00a8ff489c9f0f2132ec3b76efd",
+        "sha256": "fd74d9ebeeeb5492dece78d0a51d6fce46fc08b3aaab52d74ab05bf260671aab",
+        "rationale": "独立观察当前读者索引、资料或实际内容指纹与正式前态的差异。"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "from": "e9c87b6f9584c25ae38b0319f6f26d8243a75d0fbe1ac04d5939965ddf333171",
+        "sha256": "4572f4e840b8db4395e9afd8289933dbfe38244d80e4ad0d3466791f7f3c9d0a",
+        "rationale": "独立观察当前读者索引、资料或实际内容指纹与正式前态的差异。"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "from": "96d659c4db2e85cdae559c59e49ca5880f34b62e5f75cfa8ce6304da5d3e7ebe",
+        "sha256": "b70551694b148f299288926a6d63be3c10e6b676773fb6baa8634cfd2562830b",
+        "rationale": "独立观察当前读者索引、资料或实际内容指纹与正式前态的差异。"
+      },
+      {
+        "path": "research/index.html",
+        "from": "bc09ef192442c13c42f648daee5e2ae69408e976ae7983d3ff5a9497ce38f664",
+        "sha256": "b4f2b236f43663a20bfd4afcfc5891a10b4ab06fd199f07e6b83e83fd12900d3",
+        "rationale": "独立观察当前读者索引、资料或实际内容指纹与正式前态的差异。"
+      },
+      {
+        "path": "downloads/bibliography.json",
+        "from": "4d329e9739df2262c5fcb6c102f038f608976a028eaf9fdc462527c025fdaf89",
+        "sha256": "413e8d88b324fb252cd35c50882da2a8c2eb5e1cdad7fc92ada83de7f4d5839d",
+        "rationale": "独立观察当前读者索引、资料或实际内容指纹与正式前态的差异。"
+      },
+      {
+        "path": "downloads/research.json",
+        "from": "4d329e9739df2262c5fcb6c102f038f608976a028eaf9fdc462527c025fdaf89",
+        "sha256": "413e8d88b324fb252cd35c50882da2a8c2eb5e1cdad7fc92ada83de7f4d5839d",
+        "rationale": "独立观察当前读者索引、资料或实际内容指纹与正式前态的差异。"
+      },
+      {
+        "path": "coverage/index.html",
+        "from": "974111bc07499f4e001dd8da96ec482367669d607ebd5b90c0af778e1e64fb1e",
+        "sha256": "4981cb261db710555bdb7fed55028538d085e4758cad3a8fcc1a2ce7505e420e",
+        "rationale": "独立观察当前读者索引、资料或实际内容指纹与正式前态的差异。"
+      }
+    ],
+    "addresses": {
+      "/docs/book/inventory-calculation#nd-page": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "chapter",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-inv-service-to-demand",
+          "cl-inv-computation-start",
+          "cl-inv-coordinate-meaning",
+          "cl-inv-example-inputs",
+          "cl-inv-demand-balance",
+          "cl-inv-scaling-basis",
+          "cl-inv-environment-scaling",
+          "cl-inv-example-solution",
+          "cl-service102-row-map",
+          "cl-service102-activities",
+          "cl-service102-printed-conflict",
+          "cl-service102-zero-price",
+          "cl-service102-cost-purpose",
+          "cl-service102-restored",
+          "cl-service102-residual-condition",
+          "cl-service102-redundant",
+          "cl-service102-service-meaning",
+          "cl-inv-example-truncated",
+          "cl-inv-example-meaning"
+        ],
+        "ordinary": [
+          "702094ad3dc773f20a0effe60f1170943735b9d3eb508c1f9699ca3e9051d759"
+        ],
+        "bindings": {
+          "links": [
+            []
+          ],
+          "tables": []
+        }
+      },
+      "/docs/book/inventory-calculation#main-content": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "reading-title",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-inv-service-to-demand",
+          "cl-inv-computation-start",
+          "cl-inv-coordinate-meaning",
+          "cl-inv-example-inputs",
+          "cl-inv-demand-balance",
+          "cl-inv-scaling-basis",
+          "cl-inv-environment-scaling",
+          "cl-inv-example-solution",
+          "cl-service102-row-map",
+          "cl-service102-activities",
+          "cl-service102-printed-conflict",
+          "cl-service102-zero-price",
+          "cl-service102-cost-purpose",
+          "cl-service102-restored",
+          "cl-service102-residual-condition",
+          "cl-service102-redundant",
+          "cl-service102-service-meaning",
+          "cl-inv-example-truncated",
+          "cl-inv-example-meaning"
+        ],
+        "ordinary": [
+          "702094ad3dc773f20a0effe60f1170943735b9d3eb508c1f9699ca3e9051d759"
+        ],
+        "chapter": "nd-page"
+      },
+      "/docs/book/inventory-calculation#数量坐标": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "heading",
+        "title": "数量坐标",
+        "claimIds": [
+          "cl-inv-service-to-demand",
+          "cl-inv-computation-start",
+          "cl-inv-coordinate-meaning",
+          "cl-inv-example-inputs"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-calculation#需求平衡": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "heading",
+        "title": "需求平衡",
+        "claimIds": [
+          "cl-inv-demand-balance",
+          "cl-inv-scaling-basis",
+          "cl-inv-environment-scaling",
+          "cl-inv-example-solution",
+          "cl-service102-row-map",
+          "cl-service102-activities",
+          "cl-service102-printed-conflict",
+          "cl-service102-zero-price",
+          "cl-service102-cost-purpose",
+          "cl-service102-restored",
+          "cl-service102-residual-condition",
+          "cl-service102-redundant",
+          "cl-service102-service-meaning"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-calculation#反馈边界": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "heading",
+        "title": "反馈边界",
+        "claimIds": [
+          "cl-inv-example-truncated",
+          "cl-inv-example-meaning"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-calculation#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-annotations": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note-group",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-inv-service-to-demand",
+          "cl-inv-computation-start",
+          "cl-inv-coordinate-meaning",
+          "cl-inv-example-inputs",
+          "cl-inv-demand-balance",
+          "cl-inv-scaling-basis",
+          "cl-inv-environment-scaling",
+          "cl-inv-example-solution",
+          "cl-service102-row-map",
+          "cl-service102-activities",
+          "cl-service102-printed-conflict",
+          "cl-service102-zero-price",
+          "cl-service102-cost-purpose",
+          "cl-service102-restored",
+          "cl-service102-residual-condition",
+          "cl-service102-redundant",
+          "cl-service102-service-meaning",
+          "cl-inv-example-truncated",
+          "cl-inv-example-meaning"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-calculation#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-inv-service-to-demand": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-inv-service-to-demand"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-calculation#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-inv-computation-start": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-inv-computation-start"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-calculation#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-inv-coordinate-meaning": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-inv-coordinate-meaning"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-calculation#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-inv-example-inputs": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-inv-example-inputs"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-calculation#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-inv-demand-balance": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-inv-demand-balance"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-calculation#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-inv-scaling-basis": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-inv-scaling-basis"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-calculation#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-inv-environment-scaling": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-inv-environment-scaling"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-calculation#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-inv-example-solution": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-inv-example-solution"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-calculation#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-service102-row-map": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-service102-row-map"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-calculation#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-service102-activities": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-service102-activities"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-calculation#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-service102-printed-conflict": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-service102-printed-conflict"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-calculation#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-service102-zero-price": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-service102-zero-price"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-calculation#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-service102-cost-purpose": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-service102-cost-purpose"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-calculation#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-service102-restored": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-service102-restored"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-calculation#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-service102-residual-condition": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-service102-residual-condition"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-calculation#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-service102-redundant": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-service102-redundant"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-calculation#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-service102-service-meaning": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-service102-service-meaning"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-calculation#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-inv-example-truncated": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-inv-example-truncated"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-calculation#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-inv-example-meaning": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-inv-example-meaning"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "chapter",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-inv-service-to-demand",
+          "cl-inv-computation-start",
+          "cl-inv-coordinate-meaning",
+          "cl-inv-example-inputs",
+          "cl-inv-demand-balance",
+          "cl-inv-scaling-basis",
+          "cl-inv-environment-scaling",
+          "cl-inv-example-solution",
+          "cl-service102-row-map",
+          "cl-service102-activities",
+          "cl-service102-printed-conflict",
+          "cl-service102-zero-price",
+          "cl-service102-cost-purpose",
+          "cl-service102-restored",
+          "cl-service102-residual-condition",
+          "cl-service102-redundant",
+          "cl-service102-service-meaning",
+          "cl-inv-example-truncated",
+          "cl-inv-example-meaning"
+        ],
+        "ordinary": [
+          "702094ad3dc773f20a0effe60f1170943735b9d3eb508c1f9699ca3e9051d759"
+        ],
+        "bindings": {
+          "links": [
+            []
+          ],
+          "tables": []
+        }
+      },
+      "/print#print-reading-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "reading-title",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-inv-service-to-demand",
+          "cl-inv-computation-start",
+          "cl-inv-coordinate-meaning",
+          "cl-inv-example-inputs",
+          "cl-inv-demand-balance",
+          "cl-inv-scaling-basis",
+          "cl-inv-environment-scaling",
+          "cl-inv-example-solution",
+          "cl-service102-row-map",
+          "cl-service102-activities",
+          "cl-service102-printed-conflict",
+          "cl-service102-zero-price",
+          "cl-service102-cost-purpose",
+          "cl-service102-restored",
+          "cl-service102-residual-condition",
+          "cl-service102-redundant",
+          "cl-service102-service-meaning",
+          "cl-inv-example-truncated",
+          "cl-inv-example-meaning"
+        ],
+        "ordinary": [
+          "702094ad3dc773f20a0effe60f1170943735b9d3eb508c1f9699ca3e9051d759"
+        ],
+        "chapter": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e"
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-数量坐标": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "heading",
+        "title": "数量坐标",
+        "claimIds": [
+          "cl-inv-service-to-demand",
+          "cl-inv-computation-start",
+          "cl-inv-coordinate-meaning",
+          "cl-inv-example-inputs"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-需求平衡": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "heading",
+        "title": "需求平衡",
+        "claimIds": [
+          "cl-inv-demand-balance",
+          "cl-inv-scaling-basis",
+          "cl-inv-environment-scaling",
+          "cl-inv-example-solution",
+          "cl-service102-row-map",
+          "cl-service102-activities",
+          "cl-service102-printed-conflict",
+          "cl-service102-zero-price",
+          "cl-service102-cost-purpose",
+          "cl-service102-restored",
+          "cl-service102-residual-condition",
+          "cl-service102-redundant",
+          "cl-service102-service-meaning"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-反馈边界": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "heading",
+        "title": "反馈边界",
+        "claimIds": [
+          "cl-inv-example-truncated",
+          "cl-inv-example-meaning"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-annotations": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note-group",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-inv-service-to-demand",
+          "cl-inv-computation-start",
+          "cl-inv-coordinate-meaning",
+          "cl-inv-example-inputs",
+          "cl-inv-demand-balance",
+          "cl-inv-scaling-basis",
+          "cl-inv-environment-scaling",
+          "cl-inv-example-solution",
+          "cl-service102-row-map",
+          "cl-service102-activities",
+          "cl-service102-printed-conflict",
+          "cl-service102-zero-price",
+          "cl-service102-cost-purpose",
+          "cl-service102-restored",
+          "cl-service102-residual-condition",
+          "cl-service102-redundant",
+          "cl-service102-service-meaning",
+          "cl-inv-example-truncated",
+          "cl-inv-example-meaning"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-inv-service-to-demand": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-inv-service-to-demand"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-inv-computation-start": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-inv-computation-start"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-inv-coordinate-meaning": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-inv-coordinate-meaning"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-inv-example-inputs": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-inv-example-inputs"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-inv-demand-balance": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-inv-demand-balance"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-inv-scaling-basis": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-inv-scaling-basis"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-inv-environment-scaling": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-inv-environment-scaling"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-inv-example-solution": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-inv-example-solution"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-service102-row-map": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-service102-row-map"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-service102-activities": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-service102-activities"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-service102-printed-conflict": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-service102-printed-conflict"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-service102-zero-price": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-service102-zero-price"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-service102-cost-purpose": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-service102-cost-purpose"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-service102-restored": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-service102-restored"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-service102-residual-condition": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-service102-residual-condition"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-service102-redundant": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-service102-redundant"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-service102-service-meaning": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-service102-service-meaning"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-inv-example-truncated": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-inv-example-truncated"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-claim-cl-inv-example-meaning": {
+        "route": "/docs/book/inventory-calculation",
+        "kind": "note",
+        "title": "过程网络",
+        "claimIds": [
+          "cl-inv-example-meaning"
+        ],
+        "ordinary": []
+      }
+    },
+    "source": "actual-export",
+    "sourceCommit": "a827683ba3b526851ee0742ea6869ffe099818da",
+    "artifactFiles": [
+      {
+        "path": "claims/index.html",
+        "bytes": 5148723,
+        "sha256": "6669b6bfb594b830a9bb94b09a8ca1fd75cc27b42f6c183ca31ba5815c02a1ab",
+        "contentSha256": "e32483e6e280ca8038c03ec9e99c052af3158f440b89216f032fa92617267ddf"
+      },
+      {
+        "path": "sources/index.html",
+        "bytes": 4032719,
+        "sha256": "7fdc7d8aaa1182dfdcc12ed90d8227acb2181b6e2b5ae1990879f01b3e194443",
+        "contentSha256": "fd74d9ebeeeb5492dece78d0a51d6fce46fc08b3aaab52d74ab05bf260671aab"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "bytes": 3140870,
+        "sha256": "4572f4e840b8db4395e9afd8289933dbfe38244d80e4ad0d3466791f7f3c9d0a",
+        "contentSha256": "4572f4e840b8db4395e9afd8289933dbfe38244d80e4ad0d3466791f7f3c9d0a"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "bytes": 333355,
+        "sha256": "b70551694b148f299288926a6d63be3c10e6b676773fb6baa8634cfd2562830b",
+        "contentSha256": "b70551694b148f299288926a6d63be3c10e6b676773fb6baa8634cfd2562830b"
+      },
+      {
+        "path": "research/index.html",
+        "bytes": 1391393,
+        "sha256": "2bf5fb707f0d9142637cf813fe344875ba49b1bc8c26462c235eb7c5e9978ea3",
+        "contentSha256": "b4f2b236f43663a20bfd4afcfc5891a10b4ab06fd199f07e6b83e83fd12900d3"
+      },
+      {
+        "path": "downloads/bibliography.json",
+        "bytes": 1070046,
+        "sha256": "413e8d88b324fb252cd35c50882da2a8c2eb5e1cdad7fc92ada83de7f4d5839d",
+        "contentSha256": "413e8d88b324fb252cd35c50882da2a8c2eb5e1cdad7fc92ada83de7f4d5839d"
+      },
+      {
+        "path": "downloads/research.json",
+        "bytes": 1070046,
+        "sha256": "413e8d88b324fb252cd35c50882da2a8c2eb5e1cdad7fc92ada83de7f4d5839d",
+        "contentSha256": "413e8d88b324fb252cd35c50882da2a8c2eb5e1cdad7fc92ada83de7f4d5839d"
+      },
+      {
+        "path": "coverage/index.html",
+        "bytes": 697820,
+        "sha256": "557f708ecec11f2dd55af23974df924a6d7beedb27a107769f260fbff17e1aca",
+        "contentSha256": "4981cb261db710555bdb7fed55028538d085e4758cad3a8fcc1a2ce7505e420e"
+      },
+      {
+        "path": "downloads/cases/service-constraints-v1.json",
+        "bytes": 5138,
+        "sha256": "053e317c3bf53fa926c44408a686bcc1c5739fc3b57d3bf9c5778ee54b61671c",
+        "contentSha256": "053e317c3bf53fa926c44408a686bcc1c5739fc3b57d3bf9c5778ee54b61671c"
+      },
+      {
+        "path": "downloads/cases/service-constraints-v1.evaluated.json",
+        "bytes": 20845,
+        "sha256": "32c8ec687c0ec87e34cc653243eb57a4a6563593a0c150a292cd50e8c26eac47",
+        "contentSha256": "8ceebfc7fa1dedbf8a57bfe09314f70d6d976070bf0c0384c777beb2e36e2ea1"
+      }
+    ],
+    "assessment": {
+      "engineeringCandidate": "7974ab205e5218e6c3a1d49dc34be6ea5b21c345",
+      "provenance": "Actual normal producer/exporter ran in a designated isolated technical checkout with science source a827683 and candidate engineering. Its manifest honestly labels a working preview. Technical bootstrap approvals were never copied as editorial acceptance; this primary report follows completed source, reader, engineering and actual artifact review.",
+      "primaryBytes": "Primary reviewer independently rehashed all ten preserved actual files and matched exact bytes and lengths. HTML raw capture hashes are observations, distinct from normalized main/article fingerprints. Public JSON and both case files have independent byte reconstruction checks.",
+      "browser": "Actual private rendered candidate:20 responsive observations across390/1440/1633/2048/2560, light/dark and web/print;19 notes each, no overflow. No-script keyboard checks reached six dated controls, six note targets and two ordinary targets. Search and guide navigation passed. Main inspected mobile/desktop/core/print screenshots. Input and evaluated-result downloads were keyboard-activated without script in both views and saved bytes matched actual files.",
+      "faults": "Independent review reproduced hidden original-note acceptance after an article rehash; added unique/visible/correct-claim target checks reject the same full-gate fault. Wrong/inert result links are rejected even after rehash. Forged case and four ordinary JSON raw hashes/lengths fail coordinated-report probes. Coverage whitelist allegation was withdrawn after resolving flowBoundaryGuide and testing actual old-guide replacement.",
+      "limits": "This accepts the specified local source/reader/output subject only. Subsequent clean ordinary production, CI, merged Main, hosted qualification and required root inclusion remain separate; no human expert, empirical learning or scientific validity certification."
+    },
+    "independentReports": {
+      "independent-matrix-review.md": "d78184076428e63be56f4e6fd369b2c68ac88e12cadb07c7bf771a6e8423d505",
+      "independent-reader-review.md": "8cc896990aba818340a4810a2851e74db602c39c1e5b65980fef7d8b623f338a",
+      "independent-engineering-review.md": "95eddf48819d5ab89d031b2fdb087b8a4c6d3b4d0018abae9607b05092fce54e"
+    }
+  }
+}

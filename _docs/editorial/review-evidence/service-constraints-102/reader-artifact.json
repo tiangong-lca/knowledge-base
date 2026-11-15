@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "kind": "reader",
+  "unit": "service-constraints-102",
+  "subjectSha256": "2296476f650cd7c0dbb99097c31a408cd6d5d1c5d480de59bf292a2feae5d01e",
+  "date": "2026-11-15",
+  "scope": [
+    "scripts/case-publication.mjs",
+    "content/docs/book/inventory-calculation.mdx",
+    "knowledge/cases/service-constraints-v1.publication.json",
+    "knowledge/cases/service-constraints-v1.json",
+    "scripts/service-constraints-case.mjs",
+    "researchMetadata:reading-ledger",
+    "researchMetadata:literature-map",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:order:sources",
+    "researchMetadata:order:readings",
+    "researchMetadata:order:revisions",
+    "researchMetadata:order:literature",
+    "researchMetadata:order:queries",
+    "researchMetadata:public-projection",
+    "claims:cl-service102-row-map",
+    "claims:cl-service102-cost-purpose",
+    "claims:cl-service102-service-meaning",
+    "claims:cl-service102-activities",
+    "claims:cl-service102-printed-conflict",
+    "claims:cl-service102-zero-price",
+    "claims:cl-service102-restored",
+    "claims:cl-service102-redundant",
+    "claims:cl-service102-residual-condition",
+    "evidence:ev-service102-hsg-model",
+    "evidence:ev-service102-hsg-price",
+    "evidence:ev-service102-hsg-conflict",
+    "sources:src-hsg2013-lca-lcc",
+    "readings:rd-service102-hsg-selected",
+    "revisions:rev-service-constraints-102",
+    "literature:work-hsg2013-lca-lcc",
+    "queries:q-service102-hsg-targeted-20261115"
+  ],
+  "observed": "Completed scoped agent review and preserved actual evidence; no human or empirical certification.",
+  "observations": {
+    "routes": [
+      "/docs/book/inventory-calculation"
+    ],
+    "history": [
+      "/docs/book/inventory-calculation#nd-page",
+      "/docs/book/inventory-calculation#main-content",
+      "/docs/book/inventory-calculation#需求平衡",
+      "/docs/book/inventory-calculation#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-annotations",
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e",
+      "/print#print-reading-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e",
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-需求平衡",
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e-annotations"
+    ],
+    "assessment": {
+      "reviewedCandidate": "f31c6784f35a7b2fa805d13402d55c1954e92ecd",
+      "revisedCandidate": "50fbe33ea535b363d25df958b2d0e09e84b9d853",
+      "finalNarrowCopyedit": "a827683ba3b526851ee0742ea6869ffe099818da",
+      "scope": "Fresh independent built-in agent read the whole B07 prose, necessary B06/B08/B09 context, source notes and selected original HSG formulae. Primary reviewer inspected remaining B24/B32 adjacent meanings and final small wording changes.",
+      "materialFinding": "Restoration had an essential matrix qualification only in a caveat. Accepted: body now distinguishes declared-matrix0.5 from literal20-matrix0.05 and0.45. Independent bounded reread verified the corrected full passage and context.",
+      "answers": [
+        "Money balance alone does not prove delivery: zero activities satisfy the zero-money demand but fail one-year sitting by−1 year.",
+        "R(As−f)=0 preserves exactly the original solution set iff no allowed activity has a nonzero original residual mapped to zero. Invertibility is sufficient; a redundant-row example shows it is not necessary.",
+        "The restored one-year constraint gives use0.1. Declared price mapping gives disposal0.5; literal20 gives0.05 with0.45 pieces unbalanced. These are distinct equations.",
+        "An identified monetary expenditure can define its own demand question. Equivalence to a specified sitting service still requires the corresponding conditions and service evidence."
+      ],
+      "narrowDispositions": "Primary reviewer clarified unit price, modeled receipts and known expenditure; these did not alter numbers, matrix identity or inference strength. No repeated independent full reading is claimed for those small changes."
+    },
+    "independentReports": {
+      "independent-matrix-review.md": "d78184076428e63be56f4e6fd369b2c68ac88e12cadb07c7bf771a6e8423d505",
+      "independent-reader-review.md": "8cc896990aba818340a4810a2851e74db602c39c1e5b65980fef7d8b623f338a",
+      "independent-engineering-review.md": "95eddf48819d5ab89d031b2fdb087b8a4c6d3b4d0018abae9607b05092fce54e"
+    }
+  }
+}
