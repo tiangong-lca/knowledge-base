@@ -1,5 +1,5 @@
 import { currentPrintReadingHref } from './reader-numbering.mjs';
-import { currentBookFileMatches, currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
+import { currentBookFileMatches, currentBookLayout, currentBookMdxMatches, currentBookRecordMatches, currentSubstitutionRules } from './reader-current-expectations.mjs';
 import { frameworkBookHref } from './reader-edition.mjs';
 import { closingSynthesisKey, closingSynthesisRoutes } from './reader-closing-synthesis.mjs';
 import { isVerifiedReaderPagination, prepareNumberedCaseElement } from './reader-numbering-output.mjs';
@@ -132,6 +132,13 @@ function sections(raw) {
   }
   return { headings, occurrences };
 }
+function expectedOccurrences(prose, route) {
+  const baseline = route === jointProductionManuscript
+    ? prose.sections.flatMap(section => section.claimIds.map(id => ({ id, section: section.id })))
+    : prose.website.find(page => page.route === route).occurrences;
+  return currentBookLayout(`B10:${route}:occurrences`, baseline);
+}
+
 /** @param {any} edition @param {Map<string,string>} sources @param {typeof original} value @param {any} catalog @param {any} prose @param {string|null} independentDigest */
 export function validateJointProductionCoverage(edition, sources, value = original, catalog = null, prose = null, independentDigest = jointProductionProseDigest) {
   assertJointProductionOriginal(value); assertJointProductionRegistration(edition);
@@ -145,12 +152,24 @@ export function validateJointProductionCoverage(edition, sources, value = origin
     const front = /^---\r?\n([\s\S]*?)\r?\n---/.exec(text)?.[1] ?? '';
     if (/^title:\s*(.+)$/m.exec(front)?.[1]?.replace(/^(['"])(.*)\1$/, '$2') !== metadata.title || /^description:\s*(.+)$/m.exec(front)?.[1]?.replace(/^(['"])(.*)\1$/, '$2') !== metadata.description) errors.push(`B10 reviewed source metadata differs: ${route}`);
   }
-  const actual = sections(raw), expected = prose.sections.flatMap(section => section.claimIds.map(id => ({id,section:section.id})));
+  const actual = sections(raw), expected = expectedOccurrences(prose, jointProductionManuscript);
   if (!same(actual.headings, currentBookLayout('B10:headings',jointProductionTitles.map(title=>({id:title,title})))) || !same(actual.occurrences, expected) || collectChapterClaimOccurrences(raw).length !== expected.length) errors.push('B10 book claims missing, duplicated, reordered, outside formal sections or misplaced');
   for (const page of prose.website) {
     const raw = sources.get(page.route), headings = prose.sources.find(source=>source.route===page.route)?.headings ?? value.sourceHeadings.filter(heading=>heading.route===page.route).map(heading=>({id:heading.id,text:heading.title}));
     const occurrences = raw === undefined ? [] : sections(raw).occurrences.map(row=>({...row,section:headings.find(heading=>heading.id===row.section || heading.text===row.section)?.id}));
-    if (raw === undefined || !same(collectChapterClaimOccurrences(raw),page.claimIds) || !same(occurrences,page.occurrences)) errors.push(`B10 fine website occurrences differ: ${page.route}`);
+    const accepted = expectedOccurrences(prose, page.route);
+    if (raw === undefined || !same(collectChapterClaimOccurrences(raw), accepted.map(row => row.id)) || !same(occurrences, accepted)) errors.push(`B10 fine website occurrences differ: ${page.route}`);
+  }
+  if (currentSubstitutionRules) {
+    const web = jointProductionRoutes.flatMap(route => expectedOccurrences(prose, route).map(row => row.id));
+    if (new Set(web).size !== web.length || web.length !== expected.length
+        || expected.some(row => !web.includes(row.id))) errors.push('B10 current shared book and fine-web canonical coverage differs');
+    if (catalog) for (const { id } of expected.filter(row => !prose.claims.some(claim => claim.id === row.id))) {
+      const claim = catalog.claims.find(row => row.id === id);
+      if (claim?.status !== 'reviewed' || !currentBookRecordMatches('claims', null, claim)
+          || !claim.evidenceIds?.length && !claim.premiseIds?.length)
+        errors.push(`B10 new canonical record is missing its exact reviewed support: ${id}`);
+    }
   }
   const caseLiteral = /<TeachingCase\s+id="CASE-JOINT-BATCH"\s+version="1\.0\.0"\s*\/>/g;
   for (const route of [jointProductionRoutes[0], jointProductionManuscript]) if ([...(sources.get(route) ?? '').matchAll(caseLiteral)].length !== 1) errors.push(`B10 source must retain exactly one real joint case: ${route}`);
@@ -289,7 +308,7 @@ export function validateRenderedJointProduction(document,path,value = original,c
   const unit=units[0],errors=[...consumerErrors],checked=new Set();
   if (path==='/docs/allocation') return validateOrdinary(unit,currentBookLayout('B10:/docs/allocation:source', sourceMetadata(prose,path)).ordinary,false,checked);
   const sourceRoute = print ? jointProductionManuscript : route;
-  const metadata=currentBookLayout(`B10:${sourceRoute}:source`, sourceMetadata(prose, sourceRoute)),expected=print?prose.sections.flatMap(section=>section.claimIds.map(id=>({id,section:section.id}))):prose.website.find(page=>page.route===route).occurrences,prefix=location(route,path),claims=new Map((catalog?.claims??[]).map(claim=>[claim.id,claim]));
+  const metadata=currentBookLayout(`B10:${sourceRoute}:source`, sourceMetadata(prose, sourceRoute)),expected=expectedOccurrences(prose,sourceRoute),prefix=location(route,path),claims=new Map((catalog?.claims??[]).map(claim=>[claim.id,claim]));
   const children=unit.childNodes.filter(node=>node.nodeType===1),title=children.find(node=>node.tagName===(print?'H2':'H1'));
   if (!title || title.text!==metadata.title || (print&&unit.getAttribute('data-reader-title')!==metadata.title))errors.push(`${path}: B10 actual title differs`);else checked.add(title);
   const description=title&&children[children.indexOf(title)+1];
@@ -308,7 +327,7 @@ export function validateRenderedJointProduction(document,path,value = original,c
     if(node.getAttribute('role')==='doc-noteref'){
       const id=node.getAttribute('data-reader-reference'),paragraph=node.closest('p'),claim=claims.get(id);actual.push({id,section});
       if(!paragraph||!claim||readerParagraphText(paragraph,node)!==claim.text)errors.push(`${path}: B10 actual canonical paragraph differs: ${id}`);else checked.add(paragraph);
-      if(!currentBookRecordMatches('claims', prose.claims.find(fixed=>fixed.id===id), claim))errors.push(`${path}: B10 actual canonical record differs: ${id}`);
+      if(!currentBookRecordMatches('claims', prose.claims.find(fixed=>fixed.id===id)??null, claim))errors.push(`${path}: B10 actual canonical record differs: ${id}`);
     }else if(node.closest('.chapter-notes')){section=null;if(node.id===`${prefix}-annotations`&&node.text==='注释'&&node.tagName===(print?'H3':'H2'))checked.add(node);else errors.push(`${path}: B10 unexpected annotation heading`);}
     else if(node!==title){const local=print?node.id.slice(prefix.length+1):node.id;headings.push(local);section=local;
       if(node.tagName!==(print?'H3':'H2')||!expectedHeadings.some(heading=>heading.id===local&&heading.text===node.text.replace(/复制章节链接$/,'')))errors.push(`${path}: B10 actual formal heading differs`);else checked.add(node);}

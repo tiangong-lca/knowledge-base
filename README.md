@@ -15,10 +15,19 @@ checkPaths:
   - "app/**"
   - "scripts/**"
 lastReviewedAt: 2026-11-15
-lastReviewedCommit: 7974ab205e5218e6c3a1d49dc34be6ea5b21c345
+lastReviewedCommit: 259a0f4c032f6716c263e45bb0355c87796cb0e1
 ---
 
 # LCA Living Knowledge Base and Review
+
+[Substitution rules #105](https://github.com/tiangong-lca/knowledge-base/issues/105)
+compares complete-system reporting, reference residuals and the evidence required
+to choose a co-product substitute under ILCD and PEF. The
+[comparison record](_docs/editorial/2026-11-15-substitution-rules.md) preserves
+the conditional findings, reader corrections and the decision not to force a
+numerical disagreement. Its separate successor retains earlier claims, numerical
+cases and historical scopes. Final production, CI, hosting and root delivery are
+tracked separately; the continuing whole-book programme remains active.
 
 [Service constraints #102](https://github.com/tiangong-lca/knowledge-base/issues/102)
 extends the shared process-network chapter with a comparison of natural-unit and
@@ -26,8 +35,9 @@ monetary representations, preserved constraints and redundant-row counterexample
 Its [protocol](_docs/editorial/2026-11-15-service-constraints.md) separates original
 printed data, declared-formula reconstruction, reader judgments and actual output.
 The independently qualified successor retains earlier citation generations and
-adds paired versioned input/result downloads. Source merge, hosting and required
-workspace integration remain separate tracked steps; wider programme #9 is open.
+adds paired versioned input/result downloads. Source PR104/Mainf8751d5, qualified
+hosting and root2383/PR2384/Main586a5c35 complete that bounded delivery; wider
+programme #9 is open.
 
 The user endorsed the flow pilot on 2026-11-15 and requested a continuing GOAL
 for all subsequent chapter revisions and additions. Apply the

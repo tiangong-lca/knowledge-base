@@ -1,7 +1,8 @@
+import { qualifyScientificHistory } from './reader-scientific-delta.mjs';
 import { lstat, readFile, realpath } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { canonicalCaseInput, caseEvaluationReceipt, safeCaseInputFile } from './case-publication.mjs';
-import { chapterAnchorPrefix, chapterNoteAnchor, printUnitAnchor } from './reader-book.mjs';
+import { chapterAnchorPrefix, printUnitAnchor } from './reader-book.mjs';
 import { editionDigest, sha256, verifyReadableBookReviewReceipts } from './reader-current-edition.mjs';
 import { observeFlowBoundaryChanges, groupHistoricalRanges, validateDatedHistoryOutput, flowBoundaryOrdinaryDigest } from './reader-flow-boundary.mjs';
 
@@ -305,53 +306,12 @@ export function projectServiceConstraintsNumbering(unit, actual) {
   return projected;
 }
 
-/** The extractor supplies independently parsed native addresses and exact ordinary destinations. */
+/** The extractor supplies the independently parsed reader scope and targets. */
 export function qualifyServiceConstraintsHistory(unit, actual, ordinaryTargets) {
-  const { previousAddresses, currentAddresses, history } = unit.history ?? {};
-  if (!previousAddresses || !currentAddresses || !Array.isArray(history) || !unique(history, row => row.address))
-    throw new Error('Service constraints requires its actual predecessor citation scopes');
-  if (editionDigest(previousAddresses) !== serviceConstraintsAddressPin)
-    throw new Error('Service constraints predecessor citation inventory differs from the deployed B07 capture');
-  const selected = Object.fromEntries(Object.entries(actual).filter(([, row]) => row.route === serviceConstraintsChapter));
-  if (!same(selected, currentAddresses)) throw new Error('Service constraints native HTML citations differ from the actual output acceptance');
-  const dispositions = new Map(history.map(row => [row.address, row]));
-  for (const [address, old] of Object.entries(previousAddresses)) {
-    const current = selected[address];
-    if (!current || old.kind !== current.kind || old.route !== current.route || old.chapter !== current.chapter
-        || old.kind === 'note' && !same(old.claimIds, current.claimIds))
-      throw new Error(`Service constraints lost or changed a preceding citation identity: ${address}`);
-    const row = dispositions.get(address);
-    if (old.kind === 'note' || same(old, current)) {
-      if (row) throw new Error(`Service constraints has an unnecessary previous-range disposition: ${address}`);
-      continue;
-    }
-    if (!row || row.from !== editionDigest(old) || !text(row.rationale)
-        || !Array.isArray(row.ordinary) || !same(row.ordinary.map(block => block.from), old.ordinary))
-      throw new Error(`Service constraints needs the exact previous range disposition: ${address}`);
-    const path = address.split('#')[0];
-    const prefix = path === '/print' ? printUnitAnchor(old.route) : chapterAnchorPrefix(old.route);
-    for (const claim of old.claimIds) {
-      const note = selected[`${path}#${chapterNoteAnchor(prefix, claim)}`];
-      if (note?.kind !== 'note' || !same(note.claimIds, [claim]))
-        throw new Error(`Service constraints lost an exact previous note target: ${claim}`);
-    }
-    for (const block of row.ordinary) {
-      const target = selected[block.address];
-      const targetPath = block.address?.split('#')[0];
-      const blockKey = `${targetPath}#${block.targetId}`;
-      const note = selected[blockKey];
-      const paragraph = ordinaryTargets?.[blockKey];
-      const correctParagraph = digest(block.to) && target?.ordinary.includes(block.to) && paragraph?.sha256 === block.to
-        && paragraph.route === target.route;
-      const correctClaim = text(block.claimId) && target?.claimIds.includes(block.claimId) && note?.kind === 'note'
-        && note.route === target.route && same(note.claimIds, [block.claimId]);
-      if (!text(block.rationale) || !correctParagraph && !correctClaim || Boolean(block.to) === Boolean(block.claimId))
-        throw new Error(`Service constraints lacks the exact ordinary explanation destination: ${address}`);
-    }
-    dispositions.delete(address);
-  }
-  if (dispositions.size) throw new Error('Service constraints includes unknown ranges in its history plan');
-  return { ...Object.fromEntries(Object.entries(actual).filter(([, row]) => row.route !== serviceConstraintsChapter)), ...previousAddresses };
+  return qualifyScientificHistory(unit.history, actual, ordinaryTargets, {
+    label: 'Service constraints', routes: [serviceConstraintsChapter],
+    predecessorPin: serviceConstraintsAddressPin,
+  });
 }
 
 export function serviceConstraintsEvaluationFile(binding) {

@@ -169,21 +169,25 @@ test('the actual adopted source is independently qualified and a changed reviewe
   const { fileURLToPath } = await import('node:url');
   const { readFile } = await import('node:fs/promises');
   const { validateRepository } = await import('./validate.mjs');
-  const { validateReadableBookCurrent, validateServiceConstraintsReviewSources } = await import('./reader-current-edition-files.mjs');
+  const { validateReadableBookCurrent, validateServiceConstraintsReviewSources, validateSubstitutionRulesReviewSources } = await import('./reader-current-edition-files.mjs');
   const root = fileURLToPath(new URL('../', import.meta.url));
   const read = async path => JSON.parse(await readFile(new URL('../' + path, import.meta.url), 'utf8'));
   const serviceConstraints = await read('config/reader-service-constraints.json');
-  const isPrivateCandidate = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1' && serviceConstraints.status === 'preview';
-  if (isPrivateCandidate) {
-    assert((await validateRepository(root)).includes('Service constraints is not independently accepted'));
+  const substitutionRules = await read('config/reader-substitution-rules.json');
+  const privateService = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1' && serviceConstraints.status === 'preview';
+  const privateSubstitution = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1' && substitutionRules.status === 'preview';
+  if (privateService || privateSubstitution) {
+    const name = privateService ? 'Service constraints' : 'Substitution rules';
+    assert((await validateRepository(root)).includes(`${name} is not independently accepted`));
   } else assert.deepEqual(await validateRepository(root), []);
   const [acceptance, copyedit, catalog, readings, literature] = await Promise.all([
     read('config/readable-book-current.json'), read('config/reader-copyedit-current.json'), read('knowledge/catalog.json'),
     read('knowledge/research/readings.json'), read('knowledge/research/literature-map.json'),
   ]);
   assert.equal(acceptance.status, 'reviewed');
-  if (isPrivateCandidate) assert.deepEqual((await validateServiceConstraintsReviewSources(root, catalog, readings, literature)).errors, []);
-  const qualify = isPrivateCandidate ? validateServiceConstraintsReviewSources : validateReadableBookCurrent;
+  const qualify = privateSubstitution ? validateSubstitutionRulesReviewSources
+    : privateService ? validateServiceConstraintsReviewSources : validateReadableBookCurrent;
+  if (privateService || privateSubstitution) assert.deepEqual((await qualify(root, catalog, readings, literature)).errors, []);
   const currentChanges = copyedit.status === 'reviewed' ? copyedit.unit.changes : acceptance.units.flatMap(unit => unit.changes);
   const changed = currentChanges
     .find(row => row.kind === 'record' && row.key.startsWith('claims:') && row.from !== null);
@@ -196,6 +200,9 @@ test('the actual adopted source is independently qualified and a changed reviewe
     ? 'Reader copyedit successor differs from actual source'
     : 'stale predecessor, missing successor or mismatched result';
   await assert.rejects(qualify(root, catalog, readings, literature), error => {
+    if (privateSubstitution || substitutionRules.status === 'reviewed') {
+      return error.message === 'Substitution rules did not reconstruct the independently observed raw f8751d5 state';
+    }
     if (serviceConstraints.status === 'reviewed') {
       // This one change also invalidates the current reviewed public catalog.
       return error.message === 'Service constraints lacks exact independent source, reader, and output evidence';

@@ -106,8 +106,10 @@ function hasScope(scope, key) {
 }
 
 export function readableBookReviewSubject(unit, kind) {
-  const { reviewEvidence, outputs, publicArtifacts, ...manuscript } = unit;
-  return editionDigest(kind === 'output' ? { ...manuscript, outputs, publicArtifacts } : manuscript);
+  const { reviewEvidence, outputs, publicArtifacts, outputCapture, ...manuscript } = unit;
+  return editionDigest(kind === 'output'
+    ? { ...manuscript, outputs, publicArtifacts, ...(outputCapture !== undefined && { outputCapture }) }
+    : manuscript);
 }
 
 export const validReadableBookReviewFile = path => typeof path === 'string'

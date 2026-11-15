@@ -17,10 +17,33 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-15
-lastReviewedCommit: 7974ab205e5218e6c3a1d49dc34be6ea5b21c345
+lastReviewedCommit: 259a0f4c032f6716c263e45bb0355c87796cb0e1
 ---
 
 # Publication architecture
+
+## Bounded comparative successor
+
+`reader-substitution-rules.mjs` admits the separately reviewed #105 B10 unit
+after #102. The small shared `reader-scientific-delta.mjs` helpers restore exact
+raw catalog, reading and literature objects from reviewed sparse transitions,
+preserve old source/carrier/passage identity and order, and check the independently
+pinned f8751d5 state. #102 public JSON receipts are recomputed from those restored
+raw objects before the existing #102 → #99 → #95 → #93 chain runs. Hash projections
+alone cannot substitute for raw reconstruction. The new profile permits the two
+actual B10 sources, their approved occurrences and limited ordinary-text changes;
+all original joint-production cases and older scope guards continue unchanged.
+
+Output review binds a separately pinned capture made from retained actual exporter
+bytes: source commit, dirty/status, manifest digest, raw article files and public
+artifacts. Current public JSON also has independent source projection checks.
+Capture identity participates only in the output-review subject; existing source
+and reader subjects keep their original semantics. This rejects internally
+consistent receipts that invent a commit, clean status or raw HTML byte facts.
+The actual technical capture is explicitly a dirty working preview, not the later
+clean production or hosted Main. Its temporary fixture approval is not editorial
+acceptance. The primary review and subsequent ordinary production checks remain
+separate obligations.
 
 ## Service-constraint successor
 
