@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "caseId": "CASE-FINITE-LOAD-SHIFT",
+  "version": "1.0.0",
+  "inputFile": "finite-load-shift-v1.json",
+  "approvedInputSha256": "4729173e3d72668452d3f3db9150aa85434eb53931ff3018382995431cba02c1",
+  "reviewedAt": "2026-11-15",
+  "reviewKind": "agent-source-check",
+  "claims": [
+    {
+      "id": "cl-shift107-service",
+      "kind": "calculation",
+      "scope": "作者假想任务、同服务前提与两时窗电量",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-shift107-complete-action"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "所用数值全部为作者设定，既非ERCOT观察，也非德国论文输入。"
+      ],
+      "reasoning": "由同一作业与固定电耗写出两端需求；电量相同只是已经约定同服务后的结果。",
+      "textTemplate": "下面用本书设定的假想任务，把幅度的作用算清。{{input.service.requiredWorkUnits}}份可分割作业，每份在任一时窗都耗{{input.service.electricityMWhPerWorkUnit}} MWh，设备效率与交付质量相同，允许全部在后窗结束前完成。两窗在同一供电点，均不计电网或储能损耗，各为{{input.periods.sending.durationHours}}小时；原安排把作业都放在前窗，后窗另有不变的{{input.periods.receiving.unshiftableMWh}} MWh负荷。移走q MWh后，两窗需求分别为（{{evaluated.domain.maximumShiftMWh.exact}}−q）MWh和（{{input.periods.receiving.unshiftableMWh}}＋q）MWh，完成的作业仍为{{input.service.requiredWorkUnits}}份，总电量仍为{{evaluated.samples.baseline.total.demandMWh.exact}} MWh。这些服务与无损假设是例子的条件。"
+    },
+    {
+      "id": "cl-shift107-supply",
+      "kind": "calculation",
+      "scope": "作者两时窗的固定供给容量、成本顺序及运行排放系数",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-shift107-service"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "机组功率乘一小时才得到本例电量；不由此外推其他持续时间。"
+      ],
+      "reasoning": "固定容量和严格成本顺序唯一确定各窗的可行最小成本供给，排放系数是作者假设而非成本目标。",
+      "textTemplate": "每窗都有两种可用供给，按较低成本优先、容量用尽再用较高成本的规则调度。前窗较便宜的一种最多供{{input.periods.sending.generators.0.capacityMW}} MW，每MWh排{{input.periods.sending.generators.0.directCO2KgPerMWh}} kg CO₂；另一种最多供{{input.periods.sending.generators.1.capacityMW}} MW，每MWh排{{input.periods.sending.generators.1.directCO2KgPerMWh}} kg。后窗对应的容量为{{input.periods.receiving.generators.0.capacityMW}}和{{input.periods.receiving.generators.1.capacityMW}} MW，排放率为{{input.periods.receiving.generators.0.directCO2KgPerMWh}}和{{input.periods.receiving.generators.1.directCO2KgPerMWh}} kg/MWh。各窗可发电量的上限是功率上限乘该窗时长。两窗独立，不含启停、爬坡或储能状态约束；只比较直接CO₂。"
+    },
+    {
+      "id": "cl-shift107-small",
+      "kind": "calculation",
+      "scope": "基线局部率与达到第一组约束前的完整移峰差值",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-shift107-service",
+        "cl-shift107-supply"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按两端实际增加／减少的供给求差，移动电量只计一次。到分段点为止，初始净率与有限差值一致。",
+      "textTemplate": "开始移峰时，前窗每少用一MWh，少发的是排放率为{{evaluated.baselineShiftDirection.sendingWithdrawalRateKgCO2PerMWh.exact}} kg/MWh的供给；后窗每多用一MWh，增加的是{{evaluated.baselineShiftDirection.receivingAdditionRateKgCO2PerMWh.exact}} kg/MWh的供给。每移动一MWh的净差因而是{{evaluated.baselineShiftDirection.netRateKgCO2PerMWhMoved.exact}} kg。移动{{evaluated.samples.boundary.shiftMWh.exact}} MWh时，两端排放分别改变{{evaluated.samples.boundary.periods.sending.directCO2ChangeKg.exact}}和{{evaluated.samples.boundary.periods.receiving.directCO2ChangeKg.exact}} kg，完整差值为{{evaluated.samples.boundary.directCO2ChangeKg.exact}} kg；这里的减少是相对原安排而言。"
+    },
+    {
+      "id": "cl-shift107-large",
+      "kind": "calculation",
+      "scope": "有限变化跨越容量条件后的正活动、排放差及初始率外推错误",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-shift107-small"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "用两个完整最小成本调度的正发电量求总排放；零差点由分段关系求得，不将零差当零排放。",
+      "textTemplate": "把移动量继续增到{{evaluated.samples.maximum.shiftMWh.exact}} MWh仍然可行，但参与增减的供给条件会改变：前窗的高排放供给已减完，还会减少另一种供给；后窗较便宜的供给也已用满，须再增加较贵的一种。原安排排{{evaluated.samples.baseline.total.directCO2Kg.exact}} kg CO₂，新安排排{{evaluated.samples.maximum.total.directCO2Kg.exact}} kg，净差为{{evaluated.samples.maximum.directCO2ChangeKg.exact}} kg。若一直乘初始净率，却会估成{{evaluated.samples.maximum.baselineRateEstimateKgCO2.exact}} kg。本例到{{evaluated.samples.neutral.shiftMWh.exact}} MWh时，两端变化刚好抵消，总量仍为{{evaluated.samples.neutral.total.directCO2Kg.exact}} kg，所以超出{{evaluated.baselineShiftDirection.certifiedThroughShiftMWh.exact}} MWh的初始保证范围，并不意味着立即转为增排。"
+    },
+    {
+      "id": "cl-shift107-control",
+      "kind": "calculation",
+      "scope": "替换供给的排放率相同可使某一端的因子跨过活动变化仍保持",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-shift107-supply",
+        "cl-shift107-large"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "只改变后窗第二供给的排放投影，不改变成本最优活动；分开后窗不变与两端净率仍变，检验基保持是充分而非必要条件。",
+      "textTemplate": "再只把后窗第二种供给的排放率改为{{evaluated.equalReceivingRatesControl.receivingSecondGeneratorRateKgCO2PerMWh.exact}} kg/MWh，与第一种相同。后窗第一种供给达到上限后仍须由第二种追加发电，但每增加一MWh的排放率可以保持不变。这说明约束或供给组合改变，不必然使一个排放率数值失效。不过，保持的只是后窗因子；前窗仍会换率，整项移峰也不能一直按原净率计算。控制情景移动{{evaluated.equalReceivingRatesControl.samplesAtPrimaryShiftAmounts.maximum.shiftMWh.exact}} MWh的完整差值为{{evaluated.equalReceivingRatesControl.samplesAtPrimaryShiftAmounts.maximum.directCO2ChangeKg.exact}} kg。"
+    }
+  ]
+}

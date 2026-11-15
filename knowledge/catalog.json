@@ -5459,6 +5459,56 @@
         "checkedAt": "2026-11-15"
       },
       "preservation": "留存取得的含书目封页13页出版版PDF及选段核对；封页下载日不作为出版年代。所列哈希只代表此PDF载体。"
+    },
+    {
+      "id": "src-shift107-steinsultz-2024",
+      "title": "Validating locational marginal emissions models with wind generation",
+      "url": "https://doi.org/10.1088/2753-3751/ad72f6",
+      "version": "Environmental Research: Energy 1 (2024), 035008，IOP 正式刊版，2024-09-04 发表。REsurety 托管载体的 HTTP Last-Modified 为 2026-05-16，属于服务器记录。物理第 1 页是下载封面，正文印刷 pp. 1–10 对应物理第 2–11 页及零基 PDF 索引 1–10。",
+      "publisher": "IOP Publishing（正式刊版由 REsurety 公开托管）",
+      "accessedAt": "2026-11-15",
+      "accessStatus": "public-passages-inspected",
+      "rights": "正文首页（物理第 2 页、零基 PDF 索引 1）标明原文采用 CC BY 4.0，进一步分发须保留作者、题名、期刊引文和 DOI。论文底层第三方数据另有使用条款，未据文章许可推定数据再分发权。",
+      "preservation": "SHA-256 对应所核对的固定 PDF 字节。原件、提取文本与渲染图留在公开仓库之外。",
+      "artifact": {
+        "mediaType": "application/pdf",
+        "sha256": "871b8028bcecc9cdb0f41709417bb5a2f174591819015e4721e72a86d66f69d5",
+        "resolvedUrl": "https://resurety.com/wp-content/uploads/2026/05/Validating_Locational_Marginal_Emissions_Models_Wind_Generation.pdf",
+        "pageCount": 11
+      },
+      "reading": {
+        "readingId": "rd-shift107-steinsultz-2024",
+        "status": "selected-passages",
+        "scope": "正文首页出版和许可声明（PDF 物理第 2 页），以及 物理第 3–6 页，印刷 pp. 2–5，§1 末、§§2.1–2.3，式 (3)–(6)。 物理第 6–8 页，印刷 pp. 5–7，§§3.1–3.3，图 1–3 及表 1。 物理第 9–10 页，印刷 pp. 8–9，§§3.4、4、图 4、数据可用性、致谢及利益冲突声明。",
+        "checkedAt": "2026-11-15"
+      }
+    },
+    {
+      "id": "src-shift107-nilges-2025",
+      "title": "Validity ranges of locational marginal emission factors for the environmental assessment of electric load shifting",
+      "url": "https://doi.org/10.1016/j.apenergy.2024.125069",
+      "version": "Applied Energy 380 (2025), 125069；2024-12-09 online；RWTH记录999510的正式刊版之实际网页文字选段，不是已保留的PDF原件",
+      "publisher": "Elsevier；RWTH Aachen开放出版库",
+      "accessedAt": "2026-11-15",
+      "accessStatus": "public-passages-inspected",
+      "rights": "出版版首页列CC BY4.0，RWTH开放记录及出版元数据相符；原文和第三方材料各守其许可。此项目公开原创释义、元数据与定位，不重传原件或文字快照，不据论文许可推定模型输入可再分发。",
+      "preservation": "固定的是实际取得的网页派生文字选段。原PDF请求曾返回HTML挑战页，不以其字节充作原件；后续如取得原PDF应另立载体与具体复核事件。",
+      "artifact": {
+        "kind": "derived-text",
+        "sha256": "244899a905933ba0e2d5e995ca4f4d996931d28f8ead7b43bec5aef729e27141",
+        "mediaType": "text/plain",
+        "originUrl": "https://publications.rwth-aachen.de/record/999510/files/999510.pdf",
+        "captureMethod": "公开机构PDF经网页文字提取通道返回，保留实际响应的选段、行序和定位；未取得原PDF字节，也未绕过HTML挑战页。响应中的检索标题与定位属于派生载体说明。",
+        "captureScope": "索引行114–192；273–428；467–549；672–755，多次定点打开的真实文字响应；重叠选段不算独立证据。",
+        "originalDocumentMediaType": "application/pdf",
+        "originalDocumentBytesAvailable": false
+      },
+      "reading": {
+        "status": "web-sections",
+        "scope": "印刷pp3–4，§§2.1–2.3，所印式(1)–(2)、(5)–(12)及相关说明；实际文字索引行136–192、273–428；印刷p1题名／许可；pp4–5 §3及前后选段；网页索引0–49、391–531；印刷pp8–9，§§4.3–4.4及结论开头；网页索引672–755；印刷pp9–10，结论、数据声明、贡献与参考文献部分；网页索引749–878",
+        "checkedAt": "2026-11-15",
+        "readingId": "rd-shift107-nilges-2025"
+      }
     }
   ],
   "evidence": [
@@ -26675,6 +26725,108 @@
         "independence": "沿用已登记作品与载体；同一文件的重读、重刊和多代理核查不构成独立经验研究。",
         "limitations": [
           "只说明该方法条件，不证明具体类别文件或实际研究已符合。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-15"
+      }
+    },
+    {
+      "id": "ev-shift107-wind-design",
+      "sourceId": "src-shift107-steinsultz-2024",
+      "readingId": "rd-shift107-steinsultz-2024",
+      "passageId": "psg-shift107-wind-design",
+      "locator": "物理第 3–6 页，印刷 pp. 2–5，§1 末、§§2.1–2.3，式 (3)–(6)。",
+      "summary": "作者以风电节点申报的HSL逐小时变化（通常采用短期预测，用于表示可用出力）作为局部净负荷变化的代理，估计 ERCOT 发电运行 CO₂ 总量的响应。模型控制调整后的全区负荷、光伏可用功率和时间固定效应，分组估计时还控制其他组及组外风电的变化。作者报告，全区全期估计的风能可用功率系数与负荷系数符号相反、大小相同。",
+      "relation": "supports",
+      "appraisal": {
+        "basis": "物理第 3–6 页，印刷 pp. 2–5，§1 末、§§2.1–2.3，式 (3)–(6)。",
+        "methodologicalScope": "ERCOT 风电节点申报的可用出力指标（High Sustained Limit，HSL）与 EPA CAMPD 覆盖机组的全区小时 CO₂ 总量。按调度模型信号相关性聚类后，选用风电可用功率合计最高的四组。作者用风电潜力避开实际出力已受负荷或弃电指令影响的问题。",
+        "independence": "风能可用功率回归的设计区别于比较对象的估计方法。四位作者任职于统计模型开发方 WattTime，一位作者任职于调度模型开发方 REsurety。统计模型与基准均使用 CAMPD。该研究以 2022 年调度模型信号相关性构造风电节点组，再按组内风能可用功率选择节点组。这些设计和来源关系限制了可声称的独立性。",
+        "limitations": [
+          "在所设控制条件下，估计全区排放如何随各组风电可用出力变化。将其按反方向解释为局部需求响应另需传递条件。全区全期系数的比较未检验节点、时段、方向或变化量上的等效。",
+          "式 (5) 的求和下标印作 0–4，正文定义四个节点组及独立的组外项。依正文说明描述设计，未用补充材料或代码澄清实现。报告的共线性检查和所引安慰剂检验各有范围，补充图未核读。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-15"
+      }
+    },
+    {
+      "id": "ev-shift107-signal-screening",
+      "sourceId": "src-shift107-steinsultz-2024",
+      "readingId": "rd-shift107-steinsultz-2024",
+      "passageId": "psg-shift107-signal-screening",
+      "locator": "物理第 6–8 页，印刷 pp. 5–7，§§3.1–3.3，图 1–3 及表 1。",
+      "summary": "作者按各信号自身的第 10 百分位划出第10百分位阈值以下的低端时段，与其余时段分别拟合和比较基准响应。调度、统计、热耗率和节点价格信号在选定组中区分了基准率较低的时段，所比较的平均排放信号未见同样的有利区分。最大节点组的分位组曲线显示，热耗率和节点价格有助于筛出低端，但基准关系可以非单调。调度和统计模型更接近该组的基准排序及率值，分别留有低端偏低和高端偏高的现象。",
+      "relation": "supports",
+      "appraisal": {
+        "basis": "物理第 6–8 页，印刷 pp. 5–7，§§3.1–3.3，图 1–3 及表 1。",
+        "methodologicalScope": "历史全区月序列、全区及四组的按第10百分位阈值分出的低端与其余时段比较，以及最大节点组 G1 的分位组曲线。同一时点的跨组比较另按预测阈值及区间宽度筛选。",
+        "independence": "风能可用功率回归的设计区别于比较对象的估计方法。四位作者任职于统计模型开发方 WattTime，一位作者任职于调度模型开发方 REsurety。统计模型与基准均使用 CAMPD。该研究以 2022 年调度模型信号相关性构造风电节点组，再按组内风能可用功率选择节点组。这些设计和来源关系限制了可声称的独立性。",
+        "limitations": [
+          "分组响应差不提供任意一对时段的真实顺序、逐小时率值精度或实际转移的 CO₂ 质量。节点价格的货币单位和平均排放率的估计对象均有别于增量排放率。",
+          "图 2 标注误差线为 95% 置信区间，表 1 将括号统计量标作标准差。表 1 表题用 kg CO₂/MW，图 1–2 轴和 §3.3 则用 kg CO₂/MWh。不给表 1 数值指定有限转移的计算角色。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-15"
+      }
+    },
+    {
+      "id": "ev-shift107-study-limits",
+      "sourceId": "src-shift107-steinsultz-2024",
+      "readingId": "rd-shift107-steinsultz-2024",
+      "passageId": "psg-shift107-study-limits",
+      "locator": "物理第 9–10 页，印刷 pp. 8–9，§§3.4、4、图 4、数据可用性、致谢及利益冲突声明。",
+      "summary": "作者报告按较高弃风弃光阈值筛选时，分组基准率整体趋低，仍出现正值或较宽的不确定范围。作者提出局部输电限制、预报高估及化石机组爬坡或容量约束等可能解释，并将证据限于互联交换较少的 ERCOT 和风电节点组。论文披露模型开发方的作者任职关系和 Meta、Microsoft 的部分资助。数据声明指出，支持研究的第三方数据受分发条款约束，可向作者合理申请。",
+      "relation": "qualifies",
+      "appraisal": {
+        "basis": "物理第 9–10 页，印刷 pp. 8–9，§§3.4、4、图 4、数据可用性、致谢及利益冲突声明。",
+        "methodologicalScope": "ERCOT 指定风电节点组的短期运行 CO₂ 响应，包含对组合弃风弃光阈值的敏感性比较。讨论区分公开可得的 ERCOT 输入与不能公开发布的支持数据。",
+        "independence": "风能可用功率回归的设计区别于比较对象的估计方法。四位作者任职于统计模型开发方 WattTime，一位作者任职于调度模型开发方 REsurety。统计模型与基准均使用 CAMPD。该研究以 2022 年调度模型信号相关性构造风电节点组，再按组内风能可用功率选择节点组。这些设计和来源关系限制了可声称的独立性。",
+        "limitations": [
+          "辨认出的弃电量不必然可供新增用电取用。结论外推到其他节点、电网、干预量、两端联动、长期响应或选址，需要相应检验。",
+          "仅核对正式刊版所述方法、报告结果和披露。未取得第三方底层数据，未审计判定过程、复现回归、核验候选信号软件或取得独立实证复现。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-15"
+      }
+    },
+    {
+      "id": "ev-shift107-model-range",
+      "sourceId": "src-shift107-nilges-2025",
+      "readingId": "rd-shift107-nilges-2025",
+      "passageId": "psg-shift107-nilges-basis",
+      "locator": "印刷pp3–4，§§2.1–2.3，所印式(1)–(2)、(5)–(12)及相关说明；实际文字索引行136–192、273–428",
+      "summary": "作者在固定成本、发电和输电约束的线性调度中求边际排放响应，再按所选最优基的可行性给出某一需求坐标的增减范围；原式的向量关系可供明确的完整方向推导。",
+      "appraisal": {
+        "basis": "主代理核读并保存两份真实网页文字选段；独立模型审查核对所列公式与条件，并通过出版社公开图像目视检查图3–5。原PDF字节未取得，文字快照的摘要不是PDF摘要。",
+        "methodologicalScope": "既定线性调度、选定最优基下的需求方向和有限范围，以及作者报告的德国模型输出；本书另推完整有符号方向与作者假想反例。",
+        "independence": "与ERCOT观测研究作者链不同，研究对象、数据和方法也不同；理论条件不是对同一电网干预的独立经验复现。",
+        "limitations": [
+          "原PDF字节、补充材料、SecMOD具体输入和原生运行未复核；不把网页可见等同于已归档完整原件。",
+          "式旁若干正文交叉编号与所印编号相差一位，引用按所印公式标签定位。",
+          "保持某个最优基可行是所选调度关系的保证；基变化不构成排放率必变或方向必反的必要性证明。基本变量可在端点为零，退化及成本并列最优须明确解的选择或排放是否确定。",
+          "模型给出的节点与方向区间不等于实际电网的普适阈值。主文单坐标分析及所示图并未验证一次跨时段联合移峰；不得从简式推定整个实现逐小时独立。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-15"
+      }
+    },
+    {
+      "id": "ev-shift107-model-limits",
+      "sourceId": "src-shift107-nilges-2025",
+      "readingId": "rd-shift107-nilges-2025",
+      "passageId": "psg-shift107-nilges-limits",
+      "locator": "印刷pp8–9，§§4.3–4.4及结论开头；网页索引672–755",
+      "summary": "作者报告的范围属于具名德国模型及日期场景；与较大电池功率的比较是规模对照，不是一次电池完整运行的实测或联合干预验证。模型局限与现实适用性仍需分别判断。",
+      "appraisal": {
+        "basis": "主代理核读并保存两份真实网页文字选段；独立模型审查核对所列公式与条件，并通过出版社公开图像目视检查图3–5。原PDF字节未取得，文字快照的摘要不是PDF摘要。",
+        "methodologicalScope": "既定线性调度、选定最优基下的需求方向和有限范围，以及作者报告的德国模型输出；本书另推完整有符号方向与作者假想反例。",
+        "independence": "与ERCOT观测研究作者链不同，研究对象、数据和方法也不同；理论条件不是对同一电网干预的独立经验复现。",
+        "limitations": [
+          "原PDF字节、补充材料、SecMOD具体输入和原生运行未复核；不把网页可见等同于已归档完整原件。",
+          "式旁若干正文交叉编号与所印编号相差一位，引用按所印公式标签定位。",
+          "保持某个最优基可行是所选调度关系的保证；基变化不构成排放率必变或方向必反的必要性证明。基本变量可在端点为零，退化及成本并列最优须明确解的选择或排放是否确定。",
+          "模型给出的节点与方向区间不等于实际电网的普适阈值。主文单坐标分析及所示图并未验证一次跨时段联合移峰；不得从简式推定整个实现逐小时独立。"
         ],
         "reviewKind": "agent-source-check",
         "checkedAt": "2026-11-15"
@@ -57403,6 +57555,337 @@
         "残余及完整差沿本章固定服务与参照的代数关系；不是某套具体规则已经符合的证明。"
       ],
       "reasoning": "为原有份额／路线差概括补明已在正文单独讨论的参照残余，不把它误当完整差或普通负担份额。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "id": "cl-shift107-complete-action",
+      "text": "移峰还需要把增、减两端放进同一个安排。若同一项服务可以延后完成，计划就同时包含原时段少用的电与另一时段多用的电；比较量是实施完整安排后与原安排的排放差。前面的两个单小时减载结果，各自只回答少用那一小时会怎样，不能未经核验就把其中一个反号当作增载结果。两种安排先须在规定期限内提供同样服务；设备效率会影响所需用电量，输配或储能损耗还会改变所需发电量，这些量要按各自交付点分别列出。",
+      "kind": "interpretation",
+      "scope": "从既有两次独立减载转向同服务的两端需求变化",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-power-native-two-hours",
+        "cl-power-native-application",
+        "cl-power-connection"
+      ],
+      "conceptIds": [],
+      "caveats": [],
+      "reasoning": "两端的活动、需求及基线须共同定义；两个减载输入并不包含一个增载输入或服务相同性证据。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "id": "cl-shift107-observed-proxy",
+      "text": "Steinsultz等用ERCOT运行资料构造基准，其全区比较采用2020—2022年数据。他们先合计CAMPD覆盖机组的CO₂排放，再用合计量的小时变化与各组风电HSL变化建立有控制条件的关系。HSL是申报的可用出力指标，默认按短期预测设置；实际出力则还会受调度和弃风影响。研究把可用风电减少作为净负荷增加的代理，按相反方向解释两者。这个基准来自实际运行资料，但把它用于某用户的负荷变化，仍须核对相同节点和系统状态下的响应能否对应。",
+      "kind": "interpretation",
+      "scope": "ERCOT风电潜力基准的观测对象与移峰传递条件",
+      "evidenceIds": [
+        "ev-shift107-wind-design",
+        "ev-shift107-study-limits"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-shift107-wind-design",
+          "relation": "supports",
+          "rationale": "原方法给出数据、HSL、控制项和由风电向负荷方向解释的前提。"
+        },
+        {
+          "evidenceId": "ev-shift107-study-limits",
+          "relation": "qualifies",
+          "rationale": "作者保留区域、节点及弃电／预测误差的适用边界。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [],
+      "caveats": [
+        "HSL通常依据短期预测申报，并非被操纵的用户负荷或每一时点实际可输送的电量。",
+        "作者分别来自所评估统计与调度信号的提供机构，基准与统计模型共享CAMPD，节点组也按调度信号构造；方法不同不等于作者、数据和留出样本独立。"
+      ],
+      "reasoning": "回归中的观测变动与计划中的需求变动有不同身份；全区全期系数关系不证明每个节点和指定幅度可互换。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "id": "cl-shift107-screening-and-rate",
+      "text": "研究按各信号自身的第10百分位作分界，比较低端与其余时段拟合的基准响应。在选定样本中，节点电价和热率信号也能筛出基准响应较低的一组。可用于这种筛选，不等于数值已能表示每增加一MWh的CO₂变化：电价仍以货币/MWh表示，热率法也须另查排放率的量值是否贴近基准。文中最大节点组里，热率和节点电价信号同基准的关系还不是处处单调。因此，低组的平均优势既不能保证任意一对小时的次序，也不能直接给出一次具体移峰会少排多少千克。",
+      "kind": "interpretation",
+      "scope": "原研究的低十分位分组与任意时段配对／量值推断",
+      "evidenceIds": [
+        "ev-shift107-signal-screening",
+        "ev-shift107-study-limits"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-shift107-signal-screening",
+          "relation": "supports",
+          "rationale": "图2按最低一成与其余时段分组，图3区分基准关系、信号值与非单调部分。"
+        },
+        {
+          "evidenceId": "ev-shift107-study-limits",
+          "relation": "qualifies",
+          "rationale": "所选地域、数据及有限变化的外推仍需相应证据。"
+        }
+      ],
+      "premiseIds": [
+        "cl-shift107-observed-proxy"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "图2误差线为95%置信区间，表1括号为标准差；表题kgCO₂/MW与图轴及正文kgCO₂/MWh分别保留，没有把该表数值用于本书有限移峰计算。",
+        "这里的时段组由各信号分别定义，不是所有信号共享一对已实施的调度时窗。",
+        "本书按原文第10百分位阈值描述；原始序列和分组代码未取得，未核定等于阈值的样本如何归组，也不假定低端恰有10%的观测。"
+      ],
+      "reasoning": "群体对比、个别排序、率值校准与给定行动的质量差分别需要证据，不以同一信号名称合并。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "id": "cl-shift107-model-range",
+      "text": "Nilges等从调度模型的另一端提出问题：既定状态附近算出的排放率，能用于多大的需求变化？他们在固定成本、容量和排放系数的线性模型中，先选定一套成本最优的调度关系，说明哪些机组可以继续调整、哪些机组或线路已受约束，再检查负荷变动时这套关系能保持到哪里。这套关系在线性规划中用所选最优基表示。在这个条件保证的范围内，所选调度解的有限排放差可以由相应边际率得到。超出该范围，只是原有保证不再成立；不能由此直接断言排放率一定改变，更不能断言差值一定反号。论文给出的负荷可增减幅度，对应其模型中的特定节点、时点与方向，并非任何电网都通用的阈值。",
+      "kind": "interpretation",
+      "scope": "所选线性调度基的条件保证及其非必要性",
+      "evidenceIds": [
+        "ev-shift107-model-range",
+        "ev-shift107-model-limits"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-shift107-model-range",
+          "relation": "supports",
+          "rationale": "原文由最优基求局部率和单需求坐标的有方向范围。"
+        },
+        {
+          "evidenceId": "ev-shift107-model-limits",
+          "relation": "qualifies",
+          "rationale": "德国模型场景、限制及规模对照不能转为通用真实阈值。"
+        }
+      ],
+      "premiseIds": [],
+      "conceptIds": [],
+      "caveats": [
+        "本段针对同一选定调度或排放确定的最优解；成本并列最优、退化及一侧导数须明确选择，不能以成本相同保证排放相同。",
+        "正文引用的是原件实际可见公式及派生文字选段；没有运行原SecMOD或取得其原PDF字节。"
+      ],
+      "reasoning": "固定右端扰动不改变同一基的约化成本；保持可行可保持其最优性。不同基仍可能有相同排放投影，故此保证不是因子改变的必要性定理。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "id": "cl-shift107-joint-direction",
+      "text": "Nilges等报告的范围针对单个需求坐标逐一变化。把它用于一次移峰，本书进一步检查的是含增、减两端的完整有符号变化。若两端可独立处理，且各自在正确方向和幅度内，可以直接组合同一基线下的两个率；即使模型有耦合，只要产生这两个基线率的同一线性响应关系能沿完整联合变化保持成立，也可以按这些率计算。否则要比较两种完整安排，不能把两个单独区间机械拼起来。比如有损电池须写清充、放电的实际电量、功率时序和共同的初末储能状态，不能直接套用等电量移峰。需求区间若用MW表示，计划只给总MWh也还不够。",
+      "kind": "interpretation",
+      "scope": "由单坐标范围到两端需求方向的作者条件推导",
+      "evidenceIds": [
+        "ev-shift107-model-range"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-shift107-model-range",
+          "relation": "context",
+          "rationale": "原文先给向量关系，再对单一需求坐标求界；本书将同一线性关系用于整个有符号方向。"
+        }
+      ],
+      "premiseIds": [
+        "cl-shift107-complete-action",
+        "cl-shift107-model-range"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "这里不声称原论文实现的所有时段相互独立，也不声称它已检验完整电池充放电计划。",
+        "同一时刻多个节点间的转移还需共同网络约束；本文下面的两时窗模型刻意不含这类耦合。",
+        "基线处若存在不同响应分支，两个单独方向的率可能来自不同分支；仅看到联合变化也是线性的，不足以证明这些率能够相加。"
+      ],
+      "reasoning": "标准形下所选基满足x_B(q)=x_B(0)+qB^{-1}h，h包含全部正确符号及时间换算后的需求。独立时段的块结构和已验证的联合仿射关系都是可使用同一组基线率的充分路径；不把独立性写成必要条件。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "id": "cl-shift107-service",
+      "kind": "calculation",
+      "scope": "作者假想任务、同服务前提与两时窗电量",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-shift107-complete-action"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "所用数值全部为作者设定，既非ERCOT观察，也非德国论文输入。"
+      ],
+      "reasoning": "由同一作业与固定电耗写出两端需求；电量相同只是已经约定同服务后的结果。",
+      "text": "下面用本书设定的假想任务，把幅度的作用算清。10份可分割作业，每份在任一时窗都耗1 MWh，设备效率与交付质量相同，允许全部在后窗结束前完成。两窗在同一供电点，均不计电网或储能损耗，各为1小时；原安排把作业都放在前窗，后窗另有不变的5 MWh负荷。移走q MWh后，两窗需求分别为（10−q）MWh和（5＋q）MWh，完成的作业仍为10份，总电量仍为15 MWh。这些服务与无损假设是例子的条件。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-15",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-FINITE-LOAD-SHIFT",
+        "version": "1.0.0",
+        "inputSha256": "4729173e3d72668452d3f3db9150aa85434eb53931ff3018382995431cba02c1",
+        "inputFile": "finite-load-shift-v1.json"
+      }
+    },
+    {
+      "id": "cl-shift107-supply",
+      "kind": "calculation",
+      "scope": "作者两时窗的固定供给容量、成本顺序及运行排放系数",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-shift107-service"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "机组功率乘一小时才得到本例电量；不由此外推其他持续时间。"
+      ],
+      "reasoning": "固定容量和严格成本顺序唯一确定各窗的可行最小成本供给，排放系数是作者假设而非成本目标。",
+      "text": "每窗都有两种可用供给，按较低成本优先、容量用尽再用较高成本的规则调度。前窗较便宜的一种最多供5 MW，每MWh排100 kg CO₂；另一种最多供10 MW，每MWh排700 kg。后窗对应的容量为10和5 MW，排放率为300和600 kg/MWh。各窗可发电量的上限是功率上限乘该窗时长。两窗独立，不含启停、爬坡或储能状态约束；只比较直接CO₂。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-15",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-FINITE-LOAD-SHIFT",
+        "version": "1.0.0",
+        "inputSha256": "4729173e3d72668452d3f3db9150aa85434eb53931ff3018382995431cba02c1",
+        "inputFile": "finite-load-shift-v1.json"
+      }
+    },
+    {
+      "id": "cl-shift107-small",
+      "kind": "calculation",
+      "scope": "基线局部率与达到第一组约束前的完整移峰差值",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-shift107-service",
+        "cl-shift107-supply"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "按两端实际增加／减少的供给求差，移动电量只计一次。到分段点为止，初始净率与有限差值一致。",
+      "text": "开始移峰时，前窗每少用一MWh，少发的是排放率为700 kg/MWh的供给；后窗每多用一MWh，增加的是300 kg/MWh的供给。每移动一MWh的净差因而是-400 kg。移动5 MWh时，两端排放分别改变-3500和1500 kg，完整差值为-2000 kg；这里的减少是相对原安排而言。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-15",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-FINITE-LOAD-SHIFT",
+        "version": "1.0.0",
+        "inputSha256": "4729173e3d72668452d3f3db9150aa85434eb53931ff3018382995431cba02c1",
+        "inputFile": "finite-load-shift-v1.json"
+      }
+    },
+    {
+      "id": "cl-shift107-large",
+      "kind": "calculation",
+      "scope": "有限变化跨越容量条件后的正活动、排放差及初始率外推错误",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-shift107-small"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "用两个完整最小成本调度的正发电量求总排放；零差点由分段关系求得，不将零差当零排放。",
+      "text": "把移动量继续增到10 MWh仍然可行，但参与增减的供给条件会改变：前窗的高排放供给已减完，还会减少另一种供给；后窗较便宜的供给也已用满，须再增加较贵的一种。原安排排5500 kg CO₂，新安排排6000 kg，净差为500 kg。若一直乘初始净率，却会估成-4000 kg。本例到9 MWh时，两端变化刚好抵消，总量仍为5500 kg，所以超出5 MWh的初始保证范围，并不意味着立即转为增排。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-15",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-FINITE-LOAD-SHIFT",
+        "version": "1.0.0",
+        "inputSha256": "4729173e3d72668452d3f3db9150aa85434eb53931ff3018382995431cba02c1",
+        "inputFile": "finite-load-shift-v1.json"
+      }
+    },
+    {
+      "id": "cl-shift107-control",
+      "kind": "calculation",
+      "scope": "替换供给的排放率相同可使某一端的因子跨过活动变化仍保持",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-shift107-supply",
+        "cl-shift107-large"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [],
+      "reasoning": "只改变后窗第二供给的排放投影，不改变成本最优活动；分开后窗不变与两端净率仍变，检验基保持是充分而非必要条件。",
+      "text": "再只把后窗第二种供给的排放率改为300 kg/MWh，与第一种相同。后窗第一种供给达到上限后仍须由第二种追加发电，但每增加一MWh的排放率可以保持不变。这说明约束或供给组合改变，不必然使一个排放率数值失效。不过，保持的只是后窗因子；前窗仍会换率，整项移峰也不能一直按原净率计算。控制情景移动10 MWh的完整差值为-1000 kg。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-15",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-FINITE-LOAD-SHIFT",
+        "version": "1.0.0",
+        "inputSha256": "4729173e3d72668452d3f3db9150aa85434eb53931ff3018382995431cba02c1",
+        "inputFile": "finite-load-shift-v1.json"
+      }
+    },
+    {
+      "id": "cl-shift107-comparison-judgment",
+      "text": "同一项移峰因此有三个可以分别检验的判断。观测中的低响应时段组可以帮助提出候选安排；完整给定两端变化及约束后，固定调度模型可以比较两种完整安排；要把模型差值作为实际效果，还需相应节点、时点和干预的证据。本书假想算例说明的是幅度怎样改变模型结果。后面的Cambium讨论按已给小时率加权，得到的是这些系数对应的响应估计；它是否等于指定有限计划的联合变化，仍要验证相应关系，不能仅由求和形式保证。",
+      "kind": "interpretation",
+      "scope": "观测筛选、有限模型差值与实际干预的条件综合",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-shift107-observed-proxy",
+        "cl-shift107-screening-and-rate",
+        "cl-shift107-joint-direction",
+        "cl-shift107-large",
+        "cl-shift107-control",
+        "cl-shift107-signal-comparison",
+        "cl-power-future-time"
+      ],
+      "conceptIds": [],
+      "caveats": [],
+      "reasoning": "区分数据筛选、整个有约束模型的有限差值与现实响应；并将下一节的小时率加权明确为系数估计，避免把代数求和无条件当作实际有限干预。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "id": "cl-shift107-signal-comparison",
+      "text": "检验排放率的量值时，还能看到另一层差别。在文中最大节点组的分位组曲线上，调度与统计模型更贴近基准的顺序和量值，仍分别存在低端偏低与高端偏高。所比较的平均排放信号则没有显示与其他信号同样清楚的有利低组区分。信号有助于选出低响应时段、给出的率值接近基准，以及能够预测某次计划的排放差，是逐步加深的要求，不能用其中一项的表现代替其余两项。",
+      "kind": "interpretation",
+      "scope": "原研究具名信号在低组区分与最大节点组率值比较中的不同表现",
+      "evidenceIds": [
+        "ev-shift107-signal-screening",
+        "ev-shift107-study-limits"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-shift107-signal-screening",
+          "relation": "supports",
+          "rationale": "图2的分组差与图3最大组的率值曲线分别给出这些限定结果；不作所有方法类别的普遍排名。"
+        },
+        {
+          "evidenceId": "ev-shift107-study-limits",
+          "relation": "qualifies",
+          "rationale": "作者、数据与分组选取及真实有限计划仍有独立性和外推限制。"
+        }
+      ],
+      "premiseIds": [
+        "cl-shift107-observed-proxy",
+        "cl-shift107-screening-and-rate"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "没有把平均信号各子区的估计都称为零或置信区间均含零，也没有将该信号用于平均归属的用途否定。"
+      ],
+      "reasoning": "同一信号可以在一种检验任务中有用，而未达到更强的量值或干预推断要求；分别保留实际比较对象。",
       "status": "reviewed",
       "reviewKind": "agent-source-check",
       "reviewedAt": "2026-11-15"

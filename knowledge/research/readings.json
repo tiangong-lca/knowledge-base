@@ -28076,6 +28076,236 @@
       "sourceKeys": [
         "src-hsg2013-lca-lcc"
       ]
+    },
+    {
+      "id": "rd-shift107-steinsultz-2024",
+      "workId": "work-shift107-steinsultz-2024",
+      "title": "Validating locational marginal emissions models with wind generation",
+      "version": "Environmental Research: Energy 1 (2024), 035008，IOP 正式刊版，2024-09-04 发表。REsurety 托管载体的 HTTP Last-Modified 为 2026-05-16，属于服务器记录。物理第 1 页是下载封面，正文印刷 pp. 1–10 对应物理第 2–11 页及零基 PDF 索引 1–10。",
+      "url": "https://doi.org/10.1088/2753-3751/ad72f6",
+      "accessedAt": "2026-11-15",
+      "readAt": "2026-11-15",
+      "readingStatus": "selected-passages",
+      "question": "用观测到的风能可用功率变化检验电力信号时，哪些证据支持筛选较低响应时段或估计单位电量响应率，又有哪些条件仍须为实际有限转移另行核实？",
+      "argumentSummary": "研究以 ERCOT 的逐小时风能可用功率变化估计全区运行 CO₂ 响应，并用各信号所选时段检验它们对较低响应的识别能力。节点价格可以筛出一组较低响应时段，但不能提供排放增量率。调度和统计模型在所示节点组中接近基准排序与率值，仍各有偏差。",
+      "artifacts": [
+        {
+          "id": "art-shift107-steinsultz-2024-vor",
+          "mediaType": "application/pdf",
+          "sha256": "871b8028bcecc9cdb0f41709417bb5a2f174591819015e4721e72a86d66f69d5",
+          "resolvedUrl": "https://resurety.com/wp-content/uploads/2026/05/Validating_Locational_Marginal_Emissions_Models_Wind_Generation.pdf",
+          "pageCount": 11
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-shift107-wind-design",
+          "artifactId": "art-shift107-steinsultz-2024-vor",
+          "locator": "物理第 3–6 页，印刷 pp. 2–5，§1 末、§§2.1–2.3，式 (3)–(6)。",
+          "topics": [
+            "wind generation potential",
+            "ERCOT hourly regression",
+            "net load proxy",
+            "node clusters",
+            "curtailment and endogeneity"
+          ],
+          "limits": [
+            "在所设控制条件下，估计全区排放如何随各组风电可用出力变化。将其按反方向解释为局部需求响应另需传递条件。全区全期系数的比较未检验节点、时段、方向或变化量上的等效。",
+            "式 (5) 的求和下标印作 0–4，正文定义四个节点组及独立的组外项。依正文说明描述设计，未用补充材料或代码澄清实现。报告的共线性检查和所引安慰剂检验各有范围，补充图未核读。"
+          ],
+          "printedPages": "2–5",
+          "pdfIndices": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "id": "psg-shift107-signal-screening",
+          "artifactId": "art-shift107-steinsultz-2024-vor",
+          "locator": "物理第 6–8 页，印刷 pp. 5–7，§§3.1–3.3，图 1–3 及表 1。",
+          "topics": [
+            "time window screening",
+            "benchmark marginal emissions",
+            "rank and calibration",
+            "locational marginal prices",
+            "average emission factors"
+          ],
+          "limits": [
+            "分组响应差不提供任意一对时段的真实顺序、逐小时率值精度或实际转移的 CO₂ 质量。节点价格的货币单位和平均排放率的估计对象均有别于增量排放率。",
+            "图 2 标注误差线为 95% 置信区间，表 1 将括号统计量标作标准差。表 1 表题用 kg CO₂/MW，图 1–2 轴和 §3.3 则用 kg CO₂/MWh。不给表 1 数值指定有限转移的计算角色。",
+            "分位点同值观测的实际归组规则未由原代码复核，不将阈值描述外推为每组严格占样本一成。"
+          ],
+          "printedPages": "5–7",
+          "pdfIndices": [
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "id": "psg-shift107-study-limits",
+          "artifactId": "art-shift107-steinsultz-2024-vor",
+          "locator": "物理第 9–10 页，印刷 pp. 8–9，§§3.4、4、图 4、数据可用性、致谢及利益冲突声明。",
+          "topics": [
+            "curtailment sensitivity",
+            "external validity",
+            "data availability",
+            "institutional affiliation",
+            "finite load shifts"
+          ],
+          "limits": [
+            "辨认出的弃电量不必然可供新增用电取用。结论外推到其他节点、电网、干预量、两端联动、长期响应或选址，需要相应检验。",
+            "仅核对正式刊版所述方法、报告结果和披露。未取得第三方底层数据，未审计判定过程、复现回归、核验候选信号软件或取得独立实证复现。"
+          ],
+          "printedPages": "8–9",
+          "pdfIndices": [
+            8,
+            9
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "独立来源核查阅读了下载封面与正式刊版全部 10 页，重点审阅正文印刷 pp. 1–9，并目视检查图 1–4 和表 1。参考文献页只核对书目身份。本登记按这些命题绑定选段及定位。",
+        "methodologicalScope": "从一个平衡区的自然变动回归及历史分组比较，分别判断时段筛选、排放响应率的量值及有限干预所需的现实证据。",
+        "independence": "风能可用功率回归的设计区别于比较对象的估计方法。四位作者任职于统计模型开发方 WattTime，一位作者任职于调度模型开发方 REsurety。统计模型与基准均使用 CAMPD。该研究以 2022 年调度模型信号相关性构造风电节点组，再按组内风能可用功率选择节点组。这些设计和来源关系限制了可声称的独立性。 作者报告 Meta 与 Microsoft 提供了部分研究资助。此次独立核读属于来源审查。 与本章另引Koebrich等作者预印本存在作者和机构交叠，不构成独立作者链的实证重复。",
+        "limitations": [
+          "气象预报、可输送电量和发电负荷的响应各有条件。全区全期的系数核对不代替接受和移出两端的匹配。",
+          "未取得第三方分析数据、复算统计或核验候选信号模型的实际软件版本。原文的方法判断和量值均限于作者报告与所示范围。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-15"
+      },
+      "rights": "正文首页（物理第 2 页、零基 PDF 索引 1）标明原文采用 CC BY 4.0，进一步分发须保留作者、题名、期刊引文和 DOI。论文底层第三方数据另有使用条款，未据文章许可推定数据再分发权。",
+      "unread": [
+        "正式刊版以外的补充材料未核读，包括补充图 1（安慰剂）和补充图 2（节点组地图）。",
+        "未核查第三方原始数据、研究分析代码、模型软件及候选信号原始序列。"
+      ],
+      "sourceKeys": [
+        "src-shift107-steinsultz-2024"
+      ]
+    },
+    {
+      "id": "rd-shift107-nilges-2025",
+      "workId": "work-shift107-nilges-2025",
+      "title": "Validity ranges of locational marginal emission factors for the environmental assessment of electric load shifting",
+      "version": "Applied Energy 380 (2025), 125069；2024-12-09 online；RWTH记录999510的正式刊版之实际网页文字选段，不是已保留的PDF原件",
+      "url": "https://publications.rwth-aachen.de/record/999510/files/999510.pdf",
+      "accessedAt": "2026-11-15",
+      "readAt": "2026-11-15",
+      "readingStatus": "web-sections",
+      "question": "一个局部边际排放系数在什么已明条件下能给出有限变化，单坐标区间与完整移峰方向又有什么区别？",
+      "argumentSummary": "作者由线性调度的最优基推导位置相关的边际排放率和有方向的单坐标范围。该范围针对指定模型；基保持可行提供条件保证，但不能把越界、因子变化和现实效果视为同一判断。",
+      "artifacts": [
+        {
+          "id": "art-shift107-nilges-method-text",
+          "kind": "derived-text",
+          "sha256": "244899a905933ba0e2d5e995ca4f4d996931d28f8ead7b43bec5aef729e27141",
+          "mediaType": "text/plain",
+          "originUrl": "https://publications.rwth-aachen.de/record/999510/files/999510.pdf",
+          "captureMethod": "公开机构PDF经网页文字提取通道返回，保留实际响应的选段、行序和定位；未取得原PDF字节，也未绕过HTML挑战页。响应中的检索标题与定位属于派生载体说明。",
+          "captureScope": "索引行114–192；273–428；467–549；672–755，多次定点打开的真实文字响应；重叠选段不算独立证据。",
+          "originalDocumentMediaType": "application/pdf",
+          "originalDocumentBytesAvailable": false
+        },
+        {
+          "id": "art-shift107-nilges-context-text",
+          "kind": "derived-text",
+          "sha256": "ca3230f9901a21cfe20cf05b5de9bec8d6935134c04a73d7827be041344aef45",
+          "mediaType": "text/plain",
+          "originUrl": "https://publications.rwth-aachen.de/record/999510/files/999510.pdf",
+          "captureMethod": "公开机构PDF经网页文字提取通道返回，保留实际响应的选段、行序和定位；未取得原PDF字节，也未绕过HTML挑战页。响应中的检索标题与定位属于派生载体说明。",
+          "captureScope": "索引行0–96；391–531；749–878，多次定点打开的真实文字响应；重叠选段不算独立证据。",
+          "originalDocumentMediaType": "application/pdf",
+          "originalDocumentBytesAvailable": false
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-shift107-nilges-basis",
+          "artifactId": "art-shift107-nilges-method-text",
+          "locator": "印刷pp3–4，§§2.1–2.3，所印式(1)–(2)、(5)–(12)及相关说明；实际文字索引行136–192、273–428",
+          "printedPages": "3–4（指定文字选段）",
+          "topics": [
+            "线性成本调度",
+            "局部排放导数",
+            "最优基可行范围",
+            "需求方向"
+          ],
+          "limits": [
+            "未把中间未捕获的索引行或正文交叉编号当成已归档原件。",
+            "单坐标界限不直接证明联合移峰；本书完整方向推导另有作者身份。"
+          ]
+        },
+        {
+          "id": "psg-shift107-nilges-context",
+          "artifactId": "art-shift107-nilges-context-text",
+          "locator": "印刷p1题名／许可；pp4–5 §3及前后选段；网页索引0–49、391–531",
+          "printedPages": "1；4–5（选段）",
+          "topics": [
+            "出版和许可",
+            "德国模型设定",
+            "固定容量与运营成本",
+            "案例范围"
+          ],
+          "limits": [
+            "所见为网页派生文字；补充资料和模型文件不在该读取范围。",
+            "具体完整实现含哪些跨期关系不能仅从§2的简式推定。"
+          ]
+        },
+        {
+          "id": "psg-shift107-nilges-limits",
+          "artifactId": "art-shift107-nilges-method-text",
+          "locator": "印刷pp8–9，§§4.3–4.4及结论开头；网页索引672–755",
+          "printedPages": "8–9（选段）",
+          "topics": [
+            "有限幅度",
+            "模型局限",
+            "电池规模对照",
+            "现实外推"
+          ],
+          "limits": [
+            "图表中的日内严格界限、模型场景和摘要概括各有范围；不是实测德国调度阈值或Texas阈值。",
+            "没有据此声称所有电池项目不能用边际信息分析。"
+          ]
+        },
+        {
+          "id": "psg-shift107-nilges-conclusion",
+          "artifactId": "art-shift107-nilges-context-text",
+          "locator": "印刷pp9–10，结论、数据声明、贡献与参考文献部分；网页索引749–878",
+          "printedPages": "9–10（选段）",
+          "topics": [
+            "模型结论",
+            "数据可得性",
+            "后续研究范围"
+          ],
+          "limits": [
+            "参考文献只作身份导航，没有据此升级所引各篇的阅读资格。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "主代理核读并保存两份真实网页文字选段；独立模型审查核对所列公式与条件，并通过出版社公开图像目视检查图3–5。原PDF字节未取得，文字快照的摘要不是PDF摘要。",
+        "methodologicalScope": "既定线性调度、选定最优基下的需求方向和有限范围，以及作者报告的德国模型输出；本书另推完整有符号方向与作者假想反例。",
+        "independence": "与ERCOT观测研究作者链不同，研究对象、数据和方法也不同；理论条件不是对同一电网干预的独立经验复现。",
+        "limitations": [
+          "原PDF字节、补充材料、SecMOD具体输入和原生运行未复核；不把网页可见等同于已归档完整原件。",
+          "式旁若干正文交叉编号与所印编号相差一位，引用按所印公式标签定位。",
+          "保持某个最优基可行是所选调度关系的保证；基变化不构成排放率必变或方向必反的必要性证明。基本变量可在端点为零，退化及成本并列最优须明确解的选择或排放是否确定。",
+          "模型给出的节点与方向区间不等于实际电网的普适阈值。主文单坐标分析及所示图并未验证一次跨时段联合移峰；不得从简式推定整个实现逐小时独立。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-15"
+      },
+      "rights": "出版版首页列CC BY4.0，RWTH开放记录及出版元数据相符；原文和第三方材料各守其许可。此项目公开原创释义、元数据与定位，不重传原件或文字快照，不据论文许可推定模型输入可再分发。",
+      "unread": [
+        "原PDF字节、未列出的文字／图像、独立补充材料和完整模型输入。",
+        "原生SecMOD回放、真实电网的联合负荷干预或独立经验验证。"
+      ],
+      "sourceKeys": [
+        "src-shift107-nilges-2025"
+      ]
     }
   ],
   "gaps": [
@@ -29035,6 +29265,15 @@
         "B10"
       ],
       "nextAction": "在扩大标准原文比较前核实适用的阅读与AI辅助使用授权及完整版本；ILCD/PEF的本轮独立可证比较继续完成。"
+    },
+    {
+      "id": "gap-shift107-empirical-paired-intervention",
+      "description": "尚无与本章特定两端服务、地点、时段和幅度相同的真实干预及反事实验证；风电代理、不同地区的模型范围和作者调度不能互相填补这一缺口。",
+      "affectedUnits": [
+        "B12",
+        "V7"
+      ],
+      "nextAction": "有合法数据和适用设计时，按同一边界检验实际移入／移出、其他调度反应和不确定性；原始数据、补充资料及源模型回放各自核定。"
     }
   ],
   "revisions": [
@@ -31649,6 +31888,25 @@
       ],
       "affectedUnits": [
         "B10"
+      ]
+    },
+    {
+      "id": "rev-finite-load-shift-107",
+      "before": "原章已分别给两个小时减载回放和不同验证对象，尚未把时段分组信号、局部因子与完整有限移峰的条件相接。",
+      "after": "新增风电潜力基准与最优基范围的有界对读，以及独立版本的作者两端移峰模型和接收率控制；旧原生回执及数值不变。",
+      "reasoning": "区分低组筛选、率值、有限方向和现实效果；不把不同地区或方法的材料拼作一次共同实证。",
+      "status": "source-compared-candidate-prose-pending-independent-reader-review",
+      "triggerPassageIds": [
+        "psg-shift107-wind-design",
+        "psg-shift107-signal-screening",
+        "psg-shift107-study-limits",
+        "psg-shift107-nilges-basis",
+        "psg-shift107-nilges-context",
+        "psg-shift107-nilges-limits",
+        "psg-shift107-nilges-conclusion"
+      ],
+      "affectedUnits": [
+        "B12"
       ]
     }
   ]
