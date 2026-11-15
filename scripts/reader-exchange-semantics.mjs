@@ -1,3 +1,4 @@
+import { loadShiftEvaluationFile } from './reader-load-shift.mjs';
 import { serviceConstraintsEvaluationFile } from './reader-service-constraints.mjs';
 import { visibleHistoryControl } from './reader-flow-boundary.mjs';
 import { historyPrintPointerTitleLayout } from './reader-copyedit.mjs';
@@ -289,7 +290,7 @@ export function validateExchangeAnnotationOutput(document,unit,route,catalog,{pr
       }
     });
     const inputs = annotation.querySelectorAll('a').filter(link => link.getAttribute('href')?.startsWith('/downloads/cases/'));
-    const resultFile = serviceConstraintsEvaluationFile(binding);
+    const resultFile = serviceConstraintsEvaluationFile(binding) ?? loadShiftEvaluationFile(binding);
     const downloads = showInput && binding?.inputFile ? [[binding.inputFile, '下载计算输入'], ...(resultFile ? [[resultFile, '下载计算结果']] : [])] : [];
     if (inputs.length !== downloads.length || downloads.some(([file, label], index) => {
       const link = inputs[index];

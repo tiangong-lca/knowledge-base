@@ -1,0 +1,74 @@
+{
+  "caseId": "CASE-FINITE-LOAD-SHIFT",
+  "version": "1.0.0",
+  "model": "two-period-cost-minimizing-dispatch-v1",
+  "createdAt": "2026-11-15",
+  "status": "hypothetical-teaching-model",
+  "numericProvenanceDefault": "Author stipulations. No input, scenario or result is a measurement, a published emission factor or a replay of source software.",
+  "units": {
+    "service": "work unit",
+    "duration": "h",
+    "power": "MW",
+    "energy": "MWh",
+    "energyPerWorkUnit": "MWh/work unit",
+    "variableCost": "arbitrary cost unit/MWh",
+    "cost": "arbitrary cost unit",
+    "directEmissionsRate": "kg CO2/MWh",
+    "netShiftRate": "kg CO2/MWh moved",
+    "directEmissions": "kg CO2"
+  },
+  "service": {
+    "requiredWorkUnits": "10",
+    "electricityMWhPerWorkUnit": "1",
+    "deliveryPoint": "one shared lossless electricity node",
+    "deadline": "end of the receiving window",
+    "premise": "Divisible work can be performed in either window with identical performance, electricity per work unit and delivered service. The workload fits either window, and every unit is completed by the common deadline. Baseline work is all in the sending window."
+  },
+  "dispatch": {
+    "objective": "Minimize total variable generation cost given the demand profile in each window.",
+    "premises": "Generation is divisible with zero minimum output. Plant capacity, variable cost, direct emissions rate and all other demand remain fixed. The windows have independent dispatch with no storage, intertemporal ramping or start-up constraints. No imports, exports, network constraints or losses are modeled.",
+    "scope": "Short-run direct generation CO2 only. No other greenhouse gases, life-cycle inventory, capacity response or real intervention is evaluated."
+  },
+  "periods": {
+    "sending": {
+      "durationHours": "1",
+      "unshiftableMWh": "0",
+      "generators": [
+        {
+          "id": "sending-1",
+          "capacityMW": "5",
+          "variableCostPerMWh": "10",
+          "directCO2KgPerMWh": "100"
+        },
+        {
+          "id": "sending-2",
+          "capacityMW": "10",
+          "variableCostPerMWh": "20",
+          "directCO2KgPerMWh": "700"
+        }
+      ]
+    },
+    "receiving": {
+      "durationHours": "1",
+      "unshiftableMWh": "5",
+      "generators": [
+        {
+          "id": "receiving-1",
+          "capacityMW": "10",
+          "variableCostPerMWh": "10",
+          "directCO2KgPerMWh": "300"
+        },
+        {
+          "id": "receiving-2",
+          "capacityMW": "5",
+          "variableCostPerMWh": "20",
+          "directCO2KgPerMWh": "600"
+        }
+      ]
+    }
+  },
+  "equalReceivingRatesControl": {
+    "receivingSecondGeneratorRateKgCO2PerMWh": "300",
+    "premise": "Replace only the direct emissions rate of receiving-2 with the rate of receiving-1. The receiving-window dispatch can change while its directional emissions rate remains constant."
+  }
+}

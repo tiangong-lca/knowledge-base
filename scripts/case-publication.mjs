@@ -1,3 +1,4 @@
+import { finiteLoadShiftInputShape, validateFiniteLoadShiftCase, evaluateFiniteLoadShiftCase, validateFiniteLoadShiftFacts } from './finite-load-shift-case.mjs';
 import { serviceConstraintsInputShape, validateServiceConstraintsCase, evaluateServiceConstraintsCase, validateServiceConstraintsFacts } from './service-constraints-case.mjs';
 import { createHash } from 'node:crypto';
 import { climateMetricsInputShape, validateClimateMetricsCase, evaluateClimateMetricsCase, validateClimateMetricsFacts, validateClimateMetricsWallLink } from './climate-metrics.mjs';
@@ -99,6 +100,8 @@ const pedigreeInputShape = {
 // Closed model registry: a case identity selects its projection, evaluator and
 // numeric-source policy together. An input flag cannot disable wall fact checks.
 const caseAdapters = new Map([
+  ['CASE-FINITE-LOAD-SHIFT', { shape: finiteLoadShiftInputShape, validate: validateFiniteLoadShiftCase,
+    context: input => ({ evaluated: evaluateFiniteLoadShiftCase(input) }), validateFacts: validateFiniteLoadShiftFacts }],
   ['CASE-SERVICE-CONSTRAINTS', { shape: serviceConstraintsInputShape, validate: validateServiceConstraintsCase,
     context: input => ({ evaluated: evaluateServiceConstraintsCase(input) }), validateFacts: validateServiceConstraintsFacts }],
   ['CASE-CLIMATE-METRICS', { shape: climateMetricsInputShape, validate: validateClimateMetricsCase,

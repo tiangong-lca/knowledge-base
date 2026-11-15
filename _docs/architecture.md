@@ -17,10 +17,40 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-15
-lastReviewedCommit: 259a0f4c032f6716c263e45bb0355c87796cb0e1
+lastReviewedCommit: 9a7103707cc275b6b7777acd56336d4c84d9af6b
 ---
 
 # Publication architecture
+
+## Finite load-shift successor
+
+The #107 B12 unit extends the bounded successor chain with one closed authored
+dispatch case. It restores actual prior file bytes before #105 and #102 run:
+the exact original B12 MDX, the registry with only the two declared additions
+removed, and the absence of the three new case assets. Restoring fingerprints
+without restoring the raw file map is insufficient. The preceding three raw
+knowledge objects and all older case contracts retain their own qualification.
+
+Current input and evaluated-result downloads are checked against the exact case
+version and actual producer commit. The #107-active check also verifies the
+retained B12 power case's canonical input and evaluated bytes. This is a bounded
+additional guard, not a claim of new universal producer-header enforcement for
+all older case files. The actual exporter still generates all registered cases.
+
+The independent capture binds raw file digests and lengths to normalized public
+HTML and per-path/per-route article digests measured from those same physical
+files. Two print articles cannot trade fingerprints merely because they share a
+file path. Capture identity includes the normalization-proof digest and remains
+part of the output-review subject. Re-signing candidate summaries cannot attach
+uncaptured normalized text to an older raw HTML capture.
+
+B12's preserved ordinary table has an exact native target, with unchanged cells
+and separately checked visibility. The scoped history renderer admits that table
+alongside this unit's paragraphs; older guards keep their original tag policies.
+Only #107 versioned ordinary targets receive scroll margin below sticky headers.
+Actual no-script keyboard checks supplement DOM visibility with viewport bounds
+and first-cell hit tests. Private technical admissions and fixture receipts do
+not provide the separate editorial source, reader or output acceptance.
 
 ## Bounded comparative successor
 

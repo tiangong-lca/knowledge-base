@@ -20,7 +20,9 @@ const serviceConfigPath = 'config/reader-service-constraints.json';
 const serviceModulePath = 'scripts/reader-service-constraints.mjs';
 const substitutionConfigPath = 'config/reader-substitution-rules.json';
 const substitutionModulePath = 'scripts/reader-substitution-rules.mjs';
-const fixtureAliases = new Set([serviceModulePath, substitutionModulePath].map(path => `@/${path}`));
+const shiftConfigPath = 'config/reader-load-shift.json';
+const shiftModulePath = 'scripts/reader-load-shift.mjs';
+const fixtureAliases = new Set([serviceModulePath, substitutionModulePath, shiftModulePath].map(path => `@/${path}`));
 const flowPinPath = 'scripts/reader-flow-boundary-pins.mjs';
 
 async function loadArchive() {
@@ -69,7 +71,7 @@ async function materialize(root) {
     .map(entry => `scripts/${entry.name}`);
   const components = ['components/evidence.tsx', 'components/numbered-heading.tsx', 'components/chapter-content.tsx'];
   const current = [...configs, ...scripts, ...components, 'lib/teaching-case.ts']
-    .filter(path => ![copyeditConfigPath, copyeditPinPath, flowConfigPath, flowPinPath, serviceConfigPath, serviceModulePath, substitutionConfigPath, substitutionModulePath].includes(path));
+    .filter(path => ![copyeditConfigPath, copyeditPinPath, flowConfigPath, flowPinPath, serviceConfigPath, serviceModulePath, substitutionConfigPath, substitutionModulePath, shiftConfigPath, shiftModulePath].includes(path));
   const currentCopyeditPin = await readFile(join(repo, copyeditPinPath), 'utf8');
   const copyeditUnitPin = /^export const readerCopyeditUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
   assert.equal([...currentCopyeditPin.matchAll(copyeditUnitPin)].length, 1);
@@ -82,10 +84,13 @@ async function materialize(root) {
   const currentSubstitutionModule = await readFile(join(repo, substitutionModulePath), 'utf8');
   const substitutionUnitPin = /^export const substitutionRulesUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
   assert.equal([...currentSubstitutionModule.matchAll(substitutionUnitPin)].length, 1);
+  const currentShiftModule = await readFile(join(repo, shiftModulePath), 'utf8');
+  const shiftUnitPin = /^export const loadShiftUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
+  assert.equal([...currentShiftModule.matchAll(shiftUnitPin)].length, 1);
   // The only archived script is the independently selected old edition pin.
   // All validation code, including the expectation resolver, comes from the
   // current worktree and runs under the historical book data in this directory.
-  // The later #95, #99, #102, and #105 units are inactive only in this isolated legacy fixture.
+  // The later #95, #99, #102, #105, and #107 units are inactive only in this isolated legacy fixture.
   assert.deepEqual(Object.keys(archived).filter(path => path.startsWith('scripts/')), [pinPath]);
   await Promise.all([
     ...current.filter(path => !Object.hasOwn(archived, path)).map(path => copyCurrent(root, path)),
@@ -98,6 +103,8 @@ async function materialize(root) {
     write(root, serviceModulePath, currentServiceModule.replace(serviceUnitPin, 'export const serviceConstraintsUnitPin = null;')),
     write(root, substitutionConfigPath, JSON.stringify({ schemaVersion: 1, status: 'inactive', unit: null })),
     write(root, substitutionModulePath, currentSubstitutionModule.replace(substitutionUnitPin, 'export const substitutionRulesUnitPin = null;')),
+    write(root, shiftConfigPath, JSON.stringify({ schemaVersion: 1, status: 'inactive', unit: null })),
+    write(root, shiftModulePath, currentShiftModule.replace(shiftUnitPin, 'export const loadShiftUnitPin = null;')),
     symlink(join(repo, 'node_modules'), join(root, 'node_modules'), process.platform === 'win32' ? 'junction' : 'dir'),
   ]);
 }

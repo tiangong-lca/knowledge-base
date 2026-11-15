@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "kind": "reader",
+  "unit": "load-shift-107",
+  "subjectSha256": "bfb63556e34e57fd3c1143f200a0b8d7c8a79c7a06884dcd823438c84d0ca979",
+  "date": "2026-11-15",
+  "scope": [
+    "scripts/case-publication.mjs",
+    "content/docs/book/electricity-service-and-response.mdx",
+    "knowledge/cases/finite-load-shift-v1.publication.json",
+    "knowledge/cases/finite-load-shift-v1.json",
+    "scripts/finite-load-shift-case.mjs",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:order:sources",
+    "researchMetadata:order:readings",
+    "researchMetadata:order:gaps",
+    "researchMetadata:order:revisions",
+    "researchMetadata:order:literature",
+    "researchMetadata:order:queries",
+    "researchMetadata:public-projection",
+    "claims:cl-shift107-complete-action",
+    "claims:cl-shift107-observed-proxy",
+    "claims:cl-shift107-screening-and-rate",
+    "claims:cl-shift107-model-range",
+    "claims:cl-shift107-joint-direction",
+    "claims:cl-shift107-service",
+    "claims:cl-shift107-supply",
+    "claims:cl-shift107-small",
+    "claims:cl-shift107-large",
+    "claims:cl-shift107-control",
+    "claims:cl-shift107-comparison-judgment",
+    "claims:cl-shift107-signal-comparison",
+    "evidence:ev-shift107-wind-design",
+    "evidence:ev-shift107-signal-screening",
+    "evidence:ev-shift107-study-limits",
+    "evidence:ev-shift107-model-range",
+    "evidence:ev-shift107-model-limits",
+    "sources:src-shift107-steinsultz-2024",
+    "sources:src-shift107-nilges-2025",
+    "readings:rd-shift107-steinsultz-2024",
+    "readings:rd-shift107-nilges-2025",
+    "gaps:gap-shift107-empirical-paired-intervention",
+    "revisions:rev-finite-load-shift-107",
+    "literature:work-shift107-steinsultz-2024",
+    "literature:work-shift107-nilges-2025",
+    "queries:q-shift107-model-and-field-20261115"
+  ],
+  "observed": "Completed scoped agent review of actual source, reader and preserved physical output evidence; no human or empirical certification.",
+  "observations": {
+    "routes": [
+      "/docs/book/electricity-service-and-response"
+    ],
+    "history": [
+      "/docs/book/electricity-service-and-response#nd-page",
+      "/docs/book/electricity-service-and-response#main-content",
+      "/docs/book/electricity-service-and-response#平均与响应为何不是同一个估计",
+      "/docs/book/electricity-service-and-response#把响应接回生命周期问题",
+      "/docs/book/electricity-service-and-response#chapter-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-annotations",
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365",
+      "/print#print-reading-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365",
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-平均与响应为何不是同一个估计",
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-把响应接回生命周期问题",
+      "/print#print-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365-annotations"
+    ],
+    "assessment": {
+      "scienceCandidate": "2e69ae04f649ac4c05d2e0e1136b3dc4426b4fa4",
+      "scope": "A fresh independent reader read the whole69-paragraph initial chapter, actual MDX/notes, new case, relevant AVERT/Cambium and B11/B13 handoffs, and independently reconstructed the numbers. Bounded reread then reviewed the corrected twelve additions and70-paragraph arrangement; it did not claim a second full-paper or whole-book reading.",
+      "findings": "Corrected the false necessity of independent endpoints and then tied both coefficients to the same baseline response along the joint change. Clarified forecast HSL/opposite direction/aggregate emissions, threshold versus fixed fraction, concrete five-signal comparisons, same-node/no-loss/service units, continued feasibility and q9 cancellation, additional receiving generation, and the estimate status of subsequent Cambium coefficient weighting. Source labels distinguish the book example from both papers.",
+      "answers": [
+        "q0/5/9/10 all complete10 work units and use15MWh. Their total emissions are5500/3500/5500/6000kg. q9 zero difference is cancellation between changed endpoints, not zero generation or emissions.",
+        "The empirical source compares signal-conditioned historical groups and conditional wind-proxy responses. It does not establish all pairwise rankings, hourly rate accuracy or the finite effect of an actual matching plan.",
+        "A selected consistent response remaining valid along the complete signed direction can justify the baseline-rate sum. Beyond its certificate the prediction can be wrong, equal or differently signed. The equal receiving-rate control holds only that endpoint’s slope; the paired slope still changes.",
+        "A battery needs actual unequal charge/discharge energy when losses occur, power/time traces, comparable initial/final stored energy and joint operating constraints. Same service, model applicability and actual intervention evidence remain distinct requirements."
+      ],
+      "limits": "Agent comprehension and editorial review do not establish human learning, domain-expert certification, empirical causal validity or completed programme9."
+    },
+    "independentReports": {
+      "independent-empirical-source-review.md": "cbaa0a9380788807c9db01a6447a775a135e2586033f8561d7630d954442404f",
+      "independent-model-source-review.md": "a6b038cccdbd9bfc80567f645d03c697a74c61085624617ffad6a489e05b0b0f",
+      "independent-reader-review.md": "0eb3d7484e73b3e1e5e66e8ed7b57bacc78eaadd6face7006b3748473d876725",
+      "independent-engineering-review.md": "719a0923673c55f78b9358fde44c82f1fd59ec145b172c18fa59353c650c0e70",
+      "model-implementation.md": "edeffe797f44334f3978295b1cdd9ecfc0791a9c465daf9e097be4b1c5114df5",
+      "primary-scroll-fixed-export-rehash.json": "03ec2a2d5213e4e22fb9249793386eeb6bbe3e1774394511d2803553cc789ae3",
+      "browser-qa-fixed/responsive-script-enabled.json": "679bf6e054e38b74542d4a396ab58b987c172f9a1562c2ec3482b1e808c6f074",
+      "browser-qa-fixed/interactions.json": "8bbb3d76733827dcee8c02d0411afba694bee6f5a2f739aff323c0b470d11ef4"
+    }
+  }
+}
