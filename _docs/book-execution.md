@@ -43,9 +43,19 @@ argument beyond the already published column-rescaling and target-loss examples.
 [Issue102](https://github.com/tiangong-lca/knowledge-base/issues/102) is the first
 bounded scientific unit: process representations that preserve or lose independent
 service-demand constraints. Its original-source investigation is separate from
-this rule-adoption delivery; public changes will start from freshly qualified
-Main after101. Each subsequent scientific unit needs its own create/start, original evidence,
+this rule-adoption delivery. It starts from qualified Main10dc686, with nine new
+B07 explanations, the selected HSG original and a versioned static case. The
+separate service-constraints-102 acceptance binds source, independent reader and
+actual-output judgments; the [unit protocol](editorial/2026-11-15-service-constraints.md)
+records the original20/reconstructed2 conflict and the corrected restoration scope.
+Current source, hosted and root delivery state remains on Issue102; a local
+acceptance does not certify those later steps or the entire first batch.
+Each subsequent scientific unit needs its own create/start, original evidence,
 actual manuscript/reviews and exact source/root delivery.
+
+Rule adoption101 itself is fully delivered: PR103/Main10dc686 and
+root2381/PR2382/Main90bcaa574, with complete ordinary source/root handoff receipts.
+Programme9 retains all eight pending global criteria and this continuing GOAL.
 
 The pilot itself is complete: source Main `0fd2c7bea8733f426c46fff1dd175119a257b13a`
 (PR100), root Main `cb13d111d2c41ba8496c566f53fbac98094976a0` (PR2379), qualified
