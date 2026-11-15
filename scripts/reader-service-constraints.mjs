@@ -8,7 +8,7 @@ import { observeFlowBoundaryChanges, groupHistoricalRanges, validateDatedHistory
 export const serviceConstraintsId = 'service-constraints-102';
 export const serviceConstraintsChapter = '/docs/book/inventory-calculation';
 /** @type {string|null} */
-export const serviceConstraintsUnitPin = null;
+export const serviceConstraintsUnitPin = '9b1ce22b366a857a0d83bbc253ed777f1576e5beb947eb984cbf19d006c786a0';
 export const serviceConstraintsSource = Object.freeze({
   commit: '10dc686fe9316dbb42b91adefe821d9e55ea4e29',
   tree: 'd46f57a2d226a0b82dbff73e598b83792efb2ed7',
