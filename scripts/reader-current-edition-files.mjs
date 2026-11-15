@@ -1,3 +1,4 @@
+import { selectLoadShift, readLoadShiftCaseFiles, prepareLoadShiftSource, effectiveLoadShift, verifyLoadShiftReceipts } from './reader-load-shift.mjs';
 import { selectSubstitutionRules, prepareSubstitutionRulesSource, effectiveSubstitutionRules, verifySubstitutionRulesReceipts } from './reader-substitution-rules.mjs';
 import { loadCasePublications } from './case-publication.mjs';
 import { selectServiceConstraints, readServiceConstraintsFiles, prepareServiceConstraintsSource, effectiveServiceConstraints, verifyServiceConstraintsReceipts } from './reader-service-constraints.mjs';
@@ -41,6 +42,9 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const serviceConstraints = selectServiceConstraints(serviceConfig, undefined, preview === 'service');
   const substitutionConfig = await readConfig('reader-substitution-rules.json');
   const substitutionRules = selectSubstitutionRules(substitutionConfig, undefined, preview === 'substitution');
+  const loadShiftConfig = await readConfig('reader-load-shift.json');
+  const loadShift = selectLoadShift(loadShiftConfig, undefined, preview === 'load-shift');
+  if (preview === 'load-shift' && loadShiftConfig.status !== 'preview') throw new Error('Load shift review requires a private preview state');
   if (preview === 'substitution' && substitutionConfig.status !== 'preview')
     throw new Error('Substitution rules review requires a private preview state');
   if (preview === 'service' && serviceConfig.status !== 'preview') throw new Error('Service constraints review requires a private preview state');
@@ -50,8 +54,10 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (flowBoundary && !unit) throw new Error('Flow boundary requires the accepted #95 language generation');
   if (serviceConstraints && !flowBoundary) throw new Error('Service constraints requires the accepted #99 generation');
   if (substitutionRules && !serviceConstraints) throw new Error('Substitution rules requires the accepted #102 generation');
+  if (loadShift && !substitutionRules) throw new Error('Load shift requires the accepted #105 generation');
+  for (const [path, bytes] of await readLoadShiftCaseFiles(root, loadShift)) files.set(path, bytes);
   for (const [path, bytes] of await readServiceConstraintsFiles(root, serviceConstraints)) files.set(path, bytes);
-  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules].filter(Boolean)];
+  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift].filter(Boolean)];
   const realRoot = await realpath(root);
   const reviewFiles = new Set((reviewUnits ?? []).flatMap(unit =>
     (unit.reviewEvidence ?? []).flatMap(row => [row.reportFile, row.artifactFile])));
@@ -66,9 +72,13 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const input = { catalog, readings, literature, files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
-  const substitution = substitutionRules && prepareSubstitutionRulesSource(substitutionRules, input, actual, structure);
+  const shift = loadShift && prepareLoadShiftSource(loadShift, input, actual, structure);
+  shift?.verifyCurrentState();
+  const substitutionInput = shift ? { ...shift.previousRecords, files: shift.files } : input;
+  const substitution = substitutionRules && prepareSubstitutionRulesSource(substitutionRules, substitutionInput,
+    shift?.previous ?? actual, shift?.structure ?? structure);
   substitution?.verifyCurrentState();
-  const previousRecords = substitution?.previousRecords ?? input;
+  const previousRecords = substitution?.previousRecords ?? substitutionInput;
   if (flowBoundary && !verifyFlowBoundaryReceipts(flowBoundary, artifacts))
     throw new Error('Flow boundary lacks exact independent source, reader, and output evidence');
   if (serviceConstraints && preview !== 'service') {
@@ -80,11 +90,16 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   }
   if (substitutionRules && preview !== 'substitution') {
     const { readerPublicDownloads } = await import('./reader-current-output.mjs');
-    if (!verifySubstitutionRulesReceipts(substitutionRules, artifacts, readerPublicDownloads(catalog, literature, readings)))
+    if (!verifySubstitutionRulesReceipts(substitutionRules, artifacts, readerPublicDownloads(substitutionInput.catalog, substitutionInput.literature, substitutionInput.readings)))
       throw new Error('Substitution rules lacks exact independent source, reader, and output evidence');
   }
+  if (loadShift && preview !== 'load-shift') {
+    const [cases, { readerPublicDownloads }] = await Promise.all([loadCasePublications(root), import('./reader-current-output.mjs')]);
+    if (!verifyLoadShiftReceipts(loadShift, artifacts, readerPublicDownloads(catalog, literature, readings), cases))
+      throw new Error('Load shift lacks exact independent source, reader, and output evidence');
+  }
   const service = serviceConstraints && prepareServiceConstraintsSource(serviceConstraints, substitution?.previous ?? actual,
-    substitution?.structure ?? structure, { ...previousRecords, files });
+    substitution?.structure ?? structure, { ...previousRecords, files: substitutionInput.files });
   const flow = flowBoundary && prepareFlowBoundarySource(flowBoundary, service?.previous ?? actual,
     service?.previous.structure ?? structure, flowBoundaryPredecessorPin, service?.previousRecords ?? { readings, catalog });
   if (!unit) return qualifyReadableBookEdition(baseline, readableBookBaselineDigest, acceptance, readableBookAcceptancePins, actual, artifacts);
@@ -107,7 +122,8 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   service?.verifyCurrentState();
   const qualifiedFlow = effectiveFlowBoundary(effectiveReaderCopyedit(qualified, unit), flowBoundary, flow?.affectedClaimIds ?? []);
   const qualifiedService = effectiveServiceConstraints(qualifiedFlow, serviceConstraints, service?.affectedClaimIds);
-  return effectiveSubstitutionRules(qualifiedService, substitutionRules, substitution?.affectedClaimIds);
+  const qualifiedSubstitution = effectiveSubstitutionRules(qualifiedService, substitutionRules, substitution?.affectedClaimIds);
+  return effectiveLoadShift(qualifiedSubstitution, loadShift, shift?.affectedClaimIds);
 }
 
 export function validateReadableBookCurrent(root, catalog, readings, literature) {
@@ -124,4 +140,9 @@ export function validateSubstitutionRulesReviewSources(root, catalog, readings, 
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Substitution rules review requires the explicit private preview');
   return qualifyCurrentReaderSources(root, catalog, readings, literature, 'substitution');
+}
+
+export function validateLoadShiftReviewSources(root, catalog, readings, literature) {
+  if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1') throw new Error('Load shift review requires the explicit private preview');
+  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'load-shift');
 }

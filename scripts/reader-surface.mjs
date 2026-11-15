@@ -1,3 +1,4 @@
+import { loadShiftPreviousSurface, observeLoadShiftCaseOutputs, qualifyLoadShiftHistory } from './reader-load-shift.mjs';
 import { qualifySubstitutionRulesHistory, substitutionRulesPreviousSurface } from './reader-substitution-rules.mjs';
 import { loadCasePublications } from './case-publication.mjs';
 import { qualifyServiceConstraintsHistory, observeServiceConstraintsOrdinaryTargets, observeServiceConstraintsCaseOutputs, validateServiceConstraintsHistoryOutput, serviceConstraintsPreviousSurface } from './reader-service-constraints.mjs';
@@ -15,7 +16,7 @@ import { assertClosingSynthesisOriginal, assertClosingSynthesisHeadingHistory, a
 import { assertWallSelectionOriginal, assertWallSelectionHeadingHistory, assertWallSelectionAccepted, wallSelectionHeadingEntries, remapWallSelectionCitations, validateWallSelectionCoverage, validateRenderedWallSelection } from './reader-wall-selection.mjs';
 import { validateReaderNumberingOutput } from './reader-numbering-output.mjs';
 import { assertReaderNumbering } from './reader-numbering.mjs';
-import { validateReadableBookCurrent, validateServiceConstraintsReviewSources, validateSubstitutionRulesReviewSources } from './reader-current-edition-files.mjs';
+import { validateReadableBookCurrent, validateServiceConstraintsReviewSources, validateSubstitutionRulesReviewSources, validateLoadShiftReviewSources } from './reader-current-edition-files.mjs';
 import { qualifyReadableBookCitations } from './reader-current-citations.mjs';
 import { validateReadableBookPublicArtifacts, validateReadableBookReviewedOutput } from './reader-current-output.mjs';
 import { qualifyCurrentHistoricalDocument, validateCurrentHistoricalContexts } from './reader-publication-text.mjs';
@@ -160,7 +161,7 @@ function aliasDestination(node) {
   return sibling?.id === target ? target : null;
 }
 
-const citationScopeExclusions = '.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope],[data-copyedit-history],[data-flow-boundary-history],[data-service-constraints-history],[data-substitution-rules-history],.docs-pagination,.reader-view-label,.teaching-case';
+const citationScopeExclusions = '.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope],[data-copyedit-history],[data-flow-boundary-history],[data-service-constraints-history],[data-substitution-rules-history],[data-load-shift-history],.docs-pagination,.reader-view-label,.teaching-case';
 const ordinaryCitationBlocks = 'p,ul,ol,dl,blockquote,pre,table,figure';
 
 function nativeCitationScopes(document) {
@@ -314,7 +315,8 @@ export function getHistoricalCitationEntries(sourceBaseline, locations, history,
   return entries;
 }
 
-export function validateReadableBookOrdinaryDestinations(pages, entry, address, flowBoundary) {
+export function validateReadableBookOrdinaryDestinations(pages, entry, address, flowBoundary,
+  priorSurface = (key, actual) => flowBoundaryPreviousSurface(key, actual, flowBoundary)) {
   const errors = [];
   for (const row of entry.ordinaryDispositions ?? []) {
     for (const destination of row.destinations) {
@@ -322,7 +324,7 @@ export function validateReadableBookOrdinaryDestinations(pages, entry, address, 
       const actual = target && pages.get(target.path)?.ids.get(target.id);
       if (!actual || (destination.currentSha256
         ? !actual.ordinaryHashes.includes(destination.currentSha256)
-          && !flowBoundaryPreviousSurface(destination.address, actual, flowBoundary).ordinaryHashes.includes(destination.currentSha256)
+          && !priorSurface(destination.address, actual).ordinaryHashes.includes(destination.currentSha256)
         : !actual.claimIds.includes(destination.claimId))) {
         errors.push(`${address}: actual ordinary-content destination differs: ${destination.address}`);
       }
@@ -340,9 +342,10 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
   const copyedit = copyeditHistoryPlan(book?.current?.copyedit);
   const serviceConstraints = book?.current?.serviceConstraints;
   const substitutionRules = book?.current?.substitutionRules;
+  const loadShift = book?.current?.loadShift;
   const entries = relabelHistoricalTargets(flowBoundaryCitationEntries(
     copyeditHistoryEntries(getHistoricalCitationEntries(sourceBaseline, locations, history, historicPrintRoutes, book), copyedit),
-    book?.current?.flowBoundary), [...serviceConstraints?.routes ?? [], ...substitutionRules?.routes ?? []]);
+    book?.current?.flowBoundary), [...serviceConstraints?.routes ?? [], ...substitutionRules?.routes ?? [], ...loadShift?.routes ?? []]);
   const addresses = new Set();
   for (const entry of entries) {
     const address = `${entry.path}#${entry.id}`;
@@ -374,13 +377,17 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
   errors.push(...validateFlowBoundaryHistoryOutput(documents, book?.current?.flowBoundary));
   errors.push(...validateServiceConstraintsHistoryOutput(documents, serviceConstraints));
   const previousSurface = (address, actual) => flowBoundaryPreviousSurface(address,
-    serviceConstraintsPreviousSurface(address, substitutionRulesPreviousSurface(address, actual, substitutionRules), serviceConstraints), book?.current?.flowBoundary);
-  if (serviceConstraints && book?.sourceRoot) {
-    await observeServiceConstraintsCaseOutputs(root, serviceConstraints, await loadCasePublications(book.sourceRoot), book.sourceCommit);
+    serviceConstraintsPreviousSurface(address, substitutionRulesPreviousSurface(address, loadShiftPreviousSurface(address, actual, loadShift), substitutionRules), serviceConstraints), book?.current?.flowBoundary);
+  if ((serviceConstraints || loadShift) && book?.sourceRoot) {
+    const cases = await loadCasePublications(book.sourceRoot);
+    if (serviceConstraints) await observeServiceConstraintsCaseOutputs(root, serviceConstraints, cases, book.sourceCommit);
+    if (loadShift) await observeLoadShiftCaseOutputs(root, loadShift, cases, book.sourceCommit);
   }
   if (copyedit) {
     const currentAddresses = observeCopyeditHistory(documents, readerNumberingManifest, readCitationSurface);
-    const substitutionHistory = qualifySubstitutionRulesHistory(documents, substitutionRules, currentAddresses);
+    const shiftHistory = qualifyLoadShiftHistory(documents, loadShift, currentAddresses);
+    errors.push(...shiftHistory.errors);
+    const substitutionHistory = qualifySubstitutionRulesHistory(documents, substitutionRules, shiftHistory.prior);
     errors.push(...substitutionHistory.errors);
     const priorAddresses = serviceConstraints
       ? qualifyServiceConstraintsHistory(serviceConstraints, substitutionHistory.prior, observeServiceConstraintsOrdinaryTargets(documents))
@@ -392,8 +399,8 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
     // Article fingerprints already checked the complete normalized output.
     // Earlier chapter predicates inspect a prose projection after the new
     // historical apparatus has independently passed its exact DOM checks.
-    if (!copyeditErrors.length && !substitutionHistory.errors.length) for (const document of documents.values()) {
-      for (const notice of document.querySelectorAll('[data-copyedit-history],[data-flow-boundary-history],[data-service-constraints-history],[data-substitution-rules-history]')) notice.remove();
+    if (!copyeditErrors.length && !substitutionHistory.errors.length && !shiftHistory.errors.length) for (const document of documents.values()) {
+      for (const notice of document.querySelectorAll('[data-copyedit-history],[data-flow-boundary-history],[data-service-constraints-history],[data-substitution-rules-history],[data-load-shift-history]')) notice.remove();
     }
   }
   for (const [path, document] of documents) {
@@ -431,7 +438,7 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
     }
     errors.push(...validateHistoricalScope(
       previousSurface(`${entry.path}#${entry.id}`, source), entry, address));
-    errors.push(...validateReadableBookOrdinaryDestinations(pages, entry, address, book?.current?.flowBoundary));
+    errors.push(...validateReadableBookOrdinaryDestinations(pages, entry, address, book?.current?.flowBoundary, previousSurface));
     for (const target of [...entry.targets, ...(entry.scope?.targets ?? [])]) {
       const actual = pages.get(target.path)?.ids.get(target.id);
       const semanticMatch = actual?.route === target.route && (
@@ -600,7 +607,8 @@ async function validatePublicationOutput(root, { knownIds = new Set(), sourceCom
       const sourceRoot = resolve(root, '..');
       let current, hostedHistory;
       if (requireCurrent) {
-        const qualify = preview === 'substitution' ? validateSubstitutionRulesReviewSources
+        const qualify = preview === 'load-shift' ? validateLoadShiftReviewSources
+          : preview === 'substitution' ? validateSubstitutionRulesReviewSources
           : preview === 'service' ? validateServiceConstraintsReviewSources : validateReadableBookCurrent;
         current = await qualify(sourceRoot, catalog, readings, literature);
         hostedHistory = await readConfig('readable-book-hosted-history.json');
@@ -631,4 +639,10 @@ export function validateSubstitutionRulesPreviewOutput(root, options = {}) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1' || basename(root) !== '.reader-review-output')
     throw new Error('Expected an isolated substitution rules preview directory');
   return validatePublicationOutput(root, options, true, 'substitution');
+}
+
+export function validateLoadShiftPreviewOutput(root, options = {}) {
+  if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1' || basename(root) !== '.reader-review-output')
+    throw new Error('Expected an isolated load shift preview directory');
+  return validatePublicationOutput(root, options, true, 'load-shift');
 }

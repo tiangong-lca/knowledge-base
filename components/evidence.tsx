@@ -1,3 +1,4 @@
+import { loadShiftEvaluationFile } from '@/scripts/reader-load-shift.mjs';
 import { serviceConstraintsEvaluationFile } from '@/scripts/reader-service-constraints.mjs';
 import Link from 'next/link';
 import rawMap from '@/knowledge/research/literature-map.json';
@@ -49,7 +50,7 @@ export function ClaimAnnotation({ id, showCaseInput = true, premiseReferences }:
   const claim = catalog.claims.find(item => item.id === id);
   if (!claim) { if (isKnownClaim(id)) return <ReviewNotice />; throw new Error(`Unknown claim: ${id}`); }
   const evidence = getClaimEvidence(catalog, claim);
-  const evaluation = serviceConstraintsEvaluationFile(claim.caseBinding);
+  const evaluation = serviceConstraintsEvaluationFile(claim.caseBinding) ?? loadShiftEvaluationFile(claim.caseBinding);
   return <div className="claim-annotation">
     <p><strong>{kinds[claim.kind]}。</strong> {claim.scope}</p>
     {evidence.length > 0 && <ul className="annotation-sources">{evidence.map(({ evidence: item, relation }) => {

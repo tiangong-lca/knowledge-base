@@ -415,11 +415,11 @@ export function validateFlowBoundaryHistoryOutput(documents, unit) {
   });
 }
 
-export function validateDatedHistoryOutput(documents, { expected, source, attribute, ordinaryPattern, ordinaryTargets: expectedOrdinary, label }) {
+export function validateDatedHistoryOutput(documents, { expected, source, attribute, ordinaryPattern, ordinaryTargets: expectedOrdinary, label, ordinaryTags = ['P'] }) {
   const observed = new Set(), ordinary = {};
   const errors = [];
   for (const [path, document] of documents) {
-    for (const block of document.querySelectorAll('p[id]').filter(node => ordinaryPattern.test(node.id))) {
+    for (const block of document.querySelectorAll(ordinaryTags.map(tag => tag.toLowerCase() + '[id]').join(',')).filter(node => ordinaryPattern.test(node.id))) {
       ordinary[`${path}#${block.id}`] = flowBoundaryOrdinaryDigest(block);
     }
     const native = new Map(document.querySelectorAll('[id]').map(node => [node.id, node]));
@@ -468,7 +468,7 @@ export function validateDatedHistoryOutput(documents, { expected, source, attrib
             const node = targets[0];
             return targets.length !== 1 || !visibleHistoryControl(node) || (item.claimId
               ? node.getAttribute('data-reader-claim') !== item.claimId
-              : node.tagName !== 'P' || flowBoundaryOrdinaryDigest(node) !== item.digest);
+              : !ordinaryTags.includes(node.tagName) || flowBoundaryOrdinaryDigest(node) !== item.digest);
           })
           || !same(ordinaryLinks.map(link => link.text), ordinaryTargets.map(item => item.label))
           || !visibleHistoryControl(summary) || !visibleHistoryControl(target))
