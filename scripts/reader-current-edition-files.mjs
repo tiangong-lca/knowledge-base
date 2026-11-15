@@ -1,3 +1,4 @@
+import { selectLandRecovery, prepareLandRecoverySource, effectiveLandRecovery, verifyLandRecoveryReceipts } from './reader-land-recovery.mjs';
 import { selectCircularFootprint, prepareCircularFootprintSource, effectiveCircularFootprint, verifyCircularFootprintReceipts } from './reader-circular-footprint.mjs';
 import { selectLoadShift, readLoadShiftCaseFiles, prepareLoadShiftSource, effectiveLoadShift, verifyLoadShiftReceipts } from './reader-load-shift.mjs';
 import { selectSubstitutionRules, prepareSubstitutionRulesSource, effectiveSubstitutionRules, verifySubstitutionRulesReceipts } from './reader-substitution-rules.mjs';
@@ -43,6 +44,9 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const serviceConstraints = selectServiceConstraints(serviceConfig, undefined, preview === 'service');
   const substitutionConfig = await readConfig('reader-substitution-rules.json');
   const substitutionRules = selectSubstitutionRules(substitutionConfig, undefined, preview === 'substitution');
+  const landConfig = await readConfig('reader-land-recovery.json');
+  const landRecovery = selectLandRecovery(landConfig, undefined, preview === 'land-recovery');
+  if (preview === 'land-recovery' && landConfig.status !== 'preview') throw new Error('Land recovery review requires a private preview state');
   const circularConfig = await readConfig('reader-circular-footprint.json');
   const circularFootprint = selectCircularFootprint(circularConfig, undefined, preview === 'circular-footprint');
   if (preview === 'circular-footprint' && circularConfig.status !== 'preview') throw new Error('Circular footprint review requires a private preview state');
@@ -60,9 +64,10 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (substitutionRules && !serviceConstraints) throw new Error('Substitution rules requires the accepted #102 generation');
   if (loadShift && !substitutionRules) throw new Error('Load shift requires the accepted #105 generation');
   if (circularFootprint && !loadShift) throw new Error('Circular footprint requires the accepted #107 generation');
+  if (landRecovery && !circularFootprint) throw new Error('Land recovery requires the accepted #109 generation');
   for (const [path, bytes] of await readLoadShiftCaseFiles(root, loadShift)) files.set(path, bytes);
   for (const [path, bytes] of await readServiceConstraintsFiles(root, serviceConstraints)) files.set(path, bytes);
-  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint].filter(Boolean)];
+  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery].filter(Boolean)];
   const realRoot = await realpath(root);
   const reviewFiles = new Set((reviewUnits ?? []).flatMap(unit =>
     (unit.reviewEvidence ?? []).flatMap(row => [row.reportFile, row.artifactFile])));
@@ -77,7 +82,10 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const input = { catalog, readings, literature, files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
-  const footprint = circularFootprint && prepareCircularFootprintSource(circularFootprint, input, actual, structure);
+  const land = landRecovery && prepareLandRecoverySource(landRecovery, input, actual, structure);
+  const footprintInput = land ? { ...land.previousRecords, files: land.files } : input;
+  const footprint = circularFootprint && prepareCircularFootprintSource(circularFootprint, footprintInput,
+    land?.previous ?? actual, land?.structure ?? structure);
   const shiftInput = footprint ? { ...footprint.previousRecords, files: footprint.files } : input;
   const shift = loadShift && prepareLoadShiftSource(loadShift, shiftInput, footprint?.previous ?? actual, footprint?.structure ?? structure);
   shift?.verifyCurrentState();
@@ -107,8 +115,13 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   }
   if (circularFootprint && preview !== 'circular-footprint') {
     const { readerPublicDownloads } = await import('./reader-current-output.mjs');
-    if (!verifyCircularFootprintReceipts(circularFootprint, artifacts, readerPublicDownloads(catalog, literature, readings)))
+    if (!verifyCircularFootprintReceipts(circularFootprint, artifacts, readerPublicDownloads(footprintInput.catalog, footprintInput.literature, footprintInput.readings)))
       throw new Error('Circular footprint lacks exact independent source, reader, and output evidence');
+  }
+  if (landRecovery && preview !== 'land-recovery') {
+    const { readerPublicDownloads } = await import('./reader-current-output.mjs');
+    if (!verifyLandRecoveryReceipts(landRecovery, artifacts, readerPublicDownloads(catalog, literature, readings)))
+      throw new Error('Land recovery lacks exact independent source, reader, and output evidence');
   }
   const service = serviceConstraints && prepareServiceConstraintsSource(serviceConstraints, substitution?.previous ?? actual,
     substitution?.structure ?? structure, { ...previousRecords, files: substitutionInput.files });
@@ -136,7 +149,8 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const qualifiedService = effectiveServiceConstraints(qualifiedFlow, serviceConstraints, service?.affectedClaimIds);
   const qualifiedSubstitution = effectiveSubstitutionRules(qualifiedService, substitutionRules, substitution?.affectedClaimIds);
   const qualifiedShift = effectiveLoadShift(qualifiedSubstitution, loadShift, shift?.affectedClaimIds);
-  return effectiveCircularFootprint(qualifiedShift, circularFootprint, footprint?.affectedClaimIds);
+  const qualifiedFootprint = effectiveCircularFootprint(qualifiedShift, circularFootprint, footprint?.affectedClaimIds);
+  return effectiveLandRecovery(qualifiedFootprint, landRecovery, land?.affectedClaimIds);
 }
 
 export function validateReadableBookCurrent(root, catalog, readings, literature) {
@@ -164,4 +178,10 @@ export function validateCircularFootprintReviewSources(root, catalog, readings, 
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Circular footprint review requires the explicit private preview');
   return qualifyCurrentReaderSources(root, catalog, readings, literature, 'circular-footprint');
+}
+
+export function validateLandRecoveryReviewSources(root, catalog, readings, literature) {
+  if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
+    throw new Error('Land recovery review requires the explicit private preview');
+  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'land-recovery');
 }

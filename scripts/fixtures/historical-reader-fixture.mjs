@@ -24,7 +24,9 @@ const shiftConfigPath = 'config/reader-load-shift.json';
 const shiftModulePath = 'scripts/reader-load-shift.mjs';
 const footprintConfigPath = 'config/reader-circular-footprint.json';
 const footprintModulePath = 'scripts/reader-circular-footprint.mjs';
-const fixtureAliases = new Set([serviceModulePath, substitutionModulePath, shiftModulePath, footprintModulePath].map(path => `@/${path}`));
+const landConfigPath = 'config/reader-land-recovery.json';
+const landModulePath = 'scripts/reader-land-recovery.mjs';
+const fixtureAliases = new Set([serviceModulePath, substitutionModulePath, shiftModulePath, footprintModulePath, landModulePath].map(path => `@/${path}`));
 const flowPinPath = 'scripts/reader-flow-boundary-pins.mjs';
 
 async function loadArchive() {
@@ -73,7 +75,7 @@ async function materialize(root) {
     .map(entry => `scripts/${entry.name}`);
   const components = ['components/evidence.tsx', 'components/numbered-heading.tsx', 'components/chapter-content.tsx'];
   const current = [...configs, ...scripts, ...components, 'lib/teaching-case.ts']
-    .filter(path => ![copyeditConfigPath, copyeditPinPath, flowConfigPath, flowPinPath, serviceConfigPath, serviceModulePath, substitutionConfigPath, substitutionModulePath, shiftConfigPath, shiftModulePath, footprintConfigPath, footprintModulePath].includes(path));
+    .filter(path => ![copyeditConfigPath, copyeditPinPath, flowConfigPath, flowPinPath, serviceConfigPath, serviceModulePath, substitutionConfigPath, substitutionModulePath, shiftConfigPath, shiftModulePath, footprintConfigPath, footprintModulePath, landConfigPath, landModulePath].includes(path));
   const currentCopyeditPin = await readFile(join(repo, copyeditPinPath), 'utf8');
   const copyeditUnitPin = /^export const readerCopyeditUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
   assert.equal([...currentCopyeditPin.matchAll(copyeditUnitPin)].length, 1);
@@ -92,10 +94,13 @@ async function materialize(root) {
   const currentFootprintModule = await readFile(join(repo, footprintModulePath), 'utf8');
   const footprintUnitPin = /^export const circularFootprintUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
   assert.equal([...currentFootprintModule.matchAll(footprintUnitPin)].length, 1);
+  const currentLandModule = await readFile(join(repo, landModulePath), 'utf8');
+  const landUnitPin = /^export const landRecoveryUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
+  assert.equal([...currentLandModule.matchAll(landUnitPin)].length, 1);
   // The only archived script is the independently selected old edition pin.
   // All validation code, including the expectation resolver, comes from the
   // current worktree and runs under the historical book data in this directory.
-  // The later #95, #99, #102, #105, #107, and #109 units are inactive only in this isolated legacy fixture.
+  // The later #95, #99, #102, #105, #107, #109, and #111 units are inactive only in this isolated legacy fixture.
   assert.deepEqual(Object.keys(archived).filter(path => path.startsWith('scripts/')), [pinPath]);
   await Promise.all([
     ...current.filter(path => !Object.hasOwn(archived, path)).map(path => copyCurrent(root, path)),
@@ -112,6 +117,8 @@ async function materialize(root) {
     write(root, shiftModulePath, currentShiftModule.replace(shiftUnitPin, 'export const loadShiftUnitPin = null;')),
     write(root, footprintConfigPath, JSON.stringify({ schemaVersion: 1, status: 'inactive', unit: null })),
     write(root, footprintModulePath, currentFootprintModule.replace(footprintUnitPin, 'export const circularFootprintUnitPin = null;')),
+    write(root, landConfigPath, JSON.stringify({ schemaVersion: 1, status: 'inactive', unit: null })),
+    write(root, landModulePath, currentLandModule.replace(landUnitPin, 'export const landRecoveryUnitPin = null;')),
     symlink(join(repo, 'node_modules'), join(root, 'node_modules'), process.platform === 'win32' ? 'junction' : 'dir'),
   ]);
 }

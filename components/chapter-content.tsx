@@ -1,7 +1,8 @@
+import { landRecoveryHistoryControls, landRecoveryOrdinaryId, landRecoverySource } from '@/scripts/reader-land-recovery.mjs';
 import { circularFootprintHistoryControls, circularFootprintOrdinaryId, circularFootprintSource } from '@/scripts/reader-circular-footprint.mjs';
 import { loadShiftHistoryControls, loadShiftOrdinaryId, loadShiftSource } from '@/scripts/reader-load-shift.mjs';
 import { substitutionRulesHistoryControls, substitutionRulesOrdinaryId, substitutionRulesSource } from '@/scripts/reader-substitution-rules.mjs';
-import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint } from '@/scripts/reader-current-expectations.mjs';
+import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery } from '@/scripts/reader-current-expectations.mjs';
 import { flowBoundaryHistoryControls, flowBoundaryHistoryTargets, flowBoundaryOrdinaryTargets, flowBoundaryOrdinaryId } from '@/scripts/reader-flow-boundary.mjs';
 import { serviceConstraintsHistoryControls, serviceConstraintsOrdinaryId, serviceConstraintsSource } from '@/scripts/reader-service-constraints.mjs';
 import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
@@ -36,6 +37,7 @@ const histories = [
   { controls: substitutionRulesHistoryControls(currentSubstitutionRules), edition: substitutionRulesSource, attribute: 'substitution-rules' },
   { controls: loadShiftHistoryControls(currentLoadShift), edition: loadShiftSource, attribute: 'load-shift' },
   { controls: circularFootprintHistoryControls(currentCircularFootprint), edition: circularFootprintSource, attribute: 'circular-footprint' },
+  { controls: landRecoveryHistoryControls(currentLandRecovery), edition: landRecoverySource, attribute: 'land-recovery' },
 ];
 
 function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
@@ -43,16 +45,18 @@ function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
     || serviceConstraintsOrdinaryId(currentServiceConstraints, route, print, index)
     || substitutionRulesOrdinaryId(currentSubstitutionRules, route, print, index)
     || loadShiftOrdinaryId(currentLoadShift, route, print, index)
-    || circularFootprintOrdinaryId(currentCircularFootprint, route, print, index);
+    || circularFootprintOrdinaryId(currentCircularFootprint, route, print, index)
+    || landRecoveryOrdinaryId(currentLandRecovery, route, print, index);
 }
 
-// Leave versioned B12 and B13 native fragments below the screen's sticky site header.
+// Leave versioned native fragments below the screen's sticky site header.
 const scientificHistoryScroll = { scrollMarginTop: '7rem' };
 
 export function currentReaderOrdinaryAttributes(route: string, print: boolean, index: number) {
   const id = currentReaderOrdinaryId(route, print, index);
   return id && (id === loadShiftOrdinaryId(currentLoadShift, route, print, index)
-      || id === circularFootprintOrdinaryId(currentCircularFootprint, route, print, index))
+      || id === circularFootprintOrdinaryId(currentCircularFootprint, route, print, index)
+      || id === landRecoveryOrdinaryId(currentLandRecovery, route, print, index))
     ? { id, style: scientificHistoryScroll }
     : { id };
 }
