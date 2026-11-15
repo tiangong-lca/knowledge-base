@@ -66,8 +66,20 @@ records the actual ILCD/PEF comparison, the decision not to force a numerical
 contrast, source and reader corrections, and the limited ISO permission gap.
 Nine new qualitative explanations preserve the original numerical case and
 prior claim identities. Separate source/reader/actual-output acceptance is now
-bound to the scoped candidate; final ordinary production, CI, source Main,
-hosting and root integration remain task105's own delivery obligations.
+bound to the scoped candidate. That unit is fully delivered through PR106/Main
+`11e297896af3d2dc094b160bea53474e040f3dc0`, qualified hosted output and
+root2386/PR2387/Main `4391d206510227177a87f906d322d6d65b72ee6d`.
+Final ordinary source/root receipts report complete delivery and source handoff.
+
+[Issue107](https://github.com/tiangong-lca/knowledge-base/issues/107) continues
+with B12's finite equal-service load shifts. Its
+[protocol and actual comparison](editorial/2026-11-15-load-shift.md) distinguish
+conditional wind-potential observations, model-basis guarantees and a separate
+authored dispatch case. Twelve new explanations retain the original58, with
+independent source/model/reader findings corrected. The actual-output acceptance
+also records paired raw/normalized capture proof and the repaired native table
+scroll target. Ordinary clean production, final CI, hosted Main and exact root
+integration remain107's own obligations; programme9 and the GOAL remain active.
 
 Rule adoption101 itself is fully delivered: PR103/Main10dc686 and
 root2381/PR2382/Main90bcaa574, with complete ordinary source/root handoff receipts.

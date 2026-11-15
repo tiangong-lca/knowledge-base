@@ -34,8 +34,8 @@ to choose a co-product substitute under ILCD and PEF. The
 [comparison record](_docs/editorial/2026-11-15-substitution-rules.md) preserves
 the conditional findings, reader corrections and the decision not to force a
 numerical disagreement. Its separate successor retains earlier claims, numerical
-cases and historical scopes. Final production, CI, hosting and root delivery are
-tracked separately; the continuing whole-book programme remains active.
+cases and historical scopes. Source PR106/Main11e2978, verified hosting and
+root2386/PR2387/Main4391d206 complete that unit; the whole-book programme remains active.
 
 [Service constraints #102](https://github.com/tiangong-lca/knowledge-base/issues/102)
 extends the shared process-network chapter with a comparison of natural-unit and
