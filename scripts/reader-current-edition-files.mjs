@@ -1,3 +1,5 @@
+import { loadCasePublications } from './case-publication.mjs';
+import { selectServiceConstraints, readServiceConstraintsFiles, prepareServiceConstraintsSource, effectiveServiceConstraints, verifyServiceConstraintsReceipts } from './reader-service-constraints.mjs';
 import { selectFlowBoundary, prepareFlowBoundarySource, effectiveFlowBoundary, verifyFlowBoundaryReceipts } from './reader-flow-boundary.mjs';
 import { flowBoundaryUnitPin, flowBoundaryPredecessorPin } from './reader-flow-boundary-pins.mjs';
 import { lstat, readdir, readFile, realpath } from 'node:fs/promises';
@@ -28,17 +30,22 @@ export async function readReadableBookFiles(root, fixedFiles) {
   return result;
 }
 
-export async function validateReadableBookCurrent(root, catalog, readings, literature) {
+async function qualifyCurrentReaderSources(root, catalog, readings, literature, preview = false) {
   const readConfig = async name => JSON.parse(await readFile(join(root, 'config', name), 'utf8'));
   const baseline = await readConfig('readable-book-baseline.json');
   const acceptance = await readConfig('readable-book-current.json');
   if (editionDigest(baseline) !== readableBookBaselineDigest) throw new Error('Readable book integration baseline differs');
   const files = await readReadableBookFiles(root, baseline.fixedFiles);
+  const serviceConfig = await readConfig('reader-service-constraints.json');
+  const serviceConstraints = selectServiceConstraints(serviceConfig, undefined, preview);
+  if (preview && serviceConfig.status !== 'preview') throw new Error('Service constraints review requires a private preview state');
   const config = await readConfig('reader-copyedit-current.json');
   const unit = selectReaderCopyedit(config, readerCopyeditUnitPin);
   const flowBoundary = selectFlowBoundary(await readConfig('reader-flow-boundary.json'), flowBoundaryUnitPin);
   if (flowBoundary && !unit) throw new Error('Flow boundary requires the accepted #95 language generation');
-  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary].filter(Boolean)];
+  if (serviceConstraints && !flowBoundary) throw new Error('Service constraints requires the accepted #99 generation');
+  for (const [path, bytes] of await readServiceConstraintsFiles(root, serviceConstraints)) files.set(path, bytes);
+  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints].filter(Boolean)];
   const realRoot = await realpath(root);
   const reviewFiles = new Set((reviewUnits ?? []).flatMap(unit =>
     (unit.reviewEvidence ?? []).flatMap(row => [row.reportFile, row.artifactFile])));
@@ -54,7 +61,16 @@ export async function validateReadableBookCurrent(root, catalog, readings, liter
   const structure = copyeditSourceStructure({ catalog, files });
   if (flowBoundary && !verifyFlowBoundaryReceipts(flowBoundary, artifacts))
     throw new Error('Flow boundary lacks exact independent source, reader, and output evidence');
-  const flow = flowBoundary && prepareFlowBoundarySource(flowBoundary, actual, structure, flowBoundaryPredecessorPin, { readings, catalog });
+  if (serviceConstraints && !preview) {
+    const [cases, { readerPublicDownloads }] = await Promise.all([
+      loadCasePublications(root), import('./reader-current-output.mjs'),
+    ]);
+    if (!verifyServiceConstraintsReceipts(serviceConstraints, artifacts, cases, readerPublicDownloads(catalog, literature, readings)))
+      throw new Error('Service constraints lacks exact independent source, reader, and output evidence');
+  }
+  const service = serviceConstraints && prepareServiceConstraintsSource(serviceConstraints, actual, structure, { catalog, readings, files });
+  const flow = flowBoundary && prepareFlowBoundarySource(flowBoundary, service?.previous ?? actual,
+    service?.previous.structure ?? structure, flowBoundaryPredecessorPin, service?.previousRecords ?? { readings, catalog });
   if (!unit) return qualifyReadableBookEdition(baseline, readableBookBaselineDigest, acceptance, readableBookAcceptancePins, actual, artifacts);
 
   if (!verifyReadableBookReviewReceipts(unit, artifacts)) throw new Error('Reader copyedit requires exact primary review evidence');
@@ -72,5 +88,17 @@ export async function validateReadableBookCurrent(root, catalog, readings, liter
     sourceStructure: flow?.previous.structure ?? structure });
   const qualified = qualifyReadableBookEdition(baseline, readableBookBaselineDigest, acceptance, readableBookAcceptancePins, previousState, artifacts);
   flow?.verifyCurrentState();
-  return effectiveFlowBoundary(effectiveReaderCopyedit(qualified, unit), flowBoundary, flow?.affectedClaimIds ?? []);
+  service?.verifyCurrentState();
+  const qualifiedFlow = effectiveFlowBoundary(effectiveReaderCopyedit(qualified, unit), flowBoundary, flow?.affectedClaimIds ?? []);
+  return effectiveServiceConstraints(qualifiedFlow, serviceConstraints, service?.affectedClaimIds);
+}
+
+export function validateReadableBookCurrent(root, catalog, readings, literature) {
+  return qualifyCurrentReaderSources(root, catalog, readings, literature);
+}
+
+export function validateServiceConstraintsReviewSources(root, catalog, readings, literature) {
+  if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
+    throw new Error('Service constraints review requires the explicit private preview');
+  return qualifyCurrentReaderSources(root, catalog, readings, literature, true);
 }

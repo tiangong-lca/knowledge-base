@@ -1,3 +1,5 @@
+import serviceConstraintsConfig from '../config/reader-service-constraints.json' with { type: 'json' };
+import { selectServiceConstraints, effectiveServiceConstraints, serviceConstraintsLayout } from './reader-service-constraints.mjs';
 import flowBoundaryConfig from '../config/reader-flow-boundary.json' with { type: 'json' };
 import { flowBoundaryUnitPin } from './reader-flow-boundary-pins.mjs';
 import { selectFlowBoundary, flowBoundarySections, flowBoundaryOrdinaryDispositions, flowBoundaryTitle, flowBoundaryChapter, effectiveFlowBoundary } from './reader-flow-boundary.mjs';
@@ -13,14 +15,15 @@ const preview = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1';
 const oldPreview = preview && acceptance.status === 'preview';
 export const currentCopyedit = selectReaderCopyedit(copyeditConfig, readerCopyeditUnitPin, preview);
 export const currentFlowBoundary = selectFlowBoundary(flowBoundaryConfig, flowBoundaryUnitPin, preview);
+export const currentServiceConstraints = selectServiceConstraints(serviceConstraintsConfig, undefined, preview);
 export const isReadableBookReviewPreview = oldPreview
-  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview');
+  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview');
 const previousPlan = readableBookReviewPlan(oldPreview
   ? acceptance.units
   : pinnedReadableBookUnits(acceptance, readableBookBaselineDigest, readableBookAcceptancePins));
 const acceptedCopyedit = effectiveReaderCopyedit(previousPlan, currentCopyedit);
-export const currentBookPlan = currentFlowBoundary
-  ? effectiveFlowBoundary(acceptedCopyedit, currentFlowBoundary, []) : acceptedCopyedit;
+const acceptedFlow = effectiveFlowBoundary(acceptedCopyedit, currentFlowBoundary, []);
+export const currentBookPlan = effectiveServiceConstraints(acceptedFlow, currentServiceConstraints);
 
 export function currentBookRecordMatches(kind, previous, current, projection) {
   if (projection !== undefined) return matchesAcceptedRecord(currentBookPlan, kind, previous, current, projection);
@@ -50,5 +53,5 @@ export function currentBookLayout(key, previous) {
   if (key === 'B08:title') return flowBoundaryTitle(currentFlowBoundary, flowBoundaryChapter, copyedit);
   if (key === 'B08:headings') return flowBoundarySections(currentFlowBoundary, copyedit);
   if (key === 'B08:ordinary-dispositions') return flowBoundaryOrdinaryDispositions(currentFlowBoundary, copyedit);
-  return copyedit;
+  return serviceConstraintsLayout(currentServiceConstraints, key, copyedit);
 }

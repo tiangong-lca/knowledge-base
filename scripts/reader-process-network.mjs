@@ -1,4 +1,4 @@
-import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
+import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches, currentServiceConstraints } from './reader-current-expectations.mjs';
 import { createHash } from 'node:crypto';
 import { readSourceHeading, chapterAnchorPrefix, collectChapterClaimOccurrences, printUnitAnchor } from './reader-book.mjs';
 
@@ -60,6 +60,15 @@ export function validateProcessNetworkCoverage(edition, sources, accepted, catal
     for (const fixed of prose.claims) {
       const claim = catalog.claims.find(claim => claim.id === fixed.id);
       if (!claim || claim.status !== 'reviewed' || !currentBookRecordMatches('claims', fixed, claim)) errors.push(`B07 canonical proposition differs from independently reviewed draft: ${fixed.id}`);
+    }
+  }
+  if (currentServiceConstraints && catalog) {
+    const originalIds = new Set(accepted.sections.flatMap(section => section.claimIds));
+    for (const { id } of actual.filter(row => !originalIds.has(row.id))) {
+      const claim = catalog.claims.find(row => row.id === id);
+      if (claim?.status !== 'reviewed' || !currentBookRecordMatches('claims', null, claim)
+          || !claim.evidenceIds?.length && !claim.premiseIds?.length)
+        errors.push(`B07 successor addition is not independently accepted with supporting evidence: ${id}`);
     }
   }
   return errors;
@@ -144,7 +153,7 @@ export function validateRenderedProcessNetwork(document, path, accepted, catalog
       const id = node.getAttribute('data-reader-reference'), paragraph = node.closest('p'), claim = claims.get(id);
       actual.push({ id, section });
       if (!paragraph || !claim || typeof claim.text !== 'string' || paragraphText(paragraph, node) !== claim.text) errors.push(`${path}: B07 actual paragraph differs from canonical text: ${id}`);
-      if (prose && !currentBookRecordMatches('claims', prose.claims.find(fixed => fixed.id === id), claim)) errors.push(`${path}: actual canonical record differs from independently reviewed B07 draft: ${id}`);
+      if (prose && !currentBookRecordMatches('claims', prose.claims.find(fixed => fixed.id === id) ?? null, claim)) errors.push(`${path}: actual canonical record differs from independently reviewed B07 draft: ${id}`);
     } else if (node.closest('.chapter-notes')) section = null;
     else if (currentHeadings.some(heading => heading.id === node.id.slice(prefix.length))) {
       section = node.id.slice(prefix.length); headings.push({ id: section, title: node.text.replace(/复制章节链接$/, '') });

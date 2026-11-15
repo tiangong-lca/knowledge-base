@@ -15,6 +15,8 @@ const pinPath = 'scripts/reader-current-edition-pins.mjs';
 const copyeditConfigPath = 'config/reader-copyedit-current.json';
 const copyeditPinPath = 'scripts/reader-copyedit-pins.mjs';
 const flowConfigPath = 'config/reader-flow-boundary.json';
+const serviceConfigPath = 'config/reader-service-constraints.json';
+const serviceModulePath = 'scripts/reader-service-constraints.mjs';
 const flowPinPath = 'scripts/reader-flow-boundary-pins.mjs';
 
 async function loadArchive() {
@@ -63,17 +65,20 @@ async function materialize(root) {
     .map(entry => `scripts/${entry.name}`);
   const components = ['components/evidence.tsx', 'components/numbered-heading.tsx', 'components/chapter-content.tsx'];
   const current = [...configs, ...scripts, ...components, 'lib/teaching-case.ts']
-    .filter(path => ![copyeditConfigPath, copyeditPinPath, flowConfigPath, flowPinPath].includes(path));
+    .filter(path => ![copyeditConfigPath, copyeditPinPath, flowConfigPath, flowPinPath, serviceConfigPath, serviceModulePath].includes(path));
   const currentCopyeditPin = await readFile(join(repo, copyeditPinPath), 'utf8');
   const copyeditUnitPin = /^export const readerCopyeditUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
   assert.equal([...currentCopyeditPin.matchAll(copyeditUnitPin)].length, 1);
   const currentFlowPin = await readFile(join(repo, flowPinPath), 'utf8');
   const flowUnitPin = /^export const flowBoundaryUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
   assert.equal([...currentFlowPin.matchAll(flowUnitPin)].length, 1);
+  const currentServiceModule = await readFile(join(repo, serviceModulePath), 'utf8');
+  const serviceUnitPin = /^export const serviceConstraintsUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
+  assert.equal([...currentServiceModule.matchAll(serviceUnitPin)].length, 1);
   // The only archived script is the independently selected old edition pin.
   // All validation code, including the expectation resolver, comes from the
   // current worktree and runs under the historical book data in this directory.
-  // The later #95 and #99 units are inactive only in this isolated legacy fixture.
+  // The later #95, #99, and #102 units are inactive only in this isolated legacy fixture.
   assert.deepEqual(Object.keys(archived).filter(path => path.startsWith('scripts/')), [pinPath]);
   await Promise.all([
     ...current.filter(path => !Object.hasOwn(archived, path)).map(path => copyCurrent(root, path)),
@@ -82,6 +87,8 @@ async function materialize(root) {
     write(root, copyeditPinPath, currentCopyeditPin.replace(copyeditUnitPin, 'export const readerCopyeditUnitPin = null;')),
     write(root, flowConfigPath, JSON.stringify({ schemaVersion: 1, status: 'inactive', unit: null })),
     write(root, flowPinPath, currentFlowPin.replace(flowUnitPin, 'export const flowBoundaryUnitPin = null;')),
+    write(root, serviceConfigPath, JSON.stringify({ schemaVersion: 1, status: 'inactive', unit: null })),
+    write(root, serviceModulePath, currentServiceModule.replace(serviceUnitPin, 'export const serviceConstraintsUnitPin = null;')),
     symlink(join(repo, 'node_modules'), join(root, 'node_modules'), process.platform === 'win32' ? 'junction' : 'dir'),
   ]);
 }

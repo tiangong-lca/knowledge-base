@@ -1,3 +1,5 @@
+import { serviceConstraintsEvaluationFile } from './reader-service-constraints.mjs';
+import { visibleHistoryControl } from './reader-flow-boundary.mjs';
 import { historyPrintPointerTitleLayout } from './reader-copyedit.mjs';
 import { currentPrintReadingHref, getHeadingNumbering, getUnitNumbering } from './reader-numbering.mjs';
 import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches, currentFlowBoundary } from './reader-current-expectations.mjs';
@@ -286,8 +288,16 @@ export function validateExchangeAnnotationOutput(document,unit,route,catalog,{pr
         if(print||!match||match[3]!==premise||match[2]!==chapterAnchorPrefix(targetRoute)||!/^《.+》注 [1-9]\d*$/.test(normalize(link.text)))fail(`premise destination does not identify approved record (${premise})`);
       }
     });
-    const inputs=annotation.querySelectorAll('a').filter(link=>link.getAttribute('href')?.startsWith('/downloads/cases/')),expectedInput=showInput&&binding?.inputFile;
-    if(inputs.length!==(expectedInput?1:0)||(expectedInput&&(inputs[0].getAttribute('href')!==`/downloads/cases/${binding.inputFile}`||inputs[0].getAttribute('download')!==binding.inputFile||inputs[0].text!==`下载计算输入（版本 ${binding.version}）`)))fail('case-input link missing, changed or incorrectly repeated');
+    const inputs = annotation.querySelectorAll('a').filter(link => link.getAttribute('href')?.startsWith('/downloads/cases/'));
+    const resultFile = serviceConstraintsEvaluationFile(binding);
+    const downloads = showInput && binding?.inputFile ? [[binding.inputFile, '下载计算输入'], ...(resultFile ? [[resultFile, '下载计算结果']] : [])] : [];
+    if (inputs.length !== downloads.length || downloads.some(([file, label], index) => {
+      const link = inputs[index];
+      return link.getAttribute('href') !== `/downloads/cases/${file}` || link.getAttribute('download') !== file
+        || link.text !== `${label}（版本 ${binding.version}）` || resultFile && !visibleHistoryControl(link);
+    })) fail('case-input or result link missing, changed, hidden or incorrectly repeated');
+    if (resultFile && downloads.length && (!inputs[0]?.closest('p') || inputs[0].closest('p') !== inputs[1]?.closest('p')))
+      fail('case input and result links must share their actual annotation');
     // Every allowed root above has a separate exact content/identity check.
     // Do not allow the whole source list/details/input paragraph: otherwise new
     // prose next to a valid item/link could impersonate reviewed annotation text.

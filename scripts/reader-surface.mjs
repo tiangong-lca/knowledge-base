@@ -1,4 +1,6 @@
-import { projectFlowBoundaryHistory, validateFlowBoundaryHistoryOutput, flowBoundaryPreviousSurface, flowBoundaryCitationEntries } from './reader-flow-boundary.mjs';
+import { loadCasePublications } from './case-publication.mjs';
+import { qualifyServiceConstraintsHistory, observeServiceConstraintsOrdinaryTargets, observeServiceConstraintsCaseOutputs, validateServiceConstraintsHistoryOutput, serviceConstraintsPreviousSurface } from './reader-service-constraints.mjs';
+import { projectFlowBoundaryHistory, validateFlowBoundaryHistoryOutput, flowBoundaryPreviousSurface, flowBoundaryCitationEntries, relabelHistoricalTargets } from './reader-flow-boundary.mjs';
 import { copyeditHistoryEntries, copyeditHistoryPlan, validateCopyeditHistory } from './reader-copyedit-history.mjs';
 import { observeCopyeditHistory } from './reader-copyedit-observation.mjs';
 import { readerNumberingManifest } from './reader-numbering.mjs';
@@ -12,7 +14,7 @@ import { assertClosingSynthesisOriginal, assertClosingSynthesisHeadingHistory, a
 import { assertWallSelectionOriginal, assertWallSelectionHeadingHistory, assertWallSelectionAccepted, wallSelectionHeadingEntries, remapWallSelectionCitations, validateWallSelectionCoverage, validateRenderedWallSelection } from './reader-wall-selection.mjs';
 import { validateReaderNumberingOutput } from './reader-numbering-output.mjs';
 import { assertReaderNumbering } from './reader-numbering.mjs';
-import { validateReadableBookCurrent } from './reader-current-edition-files.mjs';
+import { validateReadableBookCurrent, validateServiceConstraintsReviewSources } from './reader-current-edition-files.mjs';
 import { qualifyReadableBookCitations } from './reader-current-citations.mjs';
 import { validateReadableBookPublicArtifacts, validateReadableBookReviewedOutput } from './reader-current-output.mjs';
 import { qualifyCurrentHistoricalDocument, validateCurrentHistoricalContexts } from './reader-publication-text.mjs';
@@ -157,7 +159,7 @@ function aliasDestination(node) {
   return sibling?.id === target ? target : null;
 }
 
-const citationScopeExclusions = '.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope],[data-copyedit-history],[data-flow-boundary-history],.docs-pagination,.reader-view-label,.teaching-case';
+const citationScopeExclusions = '.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope],[data-copyedit-history],[data-flow-boundary-history],[data-service-constraints-history],.docs-pagination,.reader-view-label,.teaching-case';
 const ordinaryCitationBlocks = 'p,ul,ol,dl,blockquote,pre,table,figure';
 
 function nativeCitationScopes(document) {
@@ -335,9 +337,10 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
   const printRoutes = book ? currentEditionKeys(book.edition, sourceRoutes, sourceBaseline, locations) : createCurrentPrintRoutes(sourceBaseline, locations, sourceRoutes);
   const historicPrintRoutes = book ? [...sourceBaseline.pages.filter(page=>page.printOrdinal!==undefined).map(page=>page.route),...locations.frontMatter,...(locations.printAdditions??[]).map(unit=>unit.route)] : printRoutes;
   const copyedit = copyeditHistoryPlan(book?.current?.copyedit);
-  const entries = flowBoundaryCitationEntries(
+  const serviceConstraints = book?.current?.serviceConstraints;
+  const entries = relabelHistoricalTargets(flowBoundaryCitationEntries(
     copyeditHistoryEntries(getHistoricalCitationEntries(sourceBaseline, locations, history, historicPrintRoutes, book), copyedit),
-    book?.current?.flowBoundary);
+    book?.current?.flowBoundary), serviceConstraints?.routes ?? []);
   const addresses = new Set();
   for (const entry of entries) {
     const address = `${entry.path}#${entry.id}`;
@@ -367,16 +370,26 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
     errors.push(...surface.errors);
   }
   errors.push(...validateFlowBoundaryHistoryOutput(documents, book?.current?.flowBoundary));
+  errors.push(...validateServiceConstraintsHistoryOutput(documents, serviceConstraints));
+  const previousSurface = (address, actual) => flowBoundaryPreviousSurface(address,
+    serviceConstraintsPreviousSurface(address, actual, serviceConstraints), book?.current?.flowBoundary);
+  if (serviceConstraints && book?.sourceRoot) {
+    await observeServiceConstraintsCaseOutputs(root, serviceConstraints, await loadCasePublications(book.sourceRoot), book.sourceCommit);
+  }
   if (copyedit) {
+    const currentAddresses = observeCopyeditHistory(documents, readerNumberingManifest, readCitationSurface);
+    const priorAddresses = serviceConstraints
+      ? qualifyServiceConstraintsHistory(serviceConstraints, currentAddresses, observeServiceConstraintsOrdinaryTargets(documents))
+      : currentAddresses;
     const copyeditErrors = validateCopyeditHistory(documents,
-      projectFlowBoundaryHistory(observeCopyeditHistory(documents, readerNumberingManifest, readCitationSurface), book.current.flowBoundary),
+      projectFlowBoundaryHistory(priorAddresses, book.current.flowBoundary),
       copyedit, book.current.copyedit.printParts);
     errors.push(...copyeditErrors);
     // Article fingerprints already checked the complete normalized output.
     // Earlier chapter predicates inspect a prose projection after the new
     // historical apparatus has independently passed its exact DOM checks.
     if (!copyeditErrors.length) for (const document of documents.values()) {
-      for (const notice of document.querySelectorAll('[data-copyedit-history],[data-flow-boundary-history]')) notice.remove();
+      for (const notice of document.querySelectorAll('[data-copyedit-history],[data-flow-boundary-history],[data-service-constraints-history]')) notice.remove();
     }
   }
   for (const [path, document] of documents) {
@@ -413,7 +426,7 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
       if (!source.notice || JSON.stringify(source.links) !== JSON.stringify(expected)) errors.push(`${address}: migration notice has the wrong native links`);
     }
     errors.push(...validateHistoricalScope(
-      flowBoundaryPreviousSurface(`${entry.path}#${entry.id}`, source, book?.current?.flowBoundary), entry, address));
+      previousSurface(`${entry.path}#${entry.id}`, source), entry, address));
     errors.push(...validateReadableBookOrdinaryDestinations(pages, entry, address, book?.current?.flowBoundary));
     for (const target of [...entry.targets, ...(entry.scope?.targets ?? [])]) {
       const actual = pages.get(target.path)?.ids.get(target.id);
@@ -423,7 +436,7 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
         target.kind === 'note-group' ? /^H[23]$/.test(actual.tag) : actual.section);
       if (!semanticMatch) errors.push(`${address}: wrong or missing ${target.kind} destination ${target.path}/#${target.id}`);
       if (entry.mode === 'alias' && !entry.scope && entry.capturedScope
-          && !matchesCapturedScope(flowBoundaryPreviousSurface(`${target.path}#${target.id}`, actual, book?.current?.flowBoundary), entry))
+          && !matchesCapturedScope(previousSurface(`${target.path}#${target.id}`, actual), entry))
         errors.push(`${address}: old ${entry.capturedScope.title} aliased scope changed without a reviewed migration`);
 
     }
@@ -469,7 +482,7 @@ export function validateCopyeditPreviewOutput(root, sourceBaseline, locations, a
   return validateCitationOutput(root, sourceBaseline, locations, availableRoutes, history, book, () => []);
 }
 
-async function validatePublicationOutput(root, { knownIds = new Set(), sourceCommit }, requireCurrent) {
+async function validatePublicationOutput(root, { knownIds = new Set(), sourceCommit }, requireCurrent, preview = false) {
   const errors = [];
   let bookOutput = false;
   async function visit(directory) {
@@ -583,12 +596,12 @@ async function validatePublicationOutput(root, { knownIds = new Set(), sourceCom
       const sourceRoot = resolve(root, '..');
       let current, hostedHistory;
       if (requireCurrent) {
-        current = await validateReadableBookCurrent(sourceRoot, catalog, readings, literature);
+        current = await (preview ? validateServiceConstraintsReviewSources : validateReadableBookCurrent)(sourceRoot, catalog, readings, literature);
         hostedHistory = await readConfig('readable-book-hosted-history.json');
         if (!hostedHistory) throw new Error('Current reader publication requires its verified hosted history');
         errors.push(...current.errors);
       }
-      book={current,hostedHistory,sourceCommit,pmAccepted,toxicityAccepted,pedigreeAccepted,readings,literature,dataAccepted,climateAccepted,closingHistory,closingProse,wallOriginal,wallHeadings,wallAccepted,jointOriginal,jointHeadings,jointProse,hybridAccepted,hybridHeadings,hybridProse,edition,accepted,headingHistory,cleanerAccepted,cleanerHeadingHistory,functionalAccepted,functionalHeadings,functionalProse,processAccepted,processHeadings,processProse,exchangeOriginal,exchangeHeadings,exchangeCitations,exchangePartial,exchangeProse,sources,catalog};
+      book={current,hostedHistory,sourceCommit,sourceRoot,pmAccepted,toxicityAccepted,pedigreeAccepted,readings,literature,dataAccepted,climateAccepted,closingHistory,closingProse,wallOriginal,wallHeadings,wallAccepted,jointOriginal,jointHeadings,jointProse,hybridAccepted,hybridHeadings,hybridProse,edition,accepted,headingHistory,cleanerAccepted,cleanerHeadingHistory,functionalAccepted,functionalHeadings,functionalProse,processAccepted,processHeadings,processProse,exchangeOriginal,exchangeHeadings,exchangeCitations,exchangePartial,exchangeProse,sources,catalog};
       sourceRoutes.splice(0,sourceRoutes.length,...sources.keys());
     }
     errors.push(...await validateLegacyCitationOutput(root, baseline, placements, hasReaderSource ? sourceRoutes : null, history,book));
@@ -600,3 +613,10 @@ async function validatePublicationOutput(root, { knownIds = new Set(), sourceCom
 
 export const validateReaderOutput = (root, options = {}) => validatePublicationOutput(root, options, true);
 export const validateReaderOutputFixture = (root, options = {}) => validatePublicationOutput(root, options, false);
+
+/** Inspect a private compiled manuscript. The exporter has no preview mode. */
+export function validateServiceConstraintsPreviewOutput(root, options = {}) {
+  if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1' || basename(root) !== '.reader-review-output')
+    throw new Error('Expected an isolated service constraints preview directory');
+  return validatePublicationOutput(root, options, true, true);
+}

@@ -1,5 +1,5 @@
-import { currentFlowBoundary } from '@/scripts/reader-current-expectations.mjs';
-import { flowBoundaryRoutes, flowBoundaryCitationEntries } from '@/scripts/reader-flow-boundary.mjs';
+import { currentFlowBoundary, currentServiceConstraints } from '@/scripts/reader-current-expectations.mjs';
+import { flowBoundaryRoutes, flowBoundaryCitationEntries, relabelHistoricalTargets } from '@/scripts/reader-flow-boundary.mjs';
 import pedigreeAccepted from '@/config/readable-pedigree-accepted.json';
 import { readablePedigreeCitationLabel, readablePedigreeHeadingEntries, readablePedigreeRoute, remapReadablePedigreeCitations, validateReadablePedigreeCoverage } from '@/scripts/reader-readable-pedigree.mjs';
 import pmAccepted from '@/config/pm-selection-accepted.json';
@@ -92,8 +92,8 @@ const earlierEntries: LegacyEntry[] = remapDataApplicabilityCitations(remapClima
 const toxicityEntries = remapToxicityPathwaysCitations([...earlierEntries, ...toxicityPathwaysHeadingEntries()], toxicityAccepted);
 const pedigreeEntries = remapReadablePedigreeCitations([...toxicityEntries, ...readablePedigreeHeadingEntries()], pedigreeAccepted);
 const integratedEntries = remapPmSelectionCitations([...pedigreeEntries, ...pmSelectionHeadingEntries()], pmAccepted);
-const legacyEntries: LegacyEntry[] = flowBoundaryCitationEntries(copyeditHistoryEntries(
-  qualifyReadableBookCitations(integratedEntries, hostedHistory, currentBookPlan.migrations), copyeditHistoryPlan(currentCopyedit)), currentFlowBoundary);
+const legacyEntries: LegacyEntry[] = relabelHistoricalTargets(flowBoundaryCitationEntries(copyeditHistoryEntries(
+  qualifyReadableBookCitations(integratedEntries, hostedHistory, currentBookPlan.migrations), copyeditHistoryPlan(currentCopyedit)), currentFlowBoundary), currentServiceConstraints?.routes ?? []);
 export function getLegacyCitations(route: string, print: boolean) {
   const path = print ? '/print' : route, aliases = new Map<string, LegacyEntry[]>(), notices: LegacyEntry[] = [], scopes = new Map<string, LegacyEntry>();
   for (const entry of legacyEntries) {
@@ -161,7 +161,7 @@ export async function getCitationLabel(target: Destination) {
   }
   const page = print ? getPrintPages().find(page=>page.url===target.route) : source.getPages().find(page=>page.url===target.route);
   if (!page) throw new Error(`Missing citation destination ${target.route}`);
-  if (currentBookPlan.migrations.length || currentFlowBoundary && flowBoundaryRoutes.includes(target.route)) {
+  if (currentBookPlan.migrations.length || currentFlowBoundary && flowBoundaryRoutes.includes(target.route) || currentServiceConstraints?.routes.includes(target.route)) {
     if (target.kind === 'heading') {
       const prefix = `${printUnitAnchor(target.route)}-`;
       const key = print && target.id.startsWith(prefix) ? target.id.slice(prefix.length) : target.id;
