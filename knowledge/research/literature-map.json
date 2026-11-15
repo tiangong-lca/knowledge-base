@@ -4900,6 +4900,12 @@
         "query": "Ekvall incineration 2021 09 036 Chalmers Modelling incineration for more accurate comparisons PEF",
         "date": "2026-11-15",
         "channel": "public-web-search"
+      },
+      {
+        "id": "q-land111-primary-recovery-20261115",
+        "query": "沿M05及ReCiPe土地章节，在RIVM机构库确认2016-0104原件，沿LC-IMPACT官网技术章与2020论文DOI核对land occupation、transformation、regeneration、time horizon及core/extended的实际选段。",
+        "date": "2026-11-15",
+        "channel": "targeted-official-original-retrieval-and-cross-reading"
       }
     ],
     "limitations": [
@@ -6344,6 +6350,14 @@
         {
           "url": "https://www.rivm.nl/publicaties/recipe-2016-a-harmonized-life-cycle-impact-assessment-method-at-midpoint-and-endpoint",
           "role": "RIVM报告页"
+        },
+        {
+          "url": "https://rivm.openrepository.com/items/3d19272d-3ee1-4d95-bbc7-3ad21f0a769e",
+          "role": "RIVM官方机构库原报告条目"
+        },
+        {
+          "url": "https://rivm.openrepository.com/server/api/core/bitstreams/2082d9d2-415a-4f90-9456-fff9bc590bb6/content",
+          "role": "RIVM官方机构库实际核读原报告PDF"
         }
       ],
       "identifiers": {
@@ -6377,17 +6391,20 @@
         ]
       },
       "identityStatus": "verified",
-      "accessStatus": "metadata-only",
+      "accessStatus": "public-fulltext-available",
       "readingStatus": "not-close-read",
       "accessedAt": "2026-11-03",
-      "lastCheckedAt": "2026-11-03",
-      "rights": "Third-party sources retain their rights. Bibliographic facts and original project annotations are published here; source text, figures, datasets and software are not relicensed. Full-text access or borrowing does not grant redistribution permission. No source-specific open reuse license was verified in the inherited seed check.",
+      "lastCheckedAt": "2026-11-15",
+      "rights": "Third-party sources retain their rights. Bibliographic facts and original project annotations are published here; source text, figures, datasets and software are not relicensed. Full-text access or borrowing does not grant redistribution permission. No source-specific open reuse license was verified in the inherited seed check. 2026-11-15 核读原报告印p2，允许按机构、题名与年份注明后再用部分内容。项目只公开原创释义和定位。",
       "limitations": [
         "官方书目与报告出版页；未精读全报告",
         "Historical metadata/abstract/partial-page check inherited from 2026-11-03; original search strings and a complete access log were not recorded in the seed register.",
-        "Volume/region/tradition tags are provisional editorial discovery strata, not evidence of intellectual origin, influence or coverage."
+        "Volume/region/tradition tags are provisional editorial discovery strata, not evidence of intellectual origin, influence or coverage.",
+        "2026-11-15从机构库取得早期2016-0104原件并完成土地章与附录选段；参见rd-land111-rivm2016。2026-11-03仍为历史书目确认；未精读全报告或取得2017版报告原件与因子表。"
       ],
-      "catalogSourceIds": []
+      "catalogSourceIds": [
+        "src-land111-rivm2016"
+      ]
     },
     {
       "id": "lit-m06",
@@ -19951,6 +19968,120 @@
       ],
       "catalogSourceIds": [
         "src-cff109-ekvall-2021"
+      ]
+    },
+    {
+      "id": "work-land111-lcimpact-ch11",
+      "title": "Land stress: Potential species loss from land use (global; PSSRg)",
+      "contributors": "Abhishek Chaudhary, Francesca Verones, Laura de Baan, Stephan Pfister, Stefanie Hellweg",
+      "year": "独立技术章未标出版年；PDF元数据为2019",
+      "kind": "method-report-chapter",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://lc-impact.eu/doc/method/Chapter11_Land_stress.pdf",
+          "role": "LC-IMPACT项目官网实际核读的独立第11章PDF"
+        }
+      ],
+      "identifiers": {
+        "chapter": "11",
+        "manifestationNote": "独立技术章与含第6章的同项目总报告有共同谱系，未核对总报告中的第11章或精确因子发行包。"
+      },
+      "volumes": [
+        "V5"
+      ],
+      "topics": [
+        "land stress",
+        "recovery time",
+        "biodiversity damage"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Global"
+      ],
+      "traditions": [
+        "LC-IMPACT",
+        "regionalized life cycle damage assessment"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-land111-primary-recovery-20261115"
+        ],
+        "reason": "沿LC-IMPACT网站的土地压力方法入口检验恢复时间关系、类群和生态区范围。",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-15",
+      "lastCheckedAt": "2026-11-15",
+      "rights": "项目官网公开提供该技术章。未核实独立技术章的再分发许可；另外发表的期刊文章的开放许可不适用于此PDF或因子包。这里公开原创释义和定位。",
+      "limitations": [
+        "采用所列实际选段，不用网页入口或PDF元数据确定因子发行版本。"
+      ],
+      "catalogSourceIds": [
+        "src-land111-lcimpact-ch11"
+      ]
+    },
+    {
+      "id": "work-land111-lcimpact2020-article",
+      "title": "LC-IMPACT: A regionalized life cycle damage assessment method",
+      "contributors": "Francesca Verones, Stefanie Hellweg, Assumpció Antón et al.",
+      "year": "2020",
+      "kind": "journal-article",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jiec.13018",
+          "role": "Wiley正式论文入口"
+        },
+        {
+          "url": "https://www.lc-impact.eu/doc/Verones_etal_2020_LC-IMPACT.pdf",
+          "role": "方法项目网站实际核读的Wiley文章PDF"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1111/jiec.13018",
+        "journal": "Journal of Industrial Ecology 24(6):1201–1219"
+      },
+      "volumes": [
+        "V5"
+      ],
+      "topics": [
+        "land stress",
+        "recovery time",
+        "biodiversity damage"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Global"
+      ],
+      "traditions": [
+        "LC-IMPACT",
+        "regionalized life cycle damage assessment"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-land111-primary-recovery-20261115"
+        ],
+        "reason": "核对全球PDF·年的期刊解释和表3的土地转变时间范围。",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-15",
+      "lastCheckedAt": "2026-11-15",
+      "rights": "出版方文章及实际PDF首页载明Creative Commons Attribution。论文许可不代表技术章、第三方资料或因子文件采用同样许可。这里只公开元数据、定位及原创释义。",
+      "limitations": [
+        "论文、项目技术章和因子包属于不同证据载体；这里只核标题、许可和所列方法选段。"
+      ],
+      "catalogSourceIds": [
+        "src-land111-lcimpact2020-article"
       ]
     }
   ],
