@@ -195,6 +195,11 @@ test('the actual adopted source is independently qualified and a changed reviewe
   const rejection = copyedit.status === 'reviewed'
     ? 'Reader copyedit successor differs from actual source'
     : 'stale predecessor, missing successor or mismatched result';
-  await assert.rejects(qualify(root, catalog, readings, literature), error =>
-    error.message.includes(rejection) && error.message.includes(changed.key));
+  await assert.rejects(qualify(root, catalog, readings, literature), error => {
+    if (serviceConstraints.status === 'reviewed') {
+      // This one change also invalidates the current reviewed public catalog.
+      return error.message === 'Service constraints lacks exact independent source, reader, and output evidence';
+    }
+    return error.message.includes(rejection) && error.message.includes(changed.key);
+  });
 });

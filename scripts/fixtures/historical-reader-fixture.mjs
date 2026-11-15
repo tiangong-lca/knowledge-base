@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { mkdir, mkdtemp, readFile, readdir, rm, symlink, writeFile } from 'node:fs/promises';
+import { registerHooks } from 'node:module';
+import { mkdir, mkdtemp, readFile, readdir, realpath, rm, symlink, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { basename, dirname, join } from 'node:path';
 import { after } from 'node:test';
@@ -98,15 +99,29 @@ export async function runHistoricalReaderFixture(testUrl) {
   assert(/^reader-[a-z-]+\.test\.mjs$/.test(name), 'Expected a historical reader test entry');
   const originalSuite = await readFile(join(fixtureDir, 'f650600-tests', name.replace('.test.mjs', '.mjs')));
   const root = await mkdtemp(join(tmpdir(), 'reader-f650600-fixture-'));
+  let hooks;
   try {
     await materialize(root);
     const suitePath = `scripts/${name}`;
     await write(root, suitePath, originalSuite);
-    // Import in this test worker so the original individual cases and failures
-    // are still reported by node:test. No checkout or global module override.
-    await import(pathToFileURL(join(root, suitePath)).href);
-    after(() => rm(root, { recursive: true, force: true }));
+    // The fixture executes the actual TSX through CommonJS, outside Next's
+    // alias resolver. Resolve only this import to the isolated fixture module.
+    const fixtureRoot = await realpath(root);
+    const fixturePrefix = pathToFileURL(fixtureRoot + '/').href;
+    hooks = registerHooks({
+      resolve(specifier, context, nextResolve) {
+        const isFixtureAlias = specifier === `@/${serviceModulePath}` && context.parentURL?.startsWith(fixturePrefix);
+        return nextResolve(isFixtureAlias ? join(fixtureRoot, serviceModulePath) : specifier, context);
+      },
+    });
+    // Import in this worker so node:test reports every original case.
+    await import(pathToFileURL(join(fixtureRoot, suitePath)).href);
+    after(async () => {
+      hooks.deregister();
+      await rm(root, { recursive: true, force: true });
+    });
   } catch (error) {
+    hooks?.deregister();
     await rm(root, { recursive: true, force: true });
     throw error;
   }
