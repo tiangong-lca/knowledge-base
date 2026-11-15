@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-14",
+  "updatedAt": "2026-11-15",
   "protocol": {
     "id": "community-classics-wave-2026-11-04",
     "questions": [
@@ -4876,6 +4876,12 @@
         "query": "沿原作与官方入口核读 ISO 14040/14044 public preview, ILCD Format1.1 flow/exchange/LCIA meanValue, ILCD2010 boundary/waste/agriculture, CML2001 Part3 §3.2, Suh2004 ChapterIII, EF3.1 reference package and JRC130796 selected sections",
         "date": "2026-11-14",
         "channel": "targeted-official-original-retrieval-and-cross-reading"
+      },
+      {
+        "id": "q-service102-hsg-targeted-20261115",
+        "query": "沿已留存HSG2013原作核读§§3.1–3.2、§3.5及Table6；对照出版社DOI页面与作者书目，定向检查该DOI的correction/erratum线索",
+        "date": "2026-11-15",
+        "channel": "targeted-original-cross-reading-and-bounded-correction-check"
       }
     ],
     "limitations": [
@@ -19669,6 +19675,71 @@
       ],
       "catalogSourceIds": [
         "src-flow-pilot-ef31-update"
+      ]
+    },
+    {
+      "id": "work-hsg2013-lca-lcc",
+      "title": "Toward a computational structure for life cycle sustainability analysis: unifying LCA and LCC",
+      "contributors": "Reinout Heijungs; Ettore Settanni; Jeroen Guinée",
+      "year": "2013",
+      "kind": "journal-article",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://purehost.bath.ac.uk/ws/files/27166562/Heijungs_2013_IntJLifeCycleAssess_18_1722.pdf",
+          "role": "institutional-version-of-record"
+        },
+        {
+          "url": "https://doi.org/10.1007/s11367-012-0461-4",
+          "role": "publisher-work-identity"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1007/s11367-012-0461-4",
+        "version": "Heijungs, Settanni and Guinée, 2013, International Journal of Life Cycle Assessment 18:1722–1733; online 2012-07-07; DOI 10.1007/s11367-012-0461-4"
+      },
+      "volumes": [
+        "V3",
+        "V4",
+        "V7"
+      ],
+      "topics": [
+        "service demand",
+        "natural and monetary units",
+        "life cycle costing",
+        "constraint preservation"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "international"
+      ],
+      "traditions": [
+        "matrix LCA",
+        "life cycle costing"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-service102-hsg-targeted-20261115"
+        ],
+        "reason": "既有过程网络与流表示比较所缺的零价服务和行约束反例；不是为增加机构数量。",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-14",
+      "lastCheckedAt": "2026-11-15",
+      "rights": "Bath书目封页及出版版文末标示Creative Commons Attribution；第三方材料权利另核。仅公开书目信息、必要数值事实及原创解释，不分发所留原件。",
+      "limitations": [
+        "仅核所列段落、公式及表；未完整审读原作及其全部引文。",
+        "模型数量与价格属于原作设定，未验证真实坐用性能、市场价格或使用效果。",
+        "未运行CMLCA或取得作者原始模型；代数复算不等于原生软件验证。",
+        "式(10)印值20与原式价量关系及式(12)不一致；保留两套输入，未取得正式勘误。"
+      ],
+      "catalogSourceIds": [
+        "src-hsg2013-lca-lcc"
       ]
     }
   ],

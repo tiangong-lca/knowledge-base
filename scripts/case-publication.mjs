@@ -1,3 +1,4 @@
+import { serviceConstraintsInputShape, validateServiceConstraintsCase, evaluateServiceConstraintsCase, validateServiceConstraintsFacts } from './service-constraints-case.mjs';
 import { createHash } from 'node:crypto';
 import { climateMetricsInputShape, validateClimateMetricsCase, evaluateClimateMetricsCase, validateClimateMetricsFacts, validateClimateMetricsWallLink } from './climate-metrics.mjs';
 import { cmlFrameworkExamplesInputShape, validateCmlFrameworkExamplesCase, evaluateCmlFrameworkExamplesCase, validateCmlFrameworkExamplesFacts } from './cml-framework-examples.mjs';
@@ -98,6 +99,8 @@ const pedigreeInputShape = {
 // Closed model registry: a case identity selects its projection, evaluator and
 // numeric-source policy together. An input flag cannot disable wall fact checks.
 const caseAdapters = new Map([
+  ['CASE-SERVICE-CONSTRAINTS', { shape: serviceConstraintsInputShape, validate: validateServiceConstraintsCase,
+    context: input => ({ evaluated: evaluateServiceConstraintsCase(input) }), validateFacts: validateServiceConstraintsFacts }],
   ['CASE-CLIMATE-METRICS', { shape: climateMetricsInputShape, validate: validateClimateMetricsCase,
     context: input => ({ evaluated: evaluateClimateMetricsCase(input) }), validateFacts: validateClimateMetricsFacts,
     wallParent: { label: 'climate metrics', key: 'wallParent', validate: validateClimateMetricsWallLink } }],

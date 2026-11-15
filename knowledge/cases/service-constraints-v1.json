@@ -1,0 +1,243 @@
+{
+  "caseId": "CASE-SERVICE-CONSTRAINTS",
+  "version": "1.0.0",
+  "model": "hsg-chair-and-author-constraint-controls-v1",
+  "createdAt": "2026-11-15",
+  "status": "published-hypothetical-inputs-and-author-derived-controls",
+  "source": {
+    "sourceId": "src-hsg2013-lca-lcc",
+    "readingId": "rd-service102-hsg-selected",
+    "doi": "10.1007/s11367-012-0461-4",
+    "pdfArtifactId": "art-service102-hsg-bath-vor",
+    "pdfSha256": "7c86b8c184e44989c0be6d43b413b7da32cdbf80ed47050d3b907360f42112b3",
+    "model": {
+      "evidenceId": "ev-service102-hsg-model",
+      "passageId": "psg-service102-hsg-model"
+    },
+    "price": {
+      "evidenceId": "ev-service102-hsg-price",
+      "passageId": "psg-service102-hsg-price"
+    },
+    "conflict": {
+      "evidenceId": "ev-service102-hsg-conflict",
+      "passageId": "psg-service102-hsg-conflict"
+    }
+  },
+  "naturalUnits": {
+    "provenance": "HSG 2013, pp. 1725–1727, Fig. 1, Tables 1–3 and equations (5)–(8)",
+    "rows": [
+      {
+        "flow": "electricity",
+        "unit": "MJ",
+        "priceUnit": "EUR/MJ"
+      },
+      {
+        "flow": "wood",
+        "unit": "kg",
+        "priceUnit": "EUR/kg"
+      },
+      {
+        "flow": "chair",
+        "unit": "piece",
+        "priceUnit": "EUR/piece"
+      },
+      {
+        "flow": "broken-chair",
+        "unit": "piece",
+        "priceUnit": "EUR/piece"
+      },
+      {
+        "flow": "sitting",
+        "unit": "year",
+        "priceUnit": "EUR/year"
+      }
+    ],
+    "columns": [
+      {
+        "process": "electricity-production",
+        "activityBasis": "produce 1 MJ of electricity"
+      },
+      {
+        "process": "wood-production",
+        "activityBasis": "produce 1 kg of wood"
+      },
+      {
+        "process": "chair-production",
+        "activityBasis": "produce 1 chair"
+      },
+      {
+        "process": "chair-use",
+        "activityBasis": "consume 5 chairs, supply 10 years of sitting and discharge 5 broken chairs"
+      },
+      {
+        "process": "broken-chair-disposal",
+        "activityBasis": "accept 1 piece of broken chair for disposal"
+      }
+    ],
+    "coefficientBasis": "quantity in the row unit per one standard activity in the column",
+    "quantitySign": "outputs positive; inputs negative",
+    "matrix": [
+      [
+        "1",
+        "0",
+        "-2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "-5",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "-5",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "5",
+        "-1"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "10",
+        "0"
+      ]
+    ],
+    "demand": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "1"
+    ],
+    "publishedActivities": [
+      "1",
+      "2.5",
+      "0.5",
+      "0.1",
+      "0.5"
+    ]
+  },
+  "printed": {
+    "provenance": "HSG 2013, p. 1728, equation (10), literal entries",
+    "coefficientBasis": "EUR per one standard activity in the column",
+    "matrix": [
+      [
+        "5",
+        "0",
+        "-10",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "-5",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "25",
+        "-125",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-10",
+        "20"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "scaledComparison": {
+      "provenance": "HSG 2013, pp. 1727–1728, Table 3 and equation (12)",
+      "disposalReceiptEUR": "1"
+    },
+    "proseComparison": {
+      "provenance": "HSG 2013, p. 1726, paragraph introducing Table 4 versus Table 3",
+      "proseElectricityCostEUR": "2.5",
+      "proseWoodCostEUR": "5"
+    }
+  },
+  "declaredRelationship": {
+    "provenance": "HSG 2013, equations (9)–(11), §3.5 and Table 6; derived from declared row pricing",
+    "priceVector": [
+      "5",
+      "1",
+      "25",
+      "-2",
+      "0"
+    ],
+    "relationship": "Am = diag(alpha) Ap and fm = diag(alpha) fp",
+    "currency": "EUR",
+    "transactionSign": "receipts positive; payments negative",
+    "derivedDisposalEntryEURPerActivity": "2"
+  },
+  "authorControls": {
+    "provenance": "Author-derived algebraic checks for the fixed case",
+    "zeroActivities": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "restoration": "Keep the priced balances and impose the original natural-unit sitting row and demand.",
+    "redundant": {
+      "assumption": "One activity x supplies one unit of a quantity. The second row records twice the same balance in the same unit.",
+      "rowUnit": "arbitrary quantity unit",
+      "matrix": [
+        [
+          "1"
+        ],
+        [
+          "2"
+        ]
+      ],
+      "demand": [
+        "1",
+        "2"
+      ],
+      "rowMap": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "sampleActivities": [
+        [
+          "0"
+        ],
+        [
+          "1"
+        ],
+        [
+          "2"
+        ]
+      ]
+    }
+  }
+}

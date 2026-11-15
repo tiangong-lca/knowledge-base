@@ -5436,6 +5436,29 @@
         "checkedAt": "2026-11-14"
       },
       "preservation": "记录所读载体的实际字节及选段；不分发原件。默认快照仅标识所列一个实际载体，其他成员和范围由阅读记录分别给出，不以此哈希代表整个作品或压缩包。"
+    },
+    {
+      "id": "src-hsg2013-lca-lcc",
+      "title": "Toward a computational structure for life cycle sustainability analysis: unifying LCA and LCC",
+      "url": "https://purehost.bath.ac.uk/ws/files/27166562/Heijungs_2013_IntJLifeCycleAssess_18_1722.pdf",
+      "publisher": "Springer; version of record preserved by University of Bath Research Portal",
+      "version": "Heijungs, Settanni and Guinée, 2013, International Journal of Life Cycle Assessment 18:1722–1733; online 2012-07-07; DOI 10.1007/s11367-012-0461-4",
+      "accessedAt": "2026-11-14",
+      "accessStatus": "public-passages-inspected",
+      "rights": "Bath书目封页及出版版文末标示Creative Commons Attribution；第三方材料权利另核。仅公开书目信息、必要数值事实及原创解释，不分发所留原件。",
+      "artifact": {
+        "mediaType": "application/pdf",
+        "sha256": "7c86b8c184e44989c0be6d43b413b7da32cdbf80ed47050d3b907360f42112b3",
+        "resolvedUrl": "https://purehost.bath.ac.uk/ws/files/27166562/Heijungs_2013_IntJLifeCycleAssess_18_1722.pdf",
+        "pageCount": 13
+      },
+      "reading": {
+        "readingId": "rd-service102-hsg-selected",
+        "status": "selected-passages",
+        "scope": "§§3.1–3.2椅子主例、式(5)–(15)、Tables1–4，§3.5及Table6的自然单位／金额关系；不含完整喷剂扩展示例验证。",
+        "checkedAt": "2026-11-15"
+      },
+      "preservation": "留存取得的含书目封页13页出版版PDF及选段核对；封页下载日不作为出版年代。所列哈希只代表此PDF载体。"
     }
   ],
   "evidence": [
@@ -26424,6 +26447,126 @@
         ],
         "reviewKind": "agent-source-check",
         "checkedAt": "2026-11-14"
+      }
+    },
+    {
+      "id": "ev-service102-hsg-model",
+      "sourceId": "src-hsg2013-lca-lcc",
+      "readingId": "rd-service102-hsg-selected",
+      "passageId": "psg-service102-hsg-model",
+      "locator": "§3.1–3.2，Tables1–3及式(5)–(8)，印页1725–1727；PDF第5–7页",
+      "summary": "原作设定五活动、五种自然单位坐标与一年坐用需求，列明相应倍率。",
+      "relation": "supports",
+      "numericFacts": [
+        {
+          "id": "service-per-use",
+          "value": "10",
+          "unit": "year/use activity",
+          "subject": "sitting supplied by chair use",
+          "quantity": "technosphere output coefficient",
+          "basis": "Equation (5), sitting row and chair-use column; baseline use activity consumes 5 chairs and supplies 10 years of sitting"
+        },
+        {
+          "id": "service-demand",
+          "value": "1",
+          "unit": "year",
+          "subject": "sitting final demand",
+          "quantity": "final demand",
+          "basis": "Equation (6), sitting coordinate of the one-year sitting reference flow"
+        }
+      ],
+      "appraisal": {
+        "basis": "固定Bath出版版PDF选段、逐式与逐行复算、1727–1728页版面核对；独立代理原件复核。",
+        "methodologicalScope": "同一椅子假设模型的自然单位需求、金额表示和成本核算顺序。",
+        "independence": "同一作品的各表和公式相互校验，不是独立经验确认；与Heijungs–Suh著作存在作者重叠。",
+        "limitations": [
+          "仅核所列段落、公式及表；未完整审读原作及其全部引文。",
+          "模型数量与价格属于原作设定，未验证真实坐用性能、市场价格或使用效果。",
+          "未运行CMLCA或取得作者原始模型；代数复算不等于原生软件验证。",
+          "式(10)印值20与原式价量关系及式(12)不一致；保留两套输入，未取得正式勘误。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-15"
+      }
+    },
+    {
+      "id": "ev-service102-hsg-price",
+      "sourceId": "src-hsg2013-lca-lcc",
+      "readingId": "rd-service102-hsg-selected",
+      "passageId": "psg-service102-hsg-price",
+      "locator": "§3.1–3.2，Table1及式(9)，印页1726–1727；§3.5印页1730–1731；Table6印页1732；PDF第6–7、10–12页",
+      "summary": "原作定价坐用为零、报废椅为负，并指出零价矩阵不可逆；Table6沿用自然单位求得的活动向量核算金额。",
+      "relation": "supports",
+      "numericFacts": [
+        {
+          "id": "sitting-price",
+          "value": "0",
+          "unit": "EUR/year",
+          "subject": "sitting market price",
+          "quantity": "market price per unit",
+          "basis": "Equation (9) and Table 1; sitting is not exchanged on a market in this example"
+        },
+        {
+          "id": "broken-chair-price",
+          "value": "-2",
+          "unit": "EUR/piece",
+          "subject": "broken chair market price",
+          "quantity": "market price per unit",
+          "basis": "Equation (9) and Table 1; this price labels the unwanted broken chair flow"
+        }
+      ],
+      "appraisal": {
+        "basis": "固定Bath出版版PDF选段、逐式与逐行复算、1727–1728页版面核对；独立代理原件复核。",
+        "methodologicalScope": "同一椅子假设模型的自然单位需求、金额表示和成本核算顺序。",
+        "independence": "同一作品的各表和公式相互校验，不是独立经验确认；与Heijungs–Suh著作存在作者重叠。",
+        "limitations": [
+          "仅核所列段落、公式及表；未完整审读原作及其全部引文。",
+          "模型数量与价格属于原作设定，未验证真实坐用性能、市场价格或使用效果。",
+          "未运行CMLCA或取得作者原始模型；代数复算不等于原生软件验证。",
+          "式(10)印值20与原式价量关系及式(12)不一致；保留两套输入，未取得正式勘误。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-15"
+      }
+    },
+    {
+      "id": "ev-service102-hsg-conflict",
+      "sourceId": "src-hsg2013-lca-lcc",
+      "readingId": "rd-service102-hsg-selected",
+      "passageId": "psg-service102-hsg-conflict",
+      "locator": "式(10)与(12)，印页1728；Tables3–4印页1727；制椅增值文字印页1726；PDF第6–8页",
+      "summary": "式(10)处置系数印为20；式(5)/(9)的乘积为2，式(12)/Table3缩放项为1。制椅成本文字的木材／电力归属与表项互换，合计相符不能解释该差异。",
+      "relation": "supports",
+      "numericFacts": [
+        {
+          "id": "printed-disposal",
+          "value": "20",
+          "unit": "EUR/disposal activity",
+          "subject": "broken chair disposal entry in printed equation (10)",
+          "quantity": "unscaled monetary coefficient as printed",
+          "basis": "Equation (10), broken-chair row and disposal column; literal printed value before activity scaling"
+        },
+        {
+          "id": "scaled-disposal",
+          "value": "1",
+          "unit": "EUR",
+          "subject": "broken chair disposal entry in equation (12) and Table 3",
+          "quantity": "scaled transaction",
+          "basis": "Equation (12) and Table 3; disposal receipt for the one-year sitting reference flow"
+        }
+      ],
+      "appraisal": {
+        "basis": "固定Bath出版版PDF选段、逐式与逐行复算、1727–1728页版面核对；独立代理原件复核。",
+        "methodologicalScope": "同一椅子假设模型的自然单位需求、金额表示和成本核算顺序。",
+        "independence": "同一作品的各表和公式相互校验，不是独立经验确认；与Heijungs–Suh著作存在作者重叠。",
+        "limitations": [
+          "仅核所列段落、公式及表；未完整审读原作及其全部引文。",
+          "模型数量与价格属于原作设定，未验证真实坐用性能、市场价格或使用效果。",
+          "未运行CMLCA或取得作者原始模型；代数复算不等于原生软件验证。",
+          "式(10)印值20与原式价量关系及式(12)不一致；保留两套输入，未取得正式勘误。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-15"
       }
     }
   ],
@@ -56601,6 +56744,301 @@
           "rationale": "固定原模型/实现证据与原有规范段落共同确定这一流的范围和诊断用途，实际旧运行身份保持。"
         }
       ]
+    },
+    {
+      "id": "cl-service102-row-map",
+      "text": "有了平衡方程，还可以追问：换一种表示，原来要交付的数量是否仍受约束？先保持过程、活动倍率和研究需求所指的对象不变，只用一个已知的线性映射R改写各行，得到A′＝RA、f′＝Rf。原来满足As＝f的活动必然满足A′s＝f′。若R可逆，反过来也成立，两组方程允许的活动完全相同。例如把电力行从兆焦换为千瓦时，要同时换算该行各过程数量及需求；不能只换矩阵，留下原单位的需求。这里改的是各行怎样表示数量，与前面改变一列过程记录的基准不同。表示关系也不证明记录中的服务足以满足实际使用要求。",
+      "kind": "calculation",
+      "scope": "固定活动变量及可行活动集合、已知行映射下的代数等价充分条件；不要求A本身可逆。",
+      "evidenceIds": [
+        "ev-service102-hsg-price"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-service102-hsg-price",
+          "relation": "context",
+          "rationale": "原作提供已核的自然单位／金额模型与计算顺序；本书的行映射推导和章际比较以明示前提为依据，不冒称原作运行或现实观测。"
+        }
+      ],
+      "premiseIds": [
+        "cl-inv-demand-balance",
+        "cl-inv-scaling-basis",
+        "cl-flow99-basis-and-demand"
+      ],
+      "caveats": [
+        "固定模型的代数约束不替代服务性能、资料适用性和实际供应关系的证据。"
+      ],
+      "reasoning": "由A′s−f′＝R(As−f)可得原解必为映射后解；R可逆时从零映射残差推出零原残差。保持同一可行活动集合，不将行映射与列重参数化混同。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-15",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-service102-cost-purpose",
+      "text": "这并不是原作者用金额方程算错了坐用量。Heijungs、Settanni与Guinée在2013年的论文中明确指出，未定价的功能会使金额矩阵出现零行，因而不能用逆矩阵由金额需求确定活动。他们先按自然单位求活动，再让成本核算沿用这组活动；汇总表也保留这一顺序。如此，未定价的一年坐用仍决定生产与处置规模，金额账回答完成它涉及哪些收支。本例使用过程的购椅与处置支出合计为13.5欧元；坐用的价格记零，既不表示这些支出为零，也不表示服务没有效用。",
+      "kind": "interpretation",
+      "scope": "原作§3.5与Table6的求解顺序及椅子主例成本解释；不是作者软件行为或现实成本验证。",
+      "evidenceIds": [
+        "ev-service102-hsg-price",
+        "ev-service102-hsg-conflict"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-service102-hsg-price",
+          "relation": "supports",
+          "rationale": "原作提供已核的自然单位／金额模型与计算顺序；本书的行映射推导和章际比较以明示前提为依据，不冒称原作运行或现实观测。"
+        },
+        {
+          "evidenceId": "ev-service102-hsg-conflict",
+          "relation": "supports",
+          "rationale": "原作提供已核的自然单位／金额模型与计算顺序；本书的行映射推导和章际比较以明示前提为依据，不冒称原作运行或现实观测。"
+        }
+      ],
+      "premiseIds": [
+        "cl-service102-activities",
+        "cl-service102-zero-price"
+      ],
+      "caveats": [
+        "固定模型的代数约束不替代服务性能、资料适用性和实际供应关系的证据。"
+      ],
+      "reasoning": "按原作自然单位解和声明价量关系核成本，区别零价坐用与消费活动支出；明确式10冲突影响处置列而非使用列13.5。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-15",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-service102-service-meaning",
+      "text": "因此，选择自然单位还是金额单位，要看研究要保留什么要求。原作所说的自然单位并不只指质量，也包括能量、件数、时间；有些服务还可能适合按金额表述。若问题本来就是一笔支出的供应链，金额需求可以有自己的用途。但要把它当成另一项服务需求的等价表示，就须说明两者的对应条件，并检验有没有原来不合要求的活动被新方程放行。椅子例的零价行丢掉了坐用规模；下面的反馈例则保留了原方程，却没有完成其中的相互供给。两种缺失需要不同的处理。",
+      "kind": "synthesis",
+      "scope": "固定模型中的约束保留与研究问题选择；不泛化为所有货币分析无效，也不验证真实服务性能。",
+      "evidenceIds": [
+        "ev-service102-hsg-price"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-service102-hsg-price",
+          "relation": "context",
+          "rationale": "原作提供已核的自然单位／金额模型与计算顺序；本书的行映射推导和章际比较以明示前提为依据，不冒称原作运行或现实观测。"
+        }
+      ],
+      "premiseIds": [
+        "cl-service102-residual-condition",
+        "cl-service102-redundant",
+        "cl-inv-example-truncated"
+      ],
+      "caveats": [
+        "固定模型的代数约束不替代服务性能、资料适用性和实际供应关系的证据。"
+      ],
+      "reasoning": "区分原作自然单位框架、作者的约束检验和本书既有反馈反例，保持不同用途合法性。",
+      "conceptIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-15",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "cl-service102-activities",
+      "kind": "calculation",
+      "scope": "Heijungs、Settanni 与 Guinée 的假设椅子案例，从一年坐用求各过程的活动量",
+      "evidenceIds": [
+        "ev-service102-hsg-model"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-service102-hsg-model",
+          "relation": "supports",
+          "rationale": "图1、表1至3与式(5)至(8)给出流程、处置及使用活动基准、最终需求和按需求缩放的活动。"
+        }
+      ],
+      "premiseIds": [
+        "cl-inv-demand-balance"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "这是论文设定的线性案例，坐用年数及其投入属于假设数据。"
+      ],
+      "reasoning": "先由坐用行确定使用活动，继而平衡椅子、报废椅、用电和用木，逐行以各自单位核对自然单位残差。",
+      "text": "Heijungs、Settanni 与 Guinée 用一个假设的椅子案例计算交付一年坐用需要的活动量。按他们的数据，每份使用记录以5把椅子为投入，提供10年坐用并产生5把报废椅。为交付1年坐用，使用活动取0.1。制椅以产出1把椅子为活动基准，活动量取0.5。处置以接收1把报废椅为活动基准，活动量取0.5。整个过程网络于是需要1 MJ电力和2.5 kg木材。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-15",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-SERVICE-CONSTRAINTS",
+        "version": "1.0.0",
+        "inputSha256": "053e317c3bf53fa926c44408a686bcc1c5739fc3b57d3bf9c5778ee54b61671c",
+        "inputFile": "service-constraints-v1.json"
+      }
+    },
+    {
+      "id": "cl-service102-printed-conflict",
+      "kind": "calculation",
+      "scope": "椅子案例的原印处置金额、声明的行定价推导值及逐项核对",
+      "evidenceIds": [
+        "ev-service102-hsg-model",
+        "ev-service102-hsg-price",
+        "ev-service102-hsg-conflict"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-service102-hsg-model",
+          "relation": "supports",
+          "rationale": "式(5)给出处置每次接收一把报废椅的物量，表2给出实际活动量。"
+        },
+        {
+          "evidenceId": "ev-service102-hsg-price",
+          "relation": "supports",
+          "rationale": "式(9)给出报废椅的负价格，表6重申以同一行价格换算。"
+        },
+        {
+          "evidenceId": "ev-service102-hsg-conflict",
+          "relation": "supports",
+          "rationale": "原印式(10)与式(12)、表3的同一位置有可定位的冲突。表4前的文字与表3还互换了电力和木材的成本金额。"
+        }
+      ],
+      "premiseIds": [
+        "cl-service102-activities"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "原文第1726页把木材和电力的制椅成本分别写成5和2.5欧元。表3对应的木材和电力分别为2.5和5欧元，两项合计均为7.5欧元。",
+        "原印值与按原作声明关系推导的值分别保留。推导值的依据是原作量价和缩放关系，其正式勘误状态尚未核实。"
+      ],
+      "reasoning": "对报废椅行按每件负价格乘各列的有符号物量，并把两套未缩放的处置系数分别乘原活动量。",
+      "text": "论文把报废椅定价为每把−2欧元。每次处置接收一把，在数量表上记为−1，相乘应记为收入2欧元。式(10)的这一格印成20。照印出的数字乘处置活动量，处置方会收到10欧元，超出使用方支付的1欧元，报废椅一行便留下9欧元差额。按原文声明的价量关系重算，处置方收到1欧元，与式(12)和表3一致。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-15",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-SERVICE-CONSTRAINTS",
+        "version": "1.0.0",
+        "inputSha256": "053e317c3bf53fa926c44408a686bcc1c5739fc3b57d3bf9c5778ee54b61671c",
+        "inputFile": "service-constraints-v1.json"
+      }
+    },
+    {
+      "id": "cl-service102-zero-price",
+      "kind": "calculation",
+      "scope": "按原作声明的逐行定价，零价坐用导致服务约束丢失",
+      "evidenceIds": [
+        "ev-service102-hsg-model",
+        "ev-service102-hsg-price"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-service102-hsg-model",
+          "relation": "supports",
+          "rationale": "式(5)与式(6)保留自然单位的坐用产出和最终需求。"
+        },
+        {
+          "evidenceId": "ev-service102-hsg-price",
+          "relation": "supports",
+          "rationale": "式(9)、式(11)、§3.5和表6给出零价、零金额需求和先用自然单位求规模的原则。"
+        }
+      ],
+      "premiseIds": [
+        "cl-service102-activities",
+        "cl-service102-printed-conflict"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "零价只描述该设定中坐用没有市场交易。使用者仍需购买椅子并承担报废处置费用。"
+      ],
+      "reasoning": "将坐用行的供应和需求都乘零，再分别代入原作的活动向量和全零活动，对照自然单位和金额残差。",
+      "text": "在这组假设数据中，坐用没有市场交易，原作将它记为0欧元一年。把坐用行和一年最终需求都乘以这个价格，原来对坐用量的要求变成0＝0。按声明的价量关系正确换算，原活动和所有活动都为零这两种情形都能让金额平衡。回到物量表，零活动的坐用残差却是-1年，正好少交付一年坐用。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-15",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-SERVICE-CONSTRAINTS",
+        "version": "1.0.0",
+        "inputSha256": "053e317c3bf53fa926c44408a686bcc1c5739fc3b57d3bf9c5778ee54b61671c",
+        "inputFile": "service-constraints-v1.json"
+      }
+    },
+    {
+      "id": "cl-service102-restored",
+      "kind": "calculation",
+      "scope": "对声明的价量变换，重新附加原坐用方程恢复原活动量",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-service102-activities",
+        "cl-service102-zero-price"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "恢复结论使用按声明价量关系构造的四条金额方程。若改用式(10)原印的20欧元，补回坐用条件会使处置活动取0.05，仍剩0.45把报废椅。"
+      ],
+      "reasoning": "给金额关系附加原坐用行和需求。四条非零价的行可分别除以价格，恢复对应物量方程。",
+      "text": "保留一年坐用的原方程，就还能按同一活动量记金额。每份使用记录提供10年坐用，要求1年，就得到使用活动0.1。其余四行的价格都非零，各自除以单价便恢复原来的物量约束，制椅活动回到0.5，处置活动回到0.5。重新附加的正是原来独立的服务要求。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-15",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-SERVICE-CONSTRAINTS",
+        "version": "1.0.0",
+        "inputSha256": "053e317c3bf53fa926c44408a686bcc1c5739fc3b57d3bf9c5778ee54b61671c",
+        "inputFile": "service-constraints-v1.json"
+      }
+    },
+    {
+      "id": "cl-service102-redundant",
+      "kind": "calculation",
+      "scope": "本书设定的单活动对照，删除一条冗余平衡行后解不变",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-service102-row-map"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "第二行完整复制第一条约束的倍数关系，包括需求端。"
+      ],
+      "reasoning": "两行残差为 x−1 与 2x−2。只要第一行等于零，第二行一定也等于零。把第二行映成0不改变解。",
+      "text": "删去一行有时不影响解。设只有一个活动，第一行要求完成1个单位，第二行把同一供需两边都乘2。把第二行改成0＝0，即使这一步无法用逆矩阵还原，唯一解仍是活动量1。第一行满足时，第二行也必然满足。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-15",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-SERVICE-CONSTRAINTS",
+        "version": "1.0.0",
+        "inputSha256": "053e317c3bf53fa926c44408a686bcc1c5739fc3b57d3bf9c5778ee54b61671c",
+        "inputFile": "service-constraints-v1.json"
+      }
+    },
+    {
+      "id": "cl-service102-residual-condition",
+      "kind": "synthesis",
+      "scope": "固定活动集合、平衡和最终需求时，线性行映射保留解的必要充分条件",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-service102-zero-price",
+        "cl-service102-restored",
+        "cl-service102-redundant"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "条件只比较固定模型内可取活动量满足的数值平衡。现实服务的性能与使用条件还需要另行核对。"
+      ],
+      "reasoning": "线性变换将每个原残差 r＝As−f 变成 Rr。原解始终满足变换式。两组解相同，当且仅当固定模型可达残差中没有非零向量被 R 映为零。",
+      "text": "判断一次行变换有没有放宽要求，要看它会不会把原来通不过的活动也判成平衡。固定活动集合和最终需求，把每组活动的供给减去需求，所得差额就是残差。对供给和需求施加同一个线性行变换后，原来的解仍是解。两组解恰好相同，当且仅当由模型允许的活动量产生的任何非零残差都不会被映成零。可逆变换满足这个条件。即使变换不可逆，保留下来的条件也可能已经足够，例如删去一条完全冗余的平衡行。",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-15",
+      "reviewKind": "agent-source-check",
+      "caseBinding": {
+        "caseId": "CASE-SERVICE-CONSTRAINTS",
+        "version": "1.0.0",
+        "inputSha256": "053e317c3bf53fa926c44408a686bcc1c5739fc3b57d3bf9c5778ee54b61671c",
+        "inputFile": "service-constraints-v1.json"
+      }
     }
   ],
   "concepts": [

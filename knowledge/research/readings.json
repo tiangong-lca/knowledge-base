@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-14",
+  "updatedAt": "2026-11-15",
   "readings": [
     {
       "id": "rd-cml-2001-part1",
@@ -27834,6 +27834,120 @@
       "sourceKeys": [
         "src-flow-pilot-ef31-update"
       ]
+    },
+    {
+      "id": "rd-service102-hsg-selected",
+      "workId": "work-hsg2013-lca-lcc",
+      "title": "Toward a computational structure for life cycle sustainability analysis: unifying LCA and LCC",
+      "version": "Heijungs, Settanni and Guinée, 2013, International Journal of Life Cycle Assessment 18:1722–1733; online 2012-07-07; DOI 10.1007/s11367-012-0461-4",
+      "url": "https://purehost.bath.ac.uk/ws/files/27166562/Heijungs_2013_IntJLifeCycleAssess_18_1722.pdf",
+      "accessedAt": "2026-11-14",
+      "readAt": "2026-11-15",
+      "readingStatus": "selected-passages",
+      "question": "同一服务的自然单位约束在金额表示中何时保留，何时因零价失去？原作所印矩阵与后续核算是否一致？",
+      "argumentSummary": "原作以自然单位确定一年坐用活动，再据同一活动核成本；零价坐用使金额行和需求同时为零。原印处置系数与声明关系及缩放表有内部不一致，须分开保存和复算。",
+      "artifacts": [
+        {
+          "id": "art-service102-hsg-bath-vor",
+          "mediaType": "application/pdf",
+          "sha256": "7c86b8c184e44989c0be6d43b413b7da32cdbf80ed47050d3b907360f42112b3",
+          "resolvedUrl": "https://purehost.bath.ac.uk/ws/files/27166562/Heijungs_2013_IntJLifeCycleAssess_18_1722.pdf",
+          "pageCount": 13
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-service102-hsg-model",
+          "artifactId": "art-service102-hsg-bath-vor",
+          "locator": "§3.1–3.2，Tables1–3及式(5)–(8)，印页1725–1727；PDF第5–7页",
+          "printedPages": "1725–1727",
+          "pdfIndices": [
+            4,
+            5,
+            6
+          ],
+          "topics": [
+            "自然单位过程矩阵",
+            "一年坐用需求",
+            "原作活动倍率"
+          ],
+          "limits": [
+            "仅核所列段落、公式及表；未完整审读原作及其全部引文。",
+            "模型数量与价格属于原作设定，未验证真实坐用性能、市场价格或使用效果。",
+            "未运行CMLCA或取得作者原始模型；代数复算不等于原生软件验证。",
+            "式(10)印值20与原式价量关系及式(12)不一致；保留两套输入，未取得正式勘误。"
+          ]
+        },
+        {
+          "id": "psg-service102-hsg-price",
+          "artifactId": "art-service102-hsg-bath-vor",
+          "locator": "§3.1–3.2，Table1及式(9)，印页1726–1727；§3.5印页1730–1731；Table6印页1732；PDF第6–7、10–12页",
+          "printedPages": "1726–1727,1730–1732",
+          "pdfIndices": [
+            5,
+            6,
+            9,
+            10,
+            11
+          ],
+          "topics": [
+            "零价坐用服务",
+            "负价报废椅",
+            "先确定自然单位活动再核算金额"
+          ],
+          "limits": [
+            "仅核所列段落、公式及表；未完整审读原作及其全部引文。",
+            "模型数量与价格属于原作设定，未验证真实坐用性能、市场价格或使用效果。",
+            "未运行CMLCA或取得作者原始模型；代数复算不等于原生软件验证。",
+            "式(10)印值20与原式价量关系及式(12)不一致；保留两套输入，未取得正式勘误。"
+          ]
+        },
+        {
+          "id": "psg-service102-hsg-conflict",
+          "artifactId": "art-service102-hsg-bath-vor",
+          "locator": "式(10)与(12)，印页1728；Tables3–4印页1727；制椅增值文字印页1726；PDF第6–8页",
+          "printedPages": "1726–1728",
+          "pdfIndices": [
+            5,
+            6,
+            7
+          ],
+          "topics": [
+            "原印处置系数20",
+            "按式(5)和(9)重建为2",
+            "缩放金额1及逐项成本名称差异"
+          ],
+          "limits": [
+            "仅核所列段落、公式及表；未完整审读原作及其全部引文。",
+            "模型数量与价格属于原作设定，未验证真实坐用性能、市场价格或使用效果。",
+            "未运行CMLCA或取得作者原始模型；代数复算不等于原生软件验证。",
+            "式(10)印值20与原式价量关系及式(12)不一致；保留两套输入，未取得正式勘误。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "固定Bath出版版PDF选段、逐式与逐行复算、1727–1728页版面核对；独立代理原件复核。",
+        "methodologicalScope": "同一椅子假设模型的自然单位需求、金额表示和成本核算顺序。",
+        "independence": "同一作品的各表和公式相互校验，不是独立经验确认；与Heijungs–Suh著作存在作者重叠。",
+        "limitations": [
+          "仅核所列段落、公式及表；未完整审读原作及其全部引文。",
+          "模型数量与价格属于原作设定，未验证真实坐用性能、市场价格或使用效果。",
+          "未运行CMLCA或取得作者原始模型；代数复算不等于原生软件验证。",
+          "式(10)印值20与原式价量关系及式(12)不一致；保留两套输入，未取得正式勘误。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-15"
+      },
+      "rights": "Bath书目封页及出版版文末标示Creative Commons Attribution；第三方材料权利另核。仅公开书目信息、必要数值事实及原创解释，不分发所留原件。",
+      "unread": [
+        "仅核所列段落、公式及表；未完整审读原作及其全部引文。",
+        "模型数量与价格属于原作设定，未验证真实坐用性能、市场价格或使用效果。",
+        "未运行CMLCA或取得作者原始模型；代数复算不等于原生软件验证。",
+        "式(10)印值20与原式价量关系及式(12)不一致；保留两套输入，未取得正式勘误。"
+      ],
+      "sourceKeys": [
+        "src-hsg2013-lca-lcc"
+      ]
     }
   ],
   "gaps": [
@@ -31364,6 +31478,21 @@
         "S05",
         "cn-flow",
         "cn-exchange"
+      ]
+    },
+    {
+      "id": "rev-service-constraints-102",
+      "before": "既有过程网络解释活动平衡与列基准，尚未展开行表示转换是否保留服务要求。",
+      "after": "新增HSG椅子主例的原件选读及分立数值事实，按原印与声明关系分别检验；可逆行映射、零价丢约束及冗余条件反例由本书推导。",
+      "reasoning": "将服务要求、坐标变换和成本核算顺序对齐，不把金额零值当成服务无效或零活动已完成服务。",
+      "status": "source-compared-candidate-prose-pending-independent-reader-review",
+      "triggerPassageIds": [
+        "psg-service102-hsg-model",
+        "psg-service102-hsg-price",
+        "psg-service102-hsg-conflict"
+      ],
+      "affectedUnits": [
+        "B07"
       ]
     }
   ]
