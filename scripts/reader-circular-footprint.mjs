@@ -12,7 +12,7 @@ export const circularFootprintId = 'circular-footprint-109';
 export const circularFootprintChapter = '/docs/book/recycling-chains-and-accounting';
 export const circularFootprintMarker = '循环收益的归属';
 /** @type {string|null} */
-export const circularFootprintUnitPin = null;
+export const circularFootprintUnitPin = '7f39898300037bbea8886c8986da445644c165bddd6b11b9af7e7e6006f7c7be';
 /** @type {string|null} */
 export const circularFootprintCapturePin = '222c86e7c9c3157e148d1bb576cea132f7671b9a8314d1ffe863923a5cc395e1';
 export const circularFootprintSource = Object.freeze({

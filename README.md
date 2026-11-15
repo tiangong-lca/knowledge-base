@@ -20,13 +20,24 @@ lastReviewedCommit: 9a7103707cc275b6b7777acd56336d4c84d9af6b
 
 # LCA Living Knowledge Base and Review
 
+[Circular-footprint comparison #109](https://github.com/tiangong-lca/knowledge-base/issues/109)
+adds eight B13 explanations of product shares and whole-system recycling results.
+The [comparison record](_docs/editorial/2026-11-15-circular-footprint.md) separates
+the original figure's quality treatment, a fixed-reference author control and
+capacity-driven changes in waste treatment. No new numerical case is introduced.
+The original 34 claims and old six-note scope retain their identities. Independent
+reading covers the entire Part III manuscript and the separately placed M02 note,
+with actual comprehension answers and bounded correction rereads. Current publication
+and final delivery status remain on Issue109; programme9 is open.
+
 [Finite load shifts #107](https://github.com/tiangong-lca/knowledge-base/issues/107)
 connects observed time-window screening, marginal model conditions and a complete
 equal-service intervention. The [protocol and comparison record](_docs/editorial/2026-11-15-load-shift.md)
 separates the two original studies from the book's versioned authored dispatch
 case. Twelve new B12 explanations retain the original 58 and their case history.
-Source, reader and actual-output acceptance are separate from final production,
-CI, hosted Main and required workspace integration.
+Source PR108/Mainb7d8cd1, qualified hosted output and root2389/PR2390/Main28dcdf8
+complete that unit. Final ordinary receipts verify complete delivery and source
+handoff; the wider programme and empirical limitations remain unchanged.
 
 [Substitution rules #105](https://github.com/tiangong-lca/knowledge-base/issues/105)
 compares complete-system reporting, reference residuals and the evidence required

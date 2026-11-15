@@ -22,6 +22,24 @@ lastReviewedCommit: 9a7103707cc275b6b7777acd56336d4c84d9af6b
 
 # Publication architecture
 
+## Circular-footprint successor
+
+The #109 B13 unit admits one bounded qualitative addition and selected-reading
+extensions to two existing PEF sources. It restores actual preceding B13 bytes
+and all three raw knowledge objects before #107 checks its own source and public
+JSON receipts. Existing carrier identities, passage prefixes and older scientific
+contracts retain their independent qualification. No case or registry changes
+are needed for the symbolic comparison.
+
+The original B13 chapter and six-note market marker keep their exact historical
+claim lists even though the last original claim follows seven new paragraphs.
+Current marker membership and former citation membership are distinct. Both
+views preserve unique native notes and a precise description target with the
+same scoped scroll margin used for #107. The actual capture binds nine physical
+files to the two B13 article digests, three public HTML digests and four public
+JSON artifacts. A private technical admission remains separate from the formal
+source, continuous-reader and actual-output judgments and the later clean build.
+
 ## Finite load-shift successor
 
 The #107 B12 unit extends the bounded successor chain with one closed authored
@@ -47,7 +65,8 @@ uncaptured normalized text to an older raw HTML capture.
 B12's preserved ordinary table has an exact native target, with unchanged cells
 and separately checked visibility. The scoped history renderer admits that table
 alongside this unit's paragraphs; older guards keep their original tag policies.
-Only #107 versioned ordinary targets receive scroll margin below sticky headers.
+The #107 versioned ordinary targets receive scroll margin below sticky headers;
+the later #109 description targets use the same bounded behavior.
 Actual no-script keyboard checks supplement DOM visibility with viewport bounds
 and first-cell hit tests. Private technical admissions and fixture receipts do
 not provide the separate editorial source, reader or output acceptance.
