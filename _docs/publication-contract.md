@@ -17,12 +17,22 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-15
-lastReviewedCommit: cab54db6c226bc4a17b9092efbb3b81437c547b3
+lastReviewedCommit: 251467ca70f4f21a50d6284696dcb648144d1f94
 ---
 
 # Publication contract
 
 ## Scoped scientific successors
+
+The land-recovery unit #111 compares operations within specified models: counting
+a post-abandonment interval and converting an already-characterized land score
+by a fixed positive model coefficient. An unweighted regional factor is distinct
+from a globally aggregated PDF indicator. The authored integral and controls have
+declared dimensions, time origin and sign conditions; they are not observed
+restoration or new official factors. The original2016 report, later article,
+updated report and named technical chapter retain separate identities. A printed
+table/formula discrepancy or conflicting shorthand remains visible evidence,
+not an invented official correction or a claim about an uninspected workbook.
 
 The circular-footprint unit #109 distinguishes product-account shares from a
 complete service-matched route comparison. Historical 2018 guidance, the 2022

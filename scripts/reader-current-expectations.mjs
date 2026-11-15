@@ -1,3 +1,5 @@
+import landConfig from '../config/reader-land-recovery.json' with { type: 'json' };
+import { selectLandRecovery, effectiveLandRecovery } from './reader-land-recovery.mjs';
 import circularConfig from '../config/reader-circular-footprint.json' with { type: 'json' };
 import { selectCircularFootprint, effectiveCircularFootprint } from './reader-circular-footprint.mjs';
 import loadShiftConfig from '../config/reader-load-shift.json' with { type: 'json' };
@@ -25,8 +27,9 @@ export const currentServiceConstraints = selectServiceConstraints(serviceConstra
 export const currentSubstitutionRules = selectSubstitutionRules(substitutionConfig, undefined, preview);
 export const currentLoadShift = selectLoadShift(loadShiftConfig, undefined, preview);
 export const currentCircularFootprint = selectCircularFootprint(circularConfig, undefined, preview);
+export const currentLandRecovery = selectLandRecovery(landConfig, undefined, preview);
 export const isReadableBookReviewPreview = oldPreview
-  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview');
+  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview');
 const previousPlan = readableBookReviewPlan(oldPreview
   ? acceptance.units
   : pinnedReadableBookUnits(acceptance, readableBookBaselineDigest, readableBookAcceptancePins));
@@ -35,7 +38,8 @@ const acceptedFlow = effectiveFlowBoundary(acceptedCopyedit, currentFlowBoundary
 const acceptedService = effectiveServiceConstraints(acceptedFlow, currentServiceConstraints);
 const acceptedSubstitution = effectiveSubstitutionRules(acceptedService, currentSubstitutionRules);
 const acceptedShift = effectiveLoadShift(acceptedSubstitution, currentLoadShift);
-export const currentBookPlan = effectiveCircularFootprint(acceptedShift, currentCircularFootprint);
+const acceptedFootprint = effectiveCircularFootprint(acceptedShift, currentCircularFootprint);
+export const currentBookPlan = effectiveLandRecovery(acceptedFootprint, currentLandRecovery);
 
 export function currentBookRecordMatches(kind, previous, current, projection) {
   if (projection !== undefined) return matchesAcceptedRecord(currentBookPlan, kind, previous, current, projection);

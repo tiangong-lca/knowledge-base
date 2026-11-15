@@ -15,10 +15,19 @@ checkPaths:
   - "app/**"
   - "scripts/**"
 lastReviewedAt: 2026-11-15
-lastReviewedCommit: cab54db6c226bc4a17b9092efbb3b81437c547b3
+lastReviewedCommit: 251467ca70f4f21a50d6284696dcb648144d1f94
 ---
 
 # LCA Living Knowledge Base and Review
+
+[Land recovery #111](https://github.com/tiangong-lca/knowledge-base/issues/111)
+distinguishes a modeled recovery cutoff from a fixed midpoint-to-endpoint
+conversion. Its [comparison record](_docs/editorial/2026-11-15-land-recovery.md)
+preserves original report/chapter/article identities, the printed discrepancy and
+the conditional author derivation. Ten B14 explanations retain the original six
+claims and three headings, with explicit regional-factor units and time origin.
+Independent source, whole-chapter reader and actual-output judgments have their
+own evidence. Final production and source/root delivery are tracked on Issue111.
 
 [Circular-footprint comparison #109](https://github.com/tiangong-lca/knowledge-base/issues/109)
 adds eight B13 explanations of product shares and whole-system recycling results.

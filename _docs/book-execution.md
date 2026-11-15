@@ -95,6 +95,18 @@ quality basis, the author's fixed-reference algebra and real activity assumption
 remain distinct. Current public-output qualification and final source/root
 delivery are separately tracked on109. Programme9 and the GOAL remain active.
 
+[Issue111](https://github.com/tiangong-lca/knowledge-base/issues/111) starts the
+environmental-pathway batch with B14 land recovery: interval selection versus a
+fixed midpoint-to-endpoint conversion. The
+[protocol and actual review record](editorial/2026-11-15-land-recovery.md)
+bind original2016 RIVM and separately identified LC materials, the source-internal
+discrepancies and a conditional author derivation. Independent initial15- and
+corrected16-paragraph readings and a final terminology check have actual transfer
+answers. The bounded successor preserves original claim/citation identities and
+records the source-declaration completeness defect and its tested correction.
+Current output acceptance and required source/root delivery remain independently
+tracked; no full Part IV, empirical or whole-book completion follows from this unit.
+
 Rule adoption101 itself is fully delivered: PR103/Main10dc686 and
 root2381/PR2382/Main90bcaa574, with complete ordinary source/root handoff receipts.
 Programme9 retains all eight pending global criteria and this continuing GOAL.

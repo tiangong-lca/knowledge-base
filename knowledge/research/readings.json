@@ -3641,7 +3641,8 @@
         "limitations": [
           "Full supplements, factor spreadsheets and software were not inspected or executed.",
           "RIVM original report bytes unavailable locally; original article is a separate work.",
-          "2020 publisher correction concerns copyright/OpenChoice; technical equivalence across later report releases was not established."
+          "2020 publisher correction concerns copyright/OpenChoice; technical equivalence across later report releases was not established.",
+          "2026-11-15 补记：上述RIVM原报告未取得是2026-11-04的访问状态。早期 RIVM 2016-0104 已另从机构库取得并选读（rd-land111-rivm2016）；2017 v1.1 更新原件和因子工作簿仍未核实。原期刊论文获取日期、核读范围和载体不变。"
         ],
         "reviewKind": "agent-source-check",
         "checkedAt": "2026-11-04"
@@ -28541,6 +28542,291 @@
         "原始模型文件、支持数据、完整项目报告、EC 2018b 所指历史 Annex C 及次要背景引文未核读。"
       ],
       "rights": "期刊正文首页标明 CC BY 4.0，机构封面另有访问提示。阅读与公开交接限来源标识、定位及原创释义。第三方模型、支持数据和所引作品不继承论文许可。",
+      "sourceKeys": []
+    },
+    {
+      "id": "rd-land111-rivm2016",
+      "workId": "lit-m05",
+      "title": "ReCiPe 2016: A harmonized life cycle impact assessment method at midpoint and endpoint level. Report I: Characterization",
+      "version": "RIVM Report 2016-0104（2016）；原报告，印刷正文最高页码191，PDF共194页；区别于2017 v1.1更新。",
+      "url": "https://rivm.openrepository.com/items/3d19272d-3ee1-4d95-bbc7-3ad21f0a769e",
+      "accessedAt": "2026-11-15",
+      "readAt": "2026-11-15",
+      "readingStatus": "selected-passages",
+      "question": "原报告的土地占用和弃用后的恢复怎样表征？中点到终点的固定换算对已有时间积分做了什么？",
+      "argumentSummary": "直接土地使用分为转变、占用与弃用后的恢复。主章采用基于局地物种丰富度的年作物等效量，恢复因子已经包含半段恢复历时；同一正系数将占用和恢复的既定中点量写为相应终点量。附表两条恢复因子与明示计算关系不一致。",
+      "artifacts": [
+        {
+          "id": "art-land111-rivm2016-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "56f3124beba99cb3b2bd2d48bd9dc6a7d96a18275568e9575ea600052ec60597",
+          "resolvedUrl": "https://rivm.openrepository.com/server/api/core/bitstreams/2082d9d2-415a-4f90-9456-fff9bc590bb6/content",
+          "pageCount": 194
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-land111-rivm-phases",
+          "artifactId": "art-land111-rivm2016-pdf",
+          "locator": "印p82图11.2及说明、§11.2；PDF物理p84（零基索引83）",
+          "printedPages": "82",
+          "pdfIndices": [
+            83
+          ],
+          "topics": [
+            "直接土地使用",
+            "弃用与恢复起点",
+            "土地类别情景"
+          ],
+          "limits": [
+            "原图t₀标土地转变，停止占用时刻另标t_occ；书中推导的零点取弃用。原图不是观察到的恢复曲线。"
+          ]
+        },
+        {
+          "id": "psg-land111-rivm-recovery",
+          "artifactId": "art-land111-rivm2016-pdf",
+          "locator": "印pp83–85 §§11.3.1–11.3.4、表11.1；PDF物理pp85–87（零基索引84–86）",
+          "printedPages": "83–85",
+          "pdfIndices": [
+            84,
+            85,
+            86
+          ],
+          "topics": [
+            "年作物等效",
+            "局地相对物种损失",
+            "被动恢复历时"
+          ],
+          "limits": [
+            "恢复因子已含时间；丰富度达到参照水平并不证明物种组成和生态功能完整恢复。主动恢复另需纳入恢复活动的清单。"
+          ]
+        },
+        {
+          "id": "psg-land111-rivm-conversion",
+          "artifactId": "art-land111-rivm2016-pdf",
+          "locator": "印pp85–86 §11.4及表11.2；PDF物理pp87–88（零基索引86–87）",
+          "printedPages": "85–86",
+          "pdfIndices": [
+            86,
+            87
+          ],
+          "topics": [
+            "中点到终点",
+            "共同正比例系数",
+            "占用与恢复的单位"
+          ],
+          "limits": [
+            "只适用于该报告的这条类别路径；附表S7.3的两项恢复因子与该关系有不一致。"
+          ]
+        },
+        {
+          "id": "psg-land111-rivm-printed-conflict",
+          "artifactId": "art-land111-rivm2016-pdf",
+          "locator": "印pp83–86 §§11.3.1、11.4与表11.1、11.2；印pp181–182表S7.3及§22.1开头；PDF物理pp85–88、183–184（零基索引84–87、182–183）",
+          "printedPages": "83–86、181–182",
+          "pdfIndices": [
+            84,
+            85,
+            86,
+            87,
+            182,
+            183
+          ],
+          "topics": [
+            "表式不一致",
+            "恢复终点因子",
+            "另列ecoinvent v3程序"
+          ],
+          "limits": [
+            "互换是与算术相符的解释，尚无核实的正式更正。不得据此推断更新报告或工作簿如何取值。",
+            "表S7.3之后的§22.1另为ecoinvent v3提出净自然土地转变流程，不能当成主章的同一恢复编码。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "RIVM官方机构库原始PDF；按所列印刷页和PDF物理页核对文字、公式、图题及关键图表。",
+        "methodologicalScope": "早期报告主章的土地关系，附表不一致及不同的ecoinvent v3附录程序仅按实际位置检查。",
+        "independence": "与ReCiPe期刊方法论文属同一方法谱系，与LC-IMPACT技术章共同引用Curran等恢复研究。选段与算术核对不是两项独立生态验证。",
+        "limitations": [
+          "原报告印p181的两项恢复终点表值与印pp83–86报告关系不符，复算呈互换模式；未核实正式勘误。",
+          "只核所列选段，未取得2017更新报告PDF原件或相应工作簿，也未运行数据库或软件。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-15"
+      },
+      "rights": "印刷p2版权页允许按机构、题名和年份注明后再用部分内容。这里只公开书目、定位与原创释义，不重传原件、原表或原图。",
+      "unread": [
+        "本报告其他章节和附录未逐项阅读。",
+        "底层恢复数据、2017 v1.1更新适用值、20180117工作簿和实际软件映射未核实。"
+      ],
+      "sourceKeys": []
+    },
+    {
+      "id": "rd-land111-lcimpact-ch11",
+      "workId": "work-land111-lcimpact-ch11",
+      "title": "Land stress: Potential species loss from land use (global; PSSRg)",
+      "version": "LC-IMPACT作者独立技术章11；实际12页PDF，未标精确因子发行版；PDF创建及修改元数据为2019-04-15。",
+      "url": "https://lc-impact.eu/doc/method/Chapter11_Land_stress.pdf",
+      "accessedAt": "2026-11-15",
+      "readAt": "2026-11-15",
+      "readingStatus": "selected-passages",
+      "question": "一个既定的土地利用与弃用情景内，报告前100年和报告完整模型恢复期各计入哪一项？如何辨明占用清单、区域因子和全球指标？",
+      "argumentSummary": "独立章分别表征土地占用与土地转变，后者的完整恢复项含半段模型恢复历时。核心因子包含弃用后首100年的恢复贡献，时间更长的其余项另计。由局地丰富度到全球PDF另经区域、脆弱性与类群汇总。",
+      "artifacts": [
+        {
+          "id": "art-land111-lcimpact-ch11-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "fc516690cf83a49b7132c9a4a16dc97294758c458cb69c85f5a26e04014dc8bc",
+          "resolvedUrl": "https://lc-impact.eu/doc/method/Chapter11_Land_stress.pdf",
+          "pageCount": 12
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-land111-lc-pathway",
+          "artifactId": "art-land111-lcimpact-ch11-pdf",
+          "locator": "PDF物理pp1–2 §11.1、图11.1及说明（零基索引0–1）",
+          "pdfIndices": [
+            0,
+            1
+          ],
+          "topics": [
+            "直接土地利用",
+            "生态区物种损失",
+            "脆弱性及全球PDF"
+          ],
+          "limits": [
+            "地区、类群和选用边际或平均因子均是比较条件；全球指标不等同于因子已经做过全球地理平均。"
+          ]
+        },
+        {
+          "id": "psg-land111-lc-full-recovery",
+          "artifactId": "art-land111-lcimpact-ch11-pdf",
+          "locator": "PDF物理p5 式11.8及之后的清单应用段（零基索引4）",
+          "pdfIndices": [
+            4
+          ],
+          "topics": [
+            "恢复全期",
+            "占用因子与转变因子",
+            "清单单位"
+          ],
+          "limits": [
+            "两种因子本身量纲不同；恢复年数不能重复乘入转变清单，且不能把这个模型关系当作观测曲线。"
+          ]
+        },
+        {
+          "id": "psg-land111-lc-cutoff",
+          "artifactId": "art-land111-lcimpact-ch11-pdf",
+          "locator": "PDF物理p8 §11.4 Time horizon、式11.18及同页Level of robustness括注（零基索引7）",
+          "pdfIndices": [
+            7
+          ],
+          "topics": [
+            "弃用时间零点",
+            "核心与后续恢复",
+            "时间截断条件"
+          ],
+          "limits": [
+            "p8后面的稳健性括注只写历时≤100年；同页明确的公式第二分支涵盖更长恢复，不可据括注剔除。",
+            "切短报告范围不等于加快底层恢复，且分支截断针对转变的恢复项，不改占用清单。"
+          ]
+        },
+        {
+          "id": "psg-land111-lc-aggregation",
+          "artifactId": "art-land111-lcimpact-ch11-pdf",
+          "locator": "PDF物理pp6–7 式11.12–11.17及单位说明；p9表11.1及结果不确定性段（零基索引5–6、8）",
+          "pdfIndices": [
+            5,
+            6,
+            8
+          ],
+          "topics": [
+            "脆弱性权重和类群汇总",
+            "空间加权",
+            "带符号的模型统计量"
+          ],
+          "limits": [
+            "恢复历时随分层变化，不能用一个全期比例套所有分层或对各分层历时先平均再作非线性截断。",
+            "带符号和不确定性结果不能无条件套用核心与全期的非负顺序，也不能把表列分位数相减当尾部分位数。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "LC-IMPACT官网独立第11章实际PDF；按所列物理页检查文字、公式、图题和关键表项。",
+        "methodologicalScope": "原章恢复积分关系、量纲、区域到全球表征和时间窗。",
+        "independence": "与LC-IMPACT总报告和2020期刊论文同属方法谱系；与ReCiPe原报告共享部分丰富度及Curran等恢复研究。这里是方法结构对读。",
+        "limitations": [
+          "p8的稳健性括注仅写恢复历时≤100年，而同页式11.18明列＞100年的核心分支；截断范围按公式和前段核心加尾部说明理解。",
+          "独立章与总报告、因子归档及软件的精确对应没有核实。报告的模型比较不是现场恢复验证。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-15"
+      },
+      "rights": "项目官网公开提供该技术章。未核实独立技术章的再分发许可；另外发表的期刊文章的开放许可不适用于此PDF或因子包。这里公开原创释义和定位。",
+      "unread": [
+        "未逐项检查其余章节页面、上游丰富度或再生数据、蒙特卡洛运行或因子文件。",
+        "既有颗粒物第6章的总报告载体与本次独立第11章有共同项目谱系；本次未核读总报告内第11章或比对版本。"
+      ],
+      "sourceKeys": []
+    },
+    {
+      "id": "rd-land111-lcimpact2020-article",
+      "workId": "work-land111-lcimpact2020-article",
+      "title": "LC-IMPACT: A regionalized life cycle damage assessment method",
+      "version": "Journal of Industrial Ecology 24(6):1201–1219（2020），DOI 10.1111/jiec.13018；实际核读项目托管的Wiley文章PDF，页码印1–19。",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/jiec.13018",
+      "accessedAt": "2026-11-15",
+      "readAt": "2026-11-15",
+      "readingStatus": "selected-passages",
+      "question": "论文把PDF·年解释成什么？土地占用与转变怎样分别采用时间范围？",
+      "argumentSummary": "论文将全球PDF·年解释为经时间计量的全球灭绝风险指标；表3并列土地转变完整恢复历时及100年窗口，土地占用另列。",
+      "artifacts": [
+        {
+          "id": "art-land111-lcimpact2020-article-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "42fa6a40f98d884135c7d4771179b0b4dfdc1f83220ea6926ee27632b4ece92e",
+          "resolvedUrl": "https://www.lc-impact.eu/doc/Verones_etal_2020_LC-IMPACT.pdf",
+          "pageCount": 19
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-land111-lc-endpoint-meaning",
+          "artifactId": "art-land111-lcimpact2020-article-pdf",
+          "locator": "所获PDF印pp1、6、8、10（同物理页；零基索引0、5、7、9），首页身份及许可、§2.5、表3表头与Land stress两行",
+          "printedPages": "1、6、8、10",
+          "pdfIndices": [
+            0,
+            5,
+            7,
+            9
+          ],
+          "topics": [
+            "全球灭绝风险",
+            "PDF·年",
+            "占用及转变的时间选项"
+          ],
+          "limits": [
+            "技术章的恢复轮廓涉及模型剩余负担，不能解释为已全球灭绝的物种重新出现。实际PDF采用印1–19页码，区别于期刊卷期页码。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "LC-IMPACT项目托管的Wiley文章PDF，匹配出版方DOI；核对首页许可、§2.5原文和表3前后页，并目视检查表3的土地行。",
+        "methodologicalScope": "论文声明的全球陆地等生态终点解释及表3选段。",
+        "independence": "2020期刊论文与LC-IMPACT技术章属同一方法谱系；两者可核对不同释义的出处，不是相互独立的结果验证。",
+        "limitations": [
+          "不能从PDF·年推出实际已灭绝的物种数量或灭绝后物种恢复。",
+          "所查为论文解释与表3；未核查任何因子文件或原生实现。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-15"
+      },
+      "rights": "出版方文章及实际PDF首页载明Creative Commons Attribution。论文许可不代表技术章、第三方资料或因子文件采用同样许可。这里只公开元数据、定位及原创释义。",
+      "unread": [
+        "该论文其他章节、案例的原始清单、补充文件及发布因子未逐项核查。"
+      ],
       "sourceKeys": []
     }
   ],

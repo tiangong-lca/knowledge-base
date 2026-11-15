@@ -17,10 +17,33 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-15
-lastReviewedCommit: cab54db6c226bc4a17b9092efbb3b81437c547b3
+lastReviewedCommit: 251467ca70f4f21a50d6284696dcb648144d1f94
 ---
 
 # Publication architecture
+
+## Land-recovery successor
+
+The #111 B14 qualifier restores the exact preceding MDX by removing only three
+bounded `Prose` insertions. It restores the raw catalog, readings and literature
+before #109 verifies its own public JSON and the older chain runs. The acquired
+RIVM work retains its original identity, discovery and ordered entries; access,
+rights and selected-reading additions have narrow permissions. The old journal
+reading permits only its declared appended historical-access clarification.
+
+Both state identity and the complete transition declaration are checked. For the
+union of preceding and current file/record fingerprints, every real difference
+must have its exact old value and declared change; omitted or unchanged declared
+keys are rejected. This guard was added after independent negative probes showed
+that correct state reconstruction alone did not prove a complete declaration.
+
+Original B14 chapter/annotation six-note scopes and section scopes of 3/2/1 remain
+distinct from the current 16 and 6/8/2. Four downstream article changes only update
+the visible note label to 16 while retaining the same canonical fragment. The
+capture binds six route-qualified article digests, three public HTML digests and
+four source-derived JSON payloads to eleven physical files. Validation hardening
+did not change the retained technical capture; fixed-source and actual-output
+checks requalified it before the independent primary acceptance.
 
 ## Circular-footprint successor
 
