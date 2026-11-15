@@ -1,3 +1,4 @@
+import { circularFootprintPreviousSurface, qualifyCircularFootprintHistory } from './reader-circular-footprint.mjs';
 import { loadShiftPreviousSurface, observeLoadShiftCaseOutputs, qualifyLoadShiftHistory } from './reader-load-shift.mjs';
 import { qualifySubstitutionRulesHistory, substitutionRulesPreviousSurface } from './reader-substitution-rules.mjs';
 import { loadCasePublications } from './case-publication.mjs';
@@ -16,7 +17,7 @@ import { assertClosingSynthesisOriginal, assertClosingSynthesisHeadingHistory, a
 import { assertWallSelectionOriginal, assertWallSelectionHeadingHistory, assertWallSelectionAccepted, wallSelectionHeadingEntries, remapWallSelectionCitations, validateWallSelectionCoverage, validateRenderedWallSelection } from './reader-wall-selection.mjs';
 import { validateReaderNumberingOutput } from './reader-numbering-output.mjs';
 import { assertReaderNumbering } from './reader-numbering.mjs';
-import { validateReadableBookCurrent, validateServiceConstraintsReviewSources, validateSubstitutionRulesReviewSources, validateLoadShiftReviewSources } from './reader-current-edition-files.mjs';
+import { validateReadableBookCurrent, validateServiceConstraintsReviewSources, validateSubstitutionRulesReviewSources, validateLoadShiftReviewSources, validateCircularFootprintReviewSources } from './reader-current-edition-files.mjs';
 import { qualifyReadableBookCitations } from './reader-current-citations.mjs';
 import { validateReadableBookPublicArtifacts, validateReadableBookReviewedOutput } from './reader-current-output.mjs';
 import { qualifyCurrentHistoricalDocument, validateCurrentHistoricalContexts } from './reader-publication-text.mjs';
@@ -161,7 +162,7 @@ function aliasDestination(node) {
   return sibling?.id === target ? target : null;
 }
 
-const citationScopeExclusions = '.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope],[data-copyedit-history],[data-flow-boundary-history],[data-service-constraints-history],[data-substitution-rules-history],[data-load-shift-history],.docs-pagination,.reader-view-label,.teaching-case';
+const citationScopeExclusions = '.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope],[data-copyedit-history],[data-flow-boundary-history],[data-service-constraints-history],[data-substitution-rules-history],[data-load-shift-history],[data-circular-footprint-history],.docs-pagination,.reader-view-label,.teaching-case';
 const ordinaryCitationBlocks = 'p,ul,ol,dl,blockquote,pre,table,figure';
 
 function nativeCitationScopes(document) {
@@ -343,9 +344,10 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
   const serviceConstraints = book?.current?.serviceConstraints;
   const substitutionRules = book?.current?.substitutionRules;
   const loadShift = book?.current?.loadShift;
+  const footprint = book?.current?.circularFootprint;
   const entries = relabelHistoricalTargets(flowBoundaryCitationEntries(
     copyeditHistoryEntries(getHistoricalCitationEntries(sourceBaseline, locations, history, historicPrintRoutes, book), copyedit),
-    book?.current?.flowBoundary), [...serviceConstraints?.routes ?? [], ...substitutionRules?.routes ?? [], ...loadShift?.routes ?? []]);
+    book?.current?.flowBoundary), [...serviceConstraints?.routes ?? [], ...substitutionRules?.routes ?? [], ...loadShift?.routes ?? [], ...footprint?.routes ?? []]);
   const addresses = new Set();
   for (const entry of entries) {
     const address = `${entry.path}#${entry.id}`;
@@ -377,7 +379,7 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
   errors.push(...validateFlowBoundaryHistoryOutput(documents, book?.current?.flowBoundary));
   errors.push(...validateServiceConstraintsHistoryOutput(documents, serviceConstraints));
   const previousSurface = (address, actual) => flowBoundaryPreviousSurface(address,
-    serviceConstraintsPreviousSurface(address, substitutionRulesPreviousSurface(address, loadShiftPreviousSurface(address, actual, loadShift), substitutionRules), serviceConstraints), book?.current?.flowBoundary);
+    serviceConstraintsPreviousSurface(address, substitutionRulesPreviousSurface(address, loadShiftPreviousSurface(address, circularFootprintPreviousSurface(address, actual, footprint), loadShift), substitutionRules), serviceConstraints), book?.current?.flowBoundary);
   if ((serviceConstraints || loadShift) && book?.sourceRoot) {
     const cases = await loadCasePublications(book.sourceRoot);
     if (serviceConstraints) await observeServiceConstraintsCaseOutputs(root, serviceConstraints, cases, book.sourceCommit);
@@ -385,7 +387,9 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
   }
   if (copyedit) {
     const currentAddresses = observeCopyeditHistory(documents, readerNumberingManifest, readCitationSurface);
-    const shiftHistory = qualifyLoadShiftHistory(documents, loadShift, currentAddresses);
+    const footprintHistory = qualifyCircularFootprintHistory(documents, footprint, currentAddresses);
+    errors.push(...footprintHistory.errors);
+    const shiftHistory = qualifyLoadShiftHistory(documents, loadShift, footprintHistory.prior);
     errors.push(...shiftHistory.errors);
     const substitutionHistory = qualifySubstitutionRulesHistory(documents, substitutionRules, shiftHistory.prior);
     errors.push(...substitutionHistory.errors);
@@ -399,8 +403,8 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
     // Article fingerprints already checked the complete normalized output.
     // Earlier chapter predicates inspect a prose projection after the new
     // historical apparatus has independently passed its exact DOM checks.
-    if (!copyeditErrors.length && !substitutionHistory.errors.length && !shiftHistory.errors.length) for (const document of documents.values()) {
-      for (const notice of document.querySelectorAll('[data-copyedit-history],[data-flow-boundary-history],[data-service-constraints-history],[data-substitution-rules-history],[data-load-shift-history]')) notice.remove();
+    if (!copyeditErrors.length && !substitutionHistory.errors.length && !shiftHistory.errors.length && !footprintHistory.errors.length) for (const document of documents.values()) {
+      for (const notice of document.querySelectorAll('[data-copyedit-history],[data-flow-boundary-history],[data-service-constraints-history],[data-substitution-rules-history],[data-load-shift-history],[data-circular-footprint-history]')) notice.remove();
     }
   }
   for (const [path, document] of documents) {
@@ -607,7 +611,8 @@ async function validatePublicationOutput(root, { knownIds = new Set(), sourceCom
       const sourceRoot = resolve(root, '..');
       let current, hostedHistory;
       if (requireCurrent) {
-        const qualify = preview === 'load-shift' ? validateLoadShiftReviewSources
+        const qualify = preview === 'circular-footprint' ? validateCircularFootprintReviewSources
+          : preview === 'load-shift' ? validateLoadShiftReviewSources
           : preview === 'substitution' ? validateSubstitutionRulesReviewSources
           : preview === 'service' ? validateServiceConstraintsReviewSources : validateReadableBookCurrent;
         current = await qualify(sourceRoot, catalog, readings, literature);
@@ -645,4 +650,10 @@ export function validateLoadShiftPreviewOutput(root, options = {}) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1' || basename(root) !== '.reader-review-output')
     throw new Error('Expected an isolated load shift preview directory');
   return validatePublicationOutput(root, options, true, 'load-shift');
+}
+
+export function validateCircularFootprintPreviewOutput(root, options = {}) {
+  if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1' || basename(root) !== '.reader-review-output')
+    throw new Error('Expected an isolated circular footprint preview directory');
+  return validatePublicationOutput(root, options, true, 'circular-footprint');
 }

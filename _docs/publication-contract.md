@@ -17,12 +17,23 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-15
-lastReviewedCommit: 9a7103707cc275b6b7777acd56336d4c84d9af6b
+lastReviewedCommit: cab54db6c226bc4a17b9092efbb3b81437c547b3
 ---
 
 # Publication contract
 
 ## Scoped scientific successors
+
+The circular-footprint unit #109 distinguishes product-account shares from a
+complete service-matched route comparison. Historical 2018 guidance, the 2022
+corrected PEF carrier and a 2021 hypothetical figure keep separate identities.
+The figure also changes the material-quality reference; it cannot alone establish
+the effect of changing only allocation weights. The book's fixed-reference
+positive-benefit derivation is explicitly authored and is not a new numerical
+case, compliant product study or empirical intervention. Selected source reading,
+continuous Part III manuscript assessment and actual publication evidence have
+different scopes. A parameter proposal does not qualify a category value or a
+physical supply response.
 
 The finite load-shift unit #107 separates an observational wind-potential proxy,
 a published model-basis condition and the book's own two-period dispatch example.

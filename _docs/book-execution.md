@@ -78,8 +78,22 @@ conditional wind-potential observations, model-basis guarantees and a separate
 authored dispatch case. Twelve new explanations retain the original58, with
 independent source/model/reader findings corrected. The actual-output acceptance
 also records paired raw/normalized capture proof and the repaired native table
-scroll target. Ordinary clean production, final CI, hosted Main and exact root
-integration remain107's own obligations; programme9 and the GOAL remain active.
+scroll target. This unit is fully delivered: PR108/Main
+`b7d8cd1829576e21044878a0a90df310c20e5305`, root2389/PR2390/Main
+`28dcdf8130bee772c07dab2fbafd9ef04186fca6`, qualified hosted468-file output,
+successful required source/root CI and ordinary final delivery receipts. Root
+source handoff is complete1/1 with no remaining mirrors; qualified current
+root2ef5438 also retains that exact source after an unrelated SDK integration.
+
+[Issue109](https://github.com/tiangong-lca/knowledge-base/issues/109) continues
+with B13 product-footprint shares and complete recycling-route comparisons.
+The [protocol and actual findings](editorial/2026-11-15-circular-footprint.md)
+record eight new explanations, selected 2018/2022 PEF and Ekvall2021 readings,
+no new numerical case, source corrections and a continuous Part III manuscript
+assessment with actual comprehension/transfer answers. The original figure's
+quality basis, the author's fixed-reference algebra and real activity assumptions
+remain distinct. Current public-output qualification and final source/root
+delivery are separately tracked on109. Programme9 and the GOAL remain active.
 
 Rule adoption101 itself is fully delivered: PR103/Main10dc686 and
 root2381/PR2382/Main90bcaa574, with complete ordinary source/root handoff receipts.
