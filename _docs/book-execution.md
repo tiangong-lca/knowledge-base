@@ -53,6 +53,22 @@ acceptance does not certify those later steps or the entire first batch.
 Each subsequent scientific unit needs its own create/start, original evidence,
 actual manuscript/reviews and exact source/root delivery.
 
+Unit102 is fully delivered: source PR104/Main
+`f8751d57989bfca5f53b6beeab74895d54b594b2`, root2383/PR2384/Main
+`586a5c35a0a3ece45983c0d09afe3df59cfc2496`, qualified hosted466-file output,
+and final ordinary source/root receipts with complete source handoff. Its
+original-source, model and empirical limits remain unchanged.
+
+[Issue105](https://github.com/tiangong-lca/knowledge-base/issues/105) continues
+with B10: reporting objects and evidence conditions for co-product substitution.
+The [pre-writing protocol and comparison record](editorial/2026-11-15-substitution-rules.md)
+records the actual ILCD/PEF comparison, the decision not to force a numerical
+contrast, source and reader corrections, and the limited ISO permission gap.
+Nine new qualitative explanations preserve the original numerical case and
+prior claim identities. Separate source/reader/actual-output acceptance is now
+bound to the scoped candidate; final ordinary production, CI, source Main,
+hosting and root integration remain task105's own delivery obligations.
+
 Rule adoption101 itself is fully delivered: PR103/Main10dc686 and
 root2381/PR2382/Main90bcaa574, with complete ordinary source/root handoff receipts.
 Programme9 retains all eight pending global criteria and this continuing GOAL.

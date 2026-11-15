@@ -10,7 +10,7 @@ import { flowBoundaryOrdinaryDigest, groupHistoricalRanges, observeFlowBoundaryC
 
 export const substitutionRulesId = 'substitution-rules-105';
 /** @type {string|null} */
-export const substitutionRulesUnitPin = null;
+export const substitutionRulesUnitPin = '9a6b9ed02ef4bcd3ef09525f40595aad329c9b260fd87fef0469aaac534d9ec0';
 export const substitutionRulesSource = Object.freeze({
   commit: 'f8751d57989bfca5f53b6beeab74895d54b594b2', tree: '0dd3ed9524b8fe8085f71afc962960ae309a62ce',
   manifest: 'e5827ae9f67c232cee88e714d7ddc957687a1c2d534535cb144c78d548698f7e', date: '2026-11-15',
