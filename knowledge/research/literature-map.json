@@ -4906,6 +4906,12 @@
         "query": "沿M05及ReCiPe土地章节，在RIVM机构库确认2016-0104原件，沿LC-IMPACT官网技术章与2020论文DOI核对land occupation、transformation、regeneration、time horizon及core/extended的实际选段。",
         "date": "2026-11-15",
         "channel": "targeted-official-original-retrieval-and-cross-reading"
+      },
+      {
+        "id": "q-acid113-indicators-and-release-20261115",
+        "query": "acidification accumulated exceedance critical loads; SO2 equivalents Roy atmospheric fate soil sensitivity; GLAM Phase 3 scoping; EF 3.1 acidification and terrestrial eutrophication selected XML and exchange location",
+        "channel": "UNEP Life Cycle Initiative、欧盟JRC、DOI及出版者、作者机构与官方摘要库；按引文链和发行成员定向检索",
+        "date": "2026-11-15"
       }
     ],
     "limitations": [
@@ -19655,7 +19661,8 @@
         "未全包审计、未运行 Look@LCI、未确定零值成因。"
       ],
       "catalogSourceIds": [
-        "src-flow-pilot-ef31"
+        "src-flow-pilot-ef31",
+        "src-acid113-ef31-selected-members"
       ]
     },
     {
@@ -20082,6 +20089,350 @@
       ],
       "catalogSourceIds": [
         "src-land111-lcimpact2020-article"
+      ]
+    },
+    {
+      "id": "work-acid113-roy-fate",
+      "title": "Spatially-differentiated atmospheric source-receptor relationships for nitrogen oxides, sulfur oxides and ammonia emissions at the global scale for life cycle impact assessment",
+      "contributors": "Pierre-Olivier Roy, Mark Huijbregts, Louise Deschênes, Manuele Margni",
+      "year": "2012",
+      "kind": "research-article",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://doi.org/10.1016/j.atmosenv.2012.07.069",
+          "role": "作品身份与原出版路由"
+        },
+        {
+          "url": "https://hero.epa.gov/reference/1565259/",
+          "role": "实际选读载体"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1016/j.atmosenv.2012.07.069"
+      },
+      "volumes": [
+        "V4"
+      ],
+      "topics": [
+        "Roy 2012b",
+        "大气命运与源—受体矩阵"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "global"
+      ],
+      "traditions": [
+        "Life cycle impact assessment"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-acid113-indicators-and-release-20261115"
+        ],
+        "reason": "循B16的酸化方法、接收环境与数据发行引文链核对具体命题。",
+        "citationParents": [
+          "work-unep-glam-2019-volume2"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "abstract-or-excerpt",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-15",
+      "lastCheckedAt": "2026-11-15",
+      "rights": "原论文及作者摘要保留各自权利；索引开放访问不授予复制或分发全文的许可。仅提供归属、定位和原创释义。",
+      "limitations": [
+        "仅核对公开摘要和明示身份；没有完整论文或重跑底层模型。",
+        "不从该论文补写2019发行工作簿的公式。"
+      ],
+      "catalogSourceIds": [
+        "src-acid113-roy-fate"
+      ]
+    },
+    {
+      "id": "work-acid113-roy-soil",
+      "title": "Life cycle impact assessment of terrestrial acidification: modeling spatially explicit soil sensitivity at the global scale",
+      "contributors": "Pierre-Olivier Roy, Louise Deschênes, Manuele Margni",
+      "year": "2012",
+      "kind": "research-article",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://doi.org/10.1021/es3013563",
+          "role": "作品身份与原出版路由"
+        },
+        {
+          "url": "https://hero.epa.gov/reference/1773309/",
+          "role": "实际选读载体"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1021/es3013563"
+      },
+      "volumes": [
+        "V4"
+      ],
+      "topics": [
+        "Roy 2012a",
+        "PROFILE与土壤敏感性"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "global"
+      ],
+      "traditions": [
+        "Life cycle impact assessment"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-acid113-indicators-and-release-20261115"
+        ],
+        "reason": "循B16的酸化方法、接收环境与数据发行引文链核对具体命题。",
+        "citationParents": [
+          "work-unep-glam-2019-volume2"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "abstract-or-excerpt",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-15",
+      "lastCheckedAt": "2026-11-15",
+      "rights": "原论文及作者摘要保留各自权利；索引开放访问不授予复制或分发全文的许可。仅提供归属、定位和原创释义。",
+      "limitations": [
+        "仅核对公开摘要和明示身份；没有完整论文或重跑底层模型。",
+        "不从该论文补写2019发行工作簿的公式。"
+      ],
+      "catalogSourceIds": [
+        "src-acid113-roy-soil"
+      ]
+    },
+    {
+      "id": "work-acid113-roy-effect",
+      "title": "Characterization factors for terrestrial acidification at the global scale: A systematic analysis of spatial variability and uncertainty",
+      "contributors": "Pierre-Olivier Roy, Ligia B. Azevedo, Manuele Margni, Rosalie van Zelm, Louise Deschênes, Mark A. J. Huijbregts",
+      "year": "2014",
+      "kind": "research-article",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://doi.org/10.1016/j.scitotenv.2014.08.099",
+          "role": "作品身份与原出版路由"
+        },
+        {
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=25226072&retmode=xml",
+          "role": "实际选读载体"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1016/j.scitotenv.2014.08.099"
+      },
+      "volumes": [
+        "V4"
+      ],
+      "topics": [
+        "Roy 2014",
+        "大气命运、土壤敏感性与植物效应"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "global"
+      ],
+      "traditions": [
+        "Life cycle impact assessment"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-acid113-indicators-and-release-20261115"
+        ],
+        "reason": "循B16的酸化方法、接收环境与数据发行引文链核对具体命题。",
+        "citationParents": [
+          "work-unep-glam-2019-volume2"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "abstract-or-excerpt",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-15",
+      "lastCheckedAt": "2026-11-15",
+      "rights": "原论文及作者摘要保留各自权利；索引开放访问不授予复制或分发全文的许可。仅提供归属、定位和原创释义。",
+      "limitations": [
+        "仅核对公开摘要和明示身份；没有完整论文或重跑底层模型。",
+        "不从该论文补写2019发行工作簿的公式。"
+      ],
+      "catalogSourceIds": [
+        "src-acid113-roy-effect"
+      ]
+    },
+    {
+      "id": "work-acid113-glam-scoping",
+      "title": "Global LCIA Guidance (GLAM) Phase 3 Scoping document",
+      "contributors": "Life Cycle Initiative GLAM Phase 3；陆地酸化小节署名 Rosalie van Zelm、Briana Niblick、Alexis Laurent、Stephan Pfister、Andrew Henderson",
+      "year": "2021",
+      "kind": "technical-scoping-report",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://www.lifecycleinitiative.org/wp-content/uploads/2021/02/GLAM3-Scoping-document.pdf",
+          "role": "作品身份与原出版路由"
+        }
+      ],
+      "identifiers": {
+        "edition": "Phase 3 scoping PDF；2021年上传路径与文件日期，不作为正式版声明"
+      },
+      "volumes": [
+        "V4"
+      ],
+      "topics": [
+        "早期GLAM中点回顾",
+        "土壤敏感性",
+        "陆地酸化"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "global"
+      ],
+      "traditions": [
+        "Life cycle impact assessment"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-acid113-indicators-and-release-20261115"
+        ],
+        "reason": "循B16的酸化方法、接收环境与数据发行引文链核对具体命题。",
+        "citationParents": [
+          "work-unep-glam-2019-volume2"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-15",
+      "lastCheckedAt": "2026-11-15",
+      "rights": "官网公开供查阅；未确认该范围报告的再分发许可。只登记出处及原创释义。",
+      "limitations": [
+        "范围报告没有给出具名2019工作簿或更正；不证明发行表计算步骤。",
+        "不据此说明当前GLAM版本实现。"
+      ],
+      "catalogSourceIds": [
+        "src-acid113-glam-scoping"
+      ]
+    },
+    {
+      "id": "work-acid113-seppala-ae",
+      "title": "Country-dependent Characterisation Factors for Acidification and Terrestrial Eutrophication Based on Accumulated Exceedance as an Impact Category Indicator",
+      "contributors": "Jyri Seppälä, Maximilian Posch, Matti Johansson, Jean-Paul Hettelingh",
+      "year": "2006",
+      "kind": "research-article",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://link.springer.com/article/10.1065/lca2005.06.215",
+          "role": "作品身份与原出版路由"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1065/lca2005.06.215"
+      },
+      "volumes": [
+        "V4"
+      ],
+      "topics": [
+        "超载面积与程度",
+        "欧洲AE"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Europe"
+      ],
+      "traditions": [
+        "Life cycle impact assessment"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-acid113-indicators-and-release-20261115"
+        ],
+        "reason": "循B16的酸化方法、接收环境与数据发行引文链核对具体命题。",
+        "citationParents": [
+          "work-ilcd-2011-lcia-recommendations"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "abstract-or-excerpt",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-15",
+      "lastCheckedAt": "2026-11-15",
+      "rights": "出版者开放展示摘要；未取得全文许可。仅提供作品身份、摘要定位和原创释义。",
+      "limitations": [
+        "未取得或核读完整论文、原表行、推导或输入。",
+        "不把原作摘要当作EF3.1发行行的验证。"
+      ],
+      "catalogSourceIds": [
+        "src-acid113-seppala-ae"
+      ]
+    },
+    {
+      "id": "work-acid113-posch-ae",
+      "title": "The role of atmospheric dispersion models and ecosystem sensitivity in the determination of characterisation factors for acidifying and eutrophying emissions in LCIA",
+      "contributors": "Maximilian Posch, Jyri Seppälä, Jean-Paul Hettelingh, Matti Johansson, Manuele Margni, Olivier Jolliet",
+      "year": "2008",
+      "kind": "research-article",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://link.springer.com/article/10.1007/s11367-008-0025-9",
+          "role": "作品身份与原出版路由"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1007/s11367-008-0025-9"
+      },
+      "volumes": [
+        "V4"
+      ],
+      "topics": [
+        "大气沉降与临界负荷",
+        "更新AE",
+        "化学潜势的用途"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Europe"
+      ],
+      "traditions": [
+        "Life cycle impact assessment"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-acid113-indicators-and-release-20261115"
+        ],
+        "reason": "循B16的酸化方法、接收环境与数据发行引文链核对具体命题。",
+        "citationParents": [
+          "work-ilcd-2011-lcia-recommendations"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "abstract-or-excerpt",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-15",
+      "lastCheckedAt": "2026-11-15",
+      "rights": "出版者开放展示摘要；未取得全文许可。仅提供作品身份、摘要定位和原创释义。",
+      "limitations": [
+        "未取得或核读完整论文、原表行、推导或输入。",
+        "不把原作摘要当作EF3.1发行行的验证。"
+      ],
+      "catalogSourceIds": [
+        "src-acid113-posch-ae"
       ]
     }
   ],
