@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-16
-lastReviewedCommit: 02d4457804ef72bd42909025f4f82b16972476da
+lastReviewedCommit: 27e5f83740db35d9360fe80976298a8eaeb36bb6
 ---
 
 # Publication contract
