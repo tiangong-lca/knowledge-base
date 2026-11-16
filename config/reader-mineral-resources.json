@@ -1,0 +1,3568 @@
+{
+  "schemaVersion": 1,
+  "status": "reviewed",
+  "unit": {
+    "id": "mineral-resources-115",
+    "source": {
+      "commit": "607381d36b5f2c24e11ed4cd850a15b252620cbd",
+      "tree": "e7e378b928351ac47d22bb55ce9f6221c8cd30fb",
+      "manifest": "18c06647c6f8b1fa1c9787461b6b7c11691d2774be9b9f3a125173782289c187",
+      "date": "2026-11-16"
+    },
+    "routes": [
+      "/docs/book/midpoint-endpoint-value-choices"
+    ],
+    "rationale": "在中点和终点原架构中补充矿产各类估计对象及有据选择，保全已有土地比较。",
+    "state": {
+      "before": "62ff2d1448becfb53dc3901db51601207a9385b9ba7c01390de631e7d6e04a16",
+      "after": "93d92634ba66bf752bb64140ca8158db30014a4e39687e87382de98219adecd4"
+    },
+    "scope": [
+      "content/docs/book/midpoint-endpoint-value-choices.mdx",
+      "claims:cl-lcia-midpoint-pathway",
+      "sources:src-land111-rivm2016",
+      "readings:rd-land111-rivm2016",
+      "literature:lit-m05",
+      "researchMetadata:reading-ledger",
+      "researchMetadata:literature-map",
+      "researchMetadata:order:claims",
+      "researchMetadata:order:evidence",
+      "researchMetadata:order:sources",
+      "researchMetadata:order:readings",
+      "researchMetadata:order:revisions",
+      "researchMetadata:order:literature",
+      "researchMetadata:order:queries",
+      "researchMetadata:public-projection",
+      "claims:cl-mineral115-input",
+      "claims:cl-mineral115-adp",
+      "claims:cl-mineral115-sop",
+      "claims:cl-mineral115-reserves",
+      "claims:cl-mineral115-rank",
+      "claims:cl-mineral115-cost-proxy",
+      "claims:cl-mineral115-metal-cost",
+      "claims:cl-mineral115-calibration",
+      "claims:cl-mineral115-assumptions",
+      "claims:cl-mineral115-judgment",
+      "evidence:ev-mineral115-adp-extraction",
+      "evidence:ev-mineral115-adp-cumulative",
+      "evidence:ev-mineral115-adp-workbook-basis",
+      "evidence:ev-mineral115-adp-cu",
+      "evidence:ev-mineral115-adp-ni",
+      "evidence:ev-mineral115-adp-mn",
+      "evidence:ev-mineral115-scp-curve",
+      "evidence:ev-mineral115-scp-sample-boundary",
+      "evidence:ev-mineral115-scp-r-cu",
+      "evidence:ev-mineral115-scp-r-ni",
+      "evidence:ev-mineral115-scp-r-mn",
+      "evidence:ev-mineral115-scp-urr-cu",
+      "evidence:ev-mineral115-scp-urr-ni",
+      "evidence:ev-mineral115-scp-urr-mn",
+      "evidence:ev-mineral115-guidance-adp",
+      "evidence:ev-mineral115-guidance-sop-scp",
+      "evidence:ev-mineral115-dissent-grade",
+      "evidence:ev-mineral115-dissent-cost",
+      "evidence:ev-mineral115-rivm-sop-method",
+      "evidence:ev-mineral115-rivm-money-proxy",
+      "evidence:ev-mineral115-sop-i-cu",
+      "evidence:ev-mineral115-sop-i-ni",
+      "evidence:ev-mineral115-sop-i-mn",
+      "evidence:ev-mineral115-sop-he-cu",
+      "evidence:ev-mineral115-sop-he-ni",
+      "evidence:ev-mineral115-sop-he-mn",
+      "evidence:ev-mineral115-conversion-i",
+      "evidence:ev-mineral115-conversion-he",
+      "evidence:ev-mineral115-scp-start",
+      "sources:src-mineral115-vanoers2020",
+      "sources:src-mineral115-vanoers2020-esm1",
+      "sources:src-mineral115-vieira2016",
+      "sources:src-mineral115-vieira2016-supplement",
+      "sources:src-mineral115-berger2020",
+      "sources:src-mineral115-ericsson2019",
+      "readings:rd-mineral115-vanoers2020",
+      "readings:rd-mineral115-vanoers2020-esm1",
+      "readings:rd-mineral115-vieira2016",
+      "readings:rd-mineral115-vieira2016-supplement",
+      "readings:rd-mineral115-berger2020",
+      "readings:rd-mineral115-ericsson2019",
+      "revisions:rev-mineral115-rivm-selected-mineral",
+      "literature:work-mineral115-vanoers2020",
+      "literature:work-mineral115-vieira2016",
+      "literature:work-mineral115-berger2020",
+      "literature:work-mineral115-ericsson2019",
+      "queries:q-mineral115-factor-originals-20261116",
+      "queries:q-mineral115-guidance-and-dissent-20261116"
+    ],
+    "changes": [
+      {
+        "kind": "file",
+        "key": "content/docs/book/midpoint-endpoint-value-choices.mdx",
+        "from": "a3f4ad905d594ce33d5e6dbe79d6ed82e9f32d55055fccfcb2e6bfeacc92ab23",
+        "to": "97cac70b23d764f2736c6aa3f299c7308cc8ea2f60f91f1df48a888861a4ddc7",
+        "rationale": "在B14原三节的指定衔接处增补矿产比较，保留原文。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-lcia-midpoint-pathway",
+        "from": {
+          "raw": "7929c137fb48fdc66e438f183f6288d8a088d4714172363f65c18a9a6f4a5412",
+          "public": "7929c137fb48fdc66e438f183f6288d8a088d4714172363f65c18a9a6f4a5412",
+          "protected": "767f0605f5d5b6e628f450f10d1077e1fab2711e899c8f8280cd3bcbc8e34f05"
+        },
+        "to": {
+          "raw": "e99ed1e6b6460fafe725df782e4f5b3d46fa6345dd3bafade7d77549e58164ea",
+          "public": "e99ed1e6b6460fafe725df782e4f5b3d46fa6345dd3bafade7d77549e58164ea",
+          "protected": "6500dbbdbab45965e79ba6d3aff8fc3abbe46da46a3196803b5859128cf9681a"
+        },
+        "rationale": "保留前版排放示例，明确其范围并说明土地占用与矿产开采的清单入口。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-land111-rivm2016",
+        "from": {
+          "raw": "172a8c79b461364e3361b548c1838481050d311a7b7a4c5c196b0fd4121181fd",
+          "public": "172a8c79b461364e3361b548c1838481050d311a7b7a4c5c196b0fd4121181fd",
+          "protected": "172a8c79b461364e3361b548c1838481050d311a7b7a4c5c196b0fd4121181fd"
+        },
+        "to": {
+          "raw": "73e98db373bc2c415fd074d0a352d3940265ccc095927e4737325cac1ef2a709",
+          "public": "73e98db373bc2c415fd074d0a352d3940265ccc095927e4737325cac1ef2a709",
+          "protected": "73e98db373bc2c415fd074d0a352d3940265ccc095927e4737325cac1ef2a709"
+        },
+        "rationale": "保留原RIVM采集和土地选读身份，记录同一载体的矿产追加范围。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-land111-rivm2016",
+        "from": {
+          "raw": "68f10f17a2c86a3a47dcfaed053940ec3f498462a1f1ed9716072c10f72fc0c7",
+          "public": null,
+          "protected": "68f10f17a2c86a3a47dcfaed053940ec3f498462a1f1ed9716072c10f72fc0c7"
+        },
+        "to": {
+          "raw": "a0a927e207b400bfd94e3abc1f7568943613b7642ef4294a2bbcdd47f7941501",
+          "public": null,
+          "protected": "a0a927e207b400bfd94e3abc1f7568943613b7642ef4294a2bbcdd47f7941501"
+        },
+        "rationale": "保留原RIVM采集和土地选读身份，记录同一载体的矿产追加范围。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:lit-m05",
+        "from": {
+          "raw": "34dc0d47fabd60bf6684a9dd233983f4ffdee3fd0825c4b0fc4253e672540a04",
+          "public": null,
+          "protected": "34dc0d47fabd60bf6684a9dd233983f4ffdee3fd0825c4b0fc4253e672540a04"
+        },
+        "to": {
+          "raw": "6197b65503c952a113c5d31e045979532bcd26c91a540e3f8fe5b6a46e9c2716",
+          "public": null,
+          "protected": "6197b65503c952a113c5d31e045979532bcd26c91a540e3f8fe5b6a46e9c2716"
+        },
+        "rationale": "保留原RIVM采集和土地选读身份，记录同一载体的矿产追加范围。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:reading-ledger",
+        "from": {
+          "raw": "06c648250d4ed4b5736160636fcab201ce8c10bf9e66199e9456baac9deae2b0",
+          "public": null,
+          "protected": "06c648250d4ed4b5736160636fcab201ce8c10bf9e66199e9456baac9deae2b0"
+        },
+        "to": {
+          "raw": "fd2521749acbe9c2c929931d63b9eab5bd5cef6692af9a47c4aa9faf43ad0b21",
+          "public": null,
+          "protected": "fd2521749acbe9c2c929931d63b9eab5bd5cef6692af9a47c4aa9faf43ad0b21"
+        },
+        "rationale": "按实际记录重新核对原有顺序、日期及公共依赖，不扩大旧资格。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:literature-map",
+        "from": {
+          "raw": "327d288b85caa6785aef160368267748c9a2f433b2b45b85694b20ccd3cd625e",
+          "public": null,
+          "protected": "327d288b85caa6785aef160368267748c9a2f433b2b45b85694b20ccd3cd625e"
+        },
+        "to": {
+          "raw": "0d640ce6464958114fe946533c42868df5e5119f87b6825da0e955692f25e5df",
+          "public": null,
+          "protected": "0d640ce6464958114fe946533c42868df5e5119f87b6825da0e955692f25e5df"
+        },
+        "rationale": "按实际记录重新核对原有顺序、日期及公共依赖，不扩大旧资格。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:claims",
+        "from": {
+          "raw": "41d3aba9ef4bc1bba3af3e9b7334ea992ed472f587a776091a02668448f24c21",
+          "public": null,
+          "protected": "41d3aba9ef4bc1bba3af3e9b7334ea992ed472f587a776091a02668448f24c21"
+        },
+        "to": {
+          "raw": "4e5e8b810f64acabbb9f5f61104643c47f84b844f2533e8100b50ebe95878dce",
+          "public": null,
+          "protected": "4e5e8b810f64acabbb9f5f61104643c47f84b844f2533e8100b50ebe95878dce"
+        },
+        "rationale": "按实际记录重新核对原有顺序、日期及公共依赖，不扩大旧资格。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:evidence",
+        "from": {
+          "raw": "ccc7ef14f6241ec0dd4ef86bb377ca7a0fbcb262e60deac4c6db5cef8d380261",
+          "public": null,
+          "protected": "ccc7ef14f6241ec0dd4ef86bb377ca7a0fbcb262e60deac4c6db5cef8d380261"
+        },
+        "to": {
+          "raw": "92e2e9546c47412719216f789affbc6dc1dd0332945dd172d02885e094c055b5",
+          "public": null,
+          "protected": "92e2e9546c47412719216f789affbc6dc1dd0332945dd172d02885e094c055b5"
+        },
+        "rationale": "按实际记录重新核对原有顺序、日期及公共依赖，不扩大旧资格。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:sources",
+        "from": {
+          "raw": "530fd5a05a1310d9ee48706b7b583eee5a72982b53904fe97c12ae795b2bda28",
+          "public": null,
+          "protected": "530fd5a05a1310d9ee48706b7b583eee5a72982b53904fe97c12ae795b2bda28"
+        },
+        "to": {
+          "raw": "e733c84ec2885331d9bd35e2abf11af11e85a0fb2bf3aeda99c4c42145f51f01",
+          "public": null,
+          "protected": "e733c84ec2885331d9bd35e2abf11af11e85a0fb2bf3aeda99c4c42145f51f01"
+        },
+        "rationale": "按实际记录重新核对原有顺序、日期及公共依赖，不扩大旧资格。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:readings",
+        "from": {
+          "raw": "e8654a086c047d0193838cc567f9b2429bcd74aa3d2f8419b54d789ae4cc65b9",
+          "public": null,
+          "protected": "e8654a086c047d0193838cc567f9b2429bcd74aa3d2f8419b54d789ae4cc65b9"
+        },
+        "to": {
+          "raw": "66fdf72a4efc9e2b8a9362095bb750c082757d8ce711ffccf8da880c2aedfd07",
+          "public": null,
+          "protected": "66fdf72a4efc9e2b8a9362095bb750c082757d8ce711ffccf8da880c2aedfd07"
+        },
+        "rationale": "按实际记录重新核对原有顺序、日期及公共依赖，不扩大旧资格。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:revisions",
+        "from": {
+          "raw": "e8f0230eed9bc8afe2452e453446b6ca95cc66ead3904e0a0b9f9eb1733c3823",
+          "public": null,
+          "protected": "e8f0230eed9bc8afe2452e453446b6ca95cc66ead3904e0a0b9f9eb1733c3823"
+        },
+        "to": {
+          "raw": "813d78bfaa90bb00275ceca5f1a314582ec6e1bf535ba1d9661438c0572ae11f",
+          "public": null,
+          "protected": "813d78bfaa90bb00275ceca5f1a314582ec6e1bf535ba1d9661438c0572ae11f"
+        },
+        "rationale": "按实际记录重新核对原有顺序、日期及公共依赖，不扩大旧资格。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:literature",
+        "from": {
+          "raw": "19b1b65d453b2d96a13048be65cfd2b77a608184c763e45450c05ee29aaa7aea",
+          "public": null,
+          "protected": "19b1b65d453b2d96a13048be65cfd2b77a608184c763e45450c05ee29aaa7aea"
+        },
+        "to": {
+          "raw": "f52a281aa9f89b2e8947e3cc12cc842607f6f329350829dd4103bcef3cdb0a9d",
+          "public": null,
+          "protected": "f52a281aa9f89b2e8947e3cc12cc842607f6f329350829dd4103bcef3cdb0a9d"
+        },
+        "rationale": "按实际记录重新核对原有顺序、日期及公共依赖，不扩大旧资格。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:queries",
+        "from": {
+          "raw": "f6553dbcb2db1ff967a0b2b8ee839f7111d5494d5a6ed874589a593141b6d522",
+          "public": null,
+          "protected": "f6553dbcb2db1ff967a0b2b8ee839f7111d5494d5a6ed874589a593141b6d522"
+        },
+        "to": {
+          "raw": "20326b6101b8e37a9e035331e8f3434411ad73261ca9d8ef12b7eb569cfc1e0b",
+          "public": null,
+          "protected": "20326b6101b8e37a9e035331e8f3434411ad73261ca9d8ef12b7eb569cfc1e0b"
+        },
+        "rationale": "按实际记录重新核对原有顺序、日期及公共依赖，不扩大旧资格。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:public-projection",
+        "from": {
+          "raw": "f259679bb7acb59efe5f1f8151440369b854f80d2a01840ff61264f97f929261",
+          "public": null,
+          "protected": "f259679bb7acb59efe5f1f8151440369b854f80d2a01840ff61264f97f929261"
+        },
+        "to": {
+          "raw": "22fcd98f4c49e68f0cae2af575cac70e2bf0c55d29cc26554a375a22e0d0ed7b",
+          "public": null,
+          "protected": "22fcd98f4c49e68f0cae2af575cac70e2bf0c55d29cc26554a375a22e0d0ed7b"
+        },
+        "rationale": "按实际记录重新核对原有顺序、日期及公共依赖，不扩大旧资格。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-mineral115-input",
+        "from": null,
+        "to": {
+          "raw": "3c18736e552f857aaaa9e3406feda6db757636246ecda29c46ed9fb96c50c89f",
+          "public": "3c18736e552f857aaaa9e3406feda6db757636246ecda29c46ed9fb96c50c89f",
+          "protected": "0a0ff50a6a219e949b36511fc4da58e3606f14f3d813901d4067539cecf4d597"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-mineral115-adp",
+        "from": null,
+        "to": {
+          "raw": "f701fdb703a565c292cd173604232144208b918e1e357ed35720a845cbeba579",
+          "public": "f701fdb703a565c292cd173604232144208b918e1e357ed35720a845cbeba579",
+          "protected": "6f1e21f21ad62e87f664f7f9bcef3c54b2e0c2856d14325e5dd48e9f82d08b47"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-mineral115-sop",
+        "from": null,
+        "to": {
+          "raw": "762d8f4bc5ec9570b2599b7c822f59dfa2843e49a5f6b528aba9af1ef8e43fa1",
+          "public": "762d8f4bc5ec9570b2599b7c822f59dfa2843e49a5f6b528aba9af1ef8e43fa1",
+          "protected": "e2c3b418255d5d39b39d30856c799922f74fdd8260c3cbc82419d91aac014673"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-mineral115-reserves",
+        "from": null,
+        "to": {
+          "raw": "73bb96a5ddbe6d33fe2b72e048d0a87499345f1733af6678c80adef7ea01a5a6",
+          "public": "73bb96a5ddbe6d33fe2b72e048d0a87499345f1733af6678c80adef7ea01a5a6",
+          "protected": "114ae4247355f7d32c5f35de7a6b4af6d8fe7d8c77ea83f05dc8489d1dca6460"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-mineral115-rank",
+        "from": null,
+        "to": {
+          "raw": "7577f1a1cd740293dce96180bdd98649c1b533e35165b05d2ca650ae910842f6",
+          "public": "7577f1a1cd740293dce96180bdd98649c1b533e35165b05d2ca650ae910842f6",
+          "protected": "a5de6d16d7fc92e6019df8ed588a5c80afdf8785acc1771aa53554be0a92767e"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-mineral115-cost-proxy",
+        "from": null,
+        "to": {
+          "raw": "fde2eb701c5cb96b56ef80a5b821d1351c98d1d1b913ead346fb15a83f59af3b",
+          "public": "fde2eb701c5cb96b56ef80a5b821d1351c98d1d1b913ead346fb15a83f59af3b",
+          "protected": "0213da3f54d756f07223a1c852172bb6d27bcdbf2b05a6eee91ccec902d8563b"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-mineral115-metal-cost",
+        "from": null,
+        "to": {
+          "raw": "c5e97cc545da751a3f4ec7ea61eec69faac5577411a492ef6b5e4f6191dabc4d",
+          "public": "c5e97cc545da751a3f4ec7ea61eec69faac5577411a492ef6b5e4f6191dabc4d",
+          "protected": "23ce706e28a564569d61efaaeba6301a5e521f978c82b9a57c4b716fda68276c"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-mineral115-calibration",
+        "from": null,
+        "to": {
+          "raw": "15e94754ed7f72e883a1a9fa89567986aa5dc154c30dfcbc06646642d2597b9e",
+          "public": "15e94754ed7f72e883a1a9fa89567986aa5dc154c30dfcbc06646642d2597b9e",
+          "protected": "56cc78aa05eeb4c0ce4197d9ed9f364a71440a72cc69e478788c2fd93d730db7"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-mineral115-assumptions",
+        "from": null,
+        "to": {
+          "raw": "ea86d1505734cd7fe1c37b0d3047c8e8100ccc45710f5faf0348a0fdd5b8f44c",
+          "public": "ea86d1505734cd7fe1c37b0d3047c8e8100ccc45710f5faf0348a0fdd5b8f44c",
+          "protected": "a903f5cddac11c49eaad57e2a400c8262b5f283ff77d6ff0422f2a8a3e68a903"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-mineral115-judgment",
+        "from": null,
+        "to": {
+          "raw": "a8e6255aee7bec4c94d8ed618222cff8d7323c054b4ab518f4e6f8bc1aada8c3",
+          "public": "a8e6255aee7bec4c94d8ed618222cff8d7323c054b4ab518f4e6f8bc1aada8c3",
+          "protected": "57a0ca8f0acf7c4e8098d4bb0eaa3f74929c39b76ae13fec62597108926fb069"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-adp-extraction",
+        "from": null,
+        "to": {
+          "raw": "b52b29ae4a0fe321c138ca820defa078a6e37cb6d10c679a6f70f606a62c19bf",
+          "public": "b52b29ae4a0fe321c138ca820defa078a6e37cb6d10c679a6f70f606a62c19bf",
+          "protected": "b52b29ae4a0fe321c138ca820defa078a6e37cb6d10c679a6f70f606a62c19bf"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-adp-cumulative",
+        "from": null,
+        "to": {
+          "raw": "a1c8062246dc0731a920ef7d2befa1b26b368b0ce4a5bb721d9f9183d7ce805c",
+          "public": "a1c8062246dc0731a920ef7d2befa1b26b368b0ce4a5bb721d9f9183d7ce805c",
+          "protected": "a1c8062246dc0731a920ef7d2befa1b26b368b0ce4a5bb721d9f9183d7ce805c"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-adp-workbook-basis",
+        "from": null,
+        "to": {
+          "raw": "6ab8d5e8fcd967875119fc9d9f2392a62b46c405a73aefd3f65575fbacc0764b",
+          "public": "6ab8d5e8fcd967875119fc9d9f2392a62b46c405a73aefd3f65575fbacc0764b",
+          "protected": "6ab8d5e8fcd967875119fc9d9f2392a62b46c405a73aefd3f65575fbacc0764b"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-adp-cu",
+        "from": null,
+        "to": {
+          "raw": "017df1bfa5d4c62c7fe1214c61f123870650ccdf24cc37277ffe2485f0645468",
+          "public": "017df1bfa5d4c62c7fe1214c61f123870650ccdf24cc37277ffe2485f0645468",
+          "protected": "017df1bfa5d4c62c7fe1214c61f123870650ccdf24cc37277ffe2485f0645468"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-adp-ni",
+        "from": null,
+        "to": {
+          "raw": "ca3e87a92baaf74802c0160165bb2eec7db8f1bd8cc859b8491aa5b15dde0f26",
+          "public": "ca3e87a92baaf74802c0160165bb2eec7db8f1bd8cc859b8491aa5b15dde0f26",
+          "protected": "ca3e87a92baaf74802c0160165bb2eec7db8f1bd8cc859b8491aa5b15dde0f26"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-adp-mn",
+        "from": null,
+        "to": {
+          "raw": "4a302d2fdfc5da075c83a6ca46f5b22e2ae7ec67de99dc955dd9cb816b374f0b",
+          "public": "4a302d2fdfc5da075c83a6ca46f5b22e2ae7ec67de99dc955dd9cb816b374f0b",
+          "protected": "4a302d2fdfc5da075c83a6ca46f5b22e2ae7ec67de99dc955dd9cb816b374f0b"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-scp-curve",
+        "from": null,
+        "to": {
+          "raw": "c5578745c8dc338d967d517243c20db002ca3913aeed46c06de01054b97c7503",
+          "public": "c5578745c8dc338d967d517243c20db002ca3913aeed46c06de01054b97c7503",
+          "protected": "c5578745c8dc338d967d517243c20db002ca3913aeed46c06de01054b97c7503"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-scp-sample-boundary",
+        "from": null,
+        "to": {
+          "raw": "6a5c916d69d5181dfe6ff319490cf7fc76e9e3afa16188c9a09ed0f6aafb4e94",
+          "public": "6a5c916d69d5181dfe6ff319490cf7fc76e9e3afa16188c9a09ed0f6aafb4e94",
+          "protected": "6a5c916d69d5181dfe6ff319490cf7fc76e9e3afa16188c9a09ed0f6aafb4e94"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-scp-r-cu",
+        "from": null,
+        "to": {
+          "raw": "c9bff6986059734af28bd46e9bf759571f844ee3452b58dbad7b25c560a09fad",
+          "public": "c9bff6986059734af28bd46e9bf759571f844ee3452b58dbad7b25c560a09fad",
+          "protected": "c9bff6986059734af28bd46e9bf759571f844ee3452b58dbad7b25c560a09fad"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-scp-r-ni",
+        "from": null,
+        "to": {
+          "raw": "366efe25f8cdb5e951343da1a2160fff29496d835f11cb63e6bf16d54488bf0c",
+          "public": null,
+          "protected": "366efe25f8cdb5e951343da1a2160fff29496d835f11cb63e6bf16d54488bf0c"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-scp-r-mn",
+        "from": null,
+        "to": {
+          "raw": "b57fcce441f52d05d339466991b48534a2ffa24e0adbbec63f0b118ed59fc699",
+          "public": "b57fcce441f52d05d339466991b48534a2ffa24e0adbbec63f0b118ed59fc699",
+          "protected": "b57fcce441f52d05d339466991b48534a2ffa24e0adbbec63f0b118ed59fc699"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-scp-urr-cu",
+        "from": null,
+        "to": {
+          "raw": "be276a191906dd4331dc88389e229a50bd42c066ac1527d6688a9c3f70599772",
+          "public": "be276a191906dd4331dc88389e229a50bd42c066ac1527d6688a9c3f70599772",
+          "protected": "be276a191906dd4331dc88389e229a50bd42c066ac1527d6688a9c3f70599772"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-scp-urr-ni",
+        "from": null,
+        "to": {
+          "raw": "a60acfff2f6ac0e1262e1143be63ef22f3874d97fa8e6711b9a4dcbea4516eb6",
+          "public": "a60acfff2f6ac0e1262e1143be63ef22f3874d97fa8e6711b9a4dcbea4516eb6",
+          "protected": "a60acfff2f6ac0e1262e1143be63ef22f3874d97fa8e6711b9a4dcbea4516eb6"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-scp-urr-mn",
+        "from": null,
+        "to": {
+          "raw": "f037ff970463f3fd00f40266da93b0951028cd77811929480f25d5f770313ae2",
+          "public": "f037ff970463f3fd00f40266da93b0951028cd77811929480f25d5f770313ae2",
+          "protected": "f037ff970463f3fd00f40266da93b0951028cd77811929480f25d5f770313ae2"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-guidance-adp",
+        "from": null,
+        "to": {
+          "raw": "33251b8f15962a4bb6a17d7c264cf75e30ef887eeeafc42492a9419e64201e6c",
+          "public": null,
+          "protected": "33251b8f15962a4bb6a17d7c264cf75e30ef887eeeafc42492a9419e64201e6c"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-guidance-sop-scp",
+        "from": null,
+        "to": {
+          "raw": "8540f24e1f591fedcbea75cd8961e6d740887eeaffa37573d12d29dbda2e01d9",
+          "public": "8540f24e1f591fedcbea75cd8961e6d740887eeaffa37573d12d29dbda2e01d9",
+          "protected": "8540f24e1f591fedcbea75cd8961e6d740887eeaffa37573d12d29dbda2e01d9"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-dissent-grade",
+        "from": null,
+        "to": {
+          "raw": "9a60fa6b7afe7ad2386d01a79fb226b4d811dba2c3bf8d371374acfe31cd095e",
+          "public": "9a60fa6b7afe7ad2386d01a79fb226b4d811dba2c3bf8d371374acfe31cd095e",
+          "protected": "9a60fa6b7afe7ad2386d01a79fb226b4d811dba2c3bf8d371374acfe31cd095e"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-dissent-cost",
+        "from": null,
+        "to": {
+          "raw": "b022583bfde731bc0dfc4bf0c3fc4f4eda73de17ef891fc76487be11872f8f81",
+          "public": "b022583bfde731bc0dfc4bf0c3fc4f4eda73de17ef891fc76487be11872f8f81",
+          "protected": "b022583bfde731bc0dfc4bf0c3fc4f4eda73de17ef891fc76487be11872f8f81"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-rivm-sop-method",
+        "from": null,
+        "to": {
+          "raw": "deaf984821c9cba68947abe39577494df7a00543737a92056ca3b51ef1f85e1a",
+          "public": "deaf984821c9cba68947abe39577494df7a00543737a92056ca3b51ef1f85e1a",
+          "protected": "deaf984821c9cba68947abe39577494df7a00543737a92056ca3b51ef1f85e1a"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-rivm-money-proxy",
+        "from": null,
+        "to": {
+          "raw": "15fdf9769833a53e6c67649bedc5c4dc7f7a4b9bedddc08ca618c8ac1c1f7ad0",
+          "public": "15fdf9769833a53e6c67649bedc5c4dc7f7a4b9bedddc08ca618c8ac1c1f7ad0",
+          "protected": "15fdf9769833a53e6c67649bedc5c4dc7f7a4b9bedddc08ca618c8ac1c1f7ad0"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-sop-i-cu",
+        "from": null,
+        "to": {
+          "raw": "c3bd09f7b32fe0265d32c25f50fce12b0ba0cd8e4cdd9414736586fb54b5bde7",
+          "public": "c3bd09f7b32fe0265d32c25f50fce12b0ba0cd8e4cdd9414736586fb54b5bde7",
+          "protected": "c3bd09f7b32fe0265d32c25f50fce12b0ba0cd8e4cdd9414736586fb54b5bde7"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-sop-i-ni",
+        "from": null,
+        "to": {
+          "raw": "27be66e11903f845fb74bbf5b1264fcc621a8535748bb05f1b97a4c76db97270",
+          "public": null,
+          "protected": "27be66e11903f845fb74bbf5b1264fcc621a8535748bb05f1b97a4c76db97270"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-sop-i-mn",
+        "from": null,
+        "to": {
+          "raw": "224540ba7bcff1d0c484a7d6c507dc5c10691f4144aeb42c24ea1b3ba4583c3b",
+          "public": "224540ba7bcff1d0c484a7d6c507dc5c10691f4144aeb42c24ea1b3ba4583c3b",
+          "protected": "224540ba7bcff1d0c484a7d6c507dc5c10691f4144aeb42c24ea1b3ba4583c3b"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-sop-he-cu",
+        "from": null,
+        "to": {
+          "raw": "9470fe1c667d9aa817820a5e83705b53ebbf954b3a4f9dcc7dde05030f984e16",
+          "public": "9470fe1c667d9aa817820a5e83705b53ebbf954b3a4f9dcc7dde05030f984e16",
+          "protected": "9470fe1c667d9aa817820a5e83705b53ebbf954b3a4f9dcc7dde05030f984e16"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-sop-he-ni",
+        "from": null,
+        "to": {
+          "raw": "f8c043ea511b9cfea94b113872d598418f323d0db5ba72af58d0d8418ec5b17b",
+          "public": "f8c043ea511b9cfea94b113872d598418f323d0db5ba72af58d0d8418ec5b17b",
+          "protected": "f8c043ea511b9cfea94b113872d598418f323d0db5ba72af58d0d8418ec5b17b"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-sop-he-mn",
+        "from": null,
+        "to": {
+          "raw": "fcf3bf293824f79a09b66e17f50f601882ed402302730972c4726ebb75b42aa9",
+          "public": "fcf3bf293824f79a09b66e17f50f601882ed402302730972c4726ebb75b42aa9",
+          "protected": "fcf3bf293824f79a09b66e17f50f601882ed402302730972c4726ebb75b42aa9"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-conversion-i",
+        "from": null,
+        "to": {
+          "raw": "7f6fe3a95c0f08ce14b1bc1eba8eba14d86553ac6eac52c3c16047acfd9096d3",
+          "public": "7f6fe3a95c0f08ce14b1bc1eba8eba14d86553ac6eac52c3c16047acfd9096d3",
+          "protected": "7f6fe3a95c0f08ce14b1bc1eba8eba14d86553ac6eac52c3c16047acfd9096d3"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-conversion-he",
+        "from": null,
+        "to": {
+          "raw": "018a7ba7b348a53581da7446985d7aa742f85eaa6b6fc39d70a8549d112fbe5d",
+          "public": "018a7ba7b348a53581da7446985d7aa742f85eaa6b6fc39d70a8549d112fbe5d",
+          "protected": "018a7ba7b348a53581da7446985d7aa742f85eaa6b6fc39d70a8549d112fbe5d"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-scp-start",
+        "from": null,
+        "to": {
+          "raw": "bdbc275dfd5deb27a5ba962435c74fc0d46d2f3cc56d1b65a98dd158ae48cf15",
+          "public": "bdbc275dfd5deb27a5ba962435c74fc0d46d2f3cc56d1b65a98dd158ae48cf15",
+          "protected": "bdbc275dfd5deb27a5ba962435c74fc0d46d2f3cc56d1b65a98dd158ae48cf15"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-mineral115-vanoers2020",
+        "from": null,
+        "to": {
+          "raw": "3fd16cf20979d7b1d522c9b555307aefa568e1b91f55041f59ac529a3ccd24c2",
+          "public": "3fd16cf20979d7b1d522c9b555307aefa568e1b91f55041f59ac529a3ccd24c2",
+          "protected": "3fd16cf20979d7b1d522c9b555307aefa568e1b91f55041f59ac529a3ccd24c2"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-mineral115-vanoers2020-esm1",
+        "from": null,
+        "to": {
+          "raw": "db967d93842b4d77d535be502a870a8bb9efbcd7e00750fd0dd0368107f13917",
+          "public": "db967d93842b4d77d535be502a870a8bb9efbcd7e00750fd0dd0368107f13917",
+          "protected": "db967d93842b4d77d535be502a870a8bb9efbcd7e00750fd0dd0368107f13917"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-mineral115-vieira2016",
+        "from": null,
+        "to": {
+          "raw": "91970e80c76c0bf3b233d84fc536c9494e9e9773c931d6cbaed36fe113b0c716",
+          "public": "91970e80c76c0bf3b233d84fc536c9494e9e9773c931d6cbaed36fe113b0c716",
+          "protected": "91970e80c76c0bf3b233d84fc536c9494e9e9773c931d6cbaed36fe113b0c716"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-mineral115-vieira2016-supplement",
+        "from": null,
+        "to": {
+          "raw": "cd1a505d67a5f0899722729675d335001d80f4380a8e2ac3f109fbba774f8cca",
+          "public": "cd1a505d67a5f0899722729675d335001d80f4380a8e2ac3f109fbba774f8cca",
+          "protected": "cd1a505d67a5f0899722729675d335001d80f4380a8e2ac3f109fbba774f8cca"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-mineral115-berger2020",
+        "from": null,
+        "to": {
+          "raw": "348548b0ba9b50e9f3513c42671306c5ec86ea5759e04c86960207fae1149b63",
+          "public": "348548b0ba9b50e9f3513c42671306c5ec86ea5759e04c86960207fae1149b63",
+          "protected": "348548b0ba9b50e9f3513c42671306c5ec86ea5759e04c86960207fae1149b63"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-mineral115-ericsson2019",
+        "from": null,
+        "to": {
+          "raw": "4e796ae7388c04364ac12555be1e4cff0131aa8ea7d54b735627541fc335bc90",
+          "public": "4e796ae7388c04364ac12555be1e4cff0131aa8ea7d54b735627541fc335bc90",
+          "protected": "4e796ae7388c04364ac12555be1e4cff0131aa8ea7d54b735627541fc335bc90"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-mineral115-vanoers2020",
+        "from": null,
+        "to": {
+          "raw": "5ea89069081d47896ed74f2dfdeaedf3d7f23e1d85852644a20cdfad812220ed",
+          "public": null,
+          "protected": "5ea89069081d47896ed74f2dfdeaedf3d7f23e1d85852644a20cdfad812220ed"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-mineral115-vanoers2020-esm1",
+        "from": null,
+        "to": {
+          "raw": "fffd3281c134d42db54c5e243a2ec0e3bdba6d5cb290810fd8dbfcbe30995336",
+          "public": null,
+          "protected": "fffd3281c134d42db54c5e243a2ec0e3bdba6d5cb290810fd8dbfcbe30995336"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-mineral115-vieira2016",
+        "from": null,
+        "to": {
+          "raw": "34453f998bc8503b9130bfc17e945d34a88d93e2b5b3d151ccf70cf9deeecde9",
+          "public": null,
+          "protected": "34453f998bc8503b9130bfc17e945d34a88d93e2b5b3d151ccf70cf9deeecde9"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-mineral115-vieira2016-supplement",
+        "from": null,
+        "to": {
+          "raw": "7086dad40effa810aaf60fe31358c7e2d95607ee6b23fdf9114ff2dd2da4791a",
+          "public": null,
+          "protected": "7086dad40effa810aaf60fe31358c7e2d95607ee6b23fdf9114ff2dd2da4791a"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-mineral115-berger2020",
+        "from": null,
+        "to": {
+          "raw": "c4d3dd365b8f45d4eab1cd8cc5ef361a889b4349e448078c41b9df7ac6547987",
+          "public": null,
+          "protected": "c4d3dd365b8f45d4eab1cd8cc5ef361a889b4349e448078c41b9df7ac6547987"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-mineral115-ericsson2019",
+        "from": null,
+        "to": {
+          "raw": "3561942dd7761710fe6b68f4a101206352f3d8a906492f2fbb368d2e3c5782c6",
+          "public": null,
+          "protected": "3561942dd7761710fe6b68f4a101206352f3d8a906492f2fbb368d2e3c5782c6"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "revisions:rev-mineral115-rivm-selected-mineral",
+        "from": null,
+        "to": {
+          "raw": "8890dcfa48951c5b8715a1bc2f3dcb55e7f92a16039f9ba7a9af5def8757ed7c",
+          "public": null,
+          "protected": "8890dcfa48951c5b8715a1bc2f3dcb55e7f92a16039f9ba7a9af5def8757ed7c"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-mineral115-vanoers2020",
+        "from": null,
+        "to": {
+          "raw": "37c2f39ce83886c119972abb86f1e9449f27c3b24bdcb98b88d28271e21a96bb",
+          "public": null,
+          "protected": "37c2f39ce83886c119972abb86f1e9449f27c3b24bdcb98b88d28271e21a96bb"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-mineral115-vieira2016",
+        "from": null,
+        "to": {
+          "raw": "68447ceca159f5e8f7c8123b1d2189b5576801055ed8e65ec238ec8bd09f1f6b",
+          "public": null,
+          "protected": "68447ceca159f5e8f7c8123b1d2189b5576801055ed8e65ec238ec8bd09f1f6b"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-mineral115-berger2020",
+        "from": null,
+        "to": {
+          "raw": "6dd6b80edbd9287840b3422d44b59aa9f599d59f72a5d73860be1439ffa53d12",
+          "public": null,
+          "protected": "6dd6b80edbd9287840b3422d44b59aa9f599d59f72a5d73860be1439ffa53d12"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-mineral115-ericsson2019",
+        "from": null,
+        "to": {
+          "raw": "c0bd448b5934a7519ce8c53e5d13df65fdc54a85e12d926be3949c838a5d7304",
+          "public": null,
+          "protected": "c0bd448b5934a7519ce8c53e5d13df65fdc54a85e12d926be3949c838a5d7304"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "queries:q-mineral115-factor-originals-20261116",
+        "from": null,
+        "to": {
+          "raw": "ff21a549a1bb40929386d7733682cc6440752c6b01fc103114707a61dea37359",
+          "public": null,
+          "protected": "ff21a549a1bb40929386d7733682cc6440752c6b01fc103114707a61dea37359"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "queries:q-mineral115-guidance-and-dissent-20261116",
+        "from": null,
+        "to": {
+          "raw": "8f337495d4c1911d0e769ae2eba72921615ac0286464bb834d44f04c77bc851b",
+          "public": null,
+          "protected": "8f337495d4c1911d0e769ae2eba72921615ac0286464bb834d44f04c77bc851b"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      }
+    ],
+    "rawRecords": [
+      {
+        "path": "catalog.sources",
+        "id": "src-land111-rivm2016",
+        "from": {
+          "id": "src-land111-rivm2016",
+          "title": "ReCiPe 2016: A harmonized life cycle impact assessment method at midpoint and endpoint level. Report I: Characterization",
+          "url": "https://rivm.openrepository.com/items/3d19272d-3ee1-4d95-bbc7-3ad21f0a769e",
+          "version": "RIVM Report 2016-0104（2016）；原报告，印刷正文最高页码191，PDF共194页；区别于2017 v1.1更新。",
+          "publisher": "National Institute for Public Health and the Environment (RIVM)",
+          "accessedAt": "2026-11-15",
+          "accessStatus": "public-passages-inspected",
+          "rights": "印刷p2版权页允许按机构、题名和年份注明后再用部分内容。这里只公开书目、定位与原创释义，不重传原件、原表或原图。",
+          "preservation": "SHA-256固定RIVM机构库原始PDF。引用使用该版印刷页及实际PDF物理页；原件和核对页图在公开仓库之外。",
+          "artifact": {
+            "mediaType": "application/pdf",
+            "sha256": "56f3124beba99cb3b2bd2d48bd9dc6a7d96a18275568e9575ea600052ec60597",
+            "resolvedUrl": "https://rivm.openrepository.com/server/api/core/bitstreams/2082d9d2-415a-4f90-9456-fff9bc590bb6/content",
+            "pageCount": 194
+          },
+          "reading": {
+            "readingId": "rd-land111-rivm2016",
+            "status": "selected-passages",
+            "scope": "另核印p2版权页；印pp82–86图11.2、§§11.2–11.4和表11.1、11.2；印pp181–182表S7.3及§22.1节选。",
+            "checkedAt": "2026-11-15"
+          }
+        }
+      },
+      {
+        "path": "catalog.sources",
+        "id": "src-mineral115-vanoers2020",
+        "from": null
+      },
+      {
+        "path": "catalog.sources",
+        "id": "src-mineral115-vanoers2020-esm1",
+        "from": null
+      },
+      {
+        "path": "catalog.sources",
+        "id": "src-mineral115-vieira2016",
+        "from": null
+      },
+      {
+        "path": "catalog.sources",
+        "id": "src-mineral115-vieira2016-supplement",
+        "from": null
+      },
+      {
+        "path": "catalog.sources",
+        "id": "src-mineral115-berger2020",
+        "from": null
+      },
+      {
+        "path": "catalog.sources",
+        "id": "src-mineral115-ericsson2019",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-adp-extraction",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-adp-cumulative",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-adp-workbook-basis",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-adp-cu",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-adp-ni",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-adp-mn",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-scp-curve",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-scp-sample-boundary",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-scp-r-cu",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-scp-r-ni",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-scp-r-mn",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-scp-urr-cu",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-scp-urr-ni",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-scp-urr-mn",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-guidance-adp",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-guidance-sop-scp",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-dissent-grade",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-dissent-cost",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-rivm-sop-method",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-rivm-money-proxy",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-sop-i-cu",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-sop-i-ni",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-sop-i-mn",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-sop-he-cu",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-sop-he-ni",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-sop-he-mn",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-conversion-i",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-conversion-he",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-mineral115-scp-start",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-lcia-midpoint-pathway",
+        "from": {
+          "id": "cl-lcia-midpoint-pathway",
+          "text": "清单已经算出了排放量，环境比较为何还要引入中点和终点？因为排出多少物质，尚未说明这些物质怎样改变环境。在ReCiPe2016方法论文中，中点和终点位于排放后因果路径的不同位置。中点通常设在同一类别中不同排放物的后续机制可以统一处理的地方，以便比较它们的相对潜势。终点则把这些作用进一步联系到人类健康、生态系统质量或资源稀缺性。读中点时，所问的是排放在某条路径上造成多大潜在作用；读终点时，则追问模型怎样把作用连接到所保护的对象。两层结果能够互相补充，因为它们描述的是因果路径上不同的环节。",
+          "kind": "source-statement",
+          "scope": "Huijbregts等2017方法论文的定义与框架",
+          "evidenceIds": [
+            "ev-lcia-midpoint-pathway"
+          ],
+          "evidenceLinks": [
+            {
+              "evidenceId": "ev-lcia-midpoint-pathway",
+              "relation": "supports",
+              "rationale": "该选段直接定义中点/终点及保护对象，并说明互补性；正文没有把框架描述升级为独立验证。"
+            }
+          ],
+          "premiseIds": [],
+          "caveats": [
+            "中点位置和后续模型随影响类别而变；不把这一方法的定义直接归为ISO条款。"
+          ],
+          "conceptIds": [
+            "cn-midpoint"
+          ],
+          "status": "reviewed",
+          "reviewedAt": "2026-11-04",
+          "reviewKind": "agent-source-check"
+        }
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-mineral115-input",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-mineral115-adp",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-mineral115-sop",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-mineral115-reserves",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-mineral115-rank",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-mineral115-cost-proxy",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-mineral115-metal-cost",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-mineral115-calibration",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-mineral115-assumptions",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-mineral115-judgment",
+        "from": null
+      },
+      {
+        "path": "readings.readings",
+        "id": "rd-land111-rivm2016",
+        "from": {
+          "id": "rd-land111-rivm2016",
+          "workId": "lit-m05",
+          "title": "ReCiPe 2016: A harmonized life cycle impact assessment method at midpoint and endpoint level. Report I: Characterization",
+          "version": "RIVM Report 2016-0104（2016）；原报告，印刷正文最高页码191，PDF共194页；区别于2017 v1.1更新。",
+          "url": "https://rivm.openrepository.com/items/3d19272d-3ee1-4d95-bbc7-3ad21f0a769e",
+          "accessedAt": "2026-11-15",
+          "readAt": "2026-11-15",
+          "readingStatus": "selected-passages",
+          "question": "原报告的土地占用和弃用后的恢复怎样表征？中点到终点的固定换算对已有时间积分做了什么？",
+          "argumentSummary": "直接土地使用分为转变、占用与弃用后的恢复。主章采用基于局地物种丰富度的年作物等效量，恢复因子已经包含半段恢复历时；同一正系数将占用和恢复的既定中点量写为相应终点量。附表两条恢复因子与明示计算关系不一致。",
+          "artifacts": [
+            {
+              "id": "art-land111-rivm2016-pdf",
+              "mediaType": "application/pdf",
+              "sha256": "56f3124beba99cb3b2bd2d48bd9dc6a7d96a18275568e9575ea600052ec60597",
+              "resolvedUrl": "https://rivm.openrepository.com/server/api/core/bitstreams/2082d9d2-415a-4f90-9456-fff9bc590bb6/content",
+              "pageCount": 194
+            }
+          ],
+          "passages": [
+            {
+              "id": "psg-land111-rivm-phases",
+              "artifactId": "art-land111-rivm2016-pdf",
+              "locator": "印p82图11.2及说明、§11.2；PDF物理p84（零基索引83）",
+              "printedPages": "82",
+              "pdfIndices": [
+                83
+              ],
+              "topics": [
+                "直接土地使用",
+                "弃用与恢复起点",
+                "土地类别情景"
+              ],
+              "limits": [
+                "原图t₀标土地转变，停止占用时刻另标t_occ；书中推导的零点取弃用。原图不是观察到的恢复曲线。"
+              ]
+            },
+            {
+              "id": "psg-land111-rivm-recovery",
+              "artifactId": "art-land111-rivm2016-pdf",
+              "locator": "印pp83–85 §§11.3.1–11.3.4、表11.1；PDF物理pp85–87（零基索引84–86）",
+              "printedPages": "83–85",
+              "pdfIndices": [
+                84,
+                85,
+                86
+              ],
+              "topics": [
+                "年作物等效",
+                "局地相对物种损失",
+                "被动恢复历时"
+              ],
+              "limits": [
+                "恢复因子已含时间；丰富度达到参照水平并不证明物种组成和生态功能完整恢复。主动恢复另需纳入恢复活动的清单。"
+              ]
+            },
+            {
+              "id": "psg-land111-rivm-conversion",
+              "artifactId": "art-land111-rivm2016-pdf",
+              "locator": "印pp85–86 §11.4及表11.2；PDF物理pp87–88（零基索引86–87）",
+              "printedPages": "85–86",
+              "pdfIndices": [
+                86,
+                87
+              ],
+              "topics": [
+                "中点到终点",
+                "共同正比例系数",
+                "占用与恢复的单位"
+              ],
+              "limits": [
+                "只适用于该报告的这条类别路径；附表S7.3的两项恢复因子与该关系有不一致。"
+              ]
+            },
+            {
+              "id": "psg-land111-rivm-printed-conflict",
+              "artifactId": "art-land111-rivm2016-pdf",
+              "locator": "印pp83–86 §§11.3.1、11.4与表11.1、11.2；印pp181–182表S7.3及§22.1开头；PDF物理pp85–88、183–184（零基索引84–87、182–183）",
+              "printedPages": "83–86、181–182",
+              "pdfIndices": [
+                84,
+                85,
+                86,
+                87,
+                182,
+                183
+              ],
+              "topics": [
+                "表式不一致",
+                "恢复终点因子",
+                "另列ecoinvent v3程序"
+              ],
+              "limits": [
+                "互换是与算术相符的解释，尚无核实的正式更正。不得据此推断更新报告或工作簿如何取值。",
+                "表S7.3之后的§22.1另为ecoinvent v3提出净自然土地转变流程，不能当成主章的同一恢复编码。"
+              ]
+            }
+          ],
+          "appraisal": {
+            "basis": "RIVM官方机构库原始PDF；按所列印刷页和PDF物理页核对文字、公式、图题及关键图表。",
+            "methodologicalScope": "早期报告主章的土地关系，附表不一致及不同的ecoinvent v3附录程序仅按实际位置检查。",
+            "independence": "与ReCiPe期刊方法论文属同一方法谱系，与LC-IMPACT技术章共同引用Curran等恢复研究。选段与算术核对不是两项独立生态验证。",
+            "limitations": [
+              "原报告印p181的两项恢复终点表值与印pp83–86报告关系不符，复算呈互换模式；未核实正式勘误。",
+              "只核所列选段，未取得2017更新报告PDF原件或相应工作簿，也未运行数据库或软件。"
+            ],
+            "reviewKind": "agent-source-check",
+            "checkedAt": "2026-11-15"
+          },
+          "rights": "印刷p2版权页允许按机构、题名和年份注明后再用部分内容。这里只公开书目、定位与原创释义，不重传原件、原表或原图。",
+          "unread": [
+            "本报告其他章节和附录未逐项阅读。",
+            "底层恢复数据、2017 v1.1更新适用值、20180117工作簿和实际软件映射未核实。"
+          ],
+          "sourceKeys": []
+        }
+      },
+      {
+        "path": "readings.readings",
+        "id": "rd-mineral115-vanoers2020",
+        "from": null
+      },
+      {
+        "path": "readings.readings",
+        "id": "rd-mineral115-vanoers2020-esm1",
+        "from": null
+      },
+      {
+        "path": "readings.readings",
+        "id": "rd-mineral115-vieira2016",
+        "from": null
+      },
+      {
+        "path": "readings.readings",
+        "id": "rd-mineral115-vieira2016-supplement",
+        "from": null
+      },
+      {
+        "path": "readings.readings",
+        "id": "rd-mineral115-berger2020",
+        "from": null
+      },
+      {
+        "path": "readings.readings",
+        "id": "rd-mineral115-ericsson2019",
+        "from": null
+      },
+      {
+        "path": "readings.revisions",
+        "id": "rev-mineral115-rivm-selected-mineral",
+        "from": null
+      },
+      {
+        "path": "literature.records",
+        "id": "lit-m05",
+        "from": {
+          "id": "lit-m05",
+          "title": "ReCiPe 2016: A harmonized life cycle impact assessment method at midpoint and endpoint level. Report I: Characterization",
+          "contributors": "Huijbregts et al.; RIVM",
+          "year": "2016",
+          "kind": "method-report",
+          "goalSeedIds": [
+            "M05"
+          ],
+          "urls": [
+            {
+              "url": "https://www.rivm.nl/publicaties/recipe-2016-a-harmonized-life-cycle-impact-assessment-method-at-midpoint-and-endpoint",
+              "role": "RIVM报告页"
+            },
+            {
+              "url": "https://rivm.openrepository.com/items/3d19272d-3ee1-4d95-bbc7-3ad21f0a769e",
+              "role": "RIVM官方机构库原报告条目"
+            },
+            {
+              "url": "https://rivm.openrepository.com/server/api/core/bitstreams/2082d9d2-415a-4f90-9456-fff9bc590bb6/content",
+              "role": "RIVM官方机构库实际核读原报告PDF"
+            }
+          ],
+          "identifiers": {
+            "report": "RIVM 2016-0104"
+          },
+          "volumes": [
+            "V5",
+            "A07"
+          ],
+          "topics": [
+            "midpoint",
+            "endpoint",
+            "characterization"
+          ],
+          "languages": [
+            "en"
+          ],
+          "regions": [
+            "Netherlands"
+          ],
+          "traditions": [
+            "ReCiPe LCIA"
+          ],
+          "discovery": {
+            "queryIds": [
+              "Q-SEED-IMPORT"
+            ],
+            "reason": "Inherited candidate register §11; retained for work-level discovery, not upgraded to passage evidence. V5/A07；报告与后续期刊论文各有独立身份",
+            "citationParents": [
+              "lit-com-09"
+            ]
+          },
+          "identityStatus": "verified",
+          "accessStatus": "public-fulltext-available",
+          "readingStatus": "not-close-read",
+          "accessedAt": "2026-11-03",
+          "lastCheckedAt": "2026-11-15",
+          "rights": "Third-party sources retain their rights. Bibliographic facts and original project annotations are published here; source text, figures, datasets and software are not relicensed. Full-text access or borrowing does not grant redistribution permission. No source-specific open reuse license was verified in the inherited seed check. 2026-11-15 核读原报告印p2，允许按机构、题名与年份注明后再用部分内容。项目只公开原创释义和定位。",
+          "limitations": [
+            "官方书目与报告出版页；未精读全报告",
+            "Historical metadata/abstract/partial-page check inherited from 2026-11-03; original search strings and a complete access log were not recorded in the seed register.",
+            "Volume/region/tradition tags are provisional editorial discovery strata, not evidence of intellectual origin, influence or coverage.",
+            "2026-11-15从机构库取得早期2016-0104原件并完成土地章与附录选段；参见rd-land111-rivm2016。2026-11-03仍为历史书目确认；未精读全报告或取得2017版报告原件与因子表。"
+          ],
+          "catalogSourceIds": [
+            "src-land111-rivm2016"
+          ]
+        }
+      },
+      {
+        "path": "literature.records",
+        "id": "work-mineral115-vanoers2020",
+        "from": null
+      },
+      {
+        "path": "literature.records",
+        "id": "work-mineral115-vieira2016",
+        "from": null
+      },
+      {
+        "path": "literature.records",
+        "id": "work-mineral115-berger2020",
+        "from": null
+      },
+      {
+        "path": "literature.records",
+        "id": "work-mineral115-ericsson2019",
+        "from": null
+      },
+      {
+        "path": "literature.protocol.queries",
+        "id": "q-mineral115-factor-originals-20261116",
+        "from": null
+      },
+      {
+        "path": "literature.protocol.queries",
+        "id": "q-mineral115-guidance-and-dissent-20261116",
+        "from": null
+      }
+    ],
+    "rawFields": [
+      {
+        "path": "readings.updatedAt",
+        "from": "2026-11-15",
+        "to": "2026-11-16"
+      },
+      {
+        "path": "literature.updatedAt",
+        "from": "2026-11-15",
+        "to": "2026-11-16"
+      }
+    ],
+    "previousMdx": "---\ntitle: 中点与终点\ndescription: 中点和终点对应环境因果路径上的不同位置。指标能回答什么，还取决于模型怎样处理时间、地点和效应证据。\n---\n\n## 指标的位置 [#指标停在因果路径的哪里]\n\n<Prose ids=\"cl-lcia-midpoint-pathway cl-lcia-endpoint-units cl-lcia-mid-end-conversion-limits\" />\n\n<Prose ids=\"cl-land111-episode cl-land111-midpoint cl-land111-conversion\" />\n\n## 情景与地点 [#时间证据和地点怎样进入结果]\n\n<Prose ids=\"cl-lcia-scenarios-are-choices cl-lcia-global-is-not-site-specific\" />\n\n<Prose ids=\"cl-land111-pathway cl-land111-horizon cl-land111-factor-scale cl-land111-integral cl-land111-countercheck cl-land111-aggregation\" />\n\n## 模型与资料 [#模型输入数据与因子发行包]\n\n<Prose ids=\"cl-land111-printed-record\" />\n\n<Prose ids=\"cl-lcia-model-data-factor-separation\" />\n",
+    "occurrences": [
+      "cl-lcia-midpoint-pathway",
+      "cl-lcia-endpoint-units",
+      "cl-lcia-mid-end-conversion-limits",
+      "cl-land111-episode",
+      "cl-land111-midpoint",
+      "cl-land111-conversion",
+      "cl-mineral115-input",
+      "cl-mineral115-adp",
+      "cl-mineral115-sop",
+      "cl-lcia-scenarios-are-choices",
+      "cl-lcia-global-is-not-site-specific",
+      "cl-land111-pathway",
+      "cl-land111-horizon",
+      "cl-land111-factor-scale",
+      "cl-land111-integral",
+      "cl-land111-countercheck",
+      "cl-land111-aggregation",
+      "cl-mineral115-reserves",
+      "cl-land111-printed-record",
+      "cl-mineral115-rank",
+      "cl-mineral115-cost-proxy",
+      "cl-mineral115-metal-cost",
+      "cl-mineral115-calibration",
+      "cl-mineral115-assumptions",
+      "cl-mineral115-judgment",
+      "cl-lcia-model-data-factor-separation"
+    ],
+    "consumers": [
+      {
+        "id": "cl-lcia-endpoint-units",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lcia-mid-end-conversion-limits",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lcia-model-data-factor-separation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-connect-reuse-keeps-relation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-path-marginal-average",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-path-supplied-effect-conditions",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-path-background",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-path-pdf",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-water-marginal-contexts",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-question",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-authority",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-three",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-equation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-why-square",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-nmvoc",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-nox",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-service",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-score",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-scale",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-threshold",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-test",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-later",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-judgment",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-purpose",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-policy-contrast",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-baseline",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-units",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-display",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-logit",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-trade",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-precision",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-primary-ratio",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-households",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-health",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-mismatch",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-annual",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-shares",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-two-forms",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-different-card",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-english",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-english-basis",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-service",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-japan-route",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-break-even",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-english-route",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-numeraire",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-edition",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-validity",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-null",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-order",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-transfer",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-decision",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-opening",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-precursor-denominator",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-intake-definition",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-intake-unit",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-receptor-boundary",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-source-height",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-mixture-inputs",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-mixture-results",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-exposure-evidence",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-effect-definition",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-effect-default",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-urban-health",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-rural-health",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-precursor-health",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-burden-check",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-population-meaning",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-indoor-location",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-indoor-matrix",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-exposure-compatible",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-compatible-population",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-indoor-time",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-exposure-coverage",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-nonlinear-response",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-risk-reference",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-slope-meaning",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-finite-change",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-slope-context",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-ier-evidence",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-gemm-alternative",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-factor-correction",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-implementation-layer",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-chemistry-background",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-chemistry-perturbation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-chemistry-model-check",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-concentration-route",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-regional-factor",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-modern-values",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-modern-ratios",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-matched-scope",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-uncovered-pathways",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-conclusion",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-concentration-balance",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-activity-indicators",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-usetox-conclusion",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-source-distribution",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-evidence-levels",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-regional-summary",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-factor-order",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-matched-scenario",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-version-and-model",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-land111-episode",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-land111-midpoint",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-land111-conversion",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-land111-pathway",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-land111-horizon",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-land111-factor-scale",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-land111-integral",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-land111-countercheck",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-land111-aggregation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-land111-printed-record",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      }
+    ],
+    "history": {
+      "previousAddresses": {
+        "/docs/book/midpoint-endpoint-value-choices#nd-page": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "chapter",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-midpoint-pathway",
+            "cl-lcia-endpoint-units",
+            "cl-lcia-mid-end-conversion-limits",
+            "cl-land111-episode",
+            "cl-land111-midpoint",
+            "cl-land111-conversion",
+            "cl-lcia-scenarios-are-choices",
+            "cl-lcia-global-is-not-site-specific",
+            "cl-land111-pathway",
+            "cl-land111-horizon",
+            "cl-land111-factor-scale",
+            "cl-land111-integral",
+            "cl-land111-countercheck",
+            "cl-land111-aggregation",
+            "cl-land111-printed-record",
+            "cl-lcia-model-data-factor-separation"
+          ],
+          "ordinary": [
+            "e8f2e6d93c66cdf25611700b18dcb944b3d262848626a38c2d9fbbc2339a6c83"
+          ],
+          "bindings": {
+            "links": [
+              []
+            ],
+            "tables": []
+          }
+        },
+        "/docs/book/midpoint-endpoint-value-choices#main-content": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "reading-title",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-midpoint-pathway",
+            "cl-lcia-endpoint-units",
+            "cl-lcia-mid-end-conversion-limits",
+            "cl-land111-episode",
+            "cl-land111-midpoint",
+            "cl-land111-conversion",
+            "cl-lcia-scenarios-are-choices",
+            "cl-lcia-global-is-not-site-specific",
+            "cl-land111-pathway",
+            "cl-land111-horizon",
+            "cl-land111-factor-scale",
+            "cl-land111-integral",
+            "cl-land111-countercheck",
+            "cl-land111-aggregation",
+            "cl-land111-printed-record",
+            "cl-lcia-model-data-factor-separation"
+          ],
+          "ordinary": [
+            "e8f2e6d93c66cdf25611700b18dcb944b3d262848626a38c2d9fbbc2339a6c83"
+          ],
+          "chapter": "nd-page"
+        },
+        "/docs/book/midpoint-endpoint-value-choices#指标停在因果路径的哪里": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "heading",
+          "title": "指标的位置",
+          "claimIds": [
+            "cl-lcia-midpoint-pathway",
+            "cl-lcia-endpoint-units",
+            "cl-lcia-mid-end-conversion-limits",
+            "cl-land111-episode",
+            "cl-land111-midpoint",
+            "cl-land111-conversion"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#时间证据和地点怎样进入结果": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "heading",
+          "title": "情景与地点",
+          "claimIds": [
+            "cl-lcia-scenarios-are-choices",
+            "cl-lcia-global-is-not-site-specific",
+            "cl-land111-pathway",
+            "cl-land111-horizon",
+            "cl-land111-factor-scale",
+            "cl-land111-integral",
+            "cl-land111-countercheck",
+            "cl-land111-aggregation"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#模型输入数据与因子发行包": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "heading",
+          "title": "模型与资料",
+          "claimIds": [
+            "cl-land111-printed-record",
+            "cl-lcia-model-data-factor-separation"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-annotations": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note-group",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-midpoint-pathway",
+            "cl-lcia-endpoint-units",
+            "cl-lcia-mid-end-conversion-limits",
+            "cl-land111-episode",
+            "cl-land111-midpoint",
+            "cl-land111-conversion",
+            "cl-lcia-scenarios-are-choices",
+            "cl-lcia-global-is-not-site-specific",
+            "cl-land111-pathway",
+            "cl-land111-horizon",
+            "cl-land111-factor-scale",
+            "cl-land111-integral",
+            "cl-land111-countercheck",
+            "cl-land111-aggregation",
+            "cl-land111-printed-record",
+            "cl-lcia-model-data-factor-separation"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-midpoint-pathway": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-midpoint-pathway"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-endpoint-units": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-endpoint-units"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-mid-end-conversion-limits": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-mid-end-conversion-limits"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-episode": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-episode"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-midpoint": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-midpoint"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-conversion": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-conversion"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-scenarios-are-choices": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-scenarios-are-choices"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-global-is-not-site-specific": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-global-is-not-site-specific"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-pathway": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-pathway"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-horizon": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-horizon"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-factor-scale": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-factor-scale"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-integral": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-integral"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-countercheck": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-countercheck"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-aggregation": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-aggregation"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-printed-record": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-printed-record"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-model-data-factor-separation": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-model-data-factor-separation"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "chapter",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-midpoint-pathway",
+            "cl-lcia-endpoint-units",
+            "cl-lcia-mid-end-conversion-limits",
+            "cl-land111-episode",
+            "cl-land111-midpoint",
+            "cl-land111-conversion",
+            "cl-lcia-scenarios-are-choices",
+            "cl-lcia-global-is-not-site-specific",
+            "cl-land111-pathway",
+            "cl-land111-horizon",
+            "cl-land111-factor-scale",
+            "cl-land111-integral",
+            "cl-land111-countercheck",
+            "cl-land111-aggregation",
+            "cl-land111-printed-record",
+            "cl-lcia-model-data-factor-separation"
+          ],
+          "ordinary": [
+            "e8f2e6d93c66cdf25611700b18dcb944b3d262848626a38c2d9fbbc2339a6c83"
+          ],
+          "bindings": {
+            "links": [
+              []
+            ],
+            "tables": []
+          }
+        },
+        "/print#print-reading-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "reading-title",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-midpoint-pathway",
+            "cl-lcia-endpoint-units",
+            "cl-lcia-mid-end-conversion-limits",
+            "cl-land111-episode",
+            "cl-land111-midpoint",
+            "cl-land111-conversion",
+            "cl-lcia-scenarios-are-choices",
+            "cl-lcia-global-is-not-site-specific",
+            "cl-land111-pathway",
+            "cl-land111-horizon",
+            "cl-land111-factor-scale",
+            "cl-land111-integral",
+            "cl-land111-countercheck",
+            "cl-land111-aggregation",
+            "cl-land111-printed-record",
+            "cl-lcia-model-data-factor-separation"
+          ],
+          "ordinary": [
+            "e8f2e6d93c66cdf25611700b18dcb944b3d262848626a38c2d9fbbc2339a6c83"
+          ],
+          "chapter": "print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573"
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-指标停在因果路径的哪里": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "heading",
+          "title": "指标的位置",
+          "claimIds": [
+            "cl-lcia-midpoint-pathway",
+            "cl-lcia-endpoint-units",
+            "cl-lcia-mid-end-conversion-limits",
+            "cl-land111-episode",
+            "cl-land111-midpoint",
+            "cl-land111-conversion"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-时间证据和地点怎样进入结果": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "heading",
+          "title": "情景与地点",
+          "claimIds": [
+            "cl-lcia-scenarios-are-choices",
+            "cl-lcia-global-is-not-site-specific",
+            "cl-land111-pathway",
+            "cl-land111-horizon",
+            "cl-land111-factor-scale",
+            "cl-land111-integral",
+            "cl-land111-countercheck",
+            "cl-land111-aggregation"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-模型输入数据与因子发行包": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "heading",
+          "title": "模型与资料",
+          "claimIds": [
+            "cl-land111-printed-record",
+            "cl-lcia-model-data-factor-separation"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-annotations": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note-group",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-midpoint-pathway",
+            "cl-lcia-endpoint-units",
+            "cl-lcia-mid-end-conversion-limits",
+            "cl-land111-episode",
+            "cl-land111-midpoint",
+            "cl-land111-conversion",
+            "cl-lcia-scenarios-are-choices",
+            "cl-lcia-global-is-not-site-specific",
+            "cl-land111-pathway",
+            "cl-land111-horizon",
+            "cl-land111-factor-scale",
+            "cl-land111-integral",
+            "cl-land111-countercheck",
+            "cl-land111-aggregation",
+            "cl-land111-printed-record",
+            "cl-lcia-model-data-factor-separation"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-midpoint-pathway": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-midpoint-pathway"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-endpoint-units": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-endpoint-units"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-mid-end-conversion-limits": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-mid-end-conversion-limits"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-episode": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-episode"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-midpoint": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-midpoint"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-conversion": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-conversion"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-scenarios-are-choices": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-scenarios-are-choices"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-global-is-not-site-specific": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-global-is-not-site-specific"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-pathway": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-pathway"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-horizon": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-horizon"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-factor-scale": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-factor-scale"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-integral": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-integral"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-countercheck": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-countercheck"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-aggregation": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-aggregation"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-printed-record": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-printed-record"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-model-data-factor-separation": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-model-data-factor-separation"
+          ],
+          "ordinary": []
+        }
+      },
+      "currentAddresses": {
+        "/docs/book/midpoint-endpoint-value-choices#nd-page": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "chapter",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-midpoint-pathway",
+            "cl-lcia-endpoint-units",
+            "cl-lcia-mid-end-conversion-limits",
+            "cl-land111-episode",
+            "cl-land111-midpoint",
+            "cl-land111-conversion",
+            "cl-mineral115-input",
+            "cl-mineral115-adp",
+            "cl-mineral115-sop",
+            "cl-lcia-scenarios-are-choices",
+            "cl-lcia-global-is-not-site-specific",
+            "cl-land111-pathway",
+            "cl-land111-horizon",
+            "cl-land111-factor-scale",
+            "cl-land111-integral",
+            "cl-land111-countercheck",
+            "cl-land111-aggregation",
+            "cl-mineral115-reserves",
+            "cl-land111-printed-record",
+            "cl-mineral115-rank",
+            "cl-mineral115-cost-proxy",
+            "cl-mineral115-metal-cost",
+            "cl-mineral115-calibration",
+            "cl-mineral115-assumptions",
+            "cl-mineral115-judgment",
+            "cl-lcia-model-data-factor-separation"
+          ],
+          "ordinary": [
+            "e8f2e6d93c66cdf25611700b18dcb944b3d262848626a38c2d9fbbc2339a6c83"
+          ],
+          "bindings": {
+            "links": [
+              []
+            ],
+            "tables": []
+          }
+        },
+        "/docs/book/midpoint-endpoint-value-choices#main-content": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "reading-title",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-midpoint-pathway",
+            "cl-lcia-endpoint-units",
+            "cl-lcia-mid-end-conversion-limits",
+            "cl-land111-episode",
+            "cl-land111-midpoint",
+            "cl-land111-conversion",
+            "cl-mineral115-input",
+            "cl-mineral115-adp",
+            "cl-mineral115-sop",
+            "cl-lcia-scenarios-are-choices",
+            "cl-lcia-global-is-not-site-specific",
+            "cl-land111-pathway",
+            "cl-land111-horizon",
+            "cl-land111-factor-scale",
+            "cl-land111-integral",
+            "cl-land111-countercheck",
+            "cl-land111-aggregation",
+            "cl-mineral115-reserves",
+            "cl-land111-printed-record",
+            "cl-mineral115-rank",
+            "cl-mineral115-cost-proxy",
+            "cl-mineral115-metal-cost",
+            "cl-mineral115-calibration",
+            "cl-mineral115-assumptions",
+            "cl-mineral115-judgment",
+            "cl-lcia-model-data-factor-separation"
+          ],
+          "ordinary": [
+            "e8f2e6d93c66cdf25611700b18dcb944b3d262848626a38c2d9fbbc2339a6c83"
+          ],
+          "chapter": "nd-page"
+        },
+        "/docs/book/midpoint-endpoint-value-choices#指标停在因果路径的哪里": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "heading",
+          "title": "指标的位置",
+          "claimIds": [
+            "cl-lcia-midpoint-pathway",
+            "cl-lcia-endpoint-units",
+            "cl-lcia-mid-end-conversion-limits",
+            "cl-land111-episode",
+            "cl-land111-midpoint",
+            "cl-land111-conversion",
+            "cl-mineral115-input",
+            "cl-mineral115-adp",
+            "cl-mineral115-sop"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#时间证据和地点怎样进入结果": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "heading",
+          "title": "情景与地点",
+          "claimIds": [
+            "cl-lcia-scenarios-are-choices",
+            "cl-lcia-global-is-not-site-specific",
+            "cl-land111-pathway",
+            "cl-land111-horizon",
+            "cl-land111-factor-scale",
+            "cl-land111-integral",
+            "cl-land111-countercheck",
+            "cl-land111-aggregation",
+            "cl-mineral115-reserves"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#模型输入数据与因子发行包": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "heading",
+          "title": "模型与资料",
+          "claimIds": [
+            "cl-land111-printed-record",
+            "cl-mineral115-rank",
+            "cl-mineral115-cost-proxy",
+            "cl-mineral115-metal-cost",
+            "cl-mineral115-calibration",
+            "cl-mineral115-assumptions",
+            "cl-mineral115-judgment",
+            "cl-lcia-model-data-factor-separation"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-annotations": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note-group",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-midpoint-pathway",
+            "cl-lcia-endpoint-units",
+            "cl-lcia-mid-end-conversion-limits",
+            "cl-land111-episode",
+            "cl-land111-midpoint",
+            "cl-land111-conversion",
+            "cl-mineral115-input",
+            "cl-mineral115-adp",
+            "cl-mineral115-sop",
+            "cl-lcia-scenarios-are-choices",
+            "cl-lcia-global-is-not-site-specific",
+            "cl-land111-pathway",
+            "cl-land111-horizon",
+            "cl-land111-factor-scale",
+            "cl-land111-integral",
+            "cl-land111-countercheck",
+            "cl-land111-aggregation",
+            "cl-mineral115-reserves",
+            "cl-land111-printed-record",
+            "cl-mineral115-rank",
+            "cl-mineral115-cost-proxy",
+            "cl-mineral115-metal-cost",
+            "cl-mineral115-calibration",
+            "cl-mineral115-assumptions",
+            "cl-mineral115-judgment",
+            "cl-lcia-model-data-factor-separation"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-midpoint-pathway": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-midpoint-pathway"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-endpoint-units": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-endpoint-units"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-mid-end-conversion-limits": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-mid-end-conversion-limits"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-episode": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-episode"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-midpoint": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-midpoint"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-conversion": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-conversion"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-input": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-mineral115-input"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-adp": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-mineral115-adp"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-sop": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-mineral115-sop"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-scenarios-are-choices": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-scenarios-are-choices"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-global-is-not-site-specific": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-global-is-not-site-specific"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-pathway": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-pathway"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-horizon": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-horizon"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-factor-scale": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-factor-scale"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-integral": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-integral"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-countercheck": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-countercheck"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-aggregation": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-aggregation"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-reserves": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-mineral115-reserves"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-printed-record": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-printed-record"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-rank": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-mineral115-rank"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-cost-proxy": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-mineral115-cost-proxy"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-metal-cost": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-mineral115-metal-cost"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-calibration": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-mineral115-calibration"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-assumptions": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-mineral115-assumptions"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-judgment": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-mineral115-judgment"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-model-data-factor-separation": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-model-data-factor-separation"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "chapter",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-midpoint-pathway",
+            "cl-lcia-endpoint-units",
+            "cl-lcia-mid-end-conversion-limits",
+            "cl-land111-episode",
+            "cl-land111-midpoint",
+            "cl-land111-conversion",
+            "cl-mineral115-input",
+            "cl-mineral115-adp",
+            "cl-mineral115-sop",
+            "cl-lcia-scenarios-are-choices",
+            "cl-lcia-global-is-not-site-specific",
+            "cl-land111-pathway",
+            "cl-land111-horizon",
+            "cl-land111-factor-scale",
+            "cl-land111-integral",
+            "cl-land111-countercheck",
+            "cl-land111-aggregation",
+            "cl-mineral115-reserves",
+            "cl-land111-printed-record",
+            "cl-mineral115-rank",
+            "cl-mineral115-cost-proxy",
+            "cl-mineral115-metal-cost",
+            "cl-mineral115-calibration",
+            "cl-mineral115-assumptions",
+            "cl-mineral115-judgment",
+            "cl-lcia-model-data-factor-separation"
+          ],
+          "ordinary": [
+            "e8f2e6d93c66cdf25611700b18dcb944b3d262848626a38c2d9fbbc2339a6c83"
+          ],
+          "bindings": {
+            "links": [
+              []
+            ],
+            "tables": []
+          }
+        },
+        "/print#print-reading-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "reading-title",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-midpoint-pathway",
+            "cl-lcia-endpoint-units",
+            "cl-lcia-mid-end-conversion-limits",
+            "cl-land111-episode",
+            "cl-land111-midpoint",
+            "cl-land111-conversion",
+            "cl-mineral115-input",
+            "cl-mineral115-adp",
+            "cl-mineral115-sop",
+            "cl-lcia-scenarios-are-choices",
+            "cl-lcia-global-is-not-site-specific",
+            "cl-land111-pathway",
+            "cl-land111-horizon",
+            "cl-land111-factor-scale",
+            "cl-land111-integral",
+            "cl-land111-countercheck",
+            "cl-land111-aggregation",
+            "cl-mineral115-reserves",
+            "cl-land111-printed-record",
+            "cl-mineral115-rank",
+            "cl-mineral115-cost-proxy",
+            "cl-mineral115-metal-cost",
+            "cl-mineral115-calibration",
+            "cl-mineral115-assumptions",
+            "cl-mineral115-judgment",
+            "cl-lcia-model-data-factor-separation"
+          ],
+          "ordinary": [
+            "e8f2e6d93c66cdf25611700b18dcb944b3d262848626a38c2d9fbbc2339a6c83"
+          ],
+          "chapter": "print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573"
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-指标停在因果路径的哪里": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "heading",
+          "title": "指标的位置",
+          "claimIds": [
+            "cl-lcia-midpoint-pathway",
+            "cl-lcia-endpoint-units",
+            "cl-lcia-mid-end-conversion-limits",
+            "cl-land111-episode",
+            "cl-land111-midpoint",
+            "cl-land111-conversion",
+            "cl-mineral115-input",
+            "cl-mineral115-adp",
+            "cl-mineral115-sop"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-时间证据和地点怎样进入结果": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "heading",
+          "title": "情景与地点",
+          "claimIds": [
+            "cl-lcia-scenarios-are-choices",
+            "cl-lcia-global-is-not-site-specific",
+            "cl-land111-pathway",
+            "cl-land111-horizon",
+            "cl-land111-factor-scale",
+            "cl-land111-integral",
+            "cl-land111-countercheck",
+            "cl-land111-aggregation",
+            "cl-mineral115-reserves"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-模型输入数据与因子发行包": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "heading",
+          "title": "模型与资料",
+          "claimIds": [
+            "cl-land111-printed-record",
+            "cl-mineral115-rank",
+            "cl-mineral115-cost-proxy",
+            "cl-mineral115-metal-cost",
+            "cl-mineral115-calibration",
+            "cl-mineral115-assumptions",
+            "cl-mineral115-judgment",
+            "cl-lcia-model-data-factor-separation"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-annotations": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note-group",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-midpoint-pathway",
+            "cl-lcia-endpoint-units",
+            "cl-lcia-mid-end-conversion-limits",
+            "cl-land111-episode",
+            "cl-land111-midpoint",
+            "cl-land111-conversion",
+            "cl-mineral115-input",
+            "cl-mineral115-adp",
+            "cl-mineral115-sop",
+            "cl-lcia-scenarios-are-choices",
+            "cl-lcia-global-is-not-site-specific",
+            "cl-land111-pathway",
+            "cl-land111-horizon",
+            "cl-land111-factor-scale",
+            "cl-land111-integral",
+            "cl-land111-countercheck",
+            "cl-land111-aggregation",
+            "cl-mineral115-reserves",
+            "cl-land111-printed-record",
+            "cl-mineral115-rank",
+            "cl-mineral115-cost-proxy",
+            "cl-mineral115-metal-cost",
+            "cl-mineral115-calibration",
+            "cl-mineral115-assumptions",
+            "cl-mineral115-judgment",
+            "cl-lcia-model-data-factor-separation"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-midpoint-pathway": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-midpoint-pathway"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-endpoint-units": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-endpoint-units"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-mid-end-conversion-limits": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-mid-end-conversion-limits"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-episode": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-episode"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-midpoint": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-midpoint"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-conversion": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-conversion"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-input": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-mineral115-input"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-adp": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-mineral115-adp"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-sop": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-mineral115-sop"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-scenarios-are-choices": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-scenarios-are-choices"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-global-is-not-site-specific": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-global-is-not-site-specific"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-pathway": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-pathway"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-horizon": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-horizon"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-factor-scale": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-factor-scale"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-integral": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-integral"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-countercheck": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-countercheck"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-aggregation": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-aggregation"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-reserves": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-mineral115-reserves"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-printed-record": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-land111-printed-record"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-rank": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-mineral115-rank"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-cost-proxy": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-mineral115-cost-proxy"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-metal-cost": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-mineral115-metal-cost"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-calibration": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-mineral115-calibration"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-assumptions": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-mineral115-assumptions"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-judgment": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-mineral115-judgment"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-model-data-factor-separation": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "kind": "note",
+          "title": "中点与终点",
+          "claimIds": [
+            "cl-lcia-model-data-factor-separation"
+          ],
+          "ordinary": []
+        }
+      },
+      "history": [
+        {
+          "address": "/docs/book/midpoint-endpoint-value-choices#nd-page",
+          "from": "045272b227ca67d4682f4ed2b1a66203cdd4fd8e982039ac7ca82fcd96db0a14",
+          "ordinary": [
+            {
+              "from": "e8f2e6d93c66cdf25611700b18dcb944b3d262848626a38c2d9fbbc2339a6c83",
+              "to": "e8f2e6d93c66cdf25611700b18dcb944b3d262848626a38c2d9fbbc2339a6c83",
+              "address": "/docs/book/midpoint-endpoint-value-choices#nd-page",
+              "targetId": "chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-land-111-ordinary-0",
+              "rationale": "沿用原简介在现行页面中同一原生位置。"
+            }
+          ],
+          "rationale": "保留2026-11-16前版所含论述与简介的真实范围。"
+        },
+        {
+          "address": "/docs/book/midpoint-endpoint-value-choices#main-content",
+          "from": "84cc99c4f84717fcf252f0c3fdbbf26c99639fdfbe27fe8100630a8ade43487e",
+          "ordinary": [
+            {
+              "from": "e8f2e6d93c66cdf25611700b18dcb944b3d262848626a38c2d9fbbc2339a6c83",
+              "to": "e8f2e6d93c66cdf25611700b18dcb944b3d262848626a38c2d9fbbc2339a6c83",
+              "address": "/docs/book/midpoint-endpoint-value-choices#main-content",
+              "targetId": "chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-land-111-ordinary-0",
+              "rationale": "沿用原简介在现行页面中同一原生位置。"
+            }
+          ],
+          "rationale": "保留2026-11-16前版所含论述与简介的真实范围。"
+        },
+        {
+          "address": "/docs/book/midpoint-endpoint-value-choices#指标停在因果路径的哪里",
+          "from": "65666b49414943f6ed2fa6c9d9be3c26307c69ab291bc0f7ed05e4fd62ef0253",
+          "ordinary": [],
+          "rationale": "保留2026-11-16前版所含论述与简介的真实范围。"
+        },
+        {
+          "address": "/docs/book/midpoint-endpoint-value-choices#时间证据和地点怎样进入结果",
+          "from": "4d6c3aef2ca9caf3ce92255010f15efbec5b97d8dc7aa8b8bd0214d4b46a6458",
+          "ordinary": [],
+          "rationale": "保留2026-11-16前版所含论述与简介的真实范围。"
+        },
+        {
+          "address": "/docs/book/midpoint-endpoint-value-choices#模型输入数据与因子发行包",
+          "from": "ff4eaf118cf9dcab57955e60a46259c125f66f518d857845222f4e9698e5acb6",
+          "ordinary": [],
+          "rationale": "保留2026-11-16前版所含论述与简介的真实范围。"
+        },
+        {
+          "address": "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-annotations",
+          "from": "d809eedc7f4b07de1c4148e7ce989c085646d1c394cfc9abff6851e47deec7c9",
+          "ordinary": [],
+          "rationale": "保留2026-11-16前版所含论述与简介的真实范围。"
+        },
+        {
+          "address": "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573",
+          "from": "045272b227ca67d4682f4ed2b1a66203cdd4fd8e982039ac7ca82fcd96db0a14",
+          "ordinary": [
+            {
+              "from": "e8f2e6d93c66cdf25611700b18dcb944b3d262848626a38c2d9fbbc2339a6c83",
+              "to": "e8f2e6d93c66cdf25611700b18dcb944b3d262848626a38c2d9fbbc2339a6c83",
+              "address": "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573",
+              "targetId": "print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-land-111-ordinary-0",
+              "rationale": "沿用原简介在现行页面中同一原生位置。"
+            }
+          ],
+          "rationale": "保留2026-11-16前版所含论述与简介的真实范围。"
+        },
+        {
+          "address": "/print#print-reading-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573",
+          "from": "0e758cb234adfe48319aff5f15b0f5dac9bd326d88d9c2769a449e4fd6c87a90",
+          "ordinary": [
+            {
+              "from": "e8f2e6d93c66cdf25611700b18dcb944b3d262848626a38c2d9fbbc2339a6c83",
+              "to": "e8f2e6d93c66cdf25611700b18dcb944b3d262848626a38c2d9fbbc2339a6c83",
+              "address": "/print#print-reading-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573",
+              "targetId": "print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-land-111-ordinary-0",
+              "rationale": "沿用原简介在现行页面中同一原生位置。"
+            }
+          ],
+          "rationale": "保留2026-11-16前版所含论述与简介的真实范围。"
+        },
+        {
+          "address": "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-指标停在因果路径的哪里",
+          "from": "65666b49414943f6ed2fa6c9d9be3c26307c69ab291bc0f7ed05e4fd62ef0253",
+          "ordinary": [],
+          "rationale": "保留2026-11-16前版所含论述与简介的真实范围。"
+        },
+        {
+          "address": "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-时间证据和地点怎样进入结果",
+          "from": "4d6c3aef2ca9caf3ce92255010f15efbec5b97d8dc7aa8b8bd0214d4b46a6458",
+          "ordinary": [],
+          "rationale": "保留2026-11-16前版所含论述与简介的真实范围。"
+        },
+        {
+          "address": "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-模型输入数据与因子发行包",
+          "from": "ff4eaf118cf9dcab57955e60a46259c125f66f518d857845222f4e9698e5acb6",
+          "ordinary": [],
+          "rationale": "保留2026-11-16前版所含论述与简介的真实范围。"
+        },
+        {
+          "address": "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-annotations",
+          "from": "d809eedc7f4b07de1c4148e7ce989c085646d1c394cfc9abff6851e47deec7c9",
+          "ordinary": [],
+          "rationale": "保留2026-11-16前版所含论述与简介的真实范围。"
+        }
+      ],
+      "ordinaryTargets": {
+        "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-land-111-ordinary-0": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "sha256": "e8f2e6d93c66cdf25611700b18dcb944b3d262848626a38c2d9fbbc2339a6c83"
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-land-111-ordinary-0": {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "sha256": "e8f2e6d93c66cdf25611700b18dcb944b3d262848626a38c2d9fbbc2339a6c83"
+        }
+      }
+    },
+    "outputs": [
+      {
+        "path": "/docs/book/midpoint-endpoint-value-choices",
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "from": "392adeed9dc90776aa3d7d2bb87b66679cf182637b524d8b1b509d2b27750a61",
+        "sha256": "2c15f982bd2c8d961b0491b8d6db2f86dd49d1a725c67c0c7e5daf97dad65666",
+        "rationale": "核对B14的当前正文、新旧两代引用范围、本次更正和完整注释。"
+      },
+      {
+        "path": "/docs/book/ecological-scarcity-and-targets",
+        "route": "/docs/book/ecological-scarcity-and-targets",
+        "from": "ad90f1f5f65b9795e3766149548bf58ba86b6e82f6c4cf43c40f119078083cb4",
+        "sha256": "7d4ec67b356cda7a20e24bd00f1306cda7460bdde82961f3a02bb9669a9ce84c",
+        "rationale": "只按实际注释指向更新引用文字，保留原地址与论述范围。"
+      },
+      {
+        "path": "/docs/book/connecting-objects-references-and-time",
+        "route": "/docs/book/connecting-objects-references-and-time",
+        "from": "196452c30bbdde89190d10ef6a343b7595025efa32a50762f24b0fae01889c59",
+        "sha256": "e74a4157042f798b82882db40b43f34d9a6b00bbbcc3916a3e08475612632bbd",
+        "rationale": "只按实际注释指向更新引用文字，保留原地址与论述范围。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "from": "c7260defae2ae357f95f1f303442b965513b2cb6e7b7a420f436bfd264e46864",
+        "sha256": "7deeb0416941ff51e938b6c7e9a914945d8ca4d102b013b31bc347c90c727114",
+        "rationale": "核对B14的当前正文、新旧两代引用范围、本次更正和完整注释。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/ecological-scarcity-and-targets",
+        "from": "8ef4262e3a5c638f3666c3ba0e8e1f6d2b20f8e51688138dd7c9e32147465634",
+        "sha256": "9eb71595fdf290221ff78fe4aebd6ccfd94bb50a2db111910dd57ad44ea97a2a",
+        "rationale": "只按实际注释指向更新引用文字，保留原地址与论述范围。"
+      },
+      {
+        "path": "/print",
+        "route": "book-revisable-judgment",
+        "from": "17c1ac2851aff2c2e0e9ccd99a3e4c9ce6ce07dc5f75d670f0d20d9b271e8fa5",
+        "sha256": "8acdeaee00cb7f1e431e7f781aba92ab4ff5e1c962543a76a0f41b829175afd9",
+        "rationale": "只按实际注释指向更新引用文字，保留原地址与论述范围。"
+      }
+    ],
+    "publicArtifacts": [
+      {
+        "path": "claims/index.html",
+        "from": "129ed8774cc0f2d8a17d4d79fe8bd2d979937f8993e1d7a0997f10ca8aaecdf4",
+        "sha256": "ea001abe16791cf9f5e2033b92baf761580503e6f60bff84a1e754db49b3bea8",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "sources/index.html",
+        "from": "c7fc6637242e9e96bdf09c3eeae7d67a4da1e58f4410b0d48f54060223d878b0",
+        "sha256": "52cfcc768bf1b06597733e7255026ecd8c9df5b0783526ff2a5b961c25c3747d",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "concepts/index.html",
+        "from": "da77e0c468f2164ce35432e36d58fb567fbd69707170b542c9ef71643ad143d2",
+        "sha256": "4d0a8db5b71a25ab8461204f5adbfc3ea460888f8e1858e2baec7014fbbdb2ec",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "from": "a908c16ef032097a1a0801f2709a75939ede1c416ca4a7fe4b535e1bfa5c1aae",
+        "sha256": "29291df1b5431946dad6d933dbe04d5aea67a21d1b9c4c9810af21de3aed8171",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "from": "0f86f1276e197b0d2fc7f5a443e9dfdba7c74e0212650b8b8de000a0d73063ff",
+        "sha256": "4acc24a70c819d9f468b8f3119d97ed844a8ea02da7fdba4b0c90bd2989c0fac",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "research/index.html",
+        "from": "29ed11a2457bcafe876c1c2807189d84c17ec98cfa4126146e69246fbf87525e",
+        "sha256": "5231020714232b1067ec6a3c888a3becb0a7ac5262c5e843b29813c4cfb4b2fe",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "downloads/bibliography.json",
+        "from": "6d833cf925501f9e457b139ef9e60938d903959615ced0e2fc0ba85d3bcf83ed",
+        "sha256": "1e907e83502570c2c76376f3912ad66d72d6af982d1e3652c26eefeb1e7dff7f",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "downloads/research.json",
+        "from": "6d833cf925501f9e457b139ef9e60938d903959615ced0e2fc0ba85d3bcf83ed",
+        "sha256": "1e907e83502570c2c76376f3912ad66d72d6af982d1e3652c26eefeb1e7dff7f",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      }
+    ],
+    "correction": {
+      "claimId": "cl-lcia-midpoint-pathway",
+      "scope": "前版以排放后的路径说明中点与终点。本版明确该段使用的是排放示例，并说明土地占用和原生矿产开采等清单输入也需要相应的模型关系。"
+    },
+    "outputCapture": {
+      "sourceCommit": "5c1766275e04632c4bac72c69a7cc368e5c69c98",
+      "dirty": true,
+      "status": "working-preview",
+      "manifestSha256": "8ac8502ad62f792eb2211ac4153529ed2e0c03ce9a679486703c2ced3bb34b4f",
+      "normalizedProofSha256": "9ea5b62d5451e73efd8b3a3fc4228bd3ab3852b61e3cf0347a8533eec4b7d640"
+    },
+    "reviewEvidence": [
+      {
+        "kind": "source",
+        "date": "2026-11-16",
+        "artifactFile": "_docs/editorial/review-evidence/mineral-resources-115/source-artifact.json",
+        "artifactSha256": "6de3d49ad896eb2de94c60a0f6c9f75d110b2864626b1355465b8801c696d490",
+        "reportFile": "_docs/editorial/review-evidence/mineral-resources-115/source-report.json",
+        "reportSha256": "e787c0e7d490770f95dd35cb1331dc8530747242bfe4a33114e2a9e8066c20e8"
+      },
+      {
+        "kind": "reader",
+        "date": "2026-11-16",
+        "artifactFile": "_docs/editorial/review-evidence/mineral-resources-115/reader-artifact.json",
+        "artifactSha256": "d6604dd88b491f11de16ee00ca421b477cf7a970e2613fb7086c766c800d3199",
+        "reportFile": "_docs/editorial/review-evidence/mineral-resources-115/reader-report.json",
+        "reportSha256": "85d0470ffe1d3e161a0ec366996697ca498880b876d3eb0b80a1233a0f73b6a5"
+      },
+      {
+        "kind": "output",
+        "date": "2026-11-16",
+        "artifactFile": "_docs/editorial/review-evidence/mineral-resources-115/output-artifact.json",
+        "artifactSha256": "a9f3a5e8668777fd01152c4118a6bb93d726c09f002e1b952b25d1013ad8506d",
+        "reportFile": "_docs/editorial/review-evidence/mineral-resources-115/output-report.json",
+        "reportSha256": "2e593db6dd3ed7a110322e8a5b39a496003e2a2bf8c426eebaf3468f08bfb260"
+      }
+    ]
+  }
+}

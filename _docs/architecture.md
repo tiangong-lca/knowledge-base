@@ -17,10 +17,44 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-16
-lastReviewedCommit: 040cecf06e63cf204d987870de24a0e44dffb38b
+lastReviewedCommit: 02d4457804ef72bd42909025f4f82b16972476da
 ---
 
 # Publication architecture
+
+## Mineral-resources successor
+
+The #115 B14 successor inserts ten claims in three existing sections and makes
+one explicit historical opening correction. It restores the exact prior B14
+MDX, raw source/reading/literature extensions and the one old claim before #113
+checks its own reconstructed downloads and continues to #111. Complete raw
+transitions and the dependency closure are derived from both states; current
+self-consistent fingerprints alone do not waive predecessor qualification.
+
+The factor guard binds seventeen selected decimal facts to their actual workbook
+or PDF carriers, row/scenario/cell/locator/unit and explicit claim support roles.
+The matched-reserve argument additionally joins RIVM S8.1, SCP supplementary S2
+and the journal Table1 for distinct R and CME responsibilities. Original OOXML
+cached lexical values retain their full decimal fidelity, separate from prose
+rounding and the book's multiplication of printed values.
+
+B14 preserves both the original #111 six-note history and the later #115
+sixteen-note history at shared native addresses. Only an exact independently
+expected preceding #111 same-address control may sit between #115 and its
+native target; both controls must qualify in order. The canonical first note
+also discloses its explicit emission-framing correction and old immutable source.
+That one essential correction has an inline display override so the general
+legacy-context print-hiding rule cannot erase it. Global and compiled CSS remain
+unchanged; the actual print-media check and rebuilt capture verify the effect.
+Apparatus filtering follows these checks, rather than bypassing them. Ordinary
+production remains closed while source, reader or output acceptance is pending;
+an isolated technical preview is not a production or hosted qualification.
+
+The corrected opening also changes the public concept projection. Actual capture
+therefore includes the observed concepts page as well as claims, sources and
+research pages and four public JSON artifacts. Those bytes and the affected
+article pairs are measured from actual compiler/export output, with the dirty
+preview producer identity preserved separately from later clean Main hosting.
 
 ## Acid-equivalents successor
 

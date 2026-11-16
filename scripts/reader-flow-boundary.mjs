@@ -415,7 +415,7 @@ export function validateFlowBoundaryHistoryOutput(documents, unit) {
   });
 }
 
-export function validateDatedHistoryOutput(documents, { expected, source, attribute, ordinaryPattern, ordinaryTargets: expectedOrdinary, label, ordinaryTags = ['P'] }) {
+export function validateDatedHistoryOutput(documents, { expected, source, attribute, ordinaryPattern, ordinaryTargets: expectedOrdinary, label, ordinaryTags = ['P'], previousHistory = null }) {
   const observed = new Set(), ordinary = {};
   const errors = [];
   for (const [path, document] of documents) {
@@ -437,6 +437,11 @@ export function validateDatedHistoryOutput(documents, { expected, source, attrib
       const ordinaryTargets = row ? flowBoundaryOrdinaryTargets(row) : [];
 
       let previous = notice.previousElementSibling;
+      // The preceding generation is separately qualified on the same DOM.
+      // Only its expected control for this exact address may intervene here.
+      if (previousHistory?.expected.has(key) && previous?.tagName === 'DETAILS'
+          && previous.getAttribute(`data-${previousHistory.attribute}-history`) === id)
+        previous = previous.previousElementSibling;
       while (previous?.getAttribute('data-copyedit-history') === id || previous?.getAttribute('data-legacy-scope') === id) {
         previous = previous.previousElementSibling;
       }

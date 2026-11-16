@@ -1,9 +1,10 @@
+import { mineralResourcesChapter, mineralResourcesCorrection, mineralResourcesHistoryControls, mineralResourcesSource } from '@/scripts/reader-mineral-resources.mjs';
 import { acidEquivalentsHistoryControls, acidEquivalentsOrdinaryId, acidEquivalentsSource } from '@/scripts/reader-acid-equivalents.mjs';
 import { landRecoveryHistoryControls, landRecoveryOrdinaryId, landRecoverySource } from '@/scripts/reader-land-recovery.mjs';
 import { circularFootprintHistoryControls, circularFootprintOrdinaryId, circularFootprintSource } from '@/scripts/reader-circular-footprint.mjs';
 import { loadShiftHistoryControls, loadShiftOrdinaryId, loadShiftSource } from '@/scripts/reader-load-shift.mjs';
 import { substitutionRulesHistoryControls, substitutionRulesOrdinaryId, substitutionRulesSource } from '@/scripts/reader-substitution-rules.mjs';
-import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents } from '@/scripts/reader-current-expectations.mjs';
+import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources } from '@/scripts/reader-current-expectations.mjs';
 import { flowBoundaryHistoryControls, flowBoundaryHistoryTargets, flowBoundaryOrdinaryTargets, flowBoundaryOrdinaryId } from '@/scripts/reader-flow-boundary.mjs';
 import { serviceConstraintsHistoryControls, serviceConstraintsOrdinaryId, serviceConstraintsSource } from '@/scripts/reader-service-constraints.mjs';
 import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
@@ -40,6 +41,7 @@ const histories = [
   { controls: circularFootprintHistoryControls(currentCircularFootprint), edition: circularFootprintSource, attribute: 'circular-footprint' },
   { controls: landRecoveryHistoryControls(currentLandRecovery), edition: landRecoverySource, attribute: 'land-recovery' },
   { controls: acidEquivalentsHistoryControls(currentAcidEquivalents), edition: acidEquivalentsSource, attribute: 'acid-equivalents' },
+  { controls: mineralResourcesHistoryControls(currentMineralResources), edition: mineralResourcesSource, attribute: 'mineral-resources' },
 ];
 
 function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
@@ -182,6 +184,11 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
       <ol>{plan.notes.map(note => <li id={note.anchor} data-reader-claim={note.id} key={note.id}>
         <LegacyCitationAliases ids={legacy.aliases.get(note.anchor)} target={note.anchor} />
         <ClaimAnnotation id={note.id} {...annotations.get(note.id)} />
+        {currentMineralResources?.correction && page.url === mineralResourcesChapter && note.id === mineralResourcesCorrection.claimId &&
+          <p className="legacy-citation-context" data-mineral-resources-correction={note.id} style={{ display: 'block' }}>
+            <time dateTime={mineralResourcesSource.date}>{mineralResourcesSource.date}</time>{' 修订：'}{mineralResourcesCorrection.scope}{' '}
+            <a href={citationSourceHref(mineralResourcesSource.commit)}>查看前版源文件</a>
+          </p>}
       </li>)}</ol>
     </section>}
     {notices.map(notice => <div key={notice.id} id={notice.id} className="legacy-citation-target not-prose" data-legacy-notice="" tabIndex={-1}>

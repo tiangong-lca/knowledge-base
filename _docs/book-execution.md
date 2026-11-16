@@ -116,6 +116,29 @@ paragraph reading and a bounded correction reread have four actual answers.
 The source values, old phosphorus case and historical citation scopes remain
 distinct from the actual-output and final source/root delivery qualifications.
 
+Unit113 is fully delivered: PR114/Main
+`607381d36b5f2c24e11ed4cd850a15b252620cbd`, exact root2407/PR2408/Main
+`0604bc6d7b2386f6addd4710a6518a77014f626a`, qualified468-file hosting,
+required source/root CI and final ordinary receipts. Root source handoff is
+complete1/1 with no remaining mirrors. No task listener/browser remains;
+lawful originals, review/output evidence and reused worktrees are retained.
+
+[Issue115](https://github.com/tiangong-lca/knowledge-base/issues/115) continues
+with B14 mineral depletion, future ore requirements and modeled extraction
+costs. Its [prewriting protocol](editorial/2026-11-16-mineral-resources.md)
+was committed as ed2f6f3 before manuscript changes. Source registration b88d442
+adds the selected ADP/SOP/SCP originals and published disagreement while keeping
+all935 existing claims unchanged. Ten new canonical paragraphs are now integrated
+into the actual B14 manuscript with explicit numerical supports, premises and
+accessible source-conflict notes. An independently identified overbroad emission
+framing in the old opening has an explicit scoped correction;934 other old
+claims remain exact. The actual old premise consumers, concept
+definitions and B13/B15/B16/B19/B20/B21/B24 interfaces have a scoped compatibility
+review in the unit protocol. Separate source/reader/output acceptances are now bound to the reviewed
+working-preview candidate after independent checks and actual browser/print
+verification. Normal source/root delivery remains pending. Broader Part IV and
+Programme9 requirements remain active.
+
 Rule adoption101 itself is fully delivered: PR103/Main10dc686 and
 root2381/PR2382/Main90bcaa574, with complete ordinary source/root handoff receipts.
 Programme9 retains all eight pending global criteria and this continuing GOAL.
