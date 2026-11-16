@@ -17,12 +17,14 @@ import { editionDigest, inspectReadableBookEdition } from './reader-current-edit
 import { readerPublicDownloads } from './reader-current-output.mjs';
 import { prepareLandRecoverySource, verifyLandRecoveryReceipts } from './reader-land-recovery.mjs';
 
-import { testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
+import acidEquivalents from '../config/reader-acid-equivalents.json' with { type: 'json' };
+import { previousScientificTestRecords, testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
 
 test('B14 receipts bind captured raw files, normalized article pairs, public pages and JSON', {
   skip: !capture && config.status !== 'reviewed',
 }, () => {
-  const expected = readerPublicDownloads(catalog, literature, readings);
+  const previous = previousScientificTestRecords({ catalog, readings, literature }, acidEquivalents.unit);
+  const expected = readerPublicDownloads(previous.catalog, previous.literature, previous.readings);
   const check = (changeUnit = () => {}, changeOutput) => {
     const unit = structuredClone(config.unit);
     changeUnit(unit);
@@ -50,7 +52,12 @@ test('B14 source plan declares every actual transition with its real predecessor
     readServiceConstraintsFiles(root, serviceConstraints.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
-  const input = { catalog, readings, literature, files };
+  const previous = previousScientificTestRecords({ catalog, readings, literature }, acidEquivalents.unit);
+  if (acidEquivalents.unit) {
+    const [route] = acidEquivalents.unit.routes;
+    files.set(`content${route}.mdx`, Buffer.from(acidEquivalents.unit.previousMdx));
+  }
+  const input = { ...previous, files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
   const qualify = unit => prepareLandRecoverySource(unit, input, actual, structure);

@@ -10,18 +10,14 @@ import { readerPublicDownloads } from './reader-current-output.mjs';
 import { verifyCircularFootprintReceipts } from './reader-circular-footprint.mjs';
 
 import landRecovery from '../config/reader-land-recovery.json' with { type: 'json' };
-import { testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
-import { restoreScientificRecords } from './reader-scientific-delta.mjs';
+import acidEquivalents from '../config/reader-acid-equivalents.json' with { type: 'json' };
+import { previousScientificTestRecords, testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
 
 test('B13 receipts bind captured raw files, normalized article pairs, public pages and JSON', {
   skip: !capture && config.status !== 'reviewed',
 }, () => {
-  const raw = { catalog, readings, literature };
-  const successor = landRecovery.unit;
-  const records = new Map(successor?.changes.filter(row => row.kind === 'record').map(row => [row.key, row]));
-  const previous = successor
-    ? restoreScientificRecords(raw, successor.rawRecords, successor.rawFields, records, () => true)
-    : raw;
+  const land = previousScientificTestRecords({ catalog, readings, literature }, acidEquivalents.unit);
+  const previous = previousScientificTestRecords(land, landRecovery.unit);
   const expected = readerPublicDownloads(previous.catalog, previous.literature, previous.readings);
   const check = (changeUnit = () => {}, changeOutput) => {
     const unit = structuredClone(config.unit);

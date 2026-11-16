@@ -1,0 +1,4495 @@
+{
+  "schemaVersion": 1,
+  "status": "preview",
+  "unit": {
+    "id": "acid-equivalents-113",
+    "source": {
+      "commit": "5c71ee4bc3d84b680a1a016af38d541ec56e954f",
+      "tree": "3ab078f7fd5a142026ea99d362b378a826d6a83b",
+      "manifest": "e24dc3febeee786417ee396174cad9ca32e55b28c614f5f9636ce1bca19af0d7",
+      "date": "2026-11-15"
+    },
+    "routes": [
+      "/docs/book/acidification-and-nutrient-pathways"
+    ],
+    "rationale": "用原作与真实发行行区分酸化、陆地营养富集、化学换算和接收系统。",
+    "scope": [
+      "content/docs/book/acidification-and-nutrient-pathways.mdx",
+      "readings:rd-unep-glam-2019-pathways",
+      "readings:rd-ilcd-2011-eutrophication-pathways",
+      "readings:rd-kb50-jrc-ilcd11",
+      "readings:rd-flow-pilot-ef31",
+      "readings:rd-flow-pilot-ef31-update",
+      "literature:work-flow-pilot-ef31",
+      "researchMetadata:order:claims",
+      "researchMetadata:order:evidence",
+      "researchMetadata:order:sources",
+      "researchMetadata:order:readings",
+      "researchMetadata:order:gaps",
+      "researchMetadata:order:revisions",
+      "researchMetadata:order:literature",
+      "researchMetadata:order:queries",
+      "researchMetadata:public-projection",
+      "claims:cl-acid113-ae-question",
+      "claims:cl-acid113-threshold",
+      "claims:cl-acid113-glam-relation",
+      "claims:cl-acid113-glam-tension",
+      "claims:cl-acid113-so2-rows",
+      "claims:cl-acid113-chemistry-control",
+      "claims:cl-acid113-shared-moles",
+      "claims:cl-acid113-nh3-control",
+      "evidence:ev-acid113-ilcd-ae",
+      "evidence:ev-acid113-ilcd-terrestrial",
+      "evidence:ev-acid113-glam-midpoint",
+      "evidence:ev-acid113-glam-sensitivity",
+      "evidence:ev-acid113-glam-aggregation",
+      "evidence:ev-acid113-ef-update",
+      "evidence:ev-acid113-ef-location",
+      "evidence:ev-acid113-roy-fate",
+      "evidence:ev-acid113-roy-soil",
+      "evidence:ev-acid113-roy-effect",
+      "evidence:ev-acid113-glam-scoping",
+      "evidence:ev-acid113-seppala-ae",
+      "evidence:ev-acid113-posch-ae",
+      "evidence:ev-acid113-ef-acid-model",
+      "evidence:ev-acid113-ef-nutrient-model",
+      "evidence:ev-acid113-ef-flow-so2",
+      "evidence:ev-acid113-ef-flow-nh3",
+      "evidence:ev-acid113-ef-mass",
+      "evidence:ev-acid113-ef-kg",
+      "evidence:ev-acid113-ef-moles",
+      "evidence:ev-acid113-ef-so2-cz",
+      "evidence:ev-acid113-ef-so2-al",
+      "evidence:ev-acid113-ef-nh3-acid-cz",
+      "evidence:ev-acid113-ef-nh3-acid-al",
+      "evidence:ev-acid113-ef-nh3-nutrient-cz",
+      "evidence:ev-acid113-ef-nh3-nutrient-al",
+      "sources:src-acid113-roy-fate",
+      "sources:src-acid113-roy-soil",
+      "sources:src-acid113-roy-effect",
+      "sources:src-acid113-glam-scoping",
+      "sources:src-acid113-seppala-ae",
+      "sources:src-acid113-posch-ae",
+      "sources:src-acid113-ef31-selected-members",
+      "readings:rd-acid113-roy-fate",
+      "readings:rd-acid113-roy-soil",
+      "readings:rd-acid113-roy-effect",
+      "readings:rd-acid113-glam-scoping",
+      "readings:rd-acid113-seppala-ae",
+      "readings:rd-acid113-posch-ae",
+      "gaps:gap-acid113-glam-workbook",
+      "revisions:rev-acid-equivalents-113-20261115",
+      "literature:work-acid113-roy-fate",
+      "literature:work-acid113-roy-soil",
+      "literature:work-acid113-roy-effect",
+      "literature:work-acid113-glam-scoping",
+      "literature:work-acid113-seppala-ae",
+      "literature:work-acid113-posch-ae",
+      "queries:q-acid113-indicators-and-release-20261115"
+    ],
+    "changes": [
+      {
+        "kind": "file",
+        "key": "content/docs/book/acidification-and-nutrient-pathways.mdx",
+        "from": "fae6c7d560b238793d6c8532a60777893de1459beb318a380b464ad16b2f4dc2",
+        "to": "0c2c8e4c60812654c256a942983df13cbd367847ea16f1681b60b6ee6e29fd07",
+        "rationale": "保留酸化与营养富集原十五条论述、四节、两个定位标记和原生引用，插入两组当量比较。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-unep-glam-2019-pathways",
+        "from": {
+          "raw": "27efd45a0214445b47dfcfcb56639a597e4c2d37eba3a8d6d3933f801f5644a0",
+          "public": null,
+          "protected": "27efd45a0214445b47dfcfcb56639a597e4c2d37eba3a8d6d3933f801f5644a0"
+        },
+        "to": {
+          "raw": "3eede98c275120994669ee26b7b11eb1d4443476aa1b9a170567142220bd7ece",
+          "public": null,
+          "protected": "3eede98c275120994669ee26b7b11eb1d4443476aa1b9a170567142220bd7ece"
+        },
+        "rationale": "登记实际原件选读、已有ILCD／EF／UNEP载体的补读和实际EF XML成员。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-ilcd-2011-eutrophication-pathways",
+        "from": {
+          "raw": "13c4206be024547d705306805a0fad1e2cde7421b0935db0b4d1b87a29e730bc",
+          "public": null,
+          "protected": "13c4206be024547d705306805a0fad1e2cde7421b0935db0b4d1b87a29e730bc"
+        },
+        "to": {
+          "raw": "95b57a26881d3bd4d19103dbff086b08f0f9b32086f2cb2f064c5a4cc40baf7d",
+          "public": null,
+          "protected": "95b57a26881d3bd4d19103dbff086b08f0f9b32086f2cb2f064c5a4cc40baf7d"
+        },
+        "rationale": "登记实际原件选读、已有ILCD／EF／UNEP载体的补读和实际EF XML成员。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-kb50-jrc-ilcd11",
+        "from": {
+          "raw": "19758047918a81deb69766a947122faeef06102807e55ecc6780e8aae833af6b",
+          "public": null,
+          "protected": "19758047918a81deb69766a947122faeef06102807e55ecc6780e8aae833af6b"
+        },
+        "to": {
+          "raw": "caf325959b577135091163614c963f3d75a041f68ec8b0d609113d794d911e4b",
+          "public": null,
+          "protected": "caf325959b577135091163614c963f3d75a041f68ec8b0d609113d794d911e4b"
+        },
+        "rationale": "登记实际原件选读、已有ILCD／EF／UNEP载体的补读和实际EF XML成员。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-flow-pilot-ef31",
+        "from": {
+          "raw": "0d289eb5a473ab061945ea9dcb06b5c2593ded6b16cee5750414e84ff3e79a65",
+          "public": null,
+          "protected": "0d289eb5a473ab061945ea9dcb06b5c2593ded6b16cee5750414e84ff3e79a65"
+        },
+        "to": {
+          "raw": "d97cbedc1655807575716718b3c78b88f0a4ac8e5ba97677fb75cc83df0fa640",
+          "public": null,
+          "protected": "d97cbedc1655807575716718b3c78b88f0a4ac8e5ba97677fb75cc83df0fa640"
+        },
+        "rationale": "登记实际原件选读、已有ILCD／EF／UNEP载体的补读和实际EF XML成员。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-flow-pilot-ef31-update",
+        "from": {
+          "raw": "3575b72d20cd7d7198f1f37202551abf60217ef794d1bb1ac98e4ab149841b51",
+          "public": null,
+          "protected": "3575b72d20cd7d7198f1f37202551abf60217ef794d1bb1ac98e4ab149841b51"
+        },
+        "to": {
+          "raw": "bfd2f0e3fb43ceacdd9d7f43b3e3ba1dc68b406e5411523c98adbe572f7b3ea1",
+          "public": null,
+          "protected": "bfd2f0e3fb43ceacdd9d7f43b3e3ba1dc68b406e5411523c98adbe572f7b3ea1"
+        },
+        "rationale": "登记实际原件选读、已有ILCD／EF／UNEP载体的补读和实际EF XML成员。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-flow-pilot-ef31",
+        "from": {
+          "raw": "070ad71b3b2c45a1276ad3fb121b9d0b6a64b6d654913a91eabfa69cf7097778",
+          "public": null,
+          "protected": "070ad71b3b2c45a1276ad3fb121b9d0b6a64b6d654913a91eabfa69cf7097778"
+        },
+        "to": {
+          "raw": "cca12dd7cf8f80a21be5f43231619312c40c0caed0bb616d7ee2cd45f470243d",
+          "public": null,
+          "protected": "cca12dd7cf8f80a21be5f43231619312c40c0caed0bb616d7ee2cd45f470243d"
+        },
+        "rationale": "登记真实本轮检索、证据局限和对应处置。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:claims",
+        "from": {
+          "raw": "e11764a1a39d8a1bbd21fcf0292d7b6db5faefded5cc523761c16d685ef91488",
+          "public": null,
+          "protected": "e11764a1a39d8a1bbd21fcf0292d7b6db5faefded5cc523761c16d685ef91488"
+        },
+        "to": {
+          "raw": "41d3aba9ef4bc1bba3af3e9b7334ea992ed472f587a776091a02668448f24c21",
+          "public": null,
+          "protected": "41d3aba9ef4bc1bba3af3e9b7334ea992ed472f587a776091a02668448f24c21"
+        },
+        "rationale": "复核由新记录生成的真实公开投影、稳定次序和依赖关系。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:evidence",
+        "from": {
+          "raw": "93172dccec578ddd141778a57528dcf75170bd9cd1a32d597fe9f324ccfd9a44",
+          "public": null,
+          "protected": "93172dccec578ddd141778a57528dcf75170bd9cd1a32d597fe9f324ccfd9a44"
+        },
+        "to": {
+          "raw": "ccc7ef14f6241ec0dd4ef86bb377ca7a0fbcb262e60deac4c6db5cef8d380261",
+          "public": null,
+          "protected": "ccc7ef14f6241ec0dd4ef86bb377ca7a0fbcb262e60deac4c6db5cef8d380261"
+        },
+        "rationale": "复核由新记录生成的真实公开投影、稳定次序和依赖关系。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:sources",
+        "from": {
+          "raw": "5e221e0fb066ee5c5a782d0c550fda6f7bbb32af120a2208465c504f2d723556",
+          "public": null,
+          "protected": "5e221e0fb066ee5c5a782d0c550fda6f7bbb32af120a2208465c504f2d723556"
+        },
+        "to": {
+          "raw": "530fd5a05a1310d9ee48706b7b583eee5a72982b53904fe97c12ae795b2bda28",
+          "public": null,
+          "protected": "530fd5a05a1310d9ee48706b7b583eee5a72982b53904fe97c12ae795b2bda28"
+        },
+        "rationale": "复核由新记录生成的真实公开投影、稳定次序和依赖关系。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:readings",
+        "from": {
+          "raw": "923fbf6ba5ebd645024d82c095cf0103f26cc16a585eb1605e20cf6beef739fd",
+          "public": null,
+          "protected": "923fbf6ba5ebd645024d82c095cf0103f26cc16a585eb1605e20cf6beef739fd"
+        },
+        "to": {
+          "raw": "e8654a086c047d0193838cc567f9b2429bcd74aa3d2f8419b54d789ae4cc65b9",
+          "public": null,
+          "protected": "e8654a086c047d0193838cc567f9b2429bcd74aa3d2f8419b54d789ae4cc65b9"
+        },
+        "rationale": "复核由新记录生成的真实公开投影、稳定次序和依赖关系。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:gaps",
+        "from": {
+          "raw": "deb638faa49698ebc9bcfa5257b9b6e757d5ad6631678eed593a721de32bde7f",
+          "public": null,
+          "protected": "deb638faa49698ebc9bcfa5257b9b6e757d5ad6631678eed593a721de32bde7f"
+        },
+        "to": {
+          "raw": "134dae90372383309215be5ca09c0ea999c737c23203c6e41b1bee882f7b25f5",
+          "public": null,
+          "protected": "134dae90372383309215be5ca09c0ea999c737c23203c6e41b1bee882f7b25f5"
+        },
+        "rationale": "复核由新记录生成的真实公开投影、稳定次序和依赖关系。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:revisions",
+        "from": {
+          "raw": "2a157da5e5672f3fb5931f010603b4e4fa3319d4e8c3c57b094e02142198306e",
+          "public": null,
+          "protected": "2a157da5e5672f3fb5931f010603b4e4fa3319d4e8c3c57b094e02142198306e"
+        },
+        "to": {
+          "raw": "e8f0230eed9bc8afe2452e453446b6ca95cc66ead3904e0a0b9f9eb1733c3823",
+          "public": null,
+          "protected": "e8f0230eed9bc8afe2452e453446b6ca95cc66ead3904e0a0b9f9eb1733c3823"
+        },
+        "rationale": "复核由新记录生成的真实公开投影、稳定次序和依赖关系。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:literature",
+        "from": {
+          "raw": "1016511499a8487cf770e4b2b964a32d7d609fe2672cee7f072baa6b725a7466",
+          "public": null,
+          "protected": "1016511499a8487cf770e4b2b964a32d7d609fe2672cee7f072baa6b725a7466"
+        },
+        "to": {
+          "raw": "19b1b65d453b2d96a13048be65cfd2b77a608184c763e45450c05ee29aaa7aea",
+          "public": null,
+          "protected": "19b1b65d453b2d96a13048be65cfd2b77a608184c763e45450c05ee29aaa7aea"
+        },
+        "rationale": "复核由新记录生成的真实公开投影、稳定次序和依赖关系。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:queries",
+        "from": {
+          "raw": "ec0ac2a7287c0e5b5759226607abc299ed0e999978d4241dea13f7c5026be880",
+          "public": null,
+          "protected": "ec0ac2a7287c0e5b5759226607abc299ed0e999978d4241dea13f7c5026be880"
+        },
+        "to": {
+          "raw": "f6553dbcb2db1ff967a0b2b8ee839f7111d5494d5a6ed874589a593141b6d522",
+          "public": null,
+          "protected": "f6553dbcb2db1ff967a0b2b8ee839f7111d5494d5a6ed874589a593141b6d522"
+        },
+        "rationale": "复核由新记录生成的真实公开投影、稳定次序和依赖关系。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:public-projection",
+        "from": {
+          "raw": "a1e44c7d2eacca4e8a3b1c31a021740d34b365383167771a22fd740e6a2e314a",
+          "public": null,
+          "protected": "a1e44c7d2eacca4e8a3b1c31a021740d34b365383167771a22fd740e6a2e314a"
+        },
+        "to": {
+          "raw": "f259679bb7acb59efe5f1f8151440369b854f80d2a01840ff61264f97f929261",
+          "public": null,
+          "protected": "f259679bb7acb59efe5f1f8151440369b854f80d2a01840ff61264f97f929261"
+        },
+        "rationale": "复核由新记录生成的真实公开投影、稳定次序和依赖关系。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-acid113-ae-question",
+        "from": null,
+        "to": {
+          "raw": "60a4ba3db904cae06d1b934bf9a422c8ddf81125c3a4d1871b6ff6282df304f7",
+          "public": "60a4ba3db904cae06d1b934bf9a422c8ddf81125c3a4d1871b6ff6282df304f7",
+          "protected": "34ee17fca9fe9e39cc1c5f211020f2a65b3ad49665c20c3931fb0212e2d77822"
+        },
+        "rationale": "区分接收环境、类别保护含义和具体发行因子，识别相同量属性下的不同当量。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-acid113-threshold",
+        "from": null,
+        "to": {
+          "raw": "c8a01dfe9b29e76e6ab80f306cfe22235e7cbd9aa7acbb860cd726d00448ca9e",
+          "public": "c8a01dfe9b29e76e6ab80f306cfe22235e7cbd9aa7acbb860cd726d00448ca9e",
+          "protected": "50c88a9f96634a0aead49279a3dc0e3535e77dad73093b2be3f3bce86244a3b3"
+        },
+        "rationale": "区分接收环境、类别保护含义和具体发行因子，识别相同量属性下的不同当量。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-acid113-glam-relation",
+        "from": null,
+        "to": {
+          "raw": "8861bc06af8296e50e3752ce3587f924089dacb02f9582a7e2e93e95582e1fbc",
+          "public": "8861bc06af8296e50e3752ce3587f924089dacb02f9582a7e2e93e95582e1fbc",
+          "protected": "93ecdf78b5e989055798f228f796d6ea71941809e53a009cb7ceecb5e3a23515"
+        },
+        "rationale": "区分接收环境、类别保护含义和具体发行因子，识别相同量属性下的不同当量。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-acid113-glam-tension",
+        "from": null,
+        "to": {
+          "raw": "7a7ae5004212021a0a2e72599dbd9a503cd68be9553608f2717fcd03809a0ec3",
+          "public": "7a7ae5004212021a0a2e72599dbd9a503cd68be9553608f2717fcd03809a0ec3",
+          "protected": "173d86c76ea997a571e556699bf392b9502b56b21c2dc5b4688968e9ead97b58"
+        },
+        "rationale": "区分接收环境、类别保护含义和具体发行因子，识别相同量属性下的不同当量。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-acid113-so2-rows",
+        "from": null,
+        "to": {
+          "raw": "f114336e7f57800cb6ba351256563e9d9b3a2770c3be10747615b3a9d029d13b",
+          "public": "f114336e7f57800cb6ba351256563e9d9b3a2770c3be10747615b3a9d029d13b",
+          "protected": "254253908fa74f88a5f2ffe7ef7827970f39869f75a7e0292ff346e15ccc7527"
+        },
+        "rationale": "区分接收环境、类别保护含义和具体发行因子，识别相同量属性下的不同当量。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-acid113-chemistry-control",
+        "from": null,
+        "to": {
+          "raw": "968b55b977251e2590342f55771e5c40ece8b21063981ef527833896ca48fd9c",
+          "public": "968b55b977251e2590342f55771e5c40ece8b21063981ef527833896ca48fd9c",
+          "protected": "5dd7ada62a1c188dcf9807ead2eeca0dad29968b69bdc3686ea4adc9037424b4"
+        },
+        "rationale": "区分接收环境、类别保护含义和具体发行因子，识别相同量属性下的不同当量。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-acid113-shared-moles",
+        "from": null,
+        "to": {
+          "raw": "22aa70f91286d00f38a0d82c0b20424a4d5a997bbf9c6b032d4c87c691ddea7b",
+          "public": "22aa70f91286d00f38a0d82c0b20424a4d5a997bbf9c6b032d4c87c691ddea7b",
+          "protected": "eec44444cc8902d8eba77c23855ba88433c2f3806cd95a6304a78c5fd3769ab4"
+        },
+        "rationale": "区分接收环境、类别保护含义和具体发行因子，识别相同量属性下的不同当量。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-acid113-nh3-control",
+        "from": null,
+        "to": {
+          "raw": "69ca5dfc85e7a5b34b3b9b14958dad3c1f93a1f4162832d682aaa19c658b0030",
+          "public": "69ca5dfc85e7a5b34b3b9b14958dad3c1f93a1f4162832d682aaa19c658b0030",
+          "protected": "50c03cd807f52f6247fad21406e6e56514c50eb6bde059b1f71bca64582ef125"
+        },
+        "rationale": "区分接收环境、类别保护含义和具体发行因子，识别相同量属性下的不同当量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-acid113-ilcd-ae",
+        "from": null,
+        "to": {
+          "raw": "e4e3e6ea92cd4aaa82514aadb078fbb4554a5894902bc4dbb55d684d44296406",
+          "public": "e4e3e6ea92cd4aaa82514aadb078fbb4554a5894902bc4dbb55d684d44296406",
+          "protected": "e4e3e6ea92cd4aaa82514aadb078fbb4554a5894902bc4dbb55d684d44296406"
+        },
+        "rationale": "登记接收系统、临界负荷、AE作用与EF3.1固定版本因子行。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-acid113-ilcd-terrestrial",
+        "from": null,
+        "to": {
+          "raw": "830e7e9378daa91c3a8f225e4c57fb3ff96fd03ca6e6f364f6ab59e6dfffb697",
+          "public": "830e7e9378daa91c3a8f225e4c57fb3ff96fd03ca6e6f364f6ab59e6dfffb697",
+          "protected": "830e7e9378daa91c3a8f225e4c57fb3ff96fd03ca6e6f364f6ab59e6dfffb697"
+        },
+        "rationale": "登记接收系统、临界负荷、AE作用与EF3.1固定版本因子行。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-acid113-glam-midpoint",
+        "from": null,
+        "to": {
+          "raw": "33cf21733227298c2d0c8908d9bff07561ff1cdba17cd5f87bab881e2b8c4ebb",
+          "public": "33cf21733227298c2d0c8908d9bff07561ff1cdba17cd5f87bab881e2b8c4ebb",
+          "protected": "33cf21733227298c2d0c8908d9bff07561ff1cdba17cd5f87bab881e2b8c4ebb"
+        },
+        "rationale": "登记接收系统、临界负荷、AE作用与EF3.1固定版本因子行。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-acid113-glam-sensitivity",
+        "from": null,
+        "to": {
+          "raw": "9dd10b68dc04f8bd5b086952ed9e7caccde45d5cd9a9faf2c63bc84969b06338",
+          "public": "9dd10b68dc04f8bd5b086952ed9e7caccde45d5cd9a9faf2c63bc84969b06338",
+          "protected": "9dd10b68dc04f8bd5b086952ed9e7caccde45d5cd9a9faf2c63bc84969b06338"
+        },
+        "rationale": "登记接收系统、临界负荷、AE作用与EF3.1固定版本因子行。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-acid113-glam-aggregation",
+        "from": null,
+        "to": {
+          "raw": "6593ad636cc2c6728646d8761704154df57a34e9f91889a5d1957259351fbfce",
+          "public": "6593ad636cc2c6728646d8761704154df57a34e9f91889a5d1957259351fbfce",
+          "protected": "6593ad636cc2c6728646d8761704154df57a34e9f91889a5d1957259351fbfce"
+        },
+        "rationale": "登记接收系统、临界负荷、AE作用与EF3.1固定版本因子行。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-acid113-ef-update",
+        "from": null,
+        "to": {
+          "raw": "05aeef525069f8db3b389cb05a889597a5a94d52f23fb478c96c40a4f6a3fb8d",
+          "public": "05aeef525069f8db3b389cb05a889597a5a94d52f23fb478c96c40a4f6a3fb8d",
+          "protected": "05aeef525069f8db3b389cb05a889597a5a94d52f23fb478c96c40a4f6a3fb8d"
+        },
+        "rationale": "登记接收系统、临界负荷、AE作用与EF3.1固定版本因子行。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-acid113-ef-location",
+        "from": null,
+        "to": {
+          "raw": "94e3ff259ea17a795a2dc70d8841ce103957be5fd699447329966b8dedfe9c6a",
+          "public": "94e3ff259ea17a795a2dc70d8841ce103957be5fd699447329966b8dedfe9c6a",
+          "protected": "94e3ff259ea17a795a2dc70d8841ce103957be5fd699447329966b8dedfe9c6a"
+        },
+        "rationale": "登记接收系统、临界负荷、AE作用与EF3.1固定版本因子行。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-acid113-roy-fate",
+        "from": null,
+        "to": {
+          "raw": "42811652f544e778835d7fbce0c4b8ad7163d99cd1ea802f0fde931ca742992b",
+          "public": "42811652f544e778835d7fbce0c4b8ad7163d99cd1ea802f0fde931ca742992b",
+          "protected": "42811652f544e778835d7fbce0c4b8ad7163d99cd1ea802f0fde931ca742992b"
+        },
+        "rationale": "登记接收系统、临界负荷、AE作用与EF3.1固定版本因子行。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-acid113-roy-soil",
+        "from": null,
+        "to": {
+          "raw": "88e95fb1b629ab4ada4b970666a7ad31cc720d6c5a0d5317146ec36f8567d367",
+          "public": "88e95fb1b629ab4ada4b970666a7ad31cc720d6c5a0d5317146ec36f8567d367",
+          "protected": "88e95fb1b629ab4ada4b970666a7ad31cc720d6c5a0d5317146ec36f8567d367"
+        },
+        "rationale": "登记接收系统、临界负荷、AE作用与EF3.1固定版本因子行。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-acid113-roy-effect",
+        "from": null,
+        "to": {
+          "raw": "b4edb667cccd20cb7242a69486cd700a3d129c2090d7bac97c98c338d9b84918",
+          "public": "b4edb667cccd20cb7242a69486cd700a3d129c2090d7bac97c98c338d9b84918",
+          "protected": "b4edb667cccd20cb7242a69486cd700a3d129c2090d7bac97c98c338d9b84918"
+        },
+        "rationale": "登记接收系统、临界负荷、AE作用与EF3.1固定版本因子行。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-acid113-glam-scoping",
+        "from": null,
+        "to": {
+          "raw": "021cd6e1b08efaa10f108d88131f66bfca3d8c2274749024c1f927c11f301844",
+          "public": "021cd6e1b08efaa10f108d88131f66bfca3d8c2274749024c1f927c11f301844",
+          "protected": "021cd6e1b08efaa10f108d88131f66bfca3d8c2274749024c1f927c11f301844"
+        },
+        "rationale": "登记接收系统、临界负荷、AE作用与EF3.1固定版本因子行。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-acid113-seppala-ae",
+        "from": null,
+        "to": {
+          "raw": "6d4fe73cc543346f5bf89607e12b5ff814739863162209b90a49231e091b9d80",
+          "public": "6d4fe73cc543346f5bf89607e12b5ff814739863162209b90a49231e091b9d80",
+          "protected": "6d4fe73cc543346f5bf89607e12b5ff814739863162209b90a49231e091b9d80"
+        },
+        "rationale": "登记接收系统、临界负荷、AE作用与EF3.1固定版本因子行。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-acid113-posch-ae",
+        "from": null,
+        "to": {
+          "raw": "f6a173abf00c064e39ab83128fb9fd9496c72a70dbc52618d9f20f82b723505d",
+          "public": "f6a173abf00c064e39ab83128fb9fd9496c72a70dbc52618d9f20f82b723505d",
+          "protected": "f6a173abf00c064e39ab83128fb9fd9496c72a70dbc52618d9f20f82b723505d"
+        },
+        "rationale": "登记接收系统、临界负荷、AE作用与EF3.1固定版本因子行。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-acid113-ef-acid-model",
+        "from": null,
+        "to": {
+          "raw": "1e3091d190b61aaee96b1f62b512b9c167f38611de1f62e9e6f20110deb6df05",
+          "public": "1e3091d190b61aaee96b1f62b512b9c167f38611de1f62e9e6f20110deb6df05",
+          "protected": "1e3091d190b61aaee96b1f62b512b9c167f38611de1f62e9e6f20110deb6df05"
+        },
+        "rationale": "登记接收系统、临界负荷、AE作用与EF3.1固定版本因子行。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-acid113-ef-nutrient-model",
+        "from": null,
+        "to": {
+          "raw": "fabd53212505d9f690e16b42b9ced7c819df9dd2b65aa6dc7ff55fd07c8c3dfa",
+          "public": "fabd53212505d9f690e16b42b9ced7c819df9dd2b65aa6dc7ff55fd07c8c3dfa",
+          "protected": "fabd53212505d9f690e16b42b9ced7c819df9dd2b65aa6dc7ff55fd07c8c3dfa"
+        },
+        "rationale": "登记接收系统、临界负荷、AE作用与EF3.1固定版本因子行。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-acid113-ef-flow-so2",
+        "from": null,
+        "to": {
+          "raw": "0e83245248f07521f0b5ca03bf7437679349dfbb9faa5cdf83e0a9a460ea1184",
+          "public": "0e83245248f07521f0b5ca03bf7437679349dfbb9faa5cdf83e0a9a460ea1184",
+          "protected": "0e83245248f07521f0b5ca03bf7437679349dfbb9faa5cdf83e0a9a460ea1184"
+        },
+        "rationale": "登记接收系统、临界负荷、AE作用与EF3.1固定版本因子行。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-acid113-ef-flow-nh3",
+        "from": null,
+        "to": {
+          "raw": "4c233b3375f8f34fb555a3a8d7c5e682137f51a3b51972f2a2aa43efea5e9695",
+          "public": "4c233b3375f8f34fb555a3a8d7c5e682137f51a3b51972f2a2aa43efea5e9695",
+          "protected": "4c233b3375f8f34fb555a3a8d7c5e682137f51a3b51972f2a2aa43efea5e9695"
+        },
+        "rationale": "登记接收系统、临界负荷、AE作用与EF3.1固定版本因子行。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-acid113-ef-mass",
+        "from": null,
+        "to": {
+          "raw": "007ac6a80aba758576e55603dc111b7d7525f598a4dc2d879f2ee91991468382",
+          "public": "007ac6a80aba758576e55603dc111b7d7525f598a4dc2d879f2ee91991468382",
+          "protected": "007ac6a80aba758576e55603dc111b7d7525f598a4dc2d879f2ee91991468382"
+        },
+        "rationale": "登记接收系统、临界负荷、AE作用与EF3.1固定版本因子行。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-acid113-ef-kg",
+        "from": null,
+        "to": {
+          "raw": "42b4dbe805ead02a865738d1a3d0a5fb35de67c7f4d56859a6640fb59f09e1a6",
+          "public": "42b4dbe805ead02a865738d1a3d0a5fb35de67c7f4d56859a6640fb59f09e1a6",
+          "protected": "42b4dbe805ead02a865738d1a3d0a5fb35de67c7f4d56859a6640fb59f09e1a6"
+        },
+        "rationale": "登记接收系统、临界负荷、AE作用与EF3.1固定版本因子行。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-acid113-ef-moles",
+        "from": null,
+        "to": {
+          "raw": "285c8e2b624b4d7ed8d06b8934fdea5e59bf9c6da9cc661025423a45aefff3c5",
+          "public": "285c8e2b624b4d7ed8d06b8934fdea5e59bf9c6da9cc661025423a45aefff3c5",
+          "protected": "285c8e2b624b4d7ed8d06b8934fdea5e59bf9c6da9cc661025423a45aefff3c5"
+        },
+        "rationale": "登记接收系统、临界负荷、AE作用与EF3.1固定版本因子行。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-acid113-ef-so2-cz",
+        "from": null,
+        "to": {
+          "raw": "37c06ac41326e71e9d4e48700fd67f7fb96d51a017cdfbd47ddb1774875a9fda",
+          "public": "37c06ac41326e71e9d4e48700fd67f7fb96d51a017cdfbd47ddb1774875a9fda",
+          "protected": "37c06ac41326e71e9d4e48700fd67f7fb96d51a017cdfbd47ddb1774875a9fda"
+        },
+        "rationale": "登记接收系统、临界负荷、AE作用与EF3.1固定版本因子行。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-acid113-ef-so2-al",
+        "from": null,
+        "to": {
+          "raw": "92d1d23366172343b410a605bbc57f877d3f3bc79aedb5fd4adc79f6763c08cf",
+          "public": "92d1d23366172343b410a605bbc57f877d3f3bc79aedb5fd4adc79f6763c08cf",
+          "protected": "92d1d23366172343b410a605bbc57f877d3f3bc79aedb5fd4adc79f6763c08cf"
+        },
+        "rationale": "登记接收系统、临界负荷、AE作用与EF3.1固定版本因子行。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-acid113-ef-nh3-acid-cz",
+        "from": null,
+        "to": {
+          "raw": "9fb7c8f6e0595cde9fee37825d596d00cb7213357b85b9a8e3e49442a6789112",
+          "public": "9fb7c8f6e0595cde9fee37825d596d00cb7213357b85b9a8e3e49442a6789112",
+          "protected": "9fb7c8f6e0595cde9fee37825d596d00cb7213357b85b9a8e3e49442a6789112"
+        },
+        "rationale": "登记接收系统、临界负荷、AE作用与EF3.1固定版本因子行。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-acid113-ef-nh3-acid-al",
+        "from": null,
+        "to": {
+          "raw": "da76a501d27573d2bf659229b3285bdb82aaa4d7f7828d067b19864a6fce6e66",
+          "public": "da76a501d27573d2bf659229b3285bdb82aaa4d7f7828d067b19864a6fce6e66",
+          "protected": "da76a501d27573d2bf659229b3285bdb82aaa4d7f7828d067b19864a6fce6e66"
+        },
+        "rationale": "登记接收系统、临界负荷、AE作用与EF3.1固定版本因子行。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-acid113-ef-nh3-nutrient-cz",
+        "from": null,
+        "to": {
+          "raw": "9d534f2273957bb30ea4c1b294fc2ab1ca849c51c38af51f6f77dabf3f2bde2e",
+          "public": "9d534f2273957bb30ea4c1b294fc2ab1ca849c51c38af51f6f77dabf3f2bde2e",
+          "protected": "9d534f2273957bb30ea4c1b294fc2ab1ca849c51c38af51f6f77dabf3f2bde2e"
+        },
+        "rationale": "登记接收系统、临界负荷、AE作用与EF3.1固定版本因子行。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-acid113-ef-nh3-nutrient-al",
+        "from": null,
+        "to": {
+          "raw": "c3999eb1d2d59467a68884d296f2b9570a02c18a24700797b3b9d008db1af082",
+          "public": "c3999eb1d2d59467a68884d296f2b9570a02c18a24700797b3b9d008db1af082",
+          "protected": "c3999eb1d2d59467a68884d296f2b9570a02c18a24700797b3b9d008db1af082"
+        },
+        "rationale": "登记接收系统、临界负荷、AE作用与EF3.1固定版本因子行。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-acid113-roy-fate",
+        "from": null,
+        "to": {
+          "raw": "6157d458349ad50ec92b75f3d33882a93628ba83219c7d4e29ba875635296176",
+          "public": "6157d458349ad50ec92b75f3d33882a93628ba83219c7d4e29ba875635296176",
+          "protected": "6157d458349ad50ec92b75f3d33882a93628ba83219c7d4e29ba875635296176"
+        },
+        "rationale": "登记实际核对的固定作品、引用位置、版本与合法取得范围。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-acid113-roy-soil",
+        "from": null,
+        "to": {
+          "raw": "d402f889c3826cdd2aa5386b0898eca26400d4c5eeff39465fcb90f52fc2d224",
+          "public": "d402f889c3826cdd2aa5386b0898eca26400d4c5eeff39465fcb90f52fc2d224",
+          "protected": "d402f889c3826cdd2aa5386b0898eca26400d4c5eeff39465fcb90f52fc2d224"
+        },
+        "rationale": "登记实际核对的固定作品、引用位置、版本与合法取得范围。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-acid113-roy-effect",
+        "from": null,
+        "to": {
+          "raw": "c973622b39cc219e6310ce2a6f3d006411d11b9419889e3be3dd5c6dccaf3fc2",
+          "public": "c973622b39cc219e6310ce2a6f3d006411d11b9419889e3be3dd5c6dccaf3fc2",
+          "protected": "c973622b39cc219e6310ce2a6f3d006411d11b9419889e3be3dd5c6dccaf3fc2"
+        },
+        "rationale": "登记实际核对的固定作品、引用位置、版本与合法取得范围。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-acid113-glam-scoping",
+        "from": null,
+        "to": {
+          "raw": "61522caf1e0b674b8910e692a4a3ad0c3264a6d025e91b28795561969cea0be3",
+          "public": "61522caf1e0b674b8910e692a4a3ad0c3264a6d025e91b28795561969cea0be3",
+          "protected": "61522caf1e0b674b8910e692a4a3ad0c3264a6d025e91b28795561969cea0be3"
+        },
+        "rationale": "登记实际核对的固定作品、引用位置、版本与合法取得范围。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-acid113-seppala-ae",
+        "from": null,
+        "to": {
+          "raw": "ee9d4e9b9ecb627c9c4c82be33cfd85345ea8368944686a1a428d4d4168596b0",
+          "public": "ee9d4e9b9ecb627c9c4c82be33cfd85345ea8368944686a1a428d4d4168596b0",
+          "protected": "ee9d4e9b9ecb627c9c4c82be33cfd85345ea8368944686a1a428d4d4168596b0"
+        },
+        "rationale": "登记实际核对的固定作品、引用位置、版本与合法取得范围。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-acid113-posch-ae",
+        "from": null,
+        "to": {
+          "raw": "d81a5a6ae44fbf1e85221fcc7267556240f1602630fda6b01f147044e9a2f303",
+          "public": "d81a5a6ae44fbf1e85221fcc7267556240f1602630fda6b01f147044e9a2f303",
+          "protected": "d81a5a6ae44fbf1e85221fcc7267556240f1602630fda6b01f147044e9a2f303"
+        },
+        "rationale": "登记实际核对的固定作品、引用位置、版本与合法取得范围。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-acid113-ef31-selected-members",
+        "from": null,
+        "to": {
+          "raw": "100728689cdc188c2ec72a8b9123ba685293e69d5be0d3caf4cd6d863c33db5e",
+          "public": "100728689cdc188c2ec72a8b9123ba685293e69d5be0d3caf4cd6d863c33db5e",
+          "protected": "100728689cdc188c2ec72a8b9123ba685293e69d5be0d3caf4cd6d863c33db5e"
+        },
+        "rationale": "登记实际核对的固定作品、引用位置、版本与合法取得范围。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-acid113-roy-fate",
+        "from": null,
+        "to": {
+          "raw": "f3d6148edc35ee1bd6f1ab851d240fc0eaafb1f1620a37b699424ed6f0281c90",
+          "public": null,
+          "protected": "f3d6148edc35ee1bd6f1ab851d240fc0eaafb1f1620a37b699424ed6f0281c90"
+        },
+        "rationale": "登记实际原件选读、已有ILCD／EF／UNEP载体的补读和实际EF XML成员。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-acid113-roy-soil",
+        "from": null,
+        "to": {
+          "raw": "2ccae4a8b9fae786e16bb049a1b5eb574c05b9273b5761a369050c5fc88cfe6c",
+          "public": null,
+          "protected": "2ccae4a8b9fae786e16bb049a1b5eb574c05b9273b5761a369050c5fc88cfe6c"
+        },
+        "rationale": "登记实际原件选读、已有ILCD／EF／UNEP载体的补读和实际EF XML成员。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-acid113-roy-effect",
+        "from": null,
+        "to": {
+          "raw": "8aa540265810246df6d8dc472b920f396662636731b74206957e0b7f74189de9",
+          "public": null,
+          "protected": "8aa540265810246df6d8dc472b920f396662636731b74206957e0b7f74189de9"
+        },
+        "rationale": "登记实际原件选读、已有ILCD／EF／UNEP载体的补读和实际EF XML成员。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-acid113-glam-scoping",
+        "from": null,
+        "to": {
+          "raw": "b3020fd88b989569f6a568f26eee7c96e33cc4cccc20c3dfabfa4039e7c0df25",
+          "public": null,
+          "protected": "b3020fd88b989569f6a568f26eee7c96e33cc4cccc20c3dfabfa4039e7c0df25"
+        },
+        "rationale": "登记实际原件选读、已有ILCD／EF／UNEP载体的补读和实际EF XML成员。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-acid113-seppala-ae",
+        "from": null,
+        "to": {
+          "raw": "ddf180f1673cbaba18d7c6aafeb8c0b14a00ded255dd640e95a0917074ad2400",
+          "public": null,
+          "protected": "ddf180f1673cbaba18d7c6aafeb8c0b14a00ded255dd640e95a0917074ad2400"
+        },
+        "rationale": "登记实际原件选读、已有ILCD／EF／UNEP载体的补读和实际EF XML成员。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-acid113-posch-ae",
+        "from": null,
+        "to": {
+          "raw": "c84453b0bff3bd74ceea9082c70946b4b6e141c51d434bb5411b6369f516306c",
+          "public": null,
+          "protected": "c84453b0bff3bd74ceea9082c70946b4b6e141c51d434bb5411b6369f516306c"
+        },
+        "rationale": "登记实际原件选读、已有ILCD／EF／UNEP载体的补读和实际EF XML成员。"
+      },
+      {
+        "kind": "record",
+        "key": "gaps:gap-acid113-glam-workbook",
+        "from": null,
+        "to": {
+          "raw": "664ca6c4f6a58c02759c5e2ebbc3f76e6462745b5bbd31757d73b103753fd750",
+          "public": null,
+          "protected": "664ca6c4f6a58c02759c5e2ebbc3f76e6462745b5bbd31757d73b103753fd750"
+        },
+        "rationale": "登记真实本轮检索、证据局限和对应处置。"
+      },
+      {
+        "kind": "record",
+        "key": "revisions:rev-acid-equivalents-113-20261115",
+        "from": null,
+        "to": {
+          "raw": "dbbe43812040a2c8258b71e8af731a545a5d190be2ac0f7d733010de06b43968",
+          "public": null,
+          "protected": "dbbe43812040a2c8258b71e8af731a545a5d190be2ac0f7d733010de06b43968"
+        },
+        "rationale": "登记真实本轮检索、证据局限和对应处置。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-acid113-roy-fate",
+        "from": null,
+        "to": {
+          "raw": "3d10255d375f9f87b31d0d2ae1dc3a3588c5bd7d2c66b42d9c379ea80252ebbd",
+          "public": null,
+          "protected": "3d10255d375f9f87b31d0d2ae1dc3a3588c5bd7d2c66b42d9c379ea80252ebbd"
+        },
+        "rationale": "登记真实本轮检索、证据局限和对应处置。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-acid113-roy-soil",
+        "from": null,
+        "to": {
+          "raw": "8b3be52ef251ad7ecde69067262ec99b1a244354f4c12db709b0f939b8a71204",
+          "public": null,
+          "protected": "8b3be52ef251ad7ecde69067262ec99b1a244354f4c12db709b0f939b8a71204"
+        },
+        "rationale": "登记真实本轮检索、证据局限和对应处置。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-acid113-roy-effect",
+        "from": null,
+        "to": {
+          "raw": "1b3e0f4246f44a68e24b8f53997195e1bcf360627e92c678c08e6f2e2f554121",
+          "public": null,
+          "protected": "1b3e0f4246f44a68e24b8f53997195e1bcf360627e92c678c08e6f2e2f554121"
+        },
+        "rationale": "登记真实本轮检索、证据局限和对应处置。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-acid113-glam-scoping",
+        "from": null,
+        "to": {
+          "raw": "746a8a4e2ac1ee228e7d0ddd44d086002bd6b62a6632dd0126a16febfb0bf809",
+          "public": null,
+          "protected": "746a8a4e2ac1ee228e7d0ddd44d086002bd6b62a6632dd0126a16febfb0bf809"
+        },
+        "rationale": "登记真实本轮检索、证据局限和对应处置。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-acid113-seppala-ae",
+        "from": null,
+        "to": {
+          "raw": "cd3ed2b9978dc92f0f2d34501cd908e9544047c59ebc51d11ae0443cd7f85015",
+          "public": null,
+          "protected": "cd3ed2b9978dc92f0f2d34501cd908e9544047c59ebc51d11ae0443cd7f85015"
+        },
+        "rationale": "登记真实本轮检索、证据局限和对应处置。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-acid113-posch-ae",
+        "from": null,
+        "to": {
+          "raw": "a4abe8b8844b33aa0aaa0049ffc4fb1c10b377dcaf5ce7d7d5d813af29bb0c53",
+          "public": null,
+          "protected": "a4abe8b8844b33aa0aaa0049ffc4fb1c10b377dcaf5ce7d7d5d813af29bb0c53"
+        },
+        "rationale": "登记真实本轮检索、证据局限和对应处置。"
+      },
+      {
+        "kind": "record",
+        "key": "queries:q-acid113-indicators-and-release-20261115",
+        "from": null,
+        "to": {
+          "raw": "224decb472fdc31ef5a563d8c1eb45554d6ee5e3b87902e5d47a40cb140fbe67",
+          "public": null,
+          "protected": "224decb472fdc31ef5a563d8c1eb45554d6ee5e3b87902e5d47a40cb140fbe67"
+        },
+        "rationale": "登记真实本轮检索、证据局限和对应处置。"
+      }
+    ],
+    "consumers": [
+      {
+        "id": "cl-flow-type",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-exchange",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-flow-exchange-distinction",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-waste-material",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-waste-opposite",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-waste-no-universal",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-waste-history",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-ilcd-quant-ref",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-ilcd-reference-flow",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-ilcd-fu",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-fu-distinction",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-fu-example",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-bw-direction",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-bw-sign",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-db2011-review-relative-to-criteria",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-db2011-validation-context",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-db2011-versioned-confidence",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-connect-object-before-unit",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-connect-review-does-not-transfer",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-connect-next-evidence-at-link",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-path-start",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-path-acid-soil",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-path-acid-indicator",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-path-freshwater",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-path-marine",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-path-limiting-conditions",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-path-terrestrial",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-path-units",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-path-marginal-average",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-path-supplied-effect-conditions",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-path-background",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-path-pdf",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-path-operation",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-path-operation-indicator",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-path-multiple-paths",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-water-marginal-contexts",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-opening",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-rp",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-why-chain",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-force",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-category",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-version",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-use-boundary",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-default",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-results-layer",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-reconstruction-limit",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-review-objects",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-review-2018",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-review-2024",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-review-identity",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-validity",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-methane-rule",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-nordic-design",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-niu-provenance",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-ipcc-class",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-model-meaning",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-comparison-limits",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-evidence-judgment",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-conclusion",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-wash-cycles",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-wash-inputs",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-use-result",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-report-split",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-quantity-scale",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-capital-gap",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-storage-gap",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-ration-units",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-niu-result",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-ipcc-result",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-rule-issuer",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-pm-nonlinear-response",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-pm-risk-reference",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-pm-slope-meaning",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-pm-finite-change",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-pm-slope-context",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-pm-ier-evidence",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-pm-gemm-alternative",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-pm-factor-correction",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-pm-implementation-layer",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-pm-modern-ratios",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-pm-matched-scope",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-pm-uncovered-pathways",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-pm-conclusion",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-pm-activity-indicators",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-opening",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-service",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-coordinates",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-voltage-path",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-grid-assets",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-loss-definition",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-norway-loss",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-segment-denominators",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-database-voltage",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-loss-proxy",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-egrid-scope",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-egrid-adjustments",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-egrid-rate",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-egrid-loss",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-egrid-loss-conflict",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-region-membership",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-eia-emissions",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-average-response",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-historical-generation",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-historical-consumption",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-empirical-limits",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-price-versus-energy",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-native-model",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-native-scenario",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-native-loss",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-native-loss-document",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-native-interpolation",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-native-output",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-native-ratios",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-native-check-meaning",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-native-two-hours",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-native-pollutants",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-native-application",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-future-question",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-future-system",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-future-perturbation",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-future-postprocessing",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-future-balance",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-future-load-parts",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-future-distribution",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-future-direct-rates",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-future-three-questions",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-future-gases",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-future-gases-total",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-future-scenario",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-future-time",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-future-formula",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-alternative-lca",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-validation-objects",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-connection",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-nonbaseload",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-native-coordinate",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-power-future-storage-policy",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-opening",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-record-and-link",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-bottle-reference",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-example-scope",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-material",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-opposite",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-scale",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-matrix-sign",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-allocation-held",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-representation-result",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-small-inventory",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-same-flow-total",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-three-co2-quantities",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-allocation-result",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-printed-comparator",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-missing-link",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-missing-link-score",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-jrc-scope",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-jrc-instance",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-jrc-connectors",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-jrc-parameters",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-jrc-weight-control",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-jrc-bare-setup",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-jrc-machine-edge",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-jrc-machine-coordinate",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-jrc-source-discrepancy",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-jrc-partial-match",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-jrc-result-projection",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-jrc-version-reference",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-format-scope",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-format-original-target",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-format-double-target",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-format-result-scale",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-result-direction",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-conversion-study",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-factor-probe",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-factor-zero-absent",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-factor-real-gap",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-factor-report",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-preservation-meaning",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-service-meaning",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-native-reference-and-target",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-climate-comparison-criteria",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-climate-conclusion",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-closing-historical-return",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-book-maintenance-condition",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-book-record-model-limit",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-inv-service-to-demand",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-db2011-conditional-use",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-pm-regional-summary",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-pm-factor-order",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-pm-matched-scenario",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-pm-version-and-model",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-flow99-two-boundaries",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-flow99-elementary",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-flow99-landfill",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-flow99-boundary-consequence",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-flow99-agricultural-boundary",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-flow99-boundary-exceptions",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-flow99-record-and-instance",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-flow99-schema-levels",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-flow99-identity-example",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-flow99-waste-classification",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-flow99-material-and-service",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-flow99-direction-equivalence",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-flow99-reference-levels",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-flow99-basis-and-demand",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-flow99-pesticide-interface",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-flow99-interface-consequence",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-flow99-phosphorus-interface",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-flow99-zero-placeholder",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-flow99-zero-reasons",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-flow99-zero-reporting",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-flow99-conclusion",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-flow99-probe-reference",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-service102-row-map",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-service102-service-meaning",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-service102-redundant",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-service102-residual-condition",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-shift107-complete-action",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-shift107-joint-direction",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-shift107-service",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-shift107-supply",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-shift107-small",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-shift107-large",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-shift107-control",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      },
+      {
+        "id": "cl-shift107-comparison-judgment",
+        "rationale": "观察到该原命题与新增材料的依赖联系；原证据、载体、命题和已用范围保留。"
+      }
+    ],
+    "state": {
+      "before": "d72f9d5901ac87e2fa318b61550dc7f81c99ba828333db19138818ed30150759",
+      "after": "62ff2d1448becfb53dc3901db51601207a9385b9ba7c01390de631e7d6e04a16"
+    },
+    "rawRecords": [
+      {
+        "path": "catalog.sources",
+        "id": "src-acid113-roy-fate",
+        "from": null
+      },
+      {
+        "path": "catalog.sources",
+        "id": "src-acid113-roy-soil",
+        "from": null
+      },
+      {
+        "path": "catalog.sources",
+        "id": "src-acid113-roy-effect",
+        "from": null
+      },
+      {
+        "path": "catalog.sources",
+        "id": "src-acid113-glam-scoping",
+        "from": null
+      },
+      {
+        "path": "catalog.sources",
+        "id": "src-acid113-seppala-ae",
+        "from": null
+      },
+      {
+        "path": "catalog.sources",
+        "id": "src-acid113-posch-ae",
+        "from": null
+      },
+      {
+        "path": "catalog.sources",
+        "id": "src-acid113-ef31-selected-members",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-acid113-ilcd-ae",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-acid113-ilcd-terrestrial",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-acid113-glam-midpoint",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-acid113-glam-sensitivity",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-acid113-glam-aggregation",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-acid113-ef-update",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-acid113-ef-location",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-acid113-roy-fate",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-acid113-roy-soil",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-acid113-roy-effect",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-acid113-glam-scoping",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-acid113-seppala-ae",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-acid113-posch-ae",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-acid113-ef-acid-model",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-acid113-ef-nutrient-model",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-acid113-ef-flow-so2",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-acid113-ef-flow-nh3",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-acid113-ef-mass",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-acid113-ef-kg",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-acid113-ef-moles",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-acid113-ef-so2-cz",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-acid113-ef-so2-al",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-acid113-ef-nh3-acid-cz",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-acid113-ef-nh3-acid-al",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-acid113-ef-nh3-nutrient-cz",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-acid113-ef-nh3-nutrient-al",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-acid113-ae-question",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-acid113-threshold",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-acid113-glam-relation",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-acid113-glam-tension",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-acid113-so2-rows",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-acid113-chemistry-control",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-acid113-shared-moles",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-acid113-nh3-control",
+        "from": null
+      },
+      {
+        "path": "readings.readings",
+        "id": "rd-unep-glam-2019-pathways",
+        "from": {
+          "id": "rd-unep-glam-2019-pathways",
+          "workId": "work-unep-glam-2019-volume2",
+          "title": "Global Guidance on Environmental Life Cycle Impact Assessment Indicators — Volume2",
+          "version": "UNEP/SETAC Life Cycle Initiative，2019；编辑Frischknecht/Jolliet；202页研究机构公开副本；独立于ReCiPe手册",
+          "url": "https://www.lifecycleinitiative.org/library/global-guidance-for-life-cycle-impact-assessment-indicators-volume-2/",
+          "accessedAt": "2026-11-04",
+          "readAt": "2026-11-04",
+          "readingStatus": "selected-passages",
+          "question": "排放怎样经过接收环境到达酸化或富营养化指标？",
+          "argumentSummary": "第3章给出陆地酸化与淡水/近岸富营养化的链条，并保留限制营养物、背景、聚合、响应及未实现路径。边际斜率与相对目标的平均响应须区分；2019实际酸化/海洋EF为开发者平均值，不能解释为当地当前状态。",
+          "artifacts": [
+            {
+              "id": "art-unep-glam-2019-volume2-olw-pdf",
+              "mediaType": "application/pdf",
+              "sha256": "25a581923bca994a7258c7e5748ea91f36d0f735d8ad2eaefdfb465b71702ca1",
+              "resolvedUrl": "https://ourlandandwater.nz/wp-content/uploads/2019/12/EPF_GLAMVolume2.pdf",
+              "pageCount": 202
+            }
+          ],
+          "passages": [
+            {
+              "id": "psg-glam2-2019-identity-rights",
+              "artifactId": "art-unep-glam-2019-volume2-olw-pdf",
+              "locator": "封面、版权；编辑/作者p2；第3章作者p60",
+              "printedPages": "无编号；1–2；60",
+              "pdfIndices": [
+                0,
+                1,
+                2,
+                3,
+                61
+              ],
+              "topics": [
+                "作品身份",
+                "权利",
+                "编辑与第3章作者角色分开"
+              ],
+              "limits": [
+                "版权年2019与PDF创建日分别记录；未与出版者文件逐字节比较。"
+              ]
+            },
+            {
+              "id": "psg-glam2-2019-acid",
+              "artifactId": "art-unep-glam-2019-volume2-olw-pdf",
+              "locator": "§§3.1–3.2.1；Figure3.1及图注；§3.5.3",
+              "printedPages": "61–62；66",
+              "pdfIndices": [
+                62,
+                63,
+                67
+              ],
+              "topics": [
+                "大气反应与沉降",
+                "土壤缓冲和pH",
+                "维管植物响应"
+              ],
+              "limits": [
+                "推荐范围是陆地酸化、水体富营养化；广义图示不表示全部路径已实现。"
+              ]
+            },
+            {
+              "id": "psg-glam2-2019-eutro-scope",
+              "artifactId": "art-unep-glam-2019-volume2-olw-pdf",
+              "locator": "§3.2.2；Figure3.2及图注；§3.5.4 Limiting nutrients",
+              "printedPages": "62–63；66",
+              "pdfIndices": [
+                63,
+                64,
+                67
+              ],
+              "topics": [
+                "初级生产和耗氧",
+                "共同限制",
+                "陆地营养路径"
+              ],
+              "limits": [
+                "淡水P与海洋N限制是简化，不是普遍生态定律；图示陆地路径不等于已有推荐因子。"
+              ]
+            },
+            {
+              "id": "psg-glam2-2019-units",
+              "artifactId": "art-unep-glam-2019-volume2-olw-pdf",
+              "locator": "§3.4 p64；Tables3.1–3.3表头pp69–71（仅单位，未采用数值行）",
+              "printedPages": "64；69–71",
+              "pdfIndices": [
+                65,
+                70,
+                71,
+                72
+              ],
+              "topics": [
+                "SO2/P/N当量",
+                "PDF面积或体积时间"
+              ],
+              "limits": [
+                "没有采用Tables3.1–3.3的数值因子；保持类别和分母。"
+              ]
+            },
+            {
+              "id": "psg-glam2-2019-freshwater",
+              "artifactId": "art-unep-glam-2019-volume2-olw-pdf",
+              "locator": "§3.5.1 Fate / Exposure / Effect",
+              "printedPages": "64–65",
+              "pdfIndices": [
+                65,
+                66
+              ],
+              "topics": [
+                "磷输运滞留",
+                "总磷与物种关系",
+                "缺少形态暴露"
+              ],
+              "limits": [
+                "底层Helmes/Azevedo原论文未另行重算。"
+              ]
+            },
+            {
+              "id": "psg-glam2-2019-marine",
+              "artifactId": "art-unep-glam-2019-volume2-olw-pdf",
+              "locator": "§3.5.2 Fate / Exposure / Effect及p66承接",
+              "printedPages": "65–66",
+              "pdfIndices": [
+                66,
+                67
+              ],
+              "topics": [
+                "流域和近岸",
+                "氮停留和去除",
+                "底层耗氧",
+                "缺氧响应"
+              ],
+              "limits": [
+                "能力与氧补给缺项判断绑定2019所述模型，非任何后继发行版。"
+              ]
+            },
+            {
+              "id": "psg-glam2-2019-response",
+              "artifactId": "art-unep-glam-2019-volume2-olw-pdf",
+              "locator": "§3.5.4 Effect modelling；Figure3.3；p68开头",
+              "printedPages": "66–68",
+              "pdfIndices": [
+                67,
+                68,
+                69
+              ],
+              "topics": [
+                "PNOF/PAF/PDF条件",
+                "局地可逆效应",
+                "背景和工作点",
+                "积极效应截止",
+                "边际斜率与相对目标的平均响应",
+                "实际提供因子与原则建议的差别"
+              ],
+              "limits": [
+                "PNOF/PAF等同PDF有代表性前提；零EF为建议，不证明生态效应为零。",
+                "2019实际提供的酸化和海洋富营养化EF采用开发者平均值，不反映当前条件；当时当前条件端点变体仅淡水可用。",
+                "PDF0.2替代工作点是有条件的专家判断，不是现场测得状态或通用安全线。"
+              ]
+            },
+            {
+              "id": "psg-glam2-2019-boundary",
+              "artifactId": "art-unep-glam-2019-volume2-olw-pdf",
+              "locator": "§3.5.4 Technosphere–ecosphere boundary，Tier1–3；§3.6.2",
+              "printedPages": "68",
+              "pdfIndices": [
+                69
+              ],
+              "topics": [
+                "施用量与净排放",
+                "背景农业10%P缺省",
+                "前景分层",
+                "空间聚合"
+              ],
+              "limits": [
+                "10%不作所有田块实测值；已有净排放不重复应用土壤损失。"
+              ]
+            },
+            {
+              "id": "psg-glam2-2019-interpretation",
+              "artifactId": "art-unep-glam-2019-volume2-olw-pdf",
+              "locator": "§3.6.3说明段；§§3.8.1–3.8.5",
+              "printedPages": "69；71；73–74",
+              "pdfIndices": [
+                70,
+                72,
+                74,
+                75
+              ],
+              "topics": [
+                "推荐层次",
+                "空间匹配",
+                "因子包与测试",
+                "源内疑点"
+              ],
+              "limits": [
+                "未逐格采用统计表。",
+                "p73 terrestrial eutrophication与NOx/SO2/NH3例子有类别/物质疑点，不作为候选事实。"
+              ]
+            }
+          ],
+          "appraisal": {
+            "basis": "原作未加密PDF选段及图示、单位和边界页面图像核对。",
+            "methodologicalScope": "2019第3章路径解释；无原生因子包或代码执行。",
+            "independence": "与ReCiPe/LC-IMPACT共享底层模型，不构成独立实证。",
+            "limitations": [
+              "未完整核读全书或底层模型论文。",
+              "未与出版者PDF字节比较；未取得独立勘误，不宣称不存在勘误。",
+              "未采用统计表中的数值CF。",
+              "p73类别措辞疑点保留；p74交叉引用未独立查遍全书，不断言目标小节不存在。"
+            ],
+            "reviewKind": "agent-source-check",
+            "checkedAt": "2026-11-04"
+          },
+          "rights": "©UNEP2019；注明来源的教育或非营利用途可再现，商业或转售须事先书面许可；第三方材料保留各自条件。本书提供原创释义、元数据和定位，不附原PDF、原图表或原文。",
+          "unread": [
+            "全书其他章节和评审附录。",
+            "Roy/Helmes/Cosme/Azevedo原论文及其代码、CF发行物。",
+            "Tier1缺省所引Bouwman2009原研究及具体农业实测，未单独核读。"
+          ],
+          "sourceKeys": [
+            "UNEP-GLAM-2019-Volume2"
+          ]
+        }
+      },
+      {
+        "path": "readings.readings",
+        "id": "rd-ilcd-2011-eutrophication-pathways",
+        "from": {
+          "id": "rd-ilcd-2011-eutrophication-pathways",
+          "workId": "work-ilcd-2011-lcia-recommendations",
+          "title": "Recommendations for Life Cycle Impact Assessment in the European context — based on existing environmental impact assessment models and factors",
+          "version": "ILCD Handbook First edition November2011；JRC61049；EUR24571EN；doi10.2788/33030；159页官方PDF",
+          "url": "https://publications.jrc.ec.europa.eu/repository/handle/JRC61049",
+          "accessedAt": "2026-11-04",
+          "readAt": "2026-11-04",
+          "readingStatus": "selected-passages",
+          "question": "陆地营养富集的路径和中点如何区别于水体耗氧？",
+          "argumentSummary": "在2011欧洲、国家尺度的方法语境中，AE与EDIP2003连接大气沉降、敏感接收区和临界负荷；AE超载与EDIP2003未受保护面积不同，也不等于水体耗氧或PDF。",
+          "artifacts": [
+            {
+              "id": "art-ilcd-2011-lcia-recommendations-pdf",
+              "mediaType": "application/pdf",
+              "sha256": "1adbcb9218443922f8c403a16b9d32b71df27c43c789925fc2afb606e8a0835f",
+              "resolvedUrl": "https://publications.jrc.ec.europa.eu/repository/bitstream/JRC61049/jrc61049_ilcd%20handbook%20final.pdf",
+              "pageCount": 159
+            }
+          ],
+          "passages": [
+            {
+              "id": "psg-ilcd2011-identity",
+              "artifactId": "art-ilcd-2011-lcia-recommendations-pdf",
+              "locator": "正式引用、法律页",
+              "printedPages": "封面；i",
+              "pdfIndices": [
+                0,
+                1
+              ],
+              "topics": [
+                "第一版2011-11",
+                "权利和doi"
+              ],
+              "limits": [
+                "PDF元数据含Draft，正文正式引用为第一版；2012修改时间不是新版证明。"
+              ]
+            },
+            {
+              "id": "psg-ilcd2011-terrestrial-eutro",
+              "artifactId": "art-ilcd-2011-lcia-recommendations-pdf",
+              "locator": "§3.8.1.1 Midpoint，AE与EDIP2003",
+              "printedPages": "65",
+              "pdfIndices": [
+                78
+              ],
+              "topics": [
+                "沉降与临界负荷",
+                "未受保护面积"
+              ],
+              "limits": [
+                "2011欧洲语境；不自动成为当前推荐；未核验AE精确SI因子单位。",
+                "AE与EDIP2003均为欧洲国家层次因子；EDIP2003此处限大气排放。"
+              ]
+            },
+            {
+              "id": "psg-ilcd2011-eutro-space",
+              "artifactId": "art-ilcd-2011-lcia-recommendations-pdf",
+              "locator": "§§3.8.3–3.8.4；§3.8.5.1前两段",
+              "printedPages": "74–75",
+              "pdfIndices": [
+                87,
+                88
+              ],
+              "topics": [
+                "接收区敏感性",
+                "空间差异",
+                "限制营养物"
+              ],
+              "limits": [
+                "不采用文中数量级或运行其模型。",
+                "扩展到其他大陆需要相互一致的区域模型及敏感区信息，不外推现成全球因子。"
+              ]
+            }
+          ],
+          "appraisal": {
+            "basis": "官方未加密PDF选段；p65、p74图像核验；正式引用/版权核对。",
+            "methodologicalScope": "2011欧洲语境指南；非当前方法排名或底层模型原论文复算。",
+            "independence": "指南评价是其原作，对底层模型的概述不构成独立实证。",
+            "limitations": [
+              "未运行AE/EMEP/RAINS或完整核读指南。",
+              "未取得所拟采用AE发行版精确SI单位，不补写molN-eq。",
+              "2011 ReCiPe能力描述不套到后继版。"
+            ],
+            "reviewKind": "agent-source-check",
+            "checkedAt": "2026-11-04"
+          },
+          "rights": "©European Union2011；注明来源后可再现。原PDF/源图表不进入提案，底层第三方作品权利另行保留。",
+          "unread": [
+            "底层AE/EDIP模型原论文与临界负荷数据库。",
+            "指南其余章节、独立实证验证和原生因子发行包。"
+          ],
+          "sourceKeys": [
+            "JRC61049"
+          ]
+        }
+      },
+      {
+        "path": "readings.readings",
+        "id": "rd-kb50-jrc-ilcd11",
+        "from": {
+          "id": "rd-kb50-jrc-ilcd11",
+          "workId": "work-kb50-jrc-ilcd11",
+          "title": "ILCD Format 1.1 Documentation — selected process, flow and model fields",
+          "version": "ILCD Format 1.1 公开文档，固定访问载体 2026-11-06",
+          "url": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/ILCD_Format_1.1_Documentation/ILCD_ProcessDataSet.html",
+          "accessedAt": "2026-11-06",
+          "readAt": "2026-11-06",
+          "readingStatus": "web-sections",
+          "question": "过程数据集如何区分定量参考、方向、符号、变量与结果量？",
+          "argumentSummary": "过程交换的定量参考、方向和结果量各有字段；流类型属另一条记录。模型扩展的实例引用和连接不可与单一过程行混同。",
+          "artifacts": [
+            {
+              "id": "art-kb50-jrc-process-doc",
+              "mediaType": "text/html",
+              "sha256": "dc854d520b6d62101ca1f3befaa1be64661719352286f74cf6a4653f589eaf84",
+              "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/ILCD_Format_1.1_Documentation/ILCD_ProcessDataSet.html"
+            },
+            {
+              "id": "art-kb50-jrc-model-doc",
+              "mediaType": "text/html",
+              "sha256": "6c6f7851196ee2d5da17d60708789917a192617bbb889d822e5f782e36f599d9",
+              "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/ILCD_Format_1.1_Documentation/ILCD_LifeCycleModelDataSet.html"
+            },
+            {
+              "id": "art-kb50-jrc-flow-doc",
+              "mediaType": "text/html",
+              "sha256": "c2514aea7140424eb908a55e8cddbbdfbeebc7756137447ff6318a563db26819",
+              "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/ILCD_Format_1.1_Documentation.zip"
+            },
+            {
+              "id": "art-kb50-jrc-ilcd11-doczip",
+              "mediaType": "application/zip",
+              "sha256": "8f931c7d1b8ac68579a31a05b8d2282b2cd6462488ede80472a950ab3b166506",
+              "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/ILCD_Format_1.1_Documentation.zip"
+            },
+            {
+              "id": "art-flow-pilot-ilcd-lcia-doc",
+              "mediaType": "text/html",
+              "sha256": "4c98afcf52e434dfcb4da3a3bce14d65d3c719ad72b232662a0b9f60c2fb239c",
+              "resolvedUrl": "https://eplca.jrc.ec.europa.eu/LCDN/downloads/ILCD_Format_1.1_Documentation.zip"
+            }
+          ],
+          "passages": [
+            {
+              "id": "psg-kb50-jrc-doc-direction-amount",
+              "artifactId": "art-kb50-jrc-process-doc",
+              "locator": "Process data set，Quantitative reference；Inputs and Outputs 1-7-32-119/120/123/124/125/126",
+              "topics": [
+                "方向与符号",
+                "引用变量",
+                "结果量"
+              ],
+              "limits": [
+                "同一规则不能直接移植到其他格式和工具。"
+              ]
+            },
+            {
+              "id": "psg-kb50-jrc-doc-model-structure",
+              "artifactId": "art-kb50-jrc-model-doc",
+              "locator": "Life cycle model data set，Quantitative reference、Included process data sets、connections 与 resulting process",
+              "topics": [
+                "模型/过程分离",
+                "连接"
+              ],
+              "limits": [
+                "网页说明不证明给出的示例或运行严格符合。"
+              ]
+            },
+            {
+              "id": "psg-kb50-jrc-doc-flow-type",
+              "artifactId": "art-kb50-jrc-flow-doc",
+              "locator": "ILCD_FlowDataSet.html :: Flow type and quantitative reference / referenceToReferenceFlowProperty",
+              "topics": [
+                "对象类型",
+                "计量"
+              ],
+              "limits": [
+                "原示例的两端角色仍须查具体 Flow 及 Exchange。"
+              ]
+            },
+            {
+              "id": "psg-kb70-ilcd11-quantitative-reference",
+              "artifactId": "art-kb50-jrc-process-doc",
+              "locator": "Process data set / quantitativeReference；eDoc1-1-4、@type1-1-4-15、referenceToReferenceFlow1-1-4-16、functionalUnitOrOther1-1-4-17",
+              "topics": [
+                "定量参考的类型",
+                "内部交换引用",
+                "性能表述",
+                "附加功能单位"
+              ],
+              "limits": [
+                "2026-11-07重新检查既有固定载体选段；原取得与既有阅读事件保留，不新增独立作品或全篇阅读资格。",
+                "本轮来源检查代理直接读取固定HTML这四行及其中枚举解释；没有另行取得外部枚举页、XSD或执行软件。",
+                "1-1-4-16是@type为Reference flow(s)时对本数据集一个或多个输入/输出交换的内部引用。",
+                "功能单位可以描述性能并可在参考流之外补充；字段记录能力不证明实际服务实现、求解行为或通用换算。"
+              ]
+            },
+            {
+              "id": "psg-kb74-ilcd11-exchange-values-2026-11-08",
+              "artifactId": "art-kb50-jrc-process-doc",
+              "locator": "Process data set，Inputs and Outputs：exchangeDirection 1-7-32-123的Input/Output枚举、referenceToVariable 1-7-32-124、meanAmount 1-7-32-125、resultingAmount 1-7-32-126；2026-11-08复核既有固定HTML选段。",
+              "topics": [
+                "方向与负值",
+                "变量乘数",
+                "最终交换量"
+              ],
+              "limits": [
+                "保留原2026-11-06取得及2026-11-07定量参考选读，未替换此前事件或字段定位。",
+                "这些字段说明不证明JRC示例始终符合，也不证明任何导入器按该说明运行。"
+              ]
+            },
+            {
+              "id": "psg-flow-pilot-ilcd-flow-record",
+              "artifactId": "art-kb50-jrc-flow-doc",
+              "locator": "ILCD_FlowDataSet.html eDocs 2-9-36-137、2-9-36-144、2-9-38-151、2-11-48-153、2-15-66-192",
+              "topics": [
+                "身份",
+                "介质",
+                "引用属性",
+                "流型"
+              ],
+              "limits": [
+                "字段解释不构成普适 LCA 或法律上的废物定义。"
+              ]
+            },
+            {
+              "id": "psg-flow-pilot-ilcd-process-record",
+              "artifactId": "art-kb50-jrc-process-doc",
+              "locator": "ILCD_ProcessDataSet.html eDocs 1-1-4-15…17、1-7-32-119…126",
+              "topics": [
+                "过程交换",
+                "定量参照",
+                "方向及数量"
+              ],
+              "limits": [
+                "结构与默认含义不证明任何软件实现。"
+              ]
+            },
+            {
+              "id": "psg-flow-pilot-ilcd-impact-factor",
+              "artifactId": "art-flow-pilot-ilcd-lcia-doc",
+              "locator": "ILCD_LCIAMethodDataSet.html eDocs 3-23-100-260…263，成员第1690–1739行",
+              "topics": [
+                "因子匹配",
+                "位置",
+                "0 占位"
+              ],
+              "limits": [
+                "当已知基本流具有相关贡献而本方法未提供因子时可用零记录；单个实际零记录的成因需另查。"
+              ]
+            }
+          ],
+          "appraisal": {
+            "basis": "核对机构 HTML 原件及文档 ZIP 同名成员。 2026-11-14重新取得官方1.1文档ZIP，核对Flow/Process旧载体同字节，追加其指定字段与LCIA method成员的260–263字段。模式、flow、process各自定位；Model成员本轮未新增核读。",
+            "methodologicalScope": "字段定义和默认含义，不能证明软件实现。",
+            "independence": "同一 JRC 文档的网页和 ZIP 成员不是独立证据。",
+            "limitations": [
+              "文档含模型扩展说明，不能以通用 1.1 网页标题推断所有工具支持。"
+            ],
+            "reviewKind": "agent-source-check",
+            "checkedAt": "2026-11-14"
+          },
+          "rights": "公开机构文档。只登记原件身份、定位及原创释义，来源的原文件和图像继续适用其各自权利。",
+          "unread": [
+            "其他数据集和字段未完整核读。"
+          ],
+          "sourceKeys": [
+            "src-ilcd-process",
+            "src-kb50-jrc-model-doc",
+            "src-kb50-jrc-flow-doc",
+            "src-flow-pilot-ilcd-lcia-doc"
+          ]
+        }
+      },
+      {
+        "path": "readings.readings",
+        "id": "rd-flow-pilot-ef31",
+        "from": {
+          "id": "rd-flow-pilot-ef31",
+          "workId": "work-flow-pilot-ef31",
+          "title": "EF 3.1 reference package — selected flows and methods",
+          "version": "July 2022 reference release；2026-11-14 官方取包载体，成员哈希见记录",
+          "url": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip",
+          "accessedAt": "2026-11-14",
+          "readAt": "2026-11-14",
+          "readingStatus": "selected-passages",
+          "question": "同名同单位流能否产生不同字符化因子？",
+          "argumentSummary": "同名同单位铝离子不同介质、UUID和因子。实包存在字面零，规则或数值原因仍需另外核对。",
+          "artifacts": [
+            {
+              "id": "art-flow-pilot-ef-1c54ac00",
+              "mediaType": "application/xml",
+              "sha256": "56e500d20d49d526ecbbbb96a6dcd04860bb1dfa516a44dff0316261dea7c95e",
+              "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+            },
+            {
+              "id": "art-flow-pilot-ef-5311ad70",
+              "mediaType": "application/xml",
+              "sha256": "6ddf58e2200fa1daf5c2e884318cb539b3c3414a041ef82967bb31c386ebf391",
+              "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+            },
+            {
+              "id": "art-flow-pilot-ef-fe0acd60",
+              "mediaType": "application/xml",
+              "sha256": "2534b4ba76976938ee0ef5c0bbe9ebbc605131f761dd8f88e08c1704f03b634d",
+              "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+            },
+            {
+              "id": "art-flow-pilot-ef-05316e7a",
+              "mediaType": "application/xml",
+              "sha256": "252fe760308a14b647ba2a32e8e056f9d8434235be9f1bf3b0d452afe4548cd4",
+              "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+            },
+            {
+              "id": "art-flow-pilot-ef-6209b35f",
+              "mediaType": "application/xml",
+              "sha256": "c0fe31d3c045ae85b64bd85a3bfa41e1f246d664e8f8d463005f37dee003a5a8",
+              "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+            },
+            {
+              "id": "art-flow-pilot-ef-dacd48b5",
+              "mediaType": "application/xml",
+              "sha256": "6ddbbb5a67a33caa8cbd3f6d7dc46bdce71e98830bcc73d6596a2f3b250ef26d",
+              "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+            },
+            {
+              "id": "art-flow-pilot-ef-central",
+              "mediaType": "application/octet-stream",
+              "sha256": "f0242b3d4d870e93d1b9916ae315930fcd1fc0da73a01a4ad14927969f9a4a4d",
+              "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+            },
+            {
+              "id": "art-flow99-ef-mass",
+              "mediaType": "application/xml",
+              "sha256": "8fed3fee7b905fe5eb1099880810842f32226966bad658cf25c4be49581e5eb4",
+              "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+            },
+            {
+              "id": "art-flow99-ef-mass-units",
+              "mediaType": "application/xml",
+              "sha256": "588d32266c1de508bf38129d5de8aac10bfe96f19c90e129ab76d6e3f5a8a8d3",
+              "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+            }
+          ],
+          "passages": [
+            {
+              "id": "psg-flow-pilot-ef-al-soil",
+              "artifactId": "art-flow-pilot-ef-1c54ac00",
+              "locator": "ILCD/flows/1c54ac00-a958-487b-918b-b25d6100aa7a.xml，flowInformation/quantitativeReference、administrativeInformation/publicationAndOwnership/common:dataSetVersion、flowProperties",
+              "topics": [
+                "流身份",
+                "农业土壤",
+                "kg"
+              ],
+              "limits": [
+                "单个发布条目。"
+              ]
+            },
+            {
+              "id": "psg-flow-pilot-ef-al-water",
+              "artifactId": "art-flow-pilot-ef-5311ad70",
+              "locator": "ILCD/flows/5311ad70-32a6-4a2f-8f1b-50501dba37fc.xml，flowInformation/quantitativeReference、administrativeInformation/publicationAndOwnership/common:dataSetVersion、flowProperties",
+              "topics": [
+                "流身份",
+                "长期未指定水体",
+                "kg"
+              ],
+              "limits": [
+                "单个发布条目。"
+              ]
+            },
+            {
+              "id": "psg-flow-pilot-ef-ecotox",
+              "artifactId": "art-flow-pilot-ef-05316e7a",
+              "locator": "ILCD/lciamethods/05316e7a-b254-4bea-9cf0-6bf33eb5c630.xml，行29–31、87、322648–322657、618328–618337、635218–635227",
+              "topics": [
+                "淡水生态毒性",
+                "包内因子",
+                "字面零"
+              ],
+              "limits": [
+                "两行 Calculated 且无备注，无法由此确定零值原因。"
+              ]
+            },
+            {
+              "id": "psg-flow-pilot-ef-climate",
+              "artifactId": "art-flow-pilot-ef-6209b35f",
+              "locator": "ILCD/lciamethods/6209b35f-9447-40b5-b68c-a1099e3674a0.xml，characterisationFactors 行81–11072，全1099个 factor",
+              "topics": [
+                "无记录",
+                "类别限定"
+              ],
+              "limits": [
+                "类别间无记录比较不代表存在覆盖缺口。"
+              ]
+            },
+            {
+              "id": "psg-flow99-ef-mass",
+              "artifactId": "art-flow99-ef-mass",
+              "locator": "EF-v3.1 (4)/ILCD/flowproperties/93a60a56-a3c8-11da-a746-0800200b9a66.xml；quantitativeReference及所引用数据集/单位ID，质量属性到单位组再到内部ID0的kg。",
+              "topics": [
+                "质量属性",
+                "参考单位链"
+              ],
+              "limits": [
+                "仅固定原包引用链，不声明其他单位或转换算法。"
+              ]
+            },
+            {
+              "id": "psg-flow99-ef-mass-units",
+              "artifactId": "art-flow99-ef-mass-units",
+              "locator": "EF-v3.1 (4)/ILCD/unitgroups/93a60a57-a4c8-11da-a746-0800200c9a66.xml；quantitativeReference及所引用数据集/单位ID，质量属性到单位组再到内部ID0的kg。",
+              "topics": [
+                "质量属性",
+                "参考单位链"
+              ],
+              "limits": [
+                "仅固定原包引用链，不声明其他单位或转换算法。"
+              ]
+            },
+            {
+              "id": "psg-flow99-ef-aluminium-name",
+              "artifactId": "art-flow-pilot-ef-fe0acd60",
+              "locator": "EF-v3.1 (4)/ILCD/flows/fe0acd60-3ddc-11dd-a72c-0050c2490048.xml；dataSetInformation/name与elementaryFlowCategorization，及所选05316e7a方法同UUID行。",
+              "topics": [
+                "不同流身份与相同因子",
+                "农业土壤"
+              ],
+              "limits": [
+                "实际名称与所选方法行的对照；不建立跨方法或全部化学形态的等价。"
+              ]
+            }
+          ],
+          "appraisal": {
+            "basis": "2026-11-14 原载体选段与字段核对。",
+            "methodologicalScope": "HTTP 206 读原 ZIP 指定成员及索引，CRC/长度一致；没有整包哈希。",
+            "independence": "同一作品或同一数据包的预览、说明和成员不算独立证据。",
+            "limitations": [
+              "未全包审计、未运行 Look@LCI、未确定零值成因。"
+            ],
+            "reviewKind": "agent-source-check",
+            "checkedAt": "2026-11-14"
+          },
+          "rights": "成员原文件权利有待分别核定，仅登记标识、数值、定位与原创解释。",
+          "unread": [
+            "未全包审计、未运行 Look@LCI、未确定零值成因。"
+          ],
+          "sourceKeys": [
+            "src-flow-pilot-ef31"
+          ]
+        }
+      },
+      {
+        "path": "readings.readings",
+        "id": "rd-flow-pilot-ef31-update",
+        "from": {
+          "id": "rd-flow-pilot-ef31-update",
+          "workId": "work-flow-pilot-ef31-update",
+          "title": "Updated characterisation and normalisation factors for the Environmental Footprint 3.1 method",
+          "version": "Andreasi Bassi 等，2023-02-06，EUR 31414 EN，JRC130796，DOI 10.2760/798894",
+          "url": "https://publications.jrc.ec.europa.eu/repository/bitstream/JRC130796/JRC130796_01.pdf",
+          "accessedAt": "2026-11-14",
+          "readAt": "2026-11-14",
+          "readingStatus": "selected-passages",
+          "question": "官方作者是否明确某些零值的理由并区分介质？",
+          "argumentSummary": "所读 Table 7 给出方法规定取零的例子；§3.4.2.5 将普通未指定水体因子对应淡水。这并未解释长期未指定介质的铝(III)记录。",
+          "artifacts": [
+            {
+              "id": "art-flow-pilot-ef31-jrc130796",
+              "mediaType": "application/pdf",
+              "sha256": "938d7272de6769e8d484bcfc10f8c9be3688caa4a718d298790e8df7b3a65c58",
+              "resolvedUrl": "https://publications.jrc.ec.europa.eu/repository/bitstream/JRC130796/JRC130796_01.pdf",
+              "pageCount": 57
+            }
+          ],
+          "passages": [
+            {
+              "id": "psg-flow-pilot-ef31-update",
+              "artifactId": "art-flow-pilot-ef31-jrc130796",
+              "locator": "§3.4.2.3 Table 7 p15，以及 §3.4.2.5 p16；印刷页15–16，PDF 第19–20页",
+              "printedPages": "15–16",
+              "pdfIndices": [
+                18,
+                19
+              ],
+              "topics": [
+                "方法规定取零",
+                "普通未指定水体与淡水",
+                "EF 3.0–3.1版本改变"
+              ],
+              "limits": [
+                "长期未指定水体铝(III)零值原因不由这两段确定。方法规定取零不能支持现实无效应的断言。未读其余章节。"
+              ]
+            }
+          ],
+          "appraisal": {
+            "basis": "§3.4.2.3 Table 7 p15，以及 §3.4.2.5 p16；印刷页15–16，PDF 第19–20页",
+            "methodologicalScope": "EF 3.1 作者的版本改动和指定介质规则；按实包 XML 逐点核对。",
+            "independence": "报告作者和原包为同一方法与版本的互补资料。",
+            "limitations": [
+              "长期未指定水体铝(III)零值原因不由这两段确定。方法规定取零不能支持现实无效应的断言。未读其余章节。"
+            ],
+            "reviewKind": "agent-source-check",
+            "checkedAt": "2026-11-14"
+          },
+          "rights": "版权页 CC BY 4.0，须署名并标明改动；第三方材料另受其权利约束。",
+          "unread": [
+            "长期未指定水体铝(III)零值原因不由这两段确定。方法规定取零不能支持现实无效应的断言。未读其余章节。"
+          ],
+          "sourceKeys": [
+            "src-flow-pilot-ef31-update"
+          ]
+        }
+      },
+      {
+        "path": "readings.readings",
+        "id": "rd-acid113-roy-fate",
+        "from": null
+      },
+      {
+        "path": "readings.readings",
+        "id": "rd-acid113-roy-soil",
+        "from": null
+      },
+      {
+        "path": "readings.readings",
+        "id": "rd-acid113-roy-effect",
+        "from": null
+      },
+      {
+        "path": "readings.readings",
+        "id": "rd-acid113-glam-scoping",
+        "from": null
+      },
+      {
+        "path": "readings.readings",
+        "id": "rd-acid113-seppala-ae",
+        "from": null
+      },
+      {
+        "path": "readings.readings",
+        "id": "rd-acid113-posch-ae",
+        "from": null
+      },
+      {
+        "path": "readings.gaps",
+        "id": "gap-acid113-glam-workbook",
+        "from": null
+      },
+      {
+        "path": "readings.revisions",
+        "id": "rev-acid-equivalents-113-20261115",
+        "from": null
+      },
+      {
+        "path": "literature.records",
+        "id": "work-flow-pilot-ef31",
+        "from": {
+          "id": "work-flow-pilot-ef31",
+          "title": "EF 3.1 reference package — selected flows and methods",
+          "contributors": "European Commission Joint Research Centre; authors as identified in the source",
+          "year": "2022",
+          "kind": "reference-package",
+          "goalSeedIds": [],
+          "urls": [
+            {
+              "url": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip",
+              "role": "official-selected-source"
+            }
+          ],
+          "identifiers": {
+            "version": "July 2022 reference release；2026-11-14 官方取包载体，成员哈希见记录"
+          },
+          "volumes": [
+            "V2",
+            "V4"
+          ],
+          "topics": [
+            "flow identity",
+            "characterisation",
+            "versioned representation"
+          ],
+          "languages": [
+            "en"
+          ],
+          "regions": [
+            "European Union"
+          ],
+          "traditions": [
+            "Environmental Footprint"
+          ],
+          "discovery": {
+            "queryIds": [
+              "q-kb99-primary-flow-comparison-20261114"
+            ],
+            "reason": "为检验同名同单位、介质与零值含义而定向选择原包及作者版本说明。",
+            "citationParents": []
+          },
+          "identityStatus": "verified",
+          "accessStatus": "public-fulltext-available",
+          "readingStatus": "not-close-read",
+          "accessedAt": "2026-11-14",
+          "lastCheckedAt": "2026-11-14",
+          "rights": "成员原文件权利有待分别核定，仅登记标识、数值、定位与原创解释。",
+          "limitations": [
+            "未全包审计、未运行 Look@LCI、未确定零值成因。"
+          ],
+          "catalogSourceIds": [
+            "src-flow-pilot-ef31"
+          ]
+        }
+      },
+      {
+        "path": "literature.records",
+        "id": "work-acid113-roy-fate",
+        "from": null
+      },
+      {
+        "path": "literature.records",
+        "id": "work-acid113-roy-soil",
+        "from": null
+      },
+      {
+        "path": "literature.records",
+        "id": "work-acid113-roy-effect",
+        "from": null
+      },
+      {
+        "path": "literature.records",
+        "id": "work-acid113-glam-scoping",
+        "from": null
+      },
+      {
+        "path": "literature.records",
+        "id": "work-acid113-seppala-ae",
+        "from": null
+      },
+      {
+        "path": "literature.records",
+        "id": "work-acid113-posch-ae",
+        "from": null
+      },
+      {
+        "path": "literature.protocol.queries",
+        "id": "q-acid113-indicators-and-release-20261115",
+        "from": null
+      }
+    ],
+    "rawFields": [],
+    "previousMdx": "---\ntitle: 酸化与营养富集\ndescription: 追踪排放怎样经空气、土壤或水体引起酸化与营养富集，并区分施用量、净排放和类别指标。\n---\n\n## 酸输入与土壤 [#从排放找到接收系统]\n\n<Prose ids=\"cl-path-start cl-path-acid-soil cl-path-acid-indicator\" />\n\n## 营养与接收环境 [#营养进入淡水与近岸海洋]\n\n<Prose ids=\"cl-path-freshwater cl-path-marine cl-path-limiting-conditions\" />\n\n<ReaderSection id=\"陆地营养富集与指标的单位\" />\n\n<Prose ids=\"cl-path-terrestrial cl-path-units\" />\n\n## 背景与响应 [#响应曲线回答哪一种变化]\n\n<Prose ids=\"cl-path-marginal-average cl-path-supplied-effect-conditions cl-path-background cl-path-pdf\" />\n\n## 清单与类别指标 [#从施用量走到净排放和指标]\n\n<Prose ids=\"cl-path-operation cl-path-operation-indicator\" />\n\n<ReaderSection id=\"同一排放不同的环境问题\" />\n\n<Prose ids=\"cl-path-multiple-paths\" />\n",
+    "occurrences": [
+      "cl-path-start",
+      "cl-path-acid-soil",
+      "cl-path-acid-indicator",
+      "cl-acid113-ae-question",
+      "cl-acid113-threshold",
+      "cl-acid113-glam-relation",
+      "cl-acid113-glam-tension",
+      "cl-acid113-so2-rows",
+      "cl-acid113-chemistry-control",
+      "cl-path-freshwater",
+      "cl-path-marine",
+      "cl-path-limiting-conditions",
+      "cl-path-terrestrial",
+      "cl-path-units",
+      "cl-acid113-shared-moles",
+      "cl-acid113-nh3-control",
+      "cl-path-marginal-average",
+      "cl-path-supplied-effect-conditions",
+      "cl-path-background",
+      "cl-path-pdf",
+      "cl-path-operation",
+      "cl-path-operation-indicator",
+      "cl-path-multiple-paths"
+    ],
+    "history": {
+      "previousAddresses": {
+        "/docs/book/acidification-and-nutrient-pathways#nd-page": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "chapter",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-start",
+            "cl-path-acid-soil",
+            "cl-path-acid-indicator",
+            "cl-path-freshwater",
+            "cl-path-marine",
+            "cl-path-limiting-conditions",
+            "cl-path-terrestrial",
+            "cl-path-units",
+            "cl-path-marginal-average",
+            "cl-path-supplied-effect-conditions",
+            "cl-path-background",
+            "cl-path-pdf",
+            "cl-path-operation",
+            "cl-path-operation-indicator",
+            "cl-path-multiple-paths"
+          ],
+          "ordinary": [
+            "293c042653401699335501578c97d71912682b04574dc072b248bdbcf846e4df"
+          ],
+          "bindings": {
+            "links": [
+              []
+            ],
+            "tables": []
+          }
+        },
+        "/docs/book/acidification-and-nutrient-pathways#main-content": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "reading-title",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-start",
+            "cl-path-acid-soil",
+            "cl-path-acid-indicator",
+            "cl-path-freshwater",
+            "cl-path-marine",
+            "cl-path-limiting-conditions",
+            "cl-path-terrestrial",
+            "cl-path-units",
+            "cl-path-marginal-average",
+            "cl-path-supplied-effect-conditions",
+            "cl-path-background",
+            "cl-path-pdf",
+            "cl-path-operation",
+            "cl-path-operation-indicator",
+            "cl-path-multiple-paths"
+          ],
+          "ordinary": [
+            "293c042653401699335501578c97d71912682b04574dc072b248bdbcf846e4df"
+          ],
+          "chapter": "nd-page"
+        },
+        "/docs/book/acidification-and-nutrient-pathways#从排放找到接收系统": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "heading",
+          "title": "酸输入与土壤",
+          "claimIds": [
+            "cl-path-start",
+            "cl-path-acid-soil",
+            "cl-path-acid-indicator"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#营养进入淡水与近岸海洋": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "heading",
+          "title": "营养与接收环境",
+          "claimIds": [
+            "cl-path-freshwater",
+            "cl-path-marine",
+            "cl-path-limiting-conditions",
+            "cl-path-terrestrial",
+            "cl-path-units"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#陆地营养富集与指标的单位": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [
+            "cl-path-terrestrial",
+            "cl-path-units"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#响应曲线回答哪一种变化": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "heading",
+          "title": "背景与响应",
+          "claimIds": [
+            "cl-path-marginal-average",
+            "cl-path-supplied-effect-conditions",
+            "cl-path-background",
+            "cl-path-pdf"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#从施用量走到净排放和指标": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "heading",
+          "title": "清单与类别指标",
+          "claimIds": [
+            "cl-path-operation",
+            "cl-path-operation-indicator",
+            "cl-path-multiple-paths"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#同一排放不同的环境问题": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [
+            "cl-path-multiple-paths"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-annotations": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note-group",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-start",
+            "cl-path-acid-soil",
+            "cl-path-acid-indicator",
+            "cl-path-freshwater",
+            "cl-path-marine",
+            "cl-path-limiting-conditions",
+            "cl-path-terrestrial",
+            "cl-path-units",
+            "cl-path-marginal-average",
+            "cl-path-supplied-effect-conditions",
+            "cl-path-background",
+            "cl-path-pdf",
+            "cl-path-operation",
+            "cl-path-operation-indicator",
+            "cl-path-multiple-paths"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-start": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-start"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-acid-soil": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-acid-soil"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-acid-indicator": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-acid-indicator"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-freshwater": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-freshwater"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-marine": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-marine"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-limiting-conditions": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-limiting-conditions"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-terrestrial": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-terrestrial"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-units": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-units"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-marginal-average": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-marginal-average"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-supplied-effect-conditions": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-supplied-effect-conditions"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-background": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-background"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-pdf": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-pdf"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-operation": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-operation"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-operation-indicator": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-operation-indicator"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-multiple-paths": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-multiple-paths"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "chapter",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-start",
+            "cl-path-acid-soil",
+            "cl-path-acid-indicator",
+            "cl-path-freshwater",
+            "cl-path-marine",
+            "cl-path-limiting-conditions",
+            "cl-path-terrestrial",
+            "cl-path-units",
+            "cl-path-marginal-average",
+            "cl-path-supplied-effect-conditions",
+            "cl-path-background",
+            "cl-path-pdf",
+            "cl-path-operation",
+            "cl-path-operation-indicator",
+            "cl-path-multiple-paths"
+          ],
+          "ordinary": [
+            "293c042653401699335501578c97d71912682b04574dc072b248bdbcf846e4df"
+          ],
+          "bindings": {
+            "links": [
+              []
+            ],
+            "tables": []
+          }
+        },
+        "/print#print-reading-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "reading-title",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-start",
+            "cl-path-acid-soil",
+            "cl-path-acid-indicator",
+            "cl-path-freshwater",
+            "cl-path-marine",
+            "cl-path-limiting-conditions",
+            "cl-path-terrestrial",
+            "cl-path-units",
+            "cl-path-marginal-average",
+            "cl-path-supplied-effect-conditions",
+            "cl-path-background",
+            "cl-path-pdf",
+            "cl-path-operation",
+            "cl-path-operation-indicator",
+            "cl-path-multiple-paths"
+          ],
+          "ordinary": [
+            "293c042653401699335501578c97d71912682b04574dc072b248bdbcf846e4df"
+          ],
+          "chapter": "print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973"
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-从排放找到接收系统": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "heading",
+          "title": "酸输入与土壤",
+          "claimIds": [
+            "cl-path-start",
+            "cl-path-acid-soil",
+            "cl-path-acid-indicator"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-营养进入淡水与近岸海洋": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "heading",
+          "title": "营养与接收环境",
+          "claimIds": [
+            "cl-path-freshwater",
+            "cl-path-marine",
+            "cl-path-limiting-conditions",
+            "cl-path-terrestrial",
+            "cl-path-units"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-陆地营养富集与指标的单位": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [
+            "cl-path-terrestrial",
+            "cl-path-units"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-响应曲线回答哪一种变化": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "heading",
+          "title": "背景与响应",
+          "claimIds": [
+            "cl-path-marginal-average",
+            "cl-path-supplied-effect-conditions",
+            "cl-path-background",
+            "cl-path-pdf"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-从施用量走到净排放和指标": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "heading",
+          "title": "清单与类别指标",
+          "claimIds": [
+            "cl-path-operation",
+            "cl-path-operation-indicator",
+            "cl-path-multiple-paths"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-同一排放不同的环境问题": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [
+            "cl-path-multiple-paths"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-annotations": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note-group",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-start",
+            "cl-path-acid-soil",
+            "cl-path-acid-indicator",
+            "cl-path-freshwater",
+            "cl-path-marine",
+            "cl-path-limiting-conditions",
+            "cl-path-terrestrial",
+            "cl-path-units",
+            "cl-path-marginal-average",
+            "cl-path-supplied-effect-conditions",
+            "cl-path-background",
+            "cl-path-pdf",
+            "cl-path-operation",
+            "cl-path-operation-indicator",
+            "cl-path-multiple-paths"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-start": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-start"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-acid-soil": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-acid-soil"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-acid-indicator": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-acid-indicator"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-freshwater": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-freshwater"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-marine": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-marine"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-limiting-conditions": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-limiting-conditions"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-terrestrial": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-terrestrial"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-units": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-units"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-marginal-average": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-marginal-average"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-supplied-effect-conditions": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-supplied-effect-conditions"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-background": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-background"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-pdf": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-pdf"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-operation": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-operation"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-operation-indicator": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-operation-indicator"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-multiple-paths": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-multiple-paths"
+          ],
+          "ordinary": []
+        }
+      },
+      "currentAddresses": {
+        "/docs/book/acidification-and-nutrient-pathways#nd-page": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "chapter",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-start",
+            "cl-path-acid-soil",
+            "cl-path-acid-indicator",
+            "cl-acid113-ae-question",
+            "cl-acid113-threshold",
+            "cl-acid113-glam-relation",
+            "cl-acid113-glam-tension",
+            "cl-acid113-so2-rows",
+            "cl-acid113-chemistry-control",
+            "cl-path-freshwater",
+            "cl-path-marine",
+            "cl-path-limiting-conditions",
+            "cl-path-terrestrial",
+            "cl-path-units",
+            "cl-acid113-shared-moles",
+            "cl-acid113-nh3-control",
+            "cl-path-marginal-average",
+            "cl-path-supplied-effect-conditions",
+            "cl-path-background",
+            "cl-path-pdf",
+            "cl-path-operation",
+            "cl-path-operation-indicator",
+            "cl-path-multiple-paths"
+          ],
+          "ordinary": [
+            "293c042653401699335501578c97d71912682b04574dc072b248bdbcf846e4df"
+          ],
+          "bindings": {
+            "links": [
+              []
+            ],
+            "tables": []
+          }
+        },
+        "/docs/book/acidification-and-nutrient-pathways#main-content": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "reading-title",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-start",
+            "cl-path-acid-soil",
+            "cl-path-acid-indicator",
+            "cl-acid113-ae-question",
+            "cl-acid113-threshold",
+            "cl-acid113-glam-relation",
+            "cl-acid113-glam-tension",
+            "cl-acid113-so2-rows",
+            "cl-acid113-chemistry-control",
+            "cl-path-freshwater",
+            "cl-path-marine",
+            "cl-path-limiting-conditions",
+            "cl-path-terrestrial",
+            "cl-path-units",
+            "cl-acid113-shared-moles",
+            "cl-acid113-nh3-control",
+            "cl-path-marginal-average",
+            "cl-path-supplied-effect-conditions",
+            "cl-path-background",
+            "cl-path-pdf",
+            "cl-path-operation",
+            "cl-path-operation-indicator",
+            "cl-path-multiple-paths"
+          ],
+          "ordinary": [
+            "293c042653401699335501578c97d71912682b04574dc072b248bdbcf846e4df"
+          ],
+          "chapter": "nd-page"
+        },
+        "/docs/book/acidification-and-nutrient-pathways#从排放找到接收系统": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "heading",
+          "title": "酸输入与土壤",
+          "claimIds": [
+            "cl-path-start",
+            "cl-path-acid-soil",
+            "cl-path-acid-indicator",
+            "cl-acid113-ae-question",
+            "cl-acid113-threshold",
+            "cl-acid113-glam-relation",
+            "cl-acid113-glam-tension",
+            "cl-acid113-so2-rows",
+            "cl-acid113-chemistry-control"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#营养进入淡水与近岸海洋": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "heading",
+          "title": "营养与接收环境",
+          "claimIds": [
+            "cl-path-freshwater",
+            "cl-path-marine",
+            "cl-path-limiting-conditions",
+            "cl-path-terrestrial",
+            "cl-path-units",
+            "cl-acid113-shared-moles",
+            "cl-acid113-nh3-control"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#陆地营养富集与指标的单位": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [
+            "cl-path-terrestrial",
+            "cl-path-units",
+            "cl-acid113-shared-moles",
+            "cl-acid113-nh3-control"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#响应曲线回答哪一种变化": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "heading",
+          "title": "背景与响应",
+          "claimIds": [
+            "cl-path-marginal-average",
+            "cl-path-supplied-effect-conditions",
+            "cl-path-background",
+            "cl-path-pdf"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#从施用量走到净排放和指标": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "heading",
+          "title": "清单与类别指标",
+          "claimIds": [
+            "cl-path-operation",
+            "cl-path-operation-indicator",
+            "cl-path-multiple-paths"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#同一排放不同的环境问题": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [
+            "cl-path-multiple-paths"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-annotations": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note-group",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-start",
+            "cl-path-acid-soil",
+            "cl-path-acid-indicator",
+            "cl-acid113-ae-question",
+            "cl-acid113-threshold",
+            "cl-acid113-glam-relation",
+            "cl-acid113-glam-tension",
+            "cl-acid113-so2-rows",
+            "cl-acid113-chemistry-control",
+            "cl-path-freshwater",
+            "cl-path-marine",
+            "cl-path-limiting-conditions",
+            "cl-path-terrestrial",
+            "cl-path-units",
+            "cl-acid113-shared-moles",
+            "cl-acid113-nh3-control",
+            "cl-path-marginal-average",
+            "cl-path-supplied-effect-conditions",
+            "cl-path-background",
+            "cl-path-pdf",
+            "cl-path-operation",
+            "cl-path-operation-indicator",
+            "cl-path-multiple-paths"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-start": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-start"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-acid-soil": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-acid-soil"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-acid-indicator": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-acid-indicator"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-ae-question": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-acid113-ae-question"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-threshold": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-acid113-threshold"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-glam-relation": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-acid113-glam-relation"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-glam-tension": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-acid113-glam-tension"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-so2-rows": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-acid113-so2-rows"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-chemistry-control": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-acid113-chemistry-control"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-freshwater": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-freshwater"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-marine": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-marine"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-limiting-conditions": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-limiting-conditions"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-terrestrial": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-terrestrial"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-units": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-units"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-shared-moles": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-acid113-shared-moles"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-nh3-control": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-acid113-nh3-control"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-marginal-average": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-marginal-average"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-supplied-effect-conditions": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-supplied-effect-conditions"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-background": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-background"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-pdf": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-pdf"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-operation": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-operation"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-operation-indicator": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-operation-indicator"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-multiple-paths": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-multiple-paths"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "chapter",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-start",
+            "cl-path-acid-soil",
+            "cl-path-acid-indicator",
+            "cl-acid113-ae-question",
+            "cl-acid113-threshold",
+            "cl-acid113-glam-relation",
+            "cl-acid113-glam-tension",
+            "cl-acid113-so2-rows",
+            "cl-acid113-chemistry-control",
+            "cl-path-freshwater",
+            "cl-path-marine",
+            "cl-path-limiting-conditions",
+            "cl-path-terrestrial",
+            "cl-path-units",
+            "cl-acid113-shared-moles",
+            "cl-acid113-nh3-control",
+            "cl-path-marginal-average",
+            "cl-path-supplied-effect-conditions",
+            "cl-path-background",
+            "cl-path-pdf",
+            "cl-path-operation",
+            "cl-path-operation-indicator",
+            "cl-path-multiple-paths"
+          ],
+          "ordinary": [
+            "293c042653401699335501578c97d71912682b04574dc072b248bdbcf846e4df"
+          ],
+          "bindings": {
+            "links": [
+              []
+            ],
+            "tables": []
+          }
+        },
+        "/print#print-reading-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "reading-title",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-start",
+            "cl-path-acid-soil",
+            "cl-path-acid-indicator",
+            "cl-acid113-ae-question",
+            "cl-acid113-threshold",
+            "cl-acid113-glam-relation",
+            "cl-acid113-glam-tension",
+            "cl-acid113-so2-rows",
+            "cl-acid113-chemistry-control",
+            "cl-path-freshwater",
+            "cl-path-marine",
+            "cl-path-limiting-conditions",
+            "cl-path-terrestrial",
+            "cl-path-units",
+            "cl-acid113-shared-moles",
+            "cl-acid113-nh3-control",
+            "cl-path-marginal-average",
+            "cl-path-supplied-effect-conditions",
+            "cl-path-background",
+            "cl-path-pdf",
+            "cl-path-operation",
+            "cl-path-operation-indicator",
+            "cl-path-multiple-paths"
+          ],
+          "ordinary": [
+            "293c042653401699335501578c97d71912682b04574dc072b248bdbcf846e4df"
+          ],
+          "chapter": "print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973"
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-从排放找到接收系统": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "heading",
+          "title": "酸输入与土壤",
+          "claimIds": [
+            "cl-path-start",
+            "cl-path-acid-soil",
+            "cl-path-acid-indicator",
+            "cl-acid113-ae-question",
+            "cl-acid113-threshold",
+            "cl-acid113-glam-relation",
+            "cl-acid113-glam-tension",
+            "cl-acid113-so2-rows",
+            "cl-acid113-chemistry-control"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-营养进入淡水与近岸海洋": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "heading",
+          "title": "营养与接收环境",
+          "claimIds": [
+            "cl-path-freshwater",
+            "cl-path-marine",
+            "cl-path-limiting-conditions",
+            "cl-path-terrestrial",
+            "cl-path-units",
+            "cl-acid113-shared-moles",
+            "cl-acid113-nh3-control"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-陆地营养富集与指标的单位": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [
+            "cl-path-terrestrial",
+            "cl-path-units",
+            "cl-acid113-shared-moles",
+            "cl-acid113-nh3-control"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-响应曲线回答哪一种变化": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "heading",
+          "title": "背景与响应",
+          "claimIds": [
+            "cl-path-marginal-average",
+            "cl-path-supplied-effect-conditions",
+            "cl-path-background",
+            "cl-path-pdf"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-从施用量走到净排放和指标": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "heading",
+          "title": "清单与类别指标",
+          "claimIds": [
+            "cl-path-operation",
+            "cl-path-operation-indicator",
+            "cl-path-multiple-paths"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-同一排放不同的环境问题": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [
+            "cl-path-multiple-paths"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-annotations": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note-group",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-start",
+            "cl-path-acid-soil",
+            "cl-path-acid-indicator",
+            "cl-acid113-ae-question",
+            "cl-acid113-threshold",
+            "cl-acid113-glam-relation",
+            "cl-acid113-glam-tension",
+            "cl-acid113-so2-rows",
+            "cl-acid113-chemistry-control",
+            "cl-path-freshwater",
+            "cl-path-marine",
+            "cl-path-limiting-conditions",
+            "cl-path-terrestrial",
+            "cl-path-units",
+            "cl-acid113-shared-moles",
+            "cl-acid113-nh3-control",
+            "cl-path-marginal-average",
+            "cl-path-supplied-effect-conditions",
+            "cl-path-background",
+            "cl-path-pdf",
+            "cl-path-operation",
+            "cl-path-operation-indicator",
+            "cl-path-multiple-paths"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-start": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-start"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-acid-soil": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-acid-soil"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-acid-indicator": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-acid-indicator"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-ae-question": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-acid113-ae-question"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-threshold": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-acid113-threshold"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-glam-relation": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-acid113-glam-relation"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-glam-tension": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-acid113-glam-tension"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-so2-rows": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-acid113-so2-rows"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-chemistry-control": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-acid113-chemistry-control"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-freshwater": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-freshwater"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-marine": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-marine"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-limiting-conditions": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-limiting-conditions"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-terrestrial": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-terrestrial"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-units": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-units"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-shared-moles": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-acid113-shared-moles"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-nh3-control": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-acid113-nh3-control"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-marginal-average": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-marginal-average"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-supplied-effect-conditions": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-supplied-effect-conditions"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-background": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-background"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-pdf": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-pdf"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-operation": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-operation"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-operation-indicator": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-operation-indicator"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-multiple-paths": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "kind": "note",
+          "title": "酸化与营养富集",
+          "claimIds": [
+            "cl-path-multiple-paths"
+          ],
+          "ordinary": []
+        }
+      },
+      "history": [
+        {
+          "address": "/docs/book/acidification-and-nutrient-pathways#nd-page",
+          "from": "d97fe2a406ef8fceeb2d52f8dc43d93ca03ba6badc7748f45f32f1ef116fe374",
+          "ordinary": [
+            {
+              "from": "293c042653401699335501578c97d71912682b04574dc072b248bdbcf846e4df",
+              "to": "293c042653401699335501578c97d71912682b04574dc072b248bdbcf846e4df",
+              "address": "/docs/book/acidification-and-nutrient-pathways#nd-page",
+              "targetId": "chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-acid-113-ordinary-0",
+              "rationale": "前版简介原样保留，按实际完整文字与链接定位。"
+            }
+          ],
+          "rationale": "保留真实前版题名和原有顺序范围，新增酸化当量比较拥有自己的引用。"
+        },
+        {
+          "address": "/docs/book/acidification-and-nutrient-pathways#main-content",
+          "from": "ced0b6fa3f951ad715d6fa46844bb775fcb45fb4b0e30b8c75bd85fd19dc115a",
+          "ordinary": [
+            {
+              "from": "293c042653401699335501578c97d71912682b04574dc072b248bdbcf846e4df",
+              "to": "293c042653401699335501578c97d71912682b04574dc072b248bdbcf846e4df",
+              "address": "/docs/book/acidification-and-nutrient-pathways#main-content",
+              "targetId": "chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-acid-113-ordinary-0",
+              "rationale": "前版简介原样保留，按实际完整文字与链接定位。"
+            }
+          ],
+          "rationale": "保留真实前版题名和原有顺序范围，新增酸化当量比较拥有自己的引用。"
+        },
+        {
+          "address": "/docs/book/acidification-and-nutrient-pathways#从排放找到接收系统",
+          "from": "7b44c40978e8e2309e3e33fd1d21f93490df84c3c838020407b7ed3b9e3cbaef",
+          "ordinary": [],
+          "rationale": "保留真实前版题名和原有顺序范围，新增酸化当量比较拥有自己的引用。"
+        },
+        {
+          "address": "/docs/book/acidification-and-nutrient-pathways#营养进入淡水与近岸海洋",
+          "from": "71a8d6b5781f1a241f5dd575e8fc040cbe65f85ccb98b8798faffa46d7f4e133",
+          "ordinary": [],
+          "rationale": "保留真实前版题名和原有顺序范围，新增酸化当量比较拥有自己的引用。"
+        },
+        {
+          "address": "/docs/book/acidification-and-nutrient-pathways#陆地营养富集与指标的单位",
+          "from": "469b01321e7d85ef78085fcb5130fda366f86e3931315ada00dc29d70ec16552",
+          "ordinary": [],
+          "rationale": "保留真实前版题名和原有顺序范围，新增酸化当量比较拥有自己的引用。"
+        },
+        {
+          "address": "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-annotations",
+          "from": "29809b2acbf45c09193e551ab0d189768b0d147403bf4f113aba83bb340b616d",
+          "ordinary": [],
+          "rationale": "保留真实前版题名和原有顺序范围，新增酸化当量比较拥有自己的引用。"
+        },
+        {
+          "address": "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973",
+          "from": "d97fe2a406ef8fceeb2d52f8dc43d93ca03ba6badc7748f45f32f1ef116fe374",
+          "ordinary": [
+            {
+              "from": "293c042653401699335501578c97d71912682b04574dc072b248bdbcf846e4df",
+              "to": "293c042653401699335501578c97d71912682b04574dc072b248bdbcf846e4df",
+              "address": "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973",
+              "targetId": "print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-acid-113-ordinary-0",
+              "rationale": "前版简介原样保留，按实际完整文字与链接定位。"
+            }
+          ],
+          "rationale": "保留真实前版题名和原有顺序范围，新增酸化当量比较拥有自己的引用。"
+        },
+        {
+          "address": "/print#print-reading-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973",
+          "from": "76333063f573f5e8bd550f2f6f4f022de51587878b55db68573f3680eff12c3c",
+          "ordinary": [
+            {
+              "from": "293c042653401699335501578c97d71912682b04574dc072b248bdbcf846e4df",
+              "to": "293c042653401699335501578c97d71912682b04574dc072b248bdbcf846e4df",
+              "address": "/print#print-reading-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973",
+              "targetId": "print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-acid-113-ordinary-0",
+              "rationale": "前版简介原样保留，按实际完整文字与链接定位。"
+            }
+          ],
+          "rationale": "保留真实前版题名和原有顺序范围，新增酸化当量比较拥有自己的引用。"
+        },
+        {
+          "address": "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-从排放找到接收系统",
+          "from": "7b44c40978e8e2309e3e33fd1d21f93490df84c3c838020407b7ed3b9e3cbaef",
+          "ordinary": [],
+          "rationale": "保留真实前版题名和原有顺序范围，新增酸化当量比较拥有自己的引用。"
+        },
+        {
+          "address": "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-营养进入淡水与近岸海洋",
+          "from": "71a8d6b5781f1a241f5dd575e8fc040cbe65f85ccb98b8798faffa46d7f4e133",
+          "ordinary": [],
+          "rationale": "保留真实前版题名和原有顺序范围，新增酸化当量比较拥有自己的引用。"
+        },
+        {
+          "address": "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-陆地营养富集与指标的单位",
+          "from": "469b01321e7d85ef78085fcb5130fda366f86e3931315ada00dc29d70ec16552",
+          "ordinary": [],
+          "rationale": "保留真实前版题名和原有顺序范围，新增酸化当量比较拥有自己的引用。"
+        },
+        {
+          "address": "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-annotations",
+          "from": "29809b2acbf45c09193e551ab0d189768b0d147403bf4f113aba83bb340b616d",
+          "ordinary": [],
+          "rationale": "保留真实前版题名和原有顺序范围，新增酸化当量比较拥有自己的引用。"
+        }
+      ],
+      "ordinaryTargets": {
+        "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-acid-113-ordinary-0": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "sha256": "293c042653401699335501578c97d71912682b04574dc072b248bdbcf846e4df"
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-acid-113-ordinary-0": {
+          "route": "/docs/book/acidification-and-nutrient-pathways",
+          "sha256": "293c042653401699335501578c97d71912682b04574dc072b248bdbcf846e4df"
+        }
+      }
+    },
+    "outputs": [
+      {
+        "path": "/docs/book/acidification-and-nutrient-pathways",
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "from": "2448a20d23b21f4eed47188635c27c83f015e8b46e7e961cac96e068af292b8a",
+        "sha256": "f40885884b230e1e1b121d08161815774f50816d6f700d6b95d60ff542746949",
+        "rationale": "核对B16实际正文及注释，原小节范围与旧章十五注仍可逐项追查。"
+      },
+      {
+        "path": "/docs/book/water-scarcity-and-reference",
+        "route": "/docs/book/water-scarcity-and-reference",
+        "from": "e96b848cf468066c685a9174e55cbd2eae8351497e0dae3d93d232ee83e38a16",
+        "sha256": "41951c66df82e232b5db2e55919084e8bdc45caca97f4f3240f7480a3d14ed24",
+        "rationale": "核对当代前提注号、上下游说明与网站导航。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "from": "00dff8950aa74a087f32ef1efa59ee8dfc586f09ee38d6407fea801ad8808b34",
+        "sha256": "8be22b30d290b3defa3c6a2f3205e9e20d1e33e65991848a019eec119a44f169",
+        "rationale": "核对B16实际正文及注释，原小节范围与旧章十五注仍可逐项追查。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/water-scarcity-and-reference",
+        "from": "475db1815addf9a97da4bdbba87627b2a29d01ce706707ad02616be9aa900f67",
+        "sha256": "a8bc3d07522e8f0f9d11b1f1e1c85727022316d40637574a534de341f9a520e9",
+        "rationale": "核对当代前提注号、上下游说明与网站导航。"
+      }
+    ],
+    "publicArtifacts": [
+      {
+        "path": "claims/index.html",
+        "from": "5e633928e5820271097733d11b97ddb3619bd5ab0a5541ef65435609d9ca1074",
+        "sha256": "129ed8774cc0f2d8a17d4d79fe8bd2d979937f8993e1d7a0997f10ca8aaecdf4",
+        "rationale": "核对实际当代公开内容与独立真实前态对应。"
+      },
+      {
+        "path": "sources/index.html",
+        "from": "cfbdbed9523c6fd25f717da1733f99479cb71bd38eaa63d0c0f7236662644264",
+        "sha256": "c7fc6637242e9e96bdf09c3eeae7d67a4da1e58f4410b0d48f54060223d878b0",
+        "rationale": "核对实际当代公开内容与独立真实前态对应。"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "from": "58c78e6bbcd5a27141ce1be1151be357a2e1e1986a437b34eba34bde25fe14fa",
+        "sha256": "a908c16ef032097a1a0801f2709a75939ede1c416ca4a7fe4b535e1bfa5c1aae",
+        "rationale": "核对实际当代公开内容与独立真实前态对应。"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "from": "873dd37fe18a4e8d79990b9c85c56933f8fe93d2a2ef7792190d201c8b444b87",
+        "sha256": "0f86f1276e197b0d2fc7f5a443e9dfdba7c74e0212650b8b8de000a0d73063ff",
+        "rationale": "核对实际当代公开内容与独立真实前态对应。"
+      },
+      {
+        "path": "research/index.html",
+        "from": "563ae54421132614cd94e5a4ee4bffc1f04d593cefaadb455af05dfd9d2751e7",
+        "sha256": "29ed11a2457bcafe876c1c2807189d84c17ec98cfa4126146e69246fbf87525e",
+        "rationale": "核对实际当代公开内容与独立真实前态对应。"
+      },
+      {
+        "path": "downloads/bibliography.json",
+        "from": "fa80650338e6ef52497e30f93089184f2a30b853500a12cbcb3ef4d4156f0c6e",
+        "sha256": "6d833cf925501f9e457b139ef9e60938d903959615ced0e2fc0ba85d3bcf83ed",
+        "rationale": "核对实际当代公开内容与独立真实前态对应。"
+      },
+      {
+        "path": "downloads/research.json",
+        "from": "fa80650338e6ef52497e30f93089184f2a30b853500a12cbcb3ef4d4156f0c6e",
+        "sha256": "6d833cf925501f9e457b139ef9e60938d903959615ced0e2fc0ba85d3bcf83ed",
+        "rationale": "核对实际当代公开内容与独立真实前态对应。"
+      }
+    ],
+    "outputCapture": {
+      "sourceCommit": "0c4a249e74b724ad0a658b3245a2b86e80cf42da",
+      "dirty": true,
+      "status": "working-preview",
+      "manifestSha256": "4275115ff3135c99c4311d57bcd949ea98fa80c87cba911f3e3088000d1c2f8b",
+      "normalizedProofSha256": "2f6aa4c8b8573ce67bc48bea46bba240146e7c8dbcea0610448075322aa46bf6"
+    }
+  }
+}

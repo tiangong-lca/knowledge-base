@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "identity": {
+    "sourceCommit": "0c4a249e74b724ad0a658b3245a2b86e80cf42da",
+    "dirty": true,
+    "status": "working-preview",
+    "manifestSha256": "4275115ff3135c99c4311d57bcd949ea98fa80c87cba911f3e3088000d1c2f8b"
+  },
+  "manifestPaths": 468,
+  "files": [
+    {
+      "path": "claims/index.html",
+      "sha256": "8ba50b639122a9e04bb83183f7e99a143caf29801f4b761c1a8a76a83db40578",
+      "bytes": 5510570
+    },
+    {
+      "path": "sources/index.html",
+      "sha256": "1b254085ccf7ba1ecf1d0af749c73ab91c6623e3381a3e1d9f1e717a37575941",
+      "bytes": 4325392
+    },
+    {
+      "path": "downloads/catalog.json",
+      "sha256": "a908c16ef032097a1a0801f2709a75939ede1c416ca4a7fe4b535e1bfa5c1aae",
+      "bytes": 3324682
+    },
+    {
+      "path": "downloads/dependencies.json",
+      "sha256": "0f86f1276e197b0d2fc7f5a443e9dfdba7c74e0212650b8b8de000a0d73063ff",
+      "bytes": 351435
+    },
+    {
+      "path": "research/index.html",
+      "sha256": "8c8442d08604b3e9945cc551e5105a56a6097a486ff9b4cd1cdc16ed7905867c",
+      "bytes": 1478772
+    },
+    {
+      "path": "downloads/bibliography.json",
+      "sha256": "6d833cf925501f9e457b139ef9e60938d903959615ced0e2fc0ba85d3bcf83ed",
+      "bytes": 1153456
+    },
+    {
+      "path": "downloads/research.json",
+      "sha256": "6d833cf925501f9e457b139ef9e60938d903959615ced0e2fc0ba85d3bcf83ed",
+      "bytes": 1153456
+    },
+    {
+      "path": "docs/book/acidification-and-nutrient-pathways/index.html",
+      "sha256": "622ec3930fe995d0de7a093bb7f12b9b380f987e8c9e1b69b75311aac9b0c22b",
+      "bytes": 1073980
+    },
+    {
+      "path": "docs/book/water-scarcity-and-reference/index.html",
+      "sha256": "8d2b3b438d5eed77ab78d4f274ada77b6fa15dcf8bcf6c6b853f76ee5c701251",
+      "bytes": 1000545
+    },
+    {
+      "path": "print/index.html",
+      "sha256": "6b80a791b87716b8c77ff13ff090962acf13e4735551d0ecf8c1511494c1996b",
+      "bytes": 13404590
+    }
+  ],
+  "normalization": {
+    "articles": [
+      {
+        "path": "/docs/book/acidification-and-nutrient-pathways",
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "sha256": "f40885884b230e1e1b121d08161815774f50816d6f700d6b95d60ff542746949"
+      },
+      {
+        "path": "/docs/book/water-scarcity-and-reference",
+        "route": "/docs/book/water-scarcity-and-reference",
+        "sha256": "41951c66df82e232b5db2e55919084e8bdc45caca97f4f3240f7480a3d14ed24"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "sha256": "8be22b30d290b3defa3c6a2f3205e9e20d1e33e65991848a019eec119a44f169"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/water-scarcity-and-reference",
+        "sha256": "a8bc3d07522e8f0f9d11b1f1e1c85727022316d40637574a534de341f9a520e9"
+      }
+    ],
+    "publicHtml": [
+      {
+        "path": "claims/index.html",
+        "sha256": "129ed8774cc0f2d8a17d4d79fe8bd2d979937f8993e1d7a0997f10ca8aaecdf4"
+      },
+      {
+        "path": "sources/index.html",
+        "sha256": "c7fc6637242e9e96bdf09c3eeae7d67a4da1e58f4410b0d48f54060223d878b0"
+      },
+      {
+        "path": "research/index.html",
+        "sha256": "29ed11a2457bcafe876c1c2807189d84c17ec98cfa4126146e69246fbf87525e"
+      }
+    ]
+  }
+}
