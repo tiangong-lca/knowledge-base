@@ -116,6 +116,25 @@ paragraph reading and a bounded correction reread have four actual answers.
 The source values, old phosphorus case and historical citation scopes remain
 distinct from the actual-output and final source/root delivery qualifications.
 
+Unit113 is fully delivered: PR114/Main
+`607381d36b5f2c24e11ed4cd850a15b252620cbd`, exact root2407/PR2408/Main
+`0604bc6d7b2386f6addd4710a6518a77014f626a`, qualified468-file hosting,
+required source/root CI and final ordinary receipts. Root source handoff is
+complete1/1 with no remaining mirrors. No task listener/browser remains;
+lawful originals, review/output evidence and reused worktrees are retained.
+
+[Issue115](https://github.com/tiangong-lca/knowledge-base/issues/115) continues
+with B14 mineral depletion, future ore requirements and modeled extraction
+costs. Its [prewriting protocol](editorial/2026-11-16-mineral-resources.md)
+was committed as ed2f6f3 before manuscript changes. Source registration b88d442
+adds the selected ADP/SOP/SCP originals and published disagreement while keeping
+all935 existing claims unchanged. The private ten-paragraph candidate has a
+bounded original-source/argument review and specific primary corrections;
+it is not yet canonical manuscript, full-chapter reader or output acceptance.
+The next step is actual continuous B14 integration, affected-consumer/history
+review and separately qualified publication, followed by normal source/root
+delivery. Broader Part IV and Programme9 requirements remain active.
+
 Rule adoption101 itself is fully delivered: PR103/Main10dc686 and
 root2381/PR2382/Main90bcaa574, with complete ordinary source/root handoff receipts.
 Programme9 retains all eight pending global criteria and this continuing GOAL.
