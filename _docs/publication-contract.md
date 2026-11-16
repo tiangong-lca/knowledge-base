@@ -17,12 +17,31 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-17
-lastReviewedCommit: 5fca6949a0858723b4f37fafb01e8f8ddd4d56d6
+lastReviewedCommit: 6c73af8952b24d0aaa97f946c465b7b6ed8cf385
 ---
 
 # Publication contract
 
 ## Scoped scientific successors
+
+The ozone-and-radiation unit #121 compares emission midpoints stopping at
+stratospheric physicochemical load (`ODP` in `kg CFC-11 eq`) or collective
+radiation dose (`IRP` in `kBq U-235 eq` versus `kBq Co-60 to air eq`, sharing
+`14:11` scaling only under unchanged `Frischknecht et al. 2000` 100,000-year
+assumptions) with the additional UV skin-cancer/cataract or `DDREF` (`10 / 6 / 2`),
+cancer-site (`4 / 11 / 13`) and hereditary-disease (`57` vs `61 DALY/case`)
+extrapolations required for `DALY` and the absence of accepted ecosystem
+endpoints. It proves controlled rank reversals across `ODP` horizons, `N2O`
+inclusion and `WMO` 2011/2014 editions and across `IRP` horizons and blank
+long-lived uranium-series columns in `ReCiPe 2016` Individualist and default
+Hierarchist tables. `RIVM 2016-0104` `(-t-3)·k` `Table 3.2` spreadsheet behavior,
+`Huijbregts et al. 2017` infinite-only summary prose, `JRC109369` `Annex 1`
+113-row count (two missing upper-air rows restored in `b5c629d6.xml`), `Methyl
+bromide` 4-row/empty-CAS defects, and `JRC109369` `Mass U235-equivalents`/
+subcompartment prose versus `b5c632be.xml` `Radioactivity`/retained upper-air &
+seawater/`Calculated` freshwater entries and flow-XML synonym contamination
+remain explicitly disclosed without silent repair, raw-source redistribution, or
+claims of site-specific radiological dose compliance.
 
 The photochemical-ozone unit #119 compares single-substance `POCP` (`kg C2H4 eq`),
 EF 3.1's single human-health `LOTOS-EUROS` midpoint (`kg NMVOC eq`) and ReCiPe

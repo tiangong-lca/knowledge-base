@@ -34,7 +34,9 @@ const fossilConfigPath = 'config/reader-fossil-resources.json';
 const fossilModulePath = 'scripts/reader-fossil-resources.mjs';
 const ozoneConfigPath = 'config/reader-photochemical-ozone.json';
 const ozoneModulePath = 'scripts/reader-photochemical-ozone.mjs';
-const fixtureAliases = new Set([serviceModulePath, substitutionModulePath, shiftModulePath, footprintModulePath, landModulePath, acidModulePath, mineralModulePath, fossilModulePath, ozoneModulePath].map(path => `@/${path}`));
+const ozradConfigPath = 'config/reader-ozone-radiation.json';
+const ozradModulePath = 'scripts/reader-ozone-radiation.mjs';
+const fixtureAliases = new Set([serviceModulePath, substitutionModulePath, shiftModulePath, footprintModulePath, landModulePath, acidModulePath, mineralModulePath, fossilModulePath, ozoneModulePath, ozradModulePath].map(path => `@/${path}`));
 const flowPinPath = 'scripts/reader-flow-boundary-pins.mjs';
 
 async function loadArchive() {
@@ -83,7 +85,7 @@ async function materialize(root) {
     .map(entry => `scripts/${entry.name}`);
   const components = ['components/evidence.tsx', 'components/numbered-heading.tsx', 'components/chapter-content.tsx'];
   const current = [...configs, ...scripts, ...components, 'lib/teaching-case.ts']
-    .filter(path => ![copyeditConfigPath, copyeditPinPath, flowConfigPath, flowPinPath, serviceConfigPath, serviceModulePath, substitutionConfigPath, substitutionModulePath, shiftConfigPath, shiftModulePath, footprintConfigPath, footprintModulePath, landConfigPath, landModulePath, acidConfigPath, acidModulePath, mineralConfigPath, mineralModulePath, fossilConfigPath, fossilModulePath, ozoneConfigPath, ozoneModulePath].includes(path));
+    .filter(path => ![copyeditConfigPath, copyeditPinPath, flowConfigPath, flowPinPath, serviceConfigPath, serviceModulePath, substitutionConfigPath, substitutionModulePath, shiftConfigPath, shiftModulePath, footprintConfigPath, footprintModulePath, landConfigPath, landModulePath, acidConfigPath, acidModulePath, mineralConfigPath, mineralModulePath, fossilConfigPath, fossilModulePath, ozoneConfigPath, ozoneModulePath, ozradConfigPath, ozradModulePath].includes(path));
   const currentCopyeditPin = await readFile(join(repo, copyeditPinPath), 'utf8');
   const copyeditUnitPin = /^export const readerCopyeditUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
   assert.equal([...currentCopyeditPin.matchAll(copyeditUnitPin)].length, 1);
@@ -117,6 +119,9 @@ async function materialize(root) {
   const currentOzoneModule = await readFile(join(repo, ozoneModulePath), 'utf8');
   const ozoneUnitPin = /^export const photochemicalOzoneUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
   assert.equal([...currentOzoneModule.matchAll(ozoneUnitPin)].length, 1);
+  const currentOzradModule = await readFile(join(repo, ozradModulePath), 'utf8');
+  const ozradUnitPin = /^export const ozoneRadiationUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
+  assert.equal([...currentOzradModule.matchAll(ozradUnitPin)].length, 1);
   // The only archived script is the independently selected old edition pin.
   // All validation code, including the expectation resolver, comes from the
   // current worktree and runs under the historical book data in this directory.
@@ -147,6 +152,8 @@ async function materialize(root) {
     write(root, fossilModulePath, currentFossilModule.replace(fossilUnitPin, 'export const fossilResourcesUnitPin = null;')),
     write(root, ozoneConfigPath, JSON.stringify({ schemaVersion: 1, status: 'inactive', unit: null })),
     write(root, ozoneModulePath, currentOzoneModule.replace(ozoneUnitPin, 'export const photochemicalOzoneUnitPin = null;')),
+    write(root, ozradConfigPath, JSON.stringify({ schemaVersion: 1, status: 'inactive', unit: null })),
+    write(root, ozradModulePath, currentOzradModule.replace(ozradUnitPin, 'export const ozoneRadiationUnitPin = null;')),
     symlink(join(repo, 'node_modules'), join(root, 'node_modules'), process.platform === 'win32' ? 'junction' : 'dir'),
   ]);
 }

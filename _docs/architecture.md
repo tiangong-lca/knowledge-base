@@ -17,10 +17,39 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-17
-lastReviewedCommit: 5fca6949a0858723b4f37fafb01e8f8ddd4d56d6
+lastReviewedCommit: 6c73af8952b24d0aaa97f946c465b7b6ed8cf385
 ---
 
 # Publication architecture
+
+## Ozone-and-radiation successor
+
+The #121 B14 successor inserts eight canonical claims (`cl-ozrad121-*`) across
+B14's three retained sections (`2 + 3 + 3`, bringing B14 from 34 to 42 claims
+and the catalog from 960 to 968 claims) and records two explicit dated
+four-example framing synchronizations on `cl-lcia-midpoint-pathway` (Note 1) and
+`cl-mineral115-judgment` (Note 41), keeping all 958 other prior claims
+byte-for-byte unchanged. Before #119 runs its own rollback and reconstructed
+`readerPublicDownloads(ozoneInput)` receipt checks, `prepareOzoneRadiationSource`
+restores the exact `c5e3d886` B14 MDX, raw source/reading/literature extensions,
+and both prior claim records, verifying `ozoneRadiationPredecessorPin` and all
+49 bidirectional transitions across 153 dependent consumers.
+
+`reader-ozone-radiation-factors.mjs` binds all 10 single-source `ev-ozrad121-*`
+records in 1-to-1 bijection with all 10 `psg-ozrad121-*` passages, their 6
+primary PDF/XML carriers, all 26 CRC32-verified official EF 3.1 XML member
+hashes on `rd-flow-pilot-ef31` via `sameScienceValue`, and all 91 structured
+`numericFacts` (`91/91` actively verified in `BigInt` fixed-point arithmetic,
+`14:11` Frischknecht scaling, and RIVM `Table 3.2` `1 - exp((-t - 3) / tau)` vs
+`1 - exp(-(t - 3) / tau)` recomputations). At shared B14 chapter and section
+addresses, `qualifyOzoneRadiationHistory` enforces four-generation DOM sibling
+ordering (`#111` `land-recovery` → `#115` `mineral-resources` → `#117`
+`fossil-resources` → `#121` `ozone-radiation`), while `chapter-content.tsx` and
+`validateOzoneRadiationCorrectionOutput` require inline `display:block` and
+terminal intra-note ordering on all four Note 1 and Note 41 revision callouts
+across web and `@media print`. Because synchronizing `cl-lcia-midpoint-pathway`
+updates `cn-midpoint`, `concepts/index.html` joins the 8 changed public
+artifacts and 6 affected web/print articles bound by `ozoneRadiationCapturePin`.
 
 ## Photochemical-ozone successor
 

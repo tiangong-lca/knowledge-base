@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 import config from '../config/reader-fossil-resources.json' with { type: 'json' };
 import capture from '../config/reader-fossil-resources-capture.json' with { type: 'json' };
+import ozrad from '../config/reader-ozone-radiation.json' with { type: 'json' };
 import ozone from '../config/reader-photochemical-ozone.json' with { type: 'json' };
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
 import loadShift from '../config/reader-load-shift.json' with { type: 'json' };
@@ -174,8 +175,10 @@ test('B14 fossil source preview preserves all real predecessor transitions', { s
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
+  if (ozrad.unit) files.set(`content${ozrad.unit.routes[0]}.mdx`, Buffer.from(ozrad.unit.previousMdx));
   if (ozone.unit) files.set(`content${ozone.unit.routes[0]}.mdx`, Buffer.from(ozone.unit.previousMdx));
-  const input = { ...previousScientificTestRecords({ catalog, readings, literature }, ozone.unit), files };
+  const preOzrad = previousScientificTestRecords({ catalog, readings, literature }, ozrad.unit);
+  const input = { ...previousScientificTestRecords(preOzrad, ozone.unit), files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
   const qualify = unit => prepareFossilResourcesSource(unit, input, actual, structure);
   assert.doesNotThrow(() => qualify(config.unit));
@@ -199,7 +202,8 @@ test('B14 fossil source preview preserves all real predecessor transitions', { s
 });
 
 test('Fossil receipts bind actual output capture independently', { skip: !capture && config.status !== 'reviewed' }, () => {
-  const previous = previousScientificTestRecords({ catalog, readings, literature }, ozone.unit);
+  const preOzrad = previousScientificTestRecords({ catalog, readings, literature }, ozrad.unit);
+  const previous = previousScientificTestRecords(preOzrad, ozone.unit);
   const expected = readerPublicDownloads(previous.catalog, previous.literature, previous.readings);
   const verify = (mutateUnit = () => {}, mutateOutput) => {
     const unit = structuredClone(config.unit);

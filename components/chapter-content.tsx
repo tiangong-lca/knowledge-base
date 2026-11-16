@@ -1,3 +1,4 @@
+import { ozoneRadiationChapter, ozoneRadiationCorrections, ozoneRadiationHistoryControls, ozoneRadiationSource } from '@/scripts/reader-ozone-radiation.mjs';
 import { photochemicalOzoneHistoryControls, photochemicalOzoneSource } from '@/scripts/reader-photochemical-ozone.mjs';
 import { fossilResourcesChapter, fossilResourcesCorrection, fossilResourcesHistoryControls, fossilResourcesSource } from '@/scripts/reader-fossil-resources.mjs';
 import { mineralResourcesChapter, mineralResourcesCorrection, mineralResourcesHistoryControls, mineralResourcesSource } from '@/scripts/reader-mineral-resources.mjs';
@@ -6,7 +7,7 @@ import { landRecoveryHistoryControls, landRecoveryOrdinaryId, landRecoverySource
 import { circularFootprintHistoryControls, circularFootprintOrdinaryId, circularFootprintSource } from '@/scripts/reader-circular-footprint.mjs';
 import { loadShiftHistoryControls, loadShiftOrdinaryId, loadShiftSource } from '@/scripts/reader-load-shift.mjs';
 import { substitutionRulesHistoryControls, substitutionRulesOrdinaryId, substitutionRulesSource } from '@/scripts/reader-substitution-rules.mjs';
-import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone } from '@/scripts/reader-current-expectations.mjs';
+import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation } from '@/scripts/reader-current-expectations.mjs';
 import { flowBoundaryHistoryControls, flowBoundaryHistoryTargets, flowBoundaryOrdinaryTargets, flowBoundaryOrdinaryId } from '@/scripts/reader-flow-boundary.mjs';
 import { serviceConstraintsHistoryControls, serviceConstraintsOrdinaryId, serviceConstraintsSource } from '@/scripts/reader-service-constraints.mjs';
 import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
@@ -46,6 +47,7 @@ const histories = [
   { controls: mineralResourcesHistoryControls(currentMineralResources), edition: mineralResourcesSource, attribute: 'mineral-resources' },
   { controls: fossilResourcesHistoryControls(currentFossilResources), edition: fossilResourcesSource, attribute: 'fossil-resources' },
   { controls: photochemicalOzoneHistoryControls(currentPhotochemicalOzone), edition: photochemicalOzoneSource, attribute: 'photochemical-ozone' },
+  { controls: ozoneRadiationHistoryControls(currentOzoneRadiation), edition: ozoneRadiationSource, attribute: 'ozone-radiation' },
 ];
 
 function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
@@ -198,6 +200,11 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
             <time dateTime={fossilResourcesSource.date}>{fossilResourcesSource.date}</time>{' 修订：'}{fossilResourcesCorrection.scope}{' '}
             <a href={citationSourceHref(fossilResourcesSource.commit)}>查看前版源文件</a>
           </p>}
+        {currentOzoneRadiation?.corrections && page.url === ozoneRadiationChapter && ozoneRadiationCorrections.filter(row => row.claimId === note.id).map(row =>
+          <p key={row.claimId} className="legacy-citation-context" data-ozone-radiation-correction={note.id} style={{ display: 'block' }}>
+            <time dateTime={ozoneRadiationSource.date}>{ozoneRadiationSource.date}</time>{' 修订：'}{row.scope}{' '}
+            <a href={citationSourceHref(ozoneRadiationSource.commit)}>查看前版源文件</a>
+          </p>)}
       </li>)}</ol>
     </section>}
     {notices.map(notice => <div key={notice.id} id={notice.id} className="legacy-citation-target not-prose" data-legacy-notice="" tabIndex={-1}>

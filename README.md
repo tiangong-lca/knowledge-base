@@ -15,10 +15,27 @@ checkPaths:
   - "app/**"
   - "scripts/**"
 lastReviewedAt: 2026-11-17
-lastReviewedCommit: 5fca6949a0858723b4f37fafb01e8f8ddd4d56d6
+lastReviewedCommit: 6c73af8952b24d0aaa97f946c465b7b6ed8cf385
 ---
 
 # LCA Living Knowledge Base and Review
+
+[Stratospheric ozone & ionizing radiation #121](https://github.com/tiangong-lca/knowledge-base/issues/121)
+extends B14 across its three sections (`42` claims total) with the fourth
+midpoint–endpoint structure: emission midpoints stopping at stratospheric
+physicochemical load (`ODP` in `kg CFC-11 eq`) or collective radiation dose
+(`IRP` in `kBq U-235 eq` versus `kBq Co-60 to air eq`, `14:11` scaling under
+shared `Frischknecht et al. 2000` assumptions), where reaching `DALY` requires
+UV skin-cancer/cataract or `DDREF` (`10 / 6 / 2`), cancer-site and hereditary-
+disease assumptions and no accepted ecosystem endpoints exist. Its
+[comparison record](_docs/editorial/2026-11-17-ozone-and-radiation.md) proves
+horizon, `N2O`-inclusion, `WMO`-edition and long-lived uranium-series blank-column
+reversals while preserving `RIVM 2016-0104` `(-t-3)·k` `Table 3.2` generation
+and `JRC109369`/`EF 3.1` XML property, subcompartment and synonym discrepancies.
+Eight new canonical paragraphs and two dated print-visible framing syncs on
+Note 1 (`cl-lcia-midpoint-pathway`) and Note 41 (`cl-mineral115-judgment`)
+preserve all 958 other prior claims byte-for-byte across four qualified B14
+history generations (`#111`, `#115`, `#117`, `#121`).
 
 [Photochemical ozone & multi-pathway precursors #119](https://github.com/tiangong-lca/knowledge-base/issues/119)
 extends B16 (`§4 同一排放不同的环境问题`) with tropospheric photochemical ozone
@@ -34,6 +51,8 @@ rows, and binds same-UUID full-mass accounting across five atmospheric and
 deposition categories while preserving source-internal table/CAS discrepancies.
 Seven new canonical paragraphs preserve all 953 prior claims unchanged, with
 both B16 historical scope generations (`#113` and `#119`) independently qualified.
+Unit #119 is fully delivered at Main `c5e3d8860bd715b30577d88ec1360834148398c2`,
+qualified 468-file hosting and root #2415 (`00bfa8813837d3cd66bc8b6e97e12b23eb96cea8`).
 
 [Fossil resources #117](https://github.com/tiangong-lca/knowledge-base/issues/117)
 extends B14 with fossil heating values, energy-carrier category boundaries and

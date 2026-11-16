@@ -176,11 +176,35 @@ JRC130796 (`§2 Table 1`, `§3 Table 2`, `§3.2`), CRC32-verified official EF 3.
 photochemical-ozone, cross-pathway atmospheric/deposition and precursor-flow XML
 members, RIVM 2016-0104 Chapter 6 and `§17 Table S2.1`, and Huijbregts et al.
 2017 (`§§3.1.5, 3.2.4–3.2.5, 4.1`). Seven new canonical paragraphs before
-`cl-path-multiple-paths` preserve all 953 prior claims unchanged. Separate
-source, fresh 30-paragraph B16 reader and actual-output acceptances and normal
-source/root delivery are tracked on Issue119. Broader Part IV (including
-stratospheric ozone, ionizing radiation and continuous review) and Programme9
-requirements remain active.
+`cl-path-multiple-paths` preserve all 953 prior claims unchanged. Unit119 is now
+fully delivered: PR120/Main `c5e3d8860bd715b30577d88ec1360834148398c2`,
+qualified468-file hosting on `https://prism.tiangong.earth` (`dpz5y2z9h95b`,
+including unmodified `validateReaderOutput` against archived Main source and
+live B16 print verification), exact root2415/PR2416/Main
+`00bfa8813837d3cd66bc8b6e97e12b23eb96cea8`, and ordinary final source/root
+completion receipts (`source_handoff` 1/1).
+
+[Issue121](https://github.com/tiangong-lca/knowledge-base/issues/121) continues
+B14 across its three retained sections with stratospheric ozone depletion
+(`V5-B`) and ionizing radiation (`V5-L`): time horizons, reference nuclides,
+endpoint extrapolation choices and official EF 3.1 XML boundaries. Its
+[prewriting protocol](editorial/2026-11-17-ozone-and-radiation.md) was committed
+as `b5e1326` (`f9188bd` with governance review) before manuscript changes.
+Selected inspection covers ILCD 2011 (`§1 Table 1`, `§3.2`, `§3.5`), JRC109369
+(`§2 Tables 1–2`, `§4.2`, `§4.5`, `Annex 1` with 23 substances across 113 rows),
+JRC130796 (`§2 Table 1`, `§4.2`, `Table 10`, `Annex I Table 15`), 26
+CRC32-verified official EF 3.1 method/property/flow XML members, RIVM 2016-0104
+(`Tables 1.1/1.3–1.5`, Chapters 3–4, `§14.1`), and Huijbregts et al. 2017
+(`§2.3`, `§§3.1.2–3.1.3`, `Tables 1–2`, `§§3.2.2–3.2.3`). Eight new canonical
+paragraphs (`2 + 3 + 3`, bringing B14 to 42 claims and the catalog to 968) bind
+10 single-source `ev-ozrad121-*` records (`1-to-1` with 10 `psg-ozrad121-*`
+passages) and 91 structured `numericFacts`, with explicit dated four-example
+framing synchronizations on `cl-lcia-midpoint-pathway` and
+`cl-mineral115-judgment` while conserving all 958 other prior claims
+byte-for-byte. Separate two-round source, 42-paragraph B14 reader, publication-
+engineering and actual-output acceptances (`36a120ef...`) and normal source/root
+delivery are tracked on Issue121. Part IV continuous reread (`B14`–`B19`,
+including `index.mdx:18`) and Programme9 requirements remain active.
 
 Rule adoption101 itself is fully delivered: PR103/Main10dc686 and
 root2381/PR2382/Main90bcaa574, with complete ordinary source/root handoff receipts.

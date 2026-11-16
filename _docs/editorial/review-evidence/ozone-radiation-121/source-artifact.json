@@ -1,0 +1,1339 @@
+{
+  "schemaVersion": 1,
+  "kind": "source",
+  "unit": "ozone-radiation-121",
+  "subjectSha256": "f9f8338f9ca6574a57e51d77a37d77303d6d2f1581dab03b924b55a4f78896e3",
+  "date": "2026-11-17",
+  "scope": [
+    "content/docs/book/midpoint-endpoint-value-choices.mdx",
+    "claims:cl-lcia-midpoint-pathway",
+    "claims:cl-mineral115-judgment",
+    "sources:src-book-recipe-2017-primary-article",
+    "sources:src-book-ilcd-2011-lcia-recommendations",
+    "sources:src-flow-pilot-ef31-update",
+    "sources:src-land111-rivm2016",
+    "sources:src-fossil117-jrc109369",
+    "readings:rd-recipe-2017-primary-article",
+    "readings:rd-ilcd-2011-eutrophication-pathways",
+    "readings:rd-flow-pilot-ef31",
+    "readings:rd-flow-pilot-ef31-update",
+    "readings:rd-land111-rivm2016",
+    "readings:rd-fossil117-jrc109369",
+    "literature:lit-m05",
+    "literature:work-recipe-2017-method-article",
+    "literature:work-ilcd-2011-lcia-recommendations",
+    "literature:work-flow-pilot-ef31",
+    "literature:work-flow-pilot-ef31-update",
+    "literature:work-fossil117-jrc109369",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:order:sources",
+    "researchMetadata:order:gaps",
+    "researchMetadata:order:revisions",
+    "researchMetadata:order:queries",
+    "researchMetadata:public-projection",
+    "claims:cl-ozrad121-emission-midpoint",
+    "claims:cl-ozrad121-reference-scope",
+    "claims:cl-ozrad121-odp-horizons",
+    "claims:cl-ozrad121-ir-horizons",
+    "claims:cl-ozrad121-endpoint-choices",
+    "claims:cl-ozrad121-formula-table",
+    "claims:cl-ozrad121-package-discrepancies",
+    "claims:cl-ozrad121-emission-bridge",
+    "evidence:ev-ozrad121-ilcd2011-odp",
+    "evidence:ev-ozrad121-ilcd2011-ir",
+    "evidence:ev-ozrad121-jrc109369-odp",
+    "evidence:ev-ozrad121-jrc109369-ir",
+    "evidence:ev-ozrad121-jrc130796-odp-ir",
+    "evidence:ev-ozrad121-ef31-odp-xml",
+    "evidence:ev-ozrad121-ef31-ir-xml",
+    "evidence:ev-ozrad121-rivm-ch3-odp-tables",
+    "evidence:ev-ozrad121-rivm-ch4-ir-tables",
+    "evidence:ev-ozrad121-recipe2017-summary",
+    "sources:src-ozrad121-ef31-selected-members",
+    "gaps:gap-ozrad121-stratospheric-and-radiological-originals",
+    "revisions:rev-ozrad121-b14-ozone-and-radiation",
+    "queries:q-ozrad121-horizons-reference-nuclides-and-packages-20261117"
+  ],
+  "observed": "Primary scoped judgment integrating two-round independent source, full-chapter reader and publication-engineering audits with direct original, export and browser/print checks; no human or empirical certification.",
+  "observations": {
+    "state": {
+      "before": "be282daa6b7d83e064182c93aa31dfe32ed300f7258aa38882d76825e8861eed",
+      "after": "6896cffe7fc512c152b588a0f97d836a0cc971fc88d7cbb3ecf15fad776d402e"
+    },
+    "changes": [
+      {
+        "kind": "file",
+        "key": "content/docs/book/midpoint-endpoint-value-choices.mdx",
+        "from": "1ded5b9fb303ffc2dd5e859bc9207dafcaf34c35de3b618e452cadb78c061243",
+        "to": "91f2c3f67aefc568ebbaaf01d7225bbb33370705115a35c7884271d8f02dd030",
+        "rationale": "在B14既定三节内增补八段平流层臭氧耗竭与电离辐射比较论述，保持原有章节锚点与既有段落次序。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-lcia-midpoint-pathway",
+        "from": {
+          "raw": "e99ed1e6b6460fafe725df782e4f5b3d46fa6345dd3bafade7d77549e58164ea",
+          "public": "e99ed1e6b6460fafe725df782e4f5b3d46fa6345dd3bafade7d77549e58164ea",
+          "protected": "6500dbbdbab45965e79ba6d3aff8fc3abbe46da46a3196803b5859128cf9681a"
+        },
+        "to": {
+          "raw": "75083269f0bc36c758b33991283ffc43daad7370e320414287dad1cfff972949",
+          "public": "75083269f0bc36c758b33991283ffc43daad7370e320414287dad1cfff972949",
+          "protected": "41878b094d7ce0adf09f4c3fd74631a819a767321da57b8c7056f6912ce1946e"
+        },
+        "rationale": "在B14补齐化石能源及平流层臭氧耗竭与电离辐射后，将首段收束句由“两类输入”具名同步为“四类路径”，并补绑对应证据。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-mineral115-judgment",
+        "from": {
+          "raw": "67dc02fdfc12d1d74fd81616ca6c06c7100e7cd5fe9b0f11277794056569812d",
+          "public": "67dc02fdfc12d1d74fd81616ca6c06c7100e7cd5fe9b0f11277794056569812d",
+          "protected": "8bd8b9d4ab28438c39ccd78aff51453b06bbfacf561ee9202058876a914e36d0"
+        },
+        "to": {
+          "raw": "340274d8560b6f3501bd644132671a40ddfe5c82785dea354d0e3f721d779b9a",
+          "public": "340274d8560b6f3501bd644132671a40ddfe5c82785dea354d0e3f721d779b9a",
+          "protected": "e4257bcf20b7b839a37a25fcb65835259cbef5985dc57ec9b03292265a37bb14"
+        },
+        "rationale": "在B14第三节增补平流层臭氧耗竭与电离辐射公式、综述及XML发行包核对后，将收束段由“三个例子”具名同步为“四组例子”，并补绑对应证据。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-book-recipe-2017-primary-article",
+        "from": {
+          "raw": "443e2092aa4cdd137556387d3058bb8d43d1b8ed21f357a5b8c22261eed76596",
+          "public": "443e2092aa4cdd137556387d3058bb8d43d1b8ed21f357a5b8c22261eed76596",
+          "protected": "443e2092aa4cdd137556387d3058bb8d43d1b8ed21f357a5b8c22261eed76596"
+        },
+        "to": {
+          "raw": "493c196a41bc0fd17cded06b0006133ba7029bdcbeadd5635558955d49862de1",
+          "public": "493c196a41bc0fd17cded06b0006133ba7029bdcbeadd5635558955d49862de1",
+          "protected": "493c196a41bc0fd17cded06b0006133ba7029bdcbeadd5635558955d49862de1"
+        },
+        "rationale": "登记EF 3.1电离辐射与臭氧耗竭选定XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-book-ilcd-2011-lcia-recommendations",
+        "from": {
+          "raw": "3d77df63b96524317f7b37c19ea9f92e31dd7a8bdba80ad5fa797ae4f15a76fb",
+          "public": "3d77df63b96524317f7b37c19ea9f92e31dd7a8bdba80ad5fa797ae4f15a76fb",
+          "protected": "3d77df63b96524317f7b37c19ea9f92e31dd7a8bdba80ad5fa797ae4f15a76fb"
+        },
+        "to": {
+          "raw": "dadfee84c97f82df173f15ab244b2b3f5910531bd5b0c9fc3cb8c24092122bab",
+          "public": "dadfee84c97f82df173f15ab244b2b3f5910531bd5b0c9fc3cb8c24092122bab",
+          "protected": "dadfee84c97f82df173f15ab244b2b3f5910531bd5b0c9fc3cb8c24092122bab"
+        },
+        "rationale": "登记EF 3.1电离辐射与臭氧耗竭选定XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-flow-pilot-ef31-update",
+        "from": {
+          "raw": "863b9d7f1a6f996e80920c0a8d9d0d6efdd709026642b1fd357fb207ab2a3a86",
+          "public": "863b9d7f1a6f996e80920c0a8d9d0d6efdd709026642b1fd357fb207ab2a3a86",
+          "protected": "863b9d7f1a6f996e80920c0a8d9d0d6efdd709026642b1fd357fb207ab2a3a86"
+        },
+        "to": {
+          "raw": "1c67b0f79fef97bf0e505920be11c8644503809cb713afa2e900f34bea9a36ed",
+          "public": "1c67b0f79fef97bf0e505920be11c8644503809cb713afa2e900f34bea9a36ed",
+          "protected": "1c67b0f79fef97bf0e505920be11c8644503809cb713afa2e900f34bea9a36ed"
+        },
+        "rationale": "登记EF 3.1电离辐射与臭氧耗竭选定XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-land111-rivm2016",
+        "from": {
+          "raw": "ecc89c17d60de9f7688c5b494764c896ff75ae72d45a5ebcd7e1d6ac76bc2e5b",
+          "public": "ecc89c17d60de9f7688c5b494764c896ff75ae72d45a5ebcd7e1d6ac76bc2e5b",
+          "protected": "ecc89c17d60de9f7688c5b494764c896ff75ae72d45a5ebcd7e1d6ac76bc2e5b"
+        },
+        "to": {
+          "raw": "5ca63cd5499fb664c3c325109ffbce18db590a1c31d08e6d43f57d68f3cf8a44",
+          "public": "5ca63cd5499fb664c3c325109ffbce18db590a1c31d08e6d43f57d68f3cf8a44",
+          "protected": "5ca63cd5499fb664c3c325109ffbce18db590a1c31d08e6d43f57d68f3cf8a44"
+        },
+        "rationale": "登记EF 3.1电离辐射与臭氧耗竭选定XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-fossil117-jrc109369",
+        "from": {
+          "raw": "9743d635f475b4331b63eca276692247c4b948f5b88ff86b25226b3dafbe2b62",
+          "public": "9743d635f475b4331b63eca276692247c4b948f5b88ff86b25226b3dafbe2b62",
+          "protected": "9743d635f475b4331b63eca276692247c4b948f5b88ff86b25226b3dafbe2b62"
+        },
+        "to": {
+          "raw": "e7784fc62735bd8eb4489aa1930883671c59ef2dc18e4bbbdd035f5f6409370f",
+          "public": "e7784fc62735bd8eb4489aa1930883671c59ef2dc18e4bbbdd035f5f6409370f",
+          "protected": "e7784fc62735bd8eb4489aa1930883671c59ef2dc18e4bbbdd035f5f6409370f"
+        },
+        "rationale": "登记EF 3.1电离辐射与臭氧耗竭选定XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-recipe-2017-primary-article",
+        "from": {
+          "raw": "c935b02ce5139b4d87e6364835b7c20cbf00987bc8dce7d0f5d7291c5a643f8d",
+          "public": null,
+          "protected": "c935b02ce5139b4d87e6364835b7c20cbf00987bc8dce7d0f5d7291c5a643f8d"
+        },
+        "to": {
+          "raw": "87dd35ad3f8599a3d2fa0821f79bb0aa3b63e578f21b35dc8869f18a91236a59",
+          "public": null,
+          "protected": "87dd35ad3f8599a3d2fa0821f79bb0aa3b63e578f21b35dc8869f18a91236a59"
+        },
+        "rationale": "登记EF 3.1电离辐射与臭氧耗竭选定XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-ilcd-2011-eutrophication-pathways",
+        "from": {
+          "raw": "e0da53cc980850fa5bbc404eb0bdaeedbdd5795749089f1012008ffa56acd600",
+          "public": null,
+          "protected": "e0da53cc980850fa5bbc404eb0bdaeedbdd5795749089f1012008ffa56acd600"
+        },
+        "to": {
+          "raw": "b4a4e97e371bef99901ab63fe9ca1d75327f2a64291c5e2c140c58c6b95667e0",
+          "public": null,
+          "protected": "b4a4e97e371bef99901ab63fe9ca1d75327f2a64291c5e2c140c58c6b95667e0"
+        },
+        "rationale": "登记EF 3.1电离辐射与臭氧耗竭选定XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-flow-pilot-ef31",
+        "from": {
+          "raw": "e12f17d945870c38a2adfcc3a62dcbc123392a88a567329ed53adf4dc5eae189",
+          "public": null,
+          "protected": "e12f17d945870c38a2adfcc3a62dcbc123392a88a567329ed53adf4dc5eae189"
+        },
+        "to": {
+          "raw": "02d86ad3432da3c2a41ad61f902c1740c1340920acbb8ef0436cbfee11fd3cf6",
+          "public": null,
+          "protected": "02d86ad3432da3c2a41ad61f902c1740c1340920acbb8ef0436cbfee11fd3cf6"
+        },
+        "rationale": "登记EF 3.1电离辐射与臭氧耗竭选定XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-flow-pilot-ef31-update",
+        "from": {
+          "raw": "4fefa1dd7bcbae21845df3d7938d816199ffbd8f0d10cf3d2ae40fbebdab4bbe",
+          "public": null,
+          "protected": "4fefa1dd7bcbae21845df3d7938d816199ffbd8f0d10cf3d2ae40fbebdab4bbe"
+        },
+        "to": {
+          "raw": "801498876f7d798dd674825a3029cbfa18fc831708301e0c9b8b3feeff06ddf0",
+          "public": null,
+          "protected": "801498876f7d798dd674825a3029cbfa18fc831708301e0c9b8b3feeff06ddf0"
+        },
+        "rationale": "登记EF 3.1电离辐射与臭氧耗竭选定XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-land111-rivm2016",
+        "from": {
+          "raw": "d3ac37416ed5e753107bae1d69be9946313e2c3413f68f590c28fe2bba3511bd",
+          "public": null,
+          "protected": "d3ac37416ed5e753107bae1d69be9946313e2c3413f68f590c28fe2bba3511bd"
+        },
+        "to": {
+          "raw": "16881b7b62d640dec4653b2a30008f5c4ea88a90a30f7537deade843eebd42d8",
+          "public": null,
+          "protected": "16881b7b62d640dec4653b2a30008f5c4ea88a90a30f7537deade843eebd42d8"
+        },
+        "rationale": "登记EF 3.1电离辐射与臭氧耗竭选定XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-fossil117-jrc109369",
+        "from": {
+          "raw": "c9b78ada2876f7453c10271558194a4226ca5112dc25689a3898361b638c027c",
+          "public": null,
+          "protected": "c9b78ada2876f7453c10271558194a4226ca5112dc25689a3898361b638c027c"
+        },
+        "to": {
+          "raw": "433647759d27fd46a036dd1f81ff8aa2381c7b6329a45ae617b351140642a9f0",
+          "public": null,
+          "protected": "433647759d27fd46a036dd1f81ff8aa2381c7b6329a45ae617b351140642a9f0"
+        },
+        "rationale": "登记EF 3.1电离辐射与臭氧耗竭选定XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:lit-m05",
+        "from": {
+          "raw": "c57b01f4dfe7b6f1f93d89c6ca966f1fbb92070e560283ba6270413aeb5db5e8",
+          "public": null,
+          "protected": "c57b01f4dfe7b6f1f93d89c6ca966f1fbb92070e560283ba6270413aeb5db5e8"
+        },
+        "to": {
+          "raw": "9d5e0307795efff29f24ab24fc438355c456682c4c377431e3f077e1ede61486",
+          "public": null,
+          "protected": "9d5e0307795efff29f24ab24fc438355c456682c4c377431e3f077e1ede61486"
+        },
+        "rationale": "登记EF 3.1电离辐射与臭氧耗竭选定XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-recipe-2017-method-article",
+        "from": {
+          "raw": "e7aff59a7729d71d01236390dc785f1b8a3913fa5ed7a362b26817de6f1fc8d0",
+          "public": null,
+          "protected": "e7aff59a7729d71d01236390dc785f1b8a3913fa5ed7a362b26817de6f1fc8d0"
+        },
+        "to": {
+          "raw": "ba450e17330edbe38933c18975bbdc51200c6247ed7d58b2ace216d752e8f6b0",
+          "public": null,
+          "protected": "ba450e17330edbe38933c18975bbdc51200c6247ed7d58b2ace216d752e8f6b0"
+        },
+        "rationale": "登记EF 3.1电离辐射与臭氧耗竭选定XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-ilcd-2011-lcia-recommendations",
+        "from": {
+          "raw": "66dac6d521a148a894d9ebc03786ce6a7af5515245abbc0e9deaf7ff4880a15d",
+          "public": null,
+          "protected": "66dac6d521a148a894d9ebc03786ce6a7af5515245abbc0e9deaf7ff4880a15d"
+        },
+        "to": {
+          "raw": "a06b1481952fa66fba56f144b2e59e64031b2dd49e997c2f2b4bc4128e5a9174",
+          "public": null,
+          "protected": "a06b1481952fa66fba56f144b2e59e64031b2dd49e997c2f2b4bc4128e5a9174"
+        },
+        "rationale": "登记EF 3.1电离辐射与臭氧耗竭选定XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-flow-pilot-ef31",
+        "from": {
+          "raw": "7b0d24c716e860edb0731341733559c7094400b445e1a955905e2832106b4d6b",
+          "public": null,
+          "protected": "7b0d24c716e860edb0731341733559c7094400b445e1a955905e2832106b4d6b"
+        },
+        "to": {
+          "raw": "bc0af68abf939523f0da5803df2ede3f27c433bd75634938aabf2440a68afe74",
+          "public": null,
+          "protected": "bc0af68abf939523f0da5803df2ede3f27c433bd75634938aabf2440a68afe74"
+        },
+        "rationale": "登记EF 3.1电离辐射与臭氧耗竭选定XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-flow-pilot-ef31-update",
+        "from": {
+          "raw": "31d8e7715f1be55d0103bd6abe89e982805fd487e7e20c503fbd51de4ba45add",
+          "public": null,
+          "protected": "31d8e7715f1be55d0103bd6abe89e982805fd487e7e20c503fbd51de4ba45add"
+        },
+        "to": {
+          "raw": "b5fb9c706c1a413600a83d7a797398be52d69a666765656e116cff22d4688c38",
+          "public": null,
+          "protected": "b5fb9c706c1a413600a83d7a797398be52d69a666765656e116cff22d4688c38"
+        },
+        "rationale": "登记EF 3.1电离辐射与臭氧耗竭选定XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-fossil117-jrc109369",
+        "from": {
+          "raw": "722b4cb1aaf052dfc7df242eeb8bba8ca850137121c21397ca08a08694805d88",
+          "public": null,
+          "protected": "722b4cb1aaf052dfc7df242eeb8bba8ca850137121c21397ca08a08694805d88"
+        },
+        "to": {
+          "raw": "ca9cea8ca7f8fd31f631bea49a41d50faea939e1bd4e16727213627f4084a29c",
+          "public": null,
+          "protected": "ca9cea8ca7f8fd31f631bea49a41d50faea939e1bd4e16727213627f4084a29c"
+        },
+        "rationale": "登记EF 3.1电离辐射与臭氧耗竭选定XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:claims",
+        "from": {
+          "raw": "c0720a5e6311b4dea25c169badd722a42fc953fb6386442749f31bab86ce64df",
+          "public": null,
+          "protected": "c0720a5e6311b4dea25c169badd722a42fc953fb6386442749f31bab86ce64df"
+        },
+        "to": {
+          "raw": "7d1e1541d8f6c09df5fb136231ca46e12f6f40ddcf2305453e8131583b2cb75c",
+          "public": null,
+          "protected": "7d1e1541d8f6c09df5fb136231ca46e12f6f40ddcf2305453e8131583b2cb75c"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:evidence",
+        "from": {
+          "raw": "cfeecb0300c63588d673b624576c44b7acdbbd44a72b8a4e67cba3c16a345be3",
+          "public": null,
+          "protected": "cfeecb0300c63588d673b624576c44b7acdbbd44a72b8a4e67cba3c16a345be3"
+        },
+        "to": {
+          "raw": "6f7287792ed8c65e0ea122d45cb45ea4d2d83b7fc94e3d8cfe13317615e4dc69",
+          "public": null,
+          "protected": "6f7287792ed8c65e0ea122d45cb45ea4d2d83b7fc94e3d8cfe13317615e4dc69"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:sources",
+        "from": {
+          "raw": "d480241a918adba948cc3153d56eb8fbefe285db647761d932772558dc87cf37",
+          "public": null,
+          "protected": "d480241a918adba948cc3153d56eb8fbefe285db647761d932772558dc87cf37"
+        },
+        "to": {
+          "raw": "db89be77c0aec27228d63a780c6cc4d72d30b221ef29eb26040e9ffa07ae4d7f",
+          "public": null,
+          "protected": "db89be77c0aec27228d63a780c6cc4d72d30b221ef29eb26040e9ffa07ae4d7f"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:gaps",
+        "from": {
+          "raw": "3659a91269307faf69147a4510157dcf81d4668d6582834b00564ca5ec1c941a",
+          "public": null,
+          "protected": "3659a91269307faf69147a4510157dcf81d4668d6582834b00564ca5ec1c941a"
+        },
+        "to": {
+          "raw": "d3eb9c6c22c445651b9e8ea51febb58743d408c1a0a5bf1fb60f810d3c891ee6",
+          "public": null,
+          "protected": "d3eb9c6c22c445651b9e8ea51febb58743d408c1a0a5bf1fb60f810d3c891ee6"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:revisions",
+        "from": {
+          "raw": "52cb4d6d077bbd531b8974401d81817d006905d8ab49e6216b8629e9c0b45a32",
+          "public": null,
+          "protected": "52cb4d6d077bbd531b8974401d81817d006905d8ab49e6216b8629e9c0b45a32"
+        },
+        "to": {
+          "raw": "c31ae424181484bacade28be5111317212f771203caf48f047d734903f98098f",
+          "public": null,
+          "protected": "c31ae424181484bacade28be5111317212f771203caf48f047d734903f98098f"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:queries",
+        "from": {
+          "raw": "16ff5a1734be415ac48c4bc22dd9eb88f9bcac63c7223d670e92b26d43086cb6",
+          "public": null,
+          "protected": "16ff5a1734be415ac48c4bc22dd9eb88f9bcac63c7223d670e92b26d43086cb6"
+        },
+        "to": {
+          "raw": "675805d5518da8eda534a515b3ddd887f30dbdd5be619b0406c5a75301c6f56e",
+          "public": null,
+          "protected": "675805d5518da8eda534a515b3ddd887f30dbdd5be619b0406c5a75301c6f56e"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:public-projection",
+        "from": {
+          "raw": "65affc3256a69837c62e37a1f8ad2fdf7fc7da2a74e4ce909e7e45a16acd3f11",
+          "public": null,
+          "protected": "65affc3256a69837c62e37a1f8ad2fdf7fc7da2a74e4ce909e7e45a16acd3f11"
+        },
+        "to": {
+          "raw": "5fec60f4e7166e0f8ce1ef8f15e0a1df11a6df6ec6688adcc5eda6fe13d8ab28",
+          "public": null,
+          "protected": "5fec60f4e7166e0f8ce1ef8f15e0a1df11a6df6ec6688adcc5eda6fe13d8ab28"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-ozrad121-emission-midpoint",
+        "from": null,
+        "to": {
+          "raw": "84dbf15fe866c6fd994ba1f5d321979806ecb5e4a67da8bee132ce31ed28c01d",
+          "public": "84dbf15fe866c6fd994ba1f5d321979806ecb5e4a67da8bee132ce31ed28c01d",
+          "protected": "8365bcb564ae68c8f29c822bac38c07b0327c63f8932fbf5d2b543fc7a014e44"
+        },
+        "rationale": "基于已核导则、方法报告、EF 3.1官方包XML与受控时间窗／参照核素演算新增B14规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-ozrad121-reference-scope",
+        "from": null,
+        "to": {
+          "raw": "545b77e2d3901da48c0af67e32980e0c785dfc9b3e1a879f100d7656885336b3",
+          "public": "545b77e2d3901da48c0af67e32980e0c785dfc9b3e1a879f100d7656885336b3",
+          "protected": "844855da3be1d9b2b762a9477dab919ad3f54a5e3b99f59beb762681f8a88204"
+        },
+        "rationale": "基于已核导则、方法报告、EF 3.1官方包XML与受控时间窗／参照核素演算新增B14规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-ozrad121-odp-horizons",
+        "from": null,
+        "to": {
+          "raw": "d8d05900305a7dba302394eaf74be2984680e54a5a72d49353fa8cc11caa6cc6",
+          "public": "d8d05900305a7dba302394eaf74be2984680e54a5a72d49353fa8cc11caa6cc6",
+          "protected": "e983780a2ca185760c072be7d0b2f3285206a6790ab9e17c64cc6557613ec62e"
+        },
+        "rationale": "基于已核导则、方法报告、EF 3.1官方包XML与受控时间窗／参照核素演算新增B14规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-ozrad121-ir-horizons",
+        "from": null,
+        "to": {
+          "raw": "9db2330a69e87dfcfe32fea7f833e60f73187436d5e9b2ffc811fd68be6e92e1",
+          "public": "9db2330a69e87dfcfe32fea7f833e60f73187436d5e9b2ffc811fd68be6e92e1",
+          "protected": "cdfae04965386db939eed12aa2a88c805e4f062232feef99d8bde296c7427415"
+        },
+        "rationale": "基于已核导则、方法报告、EF 3.1官方包XML与受控时间窗／参照核素演算新增B14规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-ozrad121-endpoint-choices",
+        "from": null,
+        "to": {
+          "raw": "fb818235b805f763e228810d6a327517deadf5a7de453577819338d11ef285b0",
+          "public": "fb818235b805f763e228810d6a327517deadf5a7de453577819338d11ef285b0",
+          "protected": "43eff99a3a9004cf995af9568232e00a69eadf401d84548e41cbf1990de4873c"
+        },
+        "rationale": "基于已核导则、方法报告、EF 3.1官方包XML与受控时间窗／参照核素演算新增B14规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-ozrad121-formula-table",
+        "from": null,
+        "to": {
+          "raw": "1c783341b1d32663a6f9cd39963874de350b2b9911f983c8f7bd452a713d8965",
+          "public": "1c783341b1d32663a6f9cd39963874de350b2b9911f983c8f7bd452a713d8965",
+          "protected": "0ce8bf27fb519174d381d4283ba5b163ff26b5ab3c3184828e103e160ce91b49"
+        },
+        "rationale": "基于已核导则、方法报告、EF 3.1官方包XML与受控时间窗／参照核素演算新增B14规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-ozrad121-package-discrepancies",
+        "from": null,
+        "to": {
+          "raw": "362699907f0b5140a1e7cf95b36bfbd5b5d82dc80d9669477f6759d1e63e6f1e",
+          "public": "362699907f0b5140a1e7cf95b36bfbd5b5d82dc80d9669477f6759d1e63e6f1e",
+          "protected": "cc003748ef9f6a4f362358ae03895a476cc905bb606a36785bff894b96791668"
+        },
+        "rationale": "基于已核导则、方法报告、EF 3.1官方包XML与受控时间窗／参照核素演算新增B14规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-ozrad121-emission-bridge",
+        "from": null,
+        "to": {
+          "raw": "60756cfa7da22c46c5acd7dac5c48627cf957d52600eb3a4b33c9cfb9278cd1f",
+          "public": "60756cfa7da22c46c5acd7dac5c48627cf957d52600eb3a4b33c9cfb9278cd1f",
+          "protected": "6769d94d0d3c814713eac29a01670f13dc0d47a36a940fc583c8f5780a397ea4"
+        },
+        "rationale": "基于已核导则、方法报告、EF 3.1官方包XML与受控时间窗／参照核素演算新增B14规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-ozrad121-ilcd2011-odp",
+        "from": null,
+        "to": {
+          "raw": "7929102ad524f3310e39955b175218cb2f165e367399e72b13ae7f1d83aa0b14",
+          "public": "7929102ad524f3310e39955b175218cb2f165e367399e72b13ae7f1d83aa0b14",
+          "protected": "7929102ad524f3310e39955b175218cb2f165e367399e72b13ae7f1d83aa0b14"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-ozrad121-ilcd2011-ir",
+        "from": null,
+        "to": {
+          "raw": "54f01a0c760161ee664da6ddb739559c336af85705e9e5b03259c93f4d82b085",
+          "public": "54f01a0c760161ee664da6ddb739559c336af85705e9e5b03259c93f4d82b085",
+          "protected": "54f01a0c760161ee664da6ddb739559c336af85705e9e5b03259c93f4d82b085"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-ozrad121-jrc109369-odp",
+        "from": null,
+        "to": {
+          "raw": "5d321a6b4d4497ac8b3e8cf66da5406314571b68d0471fe0a317943bf46a71bf",
+          "public": "5d321a6b4d4497ac8b3e8cf66da5406314571b68d0471fe0a317943bf46a71bf",
+          "protected": "5d321a6b4d4497ac8b3e8cf66da5406314571b68d0471fe0a317943bf46a71bf"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-ozrad121-jrc109369-ir",
+        "from": null,
+        "to": {
+          "raw": "dd8082e687f6cfb55498e22d3aa555ab5ff206ee725c294a402ea0c3c0692a59",
+          "public": "dd8082e687f6cfb55498e22d3aa555ab5ff206ee725c294a402ea0c3c0692a59",
+          "protected": "dd8082e687f6cfb55498e22d3aa555ab5ff206ee725c294a402ea0c3c0692a59"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-ozrad121-jrc130796-odp-ir",
+        "from": null,
+        "to": {
+          "raw": "2489c27c9fc0cab883db08b1ef06cd36d8c8d3cc2de991d9320103316c359174",
+          "public": "2489c27c9fc0cab883db08b1ef06cd36d8c8d3cc2de991d9320103316c359174",
+          "protected": "2489c27c9fc0cab883db08b1ef06cd36d8c8d3cc2de991d9320103316c359174"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-ozrad121-ef31-odp-xml",
+        "from": null,
+        "to": {
+          "raw": "0f4a6f2fbc324e04913ca02ce9d339fc5c0ec351a33872269f9a54af67126ec7",
+          "public": "0f4a6f2fbc324e04913ca02ce9d339fc5c0ec351a33872269f9a54af67126ec7",
+          "protected": "0f4a6f2fbc324e04913ca02ce9d339fc5c0ec351a33872269f9a54af67126ec7"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-ozrad121-ef31-ir-xml",
+        "from": null,
+        "to": {
+          "raw": "3a1685ef493816842b4ecaff16c69c8b578f1593942e09cccaeb153805566742",
+          "public": "3a1685ef493816842b4ecaff16c69c8b578f1593942e09cccaeb153805566742",
+          "protected": "3a1685ef493816842b4ecaff16c69c8b578f1593942e09cccaeb153805566742"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-ozrad121-rivm-ch3-odp-tables",
+        "from": null,
+        "to": {
+          "raw": "8c84c7ffd4d0aa5e7b6fb532430c59825fbdd0891c8c47378faf2501305cd2c1",
+          "public": "8c84c7ffd4d0aa5e7b6fb532430c59825fbdd0891c8c47378faf2501305cd2c1",
+          "protected": "8c84c7ffd4d0aa5e7b6fb532430c59825fbdd0891c8c47378faf2501305cd2c1"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-ozrad121-rivm-ch4-ir-tables",
+        "from": null,
+        "to": {
+          "raw": "7f760ee1013ff404ca7d87d681d3e0d7f8ee177060bef4d28df7ee618a229b26",
+          "public": "7f760ee1013ff404ca7d87d681d3e0d7f8ee177060bef4d28df7ee618a229b26",
+          "protected": "7f760ee1013ff404ca7d87d681d3e0d7f8ee177060bef4d28df7ee618a229b26"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-ozrad121-recipe2017-summary",
+        "from": null,
+        "to": {
+          "raw": "66b735fbcf28321d0bde05d9108ce05ed1a3474e8e243b374ff54365c0c735b0",
+          "public": "66b735fbcf28321d0bde05d9108ce05ed1a3474e8e243b374ff54365c0c735b0",
+          "protected": "66b735fbcf28321d0bde05d9108ce05ed1a3474e8e243b374ff54365c0c735b0"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-ozrad121-ef31-selected-members",
+        "from": null,
+        "to": {
+          "raw": "dc5eea62d13a135972c63eb0149a7ca325d5e604d55222d8dd886d5dd8e77e25",
+          "public": "dc5eea62d13a135972c63eb0149a7ca325d5e604d55222d8dd886d5dd8e77e25",
+          "protected": "dc5eea62d13a135972c63eb0149a7ca325d5e604d55222d8dd886d5dd8e77e25"
+        },
+        "rationale": "登记EF 3.1电离辐射与臭氧耗竭选定XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "gaps:gap-ozrad121-stratospheric-and-radiological-originals",
+        "from": null,
+        "to": {
+          "raw": "2cbf0fe10e80f73548e0db21c58163bf940fb31880cbe93021153bcb2daf941b",
+          "public": null,
+          "protected": "2cbf0fe10e80f73548e0db21c58163bf940fb31880cbe93021153bcb2daf941b"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "revisions:rev-ozrad121-b14-ozone-and-radiation",
+        "from": null,
+        "to": {
+          "raw": "1f65b61c51feb59cfd13381476d35e21d2d66ec8582119fafcb175ee28645292",
+          "public": null,
+          "protected": "1f65b61c51feb59cfd13381476d35e21d2d66ec8582119fafcb175ee28645292"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "queries:q-ozrad121-horizons-reference-nuclides-and-packages-20261117",
+        "from": null,
+        "to": {
+          "raw": "4b03606906960d2857aef58c246d96911c2e30985f7e462ae61ed3d95be797cc",
+          "public": null,
+          "protected": "4b03606906960d2857aef58c246d96911c2e30985f7e462ae61ed3d95be797cc"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      }
+    ],
+    "consumers": [
+      {
+        "id": "cl-lcia-endpoint-units",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lcia-mid-end-conversion-limits",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lcia-scenarios-are-choices",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lcia-global-is-not-site-specific",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lcia-model-data-factor-separation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-connect-reuse-keeps-relation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-path-terrestrial",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-path-units",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-path-marginal-average",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-path-supplied-effect-conditions",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-path-background",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-path-pdf",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-path-multiple-paths",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-water-marginal-contexts",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-question",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-authority",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-three",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-equation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-why-square",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-nmvoc",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-nox",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-service",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-score",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-scale",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-threshold",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-test",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-later",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-judgment",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-purpose",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-policy-contrast",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-baseline",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-units",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-display",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-logit",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-trade",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-precision",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-primary-ratio",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-households",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-health",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-mismatch",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-annual",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-shares",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-two-forms",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-different-card",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-english",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-english-basis",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-service",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-japan-route",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-break-even",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-english-route",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-numeraire",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-edition",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-validity",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-null",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-order",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-transfer",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-decision",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-opening",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-precursor-denominator",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-intake-definition",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-intake-unit",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-receptor-boundary",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-source-height",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-mixture-inputs",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-mixture-results",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-exposure-evidence",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-effect-definition",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-effect-default",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-urban-health",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-rural-health",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-precursor-health",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-burden-check",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-population-meaning",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-indoor-location",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-indoor-matrix",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-exposure-compatible",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-compatible-population",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-indoor-time",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-exposure-coverage",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-nonlinear-response",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-risk-reference",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-slope-meaning",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-finite-change",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-slope-context",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-ier-evidence",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-gemm-alternative",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-factor-correction",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-implementation-layer",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-chemistry-background",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-chemistry-perturbation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-chemistry-model-check",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-concentration-route",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-regional-factor",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-modern-values",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-modern-ratios",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-matched-scope",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-uncovered-pathways",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-conclusion",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-concentration-balance",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-activity-indicators",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-usetox-conclusion",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-source-distribution",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-evidence-levels",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-regional-summary",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-factor-order",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-matched-scenario",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-version-and-model",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-flow99-identity-example",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-flow99-zero-reasons",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-flow99-zero-reporting",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-flow99-conclusion",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-land111-episode",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-land111-midpoint",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-land111-conversion",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-land111-pathway",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-land111-horizon",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-land111-factor-scale",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-land111-integral",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-land111-countercheck",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-land111-aggregation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-land111-printed-record",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-acid113-ae-question",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-acid113-threshold",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-acid113-glam-relation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-acid113-glam-tension",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-acid113-so2-rows",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-acid113-chemistry-control",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-acid113-shared-moles",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-acid113-nh3-control",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-mineral115-input",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-mineral115-adp",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-mineral115-sop",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-mineral115-reserves",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-mineral115-rank",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-mineral115-cost-proxy",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-mineral115-metal-cost",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-mineral115-calibration",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-mineral115-assumptions",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-fossil117-scarcity-energy",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-fossil117-heating-basis",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-fossil117-uranium-boundary",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-fossil117-scenario-proxy",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-fossil117-equal-midpoint",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-fossil117-proxy-consequence",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-fossil117-printed-limits",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-fossil117-bridge",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-ozone119-precursor-entry",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-ozone119-pocp-to-lotos",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-ozone119-order-reversal",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-ozone119-titration-sign",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-ozone119-ef-location-copy",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-ozone119-multipath-accounting",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-ozone119-printed-limits",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认平流层臭氧与电离辐射增补及首尾计数同步不改变其既有前提含义与适用边界。"
+      }
+    ],
+    "assessment": {
+      "scope": "Selected ILCD 2011 (§1 Table 1, §3.2 Ozone depletion pp. 19–24, §3.5 Ionizing radiation pp. 42–47), JRC109369 (§2 Tables 1–2, §4.2, §4.5, Annex 1 pp. 33–37 with 23 substances across 113 rows), JRC130796 (§2 Table 1, §4.2, Table 10, Annex I Table 15), 26 ZIP64/HTTP-206/CRC32-verified official EF-v3.1.zip XML members (b5c629d6, b5c632be, 6209b35f, Mass, Radioactivity, and 21 halocarbon/nitrous-oxide/radionuclide flows), RIVM 2016-0104 (Tables 1.1/1.3–1.5, Chapter 3 pp. 35–39, Chapter 4 pp. 41–45, §14.1 p. 99), and Huijbregts et al. 2017 (§2.3, §§3.1.2–3.1.3, Tables 1–2, §§3.2.2–3.2.3 pp. 140–141, 143–144).",
+      "comparison": "Establishes the fourth B14 midpoint–endpoint structure — emission midpoints stopping at physicochemical load (ODP in kg CFC-11 eq) or population collective effective dose (IRP in kBq U-235 eq vs kBq Co-60 to air eq, man·Sv) where reaching human health DALY requires additional UV-B skin-cancer/cataract or DDREF (10/6/2), cancer-site (4/11/13) and hereditary-disease (57 vs 61 DALY/case) assumptions, with no accepted ecosystem endpoints. Demonstrates controlled rank reversals across ODP horizons/N2O inclusion/WMO editions (Halon-1211 vs Halon-1301; 1 kg N2O vs 0.2 kg HCFC-22; Halon-1301 vs Halon-2402) and IRP horizons/nuclide gaps (C-14 vs Cs-137; I-129 540x freshwater jump; blank U-234/U-235/U-238/Th-230/Ra-226/Pu-238/Pu-alpha/Cm-alpha columns in ReCiPe I and default H vs non-zero EF 3.1 factors).",
+      "values": "Ten single-source ev-ozrad121-* records map 1-to-1 onto all ten psg-ozrad121-* passages and bind 91 structured numericFacts with exact decimal fidelity, verified via BigInt fixed-point arithmetic and direct Table 3.2 exponential recomputation.",
+      "limits": "Preserves RIVM p. 36 printed formula Ft = 1 - exp((-t-3)*k) generating all Table 3.2 halocarbon values (vs physical 3-yr lag -(t-3)*k giving 2.098, 16.432, 0.407), Huijbregts 2017 §3.1.2 infinite-only ODP summary, RIVM p. 38 longitudinal typo, Table 1.5 rounding and yr//kBq double slash, pp. 44–45 /kg and (Table 3.3) misprints, JRC109369/XML stale WMO 1999 / 23-item headers, Annex 1 113 rows (2 missing upper-air rows restored in XML), Methyl bromide 4-row / empty-CAS defect, JRC109369 Mass U235-equivalents and §4.5 compartment narrative vs b5c632be.xml Radioactivity / retained upper-air & seawater / Calculated freshwater rows, and nuclide synonym contamination.",
+      "correction": "958 of 960 prior claims remain 100% byte-for-byte unchanged; only cl-lcia-midpoint-pathway (Note 1, two-input -> four-pathway framing sync) and cl-mineral115-judgment (Note 41, three-example -> four-example synthesis sync) receive explicit dated public notices while retaining earlier #115 and #117 notices.",
+      "review": "Two-round independent primary-source/numeric audit (995a3bf5) verified all 5 PDFs, 26 XMLs, 113 Annex 1 rows, pp. 143–144 page bounds, 1-to-1 passage provenance, 91 numericFacts, and prior conservation. Agent verification does not claim human expert certification, site-specific radiological dose assessment, or empirical UV epidemiology."
+    },
+    "independentReports": {
+      "independent-primary-source-audit-initial.md": "6705be32babed48c383e3309dffb02119038a0dac34021fdea5b3b21563b143d",
+      "independent-primary-source-audit-final.md": "4bf93673aefc58dc2095a5d9b4ff79fcc1a597b3a805482664d4a90f795cad75",
+      "full-chapter-b14-reader-review-initial.md": "d6ac2d5950212a271d941604446d9bd97971f1e854d9a7417ed65cb64b0d9a97",
+      "full-chapter-b14-reader-review-final.md": "254418102d5a66e772d56b18c949217ebd19274c03b8104ef65b087f17fa3141",
+      "independent-publication-engineering-review-initial.md": "e588538ab31f2451af6c7d9bfa9af077f595af862f08177aa0eb20fb8d121985",
+      "independent-publication-engineering-review-final.md": "5ede7581e3f5de951a0aa983ea276677cb3cec12205f5c7cefba6af570b6d8d3",
+      "verified-ozrad-facts-and-artifacts.json": "ca51b1dc76fb2567df63968f05e75ea222ea63e201e0391fba63966d58a739ea",
+      "actual-browser-qa/responsive-script-enabled.json": "410ef3e4ba5bef045a97ee44f53a0ae5353345612ce459ef287fa4094e17e093",
+      "actual-browser-qa/interactions.json": "a8348808f5167d48c33d752199fba6e8f57a80c5714294278b8acd873961c645"
+    }
+  }
+}
