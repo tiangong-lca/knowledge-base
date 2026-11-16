@@ -20,16 +20,27 @@ lastReviewedCommit: 02d4457804ef72bd42909025f4f82b16972476da
 
 # LCA Living Knowledge Base and Review
 
+[Fossil resources #117](https://github.com/tiangong-lca/knowledge-base/issues/117)
+extends B14 with fossil heating values, energy-carrier category boundaries and
+fuel-specific surplus costs. Its [comparison record](_docs/editorial/2026-11-16-fossil-resources.md)
+aligns ILCD scarcity criteria against EF `1 MJ/MJ` net calorific value and ReCiPe
+`kg oil-eq` higher heating value midpoints, traces natural uranium across EF's
+fossil/energy-carrier method and elemental `ADP`/mineral `SOP`, and demonstrates
+why equal `1 kg oil-eq` midpoint extractions diverge across fuel-specific `SCP`
+curves and egalitarian brown-coal/peat proxies while preserving source formula
+and unit gaps. Eight new canonical paragraphs and one explicit three-example
+closing sync preserve all 935 pre-#115 claims and nine #115 claims, with all
+three B14 historical scope generations and both print-visible note revision
+notices independently qualified.
+
 [Mineral resources #115](https://github.com/tiangong-lca/knowledge-base/issues/115)
 compares geological depletion, future ore requirements and modeled采选 costs on
 explicit element-mass and scenario bases. Its [comparison record](_docs/editorial/2026-11-16-mineral-resources.md)
 preserves source discrepancies and the shared-multiplier limits, with separate
 source,26-paragraph reader and actual-output acceptance. The old opening has an
-explicit dated correction;934 other historical claims remain exact. Both older
-B14 scope generations remain independently qualified. Actual print-media review
-found and fixed a hidden correction note before acceptance. Clean production,
-source PR/CI/hosting and exact root delivery remain tracked on115; programme9
-and the continuing whole-book work stay active.
+explicit dated correction;934 other historical claims remain exact. Unit #115 is
+fully delivered at Main `ba8a101b1cd8eade0eb2da5e04323dd9dacaa53c`, qualified
+468-file hosting and root #2409 (`b7ecaa4b09c6a649739e820236e39070ec453d35`).
 
 [Acid equivalents #113](https://github.com/tiangong-lca/knowledge-base/issues/113)
 compares modeled receiving quantities and exact EF3.1 factor identities. Its

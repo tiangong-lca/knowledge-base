@@ -1,0 +1,1359 @@
+{
+  "schemaVersion": 1,
+  "kind": "source",
+  "unit": "fossil-resources-117",
+  "subjectSha256": "85dfd390d73c281ac23fe78875fa5ad472e6dd983c043a65b27da69085cb27b2",
+  "date": "2026-11-16",
+  "scope": [
+    "content/docs/book/midpoint-endpoint-value-choices.mdx",
+    "claims:cl-mineral115-judgment",
+    "sources:src-book-ilcd-2011-lcia-recommendations",
+    "sources:src-flow-pilot-ef31-update",
+    "sources:src-land111-rivm2016",
+    "sources:src-mineral115-vanoers2020",
+    "sources:src-mineral115-vanoers2020-esm1",
+    "readings:rd-ilcd-2011-eutrophication-pathways",
+    "readings:rd-flow-pilot-ef31",
+    "readings:rd-flow-pilot-ef31-update",
+    "readings:rd-land111-rivm2016",
+    "readings:rd-mineral115-vanoers2020",
+    "readings:rd-mineral115-vanoers2020-esm1",
+    "literature:lit-m05",
+    "literature:work-ilcd-2011-lcia-recommendations",
+    "literature:work-flow-pilot-ef31",
+    "literature:work-flow-pilot-ef31-update",
+    "literature:work-mineral115-vanoers2020",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:order:sources",
+    "researchMetadata:order:readings",
+    "researchMetadata:order:gaps",
+    "researchMetadata:order:revisions",
+    "researchMetadata:order:literature",
+    "researchMetadata:order:queries",
+    "researchMetadata:public-projection",
+    "claims:cl-fossil117-scarcity-energy",
+    "claims:cl-fossil117-heating-basis",
+    "claims:cl-fossil117-uranium-boundary",
+    "claims:cl-fossil117-scenario-proxy",
+    "claims:cl-fossil117-equal-midpoint",
+    "claims:cl-fossil117-proxy-consequence",
+    "claims:cl-fossil117-printed-limits",
+    "claims:cl-fossil117-bridge",
+    "evidence:ev-fossil117-ilcd2011-exergy-and-adp",
+    "evidence:ev-fossil117-ilcd2011-combined-adp",
+    "evidence:ev-fossil117-jrc109369-energy-carriers",
+    "evidence:ev-fossil117-ef31-unchanged-resources",
+    "evidence:ev-fossil117-ef31-fossil-factors",
+    "evidence:ev-fossil117-ef31-ncv-and-mineral-boundary",
+    "evidence:ev-fossil117-adp2020-split",
+    "evidence:ev-fossil117-adp2020-uranium-element",
+    "evidence:ev-fossil117-esm1-elements-scope",
+    "evidence:ev-fossil117-esm1-uranium",
+    "evidence:ev-fossil117-rivm-uranium-sop",
+    "evidence:ev-fossil117-rivm-ffp-and-hhv",
+    "evidence:ev-fossil117-rivm-scp-endpoint",
+    "evidence:ev-fossil117-rivm-scp-curve-discrepancy",
+    "sources:src-fossil117-jrc109369",
+    "sources:src-fossil117-ef31-selected-members",
+    "readings:rd-fossil117-jrc109369",
+    "gaps:gap-fossil117-vieira-fossil-manuscript",
+    "revisions:rev-fossil117-rivm-and-ef-energy-carriers",
+    "literature:work-fossil117-jrc109369",
+    "queries:q-fossil117-energy-carriers-and-costs-20261116"
+  ],
+  "observed": "Primary scoped judgment integrating two-round independent source, full-chapter reader and publication-engineering audits with direct original, export and browser/print checks; no human or empirical certification.",
+  "observations": {
+    "state": {
+      "before": "93d92634ba66bf752bb64140ca8158db30014a4e39687e87382de98219adecd4",
+      "after": "7fad5bd4a52cc5a2cd38d56d522c6d343b68a24d9abde742bfb3fda4e89aacf2"
+    },
+    "changes": [
+      {
+        "kind": "file",
+        "key": "content/docs/book/midpoint-endpoint-value-choices.mdx",
+        "from": "97cac70b23d764f2736c6aa3f299c7308cc8ea2f60f91f1df48a888861a4ddc7",
+        "to": "1ded5b9fb303ffc2dd5e859bc9207dafcaf34c35de3b618e452cadb78c061243",
+        "rationale": "在B14既定三节内增补八段化石燃料热值、能量载体边界与燃料终点费用比较论述，保持原有章节锚点与既有段落次序。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-mineral115-judgment",
+        "from": {
+          "raw": "a8e6255aee7bec4c94d8ed618222cff8d7323c054b4ab518f4e6f8bc1aada8c3",
+          "public": "a8e6255aee7bec4c94d8ed618222cff8d7323c054b4ab518f4e6f8bc1aada8c3",
+          "protected": "57a0ca8f0acf7c4e8098d4bb0eaa3f74929c39b76ae13fec62597108926fb069"
+        },
+        "to": {
+          "raw": "67dc02fdfc12d1d74fd81616ca6c06c7100e7cd5fe9b0f11277794056569812d",
+          "public": "67dc02fdfc12d1d74fd81616ca6c06c7100e7cd5fe9b0f11277794056569812d",
+          "protected": "8bd8b9d4ab28438c39ccd78aff51453b06bbfacf561ee9202058876a914e36d0"
+        },
+        "rationale": "在B14新增化石能源与能量载体比较后，将收束段“土地和矿产两个例子”具名同步为“土地、化石能源与矿产三个例子”，并补绑化石终点费用证据。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-book-ilcd-2011-lcia-recommendations",
+        "from": {
+          "raw": "1bd8223b53da9166edd33ef3660fed251908997d151feaaaf362485c678a83f4",
+          "public": "1bd8223b53da9166edd33ef3660fed251908997d151feaaaf362485c678a83f4",
+          "protected": "1bd8223b53da9166edd33ef3660fed251908997d151feaaaf362485c678a83f4"
+        },
+        "to": {
+          "raw": "5d392be15d6fc38f74366cf611155c0836c89fb887a31875af2161d327ab596f",
+          "public": "5d392be15d6fc38f74366cf611155c0836c89fb887a31875af2161d327ab596f",
+          "protected": "5d392be15d6fc38f74366cf611155c0836c89fb887a31875af2161d327ab596f"
+        },
+        "rationale": "登记JRC109369与EF 3.1选定成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-flow-pilot-ef31-update",
+        "from": {
+          "raw": "ae032437ab5cc0c4d6f38ff68d3b66a54983d41a2eae65407b4465e71affb397",
+          "public": "ae032437ab5cc0c4d6f38ff68d3b66a54983d41a2eae65407b4465e71affb397",
+          "protected": "ae032437ab5cc0c4d6f38ff68d3b66a54983d41a2eae65407b4465e71affb397"
+        },
+        "to": {
+          "raw": "16cd7ee993c30120a0d7c457c8bf74749153699f0617143dc765cc4587cbf1dd",
+          "public": "16cd7ee993c30120a0d7c457c8bf74749153699f0617143dc765cc4587cbf1dd",
+          "protected": "16cd7ee993c30120a0d7c457c8bf74749153699f0617143dc765cc4587cbf1dd"
+        },
+        "rationale": "登记JRC109369与EF 3.1选定成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-land111-rivm2016",
+        "from": {
+          "raw": "73e98db373bc2c415fd074d0a352d3940265ccc095927e4737325cac1ef2a709",
+          "public": "73e98db373bc2c415fd074d0a352d3940265ccc095927e4737325cac1ef2a709",
+          "protected": "73e98db373bc2c415fd074d0a352d3940265ccc095927e4737325cac1ef2a709"
+        },
+        "to": {
+          "raw": "78228d6e44d9db513c3a2b23089bdc266d8fb5a5d940d994a8bc73fdb9554a7c",
+          "public": "78228d6e44d9db513c3a2b23089bdc266d8fb5a5d940d994a8bc73fdb9554a7c",
+          "protected": "78228d6e44d9db513c3a2b23089bdc266d8fb5a5d940d994a8bc73fdb9554a7c"
+        },
+        "rationale": "登记JRC109369与EF 3.1选定成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-mineral115-vanoers2020",
+        "from": {
+          "raw": "3fd16cf20979d7b1d522c9b555307aefa568e1b91f55041f59ac529a3ccd24c2",
+          "public": "3fd16cf20979d7b1d522c9b555307aefa568e1b91f55041f59ac529a3ccd24c2",
+          "protected": "3fd16cf20979d7b1d522c9b555307aefa568e1b91f55041f59ac529a3ccd24c2"
+        },
+        "to": {
+          "raw": "6c77715d436776d5610269b2424446be917def4f68329d3f287d9f76ccbf0674",
+          "public": "6c77715d436776d5610269b2424446be917def4f68329d3f287d9f76ccbf0674",
+          "protected": "6c77715d436776d5610269b2424446be917def4f68329d3f287d9f76ccbf0674"
+        },
+        "rationale": "登记JRC109369与EF 3.1选定成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-mineral115-vanoers2020-esm1",
+        "from": {
+          "raw": "db967d93842b4d77d535be502a870a8bb9efbcd7e00750fd0dd0368107f13917",
+          "public": "db967d93842b4d77d535be502a870a8bb9efbcd7e00750fd0dd0368107f13917",
+          "protected": "db967d93842b4d77d535be502a870a8bb9efbcd7e00750fd0dd0368107f13917"
+        },
+        "to": {
+          "raw": "3201e15cb2e5833d264b98ed9bd236e0ad318e26f05ce2bcce32baaf1f6815cc",
+          "public": "3201e15cb2e5833d264b98ed9bd236e0ad318e26f05ce2bcce32baaf1f6815cc",
+          "protected": "3201e15cb2e5833d264b98ed9bd236e0ad318e26f05ce2bcce32baaf1f6815cc"
+        },
+        "rationale": "登记JRC109369与EF 3.1选定成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-ilcd-2011-eutrophication-pathways",
+        "from": {
+          "raw": "95b57a26881d3bd4d19103dbff086b08f0f9b32086f2cb2f064c5a4cc40baf7d",
+          "public": null,
+          "protected": "95b57a26881d3bd4d19103dbff086b08f0f9b32086f2cb2f064c5a4cc40baf7d"
+        },
+        "to": {
+          "raw": "0befa2b944ecb9ac9ba883430457fddde7133a4077f5f2fc812cdf2edfff6eb4",
+          "public": null,
+          "protected": "0befa2b944ecb9ac9ba883430457fddde7133a4077f5f2fc812cdf2edfff6eb4"
+        },
+        "rationale": "登记JRC109369与EF 3.1选定成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-flow-pilot-ef31",
+        "from": {
+          "raw": "d97cbedc1655807575716718b3c78b88f0a4ac8e5ba97677fb75cc83df0fa640",
+          "public": null,
+          "protected": "d97cbedc1655807575716718b3c78b88f0a4ac8e5ba97677fb75cc83df0fa640"
+        },
+        "to": {
+          "raw": "8eb02459c19e6bc2220e3dc6d778fe6eeddbf3d7984b52c0a5257b9ea0008855",
+          "public": null,
+          "protected": "8eb02459c19e6bc2220e3dc6d778fe6eeddbf3d7984b52c0a5257b9ea0008855"
+        },
+        "rationale": "登记JRC109369与EF 3.1选定成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-flow-pilot-ef31-update",
+        "from": {
+          "raw": "bfd2f0e3fb43ceacdd9d7f43b3e3ba1dc68b406e5411523c98adbe572f7b3ea1",
+          "public": null,
+          "protected": "bfd2f0e3fb43ceacdd9d7f43b3e3ba1dc68b406e5411523c98adbe572f7b3ea1"
+        },
+        "to": {
+          "raw": "835e4da2cdf08d6a0a52732c59412ea238cefd7639f59b4471fa8448cd6b93bd",
+          "public": null,
+          "protected": "835e4da2cdf08d6a0a52732c59412ea238cefd7639f59b4471fa8448cd6b93bd"
+        },
+        "rationale": "登记JRC109369与EF 3.1选定成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-land111-rivm2016",
+        "from": {
+          "raw": "a0a927e207b400bfd94e3abc1f7568943613b7642ef4294a2bbcdd47f7941501",
+          "public": null,
+          "protected": "a0a927e207b400bfd94e3abc1f7568943613b7642ef4294a2bbcdd47f7941501"
+        },
+        "to": {
+          "raw": "1ee61343d4df755582c7536bbf96305d68de3cc1916e96a3c6ff3965d9776158",
+          "public": null,
+          "protected": "1ee61343d4df755582c7536bbf96305d68de3cc1916e96a3c6ff3965d9776158"
+        },
+        "rationale": "登记JRC109369与EF 3.1选定成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-mineral115-vanoers2020",
+        "from": {
+          "raw": "5ea89069081d47896ed74f2dfdeaedf3d7f23e1d85852644a20cdfad812220ed",
+          "public": null,
+          "protected": "5ea89069081d47896ed74f2dfdeaedf3d7f23e1d85852644a20cdfad812220ed"
+        },
+        "to": {
+          "raw": "9f6dd30c1e2e0a6a27199a6b10055932a67aea346001d4f702a51502a1eb7b2a",
+          "public": null,
+          "protected": "9f6dd30c1e2e0a6a27199a6b10055932a67aea346001d4f702a51502a1eb7b2a"
+        },
+        "rationale": "登记JRC109369与EF 3.1选定成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-mineral115-vanoers2020-esm1",
+        "from": {
+          "raw": "fffd3281c134d42db54c5e243a2ec0e3bdba6d5cb290810fd8dbfcbe30995336",
+          "public": null,
+          "protected": "fffd3281c134d42db54c5e243a2ec0e3bdba6d5cb290810fd8dbfcbe30995336"
+        },
+        "to": {
+          "raw": "72eb2e2e60d5eb581c4e86394ddc59c825fe16e586b999406d6f34a46a6fe880",
+          "public": null,
+          "protected": "72eb2e2e60d5eb581c4e86394ddc59c825fe16e586b999406d6f34a46a6fe880"
+        },
+        "rationale": "登记JRC109369与EF 3.1选定成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:lit-m05",
+        "from": {
+          "raw": "6197b65503c952a113c5d31e045979532bcd26c91a540e3f8fe5b6a46e9c2716",
+          "public": null,
+          "protected": "6197b65503c952a113c5d31e045979532bcd26c91a540e3f8fe5b6a46e9c2716"
+        },
+        "to": {
+          "raw": "520241bafeacdbe3fda29bb7e5b34e49912f8c72b2ff3c2374ce5a65c4af637c",
+          "public": null,
+          "protected": "520241bafeacdbe3fda29bb7e5b34e49912f8c72b2ff3c2374ce5a65c4af637c"
+        },
+        "rationale": "登记JRC109369与EF 3.1选定成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-ilcd-2011-lcia-recommendations",
+        "from": {
+          "raw": "ce406a9d6ca7219fe8cdda4a9a0bb983a3b65c623750c55f5e334625adafeb08",
+          "public": null,
+          "protected": "ce406a9d6ca7219fe8cdda4a9a0bb983a3b65c623750c55f5e334625adafeb08"
+        },
+        "to": {
+          "raw": "e6d38cb26cab24a791f975cbaa5a013271b4842608fdbb36204b8e2ad15f23e5",
+          "public": null,
+          "protected": "e6d38cb26cab24a791f975cbaa5a013271b4842608fdbb36204b8e2ad15f23e5"
+        },
+        "rationale": "登记JRC109369与EF 3.1选定成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-flow-pilot-ef31",
+        "from": {
+          "raw": "cca12dd7cf8f80a21be5f43231619312c40c0caed0bb616d7ee2cd45f470243d",
+          "public": null,
+          "protected": "cca12dd7cf8f80a21be5f43231619312c40c0caed0bb616d7ee2cd45f470243d"
+        },
+        "to": {
+          "raw": "f63a16a9ec8cdc70a6006a31a8264c5647621be86a370a6b1d3ba2862d4201b5",
+          "public": null,
+          "protected": "f63a16a9ec8cdc70a6006a31a8264c5647621be86a370a6b1d3ba2862d4201b5"
+        },
+        "rationale": "登记JRC109369与EF 3.1选定成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-flow-pilot-ef31-update",
+        "from": {
+          "raw": "4c6a8ca62e7ebf7ee94e32091b141c27166ec20d1eafaa614c31da811e4a710b",
+          "public": null,
+          "protected": "4c6a8ca62e7ebf7ee94e32091b141c27166ec20d1eafaa614c31da811e4a710b"
+        },
+        "to": {
+          "raw": "c970e4506121fc3fc8f7dbae6a94d1a7d8ea650ec3869a40cd129a5f39a5f512",
+          "public": null,
+          "protected": "c970e4506121fc3fc8f7dbae6a94d1a7d8ea650ec3869a40cd129a5f39a5f512"
+        },
+        "rationale": "登记JRC109369与EF 3.1选定成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-mineral115-vanoers2020",
+        "from": {
+          "raw": "37c2f39ce83886c119972abb86f1e9449f27c3b24bdcb98b88d28271e21a96bb",
+          "public": null,
+          "protected": "37c2f39ce83886c119972abb86f1e9449f27c3b24bdcb98b88d28271e21a96bb"
+        },
+        "to": {
+          "raw": "83b3fa9f36efbae466f4c774526617cf959795ecda144cc308b935746554cfe1",
+          "public": null,
+          "protected": "83b3fa9f36efbae466f4c774526617cf959795ecda144cc308b935746554cfe1"
+        },
+        "rationale": "登记JRC109369与EF 3.1选定成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:claims",
+        "from": {
+          "raw": "4e5e8b810f64acabbb9f5f61104643c47f84b844f2533e8100b50ebe95878dce",
+          "public": null,
+          "protected": "4e5e8b810f64acabbb9f5f61104643c47f84b844f2533e8100b50ebe95878dce"
+        },
+        "to": {
+          "raw": "ad8f24eae134604f2cb2e4e172461b336985fa6f440cf615dc6a318e4ca040ff",
+          "public": null,
+          "protected": "ad8f24eae134604f2cb2e4e172461b336985fa6f440cf615dc6a318e4ca040ff"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:evidence",
+        "from": {
+          "raw": "92e2e9546c47412719216f789affbc6dc1dd0332945dd172d02885e094c055b5",
+          "public": null,
+          "protected": "92e2e9546c47412719216f789affbc6dc1dd0332945dd172d02885e094c055b5"
+        },
+        "to": {
+          "raw": "d0434745775e3f9f08941af99c09ddab929742a07afa48c773bbe84853537057",
+          "public": null,
+          "protected": "d0434745775e3f9f08941af99c09ddab929742a07afa48c773bbe84853537057"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:sources",
+        "from": {
+          "raw": "e733c84ec2885331d9bd35e2abf11af11e85a0fb2bf3aeda99c4c42145f51f01",
+          "public": null,
+          "protected": "e733c84ec2885331d9bd35e2abf11af11e85a0fb2bf3aeda99c4c42145f51f01"
+        },
+        "to": {
+          "raw": "9eb7a8e117600e1c59737d7395873f60d733f5742105df19aa65643556111b33",
+          "public": null,
+          "protected": "9eb7a8e117600e1c59737d7395873f60d733f5742105df19aa65643556111b33"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:readings",
+        "from": {
+          "raw": "66fdf72a4efc9e2b8a9362095bb750c082757d8ce711ffccf8da880c2aedfd07",
+          "public": null,
+          "protected": "66fdf72a4efc9e2b8a9362095bb750c082757d8ce711ffccf8da880c2aedfd07"
+        },
+        "to": {
+          "raw": "97e0d5b4022038e6467c95e34d3f26aa92d9f703b9d45df488533134eb57c861",
+          "public": null,
+          "protected": "97e0d5b4022038e6467c95e34d3f26aa92d9f703b9d45df488533134eb57c861"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:gaps",
+        "from": {
+          "raw": "134dae90372383309215be5ca09c0ea999c737c23203c6e41b1bee882f7b25f5",
+          "public": null,
+          "protected": "134dae90372383309215be5ca09c0ea999c737c23203c6e41b1bee882f7b25f5"
+        },
+        "to": {
+          "raw": "d5fbe6746f5cd9766b4ed22f457cb9dc03565e00e735bbd50f45d0c76e68b82e",
+          "public": null,
+          "protected": "d5fbe6746f5cd9766b4ed22f457cb9dc03565e00e735bbd50f45d0c76e68b82e"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:revisions",
+        "from": {
+          "raw": "813d78bfaa90bb00275ceca5f1a314582ec6e1bf535ba1d9661438c0572ae11f",
+          "public": null,
+          "protected": "813d78bfaa90bb00275ceca5f1a314582ec6e1bf535ba1d9661438c0572ae11f"
+        },
+        "to": {
+          "raw": "9a815feb17e59df97c70611064b8e2f2755ba9743b0c92d76779e32ef48330cf",
+          "public": null,
+          "protected": "9a815feb17e59df97c70611064b8e2f2755ba9743b0c92d76779e32ef48330cf"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:literature",
+        "from": {
+          "raw": "f52a281aa9f89b2e8947e3cc12cc842607f6f329350829dd4103bcef3cdb0a9d",
+          "public": null,
+          "protected": "f52a281aa9f89b2e8947e3cc12cc842607f6f329350829dd4103bcef3cdb0a9d"
+        },
+        "to": {
+          "raw": "73b96b7ce2fb38eb5b5c295f2675e4ee77112653964c1e00e0635d1c60256fc9",
+          "public": null,
+          "protected": "73b96b7ce2fb38eb5b5c295f2675e4ee77112653964c1e00e0635d1c60256fc9"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:queries",
+        "from": {
+          "raw": "20326b6101b8e37a9e035331e8f3434411ad73261ca9d8ef12b7eb569cfc1e0b",
+          "public": null,
+          "protected": "20326b6101b8e37a9e035331e8f3434411ad73261ca9d8ef12b7eb569cfc1e0b"
+        },
+        "to": {
+          "raw": "bcf5d12bd4e53cca7918b48783853328862158948d99e09a8b47aa9ee52a1b52",
+          "public": null,
+          "protected": "bcf5d12bd4e53cca7918b48783853328862158948d99e09a8b47aa9ee52a1b52"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:public-projection",
+        "from": {
+          "raw": "22fcd98f4c49e68f0cae2af575cac70e2bf0c55d29cc26554a375a22e0d0ed7b",
+          "public": null,
+          "protected": "22fcd98f4c49e68f0cae2af575cac70e2bf0c55d29cc26554a375a22e0d0ed7b"
+        },
+        "to": {
+          "raw": "67fe35cac1dd5918d31ee19577fc7ba5900d1cd623957fcb2aa477746b09f6d0",
+          "public": null,
+          "protected": "67fe35cac1dd5918d31ee19577fc7ba5900d1cd623957fcb2aa477746b09f6d0"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fossil117-scarcity-energy",
+        "from": null,
+        "to": {
+          "raw": "c24a8a587a9d960fa174f756dac3d28d2c54ce8b3e50c8e289ed48d5c1a8acbc",
+          "public": "c24a8a587a9d960fa174f756dac3d28d2c54ce8b3e50c8e289ed48d5c1a8acbc",
+          "protected": "9af5149f7d39c092b5e78ffb3cef7d9a572e76eb18aa043ade8d849730000f10"
+        },
+        "rationale": "基于已核原件、EF 3.1流属性定义与受控等中点热值演算新增B14规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fossil117-heating-basis",
+        "from": null,
+        "to": {
+          "raw": "974dfb7706eafdee1f10b7ca7b6b465af134664e9bd37a1f9dbef1d57a9a58fb",
+          "public": "974dfb7706eafdee1f10b7ca7b6b465af134664e9bd37a1f9dbef1d57a9a58fb",
+          "protected": "125965a1167b26b162726ddf66b864f62965eeada1d0c7c7a7a5feef46f5536c"
+        },
+        "rationale": "基于已核原件、EF 3.1流属性定义与受控等中点热值演算新增B14规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fossil117-uranium-boundary",
+        "from": null,
+        "to": {
+          "raw": "46d5a5f949ffa908886c1dc0166da56199d3fcd99043961be5c66d17b223e257",
+          "public": "46d5a5f949ffa908886c1dc0166da56199d3fcd99043961be5c66d17b223e257",
+          "protected": "460347a42fc24d1a18c0d6cd264eeded20b9b49b49305957c676ec58aa33fd75"
+        },
+        "rationale": "基于已核原件、EF 3.1流属性定义与受控等中点热值演算新增B14规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fossil117-scenario-proxy",
+        "from": null,
+        "to": {
+          "raw": "4c2eb57a5a4aef7786bd8698f98c834b021eaf3a685b5c6e44e36f77f5a455fb",
+          "public": "4c2eb57a5a4aef7786bd8698f98c834b021eaf3a685b5c6e44e36f77f5a455fb",
+          "protected": "2413a851a55c133e4c96b11ba8d4dbd33e3dbb4becc73f781601046ef0c4ac00"
+        },
+        "rationale": "基于已核原件、EF 3.1流属性定义与受控等中点热值演算新增B14规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fossil117-equal-midpoint",
+        "from": null,
+        "to": {
+          "raw": "0d9508df652d262889a46dc2c06fa6d19f3458c75ccb743e5dc983c3530ee730",
+          "public": "0d9508df652d262889a46dc2c06fa6d19f3458c75ccb743e5dc983c3530ee730",
+          "protected": "1d90a110ac9af730a98a02969fa6e4a18cba6c7dbf1de437e82eba787a6b46ac"
+        },
+        "rationale": "基于已核原件、EF 3.1流属性定义与受控等中点热值演算新增B14规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fossil117-proxy-consequence",
+        "from": null,
+        "to": {
+          "raw": "d7aa72ffbbb84c66229fdb77da5ffd1f129a0e93c99b999e1f3a22cba9047c2b",
+          "public": "d7aa72ffbbb84c66229fdb77da5ffd1f129a0e93c99b999e1f3a22cba9047c2b",
+          "protected": "4d1bb5fbbcb982b9bd9508d876caa992efe7b1a351ff6b9ca76a32be74ca382a"
+        },
+        "rationale": "基于已核原件、EF 3.1流属性定义与受控等中点热值演算新增B14规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fossil117-printed-limits",
+        "from": null,
+        "to": {
+          "raw": "315d4ad0f2f8f143db945dbf03dfcce67173949ef0d1421b837c5ac713e37c3c",
+          "public": "315d4ad0f2f8f143db945dbf03dfcce67173949ef0d1421b837c5ac713e37c3c",
+          "protected": "8f9c52c132ac1f2514ae1e830aee9d54d6e7e80c45488ffb1e9c4389379dac10"
+        },
+        "rationale": "基于已核原件、EF 3.1流属性定义与受控等中点热值演算新增B14规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fossil117-bridge",
+        "from": null,
+        "to": {
+          "raw": "29e43a6e53a8765ea539f8b14983babb1804f21a4cf3717f59e802ad00ba5b31",
+          "public": "29e43a6e53a8765ea539f8b14983babb1804f21a4cf3717f59e802ad00ba5b31",
+          "protected": "9cea1f0a2fb7156efbead9fc81137442aed2d0585374a272a4977b92bbae662d"
+        },
+        "rationale": "基于已核原件、EF 3.1流属性定义与受控等中点热值演算新增B14规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fossil117-ilcd2011-exergy-and-adp",
+        "from": null,
+        "to": {
+          "raw": "41d6c554a1fa97587291593348d42ae482cb9e153b1db680acfaff0a2d565b76",
+          "public": "41d6c554a1fa97587291593348d42ae482cb9e153b1db680acfaff0a2d565b76",
+          "protected": "41d6c554a1fa97587291593348d42ae482cb9e153b1db680acfaff0a2d565b76"
+        },
+        "rationale": "绑定一手报告、工作簿、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fossil117-ilcd2011-combined-adp",
+        "from": null,
+        "to": {
+          "raw": "c105282c2be137b4102048ff73ea83aecfd418c03e630aa59fdacabb46013f08",
+          "public": "c105282c2be137b4102048ff73ea83aecfd418c03e630aa59fdacabb46013f08",
+          "protected": "c105282c2be137b4102048ff73ea83aecfd418c03e630aa59fdacabb46013f08"
+        },
+        "rationale": "绑定一手报告、工作簿、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fossil117-jrc109369-energy-carriers",
+        "from": null,
+        "to": {
+          "raw": "aa7ef8f8e7f359e33e7420b763860f55b96ed53d1836ae9217bfab80c106997a",
+          "public": "aa7ef8f8e7f359e33e7420b763860f55b96ed53d1836ae9217bfab80c106997a",
+          "protected": "aa7ef8f8e7f359e33e7420b763860f55b96ed53d1836ae9217bfab80c106997a"
+        },
+        "rationale": "绑定一手报告、工作簿、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fossil117-ef31-unchanged-resources",
+        "from": null,
+        "to": {
+          "raw": "9e3bdf55b9a6abc6e9b2886c51ee11fbf16a50ef8c7c5a4771b66104fdac45f6",
+          "public": "9e3bdf55b9a6abc6e9b2886c51ee11fbf16a50ef8c7c5a4771b66104fdac45f6",
+          "protected": "9e3bdf55b9a6abc6e9b2886c51ee11fbf16a50ef8c7c5a4771b66104fdac45f6"
+        },
+        "rationale": "绑定一手报告、工作簿、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fossil117-ef31-fossil-factors",
+        "from": null,
+        "to": {
+          "raw": "6973185a1972a46bcfcb4d2c94cce1d9270859828f361830aeb42df50f4ef2d1",
+          "public": "6973185a1972a46bcfcb4d2c94cce1d9270859828f361830aeb42df50f4ef2d1",
+          "protected": "6973185a1972a46bcfcb4d2c94cce1d9270859828f361830aeb42df50f4ef2d1"
+        },
+        "rationale": "绑定一手报告、工作簿、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fossil117-ef31-ncv-and-mineral-boundary",
+        "from": null,
+        "to": {
+          "raw": "cedc8f6b621c02d1e62fb9db8c5ca35c23aef96ca430cd09f85fb385c39f2cac",
+          "public": "cedc8f6b621c02d1e62fb9db8c5ca35c23aef96ca430cd09f85fb385c39f2cac",
+          "protected": "cedc8f6b621c02d1e62fb9db8c5ca35c23aef96ca430cd09f85fb385c39f2cac"
+        },
+        "rationale": "绑定一手报告、工作簿、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fossil117-adp2020-split",
+        "from": null,
+        "to": {
+          "raw": "8476c9d74da63f7cdd2a6ec5907188c9ed4360010599d6060fb3c3b372088db8",
+          "public": "8476c9d74da63f7cdd2a6ec5907188c9ed4360010599d6060fb3c3b372088db8",
+          "protected": "8476c9d74da63f7cdd2a6ec5907188c9ed4360010599d6060fb3c3b372088db8"
+        },
+        "rationale": "绑定一手报告、工作簿、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fossil117-adp2020-uranium-element",
+        "from": null,
+        "to": {
+          "raw": "ac1ef04171c0dba6adb179b0b80ee1e347d52b0509071ed5b8ef6cfdff162926",
+          "public": "ac1ef04171c0dba6adb179b0b80ee1e347d52b0509071ed5b8ef6cfdff162926",
+          "protected": "ac1ef04171c0dba6adb179b0b80ee1e347d52b0509071ed5b8ef6cfdff162926"
+        },
+        "rationale": "绑定一手报告、工作簿、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fossil117-esm1-elements-scope",
+        "from": null,
+        "to": {
+          "raw": "f5dad000c76d5c38753b014ebf2a26adfe076cfee6867703ac83ae39e37932f1",
+          "public": "f5dad000c76d5c38753b014ebf2a26adfe076cfee6867703ac83ae39e37932f1",
+          "protected": "f5dad000c76d5c38753b014ebf2a26adfe076cfee6867703ac83ae39e37932f1"
+        },
+        "rationale": "绑定一手报告、工作簿、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fossil117-esm1-uranium",
+        "from": null,
+        "to": {
+          "raw": "0e8e35b43a661228e93f276f0e7aba5bb362075e7fa1c5afdb02d28adac1b4ad",
+          "public": "0e8e35b43a661228e93f276f0e7aba5bb362075e7fa1c5afdb02d28adac1b4ad",
+          "protected": "0e8e35b43a661228e93f276f0e7aba5bb362075e7fa1c5afdb02d28adac1b4ad"
+        },
+        "rationale": "绑定一手报告、工作簿、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fossil117-rivm-uranium-sop",
+        "from": null,
+        "to": {
+          "raw": "e2e7368aadce460f230f5f77f243ce4dcf4199ee939d0802e478568d32988d5f",
+          "public": "e2e7368aadce460f230f5f77f243ce4dcf4199ee939d0802e478568d32988d5f",
+          "protected": "e2e7368aadce460f230f5f77f243ce4dcf4199ee939d0802e478568d32988d5f"
+        },
+        "rationale": "绑定一手报告、工作簿、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fossil117-rivm-ffp-and-hhv",
+        "from": null,
+        "to": {
+          "raw": "3f3ca27ce6077f713d312329e770b7250094a137f686ea3b916eefa54e7907e4",
+          "public": "3f3ca27ce6077f713d312329e770b7250094a137f686ea3b916eefa54e7907e4",
+          "protected": "3f3ca27ce6077f713d312329e770b7250094a137f686ea3b916eefa54e7907e4"
+        },
+        "rationale": "绑定一手报告、工作簿、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fossil117-rivm-scp-endpoint",
+        "from": null,
+        "to": {
+          "raw": "21011506824210f2d1ed8ddffc736faee3fa98ddd0668b5db910a214e6c67bec",
+          "public": "21011506824210f2d1ed8ddffc736faee3fa98ddd0668b5db910a214e6c67bec",
+          "protected": "21011506824210f2d1ed8ddffc736faee3fa98ddd0668b5db910a214e6c67bec"
+        },
+        "rationale": "绑定一手报告、工作簿、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fossil117-rivm-scp-curve-discrepancy",
+        "from": null,
+        "to": {
+          "raw": "de09e8a2afe3159a40985abc099c41e679539d2557262a8704f0df2118d0ebc2",
+          "public": "de09e8a2afe3159a40985abc099c41e679539d2557262a8704f0df2118d0ebc2",
+          "protected": "de09e8a2afe3159a40985abc099c41e679539d2557262a8704f0df2118d0ebc2"
+        },
+        "rationale": "绑定一手报告、工作簿、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-fossil117-jrc109369",
+        "from": null,
+        "to": {
+          "raw": "81972801421400fe7599c5d9f8548d956724d79ea9e719856f697526a682a62c",
+          "public": "81972801421400fe7599c5d9f8548d956724d79ea9e719856f697526a682a62c",
+          "protected": "81972801421400fe7599c5d9f8548d956724d79ea9e719856f697526a682a62c"
+        },
+        "rationale": "登记JRC109369与EF 3.1选定成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-fossil117-ef31-selected-members",
+        "from": null,
+        "to": {
+          "raw": "20370bbf06db3f41351a1239889703dc0389488317a9602bb5522ab12c2190c8",
+          "public": "20370bbf06db3f41351a1239889703dc0389488317a9602bb5522ab12c2190c8",
+          "protected": "20370bbf06db3f41351a1239889703dc0389488317a9602bb5522ab12c2190c8"
+        },
+        "rationale": "登记JRC109369与EF 3.1选定成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-fossil117-jrc109369",
+        "from": null,
+        "to": {
+          "raw": "1b5ab2f927c17335bcc5db4048ad0c91a790a8fcaf2735df1e49ffa9f824c374",
+          "public": null,
+          "protected": "1b5ab2f927c17335bcc5db4048ad0c91a790a8fcaf2735df1e49ffa9f824c374"
+        },
+        "rationale": "登记JRC109369与EF 3.1选定成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "gaps:gap-fossil117-vieira-fossil-manuscript",
+        "from": null,
+        "to": {
+          "raw": "a83410c017237536559d19d80ce0eb4ff12572aeaeeb29afe43db57308f023e5",
+          "public": null,
+          "protected": "a83410c017237536559d19d80ce0eb4ff12572aeaeeb29afe43db57308f023e5"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "revisions:rev-fossil117-rivm-and-ef-energy-carriers",
+        "from": null,
+        "to": {
+          "raw": "1b2f638f9ce17c3a2318a39a09257008f1ba77721b5ceed785f3d4590fddb89f",
+          "public": null,
+          "protected": "1b2f638f9ce17c3a2318a39a09257008f1ba77721b5ceed785f3d4590fddb89f"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-fossil117-jrc109369",
+        "from": null,
+        "to": {
+          "raw": "89c9cfd20f7696e2143c7436321fa5228c7e3c1d46ceaa139eaefdc0cf14b258",
+          "public": null,
+          "protected": "89c9cfd20f7696e2143c7436321fa5228c7e3c1d46ceaa139eaefdc0cf14b258"
+        },
+        "rationale": "登记JRC109369与EF 3.1选定成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "queries:q-fossil117-energy-carriers-and-costs-20261116",
+        "from": null,
+        "to": {
+          "raw": "4b4a2118359b1a56ae41d991003e03de14ecc6f3e9dba11f6cf65f1d3f41caf8",
+          "public": null,
+          "protected": "4b4a2118359b1a56ae41d991003e03de14ecc6f3e9dba11f6cf65f1d3f41caf8"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      }
+    ],
+    "consumers": [
+      {
+        "id": "cl-lcia-midpoint-pathway",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lcia-endpoint-units",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lcia-mid-end-conversion-limits",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lcia-model-data-factor-separation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-connect-reuse-keeps-relation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-path-terrestrial",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-path-units",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-path-marginal-average",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-path-supplied-effect-conditions",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-path-background",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-path-pdf",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-path-multiple-paths",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-water-marginal-contexts",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-question",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-authority",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-three",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-equation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-why-square",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-nmvoc",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-nox",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-service",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-score",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-scale",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-threshold",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-test",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-later",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-es-judgment",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-purpose",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-policy-contrast",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-baseline",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-units",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-display",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-logit",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-trade",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-precision",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-primary-ratio",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-households",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-health",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-mismatch",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-annual",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-shares",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-two-forms",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-different-card",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-english",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-english-basis",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-service",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-japan-route",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-break-even",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-english-route",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-numeraire",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-edition",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-validity",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-null",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-order",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-transfer",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-lime-decision",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-opening",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-precursor-denominator",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-intake-definition",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-intake-unit",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-receptor-boundary",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-source-height",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-mixture-inputs",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-mixture-results",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-exposure-evidence",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-effect-definition",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-effect-default",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-urban-health",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-rural-health",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-precursor-health",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-burden-check",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-population-meaning",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-indoor-location",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-indoor-matrix",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-exposure-compatible",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-compatible-population",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-indoor-time",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-exposure-coverage",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-nonlinear-response",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-risk-reference",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-slope-meaning",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-finite-change",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-slope-context",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-ier-evidence",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-gemm-alternative",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-factor-correction",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-implementation-layer",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-chemistry-background",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-chemistry-perturbation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-chemistry-model-check",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-concentration-route",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-regional-factor",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-modern-values",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-modern-ratios",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-matched-scope",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-uncovered-pathways",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-conclusion",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-concentration-balance",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-activity-indicators",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-usetox-conclusion",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-source-distribution",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-evidence-levels",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-regional-summary",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-factor-order",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-matched-scenario",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-pm-version-and-model",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-flow99-identity-example",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-flow99-zero-reasons",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-flow99-zero-reporting",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-flow99-conclusion",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-land111-episode",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-land111-midpoint",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-land111-conversion",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-land111-pathway",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-land111-horizon",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-land111-factor-scale",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-land111-integral",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-land111-countercheck",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-land111-aggregation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-land111-printed-record",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-acid113-ae-question",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-acid113-threshold",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-acid113-glam-relation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-acid113-glam-tension",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-acid113-so2-rows",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-acid113-chemistry-control",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-acid113-shared-moles",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-acid113-nh3-control",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-mineral115-input",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-mineral115-adp",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-mineral115-sop",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-mineral115-reserves",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-mineral115-rank",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-mineral115-cost-proxy",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-mineral115-metal-cost",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-mineral115-calibration",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      },
+      {
+        "id": "cl-mineral115-assumptions",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认化石与能量载体增补及收束句三例同步不改变其既有前提含义与适用边界。"
+      }
+    ],
+    "assessment": {
+      "scope": "Selected ILCD 2011 (§3.11.6–§3.11.9), JRC109369 (unnumbered front leaves, p. 4 author page, §4.10), JRC130796 (§§1–2, Table 1), ten CRC32/HTTP-206 verified official EF 3.1 XML members (b2ad6110, b2ad6494, six energy-carrier flows, 93a60a56 Net calorific value, 93a60a57 Units of energy), Van Oers et al. 2020 uranium boundary passages + ESM1 OOXML (characterisation model!C10–C30, recommended ADP & norm data!I109), and original RIVM 2016-0104 Chapter 13 / §24 + Chapter 12 / §23.1 uranium row.",
+      "comparison": "Separates geological stock scarcity (ILCD 2011 rejection of constant unit exergy; combined Sb-eq ADP) from full-substitution energy-carrier midpoints (EF 1 MJ/MJ net calorific value vs ReCiPe FFP HHV_x/HHV_oil in kg oil-eq). Establishes conditional LHV-vs-HHV correspondence across five fossil fuels, the cross-category shift of natural uranium (EF Resource use, fossils 6th flow vs elemental ADP and mineral SOP), and why equal 1 kg oil-eq midpoint extractions diverge >5.6x in endpoint SCP (0.457 vs ~0.358 vs ~0.081 USD2013) while the egalitarian per-kg hard-coal proxy places brown coal/peat (~0.155 USD2013) at ~1.9x equal-energy hard coal.",
+      "values": "Fourteen ev-fossil117-* records bind 31 structured numeric facts with exact raw decimal fidelity (including full 17-digit OOXML cached uranium ADP 0.0078231761897435744 kg Sb eq/kg) and BigInt fixed-point verification of both rounded Table 13.1/13.2 ratios and unrounded Table S9.1 HHV controls.",
+      "limits": "Preserves RIVM p. 96 cross-table/figure misreferences (Table S9.2 for S9.1, Figure 11.2 for 13.2), attribution of the log-linear fossil cost formula to the mineral SOP paper Vieira et al. 2016b (p. 117), unclosed billion-barrel vs kg abscissa (40.0 - 4.45 ln(1.61e14) ≈ -105.6), hard coal CFE = n.a., USD2008 vs USD2013 labels, unobtained Vieira & Huijbregts (in preparation) / IEA 2013 curves, and EF 3.1 XML shortDescription Radioactivity legacy strings.",
+      "correction": "All 935 pre-#115 claims (including Note 1 opening correction) and nine #115 mineral claims remain byte-for-byte unchanged; only cl-mineral115-judgment (Note 33) receives an explicit dated three-example sync with ev-fossil117-rivm-scp-endpoint.",
+      "review": "Two-round independent primary-source/numeric audit verified every carrier hash, page/cell locator, author credit (Edward Diaconu), citation mapping and calculation. Agent source verification does not claim human expert certification, desktop spreadsheet recalculation, or empirical fuel-market forecasting."
+    },
+    "independentReports": {
+      "independent-primary-source-audit.md": "4cba96dd15191dbaae831a891a2a5498474cf7559847404dcdffee6b21a92d69",
+      "independent-primary-source-audit-v2.md": "862a00745542c9fcc9b39b02026f96c872ce3290cfdc0a268a9747a6f513f240",
+      "full-chapter-reader-review-initial.md": "e65e22f88612a89cf508dc76afc9b0dfd44b3801bf379a2ad839ef0de06c84a5",
+      "full-chapter-reader-review-v2.md": "4053920e9e2a633a86acf0864fe7284f5540bc5b96ceee76b76458c13010a796",
+      "independent-publication-engineering-review-initial.md": "4181ded25fd677a8fc4548a3dff2c8b52673fbfec101c2dd870ca59323ee9943",
+      "independent-publication-engineering-review-final.md": "c783a843ce93fcb9cc13eb47523540655807e8ca4c2363705ce332bd37a0143c",
+      "ef-members/ef-resource-member-receipt.json": "e5a175973b5aae9b95c119a8c5b41fcb91ae8743a0a4f4fed5402f19614d31b9",
+      "actual-browser-qa/responsive-script-enabled.json": "89ce55cdaca5ec3857d12de0ceb21d89660a6cd87610b4db076cbdfe5a86f447",
+      "actual-browser-qa/interactions.json": "abbafbd634f55d1b14a1acb7efef8f5e45589c7ef8a628ed56cc71c7c63660a1"
+    }
+  }
+}

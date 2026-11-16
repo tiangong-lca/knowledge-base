@@ -3,6 +3,7 @@ import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import config from '../config/reader-acid-equivalents.json' with { type: 'json' };
 import capture from '../config/reader-acid-equivalents-capture.json' with { type: 'json' };
+import fossils from '../config/reader-fossil-resources.json' with { type: 'json' };
 import minerals from '../config/reader-mineral-resources.json' with { type: 'json' };
 import catalog from '../knowledge/catalog.json' with { type: 'json' };
 import literature from '../knowledge/research/literature-map.json' with { type: 'json' };
@@ -24,7 +25,8 @@ import { previousScientificTestRecords, testEnvelopes } from './fixtures/scienti
 test('B16 receipts bind captured raw files, normalized article pairs, public pages and JSON', {
   skip: !capture && config.status !== 'reviewed',
 }, () => {
-  const previous = previousScientificTestRecords({ catalog, readings, literature }, minerals.unit);
+  const preFossils = previousScientificTestRecords({ catalog, readings, literature }, fossils.unit);
+  const previous = previousScientificTestRecords(preFossils, minerals.unit);
   const expected = readerPublicDownloads(previous.catalog, previous.literature, previous.readings);
   const check = (changeUnit = () => {}, changeOutput) => {
     const unit = structuredClone(config.unit);
@@ -53,8 +55,10 @@ test('B16 source plan declares every actual transition with its real predecessor
     readServiceConstraintsFiles(root, serviceConstraints.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
+  if (fossils.unit) files.set(`content${fossils.unit.routes[0]}.mdx`, Buffer.from(fossils.unit.previousMdx));
   if (minerals.unit) files.set(`content${minerals.unit.routes[0]}.mdx`, Buffer.from(minerals.unit.previousMdx));
-  const input = { ...previousScientificTestRecords({ catalog, readings, literature }, minerals.unit), files };
+  const preFossils = previousScientificTestRecords({ catalog, readings, literature }, fossils.unit);
+  const input = { ...previousScientificTestRecords(preFossils, minerals.unit), files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
   const qualify = unit => prepareAcidEquivalentsSource(unit, input, actual, structure);

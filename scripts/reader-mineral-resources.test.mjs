@@ -4,13 +4,14 @@ import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 import config from '../config/reader-mineral-resources.json' with { type: 'json' };
 import capture from '../config/reader-mineral-resources-capture.json' with { type: 'json' };
+import fossils from '../config/reader-fossil-resources.json' with { type: 'json' };
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
 import loadShift from '../config/reader-load-shift.json' with { type: 'json' };
 import service from '../config/reader-service-constraints.json' with { type: 'json' };
 import catalog from '../knowledge/catalog.json' with { type: 'json' };
 import readings from '../knowledge/research/readings.json' with { type: 'json' };
 import literature from '../knowledge/research/literature-map.json' with { type: 'json' };
-import { testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
+import { previousScientificTestRecords, testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
 import { readReadableBookFiles } from './reader-current-edition-files.mjs';
@@ -133,7 +134,8 @@ test('B14 mineral source preview preserves all real predecessor transitions', { 
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
-  const input = { catalog, readings, literature, files };
+  if (fossils.unit) files.set(`content${fossils.unit.routes[0]}.mdx`, Buffer.from(fossils.unit.previousMdx));
+  const input = { ...previousScientificTestRecords({ catalog, readings, literature }, fossils.unit), files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
   const qualify = unit => prepareMineralResourcesSource(unit, input, actual, structure);
   assert.doesNotThrow(() => qualify(config.unit));
@@ -157,7 +159,8 @@ test('B14 mineral source preview preserves all real predecessor transitions', { 
 });
 
 test('Mineral receipts bind actual output capture independently', { skip: !capture && config.status !== 'reviewed' }, () => {
-  const expected = readerPublicDownloads(catalog, literature, readings);
+  const previous = previousScientificTestRecords({ catalog, readings, literature }, fossils.unit);
+  const expected = readerPublicDownloads(previous.catalog, previous.literature, previous.readings);
   const verify = (mutateUnit = () => {}, mutateOutput) => {
     const unit = structuredClone(config.unit);
     mutateUnit(unit);
