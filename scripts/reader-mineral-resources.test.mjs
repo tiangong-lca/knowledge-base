@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 import config from '../config/reader-mineral-resources.json' with { type: 'json' };
 import capture from '../config/reader-mineral-resources-capture.json' with { type: 'json' };
+import ozrad from '../config/reader-ozone-radiation.json' with { type: 'json' };
 import ozone from '../config/reader-photochemical-ozone.json' with { type: 'json' };
 import fossils from '../config/reader-fossil-resources.json' with { type: 'json' };
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
@@ -135,9 +136,11 @@ test('B14 mineral source preview preserves all real predecessor transitions', { 
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
+  if (ozrad.unit) files.set(`content${ozrad.unit.routes[0]}.mdx`, Buffer.from(ozrad.unit.previousMdx));
   if (ozone.unit) files.set(`content${ozone.unit.routes[0]}.mdx`, Buffer.from(ozone.unit.previousMdx));
   if (fossils.unit) files.set(`content${fossils.unit.routes[0]}.mdx`, Buffer.from(fossils.unit.previousMdx));
-  const preOzone = previousScientificTestRecords({ catalog, readings, literature }, ozone.unit);
+  const preOzrad = previousScientificTestRecords({ catalog, readings, literature }, ozrad.unit);
+  const preOzone = previousScientificTestRecords(preOzrad, ozone.unit);
   const input = { ...previousScientificTestRecords(preOzone, fossils.unit), files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
   const qualify = unit => prepareMineralResourcesSource(unit, input, actual, structure);
@@ -162,7 +165,8 @@ test('B14 mineral source preview preserves all real predecessor transitions', { 
 });
 
 test('Mineral receipts bind actual output capture independently', { skip: !capture && config.status !== 'reviewed' }, () => {
-  const preOzone = previousScientificTestRecords({ catalog, readings, literature }, ozone.unit);
+  const preOzrad = previousScientificTestRecords({ catalog, readings, literature }, ozrad.unit);
+  const preOzone = previousScientificTestRecords(preOzrad, ozone.unit);
   const previous = previousScientificTestRecords(preOzone, fossils.unit);
   const expected = readerPublicDownloads(previous.catalog, previous.literature, previous.readings);
   const verify = (mutateUnit = () => {}, mutateOutput) => {

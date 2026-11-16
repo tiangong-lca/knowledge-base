@@ -1,0 +1,1467 @@
+{
+  "schemaVersion": 1,
+  "kind": "output",
+  "unit": "ozone-radiation-121",
+  "subjectSha256": "0ad033d7eb75920867bc5e2b449555f49492f66429808fdea68e5131e974340d",
+  "date": "2026-11-17",
+  "scope": [
+    "content/docs/book/midpoint-endpoint-value-choices.mdx",
+    "claims:cl-lcia-midpoint-pathway",
+    "claims:cl-mineral115-judgment",
+    "sources:src-book-recipe-2017-primary-article",
+    "sources:src-book-ilcd-2011-lcia-recommendations",
+    "sources:src-flow-pilot-ef31-update",
+    "sources:src-land111-rivm2016",
+    "sources:src-fossil117-jrc109369",
+    "readings:rd-recipe-2017-primary-article",
+    "readings:rd-ilcd-2011-eutrophication-pathways",
+    "readings:rd-flow-pilot-ef31",
+    "readings:rd-flow-pilot-ef31-update",
+    "readings:rd-land111-rivm2016",
+    "readings:rd-fossil117-jrc109369",
+    "literature:lit-m05",
+    "literature:work-recipe-2017-method-article",
+    "literature:work-ilcd-2011-lcia-recommendations",
+    "literature:work-flow-pilot-ef31",
+    "literature:work-flow-pilot-ef31-update",
+    "literature:work-fossil117-jrc109369",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:order:sources",
+    "researchMetadata:order:gaps",
+    "researchMetadata:order:revisions",
+    "researchMetadata:order:queries",
+    "researchMetadata:public-projection",
+    "claims:cl-ozrad121-emission-midpoint",
+    "claims:cl-ozrad121-reference-scope",
+    "claims:cl-ozrad121-odp-horizons",
+    "claims:cl-ozrad121-ir-horizons",
+    "claims:cl-ozrad121-endpoint-choices",
+    "claims:cl-ozrad121-formula-table",
+    "claims:cl-ozrad121-package-discrepancies",
+    "claims:cl-ozrad121-emission-bridge",
+    "evidence:ev-ozrad121-ilcd2011-odp",
+    "evidence:ev-ozrad121-ilcd2011-ir",
+    "evidence:ev-ozrad121-jrc109369-odp",
+    "evidence:ev-ozrad121-jrc109369-ir",
+    "evidence:ev-ozrad121-jrc130796-odp-ir",
+    "evidence:ev-ozrad121-ef31-odp-xml",
+    "evidence:ev-ozrad121-ef31-ir-xml",
+    "evidence:ev-ozrad121-rivm-ch3-odp-tables",
+    "evidence:ev-ozrad121-rivm-ch4-ir-tables",
+    "evidence:ev-ozrad121-recipe2017-summary",
+    "sources:src-ozrad121-ef31-selected-members",
+    "gaps:gap-ozrad121-stratospheric-and-radiological-originals",
+    "revisions:rev-ozrad121-b14-ozone-and-radiation",
+    "queries:q-ozrad121-horizons-reference-nuclides-and-packages-20261117"
+  ],
+  "observed": "Primary scoped judgment integrating two-round independent source, full-chapter reader and publication-engineering audits with direct original, export and browser/print checks; no human or empirical certification.",
+  "observations": {
+    "outputs": [
+      {
+        "path": "/docs/book/midpoint-endpoint-value-choices",
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "from": "45c29a5695933f61265fd8b14ff4ad555082fd61db3f69223337f905289d5ab7",
+        "sha256": "99347ee1cc577e9df585a6a062186e87f99c7b4dfe652458941ebc1fc83f47f0",
+        "rationale": "核对B14当前42段正文、四代历史引用范围、注1与注41打印可见同步说明及完整注释。"
+      },
+      {
+        "path": "/docs/book/ecological-scarcity-and-targets",
+        "route": "/docs/book/ecological-scarcity-and-targets",
+        "from": "2d53d91220336cafecdfe9f39f92dcbc7152ecc26f2c0bb2f3ced80778e837ef",
+        "sha256": "ff91d463d4e2539f875c6c94993b212b5a0920ed80625c6559eba080a9889dce",
+        "rationale": "只按B14末段注释顺延（注34→注42）同步下游交叉引用显示文字，保留原链接地址与论述范围。"
+      },
+      {
+        "path": "/docs/book/connecting-objects-references-and-time",
+        "route": "/docs/book/connecting-objects-references-and-time",
+        "from": "367e698022a799819b6e3f6886b6c206afebc94dd60820c3c7baa39c7c692046",
+        "sha256": "a43ea138e5a21e492439890ba08ef8ca1cac136199701c28310a37ca8152021d",
+        "rationale": "只按B14末段注释顺延（注34→注42）同步下游交叉引用显示文字，保留原链接地址与论述范围。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "from": "9710fe4a117f644dacc0b8ac03f2230b54729765043d3ff97bc9a1003b98415c",
+        "sha256": "d8b1d26539abf133f1c8200ba4e92efa055efe92fe3e70d4212c7b68a059aebc",
+        "rationale": "核对B14当前42段正文、四代历史引用范围、注1与注41打印可见同步说明及完整注释。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/ecological-scarcity-and-targets",
+        "from": "3114a308c73e18c3a5f420875eba9e2071653258215f5dd050f50a434a38b5c4",
+        "sha256": "f86d654e565b228643f4da848ee3251ae6d8a47017960af3d12c0cf33e8bb30a",
+        "rationale": "只按B14末段注释顺延（注34→注42）同步下游交叉引用显示文字，保留原链接地址与论述范围。"
+      },
+      {
+        "path": "/print",
+        "route": "book-revisable-judgment",
+        "from": "3d9ca91e7611e3c30583831d3da976b08ea647356b2fe402d2ac05d96d3e5e61",
+        "sha256": "efbac9350871743bfe98be126d09a969e0ebe5217744b77356806d2d74750151",
+        "rationale": "只按B14末段注释顺延（注34→注42）同步下游交叉引用显示文字，保留原链接地址与论述范围。"
+      }
+    ],
+    "publicArtifacts": [
+      {
+        "path": "claims/index.html",
+        "from": "20cf2361faf7993ea47d1cf3f8fbf13dd207b28ba882034151496028e5460781",
+        "sha256": "874e566698f709c3e8133dc24eba023613e86226fd774350f84fe539dfa3a176",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "sources/index.html",
+        "from": "bf59282066336cab5001815fbb741f0322ebae948cb7d2907955eeb9ff9d8e09",
+        "sha256": "e060f61bffdd9caa250ab5779587010fc5bac845b72a4533c6b538f9a7a315f1",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "concepts/index.html",
+        "from": "4d0a8db5b71a25ab8461204f5adbfc3ea460888f8e1858e2baec7014fbbdb2ec",
+        "sha256": "79d8d8614e6fa0a4396a3edd233b4ff91629641bfa17f7ee1f883ad5c7148d49",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "from": "e7197ad257ce059f3a2c823509b88225f902195f3ec6168f9889df492c90949e",
+        "sha256": "692c4be680cb105fab3c46f551823321f4ea80c3b8fda78fc38fb74daf5ab087",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "from": "428518e5e09b34e432d6f313f0150713bfb3ab5e38085f74d1a2ec01bd3877fa",
+        "sha256": "a1e6acc6993a83195566d9355309cbad80d6d0070f6b4eb9b7cbde6125b372b2",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "research/index.html",
+        "from": "d3ca7bf40cdc64e185c70d5e09c2a1182b1163e17de8a0050867f5ffe0fdcaa7",
+        "sha256": "90184fb217d9d99a2d46b4c475c0bad9d5381e11dc5415fe6b573000f021a1da",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "downloads/bibliography.json",
+        "from": "036b429c7e560374bf038adbea1777ab25c0e8dfa97d44f9fde36b7a1657cdb3",
+        "sha256": "05b95bf451f7a2b07ecca4f9edcc60d16f24179611f491b2195b746673402949",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "downloads/research.json",
+        "from": "036b429c7e560374bf038adbea1777ab25c0e8dfa97d44f9fde36b7a1657cdb3",
+        "sha256": "05b95bf451f7a2b07ecca4f9edcc60d16f24179611f491b2195b746673402949",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      }
+    ],
+    "addresses": {
+      "/docs/book/midpoint-endpoint-value-choices#nd-page": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "chapter",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-lcia-midpoint-pathway",
+          "cl-lcia-endpoint-units",
+          "cl-lcia-mid-end-conversion-limits",
+          "cl-land111-episode",
+          "cl-land111-midpoint",
+          "cl-land111-conversion",
+          "cl-mineral115-input",
+          "cl-mineral115-adp",
+          "cl-mineral115-sop",
+          "cl-fossil117-scarcity-energy",
+          "cl-fossil117-heating-basis",
+          "cl-fossil117-uranium-boundary",
+          "cl-ozrad121-emission-midpoint",
+          "cl-ozrad121-reference-scope",
+          "cl-lcia-scenarios-are-choices",
+          "cl-lcia-global-is-not-site-specific",
+          "cl-land111-pathway",
+          "cl-land111-horizon",
+          "cl-land111-factor-scale",
+          "cl-land111-integral",
+          "cl-land111-countercheck",
+          "cl-land111-aggregation",
+          "cl-mineral115-reserves",
+          "cl-fossil117-scenario-proxy",
+          "cl-ozrad121-odp-horizons",
+          "cl-ozrad121-ir-horizons",
+          "cl-ozrad121-endpoint-choices",
+          "cl-ozrad121-formula-table",
+          "cl-ozrad121-package-discrepancies",
+          "cl-ozrad121-emission-bridge",
+          "cl-land111-printed-record",
+          "cl-fossil117-equal-midpoint",
+          "cl-fossil117-proxy-consequence",
+          "cl-fossil117-printed-limits",
+          "cl-fossil117-bridge",
+          "cl-mineral115-rank",
+          "cl-mineral115-cost-proxy",
+          "cl-mineral115-metal-cost",
+          "cl-mineral115-calibration",
+          "cl-mineral115-assumptions",
+          "cl-mineral115-judgment",
+          "cl-lcia-model-data-factor-separation"
+        ],
+        "ordinary": [
+          "e8f2e6d93c66cdf25611700b18dcb944b3d262848626a38c2d9fbbc2339a6c83"
+        ],
+        "bindings": {
+          "links": [
+            []
+          ],
+          "tables": []
+        }
+      },
+      "/docs/book/midpoint-endpoint-value-choices#main-content": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "reading-title",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-lcia-midpoint-pathway",
+          "cl-lcia-endpoint-units",
+          "cl-lcia-mid-end-conversion-limits",
+          "cl-land111-episode",
+          "cl-land111-midpoint",
+          "cl-land111-conversion",
+          "cl-mineral115-input",
+          "cl-mineral115-adp",
+          "cl-mineral115-sop",
+          "cl-fossil117-scarcity-energy",
+          "cl-fossil117-heating-basis",
+          "cl-fossil117-uranium-boundary",
+          "cl-ozrad121-emission-midpoint",
+          "cl-ozrad121-reference-scope",
+          "cl-lcia-scenarios-are-choices",
+          "cl-lcia-global-is-not-site-specific",
+          "cl-land111-pathway",
+          "cl-land111-horizon",
+          "cl-land111-factor-scale",
+          "cl-land111-integral",
+          "cl-land111-countercheck",
+          "cl-land111-aggregation",
+          "cl-mineral115-reserves",
+          "cl-fossil117-scenario-proxy",
+          "cl-ozrad121-odp-horizons",
+          "cl-ozrad121-ir-horizons",
+          "cl-ozrad121-endpoint-choices",
+          "cl-ozrad121-formula-table",
+          "cl-ozrad121-package-discrepancies",
+          "cl-ozrad121-emission-bridge",
+          "cl-land111-printed-record",
+          "cl-fossil117-equal-midpoint",
+          "cl-fossil117-proxy-consequence",
+          "cl-fossil117-printed-limits",
+          "cl-fossil117-bridge",
+          "cl-mineral115-rank",
+          "cl-mineral115-cost-proxy",
+          "cl-mineral115-metal-cost",
+          "cl-mineral115-calibration",
+          "cl-mineral115-assumptions",
+          "cl-mineral115-judgment",
+          "cl-lcia-model-data-factor-separation"
+        ],
+        "ordinary": [
+          "e8f2e6d93c66cdf25611700b18dcb944b3d262848626a38c2d9fbbc2339a6c83"
+        ],
+        "chapter": "nd-page"
+      },
+      "/docs/book/midpoint-endpoint-value-choices#指标停在因果路径的哪里": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "heading",
+        "title": "指标的位置",
+        "claimIds": [
+          "cl-lcia-midpoint-pathway",
+          "cl-lcia-endpoint-units",
+          "cl-lcia-mid-end-conversion-limits",
+          "cl-land111-episode",
+          "cl-land111-midpoint",
+          "cl-land111-conversion",
+          "cl-mineral115-input",
+          "cl-mineral115-adp",
+          "cl-mineral115-sop",
+          "cl-fossil117-scarcity-energy",
+          "cl-fossil117-heating-basis",
+          "cl-fossil117-uranium-boundary",
+          "cl-ozrad121-emission-midpoint",
+          "cl-ozrad121-reference-scope"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#时间证据和地点怎样进入结果": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "heading",
+        "title": "情景与地点",
+        "claimIds": [
+          "cl-lcia-scenarios-are-choices",
+          "cl-lcia-global-is-not-site-specific",
+          "cl-land111-pathway",
+          "cl-land111-horizon",
+          "cl-land111-factor-scale",
+          "cl-land111-integral",
+          "cl-land111-countercheck",
+          "cl-land111-aggregation",
+          "cl-mineral115-reserves",
+          "cl-fossil117-scenario-proxy",
+          "cl-ozrad121-odp-horizons",
+          "cl-ozrad121-ir-horizons",
+          "cl-ozrad121-endpoint-choices"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#模型输入数据与因子发行包": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "heading",
+        "title": "模型与资料",
+        "claimIds": [
+          "cl-ozrad121-formula-table",
+          "cl-ozrad121-package-discrepancies",
+          "cl-ozrad121-emission-bridge",
+          "cl-land111-printed-record",
+          "cl-fossil117-equal-midpoint",
+          "cl-fossil117-proxy-consequence",
+          "cl-fossil117-printed-limits",
+          "cl-fossil117-bridge",
+          "cl-mineral115-rank",
+          "cl-mineral115-cost-proxy",
+          "cl-mineral115-metal-cost",
+          "cl-mineral115-calibration",
+          "cl-mineral115-assumptions",
+          "cl-mineral115-judgment",
+          "cl-lcia-model-data-factor-separation"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-annotations": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note-group",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-lcia-midpoint-pathway",
+          "cl-lcia-endpoint-units",
+          "cl-lcia-mid-end-conversion-limits",
+          "cl-land111-episode",
+          "cl-land111-midpoint",
+          "cl-land111-conversion",
+          "cl-mineral115-input",
+          "cl-mineral115-adp",
+          "cl-mineral115-sop",
+          "cl-fossil117-scarcity-energy",
+          "cl-fossil117-heating-basis",
+          "cl-fossil117-uranium-boundary",
+          "cl-ozrad121-emission-midpoint",
+          "cl-ozrad121-reference-scope",
+          "cl-lcia-scenarios-are-choices",
+          "cl-lcia-global-is-not-site-specific",
+          "cl-land111-pathway",
+          "cl-land111-horizon",
+          "cl-land111-factor-scale",
+          "cl-land111-integral",
+          "cl-land111-countercheck",
+          "cl-land111-aggregation",
+          "cl-mineral115-reserves",
+          "cl-fossil117-scenario-proxy",
+          "cl-ozrad121-odp-horizons",
+          "cl-ozrad121-ir-horizons",
+          "cl-ozrad121-endpoint-choices",
+          "cl-ozrad121-formula-table",
+          "cl-ozrad121-package-discrepancies",
+          "cl-ozrad121-emission-bridge",
+          "cl-land111-printed-record",
+          "cl-fossil117-equal-midpoint",
+          "cl-fossil117-proxy-consequence",
+          "cl-fossil117-printed-limits",
+          "cl-fossil117-bridge",
+          "cl-mineral115-rank",
+          "cl-mineral115-cost-proxy",
+          "cl-mineral115-metal-cost",
+          "cl-mineral115-calibration",
+          "cl-mineral115-assumptions",
+          "cl-mineral115-judgment",
+          "cl-lcia-model-data-factor-separation"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-midpoint-pathway": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-lcia-midpoint-pathway"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-endpoint-units": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-lcia-endpoint-units"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-mid-end-conversion-limits": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-lcia-mid-end-conversion-limits"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-episode": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-land111-episode"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-midpoint": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-land111-midpoint"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-conversion": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-land111-conversion"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-input": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-mineral115-input"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-adp": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-mineral115-adp"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-sop": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-mineral115-sop"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-fossil117-scarcity-energy": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-fossil117-scarcity-energy"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-fossil117-heating-basis": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-fossil117-heating-basis"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-fossil117-uranium-boundary": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-fossil117-uranium-boundary"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-ozrad121-emission-midpoint": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-ozrad121-emission-midpoint"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-ozrad121-reference-scope": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-ozrad121-reference-scope"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-scenarios-are-choices": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-lcia-scenarios-are-choices"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-global-is-not-site-specific": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-lcia-global-is-not-site-specific"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-pathway": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-land111-pathway"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-horizon": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-land111-horizon"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-factor-scale": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-land111-factor-scale"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-integral": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-land111-integral"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-countercheck": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-land111-countercheck"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-aggregation": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-land111-aggregation"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-reserves": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-mineral115-reserves"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-fossil117-scenario-proxy": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-fossil117-scenario-proxy"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-ozrad121-odp-horizons": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-ozrad121-odp-horizons"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-ozrad121-ir-horizons": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-ozrad121-ir-horizons"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-ozrad121-endpoint-choices": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-ozrad121-endpoint-choices"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-ozrad121-formula-table": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-ozrad121-formula-table"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-ozrad121-package-discrepancies": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-ozrad121-package-discrepancies"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-ozrad121-emission-bridge": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-ozrad121-emission-bridge"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-printed-record": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-land111-printed-record"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-fossil117-equal-midpoint": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-fossil117-equal-midpoint"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-fossil117-proxy-consequence": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-fossil117-proxy-consequence"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-fossil117-printed-limits": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-fossil117-printed-limits"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-fossil117-bridge": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-fossil117-bridge"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-rank": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-mineral115-rank"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-cost-proxy": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-mineral115-cost-proxy"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-metal-cost": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-mineral115-metal-cost"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-calibration": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-mineral115-calibration"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-assumptions": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-mineral115-assumptions"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-judgment": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-mineral115-judgment"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/midpoint-endpoint-value-choices#chapter-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-model-data-factor-separation": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-lcia-model-data-factor-separation"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "chapter",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-lcia-midpoint-pathway",
+          "cl-lcia-endpoint-units",
+          "cl-lcia-mid-end-conversion-limits",
+          "cl-land111-episode",
+          "cl-land111-midpoint",
+          "cl-land111-conversion",
+          "cl-mineral115-input",
+          "cl-mineral115-adp",
+          "cl-mineral115-sop",
+          "cl-fossil117-scarcity-energy",
+          "cl-fossil117-heating-basis",
+          "cl-fossil117-uranium-boundary",
+          "cl-ozrad121-emission-midpoint",
+          "cl-ozrad121-reference-scope",
+          "cl-lcia-scenarios-are-choices",
+          "cl-lcia-global-is-not-site-specific",
+          "cl-land111-pathway",
+          "cl-land111-horizon",
+          "cl-land111-factor-scale",
+          "cl-land111-integral",
+          "cl-land111-countercheck",
+          "cl-land111-aggregation",
+          "cl-mineral115-reserves",
+          "cl-fossil117-scenario-proxy",
+          "cl-ozrad121-odp-horizons",
+          "cl-ozrad121-ir-horizons",
+          "cl-ozrad121-endpoint-choices",
+          "cl-ozrad121-formula-table",
+          "cl-ozrad121-package-discrepancies",
+          "cl-ozrad121-emission-bridge",
+          "cl-land111-printed-record",
+          "cl-fossil117-equal-midpoint",
+          "cl-fossil117-proxy-consequence",
+          "cl-fossil117-printed-limits",
+          "cl-fossil117-bridge",
+          "cl-mineral115-rank",
+          "cl-mineral115-cost-proxy",
+          "cl-mineral115-metal-cost",
+          "cl-mineral115-calibration",
+          "cl-mineral115-assumptions",
+          "cl-mineral115-judgment",
+          "cl-lcia-model-data-factor-separation"
+        ],
+        "ordinary": [
+          "e8f2e6d93c66cdf25611700b18dcb944b3d262848626a38c2d9fbbc2339a6c83"
+        ],
+        "bindings": {
+          "links": [
+            []
+          ],
+          "tables": []
+        }
+      },
+      "/print#print-reading-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "reading-title",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-lcia-midpoint-pathway",
+          "cl-lcia-endpoint-units",
+          "cl-lcia-mid-end-conversion-limits",
+          "cl-land111-episode",
+          "cl-land111-midpoint",
+          "cl-land111-conversion",
+          "cl-mineral115-input",
+          "cl-mineral115-adp",
+          "cl-mineral115-sop",
+          "cl-fossil117-scarcity-energy",
+          "cl-fossil117-heating-basis",
+          "cl-fossil117-uranium-boundary",
+          "cl-ozrad121-emission-midpoint",
+          "cl-ozrad121-reference-scope",
+          "cl-lcia-scenarios-are-choices",
+          "cl-lcia-global-is-not-site-specific",
+          "cl-land111-pathway",
+          "cl-land111-horizon",
+          "cl-land111-factor-scale",
+          "cl-land111-integral",
+          "cl-land111-countercheck",
+          "cl-land111-aggregation",
+          "cl-mineral115-reserves",
+          "cl-fossil117-scenario-proxy",
+          "cl-ozrad121-odp-horizons",
+          "cl-ozrad121-ir-horizons",
+          "cl-ozrad121-endpoint-choices",
+          "cl-ozrad121-formula-table",
+          "cl-ozrad121-package-discrepancies",
+          "cl-ozrad121-emission-bridge",
+          "cl-land111-printed-record",
+          "cl-fossil117-equal-midpoint",
+          "cl-fossil117-proxy-consequence",
+          "cl-fossil117-printed-limits",
+          "cl-fossil117-bridge",
+          "cl-mineral115-rank",
+          "cl-mineral115-cost-proxy",
+          "cl-mineral115-metal-cost",
+          "cl-mineral115-calibration",
+          "cl-mineral115-assumptions",
+          "cl-mineral115-judgment",
+          "cl-lcia-model-data-factor-separation"
+        ],
+        "ordinary": [
+          "e8f2e6d93c66cdf25611700b18dcb944b3d262848626a38c2d9fbbc2339a6c83"
+        ],
+        "chapter": "print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573"
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-指标停在因果路径的哪里": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "heading",
+        "title": "指标的位置",
+        "claimIds": [
+          "cl-lcia-midpoint-pathway",
+          "cl-lcia-endpoint-units",
+          "cl-lcia-mid-end-conversion-limits",
+          "cl-land111-episode",
+          "cl-land111-midpoint",
+          "cl-land111-conversion",
+          "cl-mineral115-input",
+          "cl-mineral115-adp",
+          "cl-mineral115-sop",
+          "cl-fossil117-scarcity-energy",
+          "cl-fossil117-heating-basis",
+          "cl-fossil117-uranium-boundary",
+          "cl-ozrad121-emission-midpoint",
+          "cl-ozrad121-reference-scope"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-时间证据和地点怎样进入结果": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "heading",
+        "title": "情景与地点",
+        "claimIds": [
+          "cl-lcia-scenarios-are-choices",
+          "cl-lcia-global-is-not-site-specific",
+          "cl-land111-pathway",
+          "cl-land111-horizon",
+          "cl-land111-factor-scale",
+          "cl-land111-integral",
+          "cl-land111-countercheck",
+          "cl-land111-aggregation",
+          "cl-mineral115-reserves",
+          "cl-fossil117-scenario-proxy",
+          "cl-ozrad121-odp-horizons",
+          "cl-ozrad121-ir-horizons",
+          "cl-ozrad121-endpoint-choices"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-模型输入数据与因子发行包": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "heading",
+        "title": "模型与资料",
+        "claimIds": [
+          "cl-ozrad121-formula-table",
+          "cl-ozrad121-package-discrepancies",
+          "cl-ozrad121-emission-bridge",
+          "cl-land111-printed-record",
+          "cl-fossil117-equal-midpoint",
+          "cl-fossil117-proxy-consequence",
+          "cl-fossil117-printed-limits",
+          "cl-fossil117-bridge",
+          "cl-mineral115-rank",
+          "cl-mineral115-cost-proxy",
+          "cl-mineral115-metal-cost",
+          "cl-mineral115-calibration",
+          "cl-mineral115-assumptions",
+          "cl-mineral115-judgment",
+          "cl-lcia-model-data-factor-separation"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-annotations": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note-group",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-lcia-midpoint-pathway",
+          "cl-lcia-endpoint-units",
+          "cl-lcia-mid-end-conversion-limits",
+          "cl-land111-episode",
+          "cl-land111-midpoint",
+          "cl-land111-conversion",
+          "cl-mineral115-input",
+          "cl-mineral115-adp",
+          "cl-mineral115-sop",
+          "cl-fossil117-scarcity-energy",
+          "cl-fossil117-heating-basis",
+          "cl-fossil117-uranium-boundary",
+          "cl-ozrad121-emission-midpoint",
+          "cl-ozrad121-reference-scope",
+          "cl-lcia-scenarios-are-choices",
+          "cl-lcia-global-is-not-site-specific",
+          "cl-land111-pathway",
+          "cl-land111-horizon",
+          "cl-land111-factor-scale",
+          "cl-land111-integral",
+          "cl-land111-countercheck",
+          "cl-land111-aggregation",
+          "cl-mineral115-reserves",
+          "cl-fossil117-scenario-proxy",
+          "cl-ozrad121-odp-horizons",
+          "cl-ozrad121-ir-horizons",
+          "cl-ozrad121-endpoint-choices",
+          "cl-ozrad121-formula-table",
+          "cl-ozrad121-package-discrepancies",
+          "cl-ozrad121-emission-bridge",
+          "cl-land111-printed-record",
+          "cl-fossil117-equal-midpoint",
+          "cl-fossil117-proxy-consequence",
+          "cl-fossil117-printed-limits",
+          "cl-fossil117-bridge",
+          "cl-mineral115-rank",
+          "cl-mineral115-cost-proxy",
+          "cl-mineral115-metal-cost",
+          "cl-mineral115-calibration",
+          "cl-mineral115-assumptions",
+          "cl-mineral115-judgment",
+          "cl-lcia-model-data-factor-separation"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-midpoint-pathway": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-lcia-midpoint-pathway"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-endpoint-units": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-lcia-endpoint-units"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-mid-end-conversion-limits": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-lcia-mid-end-conversion-limits"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-episode": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-land111-episode"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-midpoint": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-land111-midpoint"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-conversion": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-land111-conversion"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-input": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-mineral115-input"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-adp": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-mineral115-adp"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-sop": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-mineral115-sop"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-fossil117-scarcity-energy": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-fossil117-scarcity-energy"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-fossil117-heating-basis": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-fossil117-heating-basis"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-fossil117-uranium-boundary": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-fossil117-uranium-boundary"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-ozrad121-emission-midpoint": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-ozrad121-emission-midpoint"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-ozrad121-reference-scope": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-ozrad121-reference-scope"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-scenarios-are-choices": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-lcia-scenarios-are-choices"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-global-is-not-site-specific": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-lcia-global-is-not-site-specific"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-pathway": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-land111-pathway"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-horizon": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-land111-horizon"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-factor-scale": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-land111-factor-scale"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-integral": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-land111-integral"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-countercheck": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-land111-countercheck"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-aggregation": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-land111-aggregation"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-reserves": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-mineral115-reserves"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-fossil117-scenario-proxy": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-fossil117-scenario-proxy"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-ozrad121-odp-horizons": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-ozrad121-odp-horizons"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-ozrad121-ir-horizons": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-ozrad121-ir-horizons"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-ozrad121-endpoint-choices": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-ozrad121-endpoint-choices"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-ozrad121-formula-table": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-ozrad121-formula-table"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-ozrad121-package-discrepancies": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-ozrad121-package-discrepancies"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-ozrad121-emission-bridge": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-ozrad121-emission-bridge"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-land111-printed-record": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-land111-printed-record"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-fossil117-equal-midpoint": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-fossil117-equal-midpoint"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-fossil117-proxy-consequence": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-fossil117-proxy-consequence"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-fossil117-printed-limits": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-fossil117-printed-limits"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-fossil117-bridge": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-fossil117-bridge"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-rank": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-mineral115-rank"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-cost-proxy": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-mineral115-cost-proxy"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-metal-cost": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-mineral115-metal-cost"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-calibration": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-mineral115-calibration"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-assumptions": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-mineral115-assumptions"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-mineral115-judgment": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-mineral115-judgment"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573-claim-cl-lcia-model-data-factor-separation": {
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "kind": "note",
+        "title": "中点与终点",
+        "claimIds": [
+          "cl-lcia-model-data-factor-separation"
+        ],
+        "ordinary": []
+      }
+    },
+    "source": "actual-export",
+    "sourceCommit": "e827186b1bedf53c0d4a893aa13b772a3797d10b",
+    "capture": {
+      "sourceCommit": "e827186b1bedf53c0d4a893aa13b772a3797d10b",
+      "dirty": true,
+      "status": "working-preview",
+      "manifestSha256": "6afe12f00df1c6f22bcbb61671ed3f1ef99c7d22743bf0fbab697b32d1ed2541",
+      "normalizedProofSha256": "7e8a74c7936c3a6bd0558a9cc14bbe12cec7dcb647cc455123a31c1d6750fe71"
+    },
+    "articleFiles": [
+      {
+        "path": "docs/book/midpoint-endpoint-value-choices/index.html",
+        "sha256": "8c412748e480e11b421522ae74a2e28d69b31742e32f5479387594853a7116a7",
+        "bytes": 1428107
+      },
+      {
+        "path": "docs/book/ecological-scarcity-and-targets/index.html",
+        "sha256": "1e84860d9de2849f0417082c68f0a66d097118c03b8daf01ab89cf30a8d85f04",
+        "bytes": 1091297
+      },
+      {
+        "path": "docs/book/connecting-objects-references-and-time/index.html",
+        "sha256": "03660e13ea3b35eb402aae66aa475da28eee603fc48ed78be201bf03cd017df2",
+        "bytes": 977079
+      },
+      {
+        "path": "print/index.html",
+        "sha256": "60e1405c4911cb1e29aca93b410fb1e8805d1383e035b2bfa76ba2d94d533af7",
+        "bytes": 14017530
+      }
+    ],
+    "artifactFiles": [
+      {
+        "path": "claims/index.html",
+        "sha256": "b3cdf60d808bceb3e1865e90f740f7d4d4f6b485698feb86162583b5d11d6fbe",
+        "bytes": 5979420,
+        "contentSha256": "874e566698f709c3e8133dc24eba023613e86226fd774350f84fe539dfa3a176"
+      },
+      {
+        "path": "sources/index.html",
+        "sha256": "4b2b48069f9f81ecdba35077dc69d587761e0475fbe7a5b96e58e6400a95e6eb",
+        "bytes": 4882434,
+        "contentSha256": "e060f61bffdd9caa250ab5779587010fc5bac845b72a4533c6b538f9a7a315f1"
+      },
+      {
+        "path": "concepts/index.html",
+        "sha256": "f006d04a1bb8244a33dfe4a2f0da82ed5c2cbb56431ed46b390db1848208fd6b",
+        "bytes": 2052899,
+        "contentSha256": "79d8d8614e6fa0a4396a3edd233b4ff91629641bfa17f7ee1f883ad5c7148d49"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "sha256": "692c4be680cb105fab3c46f551823321f4ea80c3b8fda78fc38fb74daf5ab087",
+        "bytes": 3613232,
+        "contentSha256": "692c4be680cb105fab3c46f551823321f4ea80c3b8fda78fc38fb74daf5ab087"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "sha256": "a1e6acc6993a83195566d9355309cbad80d6d0070f6b4eb9b7cbde6125b372b2",
+        "bytes": 371987,
+        "contentSha256": "a1e6acc6993a83195566d9355309cbad80d6d0070f6b4eb9b7cbde6125b372b2"
+      },
+      {
+        "path": "research/index.html",
+        "sha256": "0d7873f3418d507897dc6e5ced9effc8e266d79f0352c2a6e131433c790d3ec6",
+        "bytes": 1576472,
+        "contentSha256": "90184fb217d9d99a2d46b4c475c0bad9d5381e11dc5415fe6b573000f021a1da"
+      },
+      {
+        "path": "downloads/bibliography.json",
+        "sha256": "05b95bf451f7a2b07ecca4f9edcc60d16f24179611f491b2195b746673402949",
+        "bytes": 1250680,
+        "contentSha256": "05b95bf451f7a2b07ecca4f9edcc60d16f24179611f491b2195b746673402949"
+      },
+      {
+        "path": "downloads/research.json",
+        "sha256": "05b95bf451f7a2b07ecca4f9edcc60d16f24179611f491b2195b746673402949",
+        "bytes": 1250680,
+        "contentSha256": "05b95bf451f7a2b07ecca4f9edcc60d16f24179611f491b2195b746673402949"
+      }
+    ],
+    "assessment": {
+      "provenance": "Actual private Next/compiler and untouched-exporter bytes from base e827186b1bedf53c0d4a893aa13b772a3797d10b and a declared dirty working-preview. Temporary technical admission inside an isolated clone served inspection only and supplies no editorial acceptance.",
+      "reconstruction": "Exact bounded 2/3/3 MDX insertions and two dated framing synchronizations (cl-lcia-midpoint-pathway and cl-mineral115-judgment) restore full prior c5e3d886 raw catalog/readings/literature and physical B14 bytes before #119 -> #117 -> #115 -> #113 -> #111 -> older qualifiers, verifying all 49 transitions and 153 bidirectional consumers.",
+      "guards": "Independent publication-engineering security audit verified 91/91 numericFact BigInt/prose assertions, 1-to-1 passage/evidence bindings, full evidence-link rosters, dual synchronization callout checks, and mandatory reverse-chronological 4-generation DOM sibling chains on B14.",
+      "actual": "Comparison of all 88 article projections identifies the exact 6 changed articles (B14 web/print + 4 downstream note 34->42 label updates on unchanged hrefs) and changed public artifacts. All 468 manifest payloads, capture files and 40 case downloads verified with zero internal-ID or raw-carrier leakage.",
+      "browser": "Passed 20 responsive viewport/theme checks, 8 four-generation no-script history suites on web and print, 8 canonical revision callout checks, 6 downstream consumer keyboard navigations, 10 visible caveat checks, /sources/ and /concepts/ checks, and 42-note physical @media print verification confirming display:block and non-zero bounding boxes on all four Note 1 and Note 41 revision callouts. All servers and browsers closed cleanly.",
+      "limits": "Clean production build (dirty:false), source PR/CI/merge, live EdgeOne byte/guard qualification and exact root submodule integration remain required after this scoped acceptance."
+    },
+    "independentReports": {
+      "independent-primary-source-audit-initial.md": "6705be32babed48c383e3309dffb02119038a0dac34021fdea5b3b21563b143d",
+      "independent-primary-source-audit-final.md": "4bf93673aefc58dc2095a5d9b4ff79fcc1a597b3a805482664d4a90f795cad75",
+      "full-chapter-b14-reader-review-initial.md": "d6ac2d5950212a271d941604446d9bd97971f1e854d9a7417ed65cb64b0d9a97",
+      "full-chapter-b14-reader-review-final.md": "254418102d5a66e772d56b18c949217ebd19274c03b8104ef65b087f17fa3141",
+      "independent-publication-engineering-review-initial.md": "e588538ab31f2451af6c7d9bfa9af077f595af862f08177aa0eb20fb8d121985",
+      "independent-publication-engineering-review-final.md": "5ede7581e3f5de951a0aa983ea276677cb3cec12205f5c7cefba6af570b6d8d3",
+      "verified-ozrad-facts-and-artifacts.json": "ca51b1dc76fb2567df63968f05e75ea222ea63e201e0391fba63966d58a739ea",
+      "actual-browser-qa/responsive-script-enabled.json": "410ef3e4ba5bef045a97ee44f53a0ae5353345612ce459ef287fa4094e17e093",
+      "actual-browser-qa/interactions.json": "a8348808f5167d48c33d752199fba6e8f57a80c5714294278b8acd873961c645"
+    }
+  }
+}
