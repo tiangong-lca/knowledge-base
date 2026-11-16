@@ -24,6 +24,25 @@ lastReviewedCommit: b88d4421295a42f809a951cd2a4046d662fd3b75
 
 ## Scoped scientific successors
 
+
+The mineral-resources unit #115 compares selected original ADP, SOP and cost
+estimates on explicit elemental extraction and scenario bases. A fixed positive
+reference or currency multiplier preserves order; a reported contrary ordering
+can exclude that mapping without establishing the true future cost or its cause.
+Matching per-metal economic reserves and starting cumulative extraction does not
+make fitted curves, samples or estimators identical. Original copper conversion,
+URR, integrand and currency/regression discrepancies remain accessible.
+
+This unit also corrects the original B14 opening's overly broad emission framing.
+Its stable claim/note identity receives an explicit dated correction linking the
+immutable preceding source; the original raw record and its qualification remain
+recoverable. The current interpretation distinguishes emission health/ecosystem
+paths from extraction/resource scarcity. The other934 historical claims retain
+exact records. Source, continuous-reader and actual-output qualification remain
+separate, and no factor workbook, original source redistribution, native LCIA run,
+functional material substitution or whole-resource assessment follows.
+
+
 The acid-equivalents unit #113 uses selected released rows to distinguish factor
 identity and indicator meaning. Its country comparison rejects chemistry-only
 reconstruction of those rows; its two AE-category comparisons reject one scalar

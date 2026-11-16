@@ -1,3 +1,5 @@
+import mineralConfig from '../config/reader-mineral-resources.json' with { type: 'json' };
+import { selectMineralResources, effectiveMineralResources } from './reader-mineral-resources.mjs';
 import acidConfig from '../config/reader-acid-equivalents.json' with { type: 'json' };
 import { selectAcidEquivalents, effectiveAcidEquivalents } from './reader-acid-equivalents.mjs';
 import landConfig from '../config/reader-land-recovery.json' with { type: 'json' };
@@ -31,8 +33,9 @@ export const currentLoadShift = selectLoadShift(loadShiftConfig, undefined, prev
 export const currentCircularFootprint = selectCircularFootprint(circularConfig, undefined, preview);
 export const currentLandRecovery = selectLandRecovery(landConfig, undefined, preview);
 export const currentAcidEquivalents = selectAcidEquivalents(acidConfig, undefined, preview);
+export const currentMineralResources = selectMineralResources(mineralConfig, undefined, preview);
 export const isReadableBookReviewPreview = oldPreview
-  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview' || acidConfig.status === 'preview');
+  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview' || acidConfig.status === 'preview' || mineralConfig.status === 'preview');
 const previousPlan = readableBookReviewPlan(oldPreview
   ? acceptance.units
   : pinnedReadableBookUnits(acceptance, readableBookBaselineDigest, readableBookAcceptancePins));
@@ -43,7 +46,8 @@ const acceptedSubstitution = effectiveSubstitutionRules(acceptedService, current
 const acceptedShift = effectiveLoadShift(acceptedSubstitution, currentLoadShift);
 const acceptedFootprint = effectiveCircularFootprint(acceptedShift, currentCircularFootprint);
 const acceptedLand = effectiveLandRecovery(acceptedFootprint, currentLandRecovery);
-export const currentBookPlan = effectiveAcidEquivalents(acceptedLand, currentAcidEquivalents);
+const acceptedAcid = effectiveAcidEquivalents(acceptedLand, currentAcidEquivalents);
+export const currentBookPlan = effectiveMineralResources(acceptedAcid, currentMineralResources);
 
 export function currentBookRecordMatches(kind, previous, current, projection) {
   if (projection !== undefined) return matchesAcceptedRecord(currentBookPlan, kind, previous, current, projection);

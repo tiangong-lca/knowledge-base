@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import config from '../config/reader-circular-footprint.json' with { type: 'json' };
 import capture from '../config/reader-circular-footprint-capture.json' with { type: 'json' };
+import minerals from '../config/reader-mineral-resources.json' with { type: 'json' };
 import catalog from '../knowledge/catalog.json' with { type: 'json' };
 import literature from '../knowledge/research/literature-map.json' with { type: 'json' };
 import readings from '../knowledge/research/readings.json' with { type: 'json' };
@@ -16,7 +17,8 @@ import { previousScientificTestRecords, testEnvelopes } from './fixtures/scienti
 test('B13 receipts bind captured raw files, normalized article pairs, public pages and JSON', {
   skip: !capture && config.status !== 'reviewed',
 }, () => {
-  const land = previousScientificTestRecords({ catalog, readings, literature }, acidEquivalents.unit);
+  const preMinerals = previousScientificTestRecords({ catalog, readings, literature }, minerals.unit);
+  const land = previousScientificTestRecords(preMinerals, acidEquivalents.unit);
   const previous = previousScientificTestRecords(land, landRecovery.unit);
   const expected = readerPublicDownloads(previous.catalog, previous.literature, previous.readings);
   const check = (changeUnit = () => {}, changeOutput) => {

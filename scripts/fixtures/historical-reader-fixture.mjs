@@ -28,7 +28,9 @@ const landConfigPath = 'config/reader-land-recovery.json';
 const landModulePath = 'scripts/reader-land-recovery.mjs';
 const acidConfigPath = 'config/reader-acid-equivalents.json';
 const acidModulePath = 'scripts/reader-acid-equivalents.mjs';
-const fixtureAliases = new Set([serviceModulePath, substitutionModulePath, shiftModulePath, footprintModulePath, landModulePath, acidModulePath].map(path => `@/${path}`));
+const mineralConfigPath = 'config/reader-mineral-resources.json';
+const mineralModulePath = 'scripts/reader-mineral-resources.mjs';
+const fixtureAliases = new Set([serviceModulePath, substitutionModulePath, shiftModulePath, footprintModulePath, landModulePath, acidModulePath, mineralModulePath].map(path => `@/${path}`));
 const flowPinPath = 'scripts/reader-flow-boundary-pins.mjs';
 
 async function loadArchive() {
@@ -77,7 +79,7 @@ async function materialize(root) {
     .map(entry => `scripts/${entry.name}`);
   const components = ['components/evidence.tsx', 'components/numbered-heading.tsx', 'components/chapter-content.tsx'];
   const current = [...configs, ...scripts, ...components, 'lib/teaching-case.ts']
-    .filter(path => ![copyeditConfigPath, copyeditPinPath, flowConfigPath, flowPinPath, serviceConfigPath, serviceModulePath, substitutionConfigPath, substitutionModulePath, shiftConfigPath, shiftModulePath, footprintConfigPath, footprintModulePath, landConfigPath, landModulePath, acidConfigPath, acidModulePath].includes(path));
+    .filter(path => ![copyeditConfigPath, copyeditPinPath, flowConfigPath, flowPinPath, serviceConfigPath, serviceModulePath, substitutionConfigPath, substitutionModulePath, shiftConfigPath, shiftModulePath, footprintConfigPath, footprintModulePath, landConfigPath, landModulePath, acidConfigPath, acidModulePath, mineralConfigPath, mineralModulePath].includes(path));
   const currentCopyeditPin = await readFile(join(repo, copyeditPinPath), 'utf8');
   const copyeditUnitPin = /^export const readerCopyeditUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
   assert.equal([...currentCopyeditPin.matchAll(copyeditUnitPin)].length, 1);
@@ -102,10 +104,13 @@ async function materialize(root) {
   const currentAcidModule = await readFile(join(repo, acidModulePath), 'utf8');
   const acidUnitPin = /^export const acidEquivalentsUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
   assert.equal([...currentAcidModule.matchAll(acidUnitPin)].length, 1);
+  const currentMineralModule = await readFile(join(repo, mineralModulePath), 'utf8');
+  const mineralUnitPin = /^export const mineralResourcesUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
+  assert.equal([...currentMineralModule.matchAll(mineralUnitPin)].length, 1);
   // The only archived script is the independently selected old edition pin.
   // All validation code, including the expectation resolver, comes from the
   // current worktree and runs under the historical book data in this directory.
-  // The later #95, #99, #102, #105, #107, #109, #111, and #113 units are inactive only in this isolated legacy fixture.
+  // The later #95, #99, #102, #105, #107, #109, #111, #113, and #115 units are inactive only in this isolated legacy fixture.
   assert.deepEqual(Object.keys(archived).filter(path => path.startsWith('scripts/')), [pinPath]);
   await Promise.all([
     ...current.filter(path => !Object.hasOwn(archived, path)).map(path => copyCurrent(root, path)),
@@ -126,6 +131,8 @@ async function materialize(root) {
     write(root, landModulePath, currentLandModule.replace(landUnitPin, 'export const landRecoveryUnitPin = null;')),
     write(root, acidConfigPath, JSON.stringify({ schemaVersion: 1, status: 'inactive', unit: null })),
     write(root, acidModulePath, currentAcidModule.replace(acidUnitPin, 'export const acidEquivalentsUnitPin = null;')),
+    write(root, mineralConfigPath, JSON.stringify({ schemaVersion: 1, status: 'inactive', unit: null })),
+    write(root, mineralModulePath, currentMineralModule.replace(mineralUnitPin, 'export const mineralResourcesUnitPin = null;')),
     symlink(join(repo, 'node_modules'), join(root, 'node_modules'), process.platform === 'win32' ? 'junction' : 'dir'),
   ]);
 }

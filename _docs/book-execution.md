@@ -134,9 +134,9 @@ accessible source-conflict notes. An independently identified overbroad emission
 framing in the old opening has an explicit scoped correction;934 other old
 claims remain exact. The actual old premise consumers, concept
 definitions and B13/B15/B16/B19/B20/B21/B24 interfaces have a scoped compatibility
-review in the unit protocol. Full-chapter independent reader and final source
-checks are under way; current source/reader/output acceptance and normal
-source/root delivery remain separate pending gates. Broader Part IV and
+review in the unit protocol. Separate source/reader/output acceptances are now bound to the reviewed
+working-preview candidate after independent checks and actual browser/print
+verification. Normal source/root delivery remains pending. Broader Part IV and
 Programme9 requirements remain active.
 
 Rule adoption101 itself is fully delivered: PR103/Main10dc686 and

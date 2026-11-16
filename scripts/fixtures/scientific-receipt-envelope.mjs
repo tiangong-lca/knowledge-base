@@ -2,7 +2,7 @@ import { readableBookReviewSubject, sha256 } from '../reader-current-edition.mjs
 import { restoreScientificRecords } from '../reader-scientific-delta.mjs';
 
 // These in-memory envelopes exercise the receipt predicates. They carry no editorial approval.
-export function testEnvelopes(capture, unit, mutateOutput = () => {}) {
+export function testEnvelopes(capture, unit, mutateOutput = () => {}, date = '2026-11-15') {
   const raw = new Map(capture.files.map(file => [file.path, file]));
   const articlePaths = [...new Set(unit.outputs.map(row => row.path.slice(1) + '/index.html'))];
   const observations = {
@@ -22,7 +22,7 @@ export function testEnvelopes(capture, unit, mutateOutput = () => {}) {
     const artifactFile = base + '-artifact.json';
     const reportFile = base + '-report.json';
     const identity = {
-      schemaVersion: 1, kind, unit: unit.id, date: '2026-11-15', subjectSha256: readableBookReviewSubject(unit, kind),
+      schemaVersion: 1, kind, unit: unit.id, date, subjectSha256: readableBookReviewSubject(unit, kind),
     };
     const artifact = JSON.stringify({ ...identity, scope: unit.scope, observed: 'In-memory regression fixture', observations: actual });
     const artifactSha256 = sha256(artifact);

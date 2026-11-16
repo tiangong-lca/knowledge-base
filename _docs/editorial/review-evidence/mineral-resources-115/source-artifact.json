@@ -1,0 +1,1418 @@
+{
+  "schemaVersion": 1,
+  "kind": "source",
+  "unit": "mineral-resources-115",
+  "subjectSha256": "d9204da23237c9df911c0d69f4a5a4fcd06f1829898cd91cd2153d2c36fc891f",
+  "date": "2026-11-16",
+  "scope": [
+    "content/docs/book/midpoint-endpoint-value-choices.mdx",
+    "claims:cl-lcia-midpoint-pathway",
+    "sources:src-land111-rivm2016",
+    "readings:rd-land111-rivm2016",
+    "literature:lit-m05",
+    "researchMetadata:reading-ledger",
+    "researchMetadata:literature-map",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:order:sources",
+    "researchMetadata:order:readings",
+    "researchMetadata:order:revisions",
+    "researchMetadata:order:literature",
+    "researchMetadata:order:queries",
+    "researchMetadata:public-projection",
+    "claims:cl-mineral115-input",
+    "claims:cl-mineral115-adp",
+    "claims:cl-mineral115-sop",
+    "claims:cl-mineral115-reserves",
+    "claims:cl-mineral115-rank",
+    "claims:cl-mineral115-cost-proxy",
+    "claims:cl-mineral115-metal-cost",
+    "claims:cl-mineral115-calibration",
+    "claims:cl-mineral115-assumptions",
+    "claims:cl-mineral115-judgment",
+    "evidence:ev-mineral115-adp-extraction",
+    "evidence:ev-mineral115-adp-cumulative",
+    "evidence:ev-mineral115-adp-workbook-basis",
+    "evidence:ev-mineral115-adp-cu",
+    "evidence:ev-mineral115-adp-ni",
+    "evidence:ev-mineral115-adp-mn",
+    "evidence:ev-mineral115-scp-curve",
+    "evidence:ev-mineral115-scp-sample-boundary",
+    "evidence:ev-mineral115-scp-r-cu",
+    "evidence:ev-mineral115-scp-r-ni",
+    "evidence:ev-mineral115-scp-r-mn",
+    "evidence:ev-mineral115-scp-urr-cu",
+    "evidence:ev-mineral115-scp-urr-ni",
+    "evidence:ev-mineral115-scp-urr-mn",
+    "evidence:ev-mineral115-guidance-adp",
+    "evidence:ev-mineral115-guidance-sop-scp",
+    "evidence:ev-mineral115-dissent-grade",
+    "evidence:ev-mineral115-dissent-cost",
+    "evidence:ev-mineral115-rivm-sop-method",
+    "evidence:ev-mineral115-rivm-money-proxy",
+    "evidence:ev-mineral115-sop-i-cu",
+    "evidence:ev-mineral115-sop-i-ni",
+    "evidence:ev-mineral115-sop-i-mn",
+    "evidence:ev-mineral115-sop-he-cu",
+    "evidence:ev-mineral115-sop-he-ni",
+    "evidence:ev-mineral115-sop-he-mn",
+    "evidence:ev-mineral115-conversion-i",
+    "evidence:ev-mineral115-conversion-he",
+    "evidence:ev-mineral115-scp-start",
+    "sources:src-mineral115-vanoers2020",
+    "sources:src-mineral115-vanoers2020-esm1",
+    "sources:src-mineral115-vieira2016",
+    "sources:src-mineral115-vieira2016-supplement",
+    "sources:src-mineral115-berger2020",
+    "sources:src-mineral115-ericsson2019",
+    "readings:rd-mineral115-vanoers2020",
+    "readings:rd-mineral115-vanoers2020-esm1",
+    "readings:rd-mineral115-vieira2016",
+    "readings:rd-mineral115-vieira2016-supplement",
+    "readings:rd-mineral115-berger2020",
+    "readings:rd-mineral115-ericsson2019",
+    "revisions:rev-mineral115-rivm-selected-mineral",
+    "literature:work-mineral115-vanoers2020",
+    "literature:work-mineral115-vieira2016",
+    "literature:work-mineral115-berger2020",
+    "literature:work-mineral115-ericsson2019",
+    "queries:q-mineral115-factor-originals-20261116",
+    "queries:q-mineral115-guidance-and-dissent-20261116"
+  ],
+  "observed": "Primary scoped judgment integrating named independent source/reader/static reviews and direct original/artifact/browser checks; no human or empirical certification.",
+  "observations": {
+    "state": {
+      "before": "62ff2d1448becfb53dc3901db51601207a9385b9ba7c01390de631e7d6e04a16",
+      "after": "93d92634ba66bf752bb64140ca8158db30014a4e39687e87382de98219adecd4"
+    },
+    "changes": [
+      {
+        "kind": "file",
+        "key": "content/docs/book/midpoint-endpoint-value-choices.mdx",
+        "from": "a3f4ad905d594ce33d5e6dbe79d6ed82e9f32d55055fccfcb2e6bfeacc92ab23",
+        "to": "97cac70b23d764f2736c6aa3f299c7308cc8ea2f60f91f1df48a888861a4ddc7",
+        "rationale": "在B14原三节的指定衔接处增补矿产比较，保留原文。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-lcia-midpoint-pathway",
+        "from": {
+          "raw": "7929c137fb48fdc66e438f183f6288d8a088d4714172363f65c18a9a6f4a5412",
+          "public": "7929c137fb48fdc66e438f183f6288d8a088d4714172363f65c18a9a6f4a5412",
+          "protected": "767f0605f5d5b6e628f450f10d1077e1fab2711e899c8f8280cd3bcbc8e34f05"
+        },
+        "to": {
+          "raw": "e99ed1e6b6460fafe725df782e4f5b3d46fa6345dd3bafade7d77549e58164ea",
+          "public": "e99ed1e6b6460fafe725df782e4f5b3d46fa6345dd3bafade7d77549e58164ea",
+          "protected": "6500dbbdbab45965e79ba6d3aff8fc3abbe46da46a3196803b5859128cf9681a"
+        },
+        "rationale": "保留前版排放示例，明确其范围并说明土地占用与矿产开采的清单入口。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-land111-rivm2016",
+        "from": {
+          "raw": "172a8c79b461364e3361b548c1838481050d311a7b7a4c5c196b0fd4121181fd",
+          "public": "172a8c79b461364e3361b548c1838481050d311a7b7a4c5c196b0fd4121181fd",
+          "protected": "172a8c79b461364e3361b548c1838481050d311a7b7a4c5c196b0fd4121181fd"
+        },
+        "to": {
+          "raw": "73e98db373bc2c415fd074d0a352d3940265ccc095927e4737325cac1ef2a709",
+          "public": "73e98db373bc2c415fd074d0a352d3940265ccc095927e4737325cac1ef2a709",
+          "protected": "73e98db373bc2c415fd074d0a352d3940265ccc095927e4737325cac1ef2a709"
+        },
+        "rationale": "保留原RIVM采集和土地选读身份，记录同一载体的矿产追加范围。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-land111-rivm2016",
+        "from": {
+          "raw": "68f10f17a2c86a3a47dcfaed053940ec3f498462a1f1ed9716072c10f72fc0c7",
+          "public": null,
+          "protected": "68f10f17a2c86a3a47dcfaed053940ec3f498462a1f1ed9716072c10f72fc0c7"
+        },
+        "to": {
+          "raw": "a0a927e207b400bfd94e3abc1f7568943613b7642ef4294a2bbcdd47f7941501",
+          "public": null,
+          "protected": "a0a927e207b400bfd94e3abc1f7568943613b7642ef4294a2bbcdd47f7941501"
+        },
+        "rationale": "保留原RIVM采集和土地选读身份，记录同一载体的矿产追加范围。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:lit-m05",
+        "from": {
+          "raw": "34dc0d47fabd60bf6684a9dd233983f4ffdee3fd0825c4b0fc4253e672540a04",
+          "public": null,
+          "protected": "34dc0d47fabd60bf6684a9dd233983f4ffdee3fd0825c4b0fc4253e672540a04"
+        },
+        "to": {
+          "raw": "6197b65503c952a113c5d31e045979532bcd26c91a540e3f8fe5b6a46e9c2716",
+          "public": null,
+          "protected": "6197b65503c952a113c5d31e045979532bcd26c91a540e3f8fe5b6a46e9c2716"
+        },
+        "rationale": "保留原RIVM采集和土地选读身份，记录同一载体的矿产追加范围。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:reading-ledger",
+        "from": {
+          "raw": "06c648250d4ed4b5736160636fcab201ce8c10bf9e66199e9456baac9deae2b0",
+          "public": null,
+          "protected": "06c648250d4ed4b5736160636fcab201ce8c10bf9e66199e9456baac9deae2b0"
+        },
+        "to": {
+          "raw": "fd2521749acbe9c2c929931d63b9eab5bd5cef6692af9a47c4aa9faf43ad0b21",
+          "public": null,
+          "protected": "fd2521749acbe9c2c929931d63b9eab5bd5cef6692af9a47c4aa9faf43ad0b21"
+        },
+        "rationale": "按实际记录重新核对原有顺序、日期及公共依赖，不扩大旧资格。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:literature-map",
+        "from": {
+          "raw": "327d288b85caa6785aef160368267748c9a2f433b2b45b85694b20ccd3cd625e",
+          "public": null,
+          "protected": "327d288b85caa6785aef160368267748c9a2f433b2b45b85694b20ccd3cd625e"
+        },
+        "to": {
+          "raw": "0d640ce6464958114fe946533c42868df5e5119f87b6825da0e955692f25e5df",
+          "public": null,
+          "protected": "0d640ce6464958114fe946533c42868df5e5119f87b6825da0e955692f25e5df"
+        },
+        "rationale": "按实际记录重新核对原有顺序、日期及公共依赖，不扩大旧资格。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:claims",
+        "from": {
+          "raw": "41d3aba9ef4bc1bba3af3e9b7334ea992ed472f587a776091a02668448f24c21",
+          "public": null,
+          "protected": "41d3aba9ef4bc1bba3af3e9b7334ea992ed472f587a776091a02668448f24c21"
+        },
+        "to": {
+          "raw": "4e5e8b810f64acabbb9f5f61104643c47f84b844f2533e8100b50ebe95878dce",
+          "public": null,
+          "protected": "4e5e8b810f64acabbb9f5f61104643c47f84b844f2533e8100b50ebe95878dce"
+        },
+        "rationale": "按实际记录重新核对原有顺序、日期及公共依赖，不扩大旧资格。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:evidence",
+        "from": {
+          "raw": "ccc7ef14f6241ec0dd4ef86bb377ca7a0fbcb262e60deac4c6db5cef8d380261",
+          "public": null,
+          "protected": "ccc7ef14f6241ec0dd4ef86bb377ca7a0fbcb262e60deac4c6db5cef8d380261"
+        },
+        "to": {
+          "raw": "92e2e9546c47412719216f789affbc6dc1dd0332945dd172d02885e094c055b5",
+          "public": null,
+          "protected": "92e2e9546c47412719216f789affbc6dc1dd0332945dd172d02885e094c055b5"
+        },
+        "rationale": "按实际记录重新核对原有顺序、日期及公共依赖，不扩大旧资格。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:sources",
+        "from": {
+          "raw": "530fd5a05a1310d9ee48706b7b583eee5a72982b53904fe97c12ae795b2bda28",
+          "public": null,
+          "protected": "530fd5a05a1310d9ee48706b7b583eee5a72982b53904fe97c12ae795b2bda28"
+        },
+        "to": {
+          "raw": "e733c84ec2885331d9bd35e2abf11af11e85a0fb2bf3aeda99c4c42145f51f01",
+          "public": null,
+          "protected": "e733c84ec2885331d9bd35e2abf11af11e85a0fb2bf3aeda99c4c42145f51f01"
+        },
+        "rationale": "按实际记录重新核对原有顺序、日期及公共依赖，不扩大旧资格。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:readings",
+        "from": {
+          "raw": "e8654a086c047d0193838cc567f9b2429bcd74aa3d2f8419b54d789ae4cc65b9",
+          "public": null,
+          "protected": "e8654a086c047d0193838cc567f9b2429bcd74aa3d2f8419b54d789ae4cc65b9"
+        },
+        "to": {
+          "raw": "66fdf72a4efc9e2b8a9362095bb750c082757d8ce711ffccf8da880c2aedfd07",
+          "public": null,
+          "protected": "66fdf72a4efc9e2b8a9362095bb750c082757d8ce711ffccf8da880c2aedfd07"
+        },
+        "rationale": "按实际记录重新核对原有顺序、日期及公共依赖，不扩大旧资格。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:revisions",
+        "from": {
+          "raw": "e8f0230eed9bc8afe2452e453446b6ca95cc66ead3904e0a0b9f9eb1733c3823",
+          "public": null,
+          "protected": "e8f0230eed9bc8afe2452e453446b6ca95cc66ead3904e0a0b9f9eb1733c3823"
+        },
+        "to": {
+          "raw": "813d78bfaa90bb00275ceca5f1a314582ec6e1bf535ba1d9661438c0572ae11f",
+          "public": null,
+          "protected": "813d78bfaa90bb00275ceca5f1a314582ec6e1bf535ba1d9661438c0572ae11f"
+        },
+        "rationale": "按实际记录重新核对原有顺序、日期及公共依赖，不扩大旧资格。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:literature",
+        "from": {
+          "raw": "19b1b65d453b2d96a13048be65cfd2b77a608184c763e45450c05ee29aaa7aea",
+          "public": null,
+          "protected": "19b1b65d453b2d96a13048be65cfd2b77a608184c763e45450c05ee29aaa7aea"
+        },
+        "to": {
+          "raw": "f52a281aa9f89b2e8947e3cc12cc842607f6f329350829dd4103bcef3cdb0a9d",
+          "public": null,
+          "protected": "f52a281aa9f89b2e8947e3cc12cc842607f6f329350829dd4103bcef3cdb0a9d"
+        },
+        "rationale": "按实际记录重新核对原有顺序、日期及公共依赖，不扩大旧资格。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:queries",
+        "from": {
+          "raw": "f6553dbcb2db1ff967a0b2b8ee839f7111d5494d5a6ed874589a593141b6d522",
+          "public": null,
+          "protected": "f6553dbcb2db1ff967a0b2b8ee839f7111d5494d5a6ed874589a593141b6d522"
+        },
+        "to": {
+          "raw": "20326b6101b8e37a9e035331e8f3434411ad73261ca9d8ef12b7eb569cfc1e0b",
+          "public": null,
+          "protected": "20326b6101b8e37a9e035331e8f3434411ad73261ca9d8ef12b7eb569cfc1e0b"
+        },
+        "rationale": "按实际记录重新核对原有顺序、日期及公共依赖，不扩大旧资格。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:public-projection",
+        "from": {
+          "raw": "f259679bb7acb59efe5f1f8151440369b854f80d2a01840ff61264f97f929261",
+          "public": null,
+          "protected": "f259679bb7acb59efe5f1f8151440369b854f80d2a01840ff61264f97f929261"
+        },
+        "to": {
+          "raw": "22fcd98f4c49e68f0cae2af575cac70e2bf0c55d29cc26554a375a22e0d0ed7b",
+          "public": null,
+          "protected": "22fcd98f4c49e68f0cae2af575cac70e2bf0c55d29cc26554a375a22e0d0ed7b"
+        },
+        "rationale": "按实际记录重新核对原有顺序、日期及公共依赖，不扩大旧资格。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-mineral115-input",
+        "from": null,
+        "to": {
+          "raw": "3c18736e552f857aaaa9e3406feda6db757636246ecda29c46ed9fb96c50c89f",
+          "public": "3c18736e552f857aaaa9e3406feda6db757636246ecda29c46ed9fb96c50c89f",
+          "protected": "0a0ff50a6a219e949b36511fc4da58e3606f14f3d813901d4067539cecf4d597"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-mineral115-adp",
+        "from": null,
+        "to": {
+          "raw": "f701fdb703a565c292cd173604232144208b918e1e357ed35720a845cbeba579",
+          "public": "f701fdb703a565c292cd173604232144208b918e1e357ed35720a845cbeba579",
+          "protected": "6f1e21f21ad62e87f664f7f9bcef3c54b2e0c2856d14325e5dd48e9f82d08b47"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-mineral115-sop",
+        "from": null,
+        "to": {
+          "raw": "762d8f4bc5ec9570b2599b7c822f59dfa2843e49a5f6b528aba9af1ef8e43fa1",
+          "public": "762d8f4bc5ec9570b2599b7c822f59dfa2843e49a5f6b528aba9af1ef8e43fa1",
+          "protected": "e2c3b418255d5d39b39d30856c799922f74fdd8260c3cbc82419d91aac014673"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-mineral115-reserves",
+        "from": null,
+        "to": {
+          "raw": "73bb96a5ddbe6d33fe2b72e048d0a87499345f1733af6678c80adef7ea01a5a6",
+          "public": "73bb96a5ddbe6d33fe2b72e048d0a87499345f1733af6678c80adef7ea01a5a6",
+          "protected": "114ae4247355f7d32c5f35de7a6b4af6d8fe7d8c77ea83f05dc8489d1dca6460"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-mineral115-rank",
+        "from": null,
+        "to": {
+          "raw": "7577f1a1cd740293dce96180bdd98649c1b533e35165b05d2ca650ae910842f6",
+          "public": "7577f1a1cd740293dce96180bdd98649c1b533e35165b05d2ca650ae910842f6",
+          "protected": "a5de6d16d7fc92e6019df8ed588a5c80afdf8785acc1771aa53554be0a92767e"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-mineral115-cost-proxy",
+        "from": null,
+        "to": {
+          "raw": "fde2eb701c5cb96b56ef80a5b821d1351c98d1d1b913ead346fb15a83f59af3b",
+          "public": "fde2eb701c5cb96b56ef80a5b821d1351c98d1d1b913ead346fb15a83f59af3b",
+          "protected": "0213da3f54d756f07223a1c852172bb6d27bcdbf2b05a6eee91ccec902d8563b"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-mineral115-metal-cost",
+        "from": null,
+        "to": {
+          "raw": "c5e97cc545da751a3f4ec7ea61eec69faac5577411a492ef6b5e4f6191dabc4d",
+          "public": "c5e97cc545da751a3f4ec7ea61eec69faac5577411a492ef6b5e4f6191dabc4d",
+          "protected": "23ce706e28a564569d61efaaeba6301a5e521f978c82b9a57c4b716fda68276c"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-mineral115-calibration",
+        "from": null,
+        "to": {
+          "raw": "15e94754ed7f72e883a1a9fa89567986aa5dc154c30dfcbc06646642d2597b9e",
+          "public": "15e94754ed7f72e883a1a9fa89567986aa5dc154c30dfcbc06646642d2597b9e",
+          "protected": "56cc78aa05eeb4c0ce4197d9ed9f364a71440a72cc69e478788c2fd93d730db7"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-mineral115-assumptions",
+        "from": null,
+        "to": {
+          "raw": "ea86d1505734cd7fe1c37b0d3047c8e8100ccc45710f5faf0348a0fdd5b8f44c",
+          "public": "ea86d1505734cd7fe1c37b0d3047c8e8100ccc45710f5faf0348a0fdd5b8f44c",
+          "protected": "a903f5cddac11c49eaad57e2a400c8262b5f283ff77d6ff0422f2a8a3e68a903"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-mineral115-judgment",
+        "from": null,
+        "to": {
+          "raw": "a8e6255aee7bec4c94d8ed618222cff8d7323c054b4ab518f4e6f8bc1aada8c3",
+          "public": "a8e6255aee7bec4c94d8ed618222cff8d7323c054b4ab518f4e6f8bc1aada8c3",
+          "protected": "57a0ca8f0acf7c4e8098d4bb0eaa3f74929c39b76ae13fec62597108926fb069"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-adp-extraction",
+        "from": null,
+        "to": {
+          "raw": "b52b29ae4a0fe321c138ca820defa078a6e37cb6d10c679a6f70f606a62c19bf",
+          "public": "b52b29ae4a0fe321c138ca820defa078a6e37cb6d10c679a6f70f606a62c19bf",
+          "protected": "b52b29ae4a0fe321c138ca820defa078a6e37cb6d10c679a6f70f606a62c19bf"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-adp-cumulative",
+        "from": null,
+        "to": {
+          "raw": "a1c8062246dc0731a920ef7d2befa1b26b368b0ce4a5bb721d9f9183d7ce805c",
+          "public": "a1c8062246dc0731a920ef7d2befa1b26b368b0ce4a5bb721d9f9183d7ce805c",
+          "protected": "a1c8062246dc0731a920ef7d2befa1b26b368b0ce4a5bb721d9f9183d7ce805c"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-adp-workbook-basis",
+        "from": null,
+        "to": {
+          "raw": "6ab8d5e8fcd967875119fc9d9f2392a62b46c405a73aefd3f65575fbacc0764b",
+          "public": "6ab8d5e8fcd967875119fc9d9f2392a62b46c405a73aefd3f65575fbacc0764b",
+          "protected": "6ab8d5e8fcd967875119fc9d9f2392a62b46c405a73aefd3f65575fbacc0764b"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-adp-cu",
+        "from": null,
+        "to": {
+          "raw": "017df1bfa5d4c62c7fe1214c61f123870650ccdf24cc37277ffe2485f0645468",
+          "public": "017df1bfa5d4c62c7fe1214c61f123870650ccdf24cc37277ffe2485f0645468",
+          "protected": "017df1bfa5d4c62c7fe1214c61f123870650ccdf24cc37277ffe2485f0645468"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-adp-ni",
+        "from": null,
+        "to": {
+          "raw": "ca3e87a92baaf74802c0160165bb2eec7db8f1bd8cc859b8491aa5b15dde0f26",
+          "public": "ca3e87a92baaf74802c0160165bb2eec7db8f1bd8cc859b8491aa5b15dde0f26",
+          "protected": "ca3e87a92baaf74802c0160165bb2eec7db8f1bd8cc859b8491aa5b15dde0f26"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-adp-mn",
+        "from": null,
+        "to": {
+          "raw": "4a302d2fdfc5da075c83a6ca46f5b22e2ae7ec67de99dc955dd9cb816b374f0b",
+          "public": "4a302d2fdfc5da075c83a6ca46f5b22e2ae7ec67de99dc955dd9cb816b374f0b",
+          "protected": "4a302d2fdfc5da075c83a6ca46f5b22e2ae7ec67de99dc955dd9cb816b374f0b"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-scp-curve",
+        "from": null,
+        "to": {
+          "raw": "c5578745c8dc338d967d517243c20db002ca3913aeed46c06de01054b97c7503",
+          "public": "c5578745c8dc338d967d517243c20db002ca3913aeed46c06de01054b97c7503",
+          "protected": "c5578745c8dc338d967d517243c20db002ca3913aeed46c06de01054b97c7503"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-scp-sample-boundary",
+        "from": null,
+        "to": {
+          "raw": "6a5c916d69d5181dfe6ff319490cf7fc76e9e3afa16188c9a09ed0f6aafb4e94",
+          "public": "6a5c916d69d5181dfe6ff319490cf7fc76e9e3afa16188c9a09ed0f6aafb4e94",
+          "protected": "6a5c916d69d5181dfe6ff319490cf7fc76e9e3afa16188c9a09ed0f6aafb4e94"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-scp-r-cu",
+        "from": null,
+        "to": {
+          "raw": "c9bff6986059734af28bd46e9bf759571f844ee3452b58dbad7b25c560a09fad",
+          "public": "c9bff6986059734af28bd46e9bf759571f844ee3452b58dbad7b25c560a09fad",
+          "protected": "c9bff6986059734af28bd46e9bf759571f844ee3452b58dbad7b25c560a09fad"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-scp-r-ni",
+        "from": null,
+        "to": {
+          "raw": "366efe25f8cdb5e951343da1a2160fff29496d835f11cb63e6bf16d54488bf0c",
+          "public": null,
+          "protected": "366efe25f8cdb5e951343da1a2160fff29496d835f11cb63e6bf16d54488bf0c"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-scp-r-mn",
+        "from": null,
+        "to": {
+          "raw": "b57fcce441f52d05d339466991b48534a2ffa24e0adbbec63f0b118ed59fc699",
+          "public": "b57fcce441f52d05d339466991b48534a2ffa24e0adbbec63f0b118ed59fc699",
+          "protected": "b57fcce441f52d05d339466991b48534a2ffa24e0adbbec63f0b118ed59fc699"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-scp-urr-cu",
+        "from": null,
+        "to": {
+          "raw": "be276a191906dd4331dc88389e229a50bd42c066ac1527d6688a9c3f70599772",
+          "public": "be276a191906dd4331dc88389e229a50bd42c066ac1527d6688a9c3f70599772",
+          "protected": "be276a191906dd4331dc88389e229a50bd42c066ac1527d6688a9c3f70599772"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-scp-urr-ni",
+        "from": null,
+        "to": {
+          "raw": "a60acfff2f6ac0e1262e1143be63ef22f3874d97fa8e6711b9a4dcbea4516eb6",
+          "public": "a60acfff2f6ac0e1262e1143be63ef22f3874d97fa8e6711b9a4dcbea4516eb6",
+          "protected": "a60acfff2f6ac0e1262e1143be63ef22f3874d97fa8e6711b9a4dcbea4516eb6"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-scp-urr-mn",
+        "from": null,
+        "to": {
+          "raw": "f037ff970463f3fd00f40266da93b0951028cd77811929480f25d5f770313ae2",
+          "public": "f037ff970463f3fd00f40266da93b0951028cd77811929480f25d5f770313ae2",
+          "protected": "f037ff970463f3fd00f40266da93b0951028cd77811929480f25d5f770313ae2"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-guidance-adp",
+        "from": null,
+        "to": {
+          "raw": "33251b8f15962a4bb6a17d7c264cf75e30ef887eeeafc42492a9419e64201e6c",
+          "public": null,
+          "protected": "33251b8f15962a4bb6a17d7c264cf75e30ef887eeeafc42492a9419e64201e6c"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-guidance-sop-scp",
+        "from": null,
+        "to": {
+          "raw": "8540f24e1f591fedcbea75cd8961e6d740887eeaffa37573d12d29dbda2e01d9",
+          "public": "8540f24e1f591fedcbea75cd8961e6d740887eeaffa37573d12d29dbda2e01d9",
+          "protected": "8540f24e1f591fedcbea75cd8961e6d740887eeaffa37573d12d29dbda2e01d9"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-dissent-grade",
+        "from": null,
+        "to": {
+          "raw": "9a60fa6b7afe7ad2386d01a79fb226b4d811dba2c3bf8d371374acfe31cd095e",
+          "public": "9a60fa6b7afe7ad2386d01a79fb226b4d811dba2c3bf8d371374acfe31cd095e",
+          "protected": "9a60fa6b7afe7ad2386d01a79fb226b4d811dba2c3bf8d371374acfe31cd095e"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-dissent-cost",
+        "from": null,
+        "to": {
+          "raw": "b022583bfde731bc0dfc4bf0c3fc4f4eda73de17ef891fc76487be11872f8f81",
+          "public": "b022583bfde731bc0dfc4bf0c3fc4f4eda73de17ef891fc76487be11872f8f81",
+          "protected": "b022583bfde731bc0dfc4bf0c3fc4f4eda73de17ef891fc76487be11872f8f81"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-rivm-sop-method",
+        "from": null,
+        "to": {
+          "raw": "deaf984821c9cba68947abe39577494df7a00543737a92056ca3b51ef1f85e1a",
+          "public": "deaf984821c9cba68947abe39577494df7a00543737a92056ca3b51ef1f85e1a",
+          "protected": "deaf984821c9cba68947abe39577494df7a00543737a92056ca3b51ef1f85e1a"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-rivm-money-proxy",
+        "from": null,
+        "to": {
+          "raw": "15fdf9769833a53e6c67649bedc5c4dc7f7a4b9bedddc08ca618c8ac1c1f7ad0",
+          "public": "15fdf9769833a53e6c67649bedc5c4dc7f7a4b9bedddc08ca618c8ac1c1f7ad0",
+          "protected": "15fdf9769833a53e6c67649bedc5c4dc7f7a4b9bedddc08ca618c8ac1c1f7ad0"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-sop-i-cu",
+        "from": null,
+        "to": {
+          "raw": "c3bd09f7b32fe0265d32c25f50fce12b0ba0cd8e4cdd9414736586fb54b5bde7",
+          "public": "c3bd09f7b32fe0265d32c25f50fce12b0ba0cd8e4cdd9414736586fb54b5bde7",
+          "protected": "c3bd09f7b32fe0265d32c25f50fce12b0ba0cd8e4cdd9414736586fb54b5bde7"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-sop-i-ni",
+        "from": null,
+        "to": {
+          "raw": "27be66e11903f845fb74bbf5b1264fcc621a8535748bb05f1b97a4c76db97270",
+          "public": null,
+          "protected": "27be66e11903f845fb74bbf5b1264fcc621a8535748bb05f1b97a4c76db97270"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-sop-i-mn",
+        "from": null,
+        "to": {
+          "raw": "224540ba7bcff1d0c484a7d6c507dc5c10691f4144aeb42c24ea1b3ba4583c3b",
+          "public": "224540ba7bcff1d0c484a7d6c507dc5c10691f4144aeb42c24ea1b3ba4583c3b",
+          "protected": "224540ba7bcff1d0c484a7d6c507dc5c10691f4144aeb42c24ea1b3ba4583c3b"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-sop-he-cu",
+        "from": null,
+        "to": {
+          "raw": "9470fe1c667d9aa817820a5e83705b53ebbf954b3a4f9dcc7dde05030f984e16",
+          "public": "9470fe1c667d9aa817820a5e83705b53ebbf954b3a4f9dcc7dde05030f984e16",
+          "protected": "9470fe1c667d9aa817820a5e83705b53ebbf954b3a4f9dcc7dde05030f984e16"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-sop-he-ni",
+        "from": null,
+        "to": {
+          "raw": "f8c043ea511b9cfea94b113872d598418f323d0db5ba72af58d0d8418ec5b17b",
+          "public": "f8c043ea511b9cfea94b113872d598418f323d0db5ba72af58d0d8418ec5b17b",
+          "protected": "f8c043ea511b9cfea94b113872d598418f323d0db5ba72af58d0d8418ec5b17b"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-sop-he-mn",
+        "from": null,
+        "to": {
+          "raw": "fcf3bf293824f79a09b66e17f50f601882ed402302730972c4726ebb75b42aa9",
+          "public": "fcf3bf293824f79a09b66e17f50f601882ed402302730972c4726ebb75b42aa9",
+          "protected": "fcf3bf293824f79a09b66e17f50f601882ed402302730972c4726ebb75b42aa9"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-conversion-i",
+        "from": null,
+        "to": {
+          "raw": "7f6fe3a95c0f08ce14b1bc1eba8eba14d86553ac6eac52c3c16047acfd9096d3",
+          "public": "7f6fe3a95c0f08ce14b1bc1eba8eba14d86553ac6eac52c3c16047acfd9096d3",
+          "protected": "7f6fe3a95c0f08ce14b1bc1eba8eba14d86553ac6eac52c3c16047acfd9096d3"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-conversion-he",
+        "from": null,
+        "to": {
+          "raw": "018a7ba7b348a53581da7446985d7aa742f85eaa6b6fc39d70a8549d112fbe5d",
+          "public": "018a7ba7b348a53581da7446985d7aa742f85eaa6b6fc39d70a8549d112fbe5d",
+          "protected": "018a7ba7b348a53581da7446985d7aa742f85eaa6b6fc39d70a8549d112fbe5d"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-mineral115-scp-start",
+        "from": null,
+        "to": {
+          "raw": "bdbc275dfd5deb27a5ba962435c74fc0d46d2f3cc56d1b65a98dd158ae48cf15",
+          "public": "bdbc275dfd5deb27a5ba962435c74fc0d46d2f3cc56d1b65a98dd158ae48cf15",
+          "protected": "bdbc275dfd5deb27a5ba962435c74fc0d46d2f3cc56d1b65a98dd158ae48cf15"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-mineral115-vanoers2020",
+        "from": null,
+        "to": {
+          "raw": "3fd16cf20979d7b1d522c9b555307aefa568e1b91f55041f59ac529a3ccd24c2",
+          "public": "3fd16cf20979d7b1d522c9b555307aefa568e1b91f55041f59ac529a3ccd24c2",
+          "protected": "3fd16cf20979d7b1d522c9b555307aefa568e1b91f55041f59ac529a3ccd24c2"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-mineral115-vanoers2020-esm1",
+        "from": null,
+        "to": {
+          "raw": "db967d93842b4d77d535be502a870a8bb9efbcd7e00750fd0dd0368107f13917",
+          "public": "db967d93842b4d77d535be502a870a8bb9efbcd7e00750fd0dd0368107f13917",
+          "protected": "db967d93842b4d77d535be502a870a8bb9efbcd7e00750fd0dd0368107f13917"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-mineral115-vieira2016",
+        "from": null,
+        "to": {
+          "raw": "91970e80c76c0bf3b233d84fc536c9494e9e9773c931d6cbaed36fe113b0c716",
+          "public": "91970e80c76c0bf3b233d84fc536c9494e9e9773c931d6cbaed36fe113b0c716",
+          "protected": "91970e80c76c0bf3b233d84fc536c9494e9e9773c931d6cbaed36fe113b0c716"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-mineral115-vieira2016-supplement",
+        "from": null,
+        "to": {
+          "raw": "cd1a505d67a5f0899722729675d335001d80f4380a8e2ac3f109fbba774f8cca",
+          "public": "cd1a505d67a5f0899722729675d335001d80f4380a8e2ac3f109fbba774f8cca",
+          "protected": "cd1a505d67a5f0899722729675d335001d80f4380a8e2ac3f109fbba774f8cca"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-mineral115-berger2020",
+        "from": null,
+        "to": {
+          "raw": "348548b0ba9b50e9f3513c42671306c5ec86ea5759e04c86960207fae1149b63",
+          "public": "348548b0ba9b50e9f3513c42671306c5ec86ea5759e04c86960207fae1149b63",
+          "protected": "348548b0ba9b50e9f3513c42671306c5ec86ea5759e04c86960207fae1149b63"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-mineral115-ericsson2019",
+        "from": null,
+        "to": {
+          "raw": "4e796ae7388c04364ac12555be1e4cff0131aa8ea7d54b735627541fc335bc90",
+          "public": "4e796ae7388c04364ac12555be1e4cff0131aa8ea7d54b735627541fc335bc90",
+          "protected": "4e796ae7388c04364ac12555be1e4cff0131aa8ea7d54b735627541fc335bc90"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-mineral115-vanoers2020",
+        "from": null,
+        "to": {
+          "raw": "5ea89069081d47896ed74f2dfdeaedf3d7f23e1d85852644a20cdfad812220ed",
+          "public": null,
+          "protected": "5ea89069081d47896ed74f2dfdeaedf3d7f23e1d85852644a20cdfad812220ed"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-mineral115-vanoers2020-esm1",
+        "from": null,
+        "to": {
+          "raw": "fffd3281c134d42db54c5e243a2ec0e3bdba6d5cb290810fd8dbfcbe30995336",
+          "public": null,
+          "protected": "fffd3281c134d42db54c5e243a2ec0e3bdba6d5cb290810fd8dbfcbe30995336"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-mineral115-vieira2016",
+        "from": null,
+        "to": {
+          "raw": "34453f998bc8503b9130bfc17e945d34a88d93e2b5b3d151ccf70cf9deeecde9",
+          "public": null,
+          "protected": "34453f998bc8503b9130bfc17e945d34a88d93e2b5b3d151ccf70cf9deeecde9"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-mineral115-vieira2016-supplement",
+        "from": null,
+        "to": {
+          "raw": "7086dad40effa810aaf60fe31358c7e2d95607ee6b23fdf9114ff2dd2da4791a",
+          "public": null,
+          "protected": "7086dad40effa810aaf60fe31358c7e2d95607ee6b23fdf9114ff2dd2da4791a"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-mineral115-berger2020",
+        "from": null,
+        "to": {
+          "raw": "c4d3dd365b8f45d4eab1cd8cc5ef361a889b4349e448078c41b9df7ac6547987",
+          "public": null,
+          "protected": "c4d3dd365b8f45d4eab1cd8cc5ef361a889b4349e448078c41b9df7ac6547987"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-mineral115-ericsson2019",
+        "from": null,
+        "to": {
+          "raw": "3561942dd7761710fe6b68f4a101206352f3d8a906492f2fbb368d2e3c5782c6",
+          "public": null,
+          "protected": "3561942dd7761710fe6b68f4a101206352f3d8a906492f2fbb368d2e3c5782c6"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "revisions:rev-mineral115-rivm-selected-mineral",
+        "from": null,
+        "to": {
+          "raw": "8890dcfa48951c5b8715a1bc2f3dcb55e7f92a16039f9ba7a9af5def8757ed7c",
+          "public": null,
+          "protected": "8890dcfa48951c5b8715a1bc2f3dcb55e7f92a16039f9ba7a9af5def8757ed7c"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-mineral115-vanoers2020",
+        "from": null,
+        "to": {
+          "raw": "37c2f39ce83886c119972abb86f1e9449f27c3b24bdcb98b88d28271e21a96bb",
+          "public": null,
+          "protected": "37c2f39ce83886c119972abb86f1e9449f27c3b24bdcb98b88d28271e21a96bb"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-mineral115-vieira2016",
+        "from": null,
+        "to": {
+          "raw": "68447ceca159f5e8f7c8123b1d2189b5576801055ed8e65ec238ec8bd09f1f6b",
+          "public": null,
+          "protected": "68447ceca159f5e8f7c8123b1d2189b5576801055ed8e65ec238ec8bd09f1f6b"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-mineral115-berger2020",
+        "from": null,
+        "to": {
+          "raw": "6dd6b80edbd9287840b3422d44b59aa9f599d59f72a5d73860be1439ffa53d12",
+          "public": null,
+          "protected": "6dd6b80edbd9287840b3422d44b59aa9f599d59f72a5d73860be1439ffa53d12"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-mineral115-ericsson2019",
+        "from": null,
+        "to": {
+          "raw": "c0bd448b5934a7519ce8c53e5d13df65fdc54a85e12d926be3949c838a5d7304",
+          "public": null,
+          "protected": "c0bd448b5934a7519ce8c53e5d13df65fdc54a85e12d926be3949c838a5d7304"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "queries:q-mineral115-factor-originals-20261116",
+        "from": null,
+        "to": {
+          "raw": "ff21a549a1bb40929386d7733682cc6440752c6b01fc103114707a61dea37359",
+          "public": null,
+          "protected": "ff21a549a1bb40929386d7733682cc6440752c6b01fc103114707a61dea37359"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      },
+      {
+        "kind": "record",
+        "key": "queries:q-mineral115-guidance-and-dissent-20261116",
+        "from": null,
+        "to": {
+          "raw": "8f337495d4c1911d0e769ae2eba72921615ac0286464bb834d44f04c77bc851b",
+          "public": null,
+          "protected": "8f337495d4c1911d0e769ae2eba72921615ac0286464bb834d44f04c77bc851b"
+        },
+        "rationale": "为本次矿产方法比较补充已列明范围的原件、证据及论述。"
+      }
+    ],
+    "consumers": [
+      {
+        "id": "cl-lcia-endpoint-units",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lcia-mid-end-conversion-limits",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lcia-model-data-factor-separation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-connect-reuse-keeps-relation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-path-marginal-average",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-path-supplied-effect-conditions",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-path-background",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-path-pdf",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-water-marginal-contexts",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-question",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-authority",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-three",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-equation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-why-square",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-nmvoc",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-nox",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-service",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-score",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-scale",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-threshold",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-test",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-later",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-es-judgment",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-purpose",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-policy-contrast",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-baseline",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-units",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-display",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-logit",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-trade",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-precision",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-primary-ratio",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-households",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-health",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-mismatch",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-annual",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-shares",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-two-forms",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-different-card",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-english",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-english-basis",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-service",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-japan-route",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-break-even",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-english-route",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-numeraire",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-edition",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-validity",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-null",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-order",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-transfer",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-lime-decision",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-opening",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-precursor-denominator",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-intake-definition",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-intake-unit",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-receptor-boundary",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-source-height",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-mixture-inputs",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-mixture-results",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-exposure-evidence",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-effect-definition",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-effect-default",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-urban-health",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-rural-health",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-precursor-health",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-burden-check",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-population-meaning",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-indoor-location",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-indoor-matrix",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-exposure-compatible",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-compatible-population",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-indoor-time",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-exposure-coverage",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-nonlinear-response",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-risk-reference",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-slope-meaning",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-finite-change",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-slope-context",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-ier-evidence",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-gemm-alternative",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-factor-correction",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-implementation-layer",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-chemistry-background",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-chemistry-perturbation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-chemistry-model-check",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-concentration-route",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-regional-factor",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-modern-values",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-modern-ratios",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-matched-scope",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-uncovered-pathways",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-conclusion",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-concentration-balance",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-activity-indicators",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-usetox-conclusion",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-source-distribution",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-evidence-levels",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-regional-summary",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-factor-order",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-matched-scenario",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-pm-version-and-model",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-land111-episode",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-land111-midpoint",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-land111-conversion",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-land111-pathway",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-land111-horizon",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-land111-factor-scale",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-land111-integral",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-land111-countercheck",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-land111-aggregation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      },
+      {
+        "id": "cl-land111-printed-record",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，沿用此前论述及已认可的限制。"
+      }
+    ],
+    "assessment": {
+      "scope": "Selected Van Oers2020/online2019 original and ESM1, original RIVM2016 ReportI mineral chapter and appendix, Vieira2016 article/S2/S4, Berger2020 assessment and Ericsson2019 dissent. The2017 revised-report metadata/erratum and prior limited table observation retain their actual scope; no full new2017 PDF reading or uninspected correction text is claimed. ReCiPe journal pp138–140 was rechecked for the corrected opening.",
+      "comparison": "Equal1kg elemental extraction is a factor comparand, not common product service. Geological-stock depletion, average future additional ore per currentkg and future采选cost indicators answer different questions. ADP uses corrected cumulative1970–2015 production and geologic stock, not annual2015 normalization production. SOP refers to copper under the same scenario. A common positive multiplier preserves order, so it cannot erase the selected Cu/Ni ADP–SOP reversal or reproduce the reported Cu/Mn direct-cost reversal.",
+      "values": "Seventeen factor records preserve selected row/cell/scenario/carrier and exact raw decimal fidelity, including the original OOXML cached Cu/Ni literal digits. Eight additional inputs separately bind Cu R6.90e11/CME5.92e11 and Mn R5.70e11/CME5.80e11 kg across RIVMS8.1, SCP S2 and articleTable1. Printed agreement is not underlying model equality. H/E products .23/.6647/.018929 and I Mn .006016 are authored multiplication of printed inputs, with stated displayed rounding.",
+      "limits": "RIVM copper conversion .23 versus directSCP .744, CuURR4.36e12 versus4.63e12, C versus deltaC integrands, regression/currency descriptions remain unresolved. Matching reserves and starting masses does not align samples, curves or estimators; no single-cause attribution or real future cost prediction follows. Berger provisional recommendation addresses laterSOP lineage, not the selected2016 rows or the2020 cumulativeADP. Shared authors/data are not independent replication. The dissent and Aitik example do not establish a global causal effect.",
+      "correction": "The original opening was overbroad about emission pathways. Current interpretation explicitly uses emission→health/ecosystem as an example and introduces land/extraction separately, with a dated note1 correction and immutable preceding source. Original note identity, concept IDs and prior premise fields remain. The other934 historical claims, concept/mapping/coverage objects, earlier cases and numerical inputs remain exact. Source restoration qualifies the true607381d predecessor and older accepted generations.",
+      "review": "Independent selected-original and canonical reviews plus main original inspection supported actual prose; subsequent bounded reviews checked six reader-driven deltas and the eight structured inputs. Scientific checking is agent source review, not human expert certification, native software execution, proprietary mine-data reproduction, or empirical validation."
+    },
+    "independentReports": {
+      "candidate-independent-source-review.md": "b7eee8f657ef18547825699d6f417742f6af2272c77a655c0c0094e03d35eea7",
+      "canonical-independent-source-verification.md": "b225aed4c12d35f2a0509ce801954dcedd54dba4fe529a2e893c1417e140c4ae",
+      "canonical-reader-delta-source-verification.md": "dd314c9f4308b6bf7b81ab69e6cd0724e2e858180ab08a66164536f738b0a64b",
+      "reserve-input-facts-independent-source-audit.md": "44317cb7f78bd6d176e39a8adb4a745c101e24e1bdd9feda12fcee49004eb678",
+      "full-chapter-reader-review.md": "28bcb2908c35d6e2072db194466ef064fa24493a3453fbc7a1c7f031bdf93f13",
+      "full-chapter-reader-correction-reread.md": "2559f15e359c2721db051a6a402b52569e8783b493e9e0260871ecb2be7dae3f",
+      "reader-correction-disposition.json": "b8cf32e50c825fbd5e3574ea53b077ea29ffe253dcd6a2714f7bd6f3501ad536",
+      "independent-publication-engineering-review.md": "43b22b13b9a87ec8db9aa50ec7a29d05f98855704ce5c9ceb8d9aaa78bd2b5fb",
+      "primary-export-rehash.json": "c0c873a45698c6ed2eaea397cdf179cfa12378fc52d6ef23ed0a0b0dd1572f55",
+      "actual-browser-qa/responsive-script-enabled.json": "c8f1bfeffdc28d265726cc2f7696841dc5bdd71561ce5f5e97e13def8a10d9c4",
+      "actual-browser-qa/interactions.json": "58ab853092e44b95c2acd1fb75072dfe263651d990e1bd9561db199c6b5959c7",
+      "print-correction-defect.json": "7f9cc7c6c9df0fa9d5d10906e346518c537720ce22313e29e7a4bbe8f039eb73"
+    }
+  }
+}

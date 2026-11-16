@@ -20,6 +20,17 @@ lastReviewedCommit: 040cecf06e63cf204d987870de24a0e44dffb38b
 
 # LCA Living Knowledge Base and Review
 
+[Mineral resources #115](https://github.com/tiangong-lca/knowledge-base/issues/115)
+compares geological depletion, future ore requirements and modeled采选 costs on
+explicit element-mass and scenario bases. Its [comparison record](_docs/editorial/2026-11-16-mineral-resources.md)
+preserves source discrepancies and the shared-multiplier limits, with separate
+source,26-paragraph reader and actual-output acceptance. The old opening has an
+explicit dated correction;934 other historical claims remain exact. Both older
+B14 scope generations remain independently qualified. Actual print-media review
+found and fixed a hidden correction note before acceptance. Clean production,
+source PR/CI/hosting and exact root delivery remain tracked on115; programme9
+and the continuing whole-book work stay active.
+
 [Acid equivalents #113](https://github.com/tiangong-lca/knowledge-base/issues/113)
 compares modeled receiving quantities and exact EF3.1 factor identities. Its
 [comparison record](_docs/editorial/2026-11-15-acid-equivalents.md) separates
