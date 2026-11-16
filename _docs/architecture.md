@@ -17,10 +17,37 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-16
-lastReviewedCommit: 02d4457804ef72bd42909025f4f82b16972476da
+lastReviewedCommit: 394992acccb2fe1194c218971436fd3186c14d2f
 ---
 
 # Publication architecture
+
+## Fossil-resources successor
+
+The #117 B14 successor inserts eight canonical claims across B14's three
+existing sections (`3 + 1 + 4`, bringing B14 from 26 to 34 claims) and records
+one explicit three-example closing sync on `cl-mineral115-judgment`. Before #115
+runs its own rollback and receipt checks, `prepareFossilResourcesSource` restores
+the exact `ba8a101` B14 MDX, raw source/reading/literature extensions, and the
+prior `cl-mineral115-judgment` record, verifying exact state pins and cross-state
+dependency closures.
+
+`reader-fossil-resources-factors.mjs` binds all 14 `ev-fossil117-*` evidence
+records, their 7 primary PDF/OOXML/HTML/XML carriers, all 10 CRC32-verified
+official EF 3.1 XML member hashes, and 31 structured numeric facts (including
+full-precision OOXML uranium `ADP`, EF 3.1 `1 MJ/MJ` energy-carrier factors,
+ecoinvent `HHV` and rounded `FFP` values, endpoint `SCP` values and unclosed
+`Table S9.2` parameters), plus `BigInt` fixed-point verification of the equal
+`1 kg oil-eq` endpoint divergence and egalitarian proxy ratio.
+
+At shared B14 section and chapter addresses, `validateDatedHistoryOutput` now
+qualifies an ordered reverse-chronological chain of preceding controls (`#115`
+then `#111`) without relaxing attachment checks. Both Note 1's `#115` opening
+correction and Note 33's `#117` closing sync render inline `display:block`
+notices verified under actual print media. Because no concept-defining claim
+changes in #117, `concepts/index.html` retains its #115 fingerprint while the
+7 changed catalog/research HTML and JSON artifacts and 6 affected web/print
+articles bind to actual compiler/exporter bytes.
 
 ## Mineral-resources successor
 

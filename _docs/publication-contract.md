@@ -17,13 +17,25 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-16
-lastReviewedCommit: 02d4457804ef72bd42909025f4f82b16972476da
+lastReviewedCommit: 394992acccb2fe1194c218971436fd3186c14d2f
 ---
 
 # Publication contract
 
 ## Scoped scientific successors
 
+The fossil-resources unit #117 compares scarcity-based resource midpoints against
+full-substitution energy-carrier midpoints (`EF 3.0/3.1` `1 MJ/MJ` net calorific
+value versus `ReCiPe 2016` `kg oil-eq` higher heating value), explains why natural
+uranium crosses the fossil/mineral category boundary between `EF` (`Resource use,
+fossils` XML `b2ad6110`) and elemental `ADP` / mineral `SOP`, and proves from
+published `ReCiPe 2016` tables why equal `1 kg oil-eq` midpoint extractions map to
+divergent fuel-specific `SCP` endpoint values and an egalitarian per-kg hard-coal
+proxy inversion for brown coal and peat. Unresolved `RIVM 2016-0104` cross-table/
+figure citations, `Vieira et al. 2016b` formula attribution, barrel-versus-kg
+abscissa units, currency-year labels, and `EF 3.1` XML `shortDescription` metadata
+artifacts remain explicitly disclosed without silent repair or redistribution of
+raw originals.
 
 The mineral-resources unit #115 compares selected original ADP, SOP and cost
 estimates on explicit elemental extraction and scenario bases. A fixed positive

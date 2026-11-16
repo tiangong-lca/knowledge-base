@@ -437,16 +437,25 @@ export function validateDatedHistoryOutput(documents, { expected, source, attrib
       const ordinaryTargets = row ? flowBoundaryOrdinaryTargets(row) : [];
 
       let previous = notice.previousElementSibling;
-      // The preceding generation is separately qualified on the same DOM.
-      // Only its expected control for this exact address may intervene here.
-      if (previousHistory?.expected.has(key) && previous?.tagName === 'DETAILS'
-          && previous.getAttribute(`data-${previousHistory.attribute}-history`) === id)
-        previous = previous.previousElementSibling;
+      // Preceding generations are separately qualified on the same DOM.
+      // Every expected preceding control for this exact address must appear in reverse chronological order.
+      const priorHistories = Array.isArray(previousHistory) ? previousHistory : previousHistory ? [previousHistory] : [];
+      let priorChainValid = true;
+      for (const prior of priorHistories) {
+        if (!prior?.expected.has(key)) continue;
+        if (previous?.tagName === 'DETAILS' && previous.getAttribute(`data-${prior.attribute}-history`) === id) {
+          previous = previous.previousElementSibling;
+        } else {
+          priorChainValid = false;
+          break;
+        }
+      }
       while (previous?.getAttribute('data-copyedit-history') === id || previous?.getAttribute('data-legacy-scope') === id) {
         previous = previous.previousElementSibling;
       }
-      const attached = target && (target === notice.parentNode || target === previous
-        || ['chapter', 'reading-title'].includes(row?.previous.kind) && target.closest('article') === notice.closest('article'));
+      const attached = priorChainValid && target && (target === previous
+        || ['chapter', 'reading-title'].includes(row?.previous.kind) && target.closest('article') === notice.closest('article')
+          && (!previous || previous.tagName === 'P' && ordinaryPattern.test(previous.id)));
       const origins = control?.addresses.map(address => address.slice(path.length + 1));
       if (!row || observed.has(key) || !attached || notice.tagName !== 'DETAILS'
           || notice.getAttribute(`data-${attribute}-origins`) !== origins.join(' ')
