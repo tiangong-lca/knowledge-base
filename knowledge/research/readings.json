@@ -8149,6 +8149,41 @@
           "limits": [
             "同名模型不使命题、当量或实际因子相同。"
           ]
+        },
+        {
+          "id": "psg-fossil117-ilcd2011-exergy-scarcity",
+          "artifactId": "art-ilcd-2011-lcia-recommendations-pdf",
+          "locator": "§3.11.6 Recommended default method for category 1（印pp99–100，PDF第113–114页）",
+          "printedPages": "99–100",
+          "pdfIndices": [
+            112,
+            113
+          ],
+          "topics": [
+            "火用exergy固有性质",
+            "耗尽最后1 t前单位值不变",
+            "因缺稀缺性要素不予推荐"
+          ],
+          "limits": [
+            "反映2011年ILCD自然资源保护对象准则，不证明火用核算在其他工程热力学分析中无用。"
+          ]
+        },
+        {
+          "id": "psg-fossil117-ilcd2011-adp-combined",
+          "artifactId": "art-ilcd-2011-lcia-recommendations-pdf",
+          "locator": "§§3.11.7 & 3.11.9 Recommended default methods for category 2 and category 4（印pp100–101，PDF第114–115页）",
+          "printedPages": "100–101",
+          "pdfIndices": [
+            113,
+            114
+          ],
+          "topics": [
+            "CML储量基数ADP合并金属与化石燃料（kg Sb eq）",
+            "终点边际开采成本仅列interim过渡方案"
+          ],
+          "limits": [
+            "针对2002年ADP与ReCiPe 2008当时的评估结论，不直接评价2016/2020后续版次。"
+          ]
         }
       ],
       "appraisal": {
@@ -27940,6 +27975,66 @@
           "mediaType": "application/xml",
           "sha256": "906e1936428e5bf365d02e0601d9c4eb73b5c6aaaeb235f9053e474be34a657c",
           "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-fossil117-ef-method-fossil",
+          "mediaType": "application/xml",
+          "sha256": "d9b4f8480a8e916e37b1403fc70e68241edbe71098e26cadc41e5f5caaa9fb93",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-fossil117-ef-method-mineral",
+          "mediaType": "application/xml",
+          "sha256": "903dc1764187342f518c5fc00e6519cd0082cfe207569592f77adadb18568b06",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-fossil117-ef-flow-uranium",
+          "mediaType": "application/xml",
+          "sha256": "52205aa9ee75d7800d7e7de3c36c78c2ce8b22360a73cd33b39e8e57e0a1bfd2",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-fossil117-ef-flow-crude-oil",
+          "mediaType": "application/xml",
+          "sha256": "3e9e130991f00eb48a0c0319d94959e92449b581050a6044a640c5d4b89075ea",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-fossil117-ef-flow-hard-coal",
+          "mediaType": "application/xml",
+          "sha256": "a8a145e591553a5e9c5cb50259f0fae62779710aa51f90e751bcf32aaaf8db9e",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-fossil117-ef-flow-natural-gas",
+          "mediaType": "application/xml",
+          "sha256": "277f462878362a582136f88718682b5011a3b3706f10f42d2b4d05c88409950a",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-fossil117-ef-flow-brown-coal",
+          "mediaType": "application/xml",
+          "sha256": "5fe0b744caa3205c603ea3be1efd246079a2bd027a87f9d3954b2c5e23b0fe7b",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-fossil117-ef-flow-peat",
+          "mediaType": "application/xml",
+          "sha256": "cddaf3944f176bf123ace3897342815c25757070f8a45d6d87d0db43aa8e07c2",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-fossil117-ef-prop-ncv",
+          "mediaType": "application/xml",
+          "sha256": "663302222eecf33a78ee279fb58d74a9f6f870098d9002a740dff7b88bc64595",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-fossil117-ef-unit-energy",
+          "mediaType": "application/xml",
+          "sha256": "c5da0d544c6bb9b9022dd22a2b70215362e2f18a1aee79743c54609564f83b4d",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
         }
       ],
       "passages": [
@@ -28212,6 +28307,56 @@
             "该地点是输入交换所在地；不是单一受体位置或现场实测影响。",
             "未运行软件或推断缺位置时的处理。"
           ]
+        },
+        {
+          "id": "psg-fossil117-ef31-fossil-method",
+          "artifactId": "art-fossil117-ef-method-fossil",
+          "locator": "EF-v3.1 (4)/ILCD/lciamethods/b2ad6110-c78d-11e6-9d9d-cec0c932ce01.xml（v01.00.010）：dataSetInformation、quantitativeReference、impactModel、completeness(6)与全部6条factor",
+          "topics": [
+            "Resource use, fossils",
+            "完全替代假设",
+            "褐煤/原油/硬煤/天然气/泥炭/铀六个1.00E+00因子"
+          ],
+          "limits": [
+            "各factor引用的shortDescription带有历史误标文字Radioactivity，而quantitativeReference与实际流属性UUID指向Net calorific value（MJ）。"
+          ]
+        },
+        {
+          "id": "psg-fossil117-ef31-mineral-no-uranium",
+          "artifactId": "art-fossil117-ef-method-mineral",
+          "locator": "EF-v3.1 (4)/ILCD/lciamethods/b2ad6494-c78d-11e6-9d9d-cec0c932ce01.xml（v01.00.010）：Resource use, minerals and metals 全部48条characterisationFactors核查",
+          "topics": [
+            "矿产与金属方法边界",
+            "不含uranium条目"
+          ],
+          "limits": [
+            "仅核实该官方方法XML共48条因子且不含uranium流，不声称逐一复算其中全部矿产因子。"
+          ]
+        },
+        {
+          "id": "psg-fossil117-ef31-uranium-flow",
+          "artifactId": "art-fossil117-ef-flow-uranium",
+          "locator": "EF-v3.1 (4)/ILCD/flows/3e4d2966-6556-11dd-ad8b-0800200c9a66.xml（v03.00.004）及对照原油fe0acd60-3ddc-11dd-a6f8-0050c2490048.xml等五种化石燃料流",
+          "topics": [
+            "uranium基本流分类",
+            "Non-renewable energy resources from ground",
+            "参考流属性UUID 93a60a56-a3c8-11da-a746-0800200c9a66"
+          ],
+          "limits": [
+            "流XML内shortDescription同样留有Radioactivity旧标签，原油流XML另留有已注明的错误苯同义词残留；数值匹配依赖UUID与meanValue=1.0。"
+          ]
+        },
+        {
+          "id": "psg-fossil117-ef31-ncv-property",
+          "artifactId": "art-fossil117-ef-prop-ncv",
+          "locator": "EF-v3.1 (4)/ILCD/flowproperties/93a60a56-a3c8-11da-a746-0800200c9a66.xml（v03.00.003，Net calorific value / Lower heating value）及unitgroups/93a60a57-a3c8-11da-a746-0800200c9a66.xml（Units of energy，MJ）",
+          "topics": [
+            "净热值LHV定义",
+            "能量参考单位MJ"
+          ],
+          "limits": [
+            "确认UUID 93a60a56-a3c8-11da-a746-0800200c9a66在EF 3.1包内定义为Net calorific value（Lower heating value，Hu），不代证具体过程数据集采用何种热值换算。"
+          ]
         }
       ],
       "appraisal": {
@@ -28229,7 +28374,8 @@
         "未全包审计、未运行 Look@LCI、未确定零值成因。"
       ],
       "sourceKeys": [
-        "src-flow-pilot-ef31"
+        "src-flow-pilot-ef31",
+        "src-fossil117-ef31-selected-members"
       ]
     },
     {
@@ -28397,6 +28543,25 @@
           ],
           "limits": [
             "EF3.0旧值只来自报告表4，未取得该版原始XML；EF3.1数值另有独立成员定位。"
+          ]
+        },
+        {
+          "id": "psg-fossil117-ef31-unchanged-resources",
+          "artifactId": "art-flow-pilot-ef31-jrc130796",
+          "locator": "§1 p3，§2 p5及Table 1 pp6–7（PDF第7、9–11页）",
+          "printedPages": "3, 5–7",
+          "pdfIndices": [
+            6,
+            8,
+            9,
+            10
+          ],
+          "topics": [
+            "EF3.1承接EF3.0的十个未更新类别",
+            "Resource use, minerals and metals与Resource use, fossil表列方法与单位"
+          ],
+          "limits": [
+            "表1印作Resource use, fossil（单数），方法XML标题为Resource use, fossils；两资源类别底层方法仍指向Fazio等2018。"
           ]
         }
       ],
@@ -29165,6 +29330,84 @@
             93,
             94
           ]
+        },
+        {
+          "id": "psg-fossil117-rivm-uranium-mineral",
+          "artifactId": "art-land111-rivm2016-pdf",
+          "locator": "第12章§12.3印p90、表12.2 Uranium行印p92，及§23.1印pp183–184表S8.1 Uranium行（PDF第92、94、185–186页）",
+          "printedPages": "90, 92, 183–184",
+          "pdfIndices": [
+            91,
+            93,
+            184,
+            185
+          ],
+          "topics": [
+            "铀归入矿产资源稀缺SOP",
+            "18种具经验品位—吨位曲线矿产之一（表12.2无星号）",
+            "§23.1中NEA-IAEA 2014累计开采量CME、Hall与Coleman 2012储量R及UNEP 2011 URR来源分工"
+          ],
+          "limits": [
+            "核实铀在ReCiPe 2016中属于矿产SOP而非化石FFP；ESA现货U3O8价格用于价格—ASOP回归，表12.2 Uranium因子本身由表S8.1品位—吨位参数给出。"
+          ]
+        },
+        {
+          "id": "psg-fossil117-rivm-ffp-midpoint",
+          "artifactId": "art-land111-rivm2016-pdf",
+          "locator": "第13章§§13.1–13.3、图13.1、表13.1（印pp95–96）及§24.1表S9.1（印p187）（PDF第97–98、189页）",
+          "printedPages": "95–96, 187",
+          "pdfIndices": [
+            96,
+            97,
+            188
+          ],
+          "topics": [
+            "FFP=HHV_x/HHV_oil定义",
+            "五种化石燃料FFP两位小数表值",
+            "ecoinvent高位热值表S9.1与p96误写Table S9.2"
+          ],
+          "limits": [
+            "印p96正文将热值来源表号误印作Table S9.2，实际热值在印p187 Table S9.1；表13.1单位列简写作oil-eq/kg或oil-eq/Nm3。"
+          ]
+        },
+        {
+          "id": "psg-fossil117-rivm-scp-endpoint",
+          "artifactId": "art-land111-rivm2016-pdf",
+          "locator": "第13章§§13.1–13.2、§13.4及表13.2与表注*（印pp95–97，PDF第97–99页）",
+          "printedPages": "95–97",
+          "pdfIndices": [
+            96,
+            97,
+            98
+          ],
+          "topics": [
+            "最低成本先开采假设",
+            "无折现平均未来额外开采费用SCP（USD2013）",
+            "褐煤与泥炭在I/H缺省而在E借用硬煤0.034 USD2013/kg代理"
+          ],
+          "limits": [
+            "终点计算引用Vieira and Huijbregts (in preparation)未刊稿；褐煤与泥炭按每kg质量直接借用硬煤因子而非按热值缩放。"
+          ]
+        },
+        {
+          "id": "psg-fossil117-rivm-scp-curve-discrepancy",
+          "artifactId": "art-land111-rivm2016-pdf",
+          "locator": "第13章§13.4印p96公式、图13.2印p97、参考文献印p117及§24.2表S9.2印p187（PDF第98–99、119、189页）",
+          "printedPages": "96–97, 117, 187",
+          "pdfIndices": [
+            97,
+            98,
+            118,
+            188
+          ],
+          "topics": [
+            "对数线性累计成本—产量式C_x=1/(a_x+b_x·ln CFE_x)",
+            "印p117中Vieira et al. 2016b实为矿产矿石潜势SOP论文",
+            "图13.2十亿桶横轴与表S9.2 kg/Nm3单位不闭合、硬煤CFE=n.a.及USD2008/USD2013并列"
+          ],
+          "limits": [
+            "印p96误引Figure 11.2（实为Figure 13.2）并将化石成本公式标到矿产矿石潜势论文Vieira et al. 2016b名下；缺少IEA 2013原始曲线与未刊稿，不能擅自修补公式单位或补算硬煤CFE。"
+          ]
         }
       ],
       "appraisal": {
@@ -29762,6 +30005,41 @@
             "主代理后来取得的PDF另具SHA。与HTML选段定点核对；表3显示数不取代工作簿中使用的精确保存值。",
             "单独更正件未作全文核读。"
           ]
+        },
+        {
+          "id": "psg-fossil117-adp2020-split",
+          "artifactId": "art-mineral115-vanoers2020-pdf",
+          "locator": "摘要与§1引言（印pp294–295，PDF第1–2页）",
+          "printedPages": "294–295",
+          "pdfIndices": [
+            0,
+            1
+          ],
+          "topics": [
+            "1995原始ADP与2002拆分为化石燃料ADP和元素ADP两类",
+            "本文仅更新元素ADP"
+          ],
+          "limits": [
+            "转述2002年拆分沿革，未在本文重新发布化石燃料ADP表。"
+          ]
+        },
+        {
+          "id": "psg-fossil117-adp2020-uranium-pef",
+          "artifactId": "art-mineral115-vanoers2020-pdf",
+          "locator": "表3 Uranium行与表注1、归一化比较讨论（印pp305–306，PDF第12–13页）",
+          "printedPages": "305–306",
+          "pdfIndices": [
+            11,
+            12
+          ],
+          "topics": [
+            "表3累计ADP铀显示值7.8E−03",
+            "表注1反驳PEF将铀归入化石／能量载体类别",
+            "Sala等2015将铀移出矿产并改名energy carriers的影响"
+          ],
+          "limits": [
+            "作者主张铀有非能源用途故应留作元素（句末单词延至印p307首行）；这体现分类原则差异，不否定核电清单中铀主要作核燃料的工程事实。"
+          ]
         }
       ],
       "appraisal": {
@@ -29852,6 +30130,30 @@
           ],
           "limits": [
             "公式按输入保存值独立复算，未用原生工作簿重算。"
+          ]
+        },
+        {
+          "id": "psg-fossil117-esm1-elements-scope",
+          "artifactId": "art-mineral115-vanoers2020-esm1",
+          "locator": "characterisation model!C10、C12:C13、C15、C30（C14为空白样式行）；content!A4:B5",
+          "topics": [
+            "元素与化石燃料能量含量的模型区分",
+            "本工作簿仅更新元素ADP"
+          ],
+          "limits": [
+            "工作簿明确声明未更新化石燃料ADP；characterisation model正文段落均在C列。"
+          ]
+        },
+        {
+          "id": "psg-fossil117-esm1-uranium-row",
+          "artifactId": "art-mineral115-vanoers2020-esm1",
+          "locator": "recommended ADP & norm data!A109:L109（Uranium，U，CAS 7440-61-1，I109引用'a&g (ADPs)'!KG106）",
+          "topics": [
+            "铀元素累计ADP全精度保存值",
+            "element分组归属"
+          ],
+          "limits": [
+            "保存值直接自OOXML单元格读取并独立复核，未在Excel中重算。"
           ]
         }
       ],
@@ -30285,6 +30587,81 @@
       ],
       "sourceKeys": [
         "src-mineral115-ericsson2019"
+      ]
+    },
+    {
+      "id": "rd-fossil117-jrc109369",
+      "workId": "work-fossil117-jrc109369",
+      "title": "Supporting information to the characterisation factors of recommended EF Life Cycle Impact Assessment methods: New models and differences with ILCD",
+      "version": "EUR 28888 EN / JRC109369 (2018)；DOI 10.2760/671368；42页官方PDF",
+      "url": "https://publications.jrc.ec.europa.eu/repository/handle/JRC109369",
+      "accessedAt": "2026-11-15",
+      "readAt": "2026-11-16",
+      "readingStatus": "selected-passages",
+      "question": "EF相对ILCD如何拆分矿产与能量载体两类资源指标，又为何在能量载体类别中对铀赋因子1？",
+      "argumentSummary": "§4.10将矿产与金属改为最终储量ADP（kg Sb-eq/kg），同时按能量载体相似功能单列化石燃料ADP（1 MJ/MJ）；因ILCD基本流表把铀列入以MJ计量的能量载体而非按kg计量，EF遂在能量载体类别中为铀赋CF=1。",
+      "artifacts": [
+        {
+          "id": "art-fossil117-jrc109369-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "06094aa57b49c754be6b846882f70ef1d803cf57617fc37de9341ea2d93f2421",
+          "resolvedUrl": "https://publications.jrc.ec.europa.eu/repository/bitstream/JRC109369/jrc109369_final_online.pdf",
+          "pageCount": 42
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-fossil117-jrc109369-identity",
+          "artifactId": "art-fossil117-jrc109369-pdf",
+          "locator": "未编号封面、未编号版权与引用说明页，及Acknowledgements作者页（印p4，PDF第1–2、6页）",
+          "printedPages": "4（另含前两页未编号封面与版权页）",
+          "pdfIndices": [
+            0,
+            1,
+            5
+          ],
+          "topics": [
+            "JRC109369身份",
+            "Edward Diaconu署名核对与再用条款"
+          ],
+          "limits": [
+            "前两页无印刷页码；封面列Diaconu E.、印p4列Edward Diaconu，版权页建议引用式只列前六位；保持原件事实不擅改。"
+          ]
+        },
+        {
+          "id": "psg-fossil117-jrc109369-energy-carriers",
+          "artifactId": "art-fossil117-jrc109369-pdf",
+          "locator": "§4.10 Resource use（印p24，PDF第26页）",
+          "printedPages": "24",
+          "pdfIndices": [
+            25
+          ],
+          "topics": [
+            "矿产与能量载体拆分",
+            "1 MJ/MJ等热值因子",
+            "铀按ILCD能量流赋1"
+          ],
+          "limits": [
+            "报告针对2018年EF推荐方法集（EF 2.0基准，后为EF 3.0与EF 3.1沿用）把该实现对应到CML v4.8 (2016)与ILCD流表适配，不提供核燃料利用效率或地质储量重算。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "核读官方42页PDF未编号封面、未编号版权页、印p4作者页及印p24 §4.10原文。",
+        "methodologicalScope": "2018年EF推荐LCIA方法集（EF 2.0基准，其两项资源模型为后续EF 3.0与EF 3.1原样沿用）相对ILCD的变更与流表适配说明。",
+        "independence": "与JRC130796及EF 3.1官方包同属欧盟JRC环境足迹方法体系，不计作外部独立验证。",
+        "limitations": [
+          "仅选读资源小节与文档身份页；其余影响类别与附表链接未在本读本声明精读。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-16"
+      },
+      "rights": "© European Union, 2018；依Decision 2011/833/EU注明出处允许再用。仅公开必要定位与原创释义，不重分发原PDF。",
+      "unread": [
+        "§4.1–§4.9、§4.11及Annex 1–2未纳入本读本范围。"
+      ],
+      "sourceKeys": [
+        "src-fossil117-jrc109369"
       ]
     }
   ],
@@ -31261,6 +31638,14 @@
       "nextAction": "取得有版本与使用授权的2019原工作簿、解释或正式更正后，按来源－接收区、敏感性与二氧化硫参照逐项复核；如做数值对读，另需同流、位置和权重的配对因子。",
       "affectedUnits": [
         "B16"
+      ]
+    },
+    {
+      "id": "gap-fossil117-vieira-fossil-manuscript",
+      "description": "RIVM 2016-0104第13章与表S9.2所引Vieira and Huijbregts (in preparation)未刊稿及IEA 2013底层成本曲线未取得，故图13.2横轴（十亿桶原油）与p96公式／表S9.2（kg或Nm3、硬煤CFE=n.a.、USD2008当期成本）之间的精确换算链保持未闭合。",
+      "nextAction": "仅在后续取得作者公开发表的化石SCP方法原稿或校准附件时重开公式复算；现阶段保留原印表值与可定位异文。",
+      "affectedUnits": [
+        "B14"
       ]
     }
   ],
@@ -33924,6 +34309,21 @@
       "triggerPassageIds": [
         "psg-mineral115-rivm-sop-method",
         "psg-mineral115-rivm-money-proxy"
+      ],
+      "affectedUnits": [
+        "B14"
+      ]
+    },
+    {
+      "id": "rev-fossil117-rivm-and-ef-energy-carriers",
+      "before": "B14仅在cl-lcia-mid-end-conversion-limits以半句提及化石资源没有常数的中点到终点因子，尚未对齐能量载体MJ/kg oil-eq中点、铀跨类别归属与终点各燃料SCP曲线。",
+      "after": "2026-11-16新增JRC109369与EF 3.1十个资源XML成员核查，并在ILCD 2011、EF3.1更新报告、Van Oers 2020及RIVM 2016-0104既有读本上追加化石与铀选段，在B14原三节内补入八段比较论述，同时对cl-mineral115-judgment作具名范围同步。",
+      "reasoning": "兑现开篇关于化石中点—终点非常数关系的承诺，同时揭示基本流属性（净热值MJ与高位热值HHV）及铀归属在EF与ADP/ReCiPe之间的真实体系差异。",
+      "status": "selected-source inspection and canonical B14 integration prepared; independent source, reader and output gates required before acceptance",
+      "triggerPassageIds": [
+        "psg-fossil117-jrc109369-energy-carriers",
+        "psg-fossil117-ef31-fossil-method",
+        "psg-fossil117-rivm-scp-endpoint"
       ],
       "affectedUnits": [
         "B14"

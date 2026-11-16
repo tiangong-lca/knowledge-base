@@ -128,16 +128,38 @@ with B14 mineral depletion, future ore requirements and modeled extraction
 costs. Its [prewriting protocol](editorial/2026-11-16-mineral-resources.md)
 was committed as ed2f6f3 before manuscript changes. Source registration b88d442
 adds the selected ADP/SOP/SCP originals and published disagreement while keeping
-all935 existing claims unchanged. Ten new canonical paragraphs are now integrated
+all935 existing claims unchanged. Ten new canonical paragraphs are integrated
 into the actual B14 manuscript with explicit numerical supports, premises and
 accessible source-conflict notes. An independently identified overbroad emission
 framing in the old opening has an explicit scoped correction;934 other old
 claims remain exact. The actual old premise consumers, concept
 definitions and B13/B15/B16/B19/B20/B21/B24 interfaces have a scoped compatibility
-review in the unit protocol. Separate source/reader/output acceptances are now bound to the reviewed
-working-preview candidate after independent checks and actual browser/print
-verification. Normal source/root delivery remains pending. Broader Part IV and
-Programme9 requirements remain active.
+review in the unit protocol. Unit115 is now fully delivered: PR116/Main
+`ba8a101b1cd8eade0eb2da5e04323dd9dacaa53c`, qualified468-file hosting on
+`https://prism.tiangong.earth` (`dpk2wpk8epxf`, including unmodified
+`validateReaderOutput` against archived Main source and live print verification),
+exact root2409/PR2410/Main `b7ecaa4b09c6a649739e820236e39070ec453d35`, and
+ordinary final source/root completion receipts (`source_handoff` 1/1).
+
+[Issue117](https://github.com/tiangong-lca/knowledge-base/issues/117) continues
+B14 with fossil heating values, energy-carrier category boundaries and
+fuel-specific endpoint surplus costs. Its
+[prewriting protocol](editorial/2026-11-16-fossil-resources.md) was committed as
+`27e5f83` (`4c6dd1d` with governance review) before manuscript changes. Selected
+inspection covers ILCD 2011 (`§3.11.6–§3.11.9`), JRC109369 (`§4.10`), JRC130796,
+ten CRC32-verified official EF 3.1 resource/flow/property XML members, Van Oers
+et al. 2020 uranium boundary records and RIVM 2016-0104 Chapter 13 / `§24`.
+Eight new canonical paragraphs in B14's three existing sections align scarcity
+versus full-substitution energy midpoints (`1 MJ/MJ` LHV vs `kg oil-eq` HHV),
+the cross-category placement of natural uranium (`EF` fossils vs `ADP`/`ReCiPe`
+minerals), and the absence of a constant midpoint-to-endpoint factor across
+equal `1 kg oil-eq` fossil extractions (including the egalitarian per-kg hard-coal
+proxy for brown coal and peat and preserved source-internal formula/unit gaps).
+All 935 pre-`#115` claims and nine `#115` claims remain unchanged, with one
+explicitly recorded three-example scope sync on `cl-mineral115-judgment`.
+Separate source, full-chapter reader and actual-output acceptances and normal
+source/root delivery are tracked on Issue117. Broader Part IV and Programme9
+requirements remain active.
 
 Rule adoption101 itself is fully delivered: PR103/Main10dc686 and
 root2381/PR2382/Main90bcaa574, with complete ordinary source/root handoff receipts.
