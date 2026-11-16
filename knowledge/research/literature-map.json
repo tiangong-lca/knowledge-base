@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-15",
+  "updatedAt": "2026-11-16",
   "protocol": {
     "id": "community-classics-wave-2026-11-04",
     "questions": [
@@ -4912,6 +4912,18 @@
         "query": "acidification accumulated exceedance critical loads; SO2 equivalents Roy atmospheric fate soil sensitivity; GLAM Phase 3 scoping; EF 3.1 acidification and terrestrial eutrophication selected XML and exchange location",
         "channel": "UNEP Life Cycle Initiative、欧盟JRC、DOI及出版者、作者机构与官方摘要库；按引文链和发行成员定向检索",
         "date": "2026-11-15"
+      },
+      {
+        "id": "q-mineral115-factor-originals-20261116",
+        "query": "10.1007/s11367-019-01683-x ultimate reserves cumulative ADP ESM1; RIVM 2016-0104 mineral resource scarcity Table 12.2 and 12.3; 10.3390/resources5010002 Vieira surplus cost potential Table S2/S4",
+        "channel": "DOI及出版社原文、RIVM机构库实际载体、出版社电子补充材料；选择铜、镍、锰的公式和数据行。",
+        "date": "2026-11-16"
+      },
+      {
+        "id": "q-mineral115-guidance-and-dissent-20261116",
+        "query": "10.1007/s11367-020-01737-5 Berger Pellston SOP ADP SCP preference; Ericsson 2019 1184852057 future efforts decreasing ore grades comment",
+        "channel": "出版社卷期、ETH机构库及德国国家图书馆实际PDF；按推荐问题与反对意见逐段选读。",
+        "date": "2026-11-16"
       }
     ],
     "limitations": [
@@ -6400,13 +6412,14 @@
       "accessStatus": "public-fulltext-available",
       "readingStatus": "not-close-read",
       "accessedAt": "2026-11-03",
-      "lastCheckedAt": "2026-11-15",
+      "lastCheckedAt": "2026-11-16",
       "rights": "Third-party sources retain their rights. Bibliographic facts and original project annotations are published here; source text, figures, datasets and software are not relicensed. Full-text access or borrowing does not grant redistribution permission. No source-specific open reuse license was verified in the inherited seed check. 2026-11-15 核读原报告印p2，允许按机构、题名与年份注明后再用部分内容。项目只公开原创释义和定位。",
       "limitations": [
         "官方书目与报告出版页；未精读全报告",
         "Historical metadata/abstract/partial-page check inherited from 2026-11-03; original search strings and a complete access log were not recorded in the seed register.",
         "Volume/region/tradition tags are provisional editorial discovery strata, not evidence of intellectual origin, influence or coverage.",
-        "2026-11-15从机构库取得早期2016-0104原件并完成土地章与附录选段；参见rd-land111-rivm2016。2026-11-03仍为历史书目确认；未精读全报告或取得2017版报告原件与因子表。"
+        "2026-11-15从机构库取得早期2016-0104原件并完成土地章与附录选段；参见rd-land111-rivm2016。2026-11-03仍为历史书目确认；未精读全报告或取得2017版报告原件与因子表。",
+        "2026-11-16以同SHA原2016-0104载体追加核读矿产第12章与§23选段；不扩大2026-11-15土地事件或其他载体资格。"
       ],
       "catalogSourceIds": [
         "src-land111-rivm2016"
@@ -20433,6 +20446,248 @@
       ],
       "catalogSourceIds": [
         "src-acid113-posch-ae"
+      ]
+    },
+    {
+      "id": "work-mineral115-vanoers2020",
+      "title": "Abiotic resource depletion potentials (ADPs) for elements revisited—updating ultimate reserve estimates and introducing time series for production data",
+      "contributors": "Lauran van Oers, Jeroen B. Guinée, Reinout Heijungs",
+      "year": "2020",
+      "kind": "research-article",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://link.springer.com/article/10.1007/s11367-019-01683-x",
+          "role": "正式刊版HTML实读载体"
+        },
+        {
+          "url": "https://static-content.springer.com/esm/art%3A10.1007%2Fs11367-019-01683-x/MediaObjects/11367_2019_1683_MOESM1_ESM.xlsx",
+          "role": "ESM1选择公式与因子的原工作簿"
+        },
+        {
+          "url": "https://link.springer.com/content/pdf/10.1007/s11367-019-01683-x.pdf",
+          "role": "后取得并定点比读的出版社PDF路径；SHA另记于阅读载体"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1007/s11367-019-01683-x"
+      },
+      "volumes": [
+        "V5"
+      ],
+      "topics": [
+        "自然资源存量耗竭",
+        "累计ADP",
+        "锑参照"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "global"
+      ],
+      "traditions": [
+        "Life cycle impact assessment"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-mineral115-factor-originals-20261116"
+        ],
+        "reason": "核对长期自然资源耗竭的选列和模型条件。",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-16",
+      "lastCheckedAt": "2026-11-16",
+      "rights": "文章明确标注CC BY 4.0。只公开归属、定位和原创释义，其引述数据另有来源。",
+      "limitations": [
+        "卷期年2020、首次在线2019，补充工作簿有独立定位。"
+      ],
+      "catalogSourceIds": [
+        "src-mineral115-vanoers2020",
+        "src-mineral115-vanoers2020-esm1"
+      ]
+    },
+    {
+      "id": "work-mineral115-vieira2016",
+      "title": "Surplus Cost Potential as a Life Cycle Impact Indicator for Metal Extraction",
+      "contributors": "Marisa D. M. Vieira, Thomas C. Ponsioen, Mark J. Goedkoop, Mark A. J. Huijbregts",
+      "year": "2016",
+      "kind": "research-article",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://doi.org/10.3390/resources5010002",
+          "role": "文章身份"
+        },
+        {
+          "url": "https://mdpi-res.com/d_attachment/resources/resources-05-00002/article_deploy/resources-05-00002-v2.pdf",
+          "role": "实际publisher v2 PDF"
+        },
+        {
+          "url": "https://mdpi-res.com/d_attachment/resources/resources-05-00002/article_deploy/resources-05-00002-s001.pdf",
+          "role": "实际支持材料S2/S4载体"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.3390/resources5010002"
+      },
+      "volumes": [
+        "V5"
+      ],
+      "topics": [
+        "SCP",
+        "金属特定费用拟合",
+        "采矿和选矿"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "global"
+      ],
+      "traditions": [
+        "Life cycle impact assessment"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-mineral115-factor-originals-20261116"
+        ],
+        "reason": "核对RIVM所引SCP的具体定义及所选铜镍锰行。",
+        "citationParents": [
+          "lit-m05"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-16",
+      "lastCheckedAt": "2026-11-16",
+      "rights": "文章标注CC BY 4.0；购买的World Mine Cost Data Exchange底层成本资料以及另行标注的第三方图件各有权利边界。公开记录只含必要定位及原创释义。",
+      "limitations": [
+        "以选中矿产和情景为限，未复现底层私有成本数据。"
+      ],
+      "catalogSourceIds": [
+        "src-mineral115-vieira2016",
+        "src-mineral115-vieira2016-supplement"
+      ]
+    },
+    {
+      "id": "work-mineral115-berger2020",
+      "title": "Mineral resources in life cycle impact assessment: part II – recommendations on application-dependent use of existing methods and on future method development needs",
+      "contributors": "Markus Berger, Thomas Sonderegger, Rodrigo Alvarenga, et al.",
+      "year": "2020",
+      "kind": "research-article",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://link.springer.com/article/10.1007/s11367-020-01737-5",
+          "role": "出版社正式刊版"
+        },
+        {
+          "url": "https://www.research-collection.ethz.ch/bitstreams/7f13b52b-6547-49f4-bfdf-47e6832446af/download",
+          "role": "实际ETH原排版PDF，附机构封面"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1007/s11367-020-01737-5"
+      },
+      "volumes": [
+        "V5"
+      ],
+      "topics": [
+        "Pellston任务组",
+        "ADP用途",
+        "SOP暂时推荐及成本方法限制"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "global"
+      ],
+      "traditions": [
+        "Life cycle impact assessment"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-mineral115-guidance-and-dissent-20261116"
+        ],
+        "reason": "核对推荐实际对象、模型局限及其与独立批评的关系。",
+        "citationParents": []
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-16",
+      "lastCheckedAt": "2026-11-16",
+      "rights": "出版社及ETH载体均注明CC BY 4.0；另注第三方内容按其权利处理。仅公开选段定位和原创释义。",
+      "limitations": [
+        "各个建议只覆盖选定用途及其当时所读版次。"
+      ],
+      "catalogSourceIds": [
+        "src-mineral115-berger2020"
+      ]
+    },
+    {
+      "id": "work-mineral115-ericsson2019",
+      "title": "Why current assessments of ‘future efforts’ are no basis for establishing policies on material use—a response to research on ore grades",
+      "contributors": "Magnus Ericsson, Johannes Drielsma, David Humphreys, Per Storm, Pär Weihed",
+      "year": "2019",
+      "kind": "comment",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://link.springer.com/article/10.1007/s13563-019-00175-6",
+          "role": "出版社正式刊载评论"
+        },
+        {
+          "url": "https://d-nb.info/1184852057/34",
+          "role": "实际德国国家图书馆PDF"
+        }
+      ],
+      "identifiers": {
+        "doi": "10.1007/s13563-019-00175-6"
+      },
+      "volumes": [
+        "V5"
+      ],
+      "topics": [
+        "Type 3未来努力",
+        "矿山排序",
+        "资源可得性与政策"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "global"
+      ],
+      "traditions": [
+        "Life cycle impact assessment"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-mineral115-guidance-and-dissent-20261116"
+        ],
+        "reason": "找出SOP/SCP使用争议中的经验反例和估计对象分歧。",
+        "citationParents": [
+          "work-mineral115-berger2020"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-16",
+      "lastCheckedAt": "2026-11-16",
+      "rights": "文章标注CC BY 4.0；例图与数据有原始第三方归属，不从文章许可推定原数据再用权限。只公开定位和原创释义。",
+      "limitations": [
+        "评论的广泛推论与具体矿山和市场反例应分别判断。"
+      ],
+      "catalogSourceIds": [
+        "src-mineral115-ericsson2019"
       ]
     }
   ],
