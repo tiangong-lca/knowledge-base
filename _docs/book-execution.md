@@ -128,12 +128,16 @@ with B14 mineral depletion, future ore requirements and modeled extraction
 costs. Its [prewriting protocol](editorial/2026-11-16-mineral-resources.md)
 was committed as ed2f6f3 before manuscript changes. Source registration b88d442
 adds the selected ADP/SOP/SCP originals and published disagreement while keeping
-all935 existing claims unchanged. The private ten-paragraph candidate has a
-bounded original-source/argument review and specific primary corrections;
-it is not yet canonical manuscript, full-chapter reader or output acceptance.
-The next step is actual continuous B14 integration, affected-consumer/history
-review and separately qualified publication, followed by normal source/root
-delivery. Broader Part IV and Programme9 requirements remain active.
+all935 existing claims unchanged. Ten new canonical paragraphs are now integrated
+into the actual B14 manuscript with explicit numerical supports, premises and
+accessible source-conflict notes. An independently identified overbroad emission
+framing in the old opening has an explicit scoped correction;934 other old
+claims remain exact. The actual old premise consumers, concept
+definitions and B13/B15/B16/B19/B20/B21/B24 interfaces have a scoped compatibility
+review in the unit protocol. Full-chapter independent reader and final source
+checks are under way; current source/reader/output acceptance and normal
+source/root delivery remain separate pending gates. Broader Part IV and
+Programme9 requirements remain active.
 
 Rule adoption101 itself is fully delivered: PR103/Main10dc686 and
 root2381/PR2382/Main90bcaa574, with complete ordinary source/root handoff receipts.
