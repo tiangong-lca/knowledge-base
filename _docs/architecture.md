@@ -22,6 +22,24 @@ lastReviewedCommit: 251467ca70f4f21a50d6284696dcb648144d1f94
 
 # Publication architecture
 
+## Acid-equivalents successor
+
+The #113 qualifier preserves the exact prior B16 file by admitting only two Prose
+insertions, then restores the three prior raw knowledge objects before #111 and
+the earlier chain. It retains the complete-change and exact-predecessor checks.
+Five old reading extensions and one EF work pointer addition have narrow bounds.
+The old PM check may accept only the exact raw successor of its GLAM reading and
+only while #113 is active; other PM records and old locators retain their checks.
+
+The six selected factor tuples bind values, method/flow versions, direction,
+country and declared equivalents. Separate checks bind their Mass/kg evidence,
+passages and original carriers, and require explicit supports-links from the
+comparison claims. This closes a pre-acceptance carrier-substitution gap found
+independently; the actual source values and capture were already correct.
+The validation-only hardening requalified the retained capture without rebuilding
+or relabeling it. Two water articles change only note9 to17 on the same fragment.
+Raw and normalized evidence, original scopes and current outputs remain separate.
+
 ## Land-recovery successor
 
 The #111 B14 qualifier restores the exact preceding MDX by removing only three

@@ -12,7 +12,7 @@ import {
 export const acidEquivalentsId = 'acid-equivalents-113';
 export const acidEquivalentsChapter = '/docs/book/acidification-and-nutrient-pathways';
 /** @type {string|null} */
-export const acidEquivalentsUnitPin = null;
+export const acidEquivalentsUnitPin = '1e3c1db4d418a2c330671e247b78f89e7bc121201d3c9ee423ede55f89cff9a5';
 /** @type {string|null} */
 export const acidEquivalentsCapturePin = '1ea653c0fc6ddd8dc78d1d45f5f7e13132d4d5a80df612ee00872bebb3fda3aa';
 export const acidEquivalentsSource = Object.freeze({
