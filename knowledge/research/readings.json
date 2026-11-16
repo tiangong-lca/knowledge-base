@@ -3652,6 +3652,26 @@
           "limits": [
             "期刊正文仅概述方法构造，具体全球与分区域数值载于RIVM 2016-0104报告及电子附件。"
           ]
+        },
+        {
+          "id": "psg-ozrad121-recipe2017-odp-ir",
+          "artifactId": "art-recipe-2017-primary-article-pdf",
+          "locator": "§2.3与§§3.1.2–3.1.3（印p140）、Table 1（印p141）、Table 2与§3.2.2（印p143）及§3.2.3（印pp143–144）（PDF第3、4、6–7页）",
+          "printedPages": "140–141, 143–144",
+          "pdfIndices": [
+            2,
+            3,
+            5,
+            6
+          ],
+          "topics": [
+            "§2.3概括20年、100年与1000年至无限期情景及证据等级配对原则",
+            "§3.1.2将中点ODP概括为无限时间范围（WMO 2011），未提及报告表3.2的20年与100年有限时间窗列",
+            "§3.1.3、表1、表2与§§3.2.2–3.2.3（跨印pp143–144）概括Co-60空气当量IRP及皮肤癌/白内障与癌症/遗传病DALY终点路径"
+          ],
+          "limits": [
+            "期刊正文不含单物质ODP或单核素IRP表，须与RIVM 2016-0104第3–4章原表对读。"
+          ]
         }
       ],
       "appraisal": {
@@ -8228,6 +8248,54 @@
           ],
           "limits": [
             "仅核读ILCD 2011评估摘要与推荐结论，未直接核读Derwent等1998或Van Zelm等2008原论文实验与网格输入。"
+          ]
+        },
+        {
+          "id": "psg-ozrad121-ilcd2011-odp",
+          "artifactId": "art-ilcd-2011-lcia-recommendations-pdf",
+          "locator": "§1 Table 1（印p5）及§3.2 Ozone depletion（印pp19–24，含图2与表4–5；PDF第19、33–38页）",
+          "printedPages": "5, 19–24",
+          "pdfIndices": [
+            18,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37
+          ],
+          "topics": [
+            "推荐WMO 1999稳态无限期ODP为默认中点（Level I）",
+            "终点无推荐方法（ReCiPe Struijs等2009a/2010与LIME Hayashi等2006仅列Interim）",
+            "§3.2.7指出ReCiPe旧版将ODP拆成6个亚组分别赋损害因子",
+            "LIME为唯一覆盖作物、木材（火炬松Pinus taeda）与浮游生物的方法但背景文献多为日文"
+          ],
+          "limits": [
+            "仅核读ILCD 2011评估正文与表4–5，未直接核读WMO 1999、Struijs等2010全文或Ozone depletion.xls附表。"
+          ]
+        },
+        {
+          "id": "psg-ozrad121-ilcd2011-ir",
+          "artifactId": "art-ilcd-2011-lcia-recommendations-pdf",
+          "locator": "§1 Table 1（印p5）及§3.5 Ionizing radiation（印pp42–47，含图5–6与表12–13；PDF第19、56–61页）",
+          "printedPages": "5, 42–47",
+          "pdfIndices": [
+            18,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60
+          ],
+          "topics": [
+            "推荐Frischknecht等2000（基于Dreicer等1995法国核燃料循环常规排放）人体健康中点（相对U235暴露效率，Level II）",
+            "每man·Sv计0.05致死癌、0.12非致死癌及0.01严重遗传病（无年龄加权61 DALYs/case），因遗传病DALY不确定性高故终点仅列Interim",
+            "H-3、C-14、Kr-85、I-129全球暴露按100,000年与100年计算且变异系数达10至50",
+            "淡水生态系统Garnier-Laplace等2008/2009慢性外照射EDR50/HC50（9种参考生物）不予推荐（仅列Interim）"
+          ],
+          "limits": [
+            "仅核读ILCD 2011评估摘要与推荐结论，未直接核读Dreicer等1995、Frischknecht等2000或Garnier-Laplace等原文。"
           ]
         }
       ],
@@ -28182,6 +28250,144 @@
           "mediaType": "application/xml",
           "sha256": "10467354a9f221682d25fa4d056a8516b75e7e434d8355f1346bf9911be85c2b",
           "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozrad121-ef-method-ir",
+          "mediaType": "application/xml",
+          "sha256": "69f7a44f3e0682e11c882d77936b5f8f79951795ac775e3e99ea975e14e7c59e",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozrad121-ef-prop-radioactivity",
+          "mediaType": "application/xml",
+          "sha256": "d2decea42f26631a5a46fe20a5626fc9c44933ef689a0306e28f9782183b5d9f",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozrad121-ef-flow-cfc11",
+          "mediaType": "application/xml",
+          "sha256": "60efeaa739a466010f3b3dbf86d94448ca400ad15a209e68782a51a16bb02133",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozrad121-ef-flow-cfc12",
+          "mediaType": "application/xml",
+          "sha256": "ce8a71e2c0c92cf8edbc492e347453a46f1bcc01738418c0bfa6f8ebee95c43e",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozrad121-ef-flow-halon1301",
+          "mediaType": "application/xml",
+          "sha256": "2023b411952606d7ca57f14e2aceac05382142e5d4d573cadbc8ca971db46c5b",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozrad121-ef-flow-halon1211",
+          "mediaType": "application/xml",
+          "sha256": "70cfe291ee2f7543815c443a1f5245a59f11a852d2d268322d6e13d19637574e",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozrad121-ef-flow-halon2402",
+          "mediaType": "application/xml",
+          "sha256": "99ab8b2d68cbd5e61420c2f653e3ceddb81dbc4d633e2a2af5c8de18f1cd2d40",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozrad121-ef-flow-hcfc22",
+          "mediaType": "application/xml",
+          "sha256": "ad25d5bfb9560e5dd4e300a10e05f66e7d698357e95317cd2f111d46f89ca991",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozrad121-ef-flow-cfc10",
+          "mediaType": "application/xml",
+          "sha256": "4c865fd6762a15aa2e957b66fbe4433393b5fa9b1be5c30aab7a02400a20b420",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozrad121-ef-flow-ccl4",
+          "mediaType": "application/xml",
+          "sha256": "c013543a2309636f17a1000ec60f00e0856b6986f23a0454bca57f06bb4c5dad",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozrad121-ef-flow-halon1001",
+          "mediaType": "application/xml",
+          "sha256": "d873ee12f2bb408f1a30f6998fec2ff6e92221dc5307ede0ab4d4fe9971c816a",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozrad121-ef-flow-methyl-bromide",
+          "mediaType": "application/xml",
+          "sha256": "aa2942f194f15a7175207367675f5ad7fa404b72317bf8a28df9b28ff0317ac3",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozrad121-ef-flow-n2o",
+          "mediaType": "application/xml",
+          "sha256": "e9c30654226dd36c5fb86226e7091b492c70bb375aebc20a057124e8e83607bb",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozrad121-ef-flow-u235-air",
+          "mediaType": "application/xml",
+          "sha256": "4b4ab232e7a8a84e72d6da59f38706aefe43849992dcb6f275901d7adbc18841",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozrad121-ef-flow-co60-air",
+          "mediaType": "application/xml",
+          "sha256": "c31c79082cf60212fbcbe22b412f1e22f30668012495451395dfd11213354914",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozrad121-ef-flow-co60-fw",
+          "mediaType": "application/xml",
+          "sha256": "96f77acc80b49a22488f4a1c8ee02989d38c5cdf62e9196bf57b13a218e744bf",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozrad121-ef-flow-co60-sw",
+          "mediaType": "application/xml",
+          "sha256": "c2b2af039cded75b354d75f3a3cffeb11712cffc033a7b8bdb499f62e6c3f52f",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozrad121-ef-flow-c14-air",
+          "mediaType": "application/xml",
+          "sha256": "0d9891cb775fe690c70bc5ec35c73b8e887c96a4a271312c10a222ecb4af178c",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozrad121-ef-flow-cs137-air",
+          "mediaType": "application/xml",
+          "sha256": "58d3a96b8c154fa7604937e0065c09c5efa29177bf32e25e353d5a4a11096264",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozrad121-ef-flow-cs137-fw",
+          "mediaType": "application/xml",
+          "sha256": "b5557ba8744093778a650b4e442eaeee5199419914f7ba2bda003f6625ac84d2",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozrad121-ef-flow-cs137-sw",
+          "mediaType": "application/xml",
+          "sha256": "004fc8842b8c5d5bc0318909dca703b13162916fa881479ba127644ee4be4e99",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozrad121-ef-flow-i129-air",
+          "mediaType": "application/xml",
+          "sha256": "02970039106024179ef3d6dff0c9c8b08be5c2bae87d5356fc62039aff989c27",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozrad121-ef-flow-rn222-air",
+          "mediaType": "application/xml",
+          "sha256": "eced45e4d016a7a265f24bb9cd60d030501af049ffc9d85adb5ac9527f11eaea",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
         }
       ],
       "passages": [
@@ -28531,6 +28737,34 @@
           "limits": [
             "仅核实官方XML中同一流UUID的已发布因子与CAS字段原值，不改动流表或代证软件导入行为。"
           ]
+        },
+        {
+          "id": "psg-ozrad121-ef31-odp-method",
+          "artifactId": "art-ozone119-ef-method-odp",
+          "locator": "EF-v3.1 (4)/ILCD/lciamethods/b5c629d6-def3-11e6-bf01-fe55135034f3.xml（v02.00.012，全部124条factor）、flowproperties/93a60a56-a3c8-11da-a746-0800200b9a66.xml（Mass）及对应卤代烃与nitrous oxide流XML（对照6209b35f.xml中nitrous oxide=273.0）",
+          "topics": [
+            "25个物质前缀共124条factor（无location标签，不含nitrous oxide 08a91e70-3ddc-11dd-94c3-0050c2490048）",
+            "CFC-11=1.0、CFC-12=0.73、CFC-114=0.5、CFC-115=0.26、Halon-1301=15.2、Halon-1211=6.9、Halon-2402=15.7、HCFC-22=0.034",
+            "同义流Carbon tetrachloride=CFC-10=0.72（5行）与Methyl bromide=Halon-1001=0.57（仅4行，漏lower stratosphere），两同义流XML的CASNumber为空",
+            "顶部generalComment/modelName仍写1999 WMO assessment且inventoryItems=23"
+          ],
+          "limits": [
+            "仅核实官方XML条目、流属性引用与CAS/同义词元数据，不代证第三方LCA软件导入时的同义流合并行为。"
+          ]
+        },
+        {
+          "id": "psg-ozrad121-ef31-ir-method",
+          "artifactId": "art-ozrad121-ef-method-ir",
+          "locator": "EF-v3.1 (4)/ILCD/lciamethods/b5c632be-def3-11e6-bf01-fe55135034f3.xml（v01.00.011，全部189条factor）、flowproperties/93a60a56-a3c8-17da-a746-0800200c9a66.xml（Radioactivity）及对应核素流XML",
+          "topics": [
+            "29个核素前缀共189条factor（duration标time independent，inventoryItems标30，无location标签，不含Tc-99与空气Sr-90）",
+            "参考流属性绑定Radioactivity（Units of frequency，shortDescription为kBq U235 equivalents）",
+            "U-235空气=1.0、淡水=0.107、海水=0.00114；Co-60空气=0.786、淡水=2.07、海水=0.0186；C-14空气=10.0、淡水/海水=0.0557；Cs-137空气=0.636、淡水=7.86、海水=0.00371；I-129空气=44.3、淡水=4.71、海水=4.8；U-238/U-234/Th-230/Ra-226/Rn-222空气分别为0.386/4.57/2.14/0.0429/0.00114",
+            "保留lower stratosphere and upper troposphere、sea water与water, unspecified，且fresh water条目均标Calculated；核素流XML的synonyms含Cs-131、Iodine 125、219rn/224rn/226rn等串入文本"
+          ],
+          "limits": [
+            "仅核实官方b5c632be.xml与核素流XML原文，不代证法国核设施原始扩散代码或场址剂量率实测。"
+          ]
         }
       ],
       "appraisal": {
@@ -28550,7 +28784,8 @@
       "sourceKeys": [
         "src-flow-pilot-ef31",
         "src-fossil117-ef31-selected-members",
-        "src-ozone119-ef31-selected-members"
+        "src-ozone119-ef31-selected-members",
+        "src-ozrad121-ef31-selected-members"
       ]
     },
     {
@@ -28758,6 +28993,26 @@
           ],
           "limits": [
             "原报告表1漏标星号而表2（印p8）标POF**并于印p9专设§3.2说明，按原印保留不替作者改表。"
+          ]
+        },
+        {
+          "id": "psg-ozrad121-jrc130796-odp-ir",
+          "artifactId": "art-flow-pilot-ef31-jrc130796",
+          "locator": "§2 Table 1（印p6）、§4.2（印p21）、Table 10（印p22）及Annex I Table 15（印p44）（PDF第10、25–26、48页）",
+          "printedPages": "6, 21–22, 44",
+          "pdfIndices": [
+            9,
+            24,
+            25,
+            47
+          ],
+          "topics": [
+            "表1确认Ozone depletion（WMO 2014 + integrations，kg CFC-11eq）与Ionising radiation, human health（印作kBq U235）未作方法学更新",
+            "Annex I表15将Carbon tetrachloride与CFC-10、Methyl bromide与Halon-1001、Curium alpha与curium列为同义流赋同值",
+            "§4.2与表10记录归一化背景清单删去重复的Bromomethane（1.57E+07 kg）而保留Methyl bromide（1.80E+07 kg），使ODP人均归一化因子从5.36E-02变为5.23E-02 kg CFC-11 eq./person（-2.4%），电离辐射保持4.22E+03 kBq U235 eq./person（0%）"
+          ],
+          "limits": [
+            "未单独获取EF 3.0历史参考包与Crenna等2019原始补充表，仅在JRC130796明载范围内引用。"
           ]
         }
       ],
@@ -29645,6 +29900,59 @@
           ],
           "limits": [
             "区域因子来自TM5-FASST相对2000年参考排放的线性源—受体矩阵，不代表任意幅度减排或小时极值达标模拟。"
+          ]
+        },
+        {
+          "id": "psg-ozrad121-rivm-ch3-odp",
+          "artifactId": "art-land111-rivm2016-pdf",
+          "locator": "Table 1.1（印p14）、Table 1.3–1.5（印pp18、20、22）、第3章§§3.1–3.4及Table 3.1–3.3（印pp35–39）与§14.1（印p99）（PDF第16、20、22、24、37–41、101页）",
+          "printedPages": "14, 18, 20, 22, 35–39, 99",
+          "pdfIndices": [
+            15,
+            19,
+            21,
+            23,
+            36,
+            37,
+            38,
+            39,
+            40,
+            100
+          ],
+          "topics": [
+            "基于WMO 2011半经验EESC与De Schryver等2011时间窗缩放给出21种物质20年（I）、100年（H）、无限期（E）ODP（Table 3.2，含初步N2O*=0.007/0.011/0.017）",
+            "印p36公式印作Ft=1-e^{(-t-3)·k}且Table 3.2全部卤代烃表值实按(-t-3)·k算出",
+            "终点转换系数Table 3.3为2.37E-04/5.31E-04/1.34E-03 DALY/kg CFC-11eq（Table 1.5舍入为2.4E-04/5.3E-04/1.3E-03；I/H计三类皮肤癌，仅E加计白内障；印p38误写longitudinal zone）"
+          ],
+          "limits": [
+            "未获取WMO 2011原始表册或ReCiPe 2016电子补充工作簿，按印出公式与表3.2/3.3核验。"
+          ]
+        },
+        {
+          "id": "psg-ozrad121-rivm-ch4-ir",
+          "artifactId": "art-land111-rivm2016-pdf",
+          "locator": "Table 1.1（印p14）、Table 1.3–1.5（印pp18、20、22）、第4章§§4.1–4.4及Table 4.1–4.3（印pp41–45）与§14.1（印p99）（PDF第16、20、22、24、43–47、101页）",
+          "printedPages": "14, 18, 20, 22, 41–45, 99",
+          "pdfIndices": [
+            15,
+            19,
+            21,
+            23,
+            42,
+            43,
+            44,
+            45,
+            46,
+            100
+          ],
+          "topics": [
+            "以1 kBq Co-60排入空气的集体剂量为参照定义IRP（kBq Co-60 to air eq/kBq），区分20年（I）、100年（H）、100,000年（E）及空气/淡水/海洋三类介质（Table 4.2，假设100,000年全球人口恒为100亿）",
+            "Table 4.2及其脚注a呈现I/H留空而仅在E列给出Pu-alpha、Cm-alpha、Th-230及铀同位素（连同同样未给I/H值的Pu-238、Ra-226）",
+            "终点转换系数Table 4.3为6.8E-09/8.5E-09/1.4E-08 DALY/kBq Co-60 emitted to air eq（DDREF=10/6/2，致死癌0.05、非致死癌0.12、严重遗传病0.01 cases/man·Sv且每例遗传病计57 DALY）",
+            "印p22表1.5印作yr//kBq Co-60 to air，印p44误印Co-60 to air eq/kg与DALY/kg Co-60 to air eq.，印p45将Table 4.3误引为(Table 3.3)"
+          ],
+          "limits": [
+            "报告明确指出目前尚无量化电离辐射对生态系统损害的LCIA方法；长半衰期核素（如U-235半衰期7.1×10^8年）远超100,000年积分上限。"
           ]
         }
       ],
@@ -30902,6 +31210,48 @@
           "limits": [
             "印p18表内把EF指标名写作POCP，与JRC130796表1及b5c610fe.xml的Tropospheric ozone concentration increase不同，保留原件异文。"
           ]
+        },
+        {
+          "id": "psg-ozrad121-jrc109369-odp",
+          "artifactId": "art-fossil117-jrc109369-pdf",
+          "locator": "§2 Table 1–2（印pp6、8）、§4.2 Ozone depletion（印p13）及Annex 1（印pp33–37）（PDF第8、10、15、35–39页）",
+          "printedPages": "6, 8, 13, 33–37",
+          "pdfIndices": [
+            7,
+            9,
+            14,
+            34,
+            35,
+            36,
+            37,
+            38
+          ],
+          "topics": [
+            "表1–2仍标WMO 1999，而§4.2与Annex 1明确改为WMO 2014 + integrations（WMO 2011、Montreal Protocol及ILCD 2017/EN 15804/ReCiPe）",
+            "Annex 1列出23种物质共113行（其中1,1,2-trichlorotrifluoroethane与HCFC-142b各仅印4行、漏印lower stratosphere and upper troposphere行，并将chloromethane记为R-40=0.015，不含氧化亚氮N2O）"
+          ],
+          "limits": [
+            "表1–2与§4.2/Annex 1关于WMO年份（1999对2014）存在原报告内部不一致，且Annex 1有2种物质漏印高空子区室行（EF 3.1 XML已补齐为各5行），均按原印保留。"
+          ]
+        },
+        {
+          "id": "psg-ozrad121-jrc109369-ir",
+          "artifactId": "art-fossil117-jrc109369-pdf",
+          "locator": "§2 Table 1–2（印pp6、8）及§4.5 Ionising radiation（印p17）（PDF第8、10、19页）",
+          "printedPages": "6, 8, 17",
+          "pdfIndices": [
+            7,
+            9,
+            18
+          ],
+          "topics": [
+            "沿用ILCD所选Frischknecht等2000（取自ReCiPe v1.05并直接从Frischknecht 2000补入iodine-129）",
+            "表1单位印kBq U235，表2流属性误印Mass U235-equivalents / Units of mass (kg)",
+            "§4.5称排除了lower stratosphere and upper troposphere及除freshwater外的大多数水体子区室并将freshwater标为estimated"
+          ],
+          "limits": [
+            "§4.5关于排除子区室及freshwater标estimated的叙述与EF 3.1官方b5c632be.xml实载条目不符，须与XML对照呈现。"
+          ]
         }
       ],
       "appraisal": {
@@ -31915,6 +32265,17 @@
         "B17",
         "B20",
         "B22"
+      ]
+    },
+    {
+      "id": "gap-ozrad121-stratospheric-and-radiological-originals",
+      "description": "WMO（1999、2011、2014）平流层卤素释放观测同化底层模型、Hayashi等2006纬向紫外—皮肤癌/白内障回归原表、Dreicer等1995与Frischknecht等2000法国核燃料循环扩散程序及Garnier-Laplace等淡水慢性照射原始毒理数据集未在本仓库重跑或逐表复算；ReCiPe 2016个人主义与等级主义视角下铀系及超铀核素的20/100年缺省值亦保持原表留空状态。",
+      "nextAction": "在核能、化工制冷与农业氮肥案例比较中显式标注ODP年份/N2O纳排与IRP时间窗/核素覆盖前提；涉及具体核设施环评或职业辐射防护时使用场址扩散与剂量监测证据，不以全球LCIA缺省因子替代。",
+      "affectedUnits": [
+        "B14",
+        "B15",
+        "B16",
+        "A07"
       ]
     }
   ],
@@ -34611,6 +34972,22 @@
       ],
       "affectedUnits": [
         "B16"
+      ]
+    },
+    {
+      "id": "rev-ozrad121-b14-ozone-and-radiation",
+      "before": "B14开篇虽以排放路径引出中点与终点的位置分工，但章内展开的具体比较实例仅覆盖土地恢复、金属矿产与化石/核燃料开采三类资源或用地输入；首段与收束段分别保留旧版“两类输入”与“三个例子”计数，平流层臭氧耗竭（V5-B）与电离辐射（V5-L）尚未建立基于一手报告与官方EF 3.1 XML的比较论述。",
+      "after": "2026-11-17于B14三节增补8段比较论述（cl-ozrad121-*），并对首段（cl-lcia-midpoint-pathway）与收束段（cl-mineral115-judgment）做具名日期同步说明（其余958条既有论述零改动），阐明物理暴露型排放中点向人类健康DALY终点的附加生物医学假设与生态终点缺口，证明ODP（20/100/无限期、N2O纳排及WMO年份）与IRP（20/100/100,000年、U-235对Co-60参照、水气介质及I/H铀系留空）的受控排序反转，并据实揭示RIVM 2016-0104指数符号(-t-3)·k实算表值与JRC109369/JRC130796/EF 3.1 XML的子区室、流属性及元数据异文。",
+      "reasoning": "补齐B14物理暴露型排放路径的第四种中点—终点结构，同步章内首尾枚举计数，并与天然铀开采边界及后续气候、酸化/多路径前体专章形成严密衔接。",
+      "status": "selected-source inspection and canonical B14 integration prepared; independent source, reader and output gates required before acceptance",
+      "triggerPassageIds": [
+        "psg-ozrad121-ef31-odp-method",
+        "psg-ozrad121-ef31-ir-method",
+        "psg-ozrad121-rivm-ch3-odp",
+        "psg-ozrad121-rivm-ch4-ir"
+      ],
+      "affectedUnits": [
+        "B14"
       ]
     }
   ]
