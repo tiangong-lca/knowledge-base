@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-16",
+  "updatedAt": "2026-11-17",
   "protocol": {
     "id": "community-classics-wave-2026-11-04",
     "questions": [
@@ -4930,6 +4930,12 @@
         "query": "ILCD 2011 resource depletion exergy scarcity ADP; JRC109369 Fazio 2018 4.10 energy carriers uranium MJ; JRC130796 EF 3.1 Resource use fossils b2ad6110; Van Oers 2020 uranium PEF footnote 1 ESM1 I109; RIVM 2016-0104 Chapter 13 FFP HHV SCP Table 13.1 13.2 S9.1 S9.2",
         "channel": "欧盟JRC官方出版库、EF 3.1官方参考包命名XML成员、RIVM机构库PDF、Springer文章及ESM1工作簿；按共同能量载体与终点费用问题定向核查",
         "date": "2026-11-16"
+      },
+      {
+        "id": "q-ozone119-receptors-titration-multipath-20261117",
+        "query": "ILCD 2011 3.6 photochemical ozone formation POCP Derwent LOTOS-EUROS Van Zelm 2008; JRC109369 4.6 VOC 14.0 Mt NMVOC 47.8 Mt CH4; JRC130796 Table 2 p.8 and 3.2 p.9 POF HCFC-140 Methyl chloroform dichloromethane Methylene chloride; EF 3.1 b5c610fe 720 location rows Nitrogen oxides chloromethane; RIVM 2016-0104 Chapter 6 HOFP EOFP Table 6.1 6.2 6.5 6.6 Table S2.1 NOx titration",
+        "channel": "欧盟JRC官方出版库PDF、EF 3.1官方参考包命名XML成员（中央目录+HTTP 206+CRC32）、RIVM机构库PDF及2017期刊文章PDF；围绕对流层光化学臭氧受体拆分、区域滴定与多路径前体归属定向核查",
+        "date": "2026-11-17"
       }
     ],
     "limitations": [
@@ -6418,7 +6424,7 @@
       "accessStatus": "public-fulltext-available",
       "readingStatus": "not-close-read",
       "accessedAt": "2026-11-03",
-      "lastCheckedAt": "2026-11-16",
+      "lastCheckedAt": "2026-11-17",
       "rights": "Third-party sources retain their rights. Bibliographic facts and original project annotations are published here; source text, figures, datasets and software are not relicensed. Full-text access or borrowing does not grant redistribution permission. No source-specific open reuse license was verified in the inherited seed check. 2026-11-15 核读原报告印p2，允许按机构、题名与年份注明后再用部分内容。项目只公开原创释义和定位。",
       "limitations": [
         "官方书目与报告出版页；未精读全报告",
@@ -6426,7 +6432,8 @@
         "Volume/region/tradition tags are provisional editorial discovery strata, not evidence of intellectual origin, influence or coverage.",
         "2026-11-15从机构库取得早期2016-0104原件并完成土地章与附录选段；参见rd-land111-rivm2016。2026-11-03仍为历史书目确认；未精读全报告或取得2017版报告原件与因子表。",
         "2026-11-16以同SHA原2016-0104载体追加核读矿产第12章与§23选段；不扩大2026-11-15土地事件或其他载体资格。",
-        "2026-11-16以同SHA原2016-0104载体追加核读第13章化石资源、§24表S9.1–S9.2、印p117参考文献编号及第12章／§23.1表S8.1铀行；保留p96跨表图及2016b误引、图13.2横轴单位及未刊稿限制。"
+        "2026-11-16以同SHA原2016-0104载体追加核读第13章化石资源、§24表S9.1–S9.2、印p117参考文献编号及第12章／§23.1表S8.1铀行；保留p96跨表图及2016b误引、图13.2横轴单位及未刊稿限制。",
+        "2026-11-17同SHA原2016-0104载体追加核读第6章光化学臭氧形成（印pp51–56）与§17表S2.1区域HOFP/EOFP（印pp125–126），保留表6.3–6.4跳号及印p56误引Table 5.6原貌。"
       ],
       "catalogSourceIds": [
         "src-land111-rivm2016"
@@ -9522,11 +9529,12 @@
       "accessStatus": "public-fulltext-available",
       "readingStatus": "not-close-read",
       "accessedAt": "2026-11-04",
-      "lastCheckedAt": "2026-11-04",
+      "lastCheckedAt": "2026-11-17",
       "rights": "See specific selected-reading carrier/rights record; no third-party relicense inferred.",
       "limitations": [
         "Work identity distinct from similarly named model releases, reports, factor packages and software implementations.",
-        "Actual selected reading is recorded separately as rd-recipe-2017-primary-article; acquisition or overlapping passages do not establish full-work reading."
+        "Actual selected reading is recorded separately as rd-recipe-2017-primary-article; acquisition or overlapping passages do not establish full-work reading.",
+        "2026-11-17同SHA期刊PDF追加核对表1、§3.1.5（印p141）、表2（印p143）及§§3.2.4–3.2.5与§4.1（印p144）对HOFP/EOFP双受体及无价值选择区分的概述。"
       ],
       "catalogSourceIds": [
         "src-book-recipe-2017-primary-article"
@@ -10980,13 +10988,14 @@
       "accessStatus": "public-fulltext-available",
       "readingStatus": "not-close-read",
       "accessedAt": "2026-11-04",
-      "lastCheckedAt": "2026-11-16",
+      "lastCheckedAt": "2026-11-17",
       "rights": "©European Union2011；注明来源后可再现。原PDF/源图表不进入提案，底层第三方作品权利另行保留。",
       "limitations": [
         "未运行AE/EMEP/RAINS或完整核读指南。",
         "未取得所拟采用AE发行版精确SI单位，不补写molN-eq。",
         "2011 ReCiPe能力描述不套到后继版。",
-        "2026-11-16同载体追加选读§3.11.6–§3.11.9资源耗竭推荐与火用排除理由，不声称全书重读。"
+        "2026-11-16同载体追加选读§3.11.6–§3.11.9资源耗竭推荐与火用排除理由，不声称全书重读。",
+        "2026-11-17同载体追加选读§3.6（印pp47–55）光化学臭氧形成方法评估与LOTOS-EUROS推荐依据，不声称全书重读。"
       ],
       "catalogSourceIds": [
         "src-book-ilcd-2011-lcia-recommendations"
@@ -19676,16 +19685,18 @@
       "accessStatus": "public-fulltext-available",
       "readingStatus": "not-close-read",
       "accessedAt": "2026-11-14",
-      "lastCheckedAt": "2026-11-16",
+      "lastCheckedAt": "2026-11-17",
       "rights": "成员原文件权利有待分别核定，仅登记标识、数值、定位与原创解释。",
       "limitations": [
         "未全包审计、未运行 Look@LCI、未确定零值成因。",
-        "2026-11-16另按同一中央目录与HTTP 206范围核查化石资源、矿产资源两方法XML与六个能量载体流及净热值流属性／能量单位组，不声称重算整包。"
+        "2026-11-16另按同一中央目录与HTTP 206范围核查化石资源、矿产资源两方法XML与六个能量载体流及净热值流属性／能量单位组，不声称重算整包。",
+        "2026-11-17另按同一中央目录与HTTP 206范围核查光化学臭氧（b5c610fe）、海洋富营养化（b5c619fa）、颗粒物（b5c602c6）、臭氧耗竭（b5c629d6）方法XML与十三个相关空气流XML，并结合已核酸化、陆地富营养化与气候变化方法XML比对跨类别前体因子，不声称整包原生求解。"
       ],
       "catalogSourceIds": [
         "src-flow-pilot-ef31",
         "src-acid113-ef31-selected-members",
-        "src-fossil117-ef31-selected-members"
+        "src-fossil117-ef31-selected-members",
+        "src-ozone119-ef31-selected-members"
       ]
     },
     {
@@ -19733,11 +19744,12 @@
       "accessStatus": "public-fulltext-available",
       "readingStatus": "not-close-read",
       "accessedAt": "2026-11-14",
-      "lastCheckedAt": "2026-11-16",
+      "lastCheckedAt": "2026-11-17",
       "rights": "版权页 CC BY 4.0，须署名并标明改动；第三方材料另受其权利约束。",
       "limitations": [
         "长期未指定水体铝(III)零值原因不由这两段确定。方法规定取零不能支持现实无效应的断言。未读其余章节。",
-        "2026-11-16同载体追加核查§1–§2与表1对十个未改动类别（含两项资源使用类别）的承接说明。"
+        "2026-11-16同载体追加核查§1–§2与表1对十个未改动类别（含两项资源使用类别）的承接说明。",
+        "2026-11-17同载体追加核查摘要、§1、表1（印p6漏标POF星号）、表2（印p8）与§3.2（印p9）对光化学臭氧同义流因子的更新说明。"
       ],
       "catalogSourceIds": [
         "src-flow-pilot-ef31-update"
@@ -20730,7 +20742,9 @@
       "topics": [
         "EF资源使用",
         "能量载体ADP-fossil",
-        "铀流属性与类别归属"
+        "铀流属性与类别归属",
+        "EF光化学臭氧形成",
+        "泛指VOC排放加权因子"
       ],
       "languages": [
         "en"
@@ -20757,10 +20771,11 @@
       "accessStatus": "public-fulltext-available",
       "readingStatus": "not-close-read",
       "accessedAt": "2026-11-15",
-      "lastCheckedAt": "2026-11-16",
+      "lastCheckedAt": "2026-11-17",
       "rights": "© European Union, 2018；依Decision 2011/833/EU注明出处允许再用，非欧盟版权材料另守原权利。公开记录仅含必要定位与原创释义。",
       "limitations": [
-        "未编号封面署Diaconu E.、印p4作者说明署Edward Diaconu，而未编号版权页建议引用式只列前六位作者；本次仅核封面／版权页、印p4作者栏与§4.10资源节，不作全报告精读。"
+        "未编号封面署Diaconu E.、印p4作者说明署Edward Diaconu，而未编号版权页建议引用式只列前六位作者；本次仅核封面／版权页、印p4作者栏与§4.10资源节，不作全报告精读。",
+        "2026-11-17同载体追加核查§4.6（印p18）光化学臭氧形成及§§4.7–4.8（印pp19–20）氮氧化物跨酸化与富营养化说明。"
       ],
       "catalogSourceIds": [
         "src-fossil117-jrc109369"
