@@ -1,3 +1,4 @@
+import { photochemicalOzoneHistoryControls, photochemicalOzoneSource } from '@/scripts/reader-photochemical-ozone.mjs';
 import { fossilResourcesChapter, fossilResourcesCorrection, fossilResourcesHistoryControls, fossilResourcesSource } from '@/scripts/reader-fossil-resources.mjs';
 import { mineralResourcesChapter, mineralResourcesCorrection, mineralResourcesHistoryControls, mineralResourcesSource } from '@/scripts/reader-mineral-resources.mjs';
 import { acidEquivalentsHistoryControls, acidEquivalentsOrdinaryId, acidEquivalentsSource } from '@/scripts/reader-acid-equivalents.mjs';
@@ -5,7 +6,7 @@ import { landRecoveryHistoryControls, landRecoveryOrdinaryId, landRecoverySource
 import { circularFootprintHistoryControls, circularFootprintOrdinaryId, circularFootprintSource } from '@/scripts/reader-circular-footprint.mjs';
 import { loadShiftHistoryControls, loadShiftOrdinaryId, loadShiftSource } from '@/scripts/reader-load-shift.mjs';
 import { substitutionRulesHistoryControls, substitutionRulesOrdinaryId, substitutionRulesSource } from '@/scripts/reader-substitution-rules.mjs';
-import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources } from '@/scripts/reader-current-expectations.mjs';
+import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone } from '@/scripts/reader-current-expectations.mjs';
 import { flowBoundaryHistoryControls, flowBoundaryHistoryTargets, flowBoundaryOrdinaryTargets, flowBoundaryOrdinaryId } from '@/scripts/reader-flow-boundary.mjs';
 import { serviceConstraintsHistoryControls, serviceConstraintsOrdinaryId, serviceConstraintsSource } from '@/scripts/reader-service-constraints.mjs';
 import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
@@ -44,6 +45,7 @@ const histories = [
   { controls: acidEquivalentsHistoryControls(currentAcidEquivalents), edition: acidEquivalentsSource, attribute: 'acid-equivalents' },
   { controls: mineralResourcesHistoryControls(currentMineralResources), edition: mineralResourcesSource, attribute: 'mineral-resources' },
   { controls: fossilResourcesHistoryControls(currentFossilResources), edition: fossilResourcesSource, attribute: 'fossil-resources' },
+  { controls: photochemicalOzoneHistoryControls(currentPhotochemicalOzone), edition: photochemicalOzoneSource, attribute: 'photochemical-ozone' },
 ];
 
 function currentReaderOrdinaryId(route: string, print: boolean, index: number) {

@@ -22,6 +22,30 @@ lastReviewedCommit: 394992acccb2fe1194c218971436fd3186c14d2f
 
 # Publication architecture
 
+## Photochemical-ozone successor
+
+The #119 B16 successor inserts seven canonical claims (`cl-ozone119-*`) inside
+`<ReaderSection id="同一排放不同的环境问题" />` immediately before
+`cl-path-multiple-paths` (bringing B16 from 23 to 30 claims and the catalog from
+953 to 960 claims while keeping all 953 baseline claims byte-for-byte unchanged
+and `correction: null`). Before #117 runs its own rollback and receipt checks,
+`preparePhotochemicalOzoneSource` restores the exact `13064f9` B16 MDX and raw
+source/reading/literature extensions, verifying exact predecessor state pins and
+cross-generation consumer closures.
+
+`reader-photochemical-ozone-factors.mjs` binds all 9 `ev-ozone119-*` evidence
+records, their 6 primary PDF/XML carriers, all 17 newly registered CRC32-verified
+official EF 3.1 XML member hashes, and 43 structured numeric facts, plus `BigInt`
+fixed-point verification of the `0.23435` (`0.234` at 3 sig figs versus XML
+`0.235`) generic `VOC` relation, cross-system and cross-receptor precursor
+order reversals, regional `Table S2.1` `NOx` titration sign flips, EF 3.1's 720
+constant `<location>` rows versus country-resolved Acidification and Terrestrial
+eutrophication rows, and same-UUID multi-pathway precursor factors. At shared
+B16 addresses, `qualifyPhotochemicalOzoneHistory` enforces strict two-generation
+ordering (`#113` `acid-equivalents` before `#119` `photochemical-ozone`) and
+titles the `#同一排放不同的环境问题` section marker without shifting B16 Notes
+`1..22` (preserving B18's downstream links to B16 Note 17).
+
 ## Fossil-resources successor
 
 The #117 B14 successor inserts eight canonical claims across B14's three

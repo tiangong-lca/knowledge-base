@@ -169,7 +169,7 @@ test('the actual adopted source is independently qualified and a changed reviewe
   const { fileURLToPath } = await import('node:url');
   const { readFile } = await import('node:fs/promises');
   const { validateRepository } = await import('./validate.mjs');
-  const { validateReadableBookCurrent, validateServiceConstraintsReviewSources, validateSubstitutionRulesReviewSources, validateLoadShiftReviewSources, validateCircularFootprintReviewSources, validateLandRecoveryReviewSources, validateAcidEquivalentsReviewSources, validateMineralResourcesReviewSources, validateFossilResourcesReviewSources } = await import('./reader-current-edition-files.mjs');
+  const { validateReadableBookCurrent, validateServiceConstraintsReviewSources, validateSubstitutionRulesReviewSources, validateLoadShiftReviewSources, validateCircularFootprintReviewSources, validateLandRecoveryReviewSources, validateAcidEquivalentsReviewSources, validateMineralResourcesReviewSources, validateFossilResourcesReviewSources, validatePhotochemicalOzoneReviewSources } = await import('./reader-current-edition-files.mjs');
   const root = fileURLToPath(new URL('../', import.meta.url));
   const read = async path => JSON.parse(await readFile(new URL('../' + path, import.meta.url), 'utf8'));
   const serviceConstraints = await read('config/reader-service-constraints.json');
@@ -180,6 +180,8 @@ test('the actual adopted source is independently qualified and a changed reviewe
   const acid = await read('config/reader-acid-equivalents.json');
   const minerals = await read('config/reader-mineral-resources.json');
   const fossils = await read('config/reader-fossil-resources.json');
+  const ozone = await read('config/reader-photochemical-ozone.json');
+  const privateOzone = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1' && ozone.status === 'preview';
   const privateFossils = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1' && fossils.status === 'preview';
   const privateMinerals = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1' && minerals.status === 'preview';
   const privateAcid = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1' && acid.status === 'preview';
@@ -188,8 +190,8 @@ test('the actual adopted source is independently qualified and a changed reviewe
   const privateLoadShift = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1' && loadShift.status === 'preview';
   const privateService = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1' && serviceConstraints.status === 'preview';
   const privateSubstitution = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1' && substitutionRules.status === 'preview';
-  if (privateService || privateSubstitution || privateLoadShift || privateFootprint || privateLand || privateAcid || privateMinerals || privateFossils) {
-    const name = privateFossils ? 'Fossil resources' : privateMinerals ? 'Mineral resources' : privateAcid ? 'Acid equivalents' : privateLand ? 'Land recovery' : privateFootprint ? 'Circular footprint' : privateLoadShift ? 'Load shift' : privateService ? 'Service constraints' : 'Substitution rules';
+  if (privateService || privateSubstitution || privateLoadShift || privateFootprint || privateLand || privateAcid || privateMinerals || privateFossils || privateOzone) {
+    const name = privateOzone ? 'Photochemical ozone' : privateFossils ? 'Fossil resources' : privateMinerals ? 'Mineral resources' : privateAcid ? 'Acid equivalents' : privateLand ? 'Land recovery' : privateFootprint ? 'Circular footprint' : privateLoadShift ? 'Load shift' : privateService ? 'Service constraints' : 'Substitution rules';
     assert((await validateRepository(root)).includes(`${name} is not independently accepted`));
   } else assert.deepEqual(await validateRepository(root), []);
   const [acceptance, copyedit, catalog, readings, literature] = await Promise.all([
@@ -197,9 +199,9 @@ test('the actual adopted source is independently qualified and a changed reviewe
     read('knowledge/research/readings.json'), read('knowledge/research/literature-map.json'),
   ]);
   assert.equal(acceptance.status, 'reviewed');
-  const qualify = privateFossils ? validateFossilResourcesReviewSources : privateMinerals ? validateMineralResourcesReviewSources : privateAcid ? validateAcidEquivalentsReviewSources : privateLand ? validateLandRecoveryReviewSources : privateFootprint ? validateCircularFootprintReviewSources : privateLoadShift ? validateLoadShiftReviewSources : privateSubstitution ? validateSubstitutionRulesReviewSources
+  const qualify = privateOzone ? validatePhotochemicalOzoneReviewSources : privateFossils ? validateFossilResourcesReviewSources : privateMinerals ? validateMineralResourcesReviewSources : privateAcid ? validateAcidEquivalentsReviewSources : privateLand ? validateLandRecoveryReviewSources : privateFootprint ? validateCircularFootprintReviewSources : privateLoadShift ? validateLoadShiftReviewSources : privateSubstitution ? validateSubstitutionRulesReviewSources
     : privateService ? validateServiceConstraintsReviewSources : validateReadableBookCurrent;
-  if (privateService || privateSubstitution || privateLoadShift || privateFootprint || privateLand || privateAcid || privateMinerals || privateFossils) assert.deepEqual((await qualify(root, catalog, readings, literature)).errors, []);
+  if (privateService || privateSubstitution || privateLoadShift || privateFootprint || privateLand || privateAcid || privateMinerals || privateFossils || privateOzone) assert.deepEqual((await qualify(root, catalog, readings, literature)).errors, []);
   const currentChanges = copyedit.status === 'reviewed' ? copyedit.unit.changes : acceptance.units.flatMap(unit => unit.changes);
   const changed = currentChanges
     .find(row => row.kind === 'record' && row.key.startsWith('claims:') && row.from !== null);
@@ -212,6 +214,9 @@ test('the actual adopted source is independently qualified and a changed reviewe
     ? 'Reader copyedit successor differs from actual source'
     : 'stale predecessor, missing successor or mismatched result';
   await assert.rejects(qualify(root, catalog, readings, literature), error => {
+    if (privateOzone || ozone.status === 'reviewed') {
+      return error.message === 'Photochemical ozone did not recover the independently observed raw 13064f9 state';
+    }
     if (privateFossils || fossils.status === 'reviewed') {
       return error.message === 'Fossil resources did not recover the independently observed raw ba8a101 state';
     }

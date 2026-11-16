@@ -1,0 +1,1296 @@
+{
+  "schemaVersion": 1,
+  "kind": "source",
+  "unit": "photochemical-ozone-119",
+  "subjectSha256": "0d455f8a4999d9367194c47b70634c4f83f7ecf2fe414a0dc4765874e3d0365c",
+  "date": "2026-11-17",
+  "scope": [
+    "content/docs/book/acidification-and-nutrient-pathways.mdx",
+    "sources:src-book-recipe-2017-primary-article",
+    "sources:src-book-ilcd-2011-lcia-recommendations",
+    "sources:src-flow-pilot-ef31-update",
+    "sources:src-land111-rivm2016",
+    "sources:src-fossil117-jrc109369",
+    "readings:rd-recipe-2017-primary-article",
+    "readings:rd-ilcd-2011-eutrophication-pathways",
+    "readings:rd-flow-pilot-ef31",
+    "readings:rd-flow-pilot-ef31-update",
+    "readings:rd-land111-rivm2016",
+    "readings:rd-fossil117-jrc109369",
+    "literature:lit-m05",
+    "literature:work-recipe-2017-method-article",
+    "literature:work-ilcd-2011-lcia-recommendations",
+    "literature:work-flow-pilot-ef31",
+    "literature:work-flow-pilot-ef31-update",
+    "literature:work-fossil117-jrc109369",
+    "researchMetadata:reading-ledger",
+    "researchMetadata:literature-map",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:order:sources",
+    "researchMetadata:order:gaps",
+    "researchMetadata:order:revisions",
+    "researchMetadata:order:queries",
+    "researchMetadata:public-projection",
+    "claims:cl-ozone119-precursor-entry",
+    "claims:cl-ozone119-pocp-to-lotos",
+    "claims:cl-ozone119-order-reversal",
+    "claims:cl-ozone119-titration-sign",
+    "claims:cl-ozone119-ef-location-copy",
+    "claims:cl-ozone119-multipath-accounting",
+    "claims:cl-ozone119-printed-limits",
+    "evidence:ev-ozone119-ilcd2011-pof-methods",
+    "evidence:ev-ozone119-jrc109369-voc-and-label",
+    "evidence:ev-ozone119-jrc130796-pof-synonyms",
+    "evidence:ev-ozone119-ef31-pof-core-factors",
+    "evidence:ev-ozone119-ef31-location-replication",
+    "evidence:ev-ozone119-ef31-multipath-uuid",
+    "evidence:ev-ozone119-rivm-ch6-split-and-tables",
+    "evidence:ev-ozone119-rivm-s21-titration",
+    "evidence:ev-ozone119-recipe2017-ozone-overview",
+    "sources:src-ozone119-ef31-selected-members",
+    "gaps:gap-ozone119-ctm-and-multipollutant-epi",
+    "revisions:rev-ozone119-b16-ozone-and-multipath",
+    "queries:q-ozone119-receptors-titration-multipath-20261117"
+  ],
+  "observed": "Primary scoped judgment integrating two-round independent source, full-chapter reader and publication-engineering audits with direct original, export and browser/print checks; no human or empirical certification.",
+  "observations": {
+    "state": {
+      "before": "7fad5bd4a52cc5a2cd38d56d522c6d343b68a24d9abde742bfb3fda4e89aacf2",
+      "after": "be282daa6b7d83e064182c93aa31dfe32ed300f7258aa38882d76825e8861eed"
+    },
+    "changes": [
+      {
+        "kind": "file",
+        "key": "content/docs/book/acidification-and-nutrient-pathways.mdx",
+        "from": "0c2c8e4c60812654c256a942983df13cbd367847ea16f1681b60b6ee6e29fd07",
+        "to": "c356117fe53d98c9b3c116e09d4c3a315973d3a6b6b61abde9846fa07c923984",
+        "rationale": "在B16第四节《同一排放不同的环境问题》既有收束段前新增7段对流层光化学臭氧与多路径前体归属比较论述，其余章节结构与论述不变。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-book-recipe-2017-primary-article",
+        "from": {
+          "raw": "837e5e1c8475aa67a1808e104a19c6b256179c65ccabddc3cdbe5a9c2232306f",
+          "public": "837e5e1c8475aa67a1808e104a19c6b256179c65ccabddc3cdbe5a9c2232306f",
+          "protected": "837e5e1c8475aa67a1808e104a19c6b256179c65ccabddc3cdbe5a9c2232306f"
+        },
+        "to": {
+          "raw": "443e2092aa4cdd137556387d3058bb8d43d1b8ed21f357a5b8c22261eed76596",
+          "public": "443e2092aa4cdd137556387d3058bb8d43d1b8ed21f357a5b8c22261eed76596",
+          "protected": "443e2092aa4cdd137556387d3058bb8d43d1b8ed21f357a5b8c22261eed76596"
+        },
+        "rationale": "在同一已核载体上追加光化学臭氧与跨路径空气前体选读范围及核查时间戳，不改变既有载体身份与历史引文内容。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-book-ilcd-2011-lcia-recommendations",
+        "from": {
+          "raw": "5d392be15d6fc38f74366cf611155c0836c89fb887a31875af2161d327ab596f",
+          "public": "5d392be15d6fc38f74366cf611155c0836c89fb887a31875af2161d327ab596f",
+          "protected": "5d392be15d6fc38f74366cf611155c0836c89fb887a31875af2161d327ab596f"
+        },
+        "to": {
+          "raw": "3d77df63b96524317f7b37c19ea9f92e31dd7a8bdba80ad5fa797ae4f15a76fb",
+          "public": "3d77df63b96524317f7b37c19ea9f92e31dd7a8bdba80ad5fa797ae4f15a76fb",
+          "protected": "3d77df63b96524317f7b37c19ea9f92e31dd7a8bdba80ad5fa797ae4f15a76fb"
+        },
+        "rationale": "在同一已核载体上追加光化学臭氧与跨路径空气前体选读范围及核查时间戳，不改变既有载体身份与历史引文内容。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-flow-pilot-ef31-update",
+        "from": {
+          "raw": "16cd7ee993c30120a0d7c457c8bf74749153699f0617143dc765cc4587cbf1dd",
+          "public": "16cd7ee993c30120a0d7c457c8bf74749153699f0617143dc765cc4587cbf1dd",
+          "protected": "16cd7ee993c30120a0d7c457c8bf74749153699f0617143dc765cc4587cbf1dd"
+        },
+        "to": {
+          "raw": "863b9d7f1a6f996e80920c0a8d9d0d6efdd709026642b1fd357fb207ab2a3a86",
+          "public": "863b9d7f1a6f996e80920c0a8d9d0d6efdd709026642b1fd357fb207ab2a3a86",
+          "protected": "863b9d7f1a6f996e80920c0a8d9d0d6efdd709026642b1fd357fb207ab2a3a86"
+        },
+        "rationale": "在同一已核载体上追加光化学臭氧与跨路径空气前体选读范围及核查时间戳，不改变既有载体身份与历史引文内容。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-land111-rivm2016",
+        "from": {
+          "raw": "78228d6e44d9db513c3a2b23089bdc266d8fb5a5d940d994a8bc73fdb9554a7c",
+          "public": "78228d6e44d9db513c3a2b23089bdc266d8fb5a5d940d994a8bc73fdb9554a7c",
+          "protected": "78228d6e44d9db513c3a2b23089bdc266d8fb5a5d940d994a8bc73fdb9554a7c"
+        },
+        "to": {
+          "raw": "ecc89c17d60de9f7688c5b494764c896ff75ae72d45a5ebcd7e1d6ac76bc2e5b",
+          "public": "ecc89c17d60de9f7688c5b494764c896ff75ae72d45a5ebcd7e1d6ac76bc2e5b",
+          "protected": "ecc89c17d60de9f7688c5b494764c896ff75ae72d45a5ebcd7e1d6ac76bc2e5b"
+        },
+        "rationale": "在同一已核载体上追加光化学臭氧与跨路径空气前体选读范围及核查时间戳，不改变既有载体身份与历史引文内容。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-fossil117-jrc109369",
+        "from": {
+          "raw": "81972801421400fe7599c5d9f8548d956724d79ea9e719856f697526a682a62c",
+          "public": "81972801421400fe7599c5d9f8548d956724d79ea9e719856f697526a682a62c",
+          "protected": "81972801421400fe7599c5d9f8548d956724d79ea9e719856f697526a682a62c"
+        },
+        "to": {
+          "raw": "9743d635f475b4331b63eca276692247c4b948f5b88ff86b25226b3dafbe2b62",
+          "public": "9743d635f475b4331b63eca276692247c4b948f5b88ff86b25226b3dafbe2b62",
+          "protected": "9743d635f475b4331b63eca276692247c4b948f5b88ff86b25226b3dafbe2b62"
+        },
+        "rationale": "在同一已核载体上追加光化学臭氧与跨路径空气前体选读范围及核查时间戳，不改变既有载体身份与历史引文内容。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-recipe-2017-primary-article",
+        "from": {
+          "raw": "8eed7d92cf26728c7613997f5e00c0ad8453cae2ea87a18133c62e308c95a461",
+          "public": null,
+          "protected": "8eed7d92cf26728c7613997f5e00c0ad8453cae2ea87a18133c62e308c95a461"
+        },
+        "to": {
+          "raw": "c935b02ce5139b4d87e6364835b7c20cbf00987bc8dce7d0f5d7291c5a643f8d",
+          "public": null,
+          "protected": "c935b02ce5139b4d87e6364835b7c20cbf00987bc8dce7d0f5d7291c5a643f8d"
+        },
+        "rationale": "在同一已核载体上追加光化学臭氧与跨路径空气前体选读范围及核查时间戳，不改变既有载体身份与历史引文内容。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-ilcd-2011-eutrophication-pathways",
+        "from": {
+          "raw": "0befa2b944ecb9ac9ba883430457fddde7133a4077f5f2fc812cdf2edfff6eb4",
+          "public": null,
+          "protected": "0befa2b944ecb9ac9ba883430457fddde7133a4077f5f2fc812cdf2edfff6eb4"
+        },
+        "to": {
+          "raw": "e0da53cc980850fa5bbc404eb0bdaeedbdd5795749089f1012008ffa56acd600",
+          "public": null,
+          "protected": "e0da53cc980850fa5bbc404eb0bdaeedbdd5795749089f1012008ffa56acd600"
+        },
+        "rationale": "在同一已核载体上追加光化学臭氧与跨路径空气前体选读范围及核查时间戳，不改变既有载体身份与历史引文内容。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-flow-pilot-ef31",
+        "from": {
+          "raw": "8eb02459c19e6bc2220e3dc6d778fe6eeddbf3d7984b52c0a5257b9ea0008855",
+          "public": null,
+          "protected": "8eb02459c19e6bc2220e3dc6d778fe6eeddbf3d7984b52c0a5257b9ea0008855"
+        },
+        "to": {
+          "raw": "e12f17d945870c38a2adfcc3a62dcbc123392a88a567329ed53adf4dc5eae189",
+          "public": null,
+          "protected": "e12f17d945870c38a2adfcc3a62dcbc123392a88a567329ed53adf4dc5eae189"
+        },
+        "rationale": "在同一已核载体上追加光化学臭氧与跨路径空气前体选读范围及核查时间戳，不改变既有载体身份与历史引文内容。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-flow-pilot-ef31-update",
+        "from": {
+          "raw": "835e4da2cdf08d6a0a52732c59412ea238cefd7639f59b4471fa8448cd6b93bd",
+          "public": null,
+          "protected": "835e4da2cdf08d6a0a52732c59412ea238cefd7639f59b4471fa8448cd6b93bd"
+        },
+        "to": {
+          "raw": "4fefa1dd7bcbae21845df3d7938d816199ffbd8f0d10cf3d2ae40fbebdab4bbe",
+          "public": null,
+          "protected": "4fefa1dd7bcbae21845df3d7938d816199ffbd8f0d10cf3d2ae40fbebdab4bbe"
+        },
+        "rationale": "在同一已核载体上追加光化学臭氧与跨路径空气前体选读范围及核查时间戳，不改变既有载体身份与历史引文内容。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-land111-rivm2016",
+        "from": {
+          "raw": "1ee61343d4df755582c7536bbf96305d68de3cc1916e96a3c6ff3965d9776158",
+          "public": null,
+          "protected": "1ee61343d4df755582c7536bbf96305d68de3cc1916e96a3c6ff3965d9776158"
+        },
+        "to": {
+          "raw": "d3ac37416ed5e753107bae1d69be9946313e2c3413f68f590c28fe2bba3511bd",
+          "public": null,
+          "protected": "d3ac37416ed5e753107bae1d69be9946313e2c3413f68f590c28fe2bba3511bd"
+        },
+        "rationale": "在同一已核载体上追加光化学臭氧与跨路径空气前体选读范围及核查时间戳，不改变既有载体身份与历史引文内容。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-fossil117-jrc109369",
+        "from": {
+          "raw": "1b5ab2f927c17335bcc5db4048ad0c91a790a8fcaf2735df1e49ffa9f824c374",
+          "public": null,
+          "protected": "1b5ab2f927c17335bcc5db4048ad0c91a790a8fcaf2735df1e49ffa9f824c374"
+        },
+        "to": {
+          "raw": "c9b78ada2876f7453c10271558194a4226ca5112dc25689a3898361b638c027c",
+          "public": null,
+          "protected": "c9b78ada2876f7453c10271558194a4226ca5112dc25689a3898361b638c027c"
+        },
+        "rationale": "在同一已核载体上追加光化学臭氧与跨路径空气前体选读范围及核查时间戳，不改变既有载体身份与历史引文内容。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:lit-m05",
+        "from": {
+          "raw": "520241bafeacdbe3fda29bb7e5b34e49912f8c72b2ff3c2374ce5a65c4af637c",
+          "public": null,
+          "protected": "520241bafeacdbe3fda29bb7e5b34e49912f8c72b2ff3c2374ce5a65c4af637c"
+        },
+        "to": {
+          "raw": "c57b01f4dfe7b6f1f93d89c6ca966f1fbb92070e560283ba6270413aeb5db5e8",
+          "public": null,
+          "protected": "c57b01f4dfe7b6f1f93d89c6ca966f1fbb92070e560283ba6270413aeb5db5e8"
+        },
+        "rationale": "在同一已核载体上追加光化学臭氧与跨路径空气前体选读范围及核查时间戳，不改变既有载体身份与历史引文内容。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-recipe-2017-method-article",
+        "from": {
+          "raw": "a93406a93f28771b86987d431b19a052b14eec48fb50c044bc898fa212f7aa2e",
+          "public": null,
+          "protected": "a93406a93f28771b86987d431b19a052b14eec48fb50c044bc898fa212f7aa2e"
+        },
+        "to": {
+          "raw": "e7aff59a7729d71d01236390dc785f1b8a3913fa5ed7a362b26817de6f1fc8d0",
+          "public": null,
+          "protected": "e7aff59a7729d71d01236390dc785f1b8a3913fa5ed7a362b26817de6f1fc8d0"
+        },
+        "rationale": "在同一已核载体上追加光化学臭氧与跨路径空气前体选读范围及核查时间戳，不改变既有载体身份与历史引文内容。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-ilcd-2011-lcia-recommendations",
+        "from": {
+          "raw": "e6d38cb26cab24a791f975cbaa5a013271b4842608fdbb36204b8e2ad15f23e5",
+          "public": null,
+          "protected": "e6d38cb26cab24a791f975cbaa5a013271b4842608fdbb36204b8e2ad15f23e5"
+        },
+        "to": {
+          "raw": "66dac6d521a148a894d9ebc03786ce6a7af5515245abbc0e9deaf7ff4880a15d",
+          "public": null,
+          "protected": "66dac6d521a148a894d9ebc03786ce6a7af5515245abbc0e9deaf7ff4880a15d"
+        },
+        "rationale": "在同一已核载体上追加光化学臭氧与跨路径空气前体选读范围及核查时间戳，不改变既有载体身份与历史引文内容。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-flow-pilot-ef31",
+        "from": {
+          "raw": "f63a16a9ec8cdc70a6006a31a8264c5647621be86a370a6b1d3ba2862d4201b5",
+          "public": null,
+          "protected": "f63a16a9ec8cdc70a6006a31a8264c5647621be86a370a6b1d3ba2862d4201b5"
+        },
+        "to": {
+          "raw": "7b0d24c716e860edb0731341733559c7094400b445e1a955905e2832106b4d6b",
+          "public": null,
+          "protected": "7b0d24c716e860edb0731341733559c7094400b445e1a955905e2832106b4d6b"
+        },
+        "rationale": "在同一已核载体上追加光化学臭氧与跨路径空气前体选读范围及核查时间戳，不改变既有载体身份与历史引文内容。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-flow-pilot-ef31-update",
+        "from": {
+          "raw": "c970e4506121fc3fc8f7dbae6a94d1a7d8ea650ec3869a40cd129a5f39a5f512",
+          "public": null,
+          "protected": "c970e4506121fc3fc8f7dbae6a94d1a7d8ea650ec3869a40cd129a5f39a5f512"
+        },
+        "to": {
+          "raw": "31d8e7715f1be55d0103bd6abe89e982805fd487e7e20c503fbd51de4ba45add",
+          "public": null,
+          "protected": "31d8e7715f1be55d0103bd6abe89e982805fd487e7e20c503fbd51de4ba45add"
+        },
+        "rationale": "在同一已核载体上追加光化学臭氧与跨路径空气前体选读范围及核查时间戳，不改变既有载体身份与历史引文内容。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-fossil117-jrc109369",
+        "from": {
+          "raw": "89c9cfd20f7696e2143c7436321fa5228c7e3c1d46ceaa139eaefdc0cf14b258",
+          "public": null,
+          "protected": "89c9cfd20f7696e2143c7436321fa5228c7e3c1d46ceaa139eaefdc0cf14b258"
+        },
+        "to": {
+          "raw": "722b4cb1aaf052dfc7df242eeb8bba8ca850137121c21397ca08a08694805d88",
+          "public": null,
+          "protected": "722b4cb1aaf052dfc7df242eeb8bba8ca850137121c21397ca08a08694805d88"
+        },
+        "rationale": "在同一已核载体上追加光化学臭氧与跨路径空气前体选读范围及核查时间戳，不改变既有载体身份与历史引文内容。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:reading-ledger",
+        "from": {
+          "raw": "fd2521749acbe9c2c929931d63b9eab5bd5cef6692af9a47c4aa9faf43ad0b21",
+          "public": null,
+          "protected": "fd2521749acbe9c2c929931d63b9eab5bd5cef6692af9a47c4aa9faf43ad0b21"
+        },
+        "to": {
+          "raw": "21ec8be0b2f54679b079b58f439c8f0aa4b51c83ea3efe69232ae4994e03c92a",
+          "public": null,
+          "protected": "21ec8be0b2f54679b079b58f439c8f0aa4b51c83ea3efe69232ae4994e03c92a"
+        },
+        "rationale": "在同一已核载体上追加光化学臭氧与跨路径空气前体选读范围及核查时间戳，不改变既有载体身份与历史引文内容。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:literature-map",
+        "from": {
+          "raw": "0d640ce6464958114fe946533c42868df5e5119f87b6825da0e955692f25e5df",
+          "public": null,
+          "protected": "0d640ce6464958114fe946533c42868df5e5119f87b6825da0e955692f25e5df"
+        },
+        "to": {
+          "raw": "8bf1a3ed6f5d01cd22bd88071194f7b12ac76f9043164c4ec7b2564591b3f38f",
+          "public": null,
+          "protected": "8bf1a3ed6f5d01cd22bd88071194f7b12ac76f9043164c4ec7b2564591b3f38f"
+        },
+        "rationale": "在同一已核载体上追加光化学臭氧与跨路径空气前体选读范围及核查时间戳，不改变既有载体身份与历史引文内容。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:claims",
+        "from": {
+          "raw": "ad8f24eae134604f2cb2e4e172461b336985fa6f440cf615dc6a318e4ca040ff",
+          "public": null,
+          "protected": "ad8f24eae134604f2cb2e4e172461b336985fa6f440cf615dc6a318e4ca040ff"
+        },
+        "to": {
+          "raw": "c0720a5e6311b4dea25c169badd722a42fc953fb6386442749f31bab86ce64df",
+          "public": null,
+          "protected": "c0720a5e6311b4dea25c169badd722a42fc953fb6386442749f31bab86ce64df"
+        },
+        "rationale": "在同一已核载体上追加光化学臭氧与跨路径空气前体选读范围及核查时间戳，不改变既有载体身份与历史引文内容。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:evidence",
+        "from": {
+          "raw": "d0434745775e3f9f08941af99c09ddab929742a07afa48c773bbe84853537057",
+          "public": null,
+          "protected": "d0434745775e3f9f08941af99c09ddab929742a07afa48c773bbe84853537057"
+        },
+        "to": {
+          "raw": "cfeecb0300c63588d673b624576c44b7acdbbd44a72b8a4e67cba3c16a345be3",
+          "public": null,
+          "protected": "cfeecb0300c63588d673b624576c44b7acdbbd44a72b8a4e67cba3c16a345be3"
+        },
+        "rationale": "在同一已核载体上追加光化学臭氧与跨路径空气前体选读范围及核查时间戳，不改变既有载体身份与历史引文内容。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:sources",
+        "from": {
+          "raw": "9eb7a8e117600e1c59737d7395873f60d733f5742105df19aa65643556111b33",
+          "public": null,
+          "protected": "9eb7a8e117600e1c59737d7395873f60d733f5742105df19aa65643556111b33"
+        },
+        "to": {
+          "raw": "d480241a918adba948cc3153d56eb8fbefe285db647761d932772558dc87cf37",
+          "public": null,
+          "protected": "d480241a918adba948cc3153d56eb8fbefe285db647761d932772558dc87cf37"
+        },
+        "rationale": "在同一已核载体上追加光化学臭氧与跨路径空气前体选读范围及核查时间戳，不改变既有载体身份与历史引文内容。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:gaps",
+        "from": {
+          "raw": "d5fbe6746f5cd9766b4ed22f457cb9dc03565e00e735bbd50f45d0c76e68b82e",
+          "public": null,
+          "protected": "d5fbe6746f5cd9766b4ed22f457cb9dc03565e00e735bbd50f45d0c76e68b82e"
+        },
+        "to": {
+          "raw": "3659a91269307faf69147a4510157dcf81d4668d6582834b00564ca5ec1c941a",
+          "public": null,
+          "protected": "3659a91269307faf69147a4510157dcf81d4668d6582834b00564ca5ec1c941a"
+        },
+        "rationale": "在同一已核载体上追加光化学臭氧与跨路径空气前体选读范围及核查时间戳，不改变既有载体身份与历史引文内容。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:revisions",
+        "from": {
+          "raw": "9a815feb17e59df97c70611064b8e2f2755ba9743b0c92d76779e32ef48330cf",
+          "public": null,
+          "protected": "9a815feb17e59df97c70611064b8e2f2755ba9743b0c92d76779e32ef48330cf"
+        },
+        "to": {
+          "raw": "52cb4d6d077bbd531b8974401d81817d006905d8ab49e6216b8629e9c0b45a32",
+          "public": null,
+          "protected": "52cb4d6d077bbd531b8974401d81817d006905d8ab49e6216b8629e9c0b45a32"
+        },
+        "rationale": "在同一已核载体上追加光化学臭氧与跨路径空气前体选读范围及核查时间戳，不改变既有载体身份与历史引文内容。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:queries",
+        "from": {
+          "raw": "bcf5d12bd4e53cca7918b48783853328862158948d99e09a8b47aa9ee52a1b52",
+          "public": null,
+          "protected": "bcf5d12bd4e53cca7918b48783853328862158948d99e09a8b47aa9ee52a1b52"
+        },
+        "to": {
+          "raw": "16ff5a1734be415ac48c4bc22dd9eb88f9bcac63c7223d670e92b26d43086cb6",
+          "public": null,
+          "protected": "16ff5a1734be415ac48c4bc22dd9eb88f9bcac63c7223d670e92b26d43086cb6"
+        },
+        "rationale": "在同一已核载体上追加光化学臭氧与跨路径空气前体选读范围及核查时间戳，不改变既有载体身份与历史引文内容。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:public-projection",
+        "from": {
+          "raw": "67fe35cac1dd5918d31ee19577fc7ba5900d1cd623957fcb2aa477746b09f6d0",
+          "public": null,
+          "protected": "67fe35cac1dd5918d31ee19577fc7ba5900d1cd623957fcb2aa477746b09f6d0"
+        },
+        "to": {
+          "raw": "65affc3256a69837c62e37a1f8ad2fdf7fc7da2a74e4ce909e7e45a16acd3f11",
+          "public": null,
+          "protected": "65affc3256a69837c62e37a1f8ad2fdf7fc7da2a74e4ce909e7e45a16acd3f11"
+        },
+        "rationale": "在同一已核载体上追加光化学臭氧与跨路径空气前体选读范围及核查时间戳，不改变既有载体身份与历史引文内容。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-ozone119-precursor-entry",
+        "from": null,
+        "to": {
+          "raw": "eac7c30a761494501e2f878a16faa97792c66ed4d9564eddffb4e47e009296eb",
+          "public": "eac7c30a761494501e2f878a16faa97792c66ed4d9564eddffb4e47e009296eb",
+          "protected": "e3c69ae5422c51e42e50da6b55ad5fe192962bcb8007d7949e230007be94a5d7"
+        },
+        "rationale": "新增对流层光化学臭氧受体拆分、区域NOx滴定、EF 3.1恒值location流匹配与跨路径前体归属源证或规范论述记录。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-ozone119-pocp-to-lotos",
+        "from": null,
+        "to": {
+          "raw": "634916c3567114d8f609d568be6a87de90b016d5812a8e6f8391c295f05b35ac",
+          "public": "634916c3567114d8f609d568be6a87de90b016d5812a8e6f8391c295f05b35ac",
+          "protected": "9449b6592e7aa074610f2cb2903ad817ac83c74d802b11565baca0949dce98a7"
+        },
+        "rationale": "新增对流层光化学臭氧受体拆分、区域NOx滴定、EF 3.1恒值location流匹配与跨路径前体归属源证或规范论述记录。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-ozone119-order-reversal",
+        "from": null,
+        "to": {
+          "raw": "2f177859a10f8c1ce24d5ae88aa422a06a1770f2101fd4b820b27e6ec5431f55",
+          "public": "2f177859a10f8c1ce24d5ae88aa422a06a1770f2101fd4b820b27e6ec5431f55",
+          "protected": "96c772f7a3a55938b5fe704d904cc6c9dfe934649ff0d8f73a2226276408be44"
+        },
+        "rationale": "新增对流层光化学臭氧受体拆分、区域NOx滴定、EF 3.1恒值location流匹配与跨路径前体归属源证或规范论述记录。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-ozone119-titration-sign",
+        "from": null,
+        "to": {
+          "raw": "8b73fb2346af74ed9463ab05f906b0b7c4493e130188a9f75b75e2740abf6c99",
+          "public": "8b73fb2346af74ed9463ab05f906b0b7c4493e130188a9f75b75e2740abf6c99",
+          "protected": "09cc40bc22cf293558c01e0df78af97675f4d7eda8322c146ab385c8f7b27ac7"
+        },
+        "rationale": "新增对流层光化学臭氧受体拆分、区域NOx滴定、EF 3.1恒值location流匹配与跨路径前体归属源证或规范论述记录。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-ozone119-ef-location-copy",
+        "from": null,
+        "to": {
+          "raw": "32c2a766de478b213be339f0fd772370eea64dfd2331d035ee2b737358dc388b",
+          "public": "32c2a766de478b213be339f0fd772370eea64dfd2331d035ee2b737358dc388b",
+          "protected": "6140427dd04e9d002f80943445344885910692433ffb3168089d33ef76c8a006"
+        },
+        "rationale": "新增对流层光化学臭氧受体拆分、区域NOx滴定、EF 3.1恒值location流匹配与跨路径前体归属源证或规范论述记录。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-ozone119-multipath-accounting",
+        "from": null,
+        "to": {
+          "raw": "7c539acbaaf0a33abeda3574dcce82218dec9cfda58f87728d89febdc0ba4a0d",
+          "public": "7c539acbaaf0a33abeda3574dcce82218dec9cfda58f87728d89febdc0ba4a0d",
+          "protected": "8715515ed955bd0e30e76af819fe1d43b6359601de8dc240965c92ba3cd44b5c"
+        },
+        "rationale": "新增对流层光化学臭氧受体拆分、区域NOx滴定、EF 3.1恒值location流匹配与跨路径前体归属源证或规范论述记录。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-ozone119-printed-limits",
+        "from": null,
+        "to": {
+          "raw": "4d2adfa9368fb9ff9ba0a647331fe347b61dc23ff9dee72b3a8add9709e03261",
+          "public": "4d2adfa9368fb9ff9ba0a647331fe347b61dc23ff9dee72b3a8add9709e03261",
+          "protected": "33e3f161ac00aa83ffeabf7219ff8f047052e8b77e70127179f840982e925b9b"
+        },
+        "rationale": "新增对流层光化学臭氧受体拆分、区域NOx滴定、EF 3.1恒值location流匹配与跨路径前体归属源证或规范论述记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-ozone119-ilcd2011-pof-methods",
+        "from": null,
+        "to": {
+          "raw": "b4ee77a598db83e49f58aaaf3d571ccdbd5b1c648f1d34e9eb093e483d0f783d",
+          "public": "b4ee77a598db83e49f58aaaf3d571ccdbd5b1c648f1d34e9eb093e483d0f783d",
+          "protected": "b4ee77a598db83e49f58aaaf3d571ccdbd5b1c648f1d34e9eb093e483d0f783d"
+        },
+        "rationale": "新增对流层光化学臭氧受体拆分、区域NOx滴定、EF 3.1恒值location流匹配与跨路径前体归属源证或规范论述记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-ozone119-jrc109369-voc-and-label",
+        "from": null,
+        "to": {
+          "raw": "edef0ce9019a2b7950f922bb9a386274734b262b8c347b1badaaed3828a821bf",
+          "public": "edef0ce9019a2b7950f922bb9a386274734b262b8c347b1badaaed3828a821bf",
+          "protected": "edef0ce9019a2b7950f922bb9a386274734b262b8c347b1badaaed3828a821bf"
+        },
+        "rationale": "新增对流层光化学臭氧受体拆分、区域NOx滴定、EF 3.1恒值location流匹配与跨路径前体归属源证或规范论述记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-ozone119-jrc130796-pof-synonyms",
+        "from": null,
+        "to": {
+          "raw": "fba8b4e872aa6ad1f17235001efc739f96a6b06d9c2111a53b5333f2a91ca5bb",
+          "public": "fba8b4e872aa6ad1f17235001efc739f96a6b06d9c2111a53b5333f2a91ca5bb",
+          "protected": "fba8b4e872aa6ad1f17235001efc739f96a6b06d9c2111a53b5333f2a91ca5bb"
+        },
+        "rationale": "新增对流层光化学臭氧受体拆分、区域NOx滴定、EF 3.1恒值location流匹配与跨路径前体归属源证或规范论述记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-ozone119-ef31-pof-core-factors",
+        "from": null,
+        "to": {
+          "raw": "68f63cbaa0326c178db5355d922a32430617b0708ba0690e8ff7fcbf34d16ae1",
+          "public": "68f63cbaa0326c178db5355d922a32430617b0708ba0690e8ff7fcbf34d16ae1",
+          "protected": "68f63cbaa0326c178db5355d922a32430617b0708ba0690e8ff7fcbf34d16ae1"
+        },
+        "rationale": "新增对流层光化学臭氧受体拆分、区域NOx滴定、EF 3.1恒值location流匹配与跨路径前体归属源证或规范论述记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-ozone119-ef31-location-replication",
+        "from": null,
+        "to": {
+          "raw": "71005d07b8bb03eb21a8e519e7b0d306483400254030f2c2a9014c87d29aed67",
+          "public": "71005d07b8bb03eb21a8e519e7b0d306483400254030f2c2a9014c87d29aed67",
+          "protected": "71005d07b8bb03eb21a8e519e7b0d306483400254030f2c2a9014c87d29aed67"
+        },
+        "rationale": "新增对流层光化学臭氧受体拆分、区域NOx滴定、EF 3.1恒值location流匹配与跨路径前体归属源证或规范论述记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-ozone119-ef31-multipath-uuid",
+        "from": null,
+        "to": {
+          "raw": "aeed14e7d4cd2cda54cfc1b64f92ba60b6f174218bd626fdd546b29492fc6c66",
+          "public": "aeed14e7d4cd2cda54cfc1b64f92ba60b6f174218bd626fdd546b29492fc6c66",
+          "protected": "aeed14e7d4cd2cda54cfc1b64f92ba60b6f174218bd626fdd546b29492fc6c66"
+        },
+        "rationale": "新增对流层光化学臭氧受体拆分、区域NOx滴定、EF 3.1恒值location流匹配与跨路径前体归属源证或规范论述记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-ozone119-rivm-ch6-split-and-tables",
+        "from": null,
+        "to": {
+          "raw": "bd7c6136aa0606407d19bdc58d2ffc4e73e813310c2544208f534923138b9e93",
+          "public": "bd7c6136aa0606407d19bdc58d2ffc4e73e813310c2544208f534923138b9e93",
+          "protected": "bd7c6136aa0606407d19bdc58d2ffc4e73e813310c2544208f534923138b9e93"
+        },
+        "rationale": "新增对流层光化学臭氧受体拆分、区域NOx滴定、EF 3.1恒值location流匹配与跨路径前体归属源证或规范论述记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-ozone119-rivm-s21-titration",
+        "from": null,
+        "to": {
+          "raw": "9b362aed709258358fa50cf02ba3bf6de5d3d1840f842ab6a94f630b34a201eb",
+          "public": "9b362aed709258358fa50cf02ba3bf6de5d3d1840f842ab6a94f630b34a201eb",
+          "protected": "9b362aed709258358fa50cf02ba3bf6de5d3d1840f842ab6a94f630b34a201eb"
+        },
+        "rationale": "新增对流层光化学臭氧受体拆分、区域NOx滴定、EF 3.1恒值location流匹配与跨路径前体归属源证或规范论述记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-ozone119-recipe2017-ozone-overview",
+        "from": null,
+        "to": {
+          "raw": "86cc4aa0e1412471614e64282a92656166f7ba2878293a7f89082df5bdc758fb",
+          "public": "86cc4aa0e1412471614e64282a92656166f7ba2878293a7f89082df5bdc758fb",
+          "protected": "86cc4aa0e1412471614e64282a92656166f7ba2878293a7f89082df5bdc758fb"
+        },
+        "rationale": "新增对流层光化学臭氧受体拆分、区域NOx滴定、EF 3.1恒值location流匹配与跨路径前体归属源证或规范论述记录。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-ozone119-ef31-selected-members",
+        "from": null,
+        "to": {
+          "raw": "9980de196b92968e9525baf42453c8a17b60abd94b900a34c3443e469995dbf6",
+          "public": "9980de196b92968e9525baf42453c8a17b60abd94b900a34c3443e469995dbf6",
+          "protected": "9980de196b92968e9525baf42453c8a17b60abd94b900a34c3443e469995dbf6"
+        },
+        "rationale": "新增对流层光化学臭氧受体拆分、区域NOx滴定、EF 3.1恒值location流匹配与跨路径前体归属源证或规范论述记录。"
+      },
+      {
+        "kind": "record",
+        "key": "gaps:gap-ozone119-ctm-and-multipollutant-epi",
+        "from": null,
+        "to": {
+          "raw": "4366f44878fb6dd62a649b911bdab068c46cfb95428d2dc1883f76c9ceade6e1",
+          "public": null,
+          "protected": "4366f44878fb6dd62a649b911bdab068c46cfb95428d2dc1883f76c9ceade6e1"
+        },
+        "rationale": "新增对流层光化学臭氧受体拆分、区域NOx滴定、EF 3.1恒值location流匹配与跨路径前体归属源证或规范论述记录。"
+      },
+      {
+        "kind": "record",
+        "key": "revisions:rev-ozone119-b16-ozone-and-multipath",
+        "from": null,
+        "to": {
+          "raw": "8d4f572e2a3b67019221d20f06f8b47e698717f6cf23f339e16520b24ec31fe4",
+          "public": null,
+          "protected": "8d4f572e2a3b67019221d20f06f8b47e698717f6cf23f339e16520b24ec31fe4"
+        },
+        "rationale": "新增对流层光化学臭氧受体拆分、区域NOx滴定、EF 3.1恒值location流匹配与跨路径前体归属源证或规范论述记录。"
+      },
+      {
+        "kind": "record",
+        "key": "queries:q-ozone119-receptors-titration-multipath-20261117",
+        "from": null,
+        "to": {
+          "raw": "59a5c362c4b9b610150cb84d507a90fed9b640f7c5b35fe3a773f91222dcac92",
+          "public": null,
+          "protected": "59a5c362c4b9b610150cb84d507a90fed9b640f7c5b35fe3a773f91222dcac92"
+        },
+        "rationale": "新增对流层光化学臭氧受体拆分、区域NOx滴定、EF 3.1恒值location流匹配与跨路径前体归属源证或规范论述记录。"
+      }
+    ],
+    "consumers": [
+      {
+        "id": "cl-lcia-midpoint-pathway",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lcia-endpoint-units",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lcia-mid-end-conversion-limits",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lcia-scenarios-are-choices",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lcia-global-is-not-site-specific",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lcia-model-data-factor-separation",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-connect-reuse-keeps-relation",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-path-terrestrial",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-path-units",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-path-marginal-average",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-path-supplied-effect-conditions",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-path-background",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-path-pdf",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-path-multiple-paths",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-water-marginal-contexts",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-es-question",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-es-authority",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-es-three",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-es-equation",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-es-why-square",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-es-nmvoc",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-es-nox",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-es-service",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-es-score",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-es-scale",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-es-threshold",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-es-test",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-es-later",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-es-judgment",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-purpose",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-policy-contrast",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-baseline",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-units",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-display",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-logit",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-trade",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-precision",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-primary-ratio",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-households",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-health",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-mismatch",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-annual",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-shares",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-two-forms",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-different-card",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-english",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-english-basis",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-service",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-japan-route",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-break-even",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-english-route",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-numeraire",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-edition",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-validity",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-null",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-order",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-transfer",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-lime-decision",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-opening",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-precursor-denominator",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-intake-definition",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-intake-unit",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-receptor-boundary",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-source-height",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-mixture-inputs",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-mixture-results",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-exposure-evidence",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-effect-definition",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-effect-default",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-urban-health",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-rural-health",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-precursor-health",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-burden-check",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-population-meaning",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-indoor-location",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-indoor-matrix",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-exposure-compatible",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-compatible-population",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-indoor-time",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-exposure-coverage",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-nonlinear-response",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-risk-reference",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-slope-meaning",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-finite-change",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-slope-context",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-ier-evidence",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-gemm-alternative",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-factor-correction",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-implementation-layer",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-chemistry-background",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-chemistry-perturbation",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-chemistry-model-check",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-concentration-route",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-regional-factor",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-modern-values",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-modern-ratios",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-matched-scope",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-uncovered-pathways",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-conclusion",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-concentration-balance",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-activity-indicators",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-usetox-conclusion",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-source-distribution",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-evidence-levels",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-regional-summary",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-factor-order",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-matched-scenario",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-pm-version-and-model",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-flow99-identity-example",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-flow99-zero-reasons",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-flow99-zero-reporting",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-flow99-conclusion",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-land111-episode",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-land111-midpoint",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-land111-conversion",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-land111-pathway",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-land111-horizon",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-land111-factor-scale",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-land111-integral",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-land111-countercheck",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-land111-aggregation",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-land111-printed-record",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-acid113-ae-question",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-acid113-threshold",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-acid113-glam-relation",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-acid113-glam-tension",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-acid113-so2-rows",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-acid113-chemistry-control",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-acid113-shared-moles",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-acid113-nh3-control",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-mineral115-input",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-mineral115-adp",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-mineral115-sop",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-mineral115-reserves",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-mineral115-rank",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-mineral115-cost-proxy",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-mineral115-metal-cost",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-mineral115-calibration",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-mineral115-assumptions",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-mineral115-judgment",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-fossil117-scarcity-energy",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-fossil117-heating-basis",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-fossil117-uranium-boundary",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-fossil117-scenario-proxy",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-fossil117-equal-midpoint",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-fossil117-proxy-consequence",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-fossil117-printed-limits",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      },
+      {
+        "id": "cl-fossil117-bridge",
+        "rationale": "仅因其引用的共享载体选读范围或研究台账更新时间戳扩展而被依赖图触达，论述正文、限定与既有证据数值均未改动。"
+      }
+    ],
+    "assessment": {
+      "scope": "Selected ILCD 2011 (§3.6, pp. 47–55), JRC109369 (§4.6 p. 18 & §§4.7–4.8 pp. 19–20), JRC130796 (Abstract p. 1, §1 p. 3, §2 Table 1 p. 6, §3 Table 2 p. 8, §3.2 p. 9), twenty CRC32/HTTP-206 verified official EF 3.1 XML members (b5c610fe Photochemical ozone, b5c619fa Marine eutrophication, b5c602c6 Particulate matter, b5c629d6 Ozone depletion, reused b5c611c6/b5c614d2/6209b35f, and 13 precursor air-flow XMLs), RIVM 2016-0104 Chapter 6 (pp. 51–56, Tables 6.1, 6.2, 6.5, 6.6) & §17 Table S2.1 (pp. 125–126), and Huijbregts et al. 2017 (pp. 139, 141, 143–144).",
+      "comparison": "Aligns single-VOC photochemical reactivity (CML 2002 POCP in kg C2H4 eq, omitting NOx and receptor exposure), EF 3.1 single human-health LOTOS-EUROS midpoint (kg NMVOC eq, 1:1 generic NMVOC and NOx parity), and ReCiPe 2016 split TM5-FASST human-health HOFP and terrestrial-ecosystem EOFP midpoints (kg NOx-eq; world average NMVOC = 0.18 and 0.29). Demonstrates precursor ranking reversals across EF 3.1 and ReCiPe 2016 and between HOFP and EOFP, regional high-NOx titration sign flips in Benelux (-0.48 vs +0.16) and GB/Ireland (-0.20 vs +0.44) versus EF 3.1 720 constant <location> flow-matching rows, and same-UUID multi-pathway full-mass precursor accounting versus two-pollutant DALY and policy-target overlap boundaries.",
+      "values": "Nine ev-ozone119-* records bind 43 structured numeric facts with exact primary literals and BigInt fixed-point verification of the 0.23435 quotient (0.234 at 3 sig figs vs published XML 0.235), cross-system and cross-receptor order reversals, regional titration sign flips, EF 3.1 location replication versus country-resolved Acidification/Terrestrial eutrophication rows, and five-pathway NOx / two-pathway CH4 / three-pathway chloromethane characterization.",
+      "limits": "Preserves JRC130796 Table 1 p. 6 missing update asterisk, JRC109369 p. 18 POCP indicator label versus Tropospheric ozone concentration increase, EF 3.1 ODP omission of HCFC-140 (CAS 71-55-6) / Methyl chloroform alongside 1,1,1-trichloroethane (0.14 kg CFC-11 eq/kg, flow XML CAS 79-00-5 = 1,1,2-trichloroethane), RIVM Chapter 6 skipped Tables 6.3–6.4 and p. 56 Table 5.6 typo, and seasonal/annual source-receptor linearity around the 2000 reference year.",
+      "correction": "Zero prior claims modified (correction: null); all 953 baseline claims (including B14 Note 1 and Note 33 print-visible revisions and B16 Notes 1..22) remain 100% byte-for-byte unchanged.",
+      "review": "Two-round independent primary-source and numeric audit verified all 5 PDFs, 20 EF 3.1 XML members, pdfIndices, printedPages, 43 numericFacts and arithmetic notes. Agent source verification does not claim human expert certification, native CTM re-simulation, or epidemiological cohort re-estimation."
+    },
+    "independentReports": {
+      "independent-primary-source-audit-initial.md": "d5680ac009409ab903892f92f5dc06498eef5ee96c23792558dc9cd32cf7ae74",
+      "independent-primary-source-audit-v2.md": "960147c755b572cf186afbafb292a7ca17eb517c077166c4d850d1273ae264d3",
+      "full-chapter-reader-review-initial.md": "a26d162016f08a9ff189cecfc8724ed38de496ec07a686264e0abf3e853189ad",
+      "full-chapter-reader-review-v2.md": "a7e171ed91dc9a4ce812c9c09e5e4df7864d63a493b33d6c28bc90bff14b2c52",
+      "independent-publication-engineering-review-initial.md": "bc12b746533eab47ea3284cdcaabc5b59704efeb077321e5f3cd34557766d7df",
+      "independent-publication-engineering-review-final.md": "271659f7f7f1d96fa69f768ab9b48b18c1681f3b63e61ff2f9051860fa7d8840",
+      "ef-members/lciamethods-probe-receipt.json": "a0380bc54adb9717fafca0276dda88478b6c3b0aa05c6a3fa1ed2f3d6e72da7b",
+      "ef-members/flows-probe-receipt.json": "be930b26f8191b1adca597dbb3cbda4ea6f53acbd2570cd0c83d2bc9c818ac39",
+      "actual-browser-qa/responsive-script-enabled.json": "7e9f7f57066f8d43d7cd81bb48a154a764ad17ea3e95ec63e4fe0df5dc157a2c",
+      "actual-browser-qa/interactions.json": "97f4eb536f53d3da8c4cce156a69aa1c55a2c9abc727ad660a761e88130f6d7b"
+    }
+  }
+}

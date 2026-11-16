@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import config from '../config/reader-circular-footprint.json' with { type: 'json' };
 import capture from '../config/reader-circular-footprint-capture.json' with { type: 'json' };
+import ozone from '../config/reader-photochemical-ozone.json' with { type: 'json' };
 import fossils from '../config/reader-fossil-resources.json' with { type: 'json' };
 import minerals from '../config/reader-mineral-resources.json' with { type: 'json' };
 import catalog from '../knowledge/catalog.json' with { type: 'json' };
@@ -18,7 +19,8 @@ import { previousScientificTestRecords, testEnvelopes } from './fixtures/scienti
 test('B13 receipts bind captured raw files, normalized article pairs, public pages and JSON', {
   skip: !capture && config.status !== 'reviewed',
 }, () => {
-  const preFossils = previousScientificTestRecords({ catalog, readings, literature }, fossils.unit);
+  const preOzone = previousScientificTestRecords({ catalog, readings, literature }, ozone.unit);
+  const preFossils = previousScientificTestRecords(preOzone, fossils.unit);
   const preMinerals = previousScientificTestRecords(preFossils, minerals.unit);
   const land = previousScientificTestRecords(preMinerals, acidEquivalents.unit);
   const previous = previousScientificTestRecords(land, landRecovery.unit);

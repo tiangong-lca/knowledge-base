@@ -1,3 +1,5 @@
+import ozoneConfig from '../config/reader-photochemical-ozone.json' with { type: 'json' };
+import { selectPhotochemicalOzone, effectivePhotochemicalOzone } from './reader-photochemical-ozone.mjs';
 import fossilConfig from '../config/reader-fossil-resources.json' with { type: 'json' };
 import { selectFossilResources, effectiveFossilResources } from './reader-fossil-resources.mjs';
 import mineralConfig from '../config/reader-mineral-resources.json' with { type: 'json' };
@@ -37,8 +39,9 @@ export const currentLandRecovery = selectLandRecovery(landConfig, undefined, pre
 export const currentAcidEquivalents = selectAcidEquivalents(acidConfig, undefined, preview);
 export const currentMineralResources = selectMineralResources(mineralConfig, undefined, preview);
 export const currentFossilResources = selectFossilResources(fossilConfig, undefined, preview);
+export const currentPhotochemicalOzone = selectPhotochemicalOzone(ozoneConfig, undefined, preview);
 export const isReadableBookReviewPreview = oldPreview
-  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview' || acidConfig.status === 'preview' || mineralConfig.status === 'preview' || fossilConfig.status === 'preview');
+  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview' || acidConfig.status === 'preview' || mineralConfig.status === 'preview' || fossilConfig.status === 'preview' || ozoneConfig.status === 'preview');
 const previousPlan = readableBookReviewPlan(oldPreview
   ? acceptance.units
   : pinnedReadableBookUnits(acceptance, readableBookBaselineDigest, readableBookAcceptancePins));
@@ -51,7 +54,8 @@ const acceptedFootprint = effectiveCircularFootprint(acceptedShift, currentCircu
 const acceptedLand = effectiveLandRecovery(acceptedFootprint, currentLandRecovery);
 const acceptedAcid = effectiveAcidEquivalents(acceptedLand, currentAcidEquivalents);
 const acceptedMineral = effectiveMineralResources(acceptedAcid, currentMineralResources);
-export const currentBookPlan = effectiveFossilResources(acceptedMineral, currentFossilResources);
+const acceptedFossil = effectiveFossilResources(acceptedMineral, currentFossilResources);
+export const currentBookPlan = effectivePhotochemicalOzone(acceptedFossil, currentPhotochemicalOzone);
 
 export function currentBookRecordMatches(kind, previous, current, projection) {
   if (projection !== undefined) return matchesAcceptedRecord(currentBookPlan, kind, previous, current, projection);
