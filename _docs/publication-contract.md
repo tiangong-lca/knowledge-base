@@ -16,13 +16,29 @@ checkPaths:
   - "content/**"
   - "scripts/**"
   - "releases/**"
-lastReviewedAt: 2026-11-16
-lastReviewedCommit: 394992acccb2fe1194c218971436fd3186c14d2f
+lastReviewedAt: 2026-11-17
+lastReviewedCommit: 5fca6949a0858723b4f37fafb01e8f8ddd4d56d6
 ---
 
 # Publication contract
 
 ## Scoped scientific successors
+
+The photochemical-ozone unit #119 compares single-substance `POCP` (`kg C2H4 eq`),
+EF 3.1's single human-health `LOTOS-EUROS` midpoint (`kg NMVOC eq`) and ReCiPe
+2016's split `TM5-FASST` human (`HOFP`) and terrestrial-ecosystem (`EOFP`)
+`kg NOx-eq` midpoints on shared precursor inputs. It proves precursor ranking
+reversals across EF 3.1 and ReCiPe 2016 and between `HOFP` and `EOFP`, explains
+regional high-`NOx` titration sign flips (`HOFP < 0 < EOFP` around the 2000
+reference working point) versus EF 3.1's 720 constant `<location>` flow-matching
+entries, and establishes why full-mass multi-pathway characterization of a
+single precursor UUID is distinct from invalid cross-unit addition, unverified
+two-pollutant `DALY` summation, or overlapping policy-target scoring. Preserved
+source discrepancies (`JRC130796` Table 1 missing `*`, `JRC109369` `POCP` table
+label, `0.234` rounded quotient versus XML `0.235`, `1,1,1-trichloroethane` flow
+XML `CAS 79-00-5`, and `RIVM 2016-0104` skipped `Table 6.3–6.4` / `"Table 5.6"`
+typo) remain explicitly disclosed without redistributing raw originals or
+claiming local hourly smog-compliance simulation.
 
 The fossil-resources unit #117 compares scarcity-based resource midpoints against
 full-substitution energy-carrier midpoints (`EF 3.0/3.1` `1 MJ/MJ` net calorific

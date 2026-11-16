@@ -1,3 +1,4 @@
+import { selectPhotochemicalOzone, preparePhotochemicalOzoneSource, effectivePhotochemicalOzone, verifyPhotochemicalOzoneReceipts } from './reader-photochemical-ozone.mjs';
 import { selectFossilResources, prepareFossilResourcesSource, effectiveFossilResources, verifyFossilResourcesReceipts } from './reader-fossil-resources.mjs';
 import { selectMineralResources, prepareMineralResourcesSource, effectiveMineralResources, verifyMineralResourcesReceipts } from './reader-mineral-resources.mjs';
 import { selectAcidEquivalents, prepareAcidEquivalentsSource, effectiveAcidEquivalents, verifyAcidEquivalentsReceipts } from './reader-acid-equivalents.mjs';
@@ -47,6 +48,9 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const serviceConstraints = selectServiceConstraints(serviceConfig, undefined, preview === 'service');
   const substitutionConfig = await readConfig('reader-substitution-rules.json');
   const substitutionRules = selectSubstitutionRules(substitutionConfig, undefined, preview === 'substitution');
+  const ozoneConfig = await readConfig('reader-photochemical-ozone.json');
+  const photochemicalOzone = selectPhotochemicalOzone(ozoneConfig, undefined, preview === 'photochemical-ozone');
+  if (preview === 'photochemical-ozone' && ozoneConfig.status !== 'preview') throw new Error('Photochemical ozone review requires a private preview state');
   const fossilConfig = await readConfig('reader-fossil-resources.json');
   const fossilResources = selectFossilResources(fossilConfig, undefined, preview === 'fossil-resources');
   if (preview === 'fossil-resources' && fossilConfig.status !== 'preview') throw new Error('Fossil resources review requires a private preview state');
@@ -77,12 +81,13 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (loadShift && !substitutionRules) throw new Error('Load shift requires the accepted #105 generation');
   if (circularFootprint && !loadShift) throw new Error('Circular footprint requires the accepted #107 generation');
   if (landRecovery && !circularFootprint) throw new Error('Land recovery requires the accepted #109 generation');
+  if (photochemicalOzone && !fossilResources) throw new Error('Photochemical ozone requires the accepted #117 generation');
   if (fossilResources && !mineralResources) throw new Error('Fossil resources requires the accepted #115 generation');
   if (mineralResources && !acidEquivalents) throw new Error('Mineral resources requires the accepted #113 generation');
   if (acidEquivalents && !landRecovery) throw new Error('Acid equivalents requires the accepted #111 generation');
   for (const [path, bytes] of await readLoadShiftCaseFiles(root, loadShift)) files.set(path, bytes);
   for (const [path, bytes] of await readServiceConstraintsFiles(root, serviceConstraints)) files.set(path, bytes);
-  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources].filter(Boolean)];
+  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone].filter(Boolean)];
   const realRoot = await realpath(root);
   const reviewFiles = new Set((reviewUnits ?? []).flatMap(unit =>
     (unit.reviewEvidence ?? []).flatMap(row => [row.reportFile, row.artifactFile])));
@@ -97,7 +102,10 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const input = { catalog, readings, literature, files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
-  const fossils = fossilResources && prepareFossilResourcesSource(fossilResources, input, actual, structure);
+  const ozone = photochemicalOzone && preparePhotochemicalOzoneSource(photochemicalOzone, input, actual, structure);
+  const fossilInput = ozone ? { ...ozone.previousRecords, files: ozone.files } : input;
+  const fossils = fossilResources && prepareFossilResourcesSource(fossilResources, fossilInput,
+    ozone?.previous ?? actual, ozone?.structure ?? structure);
   const mineralInput = fossils ? { ...fossils.previousRecords, files: fossils.files } : input;
   const minerals = mineralResources && prepareMineralResourcesSource(mineralResources, mineralInput,
     fossils?.previous ?? actual, fossils?.structure ?? structure);
@@ -158,8 +166,13 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   }
   if (fossilResources && preview !== 'fossil-resources') {
     const { readerPublicDownloads } = await import('./reader-current-output.mjs');
-    if (!verifyFossilResourcesReceipts(fossilResources, artifacts, readerPublicDownloads(catalog, literature, readings)))
+    if (!verifyFossilResourcesReceipts(fossilResources, artifacts, readerPublicDownloads(fossilInput.catalog, fossilInput.literature, fossilInput.readings)))
       throw new Error('Fossil resources lacks exact independent source, reader, and output evidence');
+  }
+  if (photochemicalOzone && preview !== 'photochemical-ozone') {
+    const { readerPublicDownloads } = await import('./reader-current-output.mjs');
+    if (!verifyPhotochemicalOzoneReceipts(photochemicalOzone, artifacts, readerPublicDownloads(catalog, literature, readings)))
+      throw new Error('Photochemical ozone lacks exact independent source, reader, and output evidence');
   }
   const service = serviceConstraints && prepareServiceConstraintsSource(serviceConstraints, substitution?.previous ?? actual,
     substitution?.structure ?? structure, { ...previousRecords, files: substitutionInput.files });
@@ -191,7 +204,8 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const qualifiedLand = effectiveLandRecovery(qualifiedFootprint, landRecovery, land?.affectedClaimIds);
   const qualifiedAcid = effectiveAcidEquivalents(qualifiedLand, acidEquivalents, acid?.affectedClaimIds);
   const qualifiedMineral = effectiveMineralResources(qualifiedAcid, mineralResources, minerals?.affectedClaimIds);
-  return effectiveFossilResources(qualifiedMineral, fossilResources, fossils?.affectedClaimIds);
+  const qualifiedFossil = effectiveFossilResources(qualifiedMineral, fossilResources, fossils?.affectedClaimIds);
+  return effectivePhotochemicalOzone(qualifiedFossil, photochemicalOzone, ozone?.affectedClaimIds);
 }
 
 export function validateReadableBookCurrent(root, catalog, readings, literature) {
@@ -243,4 +257,10 @@ export function validateFossilResourcesReviewSources(root, catalog, readings, li
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Fossil resources review requires the explicit private preview');
   return qualifyCurrentReaderSources(root, catalog, readings, literature, 'fossil-resources');
+}
+
+export function validatePhotochemicalOzoneReviewSources(root, catalog, readings, literature) {
+  if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
+    throw new Error('Photochemical ozone review requires the explicit private preview');
+  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'photochemical-ozone');
 }

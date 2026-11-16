@@ -157,8 +157,29 @@ equal `1 kg oil-eq` fossil extractions (including the egalitarian per-kg hard-co
 proxy for brown coal and peat and preserved source-internal formula/unit gaps).
 All 935 pre-`#115` claims and nine `#115` claims remain unchanged, with one
 explicitly recorded three-example scope sync on `cl-mineral115-judgment`.
-Separate source, full-chapter reader and actual-output acceptances and normal
-source/root delivery are tracked on Issue117. Broader Part IV and Programme9
+Unit117 is now fully delivered: PR118/Main
+`13064f9729f12e30c5206a6d18a065b6f78a410c`, qualified468-file hosting on
+`https://prism.tiangong.earth` (`dpxra8q8whc5`, including unmodified
+`validateReaderOutput` against archived Main source and live print verification
+on Note1 and Note33), exact root2412/PR2413/Main
+`5aa9ccf1d483907b0e2e47f8dfd474275625b2ba`, and ordinary final source/root
+completion receipts (`source_handoff` 1/1).
+
+[Issue119](https://github.com/tiangong-lca/knowledge-base/issues/119) continues
+B16 (`§4 同一排放不同的环境问题`) with tropospheric photochemical ozone
+receptors, regional `NOx` titration sign flips, `EF 3.1` `<location>` constant
+replication and multi-pathway precursor accounting. Its
+[prewriting protocol](editorial/2026-11-17-photochemical-ozone.md) was committed
+as `13c4467` (`ceb0d2d` with governance review) before manuscript changes.
+Selected inspection covers ILCD 2011 (`§3.6`), JRC109369 (`§4.6–§4.8`),
+JRC130796 (`§2 Table 1`, `§3 Table 2`, `§3.2`), CRC32-verified official EF 3.1
+photochemical-ozone, cross-pathway atmospheric/deposition and precursor-flow XML
+members, RIVM 2016-0104 Chapter 6 and `§17 Table S2.1`, and Huijbregts et al.
+2017 (`§§3.1.5, 3.2.4–3.2.5, 4.1`). Seven new canonical paragraphs before
+`cl-path-multiple-paths` preserve all 953 prior claims unchanged. Separate
+source, fresh 30-paragraph B16 reader and actual-output acceptances and normal
+source/root delivery are tracked on Issue119. Broader Part IV (including
+stratospheric ozone, ionizing radiation and continuous review) and Programme9
 requirements remain active.
 
 Rule adoption101 itself is fully delivered: PR103/Main10dc686 and

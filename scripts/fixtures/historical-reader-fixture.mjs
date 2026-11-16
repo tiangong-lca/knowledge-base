@@ -32,7 +32,9 @@ const mineralConfigPath = 'config/reader-mineral-resources.json';
 const mineralModulePath = 'scripts/reader-mineral-resources.mjs';
 const fossilConfigPath = 'config/reader-fossil-resources.json';
 const fossilModulePath = 'scripts/reader-fossil-resources.mjs';
-const fixtureAliases = new Set([serviceModulePath, substitutionModulePath, shiftModulePath, footprintModulePath, landModulePath, acidModulePath, mineralModulePath, fossilModulePath].map(path => `@/${path}`));
+const ozoneConfigPath = 'config/reader-photochemical-ozone.json';
+const ozoneModulePath = 'scripts/reader-photochemical-ozone.mjs';
+const fixtureAliases = new Set([serviceModulePath, substitutionModulePath, shiftModulePath, footprintModulePath, landModulePath, acidModulePath, mineralModulePath, fossilModulePath, ozoneModulePath].map(path => `@/${path}`));
 const flowPinPath = 'scripts/reader-flow-boundary-pins.mjs';
 
 async function loadArchive() {
@@ -81,7 +83,7 @@ async function materialize(root) {
     .map(entry => `scripts/${entry.name}`);
   const components = ['components/evidence.tsx', 'components/numbered-heading.tsx', 'components/chapter-content.tsx'];
   const current = [...configs, ...scripts, ...components, 'lib/teaching-case.ts']
-    .filter(path => ![copyeditConfigPath, copyeditPinPath, flowConfigPath, flowPinPath, serviceConfigPath, serviceModulePath, substitutionConfigPath, substitutionModulePath, shiftConfigPath, shiftModulePath, footprintConfigPath, footprintModulePath, landConfigPath, landModulePath, acidConfigPath, acidModulePath, mineralConfigPath, mineralModulePath, fossilConfigPath, fossilModulePath].includes(path));
+    .filter(path => ![copyeditConfigPath, copyeditPinPath, flowConfigPath, flowPinPath, serviceConfigPath, serviceModulePath, substitutionConfigPath, substitutionModulePath, shiftConfigPath, shiftModulePath, footprintConfigPath, footprintModulePath, landConfigPath, landModulePath, acidConfigPath, acidModulePath, mineralConfigPath, mineralModulePath, fossilConfigPath, fossilModulePath, ozoneConfigPath, ozoneModulePath].includes(path));
   const currentCopyeditPin = await readFile(join(repo, copyeditPinPath), 'utf8');
   const copyeditUnitPin = /^export const readerCopyeditUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
   assert.equal([...currentCopyeditPin.matchAll(copyeditUnitPin)].length, 1);
@@ -112,10 +114,13 @@ async function materialize(root) {
   const currentFossilModule = await readFile(join(repo, fossilModulePath), 'utf8');
   const fossilUnitPin = /^export const fossilResourcesUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
   assert.equal([...currentFossilModule.matchAll(fossilUnitPin)].length, 1);
+  const currentOzoneModule = await readFile(join(repo, ozoneModulePath), 'utf8');
+  const ozoneUnitPin = /^export const photochemicalOzoneUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
+  assert.equal([...currentOzoneModule.matchAll(ozoneUnitPin)].length, 1);
   // The only archived script is the independently selected old edition pin.
   // All validation code, including the expectation resolver, comes from the
   // current worktree and runs under the historical book data in this directory.
-  // The later #95, #99, #102, #105, #107, #109, #111, #113, #115, and #117 units are inactive only in this isolated legacy fixture.
+  // The later #95, #99, #102, #105, #107, #109, #111, #113, #115, #117, and #119 units are inactive only in this isolated legacy fixture.
   assert.deepEqual(Object.keys(archived).filter(path => path.startsWith('scripts/')), [pinPath]);
   await Promise.all([
     ...current.filter(path => !Object.hasOwn(archived, path)).map(path => copyCurrent(root, path)),
@@ -140,6 +145,8 @@ async function materialize(root) {
     write(root, mineralModulePath, currentMineralModule.replace(mineralUnitPin, 'export const mineralResourcesUnitPin = null;')),
     write(root, fossilConfigPath, JSON.stringify({ schemaVersion: 1, status: 'inactive', unit: null })),
     write(root, fossilModulePath, currentFossilModule.replace(fossilUnitPin, 'export const fossilResourcesUnitPin = null;')),
+    write(root, ozoneConfigPath, JSON.stringify({ schemaVersion: 1, status: 'inactive', unit: null })),
+    write(root, ozoneModulePath, currentOzoneModule.replace(ozoneUnitPin, 'export const photochemicalOzoneUnitPin = null;')),
     symlink(join(repo, 'node_modules'), join(root, 'node_modules'), process.platform === 'win32' ? 'junction' : 'dir'),
   ]);
 }

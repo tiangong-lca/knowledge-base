@@ -14,11 +14,26 @@ checkPaths:
   - "package.json"
   - "app/**"
   - "scripts/**"
-lastReviewedAt: 2026-11-16
-lastReviewedCommit: 394992acccb2fe1194c218971436fd3186c14d2f
+lastReviewedAt: 2026-11-17
+lastReviewedCommit: 5fca6949a0858723b4f37fafb01e8f8ddd4d56d6
 ---
 
 # LCA Living Knowledge Base and Review
+
+[Photochemical ozone & multi-pathway precursors #119](https://github.com/tiangong-lca/knowledge-base/issues/119)
+extends B16 (`§4 同一排放不同的环境问题`) with tropospheric photochemical ozone
+receptors, regional `NOx` titration sign flips, `EF 3.1` `<location>` constant
+replication and multi-pathway precursor accounting. Its
+[comparison record](_docs/editorial/2026-11-17-photochemical-ozone.md) aligns
+CML 2002 `POCP` (`kg C2H4 eq`), EF 3.1's single human-health `LOTOS-EUROS`
+midpoint (`kg NMVOC eq`) and ReCiPe 2016's split `TM5-FASST` human (`HOFP`) and
+terrestrial-ecosystem (`EOFP`) `kg NOx-eq` midpoints, proves cross-system and
+cross-receptor precursor ranking reversals, contrasts Benelux and GB/Ireland
+`NOx` titration sign flips against EF 3.1's 720 constant `<location>` flow-match
+rows, and binds same-UUID full-mass accounting across five atmospheric and
+deposition categories while preserving source-internal table/CAS discrepancies.
+Seven new canonical paragraphs preserve all 953 prior claims unchanged, with
+both B16 historical scope generations (`#113` and `#119`) independently qualified.
 
 [Fossil resources #117](https://github.com/tiangong-lca/knowledge-base/issues/117)
 extends B14 with fossil heating values, energy-carrier category boundaries and
@@ -29,9 +44,9 @@ fossil/energy-carrier method and elemental `ADP`/mineral `SOP`, and demonstrates
 why equal `1 kg oil-eq` midpoint extractions diverge across fuel-specific `SCP`
 curves and egalitarian brown-coal/peat proxies while preserving source formula
 and unit gaps. Eight new canonical paragraphs and one explicit three-example
-closing sync preserve all 935 pre-#115 claims and nine #115 claims, with all
-three B14 historical scope generations and both print-visible note revision
-notices independently qualified.
+closing sync preserve all 935 pre-#115 claims and nine #115 claims. Unit #117 is
+fully delivered at Main `13064f9729f12e30c5206a6d18a065b6f78a410c`, qualified
+468-file hosting and root #2412 (`5aa9ccf1d483907b0e2e47f8dfd474275625b2ba`).
 
 [Mineral resources #115](https://github.com/tiangong-lca/knowledge-base/issues/115)
 compares geological depletion, future ore requirements and modeled采选 costs on

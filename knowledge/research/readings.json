@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-16",
+  "updatedAt": "2026-11-17",
   "readings": [
     {
       "id": "rd-cml-2001-part1",
@@ -3632,6 +3632,26 @@
             "本次只重新核读所列范围；原获取日期、初次阅读事件与原选段保持不变。不增加一项独立研究或原作。"
           ],
           "artifactId": "art-recipe-2017-primary-article-pdf"
+        },
+        {
+          "id": "psg-ozone119-recipe2017-ozone-split",
+          "artifactId": "art-recipe-2017-primary-article-pdf",
+          "locator": "§1印p139，Table 1与§3.1.5印p141，Table 2印p143，及§§3.2.4–3.2.5与§4.1印p144（PDF第2、4、6–7页）",
+          "printedPages": "139, 141, 143–144",
+          "pdfIndices": [
+            1,
+            3,
+            5,
+            6
+          ],
+          "topics": [
+            "新增对流层臭氧对陆地生态系统影响路径",
+            "HOFP与EOFP同用kg NOx-eq但分别对齐人口臭氧摄入与生长期日间AOT40",
+            "因缺资料未对光化学臭氧区分时间范围与证据等级情景"
+          ],
+          "limits": [
+            "期刊正文仅概述方法构造，具体全球与分区域数值载于RIVM 2016-0104报告及电子附件。"
+          ]
         }
       ],
       "appraisal": {
@@ -8183,6 +8203,31 @@
           ],
           "limits": [
             "针对2002年ADP与ReCiPe 2008当时的评估结论，不直接评价2016/2020后续版次。"
+          ]
+        },
+        {
+          "id": "psg-ozone119-ilcd2011-pof",
+          "artifactId": "art-ilcd-2011-lcia-recommendations-pdf",
+          "locator": "§3.6 Photochemical ozone formation（印pp47–55，含图7与表14；PDF第61–69页）",
+          "printedPages": "47–55",
+          "pdfIndices": [
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68
+          ],
+          "topics": [
+            "CML2002 POCP乙烯参照与缺NOx限制",
+            "TRACI MIR与EDIP2003对照",
+            "推荐ReCiPe2008应用的LOTOS-EUROS（指标名Tropospheric ozone concentration increase，Level II；ReCiPe 2008与EF中单位为kg NMVOC eq）且终点未纳植被损害"
+          ],
+          "limits": [
+            "仅核读ILCD 2011评估摘要与推荐结论，未直接核读Derwent等1998或Van Zelm等2008原论文实验与网格输入。"
           ]
         }
       ],
@@ -28035,6 +28080,108 @@
           "mediaType": "application/xml",
           "sha256": "c5da0d544c6bb9b9022dd22a2b70215362e2f18a1aee79743c54609564f83b4d",
           "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozone119-ef-method-pof",
+          "mediaType": "application/xml",
+          "sha256": "273c43df66bfd12f7884e1c3e19d23daade5af5b96bd1d7c68802d87f7755f4a",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozone119-ef-method-marine",
+          "mediaType": "application/xml",
+          "sha256": "a681b4b9b2d853697e2e044719d43cb7eaa6b8e185af8b00bb277aa92e735301",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozone119-ef-method-pm",
+          "mediaType": "application/xml",
+          "sha256": "bbde0609351a78fe774c39d3c2a90b8cc463cf3f57d62ffbd4c4f9cb6cb5b721",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozone119-ef-method-odp",
+          "mediaType": "application/xml",
+          "sha256": "e64477a1b282ce934a9fbeb456601589fca88c3d160289dc9680d4f1d261ead4",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozone119-ef-flow-nox",
+          "mediaType": "application/xml",
+          "sha256": "ff51748c47eaf0d590a12abe2cfeaaba16286f124891a62ab03de62a3c8e1da1",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozone119-ef-flow-no2",
+          "mediaType": "application/xml",
+          "sha256": "70c3acfcb5d7626e9d7a1945c12021c1fab0245723f82ec91178739bd1beba0c",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozone119-ef-flow-no",
+          "mediaType": "application/xml",
+          "sha256": "723397f658a56a4a16c19e527b93f3abe394fe83af6e60d957237b53b95fde42",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozone119-ef-flow-nmvoc",
+          "mediaType": "application/xml",
+          "sha256": "f1c6c2405d1cf6a17e00c0a2af20f3cce6ab361053812ead39567ef717c8a66b",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozone119-ef-flow-voc",
+          "mediaType": "application/xml",
+          "sha256": "f038f025eb9a60eea89a185b7d6756a98b4394373fc486a9f60bafed9129a45d",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozone119-ef-flow-ethylene",
+          "mediaType": "application/xml",
+          "sha256": "a9fff3598e936f7f34a6c060cd6602560b1665c9ddf0c846c33a3c621171f2be",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozone119-ef-flow-ch4-fossil",
+          "mediaType": "application/xml",
+          "sha256": "a46a3a16e17cddc90059a95055fb87be0e3dcba184b175719cc5dc2751136491",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozone119-ef-flow-chloromethane",
+          "mediaType": "application/xml",
+          "sha256": "b800ee52376546e5bcaf87f99c5206e022eb1b9298d379b38e00bc5ba5e1f763",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozone119-ef-flow-hcfc140",
+          "mediaType": "application/xml",
+          "sha256": "e37b50f8b7d6a31535c66e34f3b623a96c081e1e05321e202a7f25f8ec4dc996",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozone119-ef-flow-methyl-chloroform",
+          "mediaType": "application/xml",
+          "sha256": "59c1572aa6451ffb5dede40be8bf782a49d4b99c9278c6da7999aca847d0ea9a",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozone119-ef-flow-tca111",
+          "mediaType": "application/xml",
+          "sha256": "abb666651d81ddd5a8ea791934ee5150dc9ec0322179a22dc580fd17873eed36",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozone119-ef-flow-dichloromethane",
+          "mediaType": "application/xml",
+          "sha256": "6a7e6f62dbf5aa67c5be42d6978ab79efd359f679cdace5da7a08726a3f30216",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-ozone119-ef-flow-methylene-chloride",
+          "mediaType": "application/xml",
+          "sha256": "10467354a9f221682d25fa4d056a8516b75e7e434d8355f1346bf9911be85c2b",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
         }
       ],
       "passages": [
@@ -28357,6 +28504,33 @@
           "limits": [
             "确认UUID 93a60a56-a3c8-11da-a746-0800200c9a66在EF 3.1包内定义为Net calorific value（Lower heating value，Hu），不代证具体过程数据集采用何种热值换算。"
           ]
+        },
+        {
+          "id": "psg-ozone119-ef31-pof-method",
+          "artifactId": "art-ozone119-ef-method-pof",
+          "locator": "EF-v3.1 (4)/ILCD/lciamethods/b5c610fe-def3-11e6-bf01-fe55135034f3.xml（v02.01.000）：Photochemical ozone formation - human health 全部1401条factor（含20个NO2/NOx/SO2/SOx空气流×36个国家location共720条恒值记录）",
+          "topics": [
+            "NMVOC/NOx/NO2/NO同赋1.0 kg NMVOC eq/kg",
+            "ethylene=1.69、methane=0.0101、VOC=0.235",
+            "HCFC-140/Methyl chloroform=0.0152与dichloromethane/Methylene chloride=0.115",
+            "36国location标签恒等于通用值1.0与0.0811"
+          ],
+          "limits": [
+            "720条带location记录系为匹配区域化空气清单流而复制泛欧LOTOS-EUROS常数，不含分国臭氧化学模拟。"
+          ]
+        },
+        {
+          "id": "psg-ozone119-ef31-multipath-precursors",
+          "artifactId": "art-ozone119-ef-flow-nox",
+          "locator": "flows/f79d0f8f-2b0e-49cb-bed0-b1ea0fbd8625.xml（Nitrogen oxides）、08a91e70-3ddc-11dd-9610-0050c2490048.xml（methane fossil）、08a91e70-3ddc-11dd-9677-0050c2490048.xml（chloromethane）及对应方法XML b5c610fe、b5c611c6（v01.04.000）、b5c614d2（v01.02.009）、b5c619fa（v02.00.010）、b5c602c6（v02.00.011）、6209b35f（v01.00.000）、b5c629d6（v02.00.012）",
+          "topics": [
+            "同一流UUID跨多类别全量表征",
+            "酸化与陆地富营养化中BE/NL/GB真实国家差异对照POF恒值",
+            "HCFC-140（CAS 71-55-6）/Methyl chloroform与1,1,1-trichloroethane（流XML标CAS 79-00-5）跨类别流表不对称"
+          ],
+          "limits": [
+            "仅核实官方XML中同一流UUID的已发布因子与CAS字段原值，不改动流表或代证软件导入行为。"
+          ]
         }
       ],
       "appraisal": {
@@ -28375,7 +28549,8 @@
       ],
       "sourceKeys": [
         "src-flow-pilot-ef31",
-        "src-fossil117-ef31-selected-members"
+        "src-fossil117-ef31-selected-members",
+        "src-ozone119-ef31-selected-members"
       ]
     },
     {
@@ -28562,6 +28737,27 @@
           ],
           "limits": [
             "表1印作Resource use, fossil（单数），方法XML标题为Resource use, fossils；两资源类别底层方法仍指向Fazio等2018。"
+          ]
+        },
+        {
+          "id": "psg-ozone119-jrc130796-pof-update",
+          "artifactId": "art-flow-pilot-ef31-jrc130796",
+          "locator": "Abstract（印p1）、§1（印p3）、§2 Table 1（印p6）、§3 Table 2（印p8）及§3.2（印p9）（PDF第5、7、10、12–13页）",
+          "printedPages": "1, 3, 6, 8–9",
+          "pdfIndices": [
+            4,
+            6,
+            9,
+            11,
+            12
+          ],
+          "topics": [
+            "POF列入EF3.1六个更新类别之一（次要更新POF**）",
+            "HCFC-140与dichloromethane因子同步赋给同义流Methyl chloroform与Methylene chloride",
+            "表1（印p6）Photochemical ozone formation, human health漏标星号"
+          ],
+          "limits": [
+            "原报告表1漏标星号而表2（印p8）标POF**并于印p9专设§3.2说明，按原印保留不替作者改表。"
           ]
         }
       ],
@@ -29407,6 +29603,48 @@
           ],
           "limits": [
             "印p96误引Figure 11.2（实为Figure 13.2）并将化石成本公式标到矿产矿石潜势论文Vieira et al. 2016b名下；缺少IEA 2013原始曲线与未刊稿，不能擅自修补公式单位或补算硬煤CFE。"
+          ]
+        },
+        {
+          "id": "psg-ozone119-rivm-ch6-receptors",
+          "artifactId": "art-land111-rivm2016-pdf",
+          "locator": "第6章§§6.1–6.4、图6.1、表6.1（印p53）、表6.2（印p54）、表6.5（印p55）及表6.6（印p56）（PDF第53–58页）",
+          "printedPages": "51–56",
+          "pdfIndices": [
+            52,
+            53,
+            54,
+            55,
+            56,
+            57
+          ],
+          "topics": [
+            "改用NOx当量并拆分为人体健康HOFP与陆地生态EOFP",
+            "世界加权平均NMVOC分别为0.18与0.29 kg NOx-eq/kg",
+            "NO/NO2/NO3按摩尔质量折算1.53/1/0.74",
+            "终点转换因子9.1e-7 yr/kg NOx-eq与1.29e-7 species·yr/kg NOx-eq",
+            "表6.3–6.4跳号及印p56误写Table 5.6"
+          ],
+          "limits": [
+            "人体效应仅计≥30岁人群呼吸死亡且假设无阈值；正文表6.2之后直接跳至表6.5，印p56正文把表6.6误引为Table 5.6。"
+          ]
+        },
+        {
+          "id": "psg-ozone119-rivm-s2-titration",
+          "artifactId": "art-land111-rivm2016-pdf",
+          "locator": "§17 S2. Supporting Information on ozone formation，§17.1 Table S2.1（印pp125–126，PDF第127–128页）",
+          "printedPages": "125–126",
+          "pdfIndices": [
+            126,
+            127
+          ],
+          "topics": [
+            "56个源区域HOFP与EOFP表值",
+            "Belgium, Luxemburg, Netherlands中NOx的HOFP=-0.48而EOFP=+0.16（NMVOC为+0.69/+1.10）",
+            "Great Britain, Ireland中NOx的HOFP=-0.20而EOFP=+0.44（NMVOC为+0.60/+1.15）"
+          ],
+          "limits": [
+            "区域因子来自TM5-FASST相对2000年参考排放的线性源—受体矩阵，不代表任意幅度减排或小时极值达标模拟。"
           ]
         }
       ],
@@ -30644,6 +30882,26 @@
           "limits": [
             "报告针对2018年EF推荐方法集（EF 2.0基准，后为EF 3.0与EF 3.1沿用）把该实现对应到CML v4.8 (2016)与ILCD流表适配，不提供核燃料利用效率或地质储量重算。"
           ]
+        },
+        {
+          "id": "psg-ozone119-jrc109369-pof-and-nox",
+          "artifactId": "art-fossil117-jrc109369-pdf",
+          "locator": "§4.6 Photochemical ozone formation（印p18）及§§4.7–4.8 Acidification / Eutrophication（印pp19–20）（PDF第20–22页）",
+          "printedPages": "18–20",
+          "pdfIndices": [
+            19,
+            20,
+            21
+          ],
+          "topics": [
+            "EF光化学臭氧沿用ReCiPe2008 Van Zelm等2008",
+            "泛指VOC按2004欧洲14.0 Mt NMVOC与47.8 Mt CH4加权",
+            "表内指标名写作Photochemical ozone creation potential (POCP)",
+            "NO2/NO按电荷与摩尔质量跨酸化与富营养化派生"
+          ],
+          "limits": [
+            "印p18表内把EF指标名写作POCP，与JRC130796表1及b5c610fe.xml的Tropospheric ozone concentration increase不同，保留原件异文。"
+          ]
         }
       ],
       "appraisal": {
@@ -31646,6 +31904,17 @@
       "nextAction": "仅在后续取得作者公开发表的化石SCP方法原稿或校准附件时重开公式复算；现阶段保留原印表值与可定位异文。",
       "affectedUnits": [
         "B14"
+      ]
+    },
+    {
+      "id": "gap-ozone119-ctm-and-multipollutant-epi",
+      "description": "LOTOS-EUROS（2004欧洲）与TM5-FASST（2000全球参考年）原始化学传输网格及臭氧—PM2.5双污染物联合流行病学原始队列未在本仓库重跑或重估，故区域负因子仅在原报告参考工作点附近解释，终点DALY跨类别可加性与政策目标重叠取舍边界留作显式核查条件。",
+      "nextAction": "在B17颗粒物健康效应回读时核查双污染物联合控制判据，并在B20多政策目标计分与B22损害加总回读时保持重叠目标取舍与效应独立性核验，不把单污染物中点表直接宣称为无重叠总健康损害。",
+      "affectedUnits": [
+        "B16",
+        "B17",
+        "B20",
+        "B22"
       ]
     }
   ],
@@ -34327,6 +34596,21 @@
       ],
       "affectedUnits": [
         "B14"
+      ]
+    },
+    {
+      "id": "rev-ozone119-b16-ozone-and-multipath",
+      "before": "B16第四节末尾《同一排放不同的环境问题》仅以一段定性文字（cl-path-multiple-paths）说明氨可同时关联陆地酸化与营养富集，尚未覆盖对流层光化学臭氧形成（V5-D），也未用真实发行数据区分跨受体排序反转、区域NOx滴定符号翻转、EF位置标签恒值复制与跨类别全量表征边界。",
+      "after": "2026-11-17在保持既有953条规范论述与B16四节结构丝毫无改动的前提下，于《同一排放不同的环境问题》小节cl-path-multiple-paths之前增补7段比较论述（cl-ozone119-*），对齐POCP、EF 3.1光化学臭氧与ReCiPe 2016 HOFP/EOFP，揭示比荷卢与英爱区域NOx人体负值与生态正值并存及EF 3.1中720条恒值location记录的流匹配本质，并以同UUID实测因子界定多路径全量表征与重复计算边界。",
+      "reasoning": "在同一空气前体（NOx、CH4、一氯甲烷）界面上同时闭合第四部光化学臭氧比较与跨路径前体归属问题，自然衔接B15气候、B16沉降与B17颗粒物健康。",
+      "status": "selected-source inspection and canonical B16 integration prepared; independent source, reader and output gates required before acceptance",
+      "triggerPassageIds": [
+        "psg-ozone119-ef31-pof-method",
+        "psg-ozone119-rivm-ch6-receptors",
+        "psg-ozone119-rivm-s2-titration"
+      ],
+      "affectedUnits": [
+        "B16"
       ]
     }
   ]
