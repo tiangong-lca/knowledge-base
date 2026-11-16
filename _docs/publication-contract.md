@@ -16,13 +16,23 @@ checkPaths:
   - "content/**"
   - "scripts/**"
   - "releases/**"
-lastReviewedAt: 2026-11-15
-lastReviewedCommit: 251467ca70f4f21a50d6284696dcb648144d1f94
+lastReviewedAt: 2026-11-16
+lastReviewedCommit: 040cecf06e63cf204d987870de24a0e44dffb38b
 ---
 
 # Publication contract
 
 ## Scoped scientific successors
+
+The acid-equivalents unit #113 uses selected released rows to distinguish factor
+identity and indicator meaning. Its country comparison rejects chemistry-only
+reconstruction of those rows; its two AE-category comparisons reject one scalar
+for those locations. Neither establishes an EF-to-GLAM numerical mapping or a
+real damage ratio. The conflicting GLAM descriptions, abstract-only original
+paper scope and mole-group version discrepancy remain explicit. Official unit
+labels, a shared quantity property, exact input mass and actual importer behavior
+are distinct evidence. Retained correct values do not waive carrier and citation
+identity checks, and no new numeric case or raw-source redistribution follows.
 
 The land-recovery unit #111 compares operations within specified models: counting
 a post-abandonment interval and converting an already-characterized land score

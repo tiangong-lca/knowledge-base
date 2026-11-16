@@ -7954,6 +7954,64 @@
             "未逐格采用统计表。",
             "p73 terrestrial eutrophication与NOx/SO2/NH3例子有类别/物质疑点，不作为候选事实。"
           ]
+        },
+        {
+          "id": "psg-acid113-glam-midpoint",
+          "artifactId": "art-unep-glam-2019-volume2-olw-pdf",
+          "locator": "§3.4 印刷p64；§3.8.1 陆地酸化p73；参考文献p78",
+          "printedPages": "64；73；78",
+          "pdfIndices": [
+            65,
+            74,
+            79
+          ],
+          "topics": [
+            "陆地酸化SO₂当量",
+            "端点说明",
+            "Roy 2012a与2012b身份"
+          ],
+          "limits": [
+            "相邻路径说明与后续GLAM Phase 3回顾须同时辨读。",
+            "未检查2019工作簿算式、参考归一化分母或新版本行为。"
+          ]
+        },
+        {
+          "id": "psg-acid113-glam-sensitivity",
+          "artifactId": "art-unep-glam-2019-volume2-olw-pdf",
+          "locator": "§3.2.1与图3.1及图注 印刷pp61–62；§3.5.3 p66",
+          "printedPages": "61–62；66",
+          "pdfIndices": [
+            62,
+            63,
+            67
+          ],
+          "topics": [
+            "大气源—受体",
+            "土壤缓冲与敏感性",
+            "图示与推荐范围"
+          ],
+          "limits": [
+            "原图包括不在所推荐陆地路径内的受体，不能据此补全发行公式。"
+          ]
+        },
+        {
+          "id": "psg-acid113-glam-aggregation",
+          "artifactId": "art-unep-glam-2019-volume2-olw-pdf",
+          "locator": "§§3.6.2–3.6.3 印刷pp68–69；表3.3 p71",
+          "printedPages": "68–69；71",
+          "pdfIndices": [
+            69,
+            70,
+            72
+          ],
+          "topics": [
+            "发源地加权",
+            "空气到土壤",
+            "国家与全球聚合"
+          ],
+          "limits": [
+            "分位数不是CZ或AL的配对因子；未采用表中数值行作为计算事实。"
+          ]
         }
       ],
       "appraisal": {
@@ -8051,6 +8109,45 @@
           "limits": [
             "不采用文中数量级或运行其模型。",
             "扩展到其他大陆需要相互一致的区域模型及敏感区信息，不外推现成全球因子。"
+          ]
+        },
+        {
+          "id": "psg-acid113-ilcd-ae",
+          "artifactId": "art-ilcd-2011-lcia-recommendations-pdf",
+          "locator": "§3.7.1 印刷p56；§§3.7.4–3.7.5 pp62–63；§§3.7.7–3.7.9 p64",
+          "printedPages": "56；62–64",
+          "pdfIndices": [
+            69,
+            75,
+            76,
+            77
+          ],
+          "topics": [
+            "欧洲酸化中点",
+            "沉降与接收生态系统的临界负荷",
+            "累积超载"
+          ],
+          "limits": [
+            "不由指南推出EF的逐行因子。",
+            "同期临时端点用另一套模型，不能由AE直接换算。"
+          ]
+        },
+        {
+          "id": "psg-acid113-ilcd-terrestrial",
+          "artifactId": "art-ilcd-2011-lcia-recommendations-pdf",
+          "locator": "§3.8.1.1 印刷p65；§3.8.5.1 p75；§3.8.8 p77",
+          "printedPages": "65；75；77",
+          "pdfIndices": [
+            78,
+            88,
+            90
+          ],
+          "topics": [
+            "陆地氮营养富集",
+            "陆地AE中点"
+          ],
+          "limits": [
+            "同名模型不使命题、当量或实际因子相同。"
           ]
         }
       ],
@@ -23026,6 +23123,19 @@
           "limits": [
             "当已知基本流具有相关贡献而本方法未提供因子时可用零记录；单个实际零记录的成因需另查。"
           ]
+        },
+        {
+          "id": "psg-acid113-ef-location",
+          "artifactId": "art-flow-pilot-ilcd-lcia-doc",
+          "locator": "ILCD_LCIAMethodDataSet.html，3-17-76 地理代表性；3-23-100-260至263 交换引用、位置、方向及因子",
+          "topics": [
+            "基本交换所在地",
+            "干预与影响地理范围",
+            "因子索引"
+          ],
+          "limits": [
+            "不能由地点字段断言某个软件选择精确行、默认因子或接收地。"
+          ]
         }
       ],
       "appraisal": {
@@ -27794,6 +27904,42 @@
           "mediaType": "application/xml",
           "sha256": "588d32266c1de508bf38129d5de8aac10bfe96f19c90e129ab76d6e3f5a8a8d3",
           "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-acid113-ef-method-acid",
+          "mediaType": "application/xml",
+          "sha256": "1a09e9e8533cc6f1027f260c2672ca6f8dd231618fe81939ed1fc22d5e066f8f",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-acid113-ef-method-nutrient",
+          "mediaType": "application/xml",
+          "sha256": "72f1187a0682e186bdedf74f60fe99a1e1dafa7469141af74dfe4ea21c296992",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-acid113-ef-flow-so2",
+          "mediaType": "application/xml",
+          "sha256": "cc46ef66f1c70d3e78ae767b7a4aea2f1230c5d08a8e92d9da274b70e4bba0d6",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-acid113-ef-flow-nh3",
+          "mediaType": "application/xml",
+          "sha256": "7ecf0df726c9e79abb486da9d8f98e8a24978900ed664ee3d58185edc848f34c",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-acid113-ef-moles-property",
+          "mediaType": "application/xml",
+          "sha256": "6973482cd527bef3a8aa35b1c19e9bad26330114689a64d1b5881b4ed1326f93",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-acid113-ef-mole-group",
+          "mediaType": "application/xml",
+          "sha256": "906e1936428e5bf365d02e0601d9c4eb73b5c6aaaeb235f9053e474be34a657c",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
         }
       ],
       "passages": [
@@ -27882,6 +28028,189 @@
           ],
           "limits": [
             "实际名称与所选方法行的对照；不建立跨方法或全部化学形态的等价。"
+          ]
+        },
+        {
+          "id": "psg-acid113-ef-acid-model",
+          "artifactId": "art-acid113-ef-method-acid",
+          "locator": "EF-v3.1 (4)/ILCD/lciamethods/b5c611c6-def3-11e6-bf01-fe55135034f3.xml；LCIAMethodInformation/dataSetInformation、quantitativeReference、geography、impactModel；administrativeInformation/publicationAndOwnership",
+          "topics": [
+            "酸化AE",
+            "欧洲地理适用范围",
+            "mol H⁺当量"
+          ],
+          "limits": [
+            "成员修订日、参考年与EF3.1发布版各有含义。"
+          ]
+        },
+        {
+          "id": "psg-acid113-ef-nutrient-model",
+          "artifactId": "art-acid113-ef-method-nutrient",
+          "locator": "EF-v3.1 (4)/ILCD/lciamethods/b5c614d2-def3-11e6-bf01-fe55135034f3.xml；LCIAMethodInformation/dataSetInformation、quantitativeReference、geography、impactModel、time/referenceYear；publicationAndOwnership",
+          "topics": [
+            "陆地富营养化AE",
+            "mol N当量",
+            "参考年原值"
+          ],
+          "limits": [
+            "referenceYear字面为2107；未获解释，保留原值并不把它当预测情景或改成2017。"
+          ]
+        },
+        {
+          "id": "psg-acid113-ef-flow-so2",
+          "artifactId": "art-acid113-ef-flow-so2",
+          "locator": "EF-v3.1 (4)/ILCD/flows/fe0acd60-3ddc-11dd-ac4b-0050c2490048.xml；flowInformation/dataSetInformation与quantitativeReference；flowProperties/flowProperty id=0；dataSetVersion 03.00.004",
+          "topics": [
+            "SO₂基本流",
+            "非城市空气或高烟囱",
+            "排放量Mass"
+          ],
+          "limits": [
+            "所选SO₂基本流不同于其它CAS或UUID成员以及SOx组。"
+          ]
+        },
+        {
+          "id": "psg-acid113-ef-flow-nh3",
+          "artifactId": "art-acid113-ef-flow-nh3",
+          "locator": "EF-v3.1 (4)/ILCD/flows/08a91e70-3ddc-11dd-96af-0050c2490048.xml；flowInformation/dataSetInformation与quantitativeReference；flowProperties/flowProperty id=0；dataSetVersion 03.00.004",
+          "topics": [
+            "NH₃基本流",
+            "同一空气子类",
+            "排放量Mass"
+          ],
+          "limits": [
+            "分母是kg NH₃排放，不是kg元素N或含氮肥料施用量。"
+          ]
+        },
+        {
+          "id": "psg-acid113-ef-mass",
+          "artifactId": "art-flow99-ef-mass",
+          "locator": "EF-v3.1 (4)/ILCD/flowproperties/93a60a56-a3c8-11da-a746-0800200b9a66.xml；quantitativeReference/referenceToReferenceUnitGroup；版本03.00.003",
+          "topics": [
+            "质量属性",
+            "质量单位组引用"
+          ],
+          "limits": [
+            "流与Mass的引用没有另列版本，所读取产物同时记录其自报版本。"
+          ]
+        },
+        {
+          "id": "psg-acid113-ef-kg",
+          "artifactId": "art-flow99-ef-mass-units",
+          "locator": "EF-v3.1 (4)/ILCD/unitgroups/93a60a57-a4c8-11da-a746-0800200c9a66.xml；quantitativeReference/referenceToReferenceUnit 0；units/unit[@dataSetInternalID=0]/name；版本03.00.003",
+          "topics": [
+            "千克参照单位"
+          ],
+          "limits": [
+            "没有以名称相似补齐其它数据包的单位。"
+          ]
+        },
+        {
+          "id": "psg-acid113-ef-moles",
+          "artifactId": "art-acid113-ef-moles-property",
+          "locator": "EF-v3.1 (4)/ILCD/flowproperties/341fd786-b2ad-4552-a762-5eafcab45dee.xml；量属性Moles，版本01.00.003；quantitativeReference/referenceToReferenceUnitGroup",
+          "topics": [
+            "两方法共享的Moles属性",
+            "具体当量由方法声明"
+          ],
+          "limits": [
+            "属性中的摩尔单位组引用版本03.00.000，实际归档同UUID成员自报03.00.003；不据此声明精确版本匹配或软件的处理。"
+          ]
+        },
+        {
+          "id": "psg-acid113-ef-mol-group",
+          "artifactId": "art-acid113-ef-mole-group",
+          "locator": "EF-v3.1 (4)/ILCD/unitgroups/f170abd3-f010-45f4-8e7c-9871a5c0421b.xml；quantitativeReference/referenceToReferenceUnit 0；units/unit[@dataSetInternalID=0]/name；实际版本03.00.003",
+          "topics": [
+            "同一摩尔单位组标识的实际包成员",
+            "实际成员版本"
+          ],
+          "limits": [
+            "供核查包内数据；Moles引用的版本03.00.000与所取03.00.003不同，不替代精确版本引用。"
+          ]
+        },
+        {
+          "id": "psg-acid113-ef-so2-cz",
+          "artifactId": "art-acid113-ef-method-acid",
+          "locator": "EF-v3.1 (4)/ILCD/lciamethods/b5c611c6-def3-11e6-bf01-fe55135034f3.xml；characterisationFactors/factor；referenceToFlowDataSet/@refObjectId=fe0acd60-3ddc-11dd-ac4b-0050c2490048，@version=03.00.004；exchangeDirection=Output；location=CZ；meanValue",
+          "topics": [
+            "酸化中点因子",
+            "CZ排放地",
+            "SO₂基本流"
+          ],
+          "limits": [
+            "该地点是输入交换所在地；不是单一受体位置或现场实测影响。",
+            "未运行软件或推断缺位置时的处理。"
+          ]
+        },
+        {
+          "id": "psg-acid113-ef-so2-al",
+          "artifactId": "art-acid113-ef-method-acid",
+          "locator": "EF-v3.1 (4)/ILCD/lciamethods/b5c611c6-def3-11e6-bf01-fe55135034f3.xml；characterisationFactors/factor；referenceToFlowDataSet/@refObjectId=fe0acd60-3ddc-11dd-ac4b-0050c2490048，@version=03.00.004；exchangeDirection=Output；location=AL；meanValue",
+          "topics": [
+            "酸化中点因子",
+            "AL排放地",
+            "SO₂基本流"
+          ],
+          "limits": [
+            "该地点是输入交换所在地；不是单一受体位置或现场实测影响。",
+            "未运行软件或推断缺位置时的处理。"
+          ]
+        },
+        {
+          "id": "psg-acid113-ef-nh3-acid-cz",
+          "artifactId": "art-acid113-ef-method-acid",
+          "locator": "EF-v3.1 (4)/ILCD/lciamethods/b5c611c6-def3-11e6-bf01-fe55135034f3.xml；characterisationFactors/factor；referenceToFlowDataSet/@refObjectId=08a91e70-3ddc-11dd-96af-0050c2490048，@version=03.00.004；exchangeDirection=Output；location=CZ；meanValue",
+          "topics": [
+            "酸化中点因子",
+            "CZ排放地",
+            "NH₃基本流"
+          ],
+          "limits": [
+            "该地点是输入交换所在地；不是单一受体位置或现场实测影响。",
+            "未运行软件或推断缺位置时的处理。"
+          ]
+        },
+        {
+          "id": "psg-acid113-ef-nh3-acid-al",
+          "artifactId": "art-acid113-ef-method-acid",
+          "locator": "EF-v3.1 (4)/ILCD/lciamethods/b5c611c6-def3-11e6-bf01-fe55135034f3.xml；characterisationFactors/factor；referenceToFlowDataSet/@refObjectId=08a91e70-3ddc-11dd-96af-0050c2490048，@version=03.00.004；exchangeDirection=Output；location=AL；meanValue",
+          "topics": [
+            "酸化中点因子",
+            "AL排放地",
+            "NH₃基本流"
+          ],
+          "limits": [
+            "该地点是输入交换所在地；不是单一受体位置或现场实测影响。",
+            "未运行软件或推断缺位置时的处理。"
+          ]
+        },
+        {
+          "id": "psg-acid113-ef-nh3-nutrient-cz",
+          "artifactId": "art-acid113-ef-method-nutrient",
+          "locator": "EF-v3.1 (4)/ILCD/lciamethods/b5c614d2-def3-11e6-bf01-fe55135034f3.xml；characterisationFactors/factor；referenceToFlowDataSet/@refObjectId=08a91e70-3ddc-11dd-96af-0050c2490048，@version=03.00.004；exchangeDirection=Output；location=CZ；meanValue",
+          "topics": [
+            "陆地富营养化中点因子",
+            "CZ排放地",
+            "NH₃基本流"
+          ],
+          "limits": [
+            "该地点是输入交换所在地；不是单一受体位置或现场实测影响。",
+            "未运行软件或推断缺位置时的处理。"
+          ]
+        },
+        {
+          "id": "psg-acid113-ef-nh3-nutrient-al",
+          "artifactId": "art-acid113-ef-method-nutrient",
+          "locator": "EF-v3.1 (4)/ILCD/lciamethods/b5c614d2-def3-11e6-bf01-fe55135034f3.xml；characterisationFactors/factor；referenceToFlowDataSet/@refObjectId=08a91e70-3ddc-11dd-96af-0050c2490048，@version=03.00.004；exchangeDirection=Output；location=AL；meanValue",
+          "topics": [
+            "陆地富营养化中点因子",
+            "AL排放地",
+            "NH₃基本流"
+          ],
+          "limits": [
+            "该地点是输入交换所在地；不是单一受体位置或现场实测影响。",
+            "未运行软件或推断缺位置时的处理。"
           ]
         }
       ],
@@ -28051,6 +28380,23 @@
           ],
           "limits": [
             "长期未指定水体铝(III)零值原因不由这两段确定。方法规定取零不能支持现实无效应的断言。未读其余章节。"
+          ]
+        },
+        {
+          "id": "psg-acid113-ef-update",
+          "artifactId": "art-flow-pilot-ef31-jrc130796",
+          "locator": "§3.3，表4，印刷p10（PDF第14页）",
+          "printedPages": "10",
+          "pdfIndices": [
+            13
+          ],
+          "topics": [
+            "EF3.1沿用AE的谱系",
+            "化学代理的有限换算",
+            "SO₂位置行更正"
+          ],
+          "limits": [
+            "EF3.0旧值只来自报告表4，未取得该版原始XML；EF3.1数值另有独立成员定位。"
           ]
         }
       ],
@@ -28828,6 +29174,338 @@
         "该论文其他章节、案例的原始清单、补充文件及发布因子未逐项核查。"
       ],
       "sourceKeys": []
+    },
+    {
+      "id": "rd-acid113-roy-fate",
+      "workId": "work-acid113-roy-fate",
+      "title": "Spatially-differentiated atmospheric source-receptor relationships for nitrogen oxides, sulfur oxides and ammonia emissions at the global scale for life cycle impact assessment",
+      "version": "2012期刊原作，选读作者摘要，DOI 10.1016/j.atmosenv.2012.07.069",
+      "url": "https://doi.org/10.1016/j.atmosenv.2012.07.069",
+      "accessedAt": "2026-11-15",
+      "readAt": "2026-11-15",
+      "readingStatus": "selected-passages",
+      "question": "该作品给出何种量、模型组成或发行说明？",
+      "argumentSummary": "Roy 2012b用GEOS-Chem构造由来源到受体沉降的大气命运因子矩阵。该摘要没有提出2019指南的土壤敏感性或二氧化硫当量工作簿公式。",
+      "appraisal": {
+        "basis": "实际选读载体：作者摘要，Atmospheric Environment 62:74–81；EPA HERO 1565259。",
+        "methodologicalScope": "作者摘要所述大气命运模型。",
+        "independence": "方法或回顾仅支撑其明示范围；同系模型及其引用并非独立生态验证。",
+        "limitations": [
+          "仅核对公开摘要和明示身份；没有完整论文或重跑底层模型。",
+          "不从该论文补写2019发行工作簿的公式。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-15"
+      },
+      "rights": "原论文及作者摘要保留各自权利；索引开放访问不授予复制或分发全文的许可。仅提供归属、定位和原创释义。",
+      "unread": [
+        "仅核对公开摘要和明示身份；没有完整论文或重跑底层模型。",
+        "不从该论文补写2019发行工作簿的公式。"
+      ],
+      "sourceKeys": [
+        "src-acid113-roy-fate"
+      ],
+      "artifacts": [
+        {
+          "id": "art-acid113-roy-fate",
+          "mediaType": "text/html",
+          "sha256": "27e2752bc1c0abf59ebc17092dceca4c5e50aa638e131ad5726dc290e68eb107",
+          "resolvedUrl": "https://hero.epa.gov/reference/1565259/"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-acid113-roy-fate",
+          "artifactId": "art-acid113-roy-fate",
+          "locator": "作者摘要，Atmospheric Environment 62:74–81；EPA HERO 1565259",
+          "topics": [
+            "Roy 2012b",
+            "大气命运与源—受体矩阵"
+          ],
+          "limits": [
+            "仅核对公开摘要和明示身份；没有完整论文或重跑底层模型。",
+            "不从该论文补写2019发行工作簿的公式。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rd-acid113-roy-soil",
+      "workId": "work-acid113-roy-soil",
+      "title": "Life cycle impact assessment of terrestrial acidification: modeling spatially explicit soil sensitivity at the global scale",
+      "version": "2012期刊原作，选读作者摘要，DOI 10.1021/es3013563",
+      "url": "https://doi.org/10.1021/es3013563",
+      "accessedAt": "2026-11-15",
+      "readAt": "2026-11-15",
+      "readingStatus": "selected-passages",
+      "question": "该作品给出何种量、模型组成或发行说明？",
+      "argumentSummary": "Roy 2012a是另一篇论文，使用PROFILE模拟接收土壤的化学敏感性，考察四种候选土壤指标。",
+      "appraisal": {
+        "basis": "实际选读载体：作者摘要，Environmental Science & Technology 46:8270–8278；EPA HERO 1773309。",
+        "methodologicalScope": "作者摘要所述土壤敏感性模型。",
+        "independence": "方法或回顾仅支撑其明示范围；同系模型及其引用并非独立生态验证。",
+        "limitations": [
+          "仅核对公开摘要和明示身份；没有完整论文或重跑底层模型。",
+          "不从该论文补写2019发行工作簿的公式。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-15"
+      },
+      "rights": "原论文及作者摘要保留各自权利；索引开放访问不授予复制或分发全文的许可。仅提供归属、定位和原创释义。",
+      "unread": [
+        "仅核对公开摘要和明示身份；没有完整论文或重跑底层模型。",
+        "不从该论文补写2019发行工作簿的公式。"
+      ],
+      "sourceKeys": [
+        "src-acid113-roy-soil"
+      ],
+      "artifacts": [
+        {
+          "id": "art-acid113-roy-soil",
+          "mediaType": "text/html",
+          "sha256": "6b4f4a91bc8539640a2a9c8450b914b44b70663a3fb6511782579b9234172d2d",
+          "resolvedUrl": "https://hero.epa.gov/reference/1773309/"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-acid113-roy-soil",
+          "artifactId": "art-acid113-roy-soil",
+          "locator": "作者摘要，Environmental Science & Technology 46:8270–8278；EPA HERO 1773309",
+          "topics": [
+            "Roy 2012a",
+            "PROFILE与土壤敏感性"
+          ],
+          "limits": [
+            "仅核对公开摘要和明示身份；没有完整论文或重跑底层模型。",
+            "不从该论文补写2019发行工作簿的公式。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rd-acid113-roy-effect",
+      "workId": "work-acid113-roy-effect",
+      "title": "Characterization factors for terrestrial acidification at the global scale: A systematic analysis of spatial variability and uncertainty",
+      "version": "2014期刊原作，选读作者摘要，DOI 10.1016/j.scitotenv.2014.08.099",
+      "url": "https://doi.org/10.1016/j.scitotenv.2014.08.099",
+      "accessedAt": "2026-11-15",
+      "readAt": "2026-11-15",
+      "readingStatus": "selected-passages",
+      "question": "该作品给出何种量、模型组成或发行说明？",
+      "argumentSummary": "Roy等2014报告区域化维管植物损失因子，分别讨论大气命运、土壤敏感性和生态效应的作用。",
+      "appraisal": {
+        "basis": "实际选读载体：NLM PubMed PMID 25226072，PubmedArticle/MedlineCitation/Article/Abstract/AbstractText。",
+        "methodologicalScope": "作者摘要中的三项组成与影响量。",
+        "independence": "方法或回顾仅支撑其明示范围；同系模型及其引用并非独立生态验证。",
+        "limitations": [
+          "仅核对公开摘要和明示身份；没有完整论文或重跑底层模型。",
+          "不从该论文补写2019发行工作簿的公式。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-15"
+      },
+      "rights": "原论文及作者摘要保留各自权利；索引开放访问不授予复制或分发全文的许可。仅提供归属、定位和原创释义。",
+      "unread": [
+        "仅核对公开摘要和明示身份；没有完整论文或重跑底层模型。",
+        "不从该论文补写2019发行工作簿的公式。"
+      ],
+      "sourceKeys": [
+        "src-acid113-roy-effect"
+      ],
+      "artifacts": [
+        {
+          "id": "art-acid113-roy-effect",
+          "mediaType": "application/xml",
+          "sha256": "b2eb38f87ceb647248512b3077c5418a00236916879c558eb1ea8cd240065e5b",
+          "resolvedUrl": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=25226072&retmode=xml"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-acid113-roy-effect",
+          "artifactId": "art-acid113-roy-effect",
+          "locator": "NLM PubMed PMID 25226072，PubmedArticle/MedlineCitation/Article/Abstract/AbstractText",
+          "topics": [
+            "Roy 2014",
+            "大气命运、土壤敏感性与植物效应"
+          ],
+          "limits": [
+            "仅核对公开摘要和明示身份；没有完整论文或重跑底层模型。",
+            "不从该论文补写2019发行工作簿的公式。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rd-acid113-glam-scoping",
+      "workId": "work-acid113-glam-scoping",
+      "title": "Global LCIA Guidance (GLAM) Phase 3 Scoping document",
+      "version": "GLAM Phase 3 Scoping document，2021官网载体，166页",
+      "url": "https://www.lifecycleinitiative.org/wp-content/uploads/2021/02/GLAM3-Scoping-document.pdf",
+      "accessedAt": "2026-11-15",
+      "readAt": "2026-11-15",
+      "readingStatus": "selected-passages",
+      "question": "该作品给出何种量、模型组成或发行说明？",
+      "argumentSummary": "后来的项目回顾明确把土壤敏感性列入2019中点因子，并以kg SO₂当量/kg排放物描述。该表述与2019 §3.4的叙述应共同保留。",
+      "appraisal": {
+        "basis": "实际选读载体：Terrestrial Acidification Impacts on Ecosystems，Framing及State-of-the-art，印刷pp77–78，含图15的说明。",
+        "methodologicalScope": "早期指南的后续归述，独立作品与实际PDF载体。",
+        "independence": "方法或回顾仅支撑其明示范围；同系模型及其引用并非独立生态验证。",
+        "limitations": [
+          "范围报告没有给出具名2019工作簿或更正；不证明发行表计算步骤。",
+          "不据此说明当前GLAM版本实现。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-15"
+      },
+      "rights": "官网公开供查阅；未确认该范围报告的再分发许可。只登记出处及原创释义。",
+      "unread": [
+        "范围报告没有给出具名2019工作簿或更正；不证明发行表计算步骤。",
+        "不据此说明当前GLAM版本实现。"
+      ],
+      "sourceKeys": [
+        "src-acid113-glam-scoping"
+      ],
+      "artifacts": [
+        {
+          "id": "art-acid113-glam-scoping",
+          "mediaType": "application/pdf",
+          "sha256": "6e9d7c23357801cf650432bcd0ea3c8d18699e985674320be033d65f83cd6d45",
+          "resolvedUrl": "https://www.lifecycleinitiative.org/wp-content/uploads/2021/02/GLAM3-Scoping-document.pdf",
+          "pageCount": 166
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-acid113-glam-scoping",
+          "artifactId": "art-acid113-glam-scoping",
+          "locator": "Terrestrial Acidification Impacts on Ecosystems，Framing及State-of-the-art，印刷pp77–78，含图15的说明",
+          "printedPages": "77–78",
+          "pdfIndices": [
+            76,
+            77
+          ],
+          "topics": [
+            "早期GLAM中点回顾",
+            "土壤敏感性",
+            "陆地酸化"
+          ],
+          "limits": [
+            "范围报告没有给出具名2019工作簿或更正；不证明发行表计算步骤。",
+            "不据此说明当前GLAM版本实现。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rd-acid113-seppala-ae",
+      "workId": "work-acid113-seppala-ae",
+      "title": "Country-dependent Characterisation Factors for Acidification and Terrestrial Eutrophication Based on Accumulated Exceedance as an Impact Category Indicator",
+      "version": "2006期刊原作，出版社公开预览，DOI 10.1065/lca2005.06.215",
+      "url": "https://link.springer.com/article/10.1065/lca2005.06.215",
+      "accessedAt": "2026-11-15",
+      "readAt": "2026-11-15",
+      "readingStatus": "selected-passages",
+      "question": "该作品给出何种量、模型组成或发行说明？",
+      "argumentSummary": "作者摘要说明AE同时纳入超过临界负荷的面积和超载程度，区别于只按未受保护面积的指标。",
+      "appraisal": {
+        "basis": "实际选读载体：出版社订阅预览 Abstract。",
+        "methodologicalScope": "只取原作公开摘要用于界定方法关系。",
+        "independence": "方法或回顾仅支撑其明示范围；同系模型及其引用并非独立生态验证。",
+        "limitations": [
+          "未取得或核读完整论文、原表行、推导或输入。",
+          "不把原作摘要当作EF3.1发行行的验证。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-15"
+      },
+      "rights": "出版者开放展示摘要；未取得全文许可。仅提供作品身份、摘要定位和原创释义。",
+      "unread": [
+        "未取得或核读完整论文、原表行、推导或输入。",
+        "不把原作摘要当作EF3.1发行行的验证。"
+      ],
+      "sourceKeys": [
+        "src-acid113-seppala-ae"
+      ],
+      "artifacts": [
+        {
+          "id": "art-acid113-seppala-ae",
+          "mediaType": "text/html",
+          "sha256": "5de0abcfe1046d99abeb340daba6b078555564baeb25960b8361950434c86526",
+          "resolvedUrl": "https://link.springer.com/article/10.1065/lca2005.06.215"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-acid113-seppala-ae",
+          "artifactId": "art-acid113-seppala-ae",
+          "locator": "出版社订阅预览 Abstract",
+          "topics": [
+            "超载面积与程度",
+            "欧洲AE"
+          ],
+          "limits": [
+            "未取得或核读完整论文、原表行、推导或输入。",
+            "不把原作摘要当作EF3.1发行行的验证。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rd-acid113-posch-ae",
+      "workId": "work-acid113-posch-ae",
+      "title": "The role of atmospheric dispersion models and ecosystem sensitivity in the determination of characterisation factors for acidifying and eutrophying emissions in LCIA",
+      "version": "2008期刊原作，出版社公开预览，DOI 10.1007/s11367-008-0025-9",
+      "url": "https://link.springer.com/article/10.1007/s11367-008-0025-9",
+      "accessedAt": "2026-11-15",
+      "readAt": "2026-11-15",
+      "readingStatus": "selected-passages",
+      "question": "该作品给出何种量、模型组成或发行说明？",
+      "argumentSummary": "作者摘要对照仅化学潜势、仅沉降和结合临界负荷的AE，并允许在不掌握排放地时采用简化的初步近似。",
+      "appraisal": {
+        "basis": "实际选读载体：出版社订阅预览 Abstract。",
+        "methodologicalScope": "只取原作公开摘要用于界定方法关系。",
+        "independence": "方法或回顾仅支撑其明示范围；同系模型及其引用并非独立生态验证。",
+        "limitations": [
+          "未取得或核读完整论文、原表行、推导或输入。",
+          "不把原作摘要当作EF3.1发行行的验证。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-15"
+      },
+      "rights": "出版者开放展示摘要；未取得全文许可。仅提供作品身份、摘要定位和原创释义。",
+      "unread": [
+        "未取得或核读完整论文、原表行、推导或输入。",
+        "不把原作摘要当作EF3.1发行行的验证。"
+      ],
+      "sourceKeys": [
+        "src-acid113-posch-ae"
+      ],
+      "artifacts": [
+        {
+          "id": "art-acid113-posch-ae",
+          "mediaType": "text/html",
+          "sha256": "863aa6014d32c12092340b937d464e1e585a83179854e9eb763e761886d33ac3",
+          "resolvedUrl": "https://link.springer.com/article/10.1007/s11367-008-0025-9"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-acid113-posch-ae",
+          "artifactId": "art-acid113-posch-ae",
+          "locator": "出版社订阅预览 Abstract",
+          "topics": [
+            "大气沉降与临界负荷",
+            "更新AE",
+            "化学潜势的用途"
+          ],
+          "limits": [
+            "未取得或核读完整论文、原表行、推导或输入。",
+            "不把原作摘要当作EF3.1发行行的验证。"
+          ]
+        }
+      ]
     }
   ],
   "gaps": [
@@ -29796,6 +30474,14 @@
         "V7"
       ],
       "nextAction": "有合法数据和适用设计时，按同一边界检验实际移入／移出、其他调度反应和不确定性；原始数据、补充资料及源模型回放各自核定。"
+    },
+    {
+      "id": "gap-acid113-glam-workbook",
+      "description": "2019指南把中点归于Roy 2012b并以加入土壤敏感性说明下一步，后续范围报告明确将土壤敏感性列入中点因子。未检查具名2019发行工作簿及原始更正。",
+      "nextAction": "取得有版本与使用授权的2019原工作簿、解释或正式更正后，按来源－接收区、敏感性与二氧化硫参照逐项复核；如做数值对读，另需同流、位置和权重的配对因子。",
+      "affectedUnits": [
+        "B16"
+      ]
     }
   ],
   "revisions": [
@@ -32429,6 +33115,24 @@
       ],
       "affectedUnits": [
         "B12"
+      ]
+    },
+    {
+      "id": "rev-acid-equivalents-113-20261115",
+      "before": "B16解释2019路径和中点／端点，以及同一氨排放可以进入不同类别，尚缺同一输入流的实际发行数据对照。",
+      "after": "在旧选读记录后追加2011／2019原件、2019与后续归述张力及两个EF3.1方法的确切行；另核流、质量以及量属性身份。",
+      "reasoning": "把化学基准、排放地索引、敏感性与参照量的作用分清，保留原案、旧选读及2019工作簿缺口。修订不认定跨包数值换算已验证。",
+      "status": "selected-originals-and-rows-inspected-candidate-pending-independent-reader-review",
+      "triggerPassageIds": [
+        "psg-acid113-ilcd-ae",
+        "psg-acid113-glam-midpoint",
+        "psg-acid113-glam-scoping",
+        "psg-acid113-ef-update",
+        "psg-acid113-ef-so2-cz",
+        "psg-acid113-ef-nh3-nutrient-cz"
+      ],
+      "affectedUnits": [
+        "B16"
       ]
     }
   ]

@@ -1,4 +1,4 @@
-import { currentBookLayout, currentBookMdxMatches, currentBookFileMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
+import { currentAcidEquivalents, currentBookLayout, currentBookMdxMatches, currentBookFileMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import { createHash } from 'node:crypto';
 import { isDeepStrictEqual as same } from 'node:util';
 import original from '../config/pm-selection-original.json' with { type: 'json' };
@@ -239,7 +239,14 @@ export function validatePmSelectionCoverage(edition, sources, catalog, accepted,
   for (const [kind, rows] of Object.entries({ readings: readings?.readings, literature: literature?.records,
     gaps: readings?.gaps, revisions: readings?.revisions, queries: literature?.protocol?.queries })) {
     const expected = accepted.research[kind];
-    if (!Array.isArray(rows) || !includes(rows, expected)
+    const observed = Array.isArray(rows) ? byId(rows) : new Map();
+    const retainsResearch = expected.every(previous => {
+      const current = observed.get(previous.id);
+      if (same(previous, current)) return true;
+      return currentAcidEquivalents && kind === 'readings' && previous.id === 'rd-unep-glam-2019-pathways'
+        && currentBookRecordMatches('readings', previous, current, 'raw');
+    });
+    if (!Array.isArray(rows) || !retainsResearch
         || auditPrefixes[kind] && !exactIds(rows.filter(row => row.id.startsWith(auditPrefixes[kind])), ids(expected)))
       errors.push(`PM selection reviewed research ${kind} differs`);
   }

@@ -107,6 +107,15 @@ records the source-declaration completeness defect and its tested correction.
 Current output acceptance and required source/root delivery remain independently
 tracked; no full Part IV, empirical or whole-book completion follows from this unit.
 
+[Issue113](https://github.com/tiangong-lca/knowledge-base/issues/113) continues
+B16 with acidification equivalents, receiving constructions and six exact EF3.1
+factor rows. The [protocol and review record](editorial/2026-11-15-acid-equivalents.md)
+preserves the unresolved GLAM wording, actual partial-reading scope, matched
+flow/country/unit identities and two distinct numerical controls. Complete23-
+paragraph reading and a bounded correction reread have four actual answers.
+The source values, old phosphorus case and historical citation scopes remain
+distinct from the actual-output and final source/root delivery qualifications.
+
 Rule adoption101 itself is fully delivered: PR103/Main10dc686 and
 root2381/PR2382/Main90bcaa574, with complete ordinary source/root handoff receipts.
 Programme9 retains all eight pending global criteria and this continuing GOAL.

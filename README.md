@@ -14,11 +14,20 @@ checkPaths:
   - "package.json"
   - "app/**"
   - "scripts/**"
-lastReviewedAt: 2026-11-15
-lastReviewedCommit: 251467ca70f4f21a50d6284696dcb648144d1f94
+lastReviewedAt: 2026-11-16
+lastReviewedCommit: 040cecf06e63cf204d987870de24a0e44dffb38b
 ---
 
 # LCA Living Knowledge Base and Review
+
+[Acid equivalents #113](https://github.com/tiangong-lca/knowledge-base/issues/113)
+compares modeled receiving quantities and exact EF3.1 factor identities. Its
+[comparison record](_docs/editorial/2026-11-15-acid-equivalents.md) separates
+the two country-row controls, the shared Moles property and the unresolved GLAM
+component description. Eight new B16 paragraphs preserve the earlier fifteen
+and the phosphorus case. Source/data, complete-reader and actual-output reviews
+have distinct evidence; ordinary production and exact source/root delivery remain
+tracked on Issue113. The full programme is still open.
 
 [Land recovery #111](https://github.com/tiangong-lca/knowledge-base/issues/111)
 distinguishes a modeled recovery cutoff from a fixed midpoint-to-endpoint

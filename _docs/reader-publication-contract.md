@@ -1,6 +1,6 @@
 ---
-lastReviewedAt: 2026-11-15
-lastReviewedCommit: 251467ca70f4f21a50d6284696dcb648144d1f94
+lastReviewedAt: 2026-11-16
+lastReviewedCommit: 040cecf06e63cf204d987870de24a0e44dffb38b
 title: Reader publication and layout contract
 docType: contract
 scope: repo
@@ -30,6 +30,12 @@ related:
 ---
 
 # 交付给读者的是书稿
+
+任务113保留B16原十五段与磷算例，新增八段。完整酸化路径与所推荐的中点应
+分句说明，不能把路径中的植物响应误带入中点。排放国、接收环境和发行行各有
+身份；相同摩尔类属性不自动构成环境当量或类别权重。旧十五注、3／5／2等
+范围及两处下游水资源引用须在实际网页／打印中逐项可达，磷输入仍是原字节。
+GLAM文本张力与单位组版本限度须有读者可见的说明，不能仅留在开发台账。
 
 任务111的土地恢复比较保留原六段和三个节，新增十段。读者应能分清弃用后的
 时间窗与恢复历时、每面积因子与物理面积、未加权区域量与全球PDF指标，以及

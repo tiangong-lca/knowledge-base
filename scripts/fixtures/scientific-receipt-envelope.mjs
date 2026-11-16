@@ -1,4 +1,5 @@
 import { readableBookReviewSubject, sha256 } from '../reader-current-edition.mjs';
+import { restoreScientificRecords } from '../reader-scientific-delta.mjs';
 
 // These in-memory envelopes exercise the receipt predicates. They carry no editorial approval.
 export function testEnvelopes(capture, unit, mutateOutput = () => {}) {
@@ -32,4 +33,10 @@ export function testEnvelopes(capture, unit, mutateOutput = () => {}) {
     return { kind, date: identity.date, artifactFile, artifactSha256, reportFile, reportSha256: sha256(report) };
   });
   return artifacts;
+}
+
+export function previousScientificTestRecords(raw, unit) {
+  if (!unit) return raw;
+  const records = new Map(unit.changes.filter(row => row.kind === 'record').map(row => [row.key,row]));
+  return restoreScientificRecords(raw, unit.rawRecords, unit.rawFields, records, () => true);
 }
