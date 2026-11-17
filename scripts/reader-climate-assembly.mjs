@@ -62,7 +62,7 @@ function inspectClimateAssemblySource(raw) {
     const explicit = /^(.*?)\s+\[#([^\]]+)\]$/.exec(pieces[i]), title = explicit ? explicit[1] : pieces[i], id = explicit ? explicit[2] : title, body = pieces[i + 1];
     headings.push({ id, title });
     occurrences.push(...collectChapterClaimOccurrences(body).map((claim) => ({ id: claim, section: id })));
-    const rest = body.replace(/<figure>[\s\S]*?<\/figure>/g, (figure) => {
+    const rest = body.replace(/<(figure|ReaderFigure)>[\s\S]*?<\/\1>/g, (figure) => {
       const attr = (name) => new RegExp(`\\b${name}="([^"]*)"`).exec(figure)?.[1];
       figures.push({ section: id, src: attr("src"), alt: attr("alt"), width: attr("width"), height: attr("height"), caption: /<figcaption>([^<]*)<\/figcaption>/.exec(figure)?.[1] });
       return "";
@@ -512,7 +512,9 @@ function validateRenderedClimateAssembly(document, path, catalog, accepted, inde
       else checked.add(annotation);
     }
     const unitEntries = entries.filter((entry) => entry.path === path && entry.route === route), label = (destination) => {
-      const destSource = accepted.sources.find((row) => row.route === (destination.route === climateAssemblyKey ? climateAssemblyManuscript : destination.route)), ids = destination.route === climateAssemblyKey ? accepted.sections.flatMap((row) => row.claimIds) : destination.route === climateAssemblyAppendix ? climateAssemblyMovedIds : accepted.website.find((row) => row.route === destination.route)?.claimIds ?? [];
+      const destRoute = destination.route === climateAssemblyKey ? climateAssemblyManuscript : destination.route;
+      const { source: destSource, occurrences: destOccurrences } = reviewedClimateAssemblySource(accepted, destRoute);
+      const ids = destOccurrences.map((row) => row.id);
       return `《${destSource?.title}》${destination.kind === "note" ? `注 ${ids.indexOf(destination.claimId) + 1}` : destination.kind === "heading" ? `·${destination.path === "/print" ? destination.id.slice(printUnitAnchor(destination.route).length + 1) : destination.id}` : destination.kind === "note-group" ? "注释" : ""}`;
     };
     for (const entry of unitEntries) {

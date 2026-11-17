@@ -40,7 +40,9 @@ const toxConfigPath = 'config/reader-toxicity-comparison.json';
 const toxModulePath = 'scripts/reader-toxicity-comparison.mjs';
 const waterConfigPath = 'config/reader-water-scarcity.json';
 const waterModulePath = 'scripts/reader-water-scarcity.mjs';
-const fixtureAliases = new Set([serviceModulePath, substitutionModulePath, shiftModulePath, footprintModulePath, landModulePath, acidModulePath, mineralModulePath, fossilModulePath, ozoneModulePath, ozradModulePath, toxModulePath, waterModulePath].map(path => `@/${path}`));
+const bioConfigPath = 'config/reader-biogenic-carbon.json';
+const bioModulePath = 'scripts/reader-biogenic-carbon.mjs';
+const fixtureAliases = new Set([serviceModulePath, substitutionModulePath, shiftModulePath, footprintModulePath, landModulePath, acidModulePath, mineralModulePath, fossilModulePath, ozoneModulePath, ozradModulePath, toxModulePath, waterModulePath, bioModulePath].map(path => `@/${path}`));
 const flowPinPath = 'scripts/reader-flow-boundary-pins.mjs';
 
 async function loadArchive() {
@@ -89,7 +91,7 @@ async function materialize(root) {
     .map(entry => `scripts/${entry.name}`);
   const components = ['components/evidence.tsx', 'components/numbered-heading.tsx', 'components/chapter-content.tsx'];
   const current = [...configs, ...scripts, ...components, 'lib/teaching-case.ts']
-    .filter(path => ![copyeditConfigPath, copyeditPinPath, flowConfigPath, flowPinPath, serviceConfigPath, serviceModulePath, substitutionConfigPath, substitutionModulePath, shiftConfigPath, shiftModulePath, footprintConfigPath, footprintModulePath, landConfigPath, landModulePath, acidConfigPath, acidModulePath, mineralConfigPath, mineralModulePath, fossilConfigPath, fossilModulePath, ozoneConfigPath, ozoneModulePath, ozradConfigPath, ozradModulePath, toxConfigPath, toxModulePath, waterConfigPath, waterModulePath].includes(path));
+    .filter(path => ![copyeditConfigPath, copyeditPinPath, flowConfigPath, flowPinPath, serviceConfigPath, serviceModulePath, substitutionConfigPath, substitutionModulePath, shiftConfigPath, shiftModulePath, footprintConfigPath, footprintModulePath, landConfigPath, landModulePath, acidConfigPath, acidModulePath, mineralConfigPath, mineralModulePath, fossilConfigPath, fossilModulePath, ozoneConfigPath, ozoneModulePath, ozradConfigPath, ozradModulePath, toxConfigPath, toxModulePath, waterConfigPath, waterModulePath, bioConfigPath, bioModulePath].includes(path));
   const currentCopyeditPin = await readFile(join(repo, copyeditPinPath), 'utf8');
   const copyeditUnitPin = /^export const readerCopyeditUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
   assert.equal([...currentCopyeditPin.matchAll(copyeditUnitPin)].length, 1);
@@ -132,6 +134,9 @@ async function materialize(root) {
   const currentWaterModule = await readFile(join(repo, waterModulePath), 'utf8');
   const waterUnitPin = /^export const waterScarcityUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
   assert.equal([...currentWaterModule.matchAll(waterUnitPin)].length, 1);
+  const currentBioModule = await readFile(join(repo, bioModulePath), 'utf8');
+  const bioUnitPin = /^export const biogenicCarbonUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
+  assert.equal([...currentBioModule.matchAll(bioUnitPin)].length, 1);
   // The only archived script is the independently selected old edition pin.
   // All validation code, including the expectation resolver, comes from the
   // current worktree and runs under the historical book data in this directory.
@@ -168,6 +173,8 @@ async function materialize(root) {
     write(root, toxModulePath, currentToxModule.replace(toxUnitPin, 'export const toxicityComparisonUnitPin = null;')),
     write(root, waterConfigPath, JSON.stringify({ schemaVersion: 1, status: 'inactive', unit: null })),
     write(root, waterModulePath, currentWaterModule.replace(waterUnitPin, 'export const waterScarcityUnitPin = null;')),
+    write(root, bioConfigPath, JSON.stringify({ schemaVersion: 1, status: 'inactive', unit: null })),
+    write(root, bioModulePath, currentBioModule.replace(bioUnitPin, 'export const biogenicCarbonUnitPin = null;')),
     symlink(join(repo, 'node_modules'), join(root, 'node_modules'), process.platform === 'win32' ? 'junction' : 'dir'),
   ]);
 }

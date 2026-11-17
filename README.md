@@ -20,6 +20,32 @@ lastReviewedCommit: 615140573f6f8ba8e52943a5f94da360ffb2a391
 
 # LCA Living Knowledge Base and Review
 
+[Biogenic & LULUC carbon, feedback switches, storage rules & package boundaries #127](https://github.com/tiangong-lca/knowledge-base/issues/127)
+extends B15 (`49` claims total across its five sections) and its two companion
+website pages (`climate-response-and-metrics` at `41` claims and
+`emission-time-and-assessment` at `8` claims) with the cross-system climate
+comparison (`V5-A`): ILCD 2011 and EF 2.0–3.1 (`GWP100` midpoint only, `0`
+recommended endpoints, `EF 3.1` single-score weight `21.06%` and global `NF`
+`7,553.08 kg CO₂ eq./person`) versus ReCiPe 2016 (`I/H/E` `GWP20/100/1000`
+midpoints multiplied by gas-independent `CO₂`-`IAGTP` constants across three
+AoPs) and LC-IMPACT (`0` midpoints, `100/1000`-yr `certain` `3` HH / `0`
+aquatic vs `all` `6` HH / `<42°` aquatic damage factors), ReCiPe 2016's `H`-only
+non-`CO₂` carbon-feedback switch (`N₂O` `264 → 298 → 78.8` and `3.5 kg CH₄` vs
+`1 kg N₂O` reversal), `EF 3.1`'s exact disjoint `1,099 = 1,074 + 13 + 12` XML
+partition (native-forest wood/soil `CO₂` in `LULUC` excluding uptake, `LULUC`
+`CH₄ = 29.8`, peat and all `6` `N₂O = 273.0` flows in `Fossil`), `0/0` versus
+`−1/+1` cradle-to-gate `−44/12` spurious negative-carbon mismatch, `EF 3.0 → 3.1`
+methane `36.75 → 29.8` and `CO` `1.57 → 0` removal (`-6.7%` `NF` drop and `-58%`
+to `+302%` swings across `2,752` datasets), `PEF` `biogenic-100yr = −1` abolition
+and `PAS 2050` `20`-year `dLUC` window versus dynamic `T−tₖ` convolution, and
+`EF-v3.1.zip` `Normalisation_Weighting_Factors_EF_3.1.xlsx` `K1161 = 27.2` `AR6`
+`FGD` draft residual (`+3.79 kg CO₂ eq./person`), `14af9ca7.xml` missing
+high-altitude `CO₂` subcompartment, and `ILCD`/`RIVM` report errata. Its
+[comparison record](_docs/editorial/2026-11-17-biogenic-carbon.md) binds 13
+single-source evidence rows and 128 verified `numericFacts` while conserving all
+984 prior claims (and `climate-numerical-reconstruction.mdx` / `climate-metrics-v1.json`)
+byte-for-byte across B15 citation history.
+
 [Water scarcity methods, withdrawal-return accounting, value choices & package rules #125](https://github.com/tiangong-lca/knowledge-base/issues/125)
 extends B18 across its four retained sections and two `ReaderSection` anchors
 (`28` claims total) with the cross-system water-scarcity comparison (`V5-I`):
@@ -40,6 +66,8 @@ global `-0.005` asymmetry, `GL = 0.00`, `inventoryItems = 36`) plus `RIVM 2016-0
 [comparison record](_docs/editorial/2026-11-17-water-scarcity.md) binds 9
 single-source evidence rows and 106 verified `numericFacts` while conserving all
 976 prior claims byte-for-byte alongside `#109` and `#125` B18 citation history.
+Unit #125 is fully delivered at Main `5c98244958fdb290f506429b98c600fe7f50e361`,
+qualified 468-file hosting and root #2425 (`3cda76373856b257a2900f4c3c2b98ee6254e196`).
 
 [Chemical toxicity pathways & method families #123](https://github.com/tiangong-lca/knowledge-base/issues/123)
 extends B19 across its three retained sections (`20` claims total) with the
