@@ -234,9 +234,33 @@ description (`ordinary-0`) bind 12 single-source `ev-tox123-*` records (`1-to-1`
 with 12 `psg-tox123-*` passages) and 132 structured `numericFacts` while
 conserving 100% of all 968 prior claims byte-for-byte. Separate source,
 20-paragraph B19 reader, publication-engineering and actual-output acceptances
-(`c65a21d4...`) and normal source/root delivery are tracked on Issue123. B18
-water scarcity, B15 biogenic/LULUC carbon, Part IV continuous reread (`B14`–`B19`,
-including `index.mdx:18`) and Programme9 requirements remain active.
+(`c65a21d4...`) and normal source/root delivery are tracked on Issue123.
+Unit123 is fully delivered: source PR124/Main
+`9486bae9a7901da6a6d720b2320f9f793298ef27`, qualified 468-file hosted output
+(`dpmxd5kldqaa`), root2419/PR2421/Main `c91e4c6295a77828b01cbe14b85720aeb8d320c9`,
+and ordinary final completion and source-handoff (`1/1`) receipts.
+
+[Issue125](https://github.com/tiangong-lca/knowledge-base/issues/125) continues
+with B18 water scarcity methods, withdrawal-return accounting, value choices and
+package/report rules (`V5-I`), recorded in the
+[water-scarcity comparison record](editorial/2026-11-17-water-scarcity.md):
+selected ILCD 2011 (`§1 Tables 1–2`, `§3.11`, `§6.11`), JRC109369 (`§2 Tables 1–2`,
+`§4.11`), JRC130796 (`§2 Table 1`, `§4.2 Table 10`, `§5.1`, `§5.1.2 Table 13`),
+15 CRC32-verified official `EF-v3.1.zip` XML members (`b2ad66ce` Water use method
+with zero converter copy, `Volume` `93a60a56`, `Units of volume` `93a60a57`,
+source `6b126a5e`, and 11 water flows), RIVM 2016-0104 (`Tables 1.3–1.5`,
+`Chapter 2` p. 32, `Chapter 10`, `References` pp. 113 & 115, `§21 S6 Tables S6.1–S6.3`),
+Huijbregts et al. 2017 (`§§1, 2.1, 3.1.9, 3.2.9`), and Verones et al. 2020
+LC-IMPACT (`§§2.1–2.8`, `§3.1`, `§§4.1–4.2`). Eight new canonical paragraphs
+(`2 + 2 + 0 + (2 + 2)`, bringing B18 from 20 to 28 claims and the catalog from
+976 to 984) and updated B18 description (`ordinary-0`) bind 9 single-source
+`ev-water125-*` records (`1-to-1` with 9 `psg-water125-*` passages) and 106
+structured `numericFacts` while conserving 100% of all 976 prior claims and all 8
+`rd-water-*` readings byte-for-byte. Separate unconditional-PASS source,
+28-paragraph zero-context B18 reader, adversarial publication-engineering and
+actual-output acceptances (`3ce74b2c...`) and normal source/root delivery are
+tracked on Issue125. B15 biogenic/LULUC carbon, Part IV continuous reread
+(`B14`–`B19`, including `index.mdx:18`) and Programme9 requirements remain active.
 
 Rule adoption101 itself is fully delivered: PR103/Main10dc686 and
 root2381/PR2382/Main90bcaa574, with complete ordinary source/root handoff receipts.

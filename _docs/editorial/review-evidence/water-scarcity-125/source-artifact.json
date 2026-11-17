@@ -1,0 +1,1415 @@
+{
+  "schemaVersion": 1,
+  "kind": "source",
+  "unit": "water-scarcity-125",
+  "subjectSha256": "34b5a0f2e73e9563f4e9c7e688b3e8a1f23c571b6f704e84ff8fd37ec9809048",
+  "date": "2026-11-17",
+  "scope": [
+    "content/docs/book/water-scarcity-and-reference.mdx",
+    "sources:src-book-recipe-2017-primary-article",
+    "sources:src-book-ilcd-2011-lcia-recommendations",
+    "sources:src-flow-pilot-ef31-update",
+    "sources:src-land111-rivm2016",
+    "sources:src-land111-lcimpact2020-article",
+    "sources:src-fossil117-jrc109369",
+    "readings:rd-recipe-2017-primary-article",
+    "readings:rd-ilcd-2011-eutrophication-pathways",
+    "readings:rd-flow-pilot-ef31",
+    "readings:rd-flow-pilot-ef31-update",
+    "readings:rd-land111-rivm2016",
+    "readings:rd-land111-lcimpact2020-article",
+    "readings:rd-fossil117-jrc109369",
+    "literature:lit-m05",
+    "literature:work-recipe-2017-method-article",
+    "literature:work-ilcd-2011-lcia-recommendations",
+    "literature:work-flow-pilot-ef31",
+    "literature:work-flow-pilot-ef31-update",
+    "literature:work-land111-lcimpact2020-article",
+    "literature:work-fossil117-jrc109369",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:order:sources",
+    "researchMetadata:order:gaps",
+    "researchMetadata:order:revisions",
+    "researchMetadata:order:queries",
+    "researchMetadata:public-projection",
+    "claims:cl-water125-method-genealogy",
+    "claims:cl-water125-withdrawal-return-accounting",
+    "claims:cl-water125-ef-country-resolution-and-climates",
+    "claims:cl-water125-value-choices-and-denominator-paradox",
+    "claims:cl-water125-country-rank-reversals",
+    "claims:cl-water125-belgium-canada-mechanism-contrast",
+    "claims:cl-water125-package-report-discrepancies",
+    "claims:cl-water125-diagnostic-synthesis",
+    "evidence:ev-water125-ilcd2011-water",
+    "evidence:ev-water125-jrc109369-water",
+    "evidence:ev-water125-jrc130796-water",
+    "evidence:ev-water125-ef31-water-xml",
+    "evidence:ev-water125-rivm-ch10-framework",
+    "evidence:ev-water125-rivm-ch10-endpoints",
+    "evidence:ev-water125-rivm-s6-country-and-corruption",
+    "evidence:ev-water125-recipe2017-water",
+    "evidence:ev-water125-lcimpact2020-water",
+    "sources:src-water125-ef31-selected-members",
+    "gaps:gap-water125-hydrological-grids-and-recipe-spreadsheets",
+    "revisions:rev-water125-b18-water-scarcity-comparison",
+    "queries:q-water125-scarcity-accounting-perspectives-and-packages-20261117"
+  ],
+  "observed": "Primary scoped judgment integrating two-round unconditional-PASS independent source, zero-context full-chapter reader and publication-engineering audits with direct original, export and browser/print checks; no human or empirical certification.",
+  "observations": {
+    "state": {
+      "before": "0f9e2c482bc7430df531bfa415c7988211680adae07fcda8709958fea14e33e8",
+      "after": "77fdafac46c642d6ff535e4cc05e7ccfa5fbb18660bb1e49ffa5c23c2ee19991"
+    },
+    "changes": [
+      {
+        "kind": "file",
+        "key": "content/docs/book/water-scarcity-and-reference.mdx",
+        "from": "8ae52be3d2f1e416c24397cfdab6750474141fefa33897b96d717031055bdcff",
+        "to": "66f3d4a44cae1d36f48be185fe20c29cc9cd51a0c5d551e61bc2dbf9c0fd0cb2",
+        "rationale": "更新B18简介并在不打断X/Y两流域连续算例的前提下于四处自然接口增补八段水资源方法谱系、取退水账本、价值选择分母效应、跨国排序反转与发行包异文比较论述，100%保留原有二十段AWARE论述。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-book-recipe-2017-primary-article",
+        "from": {
+          "raw": "dc6367e76b28234fa523f22e25e01677db91a98824c883fb456e0256c5391716",
+          "public": "dc6367e76b28234fa523f22e25e01677db91a98824c883fb456e0256c5391716",
+          "protected": "dc6367e76b28234fa523f22e25e01677db91a98824c883fb456e0256c5391716"
+        },
+        "to": {
+          "raw": "ef1b48fe24c08ac3ef720d2f0c5b4572f095708fa8d272a2f253bf2b44d25424",
+          "public": "ef1b48fe24c08ac3ef720d2f0c5b4572f095708fa8d272a2f253bf2b44d25424",
+          "protected": "ef1b48fe24c08ac3ef720d2f0c5b4572f095708fa8d272a2f253bf2b44d25424"
+        },
+        "rationale": "登记EF 3.1涉水XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-book-ilcd-2011-lcia-recommendations",
+        "from": {
+          "raw": "751c820c51987c061bb7c0c886551de82ba357e080ee2d95401ae1b0ca14675d",
+          "public": "751c820c51987c061bb7c0c886551de82ba357e080ee2d95401ae1b0ca14675d",
+          "protected": "751c820c51987c061bb7c0c886551de82ba357e080ee2d95401ae1b0ca14675d"
+        },
+        "to": {
+          "raw": "dd0c0325b8e296f7e7fad3b7c57f78871384a2dadbc1b554795b3bbbdc8fe42d",
+          "public": "dd0c0325b8e296f7e7fad3b7c57f78871384a2dadbc1b554795b3bbbdc8fe42d",
+          "protected": "dd0c0325b8e296f7e7fad3b7c57f78871384a2dadbc1b554795b3bbbdc8fe42d"
+        },
+        "rationale": "登记EF 3.1涉水XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-flow-pilot-ef31-update",
+        "from": {
+          "raw": "0d50ed997a388d9a8939fb0de60ed0202c47e7792e164eeab88e58f62a007d5b",
+          "public": "0d50ed997a388d9a8939fb0de60ed0202c47e7792e164eeab88e58f62a007d5b",
+          "protected": "0d50ed997a388d9a8939fb0de60ed0202c47e7792e164eeab88e58f62a007d5b"
+        },
+        "to": {
+          "raw": "22a7f15f86023cbc4cf08bc0a93bbd805bb318bc2285a000a0fa8c28835d1ec2",
+          "public": "22a7f15f86023cbc4cf08bc0a93bbd805bb318bc2285a000a0fa8c28835d1ec2",
+          "protected": "22a7f15f86023cbc4cf08bc0a93bbd805bb318bc2285a000a0fa8c28835d1ec2"
+        },
+        "rationale": "登记EF 3.1涉水XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-land111-rivm2016",
+        "from": {
+          "raw": "6e3ad82522c0d49aa0e6c49cb8df3301c8d989dd5cdde08564aaad543bf7dd58",
+          "public": "6e3ad82522c0d49aa0e6c49cb8df3301c8d989dd5cdde08564aaad543bf7dd58",
+          "protected": "6e3ad82522c0d49aa0e6c49cb8df3301c8d989dd5cdde08564aaad543bf7dd58"
+        },
+        "to": {
+          "raw": "23340c1c05d10c02d52f14b4a5bdb5a4e17469277065fee6f35f827a65b2b142",
+          "public": "23340c1c05d10c02d52f14b4a5bdb5a4e17469277065fee6f35f827a65b2b142",
+          "protected": "23340c1c05d10c02d52f14b4a5bdb5a4e17469277065fee6f35f827a65b2b142"
+        },
+        "rationale": "登记EF 3.1涉水XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-land111-lcimpact2020-article",
+        "from": {
+          "raw": "80323cb9c9867d10c9865ff25d9b19abc8ee6d5fe0b7d53a60ef34cdc30fcaeb",
+          "public": "80323cb9c9867d10c9865ff25d9b19abc8ee6d5fe0b7d53a60ef34cdc30fcaeb",
+          "protected": "80323cb9c9867d10c9865ff25d9b19abc8ee6d5fe0b7d53a60ef34cdc30fcaeb"
+        },
+        "to": {
+          "raw": "114087ed8f172a0436bc83e790c77e4e9093f644aab635eedc6752c57c2e51e6",
+          "public": "114087ed8f172a0436bc83e790c77e4e9093f644aab635eedc6752c57c2e51e6",
+          "protected": "114087ed8f172a0436bc83e790c77e4e9093f644aab635eedc6752c57c2e51e6"
+        },
+        "rationale": "登记EF 3.1涉水XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-fossil117-jrc109369",
+        "from": {
+          "raw": "56e94b0d3b7f6a2cea94d60b9d5ec8f03cc687b6894937ba2b84a52f946b8f24",
+          "public": "56e94b0d3b7f6a2cea94d60b9d5ec8f03cc687b6894937ba2b84a52f946b8f24",
+          "protected": "56e94b0d3b7f6a2cea94d60b9d5ec8f03cc687b6894937ba2b84a52f946b8f24"
+        },
+        "to": {
+          "raw": "6d8af2cea3cd891ed8f2fb6e9551b79faa340eb40488d2e6f7603fe51561d0fa",
+          "public": "6d8af2cea3cd891ed8f2fb6e9551b79faa340eb40488d2e6f7603fe51561d0fa",
+          "protected": "6d8af2cea3cd891ed8f2fb6e9551b79faa340eb40488d2e6f7603fe51561d0fa"
+        },
+        "rationale": "登记EF 3.1涉水XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-recipe-2017-primary-article",
+        "from": {
+          "raw": "d24430471fc80774f9966c4c597c2e90debf8c4d3f2c61acfddba1b88a4ac69c",
+          "public": null,
+          "protected": "d24430471fc80774f9966c4c597c2e90debf8c4d3f2c61acfddba1b88a4ac69c"
+        },
+        "to": {
+          "raw": "87eb52dcd19bc8cea3d30ef984bb0cd9198348432756ea5a3e5290664da1a594",
+          "public": null,
+          "protected": "87eb52dcd19bc8cea3d30ef984bb0cd9198348432756ea5a3e5290664da1a594"
+        },
+        "rationale": "登记EF 3.1涉水XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-ilcd-2011-eutrophication-pathways",
+        "from": {
+          "raw": "6dd4b0e3a2a5d99cb476affef21bdbedcca5482db534e0e1f3630affe34f1bfe",
+          "public": null,
+          "protected": "6dd4b0e3a2a5d99cb476affef21bdbedcca5482db534e0e1f3630affe34f1bfe"
+        },
+        "to": {
+          "raw": "d126f74cafa7a521482d93ca118c637e24e4662ac8bd8319fde5757814145f9d",
+          "public": null,
+          "protected": "d126f74cafa7a521482d93ca118c637e24e4662ac8bd8319fde5757814145f9d"
+        },
+        "rationale": "登记EF 3.1涉水XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-flow-pilot-ef31",
+        "from": {
+          "raw": "39a1ba186290a82e916a82e3cc259f1f1219265764072ede307c3d808c3f75ed",
+          "public": null,
+          "protected": "39a1ba186290a82e916a82e3cc259f1f1219265764072ede307c3d808c3f75ed"
+        },
+        "to": {
+          "raw": "1448863d9c0c1807649fc66816f8610fc85faa8bd51d6e909c105c22b2a25f32",
+          "public": null,
+          "protected": "1448863d9c0c1807649fc66816f8610fc85faa8bd51d6e909c105c22b2a25f32"
+        },
+        "rationale": "登记EF 3.1涉水XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-flow-pilot-ef31-update",
+        "from": {
+          "raw": "e67bbc6adb918b5869dbf1f8fea58de4d817eeab3a4ee94c8b056e354d128dce",
+          "public": null,
+          "protected": "e67bbc6adb918b5869dbf1f8fea58de4d817eeab3a4ee94c8b056e354d128dce"
+        },
+        "to": {
+          "raw": "58f303ed92837c3a28296bec713fcf3d4ed009d09d342784cdec804176c36de3",
+          "public": null,
+          "protected": "58f303ed92837c3a28296bec713fcf3d4ed009d09d342784cdec804176c36de3"
+        },
+        "rationale": "登记EF 3.1涉水XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-land111-rivm2016",
+        "from": {
+          "raw": "62b82512b67d1488be86765fbec53eb0b320da17c5160d5d30629d07a8f990c5",
+          "public": null,
+          "protected": "62b82512b67d1488be86765fbec53eb0b320da17c5160d5d30629d07a8f990c5"
+        },
+        "to": {
+          "raw": "051915811fbda166f9a8ddd538c129d0ce72dd5afe66c728a8cbf19a10df5196",
+          "public": null,
+          "protected": "051915811fbda166f9a8ddd538c129d0ce72dd5afe66c728a8cbf19a10df5196"
+        },
+        "rationale": "登记EF 3.1涉水XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-land111-lcimpact2020-article",
+        "from": {
+          "raw": "a92abf7d108aa1c928fa316f273ed728ca1eb09df819ba1503ae42d852502b3a",
+          "public": null,
+          "protected": "a92abf7d108aa1c928fa316f273ed728ca1eb09df819ba1503ae42d852502b3a"
+        },
+        "to": {
+          "raw": "dc04b4f2bc64aa7f4311a2df39bf7cb71be0ded1492caaf022705db151a2ef39",
+          "public": null,
+          "protected": "dc04b4f2bc64aa7f4311a2df39bf7cb71be0ded1492caaf022705db151a2ef39"
+        },
+        "rationale": "登记EF 3.1涉水XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-fossil117-jrc109369",
+        "from": {
+          "raw": "dffd92da771ef3a9650d66d15d35e9c21aa0df29b0e27ed7b114b56b465fd430",
+          "public": null,
+          "protected": "dffd92da771ef3a9650d66d15d35e9c21aa0df29b0e27ed7b114b56b465fd430"
+        },
+        "to": {
+          "raw": "766f0df4be47ea1e84d4942aca10e54df9edb1315f8900accbce0dffd089c297",
+          "public": null,
+          "protected": "766f0df4be47ea1e84d4942aca10e54df9edb1315f8900accbce0dffd089c297"
+        },
+        "rationale": "登记EF 3.1涉水XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:lit-m05",
+        "from": {
+          "raw": "0662d70cce924aa2fed47079799434439ab29e828d64e82def20964c253e0765",
+          "public": null,
+          "protected": "0662d70cce924aa2fed47079799434439ab29e828d64e82def20964c253e0765"
+        },
+        "to": {
+          "raw": "bedf0e00487c49b21e8fea310f21b37e9fd592bc473410c66942dd965e22d60b",
+          "public": null,
+          "protected": "bedf0e00487c49b21e8fea310f21b37e9fd592bc473410c66942dd965e22d60b"
+        },
+        "rationale": "登记EF 3.1涉水XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-recipe-2017-method-article",
+        "from": {
+          "raw": "b31c75d217a4c48f0a27ca4090b09873592104f8239a3c9e032580c30c5eccb0",
+          "public": null,
+          "protected": "b31c75d217a4c48f0a27ca4090b09873592104f8239a3c9e032580c30c5eccb0"
+        },
+        "to": {
+          "raw": "08b57fcc3952333a1964aad8d7ad9385064f758644ca4fc25ab3fdea6e69f758",
+          "public": null,
+          "protected": "08b57fcc3952333a1964aad8d7ad9385064f758644ca4fc25ab3fdea6e69f758"
+        },
+        "rationale": "登记EF 3.1涉水XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-ilcd-2011-lcia-recommendations",
+        "from": {
+          "raw": "fd7909cf6e3db573f1eaab251891a51734eccc38a4b5d0ede6fe52faa010ef80",
+          "public": null,
+          "protected": "fd7909cf6e3db573f1eaab251891a51734eccc38a4b5d0ede6fe52faa010ef80"
+        },
+        "to": {
+          "raw": "6017e07499b898affa3ebcb18a76ea9873ee49d769e0d6da87fdcbf8341189dd",
+          "public": null,
+          "protected": "6017e07499b898affa3ebcb18a76ea9873ee49d769e0d6da87fdcbf8341189dd"
+        },
+        "rationale": "登记EF 3.1涉水XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-flow-pilot-ef31",
+        "from": {
+          "raw": "453cc8481146bd95beb6a3434b16641b3ff46cc6db6457d65502087fdb64090b",
+          "public": null,
+          "protected": "453cc8481146bd95beb6a3434b16641b3ff46cc6db6457d65502087fdb64090b"
+        },
+        "to": {
+          "raw": "407e353806a6cc2f8417f8d3d0ae4c1db4f9c3f7be89af2a9266aa0b24471ab3",
+          "public": null,
+          "protected": "407e353806a6cc2f8417f8d3d0ae4c1db4f9c3f7be89af2a9266aa0b24471ab3"
+        },
+        "rationale": "登记EF 3.1涉水XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-flow-pilot-ef31-update",
+        "from": {
+          "raw": "aef128a3432c11f4cbd3c2a4fce87ad9e7b2a7bdf2257adeb081c768fe89abda",
+          "public": null,
+          "protected": "aef128a3432c11f4cbd3c2a4fce87ad9e7b2a7bdf2257adeb081c768fe89abda"
+        },
+        "to": {
+          "raw": "84ae26774b6d042a349e7b3ebdafa129839fa9f0ca94341237affe9b4557c0c8",
+          "public": null,
+          "protected": "84ae26774b6d042a349e7b3ebdafa129839fa9f0ca94341237affe9b4557c0c8"
+        },
+        "rationale": "登记EF 3.1涉水XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-land111-lcimpact2020-article",
+        "from": {
+          "raw": "a0213916377450da92ee4ddbcc37239a70fa1780b1b74303b21d8c297a08a12e",
+          "public": null,
+          "protected": "a0213916377450da92ee4ddbcc37239a70fa1780b1b74303b21d8c297a08a12e"
+        },
+        "to": {
+          "raw": "4b1b34acec1ca696512b64f56c2c56ca418de7e8c699681064273c9bf3cf078a",
+          "public": null,
+          "protected": "4b1b34acec1ca696512b64f56c2c56ca418de7e8c699681064273c9bf3cf078a"
+        },
+        "rationale": "登记EF 3.1涉水XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-fossil117-jrc109369",
+        "from": {
+          "raw": "842226d92833f88972d2de892b352f883fb5efe8ab69f2eb6d740e8b8e5a7be8",
+          "public": null,
+          "protected": "842226d92833f88972d2de892b352f883fb5efe8ab69f2eb6d740e8b8e5a7be8"
+        },
+        "to": {
+          "raw": "1e106a43549aa5ef83c547e43b5c44598ca3b5dbbb210689afe5debb4fb7b596",
+          "public": null,
+          "protected": "1e106a43549aa5ef83c547e43b5c44598ca3b5dbbb210689afe5debb4fb7b596"
+        },
+        "rationale": "登记EF 3.1涉水XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:claims",
+        "from": {
+          "raw": "5fe8f6b87a1a2a002c60a7ac5fd3b06d5919f85be646a2b12ce428262444cd26",
+          "public": null,
+          "protected": "5fe8f6b87a1a2a002c60a7ac5fd3b06d5919f85be646a2b12ce428262444cd26"
+        },
+        "to": {
+          "raw": "b49afc97a6b521c4275961857f849fb47c8849f45091fc2436de00383727b3d1",
+          "public": null,
+          "protected": "b49afc97a6b521c4275961857f849fb47c8849f45091fc2436de00383727b3d1"
+        },
+        "rationale": "核对一手原件、EF 3.1涉水XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:evidence",
+        "from": {
+          "raw": "0ba57a18d27edc94b3f2ffd6fd68686ff63b05e4eaeb562f7c9e207da9eadd54",
+          "public": null,
+          "protected": "0ba57a18d27edc94b3f2ffd6fd68686ff63b05e4eaeb562f7c9e207da9eadd54"
+        },
+        "to": {
+          "raw": "145ebc121ca357ed91c8a1e7d2bd2c7e76afbc577e93e5b606aa55c359db156a",
+          "public": null,
+          "protected": "145ebc121ca357ed91c8a1e7d2bd2c7e76afbc577e93e5b606aa55c359db156a"
+        },
+        "rationale": "核对一手原件、EF 3.1涉水XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:sources",
+        "from": {
+          "raw": "0d7eee523deeaf449273cc87218abc90cabcfdba6039d492daacd6163d782990",
+          "public": null,
+          "protected": "0d7eee523deeaf449273cc87218abc90cabcfdba6039d492daacd6163d782990"
+        },
+        "to": {
+          "raw": "40d202a9f36b0f880d050b99431dd071b8021821e1dc0e3fe619e592164ae96f",
+          "public": null,
+          "protected": "40d202a9f36b0f880d050b99431dd071b8021821e1dc0e3fe619e592164ae96f"
+        },
+        "rationale": "核对一手原件、EF 3.1涉水XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:gaps",
+        "from": {
+          "raw": "51f35dea3ccc4c74484584c23105efc5090a4e2284fc5ae3e6a7a5c4443f469d",
+          "public": null,
+          "protected": "51f35dea3ccc4c74484584c23105efc5090a4e2284fc5ae3e6a7a5c4443f469d"
+        },
+        "to": {
+          "raw": "a34233c4b16548758202ddfbf60fa3981a191b6b3bab6f7c19d73c8efb48acd9",
+          "public": null,
+          "protected": "a34233c4b16548758202ddfbf60fa3981a191b6b3bab6f7c19d73c8efb48acd9"
+        },
+        "rationale": "核对一手原件、EF 3.1涉水XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:revisions",
+        "from": {
+          "raw": "d5fe95d889e8c6054aae6de6a03ef8bb5f82c48a59e228cbedbcd93ae8adeac4",
+          "public": null,
+          "protected": "d5fe95d889e8c6054aae6de6a03ef8bb5f82c48a59e228cbedbcd93ae8adeac4"
+        },
+        "to": {
+          "raw": "611451929fd43417148e1da575dbf049eaab2cf5eaf83788c459bfacced75c87",
+          "public": null,
+          "protected": "611451929fd43417148e1da575dbf049eaab2cf5eaf83788c459bfacced75c87"
+        },
+        "rationale": "核对一手原件、EF 3.1涉水XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:queries",
+        "from": {
+          "raw": "0d8ca8a12c00548a60b72c0b6d551b1b4bd63eac695ffd8ce8ad669c75de3e25",
+          "public": null,
+          "protected": "0d8ca8a12c00548a60b72c0b6d551b1b4bd63eac695ffd8ce8ad669c75de3e25"
+        },
+        "to": {
+          "raw": "7a6ebd7c7a4f1152b79822834f8d98d9df2bb1791d92a7e48445b1f937378b30",
+          "public": null,
+          "protected": "7a6ebd7c7a4f1152b79822834f8d98d9df2bb1791d92a7e48445b1f937378b30"
+        },
+        "rationale": "核对一手原件、EF 3.1涉水XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:public-projection",
+        "from": {
+          "raw": "e47b422851562f193b89fda83cef89d8f37e037e640dd4b847f51ee1bc2d40ae",
+          "public": null,
+          "protected": "e47b422851562f193b89fda83cef89d8f37e037e640dd4b847f51ee1bc2d40ae"
+        },
+        "to": {
+          "raw": "e4856b8c8cdd3f8fabe676ed008d24f31798b7cce718c6ddd1ba5a6474f580cc",
+          "public": null,
+          "protected": "e4856b8c8cdd3f8fabe676ed008d24f31798b7cce718c6ddd1ba5a6474f580cc"
+        },
+        "rationale": "核对一手原件、EF 3.1涉水XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-water125-method-genealogy",
+        "from": null,
+        "to": {
+          "raw": "f2ab744c9a66677e146d371ab4827a9423c515a928110ff6eb17a55abe91b371",
+          "public": "f2ab744c9a66677e146d371ab4827a9423c515a928110ff6eb17a55abe91b371",
+          "protected": "f0fe91f7d000e9424be1621285d34fb28a24437a0d0ec6c0048e950914c0814e"
+        },
+        "rationale": "基于已核导则、方法报告、期刊正文、EF 3.1官方包15份涉水XML成员与受控代数及排序反转演算新增B18规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-water125-withdrawal-return-accounting",
+        "from": null,
+        "to": {
+          "raw": "b7ff62afb8fddda86ba1d93b7eab26ffc49cb4149b79cf20188d67936541b4f7",
+          "public": "b7ff62afb8fddda86ba1d93b7eab26ffc49cb4149b79cf20188d67936541b4f7",
+          "protected": "ea962959e2d391185c9503c48356d6362a092ad1c69b43e7670856b66fdc6970"
+        },
+        "rationale": "基于已核导则、方法报告、期刊正文、EF 3.1官方包15份涉水XML成员与受控代数及排序反转演算新增B18规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-water125-ef-country-resolution-and-climates",
+        "from": null,
+        "to": {
+          "raw": "e4aa26f5155e179df42d0b00a96c20e4a66d534477f755ecba6ccf33c1a15b51",
+          "public": "e4aa26f5155e179df42d0b00a96c20e4a66d534477f755ecba6ccf33c1a15b51",
+          "protected": "070d8b2b4219c7d37f55ad60fe20c5712c8a1af15c6ae9bbc4c2445668d5b47a"
+        },
+        "rationale": "基于已核导则、方法报告、期刊正文、EF 3.1官方包15份涉水XML成员与受控代数及排序反转演算新增B18规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-water125-value-choices-and-denominator-paradox",
+        "from": null,
+        "to": {
+          "raw": "0a912caba47e3a16255b55bafdf06f5dfaaa9375b394dd0dbcac9e100fe4ce5f",
+          "public": "0a912caba47e3a16255b55bafdf06f5dfaaa9375b394dd0dbcac9e100fe4ce5f",
+          "protected": "03fec6a0ed2d344ff909a272d6f04ad7b65bb04ef7826691f8a701c85bba69c2"
+        },
+        "rationale": "基于已核导则、方法报告、期刊正文、EF 3.1官方包15份涉水XML成员与受控代数及排序反转演算新增B18规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-water125-country-rank-reversals",
+        "from": null,
+        "to": {
+          "raw": "ec88c3bcd23a29dfbd4e9fb95904317be111ef9f293b7bc8407d3573662c4302",
+          "public": "ec88c3bcd23a29dfbd4e9fb95904317be111ef9f293b7bc8407d3573662c4302",
+          "protected": "e2fef82df55c5837182cf02a489a2f0f22fdcaa44d2aca7cfa4428654e6b0c31"
+        },
+        "rationale": "基于已核导则、方法报告、期刊正文、EF 3.1官方包15份涉水XML成员与受控代数及排序反转演算新增B18规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-water125-belgium-canada-mechanism-contrast",
+        "from": null,
+        "to": {
+          "raw": "8c8c832858e66d101dc1dcf91c6304124018c5d4c021ff75ce2050cb95566f71",
+          "public": "8c8c832858e66d101dc1dcf91c6304124018c5d4c021ff75ce2050cb95566f71",
+          "protected": "e28ce717b7c0ddf1bd38b6c829f1be748b6cbe703f6ac6df3539a49044dc3efc"
+        },
+        "rationale": "基于已核导则、方法报告、期刊正文、EF 3.1官方包15份涉水XML成员与受控代数及排序反转演算新增B18规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-water125-package-report-discrepancies",
+        "from": null,
+        "to": {
+          "raw": "8ebb9db0a5b2caa85c9871dbbbe90cea06f5a40d9faaa1d9daf77130c370022d",
+          "public": "8ebb9db0a5b2caa85c9871dbbbe90cea06f5a40d9faaa1d9daf77130c370022d",
+          "protected": "dff9662c97c6eb3fb210e3b8a79b55c8aabadca7e3b0aeb6a397b8928f423261"
+        },
+        "rationale": "基于已核导则、方法报告、期刊正文、EF 3.1官方包15份涉水XML成员与受控代数及排序反转演算新增B18规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-water125-diagnostic-synthesis",
+        "from": null,
+        "to": {
+          "raw": "02af63cc6975d0d0df558acbe8d3e8570c8fc8e2a94e1bd2b301a36eee0f2de1",
+          "public": "02af63cc6975d0d0df558acbe8d3e8570c8fc8e2a94e1bd2b301a36eee0f2de1",
+          "protected": "bf1c22521f68bf5ce5e286ba69d2721dcd0be2d4dce2678f3c83e17e59ed9ded"
+        },
+        "rationale": "基于已核导则、方法报告、期刊正文、EF 3.1官方包15份涉水XML成员与受控代数及排序反转演算新增B18规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-water125-ilcd2011-water",
+        "from": null,
+        "to": {
+          "raw": "7fd780e86251734f0d40fa10e021f6d092d8ba083163461cbcdb6d51961469dc",
+          "public": "09dfc6f1add6adbe0c254265cebe20143ffe5a7cc4a723d51d1c25a743b84451",
+          "protected": "7fd780e86251734f0d40fa10e021f6d092d8ba083163461cbcdb6d51961469dc"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包涉水XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-water125-jrc109369-water",
+        "from": null,
+        "to": {
+          "raw": "c17d156613840a4d54f2d6e01baa2235709773f5724276c8811de0b2a0cdaddb",
+          "public": "8384282898a46485453b482b822780a7a425f7c63692228767dc84b840567f3f",
+          "protected": "c17d156613840a4d54f2d6e01baa2235709773f5724276c8811de0b2a0cdaddb"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包涉水XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-water125-jrc130796-water",
+        "from": null,
+        "to": {
+          "raw": "1b12c8f539dacd08e17a099231571edabd2059a171f50f8f0f06941003aa8cc5",
+          "public": "4889d73dec3949a7a503b0b2cfe1830d1953e7b219db4509b9012a34d110b74c",
+          "protected": "1b12c8f539dacd08e17a099231571edabd2059a171f50f8f0f06941003aa8cc5"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包涉水XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-water125-ef31-water-xml",
+        "from": null,
+        "to": {
+          "raw": "a8ab9792d1600faa07813d1407ca9c86b9d8359fe3ca67d0d026151bdb992705",
+          "public": "50cb393f5ca01c3853a6a7197929e22a5e27422dc121f20cb92f7bc37ff589b5",
+          "protected": "a8ab9792d1600faa07813d1407ca9c86b9d8359fe3ca67d0d026151bdb992705"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包涉水XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-water125-rivm-ch10-framework",
+        "from": null,
+        "to": {
+          "raw": "3dfea37c0554c5e2fe8b30a030a6a97a6599ba43985799f96df6e746a9f0fdb9",
+          "public": "78f15869a849073d7380325d681b08dbc6542bf6a7e26b9d0b9c2914f660457f",
+          "protected": "3dfea37c0554c5e2fe8b30a030a6a97a6599ba43985799f96df6e746a9f0fdb9"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包涉水XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-water125-rivm-ch10-endpoints",
+        "from": null,
+        "to": {
+          "raw": "5638bd6081a6c38c38739bda9724ed573e5797b3355bd7d5b67b7406187efb13",
+          "public": "cacdb0e9a778d6d62a4f124af241e2feadd80cf112012ab3c6bd6e1c7150af73",
+          "protected": "5638bd6081a6c38c38739bda9724ed573e5797b3355bd7d5b67b7406187efb13"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包涉水XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-water125-rivm-s6-country-and-corruption",
+        "from": null,
+        "to": {
+          "raw": "e0b1dad7f2f5e07995975b8af121060331b3f6e048484e1a8a44c40ae2930045",
+          "public": "47b63cf319fd813f21b478f31cb686359da607fe95e69f8f399ae5e263185806",
+          "protected": "e0b1dad7f2f5e07995975b8af121060331b3f6e048484e1a8a44c40ae2930045"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包涉水XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-water125-recipe2017-water",
+        "from": null,
+        "to": {
+          "raw": "9e93d1add81ea6b98feb2bcb949eef16fd8e3c850c4d08d96dcaaca6becc32e3",
+          "public": "591ca15b40559eaa9c0c29410d262c9c3e4f9e97e40ec77a1b854ae4e5276805",
+          "protected": "9e93d1add81ea6b98feb2bcb949eef16fd8e3c850c4d08d96dcaaca6becc32e3"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包涉水XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-water125-lcimpact2020-water",
+        "from": null,
+        "to": {
+          "raw": "9e47e367b8606c8431e1de650850277f84f017fc272c94d340620fd9b9626361",
+          "public": "8e17e6aa13d51280e587e3f4f98a2c87b59c69ef9f425f8d0f183696be77faea",
+          "protected": "9e47e367b8606c8431e1de650850277f84f017fc272c94d340620fd9b9626361"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包涉水XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-water125-ef31-selected-members",
+        "from": null,
+        "to": {
+          "raw": "6d7df484fb75c8e1239950ec21dfb01c309164ea8e7c6b8b0dd19106b780b355",
+          "public": "3715d77572ef68b4a3e81b473e56411f67d3ff4dc701135b7f787775e363eeb3",
+          "protected": "6d7df484fb75c8e1239950ec21dfb01c309164ea8e7c6b8b0dd19106b780b355"
+        },
+        "rationale": "登记EF 3.1涉水XML成员，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "gaps:gap-water125-hydrological-grids-and-recipe-spreadsheets",
+        "from": null,
+        "to": {
+          "raw": "e18f07156f408384864406c456c7fff02947ba06c51c907b9f05b004a2b7b86e",
+          "public": null,
+          "protected": "e18f07156f408384864406c456c7fff02947ba06c51c907b9f05b004a2b7b86e"
+        },
+        "rationale": "核对一手原件、EF 3.1涉水XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "revisions:rev-water125-b18-water-scarcity-comparison",
+        "from": null,
+        "to": {
+          "raw": "a6116429ce51edbd6d9be0ce6fbfe675173ed742349821d3035e517837933537",
+          "public": null,
+          "protected": "a6116429ce51edbd6d9be0ce6fbfe675173ed742349821d3035e517837933537"
+        },
+        "rationale": "核对一手原件、EF 3.1涉水XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "queries:q-water125-scarcity-accounting-perspectives-and-packages-20261117",
+        "from": null,
+        "to": {
+          "raw": "9c8154fcfb9a0a970f747c3fcbf893ff6daa97948fe0dcc14573c9134430b70f",
+          "public": null,
+          "protected": "9c8154fcfb9a0a970f747c3fcbf893ff6daa97948fe0dcc14573c9134430b70f"
+        },
+        "rationale": "核对一手原件、EF 3.1涉水XML成员或受控算式后登记本单元记录变更。"
+      }
+    ],
+    "consumers": [
+      {
+        "id": "cl-lcia-midpoint-pathway",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lcia-endpoint-units",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lcia-mid-end-conversion-limits",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lcia-scenarios-are-choices",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lcia-global-is-not-site-specific",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lcia-model-data-factor-separation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-connect-reuse-keeps-relation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-path-terrestrial",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-path-units",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-path-marginal-average",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-path-supplied-effect-conditions",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-path-background",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-path-pdf",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-path-multiple-paths",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-water-marginal-contexts",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-question",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-authority",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-three",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-equation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-why-square",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-nmvoc",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-nox",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-service",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-score",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-scale",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-threshold",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-test",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-later",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-judgment",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-purpose",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-policy-contrast",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-baseline",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-units",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-display",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-logit",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-trade",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-precision",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-primary-ratio",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-households",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-health",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-mismatch",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-annual",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-shares",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-two-forms",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-different-card",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-english",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-english-basis",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-service",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-japan-route",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-break-even",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-english-route",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-numeraire",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-edition",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-validity",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-null",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-order",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-transfer",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-decision",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-opening",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-precursor-denominator",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-intake-definition",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-intake-unit",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-receptor-boundary",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-source-height",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-mixture-inputs",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-mixture-results",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-exposure-evidence",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-effect-definition",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-effect-default",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-urban-health",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-rural-health",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-precursor-health",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-burden-check",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-population-meaning",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-indoor-location",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-indoor-matrix",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-exposure-compatible",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-compatible-population",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-indoor-time",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-exposure-coverage",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-nonlinear-response",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-risk-reference",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-slope-meaning",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-finite-change",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-slope-context",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-ier-evidence",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-gemm-alternative",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-factor-correction",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-implementation-layer",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-chemistry-background",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-chemistry-perturbation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-chemistry-model-check",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-concentration-route",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-regional-factor",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-modern-values",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-modern-ratios",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-matched-scope",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-uncovered-pathways",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-conclusion",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-concentration-balance",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-activity-indicators",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-usetox-conclusion",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-source-distribution",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-evidence-levels",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-regional-summary",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-factor-order",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-matched-scenario",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-version-and-model",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-flow99-identity-example",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-flow99-zero-reasons",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-flow99-zero-reporting",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-flow99-conclusion",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-land111-episode",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-land111-midpoint",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-land111-conversion",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-land111-pathway",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-land111-horizon",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-land111-factor-scale",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-land111-integral",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-land111-countercheck",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-land111-aggregation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-land111-printed-record",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-acid113-ae-question",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-acid113-threshold",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-acid113-glam-relation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-acid113-glam-tension",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-acid113-so2-rows",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-acid113-chemistry-control",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-acid113-shared-moles",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-acid113-nh3-control",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-mineral115-input",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-mineral115-adp",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-mineral115-sop",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-mineral115-reserves",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-mineral115-rank",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-mineral115-cost-proxy",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-mineral115-metal-cost",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-mineral115-calibration",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-mineral115-assumptions",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-mineral115-judgment",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-fossil117-scarcity-energy",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-fossil117-heating-basis",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-fossil117-uranium-boundary",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-fossil117-scenario-proxy",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-fossil117-equal-midpoint",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-fossil117-proxy-consequence",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-fossil117-printed-limits",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-fossil117-bridge",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozone119-precursor-entry",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozone119-pocp-to-lotos",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozone119-order-reversal",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozone119-titration-sign",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozone119-ef-location-copy",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozone119-multipath-accounting",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozone119-printed-limits",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozrad121-emission-midpoint",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozrad121-reference-scope",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozrad121-odp-horizons",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozrad121-ir-horizons",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozrad121-endpoint-choices",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozrad121-formula-table",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozrad121-package-discrepancies",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozrad121-emission-bridge",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-tox123-midpoint-families",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-tox123-hc20-and-metals",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-tox123-perspective-switches",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-tox123-nickel-dcb-reversal",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-tox123-speciation-and-proxies",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-tox123-normative-zeros",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-tox123-package-discrepancies",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-tox123-cross-system-synthesis",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1涉水XML追加不改变既有命题含义、证据支撑或适用边界。"
+      }
+    ],
+    "assessment": {
+      "scope": "Selected ILCD 2011 (§1 Tables 1–2 pp. 5–6, §3.11 Resource depletion pp. 92–95, 97, 100–101 Tables 26–27, §6.11 p. 133), JRC109369 (§2 Tables 1–2 pp. 7–8 n.10, §4.11 p. 25), JRC130796 (§2 Table 1 p. 7, §4.2 Table 10 p. 23, §5.1 p. 24 Table 11, §5.1.2 Table 13 p. 30), 15 ZIP64/HTTP-206/CRC32-verified official EF-v3.1.zip XML members (b2ad66ce Water use method with zero converter copy, Volume 93a60a56, Units of volume 93a60a57, Boulay et al. 2016 source 6b126a5e, and 11 water flows), RIVM 2016-0104 (Tables 1.3–1.5 pp. 18–22, Chapter 2 p. 32, Chapter 10 pp. 73–80 Tables 10.1–10.6, References pp. 113 & 115, §21 S6 pp. 163–173 Tables S6.1–S6.3), Huijbregts et al. 2017 (§§1 & 2.1 p. 139, Table 1 p. 141, §3.1.9 p. 142, Table 2 p. 143, §3.2.9 p. 144), and Verones et al. 2020 LC-IMPACT (§§2.1–2.8 Tables 1–3 pp. 3–10, §3.1 p. 11, §§4.1–4.2 pp. 14–15).",
+      "comparison": "Establishes the three structural routes across ILCD 2011 / EF 2.0–3.1 (scarcity-weighted midpoint only: Swiss Ecoscarcity 6 levels -> AWARE [0.1, 100], 0 endpoints), ReCiPe 2016 (unweighted physical consumption midpoint WCP = 1 m3/m3, deferring WSI [0.01, 1] and vulnerability to 3 endpoints), and LC-IMPACT (0 midpoints, 11,050-watershed health DALY/m3 and 0.05°×0.05° wetland global extinction PDF·yr/m3). Quantifies the 10:1 industrial groundwater accounting split (EF 3.1 7 positive / 4 negative elementary flows vs ReCiPe Table 10.2 ratio 1 without surface-return credit), PEF/OEF country-annual flattening vs ReCiPe multi-era/HDI>0.88/42°-latitude cutoffs, the WR_malnutrition denominator paradox in Table 10.4 (I = 3.10e-6 > H/E = 2.22e-6 DALY/m3 via 1350/1000 = 1.35x vs Table 1.5 midpoint-to-endpoint monotonicity in other categories), AU/BD and CL/CN cross-target rank reversals, and the pure physical scarcity reversal between Belgium and Canada (WSI 0.686 vs 0.109 = 6.29x vs AWARE 1.37 vs 7.40 = 1:5.40).",
+      "values": "Nine single-source ev-water125-* records map 1-to-1 onto all nine psg-water125-* passages and bind 106 structured numericFacts with exact decimal fidelity, verified via 40-place BigInt fixed-point arithmetic and direct prose assertions across all 8 new claims.",
+      "limits": "Preserves EF 3.1 b2ad66ce.xml unlocated global -42.955 vs +42.950 (-0.005 m3 world-eq. net credit on unspecified-water return and meanValue=\"1\" in a3876d9b.xml), Greenland GL = 0.00 below 0.1 cutoff, inventoryItems=36 vs 11 flows, Volume flowproperty reuse vs JRC109369 kg world eq. deprived / Units of mass (kg) typo, RIVM Table 9.1/9.3 misreferences, p. 78 1,530 vs Table 10.1 1,350 WR_malnutrition, Table 10.1 High regulation vs Table 10.3 WSI_I = 0.698 > 0.657 parameter tension, Table 1.5 2-sig-fig rounding and 6.0e-13 median selection, RIVM Table S6.2 corruption from row 53 Fiji through Zimbabwe (F–Z) after 52 intact A–E rows (Afghanistan–Ethiopia including Côte d'Ivoire), and LC-IMPACT Table 1 Average vs §2.3 dual average/marginal tension.",
+      "conservation": "100% of all 976 prior claims (including all 20 original B18 cl-water-* claims) and all 8 rd-water-* readings remain byte-for-byte unchanged; zero prior-claim corrections required.",
+      "review": "Two-round independent primary-source and numeric subagent audit (6fc0a619) verified all 6 PDFs, 15 XMLs, page bounds, 1-to-1 passage provenance, 106 numericFacts, Table S6.2 52-row A–E / row 53 Fiji boundary, and 100% conservation of 976 prior claims, concluding unconditional PASS (0 BLOCKER / 0 MAJOR / 0 MINOR). Agent verification does not claim human expert certification, native WaterGAP/AWARE raster re-execution, or local basin water-management permitting."
+    },
+    "independentReports": {
+      "independent-primary-source-audit-initial.md": "324368242aa47c42aa5ef1acd76ab9d0ac57b08ff6f015420fee2130d38d81d1",
+      "independent-primary-source-audit-final.md": "cc5b2cae8a32820e20ca9d5a9f17b87af3fd3b1703796a67f85171366ba4e9bb",
+      "full-chapter-b18-reader-review-initial.md": "c19f2636d7e61a3d146f226d61c917654f143b9ed5e9dca74089e8d183f07174",
+      "full-chapter-b18-reader-review-final.md": "41f7ba3955c9182806e1179330f934d2fe0215c2f9eb1247ff079e5c5740c8d0",
+      "independent-publication-engineering-review-initial.md": "99274069fed8c4a73ed3247d37a9b66de1609ed24c37f3c3fe3ed050443fa9ae",
+      "independent-publication-engineering-review-final.md": "5b2eac24ed6bc42076bcd4ca672cc0de0133d6d8c726bc78a000c98f1259da0f",
+      "ef31-water-all-members-receipt.json": "09db69b1be8389718ca5bb7d00d48308b9c92cb4ec4722273e818acf0a981ce3",
+      "actual-browser-qa/responsive-script-enabled.json": "c0017673fc42b952a7462b8f3c6582f6c84ecb273023d0697e22b8861e52fabc",
+      "actual-browser-qa/interactions.json": "40701585f6336fa26b2d5ea8b31ab946fc747b2d92b76cc51b99c73e02cd857c"
+    }
+  }
+}

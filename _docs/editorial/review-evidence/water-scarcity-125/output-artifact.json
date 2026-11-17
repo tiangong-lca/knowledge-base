@@ -1,0 +1,1174 @@
+{
+  "schemaVersion": 1,
+  "kind": "output",
+  "unit": "water-scarcity-125",
+  "subjectSha256": "cba9a110dcf28e95462f7d1d1d6928c70b62e5be3d658023523cdccf7f8928e7",
+  "date": "2026-11-17",
+  "scope": [
+    "content/docs/book/water-scarcity-and-reference.mdx",
+    "sources:src-book-recipe-2017-primary-article",
+    "sources:src-book-ilcd-2011-lcia-recommendations",
+    "sources:src-flow-pilot-ef31-update",
+    "sources:src-land111-rivm2016",
+    "sources:src-land111-lcimpact2020-article",
+    "sources:src-fossil117-jrc109369",
+    "readings:rd-recipe-2017-primary-article",
+    "readings:rd-ilcd-2011-eutrophication-pathways",
+    "readings:rd-flow-pilot-ef31",
+    "readings:rd-flow-pilot-ef31-update",
+    "readings:rd-land111-rivm2016",
+    "readings:rd-land111-lcimpact2020-article",
+    "readings:rd-fossil117-jrc109369",
+    "literature:lit-m05",
+    "literature:work-recipe-2017-method-article",
+    "literature:work-ilcd-2011-lcia-recommendations",
+    "literature:work-flow-pilot-ef31",
+    "literature:work-flow-pilot-ef31-update",
+    "literature:work-land111-lcimpact2020-article",
+    "literature:work-fossil117-jrc109369",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:order:sources",
+    "researchMetadata:order:gaps",
+    "researchMetadata:order:revisions",
+    "researchMetadata:order:queries",
+    "researchMetadata:public-projection",
+    "claims:cl-water125-method-genealogy",
+    "claims:cl-water125-withdrawal-return-accounting",
+    "claims:cl-water125-ef-country-resolution-and-climates",
+    "claims:cl-water125-value-choices-and-denominator-paradox",
+    "claims:cl-water125-country-rank-reversals",
+    "claims:cl-water125-belgium-canada-mechanism-contrast",
+    "claims:cl-water125-package-report-discrepancies",
+    "claims:cl-water125-diagnostic-synthesis",
+    "evidence:ev-water125-ilcd2011-water",
+    "evidence:ev-water125-jrc109369-water",
+    "evidence:ev-water125-jrc130796-water",
+    "evidence:ev-water125-ef31-water-xml",
+    "evidence:ev-water125-rivm-ch10-framework",
+    "evidence:ev-water125-rivm-ch10-endpoints",
+    "evidence:ev-water125-rivm-s6-country-and-corruption",
+    "evidence:ev-water125-recipe2017-water",
+    "evidence:ev-water125-lcimpact2020-water",
+    "sources:src-water125-ef31-selected-members",
+    "gaps:gap-water125-hydrological-grids-and-recipe-spreadsheets",
+    "revisions:rev-water125-b18-water-scarcity-comparison",
+    "queries:q-water125-scarcity-accounting-perspectives-and-packages-20261117"
+  ],
+  "observed": "Primary scoped judgment integrating two-round unconditional-PASS independent source, zero-context full-chapter reader and publication-engineering audits with direct original, export and browser/print checks; no human or empirical certification.",
+  "observations": {
+    "outputs": [
+      {
+        "path": "/docs/book/particulate-emissions-and-health",
+        "route": "/docs/book/particulate-emissions-and-health",
+        "from": "dc1226a10bdb2c1eef8f8baf8b32a49124a2b245eaa9f1443825aa90c92efcea",
+        "sha256": "3ba87689d11b754e5fc146da0fa5e923436dce4ee1f1ddf7c8f3aa66bacfcef4",
+        "rationale": "只按B18章节简介更新同步相邻网页章节底部翻页卡片（.docs-pagination）中的简介文字，保留原正文、注释与链接地址。"
+      },
+      {
+        "path": "/docs/book/water-scarcity-and-reference",
+        "route": "/docs/book/water-scarcity-and-reference",
+        "from": "c3b3b0daacd62df20f05c7feb3828df278723d9ac22ee0493c6d18821dd22a83",
+        "sha256": "3f391b8e0beeb7f2393ad6d09d7a551945ab0a263a99ad9a42745a1455c1d1e9",
+        "rationale": "核对B18当前28段正文、更新后的章节简介（ordinary-0）、#109与#125历史引用范围及完整注释。"
+      },
+      {
+        "path": "/docs/book/usetox-pathways-and-boundaries",
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "from": "34e47ade58ece349d90ed5a246ce3fbe8b0c2cf0cb7336e891f539f4d72d973d",
+        "sha256": "dfa10102ee02cf65a2fc863a35458797a5593facbd38fc7a4f2de7bc94e80313",
+        "rationale": "只按B18章节简介更新同步相邻网页章节底部翻页卡片（.docs-pagination）中的简介文字，保留原正文、注释与链接地址。"
+      },
+      {
+        "path": "/docs/book/uncertainty-and-variability",
+        "route": "/docs/book/uncertainty-and-variability",
+        "from": "0df5ef6497b1f3357398307c6ecf026009fab2b3de7bd26de7b42456e8570b40",
+        "sha256": "c289a470b646b26a662752698a30712cd81eda27fe88a07ff52b7caefe055397",
+        "rationale": "只按B18注释顺延（cl-water-reference-and-units与cl-water-time-and-aggregation由注8、9顺延至注10、11）同步下游交叉引用显示文字，保留原链接地址与论述范围。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/water-scarcity-and-reference",
+        "from": "a8bc3d07522e8f0f9d11b1f1e1c85727022316d40637574a534de341f9a520e9",
+        "sha256": "4aa1b595357eb7d6ddd9028f350c115c8f6907edaebe90affb27342dfb55e069",
+        "rationale": "核对B18当前28段正文、更新后的章节简介（ordinary-0）、#109与#125历史引用范围及完整注释。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/uncertainty-and-variability",
+        "from": "687aa617a04f8409ecef0b7b0c3b56246ef3ee846b63086c4fcda636d246db96",
+        "sha256": "136c5458d3ceef99234795eb4029263d98eaa4766d4383bee556b6580fa0bbb5",
+        "rationale": "只按B18注释顺延（cl-water-reference-and-units与cl-water-time-and-aggregation由注8、9顺延至注10、11）同步下游交叉引用显示文字，保留原链接地址与论述范围。"
+      }
+    ],
+    "publicArtifacts": [
+      {
+        "path": "claims/index.html",
+        "from": "b90f67d937bd8de87f31711b50b72310cfa46071f9205409b356940c0b9208ce",
+        "sha256": "abe3697259a11c5264bdebc8510f7c6e08854161a07d52a08992a0ee17f47314",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "sources/index.html",
+        "from": "1a225ac82c46639d39eafadbd7064823d310782ee95e8e0799eb5f4971f567c8",
+        "sha256": "b5ee589db15e1cb38cd365ab974f82a0899e66d981e847b465818fac23b67565",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "from": "d55fd12760e1d4a7cea3aadc8bc97f82a607fe4a3be04637c5d74245eff3ce28",
+        "sha256": "fb274c99d2c5864649a1d5b661c9ce63d6f25132dcdf8161d5d770a38327d3b0",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "from": "82c5428f1ca6c8d93dafb0dc9148f2c3e8d191f5ad973568f8c8fafcc64dd52c",
+        "sha256": "2aa27e4aa318da093c696bda1114652004b5480300885ba08a493d437731722e",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "research/index.html",
+        "from": "1f341d71fce64c411e3e76a4f9264f26b08f16ef2025815f039bfe5172c73db7",
+        "sha256": "a22dc9d3a7dcb7295af384b1d11f40af4d3da0b842135c3af27257df50c3fb27",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "downloads/bibliography.json",
+        "from": "8d90e52a3788322003fac8f75c37c0ef954ca4727f24dca4d3dba18286a85fb2",
+        "sha256": "94ad9176aad4985c1b2ec4106efcbe7f1bd87cf52dd5e64e21949cf1813463dd",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "downloads/research.json",
+        "from": "8d90e52a3788322003fac8f75c37c0ef954ca4727f24dca4d3dba18286a85fb2",
+        "sha256": "94ad9176aad4985c1b2ec4106efcbe7f1bd87cf52dd5e64e21949cf1813463dd",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "coverage/index.html",
+        "from": "81c9ec394fb324ad78339bb7515b7c6efea4871b26601c4f34ea8d6c1f1f60b6",
+        "sha256": "f2a344b7e15e39aaf0e90050e06f09c589f10fd35e6984dc68589ab0940e885f",
+        "rationale": "同步章节导览页中B18《耗水与缺水潜势》更新后的章节简介投影。"
+      }
+    ],
+    "addresses": {
+      "/docs/book/water-scarcity-and-reference#nd-page": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "chapter",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-opening",
+          "cl-water-physical-object",
+          "cl-water-aware-question",
+          "cl-water-remaining-mechanism",
+          "cl-water-input-basis",
+          "cl-water-net-gross-meaning",
+          "cl-water125-method-genealogy",
+          "cl-water125-withdrawal-return-accounting",
+          "cl-water-reference-period",
+          "cl-water-reference-and-units",
+          "cl-water-time-and-aggregation",
+          "cl-water-background-inventory",
+          "cl-water-marginal-contexts",
+          "cl-water125-ef-country-resolution-and-climates",
+          "cl-water125-value-choices-and-denominator-paradox",
+          "cl-water-supplychain-reference",
+          "cl-water-case-input",
+          "cl-water-case-factors",
+          "cl-water-case-result",
+          "cl-water-case-locality",
+          "cl-water-case-averaging",
+          "cl-water-case-weighted-factor",
+          "cl-water125-country-rank-reversals",
+          "cl-water125-belgium-canada-mechanism-contrast",
+          "cl-water-version-and-boundary",
+          "cl-water125-package-report-discrepancies",
+          "cl-water125-diagnostic-synthesis",
+          "cl-water-conclusion"
+        ],
+        "ordinary": [
+          "291240ca58db20031cf9062178f2934ebdcee2300c6d3ce7a5de6b8f4247b06f"
+        ],
+        "bindings": {
+          "links": [
+            []
+          ],
+          "tables": []
+        }
+      },
+      "/docs/book/water-scarcity-and-reference#main-content": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "reading-title",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-opening",
+          "cl-water-physical-object",
+          "cl-water-aware-question",
+          "cl-water-remaining-mechanism",
+          "cl-water-input-basis",
+          "cl-water-net-gross-meaning",
+          "cl-water125-method-genealogy",
+          "cl-water125-withdrawal-return-accounting",
+          "cl-water-reference-period",
+          "cl-water-reference-and-units",
+          "cl-water-time-and-aggregation",
+          "cl-water-background-inventory",
+          "cl-water-marginal-contexts",
+          "cl-water125-ef-country-resolution-and-climates",
+          "cl-water125-value-choices-and-denominator-paradox",
+          "cl-water-supplychain-reference",
+          "cl-water-case-input",
+          "cl-water-case-factors",
+          "cl-water-case-result",
+          "cl-water-case-locality",
+          "cl-water-case-averaging",
+          "cl-water-case-weighted-factor",
+          "cl-water125-country-rank-reversals",
+          "cl-water125-belgium-canada-mechanism-contrast",
+          "cl-water-version-and-boundary",
+          "cl-water125-package-report-discrepancies",
+          "cl-water125-diagnostic-synthesis",
+          "cl-water-conclusion"
+        ],
+        "ordinary": [
+          "291240ca58db20031cf9062178f2934ebdcee2300c6d3ce7a5de6b8f4247b06f"
+        ],
+        "chapter": "nd-page"
+      },
+      "/docs/book/water-scarcity-and-reference#体积记录了什么": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "heading",
+        "title": "水量与剩余量",
+        "claimIds": [
+          "cl-water-opening",
+          "cl-water-physical-object",
+          "cl-water-aware-question",
+          "cl-water-remaining-mechanism",
+          "cl-water-input-basis",
+          "cl-water-net-gross-meaning",
+          "cl-water125-method-genealogy",
+          "cl-water125-withdrawal-return-accounting"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#剩余量之前先读输入口径": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [
+          "cl-water-remaining-mechanism",
+          "cl-water-input-basis",
+          "cl-water-net-gross-meaning",
+          "cl-water125-method-genealogy",
+          "cl-water125-withdrawal-return-accounting"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#月份参照与背景": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "heading",
+        "title": "时空与参照",
+        "claimIds": [
+          "cl-water-reference-period",
+          "cl-water-reference-and-units",
+          "cl-water-time-and-aggregation",
+          "cl-water-background-inventory",
+          "cl-water-marginal-contexts",
+          "cl-water125-ef-country-resolution-and-climates",
+          "cl-water125-value-choices-and-denominator-paradox"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#把两处耗水接到同一产品": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "heading",
+        "title": "两处耗水的比较",
+        "claimIds": [
+          "cl-water-supplychain-reference",
+          "cl-water-case-input",
+          "cl-water-case-factors",
+          "cl-water-case-result"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#更换情境与更换运算次序": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "heading",
+        "title": "情境与加总",
+        "claimIds": [
+          "cl-water-case-locality",
+          "cl-water-case-averaging",
+          "cl-water-case-weighted-factor",
+          "cl-water125-country-rank-reversals",
+          "cl-water125-belgium-canada-mechanism-contrast",
+          "cl-water-version-and-boundary",
+          "cl-water125-package-report-discrepancies",
+          "cl-water125-diagnostic-synthesis",
+          "cl-water-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#结果怎样保留它的含义": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [
+          "cl-water-version-and-boundary",
+          "cl-water125-package-report-discrepancies",
+          "cl-water125-diagnostic-synthesis",
+          "cl-water-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-annotations": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note-group",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-opening",
+          "cl-water-physical-object",
+          "cl-water-aware-question",
+          "cl-water-remaining-mechanism",
+          "cl-water-input-basis",
+          "cl-water-net-gross-meaning",
+          "cl-water125-method-genealogy",
+          "cl-water125-withdrawal-return-accounting",
+          "cl-water-reference-period",
+          "cl-water-reference-and-units",
+          "cl-water-time-and-aggregation",
+          "cl-water-background-inventory",
+          "cl-water-marginal-contexts",
+          "cl-water125-ef-country-resolution-and-climates",
+          "cl-water125-value-choices-and-denominator-paradox",
+          "cl-water-supplychain-reference",
+          "cl-water-case-input",
+          "cl-water-case-factors",
+          "cl-water-case-result",
+          "cl-water-case-locality",
+          "cl-water-case-averaging",
+          "cl-water-case-weighted-factor",
+          "cl-water125-country-rank-reversals",
+          "cl-water125-belgium-canada-mechanism-contrast",
+          "cl-water-version-and-boundary",
+          "cl-water125-package-report-discrepancies",
+          "cl-water125-diagnostic-synthesis",
+          "cl-water-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-opening": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-opening"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-physical-object": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-physical-object"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-aware-question": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-aware-question"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-remaining-mechanism": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-remaining-mechanism"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-input-basis": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-input-basis"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-net-gross-meaning": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-net-gross-meaning"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water125-method-genealogy": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water125-method-genealogy"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water125-withdrawal-return-accounting": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water125-withdrawal-return-accounting"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-reference-period": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-reference-period"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-reference-and-units": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-reference-and-units"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-time-and-aggregation": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-time-and-aggregation"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-background-inventory": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-background-inventory"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-marginal-contexts": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-marginal-contexts"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water125-ef-country-resolution-and-climates": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water125-ef-country-resolution-and-climates"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water125-value-choices-and-denominator-paradox": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water125-value-choices-and-denominator-paradox"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-supplychain-reference": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-supplychain-reference"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-case-input": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-case-input"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-case-factors": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-case-factors"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-case-result": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-case-result"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-case-locality": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-case-locality"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-case-averaging": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-case-averaging"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-case-weighted-factor": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-case-weighted-factor"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water125-country-rank-reversals": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water125-country-rank-reversals"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water125-belgium-canada-mechanism-contrast": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water125-belgium-canada-mechanism-contrast"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-version-and-boundary": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-version-and-boundary"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water125-package-report-discrepancies": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water125-package-report-discrepancies"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water125-diagnostic-synthesis": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water125-diagnostic-synthesis"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/water-scarcity-and-reference#chapter-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-conclusion": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "chapter",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-opening",
+          "cl-water-physical-object",
+          "cl-water-aware-question",
+          "cl-water-remaining-mechanism",
+          "cl-water-input-basis",
+          "cl-water-net-gross-meaning",
+          "cl-water125-method-genealogy",
+          "cl-water125-withdrawal-return-accounting",
+          "cl-water-reference-period",
+          "cl-water-reference-and-units",
+          "cl-water-time-and-aggregation",
+          "cl-water-background-inventory",
+          "cl-water-marginal-contexts",
+          "cl-water125-ef-country-resolution-and-climates",
+          "cl-water125-value-choices-and-denominator-paradox",
+          "cl-water-supplychain-reference",
+          "cl-water-case-input",
+          "cl-water-case-factors",
+          "cl-water-case-result",
+          "cl-water-case-locality",
+          "cl-water-case-averaging",
+          "cl-water-case-weighted-factor",
+          "cl-water125-country-rank-reversals",
+          "cl-water125-belgium-canada-mechanism-contrast",
+          "cl-water-version-and-boundary",
+          "cl-water125-package-report-discrepancies",
+          "cl-water125-diagnostic-synthesis",
+          "cl-water-conclusion"
+        ],
+        "ordinary": [
+          "291240ca58db20031cf9062178f2934ebdcee2300c6d3ce7a5de6b8f4247b06f"
+        ],
+        "bindings": {
+          "links": [
+            []
+          ],
+          "tables": []
+        }
+      },
+      "/print#print-reading-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "reading-title",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-opening",
+          "cl-water-physical-object",
+          "cl-water-aware-question",
+          "cl-water-remaining-mechanism",
+          "cl-water-input-basis",
+          "cl-water-net-gross-meaning",
+          "cl-water125-method-genealogy",
+          "cl-water125-withdrawal-return-accounting",
+          "cl-water-reference-period",
+          "cl-water-reference-and-units",
+          "cl-water-time-and-aggregation",
+          "cl-water-background-inventory",
+          "cl-water-marginal-contexts",
+          "cl-water125-ef-country-resolution-and-climates",
+          "cl-water125-value-choices-and-denominator-paradox",
+          "cl-water-supplychain-reference",
+          "cl-water-case-input",
+          "cl-water-case-factors",
+          "cl-water-case-result",
+          "cl-water-case-locality",
+          "cl-water-case-averaging",
+          "cl-water-case-weighted-factor",
+          "cl-water125-country-rank-reversals",
+          "cl-water125-belgium-canada-mechanism-contrast",
+          "cl-water-version-and-boundary",
+          "cl-water125-package-report-discrepancies",
+          "cl-water125-diagnostic-synthesis",
+          "cl-water-conclusion"
+        ],
+        "ordinary": [
+          "291240ca58db20031cf9062178f2934ebdcee2300c6d3ce7a5de6b8f4247b06f"
+        ],
+        "chapter": "print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365"
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-体积记录了什么": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "heading",
+        "title": "水量与剩余量",
+        "claimIds": [
+          "cl-water-opening",
+          "cl-water-physical-object",
+          "cl-water-aware-question",
+          "cl-water-remaining-mechanism",
+          "cl-water-input-basis",
+          "cl-water-net-gross-meaning",
+          "cl-water125-method-genealogy",
+          "cl-water125-withdrawal-return-accounting"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-剩余量之前先读输入口径": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [
+          "cl-water-remaining-mechanism",
+          "cl-water-input-basis",
+          "cl-water-net-gross-meaning",
+          "cl-water125-method-genealogy",
+          "cl-water125-withdrawal-return-accounting"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-月份参照与背景": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "heading",
+        "title": "时空与参照",
+        "claimIds": [
+          "cl-water-reference-period",
+          "cl-water-reference-and-units",
+          "cl-water-time-and-aggregation",
+          "cl-water-background-inventory",
+          "cl-water-marginal-contexts",
+          "cl-water125-ef-country-resolution-and-climates",
+          "cl-water125-value-choices-and-denominator-paradox"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-把两处耗水接到同一产品": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "heading",
+        "title": "两处耗水的比较",
+        "claimIds": [
+          "cl-water-supplychain-reference",
+          "cl-water-case-input",
+          "cl-water-case-factors",
+          "cl-water-case-result"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-更换情境与更换运算次序": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "heading",
+        "title": "情境与加总",
+        "claimIds": [
+          "cl-water-case-locality",
+          "cl-water-case-averaging",
+          "cl-water-case-weighted-factor",
+          "cl-water125-country-rank-reversals",
+          "cl-water125-belgium-canada-mechanism-contrast",
+          "cl-water-version-and-boundary",
+          "cl-water125-package-report-discrepancies",
+          "cl-water125-diagnostic-synthesis",
+          "cl-water-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-结果怎样保留它的含义": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [
+          "cl-water-version-and-boundary",
+          "cl-water125-package-report-discrepancies",
+          "cl-water125-diagnostic-synthesis",
+          "cl-water-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-annotations": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note-group",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-opening",
+          "cl-water-physical-object",
+          "cl-water-aware-question",
+          "cl-water-remaining-mechanism",
+          "cl-water-input-basis",
+          "cl-water-net-gross-meaning",
+          "cl-water125-method-genealogy",
+          "cl-water125-withdrawal-return-accounting",
+          "cl-water-reference-period",
+          "cl-water-reference-and-units",
+          "cl-water-time-and-aggregation",
+          "cl-water-background-inventory",
+          "cl-water-marginal-contexts",
+          "cl-water125-ef-country-resolution-and-climates",
+          "cl-water125-value-choices-and-denominator-paradox",
+          "cl-water-supplychain-reference",
+          "cl-water-case-input",
+          "cl-water-case-factors",
+          "cl-water-case-result",
+          "cl-water-case-locality",
+          "cl-water-case-averaging",
+          "cl-water-case-weighted-factor",
+          "cl-water125-country-rank-reversals",
+          "cl-water125-belgium-canada-mechanism-contrast",
+          "cl-water-version-and-boundary",
+          "cl-water125-package-report-discrepancies",
+          "cl-water125-diagnostic-synthesis",
+          "cl-water-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-opening": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-opening"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-physical-object": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-physical-object"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-aware-question": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-aware-question"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-remaining-mechanism": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-remaining-mechanism"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-input-basis": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-input-basis"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-net-gross-meaning": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-net-gross-meaning"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water125-method-genealogy": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water125-method-genealogy"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water125-withdrawal-return-accounting": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water125-withdrawal-return-accounting"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-reference-period": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-reference-period"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-reference-and-units": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-reference-and-units"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-time-and-aggregation": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-time-and-aggregation"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-background-inventory": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-background-inventory"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-marginal-contexts": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-marginal-contexts"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water125-ef-country-resolution-and-climates": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water125-ef-country-resolution-and-climates"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water125-value-choices-and-denominator-paradox": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water125-value-choices-and-denominator-paradox"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-supplychain-reference": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-supplychain-reference"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-case-input": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-case-input"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-case-factors": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-case-factors"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-case-result": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-case-result"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-case-locality": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-case-locality"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-case-averaging": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-case-averaging"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-case-weighted-factor": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-case-weighted-factor"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water125-country-rank-reversals": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water125-country-rank-reversals"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water125-belgium-canada-mechanism-contrast": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water125-belgium-canada-mechanism-contrast"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-version-and-boundary": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-version-and-boundary"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water125-package-report-discrepancies": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water125-package-report-discrepancies"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water125-diagnostic-synthesis": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water125-diagnostic-synthesis"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f77617465722d73636172636974792d616e642d7265666572656e6365-claim-cl-water-conclusion": {
+        "route": "/docs/book/water-scarcity-and-reference",
+        "kind": "note",
+        "title": "耗水与缺水潜势",
+        "claimIds": [
+          "cl-water-conclusion"
+        ],
+        "ordinary": []
+      }
+    },
+    "source": "actual-export",
+    "sourceCommit": "f5611f12a21e804497d9521944361c84c5b75833",
+    "capture": {
+      "sourceCommit": "f5611f12a21e804497d9521944361c84c5b75833",
+      "dirty": true,
+      "status": "working-preview",
+      "manifestSha256": "8e1a93844f34c3059fe7686b31f07fb12925369b50bd98e798a34b2a52c0dade",
+      "normalizedProofSha256": "e3cb6288aa9e444522eda07b37240e7922ae1432097b7d5f96c8fce917919445"
+    },
+    "articleFiles": [
+      {
+        "path": "docs/book/particulate-emissions-and-health/index.html",
+        "sha256": "000d6686c484492a131bb1970452c4c98ee7638396f5d7a7d34c58fed0c4dcaa",
+        "bytes": 1390771
+      },
+      {
+        "path": "docs/book/water-scarcity-and-reference/index.html",
+        "sha256": "1cacc5da9ae757c44906543a0c3d303ec2ef51f10424c9b9e60f0f0d64a506ea",
+        "bytes": 1256321
+      },
+      {
+        "path": "docs/book/usetox-pathways-and-boundaries/index.html",
+        "sha256": "676d694fd43ddeb3a3f9f3c31bdb7bcd38cd145786d785dea54b25a7d4faf5dd",
+        "bytes": 1155185
+      },
+      {
+        "path": "docs/book/uncertainty-and-variability/index.html",
+        "sha256": "e0d392a9fa816c7e27d60997f55a1305b79dfea79e6e64dbd29672c53a395106",
+        "bytes": 1000826
+      },
+      {
+        "path": "print/index.html",
+        "sha256": "ad1531f2036c94bd946c6b1211e70ec99e908c2b765724c7dbdbe6e64ff6b32e",
+        "bytes": 14365160
+      }
+    ],
+    "artifactFiles": [
+      {
+        "path": "claims/index.html",
+        "sha256": "f8e88ecf6406364c3f920b0b6fa0b7c66ccc131760d925048b447898090180e1",
+        "bytes": 6379486,
+        "contentSha256": "abe3697259a11c5264bdebc8510f7c6e08854161a07d52a08992a0ee17f47314"
+      },
+      {
+        "path": "sources/index.html",
+        "sha256": "2dea492fd716e6e69481cda971fce96a50627df8c1de60525e6997ed5da92ebb",
+        "bytes": 5369307,
+        "contentSha256": "b5ee589db15e1cb38cd365ab974f82a0899e66d981e847b465818fac23b67565"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "sha256": "fb274c99d2c5864649a1d5b661c9ce63d6f25132dcdf8161d5d770a38327d3b0",
+        "bytes": 3807095,
+        "contentSha256": "fb274c99d2c5864649a1d5b661c9ce63d6f25132dcdf8161d5d770a38327d3b0"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "sha256": "2aa27e4aa318da093c696bda1114652004b5480300885ba08a493d437731722e",
+        "bytes": 382431,
+        "contentSha256": "2aa27e4aa318da093c696bda1114652004b5480300885ba08a493d437731722e"
+      },
+      {
+        "path": "research/index.html",
+        "sha256": "2e284eb63a758433ec2b1053274f1b6edaa2c4527706f9f43a0f2e9bf6d854ad",
+        "bytes": 1640583,
+        "contentSha256": "a22dc9d3a7dcb7295af384b1d11f40af4d3da0b842135c3af27257df50c3fb27"
+      },
+      {
+        "path": "downloads/bibliography.json",
+        "sha256": "94ad9176aad4985c1b2ec4106efcbe7f1bd87cf52dd5e64e21949cf1813463dd",
+        "bytes": 1287707,
+        "contentSha256": "94ad9176aad4985c1b2ec4106efcbe7f1bd87cf52dd5e64e21949cf1813463dd"
+      },
+      {
+        "path": "downloads/research.json",
+        "sha256": "94ad9176aad4985c1b2ec4106efcbe7f1bd87cf52dd5e64e21949cf1813463dd",
+        "bytes": 1287707,
+        "contentSha256": "94ad9176aad4985c1b2ec4106efcbe7f1bd87cf52dd5e64e21949cf1813463dd"
+      },
+      {
+        "path": "coverage/index.html",
+        "sha256": "e80ff2900355b04ecbebcf7dbca696252cb8df806feed2601b142c69e1d11877",
+        "bytes": 839601,
+        "contentSha256": "f2a344b7e15e39aaf0e90050e06f09c589f10fd35e6984dc68589ab0940e885f"
+      }
+    ],
+    "assessment": {
+      "provenance": "Actual private Next/compiler and untouched-exporter bytes from base f5611f12a21e804497d9521944361c84c5b75833 and a declared dirty working-preview. Temporary technical admission inside an isolated clone served inspection only and supplies no editorial acceptance.",
+      "reconstruction": "Exact bounded 2/2/2/2 B18 MDX insertions and updated frontmatter description restore full prior 9486bae9 raw catalog/readings/literature and physical B18 bytes (8ae52be3...) before #123 -> #121 -> #119 -> #117 -> #115 -> #113 -> #111 -> older qualifiers, verifying all 49 transitions and 171 bidirectional consumers.",
+      "guards": "Two-round independent publication-engineering security audit (843846a5) verified 106/106 numericFact BigInt/prose assertions (with zero surviving single-function perturbations even without row digests), 1-to-1 passage/evidence bindings, reviewed/conceptIds self-checks, grouped print origins + #109 copyedit-history anti-short-circuit validation in reader-flow-boundary.mjs, and adversarial tamper tests, concluding unconditional PASS (0 BLOCKER / 0 MAJOR / 0 MINOR).",
+      "actual": "Comparison of all 88 article projections identifies the exact 6 changed articles (B18 web/print + neighbor B17/B19 pagination descriptions + downstream uncertainty-and-variability web/print Note 8,9 -> 10,11 label updates on unchanged hrefs) and 8 changed public artifacts (including coverage/index.html). All 468 manifest payloads, 13 capture files and 40 case downloads verified with zero internal-ID or raw-carrier leakage.",
+      "browser": "Passed 20 responsive viewport/theme checks, 2 seven-control no-script dated-history suites on web and print (122 note keyboard activations + ordinary-0 + #109 copyedit-history controls), retained legacy-scope checks, 4 downstream consumer keyboard navigations, 2 neighbor pagination checks, 16 visible caveat checks, /coverage/ and /sources/ checks, and 28-note physical @media print verification with zero horizontal overflow. All servers and browsers closed cleanly.",
+      "limits": "Clean production build (dirty:false), source PR/CI/merge, live EdgeOne byte/guard qualification and exact root submodule integration remain required after this scoped acceptance."
+    },
+    "independentReports": {
+      "independent-primary-source-audit-initial.md": "324368242aa47c42aa5ef1acd76ab9d0ac57b08ff6f015420fee2130d38d81d1",
+      "independent-primary-source-audit-final.md": "cc5b2cae8a32820e20ca9d5a9f17b87af3fd3b1703796a67f85171366ba4e9bb",
+      "full-chapter-b18-reader-review-initial.md": "c19f2636d7e61a3d146f226d61c917654f143b9ed5e9dca74089e8d183f07174",
+      "full-chapter-b18-reader-review-final.md": "41f7ba3955c9182806e1179330f934d2fe0215c2f9eb1247ff079e5c5740c8d0",
+      "independent-publication-engineering-review-initial.md": "99274069fed8c4a73ed3247d37a9b66de1609ed24c37f3c3fe3ed050443fa9ae",
+      "independent-publication-engineering-review-final.md": "5b2eac24ed6bc42076bcd4ca672cc0de0133d6d8c726bc78a000c98f1259da0f",
+      "ef31-water-all-members-receipt.json": "09db69b1be8389718ca5bb7d00d48308b9c92cb4ec4722273e818acf0a981ce3",
+      "actual-browser-qa/responsive-script-enabled.json": "c0017673fc42b952a7462b8f3c6582f6c84ecb273023d0697e22b8861e52fabc",
+      "actual-browser-qa/interactions.json": "40701585f6336fa26b2d5ea8b31ab946fc747b2d92b76cc51b99c73e02cd857c"
+    }
+  }
+}

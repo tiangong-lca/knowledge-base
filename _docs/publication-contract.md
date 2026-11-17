@@ -17,12 +17,34 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-17
-lastReviewedCommit: 578e761a87575f93d1f63f54a30c42400f1c7007
+lastReviewedCommit: 615140573f6f8ba8e52943a5f94da360ffb2a391
 ---
 
 # Publication contract
 
 ## Scoped scientific successors
+
+The water-scarcity unit #125 compares ILCD 2011 (`Swiss Ecoscarcity` six
+regional scarcity levels, zero endpoints) and EF 2.0–3.1 (`AWARE` `[0.1, 100]`
+scarcity-weighted midpoint only) against ReCiPe 2016 (unweighted physical
+consumption midpoint `WCP = 1 m³/m³`, deferring regional stress `WSI` and
+vulnerability to malnutrition, terrestrial plant NPP and river-mouth fish
+endpoints) and LC-IMPACT (`0` midpoints, `11,050`-watershed malnutrition
+`DALY/m³` and `0.05°×0.05°` wetland global extinction `PDF·yr/m³`). It proves
+the `10:1` industrial groundwater accounting split (`EF 3.1` 7 positive / 4
+negative elementary flows versus ReCiPe `Table 10.2` ratio `1` refusing
+surface-return credit), the `WR_malnutrition` denominator paradox in `Table 10.4`
+(`I = 3.10×10⁻⁶ > H/E = 2.22×10⁻⁶ DALY/m³` via `1350 / 1000 = 1.35×`), and
+multi-way country rank reversals across `AU`/`BD`, `CL`/`CN`, and pure physical
+`WSI` versus `AWARE` in `BE`/`CA` (`6.29×` vs `1:5.40`). Source-internal
+discrepancies (`EF 3.1` `b2ad66ce.xml` unlocated global `-42.955` vs `+42.950`
+`-0.005` credit asymmetry, `GL = 0.00`, `inventoryItems = 36`, `Volume`
+flowproperty reuse vs `JRC109369` `kg world eq. deprived` typo, `RIVM` `Table 9.1/9.3`
+misreferences, `1,530` vs `1,350` `WR_malnutrition`, `Table 10.1` High regulation
+vs `Table 10.3` `WSI_I = 0.698 > 0.657`, `Table S6.2` corruption from row 53
+`Fiji` through `Zimbabwe` after 52 intact `A–E` rows, and `LC-IMPACT` `Table 1`
+`Average` vs `§2.3` dual factors) remain explicitly disclosed without silent
+repair, raw-source redistribution, or claims of local basin water permitting.
 
 The toxicity-comparison unit #123 compares ILCD 2011 / EF `USEtox` three
 chemical-toxicity midpoints (`CTUh` for cancer and non-cancer human toxicity and
