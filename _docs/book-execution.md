@@ -201,9 +201,41 @@ paragraphs (`2 + 3 + 3`, bringing B14 to 42 claims and the catalog to 968) bind
 passages) and 91 structured `numericFacts`, with explicit dated four-example
 framing synchronizations on `cl-lcia-midpoint-pathway` and
 `cl-mineral115-judgment` while conserving all 958 other prior claims
-byte-for-byte. Separate two-round source, 42-paragraph B14 reader, publication-
-engineering and actual-output acceptances (`36a120ef...`) and normal source/root
-delivery are tracked on Issue121. Part IV continuous reread (`B14`–`B19`,
+byte-for-byte. Unit121 is now fully delivered: PR122/Main
+`2eba26c6503e4fd3cb75fa6f00a2a3c202697ddb`, qualified468-file hosting on
+`https://prism.tiangong.earth` (`dpkhroj8xnlv`, including unmodified
+`validateReaderOutput` against archived Main source and live B14 print
+verification across all four Note1 and Note41 callouts), exact root2417/PR2418/
+Main `804b6c92c5446afa38c2646a36728eefc0898f20`, and ordinary final source/root
+completion receipts (`source_handoff` 1/1).
+
+[Issue123](https://github.com/tiangong-lca/knowledge-base/issues/123) continues
+B19 across its three retained sections with chemical toxicity method families
+(`V5-G` human toxicity and `V5-H` ecotoxicity): ILCD 2011 / EF `USEtox` three
+midpoints (`CTUh`, `CTUh`, freshwater `CTUe`) versus ReCiPe 2016 `USES-LCA 2.0`
+five `1,4-DCB`-referenced midpoints (excluding agricultural-soil ecotoxicity to
+avoid land-use overlap) and constant endpoint conversion constants, `0.5/HC50`
+versus `0.2/HC20` + EU REACH/EFSA metal rank reversals, five coupled `I/H/E`
+perspective switches (`1,4-DCB` vs `Nickel` two-way reversals), valence /
+2019-sales pesticide / unspecified-water inventory proxies, normative zeros
+(`-44%` `HT_nc` normalization factor vs `+4,438%` avoided-emission credit jump)
+and `EF-v3.1.zip` `ILCD/lciamethods` versus `other/converter` discrepancies. Its
+[prewriting protocol](editorial/2026-11-17-toxicity-comparison.md) was committed
+as `824fb4f` (`438768c` with governance review) before manuscript changes.
+Selected inspection covers ILCD 2011 (`§1 Tables 1–2`, `§3.3`, `§3.9`),
+JRC109369 (`§2 Tables 1–2`, `§3.4`, `§4.3`), JRC130796 (`§2 Table 1`, `§3 Table 2`,
+`§3.4`, `§4.2 Table 10`, `§§5.1.1.4–5.1.1.6`, `§§5.2/6`), EF 3.1 Data Guide
+Addendum (`pp. 1–3`), 34 CRC32-verified official EF 3.1 method/converter/
+property/flow XML members, RIVM 2016-0104 (`Tables 1.3–1.5`, Chapter 9, `§20 S5`),
+and Huijbregts et al. 2017 (`§2.3`, `Table 1`, `§§3.1.8 & 3.2`, `Table 2`,
+`§§3.2.8 & 4.1`). Eight new canonical paragraphs (`2 + 3 + (2 + 1)`, bringing
+B19 from 12 to 20 claims and the catalog from 968 to 976) and updated B19
+description (`ordinary-0`) bind 12 single-source `ev-tox123-*` records (`1-to-1`
+with 12 `psg-tox123-*` passages) and 132 structured `numericFacts` while
+conserving 100% of all 968 prior claims byte-for-byte. Separate source,
+20-paragraph B19 reader, publication-engineering and actual-output acceptances
+(`c65a21d4...`) and normal source/root delivery are tracked on Issue123. B18
+water scarcity, B15 biogenic/LULUC carbon, Part IV continuous reread (`B14`–`B19`,
 including `index.mdx:18`) and Programme9 requirements remain active.
 
 Rule adoption101 itself is fully delivered: PR103/Main10dc686 and

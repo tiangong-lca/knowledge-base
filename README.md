@@ -20,6 +20,25 @@ lastReviewedCommit: 6c73af8952b24d0aaa97f946c465b7b6ed8cf385
 
 # LCA Living Knowledge Base and Review
 
+[Chemical toxicity pathways & method families #123](https://github.com/tiangong-lca/knowledge-base/issues/123)
+extends B19 across its three retained sections (`20` claims total) with the
+cross-family toxicity comparison (`V5-G` human toxicity and `V5-H` ecotoxicity):
+ILCD 2011 / EF `USEtox` three midpoints (`CTUh`, `CTUh`, freshwater `CTUe`)
+versus ReCiPe 2016 `USES-LCA 2.0` five `1,4-DCB`-referenced midpoints (excluding
+agricultural-soil ecotoxicity to avoid land-use double counting) and constant
+endpoint conversion constants, `0.5/HC50` versus `0.2/HC20` + EU REACH/EFSA
+freshwater metal rank reversals (`Cu` vs `Hg` reversing >4 orders of magnitude),
+ReCiPe `I/H/E` five coupled time-horizon and metal food-chain switches (`1,4-DCB`
+vs `Nickel` urban-air and seawater two-way reversals), valence / 2019-sales
+pesticide / unspecified-water inventory proxies, normative zeros (`-44%` `HT_nc`
+normalization drop vs `+4,438%` avoided-emission credit jump), and `EF-v3.1.zip`
+`ILCD/lciamethods` versus `other/converter` byte/factor splits (including
+freshwater `Lactic acid` `1033.8` vs `0.0`). Its
+[comparison record](_docs/editorial/2026-11-17-toxicity-comparison.md) binds 12
+single-source evidence rows and 132 verified `numericFacts` while conserving all
+968 prior claims byte-for-byte alongside retained `#88` and new `#123` B19
+citation history.
+
 [Stratospheric ozone & ionizing radiation #121](https://github.com/tiangong-lca/knowledge-base/issues/121)
 extends B14 across its three sections (`42` claims total) with the fourth
 midpoint–endpoint structure: emission midpoints stopping at stratospheric
@@ -36,6 +55,8 @@ Eight new canonical paragraphs and two dated print-visible framing syncs on
 Note 1 (`cl-lcia-midpoint-pathway`) and Note 41 (`cl-mineral115-judgment`)
 preserve all 958 other prior claims byte-for-byte across four qualified B14
 history generations (`#111`, `#115`, `#117`, `#121`).
+Unit #121 is fully delivered at Main `2eba26c6503e4fd3cb75fa6f00a2a3c202697ddb`,
+qualified 468-file hosting and root #2417 (`804b6c92c5446afa38c2646a36728eefc0898f20`).
 
 [Photochemical ozone & multi-pathway precursors #119](https://github.com/tiangong-lca/knowledge-base/issues/119)
 extends B16 (`§4 同一排放不同的环境问题`) with tropospheric photochemical ozone
