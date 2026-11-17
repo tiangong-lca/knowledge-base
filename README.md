@@ -14,11 +14,43 @@ checkPaths:
   - "package.json"
   - "app/**"
   - "scripts/**"
-lastReviewedAt: 2026-11-17
-lastReviewedCommit: f387e6fd22baa2da772be0359e9a20e0838ae0eb
+lastReviewedAt: 2026-11-18
+lastReviewedCommit: 1af88b9225ebed0a4fca455570152fa79ccbce8d
 ---
 
 # LCA Living Knowledge Base and Review
+
+[Eutrophication pathways, field-to-water N/P interfaces, stoichiometry & package boundaries #129](https://github.com/tiangong-lca/knowledge-base/issues/129)
+extends B16 across its four retained sections and two `ReaderSection` anchors
+(`38` claims total, bringing the public catalog to `1,000` claims) with the
+cross-system eutrophication and agricultural field-interface comparison (`V5-F`):
+ILCD 2011 and EF 2.0–3.1 (`3` midpoints — terrestrial `AE` `mol N eq`, freshwater
+and marine `EUTREND` `kg P eq` and `kg N eq` summing to `9.47%` of `EF 3.1`
+single-score weight — and `0` recommended endpoints), UNEP-SETAC GLAM 2019 (`2`
+aquatic categories with local reversible `PDF·m³·yr` endpoints), ReCiPe 2016
+(`1` freshwater `P` category with `85`-day residence time and constant `6.1×10⁻⁷
+species·yr/kg P-eq`, `0` marine and `0` terrestrial), and LC-IMPACT (`0`
+midpoints, `2` global irreversible `PDF·yr` endpoints across `449` freshwater
+ecoregions / `15,000` fish species and `5,772` basin–`LME` pairs / `66` `LME`s /
+`57` hypoxia species / `6` marine taxa); the `2 kg` agricultural total-`P`
+interface split (`EF 3.1` soil `0.05 = 0.10` vs ReCiPe soil `0.10` & GLAM `10% =
+0.20 kg P eq` `2×` model difference vs `0.010/0.020` double-attenuation and
+`2.0` direct-water `10×–20×` errors); `P₂O₅` two-atom stoichiometry (`0.436` vs
+`RIVM 2016-0104` p. 62 printed `0.22`) and `Table S4.2` `[PDF·L/mg]` unit header;
+`EU 2021/2279 §4.4.1.5` N-to-soil prohibition (`0` soil `N` rows in `EF 3.1`
+XMLs, Tier 1 `0.022 N₂O`, `0.12/0.24 NH₃`, `1.33 NO₃⁻` yielding `3.12 kg N eq`
+and `16.16 mol N eq` on `10 kg` synthetic `N` vs silent `0` if mapped to soil);
+dual aquatic (`1.5 kg N` river vs `1.0 kg N` coastal: `1.5 > 1.0` in `EF 3.1` vs
+`1.374×10⁻¹⁵ < 1.95×10⁻¹⁵` in `LC-IMPACT` at `47.0%` river-to-sea ratio) and
+airborne (`3 kg NOx` air vs `1 kg NO₃⁻` river: `1.167 > 0.226` vs `0 < 2.07×10⁻¹⁶`)
+rank reversals; `540` constant marine `<location>` copies versus terrestrial
+unlocated `NOx = 4.26 > 3.547` (`+20.1%`); and `Normalisation_Weighting_Factors_EF_3.1.xlsx`
+`R1406–1408` agricultural `P` double counting (`+0.2509 kg P eq./person = 15.6%`)
+plus `JRC130796` `Table 13` duplicated `4th`/`5th` columns. Its
+[comparison record](_docs/editorial/2026-11-17-eutrophication-pathways.md) binds
+12 single-source evidence rows and 126 verified `numericFacts` while conserving
+all 992 prior claims byte-for-byte across three generations (`#113`, `#119`,
+`#129`) of B16 citation history.
 
 [Biogenic & LULUC carbon, feedback switches, storage rules & package boundaries #127](https://github.com/tiangong-lca/knowledge-base/issues/127)
 extends B15 (`49` claims total across its five sections) and its two companion
@@ -45,6 +77,8 @@ high-altitude `CO₂` subcompartment, and `ILCD`/`RIVM` report errata. Its
 single-source evidence rows and 128 verified `numericFacts` while conserving all
 984 prior claims (and `climate-numerical-reconstruction.mdx` / `climate-metrics-v1.json`)
 byte-for-byte across B15 citation history.
+Unit #127 is fully delivered at Main `8fcb2485b97a1476896549806740a030b637d00b`,
+qualified 468-file hosting and root #2430 (`7bbb4cdcd3ad892fb3631c3fd4a8337f314fd89a`).
 
 [Water scarcity methods, withdrawal-return accounting, value choices & package rules #125](https://github.com/tiangong-lca/knowledge-base/issues/125)
 extends B18 across its four retained sections and two `ReaderSection` anchors

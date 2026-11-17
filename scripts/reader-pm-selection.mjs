@@ -1,4 +1,4 @@
-import { currentAcidEquivalents, currentBookLayout, currentBookMdxMatches, currentBookFileMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
+import { currentAcidEquivalents, currentEutrophicationPathways, currentBookLayout, currentBookMdxMatches, currentBookFileMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import { createHash } from 'node:crypto';
 import { isDeepStrictEqual as same } from 'node:util';
 import original from '../config/pm-selection-original.json' with { type: 'json' };
@@ -243,8 +243,9 @@ export function validatePmSelectionCoverage(edition, sources, catalog, accepted,
     const retainsResearch = expected.every(previous => {
       const current = observed.get(previous.id);
       if (same(previous, current)) return true;
-      return currentAcidEquivalents && kind === 'readings' && previous.id === 'rd-unep-glam-2019-pathways'
-        && currentBookRecordMatches('readings', previous, current, 'raw');
+      return (currentAcidEquivalents && kind === 'readings' && previous.id === 'rd-unep-glam-2019-pathways'
+        || currentEutrophicationPathways && kind === 'literature' && previous.id === 'work-unep-glam-2019-volume2')
+        && currentBookRecordMatches(kind, previous, current, 'raw');
     });
     if (!Array.isArray(rows) || !retainsResearch
         || auditPrefixes[kind] && !exactIds(rows.filter(row => row.id.startsWith(auditPrefixes[kind])), ids(expected)))

@@ -1,3 +1,5 @@
+import eutroConfig from '../config/reader-eutrophication-pathways.json' with { type: 'json' };
+import { selectEutrophicationPathways, effectiveEutrophicationPathways } from './reader-eutrophication-pathways.mjs';
 import biogenicConfig from '../config/reader-biogenic-carbon.json' with { type: 'json' };
 import { selectBiogenicCarbon, effectiveBiogenicCarbon, biogenicCarbonLayout } from './reader-biogenic-carbon.mjs';
 import waterConfig from '../config/reader-water-scarcity.json' with { type: 'json' };
@@ -52,8 +54,9 @@ export const currentOzoneRadiation = selectOzoneRadiation(ozradConfig, undefined
 export const currentToxicityComparison = selectToxicityComparison(toxConfig, undefined, preview);
 export const currentWaterScarcity = selectWaterScarcity(waterConfig, undefined, preview);
 export const currentBiogenicCarbon = selectBiogenicCarbon(biogenicConfig, undefined, preview);
+export const currentEutrophicationPathways = selectEutrophicationPathways(eutroConfig, undefined, preview);
 export const isReadableBookReviewPreview = oldPreview
-  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview' || acidConfig.status === 'preview' || mineralConfig.status === 'preview' || fossilConfig.status === 'preview' || ozoneConfig.status === 'preview' || ozradConfig.status === 'preview' || toxConfig.status === 'preview' || waterConfig.status === 'preview' || biogenicConfig.status === 'preview');
+  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview' || acidConfig.status === 'preview' || mineralConfig.status === 'preview' || fossilConfig.status === 'preview' || ozoneConfig.status === 'preview' || ozradConfig.status === 'preview' || toxConfig.status === 'preview' || waterConfig.status === 'preview' || biogenicConfig.status === 'preview' || eutroConfig.status === 'preview');
 const previousPlan = readableBookReviewPlan(oldPreview
   ? acceptance.units
   : pinnedReadableBookUnits(acceptance, readableBookBaselineDigest, readableBookAcceptancePins));
@@ -71,7 +74,8 @@ const acceptedOzone = effectivePhotochemicalOzone(acceptedFossil, currentPhotoch
 const acceptedOzrad = effectiveOzoneRadiation(acceptedOzone, currentOzoneRadiation);
 const acceptedTox = effectiveToxicityComparison(acceptedOzrad, currentToxicityComparison);
 const acceptedWater = effectiveWaterScarcity(acceptedTox, currentWaterScarcity);
-export const currentBookPlan = effectiveBiogenicCarbon(acceptedWater, currentBiogenicCarbon);
+const acceptedBio = effectiveBiogenicCarbon(acceptedWater, currentBiogenicCarbon);
+export const currentBookPlan = effectiveEutrophicationPathways(acceptedBio, currentEutrophicationPathways);
 
 export function currentBookRecordMatches(kind, previous, current, projection) {
   if (projection !== undefined) return matchesAcceptedRecord(currentBookPlan, kind, previous, current, projection);

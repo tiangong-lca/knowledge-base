@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import config from '../config/reader-circular-footprint.json' with { type: 'json' };
 import capture from '../config/reader-circular-footprint-capture.json' with { type: 'json' };
+import eutro from '../config/reader-eutrophication-pathways.json' with { type: 'json' };
 import bio from '../config/reader-biogenic-carbon.json' with { type: 'json' };
 import water from '../config/reader-water-scarcity.json' with { type: 'json' };
 import tox from '../config/reader-toxicity-comparison.json' with { type: 'json' };
@@ -23,7 +24,7 @@ import { previousScientificTestRecords, testEnvelopes } from './fixtures/scienti
 test('B13 receipts bind captured raw files, normalized article pairs, public pages and JSON', {
   skip: !capture && config.status !== 'reviewed',
 }, () => {
-  const preWater = previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, bio.unit), water.unit);
+  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, eutro.unit), bio.unit), water.unit);
   const preTox = previousScientificTestRecords(preWater, tox.unit);
   const preOzrad = previousScientificTestRecords(preTox, ozrad.unit);
   const preOzone = previousScientificTestRecords(preOzrad, ozone.unit);

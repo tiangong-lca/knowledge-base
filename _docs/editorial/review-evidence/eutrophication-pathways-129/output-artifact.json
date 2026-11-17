@@ -1,0 +1,1401 @@
+{
+  "schemaVersion": 1,
+  "kind": "output",
+  "unit": "eutrophication-pathways-129",
+  "subjectSha256": "a9e10212f2c03bb0b9bbfc31116d73f88a0066dbd4e5fe7f20b2c2d0ddbafdf3",
+  "date": "2026-11-18",
+  "scope": [
+    "content/docs/book/acidification-and-nutrient-pathways.mdx",
+    "sources:src-book-recipe-2017-primary-article",
+    "sources:src-book-unep-glam-2019-volume2",
+    "sources:src-book-ilcd-2011-lcia-recommendations",
+    "sources:src-kb44-ec2021",
+    "sources:src-flow-pilot-ef31-update",
+    "sources:src-land111-rivm2016",
+    "sources:src-land111-lcimpact2020-article",
+    "sources:src-fossil117-jrc109369",
+    "readings:rd-recipe-2017-primary-article",
+    "readings:rd-unep-glam-2019-pathways",
+    "readings:rd-ilcd-2011-eutrophication-pathways",
+    "readings:rd-kb44-ec2021",
+    "readings:rd-flow-pilot-ef31",
+    "readings:rd-flow-pilot-ef31-update",
+    "readings:rd-land111-rivm2016",
+    "readings:rd-land111-lcimpact2020-article",
+    "readings:rd-fossil117-jrc109369",
+    "literature:lit-m05",
+    "literature:lit-n04",
+    "literature:work-recipe-2017-method-article",
+    "literature:work-unep-glam-2019-volume2",
+    "literature:work-ilcd-2011-lcia-recommendations",
+    "literature:work-flow-pilot-ef31",
+    "literature:work-flow-pilot-ef31-update",
+    "literature:work-land111-lcimpact2020-article",
+    "literature:work-fossil117-jrc109369",
+    "researchMetadata:reading-ledger",
+    "researchMetadata:literature-map",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:order:sources",
+    "researchMetadata:order:readings",
+    "researchMetadata:order:gaps",
+    "researchMetadata:order:revisions",
+    "researchMetadata:order:literature",
+    "researchMetadata:order:queries",
+    "researchMetadata:public-projection",
+    "claims:cl-eutro129-category-genealogy",
+    "claims:cl-eutro129-phosphorus-soil-water-interface",
+    "claims:cl-eutro129-phosphorus-stoichiometry-and-p2o5",
+    "claims:cl-eutro129-nitrogen-soil-prohibition",
+    "claims:cl-eutro129-aquatic-and-airborne-n-reversals",
+    "claims:cl-eutro129-location-copies-and-nox-inversion",
+    "claims:cl-eutro129-normalization-double-counting-and-xml-anomalies",
+    "claims:cl-eutro129-operational-synthesis",
+    "evidence:ev-eutro129-ilcd2011-eutro",
+    "evidence:ev-eutro129-glam2019-eutro",
+    "evidence:ev-eutro129-ec2021-field-rules",
+    "evidence:ev-eutro129-jrc109369-eutro",
+    "evidence:ev-eutro129-jrc130796-eutro",
+    "evidence:ev-eutro129-ef31-eutro-xmls",
+    "evidence:ev-eutro129-ef31-nf-eutro",
+    "evidence:ev-eutro129-rivm-ch8-s4",
+    "evidence:ev-eutro129-recipe2017-eutro",
+    "evidence:ev-eutro129-lcimpact2020-eutro",
+    "evidence:ev-eutro129-lcimpact-ch8-fw",
+    "evidence:ev-eutro129-lcimpact-ch9-marine",
+    "sources:src-eutro129-ef31-selected-members",
+    "sources:src-eutro129-lcimpact-ch8-ch9",
+    "readings:rd-eutro129-lcimpact-ch8-ch9",
+    "gaps:gap-eutro129-watershed-hydrodynamics-and-grid-rasters",
+    "revisions:rev-eutro129-b16-eutrophication-and-field-interfaces",
+    "literature:work-eutro129-lcimpact-ch8-ch9",
+    "queries:q-eutro129-eutrophication-interfaces-stoichiometry-and-packages-20261118"
+  ],
+  "observed": "Primary scoped judgment integrating two-round unconditional-PASS independent source, zero-context full-chapter reader and publication-engineering audits with direct original, export and browser/print checks; no human or empirical certification.",
+  "observations": {
+    "outputs": [
+      {
+        "path": "/docs/book/acidification-and-nutrient-pathways",
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "from": "d24c987456079677e8296dd906e051993eba7fefa694392c3bfe4babdb5dbbe7",
+        "sha256": "d938f9cc1b040b680d07106d510ce877c33b447482509b2bade1d5efc4d351fc",
+        "rationale": "核对 /docs/book/acidification-and-nutrient-pathways 新增8段富营养化类别谱系、农田磷氮界面、化学计量、河海输移与发行包边界比较论述、#129历史引用范围及顺延后的完整38注。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "from": "3c9da6e07c1c123b01e5820b85e2269f17225c8b3fe2b8daafc6707031026fe7",
+        "sha256": "62c69b273c91137ddf016d2e0d0758db3934e0f9157e80ee219d96eeeee833c7",
+        "rationale": "核对 /docs/book/acidification-and-nutrient-pathways 新增8段富营养化类别谱系、农田磷氮界面、化学计量、河海输移与发行包边界比较论述、#129历史引用范围及顺延后的完整38注。"
+      }
+    ],
+    "publicArtifacts": [
+      {
+        "path": "claims/index.html",
+        "from": "9fd8b4c065184c10c05f550d32f10b5bdca80fb73d8f2eaade8ccff5c576eeea",
+        "sha256": "7d23e7cf657be91f53f6a472bf58fb00b155d94a4cbd8fd7f61005c2014fbbb4",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "sources/index.html",
+        "from": "164902920d2177f08e05716f49e8eb8e6f9bf287c0dc2bf7340334fa9e6c20f6",
+        "sha256": "1ac51dbe48a658e5fd4472e26ca6b424ba5ab62b578882dcd1b67abcfd439ab1",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "from": "91e67ae7865b2994027cfe1e5a8267ac852aaf23d4235f035ebc4bdf07c5adee",
+        "sha256": "fec2acced003feff136ab7b23aecf2033d32c7db653d30e0f4620b7100cd21e1",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "from": "60975c6c270d511388329268c63fa3e4fe69978cb5b123f299111cdd69e9e38f",
+        "sha256": "44dcc891faf69299c023f4243d3eafe2ffe34086a184843c121155752ed6123c",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "research/index.html",
+        "from": "852bbb8c48c357c8225fc48d864eac0aaebf882db0a72d5ef70cc96780773c72",
+        "sha256": "efce548f46526098e72f636f599817302d6aa4696b71291c57bcece61dc4ba3a",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "downloads/bibliography.json",
+        "from": "009844067977b07004bbc099fcd87de0b28920d18f957dde0642d45673a6627f",
+        "sha256": "271edde2a933f36f6a13b0f353a4b0403da412803c26c6b0ea0af20d8f919d64",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "downloads/research.json",
+        "from": "009844067977b07004bbc099fcd87de0b28920d18f957dde0642d45673a6627f",
+        "sha256": "271edde2a933f36f6a13b0f353a4b0403da412803c26c6b0ea0af20d8f919d64",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      }
+    ],
+    "addresses": {
+      "/docs/book/acidification-and-nutrient-pathways#nd-page": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "chapter",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-start",
+          "cl-path-acid-soil",
+          "cl-path-acid-indicator",
+          "cl-acid113-ae-question",
+          "cl-acid113-threshold",
+          "cl-acid113-glam-relation",
+          "cl-acid113-glam-tension",
+          "cl-acid113-so2-rows",
+          "cl-acid113-chemistry-control",
+          "cl-path-freshwater",
+          "cl-path-marine",
+          "cl-path-limiting-conditions",
+          "cl-path-terrestrial",
+          "cl-path-units",
+          "cl-acid113-shared-moles",
+          "cl-acid113-nh3-control",
+          "cl-path-marginal-average",
+          "cl-path-supplied-effect-conditions",
+          "cl-path-background",
+          "cl-path-pdf",
+          "cl-path-operation",
+          "cl-path-operation-indicator",
+          "cl-eutro129-category-genealogy",
+          "cl-eutro129-phosphorus-soil-water-interface",
+          "cl-eutro129-phosphorus-stoichiometry-and-p2o5",
+          "cl-eutro129-nitrogen-soil-prohibition",
+          "cl-eutro129-aquatic-and-airborne-n-reversals",
+          "cl-eutro129-location-copies-and-nox-inversion",
+          "cl-eutro129-normalization-double-counting-and-xml-anomalies",
+          "cl-eutro129-operational-synthesis",
+          "cl-ozone119-precursor-entry",
+          "cl-ozone119-pocp-to-lotos",
+          "cl-ozone119-order-reversal",
+          "cl-ozone119-titration-sign",
+          "cl-ozone119-ef-location-copy",
+          "cl-ozone119-multipath-accounting",
+          "cl-ozone119-printed-limits",
+          "cl-path-multiple-paths"
+        ],
+        "ordinary": [
+          "293c042653401699335501578c97d71912682b04574dc072b248bdbcf846e4df"
+        ],
+        "bindings": {
+          "links": [
+            []
+          ],
+          "tables": []
+        }
+      },
+      "/docs/book/acidification-and-nutrient-pathways#main-content": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "reading-title",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-start",
+          "cl-path-acid-soil",
+          "cl-path-acid-indicator",
+          "cl-acid113-ae-question",
+          "cl-acid113-threshold",
+          "cl-acid113-glam-relation",
+          "cl-acid113-glam-tension",
+          "cl-acid113-so2-rows",
+          "cl-acid113-chemistry-control",
+          "cl-path-freshwater",
+          "cl-path-marine",
+          "cl-path-limiting-conditions",
+          "cl-path-terrestrial",
+          "cl-path-units",
+          "cl-acid113-shared-moles",
+          "cl-acid113-nh3-control",
+          "cl-path-marginal-average",
+          "cl-path-supplied-effect-conditions",
+          "cl-path-background",
+          "cl-path-pdf",
+          "cl-path-operation",
+          "cl-path-operation-indicator",
+          "cl-eutro129-category-genealogy",
+          "cl-eutro129-phosphorus-soil-water-interface",
+          "cl-eutro129-phosphorus-stoichiometry-and-p2o5",
+          "cl-eutro129-nitrogen-soil-prohibition",
+          "cl-eutro129-aquatic-and-airborne-n-reversals",
+          "cl-eutro129-location-copies-and-nox-inversion",
+          "cl-eutro129-normalization-double-counting-and-xml-anomalies",
+          "cl-eutro129-operational-synthesis",
+          "cl-ozone119-precursor-entry",
+          "cl-ozone119-pocp-to-lotos",
+          "cl-ozone119-order-reversal",
+          "cl-ozone119-titration-sign",
+          "cl-ozone119-ef-location-copy",
+          "cl-ozone119-multipath-accounting",
+          "cl-ozone119-printed-limits",
+          "cl-path-multiple-paths"
+        ],
+        "ordinary": [
+          "293c042653401699335501578c97d71912682b04574dc072b248bdbcf846e4df"
+        ],
+        "chapter": "nd-page"
+      },
+      "/docs/book/acidification-and-nutrient-pathways#从排放找到接收系统": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "heading",
+        "title": "酸输入与土壤",
+        "claimIds": [
+          "cl-path-start",
+          "cl-path-acid-soil",
+          "cl-path-acid-indicator",
+          "cl-acid113-ae-question",
+          "cl-acid113-threshold",
+          "cl-acid113-glam-relation",
+          "cl-acid113-glam-tension",
+          "cl-acid113-so2-rows",
+          "cl-acid113-chemistry-control"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#营养进入淡水与近岸海洋": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "heading",
+        "title": "营养与接收环境",
+        "claimIds": [
+          "cl-path-freshwater",
+          "cl-path-marine",
+          "cl-path-limiting-conditions",
+          "cl-path-terrestrial",
+          "cl-path-units",
+          "cl-acid113-shared-moles",
+          "cl-acid113-nh3-control"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#陆地营养富集与指标的单位": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [
+          "cl-path-terrestrial",
+          "cl-path-units",
+          "cl-acid113-shared-moles",
+          "cl-acid113-nh3-control"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#响应曲线回答哪一种变化": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "heading",
+        "title": "背景与响应",
+        "claimIds": [
+          "cl-path-marginal-average",
+          "cl-path-supplied-effect-conditions",
+          "cl-path-background",
+          "cl-path-pdf"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#从施用量走到净排放和指标": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "heading",
+        "title": "清单与类别指标",
+        "claimIds": [
+          "cl-path-operation",
+          "cl-path-operation-indicator",
+          "cl-eutro129-category-genealogy",
+          "cl-eutro129-phosphorus-soil-water-interface",
+          "cl-eutro129-phosphorus-stoichiometry-and-p2o5",
+          "cl-eutro129-nitrogen-soil-prohibition",
+          "cl-eutro129-aquatic-and-airborne-n-reversals",
+          "cl-eutro129-location-copies-and-nox-inversion",
+          "cl-eutro129-normalization-double-counting-and-xml-anomalies",
+          "cl-eutro129-operational-synthesis",
+          "cl-ozone119-precursor-entry",
+          "cl-ozone119-pocp-to-lotos",
+          "cl-ozone119-order-reversal",
+          "cl-ozone119-titration-sign",
+          "cl-ozone119-ef-location-copy",
+          "cl-ozone119-multipath-accounting",
+          "cl-ozone119-printed-limits",
+          "cl-path-multiple-paths"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#同一排放不同的环境问题": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [
+          "cl-ozone119-precursor-entry",
+          "cl-ozone119-pocp-to-lotos",
+          "cl-ozone119-order-reversal",
+          "cl-ozone119-titration-sign",
+          "cl-ozone119-ef-location-copy",
+          "cl-ozone119-multipath-accounting",
+          "cl-ozone119-printed-limits",
+          "cl-path-multiple-paths"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-annotations": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note-group",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-start",
+          "cl-path-acid-soil",
+          "cl-path-acid-indicator",
+          "cl-acid113-ae-question",
+          "cl-acid113-threshold",
+          "cl-acid113-glam-relation",
+          "cl-acid113-glam-tension",
+          "cl-acid113-so2-rows",
+          "cl-acid113-chemistry-control",
+          "cl-path-freshwater",
+          "cl-path-marine",
+          "cl-path-limiting-conditions",
+          "cl-path-terrestrial",
+          "cl-path-units",
+          "cl-acid113-shared-moles",
+          "cl-acid113-nh3-control",
+          "cl-path-marginal-average",
+          "cl-path-supplied-effect-conditions",
+          "cl-path-background",
+          "cl-path-pdf",
+          "cl-path-operation",
+          "cl-path-operation-indicator",
+          "cl-eutro129-category-genealogy",
+          "cl-eutro129-phosphorus-soil-water-interface",
+          "cl-eutro129-phosphorus-stoichiometry-and-p2o5",
+          "cl-eutro129-nitrogen-soil-prohibition",
+          "cl-eutro129-aquatic-and-airborne-n-reversals",
+          "cl-eutro129-location-copies-and-nox-inversion",
+          "cl-eutro129-normalization-double-counting-and-xml-anomalies",
+          "cl-eutro129-operational-synthesis",
+          "cl-ozone119-precursor-entry",
+          "cl-ozone119-pocp-to-lotos",
+          "cl-ozone119-order-reversal",
+          "cl-ozone119-titration-sign",
+          "cl-ozone119-ef-location-copy",
+          "cl-ozone119-multipath-accounting",
+          "cl-ozone119-printed-limits",
+          "cl-path-multiple-paths"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-start": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-start"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-acid-soil": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-acid-soil"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-acid-indicator": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-acid-indicator"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-ae-question": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-acid113-ae-question"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-threshold": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-acid113-threshold"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-glam-relation": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-acid113-glam-relation"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-glam-tension": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-acid113-glam-tension"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-so2-rows": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-acid113-so2-rows"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-chemistry-control": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-acid113-chemistry-control"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-freshwater": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-freshwater"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-marine": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-marine"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-limiting-conditions": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-limiting-conditions"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-terrestrial": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-terrestrial"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-units": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-units"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-shared-moles": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-acid113-shared-moles"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-nh3-control": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-acid113-nh3-control"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-marginal-average": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-marginal-average"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-supplied-effect-conditions": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-supplied-effect-conditions"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-background": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-background"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-pdf": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-pdf"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-operation": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-operation"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-operation-indicator": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-operation-indicator"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-eutro129-category-genealogy": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-eutro129-category-genealogy"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-eutro129-phosphorus-soil-water-interface": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-eutro129-phosphorus-soil-water-interface"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-eutro129-phosphorus-stoichiometry-and-p2o5": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-eutro129-phosphorus-stoichiometry-and-p2o5"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-eutro129-nitrogen-soil-prohibition": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-eutro129-nitrogen-soil-prohibition"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-eutro129-aquatic-and-airborne-n-reversals": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-eutro129-aquatic-and-airborne-n-reversals"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-eutro129-location-copies-and-nox-inversion": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-eutro129-location-copies-and-nox-inversion"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-eutro129-normalization-double-counting-and-xml-anomalies": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-eutro129-normalization-double-counting-and-xml-anomalies"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-eutro129-operational-synthesis": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-eutro129-operational-synthesis"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-ozone119-precursor-entry": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-ozone119-precursor-entry"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-ozone119-pocp-to-lotos": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-ozone119-pocp-to-lotos"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-ozone119-order-reversal": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-ozone119-order-reversal"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-ozone119-titration-sign": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-ozone119-titration-sign"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-ozone119-ef-location-copy": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-ozone119-ef-location-copy"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-ozone119-multipath-accounting": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-ozone119-multipath-accounting"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-ozone119-printed-limits": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-ozone119-printed-limits"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/acidification-and-nutrient-pathways#chapter-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-multiple-paths": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-multiple-paths"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "chapter",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-start",
+          "cl-path-acid-soil",
+          "cl-path-acid-indicator",
+          "cl-acid113-ae-question",
+          "cl-acid113-threshold",
+          "cl-acid113-glam-relation",
+          "cl-acid113-glam-tension",
+          "cl-acid113-so2-rows",
+          "cl-acid113-chemistry-control",
+          "cl-path-freshwater",
+          "cl-path-marine",
+          "cl-path-limiting-conditions",
+          "cl-path-terrestrial",
+          "cl-path-units",
+          "cl-acid113-shared-moles",
+          "cl-acid113-nh3-control",
+          "cl-path-marginal-average",
+          "cl-path-supplied-effect-conditions",
+          "cl-path-background",
+          "cl-path-pdf",
+          "cl-path-operation",
+          "cl-path-operation-indicator",
+          "cl-eutro129-category-genealogy",
+          "cl-eutro129-phosphorus-soil-water-interface",
+          "cl-eutro129-phosphorus-stoichiometry-and-p2o5",
+          "cl-eutro129-nitrogen-soil-prohibition",
+          "cl-eutro129-aquatic-and-airborne-n-reversals",
+          "cl-eutro129-location-copies-and-nox-inversion",
+          "cl-eutro129-normalization-double-counting-and-xml-anomalies",
+          "cl-eutro129-operational-synthesis",
+          "cl-ozone119-precursor-entry",
+          "cl-ozone119-pocp-to-lotos",
+          "cl-ozone119-order-reversal",
+          "cl-ozone119-titration-sign",
+          "cl-ozone119-ef-location-copy",
+          "cl-ozone119-multipath-accounting",
+          "cl-ozone119-printed-limits",
+          "cl-path-multiple-paths"
+        ],
+        "ordinary": [
+          "293c042653401699335501578c97d71912682b04574dc072b248bdbcf846e4df"
+        ],
+        "bindings": {
+          "links": [
+            []
+          ],
+          "tables": []
+        }
+      },
+      "/print#print-reading-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "reading-title",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-start",
+          "cl-path-acid-soil",
+          "cl-path-acid-indicator",
+          "cl-acid113-ae-question",
+          "cl-acid113-threshold",
+          "cl-acid113-glam-relation",
+          "cl-acid113-glam-tension",
+          "cl-acid113-so2-rows",
+          "cl-acid113-chemistry-control",
+          "cl-path-freshwater",
+          "cl-path-marine",
+          "cl-path-limiting-conditions",
+          "cl-path-terrestrial",
+          "cl-path-units",
+          "cl-acid113-shared-moles",
+          "cl-acid113-nh3-control",
+          "cl-path-marginal-average",
+          "cl-path-supplied-effect-conditions",
+          "cl-path-background",
+          "cl-path-pdf",
+          "cl-path-operation",
+          "cl-path-operation-indicator",
+          "cl-eutro129-category-genealogy",
+          "cl-eutro129-phosphorus-soil-water-interface",
+          "cl-eutro129-phosphorus-stoichiometry-and-p2o5",
+          "cl-eutro129-nitrogen-soil-prohibition",
+          "cl-eutro129-aquatic-and-airborne-n-reversals",
+          "cl-eutro129-location-copies-and-nox-inversion",
+          "cl-eutro129-normalization-double-counting-and-xml-anomalies",
+          "cl-eutro129-operational-synthesis",
+          "cl-ozone119-precursor-entry",
+          "cl-ozone119-pocp-to-lotos",
+          "cl-ozone119-order-reversal",
+          "cl-ozone119-titration-sign",
+          "cl-ozone119-ef-location-copy",
+          "cl-ozone119-multipath-accounting",
+          "cl-ozone119-printed-limits",
+          "cl-path-multiple-paths"
+        ],
+        "ordinary": [
+          "293c042653401699335501578c97d71912682b04574dc072b248bdbcf846e4df"
+        ],
+        "chapter": "print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973"
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-从排放找到接收系统": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "heading",
+        "title": "酸输入与土壤",
+        "claimIds": [
+          "cl-path-start",
+          "cl-path-acid-soil",
+          "cl-path-acid-indicator",
+          "cl-acid113-ae-question",
+          "cl-acid113-threshold",
+          "cl-acid113-glam-relation",
+          "cl-acid113-glam-tension",
+          "cl-acid113-so2-rows",
+          "cl-acid113-chemistry-control"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-营养进入淡水与近岸海洋": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "heading",
+        "title": "营养与接收环境",
+        "claimIds": [
+          "cl-path-freshwater",
+          "cl-path-marine",
+          "cl-path-limiting-conditions",
+          "cl-path-terrestrial",
+          "cl-path-units",
+          "cl-acid113-shared-moles",
+          "cl-acid113-nh3-control"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-陆地营养富集与指标的单位": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [
+          "cl-path-terrestrial",
+          "cl-path-units",
+          "cl-acid113-shared-moles",
+          "cl-acid113-nh3-control"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-响应曲线回答哪一种变化": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "heading",
+        "title": "背景与响应",
+        "claimIds": [
+          "cl-path-marginal-average",
+          "cl-path-supplied-effect-conditions",
+          "cl-path-background",
+          "cl-path-pdf"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-从施用量走到净排放和指标": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "heading",
+        "title": "清单与类别指标",
+        "claimIds": [
+          "cl-path-operation",
+          "cl-path-operation-indicator",
+          "cl-eutro129-category-genealogy",
+          "cl-eutro129-phosphorus-soil-water-interface",
+          "cl-eutro129-phosphorus-stoichiometry-and-p2o5",
+          "cl-eutro129-nitrogen-soil-prohibition",
+          "cl-eutro129-aquatic-and-airborne-n-reversals",
+          "cl-eutro129-location-copies-and-nox-inversion",
+          "cl-eutro129-normalization-double-counting-and-xml-anomalies",
+          "cl-eutro129-operational-synthesis",
+          "cl-ozone119-precursor-entry",
+          "cl-ozone119-pocp-to-lotos",
+          "cl-ozone119-order-reversal",
+          "cl-ozone119-titration-sign",
+          "cl-ozone119-ef-location-copy",
+          "cl-ozone119-multipath-accounting",
+          "cl-ozone119-printed-limits",
+          "cl-path-multiple-paths"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-同一排放不同的环境问题": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [
+          "cl-ozone119-precursor-entry",
+          "cl-ozone119-pocp-to-lotos",
+          "cl-ozone119-order-reversal",
+          "cl-ozone119-titration-sign",
+          "cl-ozone119-ef-location-copy",
+          "cl-ozone119-multipath-accounting",
+          "cl-ozone119-printed-limits",
+          "cl-path-multiple-paths"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-annotations": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note-group",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-start",
+          "cl-path-acid-soil",
+          "cl-path-acid-indicator",
+          "cl-acid113-ae-question",
+          "cl-acid113-threshold",
+          "cl-acid113-glam-relation",
+          "cl-acid113-glam-tension",
+          "cl-acid113-so2-rows",
+          "cl-acid113-chemistry-control",
+          "cl-path-freshwater",
+          "cl-path-marine",
+          "cl-path-limiting-conditions",
+          "cl-path-terrestrial",
+          "cl-path-units",
+          "cl-acid113-shared-moles",
+          "cl-acid113-nh3-control",
+          "cl-path-marginal-average",
+          "cl-path-supplied-effect-conditions",
+          "cl-path-background",
+          "cl-path-pdf",
+          "cl-path-operation",
+          "cl-path-operation-indicator",
+          "cl-eutro129-category-genealogy",
+          "cl-eutro129-phosphorus-soil-water-interface",
+          "cl-eutro129-phosphorus-stoichiometry-and-p2o5",
+          "cl-eutro129-nitrogen-soil-prohibition",
+          "cl-eutro129-aquatic-and-airborne-n-reversals",
+          "cl-eutro129-location-copies-and-nox-inversion",
+          "cl-eutro129-normalization-double-counting-and-xml-anomalies",
+          "cl-eutro129-operational-synthesis",
+          "cl-ozone119-precursor-entry",
+          "cl-ozone119-pocp-to-lotos",
+          "cl-ozone119-order-reversal",
+          "cl-ozone119-titration-sign",
+          "cl-ozone119-ef-location-copy",
+          "cl-ozone119-multipath-accounting",
+          "cl-ozone119-printed-limits",
+          "cl-path-multiple-paths"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-start": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-start"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-acid-soil": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-acid-soil"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-acid-indicator": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-acid-indicator"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-ae-question": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-acid113-ae-question"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-threshold": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-acid113-threshold"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-glam-relation": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-acid113-glam-relation"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-glam-tension": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-acid113-glam-tension"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-so2-rows": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-acid113-so2-rows"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-chemistry-control": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-acid113-chemistry-control"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-freshwater": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-freshwater"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-marine": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-marine"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-limiting-conditions": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-limiting-conditions"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-terrestrial": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-terrestrial"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-units": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-units"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-shared-moles": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-acid113-shared-moles"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-acid113-nh3-control": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-acid113-nh3-control"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-marginal-average": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-marginal-average"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-supplied-effect-conditions": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-supplied-effect-conditions"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-background": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-background"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-pdf": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-pdf"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-operation": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-operation"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-operation-indicator": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-operation-indicator"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-eutro129-category-genealogy": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-eutro129-category-genealogy"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-eutro129-phosphorus-soil-water-interface": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-eutro129-phosphorus-soil-water-interface"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-eutro129-phosphorus-stoichiometry-and-p2o5": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-eutro129-phosphorus-stoichiometry-and-p2o5"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-eutro129-nitrogen-soil-prohibition": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-eutro129-nitrogen-soil-prohibition"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-eutro129-aquatic-and-airborne-n-reversals": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-eutro129-aquatic-and-airborne-n-reversals"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-eutro129-location-copies-and-nox-inversion": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-eutro129-location-copies-and-nox-inversion"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-eutro129-normalization-double-counting-and-xml-anomalies": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-eutro129-normalization-double-counting-and-xml-anomalies"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-eutro129-operational-synthesis": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-eutro129-operational-synthesis"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-ozone119-precursor-entry": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-ozone119-precursor-entry"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-ozone119-pocp-to-lotos": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-ozone119-pocp-to-lotos"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-ozone119-order-reversal": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-ozone119-order-reversal"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-ozone119-titration-sign": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-ozone119-titration-sign"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-ozone119-ef-location-copy": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-ozone119-ef-location-copy"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-ozone119-multipath-accounting": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-ozone119-multipath-accounting"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-ozone119-printed-limits": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-ozone119-printed-limits"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973-claim-cl-path-multiple-paths": {
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "kind": "note",
+        "title": "酸化与营养富集",
+        "claimIds": [
+          "cl-path-multiple-paths"
+        ],
+        "ordinary": []
+      }
+    },
+    "source": "actual-export",
+    "sourceCommit": "a84fe832984f1c7b2bae8db5b1bfe4cb64b5a5e2",
+    "capture": {
+      "sourceCommit": "a84fe832984f1c7b2bae8db5b1bfe4cb64b5a5e2",
+      "dirty": true,
+      "status": "working-preview",
+      "manifestSha256": "e197c5f22716d53057a23c88e9615520ca3f84ee8fe1eb312d4fc817a379e8d1",
+      "normalizedProofSha256": "64ce45caf0a766b3f0051f019cc428da630c1805394171f6ae88d4460887ed94"
+    },
+    "articleFiles": [
+      {
+        "path": "docs/book/acidification-and-nutrient-pathways/index.html",
+        "sha256": "8cf58082f63608be1a62910705b27a334a34b30be84478f220923f42f92b24cc",
+        "bytes": 1474231
+      },
+      {
+        "path": "print/index.html",
+        "sha256": "91734b3d6b8049ec8dfdbd08022d575b7f9c0aeb335e26b352dd00874fd5af7f",
+        "bytes": 14753988
+      }
+    ],
+    "artifactFiles": [
+      {
+        "path": "claims/index.html",
+        "sha256": "de8b723ad9e8a5e3b18e8b1de85de18b4d8a79496d7f495452f0825665dfcec4",
+        "bytes": 6757855,
+        "contentSha256": "7d23e7cf657be91f53f6a472bf58fb00b155d94a4cbd8fd7f61005c2014fbbb4"
+      },
+      {
+        "path": "sources/index.html",
+        "sha256": "cc0c3dfa5df93e66e732289b374d5ba3c754127fb4f327df1f439169ce7ef5b0",
+        "bytes": 5817164,
+        "contentSha256": "1ac51dbe48a658e5fd4472e26ca6b424ba5ab62b578882dcd1b67abcfd439ab1"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "sha256": "fec2acced003feff136ab7b23aecf2033d32c7db653d30e0f4620b7100cd21e1",
+        "bytes": 4008372,
+        "contentSha256": "fec2acced003feff136ab7b23aecf2033d32c7db653d30e0f4620b7100cd21e1"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "sha256": "44dcc891faf69299c023f4243d3eafe2ffe34086a184843c121155752ed6123c",
+        "bytes": 394357,
+        "contentSha256": "44dcc891faf69299c023f4243d3eafe2ffe34086a184843c121155752ed6123c"
+      },
+      {
+        "path": "research/index.html",
+        "sha256": "2a081a8504c9bb8d51281c9d8b0cab90dd1bde4c3403ef8319cc8eee19b948a9",
+        "bytes": 1701659,
+        "contentSha256": "efce548f46526098e72f636f599817302d6aa4696b71291c57bcece61dc4ba3a"
+      },
+      {
+        "path": "downloads/bibliography.json",
+        "sha256": "271edde2a933f36f6a13b0f353a4b0403da412803c26c6b0ea0af20d8f919d64",
+        "bytes": 1330703,
+        "contentSha256": "271edde2a933f36f6a13b0f353a4b0403da412803c26c6b0ea0af20d8f919d64"
+      },
+      {
+        "path": "downloads/research.json",
+        "sha256": "271edde2a933f36f6a13b0f353a4b0403da412803c26c6b0ea0af20d8f919d64",
+        "bytes": 1330703,
+        "contentSha256": "271edde2a933f36f6a13b0f353a4b0403da412803c26c6b0ea0af20d8f919d64"
+      }
+    ],
+    "assessment": {
+      "provenance": "Actual private Next/compiler and untouched-exporter bytes from base a84fe832984f1c7b2bae8db5b1bfe4cb64b5a5e2 and a declared dirty working-preview. Temporary technical admission inside an isolated clone served inspection only and supplies no editorial acceptance.",
+      "reconstruction": "Exact single-site B16 §4 MDX insertion after cl-path-operation-indicator restores full prior 8fcb2485 raw catalog/readings/literature and physical B16 MDX bytes before #127 -> #125 -> #123 -> #121 -> #119 -> #117 -> #115 -> #113 -> #111 -> older qualifiers, verifying all 65 transitions and 315 bidirectional consumers.",
+      "guards": "Two-round independent adversarial publication-engineering security audit (b6be3b09) caught and verified the citationScopeExclusions [data-eutrophication-pathways-history] fix in reader-surface.mjs:175, 126/126 numericFact zero-survivor mutation guard, narrow work-unep-glam-2019-volume2 PM literature gate + negative mutation test, 3-generation B16 history stack (#113 -> #119 -> #129), and CSS zero-drift (be180e5d...), concluding unconditional PASS (0 BLOCKER / 0 MAJOR / 0 MINOR).",
+      "actual": "Comparison of all 88 article projections identifies the exact 2 changed articles (B16 web and /print, with zero collateral changes on B18 Note 17 premise links, concepts/index.html, or coverage/index.html) and 7 changed public artifacts. All 468 manifest payloads, 8 capture files and 40 case downloads verified with zero internal-ID or raw-carrier leakage.",
+      "browser": "Passed 20 responsive viewport/theme checks across B16 web & print (390–2560px, zero overflow), 3-generation no-script dated-history keyboard suites (#113 + #119 + #129 controls verifying Notes 1..22 & 31..38 relabeling), 8 visible caveat checks, B18 Note 17 premise-link preservation, Meta+k search, /sources/#ev-eutro129-ef31-nf-eutro check, and 38-note physical @media print verification with zero horizontal overflow. All servers and browsers closed cleanly.",
+      "limits": "Clean production build (dirty:false), source PR/CI/merge, live EdgeOne byte/guard qualification and exact root submodule integration remain required after this scoped acceptance."
+    },
+    "independentReports": {
+      "independent-primary-source-audit-initial.md": "6e4dfc44b908fcbf67645b4ebaaf42be7b34ecf033d1c88e59b4ea18b74d4eb2",
+      "independent-primary-source-audit-final.md": "495cd5b57675c6da8dc76e9e11d9bcba5cda7f99ef51a06fba12850d705f9e20",
+      "full-chapter-b16-reader-review-initial.md": "649a2c45404504acce736d2cd4e1cff740a1308c9708cb2e7c037a4256c2e7dc",
+      "full-chapter-b16-reader-review-final.md": "26bdca76917c1c080c2260ef2325d95eda113196e480fdb642704c9ae31fbe0b",
+      "independent-publication-engineering-review-initial.md": "ea94072e134fb1b2d0385c085bf0cb073aed2340d0373e5a27df1dd8eb7b61f4",
+      "independent-publication-engineering-review-final.md": "c2c9bf32165731b24a7ce30d0cdbf261b74e9d3033a2fcebe8d7944d680e92ec",
+      "ef31-eutrophication-members-receipt.json": "912165207331e0f36e65a3f32e46d5492a4147ee14d2b7856b8acf402149b1dd",
+      "actual-browser-qa/responsive-script-enabled.json": "1462b4bac35f58b121bc8cdcd2fd1c6abd2fe2619c9b3104d03f1a7e6b17175a",
+      "actual-browser-qa/interactions.json": "cfb6f9cd4dc5131162317c34d80703044afe4e9a23bb243e8b61bd11e646b88b"
+    }
+  }
+}

@@ -16,11 +16,48 @@ checkPaths:
   - "scripts/**"
   - "package.json"
   - ".github/**"
-lastReviewedAt: 2026-11-17
-lastReviewedCommit: f387e6fd22baa2da772be0359e9a20e0838ae0eb
+lastReviewedAt: 2026-11-18
+lastReviewedCommit: 1af88b9225ebed0a4fca455570152fa79ccbce8d
 ---
 
 # Publication architecture
+
+## Eutrophication-pathways successor
+
+The #129 B16 successor inserts eight canonical claims (`cl-eutro129-*`) at a
+single bounded site in B16 §4 right after `<Prose ids="cl-path-operation
+cl-path-operation-indicator" />` and before `<ReaderSection id="同一排放不同的环境问题" />`
+(bringing B16 from 30 to 38 claims and the catalog from 992 to 1,000 claims),
+conserving 100% of all 992 prior claims, Notes `1..22` (including `B18`'s
+premise links to `B16` Note `17` `cl-path-marginal-average`), `rd-kb46-lcimpact2020`,
+`phosphorus-boundary-v1.json`, and B16's frontmatter `description` (`-acid-113-ordinary-0`)
+byte-for-byte with zero prior-claim corrections. Before #127 runs its own
+rollback and reconstructed `readerPublicDownloads(eutroInput)` receipt checks,
+`prepareEutrophicationPathwaysSource` restores the exact `8fcb2485` B16 MDX
+(`c356117f...`) and raw source/reading/literature extensions, verifying
+`eutrophicationPathwaysPredecessorPin` (`844fa83c...`) and all 65 bidirectional
+transitions across 315 dependent consumers (with narrow fail-closed literature
+admission for `work-unep-glam-2019-volume2` in `reader-pm-selection.mjs`).
+
+`reader-eutrophication-pathways-factors.mjs` binds all 12 single-source
+`ev-eutro129-*` records in 1-to-1 bijection with all 12 `psg-eutro129-*`
+passages across 10 primary PDF/OOXML/XML carriers, all 26 CRC32-verified
+official `EF-v3.1.zip` member hashes (`6` reused + `20` newly registered across
+`b53ec18f`/`b5c619fa`/`b5c614d2` XMLs, `e58cd71d`/`58bc3cfd` sources,
+`Normalisation_Weighting_Factors_EF_3.1.xlsx`, and 17 phosphorus/nitrogen water
+and soil flows) on `rd-flow-pilot-ef31` via `sameScienceValue`, and all 126
+structured `numericFacts` (`126/126` pinned to canonical decimal literals and
+verified in 40-place `BigInt` fixed-point arithmetic with zero single-fact
+mutation survivors even when row digests are bypassed). Across B16 web and
+`/print`, `qualifyEutrophicationPathwaysHistory` stacks three generations of
+dated history controls (`acid-equivalents -> photochemical-ozone ->
+eutrophication-pathways`, `8` dispositions / `6` grouped controls) with
+`[data-eutrophication-pathways-history]` excluded from `citationScopeExclusions`,
+`ordinaryExclusions`, and `apparatus`, while `relabelHistoricalTargets` updates
+the shifted `#119` ozone note labels to `注 31..38`. `eutrophicationPathwaysCapturePin`
+(`e68938ca...`) and `eutrophicationPathwaysUnitPin` (`ec31ab87...`) bind the 2
+changed B16 articles and 7 changed public artifacts with zero compiled CSS drift
+(`be180e5d...`).
 
 ## Biogenic-carbon successor
 
