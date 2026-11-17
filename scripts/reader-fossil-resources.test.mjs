@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 import config from '../config/reader-fossil-resources.json' with { type: 'json' };
 import capture from '../config/reader-fossil-resources-capture.json' with { type: 'json' };
+import bio from '../config/reader-biogenic-carbon.json' with { type: 'json' };
 import water from '../config/reader-water-scarcity.json' with { type: 'json' };
 import tox from '../config/reader-toxicity-comparison.json' with { type: 'json' };
 import ozrad from '../config/reader-ozone-radiation.json' with { type: 'json' };
@@ -177,11 +178,12 @@ test('B14 fossil source preview preserves all real predecessor transitions', { s
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
+  if (bio.unit) for (const [p, text] of Object.entries(bio.unit.previousMdx)) files.set(p, Buffer.from(text));
   if (water.unit) files.set(`content${water.unit.routes[0]}.mdx`, Buffer.from(water.unit.previousMdx));
   if (tox.unit) files.set(`content${tox.unit.routes[0]}.mdx`, Buffer.from(tox.unit.previousMdx));
   if (ozrad.unit) files.set(`content${ozrad.unit.routes[0]}.mdx`, Buffer.from(ozrad.unit.previousMdx));
   if (ozone.unit) files.set(`content${ozone.unit.routes[0]}.mdx`, Buffer.from(ozone.unit.previousMdx));
-  const preWater = previousScientificTestRecords({ catalog, readings, literature }, water.unit);
+  const preWater = previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, bio.unit), water.unit);
   const preTox = previousScientificTestRecords(preWater, tox.unit);
   const preOzrad = previousScientificTestRecords(preTox, ozrad.unit);
   const input = { ...previousScientificTestRecords(preOzrad, ozone.unit), files };
@@ -208,7 +210,7 @@ test('B14 fossil source preview preserves all real predecessor transitions', { s
 });
 
 test('Fossil receipts bind actual output capture independently', { skip: !capture && config.status !== 'reviewed' }, () => {
-  const preWater = previousScientificTestRecords({ catalog, readings, literature }, water.unit);
+  const preWater = previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, bio.unit), water.unit);
   const preTox = previousScientificTestRecords(preWater, tox.unit);
   const preOzrad = previousScientificTestRecords(preTox, ozrad.unit);
   const previous = previousScientificTestRecords(preOzrad, ozone.unit);

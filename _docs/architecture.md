@@ -17,10 +17,48 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-17
-lastReviewedCommit: 615140573f6f8ba8e52943a5f94da360ffb2a391
+lastReviewedCommit: f387e6fd22baa2da772be0359e9a20e0838ae0eb
 ---
 
 # Publication architecture
+
+## Biogenic-carbon successor
+
+The #127 B15 successor inserts eight canonical claims (`cl-bio127-*`) across
+B15's five retained sections (`1 + (1 + 2) + 2 + 1 + 1`, bringing B15 from 41 to
+49 claims, companion `climate-response-and-metrics` from 34 to 41 claims,
+companion `emission-time-and-assessment` from 7 to 8 claims, and the catalog
+from 984 to 992 claims), anchors the conserved response figure with
+`<ReaderFigure>` (`ordinary-figure`), and updates all three B15 frontmatter
+`description` fields (`ordinary-0`), keeping 100% of all 984 prior claims,
+`rd-kb46-lcimpact2020`, `climate-numerical-reconstruction.mdx`, and
+`climate-metrics-v1.json` byte-for-byte unchanged with zero prior-claim
+corrections. Before #125 runs its own rollback and reconstructed
+`readerPublicDownloads(bioInput)` receipt checks, `prepareBiogenicCarbonSource`
+restores the exact `5c982449` MDX files (`b5fceaa2...`, `d3f4b3bd...`,
+`30ba85d1...`) and raw source/reading/literature extensions, verifying
+`biogenicCarbonPredecessorPin`, all three `B15:*:reader-source` layout locks
+(blocking newline and `<`/`>` injection in `description`), and all 67
+bidirectional transitions across 340 dependent consumers.
+
+`reader-biogenic-carbon-factors.mjs` binds all 13 single-source `ev-bio127-*`
+records in 1-to-1 bijection with all 13 `psg-bio127-*` passages, their 11 primary
+PDF/OOXML/XML carriers, all 23 CRC32-verified official `EF-v3.1.zip` member
+hashes (`4` reused + `19` newly registered, including 248-page `pef_method.pdf`
+`JRC115959`) on `rd-flow-pilot-ef31` via `sameScienceValue`, and all 128
+structured `numericFacts` (`128/128` pinned to canonical decimal literals and
+verified in sign-aware half-away-from-zero 40-place `BigInt` fixed-point
+arithmetic with zero single-fact or coupled-pair mutation survivors even when
+row digests are bypassed). `ReaderFigure` fails closed at render time on
+missing/duplicate/explicit IDs while `inspectClimateAssemblySource` enforces
+backreferenced tag matching `/<(figure|ReaderFigure)>[\s\S]*?<\/\1>/g`. Across
+B15 print and both companion web pages, `qualifyBiogenicCarbonHistory` binds all
+15 `P` and `FIGURE` ordinary targets and all 104 prior B15 citation addresses
+across 19 history dispositions (`6 + 3 + 7` rendered `<details>` controls), while
+`relabelHistoricalTargets` updates shifted B15 note labels without altering
+historical scope memberships. `biogenicCarbonCapturePin` binds 13 changed
+articles and 8 changed public artifacts with zero compiled CSS drift
+(`be180e5d...`).
 
 ## Water-scarcity successor
 

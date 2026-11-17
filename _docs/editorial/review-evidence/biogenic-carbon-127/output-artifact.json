@@ -1,0 +1,1913 @@
+{
+  "schemaVersion": 1,
+  "kind": "output",
+  "unit": "biogenic-carbon-127",
+  "subjectSha256": "25d6db015f3d2d1eaa8050493f96f5913e9b2d163ee6bd7f7a7fcba045b899fd",
+  "date": "2026-11-17",
+  "scope": [
+    "content/monograph/climate-equivalence.mdx",
+    "content/docs/book/climate-response-and-metrics.mdx",
+    "content/docs/book/emission-time-and-assessment.mdx",
+    "sources:src-book-recipe-2017-primary-article",
+    "sources:src-book-ilcd-2011-lcia-recommendations",
+    "sources:src-kb44-ec2021",
+    "sources:src-kb44-pef-guidance2018",
+    "sources:src-kb54-ipcc-ar6-errata-2025-10-07-pdf",
+    "sources:src-flow-pilot-ef31-update",
+    "sources:src-land111-rivm2016",
+    "sources:src-land111-lcimpact2020-article",
+    "sources:src-fossil117-jrc109369",
+    "sources:src-tox123-ef31-addendum",
+    "readings:rd-recipe-2017-primary-article",
+    "readings:rd-ilcd-2011-eutrophication-pathways",
+    "readings:rd-kb44-ec2021",
+    "readings:rd-kb44-pef-guidance2018",
+    "readings:rd-kb54-ipcc-ar6-errata-2025-10-07-pdf",
+    "readings:rd-flow-pilot-ef31",
+    "readings:rd-flow-pilot-ef31-update",
+    "readings:rd-land111-rivm2016",
+    "readings:rd-land111-lcimpact2020-article",
+    "readings:rd-fossil117-jrc109369",
+    "readings:rd-tox123-ef31-addendum",
+    "literature:lit-m05",
+    "literature:lit-n04",
+    "literature:work-recipe-2017-method-article",
+    "literature:work-ipcc-ar6-wgi-errata-2025-10-07",
+    "literature:work-ilcd-2011-lcia-recommendations",
+    "literature:lit-kb44-pef-guidance2018",
+    "literature:work-flow-pilot-ef31",
+    "literature:work-flow-pilot-ef31-update",
+    "literature:work-land111-lcimpact2020-article",
+    "literature:work-fossil117-jrc109369",
+    "literature:work-tox123-ef31-addendum",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:order:sources",
+    "researchMetadata:order:gaps",
+    "researchMetadata:order:revisions",
+    "researchMetadata:order:queries",
+    "researchMetadata:public-projection",
+    "claims:cl-bio127-midpoint-endpoint-genealogy",
+    "claims:cl-bio127-feedback-perspective-asymmetry",
+    "claims:cl-bio127-ef31-subindicator-partition",
+    "claims:cl-bio127-zero-zero-vs-minus-plus-one",
+    "claims:cl-bio127-co-removal-and-methane-shift",
+    "claims:cl-bio127-package-and-report-discrepancies",
+    "claims:cl-bio127-storage-abolition-and-dluc-window",
+    "claims:cl-bio127-climate-diagnostic-synthesis",
+    "evidence:ev-bio127-ilcd2011-climate",
+    "evidence:ev-bio127-pefcr-v63-climate",
+    "evidence:ev-bio127-ec2021-climate-rules",
+    "evidence:ev-bio127-jrc109369-climate",
+    "evidence:ev-bio127-jrc130796-climate",
+    "evidence:ev-bio127-ef31-addendum-climate",
+    "evidence:ev-bio127-ef31-climate-xmls",
+    "evidence:ev-bio127-ef31-nf-workbook",
+    "evidence:ev-bio127-ar6-errata-fgd-p25",
+    "evidence:ev-bio127-rivm-ch2-midpoints",
+    "evidence:ev-bio127-rivm-ch2-endpoints",
+    "evidence:ev-bio127-recipe2017-climate",
+    "evidence:ev-bio127-lcimpact2020-climate",
+    "sources:src-bio127-ef31-selected-members",
+    "gaps:gap-bio127-iso14067-pas2050-and-ef-background-datasets",
+    "revisions:rev-bio127-b15-biogenic-carbon-comparison",
+    "queries:q-bio127-climate-subindicators-feedbacks-storage-and-packages-20261117"
+  ],
+  "observed": "Primary scoped judgment integrating two-round unconditional-PASS independent source, zero-context full-chapter reader and publication-engineering audits with direct original, export and browser/print checks; no human or empirical certification.",
+  "observations": {
+    "outputs": [
+      {
+        "path": "/docs/book",
+        "route": "/docs/book",
+        "from": "1cb69f27e562b327fa834ace1c849047e9d9716238b05955013fac21b19020d6",
+        "sha256": "d6c9a3b2dfcdeb5d746c91fd37f0adb580a249d89531f2f9e3bab28b22f61b1d",
+        "rationale": "只按B15及伴随网页注释顺延同步跨章交叉引用中的注号显示文字，保留原链接地址与论述范围。"
+      },
+      {
+        "path": "/docs/book/midpoint-endpoint-value-choices",
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "from": "99347ee1cc577e9df585a6a062186e87f99c7b4dfe652458941ebc1fc83f47f0",
+        "sha256": "d5cc0280ee54e3b57bd3b30176cea2e98d1043e153be30ce35ebd87f5b79d2c2",
+        "rationale": "按B15伴随网页简介更新（及如有跨章注号顺延）同步相邻网页底部翻页卡片（.docs-pagination），保留原正文与链接地址。"
+      },
+      {
+        "path": "/docs/book/climate-response-and-metrics",
+        "route": "/docs/book/climate-response-and-metrics",
+        "from": "958d929ecba91b7fc9e4f7009d35e4729a68f98ec349c82158428e7b3dcc7e0e",
+        "sha256": "0bdbccd2e54707e0b15cd40030a068cc9ccb57174bc44c314a69db832f495149",
+        "rationale": "核对 /docs/book/climate-response-and-metrics 更新后的简介、响应图或普通导航锚点、新增气候当量跨体系比较论述、#127历史引用范围与完整注释。"
+      },
+      {
+        "path": "/docs/book/emission-time-and-assessment",
+        "route": "/docs/book/emission-time-and-assessment",
+        "from": "b075c114e7e8d69ce08892aadfbd786a395bff89ab565a121919bc642d2daff1",
+        "sha256": "9af24dd15e9306e277a855386c947ddea9cc9ae21efb0c6385db90beec39bc42",
+        "rationale": "核对 /docs/book/emission-time-and-assessment 更新后的简介、响应图或普通导航锚点、新增气候当量跨体系比较论述、#127历史引用范围与完整注释。"
+      },
+      {
+        "path": "/docs/book/acidification-and-nutrient-pathways",
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "from": "2966448abdef0b23a2cf2e4b712d1c2bd5a006137e38c1ae016e3f347aea8418",
+        "sha256": "d24c987456079677e8296dd906e051993eba7fefa694392c3bfe4babdb5dbbe7",
+        "rationale": "按B15伴随网页简介更新（及如有跨章注号顺延）同步相邻网页底部翻页卡片（.docs-pagination），保留原正文与链接地址。"
+      },
+      {
+        "path": "/docs/book/future-technology-and-context",
+        "route": "/docs/book/future-technology-and-context",
+        "from": "a98f20ab472757104c23b446c866308cd91918841b1bc526b8ad5536a9e0bbad",
+        "sha256": "43d1bcb7f44d7a129621a9570d5ed80979304d508ab9ab19233887eda1a54a33",
+        "rationale": "按B15伴随网页简介更新（及如有跨章注号顺延）同步相邻网页底部翻页卡片（.docs-pagination），保留原正文与链接地址。"
+      },
+      {
+        "path": "/docs/book/connecting-objects-references-and-time",
+        "route": "/docs/book/connecting-objects-references-and-time",
+        "from": "a43ea138e5a21e492439890ba08ef8ca1cac136199701c28310a37ca8152021d",
+        "sha256": "d51b98925521fa44b8db9b4b601347679ce36f2c0f19c0219a2d569cb3b535c9",
+        "rationale": "只按B15及伴随网页注释顺延同步跨章交叉引用中的注号显示文字，保留原链接地址与论述范围。"
+      },
+      {
+        "path": "/docs/book/from-connected-results-to-conditional-judgment",
+        "route": "/docs/book/from-connected-results-to-conditional-judgment",
+        "from": "bd555bce92662431fb7f148344bbe4f019c962555ce4cc11e60979ea41369f2a",
+        "sha256": "166feeb35bca2ff2b0d225433ba98fa2f1c1501d81d7241640bd7840d4ca513f",
+        "rationale": "只按B15及伴随网页注释顺延同步跨章交叉引用中的注号显示文字，保留原链接地址与论述范围。"
+      },
+      {
+        "path": "/docs/appendices/climate-numerical-reconstruction",
+        "route": "/docs/appendices/climate-numerical-reconstruction",
+        "from": "d1afa2275986540c1e3da100a8f4ae0a58adf80e7ddd1fbd589a82f76ef9a201",
+        "sha256": "af063dda966b5ae62c666a411bb78a9d0178ccaa2f4c8e7d006f3bfa071e495d",
+        "rationale": "只按B15及伴随网页注释顺延同步跨章交叉引用中的注号显示文字，保留原链接地址与论述范围。"
+      },
+      {
+        "path": "/print",
+        "route": "book-climate-equivalence",
+        "from": "a5ff4f13fd2901d0e81944db2e0543b420da2c4244d8930692b2ae94c1254447",
+        "sha256": "93ccaac30e6dd9654e39246cd50c992058589a75a71a77fb9b01305acbc2d590",
+        "rationale": "核对 book-climate-equivalence 更新后的简介、响应图或普通导航锚点、新增气候当量跨体系比较论述、#127历史引用范围与完整注释。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/future-technology-and-context",
+        "from": "07d2d7c6488eb9e7d89450aeda2d7ea0ffda9dad57c7aa4fd6b5611fa948b913",
+        "sha256": "765258431b46106c0742b2e3a524039eebd4f51f47cf7361d18a13007d02b135",
+        "rationale": "只按B15及伴随网页注释顺延同步跨章交叉引用中的注号显示文字，保留原链接地址与论述范围。"
+      },
+      {
+        "path": "/print",
+        "route": "book-revisable-judgment",
+        "from": "5192170ef64d0de7be5aa9c2b52654ac49e5204651b4627b68d76338f03f3561",
+        "sha256": "4bcbb57f59c4e5d35d1311970e69537cda7f9949412efb104a0fa16cd4afd566",
+        "rationale": "只按B15及伴随网页注释顺延同步跨章交叉引用中的注号显示文字，保留原链接地址与论述范围。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/appendices/climate-numerical-reconstruction",
+        "from": "2cbec153439a1385fed1035d7a9cdb49eac16dd208cb46b7f1ae54aa66d35a2e",
+        "sha256": "364cbe1fdabc49163a0aab64dd5cc8286dc9ba39342c0b6c1342b4ec0d278687",
+        "rationale": "只按B15及伴随网页注释顺延同步跨章交叉引用中的注号显示文字，保留原链接地址与论述范围。"
+      }
+    ],
+    "publicArtifacts": [
+      {
+        "path": "claims/index.html",
+        "from": "abe3697259a11c5264bdebc8510f7c6e08854161a07d52a08992a0ee17f47314",
+        "sha256": "9fd8b4c065184c10c05f550d32f10b5bdca80fb73d8f2eaade8ccff5c576eeea",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "sources/index.html",
+        "from": "b5ee589db15e1cb38cd365ab974f82a0899e66d981e847b465818fac23b67565",
+        "sha256": "164902920d2177f08e05716f49e8eb8e6f9bf287c0dc2bf7340334fa9e6c20f6",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "from": "fb274c99d2c5864649a1d5b661c9ce63d6f25132dcdf8161d5d770a38327d3b0",
+        "sha256": "91e67ae7865b2994027cfe1e5a8267ac852aaf23d4235f035ebc4bdf07c5adee",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "from": "2aa27e4aa318da093c696bda1114652004b5480300885ba08a493d437731722e",
+        "sha256": "60975c6c270d511388329268c63fa3e4fe69978cb5b123f299111cdd69e9e38f",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "research/index.html",
+        "from": "a22dc9d3a7dcb7295af384b1d11f40af4d3da0b842135c3af27257df50c3fb27",
+        "sha256": "852bbb8c48c357c8225fc48d864eac0aaebf882db0a72d5ef70cc96780773c72",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "downloads/bibliography.json",
+        "from": "94ad9176aad4985c1b2ec4106efcbe7f1bd87cf52dd5e64e21949cf1813463dd",
+        "sha256": "009844067977b07004bbc099fcd87de0b28920d18f957dde0642d45673a6627f",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "downloads/research.json",
+        "from": "94ad9176aad4985c1b2ec4106efcbe7f1bd87cf52dd5e64e21949cf1813463dd",
+        "sha256": "009844067977b07004bbc099fcd87de0b28920d18f957dde0642d45673a6627f",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "coverage/index.html",
+        "from": "f2a344b7e15e39aaf0e90050e06f09c589f10fd35e6984dc68589ab0940e885f",
+        "sha256": "9a8f629fb8c56d32775a4a6063ef43bd9844edc1431c00ec50c8fa4a5539104f",
+        "rationale": "同步章节导览页中《气候响应与当量》《排放时间与评价》更新后的简介投影。"
+      }
+    ],
+    "addresses": {
+      "/docs/book/climate-response-and-metrics#nd-page": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "chapter",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-opening",
+          "cl-climate-inventory",
+          "cl-climate-pulse",
+          "cl-climate-reservoirs",
+          "cl-climate-reference-illustration",
+          "cl-climate-reference-limits",
+          "cl-climate-forcing",
+          "cl-climate-agwp",
+          "cl-climate-agtp",
+          "cl-climate-endpoint",
+          "cl-bio127-midpoint-endpoint-genealogy",
+          "cl-climate-feedback-consistency",
+          "cl-climate-feedback-return",
+          "cl-bio127-feedback-perspective-asymmetry",
+          "cl-climate-methane-chemistry",
+          "cl-climate-carbon-budget",
+          "cl-climate-three-methane-rows",
+          "cl-climate-biogenic-boundary",
+          "cl-bio127-ef31-subindicator-partition",
+          "cl-bio127-zero-zero-vs-minus-plus-one",
+          "cl-climate-editions",
+          "cl-climate-published-after",
+          "cl-climate-equal-score",
+          "cl-climate-wall-fixed",
+          "cl-climate-wall-reweighted",
+          "cl-climate-comparison-criteria",
+          "cl-bio127-co-removal-and-methane-shift",
+          "cl-bio127-package-and-report-discrepancies",
+          "cl-climate-calendar-sum",
+          "cl-climate-timing-assumptions",
+          "cl-climate-timing-result",
+          "cl-climate-dynamic-application",
+          "cl-climate-step",
+          "cl-climate-rate-formula",
+          "cl-climate-rate-fit",
+          "cl-climate-rate-histories",
+          "cl-climate-rate-window",
+          "cl-climate-rate-aggregate",
+          "cl-climate-debate",
+          "cl-bio127-climate-diagnostic-synthesis",
+          "cl-climate-conclusion"
+        ],
+        "ordinary": [
+          "4a9869193c751db57388deaf67d586c637e76242f543a65ff6197031f7e6fbc9",
+          "38f8454aac1ee102ac47b7664f50da39557a7f574762249200233d3079397a16",
+          "1a7246b4ca3fe108fa4b91138a639841da81087b38d8d97030b2b9680bea27b2",
+          "60440036f65e73aed0599a3aefa4058ac72b0e7487a6a7c0778136b0ee8a20f5",
+          "7615132e498c5e572677c01b50400cadff3d03d86394925e308a9e26d6ce5ee3",
+          "27a44c3c6288854096553ff05219f9f1b70979cca119358c4e527e85b9473d6b"
+        ],
+        "bindings": {
+          "links": [
+            [],
+            [],
+            [
+              "/docs/appendices/climate-numerical-reconstruction/#%E5%8F%82%E8%80%83%E5%93%8D%E5%BA%94"
+            ],
+            [
+              "/docs/book/wall-service-to-comparison/"
+            ],
+            [
+              "/docs/appendices/climate-numerical-reconstruction/#%E6%98%BE%E7%A4%BA%E7%B2%BE%E5%BA%A6"
+            ],
+            [
+              "/docs/book/emission-time-and-assessment/"
+            ]
+          ],
+          "tables": []
+        }
+      },
+      "/docs/book/climate-response-and-metrics#main-content": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "reading-title",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-opening",
+          "cl-climate-inventory",
+          "cl-climate-pulse",
+          "cl-climate-reservoirs",
+          "cl-climate-reference-illustration",
+          "cl-climate-reference-limits",
+          "cl-climate-forcing",
+          "cl-climate-agwp",
+          "cl-climate-agtp",
+          "cl-climate-endpoint",
+          "cl-bio127-midpoint-endpoint-genealogy",
+          "cl-climate-feedback-consistency",
+          "cl-climate-feedback-return",
+          "cl-bio127-feedback-perspective-asymmetry",
+          "cl-climate-methane-chemistry",
+          "cl-climate-carbon-budget",
+          "cl-climate-three-methane-rows",
+          "cl-climate-biogenic-boundary",
+          "cl-bio127-ef31-subindicator-partition",
+          "cl-bio127-zero-zero-vs-minus-plus-one",
+          "cl-climate-editions",
+          "cl-climate-published-after",
+          "cl-climate-equal-score",
+          "cl-climate-wall-fixed",
+          "cl-climate-wall-reweighted",
+          "cl-climate-comparison-criteria",
+          "cl-bio127-co-removal-and-methane-shift",
+          "cl-bio127-package-and-report-discrepancies",
+          "cl-climate-calendar-sum",
+          "cl-climate-timing-assumptions",
+          "cl-climate-timing-result",
+          "cl-climate-dynamic-application",
+          "cl-climate-step",
+          "cl-climate-rate-formula",
+          "cl-climate-rate-fit",
+          "cl-climate-rate-histories",
+          "cl-climate-rate-window",
+          "cl-climate-rate-aggregate",
+          "cl-climate-debate",
+          "cl-bio127-climate-diagnostic-synthesis",
+          "cl-climate-conclusion"
+        ],
+        "ordinary": [
+          "4a9869193c751db57388deaf67d586c637e76242f543a65ff6197031f7e6fbc9",
+          "38f8454aac1ee102ac47b7664f50da39557a7f574762249200233d3079397a16",
+          "1a7246b4ca3fe108fa4b91138a639841da81087b38d8d97030b2b9680bea27b2",
+          "60440036f65e73aed0599a3aefa4058ac72b0e7487a6a7c0778136b0ee8a20f5",
+          "7615132e498c5e572677c01b50400cadff3d03d86394925e308a9e26d6ce5ee3",
+          "27a44c3c6288854096553ff05219f9f1b70979cca119358c4e527e85b9473d6b"
+        ],
+        "chapter": "nd-page"
+      },
+      "/docs/book/climate-response-and-metrics#响应与指标": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "heading",
+        "title": "响应与指标",
+        "claimIds": [
+          "cl-climate-opening",
+          "cl-climate-inventory",
+          "cl-climate-pulse",
+          "cl-climate-reservoirs",
+          "cl-climate-reference-illustration",
+          "cl-climate-reference-limits",
+          "cl-climate-forcing",
+          "cl-climate-agwp",
+          "cl-climate-agtp",
+          "cl-climate-endpoint",
+          "cl-bio127-midpoint-endpoint-genealogy"
+        ],
+        "ordinary": [
+          "38f8454aac1ee102ac47b7664f50da39557a7f574762249200233d3079397a16",
+          "1a7246b4ca3fe108fa4b91138a639841da81087b38d8d97030b2b9680bea27b2"
+        ]
+      },
+      "/docs/book/climate-response-and-metrics#气体与碳收支": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "heading",
+        "title": "气体与碳收支",
+        "claimIds": [
+          "cl-climate-feedback-consistency",
+          "cl-climate-feedback-return",
+          "cl-bio127-feedback-perspective-asymmetry",
+          "cl-climate-methane-chemistry",
+          "cl-climate-carbon-budget",
+          "cl-climate-three-methane-rows",
+          "cl-climate-biogenic-boundary",
+          "cl-bio127-ef31-subindicator-partition",
+          "cl-bio127-zero-zero-vs-minus-plus-one"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#清单比较": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "heading",
+        "title": "清单比较",
+        "claimIds": [
+          "cl-climate-editions",
+          "cl-climate-published-after",
+          "cl-climate-equal-score",
+          "cl-climate-wall-fixed",
+          "cl-climate-wall-reweighted",
+          "cl-climate-comparison-criteria",
+          "cl-bio127-co-removal-and-methane-shift",
+          "cl-bio127-package-and-report-discrepancies"
+        ],
+        "ordinary": [
+          "60440036f65e73aed0599a3aefa4058ac72b0e7487a6a7c0778136b0ee8a20f5",
+          "7615132e498c5e572677c01b50400cadff3d03d86394925e308a9e26d6ce5ee3"
+        ]
+      },
+      "/docs/book/climate-response-and-metrics#排放日历": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "heading",
+        "title": "排放日历",
+        "claimIds": [
+          "cl-climate-calendar-sum",
+          "cl-climate-timing-assumptions",
+          "cl-climate-timing-result",
+          "cl-climate-dynamic-application"
+        ],
+        "ordinary": [
+          "27a44c3c6288854096553ff05219f9f1b70979cca119358c4e527e85b9473d6b"
+        ]
+      },
+      "/docs/book/climate-response-and-metrics#历史与用途": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "heading",
+        "title": "历史与用途",
+        "claimIds": [
+          "cl-climate-step",
+          "cl-climate-rate-formula",
+          "cl-climate-rate-fit",
+          "cl-climate-rate-histories",
+          "cl-climate-rate-window",
+          "cl-climate-rate-aggregate",
+          "cl-climate-debate",
+          "cl-bio127-climate-diagnostic-synthesis",
+          "cl-climate-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-annotations": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note-group",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-opening",
+          "cl-climate-inventory",
+          "cl-climate-pulse",
+          "cl-climate-reservoirs",
+          "cl-climate-reference-illustration",
+          "cl-climate-reference-limits",
+          "cl-climate-forcing",
+          "cl-climate-agwp",
+          "cl-climate-agtp",
+          "cl-climate-endpoint",
+          "cl-bio127-midpoint-endpoint-genealogy",
+          "cl-climate-feedback-consistency",
+          "cl-climate-feedback-return",
+          "cl-bio127-feedback-perspective-asymmetry",
+          "cl-climate-methane-chemistry",
+          "cl-climate-carbon-budget",
+          "cl-climate-three-methane-rows",
+          "cl-climate-biogenic-boundary",
+          "cl-bio127-ef31-subindicator-partition",
+          "cl-bio127-zero-zero-vs-minus-plus-one",
+          "cl-climate-editions",
+          "cl-climate-published-after",
+          "cl-climate-equal-score",
+          "cl-climate-wall-fixed",
+          "cl-climate-wall-reweighted",
+          "cl-climate-comparison-criteria",
+          "cl-bio127-co-removal-and-methane-shift",
+          "cl-bio127-package-and-report-discrepancies",
+          "cl-climate-calendar-sum",
+          "cl-climate-timing-assumptions",
+          "cl-climate-timing-result",
+          "cl-climate-dynamic-application",
+          "cl-climate-step",
+          "cl-climate-rate-formula",
+          "cl-climate-rate-fit",
+          "cl-climate-rate-histories",
+          "cl-climate-rate-window",
+          "cl-climate-rate-aggregate",
+          "cl-climate-debate",
+          "cl-bio127-climate-diagnostic-synthesis",
+          "cl-climate-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-opening": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-opening"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-inventory": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-inventory"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-pulse": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-pulse"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-reservoirs": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-reservoirs"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-reference-illustration": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-reference-illustration"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-reference-limits": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-reference-limits"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-forcing": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-forcing"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-agwp": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-agwp"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-agtp": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-agtp"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-endpoint": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-endpoint"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-bio127-midpoint-endpoint-genealogy": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-bio127-midpoint-endpoint-genealogy"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-feedback-consistency": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-feedback-consistency"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-feedback-return": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-feedback-return"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-bio127-feedback-perspective-asymmetry": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-bio127-feedback-perspective-asymmetry"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-methane-chemistry": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-methane-chemistry"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-carbon-budget": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-carbon-budget"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-three-methane-rows": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-three-methane-rows"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-biogenic-boundary": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-biogenic-boundary"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-bio127-ef31-subindicator-partition": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-bio127-ef31-subindicator-partition"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-bio127-zero-zero-vs-minus-plus-one": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-bio127-zero-zero-vs-minus-plus-one"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-editions": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-editions"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-published-after": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-published-after"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-equal-score": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-equal-score"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-wall-fixed": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-wall-fixed"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-wall-reweighted": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-wall-reweighted"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-comparison-criteria": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-comparison-criteria"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-bio127-co-removal-and-methane-shift": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-bio127-co-removal-and-methane-shift"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-bio127-package-and-report-discrepancies": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-bio127-package-and-report-discrepancies"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-calendar-sum": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-calendar-sum"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-timing-assumptions": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-timing-assumptions"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-timing-result": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-timing-result"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-dynamic-application": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-dynamic-application"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-step": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-step"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-rate-formula": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-rate-formula"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-rate-fit": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-rate-fit"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-rate-histories": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-rate-histories"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-rate-window": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-rate-window"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-rate-aggregate": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-rate-aggregate"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-debate": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-debate"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-bio127-climate-diagnostic-synthesis": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-bio127-climate-diagnostic-synthesis"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-conclusion": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/emission-time-and-assessment#nd-page": {
+        "route": "/docs/book/emission-time-and-assessment",
+        "kind": "chapter",
+        "title": "排放时间与评价",
+        "claimIds": [
+          "cl-time-emission-profile",
+          "cl-time-elapsed-response",
+          "cl-time-common-endpoint",
+          "cl-time-combination",
+          "cl-time-horizon-choice",
+          "cl-bio127-storage-abolition-and-dluc-window",
+          "cl-time-model-limits",
+          "cl-time-dynamic-not-forecast"
+        ],
+        "ordinary": [
+          "8e0431de5c5f1d1a396340836efc59a5be540bb51a8f86f80a6498b6ecf5b2da",
+          "2ea58072d46c3b64d57e506bf86b0e3594a90867b34a4c0650e3d315ed4aeb97"
+        ],
+        "bindings": {
+          "links": [
+            [],
+            [
+              "/docs/book/future-technology-and-context/"
+            ]
+          ],
+          "tables": []
+        }
+      },
+      "/docs/book/emission-time-and-assessment#main-content": {
+        "route": "/docs/book/emission-time-and-assessment",
+        "kind": "reading-title",
+        "title": "排放时间与评价",
+        "claimIds": [
+          "cl-time-emission-profile",
+          "cl-time-elapsed-response",
+          "cl-time-common-endpoint",
+          "cl-time-combination",
+          "cl-time-horizon-choice",
+          "cl-bio127-storage-abolition-and-dluc-window",
+          "cl-time-model-limits",
+          "cl-time-dynamic-not-forecast"
+        ],
+        "ordinary": [
+          "8e0431de5c5f1d1a396340836efc59a5be540bb51a8f86f80a6498b6ecf5b2da",
+          "2ea58072d46c3b64d57e506bf86b0e3594a90867b34a4c0650e3d315ed4aeb97"
+        ],
+        "chapter": "nd-page"
+      },
+      "/docs/book/emission-time-and-assessment#先把三种时间分开": {
+        "route": "/docs/book/emission-time-and-assessment",
+        "kind": "heading",
+        "title": "三种时间",
+        "claimIds": [
+          "cl-time-emission-profile",
+          "cl-time-elapsed-response",
+          "cl-time-common-endpoint"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/emission-time-and-assessment#响应怎样进入计算": {
+        "route": "/docs/book/emission-time-and-assessment",
+        "kind": "heading",
+        "title": "响应计算",
+        "claimIds": [
+          "cl-time-combination",
+          "cl-time-horizon-choice",
+          "cl-bio127-storage-abolition-and-dluc-window"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/emission-time-and-assessment#动态方法的范围": {
+        "route": "/docs/book/emission-time-and-assessment",
+        "kind": "heading",
+        "title": "动态方法的范围",
+        "claimIds": [
+          "cl-time-model-limits",
+          "cl-time-dynamic-not-forecast"
+        ],
+        "ordinary": [
+          "2ea58072d46c3b64d57e506bf86b0e3594a90867b34a4c0650e3d315ed4aeb97"
+        ]
+      },
+      "/docs/book/emission-time-and-assessment#chapter-2f646f63732f626f6f6b2f656d697373696f6e2d74696d652d616e642d6173736573736d656e74-annotations": {
+        "route": "/docs/book/emission-time-and-assessment",
+        "kind": "note-group",
+        "title": "排放时间与评价",
+        "claimIds": [
+          "cl-time-emission-profile",
+          "cl-time-elapsed-response",
+          "cl-time-common-endpoint",
+          "cl-time-combination",
+          "cl-time-horizon-choice",
+          "cl-bio127-storage-abolition-and-dluc-window",
+          "cl-time-model-limits",
+          "cl-time-dynamic-not-forecast"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/emission-time-and-assessment#chapter-2f646f63732f626f6f6b2f656d697373696f6e2d74696d652d616e642d6173736573736d656e74-claim-cl-time-emission-profile": {
+        "route": "/docs/book/emission-time-and-assessment",
+        "kind": "note",
+        "title": "排放时间与评价",
+        "claimIds": [
+          "cl-time-emission-profile"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/emission-time-and-assessment#chapter-2f646f63732f626f6f6b2f656d697373696f6e2d74696d652d616e642d6173736573736d656e74-claim-cl-time-elapsed-response": {
+        "route": "/docs/book/emission-time-and-assessment",
+        "kind": "note",
+        "title": "排放时间与评价",
+        "claimIds": [
+          "cl-time-elapsed-response"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/emission-time-and-assessment#chapter-2f646f63732f626f6f6b2f656d697373696f6e2d74696d652d616e642d6173736573736d656e74-claim-cl-time-common-endpoint": {
+        "route": "/docs/book/emission-time-and-assessment",
+        "kind": "note",
+        "title": "排放时间与评价",
+        "claimIds": [
+          "cl-time-common-endpoint"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/emission-time-and-assessment#chapter-2f646f63732f626f6f6b2f656d697373696f6e2d74696d652d616e642d6173736573736d656e74-claim-cl-time-combination": {
+        "route": "/docs/book/emission-time-and-assessment",
+        "kind": "note",
+        "title": "排放时间与评价",
+        "claimIds": [
+          "cl-time-combination"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/emission-time-and-assessment#chapter-2f646f63732f626f6f6b2f656d697373696f6e2d74696d652d616e642d6173736573736d656e74-claim-cl-time-horizon-choice": {
+        "route": "/docs/book/emission-time-and-assessment",
+        "kind": "note",
+        "title": "排放时间与评价",
+        "claimIds": [
+          "cl-time-horizon-choice"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/emission-time-and-assessment#chapter-2f646f63732f626f6f6b2f656d697373696f6e2d74696d652d616e642d6173736573736d656e74-claim-cl-bio127-storage-abolition-and-dluc-window": {
+        "route": "/docs/book/emission-time-and-assessment",
+        "kind": "note",
+        "title": "排放时间与评价",
+        "claimIds": [
+          "cl-bio127-storage-abolition-and-dluc-window"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/emission-time-and-assessment#chapter-2f646f63732f626f6f6b2f656d697373696f6e2d74696d652d616e642d6173736573736d656e74-claim-cl-time-model-limits": {
+        "route": "/docs/book/emission-time-and-assessment",
+        "kind": "note",
+        "title": "排放时间与评价",
+        "claimIds": [
+          "cl-time-model-limits"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/emission-time-and-assessment#chapter-2f646f63732f626f6f6b2f656d697373696f6e2d74696d652d616e642d6173736573736d656e74-claim-cl-time-dynamic-not-forecast": {
+        "route": "/docs/book/emission-time-and-assessment",
+        "kind": "note",
+        "title": "排放时间与评价",
+        "claimIds": [
+          "cl-time-dynamic-not-forecast"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365": {
+        "route": "book-climate-equivalence",
+        "kind": "chapter",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-opening",
+          "cl-climate-inventory",
+          "cl-climate-pulse",
+          "cl-climate-reservoirs",
+          "cl-climate-reference-illustration",
+          "cl-climate-reference-limits",
+          "cl-climate-forcing",
+          "cl-climate-agwp",
+          "cl-climate-agtp",
+          "cl-climate-endpoint",
+          "cl-bio127-midpoint-endpoint-genealogy",
+          "cl-climate-feedback-consistency",
+          "cl-climate-feedback-return",
+          "cl-bio127-feedback-perspective-asymmetry",
+          "cl-climate-methane-chemistry",
+          "cl-climate-carbon-budget",
+          "cl-climate-three-methane-rows",
+          "cl-climate-biogenic-boundary",
+          "cl-bio127-ef31-subindicator-partition",
+          "cl-bio127-zero-zero-vs-minus-plus-one",
+          "cl-climate-editions",
+          "cl-climate-published-after",
+          "cl-climate-equal-score",
+          "cl-climate-wall-fixed",
+          "cl-climate-wall-reweighted",
+          "cl-climate-comparison-criteria",
+          "cl-bio127-co-removal-and-methane-shift",
+          "cl-bio127-package-and-report-discrepancies",
+          "cl-time-emission-profile",
+          "cl-time-elapsed-response",
+          "cl-time-common-endpoint",
+          "cl-time-combination",
+          "cl-climate-calendar-sum",
+          "cl-climate-timing-assumptions",
+          "cl-climate-timing-result",
+          "cl-climate-dynamic-application",
+          "cl-time-horizon-choice",
+          "cl-time-model-limits",
+          "cl-bio127-storage-abolition-and-dluc-window",
+          "cl-time-dynamic-not-forecast",
+          "cl-climate-step",
+          "cl-climate-rate-formula",
+          "cl-climate-rate-fit",
+          "cl-climate-rate-histories",
+          "cl-climate-rate-window",
+          "cl-climate-rate-aggregate",
+          "cl-climate-debate",
+          "cl-bio127-climate-diagnostic-synthesis",
+          "cl-climate-conclusion"
+        ],
+        "ordinary": [
+          "2b167ee81213b00dc38041c321333d9b825311c566c202d0d9f44a1b5827dfe5",
+          "38f8454aac1ee102ac47b7664f50da39557a7f574762249200233d3079397a16",
+          "5a1d148a422c43cc572fe248ae61a1d02025519ad6a2c2a897bd068f22c776eb",
+          "6e595fc7af7f2d818f5f50cdd50a9ea78cdd420d74d2458ff0803e5c0948608e",
+          "60e2290d15cceceaeb4d237d861d41d1f6a0cbd957976792c26399ddd40ff317",
+          "7c60ec15b5dcc1d8e30ad48b643993406ad99242167c9cd2d47bb49887a639dd",
+          "a7c1ed16854af0cde3be27187fbf0c2a489e8685a9bc5ef90db73835e28edeca"
+        ],
+        "bindings": {
+          "links": [
+            [],
+            [],
+            [
+              "#print-unit-2f646f63732f617070656e64696365732f636c696d6174652d6e756d65726963616c2d7265636f6e737472756374696f6e-参考响应"
+            ],
+            [
+              "#print-reading-unit-2f646f63732f626f6f6b2f77616c6c2d736572766963652d746f2d636f6d70617269736f6e"
+            ],
+            [
+              "#print-unit-2f646f63732f617070656e64696365732f636c696d6174652d6e756d65726963616c2d7265636f6e737472756374696f6e-显示精度"
+            ],
+            [
+              "#print-reading-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874"
+            ],
+            [
+              "#print-reading-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973"
+            ]
+          ],
+          "tables": []
+        }
+      },
+      "/print#print-reading-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365": {
+        "route": "book-climate-equivalence",
+        "kind": "reading-title",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-opening",
+          "cl-climate-inventory",
+          "cl-climate-pulse",
+          "cl-climate-reservoirs",
+          "cl-climate-reference-illustration",
+          "cl-climate-reference-limits",
+          "cl-climate-forcing",
+          "cl-climate-agwp",
+          "cl-climate-agtp",
+          "cl-climate-endpoint",
+          "cl-bio127-midpoint-endpoint-genealogy",
+          "cl-climate-feedback-consistency",
+          "cl-climate-feedback-return",
+          "cl-bio127-feedback-perspective-asymmetry",
+          "cl-climate-methane-chemistry",
+          "cl-climate-carbon-budget",
+          "cl-climate-three-methane-rows",
+          "cl-climate-biogenic-boundary",
+          "cl-bio127-ef31-subindicator-partition",
+          "cl-bio127-zero-zero-vs-minus-plus-one",
+          "cl-climate-editions",
+          "cl-climate-published-after",
+          "cl-climate-equal-score",
+          "cl-climate-wall-fixed",
+          "cl-climate-wall-reweighted",
+          "cl-climate-comparison-criteria",
+          "cl-bio127-co-removal-and-methane-shift",
+          "cl-bio127-package-and-report-discrepancies",
+          "cl-time-emission-profile",
+          "cl-time-elapsed-response",
+          "cl-time-common-endpoint",
+          "cl-time-combination",
+          "cl-climate-calendar-sum",
+          "cl-climate-timing-assumptions",
+          "cl-climate-timing-result",
+          "cl-climate-dynamic-application",
+          "cl-time-horizon-choice",
+          "cl-time-model-limits",
+          "cl-bio127-storage-abolition-and-dluc-window",
+          "cl-time-dynamic-not-forecast",
+          "cl-climate-step",
+          "cl-climate-rate-formula",
+          "cl-climate-rate-fit",
+          "cl-climate-rate-histories",
+          "cl-climate-rate-window",
+          "cl-climate-rate-aggregate",
+          "cl-climate-debate",
+          "cl-bio127-climate-diagnostic-synthesis",
+          "cl-climate-conclusion"
+        ],
+        "ordinary": [
+          "2b167ee81213b00dc38041c321333d9b825311c566c202d0d9f44a1b5827dfe5",
+          "38f8454aac1ee102ac47b7664f50da39557a7f574762249200233d3079397a16",
+          "5a1d148a422c43cc572fe248ae61a1d02025519ad6a2c2a897bd068f22c776eb",
+          "6e595fc7af7f2d818f5f50cdd50a9ea78cdd420d74d2458ff0803e5c0948608e",
+          "60e2290d15cceceaeb4d237d861d41d1f6a0cbd957976792c26399ddd40ff317",
+          "7c60ec15b5dcc1d8e30ad48b643993406ad99242167c9cd2d47bb49887a639dd",
+          "a7c1ed16854af0cde3be27187fbf0c2a489e8685a9bc5ef90db73835e28edeca"
+        ],
+        "chapter": "print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365"
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-响应与指标": {
+        "route": "book-climate-equivalence",
+        "kind": "heading",
+        "title": "响应与指标",
+        "claimIds": [
+          "cl-climate-opening",
+          "cl-climate-inventory",
+          "cl-climate-pulse",
+          "cl-climate-reservoirs",
+          "cl-climate-reference-illustration",
+          "cl-climate-reference-limits",
+          "cl-climate-forcing",
+          "cl-climate-agwp",
+          "cl-climate-agtp",
+          "cl-climate-endpoint",
+          "cl-bio127-midpoint-endpoint-genealogy"
+        ],
+        "ordinary": [
+          "38f8454aac1ee102ac47b7664f50da39557a7f574762249200233d3079397a16",
+          "5a1d148a422c43cc572fe248ae61a1d02025519ad6a2c2a897bd068f22c776eb"
+        ]
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-气体与碳收支": {
+        "route": "book-climate-equivalence",
+        "kind": "heading",
+        "title": "气体与碳收支",
+        "claimIds": [
+          "cl-climate-feedback-consistency",
+          "cl-climate-feedback-return",
+          "cl-bio127-feedback-perspective-asymmetry",
+          "cl-climate-methane-chemistry",
+          "cl-climate-carbon-budget",
+          "cl-climate-three-methane-rows",
+          "cl-climate-biogenic-boundary",
+          "cl-bio127-ef31-subindicator-partition",
+          "cl-bio127-zero-zero-vs-minus-plus-one"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-清单比较": {
+        "route": "book-climate-equivalence",
+        "kind": "heading",
+        "title": "清单比较",
+        "claimIds": [
+          "cl-climate-editions",
+          "cl-climate-published-after",
+          "cl-climate-equal-score",
+          "cl-climate-wall-fixed",
+          "cl-climate-wall-reweighted",
+          "cl-climate-comparison-criteria",
+          "cl-bio127-co-removal-and-methane-shift",
+          "cl-bio127-package-and-report-discrepancies"
+        ],
+        "ordinary": [
+          "6e595fc7af7f2d818f5f50cdd50a9ea78cdd420d74d2458ff0803e5c0948608e",
+          "60e2290d15cceceaeb4d237d861d41d1f6a0cbd957976792c26399ddd40ff317"
+        ]
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-排放日历": {
+        "route": "book-climate-equivalence",
+        "kind": "heading",
+        "title": "排放日历",
+        "claimIds": [
+          "cl-time-emission-profile",
+          "cl-time-elapsed-response",
+          "cl-time-common-endpoint",
+          "cl-time-combination",
+          "cl-climate-calendar-sum",
+          "cl-climate-timing-assumptions",
+          "cl-climate-timing-result",
+          "cl-climate-dynamic-application",
+          "cl-time-horizon-choice",
+          "cl-time-model-limits",
+          "cl-bio127-storage-abolition-and-dluc-window",
+          "cl-time-dynamic-not-forecast"
+        ],
+        "ordinary": [
+          "7c60ec15b5dcc1d8e30ad48b643993406ad99242167c9cd2d47bb49887a639dd"
+        ]
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-历史与用途": {
+        "route": "book-climate-equivalence",
+        "kind": "heading",
+        "title": "历史与用途",
+        "claimIds": [
+          "cl-climate-step",
+          "cl-climate-rate-formula",
+          "cl-climate-rate-fit",
+          "cl-climate-rate-histories",
+          "cl-climate-rate-window",
+          "cl-climate-rate-aggregate",
+          "cl-climate-debate",
+          "cl-bio127-climate-diagnostic-synthesis",
+          "cl-climate-conclusion"
+        ],
+        "ordinary": [
+          "a7c1ed16854af0cde3be27187fbf0c2a489e8685a9bc5ef90db73835e28edeca"
+        ]
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-annotations": {
+        "route": "book-climate-equivalence",
+        "kind": "note-group",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-opening",
+          "cl-climate-inventory",
+          "cl-climate-pulse",
+          "cl-climate-reservoirs",
+          "cl-climate-reference-illustration",
+          "cl-climate-reference-limits",
+          "cl-climate-forcing",
+          "cl-climate-agwp",
+          "cl-climate-agtp",
+          "cl-climate-endpoint",
+          "cl-bio127-midpoint-endpoint-genealogy",
+          "cl-climate-feedback-consistency",
+          "cl-climate-feedback-return",
+          "cl-bio127-feedback-perspective-asymmetry",
+          "cl-climate-methane-chemistry",
+          "cl-climate-carbon-budget",
+          "cl-climate-three-methane-rows",
+          "cl-climate-biogenic-boundary",
+          "cl-bio127-ef31-subindicator-partition",
+          "cl-bio127-zero-zero-vs-minus-plus-one",
+          "cl-climate-editions",
+          "cl-climate-published-after",
+          "cl-climate-equal-score",
+          "cl-climate-wall-fixed",
+          "cl-climate-wall-reweighted",
+          "cl-climate-comparison-criteria",
+          "cl-bio127-co-removal-and-methane-shift",
+          "cl-bio127-package-and-report-discrepancies",
+          "cl-time-emission-profile",
+          "cl-time-elapsed-response",
+          "cl-time-common-endpoint",
+          "cl-time-combination",
+          "cl-climate-calendar-sum",
+          "cl-climate-timing-assumptions",
+          "cl-climate-timing-result",
+          "cl-climate-dynamic-application",
+          "cl-time-horizon-choice",
+          "cl-time-model-limits",
+          "cl-bio127-storage-abolition-and-dluc-window",
+          "cl-time-dynamic-not-forecast",
+          "cl-climate-step",
+          "cl-climate-rate-formula",
+          "cl-climate-rate-fit",
+          "cl-climate-rate-histories",
+          "cl-climate-rate-window",
+          "cl-climate-rate-aggregate",
+          "cl-climate-debate",
+          "cl-bio127-climate-diagnostic-synthesis",
+          "cl-climate-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-opening": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-opening"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-inventory": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-inventory"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-pulse": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-pulse"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-reservoirs": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-reservoirs"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-reference-illustration": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-reference-illustration"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-reference-limits": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-reference-limits"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-forcing": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-forcing"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-agwp": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-agwp"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-agtp": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-agtp"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-endpoint": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-endpoint"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-bio127-midpoint-endpoint-genealogy": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-bio127-midpoint-endpoint-genealogy"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-feedback-consistency": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-feedback-consistency"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-feedback-return": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-feedback-return"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-bio127-feedback-perspective-asymmetry": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-bio127-feedback-perspective-asymmetry"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-methane-chemistry": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-methane-chemistry"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-carbon-budget": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-carbon-budget"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-three-methane-rows": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-three-methane-rows"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-biogenic-boundary": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-biogenic-boundary"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-bio127-ef31-subindicator-partition": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-bio127-ef31-subindicator-partition"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-bio127-zero-zero-vs-minus-plus-one": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-bio127-zero-zero-vs-minus-plus-one"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-editions": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-editions"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-published-after": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-published-after"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-equal-score": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-equal-score"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-wall-fixed": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-wall-fixed"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-wall-reweighted": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-wall-reweighted"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-comparison-criteria": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-comparison-criteria"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-bio127-co-removal-and-methane-shift": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-bio127-co-removal-and-methane-shift"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-bio127-package-and-report-discrepancies": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-bio127-package-and-report-discrepancies"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-time-emission-profile": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-time-emission-profile"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-time-elapsed-response": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-time-elapsed-response"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-time-common-endpoint": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-time-common-endpoint"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-time-combination": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-time-combination"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-calendar-sum": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-calendar-sum"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-timing-assumptions": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-timing-assumptions"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-timing-result": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-timing-result"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-dynamic-application": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-dynamic-application"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-time-horizon-choice": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-time-horizon-choice"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-time-model-limits": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-time-model-limits"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-bio127-storage-abolition-and-dluc-window": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-bio127-storage-abolition-and-dluc-window"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-time-dynamic-not-forecast": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-time-dynamic-not-forecast"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-step": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-step"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-rate-formula": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-rate-formula"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-rate-fit": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-rate-fit"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-rate-histories": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-rate-histories"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-rate-window": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-rate-window"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-rate-aggregate": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-rate-aggregate"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-debate": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-debate"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-bio127-climate-diagnostic-synthesis": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-bio127-climate-diagnostic-synthesis"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-conclusion": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-conclusion"
+        ],
+        "ordinary": []
+      }
+    },
+    "source": "actual-export",
+    "sourceCommit": "9489ef1733d4093b4ee3c2d2ffeb37258de196ea",
+    "capture": {
+      "sourceCommit": "9489ef1733d4093b4ee3c2d2ffeb37258de196ea",
+      "dirty": true,
+      "status": "working-preview",
+      "manifestSha256": "d712b17b45c6da8512f6123d627eaf108a9aeb61131aba2344b397b6748bc885",
+      "normalizedProofSha256": "889ef386b2f0cefe30d261cd8b307ee5276245048ed19868cef0ce420c09c080"
+    },
+    "articleFiles": [
+      {
+        "path": "docs/book/index.html",
+        "sha256": "e0230b92a39994a5e44af1faac771fb0dc2787621731396dc63d65d7adabfff2",
+        "bytes": 962704
+      },
+      {
+        "path": "docs/book/midpoint-endpoint-value-choices/index.html",
+        "sha256": "b3de757ea1e65ea2468cb474926149cd09ebc09770e5f77cd20f21f1029aac41",
+        "bytes": 1498432
+      },
+      {
+        "path": "docs/book/climate-response-and-metrics/index.html",
+        "sha256": "fad9ccfffc32c6565d9f0a7d144476ef703e977b2c5847d51c2eee9fc2581833",
+        "bytes": 1492880
+      },
+      {
+        "path": "docs/book/emission-time-and-assessment/index.html",
+        "sha256": "996bb2888ebc307ec3dee4f7a500ec904b0563f83934a6b0533bf35e3e114192",
+        "bytes": 1042073
+      },
+      {
+        "path": "docs/book/acidification-and-nutrient-pathways/index.html",
+        "sha256": "3bf18821eed98a40054a5c0550183a1c54b70d115671f2874837c628099c8ff4",
+        "bytes": 1300375
+      },
+      {
+        "path": "docs/book/future-technology-and-context/index.html",
+        "sha256": "6a2a030e3ad5491636805306b6b1df58db6fccca8732b0a40fb0d165bf3191f5",
+        "bytes": 1039455
+      },
+      {
+        "path": "docs/book/connecting-objects-references-and-time/index.html",
+        "sha256": "53c827d202fdb0854c908335c238b24ccc00f830864e8277138be840dd9527d0",
+        "bytes": 1047160
+      },
+      {
+        "path": "docs/book/from-connected-results-to-conditional-judgment/index.html",
+        "sha256": "01308b8df3f9f019521532f7b6f40fe23aa54c9b7a845060c574f60c36974b39",
+        "bytes": 1127456
+      },
+      {
+        "path": "docs/appendices/climate-numerical-reconstruction/index.html",
+        "sha256": "fc4658b5c4e53331b7a1396423c0833a69280d75849c818ea257af5a336be61f",
+        "bytes": 1004926
+      },
+      {
+        "path": "print/index.html",
+        "sha256": "7e2332fa3f6fd0318c3caef26bd70f5e77a8303cfbaff74c7e60d0514509120f",
+        "bytes": 14575278
+      }
+    ],
+    "artifactFiles": [
+      {
+        "path": "claims/index.html",
+        "sha256": "66cce33dc0645f43af1e62b4cfe2ab8c712de3e49dccdbeb3ec3fd79a672e166",
+        "bytes": 6567590,
+        "contentSha256": "9fd8b4c065184c10c05f550d32f10b5bdca80fb73d8f2eaade8ccff5c576eeea"
+      },
+      {
+        "path": "sources/index.html",
+        "sha256": "052f769dcd1586084203dce8bba098fe2d7282f012191dd5ad2937687679dd6a",
+        "bytes": 5608608,
+        "contentSha256": "164902920d2177f08e05716f49e8eb8e6f9bf287c0dc2bf7340334fa9e6c20f6"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "sha256": "91e67ae7865b2994027cfe1e5a8267ac852aaf23d4235f035ebc4bdf07c5adee",
+        "bytes": 3911104,
+        "contentSha256": "91e67ae7865b2994027cfe1e5a8267ac852aaf23d4235f035ebc4bdf07c5adee"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "sha256": "60975c6c270d511388329268c63fa3e4fe69978cb5b123f299111cdd69e9e38f",
+        "bytes": 388348,
+        "contentSha256": "60975c6c270d511388329268c63fa3e4fe69978cb5b123f299111cdd69e9e38f"
+      },
+      {
+        "path": "research/index.html",
+        "sha256": "2319b902c6b848432cb7c43199bd49b554d7a687d629a1aedf934ede5c046545",
+        "bytes": 1671362,
+        "contentSha256": "852bbb8c48c357c8225fc48d864eac0aaebf882db0a72d5ef70cc96780773c72"
+      },
+      {
+        "path": "downloads/bibliography.json",
+        "sha256": "009844067977b07004bbc099fcd87de0b28920d18f957dde0642d45673a6627f",
+        "bytes": 1308407,
+        "contentSha256": "009844067977b07004bbc099fcd87de0b28920d18f957dde0642d45673a6627f"
+      },
+      {
+        "path": "downloads/research.json",
+        "sha256": "009844067977b07004bbc099fcd87de0b28920d18f957dde0642d45673a6627f",
+        "bytes": 1308407,
+        "contentSha256": "009844067977b07004bbc099fcd87de0b28920d18f957dde0642d45673a6627f"
+      },
+      {
+        "path": "coverage/index.html",
+        "sha256": "b94b47a26a660601b8bc9bc947bd6b3b71084846afb83e7a44e1cd9e526b0246",
+        "bytes": 862718,
+        "contentSha256": "9a8f629fb8c56d32775a4a6063ef43bd9844edc1431c00ec50c8fa4a5539104f"
+      }
+    ],
+    "assessment": {
+      "provenance": "Actual private Next/compiler and untouched-exporter bytes from base 9489ef1733d4093b4ee3c2d2ffeb37258de196ea and a declared dirty working-preview. Temporary technical admission inside an isolated clone served inspection only and supplies no editorial acceptance.",
+      "reconstruction": "Exact bounded B15 (1+3+2+1+1 = 8), W1 (1+3+2+0+1 = 7), and W2 (1) MDX insertions, ReaderFigure anchors, and updated frontmatter descriptions restore full prior 5c982449 raw catalog/readings/literature and physical B15 MDX bytes before #125 -> #123 -> #121 -> #119 -> #117 -> #115 -> #113 -> #111 -> older qualifiers, verifying all 67 transitions and 340 bidirectional consumers.",
+      "guards": "Two-round independent adversarial publication-engineering security audit (d5cdb4e7) verified 128/128 numericFact canonical-literal and sign-aware BigInt assertions (0 survivors across 1,238 single-fact and coupled-pair perturbations with row digests bypassed), description HTML/newline ban, ReaderFigure fail-closed render guard & backreferenced tag regex, 104 conserved B15 citation addresses, and CSS zero-drift (be180e5d...), concluding PASS (0 BLOCKER / 0 MAJOR).",
+      "actual": "Comparison of all 88 article projections identifies the exact 13 changed articles (B15 print + W1 + W2, neighbor pagination on B14/B16/B31, /docs/book index, X03 web/print, B31 print, and B32 web/print shifted B15 note-label sync on unchanged hrefs) and 8 changed public artifacts (including coverage/index.html). All 468 manifest payloads, 18 capture files and 40 case downloads verified with zero internal-ID or raw-carrier leakage.",
+      "browser": "Passed 30 responsive viewport/theme checks across W1/W2/print, 3 no-script dated-history keyboard suites (6 + 3 + 7 controls covering P and FIGURE ordinary targets + #95 copyedit history), retained legacy-scope checks, 8 visible caveat checks, 4 neighbor pagination checks, X03 round-trip, Meta+k search, /coverage/ and /sources/ checks, and 49-note physical @media print verification with zero horizontal overflow. All servers and browsers closed cleanly.",
+      "limits": "Clean production build (dirty:false), source PR/CI/merge, live EdgeOne byte/guard qualification and exact root submodule integration remain required after this scoped acceptance."
+    },
+    "independentReports": {
+      "independent-primary-source-audit-initial.md": "39509ba9cc78db3a81f343cb18184a24ce5ec18efd309a02cb96cade181e4c54",
+      "independent-primary-source-audit-final.md": "0f6dd55cfe3f4ce74ed247b347eeb7271f1badb6c0f6935e3459cbd3fbafffbb",
+      "full-chapter-b15-reader-review-initial.md": "0a8e103d480a54bbc6d85c1042c006e5399a5788ec4069cf979c71050d2ca19b",
+      "full-chapter-b15-reader-review-final.md": "41ddda026655031768a021f78c0471e39b218a6a6776e7a24c463c5418959832",
+      "independent-publication-engineering-review-initial.md": "caa30c80e640c27738944c8287b1b6779fca2d1a842ebc8bdf1cad3d8c1b52b9",
+      "independent-publication-engineering-review-final.md": "53c0299776616bf3c0601c433a7aa50702ca8939fc1c7e0d66f0867b586a752c",
+      "ef31-climate-methods-analysis.json": "0a9b9e1d1dac3e8a1bcec03d2fc77351ef9e7b1817de31ec1f11b901113de5dc",
+      "actual-browser-qa/responsive-script-enabled.json": "3d62d31ae6a4289590d6325b7a3bc119a3f290422c96db3113eb444e02fadeae",
+      "actual-browser-qa/interactions.json": "2e499d609f09ed88fd87660693e834164e01a6b22c53817668ff628ce41b168c"
+    }
+  }
+}

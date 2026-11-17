@@ -259,8 +259,45 @@ structured `numericFacts` while conserving 100% of all 976 prior claims and all 
 `rd-water-*` readings byte-for-byte. Separate unconditional-PASS source,
 28-paragraph zero-context B18 reader, adversarial publication-engineering and
 actual-output acceptances (`3ce74b2c...`) and normal source/root delivery are
-tracked on Issue125. B15 biogenic/LULUC carbon, Part IV continuous reread
-(`B14`–`B19`, including `index.mdx:18`) and Programme9 requirements remain active.
+tracked on Issue125.
+Unit125 is now fully delivered: source PR126/Main
+`5c98244958fdb290f506429b98c600fe7f50e361`, qualified 468-file hosted output on
+`https://prism.tiangong.earth` (`dpv88f1e6lrb`, including unmodified
+`validateReaderOutput` against archived Main source and live B18 print
+verification), exact root2425/PR2426/Main
+`3cda76373856b257a2900f4c3c2b98ee6254e196`, and ordinary final completion and
+source-handoff (`1/1`) receipts.
+
+[Issue127](https://github.com/tiangong-lca/knowledge-base/issues/127) continues
+with B15 climate method genealogy, biogenic/LULUC carbon sub-indicators,
+feedback switches, storage/dLUC timing rules and official EF 3.1 package
+forensics (`V5-A`), recorded in the
+[biogenic-carbon comparison record](editorial/2026-11-17-biogenic-carbon.md)
+(committed as `54343c1` / `9489ef1` before manuscript changes): selected ILCD
+2011 (`§1 Tables 1–2`, `§3.1`, `§5 Annex 1 / §5.1`), PEFCR Guidance v6.3
+(`§7.9–§7.9.4 Table 13`, `Annex H`), Commission Recommendation (EU) 2021/2279
+R(01) (`Annex I Table 2`, `§4.4.10–§4.4.10.3`), JRC109369 (`§2 Tables 1–2`,
+`§4.1 Table 4`), JRC130796 (`§2 Table 1`, `§3 Tables 2–3`, `§3.1`, `§4.2 Table 10`,
+`§5.1–§5.1.1.1`), EF 3.1 Data Guide Addendum (`Nov 2022`, `pp. 1–4 Table 1`),
+23 CRC32/SHA-256-verified official `EF-v3.1.zip` members (`4` reused + `19`
+newly registered across `6209b35f`/`7fce5b3a`/`706261af`/`14af9ca7` XMLs,
+converter copy, `31ac5d13` source, `lookLciMethodInformation.config`,
+`Normalisation_Weighting_Factors_EF_3.1.xlsx`, 248-page `JRC115959`
+`pef_method.pdf`, and carbon/GHG flows), IPCC AR6 WGI Errata (`2025-10-07` p. 25
+`FGD` record), RIVM 2016-0104 (`Tables 1.3–1.5`, `Chapter 2`), Huijbregts et al.
+2017 (`§§3.1.1, 3.2.1`), and Verones et al. 2020 LC-IMPACT (`§§2.1–2.8`, `§3.2`,
+`§4.2`). Eight new canonical paragraphs (`1 + 3 + 2 + 1 + 1`, bringing B15 from
+41 to 49 claims, `climate-response-and-metrics` from 34 to 41,
+`emission-time-and-assessment` from 7 to 8, and the catalog from 984 to 992) and
+updated descriptions (`ordinary-0`) plus `<ReaderFigure>` (`ordinary-figure`)
+bind 13 single-source `ev-bio127-*` records (`1-to-1` with 13 `psg-bio127-*`
+passages) and 128 structured `numericFacts` while conserving 100% of all 984
+prior claims, `climate-numerical-reconstruction.mdx`, and `climate-metrics-v1.json`
+byte-for-byte. Separate unconditional-PASS two-round source, zero-context B15
+reader, adversarial publication-engineering and actual-output acceptances
+(`f2c276f1...`) and normal source/root delivery are tracked on Issue127. Part IV
+continuous reread (`B14`–`B19`, including `index.mdx:18`) and Programme9
+requirements remain active.
 
 Rule adoption101 itself is fully delivered: PR103/Main10dc686 and
 root2381/PR2382/Main90bcaa574, with complete ordinary source/root handoff receipts.

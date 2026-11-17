@@ -4,13 +4,14 @@ import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 import config from '../config/reader-water-scarcity.json' with { type: 'json' };
 import capture from '../config/reader-water-scarcity-capture.json' with { type: 'json' };
+import bio from '../config/reader-biogenic-carbon.json' with { type: 'json' };
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
 import loadShift from '../config/reader-load-shift.json' with { type: 'json' };
 import service from '../config/reader-service-constraints.json' with { type: 'json' };
 import catalog from '../knowledge/catalog.json' with { type: 'json' };
 import readings from '../knowledge/research/readings.json' with { type: 'json' };
 import literature from '../knowledge/research/literature-map.json' with { type: 'json' };
-import { testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
+import { previousScientificTestRecords, testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
 import { chapterAnchorPrefix, printUnitAnchor } from './reader-book.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
@@ -282,7 +283,8 @@ test('B18 water scarcity source plan preserves 9486bae9 predecessor, 28-claim la
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
-  const input = { catalog, readings, literature, files };
+  if (bio.unit) for (const [p, text] of Object.entries(bio.unit.previousMdx)) files.set(p, Buffer.from(text));
+  const input = { ...previousScientificTestRecords({ catalog, readings, literature }, bio.unit), files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
   const qualify = (unit, customInput = input, customActual = actual, customStruct = structure) =>
     prepareWaterScarcitySource(unit, customInput, customActual, customStruct);
@@ -317,7 +319,7 @@ test('B18 water scarcity source plan preserves 9486bae9 predecessor, 28-claim la
     unit2.rawRecords.find(r => r.path === 'literature.records' && r.id === 'lit-m05').from.limitations = [];
     assert.throws(() => qualify(unit2), /changed a previous work or its acquisition history: lit-m05/);
 
-    const badReadings = structuredClone(readings);
+    const badReadings = structuredClone(input.readings);
     badReadings.readings.find(r => r.id === 'rd-land111-rivm2016').passages.at(-1).id = 'psg-rogue-id';
     const badInput = { ...input, readings: badReadings };
     const badActual = inspectReadableBookEdition(badInput), badStruct = copyeditSourceStructure(badInput);
@@ -354,7 +356,8 @@ test('B18 water scarcity source plan preserves 9486bae9 predecessor, 28-claim la
 test('Water scarcity receipt verifier fails closed when capture or capture pin is absent', () => {
   if (capture !== null || waterScarcityCapturePin !== null) return;
   if (!config.unit) return;
-  const expected = readerPublicDownloads(catalog, literature, readings);
+  const previous = previousScientificTestRecords({ catalog, readings, literature }, bio.unit);
+  const expected = readerPublicDownloads(previous.catalog, previous.literature, previous.readings);
   const unit = structuredClone(config.unit);
   unit.outputs = [{ path: waterScarcityChapter, route: waterScarcityChapter, sha256: '1'.repeat(64), rationale: 'r' }];
   unit.publicArtifacts = [{ path: 'claims/index.html', sha256: '2'.repeat(64), rationale: 'r' }];
@@ -375,7 +378,8 @@ test('Water scarcity receipt verifier fails closed when capture or capture pin i
 });
 
 test('Water scarcity receipts bind actual output capture independently', { skip: !capture && config.status !== 'reviewed' }, () => {
-  const expected = readerPublicDownloads(catalog, literature, readings);
+  const previous = previousScientificTestRecords({ catalog, readings, literature }, bio.unit);
+  const expected = readerPublicDownloads(previous.catalog, previous.literature, previous.readings);
   const verify = (mutateUnit = () => {}, mutateOutput) => {
     const unit = structuredClone(config.unit);
     mutateUnit(unit);

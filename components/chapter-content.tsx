@@ -1,3 +1,4 @@
+import { biogenicCarbonHistoryControls, biogenicCarbonOrdinaryId, biogenicCarbonSource } from '@/scripts/reader-biogenic-carbon.mjs';
 import { waterScarcityHistoryControls, waterScarcityOrdinaryId, waterScarcitySource } from '@/scripts/reader-water-scarcity.mjs';
 import { toxicityComparisonHistoryControls, toxicityComparisonOrdinaryId, toxicityComparisonSource } from '@/scripts/reader-toxicity-comparison.mjs';
 import { ozoneRadiationChapter, ozoneRadiationCorrections, ozoneRadiationHistoryControls, ozoneRadiationSource } from '@/scripts/reader-ozone-radiation.mjs';
@@ -9,7 +10,7 @@ import { landRecoveryHistoryControls, landRecoveryOrdinaryId, landRecoverySource
 import { circularFootprintHistoryControls, circularFootprintOrdinaryId, circularFootprintSource } from '@/scripts/reader-circular-footprint.mjs';
 import { loadShiftHistoryControls, loadShiftOrdinaryId, loadShiftSource } from '@/scripts/reader-load-shift.mjs';
 import { substitutionRulesHistoryControls, substitutionRulesOrdinaryId, substitutionRulesSource } from '@/scripts/reader-substitution-rules.mjs';
-import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity } from '@/scripts/reader-current-expectations.mjs';
+import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity, currentBiogenicCarbon } from '@/scripts/reader-current-expectations.mjs';
 import { flowBoundaryHistoryControls, flowBoundaryHistoryTargets, flowBoundaryOrdinaryTargets, flowBoundaryOrdinaryId } from '@/scripts/reader-flow-boundary.mjs';
 import { serviceConstraintsHistoryControls, serviceConstraintsOrdinaryId, serviceConstraintsSource } from '@/scripts/reader-service-constraints.mjs';
 import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
@@ -52,6 +53,7 @@ const histories = [
   { controls: ozoneRadiationHistoryControls(currentOzoneRadiation), edition: ozoneRadiationSource, attribute: 'ozone-radiation' },
   { controls: toxicityComparisonHistoryControls(currentToxicityComparison), edition: toxicityComparisonSource, attribute: 'toxicity-comparison' },
   { controls: waterScarcityHistoryControls(currentWaterScarcity), edition: waterScarcitySource, attribute: 'water-scarcity' },
+  { controls: biogenicCarbonHistoryControls(currentBiogenicCarbon), edition: biogenicCarbonSource, attribute: 'biogenic-carbon' },
 ];
 
 function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
@@ -63,7 +65,8 @@ function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
     || landRecoveryOrdinaryId(currentLandRecovery, route, print, index)
     || acidEquivalentsOrdinaryId(currentAcidEquivalents, route, print, index)
     || toxicityComparisonOrdinaryId(currentToxicityComparison, route, print, index)
-    || waterScarcityOrdinaryId(currentWaterScarcity, route, print, index);
+    || waterScarcityOrdinaryId(currentWaterScarcity, route, print, index)
+    || biogenicCarbonOrdinaryId(currentBiogenicCarbon, route, print, index);
 }
 
 // Leave versioned native fragments below the screen's sticky site header.
@@ -76,7 +79,8 @@ export function currentReaderOrdinaryAttributes(route: string, print: boolean, i
       || id === landRecoveryOrdinaryId(currentLandRecovery, route, print, index)
       || id === acidEquivalentsOrdinaryId(currentAcidEquivalents, route, print, index)
       || id === toxicityComparisonOrdinaryId(currentToxicityComparison, route, print, index)
-      || id === waterScarcityOrdinaryId(currentWaterScarcity, route, print, index))
+      || id === waterScarcityOrdinaryId(currentWaterScarcity, route, print, index)
+      || id === biogenicCarbonOrdinaryId(currentBiogenicCarbon, route, print, index))
     ? { id, style: scientificHistoryScroll }
     : { id };
 }
@@ -156,6 +160,18 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
   function ReaderTable(props: HTMLAttributes<HTMLTableElement>) {
     return createElement(defaults.table ?? 'table', { ...props, id: tableId, style: { ...props.style, ...scientificHistoryScroll } });
   }
+  const figureId = biogenicCarbonOrdinaryId(currentBiogenicCarbon, page.url.replace(/\/$/, ''), print, 'figure');
+  let figureCount = 0;
+  function ReaderFigure(props: HTMLAttributes<HTMLElement>) {
+    if (!figureId || ++figureCount > 1 || Object.hasOwn(props, 'id')) {
+      throw new Error(`Invalid, unauthorized or duplicate ReaderFigure on ${page.url}`);
+    }
+    return createElement(defaults.figure ?? 'figure', {
+      ...props,
+      id: figureId,
+      style: { ...props.style, ...scientificHistoryScroll },
+    });
+  }
   const headings = Object.fromEntries(([1, 2, 3, 4, 5, 6] as const).map(level => {
     const name = `h${level}` as const;
     return [name, (props: HTMLAttributes<HTMLHeadingElement>) => {
@@ -189,7 +205,7 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
     <RetainedScope entry={legacy.scopes.get(prefix)} readingTitle={print ? printReadingEntryAnchor(page.url) : undefined} />
     {historyAt(historyPath, print ? prefix : 'nd-page')}
     {historyAt(historyPath, print ? printReadingEntryAnchor(page.url) : 'main-content')}
-    <MDX components={getMDXComponents({ Prose: ChapterProse, Claim: Paragraph, ReaderSection, TeachingCase: ChapterTeachingCase, a: ReaderLink, ...(currentReaderOrdinaryId(page.url.replace(/\/$/, ''), print, 0) ? { p: ReaderParagraph } : {}), ...(tableId ? { table: ReaderTable } : {}), ...headings })} />
+    <MDX components={getMDXComponents({ Prose: ChapterProse, Claim: Paragraph, ReaderSection, ReaderFigure, TeachingCase: ChapterTeachingCase, a: ReaderLink, ...(currentReaderOrdinaryId(page.url.replace(/\/$/, ''), print, 0) ? { p: ReaderParagraph } : {}), ...(tableId ? { table: ReaderTable } : {}), ...headings })} />
     {plan.notes.length > 0 && <section className="chapter-notes not-prose" aria-labelledby={plan.headingId}>
       <LegacyCitationAliases ids={legacy.aliases.get(plan.headingId)} target={plan.headingId} />
       {print ? <h4 id={plan.headingId}>注释</h4> : <h2 id={plan.headingId}>注释</h2>}

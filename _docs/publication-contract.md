@@ -17,12 +17,40 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-17
-lastReviewedCommit: 615140573f6f8ba8e52943a5f94da360ffb2a391
+lastReviewedCommit: f387e6fd22baa2da772be0359e9a20e0838ae0eb
 ---
 
 # Publication contract
 
 ## Scoped scientific successors
+
+The biogenic-carbon unit #127 compares ILCD 2011 and EF 2.0–3.1 (`GWP100`
+midpoint only, zero recommended endpoints, `EF 3.1` single-score weight `21.06%`
+and global `NF` `7,553.08 kg CO₂ eq./person`) against ReCiPe 2016 (`I/H/E`
+`GWP20/100/1000` midpoints multiplied by gas-independent `CO₂`-`IAGTP` constants
+across malnutrition/malaria/diarrhoea/flooding `DALY`, `Urban 2015` `0.037 PDF/°C`
+terrestrial `species·yr`, and `Hanafiah et al. 2011` river-mouth fish `species·yr`)
+and LC-IMPACT (`0` midpoints, `100/1000`-yr `certain` `3` HH / `0` aquatic vs
+`all` `6` HH / `<42°` aquatic damage factors, `3`-fuel total HH difference up to
+factor `4` without rank reversal). It proves ReCiPe 2016's `H`-only non-`CO₂`
+climate–carbon feedback asymmetry (`N₂O` `264 → 298 → 78.8` and `3.5 kg CH₄` vs
+`1 kg N₂O` reversal), `EF 3.1`'s exact disjoint `1,099 = 1,074 + 13 + 12` XML
+partition (native-forest wood/soil `CO₂` in `LULUC` excluding uptake, `LULUC`
+`CH₄ = 29.8`, peat and all `6` `N₂O = 273.0` flows in `Fossil`), `0/0` versus
+`−1/+1` cradle-to-gate `−44/12` spurious negative-carbon mismatch, `EF 3.0 → 3.1`
+methane `36.75 → 29.8` and `CO` `1.57 → 0` removal (`-6.7%` `NF` drop, `-2.9%`
+mean and `-58%` to `+302%` swings across `2,752` datasets, and marginal `20 kg CO`
+vs `25 kg CO₂` boiler rank flip), and `PEF` `biogenic-100yr = −1` abolition plus
+`PAS 2050` `20`-year `dLUC` amortization versus dynamic `T−tₖ` convolution.
+Source-internal discrepancies (`EF-v3.1.zip` `Normalisation_Weighting_Factors_EF_3.1.xlsx`
+`K1161 = 27.2` `AR6 FGD` draft residual `+3.79 kg CO₂ eq./person` traced to `IPCC AR6 WGI Errata`
+p. 25, `CFC-11` `6226`, `HFC-134a` `1526`, merged `(halons)` `3952.72`, `IPCC 2013`
+`AR5` metadata lag on `31ac5d13.xml` & converter copy and bundled 2019 `JRC115959`
+PDF, `14af9ca7.xml` `5` `LULUC` `CO₂` outputs missing high-altitude subcompartment,
+`EU 2021/2279` lingering `CO` clauses, `ILCD 2011` p. 18 `N₂O` `factor 2` direction
+error, and `RIVM` `Table 2.2` `"1,2684.1"` typo) remain explicitly disclosed
+without silent repair, raw-source redistribution, or paid `ISO 14067` / `PAS 2050`
+full-text claims.
 
 The water-scarcity unit #125 compares ILCD 2011 (`Swiss Ecoscarcity` six
 regional scarcity levels, zero endpoints) and EF 2.0–3.1 (`AWARE` `[0.1, 100]`

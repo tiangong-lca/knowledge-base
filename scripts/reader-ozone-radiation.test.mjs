@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 import config from '../config/reader-ozone-radiation.json' with { type: 'json' };
 import capture from '../config/reader-ozone-radiation-capture.json' with { type: 'json' };
+import bio from '../config/reader-biogenic-carbon.json' with { type: 'json' };
 import water from '../config/reader-water-scarcity.json' with { type: 'json' };
 import tox from '../config/reader-toxicity-comparison.json' with { type: 'json' };
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
@@ -179,9 +180,10 @@ test('B14 ozone and radiation source plan preserves all real predecessor transit
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
+  if (bio.unit) for (const [p, text] of Object.entries(bio.unit.previousMdx)) files.set(p, Buffer.from(text));
   if (water.unit) files.set(`content${water.unit.routes[0]}.mdx`, Buffer.from(water.unit.previousMdx));
   if (tox.unit) files.set(`content${tox.unit.routes[0]}.mdx`, Buffer.from(tox.unit.previousMdx));
-  const preWater = previousScientificTestRecords({ catalog, readings, literature }, water.unit);
+  const preWater = previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, bio.unit), water.unit);
   const input = { ...previousScientificTestRecords(preWater, tox.unit), files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
   const qualify = unit => prepareOzoneRadiationSource(unit, input, actual, structure);
@@ -207,7 +209,7 @@ test('B14 ozone and radiation source plan preserves all real predecessor transit
 });
 
 test('Ozone and radiation receipts bind actual output capture independently', { skip: !capture && config.status !== 'reviewed' }, () => {
-  const preWater = previousScientificTestRecords({ catalog, readings, literature }, water.unit);
+  const preWater = previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, bio.unit), water.unit);
   const previous = previousScientificTestRecords(preWater, tox.unit);
   const expected = readerPublicDownloads(previous.catalog, previous.literature, previous.readings);
   const verify = (mutateUnit = () => {}, mutateOutput) => {

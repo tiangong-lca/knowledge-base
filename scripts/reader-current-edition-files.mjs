@@ -1,3 +1,4 @@
+import { selectBiogenicCarbon, prepareBiogenicCarbonSource, effectiveBiogenicCarbon, verifyBiogenicCarbonReceipts } from './reader-biogenic-carbon.mjs';
 import { selectWaterScarcity, prepareWaterScarcitySource, effectiveWaterScarcity, verifyWaterScarcityReceipts } from './reader-water-scarcity.mjs';
 import { selectToxicityComparison, prepareToxicityComparisonSource, effectiveToxicityComparison, verifyToxicityComparisonReceipts } from './reader-toxicity-comparison.mjs';
 import { selectOzoneRadiation, prepareOzoneRadiationSource, effectiveOzoneRadiation, verifyOzoneRadiationReceipts } from './reader-ozone-radiation.mjs';
@@ -51,6 +52,9 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const serviceConstraints = selectServiceConstraints(serviceConfig, undefined, preview === 'service');
   const substitutionConfig = await readConfig('reader-substitution-rules.json');
   const substitutionRules = selectSubstitutionRules(substitutionConfig, undefined, preview === 'substitution');
+  const bioConfig = await readConfig('reader-biogenic-carbon.json');
+  const biogenicCarbon = selectBiogenicCarbon(bioConfig, undefined, preview === 'biogenic-carbon');
+  if (preview === 'biogenic-carbon' && bioConfig.status !== 'preview') throw new Error('Biogenic carbon review requires a private preview state');
   const waterConfig = await readConfig('reader-water-scarcity.json');
   const waterScarcity = selectWaterScarcity(waterConfig, undefined, preview === 'water-scarcity');
   if (preview === 'water-scarcity' && waterConfig.status !== 'preview') throw new Error('Water scarcity review requires a private preview state');
@@ -93,6 +97,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (loadShift && !substitutionRules) throw new Error('Load shift requires the accepted #105 generation');
   if (circularFootprint && !loadShift) throw new Error('Circular footprint requires the accepted #107 generation');
   if (landRecovery && !circularFootprint) throw new Error('Land recovery requires the accepted #109 generation');
+  if (biogenicCarbon && !waterScarcity) throw new Error('Biogenic carbon requires the accepted #125 generation');
   if (waterScarcity && !toxicityComparison) throw new Error('Water scarcity requires the accepted #123 generation');
   if (toxicityComparison && !ozoneRadiation) throw new Error('Toxicity comparison requires the accepted #121 generation');
   if (ozoneRadiation && !photochemicalOzone) throw new Error('Ozone and radiation requires the accepted #119 generation');
@@ -102,7 +107,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (acidEquivalents && !landRecovery) throw new Error('Acid equivalents requires the accepted #111 generation');
   for (const [path, bytes] of await readLoadShiftCaseFiles(root, loadShift)) files.set(path, bytes);
   for (const [path, bytes] of await readServiceConstraintsFiles(root, serviceConstraints)) files.set(path, bytes);
-  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison, waterScarcity].filter(Boolean)];
+  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison, waterScarcity, biogenicCarbon].filter(Boolean)];
   const realRoot = await realpath(root);
   const reviewFiles = new Set((reviewUnits ?? []).flatMap(unit =>
     (unit.reviewEvidence ?? []).flatMap(row => [row.reportFile, row.artifactFile])));
@@ -117,8 +122,11 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const input = { catalog, readings, literature, files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
-  const water = waterScarcity && prepareWaterScarcitySource(waterScarcity, input, actual, structure);
-  const waterInput = water ? { ...water.previousRecords, files: water.files } : input;
+  const bio = biogenicCarbon && prepareBiogenicCarbonSource(biogenicCarbon, input, actual, structure);
+  const bioInput = bio ? { ...bio.previousRecords, files: bio.files } : input;
+  const water = waterScarcity && prepareWaterScarcitySource(waterScarcity, bioInput,
+    bio?.previous ?? actual, bio?.structure ?? structure);
+  const waterInput = water ? { ...water.previousRecords, files: water.files } : bioInput;
   const tox = toxicityComparison && prepareToxicityComparisonSource(toxicityComparison, waterInput,
     water?.previous ?? actual, water?.structure ?? structure);
   const ozradInput = tox ? { ...tox.previousRecords, files: tox.files } : waterInput;
@@ -210,8 +218,13 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   }
   if (waterScarcity && preview !== 'water-scarcity') {
     const { readerPublicDownloads } = await import('./reader-current-output.mjs');
-    if (!verifyWaterScarcityReceipts(waterScarcity, artifacts, readerPublicDownloads(catalog, literature, readings)))
+    if (!verifyWaterScarcityReceipts(waterScarcity, artifacts, readerPublicDownloads(bioInput.catalog, bioInput.literature, bioInput.readings)))
       throw new Error('Water scarcity lacks exact independent source, reader, and output evidence');
+  }
+  if (biogenicCarbon && preview !== 'biogenic-carbon') {
+    const { readerPublicDownloads } = await import('./reader-current-output.mjs');
+    if (!verifyBiogenicCarbonReceipts(biogenicCarbon, artifacts, readerPublicDownloads(catalog, literature, readings)))
+      throw new Error('Biogenic carbon lacks exact independent source, reader, and output evidence');
   }
   const service = serviceConstraints && prepareServiceConstraintsSource(serviceConstraints, substitution?.previous ?? actual,
     substitution?.structure ?? structure, { ...previousRecords, files: substitutionInput.files });
@@ -247,7 +260,8 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const qualifiedOzone = effectivePhotochemicalOzone(qualifiedFossil, photochemicalOzone, ozone?.affectedClaimIds);
   const qualifiedOzrad = effectiveOzoneRadiation(qualifiedOzone, ozoneRadiation, ozrad?.affectedClaimIds);
   const qualifiedTox = effectiveToxicityComparison(qualifiedOzrad, toxicityComparison, tox?.affectedClaimIds);
-  return effectiveWaterScarcity(qualifiedTox, waterScarcity, water?.affectedClaimIds);
+  const qualifiedWater = effectiveWaterScarcity(qualifiedTox, waterScarcity, water?.affectedClaimIds);
+  return effectiveBiogenicCarbon(qualifiedWater, biogenicCarbon, bio?.affectedClaimIds);
 }
 
 export function validateReadableBookCurrent(root, catalog, readings, literature) {
@@ -323,4 +337,10 @@ export function validateWaterScarcityReviewSources(root, catalog, readings, lite
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Water scarcity review requires the explicit private preview');
   return qualifyCurrentReaderSources(root, catalog, readings, literature, 'water-scarcity');
+}
+
+export function validateBiogenicCarbonReviewSources(root, catalog, readings, literature) {
+  if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
+    throw new Error('Biogenic carbon review requires the explicit private preview');
+  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'biogenic-carbon');
 }
