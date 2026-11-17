@@ -1,4 +1,4 @@
-import { currentAcidEquivalents, currentEutrophicationPathways, currentBookLayout, currentBookMdxMatches, currentBookFileMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
+import { currentAcidEquivalents, currentEutrophicationPathways, currentParticulateComparison, currentBookLayout, currentBookMdxMatches, currentBookFileMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import { createHash } from 'node:crypto';
 import { isDeepStrictEqual as same } from 'node:util';
 import original from '../config/pm-selection-original.json' with { type: 'json' };
@@ -244,7 +244,8 @@ export function validatePmSelectionCoverage(edition, sources, catalog, accepted,
       const current = observed.get(previous.id);
       if (same(previous, current)) return true;
       return (currentAcidEquivalents && kind === 'readings' && previous.id === 'rd-unep-glam-2019-pathways'
-        || currentEutrophicationPathways && kind === 'literature' && previous.id === 'work-unep-glam-2019-volume2')
+        || currentEutrophicationPathways && kind === 'literature' && previous.id === 'work-unep-glam-2019-volume2'
+        || currentParticulateComparison && (kind === 'readings' && previous.id === 'rd-kb46-lcimpact2020' || kind === 'literature' && previous.id === 'work-kb46-lcimpact2020'))
         && currentBookRecordMatches(kind, previous, current, 'raw');
     });
     if (!Array.isArray(rows) || !retainsResearch
@@ -450,7 +451,9 @@ export function validateRenderedPmSelection(document, path, catalog, accepted, i
             && marker.getAttribute('data-reader-reference') === id && marker.getAttribute('href') === `#${chapterNoteAnchor(prefix, id)}`
             && marker.getAttribute('aria-label') === `注 ${number}` && marker.text === `[${number}]`
             && readerParagraphText(paragraph, marker) === claims.get(id)?.text
-            && currentBookRecordMatches('claims', frozenClaims.get(id), claims.get(id)), `canonical paragraph or note marker ${id}`);
+            && (frozenClaims.has(id)
+              ? currentBookRecordMatches('claims', frozenClaims.get(id), claims.get(id))
+              : Boolean(currentParticulateComparison && id?.startsWith('cl-particulate131-') && claims.get(id)?.status === 'reviewed' && currentBookRecordMatches('claims', null, claims.get(id)))), `canonical paragraph or note marker ${id}`);
         }
       } else if (block.kind === 'navigation') {
         const expected = block.links.map(link => ({ label: link.label, href: hrefIdentity(print ? pmSelectionBookHref(link.href, route) : link.href) }));

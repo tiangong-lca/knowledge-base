@@ -330,9 +330,45 @@ prior claims and Notes `1..22` byte-for-byte across three-generation B16 history
 controls (`#113 -> #119 -> #129`). Separate unconditional-PASS two-round source,
 zero-context B16 reader, adversarial publication-engineering and actual-output
 acceptances (`ec31ab87...`) and normal source/root delivery are tracked on
-Issue129. B17 cross-system particulate matter comparison (`V5-C`), Part IV
-continuous reread (`B14`–`B19`, including `index.mdx:18`) and Programme9
-requirements remain active.
+Issue129.
+Unit129 is now fully delivered: source PR130/Main
+`c0ffd968e60754679f815f6c36d393794e25f858`, qualified 468-file hosted output on
+`https://prism.tiangong.earth` (`792bd233...`, including unmodified
+`validateReaderOutput` against archived Main source and live B16 print
+verification), exact root2432/PR2434/Main
+`e9c3ff9f8d56882a5ed692680629630fcae9a532`, and ordinary final completion and
+source-handoff (`1/1`) receipts.
+
+[Issue131](https://github.com/tiangong-lca/knowledge-base/issues/131) continues
+with B17 cross-system particulate matter indicator cut-points, size-fraction &
+subcompartment proxies, close-read Cohen et al. 2017 (`GBD 2015`) empirical
+validation boundaries, secondary precursor switches, spatial/endpoint rank
+reversals and official EF 3.1 package forensics (`V5-C`), recorded in the
+[particulate-comparison record](editorial/2026-11-18-particulate-comparison.md)
+(committed as `4ba1a20` / `1e5ae11` before manuscript changes): selected ILCD
+2011 (`§1 Tables 1–2`, `§3.4 Tables 8–11`, `pp. 5–6, 33–42`), Commission
+Recommendation (EU) 2021/2279 R(01) (`Annex I Table 2`, `Table B.3`, `Annex III
+Table 2 OJ L 144/220`), JRC109369 (`§2 Tables 1–2` incl. p. 6 n. 5, `§4.4`),
+JRC130796 (`§2 Table 1`, `§4.2 & Table 10`, `§5.1 Table 13`), 17 CRC32/SHA-256-verified
+official `EF-v3.1.zip` members (`3` reused + `14` newly registered across
+`b5c602c6.xml` `v02.00.011`, `126c78f9` source, `01846770` flow property,
+`Normalisation_Weighting_Factors_EF_3.1.xlsx`, and 12 size-fraction elementary
+flows including zero-CF coarse `particles (PM2.5 - PM10)`), open-access Europe
+PMC JATS XML `PMC5439030` for Cohen et al. 2017 (`6ddb8ecf...`), RIVM 2016-0104
+(`Tables 1.4–1.5`, `Chapter 5 §§5.2–5.3 Tables 5.1–5.3`, `§16 S1 Tables
+S1.1–S1.2`), Huijbregts et al. 2017 (`§2.3`, `§3.1.4 & Table 1`, `Table 2`,
+`§3.2.4`), Verones et al. 2020 (`§§2.1–2.2`, `Table 1 & §2.4`, `§§2.7–2.8`,
+`Table 3`), and LC-IMPACT Overall Report v1.0 (`Chapter 6 §§6.2.1–6.2.2, 6.4.2,
+6.5 Table 6.2`). Updated B17 `description` and eight new canonical paragraphs
+across B17 §§1, 3, and 4 (bringing B17 from 37 to 45 claims and the catalog from
+1,000 to 1,008 claims) bind 13 single-source `ev-particulate131-*` records
+(`1-to-1` with 13 `psg-particulate131-*` passages) and 84 structured
+`numericFacts` while conserving 100% of all 1,000 prior claims, `X04`, and all
+40 case JSON files byte-for-byte. Separate unconditional-PASS two-round source,
+zero-context B17 reader, adversarial publication-engineering and actual-output
+acceptances (`0c04aa80...`) and normal source/root delivery are tracked on
+Issue131. Part IV continuous reread (`B14`–`B19`, including `index.mdx:18` and
+frozen-claim copyedit unification) and Programme9 requirements remain active.
 
 Rule adoption101 itself is fully delivered: PR103/Main10dc686 and
 root2381/PR2382/Main90bcaa574, with complete ordinary source/root handoff receipts.

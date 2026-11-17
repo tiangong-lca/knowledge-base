@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
+import particulate from '../config/reader-particulate-comparison.json' with { type: 'json' };
 import config from '../config/reader-eutrophication-pathways.json' with { type: 'json' };
 import capture from '../config/reader-eutrophication-pathways-capture.json' with { type: 'json' };
 import ozone from '../config/reader-photochemical-ozone.json' with { type: 'json' };
@@ -12,7 +13,7 @@ import service from '../config/reader-service-constraints.json' with { type: 'js
 import catalog from '../knowledge/catalog.json' with { type: 'json' };
 import readings from '../knowledge/research/readings.json' with { type: 'json' };
 import literature from '../knowledge/research/literature-map.json' with { type: 'json' };
-import { testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
+import { previousScientificTestRecords, testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
 import { readReadableBookFiles } from './reader-current-edition-files.mjs';
@@ -231,7 +232,8 @@ test('B16 eutrophication pathways source plan preserves 8fcb2485 predecessor, 38
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
-  const input = { catalog, readings, literature, files };
+  if (particulate.unit) files.set(`content${particulate.unit.routes[0]}.mdx`, Buffer.from(particulate.unit.previousMdx));
+  const input = { ...previousScientificTestRecords({ catalog, readings, literature }, particulate.unit), files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
   const qualify = (unit, customInput = input, customActual = actual, customStruct = structure) =>
     prepareEutrophicationPathwaysSource(unit, customInput, customActual, customStruct);
@@ -322,7 +324,8 @@ test('Eutrophication pathways receipt verifier fails closed when capture or capt
 });
 
 test('Eutrophication pathways receipts bind actual output capture independently', { skip: !eutrophicationPathwaysCapturePin && config.status !== 'reviewed' }, () => {
-  const expected = readerPublicDownloads(catalog, literature, readings);
+  const previous = previousScientificTestRecords({ catalog, readings, literature }, particulate.unit);
+  const expected = readerPublicDownloads(previous.catalog, previous.literature, previous.readings);
   const verify = (mutateUnit = () => {}, mutateOutput) => {
     const unit = structuredClone(config.unit);
     mutateUnit(unit);
@@ -356,7 +359,7 @@ test('PM retains the original GLAM work and accepts only its scoped, exact liter
   assert(validate(tamperedGlam).includes('PM selection reviewed research literature differs'));
 
   const tamperedOther = structuredClone(literature);
-  const otherId = accepted.research.literature.find(row => row.id !== 'work-unep-glam-2019-volume2').id;
+  const otherId = accepted.research.literature.find(row => !['work-unep-glam-2019-volume2', 'work-kb46-lcimpact2020'].includes(row.id)).id;
   tamperedOther.records.find(row => row.id === otherId).limitations.push('Unreviewed addition.');
   assert(validate(tamperedOther).includes('PM selection reviewed research literature differs'));
 });

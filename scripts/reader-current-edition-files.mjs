@@ -1,3 +1,4 @@
+import { selectParticulateComparison, prepareParticulateComparisonSource, effectiveParticulateComparison, verifyParticulateComparisonReceipts } from './reader-particulate-comparison.mjs';
 import { selectEutrophicationPathways, prepareEutrophicationPathwaysSource, effectiveEutrophicationPathways, verifyEutrophicationPathwaysReceipts } from './reader-eutrophication-pathways.mjs';
 import { selectBiogenicCarbon, prepareBiogenicCarbonSource, effectiveBiogenicCarbon, verifyBiogenicCarbonReceipts } from './reader-biogenic-carbon.mjs';
 import { selectWaterScarcity, prepareWaterScarcitySource, effectiveWaterScarcity, verifyWaterScarcityReceipts } from './reader-water-scarcity.mjs';
@@ -53,6 +54,9 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const serviceConstraints = selectServiceConstraints(serviceConfig, undefined, preview === 'service');
   const substitutionConfig = await readConfig('reader-substitution-rules.json');
   const substitutionRules = selectSubstitutionRules(substitutionConfig, undefined, preview === 'substitution');
+  const particulateConfig = await readConfig('reader-particulate-comparison.json');
+  const particulateComparison = selectParticulateComparison(particulateConfig, undefined, preview === 'particulate-comparison');
+  if (preview === 'particulate-comparison' && particulateConfig.status !== 'preview') throw new Error('Particulate comparison review requires a private preview state');
   const eutroConfig = await readConfig('reader-eutrophication-pathways.json');
   const eutrophicationPathways = selectEutrophicationPathways(eutroConfig, undefined, preview === 'eutrophication-pathways');
   if (preview === 'eutrophication-pathways' && eutroConfig.status !== 'preview') throw new Error('Eutrophication pathways review requires a private preview state');
@@ -101,6 +105,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (loadShift && !substitutionRules) throw new Error('Load shift requires the accepted #105 generation');
   if (circularFootprint && !loadShift) throw new Error('Circular footprint requires the accepted #107 generation');
   if (landRecovery && !circularFootprint) throw new Error('Land recovery requires the accepted #109 generation');
+  if (particulateComparison && !eutrophicationPathways) throw new Error('Particulate comparison requires the accepted #129 generation');
   if (eutrophicationPathways && !biogenicCarbon) throw new Error('Eutrophication pathways requires the accepted #127 generation');
   if (biogenicCarbon && !waterScarcity) throw new Error('Biogenic carbon requires the accepted #125 generation');
   if (waterScarcity && !toxicityComparison) throw new Error('Water scarcity requires the accepted #123 generation');
@@ -112,7 +117,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (acidEquivalents && !landRecovery) throw new Error('Acid equivalents requires the accepted #111 generation');
   for (const [path, bytes] of await readLoadShiftCaseFiles(root, loadShift)) files.set(path, bytes);
   for (const [path, bytes] of await readServiceConstraintsFiles(root, serviceConstraints)) files.set(path, bytes);
-  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison, waterScarcity, biogenicCarbon, eutrophicationPathways].filter(Boolean)];
+  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison, waterScarcity, biogenicCarbon, eutrophicationPathways, particulateComparison].filter(Boolean)];
   const realRoot = await realpath(root);
   const reviewFiles = new Set((reviewUnits ?? []).flatMap(unit =>
     (unit.reviewEvidence ?? []).flatMap(row => [row.reportFile, row.artifactFile])));
@@ -127,8 +132,11 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const input = { catalog, readings, literature, files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
-  const eutro = eutrophicationPathways && prepareEutrophicationPathwaysSource(eutrophicationPathways, input, actual, structure);
-  const eutroInput = eutro ? { ...eutro.previousRecords, files: eutro.files } : input;
+  const particulate = particulateComparison && prepareParticulateComparisonSource(particulateComparison, input, actual, structure);
+  const particulateInput = particulate ? { ...particulate.previousRecords, files: particulate.files } : input;
+  const eutro = eutrophicationPathways && prepareEutrophicationPathwaysSource(eutrophicationPathways, particulateInput,
+    particulate?.previous ?? actual, particulate?.structure ?? structure);
+  const eutroInput = eutro ? { ...eutro.previousRecords, files: eutro.files } : particulateInput;
   const bio = biogenicCarbon && prepareBiogenicCarbonSource(biogenicCarbon, eutroInput,
     eutro?.previous ?? actual, eutro?.structure ?? structure);
   const bioInput = bio ? { ...bio.previousRecords, files: bio.files } : eutroInput;
@@ -236,8 +244,13 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   }
   if (eutrophicationPathways && preview !== 'eutrophication-pathways') {
     const { readerPublicDownloads } = await import('./reader-current-output.mjs');
-    if (!verifyEutrophicationPathwaysReceipts(eutrophicationPathways, artifacts, readerPublicDownloads(catalog, literature, readings)))
+    if (!verifyEutrophicationPathwaysReceipts(eutrophicationPathways, artifacts, readerPublicDownloads(particulateInput.catalog, particulateInput.literature, particulateInput.readings)))
       throw new Error('Eutrophication pathways lacks exact independent source, reader, and output evidence');
+  }
+  if (particulateComparison && preview !== 'particulate-comparison') {
+    const { readerPublicDownloads } = await import('./reader-current-output.mjs');
+    if (!verifyParticulateComparisonReceipts(particulateComparison, artifacts, readerPublicDownloads(catalog, literature, readings)))
+      throw new Error('Particulate comparison lacks exact independent source, reader, and output evidence');
   }
   const service = serviceConstraints && prepareServiceConstraintsSource(serviceConstraints, substitution?.previous ?? actual,
     substitution?.structure ?? structure, { ...previousRecords, files: substitutionInput.files });
@@ -275,7 +288,8 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const qualifiedTox = effectiveToxicityComparison(qualifiedOzrad, toxicityComparison, tox?.affectedClaimIds);
   const qualifiedWater = effectiveWaterScarcity(qualifiedTox, waterScarcity, water?.affectedClaimIds);
   const qualifiedBio = effectiveBiogenicCarbon(qualifiedWater, biogenicCarbon, bio?.affectedClaimIds);
-  return effectiveEutrophicationPathways(qualifiedBio, eutrophicationPathways, eutro?.affectedClaimIds);
+  const qualifiedEutro = effectiveEutrophicationPathways(qualifiedBio, eutrophicationPathways, eutro?.affectedClaimIds);
+  return effectiveParticulateComparison(qualifiedEutro, particulateComparison, particulate?.affectedClaimIds);
 }
 
 export function validateReadableBookCurrent(root, catalog, readings, literature) {
@@ -363,4 +377,10 @@ export function validateEutrophicationPathwaysReviewSources(root, catalog, readi
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Eutrophication pathways review requires the explicit private preview');
   return qualifyCurrentReaderSources(root, catalog, readings, literature, 'eutrophication-pathways');
+}
+
+export function validateParticulateComparisonReviewSources(root, catalog, readings, literature) {
+  if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
+    throw new Error('Particulate comparison review requires the explicit private preview');
+  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'particulate-comparison');
 }

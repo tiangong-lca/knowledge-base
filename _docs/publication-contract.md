@@ -24,6 +24,40 @@ lastReviewedCommit: 4ba1a2086633227976c179ca9fa10a93b8cba17f
 
 ## Scoped scientific successors
 
+The particulate-comparison unit #131 compares ILCD 2011 (`RiskPoll`/`Greco 2007`
+Level I `kg PM₂.₅-eq/kg` midpoint + Level I primary / Level II secondary `DALY`
+endpoint), ReCiPe 2016 (`56`-region `TM5-FASST` `20%` perturbation `kg PM₂.₅-eq/kg`
+midpoint × global constant `6.29×10⁻⁴ DALY/kg PM₂.₅-eq` or regional `WHO 2012`
+endpoint `Annex S1.2`) and LC-IMPACT (`0` midpoints, regional `≥30`-yr
+cardiopulmonary and lung-cancer `DALY/kg`, global primary `PM₂.₅ = 6.29×10⁻⁴`),
+against EU EF 2.0–3.1 (`Level I` `Disease incidences` midpoint = pure text
+rename of `UNEP 2016` premature `Deaths` per `JRC109369` p. 6 n. 5 without
+non-fatal morbidity, `NF` `5.9536682112547822×10⁻⁴/person`, `WF` `8.96%` second
+largest in `EF 3.1`). It resolves `EF 3.1` `PM₁₀ = 0.23 × PM₂.₅` scaling (dual
+reporting adds `23%` of total `PM₁₀` mass, doubling fine impact at `23%` share),
+zero CFs on official coarse `particles (PM2.5 - PM10)` flows, and `unspecified
+air = urban ground` (`2.38497×10⁻⁴`, `20.96×` / `79.04×` / `146.36×` non-urban
+ground/high/very-high stack); inspects close-read `Cohen et al. 2017`
+(`PMC5439030` JATS XML, `GBD 2015`: `4,241.1k` deaths / `103,066.2k DALY` across
+5 causes, `<5`-yr `LRI = 202.6k` deaths & `17,431.1k DALY = 16.9%` vs `0` in
+ReCiPe/LC-IMPACT `≥30`-yr truncation, demographic ageing reversal, mass
+equitoxicity, smoking high-dose extrapolation, and lack of prospective
+abatement trials); and proves precursor switch & spatial reversals (`1 kg` rural
+`NH₃` vs `2 kg` high-stack `SO₂`: `0` vs `0.58` in ReCiPe `H`, `0.24` vs `0.58`
+in ReCiPe `E`, `2.1×10⁻⁵` vs `1.98×10⁻⁶ = 10.61×` reversal in `EF 3.1`;
+Europe/East Asia vs India `NH₃`/`SO₂` reversal; New Zealand `11.7×` & Pacific
+Islands `9.1×` `SO₂ > primary PM₂.₅`; South Korea `2.15/700` vs Romania
+`1.30/1700` `2.43×` midpoint-to-endpoint rank reversal). Source-internal
+discrepancies (`JRC109369` Table 1/§4.4 vs Table 2 p. 8 `PM2.5 eq` `kg`,
+`b5c602c6.xml` `v02.00.011` `900` constant `<location>` rows vs `58 = 48 + 10`
+unlocated flows, `'Emission Response Function (ERF)'`, `completeness/inventoryItems
+= 50`, `72ce3013` URI, `2.1×10⁻⁷` upper-air `NOx` = `599.69` incidences, `G229`
+`52.0803%` urban-ground `NH₃` share, `Cohen 2017` p. 1909 missing exponent minus
+sign, `RIVM` p. 50 `Em_NOx,i` typo & Table 5.3 omitted `6.29×`, Table S1.2 vs
+LC-IMPACT Table 6.2 `NH₃`/`NOx` gap, and `JRC130796` `0.003%` reduction vs Table
+10 positive `0.0034%` & Table 13 `608/608`) remain explicitly disclosed without
+silent repair or raw-source redistribution.
+
 The eutrophication-pathways unit #129 compares ILCD 2011 and EF 2.0–3.1 (`3`
 Level II midpoints — terrestrial `AE` `mol N eq`, freshwater and marine
 `EUTREND` `kg P eq` and `kg N eq` summing to `9.47%` of `EF 3.1` single-score

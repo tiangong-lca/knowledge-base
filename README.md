@@ -20,6 +20,42 @@ lastReviewedCommit: 1af88b9225ebed0a4fca455570152fa79ccbce8d
 
 # LCA Living Knowledge Base and Review
 
+[Particulate matter cut-points, size-fraction & stack-height proxies, Cohen 2017 GBD 2015 scope, precursor switches & package forensics #131](https://github.com/tiangong-lca/knowledge-base/issues/131)
+extends B17 across its four retained sections and three `X04` navigation blocks
+(`45` claims total, bringing the public catalog to `1,008` claims) with the
+cross-system particulate matter and epidemiological validation comparison (`V5-C`):
+ILCD 2011 (`RiskPoll`/`Greco 2007` Level I `kg PM₂.₅-eq/kg` midpoint + Level I
+primary / Level II secondary `DALY` endpoint), ReCiPe 2016 (`56`-region
+`TM5-FASST` `20%` perturbation `kg PM₂.₅-eq/kg` midpoint × global constant
+`6.29×10⁻⁴ DALY/kg PM₂.₅-eq` or regional `WHO 2012` endpoint `Annex S1.2`) and
+LC-IMPACT (`0` midpoints, regional `≥30`-yr cardiopulmonary/lung-cancer `DALY/kg`,
+global primary `PM₂.₅ = 6.29×10⁻⁴`), versus EU EF 2.0–3.1 (`Level I` `Disease
+incidences` midpoint = pure text rename of `UNEP 2016` premature `Deaths` per
+`JRC109369` p. 6 n. 5 without non-fatal morbidity, `NF` `5.9536682112547822×10⁻⁴/person`,
+`WF` `8.96%` second largest in `EF 3.1`, and `JRC109369` Table 2 p. 8 printing
+`PM2.5 eq` `kg`); `EF 3.1` `PM₁₀ = 0.23 × PM₂.₅` scaling (dual reporting of
+total `PM₁₀` + `PM₂.₅` overcounts by `23%` of total `PM₁₀` mass, doubling fine
+impact at `23%` share), `0` CFs on official coarse `particles (PM2.5 - PM10)`
+flows, and `unspecified air = urban ground` (`2.38497×10⁻⁴`, `20.96×` / `79.04×` /
+`146.36×` non-urban ground/high/very-high stack); close-read `Cohen et al. 2017`
+(`PMC5439030` JATS XML, `GBD 2015`: `424.11万` deaths / `1.0307亿 DALY` across
+5 causes, `<5`-yr `LRI` = `20.26万` deaths & `1,743.11万 DALY = 16.9%` vs `0` in
+ReCiPe/LC-IMPACT `≥30`-yr truncation, demographic ageing reversal in Brazil,
+Russia, Indonesia and Pakistan, mass equitoxicity, smoking high-dose
+extrapolation, and absence of prospective point-source abatement trials); and
+precursor switch & spatial reversals (`1 kg` rural `NH₃` vs `2 kg` high-stack
+`SO₂`: `0` vs `0.58` in ReCiPe `H`, `0.24` vs `0.58` in ReCiPe `E`, `2.1×10⁻⁵`
+vs `1.98×10⁻⁶ = 10.61×` reversal in `EF 3.1`; Europe/East Asia vs India
+`NH₃`/`SO₂` reversal; New Zealand `11.7×` & Pacific Islands `9.1×` `SO₂ >
+primary PM₂.₅`; South Korea `2.15/700` vs Romania `1.30/1700` `2.43×`
+midpoint-to-endpoint rank reversal) plus `b5c602c6.xml` (`v02.00.011`, `900`
+constant `<location>` rows, `58 = 48 + 10` unlocated flows, `2.1×10⁻⁷` upper-air
+`NOx` = `599.69` incidences, `52.0803%` urban-ground `NH₃` share) and
+`RIVM`/`JRC130796` discrepancies. Its
+[comparison record](_docs/editorial/2026-11-18-particulate-comparison.md) binds
+13 single-source evidence rows and 84 verified `numericFacts` while conserving
+all 1,000 prior claims and `X04` byte-for-byte.
+
 [Eutrophication pathways, field-to-water N/P interfaces, stoichiometry & package boundaries #129](https://github.com/tiangong-lca/knowledge-base/issues/129)
 extends B16 across its four retained sections and two `ReaderSection` anchors
 (`38` claims total, bringing the public catalog to `1,000` claims) with the
@@ -51,6 +87,8 @@ plus `JRC130796` `Table 13` duplicated `4th`/`5th` columns. Its
 12 single-source evidence rows and 126 verified `numericFacts` while conserving
 all 992 prior claims byte-for-byte across three generations (`#113`, `#119`,
 `#129`) of B16 citation history.
+Unit #129 is fully delivered at Main `c0ffd968e60754679f815f6c36d393794e25f858`,
+qualified 468-file hosting and root #2432 (`e9c3ff9f8d56882a5ed692680629630fcae9a532`).
 
 [Biogenic & LULUC carbon, feedback switches, storage rules & package boundaries #127](https://github.com/tiangong-lca/knowledge-base/issues/127)
 extends B15 (`49` claims total across its five sections) and its two companion

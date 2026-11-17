@@ -6,7 +6,7 @@ import { assertReaderNumbering, bookTopicPresentation, readerNumberingManifest, 
 import { printUnitAnchor, readSourceHeading } from './reader-book.mjs';
 
 const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b), compact=text=>text.replace(/\s+/g,''), hash=text=>createHash('sha256').update(text).digest('hex');
-const apparatus='.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope],[data-flow-boundary-history],[data-service-constraints-history],[data-substitution-rules-history],[data-load-shift-history],[data-circular-footprint-history],[data-land-recovery-history],[data-acid-equivalents-history],[data-mineral-resources-history],[data-fossil-resources-history],[data-photochemical-ozone-history],[data-ozone-radiation-history],[data-toxicity-comparison-history],[data-water-scarcity-history],[data-biogenic-carbon-history],[data-eutrophication-pathways-history]';
+const apparatus='.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope],[data-flow-boundary-history],[data-service-constraints-history],[data-substitution-rules-history],[data-load-shift-history],[data-circular-footprint-history],[data-land-recovery-history],[data-acid-equivalents-history],[data-mineral-resources-history],[data-fossil-resources-history],[data-photochemical-ozone-history],[data-ozone-radiation-history],[data-toxicity-comparison-history],[data-water-scarcity-history],[data-biogenic-carbon-history],[data-eutrophication-pathways-history],[data-particulate-comparison-history]';
 const verifiedPagination=new WeakMap();
 /** Qualification cannot be forged with a DOM attribute or retained after mutation. */
 export const isVerifiedReaderPagination=node=>verifiedPagination.has(node)&&verifiedPagination.get(node)===hash(node.outerHTML);

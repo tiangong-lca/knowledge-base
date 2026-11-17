@@ -3,6 +3,7 @@ import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import config from '../config/reader-acid-equivalents.json' with { type: 'json' };
 import capture from '../config/reader-acid-equivalents-capture.json' with { type: 'json' };
+import particulate from '../config/reader-particulate-comparison.json' with { type: 'json' };
 import eutro from '../config/reader-eutrophication-pathways.json' with { type: 'json' };
 import bio from '../config/reader-biogenic-carbon.json' with { type: 'json' };
 import water from '../config/reader-water-scarcity.json' with { type: 'json' };
@@ -31,7 +32,7 @@ import { previousScientificTestRecords, testEnvelopes } from './fixtures/scienti
 test('B16 receipts bind captured raw files, normalized article pairs, public pages and JSON', {
   skip: !capture && config.status !== 'reviewed',
 }, () => {
-  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, eutro.unit), bio.unit), water.unit);
+  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, particulate.unit), eutro.unit), bio.unit), water.unit);
   const preTox = previousScientificTestRecords(preWater, tox.unit);
   const preOzrad = previousScientificTestRecords(preTox, ozrad.unit);
   const preOzone = previousScientificTestRecords(preOzrad, ozone.unit);
@@ -65,6 +66,7 @@ test('B16 source plan declares every actual transition with its real predecessor
     readServiceConstraintsFiles(root, serviceConstraints.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
+  if (particulate.unit) files.set(`content${particulate.unit.routes[0]}.mdx`, Buffer.from(particulate.unit.previousMdx));
   if (eutro.unit) files.set(`content${eutro.unit.routes[0]}.mdx`, Buffer.from(eutro.unit.previousMdx));
   if (bio.unit) for (const [p, text] of Object.entries(bio.unit.previousMdx)) files.set(p, Buffer.from(text));
   if (water.unit) files.set(`content${water.unit.routes[0]}.mdx`, Buffer.from(water.unit.previousMdx));
@@ -73,7 +75,7 @@ test('B16 source plan declares every actual transition with its real predecessor
   if (ozone.unit) files.set(`content${ozone.unit.routes[0]}.mdx`, Buffer.from(ozone.unit.previousMdx));
   if (fossils.unit) files.set(`content${fossils.unit.routes[0]}.mdx`, Buffer.from(fossils.unit.previousMdx));
   if (minerals.unit) files.set(`content${minerals.unit.routes[0]}.mdx`, Buffer.from(minerals.unit.previousMdx));
-  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, eutro.unit), bio.unit), water.unit);
+  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, particulate.unit), eutro.unit), bio.unit), water.unit);
   const preTox = previousScientificTestRecords(preWater, tox.unit);
   const preOzrad = previousScientificTestRecords(preTox, ozrad.unit);
   const preOzone = previousScientificTestRecords(preOzrad, ozone.unit);
