@@ -3,6 +3,7 @@ import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import config from '../config/reader-land-recovery.json' with { type: 'json' };
 import capture from '../config/reader-land-recovery-capture.json' with { type: 'json' };
+import tox from '../config/reader-toxicity-comparison.json' with { type: 'json' };
 import ozrad from '../config/reader-ozone-radiation.json' with { type: 'json' };
 import ozone from '../config/reader-photochemical-ozone.json' with { type: 'json' };
 import fossils from '../config/reader-fossil-resources.json' with { type: 'json' };
@@ -27,7 +28,8 @@ import { previousScientificTestRecords, testEnvelopes } from './fixtures/scienti
 test('B14 receipts bind captured raw files, normalized article pairs, public pages and JSON', {
   skip: !capture && config.status !== 'reviewed',
 }, () => {
-  const preOzrad = previousScientificTestRecords({ catalog, readings, literature }, ozrad.unit);
+  const preTox = previousScientificTestRecords({ catalog, readings, literature }, tox.unit);
+  const preOzrad = previousScientificTestRecords(preTox, ozrad.unit);
   const preOzone = previousScientificTestRecords(preOzrad, ozone.unit);
   const preFossils = previousScientificTestRecords(preOzone, fossils.unit);
   const preMinerals = previousScientificTestRecords(preFossils, minerals.unit);
@@ -60,11 +62,13 @@ test('B14 source plan declares every actual transition with its real predecessor
     readServiceConstraintsFiles(root, serviceConstraints.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
-  const preOzrad = previousScientificTestRecords({ catalog, readings, literature }, ozrad.unit);
+  const preTox = previousScientificTestRecords({ catalog, readings, literature }, tox.unit);
+  const preOzrad = previousScientificTestRecords(preTox, ozrad.unit);
   const preOzone = previousScientificTestRecords(preOzrad, ozone.unit);
   const preFossils = previousScientificTestRecords(preOzone, fossils.unit);
   const preMinerals = previousScientificTestRecords(preFossils, minerals.unit);
   const previous = previousScientificTestRecords(preMinerals, acidEquivalents.unit);
+  if (tox.unit) files.set(`content${tox.unit.routes[0]}.mdx`, Buffer.from(tox.unit.previousMdx));
   if (ozrad.unit) files.set(`content${ozrad.unit.routes[0]}.mdx`, Buffer.from(ozrad.unit.previousMdx));
   if (ozone.unit) files.set(`content${ozone.unit.routes[0]}.mdx`, Buffer.from(ozone.unit.previousMdx));
   if (fossils.unit) files.set(`content${fossils.unit.routes[0]}.mdx`, Buffer.from(fossils.unit.previousMdx));

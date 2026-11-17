@@ -1,0 +1,1440 @@
+{
+  "schemaVersion": 1,
+  "kind": "source",
+  "unit": "toxicity-comparison-123",
+  "subjectSha256": "640513b0c2be4ddeac094ca6ab3a6b1f7e06ec10d2df95588f4c0a22919a8200",
+  "date": "2026-11-17",
+  "scope": [
+    "content/docs/book/usetox-pathways-and-boundaries.mdx",
+    "sources:src-book-recipe-2017-primary-article",
+    "sources:src-book-ilcd-2011-lcia-recommendations",
+    "sources:src-flow-pilot-ef31-update",
+    "sources:src-land111-rivm2016",
+    "sources:src-fossil117-jrc109369",
+    "readings:rd-recipe-2017-primary-article",
+    "readings:rd-ilcd-2011-eutrophication-pathways",
+    "readings:rd-flow-pilot-ef31",
+    "readings:rd-flow-pilot-ef31-update",
+    "readings:rd-land111-rivm2016",
+    "readings:rd-fossil117-jrc109369",
+    "literature:lit-m05",
+    "literature:work-recipe-2017-method-article",
+    "literature:work-ilcd-2011-lcia-recommendations",
+    "literature:work-flow-pilot-ef31",
+    "literature:work-flow-pilot-ef31-update",
+    "literature:work-fossil117-jrc109369",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:order:sources",
+    "researchMetadata:order:readings",
+    "researchMetadata:order:gaps",
+    "researchMetadata:order:revisions",
+    "researchMetadata:order:literature",
+    "researchMetadata:order:queries",
+    "researchMetadata:public-projection",
+    "claims:cl-tox123-midpoint-families",
+    "claims:cl-tox123-hc20-and-metals",
+    "claims:cl-tox123-perspective-switches",
+    "claims:cl-tox123-nickel-dcb-reversal",
+    "claims:cl-tox123-speciation-and-proxies",
+    "claims:cl-tox123-normative-zeros",
+    "claims:cl-tox123-package-discrepancies",
+    "claims:cl-tox123-cross-system-synthesis",
+    "evidence:ev-tox123-ilcd2011-ht",
+    "evidence:ev-tox123-ilcd2011-ecotox",
+    "evidence:ev-tox123-jrc109369-tox",
+    "evidence:ev-tox123-jrc130796-hc20-proxies",
+    "evidence:ev-tox123-jrc130796-nf-impacts",
+    "evidence:ev-tox123-ef31-addendum",
+    "evidence:ev-tox123-ef31-htc-xml",
+    "evidence:ev-tox123-ef31-htnc-xml",
+    "evidence:ev-tox123-ef31-ecotox-xml",
+    "evidence:ev-tox123-rivm-ch9-framework",
+    "evidence:ev-tox123-rivm-ch9-table93",
+    "evidence:ev-tox123-recipe2017-tox",
+    "sources:src-tox123-ef31-selected-members",
+    "sources:src-tox123-ef31-addendum",
+    "readings:rd-tox123-ef31-addendum",
+    "gaps:gap-tox123-usetox-useslca-and-ssd-workbooks",
+    "revisions:rev-tox123-b19-chemical-toxicity-comparison",
+    "literature:work-tox123-ef31-addendum",
+    "queries:q-tox123-hc20-perspectives-proxies-and-packages-20261117"
+  ],
+  "observed": "Primary scoped judgment integrating two-round independent source, full-chapter reader and publication-engineering audits with direct original, export and browser/print checks; no human or empirical certification.",
+  "observations": {
+    "state": {
+      "before": "6896cffe7fc512c152b588a0f97d836a0cc971fc88d7cbb3ecf15fad776d402e",
+      "after": "0f9e2c482bc7430df531bfa415c7988211680adae07fcda8709958fea14e33e8"
+    },
+    "changes": [
+      {
+        "kind": "file",
+        "key": "content/docs/book/usetox-pathways-and-boundaries.mdx",
+        "from": "4fda754b65812d8ebfababca222ed63ba078ad20c60bd85d1a7e7afdeed97537",
+        "to": "1bcedf29891a7c110c600aab3b1e49bf5a9fe87c6373d87745c09d58b28bed02",
+        "rationale": "更新B19简介并在原有三节内增补八段化学毒性方法家族、HC20效应基准、视角时间窗／食物链开关、清单代理映射、制度性置零与发行包异文比较论述，100%保留原有十二段USEtox论述。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-book-recipe-2017-primary-article",
+        "from": {
+          "raw": "493c196a41bc0fd17cded06b0006133ba7029bdcbeadd5635558955d49862de1",
+          "public": "493c196a41bc0fd17cded06b0006133ba7029bdcbeadd5635558955d49862de1",
+          "protected": "493c196a41bc0fd17cded06b0006133ba7029bdcbeadd5635558955d49862de1"
+        },
+        "to": {
+          "raw": "dc6367e76b28234fa523f22e25e01677db91a98824c883fb456e0256c5391716",
+          "public": "dc6367e76b28234fa523f22e25e01677db91a98824c883fb456e0256c5391716",
+          "protected": "dc6367e76b28234fa523f22e25e01677db91a98824c883fb456e0256c5391716"
+        },
+        "rationale": "登记EF 3.1毒性XML成员与数据指南补篇，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-book-ilcd-2011-lcia-recommendations",
+        "from": {
+          "raw": "dadfee84c97f82df173f15ab244b2b3f5910531bd5b0c9fc3cb8c24092122bab",
+          "public": "dadfee84c97f82df173f15ab244b2b3f5910531bd5b0c9fc3cb8c24092122bab",
+          "protected": "dadfee84c97f82df173f15ab244b2b3f5910531bd5b0c9fc3cb8c24092122bab"
+        },
+        "to": {
+          "raw": "751c820c51987c061bb7c0c886551de82ba357e080ee2d95401ae1b0ca14675d",
+          "public": "751c820c51987c061bb7c0c886551de82ba357e080ee2d95401ae1b0ca14675d",
+          "protected": "751c820c51987c061bb7c0c886551de82ba357e080ee2d95401ae1b0ca14675d"
+        },
+        "rationale": "登记EF 3.1毒性XML成员与数据指南补篇，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-flow-pilot-ef31-update",
+        "from": {
+          "raw": "1c67b0f79fef97bf0e505920be11c8644503809cb713afa2e900f34bea9a36ed",
+          "public": "1c67b0f79fef97bf0e505920be11c8644503809cb713afa2e900f34bea9a36ed",
+          "protected": "1c67b0f79fef97bf0e505920be11c8644503809cb713afa2e900f34bea9a36ed"
+        },
+        "to": {
+          "raw": "0d50ed997a388d9a8939fb0de60ed0202c47e7792e164eeab88e58f62a007d5b",
+          "public": "0d50ed997a388d9a8939fb0de60ed0202c47e7792e164eeab88e58f62a007d5b",
+          "protected": "0d50ed997a388d9a8939fb0de60ed0202c47e7792e164eeab88e58f62a007d5b"
+        },
+        "rationale": "登记EF 3.1毒性XML成员与数据指南补篇，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-land111-rivm2016",
+        "from": {
+          "raw": "5ca63cd5499fb664c3c325109ffbce18db590a1c31d08e6d43f57d68f3cf8a44",
+          "public": "5ca63cd5499fb664c3c325109ffbce18db590a1c31d08e6d43f57d68f3cf8a44",
+          "protected": "5ca63cd5499fb664c3c325109ffbce18db590a1c31d08e6d43f57d68f3cf8a44"
+        },
+        "to": {
+          "raw": "6e3ad82522c0d49aa0e6c49cb8df3301c8d989dd5cdde08564aaad543bf7dd58",
+          "public": "6e3ad82522c0d49aa0e6c49cb8df3301c8d989dd5cdde08564aaad543bf7dd58",
+          "protected": "6e3ad82522c0d49aa0e6c49cb8df3301c8d989dd5cdde08564aaad543bf7dd58"
+        },
+        "rationale": "登记EF 3.1毒性XML成员与数据指南补篇，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-fossil117-jrc109369",
+        "from": {
+          "raw": "e7784fc62735bd8eb4489aa1930883671c59ef2dc18e4bbbdd035f5f6409370f",
+          "public": "e7784fc62735bd8eb4489aa1930883671c59ef2dc18e4bbbdd035f5f6409370f",
+          "protected": "e7784fc62735bd8eb4489aa1930883671c59ef2dc18e4bbbdd035f5f6409370f"
+        },
+        "to": {
+          "raw": "56e94b0d3b7f6a2cea94d60b9d5ec8f03cc687b6894937ba2b84a52f946b8f24",
+          "public": "56e94b0d3b7f6a2cea94d60b9d5ec8f03cc687b6894937ba2b84a52f946b8f24",
+          "protected": "56e94b0d3b7f6a2cea94d60b9d5ec8f03cc687b6894937ba2b84a52f946b8f24"
+        },
+        "rationale": "登记EF 3.1毒性XML成员与数据指南补篇，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-recipe-2017-primary-article",
+        "from": {
+          "raw": "87dd35ad3f8599a3d2fa0821f79bb0aa3b63e578f21b35dc8869f18a91236a59",
+          "public": null,
+          "protected": "87dd35ad3f8599a3d2fa0821f79bb0aa3b63e578f21b35dc8869f18a91236a59"
+        },
+        "to": {
+          "raw": "d24430471fc80774f9966c4c597c2e90debf8c4d3f2c61acfddba1b88a4ac69c",
+          "public": null,
+          "protected": "d24430471fc80774f9966c4c597c2e90debf8c4d3f2c61acfddba1b88a4ac69c"
+        },
+        "rationale": "登记EF 3.1毒性XML成员与数据指南补篇，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-ilcd-2011-eutrophication-pathways",
+        "from": {
+          "raw": "b4a4e97e371bef99901ab63fe9ca1d75327f2a64291c5e2c140c58c6b95667e0",
+          "public": null,
+          "protected": "b4a4e97e371bef99901ab63fe9ca1d75327f2a64291c5e2c140c58c6b95667e0"
+        },
+        "to": {
+          "raw": "6dd4b0e3a2a5d99cb476affef21bdbedcca5482db534e0e1f3630affe34f1bfe",
+          "public": null,
+          "protected": "6dd4b0e3a2a5d99cb476affef21bdbedcca5482db534e0e1f3630affe34f1bfe"
+        },
+        "rationale": "登记EF 3.1毒性XML成员与数据指南补篇，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-flow-pilot-ef31",
+        "from": {
+          "raw": "02d86ad3432da3c2a41ad61f902c1740c1340920acbb8ef0436cbfee11fd3cf6",
+          "public": null,
+          "protected": "02d86ad3432da3c2a41ad61f902c1740c1340920acbb8ef0436cbfee11fd3cf6"
+        },
+        "to": {
+          "raw": "39a1ba186290a82e916a82e3cc259f1f1219265764072ede307c3d808c3f75ed",
+          "public": null,
+          "protected": "39a1ba186290a82e916a82e3cc259f1f1219265764072ede307c3d808c3f75ed"
+        },
+        "rationale": "登记EF 3.1毒性XML成员与数据指南补篇，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-flow-pilot-ef31-update",
+        "from": {
+          "raw": "801498876f7d798dd674825a3029cbfa18fc831708301e0c9b8b3feeff06ddf0",
+          "public": null,
+          "protected": "801498876f7d798dd674825a3029cbfa18fc831708301e0c9b8b3feeff06ddf0"
+        },
+        "to": {
+          "raw": "e67bbc6adb918b5869dbf1f8fea58de4d817eeab3a4ee94c8b056e354d128dce",
+          "public": null,
+          "protected": "e67bbc6adb918b5869dbf1f8fea58de4d817eeab3a4ee94c8b056e354d128dce"
+        },
+        "rationale": "登记EF 3.1毒性XML成员与数据指南补篇，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-land111-rivm2016",
+        "from": {
+          "raw": "16881b7b62d640dec4653b2a30008f5c4ea88a90a30f7537deade843eebd42d8",
+          "public": null,
+          "protected": "16881b7b62d640dec4653b2a30008f5c4ea88a90a30f7537deade843eebd42d8"
+        },
+        "to": {
+          "raw": "62b82512b67d1488be86765fbec53eb0b320da17c5160d5d30629d07a8f990c5",
+          "public": null,
+          "protected": "62b82512b67d1488be86765fbec53eb0b320da17c5160d5d30629d07a8f990c5"
+        },
+        "rationale": "登记EF 3.1毒性XML成员与数据指南补篇，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-fossil117-jrc109369",
+        "from": {
+          "raw": "433647759d27fd46a036dd1f81ff8aa2381c7b6329a45ae617b351140642a9f0",
+          "public": null,
+          "protected": "433647759d27fd46a036dd1f81ff8aa2381c7b6329a45ae617b351140642a9f0"
+        },
+        "to": {
+          "raw": "dffd92da771ef3a9650d66d15d35e9c21aa0df29b0e27ed7b114b56b465fd430",
+          "public": null,
+          "protected": "dffd92da771ef3a9650d66d15d35e9c21aa0df29b0e27ed7b114b56b465fd430"
+        },
+        "rationale": "登记EF 3.1毒性XML成员与数据指南补篇，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:lit-m05",
+        "from": {
+          "raw": "9d5e0307795efff29f24ab24fc438355c456682c4c377431e3f077e1ede61486",
+          "public": null,
+          "protected": "9d5e0307795efff29f24ab24fc438355c456682c4c377431e3f077e1ede61486"
+        },
+        "to": {
+          "raw": "0662d70cce924aa2fed47079799434439ab29e828d64e82def20964c253e0765",
+          "public": null,
+          "protected": "0662d70cce924aa2fed47079799434439ab29e828d64e82def20964c253e0765"
+        },
+        "rationale": "登记EF 3.1毒性XML成员与数据指南补篇，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-recipe-2017-method-article",
+        "from": {
+          "raw": "ba450e17330edbe38933c18975bbdc51200c6247ed7d58b2ace216d752e8f6b0",
+          "public": null,
+          "protected": "ba450e17330edbe38933c18975bbdc51200c6247ed7d58b2ace216d752e8f6b0"
+        },
+        "to": {
+          "raw": "b31c75d217a4c48f0a27ca4090b09873592104f8239a3c9e032580c30c5eccb0",
+          "public": null,
+          "protected": "b31c75d217a4c48f0a27ca4090b09873592104f8239a3c9e032580c30c5eccb0"
+        },
+        "rationale": "登记EF 3.1毒性XML成员与数据指南补篇，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-ilcd-2011-lcia-recommendations",
+        "from": {
+          "raw": "a06b1481952fa66fba56f144b2e59e64031b2dd49e997c2f2b4bc4128e5a9174",
+          "public": null,
+          "protected": "a06b1481952fa66fba56f144b2e59e64031b2dd49e997c2f2b4bc4128e5a9174"
+        },
+        "to": {
+          "raw": "fd7909cf6e3db573f1eaab251891a51734eccc38a4b5d0ede6fe52faa010ef80",
+          "public": null,
+          "protected": "fd7909cf6e3db573f1eaab251891a51734eccc38a4b5d0ede6fe52faa010ef80"
+        },
+        "rationale": "登记EF 3.1毒性XML成员与数据指南补篇，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-flow-pilot-ef31",
+        "from": {
+          "raw": "bc0af68abf939523f0da5803df2ede3f27c433bd75634938aabf2440a68afe74",
+          "public": null,
+          "protected": "bc0af68abf939523f0da5803df2ede3f27c433bd75634938aabf2440a68afe74"
+        },
+        "to": {
+          "raw": "453cc8481146bd95beb6a3434b16641b3ff46cc6db6457d65502087fdb64090b",
+          "public": null,
+          "protected": "453cc8481146bd95beb6a3434b16641b3ff46cc6db6457d65502087fdb64090b"
+        },
+        "rationale": "登记EF 3.1毒性XML成员与数据指南补篇，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-flow-pilot-ef31-update",
+        "from": {
+          "raw": "b5fb9c706c1a413600a83d7a797398be52d69a666765656e116cff22d4688c38",
+          "public": null,
+          "protected": "b5fb9c706c1a413600a83d7a797398be52d69a666765656e116cff22d4688c38"
+        },
+        "to": {
+          "raw": "aef128a3432c11f4cbd3c2a4fce87ad9e7b2a7bdf2257adeb081c768fe89abda",
+          "public": null,
+          "protected": "aef128a3432c11f4cbd3c2a4fce87ad9e7b2a7bdf2257adeb081c768fe89abda"
+        },
+        "rationale": "登记EF 3.1毒性XML成员与数据指南补篇，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-fossil117-jrc109369",
+        "from": {
+          "raw": "ca9cea8ca7f8fd31f631bea49a41d50faea939e1bd4e16727213627f4084a29c",
+          "public": null,
+          "protected": "ca9cea8ca7f8fd31f631bea49a41d50faea939e1bd4e16727213627f4084a29c"
+        },
+        "to": {
+          "raw": "842226d92833f88972d2de892b352f883fb5efe8ab69f2eb6d740e8b8e5a7be8",
+          "public": null,
+          "protected": "842226d92833f88972d2de892b352f883fb5efe8ab69f2eb6d740e8b8e5a7be8"
+        },
+        "rationale": "登记EF 3.1毒性XML成员与数据指南补篇，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:claims",
+        "from": {
+          "raw": "7d1e1541d8f6c09df5fb136231ca46e12f6f40ddcf2305453e8131583b2cb75c",
+          "public": null,
+          "protected": "7d1e1541d8f6c09df5fb136231ca46e12f6f40ddcf2305453e8131583b2cb75c"
+        },
+        "to": {
+          "raw": "5fe8f6b87a1a2a002c60a7ac5fd3b06d5919f85be646a2b12ce428262444cd26",
+          "public": null,
+          "protected": "5fe8f6b87a1a2a002c60a7ac5fd3b06d5919f85be646a2b12ce428262444cd26"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:evidence",
+        "from": {
+          "raw": "6f7287792ed8c65e0ea122d45cb45ea4d2d83b7fc94e3d8cfe13317615e4dc69",
+          "public": null,
+          "protected": "6f7287792ed8c65e0ea122d45cb45ea4d2d83b7fc94e3d8cfe13317615e4dc69"
+        },
+        "to": {
+          "raw": "0ba57a18d27edc94b3f2ffd6fd68686ff63b05e4eaeb562f7c9e207da9eadd54",
+          "public": null,
+          "protected": "0ba57a18d27edc94b3f2ffd6fd68686ff63b05e4eaeb562f7c9e207da9eadd54"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:sources",
+        "from": {
+          "raw": "db89be77c0aec27228d63a780c6cc4d72d30b221ef29eb26040e9ffa07ae4d7f",
+          "public": null,
+          "protected": "db89be77c0aec27228d63a780c6cc4d72d30b221ef29eb26040e9ffa07ae4d7f"
+        },
+        "to": {
+          "raw": "0d7eee523deeaf449273cc87218abc90cabcfdba6039d492daacd6163d782990",
+          "public": null,
+          "protected": "0d7eee523deeaf449273cc87218abc90cabcfdba6039d492daacd6163d782990"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:readings",
+        "from": {
+          "raw": "97e0d5b4022038e6467c95e34d3f26aa92d9f703b9d45df488533134eb57c861",
+          "public": null,
+          "protected": "97e0d5b4022038e6467c95e34d3f26aa92d9f703b9d45df488533134eb57c861"
+        },
+        "to": {
+          "raw": "4abe78e0b412e2807e26fe199ba3b2c8cc54973a276cccd9dfe73951ec1e5464",
+          "public": null,
+          "protected": "4abe78e0b412e2807e26fe199ba3b2c8cc54973a276cccd9dfe73951ec1e5464"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:gaps",
+        "from": {
+          "raw": "d3eb9c6c22c445651b9e8ea51febb58743d408c1a0a5bf1fb60f810d3c891ee6",
+          "public": null,
+          "protected": "d3eb9c6c22c445651b9e8ea51febb58743d408c1a0a5bf1fb60f810d3c891ee6"
+        },
+        "to": {
+          "raw": "51f35dea3ccc4c74484584c23105efc5090a4e2284fc5ae3e6a7a5c4443f469d",
+          "public": null,
+          "protected": "51f35dea3ccc4c74484584c23105efc5090a4e2284fc5ae3e6a7a5c4443f469d"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:revisions",
+        "from": {
+          "raw": "c31ae424181484bacade28be5111317212f771203caf48f047d734903f98098f",
+          "public": null,
+          "protected": "c31ae424181484bacade28be5111317212f771203caf48f047d734903f98098f"
+        },
+        "to": {
+          "raw": "d5fe95d889e8c6054aae6de6a03ef8bb5f82c48a59e228cbedbcd93ae8adeac4",
+          "public": null,
+          "protected": "d5fe95d889e8c6054aae6de6a03ef8bb5f82c48a59e228cbedbcd93ae8adeac4"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:literature",
+        "from": {
+          "raw": "73b96b7ce2fb38eb5b5c295f2675e4ee77112653964c1e00e0635d1c60256fc9",
+          "public": null,
+          "protected": "73b96b7ce2fb38eb5b5c295f2675e4ee77112653964c1e00e0635d1c60256fc9"
+        },
+        "to": {
+          "raw": "f0d0634ba1cc8c5657413325ec1c5ff43776700acbe4e490d9932b70abbf4dc0",
+          "public": null,
+          "protected": "f0d0634ba1cc8c5657413325ec1c5ff43776700acbe4e490d9932b70abbf4dc0"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:queries",
+        "from": {
+          "raw": "675805d5518da8eda534a515b3ddd887f30dbdd5be619b0406c5a75301c6f56e",
+          "public": null,
+          "protected": "675805d5518da8eda534a515b3ddd887f30dbdd5be619b0406c5a75301c6f56e"
+        },
+        "to": {
+          "raw": "0d8ca8a12c00548a60b72c0b6d551b1b4bd63eac695ffd8ce8ad669c75de3e25",
+          "public": null,
+          "protected": "0d8ca8a12c00548a60b72c0b6d551b1b4bd63eac695ffd8ce8ad669c75de3e25"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:public-projection",
+        "from": {
+          "raw": "5fec60f4e7166e0f8ce1ef8f15e0a1df11a6df6ec6688adcc5eda6fe13d8ab28",
+          "public": null,
+          "protected": "5fec60f4e7166e0f8ce1ef8f15e0a1df11a6df6ec6688adcc5eda6fe13d8ab28"
+        },
+        "to": {
+          "raw": "e47b422851562f193b89fda83cef89d8f37e037e640dd4b847f51ee1bc2d40ae",
+          "public": null,
+          "protected": "e47b422851562f193b89fda83cef89d8f37e037e640dd4b847f51ee1bc2d40ae"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-tox123-midpoint-families",
+        "from": null,
+        "to": {
+          "raw": "39eb1b4b73bc84dbdd4b0372aaa0671e67c02e034a9e936888bd7f6e1823f765",
+          "public": "39eb1b4b73bc84dbdd4b0372aaa0671e67c02e034a9e936888bd7f6e1823f765",
+          "protected": "f901b8cb4afa8cc762f8858dd5453c3857d0558656b9048097eeeb96f727ca51"
+        },
+        "rationale": "基于已核导则、方法更新报告、数据指南补篇、EF 3.1官方包34份XML成员与受控排序反转演算新增B19规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-tox123-hc20-and-metals",
+        "from": null,
+        "to": {
+          "raw": "2047971c1b0adc72f6403322761c4399ebe730d8e3bfee7921a4bd75feeedcfe",
+          "public": "2047971c1b0adc72f6403322761c4399ebe730d8e3bfee7921a4bd75feeedcfe",
+          "protected": "2addde25fc101c5f129a47bc1cafff2b5c3f6cbd2b2938806f735ad107592e9a"
+        },
+        "rationale": "基于已核导则、方法更新报告、数据指南补篇、EF 3.1官方包34份XML成员与受控排序反转演算新增B19规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-tox123-perspective-switches",
+        "from": null,
+        "to": {
+          "raw": "d4d9ffc2321954ebe14b903da006e08760e76f1eb1536029a41087929e796e96",
+          "public": "d4d9ffc2321954ebe14b903da006e08760e76f1eb1536029a41087929e796e96",
+          "protected": "8997cdba7fbe67c0b6fa3b3bda60f82cd05f65c18bbe972b3d885f0a137d3338"
+        },
+        "rationale": "基于已核导则、方法更新报告、数据指南补篇、EF 3.1官方包34份XML成员与受控排序反转演算新增B19规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-tox123-nickel-dcb-reversal",
+        "from": null,
+        "to": {
+          "raw": "0f51f9e063100014c6acc777cd6b276d8a470b38fee96c154c5a044826e11a8b",
+          "public": "0f51f9e063100014c6acc777cd6b276d8a470b38fee96c154c5a044826e11a8b",
+          "protected": "df5c201949e977045dd22c5131587a8d7f10bc1698c8f7495151d65da4c8ae5d"
+        },
+        "rationale": "基于已核导则、方法更新报告、数据指南补篇、EF 3.1官方包34份XML成员与受控排序反转演算新增B19规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-tox123-speciation-and-proxies",
+        "from": null,
+        "to": {
+          "raw": "f60b70b89eb9c7e5ecff712a5d833330a1feeb04e50183706e5762abeb695667",
+          "public": "f60b70b89eb9c7e5ecff712a5d833330a1feeb04e50183706e5762abeb695667",
+          "protected": "7b9bf1398c808bd454ae270f3b1249c58e7520b17cfab4662b973e9faa4acc38"
+        },
+        "rationale": "基于已核导则、方法更新报告、数据指南补篇、EF 3.1官方包34份XML成员与受控排序反转演算新增B19规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-tox123-normative-zeros",
+        "from": null,
+        "to": {
+          "raw": "8fc53ba58f021c5d23da0724edad8e7de665dfef2dcf2e3c17535034ff4812ce",
+          "public": "8fc53ba58f021c5d23da0724edad8e7de665dfef2dcf2e3c17535034ff4812ce",
+          "protected": "7bf39ace5eccb06179f586bad3083b303890ee01df1dd7601feb022ab1f685cd"
+        },
+        "rationale": "基于已核导则、方法更新报告、数据指南补篇、EF 3.1官方包34份XML成员与受控排序反转演算新增B19规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-tox123-package-discrepancies",
+        "from": null,
+        "to": {
+          "raw": "6893d9fc9e7ac1e189df545ed866b29da585dd8bf64e4ba803e39359d00ac508",
+          "public": "6893d9fc9e7ac1e189df545ed866b29da585dd8bf64e4ba803e39359d00ac508",
+          "protected": "73f7e432b2abc0132ef19c62bfeda30ff7376690c39c486e28d13528353b30e8"
+        },
+        "rationale": "基于已核导则、方法更新报告、数据指南补篇、EF 3.1官方包34份XML成员与受控排序反转演算新增B19规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-tox123-cross-system-synthesis",
+        "from": null,
+        "to": {
+          "raw": "f997e41fe193c358e1aed11bdacd98ba1481b0ac4147286a2a9981319fe5fd38",
+          "public": "f997e41fe193c358e1aed11bdacd98ba1481b0ac4147286a2a9981319fe5fd38",
+          "protected": "f2ab01921cad3e7811df15ca4aaf750374226b1cd0cfd58aab953edb23e10baa"
+        },
+        "rationale": "基于已核导则、方法更新报告、数据指南补篇、EF 3.1官方包34份XML成员与受控排序反转演算新增B19规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-tox123-ilcd2011-ht",
+        "from": null,
+        "to": {
+          "raw": "c62ecc87f330f27dc9a26a86545688f530ce8e7dfceccde02d37a59a4f1330f5",
+          "public": "1f3300340fe48e186c0c2f9bc2b09b4f2b7391f90c835e0e7f1df005d74a60bf",
+          "protected": "c62ecc87f330f27dc9a26a86545688f530ce8e7dfceccde02d37a59a4f1330f5"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-tox123-ilcd2011-ecotox",
+        "from": null,
+        "to": {
+          "raw": "275c0e804c9ce78f57267cd3757f1f8097a3b5d0288dac9d098bfad1923883c5",
+          "public": "cc6aea568df6d42da8112df7d6f7985f54107d604208ed9085b3ea51b5851893",
+          "protected": "275c0e804c9ce78f57267cd3757f1f8097a3b5d0288dac9d098bfad1923883c5"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-tox123-jrc109369-tox",
+        "from": null,
+        "to": {
+          "raw": "d3cddf1790629ff674b5c3d2735616392f2d3f72ab3ea66198a7dcfd7476c151",
+          "public": "786594b1a1a14920bff5cd277cdd0368516b58862e55aa02b1f2a1c384fbadce",
+          "protected": "d3cddf1790629ff674b5c3d2735616392f2d3f72ab3ea66198a7dcfd7476c151"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-tox123-jrc130796-hc20-proxies",
+        "from": null,
+        "to": {
+          "raw": "8f54f734856d5fbace5bf2a7b03d7dca2d12d09ebce01004c43e844bae32e36f",
+          "public": "9d2628c97e06e9a5db79c1a6869236fff51b963180f7acdd31a926e6bf410fd4",
+          "protected": "8f54f734856d5fbace5bf2a7b03d7dca2d12d09ebce01004c43e844bae32e36f"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-tox123-jrc130796-nf-impacts",
+        "from": null,
+        "to": {
+          "raw": "0ba291e3c579fed66e9ad65547a9cefab69b9002981e7ac2fa0de1e5ee4bab25",
+          "public": "59dc436d2545fc98fa4eb2f33eef2f1607c8293c12147ab6244b29b971d059e2",
+          "protected": "0ba291e3c579fed66e9ad65547a9cefab69b9002981e7ac2fa0de1e5ee4bab25"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-tox123-ef31-addendum",
+        "from": null,
+        "to": {
+          "raw": "3ad95c20bbf051826f1a06e62d5fdc11739d950dbe54ab81e131a5872880c0e6",
+          "public": "252c10eb1e361fb4a2208e2439ac25d526fa8f2604c2d54c0eaa4eea8b36e5a3",
+          "protected": "3ad95c20bbf051826f1a06e62d5fdc11739d950dbe54ab81e131a5872880c0e6"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-tox123-ef31-htc-xml",
+        "from": null,
+        "to": {
+          "raw": "3fe90dcf50dc4e796de130ceb7c04335afa1aa4320b4b0bcfd86473f24b7d616",
+          "public": "98a64182ba7c83fe6cab0f201db95dbb5b552ef8c372d856f1ae70d8914ebeac",
+          "protected": "3fe90dcf50dc4e796de130ceb7c04335afa1aa4320b4b0bcfd86473f24b7d616"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-tox123-ef31-htnc-xml",
+        "from": null,
+        "to": {
+          "raw": "911bda6f86eecf1f13dd4dad133dc75b7089604d423c558f7189854c5f851e53",
+          "public": "249ea83b89e9ce5e8a631e463877e34caabf6fa5f1d33442f93e5ad2e2538513",
+          "protected": "911bda6f86eecf1f13dd4dad133dc75b7089604d423c558f7189854c5f851e53"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-tox123-ef31-ecotox-xml",
+        "from": null,
+        "to": {
+          "raw": "0c6e86f178818b293a3b959778c54ef78d7e5b2044aea990a28db821d6d52a0b",
+          "public": "0e6622e2fd4723c43ece984fe1bd264b0ec06a1a3ea99317e51a6ed8fd0f6fc0",
+          "protected": "0c6e86f178818b293a3b959778c54ef78d7e5b2044aea990a28db821d6d52a0b"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-tox123-rivm-ch9-framework",
+        "from": null,
+        "to": {
+          "raw": "139a7cc752d38b81b6c3e7cf33cac4df22cd94af1bc0e9914c304ba09f4fadad",
+          "public": "7cd4240e1107feb560bd66e49ca4f0fbdc7bce013ac2f0816484b1e866b86b50",
+          "protected": "139a7cc752d38b81b6c3e7cf33cac4df22cd94af1bc0e9914c304ba09f4fadad"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-tox123-rivm-ch9-table93",
+        "from": null,
+        "to": {
+          "raw": "96b7e71254aefb7cdb9aa00176cca33bcc996bf1f44a53b4ace08c2a4a46c397",
+          "public": "a0fafdb9a0ff1f6e3dd6b8853588046fce7be07b7e2f4ba13550737fbcd1a670",
+          "protected": "96b7e71254aefb7cdb9aa00176cca33bcc996bf1f44a53b4ace08c2a4a46c397"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-tox123-recipe2017-tox",
+        "from": null,
+        "to": {
+          "raw": "96c89fe3f3c443b9be9447bad49f9a650c27783545641f175aa7ecf81fb94fb7",
+          "public": "b0e831adcf11d10a1d32c37152b610a5d86340e6e16afe37fbf6d50012c33360",
+          "protected": "96c89fe3f3c443b9be9447bad49f9a650c27783545641f175aa7ecf81fb94fb7"
+        },
+        "rationale": "按单一来源载体一对一绑定一手报告、期刊正文或经CRC32校验的EF 3.1官方包XML定位与精确数值字面量。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-tox123-ef31-selected-members",
+        "from": null,
+        "to": {
+          "raw": "940a056a4cb415bd0be9d4a87fa7540b2d7796f2b8fdf0d4acc4cab02e3754f2",
+          "public": "1b739d3fdb64c39a5b0775b8062b6cbf65ad34c29cfe509e8dbd7f7ec9b1ef30",
+          "protected": "940a056a4cb415bd0be9d4a87fa7540b2d7796f2b8fdf0d4acc4cab02e3754f2"
+        },
+        "rationale": "登记EF 3.1毒性XML成员与数据指南补篇，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-tox123-ef31-addendum",
+        "from": null,
+        "to": {
+          "raw": "e8ad5f8cba9ec2f4048cf174224c08fb5b128686e5e1e2c5d9990e0f84a02fc4",
+          "public": "dc0297dcffb2963e222f3c1ffae1d84d09333c74fb0a560517963deb8f341ce9",
+          "protected": "e8ad5f8cba9ec2f4048cf174224c08fb5b128686e5e1e2c5d9990e0f84a02fc4"
+        },
+        "rationale": "登记EF 3.1毒性XML成员与数据指南补篇，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-tox123-ef31-addendum",
+        "from": null,
+        "to": {
+          "raw": "364d5b7b8c5118f542b95d981ae015b7bff8c69e8e0e5f08ae13d6787de623d4",
+          "public": null,
+          "protected": "364d5b7b8c5118f542b95d981ae015b7bff8c69e8e0e5f08ae13d6787de623d4"
+        },
+        "rationale": "登记EF 3.1毒性XML成员与数据指南补篇，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "gaps:gap-tox123-usetox-useslca-and-ssd-workbooks",
+        "from": null,
+        "to": {
+          "raw": "382ff7931771e7d589441859d101b0251095f377107bf9321d7c50f0b99d3d7d",
+          "public": null,
+          "protected": "382ff7931771e7d589441859d101b0251095f377107bf9321d7c50f0b99d3d7d"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "revisions:rev-tox123-b19-chemical-toxicity-comparison",
+        "from": null,
+        "to": {
+          "raw": "2687a512bab8697d22d3f56b6f9923ca45bf05c48f700f550cce61a5e1c735c8",
+          "public": null,
+          "protected": "2687a512bab8697d22d3f56b6f9923ca45bf05c48f700f550cce61a5e1c735c8"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-tox123-ef31-addendum",
+        "from": null,
+        "to": {
+          "raw": "83d6cf4d3df1955b51a3812fbad110d5b561ca43efe4298743c69159485ebc9e",
+          "public": null,
+          "protected": "83d6cf4d3df1955b51a3812fbad110d5b561ca43efe4298743c69159485ebc9e"
+        },
+        "rationale": "登记EF 3.1毒性XML成员与数据指南补篇，或在既有同载体记录上追加本次核读选段与范围说明而不改动既有定位。"
+      },
+      {
+        "kind": "record",
+        "key": "queries:q-tox123-hc20-perspectives-proxies-and-packages-20261117",
+        "from": null,
+        "to": {
+          "raw": "0b0a982db3c41f2ba4a99e49a4c648d3c0cc46b4c75ffe2560083c49c74c6ed6",
+          "public": null,
+          "protected": "0b0a982db3c41f2ba4a99e49a4c648d3c0cc46b4c75ffe2560083c49c74c6ed6"
+        },
+        "rationale": "核对一手原件、EF 3.1命名XML成员或受控算式后登记本单元记录变更。"
+      }
+    ],
+    "consumers": [
+      {
+        "id": "cl-lcia-midpoint-pathway",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lcia-endpoint-units",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lcia-mid-end-conversion-limits",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lcia-scenarios-are-choices",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lcia-global-is-not-site-specific",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lcia-model-data-factor-separation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-connect-reuse-keeps-relation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-path-terrestrial",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-path-units",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-path-marginal-average",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-path-supplied-effect-conditions",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-path-background",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-path-pdf",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-path-multiple-paths",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-water-marginal-contexts",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-question",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-authority",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-three",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-equation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-why-square",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-nmvoc",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-nox",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-service",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-score",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-scale",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-threshold",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-test",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-later",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-es-judgment",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-purpose",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-policy-contrast",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-baseline",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-units",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-display",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-logit",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-trade",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-precision",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-primary-ratio",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-households",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-health",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-mismatch",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-annual",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-shares",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-two-forms",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-different-card",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-english",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-english-basis",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-service",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-japan-route",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-break-even",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-english-route",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-numeraire",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-edition",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-validity",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-null",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-order",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-transfer",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-lime-decision",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-opening",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-precursor-denominator",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-intake-definition",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-intake-unit",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-receptor-boundary",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-source-height",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-mixture-inputs",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-mixture-results",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-exposure-evidence",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-effect-definition",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-effect-default",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-urban-health",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-rural-health",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-precursor-health",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-burden-check",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-population-meaning",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-indoor-location",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-indoor-matrix",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-exposure-compatible",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-compatible-population",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-indoor-time",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-exposure-coverage",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-nonlinear-response",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-risk-reference",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-slope-meaning",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-finite-change",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-slope-context",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-ier-evidence",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-gemm-alternative",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-factor-correction",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-implementation-layer",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-chemistry-background",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-chemistry-perturbation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-chemistry-model-check",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-concentration-route",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-regional-factor",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-modern-values",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-modern-ratios",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-matched-scope",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-uncovered-pathways",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-conclusion",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-concentration-balance",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-activity-indicators",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-usetox-conclusion",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-source-distribution",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-evidence-levels",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-regional-summary",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-factor-order",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-matched-scenario",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-pm-version-and-model",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-flow99-identity-example",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-flow99-zero-reasons",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-flow99-zero-reporting",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-flow99-conclusion",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-land111-episode",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-land111-midpoint",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-land111-conversion",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-land111-pathway",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-land111-horizon",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-land111-factor-scale",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-land111-integral",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-land111-countercheck",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-land111-aggregation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-land111-printed-record",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-acid113-ae-question",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-acid113-threshold",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-acid113-glam-relation",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-acid113-glam-tension",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-acid113-so2-rows",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-acid113-chemistry-control",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-acid113-shared-moles",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-acid113-nh3-control",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-mineral115-input",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-mineral115-adp",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-mineral115-sop",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-mineral115-reserves",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-mineral115-rank",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-mineral115-cost-proxy",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-mineral115-metal-cost",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-mineral115-calibration",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-mineral115-assumptions",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-mineral115-judgment",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-fossil117-scarcity-energy",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-fossil117-heating-basis",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-fossil117-uranium-boundary",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-fossil117-scenario-proxy",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-fossil117-equal-midpoint",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-fossil117-proxy-consequence",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-fossil117-printed-limits",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-fossil117-bridge",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozone119-precursor-entry",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozone119-pocp-to-lotos",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozone119-order-reversal",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozone119-titration-sign",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozone119-ef-location-copy",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozone119-multipath-accounting",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozone119-printed-limits",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozrad121-emission-midpoint",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozrad121-reference-scope",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozrad121-odp-horizons",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozrad121-ir-horizons",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozrad121-endpoint-choices",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozrad121-formula-table",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozrad121-package-discrepancies",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      },
+      {
+        "id": "cl-ozrad121-emission-bridge",
+        "rationale": "核对新旧完整依赖图中的相关公开论述，确认共享原件选段与EF 3.1毒性XML追加不改变既有命题含义、证据支撑或适用边界。"
+      }
+    ],
+    "assessment": {
+      "scope": "Selected ILCD 2011 (§1 Tables 1–2 pp. 5–6, §3.3 Human toxicity pp. 25–33 Tables 6–7, §3.9 Ecotoxicity pp. 78–84 Tables 20–22), JRC109369 (§2 Tables 1–2 pp. 6 & 8, §3.4 p. 10 long-term zeros, §4.3 pp. 14–15 Table 5), JRC130796 (Abstract p. 1, §1 p. 3, §2 Table 1 p. 6, §3 Table 2 p. 8, §3.4 pp. 10–16 Eqs. 1–4 Tables 5–8 Figs. 2–3, §4.2 Table 10 pp. 22–23, §§5.1.1.4–5.1.1.6 pp. 26–28, §§5.2/6 pp. 30–31 & 36), EF 3.1 Data Guide Addendum (Nov 2022, pp. 1–3), 34 ZIP64/HTTP-206/CRC32-verified official EF-v3.1.zip XML members (9 lciamethods tables, 3 other/converter copies, CTUh/CTUe/Items, and 19 substance flows), RIVM 2016-0104 (Tables 1.3–1.5 pp. 18–22, Chapter 9 pp. 65–72 Tables 9.1–9.4, §20 S5 pp. 159–161 Table S5.1), and Huijbregts et al. 2017 (§2.3, Table 1, §§3.1.8 & 3.2, Table 2, §§3.2.8 & 4.1 pp. 140–144).",
+      "comparison": "Establishes the cross-family architecture in B19 between USEtox/ILCD/EF (3 midpoints in CTUh and freshwater CTUe, excluding marine/terrestrial midpoints and most endpoints) and ReCiPe 2016 USES-LCA 2.0 (5 1,4-DCB-referenced midpoints, porewater-extrapolated industrial-soil terrestrial ecotoxicity excluding agricultural soil to avoid double counting with land use, and perspective-invariant endpoint factors). Demonstrates controlled rank reversals across EF 3.0 -> 3.1 0.2/HC20 + EU REACH/EFSA data (Cu vs Hg reversing >4 orders of magnitude from 45:1 to 1:714; Al/Cu drops vs Cd/Ag/Hg top-three rise; vs 20/17 = 1.176 fallback for Sb(III)) and across ReCiPe I/H/E five coupled switches + EF 3.1 (urban-air 100 kg 1,4-DCB vs 1 kg Ni reversing I > H/E < EF 3.1; seawater 1 kg each reversing I vs H/E/EF 3.1), plus speciation/2019-sales-pesticide/unspecified-water proxy rules and normative zeros (-44% HT_nc NF vs +4,438% avoided-emission credit jump).",
+      "values": "Twelve single-source ev-tox123-* records map 1-to-1 onto all twelve psg-tox123-* passages and bind 132 structured numericFacts with exact decimal fidelity, verified via 40-place BigInt fixed-point arithmetic and direct prose assertions across all 8 new claims.",
+      "limits": "Preserves ILCD/lciamethods vs other/converter byte deltas (12 B metadata diffs in HT_c/HT_nc; 2,301,282 B and freshwater Lactic acid 1033.8 vs 0.0 split in ECOTOX), 5 ammonia air flows × 37 locations (+180 duplicate rows), Carbon tetrachloride 3-sig-fig rounding and missing indoor/water/soil compartments vs CFC-10, CTUe flowproperty [m3*a]/[m3*d]/Items/URI metadata defects and \" CTUh \" spaces, JRC130796 Eq. (3) inverted fraction HC20/(HC20*0.34) and p. 28 copper (ii) 9.92E+04 typo, JRC109369 p. 14 Sb(+6) and p. 15 Table 5 long-term Estimated conflict, and RIVM p. 65 (3,094) vs p. 159 (3,073 + 20 = 3,093) count discrepancy.",
+      "conservation": "100% of all 968 prior claims (including all 12 original B19 USEtox claims and rd-usetox-2-documentation-v11) remain byte-for-byte unchanged; zero prior-claim corrections required.",
+      "review": "Two-round independent primary-source/numeric subagent audit (99fbd3b2) verified all 6 PDFs, 34 XMLs, page bounds, 1-to-1 passage provenance, 132 numericFacts, and 100% conservation of 968 prior claims, followed by direct programmatic primary-byte verification closing R2-M-01 (ILCD Table 20–21 / RIVM §9.3 wording) and R2-m-01 after subagent 429 quota exhaustion (round3-primary-verification-after-429.md). Agent verification does not claim human expert certification, native USEtox/USES-LCA solver re-execution, or site-specific chemical risk assessment."
+    },
+    "independentReports": {
+      "independent-primary-source-audit-initial.md": "6e04affb2dc3bec13f3a0e1315465bf3ba7988e8feb55c2ce1b0d63149a66e33",
+      "independent-primary-source-audit-final.md": "7ed4f72c6beca83bdb25ab31d1790727d04715bf3f403e12710dd3b4cb7d5f55",
+      "full-chapter-b19-reader-review-initial.md": "18ddf36bbcfb4ce35077d0730945cf97dcd7a571d97e3c58a68fea2180409042",
+      "full-chapter-b19-reader-review-final.md": "670f7aa96dfa98be4ac2d3e22142ec9b6302e170084a4290c9073a61de3772fd",
+      "independent-publication-engineering-review-initial.md": "a57300dbece8712fc69c70e5b2ff437ac96e5b591d6c48567656340145113a8e",
+      "independent-publication-engineering-review-final.md": "8e650923911f4d49d08db0055523aa4f3b650e0fb869b12108372f4af62935e5",
+      "round3-primary-verification-after-429.md": "1cf0744153eb4e5603b94d35b240179ee8ccc602fb5115e3be6c7752c39bbfa8",
+      "ef31-toxicity-all-members-receipt.json": "3868b8bbfe0fccec7c3990032aa200efbe3a17d15a6d02e3c1d31fb1ef71d489",
+      "actual-browser-qa/responsive-script-enabled.json": "4ea9fd7f1bba156d961d976c72ac49c37f2339054dbdea252babb290fd78a8b2",
+      "actual-browser-qa/interactions.json": "b7edfc54687de5b622b73d5f0b70f819faf9abafef418c6fb9d97742a03b2791"
+    }
+  }
+}

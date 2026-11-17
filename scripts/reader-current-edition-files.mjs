@@ -1,3 +1,4 @@
+import { selectToxicityComparison, prepareToxicityComparisonSource, effectiveToxicityComparison, verifyToxicityComparisonReceipts } from './reader-toxicity-comparison.mjs';
 import { selectOzoneRadiation, prepareOzoneRadiationSource, effectiveOzoneRadiation, verifyOzoneRadiationReceipts } from './reader-ozone-radiation.mjs';
 import { selectPhotochemicalOzone, preparePhotochemicalOzoneSource, effectivePhotochemicalOzone, verifyPhotochemicalOzoneReceipts } from './reader-photochemical-ozone.mjs';
 import { selectFossilResources, prepareFossilResourcesSource, effectiveFossilResources, verifyFossilResourcesReceipts } from './reader-fossil-resources.mjs';
@@ -49,6 +50,9 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const serviceConstraints = selectServiceConstraints(serviceConfig, undefined, preview === 'service');
   const substitutionConfig = await readConfig('reader-substitution-rules.json');
   const substitutionRules = selectSubstitutionRules(substitutionConfig, undefined, preview === 'substitution');
+  const toxConfig = await readConfig('reader-toxicity-comparison.json');
+  const toxicityComparison = selectToxicityComparison(toxConfig, undefined, preview === 'toxicity-comparison');
+  if (preview === 'toxicity-comparison' && toxConfig.status !== 'preview') throw new Error('Toxicity comparison review requires a private preview state');
   const ozradConfig = await readConfig('reader-ozone-radiation.json');
   const ozoneRadiation = selectOzoneRadiation(ozradConfig, undefined, preview === 'ozone-radiation');
   if (preview === 'ozone-radiation' && ozradConfig.status !== 'preview') throw new Error('Ozone and radiation review requires a private preview state');
@@ -85,6 +89,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (loadShift && !substitutionRules) throw new Error('Load shift requires the accepted #105 generation');
   if (circularFootprint && !loadShift) throw new Error('Circular footprint requires the accepted #107 generation');
   if (landRecovery && !circularFootprint) throw new Error('Land recovery requires the accepted #109 generation');
+  if (toxicityComparison && !ozoneRadiation) throw new Error('Toxicity comparison requires the accepted #121 generation');
   if (ozoneRadiation && !photochemicalOzone) throw new Error('Ozone and radiation requires the accepted #119 generation');
   if (photochemicalOzone && !fossilResources) throw new Error('Photochemical ozone requires the accepted #117 generation');
   if (fossilResources && !mineralResources) throw new Error('Fossil resources requires the accepted #115 generation');
@@ -92,7 +97,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (acidEquivalents && !landRecovery) throw new Error('Acid equivalents requires the accepted #111 generation');
   for (const [path, bytes] of await readLoadShiftCaseFiles(root, loadShift)) files.set(path, bytes);
   for (const [path, bytes] of await readServiceConstraintsFiles(root, serviceConstraints)) files.set(path, bytes);
-  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation].filter(Boolean)];
+  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison].filter(Boolean)];
   const realRoot = await realpath(root);
   const reviewFiles = new Set((reviewUnits ?? []).flatMap(unit =>
     (unit.reviewEvidence ?? []).flatMap(row => [row.reportFile, row.artifactFile])));
@@ -107,8 +112,11 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const input = { catalog, readings, literature, files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
-  const ozrad = ozoneRadiation && prepareOzoneRadiationSource(ozoneRadiation, input, actual, structure);
-  const ozoneInput = ozrad ? { ...ozrad.previousRecords, files: ozrad.files } : input;
+  const tox = toxicityComparison && prepareToxicityComparisonSource(toxicityComparison, input, actual, structure);
+  const ozradInput = tox ? { ...tox.previousRecords, files: tox.files } : input;
+  const ozrad = ozoneRadiation && prepareOzoneRadiationSource(ozoneRadiation, ozradInput,
+    tox?.previous ?? actual, tox?.structure ?? structure);
+  const ozoneInput = ozrad ? { ...ozrad.previousRecords, files: ozrad.files } : ozradInput;
   const ozone = photochemicalOzone && preparePhotochemicalOzoneSource(photochemicalOzone, ozoneInput,
     ozrad?.previous ?? actual, ozrad?.structure ?? structure);
   const fossilInput = ozone ? { ...ozone.previousRecords, files: ozone.files } : ozoneInput;
@@ -184,8 +192,13 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   }
   if (ozoneRadiation && preview !== 'ozone-radiation') {
     const { readerPublicDownloads } = await import('./reader-current-output.mjs');
-    if (!verifyOzoneRadiationReceipts(ozoneRadiation, artifacts, readerPublicDownloads(catalog, literature, readings)))
+    if (!verifyOzoneRadiationReceipts(ozoneRadiation, artifacts, readerPublicDownloads(ozradInput.catalog, ozradInput.literature, ozradInput.readings)))
       throw new Error('Ozone and radiation lacks exact independent source, reader, and output evidence');
+  }
+  if (toxicityComparison && preview !== 'toxicity-comparison') {
+    const { readerPublicDownloads } = await import('./reader-current-output.mjs');
+    if (!verifyToxicityComparisonReceipts(toxicityComparison, artifacts, readerPublicDownloads(catalog, literature, readings)))
+      throw new Error('Toxicity comparison lacks exact independent source, reader, and output evidence');
   }
   const service = serviceConstraints && prepareServiceConstraintsSource(serviceConstraints, substitution?.previous ?? actual,
     substitution?.structure ?? structure, { ...previousRecords, files: substitutionInput.files });
@@ -219,7 +232,8 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const qualifiedMineral = effectiveMineralResources(qualifiedAcid, mineralResources, minerals?.affectedClaimIds);
   const qualifiedFossil = effectiveFossilResources(qualifiedMineral, fossilResources, fossils?.affectedClaimIds);
   const qualifiedOzone = effectivePhotochemicalOzone(qualifiedFossil, photochemicalOzone, ozone?.affectedClaimIds);
-  return effectiveOzoneRadiation(qualifiedOzone, ozoneRadiation, ozrad?.affectedClaimIds);
+  const qualifiedOzrad = effectiveOzoneRadiation(qualifiedOzone, ozoneRadiation, ozrad?.affectedClaimIds);
+  return effectiveToxicityComparison(qualifiedOzrad, toxicityComparison, tox?.affectedClaimIds);
 }
 
 export function validateReadableBookCurrent(root, catalog, readings, literature) {
@@ -283,4 +297,10 @@ export function validateOzoneRadiationReviewSources(root, catalog, readings, lit
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Ozone and radiation review requires the explicit private preview');
   return qualifyCurrentReaderSources(root, catalog, readings, literature, 'ozone-radiation');
+}
+
+export function validateToxicityComparisonReviewSources(root, catalog, readings, literature) {
+  if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
+    throw new Error('Toxicity comparison review requires the explicit private preview');
+  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'toxicity-comparison');
 }

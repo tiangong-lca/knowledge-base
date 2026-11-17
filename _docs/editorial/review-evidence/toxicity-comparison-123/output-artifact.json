@@ -1,0 +1,906 @@
+{
+  "schemaVersion": 1,
+  "kind": "output",
+  "unit": "toxicity-comparison-123",
+  "subjectSha256": "45e36c979affb4a41279bed7ac8963d690dddb94aa262ebeca97fa2f0340f06b",
+  "date": "2026-11-17",
+  "scope": [
+    "content/docs/book/usetox-pathways-and-boundaries.mdx",
+    "sources:src-book-recipe-2017-primary-article",
+    "sources:src-book-ilcd-2011-lcia-recommendations",
+    "sources:src-flow-pilot-ef31-update",
+    "sources:src-land111-rivm2016",
+    "sources:src-fossil117-jrc109369",
+    "readings:rd-recipe-2017-primary-article",
+    "readings:rd-ilcd-2011-eutrophication-pathways",
+    "readings:rd-flow-pilot-ef31",
+    "readings:rd-flow-pilot-ef31-update",
+    "readings:rd-land111-rivm2016",
+    "readings:rd-fossil117-jrc109369",
+    "literature:lit-m05",
+    "literature:work-recipe-2017-method-article",
+    "literature:work-ilcd-2011-lcia-recommendations",
+    "literature:work-flow-pilot-ef31",
+    "literature:work-flow-pilot-ef31-update",
+    "literature:work-fossil117-jrc109369",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:order:sources",
+    "researchMetadata:order:readings",
+    "researchMetadata:order:gaps",
+    "researchMetadata:order:revisions",
+    "researchMetadata:order:literature",
+    "researchMetadata:order:queries",
+    "researchMetadata:public-projection",
+    "claims:cl-tox123-midpoint-families",
+    "claims:cl-tox123-hc20-and-metals",
+    "claims:cl-tox123-perspective-switches",
+    "claims:cl-tox123-nickel-dcb-reversal",
+    "claims:cl-tox123-speciation-and-proxies",
+    "claims:cl-tox123-normative-zeros",
+    "claims:cl-tox123-package-discrepancies",
+    "claims:cl-tox123-cross-system-synthesis",
+    "evidence:ev-tox123-ilcd2011-ht",
+    "evidence:ev-tox123-ilcd2011-ecotox",
+    "evidence:ev-tox123-jrc109369-tox",
+    "evidence:ev-tox123-jrc130796-hc20-proxies",
+    "evidence:ev-tox123-jrc130796-nf-impacts",
+    "evidence:ev-tox123-ef31-addendum",
+    "evidence:ev-tox123-ef31-htc-xml",
+    "evidence:ev-tox123-ef31-htnc-xml",
+    "evidence:ev-tox123-ef31-ecotox-xml",
+    "evidence:ev-tox123-rivm-ch9-framework",
+    "evidence:ev-tox123-rivm-ch9-table93",
+    "evidence:ev-tox123-recipe2017-tox",
+    "sources:src-tox123-ef31-selected-members",
+    "sources:src-tox123-ef31-addendum",
+    "readings:rd-tox123-ef31-addendum",
+    "gaps:gap-tox123-usetox-useslca-and-ssd-workbooks",
+    "revisions:rev-tox123-b19-chemical-toxicity-comparison",
+    "literature:work-tox123-ef31-addendum",
+    "queries:q-tox123-hc20-perspectives-proxies-and-packages-20261117"
+  ],
+  "observed": "Primary scoped judgment integrating two-round independent source, full-chapter reader and publication-engineering audits with direct original, export and browser/print checks; no human or empirical certification.",
+  "observations": {
+    "outputs": [
+      {
+        "path": "/docs/book/water-scarcity-and-reference",
+        "route": "/docs/book/water-scarcity-and-reference",
+        "from": "41951c66df82e232b5db2e55919084e8bdc45caca97f4f3240f7480a3d14ed24",
+        "sha256": "c3b3b0daacd62df20f05c7feb3828df278723d9ac22ee0493c6d18821dd22a83",
+        "rationale": "只按B19章节简介更新同步相邻网页章节底部翻页卡片（.docs-pagination）中的简介文字，保留原正文、注释与链接地址。"
+      },
+      {
+        "path": "/docs/book/usetox-pathways-and-boundaries",
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "from": "06c363445014c1d8e4566bd59dbeedea5ec3974d046a77bd392b0e31a8024015",
+        "sha256": "34e47ade58ece349d90ed5a246ce3fbe8b0c2cf0cb7336e891f539f4d72d973d",
+        "rationale": "核对B19当前20段正文、更新后的章节简介（ordinary-0）、#88与#123历史引用范围及完整注释。"
+      },
+      {
+        "path": "/docs/book/ecological-scarcity-and-targets",
+        "route": "/docs/book/ecological-scarcity-and-targets",
+        "from": "ff91d463d4e2539f875c6c94993b212b5a0920ed80625c6559eba080a9889dce",
+        "sha256": "11e998b1d7e352aa2dfa85dcb3bf37597e67fb4b5b7ad26d554c2e03f189a949",
+        "rationale": "只按B19章节简介更新同步相邻网页章节底部翻页卡片（.docs-pagination）中的简介文字，保留原正文、注释与链接地址。"
+      },
+      {
+        "path": "/docs/book/from-connected-results-to-conditional-judgment",
+        "route": "/docs/book/from-connected-results-to-conditional-judgment",
+        "from": "a14c6d213502f1024226d7803c65b1059e854f1f7a109b4d2b42df57ae5962cf",
+        "sha256": "bd555bce92662431fb7f148344bbe4f019c962555ce4cc11e60979ea41369f2a",
+        "rationale": "只按B19注释顺延（cl-usetox-missing-data-model-zero由注9顺延至注14）同步下游交叉引用显示文字，保留原链接地址与论述范围。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "from": "d58e028f083444042a8873f1b7ba99e841aceabbf84fc987f3c9c690dd941747",
+        "sha256": "d1cd520ebdae01a9f8b4dd0d2457b72ee6cfc2a632a6466adf7823f93d31a54a",
+        "rationale": "核对B19当前20段正文、更新后的章节简介（ordinary-0）、#88与#123历史引用范围及完整注释。"
+      },
+      {
+        "path": "/print",
+        "route": "book-revisable-judgment",
+        "from": "efbac9350871743bfe98be126d09a969e0ebe5217744b77356806d2d74750151",
+        "sha256": "5192170ef64d0de7be5aa9c2b52654ac49e5204651b4627b68d76338f03f3561",
+        "rationale": "只按B19注释顺延（cl-usetox-missing-data-model-zero由注9顺延至注14）同步下游交叉引用显示文字，保留原链接地址与论述范围。"
+      }
+    ],
+    "publicArtifacts": [
+      {
+        "path": "claims/index.html",
+        "from": "874e566698f709c3e8133dc24eba023613e86226fd774350f84fe539dfa3a176",
+        "sha256": "b90f67d937bd8de87f31711b50b72310cfa46071f9205409b356940c0b9208ce",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "sources/index.html",
+        "from": "e060f61bffdd9caa250ab5779587010fc5bac845b72a4533c6b538f9a7a315f1",
+        "sha256": "1a225ac82c46639d39eafadbd7064823d310782ee95e8e0799eb5f4971f567c8",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "from": "692c4be680cb105fab3c46f551823321f4ea80c3b8fda78fc38fb74daf5ab087",
+        "sha256": "d55fd12760e1d4a7cea3aadc8bc97f82a607fe4a3be04637c5d74245eff3ce28",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "from": "a1e6acc6993a83195566d9355309cbad80d6d0070f6b4eb9b7cbde6125b372b2",
+        "sha256": "82c5428f1ca6c8d93dafb0dc9148f2c3e8d191f5ad973568f8c8fafcc64dd52c",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "research/index.html",
+        "from": "90184fb217d9d99a2d46b4c475c0bad9d5381e11dc5415fe6b573000f021a1da",
+        "sha256": "1f341d71fce64c411e3e76a4f9264f26b08f16ef2025815f039bfe5172c73db7",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "downloads/bibliography.json",
+        "from": "05b95bf451f7a2b07ecca4f9edcc60d16f24179611f491b2195b746673402949",
+        "sha256": "8d90e52a3788322003fac8f75c37c0ef954ca4727f24dca4d3dba18286a85fb2",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "downloads/research.json",
+        "from": "05b95bf451f7a2b07ecca4f9edcc60d16f24179611f491b2195b746673402949",
+        "sha256": "8d90e52a3788322003fac8f75c37c0ef954ca4727f24dca4d3dba18286a85fb2",
+        "rationale": "核对当前发布投影的实际增补及其真实前态。"
+      },
+      {
+        "path": "coverage/index.html",
+        "from": "0bcb0535119a5d091f1c10d19b5d019de57e0d7511c399fb540d806159e13e7a",
+        "sha256": "81c9ec394fb324ad78339bb7515b7c6efea4871b26601c4f34ea8d6c1f1f60b6",
+        "rationale": "同步章节导览页中B19《毒性路径》更新后的章节简介投影。"
+      }
+    ],
+    "addresses": {
+      "/docs/book/usetox-pathways-and-boundaries#nd-page": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "chapter",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-matched-emissions",
+          "cl-usetox-fate-exposure-effect",
+          "cl-usetox-intake-and-effects",
+          "cl-usetox-indicators-not-observed-cases",
+          "cl-tox123-midpoint-families",
+          "cl-tox123-hc20-and-metals",
+          "cl-usetox-model-comparison",
+          "cl-usetox-comparison-uncertainty",
+          "cl-usetox-boxes-and-time",
+          "cl-usetox-internal-feature-conflict",
+          "cl-tox123-perspective-switches",
+          "cl-tox123-nickel-dcb-reversal",
+          "cl-tox123-speciation-and-proxies",
+          "cl-usetox-missing-data-model-zero",
+          "cl-usetox-factor-flags-and-conditions",
+          "cl-tox123-normative-zeros",
+          "cl-tox123-package-discrepancies",
+          "cl-usetox-prioritization",
+          "cl-tox123-cross-system-synthesis",
+          "cl-usetox-conclusion"
+        ],
+        "ordinary": [
+          "acda135d3ae19a7d120efe06cbc6f12002b9d8d9fc9d54f5a00c14dbdea17592"
+        ],
+        "bindings": {
+          "links": [
+            []
+          ],
+          "tables": []
+        }
+      },
+      "/docs/book/usetox-pathways-and-boundaries#main-content": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "reading-title",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-matched-emissions",
+          "cl-usetox-fate-exposure-effect",
+          "cl-usetox-intake-and-effects",
+          "cl-usetox-indicators-not-observed-cases",
+          "cl-tox123-midpoint-families",
+          "cl-tox123-hc20-and-metals",
+          "cl-usetox-model-comparison",
+          "cl-usetox-comparison-uncertainty",
+          "cl-usetox-boxes-and-time",
+          "cl-usetox-internal-feature-conflict",
+          "cl-tox123-perspective-switches",
+          "cl-tox123-nickel-dcb-reversal",
+          "cl-tox123-speciation-and-proxies",
+          "cl-usetox-missing-data-model-zero",
+          "cl-usetox-factor-flags-and-conditions",
+          "cl-tox123-normative-zeros",
+          "cl-tox123-package-discrepancies",
+          "cl-usetox-prioritization",
+          "cl-tox123-cross-system-synthesis",
+          "cl-usetox-conclusion"
+        ],
+        "ordinary": [
+          "acda135d3ae19a7d120efe06cbc6f12002b9d8d9fc9d54f5a00c14dbdea17592"
+        ],
+        "chapter": "nd-page"
+      },
+      "/docs/book/usetox-pathways-and-boundaries#排放与受体": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "heading",
+        "title": "排放与受体",
+        "claimIds": [
+          "cl-usetox-matched-emissions",
+          "cl-usetox-fate-exposure-effect",
+          "cl-usetox-intake-and-effects",
+          "cl-usetox-indicators-not-observed-cases",
+          "cl-tox123-midpoint-families",
+          "cl-tox123-hc20-and-metals"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/usetox-pathways-and-boundaries#模型与范围": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "heading",
+        "title": "模型与范围",
+        "claimIds": [
+          "cl-usetox-model-comparison",
+          "cl-usetox-comparison-uncertainty",
+          "cl-usetox-boxes-and-time",
+          "cl-usetox-internal-feature-conflict",
+          "cl-tox123-perspective-switches",
+          "cl-tox123-nickel-dcb-reversal",
+          "cl-tox123-speciation-and-proxies"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/usetox-pathways-and-boundaries#比较的依据": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "heading",
+        "title": "比较的依据",
+        "claimIds": [
+          "cl-usetox-missing-data-model-zero",
+          "cl-usetox-factor-flags-and-conditions",
+          "cl-tox123-normative-zeros",
+          "cl-tox123-package-discrepancies",
+          "cl-usetox-prioritization",
+          "cl-tox123-cross-system-synthesis",
+          "cl-usetox-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-annotations": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note-group",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-matched-emissions",
+          "cl-usetox-fate-exposure-effect",
+          "cl-usetox-intake-and-effects",
+          "cl-usetox-indicators-not-observed-cases",
+          "cl-tox123-midpoint-families",
+          "cl-tox123-hc20-and-metals",
+          "cl-usetox-model-comparison",
+          "cl-usetox-comparison-uncertainty",
+          "cl-usetox-boxes-and-time",
+          "cl-usetox-internal-feature-conflict",
+          "cl-tox123-perspective-switches",
+          "cl-tox123-nickel-dcb-reversal",
+          "cl-tox123-speciation-and-proxies",
+          "cl-usetox-missing-data-model-zero",
+          "cl-usetox-factor-flags-and-conditions",
+          "cl-tox123-normative-zeros",
+          "cl-tox123-package-discrepancies",
+          "cl-usetox-prioritization",
+          "cl-tox123-cross-system-synthesis",
+          "cl-usetox-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-matched-emissions": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-matched-emissions"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-fate-exposure-effect": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-fate-exposure-effect"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-intake-and-effects": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-intake-and-effects"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-indicators-not-observed-cases": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-indicators-not-observed-cases"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-tox123-midpoint-families": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-tox123-midpoint-families"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-tox123-hc20-and-metals": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-tox123-hc20-and-metals"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-model-comparison": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-model-comparison"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-comparison-uncertainty": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-comparison-uncertainty"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-boxes-and-time": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-boxes-and-time"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-internal-feature-conflict": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-internal-feature-conflict"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-tox123-perspective-switches": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-tox123-perspective-switches"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-tox123-nickel-dcb-reversal": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-tox123-nickel-dcb-reversal"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-tox123-speciation-and-proxies": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-tox123-speciation-and-proxies"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-missing-data-model-zero": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-missing-data-model-zero"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-factor-flags-and-conditions": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-factor-flags-and-conditions"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-tox123-normative-zeros": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-tox123-normative-zeros"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-tox123-package-discrepancies": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-tox123-package-discrepancies"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-prioritization": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-prioritization"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-tox123-cross-system-synthesis": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-tox123-cross-system-synthesis"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/usetox-pathways-and-boundaries#chapter-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-conclusion": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "chapter",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-matched-emissions",
+          "cl-usetox-fate-exposure-effect",
+          "cl-usetox-intake-and-effects",
+          "cl-usetox-indicators-not-observed-cases",
+          "cl-tox123-midpoint-families",
+          "cl-tox123-hc20-and-metals",
+          "cl-usetox-model-comparison",
+          "cl-usetox-comparison-uncertainty",
+          "cl-usetox-boxes-and-time",
+          "cl-usetox-internal-feature-conflict",
+          "cl-tox123-perspective-switches",
+          "cl-tox123-nickel-dcb-reversal",
+          "cl-tox123-speciation-and-proxies",
+          "cl-usetox-missing-data-model-zero",
+          "cl-usetox-factor-flags-and-conditions",
+          "cl-tox123-normative-zeros",
+          "cl-tox123-package-discrepancies",
+          "cl-usetox-prioritization",
+          "cl-tox123-cross-system-synthesis",
+          "cl-usetox-conclusion"
+        ],
+        "ordinary": [
+          "acda135d3ae19a7d120efe06cbc6f12002b9d8d9fc9d54f5a00c14dbdea17592"
+        ],
+        "bindings": {
+          "links": [
+            []
+          ],
+          "tables": []
+        }
+      },
+      "/print#print-reading-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "reading-title",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-matched-emissions",
+          "cl-usetox-fate-exposure-effect",
+          "cl-usetox-intake-and-effects",
+          "cl-usetox-indicators-not-observed-cases",
+          "cl-tox123-midpoint-families",
+          "cl-tox123-hc20-and-metals",
+          "cl-usetox-model-comparison",
+          "cl-usetox-comparison-uncertainty",
+          "cl-usetox-boxes-and-time",
+          "cl-usetox-internal-feature-conflict",
+          "cl-tox123-perspective-switches",
+          "cl-tox123-nickel-dcb-reversal",
+          "cl-tox123-speciation-and-proxies",
+          "cl-usetox-missing-data-model-zero",
+          "cl-usetox-factor-flags-and-conditions",
+          "cl-tox123-normative-zeros",
+          "cl-tox123-package-discrepancies",
+          "cl-usetox-prioritization",
+          "cl-tox123-cross-system-synthesis",
+          "cl-usetox-conclusion"
+        ],
+        "ordinary": [
+          "acda135d3ae19a7d120efe06cbc6f12002b9d8d9fc9d54f5a00c14dbdea17592"
+        ],
+        "chapter": "print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573"
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-排放与受体": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "heading",
+        "title": "排放与受体",
+        "claimIds": [
+          "cl-usetox-matched-emissions",
+          "cl-usetox-fate-exposure-effect",
+          "cl-usetox-intake-and-effects",
+          "cl-usetox-indicators-not-observed-cases",
+          "cl-tox123-midpoint-families",
+          "cl-tox123-hc20-and-metals"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-模型与范围": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "heading",
+        "title": "模型与范围",
+        "claimIds": [
+          "cl-usetox-model-comparison",
+          "cl-usetox-comparison-uncertainty",
+          "cl-usetox-boxes-and-time",
+          "cl-usetox-internal-feature-conflict",
+          "cl-tox123-perspective-switches",
+          "cl-tox123-nickel-dcb-reversal",
+          "cl-tox123-speciation-and-proxies"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-比较的依据": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "heading",
+        "title": "比较的依据",
+        "claimIds": [
+          "cl-usetox-missing-data-model-zero",
+          "cl-usetox-factor-flags-and-conditions",
+          "cl-tox123-normative-zeros",
+          "cl-tox123-package-discrepancies",
+          "cl-usetox-prioritization",
+          "cl-tox123-cross-system-synthesis",
+          "cl-usetox-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-annotations": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note-group",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-matched-emissions",
+          "cl-usetox-fate-exposure-effect",
+          "cl-usetox-intake-and-effects",
+          "cl-usetox-indicators-not-observed-cases",
+          "cl-tox123-midpoint-families",
+          "cl-tox123-hc20-and-metals",
+          "cl-usetox-model-comparison",
+          "cl-usetox-comparison-uncertainty",
+          "cl-usetox-boxes-and-time",
+          "cl-usetox-internal-feature-conflict",
+          "cl-tox123-perspective-switches",
+          "cl-tox123-nickel-dcb-reversal",
+          "cl-tox123-speciation-and-proxies",
+          "cl-usetox-missing-data-model-zero",
+          "cl-usetox-factor-flags-and-conditions",
+          "cl-tox123-normative-zeros",
+          "cl-tox123-package-discrepancies",
+          "cl-usetox-prioritization",
+          "cl-tox123-cross-system-synthesis",
+          "cl-usetox-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-matched-emissions": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-matched-emissions"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-fate-exposure-effect": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-fate-exposure-effect"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-intake-and-effects": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-intake-and-effects"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-indicators-not-observed-cases": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-indicators-not-observed-cases"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-tox123-midpoint-families": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-tox123-midpoint-families"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-tox123-hc20-and-metals": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-tox123-hc20-and-metals"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-model-comparison": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-model-comparison"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-comparison-uncertainty": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-comparison-uncertainty"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-boxes-and-time": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-boxes-and-time"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-internal-feature-conflict": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-internal-feature-conflict"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-tox123-perspective-switches": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-tox123-perspective-switches"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-tox123-nickel-dcb-reversal": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-tox123-nickel-dcb-reversal"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-tox123-speciation-and-proxies": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-tox123-speciation-and-proxies"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-missing-data-model-zero": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-missing-data-model-zero"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-factor-flags-and-conditions": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-factor-flags-and-conditions"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-tox123-normative-zeros": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-tox123-normative-zeros"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-tox123-package-discrepancies": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-tox123-package-discrepancies"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-prioritization": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-prioritization"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-tox123-cross-system-synthesis": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-tox123-cross-system-synthesis"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f757365746f782d70617468776179732d616e642d626f756e646172696573-claim-cl-usetox-conclusion": {
+        "route": "/docs/book/usetox-pathways-and-boundaries",
+        "kind": "note",
+        "title": "毒性路径",
+        "claimIds": [
+          "cl-usetox-conclusion"
+        ],
+        "ordinary": []
+      }
+    },
+    "source": "actual-export",
+    "sourceCommit": "438768c855a317681214fc7fdf9be2a53596e8da",
+    "capture": {
+      "sourceCommit": "438768c855a317681214fc7fdf9be2a53596e8da",
+      "dirty": true,
+      "status": "working-preview",
+      "manifestSha256": "b81874300e8faffbd24c7c05e2625321483e37c879c7955e0a12d3dd4d806a53",
+      "normalizedProofSha256": "11ce955f47d8a176ce3a5a92cd9a854d79b2e93b414ba1f9eaa4bd448eda1440"
+    },
+    "articleFiles": [
+      {
+        "path": "docs/book/water-scarcity-and-reference/index.html",
+        "sha256": "8226ea56792eec3ad3d637b422db9898368f930517e89da9efb1ec1e1a95b901",
+        "bytes": 1076506
+      },
+      {
+        "path": "docs/book/usetox-pathways-and-boundaries/index.html",
+        "sha256": "6b9b8f315d6230a7f6fc402755809300686de250da4b21b91824e18b5298842c",
+        "bytes": 1130261
+      },
+      {
+        "path": "docs/book/ecological-scarcity-and-targets/index.html",
+        "sha256": "b629207979ba8a3605bed90bac46f3bb8a420d8f3f1226c867ca063c6fe0287d",
+        "bytes": 1113789
+      },
+      {
+        "path": "docs/book/from-connected-results-to-conditional-judgment/index.html",
+        "sha256": "2493fc743353293ad06ccbf963913e8648618be1d04d759d9d5b8dd04f2c6547",
+        "bytes": 1079767
+      },
+      {
+        "path": "print/index.html",
+        "sha256": "1f5f16db93d8fd0af9353f826a9b4dd9c08da03564c82da198aa064f8ecccd5b",
+        "bytes": 14180735
+      }
+    ],
+    "artifactFiles": [
+      {
+        "path": "claims/index.html",
+        "sha256": "748c281d47c3ab07487210952dc4a94dd809ccf4a425b00f2634ca4cf184fcca",
+        "bytes": 6165896,
+        "contentSha256": "b90f67d937bd8de87f31711b50b72310cfa46071f9205409b356940c0b9208ce"
+      },
+      {
+        "path": "sources/index.html",
+        "sha256": "0d4cab9352207c718e4a4edb7172443033a0b9d35947cb2004778fc384c5d477",
+        "bytes": 5120814,
+        "contentSha256": "1a225ac82c46639d39eafadbd7064823d310782ee95e8e0799eb5f4971f567c8"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "sha256": "d55fd12760e1d4a7cea3aadc8bc97f82a607fe4a3be04637c5d74245eff3ce28",
+        "bytes": 3714749,
+        "contentSha256": "d55fd12760e1d4a7cea3aadc8bc97f82a607fe4a3be04637c5d74245eff3ce28"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "sha256": "82c5428f1ca6c8d93dafb0dc9148f2c3e8d191f5ad973568f8c8fafcc64dd52c",
+        "bytes": 377131,
+        "contentSha256": "82c5428f1ca6c8d93dafb0dc9148f2c3e8d191f5ad973568f8c8fafcc64dd52c"
+      },
+      {
+        "path": "research/index.html",
+        "sha256": "d8e923234a5226b4261238e1a614f1735765fba849a7fb7c700c74585eb572c3",
+        "bytes": 1609086,
+        "contentSha256": "1f341d71fce64c411e3e76a4f9264f26b08f16ef2025815f039bfe5172c73db7"
+      },
+      {
+        "path": "downloads/bibliography.json",
+        "sha256": "8d90e52a3788322003fac8f75c37c0ef954ca4727f24dca4d3dba18286a85fb2",
+        "bytes": 1271897,
+        "contentSha256": "8d90e52a3788322003fac8f75c37c0ef954ca4727f24dca4d3dba18286a85fb2"
+      },
+      {
+        "path": "downloads/research.json",
+        "sha256": "8d90e52a3788322003fac8f75c37c0ef954ca4727f24dca4d3dba18286a85fb2",
+        "bytes": 1271897,
+        "contentSha256": "8d90e52a3788322003fac8f75c37c0ef954ca4727f24dca4d3dba18286a85fb2"
+      },
+      {
+        "path": "coverage/index.html",
+        "sha256": "7667cb6c5e6f1dabc1947ea600153cedeecd65f2ffb5d7491b3c7bb105e1978e",
+        "bytes": 814761,
+        "contentSha256": "81c9ec394fb324ad78339bb7515b7c6efea4871b26601c4f34ea8d6c1f1f60b6"
+      }
+    ],
+    "assessment": {
+      "provenance": "Actual private Next/compiler and untouched-exporter bytes from base 438768c855a317681214fc7fdf9be2a53596e8da and a declared dirty working-preview. Temporary technical admission inside an isolated clone served inspection only and supplies no editorial acceptance.",
+      "reconstruction": "Exact bounded 2/3/(2+1) B19 MDX insertions and updated frontmatter description restore full prior 2eba26c6 raw catalog/readings/literature and physical B19 bytes before #121 -> #119 -> #117 -> #115 -> #113 -> #111 -> older qualifiers, verifying all 54 transitions, B17 shared-concept consumer review, and 163 bidirectional consumers.",
+      "guards": "Two-round independent publication-engineering security audit (faf3e385) verified 132/132 numericFact BigInt/prose assertions across all 8 claims, 3-sig-fig table rounding, 1-to-1 passage/evidence bindings, full evidence-link rosters, projection-strict claim matching, #88 + #123 web/print DOM attachment, and adversarial tamper tests.",
+      "actual": "Comparison of all 88 article projections identifies the exact 6 changed articles (B19 web/print + neighbor B18/B20 pagination descriptions + downstream B32 web/print Note 9->14 label updates on unchanged hrefs) and 8 changed public artifacts (including coverage/index.html). All 468 manifest payloads, 13 capture files and 40 case downloads verified with zero internal-ID or raw-carrier leakage.",
+      "browser": "Passed 20 responsive viewport/theme checks, 2 five-control no-script dated-history suites on web and print (activating ordinary-0 and all 12 prior note links), retained #88 legacy-scope checks, 6 downstream consumer keyboard navigations, 2 neighbor pagination checks, 16 visible caveat checks, /coverage/ and /sources/ checks, and 20-note physical @media print verification with zero horizontal overflow. All servers and browsers closed cleanly.",
+      "limits": "Clean production build (dirty:false), source PR/CI/merge, live EdgeOne byte/guard qualification and exact root submodule integration remain required after this scoped acceptance."
+    },
+    "independentReports": {
+      "independent-primary-source-audit-initial.md": "6e04affb2dc3bec13f3a0e1315465bf3ba7988e8feb55c2ce1b0d63149a66e33",
+      "independent-primary-source-audit-final.md": "7ed4f72c6beca83bdb25ab31d1790727d04715bf3f403e12710dd3b4cb7d5f55",
+      "full-chapter-b19-reader-review-initial.md": "18ddf36bbcfb4ce35077d0730945cf97dcd7a571d97e3c58a68fea2180409042",
+      "full-chapter-b19-reader-review-final.md": "670f7aa96dfa98be4ac2d3e22142ec9b6302e170084a4290c9073a61de3772fd",
+      "independent-publication-engineering-review-initial.md": "a57300dbece8712fc69c70e5b2ff437ac96e5b591d6c48567656340145113a8e",
+      "independent-publication-engineering-review-final.md": "8e650923911f4d49d08db0055523aa4f3b650e0fb869b12108372f4af62935e5",
+      "round3-primary-verification-after-429.md": "1cf0744153eb4e5603b94d35b240179ee8ccc602fb5115e3be6c7752c39bbfa8",
+      "ef31-toxicity-all-members-receipt.json": "3868b8bbfe0fccec7c3990032aa200efbe3a17d15a6d02e3c1d31fb1ef71d489",
+      "actual-browser-qa/responsive-script-enabled.json": "4ea9fd7f1bba156d961d976c72ac49c37f2339054dbdea252babb290fd78a8b2",
+      "actual-browser-qa/interactions.json": "b7edfc54687de5b622b73d5f0b70f819faf9abafef418c6fb9d97742a03b2791"
+    }
+  }
+}

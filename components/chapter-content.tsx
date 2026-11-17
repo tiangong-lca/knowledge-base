@@ -1,3 +1,4 @@
+import { toxicityComparisonHistoryControls, toxicityComparisonOrdinaryId, toxicityComparisonSource } from '@/scripts/reader-toxicity-comparison.mjs';
 import { ozoneRadiationChapter, ozoneRadiationCorrections, ozoneRadiationHistoryControls, ozoneRadiationSource } from '@/scripts/reader-ozone-radiation.mjs';
 import { photochemicalOzoneHistoryControls, photochemicalOzoneSource } from '@/scripts/reader-photochemical-ozone.mjs';
 import { fossilResourcesChapter, fossilResourcesCorrection, fossilResourcesHistoryControls, fossilResourcesSource } from '@/scripts/reader-fossil-resources.mjs';
@@ -7,7 +8,7 @@ import { landRecoveryHistoryControls, landRecoveryOrdinaryId, landRecoverySource
 import { circularFootprintHistoryControls, circularFootprintOrdinaryId, circularFootprintSource } from '@/scripts/reader-circular-footprint.mjs';
 import { loadShiftHistoryControls, loadShiftOrdinaryId, loadShiftSource } from '@/scripts/reader-load-shift.mjs';
 import { substitutionRulesHistoryControls, substitutionRulesOrdinaryId, substitutionRulesSource } from '@/scripts/reader-substitution-rules.mjs';
-import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation } from '@/scripts/reader-current-expectations.mjs';
+import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison } from '@/scripts/reader-current-expectations.mjs';
 import { flowBoundaryHistoryControls, flowBoundaryHistoryTargets, flowBoundaryOrdinaryTargets, flowBoundaryOrdinaryId } from '@/scripts/reader-flow-boundary.mjs';
 import { serviceConstraintsHistoryControls, serviceConstraintsOrdinaryId, serviceConstraintsSource } from '@/scripts/reader-service-constraints.mjs';
 import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
@@ -48,6 +49,7 @@ const histories = [
   { controls: fossilResourcesHistoryControls(currentFossilResources), edition: fossilResourcesSource, attribute: 'fossil-resources' },
   { controls: photochemicalOzoneHistoryControls(currentPhotochemicalOzone), edition: photochemicalOzoneSource, attribute: 'photochemical-ozone' },
   { controls: ozoneRadiationHistoryControls(currentOzoneRadiation), edition: ozoneRadiationSource, attribute: 'ozone-radiation' },
+  { controls: toxicityComparisonHistoryControls(currentToxicityComparison), edition: toxicityComparisonSource, attribute: 'toxicity-comparison' },
 ];
 
 function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
@@ -57,7 +59,8 @@ function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
     || loadShiftOrdinaryId(currentLoadShift, route, print, index)
     || circularFootprintOrdinaryId(currentCircularFootprint, route, print, index)
     || landRecoveryOrdinaryId(currentLandRecovery, route, print, index)
-    || acidEquivalentsOrdinaryId(currentAcidEquivalents, route, print, index);
+    || acidEquivalentsOrdinaryId(currentAcidEquivalents, route, print, index)
+    || toxicityComparisonOrdinaryId(currentToxicityComparison, route, print, index);
 }
 
 // Leave versioned native fragments below the screen's sticky site header.
@@ -68,7 +71,8 @@ export function currentReaderOrdinaryAttributes(route: string, print: boolean, i
   return id && (id === loadShiftOrdinaryId(currentLoadShift, route, print, index)
       || id === circularFootprintOrdinaryId(currentCircularFootprint, route, print, index)
       || id === landRecoveryOrdinaryId(currentLandRecovery, route, print, index)
-      || id === acidEquivalentsOrdinaryId(currentAcidEquivalents, route, print, index))
+      || id === acidEquivalentsOrdinaryId(currentAcidEquivalents, route, print, index)
+      || id === toxicityComparisonOrdinaryId(currentToxicityComparison, route, print, index))
     ? { id, style: scientificHistoryScroll }
     : { id };
 }
