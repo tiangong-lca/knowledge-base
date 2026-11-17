@@ -1,4 +1,4 @@
-import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
+import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches, currentToxicityComparison } from './reader-current-expectations.mjs';
 import { createHash } from 'node:crypto';
 import original from '../config/toxicity-pathways-original.json' with { type: 'json' };
 import { chapterAnchorPrefix, collectChapterClaimOccurrences, printUnitAnchor } from './reader-book.mjs';
@@ -278,13 +278,15 @@ function remapOriginalEntry(entry) {
 }
 
 export function toxicityPathwaysCitationLabel(destination, accepted) {
+  const layout = reviewedToxicityLayout(accepted);
+  const currentIds = layout.sections.flatMap(row => row.claimIds);
   const prefix = printUnitAnchor(toxicityPathwaysRoute);
   const headingId = destination.path === '/print' ? destination.id.slice(prefix.length + 1) : destination.id;
-  const section = sections.find(row => row.id === headingId);
-  const suffix = destination.kind === 'note' ? `注 ${ids.indexOf(destination.claimId) + 1}`
+  const section = layout.sections.find(row => row.id === headingId);
+  const suffix = destination.kind === 'note' ? `注 ${currentIds.indexOf(destination.claimId) + 1}`
     : destination.kind === 'heading' && section ? `·${section.title}`
     : destination.kind === 'note-group' ? '注释' : '';
-  return `《${accepted.title}》${suffix}`;
+  return `《${layout.title}》${suffix}`;
 }
 
 function hasNativeHeadingLink(heading, title) {
@@ -349,9 +351,12 @@ export function validateRenderedToxicityPathways(document, path, catalog, accept
       const id = node.getAttribute('data-reader-reference'), number = occurrences.length + 1;
       occurrences.push({ id, section });
       const paragraph = node.closest('p');
+      const validClaim = claims.has(id)
+        ? currentBookRecordMatches('claims', claims.get(id), currentClaims.get(id), projection)
+        : Boolean(currentToxicityComparison && id?.startsWith('cl-tox123-') && currentClaims.get(id)?.status === 'reviewed'
+          && currentBookRecordMatches('claims', null, currentClaims.get(id), projection));
       checkText(paragraph, paragraph && !node.closest('.chapter-notes')
-        && paragraph.querySelectorAll('a').length === 1 && claims.has(id)
-        && currentBookRecordMatches('claims', claims.get(id), currentClaims.get(id))
+        && paragraph.querySelectorAll('a').length === 1 && validClaim
         && readerParagraphText(paragraph, node) === currentClaims.get(id).text
         && node.getAttribute('href') === `#${prefix}-claim-${id}`
         && node.getAttribute('aria-label') === `注 ${number}` && node.text === `[${number}]`,

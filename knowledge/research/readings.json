@@ -3672,6 +3672,26 @@
           "limits": [
             "期刊正文不含单物质ODP或单核素IRP表，须与RIVM 2016-0104第3–4章原表对读。"
           ]
+        },
+        {
+          "id": "psg-tox123-recipe2017-tox",
+          "artifactId": "art-recipe-2017-primary-article-pdf",
+          "locator": "§2.3（印p140）、Table 1（印p141）、§§3.1.8与3.2（印p142）、Table 2（印p143）及§§3.2.8与4.1（印p144）（PDF第3–7页）",
+          "printedPages": "140–144",
+          "pdfIndices": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "topics": [
+            "§2.3、表1与§3.1.8概括三视角时间窗框架及USES-LCA 2.0五项1,4-DCB参照中点",
+            "§3.2说明中点至终点转换因子数值列于电子补充材料，表2定性列出伤害路径，§3.2.8说明急性毒理估计近似野外效应故生态毒性伤害因子取1并纳入致癌与非致癌人体伤害因子"
+          ],
+          "limits": [
+            "期刊正文及表2未印出具体中点至终点转换系数字面值，精确数值均取自RIVM 2016-0104表9.4与表1.5。"
+          ]
         }
       ],
       "appraisal": {
@@ -8296,6 +8316,58 @@
           ],
           "limits": [
             "仅核读ILCD 2011评估摘要与推荐结论，未直接核读Dreicer等1995、Frischknecht等2000或Garnier-Laplace等原文。"
+          ]
+        },
+        {
+          "id": "psg-tox123-ilcd2011-ht",
+          "artifactId": "art-ilcd-2011-lcia-recommendations-pdf",
+          "locator": "§1 Table 1–2（印pp5–6）及§3.3 Human toxicity（印pp25–33，含表6–7；PDF第19–20、39–47页）",
+          "printedPages": "5–6, 25–33",
+          "pdfIndices": [
+            18,
+            19,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46
+          ],
+          "topics": [
+            "推荐USEtox人体致癌与非致癌毒性为默认中点方法（单位CTUh，成熟度等级II/III）",
+            "金属、两亲性与解离物质因归趋与生物有效性不确定性降为Level III",
+            "终点层对人体致癌DALY（基于Huijbregts等2005a）评Level II/interim（非极性有机物为II，金属、两亲性与解离物质为interim），非致癌终点不予推荐（interim）"
+          ],
+          "limits": [
+            "仅核读ILCD 2011导则正文与表1–2、6–7，未核读背景评估附表或Huijbregts等2005a原刊全文。"
+          ]
+        },
+        {
+          "id": "psg-tox123-ilcd2011-ecotox",
+          "artifactId": "art-ilcd-2011-lcia-recommendations-pdf",
+          "locator": "§1 Table 1–2（印pp5–6）及§3.9 Ecotoxicity（印pp78–84，含表20–22；PDF第19–20、92–98页）",
+          "printedPages": "5–6, 78–84",
+          "pdfIndices": [
+            18,
+            19,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97
+          ],
+          "topics": [
+            "仅在淡水生态毒性中点推荐USEtox（单位CTUe，成熟度等级II/III，金属、两亲性与解离物质降为III；表20–21载明ReCiPe生态毒性采用USES-LCA 2.0并以急性EC50数据为基础，而TRACI采用NOEC代替EC50）",
+            "陆地生态毒性（如USES-LCA依赖水生毒理平衡分配外推）与海洋生态毒性均不推荐方法",
+            "淡水、陆地与海洋三类生态毒性在终点层均无推荐方法（interim）"
+          ],
+          "limits": [
+            "仅核读ILCD 2011导则§1表1–2与§3.9正文及表20–22，未读取Ecotoxicity背景评分工作簿。"
           ]
         }
       ],
@@ -28388,6 +28460,198 @@
           "mediaType": "application/xml",
           "sha256": "eced45e4d016a7a265f24bb9cd60d030501af049ffc9d85adb5ac9527f11eaea",
           "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-method-htc",
+          "mediaType": "application/xml",
+          "sha256": "f8f23807aa68f005c4dacae10aff931c568e8a74a4faad6717438b2d2c20dc35",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-method-htc-org",
+          "mediaType": "application/xml",
+          "sha256": "84203510df0a0700e385cd1b08288859bff79d0127df02edb3b26882145d33c2",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-method-htc-inorg",
+          "mediaType": "application/xml",
+          "sha256": "537c9e6a898c67e2d803991a3de9507f2ec4756bcbe5b60a211b75687a331a23",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-method-htnc",
+          "mediaType": "application/xml",
+          "sha256": "d932a60f1615945df21b823f19321d80427a6eadb1b3e816f40153726b39993f",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-method-htnc-org",
+          "mediaType": "application/xml",
+          "sha256": "51caa1ad49ac65822714fca432c34ec032c90101afca6cdaeccfec3ab50e10e7",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-method-htnc-inorg",
+          "mediaType": "application/xml",
+          "sha256": "fee7f45542a256f03faa73b406da8d40e7042be4c3719f24e0f0fdb55feace98",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-method-ecotox-org",
+          "mediaType": "application/xml",
+          "sha256": "9a5a23ee80ff03a673d5aa626db693a6a7554192495103bb553f0ef90d9b914a",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-converter-htc",
+          "mediaType": "application/xml",
+          "sha256": "016430441dc624fa1271a0ff6efde6fb4bf1e3105e0b555a2f094b41746307d8",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-converter-htnc",
+          "mediaType": "application/xml",
+          "sha256": "75d732803383082bc854fd7321ed72d56793b1ee81af00a6debb54ce31f82dfd",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-converter-ecotox",
+          "mediaType": "application/xml",
+          "sha256": "a515ef10325493c5b2619fb3a4b9890888d1bcffff5ff9bc3ec48bd665eb779a",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-prop-ctuh",
+          "mediaType": "application/xml",
+          "sha256": "3539e39aa105433a8490845eb6de8d42870fc941623753d13939984665b89f36",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-prop-ctue",
+          "mediaType": "application/xml",
+          "sha256": "1714272400e7d5337bcca0b806c3b0c163d73826ee57121e3d217e0846e2e563",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-unit-items",
+          "mediaType": "application/xml",
+          "sha256": "b4bdadaac2fdb6ee78d96319c34ee7622a76733787b74115acdba5ade9332124",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-flow-cu-fw",
+          "mediaType": "application/xml",
+          "sha256": "d894cd0e6b7781804f85064c5f40ed0c34cb2f51756c003947ad3ae378149aa4",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-flow-cuii-agsoil",
+          "mediaType": "application/xml",
+          "sha256": "e89df06a89f522edf6bb19a2b721b5a56639b9c809d09b759d2a27c6cccd6739",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-flow-al-fw",
+          "mediaType": "application/xml",
+          "sha256": "456e383865a48e32a122d1a339882d5e989f217320e0c96fc3c1ca01ce1203db",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-flow-cd-fw",
+          "mediaType": "application/xml",
+          "sha256": "222adc2e9563e0962015ce23a306c93669212579aa6e198aa68be869b979c373",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-flow-ag-fw",
+          "mediaType": "application/xml",
+          "sha256": "95d6990d5364264c742bf5cbcf3f8d362984106c94302b478692244b0dcde78d",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-flow-hg-fw",
+          "mediaType": "application/xml",
+          "sha256": "93a8ce6ed1454aadfa141ed1a27657be18b3fd0b608e03dc9182ed41023ee968",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-flow-ni-uair",
+          "mediaType": "application/xml",
+          "sha256": "599501137e5259e33ae7418b575a55f436d97b123a922c00bd0b5fdae4393183",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-flow-ni-fw",
+          "mediaType": "application/xml",
+          "sha256": "9c372a7cb3ce0f45040d801bb60f421a4a6a0eeb3b20e1cef42a43c11c71d177",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-flow-dcb-uair",
+          "mediaType": "application/xml",
+          "sha256": "f94da1b613208c04cf32bd72504049fdb1595858ac94164a4f99a5a678386b2f",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-flow-dcb-fw",
+          "mediaType": "application/xml",
+          "sha256": "94ce0f6343f5f6a3f27a4349f9564b8f3ddfa1f23eeb27da48767b9ead9e497a",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-flow-co-indoor",
+          "mediaType": "application/xml",
+          "sha256": "43b144c0b9b16245ab48eabe4030b1b7a56128c22c58a1fe5387627fcdb4a927",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-flow-co-uair",
+          "mediaType": "application/xml",
+          "sha256": "760fc7d5e78c20c819fbab54895ff190645819816ffdb65a0553e090ce24cc37",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-flow-ccl4-uair",
+          "mediaType": "application/xml",
+          "sha256": "4a0fa195244e621b34b52a353c833a8a44313d549f6a1ece73c279ec03d49165",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-flow-cfc10-uair",
+          "mediaType": "application/xml",
+          "sha256": "8e822ca8522327e0937ca84d966e52b76cfb087e60642956fae30a03cda3f339",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-flow-insecticides-fw",
+          "mediaType": "application/xml",
+          "sha256": "d53d2f63382c603199013db935f6122bd8b201099a821bda44465f51e7f508c9",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-flow-insecticides-unspecw",
+          "mediaType": "application/xml",
+          "sha256": "6baac196e6a8b7a28d6bd634b4f1ec108ffa73760f221ff13dc208fd03da25e2",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-flow-chlorpyrifos-fw",
+          "mediaType": "application/xml",
+          "sha256": "2e3ffb9da9f7a91cadf70efbb23d8e12725adce05b96eaeda1b6496b8ecb4df4",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-flow-chlorpyrifos-unspecw",
+          "mediaType": "application/xml",
+          "sha256": "10fcdf6e513270c89b6fef2c8c14503e96ca95cc05822334db88ade3b65bd9a1",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
+        },
+        {
+          "id": "art-tox123-ef-flow-lactic-acid-fw",
+          "mediaType": "application/xml",
+          "sha256": "06af4285145dfe3c8e60bf96b8b4e18cddaba671848b97fcf7f7561b4ae65766",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF3_1/EF-v3.1.zip"
         }
       ],
       "passages": [
@@ -28765,6 +29029,48 @@
           "limits": [
             "仅核实官方b5c632be.xml与核素流XML原文，不代证法国核设施原始扩散代码或场址剂量率实测。"
           ]
+        },
+        {
+          "id": "psg-tox123-ef31-htc-xml",
+          "artifactId": "art-tox123-ef-method-htc",
+          "locator": "EF-v3.1 (4)/ILCD/lciamethods/2299222a-bbd8-474f-9d4f-4dd1f18aea7c.xml（v01.01.000，13717条）、9ec743ea（organics v01.01.000，13319条）、01500b74（inorganics v01.00.000，398条）、other/converter/2299222a.xml、flowproperties/f65d356a（CTUh）与unitgroups/5beb6eed（Units of items）",
+          "topics": [
+            "2299222a.xml（7,327,813字节，v01.01.000）精确等于有机9ec743ea（13,319条，v01.01.000）加无机01500b74（398条，v01.00.000）共13,717条，2,108条long-term全为0.0",
+            "淡水chromium与chromium (vi)同取9.9035E-5 CTUh/kg而chromium (iii)为0.0；1,4-二氯苯未指明水体1.1832E-7等于淡水2.194E-7与海水1.724E-8均值",
+            "Carbon tetrachloride仅5条室外空气流且城市近地空气舍入为4.31E-5（CFC-10为4.3094E-5，另有小写流名cfc-10室内空气2.775E-4）",
+            "三份致癌XML单位缩写均带首尾空格\" CTUh \"；other/converter/2299222a.xml（7,327,801字节，因子值全同）因project（EC’s JRC-IES对EC JRC，-8字节）与录入者字段（Simone  Fazio对JRC, Environmental Footprint Team，+20字节）及枚举大小写差异而少12字节"
+          ],
+          "limits": [
+            "按ILCD XML机读结构直接核验因子与元数据，未重跑USEtox原生工作簿。"
+          ]
+        },
+        {
+          "id": "psg-tox123-ef31-htnc-xml",
+          "artifactId": "art-tox123-ef-method-htnc",
+          "locator": "EF-v3.1 (4)/ILCD/lciamethods/7cfdcfcf-b222-4b26-888a-a55f9fbf7ac8.xml（v01.00.000，43816条）、8c3141e9（organics，39499条）、9d1d43a2（inorganics，4317条）、other/converter/7cfdcfcf.xml及对应镍、1,4-二氯苯、一氧化碳、杀虫剂、四氯化碳／CFC-10流XML",
+          "topics": [
+            "7cfdcfcf.xml（24,163,382字节）等于有机39,499条加无机4,317条共43,816条（43,636个唯一流UUID，5条氨空气流各重复展开37个位置代码而多出5×36=180行），6,748条long-term全为0.0",
+            "城市近地空气1,4-DCB为1.4795E-8、nickel为1.1237E-6 CTUh/kg（海水为4.7713E-9与3.4465E-8）；淡水泛指杀虫剂为3.77412284590839E-4、毒死蜱为0.0025928 CTUh/kg",
+            "chlorine全部13条为0.0；一氧化碳15条室外空气与7条水土为0.0，仅3条室内空气保留1.717E-6 CTUh/kg",
+            "城市近地空气Carbon tetrachloride为8.34E-6而CFC-10为8.3428E-6（室内小写流名cfc-10为5.3729E-5）；converter副本因相同project与录入者元数据差异为24,163,370字节（少12字节，因子值全同）"
+          ],
+          "limits": [
+            "按ILCD XML机读结构直接核验因子与流UUID映射，未重跑USEtox原生工作簿。"
+          ]
+        },
+        {
+          "id": "psg-tox123-ef31-ecotox-xml",
+          "artifactId": "art-flow-pilot-ef-05316e7a",
+          "locator": "EF-v3.1 (4)/ILCD/lciamethods/05316e7a-b254-4bea-9cf0-6bf33eb5c630.xml（v01.00.000，79349条）、fd530f00（organics，73151条）、dacd48b5（inorganics，6198条）、other/converter/05316e7a.xml、flowproperties/585d3441（CTUe）及对应金属、农药、乳酸流XML",
+          "topics": [
+            "05316e7a.xml（45,631,200字节）等于fd530f00（73,151条）加dacd48b5（6,198条）共79,349条（79,169个唯一UUID，同样因5条氨空气流各展开37行多出180行），12,207条long-term全为0.0",
+            "核实铝、铜（含农田二价铜24.53395145313178与海水铜4.332001250025555E-21）、镉、银、汞、锑、砷、铬、氯气、泛指杀虫剂与毒死蜱、1,4-DCB及四氯化碳／CFC-10完整精度实值",
+            "other/converter/05316e7a.xml（43,329,918字节，少2,301,282字节）将淡水乳酸流8fbbe8a1由1033.8改赋0.0",
+            "CTUe流属性585d3441混写[m3*a]与[m3*d]、引用Items计数单位组5beb6eed并在permanentDataSetURI误嵌71720a6a"
+          ],
+          "limits": [
+            "仅解析官方压缩包内已核XML成员，未运行Look@LCI软件检验其实际读取哪一目录。"
+          ]
         }
       ],
       "appraisal": {
@@ -28785,7 +29091,8 @@
         "src-flow-pilot-ef31",
         "src-fossil117-ef31-selected-members",
         "src-ozone119-ef31-selected-members",
-        "src-ozrad121-ef31-selected-members"
+        "src-ozrad121-ef31-selected-members",
+        "src-tox123-ef31-selected-members"
       ]
     },
     {
@@ -29013,6 +29320,58 @@
           ],
           "limits": [
             "未单独获取EF 3.0历史参考包与Crenna等2019原始补充表，仅在JRC130796明载范围内引用。"
+          ]
+        },
+        {
+          "id": "psg-tox123-jrc130796-hc20-proxies",
+          "artifactId": "art-flow-pilot-ef31-jrc130796",
+          "locator": "Abstract（印p1）、§1（印p3）、§2 Table 1（印p6）、§3 Table 2（印p8）及§3.4（印pp10–16，含式1–4、Table 5–8、Figure 2–3；PDF第5、7、10、12、14–20页）",
+          "printedPages": "1, 3, 6, 8, 10–16",
+          "pdfIndices": [
+            4,
+            6,
+            9,
+            11,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "topics": [
+            "USEtox原有的0.5/HC50改为衔接欧盟环境风险评估的0.2/HC20（缺欧盟毒理资料时按HC20=0.34×HC50得20/17≈1.176即+18%；印p13式3将分式误倒印作HC20/(HC20×0.34)但仍写出=1.176）",
+            "表6金属淡水生态毒性重排：铝与铜骤降两至三数量级以上，镉、银、汞跃居前三；锑与砷取三价和五价均值",
+            "表7将HT_nc硫、氯化物、氯气全区室置零及一氧化碳除室内空气外置零，ECOTOX硫、钙、膨润土置零",
+            "表8与图3将HT_nc与ECOTOX泛指农药均改为2019年销量加权平均（全部高于Q3），§3.4.2.5将ECOTOX未指明水体改赋全额淡水因子"
+          ],
+          "limits": [
+            "JRC130796正文仅表述0.2/HC20与欧盟ECHA/EFSA数据源并引述Saouter等2018及Owsianiak等2019；未获取Saouter等2018（JRC114822）原始工作簿及2019欧盟农药销量明细表。"
+          ]
+        },
+        {
+          "id": "psg-tox123-jrc130796-nf-impacts",
+          "artifactId": "art-flow-pilot-ef31-jrc130796",
+          "locator": "§4.2 Table 10（印pp22–23）、§§5.1.1.4–5.1.1.6（印pp26–28）、§5.2（印pp30–31）及§6（印p36）（PDF第26–27、30–32、34–35、40页）",
+          "printedPages": "22–23, 26–28, 30–31, 36",
+          "pdfIndices": [
+            25,
+            26,
+            29,
+            30,
+            31,
+            33,
+            34,
+            39
+          ],
+          "topics": [
+            "表10人均归一化基准：致癌因补入四氯化碳升+2.1%（1.69E-05→1.73E-05）、非致癌主要因室外空气一氧化碳归零降-44%（2.30E-04→1.29E-04）、淡水生态因未指明水体氯化物与毒死蜱上调升+33%（4.27E+04→5.67E+04）",
+            "§5.1.1.5指出2752个EF数据集中94%的HT_nc下降，而西班牙废加工木焚烧因避免一氧化碳与氯排放抵扣消失暴涨+4,438%",
+            "§5.1.1.6印p28解释椰子ECOTOX降幅时把农田土壤copper (ii)误印为未变“9.92E+04 in EF3.0 to 9.92E+04 in EF3.1”"
+          ],
+          "limits": [
+            "2752个EF数据集的个体过程清单未在本仓库逐个复算，仅引述JRC130796官方统计结论并核对XML表征因子。"
           ]
         }
       ],
@@ -29953,6 +30312,55 @@
           ],
           "limits": [
             "报告明确指出目前尚无量化电离辐射对生态系统损害的LCIA方法；长半衰期核素（如U-235半衰期7.1×10^8年）远超100,000年积分上限。"
+          ]
+        },
+        {
+          "id": "psg-tox123-rivm-ch9-framework",
+          "artifactId": "art-land111-rivm2016-pdf",
+          "locator": "Table 1.3–1.5（印pp18–22）、第9章§§9.1–9.3与§9.4及Table 9.1–9.2、9.4（印pp65–68、71–72）及§20 S5（印pp159–161，含Table S5.1）（PDF第20–24、67–70、73–74、161–163页）",
+          "printedPages": "18–22, 65–68, 71–72, 159–161",
+          "pdfIndices": [
+            19,
+            20,
+            21,
+            22,
+            23,
+            66,
+            67,
+            68,
+            69,
+            72,
+            73,
+            160,
+            161,
+            162
+          ],
+          "topics": [
+            "USES-LCA 2.0覆盖五项1,4-DCB参照中点，§9.3印p68载明水生与陆地效应以急性EC50数据的平均毒性为起点建立线性浓度—响应函数，陆地由水生EC50经孔隙水相平衡外推并排除农业土壤生态效应",
+            "§9.2与印p67表9.1五项联动开关：20/100/无限期、金属人体仅饮水与空气2途径对全部9途径、5种必需金属近海对含远洋、致癌IARC 1/2A/2B对IARC(2004)评估的全部844种物质（表9.1表述为全部有TD50报道的化学品）、生态最低受试物种数4种对1种",
+            "印pp71–72§9.4与表9.4跨视角恒定终点系数：致癌3.32E-06、非致癌6.65E-09 DALY/kg 1,4-DCB eq（印p71每例11.5与2.7 DALYs），淡水6.95E-10、海洋1.05E-10、陆地5.39E-08 species·yr/kg 1,4-DCB eq（印p22表1.5汇总为两位有效数字3.3E-06、6.7E-09、7.0E-10、1.1E-10、5.4E-08）",
+            "印p65（3094种物质）与印p159（3073有机物+20“(essential) metals”=3093种）的源内统计差异"
+          ],
+          "limits": [
+            "未核读Van Zelm等2009/2013原刊全文及ReCiPe 2016全物质电子表格补篇。"
+          ]
+        },
+        {
+          "id": "psg-tox123-rivm-ch9-table93",
+          "artifactId": "art-land111-rivm2016-pdf",
+          "locator": "第9章§9.3及Table 9.3（印pp69–70；PDF第71–72页）",
+          "printedPages": "69–70",
+          "pdfIndices": [
+            70,
+            71
+          ],
+          "topics": [
+            "城市空气1,4-DCB的HTPc与HTPnc三视角恒为1，海水HTPnc为0.83、0.82、0.82",
+            "城市空气Nickel的HTPnc依次为36、2300、5800（HTPc为31、370、910，跨介质沉降引发的海洋生态METP为31、110、55000）",
+            "海水Nickel的HTPnc与HTPc在个人主义列因排除海产品摄入精确为0.0，在等级主义与平等主义列升至23与7900（HTPc升至3.5与1200）"
+          ],
+          "limits": [
+            "表9.3仅打印两位有效数字科学计数法示例值，未获取底层未舍入电子表格。"
           ]
         }
       ],
@@ -31252,6 +31660,28 @@
           "limits": [
             "§4.5关于排除子区室及freshwater标estimated的叙述与EF 3.1官方b5c632be.xml实载条目不符，须与XML对照呈现。"
           ]
+        },
+        {
+          "id": "psg-tox123-jrc109369-tox",
+          "artifactId": "art-fossil117-jrc109369-pdf",
+          "locator": "§2 Table 1–2（印pp6、8）、§3.4（印p10）及§4.3 Human and Eco Toxicity（印pp14–15，含Table 5；PDF第8、10、12、16–17页）",
+          "printedPages": "6, 8, 10, 14–15",
+          "pdfIndices": [
+            7,
+            9,
+            11,
+            15,
+            16
+          ],
+          "topics": [
+            "表1–2将CTUh绑定Units of items (cases)，将CTUe单位组印作Units of volume*time (m3*a)",
+            "§3.4规定三项毒性类别全部long-term排放因子置零",
+            "§4.3印p14记录金属价态赋值（含As(+5)、Sb(+6)笔误及50/50 Cr(+3)/Cr(+6)旧口径）",
+            "印p15表5仍将空气与水体long-term标为Estimated映射，与§3.4及官方XML全零实值冲突"
+          ],
+          "limits": [
+            "保留印p14 Sb(+6)与印p15表5源内冲突原貌，未获取EF 2.0原始参考包ZIP。"
+          ]
         }
       ],
       "appraisal": {
@@ -31270,6 +31700,64 @@
       ],
       "sourceKeys": [
         "src-fossil117-jrc109369"
+      ]
+    },
+    {
+      "id": "rd-tox123-ef31-addendum",
+      "workId": "work-tox123-ef31-addendum",
+      "title": "Updates on “Guide for EF compliant data sets (Version 2.0)” to reflect the changes in the Environmental Footprint 3.1 reference package",
+      "version": "November 2022 EF 3.1 Data Guide Addendum（5页官方PDF）",
+      "url": "https://eplca.jrc.ec.europa.eu/permalink/EF_Data_Guide_EF3.1_addendum.pdf",
+      "accessedAt": "2026-11-17",
+      "readAt": "2026-11-17",
+      "readingStatus": "selected-passages",
+      "question": "EF 3.1数据指南补篇如何规定三项毒性子指标合并，并如何界定参考包内ILCD目录与other/converter工具目录的角色？",
+      "argumentSummary": "印pp1–3明确EF 3.1参考包于2022年7月发布，将三项毒性类别原有的metals子指标全部并入对应inorganics子指标，并区分标准ILCD/lciamethods参考方法目录与other目录下供旧版数据集转换及Look@LCI分析使用的辅助文件。",
+      "artifacts": [
+        {
+          "id": "art-tox123-ef31-addendum-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "76a921ca994964f158a5baf4962be2cb1cdeb73583835f7c047eed2087a952b7",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/permalink/EF_Data_Guide_EF3.1_addendum.pdf",
+          "pageCount": 5
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-tox123-ef31-addendum",
+          "artifactId": "art-tox123-ef31-addendum-pdf",
+          "locator": "封面（印p1）与正文更新说明及§2 EF reference packages released（印pp2–3；PDF第1–3页）",
+          "printedPages": "1–3",
+          "pdfIndices": [
+            0,
+            1,
+            2
+          ],
+          "topics": [
+            "三项毒性类别原有的metals子指标全部并入对应inorganics子指标，仅保留organics与inorganics两类子指标",
+            "ILCD/lciamethods存放各影响类别正式表征因子列表，而other文件夹存放校验配置、Look@LCI配置及旧版过程数据集自动转换器"
+          ],
+          "limits": [
+            "印pp4–5合规声明XML片段未展开引述。"
+          ]
+        }
+      ],
+      "appraisal": {
+        "basis": "核读官方5页PDF第1–3页原文。",
+        "methodologicalScope": "EF 3.1过程数据集开发与参考包目录结构合规补篇。",
+        "independence": "与JRC130796及EF 3.1参考包同属欧盟委员会EPLCA官方发布文件，不计作外部独立审查。",
+        "limitations": [
+          "第4–5页合规声明XML片段非本单元比较焦点，未展开引述。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-17"
+      },
+      "rights": "欧盟委员会EPLCA官方指南补篇；公开记录仅含页码定位与原创释义，不重分发原PDF。",
+      "unread": [
+        "印pp4–5过程合规声明示例字段未展开逐行核读。"
+      ],
+      "sourceKeys": [
+        "src-tox123-ef31-addendum"
       ]
     }
   ],
@@ -32276,6 +32764,18 @@
         "B15",
         "B16",
         "A07"
+      ]
+    },
+    {
+      "id": "gap-tox123-usetox-useslca-and-ssd-workbooks",
+      "description": "USEtox原生Excel/MATLAB求解器、USES-LCA 2.0原生多介质程序、Saouter等2018（JRC114822）与Owsianiak等2019欧盟REACH/EFSA物种敏感度分布原始工作簿、EF 3.0原始压缩包及2019年欧盟农药销量底层统计表未在本仓库重跑或逐表复算；所有EF 3.0对照数值均严格限定在JRC130796明示表值范围内。",
+      "nextAction": "在涉及金属冶炼、农药施用、含氯化工及废木／沼气避免排放抵扣的案例解释中，显式报告所用毒性家族（EF 3.1 0.2/HC20对ReCiPe 2016 USES-LCA 2.0及视角）、泛指流代理与水体子区室映射及压缩包成员路径与SHA-256，不把全球稳态筛选潜势冒充具体场址化学品风险评估或流行病学观测。",
+      "affectedUnits": [
+        "B19",
+        "B08",
+        "B14",
+        "B16",
+        "B32"
       ]
     }
   ],
@@ -34988,6 +35488,22 @@
       ],
       "affectedUnits": [
         "B14"
+      ]
+    },
+    {
+      "id": "rev-tox123-b19-chemical-toxicity-comparison",
+      "before": "B19《毒性路径》原有12段规范论述围绕USEtox讲清了物质—排放介质匹配、归趋—暴露—效应分解、摄入分数、2008工作坊协调、嵌套稳态箱体、手册内部室内／农药残留表述冲突及缺毒理置零与指示因子敏感性分析，但尚未覆盖ILCD/EF与ReCiPe 2016（USES-LCA 2.0）的方法家族分叉、EF 3.1 0.2/HC20与欧盟毒理数据引发的金属排序翻转、三视角时间窗与金属食物链开关、价态／销量加权农药／未指明水体代理、三类制度性置零及EF-v3.1.zip包内异文。",
+      "after": "2026-11-17在100%逐字节保留全部968条既有论述（含B19原有12段USEtox论述及rd-usetox-2-documentation-v11）的基础上，于B19既定三节增补8段跨体系比较论述（cl-tox123-*，使B19扩至20段、全书公开论述扩至976条）并同步更新章节简介，打通V5-G人体毒性与V5-H生态毒性在受体边界、HC20基准重排、视角情景时间窗、清单代理映射、制度性置零与机读发行包核验上的完整论证链。",
+      "reasoning": "补齐第四部环境后果核心专章B19的跨体系方法原理与发行包实证对比，回应B14与B08关于排放介质、农药区室、避免排放抵扣及模型—资料—因子三分的跨章契约。",
+      "status": "selected-source inspection and canonical B19 integration prepared; independent source, reader and output gates required before acceptance",
+      "triggerPassageIds": [
+        "psg-tox123-jrc130796-hc20-proxies",
+        "psg-tox123-ef31-htnc-xml",
+        "psg-tox123-ef31-ecotox-xml",
+        "psg-tox123-rivm-ch9-table93"
+      ],
+      "affectedUnits": [
+        "B19"
       ]
     }
   ]

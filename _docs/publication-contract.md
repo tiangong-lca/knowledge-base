@@ -17,12 +17,33 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-17
-lastReviewedCommit: 6c73af8952b24d0aaa97f946c465b7b6ed8cf385
+lastReviewedCommit: 578e761a87575f93d1f63f54a30c42400f1c7007
 ---
 
 # Publication contract
 
 ## Scoped scientific successors
+
+The toxicity-comparison unit #123 compares ILCD 2011 / EF `USEtox` three
+chemical-toxicity midpoints (`CTUh` for cancer and non-cancer human toxicity and
+`CTUe` for freshwater ecotoxicity, excluding marine/terrestrial midpoints and
+most endpoints) against ReCiPe 2016 `USES-LCA 2.0` five `1,4-DCB`-referenced
+midpoints (excluding agricultural-soil ecotoxicity to prevent land-use double
+counting) and perspective-invariant endpoint conversion constants. It proves
+controlled rank reversals across EF 3.0 -> 3.1 `0.2/HC20` + EU REACH/EFSA metal
+recalculations (`Cu` vs `Hg` reversing >4 orders of magnitude versus `20/17`
+fallback) and across ReCiPe `I/H/E` five coupled time-horizon and metal
+food-chain switches (`1,4-DCB` vs `Nickel` in urban air and seawater), and
+documents valence, 2019 EU pesticide-sales and unspecified-water proxy rules
+plus normative zeros (`-44%` `HT_nc` normalization drop vs `+4,438%` avoided-
+emission credit jump). Source-internal discrepancies (`ILCD/lciamethods` vs
+`other/converter` `12`-byte metadata deltas and freshwater `Lactic acid` `1033.8`
+vs `0.0` split, `180` duplicate ammonia location rows, `Carbon tetrachloride`
+3-sig-fig rounding and missing compartments vs `CFC-10`, `CTUe` flowproperty
+metadata conflicts, `JRC130796` Eq. 3 inverted fraction and p. 28 `9.92E+04`
+typo, `JRC109369` `Sb(+6)` / `Table 5` long-term conflict, and `RIVM` `3,094` vs
+`3,073 + 20 = 3,093` count) remain explicitly disclosed without silent repair,
+raw-source redistribution, or claims of site-specific chemical risk assessment.
 
 The ozone-and-radiation unit #121 compares emission midpoints stopping at
 stratospheric physicochemical load (`ODP` in `kg CFC-11 eq`) or collective

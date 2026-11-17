@@ -1,6 +1,6 @@
 ---
 lastReviewedAt: 2026-11-17
-lastReviewedCommit: 6c73af8952b24d0aaa97f946c465b7b6ed8cf385
+lastReviewedCommit: 578e761a87575f93d1f63f54a30c42400f1c7007
 title: Reader publication and layout contract
 docType: contract
 scope: repo
@@ -30,6 +30,16 @@ related:
 ---
 
 # 交付给读者的是书稿
+
+任务123保留B19既有十二段USEtox论述与三节结构，新增八段跨体系比较论述并更新章节简介
+（全章共20注，`ordinary-0` 绑定版本化简介），使读者能从正文分清 `CTUh`/`CTUe` 指标单位与
+`CTUh/kg`、`CTUe/kg` 表征因子单位，对比 ILCD/EF 三中点与 ReCiPe 2016（`USES-LCA 2.0`）
+五项 `1,4-DCB` 参照中点及排除农地生态效应的边界，用 `0.5/HC50` 对 `0.2/HC20` 欧盟毒理重算、
+20／100／无限期时间窗与农牧水产7条食物链开关解释铜／汞与 `1,4-DCB`／镍次序反转，并拆清
+价态／销量加权泛指农药／未指明水体代理、四类零值及避免排放抵扣暴涨与 `EF-v3.1.zip` 双目录
+同UUID副本（淡水乳酸 `1033.8` 对 `0.0`）异文。B19在网页与打印中同时保留 `#88` 留存范围与
+`#123` 五组版本化历史范围控件，相邻B18／B20底部翻页卡片与 `/coverage/` 同步新简介，B32指向
+`cl-usetox-missing-data-model-zero` 的交叉引用显示更新为《毒性路径》注14且链接目标不变。
 
 任务121在B14原三节内增补八段平流层臭氧耗竭与电离辐射对读（全章共42注），使读者能从正文分清
 停在物理化学负荷（`ODP`）或人口集体有效剂量（`IRP`：`U-235 eq` 与 `Co-60 to air eq` 及

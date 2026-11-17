@@ -17,10 +17,39 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-17
-lastReviewedCommit: 6c73af8952b24d0aaa97f946c465b7b6ed8cf385
+lastReviewedCommit: 578e761a87575f93d1f63f54a30c42400f1c7007
 ---
 
 # Publication architecture
+
+## Toxicity-comparison successor
+
+The #123 B19 successor inserts eight canonical claims (`cl-tox123-*`) across
+B19's three retained sections (`2 + 3 + (2 + 1)`, bringing B19 from 12 to 20
+claims and the catalog from 968 to 976 claims) and updates B19's frontmatter
+`description` (`ordinary-0`), keeping 100% of all 968 prior claims (and
+`rd-usetox-2-documentation-v11`) byte-for-byte unchanged with zero prior-claim
+corrections. Before #121 runs its own rollback and reconstructed
+`readerPublicDownloads(ozradInput)` receipt checks, `prepareToxicityComparisonSource`
+restores the exact `2eba26c6` B19 MDX and raw source/reading/literature
+extensions, verifying `toxicityComparisonPredecessorPin`, both `B19:reader-source`
+and `B17:reverse-concept-consumers` (`cn-toxic-pathway`) layout locks, and all
+54 bidirectional transitions across 163 dependent consumers.
+
+`reader-toxicity-comparison-factors.mjs` binds all 12 single-source `ev-tox123-*`
+records in 1-to-1 bijection with all 12 `psg-tox123-*` passages, their 7 primary
+PDF/XML carriers, all 34 CRC32-verified official EF 3.1 XML member hashes on
+`rd-flow-pilot-ef31` via `sameScienceValue`, and all 132 structured `numericFacts`
+(`132/132` actively verified in 40-place `BigInt` fixed-point arithmetic, 3-sig-fig
+table rounding, `20/17` fallback, `Cu`/`Hg` and `1,4-DCB`/`Nickel` rank reversals,
+speciation averages, and prose assertions across all 8 claims). At B19 web and
+`/print` addresses, `qualifyToxicityComparisonHistory` binds `ordinary-0` and all
+36 prior B19 citation addresses while preserving `#88`'s retained legacy scopes.
+Because updating B19's `description` refreshes `coverage/index.html` and both
+neighboring web chapters' `.docs-pagination` (`B18` and `B20`) while shifting
+`cl-usetox-missing-data-model-zero` from Note 9 to Note 14 on B32 web/print,
+`toxicityComparisonCapturePin` binds 6 changed articles and 8 changed public
+artifacts.
 
 ## Ozone-and-radiation successor
 
