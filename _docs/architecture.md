@@ -17,10 +17,48 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-18
-lastReviewedCommit: 1af88b9225ebed0a4fca455570152fa79ccbce8d
+lastReviewedCommit: 2248e216a49fb677236c1e027833af154c13e2fd
 ---
 
 # Publication architecture
+
+## Particulate-comparison successor
+
+The #131 B17 successor updates B17's frontmatter `description` (`-particulate-131-ordinary-0`)
+and inserts eight canonical claims (`cl-particulate131-*`) at three bounded sites
+across B17's four retained sections (`2` at the end of §1 after `cl-pm-precursor-health`,
+`2` in §3 after `cl-pm-gemm-alternative`, and `4` in §4 after `cl-pm-uncovered-pathways`,
+bringing B17 from 37 to 45 claims and the catalog from 1,000 to 1,008 claims),
+conserving 100% of all 1,000 prior claims (including all 54 `cl-pm-*` records and
+17 `X04` calculation claims), `X04` MDX, all three B17 navigation paragraphs
+(`ordinary-1..3`), and all 40 case JSON files byte-for-byte with zero prior-claim
+corrections. Before #129 runs its own rollback and reconstructed
+`readerPublicDownloads(particulateInput)` receipt checks,
+`prepareParticulateComparisonSource` restores the exact `c0ffd968` B17 MDX
+(`e8ece01c...`) and raw source/reading/literature extensions, verifying
+`particulateComparisonPredecessorPin` (`acfe4c53...`) and all 63 bidirectional
+transitions across 315 dependent consumers (with narrow fail-closed admission for
+`rd-kb46-lcimpact2020`, `work-kb46-lcimpact2020`, and `cl-particulate131-*` in
+`reader-pm-selection.mjs`).
+
+`reader-particulate-comparison-factors.mjs` binds all 13 single-source
+`ev-particulate131-*` records in 1-to-1 bijection with all 13
+`psg-particulate131-*` passages across 10 primary PDF/OOXML/XML carriers
+(including `PMC5439030` JATS XML `6ddb8ecf...`), all 17 CRC32-verified official
+`EF-v3.1.zip` member hashes (`3` reused + `14` newly registered across
+`b5c602c6.xml` `v02.00.011`, `126c78f9` source, `01846770` flow property,
+`Normalisation_Weighting_Factors_EF_3.1.xlsx`, and 12 primary/coarse `PM` flows)
+on `rd-flow-pilot-ef31` via `sameScienceValue`, all 84 structured `numericFacts`
+(`84/84` pinned to `Object.freeze` canonical decimal literals and `100%` consumed
+in 40-place sign-aware half-up `BigInt` fixed-point arithmetic and 8-claim prose
+bindings), and `validateSupportLinks`. Across B17 web and `/print`,
+`qualifyParticulateComparisonHistory` verifies all 4 ordinary targets
+(`ordinary-0..3`) and 10 grouped dated history controls (relabeling the 37 prior
+B17 claims to `注 1..11, 14..28, 31..39, 44..45`), while `particulateComparisonCapturePin`
+(`dd1389bf...`) and `particulateComparisonUnitPin` (`0c04aa80...`) bind the 6
+changed articles (B17 web/print plus deterministic cross-reference relabeling on
+B16 web, B18 web, and X04 web/print) and 8 changed public artifacts with zero
+compiled CSS drift (`be180e5d...`).
 
 ## Eutrophication-pathways successor
 

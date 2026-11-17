@@ -44,7 +44,9 @@ const bioConfigPath = 'config/reader-biogenic-carbon.json';
 const bioModulePath = 'scripts/reader-biogenic-carbon.mjs';
 const eutroConfigPath = 'config/reader-eutrophication-pathways.json';
 const eutroModulePath = 'scripts/reader-eutrophication-pathways.mjs';
-const fixtureAliases = new Set([serviceModulePath, substitutionModulePath, shiftModulePath, footprintModulePath, landModulePath, acidModulePath, mineralModulePath, fossilModulePath, ozoneModulePath, ozradModulePath, toxModulePath, waterModulePath, bioModulePath, eutroModulePath].map(path => `@/${path}`));
+const particulateConfigPath = 'config/reader-particulate-comparison.json';
+const particulateModulePath = 'scripts/reader-particulate-comparison.mjs';
+const fixtureAliases = new Set([serviceModulePath, substitutionModulePath, shiftModulePath, footprintModulePath, landModulePath, acidModulePath, mineralModulePath, fossilModulePath, ozoneModulePath, ozradModulePath, toxModulePath, waterModulePath, bioModulePath, eutroModulePath, particulateModulePath].map(path => `@/${path}`));
 const flowPinPath = 'scripts/reader-flow-boundary-pins.mjs';
 
 async function loadArchive() {
@@ -93,7 +95,7 @@ async function materialize(root) {
     .map(entry => `scripts/${entry.name}`);
   const components = ['components/evidence.tsx', 'components/numbered-heading.tsx', 'components/chapter-content.tsx'];
   const current = [...configs, ...scripts, ...components, 'lib/teaching-case.ts']
-    .filter(path => ![copyeditConfigPath, copyeditPinPath, flowConfigPath, flowPinPath, serviceConfigPath, serviceModulePath, substitutionConfigPath, substitutionModulePath, shiftConfigPath, shiftModulePath, footprintConfigPath, footprintModulePath, landConfigPath, landModulePath, acidConfigPath, acidModulePath, mineralConfigPath, mineralModulePath, fossilConfigPath, fossilModulePath, ozoneConfigPath, ozoneModulePath, ozradConfigPath, ozradModulePath, toxConfigPath, toxModulePath, waterConfigPath, waterModulePath, bioConfigPath, bioModulePath, eutroConfigPath, eutroModulePath].includes(path));
+    .filter(path => ![copyeditConfigPath, copyeditPinPath, flowConfigPath, flowPinPath, serviceConfigPath, serviceModulePath, substitutionConfigPath, substitutionModulePath, shiftConfigPath, shiftModulePath, footprintConfigPath, footprintModulePath, landConfigPath, landModulePath, acidConfigPath, acidModulePath, mineralConfigPath, mineralModulePath, fossilConfigPath, fossilModulePath, ozoneConfigPath, ozoneModulePath, ozradConfigPath, ozradModulePath, toxConfigPath, toxModulePath, waterConfigPath, waterModulePath, bioConfigPath, bioModulePath, eutroConfigPath, eutroModulePath, particulateConfigPath, particulateModulePath].includes(path));
   const currentCopyeditPin = await readFile(join(repo, copyeditPinPath), 'utf8');
   const copyeditUnitPin = /^export const readerCopyeditUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
   assert.equal([...currentCopyeditPin.matchAll(copyeditUnitPin)].length, 1);
@@ -142,10 +144,13 @@ async function materialize(root) {
   const currentEutroModule = await readFile(join(repo, eutroModulePath), 'utf8');
   const eutroUnitPin = /^export const eutrophicationPathwaysUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
   assert.equal([...currentEutroModule.matchAll(eutroUnitPin)].length, 1);
+  const currentParticulateModule = await readFile(join(repo, particulateModulePath), 'utf8');
+  const particulateUnitPin = /^export const particulateComparisonUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
+  assert.equal([...currentParticulateModule.matchAll(particulateUnitPin)].length, 1);
   // The only archived script is the independently selected old edition pin.
   // All validation code, including the expectation resolver, comes from the
   // current worktree and runs under the historical book data in this directory.
-  // The later #95, #99, #102, #105, #107, #109, #111, #113, #115, #117, #119, #121, #123, #125, #127, and #129 units are inactive only in this isolated legacy fixture.
+  // The later #95, #99, #102, #105, #107, #109, #111, #113, #115, #117, #119, #121, #123, #125, #127, #129, and #131 units are inactive only in this isolated legacy fixture.
   assert.deepEqual(Object.keys(archived).filter(path => path.startsWith('scripts/')), [pinPath]);
   await Promise.all([
     ...current.filter(path => !Object.hasOwn(archived, path)).map(path => copyCurrent(root, path)),
@@ -182,6 +187,8 @@ async function materialize(root) {
     write(root, bioModulePath, currentBioModule.replace(bioUnitPin, 'export const biogenicCarbonUnitPin = null;')),
     write(root, eutroConfigPath, JSON.stringify({ schemaVersion: 1, status: 'inactive', unit: null })),
     write(root, eutroModulePath, currentEutroModule.replace(eutroUnitPin, 'export const eutrophicationPathwaysUnitPin = null;')),
+    write(root, particulateConfigPath, JSON.stringify({ schemaVersion: 1, status: 'inactive', unit: null })),
+    write(root, particulateModulePath, currentParticulateModule.replace(particulateUnitPin, 'export const particulateComparisonUnitPin = null;')),
     symlink(join(repo, 'node_modules'), join(root, 'node_modules'), process.platform === 'win32' ? 'junction' : 'dir'),
   ]);
 }

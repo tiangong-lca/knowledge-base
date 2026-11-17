@@ -4966,6 +4966,12 @@
         "query": "ILCD 2011 §3.8 AE EUTREND Struijs 2009 interim; UNEP GLAM 2019 Ch.3 Tier 1 10% P loss; EU 2021/2279 Annex I §4.4.1.5 P soil vs water N to soil prohibited Table 3 0.022 N2O 0.12 0.24 NH3 1.33 NO3; EF-v3.1.zip b53ec18f 0.05 duplicate Phosphorus b5c619fa 540 constant location river=sea b5c614d2 NOx 4.26 > LU 3.547 Normalisation_Weighting_Factors_EF_3.1.xlsx R1406-1408 R1283 R1288 double counting; RIVM 2016-0104 Ch.8 no marine eutrophication 85 days 0.1 P2O5 0.22 Table S4.2; LC-IMPACT Ch.8-9 449 ecoregions 15000 fish Table 9.3 9.16E-16 1.95E-15",
         "channel": "ILCD 2011、UNEP GLAM 2019第二卷、EU 2021/2279 R(01)、JRC109369、JRC130796、EF-v3.1.zip涉氮磷22份XML成员与NF/WF工作簿（中央目录+HTTP 206+CRC32）、RIVM 2016-0104第8章与S4、ReCiPe 2017论文、LC-IMPACT 2020论文与总报告第8–9章PDF；围绕富营养化类别分叉、农田磷氮界面、水系衰减与发行包异文定向核查",
         "date": "2026-11-18"
+      },
+      {
+        "id": "q-particulate131-cutpoints-cohen2017-precursors-and-ef31-20261118",
+        "query": "ILCD 2011 §3.4 RiskPoll Greco 2007 Level I kg PM2.5-eq primary Level I secondary Level II; JRC109369 p.6 n.5 p.8 §4.4 p.16 Deaths renamed Disease incidences Table 2 PM2.5 eq; JRC130796 §4.2 small reduction vs Table 10 0.0034%; EF-v3.1.zip b5c602c6 v02.00.011 PM10 0.23 PM2.5-10 zero CF unspecified 2.38497E-04 NH3 2.1E-05 > SO2 8.0E-06 900 constant location NF D9 5.953668E-4 WFs C9 0.0896; Cohen et al. 2017 PMC5439030 GBD 2015 4241.1k deaths 103066.2k DALYs <5yr LRI 17431.1k equitoxicity smoking extrapolation; RIVM 2016-0104 Ch.5 S1 I/H/E Em_NOx typo Table 5.3 New Zealand 11.7x South Korea vs Romania; LC-IMPACT §6.5 Table 6.2",
+        "channel": "Europe PMC开放获取JATS XML（PMC5439030）、ILCD 2011、EU 2021/2279 R(01)、JRC109369、JRC130796、EF-v3.1.zip涉颗粒物XML成员与归一化/加权工作簿（中央目录+HTTP 206+CRC32）、RIVM 2016-0104第5章与附表S1（含页图视觉核验）、ReCiPe 2017论文及LC-IMPACT 2020论文与总报告第6章PDF",
+        "date": "2026-11-18"
       }
     ],
     "limitations": [
@@ -6468,7 +6474,8 @@
         "2026-11-17同SHA原2016-0104载体追加核读表1.3–1.5（印pp18–22，含表1.5两位有效数字汇总）、第9章毒性（印pp65–72，表9.1–9.4）与§20 S5（印pp159–161，表S5.1），保留印p65（3094种）与印p159（3073+20=3093种及“(essential) metals”措辞）的统计口径微差，未获取ReCiPe全物质电子表格补篇。",
         "2026-11-17同SHA原2016-0104载体追加核读表1.3–1.5（印pp18–22）、第10章Water use（印pp73–80，表10.1–10.6）、印pp113与115参考文献及§21 S6（印pp163–173，表S6.1–S6.3），严格限定仅引用表S6.2按英文首字母排序前52行（Afghanistan–Ethiopia）未错位数据并公开预警印pp167–169自第53行Fiji起的列行错位损坏，不猜测受损行原始电子表格值。",
         "2026-11-17（气候当量单元）同SHA原2016-0104载体追加核读表1.3–1.5（印pp18–22）与第2章Climate change（印pp23–33，表2.1–2.3），核实207种温室气体仅H视角开非CO₂碳反馈、E视角千年积分式与恒定IAGTP终点系数，并保留表2.2印p25“1,2684.1”及§2.4印p31误引“Table 1.3”异文。",
-        "2026-11-18（营养富集单元）同SHA原2016-0104载体追加核读表1.4–1.5（印pp20–22）、第8章Freshwater eutrophication（印pp61–64，表8.1–8.2）与§19 S4（印p149，表S4.1–S4.2），核实排除海洋富营养化、全球淡水磷停留85天、农田土壤0.1、恒定终点转换系数6.1E-07，并保留§8.3印p62五氧化二磷0.22漏乘2与表S4.2印p149单位[PDF·L/mg]异文。"
+        "2026-11-18（营养富集单元）同SHA原2016-0104载体追加核读表1.4–1.5（印pp20–22）、第8章Freshwater eutrophication（印pp61–64，表8.1–8.2）与§19 S4（印p149，表S4.1–S4.2），核实排除海洋富营养化、全球淡水磷停留85天、农田土壤0.1、恒定终点转换系数6.1E-07，并保留§8.3印p62五氧化二磷0.22漏乘2与表S4.2印p149单位[PDF·L/mg]异文。",
+        "2026-11-18（细颗粒物单元）同载体追加核读表1.4–1.5（印pp20–22）、第5章Fine particulate matter formation（印pp47–50，§5.2–5.3及表5.1–5.3）与§16 S1（印pp121–124，表S1.1–S1.2），经页图视觉核实印p50分子Em_NOx,i笔误、表5.3平等主义漏印6.29×及56区域因子。"
       ],
       "catalogSourceIds": [
         "src-land111-rivm2016"
@@ -7180,7 +7187,8 @@
         "R(01) 全文重刊和 R(02) 斯洛伐克语定点更正属于同一文件谱系。英文合并文本是查阅载体。",
         "未全读附件、逐式对勘、验证分发签名或审查具体方案法源。",
         "2026-11-17（气候当量单元）同载体追加核读Annex I §3.2.3表2（OJ L 144/29–30注1）与§4.4.10–§4.4.10.3（OJ L 144/66–69注37–40），核实超过5%气候子指标分列报告、禁止临时与永久碳储存及延迟排放抵扣、原生林入LULUC且排除光合吸收、PAS 2050二十年直接土地转换均摊及条文滞后保留CO等规定，未单独获取ISO 14067或PAS 2050付费标准全文。",
-        "2026-11-18（营养富集单元）同载体追加核读Annex I §3.2.3表2（OJ L 144/29–30）与§4.4.1.5（OJ L 144/37–39表3–4），核实农田施磷water与soil互斥规则、禁止将氮建作排入soil及Tier 1气水拆分系数（0.022 kg N₂O、0.12/0.24 kg NH₃、1.33 kg NO₃⁻）。"
+        "2026-11-18（营养富集单元）同载体追加核读Annex I §3.2.3表2（OJ L 144/29–30）与§4.4.1.5（OJ L 144/37–39表3–4），核实农田施磷water与soil互斥规则、禁止将氮建作排入soil及Tier 1气水拆分系数（0.022 kg N₂O、0.12/0.24 kg NH₃、1.33 kg NO₃⁻）。",
+        "2026-11-18（细颗粒物单元）同载体追加核读Annex I §3.2.3表2（OJ L 144/29）、表B.3（OJ L 144/156）与Annex III §3.2.3表2（OJ L 144/220），核实EF颗粒物Level I中点Disease incidence与UNEP 2016模型绑定。"
       ],
       "catalogSourceIds": [
         "src-kb44-ec2021"
@@ -9576,7 +9584,8 @@
         "2026-11-17同SHA期刊PDF追加核对§2.3（印p140）、表1（印p141）、§§3.1.8与3.2（印p142）、表2（印p143）及§§3.2.8与4.1（印p144），确认表2仅列定性伤害路径而将中点至终点系数字面值置于电子补充材料。",
         "2026-11-17同SHA期刊PDF追加核对§1与§2.1（印p139）、表1（印p141）、§3.1.9（印p142）、表2（印p143）及§3.2.9（印p144）对WCP耗水中点与三条新增水损害路径的定性说明。",
         "2026-11-17（气候当量单元）同SHA期刊PDF追加核对§3.1.1（印p140）、表1（印p141）、§3.2.1（印p142）与表2（印p143）气候中点与三终点综述。",
-        "2026-11-18（营养富集单元）同SHA期刊PDF追加核对表1（印p141）、§3.1.7（印p142）、表2（印p143）及§4.4与§5（印p145）对单一淡水富营养化路径及海洋富营养化列为缺失路径的说明。"
+        "2026-11-18（营养富集单元）同SHA期刊PDF追加核对表1（印p141）、§3.1.7（印p142）、表2（印p143）及§4.4与§5（印p145）对单一淡水富营养化路径及海洋富营养化列为缺失路径的说明。",
+        "2026-11-18（细颗粒物单元）同载体追加核读§2.3（印p140）、§3.1.4与表1（印pp140–141）、表2（印p143）及§3.2.4（印p144），核对PMFP中点与DALY终点总体定义及对RIVM报告（Huijbregts等2016）的引用关系。"
       ],
       "catalogSourceIds": [
         "src-book-recipe-2017-primary-article"
@@ -11044,7 +11053,8 @@
         "2026-11-17同载体追加选读§1表1–2（印pp5–6）、§3.3人体毒性（印pp25–33，表6–7）与§3.9生态毒性（印pp78–84，表20–22），核实USEtox三项中点Level II/III（金属、两亲性与解离物质降为III；表20–21载明ReCiPe采用USES-LCA 2.0并以急性EC50数据为基础而TRACI采用NOEC）、陆海生态毒性不推荐及终点仅致癌DALY评Level II/interim，不声称全书重读。",
         "2026-11-17同载体追加选读§1表1–2（印pp5–6）、§3.11水资源耗竭（印pp92–95、97、100–101，图12、表26–27）与§6.11（印p133），核实Swiss Ecoscarcity六级区域缺水中点获Level III推荐、MEEuP与自然环境累积㶲提取法CEENE因不反映稀缺落选及未评估任何水资源终点模型，不声称核读德文Ökofaktoren 2006原表。",
         "2026-11-17（气候当量单元）同载体追加选读§1表1–2（印pp5–6）、§3.1气候变化（印pp13–19，表3，§3.1.7印p18）与§5 Annex 1 / §5.1（印pp123–124），核实IPCC 2007 GWP100获Level I推荐、终点仅列ReCiPe 2009为interim无正式推荐，以及§3.1.6印p18将N₂O在500年较100年低约一半误写为高约2倍（factor 2）的原文笔误。",
-        "2026-11-18（营养富集单元）同载体追加选读§1表1–2（印pp5–6）、§3.8富营养化（印pp65–77，表18–19）与§5 Annex 1（印p124），核实陆地AE（mol N eq）与淡水、海洋EUTREND（kg P eq、kg N eq）三项Level II中点及零正式推荐终点（仅早期ReCiPe淡水列为interim）。"
+        "2026-11-18（营养富集单元）同载体追加选读§1表1–2（印pp5–6）、§3.8富营养化（印pp65–77，表18–19）与§5 Annex 1（印p124），核实陆地AE（mol N eq）与淡水、海洋EUTREND（kg P eq、kg N eq）三项Level II中点及零正式推荐终点（仅早期ReCiPe淡水列为interim）。",
+        "2026-11-18（细颗粒物单元）同载体追加选读§1表1–2（印pp5–6）与§3.4 Particulate matter/Respiratory inorganics（印pp33–42，表8–11），核实RiskPoll与Greco 2007 Level I中点（kg PM2.5-eq/kg）及Pope 2002 / van Zelm 2008初级颗粒物Level I、二次颗粒物Level II的DALY终点。"
       ],
       "catalogSourceIds": [
         "src-book-ilcd-2011-lcia-recommendations"
@@ -15939,12 +15949,15 @@
       "accessStatus": "public-fulltext-available",
       "readingStatus": "not-close-read",
       "accessedAt": "2026-11-05",
-      "lastCheckedAt": "2026-11-05",
+      "lastCheckedAt": "2026-11-18",
       "rights": "Europe PMC原始JATS记录声明CC BY 4.0。",
       "limitations": [
-        "完整PDF下载未完成。Europe PMC原始JATS可公开取得，本次未登记为正式证据载体；GBD2015附录与估计代码未核对。"
+        "完整PDF下载未完成。Europe PMC原始JATS可公开取得，本次未登记为正式证据载体；GBD2015附录与估计代码未核对。",
+        "2026-11-18（细颗粒物单元）获取并逐段核验Europe PMC开放获取JATS XML（PMC5439030，106319字节，SHA-256: 6ddb8ecf...），实读摘要、方法（印pp1908–1910）、结果及表1–2（印pp1910–1915）与讨论局限（印p1916）；GBD 2015外部补充附录PDF与STAN源码未核对。"
       ],
-      "catalogSourceIds": []
+      "catalogSourceIds": [
+        "src-particulate131-cohen2017"
+      ]
     },
     {
       "id": "work-kb46-glam2026",
@@ -16196,11 +16209,12 @@
       "accessStatus": "public-fulltext-available",
       "readingStatus": "not-close-read",
       "accessedAt": "2026-11-05",
-      "lastCheckedAt": "2026-11-05",
+      "lastCheckedAt": "2026-11-18",
       "rights": "LC-IMPACT 官方站点公开提供两种载体。未核实原件或图表的开放再分发许可。只发表原创释义、事实与定位。",
       "limitations": [
         "所示因子没有按烟囱高度分别发行，模型基于区域格点和历史背景。",
-        "不同病种、年龄条件、空间分辨率和斜率定义不能由共同的 DALY/kg 单位消除。"
+        "不同病种、年龄条件、空间分辨率和斜率定义不能由共同的 DALY/kg 单位消除。",
+        "2026-11-18（细颗粒物单元）同哈希总报告v1.0载体追加核读第6章§§6.2.1–6.2.2（印pp60–61）、§6.4.2（印p62）与§6.5表6.2（印p67），核实TM5-FASST、≥30岁边界、Krewski 2009相对风险参数与全球加权平均终点因子。"
       ],
       "catalogSourceIds": [
         "src-kb46-lcimpact2020"
@@ -19745,7 +19759,8 @@
         "2026-11-17另按同一中央目录与HTTP 206范围核查9份ILCD/lciamethods毒性总表与子表XML（含已核05316e7a、dacd48b5）、3份other/converter同UUID副本、CTUh/CTUe流属性与Items单位组XML及19份代表物质流XML，完整保留氨流37位置重复、CTUe流属性元数据错配及other/converter元数据字节差异与淡水乳酸0.0对1033.8差异，不声称运行Look@LCI原生程序。",
         "2026-11-17另按同一中央目录与HTTP 206范围核查Water use方法XML（b2ad66ce，确认全包唯一而无other/converter副本）、Volume流属性（93a60a56）、Units of volume单位组（93a60a57）、源记录（6b126a5e）及全部11份涉水基本流XML共15份成员，完整保留全局默认项未指明水体退水-42.955不对称、GL=0.00越界与inventoryItems=36声明，未重跑AWARE原生栅格工作簿。",
         "2026-11-17（气候当量单元）另按同一中央目录与HTTP 206范围核查新增19份涉碳成员（3份气候子指标XML、other/converter/6209b35f.xml、sources/31ac5d13.xml、lookLciMethodInformation.config、Normalisation_Weighting_Factors_EF_3.1.xlsx、248页pef_method.pdf JRC115959及11份涉碳基本流XML，连同已登记6209b35f等4份共23份），核实1099=1074+13+12互不重叠划分、CO与biogenic-100yr条数均为0、14af9ca7.xml输出CO₂缺高空子区室及NF工作簿K1161生物源甲烷遗留AR6 FGD草稿值27.2。",
-        "2026-11-18（营养富集单元）另按同一中央目录与HTTP 206范围核查新增20份涉氮磷XML成员（淡水富营养化b53ec18f、源记录e58cd71d与58bc3cfd及17份磷氮水／土基本流XML，连同已登记b5c619fa、b5c614d2与Normalisation_Weighting_Factors_EF_3.1.xlsx等共26份），核实三份富营养化XML无converter副本、零土壤氮流、河海1:1因子、540条恒值location、通用NOx=4.26高于全部36国及NF工作簿农业磷氮双重计算。"
+        "2026-11-18（营养富集单元）另按同一中央目录与HTTP 206范围核查新增20份涉氮磷XML成员（淡水富营养化b53ec18f、源记录e58cd71d与58bc3cfd及17份磷氮水／土基本流XML，连同已登记b5c619fa、b5c614d2与Normalisation_Weighting_Factors_EF_3.1.xlsx等共26份），核实三份富营养化XML无converter副本、零土壤氮流、河海1:1因子、540条恒值location、通用NOx=4.26高于全部36国及NF工作簿农业磷氮双重计算。",
+        "2026-11-18（细颗粒物单元）按已核中央目录与HTTP 206 + CRC32核查b5c602c6.xml（v02.00.011，983条因子）、源记录126c78f9、流属性01846770、12份粒径基本流XML及归一化/加权工作簿（NFs EF3.1、WFs与NFs EF3.1_calculation 15行颗粒物明细），确认零other/converter副本、粗颗粒PM2.5-10零因子、900条恒值location及52.0803%城市近地面氨配比。"
       ],
       "catalogSourceIds": [
         "src-flow-pilot-ef31",
@@ -19756,7 +19771,8 @@
         "src-tox123-ef31-selected-members",
         "src-water125-ef31-selected-members",
         "src-bio127-ef31-selected-members",
-        "src-eutro129-ef31-selected-members"
+        "src-eutro129-ef31-selected-members",
+        "src-particulate131-ef31-selected-members"
       ]
     },
     {
@@ -19814,7 +19830,8 @@
         "2026-11-17同载体追加核查摘要（印p1）、§1（印p3）、§2表1（印p6）、§3表2（印p8）、§3.4（印pp10–16）、§4.2表10（印pp22–23）、§§5.1.1.4–5.1.1.6（印pp26–28）与§§5.2/6（印pp30–31、36），保留印p13式(3)分式倒置HC20/(HC20×0.34)及印p28农田土壤copper (ii)误印9.92E+04→9.92E+04等源内异文；未取得Saouter等2018原始工作簿与EF 3.0原始ZIP。",
         "2026-11-17同载体追加核查§2表1（印p7）、§4.2表10（印p23，全球水使用归一化基准维持1.15E+04不变）、§5.1（印p24，2752个EF官方数据集总量）与§5.1.2表13（印p30，水使用居首由125变121）。",
         "2026-11-17（气候当量单元）同载体追加核查§2表1（印pp6–7）、§3表2–3（印pp8–9）、§3.1（印p9）、§4.2表10（印p22，气候NF下降6.7%）与§5.1–§5.1.1.1（印pp24–25，2752个数据集平均降2.9%、6%上升，西班牙废木焚烧-58%与丹麦聚氨酯焚烧+302%）。",
-        "2026-11-18（营养富集单元）同载体追加核查§2表1（印pp6–7）、§4.2表10（印p22，三项富营养化NF变动0%）与§5.1表13（印p30，EF3.1第4与第5顺位整列重复印作152/152、8/8、201/201）。"
+        "2026-11-18（营养富集单元）同载体追加核查§2表1（印pp6–7）、§4.2表10（印p22，三项富营养化NF变动0%）与§5.1表13（印p30，EF3.1第4与第5顺位整列重复印作152/152、8/8、201/201）。",
+        "2026-11-18（细颗粒物单元）同载体追加核读§2表1（印p6）、§4.2及表10（印pp21–22）与§5.1表13（印p30），完整保留正文small reduction（0.003%）与表10正值（0.0034%）方向冲突及表13（608/608）整列重复。"
       ],
       "catalogSourceIds": [
         "src-flow-pilot-ef31-update"
@@ -20189,7 +20206,8 @@
         "论文、项目技术章和因子包属于不同证据载体；这里只核标题、许可和所列方法选段。",
         "2026-11-17同SHA期刊PDF追加核读§§2.1–2.8与表1–3（印pp3–10）、§3.1（印p11）及§§4.1–4.2（印pp14–15），核实无中点损害架构、11050流域健康损害表1印Average与§2.3提供双套因子的表文张力及表3湿地确定性影响排除地下水耗水的分级边界，未下载Zenodo因子压缩包。",
         "2026-11-17（气候当量单元）同SHA期刊PDF追加核读§§2.1–2.8表1–3（印pp3–10，表3气候行印p8）、§3.2图4（印pp11, 13）与§4.2（印p15）对气候变化零中点、100/1000年时间窗、“确定性影响”排除淡水生态气候损害及3种燃料案例总健康损害最高相差4倍且极端设定不改燃料排序的说明。",
-        "2026-11-18（营养富集单元）同SHA期刊PDF追加核读§2.1（印p3）、表2（印p5）、§2.5与§2.7（印pp6–7）及表3（印p9）对淡水鱼类与海洋低氧两项全球灭绝PDF·yr终点的综述。"
+        "2026-11-18（营养富集单元）同SHA期刊PDF追加核读§2.1（印p3）、表2（印p5）、§2.5与§2.7（印pp6–7）及表3（印p9）对淡水鱼类与海洋低氧两项全球灭绝PDF·yr终点的综述。",
+        "2026-11-18（细颗粒物单元）同载体追加核读§2.1–2.2（印p3）、表1与§2.4（印p4）、§2.7–2.8（印p7）及表3（印p8），核对零中点架构、56世界区域与certain/all两档前体稳健度开关。"
       ],
       "catalogSourceIds": [
         "src-land111-lcimpact2020-article"
@@ -20848,7 +20866,8 @@
         "2026-11-17同载体追加核查§2表1–2（印pp6、8）、§3.4（印p10）与§4.3（印pp14–15，含表5），保留CTUe单位组m3*a印文、印p14 Sb(+6)笔误及印p15表5 long-term Estimated映射与§3.4置零规则的源内冲突。",
         "2026-11-17同载体追加核查§2表1–2（印pp7–8及注10）与§4.11（印p25），核实EF改采AWARE国家尺度默认蓝水耗水因子并保留表1–2“kg world eq. deprived / Units of mass (kg)”印刷异文。",
         "2026-11-17（气候当量单元）同载体追加核查§2表1–2（印pp6–8）与§4.1（印pp11–12，表4），核实EF 2.0/3.0气候三子指标及甲烷36.75、一氧化碳1.57、biogenic-100yr=-1表值。",
-        "2026-11-18（营养富集单元）同载体追加核查§2表1–2（印pp6–8）与§4.8表7及注释（印pp20–21），核实EF水体富营养化将未指定水体因子近似复制给淡水与海水、P₂O₅须按磷含量折算为总磷及排除COD/BOD与铁。"
+        "2026-11-18（营养富集单元）同载体追加核查§2表1–2（印pp6–8）与§4.8表7及注释（印pp20–21），核实EF水体富营养化将未指定水体因子近似复制给淡水与海水、P₂O₅须按磷含量折算为总磷及排除COD/BOD与铁。",
+        "2026-11-18（细颗粒物单元）同载体追加核读§2表1–2（印pp6–8，含印p6脚注5）与§4.4 Respiratory inorganics（印p16），完整保留将Deaths纯文字改名Disease incidences的官方说明及印p8表2印回PM2.5 eq（kg）的源内冲突。"
       ],
       "catalogSourceIds": [
         "src-fossil117-jrc109369"
