@@ -20,6 +20,27 @@ lastReviewedCommit: 578e761a87575f93d1f63f54a30c42400f1c7007
 
 # LCA Living Knowledge Base and Review
 
+[Water scarcity methods, withdrawal-return accounting, value choices & package rules #125](https://github.com/tiangong-lca/knowledge-base/issues/125)
+extends B18 across its four retained sections and two `ReaderSection` anchors
+(`28` claims total) with the cross-system water-scarcity comparison (`V5-I`):
+ILCD 2011 (`Swiss Ecoscarcity` 6 scarcity levels, 0 endpoints) and EF 2.0–3.1
+(`AWARE` `[0.1, 100]` scarcity-weighted midpoint only) versus ReCiPe 2016
+(unweighted physical consumption midpoint `WCP = 1 m³/m³` plus three endpoints)
+and LC-IMPACT (`0` midpoints, `11,050`-watershed malnutrition `DALY/m³` and
+`0.05°×0.05°` wetland global extinction `PDF·yr/m³`), the `10:1` industrial
+groundwater accounting split (`EF 3.1` 7 positive / 4 negative elementary flows
+versus ReCiPe `Table 10.2` ratio `1` refusing surface-return credit), PEF/OEF
+country-annual flattening versus ReCiPe multi-era/`HDI > 0.88`/`42°`-latitude
+cutoffs, the `WR_malnutrition` denominator paradox (`I = 3.10×10⁻⁶ > H/E = 2.22×10⁻⁶ DALY/m³`
+via `1350 / 1000 = 1.35×`), `AU`/`BD` and `CL`/`CN` cross-target reversals, the
+pure physical `WSI`-versus-`AWARE` reversal between Belgium and Canada (`6.29×`
+vs `1:5.40`), and `EF-v3.1.zip` `b2ad66ce.xml` (`-42.955` vs `+42.950` unlocated
+global `-0.005` asymmetry, `GL = 0.00`, `inventoryItems = 36`) plus `RIVM 2016-0104`
+`Table S6.2` row 53 `Fiji`–`Zimbabwe` (`F–Z`) corruption disclosures. Its
+[comparison record](_docs/editorial/2026-11-17-water-scarcity.md) binds 9
+single-source evidence rows and 106 verified `numericFacts` while conserving all
+976 prior claims byte-for-byte alongside `#109` and `#125` B18 citation history.
+
 [Chemical toxicity pathways & method families #123](https://github.com/tiangong-lca/knowledge-base/issues/123)
 extends B19 across its three retained sections (`20` claims total) with the
 cross-family toxicity comparison (`V5-G` human toxicity and `V5-H` ecotoxicity):
@@ -38,6 +59,8 @@ freshwater `Lactic acid` `1033.8` vs `0.0`). Its
 single-source evidence rows and 132 verified `numericFacts` while conserving all
 968 prior claims byte-for-byte alongside retained `#88` and new `#123` B19
 citation history.
+Unit #123 is fully delivered at Main `9486bae9a7901da6a6d720b2320f9f793298ef27`,
+qualified 468-file hosting and root #2419 (`c91e4c6295a77828b01cbe14b85720aeb8d320c9`).
 
 [Stratospheric ozone & ionizing radiation #121](https://github.com/tiangong-lca/knowledge-base/issues/121)
 extends B14 across its three sections (`42` claims total) with the fourth

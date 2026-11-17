@@ -1,3 +1,5 @@
+import waterConfig from '../config/reader-water-scarcity.json' with { type: 'json' };
+import { selectWaterScarcity, effectiveWaterScarcity } from './reader-water-scarcity.mjs';
 import toxConfig from '../config/reader-toxicity-comparison.json' with { type: 'json' };
 import { selectToxicityComparison, effectiveToxicityComparison, toxicityComparisonLayout } from './reader-toxicity-comparison.mjs';
 import ozradConfig from '../config/reader-ozone-radiation.json' with { type: 'json' };
@@ -46,8 +48,9 @@ export const currentFossilResources = selectFossilResources(fossilConfig, undefi
 export const currentPhotochemicalOzone = selectPhotochemicalOzone(ozoneConfig, undefined, preview);
 export const currentOzoneRadiation = selectOzoneRadiation(ozradConfig, undefined, preview);
 export const currentToxicityComparison = selectToxicityComparison(toxConfig, undefined, preview);
+export const currentWaterScarcity = selectWaterScarcity(waterConfig, undefined, preview);
 export const isReadableBookReviewPreview = oldPreview
-  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview' || acidConfig.status === 'preview' || mineralConfig.status === 'preview' || fossilConfig.status === 'preview' || ozoneConfig.status === 'preview' || ozradConfig.status === 'preview' || toxConfig.status === 'preview');
+  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview' || acidConfig.status === 'preview' || mineralConfig.status === 'preview' || fossilConfig.status === 'preview' || ozoneConfig.status === 'preview' || ozradConfig.status === 'preview' || toxConfig.status === 'preview' || waterConfig.status === 'preview');
 const previousPlan = readableBookReviewPlan(oldPreview
   ? acceptance.units
   : pinnedReadableBookUnits(acceptance, readableBookBaselineDigest, readableBookAcceptancePins));
@@ -63,7 +66,8 @@ const acceptedMineral = effectiveMineralResources(acceptedAcid, currentMineralRe
 const acceptedFossil = effectiveFossilResources(acceptedMineral, currentFossilResources);
 const acceptedOzone = effectivePhotochemicalOzone(acceptedFossil, currentPhotochemicalOzone);
 const acceptedOzrad = effectiveOzoneRadiation(acceptedOzone, currentOzoneRadiation);
-export const currentBookPlan = effectiveToxicityComparison(acceptedOzrad, currentToxicityComparison);
+const acceptedTox = effectiveToxicityComparison(acceptedOzrad, currentToxicityComparison);
+export const currentBookPlan = effectiveWaterScarcity(acceptedTox, currentWaterScarcity);
 
 export function currentBookRecordMatches(kind, previous, current, projection) {
   if (projection !== undefined) return matchesAcceptedRecord(currentBookPlan, kind, previous, current, projection);

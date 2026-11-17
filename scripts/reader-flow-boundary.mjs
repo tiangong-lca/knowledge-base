@@ -450,13 +450,26 @@ export function validateDatedHistoryOutput(documents, { expected, source, attrib
           break;
         }
       }
-      while (previous?.getAttribute('data-copyedit-history') === id || previous?.getAttribute('data-legacy-scope') === id) {
+      const origins = control?.addresses.map(address => address.slice(path.length + 1));
+      const seenPriorAttrs = new Set();
+      const isValidOriginSibling = node => {
+        if (!node) return false;
+        const ce = node.getAttribute('data-copyedit-history');
+        const ls = node.getAttribute('data-legacy-scope');
+        if (ce == null && ls == null) return false;
+        const ok = value => Boolean(value) && (value === id || Boolean(origins?.includes(value)));
+        if (ce != null && (!ok(ce) || seenPriorAttrs.has(`ce:${ce}`))) return false;
+        if (ls != null && (!ok(ls) || seenPriorAttrs.has(`ls:${ls}`))) return false;
+        if (ce != null) seenPriorAttrs.add(`ce:${ce}`);
+        if (ls != null) seenPriorAttrs.add(`ls:${ls}`);
+        return true;
+      };
+      while (isValidOriginSibling(previous)) {
         previous = previous.previousElementSibling;
       }
       const attached = priorChainValid && target && (target === previous
         || ['chapter', 'reading-title'].includes(row?.previous.kind) && target.closest('article') === notice.closest('article')
           && (!previous || previous.tagName === 'P' && ordinaryPattern.test(previous.id)));
-      const origins = control?.addresses.map(address => address.slice(path.length + 1));
       if (!row || observed.has(key) || !attached || notice.tagName !== 'DETAILS'
           || notice.getAttribute(`data-${attribute}-origins`) !== origins.join(' ')
           || origins.some(origin => {

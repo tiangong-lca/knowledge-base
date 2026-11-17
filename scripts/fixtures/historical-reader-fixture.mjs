@@ -38,7 +38,9 @@ const ozradConfigPath = 'config/reader-ozone-radiation.json';
 const ozradModulePath = 'scripts/reader-ozone-radiation.mjs';
 const toxConfigPath = 'config/reader-toxicity-comparison.json';
 const toxModulePath = 'scripts/reader-toxicity-comparison.mjs';
-const fixtureAliases = new Set([serviceModulePath, substitutionModulePath, shiftModulePath, footprintModulePath, landModulePath, acidModulePath, mineralModulePath, fossilModulePath, ozoneModulePath, ozradModulePath, toxModulePath].map(path => `@/${path}`));
+const waterConfigPath = 'config/reader-water-scarcity.json';
+const waterModulePath = 'scripts/reader-water-scarcity.mjs';
+const fixtureAliases = new Set([serviceModulePath, substitutionModulePath, shiftModulePath, footprintModulePath, landModulePath, acidModulePath, mineralModulePath, fossilModulePath, ozoneModulePath, ozradModulePath, toxModulePath, waterModulePath].map(path => `@/${path}`));
 const flowPinPath = 'scripts/reader-flow-boundary-pins.mjs';
 
 async function loadArchive() {
@@ -87,7 +89,7 @@ async function materialize(root) {
     .map(entry => `scripts/${entry.name}`);
   const components = ['components/evidence.tsx', 'components/numbered-heading.tsx', 'components/chapter-content.tsx'];
   const current = [...configs, ...scripts, ...components, 'lib/teaching-case.ts']
-    .filter(path => ![copyeditConfigPath, copyeditPinPath, flowConfigPath, flowPinPath, serviceConfigPath, serviceModulePath, substitutionConfigPath, substitutionModulePath, shiftConfigPath, shiftModulePath, footprintConfigPath, footprintModulePath, landConfigPath, landModulePath, acidConfigPath, acidModulePath, mineralConfigPath, mineralModulePath, fossilConfigPath, fossilModulePath, ozoneConfigPath, ozoneModulePath, ozradConfigPath, ozradModulePath, toxConfigPath, toxModulePath].includes(path));
+    .filter(path => ![copyeditConfigPath, copyeditPinPath, flowConfigPath, flowPinPath, serviceConfigPath, serviceModulePath, substitutionConfigPath, substitutionModulePath, shiftConfigPath, shiftModulePath, footprintConfigPath, footprintModulePath, landConfigPath, landModulePath, acidConfigPath, acidModulePath, mineralConfigPath, mineralModulePath, fossilConfigPath, fossilModulePath, ozoneConfigPath, ozoneModulePath, ozradConfigPath, ozradModulePath, toxConfigPath, toxModulePath, waterConfigPath, waterModulePath].includes(path));
   const currentCopyeditPin = await readFile(join(repo, copyeditPinPath), 'utf8');
   const copyeditUnitPin = /^export const readerCopyeditUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
   assert.equal([...currentCopyeditPin.matchAll(copyeditUnitPin)].length, 1);
@@ -127,10 +129,13 @@ async function materialize(root) {
   const currentToxModule = await readFile(join(repo, toxModulePath), 'utf8');
   const toxUnitPin = /^export const toxicityComparisonUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
   assert.equal([...currentToxModule.matchAll(toxUnitPin)].length, 1);
+  const currentWaterModule = await readFile(join(repo, waterModulePath), 'utf8');
+  const waterUnitPin = /^export const waterScarcityUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
+  assert.equal([...currentWaterModule.matchAll(waterUnitPin)].length, 1);
   // The only archived script is the independently selected old edition pin.
   // All validation code, including the expectation resolver, comes from the
   // current worktree and runs under the historical book data in this directory.
-  // The later #95, #99, #102, #105, #107, #109, #111, #113, #115, #117, #119, #121, and #123 units are inactive only in this isolated legacy fixture.
+  // The later #95, #99, #102, #105, #107, #109, #111, #113, #115, #117, #119, #121, #123, and #125 units are inactive only in this isolated legacy fixture.
   assert.deepEqual(Object.keys(archived).filter(path => path.startsWith('scripts/')), [pinPath]);
   await Promise.all([
     ...current.filter(path => !Object.hasOwn(archived, path)).map(path => copyCurrent(root, path)),
@@ -161,6 +166,8 @@ async function materialize(root) {
     write(root, ozradModulePath, currentOzradModule.replace(ozradUnitPin, 'export const ozoneRadiationUnitPin = null;')),
     write(root, toxConfigPath, JSON.stringify({ schemaVersion: 1, status: 'inactive', unit: null })),
     write(root, toxModulePath, currentToxModule.replace(toxUnitPin, 'export const toxicityComparisonUnitPin = null;')),
+    write(root, waterConfigPath, JSON.stringify({ schemaVersion: 1, status: 'inactive', unit: null })),
+    write(root, waterModulePath, currentWaterModule.replace(waterUnitPin, 'export const waterScarcityUnitPin = null;')),
     symlink(join(repo, 'node_modules'), join(root, 'node_modules'), process.platform === 'win32' ? 'junction' : 'dir'),
   ]);
 }

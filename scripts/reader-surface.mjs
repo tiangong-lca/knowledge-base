@@ -1,3 +1,4 @@
+import { waterScarcityPreviousSurface, qualifyWaterScarcityHistory } from './reader-water-scarcity.mjs';
 import { toxicityComparisonPreviousSurface, qualifyToxicityComparisonHistory } from './reader-toxicity-comparison.mjs';
 import { ozoneRadiationPreviousSurface, qualifyOzoneRadiationHistory } from './reader-ozone-radiation.mjs';
 import { photochemicalOzonePreviousSurface, qualifyPhotochemicalOzoneHistory } from './reader-photochemical-ozone.mjs';
@@ -24,7 +25,7 @@ import { assertClosingSynthesisOriginal, assertClosingSynthesisHeadingHistory, a
 import { assertWallSelectionOriginal, assertWallSelectionHeadingHistory, assertWallSelectionAccepted, wallSelectionHeadingEntries, remapWallSelectionCitations, validateWallSelectionCoverage, validateRenderedWallSelection } from './reader-wall-selection.mjs';
 import { validateReaderNumberingOutput } from './reader-numbering-output.mjs';
 import { assertReaderNumbering } from './reader-numbering.mjs';
-import { validateReadableBookCurrent, validateServiceConstraintsReviewSources, validateSubstitutionRulesReviewSources, validateLoadShiftReviewSources, validateCircularFootprintReviewSources, validateLandRecoveryReviewSources, validateAcidEquivalentsReviewSources, validateMineralResourcesReviewSources, validateFossilResourcesReviewSources, validatePhotochemicalOzoneReviewSources, validateOzoneRadiationReviewSources, validateToxicityComparisonReviewSources } from './reader-current-edition-files.mjs';
+import { validateReadableBookCurrent, validateServiceConstraintsReviewSources, validateSubstitutionRulesReviewSources, validateLoadShiftReviewSources, validateCircularFootprintReviewSources, validateLandRecoveryReviewSources, validateAcidEquivalentsReviewSources, validateMineralResourcesReviewSources, validateFossilResourcesReviewSources, validatePhotochemicalOzoneReviewSources, validateOzoneRadiationReviewSources, validateToxicityComparisonReviewSources, validateWaterScarcityReviewSources } from './reader-current-edition-files.mjs';
 import { qualifyReadableBookCitations } from './reader-current-citations.mjs';
 import { validateReadableBookPublicArtifacts, validateReadableBookReviewedOutput } from './reader-current-output.mjs';
 import { qualifyCurrentHistoricalDocument, validateCurrentHistoricalContexts } from './reader-publication-text.mjs';
@@ -169,7 +170,7 @@ function aliasDestination(node) {
   return sibling?.id === target ? target : null;
 }
 
-const citationScopeExclusions = '.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope],[data-copyedit-history],[data-flow-boundary-history],[data-service-constraints-history],[data-substitution-rules-history],[data-load-shift-history],[data-circular-footprint-history],[data-land-recovery-history],[data-acid-equivalents-history],[data-mineral-resources-history],[data-fossil-resources-history],[data-photochemical-ozone-history],[data-ozone-radiation-history],[data-toxicity-comparison-history],.docs-pagination,.reader-view-label,.teaching-case';
+const citationScopeExclusions = '.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope],[data-copyedit-history],[data-flow-boundary-history],[data-service-constraints-history],[data-substitution-rules-history],[data-load-shift-history],[data-circular-footprint-history],[data-land-recovery-history],[data-acid-equivalents-history],[data-mineral-resources-history],[data-fossil-resources-history],[data-photochemical-ozone-history],[data-ozone-radiation-history],[data-toxicity-comparison-history],[data-water-scarcity-history],.docs-pagination,.reader-view-label,.teaching-case';
 const ordinaryCitationBlocks = 'p,ul,ol,dl,blockquote,pre,table,figure';
 
 function nativeCitationScopes(document) {
@@ -359,9 +360,10 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
   const photochemicalOzone = book?.current?.photochemicalOzone;
   const ozoneRadiation = book?.current?.ozoneRadiation;
   const toxicityComparison = book?.current?.toxicityComparison;
+  const waterScarcity = book?.current?.waterScarcity;
   const entries = relabelHistoricalTargets(flowBoundaryCitationEntries(
     copyeditHistoryEntries(getHistoricalCitationEntries(sourceBaseline, locations, history, historicPrintRoutes, book), copyedit),
-    book?.current?.flowBoundary), [...serviceConstraints?.routes ?? [], ...substitutionRules?.routes ?? [], ...loadShift?.routes ?? [], ...footprint?.routes ?? [], ...land?.routes ?? [], ...acid?.routes ?? [], ...minerals?.routes ?? [], ...fossils?.routes ?? [], ...photochemicalOzone?.routes ?? [], ...ozoneRadiation?.routes ?? [], ...toxicityComparison?.routes ?? []]);
+    book?.current?.flowBoundary), [...serviceConstraints?.routes ?? [], ...substitutionRules?.routes ?? [], ...loadShift?.routes ?? [], ...footprint?.routes ?? [], ...land?.routes ?? [], ...acid?.routes ?? [], ...minerals?.routes ?? [], ...fossils?.routes ?? [], ...photochemicalOzone?.routes ?? [], ...ozoneRadiation?.routes ?? [], ...toxicityComparison?.routes ?? [], ...waterScarcity?.routes ?? []]);
   const addresses = new Set();
   for (const entry of entries) {
     const address = `${entry.path}#${entry.id}`;
@@ -393,7 +395,7 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
   errors.push(...validateFlowBoundaryHistoryOutput(documents, book?.current?.flowBoundary));
   errors.push(...validateServiceConstraintsHistoryOutput(documents, serviceConstraints));
   const previousSurface = (address, actual) => flowBoundaryPreviousSurface(address,
-    serviceConstraintsPreviousSurface(address, substitutionRulesPreviousSurface(address, loadShiftPreviousSurface(address, circularFootprintPreviousSurface(address, landRecoveryPreviousSurface(address, acidEquivalentsPreviousSurface(address, mineralResourcesPreviousSurface(address, fossilResourcesPreviousSurface(address, photochemicalOzonePreviousSurface(address, ozoneRadiationPreviousSurface(address, toxicityComparisonPreviousSurface(address, actual, toxicityComparison), ozoneRadiation), photochemicalOzone), fossils), minerals), acid), land), footprint), loadShift), substitutionRules), serviceConstraints), book?.current?.flowBoundary);
+    serviceConstraintsPreviousSurface(address, substitutionRulesPreviousSurface(address, loadShiftPreviousSurface(address, circularFootprintPreviousSurface(address, landRecoveryPreviousSurface(address, acidEquivalentsPreviousSurface(address, mineralResourcesPreviousSurface(address, fossilResourcesPreviousSurface(address, photochemicalOzonePreviousSurface(address, ozoneRadiationPreviousSurface(address, toxicityComparisonPreviousSurface(address, waterScarcityPreviousSurface(address, actual, waterScarcity), toxicityComparison), ozoneRadiation), photochemicalOzone), fossils), minerals), acid), land), footprint), loadShift), substitutionRules), serviceConstraints), book?.current?.flowBoundary);
   if ((serviceConstraints || loadShift) && book?.sourceRoot) {
     const cases = await loadCasePublications(book.sourceRoot);
     if (serviceConstraints) await observeServiceConstraintsCaseOutputs(root, serviceConstraints, cases, book.sourceCommit);
@@ -401,7 +403,9 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
   }
   if (copyedit) {
     const currentAddresses = observeCopyeditHistory(documents, readerNumberingManifest, readCitationSurface);
-    const toxHistory = qualifyToxicityComparisonHistory(documents, toxicityComparison, currentAddresses);
+    const waterHistory = qualifyWaterScarcityHistory(documents, waterScarcity, currentAddresses);
+    errors.push(...waterHistory.errors);
+    const toxHistory = qualifyToxicityComparisonHistory(documents, toxicityComparison, waterHistory.prior);
     errors.push(...toxHistory.errors);
     const ozradHistory = qualifyOzoneRadiationHistory(documents, ozoneRadiation, toxHistory.prior, fossils, minerals, land);
     errors.push(...ozradHistory.errors);
@@ -431,8 +435,8 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
     // Article fingerprints already checked the complete normalized output.
     // Earlier chapter predicates inspect a prose projection after the new
     // historical apparatus has independently passed its exact DOM checks.
-    if (!copyeditErrors.length && !substitutionHistory.errors.length && !shiftHistory.errors.length && !footprintHistory.errors.length && !landHistory.errors.length && !acidHistory.errors.length && !mineralHistory.errors.length && !fossilHistory.errors.length && !ozoneHistory.errors.length && !ozradHistory.errors.length && !toxHistory.errors.length) for (const document of documents.values()) {
-      for (const notice of document.querySelectorAll('[data-copyedit-history],[data-flow-boundary-history],[data-service-constraints-history],[data-substitution-rules-history],[data-load-shift-history],[data-circular-footprint-history],[data-land-recovery-history],[data-acid-equivalents-history],[data-mineral-resources-history],[data-fossil-resources-history],[data-photochemical-ozone-history],[data-ozone-radiation-history],[data-toxicity-comparison-history]')) notice.remove();
+    if (!copyeditErrors.length && !substitutionHistory.errors.length && !shiftHistory.errors.length && !footprintHistory.errors.length && !landHistory.errors.length && !acidHistory.errors.length && !mineralHistory.errors.length && !fossilHistory.errors.length && !ozoneHistory.errors.length && !ozradHistory.errors.length && !toxHistory.errors.length && !waterHistory.errors.length) for (const document of documents.values()) {
+      for (const notice of document.querySelectorAll('[data-copyedit-history],[data-flow-boundary-history],[data-service-constraints-history],[data-substitution-rules-history],[data-load-shift-history],[data-circular-footprint-history],[data-land-recovery-history],[data-acid-equivalents-history],[data-mineral-resources-history],[data-fossil-resources-history],[data-photochemical-ozone-history],[data-ozone-radiation-history],[data-toxicity-comparison-history],[data-water-scarcity-history]')) notice.remove();
     }
   }
   for (const [path, document] of documents) {
@@ -639,7 +643,8 @@ async function validatePublicationOutput(root, { knownIds = new Set(), sourceCom
       const sourceRoot = resolve(root, '..');
       let current, hostedHistory;
       if (requireCurrent) {
-        const qualify = preview === 'toxicity-comparison' ? validateToxicityComparisonReviewSources
+        const qualify = preview === 'water-scarcity' ? validateWaterScarcityReviewSources
+          : preview === 'toxicity-comparison' ? validateToxicityComparisonReviewSources
           : preview === 'ozone-radiation' ? validateOzoneRadiationReviewSources
           : preview === 'photochemical-ozone' ? validatePhotochemicalOzoneReviewSources
           : preview === 'fossil-resources' ? validateFossilResourcesReviewSources
@@ -733,4 +738,10 @@ export function validateToxicityComparisonPreviewOutput(root, options = {}) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1' || basename(root) !== '.reader-review-output')
     throw new Error('Expected an isolated toxicity comparison preview directory');
   return validatePublicationOutput(root, options, true, 'toxicity-comparison');
+}
+
+export function validateWaterScarcityPreviewOutput(root, options = {}) {
+  if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1' || basename(root) !== '.reader-review-output')
+    throw new Error('Expected an isolated water scarcity preview directory');
+  return validatePublicationOutput(root, options, true, 'water-scarcity');
 }

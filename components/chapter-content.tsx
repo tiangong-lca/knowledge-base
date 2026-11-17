@@ -1,3 +1,4 @@
+import { waterScarcityHistoryControls, waterScarcityOrdinaryId, waterScarcitySource } from '@/scripts/reader-water-scarcity.mjs';
 import { toxicityComparisonHistoryControls, toxicityComparisonOrdinaryId, toxicityComparisonSource } from '@/scripts/reader-toxicity-comparison.mjs';
 import { ozoneRadiationChapter, ozoneRadiationCorrections, ozoneRadiationHistoryControls, ozoneRadiationSource } from '@/scripts/reader-ozone-radiation.mjs';
 import { photochemicalOzoneHistoryControls, photochemicalOzoneSource } from '@/scripts/reader-photochemical-ozone.mjs';
@@ -8,7 +9,7 @@ import { landRecoveryHistoryControls, landRecoveryOrdinaryId, landRecoverySource
 import { circularFootprintHistoryControls, circularFootprintOrdinaryId, circularFootprintSource } from '@/scripts/reader-circular-footprint.mjs';
 import { loadShiftHistoryControls, loadShiftOrdinaryId, loadShiftSource } from '@/scripts/reader-load-shift.mjs';
 import { substitutionRulesHistoryControls, substitutionRulesOrdinaryId, substitutionRulesSource } from '@/scripts/reader-substitution-rules.mjs';
-import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison } from '@/scripts/reader-current-expectations.mjs';
+import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity } from '@/scripts/reader-current-expectations.mjs';
 import { flowBoundaryHistoryControls, flowBoundaryHistoryTargets, flowBoundaryOrdinaryTargets, flowBoundaryOrdinaryId } from '@/scripts/reader-flow-boundary.mjs';
 import { serviceConstraintsHistoryControls, serviceConstraintsOrdinaryId, serviceConstraintsSource } from '@/scripts/reader-service-constraints.mjs';
 import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
@@ -50,6 +51,7 @@ const histories = [
   { controls: photochemicalOzoneHistoryControls(currentPhotochemicalOzone), edition: photochemicalOzoneSource, attribute: 'photochemical-ozone' },
   { controls: ozoneRadiationHistoryControls(currentOzoneRadiation), edition: ozoneRadiationSource, attribute: 'ozone-radiation' },
   { controls: toxicityComparisonHistoryControls(currentToxicityComparison), edition: toxicityComparisonSource, attribute: 'toxicity-comparison' },
+  { controls: waterScarcityHistoryControls(currentWaterScarcity), edition: waterScarcitySource, attribute: 'water-scarcity' },
 ];
 
 function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
@@ -60,7 +62,8 @@ function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
     || circularFootprintOrdinaryId(currentCircularFootprint, route, print, index)
     || landRecoveryOrdinaryId(currentLandRecovery, route, print, index)
     || acidEquivalentsOrdinaryId(currentAcidEquivalents, route, print, index)
-    || toxicityComparisonOrdinaryId(currentToxicityComparison, route, print, index);
+    || toxicityComparisonOrdinaryId(currentToxicityComparison, route, print, index)
+    || waterScarcityOrdinaryId(currentWaterScarcity, route, print, index);
 }
 
 // Leave versioned native fragments below the screen's sticky site header.
@@ -72,7 +75,8 @@ export function currentReaderOrdinaryAttributes(route: string, print: boolean, i
       || id === circularFootprintOrdinaryId(currentCircularFootprint, route, print, index)
       || id === landRecoveryOrdinaryId(currentLandRecovery, route, print, index)
       || id === acidEquivalentsOrdinaryId(currentAcidEquivalents, route, print, index)
-      || id === toxicityComparisonOrdinaryId(currentToxicityComparison, route, print, index))
+      || id === toxicityComparisonOrdinaryId(currentToxicityComparison, route, print, index)
+      || id === waterScarcityOrdinaryId(currentWaterScarcity, route, print, index))
     ? { id, style: scientificHistoryScroll }
     : { id };
 }

@@ -22,6 +22,37 @@ lastReviewedCommit: 578e761a87575f93d1f63f54a30c42400f1c7007
 
 # Publication architecture
 
+## Water-scarcity successor
+
+The #125 B18 successor inserts eight canonical claims (`cl-water125-*`) across
+B18's four retained sections and two `ReaderSection` anchors (`2 + 2 + 0 + (2 + 2)`,
+bringing B18 from 20 to 28 claims and the catalog from 976 to 984 claims) and
+updates B18's frontmatter `description` (`ordinary-0`), keeping 100% of all 976
+prior claims and all 8 `rd-water-*` readings byte-for-byte unchanged with zero
+prior-claim corrections. Before #123 runs its own rollback and reconstructed
+`readerPublicDownloads(waterInput)` receipt checks, `prepareWaterScarcitySource`
+restores the exact `9486bae9` B18 MDX (`8ae52be3...`) and raw source/reading/
+literature extensions, verifying `waterScarcityPredecessorPin`, the `B18:reader-source`
+layout lock, and all 49 bidirectional transitions across 171 dependent consumers.
+
+`reader-water-scarcity-factors.mjs` binds all 9 single-source `ev-water125-*`
+records in 1-to-1 bijection with all 9 `psg-water125-*` passages, their 7 primary
+PDF/XML carriers, all 15 CRC32-verified official EF 3.1 XML member hashes on
+`rd-flow-pilot-ef31` via `sameScienceValue`, and all 106 structured `numericFacts`
+(`106/106` actively verified in 40-place `BigInt` fixed-point arithmetic, 10:1
+industrial groundwater split, `1350/1000 = 1.35×` denominator amplification,
+`AU`/`BD`, `CL`/`CN` and `BE`/`CA` rank reversals, `-0.005` unlocated global
+asymmetry, `Table S6.2` 52-row A–E / row 53 `Fiji` F–Z boundary, reviewed/
+conceptIds self-checks, and prose assertions across all 8 claims). At B18 web
+and `/print` addresses, `qualifyWaterScarcityHistory` binds `ordinary-0` and all
+58 prior B18 citation addresses across 7 web and 7 print dated controls (leaving
+unchanged Section 3 unamended), while `reader-flow-boundary.mjs` strictly validates
+grouped print `origins` (`print-unit-...` + `print-reading-unit-...`) alongside
+`#109` copyedit-history and legacy-scope siblings without single-node attribute
+short-circuiting. `waterScarcityCapturePin` binds 6 changed articles (B18 web/print,
+neighbor B17/B19 pagination descriptions, and `uncertainty-and-variability`
+web/print Note 8,9 -> 10,11 label sync) and 8 changed public artifacts.
+
 ## Toxicity-comparison successor
 
 The #123 B19 successor inserts eight canonical claims (`cl-tox123-*`) across
