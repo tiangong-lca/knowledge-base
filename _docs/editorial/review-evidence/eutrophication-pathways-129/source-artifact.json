@@ -1,0 +1,2223 @@
+{
+  "schemaVersion": 1,
+  "kind": "source",
+  "unit": "eutrophication-pathways-129",
+  "subjectSha256": "4ffaefb370c3418c0309db3471666f7dcfbc6020a6ecbb4f95c3ef00c2107c42",
+  "date": "2026-11-18",
+  "scope": [
+    "content/docs/book/acidification-and-nutrient-pathways.mdx",
+    "sources:src-book-recipe-2017-primary-article",
+    "sources:src-book-unep-glam-2019-volume2",
+    "sources:src-book-ilcd-2011-lcia-recommendations",
+    "sources:src-kb44-ec2021",
+    "sources:src-flow-pilot-ef31-update",
+    "sources:src-land111-rivm2016",
+    "sources:src-land111-lcimpact2020-article",
+    "sources:src-fossil117-jrc109369",
+    "readings:rd-recipe-2017-primary-article",
+    "readings:rd-unep-glam-2019-pathways",
+    "readings:rd-ilcd-2011-eutrophication-pathways",
+    "readings:rd-kb44-ec2021",
+    "readings:rd-flow-pilot-ef31",
+    "readings:rd-flow-pilot-ef31-update",
+    "readings:rd-land111-rivm2016",
+    "readings:rd-land111-lcimpact2020-article",
+    "readings:rd-fossil117-jrc109369",
+    "literature:lit-m05",
+    "literature:lit-n04",
+    "literature:work-recipe-2017-method-article",
+    "literature:work-unep-glam-2019-volume2",
+    "literature:work-ilcd-2011-lcia-recommendations",
+    "literature:work-flow-pilot-ef31",
+    "literature:work-flow-pilot-ef31-update",
+    "literature:work-land111-lcimpact2020-article",
+    "literature:work-fossil117-jrc109369",
+    "researchMetadata:reading-ledger",
+    "researchMetadata:literature-map",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:order:sources",
+    "researchMetadata:order:readings",
+    "researchMetadata:order:gaps",
+    "researchMetadata:order:revisions",
+    "researchMetadata:order:literature",
+    "researchMetadata:order:queries",
+    "researchMetadata:public-projection",
+    "claims:cl-eutro129-category-genealogy",
+    "claims:cl-eutro129-phosphorus-soil-water-interface",
+    "claims:cl-eutro129-phosphorus-stoichiometry-and-p2o5",
+    "claims:cl-eutro129-nitrogen-soil-prohibition",
+    "claims:cl-eutro129-aquatic-and-airborne-n-reversals",
+    "claims:cl-eutro129-location-copies-and-nox-inversion",
+    "claims:cl-eutro129-normalization-double-counting-and-xml-anomalies",
+    "claims:cl-eutro129-operational-synthesis",
+    "evidence:ev-eutro129-ilcd2011-eutro",
+    "evidence:ev-eutro129-glam2019-eutro",
+    "evidence:ev-eutro129-ec2021-field-rules",
+    "evidence:ev-eutro129-jrc109369-eutro",
+    "evidence:ev-eutro129-jrc130796-eutro",
+    "evidence:ev-eutro129-ef31-eutro-xmls",
+    "evidence:ev-eutro129-ef31-nf-eutro",
+    "evidence:ev-eutro129-rivm-ch8-s4",
+    "evidence:ev-eutro129-recipe2017-eutro",
+    "evidence:ev-eutro129-lcimpact2020-eutro",
+    "evidence:ev-eutro129-lcimpact-ch8-fw",
+    "evidence:ev-eutro129-lcimpact-ch9-marine",
+    "sources:src-eutro129-ef31-selected-members",
+    "sources:src-eutro129-lcimpact-ch8-ch9",
+    "readings:rd-eutro129-lcimpact-ch8-ch9",
+    "gaps:gap-eutro129-watershed-hydrodynamics-and-grid-rasters",
+    "revisions:rev-eutro129-b16-eutrophication-and-field-interfaces",
+    "literature:work-eutro129-lcimpact-ch8-ch9",
+    "queries:q-eutro129-eutrophication-interfaces-stoichiometry-and-packages-20261118"
+  ],
+  "observed": "Primary scoped judgment integrating two-round unconditional-PASS independent source, zero-context full-chapter reader and publication-engineering audits with direct original, export and browser/print checks; no human or empirical certification.",
+  "observations": {
+    "state": {
+      "before": "844fa83c2c79de48651279e237996f5e57e132bcb8abbef2faf88c11882b644d",
+      "after": "acfe4c53483c3018771be03ff3d678dd975c00a7ba0802edbee181ab82ee6531"
+    },
+    "changes": [
+      {
+        "kind": "file",
+        "key": "content/docs/book/acidification-and-nutrient-pathways.mdx",
+        "from": "c356117fe53d98c9b3c116e09d4c3a315973d3a6b6b61abde9846fa07c923984",
+        "to": "a0275fc96f9ee419b49036ebcec89532a4153773f6315f9f43202bb3cb8fe90f",
+        "rationale": "在B16第四节cl-path-operation-indicator（注22）之后、同一排放不同的环境问题小节之前新增8段富营养化类别谱系、农田磷氮界面、化学计量、河海输移与发行包边界比较论述，其余章节结构与前22注不变。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-book-recipe-2017-primary-article",
+        "from": {
+          "raw": "3175fcc08c70ae4a120fe1c8d83b6e27eb7b1df81d44e1bda732a21fd781285d",
+          "public": "3175fcc08c70ae4a120fe1c8d83b6e27eb7b1df81d44e1bda732a21fd781285d",
+          "protected": "3175fcc08c70ae4a120fe1c8d83b6e27eb7b1df81d44e1bda732a21fd781285d"
+        },
+        "to": {
+          "raw": "8013da45e253bdca7663259ccc51b6c07ef0604732e97b239854d2456050065c",
+          "public": "8013da45e253bdca7663259ccc51b6c07ef0604732e97b239854d2456050065c",
+          "protected": "8013da45e253bdca7663259ccc51b6c07ef0604732e97b239854d2456050065c"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-book-unep-glam-2019-volume2",
+        "from": {
+          "raw": "33396ab9d7b3b3501c7c49bdd090b6c08d7b59c8eb43d4cb648bb924ca0496a1",
+          "public": "33396ab9d7b3b3501c7c49bdd090b6c08d7b59c8eb43d4cb648bb924ca0496a1",
+          "protected": "33396ab9d7b3b3501c7c49bdd090b6c08d7b59c8eb43d4cb648bb924ca0496a1"
+        },
+        "to": {
+          "raw": "85ddb6d6d8a5fcdd2f25be9e119f2637d444a737d013e652366d56379619336c",
+          "public": "85ddb6d6d8a5fcdd2f25be9e119f2637d444a737d013e652366d56379619336c",
+          "protected": "85ddb6d6d8a5fcdd2f25be9e119f2637d444a737d013e652366d56379619336c"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-book-ilcd-2011-lcia-recommendations",
+        "from": {
+          "raw": "5a6182a10aa8ad4b598d1fcb4afd28582a1950e560b7387a266454be7fbbab52",
+          "public": "5a6182a10aa8ad4b598d1fcb4afd28582a1950e560b7387a266454be7fbbab52",
+          "protected": "5a6182a10aa8ad4b598d1fcb4afd28582a1950e560b7387a266454be7fbbab52"
+        },
+        "to": {
+          "raw": "486a978bfd8e361135ce7bec7d10f745e75688117290a76962d4843a5668e9e2",
+          "public": "486a978bfd8e361135ce7bec7d10f745e75688117290a76962d4843a5668e9e2",
+          "protected": "486a978bfd8e361135ce7bec7d10f745e75688117290a76962d4843a5668e9e2"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-kb44-ec2021",
+        "from": {
+          "raw": "cbc9dd2965dea1496e795fcfd96ffcece8eebf3c20c349b5bab07ddc85a1da5f",
+          "public": "cbc9dd2965dea1496e795fcfd96ffcece8eebf3c20c349b5bab07ddc85a1da5f",
+          "protected": "cbc9dd2965dea1496e795fcfd96ffcece8eebf3c20c349b5bab07ddc85a1da5f"
+        },
+        "to": {
+          "raw": "402353f022f74617981c33d3fcee9f6611c48b13ecc53b12c222db583d2c58e6",
+          "public": "402353f022f74617981c33d3fcee9f6611c48b13ecc53b12c222db583d2c58e6",
+          "protected": "402353f022f74617981c33d3fcee9f6611c48b13ecc53b12c222db583d2c58e6"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-flow-pilot-ef31-update",
+        "from": {
+          "raw": "73bb162752969dbfabeca6dd0eca0571f47064bc8808948227eaeeafd7cc65ff",
+          "public": "73bb162752969dbfabeca6dd0eca0571f47064bc8808948227eaeeafd7cc65ff",
+          "protected": "73bb162752969dbfabeca6dd0eca0571f47064bc8808948227eaeeafd7cc65ff"
+        },
+        "to": {
+          "raw": "be86cc0c12aa8f8db605adf49146aefe2e0b5b46dc212886fce47aab65f5bbb7",
+          "public": "be86cc0c12aa8f8db605adf49146aefe2e0b5b46dc212886fce47aab65f5bbb7",
+          "protected": "be86cc0c12aa8f8db605adf49146aefe2e0b5b46dc212886fce47aab65f5bbb7"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-land111-rivm2016",
+        "from": {
+          "raw": "c3b3f6e2880cfa0ffa7f915a76adf5acd4903bed1a8555a2ab2ba345ea208fe7",
+          "public": "c3b3f6e2880cfa0ffa7f915a76adf5acd4903bed1a8555a2ab2ba345ea208fe7",
+          "protected": "c3b3f6e2880cfa0ffa7f915a76adf5acd4903bed1a8555a2ab2ba345ea208fe7"
+        },
+        "to": {
+          "raw": "9898974097af3ad0f88004e5e90fdd08aa35334818746f99ca140d492e833be4",
+          "public": "9898974097af3ad0f88004e5e90fdd08aa35334818746f99ca140d492e833be4",
+          "protected": "9898974097af3ad0f88004e5e90fdd08aa35334818746f99ca140d492e833be4"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-land111-lcimpact2020-article",
+        "from": {
+          "raw": "449ef3d3ca5012083931ecc2267adb3a593b2cf83d8795bca052ae90b309b9a9",
+          "public": "449ef3d3ca5012083931ecc2267adb3a593b2cf83d8795bca052ae90b309b9a9",
+          "protected": "449ef3d3ca5012083931ecc2267adb3a593b2cf83d8795bca052ae90b309b9a9"
+        },
+        "to": {
+          "raw": "89be714a56e1e7079bedf1d06ac2c1915ddb08e52ef9d1590c5e01d5726abecd",
+          "public": "89be714a56e1e7079bedf1d06ac2c1915ddb08e52ef9d1590c5e01d5726abecd",
+          "protected": "89be714a56e1e7079bedf1d06ac2c1915ddb08e52ef9d1590c5e01d5726abecd"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-fossil117-jrc109369",
+        "from": {
+          "raw": "3acb635aad8b2654c408b6a2b8965f75bc9da900cc9e2cfca569b5e543c241fa",
+          "public": "3acb635aad8b2654c408b6a2b8965f75bc9da900cc9e2cfca569b5e543c241fa",
+          "protected": "3acb635aad8b2654c408b6a2b8965f75bc9da900cc9e2cfca569b5e543c241fa"
+        },
+        "to": {
+          "raw": "71c5ddec0bfa7ec408442f6041c910a160350288c0fba9934004f3ec43364cb6",
+          "public": "71c5ddec0bfa7ec408442f6041c910a160350288c0fba9934004f3ec43364cb6",
+          "protected": "71c5ddec0bfa7ec408442f6041c910a160350288c0fba9934004f3ec43364cb6"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-recipe-2017-primary-article",
+        "from": {
+          "raw": "a06e334737fbf6b4873c460db570307199cac5b7ae8e7d60ccb18673d0695cad",
+          "public": null,
+          "protected": "a06e334737fbf6b4873c460db570307199cac5b7ae8e7d60ccb18673d0695cad"
+        },
+        "to": {
+          "raw": "cdee00f483e6f850a97e2ae0a22c1f2dcf5a75cbcd9bb3fe3e7d0ebfcf87b468",
+          "public": null,
+          "protected": "cdee00f483e6f850a97e2ae0a22c1f2dcf5a75cbcd9bb3fe3e7d0ebfcf87b468"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-unep-glam-2019-pathways",
+        "from": {
+          "raw": "3eede98c275120994669ee26b7b11eb1d4443476aa1b9a170567142220bd7ece",
+          "public": null,
+          "protected": "3eede98c275120994669ee26b7b11eb1d4443476aa1b9a170567142220bd7ece"
+        },
+        "to": {
+          "raw": "51e5441b742f53e37c2d384c3df4304f9bdde62cd0fc3676bb53e458e848d7ee",
+          "public": null,
+          "protected": "51e5441b742f53e37c2d384c3df4304f9bdde62cd0fc3676bb53e458e848d7ee"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-ilcd-2011-eutrophication-pathways",
+        "from": {
+          "raw": "1d38255dbdafb48d493dca8e9333b4accc1c7ce981a32d13630f18513ba91a3d",
+          "public": null,
+          "protected": "1d38255dbdafb48d493dca8e9333b4accc1c7ce981a32d13630f18513ba91a3d"
+        },
+        "to": {
+          "raw": "75a03365b59dd7d5450e6ea50e0d176e1816b767947e2daeb4e7ab0f9d875e61",
+          "public": null,
+          "protected": "75a03365b59dd7d5450e6ea50e0d176e1816b767947e2daeb4e7ab0f9d875e61"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-kb44-ec2021",
+        "from": {
+          "raw": "a793c49edd209b4c161ef1d6d06807720349c227551fe08bc32a65dfbc6b2b6f",
+          "public": null,
+          "protected": "a793c49edd209b4c161ef1d6d06807720349c227551fe08bc32a65dfbc6b2b6f"
+        },
+        "to": {
+          "raw": "12fb8667f434d853672c2ed8c44045c6bde5d291768ea867d8edb150606b6454",
+          "public": null,
+          "protected": "12fb8667f434d853672c2ed8c44045c6bde5d291768ea867d8edb150606b6454"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-flow-pilot-ef31",
+        "from": {
+          "raw": "8b1f8d38f2dac5f6bbc6e4f0296ca68b3ea5da38bc69572039c2e8c538880196",
+          "public": null,
+          "protected": "8b1f8d38f2dac5f6bbc6e4f0296ca68b3ea5da38bc69572039c2e8c538880196"
+        },
+        "to": {
+          "raw": "af08f13edc8b15f714efb82bb3bf35f1ee9b68825cc1f690b62fa037ba4c8c84",
+          "public": null,
+          "protected": "af08f13edc8b15f714efb82bb3bf35f1ee9b68825cc1f690b62fa037ba4c8c84"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-flow-pilot-ef31-update",
+        "from": {
+          "raw": "403d703443c50df28833daaab29fc34a069ae830bd0def6d40b2c95e7e8b9b1a",
+          "public": null,
+          "protected": "403d703443c50df28833daaab29fc34a069ae830bd0def6d40b2c95e7e8b9b1a"
+        },
+        "to": {
+          "raw": "9d1d1c605fc72d822462e6a72c2139193d86182e0ad0fbee2cb8e570bdd08d25",
+          "public": null,
+          "protected": "9d1d1c605fc72d822462e6a72c2139193d86182e0ad0fbee2cb8e570bdd08d25"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-land111-rivm2016",
+        "from": {
+          "raw": "5b4b27b363f30806db80eb3a21bbc4b40637a38792f3307216f22a9f4c02cee5",
+          "public": null,
+          "protected": "5b4b27b363f30806db80eb3a21bbc4b40637a38792f3307216f22a9f4c02cee5"
+        },
+        "to": {
+          "raw": "6dc7ca68878d2c1e0e7f7f3ee122dbe4497dc5ad62f5836ccb19fdd33f92b680",
+          "public": null,
+          "protected": "6dc7ca68878d2c1e0e7f7f3ee122dbe4497dc5ad62f5836ccb19fdd33f92b680"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-land111-lcimpact2020-article",
+        "from": {
+          "raw": "ef30346ea8ef5fc8f92a818664e23463bc98334323bc3678e89050902a49a9c1",
+          "public": null,
+          "protected": "ef30346ea8ef5fc8f92a818664e23463bc98334323bc3678e89050902a49a9c1"
+        },
+        "to": {
+          "raw": "3729402a20719781b655aa6bfbb9dc9ee497e25b9f17e602a9fe7fd0e19341ac",
+          "public": null,
+          "protected": "3729402a20719781b655aa6bfbb9dc9ee497e25b9f17e602a9fe7fd0e19341ac"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-fossil117-jrc109369",
+        "from": {
+          "raw": "613b6defe4c2f79a6ba42f8ec4e068bf0eeabecdeacd42d1efb648e2db19a6c9",
+          "public": null,
+          "protected": "613b6defe4c2f79a6ba42f8ec4e068bf0eeabecdeacd42d1efb648e2db19a6c9"
+        },
+        "to": {
+          "raw": "08fa899f5597c77cec04eef9b1826cdb52f8c856612f0aa33d607d65f722527a",
+          "public": null,
+          "protected": "08fa899f5597c77cec04eef9b1826cdb52f8c856612f0aa33d607d65f722527a"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:lit-m05",
+        "from": {
+          "raw": "b298037c7fa54e745bf66c6733317fb2f3287604652d8a90d81b59351ec08bcf",
+          "public": null,
+          "protected": "b298037c7fa54e745bf66c6733317fb2f3287604652d8a90d81b59351ec08bcf"
+        },
+        "to": {
+          "raw": "425ad387fa61467ff173cb4154a81d91d94bd142b671649c0e8ce48bfe0d75e0",
+          "public": null,
+          "protected": "425ad387fa61467ff173cb4154a81d91d94bd142b671649c0e8ce48bfe0d75e0"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:lit-n04",
+        "from": {
+          "raw": "ee8b4bc024687ff832d588cc9a9e6d7759e32b37e2ce354a82d99b0801d71894",
+          "public": null,
+          "protected": "ee8b4bc024687ff832d588cc9a9e6d7759e32b37e2ce354a82d99b0801d71894"
+        },
+        "to": {
+          "raw": "1cf6556b2a33d8128904ffa0f3c31b8f18d61484c9c60902e8d886aa487704e6",
+          "public": null,
+          "protected": "1cf6556b2a33d8128904ffa0f3c31b8f18d61484c9c60902e8d886aa487704e6"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-recipe-2017-method-article",
+        "from": {
+          "raw": "488f6ba74db3e168e1defea67dcb488abf1a5571269d03d04de5dd490ba0732c",
+          "public": null,
+          "protected": "488f6ba74db3e168e1defea67dcb488abf1a5571269d03d04de5dd490ba0732c"
+        },
+        "to": {
+          "raw": "8bae7afdbf27d94f18083dc3c55d68cbb723252bb601c099a5c4ea57857e83a8",
+          "public": null,
+          "protected": "8bae7afdbf27d94f18083dc3c55d68cbb723252bb601c099a5c4ea57857e83a8"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-unep-glam-2019-volume2",
+        "from": {
+          "raw": "01588471475500e7aea35e51ff609bc13c61adad7c51b2578f1a6f3c24191eee",
+          "public": null,
+          "protected": "01588471475500e7aea35e51ff609bc13c61adad7c51b2578f1a6f3c24191eee"
+        },
+        "to": {
+          "raw": "3aa19809f9f64de89e9f2ebbbc84937fa13cb675e9236041df29e1f10b00b36d",
+          "public": null,
+          "protected": "3aa19809f9f64de89e9f2ebbbc84937fa13cb675e9236041df29e1f10b00b36d"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-ilcd-2011-lcia-recommendations",
+        "from": {
+          "raw": "cbe9edf4bd20bfb0cf25429343950118afc997d9311cab8660a1382e71418866",
+          "public": null,
+          "protected": "cbe9edf4bd20bfb0cf25429343950118afc997d9311cab8660a1382e71418866"
+        },
+        "to": {
+          "raw": "3c641ed78430cfa43cb982cc356a5729461f2621783d892305988f79d737e729",
+          "public": null,
+          "protected": "3c641ed78430cfa43cb982cc356a5729461f2621783d892305988f79d737e729"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-flow-pilot-ef31",
+        "from": {
+          "raw": "97126620e1946e0e6c1606438340c2107fbb86a0d1f652e89ea7129f429ec959",
+          "public": null,
+          "protected": "97126620e1946e0e6c1606438340c2107fbb86a0d1f652e89ea7129f429ec959"
+        },
+        "to": {
+          "raw": "5ef74dbd837efca6f10a69a3b30948f5f527b470f2600acb53a2f4ccf29a745e",
+          "public": null,
+          "protected": "5ef74dbd837efca6f10a69a3b30948f5f527b470f2600acb53a2f4ccf29a745e"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-flow-pilot-ef31-update",
+        "from": {
+          "raw": "1f09bed0e657f165670feaf649194c989a33c8f0c81ea84a49ee52bdf8cd7f96",
+          "public": null,
+          "protected": "1f09bed0e657f165670feaf649194c989a33c8f0c81ea84a49ee52bdf8cd7f96"
+        },
+        "to": {
+          "raw": "9d40caec4e70c3c5132fbc053e41fc1f50cebb90e51c37f82562628a426f54bd",
+          "public": null,
+          "protected": "9d40caec4e70c3c5132fbc053e41fc1f50cebb90e51c37f82562628a426f54bd"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-land111-lcimpact2020-article",
+        "from": {
+          "raw": "e851f697554cf29c7848f205bdee450e32a29a44541c3ed44c93ac596c007e01",
+          "public": null,
+          "protected": "e851f697554cf29c7848f205bdee450e32a29a44541c3ed44c93ac596c007e01"
+        },
+        "to": {
+          "raw": "ea161413e8a4b8dfa6a698d475e1022a97d5863ed5fec9273a031ed2be05c598",
+          "public": null,
+          "protected": "ea161413e8a4b8dfa6a698d475e1022a97d5863ed5fec9273a031ed2be05c598"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-fossil117-jrc109369",
+        "from": {
+          "raw": "aa3668db9525fc501aa8de565df300eacf664ec0bcaf5e6d3a2c870846e90b9a",
+          "public": null,
+          "protected": "aa3668db9525fc501aa8de565df300eacf664ec0bcaf5e6d3a2c870846e90b9a"
+        },
+        "to": {
+          "raw": "c9b1ac17ffa27399939023db68a40f7192cbeee915659a7fcb0be790644bf73a",
+          "public": null,
+          "protected": "c9b1ac17ffa27399939023db68a40f7192cbeee915659a7fcb0be790644bf73a"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:reading-ledger",
+        "from": {
+          "raw": "21ec8be0b2f54679b079b58f439c8f0aa4b51c83ea3efe69232ae4994e03c92a",
+          "public": null,
+          "protected": "21ec8be0b2f54679b079b58f439c8f0aa4b51c83ea3efe69232ae4994e03c92a"
+        },
+        "to": {
+          "raw": "13cdbb60a6ec25282b9df3768636a0befa82201a14d30dd11a6ec2be44b8ab46",
+          "public": null,
+          "protected": "13cdbb60a6ec25282b9df3768636a0befa82201a14d30dd11a6ec2be44b8ab46"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:literature-map",
+        "from": {
+          "raw": "8bf1a3ed6f5d01cd22bd88071194f7b12ac76f9043164c4ec7b2564591b3f38f",
+          "public": null,
+          "protected": "8bf1a3ed6f5d01cd22bd88071194f7b12ac76f9043164c4ec7b2564591b3f38f"
+        },
+        "to": {
+          "raw": "fb065309cf267a1eb1ca2e87f5614bd23c3881a6c57fe95be15f1c6fff1c76c1",
+          "public": null,
+          "protected": "fb065309cf267a1eb1ca2e87f5614bd23c3881a6c57fe95be15f1c6fff1c76c1"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:claims",
+        "from": {
+          "raw": "2d385a12e3db009f48237b5b3a5477f48c339684edc3f457e0148b4679aa957b",
+          "public": null,
+          "protected": "2d385a12e3db009f48237b5b3a5477f48c339684edc3f457e0148b4679aa957b"
+        },
+        "to": {
+          "raw": "96ec0d47077839cf0ea26734a3a23d1afee11da65e82d4a3b1fc211e0606f402",
+          "public": null,
+          "protected": "96ec0d47077839cf0ea26734a3a23d1afee11da65e82d4a3b1fc211e0606f402"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:evidence",
+        "from": {
+          "raw": "f878cd2389d05037b5768bedad58b3e507974e2cc28d5dc3aa0db4ddfaf6c744",
+          "public": null,
+          "protected": "f878cd2389d05037b5768bedad58b3e507974e2cc28d5dc3aa0db4ddfaf6c744"
+        },
+        "to": {
+          "raw": "737ad1d2e4c857cf816fa14d7dd1559d9a3000933553af071021488abb027d85",
+          "public": null,
+          "protected": "737ad1d2e4c857cf816fa14d7dd1559d9a3000933553af071021488abb027d85"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:sources",
+        "from": {
+          "raw": "a55543500ff55fcb68e6ae305706a57bb74710352ad770de5404b6621c95c15e",
+          "public": null,
+          "protected": "a55543500ff55fcb68e6ae305706a57bb74710352ad770de5404b6621c95c15e"
+        },
+        "to": {
+          "raw": "43847f9681632739bbfbfbea0e43b495be796e5b2f9206e9334c89748f9a44c9",
+          "public": null,
+          "protected": "43847f9681632739bbfbfbea0e43b495be796e5b2f9206e9334c89748f9a44c9"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:readings",
+        "from": {
+          "raw": "4abe78e0b412e2807e26fe199ba3b2c8cc54973a276cccd9dfe73951ec1e5464",
+          "public": null,
+          "protected": "4abe78e0b412e2807e26fe199ba3b2c8cc54973a276cccd9dfe73951ec1e5464"
+        },
+        "to": {
+          "raw": "c849046674623018c66bacad3308f149c0463c0a7f35519db25e7be397709299",
+          "public": null,
+          "protected": "c849046674623018c66bacad3308f149c0463c0a7f35519db25e7be397709299"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:gaps",
+        "from": {
+          "raw": "91a7acc53f33f82e0a642d39bdbaccb96fcd12615ea72f8904422cc474361614",
+          "public": null,
+          "protected": "91a7acc53f33f82e0a642d39bdbaccb96fcd12615ea72f8904422cc474361614"
+        },
+        "to": {
+          "raw": "d8c52a9a2d7803d631f0e902dba10c8b78796eb0924062809a41e6ef2a991bce",
+          "public": null,
+          "protected": "d8c52a9a2d7803d631f0e902dba10c8b78796eb0924062809a41e6ef2a991bce"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:revisions",
+        "from": {
+          "raw": "e3a577b11972471d95cc6749501f1de3f63dcab05a71d8cb23ace7b6b40400fb",
+          "public": null,
+          "protected": "e3a577b11972471d95cc6749501f1de3f63dcab05a71d8cb23ace7b6b40400fb"
+        },
+        "to": {
+          "raw": "3edbeaf381fb0b0caa3553ab4ff3588e7fa53bad8b4dbda39e0b47a5c2cb0a03",
+          "public": null,
+          "protected": "3edbeaf381fb0b0caa3553ab4ff3588e7fa53bad8b4dbda39e0b47a5c2cb0a03"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:literature",
+        "from": {
+          "raw": "f0d0634ba1cc8c5657413325ec1c5ff43776700acbe4e490d9932b70abbf4dc0",
+          "public": null,
+          "protected": "f0d0634ba1cc8c5657413325ec1c5ff43776700acbe4e490d9932b70abbf4dc0"
+        },
+        "to": {
+          "raw": "ebacafc6bfdd3ff4912f7814e7ccecb06c0b0fc3fba74adbdfc2046a91c95d9f",
+          "public": null,
+          "protected": "ebacafc6bfdd3ff4912f7814e7ccecb06c0b0fc3fba74adbdfc2046a91c95d9f"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:queries",
+        "from": {
+          "raw": "74524a598baf6c1170f83dde2c4f0176e2b17dc2e29f8b6c9ceeab33e88acf9d",
+          "public": null,
+          "protected": "74524a598baf6c1170f83dde2c4f0176e2b17dc2e29f8b6c9ceeab33e88acf9d"
+        },
+        "to": {
+          "raw": "62a5dea67b68739b36437645e420b35e90cb666436276451cc8d78c90d7a7490",
+          "public": null,
+          "protected": "62a5dea67b68739b36437645e420b35e90cb666436276451cc8d78c90d7a7490"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:public-projection",
+        "from": {
+          "raw": "0da94f0535edfa48a40120c139f5c07bbc99b0929acce976a97a4487a16573dd",
+          "public": null,
+          "protected": "0da94f0535edfa48a40120c139f5c07bbc99b0929acce976a97a4487a16573dd"
+        },
+        "to": {
+          "raw": "0266c4122509f777c6e9246523625cb6c366afd13cb575967b82d8bb6e6af1df",
+          "public": null,
+          "protected": "0266c4122509f777c6e9246523625cb6c366afd13cb575967b82d8bb6e6af1df"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-eutro129-category-genealogy",
+        "from": null,
+        "to": {
+          "raw": "03b297a85b15d097cab39db090f05acca0a8d37a1807cd7aee3815f60aac7966",
+          "public": "03b297a85b15d097cab39db090f05acca0a8d37a1807cd7aee3815f60aac7966",
+          "protected": "183fe4c1aa2ea25e3cad0a3237a9f9f43930a02e4dfe768b1e6bbd8ebf529dd1"
+        },
+        "rationale": "登记B16第四节新增营养富集跨体系比较规范论述及其证据链、适用范围与边界限定。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-eutro129-phosphorus-soil-water-interface",
+        "from": null,
+        "to": {
+          "raw": "5046dcd8a8c6d41c2abf5cb693b37f232c56db2eec62ec1de24a153373f60036",
+          "public": "5046dcd8a8c6d41c2abf5cb693b37f232c56db2eec62ec1de24a153373f60036",
+          "protected": "29f460975478d59027708e10d5e3c548fae5b7d2e202bd595e95deabac2052f6"
+        },
+        "rationale": "登记B16第四节新增营养富集跨体系比较规范论述及其证据链、适用范围与边界限定。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-eutro129-phosphorus-stoichiometry-and-p2o5",
+        "from": null,
+        "to": {
+          "raw": "ad0c931ba56ade00c20bcdbe381dad34bff1dcca2266bb68cc580eed23712170",
+          "public": "ad0c931ba56ade00c20bcdbe381dad34bff1dcca2266bb68cc580eed23712170",
+          "protected": "cd9861c474c78bf1e0b18a4382916914060209a20a6d87476a6e141582418b55"
+        },
+        "rationale": "登记B16第四节新增营养富集跨体系比较规范论述及其证据链、适用范围与边界限定。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-eutro129-nitrogen-soil-prohibition",
+        "from": null,
+        "to": {
+          "raw": "8b5d519ebdbb245c8bed25fa71c9233691563d1a9ba5f22b290da43c884a4d90",
+          "public": "8b5d519ebdbb245c8bed25fa71c9233691563d1a9ba5f22b290da43c884a4d90",
+          "protected": "fd860e6ca9942952a3db9ec3e268ac4914f6eb51a59edc17198abaaeab8f05bb"
+        },
+        "rationale": "登记B16第四节新增营养富集跨体系比较规范论述及其证据链、适用范围与边界限定。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-eutro129-aquatic-and-airborne-n-reversals",
+        "from": null,
+        "to": {
+          "raw": "a31a2e56c23713b6cf6d4d73dc75c7173f829d880a9cb4255980df071b529a11",
+          "public": "a31a2e56c23713b6cf6d4d73dc75c7173f829d880a9cb4255980df071b529a11",
+          "protected": "c8477406f269ebd484ed9505616dfb488ac85212e4517e2bda55603fccf133b3"
+        },
+        "rationale": "登记B16第四节新增营养富集跨体系比较规范论述及其证据链、适用范围与边界限定。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-eutro129-location-copies-and-nox-inversion",
+        "from": null,
+        "to": {
+          "raw": "1a9147febc53840162dbd3df2956ecd853da791f58b9289ce288e9f4f6fe15e2",
+          "public": "1a9147febc53840162dbd3df2956ecd853da791f58b9289ce288e9f4f6fe15e2",
+          "protected": "36b15358397baefac41dc50b2aa023f4fe955f2fa90cfc6aead2f79a0f0730f0"
+        },
+        "rationale": "登记B16第四节新增营养富集跨体系比较规范论述及其证据链、适用范围与边界限定。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-eutro129-normalization-double-counting-and-xml-anomalies",
+        "from": null,
+        "to": {
+          "raw": "12d287445a901fcea4cdd34fd4b72f2cc1e607141aedc8ce48c0617fc285aca3",
+          "public": "12d287445a901fcea4cdd34fd4b72f2cc1e607141aedc8ce48c0617fc285aca3",
+          "protected": "24d197a1ecd98da1d5da50ea3702e379e869a33945a364b76cccee2df8aac9e4"
+        },
+        "rationale": "登记B16第四节新增营养富集跨体系比较规范论述及其证据链、适用范围与边界限定。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-eutro129-operational-synthesis",
+        "from": null,
+        "to": {
+          "raw": "ba22482893edcfdb12365fea5c684346227f483aaa307faa7b9dff6753a63244",
+          "public": "ba22482893edcfdb12365fea5c684346227f483aaa307faa7b9dff6753a63244",
+          "protected": "dadc2108d4e006f634102c746187a5e81c04805e193977861b72c0cde24dbf0f"
+        },
+        "rationale": "登记B16第四节新增营养富集跨体系比较规范论述及其证据链、适用范围与边界限定。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-eutro129-ilcd2011-eutro",
+        "from": null,
+        "to": {
+          "raw": "5da02a8ac10b9b7885393e3bb4698588e5a5236ff231ed0a5db8cca56a8edb56",
+          "public": "1223993536452fecbc648fe7e59b52fba07bd8fea575646aef5802182991a64e",
+          "protected": "5da02a8ac10b9b7885393e3bb4698588e5a5236ff231ed0a5db8cca56a8edb56"
+        },
+        "rationale": "登记与原始载体选段1对1绑定的富营养化证据记录与精确结构化数值事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-eutro129-glam2019-eutro",
+        "from": null,
+        "to": {
+          "raw": "a2c6540f2366b1f69814f4b9497b517ce8a9565953b0dbadc3e0a81d33a419f1",
+          "public": "d6737e63f02195ab95a37a5dc3a52a2e6b90dca69dbfda860ad396019d7bd441",
+          "protected": "a2c6540f2366b1f69814f4b9497b517ce8a9565953b0dbadc3e0a81d33a419f1"
+        },
+        "rationale": "登记与原始载体选段1对1绑定的富营养化证据记录与精确结构化数值事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-eutro129-ec2021-field-rules",
+        "from": null,
+        "to": {
+          "raw": "e349a5cfeb0052e42f8bca67d1b2f20131448155129729383adc24a55af86c83",
+          "public": "5c5c5e0d2c558cc90a0e6236ab758f0c85c9632c57652caefaa9b3693d9c2907",
+          "protected": "e349a5cfeb0052e42f8bca67d1b2f20131448155129729383adc24a55af86c83"
+        },
+        "rationale": "登记与原始载体选段1对1绑定的富营养化证据记录与精确结构化数值事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-eutro129-jrc109369-eutro",
+        "from": null,
+        "to": {
+          "raw": "3b8999497b19eb2da11e662a0a9023c4a1b3749c864c5e827030f33ee76584e8",
+          "public": "a3da0e78f5c0a77558c6826387f4612777f0ff4bb7ebfdcc9f4574cfc3baf21d",
+          "protected": "3b8999497b19eb2da11e662a0a9023c4a1b3749c864c5e827030f33ee76584e8"
+        },
+        "rationale": "登记与原始载体选段1对1绑定的富营养化证据记录与精确结构化数值事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-eutro129-jrc130796-eutro",
+        "from": null,
+        "to": {
+          "raw": "6f6ccd59452645aba8da7d17606354c944d577a5dfc1ece8162d463f9d438f51",
+          "public": "326937137e6dd0cddf4507ce32bf4f46d5a681f718e1a3190f77da7d950f90af",
+          "protected": "6f6ccd59452645aba8da7d17606354c944d577a5dfc1ece8162d463f9d438f51"
+        },
+        "rationale": "登记与原始载体选段1对1绑定的富营养化证据记录与精确结构化数值事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-eutro129-ef31-eutro-xmls",
+        "from": null,
+        "to": {
+          "raw": "673fcbe4fda73873236f3e099c6997e32b1308460c1127c99e0ad7d96cfe6740",
+          "public": "6a4ed5eef825dc2db8b3a6cabe5216140255e1582d5f26529dc2b8ae630858b1",
+          "protected": "673fcbe4fda73873236f3e099c6997e32b1308460c1127c99e0ad7d96cfe6740"
+        },
+        "rationale": "登记与原始载体选段1对1绑定的富营养化证据记录与精确结构化数值事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-eutro129-ef31-nf-eutro",
+        "from": null,
+        "to": {
+          "raw": "32fdf9d646047e3802a676af10c08415c2e5e168f61704f242cac0d7afd88f0b",
+          "public": "f1fa89d403155b8815d0ac097a81b34fd0dca39a7b2ee5e33ed44fff5f6f6c82",
+          "protected": "32fdf9d646047e3802a676af10c08415c2e5e168f61704f242cac0d7afd88f0b"
+        },
+        "rationale": "登记与原始载体选段1对1绑定的富营养化证据记录与精确结构化数值事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-eutro129-rivm-ch8-s4",
+        "from": null,
+        "to": {
+          "raw": "83e59673a29e843e51efbe57c5c25cca61a7f8baebc4b6ffe6ea520185144cd4",
+          "public": "a54386f4393b0cca6a5fa06410e466836a9a201e7ed6aea99aaae20b86c1e3ea",
+          "protected": "83e59673a29e843e51efbe57c5c25cca61a7f8baebc4b6ffe6ea520185144cd4"
+        },
+        "rationale": "登记与原始载体选段1对1绑定的富营养化证据记录与精确结构化数值事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-eutro129-recipe2017-eutro",
+        "from": null,
+        "to": {
+          "raw": "15e46665dde6ab1a5dc388a0e89b2804c7e3e5f1626deafa4ecbbc18cf75287b",
+          "public": "01bcb38305269febf8b1ecfb4c639b224e7714d40274bc290612028fe286d87a",
+          "protected": "15e46665dde6ab1a5dc388a0e89b2804c7e3e5f1626deafa4ecbbc18cf75287b"
+        },
+        "rationale": "登记与原始载体选段1对1绑定的富营养化证据记录与精确结构化数值事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-eutro129-lcimpact2020-eutro",
+        "from": null,
+        "to": {
+          "raw": "3d912b565ada93d4569c74a0256444b49408cb81e55c925d055626261ab34fe0",
+          "public": "437f950b480a27c05bdca474fa00089cac424480451e72dd1219180fa72cd4a0",
+          "protected": "3d912b565ada93d4569c74a0256444b49408cb81e55c925d055626261ab34fe0"
+        },
+        "rationale": "登记与原始载体选段1对1绑定的富营养化证据记录与精确结构化数值事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-eutro129-lcimpact-ch8-fw",
+        "from": null,
+        "to": {
+          "raw": "998e472fb7b51404ad0f78c9cba02b04de26ae09a122f54f088dcb6da2ab5b76",
+          "public": "6b73f3a1ca06d430386e975a7abeac0b97280bc982b2d9f385f15e43bc29547a",
+          "protected": "998e472fb7b51404ad0f78c9cba02b04de26ae09a122f54f088dcb6da2ab5b76"
+        },
+        "rationale": "登记与原始载体选段1对1绑定的富营养化证据记录与精确结构化数值事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-eutro129-lcimpact-ch9-marine",
+        "from": null,
+        "to": {
+          "raw": "0d9b4c3680d0cef9a958cf601f7c59878cf3ecfb19b502264ca569330c758449",
+          "public": "8262152fbda739aeb66d003ccda4c1c07e0fe2d8ebb6cc89a925a8200a6ec359",
+          "protected": "0d9b4c3680d0cef9a958cf601f7c59878cf3ecfb19b502264ca569330c758449"
+        },
+        "rationale": "登记与原始载体选段1对1绑定的富营养化证据记录与精确结构化数值事实。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-eutro129-ef31-selected-members",
+        "from": null,
+        "to": {
+          "raw": "a0dc2c6a14c060b680bcf7ec604c0a4ef78d61d0b25ae2e818f1484de7bcdc55",
+          "public": "ddb86a833e9dd0f0cdc278b2c8db94ba2599876cda9b8f083f5cbbe5096ecd1e",
+          "protected": "a0dc2c6a14c060b680bcf7ec604c0a4ef78d61d0b25ae2e818f1484de7bcdc55"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-eutro129-lcimpact-ch8-ch9",
+        "from": null,
+        "to": {
+          "raw": "1f7d7f9fcaefb4281685701c23b6b83a2bb071f80017bb80f4d292e3aa9899e8",
+          "public": "320d850f4b23c55860e56951cfbd3dddff795e5573d0ce7bb71e49b9c8eae6da",
+          "protected": "1f7d7f9fcaefb4281685701c23b6b83a2bb071f80017bb80f4d292e3aa9899e8"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-eutro129-lcimpact-ch8-ch9",
+        "from": null,
+        "to": {
+          "raw": "eeb67083b15d2d85320312a28611d063543140d3075f3fca3a7d34205a32a458",
+          "public": null,
+          "protected": "eeb67083b15d2d85320312a28611d063543140d3075f3fca3a7d34205a32a458"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "gaps:gap-eutro129-watershed-hydrodynamics-and-grid-rasters",
+        "from": null,
+        "to": {
+          "raw": "07a02580ce347cb7c19887799b95dc5ee47ffc0e45a44042a3a1b9d20def75af",
+          "public": null,
+          "protected": "07a02580ce347cb7c19887799b95dc5ee47ffc0e45a44042a3a1b9d20def75af"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "revisions:rev-eutro129-b16-eutrophication-and-field-interfaces",
+        "from": null,
+        "to": {
+          "raw": "98657e6eb6b197b360c3262921578f02a9335191ec11e69631ab195760ca3238",
+          "public": null,
+          "protected": "98657e6eb6b197b360c3262921578f02a9335191ec11e69631ab195760ca3238"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-eutro129-lcimpact-ch8-ch9",
+        "from": null,
+        "to": {
+          "raw": "71172911e7c3172771548474f2d1dabd1e62bca0ff8137dac273babaeaf36d33",
+          "public": null,
+          "protected": "71172911e7c3172771548474f2d1dabd1e62bca0ff8137dac273babaeaf36d33"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      },
+      {
+        "kind": "record",
+        "key": "queries:q-eutro129-eutrophication-interfaces-stoichiometry-and-packages-20261118",
+        "from": null,
+        "to": {
+          "raw": "ea893ba4acd213671f1138a88e5f18ccb1684c35290fe5cd1accf1ecad6848d8",
+          "public": null,
+          "protected": "ea893ba4acd213671f1138a88e5f18ccb1684c35290fe5cd1accf1ecad6848d8"
+        },
+        "rationale": "追加或新建本单元核查的原始导则、方法报告、LC-IMPACT第8–9章及EF 3.1参考包成员记录，保留全部前版条目顺序与内容不变。"
+      }
+    ],
+    "consumers": [
+      {
+        "id": "cl-flow-type",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-exchange",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-flow-exchange-distinction",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-waste-no-universal",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-bw-direction",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-bw-sign",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lcia-midpoint-pathway",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lcia-endpoint-units",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lcia-mid-end-conversion-limits",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lcia-scenarios-are-choices",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lcia-global-is-not-site-specific",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lcia-model-data-factor-separation",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-db2011-review-relative-to-criteria",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-db2011-validation-context",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-db2011-versioned-confidence",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-connect-object-before-unit",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-connect-reuse-keeps-relation",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-connect-review-does-not-transfer",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-connect-next-evidence-at-link",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-path-start",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-path-acid-soil",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-path-acid-indicator",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-path-freshwater",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-path-marine",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-path-limiting-conditions",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-path-terrestrial",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-path-units",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-path-marginal-average",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-path-supplied-effect-conditions",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-path-background",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-path-pdf",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-path-operation",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-path-operation-indicator",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-path-multiple-paths",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-water-marginal-contexts",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-es-question",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-es-authority",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-es-three",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-es-equation",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-es-why-square",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-es-nmvoc",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-es-nox",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-es-service",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-es-score",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-es-scale",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-es-threshold",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-es-test",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-es-later",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-es-judgment",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-purpose",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-policy-contrast",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-baseline",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-units",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-display",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-logit",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-trade",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-precision",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-primary-ratio",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-households",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-health",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-mismatch",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-annual",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-shares",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-two-forms",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-different-card",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-english",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-english-basis",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-service",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-japan-route",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-break-even",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-english-route",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-numeraire",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-edition",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-validity",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-null",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-order",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-transfer",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-lime-decision",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-opening",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-rp",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-why-chain",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-force",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-category",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-version",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-use-boundary",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-default",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-results-layer",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-reconstruction-limit",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-review-objects",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-review-2018",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-review-2024",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-review-identity",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-validity",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-methane-rule",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-nordic-design",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-niu-provenance",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-ipcc-class",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-model-meaning",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-comparison-limits",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-evidence-judgment",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-conclusion",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-wash-cycles",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-wash-inputs",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-use-result",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-report-split",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-quantity-scale",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-capital-gap",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-storage-gap",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-ration-units",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-niu-result",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-ipcc-result",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-rule-issuer",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-opening",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-precursor-denominator",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-intake-definition",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-intake-unit",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-receptor-boundary",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-source-height",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-mixture-inputs",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-mixture-results",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-exposure-evidence",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-effect-definition",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-effect-default",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-urban-health",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-rural-health",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-precursor-health",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-burden-check",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-population-meaning",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-indoor-location",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-indoor-matrix",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-exposure-compatible",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-compatible-population",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-indoor-time",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-exposure-coverage",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-nonlinear-response",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-risk-reference",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-slope-meaning",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-finite-change",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-slope-context",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-ier-evidence",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-gemm-alternative",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-factor-correction",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-implementation-layer",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-chemistry-background",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-chemistry-perturbation",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-chemistry-model-check",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-concentration-route",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-regional-factor",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-modern-values",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-modern-ratios",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-matched-scope",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-uncovered-pathways",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-conclusion",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-concentration-balance",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-activity-indicators",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-opening",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-record-and-link",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-example-scope",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-opposite",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-scale",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-matrix-sign",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-allocation-held",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-representation-result",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-small-inventory",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-same-flow-total",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-three-co2-quantities",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-allocation-result",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-printed-comparator",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-missing-link",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-missing-link-score",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-jrc-instance",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-jrc-connectors",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-jrc-parameters",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-jrc-weight-control",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-jrc-bare-setup",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-jrc-machine-edge",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-jrc-machine-coordinate",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-jrc-source-discrepancy",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-jrc-partial-match",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-jrc-result-projection",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-jrc-version-reference",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-format-scope",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-format-original-target",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-format-double-target",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-format-result-scale",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-result-direction",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-conversion-study",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-factor-probe",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-factor-zero-absent",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-factor-real-gap",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-factor-report",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-preservation-meaning",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-native-service-meaning",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-closing-historical-return",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-db2011-conditional-use",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-usetox-conclusion",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-source-distribution",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-evidence-levels",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-regional-summary",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-factor-order",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-matched-scenario",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-pm-version-and-model",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-flow99-two-boundaries",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-flow99-elementary",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-flow99-landfill",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-flow99-boundary-consequence",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-flow99-agricultural-boundary",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-flow99-boundary-exceptions",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-flow99-record-and-instance",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-flow99-schema-levels",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-flow99-identity-example",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-flow99-waste-classification",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-flow99-material-and-service",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-flow99-direction-equivalence",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-flow99-reference-levels",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-flow99-basis-and-demand",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-flow99-pesticide-interface",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-flow99-interface-consequence",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-flow99-phosphorus-interface",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-flow99-zero-placeholder",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-flow99-zero-reasons",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-flow99-zero-reporting",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-flow99-conclusion",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-flow99-probe-reference",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-service102-row-map",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-service102-service-meaning",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-service102-redundant",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-service102-residual-condition",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-sub105-pef-report",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-sub105-pef-direct",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-sub105-evidence-example",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-sub105-fallbacks",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-sub105-conditional-results",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-sub105-reporting-objects",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-cff109-question",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-cff109-quality",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-cff109-control",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-cff109-version",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-cff109-response",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-cff109-judgment",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-land111-episode",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-land111-midpoint",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-land111-conversion",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-land111-pathway",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-land111-horizon",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-land111-factor-scale",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-land111-integral",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-land111-countercheck",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-land111-aggregation",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-land111-printed-record",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-acid113-ae-question",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-acid113-threshold",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-acid113-glam-relation",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-acid113-glam-tension",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-acid113-so2-rows",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-acid113-chemistry-control",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-acid113-shared-moles",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-acid113-nh3-control",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-mineral115-input",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-mineral115-adp",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-mineral115-sop",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-mineral115-reserves",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-mineral115-rank",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-mineral115-cost-proxy",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-mineral115-metal-cost",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-mineral115-calibration",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-mineral115-assumptions",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-mineral115-judgment",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-fossil117-scarcity-energy",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-fossil117-heating-basis",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-fossil117-uranium-boundary",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-fossil117-scenario-proxy",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-fossil117-equal-midpoint",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-fossil117-proxy-consequence",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-fossil117-printed-limits",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-fossil117-bridge",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-ozone119-precursor-entry",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-ozone119-pocp-to-lotos",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-ozone119-order-reversal",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-ozone119-titration-sign",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-ozone119-ef-location-copy",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-ozone119-multipath-accounting",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-ozone119-printed-limits",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-ozrad121-emission-midpoint",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-ozrad121-reference-scope",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-ozrad121-odp-horizons",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-ozrad121-ir-horizons",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-ozrad121-endpoint-choices",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-ozrad121-formula-table",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-ozrad121-package-discrepancies",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-ozrad121-emission-bridge",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-tox123-midpoint-families",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-tox123-hc20-and-metals",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-tox123-perspective-switches",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-tox123-nickel-dcb-reversal",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-tox123-speciation-and-proxies",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-tox123-normative-zeros",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-tox123-package-discrepancies",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-tox123-cross-system-synthesis",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-water125-method-genealogy",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-water125-withdrawal-return-accounting",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-water125-ef-country-resolution-and-climates",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-water125-value-choices-and-denominator-paradox",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-water125-country-rank-reversals",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-water125-belgium-canada-mechanism-contrast",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-water125-package-report-discrepancies",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-water125-diagnostic-synthesis",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-bio127-midpoint-endpoint-genealogy",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-bio127-feedback-perspective-asymmetry",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-bio127-ef31-subindicator-partition",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-bio127-zero-zero-vs-minus-plus-one",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-bio127-co-removal-and-methane-shift",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-bio127-package-and-report-discrepancies",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-bio127-storage-abolition-and-dluc-window",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      },
+      {
+        "id": "cl-bio127-climate-diagnostic-synthesis",
+        "rationale": "依赖被追加选读范围的共享原始文献或方法载体，既有论述文本、前提、证据绑定与科学含义经复核保持逐字节不变。"
+      }
+    ],
+    "assessment": {
+      "scope": "Selected ILCD 2011 (§1 Tables 1–2 pp. 5–6, §3.8 pp. 65–77 Tables 18–19, §5 Annex 1 p. 124), UNEP-SETAC GLAM Vol. 2 (2019, Chapter 3 §§3.2.2, 3.4, 3.5.1–3.5.2, 3.5.4, 3.6.2–3.6.3 Tables 3.1–3.2 pp. 60, 62–66, 68–70), Commission Recommendation (EU) 2021/2279 R(01) (Annex I §3.2.3 Table 2 OJ L 144/29–30, §4.4.1.5 OJ L 144/37–39 Tables 3–4), JRC109369 (§2 Tables 1–2 pp. 6–8, §4.8 pp. 20–21 Table 7 & notes *, **), JRC130796 (§2 Table 1 pp. 6–7, §4.2 Table 10 p. 22, §5.1 Table 13 p. 30), 26 CRC32/SHA-256-verified EF-v3.1.zip members (6 reused + 20 newly registered across b53ec18f/b5c619fa/b5c614d2 XMLs, e58cd71d Struijs 2008 & 58bc3cfd Seppälä 2006 sources, Normalisation_Weighting_Factors_EF_3.1.xlsx, and 17 phosphorus/nitrogen elementary flows), RIVM 2016-0104 (Tables 1.4–1.5 pp. 20–22, Chapter 8 pp. 61–64 Tables 8.1–8.2, §19 S4 p. 149 Tables S4.1–S4.2), Huijbregts et al. 2017 (Table 1 p. 141, §3.1.7 p. 142, Table 2 p. 143, §4.4 & §5 p. 145), Verones et al. 2020 (§2.1 p. 3, Table 2 p. 5, §§2.5 & 2.7 pp. 6–7, Table 3 p. 9), and LC-IMPACT Overall Report (2020, Chapter 8 §§8.1–8.5 pp. 83–88, 95; Chapter 9 §§9.1–9.3 pp. 97–100, 103, 112 Table 9.3).",
+      "comparison": "Establishes the four-way structural split across ILCD 2011 / EF 2.0–3.1 (3 midpoints AE mol N eq, EUTREND freshwater kg P eq & marine kg N eq summing to 9.47% of EF 3.1 single score, 0 recommended endpoints), UNEP GLAM 2019 (2 aquatic categories with local reversible PDF·m3·yr endpoints, 0 terrestrial), ReCiPe 2016 (1 freshwater P category with 85-day residence time and constant 6.1e-7 species·yr/kg P-eq, 0 marine & 0 terrestrial), and LC-IMPACT (0 midpoints, 2 global irreversible PDF·yr endpoints across 449 ecoregions / 15,000 fish species and 5,772 basin-LME pairs / 66 LMEs / 57 hypoxia species / 6 marine taxa). Closes the B08/B16 agricultural P & N interface on the 2 kg total P case (EF soil 0.05 = 0.10 vs ReCiPe soil 0.10 & GLAM 10% = 0.20 2x model split vs 0.010/0.020 double-attenuation and 2.0 direct-water 10x–20x errors), P2O5 two-atom stoichiometry (0.436 vs RIVM p. 62 single-atom 0.22), EU 2021/2279 §4.4.1.5 N-to-soil prohibition (0 soil N rows in EF XMLs, Tier 1 0.022 N2O / 0.12 or 0.24 NH3 / 1.33 NO3- yielding 3.12 kg N eq & 16.16 mol N eq on 10 kg synthetic N vs silent 0 if mapped to soil), dual aquatic (1.5 kg N river vs 1.0 kg N coastal: 1.5 > 1.0 in EF vs 1.374e-15 < 1.95e-15 in LC-IMPACT at 47.0% river-to-sea ratio) and airborne (3 kg NOx air vs 1 kg NO3- river: 1.167 > 0.226 in EF vs 0 < 2.07e-16 in LC-IMPACT) rank reversals, 540 constant marine <location> copies vs terrestrial unlocated NOx = 4.26 > LU 3.547 (+20.1%), and EF 3.1 NF workbook R1406–1408 soil+water P double counting (+0.2509 kg P eq/person = 15.6% of 1.6069).",
+      "values": "Twelve single-source ev-eutro129-* records map 1-to-1 onto all twelve psg-eutro129-* passages and bind 126 structured numericFacts with exact canonical literals and 40-place BigInt fixed-point arithmetic across all 8 new claims.",
+      "limits": "Preserves RIVM 2016-0104 §8.3 p. 62 P2O5 = 0.22 missing-factor-of-2 print anomaly and Table S4.2 p. 149 [PDF·L/mg] header unit anomaly, EF 3.1 b5c614d2.xml unlocated NOx = 4.26 > 36-country maximum 3.547, duplicate freshwater phosphorus UUIDs (631b2cb3 vs 25d5cc35), <inventoryItems> 3/7/6 vs 29/590/575, missing comma in Eutrophication marine, Struijs 2008 vs 2009 citation year, trailing space in Accumulated Exceedance (AE) , 27 empty + 8 omitted <location> tags, subcompartment rounding splits, Normalisation_Weighting_Factors_EF_3.1.xlsx agricultural double counting, and JRC130796 Table 13 duplicated 4th/5th columns without silent repair or raw-source redistribution.",
+      "conservation": "100% of all 992 prior claims (including all 30 predecessor B16 claims and Notes 1..22 where B18 links to Note 17 cl-path-marginal-average), 1,009 prior evidence records, and rd-kb46-lcimpact2020 remain byte-for-byte unchanged; zero prior-claim corrections required.",
+      "review": "Two-round independent primary-source and numeric subagent audit (71b34240) verified all 9 PDFs, 26 EF-v3.1.zip members, page-exact bounds, 126 numericFacts, and 100% baseline conservation, concluding unconditional PASS (0 BLOCKER / 0 MAJOR / 0 MINOR). Agent verification does not claim human expert certification or watershed hydrodynamic monitoring."
+    },
+    "independentReports": {
+      "independent-primary-source-audit-initial.md": "6e4dfc44b908fcbf67645b4ebaaf42be7b34ecf033d1c88e59b4ea18b74d4eb2",
+      "independent-primary-source-audit-final.md": "495cd5b57675c6da8dc76e9e11d9bcba5cda7f99ef51a06fba12850d705f9e20",
+      "full-chapter-b16-reader-review-initial.md": "649a2c45404504acce736d2cd4e1cff740a1308c9708cb2e7c037a4256c2e7dc",
+      "full-chapter-b16-reader-review-final.md": "26bdca76917c1c080c2260ef2325d95eda113196e480fdb642704c9ae31fbe0b",
+      "independent-publication-engineering-review-initial.md": "ea94072e134fb1b2d0385c085bf0cb073aed2340d0373e5a27df1dd8eb7b61f4",
+      "independent-publication-engineering-review-final.md": "c2c9bf32165731b24a7ce30d0cdbf261b74e9d3033a2fcebe8d7944d680e92ec",
+      "ef31-eutrophication-members-receipt.json": "912165207331e0f36e65a3f32e46d5492a4147ee14d2b7856b8acf402149b1dd",
+      "actual-browser-qa/responsive-script-enabled.json": "1462b4bac35f58b121bc8cdcd2fd1c6abd2fe2619c9b3104d03f1a7e6b17175a",
+      "actual-browser-qa/interactions.json": "cfb6f9cd4dc5131162317c34d80703044afe4e9a23bb243e8b61bd11e646b88b"
+    }
+  }
+}

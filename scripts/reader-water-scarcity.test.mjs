@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 import config from '../config/reader-water-scarcity.json' with { type: 'json' };
 import capture from '../config/reader-water-scarcity-capture.json' with { type: 'json' };
+import eutro from '../config/reader-eutrophication-pathways.json' with { type: 'json' };
 import bio from '../config/reader-biogenic-carbon.json' with { type: 'json' };
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
 import loadShift from '../config/reader-load-shift.json' with { type: 'json' };
@@ -283,8 +284,9 @@ test('B18 water scarcity source plan preserves 9486bae9 predecessor, 28-claim la
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
+  if (eutro.unit) files.set(`content${eutro.unit.routes[0]}.mdx`, Buffer.from(eutro.unit.previousMdx));
   if (bio.unit) for (const [p, text] of Object.entries(bio.unit.previousMdx)) files.set(p, Buffer.from(text));
-  const input = { ...previousScientificTestRecords({ catalog, readings, literature }, bio.unit), files };
+  const input = { ...previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, eutro.unit), bio.unit), files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
   const qualify = (unit, customInput = input, customActual = actual, customStruct = structure) =>
     prepareWaterScarcitySource(unit, customInput, customActual, customStruct);
@@ -356,7 +358,7 @@ test('B18 water scarcity source plan preserves 9486bae9 predecessor, 28-claim la
 test('Water scarcity receipt verifier fails closed when capture or capture pin is absent', () => {
   if (capture !== null || waterScarcityCapturePin !== null) return;
   if (!config.unit) return;
-  const previous = previousScientificTestRecords({ catalog, readings, literature }, bio.unit);
+  const previous = previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, eutro.unit), bio.unit);
   const expected = readerPublicDownloads(previous.catalog, previous.literature, previous.readings);
   const unit = structuredClone(config.unit);
   unit.outputs = [{ path: waterScarcityChapter, route: waterScarcityChapter, sha256: '1'.repeat(64), rationale: 'r' }];
@@ -378,7 +380,7 @@ test('Water scarcity receipt verifier fails closed when capture or capture pin i
 });
 
 test('Water scarcity receipts bind actual output capture independently', { skip: !capture && config.status !== 'reviewed' }, () => {
-  const previous = previousScientificTestRecords({ catalog, readings, literature }, bio.unit);
+  const previous = previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, eutro.unit), bio.unit);
   const expected = readerPublicDownloads(previous.catalog, previous.literature, previous.readings);
   const verify = (mutateUnit = () => {}, mutateOutput) => {
     const unit = structuredClone(config.unit);

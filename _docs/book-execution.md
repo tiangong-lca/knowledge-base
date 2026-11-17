@@ -295,7 +295,42 @@ passages) and 128 structured `numericFacts` while conserving 100% of all 984
 prior claims, `climate-numerical-reconstruction.mdx`, and `climate-metrics-v1.json`
 byte-for-byte. Separate unconditional-PASS two-round source, zero-context B15
 reader, adversarial publication-engineering and actual-output acceptances
-(`f2c276f1...`) and normal source/root delivery are tracked on Issue127. Part IV
+(`f2c276f1...`) and normal source/root delivery are tracked on Issue127.
+Unit127 is now fully delivered: source PR128/Main
+`8fcb2485b97a1476896549806740a030b637d00b`, qualified 468-file hosted output on
+`https://prism.tiangong.earth` (`e9408bfc...`, including unmodified
+`validateReaderOutput` against archived Main source and live B15 print
+verification), exact root2430/PR2431/Main
+`7bbb4cdcd3ad892fb3631c3fd4a8337f314fd89a`, and ordinary final completion and
+source-handoff (`1/1`) receipts.
+
+[Issue129](https://github.com/tiangong-lca/knowledge-base/issues/129) continues
+with B16 eutrophication method genealogy, agricultural P/N field-to-water
+interfaces, stoichiometry, river-to-sea & airborne N rank reversals and official
+EF 3.1 package forensics (`V5-F`), recorded in the
+[eutrophication-pathways comparison record](editorial/2026-11-17-eutrophication-pathways.md)
+(committed as `a3f5196` / `a84fe83` before manuscript changes): selected ILCD
+2011 (`§1 Tables 1–2`, `§3.8 Tables 18–19`, `§5 Annex 1`), UNEP-SETAC GLAM Vol. 2
+(`Chapter 3 §§3.2.2, 3.4, 3.5.1–3.5.2, 3.5.4, 3.6.2–3.6.3 Tables 3.1–3.2`,
+`pp. 60, 62–66, 68–70`), Commission Recommendation (EU) 2021/2279 R(01)
+(`Annex I Table 2`, `§4.4.1.5 Tables 3–4`), JRC109369 (`§2 Tables 1–2`, `§4.8
+Table 7 & notes`), JRC130796 (`§2 Table 1`, `§4.2 Table 10`, `§5.1 Table 13`),
+26 CRC32/SHA-256-verified official `EF-v3.1.zip` members (`6` reused + `20`
+newly registered across `b53ec18f`/`b5c619fa`/`b5c614d2` XMLs, `e58cd71d` and
+`58bc3cfd` sources, `Normalisation_Weighting_Factors_EF_3.1.xlsx`, and 17 P/N
+water and soil elementary flows), RIVM 2016-0104 (`Tables 1.4–1.5`, `Chapter 8
+Tables 8.1–8.2`, `§19 S4 Tables S4.1–S4.2`), Huijbregts et al. 2017 (`Table 1`,
+`§3.1.7`, `Table 2`, `§§4.4 & 5`), Verones et al. 2020 (`§2.1`, `Table 2`,
+`§§2.5 & 2.7`, `Table 3`), and LC-IMPACT Overall Report (`Chapters 8–9`, `Table
+9.3`). Eight new canonical paragraphs in B16 §4 after `cl-path-operation-indicator`
+(bringing B16 from 30 to 38 claims and the catalog from 992 to 1,000 claims)
+bind 12 single-source `ev-eutro129-*` records (`1-to-1` with 12 `psg-eutro129-*`
+passages) and 126 structured `numericFacts` while conserving 100% of all 992
+prior claims and Notes `1..22` byte-for-byte across three-generation B16 history
+controls (`#113 -> #119 -> #129`). Separate unconditional-PASS two-round source,
+zero-context B16 reader, adversarial publication-engineering and actual-output
+acceptances (`ec31ab87...`) and normal source/root delivery are tracked on
+Issue129. B17 cross-system particulate matter comparison (`V5-C`), Part IV
 continuous reread (`B14`–`B19`, including `index.mdx:18`) and Programme9
 requirements remain active.
 

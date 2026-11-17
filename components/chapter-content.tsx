@@ -1,3 +1,4 @@
+import { eutrophicationPathwaysHistoryControls, eutrophicationPathwaysSource } from '@/scripts/reader-eutrophication-pathways.mjs';
 import { biogenicCarbonHistoryControls, biogenicCarbonOrdinaryId, biogenicCarbonSource } from '@/scripts/reader-biogenic-carbon.mjs';
 import { waterScarcityHistoryControls, waterScarcityOrdinaryId, waterScarcitySource } from '@/scripts/reader-water-scarcity.mjs';
 import { toxicityComparisonHistoryControls, toxicityComparisonOrdinaryId, toxicityComparisonSource } from '@/scripts/reader-toxicity-comparison.mjs';
@@ -10,7 +11,7 @@ import { landRecoveryHistoryControls, landRecoveryOrdinaryId, landRecoverySource
 import { circularFootprintHistoryControls, circularFootprintOrdinaryId, circularFootprintSource } from '@/scripts/reader-circular-footprint.mjs';
 import { loadShiftHistoryControls, loadShiftOrdinaryId, loadShiftSource } from '@/scripts/reader-load-shift.mjs';
 import { substitutionRulesHistoryControls, substitutionRulesOrdinaryId, substitutionRulesSource } from '@/scripts/reader-substitution-rules.mjs';
-import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity, currentBiogenicCarbon } from '@/scripts/reader-current-expectations.mjs';
+import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity, currentBiogenicCarbon, currentEutrophicationPathways } from '@/scripts/reader-current-expectations.mjs';
 import { flowBoundaryHistoryControls, flowBoundaryHistoryTargets, flowBoundaryOrdinaryTargets, flowBoundaryOrdinaryId } from '@/scripts/reader-flow-boundary.mjs';
 import { serviceConstraintsHistoryControls, serviceConstraintsOrdinaryId, serviceConstraintsSource } from '@/scripts/reader-service-constraints.mjs';
 import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
@@ -54,6 +55,7 @@ const histories = [
   { controls: toxicityComparisonHistoryControls(currentToxicityComparison), edition: toxicityComparisonSource, attribute: 'toxicity-comparison' },
   { controls: waterScarcityHistoryControls(currentWaterScarcity), edition: waterScarcitySource, attribute: 'water-scarcity' },
   { controls: biogenicCarbonHistoryControls(currentBiogenicCarbon), edition: biogenicCarbonSource, attribute: 'biogenic-carbon' },
+  { controls: eutrophicationPathwaysHistoryControls(currentEutrophicationPathways), edition: eutrophicationPathwaysSource, attribute: 'eutrophication-pathways' },
 ];
 
 function currentReaderOrdinaryId(route: string, print: boolean, index: number) {

@@ -24,6 +24,38 @@ lastReviewedCommit: a3f519654f3047ac47be29740318aa3c64dd4b39
 
 ## Scoped scientific successors
 
+The eutrophication-pathways unit #129 compares ILCD 2011 and EF 2.0–3.1 (`3`
+Level II midpoints — terrestrial `AE` `mol N eq`, freshwater and marine
+`EUTREND` `kg P eq` and `kg N eq` summing to `9.47%` of `EF 3.1` single-score
+weight — and `0` recommended endpoints), UNEP-SETAC GLAM 2019 (`2` aquatic
+categories with local reversible `PDF·m³·yr` endpoints, `0` terrestrial),
+ReCiPe 2016 (`1` freshwater `P` category with `85`-day residence time and
+constant `6.1×10⁻⁷ species·yr/kg P-eq`, `0` marine and `0` terrestrial), and
+LC-IMPACT (`0` midpoints, `2` global irreversible `PDF·yr` endpoints across
+`449` freshwater ecoregions / `15,000` fish species and `5,772` basin–`LME`
+pairs / `66` `LME`s / `57` hypoxia species / `6` marine taxa). It resolves the
+`2 kg` agricultural total-`P` interface across `EF 3.1` soil (`0.05 → 0.10`),
+ReCiPe soil (`0.10 → 0.20`), and GLAM Tier 1 (`10% → 0.20 kg P eq`) versus
+`10×–20×` double-attenuation (`0.010/0.020`) and direct-water (`2.0`) errors,
+`P₂O₅` two-atom stoichiometry (`0.436` vs `RIVM` printed `0.22`), `EU 2021/2279
+§4.4.1.5` N-to-soil prohibition (`0` soil `N` rows in `EF 3.1` XMLs, Tier 1
+`0.022 N₂O`, `0.12/0.24 NH₃`, `1.33 NO₃⁻` yielding `3.12 kg N eq` and `16.16
+mol N eq` on `10 kg` synthetic `N` vs silent `0`), dual aquatic (`1.5 kg N`
+river vs `1.0 kg N` coastal: `1.5 > 1.0` in `EF 3.1` vs `1.374×10⁻¹⁵ <
+1.95×10⁻¹⁵` in `LC-IMPACT` at `47.0%` river-to-sea ratio) and airborne (`3 kg
+NOx` air vs `1 kg NO₃⁻` river: `1.167 > 0.226` vs `0 < 2.07×10⁻¹⁶`) rank
+reversals, and `540` constant marine `<location>` copies versus terrestrial
+unlocated `NOx = 4.26 > 3.547` (`+20.1%`). Source-internal discrepancies
+(`Normalisation_Weighting_Factors_EF_3.1.xlsx` `R1406–1408` `+0.2509 kg P
+eq./person = 15.6%` agricultural double counting and `R1283 + R1288` marine `N`
+stacking, `RIVM 2016-0104` p. 62 `P₂O₅ = 0.22` and `Table S4.2` `[PDF·L/mg]`
+header, `b53ec18f.xml` duplicate freshwater `Phosphorus` UUIDs, `<inventoryItems>
+3/7/6` vs `29/590/575`, `'Eutrophication marine'` comma omission, `Struijs 2008`
+vs `2009`, `'Accumulated Exceedance (AE) '` trailing space, `27` empty + `8`
+omitted `<location>` tags, subcompartment rounding splits, and `JRC130796`
+`Table 13` duplicated `4th`/`5th` columns) remain explicitly disclosed without
+silent repair or raw-source redistribution.
+
 The biogenic-carbon unit #127 compares ILCD 2011 and EF 2.0–3.1 (`GWP100`
 midpoint only, zero recommended endpoints, `EF 3.1` single-score weight `21.06%`
 and global `NF` `7,553.08 kg CO₂ eq./person`) against ReCiPe 2016 (`I/H/E`
