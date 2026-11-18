@@ -3,6 +3,8 @@ import fs from 'node:fs';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
+import social from '../config/reader-social-comparison.json' with { type: 'json' };
+import { restoreSocialComparisonTestFiles } from './reader-social-comparison.mjs';
 import config from '../config/reader-localization-comparison.json' with { type: 'json' };
 import capture from '../config/reader-localization-comparison-capture.json' with { type: 'json' };
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
@@ -11,7 +13,7 @@ import service from '../config/reader-service-constraints.json' with { type: 'js
 import catalog from '../knowledge/catalog.json' with { type: 'json' };
 import readings from '../knowledge/research/readings.json' with { type: 'json' };
 import literature from '../knowledge/research/literature-map.json' with { type: 'json' };
-import { testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
+import { previousScientificTestRecords, testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
 import { chapterAnchorPrefix, printUnitAnchor } from './reader-book.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
@@ -34,25 +36,26 @@ import {
 } from './reader-localization-comparison.mjs';
 
 test('Localization comparison enforces exact 1028 claims, 17 single-artifact evidence records, 93 BigInt facts, prose bindings and zero hygiene leaks', () => {
-  assert.equal(catalog.claims.length, 1028);
-  assert.equal(catalog.claims.filter(c => c.id.startsWith('cl-loc137-')).length, 8);
-  assert.equal(catalog.evidence.filter(e => e.id.startsWith('ev-loc137-')).length, 17);
+  const prev137 = previousScientificTestRecords({ catalog, readings, literature }, social.unit);
+  assert.equal(prev137.catalog.claims.length, 1028);
+  assert.equal(prev137.catalog.claims.filter(c => c.id.startsWith('cl-loc137-')).length, 8);
+  assert.equal(prev137.catalog.evidence.filter(e => e.id.startsWith('ev-loc137-')).length, 17);
   assert.equal(
-    catalog.evidence
+    prev137.catalog.evidence
       .filter(e => e.id.startsWith('ev-loc137-'))
       .reduce((acc, e) => acc + (e.numericFacts?.length ?? 0), 0),
     93,
   );
   assert.deepEqual(catalog.claims.filter(c => c.scope.includes('具名方法与证据范围')), []);
 
-  validateLocalizationComparisonFactors(catalog, readings);
+  validateLocalizationComparisonFactors(prev137.catalog, prev137.readings);
 
   // Verify lib/reader-book.ts binds currentLocalizationComparison in both relabelHistoricalTargets and getCitationLabel
   const readerBookTs = fs.readFileSync(new URL('../lib/reader-book.ts', import.meta.url), 'utf8');
   assert(readerBookTs.includes('...currentLocalizationComparison?.routes ?? []'));
   assert(readerBookTs.includes('currentLocalizationComparison?.routes.includes(target.route)'));
 
-  const extraFactCat = structuredClone(catalog);
+  const extraFactCat = structuredClone(prev137.catalog);
   extraFactCat.evidence.find(e => e.id === 'ev-loc137-ef31-pof-flat-locations').numericFacts.push({
     id: 'nf-loc137-forged',
     value: '1.0',
@@ -61,52 +64,52 @@ test('Localization comparison enforces exact 1028 claims, 17 single-artifact evi
     subject: 'forged',
     basis: 'forged',
   });
-  assert.throws(() => validateLocalizationComparisonFactors(extraFactCat, readings), /numericFacts count mismatch/);
+  assert.throws(() => validateLocalizationComparisonFactors(extraFactCat, prev137.readings), /numericFacts count mismatch/);
 
-  const singularFactCat = structuredClone(catalog);
+  const singularFactCat = structuredClone(prev137.catalog);
   singularFactCat.evidence.find(e => e.id === 'ev-loc137-ilcd2011-european-scope').numericFact = {};
-  assert.throws(() => validateLocalizationComparisonFactors(singularFactCat, readings), /evidence\/carrier binding failed/);
+  assert.throws(() => validateLocalizationComparisonFactors(singularFactCat, prev137.readings), /evidence\/carrier binding failed/);
 
-  const mutConceptCat = structuredClone(catalog);
+  const mutConceptCat = structuredClone(prev137.catalog);
   mutConceptCat.claims.find(c => c.id === 'cl-loc137-ef31-location-regimes').conceptIds = ['cn-reference-value'];
-  assert.throws(() => validateLocalizationComparisonFactors(mutConceptCat, readings), /claim structure invalid/);
+  assert.throws(() => validateLocalizationComparisonFactors(mutConceptCat, prev137.readings), /claim structure invalid/);
 
-  const mutValueCat = structuredClone(catalog);
+  const mutValueCat = structuredClone(prev137.catalog);
   mutValueCat.evidence.find(e => e.id === 'ev-loc137-glam-pm2024-marginal-vs-average').numericFacts[0].value = '0.00064458';
-  assert.throws(() => validateLocalizationComparisonFactors(mutValueCat, readings), /malformed or unexpected numericFact/);
+  assert.throws(() => validateLocalizationComparisonFactors(mutValueCat, prev137.readings), /malformed or unexpected numericFact/);
 
   // F-01: Direct prose and caveat number tamper negative tests
-  const mutProseShareCat = structuredClone(catalog);
+  const mutProseShareCat = structuredClone(prev137.catalog);
   const c2 = mutProseShareCat.claims.find(c => c.id === 'cl-loc137-ef31-global-nf-extrapolation');
   c2.text = c2.text.replace('96.81%', '96.82%');
-  assert.throws(() => validateLocalizationComparisonFactors(mutProseShareCat, readings), /prose binding missing/);
+  assert.throws(() => validateLocalizationComparisonFactors(mutProseShareCat, prev137.readings), /prose binding missing/);
 
-  const mutProseRatioCat = structuredClone(catalog);
+  const mutProseRatioCat = structuredClone(prev137.catalog);
   const c6 = mutProseRatioCat.claims.find(c => c.id === 'cl-loc137-pm-nonlinear-and-endpoint-reversals');
   c6.text = c6.text.replace('48.71倍', '48.72倍');
-  assert.throws(() => validateLocalizationComparisonFactors(mutProseRatioCat, readings), /prose binding missing/);
+  assert.throws(() => validateLocalizationComparisonFactors(mutProseRatioCat, prev137.readings), /prose binding missing/);
 
-  const mutCaveatSumCat = structuredClone(catalog);
+  const mutCaveatSumCat = structuredClone(prev137.catalog);
   const c2Cav = mutCaveatSumCat.claims.find(c => c.id === 'cl-loc137-ef31-global-nf-extrapolation');
   c2Cav.caveats[0] = c2Cav.caveats[0].replace('58.59%', '58.60%');
-  assert.throws(() => validateLocalizationComparisonFactors(mutCaveatSumCat, readings), /prose binding missing/);
+  assert.throws(() => validateLocalizationComparisonFactors(mutCaveatSumCat, prev137.readings), /prose binding missing/);
 
   // F-03: Expanded surface hygiene negative tests across evidence, sources, passages and claims
-  const leakCat = structuredClone(catalog);
+  const leakCat = structuredClone(prev137.catalog);
   leakCat.claims.find(c => c.id === 'cl-loc137-four-layer-localization-audit').caveats[0] += ' 本仓库测试';
-  assert.throws(() => validateLocalizationComparisonFactors(leakCat, readings), /hygiene check failed/);
+  assert.throws(() => validateLocalizationComparisonFactors(leakCat, prev137.readings), /hygiene check failed/);
 
-  const leakEvCat = structuredClone(catalog);
+  const leakEvCat = structuredClone(prev137.catalog);
   leakEvCat.evidence.find(e => e.id === 'ev-loc137-ef31-water-global-locations').paraphrase += ' pdfIndices=0';
-  assert.throws(() => validateLocalizationComparisonFactors(leakEvCat, readings), /hygiene check failed/);
+  assert.throws(() => validateLocalizationComparisonFactors(leakEvCat, prev137.readings), /hygiene check failed/);
 
-  const leakSrcCat = structuredClone(catalog);
+  const leakSrcCat = structuredClone(prev137.catalog);
   leakSrcCat.sources.find(s => s.id === 'src-loc137-lcimpact-ch1').preservation += ' 公开仓库';
-  assert.throws(() => validateLocalizationComparisonFactors(leakSrcCat, readings), /hygiene check failed/);
+  assert.throws(() => validateLocalizationComparisonFactors(leakSrcCat, prev137.readings), /hygiene check failed/);
 
-  const leakReadings = structuredClone(readings);
+  const leakReadings = structuredClone(prev137.readings);
   leakReadings.readings.find(r => r.id === 'rd-loc137-lcimpact-ch1').passages[0].limits[0] += ' 零基索引';
-  assert.throws(() => validateLocalizationComparisonFactors(catalog, leakReadings), /hygiene check failed/);
+  assert.throws(() => validateLocalizationComparisonFactors(prev137.catalog, leakReadings), /hygiene check failed/);
 });
 
 test('Localization comparison ordinary IDs and all 15 print-visible correction notices fail closed on tampering', () => {
@@ -170,7 +173,9 @@ test('Localization comparison source plan recovers exact cec53208 predecessor an
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
-  const input = { catalog, readings, literature, files };
+  restoreSocialComparisonTestFiles(files, social.unit);
+  const prev137Rec = previousScientificTestRecords({ catalog, readings, literature }, social.unit);
+  const input = { ...prev137Rec, files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
   const qualify = (unit, customInput = input, customActual = actual, customStruct = structure) =>
     prepareLocalizationComparisonSource(unit, customInput, customActual, customStruct);
@@ -281,7 +286,7 @@ test('Localization comparison source plan recovers exact cec53208 predecessor an
   });
 
   await t.test('rejects unauthorized caveat or dependency mutation on corrected prior claims', () => {
-    const badCat = structuredClone(catalog);
+    const badCat = structuredClone(prev137Rec.catalog);
     badCat.claims.find(c => c.id === 'cl-cn-hk-borrowing').caveats = ['私自附加'];
     const badInput = { ...input, catalog: badCat };
     const badActual = inspectReadableBookEdition(badInput), badStruct = copyeditSourceStructure(badInput);
@@ -325,7 +330,8 @@ test('Localization comparison receipt binding behaves fail-closed before and aft
   }
 
   const { readerPublicDownloads } = await import('./reader-current-output.mjs');
-  const expected = readerPublicDownloads(catalog, literature, readings);
+  const prev137 = previousScientificTestRecords({ catalog, readings, literature }, social.unit);
+  const expected = readerPublicDownloads(prev137.catalog, prev137.literature, prev137.readings);
   const verify = (mutateUnit = () => {}, mutateOutput) => {
     const unit = structuredClone(config.unit);
     mutateUnit(unit);

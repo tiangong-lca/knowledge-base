@@ -20,6 +20,38 @@ lastReviewedCommit: 9ee5783f10d3598edc55eb356e7d800dda5a0e25
 
 # LCA Living Knowledge Base and Review
 
+[Part V cross-system social LCA comparison, reporting references, satellite linearity, activity-variable paradoxes, risk scales & occupational health #139](https://github.com/tiangong-lca/knowledge-base/issues/139)
+extends Part V `B23` (`《社会表现与影响》`, `9` -> `17` claims plus two 6-column
+responsive Markdown comparison tables across §§1 and 3, bringing the public catalog
+from `1,028` to `1,036` claims) while conserving `100%` of `1,021` untouched
+prior claims, all `6` shared `ev-sustainability-slca-*` evidence records, and all
+`40` case download files byte-for-byte against `79c8ea9cf1c79eb0b773a2109188095037f9873a`.
+Its [comparative record](_docs/editorial/2026-11-18-social-comparison.md) binds
+`14` single-source/single-artifact `ev-soc139-*` records (`1-to-1` with `14`
+`psg-soc139-*` passages across `14` SHA-256-verified primary artifacts / `13`
+sources), `90` `BigInt`-verified `nf-soc139-*` `numericFacts`, `2` B23-exclusive
+evidence locator cleanups, and `7` inline `display:block` public correction notices
+on synchronized B23 prior claims: `UNEP 2020 SO-LCA` ban on public comparative
+assertions (`1` union-busting event / `60,000` garments = `0.0000167`/piece dilution)
+vs EU `(EU) 2021/2279 Annex III OEF` (`NACE 14` `40,000` T-shirts + `20,000`
+trousers = `17,000 kg` with `0.69 kg` single-set weekly laundry slip `0.4968 MJ` &
+`6.9 L`) & `OEFSR v6.3` public organizational comparisons; `Heijungs et al. 2013`
+`B_soc` matrix linearity limits vs `UNEP 2021 Methodological Sheets` & `PSILCA v3`
+`openLCA` pseudo-elementary flows vs monetary diagonal normalization; `PSILCA v3`
+(`15,000` Eora sectors `0.001–1 h/USD`), `SHDB` (`113 × 57 = 6,441` GTAP CSS),
+fair-wage (`2.0×`) & craft-labor (`4.0×`) paradoxes, and `GLAM V1.0.2024.10`
+work-environment workbook (`420` US sectors, `21,840` rows across `52` countries
+omitting `IND`/`BGD`/`VNM`) scaling all `411` non-zero sectors by uniform
+`$43,746 / W_c` (`TUR/CHE = 28.76×`) against `Fantke et al. 2026 §3.5.4`; `PSILCA
+v3` German textile child-labor cutoff drops (`-43.96%` at `10⁻⁵`, `-76.96%` at
+`10⁻³`) & `Meemken et al. 2021` 5-level selection bias and `50%`/`79%` uninspected
+certified farmers; `CML 2001 §4.3.16` / `ILCD 2010 §6.6.1` to `GLAM 2026`
+(`~70,000,000 DALY`, `0.72 DALY`/injury, `33.3 YLL` vs `PM₂.₅` `23.6 DALY`/death =
+`1.41×`); `SHDB` linear `0/1/2/3` (`100`-capped) vs `PSILCA v3` geometric `10×`
+`15.77×` rank reversal (`30` vs `60` -> `1,009` vs `64`); three meanings of zero
+(`No data = 0.1` -> `9.0` med risk h on `90 h`); and a four-cell `E-LCA`/`S-LCA`/
+`LCC` deduplication audit (`EF 3.1` indoor styrene toxicity CFs `~211×` outdoor).
+
 [Part V cross-system localization, normalisation denominators, biophysical scales & institutional adoption #137](https://github.com/tiangong-lca/knowledge-base/issues/137)
 extends Part V `B21` (`《影响评价本地化》`, `28` -> `36` claims plus two 6-column
 responsive Markdown comparison tables across §§3–4, bringing the public catalog

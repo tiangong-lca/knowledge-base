@@ -24,6 +24,39 @@ lastReviewedCommit: 323291f7a954d38f6ea6f2988fbb8c2efbcd99cc
 
 ## Scoped scientific successors
 
+The Part V social-comparison unit #139 compares `UNEP 2020 S-LCA / SO-LCA` (with
+`2021 Methodological Sheets`), EU `(EU) 2021/2279 Annex III OEF` (with `OEFSR
+Guidance v6.3`), `Heijungs, Settanni and Guinée 2013`, `PSILCA v3`, `SHDB 2012`,
+`UNEP GLAM V1.0.2024.10 Work Environment Impacts` & `Fantke et al. 2026` (with
+`CML 2001 Part 3`, `ILCD 2010`, and `GLAM 2019/2021`), and `Meemken et al. 2021`
+across `B23` (`9` -> `17` claims plus two 6-column comparison tables, bringing
+the public catalog to `1,036` claims) while conserving `100%` of `1,021`
+untouched prior claims, all `6` shared `ev-sustainability-slca-*` records, and
+all `40` case downloads against `79c8ea9cf1c79eb0b773a2109188095037f9873a`. It
+binds `14` single-artifact `ev-soc139-*` records (`1-to-1` with `14`
+`psg-soc139-*` passages across `14` primary artifacts / `13` sources) and `90`
+`BigInt`-verified `numericFacts` to contrast product functional units against
+organizational portfolio references (`SO-LCA` public-comparison ban & `1/60,000`
+rights-dilution paradox vs `OEF` `NACE 14` `17,000 kg` portfolio with `0.69 kg`
+weekly wash slip); establish `B_soc` matrix linearity limits vs `PSILCA v3`
+`openLCA` pseudo-elementary flows and diagonal monetary normalization; expose
+fair-wage (`2.0×`) & craft-labor (`4.0×`) paradoxes alongside `GLAM 2024`
+workbook's uniform `$43,746 / W_c` scaling across `411` non-zero sectors × `52`
+countries (`TUR/CHE = 28.76×`, omitting `IND`/`BGD`/`VNM`) contradicting `Fantke
+et al. 2026 §3.5.4`; balance `SHDB`/`PSILCA` cutoff losses (`-43.96%` & `-76.96%`
+child-labor drop) against voluntary certification 5-level selection bias and
+`50%`/`79%` uninspected farmers; trace Type II occupational `DALY` pathways
+(`~70,000,000 DALY`, `0.72 DALY`/injury, `33.3 YLL` vs `23.6 DALY`/death) vs
+irreducible fundamental rights; prove `SHDB` linear `0/1/2/3` (`100`-capped) vs
+`PSILCA v3` geometric `10×` `15.77×` rank reversal; separate three meanings of
+zero (`No data = 0.1` -> `9.0` med risk h on `90 h`); and establish a four-cell
+`E-LCA`/`S-LCA`/`LCC` deduplication audit (`EF 3.1` indoor styrene toxicity CFs
+`~211×` outdoor). Commercial `PSILCA`/`SHDB` raw tables and paid `ISO 14075:2024`
+remain explicitly bounded in `gap-soc139-proprietary-slca-matrices-and-iso14075`
+and `Meemken et al. 2021` uses neutral `passages-inspected` /
+`access-context-unresolved` metadata without raw-text redistribution or
+whole-book completion claims.
+
 The Part V localization-comparison unit #137 compares early Chinese/Hong Kong
 localization schemes (`Yang et al. 2001`, 10th Five-Year Plan & `Lin, Zhang and
 Chen 2005`, `HKHA C1169 2005`, `GB/T 24040–24044`, and `Xie et al. 2022`) against

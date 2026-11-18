@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import config from '../config/reader-circular-footprint.json' with { type: 'json' };
 import capture from '../config/reader-circular-footprint-capture.json' with { type: 'json' };
+import social from '../config/reader-social-comparison.json' with { type: 'json' };
 import localization from '../config/reader-localization-comparison.json' with { type: 'json' };
 import weighting from '../config/reader-weighting-valuation.json' with { type: 'json' };
 import part4 from '../config/reader-part4-reread.json' with { type: 'json' };
@@ -28,7 +29,7 @@ import { previousScientificTestRecords, testEnvelopes } from './fixtures/scienti
 test('B13 receipts bind captured raw files, normalized article pairs, public pages and JSON', {
   skip: !capture && config.status !== 'reviewed',
 }, () => {
-  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, localization.unit), weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
+  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, social.unit), localization.unit), weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
   const preTox = previousScientificTestRecords(preWater, tox.unit);
   const preOzrad = previousScientificTestRecords(preTox, ozrad.unit);
   const preOzone = previousScientificTestRecords(preOzrad, ozone.unit);
