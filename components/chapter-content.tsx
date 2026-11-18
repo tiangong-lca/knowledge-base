@@ -1,3 +1,4 @@
+import { part5RereadCorrections, part5RereadHistoryControls, part5RereadOrdinaryId, part5RereadSource } from '@/scripts/reader-part5-reread.mjs';
 import { costSustainabilityCorrections, costSustainabilityHistoryControls, costSustainabilityOrdinaryId, costSustainabilityRoute, costSustainabilitySource } from '@/scripts/reader-cost-sustainability.mjs';
 import { socialComparisonCorrections, socialComparisonHistoryControls, socialComparisonOrdinaryId, socialComparisonRoute, socialComparisonSource } from '@/scripts/reader-social-comparison.mjs';
 import { localizationComparisonCorrections, localizationComparisonHistoryControls, localizationComparisonOrdinaryId, localizationComparisonRoute, localizationComparisonSource } from '@/scripts/reader-localization-comparison.mjs';
@@ -17,7 +18,7 @@ import { landRecoveryHistoryControls, landRecoveryOrdinaryId, landRecoverySource
 import { circularFootprintHistoryControls, circularFootprintOrdinaryId, circularFootprintSource } from '@/scripts/reader-circular-footprint.mjs';
 import { loadShiftHistoryControls, loadShiftOrdinaryId, loadShiftSource } from '@/scripts/reader-load-shift.mjs';
 import { substitutionRulesHistoryControls, substitutionRulesOrdinaryId, substitutionRulesSource } from '@/scripts/reader-substitution-rules.mjs';
-import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity, currentBiogenicCarbon, currentEutrophicationPathways, currentParticulateComparison, currentPart4Reread, currentWeightingValuation, currentLocalizationComparison, currentSocialComparison, currentCostSustainability } from '@/scripts/reader-current-expectations.mjs';
+import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity, currentBiogenicCarbon, currentEutrophicationPathways, currentParticulateComparison, currentPart4Reread, currentWeightingValuation, currentLocalizationComparison, currentSocialComparison, currentCostSustainability, currentPart5Reread } from '@/scripts/reader-current-expectations.mjs';
 import { flowBoundaryHistoryControls, flowBoundaryHistoryTargets, flowBoundaryOrdinaryTargets, flowBoundaryOrdinaryId } from '@/scripts/reader-flow-boundary.mjs';
 import { serviceConstraintsHistoryControls, serviceConstraintsOrdinaryId, serviceConstraintsSource } from '@/scripts/reader-service-constraints.mjs';
 import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
@@ -68,6 +69,7 @@ const histories = [
   { controls: localizationComparisonHistoryControls(currentLocalizationComparison), edition: localizationComparisonSource, attribute: 'localization-comparison' },
   { controls: socialComparisonHistoryControls(currentSocialComparison), edition: socialComparisonSource, attribute: 'social-comparison' },
   { controls: costSustainabilityHistoryControls(currentCostSustainability), edition: costSustainabilitySource, attribute: 'cost-sustainability' },
+  { controls: part5RereadHistoryControls(currentPart5Reread), edition: part5RereadSource, attribute: 'part5-reread' },
 ];
 
 function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
@@ -197,6 +199,10 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
     if (index === 1 && tableId) {
       return createElement(defaults.table ?? 'table', { ...props, id: tableId, style: { ...props.style, ...scientificHistoryScroll } });
     }
+    const part5TableId = part5RereadOrdinaryId(currentPart5Reread, cleanRoute, print, `table-${index}`);
+    if (part5TableId) {
+      return createElement(defaults.table ?? 'table', { ...props, id: part5TableId, style: { ...props.style, ...scientificHistoryScroll } });
+    }
     if (index === 2 && cleanRoute === '/docs/book/lime-preferences-and-damage-weights') {
       return createElement(defaults.table ?? 'table', props);
     }
@@ -298,6 +304,11 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
           <p key={row.claimId} className="legacy-citation-context" data-cost-sustainability-correction={note.id} style={{ display: 'block' }}>
             <time dateTime={costSustainabilitySource.date}>{costSustainabilitySource.date}</time>{' 修订：'}{row.scope}{' '}
             <a href={citationSourceHref(costSustainabilitySource.commit)}>查看前版源文件</a>
+          </p>)}
+        {currentPart5Reread && part5RereadCorrections.filter(row => row.chapter === cleanRoute && row.claimId === note.id).map(row =>
+          <p key={row.claimId} className="legacy-citation-context" data-part5-reread-correction={note.id} style={{ display: 'block' }}>
+            <time dateTime={part5RereadSource.date}>{part5RereadSource.date}</time>{' 修订：'}{row.scope}{' '}
+            <a href={citationSourceHref(part5RereadSource.commit)}>查看前版源文件</a>
           </p>)}
       </li>)}</ol>
     </section>}

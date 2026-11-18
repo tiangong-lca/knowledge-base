@@ -3,7 +3,7 @@ import { serviceConstraintsEvaluationFile } from './reader-service-constraints.m
 import { visibleHistoryControl } from './reader-flow-boundary.mjs';
 import { historyPrintPointerTitleLayout } from './reader-copyedit.mjs';
 import { currentPrintReadingHref, getHeadingNumbering, getUnitNumbering } from './reader-numbering.mjs';
-import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches, currentFlowBoundary } from './reader-current-expectations.mjs';
+import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches, currentFlowBoundary, currentPart5Reread } from './reader-current-expectations.mjs';
 import readingRegister from '../knowledge/research/readings.json' with { type: 'json' };
 import { getClaimEvidence } from './knowledge.mjs';
 import { frameworkBookHref } from './reader-edition.mjs';
@@ -243,8 +243,16 @@ export function unaccountedReaderText(root, checkedNodes) {
   visit(root); return unexpected;
 }
 
+export function readerCitationSourceTitle(source, part5Active = Boolean(currentPart5Reread)) {
+  if (!source?.title || !part5Active) return source?.title ?? '';
+  return source.title
+    .replace('Organizations2020', 'Organizations (2020)')
+    .replace(' — official Bundesblatt carrier', '');
+}
+
 /** Match ClaimAnnotation's actual public projection, including per-unit input deduplication. */
 export function validateExchangeAnnotationOutput(document,unit,route,catalog,{print=false,claimIds=null,readings=readingRegister}={}) {
+  const part5Active=Boolean(currentPart5Reread);
   const errors=[],prefix=print?printUnitAnchor(route):chapterAnchorPrefix(route),allNotes=unit.querySelectorAll('[data-reader-claim]'),ids=allNotes.map(note=>note.getAttribute('data-reader-claim'));
   const byId=new Map((catalog?.claims??[]).map(claim=>[claim.id,claim])),references=print?printedReferenceIndex(document):new Map(),seenInputs=new Set();
   for(const note of allNotes) {
@@ -262,12 +270,14 @@ export function validateExchangeAnnotationOutput(document,unit,route,catalog,{pr
     const sourceItems=sourceLists[0]?.querySelectorAll('li')??[];
     if(sourceItems.length!==evidence.length)fail('evidence source occurrences missing or repeated');
     evidence.forEach(({evidence:item,relation},index)=>{
-      const source=catalog.sources.find(source=>source.id===item.sourceId),li=sourceItems[index],link=li?.querySelector('a'),expectedText=source?`${source.title}。${item.locator.replace(/。+$/u,'')}。${relation!=='supports'?`（${annotationRelations[relation]}）`:''}`:'';
-      if(!source||!li||link?.getAttribute('href')!==`/sources/#${item.id}`||link.text!==source.title||compact(withoutCarrierText(li))!==compact(expectedText)) {fail(`source, locator or relation missing or changed (${item.id})`);return;}
+      const source=catalog.sources.find(source=>source.id===item.sourceId),displayTitle=source?readerCitationSourceTitle(source,part5Active):'',li=sourceItems[index],link=li?.querySelector('a'),expectedText=source?`${displayTitle}。${item.locator.replace(/。+$/u,'')}。${relation!=='supports'?`（${annotationRelations[relation]}）`:''}`:'';
+      if(!source||!li||link?.getAttribute('href')!==`/sources/#${item.id}`||link.text!==displayTitle||compact(withoutCarrierText(li))!==compact(expectedText)) {fail(`source, locator or relation missing or changed (${item.id})`);return;}
       const artifact=expectedPassageArtifact(catalog,item,readings),carriers=li.querySelectorAll('.source-reading');
       if(carriers.length!==(artifact?1:0)){fail(`actual carrier context missing or changed (${item.id})`);return;}
-      if(artifact){const derived=artifact.kind==='derived-text',carrier=carriers[0],links=carrier.querySelectorAll('a'),expected=derived?'引文依据官方文档的文字摘录，引用限于所列文字与数值。该摘录记录本身不代表原始 PDF 字节或表格图像的核对。':'文献文本查看引用版本';
-        if(links.length!==1||links[0].getAttribute('href')!==(derived?artifact.originUrl:artifact.resolvedUrl)||links[0].text!==(derived?'官方文档':'查看引用版本')||compact(carrier.text)!==compact(expected))fail(`actual carrier link or limits missing or changed (${item.id})`);
+      if(artifact){const derived=artifact.kind==='derived-text',carrier=carriers[0],links=carrier.querySelectorAll('a'),
+          expectedLinkText=derived?(part5Active?'原载文献':'官方文档'):'查看引用版本',
+          expected=derived?(part5Active?'引文依据原载文献的公开文字摘录，引用限于所列文字与数值，不包含原刊版面或表格图像的版式核对。':'引文依据官方文档的文字摘录，引用限于所列文字与数值。该摘录记录本身不代表原始 PDF 字节或表格图像的核对。'):'文献文本查看引用版本';
+        if(links.length!==1||links[0].getAttribute('href')!==(derived?artifact.originUrl:artifact.resolvedUrl)||links[0].text!==expectedLinkText||compact(carrier.text)!==compact(expected))fail(`actual carrier link or limits missing or changed (${item.id})`);
       }
     });
     const details=annotation.querySelectorAll('details'),premises=claim.premiseIds;

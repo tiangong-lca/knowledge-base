@@ -2,6 +2,8 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
+import part5 from '../config/reader-part5-reread.json' with { type: 'json' };
+import { restorePart5RereadTestFiles } from './reader-part5-reread.mjs';
 import cost from '../config/reader-cost-sustainability.json' with { type: 'json' };
 import { restoreCostSustainabilityTestFiles } from './reader-cost-sustainability.mjs';
 import social from '../config/reader-social-comparison.json' with { type: 'json' };
@@ -242,13 +244,14 @@ test('B16 eutrophication pathways source plan preserves 8fcb2485 predecessor, 38
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
+  restorePart5RereadTestFiles(files, part5.unit);
   restoreCostSustainabilityTestFiles(files, cost.unit);
   restoreSocialComparisonTestFiles(files, social.unit);
   restoreLocalizationComparisonTestFiles(files, localization.unit);
   restoreWeightingValuationTestFiles(files, weighting.unit);
   restorePart4RereadTestFiles(files, part4.unit);
   if (particulate.unit) files.set(`content${particulate.unit.routes[0]}.mdx`, Buffer.from(particulate.unit.previousMdx));
-  const input = { ...previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, cost.unit), social.unit), localization.unit), weighting.unit), part4.unit), particulate.unit), files };
+  const input = { ...previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part5.unit), cost.unit), social.unit), localization.unit), weighting.unit), part4.unit), particulate.unit), files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
   const qualify = (unit, customInput = input, customActual = actual, customStruct = structure) =>
     prepareEutrophicationPathwaysSource(unit, customInput, customActual, customStruct);
@@ -339,7 +342,7 @@ test('Eutrophication pathways receipt verifier fails closed when capture or capt
 });
 
 test('Eutrophication pathways receipts bind actual output capture independently', { skip: !eutrophicationPathwaysCapturePin && config.status !== 'reviewed' }, () => {
-  const previous = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, cost.unit), social.unit), localization.unit), weighting.unit), part4.unit), particulate.unit);
+  const previous = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part5.unit), cost.unit), social.unit), localization.unit), weighting.unit), part4.unit), particulate.unit);
   const expected = readerPublicDownloads(previous.catalog, previous.literature, previous.readings);
   const verify = (mutateUnit = () => {}, mutateOutput) => {
     const unit = structuredClone(config.unit);

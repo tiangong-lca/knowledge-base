@@ -531,7 +531,8 @@ export function observeWeightingValuationOrdinaryTargets(documents) {
     }])));
 }
 
-export function validateWeightingValuationCorrectionOutput(document, path, unit) {
+const part5StackedCorrectionClaims = new Set(['cl-lime-decision']);
+export function validateWeightingValuationCorrectionOutput(document, path, unit, part5Reread = null) {
   const markers = document.querySelectorAll('[data-weighting-valuation-correction]');
   const expectedRows = !unit ? [] : weightingValuationCorrections.filter(row => path === '/print' || path === row.chapter);
   if (!expectedRows.length && !markers.length) return [];
@@ -562,7 +563,10 @@ export function validateWeightingValuationCorrectionOutput(document, path, unit)
         || note.getAttribute('data-reader-claim') !== claimId
         || article?.getAttribute('data-reader-route') !== chapter || sections.length !== 1
         || note.parentNode !== list || noteItems[noteIndex] !== note
-        || marker.tagName !== 'P' || marker.parentNode !== note || marker.nextElementSibling !== null
+        || marker.tagName !== 'P' || marker.parentNode !== note
+        || (part5Reread && part5StackedCorrectionClaims.has(row.claimId)
+          ? (marker.nextElementSibling?.getAttribute('data-part5-reread-correction') !== row.claimId || marker.nextElementSibling.nextElementSibling !== null)
+          : marker.nextElementSibling !== null)
         || !attrs(marker, 'class', 'data-weighting-valuation-correction', 'style')
         || marker.getAttribute('class') !== 'legacy-citation-context'
         || marker.getAttribute('style') !== 'display:block'
@@ -580,7 +584,7 @@ export function validateWeightingValuationCorrectionOutput(document, path, unit)
   return errors;
 }
 
-export function qualifyWeightingValuationHistory(documents, unit, actual) {
+export function qualifyWeightingValuationHistory(documents, unit, actual, part5Reread = null) {
   if (!unit) return { prior: actual, errors: [] };
   const targets = observeWeightingValuationOrdinaryTargets(documents);
   const prior = qualifyScientificHistory(unit.history, actual, targets, {
@@ -601,7 +605,7 @@ export function qualifyWeightingValuationHistory(documents, unit, actual) {
     errors.push('Weighting and valuation actual versioned ordinary or table targets differ');
   }
   for (const [path, document] of documents) {
-    errors.push(...validateWeightingValuationCorrectionOutput(document, path, unit));
+    errors.push(...validateWeightingValuationCorrectionOutput(document, path, unit, part5Reread));
   }
   return { prior, errors };
 }

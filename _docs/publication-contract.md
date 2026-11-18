@@ -17,12 +17,35 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-19
-lastReviewedCommit: 3f4a5cc0c3346469f2d4450f50abfbd4188d5106
+lastReviewedCommit: 2e0b523c3468613a3d71d03606f77adb36fd9a73
 ---
 
 # Publication contract
 
 ## Scoped scientific successors
+
+The Part V continuous-reread unit #145 synchronizes cross-chapter framing,
+dual-view entry links, institution/method/currency terminology, cross-chapter
+numeric anchors, premise-DAG ordering, and note locators across `F02`
+(`content/docs/book/index.mdx:18,22`), the Part V introduction
+(`config/reader-numbering.json`), and `B20`–`B24` (`4` managed files, `57`
+modified non-case claims, and `48` normalized Part V `ev-*.locator` records =
+`37` Part-V-exclusive + `11` shared with `B05`, `B14`, and `B32`) while
+conserving `100%` of all `1,044` claim IDs, sequence, `numericFacts`, `16` Part V
+case-bound claims, and `40` case downloads against
+`915af29592cee16d42772ba76080ed913d630e6b`. It harmonizes `AWARE`, `UNEP GLAM`,
+`CML`, `RIVM`, `UBP`, `PROMETHEE`, and `CTUe`, removes the unverified `2020` year
+label on `src-acid113-glam-scoping`, supplies `LIME2`, `PSILCA v3`, `PEF/OEF`,
+`PEFCR`, `TCO`, `USD`/`USD2012`/`€` expansions plus `~211×` styrene CF and `ReCiPe
+2016` Chapter `13` Table `13.2` (`0.457`) vs Summary Table `1.5` (`0.46`)
+anchors, restores `B21 [17]` cross-jurisdiction `E/G` comparability and `B21 [27]`
+`UNEP GLAM 2024/2026` three-derivation vs unweighted regional-mean caveats,
+attaches direct `B20 -> B21`, `B20 -> B23`, and `B22 -> B24` premise links with
+strict topological ascending order across all `127` non-case Part V claims,
+replaces generic `官方文档` / `原始 PDF 字节` excerpt wording with neutral
+`原载文献` wording when active, and publishes `8` `style="display:block"` dated
+correction notices without altering underlying quantitative evidence or claiming
+whole-book completion.
 
 The Part V closing cost-and-sustainability unit #143 compares Conventional `LCC`
 (`1933` US `GAO` / corporate `TCO`), `SETAC` Environmental `LCC` (`Swarr et al.
