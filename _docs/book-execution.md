@@ -1,6 +1,6 @@
 ---
 lastReviewedAt: 2026-11-18
-lastReviewedCommit: 4e094f7e89d5ba563af0ded8a47e15d62260045f
+lastReviewedCommit: 8d5f1037a2ab30b29c197fe89a422a5c69f81a93
 title: Approved LCA book execution and wave ledger
 docType: reference
 scope: repo
@@ -513,8 +513,26 @@ all `40` case JSON files byte-for-byte. Separate unconditional-PASS
 primary-source (`40203311`), zero-context `B23` reader (`1ce27b6e`), adversarial
 publication-engineering (`b7f75f11`) and actual-output acceptances (`431625f3...`,
 capture `47bff7ca...`) and normal source/root delivery are tracked on Issue139.
-Remaining Part V unit `B24`, the Part V whole-part reread, and all eight global
-Programme9 criteria remain active.
+
+Unit139 and companion static-export build optimization
+[Issue141](https://github.com/tiangong-lca/knowledge-base/issues/141) (`57.0 s` ->
+`6.7 s` static page generation, `8.5x` faster while preserving identical normalized
+HTML digests, compiled CSS `be180e5d...`, JS chunks, `catalogSha256`, and `B23`
+unit/capture pins) are now fully delivered: source PR140/Main
+`1a9301c2153867cf1b6cdefadc648346bd78b739` and PR142/Main
+`8d5f1037a2ab30b29c197fe89a422a5c69f81a93`, qualified 468-file hosted output on
+`https://prism.tiangong.earth` (`d006f5638628b724002ab6b03e0149a14671accd769fe675a9d6274800e15d76`,
+including unmodified `validateReaderOutput` against archived Main source and live
+Chromium/`@media print` verification), exact dual-source root2462/PR2463/Main
+`a6c6d54a745dd993a79505978636fdb7a3bfc0a8`, and ordinary final completion and
+source-handoff (`2/2`) receipts.
+
+[Issue143](https://github.com/tiangong-lca/knowledge-base/issues/143) executes the
+Part V closing comparative unit on `B24` (`《生命周期成本与综合评价》`) from qualified
+Main `8d5f1037a2ab30b29c197fe89a422a5c69f81a93`, recorded in the
+[cost-and-sustainability protocol](editorial/2026-11-18-cost-and-sustainability.md)
+before any manuscript, catalog or config edits. The Part V whole-part continuous
+reread (`B20`–`B24`) and all eight global Programme9 criteria remain active.
 
 Rule adoption101 itself is fully delivered: PR103/Main10dc686 and
 root2381/PR2382/Main90bcaa574, with complete ordinary source/root handoff receipts.
