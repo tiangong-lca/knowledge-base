@@ -1,0 +1,4006 @@
+{
+  "schemaVersion": 1,
+  "kind": "output",
+  "unit": "part4-reread-133",
+  "subjectSha256": "eb67dd07298b6b521ee519937c97f57384a02aeac3c1e86eff41631cc31d7737",
+  "date": "2026-11-18",
+  "scope": [
+    "config/reader-numbering.json",
+    "content/docs/book/index.mdx",
+    "content/monograph/climate-equivalence.mdx",
+    "content/docs/book/climate-response-and-metrics.mdx",
+    "content/docs/book/particulate-emissions-and-health.mdx",
+    "content/docs/appendices/particulate-factor-calculations.mdx",
+    "knowledge/cases/particulate-health-v1.publication.json",
+    "knowledge/cases/water-locality-v1.publication.json",
+    "claims:cl-lcia-midpoint-pathway",
+    "claims:cl-path-acid-indicator",
+    "claims:cl-path-units",
+    "claims:cl-water-opening",
+    "claims:cl-water-input-basis",
+    "claims:cl-pm-opening",
+    "claims:cl-pm-particle-identity",
+    "claims:cl-pm-precursor-denominator",
+    "claims:cl-pm-intake-definition",
+    "claims:cl-pm-intake-unit",
+    "claims:cl-pm-receptor-boundary",
+    "claims:cl-pm-source-height",
+    "claims:cl-pm-mixture-inputs",
+    "claims:cl-pm-mixture-results",
+    "claims:cl-pm-exposure-evidence",
+    "claims:cl-pm-cohort-design",
+    "claims:cl-pm-cohort-association",
+    "claims:cl-pm-effect-baseline",
+    "claims:cl-pm-effect-definition",
+    "claims:cl-pm-effect-default",
+    "claims:cl-pm-urban-health",
+    "claims:cl-pm-rural-health",
+    "claims:cl-pm-precursor-health",
+    "claims:cl-pm-burden-check",
+    "claims:cl-pm-population-meaning",
+    "claims:cl-pm-indoor-location",
+    "claims:cl-pm-indoor-matrix",
+    "claims:cl-pm-exposure-compatible",
+    "claims:cl-pm-compatible-population",
+    "claims:cl-pm-indoor-time",
+    "claims:cl-pm-exposure-coverage",
+    "claims:cl-pm-nonlinear-response",
+    "claims:cl-pm-risk-reference",
+    "claims:cl-pm-slope-meaning",
+    "claims:cl-pm-finite-change",
+    "claims:cl-pm-slope-context",
+    "claims:cl-pm-ier-evidence",
+    "claims:cl-pm-gemm-alternative",
+    "claims:cl-pm-factor-correction",
+    "claims:cl-pm-implementation-layer",
+    "claims:cl-pm-chemistry-background",
+    "claims:cl-pm-chemistry-perturbation",
+    "claims:cl-pm-chemistry-model-check",
+    "claims:cl-pm-release-date",
+    "claims:cl-pm-concentration-route",
+    "claims:cl-pm-regional-factor",
+    "claims:cl-pm-modern-values",
+    "claims:cl-pm-modern-ratios",
+    "claims:cl-pm-matched-scope",
+    "claims:cl-pm-uncovered-pathways",
+    "claims:cl-pm-conclusion",
+    "claims:cl-pm-evidence-levels",
+    "claims:cl-pm-matched-scenario",
+    "claims:cl-mineral115-judgment",
+    "claims:cl-water125-method-genealogy",
+    "claims:cl-water125-ef-country-resolution-and-climates",
+    "claims:cl-water125-value-choices-and-denominator-paradox",
+    "claims:cl-water125-diagnostic-synthesis",
+    "claims:cl-bio127-co-removal-and-methane-shift",
+    "claims:cl-bio127-climate-diagnostic-synthesis",
+    "claims:cl-particulate131-indicator-cutpoints",
+    "researchMetadata:order:revisions",
+    "researchMetadata:public-projection",
+    "revisions:rev-part4-reread-133-continuity-and-scopes"
+  ],
+  "observed": "Primary scoped judgment integrating two-round unconditional-PASS independent source, zero-context whole-Part IV reader and publication-engineering audits with direct export and browser/print checks; no human or empirical certification.",
+  "observations": {
+    "outputs": [
+      {
+        "path": "/docs/book",
+        "route": "/docs/book",
+        "from": "d6c9a3b2dfcdeb5d746c91fd37f0adb580a249d89531f2f9e3bab28b22f61b1d",
+        "sha256": "af86d4f0696c73422d94f41b77e0ede81ba20e2852bab151280750d11b097b98",
+        "rationale": "核对第四部整部连续回读（#133）在 /docs/book#/docs/book 上的正文术语展开、双视图链接、具名范围说明、具名更正说明及 #133 历史范围控件。"
+      },
+      {
+        "path": "/docs/book/midpoint-endpoint-value-choices",
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "from": "d5cc0280ee54e3b57bd3b30176cea2e98d1043e153be30ce35ebd87f5b79d2c2",
+        "sha256": "4e16d763044fd4a1f9f32661e1935e4708636c3da0fa8caae2f0a608ad115da4",
+        "rationale": "核对第四部整部连续回读（#133）在 /docs/book/midpoint-endpoint-value-choices#/docs/book/midpoint-endpoint-value-choices 上的正文术语展开、双视图链接、具名范围说明、具名更正说明及 #133 历史范围控件。"
+      },
+      {
+        "path": "/docs/book/climate-response-and-metrics",
+        "route": "/docs/book/climate-response-and-metrics",
+        "from": "0bdbccd2e54707e0b15cd40030a068cc9ccb57174bc44c314a69db832f495149",
+        "sha256": "57c6b6e249c16c2e8984ea1bdf39078f4caec7b0dc758a02c0ed85f4dbd66b60",
+        "rationale": "核对第四部整部连续回读（#133）在 /docs/book/climate-response-and-metrics#/docs/book/climate-response-and-metrics 上的正文术语展开、双视图链接、具名范围说明、具名更正说明及 #133 历史范围控件。"
+      },
+      {
+        "path": "/docs/book/acidification-and-nutrient-pathways",
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "from": "5860fc4b8d5bf07ffc9efc454b6025c760b0c7a72a5978dca317a5f152fc45af",
+        "sha256": "c0a6fb572d310348648e6fd44989d03fb7333dc516dd93859a5e2ece362a357c",
+        "rationale": "核对第四部整部连续回读（#133）在 /docs/book/acidification-and-nutrient-pathways#/docs/book/acidification-and-nutrient-pathways 上的正文术语展开、双视图链接、具名范围说明、具名更正说明及 #133 历史范围控件。"
+      },
+      {
+        "path": "/docs/book/particulate-emissions-and-health",
+        "route": "/docs/book/particulate-emissions-and-health",
+        "from": "527755f1d1ef4387f960da6165fdad26cb918f26b5d3bbf06573bd1be0c36e08",
+        "sha256": "3f627f9f34b93917806986dc6954cf816fd0619d7566e98fdf625e6b67fedeaf",
+        "rationale": "核对第四部整部连续回读（#133）在 /docs/book/particulate-emissions-and-health#/docs/book/particulate-emissions-and-health 上的正文术语展开、双视图链接、具名范围说明、具名更正说明及 #133 历史范围控件。"
+      },
+      {
+        "path": "/docs/book/water-scarcity-and-reference",
+        "route": "/docs/book/water-scarcity-and-reference",
+        "from": "fb8051f8d06f9711f8f925602ed07c839fc5e632494ed52fe12b6162f241e67d",
+        "sha256": "97a8b26b6ec65fb3543dba27ad91ed7bfd4d1acbe5b82111bd8665bbe58e338f",
+        "rationale": "核对第四部整部连续回读（#133）在 /docs/book/water-scarcity-and-reference#/docs/book/water-scarcity-and-reference 上的正文术语展开、双视图链接、具名范围说明、具名更正说明及 #133 历史范围控件。"
+      },
+      {
+        "path": "/docs/appendices/particulate-factor-calculations",
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "from": "ef5f66b56a9251539d16582ff29a65823413892de400c983dcdc11e2556618d6",
+        "sha256": "e4fc688ff2f08fd41e7a66acd4110efd527a8b2d01fa1df26fb1ab5e5e6396cc",
+        "rationale": "核对第四部整部连续回读（#133）在 /docs/appendices/particulate-factor-calculations#/docs/appendices/particulate-factor-calculations 上的正文术语展开、双视图链接、具名范围说明、具名更正说明及 #133 历史范围控件。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book",
+        "from": "a9e606f53d0be582a4a90e7120b093f1b49cf0e62abf19d3a1e9a525f461b6ea",
+        "sha256": "1938c3ad493cbc6a19deb449282118c3b04863e7e99a7e9a79dcbe174efbb0a8",
+        "rationale": "核对第四部整部连续回读（#133）在 /print#/docs/book 上的正文术语展开、双视图链接、具名范围说明、具名更正说明及 #133 历史范围控件。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "from": "d8b1d26539abf133f1c8200ba4e92efa055efe92fe3e70d4212c7b68a059aebc",
+        "sha256": "7e24831e6265da035b008d460cea9a8f99e23d798a4ede1a22c89cea762dce11",
+        "rationale": "核对第四部整部连续回读（#133）在 /print#/docs/book/midpoint-endpoint-value-choices 上的正文术语展开、双视图链接、具名范围说明、具名更正说明及 #133 历史范围控件。"
+      },
+      {
+        "path": "/print",
+        "route": "book-climate-equivalence",
+        "from": "93ccaac30e6dd9654e39246cd50c992058589a75a71a77fb9b01305acbc2d590",
+        "sha256": "5a49fa462b57a88d07da5371fb263482ca61ef82727d62a64951208cbbd1b201",
+        "rationale": "核对第四部整部连续回读（#133）在 /print#book-climate-equivalence 上的正文术语展开、双视图链接、具名范围说明、具名更正说明及 #133 历史范围控件。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "from": "62c69b273c91137ddf016d2e0d0758db3934e0f9157e80ee219d96eeeee833c7",
+        "sha256": "a6daa762916b2c94216083de3f6823c897b589ed6d7133f13d34a7128052ae85",
+        "rationale": "核对第四部整部连续回读（#133）在 /print#/docs/book/acidification-and-nutrient-pathways 上的正文术语展开、双视图链接、具名范围说明、具名更正说明及 #133 历史范围控件。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/particulate-emissions-and-health",
+        "from": "7a8c47537b3c193e22001bb447c37216dd97589edf3cbcc2a6ee49a94112d31b",
+        "sha256": "b2c6d48d3d13dc52f59530243cb804ecca988fbf75e041e47254882bb3d53a24",
+        "rationale": "核对第四部整部连续回读（#133）在 /print#/docs/book/particulate-emissions-and-health 上的正文术语展开、双视图链接、具名范围说明、具名更正说明及 #133 历史范围控件。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/water-scarcity-and-reference",
+        "from": "4aa1b595357eb7d6ddd9028f350c115c8f6907edaebe90affb27342dfb55e069",
+        "sha256": "630099b6a842a5256e8a8a1ac489116faac79391507f1d0d33de17e4a9de48fb",
+        "rationale": "核对第四部整部连续回读（#133）在 /print#/docs/book/water-scarcity-and-reference 上的正文术语展开、双视图链接、具名范围说明、具名更正说明及 #133 历史范围控件。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/wall-service-to-comparison",
+        "from": "44c2ecac009e1fbaaed4f7147870af54baab0a4deaba3445489a396eeae4922a",
+        "sha256": "d047390a5ae4b52c52bd7a9783d3f93d17e663a4d4f3f2958284dda6a0cea5b9",
+        "rationale": "核对第四部整部连续回读（#133）在 /print#/docs/book/wall-service-to-comparison 上的正文术语展开、双视图链接、具名范围说明、具名更正说明及 #133 历史范围控件。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "from": "12734adf04248298e93ebb1dd9c8bedbb30fa3fd9f84c2840148d523176cdb32",
+        "sha256": "d4eaf5af5d972dd30e8b052bdf5a6fb65a71a83a50f86693f433ddc124501c80",
+        "rationale": "核对第四部整部连续回读（#133）在 /print#/docs/appendices/particulate-factor-calculations 上的正文术语展开、双视图链接、具名范围说明、具名更正说明及 #133 历史范围控件。"
+      }
+    ],
+    "publicArtifacts": [
+      {
+        "path": "claims/index.html",
+        "from": "a1ec84f58f377d8db6b901cb7fc40bbd041c6959a05cc4b52e9b80c8b65f9062",
+        "sha256": "58b3588fe60dc9e6730d5b1b3b516dca77c093d64db92d3736eaa4822b8991a8",
+        "rationale": "核对第四部整部连续回读（#133）对公开目录、注释页、修订台账或覆盖率页的实际输出变化及其真实前态。"
+      },
+      {
+        "path": "sources/index.html",
+        "from": "d41e7bba2d47393da364361c2df85a35f1b31d13952e157f73717c9f6b1b2395",
+        "sha256": "646a87d4e1ef46e5aafbcd51387f73979c6558511aa231c76d16e5877da85cc5",
+        "rationale": "核对第四部整部连续回读（#133）对公开目录、注释页、修订台账或覆盖率页的实际输出变化及其真实前态。"
+      },
+      {
+        "path": "concepts/index.html",
+        "from": "79d8d8614e6fa0a4396a3edd233b4ff91629641bfa17f7ee1f883ad5c7148d49",
+        "sha256": "85d8ffbb221a1f18afafdfd6a8514f576072a8db73f200269e984f0841ecaa9e",
+        "rationale": "核对第四部整部连续回读（#133）对公开目录、注释页、修订台账或覆盖率页的实际输出变化及其真实前态。"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "from": "b25ef706771e00bac1493b2911a51da033f740422fb5a0ffbceed53d0d74a2cd",
+        "sha256": "63fd97d02b6fa0c0496f0d527045dbbb7796a09848955f51905c09a73e68351c",
+        "rationale": "核对第四部整部连续回读（#133）对公开目录、注释页、修订台账或覆盖率页的实际输出变化及其真实前态。"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "from": "76f7cc03dd7e6d40cbb10c2e59219b9cb4e6e8e3dc9fa1c06cf8915d2d182082",
+        "sha256": "52d2e6b6d38eed78a5df8bc05b8310195f8228dfba03a5ffb9ff93a50599b2ce",
+        "rationale": "核对第四部整部连续回读（#133）对公开目录、注释页、修订台账或覆盖率页的实际输出变化及其真实前态。"
+      }
+    ],
+    "addresses": {
+      "/docs/book#nd-page": {
+        "route": "/docs/book",
+        "kind": "chapter",
+        "title": "阅读导论",
+        "claimIds": [],
+        "ordinary": [
+          "32c26733539536581281445936b2043cecb589449758062551c9420124bd1942",
+          "29c14b1bb903785effa8ca5578f368a98008f915c4c2eb0432627069427d7f18",
+          "5ae578a42e033518a1565e5942c5049e2dcd6d5e1652bc0fb047819c2456e56f",
+          "a4cc9e34f40500027922c3bf9be992c3707bf1d04cb8b335c977884159e0510b",
+          "641accd8a2e5c5a15f5638d851c08f3688aef4c16a7da90c11c523e344e9ca0c",
+          "2a8ce4cdd51d3c3334c4010c5489333369e225c1c8165d694e634a78fe44a346",
+          "cfdd8f5f3635a13495cbcd98f1a41e1afa8776c3f3ad159935aaab4ea5b02d0d",
+          "3ea15c9664d65840388f697a201414fc4e5ab715b5d5b91a249c872f1f5c4e08",
+          "9082c39264dc3fa9e8e6a9ce9b24391616fdd296b58f207a71031737653c38cd",
+          "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245"
+        ],
+        "bindings": {
+          "links": [
+            [],
+            [],
+            [
+              "/docs/book/integrative-ambitions/"
+            ],
+            [
+              "/docs/book/service-and-reference/",
+              "/docs/book/inventory-calculation/"
+            ],
+            [
+              "/docs/book/midpoint-endpoint-value-choices/"
+            ],
+            [
+              "/docs/book/future-technology-and-context/"
+            ],
+            [
+              "/docs/book/uncertainty-and-variability/"
+            ],
+            [
+              "/docs/book/wall-service-to-comparison/",
+              "/docs/book/interpretation-and-limits/"
+            ],
+            [],
+            []
+          ],
+          "tables": []
+        }
+      },
+      "/docs/book#main-content": {
+        "route": "/docs/book",
+        "kind": "reading-title",
+        "title": "阅读导论",
+        "claimIds": [],
+        "ordinary": [
+          "32c26733539536581281445936b2043cecb589449758062551c9420124bd1942",
+          "29c14b1bb903785effa8ca5578f368a98008f915c4c2eb0432627069427d7f18",
+          "5ae578a42e033518a1565e5942c5049e2dcd6d5e1652bc0fb047819c2456e56f",
+          "a4cc9e34f40500027922c3bf9be992c3707bf1d04cb8b335c977884159e0510b",
+          "641accd8a2e5c5a15f5638d851c08f3688aef4c16a7da90c11c523e344e9ca0c",
+          "2a8ce4cdd51d3c3334c4010c5489333369e225c1c8165d694e634a78fe44a346",
+          "cfdd8f5f3635a13495cbcd98f1a41e1afa8776c3f3ad159935aaab4ea5b02d0d",
+          "3ea15c9664d65840388f697a201414fc4e5ab715b5d5b91a249c872f1f5c4e08",
+          "9082c39264dc3fa9e8e6a9ce9b24391616fdd296b58f207a71031737653c38cd",
+          "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245"
+        ],
+        "chapter": "nd-page"
+      },
+      "/docs/book#问题与历史": {
+        "route": "/docs/book",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [],
+        "ordinary": []
+      },
+      "/docs/book#用途与地区语境": {
+        "route": "/docs/book",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [],
+        "ordinary": [
+          "5ae578a42e033518a1565e5942c5049e2dcd6d5e1652bc0fb047819c2456e56f"
+        ]
+      },
+      "/docs/book#比较对象与方法选择": {
+        "route": "/docs/book",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [],
+        "ordinary": []
+      },
+      "/docs/book#从系统关系到计算结果": {
+        "route": "/docs/book",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [],
+        "ordinary": [
+          "a4cc9e34f40500027922c3bf9be992c3707bf1d04cb8b335c977884159e0510b",
+          "641accd8a2e5c5a15f5638d851c08f3688aef4c16a7da90c11c523e344e9ca0c"
+        ]
+      },
+      "/docs/book#时间未来与相邻评价": {
+        "route": "/docs/book",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [],
+        "ordinary": [
+          "2a8ce4cdd51d3c3334c4010c5489333369e225c1c8165d694e634a78fe44a346"
+        ]
+      },
+      "/docs/book#数据与审查": {
+        "route": "/docs/book",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [],
+        "ordinary": []
+      },
+      "/docs/book#数据质量与不确定性": {
+        "route": "/docs/book",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [],
+        "ordinary": [
+          "cfdd8f5f3635a13495cbcd98f1a41e1afa8776c3f3ad159935aaab4ea5b02d0d"
+        ]
+      },
+      "/docs/book#解释与使用": {
+        "route": "/docs/book",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [],
+        "ordinary": []
+      },
+      "/docs/book#完整做一遍": {
+        "route": "/docs/book",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [],
+        "ordinary": [
+          "3ea15c9664d65840388f697a201414fc4e5ab715b5d5b91a249c872f1f5c4e08"
+        ]
+      },
+      "/docs/book#把各章接起来": {
+        "route": "/docs/book",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [],
+        "ordinary": [
+          "9082c39264dc3fa9e8e6a9ce9b24391616fdd296b58f207a71031737653c38cd",
+          "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245"
+        ]
+      },
+      "/docs/book/climate-response-and-metrics#nd-page": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "chapter",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-opening",
+          "cl-climate-inventory",
+          "cl-climate-pulse",
+          "cl-climate-reservoirs",
+          "cl-climate-reference-illustration",
+          "cl-climate-reference-limits",
+          "cl-climate-forcing",
+          "cl-climate-agwp",
+          "cl-climate-agtp",
+          "cl-climate-endpoint",
+          "cl-bio127-midpoint-endpoint-genealogy",
+          "cl-climate-feedback-consistency",
+          "cl-climate-feedback-return",
+          "cl-bio127-feedback-perspective-asymmetry",
+          "cl-climate-methane-chemistry",
+          "cl-climate-carbon-budget",
+          "cl-climate-three-methane-rows",
+          "cl-climate-biogenic-boundary",
+          "cl-bio127-ef31-subindicator-partition",
+          "cl-bio127-zero-zero-vs-minus-plus-one",
+          "cl-climate-editions",
+          "cl-climate-published-after",
+          "cl-climate-equal-score",
+          "cl-climate-wall-fixed",
+          "cl-climate-wall-reweighted",
+          "cl-climate-comparison-criteria",
+          "cl-bio127-co-removal-and-methane-shift",
+          "cl-bio127-package-and-report-discrepancies",
+          "cl-climate-calendar-sum",
+          "cl-climate-timing-assumptions",
+          "cl-climate-timing-result",
+          "cl-climate-dynamic-application",
+          "cl-climate-step",
+          "cl-climate-rate-formula",
+          "cl-climate-rate-fit",
+          "cl-climate-rate-histories",
+          "cl-climate-rate-window",
+          "cl-climate-rate-aggregate",
+          "cl-climate-debate",
+          "cl-bio127-climate-diagnostic-synthesis",
+          "cl-climate-conclusion"
+        ],
+        "ordinary": [
+          "4a9869193c751db57388deaf67d586c637e76242f543a65ff6197031f7e6fbc9",
+          "38f8454aac1ee102ac47b7664f50da39557a7f574762249200233d3079397a16",
+          "1a7246b4ca3fe108fa4b91138a639841da81087b38d8d97030b2b9680bea27b2",
+          "731c6b810c3732000ec30fd82417d53f53380abeb2d22d0f771581512a1a2d40",
+          "7615132e498c5e572677c01b50400cadff3d03d86394925e308a9e26d6ce5ee3",
+          "27a44c3c6288854096553ff05219f9f1b70979cca119358c4e527e85b9473d6b"
+        ],
+        "bindings": {
+          "links": [
+            [],
+            [],
+            [
+              "/docs/appendices/climate-numerical-reconstruction/#%E5%8F%82%E8%80%83%E5%93%8D%E5%BA%94"
+            ],
+            [
+              "/docs/book/wall-service-to-comparison/"
+            ],
+            [
+              "/docs/appendices/climate-numerical-reconstruction/#%E6%98%BE%E7%A4%BA%E7%B2%BE%E5%BA%A6"
+            ],
+            [
+              "/docs/book/emission-time-and-assessment/"
+            ]
+          ],
+          "tables": []
+        }
+      },
+      "/docs/book/climate-response-and-metrics#main-content": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "reading-title",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-opening",
+          "cl-climate-inventory",
+          "cl-climate-pulse",
+          "cl-climate-reservoirs",
+          "cl-climate-reference-illustration",
+          "cl-climate-reference-limits",
+          "cl-climate-forcing",
+          "cl-climate-agwp",
+          "cl-climate-agtp",
+          "cl-climate-endpoint",
+          "cl-bio127-midpoint-endpoint-genealogy",
+          "cl-climate-feedback-consistency",
+          "cl-climate-feedback-return",
+          "cl-bio127-feedback-perspective-asymmetry",
+          "cl-climate-methane-chemistry",
+          "cl-climate-carbon-budget",
+          "cl-climate-three-methane-rows",
+          "cl-climate-biogenic-boundary",
+          "cl-bio127-ef31-subindicator-partition",
+          "cl-bio127-zero-zero-vs-minus-plus-one",
+          "cl-climate-editions",
+          "cl-climate-published-after",
+          "cl-climate-equal-score",
+          "cl-climate-wall-fixed",
+          "cl-climate-wall-reweighted",
+          "cl-climate-comparison-criteria",
+          "cl-bio127-co-removal-and-methane-shift",
+          "cl-bio127-package-and-report-discrepancies",
+          "cl-climate-calendar-sum",
+          "cl-climate-timing-assumptions",
+          "cl-climate-timing-result",
+          "cl-climate-dynamic-application",
+          "cl-climate-step",
+          "cl-climate-rate-formula",
+          "cl-climate-rate-fit",
+          "cl-climate-rate-histories",
+          "cl-climate-rate-window",
+          "cl-climate-rate-aggregate",
+          "cl-climate-debate",
+          "cl-bio127-climate-diagnostic-synthesis",
+          "cl-climate-conclusion"
+        ],
+        "ordinary": [
+          "4a9869193c751db57388deaf67d586c637e76242f543a65ff6197031f7e6fbc9",
+          "38f8454aac1ee102ac47b7664f50da39557a7f574762249200233d3079397a16",
+          "1a7246b4ca3fe108fa4b91138a639841da81087b38d8d97030b2b9680bea27b2",
+          "731c6b810c3732000ec30fd82417d53f53380abeb2d22d0f771581512a1a2d40",
+          "7615132e498c5e572677c01b50400cadff3d03d86394925e308a9e26d6ce5ee3",
+          "27a44c3c6288854096553ff05219f9f1b70979cca119358c4e527e85b9473d6b"
+        ],
+        "chapter": "nd-page"
+      },
+      "/docs/book/climate-response-and-metrics#响应与指标": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "heading",
+        "title": "响应与指标",
+        "claimIds": [
+          "cl-climate-opening",
+          "cl-climate-inventory",
+          "cl-climate-pulse",
+          "cl-climate-reservoirs",
+          "cl-climate-reference-illustration",
+          "cl-climate-reference-limits",
+          "cl-climate-forcing",
+          "cl-climate-agwp",
+          "cl-climate-agtp",
+          "cl-climate-endpoint",
+          "cl-bio127-midpoint-endpoint-genealogy"
+        ],
+        "ordinary": [
+          "38f8454aac1ee102ac47b7664f50da39557a7f574762249200233d3079397a16",
+          "1a7246b4ca3fe108fa4b91138a639841da81087b38d8d97030b2b9680bea27b2"
+        ]
+      },
+      "/docs/book/climate-response-and-metrics#气体与碳收支": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "heading",
+        "title": "气体与碳收支",
+        "claimIds": [
+          "cl-climate-feedback-consistency",
+          "cl-climate-feedback-return",
+          "cl-bio127-feedback-perspective-asymmetry",
+          "cl-climate-methane-chemistry",
+          "cl-climate-carbon-budget",
+          "cl-climate-three-methane-rows",
+          "cl-climate-biogenic-boundary",
+          "cl-bio127-ef31-subindicator-partition",
+          "cl-bio127-zero-zero-vs-minus-plus-one"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#清单比较": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "heading",
+        "title": "清单比较",
+        "claimIds": [
+          "cl-climate-editions",
+          "cl-climate-published-after",
+          "cl-climate-equal-score",
+          "cl-climate-wall-fixed",
+          "cl-climate-wall-reweighted",
+          "cl-climate-comparison-criteria",
+          "cl-bio127-co-removal-and-methane-shift",
+          "cl-bio127-package-and-report-discrepancies"
+        ],
+        "ordinary": [
+          "731c6b810c3732000ec30fd82417d53f53380abeb2d22d0f771581512a1a2d40",
+          "7615132e498c5e572677c01b50400cadff3d03d86394925e308a9e26d6ce5ee3"
+        ]
+      },
+      "/docs/book/climate-response-and-metrics#排放日历": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "heading",
+        "title": "排放日历",
+        "claimIds": [
+          "cl-climate-calendar-sum",
+          "cl-climate-timing-assumptions",
+          "cl-climate-timing-result",
+          "cl-climate-dynamic-application"
+        ],
+        "ordinary": [
+          "27a44c3c6288854096553ff05219f9f1b70979cca119358c4e527e85b9473d6b"
+        ]
+      },
+      "/docs/book/climate-response-and-metrics#历史与用途": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "heading",
+        "title": "历史与用途",
+        "claimIds": [
+          "cl-climate-step",
+          "cl-climate-rate-formula",
+          "cl-climate-rate-fit",
+          "cl-climate-rate-histories",
+          "cl-climate-rate-window",
+          "cl-climate-rate-aggregate",
+          "cl-climate-debate",
+          "cl-bio127-climate-diagnostic-synthesis",
+          "cl-climate-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-annotations": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note-group",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-opening",
+          "cl-climate-inventory",
+          "cl-climate-pulse",
+          "cl-climate-reservoirs",
+          "cl-climate-reference-illustration",
+          "cl-climate-reference-limits",
+          "cl-climate-forcing",
+          "cl-climate-agwp",
+          "cl-climate-agtp",
+          "cl-climate-endpoint",
+          "cl-bio127-midpoint-endpoint-genealogy",
+          "cl-climate-feedback-consistency",
+          "cl-climate-feedback-return",
+          "cl-bio127-feedback-perspective-asymmetry",
+          "cl-climate-methane-chemistry",
+          "cl-climate-carbon-budget",
+          "cl-climate-three-methane-rows",
+          "cl-climate-biogenic-boundary",
+          "cl-bio127-ef31-subindicator-partition",
+          "cl-bio127-zero-zero-vs-minus-plus-one",
+          "cl-climate-editions",
+          "cl-climate-published-after",
+          "cl-climate-equal-score",
+          "cl-climate-wall-fixed",
+          "cl-climate-wall-reweighted",
+          "cl-climate-comparison-criteria",
+          "cl-bio127-co-removal-and-methane-shift",
+          "cl-bio127-package-and-report-discrepancies",
+          "cl-climate-calendar-sum",
+          "cl-climate-timing-assumptions",
+          "cl-climate-timing-result",
+          "cl-climate-dynamic-application",
+          "cl-climate-step",
+          "cl-climate-rate-formula",
+          "cl-climate-rate-fit",
+          "cl-climate-rate-histories",
+          "cl-climate-rate-window",
+          "cl-climate-rate-aggregate",
+          "cl-climate-debate",
+          "cl-bio127-climate-diagnostic-synthesis",
+          "cl-climate-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-opening": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-opening"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-inventory": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-inventory"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-pulse": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-pulse"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-reservoirs": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-reservoirs"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-reference-illustration": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-reference-illustration"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-reference-limits": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-reference-limits"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-forcing": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-forcing"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-agwp": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-agwp"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-agtp": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-agtp"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-endpoint": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-endpoint"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-bio127-midpoint-endpoint-genealogy": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-bio127-midpoint-endpoint-genealogy"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-feedback-consistency": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-feedback-consistency"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-feedback-return": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-feedback-return"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-bio127-feedback-perspective-asymmetry": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-bio127-feedback-perspective-asymmetry"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-methane-chemistry": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-methane-chemistry"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-carbon-budget": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-carbon-budget"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-three-methane-rows": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-three-methane-rows"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-biogenic-boundary": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-biogenic-boundary"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-bio127-ef31-subindicator-partition": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-bio127-ef31-subindicator-partition"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-bio127-zero-zero-vs-minus-plus-one": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-bio127-zero-zero-vs-minus-plus-one"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-editions": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-editions"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-published-after": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-published-after"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-equal-score": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-equal-score"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-wall-fixed": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-wall-fixed"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-wall-reweighted": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-wall-reweighted"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-comparison-criteria": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-comparison-criteria"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-bio127-co-removal-and-methane-shift": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-bio127-co-removal-and-methane-shift"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-bio127-package-and-report-discrepancies": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-bio127-package-and-report-discrepancies"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-calendar-sum": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-calendar-sum"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-timing-assumptions": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-timing-assumptions"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-timing-result": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-timing-result"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-dynamic-application": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-dynamic-application"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-step": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-step"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-rate-formula": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-rate-formula"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-rate-fit": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-rate-fit"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-rate-histories": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-rate-histories"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-rate-window": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-rate-window"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-rate-aggregate": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-rate-aggregate"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-debate": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-debate"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-bio127-climate-diagnostic-synthesis": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-bio127-climate-diagnostic-synthesis"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/climate-response-and-metrics#chapter-2f646f63732f626f6f6b2f636c696d6174652d726573706f6e73652d616e642d6d657472696373-claim-cl-climate-conclusion": {
+        "route": "/docs/book/climate-response-and-metrics",
+        "kind": "note",
+        "title": "气候响应与当量",
+        "claimIds": [
+          "cl-climate-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#nd-page": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "chapter",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-opening",
+          "cl-pm-particle-identity",
+          "cl-pm-intake-definition",
+          "cl-pm-intake-unit",
+          "cl-pm-receptor-boundary",
+          "cl-pm-effect-definition",
+          "cl-pm-effect-default",
+          "cl-pm-urban-health",
+          "cl-pm-rural-health",
+          "cl-pm-precursor-denominator",
+          "cl-pm-precursor-health",
+          "cl-particulate131-indicator-cutpoints",
+          "cl-particulate131-size-and-subcompartment",
+          "cl-pm-source-distribution",
+          "cl-pm-evidence-levels",
+          "cl-pm-cohort-design",
+          "cl-pm-cohort-association",
+          "cl-pm-effect-baseline",
+          "cl-pm-indoor-location",
+          "cl-pm-exposure-compatible",
+          "cl-pm-compatible-population",
+          "cl-pm-exposure-coverage",
+          "cl-pm-nonlinear-response",
+          "cl-pm-risk-reference",
+          "cl-pm-slope-meaning",
+          "cl-pm-finite-change",
+          "cl-pm-ier-evidence",
+          "cl-pm-gemm-alternative",
+          "cl-particulate131-cohen-gbd2015-scope",
+          "cl-particulate131-cohen-empirical-limits",
+          "cl-pm-chemistry-background",
+          "cl-pm-chemistry-perturbation",
+          "cl-pm-concentration-route",
+          "cl-pm-regional-summary",
+          "cl-pm-factor-order",
+          "cl-pm-version-and-model",
+          "cl-pm-matched-scope",
+          "cl-pm-matched-scenario",
+          "cl-pm-uncovered-pathways",
+          "cl-particulate131-precursor-perspectives",
+          "cl-particulate131-ef-ammonia-inversion",
+          "cl-particulate131-regional-endpoint-reversal",
+          "cl-particulate131-package-discrepancies",
+          "cl-pm-population-meaning",
+          "cl-pm-conclusion"
+        ],
+        "ordinary": [
+          "593aa323caa92e65124bea2dc5bfa16f8bac1ab8ab49c7b5d5fed71e98ebf27a",
+          "2424dacf5888e49505b73d060e26245c9ed620f9d56ce069a0a4e1ba42ce15c1",
+          "63ae6236d72b953ce676712655d0c2d77edaea4e2bf6e4d01d4de6840e976bf2",
+          "5eba7ae28f6b4bd7793a64c63f963fd70550e1bbb53e6ede41a76d9aa22c0006"
+        ],
+        "bindings": {
+          "links": [
+            [],
+            [
+              "/docs/appendices/particulate-factor-calculations#%E6%8E%92%E6%94%BE%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8A%A0%E6%9D%83",
+              "/docs/appendices/particulate-factor-calculations#%E5%8C%BA%E5%AE%A4%E4%B8%8E%E6%B4%BB%E5%8A%A8%E6%97%B6%E9%97%B4"
+            ],
+            [
+              "/docs/appendices/particulate-factor-calculations#%E5%8F%82%E7%85%A7%E4%B8%8E%E6%A8%A1%E5%9E%8B%E6%A0%B8%E9%AA%8C"
+            ],
+            [
+              "/docs/appendices/particulate-factor-calculations#%E5%8F%91%E8%A1%8C%E8%8C%83%E5%9B%B4%E4%B8%8E%E5%9B%A0%E5%AD%90%E8%A1%A8"
+            ]
+          ],
+          "tables": []
+        }
+      },
+      "/docs/book/particulate-emissions-and-health#main-content": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "reading-title",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-opening",
+          "cl-pm-particle-identity",
+          "cl-pm-intake-definition",
+          "cl-pm-intake-unit",
+          "cl-pm-receptor-boundary",
+          "cl-pm-effect-definition",
+          "cl-pm-effect-default",
+          "cl-pm-urban-health",
+          "cl-pm-rural-health",
+          "cl-pm-precursor-denominator",
+          "cl-pm-precursor-health",
+          "cl-particulate131-indicator-cutpoints",
+          "cl-particulate131-size-and-subcompartment",
+          "cl-pm-source-distribution",
+          "cl-pm-evidence-levels",
+          "cl-pm-cohort-design",
+          "cl-pm-cohort-association",
+          "cl-pm-effect-baseline",
+          "cl-pm-indoor-location",
+          "cl-pm-exposure-compatible",
+          "cl-pm-compatible-population",
+          "cl-pm-exposure-coverage",
+          "cl-pm-nonlinear-response",
+          "cl-pm-risk-reference",
+          "cl-pm-slope-meaning",
+          "cl-pm-finite-change",
+          "cl-pm-ier-evidence",
+          "cl-pm-gemm-alternative",
+          "cl-particulate131-cohen-gbd2015-scope",
+          "cl-particulate131-cohen-empirical-limits",
+          "cl-pm-chemistry-background",
+          "cl-pm-chemistry-perturbation",
+          "cl-pm-concentration-route",
+          "cl-pm-regional-summary",
+          "cl-pm-factor-order",
+          "cl-pm-version-and-model",
+          "cl-pm-matched-scope",
+          "cl-pm-matched-scenario",
+          "cl-pm-uncovered-pathways",
+          "cl-particulate131-precursor-perspectives",
+          "cl-particulate131-ef-ammonia-inversion",
+          "cl-particulate131-regional-endpoint-reversal",
+          "cl-particulate131-package-discrepancies",
+          "cl-pm-population-meaning",
+          "cl-pm-conclusion"
+        ],
+        "ordinary": [
+          "593aa323caa92e65124bea2dc5bfa16f8bac1ab8ab49c7b5d5fed71e98ebf27a",
+          "2424dacf5888e49505b73d060e26245c9ed620f9d56ce069a0a4e1ba42ce15c1",
+          "63ae6236d72b953ce676712655d0c2d77edaea4e2bf6e4d01d4de6840e976bf2",
+          "5eba7ae28f6b4bd7793a64c63f963fd70550e1bbb53e6ede41a76d9aa22c0006"
+        ],
+        "chapter": "nd-page"
+      },
+      "/docs/book/particulate-emissions-and-health#排放与健康量": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "heading",
+        "title": "排放与健康量",
+        "claimIds": [
+          "cl-pm-opening",
+          "cl-pm-particle-identity",
+          "cl-pm-intake-definition",
+          "cl-pm-intake-unit",
+          "cl-pm-receptor-boundary",
+          "cl-pm-effect-definition",
+          "cl-pm-effect-default",
+          "cl-pm-urban-health",
+          "cl-pm-rural-health",
+          "cl-pm-precursor-denominator",
+          "cl-pm-precursor-health",
+          "cl-particulate131-indicator-cutpoints",
+          "cl-particulate131-size-and-subcompartment"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#暴露与证据": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "heading",
+        "title": "暴露与证据",
+        "claimIds": [
+          "cl-pm-source-distribution",
+          "cl-pm-evidence-levels",
+          "cl-pm-cohort-design",
+          "cl-pm-cohort-association",
+          "cl-pm-effect-baseline",
+          "cl-pm-indoor-location",
+          "cl-pm-exposure-compatible",
+          "cl-pm-compatible-population",
+          "cl-pm-exposure-coverage"
+        ],
+        "ordinary": [
+          "2424dacf5888e49505b73d060e26245c9ed620f9d56ce069a0a4e1ba42ce15c1"
+        ]
+      },
+      "/docs/book/particulate-emissions-and-health#参照与响应": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "heading",
+        "title": "参照与响应",
+        "claimIds": [
+          "cl-pm-nonlinear-response",
+          "cl-pm-risk-reference",
+          "cl-pm-slope-meaning",
+          "cl-pm-finite-change",
+          "cl-pm-ier-evidence",
+          "cl-pm-gemm-alternative",
+          "cl-particulate131-cohen-gbd2015-scope",
+          "cl-particulate131-cohen-empirical-limits",
+          "cl-pm-chemistry-background",
+          "cl-pm-chemistry-perturbation"
+        ],
+        "ordinary": [
+          "63ae6236d72b953ce676712655d0c2d77edaea4e2bf6e4d01d4de6840e976bf2"
+        ]
+      },
+      "/docs/book/particulate-emissions-and-health#因子与比较": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "heading",
+        "title": "因子与比较",
+        "claimIds": [
+          "cl-pm-concentration-route",
+          "cl-pm-regional-summary",
+          "cl-pm-factor-order",
+          "cl-pm-version-and-model",
+          "cl-pm-matched-scope",
+          "cl-pm-matched-scenario",
+          "cl-pm-uncovered-pathways",
+          "cl-particulate131-precursor-perspectives",
+          "cl-particulate131-ef-ammonia-inversion",
+          "cl-particulate131-regional-endpoint-reversal",
+          "cl-particulate131-package-discrepancies",
+          "cl-pm-population-meaning",
+          "cl-pm-conclusion"
+        ],
+        "ordinary": [
+          "5eba7ae28f6b4bd7793a64c63f963fd70550e1bbb53e6ede41a76d9aa22c0006"
+        ]
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-annotations": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note-group",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-opening",
+          "cl-pm-particle-identity",
+          "cl-pm-intake-definition",
+          "cl-pm-intake-unit",
+          "cl-pm-receptor-boundary",
+          "cl-pm-effect-definition",
+          "cl-pm-effect-default",
+          "cl-pm-urban-health",
+          "cl-pm-rural-health",
+          "cl-pm-precursor-denominator",
+          "cl-pm-precursor-health",
+          "cl-particulate131-indicator-cutpoints",
+          "cl-particulate131-size-and-subcompartment",
+          "cl-pm-source-distribution",
+          "cl-pm-evidence-levels",
+          "cl-pm-cohort-design",
+          "cl-pm-cohort-association",
+          "cl-pm-effect-baseline",
+          "cl-pm-indoor-location",
+          "cl-pm-exposure-compatible",
+          "cl-pm-compatible-population",
+          "cl-pm-exposure-coverage",
+          "cl-pm-nonlinear-response",
+          "cl-pm-risk-reference",
+          "cl-pm-slope-meaning",
+          "cl-pm-finite-change",
+          "cl-pm-ier-evidence",
+          "cl-pm-gemm-alternative",
+          "cl-particulate131-cohen-gbd2015-scope",
+          "cl-particulate131-cohen-empirical-limits",
+          "cl-pm-chemistry-background",
+          "cl-pm-chemistry-perturbation",
+          "cl-pm-concentration-route",
+          "cl-pm-regional-summary",
+          "cl-pm-factor-order",
+          "cl-pm-version-and-model",
+          "cl-pm-matched-scope",
+          "cl-pm-matched-scenario",
+          "cl-pm-uncovered-pathways",
+          "cl-particulate131-precursor-perspectives",
+          "cl-particulate131-ef-ammonia-inversion",
+          "cl-particulate131-regional-endpoint-reversal",
+          "cl-particulate131-package-discrepancies",
+          "cl-pm-population-meaning",
+          "cl-pm-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-opening": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-opening"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-particle-identity": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-particle-identity"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-intake-definition": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-intake-definition"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-intake-unit": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-intake-unit"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-receptor-boundary": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-receptor-boundary"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-effect-definition": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-effect-definition"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-effect-default": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-effect-default"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-urban-health": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-urban-health"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-rural-health": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-rural-health"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-precursor-denominator": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-precursor-denominator"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-precursor-health": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-precursor-health"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-particulate131-indicator-cutpoints": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-particulate131-indicator-cutpoints"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-particulate131-size-and-subcompartment": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-particulate131-size-and-subcompartment"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-source-distribution": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-source-distribution"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-evidence-levels": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-evidence-levels"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-cohort-design": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-cohort-design"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-cohort-association": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-cohort-association"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-effect-baseline": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-effect-baseline"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-indoor-location": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-indoor-location"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-exposure-compatible": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-exposure-compatible"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-compatible-population": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-compatible-population"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-exposure-coverage": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-exposure-coverage"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-nonlinear-response": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-nonlinear-response"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-risk-reference": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-risk-reference"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-slope-meaning": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-slope-meaning"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-finite-change": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-finite-change"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-ier-evidence": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-ier-evidence"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-gemm-alternative": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-gemm-alternative"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-particulate131-cohen-gbd2015-scope": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-particulate131-cohen-gbd2015-scope"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-particulate131-cohen-empirical-limits": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-particulate131-cohen-empirical-limits"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-chemistry-background": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-chemistry-background"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-chemistry-perturbation": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-chemistry-perturbation"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-concentration-route": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-concentration-route"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-regional-summary": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-regional-summary"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-factor-order": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-factor-order"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-version-and-model": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-version-and-model"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-matched-scope": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-matched-scope"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-matched-scenario": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-matched-scenario"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-uncovered-pathways": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-uncovered-pathways"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-particulate131-precursor-perspectives": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-particulate131-precursor-perspectives"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-particulate131-ef-ammonia-inversion": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-particulate131-ef-ammonia-inversion"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-particulate131-regional-endpoint-reversal": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-particulate131-regional-endpoint-reversal"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-particulate131-package-discrepancies": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-particulate131-package-discrepancies"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-population-meaning": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-population-meaning"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/particulate-emissions-and-health#chapter-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-conclusion": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/docs/appendices/particulate-factor-calculations#nd-page": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "chapter",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-source-height",
+          "cl-pm-mixture-inputs",
+          "cl-pm-mixture-results",
+          "cl-pm-exposure-evidence",
+          "cl-pm-burden-check",
+          "cl-pm-concentration-balance",
+          "cl-pm-indoor-matrix",
+          "cl-pm-indoor-time",
+          "cl-pm-slope-context",
+          "cl-pm-chemistry-model-check",
+          "cl-pm-factor-correction",
+          "cl-pm-implementation-layer",
+          "cl-pm-release-date",
+          "cl-pm-activity-indicators",
+          "cl-pm-regional-factor",
+          "cl-pm-modern-values",
+          "cl-pm-modern-ratios"
+        ],
+        "ordinary": [
+          "23a35755cdb28c4601511daaa4cfe7fc1943b3a5ad8e59dc3ddd7a89d00007e6",
+          "64149fd2b3a529bf841797e9fb87949212fc4510c89ffb29b45df7955a3dc462",
+          "d08f67d5b6a74a109512a928c9396d2a73f9ea6cd1f4568d2fa9908a38d3b0df",
+          "8527a7948a8c8d8eabdc1f9810d49e9b3fa03f54b3a00ad0c2afa3045a09951a",
+          "98d17af029346dc1080b794f0f8cfcaf410e0991ea13569dc690d56baa2f7c76",
+          "a3b3d92d124628f6e14f753356705a8526d3901348401b1e73140f972369bfcb"
+        ],
+        "bindings": {
+          "links": [
+            [],
+            [
+              "/docs/book/particulate-emissions-and-health"
+            ],
+            [
+              "/docs/book/particulate-emissions-and-health#%E6%8E%92%E6%94%BE%E4%B8%8E%E5%81%A5%E5%BA%B7%E9%87%8F"
+            ],
+            [
+              "/docs/book/particulate-emissions-and-health#%E6%9A%B4%E9%9C%B2%E4%B8%8E%E8%AF%81%E6%8D%AE"
+            ],
+            [
+              "/docs/book/particulate-emissions-and-health#%E5%8F%82%E7%85%A7%E4%B8%8E%E5%93%8D%E5%BA%94",
+              "/docs/book/particulate-emissions-and-health#%E5%9B%A0%E5%AD%90%E4%B8%8E%E6%AF%94%E8%BE%83"
+            ],
+            [
+              "/docs/book/particulate-emissions-and-health#%E5%9B%A0%E5%AD%90%E4%B8%8E%E6%AF%94%E8%BE%83",
+              "/docs/book/particulate-emissions-and-health#%E6%8E%92%E6%94%BE%E4%B8%8E%E5%81%A5%E5%BA%B7%E9%87%8F"
+            ]
+          ],
+          "tables": []
+        }
+      },
+      "/docs/appendices/particulate-factor-calculations#main-content": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "reading-title",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-source-height",
+          "cl-pm-mixture-inputs",
+          "cl-pm-mixture-results",
+          "cl-pm-exposure-evidence",
+          "cl-pm-burden-check",
+          "cl-pm-concentration-balance",
+          "cl-pm-indoor-matrix",
+          "cl-pm-indoor-time",
+          "cl-pm-slope-context",
+          "cl-pm-chemistry-model-check",
+          "cl-pm-factor-correction",
+          "cl-pm-implementation-layer",
+          "cl-pm-release-date",
+          "cl-pm-activity-indicators",
+          "cl-pm-regional-factor",
+          "cl-pm-modern-values",
+          "cl-pm-modern-ratios"
+        ],
+        "ordinary": [
+          "23a35755cdb28c4601511daaa4cfe7fc1943b3a5ad8e59dc3ddd7a89d00007e6",
+          "64149fd2b3a529bf841797e9fb87949212fc4510c89ffb29b45df7955a3dc462",
+          "d08f67d5b6a74a109512a928c9396d2a73f9ea6cd1f4568d2fa9908a38d3b0df",
+          "8527a7948a8c8d8eabdc1f9810d49e9b3fa03f54b3a00ad0c2afa3045a09951a",
+          "98d17af029346dc1080b794f0f8cfcaf410e0991ea13569dc690d56baa2f7c76",
+          "a3b3d92d124628f6e14f753356705a8526d3901348401b1e73140f972369bfcb"
+        ],
+        "chapter": "nd-page"
+      },
+      "/docs/appendices/particulate-factor-calculations#排放原型与加权": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "heading",
+        "title": "排放原型与加权",
+        "claimIds": [
+          "cl-pm-source-height",
+          "cl-pm-mixture-inputs",
+          "cl-pm-mixture-results",
+          "cl-pm-exposure-evidence",
+          "cl-pm-burden-check"
+        ],
+        "ordinary": [
+          "d08f67d5b6a74a109512a928c9396d2a73f9ea6cd1f4568d2fa9908a38d3b0df"
+        ]
+      },
+      "/docs/appendices/particulate-factor-calculations#区室与活动时间": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "heading",
+        "title": "区室与活动时间",
+        "claimIds": [
+          "cl-pm-concentration-balance",
+          "cl-pm-indoor-matrix",
+          "cl-pm-indoor-time"
+        ],
+        "ordinary": [
+          "8527a7948a8c8d8eabdc1f9810d49e9b3fa03f54b3a00ad0c2afa3045a09951a"
+        ]
+      },
+      "/docs/appendices/particulate-factor-calculations#参照与模型核验": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "heading",
+        "title": "参照与模型核验",
+        "claimIds": [
+          "cl-pm-slope-context",
+          "cl-pm-chemistry-model-check",
+          "cl-pm-factor-correction",
+          "cl-pm-implementation-layer"
+        ],
+        "ordinary": [
+          "98d17af029346dc1080b794f0f8cfcaf410e0991ea13569dc690d56baa2f7c76"
+        ]
+      },
+      "/docs/appendices/particulate-factor-calculations#发行范围与因子表": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "heading",
+        "title": "发行范围与因子表",
+        "claimIds": [
+          "cl-pm-release-date",
+          "cl-pm-activity-indicators",
+          "cl-pm-regional-factor",
+          "cl-pm-modern-values",
+          "cl-pm-modern-ratios"
+        ],
+        "ordinary": [
+          "a3b3d92d124628f6e14f753356705a8526d3901348401b1e73140f972369bfcb"
+        ]
+      },
+      "/docs/appendices/particulate-factor-calculations#chapter-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-annotations": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note-group",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-source-height",
+          "cl-pm-mixture-inputs",
+          "cl-pm-mixture-results",
+          "cl-pm-exposure-evidence",
+          "cl-pm-burden-check",
+          "cl-pm-concentration-balance",
+          "cl-pm-indoor-matrix",
+          "cl-pm-indoor-time",
+          "cl-pm-slope-context",
+          "cl-pm-chemistry-model-check",
+          "cl-pm-factor-correction",
+          "cl-pm-implementation-layer",
+          "cl-pm-release-date",
+          "cl-pm-activity-indicators",
+          "cl-pm-regional-factor",
+          "cl-pm-modern-values",
+          "cl-pm-modern-ratios"
+        ],
+        "ordinary": []
+      },
+      "/docs/appendices/particulate-factor-calculations#chapter-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-source-height": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-source-height"
+        ],
+        "ordinary": []
+      },
+      "/docs/appendices/particulate-factor-calculations#chapter-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-mixture-inputs": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-mixture-inputs"
+        ],
+        "ordinary": []
+      },
+      "/docs/appendices/particulate-factor-calculations#chapter-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-mixture-results": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-mixture-results"
+        ],
+        "ordinary": []
+      },
+      "/docs/appendices/particulate-factor-calculations#chapter-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-exposure-evidence": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-exposure-evidence"
+        ],
+        "ordinary": []
+      },
+      "/docs/appendices/particulate-factor-calculations#chapter-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-burden-check": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-burden-check"
+        ],
+        "ordinary": []
+      },
+      "/docs/appendices/particulate-factor-calculations#chapter-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-concentration-balance": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-concentration-balance"
+        ],
+        "ordinary": []
+      },
+      "/docs/appendices/particulate-factor-calculations#chapter-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-indoor-matrix": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-indoor-matrix"
+        ],
+        "ordinary": []
+      },
+      "/docs/appendices/particulate-factor-calculations#chapter-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-indoor-time": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-indoor-time"
+        ],
+        "ordinary": []
+      },
+      "/docs/appendices/particulate-factor-calculations#chapter-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-slope-context": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-slope-context"
+        ],
+        "ordinary": []
+      },
+      "/docs/appendices/particulate-factor-calculations#chapter-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-chemistry-model-check": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-chemistry-model-check"
+        ],
+        "ordinary": []
+      },
+      "/docs/appendices/particulate-factor-calculations#chapter-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-factor-correction": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-factor-correction"
+        ],
+        "ordinary": []
+      },
+      "/docs/appendices/particulate-factor-calculations#chapter-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-implementation-layer": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-implementation-layer"
+        ],
+        "ordinary": []
+      },
+      "/docs/appendices/particulate-factor-calculations#chapter-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-release-date": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-release-date"
+        ],
+        "ordinary": []
+      },
+      "/docs/appendices/particulate-factor-calculations#chapter-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-activity-indicators": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-activity-indicators"
+        ],
+        "ordinary": []
+      },
+      "/docs/appendices/particulate-factor-calculations#chapter-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-regional-factor": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-regional-factor"
+        ],
+        "ordinary": []
+      },
+      "/docs/appendices/particulate-factor-calculations#chapter-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-modern-values": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-modern-values"
+        ],
+        "ordinary": []
+      },
+      "/docs/appendices/particulate-factor-calculations#chapter-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-modern-ratios": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-modern-ratios"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b": {
+        "route": "/docs/book",
+        "kind": "chapter",
+        "title": "阅读导论",
+        "claimIds": [],
+        "ordinary": [
+          "29c14b1bb903785effa8ca5578f368a98008f915c4c2eb0432627069427d7f18",
+          "30261677cd4ebadd9b37a44c4f6dd746b14db98ad9d8c5a1fb200eaf06524d2a",
+          "e6016699799ffd98585b7f76b84105a2e9d9bc00fad0679a79e798327a586bd8",
+          "575ad31aa46b322152a27e4d33c444477d112448db299d0ca45701f4b7aa075a",
+          "0a620485a9a909fe4e8f2e5e5b1b1ff134b8d1a0d84f339cee3fa97124559629",
+          "c93320832aecc86e50ff36c3aea2b9c6066780d81b49209c2cbc965a4ebcb37b",
+          "6dcb572bd5fe76738aa8923dfa455aa63577f3a56d3521b39bd855a84bb133b2",
+          "9082c39264dc3fa9e8e6a9ce9b24391616fdd296b58f207a71031737653c38cd",
+          "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245"
+        ],
+        "bindings": {
+          "links": [
+            [],
+            [
+              "#print-reading-unit-2f646f63732f626f6f6b2f696e7465677261746976652d616d626974696f6e73"
+            ],
+            [
+              "#print-reading-unit-2f646f63732f626f6f6b2f736572766963652d616e642d7265666572656e6365",
+              "#print-reading-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e"
+            ],
+            [
+              "#print-reading-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573"
+            ],
+            [
+              "#print-reading-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874"
+            ],
+            [
+              "#print-reading-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479"
+            ],
+            [
+              "#print-reading-unit-2f646f63732f626f6f6b2f77616c6c2d736572766963652d746f2d636f6d70617269736f6e",
+              "#print-reading-unit-2f646f63732f626f6f6b2f696e746572707265746174696f6e2d616e642d6c696d697473"
+            ],
+            [],
+            []
+          ],
+          "tables": []
+        }
+      },
+      "/print#print-reading-unit-2f646f63732f626f6f6b": {
+        "route": "/docs/book",
+        "kind": "reading-title",
+        "title": "阅读导论",
+        "claimIds": [],
+        "ordinary": [
+          "29c14b1bb903785effa8ca5578f368a98008f915c4c2eb0432627069427d7f18",
+          "30261677cd4ebadd9b37a44c4f6dd746b14db98ad9d8c5a1fb200eaf06524d2a",
+          "e6016699799ffd98585b7f76b84105a2e9d9bc00fad0679a79e798327a586bd8",
+          "575ad31aa46b322152a27e4d33c444477d112448db299d0ca45701f4b7aa075a",
+          "0a620485a9a909fe4e8f2e5e5b1b1ff134b8d1a0d84f339cee3fa97124559629",
+          "c93320832aecc86e50ff36c3aea2b9c6066780d81b49209c2cbc965a4ebcb37b",
+          "6dcb572bd5fe76738aa8923dfa455aa63577f3a56d3521b39bd855a84bb133b2",
+          "9082c39264dc3fa9e8e6a9ce9b24391616fdd296b58f207a71031737653c38cd",
+          "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245"
+        ],
+        "chapter": "print-unit-2f646f63732f626f6f6b"
+      },
+      "/print#print-unit-2f646f63732f626f6f6b-问题与历史": {
+        "route": "/docs/book",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b-用途与地区语境": {
+        "route": "/docs/book",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [],
+        "ordinary": [
+          "30261677cd4ebadd9b37a44c4f6dd746b14db98ad9d8c5a1fb200eaf06524d2a"
+        ]
+      },
+      "/print#print-unit-2f646f63732f626f6f6b-比较对象与方法选择": {
+        "route": "/docs/book",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b-从系统关系到计算结果": {
+        "route": "/docs/book",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [],
+        "ordinary": [
+          "e6016699799ffd98585b7f76b84105a2e9d9bc00fad0679a79e798327a586bd8",
+          "575ad31aa46b322152a27e4d33c444477d112448db299d0ca45701f4b7aa075a"
+        ]
+      },
+      "/print#print-unit-2f646f63732f626f6f6b-时间未来与相邻评价": {
+        "route": "/docs/book",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [],
+        "ordinary": [
+          "0a620485a9a909fe4e8f2e5e5b1b1ff134b8d1a0d84f339cee3fa97124559629"
+        ]
+      },
+      "/print#print-unit-2f646f63732f626f6f6b-数据与审查": {
+        "route": "/docs/book",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b-数据质量与不确定性": {
+        "route": "/docs/book",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [],
+        "ordinary": [
+          "c93320832aecc86e50ff36c3aea2b9c6066780d81b49209c2cbc965a4ebcb37b"
+        ]
+      },
+      "/print#print-unit-2f646f63732f626f6f6b-解释与使用": {
+        "route": "/docs/book",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b-完整做一遍": {
+        "route": "/docs/book",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [],
+        "ordinary": [
+          "6dcb572bd5fe76738aa8923dfa455aa63577f3a56d3521b39bd855a84bb133b2"
+        ]
+      },
+      "/print#print-unit-2f646f63732f626f6f6b-把各章接起来": {
+        "route": "/docs/book",
+        "kind": "heading",
+        "title": null,
+        "claimIds": [],
+        "ordinary": [
+          "9082c39264dc3fa9e8e6a9ce9b24391616fdd296b58f207a71031737653c38cd",
+          "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245"
+        ]
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365": {
+        "route": "book-climate-equivalence",
+        "kind": "chapter",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-opening",
+          "cl-climate-inventory",
+          "cl-climate-pulse",
+          "cl-climate-reservoirs",
+          "cl-climate-reference-illustration",
+          "cl-climate-reference-limits",
+          "cl-climate-forcing",
+          "cl-climate-agwp",
+          "cl-climate-agtp",
+          "cl-climate-endpoint",
+          "cl-bio127-midpoint-endpoint-genealogy",
+          "cl-climate-feedback-consistency",
+          "cl-climate-feedback-return",
+          "cl-bio127-feedback-perspective-asymmetry",
+          "cl-climate-methane-chemistry",
+          "cl-climate-carbon-budget",
+          "cl-climate-three-methane-rows",
+          "cl-climate-biogenic-boundary",
+          "cl-bio127-ef31-subindicator-partition",
+          "cl-bio127-zero-zero-vs-minus-plus-one",
+          "cl-climate-editions",
+          "cl-climate-published-after",
+          "cl-climate-equal-score",
+          "cl-climate-wall-fixed",
+          "cl-climate-wall-reweighted",
+          "cl-climate-comparison-criteria",
+          "cl-bio127-co-removal-and-methane-shift",
+          "cl-bio127-package-and-report-discrepancies",
+          "cl-time-emission-profile",
+          "cl-time-elapsed-response",
+          "cl-time-common-endpoint",
+          "cl-time-combination",
+          "cl-climate-calendar-sum",
+          "cl-climate-timing-assumptions",
+          "cl-climate-timing-result",
+          "cl-climate-dynamic-application",
+          "cl-time-horizon-choice",
+          "cl-time-model-limits",
+          "cl-bio127-storage-abolition-and-dluc-window",
+          "cl-time-dynamic-not-forecast",
+          "cl-climate-step",
+          "cl-climate-rate-formula",
+          "cl-climate-rate-fit",
+          "cl-climate-rate-histories",
+          "cl-climate-rate-window",
+          "cl-climate-rate-aggregate",
+          "cl-climate-debate",
+          "cl-bio127-climate-diagnostic-synthesis",
+          "cl-climate-conclusion"
+        ],
+        "ordinary": [
+          "2b167ee81213b00dc38041c321333d9b825311c566c202d0d9f44a1b5827dfe5",
+          "38f8454aac1ee102ac47b7664f50da39557a7f574762249200233d3079397a16",
+          "5a1d148a422c43cc572fe248ae61a1d02025519ad6a2c2a897bd068f22c776eb",
+          "d4fdc87059e2a3f2d430b6f92e6d0d94e7e83c22684fdf7eb4b3f99f2df4b9c2",
+          "60e2290d15cceceaeb4d237d861d41d1f6a0cbd957976792c26399ddd40ff317",
+          "7c60ec15b5dcc1d8e30ad48b643993406ad99242167c9cd2d47bb49887a639dd",
+          "a7c1ed16854af0cde3be27187fbf0c2a489e8685a9bc5ef90db73835e28edeca"
+        ],
+        "bindings": {
+          "links": [
+            [],
+            [],
+            [
+              "#print-unit-2f646f63732f617070656e64696365732f636c696d6174652d6e756d65726963616c2d7265636f6e737472756374696f6e-参考响应"
+            ],
+            [
+              "#print-reading-unit-2f646f63732f626f6f6b2f77616c6c2d736572766963652d746f2d636f6d70617269736f6e"
+            ],
+            [
+              "#print-unit-2f646f63732f617070656e64696365732f636c696d6174652d6e756d65726963616c2d7265636f6e737472756374696f6e-显示精度"
+            ],
+            [
+              "#print-reading-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874"
+            ],
+            [
+              "#print-reading-unit-2f646f63732f626f6f6b2f61636964696669636174696f6e2d616e642d6e75747269656e742d7061746877617973"
+            ]
+          ],
+          "tables": []
+        }
+      },
+      "/print#print-reading-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365": {
+        "route": "book-climate-equivalence",
+        "kind": "reading-title",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-opening",
+          "cl-climate-inventory",
+          "cl-climate-pulse",
+          "cl-climate-reservoirs",
+          "cl-climate-reference-illustration",
+          "cl-climate-reference-limits",
+          "cl-climate-forcing",
+          "cl-climate-agwp",
+          "cl-climate-agtp",
+          "cl-climate-endpoint",
+          "cl-bio127-midpoint-endpoint-genealogy",
+          "cl-climate-feedback-consistency",
+          "cl-climate-feedback-return",
+          "cl-bio127-feedback-perspective-asymmetry",
+          "cl-climate-methane-chemistry",
+          "cl-climate-carbon-budget",
+          "cl-climate-three-methane-rows",
+          "cl-climate-biogenic-boundary",
+          "cl-bio127-ef31-subindicator-partition",
+          "cl-bio127-zero-zero-vs-minus-plus-one",
+          "cl-climate-editions",
+          "cl-climate-published-after",
+          "cl-climate-equal-score",
+          "cl-climate-wall-fixed",
+          "cl-climate-wall-reweighted",
+          "cl-climate-comparison-criteria",
+          "cl-bio127-co-removal-and-methane-shift",
+          "cl-bio127-package-and-report-discrepancies",
+          "cl-time-emission-profile",
+          "cl-time-elapsed-response",
+          "cl-time-common-endpoint",
+          "cl-time-combination",
+          "cl-climate-calendar-sum",
+          "cl-climate-timing-assumptions",
+          "cl-climate-timing-result",
+          "cl-climate-dynamic-application",
+          "cl-time-horizon-choice",
+          "cl-time-model-limits",
+          "cl-bio127-storage-abolition-and-dluc-window",
+          "cl-time-dynamic-not-forecast",
+          "cl-climate-step",
+          "cl-climate-rate-formula",
+          "cl-climate-rate-fit",
+          "cl-climate-rate-histories",
+          "cl-climate-rate-window",
+          "cl-climate-rate-aggregate",
+          "cl-climate-debate",
+          "cl-bio127-climate-diagnostic-synthesis",
+          "cl-climate-conclusion"
+        ],
+        "ordinary": [
+          "2b167ee81213b00dc38041c321333d9b825311c566c202d0d9f44a1b5827dfe5",
+          "38f8454aac1ee102ac47b7664f50da39557a7f574762249200233d3079397a16",
+          "5a1d148a422c43cc572fe248ae61a1d02025519ad6a2c2a897bd068f22c776eb",
+          "d4fdc87059e2a3f2d430b6f92e6d0d94e7e83c22684fdf7eb4b3f99f2df4b9c2",
+          "60e2290d15cceceaeb4d237d861d41d1f6a0cbd957976792c26399ddd40ff317",
+          "7c60ec15b5dcc1d8e30ad48b643993406ad99242167c9cd2d47bb49887a639dd",
+          "a7c1ed16854af0cde3be27187fbf0c2a489e8685a9bc5ef90db73835e28edeca"
+        ],
+        "chapter": "print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365"
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-响应与指标": {
+        "route": "book-climate-equivalence",
+        "kind": "heading",
+        "title": "响应与指标",
+        "claimIds": [
+          "cl-climate-opening",
+          "cl-climate-inventory",
+          "cl-climate-pulse",
+          "cl-climate-reservoirs",
+          "cl-climate-reference-illustration",
+          "cl-climate-reference-limits",
+          "cl-climate-forcing",
+          "cl-climate-agwp",
+          "cl-climate-agtp",
+          "cl-climate-endpoint",
+          "cl-bio127-midpoint-endpoint-genealogy"
+        ],
+        "ordinary": [
+          "38f8454aac1ee102ac47b7664f50da39557a7f574762249200233d3079397a16",
+          "5a1d148a422c43cc572fe248ae61a1d02025519ad6a2c2a897bd068f22c776eb"
+        ]
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-气体与碳收支": {
+        "route": "book-climate-equivalence",
+        "kind": "heading",
+        "title": "气体与碳收支",
+        "claimIds": [
+          "cl-climate-feedback-consistency",
+          "cl-climate-feedback-return",
+          "cl-bio127-feedback-perspective-asymmetry",
+          "cl-climate-methane-chemistry",
+          "cl-climate-carbon-budget",
+          "cl-climate-three-methane-rows",
+          "cl-climate-biogenic-boundary",
+          "cl-bio127-ef31-subindicator-partition",
+          "cl-bio127-zero-zero-vs-minus-plus-one"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-清单比较": {
+        "route": "book-climate-equivalence",
+        "kind": "heading",
+        "title": "清单比较",
+        "claimIds": [
+          "cl-climate-editions",
+          "cl-climate-published-after",
+          "cl-climate-equal-score",
+          "cl-climate-wall-fixed",
+          "cl-climate-wall-reweighted",
+          "cl-climate-comparison-criteria",
+          "cl-bio127-co-removal-and-methane-shift",
+          "cl-bio127-package-and-report-discrepancies"
+        ],
+        "ordinary": [
+          "d4fdc87059e2a3f2d430b6f92e6d0d94e7e83c22684fdf7eb4b3f99f2df4b9c2",
+          "60e2290d15cceceaeb4d237d861d41d1f6a0cbd957976792c26399ddd40ff317"
+        ]
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-排放日历": {
+        "route": "book-climate-equivalence",
+        "kind": "heading",
+        "title": "排放日历",
+        "claimIds": [
+          "cl-time-emission-profile",
+          "cl-time-elapsed-response",
+          "cl-time-common-endpoint",
+          "cl-time-combination",
+          "cl-climate-calendar-sum",
+          "cl-climate-timing-assumptions",
+          "cl-climate-timing-result",
+          "cl-climate-dynamic-application",
+          "cl-time-horizon-choice",
+          "cl-time-model-limits",
+          "cl-bio127-storage-abolition-and-dluc-window",
+          "cl-time-dynamic-not-forecast"
+        ],
+        "ordinary": [
+          "7c60ec15b5dcc1d8e30ad48b643993406ad99242167c9cd2d47bb49887a639dd"
+        ]
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-历史与用途": {
+        "route": "book-climate-equivalence",
+        "kind": "heading",
+        "title": "历史与用途",
+        "claimIds": [
+          "cl-climate-step",
+          "cl-climate-rate-formula",
+          "cl-climate-rate-fit",
+          "cl-climate-rate-histories",
+          "cl-climate-rate-window",
+          "cl-climate-rate-aggregate",
+          "cl-climate-debate",
+          "cl-bio127-climate-diagnostic-synthesis",
+          "cl-climate-conclusion"
+        ],
+        "ordinary": [
+          "a7c1ed16854af0cde3be27187fbf0c2a489e8685a9bc5ef90db73835e28edeca"
+        ]
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-annotations": {
+        "route": "book-climate-equivalence",
+        "kind": "note-group",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-opening",
+          "cl-climate-inventory",
+          "cl-climate-pulse",
+          "cl-climate-reservoirs",
+          "cl-climate-reference-illustration",
+          "cl-climate-reference-limits",
+          "cl-climate-forcing",
+          "cl-climate-agwp",
+          "cl-climate-agtp",
+          "cl-climate-endpoint",
+          "cl-bio127-midpoint-endpoint-genealogy",
+          "cl-climate-feedback-consistency",
+          "cl-climate-feedback-return",
+          "cl-bio127-feedback-perspective-asymmetry",
+          "cl-climate-methane-chemistry",
+          "cl-climate-carbon-budget",
+          "cl-climate-three-methane-rows",
+          "cl-climate-biogenic-boundary",
+          "cl-bio127-ef31-subindicator-partition",
+          "cl-bio127-zero-zero-vs-minus-plus-one",
+          "cl-climate-editions",
+          "cl-climate-published-after",
+          "cl-climate-equal-score",
+          "cl-climate-wall-fixed",
+          "cl-climate-wall-reweighted",
+          "cl-climate-comparison-criteria",
+          "cl-bio127-co-removal-and-methane-shift",
+          "cl-bio127-package-and-report-discrepancies",
+          "cl-time-emission-profile",
+          "cl-time-elapsed-response",
+          "cl-time-common-endpoint",
+          "cl-time-combination",
+          "cl-climate-calendar-sum",
+          "cl-climate-timing-assumptions",
+          "cl-climate-timing-result",
+          "cl-climate-dynamic-application",
+          "cl-time-horizon-choice",
+          "cl-time-model-limits",
+          "cl-bio127-storage-abolition-and-dluc-window",
+          "cl-time-dynamic-not-forecast",
+          "cl-climate-step",
+          "cl-climate-rate-formula",
+          "cl-climate-rate-fit",
+          "cl-climate-rate-histories",
+          "cl-climate-rate-window",
+          "cl-climate-rate-aggregate",
+          "cl-climate-debate",
+          "cl-bio127-climate-diagnostic-synthesis",
+          "cl-climate-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-opening": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-opening"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-inventory": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-inventory"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-pulse": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-pulse"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-reservoirs": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-reservoirs"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-reference-illustration": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-reference-illustration"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-reference-limits": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-reference-limits"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-forcing": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-forcing"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-agwp": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-agwp"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-agtp": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-agtp"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-endpoint": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-endpoint"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-bio127-midpoint-endpoint-genealogy": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-bio127-midpoint-endpoint-genealogy"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-feedback-consistency": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-feedback-consistency"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-feedback-return": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-feedback-return"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-bio127-feedback-perspective-asymmetry": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-bio127-feedback-perspective-asymmetry"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-methane-chemistry": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-methane-chemistry"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-carbon-budget": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-carbon-budget"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-three-methane-rows": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-three-methane-rows"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-biogenic-boundary": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-biogenic-boundary"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-bio127-ef31-subindicator-partition": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-bio127-ef31-subindicator-partition"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-bio127-zero-zero-vs-minus-plus-one": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-bio127-zero-zero-vs-minus-plus-one"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-editions": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-editions"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-published-after": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-published-after"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-equal-score": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-equal-score"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-wall-fixed": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-wall-fixed"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-wall-reweighted": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-wall-reweighted"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-comparison-criteria": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-comparison-criteria"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-bio127-co-removal-and-methane-shift": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-bio127-co-removal-and-methane-shift"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-bio127-package-and-report-discrepancies": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-bio127-package-and-report-discrepancies"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-time-emission-profile": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-time-emission-profile"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-time-elapsed-response": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-time-elapsed-response"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-time-common-endpoint": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-time-common-endpoint"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-time-combination": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-time-combination"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-calendar-sum": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-calendar-sum"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-timing-assumptions": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-timing-assumptions"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-timing-result": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-timing-result"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-dynamic-application": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-dynamic-application"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-time-horizon-choice": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-time-horizon-choice"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-time-model-limits": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-time-model-limits"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-bio127-storage-abolition-and-dluc-window": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-bio127-storage-abolition-and-dluc-window"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-time-dynamic-not-forecast": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-time-dynamic-not-forecast"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-step": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-step"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-rate-formula": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-rate-formula"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-rate-fit": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-rate-fit"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-rate-histories": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-rate-histories"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-rate-window": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-rate-window"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-rate-aggregate": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-rate-aggregate"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-debate": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-debate"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-bio127-climate-diagnostic-synthesis": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-bio127-climate-diagnostic-synthesis"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d636c696d6174652d6571756976616c656e6365-claim-cl-climate-conclusion": {
+        "route": "book-climate-equivalence",
+        "kind": "note",
+        "title": "气候当量",
+        "claimIds": [
+          "cl-climate-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "chapter",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-opening",
+          "cl-pm-particle-identity",
+          "cl-pm-intake-definition",
+          "cl-pm-intake-unit",
+          "cl-pm-receptor-boundary",
+          "cl-pm-effect-definition",
+          "cl-pm-effect-default",
+          "cl-pm-urban-health",
+          "cl-pm-rural-health",
+          "cl-pm-precursor-denominator",
+          "cl-pm-precursor-health",
+          "cl-particulate131-indicator-cutpoints",
+          "cl-particulate131-size-and-subcompartment",
+          "cl-pm-source-distribution",
+          "cl-pm-evidence-levels",
+          "cl-pm-cohort-design",
+          "cl-pm-cohort-association",
+          "cl-pm-effect-baseline",
+          "cl-pm-indoor-location",
+          "cl-pm-exposure-compatible",
+          "cl-pm-compatible-population",
+          "cl-pm-exposure-coverage",
+          "cl-pm-nonlinear-response",
+          "cl-pm-risk-reference",
+          "cl-pm-slope-meaning",
+          "cl-pm-finite-change",
+          "cl-pm-ier-evidence",
+          "cl-pm-gemm-alternative",
+          "cl-particulate131-cohen-gbd2015-scope",
+          "cl-particulate131-cohen-empirical-limits",
+          "cl-pm-chemistry-background",
+          "cl-pm-chemistry-perturbation",
+          "cl-pm-concentration-route",
+          "cl-pm-regional-summary",
+          "cl-pm-factor-order",
+          "cl-pm-version-and-model",
+          "cl-pm-matched-scope",
+          "cl-pm-matched-scenario",
+          "cl-pm-uncovered-pathways",
+          "cl-particulate131-precursor-perspectives",
+          "cl-particulate131-ef-ammonia-inversion",
+          "cl-particulate131-regional-endpoint-reversal",
+          "cl-particulate131-package-discrepancies",
+          "cl-pm-population-meaning",
+          "cl-pm-conclusion"
+        ],
+        "ordinary": [
+          "593aa323caa92e65124bea2dc5bfa16f8bac1ab8ab49c7b5d5fed71e98ebf27a",
+          "969a725e981b68a3b4a1ab6161b0221e1fdcc95a4d2b8061235dd4274c08c0cb",
+          "14c6cfd26dce329936483f1982942ba1b08501e684dd395463c8f04af6ff6216",
+          "5f64bb2ecf28e8b613486645fa4ed311cc841e219379d0a1e3618ce9c7cfa180"
+        ],
+        "bindings": {
+          "links": [
+            [],
+            [
+              "#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-排放原型与加权",
+              "#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-区室与活动时间"
+            ],
+            [
+              "#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-参照与模型核验"
+            ],
+            [
+              "#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-发行范围与因子表"
+            ]
+          ],
+          "tables": []
+        }
+      },
+      "/print#print-reading-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "reading-title",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-opening",
+          "cl-pm-particle-identity",
+          "cl-pm-intake-definition",
+          "cl-pm-intake-unit",
+          "cl-pm-receptor-boundary",
+          "cl-pm-effect-definition",
+          "cl-pm-effect-default",
+          "cl-pm-urban-health",
+          "cl-pm-rural-health",
+          "cl-pm-precursor-denominator",
+          "cl-pm-precursor-health",
+          "cl-particulate131-indicator-cutpoints",
+          "cl-particulate131-size-and-subcompartment",
+          "cl-pm-source-distribution",
+          "cl-pm-evidence-levels",
+          "cl-pm-cohort-design",
+          "cl-pm-cohort-association",
+          "cl-pm-effect-baseline",
+          "cl-pm-indoor-location",
+          "cl-pm-exposure-compatible",
+          "cl-pm-compatible-population",
+          "cl-pm-exposure-coverage",
+          "cl-pm-nonlinear-response",
+          "cl-pm-risk-reference",
+          "cl-pm-slope-meaning",
+          "cl-pm-finite-change",
+          "cl-pm-ier-evidence",
+          "cl-pm-gemm-alternative",
+          "cl-particulate131-cohen-gbd2015-scope",
+          "cl-particulate131-cohen-empirical-limits",
+          "cl-pm-chemistry-background",
+          "cl-pm-chemistry-perturbation",
+          "cl-pm-concentration-route",
+          "cl-pm-regional-summary",
+          "cl-pm-factor-order",
+          "cl-pm-version-and-model",
+          "cl-pm-matched-scope",
+          "cl-pm-matched-scenario",
+          "cl-pm-uncovered-pathways",
+          "cl-particulate131-precursor-perspectives",
+          "cl-particulate131-ef-ammonia-inversion",
+          "cl-particulate131-regional-endpoint-reversal",
+          "cl-particulate131-package-discrepancies",
+          "cl-pm-population-meaning",
+          "cl-pm-conclusion"
+        ],
+        "ordinary": [
+          "593aa323caa92e65124bea2dc5bfa16f8bac1ab8ab49c7b5d5fed71e98ebf27a",
+          "969a725e981b68a3b4a1ab6161b0221e1fdcc95a4d2b8061235dd4274c08c0cb",
+          "14c6cfd26dce329936483f1982942ba1b08501e684dd395463c8f04af6ff6216",
+          "5f64bb2ecf28e8b613486645fa4ed311cc841e219379d0a1e3618ce9c7cfa180"
+        ],
+        "chapter": "print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468"
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-排放与健康量": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "heading",
+        "title": "排放与健康量",
+        "claimIds": [
+          "cl-pm-opening",
+          "cl-pm-particle-identity",
+          "cl-pm-intake-definition",
+          "cl-pm-intake-unit",
+          "cl-pm-receptor-boundary",
+          "cl-pm-effect-definition",
+          "cl-pm-effect-default",
+          "cl-pm-urban-health",
+          "cl-pm-rural-health",
+          "cl-pm-precursor-denominator",
+          "cl-pm-precursor-health",
+          "cl-particulate131-indicator-cutpoints",
+          "cl-particulate131-size-and-subcompartment"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-暴露与证据": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "heading",
+        "title": "暴露与证据",
+        "claimIds": [
+          "cl-pm-source-distribution",
+          "cl-pm-evidence-levels",
+          "cl-pm-cohort-design",
+          "cl-pm-cohort-association",
+          "cl-pm-effect-baseline",
+          "cl-pm-indoor-location",
+          "cl-pm-exposure-compatible",
+          "cl-pm-compatible-population",
+          "cl-pm-exposure-coverage"
+        ],
+        "ordinary": [
+          "969a725e981b68a3b4a1ab6161b0221e1fdcc95a4d2b8061235dd4274c08c0cb"
+        ]
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-参照与响应": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "heading",
+        "title": "参照与响应",
+        "claimIds": [
+          "cl-pm-nonlinear-response",
+          "cl-pm-risk-reference",
+          "cl-pm-slope-meaning",
+          "cl-pm-finite-change",
+          "cl-pm-ier-evidence",
+          "cl-pm-gemm-alternative",
+          "cl-particulate131-cohen-gbd2015-scope",
+          "cl-particulate131-cohen-empirical-limits",
+          "cl-pm-chemistry-background",
+          "cl-pm-chemistry-perturbation"
+        ],
+        "ordinary": [
+          "14c6cfd26dce329936483f1982942ba1b08501e684dd395463c8f04af6ff6216"
+        ]
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-因子与比较": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "heading",
+        "title": "因子与比较",
+        "claimIds": [
+          "cl-pm-concentration-route",
+          "cl-pm-regional-summary",
+          "cl-pm-factor-order",
+          "cl-pm-version-and-model",
+          "cl-pm-matched-scope",
+          "cl-pm-matched-scenario",
+          "cl-pm-uncovered-pathways",
+          "cl-particulate131-precursor-perspectives",
+          "cl-particulate131-ef-ammonia-inversion",
+          "cl-particulate131-regional-endpoint-reversal",
+          "cl-particulate131-package-discrepancies",
+          "cl-pm-population-meaning",
+          "cl-pm-conclusion"
+        ],
+        "ordinary": [
+          "5f64bb2ecf28e8b613486645fa4ed311cc841e219379d0a1e3618ce9c7cfa180"
+        ]
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-annotations": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note-group",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-opening",
+          "cl-pm-particle-identity",
+          "cl-pm-intake-definition",
+          "cl-pm-intake-unit",
+          "cl-pm-receptor-boundary",
+          "cl-pm-effect-definition",
+          "cl-pm-effect-default",
+          "cl-pm-urban-health",
+          "cl-pm-rural-health",
+          "cl-pm-precursor-denominator",
+          "cl-pm-precursor-health",
+          "cl-particulate131-indicator-cutpoints",
+          "cl-particulate131-size-and-subcompartment",
+          "cl-pm-source-distribution",
+          "cl-pm-evidence-levels",
+          "cl-pm-cohort-design",
+          "cl-pm-cohort-association",
+          "cl-pm-effect-baseline",
+          "cl-pm-indoor-location",
+          "cl-pm-exposure-compatible",
+          "cl-pm-compatible-population",
+          "cl-pm-exposure-coverage",
+          "cl-pm-nonlinear-response",
+          "cl-pm-risk-reference",
+          "cl-pm-slope-meaning",
+          "cl-pm-finite-change",
+          "cl-pm-ier-evidence",
+          "cl-pm-gemm-alternative",
+          "cl-particulate131-cohen-gbd2015-scope",
+          "cl-particulate131-cohen-empirical-limits",
+          "cl-pm-chemistry-background",
+          "cl-pm-chemistry-perturbation",
+          "cl-pm-concentration-route",
+          "cl-pm-regional-summary",
+          "cl-pm-factor-order",
+          "cl-pm-version-and-model",
+          "cl-pm-matched-scope",
+          "cl-pm-matched-scenario",
+          "cl-pm-uncovered-pathways",
+          "cl-particulate131-precursor-perspectives",
+          "cl-particulate131-ef-ammonia-inversion",
+          "cl-particulate131-regional-endpoint-reversal",
+          "cl-particulate131-package-discrepancies",
+          "cl-pm-population-meaning",
+          "cl-pm-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-opening": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-opening"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-particle-identity": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-particle-identity"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-intake-definition": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-intake-definition"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-intake-unit": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-intake-unit"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-receptor-boundary": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-receptor-boundary"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-effect-definition": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-effect-definition"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-effect-default": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-effect-default"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-urban-health": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-urban-health"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-rural-health": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-rural-health"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-precursor-denominator": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-precursor-denominator"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-precursor-health": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-precursor-health"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-particulate131-indicator-cutpoints": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-particulate131-indicator-cutpoints"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-particulate131-size-and-subcompartment": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-particulate131-size-and-subcompartment"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-source-distribution": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-source-distribution"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-evidence-levels": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-evidence-levels"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-cohort-design": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-cohort-design"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-cohort-association": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-cohort-association"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-effect-baseline": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-effect-baseline"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-indoor-location": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-indoor-location"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-exposure-compatible": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-exposure-compatible"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-compatible-population": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-compatible-population"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-exposure-coverage": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-exposure-coverage"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-nonlinear-response": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-nonlinear-response"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-risk-reference": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-risk-reference"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-slope-meaning": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-slope-meaning"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-finite-change": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-finite-change"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-ier-evidence": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-ier-evidence"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-gemm-alternative": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-gemm-alternative"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-particulate131-cohen-gbd2015-scope": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-particulate131-cohen-gbd2015-scope"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-particulate131-cohen-empirical-limits": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-particulate131-cohen-empirical-limits"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-chemistry-background": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-chemistry-background"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-chemistry-perturbation": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-chemistry-perturbation"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-concentration-route": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-concentration-route"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-regional-summary": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-regional-summary"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-factor-order": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-factor-order"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-version-and-model": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-version-and-model"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-matched-scope": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-matched-scope"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-matched-scenario": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-matched-scenario"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-uncovered-pathways": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-uncovered-pathways"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-particulate131-precursor-perspectives": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-particulate131-precursor-perspectives"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-particulate131-ef-ammonia-inversion": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-particulate131-ef-ammonia-inversion"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-particulate131-regional-endpoint-reversal": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-particulate131-regional-endpoint-reversal"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-particulate131-package-discrepancies": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-particulate131-package-discrepancies"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-population-meaning": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-population-meaning"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-claim-cl-pm-conclusion": {
+        "route": "/docs/book/particulate-emissions-and-health",
+        "kind": "note",
+        "title": "颗粒物排放与健康损害",
+        "claimIds": [
+          "cl-pm-conclusion"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "chapter",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-source-height",
+          "cl-pm-mixture-inputs",
+          "cl-pm-mixture-results",
+          "cl-pm-exposure-evidence",
+          "cl-pm-burden-check",
+          "cl-pm-concentration-balance",
+          "cl-pm-indoor-matrix",
+          "cl-pm-indoor-time",
+          "cl-pm-slope-context",
+          "cl-pm-chemistry-model-check",
+          "cl-pm-factor-correction",
+          "cl-pm-implementation-layer",
+          "cl-pm-release-date",
+          "cl-pm-activity-indicators",
+          "cl-pm-regional-factor",
+          "cl-pm-modern-values",
+          "cl-pm-modern-ratios"
+        ],
+        "ordinary": [
+          "23a35755cdb28c4601511daaa4cfe7fc1943b3a5ad8e59dc3ddd7a89d00007e6",
+          "bf6774aeb8757f95b001792a4d5e94555f182d4ce3d2d56ad9b7c6a7e8b52129",
+          "94dff01fe97616253ce1541d3c16f4cff0e139fb25610406a956b24b9389e8bf",
+          "048532a9a519a1df7326696b28bc363ed9fc974a123f26cbdac1809cd8eb30f2",
+          "6390b202ffdeebb8bd57d7c9542bbaf6da76822f2be60d7f17b24192e3c0e70c",
+          "d5182db9ede153e9b811228230f39eb4b9634e51fb453d3e37e0fa94fd23ddad"
+        ],
+        "bindings": {
+          "links": [
+            [],
+            [
+              "#print-reading-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468"
+            ],
+            [
+              "#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-排放与健康量"
+            ],
+            [
+              "#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-暴露与证据"
+            ],
+            [
+              "#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-参照与响应",
+              "#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-因子与比较"
+            ],
+            [
+              "#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-因子与比较",
+              "#print-unit-2f646f63732f626f6f6b2f706172746963756c6174652d656d697373696f6e732d616e642d6865616c7468-排放与健康量"
+            ]
+          ],
+          "tables": []
+        }
+      },
+      "/print#print-reading-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "reading-title",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-source-height",
+          "cl-pm-mixture-inputs",
+          "cl-pm-mixture-results",
+          "cl-pm-exposure-evidence",
+          "cl-pm-burden-check",
+          "cl-pm-concentration-balance",
+          "cl-pm-indoor-matrix",
+          "cl-pm-indoor-time",
+          "cl-pm-slope-context",
+          "cl-pm-chemistry-model-check",
+          "cl-pm-factor-correction",
+          "cl-pm-implementation-layer",
+          "cl-pm-release-date",
+          "cl-pm-activity-indicators",
+          "cl-pm-regional-factor",
+          "cl-pm-modern-values",
+          "cl-pm-modern-ratios"
+        ],
+        "ordinary": [
+          "23a35755cdb28c4601511daaa4cfe7fc1943b3a5ad8e59dc3ddd7a89d00007e6",
+          "bf6774aeb8757f95b001792a4d5e94555f182d4ce3d2d56ad9b7c6a7e8b52129",
+          "94dff01fe97616253ce1541d3c16f4cff0e139fb25610406a956b24b9389e8bf",
+          "048532a9a519a1df7326696b28bc363ed9fc974a123f26cbdac1809cd8eb30f2",
+          "6390b202ffdeebb8bd57d7c9542bbaf6da76822f2be60d7f17b24192e3c0e70c",
+          "d5182db9ede153e9b811228230f39eb4b9634e51fb453d3e37e0fa94fd23ddad"
+        ],
+        "chapter": "print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73"
+      },
+      "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-排放原型与加权": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "heading",
+        "title": "排放原型与加权",
+        "claimIds": [
+          "cl-pm-source-height",
+          "cl-pm-mixture-inputs",
+          "cl-pm-mixture-results",
+          "cl-pm-exposure-evidence",
+          "cl-pm-burden-check"
+        ],
+        "ordinary": [
+          "94dff01fe97616253ce1541d3c16f4cff0e139fb25610406a956b24b9389e8bf"
+        ]
+      },
+      "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-区室与活动时间": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "heading",
+        "title": "区室与活动时间",
+        "claimIds": [
+          "cl-pm-concentration-balance",
+          "cl-pm-indoor-matrix",
+          "cl-pm-indoor-time"
+        ],
+        "ordinary": [
+          "048532a9a519a1df7326696b28bc363ed9fc974a123f26cbdac1809cd8eb30f2"
+        ]
+      },
+      "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-参照与模型核验": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "heading",
+        "title": "参照与模型核验",
+        "claimIds": [
+          "cl-pm-slope-context",
+          "cl-pm-chemistry-model-check",
+          "cl-pm-factor-correction",
+          "cl-pm-implementation-layer"
+        ],
+        "ordinary": [
+          "6390b202ffdeebb8bd57d7c9542bbaf6da76822f2be60d7f17b24192e3c0e70c"
+        ]
+      },
+      "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-发行范围与因子表": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "heading",
+        "title": "发行范围与因子表",
+        "claimIds": [
+          "cl-pm-release-date",
+          "cl-pm-activity-indicators",
+          "cl-pm-regional-factor",
+          "cl-pm-modern-values",
+          "cl-pm-modern-ratios"
+        ],
+        "ordinary": [
+          "d5182db9ede153e9b811228230f39eb4b9634e51fb453d3e37e0fa94fd23ddad"
+        ]
+      },
+      "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-annotations": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note-group",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-source-height",
+          "cl-pm-mixture-inputs",
+          "cl-pm-mixture-results",
+          "cl-pm-exposure-evidence",
+          "cl-pm-burden-check",
+          "cl-pm-concentration-balance",
+          "cl-pm-indoor-matrix",
+          "cl-pm-indoor-time",
+          "cl-pm-slope-context",
+          "cl-pm-chemistry-model-check",
+          "cl-pm-factor-correction",
+          "cl-pm-implementation-layer",
+          "cl-pm-release-date",
+          "cl-pm-activity-indicators",
+          "cl-pm-regional-factor",
+          "cl-pm-modern-values",
+          "cl-pm-modern-ratios"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-source-height": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-source-height"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-mixture-inputs": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-mixture-inputs"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-mixture-results": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-mixture-results"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-exposure-evidence": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-exposure-evidence"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-burden-check": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-burden-check"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-concentration-balance": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-concentration-balance"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-indoor-matrix": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-indoor-matrix"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-indoor-time": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-indoor-time"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-slope-context": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-slope-context"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-chemistry-model-check": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-chemistry-model-check"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-factor-correction": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-factor-correction"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-implementation-layer": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-implementation-layer"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-release-date": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-release-date"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-activity-indicators": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-activity-indicators"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-regional-factor": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-regional-factor"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-modern-values": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-modern-values"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-claim-cl-pm-modern-ratios": {
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "kind": "note",
+        "title": "颗粒物因子的复算",
+        "claimIds": [
+          "cl-pm-modern-ratios"
+        ],
+        "ordinary": []
+      }
+    },
+    "source": "actual-export",
+    "sourceCommit": "91a63c361790d3e0b56527546ef15bf19acc36cc",
+    "capture": {
+      "sourceCommit": "91a63c361790d3e0b56527546ef15bf19acc36cc",
+      "dirty": true,
+      "status": "working-preview",
+      "manifestSha256": "442765947f590d00259b3089e2745fd2213e3880d33e349759634bdc94f51a3c",
+      "normalizedProofSha256": "1d1c42b482228a5bd4b0de0a23974e3b97bc27f556488ee3e0ff7095a5202930"
+    },
+    "articleFiles": [
+      {
+        "path": "docs/book/index.html",
+        "sha256": "3720e7253e47596a4097b52295150338e5c48b5537fc9d2eaa78d9a17e39cb0d",
+        "bytes": 1012456
+      },
+      {
+        "path": "docs/book/midpoint-endpoint-value-choices/index.html",
+        "sha256": "355cfb5e7d1abe6e83c0711d473f86f29a7734b11464893805bf4df2b75be85f",
+        "bytes": 1539907
+      },
+      {
+        "path": "docs/book/climate-response-and-metrics/index.html",
+        "sha256": "b9919f366fcf6652799e8d236c251c1074bd5a29180adee8cd60f8214f0daccc",
+        "bytes": 1570231
+      },
+      {
+        "path": "docs/book/acidification-and-nutrient-pathways/index.html",
+        "sha256": "6432a909636b4684ad7d98c49609ac57994e53a0b8a6fc3e91706fa7dcd8a0b4",
+        "bytes": 1495634
+      },
+      {
+        "path": "docs/book/particulate-emissions-and-health/index.html",
+        "sha256": "3c7b35588bfff5f7d38e79592bf4bc878e04590e18c9d3ccb797b9d847ed7c4f",
+        "bytes": 1668294
+      },
+      {
+        "path": "docs/book/water-scarcity-and-reference/index.html",
+        "sha256": "a5481fd11cca01dcf413c9976982dae2b74d937d913eb0fdaef4a503091c1ad2",
+        "bytes": 1322260
+      },
+      {
+        "path": "docs/appendices/particulate-factor-calculations/index.html",
+        "sha256": "58ea9aab4bd1a4a2ac61ead47a5faf1540f4b40f602da74d8991c408461864df",
+        "bytes": 1116790
+      },
+      {
+        "path": "print/index.html",
+        "sha256": "c020f177a36e98c4e14807303cb5304255a04882c89fde080b21bba406af18f7",
+        "bytes": 15071641
+      }
+    ],
+    "artifactFiles": [
+      {
+        "path": "claims/index.html",
+        "sha256": "ec9bbd6fbc307298b1a353ee75a13829f001ee767ab8927ae8a091afbd613616",
+        "bytes": 6910762,
+        "contentSha256": "58b3588fe60dc9e6730d5b1b3b516dca77c093d64db92d3736eaa4822b8991a8"
+      },
+      {
+        "path": "sources/index.html",
+        "sha256": "86ddb804153249a8039e803c263a732ef2b7d8283d7fa673745271a4dbfdcc8c",
+        "bytes": 5983512,
+        "contentSha256": "646a87d4e1ef46e5aafbcd51387f73979c6558511aa231c76d16e5877da85cc5"
+      },
+      {
+        "path": "concepts/index.html",
+        "sha256": "35c61db7ef1832d969ef6fc1fc1dd115dd608d090d042699adee54bcf9d05654",
+        "bytes": 2167496,
+        "contentSha256": "85d8ffbb221a1f18afafdfd6a8514f576072a8db73f200269e984f0841ecaa9e"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "sha256": "63fd97d02b6fa0c0496f0d527045dbbb7796a09848955f51905c09a73e68351c",
+        "bytes": 4097590,
+        "contentSha256": "63fd97d02b6fa0c0496f0d527045dbbb7796a09848955f51905c09a73e68351c"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "sha256": "52d2e6b6d38eed78a5df8bc05b8310195f8228dfba03a5ffb9ff93a50599b2ce",
+        "bytes": 400336,
+        "contentSha256": "52d2e6b6d38eed78a5df8bc05b8310195f8228dfba03a5ffb9ff93a50599b2ce"
+      }
+    ],
+    "assessment": {
+      "provenance": "Actual private Next/compiler and untouched-exporter bytes from base 91a63c361790d3e0b56527546ef15bf19acc36cc and a declared dirty working-preview. Temporary technical admission inside an isolated clone served inspection only and supplies no editorial acceptance.",
+      "reconstruction": "Exact rollback of 8 managed files (oldFileShas) and 62 raw records (61 claims + 1 revision) recovers the exact 2ba0bfe2 predecessor pin (ee4ca466...) before #131 -> #129 -> #127 -> #125 -> #123 -> #121 -> #119 -> #117 -> #115 -> #113 -> #111 -> older qualifiers, verifying all 72 transitions and 148 cross-generation consumers.",
+      "guards": "Two-round independent adversarial publication-engineering security audit (bab916a2) verified the frozen 4-key allowedOrdinaryOverrideKeys allowlist across #133/#131/#127 without silent continue, strict attrs/childNodes whitelists on /print Part 4 disclosure and all 4 inline display:block correction notices, inline/Tailwind modifier concealment detection in visibleHistoryControl, front-matter-scoped @unit attachment in validateDatedHistoryOutput, 19-prose / 2-caveat / 2-premise claim invariants in preparePart4RereadSource, and CSS zero-drift (be180e5d...), concluding unconditional PASS (0 BLOCKER / 0 MAJOR).",
+      "actual": "Comparison of all 88 article projections identifies the exact 15 changed articles (F02, B14, B15, B16, B17, B18, X04 across web & /print plus /print wall-service-to-comparison note-context projection) and 5 changed public artifacts (claims/index.html, sources/index.html, concepts/index.html, downloads/catalog.json, downloads/dependencies.json). All 468 manifest payloads and 40 case downloads verified.",
+      "browser": "Passed 60 responsive viewport/theme checks across 6 routes × 5 widths (390–2560px) × light/dark (zero overflow), no-script keyboard Enter suites across 8 multi-generation article surfaces + /print Part 4 introduction disclosure, dual-view link checks, Meta+k search, and @media print verification confirming all 4 inline display:block corrections remain visible while all <details> history disclosures hide cleanly. All servers and browsers closed cleanly.",
+      "limits": "Clean production build (dirty:false), source PR/CI/merge, live EdgeOne byte/guard qualification and exact root submodule integration remain required after this scoped acceptance."
+    },
+    "independentReports": {
+      "independent-primary-source-audit-initial.md": "4e27dd4deec9bb11e80f3fc47ac9cf0f8fe510aa03a2d4ccbb52514aee4f9da0",
+      "independent-primary-source-audit-final.md": "65bdb67da8b67e5ef2ef0bd71fd54dac37614045b83146835f71f0a337b96cbc",
+      "part4-reader-review-initial.md": "422a93dbbc8d468a5085e52ab8c504ef248fc51de2b212c585a2e7bf1e9936a7",
+      "part4-reader-review-final.md": "00edd894be11d7dff1ae3dfcb4f881b4f423455ac3a0e36cc3f513437d3b9db6",
+      "independent-publication-engineering-review-initial.md": "2f4ce14629cc372cc08f59af5ac1b89ec1912110a0e2734f8de610c0e5e72644",
+      "independent-publication-engineering-review-final.md": "dce5895139e9bc72c228f0395cb87ed2703132f635f04b0232f2e9bd868d6fe9",
+      "actual-browser-qa/responsive-script-enabled.json": "c3861f479d9c87ae25168219ae74472a5c6cdca14d5e0300365fa490553eb7e8",
+      "actual-browser-qa/interactions.json": "38516514a64fc4d997b770de5e757c650e0c45875ba993cc313016cbc0f80eb2"
+    }
+  }
+}

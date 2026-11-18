@@ -1,3 +1,5 @@
+import part4Config from '../config/reader-part4-reread.json' with { type: 'json' };
+import { selectPart4Reread, effectivePart4Reread, part4RereadLayout } from './reader-part4-reread.mjs';
 import particulateConfig from '../config/reader-particulate-comparison.json' with { type: 'json' };
 import { selectParticulateComparison, effectiveParticulateComparison, particulateComparisonLayout } from './reader-particulate-comparison.mjs';
 import eutroConfig from '../config/reader-eutrophication-pathways.json' with { type: 'json' };
@@ -58,8 +60,9 @@ export const currentWaterScarcity = selectWaterScarcity(waterConfig, undefined, 
 export const currentBiogenicCarbon = selectBiogenicCarbon(biogenicConfig, undefined, preview);
 export const currentEutrophicationPathways = selectEutrophicationPathways(eutroConfig, undefined, preview);
 export const currentParticulateComparison = selectParticulateComparison(particulateConfig, undefined, preview);
+export const currentPart4Reread = selectPart4Reread(part4Config, undefined, preview);
 export const isReadableBookReviewPreview = oldPreview
-  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview' || acidConfig.status === 'preview' || mineralConfig.status === 'preview' || fossilConfig.status === 'preview' || ozoneConfig.status === 'preview' || ozradConfig.status === 'preview' || toxConfig.status === 'preview' || waterConfig.status === 'preview' || biogenicConfig.status === 'preview' || eutroConfig.status === 'preview' || particulateConfig.status === 'preview');
+  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview' || acidConfig.status === 'preview' || mineralConfig.status === 'preview' || fossilConfig.status === 'preview' || ozoneConfig.status === 'preview' || ozradConfig.status === 'preview' || toxConfig.status === 'preview' || waterConfig.status === 'preview' || biogenicConfig.status === 'preview' || eutroConfig.status === 'preview' || particulateConfig.status === 'preview' || part4Config.status === 'preview');
 const previousPlan = readableBookReviewPlan(oldPreview
   ? acceptance.units
   : pinnedReadableBookUnits(acceptance, readableBookBaselineDigest, readableBookAcceptancePins));
@@ -79,7 +82,8 @@ const acceptedTox = effectiveToxicityComparison(acceptedOzrad, currentToxicityCo
 const acceptedWater = effectiveWaterScarcity(acceptedTox, currentWaterScarcity);
 const acceptedBio = effectiveBiogenicCarbon(acceptedWater, currentBiogenicCarbon);
 const acceptedEutro = effectiveEutrophicationPathways(acceptedBio, currentEutrophicationPathways);
-export const currentBookPlan = effectiveParticulateComparison(acceptedEutro, currentParticulateComparison);
+const acceptedParticulate = effectiveParticulateComparison(acceptedEutro, currentParticulateComparison);
+export const currentBookPlan = effectivePart4Reread(acceptedParticulate, currentPart4Reread);
 
 export function currentBookRecordMatches(kind, previous, current, projection) {
   if (projection !== undefined) return matchesAcceptedRecord(currentBookPlan, kind, previous, current, projection);
@@ -113,8 +117,9 @@ export function currentBookLayout(key, previous) {
   if (key === 'B08:title') return flowBoundaryTitle(currentFlowBoundary, flowBoundaryChapter, copyedit);
   if (key === 'B08:headings') return flowBoundarySections(currentFlowBoundary, copyedit);
   if (key === 'B08:ordinary-dispositions') return flowBoundaryOrdinaryDispositions(currentFlowBoundary, copyedit);
-  return particulateComparisonLayout(currentParticulateComparison, key,
-    biogenicCarbonLayout(currentBiogenicCarbon, key,
-      toxicityComparisonLayout(currentToxicityComparison, key,
-        substitutionRulesLayout(currentSubstitutionRules, key, serviceConstraintsLayout(currentServiceConstraints, key, copyedit)))));
+  return part4RereadLayout(currentPart4Reread, key,
+    particulateComparisonLayout(currentParticulateComparison, key,
+      biogenicCarbonLayout(currentBiogenicCarbon, key,
+        toxicityComparisonLayout(currentToxicityComparison, key,
+          substitutionRulesLayout(currentSubstitutionRules, key, serviceConstraintsLayout(currentServiceConstraints, key, copyedit))))));
 }

@@ -1,3 +1,4 @@
+import { selectPart4Reread, preparePart4RereadSource, effectivePart4Reread, verifyPart4RereadReceipts } from './reader-part4-reread.mjs';
 import { selectParticulateComparison, prepareParticulateComparisonSource, effectiveParticulateComparison, verifyParticulateComparisonReceipts } from './reader-particulate-comparison.mjs';
 import { selectEutrophicationPathways, prepareEutrophicationPathwaysSource, effectiveEutrophicationPathways, verifyEutrophicationPathwaysReceipts } from './reader-eutrophication-pathways.mjs';
 import { selectBiogenicCarbon, prepareBiogenicCarbonSource, effectiveBiogenicCarbon, verifyBiogenicCarbonReceipts } from './reader-biogenic-carbon.mjs';
@@ -54,6 +55,9 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const serviceConstraints = selectServiceConstraints(serviceConfig, undefined, preview === 'service');
   const substitutionConfig = await readConfig('reader-substitution-rules.json');
   const substitutionRules = selectSubstitutionRules(substitutionConfig, undefined, preview === 'substitution');
+  const part4Config = await readConfig('reader-part4-reread.json');
+  const part4Reread = selectPart4Reread(part4Config, undefined, preview === 'part4-reread');
+  if (preview === 'part4-reread' && part4Config.status !== 'preview') throw new Error('Part IV continuous reread review requires a private preview state');
   const particulateConfig = await readConfig('reader-particulate-comparison.json');
   const particulateComparison = selectParticulateComparison(particulateConfig, undefined, preview === 'particulate-comparison');
   if (preview === 'particulate-comparison' && particulateConfig.status !== 'preview') throw new Error('Particulate comparison review requires a private preview state');
@@ -105,6 +109,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (loadShift && !substitutionRules) throw new Error('Load shift requires the accepted #105 generation');
   if (circularFootprint && !loadShift) throw new Error('Circular footprint requires the accepted #107 generation');
   if (landRecovery && !circularFootprint) throw new Error('Land recovery requires the accepted #109 generation');
+  if (part4Reread && !particulateComparison) throw new Error('Part IV continuous reread requires the accepted #131 generation');
   if (particulateComparison && !eutrophicationPathways) throw new Error('Particulate comparison requires the accepted #129 generation');
   if (eutrophicationPathways && !biogenicCarbon) throw new Error('Eutrophication pathways requires the accepted #127 generation');
   if (biogenicCarbon && !waterScarcity) throw new Error('Biogenic carbon requires the accepted #125 generation');
@@ -117,7 +122,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (acidEquivalents && !landRecovery) throw new Error('Acid equivalents requires the accepted #111 generation');
   for (const [path, bytes] of await readLoadShiftCaseFiles(root, loadShift)) files.set(path, bytes);
   for (const [path, bytes] of await readServiceConstraintsFiles(root, serviceConstraints)) files.set(path, bytes);
-  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison, waterScarcity, biogenicCarbon, eutrophicationPathways, particulateComparison].filter(Boolean)];
+  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison, waterScarcity, biogenicCarbon, eutrophicationPathways, particulateComparison, part4Reread].filter(Boolean)];
   const realRoot = await realpath(root);
   const reviewFiles = new Set((reviewUnits ?? []).flatMap(unit =>
     (unit.reviewEvidence ?? []).flatMap(row => [row.reportFile, row.artifactFile])));
@@ -132,8 +137,11 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const input = { catalog, readings, literature, files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
-  const particulate = particulateComparison && prepareParticulateComparisonSource(particulateComparison, input, actual, structure);
-  const particulateInput = particulate ? { ...particulate.previousRecords, files: particulate.files } : input;
+  const part4 = part4Reread && preparePart4RereadSource(part4Reread, input, actual, structure);
+  const part4Input = part4 ? { ...part4.previousRecords, files: part4.files } : input;
+  const particulate = particulateComparison && prepareParticulateComparisonSource(particulateComparison, part4Input,
+    part4?.previous ?? actual, part4?.structure ?? structure);
+  const particulateInput = particulate ? { ...particulate.previousRecords, files: particulate.files } : part4Input;
   const eutro = eutrophicationPathways && prepareEutrophicationPathwaysSource(eutrophicationPathways, particulateInput,
     particulate?.previous ?? actual, particulate?.structure ?? structure);
   const eutroInput = eutro ? { ...eutro.previousRecords, files: eutro.files } : particulateInput;
@@ -249,8 +257,13 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   }
   if (particulateComparison && preview !== 'particulate-comparison') {
     const { readerPublicDownloads } = await import('./reader-current-output.mjs');
-    if (!verifyParticulateComparisonReceipts(particulateComparison, artifacts, readerPublicDownloads(catalog, literature, readings)))
+    if (!verifyParticulateComparisonReceipts(particulateComparison, artifacts, readerPublicDownloads(part4Input.catalog, part4Input.literature, part4Input.readings)))
       throw new Error('Particulate comparison lacks exact independent source, reader, and output evidence');
+  }
+  if (part4Reread && preview !== 'part4-reread') {
+    const { readerPublicDownloads } = await import('./reader-current-output.mjs');
+    if (!verifyPart4RereadReceipts(part4Reread, artifacts, readerPublicDownloads(catalog, literature, readings)))
+      throw new Error('Part IV continuous reread lacks exact independent source, reader, and output evidence');
   }
   const service = serviceConstraints && prepareServiceConstraintsSource(serviceConstraints, substitution?.previous ?? actual,
     substitution?.structure ?? structure, { ...previousRecords, files: substitutionInput.files });
@@ -289,7 +302,8 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const qualifiedWater = effectiveWaterScarcity(qualifiedTox, waterScarcity, water?.affectedClaimIds);
   const qualifiedBio = effectiveBiogenicCarbon(qualifiedWater, biogenicCarbon, bio?.affectedClaimIds);
   const qualifiedEutro = effectiveEutrophicationPathways(qualifiedBio, eutrophicationPathways, eutro?.affectedClaimIds);
-  return effectiveParticulateComparison(qualifiedEutro, particulateComparison, particulate?.affectedClaimIds);
+  const qualifiedParticulate = effectiveParticulateComparison(qualifiedEutro, particulateComparison, particulate?.affectedClaimIds);
+  return effectivePart4Reread(qualifiedParticulate, part4Reread, part4?.affectedClaimIds);
 }
 
 export function validateReadableBookCurrent(root, catalog, readings, literature) {
@@ -383,4 +397,10 @@ export function validateParticulateComparisonReviewSources(root, catalog, readin
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Particulate comparison review requires the explicit private preview');
   return qualifyCurrentReaderSources(root, catalog, readings, literature, 'particulate-comparison');
+}
+
+export function validatePart4RereadReviewSources(root, catalog, readings, literature) {
+  if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
+    throw new Error('Part IV continuous reread review requires the explicit private preview');
+  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'part4-reread');
 }

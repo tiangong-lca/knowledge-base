@@ -5,7 +5,8 @@ import { editionDigest, inspectReadableBookEdition, sha256, verifyReadableBookRe
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { flowBoundaryOrdinaryDigest, groupHistoricalRanges, observeFlowBoundaryChanges, validateDatedHistoryOutput } from './reader-flow-boundary.mjs';
 import {
-  exactPublicJsonReceipt, mergeScientificFileAndRecordChanges, mergeScientificOutput, qualifyScientificHistory,
+  exactPublicJsonReceipt, mergeScientificFileAndRecordChanges, mergeScientificOutput,
+  projectScientificOrdinaryTargets, qualifyScientificHistory,
   restoreScientificRecords, sameScienceValue, scienceDigest, scienceText,
 } from './reader-scientific-delta.mjs';
 
@@ -442,15 +443,39 @@ export function observeParticulateComparisonOrdinaryTargets(documents) {
     }])));
 }
 
-export function qualifyParticulateComparisonHistory(documents, unit, actual) {
+const particulateOverrideKeys = Object.freeze(new Set([
+  `${particulateComparisonChapter}#${chapterAnchorPrefix(particulateComparisonChapter)}-particulate-131-ordinary-3`,
+  `/print#${printUnitAnchor(particulateComparisonChapter)}-particulate-131-ordinary-3`,
+]));
+const allowedSuccessorOverrideKeys = Object.freeze(new Set([
+  ...particulateOverrideKeys,
+  `/docs/book/climate-response-and-metrics#${chapterAnchorPrefix('/docs/book/climate-response-and-metrics')}-bio-127-ordinary-2`,
+  `/print#${printUnitAnchor('book-climate-equivalence')}-bio-127-ordinary-2`,
+]));
+
+export function qualifyParticulateComparisonHistory(documents, unit, actual, part4Reread = null) {
   if (!unit) return { prior: actual, errors: [] };
-  const targets = observeParticulateComparisonOrdinaryTargets(documents);
+  let overrides = null;
+  if (part4Reread) {
+    const raw = part4Reread.history?.ordinaryOverrides;
+    if (!raw || typeof raw !== 'object' || Array.isArray(raw)
+        || Object.keys(raw).length !== allowedSuccessorOverrideKeys.size
+        || Object.keys(raw).some(key => !allowedSuccessorOverrideKeys.has(key)))
+      throw new Error('Particulate comparison successor ordinaryOverrides violates the 4-key Part IV allowlist');
+    overrides = Object.fromEntries([...particulateOverrideKeys].map(key => [key, raw[key]]));
+  }
+  const targets = projectScientificOrdinaryTargets(
+    overrides,
+    observeParticulateComparisonOrdinaryTargets(documents),
+    'Particulate comparison',
+    particulateOverrideKeys,
+  );
   const prior = qualifyScientificHistory(unit.history, actual, targets, {
     label: 'Particulate comparison', routes: [particulateComparisonChapter], predecessorPin: addressPin,
   });
   const errors = validateDatedHistoryOutput(documents, {
     expected: particulateComparisonHistoryControls(unit), source: particulateComparisonSource, attribute: 'particulate-comparison',
-    ordinaryPattern, label: 'Particulate comparison', ordinaryTargets: Object.fromEntries(
+    ordinaryPattern, label: 'Particulate comparison', ordinaryOverrides: overrides, ordinaryTargets: Object.fromEntries(
       Object.entries(unit.history.ordinaryTargets).map(([key, row]) => [key, row.sha256])),
   });
   if (!sameScienceValue(targets, unit.history.ordinaryTargets)) errors.push('Particulate comparison actual versioned description differs');

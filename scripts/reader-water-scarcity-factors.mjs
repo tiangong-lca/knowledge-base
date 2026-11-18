@@ -325,7 +325,7 @@ function validateCalculations(facts, catalog) {
     + '、印度 ' + raw('ef31-water-in') + '（全球未指明位置取水为 ' + raw('ef31-water-none-input')
     + '），再到巴西 ' + raw('ef31-water-br') + '、德国 ' + raw('ef31-water-de')
     + '、瑞士 ' + raw('ef31-water-ch') + ' 与挪威 ' + raw('ef31-water-no') + ' m³ world-eq./m³';
-  const expectedNfClause = '维持 ' + mantissaExp(nf31, 4, 2) + '×10⁴ m³ water eq. of deprived water/人不变（报告对 m³ world-eq./人 的异文写法，详见第 18.4 节；变动 '
+  const expectedNfClauseFor = sectionRef => '维持 ' + mantissaExp(nf31, 4, 2) + '×10⁴ m³ water eq. of deprived water/人不变（报告对 m³ world-eq./人 的异文写法，' + sectionRef + '；变动 '
     + raw('jrc130796-nf-water-diff-pct') + '%，在 ' + raw('jrc130796-official-datasets-total') + ' 个 EF 官方数据集中居单一总分首位的个数仅因其他类别重算由 '
     + raw('jrc130796-water-rank1-ef30') + ' 个微调为 ' + raw('jrc130796-water-rank1-ef31') + ' 个）';
   const expectedThresholdsClause = '个人主义为 ' + raw('rivm-wsi-global-i') + '，略高于等级主义与平等主义（同为 '
@@ -334,7 +334,7 @@ function validateCalculations(facts, catalog) {
     + raw('rivm-hdi-zero-threshold') + ' 按二次多项式递减，而 HDI > ' + raw('rivm-hdi-zero-threshold');
   if (!resClaim?.text.includes('列出 AWARE 的 ' + raw('jrc109369-aware-resolutions-listed') + ' 种时空与行业分辨率')
       || !resClaim?.text.includes(expectedEfCountriesClause)
-      || !resClaim?.text.includes(expectedNfClause)
+      || !(resClaim?.text.includes(expectedNfClauseFor('详见第 18.4 节')) || resClaim?.text.includes(expectedNfClauseFor('详见本章“情境与加总”一节')))
       || !resClaim?.text.includes('缩放在 ' + raw('rivm-wsi-min') + ' 至 ' + raw('rivm-wsi-max') + ' 之间')
       || !resClaim?.text.includes(expectedThresholdsClause)
       || !resClaim?.text.includes('参考文献第 115 页')
@@ -513,7 +513,8 @@ function validateCalculations(facts, catalog) {
       || !synthClaim?.text.includes('HDI > ' + raw('rivm-hdi-zero-threshold') + ' 健康归零、南北纬 ' + raw('rivm-aq-latitude-cutoff') + '° 鱼类剔除')
       || !synthClaim?.text.includes('（' + raw('rivm-wr-malnutrition-i') + ' 对 ' + raw('rivm-wr-malnutrition-he') + ' m³/(年·人)）')
       || !synthClaim?.text.includes('−' + displayedDecimal(-noneUnspecNet, 3) + ' m³ world-eq. 超额负抵扣')
-      || !synthClaim?.text.includes('回看第 18.3—18.4 节的 X、Y 两流域虚构算例'))
+      || !(synthClaim?.text.includes('回看第 18.3—18.4 节的 X、Y 两流域虚构算例')
+        || synthClaim?.text.includes('回看本章“两处耗水的比较”与“情境与加总”两节的 X、Y 两流域虚构算例')))
     throw new Error('Water scarcity changed the displayed five-step diagnostic synthesis prose');
 
   if (consumed.size !== facts.size) {

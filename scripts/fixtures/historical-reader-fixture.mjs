@@ -46,7 +46,9 @@ const eutroConfigPath = 'config/reader-eutrophication-pathways.json';
 const eutroModulePath = 'scripts/reader-eutrophication-pathways.mjs';
 const particulateConfigPath = 'config/reader-particulate-comparison.json';
 const particulateModulePath = 'scripts/reader-particulate-comparison.mjs';
-const fixtureAliases = new Set([serviceModulePath, substitutionModulePath, shiftModulePath, footprintModulePath, landModulePath, acidModulePath, mineralModulePath, fossilModulePath, ozoneModulePath, ozradModulePath, toxModulePath, waterModulePath, bioModulePath, eutroModulePath, particulateModulePath].map(path => `@/${path}`));
+const part4ConfigPath = 'config/reader-part4-reread.json';
+const part4ModulePath = 'scripts/reader-part4-reread.mjs';
+const fixtureAliases = new Set([serviceModulePath, substitutionModulePath, shiftModulePath, footprintModulePath, landModulePath, acidModulePath, mineralModulePath, fossilModulePath, ozoneModulePath, ozradModulePath, toxModulePath, waterModulePath, bioModulePath, eutroModulePath, particulateModulePath, part4ModulePath].map(path => `@/${path}`));
 const flowPinPath = 'scripts/reader-flow-boundary-pins.mjs';
 
 async function loadArchive() {
@@ -95,7 +97,7 @@ async function materialize(root) {
     .map(entry => `scripts/${entry.name}`);
   const components = ['components/evidence.tsx', 'components/numbered-heading.tsx', 'components/chapter-content.tsx'];
   const current = [...configs, ...scripts, ...components, 'lib/teaching-case.ts']
-    .filter(path => ![copyeditConfigPath, copyeditPinPath, flowConfigPath, flowPinPath, serviceConfigPath, serviceModulePath, substitutionConfigPath, substitutionModulePath, shiftConfigPath, shiftModulePath, footprintConfigPath, footprintModulePath, landConfigPath, landModulePath, acidConfigPath, acidModulePath, mineralConfigPath, mineralModulePath, fossilConfigPath, fossilModulePath, ozoneConfigPath, ozoneModulePath, ozradConfigPath, ozradModulePath, toxConfigPath, toxModulePath, waterConfigPath, waterModulePath, bioConfigPath, bioModulePath, eutroConfigPath, eutroModulePath, particulateConfigPath, particulateModulePath].includes(path));
+    .filter(path => ![copyeditConfigPath, copyeditPinPath, flowConfigPath, flowPinPath, serviceConfigPath, serviceModulePath, substitutionConfigPath, substitutionModulePath, shiftConfigPath, shiftModulePath, footprintConfigPath, footprintModulePath, landConfigPath, landModulePath, acidConfigPath, acidModulePath, mineralConfigPath, mineralModulePath, fossilConfigPath, fossilModulePath, ozoneConfigPath, ozoneModulePath, ozradConfigPath, ozradModulePath, toxConfigPath, toxModulePath, waterConfigPath, waterModulePath, bioConfigPath, bioModulePath, eutroConfigPath, eutroModulePath, particulateConfigPath, particulateModulePath, part4ConfigPath, part4ModulePath].includes(path));
   const currentCopyeditPin = await readFile(join(repo, copyeditPinPath), 'utf8');
   const copyeditUnitPin = /^export const readerCopyeditUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
   assert.equal([...currentCopyeditPin.matchAll(copyeditUnitPin)].length, 1);
@@ -147,6 +149,9 @@ async function materialize(root) {
   const currentParticulateModule = await readFile(join(repo, particulateModulePath), 'utf8');
   const particulateUnitPin = /^export const particulateComparisonUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
   assert.equal([...currentParticulateModule.matchAll(particulateUnitPin)].length, 1);
+  const currentPart4Module = await readFile(join(repo, part4ModulePath), 'utf8');
+  const part4UnitPin = /^export const part4RereadUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
+  assert.equal([...currentPart4Module.matchAll(part4UnitPin)].length, 1);
   // The only archived script is the independently selected old edition pin.
   // All validation code, including the expectation resolver, comes from the
   // current worktree and runs under the historical book data in this directory.
@@ -189,6 +194,8 @@ async function materialize(root) {
     write(root, eutroModulePath, currentEutroModule.replace(eutroUnitPin, 'export const eutrophicationPathwaysUnitPin = null;')),
     write(root, particulateConfigPath, JSON.stringify({ schemaVersion: 1, status: 'inactive', unit: null })),
     write(root, particulateModulePath, currentParticulateModule.replace(particulateUnitPin, 'export const particulateComparisonUnitPin = null;')),
+    write(root, part4ConfigPath, JSON.stringify({ schemaVersion: 1, status: 'inactive', unit: null })),
+    write(root, part4ModulePath, currentPart4Module.replace(part4UnitPin, 'export const part4RereadUnitPin = null;')),
     symlink(join(repo, 'node_modules'), join(root, 'node_modules'), process.platform === 'win32' ? 'junction' : 'dir'),
   ]);
 }

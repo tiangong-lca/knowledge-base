@@ -4,6 +4,8 @@ import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 import config from '../config/reader-biogenic-carbon.json' with { type: 'json' };
 import capture from '../config/reader-biogenic-carbon-capture.json' with { type: 'json' };
+import part4 from '../config/reader-part4-reread.json' with { type: 'json' };
+import { restorePart4RereadTestFiles } from './reader-part4-reread.mjs';
 import particulate from '../config/reader-particulate-comparison.json' with { type: 'json' };
 import eutro from '../config/reader-eutrophication-pathways.json' with { type: 'json' };
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
@@ -284,9 +286,10 @@ test('B15 biogenic carbon source plan preserves 5c982449 predecessor, 49/41/8 la
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
+  restorePart4RereadTestFiles(files, part4.unit);
   if (particulate.unit) files.set(`content${particulate.unit.routes[0]}.mdx`, Buffer.from(particulate.unit.previousMdx));
   if (eutro.unit) files.set(`content${eutro.unit.routes[0]}.mdx`, Buffer.from(eutro.unit.previousMdx));
-  const input = { ...previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, particulate.unit), eutro.unit), files };
+  const input = { ...previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part4.unit), particulate.unit), eutro.unit), files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
   const qualify = (unit, customInput = input, customActual = actual, customStruct = structure) =>
     prepareBiogenicCarbonSource(unit, customInput, customActual, customStruct);
@@ -372,7 +375,7 @@ test('B15 biogenic carbon source plan preserves 5c982449 predecessor, 49/41/8 la
 test('Biogenic carbon receipt verifier fails closed when capture or capture pin is absent', () => {
   if (biogenicCarbonCapturePin !== null) return;
   if (!config.unit) return;
-  const previous = previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, particulate.unit), eutro.unit);
+  const previous = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part4.unit), particulate.unit), eutro.unit);
   const expected = readerPublicDownloads(previous.catalog, previous.literature, previous.readings);
   const unit = structuredClone(config.unit);
   unit.outputs = [{ path: '/docs/book/climate-response-and-metrics', route: '/docs/book/climate-response-and-metrics', sha256: '1'.repeat(64), rationale: 'r' }];
@@ -394,7 +397,7 @@ test('Biogenic carbon receipt verifier fails closed when capture or capture pin 
 });
 
 test('Biogenic carbon receipts bind actual output capture independently', { skip: !biogenicCarbonCapturePin && config.status !== 'reviewed' }, () => {
-  const previous = previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, particulate.unit), eutro.unit);
+  const previous = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part4.unit), particulate.unit), eutro.unit);
   const expected = readerPublicDownloads(previous.catalog, previous.literature, previous.readings);
   const verify = (mutateUnit = () => {}, mutateOutput) => {
     const unit = structuredClone(config.unit);

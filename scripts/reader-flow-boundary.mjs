@@ -396,11 +396,36 @@ export function flowBoundaryOrdinaryDigest(node) {
   return editionDigest({ tag: node.tagName, text: node.text.replace(/\s+/g, ' ').trim(), links });
 }
 
+function concealedByInlineStyle(style) {
+  for (const declaration of style.replace(/\/\*[\s\S]*?\*\//g, '').split(';')) {
+    const colon = declaration.indexOf(':');
+    if (colon < 0) continue;
+    const property = declaration.slice(0, colon).trim().toLowerCase();
+    const value = declaration.slice(colon + 1).replace(/\s*!important\s*$/i, '').trim().toLowerCase();
+    if (property === 'display' && value === 'none') return true;
+    if (property === 'content-visibility' && value === 'hidden') return true;
+    if (property === 'visibility' && ['hidden', 'collapse'].includes(value)) return true;
+    if (property === 'opacity' && /^[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:e[+-]?\d+)?%?$/.test(value)
+        && Number(value.replace(/%$/, '')) === 0) return true;
+    if (property === 'font-size' && /^[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[a-z%]+)?$/.test(value)
+        && Number.parseFloat(value) === 0) return true;
+    const inset = property === 'clip-path' && /^inset\(\s*([+-]?(?:\d+(?:\.\d*)?|\.\d+))%\s*\)$/.exec(value);
+    if (inset && Number(inset[1]) >= 100) return true;
+    if (property === 'clip-path' && /^circle\(\s*0(?:[a-z%]+)?\b/.test(value)) return true;
+  }
+  return false;
+}
+
+function concealedByClassToken(token) {
+  const base = token.replace(/^(?:[a-z0-9-]+:)*!?/i, '');
+  return /^(?:hidden|invisible|collapse|sr-only|opacity-0|pointer-events-none)$/i.test(base);
+}
+
 export function visibleHistoryControl(node, expandable = null) {
   for (let current = node; current?.nodeType === 1; current = current.parentNode) {
     if (current.hasAttribute('hidden') || current.hasAttribute('inert') || current.getAttribute('aria-hidden')?.toLowerCase() === 'true'
-        || /(?:^|[;\s])(?:display\s*:\s*none|visibility\s*:\s*(?:hidden|collapse)|opacity\s*:\s*0(?:[;\s]|$)|content-visibility\s*:\s*hidden)/i.test(current.getAttribute('style') ?? '')
-        || (current.getAttribute('class') ?? '').split(/\s+/).some(name => /^(?:hidden|invisible|collapse|sr-only|opacity-0|pointer-events-none)$/.test(name))
+        || concealedByInlineStyle(current.getAttribute('style') ?? '')
+        || (current.getAttribute('class') ?? '').split(/\s+/).filter(Boolean).some(concealedByClassToken)
         || (current !== node && current !== expandable && current.tagName === 'DETAILS' && !current.hasAttribute('open')
           && node.closest('summary') !== current.querySelector('summary'))) return false;
   }
@@ -415,12 +440,24 @@ export function validateFlowBoundaryHistoryOutput(documents, unit) {
   });
 }
 
-export function validateDatedHistoryOutput(documents, { expected, source, attribute, ordinaryPattern, ordinaryTargets: expectedOrdinary, label, ordinaryTags = ['P'], previousHistory = null }) {
+export function validateDatedHistoryOutput(documents, { expected, source, attribute, ordinaryPattern, ordinaryTargets: expectedOrdinary, label, ordinaryTags = ['P'], previousHistory = null, ordinaryOverrides = null }) {
   const observed = new Set(), ordinary = {};
   const errors = [];
+  if (ordinaryOverrides != null && (typeof ordinaryOverrides !== 'object' || Array.isArray(ordinaryOverrides))) {
+    errors.push(`${label} ordinaryOverrides must be a plain object`);
+  }
   for (const [path, document] of documents) {
     for (const block of document.querySelectorAll(ordinaryTags.map(tag => tag.toLowerCase() + '[id]').join(',')).filter(node => ordinaryPattern.test(node.id))) {
-      ordinary[`${path}#${block.id}`] = flowBoundaryOrdinaryDigest(block);
+      const blockKey = `${path}#${block.id}`;
+      const actualDigest = flowBoundaryOrdinaryDigest(block);
+      const override = ordinaryOverrides && Object.hasOwn(ordinaryOverrides, blockKey) ? ordinaryOverrides[blockKey] : null;
+      if (override) {
+        if (!digest(override.from) || !digest(override.to) || override.from === override.to || actualDigest !== override.to)
+          errors.push(`${label} overridden ordinary block differs from reviewed successor: ${blockKey}`);
+        ordinary[blockKey] = override.from;
+      } else {
+        ordinary[blockKey] = actualDigest;
+      }
     }
     const native = new Map(document.querySelectorAll('[id]').map(node => [node.id, node]));
     for (const notice of document.querySelectorAll(`[data-${attribute}-history]`)) {
@@ -467,9 +504,13 @@ export function validateDatedHistoryOutput(documents, { expected, source, attrib
       while (isValidOriginSibling(previous)) {
         previous = previous.previousElementSibling;
       }
+      const isFrontMatterRoute = ['/', '/docs', '/docs/book'].includes(row?.previous.route);
       const attached = priorChainValid && target && (target === previous
-        || ['chapter', 'reading-title'].includes(row?.previous.kind) && target.closest('article') === notice.closest('article')
-          && (!previous || previous.tagName === 'P' && ordinaryPattern.test(previous.id)));
+        || ['chapter', 'reading-title'].includes(row?.previous.kind)
+          && target.closest('article') === notice.closest('article')
+          && (path !== '/print' || target.tagName !== 'ARTICLE' || notice.parentNode === target)
+          && (!previous || previous.tagName === 'P' && ordinaryPattern.test(previous.id)
+            || isFrontMatterRoute && previous.getAttribute('data-reader-heading-key') === '@unit' && origins?.includes(previous.id)));
       if (!row || observed.has(key) || !attached || notice.tagName !== 'DETAILS'
           || notice.getAttribute(`data-${attribute}-origins`) !== origins.join(' ')
           || origins.some(origin => {
@@ -493,14 +534,25 @@ export function validateDatedHistoryOutput(documents, { expected, source, attrib
           || ordinaryTargets.some(item => {
             const targets = documents.get(item.path)?.querySelectorAll('[id]').filter(node => node.id === item.id) ?? [];
             const node = targets[0];
+            const blockKey = `${item.path}#${item.id}`;
+            const override = ordinaryOverrides && Object.hasOwn(ordinaryOverrides, blockKey) ? ordinaryOverrides[blockKey] : null;
+            const expectedDigest = override
+              ? (override.from === item.digest ? override.to : null)
+              : item.digest;
             return targets.length !== 1 || !visibleHistoryControl(node) || (item.claimId
               ? node.getAttribute('data-reader-claim') !== item.claimId
-              : !ordinaryTags.includes(node.tagName) || flowBoundaryOrdinaryDigest(node) !== item.digest);
+              : !ordinaryTags.includes(node.tagName) || expectedDigest === null || flowBoundaryOrdinaryDigest(node) !== expectedDigest);
           })
           || !same(ordinaryLinks.map(link => link.text), ordinaryTargets.map(item => item.label))
           || !visibleHistoryControl(summary) || !visibleHistoryControl(target))
         errors.push(`${label} has a missing or invalid dated scope control: ${key}`);
       observed.add(key);
+    }
+  }
+  if (ordinaryOverrides && typeof ordinaryOverrides === 'object' && !Array.isArray(ordinaryOverrides)) {
+    for (const key of Object.keys(ordinaryOverrides)) {
+      if (!Object.hasOwn(ordinary, key))
+        errors.push(`${label} ordinaryOverrides contains unknown or unrendered key: ${key}`);
     }
   }
   if (!same(ordinary, expectedOrdinary))

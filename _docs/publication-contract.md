@@ -24,6 +24,25 @@ lastReviewedCommit: 67af9c89a4051581b971060e297fce9ac9f4b3bd
 
 ## Scoped scientific successors
 
+The Part IV continuous-reread unit #133 synchronizes cross-chapter framing,
+dual-view references, first-appearance terminology, and note scopes across `F02`
+(`content/docs/book/index.mdx:18`), the Part IV introduction
+(`config/reader-numbering.json:23`), `B14`–`B19`, companion climate articles, and
+`X03`–`X04` (`61` modified claims and `8` managed files) while conserving `100%`
+of all `1,008` claim IDs, sequence, `1,034` evidence records, `numericFacts`, and
+`40` case downloads against `2ba0bfe2f39d28bfa42e61f5e2b70585770bcb73`. It clears
+all `46` remaining `#90` mechanical placeholder scopes across `B17` (`31`) and
+`X04` (`15`), distinguishes `UNEP/SETAC` (2016 guidance) from `UNEP GLAM`
+(`Fantke et al. 2026` consensus method), binds `#131` synthesis premises on
+`cl-pm-population-meaning` and `cl-pm-conclusion`, replaces workflow meta-language
+in two `B14` caveats with academic scope boundaries, eliminates book/web
+section-number and chapter-number collisions across `B15`, `B17`, and `B18`, and
+publishes four inline `display:block` dated correction notices (`cl-pm-evidence-levels`
+`Gronlund 2015` year, `cl-pm-population-meaning`, `cl-pm-conclusion`, and
+`cl-water125-value-choices-and-denominator-paradox` Chapter `15` climate
+attribution) without altering any underlying scientific evidence or claiming
+whole-book completion.
+
 The particulate-comparison unit #131 compares ILCD 2011 (`RiskPoll`/`Greco 2007`
 Level I `kg PM₂.₅-eq/kg` midpoint + Level I primary / Level II secondary `DALY`
 endpoint), ReCiPe 2016 (`56`-region `TM5-FASST` `20%` perturbation `kg PM₂.₅-eq/kg`
