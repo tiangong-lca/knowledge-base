@@ -40,11 +40,36 @@ export function validateArtifact(artifact, path, fail, httpUrl, requirePdfBounds
   }
 }
 
+const evidenceIndexCache = new WeakMap();
+function getEvidenceMap(catalog) {
+  const list = catalog?.evidence;
+  if (!Array.isArray(list)) return byId(records(catalog, 'evidence'));
+  const cached = evidenceIndexCache.get(list);
+  if (cached && cached.snapshot.length === list.length) {
+    let unchanged = true;
+    for (let i = 0; i < list.length; i++) {
+      const item = list[i];
+      if (item !== cached.snapshot[i] || (isObject(item) ? item.id : undefined) !== cached.ids[i]) {
+        unchanged = false;
+        break;
+      }
+    }
+    if (unchanged) return cached.map;
+  }
+  const map = byId(records(catalog, 'evidence'));
+  evidenceIndexCache.set(list, {
+    snapshot: list.slice(),
+    ids: list.map(item => (isObject(item) ? item.id : undefined)),
+    map,
+  });
+  return map;
+}
+
 /** Resolve evidence in evidenceIds order. Explicit links replace legacy roles, never supplement them.
  * Missing evidence is omitted here and reported by validateCatalog. Legacy rationales are null.
  */
 export function getClaimEvidence(catalog, claim) {
-  const evidenceMap = byId(records(catalog, 'evidence'));
+  const evidenceMap = getEvidenceMap(catalog);
   const legacy = claim?.evidenceLinks === undefined;
   return ids(claim?.evidenceIds).flatMap(id => {
     const evidence = evidenceMap.get(id);

@@ -7,6 +7,7 @@ const config: NextConfig = {
   agentRules: false,
   output: 'export',
   trailingSlash: true,
+  staticPageGenerationTimeout: 180,
   images: { unoptimized: true },
   experimental: { useTypeScriptCli: true },
 };

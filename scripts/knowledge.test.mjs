@@ -439,3 +439,36 @@ test('plural numerical projection allowlists every nested fact and does not alia
   assert.equal(data.evidence[0].numericFacts[0].basis, numericFact().basis);
   assert.equal(data.evidence[0].numericFacts.length, 2);
 });
+
+test('getClaimEvidence reuses cached evidence index while invalidating on in-place array or ID mutations', () => {
+  const data = fixture();
+  assert.deepEqual(getClaimEvidence(data, data.claims[0]).map(item => item.evidence.id), ['evidence']);
+  // Repeated lookups against an unchanged evidence array preserve exact results.
+  assert.deepEqual(getClaimEvidence(data, data.claims[0]).map(item => item.evidence.id), ['evidence']);
+  // Appending a new evidence record to the same array reference invalidates the cache.
+  const added = { id: 'evidence-2', sourceId: 'source', locator: 'section 2', summary: 'Second passage', relation: 'qualifies' };
+  data.evidence.push(added);
+  data.claims[0].evidenceIds = ['evidence', 'evidence-2'];
+  assert.deepEqual(getClaimEvidence(data, data.claims[0]).map(item => [item.evidence.id, item.relation]), [
+    ['evidence', 'supports'],
+    ['evidence-2', 'qualifies'],
+  ]);
+  // Mutating an existing element's ID in place without changing array length or object identity also invalidates the cache.
+  added.id = 'evidence-renamed';
+  assert.deepEqual(getClaimEvidence(data, data.claims[0]).map(item => item.evidence.id), ['evidence']);
+  data.claims[0].evidenceIds = ['evidence', 'evidence-renamed'];
+  assert.deepEqual(getClaimEvidence(data, data.claims[0]).map(item => item.evidence.id), ['evidence', 'evidence-renamed']);
+  // Replacing an element at the same index, inserting non-objects, shrinking via splice/pop, or passing non-array evidence degrades safely.
+  const replacement = { ...added, summary: 'Replaced summary' };
+  data.evidence[1] = replacement;
+  assert.equal(getClaimEvidence(data, data.claims[0])[1].evidence, replacement);
+  data.evidence[1] = null;
+  assert.deepEqual(getClaimEvidence(data, data.claims[0]).map(item => item.evidence.id), ['evidence']);
+  data.evidence[1] = replacement;
+  assert.deepEqual(getClaimEvidence(data, data.claims[0]).map(item => item.evidence.id), ['evidence', 'evidence-renamed']);
+  data.evidence.pop();
+  assert.deepEqual(getClaimEvidence(data, data.claims[0]).map(item => item.evidence.id), ['evidence']);
+  data.evidence.splice(0, 1);
+  assert.deepEqual(getClaimEvidence(data, data.claims[0]), []);
+  assert.deepEqual(getClaimEvidence({ evidence: null }, data.claims[0]), []);
+});
