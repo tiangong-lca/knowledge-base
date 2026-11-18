@@ -24,6 +24,33 @@ lastReviewedCommit: 65aafe25a19865d61bd5a251584ce8cc39dc1941
 
 ## Scoped scientific successors
 
+The Part V weighting-and-valuation unit #135 compares Swiss Ecological Scarcity
+(`UBP 2013/2021` policy distance-to-target), EU `EF 3.1` (`Sala et al. 2018`
+`50:50` public/expert importance × `0.17`–`0.87` scientific robustness + global
+per-capita annual `NF`), `ReCiPe 2016` (`3`-AoP halt across `DALY`,
+`species·yr`, and `USD2013` under `I`/`H`/`E` cultural perspectives without a
+default cross-AoP single score), and Japan `LIME1`/`LIME2` (conjoint household
+marginal `WTP`) across `B20` (`26` -> `32` claims) and `B22` (`35` -> `41`
+claims plus a 6-column × 4-row comparison table, bringing the public catalog to
+`1,020` claims) while conserving `100%` of `1,003` untouched prior claims, all
+`1,034` prior evidence records, and all `40` case downloads against
+`65aafe25a19865d61bd5a251584ce8cc39dc1941`. It binds `18` single-artifact
+`ev-weight135-*` records (`1-to-1` with `18` `psg-weight135-*` passages) and `83`
+`BigInt`-verified `numericFacts` to resolve coating `甲` vs `乙` across single
+`POF` midpoint, 16-category outdoor air, indoor generic `NMVOC` (where omitted
+indoor `POF` rows in `b5c610fe.xml` offset the `144×` `HTNC` jump so `甲 < 乙`
+persists), and indoor `styrene` (where `HTC + HTNC` surge `146×` and reverse to
+`乙 < 甲`), `PEFCR v6.3` Column `A` (`sum 100.03`) vs robustness discount
+reversal on `丙`/`丁` and `JRC130796` `NF`/`CF` shift across `2,752` datasets,
+`ISO 14042/14044` / `CML 2001` / `ILCD 2010` bans on public comparative weighting
+vs `EU 2021/2279` mandatory `PEF/OEF` weighting, `ReCiPe` `160.5×` `I/H/E`
+climate-health reversal vs `EF 3.1` stack-height reversal (`戊 = 0.02883 pt`)
+and `LIME` 2003/2004/2012 biodiversity re-reversal, incommensurability of
+household `WTP`, resource surplus cost, and enterprise `LCC`, and `UNEP GLAM
+Phase 3` reporting discipline, alongside `5` inline `display:block` public
+correction notices on synchronized prior non-case claims without claiming
+whole-book completion.
+
 The Part IV continuous-reread unit #133 synchronizes cross-chapter framing,
 dual-view references, first-appearance terminology, and note scopes across `F02`
 (`content/docs/book/index.mdx:18`), the Part IV introduction

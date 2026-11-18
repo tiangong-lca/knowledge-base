@@ -22,6 +22,45 @@ lastReviewedCommit: de9047ce4d343f87c0b83c0d4cfe369cd8e3eb43
 
 # Publication architecture
 
+## Weighting-and-valuation successor
+
+The #135 Part V cross-system weighting-and-valuation successor
+(`scripts/reader-weighting-valuation.mjs` and
+`scripts/reader-weighting-valuation-factors.mjs`) updates `B20`
+(`content/docs/book/ecological-scarcity-and-targets.mdx`, `26` -> `32` claims)
+and `B22` (`content/docs/book/lime-preferences-and-damage-weights.mdx`, `35` ->
+`41` claims plus a 2nd responsive 6-column × 4-row Markdown synthesis table in
+§4), brings the public catalog from `1,008` to `1,020` claims (`12` new
+`cl-weight135-*` claims, `18` single-source/single-artifact `ev-weight135-*`
+records bound `1-to-1` to `18` `psg-weight135-*` passages across `18`
+SHA-256-verified primary carriers, and `83` `BigInt`-verified `nf-weight135-*`
+`numericFacts`), and applies `5` bounded non-case prior-claim synchronizations
+(`cl-es-baselines`, `cl-es-judgment`, `cl-lime-purpose`,
+`cl-lime-policy-contrast`, `cl-lime-decision`), conserving `100%` of `1,003`
+untouched prior claims (including all `7` `CASE-ECOLOGICAL-SCARCITY` and all `9`
+`CASE-LIME-VALUATION` claims), all `1,034` prior evidence records, and all `40`
+case JSON files byte-for-byte. Before `#133` runs its own rollback and receipt
+checks, `prepareWeightingValuationSource` enforces closed `onlyKeys` envelope
+allowlists on `config`, `unit`, and `unit.history` (rejecting `layouts`,
+`partIntroduction`, `migrations`, and `history.ordinaryOverrides`), restores the
+exact `65aafe25a19865d61bd5a251584ce8cc39dc1941` MDX and raw records, and
+verifies `weightingValuationPredecessorPin` (`ff59fb32...`), `assertCleanReaderProse`
+hygiene, and all `75` bidirectional transitions across `497` dependent consumers.
+
+Across rendered DOM and navigation, `lib/reader-book.ts` extends
+`getCitationLabel` route coverage to `currentWeightingValuation`, `ReaderTable`
+in `components/chapter-content.tsx` preserves the historical table ID on `B22`
+Table 1 while admitting the 2nd synthesis table (`id: null`) only when
+`currentWeightingValuation` is active, and `qualifyWeightingValuationHistory`
+verifies `10` ordinary targets (including `-weight-135-ordinary-4` on `B22`'s
+new table), `18` history dispositions (`14` `<details data-weighting-135-history>`
+controls stacked cleanly with `#71`/`#73`/`#90`), and `5` inline
+`style="display:block"` public correction notices (`data-weighting-135-correction`
+on `B20` Notes 7/28 and `B22` Notes 1/2/40). `weightingValuationCapturePin`
+(`4aa9021a...`) and `weightingValuationUnitPin` (`40999572...`) bind the `7`
+changed articles and `9` changed public artifacts with zero compiled CSS drift
+(`be180e5d...`).
+
 ## Part-4-reread successor
 
 The #133 Part IV continuous-reread successor (`scripts/reader-part4-reread.mjs`)

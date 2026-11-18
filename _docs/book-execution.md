@@ -398,8 +398,44 @@ correction notices (`Gronlund 2015` year, Chapter `15` climate attribution, and
 `40` case JSON files. Separate unconditional-PASS two-round source (`07e973fa`),
 zero-context whole-Part IV reader (`ca1ba745`), adversarial publication-engineering
 (`bab916a2`) and actual-output acceptances (`4cd6d951...`) and normal source/root
-delivery are tracked on Issue133. Part V comparative units (`B20`–`B24`) and all
-eight global Programme9 criteria remain active.
+delivery are tracked on Issue133. Unit133 is now fully delivered: source
+PR134/Main `65aafe25a19865d61bd5a251584ce8cc39dc1941`, qualified 468-file hosted
+output on `https://prism.tiangong.earth` (`6ee5fb40...`, including unmodified
+`validateReaderOutput` against archived Main source and live Chromium/`@media print`
+verification), exact root2438/PR2439/Main
+`36aa7d2b392239a76cc8945f71ccfd782bdeed45`, and ordinary final completion and
+source-handoff (`1/1`) receipts.
+
+[Issue135](https://github.com/tiangong-lca/knowledge-base/issues/135) delivers
+the Part V joint cross-system weighting-and-valuation comparative unit across
+`B20` (`《生态稀缺赋权》`, `26` -> `32` claims) and `B22` (`《环境损害估值》`, `35`
+-> `41` claims plus a 6-column × 4-row cross-paradigm synthesis table in §4,
+bringing the public catalog from `1,008` to `1,020` claims), recorded in the
+[weighting-and-valuation protocol](editorial/2026-11-18-weighting-and-valuation.md)
+(committed as `26cdafc` before manuscript changes). Primary-source verification
+covers `18` SHA-256-verified carriers: official `EF-v3.1.zip`
+`Normalisation_Weighting_Factors_EF_3.1.xlsx` (`caf3c98f...`) and `8` `ILCD`
+`LCIAMethod` XMLs (`b5c610fe` POF omitting indoor VOCs, `b53ec18f` Acidification,
+`d2dea4ae` Terrestrial eutrophication, `29671667` Marine eutrophication,
+`233eb2fb` PM, `05316e7a` Ecotox, `7cfdcfcf` HTNC, `2299222a` HTC), `FOEN 2013`
+(`bbde0609...`), `FOEN 2021` (`252fe760...`), `PEFCR Guidance v6.3` Annex A
+(`72f1187a...`, Column `A` sum `100.03`), `EU 2021/2279` (`a681b4b9...`),
+`JRC130796` (`d932a60f...`), `ILCD 2010` (`f8f23807...`), `CML 2001 Part 2a & 3`
+(`938d7272...`), `RIVM 2016-0104` (`56f3124b...`), `Huijbregts et al. 2017`
+(`6e9d7c23...`), `Itsubo et al. 2004` (`7de4b912...`), `Itsubo et al. 2012`
+(`f6d1909e...`), and `UNEP GLAM Phase 3` (`42445138...`). Twelve new
+`cl-weight135-*` claims bind `18` single-source/single-artifact `ev-weight135-*`
+records (`1-to-1` with `18` `psg-weight135-*` passages) and `83` `BigInt`
+rational `numericFacts`, paired with `5` bounded non-case prior-claim
+synchronizations (`cl-es-baselines`, `cl-es-judgment`, `cl-lime-purpose`,
+`cl-lime-policy-contrast`, `cl-lime-decision`) and `5` inline `display:block`
+correction notices while conserving `100%` of `1,003` untouched prior claims and
+all `40` case JSON files byte-for-byte. Separate unconditional-PASS two-round
+source (`2030b46d`), zero-context `B20`+`B22` reader (`1c332af2`), adversarial
+publication-engineering (`d27d00d5`) and actual-output acceptances
+(`40999572...`) and normal source/root delivery are tracked on Issue135.
+Remaining Part V units (`B21`, `B23`, `B24`), the Part V whole-part reread, and
+all eight global Programme9 criteria remain active.
 
 Rule adoption101 itself is fully delivered: PR103/Main10dc686 and
 root2381/PR2382/Main90bcaa574, with complete ordinary source/root handoff receipts.

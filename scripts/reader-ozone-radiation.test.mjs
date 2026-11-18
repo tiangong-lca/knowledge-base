@@ -4,6 +4,8 @@ import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 import config from '../config/reader-ozone-radiation.json' with { type: 'json' };
 import capture from '../config/reader-ozone-radiation-capture.json' with { type: 'json' };
+import weighting from '../config/reader-weighting-valuation.json' with { type: 'json' };
+import { restoreWeightingValuationTestFiles } from './reader-weighting-valuation.mjs';
 import part4 from '../config/reader-part4-reread.json' with { type: 'json' };
 import { restorePart4RereadTestFiles } from './reader-part4-reread.mjs';
 import particulate from '../config/reader-particulate-comparison.json' with { type: 'json' };
@@ -184,13 +186,14 @@ test('B14 ozone and radiation source plan preserves all real predecessor transit
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
+  restoreWeightingValuationTestFiles(files, weighting.unit);
   restorePart4RereadTestFiles(files, part4.unit);
   if (particulate.unit) files.set(`content${particulate.unit.routes[0]}.mdx`, Buffer.from(particulate.unit.previousMdx));
   if (eutro.unit) files.set(`content${eutro.unit.routes[0]}.mdx`, Buffer.from(eutro.unit.previousMdx));
   if (bio.unit) for (const [p, text] of Object.entries(bio.unit.previousMdx)) files.set(p, Buffer.from(text));
   if (water.unit) files.set(`content${water.unit.routes[0]}.mdx`, Buffer.from(water.unit.previousMdx));
   if (tox.unit) files.set(`content${tox.unit.routes[0]}.mdx`, Buffer.from(tox.unit.previousMdx));
-  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
+  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
   const input = { ...previousScientificTestRecords(preWater, tox.unit), files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
   const qualify = unit => prepareOzoneRadiationSource(unit, input, actual, structure);
@@ -216,7 +219,7 @@ test('B14 ozone and radiation source plan preserves all real predecessor transit
 });
 
 test('Ozone and radiation receipts bind actual output capture independently', { skip: !capture && config.status !== 'reviewed' }, () => {
-  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
+  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
   const previous = previousScientificTestRecords(preWater, tox.unit);
   const expected = readerPublicDownloads(previous.catalog, previous.literature, previous.readings);
   const verify = (mutateUnit = () => {}, mutateOutput) => {

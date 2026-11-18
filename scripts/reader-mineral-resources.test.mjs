@@ -4,6 +4,8 @@ import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 import config from '../config/reader-mineral-resources.json' with { type: 'json' };
 import capture from '../config/reader-mineral-resources-capture.json' with { type: 'json' };
+import weighting from '../config/reader-weighting-valuation.json' with { type: 'json' };
+import { restoreWeightingValuationTestFiles } from './reader-weighting-valuation.mjs';
 import part4 from '../config/reader-part4-reread.json' with { type: 'json' };
 import { restorePart4RereadTestFiles } from './reader-part4-reread.mjs';
 import particulate from '../config/reader-particulate-comparison.json' with { type: 'json' };
@@ -143,6 +145,7 @@ test('B14 mineral source preview preserves all real predecessor transitions', { 
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
+  restoreWeightingValuationTestFiles(files, weighting.unit);
   restorePart4RereadTestFiles(files, part4.unit);
   if (particulate.unit) files.set(`content${particulate.unit.routes[0]}.mdx`, Buffer.from(particulate.unit.previousMdx));
   if (eutro.unit) files.set(`content${eutro.unit.routes[0]}.mdx`, Buffer.from(eutro.unit.previousMdx));
@@ -152,7 +155,7 @@ test('B14 mineral source preview preserves all real predecessor transitions', { 
   if (ozrad.unit) files.set(`content${ozrad.unit.routes[0]}.mdx`, Buffer.from(ozrad.unit.previousMdx));
   if (ozone.unit) files.set(`content${ozone.unit.routes[0]}.mdx`, Buffer.from(ozone.unit.previousMdx));
   if (fossils.unit) files.set(`content${fossils.unit.routes[0]}.mdx`, Buffer.from(fossils.unit.previousMdx));
-  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
+  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
   const preTox = previousScientificTestRecords(preWater, tox.unit);
   const preOzrad = previousScientificTestRecords(preTox, ozrad.unit);
   const preOzone = previousScientificTestRecords(preOzrad, ozone.unit);
@@ -180,7 +183,7 @@ test('B14 mineral source preview preserves all real predecessor transitions', { 
 });
 
 test('Mineral receipts bind actual output capture independently', { skip: !capture && config.status !== 'reviewed' }, () => {
-  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
+  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
   const preTox = previousScientificTestRecords(preWater, tox.unit);
   const preOzrad = previousScientificTestRecords(preTox, ozrad.unit);
   const preOzone = previousScientificTestRecords(preOzrad, ozone.unit);
