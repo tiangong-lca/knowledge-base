@@ -1,4 +1,6 @@
 ---
+lastReviewedAt: 2026-11-18
+lastReviewedCommit: 4e094f7e89d5ba563af0ded8a47e15d62260045f
 title: 产品与组织参照、活动变量缩放、风险赋分量表与职业健康路径的社会评价比较协议
 docType: reference
 scope: repo
