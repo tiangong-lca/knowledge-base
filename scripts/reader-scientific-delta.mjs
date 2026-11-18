@@ -173,3 +173,23 @@ export function observeScientificRawChanges(before, actual) {
     .filter(row => !sameScienceValue(row.from, row.to));
   return { rawRecords, rawFields };
 }
+
+export function projectScientificOrdinaryTargets(overrides, targets, label = 'Scientific successor', allowedKeys = null) {
+  if (!overrides) return targets;
+  if (typeof overrides !== 'object' || Array.isArray(overrides))
+    throw new Error(`${label} ordinaryOverrides must be a plain object`);
+  const keys = Object.keys(overrides);
+  if (allowedKeys && (keys.length !== allowedKeys.size || keys.some(key => !allowedKeys.has(key))))
+    throw new Error(`${label} ordinaryOverrides differs from the explicit allowed key set`);
+  const projected = structuredClone(targets);
+  for (const [key, row] of Object.entries(overrides)) {
+    if (!scienceDigest(row?.from) || !scienceDigest(row?.to) || row.from === row.to)
+      throw new Error(`${label} has an invalid ordinary override: ${key}`);
+    if (!Object.hasOwn(projected, key))
+      throw new Error(`${label} unexpected ordinary override key: ${key}`);
+    if (projected[key]?.sha256 !== row.to)
+      throw new Error(`${label} observed ordinary target differs from reviewed override: ${key}`);
+    projected[key] = { ...projected[key], sha256: row.from };
+  }
+  return projected;
+}

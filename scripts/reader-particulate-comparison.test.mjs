@@ -2,6 +2,8 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
+import part4 from '../config/reader-part4-reread.json' with { type: 'json' };
+import { restorePart4RereadTestFiles } from './reader-part4-reread.mjs';
 import config from '../config/reader-particulate-comparison.json' with { type: 'json' };
 import capture from '../config/reader-particulate-comparison-capture.json' with { type: 'json' };
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
@@ -10,7 +12,7 @@ import service from '../config/reader-service-constraints.json' with { type: 'js
 import catalog from '../knowledge/catalog.json' with { type: 'json' };
 import readings from '../knowledge/research/readings.json' with { type: 'json' };
 import literature from '../knowledge/research/literature-map.json' with { type: 'json' };
-import { testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
+import { previousScientificTestRecords, testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
 import { chapterAnchorPrefix, printUnitAnchor } from './reader-book.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
@@ -258,7 +260,8 @@ test('B17 particulate comparison source plan preserves c0ffd968 predecessor, 45-
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
-  const input = { catalog, readings, literature, files };
+  restorePart4RereadTestFiles(files, part4.unit);
+  const input = { ...previousScientificTestRecords({ catalog, readings, literature }, part4.unit), files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
   const qualify = (unit, customInput = input, customActual = actual, customStruct = structure) =>
     prepareParticulateComparisonSource(unit, customInput, customActual, customStruct);
@@ -348,7 +351,8 @@ test('B17 particulate comparison source plan preserves c0ffd968 predecessor, 45-
 test('Particulate comparison receipt verifier fails closed when capture or capture pin is absent', () => {
   if (particulateComparisonCapturePin !== null) return;
   if (!config.unit) return;
-  const expected = readerPublicDownloads(catalog, literature, readings);
+  const prev131 = previousScientificTestRecords({ catalog, readings, literature }, part4.unit);
+  const expected = readerPublicDownloads(prev131.catalog, prev131.literature, prev131.readings);
   const unit = structuredClone(config.unit);
   unit.outputs = [{ path: particulateComparisonChapter, route: particulateComparisonChapter, sha256: '1'.repeat(64), rationale: 'r' }];
   unit.publicArtifacts = [{ path: 'claims/index.html', sha256: '2'.repeat(64), rationale: 'r' }];
@@ -369,7 +373,8 @@ test('Particulate comparison receipt verifier fails closed when capture or captu
 });
 
 test('Particulate comparison receipts bind actual output capture independently', { skip: !particulateComparisonCapturePin && config.status !== 'reviewed' }, () => {
-  const expected = readerPublicDownloads(catalog, literature, readings);
+  const prev131 = previousScientificTestRecords({ catalog, readings, literature }, part4.unit);
+  const expected = readerPublicDownloads(prev131.catalog, prev131.literature, prev131.readings);
   const verify = (mutateUnit = () => {}, mutateOutput) => {
     const unit = structuredClone(config.unit);
     mutateUnit(unit);

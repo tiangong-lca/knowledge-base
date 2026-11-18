@@ -2,6 +2,8 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
+import part4 from '../config/reader-part4-reread.json' with { type: 'json' };
+import { restorePart4RereadTestFiles } from './reader-part4-reread.mjs';
 import particulate from '../config/reader-particulate-comparison.json' with { type: 'json' };
 import config from '../config/reader-eutrophication-pathways.json' with { type: 'json' };
 import capture from '../config/reader-eutrophication-pathways-capture.json' with { type: 'json' };
@@ -232,8 +234,9 @@ test('B16 eutrophication pathways source plan preserves 8fcb2485 predecessor, 38
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
+  restorePart4RereadTestFiles(files, part4.unit);
   if (particulate.unit) files.set(`content${particulate.unit.routes[0]}.mdx`, Buffer.from(particulate.unit.previousMdx));
-  const input = { ...previousScientificTestRecords({ catalog, readings, literature }, particulate.unit), files };
+  const input = { ...previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part4.unit), particulate.unit), files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
   const qualify = (unit, customInput = input, customActual = actual, customStruct = structure) =>
     prepareEutrophicationPathwaysSource(unit, customInput, customActual, customStruct);
@@ -324,7 +327,7 @@ test('Eutrophication pathways receipt verifier fails closed when capture or capt
 });
 
 test('Eutrophication pathways receipts bind actual output capture independently', { skip: !eutrophicationPathwaysCapturePin && config.status !== 'reviewed' }, () => {
-  const previous = previousScientificTestRecords({ catalog, readings, literature }, particulate.unit);
+  const previous = previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part4.unit), particulate.unit);
   const expected = readerPublicDownloads(previous.catalog, previous.literature, previous.readings);
   const verify = (mutateUnit = () => {}, mutateOutput) => {
     const unit = structuredClone(config.unit);

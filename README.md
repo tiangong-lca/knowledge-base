@@ -15,10 +15,27 @@ checkPaths:
   - "app/**"
   - "scripts/**"
 lastReviewedAt: 2026-11-18
-lastReviewedCommit: 2248e216a49fb677236c1e027833af154c13e2fd
+lastReviewedCommit: de9047ce4d343f87c0b83c0d4cfe369cd8e3eb43
 ---
 
 # LCA Living Knowledge Base and Review
+
+[Part IV whole-part continuous reread, cross-chapter reference alignment & scope completion #133](https://github.com/tiangong-lca/knowledge-base/issues/133)
+completes the first whole-part continuous reread across `F02` (`content/docs/book/index.mdx:18`),
+the Part IV introduction (`config/reader-numbering.json:23`), all six Part IV
+monograph chapters (`B14`–`B19`, `222` claims), both companion climate articles
+(`climate-response-and-metrics` at `41` claims and `emission-time-and-assessment`
+at `8` claims), and calculation appendices `X03` (`8` claims) and `X04` (`17`
+claims), conserving `100%` of all `1,008` claim IDs, sequence, `1,034` evidence
+records, `numericFacts`, and `40` case download files against `2ba0bfe2f39d28bfa42e61f5e2b70585770bcb73`.
+Its [reread record](_docs/editorial/2026-11-18-part4-continuous-reread.md) binds
+`61` claim updates (`19` prose synchronizations, `49` scope updates clearing all
+`46` remaining `#90` mechanical placeholders across `B17` and `X04`, `2` `B14`
+caveat cleanups, and `2` `B17` synthesis premise bindings), `8` managed files,
+and `4` inline `display:block` public correction notices (`Gronlund 2015` year,
+Chapter `15` climate-change attribution, and `B17` closing cut-point & five-axis
+checklist synchronization) while eliminating book/web dual-view section-number
+and chapter-link collisions across `B15`, `B17`, and `B18`.
 
 [Particulate matter cut-points, size-fraction & stack-height proxies, Cohen 2017 GBD 2015 scope, precursor switches & package forensics #131](https://github.com/tiangong-lca/knowledge-base/issues/131)
 extends B17 across its four retained sections and three `X04` navigation blocks

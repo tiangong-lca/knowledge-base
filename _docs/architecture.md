@@ -17,10 +17,43 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-18
-lastReviewedCommit: 2248e216a49fb677236c1e027833af154c13e2fd
+lastReviewedCommit: de9047ce4d343f87c0b83c0d4cfe369cd8e3eb43
 ---
 
 # Publication architecture
+
+## Part-4-reread successor
+
+The #133 Part IV continuous-reread successor (`scripts/reader-part4-reread.mjs`)
+updates 8 managed files (`config/reader-numbering.json`, `content/docs/book/index.mdx`,
+`content/monograph/climate-equivalence.mdx`, `content/docs/book/climate-response-and-metrics.mdx`,
+`content/docs/book/particulate-emissions-and-health.mdx`,
+`content/docs/appendices/particulate-factor-calculations.mdx`,
+`knowledge/cases/particulate-health-v1.publication.json`, and
+`knowledge/cases/water-locality-v1.publication.json`) and 62 raw records (`61`
+`catalog.claims` entries and `rev-part4-reread-133-continuity-and-scopes`),
+conserving `100%` of all `1,008` claim IDs, sequence, `evidenceIds`,
+`evidenceLinks`, `numericFacts`, `conceptIds`, `mappingIds`, and case input
+`.json` files. Before #131 runs its own rollback and receipt checks,
+`preparePart4RereadSource` restores the exact `2ba0bfe2f39d28bfa42e61f5e2b70585770bcb73`
+bytes (`oldFileShas`) and raw records, verifying `part4RereadPredecessorPin`
+(`ee4ca466...`), exact 19-prose / 2-caveat / 2-premise claim invariants, angle-bracket
+and internal-token hygiene, `projectPart4RereadNumbering` + `projectPart4RereadPrintParts`,
+four `B15`/`B17`/`X04` layout amendments, and all 72 transitions across 148
+dependent consumers.
+
+Across rendered DOM, `qualifyPart4RereadHistory` enforces a frozen 4-key
+`allowedOrdinaryOverrideKeys` allowlist (`B17` web/print `-particulate-131-ordinary-3`
+and `B15` web/print `-bio-127-ordinary-2` without silent `continue` in
+`projectScientificOrdinaryTargets`), 54 versioned ordinary targets, 24 history
+dispositions (`16` grouped `<details data-part4-reread-history>` controls stacked
+after `#127` and `#131` with front-matter-scoped `@unit` attachment on `/docs/book`),
+1 strict `attrs`/`childNodes`-verified `<details data-part4-reread-part="4">`
+disclosure on `/print#print-part-4`, and 4 inline `style="display:block"` public
+correction notices (`data-part4-reread-correction` on `B17` Notes 15/44/45 and
+`B18` Note 15). `part4RereadCapturePin` (`fba421eb...`) and `part4RereadUnitPin`
+(`4cd6d951...`) bind the 15 changed articles and 5 changed public artifacts with
+zero compiled CSS drift (`be180e5d...`).
 
 ## Particulate-comparison successor
 

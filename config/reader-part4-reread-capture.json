@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "identity": {
+    "sourceCommit": "91a63c361790d3e0b56527546ef15bf19acc36cc",
+    "dirty": true,
+    "status": "working-preview",
+    "manifestSha256": "442765947f590d00259b3089e2745fd2213e3880d33e349759634bdc94f51a3c"
+  },
+  "manifestPaths": 468,
+  "files": [
+    {
+      "path": "claims/index.html",
+      "sha256": "ec9bbd6fbc307298b1a353ee75a13829f001ee767ab8927ae8a091afbd613616",
+      "bytes": 6910762
+    },
+    {
+      "path": "sources/index.html",
+      "sha256": "86ddb804153249a8039e803c263a732ef2b7d8283d7fa673745271a4dbfdcc8c",
+      "bytes": 5983512
+    },
+    {
+      "path": "concepts/index.html",
+      "sha256": "35c61db7ef1832d969ef6fc1fc1dd115dd608d090d042699adee54bcf9d05654",
+      "bytes": 2167496
+    },
+    {
+      "path": "downloads/catalog.json",
+      "sha256": "63fd97d02b6fa0c0496f0d527045dbbb7796a09848955f51905c09a73e68351c",
+      "bytes": 4097590
+    },
+    {
+      "path": "downloads/dependencies.json",
+      "sha256": "52d2e6b6d38eed78a5df8bc05b8310195f8228dfba03a5ffb9ff93a50599b2ce",
+      "bytes": 400336
+    },
+    {
+      "path": "docs/book/index.html",
+      "sha256": "3720e7253e47596a4097b52295150338e5c48b5537fc9d2eaa78d9a17e39cb0d",
+      "bytes": 1012456
+    },
+    {
+      "path": "docs/book/midpoint-endpoint-value-choices/index.html",
+      "sha256": "355cfb5e7d1abe6e83c0711d473f86f29a7734b11464893805bf4df2b75be85f",
+      "bytes": 1539907
+    },
+    {
+      "path": "docs/book/climate-response-and-metrics/index.html",
+      "sha256": "b9919f366fcf6652799e8d236c251c1074bd5a29180adee8cd60f8214f0daccc",
+      "bytes": 1570231
+    },
+    {
+      "path": "docs/book/acidification-and-nutrient-pathways/index.html",
+      "sha256": "6432a909636b4684ad7d98c49609ac57994e53a0b8a6fc3e91706fa7dcd8a0b4",
+      "bytes": 1495634
+    },
+    {
+      "path": "docs/book/particulate-emissions-and-health/index.html",
+      "sha256": "3c7b35588bfff5f7d38e79592bf4bc878e04590e18c9d3ccb797b9d847ed7c4f",
+      "bytes": 1668294
+    },
+    {
+      "path": "docs/book/water-scarcity-and-reference/index.html",
+      "sha256": "a5481fd11cca01dcf413c9976982dae2b74d937d913eb0fdaef4a503091c1ad2",
+      "bytes": 1322260
+    },
+    {
+      "path": "docs/appendices/particulate-factor-calculations/index.html",
+      "sha256": "58ea9aab4bd1a4a2ac61ead47a5faf1540f4b40f602da74d8991c408461864df",
+      "bytes": 1116790
+    },
+    {
+      "path": "print/index.html",
+      "sha256": "c020f177a36e98c4e14807303cb5304255a04882c89fde080b21bba406af18f7",
+      "bytes": 15071641
+    }
+  ],
+  "normalization": {
+    "articles": [
+      {
+        "path": "/docs/book",
+        "route": "/docs/book",
+        "sha256": "af86d4f0696c73422d94f41b77e0ede81ba20e2852bab151280750d11b097b98"
+      },
+      {
+        "path": "/docs/book/midpoint-endpoint-value-choices",
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "sha256": "4e16d763044fd4a1f9f32661e1935e4708636c3da0fa8caae2f0a608ad115da4"
+      },
+      {
+        "path": "/docs/book/climate-response-and-metrics",
+        "route": "/docs/book/climate-response-and-metrics",
+        "sha256": "57c6b6e249c16c2e8984ea1bdf39078f4caec7b0dc758a02c0ed85f4dbd66b60"
+      },
+      {
+        "path": "/docs/book/acidification-and-nutrient-pathways",
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "sha256": "c0a6fb572d310348648e6fd44989d03fb7333dc516dd93859a5e2ece362a357c"
+      },
+      {
+        "path": "/docs/book/particulate-emissions-and-health",
+        "route": "/docs/book/particulate-emissions-and-health",
+        "sha256": "3f627f9f34b93917806986dc6954cf816fd0619d7566e98fdf625e6b67fedeaf"
+      },
+      {
+        "path": "/docs/book/water-scarcity-and-reference",
+        "route": "/docs/book/water-scarcity-and-reference",
+        "sha256": "97a8b26b6ec65fb3543dba27ad91ed7bfd4d1acbe5b82111bd8665bbe58e338f"
+      },
+      {
+        "path": "/docs/appendices/particulate-factor-calculations",
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "sha256": "e4fc688ff2f08fd41e7a66acd4110efd527a8b2d01fa1df26fb1ab5e5e6396cc"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book",
+        "sha256": "1938c3ad493cbc6a19deb449282118c3b04863e7e99a7e9a79dcbe174efbb0a8"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/midpoint-endpoint-value-choices",
+        "sha256": "7e24831e6265da035b008d460cea9a8f99e23d798a4ede1a22c89cea762dce11"
+      },
+      {
+        "path": "/print",
+        "route": "book-climate-equivalence",
+        "sha256": "5a49fa462b57a88d07da5371fb263482ca61ef82727d62a64951208cbbd1b201"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/acidification-and-nutrient-pathways",
+        "sha256": "a6daa762916b2c94216083de3f6823c897b589ed6d7133f13d34a7128052ae85"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/particulate-emissions-and-health",
+        "sha256": "b2c6d48d3d13dc52f59530243cb804ecca988fbf75e041e47254882bb3d53a24"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/water-scarcity-and-reference",
+        "sha256": "630099b6a842a5256e8a8a1ac489116faac79391507f1d0d33de17e4a9de48fb"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/wall-service-to-comparison",
+        "sha256": "d047390a5ae4b52c52bd7a9783d3f93d17e663a4d4f3f2958284dda6a0cea5b9"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/appendices/particulate-factor-calculations",
+        "sha256": "d4eaf5af5d972dd30e8b052bdf5a6fb65a71a83a50f86693f433ddc124501c80"
+      }
+    ],
+    "publicHtml": [
+      {
+        "path": "claims/index.html",
+        "sha256": "58b3588fe60dc9e6730d5b1b3b516dca77c093d64db92d3736eaa4822b8991a8"
+      },
+      {
+        "path": "sources/index.html",
+        "sha256": "646a87d4e1ef46e5aafbcd51387f73979c6558511aa231c76d16e5877da85cc5"
+      },
+      {
+        "path": "concepts/index.html",
+        "sha256": "85d8ffbb221a1f18afafdfd6a8514f576072a8db73f200269e984f0841ecaa9e"
+      }
+    ]
+  }
+}

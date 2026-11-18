@@ -1,0 +1,1714 @@
+{
+  "schemaVersion": 1,
+  "kind": "source",
+  "unit": "part4-reread-133",
+  "subjectSha256": "af9eebef60e0a562a1ae69135773e4fb52a758c381cc467241fc0378431c553e",
+  "date": "2026-11-18",
+  "scope": [
+    "config/reader-numbering.json",
+    "content/docs/book/index.mdx",
+    "content/monograph/climate-equivalence.mdx",
+    "content/docs/book/climate-response-and-metrics.mdx",
+    "content/docs/book/particulate-emissions-and-health.mdx",
+    "content/docs/appendices/particulate-factor-calculations.mdx",
+    "knowledge/cases/particulate-health-v1.publication.json",
+    "knowledge/cases/water-locality-v1.publication.json",
+    "claims:cl-lcia-midpoint-pathway",
+    "claims:cl-path-acid-indicator",
+    "claims:cl-path-units",
+    "claims:cl-water-opening",
+    "claims:cl-water-input-basis",
+    "claims:cl-pm-opening",
+    "claims:cl-pm-particle-identity",
+    "claims:cl-pm-precursor-denominator",
+    "claims:cl-pm-intake-definition",
+    "claims:cl-pm-intake-unit",
+    "claims:cl-pm-receptor-boundary",
+    "claims:cl-pm-source-height",
+    "claims:cl-pm-mixture-inputs",
+    "claims:cl-pm-mixture-results",
+    "claims:cl-pm-exposure-evidence",
+    "claims:cl-pm-cohort-design",
+    "claims:cl-pm-cohort-association",
+    "claims:cl-pm-effect-baseline",
+    "claims:cl-pm-effect-definition",
+    "claims:cl-pm-effect-default",
+    "claims:cl-pm-urban-health",
+    "claims:cl-pm-rural-health",
+    "claims:cl-pm-precursor-health",
+    "claims:cl-pm-burden-check",
+    "claims:cl-pm-population-meaning",
+    "claims:cl-pm-indoor-location",
+    "claims:cl-pm-indoor-matrix",
+    "claims:cl-pm-exposure-compatible",
+    "claims:cl-pm-compatible-population",
+    "claims:cl-pm-indoor-time",
+    "claims:cl-pm-exposure-coverage",
+    "claims:cl-pm-nonlinear-response",
+    "claims:cl-pm-risk-reference",
+    "claims:cl-pm-slope-meaning",
+    "claims:cl-pm-finite-change",
+    "claims:cl-pm-slope-context",
+    "claims:cl-pm-ier-evidence",
+    "claims:cl-pm-gemm-alternative",
+    "claims:cl-pm-factor-correction",
+    "claims:cl-pm-implementation-layer",
+    "claims:cl-pm-chemistry-background",
+    "claims:cl-pm-chemistry-perturbation",
+    "claims:cl-pm-chemistry-model-check",
+    "claims:cl-pm-release-date",
+    "claims:cl-pm-concentration-route",
+    "claims:cl-pm-regional-factor",
+    "claims:cl-pm-modern-values",
+    "claims:cl-pm-modern-ratios",
+    "claims:cl-pm-matched-scope",
+    "claims:cl-pm-uncovered-pathways",
+    "claims:cl-pm-conclusion",
+    "claims:cl-pm-evidence-levels",
+    "claims:cl-pm-matched-scenario",
+    "claims:cl-mineral115-judgment",
+    "claims:cl-water125-method-genealogy",
+    "claims:cl-water125-ef-country-resolution-and-climates",
+    "claims:cl-water125-value-choices-and-denominator-paradox",
+    "claims:cl-water125-diagnostic-synthesis",
+    "claims:cl-bio127-co-removal-and-methane-shift",
+    "claims:cl-bio127-climate-diagnostic-synthesis",
+    "claims:cl-particulate131-indicator-cutpoints",
+    "researchMetadata:order:revisions",
+    "researchMetadata:public-projection",
+    "revisions:rev-part4-reread-133-continuity-and-scopes"
+  ],
+  "observed": "Primary scoped judgment integrating two-round unconditional-PASS independent source, zero-context whole-Part IV reader and publication-engineering audits with direct export and browser/print checks; no human or empirical certification.",
+  "observations": {
+    "state": {
+      "before": "ee4ca466a5301113a927ff1492cbd4439888ff071122736f024885a2c91895ac",
+      "after": "ff59fb32c6b3f2d1ccf71b083af0816283204c0edbdc24e8876bacb92f1d3cdc"
+    },
+    "changes": [
+      {
+        "kind": "file",
+        "key": "config/reader-numbering.json",
+        "from": "e76f46a0f64077a3a9bd4eca1b44e61de5fd9bdc6f6e66254023e6cd19802367",
+        "to": "d96f3b398f47d8086ff1e92228b5f1a4eb11fc8e95e0bd49b9dba3ff555f39ae",
+        "rationale": "第四部整部连续回读（#133）按现行章题、双视图链接与案例模板同步更新 config/reader-numbering.json，其余结构与锚点完全保留。"
+      },
+      {
+        "kind": "file",
+        "key": "content/docs/book/index.mdx",
+        "from": "1a007883741a2cd7a0cede192ef97e6e9650ad85f4834caf5ba9f4eb5fcd4e71",
+        "to": "8d3f1626a4be1739bdbff3d0ad1422e30776db1070d928eea501b39c94eeb052",
+        "rationale": "第四部整部连续回读（#133）按现行章题、双视图链接与案例模板同步更新 content/docs/book/index.mdx，其余结构与锚点完全保留。"
+      },
+      {
+        "kind": "file",
+        "key": "content/monograph/climate-equivalence.mdx",
+        "from": "98333aa5669dc34b08691f88db2a04df2a951434c7ba259af8e61ac2089d05aa",
+        "to": "70cf481c2d68c875f07e98697b6e09caa997177adf48e7ab549133bd41a4045a",
+        "rationale": "第四部整部连续回读（#133）按现行章题、双视图链接与案例模板同步更新 content/monograph/climate-equivalence.mdx，其余结构与锚点完全保留。"
+      },
+      {
+        "kind": "file",
+        "key": "content/docs/book/climate-response-and-metrics.mdx",
+        "from": "a97f7e918364efaab5d6d21c6e497e0652572036d87b313161f386685172cc21",
+        "to": "b64a43b342c2ebd3b098e559ed2b2eb660ac193d13361568c07e071b8e8f589c",
+        "rationale": "第四部整部连续回读（#133）按现行章题、双视图链接与案例模板同步更新 content/docs/book/climate-response-and-metrics.mdx，其余结构与锚点完全保留。"
+      },
+      {
+        "kind": "file",
+        "key": "content/docs/book/particulate-emissions-and-health.mdx",
+        "from": "dd12cd42772e3cc2ec770fa834dd7758294f4bfb0376e44726f016b394c3330a",
+        "to": "31112bdf99eeb66223bd3111fb9fe21ab0e006a9699b50e6bc10b2c485b81ecc",
+        "rationale": "第四部整部连续回读（#133）按现行章题、双视图链接与案例模板同步更新 content/docs/book/particulate-emissions-and-health.mdx，其余结构与锚点完全保留。"
+      },
+      {
+        "kind": "file",
+        "key": "content/docs/appendices/particulate-factor-calculations.mdx",
+        "from": "369a96bc470349f64021a02d159997df2b906f620eeb36c6bbd0c15e387bfbca",
+        "to": "de8209dd0fc6f45e54eb3c9597216364483c1f501961c48d715a3cf979cf7de1",
+        "rationale": "第四部整部连续回读（#133）按现行章题、双视图链接与案例模板同步更新 content/docs/appendices/particulate-factor-calculations.mdx，其余结构与锚点完全保留。"
+      },
+      {
+        "kind": "file",
+        "key": "knowledge/cases/particulate-health-v1.publication.json",
+        "from": "edb81f3d10c13e7ce8d6841514d94f853df890f273ada805d9eb361b1afc8251",
+        "to": "d257909f7c9e726e30def390f173e89a62c7251a1931ac0985361a4dd6eed707",
+        "rationale": "第四部整部连续回读（#133）按现行章题、双视图链接与案例模板同步更新 knowledge/cases/particulate-health-v1.publication.json，其余结构与锚点完全保留。"
+      },
+      {
+        "kind": "file",
+        "key": "knowledge/cases/water-locality-v1.publication.json",
+        "from": "6e16e8e9ca9c5406947a0a7b20d26ee50c858fff7af9fd15e9741420dea2a4cc",
+        "to": "2099714cf7c924e4c51f13dfe8ba02999006b26e14b3d00032145f537691e628",
+        "rationale": "第四部整部连续回读（#133）按现行章题、双视图链接与案例模板同步更新 knowledge/cases/water-locality-v1.publication.json，其余结构与锚点完全保留。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-lcia-midpoint-pathway",
+        "from": {
+          "raw": "75083269f0bc36c758b33991283ffc43daad7370e320414287dad1cfff972949",
+          "public": "75083269f0bc36c758b33991283ffc43daad7370e320414287dad1cfff972949",
+          "protected": "41878b094d7ce0adf09f4c3fd74631a819a767321da57b8c7056f6912ce1946e"
+        },
+        "to": {
+          "raw": "661fc4ae4128ce829fbf910a6c71271f06fad85e2dc9c7bc4df947a2192f2052",
+          "public": "661fc4ae4128ce829fbf910a6c71271f06fad85e2dc9c7bc4df947a2192f2052",
+          "protected": "1701afed729aeb7ca305bab5a5fbf40ddfafad0916b6a394e508d00f8cc8b203"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-lcia-midpoint-pathway 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-path-acid-indicator",
+        "from": {
+          "raw": "ccd11104291a22398ba322954fab69d29b8589fcad533609940ee4f01c57c132",
+          "public": "ccd11104291a22398ba322954fab69d29b8589fcad533609940ee4f01c57c132",
+          "protected": "051c9f14bf8841623154486a5ceb7f8ec3fb676c1f4d3b944e05770e45edec9b"
+        },
+        "to": {
+          "raw": "747f3b482f428d9d3cc5e07091317e37c800067c20f55135cff15c4fc718924a",
+          "public": "747f3b482f428d9d3cc5e07091317e37c800067c20f55135cff15c4fc718924a",
+          "protected": "051c9f14bf8841623154486a5ceb7f8ec3fb676c1f4d3b944e05770e45edec9b"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-path-acid-indicator 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-path-units",
+        "from": {
+          "raw": "5f4fd311ba88641f55d5ba2a0ed062021e1b6bd601c204cfe37e8a1d3c49603d",
+          "public": "5f4fd311ba88641f55d5ba2a0ed062021e1b6bd601c204cfe37e8a1d3c49603d",
+          "protected": "3ec06499a018053f639d145e17a22d9958b8a614364ac99150404ae79c1d42dd"
+        },
+        "to": {
+          "raw": "b9948348e2ff655dbc4be920273cb34ca8c1048bfadc795fc9b22fa7a24f14eb",
+          "public": "b9948348e2ff655dbc4be920273cb34ca8c1048bfadc795fc9b22fa7a24f14eb",
+          "protected": "3ec06499a018053f639d145e17a22d9958b8a614364ac99150404ae79c1d42dd"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-path-units 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-water-opening",
+        "from": {
+          "raw": "131e1eb30500bb21115b8d51f27c1b0bac4a38d30990b2ef2e8ac18e1770d2fd",
+          "public": "131e1eb30500bb21115b8d51f27c1b0bac4a38d30990b2ef2e8ac18e1770d2fd",
+          "protected": "ad98176f94c5a63b47144650d73c3d675a4442b872f70d71ce5bad793015c094"
+        },
+        "to": {
+          "raw": "a9b48f524a66bdbd3b881be2eca09424734be46f4584e15466a20842ac6c0e76",
+          "public": "a9b48f524a66bdbd3b881be2eca09424734be46f4584e15466a20842ac6c0e76",
+          "protected": "ad98176f94c5a63b47144650d73c3d675a4442b872f70d71ce5bad793015c094"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-water-opening 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-water-input-basis",
+        "from": {
+          "raw": "b6a17b9e166efe110e6a6f2856320d5c3787ac1b52038087fb5357572358059a",
+          "public": "b6a17b9e166efe110e6a6f2856320d5c3787ac1b52038087fb5357572358059a",
+          "protected": "8b94418e3057acd43fa48283e68a44dd00a48047a754b77c7b344c6596307d6a"
+        },
+        "to": {
+          "raw": "5c59049340797b2878f7f7b3191afde95a463fba9ff5386c72079989925b32e4",
+          "public": "5c59049340797b2878f7f7b3191afde95a463fba9ff5386c72079989925b32e4",
+          "protected": "8b94418e3057acd43fa48283e68a44dd00a48047a754b77c7b344c6596307d6a"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-water-input-basis 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-opening",
+        "from": {
+          "raw": "22bd92553bb9bde26177fe3072689bb8282db2b8c9ea18483293542321581e9a",
+          "public": "22bd92553bb9bde26177fe3072689bb8282db2b8c9ea18483293542321581e9a",
+          "protected": "dab6756cf47452c79b6ff3ac9f776bdc19743348423e9dfb2ee2db5b32c2c580"
+        },
+        "to": {
+          "raw": "139b21177982648b2cb32b96d09e6e5cdc01c982fa21b558b63ec62b494d5aad",
+          "public": "139b21177982648b2cb32b96d09e6e5cdc01c982fa21b558b63ec62b494d5aad",
+          "protected": "e9a38e1ea1567e4853faeb812b30d909ede88694c4d916d40f68c91f6ed71bd2"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-opening 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-particle-identity",
+        "from": {
+          "raw": "9e9bba4a0c0ec97185aa08b9f67f9060ce56b47a3ed2ce654f681c43e9bd0456",
+          "public": "9e9bba4a0c0ec97185aa08b9f67f9060ce56b47a3ed2ce654f681c43e9bd0456",
+          "protected": "f7100fc541e3891798b4c22aece1f5a53d19607511b257c0e11f8e4399c3af29"
+        },
+        "to": {
+          "raw": "1be183c6bda60731114a911323e28115676e982ed23f5e90821a5e877aacf0fb",
+          "public": "1be183c6bda60731114a911323e28115676e982ed23f5e90821a5e877aacf0fb",
+          "protected": "33bb13ed1ce2a36193d8a23e3451d36cf5b160343235be8dd4e5300c7aa5b6a8"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-particle-identity 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-precursor-denominator",
+        "from": {
+          "raw": "1f375eedbc423b7bd53d3f2b61add3694a4a3255d48e70609026195e5243b280",
+          "public": "1f375eedbc423b7bd53d3f2b61add3694a4a3255d48e70609026195e5243b280",
+          "protected": "5879d1dcbe03cc0535e9760de91ae41375e6546434c6260c0728e056354fb807"
+        },
+        "to": {
+          "raw": "fcf92f57d64e3b5fc09c570976be6badbafb10ea83b6c8c2d9820bc099b11e94",
+          "public": "fcf92f57d64e3b5fc09c570976be6badbafb10ea83b6c8c2d9820bc099b11e94",
+          "protected": "7835869e4171108b4e5d07da020d46e2dba8d822cfed3a72b8128d2a4ecad490"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-precursor-denominator 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-intake-definition",
+        "from": {
+          "raw": "13789f4c42df1d70d5dca0c7fe68e9aba317ea679d16b28f7b6d8ffbe201f0cd",
+          "public": "13789f4c42df1d70d5dca0c7fe68e9aba317ea679d16b28f7b6d8ffbe201f0cd",
+          "protected": "63a49b6251429d99265ab95082c67df44d95a274d951e336a70f8cb92cc83799"
+        },
+        "to": {
+          "raw": "3c9e17a965fe2487ef54e47c71c323c31610b79266b3be36875fd3d80147dafb",
+          "public": "3c9e17a965fe2487ef54e47c71c323c31610b79266b3be36875fd3d80147dafb",
+          "protected": "b92fc768ac90abe2c573a568643e21facc4831c4c41853e7f9eaad12d4857118"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-intake-definition 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-intake-unit",
+        "from": {
+          "raw": "559fe18a25014b47822bc621bbc665db7590bff63da10fa2c9612661a8969a03",
+          "public": "559fe18a25014b47822bc621bbc665db7590bff63da10fa2c9612661a8969a03",
+          "protected": "defbe18b5711ff4e97ab6df2691b970b357c8c5e0fe592f6fb9446e617267bc0"
+        },
+        "to": {
+          "raw": "fb8c9ed72c2aa5c6a13a4bf11b203d58ab5de67cdf525a1dc1d257422a0aee54",
+          "public": "fb8c9ed72c2aa5c6a13a4bf11b203d58ab5de67cdf525a1dc1d257422a0aee54",
+          "protected": "564f6a7ee75ffd3fefbd1d04c15fa50d2e9d3fef999201c3fb81986142d4146f"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-intake-unit 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-receptor-boundary",
+        "from": {
+          "raw": "bf53b969da4024789c503f27cc36640bc27b7bdff9e4757f4f5c1b57599b1181",
+          "public": "bf53b969da4024789c503f27cc36640bc27b7bdff9e4757f4f5c1b57599b1181",
+          "protected": "5ed836c5dc4d59e31d2dd56765868c2d39fe569f3aaa772179ee3b1c1c57407c"
+        },
+        "to": {
+          "raw": "7ad569eb8314f3d7711d8cbbf5170c9d318ce510e562bbb44692541a108633cc",
+          "public": "7ad569eb8314f3d7711d8cbbf5170c9d318ce510e562bbb44692541a108633cc",
+          "protected": "b508d6bad94e352af0a3a11e5519d4bbfda57f5b9bf56ce0e6d3bdadcee617c5"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-receptor-boundary 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-source-height",
+        "from": {
+          "raw": "14c30101fcb287218cbe96c8126f77539e2a3917a2fd6ca08bc322e48de00379",
+          "public": "14c30101fcb287218cbe96c8126f77539e2a3917a2fd6ca08bc322e48de00379",
+          "protected": "e07e8b234cac54266b9bc830f7b8347ef7ba969d093b7ef7af1abea7151bf3bd"
+        },
+        "to": {
+          "raw": "85e1338457f7c079c7c07ce6bd09b2a69699610fac4fc5b3fe1bfa647ce0ddc1",
+          "public": "85e1338457f7c079c7c07ce6bd09b2a69699610fac4fc5b3fe1bfa647ce0ddc1",
+          "protected": "901a653c60ced3e1fa30e478fd18e0f872624a7a5a52ac9d68d546d5465d5fa3"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-source-height 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-mixture-inputs",
+        "from": {
+          "raw": "ad6b3d15a951670092b03940655f40296f862bb1f8a19da9a6fd86955b7ced83",
+          "public": "ad6b3d15a951670092b03940655f40296f862bb1f8a19da9a6fd86955b7ced83",
+          "protected": "4ad68d808f9c2bab816e70eab3807419e1214e851067f5526f07433bca15bf54"
+        },
+        "to": {
+          "raw": "ed6e62c6fe04f5eeb50776b96fc702bd2ba1f21d14fbb281e68ed4849f6cc0ea",
+          "public": "ed6e62c6fe04f5eeb50776b96fc702bd2ba1f21d14fbb281e68ed4849f6cc0ea",
+          "protected": "f959b05098d901ce3678bcaa4338a03be83f05cd3bf653656d09ff37be1cd925"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-mixture-inputs 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-mixture-results",
+        "from": {
+          "raw": "bb43075f10e21a9f90f245f93d8573435f0c645599f53b1567d4a23157ed830d",
+          "public": "bb43075f10e21a9f90f245f93d8573435f0c645599f53b1567d4a23157ed830d",
+          "protected": "64f8b7e0ee4531ec66d982df18413248f8f16e23ff2224dbff1e75eed8de5167"
+        },
+        "to": {
+          "raw": "07a138705cffc33a5284f39b4be5e099b7385375dfc69e41218fcc8e6edb232d",
+          "public": "07a138705cffc33a5284f39b4be5e099b7385375dfc69e41218fcc8e6edb232d",
+          "protected": "f59c7478df3d26120f480cabac1d6a92e149d6b5a50463883c5f6b4c18706b41"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-mixture-results 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-exposure-evidence",
+        "from": {
+          "raw": "2312235c5dbc40fea700e42aa7ef77eb153b334e7836bc41effed22c455a9dad",
+          "public": "2312235c5dbc40fea700e42aa7ef77eb153b334e7836bc41effed22c455a9dad",
+          "protected": "c09c4f5dafa4e1fe40f2eee381e0b336a326d0502575cbfd51925a9ea4514add"
+        },
+        "to": {
+          "raw": "af76527c81a531ef131cc16f83d502b98de97c9f153f34e52f9bf01479719c78",
+          "public": "af76527c81a531ef131cc16f83d502b98de97c9f153f34e52f9bf01479719c78",
+          "protected": "0b24370d0549b59eac6c9e42061830195dded261c05b50cedfed128903ac1b0e"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-exposure-evidence 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-cohort-design",
+        "from": {
+          "raw": "4cbfaf227010b5f68f3cd62081aa2b560f6dbde5737bf67637b78382caf603dc",
+          "public": "4cbfaf227010b5f68f3cd62081aa2b560f6dbde5737bf67637b78382caf603dc",
+          "protected": "65fc148b36eca10aae4adeb317ac09f4832a0837b3684cd128edfe1a90464689"
+        },
+        "to": {
+          "raw": "4d9f640b8b3147db4b5c0fb01c8f8381923d2806ea15ef23b5184c340b1d17c0",
+          "public": "4d9f640b8b3147db4b5c0fb01c8f8381923d2806ea15ef23b5184c340b1d17c0",
+          "protected": "862b7a27690276fd2350c6973e950a8d5b1330152c9e6d3e7cdce572687ea4b6"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-cohort-design 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-cohort-association",
+        "from": {
+          "raw": "500290e379e832db1bbbb314b84567b0142ed04c6fcc6ec1e4fe4661010565f6",
+          "public": "500290e379e832db1bbbb314b84567b0142ed04c6fcc6ec1e4fe4661010565f6",
+          "protected": "a2e5715f58402390338a5e980ccc48d5e79c59419fdb87b38a69ec576393a0c3"
+        },
+        "to": {
+          "raw": "69784afc45b7f748a614a707012cde4cc160d35f34c026a7f6612870c2f1ba08",
+          "public": "69784afc45b7f748a614a707012cde4cc160d35f34c026a7f6612870c2f1ba08",
+          "protected": "c5c3b6eedab3a70b3f6212ce550acd93f4d21297ddc8ddd74616612881e117d9"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-cohort-association 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-effect-baseline",
+        "from": {
+          "raw": "8ff75ce4d7f261f8926b585a80060d718b5d532888618590f39eb4cb416ea671",
+          "public": "8ff75ce4d7f261f8926b585a80060d718b5d532888618590f39eb4cb416ea671",
+          "protected": "1921c44043ebb2784f6c3bab136110239929579c84d3e4b218a1c41c246ca362"
+        },
+        "to": {
+          "raw": "570a714cdbd6137dd57ebc69fd6b0756b89d7f15186922c0b7d0be7e73045035",
+          "public": "570a714cdbd6137dd57ebc69fd6b0756b89d7f15186922c0b7d0be7e73045035",
+          "protected": "654b4be0851e709b26b4c8a3b008a6aebbf5d9d49e31c2437c5a3f771b8d04c0"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-effect-baseline 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-effect-definition",
+        "from": {
+          "raw": "d9d2c0c1c388fecc312a6599e555f6a432321e1a906739a73e2e5f319813e75e",
+          "public": "d9d2c0c1c388fecc312a6599e555f6a432321e1a906739a73e2e5f319813e75e",
+          "protected": "c57e91e25c3d2c61554075a86f19ffd29af7052dffab3933dab367cf8c2fd680"
+        },
+        "to": {
+          "raw": "01e1b81ca619ca1df362f23a51180c34c600f466e97c3d8fdebd5f309194e4e4",
+          "public": "01e1b81ca619ca1df362f23a51180c34c600f466e97c3d8fdebd5f309194e4e4",
+          "protected": "4e11c129eadd5caed71f7e96cb4fea500d6204694a18db1f36df60d13d21d570"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-effect-definition 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-effect-default",
+        "from": {
+          "raw": "478946f7cd2b0fdf100e818fd3654bb67e49ac4eae7e70e153a4516be8e25fea",
+          "public": "478946f7cd2b0fdf100e818fd3654bb67e49ac4eae7e70e153a4516be8e25fea",
+          "protected": "24600f8c57df4989ed66393f87a87544bd4c4b9491ba94af4a24f00d302ac4b8"
+        },
+        "to": {
+          "raw": "5e96d3ccd98685552293675ac3eba1bb4a39456f4d19e4843b725f4cd51015a6",
+          "public": "5e96d3ccd98685552293675ac3eba1bb4a39456f4d19e4843b725f4cd51015a6",
+          "protected": "e50017d3ede9b0e227dfee91f92dd175475ce4f2264d65aeb3fa5808a5be00ef"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-effect-default 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-urban-health",
+        "from": {
+          "raw": "8f8ea119ae03d4449efb839454769e0ca0d807204e0e1275221b2aa337b852ad",
+          "public": "8f8ea119ae03d4449efb839454769e0ca0d807204e0e1275221b2aa337b852ad",
+          "protected": "93703ca06b2d7b672b6ddb17fa1c94ccdd7c663a4c4b03cfdec0801993630e3e"
+        },
+        "to": {
+          "raw": "f68344965ed3a563a71a23e9f37e0ab52a6e13076c61a1c37e98ff0b310aaf0f",
+          "public": "f68344965ed3a563a71a23e9f37e0ab52a6e13076c61a1c37e98ff0b310aaf0f",
+          "protected": "8b08581e9830265ba85a4213b47d2ab4a6161bf02c44d9737c8c40f24d45951c"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-urban-health 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-rural-health",
+        "from": {
+          "raw": "621d2effd5f18d7ba3b9fdb2e2cc6fcec2589fd42f2904cefa0fdb638ff59741",
+          "public": "621d2effd5f18d7ba3b9fdb2e2cc6fcec2589fd42f2904cefa0fdb638ff59741",
+          "protected": "0b7f01c35b4f23a31208d2e2e30a937b5b3faac130fba3d2fca50b3afe967cb3"
+        },
+        "to": {
+          "raw": "ef149bc89c811f788220bcb85cb078b15ba6a663be637a49cc5ca41fcccc067a",
+          "public": "ef149bc89c811f788220bcb85cb078b15ba6a663be637a49cc5ca41fcccc067a",
+          "protected": "734ea030d8ac676bb6d2b4bfd7500237b32e461fcdb7615892d21a4235f9e337"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-rural-health 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-precursor-health",
+        "from": {
+          "raw": "6a5c3c41d3f4fee7d30629b27b1e0f4d049fbe417248b784fc76859e3b305154",
+          "public": "6a5c3c41d3f4fee7d30629b27b1e0f4d049fbe417248b784fc76859e3b305154",
+          "protected": "5c482bd924dc2e1aeeed3249dd4512b2f6b26b1193e8aa98bb70659e1867c059"
+        },
+        "to": {
+          "raw": "2b3bc94ed4e886ada21937bf9b1a587eb2168601feb36162bb56c989062ebe1b",
+          "public": "2b3bc94ed4e886ada21937bf9b1a587eb2168601feb36162bb56c989062ebe1b",
+          "protected": "09f1bde09634d72678cbf4c2ef77a6278869edc543e449bac70c853a7ec42509"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-precursor-health 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-burden-check",
+        "from": {
+          "raw": "5751c02a9874d60044a26f0bada2cabdb1af96274afcb4437b3380de7dca28c8",
+          "public": "5751c02a9874d60044a26f0bada2cabdb1af96274afcb4437b3380de7dca28c8",
+          "protected": "a44e4904428eb0e86a643fcc1d0be1691fd8292304fc551741c0754007be7877"
+        },
+        "to": {
+          "raw": "f358a58d63c72115d750fd1b0d1185dc07610116324942dcfd7f3ef556c58b76",
+          "public": "f358a58d63c72115d750fd1b0d1185dc07610116324942dcfd7f3ef556c58b76",
+          "protected": "107f6413915f15811648eb1e2e97705a6cf8b2d04043fb99a51a1744c9d1224f"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-burden-check 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-population-meaning",
+        "from": {
+          "raw": "ab3c64cc06c4e3fa48aecc29dd488f16f212eda0e0c88074d1555f9c28345399",
+          "public": "ab3c64cc06c4e3fa48aecc29dd488f16f212eda0e0c88074d1555f9c28345399",
+          "protected": "1dd70a2e8baf6afbb210302c5469633247477a75c99cac31efcdd8e3467005b3"
+        },
+        "to": {
+          "raw": "29746188327b5c39cb256f90878067070e33880485eabd239aa690c74f105778",
+          "public": "29746188327b5c39cb256f90878067070e33880485eabd239aa690c74f105778",
+          "protected": "ca9915ff579cfdca7f3b7a140fdd7611b8b5eb415d243e0122b8bcac044d671e"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-population-meaning 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-indoor-location",
+        "from": {
+          "raw": "5e1d959495e634ca453b7cc6ff5152d1d334836ff625fe9ed0b0aa90baa78454",
+          "public": "5e1d959495e634ca453b7cc6ff5152d1d334836ff625fe9ed0b0aa90baa78454",
+          "protected": "b8bea90998be2650b4500011a926f677f25801aaba203643d9acff2662ecdb70"
+        },
+        "to": {
+          "raw": "c843cb221d2c54a5ad2964d06d264b5bcf1800e7dcbbe97bb3496c68c69bd29a",
+          "public": "c843cb221d2c54a5ad2964d06d264b5bcf1800e7dcbbe97bb3496c68c69bd29a",
+          "protected": "a382c83c9b711c6c44f479dd30e328a966243ce0579faec50e8197b862e88d27"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-indoor-location 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-indoor-matrix",
+        "from": {
+          "raw": "7f58312a896e0c446b886401dd670052c1f1df72556e13621840c4228710789b",
+          "public": "7f58312a896e0c446b886401dd670052c1f1df72556e13621840c4228710789b",
+          "protected": "e96e75a04e5f462acb93bf49bfe3452b8ceffc99736e9b0939432b95bb1caf5f"
+        },
+        "to": {
+          "raw": "0124e190b707c98dfc51e638fa2b55d86fc3eec302625de3832f4737f1ea0d30",
+          "public": "0124e190b707c98dfc51e638fa2b55d86fc3eec302625de3832f4737f1ea0d30",
+          "protected": "583316d5d7fa90330a3df843ab3002e896e962bbd2f5968a8736f112046e1b69"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-indoor-matrix 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-exposure-compatible",
+        "from": {
+          "raw": "81a0d40a6a08d26fd3037f11481a6d293893da5cd17a01d1bc36069d474eda35",
+          "public": "81a0d40a6a08d26fd3037f11481a6d293893da5cd17a01d1bc36069d474eda35",
+          "protected": "e99569b1929eae99b627696a82277d908ea5b5996f362f838bd4b2fc330788d5"
+        },
+        "to": {
+          "raw": "c66aed8cc042ffe60bc732b81dbb0762a9872417f5e535a0b6ca4d56287411bc",
+          "public": "c66aed8cc042ffe60bc732b81dbb0762a9872417f5e535a0b6ca4d56287411bc",
+          "protected": "edc186fb40727528ca53827c130a8d6ff189cc7f48a28390dec2cd2969197a04"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-exposure-compatible 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-compatible-population",
+        "from": {
+          "raw": "d9491c8905cf37aca6ac1ea81395b28a6c7ceab550ccb46834d6f7b5b2711cd1",
+          "public": "d9491c8905cf37aca6ac1ea81395b28a6c7ceab550ccb46834d6f7b5b2711cd1",
+          "protected": "52bb10ae22156e406a78a68c9b296be2b28337f9b89c37a2dc59300313e82e8d"
+        },
+        "to": {
+          "raw": "b9ce1dfb4cc8ed299c4ff8dc1c92c99ea9f1d38cc23c8724b6de856a1deec94c",
+          "public": "b9ce1dfb4cc8ed299c4ff8dc1c92c99ea9f1d38cc23c8724b6de856a1deec94c",
+          "protected": "e4d1ce0e2a2b96230f9803e482ac5a7466729b8d8fb0040b323697caad1db9c2"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-compatible-population 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-indoor-time",
+        "from": {
+          "raw": "1fa66d7453240502d88bd92340bc4cdb33d7b4e684dca22536a45e5d92bd878a",
+          "public": "1fa66d7453240502d88bd92340bc4cdb33d7b4e684dca22536a45e5d92bd878a",
+          "protected": "e0323649e9af4325c5f612f7d1410e5854448ac0f954bedaeeafd92fbdb01bd4"
+        },
+        "to": {
+          "raw": "52b8981995d60484b79ac1c8fca5b4a623a0d6e72243e03a2b5705b18001de6b",
+          "public": "52b8981995d60484b79ac1c8fca5b4a623a0d6e72243e03a2b5705b18001de6b",
+          "protected": "f5ac535fae05658cb45e97ce6cd72dd6f16654eb3a3f46ca8932c58e72a6e347"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-indoor-time 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-exposure-coverage",
+        "from": {
+          "raw": "85f06599b622b7934dec8c81f25b8aabe06ce88c6895cafc9b60393ecffb90ef",
+          "public": "85f06599b622b7934dec8c81f25b8aabe06ce88c6895cafc9b60393ecffb90ef",
+          "protected": "f52d8de8db3bbca08e0c4ea5310db1c0332f991968213393bde66c30883b0123"
+        },
+        "to": {
+          "raw": "7a774815db93e0aaab148a032fc45304b09b4d4cfd61e6a8ff10ba539d55c42c",
+          "public": "7a774815db93e0aaab148a032fc45304b09b4d4cfd61e6a8ff10ba539d55c42c",
+          "protected": "f828752ff1e477fdc1a6221761fef4aa641bc2a169858338138dcfe06b49060a"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-exposure-coverage 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-nonlinear-response",
+        "from": {
+          "raw": "c7693d2d1ee3c1e6be15b4b613205f67662cc0cdcbb0ff865a2cbdc5825865a3",
+          "public": "c7693d2d1ee3c1e6be15b4b613205f67662cc0cdcbb0ff865a2cbdc5825865a3",
+          "protected": "c22e50013a8af7c660124963b6f2bcff080bd427de81c97b959cee632bd8faaa"
+        },
+        "to": {
+          "raw": "e20ca621735f6a32aa95abc37eebf151a3bcaf8f4c6b7f2c28d7e34f7f70ad14",
+          "public": "e20ca621735f6a32aa95abc37eebf151a3bcaf8f4c6b7f2c28d7e34f7f70ad14",
+          "protected": "faa88a3fe519f7dc5e6172022c1a6322b0dd3e803ef1ac92b7222230d259768a"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-nonlinear-response 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-risk-reference",
+        "from": {
+          "raw": "3c4f1c480240a3c4c95ac6fc7af6e46832696a6db3098aa2f700e0f6f4622eca",
+          "public": "3c4f1c480240a3c4c95ac6fc7af6e46832696a6db3098aa2f700e0f6f4622eca",
+          "protected": "6cc8c486a9f31141ec5af105f7fa58cd5faa575cea8ba55ec94f93dfaa349e53"
+        },
+        "to": {
+          "raw": "0ffde5c5a41cee4beab12dcb456a09ae22e564daf1f117f4dd13f9767ec281b1",
+          "public": "0ffde5c5a41cee4beab12dcb456a09ae22e564daf1f117f4dd13f9767ec281b1",
+          "protected": "b3d7e2f5e0afa30132d6cce6139c639d35be51d83c4a3633b46822b36eb300ef"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-risk-reference 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-slope-meaning",
+        "from": {
+          "raw": "7c1923a1402ffd6350fa0f4f337a96209d870b4969f47eccbea08ba972f2ad7c",
+          "public": "7c1923a1402ffd6350fa0f4f337a96209d870b4969f47eccbea08ba972f2ad7c",
+          "protected": "4de7979720c2bff8ca169d0895d6a3da9cb128f32ce2fde005834ba2c0872c9a"
+        },
+        "to": {
+          "raw": "8839fec1f69a4ac6458abf7bff065e4e011bbf64f416bacb75579404d1f87a9c",
+          "public": "8839fec1f69a4ac6458abf7bff065e4e011bbf64f416bacb75579404d1f87a9c",
+          "protected": "41507e7e80e8439410d8a02918a058c0183f176a8a874df499d803871d55b289"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-slope-meaning 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-finite-change",
+        "from": {
+          "raw": "f817ba242dfbfb9780eeef193f8b82643966fc6125e72da3db06f3398057d014",
+          "public": "f817ba242dfbfb9780eeef193f8b82643966fc6125e72da3db06f3398057d014",
+          "protected": "d1bcbb46ea751f2fc7e370762ce1c5bd1b23b37c7f0cfb81d9132f87ec53b6b6"
+        },
+        "to": {
+          "raw": "0937bb9a8d09c009d926837f9c5e4a374b9edceedb4cd2689c94b9140e2af543",
+          "public": "0937bb9a8d09c009d926837f9c5e4a374b9edceedb4cd2689c94b9140e2af543",
+          "protected": "47b095adb53920e167fe57a62c90675279ad069cd9a66aaf6f48d0bf31e046ee"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-finite-change 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-slope-context",
+        "from": {
+          "raw": "a40e0e4e881167a34f91fbf1f7d5d4756789bd45481d30b9c8237dfa1880d599",
+          "public": "a40e0e4e881167a34f91fbf1f7d5d4756789bd45481d30b9c8237dfa1880d599",
+          "protected": "6d262952156b7c663fa556befea73b69c073dc73a0d6c689ab4f59eb557d534d"
+        },
+        "to": {
+          "raw": "b99bf24fcc4166239a2aa7d10aaa263b7bf703c677067c02f223dca62ccadb1f",
+          "public": "b99bf24fcc4166239a2aa7d10aaa263b7bf703c677067c02f223dca62ccadb1f",
+          "protected": "c40e73f645323681fa56b649442fc1127d42cf72fa8eecdaa54ad3354c6c780e"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-slope-context 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-ier-evidence",
+        "from": {
+          "raw": "d0367e371229a70d73cb5e478ce73547d3b8a7998e65f26c92b75b4d84569ca9",
+          "public": "d0367e371229a70d73cb5e478ce73547d3b8a7998e65f26c92b75b4d84569ca9",
+          "protected": "18d9d903d8b3af896ea57dc047f54b712aac06d5233702e826df686dd9148997"
+        },
+        "to": {
+          "raw": "01a59dbdaf5ee3d3a809d5ad89dd32c1815caf80ccf73347c70fdb206a94ad75",
+          "public": "01a59dbdaf5ee3d3a809d5ad89dd32c1815caf80ccf73347c70fdb206a94ad75",
+          "protected": "e350f1c2e38ac8d9f9e04406cfc636c5cacfa11ce0ce4f4510227e8c30934e10"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-ier-evidence 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-gemm-alternative",
+        "from": {
+          "raw": "a277798646515614c4ae801f97c41886599bff0dcc36aef83de072c654d5df7e",
+          "public": "a277798646515614c4ae801f97c41886599bff0dcc36aef83de072c654d5df7e",
+          "protected": "1845f960679d9a1957f0d50ac3df2b3ee0ac2bcc4d66a40108fab1ead154cd0f"
+        },
+        "to": {
+          "raw": "a2c2f0a5b720f5ef1a81524435c9844fc6ddeb89c90a54722c112ca011c513b2",
+          "public": "a2c2f0a5b720f5ef1a81524435c9844fc6ddeb89c90a54722c112ca011c513b2",
+          "protected": "7f5d2e1cb2c1c2e903dc118210e8da00416832dee30c5d3267d4b944648136f3"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-gemm-alternative 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-factor-correction",
+        "from": {
+          "raw": "317fe7b99c153549954f7b16fd9056d5cac5fc33a06c7d8c9a4473b92ed48dfb",
+          "public": "317fe7b99c153549954f7b16fd9056d5cac5fc33a06c7d8c9a4473b92ed48dfb",
+          "protected": "323ed6fa54e2e32998dd8bec6eec3754acf815ad54ecca0f902d8bccd56c31f2"
+        },
+        "to": {
+          "raw": "f8c66fe191d2902176b17b86e450ed84a1bc174f611d5a30fae98711d241ca3f",
+          "public": "f8c66fe191d2902176b17b86e450ed84a1bc174f611d5a30fae98711d241ca3f",
+          "protected": "78fb3736c27e0afe6925c02554c9b951e1ef53cd434c2731faaf35bcd392f3e1"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-factor-correction 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-implementation-layer",
+        "from": {
+          "raw": "1828702f27274211737250c2408c6531080cc9cb5d22ead0e83b55324c4f4550",
+          "public": "1828702f27274211737250c2408c6531080cc9cb5d22ead0e83b55324c4f4550",
+          "protected": "f6dbd5667cd2bbdf1730fad9c8af0c5e20168eaeeec952a8fc604cbcd81acd71"
+        },
+        "to": {
+          "raw": "a9b49768b5fa6d7c20e977324e7b3d9344359cf35a196dee43a8d506a5b47fcf",
+          "public": "a9b49768b5fa6d7c20e977324e7b3d9344359cf35a196dee43a8d506a5b47fcf",
+          "protected": "e44c935d75bae4de4b016d436db286e4f05df51e34e1ca4ba49921cc32e08859"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-implementation-layer 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-chemistry-background",
+        "from": {
+          "raw": "a12c12f7a44b20609076f0c6596332f9251f35c5f3f25ef30afb0d3f194b5d6e",
+          "public": "a12c12f7a44b20609076f0c6596332f9251f35c5f3f25ef30afb0d3f194b5d6e",
+          "protected": "f126e8893026a4be4b2042737e2c0a6f0148f8f7ec6fdefa717cc0f106c680dc"
+        },
+        "to": {
+          "raw": "70a7065730f7687769fcb4d3ce69fa4c5f5245056a108a890bdb6c0a37f7fa80",
+          "public": "70a7065730f7687769fcb4d3ce69fa4c5f5245056a108a890bdb6c0a37f7fa80",
+          "protected": "9d365f93483f1c884b546f543d0e34a2a7f1840392fe45cb77297e081a953234"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-chemistry-background 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-chemistry-perturbation",
+        "from": {
+          "raw": "dc2f66b5c0013858d3e8cb9faeaf51513fc931cf016222cb9c18b859962eab43",
+          "public": "dc2f66b5c0013858d3e8cb9faeaf51513fc931cf016222cb9c18b859962eab43",
+          "protected": "c4b7fb5b274c7a8e257b211fd5e36fdbef07d3ae62330bed105f872c7ecbfda0"
+        },
+        "to": {
+          "raw": "3d33acf5ee3e5b9d43b0b3e271bac6193d975902f8d1e249906ea191a08b14ee",
+          "public": "3d33acf5ee3e5b9d43b0b3e271bac6193d975902f8d1e249906ea191a08b14ee",
+          "protected": "2cbbd75eda1ad982943a94ef678db55bcc5cfb481d58ea0601eb74f685f084df"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-chemistry-perturbation 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-chemistry-model-check",
+        "from": {
+          "raw": "97240d38746f3cef0d58a979c2cdb82a81df912e5fc134b87ee2a17e755ceeca",
+          "public": "97240d38746f3cef0d58a979c2cdb82a81df912e5fc134b87ee2a17e755ceeca",
+          "protected": "b058a00f8da864cb5730087689efaf2bc09d8c3e0ad2c6dd1591d983d622d88c"
+        },
+        "to": {
+          "raw": "580a1f21b030007f78971421952afaf8beda642a91851b84a211dc0ace8c9161",
+          "public": "580a1f21b030007f78971421952afaf8beda642a91851b84a211dc0ace8c9161",
+          "protected": "46cbe3f8d0ffebd67be0e59faedbfeb76d2b72f35160da9fda5524544d37655f"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-chemistry-model-check 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-release-date",
+        "from": {
+          "raw": "f804d8d0bede9a7c1b2c462058800d82c965cdc80063cec0c039b31a8f0bcaf7",
+          "public": "f804d8d0bede9a7c1b2c462058800d82c965cdc80063cec0c039b31a8f0bcaf7",
+          "protected": "03b6b190f8debfc32d14865527d03842cd8d131e3cfd6e9d346b15e514170b9b"
+        },
+        "to": {
+          "raw": "53761c87fc37c4fb5fcd11ff87feb18c61288280b36c1097873a39699fbd3fe3",
+          "public": "53761c87fc37c4fb5fcd11ff87feb18c61288280b36c1097873a39699fbd3fe3",
+          "protected": "2611299c8c98c80c03e5479a99d4f47500ad87dc51e9131b3feb8a404d4ac2bf"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-release-date 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-concentration-route",
+        "from": {
+          "raw": "a4a28dd6c8eaf2b6edc689e270942a84f0586a5e078cab0595937550cee97012",
+          "public": "a4a28dd6c8eaf2b6edc689e270942a84f0586a5e078cab0595937550cee97012",
+          "protected": "ce3a9f4035d1da297d4027e972e2e0239264671d977d26a5c2eb8729986f36ee"
+        },
+        "to": {
+          "raw": "c4153df0545f0fe030a02d2ba6f5bc1a64f565c38336e648b74db2c0bd2dfda8",
+          "public": "c4153df0545f0fe030a02d2ba6f5bc1a64f565c38336e648b74db2c0bd2dfda8",
+          "protected": "0698edee68869e32e1285c4f56849aa988cf3d352cb4f6903fb1880377c91ae6"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-concentration-route 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-regional-factor",
+        "from": {
+          "raw": "a85be8e275cc4dc0cbc6b200ba99e2bb74f0d4d043fc97edb4bece8c7c77f616",
+          "public": "a85be8e275cc4dc0cbc6b200ba99e2bb74f0d4d043fc97edb4bece8c7c77f616",
+          "protected": "cff2a7abaf427f23a94b7708cb6cdf835c6f6b98a668c0c3a8bebd131a96f4f1"
+        },
+        "to": {
+          "raw": "294c22ddd87c620742607f5956c4a25d0f980d78ab96dcc5a46d9ecbdc941f1e",
+          "public": "294c22ddd87c620742607f5956c4a25d0f980d78ab96dcc5a46d9ecbdc941f1e",
+          "protected": "36c646736d4b5d06e3cffcc4dac1856e755a36db899b3b1522d5c7ffb5e75838"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-regional-factor 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-modern-values",
+        "from": {
+          "raw": "404ce6955fb76a1cd33f60b5d1a84f4873a2bfaa8606d67e074b5a8bf081051e",
+          "public": "404ce6955fb76a1cd33f60b5d1a84f4873a2bfaa8606d67e074b5a8bf081051e",
+          "protected": "5ebe6fca809c977494acd8fdd9909180d1c27dd651e99537d1c66f2f0582443a"
+        },
+        "to": {
+          "raw": "b3b94e42d9d96e65e8272f937646ca74d0a924d05ed0ef7d46eaa57d9ad3a547",
+          "public": "b3b94e42d9d96e65e8272f937646ca74d0a924d05ed0ef7d46eaa57d9ad3a547",
+          "protected": "5930cf85737cfd683bf8c16760d216ad25cff110e44fb2f7434ca3e847f36cad"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-modern-values 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-modern-ratios",
+        "from": {
+          "raw": "ae7d5f0f872fc2e1e01aafa76a1457e836d0acd244740ba4b1edec747d4adde6",
+          "public": "ae7d5f0f872fc2e1e01aafa76a1457e836d0acd244740ba4b1edec747d4adde6",
+          "protected": "0eeef485ad298bd774813f79c3d4b0501463635e09f59b95bd94104deb2c55b6"
+        },
+        "to": {
+          "raw": "850d823a96613946fe2e407d8d0d2a00df4fd8adcea99667c058f99c97f7fe6d",
+          "public": "850d823a96613946fe2e407d8d0d2a00df4fd8adcea99667c058f99c97f7fe6d",
+          "protected": "bbf9ceb5f1aaf3f03db3400cf02b31d1e007604aa952058f06fd4f2447704c09"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-modern-ratios 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-matched-scope",
+        "from": {
+          "raw": "d513327c09ccc073c3d4ad06510b5153e746436521f5dcf4b1247358e4e02a41",
+          "public": "d513327c09ccc073c3d4ad06510b5153e746436521f5dcf4b1247358e4e02a41",
+          "protected": "78c81a79f7c8ef6e366faf1a62912061d63163893327e2942fcaadad0201d9c9"
+        },
+        "to": {
+          "raw": "4b92b8275ea95a4cc57bc579c1d85da2b00caf6248b13873b59bfea7ce12381a",
+          "public": "4b92b8275ea95a4cc57bc579c1d85da2b00caf6248b13873b59bfea7ce12381a",
+          "protected": "0e625ec358c798fd16d5712a0e1b368755c2c6d8e273d5d97d61f1ada8a5ca56"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-matched-scope 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-uncovered-pathways",
+        "from": {
+          "raw": "8a6821d0c1a80e6b46e3215d3023afeb5d9eeb6c34bcceda9f33dc704511cd95",
+          "public": "8a6821d0c1a80e6b46e3215d3023afeb5d9eeb6c34bcceda9f33dc704511cd95",
+          "protected": "11d6f753135d94319aa515fbc11fec884e95771ecf875076bb0a2cabf8c982d5"
+        },
+        "to": {
+          "raw": "589184577f5b0b85a42ff9f3de3b34cba292fe43d7b5fd0b70d61880c72fd979",
+          "public": "589184577f5b0b85a42ff9f3de3b34cba292fe43d7b5fd0b70d61880c72fd979",
+          "protected": "4db20bee80de535b9bc7fb8dc12bb6fec36ad177b5b602b4e02f6e60a5ede2d4"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-uncovered-pathways 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-conclusion",
+        "from": {
+          "raw": "b88b7cda80669b7eb0732b4578c7cd80d90632838d674a3c1c86291282f62947",
+          "public": "b88b7cda80669b7eb0732b4578c7cd80d90632838d674a3c1c86291282f62947",
+          "protected": "18c9380d53fbc8423da9a39b553f79afd773b58e6eeb85222954f1cc1cbd1ba5"
+        },
+        "to": {
+          "raw": "72db680c072a5c0638fc0a269bbd5ea48901ad05ab871951a2ea28c00988c856",
+          "public": "72db680c072a5c0638fc0a269bbd5ea48901ad05ab871951a2ea28c00988c856",
+          "protected": "1d83015d77a906120bc3b215b50fed25221ac3872a3335a9e63a6ac0d6118f9a"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-conclusion 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-evidence-levels",
+        "from": {
+          "raw": "966c331b0f21a941fd4b9de774270630b9efc2c598c96f8e85ec3f5318c53eb7",
+          "public": "966c331b0f21a941fd4b9de774270630b9efc2c598c96f8e85ec3f5318c53eb7",
+          "protected": "8a620f6f6ead365a27af1f87fc5e7b858bed80dd9e511a05c2e92d651bd84c20"
+        },
+        "to": {
+          "raw": "4393961b848f341e64dfdfaa047454ffcfbf0fb00afd02775123e859dc458884",
+          "public": "4393961b848f341e64dfdfaa047454ffcfbf0fb00afd02775123e859dc458884",
+          "protected": "da478ea6b6fc484db2f69a4db2b8da1eade0da0a37323922c8f4d3e238908e74"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-evidence-levels 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pm-matched-scenario",
+        "from": {
+          "raw": "8e5ce801b0417300a4817239167fd8112d91e03ec5e8a0f0b818094dbf7282d8",
+          "public": "8e5ce801b0417300a4817239167fd8112d91e03ec5e8a0f0b818094dbf7282d8",
+          "protected": "a0c3e033db9271b82c7b3e418419747db77f11c3f05bd716cacb23265a8e16e4"
+        },
+        "to": {
+          "raw": "630ac1240fef4686b46eedc8264c721503b8c08353a3d24a58e916a51190b16f",
+          "public": "630ac1240fef4686b46eedc8264c721503b8c08353a3d24a58e916a51190b16f",
+          "protected": "9e652e10af7207d56245cc46ff8e5fa515b4b4d2b43873940969a190f1527d88"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-pm-matched-scenario 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-mineral115-judgment",
+        "from": {
+          "raw": "340274d8560b6f3501bd644132671a40ddfe5c82785dea354d0e3f721d779b9a",
+          "public": "340274d8560b6f3501bd644132671a40ddfe5c82785dea354d0e3f721d779b9a",
+          "protected": "e4257bcf20b7b839a37a25fcb65835259cbef5985dc57ec9b03292265a37bb14"
+        },
+        "to": {
+          "raw": "e013b76b35bd119cbf8bd9ee6751a59a93d5f0249c1a275cd9316f79938cb6a5",
+          "public": "e013b76b35bd119cbf8bd9ee6751a59a93d5f0249c1a275cd9316f79938cb6a5",
+          "protected": "d5b61feb3f3667d73fcd6be4811609e78f3d70893e7ea35ebc8313427dde30e9"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-mineral115-judgment 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-water125-method-genealogy",
+        "from": {
+          "raw": "f2ab744c9a66677e146d371ab4827a9423c515a928110ff6eb17a55abe91b371",
+          "public": "f2ab744c9a66677e146d371ab4827a9423c515a928110ff6eb17a55abe91b371",
+          "protected": "f0fe91f7d000e9424be1621285d34fb28a24437a0d0ec6c0048e950914c0814e"
+        },
+        "to": {
+          "raw": "bc26a3cd3b83d5578e1a362b92d78b485e7a581a3fb0f04f0793b7f14d8acdcc",
+          "public": "bc26a3cd3b83d5578e1a362b92d78b485e7a581a3fb0f04f0793b7f14d8acdcc",
+          "protected": "f0fe91f7d000e9424be1621285d34fb28a24437a0d0ec6c0048e950914c0814e"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-water125-method-genealogy 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-water125-ef-country-resolution-and-climates",
+        "from": {
+          "raw": "e4aa26f5155e179df42d0b00a96c20e4a66d534477f755ecba6ccf33c1a15b51",
+          "public": "e4aa26f5155e179df42d0b00a96c20e4a66d534477f755ecba6ccf33c1a15b51",
+          "protected": "070d8b2b4219c7d37f55ad60fe20c5712c8a1af15c6ae9bbc4c2445668d5b47a"
+        },
+        "to": {
+          "raw": "c115c409869834f282d127dabfce6b6de4e6e7691cf3ab7e97fa995171cf9d1c",
+          "public": "c115c409869834f282d127dabfce6b6de4e6e7691cf3ab7e97fa995171cf9d1c",
+          "protected": "070d8b2b4219c7d37f55ad60fe20c5712c8a1af15c6ae9bbc4c2445668d5b47a"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-water125-ef-country-resolution-and-climates 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-water125-value-choices-and-denominator-paradox",
+        "from": {
+          "raw": "0a912caba47e3a16255b55bafdf06f5dfaaa9375b394dd0dbcac9e100fe4ce5f",
+          "public": "0a912caba47e3a16255b55bafdf06f5dfaaa9375b394dd0dbcac9e100fe4ce5f",
+          "protected": "03fec6a0ed2d344ff909a272d6f04ad7b65bb04ef7826691f8a701c85bba69c2"
+        },
+        "to": {
+          "raw": "156451d29364f4ccc6238b90c09c7c022c47cc88d1dc0249b3801df979b6f5aa",
+          "public": "156451d29364f4ccc6238b90c09c7c022c47cc88d1dc0249b3801df979b6f5aa",
+          "protected": "03fec6a0ed2d344ff909a272d6f04ad7b65bb04ef7826691f8a701c85bba69c2"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-water125-value-choices-and-denominator-paradox 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-water125-diagnostic-synthesis",
+        "from": {
+          "raw": "02af63cc6975d0d0df558acbe8d3e8570c8fc8e2a94e1bd2b301a36eee0f2de1",
+          "public": "02af63cc6975d0d0df558acbe8d3e8570c8fc8e2a94e1bd2b301a36eee0f2de1",
+          "protected": "bf1c22521f68bf5ce5e286ba69d2721dcd0be2d4dce2678f3c83e17e59ed9ded"
+        },
+        "to": {
+          "raw": "dd162b1f35d1b5bd98773f4951215787d58ab5a732a9427b193c0bd5ce7e6968",
+          "public": "dd162b1f35d1b5bd98773f4951215787d58ab5a732a9427b193c0bd5ce7e6968",
+          "protected": "aecd3a964516f9f192657cee5c86eacfd72d9f24c11dbfd9f7f21466ea8f6bc7"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-water125-diagnostic-synthesis 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-bio127-co-removal-and-methane-shift",
+        "from": {
+          "raw": "32c80ac7715e3775d55caa1ecfd48c114255e3328d9e6c1df7931ce227e77c28",
+          "public": "32c80ac7715e3775d55caa1ecfd48c114255e3328d9e6c1df7931ce227e77c28",
+          "protected": "a648672e98c06819073da9be386923c3ea5e83ebfc8157a2462925513ba1c0e0"
+        },
+        "to": {
+          "raw": "a8c6213aeae2b52e8092d49ff0ecd38a9a6d8e576cced54332b82c434801ce45",
+          "public": "a8c6213aeae2b52e8092d49ff0ecd38a9a6d8e576cced54332b82c434801ce45",
+          "protected": "a648672e98c06819073da9be386923c3ea5e83ebfc8157a2462925513ba1c0e0"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-bio127-co-removal-and-methane-shift 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-bio127-climate-diagnostic-synthesis",
+        "from": {
+          "raw": "07b20ab331ca7905aeac02f49c2ca9185cd434846797171a8146805edec34adb",
+          "public": "07b20ab331ca7905aeac02f49c2ca9185cd434846797171a8146805edec34adb",
+          "protected": "53be59eba76eaacf20841a2622d34bef39c57dd49f26cf5a6240b610f6f06592"
+        },
+        "to": {
+          "raw": "b91cefb2959f5141315c611cddae42fd22f20f3069c965b317407512d1b28817",
+          "public": "b91cefb2959f5141315c611cddae42fd22f20f3069c965b317407512d1b28817",
+          "protected": "53be59eba76eaacf20841a2622d34bef39c57dd49f26cf5a6240b610f6f06592"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-bio127-climate-diagnostic-synthesis 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-particulate131-indicator-cutpoints",
+        "from": {
+          "raw": "3c2aa6a49f1fed2742adcf682ac71e094b96eb22fafccdf10333708eb07c9102",
+          "public": "3c2aa6a49f1fed2742adcf682ac71e094b96eb22fafccdf10333708eb07c9102",
+          "protected": "229fd0d6d571c813a763fd456f1120380b1a32ab2d2d0797a1c13a523dc370f0"
+        },
+        "to": {
+          "raw": "cc7f44302b0a4cba0bee6cfaef7d4a679c2b4745fa082e32bca899caec5e8a05",
+          "public": "cc7f44302b0a4cba0bee6cfaef7d4a679c2b4745fa082e32bca899caec5e8a05",
+          "protected": "229fd0d6d571c813a763fd456f1120380b1a32ab2d2d0797a1c13a523dc370f0"
+        },
+        "rationale": "第四部整部连续回读（#133）核准 cl-particulate131-indicator-cutpoints 的正文术语首现、跨章交叉引用或具名适用范围说明，保持证据、前提、概念与映射绑定不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:revisions",
+        "from": {
+          "raw": "e30de45998fecd4ab0193b0538fb31508aafa8697d1a0ff7166ee604b7a08731",
+          "public": null,
+          "protected": "e30de45998fecd4ab0193b0538fb31508aafa8697d1a0ff7166ee604b7a08731"
+        },
+        "to": {
+          "raw": "6411ba788eb4c7f1c88357b8c1aa164cbb674724bdad9a67d853894f663940a4",
+          "public": null,
+          "protected": "6411ba788eb4c7f1c88357b8c1aa164cbb674724bdad9a67d853894f663940a4"
+        },
+        "rationale": "第四部整部连续回读（#133）同步更新公开投影与修订台账派生记录 researchMetadata:order:revisions。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:public-projection",
+        "from": {
+          "raw": "cfb4e4d27345337a27836b3e4fd838c7549ff8643720f0dc7d750f1244dc9d33",
+          "public": null,
+          "protected": "cfb4e4d27345337a27836b3e4fd838c7549ff8643720f0dc7d750f1244dc9d33"
+        },
+        "to": {
+          "raw": "1562e8cb76b73e81b0b852e1d796c46bcc5e3a9a2e8a51e5a064830bb4c942b2",
+          "public": null,
+          "protected": "1562e8cb76b73e81b0b852e1d796c46bcc5e3a9a2e8a51e5a064830bb4c942b2"
+        },
+        "rationale": "第四部整部连续回读（#133）同步更新公开投影与修订台账派生记录 researchMetadata:public-projection。"
+      },
+      {
+        "kind": "record",
+        "key": "revisions:rev-part4-reread-133-continuity-and-scopes",
+        "from": null,
+        "to": {
+          "raw": "727dfdf434ebf5522710dd33c4841a1e5999ce27d1ec855eb5fe8d7bf60c68a8",
+          "public": null,
+          "protected": "727dfdf434ebf5522710dd33c4841a1e5999ce27d1ec855eb5fe8d7bf60c68a8"
+        },
+        "rationale": "第四部整部连续回读（#133）同步更新公开投影与修订台账派生记录 revisions:rev-part4-reread-133-continuity-and-scopes。"
+      }
+    ],
+    "consumers": [
+      {
+        "id": "cl-lcia-endpoint-units",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lcia-endpoint-units：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lcia-mid-end-conversion-limits",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lcia-mid-end-conversion-limits：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lcia-model-data-factor-separation",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lcia-model-data-factor-separation：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-unc-model",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-unc-model：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-unc-numerical",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-unc-numerical：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-unc-synthesis",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-unc-synthesis：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-connect-reuse-keeps-relation",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-connect-reuse-keeps-relation：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-path-marginal-average",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-path-marginal-average：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-path-supplied-effect-conditions",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-path-supplied-effect-conditions：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-path-background",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-path-background：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-path-pdf",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-path-pdf：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-path-multiple-paths",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-path-multiple-paths：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-water-net-gross-meaning",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-water-net-gross-meaning：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-water-reference-period",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-water-reference-period：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-water-time-and-aggregation",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-water-time-and-aggregation：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-water-background-inventory",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-water-background-inventory：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-water-case-factors",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-water-case-factors：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-water-case-result",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-water-case-result：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-water-case-locality",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-water-case-locality：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-water-case-averaging",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-water-case-averaging：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-water-version-and-boundary",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-water-version-and-boundary：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-water-conclusion",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-water-conclusion：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-water-marginal-contexts",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-water-marginal-contexts：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-water-case-weighted-factor",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-water-case-weighted-factor：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-es-question",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-es-question：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-es-authority",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-es-authority：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-es-three",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-es-three：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-es-equation",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-es-equation：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-es-why-square",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-es-why-square：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-es-nmvoc",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-es-nmvoc：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-es-nox",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-es-nox：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-es-service",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-es-service：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-es-score",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-es-score：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-es-scale",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-es-scale：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-es-threshold",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-es-threshold：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-es-test",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-es-test：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-es-later",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-es-later：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-es-judgment",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-es-judgment：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-purpose",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-purpose：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-policy-contrast",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-policy-contrast：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-baseline",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-baseline：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-units",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-units：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-display",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-display：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-logit",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-logit：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-trade",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-trade：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-precision",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-precision：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-primary-ratio",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-primary-ratio：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-households",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-households：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-health",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-health：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-mismatch",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-mismatch：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-annual",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-annual：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-shares",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-shares：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-two-forms",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-two-forms：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-different-card",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-different-card：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-english",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-english：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-english-basis",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-english-basis：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-service",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-service：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-japan-route",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-japan-route：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-break-even",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-break-even：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-english-route",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-english-route：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-numeraire",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-numeraire：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-edition",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-edition：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-validity",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-validity：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-null",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-null：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-order",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-order：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-transfer",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-transfer：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-lime-decision",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-lime-decision：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-pm-concentration-balance",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-pm-concentration-balance：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-pm-activity-indicators",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-pm-activity-indicators：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-usetox-conclusion",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-usetox-conclusion：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-pm-source-distribution",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-pm-source-distribution：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-pm-regional-summary",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-pm-regional-summary：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-pm-factor-order",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-pm-factor-order：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-pm-version-and-model",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-pm-version-and-model：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-book-unc-bridge",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-book-unc-bridge：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-land111-episode",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-land111-episode：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-land111-midpoint",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-land111-midpoint：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-land111-conversion",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-land111-conversion：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-land111-pathway",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-land111-pathway：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-land111-horizon",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-land111-horizon：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-land111-factor-scale",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-land111-factor-scale：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-land111-integral",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-land111-integral：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-land111-countercheck",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-land111-countercheck：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-land111-aggregation",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-land111-aggregation：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-land111-printed-record",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-land111-printed-record：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-acid113-ae-question",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-acid113-ae-question：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-acid113-threshold",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-acid113-threshold：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-acid113-glam-relation",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-acid113-glam-relation：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-acid113-glam-tension",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-acid113-glam-tension：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-acid113-so2-rows",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-acid113-so2-rows：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-acid113-chemistry-control",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-acid113-chemistry-control：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-acid113-shared-moles",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-acid113-shared-moles：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-acid113-nh3-control",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-acid113-nh3-control：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-mineral115-input",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-mineral115-input：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-mineral115-adp",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-mineral115-adp：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-mineral115-sop",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-mineral115-sop：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-mineral115-reserves",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-mineral115-reserves：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-mineral115-rank",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-mineral115-rank：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-mineral115-cost-proxy",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-mineral115-cost-proxy：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-mineral115-metal-cost",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-mineral115-metal-cost：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-mineral115-calibration",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-mineral115-calibration：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-mineral115-assumptions",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-mineral115-assumptions：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-fossil117-scarcity-energy",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-fossil117-scarcity-energy：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-fossil117-heating-basis",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-fossil117-heating-basis：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-fossil117-uranium-boundary",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-fossil117-uranium-boundary：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-fossil117-scenario-proxy",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-fossil117-scenario-proxy：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-fossil117-equal-midpoint",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-fossil117-equal-midpoint：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-fossil117-proxy-consequence",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-fossil117-proxy-consequence：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-fossil117-printed-limits",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-fossil117-printed-limits：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-fossil117-bridge",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-fossil117-bridge：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-ozone119-titration-sign",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-ozone119-titration-sign：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-ozone119-ef-location-copy",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-ozone119-ef-location-copy：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-ozone119-multipath-accounting",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-ozone119-multipath-accounting：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-ozone119-printed-limits",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-ozone119-printed-limits：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-ozrad121-emission-midpoint",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-ozrad121-emission-midpoint：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-ozrad121-reference-scope",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-ozrad121-reference-scope：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-ozrad121-odp-horizons",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-ozrad121-odp-horizons：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-ozrad121-ir-horizons",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-ozrad121-ir-horizons：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-ozrad121-endpoint-choices",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-ozrad121-endpoint-choices：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-ozrad121-formula-table",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-ozrad121-formula-table：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-ozrad121-package-discrepancies",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-ozrad121-package-discrepancies：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-ozrad121-emission-bridge",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-ozrad121-emission-bridge：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-tox123-midpoint-families",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-tox123-midpoint-families：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-tox123-hc20-and-metals",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-tox123-hc20-and-metals：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-tox123-perspective-switches",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-tox123-perspective-switches：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-tox123-nickel-dcb-reversal",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-tox123-nickel-dcb-reversal：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-tox123-speciation-and-proxies",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-tox123-speciation-and-proxies：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-tox123-cross-system-synthesis",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-tox123-cross-system-synthesis：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-water125-withdrawal-return-accounting",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-water125-withdrawal-return-accounting：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-water125-country-rank-reversals",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-water125-country-rank-reversals：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-water125-belgium-canada-mechanism-contrast",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-water125-belgium-canada-mechanism-contrast：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-water125-package-report-discrepancies",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-water125-package-report-discrepancies：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-bio127-package-and-report-discrepancies",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-bio127-package-and-report-discrepancies：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-eutro129-category-genealogy",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-eutro129-category-genealogy：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-eutro129-phosphorus-soil-water-interface",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-eutro129-phosphorus-soil-water-interface：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-eutro129-phosphorus-stoichiometry-and-p2o5",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-eutro129-phosphorus-stoichiometry-and-p2o5：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-eutro129-nitrogen-soil-prohibition",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-eutro129-nitrogen-soil-prohibition：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-eutro129-aquatic-and-airborne-n-reversals",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-eutro129-aquatic-and-airborne-n-reversals：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-eutro129-location-copies-and-nox-inversion",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-eutro129-location-copies-and-nox-inversion：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-eutro129-normalization-double-counting-and-xml-anomalies",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-eutro129-normalization-double-counting-and-xml-anomalies：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-eutro129-operational-synthesis",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-eutro129-operational-synthesis：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-particulate131-size-and-subcompartment",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-particulate131-size-and-subcompartment：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-particulate131-cohen-gbd2015-scope",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-particulate131-cohen-gbd2015-scope：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-particulate131-cohen-empirical-limits",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-particulate131-cohen-empirical-limits：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-particulate131-precursor-perspectives",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-particulate131-precursor-perspectives：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-particulate131-ef-ammonia-inversion",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-particulate131-ef-ammonia-inversion：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-particulate131-regional-endpoint-reversal",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-particulate131-regional-endpoint-reversal：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      },
+      {
+        "id": "cl-particulate131-package-discrepancies",
+        "rationale": "核对依赖本次第四部回读修订论述的下游消费者 cl-particulate131-package-discrepancies：原前提含义、数值口径与适用边界均保持成立，无需联动改写该下游论述。"
+      }
+    ],
+    "assessment": {
+      "scope": "Whole-Part IV continuous reread and cross-chapter synchronization across F02 (content/docs/book/index.mdx:18), Part IV introduction (config/reader-numbering.json:23), B14–B19, web articles #17–#18, and calculation appendices X03–X04 against exact predecessor commit 2ba0bfe2f39d28bfa42e61f5e2b70585770bcb73, covering 61 bounded claim updates, 8 managed files (including particulate-health-v1.publication.json & water-locality-v1.publication.json), and 1 revision ledger entry (rev-part4-reread-133-continuity-and-scopes).",
+      "comparison": "Updates F02 Part IV framing to current Chapter 14 title 中点与终点 and four-input scope (resource extraction, land use, water withdrawal/consumption, emissions); expands Part IV introduction to cover land recovery, ore grade, radiative forcing, acidification/nutrients, PM, toxicity, and water scarcity; eliminates dual-view chapter/section collisions across B15 (wall-service-to-comparison title link, 后续《酸化与营养富集》, and “排放日历” section reference), B17 (本章“因子与比较”一节), and B18 (本章“情境与加总”一节 & “两处耗水的比较”); fixes Gronlund 2015 publication year (from Gronlund2005) and Chapter 15 climate-change attribution (from Chapter 14); expands first-appearance acronyms and removes duplicates (DALY, YLL, CF, XF, FF, GEMM, UNEP/SETAC 2016 vs UNEP GLAM 2024/2026 Method, AWARE, EWR, AMD); binds #131 synthesis premises on cl-pm-population-meaning & cl-pm-conclusion; cleans QA meta-language in B14 caveats; anchors the 4 GLAM Australian primary PM2.5 factors in B17:26 & X04:28; and replaces all 46 remaining #90 mechanical placeholder scopes across B17 (31) and X04 (15).",
+      "values": "Zero numericFact, case input (.json), evidence, source, concept, or mapping changes; programmatic materializeCaseClaims() across all 20 case publications matches knowledge/catalog.json with zero numeric drift, and all predecessor factor guards (particulate, eutrophication, biogenic carbon, water scarcity, toxicity, ozone/radiation, photochemical ozone, fossil, mineral, acid, land) pass unchanged.",
+      "limits": "All scientific caveats, official package/report discrepancies, and empirical validation boundaries established in Units #111–#131 remain intact; cross-category weighting, normalization, localization denominators, S-LCA, and LCC belong to Part V (B20–B24) and remain outside Part IV reread scope.",
+      "conservation": "100% conservation of all 1,008 claim IDs and sequence, all 1,034 evidence records, all 179 sources, literature-map.json, and all 40 case downloads; 947 claims remain byte-identical to 2ba0bfe2.",
+      "review": "Two-round independent primary-source and scope fidelity audit (07e973fa) verified all 61 modified claims, 46 replaced scopes, 4 public correction notices, dual-view references, UNEP GLAM institutional attribution, cause-specific severity wording, and 2ba0bfe2 rollback conservation, concluding unconditional PASS (0 BLOCKER, 0 MAJOR, 0 MINOR)."
+    },
+    "independentReports": {
+      "independent-primary-source-audit-initial.md": "4e27dd4deec9bb11e80f3fc47ac9cf0f8fe510aa03a2d4ccbb52514aee4f9da0",
+      "independent-primary-source-audit-final.md": "65bdb67da8b67e5ef2ef0bd71fd54dac37614045b83146835f71f0a337b96cbc",
+      "part4-reader-review-initial.md": "422a93dbbc8d468a5085e52ab8c504ef248fc51de2b212c585a2e7bf1e9936a7",
+      "part4-reader-review-final.md": "00edd894be11d7dff1ae3dfcb4f881b4f423455ac3a0e36cc3f513437d3b9db6",
+      "independent-publication-engineering-review-initial.md": "2f4ce14629cc372cc08f59af5ac1b89ec1912110a0e2734f8de610c0e5e72644",
+      "independent-publication-engineering-review-final.md": "dce5895139e9bc72c228f0395cb87ed2703132f635f04b0232f2e9bd868d6fe9",
+      "actual-browser-qa/responsive-script-enabled.json": "c3861f479d9c87ae25168219ae74472a5c6cdca14d5e0300365fa490553eb7e8",
+      "actual-browser-qa/interactions.json": "38516514a64fc4d997b770de5e757c650e0c45875ba993cc313016cbc0f80eb2"
+    }
+  }
+}

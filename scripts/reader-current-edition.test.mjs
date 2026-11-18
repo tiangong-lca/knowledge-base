@@ -169,7 +169,7 @@ test('the actual adopted source is independently qualified and a changed reviewe
   const { fileURLToPath } = await import('node:url');
   const { readFile } = await import('node:fs/promises');
   const { validateRepository } = await import('./validate.mjs');
-  const { validateReadableBookCurrent, validateServiceConstraintsReviewSources, validateSubstitutionRulesReviewSources, validateLoadShiftReviewSources, validateCircularFootprintReviewSources, validateLandRecoveryReviewSources, validateAcidEquivalentsReviewSources, validateMineralResourcesReviewSources, validateFossilResourcesReviewSources, validatePhotochemicalOzoneReviewSources, validateOzoneRadiationReviewSources, validateToxicityComparisonReviewSources, validateWaterScarcityReviewSources, validateBiogenicCarbonReviewSources, validateEutrophicationPathwaysReviewSources, validateParticulateComparisonReviewSources } = await import('./reader-current-edition-files.mjs');
+  const { validateReadableBookCurrent, validateServiceConstraintsReviewSources, validateSubstitutionRulesReviewSources, validateLoadShiftReviewSources, validateCircularFootprintReviewSources, validateLandRecoveryReviewSources, validateAcidEquivalentsReviewSources, validateMineralResourcesReviewSources, validateFossilResourcesReviewSources, validatePhotochemicalOzoneReviewSources, validateOzoneRadiationReviewSources, validateToxicityComparisonReviewSources, validateWaterScarcityReviewSources, validateBiogenicCarbonReviewSources, validateEutrophicationPathwaysReviewSources, validateParticulateComparisonReviewSources, validatePart4RereadReviewSources } = await import('./reader-current-edition-files.mjs');
   const root = fileURLToPath(new URL('../', import.meta.url));
   const read = async path => JSON.parse(await readFile(new URL('../' + path, import.meta.url), 'utf8'));
   const serviceConstraints = await read('config/reader-service-constraints.json');
@@ -187,6 +187,8 @@ test('the actual adopted source is independently qualified and a changed reviewe
   const bio = await read('config/reader-biogenic-carbon.json');
   const eutro = await read('config/reader-eutrophication-pathways.json');
   const particulate = await read('config/reader-particulate-comparison.json');
+  const part4 = await read('config/reader-part4-reread.json');
+  const privatePart4 = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1' && part4.status === 'preview';
   const privateParticulate = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1' && particulate.status === 'preview';
   const privateEutro = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1' && eutro.status === 'preview';
   const privateBio = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1' && bio.status === 'preview';
@@ -202,8 +204,8 @@ test('the actual adopted source is independently qualified and a changed reviewe
   const privateLoadShift = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1' && loadShift.status === 'preview';
   const privateService = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1' && serviceConstraints.status === 'preview';
   const privateSubstitution = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1' && substitutionRules.status === 'preview';
-  if (privateService || privateSubstitution || privateLoadShift || privateFootprint || privateLand || privateAcid || privateMinerals || privateFossils || privateOzone || privateOzrad || privateTox || privateWater || privateBio || privateEutro || privateParticulate) {
-    const name = privateParticulate ? 'Particulate comparison' : privateEutro ? 'Eutrophication pathways' : privateBio ? 'Biogenic carbon' : privateWater ? 'Water scarcity' : privateTox ? 'Toxicity comparison' : privateOzrad ? 'Ozone and radiation' : privateOzone ? 'Photochemical ozone' : privateFossils ? 'Fossil resources' : privateMinerals ? 'Mineral resources' : privateAcid ? 'Acid equivalents' : privateLand ? 'Land recovery' : privateFootprint ? 'Circular footprint' : privateLoadShift ? 'Load shift' : privateService ? 'Service constraints' : 'Substitution rules';
+  if (privateService || privateSubstitution || privateLoadShift || privateFootprint || privateLand || privateAcid || privateMinerals || privateFossils || privateOzone || privateOzrad || privateTox || privateWater || privateBio || privateEutro || privateParticulate || privatePart4) {
+    const name = privatePart4 ? 'Part IV continuous reread' : privateParticulate ? 'Particulate comparison' : privateEutro ? 'Eutrophication pathways' : privateBio ? 'Biogenic carbon' : privateWater ? 'Water scarcity' : privateTox ? 'Toxicity comparison' : privateOzrad ? 'Ozone and radiation' : privateOzone ? 'Photochemical ozone' : privateFossils ? 'Fossil resources' : privateMinerals ? 'Mineral resources' : privateAcid ? 'Acid equivalents' : privateLand ? 'Land recovery' : privateFootprint ? 'Circular footprint' : privateLoadShift ? 'Load shift' : privateService ? 'Service constraints' : 'Substitution rules';
     assert((await validateRepository(root)).includes(`${name} is not independently accepted`));
   } else assert.deepEqual(await validateRepository(root), []);
   const [acceptance, copyedit, catalog, readings, literature] = await Promise.all([
@@ -211,9 +213,9 @@ test('the actual adopted source is independently qualified and a changed reviewe
     read('knowledge/research/readings.json'), read('knowledge/research/literature-map.json'),
   ]);
   assert.equal(acceptance.status, 'reviewed');
-  const qualify = privateParticulate ? validateParticulateComparisonReviewSources : privateEutro ? validateEutrophicationPathwaysReviewSources : privateBio ? validateBiogenicCarbonReviewSources : privateWater ? validateWaterScarcityReviewSources : privateTox ? validateToxicityComparisonReviewSources : privateOzrad ? validateOzoneRadiationReviewSources : privateOzone ? validatePhotochemicalOzoneReviewSources : privateFossils ? validateFossilResourcesReviewSources : privateMinerals ? validateMineralResourcesReviewSources : privateAcid ? validateAcidEquivalentsReviewSources : privateLand ? validateLandRecoveryReviewSources : privateFootprint ? validateCircularFootprintReviewSources : privateLoadShift ? validateLoadShiftReviewSources : privateSubstitution ? validateSubstitutionRulesReviewSources
+  const qualify = privatePart4 ? validatePart4RereadReviewSources : privateParticulate ? validateParticulateComparisonReviewSources : privateEutro ? validateEutrophicationPathwaysReviewSources : privateBio ? validateBiogenicCarbonReviewSources : privateWater ? validateWaterScarcityReviewSources : privateTox ? validateToxicityComparisonReviewSources : privateOzrad ? validateOzoneRadiationReviewSources : privateOzone ? validatePhotochemicalOzoneReviewSources : privateFossils ? validateFossilResourcesReviewSources : privateMinerals ? validateMineralResourcesReviewSources : privateAcid ? validateAcidEquivalentsReviewSources : privateLand ? validateLandRecoveryReviewSources : privateFootprint ? validateCircularFootprintReviewSources : privateLoadShift ? validateLoadShiftReviewSources : privateSubstitution ? validateSubstitutionRulesReviewSources
     : privateService ? validateServiceConstraintsReviewSources : validateReadableBookCurrent;
-  if (privateService || privateSubstitution || privateLoadShift || privateFootprint || privateLand || privateAcid || privateMinerals || privateFossils || privateOzone || privateOzrad || privateTox || privateWater || privateBio || privateEutro || privateParticulate) assert.deepEqual((await qualify(root, catalog, readings, literature)).errors, []);
+  if (privateService || privateSubstitution || privateLoadShift || privateFootprint || privateLand || privateAcid || privateMinerals || privateFossils || privateOzone || privateOzrad || privateTox || privateWater || privateBio || privateEutro || privateParticulate || privatePart4) assert.deepEqual((await qualify(root, catalog, readings, literature)).errors, []);
   const currentChanges = copyedit.status === 'reviewed' ? copyedit.unit.changes : acceptance.units.flatMap(unit => unit.changes);
   const changed = currentChanges
     .find(row => row.kind === 'record' && row.key.startsWith('claims:') && row.from !== null);
@@ -226,6 +228,10 @@ test('the actual adopted source is independently qualified and a changed reviewe
     ? 'Reader copyedit successor differs from actual source'
     : 'stale predecessor, missing successor or mismatched result';
   await assert.rejects(qualify(root, catalog, readings, literature), error => {
+    if (privatePart4 || part4.status === 'reviewed') {
+      return error.message === 'Part IV continuous reread did not recover the independently observed raw 2ba0bfe2 state'
+        || error.message.startsWith('Part IV continuous reread lacks its exact candidate transition:');
+    }
     if (privateParticulate || particulate.status === 'reviewed') {
       return error.message === 'Particulate comparison did not recover the independently observed raw c0ffd968 state';
     }

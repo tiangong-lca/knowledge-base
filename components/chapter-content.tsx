@@ -1,3 +1,4 @@
+import { part4RereadCorrections, part4RereadHistoryControls, part4RereadOrdinaryId, part4RereadSource } from '@/scripts/reader-part4-reread.mjs';
 import { particulateComparisonHistoryControls, particulateComparisonOrdinaryId, particulateComparisonSource } from '@/scripts/reader-particulate-comparison.mjs';
 import { eutrophicationPathwaysHistoryControls, eutrophicationPathwaysSource } from '@/scripts/reader-eutrophication-pathways.mjs';
 import { biogenicCarbonHistoryControls, biogenicCarbonOrdinaryId, biogenicCarbonSource } from '@/scripts/reader-biogenic-carbon.mjs';
@@ -12,7 +13,7 @@ import { landRecoveryHistoryControls, landRecoveryOrdinaryId, landRecoverySource
 import { circularFootprintHistoryControls, circularFootprintOrdinaryId, circularFootprintSource } from '@/scripts/reader-circular-footprint.mjs';
 import { loadShiftHistoryControls, loadShiftOrdinaryId, loadShiftSource } from '@/scripts/reader-load-shift.mjs';
 import { substitutionRulesHistoryControls, substitutionRulesOrdinaryId, substitutionRulesSource } from '@/scripts/reader-substitution-rules.mjs';
-import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity, currentBiogenicCarbon, currentEutrophicationPathways, currentParticulateComparison } from '@/scripts/reader-current-expectations.mjs';
+import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity, currentBiogenicCarbon, currentEutrophicationPathways, currentParticulateComparison, currentPart4Reread } from '@/scripts/reader-current-expectations.mjs';
 import { flowBoundaryHistoryControls, flowBoundaryHistoryTargets, flowBoundaryOrdinaryTargets, flowBoundaryOrdinaryId } from '@/scripts/reader-flow-boundary.mjs';
 import { serviceConstraintsHistoryControls, serviceConstraintsOrdinaryId, serviceConstraintsSource } from '@/scripts/reader-service-constraints.mjs';
 import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
@@ -58,6 +59,7 @@ const histories = [
   { controls: biogenicCarbonHistoryControls(currentBiogenicCarbon), edition: biogenicCarbonSource, attribute: 'biogenic-carbon' },
   { controls: eutrophicationPathwaysHistoryControls(currentEutrophicationPathways), edition: eutrophicationPathwaysSource, attribute: 'eutrophication-pathways' },
   { controls: particulateComparisonHistoryControls(currentParticulateComparison), edition: particulateComparisonSource, attribute: 'particulate-comparison' },
+  { controls: part4RereadHistoryControls(currentPart4Reread), edition: part4RereadSource, attribute: 'part4-reread' },
 ];
 
 function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
@@ -71,7 +73,8 @@ function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
     || toxicityComparisonOrdinaryId(currentToxicityComparison, route, print, index)
     || waterScarcityOrdinaryId(currentWaterScarcity, route, print, index)
     || biogenicCarbonOrdinaryId(currentBiogenicCarbon, route, print, index)
-    || particulateComparisonOrdinaryId(currentParticulateComparison, route, print, index);
+    || particulateComparisonOrdinaryId(currentParticulateComparison, route, print, index)
+    || part4RereadOrdinaryId(currentPart4Reread, route, print, index);
 }
 
 // Leave versioned native fragments below the screen's sticky site header.
@@ -86,7 +89,8 @@ export function currentReaderOrdinaryAttributes(route: string, print: boolean, i
       || id === toxicityComparisonOrdinaryId(currentToxicityComparison, route, print, index)
       || id === waterScarcityOrdinaryId(currentWaterScarcity, route, print, index)
       || id === biogenicCarbonOrdinaryId(currentBiogenicCarbon, route, print, index)
-      || id === particulateComparisonOrdinaryId(currentParticulateComparison, route, print, index))
+      || id === particulateComparisonOrdinaryId(currentParticulateComparison, route, print, index)
+      || id === part4RereadOrdinaryId(currentPart4Reread, route, print, index))
     ? { id, style: scientificHistoryScroll }
     : { id };
 }
@@ -234,6 +238,11 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
           <p key={row.claimId} className="legacy-citation-context" data-ozone-radiation-correction={note.id} style={{ display: 'block' }}>
             <time dateTime={ozoneRadiationSource.date}>{ozoneRadiationSource.date}</time>{' 修订：'}{row.scope}{' '}
             <a href={citationSourceHref(ozoneRadiationSource.commit)}>查看前版源文件</a>
+          </p>)}
+        {currentPart4Reread && part4RereadCorrections.filter(row => row.chapter === page.url && row.claimId === note.id).map(row =>
+          <p key={row.claimId} className="legacy-citation-context" data-part4-reread-correction={note.id} style={{ display: 'block' }}>
+            <time dateTime={part4RereadSource.date}>{part4RereadSource.date}</time>{' 修订：'}{row.scope}{' '}
+            <a href={citationSourceHref(part4RereadSource.commit)}>查看前版源文件</a>
           </p>)}
       </li>)}</ol>
     </section>}

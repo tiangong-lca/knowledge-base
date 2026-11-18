@@ -13,7 +13,8 @@ import {
 } from './reader-current-edition.mjs';
 import { flowBoundaryOrdinaryDigest, groupHistoricalRanges, observeFlowBoundaryChanges, validateDatedHistoryOutput } from './reader-flow-boundary.mjs';
 import {
-  exactPublicJsonReceipt, mergeScientificFileAndRecordChanges, mergeScientificOutput, qualifyScientificHistory,
+  exactPublicJsonReceipt, mergeScientificFileAndRecordChanges, mergeScientificOutput,
+  projectScientificOrdinaryTargets, qualifyScientificHistory,
   restoreScientificRecords, sameScienceValue, scienceDigest, scienceText,
 } from './reader-scientific-delta.mjs';
 
@@ -475,15 +476,39 @@ export function observeBiogenicCarbonOrdinaryTargets(documents) {
     }])));
 }
 
-export function qualifyBiogenicCarbonHistory(documents, unit, actual) {
+const biogenicOverrideKeys = Object.freeze(new Set([
+  `/docs/book/climate-response-and-metrics#${chapterAnchorPrefix('/docs/book/climate-response-and-metrics')}-bio-127-ordinary-2`,
+  `/print#${printUnitAnchor('book-climate-equivalence')}-bio-127-ordinary-2`,
+]));
+const allowedSuccessorOverrideKeys = Object.freeze(new Set([
+  ...biogenicOverrideKeys,
+  `/docs/book/particulate-emissions-and-health#${chapterAnchorPrefix('/docs/book/particulate-emissions-and-health')}-particulate-131-ordinary-3`,
+  `/print#${printUnitAnchor('/docs/book/particulate-emissions-and-health')}-particulate-131-ordinary-3`,
+]));
+
+export function qualifyBiogenicCarbonHistory(documents, unit, actual, part4Reread = null) {
   if (!unit) return { prior: actual, errors: [] };
-  const targets = observeBiogenicCarbonOrdinaryTargets(documents);
+  let overrides = null;
+  if (part4Reread) {
+    const raw = part4Reread.history?.ordinaryOverrides;
+    if (!raw || typeof raw !== 'object' || Array.isArray(raw)
+        || Object.keys(raw).length !== allowedSuccessorOverrideKeys.size
+        || Object.keys(raw).some(key => !allowedSuccessorOverrideKeys.has(key)))
+      throw new Error('Biogenic carbon successor ordinaryOverrides violates the 4-key Part IV allowlist');
+    overrides = Object.fromEntries([...biogenicOverrideKeys].map(key => [key, raw[key]]));
+  }
+  const targets = projectScientificOrdinaryTargets(
+    overrides,
+    observeBiogenicCarbonOrdinaryTargets(documents),
+    'Biogenic carbon',
+    biogenicOverrideKeys,
+  );
   const prior = qualifyScientificHistory(unit.history, actual, targets, {
     label: 'Biogenic carbon', routes: biogenicCarbonRoutes, predecessorPin: addressPin,
   });
   const errors = validateDatedHistoryOutput(documents, {
     expected: biogenicCarbonHistoryControls(unit), source: biogenicCarbonSource, attribute: 'biogenic-carbon',
-    ordinaryPattern, label: 'Biogenic carbon', ordinaryTags: ['P', 'FIGURE'],
+    ordinaryPattern, label: 'Biogenic carbon', ordinaryTags: ['P', 'FIGURE'], ordinaryOverrides: overrides,
     ordinaryTargets: Object.fromEntries(Object.entries(unit.history.ordinaryTargets).map(([key, row]) => [key, row.sha256])),
   });
   if (!sameScienceValue(targets, unit.history.ordinaryTargets))

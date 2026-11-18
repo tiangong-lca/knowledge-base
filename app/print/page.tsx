@@ -7,7 +7,10 @@ import { currentReaderOrdinaryAttributes, ChapterContent, LegacyCitationAliases 
 import { NumberedHeading, NumberedTitle } from '@/components/numbered-heading';
 import { PrintButton } from '@/components/print-button';
 import { PublicationShell } from '@/components/publication-shell';
+import { citationSourceHref } from '@/scripts/reader-citations.mjs';
+import { currentPart4Reread } from '@/scripts/reader-current-expectations.mjs';
 import { bookTopicPresentation, getPresentationUnits, getUnitHeadingPlan, printReadingEntryAnchor, readerParts } from '@/scripts/reader-numbering.mjs';
+import { part4RereadSource } from '@/scripts/reader-part4-reread.mjs';
 import { printUnitAnchor } from '@/scripts/reader-book.mjs';
 
 export const metadata = { title: '书籍目录、连续阅读与打印' };
@@ -52,6 +55,10 @@ export default function Page() {
         <><h2 id={`print-part-${part.number}`} data-reader-part={part.number}><NumberedTitle number={part.label}>{part.title}</NumberedTitle></h2>
           <CopyeditHistoricalTitle path="/print" id={`print-part-${part.number}`} /></>
         <p className="print-part-introduction">{part.introduction}</p>
+        {currentPart4Reread && part.number === 4 && <details className="legacy-citation-context" data-part4-reread-part="4">
+          <summary><time dateTime={part4RereadSource.date}>{part4RereadSource.date}</time> 版第四部导言范围</summary>
+          <p>{'前版导言：“'}{currentPart4Reread.partIntroduction.from}{'” '}<a href={citationSourceHref(part4RereadSource.commit)} data-part4-reread-part-source="">查看该版源文件</a></p>
+        </details>}
         {units.filter(unit=>unit.part===part.number).map(article)}
       </section>)}
       <section className="print-part"><h2 data-reader-book-notes-heading="body">{bookTopicPresentation.title}</h2>{topics.map(article)}</section>

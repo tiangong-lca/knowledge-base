@@ -367,8 +367,39 @@ across B17 §§1, 3, and 4 (bringing B17 from 37 to 45 claims and the catalog fr
 40 case JSON files byte-for-byte. Separate unconditional-PASS two-round source,
 zero-context B17 reader, adversarial publication-engineering and actual-output
 acceptances (`0c04aa80...`) and normal source/root delivery are tracked on
-Issue131. Part IV continuous reread (`B14`–`B19`, including `index.mdx:18` and
-frozen-claim copyedit unification) and Programme9 requirements remain active.
+Issue131. Unit131 is now fully delivered: source PR132/Main
+`2ba0bfe2f39d28bfa42e61f5e2b70585770bcb73`, qualified 468-file hosted output on
+`https://prism.tiangong.earth` (`3834e5e4...`, including unmodified
+`validateReaderOutput` against archived Main source and live B17 print
+verification), exact root2436/PR2437/Main
+`2e2353ee37ec5b485a338a63944c063261657383`, and ordinary final completion and
+source-handoff (`1/1`) receipts.
+
+[Issue133](https://github.com/tiangong-lca/knowledge-base/issues/133) completes
+the Part IV whole-part continuous reread across `F02` (`content/docs/book/index.mdx:18`),
+the Part IV introduction (`config/reader-numbering.json:23`), all six Part IV
+chapters (`B14`–`B19`), companion web articles `climate-response-and-metrics` and
+`emission-time-and-assessment`, and calculation appendices `X03` and `X04` (`247`
+unique note surfaces), recorded in the
+[Part IV reread protocol](editorial/2026-11-18-part4-continuous-reread.md)
+(committed as `c68216c` / `91a63c3` before manuscript changes). Bounded updates
+across `8` managed files and `61` claims (`19` prose synchronizations, `49`
+scopes replacing all `46` remaining `#90` mechanical placeholders across `B17`
+and `X04`, `2` `B14` caveat cleanups, and `2` `B17` synthesis premise bindings)
+align `F02` and the Part IV introduction with the delivered four-input scope,
+remove dual-view chapter/section collisions across `B15`, `B17`, and `B18`,
+distinguish `UNEP/SETAC` (2016) from `UNEP GLAM` (`Fantke et al. 2026` Method),
+expand first-appearance acronyms (`DALY`, `YLL`, `CF`, `XF`, `FF`, `GEMM`,
+`AWARE`, `EWR`, `AMD`), anchor the four Australian `GLAM` primary `PM₂.₅`
+factors in `B17:26` and `X04:28`, and publish four inline `display:block`
+correction notices (`Gronlund 2015` year, Chapter `15` climate attribution, and
+`B17` closing cut-point & five-axis checklist synchronization) while conserving
+`100%` of all `1,008` claim IDs, sequence, evidence links, `numericFacts`, and
+`40` case JSON files. Separate unconditional-PASS two-round source (`07e973fa`),
+zero-context whole-Part IV reader (`ca1ba745`), adversarial publication-engineering
+(`bab916a2`) and actual-output acceptances (`4cd6d951...`) and normal source/root
+delivery are tracked on Issue133. Part V comparative units (`B20`–`B24`) and all
+eight global Programme9 criteria remain active.
 
 Rule adoption101 itself is fully delivered: PR103/Main10dc686 and
 root2381/PR2382/Main90bcaa574, with complete ordinary source/root handoff receipts.
