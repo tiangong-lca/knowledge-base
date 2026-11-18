@@ -16,13 +16,52 @@ checkPaths:
   - "content/**"
   - "scripts/**"
   - "releases/**"
-lastReviewedAt: 2026-11-18
-lastReviewedCommit: 8d5f1037a2ab30b29c197fe89a422a5c69f81a93
+lastReviewedAt: 2026-11-19
+lastReviewedCommit: d55b896bd7f1e03ca2495fbf34101fc5d87baee7
 ---
 
 # Publication contract
 
 ## Scoped scientific successors
+
+The Part V closing cost-and-sustainability unit #143 compares Conventional `LCC`
+(`1933` US `GAO` / corporate `TCO`), `SETAC` Environmental `LCC` (`Swarr et al.
+2011`; `Hunkeler et al. 2008` via `Heijungs, Settanni and Guinée 2013`), Societal
+`LCC` (`UNEP/SETAC 2011 Fig. 5`), `LCIA` monetary damage valuation (`LIME2` /
+`ISO 14008:2019`), `ReCiPe 2016 USD2013` resource surplus cost, `LCST` & `LCSD`
+(`Finkbeiner et al. 2010`), compensatory vs non-compensatory `MCDA` (`UNEP GLAM
+Phase 3`: `ELECTRE`/`PROMETHEE`/`MAUT`/`TOPSIS`/`SMAA`), adjacent site and
+territorial tools (`CML 2001 Part 3 Appendix B Table B1`, `ILCD 2010`, `EU
+2021/2279`, `Suh 2004`), single-issue vs multi-indicator `PCA` (`Steinmann et
+al. 2016`), financial rebound (`Hellweg and Milà i Canals 2014`), and
+Planetary-Boundary `AESA` / strong sustainability (`GLAM Phase 3 Table 3`;
+`O’Neill and Creutzig 2026`) across `B24` (`9` -> `17` claims plus two 6-column
+comparison tables, bringing the public catalog to `1,044` claims) while
+conserving `100%` of `1,029` untouched prior claims, all `6` shared
+`ev-sustainability-*` records, and all `40` case downloads against
+`8d5f1037a2ab30b29c197fe89a422a5c69f81a93`. It binds `21` topic-focused
+single-artifact `ev-lcc143-*` records (`1-to-1` with `21` `psg-lcc143-*`
+passages across `12` binary PDF carriers) and `82` `BigInt`-verified
+`numericFacts` to establish value-added price cancellation (`50,000 €` vs
+`56,000 €`, `13.5 + 10 = 23.5 €`, negative cradle-to-gate `LCC`); prove 4-year
+workwear split incentives, `116 €` transfer cancellation, and `3%` vs `10%` `NPV`
+rank reversal (`r* ≈ 6.49%`, `129.71 €`) alongside German `CNG`/diesel bus
+(`+11.26%` investment vs `-4.03%` `NPV`); separate five non-commensurable
+monetary quantities and prove `40 kg CO₂` (`2.00 + 6.00 = 8.00 €` vs `4.00 €`)
+fiscal and cross-pillar double counting; contrast lubricant-vs-R&D cut-off
+asymmetry and `8 €` rebound; demarcate `LCA` from site `RA`/`EIA` and
+territorial `MFA`/`SFA`/`IOA`; quantify `15.7%` unseen toxicity ranking variance
+behind 4 resource footprints (`84.3%` vs `92.3%`); prove `LCSD` `0–1,000` `IIA`
+rank reversal (`722.22 > 583.33` -> `800.00 < 816.67` under strictly dominated
+bid `丁`) vs `ELECTRE` `50 h` veto blocking forced-labor bid `戊`; and show how
+expenditure-share (`0.833 vs 1.333`) vs equal-service (`1.111 vs 0.889`)
+downscaling flips `AESA` compliance. Uninspected full `Hunkeler 2008` / `Swarr
+2011` 98-page booklet and paid `ISO 14008/14007/15686-5/14067/14046` texts
+remain explicitly bounded in
+`gap-lcc143-hunkeler2008-swarr-booklet-and-iso-valuation-texts`, and `Steinmann
+2016`, `Hellweg 2014`, and `O’Neill 2026` use neutral `passages-inspected` /
+`access-context-unresolved` metadata without raw-text redistribution or
+whole-book completion claims.
 
 The Part V social-comparison unit #139 compares `UNEP 2020 S-LCA / SO-LCA` (with
 `2021 Methodological Sheets`), EU `(EU) 2021/2279 Annex III OEF` (with `OEFSR
