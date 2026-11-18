@@ -1,3 +1,4 @@
+import { selectCostSustainability, prepareCostSustainabilitySource, effectiveCostSustainability, verifyCostSustainabilityReceipts } from './reader-cost-sustainability.mjs';
 import { selectSocialComparison, prepareSocialComparisonSource, effectiveSocialComparison, verifySocialComparisonReceipts } from './reader-social-comparison.mjs';
 import { selectLocalizationComparison, prepareLocalizationComparisonSource, effectiveLocalizationComparison, verifyLocalizationComparisonReceipts } from './reader-localization-comparison.mjs';
 import { selectWeightingValuation, prepareWeightingValuationSource, effectiveWeightingValuation, verifyWeightingValuationReceipts } from './reader-weighting-valuation.mjs';
@@ -58,6 +59,9 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const serviceConstraints = selectServiceConstraints(serviceConfig, undefined, preview === 'service');
   const substitutionConfig = await readConfig('reader-substitution-rules.json');
   const substitutionRules = selectSubstitutionRules(substitutionConfig, undefined, preview === 'substitution');
+  const costConfig = await readConfig('reader-cost-sustainability.json');
+  const costSustainability = selectCostSustainability(costConfig, undefined, preview === 'cost-sustainability');
+  if (preview === 'cost-sustainability' && costConfig.status !== 'preview') throw new Error('Cost and sustainability review requires a private preview state');
   const socialConfig = await readConfig('reader-social-comparison.json');
   const socialComparison = selectSocialComparison(socialConfig, undefined, preview === 'social-comparison');
   if (preview === 'social-comparison' && socialConfig.status !== 'preview') throw new Error('Social comparison review requires a private preview state');
@@ -121,6 +125,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (loadShift && !substitutionRules) throw new Error('Load shift requires the accepted #105 generation');
   if (circularFootprint && !loadShift) throw new Error('Circular footprint requires the accepted #107 generation');
   if (landRecovery && !circularFootprint) throw new Error('Land recovery requires the accepted #109 generation');
+  if (costSustainability && !socialComparison) throw new Error('Cost and sustainability requires the accepted #139 generation');
   if (socialComparison && !localizationComparison) throw new Error('Social comparison requires the accepted #137 generation');
   if (localizationComparison && !weightingValuation) throw new Error('Localization comparison requires the accepted #135 generation');
   if (weightingValuation && !part4Reread) throw new Error('Weighting and valuation requires the accepted #133 generation');
@@ -137,7 +142,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (acidEquivalents && !landRecovery) throw new Error('Acid equivalents requires the accepted #111 generation');
   for (const [path, bytes] of await readLoadShiftCaseFiles(root, loadShift)) files.set(path, bytes);
   for (const [path, bytes] of await readServiceConstraintsFiles(root, serviceConstraints)) files.set(path, bytes);
-  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison, waterScarcity, biogenicCarbon, eutrophicationPathways, particulateComparison, part4Reread, weightingValuation, localizationComparison, socialComparison].filter(Boolean)];
+  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison, waterScarcity, biogenicCarbon, eutrophicationPathways, particulateComparison, part4Reread, weightingValuation, localizationComparison, socialComparison, costSustainability].filter(Boolean)];
   const realRoot = await realpath(root);
   const reviewFiles = new Set((reviewUnits ?? []).flatMap(unit =>
     (unit.reviewEvidence ?? []).flatMap(row => [row.reportFile, row.artifactFile])));
@@ -152,8 +157,11 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const input = { catalog, readings, literature, files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
-  const social = socialComparison && prepareSocialComparisonSource(socialComparison, input, actual, structure);
-  const socialInput = social ? { ...social.previousRecords, files: social.files } : input;
+  const cost = costSustainability && prepareCostSustainabilitySource(costSustainability, input, actual, structure);
+  const costInput = cost ? { ...cost.previousRecords, files: cost.files } : input;
+  const social = socialComparison && prepareSocialComparisonSource(socialComparison, costInput,
+    cost?.previous ?? actual, cost?.structure ?? structure);
+  const socialInput = social ? { ...social.previousRecords, files: social.files } : costInput;
   const localization = localizationComparison && prepareLocalizationComparisonSource(localizationComparison, socialInput,
     social?.previous ?? actual, social?.structure ?? structure);
   const localizationInput = localization ? { ...localization.previousRecords, files: localization.files } : socialInput;
@@ -301,8 +309,13 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   }
   if (socialComparison && preview !== 'social-comparison') {
     const { readerPublicDownloads } = await import('./reader-current-output.mjs');
-    if (!verifySocialComparisonReceipts(socialComparison, artifacts, readerPublicDownloads(catalog, literature, readings)))
+    if (!verifySocialComparisonReceipts(socialComparison, artifacts, readerPublicDownloads(costInput.catalog, costInput.literature, costInput.readings)))
       throw new Error('Social comparison lacks exact independent source, reader, and output evidence');
+  }
+  if (costSustainability && preview !== 'cost-sustainability') {
+    const { readerPublicDownloads } = await import('./reader-current-output.mjs');
+    if (!verifyCostSustainabilityReceipts(costSustainability, artifacts, readerPublicDownloads(catalog, literature, readings)))
+      throw new Error('Cost and sustainability lacks exact independent source, reader, and output evidence');
   }
   const service = serviceConstraints && prepareServiceConstraintsSource(serviceConstraints, substitution?.previous ?? actual,
     substitution?.structure ?? structure, { ...previousRecords, files: substitutionInput.files });
@@ -345,7 +358,8 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const qualifiedPart4 = effectivePart4Reread(qualifiedParticulate, part4Reread, part4?.affectedClaimIds);
   const qualifiedWeighting = effectiveWeightingValuation(qualifiedPart4, weightingValuation, weighting?.affectedClaimIds);
   const qualifiedLocalization = effectiveLocalizationComparison(qualifiedWeighting, localizationComparison, localization?.affectedClaimIds);
-  return effectiveSocialComparison(qualifiedLocalization, socialComparison, social?.affectedClaimIds);
+  const qualifiedSocial = effectiveSocialComparison(qualifiedLocalization, socialComparison, social?.affectedClaimIds);
+  return effectiveCostSustainability(qualifiedSocial, costSustainability, cost?.affectedClaimIds);
 }
 
 export function validateReadableBookCurrent(root, catalog, readings, literature) {
@@ -463,4 +477,10 @@ export function validateSocialComparisonReviewSources(root, catalog, readings, l
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Social comparison review requires the explicit private preview');
   return qualifyCurrentReaderSources(root, catalog, readings, literature, 'social-comparison');
+}
+
+export function validateCostSustainabilityReviewSources(root, catalog, readings, literature) {
+  if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
+    throw new Error('Cost and sustainability review requires the explicit private preview');
+  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'cost-sustainability');
 }

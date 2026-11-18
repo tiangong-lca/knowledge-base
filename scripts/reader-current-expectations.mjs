@@ -1,3 +1,5 @@
+import costConfig from '../config/reader-cost-sustainability.json' with { type: 'json' };
+import { selectCostSustainability, effectiveCostSustainability } from './reader-cost-sustainability.mjs';
 import socialConfig from '../config/reader-social-comparison.json' with { type: 'json' };
 import { selectSocialComparison, effectiveSocialComparison } from './reader-social-comparison.mjs';
 import localizationConfig from '../config/reader-localization-comparison.json' with { type: 'json' };
@@ -70,8 +72,9 @@ export const currentPart4Reread = selectPart4Reread(part4Config, undefined, prev
 export const currentWeightingValuation = selectWeightingValuation(weightingConfig, undefined, preview);
 export const currentLocalizationComparison = selectLocalizationComparison(localizationConfig, undefined, preview);
 export const currentSocialComparison = selectSocialComparison(socialConfig, undefined, preview);
+export const currentCostSustainability = selectCostSustainability(costConfig, undefined, preview);
 export const isReadableBookReviewPreview = oldPreview
-  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview' || acidConfig.status === 'preview' || mineralConfig.status === 'preview' || fossilConfig.status === 'preview' || ozoneConfig.status === 'preview' || ozradConfig.status === 'preview' || toxConfig.status === 'preview' || waterConfig.status === 'preview' || biogenicConfig.status === 'preview' || eutroConfig.status === 'preview' || particulateConfig.status === 'preview' || part4Config.status === 'preview' || weightingConfig.status === 'preview' || localizationConfig.status === 'preview' || socialConfig.status === 'preview');
+  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview' || acidConfig.status === 'preview' || mineralConfig.status === 'preview' || fossilConfig.status === 'preview' || ozoneConfig.status === 'preview' || ozradConfig.status === 'preview' || toxConfig.status === 'preview' || waterConfig.status === 'preview' || biogenicConfig.status === 'preview' || eutroConfig.status === 'preview' || particulateConfig.status === 'preview' || part4Config.status === 'preview' || weightingConfig.status === 'preview' || localizationConfig.status === 'preview' || socialConfig.status === 'preview' || costConfig.status === 'preview');
 const previousPlan = readableBookReviewPlan(oldPreview
   ? acceptance.units
   : pinnedReadableBookUnits(acceptance, readableBookBaselineDigest, readableBookAcceptancePins));
@@ -95,7 +98,8 @@ const acceptedParticulate = effectiveParticulateComparison(acceptedEutro, curren
 const acceptedPart4 = effectivePart4Reread(acceptedParticulate, currentPart4Reread);
 const acceptedWeighting = effectiveWeightingValuation(acceptedPart4, currentWeightingValuation);
 const acceptedLocalization = effectiveLocalizationComparison(acceptedWeighting, currentLocalizationComparison);
-export const currentBookPlan = effectiveSocialComparison(acceptedLocalization, currentSocialComparison);
+const acceptedSocial = effectiveSocialComparison(acceptedLocalization, currentSocialComparison);
+export const currentBookPlan = effectiveCostSustainability(acceptedSocial, currentCostSustainability);
 
 export function currentBookRecordMatches(kind, previous, current, projection) {
   if (projection !== undefined) return matchesAcceptedRecord(currentBookPlan, kind, previous, current, projection);

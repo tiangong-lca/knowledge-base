@@ -1,6 +1,6 @@
 ---
-lastReviewedAt: 2026-11-18
-lastReviewedCommit: 4e094f7e89d5ba563af0ded8a47e15d62260045f
+lastReviewedAt: 2026-11-19
+lastReviewedCommit: 3f4a5cc0c3346469f2d4450f50abfbd4188d5106
 title: Approved LCA book execution and wave ledger
 docType: reference
 scope: repo
@@ -513,8 +513,52 @@ all `40` case JSON files byte-for-byte. Separate unconditional-PASS
 primary-source (`40203311`), zero-context `B23` reader (`1ce27b6e`), adversarial
 publication-engineering (`b7f75f11`) and actual-output acceptances (`431625f3...`,
 capture `47bff7ca...`) and normal source/root delivery are tracked on Issue139.
-Remaining Part V unit `B24`, the Part V whole-part reread, and all eight global
-Programme9 criteria remain active.
+
+Unit139 and companion static-export build optimization
+[Issue141](https://github.com/tiangong-lca/knowledge-base/issues/141) (`57.0 s` ->
+`6.7 s` static page generation, `8.5x` faster while preserving identical normalized
+HTML digests, compiled CSS `be180e5d...`, JS chunks, `catalogSha256`, and `B23`
+unit/capture pins) are now fully delivered: source PR140/Main
+`1a9301c2153867cf1b6cdefadc648346bd78b739` and PR142/Main
+`8d5f1037a2ab30b29c197fe89a422a5c69f81a93`, qualified 468-file hosted output on
+`https://prism.tiangong.earth` (`d006f5638628b724002ab6b03e0149a14671accd769fe675a9d6274800e15d76`,
+including unmodified `validateReaderOutput` against archived Main source and live
+Chromium/`@media print` verification), exact dual-source root2462/PR2463/Main
+`a6c6d54a745dd993a79505978636fdb7a3bfc0a8`, and ordinary final completion and
+source-handoff (`2/2`) receipts.
+
+[Issue143](https://github.com/tiangong-lca/knowledge-base/issues/143) delivers the
+Part V closing comparative unit on `B24` (`《生命周期成本与综合评价》`, `9` -> `17`
+claims plus two 6-column responsive Markdown comparison tables across §§1 and 3,
+bringing the public catalog from `1,036` to `1,044` claims) from qualified Main
+`8d5f1037a2ab30b29c197fe89a422a5c69f81a93`, recorded in the
+[cost-and-sustainability protocol](editorial/2026-11-18-cost-and-sustainability.md)
+(committed as `9300084` before manuscript changes). Primary-source verification
+covers `12` SHA-256-verified binary PDF carriers (`21` topic-focused
+`ev-lcc143-*` / `psg-lcc143-*` `1-to-1` pairs, plus untouched predecessor
+`src-book-finkbeiner-2010-lcsa-framework` and `src-book-unep-2020-slca-guidelines`):
+`Swarr et al. 2011` (`8158fab1...`, `3` pp.), `UNEP/SETAC 2011 Towards LCSA`
+(`10c4d1d2...`, `86` pp.), `Heijungs, Settanni & Guinée 2013` (`7c86b8c1...`,
+`13` pp.), `Finkbeiner et al. 2010` (`2ee11075...`, `14` pp., unit-isolated
+`§§3–4`), `UNEP GLAM Phase 3 Scoping` (`6e9d7c23...`, `236` pp.), `CML 2001
+Part 3` (`b77c333e...`, `§1.2.3.1`, `§4.8`, `Appendix B Table B1`), `ILCD 2010`
+(`7de4b912...`, `§§5.2.1–5.2.2, 6.4.3–6.4.4`), `EU 2021/2279` (`42445138...`,
+`285` pp.), `Suh 2004` (`ddff0352...`, `220` pp.), `Steinmann et al. 2016`
+(`2ce032ac...`, neutral `passages-inspected`), `Hellweg & Milà i Canals 2014`
+(`f90e8b10...`, neutral `passages-inspected`), and `O’Neill & Creutzig 2026`
+(`d37f21fe...`, neutral `passages-inspected`). Eight new `cl-lcc143-*` claims
+bind `82` `BigInt` rational `numericFacts` (including exact `6.48%`/`6.49%` NPV
+crossover bracketing), paired with `7` bounded `B24` prior-claim synchronizations
+(`7` inline `display:block` correction notices) and `2` `B24`-exclusive evidence
+locator normalizations while conserving `100%` of `1,029` untouched prior claims,
+all `6` shared `ev-sustainability-*` records, and all `40` case JSON files
+byte-for-byte. Separate unconditional-PASS primary-source (`1476d543`),
+zero-context `B24` reader (`9d595355`), adversarial publication-engineering
+(`fda0d388`) and actual-output acceptances (`761971a8...`, capture `f9416064...`)
+are bound on branch `codex/cost-sustainability-143`, with clean production build,
+source PR/CI/merge, live 468-file EdgeOne qualification and root integration
+tracked on Issue143. The Part V whole-part continuous reread (`B20`–`B24`) and
+all eight global Programme9 criteria remain active.
 
 Rule adoption101 itself is fully delivered: PR103/Main10dc686 and
 root2381/PR2382/Main90bcaa574, with complete ordinary source/root handoff receipts.

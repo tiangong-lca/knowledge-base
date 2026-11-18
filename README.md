@@ -14,11 +14,47 @@ checkPaths:
   - "package.json"
   - "app/**"
   - "scripts/**"
-lastReviewedAt: 2026-11-18
-lastReviewedCommit: 1a9301c2153867cf1b6cdefadc648346bd78b739
+lastReviewedAt: 2026-11-19
+lastReviewedCommit: 3f4a5cc0c3346469f2d4450f50abfbd4188d5106
 ---
 
 # LCA Living Knowledge Base and Review
+
+[Part V closing LCC & LCSA comparison, actor split incentives, five monetary quantities, MCDA IIA/outranking reversals, adjacent tool boundaries & Planetary-Boundary AESA downscaling #143](https://github.com/tiangong-lca/knowledge-base/issues/143)
+extends Part V closing chapter `B24` (`《生命周期成本与综合评价》`, `9` -> `17`
+claims plus two 6-column responsive Markdown comparison tables across §§1 and 3,
+bringing the public catalog from `1,036` to `1,044` claims) while conserving
+`100%` of `1,029` untouched prior claims, all `6` shared `ev-sustainability-*`
+evidence records, both `src-book-finkbeiner-2010-lcsa-framework` /
+`src-book-unep-2020-slca-guidelines`, and all `40` case download files
+byte-for-byte against `8d5f1037a2ab30b29c197fe89a422a5c69f81a93`. Its
+[comparative record](_docs/editorial/2026-11-18-cost-and-sustainability.md)
+binds `21` topic-focused single-source/single-artifact `ev-lcc143-*` records
+(`1-to-1` with `21` `psg-lcc143-*` passages across `12` SHA-256-verified binary
+PDF carriers), `82` `BigInt`-verified `nf-lcc143-*` `numericFacts`, `2`
+`B24`-exclusive evidence locator normalizations, and `7` inline `display:block`
+public correction notices on synchronized `B24` prior claims: Conventional (`1933`
+US GAO / corporate `TCO`), `SETAC` Environmental (`Swarr et al. 2011`; `Heijungs,
+Settanni & Guinée 2013` value-added cancellation `50,000 €` vs `56,000 €` car
+overcount, `13.5 + 10 = 23.5 €` chair `l = -v_use`, negative cradle-to-gate `LCC`),
+and Societal `LCC` (`UNEP/SETAC 2011 Fig. 5`); 4-year workwear manufacturer vs
+buyer split incentive (`44 > 36 €` vs `132.00 < 140.00 €`), `116 €` internal
+transfer cancellation (`212 €` -> `96 €`), and `3%` (`130.87 < 134.97 €`) vs `10%`
+(`124.95 < 128.68 €`) `NPV` rank reversal (`r* ≈ 6.49%`, `129.71 €`) alongside
+German `CNG`/diesel bus (`+11.26%` investment vs `-4.03%` `NPV`); five
+non-commensurable monetary quantities across the book and `40 kg CO₂` (`2.00 €`
+tax + `6.00 €` shadow-cost = `8.00 €` vs `4.00 €` residual) fiscal & cross-pillar
+double counting; union boundary, lubricant-vs-R&D cut-off asymmetry & `8 €`
+rebound; demarcating `LCA` from site `RA`/`EIA` (`CML 2001 Appendix B Table B1`,
+`ILCD 2010`, `EU 2021/2279`) and territorial `MFA`/`SFA`/`IOA` (`Suh 2004`:
+`Quesnay 1758` -> `Leontief 1936` -> `Ayres & Kneese 1969`; `GLAM Phase 3` `25`/`100`
+yr dissipation); `Steinmann et al. 2016` `PCA` across `976` products × `135`
+indicators (`84.3%` 4 resource footprints vs `92.3%` 6 mechanistic indicators,
+`15.7%` unseen toxicity variance); `LCSD` `0–1,000` min-max `IIA` rank reversal
+(`722.22 > 583.33` -> `800.00 < 816.67` under strictly dominated bid `丁`) vs
+`ELECTRE` `50 h` outranking veto blocking forced-labor bid `戊` (`666.67`); and
+Planetary-Boundary `AESA` (`GLAM Table 3`; `O’Neill & Creutzig 2026` Doughnut)
+expenditure-share (`0.833 vs 1.333`) vs equal-service (`1.111 vs 0.889`) flip.
 
 [Part V cross-system social LCA comparison, reporting references, satellite linearity, activity-variable paradoxes, risk scales & occupational health #139](https://github.com/tiangong-lca/knowledge-base/issues/139)
 extends Part V `B23` (`《社会表现与影响》`, `9` -> `17` claims plus two 6-column

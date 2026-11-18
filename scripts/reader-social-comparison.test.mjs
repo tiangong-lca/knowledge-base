@@ -3,6 +3,8 @@ import fs from 'node:fs';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
+import cost from '../config/reader-cost-sustainability.json' with { type: 'json' };
+import { restoreCostSustainabilityTestFiles } from './reader-cost-sustainability.mjs';
 import config from '../config/reader-social-comparison.json' with { type: 'json' };
 import capture from '../config/reader-social-comparison-capture.json' with { type: 'json' };
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
@@ -11,7 +13,7 @@ import service from '../config/reader-service-constraints.json' with { type: 'js
 import catalog from '../knowledge/catalog.json' with { type: 'json' };
 import readings from '../knowledge/research/readings.json' with { type: 'json' };
 import literature from '../knowledge/research/literature-map.json' with { type: 'json' };
-import { testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
+import { previousScientificTestRecords, testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
 import { chapterAnchorPrefix, printUnitAnchor } from './reader-book.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
@@ -34,24 +36,25 @@ import {
 } from './reader-social-comparison.mjs';
 
 test('Social comparison enforces exact 1036 claims, 14 single-artifact evidence records, 90 BigInt facts, prose bindings and zero hygiene leaks', () => {
-  assert.equal(catalog.claims.length, 1036);
-  assert.equal(catalog.claims.filter(c => c.id.startsWith('cl-soc139-')).length, 8);
-  assert.equal(catalog.evidence.filter(e => e.id.startsWith('ev-soc139-')).length, 14);
+  const prev139 = previousScientificTestRecords({ catalog, readings, literature }, cost.unit);
+  assert.equal(prev139.catalog.claims.length, 1036);
+  assert.equal(prev139.catalog.claims.filter(c => c.id.startsWith('cl-soc139-')).length, 8);
+  assert.equal(prev139.catalog.evidence.filter(e => e.id.startsWith('ev-soc139-')).length, 14);
   assert.equal(
-    catalog.evidence
+    prev139.catalog.evidence
       .filter(e => e.id.startsWith('ev-soc139-'))
       .reduce((acc, e) => acc + (e.numericFacts?.length ?? 0), 0),
     90,
   );
   assert.deepEqual(catalog.claims.filter(c => c.scope.includes('具名方法与证据范围')), []);
 
-  validateSocialComparisonFactors(catalog, readings);
+  validateSocialComparisonFactors(prev139.catalog, prev139.readings);
 
   const readerBookTs = fs.readFileSync(new URL('../lib/reader-book.ts', import.meta.url), 'utf8');
   assert(readerBookTs.includes('...currentSocialComparison?.routes ?? []'));
   assert(readerBookTs.includes('currentSocialComparison?.routes.includes(target.route)'));
 
-  const extraFactCat = structuredClone(catalog);
+  const extraFactCat = structuredClone(prev139.catalog);
   extraFactCat.evidence.find(e => e.id === 'ev-soc139-cml2001-part3-casualties-history').numericFacts.push({
     id: 'nf-soc139-forged',
     value: '1.0',
@@ -60,50 +63,50 @@ test('Social comparison enforces exact 1036 claims, 14 single-artifact evidence 
     subject: 'forged',
     basis: 'forged',
   });
-  assert.throws(() => validateSocialComparisonFactors(extraFactCat, readings), /numericFacts count mismatch/);
+  assert.throws(() => validateSocialComparisonFactors(extraFactCat, prev139.readings), /numericFacts count mismatch/);
 
-  const singularFactCat = structuredClone(catalog);
+  const singularFactCat = structuredClone(prev139.catalog);
   singularFactCat.evidence.find(e => e.id === 'ev-soc139-ilcd2010-workplace-boundary-separation').numericFact = {};
-  assert.throws(() => validateSocialComparisonFactors(singularFactCat, readings), /evidence\/carrier binding failed/);
+  assert.throws(() => validateSocialComparisonFactors(singularFactCat, prev139.readings), /evidence\/carrier binding failed/);
 
-  const mutConceptCat = structuredClone(catalog);
+  const mutConceptCat = structuredClone(prev139.catalog);
   mutConceptCat.claims.find(c => c.id === 'cl-soc139-portfolio-reference-and-comparative-assertions').conceptIds = ['cn-social-assessment'];
-  assert.throws(() => validateSocialComparisonFactors(mutConceptCat, readings), /claim structure invalid/);
+  assert.throws(() => validateSocialComparisonFactors(mutConceptCat, prev139.readings), /claim structure invalid/);
 
-  const mutValueCat = structuredClone(catalog);
+  const mutValueCat = structuredClone(prev139.catalog);
   mutValueCat.evidence.find(e => e.id === 'ev-soc139-glam-work-env-2024-workbook').numericFacts[0].value = '421';
-  assert.throws(() => validateSocialComparisonFactors(mutValueCat, readings), /malformed or unexpected numericFact/);
+  assert.throws(() => validateSocialComparisonFactors(mutValueCat, prev139.readings), /malformed or unexpected numericFact/);
 
-  const mutProseRatioCat = structuredClone(catalog);
+  const mutProseRatioCat = structuredClone(prev139.catalog);
   const cRev = mutProseRatioCat.claims.find(c => c.id === 'cl-soc139-ordinal-vs-exponential-scale-reversal');
   cRev.text = cRev.text.replace('15.77 倍', '15.78 倍');
-  assert.throws(() => validateSocialComparisonFactors(mutProseRatioCat, readings), /prose binding missing/);
+  assert.throws(() => validateSocialComparisonFactors(mutProseRatioCat, prev139.readings), /prose binding missing/);
 
-  const mutWageRatioCat = structuredClone(catalog);
+  const mutWageRatioCat = structuredClone(prev139.catalog);
   const cWage = mutWageRatioCat.claims.find(c => c.id === 'cl-soc139-wage-price-and-automation-paradoxes');
   cWage.text = cWage.text.replace('28.76 倍', '28.77 倍');
-  assert.throws(() => validateSocialComparisonFactors(mutWageRatioCat, readings), /prose binding missing/);
+  assert.throws(() => validateSocialComparisonFactors(mutWageRatioCat, prev139.readings), /prose binding missing/);
 
-  const mutCaveatCat = structuredClone(catalog);
+  const mutCaveatCat = structuredClone(prev139.catalog);
   const cPort = mutCaveatCat.claims.find(c => c.id === 'cl-soc139-portfolio-reference-and-comparative-assertions');
   cPort.caveats[1] = cPort.caveats[1].replace('0.4968', '0.4969');
-  assert.throws(() => validateSocialComparisonFactors(mutCaveatCat, readings), /prose binding missing/);
+  assert.throws(() => validateSocialComparisonFactors(mutCaveatCat, prev139.readings), /prose binding missing/);
 
-  const leakCat = structuredClone(catalog);
+  const leakCat = structuredClone(prev139.catalog);
   leakCat.claims.find(c => c.id === 'cl-soc139-cross-pillar-overlap-audit').caveats[0] += ' 本仓库测试';
-  assert.throws(() => validateSocialComparisonFactors(leakCat, readings), /hygiene check failed/);
+  assert.throws(() => validateSocialComparisonFactors(leakCat, prev139.readings), /hygiene check failed/);
 
-  const leakEvCat = structuredClone(catalog);
+  const leakEvCat = structuredClone(prev139.catalog);
   leakEvCat.evidence.find(e => e.id === 'ev-soc139-psilca-v3-architecture-and-scales').paraphrase += ' pdfIndices=0';
-  assert.throws(() => validateSocialComparisonFactors(leakEvCat, readings), /hygiene check failed/);
+  assert.throws(() => validateSocialComparisonFactors(leakEvCat, prev139.readings), /hygiene check failed/);
 
-  const leakSrcCat = structuredClone(catalog);
+  const leakSrcCat = structuredClone(prev139.catalog);
   leakSrcCat.sources.find(s => s.id === 'src-soc139-psilca-v3-doc').preservation += ' 公开仓库';
-  assert.throws(() => validateSocialComparisonFactors(leakSrcCat, readings), /hygiene check failed/);
+  assert.throws(() => validateSocialComparisonFactors(leakSrcCat, prev139.readings), /hygiene check failed/);
 
-  const leakReadings = structuredClone(readings);
+  const leakReadings = structuredClone(prev139.readings);
   leakReadings.readings.find(r => r.id === 'rd-soc139-psilca-v3-doc').passages[0].limits[0] += ' 零基索引';
-  assert.throws(() => validateSocialComparisonFactors(catalog, leakReadings), /hygiene check failed/);
+  assert.throws(() => validateSocialComparisonFactors(prev139.catalog, leakReadings), /hygiene check failed/);
 });
 
 test('Social comparison ordinary IDs and all 7 print-visible correction notices fail closed on tampering', () => {
@@ -167,7 +170,9 @@ test('Social comparison source plan recovers exact b1f96c03 predecessor and reje
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
-  const input = { catalog, readings, literature, files };
+  restoreCostSustainabilityTestFiles(files, cost.unit);
+  const prev139Rec = previousScientificTestRecords({ catalog, readings, literature }, cost.unit);
+  const input = { ...prev139Rec, files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
   const qualify = (unit, customInput = input, customActual = actual, customStruct = structure) =>
     prepareSocialComparisonSource(unit, customInput, customActual, customStruct);
@@ -277,7 +282,7 @@ test('Social comparison source plan recovers exact b1f96c03 predecessor and reje
   });
 
   await t.test('rejects unauthorized caveat or dependency mutation on corrected prior claims', () => {
-    const badCat = structuredClone(catalog);
+    const badCat = structuredClone(prev139Rec.catalog);
     badCat.claims.find(c => c.id === 'cl-sustainability-risk-not-facility-performance').caveats = ['私自附加'];
     const badInput = { ...input, catalog: badCat };
     const badActual = inspectReadableBookEdition(badInput), badStruct = copyeditSourceStructure(badInput);
@@ -321,7 +326,8 @@ test('Social comparison receipt binding behaves fail-closed before and after cap
   }
 
   const { readerPublicDownloads } = await import('./reader-current-output.mjs');
-  const expected = readerPublicDownloads(catalog, literature, readings);
+  const prev139 = previousScientificTestRecords({ catalog, readings, literature }, cost.unit);
+  const expected = readerPublicDownloads(prev139.catalog, prev139.literature, prev139.readings);
   const verify = (mutateUnit = () => {}, mutateOutput) => {
     const unit = structuredClone(config.unit);
     mutateUnit(unit);

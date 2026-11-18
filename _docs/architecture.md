@@ -16,11 +16,56 @@ checkPaths:
   - "scripts/**"
   - "package.json"
   - ".github/**"
-lastReviewedAt: 2026-11-18
-lastReviewedCommit: 1a9301c2153867cf1b6cdefadc648346bd78b739
+lastReviewedAt: 2026-11-19
+lastReviewedCommit: 3f4a5cc0c3346469f2d4450f50abfbd4188d5106
 ---
 
 # Publication architecture
+
+## Cost-and-sustainability successor
+
+The #143 Part V closing cost-and-sustainability successor
+(`scripts/reader-cost-sustainability.mjs` and
+`scripts/reader-cost-sustainability-factors.mjs`) updates `B24`
+(`content/docs/book/cost-perspectives-and-sustainability-combination.mdx`, `9`
+-> `17` claims plus two responsive 6-column Markdown synthesis tables across §§1
+and 3), brings the public catalog from `1,036` to `1,044` claims (`8` new
+`cl-lcc143-*` claims, `21` topic-focused single-source/single-artifact
+`ev-lcc143-*` records bound `1-to-1` to `21` `psg-lcc143-*` passages across `12`
+SHA-256-verified binary PDF carriers, and `82` `BigInt`-verified `nf-lcc143-*`
+`numericFacts`), normalizes `2` `B24`-exclusive prior evidence locators
+(`ev-sustainability-lcsa-social-reference`,
+`ev-sustainability-lcsa-weighting-conditions`), and applies `7` bounded `B24`
+prior-claim synchronizations, conserving `100%` of `1,029` untouched prior
+claims, all `6` shared `ev-sustainability-*` records, both
+`src-book-finkbeiner-2010-lcsa-framework` / `src-book-unep-2020-slca-guidelines`,
+and all `40` case JSON files byte-for-byte. Before `#139` runs its own rollback
+and receipt checks, `prepareCostSustainabilitySource` enforces recursive
+`exactKeys` closed allowlists across `config`, `unit`, `changes[]`,
+`consumers[]`, `corrections[]`, `rawRecords[]`, `rawFields[]`, `outputs[]`,
+`publicArtifacts[]`, `history`, `ordinaryTargets`, `history.history[]`,
+`ordinary[]`, `outputCapture`, `reviewEvidence[]`, and `capture`
+(`manifestPaths === 468`, rejecting `layouts`, `partIntroduction`, `migrations`,
+and `history.ordinaryOverrides`), restores the exact
+`8d5f1037a2ab30b29c197fe89a422a5c69f81a93` `B24` MDX (`9363218b...`) and raw
+records, and verifies `costSustainabilityPredecessorPin` (`9dbf6777...`),
+`assertCleanCostSustainabilityProse` hygiene, direct `BigInt`-to-prose/caveat
+bindings (including exact `6.48%`/`6.49%` rational NPV sign-change bracketing),
+and all `87` transitions across `416` dependent consumers
+(`costSustainabilityUnitPin` `761971a8...`, `costSustainabilityCapturePin`
+`f9416064...`).
+
+Across rendered DOM and navigation, `lib/reader-book.ts` extends
+`relabelHistoricalTargets` and `getCitationLabel` route coverage to
+`currentCostSustainability`, `ReaderTable` in `components/chapter-content.tsx`
+admits both `B24` 6-column comparison tables (`index === 1 || index === 2`,
+forbidding explicit `id` attributes), and `qualifyCostSustainabilityHistory`
+verifies `2` ordinary targets (`-lcc-143-ordinary-0` web & print), `12` history
+dispositions (`5` web + `5` print `<details data-cost-sustainability-history>`
+article-scoped controls plus `2` wrapper controls stacked cleanly after `#95`
+copyedit history), and `7` inline `style={{ display: 'block' }}` print-visible
+correction notices on `data-cost-sustainability-correction` with zero compiled
+CSS drift (`be180e5d...`).
 
 ## Static-export indexing and worker memoization
 
