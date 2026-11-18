@@ -1,6 +1,6 @@
 ---
 lastReviewedAt: 2026-11-19
-lastReviewedCommit: d55b896bd7f1e03ca2495fbf34101fc5d87baee7
+lastReviewedCommit: 3f4a5cc0c3346469f2d4450f50abfbd4188d5106
 title: 主体成本账本、跨支柱聚合翻转、相邻工具原范围与地球边界分配的综合评价比较协议
 docType: reference
 scope: repo
