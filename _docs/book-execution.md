@@ -1,4 +1,6 @@
 ---
+lastReviewedAt: 2026-11-18
+lastReviewedCommit: 4e094f7e89d5ba563af0ded8a47e15d62260045f
 title: Approved LCA book execution and wave ledger
 docType: reference
 scope: repo
@@ -474,8 +476,45 @@ untouched prior claims and all `40` case JSON files byte-for-byte. Separate
 unconditional-PASS primary-source (`50e5b510`), zero-context `B21` reader
 (`fe3c6c58`), adversarial publication-engineering (`9ecc7040`) and actual-output
 acceptances (`9b23d4b4...`, capture `1a38bd37...`) and normal source/root
-delivery are tracked on Issue137. Remaining Part V units (`B23`, `B24`), the Part
-V whole-part reread, and all eight global Programme9 criteria remain active.
+delivery are tracked on Issue137.
+
+Unit137 is now fully delivered: source PR138/Main
+`79c8ea9cf1c79eb0b773a2109188095037f9873a`, qualified 468-file hosted output on
+`https://prism.tiangong.earth` (`edf0505cccdefdccdec9994da92515ae322ed2f337fb3648dce6d4e731bd00a4`,
+including unmodified `validateReaderOutput` against archived Main source and live
+Chromium/`@media print` verification), exact root2453/PR2454/Main
+`863c748879db0e39fde6022d99f20f40e9ed2fbc`, and ordinary final completion and
+source-handoff (`1/1`) receipts.
+
+[Issue139](https://github.com/tiangong-lca/knowledge-base/issues/139) delivers
+the Part V cross-system social LCA comparative unit on `B23` (`《社会表现与影响》`,
+`9` -> `17` claims plus two 6-column responsive Markdown comparison tables across
+§§1 and 3, bringing the public catalog from `1,028` to `1,036` claims), recorded
+in the [social-comparison protocol](editorial/2026-11-18-social-comparison.md)
+(committed as `323291f` / `a4ddc88` before manuscript changes). Primary-source
+verification covers `14` SHA-256-verified binary artifacts across `13` sources
+(plus untouched predecessor `src-book-unep-2020-slca-guidelines`): `UNEP 2021
+Methodological Sheets` (`c616200b...`, `150` pp.), `PSILCA v3 Documentation`
+(`da2e35f1...`, `124` pp.), `Benoît-Norris et al. 2012 SHDB` (`5189ccfe...`,
+`20` pp., CC BY 3.0), `GLAM_template_HH_Work_Environment_Impacts.xlsx`
+(`64df73d7...`, `5` sheets, `420` US sectors & `21,840` rows across `52`
+countries), `Fantke et al. 2026` main (`19c031ca...`) & SI (`f56ed44a...`),
+`GLAM Phase 3 Scoping` (`6e9d7c23...`), `GLAM Vol. 2 §4.4.1` (`25a58192...`),
+`CML 2001 Part 3 §4.3.16` (`b77c333e...`), `ILCD 2010 §§6.6.1, 6.7, 7.2.3`
+(`7de4b912...`), `Heijungs et al. 2013` (`7c86b8c1...`), `EU 2021/2279 Annex III
+OEF` (`42445138...`) & `OEFSR Guidance v6.3` (`b9dd7245...`), and `Meemken et al.
+2021` (`98c80aca...`, neutral `passages-inspected`). Eight new `cl-soc139-*`
+claims bind `14` single-artifact `ev-soc139-*` / `psg-soc139-*` pairs and `90`
+`BigInt` rational `numericFacts`, paired with `7` bounded B23 prior-claim
+synchronizations (`7` inline `display:block` correction notices) and `2`
+B23-exclusive evidence locator cleanups while conserving `100%` of `1,021`
+untouched prior claims, all `6` shared `ev-sustainability-slca-*` records, and
+all `40` case JSON files byte-for-byte. Separate unconditional-PASS
+primary-source (`40203311`), zero-context `B23` reader (`1ce27b6e`), adversarial
+publication-engineering (`b7f75f11`) and actual-output acceptances (`431625f3...`,
+capture `47bff7ca...`) and normal source/root delivery are tracked on Issue139.
+Remaining Part V unit `B24`, the Part V whole-part reread, and all eight global
+Programme9 criteria remain active.
 
 Rule adoption101 itself is fully delivered: PR103/Main10dc686 and
 root2381/PR2382/Main90bcaa574, with complete ordinary source/root handoff receipts.

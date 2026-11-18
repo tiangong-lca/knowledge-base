@@ -17,10 +17,50 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-18
-lastReviewedCommit: 9ee5783f10d3598edc55eb356e7d800dda5a0e25
+lastReviewedCommit: 4e094f7e89d5ba563af0ded8a47e15d62260045f
 ---
 
 # Publication architecture
+
+## Social-comparison successor
+
+The #139 Part V cross-system social LCA successor
+(`scripts/reader-social-comparison.mjs` and
+`scripts/reader-social-comparison-factors.mjs`) updates `B23`
+(`content/docs/book/social-assessment-objects-and-meaning.mdx`, `9` -> `17`
+claims plus two responsive 6-column Markdown synthesis tables across §§1 and 3),
+brings the public catalog from `1,028` to `1,036` claims (`8` new `cl-soc139-*`
+claims, `14` single-source/single-artifact `ev-soc139-*` records bound `1-to-1`
+to `14` `psg-soc139-*` passages across `14` SHA-256-verified primary artifacts /
+`13` sources, and `90` `BigInt`-verified `nf-soc139-*` `numericFacts`), normalizes
+`2` B23-exclusive prior evidence locators (`ev-sustainability-slca-activity-variable`,
+`ev-sustainability-slca-interpretation`), and applies `7` bounded B23 prior-claim
+synchronizations, conserving `100%` of `1,021` untouched prior claims, all `6`
+shared `ev-sustainability-slca-*` records, and all `40` case JSON files
+byte-for-byte. Before `#137` runs its own rollback and receipt checks,
+`prepareSocialComparisonSource` enforces recursive `exactKeys` closed allowlists
+across `config`, `unit`, `changes[]`, `consumers[]`, `corrections[]`,
+`rawRecords[]`, `rawFields[]`, `outputs[]`, `publicArtifacts[]`, `history`,
+`ordinaryTargets`, `history.history[]`, `ordinary[]`, `outputCapture`,
+`reviewEvidence[]`, and `capture` (`manifestPaths === 468`, rejecting `layouts`,
+`partIntroduction`, `migrations`, and `history.ordinaryOverrides`), restores the
+exact `79c8ea9cf1c79eb0b773a2109188095037f9873a` B23 MDX (`6f0d3d9e...`) and raw
+records, and verifies `socialComparisonPredecessorPin` (`b1f96c03...`),
+`assertCleanSocialProse` hygiene, direct `BigInt`-to-prose/caveat/table bindings,
+and all `83` transitions across `442` dependent consumers (`socialComparisonUnitPin`
+`431625f3...`, `socialComparisonCapturePin` `47bff7ca...`).
+
+Across rendered DOM and navigation, `lib/reader-book.ts` extends
+`relabelHistoricalTargets` and `getCitationLabel` route coverage to
+`currentSocialComparison`, `ReaderTable` in `components/chapter-content.tsx`
+admits both `B23` 6-column comparison tables (`index === 1 || index === 2`,
+forbidding explicit `id` attributes), and `qualifySocialComparisonHistory`
+verifies `2` ordinary targets (`-soc-139-ordinary-0` web & print), `12` history
+dispositions (`5` web + `5` print `<details data-social-comparison-history>`
+article-scoped controls plus `2` wrapper controls stacked cleanly after `#95`
+copyedit history), and `7` inline `style={{ display: 'block' }}` print-visible
+correction notices on `data-social-comparison-correction` with zero compiled CSS
+drift (`be180e5d...`).
 
 ## Localization-comparison successor
 

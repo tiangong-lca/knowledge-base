@@ -4,6 +4,8 @@ import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 import config from '../config/reader-toxicity-comparison.json' with { type: 'json' };
 import capture from '../config/reader-toxicity-comparison-capture.json' with { type: 'json' };
+import social from '../config/reader-social-comparison.json' with { type: 'json' };
+import { restoreSocialComparisonTestFiles } from './reader-social-comparison.mjs';
 import localization from '../config/reader-localization-comparison.json' with { type: 'json' };
 import { restoreLocalizationComparisonTestFiles } from './reader-localization-comparison.mjs';
 import weighting from '../config/reader-weighting-valuation.json' with { type: 'json' };
@@ -287,6 +289,7 @@ test('B19 toxicity comparison source plan preserves 2eba26c6 predecessor, 20-cla
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
+  restoreSocialComparisonTestFiles(files, social.unit);
   restoreLocalizationComparisonTestFiles(files, localization.unit);
   restoreWeightingValuationTestFiles(files, weighting.unit);
   restorePart4RereadTestFiles(files, part4.unit);
@@ -294,7 +297,7 @@ test('B19 toxicity comparison source plan preserves 2eba26c6 predecessor, 20-cla
   if (eutro.unit) files.set(`content${eutro.unit.routes[0]}.mdx`, Buffer.from(eutro.unit.previousMdx));
   if (bio.unit) for (const [p, text] of Object.entries(bio.unit.previousMdx)) files.set(p, Buffer.from(text));
   if (water.unit) files.set(`content${water.unit.routes[0]}.mdx`, Buffer.from(water.unit.previousMdx));
-  const input = { ...previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, localization.unit), weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit), files };
+  const input = { ...previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, social.unit), localization.unit), weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit), files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
   const qualify = (unit, customInput = input, customActual = actual, customStruct = structure) =>
     prepareToxicityComparisonSource(unit, customInput, customActual, customStruct);
@@ -388,7 +391,7 @@ test('B19 toxicity comparison source plan preserves 2eba26c6 predecessor, 20-cla
 test('Toxicity comparison receipt verifier fails closed when capture or capture pin is absent', () => {
   if (capture !== null || toxicityComparisonCapturePin !== null) return;
   if (!config.unit) return;
-  const previous = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, localization.unit), weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
+  const previous = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, social.unit), localization.unit), weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
   const expected = readerPublicDownloads(previous.catalog, previous.literature, previous.readings);
   const unit = structuredClone(config.unit);
   unit.outputs = [{ path: toxicityComparisonChapter, route: toxicityComparisonChapter, sha256: '1'.repeat(64), rationale: 'r' }];
@@ -410,7 +413,7 @@ test('Toxicity comparison receipt verifier fails closed when capture or capture 
 });
 
 test('Toxicity comparison receipts bind actual output capture independently', { skip: !capture && config.status !== 'reviewed' }, () => {
-  const previous = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, localization.unit), weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
+  const previous = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, social.unit), localization.unit), weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
   const expected = readerPublicDownloads(previous.catalog, previous.literature, previous.readings);
   const verify = (mutateUnit = () => {}, mutateOutput) => {
     const unit = structuredClone(config.unit);

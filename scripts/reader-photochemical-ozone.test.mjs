@@ -4,6 +4,8 @@ import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 import config from '../config/reader-photochemical-ozone.json' with { type: 'json' };
 import capture from '../config/reader-photochemical-ozone-capture.json' with { type: 'json' };
+import social from '../config/reader-social-comparison.json' with { type: 'json' };
+import { restoreSocialComparisonTestFiles } from './reader-social-comparison.mjs';
 import localization from '../config/reader-localization-comparison.json' with { type: 'json' };
 import { restoreLocalizationComparisonTestFiles } from './reader-localization-comparison.mjs';
 import weighting from '../config/reader-weighting-valuation.json' with { type: 'json' };
@@ -143,6 +145,7 @@ test('B16 photochemical ozone source plan preserves all real predecessor transit
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
+  restoreSocialComparisonTestFiles(files, social.unit);
   restoreLocalizationComparisonTestFiles(files, localization.unit);
   restoreWeightingValuationTestFiles(files, weighting.unit);
   restorePart4RereadTestFiles(files, part4.unit);
@@ -152,7 +155,7 @@ test('B16 photochemical ozone source plan preserves all real predecessor transit
   if (water.unit) files.set(`content${water.unit.routes[0]}.mdx`, Buffer.from(water.unit.previousMdx));
   if (tox.unit) files.set(`content${tox.unit.routes[0]}.mdx`, Buffer.from(tox.unit.previousMdx));
   if (ozrad.unit) files.set(`content${ozrad.unit.routes[0]}.mdx`, Buffer.from(ozrad.unit.previousMdx));
-  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, localization.unit), weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
+  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, social.unit), localization.unit), weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
   const preTox = previousScientificTestRecords(preWater, tox.unit);
   const input = { ...previousScientificTestRecords(preTox, ozrad.unit), files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
@@ -179,7 +182,7 @@ test('B16 photochemical ozone source plan preserves all real predecessor transit
 });
 
 test('Photochemical ozone receipts bind actual output capture independently', { skip: !capture && config.status !== 'reviewed' }, () => {
-  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, localization.unit), weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
+  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, social.unit), localization.unit), weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
   const preTox = previousScientificTestRecords(preWater, tox.unit);
   const previous = previousScientificTestRecords(preTox, ozrad.unit);
   const expected = readerPublicDownloads(previous.catalog, previous.literature, previous.readings);
