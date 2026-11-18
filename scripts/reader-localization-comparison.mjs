@@ -865,7 +865,8 @@ export function observeLocalizationComparisonOrdinaryTargets(documents) {
     }])));
 }
 
-export function validateLocalizationComparisonCorrectionOutput(document, path, unit) {
+const part5StackedCorrectionClaims = new Set(['cl-cn-question', 'cl-cn-conclusion']);
+export function validateLocalizationComparisonCorrectionOutput(document, path, unit, part5Reread = null) {
   const markers = document.querySelectorAll('[data-localization-comparison-correction]');
   const expectedRows = !unit ? [] : localizationComparisonCorrections.filter(row => path === '/print' || path === row.chapter);
   if (!expectedRows.length && !markers.length) return [];
@@ -896,7 +897,10 @@ export function validateLocalizationComparisonCorrectionOutput(document, path, u
         || note.getAttribute('data-reader-claim') !== claimId
         || article?.getAttribute('data-reader-route') !== chapter || sections.length !== 1
         || note.parentNode !== list || noteItems[noteIndex] !== note
-        || marker.tagName !== 'P' || marker.parentNode !== note || marker.nextElementSibling !== null
+        || marker.tagName !== 'P' || marker.parentNode !== note
+        || (part5Reread && part5StackedCorrectionClaims.has(row.claimId)
+          ? (marker.nextElementSibling?.getAttribute('data-part5-reread-correction') !== row.claimId || marker.nextElementSibling.nextElementSibling !== null)
+          : marker.nextElementSibling !== null)
         || !attrs(marker, 'class', 'data-localization-comparison-correction', 'style')
         || marker.getAttribute('class') !== 'legacy-citation-context'
         || marker.getAttribute('style') !== 'display:block'
@@ -914,7 +918,7 @@ export function validateLocalizationComparisonCorrectionOutput(document, path, u
   return errors;
 }
 
-export function qualifyLocalizationComparisonHistory(documents, unit, actual) {
+export function qualifyLocalizationComparisonHistory(documents, unit, actual, part5Reread = null) {
   if (!unit) return { prior: actual, errors: [] };
   const targets = observeLocalizationComparisonOrdinaryTargets(documents);
   const prior = qualifyScientificHistory(unit.history, actual, targets, {
@@ -935,7 +939,7 @@ export function qualifyLocalizationComparisonHistory(documents, unit, actual) {
     errors.push('Localization comparison actual versioned ordinary targets differ');
   }
   for (const [path, document] of documents) {
-    errors.push(...validateLocalizationComparisonCorrectionOutput(document, path, unit));
+    errors.push(...validateLocalizationComparisonCorrectionOutput(document, path, unit, part5Reread));
   }
   return { prior, errors };
 }

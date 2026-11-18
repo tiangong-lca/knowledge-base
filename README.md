@@ -15,10 +15,28 @@ checkPaths:
   - "app/**"
   - "scripts/**"
 lastReviewedAt: 2026-11-19
-lastReviewedCommit: 3f4a5cc0c3346469f2d4450f50abfbd4188d5106
+lastReviewedCommit: 2e0b523c3468613a3d71d03606f77adb36fd9a73
 ---
 
 # LCA Living Knowledge Base and Review
+
+[Part V whole-part continuous reread, cross-chapter terminology & premise alignment, and citation-locator normalization #145](https://github.com/tiangong-lca/knowledge-base/issues/145)
+completes the whole-part continuous reread across `F02` (`content/docs/book/index.mdx:18,22`),
+the Part V introduction (`config/reader-numbering.json`), and all five Part V
+chapters (`B20`–`B24`, `143` claims and `7` comparison matrices), conserving
+`100%` of all `1,044` claim IDs, sequence, `numericFacts`, and all `16` Part V
+case-bound claims (`40` case download files repo-wide) against
+`915af29592cee16d42772ba76080ed913d630e6b`. Its
+[reread record](_docs/editorial/2026-11-19-part5-continuous-reread.md) binds
+`4` managed physical files, `57` non-case claim updates (`17` prose
+synchronizations, `15` scope updates, `10` caveat restorations/cleanups, and `21`
+premise transitions enforcing strict backward-only topological ascending order
+across all `127` non-case Part V claims), `48` Part V evidence locator
+normalizations (`37` Part-V-exclusive plus `11` shared with `B05`, `B14`, and
+`B32`, clearing `100%` of raw `PDF` viewer indices and `§` tokens across all `161`
+Part V locators), neutral `ArtifactReading` excerpt wording (`原载文献`) and
+chapter-note source-title formatting, and `8` `style="display:block"` public
+correction notices while keeping compiled CSS at zero drift (`be180e5d...`).
 
 [Part V closing LCC & LCSA comparison, actor split incentives, five monetary quantities, MCDA IIA/outranking reversals, adjacent tool boundaries & Planetary-Boundary AESA downscaling #143](https://github.com/tiangong-lca/knowledge-base/issues/143)
 extends Part V closing chapter `B24` (`《生命周期成本与综合评价》`, `9` -> `17`
@@ -55,6 +73,8 @@ indicators (`84.3%` 4 resource footprints vs `92.3%` 6 mechanistic indicators,
 `ELECTRE` `50 h` outranking veto blocking forced-labor bid `戊` (`666.67`); and
 Planetary-Boundary `AESA` (`GLAM Table 3`; `O’Neill & Creutzig 2026` Doughnut)
 expenditure-share (`0.833 vs 1.333`) vs equal-service (`1.111 vs 0.889`) flip.
+Unit #143 is fully delivered at Main `915af29592cee16d42772ba76080ed913d630e6b`,
+qualified 468-file hosting and root #2464 (`5f9af0cc4f71dc0425a1a5b47f7a1d7953c16f4d`).
 
 [Part V cross-system social LCA comparison, reporting references, satellite linearity, activity-variable paradoxes, risk scales & occupational health #139](https://github.com/tiangong-lca/knowledge-base/issues/139)
 extends Part V `B23` (`《社会表现与影响》`, `9` -> `17` claims plus two 6-column

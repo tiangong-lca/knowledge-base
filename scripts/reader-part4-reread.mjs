@@ -16,7 +16,7 @@ import { validateParticulateComparisonFactors } from './reader-particulate-compa
 import { validateWaterScarcityFactors } from './reader-water-scarcity-factors.mjs';
 import {
   exactPublicJsonReceipt, mergeScientificFileAndRecordChanges, mergeScientificOutput,
-  qualifyScientificHistory, restoreScientificRecords, sameScienceValue, scienceDigest, scienceText,
+  projectScientificOrdinaryTargets, qualifyScientificHistory, restoreScientificRecords, sameScienceValue, scienceDigest, scienceText,
 } from './reader-scientific-delta.mjs';
 
 export const part4RereadId = 'part4-reread-133';
@@ -723,13 +723,35 @@ export function validatePart4RereadCorrectionOutput(document, path, unit) {
   return [];
 }
 
-export function qualifyPart4RereadHistory(documents, unit, actual, particulateComparison, biogenicCarbon) {
+const part5SuccessorOverrideKeys = Object.freeze(new Set([
+  `/docs/book#${chapterAnchorPrefix('/docs/book')}-part4-133-ordinary-4`,
+  `/docs/book#${chapterAnchorPrefix('/docs/book')}-part4-133-ordinary-5`,
+  `/print#${printUnitAnchor('/docs/book')}-part4-133-ordinary-4`,
+  `/print#${printUnitAnchor('/docs/book')}-part4-133-ordinary-5`,
+]));
+
+export function qualifyPart4RereadHistory(documents, unit, actual, particulateComparison, biogenicCarbon, part5Reread = null) {
   if (!unit) return { prior: actual, errors: [] };
   const overrides = unit.history?.ordinaryOverrides;
   if (!validOrdinaryOverridesShape(overrides, true))
     throw new Error('Part IV continuous reread ordinaryOverrides violates the 4-key allowlist');
+  let successorOverrides = null;
+  if (part5Reread) {
+    const raw = part5Reread.history?.ordinaryOverrides;
+    if (!plainObject(raw) || Object.keys(raw).length !== part5SuccessorOverrideKeys.size
+        || Object.keys(raw).some(key => !part5SuccessorOverrideKeys.has(key)
+          || !plainObject(raw[key]) || Object.keys(raw[key]).length !== 2
+          || !scienceDigest(raw[key].from) || !scienceDigest(raw[key].to) || raw[key].from === raw[key].to))
+      throw new Error('Part IV continuous reread successor ordinaryOverrides violates the 4-key Part V allowlist');
+    successorOverrides = Object.fromEntries([...part5SuccessorOverrideKeys].map(key => [key, raw[key]]));
+  }
 
-  const targets = observePart4RereadOrdinaryTargets(documents);
+  const targets = projectScientificOrdinaryTargets(
+    successorOverrides,
+    observePart4RereadOrdinaryTargets(documents),
+    'Part IV continuous reread',
+    part5SuccessorOverrideKeys,
+  );
   const prior = qualifyScientificHistory(unit.history, actual, targets, {
     label: 'Part IV continuous reread', routes: part4RereadRoutes, predecessorPin: addressPin,
   });
@@ -767,6 +789,7 @@ export function qualifyPart4RereadHistory(documents, unit, actual, particulateCo
       ordinaryPattern,
       ordinaryTags: ['P', 'FIGURE'],
       label: 'Part IV continuous reread',
+      ordinaryOverrides: successorOverrides,
       ordinaryTargets: Object.fromEntries(Object.entries(unit.history.ordinaryTargets).map(([key, row]) => [key, row.sha256])),
     }),
     ...validatePart4RereadPartDisclosure(documents.get('/print'), unit),

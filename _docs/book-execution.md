@@ -555,10 +555,38 @@ all `6` shared `ev-sustainability-*` records, and all `40` case JSON files
 byte-for-byte. Separate unconditional-PASS primary-source (`1476d543`),
 zero-context `B24` reader (`9d595355`), adversarial publication-engineering
 (`fda0d388`) and actual-output acceptances (`761971a8...`, capture `f9416064...`)
-are bound on branch `codex/cost-sustainability-143`, with clean production build,
+are bound on branch `codex/cost-sustainability-143`. Unit143 is now fully
+delivered: source PR144/Main `915af29592cee16d42772ba76080ed913d630e6b`,
+qualified 468-file hosted output on `https://prism.tiangong.earth`
+(`741d5267d42a2a13d924f77ff76671002d6e7a2e7db7b53ec9bf1ad64f91e967`, including
+unmodified `validateReaderOutput` against archived Main source and live
+Chromium/`@media print` verification), exact root2464/PR2465/Main
+`5f9af0cc4f71dc0425a1a5b47f7a1d7953c16f4d`, and ordinary final completion and
+source-handoff (`1/1`) receipts.
+
+[Issue145](https://github.com/tiangong-lca/knowledge-base/issues/145) completes
+the Part V whole-part continuous reread across `F02` (`content/docs/book/index.mdx:18,22`),
+the Part V introduction (`config/reader-numbering.json`), and `B20`–`B24` (`143`
+claims and `7` comparison matrices) from qualified Main
+`915af29592cee16d42772ba76080ed913d630e6b`, recorded in the
+[Part V continuous-reread protocol](editorial/2026-11-19-part5-continuous-reread.md)
+(committed as `2e0b523` before manuscript changes): `4` managed physical files,
+`57` modified non-case claims (`17` prose, `15` scope, `10` caveat, `21` premise
+transitions enforcing strict topological ascending order across all `127`
+non-case Part V claims), `48` normalized Part V `ev-*.locator` records (`37`
+Part-V-exclusive + `11` shared with `B05`, `B14`, and `B32`), neutral
+`ArtifactReading` excerpt wording (`原载文献`) and chapter-note source-title
+formatting, and `8` `style="display:block"` public correction notices while
+conserving `100%` of all `1,044` claim IDs, `numericFacts`, `16` Part V
+case-bound claims, and `40` case JSON files byte-for-byte. Separate three-round
+unconditional-PASS primary-source (`b21ff9fb`), zero-context whole-Part V reader
+(`f991f595`), adversarial publication-engineering (`4b1af048`) and actual-output
+acceptances (`9b006731d2837082a3ecfabacf83e5646be4a08d2c2fa793d38b89e4d811cd06`,
+capture `a8481bc04e08c6433c42d0024d0bf0804da988e8ae6e5e5a0320112ca865853e`)
+are bound on branch `codex/part5-reread-145`, with clean production build,
 source PR/CI/merge, live 468-file EdgeOne qualification and root integration
-tracked on Issue143. The Part V whole-part continuous reread (`B20`–`B24`) and
-all eight global Programme9 criteria remain active.
+tracked on Issue145. Parts VI–VIII comparative units and all eight global
+Programme9 criteria remain active.
 
 Rule adoption101 itself is fully delivered: PR103/Main10dc686 and
 root2381/PR2382/Main90bcaa574, with complete ordinary source/root handoff receipts.

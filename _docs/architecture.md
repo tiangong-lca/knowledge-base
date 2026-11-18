@@ -17,10 +17,50 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-19
-lastReviewedCommit: 3f4a5cc0c3346469f2d4450f50abfbd4188d5106
+lastReviewedCommit: 2e0b523c3468613a3d71d03606f77adb36fd9a73
 ---
 
 # Publication architecture
+
+## Part-5-reread successor
+
+The #145 Part V whole-part continuous-reread successor
+(`scripts/reader-part5-reread.mjs`) updates `4` managed physical files
+(`config/reader-numbering.json`, `content/docs/book/index.mdx`,
+`content/docs/book/lime-preferences-and-damage-weights.mdx`, and
+`content/docs/book/social-assessment-objects-and-meaning.mdx`) and `106` raw
+records (`57` non-case `catalog.claims` entries, `48` `catalog.evidence`
+`.locator` entries [`37` Part-V-exclusive + `11` shared with `B05`, `B14`, and
+`B32`], and `rev-part5-reread-145-continuity-and-locators`), conserving `100%`
+of all `1,044` claim IDs, sequence, `numericFacts`, `16` Part V case-bound
+claims, and `40` case download files byte-for-byte. Before `#143` runs its own
+rollback and receipt checks, `preparePart5RereadSource` enforces closed
+`exactKeys` cardinality allowlists across `config`, `unit`, `source`, `state`,
+`changes[]`, `consumers[]`, `partIntroduction`, `printPart5`, `previousFiles`,
+`rawRecords[]`, `rawFields`, `outputs[]`, `publicArtifacts[]`, `history`,
+`previousAddresses`/`currentAddresses`, `ordinaryTargets`, `ordinaryOverrides`,
+`history.history[]`, `ordinary[]`, `outputCapture`, `reviewEvidence[]`, and
+`capture`, restores the exact `915af29592cee16d42772ba76080ed913d630e6b` bytes
+(`oldFileShas`) and raw records, verifies `part5RereadPredecessorPin`
+(`f18e0af6...`), bidirectional per-field allowlists (`17` prose, `15` scope,
+`10` caveat, `21` premise), programmatic backward-only and strict ascending
+`(printOrder, note)` `premiseIds` across all `127` non-case Part V claims,
+multi-page `PDF`/ID-prefix hygiene, and all `112` transitions across `94`
+dependent consumers (`part5RereadUnitPin` `9b006731...`, `part5RereadCapturePin`
+`a8481bc0...`).
+
+Across rendered DOM and citation projection, `components/evidence.tsx` and
+`scripts/reader-exchange-semantics.mjs` gate `ArtifactReading` (`原载文献`) and
+`readerCitationSourceTitle` on `Boolean(currentPart5Reread)` (with `@/scripts/*`
+aliases registered in `scripts/fixtures/historical-reader-fixture.mjs` so
+archived `f650600` suites remain unchanged), `ReaderTable` assigns stable
+`-part5-145-ordinary-table-*` IDs on `B22` and `B23`, and `qualifyPart5RereadHistory`
+verifies `4` `allowedOrdinaryOverrideKeys` on `/docs/book` & `/print`, `49`
+ordinary targets, `22` history dispositions, `1` `<details data-part5-reread-part="5">`
+disclosure on `/print#print-part-5`, and `8` `noteIndex`-pinned
+`style="display:block"` public correction notices (`data-part5-reread-correction`)
+across `27` changed articles and `7` changed public artifacts with zero compiled
+CSS drift (`be180e5d...`).
 
 ## Cost-and-sustainability successor
 

@@ -3,6 +3,8 @@ import fs from 'node:fs';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
+import part5 from '../config/reader-part5-reread.json' with { type: 'json' };
+import { restorePart5RereadTestFiles } from './reader-part5-reread.mjs';
 import config from '../config/reader-cost-sustainability.json' with { type: 'json' };
 import capture from '../config/reader-cost-sustainability-capture.json' with { type: 'json' };
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
@@ -11,7 +13,7 @@ import service from '../config/reader-service-constraints.json' with { type: 'js
 import catalog from '../knowledge/catalog.json' with { type: 'json' };
 import readings from '../knowledge/research/readings.json' with { type: 'json' };
 import literature from '../knowledge/research/literature-map.json' with { type: 'json' };
-import { testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
+import { previousScientificTestRecords, testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
 import { chapterAnchorPrefix, printUnitAnchor } from './reader-book.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
@@ -34,24 +36,25 @@ import {
 } from './reader-cost-sustainability.mjs';
 
 test('Cost and sustainability enforces exact 1044 claims, 21 single-artifact evidence records, 82 BigInt facts, prose bindings and zero hygiene leaks', () => {
-  assert.equal(catalog.claims.length, 1044);
-  assert.equal(catalog.claims.filter(c => c.id.startsWith('cl-lcc143-')).length, 8);
-  assert.equal(catalog.evidence.filter(e => e.id.startsWith('ev-lcc143-')).length, 21);
+  const prev143 = previousScientificTestRecords({ catalog, readings, literature }, part5.unit);
+  assert.equal(prev143.catalog.claims.length, 1044);
+  assert.equal(prev143.catalog.claims.filter(c => c.id.startsWith('cl-lcc143-')).length, 8);
+  assert.equal(prev143.catalog.evidence.filter(e => e.id.startsWith('ev-lcc143-')).length, 21);
   assert.equal(
-    catalog.evidence
+    prev143.catalog.evidence
       .filter(e => e.id.startsWith('ev-lcc143-'))
       .reduce((acc, e) => acc + (e.numericFacts?.length ?? 0), 0),
     82,
   );
   assert.deepEqual(catalog.claims.filter(c => c.scope.includes('具名方法与证据范围')), []);
 
-  validateCostSustainabilityFactors(catalog, readings);
+  validateCostSustainabilityFactors(prev143.catalog, prev143.readings);
 
   const readerBookTs = fs.readFileSync(new URL('../lib/reader-book.ts', import.meta.url), 'utf8');
   assert(readerBookTs.includes('...currentCostSustainability?.routes ?? []'));
   assert(readerBookTs.includes('currentCostSustainability?.routes.includes(target.route)'));
 
-  const extraFactCat = structuredClone(catalog);
+  const extraFactCat = structuredClone(prev143.catalog);
   extraFactCat.evidence.find(e => e.id === 'ev-lcc143-swarr2011-code-of-practice').numericFacts.push({
     id: 'nf-lcc143-forged',
     value: '1.0',
@@ -60,65 +63,65 @@ test('Cost and sustainability enforces exact 1044 claims, 21 single-artifact evi
     subject: 'forged',
     basis: 'forged',
   });
-  assert.throws(() => validateCostSustainabilityFactors(extraFactCat, readings), /numericFacts count mismatch/);
+  assert.throws(() => validateCostSustainabilityFactors(extraFactCat, prev143.readings), /numericFacts count mismatch/);
 
-  const singularFactCat = structuredClone(catalog);
+  const singularFactCat = structuredClone(prev143.catalog);
   singularFactCat.evidence.find(e => e.id === 'ev-lcc143-hsg2013-lcc-value-added').numericFact = {};
-  assert.throws(() => validateCostSustainabilityFactors(singularFactCat, readings), /evidence\/carrier binding failed/);
+  assert.throws(() => validateCostSustainabilityFactors(singularFactCat, prev143.readings), /evidence\/carrier binding failed/);
 
-  const mutConceptCat = structuredClone(catalog);
+  const mutConceptCat = structuredClone(prev143.catalog);
   mutConceptCat.claims.find(c => c.id === 'cl-lcc143-dashboard-iia-outranking-and-compensatory-reversals').conceptIds = ['cn-lcc-perspective'];
-  assert.throws(() => validateCostSustainabilityFactors(mutConceptCat, readings), /claim structure invalid/);
+  assert.throws(() => validateCostSustainabilityFactors(mutConceptCat, prev143.readings), /claim structure invalid/);
 
-  const mutValueCat = structuredClone(catalog);
+  const mutValueCat = structuredClone(prev143.catalog);
   mutValueCat.evidence.find(e => e.id === 'ev-lcc143-steinmann2016-pca-footprints').numericFacts[0].value = '977';
-  assert.throws(() => validateCostSustainabilityFactors(mutValueCat, readings), /malformed or unexpected numericFact/);
+  assert.throws(() => validateCostSustainabilityFactors(mutValueCat, prev143.readings), /malformed or unexpected numericFact/);
 
-  const mutNpvCat = structuredClone(catalog);
+  const mutNpvCat = structuredClone(prev143.catalog);
   const cNpv = mutNpvCat.claims.find(c => c.id === 'cl-lcc143-actor-split-incentive-and-discount-rate-reversal');
   cNpv.text = cNpv.text.replace('128.68 €', '128.69 €');
-  assert.throws(() => validateCostSustainabilityFactors(mutNpvCat, readings), /prose binding missing/);
+  assert.throws(() => validateCostSustainabilityFactors(mutNpvCat, prev143.readings), /prose binding missing/);
 
-  const mutCrossCat = structuredClone(catalog);
+  const mutCrossCat = structuredClone(prev143.catalog);
   const cCross = mutCrossCat.claims.find(c => c.id === 'cl-lcc143-actor-split-incentive-and-discount-rate-reversal');
   cCross.text = cCross.text.replace('6.49%', '6.50%');
-  assert.throws(() => validateCostSustainabilityFactors(mutCrossCat, readings), /prose binding missing/);
+  assert.throws(() => validateCostSustainabilityFactors(mutCrossCat, prev143.readings), /prose binding missing/);
 
-  const mutIiaCat = structuredClone(catalog);
+  const mutIiaCat = structuredClone(prev143.catalog);
   const cIia = mutIiaCat.claims.find(c => c.id === 'cl-lcc143-dashboard-iia-outranking-and-compensatory-reversals');
   cIia.text = cIia.text.replace('816.67', '816.68');
-  assert.throws(() => validateCostSustainabilityFactors(mutIiaCat, readings), /prose binding missing/);
+  assert.throws(() => validateCostSustainabilityFactors(mutIiaCat, prev143.readings), /prose binding missing/);
 
-  const mutAesaCat = structuredClone(catalog);
+  const mutAesaCat = structuredClone(prev143.catalog);
   const cAesa = mutAesaCat.claims.find(c => c.id === 'cl-lcc143-planetary-boundaries-and-sharing-principle-reversal');
   cAesa.text = cAesa.text.replace('0.833', '0.834');
-  assert.throws(() => validateCostSustainabilityFactors(mutAesaCat, readings), /prose binding missing/);
+  assert.throws(() => validateCostSustainabilityFactors(mutAesaCat, prev143.readings), /prose binding missing/);
 
-  const mutCaveatCat = structuredClone(catalog);
+  const mutCaveatCat = structuredClone(prev143.catalog);
   const cCav = mutCaveatCat.claims.find(c => c.id === 'cl-lcc143-planetary-boundaries-and-sharing-principle-reversal');
   cCav.caveats[0] = cCav.caveats[0].replace('18.0 kg', '18.1 kg');
-  assert.throws(() => validateCostSustainabilityFactors(mutCaveatCat, readings), /prose binding missing/);
+  assert.throws(() => validateCostSustainabilityFactors(mutCaveatCat, prev143.readings), /prose binding missing/);
 
-  const mutArchCaveatCat = structuredClone(catalog);
+  const mutArchCaveatCat = structuredClone(prev143.catalog);
   const cArchCav = mutArchCaveatCat.claims.find(c => c.id === 'cl-lcc143-three-lcc-archetypes-and-value-added-consolidation');
   cArchCav.caveats[0] = cArchCav.caveats[0].replace('5 USD', '6 USD');
-  assert.throws(() => validateCostSustainabilityFactors(mutArchCaveatCat, readings), /prose binding missing/);
+  assert.throws(() => validateCostSustainabilityFactors(mutArchCaveatCat, prev143.readings), /prose binding missing/);
 
-  const leakCat = structuredClone(catalog);
+  const leakCat = structuredClone(prev143.catalog);
   leakCat.claims.find(c => c.id === 'cl-lcc143-three-lcc-archetypes-and-value-added-consolidation').caveats[0] += ' 本仓库测试';
-  assert.throws(() => validateCostSustainabilityFactors(leakCat, readings), /hygiene check failed/);
+  assert.throws(() => validateCostSustainabilityFactors(leakCat, prev143.readings), /hygiene check failed/);
 
-  const leakEvCat = structuredClone(catalog);
+  const leakEvCat = structuredClone(prev143.catalog);
   leakEvCat.evidence.find(e => e.id === 'ev-lcc143-unep2011-lcc-flavours-and-cases').paraphrase += ' pdfIndices=0';
-  assert.throws(() => validateCostSustainabilityFactors(leakEvCat, readings), /hygiene check failed/);
+  assert.throws(() => validateCostSustainabilityFactors(leakEvCat, prev143.readings), /hygiene check failed/);
 
-  const leakSrcCat = structuredClone(catalog);
+  const leakSrcCat = structuredClone(prev143.catalog);
   leakSrcCat.sources.find(s => s.id === 'src-lcc143-unep-setac-2011-lcsa').preservation += ' 公开仓库';
-  assert.throws(() => validateCostSustainabilityFactors(leakSrcCat, readings), /hygiene check failed/);
+  assert.throws(() => validateCostSustainabilityFactors(leakSrcCat, prev143.readings), /hygiene check failed/);
 
-  const leakReadings = structuredClone(readings);
+  const leakReadings = structuredClone(prev143.readings);
   leakReadings.readings.find(r => r.id === 'rd-lcc143-unep-setac-2011-lcsa').passages[0].limits[0] += ' 零基索引';
-  assert.throws(() => validateCostSustainabilityFactors(catalog, leakReadings), /hygiene check failed/);
+  assert.throws(() => validateCostSustainabilityFactors(prev143.catalog, leakReadings), /hygiene check failed/);
 });
 
 test('Cost and sustainability ordinary IDs and all 7 print-visible correction notices fail closed on tampering', () => {
@@ -182,7 +185,9 @@ test('Cost and sustainability source plan recovers exact 9dbf6777 predecessor an
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
-  const input = { catalog, readings, literature, files };
+  restorePart5RereadTestFiles(files, part5.unit);
+  const prev143 = previousScientificTestRecords({ catalog, readings, literature }, part5.unit);
+  const input = { ...prev143, files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
   const qualify = (unit, customInput = input, customActual = actual, customStruct = structure) =>
     prepareCostSustainabilitySource(unit, customInput, customActual, customStruct);
@@ -292,7 +297,7 @@ test('Cost and sustainability source plan recovers exact 9dbf6777 predecessor an
   });
 
   await t.test('rejects unauthorized caveat or dependency mutation on corrected prior claims or B24-exclusive evidence', () => {
-    const badCat = structuredClone(catalog);
+    const badCat = structuredClone(prev143.catalog);
     badCat.claims.find(c => c.id === 'cl-sustainability-lcc-actor-perspective').caveats = ['私自附加'];
     const badInput = { ...input, catalog: badCat };
     const badActual = inspectReadableBookEdition(badInput), badStruct = copyeditSourceStructure(badInput);
@@ -300,7 +305,7 @@ test('Cost and sustainability source plan recovers exact 9dbf6777 predecessor an
     for (const ch of u.changes) if (ch.kind === 'record') ch.to = badActual.records[ch.key];
     assert.throws(() => qualify(u, badInput, badActual, badStruct), /modified unauthorized fields on cl-sustainability-lcc-actor-perspective/);
 
-    const badEvCat = structuredClone(catalog);
+    const badEvCat = structuredClone(prev143.catalog);
     badEvCat.evidence.find(e => e.id === 'ev-sustainability-lcsa-social-reference').paraphrase += '私自附加';
     const badEvInput = { ...input, catalog: badEvCat };
     const badEvActual = inspectReadableBookEdition(badEvInput), badEvStruct = copyeditSourceStructure(badEvInput);
@@ -344,7 +349,8 @@ test('Cost and sustainability receipt binding behaves fail-closed before and aft
   }
 
   const { readerPublicDownloads } = await import('./reader-current-output.mjs');
-  const expected = readerPublicDownloads(catalog, literature, readings);
+  const prev143 = previousScientificTestRecords({ catalog, readings, literature }, part5.unit);
+  const expected = readerPublicDownloads(prev143.catalog, prev143.literature, prev143.readings);
   const verify = (mutateUnit = () => {}, mutateOutput) => {
     const unit = structuredClone(config.unit);
     mutateUnit(unit);

@@ -1,3 +1,5 @@
+import { currentPart5Reread } from '@/scripts/reader-current-expectations.mjs';
+import { readerCitationSourceTitle } from '@/scripts/reader-exchange-semantics.mjs';
 import { loadShiftEvaluationFile } from '@/scripts/reader-load-shift.mjs';
 import { serviceConstraintsEvaluationFile } from '@/scripts/reader-service-constraints.mjs';
 import Link from 'next/link';
@@ -30,9 +32,14 @@ export function ConceptRef({ id }: { id: string }) {
 
 /** Reader-facing citation identity; execution records and hashes remain in the editorial archive. */
 export function ArtifactReading({ artifact }: { artifact: SourceArtifact }) {
-  if (artifact.kind === 'derived-text') return <>
-    <dt>引文依据</dt><dd><a href={artifact.originUrl}>官方文档</a>的文字摘录，引用限于所列文字与数值。该摘录记录本身不代表原始 PDF 字节或表格图像的核对。</dd>
-  </>;
+  if (artifact.kind === 'derived-text') {
+    if (currentPart5Reread) return <>
+      <dt>引文依据</dt><dd><a href={artifact.originUrl}>原载文献</a>的公开文字摘录，引用限于所列文字与数值，不包含原刊版面或表格图像的版式核对。</dd>
+    </>;
+    return <>
+      <dt>引文依据</dt><dd><a href={artifact.originUrl}>官方文档</a>的文字摘录，引用限于所列文字与数值。该摘录记录本身不代表原始 PDF 字节或表格图像的核对。</dd>
+    </>;
+  }
   return <><dt>文献文本</dt><dd><a href={artifact.resolvedUrl}>查看引用版本</a></dd></>;
 }
 export function SourceReading({ source }: { source: SourceRecord }) {
@@ -61,7 +68,7 @@ export function ClaimAnnotation({ id, showCaseInput = true, premiseReferences }:
     {evidence.length > 0 && <ul className="annotation-sources">{evidence.map(({ evidence: item, relation }) => {
       const source = sourcesById.get(item.sourceId);
       if (!source) throw new Error(`Unknown citation source: ${item.sourceId}`);
-      return <li key={item.id}><Link href={`/sources/#${item.id}`}>{source.title}</Link>。{item.locator.replace(/。+$/u, '')}。
+      return <li key={item.id}><Link href={`/sources/#${item.id}`}>{readerCitationSourceTitle(source, Boolean(currentPart5Reread))}</Link>。{item.locator.replace(/。+$/u, '')}。
         {relation !== 'supports' && <span>（{evidenceRelations[relation]}）</span>}
         <EvidencePassage evidence={item} />
       </li>;
