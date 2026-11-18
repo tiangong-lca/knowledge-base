@@ -24,6 +24,36 @@ lastReviewedCommit: d9dba6fbf5304eac7809056354ac9b0cfc8145b3
 
 ## Scoped scientific successors
 
+The Part V localization-comparison unit #137 compares early Chinese/Hong Kong
+localization schemes (`Yang et al. 2001`, 10th Five-Year Plan & `Lin, Zhang and
+Chen 2005`, `HKHA C1169 2005`, `GB/T 24040–24044`, and `Xie et al. 2022`) against
+EU `EF 3.1`, `CML 2001`, `ILCD 2010/2011`, `ReCiPe 2016`, `LC-IMPACT 2020`, and
+`UNEP GLAM 2019/2021/2024` across `B21` (`28` -> `36` claims plus two 6-column
+comparison tables, bringing the public catalog to `1,028` claims) while
+conserving `100%` of `1,005` untouched prior claims, all `1,044`
+non-B21-exclusive prior evidence records, and all `40` case downloads against
+`0518e6b529789b8dde9ffebf36d2eeb716a94390`. It binds `17` single-artifact
+`ev-loc137-*` records (`1-to-1` with `17` `psg-loc137-*` passages) and `93`
+`BigInt`-verified `numericFacts` to separate `EF 3.1` water (`209` codes),
+European-allowlist acidification (`36` codes truncating non-European countries to
+default `1.31`/`0.74`), and constant-value ozone/PM `<location>` rows (`0`
+primary `PM₂.₅` country rows); expose `96.81%` EU (`/0.0384` + `*14.12`) and
+`11.62%`/`4.24%` China upscaling inside `EF 3.1`'s `1,803`-row `"global"`
+normalisation workbook; prove `CML 2001`'s dirty-denominator dilution paradox vs
+`B/G` cancellation, Two Control Zones tightening (`1.250` vs `1.108`), and
+open-economy territorial denominator rank reversal (`5,922.49` vs `7,553.08`,
+break-even `150`); contrast biophysical units (`CN-HK-MO` merged vs Taiwan
+`4.86×`, Xi Jiang vs Yangzi `3.31×`, `LC-IMPACT` `56`/`11,000`/`804`/`449` units
+& `VS`) and double rank reversals across `GLAM 2024` concave marginal vs urban
+average `PM₂.₅` and `ReCiPe` `KR`/`CH-LI`/`DE` `PM₂.₅` & `NOx` `HOFP`/`EOFP`;
+and contrast `GB/T` procedural adoption against `EF 3.1` Addendum `ISO
+14040/14044` `"Not defined"` reference-package lock-in. `RIVM 2016-0104` `Table
+S3.2`'s post-`Botswana` missing-country/extra-zero row shift, uninspected 1998
+workshop parameter tables, `ECER 2011` primary text, and `CADIS`/`CLCD`
+inventories remain explicitly bounded alongside `15` inline `display:block`
+correction notices without silent repair, raw-source redistribution, or
+whole-book completion claims.
+
 The Part V weighting-and-valuation unit #135 compares Swiss Ecological Scarcity
 (`UBP 2013/2021` policy distance-to-target), EU `EF 3.1` (`Sala et al. 2018`
 `50:50` public/expert importance × `0.17`–`0.87` scientific robustness + global

@@ -434,8 +434,48 @@ all `40` case JSON files byte-for-byte. Separate unconditional-PASS two-round
 source (`2030b46d`), zero-context `B20`+`B22` reader (`1c332af2`), adversarial
 publication-engineering (`d27d00d5`) and actual-output acceptances
 (`40999572...`) and normal source/root delivery are tracked on Issue135.
-Remaining Part V units (`B21`, `B23`, `B24`), the Part V whole-part reread, and
-all eight global Programme9 criteria remain active.
+Unit135 is now fully delivered: source PR136/Main
+`0518e6b529789b8dde9ffebf36d2eeb716a94390`, qualified 468-file hosted output on
+`https://prism.tiangong.earth` (`b5bd9f03...`, including unmodified
+`validateReaderOutput` against archived Main source and live Chromium/`@media print`
+verification), exact root2442/PR2443/Main
+`f93287bff3a03c070cff40fa5f21feb891676c48`, and ordinary final completion and
+source-handoff (`1/1`) receipts.
+
+[Issue137](https://github.com/tiangong-lca/knowledge-base/issues/137) delivers
+the Part V cross-system localization comparative unit on `B21`
+(`《影响评价本地化》`, `28` -> `36` claims plus two 6-column responsive Markdown
+comparison tables across §§3–4, bringing the public catalog from `1,020` to
+`1,028` claims), recorded in the
+[localization-comparison protocol](editorial/2026-11-18-localization-comparison.md)
+(committed as `d8a645a` / `73724b9` before manuscript changes). Primary-source
+verification covers `17` SHA-256-verified carriers: official `EF-v3.1.zip`
+`Normalisation_Weighting_Factors_EF_3.1.xlsx` (`8a5ceda3...`, `1,803` rows), `4`
+`ILCD` `LCIAMethod` XMLs (`b2ad66ce` Water `209` codes, `b5c611c6` Acidification
+`36` European codes, `b5c610fe` POF `36` flat rows, `b5c602c6` PM `36` flat
+precursor rows & `0` primary `PM₂.₅` country rows), `EF Guide v2.0` (`c5dbc3b1...`,
+`Table 6` `25` inorganic air flows), `EF 3.1 Addendum` (`76a921ca...`, `Table 1`
+`ISO 14040/14044` `"Not defined"`), `PEF Method JRC115959` (`6f2a27bf...`) +
+`EU 2021/2279`, `CML 2001 Part 3 §4.6` (`b77c333e...`), `ILCD 2010 §6.7.6 &
+Provision XV.a.i` (`7de4b912...`), `ILCD 2011 §2.4` (`1adbcb92...`), `RIVM
+2016-0104` (`56f3124b...`, `Tables S1.1–S1.2, S2.1, S3.1, S6.3–S6.4` + forensic
+exclusion of row-shifted `Table S3.2`), `Verones et al. 2020` (`42fa6a40...`) &
+`LC-IMPACT Overall Report Ch. 1` (`6e3e3cb7...`), `UNEP GLAM Vol. 2`
+(`25a58192...`), `UNEP GLAM Phase 3 Table 3` (`6e9d7c23...`), and `GLAM
+V1.0.2024.10` (`86ff3e06...`), alongside verified Chinese/HK carriers (`杨建新等
+2001`, `2000年中国环境统计年报 表12` `2,460` vs `1,995.1` Mt, `十五计划`, `Lin,
+Zhang & Chen 2005`, `HKHA C1169 2005`, `GB/T 24040–24043`, `谢明辉等 2022`).
+Eight new `cl-loc137-*` claims bind `17` single-source/single-artifact
+`ev-loc137-*` records (`1-to-1` with `17` `psg-loc137-*` passages) and `93`
+`BigInt` rational `numericFacts`, paired with `15` bounded B21 prior-claim
+synchronizations (`15` inline `display:block` correction notices) and `8`
+B21-exclusive evidence locator cleanups while conserving `100%` of `1,005`
+untouched prior claims and all `40` case JSON files byte-for-byte. Separate
+unconditional-PASS primary-source (`50e5b510`), zero-context `B21` reader
+(`fe3c6c58`), adversarial publication-engineering (`9ecc7040`) and actual-output
+acceptances (`9b23d4b4...`, capture `1a38bd37...`) and normal source/root
+delivery are tracked on Issue137. Remaining Part V units (`B23`, `B24`), the Part
+V whole-part reread, and all eight global Programme9 criteria remain active.
 
 Rule adoption101 itself is fully delivered: PR103/Main10dc686 and
 root2381/PR2382/Main90bcaa574, with complete ordinary source/root handoff receipts.

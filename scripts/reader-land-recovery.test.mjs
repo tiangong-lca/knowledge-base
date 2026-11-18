@@ -3,6 +3,8 @@ import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import config from '../config/reader-land-recovery.json' with { type: 'json' };
 import capture from '../config/reader-land-recovery-capture.json' with { type: 'json' };
+import localization from '../config/reader-localization-comparison.json' with { type: 'json' };
+import { restoreLocalizationComparisonTestFiles } from './reader-localization-comparison.mjs';
 import weighting from '../config/reader-weighting-valuation.json' with { type: 'json' };
 import { restoreWeightingValuationTestFiles } from './reader-weighting-valuation.mjs';
 import part4 from '../config/reader-part4-reread.json' with { type: 'json' };
@@ -36,7 +38,7 @@ import { previousScientificTestRecords, testEnvelopes } from './fixtures/scienti
 test('B14 receipts bind captured raw files, normalized article pairs, public pages and JSON', {
   skip: !capture && config.status !== 'reviewed',
 }, () => {
-  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
+  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, localization.unit), weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
   const preTox = previousScientificTestRecords(preWater, tox.unit);
   const preOzrad = previousScientificTestRecords(preTox, ozrad.unit);
   const preOzone = previousScientificTestRecords(preOzrad, ozone.unit);
@@ -71,13 +73,14 @@ test('B14 source plan declares every actual transition with its real predecessor
     readServiceConstraintsFiles(root, serviceConstraints.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
-  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
+  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, localization.unit), weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
   const preTox = previousScientificTestRecords(preWater, tox.unit);
   const preOzrad = previousScientificTestRecords(preTox, ozrad.unit);
   const preOzone = previousScientificTestRecords(preOzrad, ozone.unit);
   const preFossils = previousScientificTestRecords(preOzone, fossils.unit);
   const preMinerals = previousScientificTestRecords(preFossils, minerals.unit);
   const previous = previousScientificTestRecords(preMinerals, acidEquivalents.unit);
+  restoreLocalizationComparisonTestFiles(files, localization.unit);
   restoreWeightingValuationTestFiles(files, weighting.unit);
   restorePart4RereadTestFiles(files, part4.unit);
   if (particulate.unit) files.set(`content${particulate.unit.routes[0]}.mdx`, Buffer.from(particulate.unit.previousMdx));

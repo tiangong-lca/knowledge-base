@@ -22,6 +22,49 @@ lastReviewedCommit: 9f1ba6cad49e8fb86892e206de363abe2cbac0f0
 
 # Publication architecture
 
+## Localization-comparison successor
+
+The #137 Part V cross-system localization successor
+(`scripts/reader-localization-comparison.mjs` and
+`scripts/reader-localization-comparison-factors.mjs`) updates `B21`
+(`content/docs/book/localization-evidence-and-denominators.mdx`, `28` -> `36`
+claims plus two responsive 6-column Markdown synthesis tables across §§3–4),
+brings the public catalog from `1,020` to `1,028` claims (`8` new `cl-loc137-*`
+claims, `17` single-source/single-artifact `ev-loc137-*` records bound `1-to-1`
+to `17` `psg-loc137-*` passages across `17` SHA-256-verified primary carriers —
+including isolated `src-loc137-lcimpact-ch1` / `rd-loc137-lcimpact-ch1` /
+`work-loc137-lcimpact-ch1` so `kb46-lcimpact2020` stays untouched — and `93`
+`BigInt`-verified `nf-loc137-*` `numericFacts`), normalizes `8` B21-exclusive
+prior evidence locators (`ev-lin-2005-*`, `ev-regional-xie-*`), and applies `15`
+bounded B21 prior-claim synchronizations, conserving `100%` of `1,005` untouched
+prior claims, all `1,044` non-B21-exclusive prior evidence records, and all `40`
+case JSON files byte-for-byte. Before `#135` runs its own rollback and receipt
+checks, `prepareLocalizationComparisonSource` enforces 24 recursive `exactKeys`/
+`onlyKeys` closed allowlists across `config`, `unit`, `changes[]`, `consumers[]`,
+`corrections[]`, `rawRecords[]`, `rawFields[]`, `outputs[]`, `publicArtifacts[]`,
+`history`, `ordinaryTargets`, `history.history[]`, `ordinary[]`, `outputCapture`,
+`reviewEvidence[]`, and `capture` (rejecting `layouts`, `partIntroduction`,
+`migrations`, and `history.ordinaryOverrides`), restores the exact
+`0518e6b529789b8dde9ffebf36d2eeb716a94390` B21 MDX (`ca55dfc7...`) and raw
+records, and verifies `localizationComparisonPredecessorPin` (`cec53208...`),
+`assertCleanLocalizationProse` hygiene, direct `BigInt`-to-prose/caveat/table
+bindings, and all `97` transitions across `531` dependent consumers.
+
+Across rendered DOM and navigation, `lib/reader-book.ts` extends
+`relabelHistoricalTargets` and `getCitationLabel` route coverage to
+`currentLocalizationComparison`, `ReaderTable` in `components/chapter-content.tsx`
+admits both `B21` 6-column comparison tables (`index === 1 || index === 2`,
+forbidding explicit `id` attributes), and `qualifyLocalizationComparisonHistory`
+verifies `2` ordinary targets (`-loc-137-ordinary-0` web & print), `14` history
+dispositions (`6` web + `6` print `<details data-localization-comparison-history>`
+controls stacked cleanly after `#95` copyedit history), and `15` inline
+`style="display:block"` public correction notices
+(`data-localization-comparison-correction`). `localizationComparisonCapturePin`
+(`1a38bd37...`) and `localizationComparisonUnitPin` (`9b23d4b4...`) bind the `4`
+changed articles (`B21` web/print plus `B20`/`B22` cross-chapter citation
+note-number sync) and `9` changed public artifacts with zero compiled CSS drift
+(`be180e5d...`).
+
 ## Weighting-and-valuation successor
 
 The #135 Part V cross-system weighting-and-valuation successor

@@ -1,3 +1,4 @@
+import { selectLocalizationComparison, prepareLocalizationComparisonSource, effectiveLocalizationComparison, verifyLocalizationComparisonReceipts } from './reader-localization-comparison.mjs';
 import { selectWeightingValuation, prepareWeightingValuationSource, effectiveWeightingValuation, verifyWeightingValuationReceipts } from './reader-weighting-valuation.mjs';
 import { selectPart4Reread, preparePart4RereadSource, effectivePart4Reread, verifyPart4RereadReceipts } from './reader-part4-reread.mjs';
 import { selectParticulateComparison, prepareParticulateComparisonSource, effectiveParticulateComparison, verifyParticulateComparisonReceipts } from './reader-particulate-comparison.mjs';
@@ -56,6 +57,9 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const serviceConstraints = selectServiceConstraints(serviceConfig, undefined, preview === 'service');
   const substitutionConfig = await readConfig('reader-substitution-rules.json');
   const substitutionRules = selectSubstitutionRules(substitutionConfig, undefined, preview === 'substitution');
+  const localizationConfig = await readConfig('reader-localization-comparison.json');
+  const localizationComparison = selectLocalizationComparison(localizationConfig, undefined, preview === 'localization-comparison');
+  if (preview === 'localization-comparison' && localizationConfig.status !== 'preview') throw new Error('Localization comparison review requires a private preview state');
   const weightingConfig = await readConfig('reader-weighting-valuation.json');
   const weightingValuation = selectWeightingValuation(weightingConfig, undefined, preview === 'weighting-valuation');
   if (preview === 'weighting-valuation' && weightingConfig.status !== 'preview') throw new Error('Weighting and valuation review requires a private preview state');
@@ -113,6 +117,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (loadShift && !substitutionRules) throw new Error('Load shift requires the accepted #105 generation');
   if (circularFootprint && !loadShift) throw new Error('Circular footprint requires the accepted #107 generation');
   if (landRecovery && !circularFootprint) throw new Error('Land recovery requires the accepted #109 generation');
+  if (localizationComparison && !weightingValuation) throw new Error('Localization comparison requires the accepted #135 generation');
   if (weightingValuation && !part4Reread) throw new Error('Weighting and valuation requires the accepted #133 generation');
   if (part4Reread && !particulateComparison) throw new Error('Part IV continuous reread requires the accepted #131 generation');
   if (particulateComparison && !eutrophicationPathways) throw new Error('Particulate comparison requires the accepted #129 generation');
@@ -127,7 +132,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (acidEquivalents && !landRecovery) throw new Error('Acid equivalents requires the accepted #111 generation');
   for (const [path, bytes] of await readLoadShiftCaseFiles(root, loadShift)) files.set(path, bytes);
   for (const [path, bytes] of await readServiceConstraintsFiles(root, serviceConstraints)) files.set(path, bytes);
-  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison, waterScarcity, biogenicCarbon, eutrophicationPathways, particulateComparison, part4Reread, weightingValuation].filter(Boolean)];
+  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison, waterScarcity, biogenicCarbon, eutrophicationPathways, particulateComparison, part4Reread, weightingValuation, localizationComparison].filter(Boolean)];
   const realRoot = await realpath(root);
   const reviewFiles = new Set((reviewUnits ?? []).flatMap(unit =>
     (unit.reviewEvidence ?? []).flatMap(row => [row.reportFile, row.artifactFile])));
@@ -142,7 +147,10 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const input = { catalog, readings, literature, files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
-  const weighting = weightingValuation && prepareWeightingValuationSource(weightingValuation, input, actual, structure);
+  const localization = localizationComparison && prepareLocalizationComparisonSource(localizationComparison, input, actual, structure);
+  const localizationInput = localization ? { ...localization.previousRecords, files: localization.files } : input;
+  const weighting = weightingValuation && prepareWeightingValuationSource(weightingValuation, localizationInput,
+    localization?.previous ?? actual, localization?.structure ?? structure);
   const weightingInput = weighting ? { ...weighting.previousRecords, files: weighting.files } : input;
   const part4 = part4Reread && preparePart4RereadSource(part4Reread, weightingInput,
     weighting?.previous ?? actual, weighting?.structure ?? structure);
@@ -275,8 +283,13 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   }
   if (weightingValuation && preview !== 'weighting-valuation') {
     const { readerPublicDownloads } = await import('./reader-current-output.mjs');
-    if (!verifyWeightingValuationReceipts(weightingValuation, artifacts, readerPublicDownloads(catalog, literature, readings)))
+    if (!verifyWeightingValuationReceipts(weightingValuation, artifacts, readerPublicDownloads(localizationInput.catalog, localizationInput.literature, localizationInput.readings)))
       throw new Error('Weighting and valuation lacks exact independent source, reader, and output evidence');
+  }
+  if (localizationComparison && preview !== 'localization-comparison') {
+    const { readerPublicDownloads } = await import('./reader-current-output.mjs');
+    if (!verifyLocalizationComparisonReceipts(localizationComparison, artifacts, readerPublicDownloads(catalog, literature, readings)))
+      throw new Error('Localization comparison lacks exact independent source, reader, and output evidence');
   }
   const service = serviceConstraints && prepareServiceConstraintsSource(serviceConstraints, substitution?.previous ?? actual,
     substitution?.structure ?? structure, { ...previousRecords, files: substitutionInput.files });
@@ -317,7 +330,8 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const qualifiedEutro = effectiveEutrophicationPathways(qualifiedBio, eutrophicationPathways, eutro?.affectedClaimIds);
   const qualifiedParticulate = effectiveParticulateComparison(qualifiedEutro, particulateComparison, particulate?.affectedClaimIds);
   const qualifiedPart4 = effectivePart4Reread(qualifiedParticulate, part4Reread, part4?.affectedClaimIds);
-  return effectiveWeightingValuation(qualifiedPart4, weightingValuation, weighting?.affectedClaimIds);
+  const qualifiedWeighting = effectiveWeightingValuation(qualifiedPart4, weightingValuation, weighting?.affectedClaimIds);
+  return effectiveLocalizationComparison(qualifiedWeighting, localizationComparison, localization?.affectedClaimIds);
 }
 
 export function validateReadableBookCurrent(root, catalog, readings, literature) {
@@ -423,4 +437,10 @@ export function validateWeightingValuationReviewSources(root, catalog, readings,
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Weighting and valuation review requires the explicit private preview');
   return qualifyCurrentReaderSources(root, catalog, readings, literature, 'weighting-valuation');
+}
+
+export function validateLocalizationComparisonReviewSources(root, catalog, readings, literature) {
+  if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
+    throw new Error('Localization comparison review requires the explicit private preview');
+  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'localization-comparison');
 }

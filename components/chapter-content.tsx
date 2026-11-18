@@ -1,3 +1,4 @@
+import { localizationComparisonCorrections, localizationComparisonHistoryControls, localizationComparisonOrdinaryId, localizationComparisonRoute, localizationComparisonSource } from '@/scripts/reader-localization-comparison.mjs';
 import { weightingValuationCorrections, weightingValuationHistoryControls, weightingValuationOrdinaryId, weightingValuationSource } from '@/scripts/reader-weighting-valuation.mjs';
 import { part4RereadCorrections, part4RereadHistoryControls, part4RereadOrdinaryId, part4RereadSource } from '@/scripts/reader-part4-reread.mjs';
 import { particulateComparisonHistoryControls, particulateComparisonOrdinaryId, particulateComparisonSource } from '@/scripts/reader-particulate-comparison.mjs';
@@ -14,7 +15,7 @@ import { landRecoveryHistoryControls, landRecoveryOrdinaryId, landRecoverySource
 import { circularFootprintHistoryControls, circularFootprintOrdinaryId, circularFootprintSource } from '@/scripts/reader-circular-footprint.mjs';
 import { loadShiftHistoryControls, loadShiftOrdinaryId, loadShiftSource } from '@/scripts/reader-load-shift.mjs';
 import { substitutionRulesHistoryControls, substitutionRulesOrdinaryId, substitutionRulesSource } from '@/scripts/reader-substitution-rules.mjs';
-import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity, currentBiogenicCarbon, currentEutrophicationPathways, currentParticulateComparison, currentPart4Reread, currentWeightingValuation } from '@/scripts/reader-current-expectations.mjs';
+import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity, currentBiogenicCarbon, currentEutrophicationPathways, currentParticulateComparison, currentPart4Reread, currentWeightingValuation, currentLocalizationComparison } from '@/scripts/reader-current-expectations.mjs';
 import { flowBoundaryHistoryControls, flowBoundaryHistoryTargets, flowBoundaryOrdinaryTargets, flowBoundaryOrdinaryId } from '@/scripts/reader-flow-boundary.mjs';
 import { serviceConstraintsHistoryControls, serviceConstraintsOrdinaryId, serviceConstraintsSource } from '@/scripts/reader-service-constraints.mjs';
 import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
@@ -62,6 +63,7 @@ const histories = [
   { controls: particulateComparisonHistoryControls(currentParticulateComparison), edition: particulateComparisonSource, attribute: 'particulate-comparison' },
   { controls: part4RereadHistoryControls(currentPart4Reread), edition: part4RereadSource, attribute: 'part4-reread' },
   { controls: weightingValuationHistoryControls(currentWeightingValuation), edition: weightingValuationSource, attribute: 'weighting-valuation' },
+  { controls: localizationComparisonHistoryControls(currentLocalizationComparison), edition: localizationComparisonSource, attribute: 'localization-comparison' },
 ];
 
 function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
@@ -77,7 +79,8 @@ function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
     || biogenicCarbonOrdinaryId(currentBiogenicCarbon, route, print, index)
     || particulateComparisonOrdinaryId(currentParticulateComparison, route, print, index)
     || part4RereadOrdinaryId(currentPart4Reread, route, print, index)
-    || weightingValuationOrdinaryId(currentWeightingValuation, route, print, index);
+    || weightingValuationOrdinaryId(currentWeightingValuation, route, print, index)
+    || localizationComparisonOrdinaryId(currentLocalizationComparison, route, print, index);
 }
 
 // Leave versioned native fragments below the screen's sticky site header.
@@ -94,7 +97,8 @@ export function currentReaderOrdinaryAttributes(route: string, print: boolean, i
       || id === biogenicCarbonOrdinaryId(currentBiogenicCarbon, route, print, index)
       || id === particulateComparisonOrdinaryId(currentParticulateComparison, route, print, index)
       || id === part4RereadOrdinaryId(currentPart4Reread, route, print, index)
-      || id === weightingValuationOrdinaryId(currentWeightingValuation, route, print, index))
+      || id === weightingValuationOrdinaryId(currentWeightingValuation, route, print, index)
+      || id === localizationComparisonOrdinaryId(currentLocalizationComparison, route, print, index))
     ? { id, style: scientificHistoryScroll }
     : { id };
 }
@@ -170,8 +174,10 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
     return createElement(defaults.p ?? 'p', { ...props, id: target.id,
       ...(target.style && { style: { ...props.style, ...target.style } }) });
   }
-  const tableId = loadShiftOrdinaryId(currentLoadShift, page.url.replace(/\/$/, ''), print, 'table')
-    || weightingValuationOrdinaryId(currentWeightingValuation, page.url.replace(/\/$/, ''), print, 'table');
+  const cleanRoute = page.url.replace(/\/$/, '');
+  const tableId = loadShiftOrdinaryId(currentLoadShift, cleanRoute, print, 'table')
+    || weightingValuationOrdinaryId(currentWeightingValuation, cleanRoute, print, 'table');
+  const hasLocalizationTables = Boolean(currentLocalizationComparison && cleanRoute === localizationComparisonRoute);
   let tableCount = 0;
   function ReaderTable(props: HTMLAttributes<HTMLTableElement>) {
     if (Object.hasOwn(props, 'id')) {
@@ -181,7 +187,10 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
     if (index === 1 && tableId) {
       return createElement(defaults.table ?? 'table', { ...props, id: tableId, style: { ...props.style, ...scientificHistoryScroll } });
     }
-    if (index === 2 && page.url.replace(/\/$/, '') === '/docs/book/lime-preferences-and-damage-weights') {
+    if (index === 2 && cleanRoute === '/docs/book/lime-preferences-and-damage-weights') {
+      return createElement(defaults.table ?? 'table', props);
+    }
+    if ((index === 1 || index === 2) && hasLocalizationTables) {
       return createElement(defaults.table ?? 'table', props);
     }
     throw new Error(`Invalid, unauthorized or duplicate ReaderTable on ${page.url}`);
@@ -231,7 +240,7 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
     <RetainedScope entry={legacy.scopes.get(prefix)} readingTitle={print ? printReadingEntryAnchor(page.url) : undefined} />
     {historyAt(historyPath, print ? prefix : 'nd-page')}
     {historyAt(historyPath, print ? printReadingEntryAnchor(page.url) : 'main-content')}
-    <MDX components={getMDXComponents({ Prose: ChapterProse, Claim: Paragraph, ReaderSection, ReaderFigure, TeachingCase: ChapterTeachingCase, a: ReaderLink, ...(currentReaderOrdinaryId(page.url.replace(/\/$/, ''), print, 0) ? { p: ReaderParagraph } : {}), ...(tableId ? { table: ReaderTable } : {}), ...headings })} />
+    <MDX components={getMDXComponents({ Prose: ChapterProse, Claim: Paragraph, ReaderSection, ReaderFigure, TeachingCase: ChapterTeachingCase, a: ReaderLink, ...(currentReaderOrdinaryId(cleanRoute, print, 0) ? { p: ReaderParagraph } : {}), ...((tableId || hasLocalizationTables) ? { table: ReaderTable } : {}), ...headings })} />
     {plan.notes.length > 0 && <section className="chapter-notes not-prose" aria-labelledby={plan.headingId}>
       <LegacyCitationAliases ids={legacy.aliases.get(plan.headingId)} target={plan.headingId} />
       {print ? <h4 id={plan.headingId}>注释</h4> : <h2 id={plan.headingId}>注释</h2>}
@@ -264,6 +273,11 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
           <p key={row.claimId} className="legacy-citation-context" data-weighting-valuation-correction={note.id} style={{ display: 'block' }}>
             <time dateTime={weightingValuationSource.date}>{weightingValuationSource.date}</time>{' 修订：'}{row.scope}{' '}
             <a href={citationSourceHref(weightingValuationSource.commit)}>查看前版源文件</a>
+          </p>)}
+        {currentLocalizationComparison?.corrections && localizationComparisonCorrections.filter(row => row.chapter === cleanRoute && row.claimId === note.id).map(row =>
+          <p key={row.claimId} className="legacy-citation-context" data-localization-comparison-correction={note.id} style={{ display: 'block' }}>
+            <time dateTime={localizationComparisonSource.date}>{localizationComparisonSource.date}</time>{' 修订：'}{row.scope}{' '}
+            <a href={citationSourceHref(localizationComparisonSource.commit)}>查看前版源文件</a>
           </p>)}
       </li>)}</ol>
     </section>}

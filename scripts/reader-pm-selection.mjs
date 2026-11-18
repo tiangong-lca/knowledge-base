@@ -1,4 +1,4 @@
-import { currentAcidEquivalents, currentEutrophicationPathways, currentParticulateComparison, currentBookLayout, currentBookMdxMatches, currentBookFileMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
+import { currentAcidEquivalents, currentEutrophicationPathways, currentParticulateComparison, currentLocalizationComparison, currentBookLayout, currentBookMdxMatches, currentBookFileMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import { createHash } from 'node:crypto';
 import { isDeepStrictEqual as same } from 'node:util';
 import original from '../config/pm-selection-original.json' with { type: 'json' };
@@ -245,7 +245,8 @@ export function validatePmSelectionCoverage(edition, sources, catalog, accepted,
       if (same(previous, current)) return true;
       return (currentAcidEquivalents && kind === 'readings' && previous.id === 'rd-unep-glam-2019-pathways'
         || currentEutrophicationPathways && kind === 'literature' && previous.id === 'work-unep-glam-2019-volume2'
-        || currentParticulateComparison && (kind === 'readings' && previous.id === 'rd-kb46-lcimpact2020' || kind === 'literature' && previous.id === 'work-kb46-lcimpact2020'))
+        || currentParticulateComparison && (kind === 'readings' && previous.id === 'rd-kb46-lcimpact2020' || kind === 'literature' && previous.id === 'work-kb46-lcimpact2020')
+        || currentLocalizationComparison && (kind === 'readings' && ['rd-unep-glam-2019-pathways', 'rd-kb46-glam-pm2024'].includes(previous.id) || kind === 'literature' && ['work-unep-glam-2019-volume2', 'work-kb46-glam-pm2024'].includes(previous.id)))
         && currentBookRecordMatches(kind, previous, current, 'raw');
     });
     if (!Array.isArray(rows) || !retainsResearch
