@@ -15,7 +15,7 @@ checkPaths:
   - "app/**"
   - "scripts/**"
 lastReviewedAt: 2026-11-18
-lastReviewedCommit: 4e094f7e89d5ba563af0ded8a47e15d62260045f
+lastReviewedCommit: 1a9301c2153867cf1b6cdefadc648346bd78b739
 ---
 
 # LCA Living Knowledge Base and Review
@@ -469,7 +469,7 @@ pnpm dev
 
 The static site is exported to `out/`. Search works without an external service or credentials. EdgeOne Makers project `makers-w8wl4xjmt2mj` imports this repository's `main` branch; the production hostname is `prism.tiangong.earth`. Hosting qualification is tracked in [knowledge-base #3](https://github.com/tiangong-lca/knowledge-base/issues/3). A successful local build does not establish live deployment, domain activation or HTTPS availability. Do not copy another site's identity, search index or credentials.
 
-`edgeone.json` and `.nvmrc` both select the platform-preinstalled Node 24.18.0. The pnpm `packageManager` pin remains 12.16.1; a supported preinstalled pnpm switches to that declared version automatically. Check the actual hosted install log and keep the frozen lockfile. Do not run `corepack enable` against platform-owned Node shims. The lockfile includes the verified pnpm 12.16.1 executable wrapper used by hosted version selection. `tsconfig.json` deliberately matches the hosted builder's compact serialization and function-directory exclusions so a build preserves source identity; `/.edgeone/` is generated deployment output.
+`edgeone.json` and `.nvmrc` both select the platform-preinstalled Node 24.18.0. The pnpm `packageManager` pin remains 12.16.1; a supported preinstalled pnpm switches to that declared version automatically. Check the actual hosted install log and keep the frozen lockfile. Do not run `corepack enable` against platform-owned Node shims. The lockfile includes the verified pnpm 12.16.1 executable wrapper used by hosted version selection. `tsconfig.json` deliberately matches the hosted builder's compact serialization and function-directory exclusions so a build preserves source identity; `/.edgeone/` is generated deployment output. `next.config.ts` sets `staticPageGenerationTimeout: 180`, while `scripts/knowledge.mjs`, `lib/reader-book.ts`, `components/evidence.tsx`, and the catalog reference pages pre-index lookups and memoize production worker chapter-index validation ([knowledge-base #141](https://github.com/tiangong-lca/knowledge-base/issues/141)), preserving all normalized HTML digests, compiled CSS, JS chunks, `catalogSha256`, and public JSON projections.
 
 ```sh
 node scripts/impact.mjs <changed-id>

@@ -151,9 +151,11 @@ export function getClaimEvidence(data: Catalog, claim: ClaimRecord): ClaimEviden
   return resolveClaimEvidence(data, claim) as ClaimEvidenceRecord[];
 }
 
+const knownClaimIds = new Set(rawCatalog.claims.map(claim => claim.id));
+
 /** Only membership is exposed, so unpublished text never enters a renderer. */
 export function isKnownClaim(id: string): boolean {
-  return rawCatalog.claims.some(claim => claim.id === id);
+  return knownClaimIds.has(id);
 }
 
 export default catalog;

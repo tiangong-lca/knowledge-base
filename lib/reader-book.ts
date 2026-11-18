@@ -107,7 +107,9 @@ export function getLegacyCitations(route: string, print: boolean) {
   }
   return { aliases, notices, scopes };
 }
-export const getChapterReferenceIndex = cache(async (print = false) => {
+type ChapterReferenceIndex = ReturnType<typeof createChapterReferenceIndex>;
+const productionIndexCache = new Map<boolean, Promise<ChapterReferenceIndex>>();
+async function buildChapterReferenceIndex(print = false): Promise<ChapterReferenceIndex> {
   const pages = print ? getPrintPages() : getOrderedPages();
   const rawPages = await Promise.all(pages.map(async(page,index)=>({url:page.url,title:page.data.title,raw:await page.data.getText('raw'),printOrder:index})));
   const index = () => createChapterReferenceIndex(rawPages.map(page => ({
@@ -149,6 +151,17 @@ export const getChapterReferenceIndex = cache(async (print = false) => {
   const exchangeErrors = validateExchangeSemanticsCoverage(edition, rawSources, undefined, catalog, exchangeProse);
   if (exchangeErrors.length) throw new Error(exchangeErrors.join("\n"));
   return index();
+}
+export const getChapterReferenceIndex = cache((print = false): Promise<ChapterReferenceIndex> => {
+  if (process.env.NODE_ENV !== 'production') return buildChapterReferenceIndex(print);
+  const cached = productionIndexCache.get(print);
+  if (cached) return cached;
+  const pending = buildChapterReferenceIndex(print).catch(error => {
+    productionIndexCache.delete(print);
+    throw error;
+  });
+  productionIndexCache.set(print, pending);
+  return pending;
 });
 export async function getCitationLabel(target: Destination) {
   if (target.label) return target.label;

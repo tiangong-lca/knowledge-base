@@ -17,10 +17,41 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-18
-lastReviewedCommit: 4e094f7e89d5ba563af0ded8a47e15d62260045f
+lastReviewedCommit: 1a9301c2153867cf1b6cdefadc648346bd78b739
 ---
 
 # Publication architecture
+
+## Static-export indexing and worker memoization
+
+Issue #141 eliminates the `O(|E|^2 |C|)` and per-page full-book revalidation
+bottlenecks that caused EdgeOne Standard static-export workers to exceed
+Next.js's default `60 s` page-generation budget once the public catalog reached
+`1,036` claims and `1,083` evidence records (`1a9301c2...`, deployment
+`dpjl7fpd94l4`):
+
+- `scripts/knowledge.mjs` (`getClaimEvidence`) caches `byId(records(catalog,
+  'evidence'))` in a `WeakMap` keyed on `catalog.evidence`, validating element
+  references and `id` strings before reuse so in-place array or ID mutations in
+  tests immediately invalidate the cached `Map`.
+- `app/sources/page.tsx`, `app/research/page.tsx`, `app/concepts/page.tsx`,
+  `components/evidence.tsx`, and `lib/catalog.ts` (`isKnownClaim`) pre-index
+  catalog and reading lookups (`Map` / `Set`) in deterministic record order
+  instead of nested linear `.filter(...)` / `.find(...)` scans, preserving exact
+  DOM element and link ordering.
+- `lib/reader-book.ts` (`getChapterReferenceIndex`) adds worker-lifetime
+  `Promise` memoization under `NODE_ENV === 'production'` alongside React
+  per-request `cache(...)` (evicting rejected promises on failure while keeping
+  development hot-reload uncached), and `next.config.ts` sets
+  `staticPageGenerationTimeout: 180` for throttled container CPUs.
+- All `468` exported paths, `validateReaderOutput` normalized HTML article and
+  reference-page digests, compiled CSS (`be180e5d...`), JS chunks,
+  `catalogSha256` (`a1b132e7...`), public JSON projections, and case inputs
+  remain identical to `1a9301c2153867cf1b6cdefadc648346bd78b739` (differing in
+  raw `manifest.files` only in Next.js's per-build `buildId` and the new
+  commit's `sourceCommit`), leaving every scientific successor and capture pin
+  unchanged while reducing 58-page static generation from `57.0 s` to `6.7 s` on
+  Apple Silicon.
 
 ## Social-comparison successor
 
