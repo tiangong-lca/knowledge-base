@@ -1,3 +1,4 @@
+import { weightingValuationCorrections, weightingValuationHistoryControls, weightingValuationOrdinaryId, weightingValuationSource } from '@/scripts/reader-weighting-valuation.mjs';
 import { part4RereadCorrections, part4RereadHistoryControls, part4RereadOrdinaryId, part4RereadSource } from '@/scripts/reader-part4-reread.mjs';
 import { particulateComparisonHistoryControls, particulateComparisonOrdinaryId, particulateComparisonSource } from '@/scripts/reader-particulate-comparison.mjs';
 import { eutrophicationPathwaysHistoryControls, eutrophicationPathwaysSource } from '@/scripts/reader-eutrophication-pathways.mjs';
@@ -13,7 +14,7 @@ import { landRecoveryHistoryControls, landRecoveryOrdinaryId, landRecoverySource
 import { circularFootprintHistoryControls, circularFootprintOrdinaryId, circularFootprintSource } from '@/scripts/reader-circular-footprint.mjs';
 import { loadShiftHistoryControls, loadShiftOrdinaryId, loadShiftSource } from '@/scripts/reader-load-shift.mjs';
 import { substitutionRulesHistoryControls, substitutionRulesOrdinaryId, substitutionRulesSource } from '@/scripts/reader-substitution-rules.mjs';
-import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity, currentBiogenicCarbon, currentEutrophicationPathways, currentParticulateComparison, currentPart4Reread } from '@/scripts/reader-current-expectations.mjs';
+import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity, currentBiogenicCarbon, currentEutrophicationPathways, currentParticulateComparison, currentPart4Reread, currentWeightingValuation } from '@/scripts/reader-current-expectations.mjs';
 import { flowBoundaryHistoryControls, flowBoundaryHistoryTargets, flowBoundaryOrdinaryTargets, flowBoundaryOrdinaryId } from '@/scripts/reader-flow-boundary.mjs';
 import { serviceConstraintsHistoryControls, serviceConstraintsOrdinaryId, serviceConstraintsSource } from '@/scripts/reader-service-constraints.mjs';
 import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
@@ -60,6 +61,7 @@ const histories = [
   { controls: eutrophicationPathwaysHistoryControls(currentEutrophicationPathways), edition: eutrophicationPathwaysSource, attribute: 'eutrophication-pathways' },
   { controls: particulateComparisonHistoryControls(currentParticulateComparison), edition: particulateComparisonSource, attribute: 'particulate-comparison' },
   { controls: part4RereadHistoryControls(currentPart4Reread), edition: part4RereadSource, attribute: 'part4-reread' },
+  { controls: weightingValuationHistoryControls(currentWeightingValuation), edition: weightingValuationSource, attribute: 'weighting-valuation' },
 ];
 
 function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
@@ -74,7 +76,8 @@ function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
     || waterScarcityOrdinaryId(currentWaterScarcity, route, print, index)
     || biogenicCarbonOrdinaryId(currentBiogenicCarbon, route, print, index)
     || particulateComparisonOrdinaryId(currentParticulateComparison, route, print, index)
-    || part4RereadOrdinaryId(currentPart4Reread, route, print, index);
+    || part4RereadOrdinaryId(currentPart4Reread, route, print, index)
+    || weightingValuationOrdinaryId(currentWeightingValuation, route, print, index);
 }
 
 // Leave versioned native fragments below the screen's sticky site header.
@@ -90,7 +93,8 @@ export function currentReaderOrdinaryAttributes(route: string, print: boolean, i
       || id === waterScarcityOrdinaryId(currentWaterScarcity, route, print, index)
       || id === biogenicCarbonOrdinaryId(currentBiogenicCarbon, route, print, index)
       || id === particulateComparisonOrdinaryId(currentParticulateComparison, route, print, index)
-      || id === part4RereadOrdinaryId(currentPart4Reread, route, print, index))
+      || id === part4RereadOrdinaryId(currentPart4Reread, route, print, index)
+      || id === weightingValuationOrdinaryId(currentWeightingValuation, route, print, index))
     ? { id, style: scientificHistoryScroll }
     : { id };
 }
@@ -166,9 +170,21 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
     return createElement(defaults.p ?? 'p', { ...props, id: target.id,
       ...(target.style && { style: { ...props.style, ...target.style } }) });
   }
-  const tableId = loadShiftOrdinaryId(currentLoadShift, page.url.replace(/\/$/, ''), print, 'table');
+  const tableId = loadShiftOrdinaryId(currentLoadShift, page.url.replace(/\/$/, ''), print, 'table')
+    || weightingValuationOrdinaryId(currentWeightingValuation, page.url.replace(/\/$/, ''), print, 'table');
+  let tableCount = 0;
   function ReaderTable(props: HTMLAttributes<HTMLTableElement>) {
-    return createElement(defaults.table ?? 'table', { ...props, id: tableId, style: { ...props.style, ...scientificHistoryScroll } });
+    if (Object.hasOwn(props, 'id')) {
+      throw new Error(`Explicit table id is not allowed on ${page.url}`);
+    }
+    const index = ++tableCount;
+    if (index === 1 && tableId) {
+      return createElement(defaults.table ?? 'table', { ...props, id: tableId, style: { ...props.style, ...scientificHistoryScroll } });
+    }
+    if (index === 2 && page.url.replace(/\/$/, '') === '/docs/book/lime-preferences-and-damage-weights') {
+      return createElement(defaults.table ?? 'table', props);
+    }
+    throw new Error(`Invalid, unauthorized or duplicate ReaderTable on ${page.url}`);
   }
   const figureId = biogenicCarbonOrdinaryId(currentBiogenicCarbon, page.url.replace(/\/$/, ''), print, 'figure');
   let figureCount = 0;
@@ -243,6 +259,11 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
           <p key={row.claimId} className="legacy-citation-context" data-part4-reread-correction={note.id} style={{ display: 'block' }}>
             <time dateTime={part4RereadSource.date}>{part4RereadSource.date}</time>{' 修订：'}{row.scope}{' '}
             <a href={citationSourceHref(part4RereadSource.commit)}>查看前版源文件</a>
+          </p>)}
+        {currentWeightingValuation?.corrections && weightingValuationCorrections.filter(row => row.chapter === page.url && row.claimId === note.id).map(row =>
+          <p key={row.claimId} className="legacy-citation-context" data-weighting-valuation-correction={note.id} style={{ display: 'block' }}>
+            <time dateTime={weightingValuationSource.date}>{weightingValuationSource.date}</time>{' 修订：'}{row.scope}{' '}
+            <a href={citationSourceHref(weightingValuationSource.commit)}>查看前版源文件</a>
           </p>)}
       </li>)}</ol>
     </section>}

@@ -15,10 +15,39 @@ checkPaths:
   - "app/**"
   - "scripts/**"
 lastReviewedAt: 2026-11-18
-lastReviewedCommit: de9047ce4d343f87c0b83c0d4cfe369cd8e3eb43
+lastReviewedCommit: 9f1ba6cad49e8fb86892e206de363abe2cbac0f0
 ---
 
 # LCA Living Knowledge Base and Review
+
+[Part V cross-system weighting, policy distance, endpoint damage cut-points & monetary valuation #135](https://github.com/tiangong-lca/knowledge-base/issues/135)
+extends Part V across `B20` (`《生态稀缺赋权》`, `26` -> `32` claims) and `B22`
+(`《环境损害估值》`, `35` -> `41` claims plus a 6-column × 4-row cross-paradigm
+comparison table, bringing the public catalog from `1,008` to `1,020` claims)
+while conserving `100%` of `1,003` untouched prior claims (including all `7`
+`CASE-ECOLOGICAL-SCARCITY` and all `9` `CASE-LIME-VALUATION` claims), all
+`1,034` prior evidence records, and all `40` case download files byte-for-byte
+against `65aafe25a19865d61bd5a251584ce8cc39dc1941`. Its
+[comparative record](_docs/editorial/2026-11-18-weighting-and-valuation.md) binds
+`18` single-source/single-artifact `ev-weight135-*` records (`1-to-1` with `18`
+`psg-weight135-*` passages across `18` SHA-256-verified primary carriers), `83`
+`BigInt`-verified `nf-weight135-*` `numericFacts`, and `5` inline
+`display:block` public correction notices on synchronized prior non-case claims:
+Swiss Ecological Scarcity (`UBP 2013/2021` policy distance-to-target) vs EU
+`EF 3.1` (`Sala et al. 2018` `50:50` public/expert importance × `0.17`–`0.87`
+scientific robustness + global per-capita annual `NF`), coating `甲` vs `乙` across
+single `POF` midpoint, 16-category outdoor air, indoor generic `NMVOC` (`POF`
+omission in `b5c610fe.xml` erasing `1.1699×10⁻⁶ pt/g` and keeping `甲 < 乙`
+despite a `144×` `HTNC` jump), and indoor `styrene` (`146×` `HTC + HTNC` surge
+reversing to `乙 < 甲`); `PEFCR v6.3` Column `A` (`sum 100.03`) vs robustness
+discount reversal on `丙`/`丁` and `JRC130796` `NF`/`CF` shift across `2,752`
+datasets; `ISO 14042/14044`, `CML 2001` & `ILCD 2010` bans on public comparative
+weighting vs `EU 2021/2279` mandatory `PEF/OEF` weighting; `ReCiPe 2016` 3-AoP
+halt (`160.5×` `I/H/E` climate-health reversal vs `EF 3.1` stack-height reversal
+with `戊 = 0.02883 pt`), `LIME1/LIME2` 2003/2004/2012 biodiversity vs health
+non-monotonic re-reversal, incommensurability of household `WTP`, resource
+surplus extraction cost, and enterprise `LCC`, and `UNEP GLAM Phase 3` reporting
+discipline.
 
 [Part IV whole-part continuous reread, cross-chapter reference alignment & scope completion #133](https://github.com/tiangong-lca/knowledge-base/issues/133)
 completes the first whole-part continuous reread across `F02` (`content/docs/book/index.mdx:18`),

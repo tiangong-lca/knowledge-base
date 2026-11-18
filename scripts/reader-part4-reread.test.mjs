@@ -2,6 +2,8 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
+import weighting from '../config/reader-weighting-valuation.json' with { type: 'json' };
+import { restoreWeightingValuationTestFiles } from './reader-weighting-valuation.mjs';
 import config from '../config/reader-part4-reread.json' with { type: 'json' };
 import capture from '../config/reader-part4-reread-capture.json' with { type: 'json' };
 import particulate from '../config/reader-particulate-comparison.json' with { type: 'json' };
@@ -13,7 +15,7 @@ import service from '../config/reader-service-constraints.json' with { type: 'js
 import catalog from '../knowledge/catalog.json' with { type: 'json' };
 import readings from '../knowledge/research/readings.json' with { type: 'json' };
 import literature from '../knowledge/research/literature-map.json' with { type: 'json' };
-import { testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
+import { previousScientificTestRecords, testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
 import { chapterAnchorPrefix, printUnitAnchor } from './reader-book.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { fingerprintCopyeditPrintParts } from './reader-copyedit-history.mjs';
@@ -48,7 +50,8 @@ import {
 } from './reader-part4-reread.mjs';
 
 test('Part IV continuous reread enforces zero remaining mechanical #90 scopes across all 1008 claims and 2 case publications', async () => {
-  assert.equal(catalog.claims.length, 1008);
+  const prev133 = previousScientificTestRecords({ catalog, readings, literature }, weighting.unit);
+  assert.equal(prev133.catalog.claims.length, 1008);
   const mechanical = catalog.claims.filter(c => c.scope.includes('具名方法与证据范围'));
   assert.deepEqual(mechanical, []);
 
@@ -252,7 +255,9 @@ test('Part IV continuous reread source plan preserves exact 2ba0bfe2 state and r
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
-  const input = { catalog, readings, literature, files };
+  restoreWeightingValuationTestFiles(files, weighting.unit);
+  const prev133Rec = previousScientificTestRecords({ catalog, readings, literature }, weighting.unit);
+  const input = { ...prev133Rec, files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
   const qualify = (unit, customInput = input, customActual = actual, customStruct = structure) =>
     preparePart4RereadSource(unit, customInput, customActual, customStruct);
@@ -280,7 +285,7 @@ test('Part IV continuous reread source plan preserves exact 2ba0bfe2 state and r
   });
 
   await t.test('M2: rejects deleting caveats or mutating prose on scope-only claims', () => {
-    const noCavCat = structuredClone(catalog);
+    const noCavCat = structuredClone(prev133Rec.catalog);
     noCavCat.claims.find(c => c.id === 'cl-path-acid-indicator').caveats = [];
     const noCavInput = { ...input, catalog: noCavCat };
     const noCavActual = inspectReadableBookEdition(noCavInput), noCavStruct = copyeditSourceStructure(noCavInput);
@@ -288,7 +293,7 @@ test('Part IV continuous reread source plan preserves exact 2ba0bfe2 state and r
     for (const ch of uCav.changes) if (ch.kind === 'record') ch.to = noCavActual.records[ch.key];
     assert.throws(() => qualify(uCav, noCavInput, noCavActual, noCavStruct), /altered protected caveats/);
 
-    const mutTextCat = structuredClone(catalog);
+    const mutTextCat = structuredClone(prev133Rec.catalog);
     mutTextCat.claims.find(c => c.id === 'cl-pm-opening').text += '未受审改写。';
     const mutTextInput = { ...input, catalog: mutTextCat };
     const mutTextActual = inspectReadableBookEdition(mutTextInput), mutTextStruct = copyeditSourceStructure(mutTextInput);
@@ -298,7 +303,7 @@ test('Part IV continuous reread source plan preserves exact 2ba0bfe2 state and r
   });
 
   await t.test('rejects protected claim binding mutation (evidenceIds/premiseIds/conceptIds)', () => {
-    const badCat = structuredClone(catalog);
+    const badCat = structuredClone(prev133Rec.catalog);
     badCat.claims.find(c => c.id === 'cl-pm-opening').conceptIds = [];
     const badInput = { ...input, catalog: badCat };
     const badActual = inspectReadableBookEdition(badInput), badStruct = copyeditSourceStructure(badInput);
@@ -308,7 +313,7 @@ test('Part IV continuous reread source plan preserves exact 2ba0bfe2 state and r
   });
 
   await t.test('rejects mechanical placeholder regression, angle brackets or leaked internal ID in modified claims', () => {
-    const badCat = structuredClone(catalog);
+    const badCat = structuredClone(prev133Rec.catalog);
     badCat.claims.find(c => c.id === 'cl-pm-opening').scope = '颗粒物排放与健康损害中的具名方法与证据范围。';
     const badInput = { ...input, catalog: badCat };
     const badActual = inspectReadableBookEdition(badInput), badStruct = copyeditSourceStructure(badInput);
@@ -316,7 +321,7 @@ test('Part IV continuous reread source plan preserves exact 2ba0bfe2 state and r
     for (const ch of u.changes) if (ch.kind === 'record') ch.to = badActual.records[ch.key];
     assert.throws(() => qualify(u, badInput, badActual, badStruct), /mechanical placeholder scope/);
 
-    const leakCat = structuredClone(catalog);
+    const leakCat = structuredClone(prev133Rec.catalog);
     leakCat.claims.find(c => c.id === 'cl-pm-opening').scope = '泄露内部标识 ev-particulate131-ilcd2011-pm。';
     const leakInput = { ...input, catalog: leakCat };
     const leakActual = inspectReadableBookEdition(leakInput), leakStruct = copyeditSourceStructure(leakInput);
@@ -324,7 +329,7 @@ test('Part IV continuous reread source plan preserves exact 2ba0bfe2 state and r
     for (const ch of uLeak.changes) if (ch.kind === 'record') ch.to = leakActual.records[ch.key];
     assert.throws(() => qualify(uLeak, leakInput, leakActual, leakStruct), /invalid or leaked reader-surface token/);
 
-    const htmlCat = structuredClone(catalog);
+    const htmlCat = structuredClone(prev133Rec.catalog);
     htmlCat.claims.find(c => c.id === 'cl-pm-opening').scope = '注入尖括号 <b>x</b> 范围';
     const htmlInput = { ...input, catalog: htmlCat };
     const htmlActual = inspectReadableBookEdition(htmlInput), htmlStruct = copyeditSourceStructure(htmlInput);
@@ -353,7 +358,8 @@ test('Part IV continuous reread source plan preserves exact 2ba0bfe2 state and r
 
 test('Part IV continuous reread receipt verifier fails closed when capture pin is absent', () => {
   if (part4RereadCapturePin !== null || !config.unit) return;
-  const expected = readerPublicDownloads(catalog, literature, readings);
+  const prev133 = previousScientificTestRecords({ catalog, readings, literature }, weighting.unit);
+  const expected = readerPublicDownloads(prev133.catalog, prev133.literature, prev133.readings);
   const unit = structuredClone(config.unit);
   unit.outputCapture = {
     sourceCommit: '2ba0bfe2f39d28bfa42e61f5e2b70585770bcb73',
@@ -375,7 +381,8 @@ test('Part IV continuous reread receipt verifier fails closed when capture pin i
 });
 
 test('Part IV continuous reread receipts bind actual output capture independently', { skip: !part4RereadCapturePin && config.status !== 'reviewed' }, () => {
-  const expected = readerPublicDownloads(catalog, literature, readings);
+  const prev133 = previousScientificTestRecords({ catalog, readings, literature }, weighting.unit);
+  const expected = readerPublicDownloads(prev133.catalog, prev133.literature, prev133.readings);
   const verify = (mutateUnit = () => {}, mutateOutput) => {
     const unit = structuredClone(config.unit);
     mutateUnit(unit);

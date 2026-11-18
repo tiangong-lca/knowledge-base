@@ -1,3 +1,4 @@
+import { selectWeightingValuation, prepareWeightingValuationSource, effectiveWeightingValuation, verifyWeightingValuationReceipts } from './reader-weighting-valuation.mjs';
 import { selectPart4Reread, preparePart4RereadSource, effectivePart4Reread, verifyPart4RereadReceipts } from './reader-part4-reread.mjs';
 import { selectParticulateComparison, prepareParticulateComparisonSource, effectiveParticulateComparison, verifyParticulateComparisonReceipts } from './reader-particulate-comparison.mjs';
 import { selectEutrophicationPathways, prepareEutrophicationPathwaysSource, effectiveEutrophicationPathways, verifyEutrophicationPathwaysReceipts } from './reader-eutrophication-pathways.mjs';
@@ -55,6 +56,9 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const serviceConstraints = selectServiceConstraints(serviceConfig, undefined, preview === 'service');
   const substitutionConfig = await readConfig('reader-substitution-rules.json');
   const substitutionRules = selectSubstitutionRules(substitutionConfig, undefined, preview === 'substitution');
+  const weightingConfig = await readConfig('reader-weighting-valuation.json');
+  const weightingValuation = selectWeightingValuation(weightingConfig, undefined, preview === 'weighting-valuation');
+  if (preview === 'weighting-valuation' && weightingConfig.status !== 'preview') throw new Error('Weighting and valuation review requires a private preview state');
   const part4Config = await readConfig('reader-part4-reread.json');
   const part4Reread = selectPart4Reread(part4Config, undefined, preview === 'part4-reread');
   if (preview === 'part4-reread' && part4Config.status !== 'preview') throw new Error('Part IV continuous reread review requires a private preview state');
@@ -109,6 +113,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (loadShift && !substitutionRules) throw new Error('Load shift requires the accepted #105 generation');
   if (circularFootprint && !loadShift) throw new Error('Circular footprint requires the accepted #107 generation');
   if (landRecovery && !circularFootprint) throw new Error('Land recovery requires the accepted #109 generation');
+  if (weightingValuation && !part4Reread) throw new Error('Weighting and valuation requires the accepted #133 generation');
   if (part4Reread && !particulateComparison) throw new Error('Part IV continuous reread requires the accepted #131 generation');
   if (particulateComparison && !eutrophicationPathways) throw new Error('Particulate comparison requires the accepted #129 generation');
   if (eutrophicationPathways && !biogenicCarbon) throw new Error('Eutrophication pathways requires the accepted #127 generation');
@@ -122,7 +127,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (acidEquivalents && !landRecovery) throw new Error('Acid equivalents requires the accepted #111 generation');
   for (const [path, bytes] of await readLoadShiftCaseFiles(root, loadShift)) files.set(path, bytes);
   for (const [path, bytes] of await readServiceConstraintsFiles(root, serviceConstraints)) files.set(path, bytes);
-  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison, waterScarcity, biogenicCarbon, eutrophicationPathways, particulateComparison, part4Reread].filter(Boolean)];
+  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison, waterScarcity, biogenicCarbon, eutrophicationPathways, particulateComparison, part4Reread, weightingValuation].filter(Boolean)];
   const realRoot = await realpath(root);
   const reviewFiles = new Set((reviewUnits ?? []).flatMap(unit =>
     (unit.reviewEvidence ?? []).flatMap(row => [row.reportFile, row.artifactFile])));
@@ -137,8 +142,11 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const input = { catalog, readings, literature, files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
-  const part4 = part4Reread && preparePart4RereadSource(part4Reread, input, actual, structure);
-  const part4Input = part4 ? { ...part4.previousRecords, files: part4.files } : input;
+  const weighting = weightingValuation && prepareWeightingValuationSource(weightingValuation, input, actual, structure);
+  const weightingInput = weighting ? { ...weighting.previousRecords, files: weighting.files } : input;
+  const part4 = part4Reread && preparePart4RereadSource(part4Reread, weightingInput,
+    weighting?.previous ?? actual, weighting?.structure ?? structure);
+  const part4Input = part4 ? { ...part4.previousRecords, files: part4.files } : weightingInput;
   const particulate = particulateComparison && prepareParticulateComparisonSource(particulateComparison, part4Input,
     part4?.previous ?? actual, part4?.structure ?? structure);
   const particulateInput = particulate ? { ...particulate.previousRecords, files: particulate.files } : part4Input;
@@ -262,8 +270,13 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   }
   if (part4Reread && preview !== 'part4-reread') {
     const { readerPublicDownloads } = await import('./reader-current-output.mjs');
-    if (!verifyPart4RereadReceipts(part4Reread, artifacts, readerPublicDownloads(catalog, literature, readings)))
+    if (!verifyPart4RereadReceipts(part4Reread, artifacts, readerPublicDownloads(weightingInput.catalog, weightingInput.literature, weightingInput.readings)))
       throw new Error('Part IV continuous reread lacks exact independent source, reader, and output evidence');
+  }
+  if (weightingValuation && preview !== 'weighting-valuation') {
+    const { readerPublicDownloads } = await import('./reader-current-output.mjs');
+    if (!verifyWeightingValuationReceipts(weightingValuation, artifacts, readerPublicDownloads(catalog, literature, readings)))
+      throw new Error('Weighting and valuation lacks exact independent source, reader, and output evidence');
   }
   const service = serviceConstraints && prepareServiceConstraintsSource(serviceConstraints, substitution?.previous ?? actual,
     substitution?.structure ?? structure, { ...previousRecords, files: substitutionInput.files });
@@ -303,7 +316,8 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const qualifiedBio = effectiveBiogenicCarbon(qualifiedWater, biogenicCarbon, bio?.affectedClaimIds);
   const qualifiedEutro = effectiveEutrophicationPathways(qualifiedBio, eutrophicationPathways, eutro?.affectedClaimIds);
   const qualifiedParticulate = effectiveParticulateComparison(qualifiedEutro, particulateComparison, particulate?.affectedClaimIds);
-  return effectivePart4Reread(qualifiedParticulate, part4Reread, part4?.affectedClaimIds);
+  const qualifiedPart4 = effectivePart4Reread(qualifiedParticulate, part4Reread, part4?.affectedClaimIds);
+  return effectiveWeightingValuation(qualifiedPart4, weightingValuation, weighting?.affectedClaimIds);
 }
 
 export function validateReadableBookCurrent(root, catalog, readings, literature) {
@@ -403,4 +417,10 @@ export function validatePart4RereadReviewSources(root, catalog, readings, litera
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Part IV continuous reread review requires the explicit private preview');
   return qualifyCurrentReaderSources(root, catalog, readings, literature, 'part4-reread');
+}
+
+export function validateWeightingValuationReviewSources(root, catalog, readings, literature) {
+  if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
+    throw new Error('Weighting and valuation review requires the explicit private preview');
+  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'weighting-valuation');
 }
