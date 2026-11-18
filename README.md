@@ -15,10 +15,43 @@ checkPaths:
   - "app/**"
   - "scripts/**"
 lastReviewedAt: 2026-11-18
-lastReviewedCommit: 9f1ba6cad49e8fb86892e206de363abe2cbac0f0
+lastReviewedCommit: 9ee5783f10d3598edc55eb356e7d800dda5a0e25
 ---
 
 # LCA Living Knowledge Base and Review
+
+[Part V cross-system localization, normalisation denominators, biophysical scales & institutional adoption #137](https://github.com/tiangong-lca/knowledge-base/issues/137)
+extends Part V `B21` (`《影响评价本地化》`, `28` -> `36` claims plus two 6-column
+responsive Markdown comparison tables across §§3–4, bringing the public catalog
+from `1,020` to `1,028` claims) while conserving `100%` of `1,005` untouched
+prior claims, all `1,044` non-B21-exclusive prior evidence records, and all `40`
+case download files byte-for-byte against `0518e6b529789b8dde9ffebf36d2eeb716a94390`.
+Its [comparative record](_docs/editorial/2026-11-18-localization-comparison.md)
+binds `17` single-source/single-artifact `ev-loc137-*` records (`1-to-1` with `17`
+`psg-loc137-*` passages across `17` SHA-256-verified primary carriers), `93`
+`BigInt`-verified `nf-loc137-*` `numericFacts`, `8` B21-exclusive evidence
+locator cleanups, and `15` inline `display:block` public correction notices on
+synchronized B21 prior claims: EU `EF 3.1` three location regimes (`209` global
+water codes with ES/JP `86.62×` and CN/DE `31.18×` vs `36` European acidification
+codes truncating CN/US/IN/JP to default `1.31`/`0.74` vs `36` constant ozone/PM
+precursor rows and `0` primary `PM₂.₅` country rows) & `ILCD 2011` European scope;
+`Normalisation_Weighting_Factors_EF_3.1.xlsx` (`1,803` rows, pop `6,895,889,018`)
+regional upscaling inside `"global"` `NF`s (`96.81%` EU `/0.0384` + `*14.12`
+upscaling in freshwater ecotoxicity `56,716.59 CTUe/person` and `11.62%`/`4.24%`
+China metal upscaling in human toxicity); `CML 2001` dirty-denominator dilution
+paradox vs Yang et al. (2001) `B/G` cancellation, 10th Five-Year Plan Two Control
+Zones tightening (`1.250` vs `1.108`, `2,460` vs `1,995.1` Mt `SO₂`), and HKHA
+`C1169` open-economy territorial denominator rank reversal (`5,922.49` vs
+`7,553.08 kg CO₂-eq/(cap·yr)`, break-even ratio `150`); `LC-IMPACT` (`56` air
+regions, `11,000` watersheds, `804`/`449` ecoregions, `VS`) & `ReCiPe 2016`
+(`CN-HK-MO` merged `1.7×10⁻³` vs Taiwan `3.5×10⁻⁴ = 4.86×`, Xi Jiang `1.67×10⁻¹²`
+vs Yangzi `5.52×10⁻¹² = 3.31×`); `UNEP GLAM 2024` ground-level `PM₂.₅` concave
+marginal (`CHE 3.00× / DEU 2.94× CHN`) vs urban average (`CHN 1.72× CHE`) double
+reversal, `ReCiPe` South Korea vs `CH-LI`/`DE` `PM₂.₅` midpoint-to-endpoint &
+`NOx` `HOFP`/`EOFP` (`1.75×` vs `48.71×`) reversals (plus forensic disclosure of
+`RIVM 2016-0104` `Table S3.2` post-`Botswana` row shift); and China `GB/T
+24040–24044` procedural adoption vs EU `EF 3.1` Addendum `ISO 14040/14044` `"Not
+defined"` compliance lock-in & four-layer localization audit checklist.
 
 [Part V cross-system weighting, policy distance, endpoint damage cut-points & monetary valuation #135](https://github.com/tiangong-lca/knowledge-base/issues/135)
 extends Part V across `B20` (`《生态稀缺赋权》`, `26` -> `32` claims) and `B22`
@@ -48,6 +81,8 @@ with `戊 = 0.02883 pt`), `LIME1/LIME2` 2003/2004/2012 biodiversity vs health
 non-monotonic re-reversal, incommensurability of household `WTP`, resource
 surplus extraction cost, and enterprise `LCC`, and `UNEP GLAM Phase 3` reporting
 discipline.
+Unit #135 is fully delivered at Main `0518e6b529789b8dde9ffebf36d2eeb716a94390`,
+qualified 468-file hosting and root #2442 (`f93287bff3a03c070cff40fa5f21feb891676c48`).
 
 [Part IV whole-part continuous reread, cross-chapter reference alignment & scope completion #133](https://github.com/tiangong-lca/knowledge-base/issues/133)
 completes the first whole-part continuous reread across `F02` (`content/docs/book/index.mdx:18`),

@@ -3,6 +3,8 @@ import fs from 'node:fs';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
+import localization from '../config/reader-localization-comparison.json' with { type: 'json' };
+import { restoreLocalizationComparisonTestFiles } from './reader-localization-comparison.mjs';
 import config from '../config/reader-weighting-valuation.json' with { type: 'json' };
 import capture from '../config/reader-weighting-valuation-capture.json' with { type: 'json' };
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
@@ -11,7 +13,7 @@ import service from '../config/reader-service-constraints.json' with { type: 'js
 import catalog from '../knowledge/catalog.json' with { type: 'json' };
 import readings from '../knowledge/research/readings.json' with { type: 'json' };
 import literature from '../knowledge/research/literature-map.json' with { type: 'json' };
-import { testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
+import { previousScientificTestRecords, testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
 import { chapterAnchorPrefix, printUnitAnchor } from './reader-book.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
@@ -36,19 +38,20 @@ import {
 } from './reader-weighting-valuation.mjs';
 
 test('Weighting and valuation enforces exact 1020 claims, 18 single-artifact evidence records, 83 BigInt facts and zero hygiene leaks', () => {
-  assert.equal(catalog.claims.length, 1020);
-  assert.equal(catalog.claims.filter(c => c.id.startsWith('cl-weight135-')).length, 12);
-  assert.equal(catalog.evidence.filter(e => e.id.startsWith('ev-weight135-')).length, 18);
+  const prev135 = previousScientificTestRecords({ catalog, readings, literature }, localization.unit);
+  assert.equal(prev135.catalog.claims.length, 1020);
+  assert.equal(prev135.catalog.claims.filter(c => c.id.startsWith('cl-weight135-')).length, 12);
+  assert.equal(prev135.catalog.evidence.filter(e => e.id.startsWith('ev-weight135-')).length, 18);
   assert.deepEqual(catalog.claims.filter(c => c.scope.includes('具名方法与证据范围')), []);
 
-  validateWeightingValuationFactors(catalog, readings);
+  validateWeightingValuationFactors(prev135.catalog, prev135.readings);
 
   // Verify lib/reader-book.ts binds currentWeightingValuation in both relabelHistoricalTargets and getCitationLabel
   const readerBookTs = fs.readFileSync(new URL('../lib/reader-book.ts', import.meta.url), 'utf8');
   assert(readerBookTs.includes('...currentWeightingValuation?.routes ?? []'));
   assert(readerBookTs.includes('currentWeightingValuation?.routes.includes(target.route)'));
 
-  const extraFactCat = structuredClone(catalog);
+  const extraFactCat = structuredClone(prev135.catalog);
   extraFactCat.evidence.find(e => e.id === 'ev-weight135-ef31-pof-equal-cf').numericFacts.push({
     id: 'nf-weight135-forged',
     value: '1.0',
@@ -57,19 +60,19 @@ test('Weighting and valuation enforces exact 1020 claims, 18 single-artifact evi
     subject: 'forged',
     basis: 'forged',
   });
-  assert.throws(() => validateWeightingValuationFactors(extraFactCat, readings), /numericFacts count mismatch/);
+  assert.throws(() => validateWeightingValuationFactors(extraFactCat, prev135.readings), /numericFacts count mismatch/);
 
-  const mutConceptCat = structuredClone(catalog);
+  const mutConceptCat = structuredClone(prev135.catalog);
   mutConceptCat.claims.find(c => c.id === 'cl-weight135-ef-coating-outdoor').conceptIds = ['cn-es-factor'];
-  assert.throws(() => validateWeightingValuationFactors(mutConceptCat, readings), /claim structure invalid/);
+  assert.throws(() => validateWeightingValuationFactors(mutConceptCat, prev135.readings), /claim structure invalid/);
 
-  const mutValueCat = structuredClone(catalog);
+  const mutValueCat = structuredClone(prev135.catalog);
   mutValueCat.evidence.find(e => e.id === 'ev-weight135-ef31-nmvoc-htnc-subcompartments').numericFacts[3].value = '0.000008956';
-  assert.throws(() => validateWeightingValuationFactors(mutValueCat, readings), /malformed or unexpected numericFact/);
+  assert.throws(() => validateWeightingValuationFactors(mutValueCat, prev135.readings), /malformed or unexpected numericFact/);
 
-  const leakCat = structuredClone(catalog);
+  const leakCat = structuredClone(prev135.catalog);
   leakCat.claims.find(c => c.id === 'cl-weight135-glam3-reporting-discipline').caveats[0] += ' 本仓库测试';
-  assert.throws(() => validateWeightingValuationFactors(leakCat, readings), /hygiene check failed/);
+  assert.throws(() => validateWeightingValuationFactors(leakCat, prev135.readings), /hygiene check failed/);
 });
 
 test('Weighting and valuation ordinary IDs (including B22 table) and all 5 print-visible correction notices fail closed on tampering', () => {
@@ -136,7 +139,9 @@ test('Weighting and valuation source plan recovers exact ff59fb32 predecessor an
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
-  const input = { catalog, readings, literature, files };
+  restoreLocalizationComparisonTestFiles(files, localization.unit);
+  const prev135Rec = previousScientificTestRecords({ catalog, readings, literature }, localization.unit);
+  const input = { ...prev135Rec, files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
   const qualify = (unit, customInput = input, customActual = actual, customStruct = structure) =>
     prepareWeightingValuationSource(unit, customInput, customActual, customStruct);
@@ -190,7 +195,7 @@ test('Weighting and valuation source plan recovers exact ff59fb32 predecessor an
   });
 
   await t.test('rejects unauthorized caveat or dependency mutation on corrected prior claims', () => {
-    const badCat = structuredClone(catalog);
+    const badCat = structuredClone(prev135Rec.catalog);
     badCat.claims.find(c => c.id === 'cl-lime-policy-contrast').caveats = ['私自附加'];
     const badInput = { ...input, catalog: badCat };
     const badActual = inspectReadableBookEdition(badInput), badStruct = copyeditSourceStructure(badInput);
@@ -208,7 +213,8 @@ test('Weighting and valuation source plan recovers exact ff59fb32 predecessor an
 
 test('Weighting and valuation receipt verifier fails closed when capture pin is absent', () => {
   if (weightingValuationCapturePin !== null || !config.unit) return;
-  const expected = readerPublicDownloads(catalog, literature, readings);
+  const prev135 = previousScientificTestRecords({ catalog, readings, literature }, localization.unit);
+  const expected = readerPublicDownloads(prev135.catalog, prev135.literature, prev135.readings);
   const unit = structuredClone(config.unit);
   unit.outputCapture = {
     sourceCommit: '65aafe25a19865d61bd5a251584ce8cc39dc1941',
@@ -230,7 +236,8 @@ test('Weighting and valuation receipt verifier fails closed when capture pin is 
 });
 
 test('Weighting and valuation receipts bind actual output capture independently', { skip: !weightingValuationCapturePin && config.status !== 'reviewed' }, () => {
-  const expected = readerPublicDownloads(catalog, literature, readings);
+  const prev135 = previousScientificTestRecords({ catalog, readings, literature }, localization.unit);
+  const expected = readerPublicDownloads(prev135.catalog, prev135.literature, prev135.readings);
   const verify = (mutateUnit = () => {}, mutateOutput) => {
     const unit = structuredClone(config.unit);
     mutateUnit(unit);

@@ -2,6 +2,8 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
+import localization from '../config/reader-localization-comparison.json' with { type: 'json' };
+import { restoreLocalizationComparisonTestFiles } from './reader-localization-comparison.mjs';
 import weighting from '../config/reader-weighting-valuation.json' with { type: 'json' };
 import { restoreWeightingValuationTestFiles } from './reader-weighting-valuation.mjs';
 import config from '../config/reader-part4-reread.json' with { type: 'json' };
@@ -50,7 +52,7 @@ import {
 } from './reader-part4-reread.mjs';
 
 test('Part IV continuous reread enforces zero remaining mechanical #90 scopes across all 1008 claims and 2 case publications', async () => {
-  const prev133 = previousScientificTestRecords({ catalog, readings, literature }, weighting.unit);
+  const prev133 = previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, localization.unit), weighting.unit);
   assert.equal(prev133.catalog.claims.length, 1008);
   const mechanical = catalog.claims.filter(c => c.scope.includes('具名方法与证据范围'));
   assert.deepEqual(mechanical, []);
@@ -255,8 +257,9 @@ test('Part IV continuous reread source plan preserves exact 2ba0bfe2 state and r
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
+  restoreLocalizationComparisonTestFiles(files, localization.unit);
   restoreWeightingValuationTestFiles(files, weighting.unit);
-  const prev133Rec = previousScientificTestRecords({ catalog, readings, literature }, weighting.unit);
+  const prev133Rec = previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, localization.unit), weighting.unit);
   const input = { ...prev133Rec, files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
   const qualify = (unit, customInput = input, customActual = actual, customStruct = structure) =>
@@ -358,7 +361,7 @@ test('Part IV continuous reread source plan preserves exact 2ba0bfe2 state and r
 
 test('Part IV continuous reread receipt verifier fails closed when capture pin is absent', () => {
   if (part4RereadCapturePin !== null || !config.unit) return;
-  const prev133 = previousScientificTestRecords({ catalog, readings, literature }, weighting.unit);
+  const prev133 = previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, localization.unit), weighting.unit);
   const expected = readerPublicDownloads(prev133.catalog, prev133.literature, prev133.readings);
   const unit = structuredClone(config.unit);
   unit.outputCapture = {
@@ -381,7 +384,7 @@ test('Part IV continuous reread receipt verifier fails closed when capture pin i
 });
 
 test('Part IV continuous reread receipts bind actual output capture independently', { skip: !part4RereadCapturePin && config.status !== 'reviewed' }, () => {
-  const prev133 = previousScientificTestRecords({ catalog, readings, literature }, weighting.unit);
+  const prev133 = previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, localization.unit), weighting.unit);
   const expected = readerPublicDownloads(prev133.catalog, prev133.literature, prev133.readings);
   const verify = (mutateUnit = () => {}, mutateOutput) => {
     const unit = structuredClone(config.unit);

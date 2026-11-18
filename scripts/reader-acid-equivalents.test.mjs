@@ -3,6 +3,8 @@ import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import config from '../config/reader-acid-equivalents.json' with { type: 'json' };
 import capture from '../config/reader-acid-equivalents-capture.json' with { type: 'json' };
+import localization from '../config/reader-localization-comparison.json' with { type: 'json' };
+import { restoreLocalizationComparisonTestFiles } from './reader-localization-comparison.mjs';
 import weighting from '../config/reader-weighting-valuation.json' with { type: 'json' };
 import { restoreWeightingValuationTestFiles } from './reader-weighting-valuation.mjs';
 import part4 from '../config/reader-part4-reread.json' with { type: 'json' };
@@ -36,7 +38,7 @@ import { previousScientificTestRecords, testEnvelopes } from './fixtures/scienti
 test('B16 receipts bind captured raw files, normalized article pairs, public pages and JSON', {
   skip: !capture && config.status !== 'reviewed',
 }, () => {
-  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
+  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, localization.unit), weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
   const preTox = previousScientificTestRecords(preWater, tox.unit);
   const preOzrad = previousScientificTestRecords(preTox, ozrad.unit);
   const preOzone = previousScientificTestRecords(preOzrad, ozone.unit);
@@ -70,6 +72,7 @@ test('B16 source plan declares every actual transition with its real predecessor
     readServiceConstraintsFiles(root, serviceConstraints.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
+  restoreLocalizationComparisonTestFiles(files, localization.unit);
   restoreWeightingValuationTestFiles(files, weighting.unit);
   restorePart4RereadTestFiles(files, part4.unit);
   if (particulate.unit) files.set(`content${particulate.unit.routes[0]}.mdx`, Buffer.from(particulate.unit.previousMdx));
@@ -81,7 +84,7 @@ test('B16 source plan declares every actual transition with its real predecessor
   if (ozone.unit) files.set(`content${ozone.unit.routes[0]}.mdx`, Buffer.from(ozone.unit.previousMdx));
   if (fossils.unit) files.set(`content${fossils.unit.routes[0]}.mdx`, Buffer.from(fossils.unit.previousMdx));
   if (minerals.unit) files.set(`content${minerals.unit.routes[0]}.mdx`, Buffer.from(minerals.unit.previousMdx));
-  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
+  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, localization.unit), weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
   const preTox = previousScientificTestRecords(preWater, tox.unit);
   const preOzrad = previousScientificTestRecords(preTox, ozrad.unit);
   const preOzone = previousScientificTestRecords(preOzrad, ozone.unit);
