@@ -87,16 +87,30 @@ bytes, `0` guard errors), and exact root integration `workspace#2506` /
 
 [Issue155](https://github.com/tiangong-lca/knowledge-base/issues/155) (Part VI
 Whole-Part Continuous Reread,
-[protocol](editorial/2026-11-19-part6-continuous-reread.md)) executes and
-independently accepts the Part VI continuous reread on qualified `main`
-`b1c911ee7aa0c772559d363e83e13abf765bceb4` (`unitPin = 000fefcb...`,
-`capturePin = 5c2d6795...`, `67` bounded changes across `4` managed files, `39`
-non-case claims, `23` non-case evidence locators, `1` public projection, and
-`10` public correction notices; `0` case-bound edits across all `24` Part VI
-case claims, `19` case locators, and `40/40` case downloads; `720/720` tests,
-CSS zero-drift `be180e5d...`, `50/50` Playwright responsive/print QA, and
-3-stream unconditional `0/0/0 PASS`). Parts VII–VIII and all 8 global
-Programme #9 criteria remain open.
+[protocol](editorial/2026-11-19-part6-continuous-reread.md)) is fully
+delivered: source PR156/Main `8d498f48baf96865ef5e953d8b6a19136cd36ab9`
+(tree `a7021ebd...`), qualified hosted 468-file output on
+`https://prism.tiangong.earth` (`manifestSha256 = f522858a...`, `368,000,997`
+bytes, `0` guard errors), and exact root integration `workspace#2510` /
+`PR #2512` (`50617025...`, `Delivery complete: True`, `Source handoff: 1/1`).
+
+[Issue157](https://github.com/tiangong-lca/knowledge-base/issues/157) (Part VII
+Unit 1 `B29`《墙面服务比较》,
+[protocol](editorial/2026-11-19-wall-service-comparison.md)) is separately
+reviewed and bound on qualified `main`
+`8d498f48baf96865ef5e953d8b6a19136cd36ab9`, adding `6` non-case comparative-
+assertion & paired/MC-boundary claims (`1,074 -> 1,080`), `1` five-column
+cross-framework comparison table, `4` SHA-256-verified primary sources (ILCD
+2010, EU 2021/2279 OJ L 144 cross-referenced with OJ L 471, GHG Protocol
+Product Standard 2011, Heijungs 2020), `6` evidence records (`11` BigInt-
+verified numeric facts), and `1` paywalled ISO 14044:2006 boundary record while
+freezing all `22` `CASE-WALL-CONNECT` claims and `40/40` case downloads
+byte-for-byte untouched. Separate source, zero-context full-chapter reader, and
+publication-engineering reviews all concluded unconditional PASS (`0/0/0`),
+with Playwright `20/20` QA, `724/724` tests, and CSS zero-drift (`be180e5d...`).
+Clean production build, source PR/merge, live hosting qualification, root
+integration, remaining Parts VII–VIII, and all 8 global Programme #9 criteria
+remain open.
 
 [Issue105](https://github.com/tiangong-lca/knowledge-base/issues/105) continues
 with B10: reporting objects and evidence conditions for co-product substitution.

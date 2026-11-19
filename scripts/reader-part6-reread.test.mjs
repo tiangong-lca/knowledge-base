@@ -1,6 +1,9 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import test from 'node:test';
+import wsc from '../config/reader-wall-service-comparison.json' with { type: 'json' };
+import { restoreWallServiceComparisonTestFiles } from './reader-wall-service-comparison.mjs';
+import { previousScientificTestRecords } from './fixtures/scientific-receipt-envelope.mjs';
 import config from '../config/reader-part6-reread.json' with { type: 'json' };
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
@@ -33,7 +36,9 @@ async function loadInput() {
     readServiceConstraintsFiles('.', service.unit),
   ]);
   for (const [p, b] of [...shiftFiles, ...serviceFiles]) files.set(p, b);
-  return { catalog, readings, literature, files };
+  restoreWallServiceComparisonTestFiles(files, wsc.unit);
+  const prev155 = previousScientificTestRecords({ catalog, readings, literature }, wsc.unit);
+  return { ...prev155, files };
 }
 
 test('Unit #155 Part VI continuous reread prepares cleanly and recovers exact b1c911ee predecessor pin with 1074 claims and 0 case edits', async () => {

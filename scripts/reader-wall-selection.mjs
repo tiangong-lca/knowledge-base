@@ -187,7 +187,7 @@ export function remapWallSelectionCitations(entries,value=original,history=captu
 }
 
 const tableData = table => ({caption:table.querySelector('caption')?.text,rows:table.querySelectorAll('tr').map(row=>row.querySelectorAll('th,td').map(cell=>cell.text)),cellSemantics:table.querySelectorAll('tr').map(row=>row.querySelectorAll('th,td').map(cell=>({tag:cell.tagName,scope:cell.getAttribute('scope')??null})))});
-function concealed(node,stop){for(let n=node;n&&n.nodeType===1;n=n.parentNode){if(n.tagName==='DETAILS'||n.hasAttribute('hidden')||n.getAttribute('aria-hidden')?.toLowerCase()==='true'||n.hasAttribute('style')||/(?:^|\s)(?:hidden|sr-only|screen-only|print-only)(?:\s|$)/.test(n.getAttribute('class')??''))return true;if(n===stop)break;}return false;}
+function concealed(node,stop){for(let n=node;n&&n.nodeType===1;n=n.parentNode){const st=n.getAttribute('style');if(n.tagName==='DETAILS'||n.hasAttribute('hidden')||n.getAttribute('aria-hidden')?.toLowerCase()==='true'||(st!=null&&st.replace(/\s+/g,'')!=='scroll-margin-top:7rem')||/(?:^|\s)(?:hidden|sr-only|screen-only|print-only)(?:\s|$)/.test(n.getAttribute('class')??''))return true;if(n===stop)break;}return false;}
 /** @param {any} unit
  * @param {{print?:boolean,accepted?:any,independentDigest?:string|null}} options */
 export function validateWallSelectionCaseOutput(unit,{print=false,accepted=null,independentDigest=wallSelectionAcceptedDigest}={}) {
@@ -281,6 +281,24 @@ export function validateRenderedWallSelection(document,path,value=original,catal
     if(previous?.id!==headingId(path,row.section))errors.push(`${path}: Wall selection ordinary prose section differs`);
     if(row.navigation.some(link=>link.href===`#${wallSelectionCaseHeadingId(print)}`)){const sequence=unit.querySelectorAll('a[role="doc-noteref"],p').filter(n=>n===p||(n.getAttribute('role')==='doc-noteref'&&!n.closest('.teaching-case,.chapter-notes'))),prior=sequence.slice(0,sequence.indexOf(p)).at(-1);if(prior?.getAttribute('data-reader-reference')!=='cl-wall-coordinates')errors.push(`${path}: Wall selection matrix entry must immediately follow coordinates`);}
     for(const link of row.navigation)if(link.href.startsWith('#')&&(link.href===`#${wallSelectionCaseHeadingId(print)}`?unit:document).querySelectorAll(`[id="${decodeURIComponent(link.href.slice(1))}"]`).length!==1)errors.push(`${path}: Wall selection native ordinary target missing`);checked.add(p);
+  }
+  if (layout.comparisonTable) {
+    const ct = layout.comparisonTable;
+    const introMatches = unit.querySelectorAll('p').filter(n => !n.closest('.teaching-case,.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope]') && !n.querySelector('a[role="doc-noteref"]') && n.text.replace(/\s+/g, ' ').trim() === ct.intro);
+    const nonCaseTables = unit.querySelectorAll('table').filter(n => !n.closest('.teaching-case,.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope]'));
+    const compTable = nonCaseTables[0];
+    const introNode = introMatches[0];
+    const headers = compTable?.querySelectorAll('thead th').map(th => th.text.replace(/\s+/g, ' ').trim()) ?? [];
+    const rows = compTable?.querySelectorAll('tbody tr').map(tr => tr.querySelectorAll('td').map(td => td.text.replace(/\s+/g, ' ').trim())) ?? [];
+    if (introMatches.length !== 1 || nonCaseTables.length !== 1 || !compTable || !introNode
+        || (introNode.nextElementSibling !== compTable && introNode.nextElementSibling !== compTable.parentNode)
+        || concealed(introNode, unit) || concealed(compTable, unit)
+        || !same(headers, ct.headers) || !same(rows, ct.rows)) {
+      errors.push(`${path}: Wall selection comparison table differs or is detached`);
+    } else {
+      checked.add(introNode);
+      checked.add(compTable);
+    }
   }
   const groups=unit.querySelectorAll('.chapter-notes');if(groups.length!==1||groups.some(n=>concealed(n,unit))||unit.querySelectorAll('.claim-annotation').some(n=>concealed(n,unit))||!same(unit.querySelectorAll('[data-reader-claim]').map(n=>n.getAttribute('data-reader-claim')),expected.map(row=>row.id)))errors.push(`${path}: Wall selection original22 note plan differs`);
   const annotations=validateExchangeAnnotationOutput(document,unit,wallSelectionRoute,catalog,{print});errors.push(...annotations);if(!annotations.length)for(const n of unit.querySelectorAll('.claim-annotation'))checked.add(n);
