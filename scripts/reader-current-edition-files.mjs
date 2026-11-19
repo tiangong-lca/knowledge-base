@@ -1,3 +1,4 @@
+import { selectWallServiceComparison, prepareWallServiceComparisonSource, effectiveWallServiceComparison, verifyWallServiceComparisonReceipts } from './reader-wall-service-comparison.mjs';
 import { selectPart6Reread, preparePart6RereadSource, effectivePart6Reread, verifyPart6RereadReceipts } from './reader-part6-reread.mjs';
 import { selectDataQualityComparison, prepareDataQualityComparisonSource, effectiveDataQualityComparison, verifyDataQualityComparisonReceipts } from './reader-data-quality-comparison.mjs';
 import { selectProductFootprintComparison, prepareProductFootprintComparisonSource, effectiveProductFootprintComparison, verifyProductFootprintComparisonReceipts } from './reader-product-footprint-comparison.mjs';
@@ -65,6 +66,9 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const serviceConstraints = selectServiceConstraints(serviceConfig, undefined, preview === 'service');
   const substitutionConfig = await readConfig('reader-substitution-rules.json');
   const substitutionRules = selectSubstitutionRules(substitutionConfig, undefined, preview === 'substitution');
+  const wscConfig = await readConfig('reader-wall-service-comparison.json');
+  const wallServiceComparison = selectWallServiceComparison(wscConfig, undefined, preview === 'wall-service-comparison');
+  if (preview === 'wall-service-comparison' && wscConfig.status !== 'preview') throw new Error('Wall service comparison review requires a private preview state');
   const part6Config = await readConfig('reader-part6-reread.json');
   const part6Reread = selectPart6Reread(part6Config, undefined, preview === 'part6-reread');
   if (preview === 'part6-reread' && part6Config.status !== 'preview') throw new Error('Part VI continuous reread review requires a private preview state');
@@ -149,6 +153,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (loadShift && !substitutionRules) throw new Error('Load shift requires the accepted #105 generation');
   if (circularFootprint && !loadShift) throw new Error('Circular footprint requires the accepted #107 generation');
   if (landRecovery && !circularFootprint) throw new Error('Land recovery requires the accepted #109 generation');
+  if (wallServiceComparison && !part6Reread) throw new Error('Wall service comparison requires the accepted #155 generation');
   if (part6Reread && !dataQualityComparison) throw new Error('Part VI continuous reread requires the accepted #153 generation');
   if (dataQualityComparison && !productFootprintComparison) throw new Error('Data quality comparison requires the accepted #151 generation');
   if (productFootprintComparison && !uncertaintyComparison) throw new Error('Product footprint comparison requires the accepted #149 generation');
@@ -172,7 +177,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (acidEquivalents && !landRecovery) throw new Error('Acid equivalents requires the accepted #111 generation');
   for (const [path, bytes] of await readLoadShiftCaseFiles(root, loadShift)) files.set(path, bytes);
   for (const [path, bytes] of await readServiceConstraintsFiles(root, serviceConstraints)) files.set(path, bytes);
-  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison, waterScarcity, biogenicCarbon, eutrophicationPathways, particulateComparison, part4Reread, weightingValuation, localizationComparison, socialComparison, costSustainability, part5Reread, dataApplicabilityComparison, uncertaintyComparison, productFootprintComparison, dataQualityComparison, part6Reread].filter(Boolean)];
+  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison, waterScarcity, biogenicCarbon, eutrophicationPathways, particulateComparison, part4Reread, weightingValuation, localizationComparison, socialComparison, costSustainability, part5Reread, dataApplicabilityComparison, uncertaintyComparison, productFootprintComparison, dataQualityComparison, part6Reread, wallServiceComparison].filter(Boolean)];
   const realRoot = await realpath(root);
   const reviewFiles = new Set((reviewUnits ?? []).flatMap(unit =>
     (unit.reviewEvidence ?? []).flatMap(row => [row.reportFile, row.artifactFile])));
@@ -187,8 +192,11 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const input = { catalog, readings, literature, files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
-  const part6 = part6Reread && preparePart6RereadSource(part6Reread, input, actual, structure);
-  const part6Input = part6 ? { ...part6.previousRecords, files: part6.files } : input;
+  const wsc = wallServiceComparison && prepareWallServiceComparisonSource(wallServiceComparison, input, actual, structure);
+  const wscInput = wsc ? { ...wsc.previousRecords, files: wsc.files } : input;
+  const part6 = part6Reread && preparePart6RereadSource(part6Reread, wscInput,
+    wsc?.previous ?? actual, wsc?.structure ?? structure);
+  const part6Input = part6 ? { ...part6.previousRecords, files: part6.files } : wscInput;
   const dqp = dataQualityComparison && prepareDataQualityComparisonSource(dataQualityComparison, part6Input,
     part6?.previous ?? actual, part6?.structure ?? structure);
   const dqpInput = dqp ? { ...dqp.previousRecords, files: dqp.files } : part6Input;
@@ -392,8 +400,13 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   }
   if (part6Reread && preview !== 'part6-reread') {
     const { readerPublicDownloads } = await import('./reader-current-output.mjs');
-    if (!verifyPart6RereadReceipts(part6Reread, artifacts, readerPublicDownloads(catalog, literature, readings)))
+    if (!verifyPart6RereadReceipts(part6Reread, artifacts, readerPublicDownloads(wscInput.catalog, wscInput.literature, wscInput.readings)))
       throw new Error('Part VI continuous reread lacks exact independent source, reader, and output evidence');
+  }
+  if (wallServiceComparison && preview !== 'wall-service-comparison') {
+    const { readerPublicDownloads } = await import('./reader-current-output.mjs');
+    if (!verifyWallServiceComparisonReceipts(wallServiceComparison, artifacts, readerPublicDownloads(catalog, literature, readings)))
+      throw new Error('Wall service comparison lacks exact independent source, reader, and output evidence');
   }
   const service = serviceConstraints && prepareServiceConstraintsSource(serviceConstraints, substitution?.previous ?? actual,
     substitution?.structure ?? structure, { ...previousRecords, files: substitutionInput.files });
@@ -443,7 +456,8 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const qualifiedUnc = effectiveUncertaintyComparison(qualifiedDapp, uncertaintyComparison, unc?.affectedClaimIds);
   const qualifiedPfr = effectiveProductFootprintComparison(qualifiedUnc, productFootprintComparison, pfr?.affectedClaimIds);
   const qualifiedDqp = effectiveDataQualityComparison(qualifiedPfr, dataQualityComparison, dqp?.affectedClaimIds);
-  return effectivePart6Reread(qualifiedDqp, part6Reread, part6?.affectedClaimIds);
+  const qualifiedPart6 = effectivePart6Reread(qualifiedDqp, part6Reread, part6?.affectedClaimIds);
+  return effectiveWallServiceComparison(qualifiedPart6, wallServiceComparison, wsc?.affectedClaimIds);
 }
 
 export function validateReadableBookCurrent(root, catalog, readings, literature) {
@@ -603,4 +617,10 @@ export function validatePart6RereadReviewSources(root, catalog, readings, litera
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Part VI continuous reread review requires the explicit private preview');
   return qualifyCurrentReaderSources(root, catalog, readings, literature, 'part6-reread');
+}
+
+export function validateWallServiceComparisonReviewSources(root, catalog, readings, literature) {
+  if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
+    throw new Error('Wall service comparison review requires the explicit private preview');
+  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'wall-service-comparison');
 }

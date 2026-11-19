@@ -1,0 +1,2198 @@
+{
+  "schemaVersion": 1,
+  "kind": "source",
+  "unit": "wall-service-comparison-157",
+  "date": "2026-11-19",
+  "subjectSha256": "f81c86c40b795abf3f76cb69e86d4a63cd73b42b031e5eefbf0b53f464744bf6",
+  "scope": [
+    "content/docs/book/wall-service-to-comparison.mdx",
+    "literature:lit-n03",
+    "literature:lit-n04",
+    "literature:work-unc149-heijungs-2020",
+    "literature:work-pfr151-ghgp-2011",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:order:sources",
+    "researchMetadata:order:readings",
+    "researchMetadata:order:literatureGaps",
+    "researchMetadata:public-projection",
+    "claims:cl-wsc157-equivalence-and-pairing",
+    "claims:cl-wsc157-paired-vs-mc-fallacy",
+    "claims:cl-wsc157-ilcd-comparative-assertion",
+    "claims:cl-wsc157-pef-pefcr-and-classes",
+    "claims:cl-wsc157-ghgp-and-paywalled-iso",
+    "claims:cl-wsc157-comparison-synthesis-bridge",
+    "evidence:ev-wsc157-ilcd-equivalence-scenarios",
+    "evidence:ev-wsc157-ilcd-weighting-panel",
+    "evidence:ev-wsc157-ghgp-comparison-uncertainty",
+    "evidence:ev-wsc157-heijungs-mc-false-sig",
+    "evidence:ev-wsc157-pef-pefcr-classes-verification",
+    "evidence:ev-wsc157-ghgp-no-comparative-assertion",
+    "sources:src-wsc157-ilcd-2010",
+    "sources:src-wsc157-eu-2021-2279-pef",
+    "sources:src-wsc157-ghgp-2011",
+    "sources:src-wsc157-heijungs-2020",
+    "readings:rd-wsc157-ilcd-2010",
+    "readings:rd-wsc157-eu-2021-2279-pef",
+    "readings:rd-wsc157-ghgp-2011",
+    "readings:rd-wsc157-heijungs-2020",
+    "literatureGaps:lit-gap-wsc157-paywalled-iso14044-comparative-assertion"
+  ],
+  "observed": "Part VII Unit 1 (B29《墙面服务比较》, content/docs/book/wall-service-to-comparison.mdx) adding 6 non-case comparative claims (cl-wsc157-*), 1 five-column comparison table, 4 SHA-256-verified primary sources (ILCD 2010, EU 2021/2279 OJ L 144 cross-referenced with OJ L 471, GHG Protocol Product Standard 2011, Heijungs 2020), 6 evidence records with 11 BigInt-verified numericFacts, and 1 paywalled ISO 14044:2006 comparative-assertion boundary record against exact predecessor commit 8d498f48baf96865ef5e953d8b6a19136cd36ab9.",
+  "observations": {
+    "state": {
+      "before": "0005f400da7e597217453aad22b2aedbc8c7841323cbc61abf4166a27dca8632",
+      "after": "376874b9338bae6805455e36386c6b31b3149c583df54804b49855a375f3ba47"
+    },
+    "changes": [
+      {
+        "kind": "file",
+        "key": "content/docs/book/wall-service-to-comparison.mdx",
+        "from": "312faf614488fab832e0aeee6bee44e867cc7208bf9c4a31f1dd9877aafb6b0a",
+        "to": "1cf4089f9f39c5b7cd5952ef2071eb27aa1c7cc873cec0dd1db649a2e983a58a",
+        "rationale": "在第二十九章《墙面服务比较》原 22 条 CASE-WALL-CONNECT 案例论述与末段过渡之间，新增 6 条跨体系比较断言与配对/蒙特卡洛边界论述及 1 张 5 列规范对照表，保持原有 22 条案例论述与教学案例组件逐字节不变。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:lit-n03",
+        "from": {
+          "raw": "6e3c451e309b73fb5bb10b5ccfa8b8e1e803c7df89b0edd230bf12a78aa0fa71",
+          "public": null,
+          "protected": "6e3c451e309b73fb5bb10b5ccfa8b8e1e803c7df89b0edd230bf12a78aa0fa71"
+        },
+        "to": {
+          "raw": "42080965940fd933f322173263951eaab01787d9e79505b4fae3ee1bd8c37901",
+          "public": null,
+          "protected": "42080965940fd933f322173263951eaab01787d9e79505b4fae3ee1bd8c37901"
+        },
+        "rationale": "更新文献图谱既有书目的来源关联或研究公开投影，以绑定第二十九章新增一手来源（不改动既有论述或案例记录）。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:lit-n04",
+        "from": {
+          "raw": "23ba666a8831a198cbc2c4e78b4370013e9691f28a636a5257ee30a583362825",
+          "public": null,
+          "protected": "23ba666a8831a198cbc2c4e78b4370013e9691f28a636a5257ee30a583362825"
+        },
+        "to": {
+          "raw": "06935b0be97463d6854b420db48c9bfbbac72ccf11d7bed7c6076fb2cbebcaac",
+          "public": null,
+          "protected": "06935b0be97463d6854b420db48c9bfbbac72ccf11d7bed7c6076fb2cbebcaac"
+        },
+        "rationale": "更新文献图谱既有书目的来源关联或研究公开投影，以绑定第二十九章新增一手来源（不改动既有论述或案例记录）。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-unc149-heijungs-2020",
+        "from": {
+          "raw": "81291627701b3e82d762cc618b055b4495d5cf6f7c6806ebdea35a931f5db102",
+          "public": null,
+          "protected": "81291627701b3e82d762cc618b055b4495d5cf6f7c6806ebdea35a931f5db102"
+        },
+        "to": {
+          "raw": "a85edba700b8fc9b3974a61f98c0efb1ec09f172cafae679d8a4317296cd8f80",
+          "public": null,
+          "protected": "a85edba700b8fc9b3974a61f98c0efb1ec09f172cafae679d8a4317296cd8f80"
+        },
+        "rationale": "更新文献图谱既有书目的来源关联或研究公开投影，以绑定第二十九章新增一手来源（不改动既有论述或案例记录）。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-pfr151-ghgp-2011",
+        "from": {
+          "raw": "4f20600e1a6cf98ca887a68f991a0955dacca7e156ae4b590b32cef17116e6fa",
+          "public": null,
+          "protected": "4f20600e1a6cf98ca887a68f991a0955dacca7e156ae4b590b32cef17116e6fa"
+        },
+        "to": {
+          "raw": "3d244b527ad7f143d38c1d829e4e31956b1f4c617066b75b7286f75fc5ed0e91",
+          "public": null,
+          "protected": "3d244b527ad7f143d38c1d829e4e31956b1f4c617066b75b7286f75fc5ed0e91"
+        },
+        "rationale": "更新文献图谱既有书目的来源关联或研究公开投影，以绑定第二十九章新增一手来源（不改动既有论述或案例记录）。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:claims",
+        "from": {
+          "raw": "c3d9ca7194e2307da4590bd95602a4fff44af58a8bf0e5b3bcc047015f4bddfa",
+          "public": null,
+          "protected": "c3d9ca7194e2307da4590bd95602a4fff44af58a8bf0e5b3bcc047015f4bddfa"
+        },
+        "to": {
+          "raw": "6b494550a01485a9a4dc64561222d60526e2502dead5f2deb119df506b1f5d4a",
+          "public": null,
+          "protected": "6b494550a01485a9a4dc64561222d60526e2502dead5f2deb119df506b1f5d4a"
+        },
+        "rationale": "更新文献图谱既有书目的来源关联或研究公开投影，以绑定第二十九章新增一手来源（不改动既有论述或案例记录）。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:evidence",
+        "from": {
+          "raw": "abf3cb813af31ba7986dbffc454f889caf44cc5a9d65daca7d97b57d5b17011a",
+          "public": null,
+          "protected": "abf3cb813af31ba7986dbffc454f889caf44cc5a9d65daca7d97b57d5b17011a"
+        },
+        "to": {
+          "raw": "73b4d154b3dbc3707a956fd0c7a7bc6862d5f7b36f6867a923f4ef0d4deeb77f",
+          "public": null,
+          "protected": "73b4d154b3dbc3707a956fd0c7a7bc6862d5f7b36f6867a923f4ef0d4deeb77f"
+        },
+        "rationale": "更新文献图谱既有书目的来源关联或研究公开投影，以绑定第二十九章新增一手来源（不改动既有论述或案例记录）。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:sources",
+        "from": {
+          "raw": "3bc27c0baab77de0a45d1abe4298c8d714b481b8512424814d73f25dd17b6592",
+          "public": null,
+          "protected": "3bc27c0baab77de0a45d1abe4298c8d714b481b8512424814d73f25dd17b6592"
+        },
+        "to": {
+          "raw": "626025a82b890680ef0c5a825f6b87f022001871c3df07b3aea50636887bbfdc",
+          "public": null,
+          "protected": "626025a82b890680ef0c5a825f6b87f022001871c3df07b3aea50636887bbfdc"
+        },
+        "rationale": "更新文献图谱既有书目的来源关联或研究公开投影，以绑定第二十九章新增一手来源（不改动既有论述或案例记录）。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:readings",
+        "from": {
+          "raw": "d3c9bc96d8bcd1a4e67b46e1a5bf3a4dd694f2bd62489754e29bd652b55d700a",
+          "public": null,
+          "protected": "d3c9bc96d8bcd1a4e67b46e1a5bf3a4dd694f2bd62489754e29bd652b55d700a"
+        },
+        "to": {
+          "raw": "344cb5849295397495eb4654a70cf6041da078bf08160adc1abe6481ac3ad3e0",
+          "public": null,
+          "protected": "344cb5849295397495eb4654a70cf6041da078bf08160adc1abe6481ac3ad3e0"
+        },
+        "rationale": "更新文献图谱既有书目的来源关联或研究公开投影，以绑定第二十九章新增一手来源（不改动既有论述或案例记录）。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:literatureGaps",
+        "from": {
+          "raw": "577b7bd6e4941e5c2c8b3baf5d308afa1b60db96933dd4070aee8ad3161928cd",
+          "public": null,
+          "protected": "577b7bd6e4941e5c2c8b3baf5d308afa1b60db96933dd4070aee8ad3161928cd"
+        },
+        "to": {
+          "raw": "82ed185047fa35310d92339f51d9eb6989a3e280e45a7c77589c990eefa9b3c9",
+          "public": null,
+          "protected": "82ed185047fa35310d92339f51d9eb6989a3e280e45a7c77589c990eefa9b3c9"
+        },
+        "rationale": "更新文献图谱既有书目的来源关联或研究公开投影，以绑定第二十九章新增一手来源（不改动既有论述或案例记录）。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:public-projection",
+        "from": {
+          "raw": "29b6b46ccf6a72bce2507ae7c2950c0b5e53f23dd8f1afd84fd49f2857d984ed",
+          "public": null,
+          "protected": "29b6b46ccf6a72bce2507ae7c2950c0b5e53f23dd8f1afd84fd49f2857d984ed"
+        },
+        "to": {
+          "raw": "70ecfcbd97a60930ac2e85af24f10fce1578bdb658046f3996292cd018b247ae",
+          "public": null,
+          "protected": "70ecfcbd97a60930ac2e85af24f10fce1578bdb658046f3996292cd018b247ae"
+        },
+        "rationale": "更新文献图谱既有书目的来源关联或研究公开投影，以绑定第二十九章新增一手来源（不改动既有论述或案例记录）。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-wsc157-equivalence-and-pairing",
+        "from": null,
+        "to": {
+          "raw": "241096ac1b9f8fb76dd485ee031c5d455287e97397fd0970ba904680ee20d16d",
+          "public": "241096ac1b9f8fb76dd485ee031c5d455287e97397fd0970ba904680ee20d16d",
+          "protected": "871b5009e30986fa9c8ed77e0e7dba3214bcce76f621ea37fb9d6d3ee5b0ead0"
+        },
+        "rationale": "登记第七部第二十九章《墙面服务比较》（#157）的新增跨体系比较断言与配对统计边界记录。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-wsc157-paired-vs-mc-fallacy",
+        "from": null,
+        "to": {
+          "raw": "fc71bfea6bf897f39d44d527cfdb14204b8c9cc9c9c996c94f64c2259ca65efe",
+          "public": "fc71bfea6bf897f39d44d527cfdb14204b8c9cc9c9c996c94f64c2259ca65efe",
+          "protected": "15a1a6d6780229921c46c7869f626f8ac7c9baaf23693817dffc8f107d180dae"
+        },
+        "rationale": "登记第七部第二十九章《墙面服务比较》（#157）的新增跨体系比较断言与配对统计边界记录。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-wsc157-ilcd-comparative-assertion",
+        "from": null,
+        "to": {
+          "raw": "90abcdbfa9f5b4a0bda50e52e17fe089b4c9a0484a6c5d91d1340a4f0e7ec84d",
+          "public": "90abcdbfa9f5b4a0bda50e52e17fe089b4c9a0484a6c5d91d1340a4f0e7ec84d",
+          "protected": "41201fea540418b87c7dc55e93e9781c5e8139c48feb67019bd74da4cb901ebb"
+        },
+        "rationale": "登记第七部第二十九章《墙面服务比较》（#157）的新增跨体系比较断言与配对统计边界记录。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-wsc157-pef-pefcr-and-classes",
+        "from": null,
+        "to": {
+          "raw": "2b62f81c3f38497fa241bc4cc2b7d38237e99e2ea8bde6a61ac7fb86e6d07019",
+          "public": "2b62f81c3f38497fa241bc4cc2b7d38237e99e2ea8bde6a61ac7fb86e6d07019",
+          "protected": "cb5580ee490b5e991e9867d3e0adacb75190846d526a0a20c65da40db89b78ea"
+        },
+        "rationale": "登记第七部第二十九章《墙面服务比较》（#157）的新增跨体系比较断言与配对统计边界记录。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-wsc157-ghgp-and-paywalled-iso",
+        "from": null,
+        "to": {
+          "raw": "9188e87ff369cbc9a4bea628c05d08b0572aa5a464ae9c35c0fe52654e4fdac1",
+          "public": "9188e87ff369cbc9a4bea628c05d08b0572aa5a464ae9c35c0fe52654e4fdac1",
+          "protected": "0653292d7c45d83648e0833afaea9be5e474213ab199f6adce7ad5e9c3e1199d"
+        },
+        "rationale": "登记第七部第二十九章《墙面服务比较》（#157）的新增跨体系比较断言与配对统计边界记录。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-wsc157-comparison-synthesis-bridge",
+        "from": null,
+        "to": {
+          "raw": "3835e018a58fee84c0cc0e6d193c0e4535febae3bd8a9deb5d030581e8d6cafb",
+          "public": "3835e018a58fee84c0cc0e6d193c0e4535febae3bd8a9deb5d030581e8d6cafb",
+          "protected": "56d17636c21ce41e12e9a81ee9b5f8366e56775074b8b78ea799fa710d4c9371"
+        },
+        "rationale": "登记第七部第二十九章《墙面服务比较》（#157）的新增跨体系比较断言与配对统计边界记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-wsc157-ilcd-equivalence-scenarios",
+        "from": null,
+        "to": {
+          "raw": "e8e9af2c9f63cfc90be4a9e31ead314b5600437fe8ee9357d331692fb9873879",
+          "public": "14a60064aacc600deff73847cab357dfd465c41075a087102d38e4e4525f4033",
+          "protected": "e8e9af2c9f63cfc90be4a9e31ead314b5600437fe8ee9357d331692fb9873879"
+        },
+        "rationale": "登记第七部第二十九章《墙面服务比较》（#157）的新增跨体系比较断言与配对统计边界记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-wsc157-ilcd-weighting-panel",
+        "from": null,
+        "to": {
+          "raw": "cd3e2166d5296be7ee94593aadb73bc8a57803839b5920845379a77e72e14a21",
+          "public": "86317100a6305c924b09e4b9ba4f50aedcb2acd3a668ade450d7b8939ca1bf61",
+          "protected": "cd3e2166d5296be7ee94593aadb73bc8a57803839b5920845379a77e72e14a21"
+        },
+        "rationale": "登记第七部第二十九章《墙面服务比较》（#157）的新增跨体系比较断言与配对统计边界记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-wsc157-ghgp-comparison-uncertainty",
+        "from": null,
+        "to": {
+          "raw": "d81102184fb7c4adfd73b66107521fe5968b2867baf8bb027634aae13de24fa4",
+          "public": "43256036457eadcc05a0009a4c4e483b46a95dd7cc236b553087f96b03994bc9",
+          "protected": "d81102184fb7c4adfd73b66107521fe5968b2867baf8bb027634aae13de24fa4"
+        },
+        "rationale": "登记第七部第二十九章《墙面服务比较》（#157）的新增跨体系比较断言与配对统计边界记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-wsc157-heijungs-mc-false-sig",
+        "from": null,
+        "to": {
+          "raw": "97bb26ec2a3a9bd5f99b75cfe33f48f60f4f5d2412ebedcc9ef2e95740b41ad5",
+          "public": "037805afd6c9e1e5744687e9af7beab91fed645f4bd97b0fcef00f5663046c02",
+          "protected": "97bb26ec2a3a9bd5f99b75cfe33f48f60f4f5d2412ebedcc9ef2e95740b41ad5"
+        },
+        "rationale": "登记第七部第二十九章《墙面服务比较》（#157）的新增跨体系比较断言与配对统计边界记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-wsc157-pef-pefcr-classes-verification",
+        "from": null,
+        "to": {
+          "raw": "c2ff4cf4e43689a86667226b416d15c16febf7301ece02165a34581c89476402",
+          "public": "c5e361a15407fccdbc624610e33ae0879eb487e84ef6caa14db8f23cfcdc60b3",
+          "protected": "c2ff4cf4e43689a86667226b416d15c16febf7301ece02165a34581c89476402"
+        },
+        "rationale": "登记第七部第二十九章《墙面服务比较》（#157）的新增跨体系比较断言与配对统计边界记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-wsc157-ghgp-no-comparative-assertion",
+        "from": null,
+        "to": {
+          "raw": "bd580866b0814ae999bb4da04989b603364b4a00677b26ec7457c7a1d425d5dc",
+          "public": "f8c985dce29e2f3ac186f27f5d6827bd58cc1470184902ecdd5bf430732b1b5d",
+          "protected": "bd580866b0814ae999bb4da04989b603364b4a00677b26ec7457c7a1d425d5dc"
+        },
+        "rationale": "登记第七部第二十九章《墙面服务比较》（#157）的新增跨体系比较断言与配对统计边界记录。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-wsc157-ilcd-2010",
+        "from": null,
+        "to": {
+          "raw": "20846cda75c396daa49abaa202569519e2e012a5f92564564d7f61ff044e1684",
+          "public": "12cdb4c6ecaab0b0381cb005f90806bca0ad503732f8373702821e93e8192545",
+          "protected": "20846cda75c396daa49abaa202569519e2e012a5f92564564d7f61ff044e1684"
+        },
+        "rationale": "登记第七部第二十九章《墙面服务比较》（#157）的新增跨体系比较断言与配对统计边界记录。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-wsc157-eu-2021-2279-pef",
+        "from": null,
+        "to": {
+          "raw": "145fd81062bf30e4c7282aef4394bed75de1a2e28ef7a10aa4ff8951c33b76db",
+          "public": "da3c9e8ed0b0d1e074ebf4fdbc5ef112b2cab9b73ba3e5c003d531530b79f927",
+          "protected": "145fd81062bf30e4c7282aef4394bed75de1a2e28ef7a10aa4ff8951c33b76db"
+        },
+        "rationale": "登记第七部第二十九章《墙面服务比较》（#157）的新增跨体系比较断言与配对统计边界记录。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-wsc157-ghgp-2011",
+        "from": null,
+        "to": {
+          "raw": "254a6f0f8752758de1263ad937d70cbe4486ec59eccd804e5f1d8688ecadb220",
+          "public": "553c944a67f501fed1b02fe7f6261f44661663bee0361505c78ff3c0c9876c2c",
+          "protected": "254a6f0f8752758de1263ad937d70cbe4486ec59eccd804e5f1d8688ecadb220"
+        },
+        "rationale": "登记第七部第二十九章《墙面服务比较》（#157）的新增跨体系比较断言与配对统计边界记录。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-wsc157-heijungs-2020",
+        "from": null,
+        "to": {
+          "raw": "170587898187900306f212fd0ab7f5241e9728d3278c05c802347b54155bb48c",
+          "public": "1a06fc5207e42f2915ae72317488d1df58154e48ebe6b50451147e3ccdf068ea",
+          "protected": "170587898187900306f212fd0ab7f5241e9728d3278c05c802347b54155bb48c"
+        },
+        "rationale": "登记第七部第二十九章《墙面服务比较》（#157）的新增跨体系比较断言与配对统计边界记录。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-wsc157-ilcd-2010",
+        "from": null,
+        "to": {
+          "raw": "e22c76adf466a73506f1458a1955ad10044ef6b5358780aa6e7b35d9c88e5604",
+          "public": null,
+          "protected": "e22c76adf466a73506f1458a1955ad10044ef6b5358780aa6e7b35d9c88e5604"
+        },
+        "rationale": "登记第七部第二十九章《墙面服务比较》（#157）的新增跨体系比较断言与配对统计边界记录。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-wsc157-eu-2021-2279-pef",
+        "from": null,
+        "to": {
+          "raw": "94690e23913d17dbdf4aba17a53841273a368eb6266911b6909e7e0b536e83ac",
+          "public": null,
+          "protected": "94690e23913d17dbdf4aba17a53841273a368eb6266911b6909e7e0b536e83ac"
+        },
+        "rationale": "登记第七部第二十九章《墙面服务比较》（#157）的新增跨体系比较断言与配对统计边界记录。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-wsc157-ghgp-2011",
+        "from": null,
+        "to": {
+          "raw": "d48d494b17389d3af094349e10bd5cdde2f372d104c251ba0c57c86dfdb7523d",
+          "public": null,
+          "protected": "d48d494b17389d3af094349e10bd5cdde2f372d104c251ba0c57c86dfdb7523d"
+        },
+        "rationale": "登记第七部第二十九章《墙面服务比较》（#157）的新增跨体系比较断言与配对统计边界记录。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-wsc157-heijungs-2020",
+        "from": null,
+        "to": {
+          "raw": "6e5e362c45b56a7aca06e81b96e92479e9c6b8c63cf08aae834bb29e11574a73",
+          "public": null,
+          "protected": "6e5e362c45b56a7aca06e81b96e92479e9c6b8c63cf08aae834bb29e11574a73"
+        },
+        "rationale": "登记第七部第二十九章《墙面服务比较》（#157）的新增跨体系比较断言与配对统计边界记录。"
+      },
+      {
+        "kind": "record",
+        "key": "literatureGaps:lit-gap-wsc157-paywalled-iso14044-comparative-assertion",
+        "from": null,
+        "to": {
+          "raw": "2c1c1a9d01ea9204673b9438a4a0d7415ad27b9e58a4bf998883ff9bb487e064",
+          "public": null,
+          "protected": "2c1c1a9d01ea9204673b9438a4a0d7415ad27b9e58a4bf998883ff9bb487e064"
+        },
+        "rationale": "登记第七部第二十九章《墙面服务比较》（#157）的新增跨体系比较断言与配对统计边界记录。"
+      }
+    ],
+    "consumers": [
+      {
+        "id": "cl-flow-type",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-exchange",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-flow-exchange-distinction",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-waste-no-universal",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-ilcd-reference-flow",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-ilcd-fu",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-fu-distinction",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-fu-example",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-bw-direction",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-bw-sign",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-book-service",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-book-service-contract",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-book-ilcd-reference",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-book-reference-reading",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-book-comparison-more",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-book-three-comparisons",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-book-interpret-iterate",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-book-not-equivalent",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-book-conclusion-conditions",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-book-integrative-function",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-book-integrative-iteration",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-book-integrative-path",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-regional-localization-not-translation",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-regional-method-origin-not-validity",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-regional-benchmarks-and-policy-goals",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-regional-wf-ambiguity",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-regional-research-agenda-not-country-claim",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-db2011-review-relative-to-criteria",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-db2011-validation-context",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-db2011-versioned-confidence",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-future-definition",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-future-scale-up",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-future-incumbent",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-future-scenarios",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-future-background",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-future-impact-limits",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-future-comparison-conditions",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-connect-object-before-unit",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-connect-service-changes-system",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-connect-three-scalings",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-connect-time-relations",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-connect-prospective-two-questions",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-connect-reuse-keeps-relation",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-connect-evidence-to-probability",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-connect-useful-without-winner",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-connect-review-does-not-transfer",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-connect-next-evidence-at-link",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-wall-question",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-wall-quantities",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-wall-reference",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-wall-same-mass",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-wall-coordinates",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-wall-demand",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-wall-activities",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-wall-balance-meaning",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-wall-inventory",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-wall-inventory-boundary",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-wall-factor-choice",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-wall-characterization",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-wall-metric-meaning",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-wall-time",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-wall-unknown",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-wall-paired-range",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-wall-pairing",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-wall-tolerance",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-wall-rough-demand",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-wall-rough-comparison",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-wall-exercise",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-wall-answer",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-framework-design-sideeffects",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-framework-reader-work-product",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-hyb-accounts",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-hyb-service",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-hyb-ledger",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-hyb-invoices",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-hyb-raw",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-hyb-naive",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-hyb-remove",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-hyb-equations",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-hyb-corrected",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-hyb-naive-result",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-hyb-swap",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-hyb-swap-result",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-hyb-audit",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-es-authority",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-es-three",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-es-equation",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-es-why-square",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-es-nmvoc",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-es-nox",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-es-service",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-es-score",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-es-scale",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-es-threshold",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-es-test",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-es-later",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-es-judgment",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-purpose",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-policy-contrast",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-baseline",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-units",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-display",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-logit",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-trade",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-precision",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-primary-ratio",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-households",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-health",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-mismatch",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-annual",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-shares",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-two-forms",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-different-card",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-english",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-english-basis",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-service",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-japan-route",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-break-even",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-english-route",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-numeraire",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-edition",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-validity",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-null",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-order",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-transfer",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lime-decision",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-pack-limits",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cn-question",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cn-two-branches",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cn-characterization",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cn-reference",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cn-service-period",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cn-target",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cn-weight-meaning",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cn-cancellation",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cn-time-bridge",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cn-resource-meaning",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cn-resource-units",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cn-parameter-history",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cn-later-critique",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cn-policy-records",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cn-changed-reference",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cn-policy-limit",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cn-hk-borrowing",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cn-hk-local",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cn-hk-weights",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cn-standard-authority",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cn-conclusion",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-opening",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-rp",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-why-chain",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-force",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-category",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-version",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-use-boundary",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-default",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-results-layer",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-reconstruction-limit",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-review-objects",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-review-2018",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-review-2024",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-review-identity",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-validity",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-methane-rule",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-nordic-design",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-niu-provenance",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-ipcc-class",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-model-meaning",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-comparison-limits",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-evidence-judgment",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-conclusion",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-wash-cycles",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-wash-inputs",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-use-result",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-report-split",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-quantity-scale",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-capital-gap",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-storage-gap",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-ration-units",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-niu-result",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-ipcc-result",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-rule-issuer",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-pm-population-meaning",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-pm-factor-correction",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-pm-implementation-layer",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-pm-matched-scope",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-pm-uncovered-pathways",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-pm-conclusion",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-pm-activity-indicators",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-opening",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-service",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-coordinates",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-voltage-path",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-grid-assets",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-loss-definition",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-norway-loss",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-segment-denominators",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-database-voltage",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-loss-proxy",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-egrid-scope",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-egrid-adjustments",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-egrid-rate",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-egrid-loss",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-egrid-loss-conflict",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-region-membership",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-eia-emissions",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-average-response",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-historical-generation",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-historical-consumption",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-empirical-limits",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-price-versus-energy",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-native-model",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-native-scenario",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-native-loss",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-native-loss-document",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-native-interpolation",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-native-output",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-native-ratios",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-native-check-meaning",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-native-two-hours",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-native-pollutants",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-native-application",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-future-question",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-future-system",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-future-perturbation",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-future-postprocessing",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-future-balance",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-future-load-parts",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-future-distribution",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-future-direct-rates",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-future-three-questions",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-future-gases",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-future-gases-total",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-future-scenario",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-future-time",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-future-formula",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-alternative-lca",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-validation-objects",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-connection",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-nonbaseload",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-native-coordinate",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-power-future-storage-policy",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-opening",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-record-and-link",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-bottle-reference",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-example-scope",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-opposite",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-scale",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-matrix-sign",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-allocation-held",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-representation-result",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-small-inventory",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-same-flow-total",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-three-co2-quantities",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-allocation-result",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-printed-comparator",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-missing-link",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-missing-link-score",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-jrc-instance",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-jrc-connectors",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-jrc-parameters",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-jrc-weight-control",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-jrc-bare-setup",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-jrc-machine-edge",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-jrc-machine-coordinate",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-jrc-source-discrepancy",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-jrc-partial-match",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-jrc-result-projection",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-jrc-version-reference",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-format-scope",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-format-original-target",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-format-double-target",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-format-result-scale",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-result-direction",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-conversion-study",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-factor-probe",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-factor-zero-absent",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-factor-real-gap",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-factor-report",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-preservation-meaning",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-native-service-meaning",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cml-reception-question",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cml-screening-boundaries",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cml-reception-lineage",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cml-ending",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cml-solvent-bins",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cml-range-bins",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-climate-wall-fixed",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-climate-wall-reweighted",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-climate-comparison-criteria",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-climate-conclusion",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-closing-wall-substrate",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-closing-historical-return",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cml-screening-range-limit",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-book-maintenance-condition",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-book-record-model-limit",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-inv-service-to-demand",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-db2011-conditional-use",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-pm-matched-scenario",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-pm-version-and-model",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-book-future-scenario-matrix",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-book-future-decision",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-book-unc-bridge",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-book-social-results-to-cost",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-book-cost-decision",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-flow99-two-boundaries",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-flow99-elementary",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-flow99-landfill",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-flow99-boundary-consequence",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-flow99-agricultural-boundary",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-flow99-boundary-exceptions",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-flow99-record-and-instance",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-flow99-schema-levels",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-flow99-identity-example",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-flow99-waste-classification",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-flow99-material-and-service",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-flow99-direction-equivalence",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-flow99-reference-levels",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-flow99-basis-and-demand",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-flow99-pesticide-interface",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-flow99-interface-consequence",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-flow99-phosphorus-interface",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-flow99-zero-placeholder",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-flow99-zero-reasons",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-flow99-zero-reporting",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-flow99-conclusion",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-flow99-probe-reference",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-service102-row-map",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-service102-service-meaning",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-service102-redundant",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-service102-residual-condition",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-sub105-two-uses",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-sub105-pef-report",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-sub105-ilcd-market",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-sub105-ilcd-absorption",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-sub105-pef-direct",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-sub105-evidence-example",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-sub105-fallbacks",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-sub105-conditional-results",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-sub105-reporting-objects",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-shift107-complete-action",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-shift107-joint-direction",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-shift107-service",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-shift107-supply",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-shift107-small",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-shift107-large",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-shift107-control",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-shift107-comparison-judgment",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cff109-question",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cff109-quality",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cff109-control",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cff109-version",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cff109-response",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-cff109-judgment",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-bio127-midpoint-endpoint-genealogy",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-bio127-feedback-perspective-asymmetry",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-bio127-ef31-subindicator-partition",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-bio127-zero-zero-vs-minus-plus-one",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-bio127-co-removal-and-methane-shift",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-bio127-package-and-report-discrepancies",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-bio127-storage-abolition-and-dluc-window",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-bio127-climate-diagnostic-synthesis",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-eutro129-category-genealogy",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-eutro129-phosphorus-soil-water-interface",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-eutro129-phosphorus-stoichiometry-and-p2o5",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-eutro129-nitrogen-soil-prohibition",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-eutro129-aquatic-and-airborne-n-reversals",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-eutro129-location-copies-and-nox-inversion",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-eutro129-normalization-double-counting-and-xml-anomalies",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-eutro129-operational-synthesis",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-particulate131-indicator-cutpoints",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-particulate131-size-and-subcompartment",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-particulate131-cohen-empirical-limits",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-particulate131-precursor-perspectives",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-particulate131-ef-ammonia-inversion",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-particulate131-regional-endpoint-reversal",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-particulate131-package-discrepancies",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-weight135-ef-coating-outdoor",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-weight135-ef-coating-indoor",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-weight135-ef-robustness-weights",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-weight135-denominator-coupling-and-drift",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-weight135-comparative-assertion-regimes",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-weight135-target-vs-hybrid-boundary",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-weight135-lime-three-table-rereversal",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-weight135-recipe-endpoint-stop",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-weight135-health-perspective-reversal",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-weight135-four-paradigm-synthesis",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-weight135-monetary-incommensurability",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-weight135-glam3-reporting-discipline",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-loc137-ef31-location-regimes",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-loc137-ef31-global-nf-extrapolation",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-loc137-dirty-denominator-paradox",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-loc137-open-economy-boundary-reversal",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-loc137-biophysical-vs-political-units",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-loc137-pm-nonlinear-and-endpoint-reversals",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-loc137-institutional-adoption-vs-compliance",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-loc137-four-layer-localization-audit",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-soc139-portfolio-reference-and-comparative-assertions",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-soc139-occupational-health-pathways-and-rights-boundary",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-soc139-cross-pillar-overlap-audit",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lcc143-three-lcc-archetypes-and-value-added-consolidation",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lcc143-actor-split-incentive-and-discount-rate-reversal",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lcc143-five-monetary-quantities-and-shadow-price-double-counting",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lcc143-cut-off-asymmetry-and-cost-rebound-boundary",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lcc143-demarcating-ra-eia-and-mfa-ioa",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-lcc143-single-issue-footprints-vs-multi-indicator-profiles",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-dapp147-dataset-roles-and-system-linking",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-dapp147-intrinsic-vs-context-representativeness",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-dapp147-quality-architectures-and-prerequisite-split",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-dapp147-weakest-link-vs-mean-and-80pct-masking",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-dapp147-validation-vs-review-and-team-thresholds",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-dapp147-five-aspect-compliance-and-uuid-semantics",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-dapp147-package-migration-inheritance-and-surveillance",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-unc149-variability-vs-epistemic",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-unc149-framework-comparison",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-unc149-local-vs-global-sa",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-unc149-taylor-vs-sampling",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-unc149-gsa-outliers-nonlinearity",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-unc149-mc-runs-precision-vs-accuracy",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-unc149-comparative-paired-and-pvalue",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-unc149-pedigree-mc-boundary",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-pfr151-binding-batteries",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-pfr151-espr-dpp-conversion",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-pfr151-ghgp-boundary-unit",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-pfr151-ghgp-vs-battery-accounting",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-pfr151-assurance-vs-notified-body",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-pfr151-product-vs-corporate-scope3",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-pfr151-comparative-assertion-gates",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-pfr151-paywalled-standard-boundaries",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-dqp-ecoinvent-v3-variance",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-dqp-pef-ordinal-dqr",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-dqp-ghgp-qualitative-dqi",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-dqp-four-framework-synthesis",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-dqp-paywalled-iso-boundary",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      },
+      {
+        "id": "cl-dqp-cross-chapter-bridge",
+        "rationale": "核查新增论述及跨章依赖：第二十九章扩展严格保留原 22 条 CASE-WALL-CONNECT 案例论述与全部既有结论不变。"
+      }
+    ],
+    "assessment": {
+      "scope": "Part VII Unit 1 (B29《墙面服务比较》, content/docs/book/wall-service-to-comparison.mdx) adding 6 non-case comparative claims (cl-wsc157-*), 1 five-column comparison table, 4 SHA-256-verified primary sources (ILCD 2010, EU 2021/2279 OJ L 144 cross-referenced with OJ L 471, GHG Protocol Product Standard 2011, Heijungs 2020), 6 evidence records with 11 BigInt-verified numericFacts, and 1 paywalled ISO 14044:2006 comparative-assertion boundary record against exact predecessor commit 8d498f48baf96865ef5e953d8b6a19136cd36ab9.",
+      "comparison": "Establishes two shared technical baselines (ILCD 2010 Situation A vs Situation C & analogous system boundary / partial-correlation retention; GHG Protocol 2011 §10.3.4 comparative-quantity uncertainty & Heijungs 2020 §2.8–§4 Monte Carlo false-significance cap) and contrasts three real institutional divergences for public comparative assertions: ILCD 2010 (non-assertive anti-bypass, no LCI-only assertions, strict ban on weighting, pre-verified data or external review panel), EU PEF (EU) 2021/2279 (valid PEFCR prerequisite, mandatory 16-category weighted single-score A–E performance classes via 0.30/0.85 interpolation, mandatory EN ISO/IEC 17020:2012 verification with >5% material error, ≥6 verifier points, ≤3-year validity), and GHG Protocol Product Standard 2011 (out-of-box cross-product comparative assertions excluded).",
+      "values": "All 11 numeric facts validated by exact BigInt rational parsing in scripts/reader-wall-service-comparison-factors.mjs (Heijungs n=16, p=0.67, N_run=100000, n_weakest=9; EU PEF 16 categories, 5 classes, 0.30/0.85 interpolation, 5% error threshold, 6 verifier points, 3-year validity). Zero fabrication of paywalled ISO 14044:2006 subclause numbers.",
+      "limits": "Paywalled ISO 14044:2006 §4.2.3.7 / §4.4.5 / §6 verbatim text is not inspected and is registered as lit-gap-wsc157-paywalled-iso14044-comparative-assertion. Remaining Part VII chapters (B30–B32, Part VII reread), Part VIII, and all 8 global Programme #9 criteria remain open.",
+      "conservation": "Exact conservation of all 1,074 existing public claim IDs (1,074 -> 1,080), all 22 CASE-WALL-CONNECT case-bound claims, 40/40 case downloads, and config/reader-numbering.json frozen 4-section structure.",
+      "review": "Two-round independent primary-source and numeric audit verified all 4 SHA-256 PDFs, all 11 BigInt numericFacts, all section/page locators (including Heijungs §3 known-sigma clarification and ILCD printedPages 145–146, 148 alignment), and paywall boundary honesty, concluding unconditional PASS (0 BLOCKER, 0 MAJOR, 0 MINOR)."
+    },
+    "independentReports": {
+      "independent-primary-source-audit-final.md": "ead5175a26e046b2d75c07adb38fe6ab44f4741a987c78f6e4a8f500afff6e16",
+      "b29-full-chapter-reader-review-final.md": "2f36458450584ae9ae136aab38349d146472cc2ff62592b7b26860434777c0b0",
+      "independent-publication-engineering-review-final.md": "c371c107019ca9a9af34d6bc0d13c7b71fb63b5d7d104ae187431321c6580d83",
+      "actual-browser-qa/qa-summary-157.json": "e5fda53331b9d64644e7ffdd64713f5cd56d3f800fa138bfefefddd8f1865be6"
+    }
+  }
+}

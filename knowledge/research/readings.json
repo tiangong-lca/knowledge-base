@@ -36546,6 +36546,304 @@
       "sourceKeys": [
         "src-dqp153-ghgp-2011"
       ]
+    },
+    {
+      "id": "rd-wsc157-ilcd-2010",
+      "workId": "work-ilcd-2010-detailed-guide",
+      "title": "International Reference Life Cycle Data System (ILCD) Handbook — General guide for Life Cycle Assessment — Detailed guidance",
+      "version": "First edition, March 2010, EUR 24708 EN (417 pp.)",
+      "url": "https://eplca.jrc.ec.europa.eu/uploads/ILCD-Handbook-General-guide-for-LCA-DETAILED-GUIDANCE-12March2010-ISBN-fin-v1.0-EN.pdf",
+      "readingStatus": "selected-passages",
+      "accessedAt": "2026-11-19",
+      "readAt": "2026-11-19",
+      "question": "ILCD 2010 指南对决策语境 A/B/C、非断言比较防绕过、边界对称与部分相关部件、公开比较断言禁止加权及外部评审组提出了哪些强制规则？",
+      "argumentSummary": "ILCD 2010 将产品比较与公开比较断言划归情景 A，禁止将纯会计情景 C 用于优劣决策；要求非断言并排比较同等遵守公开比较断言规则，禁止仅凭 LCI 比较与公开比较断言加权，要求保留部分相关部件、开展合理极值情景与不确定度计算，并对未预审数据升格为外部评审组审查。",
+      "rights": "欧盟联合研究中心公开指南文本；公开记录仅含印刷页定位与原创中文比较分析，不重分发原 PDF。",
+      "appraisal": {
+        "basis": "SHA-256 校验的 417 页官方 PDF 逐页核对（pdfIndex = printedPage + 19）。",
+        "methodologicalScope": "ILCD 2010 第 5.2.5、5.3（表 2）、6.10.1—6.10.7、6.11 与 8.4 节产品比较与公开比较断言规则。",
+        "independence": "欧盟委员会联合研究中心（JRC）官方技术指南。",
+        "limitations": [
+          "审查方案细则另载于独立的 Review schemes for LCA 分册。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-19"
+      },
+      "unread": [
+        "独立的 ILCD Review schemes for LCA 审查方案分册未在本单元展开。"
+      ],
+      "artifacts": [
+        {
+          "id": "art-wsc157-ilcd-2010-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "7de4b9126536894b0b2594ab268b23b4de7de228146390ed6ade9954625e0c0f",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/uploads/ILCD-Handbook-General-guide-for-LCA-DETAILED-GUIDANCE-12March2010-ISBN-fin-v1.0-EN.pdf",
+          "pageCount": 417
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-wsc157-ilcd-equivalence-scenarios",
+          "artifactId": "art-wsc157-ilcd-2010-pdf",
+          "locator": "第 5.3 节表 2、第 6.10.3—6.10.7 节及规定条款 II、V、XII—XIII（印第 38—39、142—148 页）",
+          "printedPages": "38–39, 142–148",
+          "pdfIndices": [
+            57,
+            58,
+            161,
+            162,
+            163,
+            164,
+            165,
+            166,
+            167
+          ],
+          "topics": [
+            "Situation A micro-level decision support vs Situation C accounting",
+            "analogous system boundaries and partially correlated parts",
+            "reasonably best/worst case scenarios and uncertainty"
+          ],
+          "limits": [
+            "仅针对产品级微观决策比较，不覆盖宏观结构性情景 B。"
+          ]
+        },
+        {
+          "id": "psg-wsc157-ilcd-weighting-panel",
+          "artifactId": "art-wsc157-ilcd-2010-pdf",
+          "locator": "第 5.2.5 节、第 6.10.1—6.10.2 节规定条款 I 与 VI、第 6.11 节及第 8.4 节规定条款 III（印第 34—35、140—141、145—146、148、283—284 页）",
+          "printedPages": "34–35, 140–141, 145–146, 148, 283–284",
+          "pdfIndices": [
+            53,
+            54,
+            159,
+            160,
+            164,
+            165,
+            167,
+            302,
+            303
+          ],
+          "topics": [
+            "non-assertive comparative studies anti-bypass",
+            "no LCI-only comparative assertion",
+            "no weighting in published comparative assertions",
+            "pre-verified data or panel review"
+          ],
+          "limits": [
+            "具体外部评审组组成规则见另行发布的审查方案分册。"
+          ]
+        }
+      ],
+      "sourceKeys": [
+        "src-wsc157-ilcd-2010"
+      ]
+    },
+    {
+      "id": "rd-wsc157-eu-2021-2279-pef",
+      "workId": "lit-n04",
+      "title": "Commission Recommendation (EU) 2021/2279 of 15 December 2021 on the use of the Environmental Footprint methods (Corrigendum OJ L 144, 23.5.2022)",
+      "version": "Official Journal of the European Union, OJ L 144, 23.5.2022 (384 pp.)",
+      "url": "https://publications.europa.eu/resource/cellar/ca3eccfd-da68-11ec-a95f-01aa75ed71a1.0006.01/DOC_1",
+      "readingStatus": "selected-passages",
+      "accessedAt": "2026-11-19",
+      "readAt": "2026-11-19",
+      "question": "欧盟委员会建议书 (EU) 2021/2279 如何限定产品比较与比较断言的 PEFCR 前提、A—E 五档性能分级及第三方验证确认门槛？",
+      "argumentSummary": "附件一第 1 节与第 1.1 节将比较与比较断言严格限定在遵循有效 PEFCR 的研究中；附件一第 5.2 节与附件二表 NN-9 强制按 16 项 EF 类别单一总分与 0.30/0.85 系数划分 A—E 五档性能等级；附件一第 8 节对全部对外传播强制实施符合 EN ISO/IEC 17020:2012 的第三方验证与确认（重大差错 > 5%、核查员 ≥ 6 分、最长 3 年有效）。",
+      "rights": "欧盟官方公报（EUR-Lex）公开法律建议文本；公开记录仅含公报页码定位与原创中文比较分析，不重分发原 PDF。",
+      "appraisal": {
+        "basis": "SHA-256 校验的 384 页更正重刊版公报 OJ L 144 逐页核对，并交叉对照 396 页原刊公报 OJ L 471 页码。",
+        "methodologicalScope": "附件一第 1、1.1、5.2.1—5.2.2、8.1—8.5 节及附件二表 NN-9。",
+        "independence": "欧盟委员会官方公报正式发布建议文本（非约束性建议）。",
+        "limitations": [
+          "建议书本身不具直接强制法律约束力，须经具体法规引用生效。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-19"
+      },
+      "unread": [
+        "附件三至附件四组织环境足迹（OEF / OEFSR）条款未在本单元展开。"
+      ],
+      "artifacts": [
+        {
+          "id": "art-wsc157-eu-2021-2279-pef-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "42445138f591d8052c0096384db30db513c11da918d0de2e9955baa33264faa7",
+          "resolvedUrl": "https://publications.europa.eu/resource/cellar/ca3eccfd-da68-11ec-a95f-01aa75ed71a1.0006.01/DOC_1",
+          "pageCount": 384
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-wsc157-pef-pefcr-classes-verification",
+          "artifactId": "art-wsc157-eu-2021-2279-pef-pdf",
+          "locator": "欧盟官方公报 OJ L 144 第 23—24、88、95—102、149 页（附件一第 1、1.1、5.2.1—5.2.2、8.1—8.5 节与附件二表 NN-9；对应原刊公报 OJ L 471 第 220、291—298、345 页）",
+          "printedPages": "OJ L 144/23–24, 88, 95–102, 149",
+          "pdfIndices": [
+            22,
+            23,
+            87,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            148
+          ],
+          "topics": [
+            "PEFCR-only comparisons and comparative assertions",
+            "16 EF categories single overall score A-E classes 0.30 and 0.85",
+            "mandatory third-party verification >5% mistake >=6 points 3-year validity"
+          ],
+          "limits": [
+            "不涵盖非 PEFCR 场景下的跨品类直接比较。"
+          ]
+        }
+      ],
+      "sourceKeys": [
+        "src-wsc157-eu-2021-2279-pef"
+      ]
+    },
+    {
+      "id": "rd-wsc157-ghgp-2011",
+      "workId": "work-pfr151-ghgp-2011",
+      "title": "Product Life Cycle Accounting and Reporting Standard",
+      "version": "WRI / WBCSD, September 2011 (148 pp.)",
+      "url": "https://ghgprotocol.org/sites/default/files/standards/Product-Life-Cycle-Accounting-Reporting-Standard_041613.pdf",
+      "readingStatus": "selected-passages",
+      "accessedAt": "2026-11-19",
+      "readAt": "2026-11-19",
+      "question": "GHG Protocol 产品标准（2011）对产品间比较断言、额外产品规则要求及比较中的不确定性评估作出了何种规定？",
+      "argumentSummary": "第 1.5 节与附录 A 表 A.2 规定本标准按原样仅支持同一产品跨期减排追踪，明确不支持产品间总体环境优劣比较断言，跨产品比较须另依产品规则并完成第三方鉴证；第 10.3.4 节明确禁止直接并排比较方案 A 与 B 的边缘不确定性区间，要求评估比较量本身（如 A/B）的参数与情景不确定性。",
+      "rights": "世界资源研究所与世界可持续发展工商理事会公开标准文本；公开记录仅含印刷页定位与原创中文比较分析，不重分发原 PDF。",
+      "appraisal": {
+        "basis": "SHA-256 校验的 148 页官方 PDF 逐页核对（pdfIndex = printedPage + 1）。",
+        "methodologicalScope": "第 1.5、5.3.2、10.3.4、13.2 节与附录 A 表 A.1—A.2。",
+        "independence": "WRI/WBCSD 多利益相关方公开核算标准。",
+        "limitations": [
+          "仅覆盖温室气体单一影响类别，不处理多环境影响类别权衡。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-19"
+      },
+      "unread": [
+        "第 6—9 章与第 11—12 章其余清单计算细节未在本单元重复展开。"
+      ],
+      "artifacts": [
+        {
+          "id": "art-wsc157-ghgp-2011-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "fdc21b798b9c8908f6e55e8caca22e5d8b281ede3601f6950649244d418d3c0c",
+          "resolvedUrl": "https://ghgprotocol.org/sites/default/files/standards/Product-Life-Cycle-Accounting-Reporting-Standard_041613.pdf",
+          "pageCount": 148
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-wsc157-ghgp-comparison-uncertainty",
+          "artifactId": "art-wsc157-ghgp-2011-pdf",
+          "locator": "第 10.3.4 节“比较中的不确定性”（印第 82 页）",
+          "printedPages": "82",
+          "pdfIndices": [
+            83
+          ],
+          "topics": [
+            "uncertainty in comparisons",
+            "do not compare marginal ranges of A and B directly",
+            "assess distribution of A divided by B"
+          ],
+          "limits": [
+            "仅给出一阶比较量思路，未规定具体蒙特卡洛抽样次数上限。"
+          ]
+        },
+        {
+          "id": "psg-wsc157-ghgp-no-comparative-assertion",
+          "artifactId": "art-wsc157-ghgp-2011-pdf",
+          "locator": "第 1.5、5.3.2、13.2 节及附录 A 表 A.1—A.2（印第 6、23—24、101、115—116 页）",
+          "printedPages": "6, 23–24, 101, 115–116",
+          "pdfIndices": [
+            7,
+            24,
+            25,
+            102,
+            116,
+            117
+          ],
+          "topics": [
+            "performance tracking as-is only",
+            "comparative assertions not supported",
+            "additional product rules and third-party assurance required"
+          ],
+          "limits": [
+            "具体产品规则与多类别比较须遵循对应 PCR 或 ISO 14044 标准。"
+          ]
+        }
+      ],
+      "sourceKeys": [
+        "src-wsc157-ghgp-2011"
+      ]
+    },
+    {
+      "id": "rd-wsc157-heijungs-2020",
+      "workId": "work-unc149-heijungs-2020",
+      "title": "On the number of Monte Carlo runs in comparative probabilistic LCA",
+      "version": "Int J Life Cycle Assess (2020) 25:394–402 (9 pp.)",
+      "url": "https://link.springer.com/content/pdf/10.1007/s11367-019-01698-4.pdf",
+      "readingStatus": "selected-passages",
+      "accessedAt": "2026-11-19",
+      "readAt": "2026-11-19",
+      "question": "在比较概率 LCA 中，超过实证输入样本量的大规模蒙特卡洛运行如何制造虚假统计显著性？",
+      "argumentSummary": "对同一母体 N(10, 1) 的两组 n = 16 实证样本，双尾 t 检验 p = 0.67 无差异证据，但运行 N_run = 100,000 次蒙特卡洛抽样会产生 p ≈ 10^-16 的伪显著性；模拟次数须受最弱实证样本量限制（如 n = 9 时 N_run ≤ 9），无样本量的谱系分布不兼容大规模蒙特卡洛显著性检验。",
+      "rights": "CC BY 4.0 开放获取期刊论文；公开记录仅含印刷页定位与原创中文比较分析，不重分发原 PDF。",
+      "appraisal": {
+        "basis": "SHA-256 校验的 9 页开放获取期刊 PDF 逐页核对（pdfIndex = printedPage - 394）。",
+        "methodologicalScope": "第 2.8—4 节与图 2 比较概率 LCA 蒙特卡洛运行次数与伪显著性机制。",
+        "independence": "同行评议学术期刊开放获取论文。",
+        "limitations": [
+          "论文聚焦过度模拟次数导致的伪显著性，并不讨论共享背景配对抽样抵消。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-19"
+      },
+      "unread": [
+        "论文其余数学推导附录无额外未读部分。"
+      ],
+      "artifacts": [
+        {
+          "id": "art-wsc157-heijungs-2020-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "422cb7f6665f1fcdc689d8a65cbd58838508d849bed2d415de8b010763d4f299",
+          "resolvedUrl": "https://link.springer.com/content/pdf/10.1007/s11367-019-01698-4.pdf",
+          "pageCount": 9
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-wsc157-heijungs-mc-false-sig",
+          "artifactId": "art-wsc157-heijungs-2020-pdf",
+          "locator": "第 2.8、3、4 节及图 2（印第 399—401 页）",
+          "printedPages": "399–401",
+          "pdfIndices": [
+            5,
+            6,
+            7
+          ],
+          "topics": [
+            "empirical sample n=16 t-test p=0.67",
+            "N_run=100000 yields false p~1e-16",
+            "weakest-link sample size cap n=9",
+            "pedigree distributions incompatible with large-scale MC significance"
+          ],
+          "limits": [
+            "示例基于正态分布双样本 t 检验，但“过度模拟不能修复输入不准确”的机理具有普遍性。"
+          ]
+        }
+      ],
+      "sourceKeys": [
+        "src-wsc157-heijungs-2020"
+      ]
     }
   ],
   "gaps": [

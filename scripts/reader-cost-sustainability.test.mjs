@@ -3,6 +3,8 @@ import fs from 'node:fs';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
+import wsc from '../config/reader-wall-service-comparison.json' with { type: 'json' };
+import { restoreWallServiceComparisonTestFiles } from './reader-wall-service-comparison.mjs';
 import part6 from '../config/reader-part6-reread.json' with { type: 'json' };
 import { restorePart6RereadTestFiles } from './reader-part6-reread.mjs';
 import dqp from '../config/reader-data-quality-comparison.json' with { type: 'json' };
@@ -46,7 +48,7 @@ import {
 } from './reader-cost-sustainability.mjs';
 
 test('Cost and sustainability enforces exact 1044 claims, 21 single-artifact evidence records, 82 BigInt facts, prose bindings and zero hygiene leaks', () => {
-  const prev143 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit), part5.unit);
+  const prev143 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit), part5.unit);
   assert.equal(prev143.catalog.claims.length, 1044);
   assert.equal(prev143.catalog.claims.filter(c => c.id.startsWith('cl-lcc143-')).length, 8);
   assert.equal(prev143.catalog.evidence.filter(e => e.id.startsWith('ev-lcc143-')).length, 21);
@@ -195,13 +197,14 @@ test('Cost and sustainability source plan recovers exact 9dbf6777 predecessor an
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
+  restoreWallServiceComparisonTestFiles(files, wsc.unit);
   restorePart6RereadTestFiles(files, part6.unit);
   restoreDataQualityComparisonTestFiles(files, dqp.unit);
   restoreProductFootprintComparisonTestFiles(files, pfr.unit);
   restoreUncertaintyComparisonTestFiles(files, unc.unit);
   restoreDataApplicabilityComparisonTestFiles(files, dapp.unit);
   restorePart5RereadTestFiles(files, part5.unit);
-  const prev143 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit), part5.unit);
+  const prev143 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit), part5.unit);
   const input = { ...prev143, files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
   const qualify = (unit, customInput = input, customActual = actual, customStruct = structure) =>
@@ -364,7 +367,7 @@ test('Cost and sustainability receipt binding behaves fail-closed before and aft
   }
 
   const { readerPublicDownloads } = await import('./reader-current-output.mjs');
-  const prev143 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit), part5.unit);
+  const prev143 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit), part5.unit);
   const expected = readerPublicDownloads(prev143.catalog, prev143.literature, prev143.readings);
   const verify = (mutateUnit = () => {}, mutateOutput) => {
     const unit = structuredClone(config.unit);

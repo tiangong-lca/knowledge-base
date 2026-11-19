@@ -96,15 +96,21 @@ bytes, `0` guard errors), and exact root integration `workspace#2510` /
 
 [Issue157](https://github.com/tiangong-lca/knowledge-base/issues/157) (Part VII
 Unit 1 `B29`《墙面服务比较》,
-[protocol](editorial/2026-11-19-wall-service-comparison.md)) opens the
-prewriting protocol on qualified `main`
-`8d498f48baf96865ef5e953d8b6a19136cd36ab9` to add `6` non-case comparative-
-assertion & paired/MC-boundary claims (`1,074 -> 1,080`) and `1` cross-
-framework comparison table across ILCD 2010, EU Commission Recommendation (EU)
-2021/2279, GHG Protocol Product Standard (2011), and Heijungs (2020) (with
-explicit paywalled ISO 14044:2006 boundary), while freezing all `22`
-`CASE-WALL-CONNECT` claims and `40/40` case downloads byte-for-byte untouched.
-Parts VII–VIII and all 8 global Programme #9 criteria remain open.
+[protocol](editorial/2026-11-19-wall-service-comparison.md)) is separately
+reviewed and bound on qualified `main`
+`8d498f48baf96865ef5e953d8b6a19136cd36ab9`, adding `6` non-case comparative-
+assertion & paired/MC-boundary claims (`1,074 -> 1,080`), `1` five-column
+cross-framework comparison table, `4` SHA-256-verified primary sources (ILCD
+2010, EU 2021/2279 OJ L 144 cross-referenced with OJ L 471, GHG Protocol
+Product Standard 2011, Heijungs 2020), `6` evidence records (`11` BigInt-
+verified numeric facts), and `1` paywalled ISO 14044:2006 boundary record while
+freezing all `22` `CASE-WALL-CONNECT` claims and `40/40` case downloads
+byte-for-byte untouched. Separate source, zero-context full-chapter reader, and
+publication-engineering reviews all concluded unconditional PASS (`0/0/0`),
+with Playwright `20/20` QA, `724/724` tests, and CSS zero-drift (`be180e5d...`).
+Clean production build, source PR/merge, live hosting qualification, root
+integration, remaining Parts VII–VIII, and all 8 global Programme #9 criteria
+remain open.
 
 [Issue105](https://github.com/tiangong-lca/knowledge-base/issues/105) continues
 with B10: reporting objects and evidence conditions for co-product substitution.

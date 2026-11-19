@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import test from 'node:test';
+import wsc from '../config/reader-wall-service-comparison.json' with { type: 'json' };
+import { restoreWallServiceComparisonTestFiles } from './reader-wall-service-comparison.mjs';
 import part6 from '../config/reader-part6-reread.json' with { type: 'json' };
 import { restorePart6RereadTestFiles } from './reader-part6-reread.mjs';
 import { previousScientificTestRecords } from './fixtures/scientific-receipt-envelope.mjs';
@@ -36,8 +38,9 @@ async function loadInput() {
     readServiceConstraintsFiles('.', service.unit),
   ]);
   for (const [p, b] of [...shiftFiles, ...serviceFiles]) files.set(p, b);
+  restoreWallServiceComparisonTestFiles(files, wsc.unit);
   restorePart6RereadTestFiles(files, part6.unit);
-  const prev153 = previousScientificTestRecords({ catalog, readings, literature }, part6.unit);
+  const prev153 = previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, wsc.unit), part6.unit);
   return { ...prev153, files };
 }
 
