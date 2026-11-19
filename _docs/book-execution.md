@@ -123,16 +123,21 @@ bytes, `0` guard errors), and exact root integration `workspace#2519` /
 
 [Issue163](https://github.com/tiangong-lca/knowledge-base/issues/163) (Part VII
 Unit 4 `B32`《可修订的判断》+ `W1`/`W2` closing synthesis & revision routing,
-[protocol](editorial/2026-11-19-revisable-judgment-synthesis.md)) opens the
-prewriting protocol on qualified `main`
-`cb2584d4354f6d8a5111155d658d3edafd80ec8a` to add `7` integrative synthesis and
-revision-routing claims (`1,092 -> 1,099`) and `1` five-column, seven-row
-book-level revision-routing table across `W1` (`8 -> 10`), `W2` (`14 -> 19`),
-and `B32` (`22 -> 29`) maintaining exact disjoint-union parity
+[protocol](editorial/2026-11-19-revisable-judgment-synthesis.md)) is reviewed
+and cryptographically bound on qualified `main`
+`cb2584d4354f6d8a5111155d658d3edafd80ec8a`: adds `7` integrative synthesis and
+revision-routing claims (`1,092 -> 1,099`), `1` intro paragraph, and `1`
+five-column, seven-row book-level revision-routing table across `W1` (`8 -> 10`),
+`W2` (`14 -> 19`), and `B32` (`22 -> 29`) maintaining exact disjoint-union parity
 `W1 ∪ W2 = B32` (`W1 ∩ W2 = ∅`) while preserving all `22` existing claims,
-`106` historical citation obligations, `40/40` case downloads, and frozen
-headings byte-for-byte untouched. Part VII continuous reread, whole-book
-reread, and all 8 global Programme #9 criteria remain open.
+`106` historical citation obligations, `40/40` case downloads, CSS zero-drift
+(`be180e5d...`), and frozen headings byte-for-byte untouched. Independent Round
+2 primary-source/premise-DAG (`53ccdf0a`), zero-context `B32`+`W1`+`W2` reader
+(`d3c430b3`), and adversarial publication-engineering (`7b673557`) reviews all
+returned unconditional `PASS` (`0 BLOCKER / 0 MAJOR / 0 MINOR`), with `737/737`
+tests and `30/30` Playwright responsive QA green. Source PR/CI/merge, live
+EdgeOne qualification, root submodule integration, Part VII continuous reread,
+whole-book reread, and all 8 global Programme #9 criteria remain open.
 
 [Issue105](https://github.com/tiangong-lca/knowledge-base/issues/105) continues
 with B10: reporting objects and evidence conditions for co-product substitution.
