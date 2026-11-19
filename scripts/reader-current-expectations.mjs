@@ -1,3 +1,5 @@
+import dappConfig from '../config/reader-data-applicability-comparison.json' with { type: 'json' };
+import { selectDataApplicabilityComparison, effectiveDataApplicabilityComparison, dataApplicabilityComparisonLayout } from './reader-data-applicability-comparison.mjs';
 import part5Config from '../config/reader-part5-reread.json' with { type: 'json' };
 import { selectPart5Reread, effectivePart5Reread } from './reader-part5-reread.mjs';
 import costConfig from '../config/reader-cost-sustainability.json' with { type: 'json' };
@@ -76,8 +78,9 @@ export const currentLocalizationComparison = selectLocalizationComparison(locali
 export const currentSocialComparison = selectSocialComparison(socialConfig, undefined, preview);
 export const currentCostSustainability = selectCostSustainability(costConfig, undefined, preview);
 export const currentPart5Reread = selectPart5Reread(part5Config, undefined, preview);
+export const currentDataApplicabilityComparison = selectDataApplicabilityComparison(dappConfig, undefined, preview);
 export const isReadableBookReviewPreview = oldPreview
-  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview' || acidConfig.status === 'preview' || mineralConfig.status === 'preview' || fossilConfig.status === 'preview' || ozoneConfig.status === 'preview' || ozradConfig.status === 'preview' || toxConfig.status === 'preview' || waterConfig.status === 'preview' || biogenicConfig.status === 'preview' || eutroConfig.status === 'preview' || particulateConfig.status === 'preview' || part4Config.status === 'preview' || weightingConfig.status === 'preview' || localizationConfig.status === 'preview' || socialConfig.status === 'preview' || costConfig.status === 'preview' || part5Config.status === 'preview');
+  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview' || acidConfig.status === 'preview' || mineralConfig.status === 'preview' || fossilConfig.status === 'preview' || ozoneConfig.status === 'preview' || ozradConfig.status === 'preview' || toxConfig.status === 'preview' || waterConfig.status === 'preview' || biogenicConfig.status === 'preview' || eutroConfig.status === 'preview' || particulateConfig.status === 'preview' || part4Config.status === 'preview' || weightingConfig.status === 'preview' || localizationConfig.status === 'preview' || socialConfig.status === 'preview' || costConfig.status === 'preview' || part5Config.status === 'preview' || dappConfig.status === 'preview');
 const previousPlan = readableBookReviewPlan(oldPreview
   ? acceptance.units
   : pinnedReadableBookUnits(acceptance, readableBookBaselineDigest, readableBookAcceptancePins));
@@ -103,7 +106,8 @@ const acceptedWeighting = effectiveWeightingValuation(acceptedPart4, currentWeig
 const acceptedLocalization = effectiveLocalizationComparison(acceptedWeighting, currentLocalizationComparison);
 const acceptedSocial = effectiveSocialComparison(acceptedLocalization, currentSocialComparison);
 const acceptedCost = effectiveCostSustainability(acceptedSocial, currentCostSustainability);
-export const currentBookPlan = effectivePart5Reread(acceptedCost, currentPart5Reread);
+const acceptedPart5 = effectivePart5Reread(acceptedCost, currentPart5Reread);
+export const currentBookPlan = effectiveDataApplicabilityComparison(acceptedPart5, currentDataApplicabilityComparison);
 
 export function currentBookRecordMatches(kind, previous, current, projection) {
   if (projection !== undefined) return matchesAcceptedRecord(currentBookPlan, kind, previous, current, projection);
@@ -137,9 +141,10 @@ export function currentBookLayout(key, previous) {
   if (key === 'B08:title') return flowBoundaryTitle(currentFlowBoundary, flowBoundaryChapter, copyedit);
   if (key === 'B08:headings') return flowBoundarySections(currentFlowBoundary, copyedit);
   if (key === 'B08:ordinary-dispositions') return flowBoundaryOrdinaryDispositions(currentFlowBoundary, copyedit);
-  return part4RereadLayout(currentPart4Reread, key,
+  return dataApplicabilityComparisonLayout(currentDataApplicabilityComparison, key,
+    part4RereadLayout(currentPart4Reread, key,
     particulateComparisonLayout(currentParticulateComparison, key,
       biogenicCarbonLayout(currentBiogenicCarbon, key,
         toxicityComparisonLayout(currentToxicityComparison, key,
-          substitutionRulesLayout(currentSubstitutionRules, key, serviceConstraintsLayout(currentServiceConstraints, key, copyedit))))));
+          substitutionRulesLayout(currentSubstitutionRules, key, serviceConstraintsLayout(currentServiceConstraints, key, copyedit)))))));
 }

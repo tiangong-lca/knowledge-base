@@ -24,6 +24,29 @@ lastReviewedCommit: c5b90b0352abaeaf0eec6706685076c8825d8925
 
 ## Scoped scientific successors
 
+The Part VI opening data-applicability comparison unit #147 compares
+`UNEP/SETAC (2011)`, `EC-JRC ILCD General Guide (2010, EUR 24708 EN)` &
+`ILCD Data Network Compliance & Entry-Level Rules v1.1 (2012, EUR 24380 EN)`,
+`EU Recommendation (EU) 2021/2279` & `EF Data Guide v2.0` / `EF 3.1 Addendum` /
+`JRC130796` / `EC May 2026 Transition Guidance`, `Weidema et al. (2013)`
+`ecoinvent Report 1(v3)`, and `@tiangong-lca/tidas-spec v0.3.0` across `B25`
+(`content/monograph/data-applicability.mdx`, `14` -> `22` claims + `2` 6-column
+tables) and its two synchronized website companions (`《过程数据的用途》` `7` -> `11`
++ Table 1; `《数据审查与版本》` `7` -> `11` + Table 2, bringing the public catalog
+to `1,052` claims) while conserving `100%` of all `14` original `cl-db2011-*`
+identities, `1,030` untouched prior claims, and all `40` case downloads against
+`c5b90b0352abaeaf0eec6706685076c8825d8925`. It binds `18` `1-to-1` single-artifact
+`ev-dapp147-*` / `psg-dapp147-*` pairs, `63` `BigInt` rational `numericFacts`
+(proving `ILCD` Formula 3 `26/10 = 2.60` vs `33/10 = 3.30` flipping against `EU`
+Eq. 19 `2.50` vs `2.25`, provider `3.0` single-criterion cap rejection on
+`1.75`-mean Dataset C, provider `1.0` -> context `3.75` disqualification &
+Situation 2 / Option 2 `-30%` `GeR` `3.125 -> 2.90`, `80%` rescaling
+`37.5%`/`62.5%` + `10%` `ILCD-EL` masking, `ecoinvent` score-5 pedigree variance
+sum `0.21`, and `JRC130796` `2,752`-dataset `6%`/`10%`/`13%` top-3 shifts plus
+`3`-year `>10.0%`/`>5.0%` surveillance triggers), normalizes `16` prior locators,
+and publishes `12` `style="display:block"` dated correction notices without
+claiming whole-book completion.
+
 The Part V continuous-reread unit #145 synchronizes cross-chapter framing,
 dual-view entry links, institution/method/currency terminology, cross-chapter
 numeric anchors, premise-DAG ordering, and note locators across `F02`

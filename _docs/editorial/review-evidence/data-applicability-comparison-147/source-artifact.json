@@ -1,0 +1,3001 @@
+{
+  "schemaVersion": 1,
+  "kind": "source",
+  "unit": "data-applicability-comparison-147",
+  "date": "2026-11-19",
+  "subjectSha256": "dd2d4bc08e6649f80b95afb2e021d81d8d67433830c9c27ff3bd218e7c853a3f",
+  "scope": [
+    "content/monograph/data-applicability.mdx",
+    "content/docs/book/database-fitness-and-documentation.mdx",
+    "content/docs/book/review-support-and-version-boundaries.mdx",
+    "claims:cl-db2011-user-and-manager",
+    "claims:cl-db2011-represented-object",
+    "claims:cl-db2011-representativeness-and-precision",
+    "claims:cl-db2011-missing-and-zero",
+    "claims:cl-db2011-documenting-number",
+    "claims:cl-db2011-aggregation-information",
+    "claims:cl-db2011-review-relative-to-criteria",
+    "claims:cl-db2011-validation-context",
+    "claims:cl-db2011-review-questions",
+    "claims:cl-db2011-recommendation-strength",
+    "claims:cl-db2011-review-of-guidance",
+    "claims:cl-db2011-versioned-confidence",
+    "claims:cl-db2011-scope-examples",
+    "claims:cl-db2011-conditional-use",
+    "evidence:ev-db2011-audience",
+    "evidence:ev-db2011-support-language",
+    "evidence:ev-db2011-goal",
+    "evidence:ev-db2011-validation",
+    "evidence:ev-db2011-documentation",
+    "evidence:ev-db2011-quality-dimensions",
+    "evidence:ev-db2011-aggregation-gaps",
+    "evidence:ev-db2011-review-purpose",
+    "evidence:ev-db2011-review-record",
+    "evidence:ev-db2011-local-definitions",
+    "evidence:ev-db2011-change",
+    "evidence:ev-db2011-own-review",
+    "evidence:ev-kb44-ec-transition2026-scope",
+    "evidence:ev-kb44-ec-transition2026-hierarchy",
+    "evidence:ev-db2011-use-examples",
+    "evidence:ev-db2011-conditional-consistency",
+    "sources:src-book-ilcd-2010",
+    "sources:src-kb44-ec2021",
+    "sources:src-tox123-ef31-addendum",
+    "sources:src-loc137-ef-guide-2020",
+    "readings:rd-ilcd-2010",
+    "readings:rd-kb44-ec2021",
+    "readings:rd-tox123-ef31-addendum",
+    "readings:rd-loc137-ef-guide-2020",
+    "literature:lit-n03",
+    "literature:lit-n04",
+    "literature:work-tox123-ef31-addendum",
+    "literature:work-loc137-ef-guide-2020",
+    "researchMetadata:reading-ledger",
+    "researchMetadata:literature-map",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:order:sources",
+    "researchMetadata:order:readings",
+    "researchMetadata:order:gaps",
+    "researchMetadata:order:revisions",
+    "researchMetadata:order:literature",
+    "researchMetadata:order:queries",
+    "researchMetadata:public-projection",
+    "claims:cl-dapp147-dataset-roles-and-system-linking",
+    "claims:cl-dapp147-intrinsic-vs-context-representativeness",
+    "claims:cl-dapp147-quality-architectures-and-prerequisite-split",
+    "claims:cl-dapp147-weakest-link-vs-mean-and-80pct-masking",
+    "claims:cl-dapp147-validation-vs-review-and-team-thresholds",
+    "claims:cl-dapp147-five-aspect-compliance-and-uuid-semantics",
+    "claims:cl-dapp147-package-migration-inheritance-and-surveillance",
+    "claims:cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge",
+    "evidence:ev-dapp147-ilcd2010-dataset-types-and-review",
+    "evidence:ev-dapp147-ilcd2010-representativeness-vs-appropriateness",
+    "evidence:ev-dapp147-ilcd2010-dqr-formula-and-five-aspects",
+    "evidence:ev-dapp147-ilcd2012-twelve-compliance-uuids",
+    "evidence:ev-dapp147-ilcd2012-entry-level-rules",
+    "evidence:ev-dapp147-ec2021-secondary-hierarchy-and-cutoff",
+    "evidence:ev-dapp147-ec2021-dqr-equations-and-dnm",
+    "evidence:ev-dapp147-ec2021-verification-and-surveillance",
+    "evidence:ev-dapp147-efguide2020-provider-dqr-and-ceiling",
+    "evidence:ev-dapp147-efguide2020-supporting-subprocesses",
+    "evidence:ev-dapp147-efguide2020-review-types-and-looklci",
+    "evidence:ev-dapp147-ef31addendum-six-uuid-matrix-and-erratum",
+    "evidence:ev-dapp147-ecoinvent2013-glo-row-and-markets",
+    "evidence:ev-dapp147-ecoinvent2013-pedigree-variance",
+    "evidence:ev-dapp147-ecoinvent2013-ecoeditor-and-editorial-review",
+    "evidence:ev-dapp147-tidas-process-review-schema",
+    "evidence:ev-dapp147-tidas-public-rules",
+    "evidence:ev-dapp147-tidas-adjudication-boundary",
+    "sources:src-dapp147-ilcd-el-2012",
+    "sources:src-dapp147-ecoinvent-v3-2013",
+    "sources:src-dapp147-tidas-spec-v030",
+    "readings:rd-dapp147-ilcd-el-2012",
+    "readings:rd-dapp147-ecoinvent-v3-2013",
+    "readings:rd-dapp147-tidas-spec-v030",
+    "gaps:gap-dapp147-ilcd-review-schemes-and-ef-raw-nodes",
+    "revisions:rev-dapp147-b25-data-applicability-comparison",
+    "literature:work-dapp147-ilcd-el-2012",
+    "literature:work-dapp147-ecoinvent-v3-2013",
+    "literature:work-dapp147-tidas-spec-v030",
+    "queries:q-dapp147-dataset-roles-dqr-review-compliance-and-packages-20261119"
+  ],
+  "observed": "Part VI opening chapter B25 (content/monograph/data-applicability.mdx) and website companions (/docs/book/database-fitness-and-documentation, /docs/book/review-support-and-version-boundaries), covering 3 new works/sources/readings, 4 appended prior carriers, 18 1-to-1 single-artifact ev-dapp147-*/psg-dapp147-* pairs, 63 BigInt rational numericFacts, 8 new cl-dapp147-* claims, 14 updated cl-db2011-* claims, 16 normalized locators, and 2 six-column comparative tables against predecessor commit c5b90b0352abaeaf0eec6706685076c8825d8925.",
+  "observations": {
+    "state": {
+      "before": "68aed4ba5c3b9aa076a7567228e49e9a8c4360dbe454bd6748256af1e9d7c599",
+      "after": "7db50e1d25de5534578ba9ea5797cdaebc6eed3e908e27f4b49f46650fbc33ab"
+    },
+    "changes": [
+      {
+        "kind": "file",
+        "key": "content/monograph/data-applicability.mdx",
+        "from": "a30dc8aa8a418bf0f31a47905abef996b31f8dd338291cc9161181be0a2f9369",
+        "to": "0a0f28bc5e641d44bafda830e803c1cafbb8a20aa56f8ac7d906fb0a6d06634e",
+        "rationale": "在书章《数据适用性》四节有界置入 8 条跨体系比较论述与 2 张六列对照表（由 14 注扩为 22 注），保留全部原命题顺序与章末续读导航。"
+      },
+      {
+        "kind": "file",
+        "key": "content/docs/book/database-fitness-and-documentation.mdx",
+        "from": "fdce28c48ceeb9f0349b2ec634fae64cb55a5a6be5072e24bab10ef2c78d8912",
+        "to": "e6fceda41439a9b5028554806f0757b38e3cfbfc4770c2c11e82efbfe622177e",
+        "rationale": "在网站细篇《过程数据的用途》三节同步置入前 4 条跨体系比较论述与第 1 张质量架构对照表（由 7 注扩为 11 注）。"
+      },
+      {
+        "kind": "file",
+        "key": "content/docs/book/review-support-and-version-boundaries.mdx",
+        "from": "30e18084061d6b5d77518e1194472a0653d1fbcdf526201d0443c3618081f569",
+        "to": "fb3c8d579bc20b2f785f14cbec4b9ee589d73bf30d62cd87d3a6d6ba9202fc0d",
+        "rationale": "在网站细篇《数据审查与版本》三节同步置入后 4 条跨体系比较论述与第 2 张审查换版对照表（由 7 注扩为 11 注），保持末段与续读导航原位。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-db2011-user-and-manager",
+        "from": {
+          "raw": "f5dedc307e7c85d7fe24a1000f28ef4a36a3809281ea4b4488a7bf3cdbb6460d",
+          "public": "f5dedc307e7c85d7fe24a1000f28ef4a36a3809281ea4b4488a7bf3cdbb6460d",
+          "protected": "3b38bc78055eb61934c5bed6aa0ad5929d406001bd3d1f886beafde2b8655cde"
+        },
+        "to": {
+          "raw": "9f186013ed949957124a9e75baa4652da009bfe6f2867f4505b1c0924c12378b",
+          "public": "9f186013ed949957124a9e75baa4652da009bfe6f2867f4505b1c0924c12378b",
+          "protected": "be8efc33fa7ec56a4fa947d12be2636bd4cb4686bb72122b497a1ede49129307"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有规范论述（补全机构与术语首现全称、规范尾注并校准前提拓扑），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-db2011-represented-object",
+        "from": {
+          "raw": "80f4df5440446c7bd53aceffd38d4dec5e93430a59b07e383c64225d2fb9b002",
+          "public": "80f4df5440446c7bd53aceffd38d4dec5e93430a59b07e383c64225d2fb9b002",
+          "protected": "c6bb2c7b87655803264ef5fbd7b79aeddefd98923053ab5e32016c7b5e9ad976"
+        },
+        "to": {
+          "raw": "1cf23a17ec35ff481d711fd6cdb81c7ebf1fc79d5d796f347bc607033978e11f",
+          "public": "1cf23a17ec35ff481d711fd6cdb81c7ebf1fc79d5d796f347bc607033978e11f",
+          "protected": "b6e523ac4bb83c77fb9f59a40ef97285ae6032d32a04c7edb4da94e4942ae470"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有规范论述（补全机构与术语首现全称、规范尾注并校准前提拓扑），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-db2011-representativeness-and-precision",
+        "from": {
+          "raw": "19e83937faf36df53a6fbcd2a2d3913ec55f3ec426e3a8de3a145c3a95f124f3",
+          "public": "19e83937faf36df53a6fbcd2a2d3913ec55f3ec426e3a8de3a145c3a95f124f3",
+          "protected": "4ea5d51c85026392e85fb5de56e4a2fb69d67f9d1101f1b718a182cec18d6f71"
+        },
+        "to": {
+          "raw": "832fe9af95c971a17dec02daf49da00a9a2afb1ac28a3f09338a05ef3748a6e7",
+          "public": "832fe9af95c971a17dec02daf49da00a9a2afb1ac28a3f09338a05ef3748a6e7",
+          "protected": "460c4389979e4790fd2f4a7e4d4528b7b267ecd38b2928de174dd04cf8c9afa3"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有规范论述（补全机构与术语首现全称、规范尾注并校准前提拓扑），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-db2011-missing-and-zero",
+        "from": {
+          "raw": "e5f6779a408dd1d85e9b9b776d5928fbdf4d8f758c9cb1c6c3d62cfc83173bfa",
+          "public": "e5f6779a408dd1d85e9b9b776d5928fbdf4d8f758c9cb1c6c3d62cfc83173bfa",
+          "protected": "0e6290f0086c963f0e6777980792d0a0b2feb8b7bcb84b8f8a32daeaf345b36f"
+        },
+        "to": {
+          "raw": "22554347d7d2040b30198125223525a9f6a946d8e64a1837b663ed55e36e15a9",
+          "public": "22554347d7d2040b30198125223525a9f6a946d8e64a1837b663ed55e36e15a9",
+          "protected": "7f653b52af807b4aeac3053eba64056d4370c4889824dcca75f7f91751485864"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有规范论述（补全机构与术语首现全称、规范尾注并校准前提拓扑），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-db2011-documenting-number",
+        "from": {
+          "raw": "5afc52bf35be715e210a007636945bc461e9f00cfac928e17cf66cdb0f69a97a",
+          "public": "5afc52bf35be715e210a007636945bc461e9f00cfac928e17cf66cdb0f69a97a",
+          "protected": "cf9aa1db6a22cecb50d60b29a97d99be07762f69d9554e306bd36adaedc6471c"
+        },
+        "to": {
+          "raw": "dca6768c440d7cacd27b984e16ee22d10a6138812b3f2cf7cce1624f2eec3ad5",
+          "public": "dca6768c440d7cacd27b984e16ee22d10a6138812b3f2cf7cce1624f2eec3ad5",
+          "protected": "eb98309ce21e2950acc3b6d56f74401df3e3521ddaa0f1be33a3da1ebdedc071"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有规范论述（补全机构与术语首现全称、规范尾注并校准前提拓扑），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-db2011-aggregation-information",
+        "from": {
+          "raw": "99d31ba1900ceb70bec9a1cc28a97680bd48fed09c8d8d2c01065f1fcc638e8e",
+          "public": "99d31ba1900ceb70bec9a1cc28a97680bd48fed09c8d8d2c01065f1fcc638e8e",
+          "protected": "5ca834a427c295bc11f7d56937263ee8bdf877ba490b5df323dd32da607f12ab"
+        },
+        "to": {
+          "raw": "41fb229a3e349d9308394c801b351d63ffb4b9243aec978f4545cd6c86524e38",
+          "public": "41fb229a3e349d9308394c801b351d63ffb4b9243aec978f4545cd6c86524e38",
+          "protected": "e8da3661301b736f5d58dc143b37d33c2401545556da9d891db3d1dc5f9a6ec1"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有规范论述（补全机构与术语首现全称、规范尾注并校准前提拓扑），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-db2011-review-relative-to-criteria",
+        "from": {
+          "raw": "1eda3d0c3e5713e0c32fd7c8c1c23a11769107f4963226a60ef28d5a3547dcd7",
+          "public": "1eda3d0c3e5713e0c32fd7c8c1c23a11769107f4963226a60ef28d5a3547dcd7",
+          "protected": "95d50756fbe06b08e29465d3b15647d3e3bb2752cec9d042e98e5a54a53ebb27"
+        },
+        "to": {
+          "raw": "26fa6a85fc4619d7c5b2cb993111d2ed503f769523664eefe18684cd37223dd5",
+          "public": "26fa6a85fc4619d7c5b2cb993111d2ed503f769523664eefe18684cd37223dd5",
+          "protected": "45ca050ef249799a973569570abc923ab8288fdc252aeb0c09854ed2083169b8"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有规范论述（补全机构与术语首现全称、规范尾注并校准前提拓扑），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-db2011-validation-context",
+        "from": {
+          "raw": "5b3453243bd1b9e0b67f1a0fa385ccc7dab6f5fa0f96970dfc334b153c0fa735",
+          "public": "5b3453243bd1b9e0b67f1a0fa385ccc7dab6f5fa0f96970dfc334b153c0fa735",
+          "protected": "08208e578b18aa10017e06f1e4eb8055a84b769f5cf7d2e1abdf81bb6ffb0f89"
+        },
+        "to": {
+          "raw": "a2e1b0afafb4720cb2bebd0dbc23f123444fff8ff39e587f46f8fa841c4d6153",
+          "public": "a2e1b0afafb4720cb2bebd0dbc23f123444fff8ff39e587f46f8fa841c4d6153",
+          "protected": "4e11b5720d2e6b508065903e213f998ea25c94da0cea1501d56c907015379371"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有规范论述（补全机构与术语首现全称、规范尾注并校准前提拓扑），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-db2011-review-questions",
+        "from": {
+          "raw": "cc9c674a0512a94b7e19ded208a16d00dd7f91f2690809e32d49d72db634e57a",
+          "public": "cc9c674a0512a94b7e19ded208a16d00dd7f91f2690809e32d49d72db634e57a",
+          "protected": "5b34a51cbe7328c43be13cd2bce37328ead6bee58847e4618490b725ffbb8001"
+        },
+        "to": {
+          "raw": "14220342b1179041b19c81bb1cc4945e68a6d462a8fba4041f545c6fa253818b",
+          "public": "14220342b1179041b19c81bb1cc4945e68a6d462a8fba4041f545c6fa253818b",
+          "protected": "11c104bcb29900466da663f9cb70f2070ba4658ed64ec79af51ab4d5a08df099"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有规范论述（补全机构与术语首现全称、规范尾注并校准前提拓扑），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-db2011-recommendation-strength",
+        "from": {
+          "raw": "782524ef0e3c500dc2f2f44766fe12456d1a01167094219e2055680868ce8e37",
+          "public": "782524ef0e3c500dc2f2f44766fe12456d1a01167094219e2055680868ce8e37",
+          "protected": "83e4db935f5cc610a1a4dd7e31dde44d82801fc88d1e1d46982b3b34604d23c9"
+        },
+        "to": {
+          "raw": "7170355e2d85cd7723ce15ff5c85d00e3ded5381958d88f8d4d7fa735985003e",
+          "public": "7170355e2d85cd7723ce15ff5c85d00e3ded5381958d88f8d4d7fa735985003e",
+          "protected": "f08bdd11a62bcaa6bae9abe1b4675ff652c605b78cf181811005b1047f1d28d7"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有规范论述（补全机构与术语首现全称、规范尾注并校准前提拓扑），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-db2011-review-of-guidance",
+        "from": {
+          "raw": "955b9899561bf4c2d882002607db29e896160d756c207e922dc792980094240c",
+          "public": "955b9899561bf4c2d882002607db29e896160d756c207e922dc792980094240c",
+          "protected": "e5d09c28f48b35cc747012a8820c62101aea8741a1a7b6f38a33bbc4ab30146b"
+        },
+        "to": {
+          "raw": "92fec1cb48e1e2d14089cdfee394068fa5a93763fc3b1ea45214821a06f9dbcc",
+          "public": "92fec1cb48e1e2d14089cdfee394068fa5a93763fc3b1ea45214821a06f9dbcc",
+          "protected": "fbf4519c9ace83ac9d033c2103ce7f3c38847e136ec6c9bc7e38580f0c16019a"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有规范论述（补全机构与术语首现全称、规范尾注并校准前提拓扑），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-db2011-versioned-confidence",
+        "from": {
+          "raw": "849d43ebd84c47d13ba13d7ea6a53149017051f0b5a90c50187682a53db7e6fa",
+          "public": "849d43ebd84c47d13ba13d7ea6a53149017051f0b5a90c50187682a53db7e6fa",
+          "protected": "7a4edac533bdec1adda89ca7bb85a12efdb0d341ebc135fdfa4684adcf80e535"
+        },
+        "to": {
+          "raw": "759546984342ca8894d27e7a41b1ff59d5f980f4d1b9d079ccd980a00688543f",
+          "public": "759546984342ca8894d27e7a41b1ff59d5f980f4d1b9d079ccd980a00688543f",
+          "protected": "f00ee051d9bb51c708ca0516c2c8348e2ec9987e188958728329b37557177f95"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有规范论述（补全机构与术语首现全称、规范尾注并校准前提拓扑），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-db2011-scope-examples",
+        "from": {
+          "raw": "ccc92614af203bf856ae63816a40e3a7153ead3b05d227e2f36f7cac252a1f6d",
+          "public": "ccc92614af203bf856ae63816a40e3a7153ead3b05d227e2f36f7cac252a1f6d",
+          "protected": "888d8269a95aca46b6f182a23be9d76fcacb2d925cad312b3e7de1799622ddd3"
+        },
+        "to": {
+          "raw": "6e0b3cbc9aeea6a345d5dc11220a06471662d89eb9220da2f5776e5e4e1ca70f",
+          "public": "6e0b3cbc9aeea6a345d5dc11220a06471662d89eb9220da2f5776e5e4e1ca70f",
+          "protected": "560cae7dc0c4df560d3c4ad1e109caac52a4d63a353760df435fbb9812dae684"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有规范论述（补全机构与术语首现全称、规范尾注并校准前提拓扑），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-db2011-conditional-use",
+        "from": {
+          "raw": "61e2d2360fb57e6cab6473154ce647993a4221c64ebe8438e32c5ac2de780ed8",
+          "public": "61e2d2360fb57e6cab6473154ce647993a4221c64ebe8438e32c5ac2de780ed8",
+          "protected": "f7b269ccaf4e442bef77907fb8fc368885ac3c6434c14f365c1d95271d22546b"
+        },
+        "to": {
+          "raw": "2631a74bff8b6431fa111336b7e7c6e156ab363e11ac3614334e08d84c749780",
+          "public": "2631a74bff8b6431fa111336b7e7c6e156ab363e11ac3614334e08d84c749780",
+          "protected": "7bffa6ee993ff90bd21ce201b6872911e6647d24951b5988a4945fc9a1bbbe7e"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有规范论述（补全机构与术语首现全称、规范尾注并校准前提拓扑），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-db2011-audience",
+        "from": {
+          "raw": "f807e98107dffd2a3044a4d9c9e9e5a04a9663b1f91ccea6a29da90b4d031040",
+          "public": "f807e98107dffd2a3044a4d9c9e9e5a04a9663b1f91ccea6a29da90b4d031040",
+          "protected": "f807e98107dffd2a3044a4d9c9e9e5a04a9663b1f91ccea6a29da90b4d031040"
+        },
+        "to": {
+          "raw": "97b73a7a44c104a9be7e430cdbc40e5ae48b5b4f7b40a2ea6d50173eba6f7707",
+          "public": "97b73a7a44c104a9be7e430cdbc40e5ae48b5b4f7b40a2ea6d50173eba6f7707",
+          "protected": "97b73a7a44c104a9be7e430cdbc40e5ae48b5b4f7b40a2ea6d50173eba6f7707"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有引用证据定位符（消除阅读器索引与裸节号残留），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-db2011-support-language",
+        "from": {
+          "raw": "43acb7c29111f63f2489de09b68dc51ba9ff7b3cf0098e10eebe38c4bae27660",
+          "public": "43acb7c29111f63f2489de09b68dc51ba9ff7b3cf0098e10eebe38c4bae27660",
+          "protected": "43acb7c29111f63f2489de09b68dc51ba9ff7b3cf0098e10eebe38c4bae27660"
+        },
+        "to": {
+          "raw": "e4f2ceb773876e0459e7ed25ef4266169729b1f627aa2e22cf721f8ff0723ebe",
+          "public": "e4f2ceb773876e0459e7ed25ef4266169729b1f627aa2e22cf721f8ff0723ebe",
+          "protected": "e4f2ceb773876e0459e7ed25ef4266169729b1f627aa2e22cf721f8ff0723ebe"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有引用证据定位符（消除阅读器索引与裸节号残留），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-db2011-goal",
+        "from": {
+          "raw": "e05dd5adf873f1855116e2af266fb21d3840b36e11c7ec397121eaa6048718f1",
+          "public": "e05dd5adf873f1855116e2af266fb21d3840b36e11c7ec397121eaa6048718f1",
+          "protected": "e05dd5adf873f1855116e2af266fb21d3840b36e11c7ec397121eaa6048718f1"
+        },
+        "to": {
+          "raw": "b59a72e5e2d9f3688f46d5285b29a3e3386ffc615c956f88597d81c32a159266",
+          "public": "b59a72e5e2d9f3688f46d5285b29a3e3386ffc615c956f88597d81c32a159266",
+          "protected": "b59a72e5e2d9f3688f46d5285b29a3e3386ffc615c956f88597d81c32a159266"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有引用证据定位符（消除阅读器索引与裸节号残留），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-db2011-validation",
+        "from": {
+          "raw": "b9252bf05ae248f3591666ea48645a334089785b70678ef55c5915aeb4f2861d",
+          "public": "b9252bf05ae248f3591666ea48645a334089785b70678ef55c5915aeb4f2861d",
+          "protected": "b9252bf05ae248f3591666ea48645a334089785b70678ef55c5915aeb4f2861d"
+        },
+        "to": {
+          "raw": "2fa532615dbc1eddbb521236031ccd8ae35003e4a81d4d2e19ec82cfae160bed",
+          "public": "2fa532615dbc1eddbb521236031ccd8ae35003e4a81d4d2e19ec82cfae160bed",
+          "protected": "2fa532615dbc1eddbb521236031ccd8ae35003e4a81d4d2e19ec82cfae160bed"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有引用证据定位符（消除阅读器索引与裸节号残留），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-db2011-documentation",
+        "from": {
+          "raw": "3b8d8c489474caaf5068a3375fef89468fa8e34cfaeecaef27129a436700ba0d",
+          "public": "3b8d8c489474caaf5068a3375fef89468fa8e34cfaeecaef27129a436700ba0d",
+          "protected": "3b8d8c489474caaf5068a3375fef89468fa8e34cfaeecaef27129a436700ba0d"
+        },
+        "to": {
+          "raw": "e03bfb1f9e654ec54548fb2cd7460a3ca7ca4ed9e3359e11cddfab5ffdb88240",
+          "public": "e03bfb1f9e654ec54548fb2cd7460a3ca7ca4ed9e3359e11cddfab5ffdb88240",
+          "protected": "e03bfb1f9e654ec54548fb2cd7460a3ca7ca4ed9e3359e11cddfab5ffdb88240"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有引用证据定位符（消除阅读器索引与裸节号残留），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-db2011-quality-dimensions",
+        "from": {
+          "raw": "6300a8cb4fc13444eb2432ea2383cff4d26c98331dcbb755737e398efa55bd56",
+          "public": "6300a8cb4fc13444eb2432ea2383cff4d26c98331dcbb755737e398efa55bd56",
+          "protected": "6300a8cb4fc13444eb2432ea2383cff4d26c98331dcbb755737e398efa55bd56"
+        },
+        "to": {
+          "raw": "b4f9976e0a393f33398e007132cb86da9788867b2bac5f10fcf59e05c2cc7829",
+          "public": "b4f9976e0a393f33398e007132cb86da9788867b2bac5f10fcf59e05c2cc7829",
+          "protected": "b4f9976e0a393f33398e007132cb86da9788867b2bac5f10fcf59e05c2cc7829"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有引用证据定位符（消除阅读器索引与裸节号残留），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-db2011-aggregation-gaps",
+        "from": {
+          "raw": "7d623b2e7363c8b481302ea484b6526d505e65deed324e76a6cacaa034d3f4e0",
+          "public": "7d623b2e7363c8b481302ea484b6526d505e65deed324e76a6cacaa034d3f4e0",
+          "protected": "7d623b2e7363c8b481302ea484b6526d505e65deed324e76a6cacaa034d3f4e0"
+        },
+        "to": {
+          "raw": "3af7f761c2afc25820626d126dfa198934c28b6e8b15475168be7d83a0aacd06",
+          "public": "3af7f761c2afc25820626d126dfa198934c28b6e8b15475168be7d83a0aacd06",
+          "protected": "3af7f761c2afc25820626d126dfa198934c28b6e8b15475168be7d83a0aacd06"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有引用证据定位符（消除阅读器索引与裸节号残留），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-db2011-review-purpose",
+        "from": {
+          "raw": "a7167b37a0193c11d5a8f9beede310e76a7b5071a174b9fd7818c3964254f134",
+          "public": "a7167b37a0193c11d5a8f9beede310e76a7b5071a174b9fd7818c3964254f134",
+          "protected": "a7167b37a0193c11d5a8f9beede310e76a7b5071a174b9fd7818c3964254f134"
+        },
+        "to": {
+          "raw": "591f598fb2945b0803f7b6addd70a45dab35fabeb87b16efd3878682679632ab",
+          "public": "591f598fb2945b0803f7b6addd70a45dab35fabeb87b16efd3878682679632ab",
+          "protected": "591f598fb2945b0803f7b6addd70a45dab35fabeb87b16efd3878682679632ab"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有引用证据定位符（消除阅读器索引与裸节号残留），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-db2011-review-record",
+        "from": {
+          "raw": "dcad65af882ec32768b7c1170c342ef3baa90f741ddad5c8de85759c828b9773",
+          "public": "dcad65af882ec32768b7c1170c342ef3baa90f741ddad5c8de85759c828b9773",
+          "protected": "dcad65af882ec32768b7c1170c342ef3baa90f741ddad5c8de85759c828b9773"
+        },
+        "to": {
+          "raw": "d3ba11a39ceb16a1e6687be359fd520a76fe38e102d6fa0ab0fde801ba4a5bca",
+          "public": "d3ba11a39ceb16a1e6687be359fd520a76fe38e102d6fa0ab0fde801ba4a5bca",
+          "protected": "d3ba11a39ceb16a1e6687be359fd520a76fe38e102d6fa0ab0fde801ba4a5bca"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有引用证据定位符（消除阅读器索引与裸节号残留），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-db2011-local-definitions",
+        "from": {
+          "raw": "488500ea2454204284ae514e42c0a0a7cba6e81c0f2eb5cc41e798c79f78738e",
+          "public": "488500ea2454204284ae514e42c0a0a7cba6e81c0f2eb5cc41e798c79f78738e",
+          "protected": "488500ea2454204284ae514e42c0a0a7cba6e81c0f2eb5cc41e798c79f78738e"
+        },
+        "to": {
+          "raw": "5392aa6e17a1bd715e95bd7fdc819a6ef2998eaf7b9525e6784b902e4049d063",
+          "public": "5392aa6e17a1bd715e95bd7fdc819a6ef2998eaf7b9525e6784b902e4049d063",
+          "protected": "5392aa6e17a1bd715e95bd7fdc819a6ef2998eaf7b9525e6784b902e4049d063"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有引用证据定位符（消除阅读器索引与裸节号残留），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-db2011-change",
+        "from": {
+          "raw": "915257a4d7b8cc5bc97e279765257babe56269ddb60a19419a15df339138bb57",
+          "public": "915257a4d7b8cc5bc97e279765257babe56269ddb60a19419a15df339138bb57",
+          "protected": "915257a4d7b8cc5bc97e279765257babe56269ddb60a19419a15df339138bb57"
+        },
+        "to": {
+          "raw": "0c39a9ca814b497bcdb1be4bdd0206fa59642c1069707b3ad50521ed07942f51",
+          "public": "0c39a9ca814b497bcdb1be4bdd0206fa59642c1069707b3ad50521ed07942f51",
+          "protected": "0c39a9ca814b497bcdb1be4bdd0206fa59642c1069707b3ad50521ed07942f51"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有引用证据定位符（消除阅读器索引与裸节号残留），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-db2011-own-review",
+        "from": {
+          "raw": "ba8b187d9177ab71aaf745fe73a847cedc600c48e775caf694b66f574743b4a7",
+          "public": "ba8b187d9177ab71aaf745fe73a847cedc600c48e775caf694b66f574743b4a7",
+          "protected": "ba8b187d9177ab71aaf745fe73a847cedc600c48e775caf694b66f574743b4a7"
+        },
+        "to": {
+          "raw": "13f68d789d7ebdbe00fea6803fe6b04d963fc7f59f4a6c699306a62b19826970",
+          "public": "13f68d789d7ebdbe00fea6803fe6b04d963fc7f59f4a6c699306a62b19826970",
+          "protected": "13f68d789d7ebdbe00fea6803fe6b04d963fc7f59f4a6c699306a62b19826970"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有引用证据定位符（消除阅读器索引与裸节号残留），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-ec-transition2026-scope",
+        "from": {
+          "raw": "204eca2d4e9e29d665268212f1cf7c96ce1f9d77b3098af3316eeac2a3a69330",
+          "public": "204eca2d4e9e29d665268212f1cf7c96ce1f9d77b3098af3316eeac2a3a69330",
+          "protected": "204eca2d4e9e29d665268212f1cf7c96ce1f9d77b3098af3316eeac2a3a69330"
+        },
+        "to": {
+          "raw": "ac60ada2558a03d6ddbf5afcf0ee17e12e28a599b7e385eb5a1d5378677bcff7",
+          "public": "ac60ada2558a03d6ddbf5afcf0ee17e12e28a599b7e385eb5a1d5378677bcff7",
+          "protected": "ac60ada2558a03d6ddbf5afcf0ee17e12e28a599b7e385eb5a1d5378677bcff7"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有引用证据定位符（消除阅读器索引与裸节号残留），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-ec-transition2026-hierarchy",
+        "from": {
+          "raw": "44da019437578ef4fa960073ed6518ca4aa2d26efe17d230e559c727ff824813",
+          "public": "44da019437578ef4fa960073ed6518ca4aa2d26efe17d230e559c727ff824813",
+          "protected": "44da019437578ef4fa960073ed6518ca4aa2d26efe17d230e559c727ff824813"
+        },
+        "to": {
+          "raw": "e66a65bf68477dbcc43938c9936c76be258d55ed14c9b6cfe7c20d04312c2804",
+          "public": "e66a65bf68477dbcc43938c9936c76be258d55ed14c9b6cfe7c20d04312c2804",
+          "protected": "e66a65bf68477dbcc43938c9936c76be258d55ed14c9b6cfe7c20d04312c2804"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有引用证据定位符（消除阅读器索引与裸节号残留），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-db2011-use-examples",
+        "from": {
+          "raw": "cb1e2c0ec000367dda236e6b54a7e53e13b91c45a19135a22674750db46fb14b",
+          "public": "cb1e2c0ec000367dda236e6b54a7e53e13b91c45a19135a22674750db46fb14b",
+          "protected": "cb1e2c0ec000367dda236e6b54a7e53e13b91c45a19135a22674750db46fb14b"
+        },
+        "to": {
+          "raw": "4b83e13e873183e67484899d953535e20804e16595b78d9cb08b469354c2adf0",
+          "public": "4b83e13e873183e67484899d953535e20804e16595b78d9cb08b469354c2adf0",
+          "protected": "4b83e13e873183e67484899d953535e20804e16595b78d9cb08b469354c2adf0"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有引用证据定位符（消除阅读器索引与裸节号残留），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-db2011-conditional-consistency",
+        "from": {
+          "raw": "40ef24c4298b1b5b3106c419c0dce981338758f9685261f862e3be388ff0a73c",
+          "public": "40ef24c4298b1b5b3106c419c0dce981338758f9685261f862e3be388ff0a73c",
+          "protected": "40ef24c4298b1b5b3106c419c0dce981338758f9685261f862e3be388ff0a73c"
+        },
+        "to": {
+          "raw": "1996c9886345de373cf45ee6f13e3f6e3f1760a9a2beb713a608ac6274782976",
+          "public": "1996c9886345de373cf45ee6f13e3f6e3f1760a9a2beb713a608ac6274782976",
+          "protected": "1996c9886345de373cf45ee6f13e3f6e3f1760a9a2beb713a608ac6274782976"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有引用证据定位符（消除阅读器索引与裸节号残留），保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-book-ilcd-2010",
+        "from": {
+          "raw": "a25eabd4263958476ea70b40eebcc9da458d56b59b56621309cc5399a525da89",
+          "public": "a25eabd4263958476ea70b40eebcc9da458d56b59b56621309cc5399a525da89",
+          "protected": "a25eabd4263958476ea70b40eebcc9da458d56b59b56621309cc5399a525da89"
+        },
+        "to": {
+          "raw": "14a5306b2d9e554e127e0ff8a0a79820cf443d385256a22347f283b78a76ec1d",
+          "public": "14a5306b2d9e554e127e0ff8a0a79820cf443d385256a22347f283b78a76ec1d",
+          "protected": "14a5306b2d9e554e127e0ff8a0a79820cf443d385256a22347f283b78a76ec1d"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有来源同载体选读范围，保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-kb44-ec2021",
+        "from": {
+          "raw": "23f2bc272d5b2b5ef8e798b36fc4e27d11b669a66cc34b3c4dda1a265bd395cd",
+          "public": "23f2bc272d5b2b5ef8e798b36fc4e27d11b669a66cc34b3c4dda1a265bd395cd",
+          "protected": "23f2bc272d5b2b5ef8e798b36fc4e27d11b669a66cc34b3c4dda1a265bd395cd"
+        },
+        "to": {
+          "raw": "7da5f624e6f9f1b2018daf3848b490d5ab0c5418ea9e36d4be60682c730bef37",
+          "public": "7da5f624e6f9f1b2018daf3848b490d5ab0c5418ea9e36d4be60682c730bef37",
+          "protected": "7da5f624e6f9f1b2018daf3848b490d5ab0c5418ea9e36d4be60682c730bef37"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有来源同载体选读范围，保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-tox123-ef31-addendum",
+        "from": {
+          "raw": "a08bfbaa71b65001f68ec825a969d96ffdb171a1e8756f75eaa0bcc1986207d7",
+          "public": "66fdd78dcc7e2fb80c2849582c9943173cc809270a3540b15330b7ccfc927337",
+          "protected": "a08bfbaa71b65001f68ec825a969d96ffdb171a1e8756f75eaa0bcc1986207d7"
+        },
+        "to": {
+          "raw": "d2f81050f0eaf6a949d5e1aae12c33a10152f8d89b6b032ae5b7c8a55c9f4c91",
+          "public": "c9c4339e338bc1202fa9a64b58522dc7e8e18d88f9440a05cff055820af8f604",
+          "protected": "d2f81050f0eaf6a949d5e1aae12c33a10152f8d89b6b032ae5b7c8a55c9f4c91"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有来源同载体选读范围，保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-loc137-ef-guide-2020",
+        "from": {
+          "raw": "0d9e4817215b375db442965986815747bbb5a5361d35ec01ee0dad0c0e29af03",
+          "public": "e637b649e8e49cd11e2df07c01a8899fa9bb5abb412e89987121bf4fb7783be4",
+          "protected": "0d9e4817215b375db442965986815747bbb5a5361d35ec01ee0dad0c0e29af03"
+        },
+        "to": {
+          "raw": "85a84411411e0738fb93eb42623ce220e0ad47dbe20bd1d3066d5be72cc5c162",
+          "public": "3c5283e07583a33c718c1cf5258df9aee37b1f91c54a76b86d9e902790d9cf59",
+          "protected": "85a84411411e0738fb93eb42623ce220e0ad47dbe20bd1d3066d5be72cc5c162"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有来源同载体选读范围，保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-ilcd-2010",
+        "from": {
+          "raw": "76409e82d3f4ce60619d9681be5d5691496b31e08ed9bb7719631dda506d3989",
+          "public": null,
+          "protected": "76409e82d3f4ce60619d9681be5d5691496b31e08ed9bb7719631dda506d3989"
+        },
+        "to": {
+          "raw": "1323eaaf6dc1bf7e42acc6f7c0c5a403311a71c25eefeebc07e6f415990c3e6c",
+          "public": null,
+          "protected": "1323eaaf6dc1bf7e42acc6f7c0c5a403311a71c25eefeebc07e6f415990c3e6c"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有研究阅读与文献台账时间戳或选段，保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-kb44-ec2021",
+        "from": {
+          "raw": "de593e618b130226f7f1f9fef7deb9b0940108cf84b99bbf34cfc5de7702c709",
+          "public": null,
+          "protected": "de593e618b130226f7f1f9fef7deb9b0940108cf84b99bbf34cfc5de7702c709"
+        },
+        "to": {
+          "raw": "325d658f838f6bcd11d01f4dd0a2eef71c3155fdb35a1f72456091bd82ace39d",
+          "public": null,
+          "protected": "325d658f838f6bcd11d01f4dd0a2eef71c3155fdb35a1f72456091bd82ace39d"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有研究阅读与文献台账时间戳或选段，保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-tox123-ef31-addendum",
+        "from": {
+          "raw": "40902af817441a7bfab4e5be60c7333b8f3acd2ddc887b9a5aa2ff5a7730772b",
+          "public": null,
+          "protected": "40902af817441a7bfab4e5be60c7333b8f3acd2ddc887b9a5aa2ff5a7730772b"
+        },
+        "to": {
+          "raw": "f69090e32469d5d6bbc28818149d7e140a4952d37e3cb304987406553a4373cc",
+          "public": null,
+          "protected": "f69090e32469d5d6bbc28818149d7e140a4952d37e3cb304987406553a4373cc"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有研究阅读与文献台账时间戳或选段，保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-loc137-ef-guide-2020",
+        "from": {
+          "raw": "a3fe06394b93ace9aaa97fc205edd25c573c8768146e44292c473ff31123e30d",
+          "public": null,
+          "protected": "a3fe06394b93ace9aaa97fc205edd25c573c8768146e44292c473ff31123e30d"
+        },
+        "to": {
+          "raw": "c349add49c41facd270f0781fbf0b5aaa4810acbe87f308f50a2180026b59c8a",
+          "public": null,
+          "protected": "c349add49c41facd270f0781fbf0b5aaa4810acbe87f308f50a2180026b59c8a"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有研究阅读与文献台账时间戳或选段，保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:lit-n03",
+        "from": {
+          "raw": "3b2a543b4b6aa162391cd5c33538500be170edf6499e6e1c18e511fcfad184a7",
+          "public": null,
+          "protected": "3b2a543b4b6aa162391cd5c33538500be170edf6499e6e1c18e511fcfad184a7"
+        },
+        "to": {
+          "raw": "6e3c451e309b73fb5bb10b5ccfa8b8e1e803c7df89b0edd230bf12a78aa0fa71",
+          "public": null,
+          "protected": "6e3c451e309b73fb5bb10b5ccfa8b8e1e803c7df89b0edd230bf12a78aa0fa71"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有研究阅读与文献台账时间戳或选段，保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:lit-n04",
+        "from": {
+          "raw": "09472bb3725d3e5bc3aad0831a4df9951fa92fcfcdd48648f2f344c1c5d9cfbf",
+          "public": null,
+          "protected": "09472bb3725d3e5bc3aad0831a4df9951fa92fcfcdd48648f2f344c1c5d9cfbf"
+        },
+        "to": {
+          "raw": "0f161c14fd1ea6cd9fbe46513cfeb846f29fc4114d6679bf1f4af9116dc85c58",
+          "public": null,
+          "protected": "0f161c14fd1ea6cd9fbe46513cfeb846f29fc4114d6679bf1f4af9116dc85c58"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有研究阅读与文献台账时间戳或选段，保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-tox123-ef31-addendum",
+        "from": {
+          "raw": "b33134febdd67a6eb9b41268a0846486cbcf7b659ca36b59a0d5d2c3f1df4844",
+          "public": null,
+          "protected": "b33134febdd67a6eb9b41268a0846486cbcf7b659ca36b59a0d5d2c3f1df4844"
+        },
+        "to": {
+          "raw": "a3f073034c3e2e8627d839a8e79ce978f23c58a844f6fe8c8ca0affcdda9cfff",
+          "public": null,
+          "protected": "a3f073034c3e2e8627d839a8e79ce978f23c58a844f6fe8c8ca0affcdda9cfff"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有研究阅读与文献台账时间戳或选段，保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-loc137-ef-guide-2020",
+        "from": {
+          "raw": "dfcb548b708d4e534c3022d808f6af98cb98974c0cc11be5378e109957b36f25",
+          "public": null,
+          "protected": "dfcb548b708d4e534c3022d808f6af98cb98974c0cc11be5378e109957b36f25"
+        },
+        "to": {
+          "raw": "6bd03ab89fc694fdc0b2f7fcf90425258121a3fe9afc0a358a4e476e5ce9c63d",
+          "public": null,
+          "protected": "6bd03ab89fc694fdc0b2f7fcf90425258121a3fe9afc0a358a4e476e5ce9c63d"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有研究阅读与文献台账时间戳或选段，保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:reading-ledger",
+        "from": {
+          "raw": "13cdbb60a6ec25282b9df3768636a0befa82201a14d30dd11a6ec2be44b8ab46",
+          "public": null,
+          "protected": "13cdbb60a6ec25282b9df3768636a0befa82201a14d30dd11a6ec2be44b8ab46"
+        },
+        "to": {
+          "raw": "878c0d8d1cd12ffe49ceec9f69b46356bfebb19a13af5344f3152ffbc88cd69d",
+          "public": null,
+          "protected": "878c0d8d1cd12ffe49ceec9f69b46356bfebb19a13af5344f3152ffbc88cd69d"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有研究阅读与文献台账时间戳或选段，保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:literature-map",
+        "from": {
+          "raw": "fb065309cf267a1eb1ca2e87f5614bd23c3881a6c57fe95be15f1c6fff1c76c1",
+          "public": null,
+          "protected": "fb065309cf267a1eb1ca2e87f5614bd23c3881a6c57fe95be15f1c6fff1c76c1"
+        },
+        "to": {
+          "raw": "ca5b2a86b4b10d628d535f3b9aabf235155135a39a4c902b43f7aef90f1b9ebe",
+          "public": null,
+          "protected": "ca5b2a86b4b10d628d535f3b9aabf235155135a39a4c902b43f7aef90f1b9ebe"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有研究阅读与文献台账时间戳或选段，保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:claims",
+        "from": {
+          "raw": "a6f24b3cd97fd41caec93eeee4d730d3e98fb74a70686d58e858ac25b2874072",
+          "public": null,
+          "protected": "a6f24b3cd97fd41caec93eeee4d730d3e98fb74a70686d58e858ac25b2874072"
+        },
+        "to": {
+          "raw": "09ab0c51a68f5a7f2d1ce78863c4aeb34f488d47a463f8321ed30abc77bb7af4",
+          "public": null,
+          "protected": "09ab0c51a68f5a7f2d1ce78863c4aeb34f488d47a463f8321ed30abc77bb7af4"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有研究阅读与文献台账时间戳或选段，保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:evidence",
+        "from": {
+          "raw": "cdca1530d85010f7ba23a4ab960dca52b666e747fda288d9bd11ef7fbe27cffa",
+          "public": null,
+          "protected": "cdca1530d85010f7ba23a4ab960dca52b666e747fda288d9bd11ef7fbe27cffa"
+        },
+        "to": {
+          "raw": "1ed4bfbed153f8b634df8a03b94fc8ea1a99f79400a7242ab6dbc3d5fc3f3650",
+          "public": null,
+          "protected": "1ed4bfbed153f8b634df8a03b94fc8ea1a99f79400a7242ab6dbc3d5fc3f3650"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有研究阅读与文献台账时间戳或选段，保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:sources",
+        "from": {
+          "raw": "531b5b348eb4c06fa6db7299e04a590747a39e44efe350d82ff36b24165ccee7",
+          "public": null,
+          "protected": "531b5b348eb4c06fa6db7299e04a590747a39e44efe350d82ff36b24165ccee7"
+        },
+        "to": {
+          "raw": "2cb2cc0a5eb254e4adfa82a6978bfa30ff9a7ec0c94bf89d3cdea52633e316ce",
+          "public": null,
+          "protected": "2cb2cc0a5eb254e4adfa82a6978bfa30ff9a7ec0c94bf89d3cdea52633e316ce"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有研究阅读与文献台账时间戳或选段，保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:readings",
+        "from": {
+          "raw": "3315010be074f87e039af7d31ce51b1f3e066c152dc3268b36b1be7f2f88c26e",
+          "public": null,
+          "protected": "3315010be074f87e039af7d31ce51b1f3e066c152dc3268b36b1be7f2f88c26e"
+        },
+        "to": {
+          "raw": "a121f9b7a1af6fbe88c00f185a4f5bc301f24d95dee793fecc297eb59e468dbd",
+          "public": null,
+          "protected": "a121f9b7a1af6fbe88c00f185a4f5bc301f24d95dee793fecc297eb59e468dbd"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有研究阅读与文献台账时间戳或选段，保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:gaps",
+        "from": {
+          "raw": "83a70a93b94b90935865fa567dcbf7d9332e6a4bd51d6a055b848f3a1a5a2cdc",
+          "public": null,
+          "protected": "83a70a93b94b90935865fa567dcbf7d9332e6a4bd51d6a055b848f3a1a5a2cdc"
+        },
+        "to": {
+          "raw": "646aae4391d36091b98a097784f5bffbe5aaf23b506bb8be5b6a46a56c7bfd33",
+          "public": null,
+          "protected": "646aae4391d36091b98a097784f5bffbe5aaf23b506bb8be5b6a46a56c7bfd33"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有研究阅读与文献台账时间戳或选段，保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:revisions",
+        "from": {
+          "raw": "d9244b781cb9bb1131dbe67e2aa8d693a965374adf505385dfff9ed3961eecc8",
+          "public": null,
+          "protected": "d9244b781cb9bb1131dbe67e2aa8d693a965374adf505385dfff9ed3961eecc8"
+        },
+        "to": {
+          "raw": "23680023032adcc913958a2a100f65277de317c9565c74ad661dbdae3b278216",
+          "public": null,
+          "protected": "23680023032adcc913958a2a100f65277de317c9565c74ad661dbdae3b278216"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有研究阅读与文献台账时间戳或选段，保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:literature",
+        "from": {
+          "raw": "a8519f58319c19b1f727956cca1ec87ee02b3afcb8735cc7e45f0e4607e727dd",
+          "public": null,
+          "protected": "a8519f58319c19b1f727956cca1ec87ee02b3afcb8735cc7e45f0e4607e727dd"
+        },
+        "to": {
+          "raw": "a120b8dda30e0c9830800dc697c4057fe1fc38674a14c34fcb8d7d57b81dbe58",
+          "public": null,
+          "protected": "a120b8dda30e0c9830800dc697c4057fe1fc38674a14c34fcb8d7d57b81dbe58"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有研究阅读与文献台账时间戳或选段，保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:queries",
+        "from": {
+          "raw": "5fe3cbfeeb9c5f00acb5efc9911352fe4e6a42dcaa527ae2e20d37b32de4d78e",
+          "public": null,
+          "protected": "5fe3cbfeeb9c5f00acb5efc9911352fe4e6a42dcaa527ae2e20d37b32de4d78e"
+        },
+        "to": {
+          "raw": "2c3e3d8543e15afb96f96794740387f76707f35900f0ea9616974eb43b1f4176",
+          "public": null,
+          "protected": "2c3e3d8543e15afb96f96794740387f76707f35900f0ea9616974eb43b1f4176"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有研究阅读与文献台账时间戳或选段，保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:public-projection",
+        "from": {
+          "raw": "2ce5a4694862c10072a1dd497ced1ab1e31cfaf445bf345ac9b37752fca19241",
+          "public": null,
+          "protected": "2ce5a4694862c10072a1dd497ced1ab1e31cfaf445bf345ac9b37752fca19241"
+        },
+        "to": {
+          "raw": "686296df67b59a5e8252dba10d3a3cf4821266f87bf8a9f5189e0fc7f20db139",
+          "public": null,
+          "protected": "686296df67b59a5e8252dba10d3a3cf4821266f87bf8a9f5189e0fc7f20db139"
+        },
+        "rationale": "有界更新第六部《数据适用性》既有研究阅读与文献台账时间戳或选段，保留原始科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-dapp147-dataset-roles-and-system-linking",
+        "from": null,
+        "to": {
+          "raw": "41daac80b115bc058c9bb2ddb4b36e43f5a7e8e9bcbef6ecb57f53f2982f47de",
+          "public": "41daac80b115bc058c9bb2ddb4b36e43f5a7e8e9bcbef6ecb57f53f2982f47de",
+          "protected": "b2c78f3162a8af633af616a2345026c5465f4dc5335fbe322126b1dd9ae1b187"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-dapp147-intrinsic-vs-context-representativeness",
+        "from": null,
+        "to": {
+          "raw": "a3b4dc270be62d53439ffaa415d449e35901c93d5982d3a6bc833e669bc72369",
+          "public": "a3b4dc270be62d53439ffaa415d449e35901c93d5982d3a6bc833e669bc72369",
+          "protected": "29055053d5b36f981dbc570f963bb39add8ce92003c91e8e69347cf200cae5dc"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-dapp147-quality-architectures-and-prerequisite-split",
+        "from": null,
+        "to": {
+          "raw": "a9267d5c6391df7f4bb5794c6662be507489a6d7d77a94adebdbf685d8be30f5",
+          "public": "a9267d5c6391df7f4bb5794c6662be507489a6d7d77a94adebdbf685d8be30f5",
+          "protected": "f2ff4fad0dd837807cd9f5112ec6b00c364bfcc2946dcdcd70d51d7b87930fb4"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-dapp147-weakest-link-vs-mean-and-80pct-masking",
+        "from": null,
+        "to": {
+          "raw": "8de7d6c9f10b6886feb6b7d131493f97867d57f976dd1be0dc7dbf3810910878",
+          "public": "8de7d6c9f10b6886feb6b7d131493f97867d57f976dd1be0dc7dbf3810910878",
+          "protected": "d168f43044e1517ff950995ec597e556b9c28c988d174de63158dbad52ae7cca"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-dapp147-validation-vs-review-and-team-thresholds",
+        "from": null,
+        "to": {
+          "raw": "6d59bc1df49ee098081d465dac0ea670b24fdcaa9bacc339e516f836216006a7",
+          "public": "6d59bc1df49ee098081d465dac0ea670b24fdcaa9bacc339e516f836216006a7",
+          "protected": "dd2efa13e0adda102ad79ba91a99c164e716b60d2faa1d1ac1c3a30d5a0e2202"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-dapp147-five-aspect-compliance-and-uuid-semantics",
+        "from": null,
+        "to": {
+          "raw": "f4161c26955babc7fd07d395e2a6079eb478f78b66b62336a398ad9c12d37a5d",
+          "public": "f4161c26955babc7fd07d395e2a6079eb478f78b66b62336a398ad9c12d37a5d",
+          "protected": "1490c620cbed2c1c6808d733159a3332a3bf136a9cac01362bac824513e581f3"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-dapp147-package-migration-inheritance-and-surveillance",
+        "from": null,
+        "to": {
+          "raw": "bb18ec34e3fbb266d2ff4a7e81429fc721b26d9c1eff31eff314eb0b600f5e76",
+          "public": "bb18ec34e3fbb266d2ff4a7e81429fc721b26d9c1eff31eff314eb0b600f5e76",
+          "protected": "957da64e002415259d92236cc0d649a31d542b7016fffea87dda396c1807fa74"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge",
+        "from": null,
+        "to": {
+          "raw": "a7be86f10d9331b82ef9308ea636aae5d15f8c63373d51a130ed8b73d464077e",
+          "public": "a7be86f10d9331b82ef9308ea636aae5d15f8c63373d51a130ed8b73d464077e",
+          "protected": "297f5fb06247d054186409e30ea9f6ca54e77d8056bcd0cf8577d5122c148c6e"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-dapp147-ilcd2010-dataset-types-and-review",
+        "from": null,
+        "to": {
+          "raw": "3c39e500e66788b630702f276da7e886c8f53ca7f42fcf5986c3fa9e31f27029",
+          "public": "c76adda86f54c176bbbdce6e165d75a9a375967a89afc59c5d49d39a03f9c921",
+          "protected": "3c39e500e66788b630702f276da7e886c8f53ca7f42fcf5986c3fa9e31f27029"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-dapp147-ilcd2010-representativeness-vs-appropriateness",
+        "from": null,
+        "to": {
+          "raw": "dbb92f2fd17b706339a1c1a47ed048a75aa9bf55840bf9a6fb782eea066c890d",
+          "public": "fe350277b044fe4e035f666fc36ced7d17d71123af63846c95e59a079b606a67",
+          "protected": "dbb92f2fd17b706339a1c1a47ed048a75aa9bf55840bf9a6fb782eea066c890d"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-dapp147-ilcd2010-dqr-formula-and-five-aspects",
+        "from": null,
+        "to": {
+          "raw": "f7da6144efcf204259320104c5eaed36c6fc82be466b1a2c69eaf2a646189993",
+          "public": "cd4c6179ac6d40d6d2132a1747f91e5c6f59fb04048665701116e90ccd758ab4",
+          "protected": "f7da6144efcf204259320104c5eaed36c6fc82be466b1a2c69eaf2a646189993"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-dapp147-ilcd2012-twelve-compliance-uuids",
+        "from": null,
+        "to": {
+          "raw": "3756ab3ffab272979d3f7c6cd7cbb69d12e0e828f284d5c15aa320a31325b9e6",
+          "public": "60322dc2c0966120f1fe5d681529ef87bcf052b352b633e7c99ca36eb9bc6a85",
+          "protected": "3756ab3ffab272979d3f7c6cd7cbb69d12e0e828f284d5c15aa320a31325b9e6"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-dapp147-ilcd2012-entry-level-rules",
+        "from": null,
+        "to": {
+          "raw": "404a59f4cedff1c4a985fa0b1a01c83d699656e219178a98cd0a040f011f55a6",
+          "public": "ebb37886b03eac81256ef083cbf3c5a5964dddccf1d6a960a4114297a7b5d7df",
+          "protected": "404a59f4cedff1c4a985fa0b1a01c83d699656e219178a98cd0a040f011f55a6"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-dapp147-ec2021-secondary-hierarchy-and-cutoff",
+        "from": null,
+        "to": {
+          "raw": "d9cfbec92f1033e22dce2f9a6e629adadbd5c239f74ea745f584db6dbaae8aa9",
+          "public": "b62d944805da89d4dec39c73e7e7214da178bc34c9bc42048d1e89192a45ef2b",
+          "protected": "d9cfbec92f1033e22dce2f9a6e629adadbd5c239f74ea745f584db6dbaae8aa9"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-dapp147-ec2021-dqr-equations-and-dnm",
+        "from": null,
+        "to": {
+          "raw": "8ed0da1e3c8d1422e329161096336277f80b95115f7389c15b440d57f47f4462",
+          "public": "61912cb76b92037239d5d31592bdb91f8f5e5e3e085835534159026313af3234",
+          "protected": "8ed0da1e3c8d1422e329161096336277f80b95115f7389c15b440d57f47f4462"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-dapp147-ec2021-verification-and-surveillance",
+        "from": null,
+        "to": {
+          "raw": "068ad8c9ff989373b99164626cf60e35a887f19f7b5260f5732607eb11dbcc2e",
+          "public": "17508f665f5bc2e930fb4d78d4cf81f3cb8f1aa3d469a86b7600e7d52f792a95",
+          "protected": "068ad8c9ff989373b99164626cf60e35a887f19f7b5260f5732607eb11dbcc2e"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-dapp147-efguide2020-provider-dqr-and-ceiling",
+        "from": null,
+        "to": {
+          "raw": "d0a87d37fed26ab5b99fda087902abec53f75ff6ac9c4f05324a8c23f1ea7144",
+          "public": "36f1e5777fd8a97c27a20857b6b2c3f2cf68a4820cd9ccd481a42a3182de1c12",
+          "protected": "d0a87d37fed26ab5b99fda087902abec53f75ff6ac9c4f05324a8c23f1ea7144"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-dapp147-efguide2020-supporting-subprocesses",
+        "from": null,
+        "to": {
+          "raw": "7fe8bbcb36323bf141c31a932a8977dc8fdf21b105c83d71998ab3e1a70443cc",
+          "public": "6be89d4e5017c690c3a637e85023d2f9e33321690cfa9698ffc5fbd000d215b3",
+          "protected": "7fe8bbcb36323bf141c31a932a8977dc8fdf21b105c83d71998ab3e1a70443cc"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-dapp147-efguide2020-review-types-and-looklci",
+        "from": null,
+        "to": {
+          "raw": "338c1d25f96ecb75e584cbdd3e07b046e360cae721888e892f3560fd767da055",
+          "public": "6b49ff98c4c5571202039d4bd76fa2aad3bc28dd38fe91c354600e3e67773ca8",
+          "protected": "338c1d25f96ecb75e584cbdd3e07b046e360cae721888e892f3560fd767da055"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-dapp147-ef31addendum-six-uuid-matrix-and-erratum",
+        "from": null,
+        "to": {
+          "raw": "012dbfc41d5bb870d32d15abbb81da3e9b15f7d7aeecb4491e793116f01c3913",
+          "public": "3f23a3f21a3f296e4dfd5abc861ef6a75f3bd870e7fcd220261a42d989de5d4a",
+          "protected": "012dbfc41d5bb870d32d15abbb81da3e9b15f7d7aeecb4491e793116f01c3913"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-dapp147-ecoinvent2013-glo-row-and-markets",
+        "from": null,
+        "to": {
+          "raw": "f3863deee71acd93d9aeec1892c8b940309c0bfa02df9dd6397d99a7743898c9",
+          "public": "e1c6a2bb98a064c55b0b07c14629c4601ab7f1dcf593cb28ac4e825b2c2d7b7f",
+          "protected": "f3863deee71acd93d9aeec1892c8b940309c0bfa02df9dd6397d99a7743898c9"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-dapp147-ecoinvent2013-pedigree-variance",
+        "from": null,
+        "to": {
+          "raw": "b02df954c31affb01bca1f11ad8a9d8e52874c1066c3f9d43521f957bb9c8f9d",
+          "public": "bd2d64901ccfd22aebaee859e5518ea2278b38887590a8c3226385ad6e7c9732",
+          "protected": "b02df954c31affb01bca1f11ad8a9d8e52874c1066c3f9d43521f957bb9c8f9d"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-dapp147-ecoinvent2013-ecoeditor-and-editorial-review",
+        "from": null,
+        "to": {
+          "raw": "a02b6b14a8e8363788f5677fd645c97730f90bae3d5ce44a6d7621f00fe49e63",
+          "public": "bf4ef5793cda61fb6263825ca77eb57b04869feb4d399057d832ab9e877b4321",
+          "protected": "a02b6b14a8e8363788f5677fd645c97730f90bae3d5ce44a6d7621f00fe49e63"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-dapp147-tidas-process-review-schema",
+        "from": null,
+        "to": {
+          "raw": "785728e7a75209bcaecd6a52533c32f808430e130f2d9a94f2dce873be07283d",
+          "public": "f6d59b9e8adcdf27aae591701156bfda22c9c081df76c05b79a0c4b82592c481",
+          "protected": "785728e7a75209bcaecd6a52533c32f808430e130f2d9a94f2dce873be07283d"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-dapp147-tidas-public-rules",
+        "from": null,
+        "to": {
+          "raw": "6e87b5638852f20ae8f4f8d1da2c574378b92b37cf17fc1b8f57d8b4cc04ffbd",
+          "public": "a5895a998356225b4c8299907861d3b737b96cb21244585107323370ba341fe8",
+          "protected": "6e87b5638852f20ae8f4f8d1da2c574378b92b37cf17fc1b8f57d8b4cc04ffbd"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-dapp147-tidas-adjudication-boundary",
+        "from": null,
+        "to": {
+          "raw": "90c63c5da1be51ae803f4ac39c7580a71c8755642a022a74396111bf858d59d9",
+          "public": "2c8bf29d809271514bd33a30d9d7770c8f176a09f252da1cbea8271fc7d8cfec",
+          "protected": "90c63c5da1be51ae803f4ac39c7580a71c8755642a022a74396111bf858d59d9"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-dapp147-ilcd-el-2012",
+        "from": null,
+        "to": {
+          "raw": "b9ef3e9777057b5d07d36168d5fe15f10fc2d64ba65e87053faa99726cb35267",
+          "public": "6b74e5eb8c9de210ed49ab54641010c07e2edbb5cbb183f5ad904b483c215ed1",
+          "protected": "b9ef3e9777057b5d07d36168d5fe15f10fc2d64ba65e87053faa99726cb35267"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增一手规范文献来源。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-dapp147-ecoinvent-v3-2013",
+        "from": null,
+        "to": {
+          "raw": "a620401e866ddd4776902d9cf52df6badc12277ef01ab7f120a90a433b59f915",
+          "public": "6f4be5508b4df2d29a593c8128ea7d83fec5795e0c5f5113cf38e858cc0843d1",
+          "protected": "a620401e866ddd4776902d9cf52df6badc12277ef01ab7f120a90a433b59f915"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增一手规范文献来源。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-dapp147-tidas-spec-v030",
+        "from": null,
+        "to": {
+          "raw": "0a1346b4d3d8441ccacbb76428384d0c80b276d040c9285a77fc8ec4919304d0",
+          "public": "8fc6ae5475e1dd1952dec896214c031ef76964f3d443867246de480c6b8466b3",
+          "protected": "0a1346b4d3d8441ccacbb76428384d0c80b276d040c9285a77fc8ec4919304d0"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增一手规范文献来源。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-dapp147-ilcd-el-2012",
+        "from": null,
+        "to": {
+          "raw": "532382dde9bad402d05d99cad8074bdc96e6b877ee2f47f9444525eaa59de873",
+          "public": null,
+          "protected": "532382dde9bad402d05d99cad8074bdc96e6b877ee2f47f9444525eaa59de873"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增阅读与文献台账记录。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-dapp147-ecoinvent-v3-2013",
+        "from": null,
+        "to": {
+          "raw": "0ddee2f101964d0a97ef61e0b712bb355847a4cdfba169a41bdc3c0b531c1555",
+          "public": null,
+          "protected": "0ddee2f101964d0a97ef61e0b712bb355847a4cdfba169a41bdc3c0b531c1555"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增阅读与文献台账记录。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-dapp147-tidas-spec-v030",
+        "from": null,
+        "to": {
+          "raw": "c339c0746b3f7d51c6c7072ba70be5321852e39f7e9c2b53e178b43fa8573b38",
+          "public": null,
+          "protected": "c339c0746b3f7d51c6c7072ba70be5321852e39f7e9c2b53e178b43fa8573b38"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增阅读与文献台账记录。"
+      },
+      {
+        "kind": "record",
+        "key": "gaps:gap-dapp147-ilcd-review-schemes-and-ef-raw-nodes",
+        "from": null,
+        "to": {
+          "raw": "25ece0301c0b83b9f06d448cf036d12b6fe476fbf8e2a3654bb5393debb9ea51",
+          "public": null,
+          "protected": "25ece0301c0b83b9f06d448cf036d12b6fe476fbf8e2a3654bb5393debb9ea51"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增阅读与文献台账记录。"
+      },
+      {
+        "kind": "record",
+        "key": "revisions:rev-dapp147-b25-data-applicability-comparison",
+        "from": null,
+        "to": {
+          "raw": "b94d2aba2f3838262465459f89b88b62acbfe8cb9b0b0ce7b453e40be53f4d41",
+          "public": null,
+          "protected": "b94d2aba2f3838262465459f89b88b62acbfe8cb9b0b0ce7b453e40be53f4d41"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增阅读与文献台账记录。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-dapp147-ilcd-el-2012",
+        "from": null,
+        "to": {
+          "raw": "e762f4a5dad1db9b5f349ababb4d076068c2c3b84ab86c6022bdcac71f28f00a",
+          "public": null,
+          "protected": "e762f4a5dad1db9b5f349ababb4d076068c2c3b84ab86c6022bdcac71f28f00a"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增阅读与文献台账记录。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-dapp147-ecoinvent-v3-2013",
+        "from": null,
+        "to": {
+          "raw": "0dfda77d46506f4f3bc33f59b571a04f4175f9abdfd17f24584a42de4b99d3b8",
+          "public": null,
+          "protected": "0dfda77d46506f4f3bc33f59b571a04f4175f9abdfd17f24584a42de4b99d3b8"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增阅读与文献台账记录。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-dapp147-tidas-spec-v030",
+        "from": null,
+        "to": {
+          "raw": "6e99b94ce6badb870f531d43968668b935895b3617f9e9beaedd92cbb6e4a19e",
+          "public": null,
+          "protected": "6e99b94ce6badb870f531d43968668b935895b3617f9e9beaedd92cbb6e4a19e"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增阅读与文献台账记录。"
+      },
+      {
+        "kind": "record",
+        "key": "queries:q-dapp147-dataset-roles-dqr-review-compliance-and-packages-20261119",
+        "from": null,
+        "to": {
+          "raw": "50f11becc73e5d18f18f12f9d815161a1da6a2287acfe94c08e7953c3027d0d5",
+          "public": null,
+          "protected": "50f11becc73e5d18f18f12f9d815161a1da6a2287acfe94c08e7953c3027d0d5"
+        },
+        "rationale": "登记第六部首章《数据适用性》跨体系比较单元（#147）的新增阅读与文献台账记录。"
+      }
+    ],
+    "consumers": [
+      {
+        "id": "cl-flow-type",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-exchange",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow-exchange-distinction",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-waste-no-universal",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ilcd-reference-flow",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ilcd-fu",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-fu-distinction",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-fu-example",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-bw-direction",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-bw-sign",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-service",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-service-contract",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-ilcd-reference",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-reference-reading",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-comparison-more",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-three-comparisons",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-interpret-iterate",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-not-equivalent",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-conclusion-conditions",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-integrative-function",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-integrative-iteration",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-integrative-path",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-regional-localization-not-translation",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-regional-method-origin-not-validity",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-regional-benchmarks-and-policy-goals",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-regional-wf-ambiguity",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-regional-research-agenda-not-country-claim",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-future-definition",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-future-scale-up",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-future-incumbent",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-future-scenarios",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-future-background",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-future-impact-limits",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-future-comparison-conditions",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-connect-object-before-unit",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-connect-service-changes-system",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-connect-target-and-distribution",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-connect-three-scalings",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-connect-time-relations",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-connect-prospective-two-questions",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-connect-reuse-keeps-relation",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-connect-zero-needs-origin",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-connect-evidence-to-probability",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-connect-useful-without-winner",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-connect-review-does-not-transfer",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-connect-next-evidence-at-link",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-question",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-quantities",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-reference",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-same-mass",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-coordinates",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-demand",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-activities",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-balance-meaning",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-inventory",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-inventory-boundary",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-factor-choice",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-characterization",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-metric-meaning",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-time",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-unknown",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-paired-range",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-pairing",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-tolerance",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-rough-demand",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-rough-comparison",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-exercise",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-answer",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-framework-design-sideeffects",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-framework-reader-work-product",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-hyb-accounts",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-hyb-service",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-hyb-ledger",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-hyb-invoices",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-hyb-raw",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-hyb-naive",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-hyb-remove",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-hyb-equations",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-hyb-corrected",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-hyb-naive-result",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-hyb-swap",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-hyb-swap-result",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-hyb-audit",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-es-authority",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-es-three",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-es-equation",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-es-why-square",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-es-nmvoc",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-es-nox",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-es-service",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-es-score",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-es-scale",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-es-threshold",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-es-test",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-es-later",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-es-judgment",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-purpose",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-policy-contrast",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-baseline",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-units",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-display",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-logit",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-trade",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-precision",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-primary-ratio",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-households",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-health",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-mismatch",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-annual",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-shares",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-two-forms",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-different-card",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-english",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-english-basis",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-service",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-japan-route",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-break-even",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-english-route",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-numeraire",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-edition",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-validity",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-null",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-order",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-transfer",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-decision",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-pack-limits",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-question",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-two-branches",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-characterization",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-reference",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-service-period",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-target",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-weight-meaning",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-cancellation",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-time-bridge",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-resource-meaning",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-resource-units",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-parameter-history",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-later-critique",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-policy-records",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-changed-reference",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-policy-limit",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-hk-borrowing",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-hk-local",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-hk-weights",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-standard-authority",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-conclusion",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-opening",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-rp",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-why-chain",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-force",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-category",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-version",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-use-boundary",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-default",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-results-layer",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-reconstruction-limit",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-review-objects",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-review-2018",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-review-2024",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-review-identity",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-validity",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-methane-rule",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-nordic-design",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-niu-provenance",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-ipcc-class",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-model-meaning",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-comparison-limits",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-evidence-judgment",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-conclusion",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-wash-cycles",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-wash-inputs",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-use-result",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-report-split",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-quantity-scale",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-capital-gap",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-storage-gap",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-ration-units",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-niu-result",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-ipcc-result",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-issuer",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-pm-population-meaning",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-pm-factor-correction",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-pm-implementation-layer",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-pm-matched-scope",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-pm-uncovered-pathways",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-pm-conclusion",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-pm-activity-indicators",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-opening",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-service",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-coordinates",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-voltage-path",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-grid-assets",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-loss-definition",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-norway-loss",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-segment-denominators",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-database-voltage",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-loss-proxy",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-egrid-scope",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-egrid-adjustments",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-egrid-rate",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-egrid-loss",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-egrid-loss-conflict",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-region-membership",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-eia-emissions",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-average-response",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-historical-generation",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-historical-consumption",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-empirical-limits",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-price-versus-energy",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-native-model",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-native-scenario",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-native-loss",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-native-loss-document",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-native-interpolation",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-native-output",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-native-ratios",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-native-check-meaning",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-native-two-hours",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-native-pollutants",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-native-application",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-question",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-system",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-perturbation",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-postprocessing",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-balance",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-load-parts",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-distribution",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-direct-rates",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-three-questions",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-gases",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-gases-total",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-scenario",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-time",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-formula",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-alternative-lca",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-validation-objects",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-connection",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-nonbaseload",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-native-coordinate",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-storage-policy",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-opening",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-record-and-link",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-bottle-reference",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-example-scope",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-opposite",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-scale",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-matrix-sign",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-allocation-held",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-representation-result",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-small-inventory",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-same-flow-total",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-three-co2-quantities",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-allocation-result",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-printed-comparator",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-missing-link",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-missing-link-score",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-jrc-scope",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-jrc-instance",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-jrc-connectors",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-jrc-parameters",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-jrc-weight-control",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-jrc-bare-setup",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-jrc-machine-edge",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-jrc-machine-coordinate",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-jrc-source-discrepancy",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-jrc-partial-match",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-jrc-result-projection",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-jrc-version-reference",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-format-scope",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-format-original-target",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-format-double-target",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-format-result-scale",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-result-direction",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-conversion-study",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-factor-probe",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-factor-zero-absent",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-factor-real-gap",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-factor-report",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-preservation-meaning",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-service-meaning",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cml-reception-question",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cml-screening-boundaries",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cml-reception-lineage",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cml-ending",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cml-solvent-bins",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cml-range-bins",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-climate-wall-fixed",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-climate-wall-reweighted",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-climate-comparison-criteria",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-climate-conclusion",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-closing-wall-substrate",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-closing-historical-return",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cml-screening-range-limit",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-maintenance-condition",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-record-model-limit",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-inv-service-to-demand",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-pm-matched-scenario",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-pm-version-and-model",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-future-scenario-matrix",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-future-decision",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-social-results-to-cost",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-cost-decision",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-two-boundaries",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-elementary",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-landfill",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-boundary-consequence",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-agricultural-boundary",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-boundary-exceptions",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-record-and-instance",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-schema-levels",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-identity-example",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-waste-classification",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-material-and-service",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-direction-equivalence",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-reference-levels",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-basis-and-demand",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-pesticide-interface",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-interface-consequence",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-phosphorus-interface",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-zero-placeholder",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-zero-reasons",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-zero-reporting",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-conclusion",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-probe-reference",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-service102-row-map",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-service102-service-meaning",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-service102-redundant",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-service102-residual-condition",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-sub105-two-uses",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-sub105-pef-report",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-sub105-ilcd-market",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-sub105-ilcd-absorption",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-sub105-pef-direct",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-sub105-evidence-example",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-sub105-fallbacks",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-sub105-conditional-results",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-sub105-reporting-objects",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-shift107-complete-action",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-shift107-joint-direction",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-shift107-service",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-shift107-supply",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-shift107-small",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-shift107-large",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-shift107-control",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-shift107-comparison-judgment",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cff109-question",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cff109-quality",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cff109-control",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cff109-version",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cff109-response",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cff109-judgment",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-tox123-hc20-and-metals",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-tox123-speciation-and-proxies",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-tox123-package-discrepancies",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-tox123-cross-system-synthesis",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-water125-diagnostic-synthesis",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-bio127-midpoint-endpoint-genealogy",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-bio127-feedback-perspective-asymmetry",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-bio127-ef31-subindicator-partition",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-bio127-zero-zero-vs-minus-plus-one",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-bio127-co-removal-and-methane-shift",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-bio127-package-and-report-discrepancies",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-bio127-storage-abolition-and-dluc-window",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-bio127-climate-diagnostic-synthesis",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-eutro129-category-genealogy",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-eutro129-phosphorus-soil-water-interface",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-eutro129-phosphorus-stoichiometry-and-p2o5",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-eutro129-nitrogen-soil-prohibition",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-eutro129-aquatic-and-airborne-n-reversals",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-eutro129-location-copies-and-nox-inversion",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-eutro129-normalization-double-counting-and-xml-anomalies",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-eutro129-operational-synthesis",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-particulate131-indicator-cutpoints",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-particulate131-size-and-subcompartment",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-particulate131-cohen-empirical-limits",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-particulate131-precursor-perspectives",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-particulate131-ef-ammonia-inversion",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-particulate131-regional-endpoint-reversal",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-particulate131-package-discrepancies",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-weight135-ef-coating-outdoor",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-weight135-ef-coating-indoor",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-weight135-ef-robustness-weights",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-weight135-denominator-coupling-and-drift",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-weight135-comparative-assertion-regimes",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-weight135-target-vs-hybrid-boundary",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-weight135-lime-three-table-rereversal",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-weight135-recipe-endpoint-stop",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-weight135-health-perspective-reversal",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-weight135-four-paradigm-synthesis",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-weight135-monetary-incommensurability",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-weight135-glam3-reporting-discipline",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-loc137-ef31-location-regimes",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-loc137-ef31-global-nf-extrapolation",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-loc137-dirty-denominator-paradox",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-loc137-open-economy-boundary-reversal",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-loc137-biophysical-vs-political-units",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-loc137-pm-nonlinear-and-endpoint-reversals",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-loc137-institutional-adoption-vs-compliance",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-loc137-four-layer-localization-audit",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-soc139-portfolio-reference-and-comparative-assertions",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-soc139-occupational-health-pathways-and-rights-boundary",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-soc139-cross-pillar-overlap-audit",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lcc143-three-lcc-archetypes-and-value-added-consolidation",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lcc143-actor-split-incentive-and-discount-rate-reversal",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lcc143-five-monetary-quantities-and-shadow-price-double-counting",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lcc143-cut-off-asymmetry-and-cost-rebound-boundary",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lcc143-demarcating-ra-eia-and-mfa-ioa",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lcc143-single-issue-footprints-vs-multi-indicator-profiles",
+        "rationale": "核查跨章关联论述：本次仅在 4 份共享一手来源（ILCD 2010、欧盟建议书 2021/2279、EF 合规数据集指南 2.0 版与 3.1 版增补说明）上追加同载体选读范围与核查日期，并对共享证据定位符作无损中文规范化、对既有 B25 命题补全首现全称与术语括注，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      }
+    ],
+    "assessment": {
+      "scope": "Part VI opening chapter B25 (content/monograph/data-applicability.mdx) and website companions (/docs/book/database-fitness-and-documentation, /docs/book/review-support-and-version-boundaries), covering 3 new works/sources/readings, 4 appended prior carriers, 18 1-to-1 single-artifact ev-dapp147-*/psg-dapp147-* pairs, 63 BigInt rational numericFacts, 8 new cl-dapp147-* claims, 14 updated cl-db2011-* claims, 16 normalized locators, and 2 six-column comparative tables against predecessor commit c5b90b0352abaeaf0eec6706685076c8825d8925.",
+      "comparison": "Systematically compares UNEP/SETAC (2011), EC-JRC ILCD General Guide (2010, EUR 24708 EN) & Entry-Level Rules v1.1 (2012, EUR 24380 EN), EU Recommendation 2021/2279 & EF Data Guide v2.0 / EF 3.1 Addendum / JRC130796 / EC May 2026 Transition Guidance, ecoinvent v3 (2013, Report 1(v3)), and TianGong TIDAS v0.3.0 across dataset structural roles (unit process, partly terminated system, non-primary supporting sub-process, transforming vs market activity, GLO-RoW dynamic residual), intrinsic vs study-context representativeness, scalar DQR vs exchange-level pedigree lognormal variance, automated validation vs multi-expert review & verification thresholds, five-aspect compliance UUID matrices (\"Not defined\" semantics), and reference-package migration & secondary proxy hierarchy.",
+      "values": "Verifies all 63 exact BigInt rational numericFacts and controlled algebraic demonstrations: ILCD Formula 3 weakest-link 5x penalty vs EU Eq. 19 arithmetic mean rank reversal under identical C=2, M=2 (Dataset A 26/10 = 2.60 vs Dataset B 33/10 = 3.30 flipping against PEF 2.50 vs 2.25), provider 3.0 single-criterion cap rejection on Dataset C (mean 1.75), provider 1.00 -> context 3.75 disqualification & Situation 2/Option 2 GeR -30% pass/fail shift (3.125 -> 2.90 from GeR = 3.0, P = 2.5), 80% contribution rescaling (30% + 50% -> 37.5% + 62.5%) & 10% ILCD-EL exemption masking trace toxicity gaps, ecoinvent 5-score pedigree variance sum 0.21, and JRC130796 2,752-dataset top-3 category shifts (6%, 10%, 13%) plus 3-year >10.0% / >5.0% mandatory surveillance update triggers.",
+      "limits": "ILCD separate Review Schemes volume, ecoinvent v3.0 per-dataset Change Report, and commercial EF 3.1 licensed raw packages are explicitly recorded as open research gaps; remaining Part VI chapters (B26–B28), Parts VII–VIII, and all 8 global Programme #9 criteria remain open.",
+      "conservation": "Conserves all 14 original cl-db2011-* claim identities, section structures, continuation links, all 1,030 non-B25 claims, and all 40 case files byte-for-byte.",
+      "review": "Multi-round independent primary-source and numeric entailment audit verified SHA-256 digests, PDF 0-based indices, verbatim wording, section/table citations, modal precision, evidence bindings, and BigInt arithmetic across all 9 primary carriers, concluding unconditional PASS (0 BLOCKER, 0 MAJOR, 0 MINOR)."
+    },
+    "independentReports": {
+      "independent-primary-source-audit-initial.md": "b40175817f1a29f86b35a5c31e7b135a59b0e596635c2a86c48d1f55b31bbd6c",
+      "independent-primary-source-audit-final.md": "16e4eb6a90c6ae419acc96dda7c00b8e3d869a2695b3de39208aefb4735caab2",
+      "b25-continuous-reader-review-initial.md": "a9381deebb46e43fe66a0f69c0a27d564d9fb245ba7ed288362e91738cc781e8",
+      "b25-continuous-reader-review-final.md": "9936f43956ca04bfd4edc7d75f7abb5aead6c5c429cf6861332248a4bfaa4754",
+      "independent-publication-engineering-review-initial.md": "62fe352e96c6f50cf1cdedb1a659718c0c27a7eb0f10de3dae73883c7d139852",
+      "independent-publication-engineering-review-final.md": "7a23ac6dfd7c5495597fc610f1fa2c1f7881eb93e605ef9b6df3c2fe7e988c32",
+      "actual-browser-qa-147/qa-summary-147.json": "8faf8d65fdeecb5af65077edc6b0e5d9544bd0e3f6428939c847a99855ddd172"
+    }
+  }
+}

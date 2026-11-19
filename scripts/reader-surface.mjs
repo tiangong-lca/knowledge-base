@@ -1,3 +1,4 @@
+import { dataApplicabilityComparisonPreviousSurface, qualifyDataApplicabilityComparisonHistory } from './reader-data-applicability-comparison.mjs';
 import { part5RereadPreviousSurface, projectPart5RereadPrintParts, qualifyPart5RereadHistory } from './reader-part5-reread.mjs';
 import { costSustainabilityPreviousSurface, qualifyCostSustainabilityHistory } from './reader-cost-sustainability.mjs';
 import { socialComparisonPreviousSurface, qualifySocialComparisonHistory } from './reader-social-comparison.mjs';
@@ -34,7 +35,7 @@ import { assertClosingSynthesisOriginal, assertClosingSynthesisHeadingHistory, a
 import { assertWallSelectionOriginal, assertWallSelectionHeadingHistory, assertWallSelectionAccepted, wallSelectionHeadingEntries, remapWallSelectionCitations, validateWallSelectionCoverage, validateRenderedWallSelection } from './reader-wall-selection.mjs';
 import { validateReaderNumberingOutput } from './reader-numbering-output.mjs';
 import { assertReaderNumbering } from './reader-numbering.mjs';
-import { validateReadableBookCurrent, validateServiceConstraintsReviewSources, validateSubstitutionRulesReviewSources, validateLoadShiftReviewSources, validateCircularFootprintReviewSources, validateLandRecoveryReviewSources, validateAcidEquivalentsReviewSources, validateMineralResourcesReviewSources, validateFossilResourcesReviewSources, validatePhotochemicalOzoneReviewSources, validateOzoneRadiationReviewSources, validateToxicityComparisonReviewSources, validateWaterScarcityReviewSources, validateBiogenicCarbonReviewSources, validateEutrophicationPathwaysReviewSources, validateParticulateComparisonReviewSources, validatePart4RereadReviewSources, validateWeightingValuationReviewSources, validateLocalizationComparisonReviewSources, validateSocialComparisonReviewSources, validateCostSustainabilityReviewSources, validatePart5RereadReviewSources } from './reader-current-edition-files.mjs';
+import { validateReadableBookCurrent, validateServiceConstraintsReviewSources, validateSubstitutionRulesReviewSources, validateLoadShiftReviewSources, validateCircularFootprintReviewSources, validateLandRecoveryReviewSources, validateAcidEquivalentsReviewSources, validateMineralResourcesReviewSources, validateFossilResourcesReviewSources, validatePhotochemicalOzoneReviewSources, validateOzoneRadiationReviewSources, validateToxicityComparisonReviewSources, validateWaterScarcityReviewSources, validateBiogenicCarbonReviewSources, validateEutrophicationPathwaysReviewSources, validateParticulateComparisonReviewSources, validatePart4RereadReviewSources, validateWeightingValuationReviewSources, validateLocalizationComparisonReviewSources, validateSocialComparisonReviewSources, validateCostSustainabilityReviewSources, validatePart5RereadReviewSources, validateDataApplicabilityComparisonReviewSources } from './reader-current-edition-files.mjs';
 import { qualifyReadableBookCitations } from './reader-current-citations.mjs';
 import { validateReadableBookPublicArtifacts, validateReadableBookReviewedOutput } from './reader-current-output.mjs';
 import { qualifyCurrentHistoricalDocument, validateCurrentHistoricalContexts } from './reader-publication-text.mjs';
@@ -179,7 +180,7 @@ function aliasDestination(node) {
   return sibling?.id === target ? target : null;
 }
 
-const citationScopeExclusions = '.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope],[data-copyedit-history],[data-flow-boundary-history],[data-service-constraints-history],[data-substitution-rules-history],[data-load-shift-history],[data-circular-footprint-history],[data-land-recovery-history],[data-acid-equivalents-history],[data-mineral-resources-history],[data-fossil-resources-history],[data-photochemical-ozone-history],[data-ozone-radiation-history],[data-toxicity-comparison-history],[data-water-scarcity-history],[data-biogenic-carbon-history],[data-eutrophication-pathways-history],[data-particulate-comparison-history],[data-part4-reread-history],[data-part4-reread-part],[data-weighting-valuation-history],[data-localization-comparison-history],[data-social-comparison-history],[data-cost-sustainability-history],[data-part5-reread-history],[data-part5-reread-part],.docs-pagination,.reader-view-label,.teaching-case';
+const citationScopeExclusions = '.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-legacy-scope],[data-copyedit-history],[data-flow-boundary-history],[data-service-constraints-history],[data-substitution-rules-history],[data-load-shift-history],[data-circular-footprint-history],[data-land-recovery-history],[data-acid-equivalents-history],[data-mineral-resources-history],[data-fossil-resources-history],[data-photochemical-ozone-history],[data-ozone-radiation-history],[data-toxicity-comparison-history],[data-water-scarcity-history],[data-biogenic-carbon-history],[data-eutrophication-pathways-history],[data-particulate-comparison-history],[data-part4-reread-history],[data-part4-reread-part],[data-weighting-valuation-history],[data-localization-comparison-history],[data-social-comparison-history],[data-cost-sustainability-history],[data-part5-reread-history],[data-part5-reread-part],[data-data-applicability-comparison-history],.docs-pagination,.reader-view-label,.teaching-case';
 const ordinaryCitationBlocks = 'p,ul,ol,dl,blockquote,pre,table,figure';
 
 function nativeCitationScopes(document) {
@@ -379,9 +380,10 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
   const socialComparison = book?.current?.socialComparison;
   const costSustainability = book?.current?.costSustainability;
   const part5Reread = book?.current?.part5Reread;
+  const dataApplicabilityComparison = book?.current?.dataApplicabilityComparison;
   const entries = relabelHistoricalTargets(flowBoundaryCitationEntries(
     copyeditHistoryEntries(getHistoricalCitationEntries(sourceBaseline, locations, history, historicPrintRoutes, book), copyedit),
-    book?.current?.flowBoundary), [...serviceConstraints?.routes ?? [], ...substitutionRules?.routes ?? [], ...loadShift?.routes ?? [], ...footprint?.routes ?? [], ...land?.routes ?? [], ...acid?.routes ?? [], ...minerals?.routes ?? [], ...fossils?.routes ?? [], ...photochemicalOzone?.routes ?? [], ...ozoneRadiation?.routes ?? [], ...toxicityComparison?.routes ?? [], ...waterScarcity?.routes ?? [], ...biogenicCarbon?.routes ?? [], ...eutrophicationPathways?.routes ?? [], ...particulateComparison?.routes ?? [], ...part4Reread?.routes ?? [], ...weightingValuation?.routes ?? [], ...localizationComparison?.routes ?? [], ...socialComparison?.routes ?? [], ...costSustainability?.routes ?? [], ...part5Reread?.routes ?? []]);
+    book?.current?.flowBoundary), [...serviceConstraints?.routes ?? [], ...substitutionRules?.routes ?? [], ...loadShift?.routes ?? [], ...footprint?.routes ?? [], ...land?.routes ?? [], ...acid?.routes ?? [], ...minerals?.routes ?? [], ...fossils?.routes ?? [], ...photochemicalOzone?.routes ?? [], ...ozoneRadiation?.routes ?? [], ...toxicityComparison?.routes ?? [], ...waterScarcity?.routes ?? [], ...biogenicCarbon?.routes ?? [], ...eutrophicationPathways?.routes ?? [], ...particulateComparison?.routes ?? [], ...part4Reread?.routes ?? [], ...weightingValuation?.routes ?? [], ...localizationComparison?.routes ?? [], ...socialComparison?.routes ?? [], ...costSustainability?.routes ?? [], ...part5Reread?.routes ?? [], ...dataApplicabilityComparison?.routes ?? []]);
   const addresses = new Set();
   for (const entry of entries) {
     const address = `${entry.path}#${entry.id}`;
@@ -413,7 +415,7 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
   errors.push(...validateFlowBoundaryHistoryOutput(documents, book?.current?.flowBoundary));
   errors.push(...validateServiceConstraintsHistoryOutput(documents, serviceConstraints));
   const previousSurface = (address, actual) => flowBoundaryPreviousSurface(address,
-    serviceConstraintsPreviousSurface(address, substitutionRulesPreviousSurface(address, loadShiftPreviousSurface(address, circularFootprintPreviousSurface(address, landRecoveryPreviousSurface(address, acidEquivalentsPreviousSurface(address, mineralResourcesPreviousSurface(address, fossilResourcesPreviousSurface(address, photochemicalOzonePreviousSurface(address, ozoneRadiationPreviousSurface(address, toxicityComparisonPreviousSurface(address, waterScarcityPreviousSurface(address, biogenicCarbonPreviousSurface(address, eutrophicationPathwaysPreviousSurface(address, particulateComparisonPreviousSurface(address, part4RereadPreviousSurface(address, weightingValuationPreviousSurface(address, localizationComparisonPreviousSurface(address, socialComparisonPreviousSurface(address, costSustainabilityPreviousSurface(address, part5RereadPreviousSurface(address, actual, part5Reread), costSustainability), socialComparison), localizationComparison), weightingValuation), part4Reread), particulateComparison), eutrophicationPathways), biogenicCarbon), waterScarcity), toxicityComparison), ozoneRadiation), photochemicalOzone), fossils), minerals), acid), land), footprint), loadShift), substitutionRules), serviceConstraints), book?.current?.flowBoundary);
+    serviceConstraintsPreviousSurface(address, substitutionRulesPreviousSurface(address, loadShiftPreviousSurface(address, circularFootprintPreviousSurface(address, landRecoveryPreviousSurface(address, acidEquivalentsPreviousSurface(address, mineralResourcesPreviousSurface(address, fossilResourcesPreviousSurface(address, photochemicalOzonePreviousSurface(address, ozoneRadiationPreviousSurface(address, toxicityComparisonPreviousSurface(address, waterScarcityPreviousSurface(address, biogenicCarbonPreviousSurface(address, eutrophicationPathwaysPreviousSurface(address, particulateComparisonPreviousSurface(address, part4RereadPreviousSurface(address, weightingValuationPreviousSurface(address, localizationComparisonPreviousSurface(address, socialComparisonPreviousSurface(address, costSustainabilityPreviousSurface(address, part5RereadPreviousSurface(address, dataApplicabilityComparisonPreviousSurface(address, actual, dataApplicabilityComparison), part5Reread), costSustainability), socialComparison), localizationComparison), weightingValuation), part4Reread), particulateComparison), eutrophicationPathways), biogenicCarbon), waterScarcity), toxicityComparison), ozoneRadiation), photochemicalOzone), fossils), minerals), acid), land), footprint), loadShift), substitutionRules), serviceConstraints), book?.current?.flowBoundary);
   if ((serviceConstraints || loadShift) && book?.sourceRoot) {
     const cases = await loadCasePublications(book.sourceRoot);
     if (serviceConstraints) await observeServiceConstraintsCaseOutputs(root, serviceConstraints, cases, book.sourceCommit);
@@ -421,7 +423,9 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
   }
   if (copyedit) {
     const currentAddresses = observeCopyeditHistory(documents, readerNumberingManifest, readCitationSurface);
-    const part5History = qualifyPart5RereadHistory(documents, part5Reread, currentAddresses, part4Reread, weightingValuation, socialComparison);
+    const dappHistory = qualifyDataApplicabilityComparisonHistory(documents, dataApplicabilityComparison, currentAddresses);
+    errors.push(...dappHistory.errors);
+    const part5History = qualifyPart5RereadHistory(documents, part5Reread, dappHistory.prior, part4Reread, weightingValuation, socialComparison);
     errors.push(...part5History.errors);
     const costHistory = qualifyCostSustainabilityHistory(documents, costSustainability, part5History.prior);
     errors.push(...costHistory.errors);
@@ -471,8 +475,8 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
     // Article fingerprints already checked the complete normalized output.
     // Earlier chapter predicates inspect a prose projection after the new
     // historical apparatus has independently passed its exact DOM checks.
-    if (!copyeditErrors.length && !substitutionHistory.errors.length && !shiftHistory.errors.length && !footprintHistory.errors.length && !landHistory.errors.length && !acidHistory.errors.length && !mineralHistory.errors.length && !fossilHistory.errors.length && !ozoneHistory.errors.length && !ozradHistory.errors.length && !toxHistory.errors.length && !waterHistory.errors.length && !bioHistory.errors.length && !eutroHistory.errors.length && !particulateHistory.errors.length && !part4History.errors.length && !weightingHistory.errors.length && !localizationHistory.errors.length && !socialHistory.errors.length && !costHistory.errors.length && !part5History.errors.length) for (const document of documents.values()) {
-      for (const notice of document.querySelectorAll('[data-copyedit-history],[data-flow-boundary-history],[data-service-constraints-history],[data-substitution-rules-history],[data-load-shift-history],[data-circular-footprint-history],[data-land-recovery-history],[data-acid-equivalents-history],[data-mineral-resources-history],[data-fossil-resources-history],[data-photochemical-ozone-history],[data-ozone-radiation-history],[data-toxicity-comparison-history],[data-water-scarcity-history],[data-biogenic-carbon-history],[data-eutrophication-pathways-history],[data-particulate-comparison-history],[data-part4-reread-history],[data-part4-reread-part],[data-part4-reread-correction],[data-weighting-valuation-history],[data-weighting-valuation-correction],[data-localization-comparison-history],[data-localization-comparison-correction],[data-social-comparison-history],[data-social-comparison-correction],[data-cost-sustainability-history],[data-cost-sustainability-correction],[data-part5-reread-history],[data-part5-reread-part],[data-part5-reread-correction]')) notice.remove();
+    if (!copyeditErrors.length && !substitutionHistory.errors.length && !shiftHistory.errors.length && !footprintHistory.errors.length && !landHistory.errors.length && !acidHistory.errors.length && !mineralHistory.errors.length && !fossilHistory.errors.length && !ozoneHistory.errors.length && !ozradHistory.errors.length && !toxHistory.errors.length && !waterHistory.errors.length && !bioHistory.errors.length && !eutroHistory.errors.length && !particulateHistory.errors.length && !part4History.errors.length && !weightingHistory.errors.length && !localizationHistory.errors.length && !socialHistory.errors.length && !costHistory.errors.length && !part5History.errors.length && !dappHistory.errors.length) for (const document of documents.values()) {
+      for (const notice of document.querySelectorAll('[data-copyedit-history],[data-flow-boundary-history],[data-service-constraints-history],[data-substitution-rules-history],[data-load-shift-history],[data-circular-footprint-history],[data-land-recovery-history],[data-acid-equivalents-history],[data-mineral-resources-history],[data-fossil-resources-history],[data-photochemical-ozone-history],[data-ozone-radiation-history],[data-toxicity-comparison-history],[data-water-scarcity-history],[data-biogenic-carbon-history],[data-eutrophication-pathways-history],[data-particulate-comparison-history],[data-part4-reread-history],[data-part4-reread-part],[data-part4-reread-correction],[data-weighting-valuation-history],[data-weighting-valuation-correction],[data-localization-comparison-history],[data-localization-comparison-correction],[data-social-comparison-history],[data-social-comparison-correction],[data-cost-sustainability-history],[data-cost-sustainability-correction],[data-part5-reread-history],[data-part5-reread-part],[data-part5-reread-correction],[data-data-applicability-comparison-history],[data-data-applicability-comparison-correction]')) notice.remove();
     }
   }
   for (const [path, document] of documents) {
@@ -679,7 +683,8 @@ async function validatePublicationOutput(root, { knownIds = new Set(), sourceCom
       const sourceRoot = resolve(root, '..');
       let current, hostedHistory;
       if (requireCurrent) {
-        const qualify = preview === 'part5-reread' ? validatePart5RereadReviewSources
+        const qualify = preview === 'data-applicability-comparison' ? validateDataApplicabilityComparisonReviewSources
+          : preview === 'part5-reread' ? validatePart5RereadReviewSources
           : preview === 'cost-sustainability' ? validateCostSustainabilityReviewSources
           : preview === 'social-comparison' ? validateSocialComparisonReviewSources
           : preview === 'localization-comparison' ? validateLocalizationComparisonReviewSources
@@ -843,4 +848,10 @@ export function validatePart5RereadPreviewOutput(root, options = {}) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1' || basename(root) !== '.reader-review-output')
     throw new Error('Expected an isolated Part V continuous reread preview directory');
   return validatePublicationOutput(root, options, true, 'part5-reread');
+}
+
+export function validateDataApplicabilityComparisonPreviewOutput(root, options = {}) {
+  if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1' || basename(root) !== '.reader-review-output')
+    throw new Error('Expected an isolated Data applicability comparison preview directory');
+  return validatePublicationOutput(root, options, true, 'data-applicability-comparison');
 }

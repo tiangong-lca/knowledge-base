@@ -20,6 +20,25 @@ lastReviewedCommit: 2e0b523c3468613a3d71d03606f77adb36fd9a73
 
 # LCA Living Knowledge Base and Review
 
+[Part VI opening B25 data applicability, dataset roles, DQR vs pedigree math, review gates, five-aspect compliance & package migration #147](https://github.com/tiangong-lca/knowledge-base/issues/147)
+extends Part VI opening chapter `B25` (`《数据适用性》`, `content/monograph/data-applicability.mdx`,
+`14` -> `22` claims plus two 6-column responsive Markdown comparison tables) and
+its two synchronized website companions (`《过程数据的用途》` `7` -> `11` claims
+plus Table 1; `《数据审查与版本》` `7` -> `11` claims plus Table 2), bringing the
+public catalog from `1,044` to `1,052` claims while conserving `100%` of all `14`
+original `cl-db2011-*` claim identities, all `1,030` untouched prior claims, all
+original `B25` registries, and all `40` case download files byte-for-byte against
+`c5b90b0352abaeaf0eec6706685076c8825d8925`. Its
+[comparative record](_docs/editorial/2026-11-19-data-applicability-comparison.md)
+binds `3` new works/sources/readings (`EUR 24380 EN` `ILCD-EL v1.1`, `Weidema et al.
+2013` `ecoinvent Report 1(v3)`, and `@tiangong-lca/tidas-spec v0.3.0`), `4`
+appended prior carriers (`ILCD 2010`, `EU 2021/2279`, `EF Guide 2.0`, `EF 3.1
+Addendum`), `18` `1-to-1` single-artifact `ev-dapp147-*` / `psg-dapp147-*` pairs,
+`63` `BigInt`-verified `nf-dapp147-*` `numericFacts`, `16` normalized prior
+evidence locators, `14` bounded `cl-db2011-*` synchronizations, and `12` inline
+`style="display:block"` public correction notices (`6` on `/print`, `2` on
+Companion 1, `4` on Companion 2) with zero compiled CSS drift (`be180e5d...`).
+
 [Part V whole-part continuous reread, cross-chapter terminology & premise alignment, and citation-locator normalization #145](https://github.com/tiangong-lca/knowledge-base/issues/145)
 completes the whole-part continuous reread across `F02` (`content/docs/book/index.mdx:18,22`),
 the Part V introduction (`config/reader-numbering.json`), and all five Part V

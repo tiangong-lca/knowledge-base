@@ -594,13 +594,28 @@ Chromium/`@media print` verification), exact root2466/PR2467/Main
 source-handoff (`1/1`) receipts.
 
 [Issue147](https://github.com/tiangong-lca/knowledge-base/issues/147) opens Part VI
-(`数据与证据`) on `B25` (`数据适用性`, `/monograph/data-applicability`) and its two
-synchronized website companions (`过程数据的用途` and `数据审查与版本`) from
+(`数据与证据`) on `B25` (`数据适用性`, `/monograph/data-applicability`, `14` -> `22`
+claims + `2` six-column tables) and its two synchronized website companions
+(`过程数据的用途` `7` -> `11` + Table 1; `数据审查与版本` `7` -> `11` + Table 2) from
 qualified Main `c5b90b0352abaeaf0eec6706685076c8825d8925` on branch
 `codex/data-applicability-147`. Its
 [prewriting comparative protocol](editorial/2026-11-19-data-applicability-comparison.md)
-precedes catalog, content, and configuration edits; Parts VI–VIII comparative
-units and all eight global Programme9 criteria remain active.
+was committed as `1d0c9cd` before catalog, content, and configuration edits.
+Eight new `cl-dapp147-*` claims (`1,044` -> `1,052` claims) bind `3` new
+works/sources/readings (`EUR 24380 EN` `ILCD-EL v1.1`, `Weidema et al. 2013`
+`ecoinvent Report 1(v3)`, `@tiangong-lca/tidas-spec v0.3.0`), `4` appended prior
+carriers, `18` `1-to-1` single-artifact `ev-dapp147-*`/`psg-dapp147-*` pairs,
+`63` `BigInt`-verified `nf-dapp147-*` `numericFacts`, `16` normalized prior
+evidence locators, `14` bounded `cl-db2011-*` synchronizations, and `12` inline
+`display:block` public correction notices while conserving `100%` of original
+`B25` registries and all `40` case files byte-for-byte. Separate three-round
+unconditional-PASS primary-source (`447069ba`), zero-context reader (`ee695e98`),
+adversarial publication-engineering (`d97ea23d`) and actual-output acceptances
+(`728d84360c5530fc96054634cce4d6dd15e73b1f2ad4aa1a4004dff594ee7eb4`, capture
+`a7d7ab2fef20f64658114f367e50b810245f3298499dda76ba440435b2285d60`) are bound on
+branch `codex/data-applicability-147`; PR/CI/merge, hosted EdgeOne qualification,
+exact root integration, remaining Parts VI–VIII units and all eight global
+Programme9 criteria remain active.
 
 Rule adoption101 itself is fully delivered: PR103/Main10dc686 and
 root2381/PR2382/Main90bcaa574, with complete ordinary source/root handoff receipts.

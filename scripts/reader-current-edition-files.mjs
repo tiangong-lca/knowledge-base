@@ -1,3 +1,4 @@
+import { selectDataApplicabilityComparison, prepareDataApplicabilityComparisonSource, effectiveDataApplicabilityComparison, verifyDataApplicabilityComparisonReceipts } from './reader-data-applicability-comparison.mjs';
 import { selectPart5Reread, preparePart5RereadSource, effectivePart5Reread, verifyPart5RereadReceipts } from './reader-part5-reread.mjs';
 import { selectCostSustainability, prepareCostSustainabilitySource, effectiveCostSustainability, verifyCostSustainabilityReceipts } from './reader-cost-sustainability.mjs';
 import { selectSocialComparison, prepareSocialComparisonSource, effectiveSocialComparison, verifySocialComparisonReceipts } from './reader-social-comparison.mjs';
@@ -60,6 +61,9 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const serviceConstraints = selectServiceConstraints(serviceConfig, undefined, preview === 'service');
   const substitutionConfig = await readConfig('reader-substitution-rules.json');
   const substitutionRules = selectSubstitutionRules(substitutionConfig, undefined, preview === 'substitution');
+  const dappConfig = await readConfig('reader-data-applicability-comparison.json');
+  const dataApplicabilityComparison = selectDataApplicabilityComparison(dappConfig, undefined, preview === 'data-applicability-comparison');
+  if (preview === 'data-applicability-comparison' && dappConfig.status !== 'preview') throw new Error('Data applicability comparison review requires a private preview state');
   const part5Config = await readConfig('reader-part5-reread.json');
   const part5Reread = selectPart5Reread(part5Config, undefined, preview === 'part5-reread');
   if (preview === 'part5-reread' && part5Config.status !== 'preview') throw new Error('Part V continuous reread review requires a private preview state');
@@ -129,6 +133,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (loadShift && !substitutionRules) throw new Error('Load shift requires the accepted #105 generation');
   if (circularFootprint && !loadShift) throw new Error('Circular footprint requires the accepted #107 generation');
   if (landRecovery && !circularFootprint) throw new Error('Land recovery requires the accepted #109 generation');
+  if (dataApplicabilityComparison && !part5Reread) throw new Error('Data applicability comparison requires the accepted #145 generation');
   if (part5Reread && !costSustainability) throw new Error('Part V continuous reread requires the accepted #143 generation');
   if (costSustainability && !socialComparison) throw new Error('Cost and sustainability requires the accepted #139 generation');
   if (socialComparison && !localizationComparison) throw new Error('Social comparison requires the accepted #137 generation');
@@ -147,7 +152,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (acidEquivalents && !landRecovery) throw new Error('Acid equivalents requires the accepted #111 generation');
   for (const [path, bytes] of await readLoadShiftCaseFiles(root, loadShift)) files.set(path, bytes);
   for (const [path, bytes] of await readServiceConstraintsFiles(root, serviceConstraints)) files.set(path, bytes);
-  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison, waterScarcity, biogenicCarbon, eutrophicationPathways, particulateComparison, part4Reread, weightingValuation, localizationComparison, socialComparison, costSustainability, part5Reread].filter(Boolean)];
+  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison, waterScarcity, biogenicCarbon, eutrophicationPathways, particulateComparison, part4Reread, weightingValuation, localizationComparison, socialComparison, costSustainability, part5Reread, dataApplicabilityComparison].filter(Boolean)];
   const realRoot = await realpath(root);
   const reviewFiles = new Set((reviewUnits ?? []).flatMap(unit =>
     (unit.reviewEvidence ?? []).flatMap(row => [row.reportFile, row.artifactFile])));
@@ -162,8 +167,11 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const input = { catalog, readings, literature, files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
-  const part5 = part5Reread && preparePart5RereadSource(part5Reread, input, actual, structure);
-  const part5Input = part5 ? { ...part5.previousRecords, files: part5.files } : input;
+  const dapp = dataApplicabilityComparison && prepareDataApplicabilityComparisonSource(dataApplicabilityComparison, input, actual, structure);
+  const dappInput = dapp ? { ...dapp.previousRecords, files: dapp.files } : input;
+  const part5 = part5Reread && preparePart5RereadSource(part5Reread, dappInput,
+    dapp?.previous ?? actual, dapp?.structure ?? structure);
+  const part5Input = part5 ? { ...part5.previousRecords, files: part5.files } : dappInput;
   const cost = costSustainability && prepareCostSustainabilitySource(costSustainability, part5Input,
     part5?.previous ?? actual, part5?.structure ?? structure);
   const costInput = cost ? { ...cost.previousRecords, files: cost.files } : part5Input;
@@ -327,8 +335,13 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   }
   if (part5Reread && preview !== 'part5-reread') {
     const { readerPublicDownloads } = await import('./reader-current-output.mjs');
-    if (!verifyPart5RereadReceipts(part5Reread, artifacts, readerPublicDownloads(catalog, literature, readings)))
+    if (!verifyPart5RereadReceipts(part5Reread, artifacts, readerPublicDownloads(dappInput.catalog, dappInput.literature, dappInput.readings)))
       throw new Error('Part V continuous reread lacks exact independent source, reader, and output evidence');
+  }
+  if (dataApplicabilityComparison && preview !== 'data-applicability-comparison') {
+    const { readerPublicDownloads } = await import('./reader-current-output.mjs');
+    if (!verifyDataApplicabilityComparisonReceipts(dataApplicabilityComparison, artifacts, readerPublicDownloads(catalog, literature, readings)))
+      throw new Error('Data applicability comparison lacks exact independent source, reader, and output evidence');
   }
   const service = serviceConstraints && prepareServiceConstraintsSource(serviceConstraints, substitution?.previous ?? actual,
     substitution?.structure ?? structure, { ...previousRecords, files: substitutionInput.files });
@@ -373,7 +386,8 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const qualifiedLocalization = effectiveLocalizationComparison(qualifiedWeighting, localizationComparison, localization?.affectedClaimIds);
   const qualifiedSocial = effectiveSocialComparison(qualifiedLocalization, socialComparison, social?.affectedClaimIds);
   const qualifiedCost = effectiveCostSustainability(qualifiedSocial, costSustainability, cost?.affectedClaimIds);
-  return effectivePart5Reread(qualifiedCost, part5Reread, part5?.affectedClaimIds);
+  const qualifiedPart5 = effectivePart5Reread(qualifiedCost, part5Reread, part5?.affectedClaimIds);
+  return effectiveDataApplicabilityComparison(qualifiedPart5, dataApplicabilityComparison, dapp?.affectedClaimIds);
 }
 
 export function validateReadableBookCurrent(root, catalog, readings, literature) {
@@ -503,4 +517,10 @@ export function validatePart5RereadReviewSources(root, catalog, readings, litera
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Part V continuous reread review requires the explicit private preview');
   return qualifyCurrentReaderSources(root, catalog, readings, literature, 'part5-reread');
+}
+
+export function validateDataApplicabilityComparisonReviewSources(root, catalog, readings, literature) {
+  if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
+    throw new Error('Data applicability comparison review requires the explicit private preview');
+  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'data-applicability-comparison');
 }

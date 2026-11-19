@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-18",
+  "updatedAt": "2026-11-19",
   "readings": [
     {
       "id": "rd-cml-2001-part1",
@@ -1878,6 +1878,81 @@
           ],
           "limits": [
             "总则规定模块化互补原则，未内置具体化学品直接接触风险评估方程。"
+          ]
+        },
+        {
+          "id": "psg-dapp147-ilcd2010-dataset-types-and-review",
+          "artifactId": "art-ilcd-2010-pdf",
+          "locator": "第 2 章规定条款 I、第 6.3 节、第 6.11 节、第 10.3.4 节与第 11 章关键评审规则",
+          "printedPages": "18, 59, 148–149, 310, 321–322",
+          "pdfIndices": [
+            37,
+            78,
+            167,
+            168,
+            329,
+            340,
+            341
+          ],
+          "topics": [
+            "单元过程与部分终止系统",
+            "清单结果数据集",
+            "情景A/B/C1/C2",
+            "关键评审分卷委派",
+            "情景B利益相关方参与"
+          ],
+          "limits": [
+            "第 11 章将具体交付物对应的最低评审类型矩阵与评审员资格细则移交独立专卷，总论卷本身不直接打印该矩阵。"
+          ]
+        },
+        {
+          "id": "psg-dapp147-ilcd2010-representativeness-vs-appropriateness",
+          "artifactId": "art-ilcd-2010-pdf",
+          "locator": "第 12.2 节数据质量维度、脚注 213、图 28 及货运装载率变异性示例",
+          "printedPages": "324–328",
+          "pdfIndices": [
+            343,
+            344,
+            345,
+            346,
+            347
+          ],
+          "topics": [
+            "固有代表性",
+            "系统模型外部适配度",
+            "精密度与准确度",
+            "系统偏差与随机方差",
+            "运输装载率变异性"
+          ],
+          "limits": [
+            "英国低碳钢与 80% 装载率货运均为方法学说明算例，不代表特定商业数据库实测数据集。"
+          ]
+        },
+        {
+          "id": "psg-dapp147-ilcd2010-dqr-formula-and-five-aspects",
+          "artifactId": "art-ilcd-2010-pdf",
+          "locator": "第 12.3 节表 5—8 与式 3 数据质量评级算式及第 12.4 节表 9 五维合规准则",
+          "printedPages": "329–336",
+          "pdfIndices": [
+            348,
+            349,
+            350,
+            351,
+            352,
+            353,
+            354,
+            355
+          ],
+          "topics": [
+            "六项质量指标",
+            "未评5分与不适用0分",
+            "最弱项五倍权重式3",
+            "表7三档质量上限",
+            "表8算例23/9=2.56",
+            "表9五维合规"
+          ],
+          "limits": [
+            "表 7 仅定义至不高于 4 的“Data estimate”三档，未在总论表 7 中印出高于 4 至 5 的第四档名称。"
           ]
         }
       ],
@@ -16158,6 +16233,78 @@
           ],
           "limits": [
             "建议书列出 ISO 14067 与 ISO 14046 作为方法参照，不代表两份版权标准全文公开。"
+          ]
+        },
+        {
+          "id": "psg-dapp147-ec2021-secondary-hierarchy-and-cutoff",
+          "artifactId": "art-kb44-ec2021-r01-pdf",
+          "locator": "附件一第 4.6.3 节次级数据集选用阶梯与第 4.6.4 节累计 3.0% 截断规则",
+          "printedPages": "OJ L 144/79–80",
+          "pdfIndices": [
+            78,
+            79
+          ],
+          "topics": [
+            "EF合规次级数据优先",
+            "旧版转换数据集视为代理",
+            "ILCD-EL代理10%上限",
+            "数据缺口剔除与验证",
+            "累计3.0%截断"
+          ],
+          "limits": [
+            "公报原文明确写明转换自旧版 EF 合规体系的数据集视为代理数据，不能误读为未转换旧数据集可直接混用。"
+          ]
+        },
+        {
+          "id": "psg-dapp147-ec2021-dqr-equations-and-dnm",
+          "artifactId": "art-kb44-ec2021-r01-pdf",
+          "locator": "附件一第 4.6.5—4.6.5.8 节、表 20—25 及式 19—20 数据质量评级与数据需求矩阵",
+          "printedPages": "OJ L 144/80–86",
+          "pdfIndices": [
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85
+          ],
+          "topics": [
+            "四项评分指标与GeR符号",
+            "式19算术均值与表22五档",
+            "公司特定数据80%与1.5上限",
+            "表24—25语境重评",
+            "情境2选项2地域分降30%",
+            "ILCD-EL免重算DQR"
+          ],
+          "limits": [
+            "式 19 与式 20 在公报中以嵌入图像印刷；表 22 区间混用一位小数与整数端点（如 3 < DQR ≤ 4.0、DQR > 4）。"
+          ]
+        },
+        {
+          "id": "psg-dapp147-ec2021-verification-and-surveillance",
+          "artifactId": "art-kb44-ec2021-r01-pdf",
+          "locator": "附件一第 8.1—8.5.3 节及表 32 环境足迹研究验证、现场核查与三年期更新触发规则",
+          "printedPages": "OJ L 144/95–102",
+          "pdfIndices": [
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101
+          ],
+          "topics": [
+            "验证员至少6分资格",
+            "公司特定数据强制现场核查",
+            "Look@LCI偏差1%以内",
+            "最长3年有效期",
+            "单类恶化超10.0%与总分恶化超5.0%更新阈值"
+          ],
+          "limits": [
+            "公报第 96—97 页第 8.2—8.3 节内将第 8.3.1 节与第 8.4 节误印为“Section 9.3.1 / Section 9.4”。"
           ]
         }
       ],
@@ -34013,6 +34160,27 @@
           "limits": [
             "表1规定EF合规数据集元数据声明格式，不直接评判具体产品比较研究。"
           ]
+        },
+        {
+          "id": "psg-dapp147-ef31addendum-six-uuid-matrix-and-erratum",
+          "artifactId": "art-tox123-ef31-addendum-pdf",
+          "locator": "印第 2—5 页过程内嵌影响评价结果变动说明、第 5.2.15 节表 1 六组合规矩阵与第 5 页节号勘误",
+          "printedPages": "2–5",
+          "pdfIndices": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "topics": [
+            "内嵌影响评价结果随EF3.1更新",
+            "固定6组或5组合规系统标识",
+            "Not defined与Fully compliant精确映射",
+            "印第5页误印Section 5.4.1对应原第5.4.2节"
+          ],
+          "limits": [
+            "该 5 页官方增补 PDF 未印任何 JRC 或 EUR 报告编号；印第 5 页红字标题节号需与 2020 年原指南印第 28—29 页对读。"
+          ]
         }
       ],
       "appraisal": {
@@ -34232,6 +34400,70 @@
           ],
           "limits": [
             "数据集合规指南规定允许填报的位置码与回退规则，具体数值差异须结合各官方LCIA方法表逐项核验。"
+          ]
+        },
+        {
+          "id": "psg-dapp147-efguide2020-provider-dqr-and-ceiling",
+          "artifactId": "art-loc137-ef-guide-2020-pdf",
+          "locator": "第 5.2.17 节、式 F.1 与表 2 次级合规数据集供应端数据质量评级规则",
+          "printedPages": "25–27",
+          "pdfIndices": [
+            24,
+            25,
+            26
+          ],
+          "topics": [
+            "式F.1符号GR",
+            "单一总分前80%子过程重标定",
+            "单项加权得分上限3.0",
+            "方法学与完整性设Not applicable"
+          ],
+          "limits": [
+            "印第 25 页首句含“Nunc The DQR”排印残留，印第 26 页第 2.B 步首现将“TiR-SD”误印为“TiR-AD”并在后句澄清。"
+          ]
+        },
+        {
+          "id": "psg-dapp147-efguide2020-supporting-subprocesses",
+          "artifactId": "art-loc137-ef-guide-2020-pdf",
+          "locator": "第 5.4—5.4.2 节部分解聚中心数据集与非主要支撑子过程规范",
+          "printedPages": "27–29",
+          "pdfIndices": [
+            26,
+            27,
+            28
+          ],
+          "topics": [
+            "中心数据集标部分终止系统",
+            "非主要支撑子过程标单工序单元过程",
+            "免独立DQR与审查",
+            "禁止脱离父系统单独使用",
+            "2f8a3ebd标识"
+          ],
+          "limits": [
+            "仅适用于以 ILCD 格式提交的部分解聚次级数据集，不授权下游研究绕过主数据集元数据。"
+          ]
+        },
+        {
+          "id": "psg-dapp147-efguide2020-review-types-and-looklci",
+          "artifactId": "art-loc137-ef-guide-2020-pdf",
+          "locator": "第 8.1—8.3 节与表 3—5 过程数据集评审员资格、获批评审类型与 Look@LCI 核查",
+          "printedPages": "38–42",
+          "pdfIndices": [
+            37,
+            38,
+            39,
+            40,
+            41
+          ],
+          "topics": [
+            "表3逾2年经验与次数门槛",
+            "仅批准类型1与类型2联合评审",
+            "否决单人外部评审类型4",
+            "共识报告与两位数字DQR",
+            "Look@LCI偏差超1%不合规"
+          ],
+          "limits": [
+            "针对 EF 合规次级过程数据集的入库评审，与建议书第 8 章面向公开沟通研究的验证积分制分属不同阶段。"
           ]
         }
       ],
@@ -35167,6 +35399,295 @@
       "accessedAt": "2026-11-18",
       "sourceKeys": [
         "src-lcc143-oneill-2026-strong-sustainability"
+      ]
+    },
+    {
+      "id": "rd-dapp147-ilcd-el-2012",
+      "workId": "work-dapp147-ilcd-el-2012",
+      "title": "International Reference Life Cycle Data System (ILCD) Data Network - Compliance rules and entry-level requirements",
+      "version": "First edition, Version 1.1（2012，EUR 24380 EN，22 页官方 PDF）",
+      "url": "https://eplca.jrc.ec.europa.eu/uploads/ILCD-Data-Network-Compliance-Entry-level-Version1.1-Jan2012.pdf",
+      "readingStatus": "selected-passages",
+      "accessedAt": "2026-11-19",
+      "readAt": "2026-11-19",
+      "question": "ILCD 数据网络如何通过源数据集 UUID 编码完整手册合规与入门级合规，并在入门级中规定五维合规状态与最低评审要求？",
+      "argumentSummary": "报告建立五维合规声明体系：完整 ILCD 手册合规按四种决策情景乘三档质量拆成 12 套过程源数据集标识，而低于手册方法合规的入门级（d92a1a12）将数据质量合规设为“Not defined”、允许 VOC 等部分聚合基本流、按国际标准质量准则陈述数据质量并遵循国际标准过程方法，且允许单名合格外部评审员免交独立报告或单名合格内部评审员附独立报告。",
+      "rights": "欧盟出版局公开技术规范 PDF；公开记录仅含页码定位与原创制度分析，不重分发原 PDF。",
+      "appraisal": {
+        "basis": "本地保存 22 页官方 PDF 字节并校验 SHA-256，核对书目署名页（印第 1—3、19—20 页）并逐表核读印第 5—11 页与第 16—17 页。",
+        "methodologicalScope": "ILCD 数据网络节点准入与合规源数据集编码规范；非具体行业清单参数指南。",
+        "independence": "与 EUR 24708 EN 同属欧盟联合研究中心 ILCD 规范体系，系欧盟环境足迹合规矩阵直接继承的上游制度基石。",
+        "limitations": [
+          "未逐一核读第 3 节印第 12—15 页完整 ILCD 合规要素与细则文件索引表 5—6，以及第 5 节印第 18 页指南起草背景与多方征询概况。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-19"
+      },
+      "unread": [
+        "第 3 节印第 12—15 页完整 ILCD 合规要素与参考细则索引表 5—6，以及第 5 节印第 18 页起草与利益相关方征询概况。"
+      ],
+      "artifacts": [
+        {
+          "id": "art-dapp147-ilcd-el-2012-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "059d7bdebb6f3ac2a94e2db37dfac7d05f3e6a6cf05702ea245232de85d2c2c0",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/uploads/ILCD-Data-Network-Compliance-Entry-level-Version1.1-Jan2012.pdf",
+          "pageCount": 22
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-dapp147-ilcd2012-twelve-compliance-uuids",
+          "artifactId": "art-dapp147-ilcd-el-2012-pdf",
+          "locator": "第 2.1—2.2 节及表 2—4 完整 ILCD 合规 12 套过程源数据集标识与入门级标识",
+          "printedPages": "9–11",
+          "pdfIndices": [
+            8,
+            9,
+            10
+          ],
+          "topics": [
+            "4种决策情景乘3档质量共12套UUID",
+            "最长3年网络建设过渡期",
+            "入门级合规UUID d92a1a12",
+            "非过程合规UUID 9ba3ac1e"
+          ],
+          "limits": [
+            "表 3 图注明确指出入门级低于完整 ILCD 合规，不代表满足 ILCD 手册的方法学规定。"
+          ]
+        },
+        {
+          "id": "psg-dapp147-ilcd2012-entry-level-rules",
+          "artifactId": "art-dapp147-ilcd-el-2012-pdf",
+          "locator": "第 1 节表 1 与第 4 节表 7 数据网络入门级五维具体要求",
+          "printedPages": "5–6, 16–17",
+          "pdfIndices": [
+            4,
+            5,
+            15,
+            16
+          ],
+          "topics": [
+            "数据质量设Not defined第四状态",
+            "允许VOC等部分聚合基本流",
+            "ISO 14040/14044过程方法",
+            "单名外部免独立报告或单名内部附独立报告"
+          ],
+          "limits": [
+            "入门级单元过程层面的审查是否必需仍取决于数据集所声明的质量主张。"
+          ]
+        }
+      ],
+      "sourceKeys": [
+        "src-dapp147-ilcd-el-2012"
+      ]
+    },
+    {
+      "id": "rd-dapp147-ecoinvent-v3-2013",
+      "workId": "work-dapp147-ecoinvent-v3-2013",
+      "title": "Overview and methodology: Data quality guideline for the ecoinvent database version 3 (final)",
+      "version": "ecoinvent Report No. 1(v3)（2013-05-06 终稿，169 页官方 PDF）",
+      "url": "https://ecoinvent.org/wp-content/uploads/2020/10/201305_Data-Quality-Guideline-for-the-ecoinvent-database-version-3.pdf",
+      "readingStatus": "selected-passages",
+      "accessedAt": "2026-11-19",
+      "readAt": "2026-11-19",
+      "question": "ecoinvent v3 如何界定转换活动与市场活动、全球父过程与残差联动、交换级谱系对数正态方差，以及自动验证与人工编辑审查的边界？",
+      "argumentSummary": "指南将数据库拆分为转换活动与消费组合市场活动，强制要求每个活动先建全球父过程（GLO）并据此按产量差额动态生成世界其余地区残差（RoW）；质量信息不在数据集级聚合准入总分，而是按交换流叠加基本不确定度与五项谱系方差构成六项对数正态方差；入库区分写入第 3340 字段的 ecoEditor 自动验证与目标至少 3 名专家（含 4 类横向编辑）的人工审查，并如实披露 3.0 版上线时的残差负值置零、合理性检查缺失与专家覆盖缺口。",
+      "rights": "瑞士生命周期清单中心公开发布指南 PDF；公开记录仅含章节页码定位与原创方法评析，不重分发原 PDF。",
+      "appraisal": {
+        "basis": "本地保存 169 页官方 PDF 字节并校验 SHA-256，确认罗马页码前言后正文与 PDF 页码恒差 +8 页，逐节核对第 1、4、5、9、10、12、13 章选段。",
+        "methodologicalScope": "ecoinvent v3 未链接主数据库与系统模型构建总纲；概率谱系方差的实证校准留待第 27 章检验。",
+        "independence": "代表国际主流单元过程背景数据库的建模与编审范式，与欧盟 ILCD / EF 标量准入范式形成直接结构对照。",
+        "limitations": [
+          "方括号内的 3.0 版发布说明记录的是 2013 年首版状态，不代表后续 3.x 版本未作改进。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-19"
+      },
+      "unread": [
+        "第 6—8 章分配与系统模型算法细节、第 11 章特殊情境及第 14 章以后附录。"
+      ],
+      "artifacts": [
+        {
+          "id": "art-dapp147-ecoinvent-v3-2013-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "88fcc1512a8efe25c26af6254e0fff42b17d15e904bab36136b56e92eaf7fd9c",
+          "resolvedUrl": "https://ecoinvent.org/wp-content/uploads/2020/10/201305_Data-Quality-Guideline-for-the-ecoinvent-database-version-3.pdf",
+          "pageCount": 169
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-dapp147-ecoinvent2013-glo-row-and-markets",
+          "artifactId": "art-dapp147-ecoinvent-v3-2013-pdf",
+          "locator": "第 1.2.5 节与第 4.2—4.3 节全球父过程、世界其余地区残差及转换活动与市场活动规则",
+          "printedPages": "3–4, 13–18",
+          "pdfIndices": [
+            10,
+            11,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "topics": [
+            "强制全球父过程GLO",
+            "自动扣减生成残差RoW",
+            "3.0版负残差置零与直接复制GLO例外",
+            "转换活动与消费组合市场活动"
+          ],
+          "limits": [
+            "印第 15 页方括号说明针对 3.0 版发布时未同步更新 GLO 的历史过渡处置，具体涉及数据集另列于变更报告。"
+          ]
+        },
+        {
+          "id": "psg-dapp147-ecoinvent2013-pedigree-variance",
+          "artifactId": "art-dapp147-ecoinvent-v3-2013-pdf",
+          "locator": "第 10 章及表 10.1—10.5 基本不确定度与五项谱系指标的对数正态方差合成",
+          "printedPages": "70–72, 75–78",
+          "pdfIndices": [
+            77,
+            78,
+            79,
+            82,
+            83,
+            84,
+            85
+          ],
+          "topics": [
+            "交换级而非数据集级评分",
+            "基本不确定度加五项谱系方差共六项和",
+            "最差档谱系方差和0.21",
+            "蒙特卡洛清单传播边界"
+          ],
+          "limits": [
+            "印第 77—78 页承认参数相关性与模型选择不确定性未纳入常规蒙特卡洛计算，且经验方差表缺乏全面实测校准。"
+          ]
+        },
+        {
+          "id": "psg-dapp147-ecoinvent2013-ecoeditor-and-editorial-review",
+          "artifactId": "art-dapp147-ecoinvent-v3-2013-pdf",
+          "locator": "第 1.3 节、第 5.9.2 节、第 9.4.2 节表 9.1 与第 12—13 章自动验证、多编辑审查及未指明残差规则",
+          "printedPages": "4, 41, 63, 103–109",
+          "pdfIndices": [
+            11,
+            48,
+            70,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116
+          ],
+          "topics": [
+            "ecoEditor第3340字段自动验证",
+            "至少3名专家含4类横向编辑审查",
+            "3.0版合理性检查缺失与专家未全覆盖披露",
+            "总和物质扣减与unspecified残差拆分"
+          ],
+          "limits": [
+            "第 13 章新数据集嵌入残差拆分为展望性设计说明，不等于 3.0 版全库已自动执行。"
+          ]
+        }
+      ],
+      "sourceKeys": [
+        "src-dapp147-ecoinvent-v3-2013"
+      ]
+    },
+    {
+      "id": "rd-dapp147-tidas-spec-v030",
+      "workId": "work-dapp147-tidas-spec-v030",
+      "title": "TianGong LCA Data System Public Specification (@tiangong-lca/tidas-spec)",
+      "version": "Version 0.3.0（公开规则版本 2026.09.20）",
+      "url": "https://github.com/tiangong-lca/tidas-spec",
+      "readingStatus": "selected-passages",
+      "accessedAt": "2026-11-19",
+      "readAt": "2026-11-19",
+      "question": "TIDAS v0.3.0 公开数据规范如何在模式与公开规则层表达过程审查状态、生产与消费组合限定词、版本号单调性，以及同下游消费端门禁策略的治理边界？",
+      "argumentSummary": "公开规范在过程模式中用 anyOf 支持单条或非空数组审查记录，保留包含“Not reviewed”在内的六项审查类型并将完整报告引用设为可选；在已审公开规则中区分生产组合与消费组合权重基础、分离绿证合同属性与物理发电技术、强制要求 NN.NN 或 NN.NN.NNN 版本号随内容变更递增；同时明确公开索引不包含严重度、阶段归属与默认阻断，把放行与豁免裁决留给消费方。",
+      "rights": "MIT 许可公开规范仓库；公开记录仅含模式路径、公开规则语义与治理边界比较。",
+      "appraisal": {
+        "basis": "直接核对工作区 tidas-spec v0.3.0 受审基线（20 份规范文件）中的 JSON 模式、公开规则索引与公开裁决说明并校验 SHA-256。",
+        "methodologicalScope": "公开数据交换模式与已审公开规则定义；不包含任何具体产品或注册节点的消费端执行门禁配置。",
+        "independence": "与国际 ILCD / EF 规范同源演进但明确剥离制度准入策略，用于阐明数据模式合法性与消费端合规认证的区别。",
+        "limitations": [
+          "模式第 1244 行 validation 描述仍保留上游遗留英文短句“Review information on LCIA method.”，实际绑定对象为过程数据集审查。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-19"
+      },
+      "unread": [
+        "流、流属性、单位组、生命周期影响评价方法及模型等其余模式的逐字段细则。"
+      ],
+      "artifacts": [
+        {
+          "id": "art-dapp147-tidas-processes-schema-json",
+          "mediaType": "application/json",
+          "sha256": "566eecbdbed49153280b5810e0a9a37e8de2c13dd10716f278b5d6f81184f7fd",
+          "resolvedUrl": "https://raw.githubusercontent.com/tiangong-lca/tidas-spec/a84ff8b3b43c87ba30f0f5feec83f9cb4a50b7b7/assets/tidas/schemas/tidas_processes.json"
+        },
+        {
+          "id": "art-dapp147-tidas-public-rules-json",
+          "mediaType": "application/json",
+          "sha256": "462310e9e59b01484379ae2d9db8dd8c765acd03e291040249d3b856ebdea9a4",
+          "resolvedUrl": "https://raw.githubusercontent.com/tiangong-lca/tidas-spec/a84ff8b3b43c87ba30f0f5feec83f9cb4a50b7b7/assets/tidas/rules/public-rules.v1.json"
+        },
+        {
+          "id": "art-dapp147-tidas-adjudication-md",
+          "mediaType": "text/markdown",
+          "sha256": "a81d4d2fdcd1a6b4046a583aba58c77a04e3b60abc7d8297584f2087dc2dcf04",
+          "resolvedUrl": "https://raw.githubusercontent.com/tiangong-lca/tidas-spec/a84ff8b3b43c87ba30f0f5feec83f9cb4a50b7b7/docs/public-rule-adjudication.md"
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-dapp147-tidas-process-review-schema",
+          "artifactId": "art-dapp147-tidas-processes-schema-json",
+          "locator": "tidas_processes.json 第 4—314 行 ProcessReview 定义与第 1243—1269 行 validation.review 绑定",
+          "topics": [
+            "6项审查类型受控枚举含Not reviewed",
+            "条件必填范围与详情",
+            "可选完整报告引用",
+            "anyOf单条或非空数组历史"
+          ],
+          "limits": [
+            "JSON 模式只校验字段结构与条件必填，不验证审查者资质或报告实质结论。"
+          ]
+        },
+        {
+          "id": "psg-dapp147-tidas-public-rules",
+          "artifactId": "art-dapp147-tidas-public-rules-json",
+          "locator": "public-rules.v1.json 第 86—133 行结构化过程限定词与定长单调版本号规则（受审基线 20 份文件）",
+          "topics": [
+            "生产组合与消费组合权重基础",
+            "1:1变压或电网损耗代理不自动变消费组合",
+            "绿证合同属性与物理发电分离",
+            "NN.NN与NN.NN.NNN版本号递增"
+          ],
+          "limits": [
+            "结构化限定词规则的规范级别标为 recommendation，版本号格式规则标为 requirement。"
+          ]
+        },
+        {
+          "id": "psg-dapp147-tidas-adjudication-boundary",
+          "artifactId": "art-dapp147-tidas-adjudication-md",
+          "locator": "public-rule-adjudication.md 第 32—119 行公开规则定义与消费端门禁权责分离说明",
+          "topics": [
+            "公开索引排除严重度与默认阻断",
+            "工具链可执行校验与消费端策略分层",
+            "消费端不得把未通过公开定义的记录改判为通过"
+          ],
+          "limits": [
+            "不规定任何单一行业注册库或产品环境足迹项目的具体阻断阈值。"
+          ]
+        }
+      ],
+      "sourceKeys": [
+        "src-dapp147-tidas-spec-v030"
       ]
     }
   ],
@@ -36279,6 +36800,16 @@
       "nextAction": "涉及 2008 年专著公式或 2011 年实务守则单行本表项时，必须严格限定在 Swarr 等 2011 年期刊论文、UNEP/SETAC 2011 年指南及 Heijungs 等 2013 年直接引述并核验的范围内；涉及单项足迹或货币估值 ISO 标准时，仅陈述欧盟建议书或 UNEP GLAM 公开报告已明载的关系与范围差异，绝不伪称已核标准条文全文。",
       "affectedUnits": [
         "B24",
+        "B32"
+      ]
+    },
+    {
+      "id": "gap-dapp147-ilcd-review-schemes-and-ef-raw-nodes",
+      "description": "ILCD 手册第 11 章引述的独立评审方案与评审员资格分册原件、ecoinvent 3.0 变更报告（Moreno Ruiz 等 2013）逐数据集例外清单，以及受节点许可协议保护的商业 EF 3.1 官方单数据集原始包尚未在公开工作区全量获取。",
+      "nextAction": "涉及 ILCD 关键评审时严格陈述总论卷第 11 章与第 6.11 节已印明的分卷委派及情景 B 利益相关方规则；涉及 EF 数据集波动与合规声明时严格限定在 Fazio 等 2020、Valente 等 2022 及 JRC130796 对 2,752 份官方数据集公布的汇总实测结果内，不伪称已逐份重跑受限商业节点原始包。",
+      "affectedUnits": [
+        "B25",
+        "B28",
         "B32"
       ]
     }
@@ -39247,6 +39778,36 @@
         "B23",
         "B24",
         "B32"
+      ]
+    },
+    {
+      "id": "rev-dapp147-b25-data-applicability-comparison",
+      "before": "第六部首章《数据适用性》及其两篇网站细篇《过程数据的用途》《数据审查与版本》仅依据 2011 年 UNEP/SETAC 数据库全球指导原则单一文献作一般性原则介绍，尚未横向比较 ILCD、欧盟环境足迹（EU 2021/2279、EF Data Guide 2.0 与 3.1 增补说明、JRC130796、2026 过渡指导）、ecoinvent v3 与天工公开规范（TIDAS v0.3.0）在过程角色与系统衔接、固有代表性与语境重评、质量指标聚合算式与单分截断、自动验证与团队评审门槛、五维合规块“Not defined”语义以及换版重审与缺口补齐阶梯上的制度同异与次序反转；且既有 14 条证据定位符与若干旧论述尾注尚存阅读器索引或未译英文缩写残留。",
+      "after": "2026-11-19 在完整保留既有 14 条 cl-db2011-* 论述身份与四节／双三节结构的基础上，新增 8 条跨体系比较论述（全章 14 增至 22 注，两细篇各由 7 增至 11 注）与 2 张六列对照表，绑定 18 对一比一单载体证据与选段及 63 项精确有理数事实，一并规范 16 条既有证据定位符与旧论述首现全称、术语括注及收束前提次序，用算式与官方实测数据闭环证明最弱项五倍惩罚对四维算术均值的次序反转、出厂 1.0 分数据集在异境或自营情境下的失格、前 80% 单一总分加权与 10% 入门级代理对痕量毒性缺项的遮蔽、五维合规块“Not defined”的真实边界，以及 EF 3.0 升 3.1 时 2,752 份数据集主类易位与 3 年有效期内恶化超 10.0% / 5.0% 强制重审规则。",
+      "reasoning": "将第六部入口从单一指南摘要升级为贯穿过程对象角色、质量算式、评审合规与换版补缺的概念主导跨体系比较，并为第 26—28 章铺设清晰分工接口。",
+      "status": "applied",
+      "triggerPassageIds": [
+        "psg-dapp147-ilcd2010-dataset-types-and-review",
+        "psg-dapp147-ilcd2010-representativeness-vs-appropriateness",
+        "psg-dapp147-ilcd2010-dqr-formula-and-five-aspects",
+        "psg-dapp147-ilcd2012-twelve-compliance-uuids",
+        "psg-dapp147-ilcd2012-entry-level-rules",
+        "psg-dapp147-ec2021-secondary-hierarchy-and-cutoff",
+        "psg-dapp147-ec2021-dqr-equations-and-dnm",
+        "psg-dapp147-ec2021-verification-and-surveillance",
+        "psg-dapp147-efguide2020-provider-dqr-and-ceiling",
+        "psg-dapp147-efguide2020-supporting-subprocesses",
+        "psg-dapp147-efguide2020-review-types-and-looklci",
+        "psg-dapp147-ef31addendum-six-uuid-matrix-and-erratum",
+        "psg-dapp147-ecoinvent2013-glo-row-and-markets",
+        "psg-dapp147-ecoinvent2013-pedigree-variance",
+        "psg-dapp147-ecoinvent2013-ecoeditor-and-editorial-review",
+        "psg-dapp147-tidas-process-review-schema",
+        "psg-dapp147-tidas-public-rules",
+        "psg-dapp147-tidas-adjudication-boundary"
+      ],
+      "affectedUnits": [
+        "B25"
       ]
     }
   ]
