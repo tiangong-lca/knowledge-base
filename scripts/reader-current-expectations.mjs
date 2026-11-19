@@ -1,3 +1,5 @@
+import futConfig from '../config/reader-future-scenarios.json' with { type: 'json' };
+import { selectFutureScenarios, effectiveFutureScenarios, futureScenariosLayout } from './reader-future-scenarios.mjs';
 import intConfig from '../config/reader-interpretation-bags.json' with { type: 'json' };
 import { selectInterpretationBags, effectiveInterpretationBags, interpretationBagsLayout } from './reader-interpretation-bags.mjs';
 import wscConfig from '../config/reader-wall-service-comparison.json' with { type: 'json' };
@@ -97,8 +99,9 @@ export const currentDataQualityComparison = selectDataQualityComparison(dqpConfi
 export const currentPart6Reread = selectPart6Reread(part6Config, undefined, preview);
 export const currentWallServiceComparison = selectWallServiceComparison(wscConfig, undefined, preview);
 export const currentInterpretationBags = selectInterpretationBags(intConfig, undefined, preview);
+export const currentFutureScenarios = selectFutureScenarios(futConfig, undefined, preview);
 export const isReadableBookReviewPreview = oldPreview
-  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview' || acidConfig.status === 'preview' || mineralConfig.status === 'preview' || fossilConfig.status === 'preview' || ozoneConfig.status === 'preview' || ozradConfig.status === 'preview' || toxConfig.status === 'preview' || waterConfig.status === 'preview' || biogenicConfig.status === 'preview' || eutroConfig.status === 'preview' || particulateConfig.status === 'preview' || part4Config.status === 'preview' || weightingConfig.status === 'preview' || localizationConfig.status === 'preview' || socialConfig.status === 'preview' || costConfig.status === 'preview' || part5Config.status === 'preview' || dappConfig.status === 'preview' || uncConfig.status === 'preview' || pfrConfig.status === 'preview' || dqpConfig.status === 'preview' || part6Config.status === 'preview' || wscConfig.status === 'preview' || intConfig.status === 'preview');
+  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview' || acidConfig.status === 'preview' || mineralConfig.status === 'preview' || fossilConfig.status === 'preview' || ozoneConfig.status === 'preview' || ozradConfig.status === 'preview' || toxConfig.status === 'preview' || waterConfig.status === 'preview' || biogenicConfig.status === 'preview' || eutroConfig.status === 'preview' || particulateConfig.status === 'preview' || part4Config.status === 'preview' || weightingConfig.status === 'preview' || localizationConfig.status === 'preview' || socialConfig.status === 'preview' || costConfig.status === 'preview' || part5Config.status === 'preview' || dappConfig.status === 'preview' || uncConfig.status === 'preview' || pfrConfig.status === 'preview' || dqpConfig.status === 'preview' || part6Config.status === 'preview' || wscConfig.status === 'preview' || intConfig.status === 'preview' || futConfig.status === 'preview');
 const previousPlan = readableBookReviewPlan(oldPreview
   ? acceptance.units
   : pinnedReadableBookUnits(acceptance, readableBookBaselineDigest, readableBookAcceptancePins));
@@ -131,7 +134,8 @@ const acceptedPfr = effectiveProductFootprintComparison(acceptedUnc, currentProd
 const acceptedDqp = effectiveDataQualityComparison(acceptedPfr, currentDataQualityComparison);
 const acceptedPart6 = effectivePart6Reread(acceptedDqp, currentPart6Reread);
 const acceptedWsc = effectiveWallServiceComparison(acceptedPart6, currentWallServiceComparison);
-export const currentBookPlan = effectiveInterpretationBags(acceptedWsc, currentInterpretationBags);
+const acceptedInt = effectiveInterpretationBags(acceptedWsc, currentInterpretationBags);
+export const currentBookPlan = effectiveFutureScenarios(acceptedInt, currentFutureScenarios);
 
 export function currentBookRecordMatches(kind, previous, current, projection) {
   if (projection !== undefined) return matchesAcceptedRecord(currentBookPlan, kind, previous, current, projection);
@@ -165,7 +169,8 @@ export function currentBookLayout(key, previous) {
   if (key === 'B08:title') return flowBoundaryTitle(currentFlowBoundary, flowBoundaryChapter, copyedit);
   if (key === 'B08:headings') return flowBoundarySections(currentFlowBoundary, copyedit);
   if (key === 'B08:ordinary-dispositions') return flowBoundaryOrdinaryDispositions(currentFlowBoundary, copyedit);
-  return interpretationBagsLayout(currentInterpretationBags, key,
+  return futureScenariosLayout(currentFutureScenarios, key,
+    interpretationBagsLayout(currentInterpretationBags, key,
     wallServiceComparisonLayout(currentWallServiceComparison, key,
     part6RereadLayout(currentPart6Reread, key,
     dataQualityComparisonLayout(currentDataQualityComparison, key,
@@ -174,5 +179,5 @@ export function currentBookLayout(key, previous) {
     particulateComparisonLayout(currentParticulateComparison, key,
       biogenicCarbonLayout(currentBiogenicCarbon, key,
         toxicityComparisonLayout(currentToxicityComparison, key,
-          substitutionRulesLayout(currentSubstitutionRules, key, serviceConstraintsLayout(currentServiceConstraints, key, copyedit)))))))))));
+          substitutionRulesLayout(currentSubstitutionRules, key, serviceConstraintsLayout(currentServiceConstraints, key, copyedit))))))))))));
 }

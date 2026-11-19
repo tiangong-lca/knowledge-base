@@ -5,6 +5,8 @@ import test from 'node:test';
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
 import loadShift from '../config/reader-load-shift.json' with { type: 'json' };
 import service from '../config/reader-service-constraints.json' with { type: 'json' };
+import fut from '../config/reader-future-scenarios.json' with { type: 'json' };
+import { restoreFutureScenariosTestFiles } from './reader-future-scenarios.mjs';
 import intBags from '../config/reader-interpretation-bags.json' with { type: 'json' };
 import { restoreInterpretationBagsTestFiles } from './reader-interpretation-bags.mjs';
 import wsc from '../config/reader-wall-service-comparison.json' with { type: 'json' };
@@ -47,23 +49,24 @@ async function loadInput() {
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [p, bytes] of [...shiftFiles, ...serviceFiles]) files.set(p, bytes);
+  restoreFutureScenariosTestFiles(files, fut.unit);
   restoreInterpretationBagsTestFiles(files, intBags.unit);
   restoreWallServiceComparisonTestFiles(files, wsc.unit);
   restorePart6RereadTestFiles(files, part6.unit);
   restoreDataQualityComparisonTestFiles(files, dqp.unit);
   restoreProductFootprintComparisonTestFiles(files, pfr.unit);
-  const prev149 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit);
+  const prev149 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit);
   return { ...prev149, files };
 }
 
 test('Uncertainty comparison validates all 42 BigInt numericFacts, 10 single-artifact passages, and 8 new B26 claims', () => {
-  const prev149 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit);
+  const prev149 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit);
   assert.equal(prev149.catalog.claims.length, 1060);
   validateUncertaintyComparisonFactors(prev149.catalog, prev149.readings);
 });
 
 test('Uncertainty comparison fails closed on tampered numericFact, mediaType, or raw locator marker', () => {
-  const prev149 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit);
+  const prev149 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit);
   const tampered = structuredClone(prev149.catalog);
   const ev = tampered.evidence.find(row => row.id === 'ev-unc149-groen2017-methods-cost-case-studies');
   const nf = ev.numericFacts.find(row => row.id === 'nf-unc149-groen-c1-cv30-var-kia');

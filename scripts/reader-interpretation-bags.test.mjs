@@ -4,6 +4,9 @@ import test from 'node:test';
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
 import loadShift from '../config/reader-load-shift.json' with { type: 'json' };
 import service from '../config/reader-service-constraints.json' with { type: 'json' };
+import fut from '../config/reader-future-scenarios.json' with { type: 'json' };
+import { restoreFutureScenariosTestFiles } from './reader-future-scenarios.mjs';
+import { previousScientificTestRecords } from './fixtures/scientific-receipt-envelope.mjs';
 import config from '../config/reader-interpretation-bags.json' with { type: 'json' };
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { inspectReadableBookEdition } from './reader-current-edition.mjs';
@@ -32,7 +35,9 @@ async function loadInput() {
     readServiceConstraintsFiles(process.cwd(), service.unit),
   ]);
   for (const [p, b] of [...shiftFiles, ...serviceFiles]) files.set(p, b);
-  return { catalog, readings, literature, files };
+  restoreFutureScenariosTestFiles(files, fut.unit);
+  const prev159 = previousScientificTestRecords({ catalog, readings, literature }, fut.unit);
+  return { ...prev159, files };
 }
 
 test('Unit #159 B30 interpretation & shopping-bag comparison prepares cleanly and recovers exact c5a257a0 predecessor pin with 1086 claims and 0 case edits', async () => {

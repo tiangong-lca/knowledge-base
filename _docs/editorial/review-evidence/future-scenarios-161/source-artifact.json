@@ -1,0 +1,425 @@
+{
+  "schemaVersion": 1,
+  "kind": "source",
+  "unit": "future-scenarios-161",
+  "date": "2026-11-19",
+  "subjectSha256": "c03e8770e1f554c1aa2eab734d8065704191447bf35968d3ebe026dd807b3292",
+  "scope": [
+    "content/docs/book/future-technology-and-context.mdx",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:order:sources",
+    "researchMetadata:order:readings",
+    "researchMetadata:order:literature",
+    "researchMetadata:public-projection",
+    "claims:cl-fut161-terminology-axes",
+    "claims:cl-fut161-upscaling-methods",
+    "claims:cl-fut161-superstructure-iam",
+    "claims:cl-fut161-superstructure-limits",
+    "claims:cl-fut161-dynamic-time-horizons",
+    "claims:cl-fut161-temporal-barriers-values",
+    "evidence:ev-fut161-arvidsson-terminology",
+    "evidence:ev-fut161-tsoy-upscaling",
+    "evidence:ev-fut161-steubing-superstructure",
+    "evidence:ev-fut161-steubing-limits",
+    "evidence:ev-fut161-lueddeckens-temporal",
+    "evidence:ev-fut161-lueddeckens-barriers",
+    "sources:src-fut161-arvidsson-2024",
+    "sources:src-fut161-tsoy-2020",
+    "sources:src-fut161-steubing-2021",
+    "sources:src-fut161-lueddeckens-2020",
+    "readings:rd-fut161-arvidsson-2024",
+    "readings:rd-fut161-tsoy-2020",
+    "readings:rd-fut161-steubing-2021",
+    "readings:rd-fut161-lueddeckens-2020",
+    "literature:work-fut161-arvidsson-2024",
+    "literature:work-fut161-tsoy-2020",
+    "literature:work-fut161-steubing-2021",
+    "literature:work-fut161-lueddeckens-2020"
+  ],
+  "observed": "Part VII Unit 3 (B31《未来技术与情景》, content/docs/book/future-technology-and-context.mdx) adding 6 prospective/ex-ante/upscaling/superstructure/dynamic-LCA claims (cl-fut161-*), 1 intro paragraph, 1 five-column comparison table, 4 SHA-256-verified Springer CC BY 4.0 primary sources (Arvidsson et al. 2024 7 pp., Tsoy et al. 2020 13 pp., Steubing & de Koning 2021 15 pp., Lueddeckens, Saling & Guenther 2020 17 pp.), 4 readings, 4 literature works, and 6 evidence records with 14 BigInt-verified numericFacts against exact predecessor commit ac54b2594efab9d985e8f2aac677d68e97573643.",
+  "observations": {
+    "state": {
+      "before": "8cee455c6adcaf3db92903ac5f7e53bc28b39e9dc4ffd1b47c98502fae6b4c4e",
+      "after": "63fb719edbadaca5b4de26a3360ab1b68b19c00d275d0cdc773c27c295e130c7"
+    },
+    "changes": [
+      {
+        "kind": "file",
+        "key": "content/docs/book/future-technology-and-context.mdx",
+        "from": "aee084ca20f91aaf7f1709b97875e5adbb8c081909344169394a9e1f28b599b3",
+        "to": "37be3b07a787d4235667488dd34aacb39531fa714b2da79fbd244cd8ec180095",
+        "rationale": "在第三十一章《未来技术与情景》保持全部 9 条既有论述与 3 个冻结节标题逐字节不变的前提下，新增 6 条前瞻性／事前 LCA 术语双轴、中试放大路径、超结构与 IAM 情景耦合及动态时间边界比较论述，并配 1 段引导语与 1 张 5 列跨方法对照表。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:claims",
+        "from": {
+          "raw": "dfa49d984bbd3af2da0c46da3600ec1f713775e306ea9e8fbf80a7ccf83b55f5",
+          "public": null,
+          "protected": "dfa49d984bbd3af2da0c46da3600ec1f713775e306ea9e8fbf80a7ccf83b55f5"
+        },
+        "to": {
+          "raw": "0b5a191818fc6d87b6ee6beb5d44d69a94f55be094050701d5f51124ec5e56c7",
+          "public": null,
+          "protected": "0b5a191818fc6d87b6ee6beb5d44d69a94f55be094050701d5f51124ec5e56c7"
+        },
+        "rationale": "更新研究公开投影与排序索引，以登记第三十一章新增 4 篇一手开放获取期刊来源（不改动既有论述或文献条目）。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:evidence",
+        "from": {
+          "raw": "83c8f391c9103df1b0c7fe7c149c738301e8c5601e9d551dc2657950a601a156",
+          "public": null,
+          "protected": "83c8f391c9103df1b0c7fe7c149c738301e8c5601e9d551dc2657950a601a156"
+        },
+        "to": {
+          "raw": "f5174e221c47c6e83b398aeac5346cb3609a342dea93d494097c57db9dcda095",
+          "public": null,
+          "protected": "f5174e221c47c6e83b398aeac5346cb3609a342dea93d494097c57db9dcda095"
+        },
+        "rationale": "更新研究公开投影与排序索引，以登记第三十一章新增 4 篇一手开放获取期刊来源（不改动既有论述或文献条目）。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:sources",
+        "from": {
+          "raw": "6ccde462fb62153abc3be55ba8865ebb353a251fb67a7f25316a8d51738d5faa",
+          "public": null,
+          "protected": "6ccde462fb62153abc3be55ba8865ebb353a251fb67a7f25316a8d51738d5faa"
+        },
+        "to": {
+          "raw": "730d2d6a82a283a3b882b9468753d43de22cb29953ab36b8ff16c09c65cb8130",
+          "public": null,
+          "protected": "730d2d6a82a283a3b882b9468753d43de22cb29953ab36b8ff16c09c65cb8130"
+        },
+        "rationale": "更新研究公开投影与排序索引，以登记第三十一章新增 4 篇一手开放获取期刊来源（不改动既有论述或文献条目）。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:readings",
+        "from": {
+          "raw": "083b9ef12a7631b0dd24feb51d87084acf6b84d6bf2475afbe5b3319850d3bf3",
+          "public": null,
+          "protected": "083b9ef12a7631b0dd24feb51d87084acf6b84d6bf2475afbe5b3319850d3bf3"
+        },
+        "to": {
+          "raw": "35b2f5014073350b795d384ea217f0f4454808f9675783a8086472a2d0f80d5b",
+          "public": null,
+          "protected": "35b2f5014073350b795d384ea217f0f4454808f9675783a8086472a2d0f80d5b"
+        },
+        "rationale": "更新研究公开投影与排序索引，以登记第三十一章新增 4 篇一手开放获取期刊来源（不改动既有论述或文献条目）。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:literature",
+        "from": {
+          "raw": "764853ca1475bc8283cfe87d36598bcc8858d8ea6e6d00fe42e463539962798a",
+          "public": null,
+          "protected": "764853ca1475bc8283cfe87d36598bcc8858d8ea6e6d00fe42e463539962798a"
+        },
+        "to": {
+          "raw": "2c9d2a09d5cb2d6d195f2c845a7b52845fded457dce0b768016c7e6f823aa876",
+          "public": null,
+          "protected": "2c9d2a09d5cb2d6d195f2c845a7b52845fded457dce0b768016c7e6f823aa876"
+        },
+        "rationale": "更新研究公开投影与排序索引，以登记第三十一章新增 4 篇一手开放获取期刊来源（不改动既有论述或文献条目）。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:public-projection",
+        "from": {
+          "raw": "88642ad31084eee749430765d6f6c057c6b019307c77623f5e1da8fca3e6989c",
+          "public": null,
+          "protected": "88642ad31084eee749430765d6f6c057c6b019307c77623f5e1da8fca3e6989c"
+        },
+        "to": {
+          "raw": "b5424922e60a7928b15cc84dc2a8aaa6d4b658588206db0c40625823b4471aa5",
+          "public": null,
+          "protected": "b5424922e60a7928b15cc84dc2a8aaa6d4b658588206db0c40625823b4471aa5"
+        },
+        "rationale": "更新研究公开投影与排序索引，以登记第三十一章新增 4 篇一手开放获取期刊来源（不改动既有论述或文献条目）。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fut161-terminology-axes",
+        "from": null,
+        "to": {
+          "raw": "2bdd596ac6c026f3edc5762fad5efe5ce8844c596c25cb5eb314755b810684e6",
+          "public": "2bdd596ac6c026f3edc5762fad5efe5ce8844c596c25cb5eb314755b810684e6",
+          "protected": "4931c89084cb8a15e79f781e11394d4eb57b87e93977a2296ff13b29469f3fda"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fut161-upscaling-methods",
+        "from": null,
+        "to": {
+          "raw": "be546f67e5e14f2a3a7b5522efd6a16420893e0b96ed11e91ce15a8570c0114e",
+          "public": "be546f67e5e14f2a3a7b5522efd6a16420893e0b96ed11e91ce15a8570c0114e",
+          "protected": "a576c1abeff14fc70816f00f46df5198f1d76b445c3f86c1d9d4c2a8b985229c"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fut161-superstructure-iam",
+        "from": null,
+        "to": {
+          "raw": "865299ade32047a6095b27c34ba01f32593c4a25b8e9ed76e17cc68df44b15b8",
+          "public": "865299ade32047a6095b27c34ba01f32593c4a25b8e9ed76e17cc68df44b15b8",
+          "protected": "487f6cab9659836ca4accf1750582b2a93be2a6caa6ed8f234b517e8520f8ed6"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fut161-superstructure-limits",
+        "from": null,
+        "to": {
+          "raw": "5fba4da3473cb5a8cbb756dee5e7ddcd246c2631e45428cd4bdfac324c2e5165",
+          "public": "5fba4da3473cb5a8cbb756dee5e7ddcd246c2631e45428cd4bdfac324c2e5165",
+          "protected": "a448893277759995c576553c9e3445c0b84b2060eb504b96b533aed467fb5168"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fut161-dynamic-time-horizons",
+        "from": null,
+        "to": {
+          "raw": "b3001cca4df0d2d091a9b417188fca975d11a2fbfbcbb1e35dc6f23eeaf86eb0",
+          "public": "b3001cca4df0d2d091a9b417188fca975d11a2fbfbcbb1e35dc6f23eeaf86eb0",
+          "protected": "9c5a4ef6fc79a848022bd4abcde720e6a49e35a5300dbf8f35f233e8b97ebfcb"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fut161-temporal-barriers-values",
+        "from": null,
+        "to": {
+          "raw": "85790059194028e5033bc09d1c4b61bd310ebf298921d48a369aef58f61dfd38",
+          "public": "85790059194028e5033bc09d1c4b61bd310ebf298921d48a369aef58f61dfd38",
+          "protected": "f3996714a0d367209f9b486fc1d3a09dbbc8112bdc4ae1f1bcf59e8980b7b774"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fut161-arvidsson-terminology",
+        "from": null,
+        "to": {
+          "raw": "df10165fab8403334000b84b7568e535f4f016892ab902a324567a6d0bfc0af7",
+          "public": "029936aedf3886e3bf9313155cab08c74b1fd888d87bd98c038dd344562090f9",
+          "protected": "df10165fab8403334000b84b7568e535f4f016892ab902a324567a6d0bfc0af7"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fut161-tsoy-upscaling",
+        "from": null,
+        "to": {
+          "raw": "9fb5fcde981ae5e7da4ad72da861e4ebed96c6ee144c4a6cdefd1b830867fb59",
+          "public": "8871adb60bba08380909bd6fb6c2ee2e85007d329d2be43eb0f5cb92f17f7453",
+          "protected": "9fb5fcde981ae5e7da4ad72da861e4ebed96c6ee144c4a6cdefd1b830867fb59"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fut161-steubing-superstructure",
+        "from": null,
+        "to": {
+          "raw": "4bf2c9d2bfaa883327c6c31de70db4545ea1915ee6c53ab03d1a1db1af921d19",
+          "public": "d7210e98e5522cbd84e00759625ea871245723176e4f5989607d58660fbf0629",
+          "protected": "4bf2c9d2bfaa883327c6c31de70db4545ea1915ee6c53ab03d1a1db1af921d19"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fut161-steubing-limits",
+        "from": null,
+        "to": {
+          "raw": "0cbb95efccd5b7ac00941998a3a2ef7e2468e0ae44c3d2b0ddab1b071c173a9f",
+          "public": "6d3c8c0b865757816544b2d26a7a2b55ce157f03b1059ee02861c999973ff8f7",
+          "protected": "0cbb95efccd5b7ac00941998a3a2ef7e2468e0ae44c3d2b0ddab1b071c173a9f"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fut161-lueddeckens-temporal",
+        "from": null,
+        "to": {
+          "raw": "462c0d97a0717488eefabeb8ef5c2b7e966aacdecd2cbaedd24fcb8328f69c02",
+          "public": "8e4e989b9b746c589b8f93e50142021a6ae08be4d8946f5adec45cc5f5be9fb4",
+          "protected": "462c0d97a0717488eefabeb8ef5c2b7e966aacdecd2cbaedd24fcb8328f69c02"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fut161-lueddeckens-barriers",
+        "from": null,
+        "to": {
+          "raw": "33eab657f2b580dee670b8ead8062e7b34cdd9258993aaa72751dd89895dd8f4",
+          "public": "de7f4c29fdce77b009711b85acc8fa5bfd05b0c738cffba99fab340decd17100",
+          "protected": "33eab657f2b580dee670b8ead8062e7b34cdd9258993aaa72751dd89895dd8f4"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-fut161-arvidsson-2024",
+        "from": null,
+        "to": {
+          "raw": "6786385a642bb68ca3874092858fc887a3780a2fc1234a445de470287d04da95",
+          "public": "f91c08148947fbcf7990583c4486e5bc36c6f2468c9972845fc459863b905836",
+          "protected": "6786385a642bb68ca3874092858fc887a3780a2fc1234a445de470287d04da95"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-fut161-tsoy-2020",
+        "from": null,
+        "to": {
+          "raw": "68b345e9cb7c5bdfa94e4616d5ad3e88c94aa81f9e106f9aa8445a31b275f8fc",
+          "public": "ed6a9189cab82511e69e0a3b1d9fc729b59a0b017237ab04fd8003f8d271b40c",
+          "protected": "68b345e9cb7c5bdfa94e4616d5ad3e88c94aa81f9e106f9aa8445a31b275f8fc"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-fut161-steubing-2021",
+        "from": null,
+        "to": {
+          "raw": "71cdf52d847306e9cf76851b19dec2fe28df472b4228e807e7a9333d7f4d6eff",
+          "public": "548e75b1bb3ee28b82f2bebad4acef71ae7e9b1b065c79e82ff24b99502e713c",
+          "protected": "71cdf52d847306e9cf76851b19dec2fe28df472b4228e807e7a9333d7f4d6eff"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-fut161-lueddeckens-2020",
+        "from": null,
+        "to": {
+          "raw": "b6702970bd4a79170de5991e55674977a9eb0b5060f2441b9d036557bc261450",
+          "public": "d1d380a658475dd9bc28e0a9faaee37ce644a4cdc5aa0d8c59b76a8438bab2c8",
+          "protected": "b6702970bd4a79170de5991e55674977a9eb0b5060f2441b9d036557bc261450"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-fut161-arvidsson-2024",
+        "from": null,
+        "to": {
+          "raw": "4a61d54e8d67c0da0a604447fd5e38ed3454aaa19a0bbcbb6714f508f1e7f732",
+          "public": null,
+          "protected": "4a61d54e8d67c0da0a604447fd5e38ed3454aaa19a0bbcbb6714f508f1e7f732"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-fut161-tsoy-2020",
+        "from": null,
+        "to": {
+          "raw": "6ac9d059fa29b19c10330817394488fb457bdcbb1d742f7ea7aee34340c6b5b9",
+          "public": null,
+          "protected": "6ac9d059fa29b19c10330817394488fb457bdcbb1d742f7ea7aee34340c6b5b9"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-fut161-steubing-2021",
+        "from": null,
+        "to": {
+          "raw": "9c8b455891bb2b52653c8fe82dde448aa19228052d029b5d726ce0c888381592",
+          "public": null,
+          "protected": "9c8b455891bb2b52653c8fe82dde448aa19228052d029b5d726ce0c888381592"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-fut161-lueddeckens-2020",
+        "from": null,
+        "to": {
+          "raw": "787dcb6e27dc81517543e53bfaa5d1683ea7cc005350a1de4e897fe6bc05ce81",
+          "public": null,
+          "protected": "787dcb6e27dc81517543e53bfaa5d1683ea7cc005350a1de4e897fe6bc05ce81"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-fut161-arvidsson-2024",
+        "from": null,
+        "to": {
+          "raw": "be2496ec10844bcf098ca9e5c2233f305c97e356483dd163e2faaa69a7f23bb6",
+          "public": null,
+          "protected": "be2496ec10844bcf098ca9e5c2233f305c97e356483dd163e2faaa69a7f23bb6"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-fut161-tsoy-2020",
+        "from": null,
+        "to": {
+          "raw": "3e8c66a1d5937ba8ab76a832e018d8240abe8fdc46eb2a7ee50918ecbde1cba7",
+          "public": null,
+          "protected": "3e8c66a1d5937ba8ab76a832e018d8240abe8fdc46eb2a7ee50918ecbde1cba7"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-fut161-steubing-2021",
+        "from": null,
+        "to": {
+          "raw": "9cc36f07581e7a25c33c64dd13c24432078c702af8e751966dea3d68e643c30d",
+          "public": null,
+          "protected": "9cc36f07581e7a25c33c64dd13c24432078c702af8e751966dea3d68e643c30d"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-fut161-lueddeckens-2020",
+        "from": null,
+        "to": {
+          "raw": "331f6f1a1ede08e1e41f35a66cd5d61ea0544b30e8ec0ce0ba4e42e530c5b06f",
+          "public": null,
+          "protected": "331f6f1a1ede08e1e41f35a66cd5d61ea0544b30e8ec0ce0ba4e42e530c5b06f"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      }
+    ],
+    "consumers": [],
+    "assessment": {
+      "scope": "Part VII Unit 3 (B31《未来技术与情景》, content/docs/book/future-technology-and-context.mdx) adding 6 prospective/ex-ante/upscaling/superstructure/dynamic-LCA claims (cl-fut161-*), 1 intro paragraph, 1 five-column comparison table, 4 SHA-256-verified Springer CC BY 4.0 primary sources (Arvidsson et al. 2024 7 pp., Tsoy et al. 2020 13 pp., Steubing & de Koning 2021 15 pp., Lueddeckens, Saling & Guenther 2020 17 pp.), 4 readings, 4 literature works, and 6 evidence records with 14 BigInt-verified numericFacts against exact predecessor commit ac54b2594efab9d985e8f2aac677d68e97573643.",
+      "comparison": "Maps 5 future-oriented LCA terms across temporal positionality and technology maturity (Arvidsson et al. 2024; 7 definitions across 3 terms), documents Tsoy et al. (2020) 184-hit / 18-study upscaling review (15/18 chemical/waste, 0/18 TRL, 0/18 post-implementation validation, 3-step framework, 4 accuracy-ranked estimation methods: simulation 6, manual 10, MSM 1, proxy 7), contrasts Steubing & de Koning (2021) IAM + superstructure/SDF architecture (8 DBs -> 1 superstructure + 1 SDF, ~135,000 overwrites, 16 EV runs in 5 s, 40% illustrative EV gain) and its limits (technical enabler only, Case 3b ghost processes with diagonal 1, no SDF uncertainty propagation, IAM-LCI/licensing/FAIR barriers), and delineates Lueddeckens et al. (2020) 60-study temporal review (6 direct / 4 practical issues, 3 time horizons, year-99 GWP100 = 199-yr conflict, semi- vs fully dynamic LCA, ~1% discount rate marginalization, dynamic normalization caveat).",
+      "values": "All 14 numeric facts validated by exact BigInt rational parsing in scripts/reader-future-scenarios-factors.mjs (5 terms, 2 axes, 7 definitions, 184 hits, 18 studies, 10 manual, 6 sim, 0 TRL, 8 DBs, 135000 overwrites, 5 s, 60 studies, 6 direct issues, 199 yr, 1% discount rate — 14 exact BigInt facts). Zero misattribution of Lueddeckens et al. (2020) to Beloin-Saint-Pierre.",
+      "limits": "Arvidsson (2024) excludes consequential LCA; Tsoy (2020) omits learning curves as a separate estimation category; Steubing & de Koning (2021) is a software/data enabler only; dynamic CFs remain sparse outside climate/ozone. Remaining Part VII work (B32 + W1/W2, Part VII reread), Part VIII, and all 8 global Programme #9 criteria remain open.",
+      "conservation": "Exact conservation of all 1,086 existing public claim IDs (1,086 -> 1,092), all 9 prior B31 claims, 40/40 case downloads, and config/reader-numbering.json frozen 3-section structure.",
+      "review": "Independent primary-source and numeric audit verified all 4 SHA-256 PDFs, exact author spellings (Natalya Tsoy, Daniel de Koning, Lueddeckens/Saling/Guenther), all 14 BigInt numericFacts, and all printed pages/PDF indices, concluding Round 2 unconditional PASS (0 BLOCKER, 0 MAJOR, 0 MINOR)."
+    },
+    "independentReports": {
+      "independent-primary-source-audit-final.md": "cb607da1773a2b46727f683aafc0b220ca8ee6410ee93015941b8027cb38c27b",
+      "b31-full-chapter-reader-review-final.md": "81e0c90b3aab32fc89ba1a6260b3c544f7f5e82b4fd5010d1b578496add79054",
+      "independent-publication-engineering-review-final.md": "1e115db3c27a6069c28673e1c860cbc82a4c516110ebde4c025345fab3e68fa5",
+      "actual-browser-qa/qa-summary-161.json": "e908d96c6c1a7c656e04db26741f7c8a88c78063792264b9d86441b921feb8f8"
+    }
+  }
+}
