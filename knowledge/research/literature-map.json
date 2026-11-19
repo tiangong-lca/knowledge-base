@@ -7152,7 +7152,8 @@
       ],
       "catalogSourceIds": [
         "src-book-ilcd-2010",
-        "src-wsc157-ilcd-2010"
+        "src-wsc157-ilcd-2010",
+        "src-int159-ilcd-2010"
       ],
       "workId": "work-ilcd-2010-detailed-guide"
     },
@@ -7246,7 +7247,8 @@
       "catalogSourceIds": [
         "src-kb44-ec2021",
         "src-dqp153-eu-2021-2279-pef",
-        "src-wsc157-eu-2021-2279-pef"
+        "src-wsc157-eu-2021-2279-pef",
+        "src-int159-eu-2021-2279-pef"
       ]
     },
     {
@@ -22479,6 +22481,65 @@
         "src-pfr151-eu-2024-1781"
       ],
       "goalSeedIds": []
+    },
+    {
+      "id": "work-int159-danish-epa-2018",
+      "title": "Life Cycle Assessment of grocery carrier bags (Environmental Project no. 1985)",
+      "contributors": "Valentina Bisinella; Paola Federica Albizzati; Thomas Fruergaard Astrup; Anders Damgaard (DTU Environment); commissioned by Danish Environmental Protection Agency (Miljøstyrelsen)",
+      "year": "2018",
+      "kind": "commissioned-lca-report",
+      "goalSeedIds": [],
+      "urls": [
+        {
+          "url": "https://www2.mst.dk/Udgiv/publications/2018/02/978-87-93614-73-4.pdf",
+          "role": "Official final report PDF (Miljøprojekt Nr. 1985, February 2018)"
+        }
+      ],
+      "identifiers": {
+        "report": "Environmental Project no. 1985",
+        "isbn": "978-87-93614-73-4"
+      },
+      "volumes": [
+        "V7"
+      ],
+      "topics": [
+        "study interpretation",
+        "carrier service",
+        "reuse thresholds",
+        "multi-indicator trade-offs",
+        "critical review"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "Denmark; Europe production, 2017 reference period"
+      ],
+      "traditions": [
+        "commissioned comparative LCA"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-pack-ea-official"
+        ],
+        "reason": "Part VII Unit 2 (B30) independent Danish government carrier-bag LCA benchmark contrasting functional unit, integer rounding, multi-indicator reuse thresholds, and non-panel review disclosure against UK EA 2011.",
+        "citationParents": [
+          "work-pack-ea2011"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-19",
+      "lastCheckedAt": "2026-11-19",
+      "rights": "丹麦环保署公开政府报告；公开记录仅含印刷页定位与原创中文比较分析，不重分发原 PDF。",
+      "limitations": [
+        "Littering effects were considered negligible for Denmark and excluded from modelling.",
+        "External peer review by two COWI reviewers does not constitute an ISO 14044 interactive panel of interested parties; restricted to internal Danish EPA decision support."
+      ],
+      "catalogSourceIds": [
+        "src-int159-danish-epa-2018"
+      ]
     }
   ],
   "gaps": [
@@ -22873,6 +22934,15 @@
       ],
       "priority": "normal",
       "nextSearch": "待取得 ISO 14044:2006 正式授权全文后，再逐条核验其比较断言与关键评审条款并补充一手证据。"
+    },
+    {
+      "id": "lit-gap-int159-paywalled-iso14044-14071-interpretation-review",
+      "description": "ISO 14044:2006 关于生命周期解释与关键性审查的正式条款正文以及 ISO/TS 14071:2014 关键性审查流程与评审人能力要求属受版权与付费授权保护文本，本仓库未持有其授权全文，故第三十章不引述或补造上述 ISO 标准未核验子条款号与逐字规定，所有跨体系比较严格限定在已本地核验的开放获取一手材料（丹麦环保署 2018、英国环境署 2011、ILCD 2010 与欧盟委员会建议书 (EU) 2021/2279）。",
+      "volumes": [
+        "V7"
+      ],
+      "priority": "normal",
+      "nextSearch": "待取得 ISO 14044:2006 与 ISO/TS 14071:2014 正式授权全文后，再逐条核验其生命周期解释与关键性审查条款并补充一手证据。"
     }
   ]
 }

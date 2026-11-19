@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import test from 'node:test';
+import intBags from '../config/reader-interpretation-bags.json' with { type: 'json' };
+import { restoreInterpretationBagsTestFiles } from './reader-interpretation-bags.mjs';
 import wsc from '../config/reader-wall-service-comparison.json' with { type: 'json' };
 import { restoreWallServiceComparisonTestFiles } from './reader-wall-service-comparison.mjs';
 import part6 from '../config/reader-part6-reread.json' with { type: 'json' };
@@ -38,9 +40,10 @@ async function loadInput() {
     readServiceConstraintsFiles('.', service.unit),
   ]);
   for (const [p, b] of [...shiftFiles, ...serviceFiles]) files.set(p, b);
+  restoreInterpretationBagsTestFiles(files, intBags.unit);
   restoreWallServiceComparisonTestFiles(files, wsc.unit);
   restorePart6RereadTestFiles(files, part6.unit);
-  const prev153 = previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, wsc.unit), part6.unit);
+  const prev153 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, intBags.unit), wsc.unit), part6.unit);
   return { ...prev153, files };
 }
 

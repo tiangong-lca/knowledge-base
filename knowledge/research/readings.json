@@ -36844,6 +36844,282 @@
       "sourceKeys": [
         "src-wsc157-heijungs-2020"
       ]
+    },
+    {
+      "id": "rd-int159-danish-epa-2018",
+      "workId": "work-int159-danish-epa-2018",
+      "title": "Life Cycle Assessment of grocery carrier bags (Environmental Project no. 1985)",
+      "version": "Danish Environmental Protection Agency (Miljøstyrelsen), February 2018 (144 pp.)",
+      "url": "https://www2.mst.dk/Udgiv/publications/2018/02/978-87-93614-73-4.pdf",
+      "readingStatus": "selected-passages",
+      "accessedAt": "2026-11-19",
+      "readAt": "2026-11-19",
+      "question": "丹麦环保署（2018）如何界定单次购物功能单位、整数取整、垃圾袋二次使用基准、单指标与全 15 项指标复用门槛分化，以及乱丢弃排除与外部审查边界？",
+      "argumentSummary": "报告采用 22 升 / 12 千克单次超市购物功能单位，整数取整使有机棉袋等 6 类须计 2 只；以欧盟产、丹麦作垃圾袋二次使用后焚烧的普通 LDPE 袋（EOL3）为基准；无加权条件下普通棉袋气候变化需复用 52 次而全指标需 7,100 次（剔除臭氧消耗 50—1,400 次），有机棉袋气候变化 149 次而全指标 20,000 次（剔除臭氧消耗 150—3,800 次），纸袋气候变化 0—1 次而全指标 43 次；明示丹麦乱丢弃未建模，且 COWI 两人外部同行评审不严格符合 ISO 14044 公开比较断言评审组程序，定位为内部决策支持。",
+      "rights": "丹麦环保署公开政府报告；公开记录仅含印刷页定位与原创中文比较分析，不重分发原 PDF。",
+      "appraisal": {
+        "basis": "SHA-256 校验的 144 页丹麦环保署官方 PDF 逐页核对。",
+        "methodologicalScope": "摘要表 I—II、第 3.1—3.2、3.14—3.15、6.3 节、表 24 及结论建议节。",
+        "independence": "丹麦技术大学环境系受丹麦环保署委托编制，经 COWI A/S 两名外部评审人同行评审。",
+        "limitations": [
+          "未建模乱丢弃效应；未按 ISO 14044 公开比较断言程序组建利益相关方评审组；丹麦焚烧供热情景具有地域特异性。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-19"
+      },
+      "unread": [
+        "附录全部 14 种购物袋单袋详细物料清单明细表未在本单元逐项展开。"
+      ],
+      "artifacts": [
+        {
+          "id": "art-int159-danish-epa-2018-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "dff1f846fdfc2c5ce494ccb218b986dc0835b43d773b9d4c92dd3b7a63b41df8",
+          "resolvedUrl": "https://www2.mst.dk/Udgiv/publications/2018/02/978-87-93614-73-4.pdf",
+          "pageCount": 144
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-int159-danish-epa-fu-eol",
+          "artifactId": "art-int159-danish-epa-2018-pdf",
+          "locator": "摘要表 I—II 及第 3.2、3.14 节（印第 14—16、21、32、46—47 页）",
+          "printedPages": "14–16, 21, 32, 46–47",
+          "pdfIndices": [
+            13,
+            14,
+            15,
+            20,
+            31,
+            45,
+            46
+          ],
+          "topics": [
+            "22 L / 12 kg single-trip functional unit",
+            "integer bag-count rounding (2 bags for COTorg)",
+            "EOL3 waste bin bag reuse baseline"
+          ],
+          "limits": [
+            "丹麦垃圾焚烧供热与超市袋规格具有地域条件限制。"
+          ]
+        },
+        {
+          "id": "psg-int159-danish-epa-multi-indicator",
+          "artifactId": "art-int159-danish-epa-2018-pdf",
+          "locator": "摘要与表 24 及结论建议节（印第 13、15、18—19、46、79、81、92—93 页）",
+          "printedPages": "13, 15, 18–19, 46, 79, 81, 92–93",
+          "pdfIndices": [
+            12,
+            14,
+            17,
+            18,
+            45,
+            78,
+            80,
+            91,
+            92
+          ],
+          "topics": [
+            "climate-only vs all-15-indicators breakeven reuse minima",
+            "COT 52 vs 7100 and COTorg 149 vs 20000",
+            "paper 0/1 vs 43",
+            "littering excluded and mathematical breakeven vs realistic lifetime"
+          ],
+          "limits": [
+            "未纳入乱丢弃；全指标峰值高度受臭氧消耗因子驱动。"
+          ]
+        },
+        {
+          "id": "psg-int159-danish-epa-review-boundary",
+          "artifactId": "art-int159-danish-epa-2018-pdf",
+          "locator": "版权页、英文摘要评审小结、前言、第 3.1 节与第 3.15 节（印第 2、19—20、31、47 页）",
+          "printedPages": "2, 19–20, 31, 47",
+          "pdfIndices": [
+            1,
+            18,
+            19,
+            30,
+            46
+          ],
+          "topics": [
+            "COWI two-reviewer external peer review",
+            "not strictly ISO 14044 compliant for public comparative assertions",
+            "internal decision support for Danish EPA"
+          ],
+          "limits": [
+            "非贯穿全过程的利益相关方评审组。"
+          ]
+        }
+      ],
+      "sourceKeys": [
+        "src-int159-danish-epa-2018"
+      ]
+    },
+    {
+      "id": "rd-int159-ilcd-2010",
+      "workId": "lit-n03",
+      "title": "ILCD Handbook: General guide for Life Cycle Assessment — Detailed guidance (EUR 24708 EN)",
+      "version": "First edition, March 2010 (417 pp.)",
+      "url": "https://eplca.jrc.ec.europa.eu/uploads/ILCD-Handbook-General-guide-for-LCA-DETAILED-GUIDANCE-12March2010-ISBN-fin-v1.0-EN.pdf",
+      "readingStatus": "selected-passages",
+      "accessedAt": "2026-11-19",
+      "readAt": "2026-11-19",
+      "question": "ILCD 2010 第 9 章如何规范重大议题识别、完整性／灵敏度／一致性三查、范围外效应隔离与非等效禁令，以及第 6.11—6.12 节与第 11 章如何规定关键性审查与保密报告？",
+      "argumentSummary": "第 9 章建立重大议题识别、三项评估核查（完整性、灵敏度、一致性）及结论／局限／建议框架，规定非量化范围外效应须隔离、关键局限须写入核心结论与执行摘要、未检出显著差异不得宣称等效（规定条款 II.d）；第 6.11—6.12 节与第 11 章界定三类审查与同步审查、5 项保证准绳及机密补充报告机制。",
+      "rights": "欧盟出版局公开指南；公开记录仅含印刷页定位与原创中文比较分析，不重分发原 PDF。",
+      "appraisal": {
+        "basis": "SHA-256 校验的 417 页官方 PDF 逐页核对（PDF 索引 = 印刷页 + 19）。",
+        "methodologicalScope": "第 6.11—6.12 节、第 9.1—9.4 节与第 11 章。",
+        "independence": "欧盟委员会联合研究中心（JRC）官方技术指南。",
+        "limitations": [
+          "三份独立审查方案与评审人资格分册未在本单元展开。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-19"
+      },
+      "unread": [
+        "独立的 ILCD Review schemes for LCA 等三份审查分册未在本单元展开。"
+      ],
+      "artifacts": [
+        {
+          "id": "art-int159-ilcd-2010-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "7de4b9126536894b0b2594ab268b23b4de7de228146390ed6ade9954625e0c0f",
+          "resolvedUrl": "https://eplca.jrc.ec.europa.eu/uploads/ILCD-Handbook-General-guide-for-LCA-DETAILED-GUIDANCE-12March2010-ISBN-fin-v1.0-EN.pdf",
+          "pageCount": 417
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-int159-ilcd-interpretation-checks",
+          "artifactId": "art-int159-ilcd-2010-pdf",
+          "locator": "第 9.1—9.4 节及规定条款 II.a—II.d（印第 285—305 页）",
+          "printedPages": "285–305",
+          "pdfIndices": [
+            304,
+            305,
+            306,
+            307,
+            308,
+            309,
+            310,
+            311,
+            312,
+            313,
+            314,
+            315,
+            316,
+            317,
+            318,
+            319,
+            320,
+            321,
+            322,
+            323,
+            324
+          ],
+          "topics": [
+            "significant issues identification",
+            "completeness, sensitivity and consistency checks",
+            "out-of-scope effects isolation",
+            "Provision II.d non-equivalence"
+          ],
+          "limits": [
+            "不替代具体法规对公开比较断言的附加程序。"
+          ]
+        },
+        {
+          "id": "psg-int159-ilcd-critical-review",
+          "artifactId": "art-int159-ilcd-2010-pdf",
+          "locator": "第 6.11—6.12 节与第 11 章（印第 148—150、321—322 页）",
+          "printedPages": "148–150, 321–322",
+          "pdfIndices": [
+            167,
+            168,
+            169,
+            340,
+            341
+          ],
+          "topics": [
+            "internal, external and panel critical review",
+            "concurrent review",
+            "5 assurance criteria",
+            "confidential complementary report"
+          ],
+          "limits": [
+            "具体评审程序细则转交另行发布的 ILCD 审查分册。"
+          ]
+        }
+      ],
+      "sourceKeys": [
+        "src-int159-ilcd-2010"
+      ]
+    },
+    {
+      "id": "rd-int159-eu-2021-2279-pef",
+      "workId": "lit-n04",
+      "title": "Commission Recommendation (EU) 2021/2279 of 15 December 2021 on the use of the Environmental Footprint methods (Corrigendum OJ L 144, 23.5.2022)",
+      "version": "Official Journal of the European Union, OJ L 144, 23.5.2022 (384 pp.)",
+      "url": "https://publications.europa.eu/resource/cellar/ca3eccfd-da68-11ec-a95f-01aa75ed71a1.0006.01/DOC_1",
+      "readingStatus": "selected-passages",
+      "accessedAt": "2026-11-19",
+      "readAt": "2026-11-19",
+      "question": "欧盟委员会建议书 (EU) 2021/2279 附件一第 6—8 节如何定量规范热点识别、负值抵扣绝对值重算、6 项 PEF 报告结构及 5% 重大差错门槛？",
+      "argumentSummary": "附件一第 6.2—6.3 节规定稳健性三查与 80% 热点累计阈值（至少 3 个影响类别；使用阶段 >50% 须剔除重算；第 6.3.5 节过程与基本流负值取绝对值重算）；第 7.1 节固化 6 项报告组成并要求公开聚合数据集须连带公开底层报告；第 8.1 节将 >5% 变动或改变热点清单的错误界定为重大差错。",
+      "rights": "欧盟官方公报（EUR-Lex）公开法律建议文本；公开记录仅含公报页码定位与原创中文比较分析，不重分发原 PDF。",
+      "appraisal": {
+        "basis": "SHA-256 校验的 384 页更正重刊版公报 OJ L 144 逐页核对，并交叉对照 396 页原刊公报 OJ L 471 页码。",
+        "methodologicalScope": "附件一第 6.1—6.4 节、表 27、第 7.1—7.1.6 节与第 8.1 节。",
+        "independence": "欧盟委员会官方公报正式发布建议文本（非约束性建议）。",
+        "limitations": [
+          "建议书本身不具直接强制法律约束力，须经具体法规引用生效。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-19"
+      },
+      "unread": [
+        "附件三至附件四组织环境足迹（OEF / OEFSR）条款未在本单元展开。"
+      ],
+      "artifacts": [
+        {
+          "id": "art-int159-eu-2021-2279-pef-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "42445138f591d8052c0096384db30db513c11da918d0de2e9955baa33264faa7",
+          "resolvedUrl": "https://publications.europa.eu/resource/cellar/ca3eccfd-da68-11ec-a95f-01aa75ed71a1.0006.01/DOC_1",
+          "pageCount": 384
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-int159-pef-interpretation-report",
+          "artifactId": "art-int159-eu-2021-2279-pef-pdf",
+          "locator": "欧盟官方公报 OJ L 144 第 88—95 页（附件一第 6.1—6.4 节、表 27、第 7.1—7.1.6 节与第 8.1 节；对应原刊公报 OJ L 471 第 284—291 页）",
+          "printedPages": "88–95",
+          "pdfIndices": [
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94
+          ],
+          "topics": [
+            "robustness checks",
+            "80% cumulative hotspot thresholds and >=3 categories",
+            "50% use-stage override",
+            "section 6.3.5 absolute-value rule for negative credits",
+            "6-part PEF report architecture and >5% material mistake"
+          ],
+          "limits": [
+            "不替代厂址级环境影响评价或化学品风险评估。"
+          ]
+        }
+      ],
+      "sourceKeys": [
+        "src-int159-eu-2021-2279-pef"
+      ]
     }
   ],
   "gaps": [

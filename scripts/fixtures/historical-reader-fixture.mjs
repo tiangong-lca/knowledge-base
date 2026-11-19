@@ -70,7 +70,9 @@ const part6ConfigPath = 'config/reader-part6-reread.json';
 const part6ModulePath = 'scripts/reader-part6-reread.mjs';
 const wscConfigPath = 'config/reader-wall-service-comparison.json';
 const wscModulePath = 'scripts/reader-wall-service-comparison.mjs';
-const fixtureAliases = new Set(['scripts/reader-current-expectations.mjs', 'scripts/reader-exchange-semantics.mjs', serviceModulePath, substitutionModulePath, shiftModulePath, footprintModulePath, landModulePath, acidModulePath, mineralModulePath, fossilModulePath, ozoneModulePath, ozradModulePath, toxModulePath, waterModulePath, bioModulePath, eutroModulePath, particulateModulePath, part4ModulePath, weightingModulePath, localizationModulePath, socialModulePath, costModulePath, part5ModulePath, dappModulePath, uncModulePath, pfrModulePath, dqpModulePath, part6ModulePath, wscModulePath].map(path => `@/${path}`));
+const intConfigPath = 'config/reader-interpretation-bags.json';
+const intModulePath = 'scripts/reader-interpretation-bags.mjs';
+const fixtureAliases = new Set(['scripts/reader-current-expectations.mjs', 'scripts/reader-exchange-semantics.mjs', serviceModulePath, substitutionModulePath, shiftModulePath, footprintModulePath, landModulePath, acidModulePath, mineralModulePath, fossilModulePath, ozoneModulePath, ozradModulePath, toxModulePath, waterModulePath, bioModulePath, eutroModulePath, particulateModulePath, part4ModulePath, weightingModulePath, localizationModulePath, socialModulePath, costModulePath, part5ModulePath, dappModulePath, uncModulePath, pfrModulePath, dqpModulePath, part6ModulePath, wscModulePath, intModulePath].map(path => `@/${path}`));
 const flowPinPath = 'scripts/reader-flow-boundary-pins.mjs';
 
 async function loadArchive() {
@@ -119,7 +121,7 @@ async function materialize(root) {
     .map(entry => `scripts/${entry.name}`);
   const components = ['components/evidence.tsx', 'components/numbered-heading.tsx', 'components/chapter-content.tsx'];
   const current = [...configs, ...scripts, ...components, 'lib/teaching-case.ts']
-    .filter(path => ![copyeditConfigPath, copyeditPinPath, flowConfigPath, flowPinPath, serviceConfigPath, serviceModulePath, substitutionConfigPath, substitutionModulePath, shiftConfigPath, shiftModulePath, footprintConfigPath, footprintModulePath, landConfigPath, landModulePath, acidConfigPath, acidModulePath, mineralConfigPath, mineralModulePath, fossilConfigPath, fossilModulePath, ozoneConfigPath, ozoneModulePath, ozradConfigPath, ozradModulePath, toxConfigPath, toxModulePath, waterConfigPath, waterModulePath, bioConfigPath, bioModulePath, eutroConfigPath, eutroModulePath, particulateConfigPath, particulateModulePath, part4ConfigPath, part4ModulePath, weightingConfigPath, weightingModulePath, localizationConfigPath, localizationModulePath, socialConfigPath, socialModulePath, costConfigPath, costModulePath, part5ConfigPath, part5ModulePath, dappConfigPath, dappModulePath, uncConfigPath, uncModulePath, pfrConfigPath, pfrModulePath, dqpConfigPath, dqpModulePath, part6ConfigPath, part6ModulePath, wscConfigPath, wscModulePath].includes(path));
+    .filter(path => ![copyeditConfigPath, copyeditPinPath, flowConfigPath, flowPinPath, serviceConfigPath, serviceModulePath, substitutionConfigPath, substitutionModulePath, shiftConfigPath, shiftModulePath, footprintConfigPath, footprintModulePath, landConfigPath, landModulePath, acidConfigPath, acidModulePath, mineralConfigPath, mineralModulePath, fossilConfigPath, fossilModulePath, ozoneConfigPath, ozoneModulePath, ozradConfigPath, ozradModulePath, toxConfigPath, toxModulePath, waterConfigPath, waterModulePath, bioConfigPath, bioModulePath, eutroConfigPath, eutroModulePath, particulateConfigPath, particulateModulePath, part4ConfigPath, part4ModulePath, weightingConfigPath, weightingModulePath, localizationConfigPath, localizationModulePath, socialConfigPath, socialModulePath, costConfigPath, costModulePath, part5ConfigPath, part5ModulePath, dappConfigPath, dappModulePath, uncConfigPath, uncModulePath, pfrConfigPath, pfrModulePath, dqpConfigPath, dqpModulePath, part6ConfigPath, part6ModulePath, wscConfigPath, wscModulePath, intConfigPath, intModulePath].includes(path));
   const currentCopyeditPin = await readFile(join(repo, copyeditPinPath), 'utf8');
   const copyeditUnitPin = /^export const readerCopyeditUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
   assert.equal([...currentCopyeditPin.matchAll(copyeditUnitPin)].length, 1);
@@ -207,6 +209,9 @@ async function materialize(root) {
   const currentWscModule = await readFile(join(repo, wscModulePath), 'utf8');
   const wscUnitPin = /^export const wallServiceComparisonUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
   assert.equal([...currentWscModule.matchAll(wscUnitPin)].length, 1);
+  const currentIntModule = await readFile(join(repo, intModulePath), 'utf8');
+  const intUnitPin = /^export const interpretationBagsUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
+  assert.equal([...currentIntModule.matchAll(intUnitPin)].length, 1);
   // The only archived script is the independently selected old edition pin.
   // All validation code, including the expectation resolver, comes from the
   // current worktree and runs under the historical book data in this directory.
@@ -273,6 +278,8 @@ async function materialize(root) {
     write(root, part6ModulePath, currentPart6Module.replace(part6UnitPin, 'export const part6RereadUnitPin = null;')),
     write(root, wscConfigPath, JSON.stringify({ schemaVersion: 1, status: 'inactive', unit: null })),
     write(root, wscModulePath, currentWscModule.replace(wscUnitPin, 'export const wallServiceComparisonUnitPin = null;')),
+    write(root, intConfigPath, JSON.stringify({ schemaVersion: 1, status: 'inactive', unit: null })),
+    write(root, intModulePath, currentIntModule.replace(intUnitPin, 'export const interpretationBagsUnitPin = null;')),
     symlink(join(repo, 'node_modules'), join(root, 'node_modules'), process.platform === 'win32' ? 'junction' : 'dir'),
   ]);
 }

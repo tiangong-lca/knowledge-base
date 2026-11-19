@@ -96,21 +96,31 @@ bytes, `0` guard errors), and exact root integration `workspace#2510` /
 
 [Issue157](https://github.com/tiangong-lca/knowledge-base/issues/157) (Part VII
 Unit 1 `B29`《墙面服务比较》,
-[protocol](editorial/2026-11-19-wall-service-comparison.md)) is separately
+[protocol](editorial/2026-11-19-wall-service-comparison.md)) is fully
+delivered: source PR158/Main `c5a257a04e38eb64aeb68c8f3fe7162c5c3f7e48`
+(tree `bb3803f0...`), qualified hosted 468-file output on
+`https://prism.tiangong.earth` (`manifestSha256 = 3c2da9b9...`, `371,137,527`
+bytes, `0` guard errors), and exact root integration `workspace#2515` /
+`PR #2516` (`0f6aa60d...`, `Delivery complete: True`, `Integration: Done`).
+
+[Issue159](https://github.com/tiangong-lca/knowledge-base/issues/159) (Part VII
+Unit 2 `B30`《购物袋研究》,
+[protocol](editorial/2026-11-19-interpretation-bags-comparison.md)) is separately
 reviewed and bound on qualified `main`
-`8d498f48baf96865ef5e953d8b6a19136cd36ab9`, adding `6` non-case comparative-
-assertion & paired/MC-boundary claims (`1,074 -> 1,080`), `1` five-column
-cross-framework comparison table, `4` SHA-256-verified primary sources (ILCD
-2010, EU 2021/2279 OJ L 144 cross-referenced with OJ L 471, GHG Protocol
-Product Standard 2011, Heijungs 2020), `6` evidence records (`11` BigInt-
-verified numeric facts), and `1` paywalled ISO 14044:2006 boundary record while
-freezing all `22` `CASE-WALL-CONNECT` claims and `40/40` case downloads
-byte-for-byte untouched. Separate source, zero-context full-chapter reader, and
-publication-engineering reviews all concluded unconditional PASS (`0/0/0`),
-with Playwright `20/20` QA, `724/724` tests, and CSS zero-drift (`be180e5d...`).
-Clean production build, source PR/merge, live hosting qualification, root
-integration, remaining Parts VII–VIII, and all 8 global Programme #9 criteria
-remain open.
+`c5a257a04e38eb64aeb68c8f3fe7162c5c3f7e48`, adding `6` non-case interpretation,
+sensitivity, hotspot & critical-review claims (`1,080 -> 1,086`), `1` five-column
+cross-framework comparison table, `3` SHA-256-verified primary sources (Danish
+EPA 2018 Miljøprojekt Nr. 1985 144 pp., ILCD 2010 417 pp., EU 2021/2279 OJ L 144
+384 pp. cross-referenced with OJ L 471 396 pp.), `6` evidence records (`14`
+BigInt-verified numeric facts), and `1` paywalled ISO 14044:2006 / ISO/TS
+14071:2014 gap while freezing all `10` `pack-study-v1` case-bound claims,
+`40/40` case downloads, and `B30`'s 4 frozen headings byte-for-byte untouched.
+Separate primary-source/numeric, zero-context full-chapter reader, and
+adversarial publication-engineering reviews all concluded unconditional PASS
+(`0/0/0`), with Playwright `20/20` QA, `728/728` tests, and CSS zero-drift
+(`be180e5d...`). Clean production build, source PR/merge, live hosting
+qualification, root integration, remaining Parts VII–VIII, and all 8 global
+Programme #9 criteria remain open.
 
 [Issue105](https://github.com/tiangong-lca/knowledge-base/issues/105) continues
 with B10: reporting objects and evidence conditions for co-product substitution.
