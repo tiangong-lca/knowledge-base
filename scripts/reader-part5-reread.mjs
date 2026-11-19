@@ -17,7 +17,7 @@ import { validateSocialComparisonFactors } from './reader-social-comparison-fact
 import { validateWeightingValuationFactors } from './reader-weighting-valuation-factors.mjs';
 import {
   exactPublicJsonReceipt, mergeScientificFileAndRecordChanges, mergeScientificOutput,
-  qualifyScientificHistory, restoreScientificRecords, sameScienceValue, scienceDigest, scienceText,
+  projectScientificOrdinaryTargets, qualifyScientificHistory, restoreScientificRecords, sameScienceValue, scienceDigest, scienceText,
 } from './reader-scientific-delta.mjs';
 
 export const part5RereadId = 'part5-reread-145';
@@ -1186,7 +1186,12 @@ export function validatePart5RereadCorrectionOutput(document, path, unit) {
   return errors;
 }
 
-export function qualifyPart5RereadHistory(documents, unit, actual, part4Reread, weightingValuation, socialComparison) {
+const part6SuccessorOverrideKeys = Object.freeze(new Set([
+  `/docs/book#${chapterAnchorPrefix('/docs/book')}-part4-133-ordinary-6`,
+  `/print#${printUnitAnchor('/docs/book')}-part4-133-ordinary-6`,
+]));
+
+export function qualifyPart5RereadHistory(documents, unit, actual, part4Reread, weightingValuation, socialComparison, part6Reread = null) {
   if (!unit) return { prior: actual, errors: [] };
   assertUnitEnvelopeKeys(unit, {
     reviewed: unit.reviewEvidence !== undefined,
@@ -1195,8 +1200,22 @@ export function qualifyPart5RereadHistory(documents, unit, actual, part4Reread, 
   const overrides = unit.history?.ordinaryOverrides;
   if (!validOrdinaryOverridesShape(overrides, true))
     throw new Error('Part V continuous reread ordinaryOverrides violates the 4-key allowlist');
+  let successorOverrides = null;
+  if (part6Reread) {
+    const raw = part6Reread.history?.ordinaryOverrides;
+    if (!plainObject(raw) || Object.keys(raw).length !== part6SuccessorOverrideKeys.size
+        || Object.keys(raw).some(key => !part6SuccessorOverrideKeys.has(key)
+          || !plainObject(raw[key]) || !scienceDigest(raw[key].from) || !scienceDigest(raw[key].to) || raw[key].from === raw[key].to))
+      throw new Error('Part V continuous reread successor ordinaryOverrides violates the 2-key Part VI allowlist');
+    successorOverrides = Object.fromEntries([...part6SuccessorOverrideKeys].map(key => [key, { from: raw[key].from, to: raw[key].to }]));
+  }
 
-  const targets = observePart5RereadOrdinaryTargets(documents);
+  const targets = projectScientificOrdinaryTargets(
+    successorOverrides,
+    observePart5RereadOrdinaryTargets(documents),
+    'Part V continuous reread',
+    part6SuccessorOverrideKeys,
+  );
   const prior = qualifyScientificHistory(unit.history, actual, targets, {
     label: 'Part V continuous reread', routes: part5RereadRoutes, predecessorPin: addressPin,
   });
@@ -1233,6 +1252,7 @@ export function qualifyPart5RereadHistory(documents, unit, actual, part4Reread, 
       ordinaryPattern,
       ordinaryTags: ['P', 'TABLE'],
       label: 'Part V continuous reread',
+      ordinaryOverrides: successorOverrides,
       ordinaryTargets: Object.fromEntries(Object.entries(unit.history.ordinaryTargets).map(([key, row]) => [key, row.sha256])),
     }),
     ...validatePart5RereadPartDisclosure(documents.get('/print'), unit),

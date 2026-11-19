@@ -1,3 +1,4 @@
+import { part6RereadCorrections, part6RereadHistoryControls, part6RereadOrdinaryId, part6RereadSource } from '@/scripts/reader-part6-reread.mjs';
 import { dataQualityComparisonHistoryControls, dataQualityComparisonOrdinaryId, dataQualityComparisonRoute, dataQualityComparisonSource } from '@/scripts/reader-data-quality-comparison.mjs';
 import { productFootprintComparisonHistoryControls, productFootprintComparisonOrdinaryId, productFootprintComparisonRoute, productFootprintComparisonSource } from '@/scripts/reader-product-footprint-comparison.mjs';
 import { uncertaintyComparisonCorrections, uncertaintyComparisonHistoryControls, uncertaintyComparisonOrdinaryId, uncertaintyComparisonRoute, uncertaintyComparisonSource } from '@/scripts/reader-uncertainty-comparison.mjs';
@@ -22,7 +23,7 @@ import { landRecoveryHistoryControls, landRecoveryOrdinaryId, landRecoverySource
 import { circularFootprintHistoryControls, circularFootprintOrdinaryId, circularFootprintSource } from '@/scripts/reader-circular-footprint.mjs';
 import { loadShiftHistoryControls, loadShiftOrdinaryId, loadShiftSource } from '@/scripts/reader-load-shift.mjs';
 import { substitutionRulesHistoryControls, substitutionRulesOrdinaryId, substitutionRulesSource } from '@/scripts/reader-substitution-rules.mjs';
-import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity, currentBiogenicCarbon, currentEutrophicationPathways, currentParticulateComparison, currentPart4Reread, currentWeightingValuation, currentLocalizationComparison, currentSocialComparison, currentCostSustainability, currentPart5Reread, currentDataApplicabilityComparison, currentUncertaintyComparison, currentProductFootprintComparison, currentDataQualityComparison } from '@/scripts/reader-current-expectations.mjs';
+import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity, currentBiogenicCarbon, currentEutrophicationPathways, currentParticulateComparison, currentPart4Reread, currentWeightingValuation, currentLocalizationComparison, currentSocialComparison, currentCostSustainability, currentPart5Reread, currentDataApplicabilityComparison, currentUncertaintyComparison, currentProductFootprintComparison, currentDataQualityComparison, currentPart6Reread } from '@/scripts/reader-current-expectations.mjs';
 import { flowBoundaryHistoryControls, flowBoundaryHistoryTargets, flowBoundaryOrdinaryTargets, flowBoundaryOrdinaryId } from '@/scripts/reader-flow-boundary.mjs';
 import { serviceConstraintsHistoryControls, serviceConstraintsOrdinaryId, serviceConstraintsSource } from '@/scripts/reader-service-constraints.mjs';
 import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
@@ -78,6 +79,7 @@ const histories = [
   { controls: uncertaintyComparisonHistoryControls(currentUncertaintyComparison), edition: uncertaintyComparisonSource, attribute: 'uncertainty-comparison' },
   { controls: productFootprintComparisonHistoryControls(currentProductFootprintComparison), edition: productFootprintComparisonSource, attribute: 'product-footprint-comparison' },
   { controls: dataQualityComparisonHistoryControls(currentDataQualityComparison), edition: dataQualityComparisonSource, attribute: 'data-quality-comparison' },
+  { controls: part6RereadHistoryControls(currentPart6Reread), edition: part6RereadSource, attribute: 'part6-reread' },
 ];
 
 function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
@@ -100,7 +102,8 @@ function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
     || dataApplicabilityComparisonOrdinaryId(currentDataApplicabilityComparison, route, print, index)
     || uncertaintyComparisonOrdinaryId(currentUncertaintyComparison, route, print, index)
     || productFootprintComparisonOrdinaryId(currentProductFootprintComparison, route, print, index)
-    || dataQualityComparisonOrdinaryId(currentDataQualityComparison, route, print, index);
+    || dataQualityComparisonOrdinaryId(currentDataQualityComparison, route, print, index)
+    || part6RereadOrdinaryId(currentPart6Reread, route, print, index);
 }
 
 // Leave versioned native fragments below the screen's sticky site header.
@@ -124,7 +127,8 @@ export function currentReaderOrdinaryAttributes(route: string, print: boolean, i
       || id === dataApplicabilityComparisonOrdinaryId(currentDataApplicabilityComparison, route, print, index)
       || id === uncertaintyComparisonOrdinaryId(currentUncertaintyComparison, route, print, index)
       || id === productFootprintComparisonOrdinaryId(currentProductFootprintComparison, route, print, index)
-      || id === dataQualityComparisonOrdinaryId(currentDataQualityComparison, route, print, index))
+      || id === dataQualityComparisonOrdinaryId(currentDataQualityComparison, route, print, index)
+      || id === part6RereadOrdinaryId(currentPart6Reread, route, print, index))
     ? { id, style: scientificHistoryScroll }
     : { id };
 }
@@ -142,7 +146,7 @@ async function HistoricalRange({ path, id, history }: { path: string; id: string
     [`data-${attribute}-history`]: id,
     [`data-${attribute}-origins`]: addresses.map((address: string) => address.slice(path.length + 1)).join(' '),
   }}>
-    <summary><time dateTime={edition.date}>{edition.date}</time> 版「{row.previous.title}」的引用范围</summary>
+    <summary><time dateTime={edition.date}>{edition.date}</time> 版「{row.previous.title ?? id.replace(/^print-unit-[a-f0-9]+-/, '')}」的引用范围</summary>
     <p><a href={citationSourceHref(edition.commit)} {...{ [`data-${attribute}-source`]: '' }}>查看该版源文件</a></p>
     {ordinary.length > 0 && <ul>{ordinary.map((target: { path: string; id: string; label: string }) => {
       const href = `${target.path === path ? '' : `${target.path}/`}#${encodeURIComponent(target.id)}`;
@@ -223,6 +227,10 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
     const part5TableId = part5RereadOrdinaryId(currentPart5Reread, cleanRoute, print, `table-${index}`);
     if (part5TableId) {
       return createElement(defaults.table ?? 'table', { ...props, id: part5TableId, style: { ...props.style, ...scientificHistoryScroll } });
+    }
+    const part6TableId = part6RereadOrdinaryId(currentPart6Reread, cleanRoute, print, `table-${index}`);
+    if (part6TableId) {
+      return createElement(defaults.table ?? 'table', { ...props, id: part6TableId, style: { ...props.style, ...scientificHistoryScroll } });
     }
     if (index === 2 && cleanRoute === '/docs/book/lime-preferences-and-damage-weights') {
       return createElement(defaults.table ?? 'table', props);
@@ -343,6 +351,11 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
           <p key={`${row.chapter}-${row.claimId}`} className="legacy-citation-context" data-uncertainty-comparison-correction={note.id} style={{ display: 'block' }}>
             <time dateTime={uncertaintyComparisonSource.date}>{uncertaintyComparisonSource.date}</time>{' 修订：'}{row.scope}{' '}
             <a href={citationSourceHref(uncertaintyComparisonSource.commit)}>查看前版源文件</a>
+          </p>)}
+        {currentPart6Reread && part6RereadCorrections.filter(row => row.chapter === cleanRoute && row.claimId === note.id).map(row =>
+          <p key={row.claimId} className="legacy-citation-context" data-part6-reread-correction={note.id} style={{ display: 'block' }}>
+            <time dateTime={part6RereadSource.date}>{part6RereadSource.date}</time>{' 修订：'}{row.scope}{' '}
+            <a href={citationSourceHref(part6RereadSource.commit)}>查看前版源文件</a>
           </p>)}
       </li>)}</ol>
     </section>}

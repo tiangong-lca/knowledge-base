@@ -87,15 +87,16 @@ bytes, `0` guard errors), and exact root integration `workspace#2506` /
 
 [Issue155](https://github.com/tiangong-lca/knowledge-base/issues/155) (Part VI
 Whole-Part Continuous Reread,
-[protocol](editorial/2026-11-19-part6-continuous-reread.md)) opens the
-prewriting protocol on qualified `main`
-`b1c911ee7aa0c772559d363e83e13abf765bceb4` to align `F02` / `parts[5]`, cross-
-chapter terminology and first-occurrence glosses, premise DAG topology (fixing
-the `B26[17]` forward reference, adding cross-chapter bridges, and sorting `14`
-non-case `premiseIds`), and `16` non-case locators / `7` non-case
-`scope`/`caveats` strings while freezing all `24` case-bound claims, `19`
-case-bound locators, and `40/40` case downloads untouched. Parts VII–VIII and
-all 8 global Programme #9 criteria remain open.
+[protocol](editorial/2026-11-19-part6-continuous-reread.md)) executes and
+independently accepts the Part VI continuous reread on qualified `main`
+`b1c911ee7aa0c772559d363e83e13abf765bceb4` (`unitPin = 000fefcb...`,
+`capturePin = 5c2d6795...`, `67` bounded changes across `4` managed files, `39`
+non-case claims, `23` non-case evidence locators, `1` public projection, and
+`10` public correction notices; `0` case-bound edits across all `24` Part VI
+case claims, `19` case locators, and `40/40` case downloads; `720/720` tests,
+CSS zero-drift `be180e5d...`, `50/50` Playwright responsive/print QA, and
+3-stream unconditional `0/0/0 PASS`). Parts VII–VIII and all 8 global
+Programme #9 criteria remain open.
 
 [Issue105](https://github.com/tiangong-lca/knowledge-base/issues/105) continues
 with B10: reporting objects and evidence conditions for co-product substitution.

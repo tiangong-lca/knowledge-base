@@ -1,0 +1,1710 @@
+{
+  "schemaVersion": 1,
+  "kind": "source",
+  "unit": "part6-reread-155",
+  "date": "2026-11-19",
+  "subjectSha256": "bd8eb43ce8489bbc5514d968be86c37b2d08bfe1405c340ca7156ab1ebfdf7e2",
+  "scope": [
+    "config/reader-numbering.json",
+    "content/docs/book/index.mdx",
+    "content/docs/book/uncertainty-and-variability.mdx",
+    "content/docs/book/data-quality-and-probability.mdx",
+    "claims:cl-unc-model",
+    "claims:cl-unc-numerical",
+    "claims:cl-unc-calibration",
+    "claims:cl-unc-calibration-limits",
+    "claims:cl-unc-alongside",
+    "claims:cl-unc-synthesis",
+    "claims:cl-ped-population",
+    "claims:cl-ped-score-mapping",
+    "claims:cl-ped-ratio-rule",
+    "claims:cl-ped-score-test-design",
+    "claims:cl-ped-three-tests",
+    "claims:cl-rule-opening",
+    "claims:cl-rule-rp",
+    "claims:cl-rule-why-chain",
+    "claims:cl-rule-category",
+    "claims:cl-rule-version",
+    "claims:cl-rule-use-boundary",
+    "claims:cl-rule-default",
+    "claims:cl-rule-results-layer",
+    "claims:cl-rule-review-identity",
+    "claims:cl-rule-validity",
+    "claims:cl-rule-nordic-design",
+    "claims:cl-rule-conclusion",
+    "claims:cl-rule-issuer",
+    "claims:cl-book-unc-bridge",
+    "claims:cl-unc149-framework-comparison",
+    "claims:cl-unc149-taylor-vs-sampling",
+    "claims:cl-unc149-gsa-outliers-nonlinearity",
+    "claims:cl-unc149-comparative-paired-and-pvalue",
+    "claims:cl-unc149-pedigree-mc-boundary",
+    "claims:cl-pfr151-assurance-vs-notified-body",
+    "claims:cl-pfr151-comparative-assertion-gates",
+    "claims:cl-pfr151-paywalled-standard-boundaries",
+    "claims:cl-dqp-ecoinvent-v3-variance",
+    "claims:cl-dqp-pef-ordinal-dqr",
+    "claims:cl-dqp-ghgp-qualitative-dqi",
+    "claims:cl-dqp-four-framework-synthesis",
+    "claims:cl-dqp-paywalled-iso-boundary",
+    "claims:cl-dqp-cross-chapter-bridge",
+    "evidence:ev-unc-ciroth-scores",
+    "evidence:ev-unc-ciroth-calibration",
+    "evidence:ev-unc-ciroth-empirical",
+    "evidence:ev-unc-ciroth-summary",
+    "evidence:ev-unc-ciroth-baseline",
+    "evidence:ev-ped-sampling-population",
+    "evidence:ev-ped-sampling-design",
+    "evidence:ev-ped-completeness-data",
+    "evidence:ev-ped-gsd-definition",
+    "evidence:ev-ped-journal-gsd",
+    "evidence:ev-ped-score-test-design",
+    "evidence:ev-ped-score-test-results",
+    "evidence:ev-kb44-ec2021-identity",
+    "evidence:ev-kb44-pef-guidance2018-identity",
+    "evidence:ev-kb44-nordic2023-country-discrepancy",
+    "evidence:ev-kb44-dairy2025-review",
+    "evidence:ev-kb44-nordic2023-record",
+    "evidence:ev-kb44-ipcc2019-index",
+    "evidence:ev-unc149-eu2021-robustness-hotspots",
+    "evidence:ev-dqp153-ecoinvent-v3-pedigree",
+    "evidence:ev-dqp153-ecoinvent-v3-limits",
+    "evidence:ev-dqp153-ghgp-qualitative-dqi",
+    "evidence:ev-dqp153-ghgp-uncertainty-boundary",
+    "researchMetadata:public-projection"
+  ],
+  "observed": "Part VI whole-part continuous reread across F02 (content/docs/book/index.mdx Part VI overview), Part 6 introduction (config/reader-numbering.json), and all four Part VI chapters B25–B28 (124 claims, 8 tables, 137 evidence records) against exact predecessor commit b1c911ee7aa0c772559d363e83e13abf765bceb4.",
+  "observations": {
+    "state": {
+      "before": "64c2c9e1718ae618c6aead925be79193eb53b4d8ca25e6701397deaf6d58da7d",
+      "after": "0005f400da7e597217453aad22b2aedbc8c7841323cbc61abf4166a27dca8632"
+    },
+    "changes": [
+      {
+        "kind": "file",
+        "key": "config/reader-numbering.json",
+        "from": "0a116b6c270cad484ca9a72282859cdcd8deac5dec863e696dff503632cd4d43",
+        "to": "29c1bc18e1b8022dddb7bfd93d58822f7feb8ea09a6a4e076e70d7f1bb64bb03",
+        "rationale": "按 B25→B26→B27→B28→第七部顺序更新第六部《数据与证据》导言，补齐背景数据适用性、五类误差层次与全局灵敏度边界、专家／实证谱系与 PEF 序数 DQR 门槛及类别规则与合格评定主线。"
+      },
+      {
+        "kind": "file",
+        "key": "content/docs/book/index.mdx",
+        "from": "feed9ae7aab3ac266177568d13d1b2ba3fcf912ab7705765a31b6462442a13b1",
+        "to": "e45f967925b30571a1f1f46a48ab36363e409488d452941a7bdb1e336d3ac50a",
+        "rationale": "在《阅读导论》第六部导览段（part4-133-ordinary-6）补齐第六部四章双视图一致的阅读入口链接与四重边界衔接说明。"
+      },
+      {
+        "kind": "file",
+        "key": "content/docs/book/uncertainty-and-variability.mdx",
+        "from": "872545212b1485e7fc692dbcd00db9c0c7c3b4aedb1d38f3d4a4bb8334daa78b",
+        "to": "9a5e3da2a6f0930db6a35a413ec77f5efca7b41ab935ab757e36c455253ce03b",
+        "rationale": "将《变异与不确定性》表 2 中变异系数缩写 cv 统一规范为与第二十七章一致的大写 CV。"
+      },
+      {
+        "kind": "file",
+        "key": "content/docs/book/data-quality-and-probability.mdx",
+        "from": "f80c493598ef2ecb07109b4855a2cfb9adb0540570fb0cc8d992ec34df69fe13",
+        "to": "6ae22685eba989efd73f132001ab3f1139d0610a216805cf27a4f44490a43e7a",
+        "rationale": "在《质量评分与概率》表 2 第 3、4 行统一“建议书”、2021/2022 欧盟公报版次页数口径、“地域”译名并补全“温室气体核算体系（GHG Protocol）”中文全称。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-unc-model",
+        "from": {
+          "raw": "a265337b73073be3f0c96c9657a482f3f09d5d52fd364877c34a6877846b7cf3",
+          "public": "a265337b73073be3f0c96c9657a482f3f09d5d52fd364877c34a6877846b7cf3",
+          "protected": "9606f0f8cd51152389b033720baa1f0f886b8827f01c80b62a3f3c1c726f19e8"
+        },
+        "to": {
+          "raw": "07b8685684aa16ac959b2dda4b402d623922661ea048897af42de75c1a98c958",
+          "public": "07b8685684aa16ac959b2dda4b402d623922661ea048897af42de75c1a98c958",
+          "protected": "408091a50b124b53420cc139ee62c6809aadadff8ec90b50d4216754d0d5f248"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-unc-numerical",
+        "from": {
+          "raw": "c338583c2f16681c871e52a7dbc5a6721cae61e8ee9d87656f813995b009953f",
+          "public": "c338583c2f16681c871e52a7dbc5a6721cae61e8ee9d87656f813995b009953f",
+          "protected": "9a182dac680d50bbb497ba1b2a02c5f3ae681085850bdda4ecf26f6913c6e752"
+        },
+        "to": {
+          "raw": "7b6cf650ba9f1f0fab518e8925f1af1a950affeca86b77d06883f813dc3277f6",
+          "public": "7b6cf650ba9f1f0fab518e8925f1af1a950affeca86b77d06883f813dc3277f6",
+          "protected": "8e1b7331e6c6f46d07b8f903ee31b0b3e3a5c8f73614dac093439287385d7247"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-unc-calibration",
+        "from": {
+          "raw": "8b77cea9bb0bc85d8712236be910bf6c96151749ea372e56f4ea8fdb4e7d04c6",
+          "public": "8b77cea9bb0bc85d8712236be910bf6c96151749ea372e56f4ea8fdb4e7d04c6",
+          "protected": "da5c75486b68d54db08e4a6bd28a155257d8a16e3db824cd5f037f5c9e96d84e"
+        },
+        "to": {
+          "raw": "6baae817ea817265e6ea2e2e749c26013bf9227163d23c4e8f20a7c39ec0304b",
+          "public": "6baae817ea817265e6ea2e2e749c26013bf9227163d23c4e8f20a7c39ec0304b",
+          "protected": "aa5f370a7756d47c7f3727fc084f5dfefad7c397cb82397aaad2b18015461679"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-unc-calibration-limits",
+        "from": {
+          "raw": "26e4afa34240a102f5656e27f1f5455618fd4e4bc0de111c75ace412a26b32c9",
+          "public": "26e4afa34240a102f5656e27f1f5455618fd4e4bc0de111c75ace412a26b32c9",
+          "protected": "820c374e3f8d8b0a87ea341712fe927fff6c4c3b449d66c3d2b048e6c0c9d7bd"
+        },
+        "to": {
+          "raw": "a6349095f77368a772c8d18dcdd90d502adf7b9116abe6e13a42e77b17817aa9",
+          "public": "a6349095f77368a772c8d18dcdd90d502adf7b9116abe6e13a42e77b17817aa9",
+          "protected": "1ce31118de85d268164c89ab61af8a6391f395ee5939f1ff0b4274c4811c4955"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-unc-alongside",
+        "from": {
+          "raw": "1e7ad9f4e4589477d9ae2cf0bfe9f3202388ad7f57cbb30e21740abac1f69fc6",
+          "public": "1e7ad9f4e4589477d9ae2cf0bfe9f3202388ad7f57cbb30e21740abac1f69fc6",
+          "protected": "80be55f458bf45937fe1c4b83717c88c5f4ab89123c7421d2d91ae94c7a62c79"
+        },
+        "to": {
+          "raw": "8c637892634078918f6b99d8dafb911b64aeea87f509147727e357c1b0c7e568",
+          "public": "8c637892634078918f6b99d8dafb911b64aeea87f509147727e357c1b0c7e568",
+          "protected": "b4253a49d67d4958bcb92cc18202388dcba3b073201c8f4a171cfcdcd447c8cd"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-unc-synthesis",
+        "from": {
+          "raw": "3f68b943ee0fb8081ef398949e3e96089fd50b621c205248f0f2614bfc26893e",
+          "public": "3f68b943ee0fb8081ef398949e3e96089fd50b621c205248f0f2614bfc26893e",
+          "protected": "49ad57ce9f166d957a0a23d12afe5c88cb29e90d8d9cf22dd773bd461f4ca37a"
+        },
+        "to": {
+          "raw": "a2129d3657aeb82c542dc8e5772756ec0fba8e45f1a37b9e1712a69ea208dce1",
+          "public": "a2129d3657aeb82c542dc8e5772756ec0fba8e45f1a37b9e1712a69ea208dce1",
+          "protected": "3a5aafe56cf75f81d29627bc999183ccc7e8b9efb8dbb9446a1578e9f312c09e"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-ped-population",
+        "from": {
+          "raw": "827323a7ee28195621ca5f53efc1fb18eaa7375dd0c387e6f6dedc50538c34db",
+          "public": "827323a7ee28195621ca5f53efc1fb18eaa7375dd0c387e6f6dedc50538c34db",
+          "protected": "cf1178d17a039fbb937d4e8a1a8b49751c77f34594a9c9e3fa534444d2fa899d"
+        },
+        "to": {
+          "raw": "b1d211eab7b1d46d60e4f37e76bfc167ae5719d77237c1f5ecf77034b68695ec",
+          "public": "b1d211eab7b1d46d60e4f37e76bfc167ae5719d77237c1f5ecf77034b68695ec",
+          "protected": "f6762b71d7ea86bd9e05871de20e74e6122931648119aad695757dd99f5692cf"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-ped-score-mapping",
+        "from": {
+          "raw": "a13ff77ebda0a7d4c4c3c0e4f3d8089ef2df1f0aafdc0b4fe0ae18cadc615e16",
+          "public": "a13ff77ebda0a7d4c4c3c0e4f3d8089ef2df1f0aafdc0b4fe0ae18cadc615e16",
+          "protected": "570f6a236b1628492c5f16426bbea60d779afda41ba927e20e2c94beaa4d6e8d"
+        },
+        "to": {
+          "raw": "dee22589009b186ae3842a321d3c859e3fadffa363404de91951789bb708e44a",
+          "public": "dee22589009b186ae3842a321d3c859e3fadffa363404de91951789bb708e44a",
+          "protected": "cdb8db66b6912635b1fa6ea05841e248142ff5f60901b200bcae39278b2d6372"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-ped-ratio-rule",
+        "from": {
+          "raw": "05ab338e56d5959a100ae13bd6c2e3be11ea57d60ae5a943324f81a31f1e8462",
+          "public": "05ab338e56d5959a100ae13bd6c2e3be11ea57d60ae5a943324f81a31f1e8462",
+          "protected": "b388729cf48d76d7bc5a5369c8cb7cb665fed954827e44199a1fce69521b39b0"
+        },
+        "to": {
+          "raw": "07038d5113c63b13c6ac325298e42366f468268ff993af93c1efe8abc5587699",
+          "public": "07038d5113c63b13c6ac325298e42366f468268ff993af93c1efe8abc5587699",
+          "protected": "d83bbed8e9733033d430ecb3eaa1d4f1454669b0f91fded6fafd538ee6d9acf3"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-ped-score-test-design",
+        "from": {
+          "raw": "392cf5acc0d4be8f1611bebd9b174ab7026de33aeb407f3d0d2c7b0764cf1309",
+          "public": "392cf5acc0d4be8f1611bebd9b174ab7026de33aeb407f3d0d2c7b0764cf1309",
+          "protected": "98216667cb0484fb66b5faf178387e95fc9e24500a79b4a7a8cf0e831fcae35d"
+        },
+        "to": {
+          "raw": "3762334ebbc602a091f28b4db1c44d13900c580021861cd834e9354b1a35509f",
+          "public": "3762334ebbc602a091f28b4db1c44d13900c580021861cd834e9354b1a35509f",
+          "protected": "1121c04168791b237473b5bab3a7435c7cef11eb3344c0965ce4a7b218934b12"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-ped-three-tests",
+        "from": {
+          "raw": "57ef5aee34b7a4f5681d01ea376afc7ae73332312ce7dbefe20ccac89000e4e5",
+          "public": "57ef5aee34b7a4f5681d01ea376afc7ae73332312ce7dbefe20ccac89000e4e5",
+          "protected": "1036b9f7a7d07ade979a56b2203a4660348f282b33080080888defdf85e9c274"
+        },
+        "to": {
+          "raw": "e342f59835ebb533b68f2ebd6960ac4b1e3f2526a615b96dd071025d62fd924d",
+          "public": "e342f59835ebb533b68f2ebd6960ac4b1e3f2526a615b96dd071025d62fd924d",
+          "protected": "f7684dcd66a5802dcb08a759fa9ce6d8e5ed734846755afc2748f9c384cc8c80"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-rule-opening",
+        "from": {
+          "raw": "3eb17a8e988200ada6ba42d1402e13d1a9797a44b4a1e9ff879912581c0cc104",
+          "public": "3eb17a8e988200ada6ba42d1402e13d1a9797a44b4a1e9ff879912581c0cc104",
+          "protected": "ca80e4c389759edaa4c9a5b396e0f939a5df82c49fd2393e7bafdc6fdeb7b4e7"
+        },
+        "to": {
+          "raw": "04af7d9a32dcb2fa9251eea6dd708c43bb2726077639d943fb329aaf0a4aa412",
+          "public": "04af7d9a32dcb2fa9251eea6dd708c43bb2726077639d943fb329aaf0a4aa412",
+          "protected": "7247e6804aed047ac82807610bdb33e3c0b3dd15525a3b17f75cd86247585690"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-rule-rp",
+        "from": {
+          "raw": "451a296f30e9bcc4bd682445a3967b9d631d2e3eefa4215a7d6d50ae342724ea",
+          "public": "451a296f30e9bcc4bd682445a3967b9d631d2e3eefa4215a7d6d50ae342724ea",
+          "protected": "97c15574fab1b8428144e9497cc88b488dc364a605102ef216a75e5769715187"
+        },
+        "to": {
+          "raw": "a7f65d86b2f96a2b21052fa7a2dc77addc48e46282ea05e23a508124812c861f",
+          "public": "a7f65d86b2f96a2b21052fa7a2dc77addc48e46282ea05e23a508124812c861f",
+          "protected": "9535c82b484ee2a63e7cef7a71b5f45d45bc1abc91218b92f4e25f77875ea24a"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-rule-why-chain",
+        "from": {
+          "raw": "950b1e1b0e906de27461205fadcaeea196a4af53a5f9de2bef9fe36b9f431dce",
+          "public": "950b1e1b0e906de27461205fadcaeea196a4af53a5f9de2bef9fe36b9f431dce",
+          "protected": "5bbfc2491ea44383109323a3586f07d25673afa358608bc59a85c1c4ebd9ce57"
+        },
+        "to": {
+          "raw": "8fb4f1c2cb7eb8c19958ab1075ec7495402af37b07795fdc0961c049cb85e406",
+          "public": "8fb4f1c2cb7eb8c19958ab1075ec7495402af37b07795fdc0961c049cb85e406",
+          "protected": "55e3721a4b038531c8cb51c0745e8ca948724865aabad3bae6bf5bd6f837b9c5"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-rule-category",
+        "from": {
+          "raw": "a7a804d05aee7077002671e1709f18b5958f789d5acb57dda91ec62ce5063062",
+          "public": "a7a804d05aee7077002671e1709f18b5958f789d5acb57dda91ec62ce5063062",
+          "protected": "318ada1c0ff53b3d01e260bff25f1f478de8e7d3dbcfc743bd60387c7eb314eb"
+        },
+        "to": {
+          "raw": "3461ecddfecafa4d710dd1593266af475067bf26c3a0e9b95d1df18217d8f76c",
+          "public": "3461ecddfecafa4d710dd1593266af475067bf26c3a0e9b95d1df18217d8f76c",
+          "protected": "5b66cdd5628ddbbb2473df35a47be24b76cd8db4f5735f5eb7d0ae630d59e344"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-rule-version",
+        "from": {
+          "raw": "590311425451824dabbd10b9b0813cac12be59e545becd593e83d63ba40eeb03",
+          "public": "590311425451824dabbd10b9b0813cac12be59e545becd593e83d63ba40eeb03",
+          "protected": "d51b25e311a6483b3e1f93127d8838a3ef60c1be01344e1ed1d1ceaa8874e311"
+        },
+        "to": {
+          "raw": "8382f50134eb471377ace8ba477de8d04a4a0e4f6da97fbebdfb49eba0c06870",
+          "public": "8382f50134eb471377ace8ba477de8d04a4a0e4f6da97fbebdfb49eba0c06870",
+          "protected": "a6450605dc11f48d7962380bdc253b3080ad2d01a4674b8637b1a1054d59b9b4"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-rule-use-boundary",
+        "from": {
+          "raw": "92040bf34b6756a33086413910a2bc07609a15a6077dcb3ea285c68be485c301",
+          "public": "92040bf34b6756a33086413910a2bc07609a15a6077dcb3ea285c68be485c301",
+          "protected": "c936792503b2b1fe019c352c5d0b8f22e110be8786718476a0cf7552e8a0a6bf"
+        },
+        "to": {
+          "raw": "98961f91db892819c29e86b47bee3bc445afd5ce7b836c150c3913b099f83dc1",
+          "public": "98961f91db892819c29e86b47bee3bc445afd5ce7b836c150c3913b099f83dc1",
+          "protected": "0937b00e96ae34cb01d94f8456d7e391c5b5150de56d58a3e698fba4de3105bf"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-rule-default",
+        "from": {
+          "raw": "7e37c323aa239677ed56397870514c6d818ee8f2d9d1a49152f0671b3ad4fa31",
+          "public": "7e37c323aa239677ed56397870514c6d818ee8f2d9d1a49152f0671b3ad4fa31",
+          "protected": "36472cbc1a97edf40231450c955a1119794ac2ffc5c4ce2822edd3de83e0e841"
+        },
+        "to": {
+          "raw": "91de3befbb4158e28a98ad1c0ae2fadb65c31733576b7872298df479e689fe76",
+          "public": "91de3befbb4158e28a98ad1c0ae2fadb65c31733576b7872298df479e689fe76",
+          "protected": "49558a16fbdd3c373c954915ba71f90404ab13a8a1d9b5a33dec6c96030bf1a9"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-rule-results-layer",
+        "from": {
+          "raw": "02e48a66cf907b8ce9504df8a8e281a5df5f3571152e77e13ad763c2622813c0",
+          "public": "02e48a66cf907b8ce9504df8a8e281a5df5f3571152e77e13ad763c2622813c0",
+          "protected": "3d39b8c458349981166c9c92193dec93b3708e8c6769ae01b99b3aa1231474ba"
+        },
+        "to": {
+          "raw": "1506ae2f604e2244ed8b5805d8ad782fe9a22a4ea291aa7e0b1f6eef099634d9",
+          "public": "1506ae2f604e2244ed8b5805d8ad782fe9a22a4ea291aa7e0b1f6eef099634d9",
+          "protected": "623c21f5c3facfd6b6d2d1856fb59eb3d7c850b264d0f8cabb8e14449a8cee9b"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-rule-review-identity",
+        "from": {
+          "raw": "87a31e6b0d2dfe5e731fe7e2134e67acd159c13ae63f9809c5abc089950b8165",
+          "public": "87a31e6b0d2dfe5e731fe7e2134e67acd159c13ae63f9809c5abc089950b8165",
+          "protected": "16638a9c0b023a30113e901db45c8128416e4a3067ffdd26ea6a34c5e6ea472b"
+        },
+        "to": {
+          "raw": "1f60deb6a328c8a233419fd634f164c9358b6b0c6a20010e8365c6b1607a5312",
+          "public": "1f60deb6a328c8a233419fd634f164c9358b6b0c6a20010e8365c6b1607a5312",
+          "protected": "2923de3f1519534d08ec1d4e2486791902a805c5965b5abfbab0c77733082c29"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-rule-validity",
+        "from": {
+          "raw": "845a11d604fd4b8b701357a6d10d5388c114ea350cc963ddc2202aa4d74474b5",
+          "public": "845a11d604fd4b8b701357a6d10d5388c114ea350cc963ddc2202aa4d74474b5",
+          "protected": "3a86a513e93d323b7256656a50514b6cac5e0f325f82fe9609af986eb01e1abc"
+        },
+        "to": {
+          "raw": "c5f185422bc5e4e72f97fc1cc301a04d822401fece0d81beba65a4ebc3b0660b",
+          "public": "c5f185422bc5e4e72f97fc1cc301a04d822401fece0d81beba65a4ebc3b0660b",
+          "protected": "f5879a8b3270cf83d300b1adb7f1b79f4b6e459a65e22fd933f36ba704f8d019"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-rule-nordic-design",
+        "from": {
+          "raw": "5bc617acb2d3d9f313c154305938df72164cecdf15099a3f2771aa463a97f8d9",
+          "public": "5bc617acb2d3d9f313c154305938df72164cecdf15099a3f2771aa463a97f8d9",
+          "protected": "1ed255dea786bc8b3591a4eb123ad53b4921b4986a4b7156f4cdfde5da2034de"
+        },
+        "to": {
+          "raw": "e0177696ce1c4d51b8c0e828b87b758ad678eadcf9d3192cdfa5e3c6122c2269",
+          "public": "e0177696ce1c4d51b8c0e828b87b758ad678eadcf9d3192cdfa5e3c6122c2269",
+          "protected": "f261f1d0471510f3b9bf2dd7f4d013718f73389971d20218a14e6d3c687fc0b2"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-rule-conclusion",
+        "from": {
+          "raw": "50cb71537989045855de52c5cc442c893d6d10dce6d0102e6f39cc150a60500f",
+          "public": "50cb71537989045855de52c5cc442c893d6d10dce6d0102e6f39cc150a60500f",
+          "protected": "6a9c0a3022168fc418f38250d4bf8d292b8075726488cc459880fee518b01c3e"
+        },
+        "to": {
+          "raw": "524833fe3815f2136d847397967c850d5f60977f5cb8c5ecab351f4282fece28",
+          "public": "524833fe3815f2136d847397967c850d5f60977f5cb8c5ecab351f4282fece28",
+          "protected": "ab9b4eadeab213449615795545293e7bf3d3334009c7c312785842f31c33ec76"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-rule-issuer",
+        "from": {
+          "raw": "b0c541040745ff2a25765e8a5dfa4e96b39dac8b35b7b752bde88e446521fba6",
+          "public": "b0c541040745ff2a25765e8a5dfa4e96b39dac8b35b7b752bde88e446521fba6",
+          "protected": "33d005cb83a47e4836a19e7a2565c5c775336a3da6512323a2dff024fac0fb7f"
+        },
+        "to": {
+          "raw": "dd815fac958f708a778d8376828835bd0503d71e6e3313e2b878f7c38f00e80b",
+          "public": "dd815fac958f708a778d8376828835bd0503d71e6e3313e2b878f7c38f00e80b",
+          "protected": "93de350140169e499ea79b4a61447f05941d00f8478fa0b74537601bcb23a2c7"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-book-unc-bridge",
+        "from": {
+          "raw": "97112ec1d605d8b6b84fd86bf8f894a2f9e55e31ecaa39b96f1bee189c17aafb",
+          "public": "97112ec1d605d8b6b84fd86bf8f894a2f9e55e31ecaa39b96f1bee189c17aafb",
+          "protected": "be8ccedb787de0ee0aa0fcebef8dd8d0ed9dfff06bd69848bd43771b8a059b8f"
+        },
+        "to": {
+          "raw": "a43a5afeee14ec2d3f10650899eb4f09a7adbba8cba21f9185006232c9f576ca",
+          "public": "a43a5afeee14ec2d3f10650899eb4f09a7adbba8cba21f9185006232c9f576ca",
+          "protected": "0e54d89866ebb4b82911ee3ee449118d2be76ce076ac3db89dfaa3f4edee69f0"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-unc149-framework-comparison",
+        "from": {
+          "raw": "875ef4e4e23fb02f8e78d0ddd926c014d914f151733be0408d5b471aa3664d72",
+          "public": "875ef4e4e23fb02f8e78d0ddd926c014d914f151733be0408d5b471aa3664d72",
+          "protected": "a06c1b783c693b6dc81040e0eb4f6d4a2d02d3b141c8c68a11e2e848b8f66f49"
+        },
+        "to": {
+          "raw": "f443702c61d4723fbefc3ed4d89f3857b53630b8b87bd0e69f4e21014e17b63c",
+          "public": "f443702c61d4723fbefc3ed4d89f3857b53630b8b87bd0e69f4e21014e17b63c",
+          "protected": "e370c9d10378046549af66e1572e75e9cd454e877384c6b7513f77f899f89db7"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-unc149-taylor-vs-sampling",
+        "from": {
+          "raw": "e5baf32d084cf5c58d4b984a515221475ca9013819b35e132bbcfc3fc617a5b2",
+          "public": "e5baf32d084cf5c58d4b984a515221475ca9013819b35e132bbcfc3fc617a5b2",
+          "protected": "4f1ba3f9a26304162ee1e19023cd83eb2fbe0c05536b7976686eb893b2e32e40"
+        },
+        "to": {
+          "raw": "baf5162a21c9966afa2d76cd4ea7f2bc19625d6fa54b2c739fb162f4509fdf57",
+          "public": "baf5162a21c9966afa2d76cd4ea7f2bc19625d6fa54b2c739fb162f4509fdf57",
+          "protected": "b366040049d543b18fbb0b8b3510db3ea2c31e09c66b97caca335a0978e2c04f"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-unc149-gsa-outliers-nonlinearity",
+        "from": {
+          "raw": "7dbbcfa85027d09b4b124d24dad59d8758fe1cf8a2abb410ebec9e9bc36b341b",
+          "public": "7dbbcfa85027d09b4b124d24dad59d8758fe1cf8a2abb410ebec9e9bc36b341b",
+          "protected": "53d00058a03e2f27e6a93289e7c78dc9e826ce561783ef4580477c9d7547adf5"
+        },
+        "to": {
+          "raw": "51fa383f11e694c520976ae19ac7b418f373e817210f4871b6631fc3bbbe09f8",
+          "public": "51fa383f11e694c520976ae19ac7b418f373e817210f4871b6631fc3bbbe09f8",
+          "protected": "53d00058a03e2f27e6a93289e7c78dc9e826ce561783ef4580477c9d7547adf5"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-unc149-comparative-paired-and-pvalue",
+        "from": {
+          "raw": "a445b053720437527b3bf435a4eb6fa0e95b13f36375bb68ff466914edbb2641",
+          "public": "a445b053720437527b3bf435a4eb6fa0e95b13f36375bb68ff466914edbb2641",
+          "protected": "c4488e06d567b24311b2feedb2add6f0c4ee6f30c42158ffb11de65f1e658822"
+        },
+        "to": {
+          "raw": "20b851c75673a15ce474eedcd836a6f05b596ea484e65f322bcd2cba996b6711",
+          "public": "20b851c75673a15ce474eedcd836a6f05b596ea484e65f322bcd2cba996b6711",
+          "protected": "532e5274f1771b97fffc334e5ed24efc57237adc6193e857bac2fbd751bcadad"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-unc149-pedigree-mc-boundary",
+        "from": {
+          "raw": "180dd592b3777477750467d4e39bf8b9aef9b5daf325d0cc4c21aca82621915e",
+          "public": "180dd592b3777477750467d4e39bf8b9aef9b5daf325d0cc4c21aca82621915e",
+          "protected": "bce17b9a9b7a86d2a20e3349bce8ca557bbb8673d32afe60c42d69b34e0604a4"
+        },
+        "to": {
+          "raw": "03778a9b2b9e5f64d76038adae99ea7d16131e1bd991359b2a6a6fd1a4dbe717",
+          "public": "03778a9b2b9e5f64d76038adae99ea7d16131e1bd991359b2a6a6fd1a4dbe717",
+          "protected": "6bdb0792284e014882db63b94ced7650ab23ce49d001373ee3c72159bd3d9f2d"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pfr151-assurance-vs-notified-body",
+        "from": {
+          "raw": "aacd03f238def2c837d386dba4f6c5681b9198587060f79ed82ad7d253d738c8",
+          "public": "aacd03f238def2c837d386dba4f6c5681b9198587060f79ed82ad7d253d738c8",
+          "protected": "f2d041333e270e6d6d3a228c92bc1be9dedc4684febe45d6c81b723757f6fc91"
+        },
+        "to": {
+          "raw": "3f4c5e8803c8bebc3df1688e143c29a26ae64cadb396aee4f704987d93d575c7",
+          "public": "3f4c5e8803c8bebc3df1688e143c29a26ae64cadb396aee4f704987d93d575c7",
+          "protected": "28d849158ad8c063b4261cb583ae409cb1de270c6d74f7d63344a1eabd6a9e38"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pfr151-comparative-assertion-gates",
+        "from": {
+          "raw": "c1e760807a5114eda21312e32f888fb2bb893e5d060f4a32e8e41c4d784116dc",
+          "public": "c1e760807a5114eda21312e32f888fb2bb893e5d060f4a32e8e41c4d784116dc",
+          "protected": "33816a36edff97f138490e6461a6dc601d62798f8be0ac9dd3ad40ef4ad0e7e5"
+        },
+        "to": {
+          "raw": "d5630f67ff02b81f2e7bb858f89ed4ec3378094bdfdbf87dbf3e3ba8d7657538",
+          "public": "d5630f67ff02b81f2e7bb858f89ed4ec3378094bdfdbf87dbf3e3ba8d7657538",
+          "protected": "983646dc512d9ca89aa1f52ef0ccadae176cdd6b24697129b80c70696133f316"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pfr151-paywalled-standard-boundaries",
+        "from": {
+          "raw": "aefcc57dc0c4efd6cbcd7a31b8bfb625c15ffe4b2b28b997fabd833a913bad05",
+          "public": "aefcc57dc0c4efd6cbcd7a31b8bfb625c15ffe4b2b28b997fabd833a913bad05",
+          "protected": "7163889dd47d4280e6181d7aff9f22ef93cdbdb4aa0de7644bce0bca7124be77"
+        },
+        "to": {
+          "raw": "c2673126bd8b32cf904645eced0f6ed749d14d25dcee80aff735dddf2bdbfc41",
+          "public": "c2673126bd8b32cf904645eced0f6ed749d14d25dcee80aff735dddf2bdbfc41",
+          "protected": "e6063e19a1d2de2aa02ca26f43296e580e0014f0ce2835f813a9e8ea42b0d126"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-dqp-ecoinvent-v3-variance",
+        "from": {
+          "raw": "28968ab77a82fce5ea770b7f281f2cd35069ae0b0b4bde793c306b73036fb334",
+          "public": "28968ab77a82fce5ea770b7f281f2cd35069ae0b0b4bde793c306b73036fb334",
+          "protected": "1bea05fffb2971e0b5647177f15b6e878efeaa17cfa24f7037eee5b71e6467c4"
+        },
+        "to": {
+          "raw": "3d9b06244d2f119b33b1c96ba4994a96a979b24085ccf974214008b1dc6cc2af",
+          "public": "3d9b06244d2f119b33b1c96ba4994a96a979b24085ccf974214008b1dc6cc2af",
+          "protected": "910dde9a0d1b3b5982db1b0ce148a8cbdb09052ef6df5a49d37163e70de103ed"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-dqp-pef-ordinal-dqr",
+        "from": {
+          "raw": "331887b855dc740be152f2baccc306082f61c8145fca12c092af615005138020",
+          "public": "331887b855dc740be152f2baccc306082f61c8145fca12c092af615005138020",
+          "protected": "93ab51db35158e6edc95f1c7c693a0e6d6340681af53eef4990b72761feef274"
+        },
+        "to": {
+          "raw": "aa00f1503ff5fbf232d302fc5d3c45b9e50fe8a4d84e950b2c78f322797199b5",
+          "public": "aa00f1503ff5fbf232d302fc5d3c45b9e50fe8a4d84e950b2c78f322797199b5",
+          "protected": "11d0fed8b4a1f17c1606d645ada3d60dc09050d575630e944b8172e4e34b8a84"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-dqp-ghgp-qualitative-dqi",
+        "from": {
+          "raw": "151218636b5e5b6b88453a653fa6d6f4f53ca64ef703d9659b90c43d5c1c4358",
+          "public": "151218636b5e5b6b88453a653fa6d6f4f53ca64ef703d9659b90c43d5c1c4358",
+          "protected": "2dd42b18b2b7a7ff518123ad16709f8dac24b57e5ffa6c522f76a40a6f921c95"
+        },
+        "to": {
+          "raw": "2812ce1705fc23f594a3bfcc7f7e3a3f5b7cde932743322152b411de1b0616e5",
+          "public": "2812ce1705fc23f594a3bfcc7f7e3a3f5b7cde932743322152b411de1b0616e5",
+          "protected": "e36c521ed057ba8bfa3da4e7f8ebd4c6bae61e82d1e09f79db9d348ccbbd023f"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-dqp-four-framework-synthesis",
+        "from": {
+          "raw": "ebd4c9c62a43f6435483cae343b3e2cbdc4b6940668efa5365d635ffb477d296",
+          "public": "ebd4c9c62a43f6435483cae343b3e2cbdc4b6940668efa5365d635ffb477d296",
+          "protected": "518d4811c0acdba479deb019b7310f7566b1a5ec68ca0f25f21aed43dc7ff42a"
+        },
+        "to": {
+          "raw": "bbf33a2f4115bcaed23b941e8bcbc2953a5da108b36fbad41364a200c8f558a8",
+          "public": "bbf33a2f4115bcaed23b941e8bcbc2953a5da108b36fbad41364a200c8f558a8",
+          "protected": "12b69fcc1e1ff2f9df736338c846ecda5926e04db60a851d9739b47094d9b45c"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-dqp-paywalled-iso-boundary",
+        "from": {
+          "raw": "4d6fa65c4a9f1287f2d8100799650f8989afeff4710c4cc82c4a618674608460",
+          "public": "4d6fa65c4a9f1287f2d8100799650f8989afeff4710c4cc82c4a618674608460",
+          "protected": "a7e6e42299b1fbd1fb9f475c35474237c8ffec48a792db7782bf77b2f71d3594"
+        },
+        "to": {
+          "raw": "7716cd23284150ce2dde046f5b6fce5a210a484cb861d75ceb14924ec6b1ad81",
+          "public": "7716cd23284150ce2dde046f5b6fce5a210a484cb861d75ceb14924ec6b1ad81",
+          "protected": "10bfcd80915c7b26d7bf170a24acf590b3b4a2c50f9e930350d6d36f58e6a470"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-dqp-cross-chapter-bridge",
+        "from": {
+          "raw": "a3b6ab83e68a62dc79bd718aae71ca138931dabed075134a8e3b7149f2e6636a",
+          "public": "a3b6ab83e68a62dc79bd718aae71ca138931dabed075134a8e3b7149f2e6636a",
+          "protected": "147ae29ed315e8c0eaa705375bb6db88bcc4705ec0708b9eab9daf92d5dcf47a"
+        },
+        "to": {
+          "raw": "2cd93363563997705e24bb06394fef439b5cd4560e87ba4440d286088ff0e2fa",
+          "public": "2cd93363563997705e24bb06394fef439b5cd4560e87ba4440d286088ff0e2fa",
+          "protected": "0a961f543ca3724c92e87ab1be364106b0295cbd32156386dc1e6830ea12fad6"
+        },
+        "rationale": "有界统稿第六部非案例规范论述记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-unc-ciroth-scores",
+        "from": {
+          "raw": "b07119a839c080fe735c6a7e96a7979a5ac292e8340f560d0d6835e9fb01875a",
+          "public": "b07119a839c080fe735c6a7e96a7979a5ac292e8340f560d0d6835e9fb01875a",
+          "protected": "b07119a839c080fe735c6a7e96a7979a5ac292e8340f560d0d6835e9fb01875a"
+        },
+        "to": {
+          "raw": "1e17ae480a26d8a5c90387a0d567824532993cedf26b2e2faf6dc7bf0aed6ccb",
+          "public": "1e17ae480a26d8a5c90387a0d567824532993cedf26b2e2faf6dc7bf0aed6ccb",
+          "protected": "1e17ae480a26d8a5c90387a0d567824532993cedf26b2e2faf6dc7bf0aed6ccb"
+        },
+        "rationale": "有界统稿第六部引用证据定位记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-unc-ciroth-calibration",
+        "from": {
+          "raw": "61281314c8cf7dce4a2dc9050d5967bd43bc8f59a2c0ff2527558f109b2d533d",
+          "public": "61281314c8cf7dce4a2dc9050d5967bd43bc8f59a2c0ff2527558f109b2d533d",
+          "protected": "61281314c8cf7dce4a2dc9050d5967bd43bc8f59a2c0ff2527558f109b2d533d"
+        },
+        "to": {
+          "raw": "fbecfb0a2ce78dcc5fe5eb443b95896aa4af794fb10ca3a72d657c8f8d6fc365",
+          "public": "fbecfb0a2ce78dcc5fe5eb443b95896aa4af794fb10ca3a72d657c8f8d6fc365",
+          "protected": "fbecfb0a2ce78dcc5fe5eb443b95896aa4af794fb10ca3a72d657c8f8d6fc365"
+        },
+        "rationale": "有界统稿第六部引用证据定位记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-unc-ciroth-empirical",
+        "from": {
+          "raw": "ace3a0d3e740ef2b9a723f4d2c9c634d80ddecf6708ceae9f3335873ba5381bb",
+          "public": "ace3a0d3e740ef2b9a723f4d2c9c634d80ddecf6708ceae9f3335873ba5381bb",
+          "protected": "ace3a0d3e740ef2b9a723f4d2c9c634d80ddecf6708ceae9f3335873ba5381bb"
+        },
+        "to": {
+          "raw": "046ba901aa33d937db65e1d9fe2f517fd329cb1bad834acd1dd2f9a5db39c42e",
+          "public": "046ba901aa33d937db65e1d9fe2f517fd329cb1bad834acd1dd2f9a5db39c42e",
+          "protected": "046ba901aa33d937db65e1d9fe2f517fd329cb1bad834acd1dd2f9a5db39c42e"
+        },
+        "rationale": "有界统稿第六部引用证据定位记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-unc-ciroth-summary",
+        "from": {
+          "raw": "e522e0e70fd17f43140da8e61deaced8dd4bc5fdb87f23f94db003d1f62b00ff",
+          "public": "e522e0e70fd17f43140da8e61deaced8dd4bc5fdb87f23f94db003d1f62b00ff",
+          "protected": "e522e0e70fd17f43140da8e61deaced8dd4bc5fdb87f23f94db003d1f62b00ff"
+        },
+        "to": {
+          "raw": "a1a363a459876817611ab8c98a3744b51cae8c23a309c524659abf813ef78a4a",
+          "public": "a1a363a459876817611ab8c98a3744b51cae8c23a309c524659abf813ef78a4a",
+          "protected": "a1a363a459876817611ab8c98a3744b51cae8c23a309c524659abf813ef78a4a"
+        },
+        "rationale": "有界统稿第六部引用证据定位记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-unc-ciroth-baseline",
+        "from": {
+          "raw": "f2f111b08cb65585df97b562a7ad8df33e1431a87a27fdeaa3884f0b274e9ed2",
+          "public": "f2f111b08cb65585df97b562a7ad8df33e1431a87a27fdeaa3884f0b274e9ed2",
+          "protected": "f2f111b08cb65585df97b562a7ad8df33e1431a87a27fdeaa3884f0b274e9ed2"
+        },
+        "to": {
+          "raw": "e42a937b08d03cec7cd8e8b084ba5f2b5f31c59c5d8cc8e21eb44a8c6921a6dd",
+          "public": "e42a937b08d03cec7cd8e8b084ba5f2b5f31c59c5d8cc8e21eb44a8c6921a6dd",
+          "protected": "e42a937b08d03cec7cd8e8b084ba5f2b5f31c59c5d8cc8e21eb44a8c6921a6dd"
+        },
+        "rationale": "有界统稿第六部引用证据定位记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-ped-sampling-population",
+        "from": {
+          "raw": "0200852b23a6d631e90e438aeb42d0ecbf72a2dca20ef628d35c40a24ffd4b69",
+          "public": "0200852b23a6d631e90e438aeb42d0ecbf72a2dca20ef628d35c40a24ffd4b69",
+          "protected": "0200852b23a6d631e90e438aeb42d0ecbf72a2dca20ef628d35c40a24ffd4b69"
+        },
+        "to": {
+          "raw": "db993a5201a2f37a7da9ae3984cffc130352b13a86d9ccf84b8e7278180079cc",
+          "public": "db993a5201a2f37a7da9ae3984cffc130352b13a86d9ccf84b8e7278180079cc",
+          "protected": "db993a5201a2f37a7da9ae3984cffc130352b13a86d9ccf84b8e7278180079cc"
+        },
+        "rationale": "有界统稿第六部引用证据定位记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-ped-sampling-design",
+        "from": {
+          "raw": "9ed006973e622175c2a61ab2ec4c59da93114861f8c88c6a6948bbe3da146868",
+          "public": "9ed006973e622175c2a61ab2ec4c59da93114861f8c88c6a6948bbe3da146868",
+          "protected": "9ed006973e622175c2a61ab2ec4c59da93114861f8c88c6a6948bbe3da146868"
+        },
+        "to": {
+          "raw": "daf85231843c94abaf5de7b8dcd8f05a416fa89720605f79f586bb045f721b5c",
+          "public": "daf85231843c94abaf5de7b8dcd8f05a416fa89720605f79f586bb045f721b5c",
+          "protected": "daf85231843c94abaf5de7b8dcd8f05a416fa89720605f79f586bb045f721b5c"
+        },
+        "rationale": "有界统稿第六部引用证据定位记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-ped-completeness-data",
+        "from": {
+          "raw": "baf7958a3949e1ccf31e747eb06b8bca45f7d8dbdbe5701fb9e6d8952976d164",
+          "public": "baf7958a3949e1ccf31e747eb06b8bca45f7d8dbdbe5701fb9e6d8952976d164",
+          "protected": "baf7958a3949e1ccf31e747eb06b8bca45f7d8dbdbe5701fb9e6d8952976d164"
+        },
+        "to": {
+          "raw": "9feab3b7654d3198c1df02d9e68f6daad5adbfb1b3226b0e436c5f8e24acd608",
+          "public": "9feab3b7654d3198c1df02d9e68f6daad5adbfb1b3226b0e436c5f8e24acd608",
+          "protected": "9feab3b7654d3198c1df02d9e68f6daad5adbfb1b3226b0e436c5f8e24acd608"
+        },
+        "rationale": "有界统稿第六部引用证据定位记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-ped-gsd-definition",
+        "from": {
+          "raw": "34a39ddbff04c487a30fe70f6ceb36b58f7c84cc01c77baa18672afc423734f6",
+          "public": "34a39ddbff04c487a30fe70f6ceb36b58f7c84cc01c77baa18672afc423734f6",
+          "protected": "34a39ddbff04c487a30fe70f6ceb36b58f7c84cc01c77baa18672afc423734f6"
+        },
+        "to": {
+          "raw": "66cb272d3c1e2c491f340e2c7adca246208bf0edac5ff25569251ac4d9261370",
+          "public": "66cb272d3c1e2c491f340e2c7adca246208bf0edac5ff25569251ac4d9261370",
+          "protected": "66cb272d3c1e2c491f340e2c7adca246208bf0edac5ff25569251ac4d9261370"
+        },
+        "rationale": "有界统稿第六部引用证据定位记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-ped-journal-gsd",
+        "from": {
+          "raw": "d3575ae3f095fbc71512e382e7f20cf8054b41e5e5b63a9b7f7264b6deebe597",
+          "public": "d3575ae3f095fbc71512e382e7f20cf8054b41e5e5b63a9b7f7264b6deebe597",
+          "protected": "d3575ae3f095fbc71512e382e7f20cf8054b41e5e5b63a9b7f7264b6deebe597"
+        },
+        "to": {
+          "raw": "318d19e14041495c45b03270dd1aaf7d57858ca87508c1986674fc288e95a950",
+          "public": "318d19e14041495c45b03270dd1aaf7d57858ca87508c1986674fc288e95a950",
+          "protected": "318d19e14041495c45b03270dd1aaf7d57858ca87508c1986674fc288e95a950"
+        },
+        "rationale": "有界统稿第六部引用证据定位记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-ped-score-test-design",
+        "from": {
+          "raw": "2bc303edada5499fb49ac389993b1aa5e9cf4c6683dec39d2cbae8df90a4d5e6",
+          "public": "2bc303edada5499fb49ac389993b1aa5e9cf4c6683dec39d2cbae8df90a4d5e6",
+          "protected": "2bc303edada5499fb49ac389993b1aa5e9cf4c6683dec39d2cbae8df90a4d5e6"
+        },
+        "to": {
+          "raw": "db01ab394d9bc593b18362812974e3b2468381bc4838c9f6a1743458f4baf996",
+          "public": "db01ab394d9bc593b18362812974e3b2468381bc4838c9f6a1743458f4baf996",
+          "protected": "db01ab394d9bc593b18362812974e3b2468381bc4838c9f6a1743458f4baf996"
+        },
+        "rationale": "有界统稿第六部引用证据定位记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-ped-score-test-results",
+        "from": {
+          "raw": "f52ea68af00c9644e5fb927ef64093eb4412a9ef4c408baf26251005cfa4b98b",
+          "public": "f52ea68af00c9644e5fb927ef64093eb4412a9ef4c408baf26251005cfa4b98b",
+          "protected": "f52ea68af00c9644e5fb927ef64093eb4412a9ef4c408baf26251005cfa4b98b"
+        },
+        "to": {
+          "raw": "dc3e5fdaa1676cb5af4bcc9eed4b021af59ed30aa8ea28f22e3872791ee86a8f",
+          "public": "dc3e5fdaa1676cb5af4bcc9eed4b021af59ed30aa8ea28f22e3872791ee86a8f",
+          "protected": "dc3e5fdaa1676cb5af4bcc9eed4b021af59ed30aa8ea28f22e3872791ee86a8f"
+        },
+        "rationale": "有界统稿第六部引用证据定位记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-ec2021-identity",
+        "from": {
+          "raw": "275cdf5f3b3db1db609908ef6408464a4dbf16e388c627d30b223511e425976c",
+          "public": "275cdf5f3b3db1db609908ef6408464a4dbf16e388c627d30b223511e425976c",
+          "protected": "275cdf5f3b3db1db609908ef6408464a4dbf16e388c627d30b223511e425976c"
+        },
+        "to": {
+          "raw": "839e67bd273e3ef76fad0fa7f43fd129396c0bf88a47bab9069f12fcf27049d7",
+          "public": "839e67bd273e3ef76fad0fa7f43fd129396c0bf88a47bab9069f12fcf27049d7",
+          "protected": "839e67bd273e3ef76fad0fa7f43fd129396c0bf88a47bab9069f12fcf27049d7"
+        },
+        "rationale": "有界统稿第六部引用证据定位记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-pef-guidance2018-identity",
+        "from": {
+          "raw": "1a4d83f04ca0bdc77730200752cf6f516ac05a07f9559e6ace4706c6e1324f8c",
+          "public": "1a4d83f04ca0bdc77730200752cf6f516ac05a07f9559e6ace4706c6e1324f8c",
+          "protected": "1a4d83f04ca0bdc77730200752cf6f516ac05a07f9559e6ace4706c6e1324f8c"
+        },
+        "to": {
+          "raw": "887e43f42abfe9e19c337b170a33b5a1de9d1dbd081b87be43048fbaa45b4abc",
+          "public": "887e43f42abfe9e19c337b170a33b5a1de9d1dbd081b87be43048fbaa45b4abc",
+          "protected": "887e43f42abfe9e19c337b170a33b5a1de9d1dbd081b87be43048fbaa45b4abc"
+        },
+        "rationale": "有界统稿第六部引用证据定位记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-nordic2023-country-discrepancy",
+        "from": {
+          "raw": "c7e9c6cdac086cfabf9d77dbae620631f722599e162d4bb6a03b3db11321209b",
+          "public": "c7e9c6cdac086cfabf9d77dbae620631f722599e162d4bb6a03b3db11321209b",
+          "protected": "c7e9c6cdac086cfabf9d77dbae620631f722599e162d4bb6a03b3db11321209b"
+        },
+        "to": {
+          "raw": "5c3faefc4e01b8f36df027d447422c5984f1ea30a1bd302232c5d58dac90cf42",
+          "public": "5c3faefc4e01b8f36df027d447422c5984f1ea30a1bd302232c5d58dac90cf42",
+          "protected": "5c3faefc4e01b8f36df027d447422c5984f1ea30a1bd302232c5d58dac90cf42"
+        },
+        "rationale": "有界统稿第六部引用证据定位记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-dairy2025-review",
+        "from": {
+          "raw": "8142e16148a98c8c005499efcb287ac840aa9a3c3f7d5b7a25de04a9c7bca0ae",
+          "public": "8142e16148a98c8c005499efcb287ac840aa9a3c3f7d5b7a25de04a9c7bca0ae",
+          "protected": "8142e16148a98c8c005499efcb287ac840aa9a3c3f7d5b7a25de04a9c7bca0ae"
+        },
+        "to": {
+          "raw": "37f9a6d65a7e5de1cef01484652abde6031dc503f8399aae59b7217c9442c997",
+          "public": "37f9a6d65a7e5de1cef01484652abde6031dc503f8399aae59b7217c9442c997",
+          "protected": "37f9a6d65a7e5de1cef01484652abde6031dc503f8399aae59b7217c9442c997"
+        },
+        "rationale": "有界统稿第六部引用证据定位记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-nordic2023-record",
+        "from": {
+          "raw": "fa300ab02b77efe87312dfe496e50cc6b9bbe0984e14bcb1daa3f11e311ee4c6",
+          "public": "fa300ab02b77efe87312dfe496e50cc6b9bbe0984e14bcb1daa3f11e311ee4c6",
+          "protected": "fa300ab02b77efe87312dfe496e50cc6b9bbe0984e14bcb1daa3f11e311ee4c6"
+        },
+        "to": {
+          "raw": "aeb9bb34ff0fefbd3451e825ed27d35bb31c76384f775c55915044063d8e895a",
+          "public": "aeb9bb34ff0fefbd3451e825ed27d35bb31c76384f775c55915044063d8e895a",
+          "protected": "aeb9bb34ff0fefbd3451e825ed27d35bb31c76384f775c55915044063d8e895a"
+        },
+        "rationale": "有界统稿第六部引用证据定位记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-ipcc2019-index",
+        "from": {
+          "raw": "f678fb2f5543361bdde3ce007ebd9c954ecb050f306868e81a5401c181365917",
+          "public": "f678fb2f5543361bdde3ce007ebd9c954ecb050f306868e81a5401c181365917",
+          "protected": "f678fb2f5543361bdde3ce007ebd9c954ecb050f306868e81a5401c181365917"
+        },
+        "to": {
+          "raw": "ffe78844abdfbacb2060d4d79f9f843ac2383a1587649ee3dc8e7e31378ce1b8",
+          "public": "ffe78844abdfbacb2060d4d79f9f843ac2383a1587649ee3dc8e7e31378ce1b8",
+          "protected": "ffe78844abdfbacb2060d4d79f9f843ac2383a1587649ee3dc8e7e31378ce1b8"
+        },
+        "rationale": "有界统稿第六部引用证据定位记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-unc149-eu2021-robustness-hotspots",
+        "from": {
+          "raw": "2b580195cd49a42176e6b56fce3a1c348eafe4ad0eb3e4524da23c7ecf9751c3",
+          "public": "5f52f2ab67b90742eeb58636a8f9b24189d9c1e1b60146d56849a8e1ed2d99bf",
+          "protected": "2b580195cd49a42176e6b56fce3a1c348eafe4ad0eb3e4524da23c7ecf9751c3"
+        },
+        "to": {
+          "raw": "f103d7a671a109ff27ac137afed12dc05cecdaf5ef905a5f873a39f1a9c4c4d8",
+          "public": "b670c583281f6dd14ff96d51139b095f5bd88f9adb152e9d0bde945b8ff13524",
+          "protected": "f103d7a671a109ff27ac137afed12dc05cecdaf5ef905a5f873a39f1a9c4c4d8"
+        },
+        "rationale": "有界统稿第六部引用证据定位记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-dqp153-ecoinvent-v3-pedigree",
+        "from": {
+          "raw": "e7d61504fdfa26e5470d314de71885a52cfa99545e64f8169c0317137345c598",
+          "public": "6c59d2411225b2dd44fb151edefb9507b968a8cea1f13c9098506fda623fe8c3",
+          "protected": "e7d61504fdfa26e5470d314de71885a52cfa99545e64f8169c0317137345c598"
+        },
+        "to": {
+          "raw": "4a24d8ae7d17c23c7f5780bef5ad004644936d9a4dfb5c6e387ad67df3baa964",
+          "public": "7749b3a206a4815c3673f8efaea8a390e7ae11832373c7019d7b0796e3941962",
+          "protected": "4a24d8ae7d17c23c7f5780bef5ad004644936d9a4dfb5c6e387ad67df3baa964"
+        },
+        "rationale": "有界统稿第六部引用证据定位记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-dqp153-ecoinvent-v3-limits",
+        "from": {
+          "raw": "4ee672dd0f05c9b4c360803500a665afc2d6bc39543a460f0f01a60e2e5dc179",
+          "public": "44ffeb245b75da56804cf28d8e0d29efb8b243af297bbdf9084c82b6db618b4d",
+          "protected": "4ee672dd0f05c9b4c360803500a665afc2d6bc39543a460f0f01a60e2e5dc179"
+        },
+        "to": {
+          "raw": "e251760201352eb61a988780800324e9f0e949ac3c92284e9eba7299264f0d4f",
+          "public": "ae036373f26d20ef6c958f16296d8ab6c5ace31f579d32cfe852eadb7e8921b7",
+          "protected": "e251760201352eb61a988780800324e9f0e949ac3c92284e9eba7299264f0d4f"
+        },
+        "rationale": "有界统稿第六部引用证据定位记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-dqp153-ghgp-qualitative-dqi",
+        "from": {
+          "raw": "ffda703348e442dca1863f602f174e5cc9cea1b514b5b8e3ec185a11a4470f7b",
+          "public": "f80a12813965ba351c66cb0d3e03da954bf4207bcbd5b642b2d09d8f48058bef",
+          "protected": "ffda703348e442dca1863f602f174e5cc9cea1b514b5b8e3ec185a11a4470f7b"
+        },
+        "to": {
+          "raw": "cd67ec247bf969153a4d60d74c0a92c2b43f8f19850a5e3b29b1bbdbf36446da",
+          "public": "2c256f6caf85f65167713d56a04196623af7b1c28952f9f8fe5e14e2bc7e910e",
+          "protected": "cd67ec247bf969153a4d60d74c0a92c2b43f8f19850a5e3b29b1bbdbf36446da"
+        },
+        "rationale": "有界统稿第六部引用证据定位记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-dqp153-ghgp-uncertainty-boundary",
+        "from": {
+          "raw": "eab5c2c25acf35c6f01bb8fdf0b6b460ad5585ee5dca5505bdf5f8a67113abd0",
+          "public": "d88e9de60220a4bd6120beb09cffbfa2cb70a9dc7e65ac898e23672dc6e6fa49",
+          "protected": "eab5c2c25acf35c6f01bb8fdf0b6b460ad5585ee5dca5505bdf5f8a67113abd0"
+        },
+        "to": {
+          "raw": "c84f482141f9dff2f532d20c687f69f1e6d2a11dd51696f09471d21044961ad5",
+          "public": "7ade873627c9fa57350086b5948ad9ba8067abb9e14480c01bc68c1ba290b34b",
+          "protected": "c84f482141f9dff2f532d20c687f69f1e6d2a11dd51696f09471d21044961ad5"
+        },
+        "rationale": "有界统稿第六部引用证据定位记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:public-projection",
+        "from": {
+          "raw": "dc6cd6ac8c81b0160184e1179381f169eaa4ea9a0c521ebf2b71487cd8f0f439",
+          "public": null,
+          "protected": "dc6cd6ac8c81b0160184e1179381f169eaa4ea9a0c521ebf2b71487cd8f0f439"
+        },
+        "to": {
+          "raw": "29b6b46ccf6a72bce2507ae7c2950c0b5e53f23dd8f1afd84fd49f2857d984ed",
+          "public": null,
+          "protected": "29b6b46ccf6a72bce2507ae7c2950c0b5e53f23dd8f1afd84fd49f2857d984ed"
+        },
+        "rationale": "有界统稿第六部目录记录（统一跨章术语缩写、首现全称、移除前向前提并补接跨章前提、清理范围中内部编码或规范化专属证据定位符），保留全部原始数值与科学判断边界不变。"
+      }
+    ],
+    "consumers": [
+      {
+        "id": "cl-flow-type",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-exchange",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-flow-exchange-distinction",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-waste-no-universal",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-bw-direction",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-bw-sign",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-unc-scores",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-unc-baseline",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-unc-table-conflict",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-unc-context",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-db2011-review-relative-to-criteria",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-db2011-validation-context",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-db2011-versioned-confidence",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-connect-object-before-unit",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-connect-evidence-to-probability",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-connect-review-does-not-transfer",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-connect-next-evidence-at-link",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-ped-study-question",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-ped-design",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-ped-weighted-mean",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-ped-design-variance",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-ped-estimate-boundary",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-ped-subsets",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-ped-gsd-definition",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-ped-completeness-ratio",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-ped-calibration-boundary",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-ped-independent-product",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-ped-score-test-results",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-ped-cluster-arithmetic",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-ped-poststratification",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-ped-population-spread",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-ped-stratified-conflict",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-ped-factor-values",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-ped-ratio-example",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-ped-ratio-residual",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-ped-factor-conventions",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-ped-inventory-assumptions",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-ped-inventory-combination",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-ped-inventory-interval",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-ped-inventory-center",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-ped-reliability-cv-trace",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-rule-force",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-rule-reconstruction-limit",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-rule-review-objects",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-rule-review-2018",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-rule-review-2024",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-rule-methane-rule",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-rule-niu-provenance",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-rule-ipcc-class",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-rule-model-meaning",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-rule-comparison-limits",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-rule-evidence-judgment",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-rule-wash-cycles",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-rule-wash-inputs",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-rule-use-result",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-rule-report-split",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-rule-quantity-scale",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-rule-capital-gap",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-rule-storage-gap",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-rule-ration-units",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-rule-niu-result",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-rule-ipcc-result",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-pm-factor-correction",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-pm-implementation-layer",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-pm-matched-scope",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-pm-uncovered-pathways",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-pm-conclusion",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-pm-activity-indicators",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-opening",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-record-and-link",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-example-scope",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-opposite",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-scale",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-matrix-sign",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-allocation-held",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-representation-result",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-small-inventory",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-same-flow-total",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-three-co2-quantities",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-allocation-result",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-printed-comparator",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-missing-link",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-missing-link-score",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-jrc-instance",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-jrc-connectors",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-jrc-parameters",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-jrc-weight-control",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-jrc-bare-setup",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-jrc-machine-edge",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-jrc-machine-coordinate",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-jrc-source-discrepancy",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-jrc-partial-match",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-jrc-result-projection",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-jrc-version-reference",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-format-scope",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-format-original-target",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-format-double-target",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-format-result-scale",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-result-direction",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-conversion-study",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-factor-probe",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-factor-zero-absent",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-factor-real-gap",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-factor-report",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-preservation-meaning",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-native-service-meaning",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-closing-historical-return",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-db2011-conditional-use",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-pm-matched-scenario",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-pm-version-and-model",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-flow99-two-boundaries",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-flow99-elementary",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-flow99-landfill",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-flow99-boundary-consequence",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-flow99-agricultural-boundary",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-flow99-boundary-exceptions",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-flow99-record-and-instance",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-flow99-schema-levels",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-flow99-identity-example",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-flow99-waste-classification",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-flow99-material-and-service",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-flow99-direction-equivalence",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-flow99-reference-levels",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-flow99-basis-and-demand",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-flow99-pesticide-interface",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-flow99-interface-consequence",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-flow99-phosphorus-interface",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-flow99-zero-placeholder",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-flow99-zero-reasons",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-flow99-zero-reporting",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-flow99-conclusion",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-flow99-probe-reference",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-service102-row-map",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-service102-service-meaning",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-service102-redundant",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-service102-residual-condition",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-eutro129-phosphorus-soil-water-interface",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-eutro129-phosphorus-stoichiometry-and-p2o5",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-eutro129-nitrogen-soil-prohibition",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-eutro129-aquatic-and-airborne-n-reversals",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-eutro129-location-copies-and-nox-inversion",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-eutro129-normalization-double-counting-and-xml-anomalies",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-eutro129-operational-synthesis",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-particulate131-cohen-empirical-limits",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-particulate131-precursor-perspectives",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-particulate131-ef-ammonia-inversion",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-particulate131-regional-endpoint-reversal",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-particulate131-package-discrepancies",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-dapp147-validation-vs-review-and-team-thresholds",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-dapp147-five-aspect-compliance-and-uuid-semantics",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-dapp147-package-migration-inheritance-and-surveillance",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-unc149-local-vs-global-sa",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-unc149-mc-runs-precision-vs-accuracy",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-pfr151-binding-batteries",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-pfr151-espr-dpp-conversion",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-pfr151-ghgp-boundary-unit",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-pfr151-ghgp-vs-battery-accounting",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-pfr151-product-vs-corporate-scope3",
+        "rationale": "核查跨代依赖论述：第六部整部连续回读仅做术语缩写与首现全称校准、前提有向无环化与升序整理、非案例范围与限定语净化及引用证据定位符规范化，不改变任何下游消费者的科学结论或数值断言。"
+      }
+    ],
+    "assessment": {
+      "scope": "Part VI whole-part continuous reread across F02 (content/docs/book/index.mdx Part VI overview), Part 6 introduction (config/reader-numbering.json), and all four Part VI chapters B25–B28 (124 claims, 8 tables, 137 evidence records) against exact predecessor commit b1c911ee7aa0c772559d363e83e13abf765bceb4.",
+      "comparison": "Harmonizes cross-chapter terminology, edition citations, and first-mention expansions (CV, ILCD-EL, 精密度 P, 地域代表性 GeR, 单一总分, 欧盟委员会建议书 with explicit 2021 OJ L 471 396 pp. / 2022 OJ L 144 384 pp. reconciliation, US EPA, PMC, GHG Protocol, EU+EFTA/UK, and Chinese chapter numbers 第十八章/第二十七章), eliminates the forward premise violation on B26[17] (cl-book-unc-bridge -> cl-ped-estimate-boundary), wires direct B25->B26, B25->B27, B25/B27->B28 cross-chapter bridges, sorts all non-case Part VI premise arrays into strict topological ascending order, clears internal B25–B28 codes from B27 notes 42–43, and normalizes 23 non-case Part VI evidence locators.",
+      "values": "Conserves 100% of all numeric assertions, all BigInt rational facts across Part VI factor validators (#147, #149, #151, #153), and all 24 Part VI case-bound claims, 19 case-bound evidence locators, and 40 case JSON/evaluated downloads byte-for-byte.",
+      "limits": "No new external primary sources or new claim IDs are introduced; Parts VII–VIII comparative units and all 8 global Programme #9 criteria remain open.",
+      "conservation": "Exact conservation of all 1,074 public claim IDs, 1,035 untouched claims, 24 Part VI case-bound claims (40 case files), and 1,124 untouched evidence records against b1c911ee7aa0c772559d363e83e13abf765bceb4.",
+      "review": "Multi-round independent primary-source, locator and premise-DAG audit verified all 4 physical file diffs, all 39 modified non-case claims, all 23 modified non-case evidence locators, and exact 10-for-10 correction notice bijection, concluding unconditional PASS (0 BLOCKER, 0 MAJOR, 0 MINOR)."
+    },
+    "independentReports": {
+      "independent-primary-source-audit-final.md": "848309080d0ff8775f924587d7f14ae473fff65e3448c9e2b2f2ae957220c178",
+      "part6-continuous-reader-review-final.md": "718fff0e424728f4f4378f9ab59e8fd7e580309a5ef07a2d2f76057d9d76dc93",
+      "independent-publication-engineering-review-final.md": "23d67ea089f7fcc2e11fd47287c2279bf8b5c8ae1d7304501c0be7807d974fdc",
+      "actual-browser-qa/qa-summary-155.json": "86e3e95404919822eeb64db8eb1077b7e236c99850d5396c5b560e63286920fc"
+    }
+  }
+}

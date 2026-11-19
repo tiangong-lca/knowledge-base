@@ -2,6 +2,8 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
+import part6 from '../config/reader-part6-reread.json' with { type: 'json' };
+import { restorePart6RereadTestFiles } from './reader-part6-reread.mjs';
 import dqp from '../config/reader-data-quality-comparison.json' with { type: 'json' };
 import { restoreDataQualityComparisonTestFiles } from './reader-data-quality-comparison.mjs';
 import pfr from '../config/reader-product-footprint-comparison.json' with { type: 'json' };
@@ -55,7 +57,7 @@ import {
 } from './reader-part5-reread.mjs';
 
 test('Part V continuous reread conserves 1044 claims, harmonizes Part V terminology, bridges cross-chapter premises and normalizes all 48 Part V locators', () => {
-  const prev145 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, dqp.unit), pfr.unit), unc.unit), dapp.unit);
+  const prev145 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit);
   assert.equal(prev145.catalog.claims.length, 1044);
   assert.deepEqual(catalog.claims.filter(c => c.scope.includes('具名方法与证据范围')), []);
 
@@ -223,11 +225,12 @@ test('Part V continuous reread rollback recovers exact 915af295 state and reject
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
+  restorePart6RereadTestFiles(files, part6.unit);
   restoreDataQualityComparisonTestFiles(files, dqp.unit);
   restoreProductFootprintComparisonTestFiles(files, pfr.unit);
   restoreUncertaintyComparisonTestFiles(files, unc.unit);
   restoreDataApplicabilityComparisonTestFiles(files, dapp.unit);
-  const prev145 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, dqp.unit), pfr.unit), unc.unit), dapp.unit);
+  const prev145 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit);
   const input = { ...prev145, files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
   const qualify = (unit, customInput = input, customActual = actual, customStruct = structure) =>
@@ -308,7 +311,7 @@ test('Part V continuous reread rollback recovers exact 915af295 state and reject
 
 test('Part V continuous reread receipt verifier fails closed when capture pin is absent', () => {
   if (part5RereadCapturePin !== null || !config.unit) return;
-  const prev145 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, dqp.unit), pfr.unit), unc.unit), dapp.unit);
+  const prev145 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit);
   const expected = readerPublicDownloads(prev145.catalog, prev145.literature, prev145.readings);
   const unit = structuredClone(config.unit);
   unit.outputCapture = {
@@ -344,7 +347,7 @@ test('Part V continuous reread receipt verifier fails closed when capture pin is
 });
 
 test('Part V continuous reread receipts bind actual output capture independently', { skip: !part5RereadCapturePin && config.status !== 'reviewed' }, () => {
-  const prev145 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, dqp.unit), pfr.unit), unc.unit), dapp.unit);
+  const prev145 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit);
   const expected = readerPublicDownloads(prev145.catalog, prev145.literature, prev145.readings);
   const verify = (mutateUnit = () => {}, mutateOutput) => {
     const unit = structuredClone(config.unit);

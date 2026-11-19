@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import test from 'node:test';
+import part6 from '../config/reader-part6-reread.json' with { type: 'json' };
+import { restorePart6RereadTestFiles } from './reader-part6-reread.mjs';
 import dqp from '../config/reader-data-quality-comparison.json' with { type: 'json' };
 import { restoreDataQualityComparisonTestFiles } from './reader-data-quality-comparison.mjs';
 import { previousScientificTestRecords } from './fixtures/scientific-receipt-envelope.mjs';
@@ -36,8 +38,9 @@ async function loadInput() {
     readServiceConstraintsFiles('.', service.unit),
   ]);
   for (const [p, b] of [...shiftFiles, ...serviceFiles]) files.set(p, b);
+  restorePart6RereadTestFiles(files, part6.unit);
   restoreDataQualityComparisonTestFiles(files, dqp.unit);
-  const prev151 = previousScientificTestRecords({ catalog, readings, literature }, dqp.unit);
+  const prev151 = previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part6.unit), dqp.unit);
   return { ...prev151, files };
 }
 

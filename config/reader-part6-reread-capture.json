@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "identity": {
+    "sourceCommit": "2a8b98f0012142ec86051b9d709bfc85d7c363ff",
+    "dirty": true,
+    "status": "working-preview",
+    "manifestSha256": "fe7d7e29c5ac4b72468161d9f90c47606bece6aac5c55034aa598a58af1cd8ad"
+  },
+  "manifestPaths": 468,
+  "files": [
+    {
+      "path": "claims/index.html",
+      "sha256": "cd4f092ceb5cd7cf9583b34385d2a8f8991543774f5446fafdc8cb1144ca0994",
+      "bytes": 8193175
+    },
+    {
+      "path": "sources/index.html",
+      "sha256": "646d36fb4e4443bb84b925ab2c936f7e2caae41d0971a5d9fd7974c035103d73",
+      "bytes": 7389349
+    },
+    {
+      "path": "concepts/index.html",
+      "sha256": "e9a9e8638d01c1a555478afdbee2c3245475f6181fd3af8bc8dbc7b1cdb26692",
+      "bytes": 2331956
+    },
+    {
+      "path": "downloads/catalog.json",
+      "sha256": "21c50422d3f39c0f657158e66e16b1a19e201c26ef711edb9684d0592fa7780f",
+      "bytes": 4715829
+    },
+    {
+      "path": "downloads/dependencies.json",
+      "sha256": "efe659b659866f1b8616570348e3d03ce4290ad273b9c44d8f9e36d969616175",
+      "bytes": 457794
+    },
+    {
+      "path": "downloads/bibliography.json",
+      "sha256": "805fad675f77f1ae7f4bf977b821f249cc0d46cbe7550193c3540addaf3f6b9e",
+      "bytes": 1567088
+    },
+    {
+      "path": "downloads/research.json",
+      "sha256": "805fad675f77f1ae7f4bf977b821f249cc0d46cbe7550193c3540addaf3f6b9e",
+      "bytes": 1567088
+    },
+    {
+      "path": "docs/book/index.html",
+      "sha256": "33d67857b6e7dcb2aeebb6fd84f1b652d81a78b2616f00e4879292f56b3c1aea",
+      "bytes": 1179144
+    },
+    {
+      "path": "docs/book/uncertainty-and-variability/index.html",
+      "sha256": "3a17f111526210b960971970d23b08d1e86133254b4a8b01681080f9e9d7b30c",
+      "bytes": 1341999
+    },
+    {
+      "path": "docs/book/data-quality-and-probability/index.html",
+      "sha256": "879843b198a41be320e63936041b465f866f3cecaa800028cad50b35446af081",
+      "bytes": 1655301
+    },
+    {
+      "path": "docs/book/product-footprint-rules-and-practice/index.html",
+      "sha256": "e87682b58fedc85ea69ca6b8c8021429defa1ee91b59e34f842833b9be7cc8df",
+      "bytes": 1626691
+    },
+    {
+      "path": "docs/book/from-connected-results-to-conditional-judgment/index.html",
+      "sha256": "59dac7cb6a336aa2136ad5194b4a491418a95a7865d883cc66838c252ad32db7",
+      "bytes": 1318494
+    },
+    {
+      "path": "print/index.html",
+      "sha256": "284107caf1c0a66c27de0d9a96011fbfa165f7c3c9b5af984611dbf41f8f0a54",
+      "bytes": 16802958
+    }
+  ],
+  "normalization": {
+    "articles": [
+      {
+        "path": "/docs/book",
+        "route": "/docs/book",
+        "sha256": "0260cbe74fdad28e17691f48d5d4626dbfbe204015a34fc347921a5b93eae293"
+      },
+      {
+        "path": "/docs/book/uncertainty-and-variability",
+        "route": "/docs/book/uncertainty-and-variability",
+        "sha256": "510b039064a1c29ea28a345d14bc4946846d5b570e245f041e8ae1bba79f6868"
+      },
+      {
+        "path": "/docs/book/data-quality-and-probability",
+        "route": "/docs/book/data-quality-and-probability",
+        "sha256": "cab9504214366af95d683e752dc907801a6f215340b92d48e1236673ce4aee05"
+      },
+      {
+        "path": "/docs/book/product-footprint-rules-and-practice",
+        "route": "/docs/book/product-footprint-rules-and-practice",
+        "sha256": "e780466eb4fb38e830ac092b789a84563dacbdc14d96956943fd0314cafe4105"
+      },
+      {
+        "path": "/docs/book/from-connected-results-to-conditional-judgment",
+        "route": "/docs/book/from-connected-results-to-conditional-judgment",
+        "sha256": "e1170af1f5977f3724bde9c21a878f2aa56cbb56ad9a2235eaa48690f4184fa3"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book",
+        "sha256": "ed79dd5227a83b450c3b00d110d8b8b08da87d92667b29bf10a4155e90369b29"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/uncertainty-and-variability",
+        "sha256": "d4b1ed37a84286b4e8215a77f6a317edded5017e0547f36ae210eec38170820b"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/data-quality-and-probability",
+        "sha256": "77f28102a9713057bcf6d0b31712b1d66895851f13a36905a6ae259b76c92059"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/product-footprint-rules-and-practice",
+        "sha256": "d43b50f6701c88fea05697fbd0014e27023f668c7a394716acb21a53b6d49a75"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/wall-service-to-comparison",
+        "sha256": "332b1a46cbe66096aad166777e036d271e29d3adef2451ddc6e0d98b583d9349"
+      },
+      {
+        "path": "/print",
+        "route": "book-revisable-judgment",
+        "sha256": "bdc52764d2f6f29eca6257728f607248e130542fe545f80bc55f2cf7652753b4"
+      }
+    ],
+    "publicHtml": [
+      {
+        "path": "claims/index.html",
+        "sha256": "30c05dc08ffff9384b60d20d4684a96b0b0e38cac683d1dd82d10e89fb4ba384"
+      },
+      {
+        "path": "sources/index.html",
+        "sha256": "9820c02c625b29cd4f3d7d4d6b73e208147469258e9b3cf4cb7eeb6417fe81b1"
+      },
+      {
+        "path": "concepts/index.html",
+        "sha256": "945ab41a06674e21c6306a0d30286da701927338283dd598b3336764664ef95b"
+      }
+    ]
+  }
+}

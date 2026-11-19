@@ -517,7 +517,7 @@ export function validateDatedHistoryOutput(documents, { expected, source, attrib
             const node = native.get(origin);
             return !visibleHistoryControl(node) || node.closest('article') !== notice.closest('article');
           })
-          || summary?.text !== `${source.date} 版「${row.previous.title}」的引用范围`
+          || summary?.text !== `${source.date} 版「${row.previous.title ?? id.replace(/^print-unit-[a-f0-9]+-/, '')}」的引用范围`
           || time?.text !== source.date || time.getAttribute('datetime') !== source.date
           || sourceLinks.length !== 1 || sourceLinks[0].getAttribute('href')
             !== `https://github.com/tiangong-lca/knowledge-base/tree/${source.commit}`

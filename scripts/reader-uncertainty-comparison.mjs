@@ -552,7 +552,8 @@ export function observeUncertaintyComparisonOrdinaryTargets(documents) {
     }])));
 }
 
-export function validateUncertaintyComparisonCorrectionOutput(document, path, unit) {
+const part6StackedCorrectionClaims = new Set(['cl-book-unc-bridge']);
+export function validateUncertaintyComparisonCorrectionOutput(document, path, unit, part6Reread = null) {
   const markers = document.querySelectorAll('[data-uncertainty-comparison-correction]');
   const expectedRows = !unit ? [] : uncertaintyComparisonCorrections.filter(row => path === '/print' || path === row.chapter);
   if (!expectedRows.length && !markers.length) return [];
@@ -583,7 +584,7 @@ export function validateUncertaintyComparisonCorrectionOutput(document, path, un
         || note.getAttribute('data-reader-claim') !== claimId
         || article?.getAttribute('data-reader-route') !== chapter || sections.length !== 1
         || note.parentNode !== list || noteItems[noteIndex] !== note
-        || marker.tagName !== 'P' || marker.parentNode !== note || marker.nextElementSibling !== null
+        || marker.tagName !== 'P' || marker.parentNode !== note || (marker.nextElementSibling !== null && !(part6Reread && part6StackedCorrectionClaims.has(row.claimId) && marker.nextElementSibling.getAttribute('data-part6-reread-correction') === row.claimId))
         || !attrs(marker, 'class', 'data-uncertainty-comparison-correction', 'style')
         || marker.getAttribute('class') !== 'legacy-citation-context'
         || marker.getAttribute('style') !== 'display:block'
@@ -601,7 +602,7 @@ export function validateUncertaintyComparisonCorrectionOutput(document, path, un
   return errors;
 }
 
-export function qualifyUncertaintyComparisonHistory(documents, unit, actual) {
+export function qualifyUncertaintyComparisonHistory(documents, unit, actual, part6Reread = null) {
   if (!unit) return { prior: actual, errors: [] };
   const targets = observeUncertaintyComparisonOrdinaryTargets(documents);
   const prior = qualifyScientificHistory(unit.history, actual, targets, {
@@ -622,7 +623,7 @@ export function qualifyUncertaintyComparisonHistory(documents, unit, actual) {
     errors.push('Uncertainty comparison actual versioned ordinary targets differ');
   }
   for (const [path, document] of documents) {
-    errors.push(...validateUncertaintyComparisonCorrectionOutput(document, path, unit));
+    errors.push(...validateUncertaintyComparisonCorrectionOutput(document, path, unit, part6Reread));
   }
   return { prior, errors };
 }
