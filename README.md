@@ -20,6 +20,25 @@ lastReviewedCommit: 2e0b523c3468613a3d71d03606f77adb36fd9a73
 
 # LCA Living Knowledge Base and Review
 
+[Part VI B28 product footprint rules: voluntary PEF vs GHG Protocol vs binding EU Batteries 2023/1542 & ESPR 2024/1781 #151](https://github.com/tiangong-lca/knowledge-base/issues/151)
+extends Part VI chapter `B28` (`《产品足迹规则》`,
+`content/docs/book/product-footprint-rules-and-practice.mdx`, `34` -> `42`
+claims plus two responsive Markdown comparison tables while preserving all `4`
+pinned headings `#规则与规定服务`, `#活动量与报表`, `#模型与审查范围`,
+`#算法响应与比较`), bringing the public catalog from `1,060` to `1,068` claims
+while conserving `100%` of all `34` original `cl-rule-*` claim identities, all
+`5` case-bound `dairy-rules-v1.json` locators, all `1,026` untouched prior
+claims, and all `40` case download files byte-for-byte against
+`3c6844be00ad3d39be3199ffbb257324a5daab79`. Its
+[comparative record](_docs/editorial/2026-11-19-product-footprint-rules-comparison.md)
+binds `3` locally SHA-256-verified official open-access PDFs (`GHG Protocol
+Product Standard 2011`, 148 pp.; `Regulation (EU) 2023/1542`, 117 pp.;
+`Regulation (EU) 2024/1781 ESPR`, 89 pp.), `9` `1-to-1` single-artifact
+`ev-pfr151-*` / `psg-pfr151-*` pairs, `22` `BigInt`-verified `nf-pfr151-*`
+`numericFacts`, `22` normalized non-case `ev-kb44-*` locators, and `1` explicit
+paywalled-standard research gap (`ISO 14067:2018`, `ISO 14025:2006`,
+`EN 15804+A2`, `GB/T 24067-2024`) with zero compiled CSS drift (`be180e5d...`).
+
 [Part VI B26 uncertainty, variability, global sensitivity & comparative Monte Carlo inference #149](https://github.com/tiangong-lca/knowledge-base/issues/149)
 extends Part VI chapter `B26` (`《变异与不确定性》`,
 `content/docs/book/uncertainty-and-variability.mdx`, `9` -> `17` claims plus two

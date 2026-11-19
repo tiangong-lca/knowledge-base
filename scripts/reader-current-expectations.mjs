@@ -1,3 +1,5 @@
+import pfrConfig from '../config/reader-product-footprint-comparison.json' with { type: 'json' };
+import { selectProductFootprintComparison, effectiveProductFootprintComparison } from './reader-product-footprint-comparison.mjs';
 import uncConfig from '../config/reader-uncertainty-comparison.json' with { type: 'json' };
 import { selectUncertaintyComparison, effectiveUncertaintyComparison } from './reader-uncertainty-comparison.mjs';
 import dappConfig from '../config/reader-data-applicability-comparison.json' with { type: 'json' };
@@ -82,8 +84,9 @@ export const currentCostSustainability = selectCostSustainability(costConfig, un
 export const currentPart5Reread = selectPart5Reread(part5Config, undefined, preview);
 export const currentDataApplicabilityComparison = selectDataApplicabilityComparison(dappConfig, undefined, preview);
 export const currentUncertaintyComparison = selectUncertaintyComparison(uncConfig, undefined, preview);
+export const currentProductFootprintComparison = selectProductFootprintComparison(pfrConfig, undefined, preview);
 export const isReadableBookReviewPreview = oldPreview
-  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview' || acidConfig.status === 'preview' || mineralConfig.status === 'preview' || fossilConfig.status === 'preview' || ozoneConfig.status === 'preview' || ozradConfig.status === 'preview' || toxConfig.status === 'preview' || waterConfig.status === 'preview' || biogenicConfig.status === 'preview' || eutroConfig.status === 'preview' || particulateConfig.status === 'preview' || part4Config.status === 'preview' || weightingConfig.status === 'preview' || localizationConfig.status === 'preview' || socialConfig.status === 'preview' || costConfig.status === 'preview' || part5Config.status === 'preview' || dappConfig.status === 'preview' || uncConfig.status === 'preview');
+  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview' || acidConfig.status === 'preview' || mineralConfig.status === 'preview' || fossilConfig.status === 'preview' || ozoneConfig.status === 'preview' || ozradConfig.status === 'preview' || toxConfig.status === 'preview' || waterConfig.status === 'preview' || biogenicConfig.status === 'preview' || eutroConfig.status === 'preview' || particulateConfig.status === 'preview' || part4Config.status === 'preview' || weightingConfig.status === 'preview' || localizationConfig.status === 'preview' || socialConfig.status === 'preview' || costConfig.status === 'preview' || part5Config.status === 'preview' || dappConfig.status === 'preview' || uncConfig.status === 'preview' || pfrConfig.status === 'preview');
 const previousPlan = readableBookReviewPlan(oldPreview
   ? acceptance.units
   : pinnedReadableBookUnits(acceptance, readableBookBaselineDigest, readableBookAcceptancePins));
@@ -111,7 +114,8 @@ const acceptedSocial = effectiveSocialComparison(acceptedLocalization, currentSo
 const acceptedCost = effectiveCostSustainability(acceptedSocial, currentCostSustainability);
 const acceptedPart5 = effectivePart5Reread(acceptedCost, currentPart5Reread);
 const acceptedDapp = effectiveDataApplicabilityComparison(acceptedPart5, currentDataApplicabilityComparison);
-export const currentBookPlan = effectiveUncertaintyComparison(acceptedDapp, currentUncertaintyComparison);
+const acceptedUnc = effectiveUncertaintyComparison(acceptedDapp, currentUncertaintyComparison);
+export const currentBookPlan = effectiveProductFootprintComparison(acceptedUnc, currentProductFootprintComparison);
 
 export function currentBookRecordMatches(kind, previous, current, projection) {
   if (projection !== undefined) return matchesAcceptedRecord(currentBookPlan, kind, previous, current, projection);

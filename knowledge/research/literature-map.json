@@ -5008,6 +5008,12 @@
         "query": "Heijungs 2020 On the number of Monte Carlo runs in comparative probabilistic LCA IJLCA 25:394-402 CC BY 4.0; Groen Bokkers Heijungs de Boer 2017 Methods for global sensitivity analysis in LCA IJLCA 22:1125-1137 SRC SCC KIA Sobol SME STE RBD CC BY 4.0; ILCD Handbook 2010 EUR 24708 EN Section 9.3.3 Figure 26 & Section 9.4 comparative difference covariance; Recommendation EU 2021/2279 OJ L 144 Annex I Section 6.2 robustness 6.3 80% 50% hotspot thresholds 6.3.5 negative credits",
         "channel": "本地已校验 SHA-256 的 Heijungs (2020) 与 Groen et al. (2017) CC BY 4.0 开放获取期刊 PDF，以及已登记的 ILCD 2010 详细指南与欧盟建议书 2021/2279 勘误本",
         "date": "2026-11-19"
+      },
+      {
+        "id": "q-pfr151-product-footprint-rules-20261119",
+        "query": "WRI WBCSD 2011 GHG Protocol Product Life Cycle Accounting and Reporting Standard ISBN 978-1-56973-773-6 functional unit reference flow attributable processes biogenic LUC offsets comparative assertions assurance; Regulation (EU) 2023/1542 OJ L 191 Article 7 Article 17 Article 96 Annex II Annex VIII battery carbon footprint; Regulation (EU) 2024/1781 ESPR OJ L Article 1 Article 2 Article 4 Article 5 Article 7 Articles 9-13 Annex I Digital Product Passport Recital 23 PEF",
+        "channel": "本地已校验 SHA-256 的三份官方开放获取 PDF（GHG Protocol 产品标准 2011、EUR-Lex 欧盟电池法规 2023/1542、EUR-Lex 欧盟可持续产品生态设计法规 2024/1781），对照既有欧盟建议书 2021/2279 与乳制品 PEFCR 登记记录",
+        "date": "2026-11-19"
       }
     ],
     "limitations": [
@@ -22277,6 +22283,195 @@
         "src-unc149-groen-2017"
       ],
       "goalSeedIds": []
+    },
+    {
+      "id": "work-pfr151-ghgp-2011",
+      "title": "Product Life Cycle Accounting and Reporting Standard",
+      "contributors": "World Resources Institute (WRI); World Business Council for Sustainable Development (WBCSD)",
+      "year": "2011",
+      "kind": "technical-standard",
+      "urls": [
+        {
+          "url": "https://ghgprotocol.org/sites/default/files/standards/Product-Life-Cycle-Accounting-Reporting-Standard_041613.pdf",
+          "role": "官方开放获取PDF"
+        },
+        {
+          "url": "https://ghgprotocol.org/product-standard",
+          "role": "官方标准主页"
+        }
+      ],
+      "identifiers": {
+        "isbn": "978-1-56973-773-6",
+        "publisher": "World Resources Institute and World Business Council for Sustainable Development, September 2011"
+      },
+      "volumes": [
+        "V6"
+      ],
+      "topics": [
+        "product GHG accounting",
+        "functional unit vs reference flow",
+        "attributable vs non-attributable processes",
+        "biogenic carbon and direct land-use change",
+        "comparative assertions prohibition and product rules",
+        "limited vs reasonable assurance",
+        "product vs corporate Scope 3 boundary"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "international"
+      ],
+      "traditions": [
+        "GHG Protocol / WRI-WBCSD product carbon accounting"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-pfr151-product-footprint-rules-20261119"
+        ],
+        "reason": "建立单一气候指标产品碳足迹标准与欧盟多类别 PEF 规则在边界、分析单位、生物源与土地利用变化、抵消禁令、鉴证与比较断言上的直接原文对照。",
+        "citationParents": [
+          "lit-n04"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-19",
+      "lastCheckedAt": "2026-11-19",
+      "rights": "GHG Protocol 官方公开发布标准文本；公开记录仅含书目身份、章节页码定位与原创比较分析，不重分发原 PDF。",
+      "limitations": [
+        "2011 年版发布时 ISO 14067 尚未正式定稿，全文未纳入后续产品碳足迹标准修订条文。"
+      ],
+      "catalogSourceIds": [
+        "src-pfr151-ghgp-2011"
+      ],
+      "goalSeedIds": []
+    },
+    {
+      "id": "work-pfr151-eu-2023-1542",
+      "title": "Regulation (EU) 2023/1542 of the European Parliament and of the Council of 12 July 2023 concerning batteries and waste batteries",
+      "contributors": "European Parliament; Council of the European Union",
+      "year": "2023",
+      "kind": "legislation",
+      "urls": [
+        {
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1542",
+          "role": "EUR-Lex 官方公报PDF"
+        },
+        {
+          "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj",
+          "role": "EUR-Lex ELI 永久入口"
+        }
+      ],
+      "identifiers": {
+        "celex": "32023R1542",
+        "oj": "OJ L 191, 28.7.2023, pp. 1–117"
+      },
+      "volumes": [
+        "V6"
+      ],
+      "topics": [
+        "binding EU product carbon footprint regulation",
+        "battery model per manufacturing plant",
+        "carbon footprint declaration, performance classes and maximum thresholds",
+        "use-phase exclusion and 1 kWh functional unit",
+        "mandatory notified body conformity assessment Modules D1 and G"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "EU"
+      ],
+      "traditions": [
+        "EU statutory product environmental law"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-pfr151-product-footprint-rules-20261119"
+        ],
+        "reason": "与无约束力的欧盟建议书 (EU) 2021/2279 直接对照，检验具有全体成员国直接法律效力的电池法规如何重塑功能单位、使用阶段边界、企业特定数据与公告机构合格评定。",
+        "citationParents": [
+          "lit-kb44-tfeu288",
+          "lit-n04"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-19",
+      "lastCheckedAt": "2026-11-19",
+      "rights": "欧盟官方公报（EUR-Lex）公开法律文本；公开记录仅含法规书目、条款与公报页码定位及原创比较分析，不重分发原 PDF。",
+      "limitations": [
+        "具体电池类别的碳足迹计算细则、性能分级阈值与最高限值须由欧盟委员会后续授权法案进一步规定，本法规正文仅确立法律框架、基本边界与生效时间表。"
+      ],
+      "catalogSourceIds": [
+        "src-pfr151-eu-2023-1542"
+      ],
+      "goalSeedIds": []
+    },
+    {
+      "id": "work-pfr151-eu-2024-1781",
+      "title": "Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products (ESPR)",
+      "contributors": "European Parliament; Council of the European Union",
+      "year": "2024",
+      "kind": "legislation",
+      "urls": [
+        {
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32024R1781",
+          "role": "EUR-Lex 官方公报PDF"
+        },
+        {
+          "url": "http://data.europa.eu/eli/reg/2024/1781/oj",
+          "role": "EUR-Lex ELI 永久入口"
+        }
+      ],
+      "identifiers": {
+        "celex": "32024R1781",
+        "oj": "OJ L, 2024/1781, 28.6.2024, pp. 1–89"
+      },
+      "volumes": [
+        "V6"
+      ],
+      "topics": [
+        "ESPR framework regulation",
+        "voluntary PEF to statutory delegated acts conversion",
+        "Digital Product Passport and central EU registry",
+        "product scope and statutory exclusions"
+      ],
+      "languages": [
+        "en"
+      ],
+      "regions": [
+        "EU"
+      ],
+      "traditions": [
+        "EU statutory product environmental law"
+      ],
+      "discovery": {
+        "queryIds": [
+          "q-pfr151-product-footprint-rules-20261119"
+        ],
+        "reason": "说明跨产品生态设计框架法规如何通过授权法案把自愿 PEF 方法转化为具约束力的信息与性能义务，并确立数字产品护照与中央注册库制度。",
+        "citationParents": [
+          "lit-kb44-tfeu288",
+          "lit-n04"
+        ]
+      },
+      "identityStatus": "verified",
+      "accessStatus": "public-fulltext-available",
+      "readingStatus": "not-close-read",
+      "accessedAt": "2026-11-19",
+      "lastCheckedAt": "2026-11-19",
+      "rights": "欧盟官方公报（EUR-Lex）公开法律文本；公开记录仅含法规书目、条款与公报页码定位及原创比较分析，不重分发原 PDF。",
+      "limitations": [
+        "作为框架法规，ESPR 本身不直接规定单一产品的具体足迹算法，实际计算与披露义务取决于后续按产品组通过的授权法案。"
+      ],
+      "catalogSourceIds": [
+        "src-pfr151-eu-2024-1781"
+      ],
+      "goalSeedIds": []
     }
   ],
   "gaps": [
@@ -22644,6 +22839,15 @@
       ],
       "priority": "normal",
       "nextSearch": "若引用迁移路径的文件，先取得并核对字节及成员。既有证据继续绑定本轮实际原 JRC 载体。"
+    },
+    {
+      "id": "lit-gap-pfr151-paywalled-product-standards",
+      "description": "ISO 14067:2018、ISO 14025:2006、EN 15804+A2 与修改采用 ISO 14067:2018 的中国国家标准 GB/T 24067-2024 均属受版权与付费授权保护的标准正文，本仓库未持有其授权全文，故 B28 严格不引述或补造上述标准的内部条款编号、模块细则或具体数值阈值。",
+      "volumes": [
+        "V6"
+      ],
+      "priority": "normal",
+      "nextSearch": "待取得 ISO 14067:2018、ISO 14025:2006、EN 15804+A2 及 GB/T 24067-2024 正式授权全文后，再逐条核验其模块划分、数据质量与互认条款并补充一手证据。"
     }
   ]
 }

@@ -22,6 +22,33 @@ lastReviewedCommit: 2e0b523c3468613a3d71d03606f77adb36fd9a73
 
 # Publication architecture
 
+## Product-footprint-comparison successor
+
+The #151 Part VI `B28` product-footprint-rules comparison successor
+(`scripts/reader-product-footprint-comparison.mjs` and
+`scripts/reader-product-footprint-comparison-factors.mjs`) updates `1` managed
+`B28` MDX file (`content/docs/book/product-footprint-rules-and-practice.mdx`)
+while preserving all `4` pinned headings (`#规则与规定服务`, `#活动量与报表`,
+`#模型与审查范围`, `#算法响应与比较` in `config/reader-numbering.json`) and
+all `34` original `cl-rule-*` claims byte-for-byte, extends the public catalog
+from `1,060` to `1,068` claims (`8` new `cl-pfr151-*` claims, `9` `1-to-1`
+single-artifact `ev-pfr151-*` / `psg-pfr151-*` pairs, `22` `BigInt`-verified
+`nf-pfr151-*` `numericFacts`, `3` new official PDF works/sources/readings, `22`
+normalized non-case `ev-kb44-*` locators while keeping all `5` case-bound
+`dairy-rules-v1.json` locators untouched, and `1` explicit paywalled-standard
+research gap), and embeds `2` responsive comparison tables (Table 1 six columns,
+Table 2 five columns) while keeping all `40` case download files byte-identical.
+`prepareProductFootprintComparisonSource` enforces closed `exactKeys`
+sub-envelopes, `pin === null` fail-closed inactive/preview guards, exact
+`allowsRaw` allowlists, `oldFileShas` + exact deterministic `boundedMdxTransform`,
+and exact rollback to `3c6844be00ad3d39be3199ffbb257324a5daab79`
+(`productFootprintComparisonPredecessorPin` `67e55709...`,
+`productFootprintComparisonUnitPin` `2193f0fd...`,
+`productFootprintComparisonCapturePin` `f1c7d9ac...`), while
+`qualifyProductFootprintComparisonHistory` validates `addressPin` (`cf715091...`),
+`14` dated history controls, and `2` ordinary lead targets, maintaining compiled
+CSS zero-drift (`be180e5d...`).
+
 ## Uncertainty-comparison successor
 
 The #149 Part VI `B26` uncertainty-and-variability comparison successor

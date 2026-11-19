@@ -62,22 +62,31 @@ Unit102 is fully delivered: source PR104/Main
 Unit149 ([Issue149](https://github.com/tiangong-lca/knowledge-base/issues/149),
 Part VI `B26`《变异与不确定性》,
 [protocol](editorial/2026-11-19-uncertainty-variability-comparison.md)) is
-independently accepted (`uncertaintyComparisonPredecessorPin` `7db50e1d...`,
-`uncertaintyComparisonUnitPin` `61a21b40...`,
-`uncertaintyComparisonCapturePin` `636656bd...`) on base
-`4bb508394ef2f6c671b1468d41a2b67c51296be6`, extending `B26` from `9` to `17`
-claims (`1,052` -> `1,060` public claims) with `2` 6-column comparison tables,
-`2` new CC BY 4.0 works/sources/readings (`Heijungs 2020`, `Groen et al. 2017`),
-`10` `1-to-1` `ev-unc149-*`/`psg-unc149-*` pairs, `42` `BigInt` rational
-`numericFacts`, `7` normalized prior `ev-unc-*` locators, and `2`
-`style="display:block"` public correction notices (`cl-unc-sd-sem`,
-`cl-book-unc-bridge`) after two-round unconditional `0/0/0 PASS` independent
+fully delivered: source PR150/Main `3c6844be00ad3d39be3199ffbb257324a5daab79`
+(tree `5aaabed2...`), qualified hosted 468-file output on
+`https://prism.tiangong.earth` (`manifestSha256 = 30730a85...`), and exact root
+integration `workspace#2485` / `PR #2486` (`ec58cd82...`).
+
+[Issue151](https://github.com/tiangong-lca/knowledge-base/issues/151) (Part VI
+`B28`《产品足迹规则》,
+[protocol](editorial/2026-11-19-product-footprint-rules-comparison.md)) is
+independently accepted (`productFootprintComparisonPredecessorPin` `67e55709...`,
+`productFootprintComparisonUnitPin` `2193f0fd...`,
+`productFootprintComparisonCapturePin` `f1c7d9ac...`) on base
+`3c6844be00ad3d39be3199ffbb257324a5daab79`, extending `B28` from `34` to `42`
+claims (`1,060` -> `1,068` public claims) with `2` comparison tables (Table 1
+six columns, Table 2 five columns), `3` locally SHA-256-verified official PDF
+works/sources/readings (`GHG Protocol Product Standard 2011`, `Regulation (EU)
+2023/1542`, `Regulation (EU) 2024/1781 ESPR`), `9` `1-to-1`
+`ev-pfr151-*`/`psg-pfr151-*` pairs, `22` `BigInt` rational `numericFacts`, `22`
+normalized non-case `ev-kb44-*` locators, and `1` explicit paywalled-standard
+research gap after two-round unconditional `0/0/0 PASS` independent
 primary-source, zero-context reader, and publication-engineering audits plus
 50-combo responsive & `@media print` Playwright QA (compiled CSS zero-drift
-`be180e5d...`, `40/40` case files untouched). Clean production build, PR/CI/merge,
-live `https://prism.tiangong.earth` qualification, exact root integration,
-remaining Part VI chapters (`B27`–`B28` + Part VI continuous reread), Parts
-VII–VIII, and all 8 global Programme #9 criteria remain open.
+`be180e5d...`, `40/40` case files and `5/5` case-bound dairy-rules locators
+untouched). Clean production build, PR/CI/merge, live `https://prism.tiangong.earth`
+qualification, exact root integration, `B27` update, Part VI continuous reread,
+Parts VII–VIII, and all 8 global Programme #9 criteria remain open.
 and final ordinary source/root receipts with complete source handoff. Its
 original-source, model and empirical limits remain unchanged.
 
