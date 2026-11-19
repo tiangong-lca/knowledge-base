@@ -1,3 +1,4 @@
+import { selectInterpretationBags, prepareInterpretationBagsSource, effectiveInterpretationBags, verifyInterpretationBagsReceipts } from './reader-interpretation-bags.mjs';
 import { selectWallServiceComparison, prepareWallServiceComparisonSource, effectiveWallServiceComparison, verifyWallServiceComparisonReceipts } from './reader-wall-service-comparison.mjs';
 import { selectPart6Reread, preparePart6RereadSource, effectivePart6Reread, verifyPart6RereadReceipts } from './reader-part6-reread.mjs';
 import { selectDataQualityComparison, prepareDataQualityComparisonSource, effectiveDataQualityComparison, verifyDataQualityComparisonReceipts } from './reader-data-quality-comparison.mjs';
@@ -66,6 +67,9 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const serviceConstraints = selectServiceConstraints(serviceConfig, undefined, preview === 'service');
   const substitutionConfig = await readConfig('reader-substitution-rules.json');
   const substitutionRules = selectSubstitutionRules(substitutionConfig, undefined, preview === 'substitution');
+  const intConfig = await readConfig('reader-interpretation-bags.json');
+  const interpretationBags = selectInterpretationBags(intConfig, undefined, preview === 'interpretation-bags');
+  if (preview === 'interpretation-bags' && intConfig.status !== 'preview') throw new Error('Interpretation & shopping-bag comparison review requires a private preview state');
   const wscConfig = await readConfig('reader-wall-service-comparison.json');
   const wallServiceComparison = selectWallServiceComparison(wscConfig, undefined, preview === 'wall-service-comparison');
   if (preview === 'wall-service-comparison' && wscConfig.status !== 'preview') throw new Error('Wall service comparison review requires a private preview state');
@@ -153,6 +157,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (loadShift && !substitutionRules) throw new Error('Load shift requires the accepted #105 generation');
   if (circularFootprint && !loadShift) throw new Error('Circular footprint requires the accepted #107 generation');
   if (landRecovery && !circularFootprint) throw new Error('Land recovery requires the accepted #109 generation');
+  if (interpretationBags && !wallServiceComparison) throw new Error('Interpretation & shopping-bag comparison requires the accepted #157 generation');
   if (wallServiceComparison && !part6Reread) throw new Error('Wall service comparison requires the accepted #155 generation');
   if (part6Reread && !dataQualityComparison) throw new Error('Part VI continuous reread requires the accepted #153 generation');
   if (dataQualityComparison && !productFootprintComparison) throw new Error('Data quality comparison requires the accepted #151 generation');
@@ -177,7 +182,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (acidEquivalents && !landRecovery) throw new Error('Acid equivalents requires the accepted #111 generation');
   for (const [path, bytes] of await readLoadShiftCaseFiles(root, loadShift)) files.set(path, bytes);
   for (const [path, bytes] of await readServiceConstraintsFiles(root, serviceConstraints)) files.set(path, bytes);
-  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison, waterScarcity, biogenicCarbon, eutrophicationPathways, particulateComparison, part4Reread, weightingValuation, localizationComparison, socialComparison, costSustainability, part5Reread, dataApplicabilityComparison, uncertaintyComparison, productFootprintComparison, dataQualityComparison, part6Reread, wallServiceComparison].filter(Boolean)];
+  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison, waterScarcity, biogenicCarbon, eutrophicationPathways, particulateComparison, part4Reread, weightingValuation, localizationComparison, socialComparison, costSustainability, part5Reread, dataApplicabilityComparison, uncertaintyComparison, productFootprintComparison, dataQualityComparison, part6Reread, wallServiceComparison, interpretationBags].filter(Boolean)];
   const realRoot = await realpath(root);
   const reviewFiles = new Set((reviewUnits ?? []).flatMap(unit =>
     (unit.reviewEvidence ?? []).flatMap(row => [row.reportFile, row.artifactFile])));
@@ -192,8 +197,11 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const input = { catalog, readings, literature, files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
-  const wsc = wallServiceComparison && prepareWallServiceComparisonSource(wallServiceComparison, input, actual, structure);
-  const wscInput = wsc ? { ...wsc.previousRecords, files: wsc.files } : input;
+  const intBags = interpretationBags && prepareInterpretationBagsSource(interpretationBags, input, actual, structure);
+  const intInput = intBags ? { ...intBags.previousRecords, files: intBags.files } : input;
+  const wsc = wallServiceComparison && prepareWallServiceComparisonSource(wallServiceComparison, intInput,
+    intBags?.previous ?? actual, intBags?.structure ?? structure);
+  const wscInput = wsc ? { ...wsc.previousRecords, files: wsc.files } : intInput;
   const part6 = part6Reread && preparePart6RereadSource(part6Reread, wscInput,
     wsc?.previous ?? actual, wsc?.structure ?? structure);
   const part6Input = part6 ? { ...part6.previousRecords, files: part6.files } : wscInput;
@@ -405,8 +413,13 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   }
   if (wallServiceComparison && preview !== 'wall-service-comparison') {
     const { readerPublicDownloads } = await import('./reader-current-output.mjs');
-    if (!verifyWallServiceComparisonReceipts(wallServiceComparison, artifacts, readerPublicDownloads(catalog, literature, readings)))
+    if (!verifyWallServiceComparisonReceipts(wallServiceComparison, artifacts, readerPublicDownloads(intInput.catalog, intInput.literature, intInput.readings)))
       throw new Error('Wall service comparison lacks exact independent source, reader, and output evidence');
+  }
+  if (interpretationBags && preview !== 'interpretation-bags') {
+    const { readerPublicDownloads } = await import('./reader-current-output.mjs');
+    if (!verifyInterpretationBagsReceipts(interpretationBags, artifacts, readerPublicDownloads(catalog, literature, readings)))
+      throw new Error('Interpretation & shopping-bag comparison lacks exact independent source, reader, and output evidence');
   }
   const service = serviceConstraints && prepareServiceConstraintsSource(serviceConstraints, substitution?.previous ?? actual,
     substitution?.structure ?? structure, { ...previousRecords, files: substitutionInput.files });
@@ -457,7 +470,8 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const qualifiedPfr = effectiveProductFootprintComparison(qualifiedUnc, productFootprintComparison, pfr?.affectedClaimIds);
   const qualifiedDqp = effectiveDataQualityComparison(qualifiedPfr, dataQualityComparison, dqp?.affectedClaimIds);
   const qualifiedPart6 = effectivePart6Reread(qualifiedDqp, part6Reread, part6?.affectedClaimIds);
-  return effectiveWallServiceComparison(qualifiedPart6, wallServiceComparison, wsc?.affectedClaimIds);
+  const qualifiedWsc = effectiveWallServiceComparison(qualifiedPart6, wallServiceComparison, wsc?.affectedClaimIds);
+  return effectiveInterpretationBags(qualifiedWsc, interpretationBags, intBags?.affectedClaimIds);
 }
 
 export function validateReadableBookCurrent(root, catalog, readings, literature) {
@@ -623,4 +637,10 @@ export function validateWallServiceComparisonReviewSources(root, catalog, readin
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Wall service comparison review requires the explicit private preview');
   return qualifyCurrentReaderSources(root, catalog, readings, literature, 'wall-service-comparison');
+}
+
+export function validateInterpretationBagsReviewSources(root, catalog, readings, literature) {
+  if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
+    throw new Error('Interpretation & shopping-bag comparison review requires the explicit private preview');
+  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'interpretation-bags');
 }

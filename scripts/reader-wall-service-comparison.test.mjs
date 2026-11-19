@@ -1,6 +1,9 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import test from 'node:test';
+import intBags from '../config/reader-interpretation-bags.json' with { type: 'json' };
+import { restoreInterpretationBagsTestFiles } from './reader-interpretation-bags.mjs';
+import { previousScientificTestRecords } from './fixtures/scientific-receipt-envelope.mjs';
 import config from '../config/reader-wall-service-comparison.json' with { type: 'json' };
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
@@ -33,7 +36,9 @@ async function loadInput() {
     readServiceConstraintsFiles('.', service.unit),
   ]);
   for (const [p, b] of [...shiftFiles, ...serviceFiles]) files.set(p, b);
-  return { catalog, readings, literature, files };
+  restoreInterpretationBagsTestFiles(files, intBags.unit);
+  const prev157 = previousScientificTestRecords({ catalog, readings, literature }, intBags.unit);
+  return { ...prev157, files };
 }
 
 test('Unit #157 B29 wall service comparison prepares cleanly and recovers exact 8d498f48 predecessor pin with 1080 claims and 0 case edits', async () => {
