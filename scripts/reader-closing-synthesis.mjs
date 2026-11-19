@@ -58,13 +58,36 @@ function sections(raw) {
   for(let i=1;i<pieces.length;i+=2){const explicit=/^(.*?)\s+\[#([^\]]+)\]$/.exec(pieces[i]),title=explicit?explicit[1]:pieces[i],id=explicit?explicit[2]:title;headings.push({id,title});occurrences.push(...collectChapterClaimOccurrences(pieces[i+1]).map(claim=>({id:claim,section:id})));}
   return {headings,occurrences};
 }
+function parseMarkdownTableBlock(block, section) {
+  const lines = block.trim().split(/\r?\n/);
+  if (lines.length < 3 || !lines.every(line => line.startsWith('|') && line.endsWith('|'))) return null;
+  const cells = lines.map(line => line.slice(1, -1).split('|').map(cell => cell.trim()));
+  const [headers, divider, ...rows] = cells;
+  if (headers.length < 2
+      || divider.length !== headers.length
+      || !divider.every(cell => /^:?-+:?$/.test(cell))
+      || !rows.length
+      || [headers, ...rows].some(row => row.length !== headers.length || row.some(cell => !nonempty(cell) || /[<>]/.test(cell)))) {
+    return null;
+  }
+  return { section, headers, rows };
+}
 function closingOrdinarySource(raw) {
   const body = raw.replace(/^---\r?\n[\s\S]*?\r?\n---/, '');
   const pieces = body.split(/^## (.+)\s*$/m);
   const ordinary = [];
+  const tables = [];
+  let invalidTable = false;
   for (let index = 0; index < pieces.length; index += 2) {
     const section = index ? readSourceHeading(pieces[index - 1]).id : null;
-    const remainder = pieces[index].replace(/<(?:Prose|Claim)\b[^>]*\/>/g, '');
+    const remainder = pieces[index]
+      .replace(/<(?:Prose|Claim)\b[^>]*\/>/g, '')
+      .replace(/^\|.+\|\r?\n\|(?:\s*:?-+:?\s*\|)+\r?\n(?:\|.+\|\r?\n?)+/gm, tableBlock => {
+        const parsed = parseMarkdownTableBlock(tableBlock, section);
+        if (!parsed) invalidTable = true;
+        else tables.push(parsed);
+        return '';
+      });
     for (const paragraph of remainder.split(/\n\s*\n/).map(value => value.trim()).filter(Boolean)) {
       ordinary.push({
         section,
@@ -73,7 +96,7 @@ function closingOrdinarySource(raw) {
       });
     }
   }
-  return ordinary;
+  return { ordinary, tables, invalidTable };
 }
 
 /** @param {any} value */
@@ -147,7 +170,10 @@ export function validateClosingSynthesisCoverage(edition,sources,catalog,prose,i
     const actual = sections(raw);
     if (!sameRecord(metadata(raw), { title: source.title, description: source.description }) || !same(actual.headings, source.headings))
       errors.push(`B32 actual source metadata/headings differ: ${frozen.route}`);
-    if (!sameRecord(closingOrdinarySource(raw), source.ordinary))
+    const actualOrdinary = closingOrdinarySource(raw);
+    if (!sameRecord(actualOrdinary.ordinary, source.ordinary)
+        || actualOrdinary.invalidTable
+        || !sameRecord(actualOrdinary.tables, source.tables ?? []))
       errors.push(`B32 actual ordinary text differs from its reviewed source layout: ${frozen.route}`);
     if (!same(actual.occurrences, occurrences) || collectChapterClaimOccurrences(raw).length !== occurrences?.length)
       errors.push(`B32 body missing, duplicated, reordered, outside sections or misplaced: ${frozen.route}`);
@@ -263,8 +289,11 @@ export function validateRenderedClosingSynthesis(document,path,catalog,prose,his
   }
   if(!same(actual,expected)||!same(headings,source.headings))errors.push(`${path}: B32 actual body order/sections/identity differ`);
   const ordinary = [];
+  const tables = [];
+  let invalidRenderedTable = false;
   let ordinarySection = null;
-  for (const node of unit.querySelectorAll('h2,h3,p')) {
+  const hasDirectText = el => Boolean(el?.childNodes?.some(c => c.nodeType === 3 && c.text.trim()));
+  for (const node of unit.querySelectorAll('h2,h3,p,table')) {
     if (node.closest('.chapter-notes,.docs-pagination,[data-legacy-for],[data-legacy-notice],[data-legacy-scope]')) continue;
     if (node !== title && node.tagName === (print ? 'H3' : 'H2')) {
       ordinarySection = print ? node.id.slice(prefix.length + 1) : node.id;
@@ -278,13 +307,44 @@ export function validateRenderedClosingSynthesis(document,path,catalog,prose,his
       if (concealedText(node,unit)) errors.push(`${path}: B32 ordinary paragraph is hidden`);
       else checked.add(node);
     }
+    if (node.tagName === 'TABLE' && !checked.has(node)) {
+      const thead = node.childNodes.find(child => child.nodeType === 1 && child.tagName === 'THEAD');
+      const tbody = node.childNodes.find(child => child.nodeType === 1 && child.tagName === 'TBODY');
+      const extraParts = node.childNodes.filter(child => child.nodeType === 1 && child !== thead && child !== tbody);
+      const readCells = (tr, tag) => {
+        const tds = tr?.childNodes?.filter(c => c.nodeType === 1) ?? [];
+        return tds.length && tds.every(c => c.tagName === tag && !concealedText(c, unit))
+          ? tds.map(c => c.text.trim())
+          : null;
+      };
+      const headChildren = thead?.childNodes?.filter(c => c.nodeType === 1) ?? [];
+      const bodyChildren = tbody?.childNodes?.filter(c => c.nodeType === 1) ?? [];
+      const validStructure = Boolean(thead && tbody)
+        && extraParts.length === 0
+        && headChildren.length === 1 && headChildren[0].tagName === 'TR'
+        && bodyChildren.length > 0 && bodyChildren.every(c => c.tagName === 'TR')
+        && !hasDirectText(node) && !hasDirectText(thead) && !hasDirectText(tbody)
+        && !headChildren.some(hasDirectText) && !bodyChildren.some(hasDirectText);
+      const headers = validStructure ? readCells(headChildren[0], 'TH') : null;
+      const rows = validStructure ? bodyChildren.map(tr => readCells(tr, 'TD')) : null;
+      if (!validStructure || !headers || headers.some(c => !nonempty(c))
+          || !rows || rows.some(r => !r || r.length !== headers.length || r.some(c => !nonempty(c)))
+          || concealedText(node, unit)) {
+        invalidRenderedTable = true;
+      } else {
+        tables.push({ section: ordinarySection, headers, rows });
+        checked.add(node);
+      }
+    }
   }
-  if (!sameRecord(ordinary, source.ordinary.map(row => projectOrdinaryReaderNavigation(row, route, print))))
+  if (!sameRecord(ordinary, source.ordinary.map(row => projectOrdinaryReaderNavigation(row, route, print)))
+      || invalidRenderedTable
+      || !sameRecord(tables, source.tables ?? []))
     errors.push(`${path}: B32 actual ordinary paragraphs differ from their reviewed source layout`);
   const groups=unit.querySelectorAll('.chapter-notes'),notes=unit.querySelectorAll('[data-reader-claim]');if(groups.length!==1||!same(notes.map(node=>node.getAttribute('data-reader-claim')),expected.map(row=>row.id)))errors.push(`${path}: B32 exact continuous note plan differs`);
   const annotationErrors=validateExchangeAnnotationOutput(document,unit,route,catalog,{print});errors.push(...annotationErrors);if(!annotationErrors.length)for(const note of notes){const annotation=note.querySelector('.claim-annotation');if(concealed(note,unit)||concealedText(annotation,unit))errors.push(`${path}: B32 annotation is hidden`);else checked.add(annotation);}
   const entries=applyCurrentHistoricalEntries(document, remapClosingSynthesisCitations([...history.originalHistoricalEntries,...closingSynthesisHeadingEntries(history,headingDigest)],history,prose,independentDigest,headingDigest)),unitEntries=entries.filter(entry=>entry.path===path&&entry.route===route);
-  const label=destination=>{const ids=destination.path==='/print'?allIds:prose.website.find(row=>row.route===destination.route)?.claimIds??[],name=destination.path==='/print'?closingSynthesisTitle:prose.sources.find(row=>row.route===destination.route)?.title;return `《${name}》${destination.kind==='note'?`注 ${ids.indexOf(destination.claimId)+1}`:destination.kind==='heading'&&destination.path==='/print'?`·${destination.id.slice(printUnitAnchor(destination.route).length+1)}`:destination.kind==='note-group'?'注释':''}`;};
+  const label=destination=>{const destRoute=destination.path==='/print'?closingSynthesisManuscript:destination.route;const {source:destSource,occurrences:destOccurrences}=reviewedClosingSource(prose,destRoute);const ids=destOccurrences.map(row=>row.id);const name=destination.path==='/print'?closingSynthesisTitle:destSource?.title;return `《${name}》${destination.kind==='note'?`注 ${ids.indexOf(destination.claimId)+1}`:destination.kind==='heading'&&destination.path==='/print'?`·${destination.id.slice(printUnitAnchor(destination.route).length+1)}`:destination.kind==='note-group'?'注释':''}`;};
   for(const entry of unitEntries){if(entry.mode==='notice'&&unit.querySelectorAll(`[id="${entry.id}"][data-legacy-notice]`).length!==1)errors.push(`${path}: B32 exact historical notice missing or repeated: ${entry.id}`);if(entry.mode==='retained'&&entry.scope){const contexts=unit.querySelectorAll(`[data-legacy-scope="${entry.id}"]`),context=contexts[0];if(contexts.length!==1||!((context.parentNode===unit&&unit.id===entry.id)||(context.previousElementSibling?.id===entry.id&&context.parentNode===context.previousElementSibling.parentNode)))errors.push(`${path}: B32 exact retained subset scope missing or detached: ${entry.id}`);}}
   const historical=validateReaderHistoricalText(unit,unitEntries,path,label);errors.push(...historical.errors);for(const node of historical.checked){if(concealedText(node,unit))errors.push(`${path}: B32 historical context is hidden`);else checked.add(node);}
   if(unaccountedReaderText(unit,checked).length)errors.push(`${path}: B32 actual output contains unexpected unreviewed text`);

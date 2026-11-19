@@ -4,6 +4,9 @@ import test from 'node:test';
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
 import loadShift from '../config/reader-load-shift.json' with { type: 'json' };
 import service from '../config/reader-service-constraints.json' with { type: 'json' };
+import rev from '../config/reader-revisable-judgment.json' with { type: 'json' };
+import { restoreRevisableJudgmentTestFiles } from './reader-revisable-judgment.mjs';
+import { previousScientificTestRecords } from './fixtures/scientific-receipt-envelope.mjs';
 import config from '../config/reader-future-scenarios.json' with { type: 'json' };
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { inspectReadableBookEdition } from './reader-current-edition.mjs';
@@ -32,7 +35,9 @@ async function loadInput() {
     readServiceConstraintsFiles(process.cwd(), service.unit),
   ]);
   for (const [p, b] of [...shiftFiles, ...serviceFiles]) files.set(p, b);
-  return { catalog, readings, literature, files };
+  restoreRevisableJudgmentTestFiles(files, rev.unit);
+  const prev161 = previousScientificTestRecords({ catalog, readings, literature }, rev.unit);
+  return { ...prev161, files };
 }
 
 test('Unit #161 B31 future technology & scenarios prepares cleanly and recovers exact ac54b259 predecessor pin with 1092 claims and 9 untouched prior B31 claims', async () => {

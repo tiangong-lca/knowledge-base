@@ -82359,6 +82359,500 @@
       "status": "reviewed",
       "reviewKind": "agent-source-check",
       "reviewedAt": "2026-11-19"
+    },
+    {
+      "id": "cl-rev163-lcia-pathway-and-packet-drift",
+      "text": "在厘清研究参照与活动清单之后，还须辨认另一类常被误当成“物理差异”的变化：同一份清单在不同影响评价方法、空间分辨率或版本数据包下可能给出不同排序。全书在资源耗竭、生物碳、酸化与富营养化、细颗粒物、水资源、臭氧与辐射以及毒性等章节已经逐一验证，结果分歧往往来自四层非物理来源——评价截点与类别边界（例如把铀归入矿产还是化石资源、生物碳是否采用零抵消还是计入碳储存与不同时间窗、农田磷流失是否扣减入土滞留）、空间与排放区室分辨率（全球平均因子与流域或城市原型因子之别）、时间范围设定，以及官方方法数据包中的 XML 或工作簿勘误。唯有先将清单的物理增减与特征化模型及版本变更拆开核对，才能知道排序变化究竟源于技术改进，还是源于模型口径切换。",
+      "kind": "interpretation",
+      "scope": "综合全书第四部影响评价比较结论，拆分前景物理变化与 LCIA 类别边界、空间区室、时间窗及官方数据包勘误四类非物理来源。",
+      "evidenceIds": [
+        "ev-mineral115-guidance-sop-scp",
+        "ev-fossil117-ef31-ncv-and-mineral-boundary",
+        "ev-bio127-ef31-climate-xmls",
+        "ev-bio127-ef31-nf-workbook",
+        "ev-bio127-rivm-ch2-midpoints",
+        "ev-ozone119-ef31-multipath-uuid",
+        "ev-eutro129-ec2021-field-rules",
+        "ev-particulate131-ef31-pm-xml",
+        "ev-water125-ef31-water-xml",
+        "ev-tox123-jrc130796-hc20-proxies"
+      ],
+      "premiseIds": [
+        "cl-connect-reuse-keeps-relation",
+        "cl-connect-coverage-and-overlap"
+      ],
+      "conceptIds": [
+        "cn-cf",
+        "cn-midpoint",
+        "cn-endpoint",
+        "cn-system-model"
+      ],
+      "caveats": [
+        "不同影响类别的物理路径与模型成熟度并不相同，不能用单一类别的换版灵敏度推论所有类别都同样稳健或脆弱。"
+      ],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-19",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-mineral115-guidance-sop-scp",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-fossil117-ef31-ncv-and-mineral-boundary",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-bio127-ef31-climate-xmls",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-bio127-ef31-nf-workbook",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-bio127-rivm-ch2-midpoints",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-ozone119-ef31-multipath-uuid",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-eutro129-ec2021-field-rules",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-particulate131-ef31-pm-xml",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-water125-ef31-water-xml",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-tox123-jrc130796-hc20-proxies",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        }
+      ]
+    },
+    {
+      "id": "cl-rev163-circular-and-prospective-coupling",
+      "text": "在系统边界与时间设置上，还须一并纳入跨周期循环分账与面向未来的情景耦合。循环足迹公式中的分摊参数不仅改变再生材料在上下游产品间的负担归属，在市场供需约束不同时还可能让单品足迹信号与全系统净变化出现反向。前瞻性评价既要用时间位置与技术成熟度双轴厘清前瞻性、事前、预期式、实验室尺度与动态评价的边界，也要正视实验室放大到工业规模普遍缺少技术就绪度（TRL）标注与投产后实测回验的实证缺口。即便采用综合评估模型耦合背景数据库与超结构情景差异文件消除了多库重连的工程误差，软件架构本身也绝不担保情景假设的科学质量。同时，仅含时间标签清单的半动态建模与耦合动态特征化因子的全动态建模仍受限于特征化覆盖与时间范围价值选择，因此未来比较必须把工艺放大条件、背景脱碳路径与时间边界并列披露。",
+      "kind": "interpretation",
+      "scope": "衔接循环足迹分账与前瞻性／事前／动态 LCA 比较结论，界定跨周期分摊与未来情景耦合的修订边界。",
+      "evidenceIds": [
+        "ev-cff109-2022-equation",
+        "ev-cff109-ekvall-hypothetical",
+        "ev-fut161-arvidsson-terminology",
+        "ev-fut161-tsoy-upscaling",
+        "ev-fut161-steubing-superstructure",
+        "ev-fut161-lueddeckens-temporal",
+        "ev-fut161-lueddeckens-barriers"
+      ],
+      "premiseIds": [
+        "cl-connect-time-relations",
+        "cl-connect-prospective-two-questions",
+        "cl-fut161-temporal-barriers-values"
+      ],
+      "conceptIds": [
+        "cn-system-model",
+        "cn-future-scenarios",
+        "cn-allocation-context"
+      ],
+      "caveats": [
+        "循环分账参数与未来背景情景均属于条件化建模假设，不能替代实际回收市场响应或投产后实测验证。"
+      ],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-19",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-cff109-2022-equation",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-cff109-ekvall-hypothetical",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-fut161-arvidsson-terminology",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-fut161-tsoy-upscaling",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-fut161-steubing-superstructure",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-fut161-lueddeckens-temporal",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-fut161-lueddeckens-barriers",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        }
+      ]
+    },
+    {
+      "id": "cl-rev163-pedigree-dqr-and-sampling-limits",
+      "text": "在证据覆盖与数值来历层面，全书关于数据适用性、不确定度与质量评分的跨体系比较揭示了一条必须守住的界线：背景数据库的地理与市场代表性、数据质量等级（DQR）以及统计概率分布三者不能互相替代。全球平均与剩余地区（RoW）数据集会随数据库换版与新增国家数据而漂移，不同规范对二手数据降级阶梯与截断规则的要求也各不相同；谱系矩阵虽然便于按五维特征给缺乏实测方差的条目赋定默认离散度，但这类启发式默认因子与实测抽样分布并非同一数学对象，不能直接把谱系蒙特卡洛区间当作观测误差的统计证明。同样，ecoinvent 谱系方差、实证误差校准、欧盟产品环境足迹的序数质量评分与温室气体核算体系的定性不确定度说明各自承担不同职责，报告时须分别写明数据来源层级、质量评分口径与实测变异范围。",
+      "kind": "interpretation",
+      "scope": "综合第六部数据适用性、不确定度与数据质量评分比较，界定地理市场漂移、谱系矩阵与蒙特卡洛及四大框架 DQR 职责分界。",
+      "evidenceIds": [
+        "ev-dapp147-ecoinvent2013-glo-row-and-markets",
+        "ev-dapp147-ec2021-secondary-hierarchy-and-cutoff",
+        "ev-dapp147-tidas-public-rules",
+        "ev-unc149-heijungs2020-pedigree-incompatibility",
+        "ev-unc-ciroth-calibration",
+        "ev-dqp153-ecoinvent-v3-pedigree",
+        "ev-dqp153-pef-dnm-thresholds",
+        "ev-dqp153-ghgp-uncertainty-boundary"
+      ],
+      "premiseIds": [
+        "cl-connect-evidence-to-probability",
+        "cl-connect-zero-needs-origin"
+      ],
+      "conceptIds": [
+        "cn-data-fitness",
+        "cn-variability-uncertainty",
+        "cn-review-scope"
+      ],
+      "caveats": [
+        "数据质量评分较高仅说明记录满足特定规范的元信息与代表性门槛，并不自动消除系统边界截断或模型结构不确定度。"
+      ],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-19",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-dapp147-ecoinvent2013-glo-row-and-markets",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-dapp147-ec2021-secondary-hierarchy-and-cutoff",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-dapp147-tidas-public-rules",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-unc149-heijungs2020-pedigree-incompatibility",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-unc-ciroth-calibration",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-dqp153-ecoinvent-v3-pedigree",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-dqp153-pef-dnm-thresholds",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-dqp153-ghgp-uncertainty-boundary",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        }
+      ]
+    },
+    {
+      "id": "cl-rev163-valuation-denominator-and-veto-limits",
+      "text": "当比较结果跨越多个环境类别、社会维度与财务视角时，如何汇总取舍本身就是决定排序的关键环节。全书第五部已经表明：归一化与加权并非中性换算——外部归一化分母的地域范围与估算偏差会与权重系数相互耦合，进而放大或压低特定影响类别的相对贡献；本地化修正须逐层核查排放位置、传输路径、背景负荷与受体敏感度，避免把局部高敏区的问题平均化。把环境外部性折算为货币价值与核算企业现金流生命周期成本属于不可通约的两种账本；而多准则决策中的线性加权默认允许类别间完全补偿，若涉及劳工安全、人权底线或不可逆生态阈值，则必须引入非补偿性排序或否决门槛；即便是以绝对环境可持续性为目标的地球边界评估，不同安全运行空间的分配原则也足以令同一方案的合规判断发生反转。",
+      "kind": "interpretation",
+      "scope": "综合第五部归一化／加权、本地化、社会评价、货币化与生命周期成本、多准则决策及地球边界比较，界定跨维度汇总的不可通约与否决边界。",
+      "evidenceIds": [
+        "ev-weight135-jrc130796-nf-drift-and-rankings",
+        "ev-weight135-cml2001-part3-finnveden-monetary",
+        "ev-loc137-glam2019-spatial-and-rice-cases",
+        "ev-soc139-psilca-v3-architecture-and-scales",
+        "ev-lcc143-finkbeiner2010-lcst-and-lcsd",
+        "ev-lcc143-unep2011-lcc-flavours-and-cases",
+        "ev-lcc143-glam3-mcda-and-smm",
+        "ev-lcc143-glam3-planetary-boundaries-aesa",
+        "ev-lcc143-oneill2026-strong-vs-weak-sustainability"
+      ],
+      "premiseIds": [
+        "cl-connect-values-stay-specific",
+        "cl-connect-money-has-roles"
+      ],
+      "conceptIds": [
+        "cn-social-assessment",
+        "cn-cost-perspective",
+        "cn-system-model"
+      ],
+      "caveats": [
+        "拒绝随意把多维结果压成单一总分并非回避决策，而是把价值立场、补偿限度与分配原则从隐蔽系数移到公开讨论台面。"
+      ],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-19",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-weight135-jrc130796-nf-drift-and-rankings",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-weight135-cml2001-part3-finnveden-monetary",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-loc137-glam2019-spatial-and-rice-cases",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-soc139-psilca-v3-architecture-and-scales",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-lcc143-finkbeiner2010-lcst-and-lcsd",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-lcc143-unep2011-lcc-flavours-and-cases",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-lcc143-glam3-mcda-and-smm",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-lcc143-glam3-planetary-boundaries-aesa",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-lcc143-oneill2026-strong-vs-weak-sustainability",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        }
+      ]
+    },
+    {
+      "id": "cl-rev163-comparative-assertion-three-regimes",
+      "text": "即使一项比较在计算上对齐了功能服务、系统边界与背景配对，它是否能够公开宣称“甲方案优于乙方案”，还要经受制度与审查边界的检验。全书对照的三套主要规范在此划出清晰分水岭：国际参考生命周期数据系统手册（ILCD 2010）要求对面向公众的比较性断言禁用加权、禁止仅凭清单作出比较断言并引入独立专家小组关键性审查；欧盟产品环境足迹（PEF）及电池法规、可持续产品生态设计法规（ESPR）则依托具名类别规则（PEFCR）、量化热点阈值、性能分级与法定核查路径建立可比与合规边界；而温室气体核算体系产品标准明确不以支持面向公众的产品优劣比较性断言为设计目标。至于付费墙保护的国际标准原文（如 ISO 14044、ISO 14067 与 ISO/TS 14071）中未经逐条核验的细则，本书统一保持边界留白，既不将外部导则与国际标准原文自动画等号，也绝不以二手转述冒充标准原文授权。",
+      "kind": "source-statement",
+      "scope": "综合第六与第七部产品足迹规则、墙面服务与购物袋审查比较，界定计算可比性与 ILCD、欧盟 PEF／法规、GHG Protocol 三大制度边界及付费 ISO 留白纪律。",
+      "evidenceIds": [
+        "ev-pfr151-battery-art7-art96",
+        "ev-pfr151-espr-conversion-dpp",
+        "ev-wsc157-ilcd-equivalence-scenarios",
+        "ev-wsc157-ilcd-weighting-panel",
+        "ev-wsc157-pef-pefcr-classes-verification",
+        "ev-wsc157-ghgp-no-comparative-assertion",
+        "ev-int159-ilcd-critical-review",
+        "ev-int159-danish-epa-multi-indicator",
+        "ev-int159-pef-interpretation-report"
+      ],
+      "premiseIds": [
+        "cl-connect-review-does-not-transfer",
+        "cl-book-conclusion-conditions"
+      ],
+      "conceptIds": [
+        "cn-review-scope",
+        "cn-framework-work-products",
+        "cn-fu"
+      ],
+      "caveats": [
+        "在某一制度下通过核查的结果不可自动平移至另一法域或另一项公开比较断言，跨制度引用须重新核对功能单位、背景库与审查范围。"
+      ],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-19",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-pfr151-battery-art7-art96",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-pfr151-espr-conversion-dpp",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-wsc157-ilcd-equivalence-scenarios",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-wsc157-ilcd-weighting-panel",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-wsc157-pef-pefcr-classes-verification",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-wsc157-ghgp-no-comparative-assertion",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-int159-ilcd-critical-review",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-int159-danish-epa-multi-indicator",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-int159-pef-interpretation-report",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        }
+      ]
+    },
+    {
+      "id": "cl-rev163-targeted-revision-routing",
+      "text": "既然一项经得起推敲的结论把服务要求、系统模型、背景数据、影响评价、价值取舍、不确定度与审查体制逐层拆开，那么当新证据出现时，修订也应当是定向的而非推倒重来。实测使用行为或次级功能变化，首先触发功能单位、参考流与复用门槛重算，而不否定上游工艺平衡；背景数据库换版或方法数据包勘误，应定位到清单链接或特征化矩阵环节，而不应被误读为工厂能耗突然恶化；归一化分母、权重或地球边界分配原则改变，改变的是综合排序与合规判据，而非底层物理排放清单；类别规则或关键性审查范围更新，改变的是对外宣称的制度资格，而非内部热点诊断本身。通过这种逐层路由，研究团队与读者都能迅速看清：新资料究竟改写了哪一步，又有哪些既有依据仍然有效。",
+      "kind": "interpretation",
+      "scope": "衔接既有历史回望段落，建立全书七部“新增证据—受影响环节—应修订命题—保持不变依据—不得直接推论”的定向修订纪律。",
+      "evidenceIds": [
+        "ev-wsc157-ilcd-equivalence-scenarios",
+        "ev-int159-danish-epa-multi-indicator",
+        "ev-dapp147-ecoinvent2013-glo-row-and-markets",
+        "ev-weight135-jrc130796-nf-drift-and-rankings",
+        "ev-fut161-steubing-superstructure"
+      ],
+      "premiseIds": [
+        "cl-connect-next-evidence-at-link",
+        "cl-closing-historical-return",
+        "cl-rev163-lcia-pathway-and-packet-drift",
+        "cl-rev163-pedigree-dqr-and-sampling-limits"
+      ],
+      "conceptIds": [
+        "cn-historical-comparison-basis",
+        "cn-system-model",
+        "cn-review-scope"
+      ],
+      "caveats": [
+        "当同一项现实变更同时触及多个层级（例如新工艺既改变功能寿命又改变上游原料路线）时，应按路由表逐行叠加核查，而非只修订最显眼的一层。"
+      ],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-19",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-wsc157-ilcd-equivalence-scenarios",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-int159-danish-epa-multi-indicator",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-dapp147-ecoinvent2013-glo-row-and-markets",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-weight135-jrc130796-nf-drift-and-rankings",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-fut161-steubing-superstructure",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        }
+      ]
+    },
+    {
+      "id": "cl-rev163-monograph-closing-boundary",
+      "text": "合上全书回望饮料容器、墙面涂层与购物袋三个贯通案例，以及贯穿七部的方法比较，生命周期评价真正能够负责任地交付的，并不是脱离语境的“终极胜者标签”，而是一套可追溯、可复算、可证伪的条件化判断结构：把环境、社会与成本负担的转移路径摊在明处，标出结论翻转的定量门槛，写清模型边界、数据来历与审查权限，并为后来者留下精确的修订入口。它永远不能替代政治与伦理层面的价值抉择，不能替代尚未发生的实地使用观测，也不能凭单次计算自动跨过不同法域的合规审查；但正因为承认这些边界并拒绝把假设藏进黑箱，生命周期评价才得以成为一项随证据成长、经得起公开检验的科学工具。",
+      "kind": "interpretation",
+      "scope": "全书三十二章收束论述：合拢三个贯通案例与七部方法比较，明确可修订 LCA 判断的负责任交付物与不可替代边界。",
+      "evidenceIds": [
+        "ev-int159-danish-epa-multi-indicator",
+        "ev-int159-pef-interpretation-report",
+        "ev-fut161-tsoy-upscaling",
+        "ev-lcc143-oneill2026-strong-vs-weak-sustainability"
+      ],
+      "premiseIds": [
+        "cl-closing-historical-return",
+        "cl-rev163-circular-and-prospective-coupling",
+        "cl-rev163-valuation-denominator-and-veto-limits",
+        "cl-rev163-comparative-assertion-three-regimes",
+        "cl-rev163-targeted-revision-routing"
+      ],
+      "conceptIds": [
+        "cn-historical-comparison-basis",
+        "cn-framework-work-products",
+        "cn-review-scope"
+      ],
+      "caveats": [
+        "本收束论述综合全书已核验的一手文献与公开计算案例，不替代特定工程项目的实地监测或特定法域的法定合格评定。"
+      ],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-19",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-int159-danish-epa-multi-indicator",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-int159-pef-interpretation-report",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-fut161-tsoy-upscaling",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        },
+        {
+          "evidenceId": "ev-lcc143-oneill2026-strong-vs-weak-sustainability",
+          "relation": "supports",
+          "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+        }
+      ]
     }
   ],
   "concepts": [

@@ -4,6 +4,8 @@ import test from 'node:test';
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
 import loadShift from '../config/reader-load-shift.json' with { type: 'json' };
 import service from '../config/reader-service-constraints.json' with { type: 'json' };
+import rev from '../config/reader-revisable-judgment.json' with { type: 'json' };
+import { restoreRevisableJudgmentTestFiles } from './reader-revisable-judgment.mjs';
 import fut from '../config/reader-future-scenarios.json' with { type: 'json' };
 import { restoreFutureScenariosTestFiles } from './reader-future-scenarios.mjs';
 import { previousScientificTestRecords } from './fixtures/scientific-receipt-envelope.mjs';
@@ -35,8 +37,9 @@ async function loadInput() {
     readServiceConstraintsFiles(process.cwd(), service.unit),
   ]);
   for (const [p, b] of [...shiftFiles, ...serviceFiles]) files.set(p, b);
+  restoreRevisableJudgmentTestFiles(files, rev.unit);
   restoreFutureScenariosTestFiles(files, fut.unit);
-  const prev159 = previousScientificTestRecords({ catalog, readings, literature }, fut.unit);
+  const prev159 = previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, rev.unit), fut.unit);
   return { ...prev159, files };
 }
 
