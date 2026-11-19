@@ -2,6 +2,8 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
+import fut from '../config/reader-future-scenarios.json' with { type: 'json' };
+import { restoreFutureScenariosTestFiles } from './reader-future-scenarios.mjs';
 import intBags from '../config/reader-interpretation-bags.json' with { type: 'json' };
 import { restoreInterpretationBagsTestFiles } from './reader-interpretation-bags.mjs';
 import wsc from '../config/reader-wall-service-comparison.json' with { type: 'json' };
@@ -53,7 +55,7 @@ import {
 } from './reader-data-applicability-comparison.mjs';
 
 test('Data applicability comparison enforces exact 1052 claims, 18 single-artifact evidence pairs, 63 BigInt facts and zero-survivor mutation', () => {
-  const prev147 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit);
+  const prev147 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit);
   assert.equal(prev147.catalog.claims.length, 1052);
   assert.equal(catalog.claims.filter(c => c.id.startsWith('cl-dapp147-')).length, 8);
   assert.equal(catalog.evidence.filter(e => e.id.startsWith('ev-dapp147-')).length, 18);
@@ -151,13 +153,14 @@ test('Data applicability comparison source plan recovers exact c5b90b03 state an
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [p, bytes] of [...shiftFiles, ...serviceFiles]) files.set(p, bytes);
+  restoreFutureScenariosTestFiles(files, fut.unit);
   restoreInterpretationBagsTestFiles(files, intBags.unit);
   restoreWallServiceComparisonTestFiles(files, wsc.unit);
   restorePart6RereadTestFiles(files, part6.unit);
   restoreDataQualityComparisonTestFiles(files, dqp.unit);
   restoreProductFootprintComparisonTestFiles(files, pfr.unit);
   restoreUncertaintyComparisonTestFiles(files, unc.unit);
-  const prev147 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit);
+  const prev147 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit);
   const input = { ...prev147, files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
@@ -205,7 +208,7 @@ test('Data applicability comparison source plan recovers exact c5b90b03 state an
 });
 
 test('Data applicability comparison receipt binding behaves fail-closed before and after capture pinning', () => {
-  const prev147 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit);
+  const prev147 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit);
   const expected = readerPublicDownloads(prev147.catalog, prev147.literature, prev147.readings);
   if (dataApplicabilityComparisonCapturePin === null) {
     const unit = structuredClone(config.unit);

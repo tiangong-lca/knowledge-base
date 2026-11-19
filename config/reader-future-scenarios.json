@@ -1,0 +1,1978 @@
+{
+  "schemaVersion": 1,
+  "status": "reviewed",
+  "unit": {
+    "id": "future-scenarios-161",
+    "source": {
+      "commit": "ac54b2594efab9d985e8f2aac677d68e97573643",
+      "tree": "752efb6110b27ab5ebb299931a74a768822c6c11",
+      "manifest": "bc9c158baf5f009172d04d1c27fa46898eab9b2755d84de48022b84ca7028709",
+      "date": "2026-11-19"
+    },
+    "routes": [
+      "/docs/book/future-technology-and-context"
+    ],
+    "rationale": "在第七部第三十一章《未来技术与情景》保持全部 9 条既有论述与 3 个冻结节标题逐字节不变的前提下，新增 6 条跨方法比较论述（全书 1,086→1,092 条）、1 段引导语、1 张 5 列跨体系对照表、4 项经 SHA-256 核验的 Springer CC BY 4.0 一手文献来源／阅读／书目记录及 6 条证据记录（含 14 项 BigInt 精确核验数值事实），系统对照 Arvidsson 等（2024）术语双轴、Tsoy 等（2020）18 项放大研究与四类估算方法、Steubing & de Koning（2021）超结构与情景差分文件及 Lueddeckens 等（2020）60 项动态 LCA 时间边界与价值选择综述。",
+    "state": {
+      "before": "8cee455c6adcaf3db92903ac5f7e53bc28b39e9dc4ffd1b47c98502fae6b4c4e",
+      "after": "63fb719edbadaca5b4de26a3360ab1b68b19c00d275d0cdc773c27c295e130c7"
+    },
+    "scope": [
+      "content/docs/book/future-technology-and-context.mdx",
+      "researchMetadata:order:claims",
+      "researchMetadata:order:evidence",
+      "researchMetadata:order:sources",
+      "researchMetadata:order:readings",
+      "researchMetadata:order:literature",
+      "researchMetadata:public-projection",
+      "claims:cl-fut161-terminology-axes",
+      "claims:cl-fut161-upscaling-methods",
+      "claims:cl-fut161-superstructure-iam",
+      "claims:cl-fut161-superstructure-limits",
+      "claims:cl-fut161-dynamic-time-horizons",
+      "claims:cl-fut161-temporal-barriers-values",
+      "evidence:ev-fut161-arvidsson-terminology",
+      "evidence:ev-fut161-tsoy-upscaling",
+      "evidence:ev-fut161-steubing-superstructure",
+      "evidence:ev-fut161-steubing-limits",
+      "evidence:ev-fut161-lueddeckens-temporal",
+      "evidence:ev-fut161-lueddeckens-barriers",
+      "sources:src-fut161-arvidsson-2024",
+      "sources:src-fut161-tsoy-2020",
+      "sources:src-fut161-steubing-2021",
+      "sources:src-fut161-lueddeckens-2020",
+      "readings:rd-fut161-arvidsson-2024",
+      "readings:rd-fut161-tsoy-2020",
+      "readings:rd-fut161-steubing-2021",
+      "readings:rd-fut161-lueddeckens-2020",
+      "literature:work-fut161-arvidsson-2024",
+      "literature:work-fut161-tsoy-2020",
+      "literature:work-fut161-steubing-2021",
+      "literature:work-fut161-lueddeckens-2020"
+    ],
+    "changes": [
+      {
+        "kind": "file",
+        "key": "content/docs/book/future-technology-and-context.mdx",
+        "from": "aee084ca20f91aaf7f1709b97875e5adbb8c081909344169394a9e1f28b599b3",
+        "to": "37be3b07a787d4235667488dd34aacb39531fa714b2da79fbd244cd8ec180095",
+        "rationale": "在第三十一章《未来技术与情景》保持全部 9 条既有论述与 3 个冻结节标题逐字节不变的前提下，新增 6 条前瞻性／事前 LCA 术语双轴、中试放大路径、超结构与 IAM 情景耦合及动态时间边界比较论述，并配 1 段引导语与 1 张 5 列跨方法对照表。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:claims",
+        "from": {
+          "raw": "dfa49d984bbd3af2da0c46da3600ec1f713775e306ea9e8fbf80a7ccf83b55f5",
+          "public": null,
+          "protected": "dfa49d984bbd3af2da0c46da3600ec1f713775e306ea9e8fbf80a7ccf83b55f5"
+        },
+        "to": {
+          "raw": "0b5a191818fc6d87b6ee6beb5d44d69a94f55be094050701d5f51124ec5e56c7",
+          "public": null,
+          "protected": "0b5a191818fc6d87b6ee6beb5d44d69a94f55be094050701d5f51124ec5e56c7"
+        },
+        "rationale": "更新研究公开投影与排序索引，以登记第三十一章新增 4 篇一手开放获取期刊来源（不改动既有论述或文献条目）。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:evidence",
+        "from": {
+          "raw": "83c8f391c9103df1b0c7fe7c149c738301e8c5601e9d551dc2657950a601a156",
+          "public": null,
+          "protected": "83c8f391c9103df1b0c7fe7c149c738301e8c5601e9d551dc2657950a601a156"
+        },
+        "to": {
+          "raw": "f5174e221c47c6e83b398aeac5346cb3609a342dea93d494097c57db9dcda095",
+          "public": null,
+          "protected": "f5174e221c47c6e83b398aeac5346cb3609a342dea93d494097c57db9dcda095"
+        },
+        "rationale": "更新研究公开投影与排序索引，以登记第三十一章新增 4 篇一手开放获取期刊来源（不改动既有论述或文献条目）。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:sources",
+        "from": {
+          "raw": "6ccde462fb62153abc3be55ba8865ebb353a251fb67a7f25316a8d51738d5faa",
+          "public": null,
+          "protected": "6ccde462fb62153abc3be55ba8865ebb353a251fb67a7f25316a8d51738d5faa"
+        },
+        "to": {
+          "raw": "730d2d6a82a283a3b882b9468753d43de22cb29953ab36b8ff16c09c65cb8130",
+          "public": null,
+          "protected": "730d2d6a82a283a3b882b9468753d43de22cb29953ab36b8ff16c09c65cb8130"
+        },
+        "rationale": "更新研究公开投影与排序索引，以登记第三十一章新增 4 篇一手开放获取期刊来源（不改动既有论述或文献条目）。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:readings",
+        "from": {
+          "raw": "083b9ef12a7631b0dd24feb51d87084acf6b84d6bf2475afbe5b3319850d3bf3",
+          "public": null,
+          "protected": "083b9ef12a7631b0dd24feb51d87084acf6b84d6bf2475afbe5b3319850d3bf3"
+        },
+        "to": {
+          "raw": "35b2f5014073350b795d384ea217f0f4454808f9675783a8086472a2d0f80d5b",
+          "public": null,
+          "protected": "35b2f5014073350b795d384ea217f0f4454808f9675783a8086472a2d0f80d5b"
+        },
+        "rationale": "更新研究公开投影与排序索引，以登记第三十一章新增 4 篇一手开放获取期刊来源（不改动既有论述或文献条目）。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:literature",
+        "from": {
+          "raw": "764853ca1475bc8283cfe87d36598bcc8858d8ea6e6d00fe42e463539962798a",
+          "public": null,
+          "protected": "764853ca1475bc8283cfe87d36598bcc8858d8ea6e6d00fe42e463539962798a"
+        },
+        "to": {
+          "raw": "2c9d2a09d5cb2d6d195f2c845a7b52845fded457dce0b768016c7e6f823aa876",
+          "public": null,
+          "protected": "2c9d2a09d5cb2d6d195f2c845a7b52845fded457dce0b768016c7e6f823aa876"
+        },
+        "rationale": "更新研究公开投影与排序索引，以登记第三十一章新增 4 篇一手开放获取期刊来源（不改动既有论述或文献条目）。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:public-projection",
+        "from": {
+          "raw": "88642ad31084eee749430765d6f6c057c6b019307c77623f5e1da8fca3e6989c",
+          "public": null,
+          "protected": "88642ad31084eee749430765d6f6c057c6b019307c77623f5e1da8fca3e6989c"
+        },
+        "to": {
+          "raw": "b5424922e60a7928b15cc84dc2a8aaa6d4b658588206db0c40625823b4471aa5",
+          "public": null,
+          "protected": "b5424922e60a7928b15cc84dc2a8aaa6d4b658588206db0c40625823b4471aa5"
+        },
+        "rationale": "更新研究公开投影与排序索引，以登记第三十一章新增 4 篇一手开放获取期刊来源（不改动既有论述或文献条目）。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fut161-terminology-axes",
+        "from": null,
+        "to": {
+          "raw": "2bdd596ac6c026f3edc5762fad5efe5ce8844c596c25cb5eb314755b810684e6",
+          "public": "2bdd596ac6c026f3edc5762fad5efe5ce8844c596c25cb5eb314755b810684e6",
+          "protected": "4931c89084cb8a15e79f781e11394d4eb57b87e93977a2296ff13b29469f3fda"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fut161-upscaling-methods",
+        "from": null,
+        "to": {
+          "raw": "be546f67e5e14f2a3a7b5522efd6a16420893e0b96ed11e91ce15a8570c0114e",
+          "public": "be546f67e5e14f2a3a7b5522efd6a16420893e0b96ed11e91ce15a8570c0114e",
+          "protected": "a576c1abeff14fc70816f00f46df5198f1d76b445c3f86c1d9d4c2a8b985229c"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fut161-superstructure-iam",
+        "from": null,
+        "to": {
+          "raw": "865299ade32047a6095b27c34ba01f32593c4a25b8e9ed76e17cc68df44b15b8",
+          "public": "865299ade32047a6095b27c34ba01f32593c4a25b8e9ed76e17cc68df44b15b8",
+          "protected": "487f6cab9659836ca4accf1750582b2a93be2a6caa6ed8f234b517e8520f8ed6"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fut161-superstructure-limits",
+        "from": null,
+        "to": {
+          "raw": "5fba4da3473cb5a8cbb756dee5e7ddcd246c2631e45428cd4bdfac324c2e5165",
+          "public": "5fba4da3473cb5a8cbb756dee5e7ddcd246c2631e45428cd4bdfac324c2e5165",
+          "protected": "a448893277759995c576553c9e3445c0b84b2060eb504b96b533aed467fb5168"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fut161-dynamic-time-horizons",
+        "from": null,
+        "to": {
+          "raw": "b3001cca4df0d2d091a9b417188fca975d11a2fbfbcbb1e35dc6f23eeaf86eb0",
+          "public": "b3001cca4df0d2d091a9b417188fca975d11a2fbfbcbb1e35dc6f23eeaf86eb0",
+          "protected": "9c5a4ef6fc79a848022bd4abcde720e6a49e35a5300dbf8f35f233e8b97ebfcb"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fut161-temporal-barriers-values",
+        "from": null,
+        "to": {
+          "raw": "85790059194028e5033bc09d1c4b61bd310ebf298921d48a369aef58f61dfd38",
+          "public": "85790059194028e5033bc09d1c4b61bd310ebf298921d48a369aef58f61dfd38",
+          "protected": "f3996714a0d367209f9b486fc1d3a09dbbc8112bdc4ae1f1bcf59e8980b7b774"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fut161-arvidsson-terminology",
+        "from": null,
+        "to": {
+          "raw": "df10165fab8403334000b84b7568e535f4f016892ab902a324567a6d0bfc0af7",
+          "public": "029936aedf3886e3bf9313155cab08c74b1fd888d87bd98c038dd344562090f9",
+          "protected": "df10165fab8403334000b84b7568e535f4f016892ab902a324567a6d0bfc0af7"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fut161-tsoy-upscaling",
+        "from": null,
+        "to": {
+          "raw": "9fb5fcde981ae5e7da4ad72da861e4ebed96c6ee144c4a6cdefd1b830867fb59",
+          "public": "8871adb60bba08380909bd6fb6c2ee2e85007d329d2be43eb0f5cb92f17f7453",
+          "protected": "9fb5fcde981ae5e7da4ad72da861e4ebed96c6ee144c4a6cdefd1b830867fb59"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fut161-steubing-superstructure",
+        "from": null,
+        "to": {
+          "raw": "4bf2c9d2bfaa883327c6c31de70db4545ea1915ee6c53ab03d1a1db1af921d19",
+          "public": "d7210e98e5522cbd84e00759625ea871245723176e4f5989607d58660fbf0629",
+          "protected": "4bf2c9d2bfaa883327c6c31de70db4545ea1915ee6c53ab03d1a1db1af921d19"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fut161-steubing-limits",
+        "from": null,
+        "to": {
+          "raw": "0cbb95efccd5b7ac00941998a3a2ef7e2468e0ae44c3d2b0ddab1b071c173a9f",
+          "public": "6d3c8c0b865757816544b2d26a7a2b55ce157f03b1059ee02861c999973ff8f7",
+          "protected": "0cbb95efccd5b7ac00941998a3a2ef7e2468e0ae44c3d2b0ddab1b071c173a9f"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fut161-lueddeckens-temporal",
+        "from": null,
+        "to": {
+          "raw": "462c0d97a0717488eefabeb8ef5c2b7e966aacdecd2cbaedd24fcb8328f69c02",
+          "public": "8e4e989b9b746c589b8f93e50142021a6ae08be4d8946f5adec45cc5f5be9fb4",
+          "protected": "462c0d97a0717488eefabeb8ef5c2b7e966aacdecd2cbaedd24fcb8328f69c02"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fut161-lueddeckens-barriers",
+        "from": null,
+        "to": {
+          "raw": "33eab657f2b580dee670b8ead8062e7b34cdd9258993aaa72751dd89895dd8f4",
+          "public": "de7f4c29fdce77b009711b85acc8fa5bfd05b0c738cffba99fab340decd17100",
+          "protected": "33eab657f2b580dee670b8ead8062e7b34cdd9258993aaa72751dd89895dd8f4"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-fut161-arvidsson-2024",
+        "from": null,
+        "to": {
+          "raw": "6786385a642bb68ca3874092858fc887a3780a2fc1234a445de470287d04da95",
+          "public": "f91c08148947fbcf7990583c4486e5bc36c6f2468c9972845fc459863b905836",
+          "protected": "6786385a642bb68ca3874092858fc887a3780a2fc1234a445de470287d04da95"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-fut161-tsoy-2020",
+        "from": null,
+        "to": {
+          "raw": "68b345e9cb7c5bdfa94e4616d5ad3e88c94aa81f9e106f9aa8445a31b275f8fc",
+          "public": "ed6a9189cab82511e69e0a3b1d9fc729b59a0b017237ab04fd8003f8d271b40c",
+          "protected": "68b345e9cb7c5bdfa94e4616d5ad3e88c94aa81f9e106f9aa8445a31b275f8fc"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-fut161-steubing-2021",
+        "from": null,
+        "to": {
+          "raw": "71cdf52d847306e9cf76851b19dec2fe28df472b4228e807e7a9333d7f4d6eff",
+          "public": "548e75b1bb3ee28b82f2bebad4acef71ae7e9b1b065c79e82ff24b99502e713c",
+          "protected": "71cdf52d847306e9cf76851b19dec2fe28df472b4228e807e7a9333d7f4d6eff"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-fut161-lueddeckens-2020",
+        "from": null,
+        "to": {
+          "raw": "b6702970bd4a79170de5991e55674977a9eb0b5060f2441b9d036557bc261450",
+          "public": "d1d380a658475dd9bc28e0a9faaee37ce644a4cdc5aa0d8c59b76a8438bab2c8",
+          "protected": "b6702970bd4a79170de5991e55674977a9eb0b5060f2441b9d036557bc261450"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-fut161-arvidsson-2024",
+        "from": null,
+        "to": {
+          "raw": "4a61d54e8d67c0da0a604447fd5e38ed3454aaa19a0bbcbb6714f508f1e7f732",
+          "public": null,
+          "protected": "4a61d54e8d67c0da0a604447fd5e38ed3454aaa19a0bbcbb6714f508f1e7f732"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-fut161-tsoy-2020",
+        "from": null,
+        "to": {
+          "raw": "6ac9d059fa29b19c10330817394488fb457bdcbb1d742f7ea7aee34340c6b5b9",
+          "public": null,
+          "protected": "6ac9d059fa29b19c10330817394488fb457bdcbb1d742f7ea7aee34340c6b5b9"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-fut161-steubing-2021",
+        "from": null,
+        "to": {
+          "raw": "9c8b455891bb2b52653c8fe82dde448aa19228052d029b5d726ce0c888381592",
+          "public": null,
+          "protected": "9c8b455891bb2b52653c8fe82dde448aa19228052d029b5d726ce0c888381592"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-fut161-lueddeckens-2020",
+        "from": null,
+        "to": {
+          "raw": "787dcb6e27dc81517543e53bfaa5d1683ea7cc005350a1de4e897fe6bc05ce81",
+          "public": null,
+          "protected": "787dcb6e27dc81517543e53bfaa5d1683ea7cc005350a1de4e897fe6bc05ce81"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-fut161-arvidsson-2024",
+        "from": null,
+        "to": {
+          "raw": "be2496ec10844bcf098ca9e5c2233f305c97e356483dd163e2faaa69a7f23bb6",
+          "public": null,
+          "protected": "be2496ec10844bcf098ca9e5c2233f305c97e356483dd163e2faaa69a7f23bb6"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-fut161-tsoy-2020",
+        "from": null,
+        "to": {
+          "raw": "3e8c66a1d5937ba8ab76a832e018d8240abe8fdc46eb2a7ee50918ecbde1cba7",
+          "public": null,
+          "protected": "3e8c66a1d5937ba8ab76a832e018d8240abe8fdc46eb2a7ee50918ecbde1cba7"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-fut161-steubing-2021",
+        "from": null,
+        "to": {
+          "raw": "9cc36f07581e7a25c33c64dd13c24432078c702af8e751966dea3d68e643c30d",
+          "public": null,
+          "protected": "9cc36f07581e7a25c33c64dd13c24432078c702af8e751966dea3d68e643c30d"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-fut161-lueddeckens-2020",
+        "from": null,
+        "to": {
+          "raw": "331f6f1a1ede08e1e41f35a66cd5d61ea0544b30e8ec0ce0ba4e42e530c5b06f",
+          "public": null,
+          "protected": "331f6f1a1ede08e1e41f35a66cd5d61ea0544b30e8ec0ce0ba4e42e530c5b06f"
+        },
+        "rationale": "登记第七部第三十一章《未来技术与情景》（#161）的新增前瞻性／事前 LCA、技术放大、超结构数据库与动态时间边界比较记录。"
+      }
+    ],
+    "consumers": [],
+    "previousFiles": {
+      "content/docs/book/future-technology-and-context.mdx": "---\ntitle: 未来技术与情景\ndescription: 评价尚在开发的工艺时，怎样设定它未来的生产规模、同期竞争方案和供给条件？本章说明这些设定如何影响比较。\n---\n\n## 工艺放大与比较对象 [#技术规模与功能]\n\n<Prose ids=\"cl-future-definition cl-future-scale-up cl-future-incumbent\" />\n\n## 情景与供给背景 [#情景与供给背景]\n\n<Prose ids=\"cl-future-scenarios cl-future-background cl-book-future-scenario-matrix\" />\n\n## 前瞻比较的适用条件 [#前瞻判断条件]\n\n<Prose ids=\"cl-future-impact-limits cl-future-comparison-conditions cl-book-future-decision\" />\n"
+    },
+    "rawRecords": [
+      {
+        "path": "catalog.sources",
+        "id": "src-fut161-arvidsson-2024",
+        "from": null
+      },
+      {
+        "path": "catalog.sources",
+        "id": "src-fut161-tsoy-2020",
+        "from": null
+      },
+      {
+        "path": "catalog.sources",
+        "id": "src-fut161-steubing-2021",
+        "from": null
+      },
+      {
+        "path": "catalog.sources",
+        "id": "src-fut161-lueddeckens-2020",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-fut161-arvidsson-terminology",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-fut161-tsoy-upscaling",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-fut161-steubing-superstructure",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-fut161-steubing-limits",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-fut161-lueddeckens-temporal",
+        "from": null
+      },
+      {
+        "path": "catalog.evidence",
+        "id": "ev-fut161-lueddeckens-barriers",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-fut161-terminology-axes",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-fut161-upscaling-methods",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-fut161-superstructure-iam",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-fut161-superstructure-limits",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-fut161-dynamic-time-horizons",
+        "from": null
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-fut161-temporal-barriers-values",
+        "from": null
+      },
+      {
+        "path": "readings.readings",
+        "id": "rd-fut161-arvidsson-2024",
+        "from": null
+      },
+      {
+        "path": "readings.readings",
+        "id": "rd-fut161-tsoy-2020",
+        "from": null
+      },
+      {
+        "path": "readings.readings",
+        "id": "rd-fut161-steubing-2021",
+        "from": null
+      },
+      {
+        "path": "readings.readings",
+        "id": "rd-fut161-lueddeckens-2020",
+        "from": null
+      },
+      {
+        "path": "literature.records",
+        "id": "work-fut161-arvidsson-2024",
+        "from": null
+      },
+      {
+        "path": "literature.records",
+        "id": "work-fut161-tsoy-2020",
+        "from": null
+      },
+      {
+        "path": "literature.records",
+        "id": "work-fut161-steubing-2021",
+        "from": null
+      },
+      {
+        "path": "literature.records",
+        "id": "work-fut161-lueddeckens-2020",
+        "from": null
+      }
+    ],
+    "rawFields": [],
+    "outputs": [
+      {
+        "path": "/docs/book/future-technology-and-context",
+        "route": "/docs/book/future-technology-and-context",
+        "from": "43d1bcb7f44d7a129621a9570d5ed80979304d508ab9ab19233887eda1a54a33",
+        "sha256": "403c0a1212b77ec2801e1be537d3c0f3a767d2b26f528f0f2ea9c904777410dd",
+        "rationale": "核对第七部第三十一章《未来技术与情景》（#161）在 /docs/book/future-technology-and-context#/docs/book/future-technology-and-context 上的新增 6 条前瞻性／动态 LCA 比较论述、对照表及历史范围控件更新。"
+      },
+      {
+        "path": "/docs/book/connecting-objects-references-and-time",
+        "route": "/docs/book/connecting-objects-references-and-time",
+        "from": "30962cd17336b8abb8c53f44874deab45f713f0d5a65516b73e7f1ce2340f1ce",
+        "sha256": "57db01d3a151e490ff60626bac81520c23db0d206fddae5da2e425190f823e2c",
+        "rationale": "核对第七部第三十一章《未来技术与情景》（#161）在 /docs/book/connecting-objects-references-and-time#/docs/book/connecting-objects-references-and-time 上的新增 6 条前瞻性／动态 LCA 比较论述、对照表及历史范围控件更新。"
+      },
+      {
+        "path": "/docs/book/from-connected-results-to-conditional-judgment",
+        "route": "/docs/book/from-connected-results-to-conditional-judgment",
+        "from": "c11e5b9534472a0281e85b3a63f07e6313738941e565b55d29a707d0755a42a9",
+        "sha256": "c4dc5bd0eb1df34a108de1c055eb32776c39969cc11b17879c00ed5cf0458536",
+        "rationale": "核对第七部第三十一章《未来技术与情景》（#161）在 /docs/book/from-connected-results-to-conditional-judgment#/docs/book/from-connected-results-to-conditional-judgment 上的新增 6 条前瞻性／动态 LCA 比较论述、对照表及历史范围控件更新。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/future-technology-and-context",
+        "from": "765258431b46106c0742b2e3a524039eebd4f51f47cf7361d18a13007d02b135",
+        "sha256": "d8834e61c754675c4b492a107a88631fa3fda4e4807fcb1e72bb47c602209119",
+        "rationale": "核对第七部第三十一章《未来技术与情景》（#161）在 /print#/docs/book/future-technology-and-context 上的新增 6 条前瞻性／动态 LCA 比较论述、对照表及历史范围控件更新。"
+      },
+      {
+        "path": "/print",
+        "route": "book-revisable-judgment",
+        "from": "8cccccc10e1369eb02cc3a71576867a8cc12bc2172acb6e3f141ced78eed9b56",
+        "sha256": "9bb1d8a98adfe9d829f2c9ba74586d6943b41ccc5a9926739a965ad3ae435729",
+        "rationale": "核对第七部第三十一章《未来技术与情景》（#161）在 /print#book-revisable-judgment 上的新增 6 条前瞻性／动态 LCA 比较论述、对照表及历史范围控件更新。"
+      }
+    ],
+    "publicArtifacts": [
+      {
+        "path": "claims/index.html",
+        "from": "01434777bcd6012c6ee0ce1a46784079e5b81b218fe1a7e6037596a0c9f1ddaa",
+        "sha256": "bcb7227329baab2ae6e115acd3b10e832cea3a8900928f55c7d29a97463987d4",
+        "rationale": "核对第七部第三十一章《未来技术与情景》（#161）对公开目录、注释页、引文出处页、研究索引或连续阅读打印页的实际输出变化及其真实前态。"
+      },
+      {
+        "path": "sources/index.html",
+        "from": "59156a6b77dc3ec466f399daffc87d9dc53793da800aee114a1ae50f57e6ff69",
+        "sha256": "c8b57123b0bcfb08a84289d6e7c1922bec10817369be5326f50aca75c3ee6e15",
+        "rationale": "核对第七部第三十一章《未来技术与情景》（#161）对公开目录、注释页、引文出处页、研究索引或连续阅读打印页的实际输出变化及其真实前态。"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "from": "5999120ce40aa71550047f61f2721615255ac6425814fd7520cf1c467fb785a7",
+        "sha256": "924cb2f1c6e49676d1c30ef4447167107a19cab410c36185bf19d1810c9daf29",
+        "rationale": "核对第七部第三十一章《未来技术与情景》（#161）对公开目录、注释页、引文出处页、研究索引或连续阅读打印页的实际输出变化及其真实前态。"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "from": "fe5c53b8cd2773eff024d144c426ee8dfe74033b0825d79b8f1d2c0d11ce2bfa",
+        "sha256": "b09593064fe9bae0e64620e391038c0b7517ca2b0a9ba2cd29f8fddb1e6e7416",
+        "rationale": "核对第七部第三十一章《未来技术与情景》（#161）对公开目录、注释页、引文出处页、研究索引或连续阅读打印页的实际输出变化及其真实前态。"
+      },
+      {
+        "path": "research/index.html",
+        "from": "2d33e2e6590adf64186a2007f7e2a627f48872c274c8335d39993d9b73da970e",
+        "sha256": "20267826984d23e5c08464d98c7b1bfdd139482b819ab40bef1b318be22ae7dc",
+        "rationale": "核对第七部第三十一章《未来技术与情景》（#161）对公开目录、注释页、引文出处页、研究索引或连续阅读打印页的实际输出变化及其真实前态。"
+      },
+      {
+        "path": "downloads/bibliography.json",
+        "from": "d8a768afd370d41333c75896ce5d6664478d698da74faaf5d51ba399123514ba",
+        "sha256": "e7ba99baca4b812e7ab21a9edbb7e11044a8a2685ba5b5d6a9ccb7cc44cf57e2",
+        "rationale": "核对第七部第三十一章《未来技术与情景》（#161）对公开目录、注释页、引文出处页、研究索引或连续阅读打印页的实际输出变化及其真实前态。"
+      },
+      {
+        "path": "downloads/research.json",
+        "from": "d8a768afd370d41333c75896ce5d6664478d698da74faaf5d51ba399123514ba",
+        "sha256": "e7ba99baca4b812e7ab21a9edbb7e11044a8a2685ba5b5d6a9ccb7cc44cf57e2",
+        "rationale": "核对第七部第三十一章《未来技术与情景》（#161）对公开目录、注释页、引文出处页、研究索引或连续阅读打印页的实际输出变化及其真实前态。"
+      }
+    ],
+    "history": {
+      "previousAddresses": {
+        "/docs/book/future-technology-and-context#nd-page": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "chapter",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-definition",
+            "cl-future-scale-up",
+            "cl-future-incumbent",
+            "cl-future-scenarios",
+            "cl-future-background",
+            "cl-book-future-scenario-matrix",
+            "cl-future-impact-limits",
+            "cl-future-comparison-conditions",
+            "cl-book-future-decision"
+          ],
+          "ordinary": [
+            "e66126f655ab00c856777b5f38f31bab2c735e314c3473f0f656cde423cc7dd3"
+          ],
+          "bindings": {
+            "links": [
+              []
+            ],
+            "tables": []
+          }
+        },
+        "/docs/book/future-technology-and-context#main-content": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "reading-title",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-definition",
+            "cl-future-scale-up",
+            "cl-future-incumbent",
+            "cl-future-scenarios",
+            "cl-future-background",
+            "cl-book-future-scenario-matrix",
+            "cl-future-impact-limits",
+            "cl-future-comparison-conditions",
+            "cl-book-future-decision"
+          ],
+          "ordinary": [
+            "e66126f655ab00c856777b5f38f31bab2c735e314c3473f0f656cde423cc7dd3"
+          ],
+          "chapter": "nd-page"
+        },
+        "/docs/book/future-technology-and-context#技术规模与功能": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "heading",
+          "title": "工艺放大与比较对象",
+          "claimIds": [
+            "cl-future-definition",
+            "cl-future-scale-up",
+            "cl-future-incumbent"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#情景与供给背景": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "heading",
+          "title": "情景与供给背景",
+          "claimIds": [
+            "cl-future-scenarios",
+            "cl-future-background",
+            "cl-book-future-scenario-matrix"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#前瞻判断条件": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "heading",
+          "title": "前瞻比较的适用条件",
+          "claimIds": [
+            "cl-future-impact-limits",
+            "cl-future-comparison-conditions",
+            "cl-book-future-decision"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-annotations": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note-group",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-definition",
+            "cl-future-scale-up",
+            "cl-future-incumbent",
+            "cl-future-scenarios",
+            "cl-future-background",
+            "cl-book-future-scenario-matrix",
+            "cl-future-impact-limits",
+            "cl-future-comparison-conditions",
+            "cl-book-future-decision"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-definition": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-definition"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-scale-up": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-scale-up"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-incumbent": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-incumbent"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-scenarios": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-scenarios"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-background": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-background"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-book-future-scenario-matrix": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-book-future-scenario-matrix"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-impact-limits": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-impact-limits"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-comparison-conditions": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-comparison-conditions"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-book-future-decision": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-book-future-decision"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "chapter",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-definition",
+            "cl-future-scale-up",
+            "cl-future-incumbent",
+            "cl-future-scenarios",
+            "cl-future-background",
+            "cl-book-future-scenario-matrix",
+            "cl-future-impact-limits",
+            "cl-future-comparison-conditions",
+            "cl-book-future-decision"
+          ],
+          "ordinary": [
+            "e66126f655ab00c856777b5f38f31bab2c735e314c3473f0f656cde423cc7dd3"
+          ],
+          "bindings": {
+            "links": [
+              []
+            ],
+            "tables": []
+          }
+        },
+        "/print#print-reading-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "reading-title",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-definition",
+            "cl-future-scale-up",
+            "cl-future-incumbent",
+            "cl-future-scenarios",
+            "cl-future-background",
+            "cl-book-future-scenario-matrix",
+            "cl-future-impact-limits",
+            "cl-future-comparison-conditions",
+            "cl-book-future-decision"
+          ],
+          "ordinary": [
+            "e66126f655ab00c856777b5f38f31bab2c735e314c3473f0f656cde423cc7dd3"
+          ],
+          "chapter": "print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874"
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-技术规模与功能": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "heading",
+          "title": "工艺放大与比较对象",
+          "claimIds": [
+            "cl-future-definition",
+            "cl-future-scale-up",
+            "cl-future-incumbent"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-情景与供给背景": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "heading",
+          "title": "情景与供给背景",
+          "claimIds": [
+            "cl-future-scenarios",
+            "cl-future-background",
+            "cl-book-future-scenario-matrix"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-前瞻判断条件": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "heading",
+          "title": "前瞻比较的适用条件",
+          "claimIds": [
+            "cl-future-impact-limits",
+            "cl-future-comparison-conditions",
+            "cl-book-future-decision"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-annotations": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note-group",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-definition",
+            "cl-future-scale-up",
+            "cl-future-incumbent",
+            "cl-future-scenarios",
+            "cl-future-background",
+            "cl-book-future-scenario-matrix",
+            "cl-future-impact-limits",
+            "cl-future-comparison-conditions",
+            "cl-book-future-decision"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-definition": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-definition"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-scale-up": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-scale-up"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-incumbent": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-incumbent"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-scenarios": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-scenarios"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-background": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-background"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-book-future-scenario-matrix": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-book-future-scenario-matrix"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-impact-limits": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-impact-limits"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-comparison-conditions": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-comparison-conditions"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-book-future-decision": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-book-future-decision"
+          ],
+          "ordinary": []
+        }
+      },
+      "currentAddresses": {
+        "/docs/book/future-technology-and-context#nd-page": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "chapter",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-definition",
+            "cl-future-scale-up",
+            "cl-future-incumbent",
+            "cl-fut161-terminology-axes",
+            "cl-fut161-upscaling-methods",
+            "cl-future-scenarios",
+            "cl-future-background",
+            "cl-book-future-scenario-matrix",
+            "cl-fut161-superstructure-iam",
+            "cl-fut161-superstructure-limits",
+            "cl-future-impact-limits",
+            "cl-future-comparison-conditions",
+            "cl-book-future-decision",
+            "cl-fut161-dynamic-time-horizons",
+            "cl-fut161-temporal-barriers-values"
+          ],
+          "ordinary": [
+            "e66126f655ab00c856777b5f38f31bab2c735e314c3473f0f656cde423cc7dd3",
+            "097def66f487579ac6eb5678c02b030d9974e4bc684adb143a2210a5fddf19de",
+            "717f8b2a0e50ac3df54a4982c3d5297072da9bb8f1603e65e24d549ba7ffadb4"
+          ],
+          "bindings": {
+            "links": [
+              [],
+              [],
+              []
+            ],
+            "tables": [
+              {
+                "header": [
+                  [
+                    {},
+                    {},
+                    {},
+                    {},
+                    {}
+                  ]
+                ],
+                "body": [
+                  [
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "前瞻性 LCA（推荐总称；Arvidsson 等 2024；Steubing 与 de Koning 2021）"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "面向未来特定年份或时段，多数按单一时点聚合求解"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "可评估新兴技术，也可在未来背景下评估已成熟技术"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "需用综合评估模型（IAM）耦合未来背景数据库（如超结构＋情景差异文件），避免前景—背景时间错位"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "超结构架构仅解决软件工程瓶颈、不担保情景质量；存在幽灵过程、不确定度与许可局限"
+                    }
+                  ],
+                  [
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "事前 LCA（Arvidsson 等 2024；Tsoy 等 2020）"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "面向技术商业化与大规模投产之前的未来时点"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "必含技术成熟度由实验室／中试向工业规模的放大推演"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "依三步放大框架与流程模拟、手工计算、分子结构模型或代理数据估算工业清单，再耦合未来背景"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "综述 18 项案例中 0 篇报告技术就绪度（TRL）、0 篇完成投产后实测回验，专家参与与流程图披露不足"
+                    }
+                  ],
+                  [
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "预期式 LCA（Arvidsson 等 2024）"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "面向新兴技术未来发展路径"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "与事前 LCA 同样关注早期技术放大"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "在前景与背景建模之外，着重引入利益相关方参与系统边界、功能单位、影响类别与权重选择"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "结果高度依赖参与方价值偏好与治理框架，不可直接替代技术实测"
+                    }
+                  ],
+                  [
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "实验室尺度 LCA（Arvidsson 等 2024；Tsoy 等 2020）"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "当下或近期实验室研究阶段"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "保持低成熟度现状，不做工业规模放大"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "直接使用实验室实测或近似代理数据，通常配以现行背景数据库"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "仅宜用于早期研发热点诊断，不能直接拿去与成熟商业工业技术比拼优劣"
+                    }
+                  ],
+                  [
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "动态 LCA（Lueddeckens 等 2020；Arvidsson 等 2024）"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "按时间点解析排放发生时刻与影响响应（区分评估、清单与特征化三类时间范围）"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "不限于新兴技术，重点追踪全生命周期排放时序"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "仅动态清单属半动态；同时耦合动态清单与动态特征化因子才构成全动态 LCA"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "绝大多数类别缺乏动态特征化因子，供应链时序数据与软件受限；时间范围、贴现率与动态归一化暗含价值选择"
+                    }
+                  ]
+                ]
+              }
+            ]
+          }
+        },
+        "/docs/book/future-technology-and-context#main-content": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "reading-title",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-definition",
+            "cl-future-scale-up",
+            "cl-future-incumbent",
+            "cl-fut161-terminology-axes",
+            "cl-fut161-upscaling-methods",
+            "cl-future-scenarios",
+            "cl-future-background",
+            "cl-book-future-scenario-matrix",
+            "cl-fut161-superstructure-iam",
+            "cl-fut161-superstructure-limits",
+            "cl-future-impact-limits",
+            "cl-future-comparison-conditions",
+            "cl-book-future-decision",
+            "cl-fut161-dynamic-time-horizons",
+            "cl-fut161-temporal-barriers-values"
+          ],
+          "ordinary": [
+            "e66126f655ab00c856777b5f38f31bab2c735e314c3473f0f656cde423cc7dd3",
+            "097def66f487579ac6eb5678c02b030d9974e4bc684adb143a2210a5fddf19de",
+            "717f8b2a0e50ac3df54a4982c3d5297072da9bb8f1603e65e24d549ba7ffadb4"
+          ],
+          "chapter": "nd-page"
+        },
+        "/docs/book/future-technology-and-context#技术规模与功能": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "heading",
+          "title": "工艺放大与比较对象",
+          "claimIds": [
+            "cl-future-definition",
+            "cl-future-scale-up",
+            "cl-future-incumbent",
+            "cl-fut161-terminology-axes",
+            "cl-fut161-upscaling-methods"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#情景与供给背景": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "heading",
+          "title": "情景与供给背景",
+          "claimIds": [
+            "cl-future-scenarios",
+            "cl-future-background",
+            "cl-book-future-scenario-matrix",
+            "cl-fut161-superstructure-iam",
+            "cl-fut161-superstructure-limits"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#前瞻判断条件": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "heading",
+          "title": "前瞻比较的适用条件",
+          "claimIds": [
+            "cl-future-impact-limits",
+            "cl-future-comparison-conditions",
+            "cl-book-future-decision",
+            "cl-fut161-dynamic-time-horizons",
+            "cl-fut161-temporal-barriers-values"
+          ],
+          "ordinary": [
+            "097def66f487579ac6eb5678c02b030d9974e4bc684adb143a2210a5fddf19de",
+            "717f8b2a0e50ac3df54a4982c3d5297072da9bb8f1603e65e24d549ba7ffadb4"
+          ]
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-annotations": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note-group",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-definition",
+            "cl-future-scale-up",
+            "cl-future-incumbent",
+            "cl-fut161-terminology-axes",
+            "cl-fut161-upscaling-methods",
+            "cl-future-scenarios",
+            "cl-future-background",
+            "cl-book-future-scenario-matrix",
+            "cl-fut161-superstructure-iam",
+            "cl-fut161-superstructure-limits",
+            "cl-future-impact-limits",
+            "cl-future-comparison-conditions",
+            "cl-book-future-decision",
+            "cl-fut161-dynamic-time-horizons",
+            "cl-fut161-temporal-barriers-values"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-definition": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-definition"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-scale-up": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-scale-up"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-incumbent": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-incumbent"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-fut161-terminology-axes": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-fut161-terminology-axes"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-fut161-upscaling-methods": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-fut161-upscaling-methods"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-scenarios": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-scenarios"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-background": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-background"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-book-future-scenario-matrix": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-book-future-scenario-matrix"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-fut161-superstructure-iam": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-fut161-superstructure-iam"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-fut161-superstructure-limits": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-fut161-superstructure-limits"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-impact-limits": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-impact-limits"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-comparison-conditions": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-comparison-conditions"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-book-future-decision": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-book-future-decision"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-fut161-dynamic-time-horizons": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-fut161-dynamic-time-horizons"
+          ],
+          "ordinary": []
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-fut161-temporal-barriers-values": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-fut161-temporal-barriers-values"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "chapter",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-definition",
+            "cl-future-scale-up",
+            "cl-future-incumbent",
+            "cl-fut161-terminology-axes",
+            "cl-fut161-upscaling-methods",
+            "cl-future-scenarios",
+            "cl-future-background",
+            "cl-book-future-scenario-matrix",
+            "cl-fut161-superstructure-iam",
+            "cl-fut161-superstructure-limits",
+            "cl-future-impact-limits",
+            "cl-future-comparison-conditions",
+            "cl-book-future-decision",
+            "cl-fut161-dynamic-time-horizons",
+            "cl-fut161-temporal-barriers-values"
+          ],
+          "ordinary": [
+            "e66126f655ab00c856777b5f38f31bab2c735e314c3473f0f656cde423cc7dd3",
+            "097def66f487579ac6eb5678c02b030d9974e4bc684adb143a2210a5fddf19de",
+            "717f8b2a0e50ac3df54a4982c3d5297072da9bb8f1603e65e24d549ba7ffadb4"
+          ],
+          "bindings": {
+            "links": [
+              [],
+              [],
+              []
+            ],
+            "tables": [
+              {
+                "header": [
+                  [
+                    {},
+                    {},
+                    {},
+                    {},
+                    {}
+                  ]
+                ],
+                "body": [
+                  [
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "前瞻性 LCA（推荐总称；Arvidsson 等 2024；Steubing 与 de Koning 2021）"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "面向未来特定年份或时段，多数按单一时点聚合求解"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "可评估新兴技术，也可在未来背景下评估已成熟技术"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "需用综合评估模型（IAM）耦合未来背景数据库（如超结构＋情景差异文件），避免前景—背景时间错位"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "超结构架构仅解决软件工程瓶颈、不担保情景质量；存在幽灵过程、不确定度与许可局限"
+                    }
+                  ],
+                  [
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "事前 LCA（Arvidsson 等 2024；Tsoy 等 2020）"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "面向技术商业化与大规模投产之前的未来时点"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "必含技术成熟度由实验室／中试向工业规模的放大推演"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "依三步放大框架与流程模拟、手工计算、分子结构模型或代理数据估算工业清单，再耦合未来背景"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "综述 18 项案例中 0 篇报告技术就绪度（TRL）、0 篇完成投产后实测回验，专家参与与流程图披露不足"
+                    }
+                  ],
+                  [
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "预期式 LCA（Arvidsson 等 2024）"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "面向新兴技术未来发展路径"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "与事前 LCA 同样关注早期技术放大"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "在前景与背景建模之外，着重引入利益相关方参与系统边界、功能单位、影响类别与权重选择"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "结果高度依赖参与方价值偏好与治理框架，不可直接替代技术实测"
+                    }
+                  ],
+                  [
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "实验室尺度 LCA（Arvidsson 等 2024；Tsoy 等 2020）"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "当下或近期实验室研究阶段"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "保持低成熟度现状，不做工业规模放大"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "直接使用实验室实测或近似代理数据，通常配以现行背景数据库"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "仅宜用于早期研发热点诊断，不能直接拿去与成熟商业工业技术比拼优劣"
+                    }
+                  ],
+                  [
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "动态 LCA（Lueddeckens 等 2020；Arvidsson 等 2024）"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "按时间点解析排放发生时刻与影响响应（区分评估、清单与特征化三类时间范围）"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "不限于新兴技术，重点追踪全生命周期排放时序"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "仅动态清单属半动态；同时耦合动态清单与动态特征化因子才构成全动态 LCA"
+                    },
+                    {
+                      "tag": "TD",
+                      "attributes": {},
+                      "text": "绝大多数类别缺乏动态特征化因子，供应链时序数据与软件受限；时间范围、贴现率与动态归一化暗含价值选择"
+                    }
+                  ]
+                ]
+              }
+            ]
+          }
+        },
+        "/print#print-reading-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "reading-title",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-definition",
+            "cl-future-scale-up",
+            "cl-future-incumbent",
+            "cl-fut161-terminology-axes",
+            "cl-fut161-upscaling-methods",
+            "cl-future-scenarios",
+            "cl-future-background",
+            "cl-book-future-scenario-matrix",
+            "cl-fut161-superstructure-iam",
+            "cl-fut161-superstructure-limits",
+            "cl-future-impact-limits",
+            "cl-future-comparison-conditions",
+            "cl-book-future-decision",
+            "cl-fut161-dynamic-time-horizons",
+            "cl-fut161-temporal-barriers-values"
+          ],
+          "ordinary": [
+            "e66126f655ab00c856777b5f38f31bab2c735e314c3473f0f656cde423cc7dd3",
+            "097def66f487579ac6eb5678c02b030d9974e4bc684adb143a2210a5fddf19de",
+            "717f8b2a0e50ac3df54a4982c3d5297072da9bb8f1603e65e24d549ba7ffadb4"
+          ],
+          "chapter": "print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874"
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-技术规模与功能": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "heading",
+          "title": "工艺放大与比较对象",
+          "claimIds": [
+            "cl-future-definition",
+            "cl-future-scale-up",
+            "cl-future-incumbent",
+            "cl-fut161-terminology-axes",
+            "cl-fut161-upscaling-methods"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-情景与供给背景": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "heading",
+          "title": "情景与供给背景",
+          "claimIds": [
+            "cl-future-scenarios",
+            "cl-future-background",
+            "cl-book-future-scenario-matrix",
+            "cl-fut161-superstructure-iam",
+            "cl-fut161-superstructure-limits"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-前瞻判断条件": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "heading",
+          "title": "前瞻比较的适用条件",
+          "claimIds": [
+            "cl-future-impact-limits",
+            "cl-future-comparison-conditions",
+            "cl-book-future-decision",
+            "cl-fut161-dynamic-time-horizons",
+            "cl-fut161-temporal-barriers-values"
+          ],
+          "ordinary": [
+            "097def66f487579ac6eb5678c02b030d9974e4bc684adb143a2210a5fddf19de",
+            "717f8b2a0e50ac3df54a4982c3d5297072da9bb8f1603e65e24d549ba7ffadb4"
+          ]
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-annotations": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note-group",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-definition",
+            "cl-future-scale-up",
+            "cl-future-incumbent",
+            "cl-fut161-terminology-axes",
+            "cl-fut161-upscaling-methods",
+            "cl-future-scenarios",
+            "cl-future-background",
+            "cl-book-future-scenario-matrix",
+            "cl-fut161-superstructure-iam",
+            "cl-fut161-superstructure-limits",
+            "cl-future-impact-limits",
+            "cl-future-comparison-conditions",
+            "cl-book-future-decision",
+            "cl-fut161-dynamic-time-horizons",
+            "cl-fut161-temporal-barriers-values"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-definition": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-definition"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-scale-up": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-scale-up"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-incumbent": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-incumbent"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-fut161-terminology-axes": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-fut161-terminology-axes"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-fut161-upscaling-methods": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-fut161-upscaling-methods"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-scenarios": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-scenarios"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-background": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-background"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-book-future-scenario-matrix": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-book-future-scenario-matrix"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-fut161-superstructure-iam": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-fut161-superstructure-iam"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-fut161-superstructure-limits": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-fut161-superstructure-limits"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-impact-limits": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-impact-limits"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-future-comparison-conditions": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-future-comparison-conditions"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-book-future-decision": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-book-future-decision"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-fut161-dynamic-time-horizons": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-fut161-dynamic-time-horizons"
+          ],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-claim-cl-fut161-temporal-barriers-values": {
+          "route": "/docs/book/future-technology-and-context",
+          "kind": "note",
+          "title": "未来技术与情景",
+          "claimIds": [
+            "cl-fut161-temporal-barriers-values"
+          ],
+          "ordinary": []
+        }
+      },
+      "ordinaryTargets": {
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-fut-161-ordinary-0": {
+          "route": "/docs/book/future-technology-and-context",
+          "sha256": "e66126f655ab00c856777b5f38f31bab2c735e314c3473f0f656cde423cc7dd3",
+          "tag": "P"
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-fut-161-ordinary-1": {
+          "route": "/docs/book/future-technology-and-context",
+          "sha256": "097def66f487579ac6eb5678c02b030d9974e4bc684adb143a2210a5fddf19de",
+          "tag": "P"
+        },
+        "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-fut-161-ordinary-table": {
+          "route": "/docs/book/future-technology-and-context",
+          "sha256": "717f8b2a0e50ac3df54a4982c3d5297072da9bb8f1603e65e24d549ba7ffadb4",
+          "tag": "TABLE"
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-fut-161-ordinary-0": {
+          "route": "/docs/book/future-technology-and-context",
+          "sha256": "e66126f655ab00c856777b5f38f31bab2c735e314c3473f0f656cde423cc7dd3",
+          "tag": "P"
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-fut-161-ordinary-1": {
+          "route": "/docs/book/future-technology-and-context",
+          "sha256": "097def66f487579ac6eb5678c02b030d9974e4bc684adb143a2210a5fddf19de",
+          "tag": "P"
+        },
+        "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-fut-161-ordinary-table": {
+          "route": "/docs/book/future-technology-and-context",
+          "sha256": "717f8b2a0e50ac3df54a4982c3d5297072da9bb8f1603e65e24d549ba7ffadb4",
+          "tag": "TABLE"
+        }
+      },
+      "history": [
+        {
+          "address": "/docs/book/future-technology-and-context#nd-page",
+          "from": "040c62f6180d8e2fd616b8434bd4ce9cc946eb33543302fd577d001faec24c28",
+          "rationale": "保留 2026-11-19（ac54b259）前版《未来技术与情景》9 条既有论述，披露新增 6 条前瞻性／事前 LCA、技术放大、超结构情景耦合与动态时间边界比较论述及 1 张跨方法对照表。",
+          "ordinary": [
+            {
+              "from": "e66126f655ab00c856777b5f38f31bab2c735e314c3473f0f656cde423cc7dd3",
+              "to": "e66126f655ab00c856777b5f38f31bab2c735e314c3473f0f656cde423cc7dd3",
+              "address": "/docs/book/future-technology-and-context#nd-page",
+              "targetId": "chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-fut-161-ordinary-0",
+              "rationale": "保留原第 1 个普通说明段不变，定位至现行锚点。"
+            }
+          ]
+        },
+        {
+          "address": "/docs/book/future-technology-and-context#main-content",
+          "from": "371f0bd303cee5b2a85231e5f380bfb17071b673d0ad95023c41be27cf1f18bf",
+          "rationale": "保留 2026-11-19（ac54b259）前版《未来技术与情景》9 条既有论述，披露新增 6 条前瞻性／事前 LCA、技术放大、超结构情景耦合与动态时间边界比较论述及 1 张跨方法对照表。",
+          "ordinary": [
+            {
+              "from": "e66126f655ab00c856777b5f38f31bab2c735e314c3473f0f656cde423cc7dd3",
+              "to": "e66126f655ab00c856777b5f38f31bab2c735e314c3473f0f656cde423cc7dd3",
+              "address": "/docs/book/future-technology-and-context#main-content",
+              "targetId": "chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-fut-161-ordinary-0",
+              "rationale": "保留原第 1 个普通说明段不变，定位至现行锚点。"
+            }
+          ]
+        },
+        {
+          "address": "/docs/book/future-technology-and-context#技术规模与功能",
+          "from": "f3ace43b4d98d0d7b947aba8f5b7168218d95ec2f7d2b3a2c371471f2bf43594",
+          "rationale": "保留 2026-11-19（ac54b259）前版《未来技术与情景》9 条既有论述，披露新增 6 条前瞻性／事前 LCA、技术放大、超结构情景耦合与动态时间边界比较论述及 1 张跨方法对照表。",
+          "ordinary": []
+        },
+        {
+          "address": "/docs/book/future-technology-and-context#情景与供给背景",
+          "from": "f3ea621f63a06befd319b606d407cfc7956d3663890b24940541bfedcd93b8d2",
+          "rationale": "保留 2026-11-19（ac54b259）前版《未来技术与情景》9 条既有论述，披露新增 6 条前瞻性／事前 LCA、技术放大、超结构情景耦合与动态时间边界比较论述及 1 张跨方法对照表。",
+          "ordinary": []
+        },
+        {
+          "address": "/docs/book/future-technology-and-context#前瞻判断条件",
+          "from": "a39d69c0ce78774356b209022b6622c6dd37f72c5600dda780f92432e0145653",
+          "rationale": "保留 2026-11-19（ac54b259）前版《未来技术与情景》9 条既有论述，披露新增 6 条前瞻性／事前 LCA、技术放大、超结构情景耦合与动态时间边界比较论述及 1 张跨方法对照表。",
+          "ordinary": []
+        },
+        {
+          "address": "/docs/book/future-technology-and-context#chapter-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-annotations",
+          "from": "2bcf29b03c79489b7f0d73bb86ddc8103a015159ab7959456a72137043f40d41",
+          "rationale": "保留 2026-11-19（ac54b259）前版《未来技术与情景》9 条既有论述，披露新增 6 条前瞻性／事前 LCA、技术放大、超结构情景耦合与动态时间边界比较论述及 1 张跨方法对照表。",
+          "ordinary": []
+        },
+        {
+          "address": "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874",
+          "from": "040c62f6180d8e2fd616b8434bd4ce9cc946eb33543302fd577d001faec24c28",
+          "rationale": "保留 2026-11-19（ac54b259）前版《未来技术与情景》9 条既有论述，披露新增 6 条前瞻性／事前 LCA、技术放大、超结构情景耦合与动态时间边界比较论述及 1 张跨方法对照表。",
+          "ordinary": [
+            {
+              "from": "e66126f655ab00c856777b5f38f31bab2c735e314c3473f0f656cde423cc7dd3",
+              "to": "e66126f655ab00c856777b5f38f31bab2c735e314c3473f0f656cde423cc7dd3",
+              "address": "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874",
+              "targetId": "print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-fut-161-ordinary-0",
+              "rationale": "保留原第 1 个普通说明段不变，定位至现行锚点。"
+            }
+          ]
+        },
+        {
+          "address": "/print#print-reading-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874",
+          "from": "5b18e09f03c718e7344cf2e9b06e5630ff82828feac776fef6a46446bd5ee1c9",
+          "rationale": "保留 2026-11-19（ac54b259）前版《未来技术与情景》9 条既有论述，披露新增 6 条前瞻性／事前 LCA、技术放大、超结构情景耦合与动态时间边界比较论述及 1 张跨方法对照表。",
+          "ordinary": [
+            {
+              "from": "e66126f655ab00c856777b5f38f31bab2c735e314c3473f0f656cde423cc7dd3",
+              "to": "e66126f655ab00c856777b5f38f31bab2c735e314c3473f0f656cde423cc7dd3",
+              "address": "/print#print-reading-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874",
+              "targetId": "print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-fut-161-ordinary-0",
+              "rationale": "保留原第 1 个普通说明段不变，定位至现行锚点。"
+            }
+          ]
+        },
+        {
+          "address": "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-技术规模与功能",
+          "from": "f3ace43b4d98d0d7b947aba8f5b7168218d95ec2f7d2b3a2c371471f2bf43594",
+          "rationale": "保留 2026-11-19（ac54b259）前版《未来技术与情景》9 条既有论述，披露新增 6 条前瞻性／事前 LCA、技术放大、超结构情景耦合与动态时间边界比较论述及 1 张跨方法对照表。",
+          "ordinary": []
+        },
+        {
+          "address": "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-情景与供给背景",
+          "from": "f3ea621f63a06befd319b606d407cfc7956d3663890b24940541bfedcd93b8d2",
+          "rationale": "保留 2026-11-19（ac54b259）前版《未来技术与情景》9 条既有论述，披露新增 6 条前瞻性／事前 LCA、技术放大、超结构情景耦合与动态时间边界比较论述及 1 张跨方法对照表。",
+          "ordinary": []
+        },
+        {
+          "address": "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-前瞻判断条件",
+          "from": "a39d69c0ce78774356b209022b6622c6dd37f72c5600dda780f92432e0145653",
+          "rationale": "保留 2026-11-19（ac54b259）前版《未来技术与情景》9 条既有论述，披露新增 6 条前瞻性／事前 LCA、技术放大、超结构情景耦合与动态时间边界比较论述及 1 张跨方法对照表。",
+          "ordinary": []
+        },
+        {
+          "address": "/print#print-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874-annotations",
+          "from": "2bcf29b03c79489b7f0d73bb86ddc8103a015159ab7959456a72137043f40d41",
+          "rationale": "保留 2026-11-19（ac54b259）前版《未来技术与情景》9 条既有论述，披露新增 6 条前瞻性／事前 LCA、技术放大、超结构情景耦合与动态时间边界比较论述及 1 张跨方法对照表。",
+          "ordinary": []
+        }
+      ]
+    },
+    "outputCapture": {
+      "sourceCommit": "e6abe64a009b3036ea2676182cd93dd7af774308",
+      "dirty": true,
+      "status": "working-preview",
+      "manifestSha256": "c9937e9630aef10889428cb08df894a3777fb4693fc4352d7bc274a0f31b4151",
+      "normalizedProofSha256": "859cf146b10517f9b46c0c5dcff4b65127332a41ba024fb16dee3b19c76a0526"
+    },
+    "reviewEvidence": [
+      {
+        "kind": "source",
+        "date": "2026-11-19",
+        "artifactFile": "_docs/editorial/review-evidence/future-scenarios-161/source-artifact.json",
+        "artifactSha256": "1353ee7c4edee0ada45aab5a17302f6865da73664e7b259a6a066d586886250d",
+        "reportFile": "_docs/editorial/review-evidence/future-scenarios-161/source-report.json",
+        "reportSha256": "61704f6c58a0fe49ead1d3d51719e64f9a28afb6ee393def35532620ad70f6c0"
+      },
+      {
+        "kind": "reader",
+        "date": "2026-11-19",
+        "artifactFile": "_docs/editorial/review-evidence/future-scenarios-161/reader-artifact.json",
+        "artifactSha256": "4cbae8e017625c8dfb4be198ff7387a7f45d78d9fde20d225fa89962c04119a8",
+        "reportFile": "_docs/editorial/review-evidence/future-scenarios-161/reader-report.json",
+        "reportSha256": "ba01ba7282eb919e4a649608de4e0925d59b8bc33a80b6c114d57f3deb410473"
+      },
+      {
+        "kind": "output",
+        "date": "2026-11-19",
+        "artifactFile": "_docs/editorial/review-evidence/future-scenarios-161/output-artifact.json",
+        "artifactSha256": "78f1a9c30824e1acb7cb089c2cd5998f6b327cc5f43e456731ce28409b7e4bb0",
+        "reportFile": "_docs/editorial/review-evidence/future-scenarios-161/output-report.json",
+        "reportSha256": "be00dfad5e2b16d4ac57e8ea43837bcb717fd0d1c75ab5a9c0e6899b98229310"
+      }
+    ]
+  }
+}
