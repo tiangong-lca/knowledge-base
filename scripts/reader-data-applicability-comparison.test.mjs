@@ -2,6 +2,8 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
+import unc from '../config/reader-uncertainty-comparison.json' with { type: 'json' };
+import { restoreUncertaintyComparisonTestFiles } from './reader-uncertainty-comparison.mjs';
 import config from '../config/reader-data-applicability-comparison.json' with { type: 'json' };
 import capture from '../config/reader-data-applicability-comparison-capture.json' with { type: 'json' };
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
@@ -10,7 +12,7 @@ import service from '../config/reader-service-constraints.json' with { type: 'js
 import catalog from '../knowledge/catalog.json' with { type: 'json' };
 import readings from '../knowledge/research/readings.json' with { type: 'json' };
 import literature from '../knowledge/research/literature-map.json' with { type: 'json' };
-import { testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
+import { previousScientificTestRecords, testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
 import { chapterAnchorPrefix, printUnitAnchor } from './reader-book.mjs';
 import { citationSourceHref } from './reader-citations.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
@@ -41,7 +43,8 @@ import {
 } from './reader-data-applicability-comparison.mjs';
 
 test('Data applicability comparison enforces exact 1052 claims, 18 single-artifact evidence pairs, 63 BigInt facts and zero-survivor mutation', () => {
-  assert.equal(catalog.claims.length, 1052);
+  const prev147 = previousScientificTestRecords({ catalog, readings, literature }, unc.unit);
+  assert.equal(prev147.catalog.claims.length, 1052);
   assert.equal(catalog.claims.filter(c => c.id.startsWith('cl-dapp147-')).length, 8);
   assert.equal(catalog.evidence.filter(e => e.id.startsWith('ev-dapp147-')).length, 18);
   assert.equal(
@@ -50,17 +53,17 @@ test('Data applicability comparison enforces exact 1052 claims, 18 single-artifa
       .reduce((acc, e) => acc + (e.numericFacts?.length ?? 0), 0),
     63,
   );
-  validateDataApplicabilityComparisonFactors(catalog, readings);
+  validateDataApplicabilityComparisonFactors(prev147.catalog, prev147.readings);
 
   // Zero-survivor mutation across all 63 numericFacts
   for (const factId of Object.keys(expectedNumericFacts)) {
-    const mutated = structuredClone(catalog);
+    const mutated = structuredClone(prev147.catalog);
     const ev = mutated.evidence.find(e => (e.numericFacts ?? []).some(f => f.id === factId));
     assert(ev, `Missing evidence carrying ${factId}`);
     const f = ev.numericFacts.find(row => row.id === factId);
     f.value = f.value === '1' ? '2' : '1';
     assert.throws(
-      () => validateDataApplicabilityComparisonFactors(mutated, readings),
+      () => validateDataApplicabilityComparisonFactors(mutated, prev147.readings),
       /missing or mismatched numericFact/,
     );
   }
@@ -138,7 +141,9 @@ test('Data applicability comparison source plan recovers exact c5b90b03 state an
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [p, bytes] of [...shiftFiles, ...serviceFiles]) files.set(p, bytes);
-  const input = { catalog, readings, literature, files };
+  restoreUncertaintyComparisonTestFiles(files, unc.unit);
+  const prev147 = previousScientificTestRecords({ catalog, readings, literature }, unc.unit);
+  const input = { ...prev147, files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
   const qualify = (unit, customInput = input, customActual = actual, customStruct = structure) =>
@@ -165,7 +170,7 @@ test('Data applicability comparison source plan recovers exact c5b90b03 state an
   });
 
   await t.test('rejects unauthorized mutation on prior cl-db2011-* claims or ev-db2011-* evidence outside locator', () => {
-    const badCat = structuredClone(catalog);
+    const badCat = structuredClone(input.catalog);
     badCat.evidence.find(e => e.id === 'ev-db2011-goal').summary += '篡改';
     const badInput = { ...input, catalog: badCat };
     const badActual = inspectReadableBookEdition(badInput), badStruct = copyeditSourceStructure(badInput);
@@ -185,7 +190,8 @@ test('Data applicability comparison source plan recovers exact c5b90b03 state an
 });
 
 test('Data applicability comparison receipt binding behaves fail-closed before and after capture pinning', () => {
-  const expected = readerPublicDownloads(catalog, literature, readings);
+  const prev147 = previousScientificTestRecords({ catalog, readings, literature }, unc.unit);
+  const expected = readerPublicDownloads(prev147.catalog, prev147.literature, prev147.readings);
   if (dataApplicabilityComparisonCapturePin === null) {
     const unit = structuredClone(config.unit);
     unit.outputCapture = {

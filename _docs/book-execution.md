@@ -1,6 +1,6 @@
 ---
 lastReviewedAt: 2026-11-19
-lastReviewedCommit: c5b90b0352abaeaf0eec6706685076c8825d8925
+lastReviewedCommit: 4bb508394ef2f6c671b1468d41a2b67c51296be6
 title: Approved LCA book execution and wave ledger
 docType: reference
 scope: repo
@@ -58,6 +58,26 @@ actual manuscript/reviews and exact source/root delivery.
 Unit102 is fully delivered: source PR104/Main
 `f8751d57989bfca5f53b6beeab74895d54b594b2`, root2383/PR2384/Main
 `586a5c35a0a3ece45983c0d09afe3df59cfc2496`, qualified hosted466-file output,
+
+Unit149 ([Issue149](https://github.com/tiangong-lca/knowledge-base/issues/149),
+Part VI `B26`《变异与不确定性》,
+[protocol](editorial/2026-11-19-uncertainty-variability-comparison.md)) is
+independently accepted (`uncertaintyComparisonPredecessorPin` `7db50e1d...`,
+`uncertaintyComparisonUnitPin` `61a21b40...`,
+`uncertaintyComparisonCapturePin` `636656bd...`) on base
+`4bb508394ef2f6c671b1468d41a2b67c51296be6`, extending `B26` from `9` to `17`
+claims (`1,052` -> `1,060` public claims) with `2` 6-column comparison tables,
+`2` new CC BY 4.0 works/sources/readings (`Heijungs 2020`, `Groen et al. 2017`),
+`10` `1-to-1` `ev-unc149-*`/`psg-unc149-*` pairs, `42` `BigInt` rational
+`numericFacts`, `7` normalized prior `ev-unc-*` locators, and `2`
+`style="display:block"` public correction notices (`cl-unc-sd-sem`,
+`cl-book-unc-bridge`) after two-round unconditional `0/0/0 PASS` independent
+primary-source, zero-context reader, and publication-engineering audits plus
+50-combo responsive & `@media print` Playwright QA (compiled CSS zero-drift
+`be180e5d...`, `40/40` case files untouched). Clean production build, PR/CI/merge,
+live `https://prism.tiangong.earth` qualification, exact root integration,
+remaining Part VI chapters (`B27`–`B28` + Part VI continuous reread), Parts
+VII–VIII, and all 8 global Programme #9 criteria remain open.
 and final ordinary source/root receipts with complete source handoff. Its
 original-source, model and empirical limits remain unchanged.
 
@@ -612,10 +632,27 @@ evidence locators, `14` bounded `cl-db2011-*` synchronizations, and `12` inline
 unconditional-PASS primary-source (`447069ba`), zero-context reader (`ee695e98`),
 adversarial publication-engineering (`d97ea23d`) and actual-output acceptances
 (`728d84360c5530fc96054634cce4d6dd15e73b1f2ad4aa1a4004dff594ee7eb4`, capture
-`a7d7ab2fef20f64658114f367e50b810245f3298499dda76ba440435b2285d60`) are bound on
-branch `codex/data-applicability-147`; PR/CI/merge, hosted EdgeOne qualification,
-exact root integration, remaining Parts VI–VIII units and all eight global
-Programme9 criteria remain active.
+`a7d7ab2fef20f64658114f367e50b810245f3298499dda76ba440435b2285d60`) are bound and
+fully delivered: source PR148/Main `4bb508394ef2f6c671b1468d41a2b67c51296be6`,
+qualified 468-file / 356,263,674-byte hosted output on `https://prism.tiangong.earth`
+(`manifestSha256 = 4802c6b7ceabd6586399564136112751d1830a91e6c9062abb94b22632f0f937`,
+`12/12` live `@media print` notices), and exact root integration
+workspace2471/PR2472/Main `f8bacff27775d41a62879107e80ac941f0754b0c` with
+terminal `source_handoff` 1/1.
+
+[Issue149](https://github.com/tiangong-lca/knowledge-base/issues/149) continues
+Part VI on `B26` (`变异与不确定性`, `/docs/book/uncertainty-and-variability`,
+`9` -> `17` claims + `2` six-column tables across `4` sections) from qualified
+Main `4bb508394ef2f6c671b1468d41a2b67c51296be6` on branch
+`codex/uncertainty-variability-149`. Its
+[prewriting comparative protocol](editorial/2026-11-19-uncertainty-variability-comparison.md)
+is committed and pushed prior to any `knowledge/`, `content/`, or `config/` edits,
+comparing `Huijbregts (1998/2001)`, `Heijungs & Suh (2002)`, `ILCD 2010`
+(`§9.3.3` & `§9.4`), `Recommendation (EU) 2021/2279` (`Annex I §6`),
+`Groen et al. (2017)` (`SRC`, `SCC`, `KIA`, `Sobol' SME/STE`, `RBD`), and
+`Heijungs (2020)` (`N_run` vs empirical `n`, precision vs accuracy, comparative
+`p`-value collapse, and pedigree incompatibility). Remaining Parts VI–VIII units
+and all eight global Programme9 criteria remain open.
 
 Rule adoption101 itself is fully delivered: PR103/Main10dc686 and
 root2381/PR2382/Main90bcaa574, with complete ordinary source/root handoff receipts.

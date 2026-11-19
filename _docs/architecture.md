@@ -22,6 +22,36 @@ lastReviewedCommit: 2e0b523c3468613a3d71d03606f77adb36fd9a73
 
 # Publication architecture
 
+## Uncertainty-comparison successor
+
+The #149 Part VI `B26` uncertainty-and-variability comparison successor
+(`scripts/reader-uncertainty-comparison.mjs` and
+`scripts/reader-uncertainty-comparison-factors.mjs`) updates `1` managed `B26`
+MDX file (`content/docs/book/uncertainty-and-variability.mdx`) while preserving
+all `3` pinned headings (`#估计对象`, `#不确定性来源`, `#数值可靠性` in
+`config/reader-numbering.json`), extends the public catalog from `1,052` to
+`1,060` claims (`8` new `cl-unc149-*` claims, `10` `1-to-1` single-artifact
+`ev-unc149-*` / `psg-unc149-*` pairs, `42` `BigInt`-verified `nf-unc149-*`
+`numericFacts`, `2` new CC BY 4.0 works/sources/readings, `2` appended prior
+carriers, `7` normalized prior `ev-unc-*` locators, and `2` bounded
+synchronizations on `cl-unc-sd-sem` and `cl-book-unc-bridge`), embeds `2`
+responsive 6-column Markdown comparison tables, and wires gated
+`readerCitationSourceTitle` (`§2.1 -> Ch. 2.1`) display mapping in
+`scripts/reader-exchange-semantics.mjs` and `components/evidence.tsx` while
+keeping all `40` case download files byte-identical.
+`prepareUncertaintyComparisonSource` enforces closed `exactKeys` sub-envelopes,
+exact `allowsRaw` allowlists, `oldFileShas` + `boundedMdxTransform`, locked
+field deltas on `cl-unc-sd-sem` and `cl-book-unc-bridge`, and exact rollback to
+`4bb508394ef2f6c671b1468d41a2b67c51296be6` (`uncertaintyComparisonPredecessorPin`
+`7db50e1d...`, `uncertaintyComparisonUnitPin` `61a21b40...`,
+`uncertaintyComparisonCapturePin` `636656bd...`), while
+`qualifyUncertaintyComparisonHistory` validates `addressPin` (`06f9729b...`),
+`12` dated history controls, and `2` `noteIndex`-pinned `style="display:block"`
+public correction notices (`data-uncertainty-comparison-correction`) on both
+`/docs/book/uncertainty-and-variability` and `/print` before `reader-surface.mjs`
+strips them for downstream legacy predicates, maintaining compiled CSS
+zero-drift (`be180e5d...`).
+
 ## Data-applicability-comparison successor
 
 The #147 Part VI opening data-applicability comparison successor

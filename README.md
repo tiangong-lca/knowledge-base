@@ -20,6 +20,26 @@ lastReviewedCommit: 2e0b523c3468613a3d71d03606f77adb36fd9a73
 
 # LCA Living Knowledge Base and Review
 
+[Part VI B26 uncertainty, variability, global sensitivity & comparative Monte Carlo inference #149](https://github.com/tiangong-lca/knowledge-base/issues/149)
+extends Part VI chapter `B26` (`《变异与不确定性》`,
+`content/docs/book/uncertainty-and-variability.mdx`, `9` -> `17` claims plus two
+6-column responsive Markdown comparison tables while preserving all `3` pinned
+headings `#估计对象`, `#不确定性来源`, `#数值可靠性`), bringing the public
+catalog from `1,052` to `1,060` claims while conserving `100%` of all `9`
+original `B26` claim identities, all `1,043` untouched prior claims, and all
+`40` case download files byte-for-byte against
+`4bb508394ef2f6c671b1468d41a2b67c51296be6`. Its
+[comparative record](_docs/editorial/2026-11-19-uncertainty-variability-comparison.md)
+binds `2` new CC BY 4.0 Open Access works/sources/readings (`Heijungs 2020`,
+*IJLCA* 25:394–402; `Groen et al. 2017`, *IJLCA* 22:1125–1137), `2` appended
+prior carriers (`ILCD 2010 §9.3.3/§9.4`; `EU 2021/2279 Annex I §6.2–6.4`, zero
+`Monte Carlo` occurrences across 384 pages), `10` `1-to-1` single-artifact
+`ev-unc149-*` / `psg-unc149-*` pairs, `42` `BigInt`-verified `nf-unc149-*`
+`numericFacts`, `7` normalized prior `ev-unc-*` locators (also cleaning `3`
+shared citations in `B32`), `2` inline `style="display:block"` public correction
+notices (`cl-unc-sd-sem`, `cl-book-unc-bridge`), and `readerCitationSourceTitle`
+`Ch. 2.1` display mapping with zero compiled CSS drift (`be180e5d...`).
+
 [Part VI opening B25 data applicability, dataset roles, DQR vs pedigree math, review gates, five-aspect compliance & package migration #147](https://github.com/tiangong-lca/knowledge-base/issues/147)
 extends Part VI opening chapter `B25` (`《数据适用性》`, `content/monograph/data-applicability.mdx`,
 `14` -> `22` claims plus two 6-column responsive Markdown comparison tables) and
