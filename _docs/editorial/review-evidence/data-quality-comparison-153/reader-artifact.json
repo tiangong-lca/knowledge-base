@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "kind": "reader",
+  "unit": "data-quality-comparison-153",
+  "date": "2026-11-19",
+  "subjectSha256": "50403c00a18ba0afb8bd389c1d848206c1a4ed7a3ca7ac671c7d70976c8943e4",
+  "scope": [
+    "content/docs/book/data-quality-and-probability.mdx",
+    "evidence:ev-unc-ciroth-scores",
+    "evidence:ev-unc-ciroth-calibration",
+    "evidence:ev-unc-ciroth-empirical",
+    "evidence:ev-unc-ciroth-summary",
+    "evidence:ev-unc-ciroth-baseline",
+    "evidence:ev-unc-ei-alongside",
+    "evidence:ev-unc-ei-metadata",
+    "evidence:ev-unc-ei-reuse",
+    "evidence:ev-ped-sampling-population",
+    "evidence:ev-ped-sampling-design",
+    "evidence:ev-ped-completeness-data",
+    "evidence:ev-ped-gsd-definition",
+    "evidence:ev-ped-journal-gsd",
+    "evidence:ev-ped-score-test-design",
+    "evidence:ev-ped-score-test-results",
+    "literature:lit-n04",
+    "literature:work-dapp147-ecoinvent-v3-2013",
+    "literature:work-pfr151-ghgp-2011",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:order:sources",
+    "researchMetadata:order:readings",
+    "researchMetadata:order:literatureGaps",
+    "researchMetadata:public-projection",
+    "claims:cl-dqp-ecoinvent-v3-variance",
+    "claims:cl-dqp-pef-ordinal-dqr",
+    "claims:cl-dqp-ghgp-qualitative-dqi",
+    "claims:cl-dqp-four-framework-synthesis",
+    "claims:cl-dqp-paywalled-iso-boundary",
+    "claims:cl-dqp-cross-chapter-bridge",
+    "evidence:ev-dqp153-ecoinvent-v3-pedigree",
+    "evidence:ev-dqp153-ecoinvent-v3-limits",
+    "evidence:ev-dqp153-pef-dqr-formula",
+    "evidence:ev-dqp153-pef-dnm-thresholds",
+    "evidence:ev-dqp153-ghgp-qualitative-dqi",
+    "evidence:ev-dqp153-ghgp-uncertainty-boundary",
+    "sources:src-dqp153-ecoinvent-v3-2013",
+    "sources:src-dqp153-eu-2021-2279-pef",
+    "sources:src-dqp153-ghgp-2011",
+    "readings:rd-dqp153-ecoinvent-v3-2013",
+    "readings:rd-dqp153-eu-2021-2279-pef",
+    "readings:rd-dqp153-ghgp-2011",
+    "literatureGaps:lit-gap-dqp153-paywalled-iso14044-dqr"
+  ],
+  "observed": "Two-round zero-context continuous reader review of complete B27 chapter (35,774 chars, 42 claims/endnotes, 2 comparison tables) in strict isolation without repository access.",
+  "observations": {
+    "routes": [
+      "/docs/book/data-quality-and-probability"
+    ],
+    "history": [
+      "/docs/book/data-quality-and-probability#nd-page",
+      "/docs/book/data-quality-and-probability#main-content",
+      "/docs/book/data-quality-and-probability#概率模型与参数",
+      "/docs/book/data-quality-and-probability#评分的检验与适用",
+      "/docs/book/data-quality-and-probability#chapter-2f646f63732f626f6f6b2f646174612d7175616c6974792d616e642d70726f626162696c697479-annotations",
+      "/print#print-unit-2f646f63732f626f6f6b2f646174612d7175616c6974792d616e642d70726f626162696c697479",
+      "/print#print-reading-unit-2f646f63732f626f6f6b2f646174612d7175616c6974792d616e642d70726f626162696c697479",
+      "/print#print-unit-2f646f63732f626f6f6b2f646174612d7175616c6974792d616e642d70726f626162696c697479-概率模型与参数",
+      "/print#print-unit-2f646f63732f626f6f6b2f646174612d7175616c6974792d616e642d70726f626162696c697479-评分的检验与适用",
+      "/print#print-unit-2f646f63732f626f6f6b2f646174612d7175616c6974792d616e642d70726f626162696c697479-annotations"
+    ],
+    "assessment": {
+      "scope": "Two-round zero-context continuous reader review of complete B27 chapter (35,774 chars, 42 claims/endnotes, 2 comparison tables) in strict isolation without repository access.",
+      "findings": "Confirmed clear progression from Dairy PEFCR to binding EU Batteries Regulation & ESPR, GHG Protocol vs Batteries accounting boundaries, assurance vs Notified Body Modules D1/G, corporate Scope 3 non-additivity, comparative assertion gates, and paywalled standard boundaries; verified first-occurrence Chinese glosses across all new prose and tables and crisp dedicated locators on Notes 28 and 29, concluding unconditional PASS (0 BLOCKER, 0 MAJOR, 0 MINOR).",
+      "answers": [
+        "Distinguished non-binding TFEU Art. 288 Recommendation (EU) 2021/2279 from binding directly-applicable Regulations (EU) 2023/1542 and (EU) 2024/1781, showing how ESPR delegated acts convert voluntary PEF methods into statutory requirements and Digital Product Passports.",
+        "Contrasted GHG Protocol mandatory cradle-to-grave functional unit (final products) and non-attributable exclusions against Batteries Regulation Annex II 1 kWh functional unit, explicit use-phase exclusion, and 5-component plant-specific data with cross-plant sampling ban.",
+        "Separated first-/third-party limited & reasonable assurance from mandatory Notified Body conformity assessment (Modules D1/G, excluding Module A) and explained why product GHG sums do not equal corporate Scope 1+2+3 totals.",
+        "Explained why GHG Protocol does not support ISO 14044 comparative assertions (only 1 as-is use in Table A.2 p. 116) and recorded explicit open boundaries for paywalled ISO 14067 / ISO 14025 / EN 15804 / GB/T 24067 texts."
+      ],
+      "limits": "Signs off Part VI chapter B27 only; B27 update, Part VI whole-part continuous reread, Parts VII-VIII, and all 8 global Programme #9 criteria remain open."
+    },
+    "independentReports": {
+      "independent-primary-source-audit-final.md": "0de1dbdd8f5a26fac6a9af91bf10f459e1b9d359a6eff94cd589aa8b4e66c5c1",
+      "b27-continuous-reader-review-final.md": "807d273a6a74a613b6a881a6eaf2b05661ad2925b99619fe3e475971cef3cc7b",
+      "independent-publication-engineering-review-final.md": "ecc8b4cc91a3a36e0d5fb25edaf1c8b217a4889f4768641e87d009dd23c2b207",
+      "qa-summary-153.json": "a5bfea26ddbdc80fa2c44d988e56aa566029e35a81bef65a8544f136d4b7de0b"
+    }
+  }
+}

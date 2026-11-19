@@ -67,28 +67,38 @@ fully delivered: source PR150/Main `3c6844be00ad3d39be3199ffbb257324a5daab79`
 `https://prism.tiangong.earth` (`manifestSha256 = 30730a85...`), and exact root
 integration `workspace#2485` / `PR #2486` (`ec58cd82...`).
 
-[Issue151](https://github.com/tiangong-lca/knowledge-base/issues/151) (Part VI
-`B28`《产品足迹规则》,
+Unit151 ([Issue151](https://github.com/tiangong-lca/knowledge-base/issues/151),
+Part VI `B28`《产品足迹规则》,
 [protocol](editorial/2026-11-19-product-footprint-rules-comparison.md)) is
-independently accepted (`productFootprintComparisonPredecessorPin` `67e55709...`,
-`productFootprintComparisonUnitPin` `2193f0fd...`,
-`productFootprintComparisonCapturePin` `f1c7d9ac...`) on base
-`3c6844be00ad3d39be3199ffbb257324a5daab79`, extending `B28` from `34` to `42`
-claims (`1,060` -> `1,068` public claims) with `2` comparison tables (Table 1
-six columns, Table 2 five columns), `3` locally SHA-256-verified official PDF
-works/sources/readings (`GHG Protocol Product Standard 2011`, `Regulation (EU)
-2023/1542`, `Regulation (EU) 2024/1781 ESPR`), `9` `1-to-1`
-`ev-pfr151-*`/`psg-pfr151-*` pairs, `22` `BigInt` rational `numericFacts`, `22`
-normalized non-case `ev-kb44-*` locators, and `1` explicit paywalled-standard
-research gap after two-round unconditional `0/0/0 PASS` independent
-primary-source, zero-context reader, and publication-engineering audits plus
-50-combo responsive & `@media print` Playwright QA (compiled CSS zero-drift
-`be180e5d...`, `40/40` case files and `5/5` case-bound dairy-rules locators
-untouched). Clean production build, PR/CI/merge, live `https://prism.tiangong.earth`
-qualification, exact root integration, `B27` update, Part VI continuous reread,
-Parts VII–VIII, and all 8 global Programme #9 criteria remain open.
-and final ordinary source/root receipts with complete source handoff. Its
-original-source, model and empirical limits remain unchanged.
+fully delivered: source PR152/Main `def232fadb9e0dd30da4418241d0a78a48f5674d`
+(tree `2d5c470f...`), qualified hosted 468-file output on
+`https://prism.tiangong.earth` (`manifestSha256 = 0686c915...`, `364,289,620`
+bytes, `0` guard errors), and exact root integration `workspace#2497` /
+`PR #2498` (`8bc53055...`, `Delivery complete: True`, `Source handoff: 1/1`).
+
+[Issue153](https://github.com/tiangong-lca/knowledge-base/issues/153) (Part VI
+`B27`《质量评分与概率》,
+[protocol](editorial/2026-11-19-data-quality-probability-comparison.md)) is
+independently accepted (`dataQualityComparisonPredecessorPin` `cfd0c1c0...`,
+`dataQualityComparisonUnitPin` `969421bb...`,
+`dataQualityComparisonCapturePin` `f2996fd3...`) on qualified `main`
+`def232fadb9e0dd30da4418241d0a78a48f5674d`, extending `B27` from `37` to `43`
+claims (`1,068` -> `1,074` public claims) with `1` new responsive 5-column
+cross-system comparison table (preserving the existing Berlin cup-weight table,
+all `5` pinned headings, all `37` original claims, all `11` case-bound
+`pedigree-calibration-v1.json` locators, and all `40/40` case download files),
+`3` locally SHA-256-verified official PDF readings (`Weidema et al. 2013
+ecoinvent Report 1(v3)`, `Commission Recommendation (EU) 2021/2279`, `GHG
+Protocol Product Standard 2011`), `6` `1-to-1` `ev-dqp153-*`/`psg-dqp153-*`
+pairs, `16` `BigInt` rational `numericFacts`, `15` normalized non-case `B27`
+locators, and `1` explicit paywalled `ISO 14044:2006` research gap after
+two-round unconditional `0/0/0 PASS` independent primary-source (`8a23915a`),
+zero-context reader (`3152c3f3`), and publication-engineering (`898c00a8`)
+audits plus 50-combo Playwright responsive & `@media print` QA (compiled CSS
+zero-drift `be180e5d...`, `717/717` tests pass). Clean production build,
+PR/CI/merge, live `https://prism.tiangong.earth` qualification, exact root
+integration, Part VI whole-part continuous reread, Parts VII–VIII, and all 8
+global Programme #9 criteria remain open.
 
 [Issue105](https://github.com/tiangong-lca/knowledge-base/issues/105) continues
 with B10: reporting objects and evidence conditions for co-product substitution.

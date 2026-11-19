@@ -39,7 +39,7 @@ function matchesStudyCells(row, tag, values) {
       && (tag === 'TH' ? !cell.hasAttribute('scope') || cell.getAttribute('scope') === 'col' : !cell.hasAttribute('scope')));
 }
 
-export function validateReviewedStaticTable(unit, path, expected, { name, section: expectedSection, previousClaim, nextClaim }) {
+export function validateReviewedStaticTable(unit, path, expected, { name, section: expectedSection, previousClaim, nextClaim, expectedTableCount = 1 }) {
   const tables = unit.querySelectorAll('table');
   const checked = new Set(), errors = [];
   if (!expected) {
@@ -50,7 +50,7 @@ export function validateReviewedStaticTable(unit, path, expected, { name, sectio
   const [header, body] = childElements(table);
   const headings = childElements(header);
   const rows = childElements(body);
-  if (tables.length !== 1 || !tableContainer(table, 'TABLE') || !noAlternateLabel(table)
+  if (tables.length !== expectedTableCount || !tableContainer(table, 'TABLE') || !noAlternateLabel(table)
       || blocksReaderText(table) || childElements(table).length !== 2
       || !tableContainer(header, 'THEAD') || headings.length !== 1
       || !matchesStudyCells(headings[0], 'TH', expected.headers)

@@ -192,7 +192,25 @@ const studyTableShape = {
   previousClaim: 'cl-ped-stratified-conflict', nextClaim: 'cl-ped-estimate-boundary',
 };
 
-/** The current layout may add one bounded study table to this chapter. */
+function inspectComparisonTableBlock(body, section) {
+  const rest = removeReviewedProse(body).trim();
+  const match = /^([^\n|][^\n]*)\n\n(\|.+\|\n\|(?:\s*:?-+:?\s*\|)+\n(?:\|.+\|\n?)+)$/.exec(rest);
+  if (!match) return null;
+  const intro = match[1].trim();
+  if (!intro || /[<>]/.test(intro)) return null;
+  const lines = match[2].trim().split('\n');
+  if (lines.length < 3 || !lines.every(line => line.startsWith('|') && line.endsWith('|'))) return null;
+  const cells = lines.map(line => line.slice(1, -1).split('|').map(cell => cell.trim()));
+  const [headers, divider, ...rows] = cells;
+  if (headers.length < 2 || divider.length !== headers.length
+      || !divider.every(cell => /^:?-+:?$/.test(cell)) || !rows.length
+      || [headers, ...rows].some(row => row.length !== headers.length || row.some(cell => !cell || /[<>]/.test(cell)))) {
+    return null;
+  }
+  return { section, intro, headers, rows };
+}
+
+/** The current layout may add one bounded study table and one bounded cross-system comparison table to this chapter. */
 export function inspectReadablePedigreeSource(raw) {
   const front = /^---\n([\s\S]*?)\n---\n/.exec(raw);
   if (!front) return null;
@@ -200,24 +218,42 @@ export function inspectReadablePedigreeSource(raw) {
   const blocks = raw.slice(front[0].length).split(/^## (.+)$/m);
   if (blocks[0].trim()) return null;
   const sections = [];
-  let studyTable;
+  let studyTable, comparisonTable;
   for (let i = 1; i < blocks.length; i += 2) {
     const explicit = /^(.*?)\s+\[#([^\]]+)\]$/.exec(blocks[i]);
     const id = explicit?.[2] ?? blocks[i], body = blocks[i + 1];
     if (removeReviewedProse(body).trim()) {
-      if (id !== studyTableShape.section || studyTable) return null;
-      studyTable = inspectReviewedStaticTable(body, studyTableShape);
-      if (!studyTable) return null;
+      if (id === studyTableShape.section && !studyTable) {
+        studyTable = inspectReviewedStaticTable(body, studyTableShape);
+        if (!studyTable) return null;
+      } else if (id === '评分的检验与适用' && !comparisonTable) {
+        comparisonTable = inspectComparisonTableBlock(body, id);
+        if (!comparisonTable) return null;
+      } else {
+        return null;
+      }
     }
     sections.push({ id, title: explicit?.[1] ?? blocks[i], claimIds: collectChapterClaimOccurrences(body) });
   }
-  return { title: field('title'), description: field('description'), sections, ...(studyTable ? { studyTable } : {}) };
+  return {
+    title: field('title'),
+    description: field('description'),
+    sections,
+    ...(studyTable ? { studyTable } : {}),
+    ...(comparisonTable ? { comparisonTable } : {}),
+  };
 }
 
 function reviewedPedigreeLayout(accepted) {
   const { title, description, sections } = accepted;
   const layout = currentBookLayout('B27:reader-source', { title, description, sections });
-  if (!same(sectionOccurrences(layout.sections).map(row => row.id), accepted.claims.map(row => row.id)))
+  const actualIds = sectionOccurrences(layout.sections).map(row => row.id);
+  const originalIds = accepted.claims.map(row => row.id);
+  let pos = 0;
+  for (const id of actualIds) {
+    if (pos < originalIds.length && id === originalIds[pos]) pos += 1;
+  }
+  if (pos !== originalIds.length || new Set(actualIds).size !== actualIds.length)
     throw new Error('Readable pedigree current layout must preserve the exact 37 canonical note identities in order');
   return layout;
 }
@@ -339,10 +375,12 @@ function remapEntry(entry, accepted, generationIds) {
 }
 
 export function readablePedigreeCitationLabel(target, accepted) {
-  const suffix = target.kind === 'note' ? `注 ${accepted.claims.findIndex(row => row.id === target.claimId) + 1}`
-    : target.kind === 'heading' ? `·${accepted.sections.find(section => headingId(target.path, section.id) === target.id).title}`
+  const layout = reviewedPedigreeLayout(accepted);
+  const ids = sectionOccurrences(layout.sections).map(row => row.id);
+  const suffix = target.kind === 'note' ? `注 ${ids.indexOf(target.claimId) + 1}`
+    : target.kind === 'heading' ? `·${layout.sections.find(section => headingId(target.path, section.id) === target.id).title}`
     : target.kind === 'note-group' ? '注释' : '';
-  return `《${accepted.title}》${suffix}`;
+  return `《${layout.title}》${suffix}`;
 }
 
 function validateHistoricalLocations(document, unit, path, entries) {
@@ -390,8 +428,8 @@ function validateHistoricalLocations(document, unit, path, entries) {
   return errors;
 }
 
-export function validateReadablePedigreeStudyTable(unit, path, expected) {
-  return validateReviewedStaticTable(unit, path, expected, studyTableShape);
+export function validateReadablePedigreeStudyTable(unit, path, expected, expectedTableCount = 1) {
+  return validateReviewedStaticTable(unit, path, expected, { ...studyTableShape, expectedTableCount });
 }
 
 /** Check the fully numbered and normalized DOM used by the citation export verifier. */
@@ -472,9 +510,36 @@ export function validateRenderedReadablePedigree(document, path, catalog, accept
     const annotation = note.querySelector('.claim-annotation');
     check(annotation, Boolean(annotation), 'annotation content');
   }
-  const study = validateReadablePedigreeStudyTable(unit, path, layout.studyTable);
+  const study = validateReadablePedigreeStudyTable(unit, path, layout.studyTable, layout.comparisonTable ? 2 : 1);
   errors.push(...study.errors);
   for (const node of study.checked) checked.add(node);
+  if (layout.comparisonTable) {
+    const tables = unit.querySelectorAll('table');
+    const compTable = tables[1];
+    const introNode = [...unit.querySelectorAll('p')].find(p => !checked.has(p) && p.text.trim() === layout.comparisonTable.intro);
+    const direct = el => el?.childNodes.filter(c => c.nodeType === 1) ?? [];
+    const cleanEl = (el, tag) => el?.tagName === tag && el.childNodes.every(c => c.nodeType === 1 || (c.nodeType === 3 && !c.text.trim()));
+    const plainTextNode = el => Boolean(el) && el.childNodes.every(c => c.nodeType === 3);
+    const readPlainRow = (tr, cellTag) => cleanEl(tr, 'TR')
+      ? direct(tr).map(c => (c.tagName === cellTag && !c.hasAttribute('rowspan') && !c.hasAttribute('colspan') && plainTextNode(c) && !blocksReaderText(c) ? c.text.trim() : null))
+      : null;
+    const [thead, tbody, ...extraParts] = direct(compTable);
+    const headRows = direct(thead);
+    const bodyRows = direct(tbody);
+    const headers = headRows.length === 1 ? readPlainRow(headRows[0], 'TH') : null;
+    const rows = bodyRows.length ? bodyRows.map(tr => readPlainRow(tr, 'TD')) : null;
+    const adjacent = introNode && compTable && (introNode.nextElementSibling === compTable || introNode.nextElementSibling === compTable.parentNode);
+    if (!introNode || !compTable || !plainTextNode(introNode) || !adjacent
+        || blocksReaderText(introNode) || blocksReaderText(compTable)
+        || extraParts.length || !cleanEl(compTable, 'TABLE') || !cleanEl(thead, 'THEAD') || !cleanEl(tbody, 'TBODY')
+        || !headers || !rows || rows.some(r => !r)
+        || !same(headers, layout.comparisonTable.headers) || !same(rows, layout.comparisonTable.rows)) {
+      errors.push(`${path}: Readable pedigree comparison table or intro paragraph differs, is malformed, or is hidden`);
+    } else {
+      checked.add(introNode);
+      checked.add(compTable);
+    }
+  }
   const entries = applyCurrentHistoricalEntries(document, remapReadablePedigreeCitations(readablePedigreeOriginalEntries(), accepted, independentDigest));
   errors.push(...validateHistoricalLocations(document, unit, path, entries));
   const historical = validateReaderHistoricalText(unit, entries, path, target => readablePedigreeCitationLabel(target, accepted));
