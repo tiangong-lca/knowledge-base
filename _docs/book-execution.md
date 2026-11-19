@@ -114,20 +114,25 @@ bytes, `0` guard errors), and exact root integration `workspace#2517` /
 
 [Issue161](https://github.com/tiangong-lca/knowledge-base/issues/161) (Part VII
 Unit 3 `B31`《未来技术与情景》,
-[protocol](editorial/2026-11-19-future-scenarios-comparison.md)) is reviewed
-and cryptographically bound on qualified `main`
-`ac54b2594efab9d985e8f2aac677d68e97573643`: adds `6` prospective/ex-ante/
-dynamic LCA comparative claims (`1,086 -> 1,092`), `1` intro paragraph, `1`
-five-column approach comparison table, `4` SHA-256-verified Springer CC BY 4.0
-primary sources (Arvidsson et al. 2024, Tsoy et al. 2020, Steubing & de Koning
-2021, Lueddeckens, Saling & Guenther 2020), and `6` evidence records (`14`
-BigInt-verified numeric facts), while preserving all `9` existing `B31` claims,
-`40/40` case downloads, CSS zero-drift (`be180e5d...`), and `3` frozen headings
-byte-for-byte untouched. Independent Round 2 source, zero-context reader, and
-publication-engineering reviews all passed (`0 BLOCKER / 0 MAJOR / 0 MINOR`),
-with `732/732` tests and `20/20` Playwright responsive QA green. Source PR/CI/
-merge, live EdgeOne qualification, root submodule integration, `B32` / Part VII
-reread, Part VIII, and all 8 global Programme #9 criteria remain open.
+[protocol](editorial/2026-11-19-future-scenarios-comparison.md)) is fully
+delivered: source PR162/Main `cb2584d4354f6d8a5111155d658d3edafd80ec8a`
+(tree `1d3f6fab...`), qualified hosted 468-file output on
+`https://prism.tiangong.earth` (`manifestSha256 = 665d76cb...`, `377,383,467`
+bytes, `0` guard errors), and exact root integration `workspace#2519` /
+`PR #2520` (`18e17193...`, `Delivery complete: True`, `Integration: Done`).
+
+[Issue163](https://github.com/tiangong-lca/knowledge-base/issues/163) (Part VII
+Unit 4 `B32`《可修订的判断》+ `W1`/`W2` closing synthesis & revision routing,
+[protocol](editorial/2026-11-19-revisable-judgment-synthesis.md)) opens the
+prewriting protocol on qualified `main`
+`cb2584d4354f6d8a5111155d658d3edafd80ec8a` to add `7` integrative synthesis and
+revision-routing claims (`1,092 -> 1,099`) and `1` five-column, seven-row
+book-level revision-routing table across `W1` (`8 -> 10`), `W2` (`14 -> 19`),
+and `B32` (`22 -> 29`) maintaining exact disjoint-union parity
+`W1 ∪ W2 = B32` (`W1 ∩ W2 = ∅`) while preserving all `22` existing claims,
+`106` historical citation obligations, `40/40` case downloads, and frozen
+headings byte-for-byte untouched. Part VII continuous reread, whole-book
+reread, and all 8 global Programme #9 criteria remain open.
 
 [Issue105](https://github.com/tiangong-lca/knowledge-base/issues/105) continues
 with B10: reporting objects and evidence conditions for co-product substitution.
