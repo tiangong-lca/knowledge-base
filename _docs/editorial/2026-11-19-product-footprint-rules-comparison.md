@@ -59,3 +59,12 @@ related:
 - 在精确基线 `3c6844be00ad3d39be3199ffbb257324a5daab79` 上安装可逆 `reader-product-footprint-comparison` 出版守卫，保持 `40/40` 案例文件零改动与编译 CSS 零漂移（`be180e5d...`）。
 - 须经三路独立审查（一手出处与数值、零上下文整章读者、对抗性出版工程）全部无条件 `PASS`（`0 BLOCKER / 0 MAJOR / 0 MINOR`），通过 `pnpm validate`、`pnpm typecheck`、`pnpm test`、Playwright 响应式/无脚本/`@media print` 检查、干净生产构建、严格 Docpact 校验、PR/CI/合并、线上 `https://prism.tiangong.earth` 核验与根集成终态核销。
 - 本单元交付不代表全书完成，[Programme #9](https://github.com/tiangong-lca/knowledge-base/issues/9) 八项全局条件保持未勾选。
+
+## 五、实际实施与独立审查验收记录
+
+1. **案例绑定定位符保守守恒与表格口径**：完整保留 `knowledge/cases/dairy-rules-v1.json` 绑定的 `5` 条案例定位符与全部 `34` 条既有 `cl-rule-*` 论述及 `4` 处节锚不变；规范全部 `22` 条非案例 `ev-kb44-*` 定位符（含未引用的 `ev-kb44-dairy2018-comparisons`）；新增 `9` 对一比一单载体 `ev-pfr151-*` / `psg-pfr151-*` 记录、`22` 项有理数 `numericFacts`、`8` 条比较论述（公开目录 `1,060 -> 1,068`）与两张响应式对照表（表 1 六列、表 2 五列）。
+2. **三路两轮独立审查全部无条件 `PASS`（`0 BLOCKER / 0 MAJOR / 0 MINOR`）**：
+   - 一手出处与数值审计：首轮 `0/4/4 REVISE` 修正附录 A 表 A.2（印第 116 页）、电池法规附件八 B—C 部分 `L 191/96–101`、三处 `pdfIndices`、GHGP 情态动词精确性、第 7 条第 2 款第 5 段依据及独立拆分 `ev-pfr151-ghgp-scope3-boundary` 后，次轮无条件 `0/0/0 PASS`；
+   - 零上下文整章读者审读（35,774 字、42 注、2 表）：首轮 `0/2/3 REVISE` 补齐导语、表 1、新增段落与表 2 全部缩写首现中文括注并收窄注 28/29 定位后，次轮无条件 `0/0/0 PASS`；
+   - 对抗性出版工程与安全审计：首轮 `1/3/2 REVISE` 修复 `run-qa-151.mjs` 零更正说明断言、加固 `selectProductFootprintComparison` `pin === null` 与 `scope` 校验、收紧精确确定性 `boundedMdxTransform`、清理全部 rationale 文案并扩充负向测试（`8/8` 通过）后，次轮无条件 `0/0/0 PASS`；Playwright 50 组合响应式 + 无脚本 + `@media print` 零错误，编译 CSS 零漂移（`be180e5d...`）。
+3. **密码学钉扎**：`productFootprintComparisonPredecessorPin = 67e55709...`，`productFootprintComparisonCapturePin = f1c7d9ac...`（manifest `a719113f...`），`productFootprintComparisonUnitPin = 2193f0fd...`，对应三份审查证据包落盘于 `_docs/editorial/review-evidence/product-footprint-comparison-151/`。

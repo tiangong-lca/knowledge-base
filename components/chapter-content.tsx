@@ -1,3 +1,4 @@
+import { productFootprintComparisonHistoryControls, productFootprintComparisonOrdinaryId, productFootprintComparisonRoute, productFootprintComparisonSource } from '@/scripts/reader-product-footprint-comparison.mjs';
 import { uncertaintyComparisonCorrections, uncertaintyComparisonHistoryControls, uncertaintyComparisonOrdinaryId, uncertaintyComparisonRoute, uncertaintyComparisonSource } from '@/scripts/reader-uncertainty-comparison.mjs';
 import { dataApplicabilityComparisonCorrections, dataApplicabilityComparisonHistoryControls, dataApplicabilityComparisonOrdinaryId, dataApplicabilityComparisonRoutes, dataApplicabilityComparisonSource } from '@/scripts/reader-data-applicability-comparison.mjs';
 import { part5RereadCorrections, part5RereadHistoryControls, part5RereadOrdinaryId, part5RereadSource } from '@/scripts/reader-part5-reread.mjs';
@@ -20,7 +21,7 @@ import { landRecoveryHistoryControls, landRecoveryOrdinaryId, landRecoverySource
 import { circularFootprintHistoryControls, circularFootprintOrdinaryId, circularFootprintSource } from '@/scripts/reader-circular-footprint.mjs';
 import { loadShiftHistoryControls, loadShiftOrdinaryId, loadShiftSource } from '@/scripts/reader-load-shift.mjs';
 import { substitutionRulesHistoryControls, substitutionRulesOrdinaryId, substitutionRulesSource } from '@/scripts/reader-substitution-rules.mjs';
-import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity, currentBiogenicCarbon, currentEutrophicationPathways, currentParticulateComparison, currentPart4Reread, currentWeightingValuation, currentLocalizationComparison, currentSocialComparison, currentCostSustainability, currentPart5Reread, currentDataApplicabilityComparison, currentUncertaintyComparison } from '@/scripts/reader-current-expectations.mjs';
+import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity, currentBiogenicCarbon, currentEutrophicationPathways, currentParticulateComparison, currentPart4Reread, currentWeightingValuation, currentLocalizationComparison, currentSocialComparison, currentCostSustainability, currentPart5Reread, currentDataApplicabilityComparison, currentUncertaintyComparison, currentProductFootprintComparison } from '@/scripts/reader-current-expectations.mjs';
 import { flowBoundaryHistoryControls, flowBoundaryHistoryTargets, flowBoundaryOrdinaryTargets, flowBoundaryOrdinaryId } from '@/scripts/reader-flow-boundary.mjs';
 import { serviceConstraintsHistoryControls, serviceConstraintsOrdinaryId, serviceConstraintsSource } from '@/scripts/reader-service-constraints.mjs';
 import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
@@ -74,6 +75,7 @@ const histories = [
   { controls: part5RereadHistoryControls(currentPart5Reread), edition: part5RereadSource, attribute: 'part5-reread' },
   { controls: dataApplicabilityComparisonHistoryControls(currentDataApplicabilityComparison), edition: dataApplicabilityComparisonSource, attribute: 'data-applicability-comparison' },
   { controls: uncertaintyComparisonHistoryControls(currentUncertaintyComparison), edition: uncertaintyComparisonSource, attribute: 'uncertainty-comparison' },
+  { controls: productFootprintComparisonHistoryControls(currentProductFootprintComparison), edition: productFootprintComparisonSource, attribute: 'product-footprint-comparison' },
 ];
 
 function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
@@ -94,7 +96,8 @@ function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
     || socialComparisonOrdinaryId(currentSocialComparison, route, print, index)
     || costSustainabilityOrdinaryId(currentCostSustainability, route, print, index)
     || dataApplicabilityComparisonOrdinaryId(currentDataApplicabilityComparison, route, print, index)
-    || uncertaintyComparisonOrdinaryId(currentUncertaintyComparison, route, print, index);
+    || uncertaintyComparisonOrdinaryId(currentUncertaintyComparison, route, print, index)
+    || productFootprintComparisonOrdinaryId(currentProductFootprintComparison, route, print, index);
 }
 
 // Leave versioned native fragments below the screen's sticky site header.
@@ -116,7 +119,8 @@ export function currentReaderOrdinaryAttributes(route: string, print: boolean, i
       || id === socialComparisonOrdinaryId(currentSocialComparison, route, print, index)
       || id === costSustainabilityOrdinaryId(currentCostSustainability, route, print, index)
       || id === dataApplicabilityComparisonOrdinaryId(currentDataApplicabilityComparison, route, print, index)
-      || id === uncertaintyComparisonOrdinaryId(currentUncertaintyComparison, route, print, index))
+      || id === uncertaintyComparisonOrdinaryId(currentUncertaintyComparison, route, print, index)
+      || id === productFootprintComparisonOrdinaryId(currentProductFootprintComparison, route, print, index))
     ? { id, style: scientificHistoryScroll }
     : { id };
 }
@@ -200,6 +204,7 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
   const hasCostTables = Boolean(currentCostSustainability && cleanRoute === costSustainabilityRoute);
   const hasDataApplicabilityTables = Boolean(currentDataApplicabilityComparison && dataApplicabilityComparisonRoutes.includes(cleanRoute));
   const hasUncertaintyTables = Boolean(currentUncertaintyComparison && cleanRoute === uncertaintyComparisonRoute);
+  const hasProductFootprintTables = Boolean(currentProductFootprintComparison && cleanRoute === productFootprintComparisonRoute);
   let tableCount = 0;
   function ReaderTable(props: HTMLAttributes<HTMLTableElement>) {
     if (Object.hasOwn(props, 'id')) {
@@ -216,7 +221,7 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
     if (index === 2 && cleanRoute === '/docs/book/lime-preferences-and-damage-weights') {
       return createElement(defaults.table ?? 'table', props);
     }
-    if ((index === 1 || index === 2) && (hasLocalizationTables || hasSocialTables || hasCostTables || hasUncertaintyTables)) {
+    if ((index === 1 || index === 2) && (hasLocalizationTables || hasSocialTables || hasCostTables || hasUncertaintyTables || hasProductFootprintTables)) {
       return createElement(defaults.table ?? 'table', props);
     }
     if (hasDataApplicabilityTables && (index === 1 || (index === 2 && cleanRoute === 'book-data-applicability'))) {
@@ -269,7 +274,7 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
     <RetainedScope entry={legacy.scopes.get(prefix)} readingTitle={print ? printReadingEntryAnchor(page.url) : undefined} />
     {historyAt(historyPath, print ? prefix : 'nd-page')}
     {historyAt(historyPath, print ? printReadingEntryAnchor(page.url) : 'main-content')}
-    <MDX components={getMDXComponents({ Prose: ChapterProse, Claim: Paragraph, ReaderSection, ReaderFigure, TeachingCase: ChapterTeachingCase, a: ReaderLink, ...(currentReaderOrdinaryId(cleanRoute, print, 0) ? { p: ReaderParagraph } : {}), ...((tableId || hasLocalizationTables || hasSocialTables || hasCostTables || hasDataApplicabilityTables || hasUncertaintyTables) ? { table: ReaderTable } : {}), ...headings })} />
+    <MDX components={getMDXComponents({ Prose: ChapterProse, Claim: Paragraph, ReaderSection, ReaderFigure, TeachingCase: ChapterTeachingCase, a: ReaderLink, ...(currentReaderOrdinaryId(cleanRoute, print, 0) ? { p: ReaderParagraph } : {}), ...((tableId || hasLocalizationTables || hasSocialTables || hasCostTables || hasDataApplicabilityTables || hasUncertaintyTables || hasProductFootprintTables) ? { table: ReaderTable } : {}), ...headings })} />
     {plan.notes.length > 0 && <section className="chapter-notes not-prose" aria-labelledby={plan.headingId}>
       <LegacyCitationAliases ids={legacy.aliases.get(plan.headingId)} target={plan.headingId} />
       {print ? <h4 id={plan.headingId}>注释</h4> : <h2 id={plan.headingId}>注释</h2>}

@@ -1,0 +1,1402 @@
+{
+  "schemaVersion": 1,
+  "kind": "source",
+  "unit": "product-footprint-comparison-151",
+  "date": "2026-11-19",
+  "subjectSha256": "97e87dc6840c285b8555def4efb60faa4a98ef2fa88125f7274431a6fc3bd3bc",
+  "scope": [
+    "content/docs/book/product-footprint-rules-and-practice.mdx",
+    "evidence:ev-kb44-ec2021-scope",
+    "evidence:ev-kb44-ec2021-category",
+    "evidence:ev-kb44-ec2021-use",
+    "evidence:ev-kb44-ec2021-results",
+    "evidence:ev-kb44-ec2021-model",
+    "evidence:ev-kb44-ec2021-review",
+    "evidence:ev-kb44-ec2021-revision",
+    "evidence:ev-kb44-ec2021-verification",
+    "evidence:ev-kb44-dairy2018-authorities",
+    "evidence:ev-kb44-dairy2018-review",
+    "evidence:ev-kb44-dairy2018-comparisons",
+    "evidence:ev-kb44-dairy2018-methane",
+    "evidence:ev-kb44-dairy2018-use",
+    "evidence:ev-kb44-nordic2023-design",
+    "evidence:ev-kb44-nordic2023-awg",
+    "evidence:ev-kb44-nordic2023-limits",
+    "evidence:ev-kb44-niu2018-evaluation",
+    "evidence:ev-kb44-dairy2025-identity",
+    "evidence:ev-kb44-dairy2025-comparisons",
+    "evidence:ev-kb44-dairy2025-methane",
+    "evidence:ev-kb44-ec2021-rp-definition",
+    "evidence:ev-kb44-ec2021-fu-boundary",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:order:sources",
+    "researchMetadata:order:readings",
+    "researchMetadata:order:literature",
+    "researchMetadata:order:queries",
+    "researchMetadata:order:literatureGaps",
+    "researchMetadata:public-projection",
+    "claims:cl-pfr151-binding-batteries",
+    "claims:cl-pfr151-espr-dpp-conversion",
+    "claims:cl-pfr151-ghgp-boundary-unit",
+    "claims:cl-pfr151-ghgp-vs-battery-accounting",
+    "claims:cl-pfr151-assurance-vs-notified-body",
+    "claims:cl-pfr151-product-vs-corporate-scope3",
+    "claims:cl-pfr151-comparative-assertion-gates",
+    "claims:cl-pfr151-paywalled-standard-boundaries",
+    "evidence:ev-pfr151-battery-art7-art96",
+    "evidence:ev-pfr151-espr-conversion-dpp",
+    "evidence:ev-pfr151-ghgp-boundary-unit",
+    "evidence:ev-pfr151-ghgp-carbon-rules",
+    "evidence:ev-pfr151-battery-annex2",
+    "evidence:ev-pfr151-battery-conformity",
+    "evidence:ev-pfr151-ghgp-assurance",
+    "evidence:ev-pfr151-ghgp-scope3-boundary",
+    "evidence:ev-pfr151-ghgp-comparative-gates",
+    "sources:src-pfr151-ghgp-2011",
+    "sources:src-pfr151-eu-2023-1542",
+    "sources:src-pfr151-eu-2024-1781",
+    "readings:rd-pfr151-eu-2023-1542",
+    "readings:rd-pfr151-eu-2024-1781",
+    "readings:rd-pfr151-ghgp-2011",
+    "literature:work-pfr151-ghgp-2011",
+    "literature:work-pfr151-eu-2023-1542",
+    "literature:work-pfr151-eu-2024-1781",
+    "queries:q-pfr151-product-footprint-rules-20261119",
+    "literatureGaps:lit-gap-pfr151-paywalled-product-standards"
+  ],
+  "observed": "Part VI closing chapter B28 (content/docs/book/product-footprint-rules-and-practice.mdx), covering 3 new locally SHA-256-verified official open-access PDFs (GHG Protocol Product Standard 2011 148 pp.; Regulation (EU) 2023/1542 117 pp.; Regulation (EU) 2024/1781 ESPR 89 pp.), 9 1-to-1 single-artifact ev-pfr151-*/psg-pfr151-* pairs, 22 BigInt rational numericFacts, 8 new cl-pfr151-* claims, 22 normalized non-case ev-kb44-* locators, 1 explicit paywalled-standard research gap, and 2 comparison tables (Table 1 six columns, Table 2 five columns) against predecessor commit 3c6844be00ad3d39be3199ffbb257324a5daab79.",
+  "observations": {
+    "state": {
+      "before": "67e55709d2c0b1a9c597891f36df8782985db22756b1b585e5d7e1b1d80c45d6",
+      "after": "cfd0c1c0cc5f0a7bd73f8489c65d534713364c270ad5ce4768da349bd6a36490"
+    },
+    "changes": [
+      {
+        "kind": "file",
+        "key": "content/docs/book/product-footprint-rules-and-practice.mdx",
+        "from": "6b33128bd63da692de45382f234beeddfa7af9eb2ea5657a1adff7c001075338",
+        "to": "8336c743915161e884210991a8519539042c19308ba7091bc495d597c9e12b66",
+        "rationale": "在第六部第四章《产品足迹规则》既有四节锚内有界置入 8 条跨体系比较论述与 2 张跨体系对照表（表 1 六列、表 2 五列）（由 34 注扩为 42 注），完整守恒全部 34 条既有命题与 4 处节锚。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-ec2021-scope",
+        "from": {
+          "raw": "f08425af2fc22659e0243d1f216fa32eb5660c30e410e85a86b4623dd05bb055",
+          "public": "f08425af2fc22659e0243d1f216fa32eb5660c30e410e85a86b4623dd05bb055",
+          "protected": "f08425af2fc22659e0243d1f216fa32eb5660c30e410e85a86b4623dd05bb055"
+        },
+        "to": {
+          "raw": "70de4276f394f45f142fbc46cc9e5da7d4d45410ad03dc78588381b2616e772b",
+          "public": "70de4276f394f45f142fbc46cc9e5da7d4d45410ad03dc78588381b2616e772b",
+          "protected": "70de4276f394f45f142fbc46cc9e5da7d4d45410ad03dc78588381b2616e772b"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有非案例绑定引用证据定位符（消除裸节号），完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-ec2021-category",
+        "from": {
+          "raw": "bff51a15230f721ecce6b23988ec6d8656606d53ffdabdac365cf785143a2cf7",
+          "public": "bff51a15230f721ecce6b23988ec6d8656606d53ffdabdac365cf785143a2cf7",
+          "protected": "bff51a15230f721ecce6b23988ec6d8656606d53ffdabdac365cf785143a2cf7"
+        },
+        "to": {
+          "raw": "8ab0895bdaadc5fce15d77e61eb7eda6fcbca8f3f63fd693570ba8d37db303a8",
+          "public": "8ab0895bdaadc5fce15d77e61eb7eda6fcbca8f3f63fd693570ba8d37db303a8",
+          "protected": "8ab0895bdaadc5fce15d77e61eb7eda6fcbca8f3f63fd693570ba8d37db303a8"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有非案例绑定引用证据定位符（消除裸节号），完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-ec2021-use",
+        "from": {
+          "raw": "d5fd43358b2f8d13fabff8136f51cc96d81833a3f42acc235faa126cd166be41",
+          "public": "d5fd43358b2f8d13fabff8136f51cc96d81833a3f42acc235faa126cd166be41",
+          "protected": "d5fd43358b2f8d13fabff8136f51cc96d81833a3f42acc235faa126cd166be41"
+        },
+        "to": {
+          "raw": "aaef5c95fcfd8bef521216d2fd034dcf31cbeb05d819c5bac1786edf88bbca96",
+          "public": "aaef5c95fcfd8bef521216d2fd034dcf31cbeb05d819c5bac1786edf88bbca96",
+          "protected": "aaef5c95fcfd8bef521216d2fd034dcf31cbeb05d819c5bac1786edf88bbca96"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有非案例绑定引用证据定位符（消除裸节号），完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-ec2021-results",
+        "from": {
+          "raw": "63d8fdf2e3281319d360d3fd4878f6ddcbb652d1456bbfb4f7260f5476fb0b0c",
+          "public": "63d8fdf2e3281319d360d3fd4878f6ddcbb652d1456bbfb4f7260f5476fb0b0c",
+          "protected": "63d8fdf2e3281319d360d3fd4878f6ddcbb652d1456bbfb4f7260f5476fb0b0c"
+        },
+        "to": {
+          "raw": "706a33d9a94146ef50dd5c397559ff695e01e3f5896ad40e8243f30ec4ea0ccd",
+          "public": "706a33d9a94146ef50dd5c397559ff695e01e3f5896ad40e8243f30ec4ea0ccd",
+          "protected": "706a33d9a94146ef50dd5c397559ff695e01e3f5896ad40e8243f30ec4ea0ccd"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有非案例绑定引用证据定位符（消除裸节号），完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-ec2021-model",
+        "from": {
+          "raw": "bb769f8acb384e884a5ddde80c5974859ef7d10653a25b4abe82d9ed673b74b5",
+          "public": "bb769f8acb384e884a5ddde80c5974859ef7d10653a25b4abe82d9ed673b74b5",
+          "protected": "bb769f8acb384e884a5ddde80c5974859ef7d10653a25b4abe82d9ed673b74b5"
+        },
+        "to": {
+          "raw": "c7f43ffcfa2d42707cb75f77ae02782c83ad7ec0ae0866c2ee8d33d800703b31",
+          "public": "c7f43ffcfa2d42707cb75f77ae02782c83ad7ec0ae0866c2ee8d33d800703b31",
+          "protected": "c7f43ffcfa2d42707cb75f77ae02782c83ad7ec0ae0866c2ee8d33d800703b31"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有非案例绑定引用证据定位符（消除裸节号），完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-ec2021-review",
+        "from": {
+          "raw": "0f00c9e200141026717d526fd78812eadf480d49f2a2ab173117f01053136f1b",
+          "public": "0f00c9e200141026717d526fd78812eadf480d49f2a2ab173117f01053136f1b",
+          "protected": "0f00c9e200141026717d526fd78812eadf480d49f2a2ab173117f01053136f1b"
+        },
+        "to": {
+          "raw": "293aae62803f5109e7f290076c34198a79ecbf76d29560852cdd384651b91e14",
+          "public": "293aae62803f5109e7f290076c34198a79ecbf76d29560852cdd384651b91e14",
+          "protected": "293aae62803f5109e7f290076c34198a79ecbf76d29560852cdd384651b91e14"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有非案例绑定引用证据定位符（消除裸节号），完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-ec2021-revision",
+        "from": {
+          "raw": "245aad486abe4abe886581ad749ddb2158da8f5485fc6897c4985c0aed2458f0",
+          "public": "245aad486abe4abe886581ad749ddb2158da8f5485fc6897c4985c0aed2458f0",
+          "protected": "245aad486abe4abe886581ad749ddb2158da8f5485fc6897c4985c0aed2458f0"
+        },
+        "to": {
+          "raw": "276c73fffda2516dd316e8e22b05e9a7eeb73d1bf4f9c032545491de5f06fadb",
+          "public": "276c73fffda2516dd316e8e22b05e9a7eeb73d1bf4f9c032545491de5f06fadb",
+          "protected": "276c73fffda2516dd316e8e22b05e9a7eeb73d1bf4f9c032545491de5f06fadb"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有非案例绑定引用证据定位符（消除裸节号），完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-ec2021-verification",
+        "from": {
+          "raw": "9db6e227aa865cbae8eed8981b881deef33ae548348e2869b1b31064766442ed",
+          "public": "9db6e227aa865cbae8eed8981b881deef33ae548348e2869b1b31064766442ed",
+          "protected": "9db6e227aa865cbae8eed8981b881deef33ae548348e2869b1b31064766442ed"
+        },
+        "to": {
+          "raw": "daed9e17cde2b047fa49558f6d0312967ab27abed68d88dfabb8958eb178afef",
+          "public": "daed9e17cde2b047fa49558f6d0312967ab27abed68d88dfabb8958eb178afef",
+          "protected": "daed9e17cde2b047fa49558f6d0312967ab27abed68d88dfabb8958eb178afef"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有非案例绑定引用证据定位符（消除裸节号），完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-dairy2018-authorities",
+        "from": {
+          "raw": "af4e060374d495a0c6b5426f66ee0eb9396c96435d19a6b9be07dd13cb31514e",
+          "public": "af4e060374d495a0c6b5426f66ee0eb9396c96435d19a6b9be07dd13cb31514e",
+          "protected": "af4e060374d495a0c6b5426f66ee0eb9396c96435d19a6b9be07dd13cb31514e"
+        },
+        "to": {
+          "raw": "659efea7a1ddce513d7b0844157760567af3841575b892ecaa5faf94e85eedfe",
+          "public": "659efea7a1ddce513d7b0844157760567af3841575b892ecaa5faf94e85eedfe",
+          "protected": "659efea7a1ddce513d7b0844157760567af3841575b892ecaa5faf94e85eedfe"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有非案例绑定引用证据定位符（消除裸节号），完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-dairy2018-review",
+        "from": {
+          "raw": "079a06805f7b3a6875e0fe32b11333446d9efea63014df83f2d5c0cbc44946fc",
+          "public": "079a06805f7b3a6875e0fe32b11333446d9efea63014df83f2d5c0cbc44946fc",
+          "protected": "079a06805f7b3a6875e0fe32b11333446d9efea63014df83f2d5c0cbc44946fc"
+        },
+        "to": {
+          "raw": "07f23c1d162cca89162474e589efa1151782d07eef6ac1ea48d3ad0bf27d263e",
+          "public": "07f23c1d162cca89162474e589efa1151782d07eef6ac1ea48d3ad0bf27d263e",
+          "protected": "07f23c1d162cca89162474e589efa1151782d07eef6ac1ea48d3ad0bf27d263e"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有非案例绑定引用证据定位符（消除裸节号），完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-dairy2018-comparisons",
+        "from": {
+          "raw": "bac3aee1d125b2be94df3b2e5600b4ec150de95036d61cf1677103aaec770d0a",
+          "public": null,
+          "protected": "bac3aee1d125b2be94df3b2e5600b4ec150de95036d61cf1677103aaec770d0a"
+        },
+        "to": {
+          "raw": "8e972c00c1f301eb71defa98f6262f745279f6560e3b3b8ac4b2f77b2efb8d9e",
+          "public": null,
+          "protected": "8e972c00c1f301eb71defa98f6262f745279f6560e3b3b8ac4b2f77b2efb8d9e"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有非案例绑定引用证据定位符（消除裸节号），完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-dairy2018-methane",
+        "from": {
+          "raw": "352463a94d1765e3f321acf2cb03bfa2a9a675213e882299c7e3262ad01362d4",
+          "public": "352463a94d1765e3f321acf2cb03bfa2a9a675213e882299c7e3262ad01362d4",
+          "protected": "352463a94d1765e3f321acf2cb03bfa2a9a675213e882299c7e3262ad01362d4"
+        },
+        "to": {
+          "raw": "847029683dec452e3a22940837ddfd87c7e1996ab50d2a4cc53ff8c9f35c2225",
+          "public": "847029683dec452e3a22940837ddfd87c7e1996ab50d2a4cc53ff8c9f35c2225",
+          "protected": "847029683dec452e3a22940837ddfd87c7e1996ab50d2a4cc53ff8c9f35c2225"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有非案例绑定引用证据定位符（消除裸节号），完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-dairy2018-use",
+        "from": {
+          "raw": "e40805632b7e93a58b67afe667ac621b04d50c4cb630358c676087656c0d7dcb",
+          "public": "e40805632b7e93a58b67afe667ac621b04d50c4cb630358c676087656c0d7dcb",
+          "protected": "e40805632b7e93a58b67afe667ac621b04d50c4cb630358c676087656c0d7dcb"
+        },
+        "to": {
+          "raw": "9892fbe1c6c880d9f16205af32655b4d66a28b6e870f7d4bd24f6e7f35e4f8c7",
+          "public": "9892fbe1c6c880d9f16205af32655b4d66a28b6e870f7d4bd24f6e7f35e4f8c7",
+          "protected": "9892fbe1c6c880d9f16205af32655b4d66a28b6e870f7d4bd24f6e7f35e4f8c7"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有非案例绑定引用证据定位符（消除裸节号），完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-nordic2023-design",
+        "from": {
+          "raw": "faaa725b552bf25b34f215ee4054af0fd894df13ebafc8b9b74e87aea8e825ce",
+          "public": "faaa725b552bf25b34f215ee4054af0fd894df13ebafc8b9b74e87aea8e825ce",
+          "protected": "faaa725b552bf25b34f215ee4054af0fd894df13ebafc8b9b74e87aea8e825ce"
+        },
+        "to": {
+          "raw": "4ee3ac374d1e5bfbd85fd673cba2fd8377137e1a15a770cd9b8302941ddd135d",
+          "public": "4ee3ac374d1e5bfbd85fd673cba2fd8377137e1a15a770cd9b8302941ddd135d",
+          "protected": "4ee3ac374d1e5bfbd85fd673cba2fd8377137e1a15a770cd9b8302941ddd135d"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有非案例绑定引用证据定位符（消除裸节号），完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-nordic2023-awg",
+        "from": {
+          "raw": "27fbf536e000b8f9ff4a5ef0edfc1790d97dcac9c89ec93af58c708ac904471b",
+          "public": "27fbf536e000b8f9ff4a5ef0edfc1790d97dcac9c89ec93af58c708ac904471b",
+          "protected": "27fbf536e000b8f9ff4a5ef0edfc1790d97dcac9c89ec93af58c708ac904471b"
+        },
+        "to": {
+          "raw": "b86e83ed0a86dccb377e239737bff0d7ef804f110a2ba079c69357ea32ca4004",
+          "public": "b86e83ed0a86dccb377e239737bff0d7ef804f110a2ba079c69357ea32ca4004",
+          "protected": "b86e83ed0a86dccb377e239737bff0d7ef804f110a2ba079c69357ea32ca4004"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有非案例绑定引用证据定位符（消除裸节号），完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-nordic2023-limits",
+        "from": {
+          "raw": "a19d7bae300f14b0d45c1074d4da9c6b2f903b3f384918a40b2a3b58ebd20799",
+          "public": "a19d7bae300f14b0d45c1074d4da9c6b2f903b3f384918a40b2a3b58ebd20799",
+          "protected": "a19d7bae300f14b0d45c1074d4da9c6b2f903b3f384918a40b2a3b58ebd20799"
+        },
+        "to": {
+          "raw": "9debfd790ab6225d711ea3f2e23813e47e0c527a6a74eb286fa62322b5790329",
+          "public": "9debfd790ab6225d711ea3f2e23813e47e0c527a6a74eb286fa62322b5790329",
+          "protected": "9debfd790ab6225d711ea3f2e23813e47e0c527a6a74eb286fa62322b5790329"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有非案例绑定引用证据定位符（消除裸节号），完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-niu2018-evaluation",
+        "from": {
+          "raw": "627f93b60ef143c7edc1a08140b340759ff2e996fc1168db31ee1ad571b58042",
+          "public": "627f93b60ef143c7edc1a08140b340759ff2e996fc1168db31ee1ad571b58042",
+          "protected": "627f93b60ef143c7edc1a08140b340759ff2e996fc1168db31ee1ad571b58042"
+        },
+        "to": {
+          "raw": "9790efb628ad4f0b372dbbd4f19057e4892668cf8471cfc2d643c0fbf32c4345",
+          "public": "9790efb628ad4f0b372dbbd4f19057e4892668cf8471cfc2d643c0fbf32c4345",
+          "protected": "9790efb628ad4f0b372dbbd4f19057e4892668cf8471cfc2d643c0fbf32c4345"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有非案例绑定引用证据定位符（消除裸节号），完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-dairy2025-identity",
+        "from": {
+          "raw": "4d2df97209a59fcb4bad80700051e86d65e0677d2ae870fc65acd2744211ad59",
+          "public": "4d2df97209a59fcb4bad80700051e86d65e0677d2ae870fc65acd2744211ad59",
+          "protected": "4d2df97209a59fcb4bad80700051e86d65e0677d2ae870fc65acd2744211ad59"
+        },
+        "to": {
+          "raw": "2a9909f87b792fe3c78e19511be7dfbe0f52a8666d3319eafc4f0e41fbf8149a",
+          "public": "2a9909f87b792fe3c78e19511be7dfbe0f52a8666d3319eafc4f0e41fbf8149a",
+          "protected": "2a9909f87b792fe3c78e19511be7dfbe0f52a8666d3319eafc4f0e41fbf8149a"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有非案例绑定引用证据定位符（消除裸节号），完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-dairy2025-comparisons",
+        "from": {
+          "raw": "3f7d5679038543a5f757b53a6aa7707d6a3d94c08081f36865de14c9bc6656ba",
+          "public": "3f7d5679038543a5f757b53a6aa7707d6a3d94c08081f36865de14c9bc6656ba",
+          "protected": "3f7d5679038543a5f757b53a6aa7707d6a3d94c08081f36865de14c9bc6656ba"
+        },
+        "to": {
+          "raw": "a04284521e654086d6f98b42fc6d82e7573b7892b8b241c918a06f8eb84f2eef",
+          "public": "a04284521e654086d6f98b42fc6d82e7573b7892b8b241c918a06f8eb84f2eef",
+          "protected": "a04284521e654086d6f98b42fc6d82e7573b7892b8b241c918a06f8eb84f2eef"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有非案例绑定引用证据定位符（消除裸节号），完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-dairy2025-methane",
+        "from": {
+          "raw": "cdee796ffa2c3a4d8636522ffae878643e0b0f9abbb809950e12749017ea6b55",
+          "public": "cdee796ffa2c3a4d8636522ffae878643e0b0f9abbb809950e12749017ea6b55",
+          "protected": "cdee796ffa2c3a4d8636522ffae878643e0b0f9abbb809950e12749017ea6b55"
+        },
+        "to": {
+          "raw": "cf629c807654eb9a384b4d1390cabdb88a4cf2e54d79af817a776055475ed9e9",
+          "public": "cf629c807654eb9a384b4d1390cabdb88a4cf2e54d79af817a776055475ed9e9",
+          "protected": "cf629c807654eb9a384b4d1390cabdb88a4cf2e54d79af817a776055475ed9e9"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有非案例绑定引用证据定位符（消除裸节号），完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-ec2021-rp-definition",
+        "from": {
+          "raw": "9d57ae96ec22d7f8d1871ff2bc363ade962c6afa95509701927e457838eb92d4",
+          "public": "9d57ae96ec22d7f8d1871ff2bc363ade962c6afa95509701927e457838eb92d4",
+          "protected": "9d57ae96ec22d7f8d1871ff2bc363ade962c6afa95509701927e457838eb92d4"
+        },
+        "to": {
+          "raw": "a13c68a58d16246d174e04aab30c6caee08c2f68594467750f067f453c85cedf",
+          "public": "a13c68a58d16246d174e04aab30c6caee08c2f68594467750f067f453c85cedf",
+          "protected": "a13c68a58d16246d174e04aab30c6caee08c2f68594467750f067f453c85cedf"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有非案例绑定引用证据定位符（消除裸节号），完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-kb44-ec2021-fu-boundary",
+        "from": {
+          "raw": "806de779c2c800224100fd7764f56bddbe8c684e9b56a6ed1de29a296c6bf7fa",
+          "public": "806de779c2c800224100fd7764f56bddbe8c684e9b56a6ed1de29a296c6bf7fa",
+          "protected": "806de779c2c800224100fd7764f56bddbe8c684e9b56a6ed1de29a296c6bf7fa"
+        },
+        "to": {
+          "raw": "b183ff53507f745b5e9ce83c9ca5b2d6ee5f97969433ce6355c23018864ab46d",
+          "public": "b183ff53507f745b5e9ce83c9ca5b2d6ee5f97969433ce6355c23018864ab46d",
+          "protected": "b183ff53507f745b5e9ce83c9ca5b2d6ee5f97969433ce6355c23018864ab46d"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有非案例绑定引用证据定位符（消除裸节号），完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:claims",
+        "from": {
+          "raw": "dd92b521e43d6a942b63324a81d0c4440337fbacdfb5df041eb6c77321c62e29",
+          "public": null,
+          "protected": "dd92b521e43d6a942b63324a81d0c4440337fbacdfb5df041eb6c77321c62e29"
+        },
+        "to": {
+          "raw": "34b5b79c369fad304e1b6be9e91d284aff903c01db223b577cb955f24b964efd",
+          "public": null,
+          "protected": "34b5b79c369fad304e1b6be9e91d284aff903c01db223b577cb955f24b964efd"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有研究阅读与文献台账时间戳，完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:evidence",
+        "from": {
+          "raw": "cf803a41b6346e95a49578f37d013d7613f379694fea4fcb0daa550b3fa41620",
+          "public": null,
+          "protected": "cf803a41b6346e95a49578f37d013d7613f379694fea4fcb0daa550b3fa41620"
+        },
+        "to": {
+          "raw": "42f166057b394d0a11b317c336cf808ce3878613155cb8bba5d1425bd6d64439",
+          "public": null,
+          "protected": "42f166057b394d0a11b317c336cf808ce3878613155cb8bba5d1425bd6d64439"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有研究阅读与文献台账时间戳，完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:sources",
+        "from": {
+          "raw": "388c7b475e85461083551ed3021b88ffbf61abe8af0748f32fb6f28642aeacae",
+          "public": null,
+          "protected": "388c7b475e85461083551ed3021b88ffbf61abe8af0748f32fb6f28642aeacae"
+        },
+        "to": {
+          "raw": "c338dc230815dd6f1bd07c33bed8e783f0fed773c21514128594d95af98baa72",
+          "public": null,
+          "protected": "c338dc230815dd6f1bd07c33bed8e783f0fed773c21514128594d95af98baa72"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有研究阅读与文献台账时间戳，完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:readings",
+        "from": {
+          "raw": "93033db6dd245b09111aed756adadbff16123b5a48d20dce393333c88fc42d64",
+          "public": null,
+          "protected": "93033db6dd245b09111aed756adadbff16123b5a48d20dce393333c88fc42d64"
+        },
+        "to": {
+          "raw": "20a5a348c853b22ffb2c8eefb285363e275772baf825d037eb4738ca0a413392",
+          "public": null,
+          "protected": "20a5a348c853b22ffb2c8eefb285363e275772baf825d037eb4738ca0a413392"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有研究阅读与文献台账时间戳，完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:literature",
+        "from": {
+          "raw": "4a7bb67d42fd55ab38c87189ab9e17ada2d0161bd52395d44e5c275e97ff0cec",
+          "public": null,
+          "protected": "4a7bb67d42fd55ab38c87189ab9e17ada2d0161bd52395d44e5c275e97ff0cec"
+        },
+        "to": {
+          "raw": "1b2fe7000b9887bb88a0067aac1b985e61009f7b8ee3383f0a171535268646ea",
+          "public": null,
+          "protected": "1b2fe7000b9887bb88a0067aac1b985e61009f7b8ee3383f0a171535268646ea"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有研究阅读与文献台账时间戳，完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:queries",
+        "from": {
+          "raw": "a9478e7d5835bd9710b5437a3132a187b8720ab535b6cec59acd8618c00acede",
+          "public": null,
+          "protected": "a9478e7d5835bd9710b5437a3132a187b8720ab535b6cec59acd8618c00acede"
+        },
+        "to": {
+          "raw": "d8bb8924c1b096a0c53d2468f5c972a0ddeab03c1cabd5decbaae0da9a354a13",
+          "public": null,
+          "protected": "d8bb8924c1b096a0c53d2468f5c972a0ddeab03c1cabd5decbaae0da9a354a13"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有研究阅读与文献台账时间戳，完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:literatureGaps",
+        "from": {
+          "raw": "2604327f9688c5823d545335a23ff840c2fca7648662f8bfefa8fb955959861c",
+          "public": null,
+          "protected": "2604327f9688c5823d545335a23ff840c2fca7648662f8bfefa8fb955959861c"
+        },
+        "to": {
+          "raw": "d6c9994ff5afcfd4a0dcd1faf1d5e103655ae4ba1544a2f00a86d74ff479400b",
+          "public": null,
+          "protected": "d6c9994ff5afcfd4a0dcd1faf1d5e103655ae4ba1544a2f00a86d74ff479400b"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有研究阅读与文献台账时间戳，完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:public-projection",
+        "from": {
+          "raw": "90f13237663698574975baf4312e8f5160dee9bdc4807018cf7ddc739bdd8da7",
+          "public": null,
+          "protected": "90f13237663698574975baf4312e8f5160dee9bdc4807018cf7ddc739bdd8da7"
+        },
+        "to": {
+          "raw": "05d7826f63d5a6a05a30210576830b8d3023520f496e416c56a8c0e0f345f3cc",
+          "public": null,
+          "protected": "05d7826f63d5a6a05a30210576830b8d3023520f496e416c56a8c0e0f345f3cc"
+        },
+        "rationale": "有界更新第六部《产品足迹规则》既有研究阅读与文献台账时间戳，完整保留全部 5 条乳制品案例绑定证据及原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pfr151-binding-batteries",
+        "from": null,
+        "to": {
+          "raw": "34a718f58e28db337a8737ee8ebd76a1d3b0bdac1d8f4465d32335137aabf0f1",
+          "public": "34a718f58e28db337a8737ee8ebd76a1d3b0bdac1d8f4465d32335137aabf0f1",
+          "protected": "cbfb4bf8f83bb235fd3aaec17aec1d5f719c55e2de440f6b46464aaa8d301bb6"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pfr151-espr-dpp-conversion",
+        "from": null,
+        "to": {
+          "raw": "43d8693c358592836b3feec4b5c60618c07b64667fc1514cef5df261a87e5420",
+          "public": "43d8693c358592836b3feec4b5c60618c07b64667fc1514cef5df261a87e5420",
+          "protected": "7424ed05d9a2f30872068a2f276147dbfdf8d4f2095bc1bd78090d2cfad1a0eb"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pfr151-ghgp-boundary-unit",
+        "from": null,
+        "to": {
+          "raw": "58777cd1697c396efd052c7be87089aa9e4b4f3d67ba4e5fbe0f08a40ecaa8dd",
+          "public": "58777cd1697c396efd052c7be87089aa9e4b4f3d67ba4e5fbe0f08a40ecaa8dd",
+          "protected": "1b0a2f1edb49c06f7f8c9431228ae6dfc3b49cebe99d8e17f324e8bb9835d27c"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pfr151-ghgp-vs-battery-accounting",
+        "from": null,
+        "to": {
+          "raw": "c731ad498ac65033b147c1e7f76ee6a984e59253185aca66673ab19a87af092b",
+          "public": "c731ad498ac65033b147c1e7f76ee6a984e59253185aca66673ab19a87af092b",
+          "protected": "ed29fa88ec3a4f49af9f29b00323d0a3f243a855f464e2f2f21ee69fcb4ec258"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pfr151-assurance-vs-notified-body",
+        "from": null,
+        "to": {
+          "raw": "aacd03f238def2c837d386dba4f6c5681b9198587060f79ed82ad7d253d738c8",
+          "public": "aacd03f238def2c837d386dba4f6c5681b9198587060f79ed82ad7d253d738c8",
+          "protected": "f2d041333e270e6d6d3a228c92bc1be9dedc4684febe45d6c81b723757f6fc91"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pfr151-product-vs-corporate-scope3",
+        "from": null,
+        "to": {
+          "raw": "85bcbb7e771fa233aa95df3c56539b9ace210acd3087b04c616a90f110eb0606",
+          "public": "85bcbb7e771fa233aa95df3c56539b9ace210acd3087b04c616a90f110eb0606",
+          "protected": "147988204710b6566cc64022fa1f453505893bf7d22552efa6964a7180237794"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pfr151-comparative-assertion-gates",
+        "from": null,
+        "to": {
+          "raw": "c1e760807a5114eda21312e32f888fb2bb893e5d060f4a32e8e41c4d784116dc",
+          "public": "c1e760807a5114eda21312e32f888fb2bb893e5d060f4a32e8e41c4d784116dc",
+          "protected": "33816a36edff97f138490e6461a6dc601d62798f8be0ac9dd3ad40ef4ad0e7e5"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pfr151-paywalled-standard-boundaries",
+        "from": null,
+        "to": {
+          "raw": "aefcc57dc0c4efd6cbcd7a31b8bfb625c15ffe4b2b28b997fabd833a913bad05",
+          "public": "aefcc57dc0c4efd6cbcd7a31b8bfb625c15ffe4b2b28b997fabd833a913bad05",
+          "protected": "7163889dd47d4280e6181d7aff9f22ef93cdbdb4aa0de7644bce0bca7124be77"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-pfr151-battery-art7-art96",
+        "from": null,
+        "to": {
+          "raw": "3e38fdd1ed4a403db57741ef9c01083dcebda014f35a3bf173f4fb38777bf3a6",
+          "public": "9e49aeb7c721ed1b00f811328806b78406e1cb804bc4ef08046fb3c74f57cf99",
+          "protected": "3e38fdd1ed4a403db57741ef9c01083dcebda014f35a3bf173f4fb38777bf3a6"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-pfr151-espr-conversion-dpp",
+        "from": null,
+        "to": {
+          "raw": "3bde1579cc31e17f72689210a417012a62462d9d773d09803d32754b661fb83f",
+          "public": "8b83d81cd414f4f69dab47047a42489fd8c7ebdacd87b637e4102deeb14116d8",
+          "protected": "3bde1579cc31e17f72689210a417012a62462d9d773d09803d32754b661fb83f"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-pfr151-ghgp-boundary-unit",
+        "from": null,
+        "to": {
+          "raw": "15ece3d7cc4f82b8f4b6b0da85baede8c176ec0069128ccaeb5816274cc77e7f",
+          "public": "87bb663b94747ba13321494562853bc79f069a43aa64309308a6056c6d669f7e",
+          "protected": "15ece3d7cc4f82b8f4b6b0da85baede8c176ec0069128ccaeb5816274cc77e7f"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-pfr151-ghgp-carbon-rules",
+        "from": null,
+        "to": {
+          "raw": "f2d178cdcc235d8907d962c8625e6b0bd1b2caa896e19bf9c7d3aab1e387f6df",
+          "public": "d4cb51e248db7538811534152f2e4545d94f4cbfa8d361712d00d6b2d7bfdaa8",
+          "protected": "f2d178cdcc235d8907d962c8625e6b0bd1b2caa896e19bf9c7d3aab1e387f6df"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-pfr151-battery-annex2",
+        "from": null,
+        "to": {
+          "raw": "d4aa04430eb69eab7b3f4366c64598cc7c688f18bf6168082588ceb3cc3fc15e",
+          "public": "794cb630b4707a4737d4ce91497b46bacae0641422959b12b0d7c5fb67ff7e8c",
+          "protected": "d4aa04430eb69eab7b3f4366c64598cc7c688f18bf6168082588ceb3cc3fc15e"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-pfr151-battery-conformity",
+        "from": null,
+        "to": {
+          "raw": "3f208960c68370ace12458f8ab0cc587f704852543460561d48ee2cb8a19b689",
+          "public": "c85757a104e8dce469bcef4fed2d7f44f991cf9d808bbb91fcf12157fc19349b",
+          "protected": "3f208960c68370ace12458f8ab0cc587f704852543460561d48ee2cb8a19b689"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-pfr151-ghgp-assurance",
+        "from": null,
+        "to": {
+          "raw": "882134c9f1352d73beec933493a1e4f3ce798caa58a24a283cec4a87da11325f",
+          "public": "14bb3b09c0b086c87524dded1d5b236b8d2efcb9f0df8e6d4ebf8adc1b29501d",
+          "protected": "882134c9f1352d73beec933493a1e4f3ce798caa58a24a283cec4a87da11325f"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-pfr151-ghgp-scope3-boundary",
+        "from": null,
+        "to": {
+          "raw": "366e057cd81bad3b9316c3d2226bfbb49f34f5d34d75def59b44d37e1b06dd17",
+          "public": "29df3350f1f4e5fa79312c56c22b560163f113fdeb10b097f252f828449db6f0",
+          "protected": "366e057cd81bad3b9316c3d2226bfbb49f34f5d34d75def59b44d37e1b06dd17"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-pfr151-ghgp-comparative-gates",
+        "from": null,
+        "to": {
+          "raw": "28d1f84685379d423b14a67fbafef23d90acbd38230ff4e90664b5d2018d356a",
+          "public": "b6854c676fb1463b718bcad2c2091ade8a95f629be6c13108a7a93da657c30ae",
+          "protected": "28d1f84685379d423b14a67fbafef23d90acbd38230ff4e90664b5d2018d356a"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-pfr151-ghgp-2011",
+        "from": null,
+        "to": {
+          "raw": "5161b3fb561485d4addf0623d71aff6681a3c1031e831cd255bd84138a4dc163",
+          "public": "5f4d8a0b148037da191ffd9756865d0631b0060b441858ff407312bdc4379820",
+          "protected": "5161b3fb561485d4addf0623d71aff6681a3c1031e831cd255bd84138a4dc163"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增一手开放获取官方标准或欧盟法规来源。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-pfr151-eu-2023-1542",
+        "from": null,
+        "to": {
+          "raw": "22f573d538565f6c26f9e7aa0e72c5769c3744c1331bbe20864ac4c01883b1bf",
+          "public": "2af15edfa16268cb754fe59cbfed6f8854056897d84344e16fcc986e59fa0745",
+          "protected": "22f573d538565f6c26f9e7aa0e72c5769c3744c1331bbe20864ac4c01883b1bf"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增一手开放获取官方标准或欧盟法规来源。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-pfr151-eu-2024-1781",
+        "from": null,
+        "to": {
+          "raw": "aefae545e537dea36c9df94309f2c8b25f76c35b1d30a40a526f107419229644",
+          "public": "1a53945fd93ee154c5031cc10b36097303aeaf0c17a566250f84cd5742322134",
+          "protected": "aefae545e537dea36c9df94309f2c8b25f76c35b1d30a40a526f107419229644"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增一手开放获取官方标准或欧盟法规来源。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-pfr151-eu-2023-1542",
+        "from": null,
+        "to": {
+          "raw": "17211718d460aedc2d51c74b6eddace186040f0aff05c213c0452bae876c20ba",
+          "public": null,
+          "protected": "17211718d460aedc2d51c74b6eddace186040f0aff05c213c0452bae876c20ba"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增阅读与文献台账记录。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-pfr151-eu-2024-1781",
+        "from": null,
+        "to": {
+          "raw": "ec292a474450b1087cdfeec24429093c2950d24d2bdf8b637d317cd2a4d1bd32",
+          "public": null,
+          "protected": "ec292a474450b1087cdfeec24429093c2950d24d2bdf8b637d317cd2a4d1bd32"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增阅读与文献台账记录。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-pfr151-ghgp-2011",
+        "from": null,
+        "to": {
+          "raw": "2874f94ce831fc4d35b34078983e71a95be6d174fdbdb7e02c3009a1974d023e",
+          "public": null,
+          "protected": "2874f94ce831fc4d35b34078983e71a95be6d174fdbdb7e02c3009a1974d023e"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增阅读与文献台账记录。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-pfr151-ghgp-2011",
+        "from": null,
+        "to": {
+          "raw": "502c6fdaa4483d262dae849af4cf1d8c4472639a46f3b26e747fd786949fb00c",
+          "public": null,
+          "protected": "502c6fdaa4483d262dae849af4cf1d8c4472639a46f3b26e747fd786949fb00c"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增阅读与文献台账记录。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-pfr151-eu-2023-1542",
+        "from": null,
+        "to": {
+          "raw": "65928a5d6916b7b46e7935260f88836587f972c7c86f0cf78c117f26348ca85d",
+          "public": null,
+          "protected": "65928a5d6916b7b46e7935260f88836587f972c7c86f0cf78c117f26348ca85d"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增阅读与文献台账记录。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-pfr151-eu-2024-1781",
+        "from": null,
+        "to": {
+          "raw": "a8a431a7420f413db4c2ad2e839eb206626cd183b6c3d1b480590225432afe03",
+          "public": null,
+          "protected": "a8a431a7420f413db4c2ad2e839eb206626cd183b6c3d1b480590225432afe03"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增阅读与文献台账记录。"
+      },
+      {
+        "kind": "record",
+        "key": "queries:q-pfr151-product-footprint-rules-20261119",
+        "from": null,
+        "to": {
+          "raw": "7e682efcda282a681caf91526e2f51278a3c244977469f657a3fecfb600d189e",
+          "public": null,
+          "protected": "7e682efcda282a681caf91526e2f51278a3c244977469f657a3fecfb600d189e"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增阅读与文献台账记录。"
+      },
+      {
+        "kind": "record",
+        "key": "literatureGaps:lit-gap-pfr151-paywalled-product-standards",
+        "from": null,
+        "to": {
+          "raw": "14e90cd1fb8785f184da66d0418c7fbf78b1039b95d5b4af918e9f86670aa2b8",
+          "public": null,
+          "protected": "14e90cd1fb8785f184da66d0418c7fbf78b1039b95d5b4af918e9f86670aa2b8"
+        },
+        "rationale": "登记第六部第四章《产品足迹规则》跨体系比较单元（#151）的新增阅读与文献台账记录。"
+      }
+    ],
+    "consumers": [
+      {
+        "id": "cl-flow-type",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-exchange",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-flow-exchange-distinction",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-waste-no-universal",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-bw-direction",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-bw-sign",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-db2011-review-relative-to-criteria",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-db2011-validation-context",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-db2011-versioned-confidence",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-connect-object-before-unit",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-connect-review-does-not-transfer",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-connect-next-evidence-at-link",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-opening",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-rp",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-why-chain",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-force",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-category",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-version",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-use-boundary",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-default",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-results-layer",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-reconstruction-limit",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-review-objects",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-review-2018",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-review-2024",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-review-identity",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-validity",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-methane-rule",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-nordic-design",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-niu-provenance",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-ipcc-class",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-model-meaning",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-comparison-limits",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-evidence-judgment",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-conclusion",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-wash-cycles",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-wash-inputs",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-use-result",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-report-split",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-quantity-scale",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-capital-gap",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-storage-gap",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-ration-units",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-niu-result",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-ipcc-result",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-rule-issuer",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-pm-factor-correction",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-pm-implementation-layer",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-pm-matched-scope",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-pm-uncovered-pathways",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-pm-conclusion",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-pm-activity-indicators",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-opening",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-record-and-link",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-example-scope",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-opposite",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-scale",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-matrix-sign",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-allocation-held",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-representation-result",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-small-inventory",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-same-flow-total",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-three-co2-quantities",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-allocation-result",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-printed-comparator",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-missing-link",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-missing-link-score",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-jrc-instance",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-jrc-connectors",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-jrc-parameters",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-jrc-weight-control",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-jrc-bare-setup",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-jrc-machine-edge",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-jrc-machine-coordinate",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-jrc-source-discrepancy",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-jrc-partial-match",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-jrc-result-projection",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-jrc-version-reference",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-format-scope",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-format-original-target",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-format-double-target",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-format-result-scale",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-result-direction",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-conversion-study",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-factor-probe",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-factor-zero-absent",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-factor-real-gap",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-factor-report",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-preservation-meaning",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-native-service-meaning",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-closing-historical-return",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-db2011-conditional-use",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-pm-matched-scenario",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-pm-version-and-model",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-flow99-two-boundaries",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-flow99-elementary",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-flow99-landfill",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-flow99-boundary-consequence",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-flow99-agricultural-boundary",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-flow99-boundary-exceptions",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-flow99-record-and-instance",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-flow99-schema-levels",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-flow99-identity-example",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-flow99-waste-classification",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-flow99-material-and-service",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-flow99-direction-equivalence",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-flow99-reference-levels",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-flow99-basis-and-demand",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-flow99-pesticide-interface",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-flow99-interface-consequence",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-flow99-phosphorus-interface",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-flow99-zero-placeholder",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-flow99-zero-reasons",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-flow99-zero-reporting",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-flow99-conclusion",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-flow99-probe-reference",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-service102-row-map",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-service102-service-meaning",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-service102-redundant",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-service102-residual-condition",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-eutro129-phosphorus-soil-water-interface",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-eutro129-phosphorus-stoichiometry-and-p2o5",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-eutro129-nitrogen-soil-prohibition",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-eutro129-aquatic-and-airborne-n-reversals",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-eutro129-location-copies-and-nox-inversion",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-eutro129-normalization-double-counting-and-xml-anomalies",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-eutro129-operational-synthesis",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-particulate131-cohen-empirical-limits",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-particulate131-precursor-perspectives",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-particulate131-ef-ammonia-inversion",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-particulate131-regional-endpoint-reversal",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-particulate131-package-discrepancies",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-dapp147-validation-vs-review-and-team-thresholds",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-dapp147-five-aspect-compliance-and-uuid-semantics",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-dapp147-package-migration-inheritance-and-surveillance",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      },
+      {
+        "id": "cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge",
+        "rationale": "核查跨章关联论述：本次仅对 B28 22 条非案例绑定证据定位符作无损中文规范化并新增 3 份独立一手官方 PDF 载体，不触动任何既有论述正文、数值事实或 40 份案例文件。"
+      }
+    ],
+    "assessment": {
+      "scope": "Part VI closing chapter B28 (content/docs/book/product-footprint-rules-and-practice.mdx), covering 3 new locally SHA-256-verified official open-access PDFs (GHG Protocol Product Standard 2011 148 pp.; Regulation (EU) 2023/1542 117 pp.; Regulation (EU) 2024/1781 ESPR 89 pp.), 9 1-to-1 single-artifact ev-pfr151-*/psg-pfr151-* pairs, 22 BigInt rational numericFacts, 8 new cl-pfr151-* claims, 22 normalized non-case ev-kb44-* locators, 1 explicit paywalled-standard research gap, and 2 comparison tables (Table 1 six columns, Table 2 five columns) against predecessor commit 3c6844be00ad3d39be3199ffbb257324a5daab79.",
+      "comparison": "Systematically compares non-binding EU PEF Recommendation (EU) 2021/2279 & Dairy PEFCR, single-issue GHG Protocol Product Standard (2011), binding directly-applicable EU Batteries Regulation (EU) 2023/1542 (Arts. 7, 17, 96 & Annexes II, VIII), and binding cross-product EU ESPR (EU) 2024/1781 (Arts. 1-13, 79-80 & Annex I) across legal force, impact scope, functional unit vs reference flow, use-phase inclusion/exclusion, non-attributable processes, biogenic/direct-LUC/offset rules, assurance vs Notified Body Modules D1/G, product-vs-corporate Scope 3 boundaries, comparative assertion gates, and explicit paywalled-standard boundaries (ISO 14067:2018, ISO 14025:2006, EN 15804+A2, GB/T 24067-2024).",
+      "values": "Verifies all 22 exact BigInt rational numericFacts across the 3 official primary PDFs (117/89/148 pages, >2 kWh, 12/18 months, 3-year review, 1 kWh / 1 kWmin, 4 stages, 5 core battery parts, 2 notified-body modules, 0 occurrences of \"declared unit\", 3 exclusion conditions, 6 Kyoto GHGs, 100-year GWP/horizon, 20-year direct LUC, 2 assurance levels, 1 as-is use in Table A.2 p. 116, 2025/2026 ESPR statutory dates).",
+      "limits": "Paywalled full texts of ISO 14067:2018, ISO 14025:2006, EN 15804+A2, and GB/T 24067-2024 are explicitly recorded as open boundaries without fabricated clause numbers; B27 targeted comparative update, Part VI whole-part continuous reread, Parts VII-VIII, and all 8 global Programme #9 criteria remain open.",
+      "conservation": "Conserves 100% of all 34 original cl-rule-* claims, all 4 pinned B28 headings, all 5 case-bound dairy-rules-v1.json locators, all 1,026 non-B28 claims, and all 40 case files byte-for-byte.",
+      "review": "Two-round independent primary-source and numeric entailment audit verified SHA-256 digests, PDF page indices, modal precision, Table A.2 / Annex VIII L 191/96-101 citations, 1-to-1 bindings, and BigInt arithmetic, concluding unconditional PASS (0 BLOCKER, 0 MAJOR, 0 MINOR)."
+    },
+    "independentReports": {
+      "independent-primary-source-audit-final.md": "3009f7533652a01575f6228d1b69e564fe0242663df741e52c8a0135211d4779",
+      "b28-continuous-reader-review-final.md": "923f7533eb4cfbdb5747ae2babbc82759c2e400c7e42ec6bee1169d9f66e81b5",
+      "independent-publication-engineering-review-final.md": "313854848b93ecbac4bf433fd13bf389a918406bcfe52c8a133cb629a86cb7fe",
+      "qa-summary-151.json": "076206e0dfad3276efcf139d155fa0bc238938757b1025c93e4eaf246ab016f6"
+    }
+  }
+}

@@ -3,6 +3,8 @@ import fs from 'node:fs';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
+import pfr from '../config/reader-product-footprint-comparison.json' with { type: 'json' };
+import { restoreProductFootprintComparisonTestFiles } from './reader-product-footprint-comparison.mjs';
 import unc from '../config/reader-uncertainty-comparison.json' with { type: 'json' };
 import { restoreUncertaintyComparisonTestFiles } from './reader-uncertainty-comparison.mjs';
 import dapp from '../config/reader-data-applicability-comparison.json' with { type: 'json' };
@@ -44,7 +46,7 @@ import {
 } from './reader-localization-comparison.mjs';
 
 test('Localization comparison enforces exact 1028 claims, 17 single-artifact evidence records, 93 BigInt facts, prose bindings and zero hygiene leaks', () => {
-  const prev137 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, unc.unit), dapp.unit), part5.unit), cost.unit), social.unit);
+  const prev137 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, pfr.unit), unc.unit), dapp.unit), part5.unit), cost.unit), social.unit);
   assert.equal(prev137.catalog.claims.length, 1028);
   assert.equal(prev137.catalog.claims.filter(c => c.id.startsWith('cl-loc137-')).length, 8);
   assert.equal(prev137.catalog.evidence.filter(e => e.id.startsWith('ev-loc137-')).length, 17);
@@ -181,12 +183,13 @@ test('Localization comparison source plan recovers exact cec53208 predecessor an
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
+  restoreProductFootprintComparisonTestFiles(files, pfr.unit);
   restoreUncertaintyComparisonTestFiles(files, unc.unit);
   restoreDataApplicabilityComparisonTestFiles(files, dapp.unit);
   restorePart5RereadTestFiles(files, part5.unit);
   restoreCostSustainabilityTestFiles(files, cost.unit);
   restoreSocialComparisonTestFiles(files, social.unit);
-  const prev137Rec = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, unc.unit), dapp.unit), part5.unit), cost.unit), social.unit);
+  const prev137Rec = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, pfr.unit), unc.unit), dapp.unit), part5.unit), cost.unit), social.unit);
   const input = { ...prev137Rec, files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
   const qualify = (unit, customInput = input, customActual = actual, customStruct = structure) =>
@@ -342,7 +345,7 @@ test('Localization comparison receipt binding behaves fail-closed before and aft
   }
 
   const { readerPublicDownloads } = await import('./reader-current-output.mjs');
-  const prev137 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, unc.unit), dapp.unit), part5.unit), cost.unit), social.unit);
+  const prev137 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, pfr.unit), unc.unit), dapp.unit), part5.unit), cost.unit), social.unit);
   const expected = readerPublicDownloads(prev137.catalog, prev137.literature, prev137.readings);
   const verify = (mutateUnit = () => {}, mutateOutput) => {
     const unit = structuredClone(config.unit);

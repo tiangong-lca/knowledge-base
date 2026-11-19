@@ -24,6 +24,24 @@ lastReviewedCommit: 3c6844be00ad3d39be3199ffbb257324a5daab79
 
 ## Scoped scientific successors
 
+The Part VI `B28` product-footprint-rules comparison unit #151 compares
+non-binding EU PEF Recommendation `(EU) 2021/2279` & Dairy PEFCR, single-issue
+`GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)`,
+binding directly-applicable EU Batteries Regulation `(EU) 2023/1542` (Arts. 7,
+17, 96 & Annexes II, VIII), and binding cross-product EU ESPR `(EU) 2024/1781`
+(Arts. 1–13, 79–80 & Annex I) across `B28`
+(`content/docs/book/product-footprint-rules-and-practice.mdx`, `34` -> `42`
+claims + `2` comparison tables, bringing the public catalog to `1,068` claims)
+while conserving `100%` of all `34` original `cl-rule-*` identities, all `4`
+pinned headings, all `5` case-bound `dairy-rules-v1.json` locators, `1,026`
+untouched prior claims, and all `40` case downloads against
+`3c6844be00ad3d39be3199ffbb257324a5daab79`. It binds `9` `1-to-1`
+single-artifact `ev-pfr151-*` / `psg-pfr151-*` pairs, `22` `BigInt` rational
+`numericFacts`, normalizes `22` non-case `ev-kb44-*` locators, and explicitly
+records paywalled full-text boundaries (`ISO 14067:2018`, `ISO 14025:2006`,
+`EN 15804+A2`, `GB/T 24067-2024`) without fabricating uninspected clause numbers
+or claiming whole-book completion.
+
 The Part VI `B26` uncertainty-and-variability comparison unit #149 compares
 `Huijbregts (1998/2001)`, `Heijungs & Suh (2002)`, `EC-JRC ILCD General Guide
 (2010, EUR 24708 EN §9.3.3 & §9.4)`, `EU Recommendation (EU) 2021/2279 (Annex I

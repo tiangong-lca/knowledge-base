@@ -3,6 +3,8 @@ import fs from 'node:fs';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
+import pfr from '../config/reader-product-footprint-comparison.json' with { type: 'json' };
+import { restoreProductFootprintComparisonTestFiles } from './reader-product-footprint-comparison.mjs';
 import unc from '../config/reader-uncertainty-comparison.json' with { type: 'json' };
 import { restoreUncertaintyComparisonTestFiles } from './reader-uncertainty-comparison.mjs';
 import dapp from '../config/reader-data-applicability-comparison.json' with { type: 'json' };
@@ -48,7 +50,7 @@ import {
 } from './reader-weighting-valuation.mjs';
 
 test('Weighting and valuation enforces exact 1020 claims, 18 single-artifact evidence records, 83 BigInt facts and zero hygiene leaks', () => {
-  const prev135 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, unc.unit), dapp.unit), part5.unit), cost.unit), social.unit), localization.unit);
+  const prev135 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, pfr.unit), unc.unit), dapp.unit), part5.unit), cost.unit), social.unit), localization.unit);
   assert.equal(prev135.catalog.claims.length, 1020);
   assert.equal(prev135.catalog.claims.filter(c => c.id.startsWith('cl-weight135-')).length, 12);
   assert.equal(prev135.catalog.evidence.filter(e => e.id.startsWith('ev-weight135-')).length, 18);
@@ -149,13 +151,14 @@ test('Weighting and valuation source plan recovers exact ff59fb32 predecessor an
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
+  restoreProductFootprintComparisonTestFiles(files, pfr.unit);
   restoreUncertaintyComparisonTestFiles(files, unc.unit);
   restoreDataApplicabilityComparisonTestFiles(files, dapp.unit);
   restorePart5RereadTestFiles(files, part5.unit);
   restoreCostSustainabilityTestFiles(files, cost.unit);
   restoreSocialComparisonTestFiles(files, social.unit);
   restoreLocalizationComparisonTestFiles(files, localization.unit);
-  const prev135Rec = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, unc.unit), dapp.unit), part5.unit), cost.unit), social.unit), localization.unit);
+  const prev135Rec = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, pfr.unit), unc.unit), dapp.unit), part5.unit), cost.unit), social.unit), localization.unit);
   const input = { ...prev135Rec, files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
   const qualify = (unit, customInput = input, customActual = actual, customStruct = structure) =>
@@ -228,7 +231,7 @@ test('Weighting and valuation source plan recovers exact ff59fb32 predecessor an
 
 test('Weighting and valuation receipt verifier fails closed when capture pin is absent', () => {
   if (weightingValuationCapturePin !== null || !config.unit) return;
-  const prev135 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, unc.unit), dapp.unit), part5.unit), cost.unit), social.unit), localization.unit);
+  const prev135 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, pfr.unit), unc.unit), dapp.unit), part5.unit), cost.unit), social.unit), localization.unit);
   const expected = readerPublicDownloads(prev135.catalog, prev135.literature, prev135.readings);
   const unit = structuredClone(config.unit);
   unit.outputCapture = {
@@ -251,7 +254,7 @@ test('Weighting and valuation receipt verifier fails closed when capture pin is 
 });
 
 test('Weighting and valuation receipts bind actual output capture independently', { skip: !weightingValuationCapturePin && config.status !== 'reviewed' }, () => {
-  const prev135 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, unc.unit), dapp.unit), part5.unit), cost.unit), social.unit), localization.unit);
+  const prev135 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, pfr.unit), unc.unit), dapp.unit), part5.unit), cost.unit), social.unit), localization.unit);
   const expected = readerPublicDownloads(prev135.catalog, prev135.literature, prev135.readings);
   const verify = (mutateUnit = () => {}, mutateOutput) => {
     const unit = structuredClone(config.unit);

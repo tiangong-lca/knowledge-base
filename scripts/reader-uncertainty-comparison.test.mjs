@@ -5,6 +5,8 @@ import test from 'node:test';
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
 import loadShift from '../config/reader-load-shift.json' with { type: 'json' };
 import service from '../config/reader-service-constraints.json' with { type: 'json' };
+import pfr from '../config/reader-product-footprint-comparison.json' with { type: 'json' };
+import { restoreProductFootprintComparisonTestFiles } from './reader-product-footprint-comparison.mjs';
 import config from '../config/reader-uncertainty-comparison.json' with { type: 'json' };
 import catalog from '../knowledge/catalog.json' with { type: 'json' };
 import literature from '../knowledge/research/literature-map.json' with { type: 'json' };
@@ -15,6 +17,7 @@ import { readReadableBookFiles } from './reader-current-edition-files.mjs';
 import { readerPublicDownloads } from './reader-current-output.mjs';
 import { readLoadShiftCaseFiles } from './reader-load-shift.mjs';
 import { readServiceConstraintsFiles } from './reader-service-constraints.mjs';
+import { previousScientificTestRecords } from './fixtures/scientific-receipt-envelope.mjs';
 import { validateUncertaintyComparisonFactors } from './reader-uncertainty-comparison-factors.mjs';
 import {
   prepareUncertaintyComparisonSource,
@@ -36,28 +39,32 @@ async function loadInput() {
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [p, bytes] of [...shiftFiles, ...serviceFiles]) files.set(p, bytes);
-  return { catalog, readings, literature, files };
+  restoreProductFootprintComparisonTestFiles(files, pfr.unit);
+  const prev149 = previousScientificTestRecords({ catalog, readings, literature }, pfr.unit);
+  return { ...prev149, files };
 }
 
 test('Uncertainty comparison validates all 42 BigInt numericFacts, 10 single-artifact passages, and 8 new B26 claims', () => {
-  assert.equal(catalog.claims.length, 1060);
-  validateUncertaintyComparisonFactors(catalog, readings);
+  const prev149 = previousScientificTestRecords({ catalog, readings, literature }, pfr.unit);
+  assert.equal(prev149.catalog.claims.length, 1060);
+  validateUncertaintyComparisonFactors(prev149.catalog, prev149.readings);
 });
 
 test('Uncertainty comparison fails closed on tampered numericFact, mediaType, or raw locator marker', () => {
-  const tampered = structuredClone(catalog);
+  const prev149 = previousScientificTestRecords({ catalog, readings, literature }, pfr.unit);
+  const tampered = structuredClone(prev149.catalog);
   const ev = tampered.evidence.find(row => row.id === 'ev-unc149-groen2017-methods-cost-case-studies');
   const nf = ev.numericFacts.find(row => row.id === 'nf-unc149-groen-c1-cv30-var-kia');
   nf.value = '2900';
-  assert.throws(() => validateUncertaintyComparisonFactors(tampered, readings), /NumericFact mismatch/);
+  assert.throws(() => validateUncertaintyComparisonFactors(tampered, prev149.readings), /NumericFact mismatch/);
 
-  const badMedia = structuredClone(readings);
+  const badMedia = structuredClone(prev149.readings);
   badMedia.readings.find(r => r.id === 'rd-unc149-heijungs-2020').artifacts[0].mediaType = 'text/plain';
-  assert.throws(() => validateUncertaintyComparisonFactors(catalog, badMedia), /Carrier artifact mismatch/);
+  assert.throws(() => validateUncertaintyComparisonFactors(prev149.catalog, badMedia), /Carrier artifact mismatch/);
 
-  const badLoc = structuredClone(catalog);
+  const badLoc = structuredClone(prev149.catalog);
   badLoc.evidence.find(row => row.id === 'ev-unc149-heijungs2020-sources-runtime').locator = '§2.1 PDF零基索引1';
-  assert.throws(() => validateUncertaintyComparisonFactors(badLoc, readings), /Disallowed raw locator marker/);
+  assert.throws(() => validateUncertaintyComparisonFactors(badLoc, prev149.readings), /Disallowed raw locator marker/);
 });
 
 test('Uncertainty comparison select rejects forged pin, extraneous envelope keys, and preview without flag', () => {
@@ -112,7 +119,7 @@ test('Uncertainty comparison recovers exact 4bb50839 predecessor state, rejects 
       artifacts.set(row.artifactFile, await fs.readFile(join(root, row.artifactFile), 'utf8'));
       artifacts.set(row.reportFile, await fs.readFile(join(root, row.reportFile), 'utf8'));
     }
-    const downloads = readerPublicDownloads(catalog, literature, readings);
+    const downloads = readerPublicDownloads(input.catalog, input.literature, input.readings);
     assert.equal(verifyUncertaintyComparisonReceipts(unit, artifacts, downloads), true);
     assert.equal(verifyUncertaintyComparisonReceipts({ ...unit, outputs: [] }, artifacts, downloads), false);
   } else {
