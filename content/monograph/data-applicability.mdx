@@ -1,22 +1,57 @@
 ---
 title: 数据适用性
-description: 一份过程数据能否用于当前研究，要看它代表什么技术、覆盖哪些清单流，还要核对质量文档、审查范围和换版后的变化。
+description: 围绕过程数据的表示角色、固有与研究语境代表性、多维质量聚合算式、验证与独立评审门槛、五维合规声明及参考包换版补缺规则，系统比较国际指南、欧盟环境足迹、瑞士 ecoinvent 数据库与天工公开规范的共同条件与结论反转。
 ---
 
 ## 数据所代表的过程 [#表示对象]
 
 <Prose ids="cl-db2011-user-and-manager cl-db2011-represented-object cl-db2011-scope-examples" />
 
+<Prose ids="cl-dapp147-dataset-roles-and-system-linking cl-dapp147-intrinsic-vs-context-representativeness" />
+
 ## 数据的质量信息 [#质量信息]
 
-<Prose ids="cl-db2011-representativeness-and-precision cl-db2011-documenting-number cl-db2011-aggregation-information cl-db2011-missing-and-zero" />
+<Prose ids="cl-db2011-representativeness-and-precision cl-db2011-documenting-number" />
+
+<Prose ids="cl-dapp147-quality-architectures-and-prerequisite-split" />
+
+<Prose ids="cl-db2011-aggregation-information cl-db2011-missing-and-zero" />
+
+<Prose ids="cl-dapp147-weakest-link-vs-mean-and-80pct-masking" />
+
+| 比较维度 | UNEP/SETAC（2011） | ILCD 详细指南（2010） | ILCD 入门级（1.1 版，2012） | 欧盟建议书 2021/2279 与 EF 指南 2.0 | ecoinvent 第 3 版（2013） |
+| --- | --- | --- | --- | --- | --- |
+| 评价对象层级 | 单元过程或聚合过程数据集文档 | 过程数据集整体（区分单元过程、部分终止系统、清单结果） | 过程数据集整体（不作质量分档） | 公司特定数据集、次级数据集及研究语境最相关过程 | 除参考产品外的单条输入输出交换流 |
+| 计分质量指标 | 表 4.1 定性说明精密度、完整性、代表性、一致性、重现性 | 技术、地域、时间代表性加完整性、精密度、方法学共 6 项（1—5 分） | 质量合规固定标为“未定义”（Not defined），按国际标准准则陈述质量并记述三项代表性 | 技术（TeR）、地域（GeR 或 GR）、时间（TiR）代表性与精密度（P）共 4 项（1—5 分） | 基本不确定度加可靠性、完整性、时间、地域、进一步技术相关性 5 项谱系分 |
+| 完整性与方法学 | 与代表性、精密度并列作定性文档审查 | 纳入 6 项打分指标参与式 3 合成 | 遵循国际标准过程方法并记录建模与分配，不强制手册方法 | 移出算式设为二元最低准入前提，XML 字段标为“不适用”（Not applicable） | 方法学由主库编审规则统一约束，完整性为第 2 项谱系方差指标 |
+| 未知项与单项封顶 | 要求区分真实零值与缺失值并文字交代缺口 | 未评估或未知项赋 5 分，不适用赋 0 分并扣减有效指标数；无独立单项硬顶 | 无量化总分与单项上限 | 供应端次级数据每项加权分 ≤ 3.0；公司特定数据 P ≤ 3、三项代表性 ≤ 2 | 未评估交换流默认取最差谱系档 5 分，无数据集级淘汰上限 |
+| 聚合算式或映射 | 不设标量聚合公式 | 式 3 最弱项五倍权重：(六项和 + 4×最弱分) / (有效项数 + 4) | 不计算总体数据质量评级（研究端引用时亦禁止重算） | 式 19 与式 20 四项算术均值；公司特定数据按 80% 阈值分别筛活动数据与直接流，次级数据按单一总分前 80% 重标定加权 | 对数正态底层正态方差 6 项直接相加（5 分谱系附加方差和为 0.21） |
+| 分档门槛与用途 | 支撑使用者按目标与范围作人工适用性判断 | 表 7 三档：≤ 1.6 高质量、高于 1.6 至 ≤ 3 基本质量、高于 3 至 ≤ 4 数据估计 | 供数据网络节点起步准入；在欧盟研究中作 ≤ 10% 单一总分代理 | 表 22 五档（≤ 1.5 极优、高于 1.5 至 ≤ 2.0 优良、高于 2.0 至 ≤ 3.0 良好、高于 3 至 ≤ 4.0 尚可、高于 4 差）；数据需求矩阵规定公司特定数据 ≤ 1.5、合规次级数据 ≤ 3.0 | 静态清单取中位数，方差专供蒙特卡洛清单不确定性传播 |
 
 ## 数据的审查范围 [#审查范围]
 
-<Prose ids="cl-db2011-review-relative-to-criteria cl-db2011-review-questions cl-db2011-validation-context cl-db2011-recommendation-strength cl-db2011-review-of-guidance" />
+<Prose ids="cl-db2011-review-relative-to-criteria cl-db2011-review-questions cl-db2011-validation-context" />
+
+<Prose ids="cl-dapp147-validation-vs-review-and-team-thresholds" />
+
+<Prose ids="cl-db2011-recommendation-strength cl-db2011-review-of-guidance" />
+
+<Prose ids="cl-dapp147-five-aspect-compliance-and-uuid-semantics" />
 
 ## 数据换版与补缺 [#版本变化]
 
-<Prose ids="cl-db2011-versioned-confidence cl-db2011-conditional-use" />
+<Prose ids="cl-db2011-versioned-confidence" />
+
+<Prose ids="cl-dapp147-package-migration-inheritance-and-surveillance cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge" />
+
+| 制度维度 | UNEP/SETAC（2011） | ILCD 2010 与入门级 1.1 版 | 欧盟建议书 2021/2279 与 EF 指南（2.0 及 3.1 增补） | ecoinvent 第 3 版（2013） | 天工公开规范 TIDAS（v0.3.0） |
+| --- | --- | --- | --- | --- | --- |
+| 自动校验与人工审查 | 第 2 章与第 4 章区分手工或自动验证同独立系统审查 | 总论第 11 章将交付物评审矩阵移交专卷；入门级允许 1 名外部免报告或 1 名内部附报告 | 次级入库仅准许至少 2 名含外部专家联合评审并禁用单人外审；研究验证须达 6 分且初级数据必做现场核查，Look@LCI 偏差 ≤ 1% | 在线 ecoEditor 自动验证写入第 3340 字段；转换活动目标至少 3 名专家（含 4 类横向编辑）审查，3.0 版如实披露缺口 | 过程模式支持单条或数组审查历史，含“Not reviewed”共 6 值枚举且报告引用可选 |
+| 合规声明矩阵结构 | 区分强烈推荐（shall）、推荐与建议，保留有依据少数意见 | 表 9 确立质量、方法、命名、审查、文档五维；完整合规设 12 套情景乘质量 UUID，入门级另设独立 UUID | 表 1 强制并列 6 组（无类别规则时 5 组）UUID，国际标准与流列表维度按职责精确标“Not defined” | 按主库统一活动命名、地理父子继承与系统模型规则管理，不用多系统 UUID 并列块 | 公开规则定义语义与格式谓词，刻意排除严重度、阶段归属与默认阻断策略 |
+| 区域残差与混合命名 | 建议记录聚合范围、底层数据可得性与分配方式 | 区分单工序或黑箱单元过程、部分终止系统与清单结果 | 中心数据集标部分终止系统；非主要支撑子过程标单工序单元过程且严禁脱离父系统复用 | 强制先建全球父过程 GLO 并按产量差额自动算 RoW；严格拆分转换活动与消费组合市场活动 | 生产组合应具成文权重；电网损耗或 1:1 变压节点不自动转消费组合，绿证不改写物理发电技术 |
+| 版本演进与失效红线 | 建议报告技术、资料或基本流更新及新版实际受审范围 | 合规源数据集基线版本号 01.02.000（或更高可用版），网络建设过渡期最长 3 年 | 旧版转换数据降为代理；JRC130796 实测 2,752 份数据集中 6%、10%、13% 前三主类易位；报告最长 3 年有效，单类恶化超 10.0% 或总分恶化超 5.0% 强制更新 | 新增局部数据联动改写 RoW 与市场份额；3.0 版记录未同步更新 GLO 时负交换置零或复制 GLO 例外 | 强制要求 NN.NN 或 NN.NN.NNN 定长版本号随内容变更严格单调递增 |
+| 缺口补齐与截断上限 | 表 2.1 末行允许在无更佳资料时用足够一致数据补缺并逐项说明理由 | 入门级允许 VOC 等部分聚合基本流作为起步过渡 | 四级次级阶梯（EF 合规、EF 代理、≤ 10% 单一总分 ILCD-EL 代理、剔除并报缺口）；物料、能量与各影响类别累计截断均低于 3.0%；2026 过渡指导预计延用至 2028 年 | 未指明子区室仅在无具体信息时使用；除特定水体总和指标等例外，总和排放须扣除已单报物质以防双计 | 消费方产品可设定业务豁免与阶段门禁，但不得把未通过公开规则定义的记录改写为通过 |
+
+<Prose ids="cl-db2011-conditional-use" />
 
 继续阅读：[变异与不确定性](/docs/book/uncertainty-and-variability)。

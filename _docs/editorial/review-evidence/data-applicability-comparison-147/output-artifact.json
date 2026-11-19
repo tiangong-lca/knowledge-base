@@ -1,0 +1,1912 @@
+{
+  "schemaVersion": 1,
+  "kind": "output",
+  "unit": "data-applicability-comparison-147",
+  "date": "2026-11-19",
+  "subjectSha256": "8f2b4a250a12020d3f53b23184c332a3a40b249dfd12e0bd347b0c591ec3312b",
+  "scope": [
+    "content/monograph/data-applicability.mdx",
+    "content/docs/book/database-fitness-and-documentation.mdx",
+    "content/docs/book/review-support-and-version-boundaries.mdx",
+    "claims:cl-db2011-user-and-manager",
+    "claims:cl-db2011-represented-object",
+    "claims:cl-db2011-representativeness-and-precision",
+    "claims:cl-db2011-missing-and-zero",
+    "claims:cl-db2011-documenting-number",
+    "claims:cl-db2011-aggregation-information",
+    "claims:cl-db2011-review-relative-to-criteria",
+    "claims:cl-db2011-validation-context",
+    "claims:cl-db2011-review-questions",
+    "claims:cl-db2011-recommendation-strength",
+    "claims:cl-db2011-review-of-guidance",
+    "claims:cl-db2011-versioned-confidence",
+    "claims:cl-db2011-scope-examples",
+    "claims:cl-db2011-conditional-use",
+    "evidence:ev-db2011-audience",
+    "evidence:ev-db2011-support-language",
+    "evidence:ev-db2011-goal",
+    "evidence:ev-db2011-validation",
+    "evidence:ev-db2011-documentation",
+    "evidence:ev-db2011-quality-dimensions",
+    "evidence:ev-db2011-aggregation-gaps",
+    "evidence:ev-db2011-review-purpose",
+    "evidence:ev-db2011-review-record",
+    "evidence:ev-db2011-local-definitions",
+    "evidence:ev-db2011-change",
+    "evidence:ev-db2011-own-review",
+    "evidence:ev-kb44-ec-transition2026-scope",
+    "evidence:ev-kb44-ec-transition2026-hierarchy",
+    "evidence:ev-db2011-use-examples",
+    "evidence:ev-db2011-conditional-consistency",
+    "sources:src-book-ilcd-2010",
+    "sources:src-kb44-ec2021",
+    "sources:src-tox123-ef31-addendum",
+    "sources:src-loc137-ef-guide-2020",
+    "readings:rd-ilcd-2010",
+    "readings:rd-kb44-ec2021",
+    "readings:rd-tox123-ef31-addendum",
+    "readings:rd-loc137-ef-guide-2020",
+    "literature:lit-n03",
+    "literature:lit-n04",
+    "literature:work-tox123-ef31-addendum",
+    "literature:work-loc137-ef-guide-2020",
+    "researchMetadata:reading-ledger",
+    "researchMetadata:literature-map",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:order:sources",
+    "researchMetadata:order:readings",
+    "researchMetadata:order:gaps",
+    "researchMetadata:order:revisions",
+    "researchMetadata:order:literature",
+    "researchMetadata:order:queries",
+    "researchMetadata:public-projection",
+    "claims:cl-dapp147-dataset-roles-and-system-linking",
+    "claims:cl-dapp147-intrinsic-vs-context-representativeness",
+    "claims:cl-dapp147-quality-architectures-and-prerequisite-split",
+    "claims:cl-dapp147-weakest-link-vs-mean-and-80pct-masking",
+    "claims:cl-dapp147-validation-vs-review-and-team-thresholds",
+    "claims:cl-dapp147-five-aspect-compliance-and-uuid-semantics",
+    "claims:cl-dapp147-package-migration-inheritance-and-surveillance",
+    "claims:cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge",
+    "evidence:ev-dapp147-ilcd2010-dataset-types-and-review",
+    "evidence:ev-dapp147-ilcd2010-representativeness-vs-appropriateness",
+    "evidence:ev-dapp147-ilcd2010-dqr-formula-and-five-aspects",
+    "evidence:ev-dapp147-ilcd2012-twelve-compliance-uuids",
+    "evidence:ev-dapp147-ilcd2012-entry-level-rules",
+    "evidence:ev-dapp147-ec2021-secondary-hierarchy-and-cutoff",
+    "evidence:ev-dapp147-ec2021-dqr-equations-and-dnm",
+    "evidence:ev-dapp147-ec2021-verification-and-surveillance",
+    "evidence:ev-dapp147-efguide2020-provider-dqr-and-ceiling",
+    "evidence:ev-dapp147-efguide2020-supporting-subprocesses",
+    "evidence:ev-dapp147-efguide2020-review-types-and-looklci",
+    "evidence:ev-dapp147-ef31addendum-six-uuid-matrix-and-erratum",
+    "evidence:ev-dapp147-ecoinvent2013-glo-row-and-markets",
+    "evidence:ev-dapp147-ecoinvent2013-pedigree-variance",
+    "evidence:ev-dapp147-ecoinvent2013-ecoeditor-and-editorial-review",
+    "evidence:ev-dapp147-tidas-process-review-schema",
+    "evidence:ev-dapp147-tidas-public-rules",
+    "evidence:ev-dapp147-tidas-adjudication-boundary",
+    "sources:src-dapp147-ilcd-el-2012",
+    "sources:src-dapp147-ecoinvent-v3-2013",
+    "sources:src-dapp147-tidas-spec-v030",
+    "readings:rd-dapp147-ilcd-el-2012",
+    "readings:rd-dapp147-ecoinvent-v3-2013",
+    "readings:rd-dapp147-tidas-spec-v030",
+    "gaps:gap-dapp147-ilcd-review-schemes-and-ef-raw-nodes",
+    "revisions:rev-dapp147-b25-data-applicability-comparison",
+    "literature:work-dapp147-ilcd-el-2012",
+    "literature:work-dapp147-ecoinvent-v3-2013",
+    "literature:work-dapp147-tidas-spec-v030",
+    "queries:q-dapp147-dataset-roles-dqr-review-compliance-and-packages-20261119"
+  ],
+  "observed": "Actual private Next/compiler and untouched-exporter bytes from base 1d0c9cd6b19539a1c9ff68babe239418c2c1d5ae and a declared dirty working-preview. Temporary technical admission inside an isolated clone served inspection only and supplies no editorial acceptance.",
+  "observations": {
+    "outputs": [
+      {
+        "path": "/docs/book/cost-perspectives-and-sustainability-combination",
+        "route": "/docs/book/cost-perspectives-and-sustainability-combination",
+        "from": "834eedefe998f4eff9febcc81154b4ece645878c3cb96be3042cd72f5fb6b6a8",
+        "sha256": "69ab2ef76f906ec6431551ee672139e06fb258dc638be8dac2dd7097479cc650",
+        "rationale": "核对第六部《数据适用性》跨体系比较单元（#147）在 /docs/book/cost-perspectives-and-sustainability-combination#/docs/book/cost-perspectives-and-sustainability-combination 上的新增比较论述、六列对照表、共享证据定位符规范化、具名更正说明或历史范围控件更新。"
+      },
+      {
+        "path": "/docs/book/database-fitness-and-documentation",
+        "route": "/docs/book/database-fitness-and-documentation",
+        "from": "b714ca17cebaf37abfecbc29113efd364d3fb731b8af1ca01d530d826d61b966",
+        "sha256": "6bdac4c8c09e20a739768990937a9fd98dbe39146d3c48bb1579f2ea69b803f0",
+        "rationale": "核对第六部《数据适用性》跨体系比较单元（#147）在 /docs/book/database-fitness-and-documentation#/docs/book/database-fitness-and-documentation 上的新增比较论述、六列对照表、共享证据定位符规范化、具名更正说明或历史范围控件更新。"
+      },
+      {
+        "path": "/docs/book/review-support-and-version-boundaries",
+        "route": "/docs/book/review-support-and-version-boundaries",
+        "from": "9e00a2a2224a5602e70cf48a0920b64d92b11253644fd02bcfe4275a58a272b6",
+        "sha256": "2f4d94b0c8d6fff3c000d6e4b7dc061ecb64693f84fdca0b99f5b53dd0b27f22",
+        "rationale": "核对第六部《数据适用性》跨体系比较单元（#147）在 /docs/book/review-support-and-version-boundaries#/docs/book/review-support-and-version-boundaries 上的新增比较论述、六列对照表、共享证据定位符规范化、具名更正说明或历史范围控件更新。"
+      },
+      {
+        "path": "/docs/book/uncertainty-and-variability",
+        "route": "/docs/book/uncertainty-and-variability",
+        "from": "c289a470b646b26a662752698a30712cd81eda27fe88a07ff52b7caefe055397",
+        "sha256": "ef16bfe67bc8f00ba0ff963ae990820e2e425d356f3d74f5e74c79ffbc62b324",
+        "rationale": "核对第六部《数据适用性》跨体系比较单元（#147）在 /docs/book/uncertainty-and-variability#/docs/book/uncertainty-and-variability 上的新增比较论述、六列对照表、共享证据定位符规范化、具名更正说明或历史范围控件更新。"
+      },
+      {
+        "path": "/docs/book/product-footprint-rules-and-practice",
+        "route": "/docs/book/product-footprint-rules-and-practice",
+        "from": "d47a473dc3424c522fcc26e889b670f86341af1e745304b2fda73dcebd17a5a9",
+        "sha256": "647e630b3b4ce38aaf6b3d7646b76b01ad3e65b23822b5629480f00fec2a3a4b",
+        "rationale": "核对第六部《数据适用性》跨体系比较单元（#147）在 /docs/book/product-footprint-rules-and-practice#/docs/book/product-footprint-rules-and-practice 上的新增比较论述、六列对照表、共享证据定位符规范化、具名更正说明或历史范围控件更新。"
+      },
+      {
+        "path": "/docs/book/connecting-objects-references-and-time",
+        "route": "/docs/book/connecting-objects-references-and-time",
+        "from": "4440e870dd5aa8ce612e2db6b661723fea0f7bd49b73558aad89803d509d4f80",
+        "sha256": "51ac5b5955f9d009d16ba424ad0e098ac1871a00a2f570f5ef438051d1214b6d",
+        "rationale": "核对第六部《数据适用性》跨体系比较单元（#147）在 /docs/book/connecting-objects-references-and-time#/docs/book/connecting-objects-references-and-time 上的新增比较论述、六列对照表、共享证据定位符规范化、具名更正说明或历史范围控件更新。"
+      },
+      {
+        "path": "/docs/book/from-connected-results-to-conditional-judgment",
+        "route": "/docs/book/from-connected-results-to-conditional-judgment",
+        "from": "f14a887f11bd833d798ea495309b1a65b1020251c26696a1f5037ce8752f22f4",
+        "sha256": "2cd1db7baa938bb259e8f92578776120d53c6917b9d38478575a342e1cd8d0d4",
+        "rationale": "核对第六部《数据适用性》跨体系比较单元（#147）在 /docs/book/from-connected-results-to-conditional-judgment#/docs/book/from-connected-results-to-conditional-judgment 上的新增比较论述、六列对照表、共享证据定位符规范化、具名更正说明或历史范围控件更新。"
+      },
+      {
+        "path": "/print",
+        "route": "book-data-applicability",
+        "from": "2c1e069a601f2d7a9958db319b12caf2c61e726fd5a993774f21b1877aff0b7a",
+        "sha256": "3a56114a1a545cc8a31e8db2bf8224029d96105da40c56774345c531a705a33d",
+        "rationale": "核对第六部《数据适用性》跨体系比较单元（#147）在 /print#book-data-applicability 上的新增比较论述、六列对照表、共享证据定位符规范化、具名更正说明或历史范围控件更新。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/product-footprint-rules-and-practice",
+        "from": "b2c3892b5f8576381e12dedff4e6015d3eace8710e08efd50d61d8e1e3990f46",
+        "sha256": "25779501cc40b62f61596d51bfc61aa2fa9b5e482fef4ba30cf14e3909136434",
+        "rationale": "核对第六部《数据适用性》跨体系比较单元（#147）在 /print#/docs/book/product-footprint-rules-and-practice 上的新增比较论述、六列对照表、共享证据定位符规范化、具名更正说明或历史范围控件更新。"
+      },
+      {
+        "path": "/print",
+        "route": "book-revisable-judgment",
+        "from": "ab4ad36d9dc11738cf6b4777c4e19f994609ee7acf7a030217e4e507da549418",
+        "sha256": "8298d3aecfea1fa58b54979d364e4a176379cc13a6db8bd1785cbebb46b3849b",
+        "rationale": "核对第六部《数据适用性》跨体系比较单元（#147）在 /print#book-revisable-judgment 上的新增比较论述、六列对照表、共享证据定位符规范化、具名更正说明或历史范围控件更新。"
+      }
+    ],
+    "publicArtifacts": [
+      {
+        "path": "claims/index.html",
+        "from": "cf61d46a23f79efde1e4084932f4fa5b5966a48197f82d9869ecb83f54b0461c",
+        "sha256": "922cfd977feadce6ce26090a36762ad7e157abd610dbe435b0853983dc4d58fd",
+        "rationale": "核对第六部《数据适用性》跨体系比较单元（#147）对公开目录、注释页、引文出处页、研究台账、覆盖报告或连续阅读打印页的实际输出变化及其真实前态。"
+      },
+      {
+        "path": "sources/index.html",
+        "from": "edb0d184d13813fb9cb69e9384844d73c7e0bdabe2d3ab9378f53a0703c0e038",
+        "sha256": "9fdba3b908daae09460ba8469ab4d1cb48db65ea7298473bd25808bbaf03b5c7",
+        "rationale": "核对第六部《数据适用性》跨体系比较单元（#147）对公开目录、注释页、引文出处页、研究台账、覆盖报告或连续阅读打印页的实际输出变化及其真实前态。"
+      },
+      {
+        "path": "concepts/index.html",
+        "from": "d4270c6537339fb6771fddd2f4ba77dfe14dd5b833a048223245407916a0d7f2",
+        "sha256": "a6dbc86145eae41d2ee5f09c47945a4e184b91d68c346cf64f7df10f7422c205",
+        "rationale": "核对第六部《数据适用性》跨体系比较单元（#147）对公开目录、注释页、引文出处页、研究台账、覆盖报告或连续阅读打印页的实际输出变化及其真实前态。"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "from": "a4f877dce0463d00d2ce89722456807c2812f31ba2b41f0ef25d880a9d11be68",
+        "sha256": "6d91a1bd3ae950eadc94825a3f0c0a817b4254f361b20850f633e8b0003b3ff2",
+        "rationale": "核对第六部《数据适用性》跨体系比较单元（#147）对公开目录、注释页、引文出处页、研究台账、覆盖报告或连续阅读打印页的实际输出变化及其真实前态。"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "from": "3b65c7872cd02b48817278c8698f83e01336c9e2ea63f28f444d6d9008f57cad",
+        "sha256": "2ec6978b8cbacb6a3c3b6c112e3bd3d77764b4c51970ef1986b0cb60f4d059b1",
+        "rationale": "核对第六部《数据适用性》跨体系比较单元（#147）对公开目录、注释页、引文出处页、研究台账、覆盖报告或连续阅读打印页的实际输出变化及其真实前态。"
+      },
+      {
+        "path": "research/index.html",
+        "from": "3a8b8757a89672b0f9aff9365b7c0ea1d0f47adbe618c77004d735d9b35a3896",
+        "sha256": "58ffc3923404bcd9337a49d28668a98d66826f8da13826b7509f307f13418e58",
+        "rationale": "核对第六部《数据适用性》跨体系比较单元（#147）对公开目录、注释页、引文出处页、研究台账、覆盖报告或连续阅读打印页的实际输出变化及其真实前态。"
+      },
+      {
+        "path": "downloads/bibliography.json",
+        "from": "9e3319d079792d67319af52f303bafd85537ba00ff4c650086c658b6a89db593",
+        "sha256": "0d30d7f69783776a2f80c05e4fd061755c28c6194a5ca944fe0c939b9b030ae8",
+        "rationale": "核对第六部《数据适用性》跨体系比较单元（#147）对公开目录、注释页、引文出处页、研究台账、覆盖报告或连续阅读打印页的实际输出变化及其真实前态。"
+      },
+      {
+        "path": "downloads/research.json",
+        "from": "9e3319d079792d67319af52f303bafd85537ba00ff4c650086c658b6a89db593",
+        "sha256": "0d30d7f69783776a2f80c05e4fd061755c28c6194a5ca944fe0c939b9b030ae8",
+        "rationale": "核对第六部《数据适用性》跨体系比较单元（#147）对公开目录、注释页、引文出处页、研究台账、覆盖报告或连续阅读打印页的实际输出变化及其真实前态。"
+      },
+      {
+        "path": "coverage/index.html",
+        "from": "bfcf198d7ba50af00d37da86f17b99db69df39a502d8965a07994cc9a426916a",
+        "sha256": "577dd4520ea266cefa884f19e5adec989d5d75a685a8abad32434419f35ce1bc",
+        "rationale": "核对第六部《数据适用性》跨体系比较单元（#147）对公开目录、注释页、引文出处页、研究台账、覆盖报告或连续阅读打印页的实际输出变化及其真实前态。"
+      }
+    ],
+    "addresses": {
+      "/docs/book/database-fitness-and-documentation#nd-page": {
+        "route": "/docs/book/database-fitness-and-documentation",
+        "kind": "chapter",
+        "title": "过程数据的用途",
+        "claimIds": [
+          "cl-db2011-user-and-manager",
+          "cl-db2011-represented-object",
+          "cl-db2011-scope-examples",
+          "cl-dapp147-dataset-roles-and-system-linking",
+          "cl-dapp147-intrinsic-vs-context-representativeness",
+          "cl-db2011-representativeness-and-precision",
+          "cl-db2011-documenting-number",
+          "cl-dapp147-quality-architectures-and-prerequisite-split",
+          "cl-db2011-aggregation-information",
+          "cl-db2011-missing-and-zero",
+          "cl-dapp147-weakest-link-vs-mean-and-80pct-masking"
+        ],
+        "ordinary": [
+          "065b0a1ec67a5ae677c0f78f037000fe98da20477d491019aaa303e919a62174",
+          "e76bdb58516fc3ec406a19547243e0a8d1c8bc75305609a2b9f743f6983d90ac"
+        ],
+        "bindings": {
+          "links": [
+            [],
+            []
+          ],
+          "tables": [
+            {
+              "header": [
+                [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              ],
+              "body": [
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "评价对象层级"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "单元过程或聚合过程数据集文档"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "过程数据集整体（区分单元过程、部分终止系统、清单结果）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "过程数据集整体（不作质量分档）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "公司特定数据集、次级数据集及研究语境最相关过程"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "除参考产品外的单条输入输出交换流"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "计分质量指标"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "表 4.1 定性说明精密度、完整性、代表性、一致性、重现性"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "技术、地域、时间代表性加完整性、精密度、方法学共 6 项（1—5 分）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "质量合规固定标为“未定义”（Not defined），按国际标准准则陈述质量并记述三项代表性"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "技术（TeR）、地域（GeR 或 GR）、时间（TiR）代表性与精密度（P）共 4 项（1—5 分）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "基本不确定度加可靠性、完整性、时间、地域、进一步技术相关性 5 项谱系分"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "完整性与方法学"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "与代表性、精密度并列作定性文档审查"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "纳入 6 项打分指标参与式 3 合成"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "遵循国际标准过程方法并记录建模与分配，不强制手册方法"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "移出算式设为二元最低准入前提，XML 字段标为“不适用”（Not applicable）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "方法学由主库编审规则统一约束，完整性为第 2 项谱系方差指标"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "未知项与单项封顶"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "要求区分真实零值与缺失值并文字交代缺口"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "未评估或未知项赋 5 分，不适用赋 0 分并扣减有效指标数；无独立单项硬顶"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "无量化总分与单项上限"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "供应端次级数据每项加权分 ≤ 3.0；公司特定数据 P ≤ 3、三项代表性 ≤ 2"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "未评估交换流默认取最差谱系档 5 分，无数据集级淘汰上限"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "聚合算式或映射"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "不设标量聚合公式"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "式 3 最弱项五倍权重：(六项和 + 4×最弱分) / (有效项数 + 4)"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "不计算总体数据质量评级（研究端引用时亦禁止重算）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "式 19 与式 20 四项算术均值；公司特定数据按 80% 阈值分别筛活动数据与直接流，次级数据按单一总分前 80% 重标定加权"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "对数正态底层正态方差 6 项直接相加（5 分谱系附加方差和为 0.21）"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "分档门槛与用途"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "支撑使用者按目标与范围作人工适用性判断"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "表 7 三档：≤ 1.6 高质量、高于 1.6 至 ≤ 3 基本质量、高于 3 至 ≤ 4 数据估计"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "供数据网络节点起步准入；在欧盟研究中作 ≤ 10% 单一总分代理"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "表 22 五档（≤ 1.5 极优、高于 1.5 至 ≤ 2.0 优良、高于 2.0 至 ≤ 3.0 良好、高于 3 至 ≤ 4.0 尚可、高于 4 差）；数据需求矩阵规定公司特定数据 ≤ 1.5、合规次级数据 ≤ 3.0"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "静态清单取中位数，方差专供蒙特卡洛清单不确定性传播"
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "/docs/book/database-fitness-and-documentation#main-content": {
+        "route": "/docs/book/database-fitness-and-documentation",
+        "kind": "reading-title",
+        "title": "过程数据的用途",
+        "claimIds": [
+          "cl-db2011-user-and-manager",
+          "cl-db2011-represented-object",
+          "cl-db2011-scope-examples",
+          "cl-dapp147-dataset-roles-and-system-linking",
+          "cl-dapp147-intrinsic-vs-context-representativeness",
+          "cl-db2011-representativeness-and-precision",
+          "cl-db2011-documenting-number",
+          "cl-dapp147-quality-architectures-and-prerequisite-split",
+          "cl-db2011-aggregation-information",
+          "cl-db2011-missing-and-zero",
+          "cl-dapp147-weakest-link-vs-mean-and-80pct-masking"
+        ],
+        "ordinary": [
+          "065b0a1ec67a5ae677c0f78f037000fe98da20477d491019aaa303e919a62174",
+          "e76bdb58516fc3ec406a19547243e0a8d1c8bc75305609a2b9f743f6983d90ac"
+        ],
+        "chapter": "nd-page"
+      },
+      "/docs/book/database-fitness-and-documentation#表示对象": {
+        "route": "/docs/book/database-fitness-and-documentation",
+        "kind": "heading",
+        "title": "数据所代表的过程",
+        "claimIds": [
+          "cl-db2011-user-and-manager",
+          "cl-db2011-represented-object",
+          "cl-db2011-scope-examples",
+          "cl-dapp147-dataset-roles-and-system-linking",
+          "cl-dapp147-intrinsic-vs-context-representativeness"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/database-fitness-and-documentation#质量信息": {
+        "route": "/docs/book/database-fitness-and-documentation",
+        "kind": "heading",
+        "title": "数据的质量信息",
+        "claimIds": [
+          "cl-db2011-representativeness-and-precision",
+          "cl-db2011-documenting-number",
+          "cl-dapp147-quality-architectures-and-prerequisite-split"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/database-fitness-and-documentation#聚合与覆盖": {
+        "route": "/docs/book/database-fitness-and-documentation",
+        "kind": "heading",
+        "title": "数据聚合与覆盖",
+        "claimIds": [
+          "cl-db2011-aggregation-information",
+          "cl-db2011-missing-and-zero",
+          "cl-dapp147-weakest-link-vs-mean-and-80pct-masking"
+        ],
+        "ordinary": [
+          "e76bdb58516fc3ec406a19547243e0a8d1c8bc75305609a2b9f743f6983d90ac"
+        ]
+      },
+      "/docs/book/database-fitness-and-documentation#chapter-2f646f63732f626f6f6b2f64617461626173652d6669746e6573732d616e642d646f63756d656e746174696f6e-annotations": {
+        "route": "/docs/book/database-fitness-and-documentation",
+        "kind": "note-group",
+        "title": "过程数据的用途",
+        "claimIds": [
+          "cl-db2011-user-and-manager",
+          "cl-db2011-represented-object",
+          "cl-db2011-scope-examples",
+          "cl-dapp147-dataset-roles-and-system-linking",
+          "cl-dapp147-intrinsic-vs-context-representativeness",
+          "cl-db2011-representativeness-and-precision",
+          "cl-db2011-documenting-number",
+          "cl-dapp147-quality-architectures-and-prerequisite-split",
+          "cl-db2011-aggregation-information",
+          "cl-db2011-missing-and-zero",
+          "cl-dapp147-weakest-link-vs-mean-and-80pct-masking"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/database-fitness-and-documentation#chapter-2f646f63732f626f6f6b2f64617461626173652d6669746e6573732d616e642d646f63756d656e746174696f6e-claim-cl-db2011-user-and-manager": {
+        "route": "/docs/book/database-fitness-and-documentation",
+        "kind": "note",
+        "title": "过程数据的用途",
+        "claimIds": [
+          "cl-db2011-user-and-manager"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/database-fitness-and-documentation#chapter-2f646f63732f626f6f6b2f64617461626173652d6669746e6573732d616e642d646f63756d656e746174696f6e-claim-cl-db2011-represented-object": {
+        "route": "/docs/book/database-fitness-and-documentation",
+        "kind": "note",
+        "title": "过程数据的用途",
+        "claimIds": [
+          "cl-db2011-represented-object"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/database-fitness-and-documentation#chapter-2f646f63732f626f6f6b2f64617461626173652d6669746e6573732d616e642d646f63756d656e746174696f6e-claim-cl-db2011-scope-examples": {
+        "route": "/docs/book/database-fitness-and-documentation",
+        "kind": "note",
+        "title": "过程数据的用途",
+        "claimIds": [
+          "cl-db2011-scope-examples"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/database-fitness-and-documentation#chapter-2f646f63732f626f6f6b2f64617461626173652d6669746e6573732d616e642d646f63756d656e746174696f6e-claim-cl-dapp147-dataset-roles-and-system-linking": {
+        "route": "/docs/book/database-fitness-and-documentation",
+        "kind": "note",
+        "title": "过程数据的用途",
+        "claimIds": [
+          "cl-dapp147-dataset-roles-and-system-linking"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/database-fitness-and-documentation#chapter-2f646f63732f626f6f6b2f64617461626173652d6669746e6573732d616e642d646f63756d656e746174696f6e-claim-cl-dapp147-intrinsic-vs-context-representativeness": {
+        "route": "/docs/book/database-fitness-and-documentation",
+        "kind": "note",
+        "title": "过程数据的用途",
+        "claimIds": [
+          "cl-dapp147-intrinsic-vs-context-representativeness"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/database-fitness-and-documentation#chapter-2f646f63732f626f6f6b2f64617461626173652d6669746e6573732d616e642d646f63756d656e746174696f6e-claim-cl-db2011-representativeness-and-precision": {
+        "route": "/docs/book/database-fitness-and-documentation",
+        "kind": "note",
+        "title": "过程数据的用途",
+        "claimIds": [
+          "cl-db2011-representativeness-and-precision"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/database-fitness-and-documentation#chapter-2f646f63732f626f6f6b2f64617461626173652d6669746e6573732d616e642d646f63756d656e746174696f6e-claim-cl-db2011-documenting-number": {
+        "route": "/docs/book/database-fitness-and-documentation",
+        "kind": "note",
+        "title": "过程数据的用途",
+        "claimIds": [
+          "cl-db2011-documenting-number"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/database-fitness-and-documentation#chapter-2f646f63732f626f6f6b2f64617461626173652d6669746e6573732d616e642d646f63756d656e746174696f6e-claim-cl-dapp147-quality-architectures-and-prerequisite-split": {
+        "route": "/docs/book/database-fitness-and-documentation",
+        "kind": "note",
+        "title": "过程数据的用途",
+        "claimIds": [
+          "cl-dapp147-quality-architectures-and-prerequisite-split"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/database-fitness-and-documentation#chapter-2f646f63732f626f6f6b2f64617461626173652d6669746e6573732d616e642d646f63756d656e746174696f6e-claim-cl-db2011-aggregation-information": {
+        "route": "/docs/book/database-fitness-and-documentation",
+        "kind": "note",
+        "title": "过程数据的用途",
+        "claimIds": [
+          "cl-db2011-aggregation-information"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/database-fitness-and-documentation#chapter-2f646f63732f626f6f6b2f64617461626173652d6669746e6573732d616e642d646f63756d656e746174696f6e-claim-cl-db2011-missing-and-zero": {
+        "route": "/docs/book/database-fitness-and-documentation",
+        "kind": "note",
+        "title": "过程数据的用途",
+        "claimIds": [
+          "cl-db2011-missing-and-zero"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/database-fitness-and-documentation#chapter-2f646f63732f626f6f6b2f64617461626173652d6669746e6573732d616e642d646f63756d656e746174696f6e-claim-cl-dapp147-weakest-link-vs-mean-and-80pct-masking": {
+        "route": "/docs/book/database-fitness-and-documentation",
+        "kind": "note",
+        "title": "过程数据的用途",
+        "claimIds": [
+          "cl-dapp147-weakest-link-vs-mean-and-80pct-masking"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/review-support-and-version-boundaries#nd-page": {
+        "route": "/docs/book/review-support-and-version-boundaries",
+        "kind": "chapter",
+        "title": "数据审查与版本",
+        "claimIds": [
+          "cl-db2011-review-relative-to-criteria",
+          "cl-db2011-review-questions",
+          "cl-db2011-validation-context",
+          "cl-dapp147-validation-vs-review-and-team-thresholds",
+          "cl-db2011-recommendation-strength",
+          "cl-db2011-review-of-guidance",
+          "cl-dapp147-five-aspect-compliance-and-uuid-semantics",
+          "cl-db2011-versioned-confidence",
+          "cl-dapp147-package-migration-inheritance-and-surveillance",
+          "cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge",
+          "cl-db2011-conditional-use"
+        ],
+        "ordinary": [
+          "7b4cc8f8efbabdcad5c8c89e7f5ba741b34c04b1d9cb8d7085cc381033bd3165",
+          "899551165b02f435039f70879fca208dd5c49af796b255b2320d933b474eaf42",
+          "6c81a3b6f27b6685f8319217a857fc80939857c85c921b2087072ccac0d04e56"
+        ],
+        "bindings": {
+          "links": [
+            [],
+            [],
+            [
+              "/docs/book/uncertainty-and-variability"
+            ]
+          ],
+          "tables": [
+            {
+              "header": [
+                [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              ],
+              "body": [
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "自动校验与人工审查"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "第 2 章与第 4 章区分手工或自动验证同独立系统审查"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "总论第 11 章将交付物评审矩阵移交专卷；入门级允许 1 名外部免报告或 1 名内部附报告"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "次级入库仅准许至少 2 名含外部专家联合评审并禁用单人外审；研究验证须达 6 分且初级数据必做现场核查，Look@LCI 偏差 ≤ 1%"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "在线 ecoEditor 自动验证写入第 3340 字段；转换活动目标至少 3 名专家（含 4 类横向编辑）审查，3.0 版如实披露缺口"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "过程模式支持单条或数组审查历史，含“Not reviewed”共 6 值枚举且报告引用可选"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "合规声明矩阵结构"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "区分强烈推荐（shall）、推荐与建议，保留有依据少数意见"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "表 9 确立质量、方法、命名、审查、文档五维；完整合规设 12 套情景乘质量 UUID，入门级另设独立 UUID"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "表 1 强制并列 6 组（无类别规则时 5 组）UUID，国际标准与流列表维度按职责精确标“Not defined”"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "按主库统一活动命名、地理父子继承与系统模型规则管理，不用多系统 UUID 并列块"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "公开规则定义语义与格式谓词，刻意排除严重度、阶段归属与默认阻断策略"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "区域残差与混合命名"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "建议记录聚合范围、底层数据可得性与分配方式"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "区分单工序或黑箱单元过程、部分终止系统与清单结果"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "中心数据集标部分终止系统；非主要支撑子过程标单工序单元过程且严禁脱离父系统复用"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "强制先建全球父过程 GLO 并按产量差额自动算 RoW；严格拆分转换活动与消费组合市场活动"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "生产组合应具成文权重；电网损耗或 1:1 变压节点不自动转消费组合，绿证不改写物理发电技术"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "版本演进与失效红线"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "建议报告技术、资料或基本流更新及新版实际受审范围"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "合规源数据集基线版本号 01.02.000（或更高可用版），网络建设过渡期最长 3 年"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "旧版转换数据降为代理；JRC130796 实测 2,752 份数据集中 6%、10%、13% 前三主类易位；报告最长 3 年有效，单类恶化超 10.0% 或总分恶化超 5.0% 强制更新"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "新增局部数据联动改写 RoW 与市场份额；3.0 版记录未同步更新 GLO 时负交换置零或复制 GLO 例外"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "强制要求 NN.NN 或 NN.NN.NNN 定长版本号随内容变更严格单调递增"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "缺口补齐与截断上限"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "表 2.1 末行允许在无更佳资料时用足够一致数据补缺并逐项说明理由"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "入门级允许 VOC 等部分聚合基本流作为起步过渡"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "四级次级阶梯（EF 合规、EF 代理、≤ 10% 单一总分 ILCD-EL 代理、剔除并报缺口）；物料、能量与各影响类别累计截断均低于 3.0%；2026 过渡指导预计延用至 2028 年"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "未指明子区室仅在无具体信息时使用；除特定水体总和指标等例外，总和排放须扣除已单报物质以防双计"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "消费方产品可设定业务豁免与阶段门禁，但不得把未通过公开规则定义的记录改写为通过"
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "/docs/book/review-support-and-version-boundaries#main-content": {
+        "route": "/docs/book/review-support-and-version-boundaries",
+        "kind": "reading-title",
+        "title": "数据审查与版本",
+        "claimIds": [
+          "cl-db2011-review-relative-to-criteria",
+          "cl-db2011-review-questions",
+          "cl-db2011-validation-context",
+          "cl-dapp147-validation-vs-review-and-team-thresholds",
+          "cl-db2011-recommendation-strength",
+          "cl-db2011-review-of-guidance",
+          "cl-dapp147-five-aspect-compliance-and-uuid-semantics",
+          "cl-db2011-versioned-confidence",
+          "cl-dapp147-package-migration-inheritance-and-surveillance",
+          "cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge",
+          "cl-db2011-conditional-use"
+        ],
+        "ordinary": [
+          "7b4cc8f8efbabdcad5c8c89e7f5ba741b34c04b1d9cb8d7085cc381033bd3165",
+          "899551165b02f435039f70879fca208dd5c49af796b255b2320d933b474eaf42",
+          "6c81a3b6f27b6685f8319217a857fc80939857c85c921b2087072ccac0d04e56"
+        ],
+        "chapter": "nd-page"
+      },
+      "/docs/book/review-support-and-version-boundaries#准则与记录": {
+        "route": "/docs/book/review-support-and-version-boundaries",
+        "kind": "heading",
+        "title": "审查准则与记录",
+        "claimIds": [
+          "cl-db2011-review-relative-to-criteria",
+          "cl-db2011-review-questions",
+          "cl-db2011-validation-context",
+          "cl-dapp147-validation-vs-review-and-team-thresholds"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/review-support-and-version-boundaries#指导的支持程度": {
+        "route": "/docs/book/review-support-and-version-boundaries",
+        "kind": "heading",
+        "title": "指南建议及其依据",
+        "claimIds": [
+          "cl-db2011-recommendation-strength",
+          "cl-db2011-review-of-guidance",
+          "cl-dapp147-five-aspect-compliance-and-uuid-semantics"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/review-support-and-version-boundaries#版本变化": {
+        "route": "/docs/book/review-support-and-version-boundaries",
+        "kind": "heading",
+        "title": "数据换版与补缺",
+        "claimIds": [
+          "cl-db2011-versioned-confidence",
+          "cl-dapp147-package-migration-inheritance-and-surveillance",
+          "cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge",
+          "cl-db2011-conditional-use"
+        ],
+        "ordinary": [
+          "899551165b02f435039f70879fca208dd5c49af796b255b2320d933b474eaf42",
+          "6c81a3b6f27b6685f8319217a857fc80939857c85c921b2087072ccac0d04e56"
+        ]
+      },
+      "/docs/book/review-support-and-version-boundaries#chapter-2f646f63732f626f6f6b2f7265766965772d737570706f72742d616e642d76657273696f6e2d626f756e646172696573-annotations": {
+        "route": "/docs/book/review-support-and-version-boundaries",
+        "kind": "note-group",
+        "title": "数据审查与版本",
+        "claimIds": [
+          "cl-db2011-review-relative-to-criteria",
+          "cl-db2011-review-questions",
+          "cl-db2011-validation-context",
+          "cl-dapp147-validation-vs-review-and-team-thresholds",
+          "cl-db2011-recommendation-strength",
+          "cl-db2011-review-of-guidance",
+          "cl-dapp147-five-aspect-compliance-and-uuid-semantics",
+          "cl-db2011-versioned-confidence",
+          "cl-dapp147-package-migration-inheritance-and-surveillance",
+          "cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge",
+          "cl-db2011-conditional-use"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/review-support-and-version-boundaries#chapter-2f646f63732f626f6f6b2f7265766965772d737570706f72742d616e642d76657273696f6e2d626f756e646172696573-claim-cl-db2011-review-relative-to-criteria": {
+        "route": "/docs/book/review-support-and-version-boundaries",
+        "kind": "note",
+        "title": "数据审查与版本",
+        "claimIds": [
+          "cl-db2011-review-relative-to-criteria"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/review-support-and-version-boundaries#chapter-2f646f63732f626f6f6b2f7265766965772d737570706f72742d616e642d76657273696f6e2d626f756e646172696573-claim-cl-db2011-review-questions": {
+        "route": "/docs/book/review-support-and-version-boundaries",
+        "kind": "note",
+        "title": "数据审查与版本",
+        "claimIds": [
+          "cl-db2011-review-questions"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/review-support-and-version-boundaries#chapter-2f646f63732f626f6f6b2f7265766965772d737570706f72742d616e642d76657273696f6e2d626f756e646172696573-claim-cl-db2011-validation-context": {
+        "route": "/docs/book/review-support-and-version-boundaries",
+        "kind": "note",
+        "title": "数据审查与版本",
+        "claimIds": [
+          "cl-db2011-validation-context"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/review-support-and-version-boundaries#chapter-2f646f63732f626f6f6b2f7265766965772d737570706f72742d616e642d76657273696f6e2d626f756e646172696573-claim-cl-dapp147-validation-vs-review-and-team-thresholds": {
+        "route": "/docs/book/review-support-and-version-boundaries",
+        "kind": "note",
+        "title": "数据审查与版本",
+        "claimIds": [
+          "cl-dapp147-validation-vs-review-and-team-thresholds"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/review-support-and-version-boundaries#chapter-2f646f63732f626f6f6b2f7265766965772d737570706f72742d616e642d76657273696f6e2d626f756e646172696573-claim-cl-db2011-recommendation-strength": {
+        "route": "/docs/book/review-support-and-version-boundaries",
+        "kind": "note",
+        "title": "数据审查与版本",
+        "claimIds": [
+          "cl-db2011-recommendation-strength"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/review-support-and-version-boundaries#chapter-2f646f63732f626f6f6b2f7265766965772d737570706f72742d616e642d76657273696f6e2d626f756e646172696573-claim-cl-db2011-review-of-guidance": {
+        "route": "/docs/book/review-support-and-version-boundaries",
+        "kind": "note",
+        "title": "数据审查与版本",
+        "claimIds": [
+          "cl-db2011-review-of-guidance"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/review-support-and-version-boundaries#chapter-2f646f63732f626f6f6b2f7265766965772d737570706f72742d616e642d76657273696f6e2d626f756e646172696573-claim-cl-dapp147-five-aspect-compliance-and-uuid-semantics": {
+        "route": "/docs/book/review-support-and-version-boundaries",
+        "kind": "note",
+        "title": "数据审查与版本",
+        "claimIds": [
+          "cl-dapp147-five-aspect-compliance-and-uuid-semantics"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/review-support-and-version-boundaries#chapter-2f646f63732f626f6f6b2f7265766965772d737570706f72742d616e642d76657273696f6e2d626f756e646172696573-claim-cl-db2011-versioned-confidence": {
+        "route": "/docs/book/review-support-and-version-boundaries",
+        "kind": "note",
+        "title": "数据审查与版本",
+        "claimIds": [
+          "cl-db2011-versioned-confidence"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/review-support-and-version-boundaries#chapter-2f646f63732f626f6f6b2f7265766965772d737570706f72742d616e642d76657273696f6e2d626f756e646172696573-claim-cl-dapp147-package-migration-inheritance-and-surveillance": {
+        "route": "/docs/book/review-support-and-version-boundaries",
+        "kind": "note",
+        "title": "数据审查与版本",
+        "claimIds": [
+          "cl-dapp147-package-migration-inheritance-and-surveillance"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/review-support-and-version-boundaries#chapter-2f646f63732f626f6f6b2f7265766965772d737570706f72742d616e642d76657273696f6e2d626f756e646172696573-claim-cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge": {
+        "route": "/docs/book/review-support-and-version-boundaries",
+        "kind": "note",
+        "title": "数据审查与版本",
+        "claimIds": [
+          "cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/review-support-and-version-boundaries#chapter-2f646f63732f626f6f6b2f7265766965772d737570706f72742d616e642d76657273696f6e2d626f756e646172696573-claim-cl-db2011-conditional-use": {
+        "route": "/docs/book/review-support-and-version-boundaries",
+        "kind": "note",
+        "title": "数据审查与版本",
+        "claimIds": [
+          "cl-db2011-conditional-use"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479": {
+        "route": "book-data-applicability",
+        "kind": "chapter",
+        "title": "数据适用性",
+        "claimIds": [
+          "cl-db2011-user-and-manager",
+          "cl-db2011-represented-object",
+          "cl-db2011-scope-examples",
+          "cl-dapp147-dataset-roles-and-system-linking",
+          "cl-dapp147-intrinsic-vs-context-representativeness",
+          "cl-db2011-representativeness-and-precision",
+          "cl-db2011-documenting-number",
+          "cl-dapp147-quality-architectures-and-prerequisite-split",
+          "cl-db2011-aggregation-information",
+          "cl-db2011-missing-and-zero",
+          "cl-dapp147-weakest-link-vs-mean-and-80pct-masking",
+          "cl-db2011-review-relative-to-criteria",
+          "cl-db2011-review-questions",
+          "cl-db2011-validation-context",
+          "cl-dapp147-validation-vs-review-and-team-thresholds",
+          "cl-db2011-recommendation-strength",
+          "cl-db2011-review-of-guidance",
+          "cl-dapp147-five-aspect-compliance-and-uuid-semantics",
+          "cl-db2011-versioned-confidence",
+          "cl-dapp147-package-migration-inheritance-and-surveillance",
+          "cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge",
+          "cl-db2011-conditional-use"
+        ],
+        "ordinary": [
+          "7f999f20ee09d19275a39a09a29e1906546d55fdcac32ca658315d5ebddb693d",
+          "e76bdb58516fc3ec406a19547243e0a8d1c8bc75305609a2b9f743f6983d90ac",
+          "899551165b02f435039f70879fca208dd5c49af796b255b2320d933b474eaf42",
+          "9b81338f5886652d1e6cc90117bed27990d41bb1c2152610f72500fd7675ce15"
+        ],
+        "bindings": {
+          "links": [
+            [],
+            [],
+            [],
+            [
+              "#print-reading-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479"
+            ]
+          ],
+          "tables": [
+            {
+              "header": [
+                [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              ],
+              "body": [
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "评价对象层级"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "单元过程或聚合过程数据集文档"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "过程数据集整体（区分单元过程、部分终止系统、清单结果）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "过程数据集整体（不作质量分档）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "公司特定数据集、次级数据集及研究语境最相关过程"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "除参考产品外的单条输入输出交换流"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "计分质量指标"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "表 4.1 定性说明精密度、完整性、代表性、一致性、重现性"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "技术、地域、时间代表性加完整性、精密度、方法学共 6 项（1—5 分）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "质量合规固定标为“未定义”（Not defined），按国际标准准则陈述质量并记述三项代表性"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "技术（TeR）、地域（GeR 或 GR）、时间（TiR）代表性与精密度（P）共 4 项（1—5 分）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "基本不确定度加可靠性、完整性、时间、地域、进一步技术相关性 5 项谱系分"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "完整性与方法学"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "与代表性、精密度并列作定性文档审查"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "纳入 6 项打分指标参与式 3 合成"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "遵循国际标准过程方法并记录建模与分配，不强制手册方法"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "移出算式设为二元最低准入前提，XML 字段标为“不适用”（Not applicable）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "方法学由主库编审规则统一约束，完整性为第 2 项谱系方差指标"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "未知项与单项封顶"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "要求区分真实零值与缺失值并文字交代缺口"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "未评估或未知项赋 5 分，不适用赋 0 分并扣减有效指标数；无独立单项硬顶"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "无量化总分与单项上限"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "供应端次级数据每项加权分 ≤ 3.0；公司特定数据 P ≤ 3、三项代表性 ≤ 2"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "未评估交换流默认取最差谱系档 5 分，无数据集级淘汰上限"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "聚合算式或映射"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "不设标量聚合公式"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "式 3 最弱项五倍权重：(六项和 + 4×最弱分) / (有效项数 + 4)"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "不计算总体数据质量评级（研究端引用时亦禁止重算）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "式 19 与式 20 四项算术均值；公司特定数据按 80% 阈值分别筛活动数据与直接流，次级数据按单一总分前 80% 重标定加权"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "对数正态底层正态方差 6 项直接相加（5 分谱系附加方差和为 0.21）"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "分档门槛与用途"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "支撑使用者按目标与范围作人工适用性判断"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "表 7 三档：≤ 1.6 高质量、高于 1.6 至 ≤ 3 基本质量、高于 3 至 ≤ 4 数据估计"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "供数据网络节点起步准入；在欧盟研究中作 ≤ 10% 单一总分代理"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "表 22 五档（≤ 1.5 极优、高于 1.5 至 ≤ 2.0 优良、高于 2.0 至 ≤ 3.0 良好、高于 3 至 ≤ 4.0 尚可、高于 4 差）；数据需求矩阵规定公司特定数据 ≤ 1.5、合规次级数据 ≤ 3.0"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "静态清单取中位数，方差专供蒙特卡洛清单不确定性传播"
+                  }
+                ]
+              ]
+            },
+            {
+              "header": [
+                [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              ],
+              "body": [
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "自动校验与人工审查"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "第 2 章与第 4 章区分手工或自动验证同独立系统审查"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "总论第 11 章将交付物评审矩阵移交专卷；入门级允许 1 名外部免报告或 1 名内部附报告"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "次级入库仅准许至少 2 名含外部专家联合评审并禁用单人外审；研究验证须达 6 分且初级数据必做现场核查，Look@LCI 偏差 ≤ 1%"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "在线 ecoEditor 自动验证写入第 3340 字段；转换活动目标至少 3 名专家（含 4 类横向编辑）审查，3.0 版如实披露缺口"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "过程模式支持单条或数组审查历史，含“Not reviewed”共 6 值枚举且报告引用可选"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "合规声明矩阵结构"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "区分强烈推荐（shall）、推荐与建议，保留有依据少数意见"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "表 9 确立质量、方法、命名、审查、文档五维；完整合规设 12 套情景乘质量 UUID，入门级另设独立 UUID"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "表 1 强制并列 6 组（无类别规则时 5 组）UUID，国际标准与流列表维度按职责精确标“Not defined”"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "按主库统一活动命名、地理父子继承与系统模型规则管理，不用多系统 UUID 并列块"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "公开规则定义语义与格式谓词，刻意排除严重度、阶段归属与默认阻断策略"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "区域残差与混合命名"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "建议记录聚合范围、底层数据可得性与分配方式"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "区分单工序或黑箱单元过程、部分终止系统与清单结果"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "中心数据集标部分终止系统；非主要支撑子过程标单工序单元过程且严禁脱离父系统复用"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "强制先建全球父过程 GLO 并按产量差额自动算 RoW；严格拆分转换活动与消费组合市场活动"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "生产组合应具成文权重；电网损耗或 1:1 变压节点不自动转消费组合，绿证不改写物理发电技术"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "版本演进与失效红线"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "建议报告技术、资料或基本流更新及新版实际受审范围"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "合规源数据集基线版本号 01.02.000（或更高可用版），网络建设过渡期最长 3 年"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "旧版转换数据降为代理；JRC130796 实测 2,752 份数据集中 6%、10%、13% 前三主类易位；报告最长 3 年有效，单类恶化超 10.0% 或总分恶化超 5.0% 强制更新"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "新增局部数据联动改写 RoW 与市场份额；3.0 版记录未同步更新 GLO 时负交换置零或复制 GLO 例外"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "强制要求 NN.NN 或 NN.NN.NNN 定长版本号随内容变更严格单调递增"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "缺口补齐与截断上限"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "表 2.1 末行允许在无更佳资料时用足够一致数据补缺并逐项说明理由"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "入门级允许 VOC 等部分聚合基本流作为起步过渡"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "四级次级阶梯（EF 合规、EF 代理、≤ 10% 单一总分 ILCD-EL 代理、剔除并报缺口）；物料、能量与各影响类别累计截断均低于 3.0%；2026 过渡指导预计延用至 2028 年"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "未指明子区室仅在无具体信息时使用；除特定水体总和指标等例外，总和排放须扣除已单报物质以防双计"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "消费方产品可设定业务豁免与阶段门禁，但不得把未通过公开规则定义的记录改写为通过"
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "/print#print-reading-unit-626f6f6b2d646174612d6170706c69636162696c697479": {
+        "route": "book-data-applicability",
+        "kind": "reading-title",
+        "title": "数据适用性",
+        "claimIds": [
+          "cl-db2011-user-and-manager",
+          "cl-db2011-represented-object",
+          "cl-db2011-scope-examples",
+          "cl-dapp147-dataset-roles-and-system-linking",
+          "cl-dapp147-intrinsic-vs-context-representativeness",
+          "cl-db2011-representativeness-and-precision",
+          "cl-db2011-documenting-number",
+          "cl-dapp147-quality-architectures-and-prerequisite-split",
+          "cl-db2011-aggregation-information",
+          "cl-db2011-missing-and-zero",
+          "cl-dapp147-weakest-link-vs-mean-and-80pct-masking",
+          "cl-db2011-review-relative-to-criteria",
+          "cl-db2011-review-questions",
+          "cl-db2011-validation-context",
+          "cl-dapp147-validation-vs-review-and-team-thresholds",
+          "cl-db2011-recommendation-strength",
+          "cl-db2011-review-of-guidance",
+          "cl-dapp147-five-aspect-compliance-and-uuid-semantics",
+          "cl-db2011-versioned-confidence",
+          "cl-dapp147-package-migration-inheritance-and-surveillance",
+          "cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge",
+          "cl-db2011-conditional-use"
+        ],
+        "ordinary": [
+          "7f999f20ee09d19275a39a09a29e1906546d55fdcac32ca658315d5ebddb693d",
+          "e76bdb58516fc3ec406a19547243e0a8d1c8bc75305609a2b9f743f6983d90ac",
+          "899551165b02f435039f70879fca208dd5c49af796b255b2320d933b474eaf42",
+          "9b81338f5886652d1e6cc90117bed27990d41bb1c2152610f72500fd7675ce15"
+        ],
+        "chapter": "print-unit-626f6f6b2d646174612d6170706c69636162696c697479"
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-表示对象": {
+        "route": "book-data-applicability",
+        "kind": "heading",
+        "title": "数据所代表的过程",
+        "claimIds": [
+          "cl-db2011-user-and-manager",
+          "cl-db2011-represented-object",
+          "cl-db2011-scope-examples",
+          "cl-dapp147-dataset-roles-and-system-linking",
+          "cl-dapp147-intrinsic-vs-context-representativeness"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-质量信息": {
+        "route": "book-data-applicability",
+        "kind": "heading",
+        "title": "数据的质量信息",
+        "claimIds": [
+          "cl-db2011-representativeness-and-precision",
+          "cl-db2011-documenting-number",
+          "cl-dapp147-quality-architectures-and-prerequisite-split",
+          "cl-db2011-aggregation-information",
+          "cl-db2011-missing-and-zero",
+          "cl-dapp147-weakest-link-vs-mean-and-80pct-masking"
+        ],
+        "ordinary": [
+          "e76bdb58516fc3ec406a19547243e0a8d1c8bc75305609a2b9f743f6983d90ac"
+        ]
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-审查范围": {
+        "route": "book-data-applicability",
+        "kind": "heading",
+        "title": "数据的审查范围",
+        "claimIds": [
+          "cl-db2011-review-relative-to-criteria",
+          "cl-db2011-review-questions",
+          "cl-db2011-validation-context",
+          "cl-dapp147-validation-vs-review-and-team-thresholds",
+          "cl-db2011-recommendation-strength",
+          "cl-db2011-review-of-guidance",
+          "cl-dapp147-five-aspect-compliance-and-uuid-semantics"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-版本变化": {
+        "route": "book-data-applicability",
+        "kind": "heading",
+        "title": "数据换版与补缺",
+        "claimIds": [
+          "cl-db2011-versioned-confidence",
+          "cl-dapp147-package-migration-inheritance-and-surveillance",
+          "cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge",
+          "cl-db2011-conditional-use"
+        ],
+        "ordinary": [
+          "899551165b02f435039f70879fca208dd5c49af796b255b2320d933b474eaf42",
+          "9b81338f5886652d1e6cc90117bed27990d41bb1c2152610f72500fd7675ce15"
+        ]
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-annotations": {
+        "route": "book-data-applicability",
+        "kind": "note-group",
+        "title": "数据适用性",
+        "claimIds": [
+          "cl-db2011-user-and-manager",
+          "cl-db2011-represented-object",
+          "cl-db2011-scope-examples",
+          "cl-dapp147-dataset-roles-and-system-linking",
+          "cl-dapp147-intrinsic-vs-context-representativeness",
+          "cl-db2011-representativeness-and-precision",
+          "cl-db2011-documenting-number",
+          "cl-dapp147-quality-architectures-and-prerequisite-split",
+          "cl-db2011-aggregation-information",
+          "cl-db2011-missing-and-zero",
+          "cl-dapp147-weakest-link-vs-mean-and-80pct-masking",
+          "cl-db2011-review-relative-to-criteria",
+          "cl-db2011-review-questions",
+          "cl-db2011-validation-context",
+          "cl-dapp147-validation-vs-review-and-team-thresholds",
+          "cl-db2011-recommendation-strength",
+          "cl-db2011-review-of-guidance",
+          "cl-dapp147-five-aspect-compliance-and-uuid-semantics",
+          "cl-db2011-versioned-confidence",
+          "cl-dapp147-package-migration-inheritance-and-surveillance",
+          "cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge",
+          "cl-db2011-conditional-use"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-claim-cl-db2011-user-and-manager": {
+        "route": "book-data-applicability",
+        "kind": "note",
+        "title": "数据适用性",
+        "claimIds": [
+          "cl-db2011-user-and-manager"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-claim-cl-db2011-represented-object": {
+        "route": "book-data-applicability",
+        "kind": "note",
+        "title": "数据适用性",
+        "claimIds": [
+          "cl-db2011-represented-object"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-claim-cl-db2011-scope-examples": {
+        "route": "book-data-applicability",
+        "kind": "note",
+        "title": "数据适用性",
+        "claimIds": [
+          "cl-db2011-scope-examples"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-claim-cl-dapp147-dataset-roles-and-system-linking": {
+        "route": "book-data-applicability",
+        "kind": "note",
+        "title": "数据适用性",
+        "claimIds": [
+          "cl-dapp147-dataset-roles-and-system-linking"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-claim-cl-dapp147-intrinsic-vs-context-representativeness": {
+        "route": "book-data-applicability",
+        "kind": "note",
+        "title": "数据适用性",
+        "claimIds": [
+          "cl-dapp147-intrinsic-vs-context-representativeness"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-claim-cl-db2011-representativeness-and-precision": {
+        "route": "book-data-applicability",
+        "kind": "note",
+        "title": "数据适用性",
+        "claimIds": [
+          "cl-db2011-representativeness-and-precision"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-claim-cl-db2011-documenting-number": {
+        "route": "book-data-applicability",
+        "kind": "note",
+        "title": "数据适用性",
+        "claimIds": [
+          "cl-db2011-documenting-number"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-claim-cl-dapp147-quality-architectures-and-prerequisite-split": {
+        "route": "book-data-applicability",
+        "kind": "note",
+        "title": "数据适用性",
+        "claimIds": [
+          "cl-dapp147-quality-architectures-and-prerequisite-split"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-claim-cl-db2011-aggregation-information": {
+        "route": "book-data-applicability",
+        "kind": "note",
+        "title": "数据适用性",
+        "claimIds": [
+          "cl-db2011-aggregation-information"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-claim-cl-db2011-missing-and-zero": {
+        "route": "book-data-applicability",
+        "kind": "note",
+        "title": "数据适用性",
+        "claimIds": [
+          "cl-db2011-missing-and-zero"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-claim-cl-dapp147-weakest-link-vs-mean-and-80pct-masking": {
+        "route": "book-data-applicability",
+        "kind": "note",
+        "title": "数据适用性",
+        "claimIds": [
+          "cl-dapp147-weakest-link-vs-mean-and-80pct-masking"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-claim-cl-db2011-review-relative-to-criteria": {
+        "route": "book-data-applicability",
+        "kind": "note",
+        "title": "数据适用性",
+        "claimIds": [
+          "cl-db2011-review-relative-to-criteria"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-claim-cl-db2011-review-questions": {
+        "route": "book-data-applicability",
+        "kind": "note",
+        "title": "数据适用性",
+        "claimIds": [
+          "cl-db2011-review-questions"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-claim-cl-db2011-validation-context": {
+        "route": "book-data-applicability",
+        "kind": "note",
+        "title": "数据适用性",
+        "claimIds": [
+          "cl-db2011-validation-context"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-claim-cl-dapp147-validation-vs-review-and-team-thresholds": {
+        "route": "book-data-applicability",
+        "kind": "note",
+        "title": "数据适用性",
+        "claimIds": [
+          "cl-dapp147-validation-vs-review-and-team-thresholds"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-claim-cl-db2011-recommendation-strength": {
+        "route": "book-data-applicability",
+        "kind": "note",
+        "title": "数据适用性",
+        "claimIds": [
+          "cl-db2011-recommendation-strength"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-claim-cl-db2011-review-of-guidance": {
+        "route": "book-data-applicability",
+        "kind": "note",
+        "title": "数据适用性",
+        "claimIds": [
+          "cl-db2011-review-of-guidance"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-claim-cl-dapp147-five-aspect-compliance-and-uuid-semantics": {
+        "route": "book-data-applicability",
+        "kind": "note",
+        "title": "数据适用性",
+        "claimIds": [
+          "cl-dapp147-five-aspect-compliance-and-uuid-semantics"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-claim-cl-db2011-versioned-confidence": {
+        "route": "book-data-applicability",
+        "kind": "note",
+        "title": "数据适用性",
+        "claimIds": [
+          "cl-db2011-versioned-confidence"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-claim-cl-dapp147-package-migration-inheritance-and-surveillance": {
+        "route": "book-data-applicability",
+        "kind": "note",
+        "title": "数据适用性",
+        "claimIds": [
+          "cl-dapp147-package-migration-inheritance-and-surveillance"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-claim-cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge": {
+        "route": "book-data-applicability",
+        "kind": "note",
+        "title": "数据适用性",
+        "claimIds": [
+          "cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-626f6f6b2d646174612d6170706c69636162696c697479-claim-cl-db2011-conditional-use": {
+        "route": "book-data-applicability",
+        "kind": "note",
+        "title": "数据适用性",
+        "claimIds": [
+          "cl-db2011-conditional-use"
+        ],
+        "ordinary": []
+      }
+    },
+    "source": "actual-export",
+    "sourceCommit": "1d0c9cd6b19539a1c9ff68babe239418c2c1d5ae",
+    "capture": {
+      "sourceCommit": "1d0c9cd6b19539a1c9ff68babe239418c2c1d5ae",
+      "dirty": true,
+      "status": "working-preview",
+      "manifestSha256": "50035716531a2bbe58a91ef9c4c687be989282d2f5b7d74ea2e25e21ce3f32c5",
+      "normalizedProofSha256": "72752d34fe4e74a518bb4f362c92a92b1c474162a65705738a346662a92ad875"
+    },
+    "articleFiles": [
+      {
+        "path": "docs/book/cost-perspectives-and-sustainability-combination/index.html",
+        "sha256": "9757a8533830e46d888c81f5abf6f357e0f032c76bccd5c527439bced61f15ee",
+        "bytes": 1355425
+      },
+      {
+        "path": "docs/book/database-fitness-and-documentation/index.html",
+        "sha256": "04de5819a1d530dc565254fee9560a33ab71b3ef0b99f549f6b5c6f228b39fab",
+        "bytes": 1259400
+      },
+      {
+        "path": "docs/book/review-support-and-version-boundaries/index.html",
+        "sha256": "6380f440e197f516992f6edcfc9414dde5ad21997910856235ec65577717ab9e",
+        "bytes": 1281939
+      },
+      {
+        "path": "docs/book/uncertainty-and-variability/index.html",
+        "sha256": "ec78a820734bef69efa73f7d5453112cbd9ec30c385fe356b35583b05d62ce45",
+        "bytes": 1180338
+      },
+      {
+        "path": "docs/book/product-footprint-rules-and-practice/index.html",
+        "sha256": "eb109d2e456cf536b6e27acec8b0292253f8ec93f3bc740baf9d0fc552ec2c3b",
+        "bytes": 1441611
+      },
+      {
+        "path": "docs/book/connecting-objects-references-and-time/index.html",
+        "sha256": "00a7fd52b91275e06600a975bc893a8af33a3178554d045dcbf43359f23f25d8",
+        "bytes": 1203392
+      },
+      {
+        "path": "docs/book/from-connected-results-to-conditional-judgment/index.html",
+        "sha256": "12e4f659a47e41e8f3ba0e496af3aeb15022f2ec804b06b84ac68fb359a1f7c7",
+        "bytes": 1283758
+      },
+      {
+        "path": "print/index.html",
+        "sha256": "e28ee3591240572e2f8c8e967d361328e067a96ce7dadd467e4c02abcf39a071",
+        "bytes": 16294861
+      }
+    ],
+    "artifactFiles": [
+      {
+        "path": "claims/index.html",
+        "sha256": "ee6811b59365857dcbaa8a5eddfab85ba50791ed73b0c4721921c4706f58cab5",
+        "bytes": 7893972,
+        "contentSha256": "922cfd977feadce6ce26090a36762ad7e157abd610dbe435b0853983dc4d58fd"
+      },
+      {
+        "path": "sources/index.html",
+        "sha256": "a0e22f640c4cd890756ec3e161ae587bffd355d12d9beabb33e1bf7669e52857",
+        "bytes": 7209130,
+        "contentSha256": "9fdba3b908daae09460ba8469ab4d1cb48db65ea7298473bd25808bbaf03b5c7"
+      },
+      {
+        "path": "concepts/index.html",
+        "sha256": "fdde088421fea2b448fb8e98b4a45b45db9fb3af336565769250f349446727df",
+        "bytes": 2296701,
+        "contentSha256": "a6dbc86145eae41d2ee5f09c47945a4e184b91d68c346cf64f7df10f7422c205"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "sha256": "6d91a1bd3ae950eadc94825a3f0c0a817b4254f361b20850f633e8b0003b3ff2",
+        "bytes": 4602220,
+        "contentSha256": "6d91a1bd3ae950eadc94825a3f0c0a817b4254f361b20850f633e8b0003b3ff2"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "sha256": "2ec6978b8cbacb6a3c3b6c112e3bd3d77764b4c51970ef1986b0cb60f4d059b1",
+        "bytes": 445844,
+        "contentSha256": "2ec6978b8cbacb6a3c3b6c112e3bd3d77764b4c51970ef1986b0cb60f4d059b1"
+      },
+      {
+        "path": "research/index.html",
+        "sha256": "9eba268a78b7b218569687f5ebbdaf280c0b37e603ee67163dab2343f3a77890",
+        "bytes": 1927224,
+        "contentSha256": "58ffc3923404bcd9337a49d28668a98d66826f8da13826b7509f307f13418e58"
+      },
+      {
+        "path": "downloads/bibliography.json",
+        "sha256": "0d30d7f69783776a2f80c05e4fd061755c28c6194a5ca944fe0c939b9b030ae8",
+        "bytes": 1526069,
+        "contentSha256": "0d30d7f69783776a2f80c05e4fd061755c28c6194a5ca944fe0c939b9b030ae8"
+      },
+      {
+        "path": "downloads/research.json",
+        "sha256": "0d30d7f69783776a2f80c05e4fd061755c28c6194a5ca944fe0c939b9b030ae8",
+        "bytes": 1526069,
+        "contentSha256": "0d30d7f69783776a2f80c05e4fd061755c28c6194a5ca944fe0c939b9b030ae8"
+      },
+      {
+        "path": "coverage/index.html",
+        "sha256": "28ad071dbafa23181d0588bf93a900e13fe37d055b5d4dfad48ac6ce130dac39",
+        "bytes": 1019610,
+        "contentSha256": "577dd4520ea266cefa884f19e5adec989d5d75a685a8abad32434419f35ce1bc"
+      }
+    ],
+    "assessment": {
+      "provenance": "Actual private Next/compiler and untouched-exporter bytes from base 1d0c9cd6b19539a1c9ff68babe239418c2c1d5ae and a declared dirty working-preview. Temporary technical admission inside an isolated clone served inspection only and supplies no editorial acceptance.",
+      "reconstruction": "Exact rollback of 3 managed B25 MDX files (oldFileShas + boundedMdxTransform), 80 raw records, and 2 raw fields recovers the exact c5b90b0352abaeaf0eec6706685076c8825d8925 predecessor pin (68aed4ba...) before #145 -> #143 -> #139 -> #137 -> #135 -> older qualifiers, verifying all 94 transitions and 409 cross-generation consumers.",
+      "guards": "Multi-round independent adversarial publication-engineering and security audit verified immutability of original B25 artifacts and 40 case files, backward-compatible table/destRoute handling in reader-data-applicability.mjs, strict exactKeys envelopes, 63-fact zero-survivor BigInt rational guard, f650600 fixture isolation, 12 inline display:block print-visible correction notices validated prior to DOM stripping, and compiled CSS zero-drift (be180e5d...), concluding unconditional PASS (0 BLOCKER, 0 MAJOR, 0 MINOR).",
+      "actual": "Comparison of all 88 article projections identifies the exact changed articles and public artifacts across B25 monograph, both website companions, shared-source/locator projections, and catalog/research downloads. All 468 manifest payloads and 40 case downloads verified.",
+      "browser": "Passed 60 responsive viewport/theme checks (6 routes × 5 widths 390–2560px × light/dark, zero horizontal paragraph/document overflow) plus no-JS @media print verification confirming all 12 inline display:block correction notices (6 on /print, 2 on Companion 1, 4 on Companion 2) remain visible in print.",
+      "limits": "Clean production build (dirty:false), source PR/CI/merge, live EdgeOne byte/guard qualification and exact root submodule integration remain required after this scoped acceptance."
+    },
+    "independentReports": {
+      "independent-primary-source-audit-initial.md": "b40175817f1a29f86b35a5c31e7b135a59b0e596635c2a86c48d1f55b31bbd6c",
+      "independent-primary-source-audit-final.md": "16e4eb6a90c6ae419acc96dda7c00b8e3d869a2695b3de39208aefb4735caab2",
+      "b25-continuous-reader-review-initial.md": "a9381deebb46e43fe66a0f69c0a27d564d9fb245ba7ed288362e91738cc781e8",
+      "b25-continuous-reader-review-final.md": "9936f43956ca04bfd4edc7d75f7abb5aead6c5c429cf6861332248a4bfaa4754",
+      "independent-publication-engineering-review-initial.md": "62fe352e96c6f50cf1cdedb1a659718c0c27a7eb0f10de3dae73883c7d139852",
+      "independent-publication-engineering-review-final.md": "7a23ac6dfd7c5495597fc610f1fa2c1f7881eb93e605ef9b6df3c2fe7e988c32",
+      "actual-browser-qa-147/qa-summary-147.json": "8faf8d65fdeecb5af65077edc6b0e5d9544bd0e3f6428939c847a99855ddd172"
+    }
+  }
+}

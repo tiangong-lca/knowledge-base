@@ -45,10 +45,26 @@ function assertDataApplicabilityRegistration(edition) {
       || !same(unit.sections, currentBookLayout('B25:registered-sections', plainSections(dataApplicabilityTitles))) || units.some(row => dataApplicabilityRoutes.includes(row.key)))
     throw new Error("Data applicability requires actual four-section/two-source book assembly");
 }
+/** Parse a bounded Markdown pipe table without raw HTML. */
+function parseMarkdownTableBlock(block, section) {
+  const lines = block.trim().split(/\r?\n/);
+  if (lines.length < 3 || !lines.every((line) => line.startsWith("|") && line.endsWith("|"))) return null;
+  const cells = lines.map((line) => line.slice(1, -1).split("|").map((cell) => cell.trim()));
+  const [headers, divider, ...rows] = cells;
+  if (headers.length < 2
+      || divider.length !== headers.length
+      || !divider.every((cell) => /^:?-+:?$/.test(cell))
+      || !rows.length
+      || [headers, ...rows].some((row) => row.length !== headers.length || row.some((cell) => !nonempty(cell) || /[<>]/.test(cell)))) {
+    return null;
+  }
+  return { section, headers, rows };
+}
 /** Inspect only the bounded static MDX shape used by these three authored sources. */
 function inspectDataApplicabilitySource(raw) {
   const front = /^---\r?\n([\s\S]*?)\r?\n---/.exec(raw ?? "")?.[1] ?? "", field = (name) => new RegExp(`^${name}:\\s*(.+)$`, "m").exec(front)?.[1]?.replace(/^(['"])(.*)\1$/, "$2");
-  const pieces = raw.replace(/^---\r?\n[\s\S]*?\r?\n---/, "").split(/^## (.+)\s*$/m), headings = [], occurrences = [], ordinary = [], figures = [];
+  const pieces = raw.replace(/^---\r?\n[\s\S]*?\r?\n---/, "").split(/^## (.+)\s*$/m), headings = [], occurrences = [], ordinary = [], figures = [], tables = [];
+  let invalidTable = false;
   for (let i = 1; i < pieces.length; i += 2) {
     const explicit = /^(.*?)\s+\[#([^\]]+)\]$/.exec(pieces[i]), title = explicit ? explicit[1] : pieces[i], id = explicit ? explicit[2] : title, body = pieces[i + 1];
     headings.push({ id, title });
@@ -57,13 +73,23 @@ function inspectDataApplicabilitySource(raw) {
       const attr = (name) => new RegExp(`\\b${name}="([^"]*)"`).exec(figure)?.[1];
       figures.push({ section: id, src: attr("src"), alt: attr("alt"), width: attr("width"), height: attr("height"), caption: /<figcaption>([^<]*)<\/figcaption>/.exec(figure)?.[1] });
       return "";
-    }).replace(/<(?:Prose|Claim)\b[^>]*\/>/g, "");
+    }).replace(/<(?:Prose|Claim)\b[^>]*\/>/g, "").replace(/^\|.+\|\r?\n\|(?:\s*:?-+:?\s*\|)+\r?\n(?:\|.+\|\r?\n?)+/gm, (tableBlock) => {
+      const parsed = parseMarkdownTableBlock(tableBlock, id);
+      if (!parsed) invalidTable = true;
+      else tables.push(parsed);
+      return "";
+    });
     for (const block of rest.split(/\n\s*\n/).map((value) => value.trim()).filter(Boolean)) {
       const links = [...block.matchAll(/\[([^\]]+)\]\(([^)]+)\)/g)].map((match) => ({ text: match[1], href: match[2] })), text = block.replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1").replace(/\s*\n\s*/g, "");
       ordinary.push({ section: id, text, links });
     }
   }
-  return { title: field("title"), description: field("description"), headings, occurrences, ordinary, figure: figures.length === 1 ? figures[0] : null, figureCount: figures.length, outsideOccurrences: collectChapterClaimOccurrences(pieces[0]) };
+  return {
+    title: field("title"), description: field("description"), headings, occurrences, ordinary,
+    figure: figures.length === 1 ? figures[0] : null, figureCount: figures.length,
+    outsideOccurrences: collectChapterClaimOccurrences(pieces[0]),
+    ...(tables.length || invalidTable ? { tables: invalidTable ? null : tables } : {}),
+  };
 }
 function assertDataApplicabilityAccepted(accepted, independentDigest = dataApplicabilityAcceptedDigest) {
   assertDataApplicabilityOriginal();
@@ -137,7 +163,8 @@ function validateDataApplicabilityCoverage(edition, sources, catalog, accepted, 
     const { source, occurrences: expectedOccurrences } = reviewedDataApplicabilitySource(accepted, frozen.route);
     const found = inspectDataApplicabilitySource(raw);
     if (!currentBookMdxMatches(frozen.route, frozen.mdxSha256, rawDigest(raw))
-        || !sameRecord({ title: found.title, description: found.description, headings: found.headings, ordinary: found.ordinary, figure: found.figure }, { title: source.title, description: source.description, headings: source.headings, ordinary: source.ordinary, figure: source.figure })
+        || found.tables === null
+        || !sameRecord({ title: found.title, description: found.description, headings: found.headings, ordinary: found.ordinary, figure: found.figure, tables: found.tables ?? [] }, { title: source.title, description: source.description, headings: source.headings, ordinary: source.ordinary, figure: source.figure, tables: source.tables ?? [] })
         || found.outsideOccurrences.length
         || found.figureCount !== (source.figure ? 1 : 0)
         || !same(found.occurrences, expectedOccurrences)
@@ -452,16 +479,37 @@ function validateRenderedDataApplicability(document, path, catalog, accepted, in
       }
     }
     if (!same(actual, expected) || !same(headings, source.headings)) errors.push(`${path}: Data applicability actual body order/sections differ: ${route}`);
-    const ordinary = [];
-    let currentSection = null;
-    for (const node of unit.querySelectorAll("h1,h2,h3,h4,h5,h6,p,figure")) {
+    const ordinary = [], tables = [];
+    let currentSection = null, invalidRenderedTable = false;
+    for (const node of unit.querySelectorAll("h1,h2,h3,h4,h5,h6,p,figure,table")) {
       if (node.closest("[data-legacy-for],[data-legacy-notice],[data-legacy-scope],.chapter-notes,.docs-pagination")) continue;
       if (/^H[1-6]$/.test(node.tagName) && node !== title) currentSection = print ? node.id.slice(prefix.length + 1) : node.id;
-      if (node.tagName === "P" && !checked.has(node) && !node.closest("figure") && !node.querySelector('[role="doc-noteref"]')) {
+      if (node.tagName === "P" && !checked.has(node) && !node.closest("figure,table") && !node.querySelector('[role="doc-noteref"]')) {
         const row = { section: currentSection, text: node.text, links: node.querySelectorAll("a").map((link) => ({ text: link.text, href: link.getAttribute("href") })) };
         ordinary.push(row);
         if (concealedText(node)) errors.push(`${path}: Data applicability ordinary navigation hidden`);
         else checked.add(node);
+      }
+      if (node.tagName === "TABLE") {
+        const direct = (el) => el?.childNodes.filter((child) => child.nodeType === 1) ?? [];
+        const cleanContainer = (el, tag) => el?.tagName === tag && el.childNodes.every((child) => child.nodeType === 1 || child.nodeType === 3 && !child.text.trim());
+        const [thead, tbody, ...extraParts] = direct(node);
+        const headRows = direct(thead), bodyRows = direct(tbody);
+        const readCells = (tr, cellTag) => cleanContainer(tr, "TR") ? direct(tr).map((cell) => cell.tagName === cellTag
+          && !cell.hasAttribute("rowspan") && !cell.hasAttribute("colspan")
+          && cell.childNodes.every((child) => child.nodeType === 3)
+          && !concealedText(cell) ? cell.text : null) : null;
+        const headers = headRows.length === 1 ? readCells(headRows[0], "TH") : null;
+        const rows = bodyRows.length ? bodyRows.map((tr) => readCells(tr, "TD")) : null;
+        if (extraParts.length || !cleanContainer(node, "TABLE") || !cleanContainer(thead, "THEAD") || !cleanContainer(tbody, "TBODY")
+            || !headers || headers.some((cell) => !nonempty(cell))
+            || !rows || rows.some((row) => !row || row.length !== headers.length || row.some((cell) => !nonempty(cell)))
+            || concealedText(node)) {
+          invalidRenderedTable = true;
+        } else {
+          tables.push({ section: currentSection, headers, rows });
+          checked.add(node);
+        }
       }
     }
     // This chapter admits no scientific image. Captured framework controls are qualified separately.
@@ -479,6 +527,8 @@ function validateRenderedDataApplicability(document, path, catalog, accepted, in
     }
     const expectedOrdinary = source.ordinary.map(row => projectOrdinaryReaderNavigation(row, route, print));
     if (!sameOrdinaryNavigation(ordinary, expectedOrdinary)
+        || invalidRenderedTable
+        || !sameRecord(tables, source.tables ?? [])
         || unit.querySelectorAll("figure").length !== (source.figure ? 1 : 0)) errors.push(`${path}: Data applicability reviewed ordinary navigation/figure count differs: ${route}`);
     const notes = unit.querySelectorAll("[data-reader-claim]");
     if (unit.querySelectorAll(".chapter-notes").length !== 1
@@ -491,7 +541,9 @@ function validateRenderedDataApplicability(document, path, catalog, accepted, in
       else checked.add(annotation);
     }
     const unitEntries = entries.filter((entry) => entry.path === path && entry.route === route), label = (destination) => {
-      const destSource = accepted.sources.find((row) => row.route === (destination.route === dataApplicabilityKey ? dataApplicabilityManuscript : destination.route)), ids = destination.route === dataApplicabilityKey ? accepted.sections.flatMap((row) => row.claimIds) : accepted.website.find((row) => row.route === destination.route)?.claimIds ?? [];
+      const destRoute = destination.route === dataApplicabilityKey ? dataApplicabilityManuscript : destination.route;
+      const { source: destSource, occurrences: destOccurrences } = reviewedDataApplicabilitySource(accepted, destRoute);
+      const ids = destOccurrences.map((row) => row.id);
       return `《${destSource?.title}》${destination.kind === "note" ? `注 ${ids.indexOf(destination.claimId) + 1}` : destination.kind === "heading" ? `·${destination.path === "/print" ? destination.id.slice(printUnitAnchor(destination.route).length + 1) : destination.id}` : destination.kind === "note-group" ? "注释" : ""}`;
     };
     for (const entry of unitEntries) {

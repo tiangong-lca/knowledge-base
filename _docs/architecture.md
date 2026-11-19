@@ -22,6 +22,36 @@ lastReviewedCommit: 2e0b523c3468613a3d71d03606f77adb36fd9a73
 
 # Publication architecture
 
+## Data-applicability-comparison successor
+
+The #147 Part VI opening data-applicability comparison successor
+(`scripts/reader-data-applicability-comparison.mjs` and
+`scripts/reader-data-applicability-comparison-factors.mjs`) updates `3` managed
+`B25` MDX files (`content/monograph/data-applicability.mdx`,
+`content/docs/book/database-fitness-and-documentation.mdx`, and
+`content/docs/book/review-support-and-version-boundaries.mdx`), extends the
+public catalog from `1,044` to `1,052` claims (`8` new `cl-dapp147-*` claims,
+`18` `1-to-1` single-artifact `ev-dapp147-*` / `psg-dapp147-*` pairs, `63`
+`BigInt`-verified `nf-dapp147-*` `numericFacts`, `3` new works/sources/readings,
+`4` appended prior carriers, `16` normalized prior evidence locators, and `14`
+bounded `cl-db2011-*` synchronizations), and embeds `2` responsive 6-column
+Markdown comparison tables while keeping `config/data-applicability-original.json`,
+`config/data-applicability-heading-original.json`, `config/data-applicability-accepted.json`,
+and all `40` case download files byte-identical. `scripts/reader-data-applicability.mjs`
+adds backward-compatible Markdown/DOM table verification (`>= 2` columns, non-empty
+pure text cells, no `rowspan`/`colspan` or HTML tags) and dynamic `destRoute`
+note-ordinal resolution so the isolated `f650600` historical fixture passes
+unchanged. `prepareDataApplicabilityComparisonSource` enforces closed `exactKeys`
+sub-envelopes, `oldFileShas` + `boundedMdxTransform`, and exact rollback to
+`c5b90b0352abaeaf0eec6706685076c8825d8925` (`dataApplicabilityComparisonPredecessorPin`
+`68aed4ba...`, `dataApplicabilityComparisonUnitPin` `728d8436...`,
+`dataApplicabilityComparisonCapturePin` `a7d7ab2f...`), while
+`qualifyDataApplicabilityComparisonHistory` validates `addressPin` (`3fe18985...`),
+`19` dated history controls, `5` ordinary targets, and `12` `noteIndex`-pinned
+`style="display:block"` public correction notices (`data-data-applicability-comparison-correction`)
+before `reader-surface.mjs` strips them for downstream legacy predicates,
+maintaining compiled CSS zero-drift (`be180e5d...`).
+
 ## Part-5-reread successor
 
 The #145 Part V whole-part continuous-reread successor

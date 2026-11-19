@@ -2,6 +2,8 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
+import dapp from '../config/reader-data-applicability-comparison.json' with { type: 'json' };
+import { restoreDataApplicabilityComparisonTestFiles } from './reader-data-applicability-comparison.mjs';
 import config from '../config/reader-part5-reread.json' with { type: 'json' };
 import capture from '../config/reader-part5-reread-capture.json' with { type: 'json' };
 import part4 from '../config/reader-part4-reread.json' with { type: 'json' };
@@ -14,7 +16,7 @@ import service from '../config/reader-service-constraints.json' with { type: 'js
 import catalog from '../knowledge/catalog.json' with { type: 'json' };
 import readings from '../knowledge/research/readings.json' with { type: 'json' };
 import literature from '../knowledge/research/literature-map.json' with { type: 'json' };
-import { testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
+import { previousScientificTestRecords, testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
 import { chapterAnchorPrefix, printUnitAnchor } from './reader-book.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
@@ -47,7 +49,8 @@ import {
 } from './reader-part5-reread.mjs';
 
 test('Part V continuous reread conserves 1044 claims, harmonizes Part V terminology, bridges cross-chapter premises and normalizes all 48 Part V locators', () => {
-  assert.equal(catalog.claims.length, 1044);
+  const prev145 = previousScientificTestRecords({ catalog, readings, literature }, dapp.unit);
+  assert.equal(prev145.catalog.claims.length, 1044);
   assert.deepEqual(catalog.claims.filter(c => c.scope.includes('具名方法与证据范围')), []);
 
   // Terminology, cross-anchors & first-appearance checks
@@ -214,7 +217,9 @@ test('Part V continuous reread rollback recovers exact 915af295 state and reject
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
-  const input = { catalog, readings, literature, files };
+  restoreDataApplicabilityComparisonTestFiles(files, dapp.unit);
+  const prev145 = previousScientificTestRecords({ catalog, readings, literature }, dapp.unit);
+  const input = { ...prev145, files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
   const qualify = (unit, customInput = input, customActual = actual, customStruct = structure) =>
     preparePart5RereadSource(unit, customInput, customActual, customStruct);
@@ -236,7 +241,7 @@ test('Part V continuous reread rollback recovers exact 915af295 state and reject
   });
 
   await t.test('rejects mutating prose/scope/caveats outside per-field allowlists or leaking PDF range tokens', () => {
-    const mutTextCat = structuredClone(catalog);
+    const mutTextCat = structuredClone(input.catalog);
     mutTextCat.claims.find(c => c.id === 'cl-cn-question').text += '未受审改写。';
     const mutTextInput = { ...input, catalog: mutTextCat };
     const mutTextActual = inspectReadableBookEdition(mutTextInput), mutTextStruct = copyeditSourceStructure(mutTextInput);
@@ -244,7 +249,7 @@ test('Part V continuous reread rollback recovers exact 915af295 state and reject
     for (const ch of uText.changes) if (ch.kind === 'record') ch.to = mutTextActual.records[ch.key];
     assert.throws(() => qualify(uText, mutTextInput, mutTextActual, mutTextStruct), /altered frozen prose text/);
 
-    const mutScopeCat = structuredClone(catalog);
+    const mutScopeCat = structuredClone(input.catalog);
     mutScopeCat.claims.find(c => c.id === 'cl-lime-national').scope += '未受审范围';
     const mutScopeInput = { ...input, catalog: mutScopeCat };
     const mutScopeActual = inspectReadableBookEdition(mutScopeInput), mutScopeStruct = copyeditSourceStructure(mutScopeInput);
@@ -252,7 +257,7 @@ test('Part V continuous reread rollback recovers exact 915af295 state and reject
     for (const ch of uScope.changes) if (ch.kind === 'record') ch.to = mutScopeActual.records[ch.key];
     assert.throws(() => qualify(uScope, mutScopeInput, mutScopeActual, mutScopeStruct), /altered frozen scope/);
 
-    const leakCat = structuredClone(catalog);
+    const leakCat = structuredClone(input.catalog);
     leakCat.evidence.find(e => e.id === 'ev-regional-xie-localization-layers').locator = '第 1 节与第 3 节（PDF第2、4—6页）';
     const leakInput = { ...input, catalog: leakCat };
     const leakActual = inspectReadableBookEdition(leakInput), leakStruct = copyeditSourceStructure(leakInput);
@@ -262,7 +267,7 @@ test('Part V continuous reread rollback recovers exact 915af295 state and reject
   });
 
   await t.test('rejects mutating evidence numericFacts outside locator', () => {
-    const badCat = structuredClone(catalog);
+    const badCat = structuredClone(input.catalog);
     badCat.evidence.find(e => e.id === 'ev-loc137-pef-method-global-nf').summary += 'x';
     const badInput = { ...input, catalog: badCat };
     const badActual = inspectReadableBookEdition(badInput), badStruct = copyeditSourceStructure(badInput);
@@ -294,7 +299,8 @@ test('Part V continuous reread rollback recovers exact 915af295 state and reject
 
 test('Part V continuous reread receipt verifier fails closed when capture pin is absent', () => {
   if (part5RereadCapturePin !== null || !config.unit) return;
-  const expected = readerPublicDownloads(catalog, literature, readings);
+  const prev145 = previousScientificTestRecords({ catalog, readings, literature }, dapp.unit);
+  const expected = readerPublicDownloads(prev145.catalog, prev145.literature, prev145.readings);
   const unit = structuredClone(config.unit);
   unit.outputCapture = {
     sourceCommit: '915af29592cee16d42772ba76080ed913d630e6b',
@@ -329,7 +335,8 @@ test('Part V continuous reread receipt verifier fails closed when capture pin is
 });
 
 test('Part V continuous reread receipts bind actual output capture independently', { skip: !part5RereadCapturePin && config.status !== 'reviewed' }, () => {
-  const expected = readerPublicDownloads(catalog, literature, readings);
+  const prev145 = previousScientificTestRecords({ catalog, readings, literature }, dapp.unit);
+  const expected = readerPublicDownloads(prev145.catalog, prev145.literature, prev145.readings);
   const verify = (mutateUnit = () => {}, mutateOutput) => {
     const unit = structuredClone(config.unit);
     mutateUnit(unit);
