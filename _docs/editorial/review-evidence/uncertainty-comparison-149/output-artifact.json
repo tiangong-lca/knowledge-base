@@ -1,0 +1,1693 @@
+{
+  "schemaVersion": 1,
+  "kind": "output",
+  "unit": "uncertainty-comparison-149",
+  "date": "2026-11-19",
+  "subjectSha256": "0e8de3f829b2d9b86764d1e15865c44b1eb0d7fe3cd9d499fb60f7a88af6a8f9",
+  "scope": [
+    "content/docs/book/uncertainty-and-variability.mdx",
+    "claims:cl-unc-sd-sem",
+    "claims:cl-book-unc-bridge",
+    "evidence:ev-unc-huij-types",
+    "evidence:ev-unc-huij-parameters",
+    "evidence:ev-unc-huij-model",
+    "evidence:ev-unc-huij-choices",
+    "evidence:ev-unc-huij-target",
+    "evidence:ev-unc-huij-sd-sem",
+    "evidence:ev-unc-hs-numerical",
+    "readings:rd-ilcd-2010",
+    "readings:rd-kb44-ec2021",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:order:sources",
+    "researchMetadata:order:readings",
+    "researchMetadata:order:gaps",
+    "researchMetadata:order:revisions",
+    "researchMetadata:order:literature",
+    "researchMetadata:order:queries",
+    "researchMetadata:public-projection",
+    "claims:cl-unc149-variability-vs-epistemic",
+    "claims:cl-unc149-framework-comparison",
+    "claims:cl-unc149-local-vs-global-sa",
+    "claims:cl-unc149-taylor-vs-sampling",
+    "claims:cl-unc149-gsa-outliers-nonlinearity",
+    "claims:cl-unc149-mc-runs-precision-vs-accuracy",
+    "claims:cl-unc149-comparative-paired-and-pvalue",
+    "claims:cl-unc149-pedigree-mc-boundary",
+    "evidence:ev-unc149-heijungs2020-sources-runtime",
+    "evidence:ev-unc149-heijungs2020-standalone-precision-accuracy",
+    "evidence:ev-unc149-heijungs2020-comparative-pvalue-cap",
+    "evidence:ev-unc149-heijungs2020-pedigree-incompatibility",
+    "evidence:ev-unc149-groen2017-variability-local-global",
+    "evidence:ev-unc149-groen2017-methods-cost-case-studies",
+    "evidence:ev-unc149-groen2017-outliers-caveats",
+    "evidence:ev-unc149-ilcd2010-sensitivity-check",
+    "evidence:ev-unc149-ilcd2010-comparative-covariance",
+    "evidence:ev-unc149-eu2021-robustness-hotspots",
+    "sources:src-unc149-heijungs-2020",
+    "sources:src-unc149-groen-2017",
+    "readings:rd-unc149-heijungs-2020",
+    "readings:rd-unc149-groen-2017",
+    "gaps:gap-unc149-correlated-and-nonlinear-lcia-gsa",
+    "revisions:rev-unc149-b26-uncertainty-variability-comparison",
+    "literature:work-unc149-heijungs-2020",
+    "literature:work-unc149-groen-2017",
+    "queries:q-unc149-propagation-global-sensitivity-comparative-inference-20261119"
+  ],
+  "observed": "Actual private Next/compiler and untouched-exporter bytes from base fe9f52cb0a0cc02c90fe7ef595b0f0d2b7bb5cea and a declared dirty working-preview. Temporary technical admission inside an isolated clone served inspection only and supplies no editorial acceptance.",
+  "observations": {
+    "outputs": [
+      {
+        "path": "/docs/book/review-support-and-version-boundaries",
+        "route": "/docs/book/review-support-and-version-boundaries",
+        "from": "2f4d94b0c8d6fff3c000d6e4b7dc061ecb64693f84fdca0b99f5b53dd0b27f22",
+        "sha256": "0687fd8659b8baba3411228ff0cf5dce82aa7d40176fc5d5f3891ebdcc83ee0b",
+        "rationale": "核对第六部《变异与不确定性》跨体系比较单元（#149）在 /docs/book/review-support-and-version-boundaries#/docs/book/review-support-and-version-boundaries 上的新增比较论述、两张六列对照表、共享证据定位符规范化、具名更正说明或历史范围控件更新。"
+      },
+      {
+        "path": "/docs/book/uncertainty-and-variability",
+        "route": "/docs/book/uncertainty-and-variability",
+        "from": "ef16bfe67bc8f00ba0ff963ae990820e2e425d356f3d74f5e74c79ffbc62b324",
+        "sha256": "030e79e4f1169ed18b35a78e74f33a20a39c21083989adf8e98d201067de2202",
+        "rationale": "核对第六部《变异与不确定性》跨体系比较单元（#149）在 /docs/book/uncertainty-and-variability#/docs/book/uncertainty-and-variability 上的新增比较论述、两张六列对照表、共享证据定位符规范化、具名更正说明或历史范围控件更新。"
+      },
+      {
+        "path": "/docs/book/data-quality-and-probability",
+        "route": "/docs/book/data-quality-and-probability",
+        "from": "7e2f6b2e74b83bc1b4b1f90fe6961c1dba4ee69bba2292e4d722734170491963",
+        "sha256": "ef429488e8a35bce8d3fc55cbfe51b6ace38703f35b8ccc38c505577fab9cdd9",
+        "rationale": "核对第六部《变异与不确定性》跨体系比较单元（#149）在 /docs/book/data-quality-and-probability#/docs/book/data-quality-and-probability 上的新增比较论述、两张六列对照表、共享证据定位符规范化、具名更正说明或历史范围控件更新。"
+      },
+      {
+        "path": "/docs/book/connecting-objects-references-and-time",
+        "route": "/docs/book/connecting-objects-references-and-time",
+        "from": "51ac5b5955f9d009d16ba424ad0e098ac1871a00a2f570f5ef438051d1214b6d",
+        "sha256": "30962cd17336b8abb8c53f44874deab45f713f0d5a65516b73e7f1ce2340f1ce",
+        "rationale": "核对第六部《变异与不确定性》跨体系比较单元（#149）在 /docs/book/connecting-objects-references-and-time#/docs/book/connecting-objects-references-and-time 上的新增比较论述、两张六列对照表、共享证据定位符规范化、具名更正说明或历史范围控件更新。"
+      },
+      {
+        "path": "/docs/book/from-connected-results-to-conditional-judgment",
+        "route": "/docs/book/from-connected-results-to-conditional-judgment",
+        "from": "2cd1db7baa938bb259e8f92578776120d53c6917b9d38478575a342e1cd8d0d4",
+        "sha256": "c5605032870a5d25a1b029b1cc97242de3db6d5f4e4a1e2ba0543a16566262a3",
+        "rationale": "核对第六部《变异与不确定性》跨体系比较单元（#149）在 /docs/book/from-connected-results-to-conditional-judgment#/docs/book/from-connected-results-to-conditional-judgment 上的新增比较论述、两张六列对照表、共享证据定位符规范化、具名更正说明或历史范围控件更新。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/uncertainty-and-variability",
+        "from": "136c5458d3ceef99234795eb4029263d98eaa4766d4383bee556b6580fa0bbb5",
+        "sha256": "5b4b284dea6c1865af5bdb8b4d912cab39b73de72d51bfc1590a41c04335735b",
+        "rationale": "核对第六部《变异与不确定性》跨体系比较单元（#149）在 /print#/docs/book/uncertainty-and-variability 上的新增比较论述、两张六列对照表、共享证据定位符规范化、具名更正说明或历史范围控件更新。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/data-quality-and-probability",
+        "from": "d904a7df92c1a4306d80dc5475be6aa557015a48670e1988f2b2ab1c1e50170f",
+        "sha256": "276db902f8bf37a949d3e2c5cb7937611be976fa93cdaccfd60968c63679aefb",
+        "rationale": "核对第六部《变异与不确定性》跨体系比较单元（#149）在 /print#/docs/book/data-quality-and-probability 上的新增比较论述、两张六列对照表、共享证据定位符规范化、具名更正说明或历史范围控件更新。"
+      },
+      {
+        "path": "/print",
+        "route": "book-revisable-judgment",
+        "from": "8298d3aecfea1fa58b54979d364e4a176379cc13a6db8bd1785cbebb46b3849b",
+        "sha256": "1380f835bce21751c654e751927c22e35a2725e660c10d57be5405dc1b3d0fa4",
+        "rationale": "核对第六部《变异与不确定性》跨体系比较单元（#149）在 /print#book-revisable-judgment 上的新增比较论述、两张六列对照表、共享证据定位符规范化、具名更正说明或历史范围控件更新。"
+      }
+    ],
+    "publicArtifacts": [
+      {
+        "path": "claims/index.html",
+        "from": "922cfd977feadce6ce26090a36762ad7e157abd610dbe435b0853983dc4d58fd",
+        "sha256": "51b3711898297a5d6ef3aaaf4b4398150d16f12bc889be6cea050a8173b4e9d7",
+        "rationale": "核对第六部《变异与不确定性》跨体系比较单元（#149）对公开目录、注释页、引文出处页、研究台账、覆盖报告或连续阅读打印页的实际输出变化及其真实前态。"
+      },
+      {
+        "path": "sources/index.html",
+        "from": "9fdba3b908daae09460ba8469ab4d1cb48db65ea7298473bd25808bbaf03b5c7",
+        "sha256": "bd4fff23cd6a0708c7923164f90acbb43bfb72fdf37ea036c417cab6166e69eb",
+        "rationale": "核对第六部《变异与不确定性》跨体系比较单元（#149）对公开目录、注释页、引文出处页、研究台账、覆盖报告或连续阅读打印页的实际输出变化及其真实前态。"
+      },
+      {
+        "path": "concepts/index.html",
+        "from": "a6dbc86145eae41d2ee5f09c47945a4e184b91d68c346cf64f7df10f7422c205",
+        "sha256": "c6f4673e68d6a5045e486455146658188ebfbccb6fb0f00991cdefc05257c1b8",
+        "rationale": "核对第六部《变异与不确定性》跨体系比较单元（#149）对公开目录、注释页、引文出处页、研究台账、覆盖报告或连续阅读打印页的实际输出变化及其真实前态。"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "from": "6d91a1bd3ae950eadc94825a3f0c0a817b4254f361b20850f633e8b0003b3ff2",
+        "sha256": "df99002be1f312bef26c4db7d6f34d1dca1c840a727129f642c66080e0d0370c",
+        "rationale": "核对第六部《变异与不确定性》跨体系比较单元（#149）对公开目录、注释页、引文出处页、研究台账、覆盖报告或连续阅读打印页的实际输出变化及其真实前态。"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "from": "2ec6978b8cbacb6a3c3b6c112e3bd3d77764b4c51970ef1986b0cb60f4d059b1",
+        "sha256": "b194767df839f202fe217a417e9e233aaa233e96ca80ea9a17b9af5805c4fb67",
+        "rationale": "核对第六部《变异与不确定性》跨体系比较单元（#149）对公开目录、注释页、引文出处页、研究台账、覆盖报告或连续阅读打印页的实际输出变化及其真实前态。"
+      },
+      {
+        "path": "research/index.html",
+        "from": "58ffc3923404bcd9337a49d28668a98d66826f8da13826b7509f307f13418e58",
+        "sha256": "c97d05743f9bbff156e9ea28594c964467cd9bd75659af2b152c41cb399b882a",
+        "rationale": "核对第六部《变异与不确定性》跨体系比较单元（#149）对公开目录、注释页、引文出处页、研究台账、覆盖报告或连续阅读打印页的实际输出变化及其真实前态。"
+      },
+      {
+        "path": "downloads/bibliography.json",
+        "from": "0d30d7f69783776a2f80c05e4fd061755c28c6194a5ca944fe0c939b9b030ae8",
+        "sha256": "03641bcd2ca77d9e4dc9f04f69909503ee13be3e2fba96f6a5dc6134b7eac63c",
+        "rationale": "核对第六部《变异与不确定性》跨体系比较单元（#149）对公开目录、注释页、引文出处页、研究台账、覆盖报告或连续阅读打印页的实际输出变化及其真实前态。"
+      },
+      {
+        "path": "downloads/research.json",
+        "from": "0d30d7f69783776a2f80c05e4fd061755c28c6194a5ca944fe0c939b9b030ae8",
+        "sha256": "03641bcd2ca77d9e4dc9f04f69909503ee13be3e2fba96f6a5dc6134b7eac63c",
+        "rationale": "核对第六部《变异与不确定性》跨体系比较单元（#149）对公开目录、注释页、引文出处页、研究台账、覆盖报告或连续阅读打印页的实际输出变化及其真实前态。"
+      },
+      {
+        "path": "coverage/index.html",
+        "from": "577dd4520ea266cefa884f19e5adec989d5d75a685a8abad32434419f35ce1bc",
+        "sha256": "4c74dde87828b1f3030afad2f39fb9878da8335ac41d3ff14789d3f17a1cef7f",
+        "rationale": "核对第六部《变异与不确定性》跨体系比较单元（#149）对公开目录、注释页、引文出处页、研究台账、覆盖报告或连续阅读打印页的实际输出变化及其真实前态。"
+      }
+    ],
+    "addresses": {
+      "/docs/book/uncertainty-and-variability#nd-page": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "chapter",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc-types",
+          "cl-unc-target",
+          "cl-unc-sd-sem",
+          "cl-unc149-variability-vs-epistemic",
+          "cl-unc-parameters",
+          "cl-unc-model",
+          "cl-unc-choices",
+          "cl-book-unc-separate",
+          "cl-unc149-framework-comparison",
+          "cl-unc149-local-vs-global-sa",
+          "cl-unc149-taylor-vs-sampling",
+          "cl-unc149-gsa-outliers-nonlinearity",
+          "cl-unc149-mc-runs-precision-vs-accuracy",
+          "cl-unc149-comparative-paired-and-pvalue",
+          "cl-unc149-pedigree-mc-boundary",
+          "cl-unc-numerical",
+          "cl-book-unc-bridge"
+        ],
+        "ordinary": [
+          "d45cd777bc8015611d63ba08c484cc85184944d08e5ed2ca30f42826927e65b1",
+          "d18f49cb985116e501a54e170ec9142e17edae4633410964d2cce134a8688065",
+          "1c479bee5076d60b6023f37d415ee6a62fcf584166ab26d3b10b48845d7ce351"
+        ],
+        "bindings": {
+          "links": [
+            [],
+            [],
+            []
+          ],
+          "tables": [
+            {
+              "header": [
+                [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              ],
+              "body": [
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "固有变异（厂际、地域、时间）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "系统内在真实散布；不能靠增加抽样消除，须分区域／工艺／时段刻画"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "总体分布与标准差（SD）、子总体分层"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "区分来源变异与均值估计，按目标界定代表性"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "经技术、地域、时间代表性评分与细化活动数据反映"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "用均值标准误掩盖个体工厂或流域极端值"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "参数认识不确定性"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "测量精度不足或资料缺口；可经补充实测与文献核查缩减"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "样本均值标准误（SEM）、概率密度函数与相关性"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "清单与影响层可配合蒙特卡洛计算并按图 26 优先改进"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "全篇无蒙特卡洛强制条款，折入数据质量评级精密度项 P"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "以重复模拟替代缺失观测或把模拟次数当样本量"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "模型结构不确定性"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "空间聚合、机制简化或边界遗漏；不能靠收窄参数分布补回，须改进结构"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "机制对照、高分辨率模型或结构残差分析"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "规定条款 I.a 明示计算不确定度常遗漏系统性偏差"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "第 6.2 节完整性与一致性稳健性检验配合边界规则"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "仅报告极窄参数误差棒却忽略流域或排放路径丢失"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "方法与规范选择不确定性"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "功能单位、分配、特征化与赋权约定；属研究设定，不适用抽样缩减"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "离散情景分析与条件对照，默认不赋等概率"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "目标范围、多功能性与不同影响评价（LCIA）方法以情景并列检验"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "由统一产品规则与强制热点门槛锁定，第 6.2 节作敏感度检视"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "将两种规范情景当成随机抽样或混算均值与方差"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "数值求解不稳定性"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "矩阵条件数、舍入与算法误差；独立于数据抽样，须靠数值算法诊断"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "矩阵病态（条件数）分析、算法稳健性与收敛诊断"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "与清单数据不确定性分属不同层次"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "依赖标准化参考包与合规工具校验，不替代算法分析"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "把矩阵病态导致的解跳变误归咎于原始工厂数据"
+                  }
+                ]
+              ]
+            },
+            {
+              "header": [
+                [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              ],
+              "body": [
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "局部单因子灵敏度（OAT／偏导数）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "仅基准点估计值"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "低（按参数逐一微扰）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "忽略各参数真实离散跨度，无法反映右偏均值上移"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "不能捕捉多参数同时变化的交互效应"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "仅用于初步识别基准点附近的边际斜率"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "一阶泰勒关键议题分析（KIA）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "中心值与离散度（无需完整分布）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "1 次解析计算（Groen 等人 2017 表 3，最快）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "电力案例方差低估约 33%、白鱼低估约 20%，且漏掉均值上移"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "仅作一阶线性展开，不输出完整概率分布"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "仅适用于低离散度（如 cv = 5%）近似线性模型的快速筛查"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "标准化回归平方（SRC）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "完整概率密度函数与随机样本"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "N 次抽样运行（Groen 等人 2017 表 3）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "均值与方差贴近基准，但电力案例解释份额跌至 81.7%"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "对右尾离群值敏感；常规实现假定输入无相关"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "适用于低至中等离散度、近似线性且离群值不突出的模型"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "随机平衡设计（RBD）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "完整概率密度函数与分层样本"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "N 次抽样运行（Groen 等人 2017 表 3，后处理快于 SRC）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "电力案例解释份额跌至 79.7%；白鱼 115 参数案例为 94.0%"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "易受高离散度右尾影响且低贡献参数可能高估；假定输入无相关"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "适用于参数较多且需快速频域分解的探索性筛查"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "斯皮尔曼秩相关平方（SCC）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "完整概率密度函数与随机样本"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "N 次抽样运行（Groen 等人 2017 表 3，与 SRC 共用样本）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "电力案例解释 94.0%、白鱼 115 参数案例解释 94.5%"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "秩变换显著抑制右尾离群值；仍假定输入无相关"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "适用于高离散度单调非线性模型的稳健主因排序"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "索博尔一阶与总效应（Sobol SME／STE）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "完整概率密度函数与双样本矩阵"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "表 3 计作 2N 基础矩阵（含混合矩阵评估，最慢）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "电力案例 SME 91.6%、STE 110%，稳健捕捉 18.4 个百分点交互差额"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "可显式分离主效应与交互及非线性特征化效应"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "适用于高离散度、强交互或非线性中点／终点路径的深度诊断"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "差值协方差蒙特卡洛＋样本量上限"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "含共享过程结构与真实样本量 n 的输入"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "随 N_run 线性增长（Heijungs 2020 第 1 节：单次 1 秒至 5 分钟）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "可保留真实分布形态，但大 N_run 会把均值标准误压至虚假极小"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "宜对两系统之差计入共享过程协方差；谱系分布缺真实样本量"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "仅可在区分模拟误差与实测样本量、且不把无显著差异当相等的前提下支持比较推断"
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "/docs/book/uncertainty-and-variability#main-content": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "reading-title",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc-types",
+          "cl-unc-target",
+          "cl-unc-sd-sem",
+          "cl-unc149-variability-vs-epistemic",
+          "cl-unc-parameters",
+          "cl-unc-model",
+          "cl-unc-choices",
+          "cl-book-unc-separate",
+          "cl-unc149-framework-comparison",
+          "cl-unc149-local-vs-global-sa",
+          "cl-unc149-taylor-vs-sampling",
+          "cl-unc149-gsa-outliers-nonlinearity",
+          "cl-unc149-mc-runs-precision-vs-accuracy",
+          "cl-unc149-comparative-paired-and-pvalue",
+          "cl-unc149-pedigree-mc-boundary",
+          "cl-unc-numerical",
+          "cl-book-unc-bridge"
+        ],
+        "ordinary": [
+          "d45cd777bc8015611d63ba08c484cc85184944d08e5ed2ca30f42826927e65b1",
+          "d18f49cb985116e501a54e170ec9142e17edae4633410964d2cce134a8688065",
+          "1c479bee5076d60b6023f37d415ee6a62fcf584166ab26d3b10b48845d7ce351"
+        ],
+        "chapter": "nd-page"
+      },
+      "/docs/book/uncertainty-and-variability#估计对象": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "heading",
+        "title": "分布与估计对象",
+        "claimIds": [
+          "cl-unc-types",
+          "cl-unc-target",
+          "cl-unc-sd-sem",
+          "cl-unc149-variability-vs-epistemic"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/uncertainty-and-variability#不确定性来源": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "heading",
+        "title": "参数与模型选择",
+        "claimIds": [
+          "cl-unc-parameters",
+          "cl-unc-model",
+          "cl-unc-choices",
+          "cl-book-unc-separate",
+          "cl-unc149-framework-comparison"
+        ],
+        "ordinary": [
+          "d18f49cb985116e501a54e170ec9142e17edae4633410964d2cce134a8688065"
+        ]
+      },
+      "/docs/book/uncertainty-and-variability#数值可靠性": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "heading",
+        "title": "求解的数值稳定性",
+        "claimIds": [
+          "cl-unc149-local-vs-global-sa",
+          "cl-unc149-taylor-vs-sampling",
+          "cl-unc149-gsa-outliers-nonlinearity",
+          "cl-unc149-mc-runs-precision-vs-accuracy",
+          "cl-unc149-comparative-paired-and-pvalue",
+          "cl-unc149-pedigree-mc-boundary",
+          "cl-unc-numerical",
+          "cl-book-unc-bridge"
+        ],
+        "ordinary": [
+          "1c479bee5076d60b6023f37d415ee6a62fcf584166ab26d3b10b48845d7ce351"
+        ]
+      },
+      "/docs/book/uncertainty-and-variability#chapter-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-annotations": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note-group",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc-types",
+          "cl-unc-target",
+          "cl-unc-sd-sem",
+          "cl-unc149-variability-vs-epistemic",
+          "cl-unc-parameters",
+          "cl-unc-model",
+          "cl-unc-choices",
+          "cl-book-unc-separate",
+          "cl-unc149-framework-comparison",
+          "cl-unc149-local-vs-global-sa",
+          "cl-unc149-taylor-vs-sampling",
+          "cl-unc149-gsa-outliers-nonlinearity",
+          "cl-unc149-mc-runs-precision-vs-accuracy",
+          "cl-unc149-comparative-paired-and-pvalue",
+          "cl-unc149-pedigree-mc-boundary",
+          "cl-unc-numerical",
+          "cl-book-unc-bridge"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/uncertainty-and-variability#chapter-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc-types": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc-types"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/uncertainty-and-variability#chapter-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc-target": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc-target"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/uncertainty-and-variability#chapter-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc-sd-sem": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc-sd-sem"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/uncertainty-and-variability#chapter-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc149-variability-vs-epistemic": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc149-variability-vs-epistemic"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/uncertainty-and-variability#chapter-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc-parameters": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc-parameters"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/uncertainty-and-variability#chapter-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc-model": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc-model"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/uncertainty-and-variability#chapter-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc-choices": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc-choices"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/uncertainty-and-variability#chapter-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-book-unc-separate": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-book-unc-separate"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/uncertainty-and-variability#chapter-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc149-framework-comparison": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc149-framework-comparison"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/uncertainty-and-variability#chapter-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc149-local-vs-global-sa": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc149-local-vs-global-sa"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/uncertainty-and-variability#chapter-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc149-taylor-vs-sampling": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc149-taylor-vs-sampling"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/uncertainty-and-variability#chapter-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc149-gsa-outliers-nonlinearity": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc149-gsa-outliers-nonlinearity"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/uncertainty-and-variability#chapter-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc149-mc-runs-precision-vs-accuracy": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc149-mc-runs-precision-vs-accuracy"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/uncertainty-and-variability#chapter-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc149-comparative-paired-and-pvalue": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc149-comparative-paired-and-pvalue"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/uncertainty-and-variability#chapter-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc149-pedigree-mc-boundary": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc149-pedigree-mc-boundary"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/uncertainty-and-variability#chapter-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc-numerical": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc-numerical"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/uncertainty-and-variability#chapter-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-book-unc-bridge": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-book-unc-bridge"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "chapter",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc-types",
+          "cl-unc-target",
+          "cl-unc-sd-sem",
+          "cl-unc149-variability-vs-epistemic",
+          "cl-unc-parameters",
+          "cl-unc-model",
+          "cl-unc-choices",
+          "cl-book-unc-separate",
+          "cl-unc149-framework-comparison",
+          "cl-unc149-local-vs-global-sa",
+          "cl-unc149-taylor-vs-sampling",
+          "cl-unc149-gsa-outliers-nonlinearity",
+          "cl-unc149-mc-runs-precision-vs-accuracy",
+          "cl-unc149-comparative-paired-and-pvalue",
+          "cl-unc149-pedigree-mc-boundary",
+          "cl-unc-numerical",
+          "cl-book-unc-bridge"
+        ],
+        "ordinary": [
+          "d45cd777bc8015611d63ba08c484cc85184944d08e5ed2ca30f42826927e65b1",
+          "d18f49cb985116e501a54e170ec9142e17edae4633410964d2cce134a8688065",
+          "1c479bee5076d60b6023f37d415ee6a62fcf584166ab26d3b10b48845d7ce351"
+        ],
+        "bindings": {
+          "links": [
+            [],
+            [],
+            []
+          ],
+          "tables": [
+            {
+              "header": [
+                [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              ],
+              "body": [
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "固有变异（厂际、地域、时间）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "系统内在真实散布；不能靠增加抽样消除，须分区域／工艺／时段刻画"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "总体分布与标准差（SD）、子总体分层"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "区分来源变异与均值估计，按目标界定代表性"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "经技术、地域、时间代表性评分与细化活动数据反映"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "用均值标准误掩盖个体工厂或流域极端值"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "参数认识不确定性"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "测量精度不足或资料缺口；可经补充实测与文献核查缩减"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "样本均值标准误（SEM）、概率密度函数与相关性"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "清单与影响层可配合蒙特卡洛计算并按图 26 优先改进"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "全篇无蒙特卡洛强制条款，折入数据质量评级精密度项 P"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "以重复模拟替代缺失观测或把模拟次数当样本量"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "模型结构不确定性"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "空间聚合、机制简化或边界遗漏；不能靠收窄参数分布补回，须改进结构"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "机制对照、高分辨率模型或结构残差分析"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "规定条款 I.a 明示计算不确定度常遗漏系统性偏差"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "第 6.2 节完整性与一致性稳健性检验配合边界规则"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "仅报告极窄参数误差棒却忽略流域或排放路径丢失"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "方法与规范选择不确定性"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "功能单位、分配、特征化与赋权约定；属研究设定，不适用抽样缩减"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "离散情景分析与条件对照，默认不赋等概率"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "目标范围、多功能性与不同影响评价（LCIA）方法以情景并列检验"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "由统一产品规则与强制热点门槛锁定，第 6.2 节作敏感度检视"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "将两种规范情景当成随机抽样或混算均值与方差"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "数值求解不稳定性"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "矩阵条件数、舍入与算法误差；独立于数据抽样，须靠数值算法诊断"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "矩阵病态（条件数）分析、算法稳健性与收敛诊断"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "与清单数据不确定性分属不同层次"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "依赖标准化参考包与合规工具校验，不替代算法分析"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "把矩阵病态导致的解跳变误归咎于原始工厂数据"
+                  }
+                ]
+              ]
+            },
+            {
+              "header": [
+                [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              ],
+              "body": [
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "局部单因子灵敏度（OAT／偏导数）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "仅基准点估计值"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "低（按参数逐一微扰）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "忽略各参数真实离散跨度，无法反映右偏均值上移"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "不能捕捉多参数同时变化的交互效应"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "仅用于初步识别基准点附近的边际斜率"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "一阶泰勒关键议题分析（KIA）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "中心值与离散度（无需完整分布）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "1 次解析计算（Groen 等人 2017 表 3，最快）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "电力案例方差低估约 33%、白鱼低估约 20%，且漏掉均值上移"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "仅作一阶线性展开，不输出完整概率分布"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "仅适用于低离散度（如 cv = 5%）近似线性模型的快速筛查"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "标准化回归平方（SRC）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "完整概率密度函数与随机样本"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "N 次抽样运行（Groen 等人 2017 表 3）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "均值与方差贴近基准，但电力案例解释份额跌至 81.7%"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "对右尾离群值敏感；常规实现假定输入无相关"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "适用于低至中等离散度、近似线性且离群值不突出的模型"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "随机平衡设计（RBD）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "完整概率密度函数与分层样本"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "N 次抽样运行（Groen 等人 2017 表 3，后处理快于 SRC）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "电力案例解释份额跌至 79.7%；白鱼 115 参数案例为 94.0%"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "易受高离散度右尾影响且低贡献参数可能高估；假定输入无相关"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "适用于参数较多且需快速频域分解的探索性筛查"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "斯皮尔曼秩相关平方（SCC）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "完整概率密度函数与随机样本"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "N 次抽样运行（Groen 等人 2017 表 3，与 SRC 共用样本）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "电力案例解释 94.0%、白鱼 115 参数案例解释 94.5%"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "秩变换显著抑制右尾离群值；仍假定输入无相关"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "适用于高离散度单调非线性模型的稳健主因排序"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "索博尔一阶与总效应（Sobol SME／STE）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "完整概率密度函数与双样本矩阵"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "表 3 计作 2N 基础矩阵（含混合矩阵评估，最慢）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "电力案例 SME 91.6%、STE 110%，稳健捕捉 18.4 个百分点交互差额"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "可显式分离主效应与交互及非线性特征化效应"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "适用于高离散度、强交互或非线性中点／终点路径的深度诊断"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "差值协方差蒙特卡洛＋样本量上限"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "含共享过程结构与真实样本量 n 的输入"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "随 N_run 线性增长（Heijungs 2020 第 1 节：单次 1 秒至 5 分钟）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "可保留真实分布形态，但大 N_run 会把均值标准误压至虚假极小"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "宜对两系统之差计入共享过程协方差；谱系分布缺真实样本量"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "仅可在区分模拟误差与实测样本量、且不把无显著差异当相等的前提下支持比较推断"
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "/print#print-reading-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "reading-title",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc-types",
+          "cl-unc-target",
+          "cl-unc-sd-sem",
+          "cl-unc149-variability-vs-epistemic",
+          "cl-unc-parameters",
+          "cl-unc-model",
+          "cl-unc-choices",
+          "cl-book-unc-separate",
+          "cl-unc149-framework-comparison",
+          "cl-unc149-local-vs-global-sa",
+          "cl-unc149-taylor-vs-sampling",
+          "cl-unc149-gsa-outliers-nonlinearity",
+          "cl-unc149-mc-runs-precision-vs-accuracy",
+          "cl-unc149-comparative-paired-and-pvalue",
+          "cl-unc149-pedigree-mc-boundary",
+          "cl-unc-numerical",
+          "cl-book-unc-bridge"
+        ],
+        "ordinary": [
+          "d45cd777bc8015611d63ba08c484cc85184944d08e5ed2ca30f42826927e65b1",
+          "d18f49cb985116e501a54e170ec9142e17edae4633410964d2cce134a8688065",
+          "1c479bee5076d60b6023f37d415ee6a62fcf584166ab26d3b10b48845d7ce351"
+        ],
+        "chapter": "print-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479"
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-估计对象": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "heading",
+        "title": "分布与估计对象",
+        "claimIds": [
+          "cl-unc-types",
+          "cl-unc-target",
+          "cl-unc-sd-sem",
+          "cl-unc149-variability-vs-epistemic"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-不确定性来源": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "heading",
+        "title": "参数与模型选择",
+        "claimIds": [
+          "cl-unc-parameters",
+          "cl-unc-model",
+          "cl-unc-choices",
+          "cl-book-unc-separate",
+          "cl-unc149-framework-comparison"
+        ],
+        "ordinary": [
+          "d18f49cb985116e501a54e170ec9142e17edae4633410964d2cce134a8688065"
+        ]
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-数值可靠性": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "heading",
+        "title": "求解的数值稳定性",
+        "claimIds": [
+          "cl-unc149-local-vs-global-sa",
+          "cl-unc149-taylor-vs-sampling",
+          "cl-unc149-gsa-outliers-nonlinearity",
+          "cl-unc149-mc-runs-precision-vs-accuracy",
+          "cl-unc149-comparative-paired-and-pvalue",
+          "cl-unc149-pedigree-mc-boundary",
+          "cl-unc-numerical",
+          "cl-book-unc-bridge"
+        ],
+        "ordinary": [
+          "1c479bee5076d60b6023f37d415ee6a62fcf584166ab26d3b10b48845d7ce351"
+        ]
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-annotations": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note-group",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc-types",
+          "cl-unc-target",
+          "cl-unc-sd-sem",
+          "cl-unc149-variability-vs-epistemic",
+          "cl-unc-parameters",
+          "cl-unc-model",
+          "cl-unc-choices",
+          "cl-book-unc-separate",
+          "cl-unc149-framework-comparison",
+          "cl-unc149-local-vs-global-sa",
+          "cl-unc149-taylor-vs-sampling",
+          "cl-unc149-gsa-outliers-nonlinearity",
+          "cl-unc149-mc-runs-precision-vs-accuracy",
+          "cl-unc149-comparative-paired-and-pvalue",
+          "cl-unc149-pedigree-mc-boundary",
+          "cl-unc-numerical",
+          "cl-book-unc-bridge"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc-types": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc-types"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc-target": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc-target"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc-sd-sem": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc-sd-sem"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc149-variability-vs-epistemic": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc149-variability-vs-epistemic"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc-parameters": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc-parameters"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc-model": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc-model"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc-choices": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc-choices"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-book-unc-separate": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-book-unc-separate"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc149-framework-comparison": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc149-framework-comparison"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc149-local-vs-global-sa": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc149-local-vs-global-sa"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc149-taylor-vs-sampling": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc149-taylor-vs-sampling"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc149-gsa-outliers-nonlinearity": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc149-gsa-outliers-nonlinearity"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc149-mc-runs-precision-vs-accuracy": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc149-mc-runs-precision-vs-accuracy"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc149-comparative-paired-and-pvalue": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc149-comparative-paired-and-pvalue"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc149-pedigree-mc-boundary": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc149-pedigree-mc-boundary"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-unc-numerical": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-unc-numerical"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479-claim-cl-book-unc-bridge": {
+        "route": "/docs/book/uncertainty-and-variability",
+        "kind": "note",
+        "title": "变异与不确定性",
+        "claimIds": [
+          "cl-book-unc-bridge"
+        ],
+        "ordinary": []
+      }
+    },
+    "source": "actual-export",
+    "sourceCommit": "fe9f52cb0a0cc02c90fe7ef595b0f0d2b7bb5cea",
+    "capture": {
+      "sourceCommit": "fe9f52cb0a0cc02c90fe7ef595b0f0d2b7bb5cea",
+      "dirty": true,
+      "status": "working-preview",
+      "manifestSha256": "b0aa26ce41973ebd00e566d0554fb1033f5e8004f73c99baf397e0b74585e877",
+      "normalizedProofSha256": "5dd14413952ccb8244caeae46b88a7566e039b85bd874fd4654a51c0b3a5bdec"
+    },
+    "articleFiles": [
+      {
+        "path": "docs/book/review-support-and-version-boundaries/index.html",
+        "sha256": "dcc9550ef2326b09917de11faa09ff75e2cc96d4f1163f551eb5514920ce2662",
+        "bytes": 1295827
+      },
+      {
+        "path": "docs/book/uncertainty-and-variability/index.html",
+        "sha256": "a22ed8d1bb0fe766a113b905d7316f74bc5376c6231f4d36981852184d5d0b9c",
+        "bytes": 1294755
+      },
+      {
+        "path": "docs/book/data-quality-and-probability/index.html",
+        "sha256": "6caed8840fbb03cffa230218a5f69f1d383e118bef057c39548129c43963f2a2",
+        "bytes": 1470553
+      },
+      {
+        "path": "docs/book/connecting-objects-references-and-time/index.html",
+        "sha256": "b95a0a571b7c3344d1a889e81e5c971b5f1b2ad8a407d2ab3fc9abd82b1efba9",
+        "bytes": 1216921
+      },
+      {
+        "path": "docs/book/from-connected-results-to-conditional-judgment/index.html",
+        "sha256": "7810c8d5e337ecbb72e22acbe5c0eb8c3c138ab9c237706857107ebc72d22a7e",
+        "bytes": 1297355
+      },
+      {
+        "path": "print/index.html",
+        "sha256": "6effaaaa1d974914961b4d5c639bd9b4ef52c6c45440b11230e447113802c3fd",
+        "bytes": 16415914
+      }
+    ],
+    "artifactFiles": [
+      {
+        "path": "claims/index.html",
+        "sha256": "a87773ac45c49b99dfde3e8d1a73d584c9eb6daf5239e001e08beca84298a5a7",
+        "bytes": 7998129,
+        "contentSha256": "51b3711898297a5d6ef3aaaf4b4398150d16f12bc889be6cea050a8173b4e9d7"
+      },
+      {
+        "path": "sources/index.html",
+        "sha256": "f774cbc3fadfa19705b91f2fcae193b82c8714ae5178aab8c5edb26954de94dd",
+        "bytes": 7269256,
+        "contentSha256": "bd4fff23cd6a0708c7923164f90acbb43bfb72fdf37ea036c417cab6166e69eb"
+      },
+      {
+        "path": "concepts/index.html",
+        "sha256": "f305b08f3f02ee1eb34e2e071356e74610af29678814f02ed5f0a27c99012e8e",
+        "bytes": 2310125,
+        "contentSha256": "c6f4673e68d6a5045e486455146658188ebfbccb6fb0f00991cdefc05257c1b8"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "sha256": "df99002be1f312bef26c4db7d6f34d1dca1c840a727129f642c66080e0d0370c",
+        "bytes": 4647067,
+        "contentSha256": "df99002be1f312bef26c4db7d6f34d1dca1c840a727129f642c66080e0d0370c"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "sha256": "b194767df839f202fe217a417e9e233aaa233e96ca80ea9a17b9af5805c4fb67",
+        "bytes": 450631,
+        "contentSha256": "b194767df839f202fe217a417e9e233aaa233e96ca80ea9a17b9af5805c4fb67"
+      },
+      {
+        "path": "research/index.html",
+        "sha256": "d83c1e7c732534a5712f4f555dae92e4ebdfe66a969e1d6a78cd14f9116ded62",
+        "bytes": 1947952,
+        "contentSha256": "c97d05743f9bbff156e9ea28594c964467cd9bd75659af2b152c41cb399b882a"
+      },
+      {
+        "path": "downloads/bibliography.json",
+        "sha256": "03641bcd2ca77d9e4dc9f04f69909503ee13be3e2fba96f6a5dc6134b7eac63c",
+        "bytes": 1539651,
+        "contentSha256": "03641bcd2ca77d9e4dc9f04f69909503ee13be3e2fba96f6a5dc6134b7eac63c"
+      },
+      {
+        "path": "downloads/research.json",
+        "sha256": "03641bcd2ca77d9e4dc9f04f69909503ee13be3e2fba96f6a5dc6134b7eac63c",
+        "bytes": 1539651,
+        "contentSha256": "03641bcd2ca77d9e4dc9f04f69909503ee13be3e2fba96f6a5dc6134b7eac63c"
+      },
+      {
+        "path": "coverage/index.html",
+        "sha256": "65f0730acba8691dfe2b2be28877789c2a168bb88aa9d170094b8b2c15851dc3",
+        "bytes": 1033308,
+        "contentSha256": "4c74dde87828b1f3030afad2f39fb9878da8335ac41d3ff14789d3f17a1cef7f"
+      }
+    ],
+    "assessment": {
+      "provenance": "Actual private Next/compiler and untouched-exporter bytes from base fe9f52cb0a0cc02c90fe7ef595b0f0d2b7bb5cea and a declared dirty working-preview. Temporary technical admission inside an isolated clone served inspection only and supplies no editorial acceptance.",
+      "reconstruction": "Exact rollback of content/docs/book/uncertainty-and-variability.mdx (oldFileShas + boundedMdxTransform), raw records, and raw fields recovers the exact 4bb508394ef2f6c671b1468d41a2b67c51296be6 predecessor pin (7db50e1d...) before #147 -> #145 -> #143 -> older qualifiers.",
+      "guards": "Two-round independent adversarial publication-engineering and security audit verified immutability of original B26 artifacts and 40 case files, strict exactKeys envelopes, 42-fact BigInt rational guard, exact allowsRaw allowlists, locked field deltas on cl-unc-sd-sem & cl-book-unc-bridge, 2 inline display:block print-visible correction notices on both /docs/book/uncertainty-and-variability and /print, and compiled CSS zero-drift (be180e5d...), concluding unconditional PASS (0 BLOCKER, 0 MAJOR, 0 MINOR).",
+      "actual": "Comparison of all 88 article projections identifies the exact 8 changed article projections and 9 public artifacts across B26, shared B32/index/print projections, and catalog/research downloads. All 468 manifest payloads and 40 case downloads verified.",
+      "browser": "Passed 50 responsive viewport/theme checks (5 routes x 5 widths 390-2560px x light/dark, zero horizontal paragraph/document overflow) plus no-JS @media print verification confirming 2/2 inline display:block correction notices on /docs/book/uncertainty-and-variability and 2/2 on /print remain visible in print.",
+      "limits": "Clean production build (dirty:false), source PR/CI/merge, live EdgeOne byte/guard qualification and exact root submodule integration remain required after this scoped acceptance."
+    },
+    "independentReports": {
+      "independent-primary-source-audit-final.md": "e12a5aacb278b1915a75ddb56b5ba675ea9eb000911306d85d1e3d0df8f78121",
+      "b26-continuous-reader-review-final.md": "4a3f39bfe81a16ca2b63ab2743c720fe51c10f934fee10cc7add1d921927f68f",
+      "independent-publication-engineering-review-final.md": "c93c3152826e44c0a8f438c8a495a4cef9565c5558fea8571921961b9f1d1ee9",
+      "qa-summary-149.json": "f977f37e64813e39b3b67e34df574b1ed19d8c79076b9fbea18c43968fe64b13"
+    }
+  }
+}

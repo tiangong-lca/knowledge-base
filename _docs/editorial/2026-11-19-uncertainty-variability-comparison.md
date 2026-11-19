@@ -71,3 +71,12 @@ related:
 - 在精确基线 `4bb508394ef2f6c671b1468d41a2b67c51296be6` 上安装可逆 `reader-uncertainty-comparison` 出版守卫，保持 `40/40` 案例文件零改动与编译 CSS 零漂移（`be180e5d...`）。
 - 须经三路独立审查（一手出处与数值、零上下文整章读者、对抗性出版工程）全部无条件 `PASS`（`0 BLOCKER / 0 MAJOR / 0 MINOR`），通过 `pnpm validate`、`pnpm typecheck`、`pnpm test`、Playwright 响应式/无脚本/`@media print` 检查、干净生产构建、严格 Docpact 校验、PR/CI/合并、线上 `https://prism.tiangong.earth` 核验与根集成终态核销。
 - 本单元交付不代表全书完成，[Programme #9](https://github.com/tiangong-lca/knowledge-base/issues/9) 八项全局条件保持未勾选。
+
+## 五、实际实施与独立审查验收记录
+
+1. **节结构保守调整**：为严格保留 `config/reader-numbering.json` 中已钉扎的三处 `B26` 节锚（`#估计对象`、`#不确定性来源`、`#数值可靠性`）且不触发既有编号与历史映射漂移，未增设第四节，而是将传播方法、全局灵敏度分析与蒙特卡洛收敛论述自然编入既有三节，全章仍准确扩充至 `17` 条论述（公开目录 `1,052 -> 1,060` 条）与两张 6 列响应式对照表（表 2 置于 `cl-unc-numerical` 之前）。
+2. **三路两轮独立审查全部无条件 `PASS`（`0 BLOCKER / 0 MAJOR / 0 MINOR`）**：
+   - 一手出处与数值审计：首轮 `0/3/1 REVISE` 修复 `ILCD §9.3.3/§9.4` 情态动词精确性、`Heijungs 2020` 第 1 节定位、`Groen et al. 2017` 印第 1133 页表 4（11 项数值）及 `cl-unc149-taylor-vs-sampling.scope` 后，次轮无条件 `0/0/0 PASS`；
+   - 零上下文整章读者审读（14,081 字、17 注、2 表）：首轮 `0/3/5 REVISE` 补齐第 10 段衔接、表 2 前置、第 15 段柔和收束、`LCIA`/`ILCD`/`PEF`/`OAT`/`g = B A⁻¹ f`/`t 检验`/`p 值` 括注、`(千克二氧化碳)²`、表 2 `RBD` 行与“计算代价”列头、`Ch. 2.1` 展示映射及 `cl-unc-sd-sem` 范围规范后，次轮无条件 `0/0/0 PASS`；
+   - 对抗性出版工程与安全审计：首轮 `2/3/3 REVISE` 修复前序测试、对齐 `capture`/`reviewEvidence` 键集、收紧 `allowsRaw` 白名单、加固 `assertUnitEnvelopeKeys`、锁定两处既有论述字段增量并补充负向测试后，次轮无条件 `0/0/0 PASS`；Playwright 50 组合响应式 + 无脚本 + `@media print` 零错误，单章与 `/print` 共 `4/4` 处更正说明打印可见，编译 CSS 零漂移（`be180e5d...`）。
+3. **密码学钉扎**：`uncertaintyComparisonPredecessorPin = 7db50e1d...`，`uncertaintyComparisonCapturePin = 636656bd...`（manifest `b0aa26ce...`），`uncertaintyComparisonUnitPin = 61a21b40...`，对应三份审查证据包落盘于 `_docs/editorial/review-evidence/uncertainty-comparison-149/`。

@@ -24,6 +24,27 @@ lastReviewedCommit: 4bb508394ef2f6c671b1468d41a2b67c51296be6
 
 ## Scoped scientific successors
 
+The Part VI `B26` uncertainty-and-variability comparison unit #149 compares
+`Huijbregts (1998/2001)`, `Heijungs & Suh (2002)`, `EC-JRC ILCD General Guide
+(2010, EUR 24708 EN §9.3.3 & §9.4)`, `EU Recommendation (EU) 2021/2279 (Annex I
+§6.2–6.4)`, `Groen et al. (2017)` (*IJLCA* 22:1125–1137, CC BY 4.0), and
+`Heijungs (2020)` (*IJLCA* 25:394–402, CC BY 4.0) across `B26`
+(`content/docs/book/uncertainty-and-variability.mdx`, `9` -> `17` claims + `2`
+6-column comparison tables, bringing the public catalog to `1,060` claims) while
+conserving `100%` of all `9` original `B26` claim identities, all `3` pinned
+headings, `1,043` untouched prior claims, and all `40` case downloads against
+`4bb508394ef2f6c671b1468d41a2b67c51296be6`. It binds `10` `1-to-1`
+single-artifact `ev-unc149-*` / `psg-unc149-*` pairs, `42` `BigInt` rational
+`numericFacts` (covering intrinsic variability vs epistemic uncertainty vs
+methodological choices, `ILCD §9.3.3/§9.4` advisory vs mandatory boundaries,
+`EU 2021/2279` zero `Monte Carlo` occurrences across 384 pages, `Groen et al.
+2017` Table 4 p. 1133 `KIA` Taylor vs sampling at `cv = 5%` vs `cv = 30%`, `SRC`,
+`SCC`, `Sobol'`, and `RBD`, and `Heijungs 2020` `1/sqrt(n)` convergence vs
+`n = 16` sample bias, `p = 0.67 -> 10^-16` synthetic-run significance distortion,
+and pedigree-matrix sample-size limits), normalizes `7` prior `ev-unc-*`
+locators, and publishes `2` `style="display:block"` dated correction notices
+(`cl-unc-sd-sem`, `cl-book-unc-bridge`) without claiming whole-book completion.
+
 The Part VI opening data-applicability comparison unit #147 compares
 `UNEP/SETAC (2011)`, `EC-JRC ILCD General Guide (2010, EUR 24708 EN)` &
 `ILCD Data Network Compliance & Entry-Level Rules v1.1 (2012, EUR 24380 EN)`,

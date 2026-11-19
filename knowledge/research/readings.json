@@ -1954,6 +1954,47 @@
           "limits": [
             "表 7 仅定义至不高于 4 的“Data estimate”三档，未在总论表 7 中印出高于 4 至 5 的第四档名称。"
           ]
+        },
+        {
+          "id": "psg-unc149-ilcd2010-sensitivity-check",
+          "artifactId": "art-ilcd-2010-pdf",
+          "locator": "第 9.3.3 节、图 26 与规定条款 I.a 灵敏度检查与优先改进矩阵",
+          "printedPages": "295–299",
+          "pdfIndices": [
+            314,
+            315,
+            316,
+            317,
+            318
+          ],
+          "topics": [
+            "情景分析与不确定性计算配合评估可靠性",
+            "图 26 高影响且高不确定性数据优先改进焦点",
+            "条款 I.a 警示计算不确定度遗漏模型假设与数据缺口系统性偏差"
+          ],
+          "limits": [
+            "未强制指定单一蒙特卡洛软件或固定模拟次数。"
+          ]
+        },
+        {
+          "id": "psg-unc149-ilcd2010-comparative-covariance",
+          "artifactId": "art-ilcd-2010-pdf",
+          "locator": "第 9.4 节与规定条款 I、II.d 比较性差值协方差与双反误用禁令",
+          "printedPages": "302–305",
+          "pdfIndices": [
+            321,
+            322,
+            323,
+            324
+          ],
+          "topics": [
+            "对两系统之差作不确定性分析并计入共享过程协方差",
+            "禁止高估仅覆局部参数误差的显著性结论",
+            "条款 II.d 禁止将无显著差异曲解为两方案相等"
+          ],
+          "limits": [
+            "明示保密限制可能约束对共享背景过程的完全访问。"
+          ]
         }
       ],
       "appraisal": {
@@ -16305,6 +16346,34 @@
           ],
           "limits": [
             "公报第 96—97 页第 8.2—8.3 节内将第 8.3.1 节与第 8.4 节误印为“Section 9.3.1 / Section 9.4”。"
+          ]
+        },
+        {
+          "id": "psg-unc149-eu2021-robustness-hotspots",
+          "artifactId": "art-kb44-ec2021-r01-pdf",
+          "locator": "术语表、准确度原则、附件一第 4.6.5.1 节与第 6.2—6.4 节稳健性与强制热点门槛",
+          "printedPages": "L 144/20–21, L 144/25, L 144/81, L 144/88–94",
+          "pdfIndices": [
+            19,
+            20,
+            24,
+            80,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93
+          ],
+          "topics": [
+            "全篇 384 页零次出现蒙特卡洛强制要求",
+            "第 6.2 节完整性、灵敏度与一致性稳健性检验（should）",
+            "第 6.3 节强制热点门槛（≥80% 且 ≥3 类、阶段 >80% 与使用阶段 >50% 剔除重算、过程 >80%、基本流 ≥80%）及第 6.3.5 节负值绝对值规则",
+            "第 4.6.5.1 节精密度项 P 对应参数不确定性"
+          ],
+          "limits": [
+            "适用于欧盟 PEF/OEF 监管报告，不替代学术研究中的定量随机传播。"
           ]
         }
       ],
@@ -35689,6 +35758,219 @@
       "sourceKeys": [
         "src-dapp147-tidas-spec-v030"
       ]
+    },
+    {
+      "id": "rd-unc149-heijungs-2020",
+      "workId": "work-unc149-heijungs-2020",
+      "title": "On the number of Monte Carlo runs in comparative probabilistic LCA",
+      "version": "Int J Life Cycle Assess 25:394–402（2020，CC BY 4.0，9 页官方 PDF）",
+      "url": "https://link.springer.com/content/pdf/10.1007/s11367-019-01698-4.pdf",
+      "readingStatus": "selected-passages",
+      "accessedAt": "2026-11-19",
+      "readAt": "2026-11-19",
+      "question": "在比较性概率生命周期评价中，增大蒙特卡洛模拟次数究竟缩减什么误差，何时导致虚假显著，以及谱系矩阵分布为何与之冲突？",
+      "argumentSummary": "证明模拟标准误按 1/√N_run 衰减而实测样本偏差不减，展示单系统与双系统在 N_run = 100,000 下把不精确变为不可见不准确并令同源总体 t 检验 p 值从 0.67 跌至 10^-16；建议按实测样本量最弱环节约束 N_run，并指出缺少样本量的谱系分布与大规模蒙特卡洛显著性检验不相容。",
+      "rights": "CC BY 4.0 开放获取期刊 PDF；不重分发原文件。",
+      "appraisal": {
+        "basis": "SHA-256 校验的 9 页官方开放获取 PDF 逐页文本核对。",
+        "methodologicalScope": "针对蒙特卡洛模拟运行次数与实测样本量混淆的数理与统计论证。",
+        "independence": "同行评审方法学论文（Int J Life Cycle Assess）。",
+        "limitations": [
+          "采用 Y = X 恒等模型与正态总体教学构造，未展开多过程共享背景协方差矩阵推导。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-19"
+      },
+      "unread": [
+        "参考文献列表（印第 401—402 页）以外未作独立软件代码复现。"
+      ],
+      "artifacts": [
+        {
+          "id": "art-unc149-heijungs-2020-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "422cb7f6665f1fcdc689d8a65cbd58838508d849bed2d415de8b010763d4f299",
+          "resolvedUrl": "https://link.springer.com/content/pdf/10.1007/s11367-019-01698-4.pdf",
+          "pageCount": 9
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-unc149-heijungs2020-sources-runtime",
+          "artifactId": "art-unc149-heijungs-2020-pdf",
+          "locator": "第 1 节耗时模型与第 2.2 节输入不确定性三来源",
+          "printedPages": "395",
+          "pdfIndices": [
+            1
+          ],
+          "topics": [
+            "T_tot = N_run * T_cal + T_ana",
+            "单次 1 秒至 5 分钟与 100000 次耗时量级",
+            "认识不足、固有变异与分析者选择三来源"
+          ],
+          "limits": [
+            "耗时量级随软件求解器与数据库规模而异。"
+          ]
+        },
+        {
+          "id": "psg-unc149-heijungs2020-standalone-precision-accuracy",
+          "artifactId": "art-unc149-heijungs-2020-pdf",
+          "locator": "第 2.5—3 节及图 1 单系统可见不精确与不可见不准确构造",
+          "printedPages": "397–400",
+          "pdfIndices": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "topics": [
+            "X ~ N(10, 1) 与 n = 16 实测 10.31 ± 0.25 区间 [9.819, 10.799]",
+            "N_run = 100000 模拟 10.31 ± 0.0031 区间 [10.305, 10.318]",
+            "可见不精确转化为不可见不准确"
+          ],
+          "limits": [
+            "针对把模拟均值标准误用于总体均值置信区间与假设检验的情形。"
+          ]
+        },
+        {
+          "id": "psg-unc149-heijungs2020-comparative-pvalue-cap",
+          "artifactId": "art-unc149-heijungs-2020-pdf",
+          "locator": "第 3—4 节及图 2 比较双系统 t 检验失真与样本量上限",
+          "printedPages": "400–401",
+          "pdfIndices": [
+            6,
+            7
+          ],
+          "topics": [
+            "同源双系统 n = 16 实测 t 检验 p = 0.67",
+            "N_run = 100000 下 p ≈ 10^-16",
+            "n_X1 = 16 与 n_X2 = 9 取最弱环节 9 次上限"
+          ],
+          "limits": [
+            "未在文内推导共享背景过程的配对协方差方差公式。"
+          ]
+        },
+        {
+          "id": "psg-unc149-heijungs2020-pedigree-incompatibility",
+          "artifactId": "art-unc149-heijungs-2020-pdf",
+          "locator": "摘要与第 4 节谱系矩阵分布与大规模蒙特卡洛不相容论证",
+          "printedPages": "394, 401",
+          "pdfIndices": [
+            0,
+            7
+          ],
+          "topics": [
+            "谱系分布无明确实测样本量 n",
+            "半定量输入送入大规模蒙特卡洛显著性检验制造虚假精确"
+          ],
+          "limits": [
+            "不直接评测实地抽样或 Ciroth 实证校准研究（留待第 27 章）。"
+          ]
+        }
+      ],
+      "sourceKeys": [
+        "src-unc149-heijungs-2020"
+      ]
+    },
+    {
+      "id": "rd-unc149-groen-2017",
+      "workId": "work-unc149-groen-2017",
+      "title": "Methods for global sensitivity analysis in life cycle assessment",
+      "version": "Int J Life Cycle Assess 22:1125–1137（2017，CC BY 4.0，13 页官方 PDF）",
+      "url": "https://link.springer.com/content/pdf/10.1007/s11367-016-1217-3.pdf",
+      "readingStatus": "selected-passages",
+      "accessedAt": "2026-11-19",
+      "readAt": "2026-11-19",
+      "question": "一阶泰勒解析传播（KIA）与四类随机全局灵敏度方法（SRC、SCC、Sobol SME/STE、RBD）在低与高对数正态离散度下的精度、代价与失效边界是什么？",
+      "argumentSummary": "在 6 参数电力与 115 参数白鱼渔业双案例中证明 cv = 5% 时 KIA 与百万次蒙特卡洛基准几乎一致，但 cv = 30% 时 KIA 漏掉右偏均值上移并低估方差约 33% / 20%；SRC 受离群值拖累跌至 81.7%，而 SCC（94.0%/94.5%）与 Sobol SME/STE（91.6%/110%）更稳健，同时明示无相关输入与非线性 LCIA 两项边界。",
+      "rights": "CC BY 4.0 开放获取期刊 PDF；不重分发原文件。",
+      "appraisal": {
+        "basis": "SHA-256 校验的 13 页官方开放获取 PDF 逐页核对表 1、表 3—5 与正文。",
+        "methodologicalScope": "矩阵 LCA 中五类全局灵敏度分析方法（六项指标）的实证对照基准。",
+        "independence": "同行评审方法学论文（Int J Life Cycle Assess）。",
+        "limitations": [
+          "假定全部输入无相关且仅输出单一二氧化碳清单指标；图 8 盒内括号案例标号存在印刷互换，以正文与表 4—5 为准。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-19"
+      },
+      "unread": [
+        "电子补充材料附录未另行下载。"
+      ],
+      "artifacts": [
+        {
+          "id": "art-unc149-groen-2017-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "98cef6d82e07fdfeca8d13e73a3409969b8fbb98fefa24e93c818cf72cae7d4b",
+          "resolvedUrl": "https://link.springer.com/content/pdf/10.1007/s11367-016-1217-3.pdf",
+          "pageCount": 13
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-unc149-groen2017-variability-local-global",
+          "artifactId": "art-unc149-groen-2017-pdf",
+          "locator": "第 1—2.1 节、表 1 与式 1—3 变异界定与局部／全局灵敏度对照",
+          "printedPages": "1126–1129",
+          "pdfIndices": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "topics": [
+            "固有变异不可缩减与认识不确定性可缩减",
+            "表 1 局部单因子灵敏度 vs 全局方差分解灵敏度",
+            "式 1—3 矩阵模型与条件期望方差分解"
+          ],
+          "limits": [
+            "针对单排放矩阵模型 g = B A^-1 f。"
+          ]
+        },
+        {
+          "id": "psg-unc149-groen2017-methods-cost-case-studies",
+          "artifactId": "art-unc149-groen-2017-pdf",
+          "locator": "第 2.2—3.3 节及表 3—5 五类方法代价与电力／白鱼双案例基准对比",
+          "printedPages": "1129–1133",
+          "pdfIndices": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "topics": [
+            "表 3 运行次数：KIA 1 次、SRC/SCC/RBD N 次、Sobol SME/STE 2N 基础矩阵",
+            "电力 6 参数与白鱼 115 参数在 cv = 5% vs 30% 下均值与方差",
+            "KIA 在 cv = 30% 下均值漏偏且方差低估约 33% 与 20%"
+          ],
+          "limits": [
+            "两案例所有输入均设为无相关对数正态分布。"
+          ]
+        },
+        {
+          "id": "psg-unc149-groen2017-outliers-caveats",
+          "artifactId": "art-unc149-groen-2017-pdf",
+          "locator": "第 3.2—5 节及图 8 离群值稳健性与无相关／非线性局限",
+          "printedPages": "1132–1136",
+          "pdfIndices": [
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "topics": [
+            "cv = 30% 下 SRC 跌至 81.7%、RBD 79.7%，SCC 94.0%/94.5%，Sobol SME 91.6%/STE 110%",
+            "无相关输入简化与非线性中点／终点特征化局限"
+          ],
+          "limits": [
+            "图 8 盒内括号案例标号与第 1135 页正文互换，以正文与表 4—5 为准。"
+          ]
+        }
+      ],
+      "sourceKeys": [
+        "src-unc149-groen-2017"
+      ]
     }
   ],
   "gaps": [
@@ -36811,6 +37093,14 @@
         "B25",
         "B28",
         "B32"
+      ]
+    },
+    {
+      "id": "gap-unc149-correlated-and-nonlinear-lcia-gsa",
+      "description": "Groen et al. (2017) 明确指出其两项案例假定全部输入参数彼此无相关且仅输出单一二氧化碳清单指标，Heijungs (2020) 采用 Y = X 教学构造；对真实多过程共享背景矩阵下的强相关输入、非线性中点／终点特征化路径及配对比较统计效能，公开工作区尚未另行收录可核验开放获取实证原件。",
+      "nextAction": "在本章正文中明确限定上述结论的适用边界并明示相关输入与非线性 LCIA 的未知项，待后续获取可核验开放获取载体后按需补充。",
+      "affectedUnits": [
+        "B26"
       ]
     }
   ],
@@ -39808,6 +40098,28 @@
       ],
       "affectedUnits": [
         "B25"
+      ]
+    },
+    {
+      "id": "rev-unc149-b26-uncertainty-variability-comparison",
+      "before": "第六部第二章《变异与不确定性》（B26，9 条论述）仅围绕 Huijbregts (1998/2001) 与 Heijungs & Suh (2002) 两份早期文献说明变异、三类不确定性与数值稳定性，尚未跨体系比较 ILCD 2010 与欧盟建议书 2021/2279 的制度规则，也未展开一阶泰勒解析与随机全局灵敏度分析的失效边界、蒙特卡洛次数与样本量混淆陷阱及谱系矩阵边界；且全部 7 条既有 ev-unc-* 定位符含原始 § 或 PDF 零基索引。",
+      "after": "2026-11-19 保留既有 9 条论述身份与三处节锚并新增 #传播与灵敏度 节，扩展至 17 条论述（公开目录 1,052 增至 1,060 条）与 2 张六列对照表，新增 Heijungs (2020) 与 Groen et al. (2017) 两份 CC BY 4.0 一手 PDF 及 ILCD 2010 / EU 2021/2279 新核验选段，绑定 10 对一比一单载体证据与选段及 38 项精确有理数事实，并同步规范全部 7 条既有 ev-unc-* 定位符与更新末段收束衔接第 27 章。",
+      "reasoning": "把 B26 升级为贯通变异与不确定性分类、国际指南制度分化、传播与全局灵敏度方法比较、比较推断陷阱及谱系矩阵边界的概念主导比较章，与 B25、B27 形成无重叠衔接。",
+      "status": "applied",
+      "triggerPassageIds": [
+        "psg-unc149-heijungs2020-sources-runtime",
+        "psg-unc149-heijungs2020-standalone-precision-accuracy",
+        "psg-unc149-heijungs2020-comparative-pvalue-cap",
+        "psg-unc149-heijungs2020-pedigree-incompatibility",
+        "psg-unc149-groen2017-variability-local-global",
+        "psg-unc149-groen2017-methods-cost-case-studies",
+        "psg-unc149-groen2017-outliers-caveats",
+        "psg-unc149-ilcd2010-sensitivity-check",
+        "psg-unc149-ilcd2010-comparative-covariance",
+        "psg-unc149-eu2021-robustness-hotspots"
+      ],
+      "affectedUnits": [
+        "B26"
       ]
     }
   ]

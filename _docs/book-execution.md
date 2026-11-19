@@ -58,6 +58,26 @@ actual manuscript/reviews and exact source/root delivery.
 Unit102 is fully delivered: source PR104/Main
 `f8751d57989bfca5f53b6beeab74895d54b594b2`, root2383/PR2384/Main
 `586a5c35a0a3ece45983c0d09afe3df59cfc2496`, qualified hosted466-file output,
+
+Unit149 ([Issue149](https://github.com/tiangong-lca/knowledge-base/issues/149),
+Part VI `B26`《变异与不确定性》,
+[protocol](editorial/2026-11-19-uncertainty-variability-comparison.md)) is
+independently accepted (`uncertaintyComparisonPredecessorPin` `7db50e1d...`,
+`uncertaintyComparisonUnitPin` `61a21b40...`,
+`uncertaintyComparisonCapturePin` `636656bd...`) on base
+`4bb508394ef2f6c671b1468d41a2b67c51296be6`, extending `B26` from `9` to `17`
+claims (`1,052` -> `1,060` public claims) with `2` 6-column comparison tables,
+`2` new CC BY 4.0 works/sources/readings (`Heijungs 2020`, `Groen et al. 2017`),
+`10` `1-to-1` `ev-unc149-*`/`psg-unc149-*` pairs, `42` `BigInt` rational
+`numericFacts`, `7` normalized prior `ev-unc-*` locators, and `2`
+`style="display:block"` public correction notices (`cl-unc-sd-sem`,
+`cl-book-unc-bridge`) after two-round unconditional `0/0/0 PASS` independent
+primary-source, zero-context reader, and publication-engineering audits plus
+50-combo responsive & `@media print` Playwright QA (compiled CSS zero-drift
+`be180e5d...`, `40/40` case files untouched). Clean production build, PR/CI/merge,
+live `https://prism.tiangong.earth` qualification, exact root integration,
+remaining Part VI chapters (`B27`–`B28` + Part VI continuous reread), Parts
+VII–VIII, and all 8 global Programme #9 criteria remain open.
 and final ordinary source/root receipts with complete source handoff. Its
 original-source, model and empirical limits remain unchanged.
 

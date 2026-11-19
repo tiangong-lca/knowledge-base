@@ -1,0 +1,2502 @@
+{
+  "schemaVersion": 1,
+  "kind": "source",
+  "unit": "uncertainty-comparison-149",
+  "date": "2026-11-19",
+  "subjectSha256": "6eafa66b738a01034720f8f3d266c0be4591903cf5d416357eea042f2b1d2bfd",
+  "scope": [
+    "content/docs/book/uncertainty-and-variability.mdx",
+    "claims:cl-unc-sd-sem",
+    "claims:cl-book-unc-bridge",
+    "evidence:ev-unc-huij-types",
+    "evidence:ev-unc-huij-parameters",
+    "evidence:ev-unc-huij-model",
+    "evidence:ev-unc-huij-choices",
+    "evidence:ev-unc-huij-target",
+    "evidence:ev-unc-huij-sd-sem",
+    "evidence:ev-unc-hs-numerical",
+    "readings:rd-ilcd-2010",
+    "readings:rd-kb44-ec2021",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:order:sources",
+    "researchMetadata:order:readings",
+    "researchMetadata:order:gaps",
+    "researchMetadata:order:revisions",
+    "researchMetadata:order:literature",
+    "researchMetadata:order:queries",
+    "researchMetadata:public-projection",
+    "claims:cl-unc149-variability-vs-epistemic",
+    "claims:cl-unc149-framework-comparison",
+    "claims:cl-unc149-local-vs-global-sa",
+    "claims:cl-unc149-taylor-vs-sampling",
+    "claims:cl-unc149-gsa-outliers-nonlinearity",
+    "claims:cl-unc149-mc-runs-precision-vs-accuracy",
+    "claims:cl-unc149-comparative-paired-and-pvalue",
+    "claims:cl-unc149-pedigree-mc-boundary",
+    "evidence:ev-unc149-heijungs2020-sources-runtime",
+    "evidence:ev-unc149-heijungs2020-standalone-precision-accuracy",
+    "evidence:ev-unc149-heijungs2020-comparative-pvalue-cap",
+    "evidence:ev-unc149-heijungs2020-pedigree-incompatibility",
+    "evidence:ev-unc149-groen2017-variability-local-global",
+    "evidence:ev-unc149-groen2017-methods-cost-case-studies",
+    "evidence:ev-unc149-groen2017-outliers-caveats",
+    "evidence:ev-unc149-ilcd2010-sensitivity-check",
+    "evidence:ev-unc149-ilcd2010-comparative-covariance",
+    "evidence:ev-unc149-eu2021-robustness-hotspots",
+    "sources:src-unc149-heijungs-2020",
+    "sources:src-unc149-groen-2017",
+    "readings:rd-unc149-heijungs-2020",
+    "readings:rd-unc149-groen-2017",
+    "gaps:gap-unc149-correlated-and-nonlinear-lcia-gsa",
+    "revisions:rev-unc149-b26-uncertainty-variability-comparison",
+    "literature:work-unc149-heijungs-2020",
+    "literature:work-unc149-groen-2017",
+    "queries:q-unc149-propagation-global-sensitivity-comparative-inference-20261119"
+  ],
+  "observed": "Part VI chapter B26 (content/docs/book/uncertainty-and-variability.mdx), covering 2 new Open Access CC BY 4.0 works/sources/readings (Heijungs 2020 IJLCA 25:394-402; Groen et al. 2017 IJLCA 22:1125-1137), 2 appended prior carriers (rd-ilcd-2010 §9.3.3/§9.4; rd-kb44-ec2021 Annex I §6.2-6.4), 10 1-to-1 single-artifact ev-unc149-*/psg-unc149-* pairs, 42 BigInt rational numericFacts, 8 new cl-unc149-* claims, 2 print-visible corrected claims (cl-unc-sd-sem, cl-book-unc-bridge), 7 normalized ev-unc-* locators, and 2 six-column comparative tables against predecessor commit 4bb508394ef2f6c671b1468d41a2b67c51296be6.",
+  "observations": {
+    "state": {
+      "before": "7db50e1d25de5534578ba9ea5797cdaebc6eed3e908e27f4b49f46650fbc33ab",
+      "after": "67e55709d2c0b1a9c597891f36df8782985db22756b1b585e5d7e1b1d80c45d6"
+    },
+    "changes": [
+      {
+        "kind": "file",
+        "key": "content/docs/book/uncertainty-and-variability.mdx",
+        "from": "6f1a6d85e6acc49212fdecbea1bf5ad26b360ad7b1dd22a0e0a3a2007ba0642b",
+        "to": "872545212b1485e7fc692dbcd00db9c0c7c3b4aedb1d38f3d4a4bb8334daa78b",
+        "rationale": "在第六部第二章《变异与不确定性》三节锚内有界置入 8 条跨体系比较论述与 2 张六列对照表（由 9 注扩为 17 注），完整守恒既有 9 条命题与全书节编号层级。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-unc-sd-sem",
+        "from": {
+          "raw": "d75f065435f7386a6ad2db83702265ccf22b8f7d2ed30d7e3e3f87ff51fbc9c3",
+          "public": "d75f065435f7386a6ad2db83702265ccf22b8f7d2ed30d7e3e3f87ff51fbc9c3",
+          "protected": "fe88b20e42ce77004c9e94dd32bca02424a4affb9499a6764b83aa4b83506f2a"
+        },
+        "to": {
+          "raw": "b8fe73802a2b1306f7a7f0061e87a1b2613fd553fc4e56c29aa98379a31e8e27",
+          "public": "b8fe73802a2b1306f7a7f0061e87a1b2613fd553fc4e56c29aa98379a31e8e27",
+          "protected": "6753573b65ec1b453cc8cab24902d189d04da43fd3eb40b21653ee3322190fcd"
+        },
+        "rationale": "有界更新第六部《变异与不确定性》既有末段收束论述以统合全章五步核查并衔接第 27 章，保留原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-book-unc-bridge",
+        "from": {
+          "raw": "0ab9b208d384e1ecafe35b69f2d86a6ae1af127cd126ac200a04b14d338626be",
+          "public": "0ab9b208d384e1ecafe35b69f2d86a6ae1af127cd126ac200a04b14d338626be",
+          "protected": "a2f16b1f6870a36309983a7b114f1e69dc1ff9637feba947ebfc624665d7efde"
+        },
+        "to": {
+          "raw": "97112ec1d605d8b6b84fd86bf8f894a2f9e55e31ecaa39b96f1bee189c17aafb",
+          "public": "97112ec1d605d8b6b84fd86bf8f894a2f9e55e31ecaa39b96f1bee189c17aafb",
+          "protected": "be8ccedb787de0ee0aa0fcebef8dd8d0ed9dfff06bd69848bd43771b8a059b8f"
+        },
+        "rationale": "有界更新第六部《变异与不确定性》既有末段收束论述以统合全章五步核查并衔接第 27 章，保留原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-unc-huij-types",
+        "from": {
+          "raw": "755dd08b99b3ba41f8206c6d05de9abdf95ae443c13c7ec335ffeac374b7cae8",
+          "public": "755dd08b99b3ba41f8206c6d05de9abdf95ae443c13c7ec335ffeac374b7cae8",
+          "protected": "755dd08b99b3ba41f8206c6d05de9abdf95ae443c13c7ec335ffeac374b7cae8"
+        },
+        "to": {
+          "raw": "d2d88650afd5b998aa87c861f016ec8031f1b54d814fc71482238e9a2a78f6b9",
+          "public": "d2d88650afd5b998aa87c861f016ec8031f1b54d814fc71482238e9a2a78f6b9",
+          "protected": "d2d88650afd5b998aa87c861f016ec8031f1b54d814fc71482238e9a2a78f6b9"
+        },
+        "rationale": "有界更新第六部《变异与不确定性》既有引用证据定位符（消除阅读器零基索引与裸节号），保留原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-unc-huij-parameters",
+        "from": {
+          "raw": "b06bbd56fe47c9450ccc588ecb6cd37caa509d558e2f68c47a092e8db5593631",
+          "public": "b06bbd56fe47c9450ccc588ecb6cd37caa509d558e2f68c47a092e8db5593631",
+          "protected": "b06bbd56fe47c9450ccc588ecb6cd37caa509d558e2f68c47a092e8db5593631"
+        },
+        "to": {
+          "raw": "82ca849f156969d2aac65c6e958212a522b814596e2313d4f0c23d90dcfad052",
+          "public": "82ca849f156969d2aac65c6e958212a522b814596e2313d4f0c23d90dcfad052",
+          "protected": "82ca849f156969d2aac65c6e958212a522b814596e2313d4f0c23d90dcfad052"
+        },
+        "rationale": "有界更新第六部《变异与不确定性》既有引用证据定位符（消除阅读器零基索引与裸节号），保留原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-unc-huij-model",
+        "from": {
+          "raw": "39c201d18d93596a3571bea987c2c1c031c85398afa99a9b79ccef31426d9076",
+          "public": "39c201d18d93596a3571bea987c2c1c031c85398afa99a9b79ccef31426d9076",
+          "protected": "39c201d18d93596a3571bea987c2c1c031c85398afa99a9b79ccef31426d9076"
+        },
+        "to": {
+          "raw": "38d414098327ca7d2381ea32506ba813924f9be53da122afa3f2b42873f4663d",
+          "public": "38d414098327ca7d2381ea32506ba813924f9be53da122afa3f2b42873f4663d",
+          "protected": "38d414098327ca7d2381ea32506ba813924f9be53da122afa3f2b42873f4663d"
+        },
+        "rationale": "有界更新第六部《变异与不确定性》既有引用证据定位符（消除阅读器零基索引与裸节号），保留原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-unc-huij-choices",
+        "from": {
+          "raw": "bba3616f86465456e8cf19614df44d553b913b54c65533c60548dff09c9cabf6",
+          "public": "bba3616f86465456e8cf19614df44d553b913b54c65533c60548dff09c9cabf6",
+          "protected": "bba3616f86465456e8cf19614df44d553b913b54c65533c60548dff09c9cabf6"
+        },
+        "to": {
+          "raw": "a1c42634f83337173bf441d916a10c560978682d5a110fdb795b705317019bb3",
+          "public": "a1c42634f83337173bf441d916a10c560978682d5a110fdb795b705317019bb3",
+          "protected": "a1c42634f83337173bf441d916a10c560978682d5a110fdb795b705317019bb3"
+        },
+        "rationale": "有界更新第六部《变异与不确定性》既有引用证据定位符（消除阅读器零基索引与裸节号），保留原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-unc-huij-target",
+        "from": {
+          "raw": "9f5afe04ce8237dd43752d213cf0d4e4270f7a47a02c0e328079e71cb0949b65",
+          "public": "9f5afe04ce8237dd43752d213cf0d4e4270f7a47a02c0e328079e71cb0949b65",
+          "protected": "9f5afe04ce8237dd43752d213cf0d4e4270f7a47a02c0e328079e71cb0949b65"
+        },
+        "to": {
+          "raw": "98da62bff6e46af8a19b296133aff6eddcd0dde783773c79e6fcd36233150d04",
+          "public": "98da62bff6e46af8a19b296133aff6eddcd0dde783773c79e6fcd36233150d04",
+          "protected": "98da62bff6e46af8a19b296133aff6eddcd0dde783773c79e6fcd36233150d04"
+        },
+        "rationale": "有界更新第六部《变异与不确定性》既有引用证据定位符（消除阅读器零基索引与裸节号），保留原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-unc-huij-sd-sem",
+        "from": {
+          "raw": "1bbf8ac0988e56857a0205be7627d0065569e35c34dce389019a55f9453e8779",
+          "public": "1bbf8ac0988e56857a0205be7627d0065569e35c34dce389019a55f9453e8779",
+          "protected": "1bbf8ac0988e56857a0205be7627d0065569e35c34dce389019a55f9453e8779"
+        },
+        "to": {
+          "raw": "b4eca8801a12e9978c69cd84c5e66590a08ea55b326efe19b9fb123018857d87",
+          "public": "b4eca8801a12e9978c69cd84c5e66590a08ea55b326efe19b9fb123018857d87",
+          "protected": "b4eca8801a12e9978c69cd84c5e66590a08ea55b326efe19b9fb123018857d87"
+        },
+        "rationale": "有界更新第六部《变异与不确定性》既有引用证据定位符（消除阅读器零基索引与裸节号），保留原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-unc-hs-numerical",
+        "from": {
+          "raw": "6d622aace5f4b911227afdb7510644c0442c88129ae5b8e7ffdd745ddfae83c1",
+          "public": "6d622aace5f4b911227afdb7510644c0442c88129ae5b8e7ffdd745ddfae83c1",
+          "protected": "6d622aace5f4b911227afdb7510644c0442c88129ae5b8e7ffdd745ddfae83c1"
+        },
+        "to": {
+          "raw": "e5dbdb24bbd74454d611d7e0f12242ccb245b81ae9ef509038df58d27ea47b94",
+          "public": "e5dbdb24bbd74454d611d7e0f12242ccb245b81ae9ef509038df58d27ea47b94",
+          "protected": "e5dbdb24bbd74454d611d7e0f12242ccb245b81ae9ef509038df58d27ea47b94"
+        },
+        "rationale": "有界更新第六部《变异与不确定性》既有引用证据定位符（消除阅读器零基索引与裸节号），保留原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-ilcd-2010",
+        "from": {
+          "raw": "1323eaaf6dc1bf7e42acc6f7c0c5a403311a71c25eefeebc07e6f415990c3e6c",
+          "public": null,
+          "protected": "1323eaaf6dc1bf7e42acc6f7c0c5a403311a71c25eefeebc07e6f415990c3e6c"
+        },
+        "to": {
+          "raw": "1b0024535c4c859e8238d2ed7e6278b589c45be6fcff650f946f4d05973c7b42",
+          "public": null,
+          "protected": "1b0024535c4c859e8238d2ed7e6278b589c45be6fcff650f946f4d05973c7b42"
+        },
+        "rationale": "有界更新第六部《变异与不确定性》既有研究阅读与文献台账时间戳或同载体选段，保留原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-kb44-ec2021",
+        "from": {
+          "raw": "325d658f838f6bcd11d01f4dd0a2eef71c3155fdb35a1f72456091bd82ace39d",
+          "public": null,
+          "protected": "325d658f838f6bcd11d01f4dd0a2eef71c3155fdb35a1f72456091bd82ace39d"
+        },
+        "to": {
+          "raw": "b930cae53dc90f451b85e287607909417cd8fbd9abaf56e1473c6411bbe66c56",
+          "public": null,
+          "protected": "b930cae53dc90f451b85e287607909417cd8fbd9abaf56e1473c6411bbe66c56"
+        },
+        "rationale": "有界更新第六部《变异与不确定性》既有研究阅读与文献台账时间戳或同载体选段，保留原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:claims",
+        "from": {
+          "raw": "09ab0c51a68f5a7f2d1ce78863c4aeb34f488d47a463f8321ed30abc77bb7af4",
+          "public": null,
+          "protected": "09ab0c51a68f5a7f2d1ce78863c4aeb34f488d47a463f8321ed30abc77bb7af4"
+        },
+        "to": {
+          "raw": "dd92b521e43d6a942b63324a81d0c4440337fbacdfb5df041eb6c77321c62e29",
+          "public": null,
+          "protected": "dd92b521e43d6a942b63324a81d0c4440337fbacdfb5df041eb6c77321c62e29"
+        },
+        "rationale": "有界更新第六部《变异与不确定性》既有研究阅读与文献台账时间戳或同载体选段，保留原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:evidence",
+        "from": {
+          "raw": "1ed4bfbed153f8b634df8a03b94fc8ea1a99f79400a7242ab6dbc3d5fc3f3650",
+          "public": null,
+          "protected": "1ed4bfbed153f8b634df8a03b94fc8ea1a99f79400a7242ab6dbc3d5fc3f3650"
+        },
+        "to": {
+          "raw": "cf803a41b6346e95a49578f37d013d7613f379694fea4fcb0daa550b3fa41620",
+          "public": null,
+          "protected": "cf803a41b6346e95a49578f37d013d7613f379694fea4fcb0daa550b3fa41620"
+        },
+        "rationale": "有界更新第六部《变异与不确定性》既有研究阅读与文献台账时间戳或同载体选段，保留原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:sources",
+        "from": {
+          "raw": "2cb2cc0a5eb254e4adfa82a6978bfa30ff9a7ec0c94bf89d3cdea52633e316ce",
+          "public": null,
+          "protected": "2cb2cc0a5eb254e4adfa82a6978bfa30ff9a7ec0c94bf89d3cdea52633e316ce"
+        },
+        "to": {
+          "raw": "388c7b475e85461083551ed3021b88ffbf61abe8af0748f32fb6f28642aeacae",
+          "public": null,
+          "protected": "388c7b475e85461083551ed3021b88ffbf61abe8af0748f32fb6f28642aeacae"
+        },
+        "rationale": "有界更新第六部《变异与不确定性》既有研究阅读与文献台账时间戳或同载体选段，保留原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:readings",
+        "from": {
+          "raw": "a121f9b7a1af6fbe88c00f185a4f5bc301f24d95dee793fecc297eb59e468dbd",
+          "public": null,
+          "protected": "a121f9b7a1af6fbe88c00f185a4f5bc301f24d95dee793fecc297eb59e468dbd"
+        },
+        "to": {
+          "raw": "93033db6dd245b09111aed756adadbff16123b5a48d20dce393333c88fc42d64",
+          "public": null,
+          "protected": "93033db6dd245b09111aed756adadbff16123b5a48d20dce393333c88fc42d64"
+        },
+        "rationale": "有界更新第六部《变异与不确定性》既有研究阅读与文献台账时间戳或同载体选段，保留原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:gaps",
+        "from": {
+          "raw": "646aae4391d36091b98a097784f5bffbe5aaf23b506bb8be5b6a46a56c7bfd33",
+          "public": null,
+          "protected": "646aae4391d36091b98a097784f5bffbe5aaf23b506bb8be5b6a46a56c7bfd33"
+        },
+        "to": {
+          "raw": "4d3edfec2ff9c9ba913524870800df2b13bc94451601893c55f121eec7b1f0d8",
+          "public": null,
+          "protected": "4d3edfec2ff9c9ba913524870800df2b13bc94451601893c55f121eec7b1f0d8"
+        },
+        "rationale": "有界更新第六部《变异与不确定性》既有研究阅读与文献台账时间戳或同载体选段，保留原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:revisions",
+        "from": {
+          "raw": "23680023032adcc913958a2a100f65277de317c9565c74ad661dbdae3b278216",
+          "public": null,
+          "protected": "23680023032adcc913958a2a100f65277de317c9565c74ad661dbdae3b278216"
+        },
+        "to": {
+          "raw": "02f56513697ea3af0e4526935a8957d1bf2bba0d08fe5bf1f16ce9be77a7bdd9",
+          "public": null,
+          "protected": "02f56513697ea3af0e4526935a8957d1bf2bba0d08fe5bf1f16ce9be77a7bdd9"
+        },
+        "rationale": "有界更新第六部《变异与不确定性》既有研究阅读与文献台账时间戳或同载体选段，保留原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:literature",
+        "from": {
+          "raw": "a120b8dda30e0c9830800dc697c4057fe1fc38674a14c34fcb8d7d57b81dbe58",
+          "public": null,
+          "protected": "a120b8dda30e0c9830800dc697c4057fe1fc38674a14c34fcb8d7d57b81dbe58"
+        },
+        "to": {
+          "raw": "4a7bb67d42fd55ab38c87189ab9e17ada2d0161bd52395d44e5c275e97ff0cec",
+          "public": null,
+          "protected": "4a7bb67d42fd55ab38c87189ab9e17ada2d0161bd52395d44e5c275e97ff0cec"
+        },
+        "rationale": "有界更新第六部《变异与不确定性》既有研究阅读与文献台账时间戳或同载体选段，保留原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:queries",
+        "from": {
+          "raw": "2c3e3d8543e15afb96f96794740387f76707f35900f0ea9616974eb43b1f4176",
+          "public": null,
+          "protected": "2c3e3d8543e15afb96f96794740387f76707f35900f0ea9616974eb43b1f4176"
+        },
+        "to": {
+          "raw": "a9478e7d5835bd9710b5437a3132a187b8720ab535b6cec59acd8618c00acede",
+          "public": null,
+          "protected": "a9478e7d5835bd9710b5437a3132a187b8720ab535b6cec59acd8618c00acede"
+        },
+        "rationale": "有界更新第六部《变异与不确定性》既有研究阅读与文献台账时间戳或同载体选段，保留原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:public-projection",
+        "from": {
+          "raw": "686296df67b59a5e8252dba10d3a3cf4821266f87bf8a9f5189e0fc7f20db139",
+          "public": null,
+          "protected": "686296df67b59a5e8252dba10d3a3cf4821266f87bf8a9f5189e0fc7f20db139"
+        },
+        "to": {
+          "raw": "90f13237663698574975baf4312e8f5160dee9bdc4807018cf7ddc739bdd8da7",
+          "public": null,
+          "protected": "90f13237663698574975baf4312e8f5160dee9bdc4807018cf7ddc739bdd8da7"
+        },
+        "rationale": "有界更新第六部《变异与不确定性》既有研究阅读与文献台账时间戳或同载体选段，保留原有科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-unc149-variability-vs-epistemic",
+        "from": null,
+        "to": {
+          "raw": "f094f86018bd3d202d3dd58c453b47df33502caa7b03b119a4da184b8f2043f3",
+          "public": "f094f86018bd3d202d3dd58c453b47df33502caa7b03b119a4da184b8f2043f3",
+          "protected": "65486a2e4433a552f516df3a70183a53a5a6db1d5d70cde1500247cfacd30d86"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-unc149-framework-comparison",
+        "from": null,
+        "to": {
+          "raw": "875ef4e4e23fb02f8e78d0ddd926c014d914f151733be0408d5b471aa3664d72",
+          "public": "875ef4e4e23fb02f8e78d0ddd926c014d914f151733be0408d5b471aa3664d72",
+          "protected": "a06c1b783c693b6dc81040e0eb4f6d4a2d02d3b141c8c68a11e2e848b8f66f49"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-unc149-local-vs-global-sa",
+        "from": null,
+        "to": {
+          "raw": "19796672fba3d30de33298af124f0e404a2a481d5f3e8f886878ee186a855006",
+          "public": "19796672fba3d30de33298af124f0e404a2a481d5f3e8f886878ee186a855006",
+          "protected": "c258a7f8acbc4fd365fb70606f570e1b1af378ee8fb5a1c062b293d8df1fd918"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-unc149-taylor-vs-sampling",
+        "from": null,
+        "to": {
+          "raw": "e5baf32d084cf5c58d4b984a515221475ca9013819b35e132bbcfc3fc617a5b2",
+          "public": "e5baf32d084cf5c58d4b984a515221475ca9013819b35e132bbcfc3fc617a5b2",
+          "protected": "4f1ba3f9a26304162ee1e19023cd83eb2fbe0c05536b7976686eb893b2e32e40"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-unc149-gsa-outliers-nonlinearity",
+        "from": null,
+        "to": {
+          "raw": "7dbbcfa85027d09b4b124d24dad59d8758fe1cf8a2abb410ebec9e9bc36b341b",
+          "public": "7dbbcfa85027d09b4b124d24dad59d8758fe1cf8a2abb410ebec9e9bc36b341b",
+          "protected": "53d00058a03e2f27e6a93289e7c78dc9e826ce561783ef4580477c9d7547adf5"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-unc149-mc-runs-precision-vs-accuracy",
+        "from": null,
+        "to": {
+          "raw": "d9ddb94a9189f1126a7370da24b4bd6ef7df933bd009c6b34d7e8349cd16ae37",
+          "public": "d9ddb94a9189f1126a7370da24b4bd6ef7df933bd009c6b34d7e8349cd16ae37",
+          "protected": "b0c2140c4dc804bd7a0d711b6be83ff79d52bb80810b006134848871fcb55a82"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-unc149-comparative-paired-and-pvalue",
+        "from": null,
+        "to": {
+          "raw": "a445b053720437527b3bf435a4eb6fa0e95b13f36375bb68ff466914edbb2641",
+          "public": "a445b053720437527b3bf435a4eb6fa0e95b13f36375bb68ff466914edbb2641",
+          "protected": "c4488e06d567b24311b2feedb2add6f0c4ee6f30c42158ffb11de65f1e658822"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-unc149-pedigree-mc-boundary",
+        "from": null,
+        "to": {
+          "raw": "180dd592b3777477750467d4e39bf8b9aef9b5daf325d0cc4c21aca82621915e",
+          "public": "180dd592b3777477750467d4e39bf8b9aef9b5daf325d0cc4c21aca82621915e",
+          "protected": "bce17b9a9b7a86d2a20e3349bce8ca557bbb8673d32afe60c42d69b34e0604a4"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增规范比较论述。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-unc149-heijungs2020-sources-runtime",
+        "from": null,
+        "to": {
+          "raw": "9adf986cef069d9cf933552ea3053d763b1c4a467e5e329669cdf7aafff7223c",
+          "public": "9024083e5fa8022f2e88d17dd506201b64db1af6c5c2460af43123835ddb12f2",
+          "protected": "9adf986cef069d9cf933552ea3053d763b1c4a467e5e329669cdf7aafff7223c"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-unc149-heijungs2020-standalone-precision-accuracy",
+        "from": null,
+        "to": {
+          "raw": "f8fe6c16b22776854ab1e3d51a52257f6163a88036ca25a727439f8a2b86100f",
+          "public": "6f0bae664b0a2c8e8bd10e4d2f35f09c24c280d31dcbdbecb5bae7b0ed5f0be3",
+          "protected": "f8fe6c16b22776854ab1e3d51a52257f6163a88036ca25a727439f8a2b86100f"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-unc149-heijungs2020-comparative-pvalue-cap",
+        "from": null,
+        "to": {
+          "raw": "6c575dd017b0a1155c23eee648d9fc6ab41809e103da3f6f1713cfa7218c81a2",
+          "public": "96c999cf563cc251f9424b2c1e6cfb41542bf3624e93c553457226c7e3135bc4",
+          "protected": "6c575dd017b0a1155c23eee648d9fc6ab41809e103da3f6f1713cfa7218c81a2"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-unc149-heijungs2020-pedigree-incompatibility",
+        "from": null,
+        "to": {
+          "raw": "ee08885012578566ad171039a74a99c034904e8e3c4840e3c5156224e2783a5a",
+          "public": "66486d0196060106a0141310974fa60b1bac22fee1c0a08c50b5de461ce03861",
+          "protected": "ee08885012578566ad171039a74a99c034904e8e3c4840e3c5156224e2783a5a"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-unc149-groen2017-variability-local-global",
+        "from": null,
+        "to": {
+          "raw": "9f2e1526ff1084d27d0b43256959353db21e2c9c9a9a2f6d86b5811b60a010af",
+          "public": "d5f86fc0b635a6171f9fe51faa3b16af05bbcf13f68cb4b2297e9d5b5b0bc5a9",
+          "protected": "9f2e1526ff1084d27d0b43256959353db21e2c9c9a9a2f6d86b5811b60a010af"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-unc149-groen2017-methods-cost-case-studies",
+        "from": null,
+        "to": {
+          "raw": "f87e06aafb6cef536493c4208706e6d119a43f86abdc7b5e76e312acc3b707a3",
+          "public": "6422b75b976e3a27b039ba447c785b6b41b852ecfebcb0d5c264b42c1fcce4ef",
+          "protected": "f87e06aafb6cef536493c4208706e6d119a43f86abdc7b5e76e312acc3b707a3"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-unc149-groen2017-outliers-caveats",
+        "from": null,
+        "to": {
+          "raw": "47d0c6e6c06e5e2c5bb591011b80e030d466d6f0490f2a4cfca75c989cc88f3e",
+          "public": "7a29f26580615fed25e7bed3eae16db5cb8974c6b99e41bb6cd10c0c217beac6",
+          "protected": "47d0c6e6c06e5e2c5bb591011b80e030d466d6f0490f2a4cfca75c989cc88f3e"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-unc149-ilcd2010-sensitivity-check",
+        "from": null,
+        "to": {
+          "raw": "4cdea1076da6407166a04c7d391b256e338e91c3cc46b6684c3bc3e87bd341d3",
+          "public": "5a215efaac0c1779a0f9cb4026aebcf100b801f60757e8e1818542024b5295e7",
+          "protected": "4cdea1076da6407166a04c7d391b256e338e91c3cc46b6684c3bc3e87bd341d3"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-unc149-ilcd2010-comparative-covariance",
+        "from": null,
+        "to": {
+          "raw": "052dc7b21b435a074574a7dd5aec588b6548769c94436c120afd4aa495a29302",
+          "public": "3b5f2eed3d1ee225a68c39db8cf9e8bd7cc3893729954227ec65c198a6f249e4",
+          "protected": "052dc7b21b435a074574a7dd5aec588b6548769c94436c120afd4aa495a29302"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-unc149-eu2021-robustness-hotspots",
+        "from": null,
+        "to": {
+          "raw": "2b580195cd49a42176e6b56fce3a1c348eafe4ad0eb3e4524da23c7ecf9751c3",
+          "public": "5f52f2ab67b90742eeb58636a8f9b24189d9c1e1b60146d56849a8e1ed2d99bf",
+          "protected": "2b580195cd49a42176e6b56fce3a1c348eafe4ad0eb3e4524da23c7ecf9751c3"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增一比一单载体证据与有理数事实。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-unc149-heijungs-2020",
+        "from": null,
+        "to": {
+          "raw": "7b7b82593dd92d6d866c1a5ed776161d269c5a31ff17e5f8017c55b4c935514b",
+          "public": "274bfc2f623d71b1d68000d1a7697443dd1bf896e7a25325ef93669e78da2f5b",
+          "protected": "7b7b82593dd92d6d866c1a5ed776161d269c5a31ff17e5f8017c55b4c935514b"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增一手开放获取文献来源。"
+      },
+      {
+        "kind": "record",
+        "key": "sources:src-unc149-groen-2017",
+        "from": null,
+        "to": {
+          "raw": "2fc214bcc99d4c773d81378ea87fd433f1869bc746df6f27cc07713dd5d69930",
+          "public": "3f12ed913fe0c9b13a5d5ccbbabaf3f3b1fed51b9ee050b06648a75640fd6f68",
+          "protected": "2fc214bcc99d4c773d81378ea87fd433f1869bc746df6f27cc07713dd5d69930"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增一手开放获取文献来源。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-unc149-heijungs-2020",
+        "from": null,
+        "to": {
+          "raw": "a27bde8cc2f207d51f9dd26e8c874a659a1a200bd2a60e1466a75d285cef1258",
+          "public": null,
+          "protected": "a27bde8cc2f207d51f9dd26e8c874a659a1a200bd2a60e1466a75d285cef1258"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增阅读与文献台账记录。"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-unc149-groen-2017",
+        "from": null,
+        "to": {
+          "raw": "7fffd8e3eb5d019384076146beceda294b98130712799f50044f9599dd5614cb",
+          "public": null,
+          "protected": "7fffd8e3eb5d019384076146beceda294b98130712799f50044f9599dd5614cb"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增阅读与文献台账记录。"
+      },
+      {
+        "kind": "record",
+        "key": "gaps:gap-unc149-correlated-and-nonlinear-lcia-gsa",
+        "from": null,
+        "to": {
+          "raw": "9f5bf3906a1ce85fca5795ed3c04fc837be04282fa2703862e9907a58abd7ad8",
+          "public": null,
+          "protected": "9f5bf3906a1ce85fca5795ed3c04fc837be04282fa2703862e9907a58abd7ad8"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增阅读与文献台账记录。"
+      },
+      {
+        "kind": "record",
+        "key": "revisions:rev-unc149-b26-uncertainty-variability-comparison",
+        "from": null,
+        "to": {
+          "raw": "2971723c4d9693d8236a4ae08b15e908954c272c20aea7f3a2871ee18dc2a305",
+          "public": null,
+          "protected": "2971723c4d9693d8236a4ae08b15e908954c272c20aea7f3a2871ee18dc2a305"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增阅读与文献台账记录。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-unc149-heijungs-2020",
+        "from": null,
+        "to": {
+          "raw": "81291627701b3e82d762cc618b055b4495d5cf6f7c6806ebdea35a931f5db102",
+          "public": null,
+          "protected": "81291627701b3e82d762cc618b055b4495d5cf6f7c6806ebdea35a931f5db102"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增阅读与文献台账记录。"
+      },
+      {
+        "kind": "record",
+        "key": "literature:work-unc149-groen-2017",
+        "from": null,
+        "to": {
+          "raw": "a406f8dd343d7a5fe19cedfffd8f0322279a7306219d86f795a4390653f4405e",
+          "public": null,
+          "protected": "a406f8dd343d7a5fe19cedfffd8f0322279a7306219d86f795a4390653f4405e"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增阅读与文献台账记录。"
+      },
+      {
+        "kind": "record",
+        "key": "queries:q-unc149-propagation-global-sensitivity-comparative-inference-20261119",
+        "from": null,
+        "to": {
+          "raw": "7e6e1db72ad5762209bbaf34daf236b8917499978597a642b4830ee8e2618845",
+          "public": null,
+          "protected": "7e6e1db72ad5762209bbaf34daf236b8917499978597a642b4830ee8e2618845"
+        },
+        "rationale": "登记第六部第二章《变异与不确定性》跨体系比较单元（#149）的新增阅读与文献台账记录。"
+      }
+    ],
+    "consumers": [
+      {
+        "id": "cl-flow-type",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-exchange",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow-exchange-distinction",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-waste-no-universal",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ilcd-reference-flow",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ilcd-fu",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-fu-distinction",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-fu-example",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-bw-direction",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-bw-sign",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-service",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-service-contract",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-ilcd-reference",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-reference-reading",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-comparison-more",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-three-comparisons",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-interpret-iterate",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-not-equivalent",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-conclusion-conditions",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-integrative-function",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-integrative-iteration",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-integrative-path",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-regional-localization-not-translation",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-regional-method-origin-not-validity",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-regional-benchmarks-and-policy-goals",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-regional-wf-ambiguity",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-regional-research-agenda-not-country-claim",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-unc-types",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-unc-parameters",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-unc-model",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-unc-choices",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-unc-target",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-unc-numerical",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-unc-scores",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-unc-calibration",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-unc-baseline",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-unc-table-conflict",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-unc-alongside",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-unc-context",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-unc-synthesis",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-db2011-review-relative-to-criteria",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-db2011-validation-context",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-db2011-versioned-confidence",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-future-definition",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-future-scale-up",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-future-incumbent",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-future-scenarios",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-future-background",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-future-impact-limits",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-future-comparison-conditions",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-connect-object-before-unit",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-connect-service-changes-system",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-connect-target-and-distribution",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-connect-three-scalings",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-connect-time-relations",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-connect-prospective-two-questions",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-connect-reuse-keeps-relation",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-connect-evidence-to-probability",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-connect-useful-without-winner",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-connect-review-does-not-transfer",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-connect-next-evidence-at-link",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-question",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-quantities",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-reference",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-same-mass",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-coordinates",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-demand",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-activities",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-balance-meaning",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-inventory",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-inventory-boundary",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-factor-choice",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-characterization",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-metric-meaning",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-time",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-unknown",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-paired-range",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-pairing",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-tolerance",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-rough-demand",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-rough-comparison",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-exercise",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-wall-answer",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-framework-design-sideeffects",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-framework-reader-work-product",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ped-weighted-mean",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ped-design-variance",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ped-estimate-boundary",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ped-subsets",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ped-score-mapping",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ped-gsd-definition",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ped-completeness-ratio",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ped-calibration-boundary",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ped-ratio-rule",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ped-independent-product",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ped-score-test-design",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ped-score-test-results",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ped-three-tests",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ped-cluster-arithmetic",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ped-poststratification",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ped-population-spread",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ped-stratified-conflict",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ped-factor-values",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ped-ratio-example",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ped-ratio-residual",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ped-factor-conventions",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ped-inventory-assumptions",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ped-inventory-combination",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ped-inventory-interval",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ped-inventory-center",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-ped-reliability-cv-trace",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-hyb-accounts",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-hyb-service",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-hyb-ledger",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-hyb-invoices",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-hyb-raw",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-hyb-naive",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-hyb-remove",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-hyb-equations",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-hyb-corrected",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-hyb-naive-result",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-hyb-swap",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-hyb-swap-result",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-hyb-audit",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-es-authority",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-es-three",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-es-equation",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-es-why-square",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-es-nmvoc",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-es-nox",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-es-service",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-es-score",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-es-scale",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-es-threshold",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-es-test",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-es-later",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-es-judgment",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-purpose",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-policy-contrast",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-baseline",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-units",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-display",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-logit",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-trade",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-precision",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-primary-ratio",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-households",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-health",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-mismatch",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-annual",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-shares",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-two-forms",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-different-card",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-english",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-english-basis",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-service",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-japan-route",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-break-even",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-english-route",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-numeraire",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-edition",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-validity",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-null",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-order",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-transfer",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lime-decision",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-pack-limits",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-question",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-two-branches",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-characterization",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-reference",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-service-period",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-target",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-weight-meaning",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-cancellation",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-time-bridge",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-resource-meaning",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-resource-units",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-parameter-history",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-later-critique",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-policy-records",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-changed-reference",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-policy-limit",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-hk-borrowing",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-hk-local",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-hk-weights",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-standard-authority",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cn-conclusion",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-opening",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-rp",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-why-chain",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-force",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-category",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-version",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-use-boundary",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-default",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-results-layer",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-reconstruction-limit",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-review-objects",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-review-2018",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-review-2024",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-review-identity",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-validity",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-methane-rule",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-nordic-design",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-niu-provenance",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-ipcc-class",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-model-meaning",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-comparison-limits",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-evidence-judgment",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-conclusion",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-wash-cycles",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-wash-inputs",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-use-result",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-report-split",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-quantity-scale",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-capital-gap",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-storage-gap",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-ration-units",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-niu-result",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-ipcc-result",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-rule-issuer",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-pm-population-meaning",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-pm-factor-correction",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-pm-implementation-layer",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-pm-matched-scope",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-pm-uncovered-pathways",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-pm-conclusion",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-pm-activity-indicators",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-opening",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-service",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-coordinates",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-voltage-path",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-grid-assets",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-loss-definition",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-norway-loss",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-segment-denominators",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-database-voltage",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-loss-proxy",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-egrid-scope",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-egrid-adjustments",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-egrid-rate",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-egrid-loss",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-egrid-loss-conflict",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-region-membership",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-eia-emissions",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-average-response",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-historical-generation",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-historical-consumption",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-empirical-limits",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-price-versus-energy",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-native-model",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-native-scenario",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-native-loss",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-native-loss-document",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-native-interpolation",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-native-output",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-native-ratios",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-native-check-meaning",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-native-two-hours",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-native-pollutants",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-native-application",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-question",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-system",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-perturbation",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-postprocessing",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-balance",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-load-parts",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-distribution",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-direct-rates",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-three-questions",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-gases",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-gases-total",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-scenario",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-time",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-formula",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-alternative-lca",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-validation-objects",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-connection",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-nonbaseload",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-native-coordinate",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-power-future-storage-policy",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-opening",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-record-and-link",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-bottle-reference",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-example-scope",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-opposite",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-scale",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-matrix-sign",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-allocation-held",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-representation-result",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-small-inventory",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-same-flow-total",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-three-co2-quantities",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-allocation-result",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-printed-comparator",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-missing-link",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-missing-link-score",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-jrc-instance",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-jrc-connectors",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-jrc-parameters",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-jrc-weight-control",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-jrc-bare-setup",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-jrc-machine-edge",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-jrc-machine-coordinate",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-jrc-source-discrepancy",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-jrc-partial-match",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-jrc-result-projection",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-jrc-version-reference",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-format-scope",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-format-original-target",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-format-double-target",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-format-result-scale",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-result-direction",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-conversion-study",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-factor-probe",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-factor-zero-absent",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-factor-real-gap",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-factor-report",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-preservation-meaning",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-native-service-meaning",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cml-reception-question",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cml-screening-boundaries",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cml-reception-lineage",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cml-ending",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cml-solvent-bins",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cml-range-bins",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-climate-wall-fixed",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-climate-wall-reweighted",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-climate-comparison-criteria",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-climate-conclusion",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-closing-wall-substrate",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-closing-historical-return",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cml-screening-range-limit",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-maintenance-condition",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-record-model-limit",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-inv-service-to-demand",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-db2011-conditional-use",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-pm-matched-scenario",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-pm-version-and-model",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-future-scenario-matrix",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-future-decision",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-unc-separate",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-social-results-to-cost",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-book-cost-decision",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-two-boundaries",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-elementary",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-landfill",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-boundary-consequence",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-agricultural-boundary",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-boundary-exceptions",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-record-and-instance",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-schema-levels",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-identity-example",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-waste-classification",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-material-and-service",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-direction-equivalence",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-reference-levels",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-basis-and-demand",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-pesticide-interface",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-interface-consequence",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-phosphorus-interface",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-zero-placeholder",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-zero-reasons",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-zero-reporting",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-conclusion",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-flow99-probe-reference",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-service102-row-map",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-service102-service-meaning",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-service102-redundant",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-service102-residual-condition",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-sub105-two-uses",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-sub105-pef-report",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-sub105-ilcd-market",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-sub105-ilcd-absorption",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-sub105-pef-direct",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-sub105-evidence-example",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-sub105-fallbacks",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-sub105-conditional-results",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-sub105-reporting-objects",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-shift107-complete-action",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-shift107-joint-direction",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-shift107-service",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-shift107-supply",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-shift107-small",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-shift107-large",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-shift107-control",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-shift107-comparison-judgment",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cff109-question",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cff109-quality",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cff109-control",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cff109-version",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cff109-response",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-cff109-judgment",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-bio127-midpoint-endpoint-genealogy",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-bio127-feedback-perspective-asymmetry",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-bio127-ef31-subindicator-partition",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-bio127-zero-zero-vs-minus-plus-one",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-bio127-co-removal-and-methane-shift",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-bio127-package-and-report-discrepancies",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-bio127-storage-abolition-and-dluc-window",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-bio127-climate-diagnostic-synthesis",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-eutro129-category-genealogy",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-eutro129-phosphorus-soil-water-interface",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-eutro129-phosphorus-stoichiometry-and-p2o5",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-eutro129-nitrogen-soil-prohibition",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-eutro129-aquatic-and-airborne-n-reversals",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-eutro129-location-copies-and-nox-inversion",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-eutro129-normalization-double-counting-and-xml-anomalies",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-eutro129-operational-synthesis",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-particulate131-indicator-cutpoints",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-particulate131-size-and-subcompartment",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-particulate131-cohen-empirical-limits",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-particulate131-precursor-perspectives",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-particulate131-ef-ammonia-inversion",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-particulate131-regional-endpoint-reversal",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-particulate131-package-discrepancies",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-weight135-ef-coating-outdoor",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-weight135-ef-coating-indoor",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-weight135-ef-robustness-weights",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-weight135-denominator-coupling-and-drift",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-weight135-comparative-assertion-regimes",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-weight135-target-vs-hybrid-boundary",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-weight135-lime-three-table-rereversal",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-weight135-recipe-endpoint-stop",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-weight135-health-perspective-reversal",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-weight135-four-paradigm-synthesis",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-weight135-monetary-incommensurability",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-weight135-glam3-reporting-discipline",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-loc137-ef31-location-regimes",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-loc137-ef31-global-nf-extrapolation",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-loc137-dirty-denominator-paradox",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-loc137-open-economy-boundary-reversal",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-loc137-biophysical-vs-political-units",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-loc137-pm-nonlinear-and-endpoint-reversals",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-loc137-institutional-adoption-vs-compliance",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-loc137-four-layer-localization-audit",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-soc139-portfolio-reference-and-comparative-assertions",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-soc139-occupational-health-pathways-and-rights-boundary",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-soc139-cross-pillar-overlap-audit",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lcc143-three-lcc-archetypes-and-value-added-consolidation",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lcc143-actor-split-incentive-and-discount-rate-reversal",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lcc143-five-monetary-quantities-and-shadow-price-double-counting",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lcc143-cut-off-asymmetry-and-cost-rebound-boundary",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lcc143-demarcating-ra-eia-and-mfa-ioa",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-lcc143-single-issue-footprints-vs-multi-indicator-profiles",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-dapp147-dataset-roles-and-system-linking",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-dapp147-intrinsic-vs-context-representativeness",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-dapp147-quality-architectures-and-prerequisite-split",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-dapp147-weakest-link-vs-mean-and-80pct-masking",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-dapp147-validation-vs-review-and-team-thresholds",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-dapp147-five-aspect-compliance-and-uuid-semantics",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-dapp147-package-migration-inheritance-and-surveillance",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      },
+      {
+        "id": "cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge",
+        "rationale": "核查跨章关联论述：本次仅在 2 份共享一手来源（ILCD 2010 与欧盟建议书 2021/2279）上追加同载体新核验选段，并对 7 条既有 B26 证据定位符作无损中文规范化（同时清洁第 32 章复用的 3 处引用）及更新 B26 末段收束，不改变任何既有跨章论述的引证关系、数值事实或科学判断边界。"
+      }
+    ],
+    "assessment": {
+      "scope": "Part VI chapter B26 (content/docs/book/uncertainty-and-variability.mdx), covering 2 new Open Access CC BY 4.0 works/sources/readings (Heijungs 2020 IJLCA 25:394-402; Groen et al. 2017 IJLCA 22:1125-1137), 2 appended prior carriers (rd-ilcd-2010 §9.3.3/§9.4; rd-kb44-ec2021 Annex I §6.2-6.4), 10 1-to-1 single-artifact ev-unc149-*/psg-unc149-* pairs, 42 BigInt rational numericFacts, 8 new cl-unc149-* claims, 2 print-visible corrected claims (cl-unc-sd-sem, cl-book-unc-bridge), 7 normalized ev-unc-* locators, and 2 six-column comparative tables against predecessor commit 4bb508394ef2f6c671b1468d41a2b67c51296be6.",
+      "comparison": "Systematically compares ISO 14040/14044, EC-JRC ILCD General Guide (2010, §9.3.3 & §9.4), EU Recommendation 2021/2279 (Annex I §6.2-6.4), Heijungs (2020), and Groen et al. (2017) across uncertainty vs variability estimation targets, qualitative/semi-quantitative vs probabilistic requirements, analytical Taylor/error propagation vs Monte Carlo / Latin Hypercube / Quasi-Monte Carlo sampling, paired/dependent sampling for comparative assertions, 1/sqrt(n) Monte Carlo convergence & statistical-significance misuse, and local OAT vs global sensitivity analysis (SRC, Morris, Sobol, RBD).",
+      "values": "Verifies all 42 exact BigInt rational numericFacts across Heijungs (2020), Groen et al. (2017) Table 4 (p. 1133), ILCD §9.3.3/§9.4, and EU Recommendation 2021/2279 (0 Monte Carlo occurrences across 384 pages), including 1/sqrt(n) error halving (4x runs), n=1,000 vs 10,000, 2^3=8 extreme scenarios, and global sensitivity computational cost scaling.",
+      "limits": "Signs off Part VI chapter B26 only; B27-B28, Part VI whole-part continuous reread, Parts VII-VIII, and all 8 global Programme #9 criteria remain open.",
+      "conservation": "Conserves all 9 original B26 claim identities (with explicit public correction notices on cl-unc-sd-sem and cl-book-unc-bridge), all 3 pinned headings (#估计对象, #不确定性来源, #数值可靠性), all 1,043 non-B26 claims, and all 40 case files byte-for-byte.",
+      "review": "Two-round independent primary-source and numeric entailment audit verified SHA-256 digests, PDF page indices, verbatim wording, modal precision, evidence bindings, and BigInt arithmetic across all carriers, concluding unconditional PASS (0 BLOCKER, 0 MAJOR, 0 MINOR)."
+    },
+    "independentReports": {
+      "independent-primary-source-audit-final.md": "e12a5aacb278b1915a75ddb56b5ba675ea9eb000911306d85d1e3d0df8f78121",
+      "b26-continuous-reader-review-final.md": "4a3f39bfe81a16ca2b63ab2743c720fe51c10f934fee10cc7add1d921927f68f",
+      "independent-publication-engineering-review-final.md": "c93c3152826e44c0a8f438c8a495a4cef9565c5558fea8571921961b9f1d1ee9",
+      "qa-summary-149.json": "f977f37e64813e39b3b67e34df574b1ed19d8c79076b9fbea18c43968fe64b13"
+    }
+  }
+}

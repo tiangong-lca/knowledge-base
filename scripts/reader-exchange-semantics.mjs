@@ -3,7 +3,7 @@ import { serviceConstraintsEvaluationFile } from './reader-service-constraints.m
 import { visibleHistoryControl } from './reader-flow-boundary.mjs';
 import { historyPrintPointerTitleLayout } from './reader-copyedit.mjs';
 import { currentPrintReadingHref, getHeadingNumbering, getUnitNumbering } from './reader-numbering.mjs';
-import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches, currentFlowBoundary, currentPart5Reread } from './reader-current-expectations.mjs';
+import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches, currentFlowBoundary, currentPart5Reread, currentUncertaintyComparison } from './reader-current-expectations.mjs';
 import readingRegister from '../knowledge/research/readings.json' with { type: 'json' };
 import { getClaimEvidence } from './knowledge.mjs';
 import { frameworkBookHref } from './reader-edition.mjs';
@@ -243,16 +243,23 @@ export function unaccountedReaderText(root, checkedNodes) {
   visit(root); return unexpected;
 }
 
-export function readerCitationSourceTitle(source, part5Active = Boolean(currentPart5Reread)) {
-  if (!source?.title || !part5Active) return source?.title ?? '';
-  return source.title
-    .replace('Organizations2020', 'Organizations (2020)')
-    .replace(' — official Bundesblatt carrier', '');
+export function readerCitationSourceTitle(source, part5Active = Boolean(currentPart5Reread), uncActive = Boolean(currentUncertaintyComparison)) {
+  if (!source?.title) return '';
+  let title = source.title;
+  if (part5Active) {
+    title = title
+      .replace('Organizations2020', 'Organizations (2020)')
+      .replace(' — official Bundesblatt carrier', '');
+  }
+  if (uncActive) {
+    title = title.replace('§2.1', 'Ch. 2.1');
+  }
+  return title;
 }
 
 /** Match ClaimAnnotation's actual public projection, including per-unit input deduplication. */
 export function validateExchangeAnnotationOutput(document,unit,route,catalog,{print=false,claimIds=null,readings=readingRegister}={}) {
-  const part5Active=Boolean(currentPart5Reread);
+  const part5Active=Boolean(currentPart5Reread),uncActive=Boolean(currentUncertaintyComparison);
   const errors=[],prefix=print?printUnitAnchor(route):chapterAnchorPrefix(route),allNotes=unit.querySelectorAll('[data-reader-claim]'),ids=allNotes.map(note=>note.getAttribute('data-reader-claim'));
   const byId=new Map((catalog?.claims??[]).map(claim=>[claim.id,claim])),references=print?printedReferenceIndex(document):new Map(),seenInputs=new Set();
   for(const note of allNotes) {
@@ -270,7 +277,7 @@ export function validateExchangeAnnotationOutput(document,unit,route,catalog,{pr
     const sourceItems=sourceLists[0]?.querySelectorAll('li')??[];
     if(sourceItems.length!==evidence.length)fail('evidence source occurrences missing or repeated');
     evidence.forEach(({evidence:item,relation},index)=>{
-      const source=catalog.sources.find(source=>source.id===item.sourceId),displayTitle=source?readerCitationSourceTitle(source,part5Active):'',li=sourceItems[index],link=li?.querySelector('a'),expectedText=source?`${displayTitle}。${item.locator.replace(/。+$/u,'')}。${relation!=='supports'?`（${annotationRelations[relation]}）`:''}`:'';
+      const source=catalog.sources.find(source=>source.id===item.sourceId),displayTitle=source?readerCitationSourceTitle(source,part5Active,uncActive):'',li=sourceItems[index],link=li?.querySelector('a'),expectedText=source?`${displayTitle}。${item.locator.replace(/。+$/u,'')}。${relation!=='supports'?`（${annotationRelations[relation]}）`:''}`:'';
       if(!source||!li||link?.getAttribute('href')!==`/sources/#${item.id}`||link.text!==displayTitle||compact(withoutCarrierText(li))!==compact(expectedText)) {fail(`source, locator or relation missing or changed (${item.id})`);return;}
       const artifact=expectedPassageArtifact(catalog,item,readings),carriers=li.querySelectorAll('.source-reading');
       if(carriers.length!==(artifact?1:0)){fail(`actual carrier context missing or changed (${item.id})`);return;}
