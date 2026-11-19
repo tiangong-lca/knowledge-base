@@ -1,6 +1,9 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import test from 'node:test';
+import part6 from '../config/reader-part6-reread.json' with { type: 'json' };
+import { restorePart6RereadTestFiles } from './reader-part6-reread.mjs';
+import { previousScientificTestRecords } from './fixtures/scientific-receipt-envelope.mjs';
 import config from '../config/reader-data-quality-comparison.json' with { type: 'json' };
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
@@ -33,7 +36,9 @@ async function loadInput() {
     readServiceConstraintsFiles('.', service.unit),
   ]);
   for (const [p, b] of [...shiftFiles, ...serviceFiles]) files.set(p, b);
-  return { catalog, readings, literature, files };
+  restorePart6RereadTestFiles(files, part6.unit);
+  const prev153 = previousScientificTestRecords({ catalog, readings, literature }, part6.unit);
+  return { ...prev153, files };
 }
 
 test('Unit #153 data quality comparison source prepares cleanly and recovers exact def232fa predecessor pin', async () => {
