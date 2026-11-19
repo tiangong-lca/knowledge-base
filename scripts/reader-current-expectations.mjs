@@ -1,3 +1,5 @@
+import dqpConfig from '../config/reader-data-quality-comparison.json' with { type: 'json' };
+import { selectDataQualityComparison, effectiveDataQualityComparison, dataQualityComparisonLayout } from './reader-data-quality-comparison.mjs';
 import pfrConfig from '../config/reader-product-footprint-comparison.json' with { type: 'json' };
 import { selectProductFootprintComparison, effectiveProductFootprintComparison } from './reader-product-footprint-comparison.mjs';
 import uncConfig from '../config/reader-uncertainty-comparison.json' with { type: 'json' };
@@ -85,8 +87,9 @@ export const currentPart5Reread = selectPart5Reread(part5Config, undefined, prev
 export const currentDataApplicabilityComparison = selectDataApplicabilityComparison(dappConfig, undefined, preview);
 export const currentUncertaintyComparison = selectUncertaintyComparison(uncConfig, undefined, preview);
 export const currentProductFootprintComparison = selectProductFootprintComparison(pfrConfig, undefined, preview);
+export const currentDataQualityComparison = selectDataQualityComparison(dqpConfig, undefined, preview);
 export const isReadableBookReviewPreview = oldPreview
-  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview' || acidConfig.status === 'preview' || mineralConfig.status === 'preview' || fossilConfig.status === 'preview' || ozoneConfig.status === 'preview' || ozradConfig.status === 'preview' || toxConfig.status === 'preview' || waterConfig.status === 'preview' || biogenicConfig.status === 'preview' || eutroConfig.status === 'preview' || particulateConfig.status === 'preview' || part4Config.status === 'preview' || weightingConfig.status === 'preview' || localizationConfig.status === 'preview' || socialConfig.status === 'preview' || costConfig.status === 'preview' || part5Config.status === 'preview' || dappConfig.status === 'preview' || uncConfig.status === 'preview' || pfrConfig.status === 'preview');
+  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview' || acidConfig.status === 'preview' || mineralConfig.status === 'preview' || fossilConfig.status === 'preview' || ozoneConfig.status === 'preview' || ozradConfig.status === 'preview' || toxConfig.status === 'preview' || waterConfig.status === 'preview' || biogenicConfig.status === 'preview' || eutroConfig.status === 'preview' || particulateConfig.status === 'preview' || part4Config.status === 'preview' || weightingConfig.status === 'preview' || localizationConfig.status === 'preview' || socialConfig.status === 'preview' || costConfig.status === 'preview' || part5Config.status === 'preview' || dappConfig.status === 'preview' || uncConfig.status === 'preview' || pfrConfig.status === 'preview' || dqpConfig.status === 'preview');
 const previousPlan = readableBookReviewPlan(oldPreview
   ? acceptance.units
   : pinnedReadableBookUnits(acceptance, readableBookBaselineDigest, readableBookAcceptancePins));
@@ -115,7 +118,8 @@ const acceptedCost = effectiveCostSustainability(acceptedSocial, currentCostSust
 const acceptedPart5 = effectivePart5Reread(acceptedCost, currentPart5Reread);
 const acceptedDapp = effectiveDataApplicabilityComparison(acceptedPart5, currentDataApplicabilityComparison);
 const acceptedUnc = effectiveUncertaintyComparison(acceptedDapp, currentUncertaintyComparison);
-export const currentBookPlan = effectiveProductFootprintComparison(acceptedUnc, currentProductFootprintComparison);
+const acceptedPfr = effectiveProductFootprintComparison(acceptedUnc, currentProductFootprintComparison);
+export const currentBookPlan = effectiveDataQualityComparison(acceptedPfr, currentDataQualityComparison);
 
 export function currentBookRecordMatches(kind, previous, current, projection) {
   if (projection !== undefined) return matchesAcceptedRecord(currentBookPlan, kind, previous, current, projection);
@@ -149,10 +153,11 @@ export function currentBookLayout(key, previous) {
   if (key === 'B08:title') return flowBoundaryTitle(currentFlowBoundary, flowBoundaryChapter, copyedit);
   if (key === 'B08:headings') return flowBoundarySections(currentFlowBoundary, copyedit);
   if (key === 'B08:ordinary-dispositions') return flowBoundaryOrdinaryDispositions(currentFlowBoundary, copyedit);
-  return dataApplicabilityComparisonLayout(currentDataApplicabilityComparison, key,
+  return dataQualityComparisonLayout(currentDataQualityComparison, key,
+    dataApplicabilityComparisonLayout(currentDataApplicabilityComparison, key,
     part4RereadLayout(currentPart4Reread, key,
     particulateComparisonLayout(currentParticulateComparison, key,
       biogenicCarbonLayout(currentBiogenicCarbon, key,
         toxicityComparisonLayout(currentToxicityComparison, key,
-          substitutionRulesLayout(currentSubstitutionRules, key, serviceConstraintsLayout(currentServiceConstraints, key, copyedit)))))));
+          substitutionRulesLayout(currentSubstitutionRules, key, serviceConstraintsLayout(currentServiceConstraints, key, copyedit))))))));
 }

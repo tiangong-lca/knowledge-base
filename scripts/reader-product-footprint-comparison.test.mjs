@@ -1,6 +1,9 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import test from 'node:test';
+import dqp from '../config/reader-data-quality-comparison.json' with { type: 'json' };
+import { restoreDataQualityComparisonTestFiles } from './reader-data-quality-comparison.mjs';
+import { previousScientificTestRecords } from './fixtures/scientific-receipt-envelope.mjs';
 import config from '../config/reader-product-footprint-comparison.json' with { type: 'json' };
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
@@ -33,7 +36,9 @@ async function loadInput() {
     readServiceConstraintsFiles('.', service.unit),
   ]);
   for (const [p, b] of [...shiftFiles, ...serviceFiles]) files.set(p, b);
-  return { catalog, readings, literature, files };
+  restoreDataQualityComparisonTestFiles(files, dqp.unit);
+  const prev151 = previousScientificTestRecords({ catalog, readings, literature }, dqp.unit);
+  return { ...prev151, files };
 }
 
 test('Unit #151 product footprint comparison source prepares cleanly and recovers exact 3c6844be predecessor pin', async () => {

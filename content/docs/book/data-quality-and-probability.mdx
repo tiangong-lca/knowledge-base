@@ -1,6 +1,6 @@
 ---
 title: 质量评分与概率
-description: 从柏林杯重调查看平均值的估计精度与杯重散布有何不同，再说明怎样用这批资料提出完整性因子，以及用因子建立概率分布需要哪些假定。
+description: 从柏林杯重调查看平均值的估计精度与杯重散布有何不同，再说明怎样用这批资料提出完整性因子，并比较 ecoinvent 谱系方差、欧盟 PEF 序数 DQR 门槛与 GHG Protocol 定性披露对质量评分的不同用法。
 ---
 
 ## 杯重调查与估计 [#杯重调查与估计]
@@ -30,8 +30,19 @@ description: 从柏林杯重调查看平均值的估计精度与杯重散布有�
 
 ## 概率模型与参数 [#概率模型与参数]
 
-<Prose ids="cl-ped-ratio-rule cl-ped-ratio-example cl-ped-independent-product cl-ped-ratio-residual cl-ped-factor-conventions cl-unc-baseline cl-ped-inventory-assumptions cl-ped-inventory-combination cl-ped-inventory-interval cl-ped-inventory-center" />
+<Prose ids="cl-ped-ratio-rule cl-ped-ratio-example cl-ped-independent-product cl-ped-ratio-residual cl-ped-factor-conventions cl-unc-baseline cl-ped-inventory-assumptions cl-ped-inventory-combination cl-ped-inventory-interval cl-ped-inventory-center cl-dqp-ecoinvent-v3-variance cl-dqp-pef-ordinal-dqr" />
 
 ## 评分检验与使用条件 [#评分的检验与适用]
 
-<Prose ids="cl-unc-table-conflict cl-ped-reliability-cv-trace cl-ped-score-test-design cl-ped-score-test-results cl-ped-three-tests cl-unc-alongside cl-unc-context cl-unc-synthesis" />
+<Prose ids="cl-unc-table-conflict cl-ped-reliability-cv-trace cl-ped-score-test-design cl-ped-score-test-results cl-ped-three-tests cl-unc-alongside cl-unc-context cl-unc-synthesis cl-dqp-ghgp-qualitative-dqi" />
+
+下表把四类代表性体系处理相近质量维度的核心机制放在同一口径下对照，方便区分“将评分转成概率方差”“以序数门槛控制准入”与“保持定性文字披露”三类不同设计。
+
+| 体系与一手来源 | 评估维度与打分刻度 | 综合规则与概率转换 | 准入门槛或报告义务 | 关键假定与适用边界 |
+| --- | --- | --- | --- | --- |
+| ecoinvent 第三版专家谱系（Weidema 等 2013，表 10.4–10.5） | 5 项（可靠性、完整性、时间、地理、进一步技术）；1–5 级 | 转为对数尺度正态附加方差 σ²，与 1 项基础方差共 6 项线性相加 | 作为清单参数蒙特卡洛抽样输入，无统一总分准入闸门 | 假定附加误差零均值且相互独立；2013 年表仍属专家判断，不含模型不确定性与人为错误 |
+| ecoinvent 实证校准谱系（Ciroth 等 2012/2016） | 同 5 项谱系维度（本章详析完整性与可靠性校准）；1–5 级 | 以实证子集与参照组散布比值校准几何标准差或方差系数 | 旨在替换专家系数，仍服务于对数正态概率分布构造 | 校准受限于有限样本与分组规则，仍依赖独立性与零偏差假定，无法自动消除系统偏差 |
+| 欧盟 PEF 序数评级（建议 (EU) 2021/2279 附件一第 4.6.5 节） | 4 项打分（TeR、GeR、TiR、P，1–5 级）；完整性与方法一致性为不打分前提 | 四项等权算术平均得 DQR（式 19–20），划 5 档序数等级；全文 396 页均未设置概率转换 | 数据需求矩阵硬门槛：企业实测 DQR≤1.5、次级 DQR≤3.0、替代贡献≤10% | 衡量数据收集档次与合规准入，不代表参数随机方差大小，也不能替代不确定性分析 |
+| GHG Protocol 产品标准（2011，第 8.3 节与第 10 章）及美国环保署框架 | 5 项（技术、时间、地理、完整性、可靠性）；4 档定性（很好/良好/尚可/差） | 无统一数值综合 DQR，也不强制转为概率分布；代表性元数据与定量误差分离 | 强制文字披露显著过程数据质量与定性不确定性来源；蒙特卡洛或泰勒展开为可选项 | 防止将方向性偏差与多维代表性欠缺压扁为单一区间宽度，但纯定性描述难直接跨报告自动比对 |
+
+<Prose ids="cl-dqp-four-framework-synthesis cl-dqp-paywalled-iso-boundary cl-dqp-cross-chapter-bridge" />

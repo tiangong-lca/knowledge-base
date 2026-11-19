@@ -36301,6 +36301,251 @@
       "sourceKeys": [
         "src-pfr151-ghgp-2011"
       ]
+    },
+    {
+      "id": "rd-dqp153-ecoinvent-v3-2013",
+      "workId": "work-dapp147-ecoinvent-v3-2013",
+      "title": "Overview and methodology: Data quality guideline for the ecoinvent database version 3 (final)",
+      "version": "ecoinvent Report 1(v3), May 2013 (Chapter 10 uncertainty & pedigree matrix)",
+      "url": "https://ecoinvent.org/wp-content/uploads/2020/10/201305_Data-Quality-Guideline-for-the-ecoinvent-database-version-3.pdf",
+      "readingStatus": "selected-passages",
+      "accessedAt": "2026-11-19",
+      "readAt": "2026-11-19",
+      "question": "ecoinvent v3 数据质量导则第 10 章如何把五项谱系评分（1–5 级）转化为对数正态基础正态分布的附加方差，其专家判断来源、线性叠加假定与方法边界是什么？",
+      "argumentSummary": "Weidema 等（2013）第 10.1–10.2 节把 ecoinvent v2 的几何标准差平方口径改写为基础正态分布方差 σ²（表 10.3–10.5），在零均值与相互独立（cov=0）假定下将基础不确定性方差与五项谱系附加方差线性相加；但表 10.5 仍基于专家判断，文中展望（Outlook）明确指出实证校准项目尚在进行中，且第 10.3–10.4 节排除模型不确定性与人为错误并指出确定性几何均值恒小于蒙特卡洛算术均值。",
+      "rights": "开放获取方法学报告（ecoinvent Report 1(v3)）；公开记录仅含书目、页码定位与原创中文比较分析，不重分发原 PDF。",
+      "appraisal": {
+        "basis": "SHA-256 校验的 169 页官方 PDF 逐页核对（pdfIndex = 印刷页码 + 7）。",
+        "methodologicalScope": "ecoinvent 第三版数据质量导则第 10 章谱系矩阵与对数正态方差条款。",
+        "independence": "The ecoinvent Centre 官方方法学报告。",
+        "limitations": [
+          "表 10.5 在 2013 年发布时仍采用专家判断值，不含后续 Ciroth 等实证校准系数，也不涵盖模型不确定性与人为错误。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-19"
+      },
+      "unread": [
+        "第 1–9 章与第 11–13 章在 B25 单元已按适用性议题读过，本单元聚焦第 10 章不确定性与谱系方差条款。"
+      ],
+      "artifacts": [
+        {
+          "id": "art-dqp153-ecoinvent-v3-2013-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "88fcc1512a8efe25c26af6254e0fff42b17d15e904bab36136b56e92eaf7fd9c",
+          "resolvedUrl": "https://ecoinvent.org/wp-content/uploads/2020/10/201305_Data-Quality-Guideline-for-the-ecoinvent-database-version-3.pdf",
+          "pageCount": 169
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-dqp153-ecoinvent-v3-pedigree",
+          "artifactId": "art-dqp153-ecoinvent-v3-2013-pdf",
+          "locator": "第 10.1–10.2 节、表 10.3–10.5，印 pp. 74–77",
+          "printedPages": "pp. 74–77",
+          "pdfIndices": [
+            81,
+            82,
+            83,
+            84
+          ],
+          "topics": [
+            "ecoinvent v3 pedigree matrix Table 10.4",
+            "underlying normal additional variance Table 10.5",
+            "linear variance summation under zero-mean and independence",
+            "expert-judgement provenance and Outlook for empirical calibration"
+          ],
+          "limits": [
+            "表 10.5 在 2013 年发布时仍采用专家判断值，尚未替换为后续 Ciroth 等实证校准系数。"
+          ]
+        },
+        {
+          "id": "psg-dqp153-ecoinvent-v3-limits",
+          "artifactId": "art-dqp153-ecoinvent-v3-2013-pdf",
+          "locator": "第 10.3–10.4 节，印 pp. 77–78",
+          "printedPages": "pp. 77–78",
+          "pdfIndices": [
+            84,
+            85
+          ],
+          "topics": [
+            "exclusion of model uncertainty and human errors",
+            "deterministic geometric mean versus Monte Carlo arithmetic mean"
+          ],
+          "limits": [
+            "仅覆盖参数随机散布，不代表模型结构偏差或人为录入错误已被量化。"
+          ]
+        }
+      ],
+      "sourceKeys": [
+        "src-dqp153-ecoinvent-v3-2013"
+      ]
+    },
+    {
+      "id": "rd-dqp153-eu-2021-2279-pef",
+      "workId": "lit-n04",
+      "title": "Commission Recommendation (EU) 2021/2279 of 15 December 2021 on the use of the Environmental Footprint methods to measure and communicate the life cycle environmental performance of products and organisations",
+      "version": "Official Journal of the European Union, OJ L 471, 30.12.2021 (Annex I §4.6.5 & Annex II B.5.3.1)",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021H2279",
+      "readingStatus": "selected-passages",
+      "accessedAt": "2026-11-19",
+      "readAt": "2026-11-19",
+      "question": "欧盟委员会建议 (EU) 2021/2279 附件一第 4.6.5 节如何定义产品环境足迹数据质量评级（DQR）与数据需求矩阵（DNM）准入门槛，是否将 DQR 转化为概率分布？",
+      "argumentSummary": "欧盟 PEF 建议将完整性与方法学一致性列为不打分的前提要求，仅对技术（TeR）、地理（GeR）、时间（TiR）与精度（P）四项指标按 1–5 级等权求算术平均（式 19–20），划分五档序数质量等级（≤1.5 极优至 >4.0 差），并在数据需求矩阵（表 25）中施加企业实测数据集 DQR≤1.5、次级数据集 DQR≤3.0 与替代数据集贡献≤10% 的硬性准入门槛；全文 396 页未出现将 DQR 转化为对数正态方差或蒙特卡洛概率分布的规则。",
+      "rights": "欧盟官方公报（EUR-Lex）公开法律建议文本；公开记录仅含公报页码定位与原创中文比较分析，不重分发原 PDF。",
+      "appraisal": {
+        "basis": "SHA-256 校验的 396 页欧盟官方公报 PDF 逐页核对（附件一公报页码 = pdfIndex + 198）。",
+        "methodologicalScope": "欧盟委员会建议 (EU) 2021/2279 附件一第 4.6.5 节 DQR 公式、五档质量评级与数据需求矩阵准入门槛。",
+        "independence": "欧盟委员会官方公报正式发布建议文本（非约束性建议）。",
+        "limitations": [
+          "DQR 属序数治理与透明披露指标，不等于蒙特卡洛参数概率分布；企业实测 1.5 门槛须与早期 2018 版指引 1.6 口径区分。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-19"
+      },
+      "unread": [
+        "附件二 PEFCR 其余条款及附件三至附件四组织环境足迹（OEF / OEFSR）章节未在本单元展开。"
+      ],
+      "artifacts": [
+        {
+          "id": "art-dqp153-eu-2021-2279-pef-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "af28de0896bfcfd8d627e758c97c83fd7d4bab94f2005ce5ea2079df42da39e3",
+          "resolvedUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021H2279",
+          "pageCount": 396
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-dqp153-pef-dqr-formula",
+          "artifactId": "art-dqp153-eu-2021-2279-pef-pdf",
+          "locator": "欧盟官方公报 OJ L 471 第 274–277、281 页（附件一第 4.6.5 节、表 20–22、式 19–20）",
+          "printedPages": "OJ L 471/274–277, 281",
+          "pdfIndices": [
+            76,
+            77,
+            78,
+            79,
+            83
+          ],
+          "topics": [
+            "EU PEF DQR four scored criteria TeR GeR TiR P",
+            "non-scored prerequisites Completeness and methodological consistency",
+            "equal-weight arithmetic mean Eq. 19 and Eq. 20",
+            "five-level ordinal quality rating Table 22"
+          ],
+          "limits": [
+            "DQR 属于序数治理与透明披露指标，不等于蒙特卡洛参数概率分布。"
+          ]
+        },
+        {
+          "id": "psg-dqp153-pef-dnm-thresholds",
+          "artifactId": "art-dqp153-eu-2021-2279-pef-pdf",
+          "locator": "欧盟官方公报 OJ L 471 第 274、277、279–281、361 页（附件一第 4.6.3、4.6.5.2、4.6.5.4–4.6.5.7 节、表 25；附件二 B.5.3.1）",
+          "printedPages": "OJ L 471/274, 277, 279–281, 361",
+          "pdfIndices": [
+            76,
+            79,
+            81,
+            82,
+            83,
+            163
+          ],
+          "topics": [
+            "Data Needs Matrix Situations 1 2 3 Table 25",
+            "company-specific DQR <= 1.5 and secondary DQR <= 3.0 thresholds",
+            "10 percent proxy cap",
+            "zero lognormal or Monte Carlo conversion across all 396 pages"
+          ],
+          "limits": [
+            "满足 DQR 门槛仅表示符合 PEF 数据收集与准入规则，不保证参数抽样方差小或消除系统偏差。"
+          ]
+        }
+      ],
+      "sourceKeys": [
+        "src-dqp153-eu-2021-2279-pef"
+      ]
+    },
+    {
+      "id": "rd-dqp153-ghgp-2011",
+      "workId": "work-pfr151-ghgp-2011",
+      "title": "Product Life Cycle Accounting and Reporting Standard (GHG Protocol)",
+      "version": "WRI / WBCSD, September 2011 (Chapter 8.3.7–8.3.9 & Chapter 10.1–10.3)",
+      "url": "https://ghgprotocol.org/sites/default/files/standards/Product-Life-Cycle-Accounting-Reporting-Standard_041613.pdf",
+      "readingStatus": "selected-passages",
+      "accessedAt": "2026-11-19",
+      "readAt": "2026-11-19",
+      "question": "GHG Protocol 产品标准（2011）如何定义五项数据质量指标（DQI）的定性评级与不确定性报告义务，为何不强制将定性评级转为数值综合分或概率分布？",
+      "argumentSummary": "GHG Protocol 产品标准第 8 章（表 8.1–8.2）沿用 Weidema 与 Wesnæs（1996）的五项数据质量指标，但仅设四档定性评级（Very good / Good / Fair / Poor）而不定义数值综合 DQR 公式；第 8 章与第 10 章分别强制要求对显著过程的数据质量与清单不确定性来源作出文字说明，同时把蒙特卡洛或泰勒展开等定量不确定性传播明确定位为可选项，将定性数据质量披露与定量概率传播保持分离。",
+      "rights": "WRI / WBCSD 公开标准文本；公开记录仅含书目、页码定位与原创中文比较分析，不重分发原 PDF。",
+      "appraisal": {
+        "basis": "SHA-256 校验的 148 页官方 PDF 逐页核对（pdfIndex = 印刷页码 + 1）。",
+        "methodologicalScope": "GHG Protocol 产品标准（2011）第 8.3 节定性数据质量指标与第 10 章不确定性报告边界。",
+        "independence": "WRI 与 WBCSD 联合制定之国际多利益方标准。",
+        "limitations": [
+          "标准正文不规定统一数值综合 DQR 公式，定量不确定性传播为可选项；2011 年版早于 ISO 14067:2018。"
+        ],
+        "reviewKind": "agent-source-check",
+        "checkedAt": "2026-11-19"
+      },
+      "unread": [
+        "第 1–7、9、11–12 章在 B28 单元已按产品足迹规则议题读过，本单元聚焦第 8.3 节与第 10 章。"
+      ],
+      "artifacts": [
+        {
+          "id": "art-dqp153-ghgp-2011-pdf",
+          "mediaType": "application/pdf",
+          "sha256": "fdc21b798b9c8908f6e55e8caca22e5d8b281ede3601f6950649244d418d3c0c",
+          "resolvedUrl": "https://ghgprotocol.org/sites/default/files/standards/Product-Life-Cycle-Accounting-Reporting-Standard_041613.pdf",
+          "pageCount": 148
+        }
+      ],
+      "passages": [
+        {
+          "id": "psg-dqp153-ghgp-qualitative-dqi",
+          "artifactId": "art-dqp153-ghgp-2011-pdf",
+          "locator": "第 8 章要求及第 8.3.7–8.3.9 节、表 8.1–8.3，印 pp. 48、54–57",
+          "printedPages": "pp. 48, 54–57",
+          "pdfIndices": [
+            49,
+            55,
+            56,
+            57,
+            58
+          ],
+          "topics": [
+            "five Data Quality Indicators adapted from Weidema and Wesnaes 1996",
+            "four-level qualitative scale Very good Good Fair Poor",
+            "mandatory descriptive data quality reporting without numeric composite DQR"
+          ],
+          "limits": [
+            "标准正文未规定统一数值加权公式，不同报告方的定性文字描述难以直接自动比对。"
+          ]
+        },
+        {
+          "id": "psg-dqp153-ghgp-uncertainty-boundary",
+          "artifactId": "art-dqp153-ghgp-2011-pdf",
+          "locator": "第 10.1–10.3.4 节、表 10.2，印 pp. 79–83",
+          "printedPages": "pp. 79–83",
+          "pdfIndices": [
+            80,
+            81,
+            82,
+            83,
+            84
+          ],
+          "topics": [
+            "mandatory qualitative uncertainty statement",
+            "optional quantitative uncertainty propagation via Monte Carlo or Taylor Series",
+            "separation of qualitative DQI disclosure from mandatory probability conversion"
+          ],
+          "limits": [
+            "虽指出企业可另行参考配套工具用 DQI 辅助估算不确定性，但标准本身不要求强制概率化。"
+          ]
+        }
+      ],
+      "sourceKeys": [
+        "src-dqp153-ghgp-2011"
+      ]
     }
   ],
   "gaps": [

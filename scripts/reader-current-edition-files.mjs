@@ -1,3 +1,4 @@
+import { selectDataQualityComparison, prepareDataQualityComparisonSource, effectiveDataQualityComparison, verifyDataQualityComparisonReceipts } from './reader-data-quality-comparison.mjs';
 import { selectProductFootprintComparison, prepareProductFootprintComparisonSource, effectiveProductFootprintComparison, verifyProductFootprintComparisonReceipts } from './reader-product-footprint-comparison.mjs';
 import { selectUncertaintyComparison, prepareUncertaintyComparisonSource, effectiveUncertaintyComparison, verifyUncertaintyComparisonReceipts } from './reader-uncertainty-comparison.mjs';
 import { selectDataApplicabilityComparison, prepareDataApplicabilityComparisonSource, effectiveDataApplicabilityComparison, verifyDataApplicabilityComparisonReceipts } from './reader-data-applicability-comparison.mjs';
@@ -63,6 +64,9 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const serviceConstraints = selectServiceConstraints(serviceConfig, undefined, preview === 'service');
   const substitutionConfig = await readConfig('reader-substitution-rules.json');
   const substitutionRules = selectSubstitutionRules(substitutionConfig, undefined, preview === 'substitution');
+  const dqpConfig = await readConfig('reader-data-quality-comparison.json');
+  const dataQualityComparison = selectDataQualityComparison(dqpConfig, undefined, preview === 'data-quality-comparison');
+  if (preview === 'data-quality-comparison' && dqpConfig.status !== 'preview') throw new Error('Data quality comparison review requires a private preview state');
   const pfrConfig = await readConfig('reader-product-footprint-comparison.json');
   const productFootprintComparison = selectProductFootprintComparison(pfrConfig, undefined, preview === 'product-footprint-comparison');
   if (preview === 'product-footprint-comparison' && pfrConfig.status !== 'preview') throw new Error('Product footprint comparison review requires a private preview state');
@@ -141,6 +145,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (loadShift && !substitutionRules) throw new Error('Load shift requires the accepted #105 generation');
   if (circularFootprint && !loadShift) throw new Error('Circular footprint requires the accepted #107 generation');
   if (landRecovery && !circularFootprint) throw new Error('Land recovery requires the accepted #109 generation');
+  if (dataQualityComparison && !productFootprintComparison) throw new Error('Data quality comparison requires the accepted #151 generation');
   if (productFootprintComparison && !uncertaintyComparison) throw new Error('Product footprint comparison requires the accepted #149 generation');
   if (uncertaintyComparison && !dataApplicabilityComparison) throw new Error('Uncertainty comparison requires the accepted #147 generation');
   if (dataApplicabilityComparison && !part5Reread) throw new Error('Data applicability comparison requires the accepted #145 generation');
@@ -162,7 +167,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (acidEquivalents && !landRecovery) throw new Error('Acid equivalents requires the accepted #111 generation');
   for (const [path, bytes] of await readLoadShiftCaseFiles(root, loadShift)) files.set(path, bytes);
   for (const [path, bytes] of await readServiceConstraintsFiles(root, serviceConstraints)) files.set(path, bytes);
-  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison, waterScarcity, biogenicCarbon, eutrophicationPathways, particulateComparison, part4Reread, weightingValuation, localizationComparison, socialComparison, costSustainability, part5Reread, dataApplicabilityComparison, uncertaintyComparison, productFootprintComparison].filter(Boolean)];
+  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison, waterScarcity, biogenicCarbon, eutrophicationPathways, particulateComparison, part4Reread, weightingValuation, localizationComparison, socialComparison, costSustainability, part5Reread, dataApplicabilityComparison, uncertaintyComparison, productFootprintComparison, dataQualityComparison].filter(Boolean)];
   const realRoot = await realpath(root);
   const reviewFiles = new Set((reviewUnits ?? []).flatMap(unit =>
     (unit.reviewEvidence ?? []).flatMap(row => [row.reportFile, row.artifactFile])));
@@ -177,8 +182,11 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const input = { catalog, readings, literature, files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
-  const pfr = productFootprintComparison && prepareProductFootprintComparisonSource(productFootprintComparison, input, actual, structure);
-  const pfrInput = pfr ? { ...pfr.previousRecords, files: pfr.files } : input;
+  const dqp = dataQualityComparison && prepareDataQualityComparisonSource(dataQualityComparison, input, actual, structure);
+  const dqpInput = dqp ? { ...dqp.previousRecords, files: dqp.files } : input;
+  const pfr = productFootprintComparison && prepareProductFootprintComparisonSource(productFootprintComparison, dqpInput,
+    dqp?.previous ?? actual, dqp?.structure ?? structure);
+  const pfrInput = pfr ? { ...pfr.previousRecords, files: pfr.files } : dqpInput;
   const unc = uncertaintyComparison && prepareUncertaintyComparisonSource(uncertaintyComparison, pfrInput,
     pfr?.previous ?? actual, pfr?.structure ?? structure);
   const uncInput = unc ? { ...unc.previousRecords, files: unc.files } : pfrInput;
@@ -366,8 +374,13 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   }
   if (productFootprintComparison && preview !== 'product-footprint-comparison') {
     const { readerPublicDownloads } = await import('./reader-current-output.mjs');
-    if (!verifyProductFootprintComparisonReceipts(productFootprintComparison, artifacts, readerPublicDownloads(catalog, literature, readings)))
+    if (!verifyProductFootprintComparisonReceipts(productFootprintComparison, artifacts, readerPublicDownloads(dqpInput.catalog, dqpInput.literature, dqpInput.readings)))
       throw new Error('Product footprint comparison lacks exact independent source, reader, and output evidence');
+  }
+  if (dataQualityComparison && preview !== 'data-quality-comparison') {
+    const { readerPublicDownloads } = await import('./reader-current-output.mjs');
+    if (!verifyDataQualityComparisonReceipts(dataQualityComparison, artifacts, readerPublicDownloads(catalog, literature, readings)))
+      throw new Error('Data quality comparison lacks exact independent source, reader, and output evidence');
   }
   const service = serviceConstraints && prepareServiceConstraintsSource(serviceConstraints, substitution?.previous ?? actual,
     substitution?.structure ?? structure, { ...previousRecords, files: substitutionInput.files });
@@ -415,7 +428,8 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const qualifiedPart5 = effectivePart5Reread(qualifiedCost, part5Reread, part5?.affectedClaimIds);
   const qualifiedDapp = effectiveDataApplicabilityComparison(qualifiedPart5, dataApplicabilityComparison, dapp?.affectedClaimIds);
   const qualifiedUnc = effectiveUncertaintyComparison(qualifiedDapp, uncertaintyComparison, unc?.affectedClaimIds);
-  return effectiveProductFootprintComparison(qualifiedUnc, productFootprintComparison, pfr?.affectedClaimIds);
+  const qualifiedPfr = effectiveProductFootprintComparison(qualifiedUnc, productFootprintComparison, pfr?.affectedClaimIds);
+  return effectiveDataQualityComparison(qualifiedPfr, dataQualityComparison, dqp?.affectedClaimIds);
 }
 
 export function validateReadableBookCurrent(root, catalog, readings, literature) {
@@ -563,4 +577,10 @@ export function validateProductFootprintComparisonReviewSources(root, catalog, r
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Product footprint comparison review requires the explicit private preview');
   return qualifyCurrentReaderSources(root, catalog, readings, literature, 'product-footprint-comparison');
+}
+
+export function validateDataQualityComparisonReviewSources(root, catalog, readings, literature) {
+  if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
+    throw new Error('Data quality comparison review requires the explicit private preview');
+  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'data-quality-comparison');
 }
