@@ -132,21 +132,24 @@ bytes, `0` guard errors), and exact root integration `workspace#2519` /
 
 [Issue163](https://github.com/tiangong-lca/knowledge-base/issues/163) (Part VII
 Unit 4 `B32`《可修订的判断》+ `W1`/`W2` closing synthesis & revision routing,
-[protocol](editorial/2026-11-19-revisable-judgment-synthesis.md)) is reviewed
-and cryptographically bound on qualified `main`
-`cb2584d4354f6d8a5111155d658d3edafd80ec8a`: adds `7` integrative synthesis and
-revision-routing claims (`1,092 -> 1,099`), `1` intro paragraph, and `1`
-five-column, seven-row book-level revision-routing table across `W1` (`8 -> 10`),
-`W2` (`14 -> 19`), and `B32` (`22 -> 29`) maintaining exact disjoint-union parity
-`W1 ∪ W2 = B32` (`W1 ∩ W2 = ∅`) while preserving all `22` existing claims,
-`106` historical citation obligations, `40/40` case downloads, CSS zero-drift
-(`be180e5d...`), and frozen headings byte-for-byte untouched. Independent Round
-2 primary-source/premise-DAG (`53ccdf0a`), zero-context `B32`+`W1`+`W2` reader
-(`d3c430b3`), and adversarial publication-engineering (`7b673557`) reviews all
-returned unconditional `PASS` (`0 BLOCKER / 0 MAJOR / 0 MINOR`), with `737/737`
-tests and `30/30` Playwright responsive QA green. Source PR/CI/merge, live
-EdgeOne qualification, root submodule integration, Part VII continuous reread,
-whole-book reread, and all 8 global Programme #9 criteria remain open.
+[protocol](editorial/2026-11-19-revisable-judgment-synthesis.md)) is fully
+delivered: source PR164/Main `a55c9fb3909130cdc0165cc1e417f2412523c72c`
+(tree `6d8aa2f3...`), qualified hosted 468-file output on
+`https://prism.tiangong.earth` (`manifestSha256 = 7b210c6f...`, `380,720,021`
+bytes, `0` guard errors), and exact root integration `workspace#2521` /
+`PR #2522` (`14abb431...`, `Delivery complete: True`, `Integration: Done`).
+
+[Issue165](https://github.com/tiangong-lca/knowledge-base/issues/165) (Part VII
+Whole-Part Continuous Reread,
+[protocol](editorial/2026-11-19-part7-continuous-reread.md)) opens the
+prewriting protocol on qualified `main`
+`a55c9fb3909130cdc0165cc1e417f2412523c72c` to synchronize `F02` Part VII
+overviews, `parts[6].introduction`, `B31 -> B32` transition, cross-chapter
+terminology/titles (`表征*`, `比较断言`, `灵敏度`, `变异与不确定性`), Arabic
+ordinals (`第二十九章`, `第十五章`), and strictly ascending Part VII
+`premiseIds` while conserving 100% of all `1,099` claim IDs and `40/40` case
+downloads. Whole-book continuous reread and all 8 global Programme #9 criteria
+remain open.
 
 [Issue105](https://github.com/tiangong-lca/knowledge-base/issues/105) continues
 with B10: reporting objects and evidence conditions for co-product substitution.
