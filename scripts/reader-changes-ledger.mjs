@@ -22,6 +22,7 @@ import {
   currentPart4Reread,
   currentPart5Reread,
   currentPart6Reread,
+  currentMarketResponseComparison,
   currentPart7Reread,
   currentParticulateComparison,
   currentPhotochemicalOzone,
@@ -102,6 +103,7 @@ function summarizeUnit(unit, fallbackSource = null) {
  */
 export function buildPublicChangesLedger() {
   const orderedUnits = [
+    summarizeUnit(currentMarketResponseComparison),
     summarizeUnit(currentPart7Reread),
     summarizeUnit(currentRevisableJudgment),
     summarizeUnit(currentFutureScenarios),

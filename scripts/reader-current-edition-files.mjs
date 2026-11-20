@@ -1,3 +1,4 @@
+import { selectMarketResponseComparison, prepareMarketResponseComparisonSource, effectiveMarketResponseComparison, verifyMarketResponseComparisonReceipts } from './reader-market-response-comparison.mjs';
 import { selectPart7Reread, preparePart7RereadSource, effectivePart7Reread, verifyPart7RereadReceipts } from './reader-part7-reread.mjs';
 import { selectRevisableJudgment, prepareRevisableJudgmentSource, effectiveRevisableJudgment, verifyRevisableJudgmentReceipts } from './reader-revisable-judgment.mjs';
 import { selectFutureScenarios, prepareFutureScenariosSource, effectiveFutureScenarios, verifyFutureScenariosReceipts } from './reader-future-scenarios.mjs';
@@ -72,6 +73,9 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const substitutionRules = selectSubstitutionRules(substitutionConfig, undefined, preview === 'substitution');
   const part7Config = await readConfig('reader-part7-reread.json');
   const part7Reread = selectPart7Reread(part7Config, undefined, preview === 'part7-reread');
+  const mktConfig = await readConfig('reader-market-response-comparison.json');
+  const marketResponseComparison = selectMarketResponseComparison(mktConfig, undefined, preview === 'market-response-comparison');
+  if (preview === 'market-response-comparison' && mktConfig.status !== 'preview') throw new Error('Market response comparison review requires a private preview state');
   const revConfig = await readConfig('reader-revisable-judgment.json');
   const revisableJudgment = selectRevisableJudgment(revConfig, undefined, preview === 'revisable-judgment');
   if (preview === 'part7-reread' && part7Config.status !== 'preview') throw new Error('Part VII continuous reread review requires a private preview state');
@@ -169,6 +173,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (loadShift && !substitutionRules) throw new Error('Load shift requires the accepted #105 generation');
   if (circularFootprint && !loadShift) throw new Error('Circular footprint requires the accepted #107 generation');
   if (landRecovery && !circularFootprint) throw new Error('Land recovery requires the accepted #109 generation');
+  if (marketResponseComparison && !part7Reread) throw new Error('Market response comparison requires the accepted #165 generation');
   if (part7Reread && !revisableJudgment) throw new Error('Part VII continuous reread requires the accepted #163 generation');
   if (revisableJudgment && !futureScenarios) throw new Error('Revisable judgment synthesis requires the accepted #161 generation');
   if (futureScenarios && !interpretationBags) throw new Error('Future technology & scenarios comparison requires the accepted #159 generation');
@@ -197,7 +202,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (acidEquivalents && !landRecovery) throw new Error('Acid equivalents requires the accepted #111 generation');
   for (const [path, bytes] of await readLoadShiftCaseFiles(root, loadShift)) files.set(path, bytes);
   for (const [path, bytes] of await readServiceConstraintsFiles(root, serviceConstraints)) files.set(path, bytes);
-  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison, waterScarcity, biogenicCarbon, eutrophicationPathways, particulateComparison, part4Reread, weightingValuation, localizationComparison, socialComparison, costSustainability, part5Reread, dataApplicabilityComparison, uncertaintyComparison, productFootprintComparison, dataQualityComparison, part6Reread, wallServiceComparison, interpretationBags, futureScenarios, revisableJudgment, part7Reread].filter(Boolean)];
+  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison, waterScarcity, biogenicCarbon, eutrophicationPathways, particulateComparison, part4Reread, weightingValuation, localizationComparison, socialComparison, costSustainability, part5Reread, dataApplicabilityComparison, uncertaintyComparison, productFootprintComparison, dataQualityComparison, part6Reread, wallServiceComparison, interpretationBags, futureScenarios, revisableJudgment, part7Reread, marketResponseComparison].filter(Boolean)];
   const realRoot = await realpath(root);
   const reviewFiles = new Set((reviewUnits ?? []).flatMap(unit =>
     (unit.reviewEvidence ?? []).flatMap(row => [row.reportFile, row.artifactFile])));
@@ -212,8 +217,10 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const input = { catalog, readings, literature, files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
-  const part7 = part7Reread && preparePart7RereadSource(part7Reread, input, actual, structure);
-  const part7Input = part7 ? { ...part7.previousRecords, files: part7.files } : input;
+  const mkt = marketResponseComparison && prepareMarketResponseComparisonSource(marketResponseComparison, input, actual, structure);
+  const mktInput = mkt ? { ...mkt.previousRecords, files: mkt.files } : input;
+  const part7 = part7Reread && preparePart7RereadSource(part7Reread, mktInput, mkt?.previous ?? actual, mkt?.structure ?? structure);
+  const part7Input = part7 ? { ...part7.previousRecords, files: part7.files } : mktInput;
   const rev = revisableJudgment && prepareRevisableJudgmentSource(revisableJudgment, part7Input, part7?.previous ?? actual, part7?.structure ?? structure);
   const revInput = rev ? { ...rev.previousRecords, files: rev.files } : part7Input;
   const fut = futureScenarios && prepareFutureScenariosSource(futureScenarios, revInput,
@@ -449,9 +456,14 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
     if (!verifyFutureScenariosReceipts(futureScenarios, artifacts, readerPublicDownloads(revInput.catalog, revInput.literature, revInput.readings)))
       throw new Error('Future technology & scenarios comparison lacks exact independent source, reader, and output evidence');
   }
+  if (marketResponseComparison && preview !== 'market-response-comparison') {
+    const { readerPublicDownloads } = await import('./reader-current-output.mjs');
+    if (!verifyMarketResponseComparisonReceipts(marketResponseComparison, artifacts, readerPublicDownloads(catalog, literature, readings)))
+      throw new Error('Market response comparison lacks exact independent source, reader, and output evidence');
+  }
   if (part7Reread && preview !== 'part7-reread') {
     const { readerPublicDownloads } = await import('./reader-current-output.mjs');
-    if (!verifyPart7RereadReceipts(part7Reread, artifacts, readerPublicDownloads(catalog, literature, readings)))
+    if (!verifyPart7RereadReceipts(part7Reread, artifacts, readerPublicDownloads(mktInput.catalog, mktInput.literature, mktInput.readings)))
       throw new Error('Part VII continuous reread lacks exact independent source, reader, and output evidence');
   }
   if (revisableJudgment && preview !== 'revisable-judgment') {
@@ -512,7 +524,8 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const qualifiedInt = effectiveInterpretationBags(qualifiedWsc, interpretationBags, intBags?.affectedClaimIds);
   const qualifiedFut = effectiveFutureScenarios(qualifiedInt, futureScenarios, fut?.affectedClaimIds);
   const qualifiedRev = effectiveRevisableJudgment(qualifiedFut, revisableJudgment, rev?.affectedClaimIds);
-  return effectivePart7Reread(qualifiedRev, part7Reread, part7?.affectedClaimIds);
+  const qualifiedPart7 = effectivePart7Reread(qualifiedRev, part7Reread, part7?.affectedClaimIds);
+  return effectiveMarketResponseComparison(qualifiedPart7, marketResponseComparison, mkt?.affectedClaimIds);
 }
 
 export function validateReadableBookCurrent(root, catalog, readings, literature) {
@@ -702,4 +715,10 @@ export function validatePart7RereadReviewSources(root, catalog, readings, litera
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Part VII continuous reread review requires the explicit private preview');
   return qualifyCurrentReaderSources(root, catalog, readings, literature, 'part7-reread');
+}
+
+export function validateMarketResponseComparisonReviewSources(root, catalog, readings, literature) {
+  if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
+    throw new Error('Market response comparison review requires the explicit private preview');
+  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'market-response-comparison');
 }

@@ -1,5 +1,6 @@
 import { showEditorialHistoryInProse } from '@/scripts/reader-editorial-mode.mjs';
 import { part7RereadCorrections, part7RereadHistoryControls, part7RereadOrdinaryId, part7RereadSource } from '@/scripts/reader-part7-reread.mjs';
+import { marketResponseComparisonHistoryControls, marketResponseComparisonOrdinaryId, marketResponseComparisonSource } from '@/scripts/reader-market-response-comparison.mjs';
 import { revisableJudgmentHistoryControls, revisableJudgmentOrdinaryId, revisableJudgmentRoutes, revisableJudgmentSource } from '@/scripts/reader-revisable-judgment.mjs';
 import { futureScenariosHistoryControls, futureScenariosOrdinaryId, futureScenariosRoute, futureScenariosSource } from '@/scripts/reader-future-scenarios.mjs';
 import { interpretationBagsHistoryControls, interpretationBagsOrdinaryId, interpretationBagsRoute, interpretationBagsSource } from '@/scripts/reader-interpretation-bags.mjs';
@@ -29,7 +30,7 @@ import { landRecoveryHistoryControls, landRecoveryOrdinaryId, landRecoverySource
 import { circularFootprintHistoryControls, circularFootprintOrdinaryId, circularFootprintSource } from '@/scripts/reader-circular-footprint.mjs';
 import { loadShiftHistoryControls, loadShiftOrdinaryId, loadShiftSource } from '@/scripts/reader-load-shift.mjs';
 import { substitutionRulesHistoryControls, substitutionRulesOrdinaryId, substitutionRulesSource } from '@/scripts/reader-substitution-rules.mjs';
-import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity, currentBiogenicCarbon, currentEutrophicationPathways, currentParticulateComparison, currentPart4Reread, currentWeightingValuation, currentLocalizationComparison, currentSocialComparison, currentCostSustainability, currentPart5Reread, currentDataApplicabilityComparison, currentUncertaintyComparison, currentProductFootprintComparison, currentDataQualityComparison, currentPart6Reread, currentWallServiceComparison, currentInterpretationBags, currentFutureScenarios, currentRevisableJudgment, currentPart7Reread } from '@/scripts/reader-current-expectations.mjs';
+import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity, currentBiogenicCarbon, currentEutrophicationPathways, currentParticulateComparison, currentPart4Reread, currentWeightingValuation, currentLocalizationComparison, currentSocialComparison, currentCostSustainability, currentPart5Reread, currentDataApplicabilityComparison, currentUncertaintyComparison, currentProductFootprintComparison, currentDataQualityComparison, currentPart6Reread, currentWallServiceComparison, currentInterpretationBags, currentFutureScenarios, currentRevisableJudgment, currentPart7Reread, currentMarketResponseComparison } from '@/scripts/reader-current-expectations.mjs';
 import { flowBoundaryHistoryControls, flowBoundaryHistoryTargets, flowBoundaryOrdinaryTargets, flowBoundaryOrdinaryId } from '@/scripts/reader-flow-boundary.mjs';
 import { serviceConstraintsHistoryControls, serviceConstraintsOrdinaryId, serviceConstraintsSource } from '@/scripts/reader-service-constraints.mjs';
 import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
@@ -91,6 +92,7 @@ const histories = [
   { controls: futureScenariosHistoryControls(currentFutureScenarios), edition: futureScenariosSource, attribute: 'future-scenarios' },
   { controls: revisableJudgmentHistoryControls(currentRevisableJudgment), edition: revisableJudgmentSource, attribute: 'revisable-judgment' },
   { controls: part7RereadHistoryControls(currentPart7Reread), edition: part7RereadSource, attribute: 'part7-reread' },
+  { controls: marketResponseComparisonHistoryControls(currentMarketResponseComparison), edition: marketResponseComparisonSource, attribute: 'market-response-comparison' },
 ];
 
 function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
@@ -119,7 +121,8 @@ function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
     || interpretationBagsOrdinaryId(currentInterpretationBags, route, print, index)
     || part7RereadOrdinaryId(currentPart7Reread, route, print, index)
     || futureScenariosOrdinaryId(currentFutureScenarios, route, print, index)
-    || revisableJudgmentOrdinaryId(currentRevisableJudgment, route, print, index);
+    || revisableJudgmentOrdinaryId(currentRevisableJudgment, route, print, index)
+    || marketResponseComparisonOrdinaryId(currentMarketResponseComparison, route, print, index);
 }
 
 // Leave versioned native fragments below the screen's sticky site header.
@@ -149,7 +152,8 @@ export function currentReaderOrdinaryAttributes(route: string, print: boolean, i
       || id === interpretationBagsOrdinaryId(currentInterpretationBags, route, print, index)
       || id === part7RereadOrdinaryId(currentPart7Reread, route, print, index)
       || id === futureScenariosOrdinaryId(currentFutureScenarios, route, print, index)
-      || id === revisableJudgmentOrdinaryId(currentRevisableJudgment, route, print, index))
+      || id === revisableJudgmentOrdinaryId(currentRevisableJudgment, route, print, index)
+      || id === marketResponseComparisonOrdinaryId(currentMarketResponseComparison, route, print, index))
     ? { id, style: scientificHistoryScroll }
     : { id };
 }
@@ -233,7 +237,8 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
     || wallServiceComparisonOrdinaryId(currentWallServiceComparison, cleanRoute, print, 'table')
     || interpretationBagsOrdinaryId(currentInterpretationBags, cleanRoute, print, 'table')
     || futureScenariosOrdinaryId(currentFutureScenarios, cleanRoute, print, 'table')
-    || revisableJudgmentOrdinaryId(currentRevisableJudgment, cleanRoute, print, 'table');
+    || revisableJudgmentOrdinaryId(currentRevisableJudgment, cleanRoute, print, 'table')
+    || marketResponseComparisonOrdinaryId(currentMarketResponseComparison, cleanRoute, print, 'table');
   const hasLocalizationTables = Boolean(currentLocalizationComparison && cleanRoute === localizationComparisonRoute);
   const hasSocialTables = Boolean(currentSocialComparison && cleanRoute === socialComparisonRoute);
   const hasCostTables = Boolean(currentCostSustainability && cleanRoute === costSustainabilityRoute);

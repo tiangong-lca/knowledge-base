@@ -1,3 +1,5 @@
+import mktConfig from '../config/reader-market-response-comparison.json' with { type: 'json' };
+import { selectMarketResponseComparison, effectiveMarketResponseComparison, marketResponseComparisonLayout } from './reader-market-response-comparison.mjs';
 import part7Config from '../config/reader-part7-reread.json' with { type: 'json' };
 import { selectPart7Reread, effectivePart7Reread, part7RereadLayout } from './reader-part7-reread.mjs';
 import revConfig from '../config/reader-revisable-judgment.json' with { type: 'json' };
@@ -106,8 +108,9 @@ export const currentInterpretationBags = selectInterpretationBags(intConfig, und
 export const currentFutureScenarios = selectFutureScenarios(futConfig, undefined, preview);
 export const currentRevisableJudgment = selectRevisableJudgment(revConfig, undefined, preview);
 export const currentPart7Reread = selectPart7Reread(part7Config, undefined, preview);
+export const currentMarketResponseComparison = selectMarketResponseComparison(mktConfig, undefined, preview);
 export const isReadableBookReviewPreview = oldPreview
-  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview' || acidConfig.status === 'preview' || mineralConfig.status === 'preview' || fossilConfig.status === 'preview' || ozoneConfig.status === 'preview' || ozradConfig.status === 'preview' || toxConfig.status === 'preview' || waterConfig.status === 'preview' || biogenicConfig.status === 'preview' || eutroConfig.status === 'preview' || particulateConfig.status === 'preview' || part4Config.status === 'preview' || weightingConfig.status === 'preview' || localizationConfig.status === 'preview' || socialConfig.status === 'preview' || costConfig.status === 'preview' || part5Config.status === 'preview' || dappConfig.status === 'preview' || uncConfig.status === 'preview' || pfrConfig.status === 'preview' || dqpConfig.status === 'preview' || part6Config.status === 'preview' || wscConfig.status === 'preview' || intConfig.status === 'preview' || futConfig.status === 'preview' || revConfig.status === 'preview' || part7Config.status === 'preview');
+  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview' || acidConfig.status === 'preview' || mineralConfig.status === 'preview' || fossilConfig.status === 'preview' || ozoneConfig.status === 'preview' || ozradConfig.status === 'preview' || toxConfig.status === 'preview' || waterConfig.status === 'preview' || biogenicConfig.status === 'preview' || eutroConfig.status === 'preview' || particulateConfig.status === 'preview' || part4Config.status === 'preview' || weightingConfig.status === 'preview' || localizationConfig.status === 'preview' || socialConfig.status === 'preview' || costConfig.status === 'preview' || part5Config.status === 'preview' || dappConfig.status === 'preview' || uncConfig.status === 'preview' || pfrConfig.status === 'preview' || dqpConfig.status === 'preview' || part6Config.status === 'preview' || wscConfig.status === 'preview' || intConfig.status === 'preview' || futConfig.status === 'preview' || revConfig.status === 'preview' || part7Config.status === 'preview' || mktConfig.status === 'preview');
 const previousPlan = readableBookReviewPlan(oldPreview
   ? acceptance.units
   : pinnedReadableBookUnits(acceptance, readableBookBaselineDigest, readableBookAcceptancePins));
@@ -143,7 +146,8 @@ const acceptedWsc = effectiveWallServiceComparison(acceptedPart6, currentWallSer
 const acceptedInt = effectiveInterpretationBags(acceptedWsc, currentInterpretationBags);
 const acceptedFut = effectiveFutureScenarios(acceptedInt, currentFutureScenarios);
 const acceptedRev = effectiveRevisableJudgment(acceptedFut, currentRevisableJudgment);
-export const currentBookPlan = effectivePart7Reread(acceptedRev, currentPart7Reread);
+const acceptedPart7 = effectivePart7Reread(acceptedRev, currentPart7Reread);
+export const currentBookPlan = effectiveMarketResponseComparison(acceptedPart7, currentMarketResponseComparison);
 
 export function currentBookRecordMatches(kind, previous, current, projection) {
   if (projection !== undefined) return matchesAcceptedRecord(currentBookPlan, kind, previous, current, projection);
@@ -177,7 +181,8 @@ export function currentBookLayout(key, previous) {
   if (key === 'B08:title') return flowBoundaryTitle(currentFlowBoundary, flowBoundaryChapter, copyedit);
   if (key === 'B08:headings') return flowBoundarySections(currentFlowBoundary, copyedit);
   if (key === 'B08:ordinary-dispositions') return flowBoundaryOrdinaryDispositions(currentFlowBoundary, copyedit);
-  return part7RereadLayout(currentPart7Reread, key,
+  return marketResponseComparisonLayout(currentMarketResponseComparison, key,
+    part7RereadLayout(currentPart7Reread, key,
     revisableJudgmentLayout(currentRevisableJudgment, key,
     futureScenariosLayout(currentFutureScenarios, key,
     interpretationBagsLayout(currentInterpretationBags, key,
@@ -189,5 +194,5 @@ export function currentBookLayout(key, previous) {
     particulateComparisonLayout(currentParticulateComparison, key,
       biogenicCarbonLayout(currentBiogenicCarbon, key,
         toxicityComparisonLayout(currentToxicityComparison, key,
-          substitutionRulesLayout(currentSubstitutionRules, key, serviceConstraintsLayout(currentServiceConstraints, key, copyedit))))))))))))));
+          substitutionRulesLayout(currentSubstitutionRules, key, serviceConstraintsLayout(currentServiceConstraints, key, copyedit)))))))))))))));
 }

@@ -43096,6 +43096,102 @@
           "basis": "第 3.3.2 节第 1394 页（even small rates around 1% marginalize impacts over just a few decades）"
         }
       ]
+    },
+    {
+      "id": "ev-mkt169-ilcd-contexts",
+      "sourceId": "src-book-ilcd-2010",
+      "readingId": "rd-ilcd-2010",
+      "passageId": "psg-mkt169-ilcd-contexts",
+      "locator": "第 5.3 节（表 2，第 36—41 页）、第 6.5.4.3—6.5.4.4 节与规定 I.b—I.c（脚注 64，第 85—87、92—93 页）、第 7.2.4 节（图 21，第 165—166 页）",
+      "summary": "ILCD 2010 指南按“是否支持决策”与“背景市场后果属小尺度非结构变化还是大尺度结构变化”划分情境 A（微观决策：沿用既有产能与平均消费组合作为实用简化）、情境 B（中宏观决策：仅对年新增需求或供给超过年正常设备更新容量的“大变化”过程采用长期边际组合，并配 90% 合理最差/最好假设情景与无行动零方案）及情境 C1/C2（纯描述性核算，不得直接用于比较决策）；脚注 15 明确时间位置（过去或未来）不是归因与后果的分界轴。",
+      "paraphrase": "ILCD 2010 以决策导向与是否触发产能增退划分情境 A、B、C1/C2，并明确仅在突破年更新容量门槛的大变化过程启用长期边际建模。",
+      "relation": "supports",
+      "reviewStatus": "reviewed",
+      "reviewKind": "agent-source-check",
+      "numericFacts": [
+        {
+          "id": "nf-mkt169-ilcd-b-percentile",
+          "subject": "ILCD 2010 情境 B 合理最差与最好假设情景的目标误差覆盖分位",
+          "quantity": "误差分位覆盖范围",
+          "value": "90",
+          "unit": "%",
+          "basis": "ILCD 2010 第 6.5.4.3.2 节第 86 页（upper and lower 90 % percentile of error）"
+        }
+      ]
+    },
+    {
+      "id": "ev-mkt169-ecoinvent-consequential",
+      "sourceId": "src-dapp147-ecoinvent-v3-2013",
+      "readingId": "rd-dapp147-ecoinvent-v3-2013",
+      "passageId": "psg-mkt169-ecoinvent-consequential",
+      "locator": "第 14.3、14.5—14.6.1 节（第 112、124—126 页）与第 15.1 节（第 137—138 页）",
+      "summary": "Weidema 等（2013）在 ecoinvent v3 指南中将“替代、后果、长期”系统模型定位于小尺度长期决策（引 Mattsson 等 2001 指出 1 TWh 年用电变动仍可与 1 kWh 同呈线性边际），认为单次购买累积驱动资本投资，因而拒绝微观采用平均组合的简化；数据库以默认 30 年设备寿命对应 3.33%/年更新率自动判别无约束供应者（年降幅超 3.33% 链接旧技术，否则链接现代/新技术），副产品恒为受限且必须以替代处理，受限市场仅以条件交换建模绝对约束而不采经验弹性；第 15.1 节同时明确社会层热点筛查、环境税负公平分配与追溯追责/嘉奖更适用归因模型。",
+      "paraphrase": "ecoinvent v3 后果模型以 30 年设备寿命（3.33%/年更新率）自动筛选长期无约束供应者并强制替代副产品，同时限定归因模型的适用边界。",
+      "relation": "supports",
+      "reviewStatus": "reviewed",
+      "reviewKind": "agent-source-check",
+      "numericFacts": [
+        {
+          "id": "nf-mkt169-ecoinvent-lifetime",
+          "subject": "ecoinvent v3 后果模型用于自动识别市场趋势的默认生产设备寿命",
+          "quantity": "默认设备寿命",
+          "value": "30",
+          "unit": "年",
+          "basis": "Weidema 等（2013）第 14.6.1 节第 126 页（a general lifetime of 30 years）"
+        },
+        {
+          "id": "nf-mkt169-ecoinvent-replacement-rate",
+          "subject": "ecoinvent v3 后果模型对应的年资本设备更新率阈值",
+          "quantity": "年更新率阈值",
+          "value": "3.33",
+          "unit": "%/年",
+          "basis": "Weidema 等（2013）第 14.6.1 节第 126 页（rate of replacement of 3.33% annually）"
+        }
+      ]
+    },
+    {
+      "id": "ev-mkt169-pef-electricity",
+      "sourceId": "src-kb44-ec2021",
+      "readingId": "rd-kb44-ec2021",
+      "passageId": "psg-mkt169-pef-electricity",
+      "locator": "附件一第 4.4.2 节（表 5，OJ L 471/238—241）",
+      "summary": "欧盟委员会建议书 (EU) 2021/2279（公报 OJ L 471）附件一第 4.4.2 节规定四级归因合同电力层级：优先采用满足 100% 追踪或三项最低准则（传递能源属性、单证或 AIB 核验唯一声明、时间邻近；若一国消费未追踪比例高于 95% 则强制退回残余组合）的供应商特定电力产品，其次供应商总组合，再次国家残余消费电网组合（剔除已单独声明的绿电以防双重计算），最后欧盟+EFTA 或区域残余组合；使用阶段则改用消费电网组合。",
+      "paraphrase": "欧盟 PEF 第 4.4.2 节通过四级合同追踪与残余消费电网组合防止双重计算，但该规则回答归因归属而非物理新增装机响应。",
+      "relation": "supports",
+      "reviewStatus": "reviewed",
+      "reviewKind": "agent-source-check",
+      "numericFacts": [
+        {
+          "id": "nf-mkt169-pef-untracked-threshold",
+          "subject": "欧盟 PEF 表 5 准则 2 强制退回国家残余消费组合的未追踪用电比例门槛",
+          "quantity": "未追踪用电比例门槛",
+          "value": "95",
+          "unit": "%",
+          "basis": "欧盟委员会建议书 (EU) 2021/2279 附件一第 4.4.2.2 节表 5（OJ L 471/240，> 95% untracked）"
+        }
+      ]
+    },
+    {
+      "id": "ev-mkt169-ghgp-attributional-allocation",
+      "sourceId": "src-pfr151-ghgp-2011",
+      "readingId": "rd-pfr151-ghgp-2011",
+      "passageId": "psg-mkt169-ghgp-attributional-allocation",
+      "locator": "第 5.1—5.2 节与框 5.1（第 21—22 页）、第 9.1—9.3.2 节（表 9.1—9.2、图 9.2，第 61—67 页）及第 11.3.2 节（第 91 页）",
+      "summary": "GHG Protocol 产品标准（2011）强制采用归因核算（第 5.2 节），框 5.1 将后果路径定位于减排项目评估或公共政策而非本产品清单；第 9.3.2 节仅允许企业在直接掌握副产品去向并使用供应商或平均排放因子时开展归因式系统扩展（浆厂黑液发电例以当地平均电网扣减：1000 kg 减 50 kg 得 950 kg），并提醒改用边际数据即转为后果建模；第 9.2 节要求闭环近似替代因子与分阶段占比分列；第 11.3.2 节禁止从清单总计扣减间接市场响应形成的“避免排放”，若单独披露须一并披露间接增排（如间接土地利用变化）。",
+      "paraphrase": "GHG Protocol 产品标准限定归因核算边界，仅允许基于平均因子的直接系统扩展，并禁止将市场响应型避免排放扣减出清单总计。",
+      "relation": "supports",
+      "reviewStatus": "reviewed",
+      "reviewKind": "agent-source-check",
+      "numericFacts": [
+        {
+          "id": "nf-mkt169-ghgp-pulp-net",
+          "subject": "GHG Protocol 第 9.3.2 节浆厂黑液发电归因系统扩展例的净归属排放",
+          "quantity": "净归属排放",
+          "value": "950",
+          "unit": "kg GHG",
+          "basis": "GHG Protocol 产品标准（2011）第 9.3.2 节第 67 页（1000 kg − 50 kg 平均电网替代 = 950 kg）"
+        }
+      ]
     }
   ],
   "claims": [
@@ -82853,6 +82949,386 @@
           "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
         }
       ]
+    },
+    {
+      "id": "cl-mkt169-shared-questions",
+      "text": "现实中完整观测每一环产能、贸易与调度响应往往超出单个研究的能力，主流国际导则、标准与背景数据库于是各自规定了一套可执行的建模边界。无论是欧盟联合研究中心的 ILCD 2010 指南、ecoinvent v3 后台系统模型、欧盟产品环境足迹（PEF），还是 GHG Protocol 产品标准，它们面对的其实是本章前文已经浮现的同一组结构问题：第一，拟支持的决定尺度有多大，会不会突破阈值去改变背景行业的装机与退役；第二，哪些供应活动受资源、政策或共生产约束而不能随需求自由增产；第三，面对同一度外购电力或大宗材料，应按物理贸易平衡、合同追踪与残余组合，还是长期无约束边际来记账；第四，需求变动时伴生的副产品与回收流，究竟该以替代扣减、归因分配还是固定公式分摊。",
+      "kind": "synthesis",
+      "scope": "四套国际制度框架面对的四项共同市场边界问题",
+      "evidenceIds": [
+        "ev-mkt169-ilcd-contexts",
+        "ev-mkt169-ecoinvent-consequential",
+        "ev-mkt169-pef-electricity",
+        "ev-mkt169-ghgp-attributional-allocation"
+      ],
+      "premiseIds": [
+        "cl-market-question",
+        "cl-market-psi-dissent",
+        "cl-market-observations"
+      ],
+      "conceptIds": [
+        "cn-market-marginal-production",
+        "cn-market-supply-segment",
+        "cn-market-average-consumption"
+      ],
+      "caveats": [
+        "四套体系的共同问题并不意味着它们共享同一目标函数：前两者允许在限定条件下建模市场后果，后两者则刻意锁定归因核算以维持可比性与可审计性。"
+      ],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-20",
+      "reasoning": "综合 ILCD 2010、ecoinvent v3、欧盟 PEF 与 GHG Protocol 产品标准四份原始官方指南中关于决策尺度、市场约束、电力组合与共产品处理的条款，将各体系规则映射到本章前四节提出的同一组结构问题。",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-mkt169-ilcd-contexts",
+          "relation": "supports",
+          "rationale": "ILCD 2010 以决策导向与是否触发产能增退划分情境 A、B、C1/C2，并明确仅在突破年更新容量门槛的大变化过程启用长期边际建模。"
+        },
+        {
+          "evidenceId": "ev-mkt169-ecoinvent-consequential",
+          "relation": "supports",
+          "rationale": "ecoinvent v3 后果模型以 30 年设备寿命（3.33%/年更新率）自动筛选长期无约束供应者并强制替代副产品，同时限定归因模型的适用边界。"
+        },
+        {
+          "evidenceId": "ev-mkt169-pef-electricity",
+          "relation": "supports",
+          "rationale": "欧盟 PEF 第 4.4.2 节通过四级合同追踪与残余消费电网组合防止双重计算，但该规则回答归因归属而非物理新增装机响应。"
+        },
+        {
+          "evidenceId": "ev-mkt169-ghgp-attributional-allocation",
+          "relation": "supports",
+          "rationale": "GHG Protocol 产品标准限定归因核算边界，仅允许基于平均因子的直接系统扩展，并禁止将市场响应型避免排放扣减出清单总计。"
+        }
+      ]
+    },
+    {
+      "id": "cl-mkt169-conditional-convergence",
+      "text": "在这组共同问题上，不同体系并非毫无共识，但每一项共识都附带明确前提。首先，各框架均承认清单建模方式必须服从研究目标，不能宣称归因或后果在所有场合都绝对更优——正如 Ekvall、Tillman 与 Molander（2005）把回顾性归因与前瞻性后果分别对应到不同规范伦理立场，ecoinvent v3 指南也在推荐后果模型的同时，明确指出社会层热点筛查、环境税负公平分摊及追溯追责或嘉奖更宜使用归因模型。其次，涉及电力与供应组合时，各框架都强调防止双重计算：无论是 PSI 的进出口电量平衡，还是欧盟 PEF 将已声明绿电从国家电网中剥离形成残余消费组合，都拒绝把同一份低碳属性同时记给合同买方和公共电网。最后，凡允许使用替代扣减的框架都把举证责任放在主张替代的一方：替代不是凭空减去一份名义清单，而必须说明被替代对象客观存在、市场足以吸收且符合对应的适用条件。",
+      "kind": "synthesis",
+      "scope": "目标依赖、防双重计算与替代举证责任三项条件共识",
+      "evidenceIds": [
+        "ev-allocation-2005-ethical-link",
+        "ev-mkt169-ilcd-contexts",
+        "ev-mkt169-ecoinvent-consequential",
+        "ev-mkt169-pef-electricity",
+        "ev-sub105-pef-hierarchy"
+      ],
+      "premiseIds": [
+        "cl-market-balance",
+        "cl-market-observations",
+        "cl-mkt169-shared-questions"
+      ],
+      "conceptIds": [
+        "cn-market-marginal-production",
+        "cn-market-average-consumption"
+      ],
+      "caveats": [
+        "条件共识只覆盖基本核算纪律，并不能自动统一各国证书制度或边际识别证据的充分性标准。"
+      ],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-20",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-allocation-2005-ethical-link",
+          "relation": "supports",
+          "rationale": "不同良好行动观与 retrospective/prospective 信息目标之间的论证联系。"
+        },
+        {
+          "evidenceId": "ev-mkt169-ilcd-contexts",
+          "relation": "supports",
+          "rationale": "ILCD 2010 以决策导向与是否触发产能增退划分情境 A、B、C1/C2，并明确仅在突破年更新容量门槛的大变化过程启用长期边际建模。"
+        },
+        {
+          "evidenceId": "ev-mkt169-ecoinvent-consequential",
+          "relation": "supports",
+          "rationale": "ecoinvent v3 后果模型以 30 年设备寿命（3.33%/年更新率）自动筛选长期无约束供应者并强制替代副产品，同时限定归因模型的适用边界。"
+        },
+        {
+          "evidenceId": "ev-mkt169-pef-electricity",
+          "relation": "supports",
+          "rationale": "欧盟 PEF 第 4.4.2 节通过四级合同追踪与残余消费电网组合防止双重计算，但该规则回答归因归属而非物理新增装机响应。"
+        },
+        {
+          "evidenceId": "ev-sub105-pef-hierarchy",
+          "relation": "supports",
+          "rationale": "先考察细分或扩展；扩展时报告整体。无法采用第一步时，第二步直接替代有经验效应与直接代表性清单两项证明；其他物理关系及第三步各有自己的前提。"
+        }
+      ],
+      "reasoning": "对照四套制度指南与 Ekvall 等（2005）规范伦理分析，提炼目标依赖、防双重计算与替代举证责任三项共同核算纪律及其各自成立前提。"
+    },
+    {
+      "id": "cl-mkt169-context-and-scale",
+      "text": "真正的分歧首先出现在决策情境的划分与尺度门槛上。ILCD 2010 指南在“是否支持决策”和“背景市场是否发生大尺度结构变化”两维交叉下划分出三类情境：面向单个产品比较与公开比较断言的情境 A（微观决策）假定变动不足以突破阈值改变装机，因而以既有供应链和平均消费组合作为实用简化；只有当年新增需求或供给超过受影响过程每年正常设备更新容量、触发额外新建或提前退役时，才进入情境 B（中宏观决策），且仅对这些受“大变化”影响的过程改用长期边际组合，同时配套覆盖 90% 误差范围的合理最差与最好假设情景及“无行动”零方案；纯描述性核算（情境 C1 计入既有外部交互、C2 仅作分配）则不得直接用于采购或政策比较，且指南脚注 15 特别澄清“过去还是未来”并非归因与后果的分界轴。ecoinvent v3 的“替代、后果、长期”模型则正面挑战了 ILCD 情境 A 的微尺度简化：Weidema 等（2013）延续微小增量累积改变资本投资的推论，主张即便单个购买或产品声明也应链接长期无约束边际供应者，并规定默认 30 年设备寿命对应 3.33%/年的资本更新率——当参考产品产量年降幅超过 3.33% 时链接旧技术（缺省退回过时或当前技术），其余增长、平稳或缓降市场均链接现代或新技术，且只以条件交换处理绝对市场约束而不引入经验价格弹性。与之相对，欧盟 PEF 与 GHG Protocol 产品标准为保障企业核算的可审计性，将产品清单整体锁定在归因边界：GHG Protocol 框 5.1 明确把后果路径留给减排项目或公共政策评估，产品清单本身严禁混入市场响应型扣减。",
+      "kind": "synthesis",
+      "scope": "决策情境分类与装机更新尺度门槛的框架分歧",
+      "evidenceIds": [
+        "ev-mkt169-ilcd-contexts",
+        "ev-mkt169-ecoinvent-consequential",
+        "ev-mkt169-ghgp-attributional-allocation",
+        "ev-pfr151-ghgp-comparative-gates"
+      ],
+      "premiseIds": [
+        "cl-market-time",
+        "cl-market-concession",
+        "cl-mkt169-shared-questions",
+        "cl-mkt169-conditional-convergence"
+      ],
+      "conceptIds": [
+        "cn-market-marginal-production",
+        "cn-market-supply-segment"
+      ],
+      "caveats": [
+        "ILCD 情境 B 的“大变化”门槛依赖受影响过程的年更新容量估计，而 ecoinvent v3 的 30 年/3.33% 规则是数据库级统一默认值，二者在具体行业均可能与实际设备寿命存在偏差。"
+      ],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-20",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-mkt169-ilcd-contexts",
+          "relation": "supports",
+          "rationale": "ILCD 2010 以决策导向与是否触发产能增退划分情境 A、B、C1/C2，并明确仅在突破年更新容量门槛的大变化过程启用长期边际建模。"
+        },
+        {
+          "evidenceId": "ev-mkt169-ecoinvent-consequential",
+          "relation": "supports",
+          "rationale": "ecoinvent v3 后果模型以 30 年设备寿命（3.33%/年更新率）自动筛选长期无约束供应者并强制替代副产品，同时限定归因模型的适用边界。"
+        },
+        {
+          "evidenceId": "ev-mkt169-ghgp-attributional-allocation",
+          "relation": "supports",
+          "rationale": "GHG Protocol 产品标准限定归因核算边界，仅允许基于平均因子的直接系统扩展，并禁止将市场响应型避免排放扣减出清单总计。"
+        },
+        {
+          "evidenceId": "ev-pfr151-ghgp-comparative-gates",
+          "relation": "supports",
+          "rationale": "通用产品碳足迹标准原样只支撑同产品跨期追踪，横向竞品比较需额外借助产品规则并建议采用第三方鉴证。"
+        }
+      ],
+      "reasoning": "逐条比对 ILCD 2010 情境 A/B/C1/C2 与年更新容量门槛、ecoinvent v3 的 30 年/3.33% 自动更新率与小尺度累积投资逻辑，以及 PEF 与 GHG Protocol 框 5.1 的归因锁定边界。"
+    },
+    {
+      "id": "cl-mkt169-electricity-mix-regimes",
+      "text": "同样的分歧在电力与供应组合记账规则中表现得最为直观。本章第三节检视的 PSI 方案（M1 至 M4）基于海关电量与发电统计建立物理贸易平衡，不依赖合同证书；即便在同一份 1995 年瑞士数据下，四种分配规则已得出不同平均来源，PSI 作者仍主张报告先用平均组合再以边际作灵敏度检验，而 Frischknecht 在脚注 14 中坚持面向决策应直接使用边际组合。欧盟 PEF 附件一第 4.4.2 节则走上另一条严格归因的合同追踪路线：依次优先使用满足 100% 追踪或三项最低准则（传递能源属性、单证或欧洲发证机构协会核验唯一声明、时间邻近；若一国未追踪消费比例高于 95% 则强制退回残余组合）的供应商特定电力产品、供应商总组合、国家残余消费电网组合，最后才是欧盟加欧洲自由贸易联盟或区域残余组合，而在产品使用阶段则改用消费电网组合。相比之下，ecoinvent v3 后果模型把水电、垃圾焚烧与热电联产副产电等受限电源排除在边际供给之外，按情景年份间正增长的无约束技术份额构造长期边际电力组合；正如 Treyer 与 Bauer（2016）及 Vandepaer 等（2019）所指出的，这种模型回答的是长期装机扩张而非逐小时短期调度，一旦市场收缩且以延迟退役而非新建机组响应，只按正增长归一化的边际算法就会失效。",
+      "kind": "synthesis",
+      "scope": "物理贸易平衡、合同残余组合与长期边际电力的记账分歧",
+      "evidenceIds": [
+        "ev-market-psi-models",
+        "ev-market-psi-judgment",
+        "ev-mkt169-pef-electricity",
+        "ev-kb48-treyer-longterm-scope",
+        "ev-kb48-future-vandepaer2019-positive-growth"
+      ],
+      "premiseIds": [
+        "cl-market-average-models",
+        "cl-market-psi-dissent",
+        "cl-mkt169-context-and-scale"
+      ],
+      "conceptIds": [
+        "cn-market-average-consumption",
+        "cn-market-marginal-production",
+        "cn-market-supply-segment"
+      ],
+      "caveats": [
+        "PEF 的合同追踪层级可防止归因账面双重计算，但并不检验买方购证是否真正促成了额外可再生装机；ecoinvent v3 长期边际电力亦不能替代下一章讨论的小时级调度与负荷转移分析。"
+      ],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-20",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-market-psi-models",
+          "relation": "supports",
+          "rationale": "M1以本地产出赋予消费；M2混合产出进口并给出口同一池；M3按本地产出扣出口、进口全归国内；M4按瞬时净进口/出口分段处理过境。相同历史贸易数据可因规则产生不同平均来源。"
+        },
+        {
+          "evidenceId": "ev-market-psi-judgment",
+          "relation": "supports",
+          "rationale": "报告区分短/长期供给调整并承认需求变化严格对应供给变化；继而呈列法国核电采购权与意大利被替代供给两种论证。平均优先/边际敏感性与负担归属是作者立场；fn14另记Frischknecht偏好决策支持采用边际方法的不同意见。"
+        },
+        {
+          "evidenceId": "ev-mkt169-pef-electricity",
+          "relation": "supports",
+          "rationale": "欧盟 PEF 第 4.4.2 节通过四级合同追踪与残余消费电网组合防止双重计算，但该规则回答归因归属而非物理新增装机响应。"
+        },
+        {
+          "evidenceId": "ev-kb48-treyer-longterm-scope",
+          "relation": "qualifies",
+          "rationale": "归因市场连接当前平均供应者。此版后果模型按无约束供应及技术分类连接，明示为长期新增容量用途，小时、日和季节边际不是该设定的研究对象。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-vandepaer2019-positive-growth",
+          "relation": "supports",
+          "rationale": "在同一情景选择年份差，归一产量增长的非受限技术。对美国等国内子区，单个国家前景用于共同技术份额，随后关联电压、地区和背景清单。"
+        }
+      ],
+      "reasoning": "将 PSI 1998 M1–M4 物理贸易平衡与 Frischknecht 脚注 14、欧盟 PEF 第 4.4.2 节四级合同追踪与残余消费组合，以及 ecoinvent v3 长期无约束边际电力置于同一外购电力问题下对照。"
+    },
+    {
+      "id": "cl-mkt169-coproduct-substitution",
+      "text": "市场约束的判别逻辑同样直接决定了各框架如何处置共产品与回收流。在 ecoinvent v3 后果模型中，联合生产活动原则上只保留一个决定性参考产品（除非多种产出均无替代路线），其余副产品天然受主产品产量约束而不能响应自身需求，因此一律以替代（系统扩展）抵减对应无约束边际路线，或在受限市场中经条件交换转化为其他用户的消费缩减。ILCD 情境 A 虽允许在细分不可行时采用替代，却要求满足市场吸收等限定条件并以平均市场组合替代，否则退回两步分配；情境 C2 则一律分配。欧盟 PEF 附件一第 4.5 节进一步收紧了替代门槛，要求同时举证直接市场效应与直接代表性清单才准予直接替代，并在生命末期回收环节以循环足迹公式替代开放式市场后果推演——其中的市场供需参数 A（0.2、0.5 或 0.8）与能量回收参数 B（默认 0）属于固定约定因子，而非动态价格弹性。GHG Protocol 产品标准第 9.3.2 节则把系统扩展限定在归因框架内：企业只有直接掌握副产品去向且采用供应商或平均排放因子时才能扣减（例如浆厂黑液发电按当地平均电网计为 50 kg，从工厂 1000 kg 中扣减得 950 kg），闭环近似替代因子还须与分阶段占比分列以防生命末期出现负值；至于市场间接响应带来的“避免排放”，第 11.3.2 节明令不得从清单总计中扣除，若选择单独披露，则必须连同间接土地利用变化等间接增排一并报告。",
+      "kind": "synthesis",
+      "scope": "需求变动下的共产品替代、循环足迹公式与避免排放禁令",
+      "evidenceIds": [
+        "ev-mkt169-ecoinvent-consequential",
+        "ev-sub105-ilcd-conditions",
+        "ev-sub105-pef-hierarchy",
+        "ev-cff109-2022-allocation",
+        "ev-mkt169-ghgp-attributional-allocation"
+      ],
+      "premiseIds": [
+        "cl-market-question",
+        "cl-market-pulp",
+        "cl-mkt169-context-and-scale"
+      ],
+      "conceptIds": [
+        "cn-market-marginal-production",
+        "cn-market-supply-segment"
+      ],
+      "caveats": [
+        "各框架对共产品与回收的详细数学展开已分别归入第十章与第十三章；此处聚焦市场约束判别如何引发不同框架的制度分流。"
+      ],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-20",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-mkt169-ecoinvent-consequential",
+          "relation": "supports",
+          "rationale": "ecoinvent v3 后果模型以 30 年设备寿命（3.33%/年更新率）自动筛选长期无约束供应者并强制替代副产品，同时限定归因模型的适用边界。"
+        },
+        {
+          "evidenceId": "ev-sub105-ilcd-conditions",
+          "relation": "supports",
+          "rationale": "一般多功能情形在细分前提、依附功能、等效备选及足量吸收等条件下尽可能使用平均市场消费混合；保留排除自身路线的小环境影响例外、尺度判据、其他分支和完整比较要求。"
+        },
+        {
+          "evidenceId": "ev-sub105-pef-hierarchy",
+          "relation": "supports",
+          "rationale": "先考察细分或扩展；扩展时报告整体。无法采用第一步时，第二步直接替代有经验效应与直接代表性清单两项证明；其他物理关系及第三步各有自己的前提。"
+        },
+        {
+          "evidenceId": "ev-cff109-2022-allocation",
+          "relation": "supports",
+          "rationale": "A在再生材料供应与使用生命周期间分配负担和抵扣。B同时作用于能量回收负担和抵扣，默认0，除非Annex II Part C有合适值。热电抵扣依据出售量并考虑一年内相关变化，非零B时上游与后续系统仍须避免重复核算。"
+        },
+        {
+          "evidenceId": "ev-mkt169-ghgp-attributional-allocation",
+          "relation": "supports",
+          "rationale": "GHG Protocol 产品标准限定归因核算边界，仅允许基于平均因子的直接系统扩展，并禁止将市场响应型避免排放扣减出清单总计。"
+        }
+      ],
+      "reasoning": "围绕市场约束判别，对照 ecoinvent v3 副产品必替代、ILCD 情境 A 市场吸收条件与平均替代、欧盟 PEF 第 4.5 节双重实证门槛与循环足迹公式固定参数 A/B，以及 GHG Protocol 第 9.3.2 节归因平均扩展与第 11.3.2 节避免排放禁令。"
+    },
+    {
+      "id": "cl-mkt169-ranking-inversions",
+      "text": "这些框架差异绝非术语之争，而是会在相同物理事实与采购凭证下直接翻转方案排序。回到本节前文的假想算例：面对完全相同的 10 kWh 购电合同与低碳电源 H 总量锁定的物理约束，按欧盟 PEF 合同追踪或 GHG Protocol 供应商归因口径，工厂可记为 0.2 kg CO₂；一旦改按 Weidema 与 ecoinvent v3 的受限市场后果逻辑，新增需求挤占其他用户的电源 H 份额并迫使高碳电源 G 增发 10 kWh，系统净增量立刻跃升至 8 kg CO₂——两者相差 40 倍（净差 7.8 kg）。同样地，在 Ekvall、Tillman 与 Molander（2005）讨论的瑞典 Thorskog 城堡会议酒店例中，酒店所接水电在局部归因视角下低碳，在边际电网后果视角下却可能对应高碳化石发电；在瑞士 1995 年电量账中，M3 口径算出本国留用 65.9831% 与四国进口合计约 34.02%，同样不能直接外推为新增用电的响应比例。因此，当比较对象之一依赖受限低碳电源的绿证或水电合同时，从合同归因切换到长期后果模型足以颠倒电解铝或高耗电工艺的优劣次序；反过来，若把只反映长期装机扩张的后果电力因子直接套用于短期负荷转移或正在收缩的电网市场，也可能把真实减排效果估反。这正是跨体系比较严禁在同一个对比中静默混用不同建模边界的根本原因。",
+      "kind": "synthesis",
+      "scope": "框架切换导致方案排序翻转的条件与反向失真风险",
+      "evidenceIds": [
+        "ev-joint-2005-conference-feedback",
+        "ev-market-psi-m3",
+        "ev-mkt169-pef-electricity",
+        "ev-mkt169-ecoinvent-consequential",
+        "ev-kb48-future-vandepaer2019-positive-growth"
+      ],
+      "premiseIds": [
+        "cl-market-m3-origins",
+        "cl-market-toy-constrained",
+        "cl-market-toy-purchase",
+        "cl-mkt169-electricity-mix-regimes",
+        "cl-mkt169-coproduct-substitution"
+      ],
+      "conceptIds": [
+        "cn-market-marginal-production",
+        "cn-market-average-consumption"
+      ],
+      "caveats": [
+        "40 倍（8 kg 对 0.2 kg）来自本章固定系数的假想教学算例，用于揭示机制方向而非预测具体电网实测倍数。"
+      ],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-20",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-joint-2005-conference-feedback",
+          "relation": "supports",
+          "rationale": "作者用并网水电旅馆情境区分局地系统描述、边际供电后果与假想断网激励，说明两类方法各受所用目的和行为条件限制。"
+        },
+        {
+          "evidenceId": "ev-market-psi-m3",
+          "relation": "supports",
+          "rationale": "M3将出口按本地产出扣除并将所有进口归入国内，分母含最终消费与损失。瑞士表值支持60277＋18113－25143＝51567＋1680＝53247GWh，并给出四个直接进口来源电量。"
+        },
+        {
+          "evidenceId": "ev-mkt169-pef-electricity",
+          "relation": "supports",
+          "rationale": "欧盟 PEF 第 4.4.2 节通过四级合同追踪与残余消费电网组合防止双重计算，但该规则回答归因归属而非物理新增装机响应。"
+        },
+        {
+          "evidenceId": "ev-mkt169-ecoinvent-consequential",
+          "relation": "supports",
+          "rationale": "ecoinvent v3 后果模型以 30 年设备寿命（3.33%/年更新率）自动筛选长期无约束供应者并强制替代副产品，同时限定归因模型的适用边界。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-vandepaer2019-positive-growth",
+          "relation": "supports",
+          "rationale": "在同一情景选择年份差，归一产量增长的非受限技术。对美国等国内子区，单个国家前景用于共同技术份额，随后关联电压、地区和背景清单。"
+        }
+      ],
+      "reasoning": "将本章第四节电源 H 受限算例（8 kg 对 0.2 kg）、瑞士 M3 份额与 Ekvall 等（2005）Thorskog 城堡酒店例分别代入合同归因与受限市场后果两类框架，说明规则切换如何直接翻转方案排序。"
+    },
+    {
+      "id": "cl-mkt169-epistemic-limits",
+      "text": "上表对照五套体系后，还须如实交代：无论是本章的条件算例还是上述四套制度框架，都尚未解决几类关键的实证与治理未知。其一，在真实市场中，一笔新增需求究竟通过短期机组调度、启用闲置产能、延迟旧厂退役、新增投资还是价格上升抑制其他消费来消化，仍缺乏广泛的事后实证检验，不能仅凭理论步骤或假定完全供给弹性就视作已观测事实。其二，ILCD 情境 A 与情境 B 之间在实践中仍缺少跨行业公认的实证临界点，而 ecoinvent v3 后果模型不仅用 30 年/3.33% 统一默认值替代行业差异、省略经验弹性，其具体数据库版本也曾暴露实现偏差与对能源情景及时间窗口选择的高度敏感（Vandepaer 等 2019 记录了 v3.4 中的硬煤遗漏、水电映射与光热重复计数等具体缺陷，尽管平均修正幅度小于 3% 并在 v3.5 修复）。其三，本章前文涉及的部分历史产能与行业统计原件仍未取得底层数据，部分后续学术综述与范围依赖争论亦超出本章所核查的公开文献范围；在缺乏这些实证证据前，任何跨体系比较结论都应连同所选框架的前提、约束假设与灵敏度区间一并给出，而不能把单一体系的合规结果当作市场响应的唯一真相。",
+      "kind": "synthesis",
+      "scope": "现实市场响应的实证缺口、数据库实现敏感性与文献核查边界",
+      "evidenceIds": [
+        "ev-market-2004-limits",
+        "ev-mkt169-ilcd-contexts",
+        "ev-mkt169-ecoinvent-consequential",
+        "ev-kb48-future-vandepaer2019-esm1-known-issues"
+      ],
+      "premiseIds": [
+        "cl-market-projection-limits",
+        "cl-market-observations",
+        "cl-mkt169-ranking-inversions"
+      ],
+      "conceptIds": [
+        "cn-market-marginal-production",
+        "cn-market-supply-segment",
+        "cn-market-average-consumption"
+      ],
+      "caveats": [
+        "实证缺口不意味着建模无用，而是要求把归因账本与后果情景清晰分列，并把待检验的市场响应假设暴露给读者与审查者。"
+      ],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-20",
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-market-2004-limits",
+          "relation": "supports",
+          "rationale": "作者将模型视为决策引发的因果链，同时承认未来技术、经济响应、远端后果和扩展停止条件的不确定性；现有清单并不自动代表未来活动。"
+        },
+        {
+          "evidenceId": "ev-mkt169-ilcd-contexts",
+          "relation": "supports",
+          "rationale": "ILCD 2010 以决策导向与是否触发产能增退划分情境 A、B、C1/C2，并明确仅在突破年更新容量门槛的大变化过程启用长期边际建模。"
+        },
+        {
+          "evidenceId": "ev-mkt169-ecoinvent-consequential",
+          "relation": "supports",
+          "rationale": "ecoinvent v3 后果模型以 30 年设备寿命（3.33%/年更新率）自动筛选长期无约束供应者并强制替代副产品，同时限定归因模型的适用边界。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-vandepaer2019-esm1-known-issues",
+          "relation": "qualifies",
+          "rationale": "附件记录硬煤遗漏、水电映射、CSP重计及高/中压输入差异。作者报告修订平均差低于3%且 v3.5 已处理。"
+        }
+      ],
+      "reasoning": "依据 Ekvall & Weidema（2004）、ILCD 2010、Weidema 等（2013）与 Vandepaer 等（2019）明确披露现实响应事后实证缺口、A/B 实践临界点共识缺位、数据库实现缺陷与未精读文献边界。"
     }
   ],
   "concepts": [
