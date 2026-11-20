@@ -18,7 +18,7 @@ import { validateProductFootprintComparisonFactors } from './reader-product-foot
 import { validateUncertaintyComparisonFactors } from './reader-uncertainty-comparison-factors.mjs';
 import {
   exactPublicJsonReceipt, mergeScientificFileAndRecordChanges, mergeScientificOutput,
-  qualifyScientificHistory, restoreScientificRecords, sameScienceValue, scienceDigest, scienceText,
+  projectScientificOrdinaryTargets, qualifyScientificHistory, restoreScientificRecords, sameScienceValue, scienceDigest, scienceText,
 } from './reader-scientific-delta.mjs';
 
 export const part6RereadId = 'part6-reread-155';
@@ -743,14 +743,36 @@ export function validatePart6RereadCorrectionOutput(document, path, unit) {
   return errors;
 }
 
-export function qualifyPart6RereadHistory(documents, unit, actual, part5Reread, part4Reread, uncertaintyComparison, dataQualityComparison) {
+const part7SuccessorOverrideKeys = Object.freeze(new Set([
+  `/docs/book#${chapterAnchorPrefix('/docs/book')}-part4-133-ordinary-5`,
+  `/print#${printUnitAnchor('/docs/book')}-part4-133-ordinary-5`,
+  `/docs/book#${chapterAnchorPrefix('/docs/book')}-part4-133-ordinary-7`,
+  `/print#${printUnitAnchor('/docs/book')}-part4-133-ordinary-7`,
+  `/docs/book#${chapterAnchorPrefix('/docs/book')}-part4-133-ordinary-8`,
+  `/print#${printUnitAnchor('/docs/book')}-part4-133-ordinary-8`,
+]));
+
+export function qualifyPart6RereadHistory(documents, unit, actual, part5Reread, part4Reread, uncertaintyComparison, dataQualityComparison, part7Reread = null) {
   if (!unit) return { prior: actual, errors: [] };
   assertUnitEnvelopeKeys(unit, unit.reviewEvidence !== undefined, false);
   const overrides = unit.history?.ordinaryOverrides;
   if (!validOrdinaryOverridesShape(overrides, true)) {
     throw new Error('Part VI continuous reread ordinaryOverrides violates the 2-key allowlist');
   }
-  const targets = observePart6RereadOrdinaryTargets(documents);
+  let successorOverrides = null;
+  if (part7Reread) {
+    const raw = part7Reread.history?.ordinaryOverrides;
+    if (!plainObject(raw) || [...part7SuccessorOverrideKeys].some(key => !plainObject(raw[key])
+        || !scienceDigest(raw[key].from) || !scienceDigest(raw[key].to) || raw[key].from === raw[key].to))
+      throw new Error('Part VI continuous reread successor ordinaryOverrides violates the 6-key Part VII allowlist');
+    successorOverrides = Object.fromEntries([...part7SuccessorOverrideKeys].map(key => [key, { from: raw[key].from, to: raw[key].to }]));
+  }
+  const targets = projectScientificOrdinaryTargets(
+    successorOverrides,
+    observePart6RereadOrdinaryTargets(documents),
+    'Part VI continuous reread',
+    part7SuccessorOverrideKeys,
+  );
   const prior = qualifyScientificHistory(unit.history, actual, targets, {
     label: 'Part VI continuous reread', routes: part6RereadRoutes, predecessorPin: addressPin,
   });
@@ -791,6 +813,7 @@ export function qualifyPart6RereadHistory(documents, unit, actual, part5Reread, 
       ordinaryTags: ['P', 'TABLE'],
       label: 'Part VI continuous reread',
       ordinaryTargets: Object.fromEntries(Object.entries(unit.history.ordinaryTargets).map(([key, row]) => [key, row.sha256])),
+      ordinaryOverrides: successorOverrides,
     }),
     ...validatePart6RereadPartDisclosure(documents.get('/print'), unit),
   ];

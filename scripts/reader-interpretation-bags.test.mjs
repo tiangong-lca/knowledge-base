@@ -4,6 +4,8 @@ import test from 'node:test';
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
 import loadShift from '../config/reader-load-shift.json' with { type: 'json' };
 import service from '../config/reader-service-constraints.json' with { type: 'json' };
+import part7 from '../config/reader-part7-reread.json' with { type: 'json' };
+import { restorePart7RereadTestFiles } from './reader-part7-reread.mjs';
 import rev from '../config/reader-revisable-judgment.json' with { type: 'json' };
 import { restoreRevisableJudgmentTestFiles } from './reader-revisable-judgment.mjs';
 import fut from '../config/reader-future-scenarios.json' with { type: 'json' };
@@ -37,9 +39,10 @@ async function loadInput() {
     readServiceConstraintsFiles(process.cwd(), service.unit),
   ]);
   for (const [p, b] of [...shiftFiles, ...serviceFiles]) files.set(p, b);
+  restorePart7RereadTestFiles(files, part7.unit);
   restoreRevisableJudgmentTestFiles(files, rev.unit);
   restoreFutureScenariosTestFiles(files, fut.unit);
-  const prev159 = previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, rev.unit), fut.unit);
+  const prev159 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part7.unit), rev.unit), fut.unit);
   return { ...prev159, files };
 }
 

@@ -8,12 +8,13 @@ import { NumberedHeading, NumberedTitle } from '@/components/numbered-heading';
 import { PrintButton } from '@/components/print-button';
 import { PublicationShell } from '@/components/publication-shell';
 import { citationSourceHref } from '@/scripts/reader-citations.mjs';
-import { currentPart4Reread, currentPart5Reread, currentPart6Reread } from '@/scripts/reader-current-expectations.mjs';
+import { currentPart4Reread, currentPart5Reread, currentPart6Reread, currentPart7Reread } from '@/scripts/reader-current-expectations.mjs';
 import { bookTopicPresentation, getPresentationUnits, getUnitHeadingPlan, printReadingEntryAnchor, readerParts } from '@/scripts/reader-numbering.mjs';
 import { showEditorialHistoryInProse } from '@/scripts/reader-editorial-mode.mjs';
 import { part4RereadSource } from '@/scripts/reader-part4-reread.mjs';
 import { part5RereadSource } from '@/scripts/reader-part5-reread.mjs';
 import { part6RereadSource } from '@/scripts/reader-part6-reread.mjs';
+import { part7RereadSource } from '@/scripts/reader-part7-reread.mjs';
 import { printUnitAnchor } from '@/scripts/reader-book.mjs';
 
 export const metadata = { title: '书籍目录、连续阅读与打印' };
@@ -69,6 +70,10 @@ export default function Page() {
         {showEditorialHistoryInProse() && currentPart6Reread && part.number === 6 && <details className="legacy-citation-context" data-part6-reread-part="6">
           <summary><time dateTime={part6RereadSource.date}>{part6RereadSource.date}</time> 版第六部导言范围</summary>
           <p>{'前版导言：“'}{currentPart6Reread.partIntroduction.from}{'” '}<a href={citationSourceHref(part6RereadSource.commit)} data-part6-reread-part-source="">查看该版源文件</a></p>
+        </details>}
+        {showEditorialHistoryInProse() && currentPart7Reread && part.number === 7 && <details className="legacy-citation-context" data-part7-reread-part="7">
+          <summary><time dateTime={part7RereadSource.date}>{part7RereadSource.date}</time> 版第七部导言范围</summary>
+          <p>{'前版导言：“'}{currentPart7Reread.partIntroduction.from}{'” '}<a href={citationSourceHref(part7RereadSource.commit)} data-part7-reread-part-source="">查看该版源文件</a></p>
         </details>}
         {units.filter(unit=>unit.part===part.number).map(article)}
       </section>)}

@@ -1191,7 +1191,16 @@ const part6SuccessorOverrideKeys = Object.freeze(new Set([
   `/print#${printUnitAnchor('/docs/book')}-part4-133-ordinary-6`,
 ]));
 
-export function qualifyPart5RereadHistory(documents, unit, actual, part4Reread, weightingValuation, socialComparison, part6Reread = null) {
+const part7SuccessorOverrideKeys = Object.freeze(new Set([
+  `/docs/book#${chapterAnchorPrefix('/docs/book')}-part4-133-ordinary-5`,
+  `/print#${printUnitAnchor('/docs/book')}-part4-133-ordinary-5`,
+  `/docs/book#${chapterAnchorPrefix('/docs/book')}-part4-133-ordinary-7`,
+  `/print#${printUnitAnchor('/docs/book')}-part4-133-ordinary-7`,
+  `/docs/book#${chapterAnchorPrefix('/docs/book')}-part4-133-ordinary-8`,
+  `/print#${printUnitAnchor('/docs/book')}-part4-133-ordinary-8`,
+]));
+
+export function qualifyPart5RereadHistory(documents, unit, actual, part4Reread, weightingValuation, socialComparison, part6Reread = null, part7Reread = null) {
   if (!unit) return { prior: actual, errors: [] };
   assertUnitEnvelopeKeys(unit, {
     reviewed: unit.reviewEvidence !== undefined,
@@ -1209,12 +1218,21 @@ export function qualifyPart5RereadHistory(documents, unit, actual, part4Reread, 
       throw new Error('Part V continuous reread successor ordinaryOverrides violates the 2-key Part VI allowlist');
     successorOverrides = Object.fromEntries([...part6SuccessorOverrideKeys].map(key => [key, { from: raw[key].from, to: raw[key].to }]));
   }
+  const allowedSuccessorKeys = new Set(part6Reread ? part6SuccessorOverrideKeys : []);
+  if (part7Reread) {
+    const raw = part7Reread.history?.ordinaryOverrides;
+    if (!plainObject(raw) || [...part7SuccessorOverrideKeys].some(key => !plainObject(raw[key])
+        || !scienceDigest(raw[key].from) || !scienceDigest(raw[key].to) || raw[key].from === raw[key].to))
+      throw new Error('Part V continuous reread successor ordinaryOverrides violates the 6-key Part VII allowlist');
+    successorOverrides = { ...(successorOverrides ?? {}), ...Object.fromEntries([...part7SuccessorOverrideKeys].map(key => [key, { from: raw[key].from, to: raw[key].to }])) };
+    for (const k of part7SuccessorOverrideKeys) allowedSuccessorKeys.add(k);
+  }
 
   const targets = projectScientificOrdinaryTargets(
     successorOverrides,
     observePart5RereadOrdinaryTargets(documents),
     'Part V continuous reread',
-    part6SuccessorOverrideKeys,
+    allowedSuccessorKeys.size ? allowedSuccessorKeys : part6SuccessorOverrideKeys,
   );
   const prior = qualifyScientificHistory(unit.history, actual, targets, {
     label: 'Part V continuous reread', routes: part5RereadRoutes, predecessorPin: addressPin,

@@ -2,12 +2,13 @@ import { createHash } from 'node:crypto';
 import { Fragment, isValidElement } from 'react';
 import { printUnitAnchor } from './reader-book.mjs';
 import numbering from '../config/reader-numbering.json' with { type: 'json' };
+import { projectPart7RereadNumbering } from './reader-part7-reread.mjs';
 import { projectPart6RereadNumbering } from './reader-part6-reread.mjs';
 import { projectPart5RereadNumbering } from './reader-part5-reread.mjs';
 import { projectPart4RereadNumbering } from './reader-part4-reread.mjs';
 import { projectServiceConstraintsNumbering } from './reader-service-constraints.mjs';
 import { flowBoundaryNumbering } from './reader-flow-boundary.mjs';
-import { currentBookLayout, currentBookPlan, currentFlowBoundary, currentPart4Reread, currentPart5Reread, currentPart6Reread, currentServiceConstraints } from './reader-current-expectations.mjs';
+import { currentBookLayout, currentBookPlan, currentFlowBoundary, currentPart4Reread, currentPart5Reread, currentPart6Reread, currentPart7Reread, currentServiceConstraints } from './reader-current-expectations.mjs';
 
 /** @typedef {{key:string,source:string,kind:string,title:string,part?:number,label:string|null,prefix:string|null,ordinal:number|null,partLabel:string|null,partTitle?:string|null}} NumberingUnit */
 /** @typedef {{key:string,id?:string,title:string,depth:number,type:string,number:string}} HeadingNumber */
@@ -18,7 +19,7 @@ const chinese = ['', '一', '二', '三', '四', '五', '六', '七'];
 /** @type {string|null} */
 export const readerNumberingDigest = "edf363ea6a65b1f4093a224ec17124b618ac34405f6f4abdd6127bccacd01306";
 export function assertReaderNumbering(value = numbering, independentDigest = currentBookLayout('book:numbering-pin', readerNumberingDigest)) {
-  const previous = projectServiceConstraintsNumbering(currentServiceConstraints, projectPart4RereadNumbering(currentPart4Reread, projectPart5RereadNumbering(currentPart5Reread, projectPart6RereadNumbering(currentPart6Reread, value))));
+  const previous = projectServiceConstraintsNumbering(currentServiceConstraints, projectPart4RereadNumbering(currentPart4Reread, projectPart5RereadNumbering(currentPart5Reread, projectPart6RereadNumbering(currentPart6Reread, projectPart7RereadNumbering(currentPart7Reread, value)))));
   if (createHash('sha256').update(JSON.stringify(previous)).digest('hex') !== flowBoundaryNumbering(currentFlowBoundary, previous, independentDigest)) throw new Error('Reader numbering differs from the independently pinned actual heading and part inventory');
   if (currentBookLayout('book:formal-section-budget', false)) {
     const counts = value.book.filter(unit => unit.kind === 'chapter').map(unit =>
