@@ -1,0 +1,942 @@
+{
+  "schemaVersion": 1,
+  "kind": "source",
+  "unit": "part7-reread-165",
+  "date": "2026-11-20",
+  "subjectSha256": "e8e612b9520fea4292fa56869e0656e6c52361bba7349f7504638df424c64a4b",
+  "scope": [
+    "config/reader-numbering.json",
+    "content/docs/book/index.mdx",
+    "content/docs/book/interpretation-and-limits.mdx",
+    "content/docs/book/future-technology-and-context.mdx",
+    "content/docs/book/from-connected-results-to-conditional-judgment.mdx",
+    "content/monograph/revisable-judgment.mdx",
+    "claims:cl-future-incumbent",
+    "claims:cl-future-impact-limits",
+    "claims:cl-connect-object-before-unit",
+    "claims:cl-connect-three-scalings",
+    "claims:cl-connect-time-relations",
+    "claims:cl-connect-reuse-keeps-relation",
+    "claims:cl-connect-zero-needs-origin",
+    "claims:cl-connect-proxy-and-outcome",
+    "claims:cl-connect-evidence-to-probability",
+    "claims:cl-connect-coverage-and-overlap",
+    "claims:cl-connect-values-stay-specific",
+    "claims:cl-connect-useful-without-winner",
+    "claims:cl-connect-next-evidence-at-link",
+    "claims:cl-pack-acceptance",
+    "claims:cl-pack-recommendation",
+    "claims:cl-pack-iterate",
+    "claims:cl-pack-limits",
+    "claims:cl-closing-historical-return",
+    "claims:cl-book-future-scenario-matrix",
+    "claims:cl-book-future-decision",
+    "claims:cl-wsc157-ghgp-and-paywalled-iso",
+    "claims:cl-int159-danish-epa-fu-eol",
+    "claims:cl-int159-danish-epa-multi-indicator",
+    "claims:cl-fut161-terminology-axes",
+    "claims:cl-fut161-superstructure-iam",
+    "claims:cl-fut161-dynamic-time-horizons",
+    "claims:cl-fut161-temporal-barriers-values",
+    "claims:cl-rev163-lcia-pathway-and-packet-drift",
+    "claims:cl-rev163-circular-and-prospective-coupling",
+    "claims:cl-rev163-pedigree-dqr-and-sampling-limits",
+    "claims:cl-rev163-comparative-assertion-three-regimes",
+    "claims:cl-rev163-targeted-revision-routing",
+    "claims:cl-rev163-monograph-closing-boundary"
+  ],
+  "observed": "Part VII whole-part continuous reread across F02 (content/docs/book/index.mdx Part VII overview), Part 7 introduction (config/reader-numbering.json), and all four Part VII chapters B29–B32 plus W1/W2 dual view (102 rendered paragraphs, 80 non-case claims, 33 modified non-case claims, 0 caseBinding modifications) against exact predecessor commit 29771936c01311172371a4569dc1b1154e205599.",
+  "observations": {
+    "state": {
+      "before": "bee2fa565bce572fd86fe00e63bdedb4e974a912f70033e781efbd0a041c3b3d",
+      "after": "c0487ece5cbafb4f4ab1440797ebfe023c86240d1e87cafe715dd2766b2d6e55"
+    },
+    "changes": [
+      {
+        "kind": "file",
+        "key": "config/reader-numbering.json",
+        "from": "29c1bc18e1b8022dddb7bfd93d58822f7feb8ea09a6a4e076e70d7f1bb64bb03",
+        "to": "00f6705b45997052fc6ca6f9675d04711d93e063181beda7195e22ebc1b802d0",
+        "rationale": "按 B29→B30→B31→B32 顺序更新第七部《比较与判断》导言，补齐比较断言与成对不确定性、英丹购物袋评估与 ILCD/PEF 审查体制、前瞻与动态时间边界及七类定向修订路由主线。"
+      },
+      {
+        "kind": "file",
+        "key": "content/docs/book/index.mdx",
+        "from": "e45f967925b30571a1f1f46a48ab36363e409488d452941a7bdb1e336d3ac50a",
+        "to": "63ea7364026aed1f9d82193774ab5d15ab0bf35770bf060ca8e1fbc96e914a1a",
+        "rationale": "修正《阅读导论》L22 漏字“[未来技术与情景]”，并同步更新第七部导览段（part4-133-ordinary-7）与末章收束段（part4-133-ordinary-8）。"
+      },
+      {
+        "kind": "file",
+        "key": "content/docs/book/interpretation-and-limits.mdx",
+        "from": "a2c0c0c2e9d15af32a37f3c7ae9c29101930d6c24b06315127ca700f5574e200",
+        "to": "0728fe36159455b3e5e5f3798dbe4cb07f9ffeb4f85bb7ced937af1ba049d79b",
+        "rationale": "在《购物袋研究》四体系对照表第 4 行统一欧盟委员会建议书 (EU) 2021/2279（产品环境足迹 PEF，公报 OJ L 144 附件一第 6—8 节）全称口径。"
+      },
+      {
+        "kind": "file",
+        "key": "content/docs/book/future-technology-and-context.mdx",
+        "from": "37be3b07a787d4235667488dd34aacb39531fa714b2da79fbd244cd8ec180095",
+        "to": "7ade912085f7fb766e12bfa7913adfe4584567b7549164b94dd3c2f16273226e",
+        "rationale": "统一《未来技术与情景》五类方法对照表中“特征化”为“表征”，并在表末补入承接末章《可修订的判断》（网页双篇）的过渡段。"
+      },
+      {
+        "kind": "file",
+        "key": "content/docs/book/from-connected-results-to-conditional-judgment.mdx",
+        "from": "015a7bda1ab0ff8d890fb92964323dfa7b818a4ac0eab71127cb8954b3d8a690",
+        "to": "28abe503bfd418187d6b011b60a393185620c0ffb87058d727e4e8e3f723614c",
+        "rationale": "修正《判断依据与修订》5×7 修订路由表中的“变异与不确定性”书名误引，并统一“表征模型”“比较断言”“灵敏度”术语。"
+      },
+      {
+        "kind": "file",
+        "key": "content/monograph/revisable-judgment.mdx",
+        "from": "ab54da53f21966ed44d158c3fdbf26a92e48be30ec6485577aa475864272d743",
+        "to": "5f004b433d2913e6831705adafb5b87f236e2c1b52c39de206b1654514ba70f0",
+        "rationale": "与网页篇同步修正《可修订的判断》5×7 修订路由表中的“变异与不确定性”书名误引，并统一“表征模型”“比较断言”“灵敏度”术语。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-future-incumbent",
+        "from": {
+          "raw": "a4f6d8210aecab709e09d1d526e6a27c996aabef74789ec7cc0a6fca73d5e847",
+          "public": "a4f6d8210aecab709e09d1d526e6a27c996aabef74789ec7cc0a6fca73d5e847",
+          "protected": "f534ac4375a1b929fb74046615deec73e37ea003b1316dabf1c74eadb88debc2"
+        },
+        "to": {
+          "raw": "dcfb4ee3678247455421013d3fcc065e8d870461cf7ec1aac29c991653688407",
+          "public": "dcfb4ee3678247455421013d3fcc065e8d870461cf7ec1aac29c991653688407",
+          "protected": "76e2d1de1b61fa5bf98681a86eb61eea0cb941aee8cbad2267eedc67d135bce2"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-future-impact-limits",
+        "from": {
+          "raw": "13ba840a7243f20fa43feaf4d66e37fa45f072ea81afc2a5314966b183dfdc19",
+          "public": "13ba840a7243f20fa43feaf4d66e37fa45f072ea81afc2a5314966b183dfdc19",
+          "protected": "e191bea19233a2c54c0eaeff7301adb687651d33561df175820a5b171d160d7e"
+        },
+        "to": {
+          "raw": "aa50e25342f067b061f3be2fdf769bacbdf7f688b5437590822f28e21f8042ba",
+          "public": "aa50e25342f067b061f3be2fdf769bacbdf7f688b5437590822f28e21f8042ba",
+          "protected": "e191bea19233a2c54c0eaeff7301adb687651d33561df175820a5b171d160d7e"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-connect-object-before-unit",
+        "from": {
+          "raw": "04c78920aa57a8b9f26f609100cbad8a8cfc3fbdfb60a5ba4f7915462dc57f7d",
+          "public": "04c78920aa57a8b9f26f609100cbad8a8cfc3fbdfb60a5ba4f7915462dc57f7d",
+          "protected": "cdc7e878dfaca2a9cda28fd1c8cb0e1449429042b3b7ebb94b552b452a4b9396"
+        },
+        "to": {
+          "raw": "204710b9ee88c337f541d46ada68eb661bdffad03baa190cbad3a657f35e4643",
+          "public": "204710b9ee88c337f541d46ada68eb661bdffad03baa190cbad3a657f35e4643",
+          "protected": "14a7f688da617fd94698354f0116a33af9a545861ed3bd416a9d4e6fc08f2bdd"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-connect-three-scalings",
+        "from": {
+          "raw": "80a24dc5a4eea59896d605e30c48293e8235ffc60b42949c17c0d4f0720dafa8",
+          "public": "80a24dc5a4eea59896d605e30c48293e8235ffc60b42949c17c0d4f0720dafa8",
+          "protected": "27609c677cc1051763f52e8e67f439ecdddfd9cb5dc4085a60febc17e78e2f94"
+        },
+        "to": {
+          "raw": "f7a6f2e3d952dc01853259fff1af64e5a672fba0aef6349885267aac69e8f4d1",
+          "public": "f7a6f2e3d952dc01853259fff1af64e5a672fba0aef6349885267aac69e8f4d1",
+          "protected": "b4920123ef439493d38e904a5c402809add793bd9f45058cec499e548e459b94"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-connect-time-relations",
+        "from": {
+          "raw": "78bef95c76c0b3b9e9a82ac128852478336a93282a5b739fa907bc49ebb0c83a",
+          "public": "78bef95c76c0b3b9e9a82ac128852478336a93282a5b739fa907bc49ebb0c83a",
+          "protected": "7397b887bc10b4c11c78556522e724887abdf6da666d9697cc4851b4f7d3f386"
+        },
+        "to": {
+          "raw": "2de55f5d8549195efe0a21e5cfc4169e92c13cd28c7819dd0a8803b37d8b4a43",
+          "public": "2de55f5d8549195efe0a21e5cfc4169e92c13cd28c7819dd0a8803b37d8b4a43",
+          "protected": "be5cd53d492d6de8fee647f2e10074430c999a03c30c54436825aaab2af6cfe2"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-connect-reuse-keeps-relation",
+        "from": {
+          "raw": "37e8e9e3a0b5a4aca8f10ee5c6c238f76a90405089b64eb7ab91f952ed24b391",
+          "public": "37e8e9e3a0b5a4aca8f10ee5c6c238f76a90405089b64eb7ab91f952ed24b391",
+          "protected": "0d9a197972b43685e1a43deb0ff5838242ea1795a5c5b02072aa67158266bf6b"
+        },
+        "to": {
+          "raw": "02ed18d56779f2afd7354ba6b338b08d24665eba38842c123b5369381a314819",
+          "public": "02ed18d56779f2afd7354ba6b338b08d24665eba38842c123b5369381a314819",
+          "protected": "169e5ce3f796c97a32b83364091a6eb6d138ee00f530e3411fbe68be3b6eeb08"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-connect-zero-needs-origin",
+        "from": {
+          "raw": "0b04ce79b18f33ee8f7c39796e2c5df55a2ec399370bf3db28379b0854bfb710",
+          "public": "0b04ce79b18f33ee8f7c39796e2c5df55a2ec399370bf3db28379b0854bfb710",
+          "protected": "cf0082cad76ff7acf39c46614374d7de36b1eba161ee4d88b5ceed600bffc708"
+        },
+        "to": {
+          "raw": "52ac2a8efb695a048c7ec2945be27fc4292bc8aa6f0b35adf6070b7f6b504c44",
+          "public": "52ac2a8efb695a048c7ec2945be27fc4292bc8aa6f0b35adf6070b7f6b504c44",
+          "protected": "49495649b51b2e3fa795ad5f0e5ee234c42260c02b9a33eefd3e764cff8feeaf"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-connect-proxy-and-outcome",
+        "from": {
+          "raw": "f03577447036a2e892a8356471704f9bb9ba2e8b4536ef03c9e6f65439a26a6b",
+          "public": "f03577447036a2e892a8356471704f9bb9ba2e8b4536ef03c9e6f65439a26a6b",
+          "protected": "0ac1d1e3f560c382edbc54d75e00c5650590f7337835ca6b6f8361f697d4609a"
+        },
+        "to": {
+          "raw": "e336593231986c49648104d8644b6da8e875171371703b5f9ba6bc9608fbf18c",
+          "public": "e336593231986c49648104d8644b6da8e875171371703b5f9ba6bc9608fbf18c",
+          "protected": "54576caf7153bd1679cc6025ceffac32b6fc6d6e3cbd43d85c09cb09164f1f2f"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-connect-evidence-to-probability",
+        "from": {
+          "raw": "e4fee7c2370871993d4990ccda2b369a790918c46f4a66c09b51ba66c74bbeec",
+          "public": "e4fee7c2370871993d4990ccda2b369a790918c46f4a66c09b51ba66c74bbeec",
+          "protected": "8df7a30c5a65aa3f82c03f47bf65f2665608e2040234a2de711d25e9d8791c74"
+        },
+        "to": {
+          "raw": "0197fc39a0b2a285816f365db31f1728b72404959126f00e947eb89dc7116403",
+          "public": "0197fc39a0b2a285816f365db31f1728b72404959126f00e947eb89dc7116403",
+          "protected": "6116c1c69b83d8953a2f787951b130bda433a0f56382b732282bf1bcf0079fa6"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-connect-coverage-and-overlap",
+        "from": {
+          "raw": "b159c8465478a476dee11f6c902d0f9d0653f070f2ef66395d0665b768e41bdb",
+          "public": "b159c8465478a476dee11f6c902d0f9d0653f070f2ef66395d0665b768e41bdb",
+          "protected": "d0456b17780ef7ce7bd150347c62ec14f80b4bd2fc97346f5891fa5bc8156bf8"
+        },
+        "to": {
+          "raw": "d40c5f15dea78ad1a1f35e0d578958d1bf086b923ae0b50190ae8929e0dbc965",
+          "public": "d40c5f15dea78ad1a1f35e0d578958d1bf086b923ae0b50190ae8929e0dbc965",
+          "protected": "386cc8097a9462212c92e7f00afd83dc5d521d9a8f8e7cc76a0986faa1d58aab"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-connect-values-stay-specific",
+        "from": {
+          "raw": "e9d444e933e53e770e1bb2979823a8da908ecf87916a719a18ae271b6f786ee4",
+          "public": "e9d444e933e53e770e1bb2979823a8da908ecf87916a719a18ae271b6f786ee4",
+          "protected": "e54b2a2c7ee015ccb7db1c8a050c04bf2f0ecf2facf1d135b5220e9cd6cffc2b"
+        },
+        "to": {
+          "raw": "813af5bd44b6b2d77e79d00f89dfdf0b1101931d5b0f26d5fc9ca2caa9678897",
+          "public": "813af5bd44b6b2d77e79d00f89dfdf0b1101931d5b0f26d5fc9ca2caa9678897",
+          "protected": "57a1db298fa7d6164df209d34139802b868077e01247976374689d9ff4e163b1"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-connect-useful-without-winner",
+        "from": {
+          "raw": "732ce83655646fd0c343a671c72e8d2d6eaaf17a216e601fc799cc951c22f02d",
+          "public": "732ce83655646fd0c343a671c72e8d2d6eaaf17a216e601fc799cc951c22f02d",
+          "protected": "a249635c7762df65e9464a5f036f12faca730868374af92d636343b98aabe264"
+        },
+        "to": {
+          "raw": "72f7891058907edf345d94e92e9502c6983a5f313118470e61abc83fc651ab89",
+          "public": "72f7891058907edf345d94e92e9502c6983a5f313118470e61abc83fc651ab89",
+          "protected": "3aefe0b14da56cb734762775e2dcf7914dbf193e91cf571acbcc673a733b5648"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-connect-next-evidence-at-link",
+        "from": {
+          "raw": "ad6ff8a8fe77c5be8d9d0cd0a3f16546445a66d774d0b512b36c4af52953dc9f",
+          "public": "ad6ff8a8fe77c5be8d9d0cd0a3f16546445a66d774d0b512b36c4af52953dc9f",
+          "protected": "9849f74cf532b15522629b9f448ace1d9e382ffd6fa1a269aed93d6ffe17ad71"
+        },
+        "to": {
+          "raw": "65bd2ce7958fde035177042423a44b332ae7a770091aaa4b4fea34cc7e73e393",
+          "public": "65bd2ce7958fde035177042423a44b332ae7a770091aaa4b4fea34cc7e73e393",
+          "protected": "b7871657f0ba269f394ca4d2a3243b4e221a8ab44ee608e513a15f6161abadbe"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pack-acceptance",
+        "from": {
+          "raw": "ea2add840db543cdb6eab1173be5e6571123ad8a428d2230e29e5a37bd6b743d",
+          "public": "ea2add840db543cdb6eab1173be5e6571123ad8a428d2230e29e5a37bd6b743d",
+          "protected": "81cbe97baf3adaed895d19d7917618a5f67fb699f69277e7e1ce9749a3f719c5"
+        },
+        "to": {
+          "raw": "a4fa367d1652264f4eb799a2161c85a7bbf347a19991ef7f12ee11d04ab65657",
+          "public": "a4fa367d1652264f4eb799a2161c85a7bbf347a19991ef7f12ee11d04ab65657",
+          "protected": "d109f3841f2bd305d86da4e0ad452328a386fde0f6297b771dad506b613674fc"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pack-recommendation",
+        "from": {
+          "raw": "eae2d36c2829e14375e90abbf83919568965757fdae166fb6ae4f5f47ec00d58",
+          "public": "eae2d36c2829e14375e90abbf83919568965757fdae166fb6ae4f5f47ec00d58",
+          "protected": "35c57ae46abe0918de4acc23871b4fec1d2ca05de9e3af61c648840ca94622aa"
+        },
+        "to": {
+          "raw": "59e4b672ae93a340c5ed19c0274ce2eed1747efb431185331f6d808452cb3715",
+          "public": "59e4b672ae93a340c5ed19c0274ce2eed1747efb431185331f6d808452cb3715",
+          "protected": "0eb0c7c327430828ccd61dc1e4cfef12681a1fa919573f47635e4082edcb599c"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pack-iterate",
+        "from": {
+          "raw": "cb31c83662e4a243b1ae5c466c6127713a9d492359f2819dc4084dd29b77a61b",
+          "public": "cb31c83662e4a243b1ae5c466c6127713a9d492359f2819dc4084dd29b77a61b",
+          "protected": "47313b36c31b2198a3ebee92db5c1977d589cc388574e98aaf5aec32e973c435"
+        },
+        "to": {
+          "raw": "11ebd1fd8315c09e733f80a8ba8d03ed587018f7702c98964b67439f06942cc1",
+          "public": "11ebd1fd8315c09e733f80a8ba8d03ed587018f7702c98964b67439f06942cc1",
+          "protected": "aafbb12ea703ebb999522ed454cb94559a118d30dce252bfd656b44dc31d4ced"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-pack-limits",
+        "from": {
+          "raw": "ec572816010d4652b149e023895fbe430e3ba3917c520b573254fe3138431e10",
+          "public": "ec572816010d4652b149e023895fbe430e3ba3917c520b573254fe3138431e10",
+          "protected": "add3ecbd261b8327eba2db22fb53ac94ccf817c0a473b89bc52705ceb4e1d0c5"
+        },
+        "to": {
+          "raw": "6c74adfabd0a2a5163e80edc2d5df6c162b8da13a255d71177df38271f9941f7",
+          "public": "6c74adfabd0a2a5163e80edc2d5df6c162b8da13a255d71177df38271f9941f7",
+          "protected": "242a76d1f0d426c0bde5b24f8d85af8c2e2133eb85aaf31568f1fe7f71639718"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-closing-historical-return",
+        "from": {
+          "raw": "d36278e7a24da4e5de8b1282b6039749c4faf4c87cf04dc2f13f5f2d115d30d7",
+          "public": "d36278e7a24da4e5de8b1282b6039749c4faf4c87cf04dc2f13f5f2d115d30d7",
+          "protected": "7078b5e408b7027e338ee1b9414ff2bbc7b0aa943409067f6b644ed9cfdbc72f"
+        },
+        "to": {
+          "raw": "4c7df30e9e26798da8ce96c7c18567db27977aa411a8facc502bca211245baf9",
+          "public": "4c7df30e9e26798da8ce96c7c18567db27977aa411a8facc502bca211245baf9",
+          "protected": "3081e5bc8469ead6bae87b0c5e48096b86dd16fa570a0c941584a0b5f22bcc79"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-book-future-scenario-matrix",
+        "from": {
+          "raw": "4cf413e88ea7a9bfd0a020b2ef5d476843b73d7872d1f32699812ff30a25de56",
+          "public": "4cf413e88ea7a9bfd0a020b2ef5d476843b73d7872d1f32699812ff30a25de56",
+          "protected": "bb49ec960905c59cbf853d5ad2d127346a45ff632c2b3ad2b75cb754cc0f94db"
+        },
+        "to": {
+          "raw": "eefd29a94f80acbb8fed6203b8dc9b9606d3dff3547893d7879bf8f8b0d6b3c0",
+          "public": "eefd29a94f80acbb8fed6203b8dc9b9606d3dff3547893d7879bf8f8b0d6b3c0",
+          "protected": "7d8cb2a6b5fabbae438a05103dadc06bb4b3c29f6fc4cdf5f5a5962e38f97455"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-book-future-decision",
+        "from": {
+          "raw": "08beaf94d038cd1ca2d669399d10bcc7e1dbf7f9d6b1a67cd9b9d86ca3935d9e",
+          "public": "08beaf94d038cd1ca2d669399d10bcc7e1dbf7f9d6b1a67cd9b9d86ca3935d9e",
+          "protected": "fc682a983c1bb25e694700537da9c671866eecd68703c5171f53929e9c6a00c7"
+        },
+        "to": {
+          "raw": "15d623fdc36cb5eeda5c8dfcf8bf2ad6b7c99939a5f142cdcc613107f5610f07",
+          "public": "15d623fdc36cb5eeda5c8dfcf8bf2ad6b7c99939a5f142cdcc613107f5610f07",
+          "protected": "ab1179e1064d59631531646bbaff749416bd80c6abd2646d68f3d99491ff1073"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-wsc157-ghgp-and-paywalled-iso",
+        "from": {
+          "raw": "9188e87ff369cbc9a4bea628c05d08b0572aa5a464ae9c35c0fe52654e4fdac1",
+          "public": "9188e87ff369cbc9a4bea628c05d08b0572aa5a464ae9c35c0fe52654e4fdac1",
+          "protected": "0653292d7c45d83648e0833afaea9be5e474213ab199f6adce7ad5e9c3e1199d"
+        },
+        "to": {
+          "raw": "d25d4cf693aa4ca8681bcec9bee7680faa871e6a313971cab0cc56275fe71144",
+          "public": "d25d4cf693aa4ca8681bcec9bee7680faa871e6a313971cab0cc56275fe71144",
+          "protected": "0653292d7c45d83648e0833afaea9be5e474213ab199f6adce7ad5e9c3e1199d"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-int159-danish-epa-fu-eol",
+        "from": {
+          "raw": "4f0173bde03287f9b6099fac6f363673476f9be9a02c67f45a0732d086329a0a",
+          "public": "4f0173bde03287f9b6099fac6f363673476f9be9a02c67f45a0732d086329a0a",
+          "protected": "f48f48144183f8a9dc75c0f9a25fd155ee878b5f1afc3e5d6b0a90376bd40a02"
+        },
+        "to": {
+          "raw": "9f141029f9c791338eacab4008fc02329acddd7860d51befb23466fb39bc81a1",
+          "public": "9f141029f9c791338eacab4008fc02329acddd7860d51befb23466fb39bc81a1",
+          "protected": "f48f48144183f8a9dc75c0f9a25fd155ee878b5f1afc3e5d6b0a90376bd40a02"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-int159-danish-epa-multi-indicator",
+        "from": {
+          "raw": "f282f2d57f6f4d3ec0deecab7af0b4ba05d356e1c19cfe3d4798737a4efdd2cb",
+          "public": "f282f2d57f6f4d3ec0deecab7af0b4ba05d356e1c19cfe3d4798737a4efdd2cb",
+          "protected": "2ee7a0b0595d4c44edcedae8a21368148cdea6722a42f1f73d1b071f0a648df0"
+        },
+        "to": {
+          "raw": "529778cd2e091de1c8da5e05570657bc3c5d828e1189f5d31a8405a80c1d3d52",
+          "public": "529778cd2e091de1c8da5e05570657bc3c5d828e1189f5d31a8405a80c1d3d52",
+          "protected": "ac53e3a32802cca0882e453f43eea31ca13fc621c51537e0abe5c92029cf01ff"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fut161-terminology-axes",
+        "from": {
+          "raw": "2bdd596ac6c026f3edc5762fad5efe5ce8844c596c25cb5eb314755b810684e6",
+          "public": "2bdd596ac6c026f3edc5762fad5efe5ce8844c596c25cb5eb314755b810684e6",
+          "protected": "4931c89084cb8a15e79f781e11394d4eb57b87e93977a2296ff13b29469f3fda"
+        },
+        "to": {
+          "raw": "d963e08a3c1935df6bcba658e741ccd84e873f219b35001dab04efb4015d092c",
+          "public": "d963e08a3c1935df6bcba658e741ccd84e873f219b35001dab04efb4015d092c",
+          "protected": "4931c89084cb8a15e79f781e11394d4eb57b87e93977a2296ff13b29469f3fda"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fut161-superstructure-iam",
+        "from": {
+          "raw": "865299ade32047a6095b27c34ba01f32593c4a25b8e9ed76e17cc68df44b15b8",
+          "public": "865299ade32047a6095b27c34ba01f32593c4a25b8e9ed76e17cc68df44b15b8",
+          "protected": "487f6cab9659836ca4accf1750582b2a93be2a6caa6ed8f234b517e8520f8ed6"
+        },
+        "to": {
+          "raw": "13b668f81aba0a059f33d1d9c332725bbe38db0fdefa4272131e2e4aaa1e2902",
+          "public": "13b668f81aba0a059f33d1d9c332725bbe38db0fdefa4272131e2e4aaa1e2902",
+          "protected": "e39bb7cf9800ee66a0aad2dc1afc3c7bce1ac602b0d41b7466c52c48ec3ccc0e"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fut161-dynamic-time-horizons",
+        "from": {
+          "raw": "b3001cca4df0d2d091a9b417188fca975d11a2fbfbcbb1e35dc6f23eeaf86eb0",
+          "public": "b3001cca4df0d2d091a9b417188fca975d11a2fbfbcbb1e35dc6f23eeaf86eb0",
+          "protected": "9c5a4ef6fc79a848022bd4abcde720e6a49e35a5300dbf8f35f233e8b97ebfcb"
+        },
+        "to": {
+          "raw": "4eb8dce23fb6b6fd3a9767d5fe38fed3c8a7007f124cbc399a756b35f53f096d",
+          "public": "4eb8dce23fb6b6fd3a9767d5fe38fed3c8a7007f124cbc399a756b35f53f096d",
+          "protected": "9c5a4ef6fc79a848022bd4abcde720e6a49e35a5300dbf8f35f233e8b97ebfcb"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fut161-temporal-barriers-values",
+        "from": {
+          "raw": "85790059194028e5033bc09d1c4b61bd310ebf298921d48a369aef58f61dfd38",
+          "public": "85790059194028e5033bc09d1c4b61bd310ebf298921d48a369aef58f61dfd38",
+          "protected": "f3996714a0d367209f9b486fc1d3a09dbbc8112bdc4ae1f1bcf59e8980b7b774"
+        },
+        "to": {
+          "raw": "79e80c9117846f547c27d7a46effce92df0195af2cf2c8572f27e929ea0b777c",
+          "public": "79e80c9117846f547c27d7a46effce92df0195af2cf2c8572f27e929ea0b777c",
+          "protected": "487082899fa450ec89a5c9002adeab0ae3ecb873f2c559cbd9ea5977e1aacc6d"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-rev163-lcia-pathway-and-packet-drift",
+        "from": {
+          "raw": "b5cc97978c58d8208a5686ec3d72b68033d2cde2e5eef1068558531d8688a9fa",
+          "public": "b5cc97978c58d8208a5686ec3d72b68033d2cde2e5eef1068558531d8688a9fa",
+          "protected": "66c2b3fcba7fdd39b2af180c755613eeb51d48746239874aaddb46a753044088"
+        },
+        "to": {
+          "raw": "16f003e1126c91b9fb466e76263a1b8d1f677b11b043f6d14ae82877b0e1056c",
+          "public": "16f003e1126c91b9fb466e76263a1b8d1f677b11b043f6d14ae82877b0e1056c",
+          "protected": "66c2b3fcba7fdd39b2af180c755613eeb51d48746239874aaddb46a753044088"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-rev163-circular-and-prospective-coupling",
+        "from": {
+          "raw": "f9852d94c552412528a393e8436e3b17d4eafc09ec726eb4ca21479173ffd019",
+          "public": "f9852d94c552412528a393e8436e3b17d4eafc09ec726eb4ca21479173ffd019",
+          "protected": "56d618c2dec3188b3d954888be7f02f403dae3953a920b04116cef97614c077c"
+        },
+        "to": {
+          "raw": "9352d0f9e334251fc7fde24748022ed9850cf81c28112946f91b1c5738691d3b",
+          "public": "9352d0f9e334251fc7fde24748022ed9850cf81c28112946f91b1c5738691d3b",
+          "protected": "24274d009da74000b7d4f6588a1fae31140a6b7802e6e8f641834eca5f0397d0"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-rev163-pedigree-dqr-and-sampling-limits",
+        "from": {
+          "raw": "7f9360e3a07869626f918fab10e9abf1d44882024c26be2d58b35244ef406282",
+          "public": "7f9360e3a07869626f918fab10e9abf1d44882024c26be2d58b35244ef406282",
+          "protected": "30c1fc400b43d10f37fe17af763b451ecfe805bc2210f8f14d3c13df8d845dfe"
+        },
+        "to": {
+          "raw": "ac8ab2c5b095ceb2b63215f03e741484b2f4b4fe8d32572fd77ebcee997d0b4c",
+          "public": "ac8ab2c5b095ceb2b63215f03e741484b2f4b4fe8d32572fd77ebcee997d0b4c",
+          "protected": "4d875c119b1f6030569c38a25846a625396735447153a3c0d4de93c4d41d6997"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-rev163-comparative-assertion-three-regimes",
+        "from": {
+          "raw": "5a71d5fef202233d061c00ae97460bec43f13deb9f07da4301c6f5545733603d",
+          "public": "5a71d5fef202233d061c00ae97460bec43f13deb9f07da4301c6f5545733603d",
+          "protected": "d1d065e47ed904107bd6a36d1a784384a9a16c6306c0c15aa699b781e77d317a"
+        },
+        "to": {
+          "raw": "0b2070b634566eaec549deb327ae34e29c7d3700ca4331e538b4dbd0f74f04ff",
+          "public": "0b2070b634566eaec549deb327ae34e29c7d3700ca4331e538b4dbd0f74f04ff",
+          "protected": "d1d065e47ed904107bd6a36d1a784384a9a16c6306c0c15aa699b781e77d317a"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-rev163-targeted-revision-routing",
+        "from": {
+          "raw": "3299c3947ea957f92a9ea9d84b093c2189516cfccc800c106aa731ceecd7b8b7",
+          "public": "3299c3947ea957f92a9ea9d84b093c2189516cfccc800c106aa731ceecd7b8b7",
+          "protected": "7507ad062a80ef40f39d6dd3a6d06a89b915724e2d94baf48dca0802fbf614cc"
+        },
+        "to": {
+          "raw": "d7028718bc12ad690855a3504be9402da798ac1cee8d708392fe243ad7b87bb5",
+          "public": "d7028718bc12ad690855a3504be9402da798ac1cee8d708392fe243ad7b87bb5",
+          "protected": "9366f7a85377508c5c1a832b2c47d959823be1662dc4e5cdcda273388f19eca0"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-rev163-monograph-closing-boundary",
+        "from": {
+          "raw": "c3d13ad72c15caec0013badd11f19b9b49198619b50609c08a9acd29f5d5d148",
+          "public": "c3d13ad72c15caec0013badd11f19b9b49198619b50609c08a9acd29f5d5d148",
+          "protected": "9e94c15420ea86376f81a7d8a343268eda90a2051ffa188c0d8710f3a90b0563"
+        },
+        "to": {
+          "raw": "3776b7e58f6690e125519c8d8945e55a21a8b898696a7848b425bdf3f8173d62",
+          "public": "3776b7e58f6690e125519c8d8945e55a21a8b898696a7848b425bdf3f8173d62",
+          "protected": "1b6ff60ab61187aa1a82930ba2ebe0d786e71168f71d4509a4f4549023ce1966"
+        },
+        "rationale": "有界统稿第七部规范论述记录（统一中文章号“第二十九章”“第十五章”、全书术语“表征”“灵敏度”“比较断言”，并将前提标识严格按全书出现顺序升序排列），保留全部原始数值与科学判断边界不变。"
+      }
+    ],
+    "consumers": [
+      {
+        "id": "cl-future-definition",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-future-scale-up",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-future-scenarios",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-future-background",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-future-comparison-conditions",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-connect-service-changes-system",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-connect-prospective-two-questions",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-pack-later",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-opening",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-service",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-coordinates",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-voltage-path",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-grid-assets",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-loss-definition",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-norway-loss",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-segment-denominators",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-database-voltage",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-loss-proxy",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-egrid-scope",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-egrid-adjustments",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-egrid-rate",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-egrid-loss",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-egrid-loss-conflict",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-region-membership",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-eia-emissions",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-average-response",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-historical-generation",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-historical-consumption",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-empirical-limits",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-price-versus-energy",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-native-model",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-native-scenario",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-native-loss",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-native-loss-document",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-native-interpolation",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-native-output",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-native-ratios",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-native-check-meaning",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-native-two-hours",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-native-pollutants",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-native-application",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-future-question",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-future-system",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-future-perturbation",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-future-postprocessing",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-future-balance",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-future-load-parts",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-future-distribution",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-future-direct-rates",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-future-three-questions",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-future-gases",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-future-gases-total",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-future-scenario",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-future-time",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-future-formula",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-alternative-lca",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-validation-objects",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-connection",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-nonbaseload",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-native-coordinate",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-power-future-storage-policy",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-climate-comparison-criteria",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-climate-conclusion",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-closing-pack-threshold-and-review",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-shift107-complete-action",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-shift107-joint-direction",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-shift107-service",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-shift107-supply",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-shift107-small",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-shift107-large",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-shift107-control",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-shift107-comparison-judgment",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-bio127-co-removal-and-methane-shift",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-bio127-package-and-report-discrepancies",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-bio127-climate-diagnostic-synthesis",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-wsc157-comparison-synthesis-bridge",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-int159-ilcd-pef-interpretation-hotspots",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-int159-critical-review-governance",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-int159-limitations-and-paywalled-iso",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-int159-interpretation-synthesis-bridge",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-fut161-upscaling-methods",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-fut161-superstructure-limits",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      },
+      {
+        "id": "cl-rev163-valuation-denominator-and-veto-limits",
+        "rationale": "核查跨代依赖论述：第七部整部连续回读仅做中文章号、跨章术语统一与前提升序整理，不改变任何下游消费者的科学结论或数值断言。"
+      }
+    ],
+    "assessment": {
+      "scope": "Part VII whole-part continuous reread across F02 (content/docs/book/index.mdx Part VII overview), Part 7 introduction (config/reader-numbering.json), and all four Part VII chapters B29–B32 plus W1/W2 dual view (102 rendered paragraphs, 80 non-case claims, 33 modified non-case claims, 0 caseBinding modifications) against exact predecessor commit 29771936c01311172371a4569dc1b1154e205599.",
+      "comparison": "Harmonizes cross-chapter terminology across B29–B32 and W1/W2 (特征化 -> 表征, 不确定度 -> 不确定性, 敏感度 -> 灵敏度 while preserving ecological 受体敏感度, 比较性断言 -> 比较断言, 参照流 -> 参考流, 关键评审 -> 关键性审查, 付费墙保护 -> 受版权与付费授权保护), resolves the premature chapter-ending sign-off in B31 (cl-book-future-decision), adds the explicit B31 closing transition into B32/W1+W2, unifies the B32/W2 5x7 revision-entry table terminology, and keeps W1 ∪ W2 = B32 in exact 100% prose parity.",
+      "values": "Conserves 100% of all numeric assertions, all BigInt rational facts across Part VII factor validators (#157, #159, #161), and all 22 Part VII case-bound claims and 40 case JSON/evaluated downloads byte-for-byte.",
+      "limits": "No new external primary sources or new claim IDs are introduced; Parts I–III/appendices audit, whole-book continuous reread, and all 8 global Programme #9 criteria remain open.",
+      "conservation": "Exact conservation of all 1,099 public claim IDs, 1,066 untouched claims, all caseBinding claims (0 touched, 40 case files untouched), and 0 edits to citations, evidenceIds, or premiseIds set membership against 29771936c01311172371a4569dc1b1154e205599.",
+      "review": "Multi-round independent primary-source and premise-DAG audit verified all 6 managed physical file diffs, all 33 modified non-case claims, W1 ∪ W2 = B32 parity, strictly ascending Part VII premiseIds (80/80), and all three Part VII factor validators, concluding unconditional PASS (0 BLOCKER, 0 MAJOR, 0 MINOR)."
+    },
+    "independentReports": {
+      "independent-primary-source-audit-final.md": "79514af24d5db1ec6a9cc37f24ef4ea6f995d75adaa68f768b496d98183e4127",
+      "part7-continuous-reader-review-final.md": "d9bd40c8ddd4939d2326ac93b9ea46b2a7175bf9d71078d1342bb531ec785fc1",
+      "independent-publication-engineering-review-final.md": "a0dbd641639577a58dc626a6f88af8c67a9bb367bc9d09470ffeaa823aaca0dc",
+      "actual-browser-qa/qa-summary-165.json": "39e0a0d6f0caa8fc615109c2dd13a2bf0b344bc1a717bd3c7c8f5fe675c2a29f"
+    }
+  }
+}

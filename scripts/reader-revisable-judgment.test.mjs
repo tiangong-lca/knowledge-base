@@ -4,6 +4,9 @@ import test from 'node:test';
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
 import loadShift from '../config/reader-load-shift.json' with { type: 'json' };
 import service from '../config/reader-service-constraints.json' with { type: 'json' };
+import part7 from '../config/reader-part7-reread.json' with { type: 'json' };
+import { restorePart7RereadTestFiles } from './reader-part7-reread.mjs';
+import { previousScientificTestRecords } from './fixtures/scientific-receipt-envelope.mjs';
 import config from '../config/reader-revisable-judgment.json' with { type: 'json' };
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
@@ -31,7 +34,9 @@ async function currentInput() {
     readServiceConstraintsFiles('.', service.unit),
   ]);
   for (const [p, b] of [...shiftFiles, ...serviceFiles]) files.set(p, b);
-  return { catalog, readings, literature, files };
+  restorePart7RereadTestFiles(files, part7.unit);
+  const prev163 = previousScientificTestRecords({ catalog, readings, literature }, part7.unit);
+  return { ...prev163, files };
 }
 
 test('Unit #163 B32 + W1/W2 synthesis prepares cleanly and recovers exact cb2584d4 predecessor pin with 1099 claims and exact W1 U W2 = B32 parity', async () => {

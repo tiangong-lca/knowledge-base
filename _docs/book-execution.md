@@ -1,6 +1,6 @@
 ---
 lastReviewedAt: 2026-11-20
-lastReviewedCommit: a55c9fb3909130cdc0165cc1e417f2412523c72c
+lastReviewedCommit: 29771936c01311172371a4569dc1b1154e205599
 title: Approved LCA book execution and wave ledger
 docType: reference
 scope: repo
@@ -141,15 +141,22 @@ bytes, `0` guard errors), and exact root integration `workspace#2521` /
 
 [Issue165](https://github.com/tiangong-lca/knowledge-base/issues/165) (Part VII
 Whole-Part Continuous Reread,
-[protocol](editorial/2026-11-19-part7-continuous-reread.md)) opens the
-prewriting protocol on qualified `main`
-`a55c9fb3909130cdc0165cc1e417f2412523c72c` to synchronize `F02` Part VII
-overviews, `parts[6].introduction`, `B31 -> B32` transition, cross-chapter
-terminology/titles (`表征*`, `比较断言`, `灵敏度`, `变异与不确定性`), Arabic
-ordinals (`第二十九章`, `第十五章`), and strictly ascending Part VII
-`premiseIds` while conserving 100% of all `1,099` claim IDs and `40/40` case
-downloads. Whole-book continuous reread and all 8 global Programme #9 criteria
-remain open.
+[protocol](editorial/2026-11-19-part7-continuous-reread.md)) is rebased onto
+Goal §2.15 Clean Public Delivery `main`
+`29771936c01311172371a4569dc1b1154e205599` and reviewed across `F02` Part VII
+overviews, `parts[6].introduction`, `B30`–`B32`, and `W1`/`W2` dual view (`33`
+modified non-case claims, `0` `caseBinding` modifications, `1,099` claims and
+`40/40` case downloads conserved byte-for-byte, `W1 ∪ W2 = B32` exact parity,
+`80/80` strictly ascending Part VII `premiseIds`). Separate multi-round
+primary-source/DAG, zero-context whole-Part-VII reader, adversarial
+publication-engineering, and 80-combo Playwright Clean-Delivery & `@media print`
+acceptances (`unitPin = b7288820...`, `capturePin = 21d1fc7d...`, `0`
+Clean-Delivery Gate errors, `/changes/` ledger showing `33` iterations, `80`
+deduplicated named corrections including `12` from `#165`, and `4` Part
+introductions) are bound; clean production build (`dirty: false`), PR/CI/merge,
+hosted EdgeOne qualification, and root submodule integration follow. Parts I–III
+and appendices audit, whole-book continuous reread, and all 8 global Programme
+#9 criteria remain open.
 
 [Issue105](https://github.com/tiangong-lca/knowledge-base/issues/105) continues
 with B10: reporting objects and evidence conditions for co-product substitution.

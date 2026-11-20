@@ -76,7 +76,9 @@ const futConfigPath = 'config/reader-future-scenarios.json';
 const futModulePath = 'scripts/reader-future-scenarios.mjs';
 const revConfigPath = 'config/reader-revisable-judgment.json';
 const revModulePath = 'scripts/reader-revisable-judgment.mjs';
-const fixtureAliases = new Set(['scripts/reader-current-expectations.mjs', 'scripts/reader-exchange-semantics.mjs', serviceModulePath, substitutionModulePath, shiftModulePath, footprintModulePath, landModulePath, acidModulePath, mineralModulePath, fossilModulePath, ozoneModulePath, ozradModulePath, toxModulePath, waterModulePath, bioModulePath, eutroModulePath, particulateModulePath, part4ModulePath, weightingModulePath, localizationModulePath, socialModulePath, costModulePath, part5ModulePath, dappModulePath, uncModulePath, pfrModulePath, dqpModulePath, part6ModulePath, wscModulePath, intModulePath, futModulePath, revModulePath].map(path => `@/${path}`));
+const part7ConfigPath = 'config/reader-part7-reread.json';
+const part7ModulePath = 'scripts/reader-part7-reread.mjs';
+const fixtureAliases = new Set(['scripts/reader-current-expectations.mjs', 'scripts/reader-exchange-semantics.mjs', serviceModulePath, substitutionModulePath, shiftModulePath, footprintModulePath, landModulePath, acidModulePath, mineralModulePath, fossilModulePath, ozoneModulePath, ozradModulePath, toxModulePath, waterModulePath, bioModulePath, eutroModulePath, particulateModulePath, part4ModulePath, weightingModulePath, localizationModulePath, socialModulePath, costModulePath, part5ModulePath, dappModulePath, uncModulePath, pfrModulePath, dqpModulePath, part6ModulePath, wscModulePath, intModulePath, futModulePath, revModulePath, part7ModulePath].map(path => `@/${path}`));
 const flowPinPath = 'scripts/reader-flow-boundary-pins.mjs';
 
 async function loadArchive() {
@@ -125,7 +127,7 @@ async function materialize(root) {
     .map(entry => `scripts/${entry.name}`);
   const components = ['components/evidence.tsx', 'components/numbered-heading.tsx', 'components/chapter-content.tsx'];
   const current = [...configs, ...scripts, ...components, 'lib/teaching-case.ts']
-    .filter(path => ![copyeditConfigPath, copyeditPinPath, flowConfigPath, flowPinPath, serviceConfigPath, serviceModulePath, substitutionConfigPath, substitutionModulePath, shiftConfigPath, shiftModulePath, footprintConfigPath, footprintModulePath, landConfigPath, landModulePath, acidConfigPath, acidModulePath, mineralConfigPath, mineralModulePath, fossilConfigPath, fossilModulePath, ozoneConfigPath, ozoneModulePath, ozradConfigPath, ozradModulePath, toxConfigPath, toxModulePath, waterConfigPath, waterModulePath, bioConfigPath, bioModulePath, eutroConfigPath, eutroModulePath, particulateConfigPath, particulateModulePath, part4ConfigPath, part4ModulePath, weightingConfigPath, weightingModulePath, localizationConfigPath, localizationModulePath, socialConfigPath, socialModulePath, costConfigPath, costModulePath, part5ConfigPath, part5ModulePath, dappConfigPath, dappModulePath, uncConfigPath, uncModulePath, pfrConfigPath, pfrModulePath, dqpConfigPath, dqpModulePath, part6ConfigPath, part6ModulePath, wscConfigPath, wscModulePath, intConfigPath, intModulePath, futConfigPath, futModulePath, revConfigPath, revModulePath].includes(path));
+    .filter(path => ![copyeditConfigPath, copyeditPinPath, flowConfigPath, flowPinPath, serviceConfigPath, serviceModulePath, substitutionConfigPath, substitutionModulePath, shiftConfigPath, shiftModulePath, footprintConfigPath, footprintModulePath, landConfigPath, landModulePath, acidConfigPath, acidModulePath, mineralConfigPath, mineralModulePath, fossilConfigPath, fossilModulePath, ozoneConfigPath, ozoneModulePath, ozradConfigPath, ozradModulePath, toxConfigPath, toxModulePath, waterConfigPath, waterModulePath, bioConfigPath, bioModulePath, eutroConfigPath, eutroModulePath, particulateConfigPath, particulateModulePath, part4ConfigPath, part4ModulePath, weightingConfigPath, weightingModulePath, localizationConfigPath, localizationModulePath, socialConfigPath, socialModulePath, costConfigPath, costModulePath, part5ConfigPath, part5ModulePath, dappConfigPath, dappModulePath, uncConfigPath, uncModulePath, pfrConfigPath, pfrModulePath, dqpConfigPath, dqpModulePath, part6ConfigPath, part6ModulePath, wscConfigPath, wscModulePath, intConfigPath, intModulePath, futConfigPath, futModulePath, revConfigPath, revModulePath, part7ConfigPath, part7ModulePath].includes(path));
   const currentCopyeditPin = await readFile(join(repo, copyeditPinPath), 'utf8');
   const copyeditUnitPin = /^export const readerCopyeditUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
   assert.equal([...currentCopyeditPin.matchAll(copyeditUnitPin)].length, 1);
@@ -222,6 +224,9 @@ async function materialize(root) {
   const currentRevModule = await readFile(join(repo, revModulePath), 'utf8');
   const revUnitPin = /^export const revisableJudgmentUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
   assert.equal([...currentRevModule.matchAll(revUnitPin)].length, 1);
+  const currentPart7Module = await readFile(join(repo, part7ModulePath), 'utf8');
+  const part7UnitPin = /^export const part7RereadUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
+  assert.equal([...currentPart7Module.matchAll(part7UnitPin)].length, 1);
   // The only archived script is the independently selected old edition pin.
   // All validation code, including the expectation resolver, comes from the
   // current worktree and runs under the historical book data in this directory.
@@ -294,6 +299,8 @@ async function materialize(root) {
     write(root, futModulePath, currentFutModule.replace(futUnitPin, 'export const futureScenariosUnitPin = null;')),
     write(root, revConfigPath, JSON.stringify({ schemaVersion: 1, status: 'inactive', unit: null })),
     write(root, revModulePath, currentRevModule.replace(revUnitPin, 'export const revisableJudgmentUnitPin = null;')),
+    write(root, part7ConfigPath, JSON.stringify({ schemaVersion: 1, status: 'inactive', unit: null })),
+    write(root, part7ModulePath, currentPart7Module.replace(part7UnitPin, 'export const part7RereadUnitPin = null;')),
     symlink(join(repo, 'node_modules'), join(root, 'node_modules'), process.platform === 'win32' ? 'junction' : 'dir'),
   ]);
 }

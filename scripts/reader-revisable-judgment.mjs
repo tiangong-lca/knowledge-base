@@ -8,7 +8,7 @@ import {
 } from './reader-flow-boundary.mjs';
 import {
   exactPublicJsonReceipt, mergeScientificFileAndRecordChanges, mergeScientificOutput,
-  qualifyScientificHistory, restoreScientificRecords, sameScienceValue, scienceDigest, scienceText,
+  projectScientificOrdinaryTargets, qualifyScientificHistory, restoreScientificRecords, sameScienceValue, scienceDigest, scienceText,
 } from './reader-scientific-delta.mjs';
 
 export const revisableJudgmentId = 'revisable-judgment-163';
@@ -504,10 +504,28 @@ export function observeRevisableJudgmentOrdinaryTargets(documents) {
     }])));
 }
 
-export function qualifyRevisableJudgmentHistory(documents, unit, actual) {
+const part7SuccessorOverrideKeys = Object.freeze(new Set([
+  `/docs/book/from-connected-results-to-conditional-judgment#${chapterAnchorPrefix('/docs/book/from-connected-results-to-conditional-judgment')}-rev-163-ordinary-table`,
+  `/print#${printUnitAnchor('book-revisable-judgment')}-rev-163-ordinary-table`,
+]));
+
+export function qualifyRevisableJudgmentHistory(documents, unit, actual, part7Reread = null) {
   if (!unit) return { prior: actual, errors: [] };
   assertUnitEnvelopeKeys(unit, unit.reviewEvidence !== undefined);
-  const targets = observeRevisableJudgmentOrdinaryTargets(documents);
+  let successorOverrides = null;
+  if (part7Reread) {
+    const raw = part7Reread.history?.ordinaryOverrides;
+    if (!plainObject(raw) || [...part7SuccessorOverrideKeys].some(key => !plainObject(raw[key])
+        || !scienceDigest(raw[key].from) || !scienceDigest(raw[key].to) || raw[key].from === raw[key].to))
+      throw new Error('Revisable judgment synthesis successor ordinaryOverrides violates the 2-key Part VII allowlist');
+    successorOverrides = Object.fromEntries([...part7SuccessorOverrideKeys].map(key => [key, { from: raw[key].from, to: raw[key].to }]));
+  }
+  const targets = projectScientificOrdinaryTargets(
+    successorOverrides,
+    observeRevisableJudgmentOrdinaryTargets(documents),
+    'Revisable judgment synthesis',
+    part7SuccessorOverrideKeys,
+  );
   const prior = qualifyScientificHistory(unit.history, actual, targets, {
     label: 'Revisable judgment synthesis', routes: revisableJudgmentRoutes, predecessorPin: addressPin,
   });
@@ -521,6 +539,7 @@ export function qualifyRevisableJudgmentHistory(documents, unit, actual) {
       ordinaryTags: ['P', 'TABLE'],
       label: 'Revisable judgment synthesis',
       ordinaryTargets: Object.fromEntries(Object.entries(unit.history.ordinaryTargets).map(([key, row]) => [key, row.sha256])),
+      ordinaryOverrides: successorOverrides,
     }),
   ];
   if (!sameScienceValue(targets, unit.history.ordinaryTargets)) {

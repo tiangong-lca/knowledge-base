@@ -22,6 +22,7 @@ import {
   currentPart4Reread,
   currentPart5Reread,
   currentPart6Reread,
+  currentPart7Reread,
   currentParticulateComparison,
   currentPhotochemicalOzone,
   currentProductFootprintComparison,
@@ -48,6 +49,7 @@ import { part5RereadCorrections, part5RereadSource } from './reader-part5-reread
 import { dataApplicabilityComparisonCorrections, dataApplicabilityComparisonSource } from './reader-data-applicability-comparison.mjs';
 import { uncertaintyComparisonCorrections, uncertaintyComparisonSource } from './reader-uncertainty-comparison.mjs';
 import { part6RereadCorrections, part6RereadSource } from './reader-part6-reread.mjs';
+import { part7RereadCorrections, part7RereadSource } from './reader-part7-reread.mjs';
 
 const titleByRoute = new Map();
 for (const entry of [...(numbering.web ?? []), ...(numbering.book ?? [])]) {
@@ -100,6 +102,7 @@ function summarizeUnit(unit, fallbackSource = null) {
  */
 export function buildPublicChangesLedger() {
   const orderedUnits = [
+    summarizeUnit(currentPart7Reread),
     summarizeUnit(currentRevisableJudgment),
     summarizeUnit(currentFutureScenarios),
     summarizeUnit(currentInterpretationBags),
@@ -168,6 +171,7 @@ export function buildPublicChangesLedger() {
     [currentDataApplicabilityComparison?.corrections, currentDataApplicabilityComparison?.id, dataApplicabilityComparisonSource, dataApplicabilityComparisonCorrections],
     [currentUncertaintyComparison?.corrections, currentUncertaintyComparison?.id, uncertaintyComparisonSource, uncertaintyComparisonCorrections],
     [currentPart6Reread, currentPart6Reread?.id, part6RereadSource, part6RereadCorrections],
+    [currentPart7Reread, currentPart7Reread?.id, part7RereadSource, part7RereadCorrections],
   ];
   const seenCorr = new Set();
   for (const [active, unitId, source, rows] of correctionSets) {
@@ -190,6 +194,15 @@ export function buildPublicChangesLedger() {
   const corrections = rawCorrections.reverse();
 
   const partIntroductions = [
+    currentPart7Reread && {
+      part: 7,
+      title: numbering.parts?.[6]?.title ?? '第七部',
+      unitId: currentPart7Reread.id,
+      date: part7RereadSource.date,
+      from: currentPart7Reread.partIntroduction.from,
+      to: currentPart7Reread.partIntroduction.to,
+      sourceHref: citationSourceHref(part7RereadSource.commit),
+    },
     currentPart6Reread && {
       part: 6,
       title: numbering.parts?.[5]?.title ?? '第六部',

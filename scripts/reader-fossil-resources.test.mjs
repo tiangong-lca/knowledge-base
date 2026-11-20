@@ -4,6 +4,8 @@ import { fileURLToPath } from 'node:url';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 import config from '../config/reader-fossil-resources.json' with { type: 'json' };
 import capture from '../config/reader-fossil-resources-capture.json' with { type: 'json' };
+import part7 from '../config/reader-part7-reread.json' with { type: 'json' };
+import { restorePart7RereadTestFiles } from './reader-part7-reread.mjs';
 import rev from '../config/reader-revisable-judgment.json' with { type: 'json' };
 import { restoreRevisableJudgmentTestFiles } from './reader-revisable-judgment.mjs';
 import fut from '../config/reader-future-scenarios.json' with { type: 'json' };
@@ -64,7 +66,7 @@ import { readServiceConstraintsFiles } from './reader-service-constraints.mjs';
 const prefix = 'ev-fossil117-';
 
 test('Fossil and energy-carrier factors bind original precision, carriers, arithmetic and claim supports', () => {
-  const prevPart5 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit), part5.unit);
+  const prevPart5 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part7.unit), rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit), part5.unit);
   assert.doesNotThrow(() => validateFossilResourcesFactors(prevPart5.catalog, prevPart5.readings));
   const probe = (mutate, expected) => {
     const c = structuredClone(prevPart5.catalog), r = structuredClone(prevPart5.readings);
@@ -211,6 +213,7 @@ test('B14 fossil source preview preserves all real predecessor transitions', { s
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
+  restorePart7RereadTestFiles(files, part7.unit);
   restoreRevisableJudgmentTestFiles(files, rev.unit);
   restoreFutureScenariosTestFiles(files, fut.unit);
   restoreInterpretationBagsTestFiles(files, intBags.unit);
@@ -233,7 +236,7 @@ test('B14 fossil source preview preserves all real predecessor transitions', { s
   if (tox.unit) files.set(`content${tox.unit.routes[0]}.mdx`, Buffer.from(tox.unit.previousMdx));
   if (ozrad.unit) files.set(`content${ozrad.unit.routes[0]}.mdx`, Buffer.from(ozrad.unit.previousMdx));
   if (ozone.unit) files.set(`content${ozone.unit.routes[0]}.mdx`, Buffer.from(ozone.unit.previousMdx));
-  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit), part5.unit), cost.unit), social.unit), localization.unit), weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
+  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part7.unit), rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit), part5.unit), cost.unit), social.unit), localization.unit), weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
   const preTox = previousScientificTestRecords(preWater, tox.unit);
   const preOzrad = previousScientificTestRecords(preTox, ozrad.unit);
   const input = { ...previousScientificTestRecords(preOzrad, ozone.unit), files };
@@ -260,7 +263,7 @@ test('B14 fossil source preview preserves all real predecessor transitions', { s
 });
 
 test('Fossil receipts bind actual output capture independently', { skip: !capture && config.status !== 'reviewed' }, () => {
-  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit), part5.unit), cost.unit), social.unit), localization.unit), weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
+  const preWater = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part7.unit), rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit), part5.unit), cost.unit), social.unit), localization.unit), weighting.unit), part4.unit), particulate.unit), eutro.unit), bio.unit), water.unit);
   const preTox = previousScientificTestRecords(preWater, tox.unit);
   const preOzrad = previousScientificTestRecords(preTox, ozrad.unit);
   const previous = previousScientificTestRecords(preOzrad, ozone.unit);

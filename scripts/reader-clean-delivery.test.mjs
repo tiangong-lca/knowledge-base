@@ -32,7 +32,7 @@ test('Public /changes/ ledger aggregates all reviewed iterations, corrections, a
   }
   assert(ledger.iterations.length >= 30, `Expected >= 30 reviewed iterations, got ${ledger.iterations.length}`);
   assert(ledger.corrections.length >= 50, `Expected >= 50 deduplicated named corrections, got ${ledger.corrections.length}`);
-  assert.equal(ledger.partIntroductions.length, 3);
+  assert(ledger.partIntroductions.length >= 3, `Expected >= 3 part introductions, got ${ledger.partIntroductions.length}`);
 
   const visibleProse = [
     ...ledger.iterations.map(i => `${i.date} ${i.routeLabels.join('、')} ${i.rationale}`),
