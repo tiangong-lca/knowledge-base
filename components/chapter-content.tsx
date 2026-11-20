@@ -1,3 +1,4 @@
+import { showEditorialHistoryInProse } from '@/scripts/reader-editorial-mode.mjs';
 import { revisableJudgmentHistoryControls, revisableJudgmentOrdinaryId, revisableJudgmentRoutes, revisableJudgmentSource } from '@/scripts/reader-revisable-judgment.mjs';
 import { futureScenariosHistoryControls, futureScenariosOrdinaryId, futureScenariosRoute, futureScenariosSource } from '@/scripts/reader-future-scenarios.mjs';
 import { interpretationBagsHistoryControls, interpretationBagsOrdinaryId, interpretationBagsRoute, interpretationBagsSource } from '@/scripts/reader-interpretation-bags.mjs';
@@ -173,6 +174,7 @@ async function HistoricalRange({ path, id, history }: { path: string; id: string
 }
 
 function historyAt(path: string, id: string) {
+  if (!showEditorialHistoryInProse()) return null;
   return histories.filter(history => history.controls.has(`${path}#${id}`))
     .map(history => <HistoricalRange key={history.attribute} path={path} id={id} history={history} />);
 }
@@ -292,6 +294,7 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
     }];
   }));
   async function RetainedScope({ entry, readingTitle }: { entry?: LegacyEntry; readingTitle?: string }) {
+    if (!showEditorialHistoryInProse()) return null;
     const history = readingTitle ? <CopyeditHistoricalTitle path="/print" id={readingTitle} /> : null;
     if (!entry?.scope) return history;
     const links = await Promise.all(entry.scope.targets.map(async target => ({ href: citationHref(target, entry.path), label: await getCitationLabel(target) })));
@@ -321,6 +324,7 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
       <ol>{plan.notes.map(note => <li id={note.anchor} data-reader-claim={note.id} key={note.id}>
         <LegacyCitationAliases ids={legacy.aliases.get(note.anchor)} target={note.anchor} />
         <ClaimAnnotation id={note.id} {...annotations.get(note.id)} />
+        {showEditorialHistoryInProse() && <>
         {currentMineralResources?.correction && page.url === mineralResourcesChapter && note.id === mineralResourcesCorrection.claimId &&
           <p className="legacy-citation-context" data-mineral-resources-correction={note.id} style={{ display: 'block' }}>
             <time dateTime={mineralResourcesSource.date}>{mineralResourcesSource.date}</time>{' 修订：'}{mineralResourcesCorrection.scope}{' '}
@@ -381,6 +385,7 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
             <time dateTime={part6RereadSource.date}>{part6RereadSource.date}</time>{' 修订：'}{row.scope}{' '}
             <a href={citationSourceHref(part6RereadSource.commit)}>查看前版源文件</a>
           </p>)}
+        </>}
       </li>)}</ol>
     </section>}
     {notices.map(notice => <div key={notice.id} id={notice.id} className="legacy-citation-target not-prose" data-legacy-notice="" tabIndex={-1}>

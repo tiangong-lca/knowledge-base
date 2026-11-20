@@ -1,3 +1,4 @@
+import { isCleanDeliveryValidation } from './reader-editorial-mode.mjs';
 import { currentPrintReadingHref } from './reader-numbering.mjs';
 import { currentBookFileMatches, currentBookLayout, currentBookMdxMatches, currentBookRecordMatches, currentSubstitutionRules } from './reader-current-expectations.mjs';
 import { frameworkBookHref } from './reader-edition.mjs';
@@ -350,7 +351,7 @@ export function validateRenderedJointProduction(document,path,value = original,c
     if(entry.mode==='notice'&&unit.querySelectorAll(`[id="${entry.id}"][data-legacy-notice]`).length!==1)errors.push(`${path}: B10 original native migration notice missing or repeated: ${entry.id}`);
     if(entry.mode==='retained'&&entry.scope) {
       const contexts=unit.querySelectorAll(`[data-legacy-scope="${entry.id}"]`),context=contexts[0];
-      if(contexts.length!==1||!((context.parentNode===unit&&unit.id===entry.id)||(context.previousElementSibling?.id===entry.id&&context.parentNode===context.previousElementSibling.parentNode)))errors.push(`${path}: B10 original retained scope missing, repeated or detached: ${entry.id}`);
+      if(!isCleanDeliveryValidation()&&(contexts.length!==1||!((context.parentNode===unit&&unit.id===entry.id)||(context.previousElementSibling?.id===entry.id&&context.parentNode===context.previousElementSibling.parentNode))))errors.push(`${path}: B10 original retained scope missing, repeated or detached: ${entry.id}`);
     }
   }
   const contexts=validateReaderHistoricalText(unit,entries,path,target=>targetLabel(target,prose));errors.push(...contexts.errors);for(const node of contexts.checked)checked.add(node);

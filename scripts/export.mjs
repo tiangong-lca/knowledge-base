@@ -10,6 +10,7 @@ import { loadCasePublications, validateCasePublications, canonicalCaseInput, cas
 import { validateRepository } from './validate.mjs';
 export async function exportArtifacts(validateSource, validateOutput) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW === '1') throw new Error('Reader review preview cannot produce a public export');
+  if (process.env.READER_EDITORIAL_HISTORY === '1') throw new Error('Editorial history mode (READER_EDITORIAL_HISTORY=1) cannot produce a public export');
   const literatureMap = JSON.parse(readFileSync('knowledge/research/literature-map.json', 'utf8'));
   const readingLedger = JSON.parse(readFileSync('knowledge/research/readings.json', 'utf8'));
   const catalog = JSON.parse(readFileSync('knowledge/catalog.json', 'utf8'));

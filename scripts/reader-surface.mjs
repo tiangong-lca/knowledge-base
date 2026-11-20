@@ -1,3 +1,5 @@
+import { showEditorialHistoryInProse, withCleanDeliveryValidation, FORBIDDEN_PROSE_ATTR_PATTERNS, FORBIDDEN_PROSE_TEXT_PATTERNS } from './reader-editorial-mode.mjs';
+import { buildPublicChangesLedger } from './reader-changes-ledger.mjs';
 import { revisableJudgmentPreviousSurface, qualifyRevisableJudgmentHistory } from './reader-revisable-judgment.mjs';
 import { futureScenariosPreviousSurface, qualifyFutureScenariosHistory } from './reader-future-scenarios.mjs';
 import { interpretationBagsPreviousSurface, qualifyInterpretationBagsHistory } from './reader-interpretation-bags.mjs';
@@ -428,8 +430,13 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
     pages.set(path, surface);
     errors.push(...surface.errors);
   }
-  errors.push(...validateFlowBoundaryHistoryOutput(documents, book?.current?.flowBoundary));
-  errors.push(...validateServiceConstraintsHistoryOutput(documents, serviceConstraints));
+  const editorialHistory = showEditorialHistoryInProse();
+  if (editorialHistory) {
+    errors.push(...validateFlowBoundaryHistoryOutput(documents, book?.current?.flowBoundary));
+    errors.push(...validateServiceConstraintsHistoryOutput(documents, serviceConstraints));
+  } else if (book) {
+    errors.push(...await validateCleanDeliveryOutput(root, documents));
+  }
   const previousSurface = (address, actual) => flowBoundaryPreviousSurface(address,
     serviceConstraintsPreviousSurface(address, substitutionRulesPreviousSurface(address, loadShiftPreviousSurface(address, circularFootprintPreviousSurface(address, landRecoveryPreviousSurface(address, acidEquivalentsPreviousSurface(address, mineralResourcesPreviousSurface(address, fossilResourcesPreviousSurface(address, photochemicalOzonePreviousSurface(address, ozoneRadiationPreviousSurface(address, toxicityComparisonPreviousSurface(address, waterScarcityPreviousSurface(address, biogenicCarbonPreviousSurface(address, eutrophicationPathwaysPreviousSurface(address, particulateComparisonPreviousSurface(address, part4RereadPreviousSurface(address, weightingValuationPreviousSurface(address, localizationComparisonPreviousSurface(address, socialComparisonPreviousSurface(address, costSustainabilityPreviousSurface(address, part5RereadPreviousSurface(address, dataApplicabilityComparisonPreviousSurface(address, uncertaintyComparisonPreviousSurface(address, productFootprintComparisonPreviousSurface(address, dataQualityComparisonPreviousSurface(address, part6RereadPreviousSurface(address, wallServiceComparisonPreviousSurface(address, interpretationBagsPreviousSurface(address, futureScenariosPreviousSurface(address, revisableJudgmentPreviousSurface(address, actual, revisableJudgment), futureScenarios), interpretationBags), wallServiceComparison), part6Reread), dataQualityComparison), productFootprintComparison), uncertaintyComparison), dataApplicabilityComparison), part5Reread), costSustainability), socialComparison), localizationComparison), weightingValuation), part4Reread), particulateComparison), eutrophicationPathways), biogenicCarbon), waterScarcity), toxicityComparison), ozoneRadiation), photochemicalOzone), fossils), minerals), acid), land), footprint), loadShift), substitutionRules), serviceConstraints), book?.current?.flowBoundary);
   if ((serviceConstraints || loadShift) && book?.sourceRoot) {
@@ -437,7 +444,7 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
     if (serviceConstraints) await observeServiceConstraintsCaseOutputs(root, serviceConstraints, cases, book.sourceCommit);
     if (loadShift) await observeLoadShiftCaseOutputs(root, loadShift, cases, book.sourceCommit);
   }
-  if (copyedit) {
+  if (copyedit && editorialHistory) {
     const currentAddresses = observeCopyeditHistory(documents, readerNumberingManifest, readCitationSurface);
     const revHistory = qualifyRevisableJudgmentHistory(documents, revisableJudgment, currentAddresses);
     errors.push(...revHistory.errors);
@@ -515,12 +522,12 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
     qualifyCurrentHistoricalDocument(document, entries, book?.current?.migrations, pages);
     if (book?.current?.migrations?.length)
       errors.push(...validateCurrentHistoricalContexts(document, entries, path));
-    if (book) errors.push(...validateRenderedDataApplicability(document,path,book.catalog,book.dataAccepted,undefined,"raw"), ...validateRenderedClimateAssembly(document,path,book.catalog,book.climateAccepted), ...validateRenderedClosingSynthesis(document,path,book.catalog,book.closingProse,book.closingHistory), ...validateRenderedWallSelection(document,path,book.wallOriginal,book.catalog,book.wallAccepted), ...validateRenderedJointProduction(document,path,book.jointOriginal,book.catalog,book.jointProse), ...validateRenderedCleanerProduction(document,path,book.cleanerAccepted,book.catalog), ...validateRenderedFunctionalReference(document,path,book.functionalAccepted,book.catalog,book.functionalProse), ...validateRenderedProcessNetwork(document,path,book.processAccepted,book.catalog,book.processProse), ...validateRenderedExchangeSemantics(document,path,book.exchangeOriginal,book.catalog,book.exchangeProse,book.exchangePartial), ...validateRenderedHybridInventory(document,path,book.hybridAccepted,book.catalog,book.hybridProse));
-    if (book) {
+    if (book) withCleanDeliveryValidation(!editorialHistory, () => {
+      errors.push(...validateRenderedDataApplicability(document,path,book.catalog,book.dataAccepted,undefined,"raw"), ...validateRenderedClimateAssembly(document,path,book.catalog,book.climateAccepted), ...validateRenderedClosingSynthesis(document,path,book.catalog,book.closingProse,book.closingHistory), ...validateRenderedWallSelection(document,path,book.wallOriginal,book.catalog,book.wallAccepted), ...validateRenderedJointProduction(document,path,book.jointOriginal,book.catalog,book.jointProse), ...validateRenderedCleanerProduction(document,path,book.cleanerAccepted,book.catalog), ...validateRenderedFunctionalReference(document,path,book.functionalAccepted,book.catalog,book.functionalProse), ...validateRenderedProcessNetwork(document,path,book.processAccepted,book.catalog,book.processProse), ...validateRenderedExchangeSemantics(document,path,book.exchangeOriginal,book.catalog,book.exchangeProse,book.exchangePartial), ...validateRenderedHybridInventory(document,path,book.hybridAccepted,book.catalog,book.hybridProse));
       errors.push(...validateRenderedToxicityPathways(document,path,book.catalog,book.toxicityAccepted));
       errors.push(...validateRenderedReadablePedigree(document, path, book.catalog, book.pedigreeAccepted, undefined, book.readings));
       errors.push(...validateRenderedPmSelection(document, path, book.catalog, book.pmAccepted));
-    }
+    });
   }
   const print = pages.get('/print');
   if (print) {
@@ -544,9 +551,11 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
       const expected = entry.targets.map(target => citationHref(target, entry.path));
       if (!source.notice || JSON.stringify(source.links) !== JSON.stringify(expected)) errors.push(`${address}: migration notice has the wrong native links`);
     }
-    errors.push(...validateHistoricalScope(
-      previousSurface(`${entry.path}#${entry.id}`, source), entry, address));
-    errors.push(...validateReadableBookOrdinaryDestinations(pages, entry, address, book?.current?.flowBoundary, previousSurface));
+    if (editorialHistory) {
+      errors.push(...validateHistoricalScope(
+        previousSurface(`${entry.path}#${entry.id}`, source), entry, address));
+      errors.push(...validateReadableBookOrdinaryDestinations(pages, entry, address, book?.current?.flowBoundary, previousSurface));
+    }
     for (const target of [...entry.targets, ...(entry.scope?.targets ?? [])]) {
       const actual = pages.get(target.path)?.ids.get(target.id);
       const semanticMatch = actual?.route === target.route && (
@@ -588,6 +597,62 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
     errors.push(...validateExchangeSemanticsCoverage(book.edition,book.sources,book.exchangeOriginal,book.catalog,book.exchangeProse,book.exchangePartial));
   }
   if (book && print) errors.push(...validateRenderedFrameworkCoverage(print.bodyClaims,book.accepted));
+  return errors;
+}
+
+export async function validateCleanDeliveryOutput(root, documents, ledger = buildPublicChangesLedger()) {
+  const errors = [];
+  for (const [path, document] of documents) {
+    const nodes = document.querySelectorAll('*');
+    for (const node of nodes) {
+      for (const attr of Object.keys(node.attributes ?? {})) {
+        if (FORBIDDEN_PROSE_ATTR_PATTERNS.some(re => re.test(attr))) {
+          errors.push(`${path}: clean-delivery violation — development-process control [${attr}] must not render in public prose or /print`);
+        }
+      }
+    }
+    for (const node of document.querySelectorAll('.legacy-citation-context')) {
+      if (!node.closest('.legacy-citation-target')) {
+        errors.push(`${path}: clean-delivery violation — visible .legacy-citation-context outside .legacy-citation-target`);
+      }
+    }
+    const visibleRoots = document.querySelectorAll('article[data-reader-route], section.print-part');
+    for (const container of visibleRoots) {
+      const text = container.text;
+      for (const pattern of FORBIDDEN_PROSE_TEXT_PATTERNS) {
+        if (pattern.test(text)) {
+          errors.push(`${path}: clean-delivery violation — development-process disclosure text matched ${pattern}`);
+        }
+      }
+    }
+  }
+  const changesHtml = await readFile(join(root, 'changes/index.html'), 'utf8').catch(error => {
+    if (error.code === 'ENOENT') return null;
+    throw error;
+  });
+  if (changesHtml === null) {
+    errors.push('changes/index.html: clean-delivery requires the public /changes/ revision ledger page');
+    return errors;
+  }
+  const changesDoc = htmlParser.parse(changesHtml);
+  const ledgerEl = changesDoc.querySelector('[data-reader-changes-ledger]');
+  if (!ledgerEl) {
+    errors.push('changes/index.html: missing [data-reader-changes-ledger] container');
+    return errors;
+  }
+  const renderedIterations = new Set(ledgerEl.querySelectorAll('[data-changes-iteration]').map(n => n.getAttribute('data-changes-iteration')));
+  for (const item of ledger.iterations) {
+    if (!renderedIterations.has(item.id)) errors.push(`changes/index.html: missing iteration entry ${item.id}`);
+  }
+  const renderedCorrections = new Set(ledgerEl.querySelectorAll('[data-changes-correction-key]').map(n => n.getAttribute('data-changes-correction-key')));
+  for (const row of ledger.corrections) {
+    const key = `${row.unitId}|${row.claimId}`;
+    if (!renderedCorrections.has(key)) errors.push(`changes/index.html: missing named correction entry ${key}`);
+  }
+  const renderedParts = new Set(ledgerEl.querySelectorAll('[data-changes-part-intro]').map(n => n.getAttribute('data-changes-part-intro')));
+  for (const item of ledger.partIntroductions) {
+    if (!renderedParts.has(String(item.part))) errors.push(`changes/index.html: missing Part ${item.part} introduction entry`);
+  }
   return errors;
 }
 

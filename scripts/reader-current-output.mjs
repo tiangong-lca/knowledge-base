@@ -9,6 +9,7 @@ import { editionDigest, sha256 } from './reader-current-edition.mjs';
 import { flowBoundaryGuide } from './reader-flow-boundary.mjs';
 import { getPresentationUnits } from './reader-numbering.mjs';
 import { readerParagraphText } from './reader-publication-text.mjs';
+import { showEditorialHistoryInProse } from './reader-editorial-mode.mjs';
 
 function routesForChanges(current, sources) {
   const routes = new Set();
@@ -47,10 +48,11 @@ export function validateReadableBookReviewedOutput(current, documents, sources, 
     if (!current.outputs.has(key)) errors.push(`Readable book changed source lacks an actual output receipt: ${key}`);
   }
   const claims = new Map(catalog.claims.map(row => [row.id, row]));
+  const editorialHistory = showEditorialHistoryInProse();
   for (const [key, { path, route, sha256: expected }] of current.outputs) {
     const articles = documents?.get(path)?.querySelectorAll('article[data-reader-route]') ?? [];
     const matches = articles.filter(node => node.getAttribute('data-reader-route') === route);
-    if (matches.length !== 1 || sha256(matches[0].outerHTML) !== expected) {
+    if (matches.length !== 1 || (editorialHistory && sha256(matches[0].outerHTML) !== expected)) {
       errors.push(`Readable book actual reviewed article differs: ${key}`);
       continue;
     }

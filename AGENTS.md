@@ -13,8 +13,8 @@ checkPaths:
   - "AGENTS.md"
   - ".docpact/config.yaml"
   - "_docs/**"
-lastReviewedAt: 2026-11-19
-lastReviewedCommit: cb2584d4354f6d8a5111155d658d3edafd80ec8a
+lastReviewedAt: 2026-11-20
+lastReviewedCommit: a55c9fb3909130cdc0165cc1e417f2412523c72c
 ---
 
 # Knowledge Base contributor contract
@@ -39,6 +39,8 @@ repeated outline approval. A bounded pilot's conserved paragraphs/numbers are
 not a universal freeze: justified corrections and selection need their own
 evidence, historical disposition and affected-consumer review. Chapter delivery
 does not complete the remaining whole-book programme.
+
+On 2026-11-20 the user established the mandatory Clean Public Delivery & Editorial History Separation rule (`_docs/lca-book-goal.md` §2.15, `_docs/reader-publication-contract.md`, task `#166`): keep 100% of iteration provenance, predecessor hashes, review evidence and rationales in `config/reader-*.json`, `_docs/editorial/` and Git history to support ongoing authoring and auditing, and auto-aggregate the full public revision/errata ledger on `/changes/`; default production builds (`READER_EDITORIAL_HISTORY !== '1'`) MUST render ONLY the clean finished monograph on `/docs/book/**` and `/print/` with ZERO inline development-process disclosures (`[data-copyedit-history]`, `[data-*-history]`, `[data-part*-reread-part]`, `[data-legacy-scope]`, `[data-*-correction]`), enforced by the Clean-Delivery Gate in `scripts/reader-surface.mjs`. Use `READER_EDITORIAL_HISTORY=1` only for local editorial-comparison previews.
 
 Never publish private conversation/meeting text or licensed source originals. Source existence is not evidence of claim entailment. Distinguish source statements, synthesis, calculation, interpretation and proposal; retain uncertainty, negative evidence and conflicting views. Software tests do not establish scientific or human expert approval.
 
