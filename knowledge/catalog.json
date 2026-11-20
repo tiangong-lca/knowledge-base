@@ -44676,7 +44676,7 @@
       "id": "cl-allocation-cascade-level",
       "text": "还要确定哪笔负担共同发生。单看回收工序，它同时处理上游的废物并向下游供料，可以问这道工序怎样分担。跟同一材料走过连续几次使用，初级材料生产和最后处置也可能进到要分的账里。Ekvall与Tillman分别讨论工序、单个产品生命周期和材料连续使用的cascade。两个比例即使一样，只要一个分的是工序、一个分的是材料使用链，记到产品上的负担仍可能不同。",
       "kind": "interpretation",
-      "scope": "该文开放循环材料 cascade 的问题设置",
+      "scope": "该文开放循环材料级联的问题设置",
       "evidenceIds": [
         "ev-allocation-1997-definition"
       ],
@@ -44700,7 +44700,7 @@
       "id": "cl-allocation-causal-directions",
       "text": "“依据因果”还须说清从哪一头追。1997年论文分别问，什么使生产发生，生产变化又会引起什么。预期销售收益可以帮助解释生产为何进行。若再生材料供给变了，则需看其他生产会不会受到影响。作者主张，为会改变材料流的决策提供建议时，要追踪这项选择的后果。这个要求针对受选择影响的流及相应决策用途。更换原料未必改变包装的回收，即使原料和包装都在同一产品系统中。",
       "kind": "source-statement",
-      "scope": "Ekvall/Tillman1997 §§3–5.1",
+      "scope": "Ekvall 与 Tillman（1997）第 3 至 5.1 节的因果方向与受决策影响材料流界定",
       "evidenceIds": [
         "ev-allocation-1997-causality"
       ],
@@ -44724,7 +44724,7 @@
       "id": "cl-allocation-alternative-supply",
       "text": "系统扩展先让两条路线交付相同的功能。Frischknecht在1998年学位论文中说明，可以给只供一种产品的路线补上另一项功能，也可从联合路线中扣去该功能的参照供给。Ekvall与Tillman讨论的技术整体则保持其他功能需求不变，追踪受影响的过程。这是对社会经济整体的简化。哪家供应能补上或退出，须由服务性能、需求和后续活动等条件确定，不能从加号或减号读出来。",
       "kind": "synthesis",
-      "scope": "功能匹配的比较构造及 whole-system 假设",
+      "scope": "功能匹配的比较构造及全系统假设",
       "evidenceIds": [
         "ev-allocation-1998-comparison",
         "ev-allocation-1997-tws"
@@ -44743,8 +44743,8 @@
       ],
       "premiseIds": [
         "cl-allocation-problem-and-procedure",
-        "cl-allocation-cascade-level",
-        "cl-allocation-causal-directions"
+        "cl-allocation-causal-directions",
+        "cl-allocation-cascade-level"
       ],
       "caveats": [
         "没有据形式操作证明实际市场替代量，也不把所有扩大边界都定义为因果替代。"
@@ -44842,8 +44842,7 @@
       ],
       "premiseIds": [
         "cl-allocation-alternative-supply",
-        "cl-allocation-fixed-proportions",
-        "cl-allocation-market-and-agents"
+        "cl-allocation-fixed-proportions"
       ],
       "caveats": [
         "三个问题是一种分析框架，不是外部标准原文要求。"
@@ -45057,10 +45056,10 @@
         }
       ],
       "premiseIds": [
+        "cl-allocation-information-and-ethics",
         "cl-allocation-three-responsibilities",
         "cl-allocation-fairness-interpretations",
         "cl-allocation-feasibility-tradeoff",
-        "cl-allocation-information-and-ethics",
         "cl-allocation-limits-on-both-sides",
         "cl-allocation-addendum-substantive",
         "cl-allocation-addendum-substitution-duty"
@@ -50323,8 +50322,8 @@
         }
       ],
       "premiseIds": [
-        "cl-allocation-market-and-agents",
-        "cl-allocation-fixed-proportions"
+        "cl-allocation-fixed-proportions",
+        "cl-allocation-market-and-agents"
       ],
       "conceptIds": [],
       "mappingIds": [],
@@ -54772,15 +54771,16 @@
         }
       ],
       "premiseIds": [
+        "cl-joint-answer",
         "cl-market-m3-origins",
         "cl-market-toy-purchase",
         "cl-market-observations",
-        "cl-joint-answer"
+        "cl-mkt169-epistemic-limits"
       ],
       "conceptIds": [],
       "mappingIds": [],
       "caveats": [],
-      "text": "瑞士电量账表明，给定进口和出口的分配规则，就能核对电量的平均来源。两种新增需求的算例又表明，工厂买到同样的电，实际多发的电仍可能来自不同电源。要把共同生产中的减项解释为真实后果，须先说明采取了什么行动、要提供什么服务，再查市场的范围、供应受什么限制、哪些活动会改变。下一章据此查看电在哪里交付、在哪里发出，以及供给模型怎样估计需求变化的后果。",
+      "text": "瑞士电量账表明，给定进口和出口的分配规则，就能核对电量的平均来源。两种新增需求的算例又表明，工厂买到同样的电，实际多发的电仍可能来自不同电源；国际参考生命周期数据系统（ILCD）、ecoinvent 第三版后果模型、欧盟产品环境足迹（PEF）与温室气体核算体系（GHG Protocol）的对照进一步说明，决策尺度判据、合同追踪与物理约束假设会改变方案排序，且单一体系的合规结果不能替代事后实证。要把共同生产中的减项解释为真实后果，须先说明采取了什么行动、要提供什么服务，再查市场的范围、供应受什么限制、哪些活动会改变。下一章据此查看电在哪里交付、在哪里发出，以及供给模型怎样估计需求变化的后果。",
       "status": "reviewed",
       "reviewedAt": "2026-11-05",
       "reviewKind": "agent-source-check",
@@ -59619,9 +59619,9 @@
         }
       ],
       "premiseIds": [
-        "cl-cycle-historical-question",
-        "cl-cycle-same-name",
-        "cl-cycle-market-question"
+        "cl-allocation-cascade-level",
+        "cl-market-closing",
+        "cl-power-connection"
       ],
       "caveats": [],
       "conceptIds": [
@@ -59991,8 +59991,7 @@
         }
       ],
       "premiseIds": [
-        "cl-cycle-fixed-cascade",
-        "cl-cycle-virgin-reference"
+        "cl-cycle-fixed-cascade"
       ],
       "caveats": [],
       "conceptIds": [
@@ -60202,8 +60201,8 @@
         }
       ],
       "premiseIds": [
-        "cl-cycle-cycle-allocation",
-        "cl-cycle-ratio-evidence"
+        "cl-cycle-ratio-evidence",
+        "cl-cycle-cycle-allocation"
       ],
       "caveats": [
         "2009与2018研究共享Rigamonti和Grosso两位作者，且后文直接复用前文模型；独立性限制依据共同方法与数据链。"
@@ -60304,10 +60303,10 @@
         }
       ],
       "premiseIds": [
-        "cl-cycle-experiment-results",
         "cl-cycle-product-yield",
         "cl-cycle-grade-quality",
-        "cl-cycle-cycle-allocation"
+        "cl-cycle-cycle-allocation",
+        "cl-cycle-experiment-results"
       ],
       "caveats": [],
       "conceptIds": [
@@ -60698,8 +60697,8 @@
         }
       ],
       "premiseIds": [
-        "cl-cycle-grade-quality",
         "cl-cycle-printed-correction",
+        "cl-cycle-grade-quality",
         "cl-cycle-heat-only",
         "cl-cycle-market-counterexample"
       ],
@@ -73812,7 +73811,7 @@
       "id": "cl-sub105-ilcd-market",
       "text": "选定可以扣除的功能后，还要决定用什么清单代表它。ILCD2010的微观决策情境A在无法采用细分或虚拟细分、一般多功能条件成立时，对不需要保留的从属功能，尽可能采用被替代备选供给的平均市场消费混合。备选须功能等效并有足够规模，混合通常排除正在研究的那条共功能供给路线；只有其环境影响贡献很小且不会实质改变结果这两项例外条件成立，才可保留完整混合。指南把这明确作为相对完整后果模型的实用简化：它选择一个有条件的平均代理，不宣称已经逐家识别谁会减产。",
       "kind": "interpretation",
-      "scope": "ILCD2010 Situation A一般材料多功能条款的平均消费混合及限定",
+      "scope": "ILCD 2010 情境 A 一般材料多功能条款的平均消费组合及限定",
       "evidenceIds": [
         "ev-sub105-ilcd-conditions",
         "ev-sub105-ilcd-proxy-purpose"
@@ -73934,8 +73933,8 @@
         }
       ],
       "premiseIds": [
-        "cl-sub105-pef-direct",
-        "cl-sub105-ilcd-market"
+        "cl-sub105-ilcd-market",
+        "cl-sub105-pef-direct"
       ],
       "conceptIds": [],
       "caveats": [
@@ -74001,8 +74000,7 @@
       "evidenceLinks": [],
       "premiseIds": [
         "cl-power-native-two-hours",
-        "cl-power-native-application",
-        "cl-power-connection"
+        "cl-power-native-application"
       ],
       "conceptIds": [],
       "caveats": [],
@@ -74276,11 +74274,10 @@
       "premiseIds": [
         "cl-shift107-observed-proxy",
         "cl-shift107-screening-and-rate",
+        "cl-shift107-signal-comparison",
         "cl-shift107-joint-direction",
         "cl-shift107-large",
-        "cl-shift107-control",
-        "cl-shift107-signal-comparison",
-        "cl-power-future-time"
+        "cl-shift107-control"
       ],
       "conceptIds": [],
       "caveats": [],
@@ -74345,9 +74342,9 @@
         }
       ],
       "premiseIds": [
+        "cl-sub105-two-uses",
         "cl-cycle-adjacent-rule",
-        "cl-cycle-energy-matched",
-        "cl-sub105-two-uses"
+        "cl-cycle-energy-matched"
       ],
       "conceptIds": [],
       "caveats": [],
@@ -74469,9 +74466,9 @@
         }
       ],
       "premiseIds": [
+        "cl-cycle-energy-matched",
         "cl-cff109-rule",
-        "cl-cff109-quality",
-        "cl-cycle-energy-matched"
+        "cl-cff109-quality"
       ],
       "conceptIds": [],
       "caveats": [],
@@ -74551,7 +74548,7 @@
     },
     {
       "id": "cl-cff109-judgment",
-      "text": "因此，用产品足迹比较材料设计，和用完整系统比较两种处理行动，需要把问题接清楚。前者按适用规则说明产品承担什么，后者按同等服务和所选反事实说明哪些活动相差多少。二者排序不同，应回查分账、参照和活动是否有别，却不能仅凭这种不同断言一方算错、回收普遍不利，或现场一定实现了模型中的收益。要判断哪种行动有利，仍应回到可比的完整活动及其证据；要报告产品份额，则须另外说明它分到了哪些负担和收益。对前述一千克纸，至少要分别问：按指定规则计入该产品的份额是多少；满足同样纸品、热和电服务的两条完整路线相差多少。尚缺的纸级、能源或市场证据，应限制对应判断，不能靠调整分账比例补齐。",
+      "text": "因此，用产品足迹比较材料设计，和用完整系统比较两种处理行动，需要把问题接清楚。前者按适用规则说明产品承担什么，后者按同等服务和所选反事实说明哪些活动相差多少。二者排序不同，应回查分账、参照和活动是否有别，却不能仅凭这种不同断言一方算错、回收普遍不利，或现场一定实现了模型中的收益。要判断哪种行动有利，仍应回到可比的完整活动及其证据；要报告产品份额，则须另外说明它分到了哪些负担和收益。对前述一千克纸，至少要分别问：按指定规则计入该产品的份额是多少；满足同样纸品、热和电服务的两条完整路线相差多少。尚缺的纸级、能源或市场证据，应限制对应判断，不能靠调整分账比例补齐。查清共同生产、市场响应、供电系统与材料循环如何改变各项活动和清单排放之后，第四部从中点与终点出发，进一步追查这些排放和资源开采会沿着怎样的环境路径转化为不同指标。",
       "kind": "synthesis",
       "scope": "产品份额与完整处理行动比较的有条件使用判断",
       "evidenceIds": [

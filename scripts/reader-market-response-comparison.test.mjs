@@ -2,12 +2,15 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import test from 'node:test';
 import config from '../config/reader-market-response-comparison.json' with { type: 'json' };
+import part3 from '../config/reader-part3-reread.json' with { type: 'json' };
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
 import { readReadableBookFiles } from './reader-current-edition-files.mjs';
 import { readerPublicDownloads } from './reader-current-output.mjs';
 import { readLoadShiftCaseFiles } from './reader-load-shift.mjs';
 import { readServiceConstraintsFiles } from './reader-service-constraints.mjs';
+import { restorePart3RereadTestFiles } from './reader-part3-reread.mjs';
+import { previousScientificTestRecords } from './fixtures/scientific-receipt-envelope.mjs';
 import {
   marketResponseComparisonPredecessorPin,
   prepareMarketResponseComparisonSource,
@@ -34,7 +37,8 @@ async function loadInput() {
   ]);
   for (const [k, v] of shiftFiles) files.set(k, v);
   for (const [k, v] of serviceFiles) files.set(k, v);
-  return { catalog, readings, literature, files };
+  restorePart3RereadTestFiles(files, part3.unit);
+  return { ...previousScientificTestRecords({ catalog, readings, literature }, part3.unit), files };
 }
 
 test('Unit #169 B11 market response comparison prepares cleanly and recovers exact 8949778f predecessor pin with 1106 claims', async () => {
