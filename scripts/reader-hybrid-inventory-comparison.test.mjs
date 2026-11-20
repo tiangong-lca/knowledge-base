@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import test from 'node:test';
 import config from '../config/reader-hybrid-inventory-comparison.json' with { type: 'json' };
+import wholeBookConfig from '../config/reader-whole-book-reread.json' with { type: 'json' };
 import part1Config from '../config/reader-part1-reread.json' with { type: 'json' };
 import fwConfig from '../config/reader-framework-comparison.json' with { type: 'json' };
 import part2Config from '../config/reader-part2-reread.json' with { type: 'json' };
@@ -10,6 +11,7 @@ import { editionDigest, inspectReadableBookEdition } from './reader-current-edit
 import { readReadableBookFiles } from './reader-current-edition-files.mjs';
 import { readerPublicDownloads } from './reader-current-output.mjs';
 import { readLoadShiftCaseFiles } from './reader-load-shift.mjs';
+import { restoreWholeBookRereadTestFiles } from './reader-whole-book-reread.mjs';
 import { restorePart1RereadTestFiles } from './reader-part1-reread.mjs';
 import { restoreFrameworkComparisonTestFiles } from './reader-framework-comparison.mjs';
 import { restorePart2RereadTestFiles } from './reader-part2-reread.mjs';
@@ -41,8 +43,8 @@ async function loadInput() {
   ]);
   for (const [k, v] of shiftFiles) files.set(k, v);
   for (const [k, v] of serviceFiles) files.set(k, v);
-  const rolled = part2Config.unit ? previousScientificTestRecords(previousScientificTestRecords(part1Config.unit ? previousScientificTestRecords({ catalog, readings, literature }, part1Config.unit) : { catalog, readings, literature }, fwConfig.unit), part2Config.unit) : { catalog, readings, literature };
-  return { ...rolled, files: part2Config.unit ? restorePart2RereadTestFiles(restoreFrameworkComparisonTestFiles(part1Config.unit ? restorePart1RereadTestFiles(files, part1Config.unit) : files, fwConfig.unit), part2Config.unit) : files };
+  const rolled = part2Config.unit ? previousScientificTestRecords(previousScientificTestRecords(part1Config.unit ? previousScientificTestRecords(wholeBookConfig.unit ? previousScientificTestRecords({ catalog, readings, literature }, wholeBookConfig.unit) : { catalog, readings, literature }, part1Config.unit) : { catalog, readings, literature }, fwConfig.unit), part2Config.unit) : { catalog, readings, literature };
+  return { ...rolled, files: part2Config.unit ? restorePart2RereadTestFiles(restoreFrameworkComparisonTestFiles(part1Config.unit ? restorePart1RereadTestFiles(wholeBookConfig.unit ? restoreWholeBookRereadTestFiles(files, wholeBookConfig.unit) : files, part1Config.unit) : files, fwConfig.unit), part2Config.unit) : files };
 }
 
 test('Unit #175 B09 hybrid inventory comparison prepares cleanly and recovers exact 744b371af predecessor pin with 1118 claims', async () => {

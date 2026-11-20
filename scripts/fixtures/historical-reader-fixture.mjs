@@ -92,7 +92,9 @@ const fwConfigPath = 'config/reader-framework-comparison.json';
 const fwModulePath = 'scripts/reader-framework-comparison.mjs';
 const part1ConfigPath = 'config/reader-part1-reread.json';
 const part1ModulePath = 'scripts/reader-part1-reread.mjs';
-const fixtureAliases = new Set(['scripts/reader-current-expectations.mjs', 'scripts/reader-exchange-semantics.mjs', serviceModulePath, substitutionModulePath, shiftModulePath, footprintModulePath, landModulePath, acidModulePath, mineralModulePath, fossilModulePath, ozoneModulePath, ozradModulePath, toxModulePath, waterModulePath, bioModulePath, eutroModulePath, particulateModulePath, part4ModulePath, weightingModulePath, localizationModulePath, socialModulePath, costModulePath, part5ModulePath, dappModulePath, uncModulePath, pfrModulePath, dqpModulePath, part6ModulePath, wscModulePath, intModulePath, futModulePath, revModulePath, part7ModulePath, mktModulePath, part3ModulePath, frModulePath, hybModulePath, part2ModulePath, fwModulePath, part1ModulePath].map(path => `@/${path}`));
+const wholeBookConfigPath = 'config/reader-whole-book-reread.json';
+const wholeBookModulePath = 'scripts/reader-whole-book-reread.mjs';
+const fixtureAliases = new Set(['scripts/reader-current-expectations.mjs', 'scripts/reader-exchange-semantics.mjs', serviceModulePath, substitutionModulePath, shiftModulePath, footprintModulePath, landModulePath, acidModulePath, mineralModulePath, fossilModulePath, ozoneModulePath, ozradModulePath, toxModulePath, waterModulePath, bioModulePath, eutroModulePath, particulateModulePath, part4ModulePath, weightingModulePath, localizationModulePath, socialModulePath, costModulePath, part5ModulePath, dappModulePath, uncModulePath, pfrModulePath, dqpModulePath, part6ModulePath, wscModulePath, intModulePath, futModulePath, revModulePath, part7ModulePath, mktModulePath, part3ModulePath, frModulePath, hybModulePath, part2ModulePath, fwModulePath, part1ModulePath, wholeBookModulePath].map(path => `@/${path}`));
 const flowPinPath = 'scripts/reader-flow-boundary-pins.mjs';
 
 async function loadArchive() {
@@ -141,7 +143,7 @@ async function materialize(root) {
     .map(entry => `scripts/${entry.name}`);
   const components = ['components/evidence.tsx', 'components/numbered-heading.tsx', 'components/chapter-content.tsx'];
   const current = [...configs, ...scripts, ...components, 'lib/teaching-case.ts']
-    .filter(path => ![copyeditConfigPath, copyeditPinPath, flowConfigPath, flowPinPath, serviceConfigPath, serviceModulePath, substitutionConfigPath, substitutionModulePath, shiftConfigPath, shiftModulePath, footprintConfigPath, footprintModulePath, landConfigPath, landModulePath, acidConfigPath, acidModulePath, mineralConfigPath, mineralModulePath, fossilConfigPath, fossilModulePath, ozoneConfigPath, ozoneModulePath, ozradConfigPath, ozradModulePath, toxConfigPath, toxModulePath, waterConfigPath, waterModulePath, bioConfigPath, bioModulePath, eutroConfigPath, eutroModulePath, particulateConfigPath, particulateModulePath, part4ConfigPath, part4ModulePath, weightingConfigPath, weightingModulePath, localizationConfigPath, localizationModulePath, socialConfigPath, socialModulePath, costConfigPath, costModulePath, part5ConfigPath, part5ModulePath, dappConfigPath, dappModulePath, uncConfigPath, uncModulePath, pfrConfigPath, pfrModulePath, dqpConfigPath, dqpModulePath, part6ConfigPath, part6ModulePath, wscConfigPath, wscModulePath, intConfigPath, intModulePath, futConfigPath, futModulePath, revConfigPath, revModulePath, part7ConfigPath, part7ModulePath, mktConfigPath, mktModulePath, part3ConfigPath, part3ModulePath, frConfigPath, frModulePath, hybConfigPath, hybModulePath, part2ConfigPath, part2ModulePath, fwConfigPath, fwModulePath, part1ConfigPath, part1ModulePath].includes(path));
+    .filter(path => ![copyeditConfigPath, copyeditPinPath, flowConfigPath, flowPinPath, serviceConfigPath, serviceModulePath, substitutionConfigPath, substitutionModulePath, shiftConfigPath, shiftModulePath, footprintConfigPath, footprintModulePath, landConfigPath, landModulePath, acidConfigPath, acidModulePath, mineralConfigPath, mineralModulePath, fossilConfigPath, fossilModulePath, ozoneConfigPath, ozoneModulePath, ozradConfigPath, ozradModulePath, toxConfigPath, toxModulePath, waterConfigPath, waterModulePath, bioConfigPath, bioModulePath, eutroConfigPath, eutroModulePath, particulateConfigPath, particulateModulePath, part4ConfigPath, part4ModulePath, weightingConfigPath, weightingModulePath, localizationConfigPath, localizationModulePath, socialConfigPath, socialModulePath, costConfigPath, costModulePath, part5ConfigPath, part5ModulePath, dappConfigPath, dappModulePath, uncConfigPath, uncModulePath, pfrConfigPath, pfrModulePath, dqpConfigPath, dqpModulePath, part6ConfigPath, part6ModulePath, wscConfigPath, wscModulePath, intConfigPath, intModulePath, futConfigPath, futModulePath, revConfigPath, revModulePath, part7ConfigPath, part7ModulePath, mktConfigPath, mktModulePath, part3ConfigPath, part3ModulePath, frConfigPath, frModulePath, hybConfigPath, hybModulePath, part2ConfigPath, part2ModulePath, fwConfigPath, fwModulePath, part1ConfigPath, part1ModulePath, wholeBookConfigPath, wholeBookModulePath].includes(path));
   const currentCopyeditPin = await readFile(join(repo, copyeditPinPath), 'utf8');
   const copyeditUnitPin = /^export const readerCopyeditUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
   assert.equal([...currentCopyeditPin.matchAll(copyeditUnitPin)].length, 1);
@@ -261,6 +263,9 @@ async function materialize(root) {
   const currentPart1Module = await readFile(join(repo, part1ModulePath), 'utf8');
   const part1UnitPin = /^export const part1RereadUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
   assert.equal([...currentPart1Module.matchAll(part1UnitPin)].length, 1);
+  const currentWholeBookModule = await readFile(join(repo, wholeBookModulePath), 'utf8');
+  const wholeBookUnitPin = /^export const wholeBookRereadUnitPin = (?:null|'[a-f0-9]{64}');$/gm;
+  assert.equal([...currentWholeBookModule.matchAll(wholeBookUnitPin)].length, 1);
   assert.equal([...currentPart2Module.matchAll(part2UnitPin)].length, 1);
   // The only archived script is the independently selected old edition pin.
   // All validation code, including the expectation resolver, comes from the
@@ -350,6 +355,8 @@ async function materialize(root) {
     write(root, fwModulePath, currentFwModule.replace(fwUnitPin, 'export const frameworkComparisonUnitPin = null;')),
     write(root, part1ConfigPath, JSON.stringify({ schemaVersion: 1, status: 'inactive', unit: null })),
     write(root, part1ModulePath, currentPart1Module.replace(part1UnitPin, 'export const part1RereadUnitPin = null;')),
+    write(root, wholeBookConfigPath, JSON.stringify({ schemaVersion: 1, status: 'inactive', unit: null })),
+    write(root, wholeBookModulePath, currentWholeBookModule.replace(wholeBookUnitPin, 'export const wholeBookRereadUnitPin = null;')),
     symlink(join(repo, 'node_modules'), join(root, 'node_modules'), process.platform === 'win32' ? 'junction' : 'dir'),
   ]);
 }

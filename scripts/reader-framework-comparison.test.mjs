@@ -2,8 +2,10 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import test from 'node:test';
 import config from '../config/reader-framework-comparison.json' with { type: 'json' };
+import wholeBookConfig from '../config/reader-whole-book-reread.json' with { type: 'json' };
 import part1Config from '../config/reader-part1-reread.json' with { type: 'json' };
 import { previousScientificTestRecords } from './fixtures/scientific-receipt-envelope.mjs';
+import { restoreWholeBookRereadTestFiles } from './reader-whole-book-reread.mjs';
 import { restorePart1RereadTestFiles } from './reader-part1-reread.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
@@ -37,8 +39,8 @@ async function loadInput() {
   ]);
   for (const [k, v] of shiftFiles) files.set(k, v);
   for (const [k, v] of serviceFiles) files.set(k, v);
-  const rolled = part1Config.unit ? previousScientificTestRecords({ catalog, readings, literature }, part1Config.unit) : { catalog, readings, literature };
-  const rolledFiles = part1Config.unit ? restorePart1RereadTestFiles(files, part1Config.unit) : files;
+  const rolled = part1Config.unit ? previousScientificTestRecords(wholeBookConfig.unit ? previousScientificTestRecords({ catalog, readings, literature }, wholeBookConfig.unit) : { catalog, readings, literature }, part1Config.unit) : { catalog, readings, literature };
+  const rolledFiles = part1Config.unit ? restorePart1RereadTestFiles(wholeBookConfig.unit ? restoreWholeBookRereadTestFiles(files, wholeBookConfig.unit) : files, part1Config.unit) : files;
   return { ...rolled, files: rolledFiles };
 }
 

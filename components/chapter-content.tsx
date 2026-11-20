@@ -5,6 +5,7 @@ import { hybridInventoryComparisonHistoryControls, hybridInventoryComparisonOrdi
 import { part2RereadCorrections, part2RereadHistoryControls, part2RereadSource } from '@/scripts/reader-part2-reread.mjs';
 import { frameworkComparisonHistoryControls, frameworkComparisonOrdinaryId, frameworkComparisonSource } from '@/scripts/reader-framework-comparison.mjs';
 import { part1RereadCorrections, part1RereadHistoryControls, part1RereadSource } from '@/scripts/reader-part1-reread.mjs';
+import { wholeBookRereadCorrections, wholeBookRereadHistoryControls, wholeBookRereadOrdinaryId, wholeBookRereadSource } from '@/scripts/reader-whole-book-reread.mjs';
 import { part3RereadCorrections, part3RereadHistoryControls, part3RereadOrdinaryId, part3RereadSource } from '@/scripts/reader-part3-reread.mjs';
 import { marketResponseComparisonHistoryControls, marketResponseComparisonOrdinaryId, marketResponseComparisonSource } from '@/scripts/reader-market-response-comparison.mjs';
 import { revisableJudgmentHistoryControls, revisableJudgmentOrdinaryId, revisableJudgmentRoutes, revisableJudgmentSource } from '@/scripts/reader-revisable-judgment.mjs';
@@ -36,7 +37,7 @@ import { landRecoveryHistoryControls, landRecoveryOrdinaryId, landRecoverySource
 import { circularFootprintHistoryControls, circularFootprintOrdinaryId, circularFootprintSource } from '@/scripts/reader-circular-footprint.mjs';
 import { loadShiftHistoryControls, loadShiftOrdinaryId, loadShiftSource } from '@/scripts/reader-load-shift.mjs';
 import { substitutionRulesHistoryControls, substitutionRulesOrdinaryId, substitutionRulesSource } from '@/scripts/reader-substitution-rules.mjs';
-import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity, currentBiogenicCarbon, currentEutrophicationPathways, currentParticulateComparison, currentPart4Reread, currentWeightingValuation, currentLocalizationComparison, currentSocialComparison, currentCostSustainability, currentPart5Reread, currentDataApplicabilityComparison, currentUncertaintyComparison, currentProductFootprintComparison, currentDataQualityComparison, currentPart6Reread, currentWallServiceComparison, currentInterpretationBags, currentFutureScenarios, currentRevisableJudgment, currentPart7Reread, currentMarketResponseComparison, currentPart3Reread, currentFunctionalReferenceComparison, currentHybridInventoryComparison, currentPart2Reread, currentFrameworkComparison, currentPart1Reread } from '@/scripts/reader-current-expectations.mjs';
+import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity, currentBiogenicCarbon, currentEutrophicationPathways, currentParticulateComparison, currentPart4Reread, currentWeightingValuation, currentLocalizationComparison, currentSocialComparison, currentCostSustainability, currentPart5Reread, currentDataApplicabilityComparison, currentUncertaintyComparison, currentProductFootprintComparison, currentDataQualityComparison, currentPart6Reread, currentWallServiceComparison, currentInterpretationBags, currentFutureScenarios, currentRevisableJudgment, currentPart7Reread, currentMarketResponseComparison, currentPart3Reread, currentFunctionalReferenceComparison, currentHybridInventoryComparison, currentPart2Reread, currentFrameworkComparison, currentPart1Reread, currentWholeBookReread } from '@/scripts/reader-current-expectations.mjs';
 import { flowBoundaryHistoryControls, flowBoundaryHistoryTargets, flowBoundaryOrdinaryTargets, flowBoundaryOrdinaryId } from '@/scripts/reader-flow-boundary.mjs';
 import { serviceConstraintsHistoryControls, serviceConstraintsOrdinaryId, serviceConstraintsSource } from '@/scripts/reader-service-constraints.mjs';
 import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
@@ -105,6 +106,7 @@ const histories = [
   { controls: part2RereadHistoryControls(currentPart2Reread), edition: part2RereadSource, attribute: 'part2-reread' },
   { controls: frameworkComparisonHistoryControls(currentFrameworkComparison), edition: frameworkComparisonSource, attribute: 'framework-comparison' },
   { controls: part1RereadHistoryControls(currentPart1Reread), edition: part1RereadSource, attribute: 'part1-reread' },
+  { controls: wholeBookRereadHistoryControls(currentWholeBookReread), edition: wholeBookRereadSource, attribute: 'whole-book-reread' },
 ];
 
 function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
@@ -291,6 +293,10 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
     if (part6TableId) {
       return createElement(defaults.table ?? 'table', { ...props, id: part6TableId, style: { ...props.style, ...scientificHistoryScroll } });
     }
+    const wholeBookTableId = wholeBookRereadOrdinaryId(currentWholeBookReread, cleanRoute, print, `table-${index}`);
+    if (wholeBookTableId) {
+      return createElement(defaults.table ?? 'table', { ...props, id: wholeBookTableId, style: { ...props.style, ...scientificHistoryScroll } });
+    }
     const part7TableId = part7RereadOrdinaryId(currentPart7Reread, cleanRoute, print, `table-${index}`);
     if (part7TableId) {
       return createElement(defaults.table ?? 'table', { ...props, id: part7TableId, style: { ...props.style, ...scientificHistoryScroll } });
@@ -436,6 +442,11 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
           <p key={`${part1RereadSource.commit}-${row.claimId}`} className="legacy-citation-context" data-part1-reread-correction={row.claimId} style={{ display: 'block' }}>
             <time dateTime={part1RereadSource.date}>{part1RereadSource.date}</time>{' 修订：'}{row.scope}{' '}
             <a href={citationSourceHref(part1RereadSource.commit)}>查看前版源文件</a>
+          </p>)}
+        {currentWholeBookReread && wholeBookRereadCorrections.filter(row => row.chapter === cleanRoute && row.claimId === note.id).map(row =>
+          <p key={`${wholeBookRereadSource.commit}-${row.claimId}`} className="legacy-citation-context" data-whole-book-reread-correction={row.claimId} style={{ display: 'block' }}>
+            <time dateTime={wholeBookRereadSource.date}>{wholeBookRereadSource.date}</time>{' 修订：'}{row.scope}{' '}
+            <a href={citationSourceHref(wholeBookRereadSource.commit)}>查看前版源文件</a>
           </p>)}
         {currentPart2Reread && part2RereadCorrections.filter(row => row.chapter === cleanRoute && row.claimId === note.id).map(row =>
           <p key={`${row.chapter}-${row.claimId}`} className="legacy-citation-context" data-part2-reread-correction={note.id} style={{ display: 'block' }}>

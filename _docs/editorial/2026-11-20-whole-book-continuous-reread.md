@@ -42,7 +42,7 @@ related:
 
 ### 2.1 `F02` 导论与第四部导言对齐
 
-1. **`content/docs/book/index.mdx` 第 18 行（`part4-133-ordinary-5`）**：
+1. **`content/docs/book/index.mdx` 第 18 行（`part4-133-ordinary-4`）**：
    - 原句仅链接了`[中点与终点](/docs/book/midpoint-endpoint-value-choices/)`，其余六章未加链接且使用非精确章名。
    - 本次原位更新（`0` 段落拆分），补齐第四部全部 7 篇网页章节的精确链接与章名：`[中点与终点](/docs/book/midpoint-endpoint-value-choices/)`、`[气候响应与当量](/docs/book/climate-response-and-metrics/)`、`[排放时间与评价](/docs/book/emission-time-and-assessment/)`、`[酸化与营养富集](/docs/book/acidification-and-nutrient-pathways/)`、`[颗粒物排放与健康损害](/docs/book/particulate-emissions-and-health/)`、`[耗水与缺水潜势](/docs/book/water-scarcity-and-reference/)`与`[毒性路径](/docs/book/usetox-pathways-and-boundaries/)`，解决 Programme `#9` 登记的第四部链接对齐遗留项。
 2. **`config/reader-numbering.json` `parts[3].introduction`（第四部《环境后果》）**：
@@ -52,7 +52,7 @@ related:
 ### 2.2 全局非 `caseBinding` 论述 `premiseIds` DAG 规整（`knowledge/catalog.json`）
 
 1. **消除书籍视图剩余 3 处非 `caseBinding` 跨章/章内前向 `premiseIds`**：
-   - `cl-pm-effect-definition`（B17）：移除指向后文 `cl-pm-effect-baseline` 的前向前提，改为指向前置颗粒物路径前提 `cl-pm-question`。
+   - `cl-pm-effect-definition`（B17）：移除指向后文 `cl-pm-effect-baseline` 的前向前提，改为指向紧邻前置颗粒物路径前提 `cl-pm-receptor-boundary`。
    - `cl-climate-comparison-criteria`（B15）：移除指向第七部 `B29` 的跨部前向前提 `cl-wall-tolerance`，保留严格前置的 `cl-power-future-gases`、`cl-power-future-gases-total`。
    - `cl-water125-diagnostic-synthesis`（B18）：移除指向 `B19` 的跨章前向前提 `cl-tox123-speciation-and-proxies`，保留严格前置的 B18 前提并按书籍顺序排列。
 2. **规整书籍视图剩余 39 处非 `caseBinding` 非升序 `premiseIds` 数组**：

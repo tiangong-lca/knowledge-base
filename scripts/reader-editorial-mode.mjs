@@ -34,7 +34,7 @@ export function withCleanDeliveryValidation(active, fn) {
 export const FORBIDDEN_PROSE_ATTR_PATTERNS = Object.freeze([
   /^data-copyedit-history$/,
   /^data-[a-z0-9-]+-history$/,
-  /^data-part\d+-reread-part$/,
+  /^data-[a-z0-9-]+-reread-part$/,
   /^data-[a-z0-9-]+-correction$/,
   /^data-legacy-scope$/,
 ]);

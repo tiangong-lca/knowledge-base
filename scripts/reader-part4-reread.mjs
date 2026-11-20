@@ -625,12 +625,13 @@ export function observePart4RereadOrdinaryTargets(documents) {
     }])));
 }
 
-export function validatePart4RereadPartDisclosure(printDoc, unit) {
+export function validatePart4RereadPartDisclosure(printDoc, unit, wholeBookReread = null) {
   if (!unit) return [];
   if (!printDoc) return ['Part IV continuous reread missing /print document for Part 4 introduction check'];
   const errors = [];
   const parts = fingerprintCopyeditPrintParts(printDoc);
-  if (parts[3]?.id !== 'print-part-4' || parts[3]?.sha256 !== unit.printPart4.to)
+  const expectedPrintSha = wholeBookReread?.printPart4?.to ?? unit.printPart4.to;
+  if (parts[3]?.id !== 'print-part-4' || parts[3]?.sha256 !== expectedPrintSha)
     errors.push('Part IV continuous reread printed Part 4 header fingerprint differs from reviewed output');
 
   const disclosures = printDoc.querySelectorAll('[data-part4-reread-part]');
@@ -638,6 +639,7 @@ export function validatePart4RereadPartDisclosure(printDoc, unit) {
   const node = disclosures[0];
   const group = printDoc.querySelector('[data-reader-part-group="4"]');
   const intro = group?.querySelector('.print-part-introduction');
+  const expectedPrev = wholeBookReread ? group?.querySelector('[data-whole-book-reread-part="4"]') : intro;
   const detailsChildren = nonCommentChildren(node);
   const summary = detailsChildren[0];
   const para = detailsChildren[1];
@@ -656,7 +658,7 @@ export function validatePart4RereadPartDisclosure(printDoc, unit) {
   if (node.tagName !== 'DETAILS' || !attrs(node, 'class', 'data-part4-reread-part')
       || node.getAttribute('data-part4-reread-part') !== '4'
       || node.getAttribute('class') !== 'legacy-citation-context'
-      || node.parentNode !== group || node.previousElementSibling !== intro
+      || node.parentNode !== group || node.previousElementSibling !== expectedPrev
       || node.nextElementSibling?.tagName !== 'ARTICLE'
       || detailsChildren.length !== 2 || summary?.tagName !== 'SUMMARY' || para?.tagName !== 'P'
       || !attrs(summary) || summaryChildren.length < 2 || time?.tagName !== 'TIME'
@@ -754,7 +756,12 @@ const part1SuccessorOverrideKeys = Object.freeze(new Set([
   `/print#${printUnitAnchor('/docs/book')}-part4-133-ordinary-2`,
 ]));
 
-export function qualifyPart4RereadHistory(documents, unit, actual, particulateComparison, biogenicCarbon, part5Reread = null, part6Reread = null, part7Reread = null, part3Reread = null, part2Reread = null, part1Reread = null) {
+const wholeBookSuccessorOverrideKeys = Object.freeze(new Set([
+  `/docs/book#${chapterAnchorPrefix('/docs/book')}-part4-133-ordinary-4`,
+  `/print#${printUnitAnchor('/docs/book')}-part4-133-ordinary-4`,
+]));
+
+export function qualifyPart4RereadHistory(documents, unit, actual, particulateComparison, biogenicCarbon, part5Reread = null, part6Reread = null, part7Reread = null, part3Reread = null, part2Reread = null, part1Reread = null, wholeBookReread = null) {
   if (!unit) return { prior: actual, errors: [] };
   const overrides = unit.history?.ordinaryOverrides;
   if (!validOrdinaryOverridesShape(overrides, true))
@@ -836,6 +843,23 @@ export function qualifyPart4RereadHistory(documents, unit, actual, particulateCo
       allowedSuccessorKeys.add(key);
     }
   }
+  if (wholeBookReread) {
+    const raw = wholeBookReread.history?.ordinaryOverrides;
+    if (!plainObject(raw) || [...wholeBookSuccessorOverrideKeys].some(key => !plainObject(raw[key])
+        || !scienceDigest(raw[key].from) || !scienceDigest(raw[key].to) || raw[key].from === raw[key].to))
+      throw new Error('Part IV continuous reread successor ordinaryOverrides violates the 2-key Whole-book allowlist');
+    successorOverrides = { ...(successorOverrides ?? {}) };
+    for (const key of wholeBookSuccessorOverrideKeys) {
+      if (successorOverrides[key]) {
+        if (successorOverrides[key].to !== raw[key].from)
+          throw new Error(`Part IV continuous reread chained successor ordinaryOverrides broken at ${key}`);
+        successorOverrides[key] = { from: successorOverrides[key].from, to: raw[key].to };
+      } else {
+        successorOverrides[key] = { from: raw[key].from, to: raw[key].to };
+      }
+      allowedSuccessorKeys.add(key);
+    }
+  }
 
   const targets = projectScientificOrdinaryTargets(
     successorOverrides,
@@ -883,7 +907,7 @@ export function qualifyPart4RereadHistory(documents, unit, actual, particulateCo
       ordinaryOverrides: successorOverrides,
       ordinaryTargets: Object.fromEntries(Object.entries(unit.history.ordinaryTargets).map(([key, row]) => [key, row.sha256])),
     }),
-    ...validatePart4RereadPartDisclosure(documents.get('/print'), unit),
+    ...validatePart4RereadPartDisclosure(documents.get('/print'), unit, wholeBookReread),
   ];
   if (!sameScienceValue(targets, unit.history.ordinaryTargets))
     errors.push('Part IV continuous reread actual versioned ordinary targets differ');

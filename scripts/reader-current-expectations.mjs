@@ -5,6 +5,7 @@ import hybConfig from '../config/reader-hybrid-inventory-comparison.json' with {
 import part2Config from '../config/reader-part2-reread.json' with { type: 'json' };
 import fwConfig from '../config/reader-framework-comparison.json' with { type: 'json' };
 import part1Config from '../config/reader-part1-reread.json' with { type: 'json' };
+import wholeBookConfig from '../config/reader-whole-book-reread.json' with { type: 'json' };
 import { selectMarketResponseComparison, effectiveMarketResponseComparison, marketResponseComparisonLayout } from './reader-market-response-comparison.mjs';
 import { selectPart3Reread, effectivePart3Reread, part3RereadLayout } from './reader-part3-reread.mjs';
 import { selectFunctionalReferenceComparison, effectiveFunctionalReferenceComparison, functionalReferenceComparisonLayout } from './reader-functional-reference-comparison.mjs';
@@ -12,6 +13,7 @@ import { selectHybridInventoryComparison, effectiveHybridInventoryComparison, hy
 import { selectPart2Reread, effectivePart2Reread } from './reader-part2-reread.mjs';
 import { selectFrameworkComparison, effectiveFrameworkComparison } from './reader-framework-comparison.mjs';
 import { selectPart1Reread, effectivePart1Reread } from './reader-part1-reread.mjs';
+import { selectWholeBookReread, effectiveWholeBookReread } from './reader-whole-book-reread.mjs';
 import part7Config from '../config/reader-part7-reread.json' with { type: 'json' };
 import { selectPart7Reread, effectivePart7Reread, part7RereadLayout } from './reader-part7-reread.mjs';
 import revConfig from '../config/reader-revisable-judgment.json' with { type: 'json' };
@@ -127,8 +129,9 @@ export const currentHybridInventoryComparison = selectHybridInventoryComparison(
 export const currentPart2Reread = selectPart2Reread(part2Config, undefined, preview);
 export const currentFrameworkComparison = selectFrameworkComparison(fwConfig, undefined, preview);
 export const currentPart1Reread = selectPart1Reread(part1Config, undefined, preview);
+export const currentWholeBookReread = selectWholeBookReread(wholeBookConfig, undefined, preview);
 export const isReadableBookReviewPreview = oldPreview
-  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview' || acidConfig.status === 'preview' || mineralConfig.status === 'preview' || fossilConfig.status === 'preview' || ozoneConfig.status === 'preview' || ozradConfig.status === 'preview' || toxConfig.status === 'preview' || waterConfig.status === 'preview' || biogenicConfig.status === 'preview' || eutroConfig.status === 'preview' || particulateConfig.status === 'preview' || part4Config.status === 'preview' || weightingConfig.status === 'preview' || localizationConfig.status === 'preview' || socialConfig.status === 'preview' || costConfig.status === 'preview' || part5Config.status === 'preview' || dappConfig.status === 'preview' || uncConfig.status === 'preview' || pfrConfig.status === 'preview' || dqpConfig.status === 'preview' || part6Config.status === 'preview' || wscConfig.status === 'preview' || intConfig.status === 'preview' || futConfig.status === 'preview' || revConfig.status === 'preview' || part7Config.status === 'preview' || mktConfig.status === 'preview' || part3Config.status === 'preview' || frConfig.status === 'preview' || hybConfig.status === 'preview' || part2Config.status === 'preview' || fwConfig.status === 'preview' || part1Config.status === 'preview');
+  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview' || acidConfig.status === 'preview' || mineralConfig.status === 'preview' || fossilConfig.status === 'preview' || ozoneConfig.status === 'preview' || ozradConfig.status === 'preview' || toxConfig.status === 'preview' || waterConfig.status === 'preview' || biogenicConfig.status === 'preview' || eutroConfig.status === 'preview' || particulateConfig.status === 'preview' || part4Config.status === 'preview' || weightingConfig.status === 'preview' || localizationConfig.status === 'preview' || socialConfig.status === 'preview' || costConfig.status === 'preview' || part5Config.status === 'preview' || dappConfig.status === 'preview' || uncConfig.status === 'preview' || pfrConfig.status === 'preview' || dqpConfig.status === 'preview' || part6Config.status === 'preview' || wscConfig.status === 'preview' || intConfig.status === 'preview' || futConfig.status === 'preview' || revConfig.status === 'preview' || part7Config.status === 'preview' || mktConfig.status === 'preview' || part3Config.status === 'preview' || frConfig.status === 'preview' || hybConfig.status === 'preview' || part2Config.status === 'preview' || fwConfig.status === 'preview' || part1Config.status === 'preview' || wholeBookConfig.status === 'preview');
 const previousPlan = readableBookReviewPlan(oldPreview
   ? acceptance.units
   : pinnedReadableBookUnits(acceptance, readableBookBaselineDigest, readableBookAcceptancePins));
@@ -171,7 +174,8 @@ const acceptedFr = effectiveFunctionalReferenceComparison(acceptedPart3, current
 const acceptedHyb = effectiveHybridInventoryComparison(acceptedFr, currentHybridInventoryComparison);
 const acceptedPart2 = effectivePart2Reread(acceptedHyb, currentPart2Reread);
 const acceptedFw = effectiveFrameworkComparison(acceptedPart2, currentFrameworkComparison);
-export const currentBookPlan = effectivePart1Reread(acceptedFw, currentPart1Reread);
+const acceptedPart1 = effectivePart1Reread(acceptedFw, currentPart1Reread);
+export const currentBookPlan = effectiveWholeBookReread(acceptedPart1, currentWholeBookReread);
 
 export function currentBookRecordMatches(kind, previous, current, projection) {
   if (projection !== undefined) return matchesAcceptedRecord(currentBookPlan, kind, previous, current, projection);

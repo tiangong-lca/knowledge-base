@@ -469,12 +469,31 @@ export function validateFrameworkComparisonTables(documents) {
   return errors;
 }
 
-export function qualifyFrameworkComparisonHistory(documents, unit, actual, successorOverrides = null) {
+const wholeBookFwOverrideKeys = Object.freeze(new Set([
+  `/docs/book/framework-history#${chapterAnchorPrefix('/docs/book/framework-history')}-fw-179-ordinary-table`,
+  `/print#${printUnitAnchor('book-framework-responsibilities')}-fw-179-ordinary-table`,
+]));
+
+export function qualifyFrameworkComparisonHistory(documents, unit, actual, wholeBookReread = null) {
   if (!unit) return { prior: actual, errors: [] };
+  let successorOverrides = null;
+  if (wholeBookReread?.history?.ordinaryOverrides) {
+    const raw = wholeBookReread.history.ordinaryOverrides;
+    if (!plainObject(raw) || [...wholeBookFwOverrideKeys].some(key => !plainObject(raw[key])
+        || !scienceDigest(raw[key].from) || !scienceDigest(raw[key].to) || raw[key].from === raw[key].to)) {
+      throw new Error('Framework comparison successor ordinaryOverrides violates the 2-key Whole-book allowlist');
+    }
+    successorOverrides = Object.fromEntries(
+      [...wholeBookFwOverrideKeys].map(key => [key, { from: raw[key].from, to: raw[key].to }]),
+    );
+  } else if (wholeBookReread && !wholeBookReread.history) {
+    successorOverrides = wholeBookReread;
+  }
   const targets = projectScientificOrdinaryTargets(
     successorOverrides,
     observeFrameworkComparisonOrdinaryTargets(documents),
     'Framework comparison',
+    wholeBookFwOverrideKeys,
   );
   const prior = qualifyScientificHistory(unit.history, actual, targets, {
     label: 'Framework comparison', routes: frameworkComparisonRoutes, predecessorPin: addressPin,
@@ -489,6 +508,7 @@ export function qualifyFrameworkComparisonHistory(documents, unit, actual, succe
       ordinaryTags: ['P', 'TABLE'],
       label: 'Framework comparison',
       ordinaryTargets: Object.fromEntries(Object.entries(unit.history.ordinaryTargets).map(([key, row]) => [key, row.sha256])),
+      ordinaryOverrides: successorOverrides,
     }),
     ...validateFrameworkComparisonTables(documents),
   ];
