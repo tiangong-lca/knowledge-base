@@ -43338,6 +43338,76 @@
           "subject": "ecoinvent v3 化学计量平衡默认收率"
         }
       ]
+    },
+    {
+      "id": "ev-fw179-cml-framework",
+      "sourceId": "src-book-cml-2001-part2a",
+      "readingId": "rd-cml-2001-part2a",
+      "passageId": "psg-fw179-cml-phases-weighting",
+      "locator": "CML 2001 Part 2a: Guide, Reading guidance (pp. 3–4), §§4.1–4.3.8 (pp. 48, 75, 77–78), Chapter 5 (p. 80)",
+      "summary": "CML 2001 将生命周期评价沿 ISO 共识划分为目标与范围定义、清单分析、影响评价与解释 4 个阶段，并在指南中前置项目程序管理章形成 5 章结构；区分简化级、完全兼容 ISO 的详细基线级与可选扩展级，强推荐归一化，将分组与加权列为可选且不设基线法，并转述 ISO 14042 不允许对公开披露的比较断言使用加权。",
+      "numericFacts": [
+        {
+          "id": "nf-fw179-cml-four-phases",
+          "quantity": "CML 2001 Part 2a 转述的 ISO 生命周期评价框架阶段数",
+          "value": "4",
+          "unit": "phases",
+          "basis": "CML 2001 Part 2a: Guide, Reading guidance (p. 3, pdfIdx 2)",
+          "subject": "ISO/CML 生命周期评价四阶段结构"
+        },
+        {
+          "id": "nf-fw179-cml-five-chapters",
+          "quantity": "CML 2001 Part 2a 指南总章数（含第 1 章项目程序管理）",
+          "value": "5",
+          "unit": "chapters",
+          "basis": "CML 2001 Part 2a: Guide, Reading guidance (p. 3, pdfIdx 2)",
+          "subject": "CML 2001 操作指南章节结构"
+        }
+      ]
+    },
+    {
+      "id": "ev-fw179-ilcd-framework",
+      "sourceId": "src-book-ilcd-2010",
+      "readingId": "rd-ilcd-2010",
+      "passageId": "psg-fw179-ilcd-situations-review",
+      "locator": "ILCD Handbook: General guide for LCA — Detailed guidance (2010), §1 (p. 3), §4 Figure 4 (p. 25), §11 (pp. 321–322)",
+      "summary": "ILCD 2010 将生命周期评价组织为由完整性、敏感性与一致性检查驱动的多轮迭代回路，并按决策情景划分为微观决策支持（Situation A）、中/宏观结构性决策支持（Situation B）与纯描述性核算（Situation C，含计入既有外部收益的 C1 与不计入的 C2）；第 11 章要求审验核查方法一致性、科学有效性、数据适宜性与局限性，细则文档发布前以 ISO 14040/14044 为最低要求。"
+    },
+    {
+      "id": "ev-fw179-pef-framework",
+      "sourceId": "src-kb44-ec2021",
+      "readingId": "rd-kb44-ec2021",
+      "passageId": "psg-fw179-pef-method-gate",
+      "locator": "Commission Recommendation (EU) 2021/2279, OJ L 471, Annex I Definitions (L 471/210), §1 (L 471/220), §3.2 Table 2 (L 471/226–228), §5.1–5.2 (L 471/282–283), §8.1 (L 471/291)",
+      "summary": "欧盟 PEF 2021 规定全部 16 项 EF 影响类别须无一例外采用，分类表征后强制执行归一化与加权并可汇总单一总分；明确区分一般比较与比较断言，规定两者仅在遵循对应 PEFCR 时允许；凡用于任何对外沟通的 PEF 研究均须接受独立核查与验证。",
+      "numericFacts": [
+        {
+          "id": "nf-fw179-pef-16-categories",
+          "quantity": "欧盟 PEF 2021 附件一 Table 2 强制采用的 EF 影响类别数（不得排除）",
+          "value": "16",
+          "unit": "impact categories",
+          "basis": "Commission Recommendation (EU) 2021/2279 Annex I §3.2 Table 2 (OJ L 471/226–228)",
+          "subject": "欧盟 PEF 强制影响类别覆盖数"
+        }
+      ]
+    },
+    {
+      "id": "ev-fw179-ghgp-framework",
+      "sourceId": "src-pfr151-ghgp-2011",
+      "readingId": "rd-pfr151-ghgp-2011",
+      "passageId": "psg-fw179-ghgp-steps-assurance",
+      "locator": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011), §1.5 (p. 6), §3.1 Figure 3.1 (p. 13), §5.3.2 (p. 23), §12.1–12.2 (p. 93), Appendix A (p. 115)",
+      "summary": "GHG Protocol 产品标准（2011）面向企业单一温室气体核算与纵向减排追踪，按商业目标、原则、范围、边界、数据与质量、分配、不确定性、结果计算、鉴证、报告与减排目标组织步骤；明确不支持 ISO 14044 意义上的产品整体环境优劣比较断言（产品对比须补充产品规则），并要求经由第一方或第三方执行涉及报告企业、利益相关方与鉴证方三方的鉴证。",
+      "numericFacts": [
+        {
+          "id": "nf-fw179-ghgp-three-parties",
+          "quantity": "GHG Protocol 产品标准 §12.2 界定的产品碳清单鉴证参与方数",
+          "value": "3",
+          "unit": "parties",
+          "basis": "GHG Protocol Product Standard (2011) §12.2 (p. 93, pdfIdx 94: reporting company, stakeholder users, assurer(s))",
+          "subject": "GHG Protocol 产品鉴证三方结构"
+        }
+      ]
     }
   ],
   "claims": [
@@ -84012,6 +84082,266 @@
       "reviewedAt": "2026-11-20",
       "reviewKind": "agent-source-check",
       "reasoning": "明确界定过程标准与混合清单跨体系比较的成立条件与未决实证边界。"
+    },
+    {
+      "id": "cl-fw179-shared-phases",
+      "kind": "synthesis",
+      "text": "把上述历史脉络延伸到当代主流操作指南，会看到 CML 2001/2002、国际参考生命周期数据系统（ILCD）2010、欧盟产品环境足迹（PEF）2021 与 GHG Protocol 产品标准（2011）共享同一套底层分析骨架：都先界定研究目的、功能或分析基准与系统边界，再归集清单数据、计算环境影响，并在全过程中通过完整性、敏感性与一致性检查反复修正前期假设。CML 2001（Part 2a，第 3–4 页）沿 ISO 共识把评价组织为目标与范围定义、清单分析、影响评价与解释 4 个阶段，并在指南前置项目程序管理章形成 5 章操作结构；ILCD 2010（第 4 章图 4，第 25 页）把这四个阶段明确画成多轮精化的迭代回路，先用通用数据筛出关键过程，再把精化数据集中投入主导环节；GHG Protocol 产品标准（第 3.1 节图 3.1，第 13 页）虽然改按商业目标、范围、边界、数据质量、分配、不确定性、结果计算、鉴证、报告与减排目标展开，本质上仍保留了“先定问题、再建账、后核验”的闭环逻辑。",
+      "scope": "跨体系框架阶段与迭代结构对照；对应 CML 2001 Part 2a（pp. 3–4）、ILCD 2010（§4 Fig. 4）与 GHG Protocol 产品标准 2011（§3.1 Fig. 3.1）。",
+      "evidenceIds": [
+        "ev-fw179-cml-framework",
+        "ev-fw179-ilcd-framework",
+        "ev-fw179-ghgp-framework"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-fw179-cml-framework",
+          "relation": "supports",
+          "rationale": "CML 2001 Part 2a 明确列出 ISO 四阶段并前置项目程序管理章（共 5 章）。"
+        },
+        {
+          "evidenceId": "ev-fw179-ilcd-framework",
+          "relation": "supports",
+          "rationale": "ILCD 2010 第 4 章图 4 将四阶段组织为由三项检查驱动的多轮迭代回路。"
+        },
+        {
+          "evidenceId": "ev-fw179-ghgp-framework",
+          "relation": "supports",
+          "rationale": "GHG Protocol 产品标准图 3.1 以企业核算步骤重构了目标—边界—清单—核验—报告闭环。"
+        }
+      ],
+      "premiseIds": [
+        "cl-framework-comparison-not-replacement",
+        "cl-framework-reader-work-product"
+      ],
+      "conceptIds": [
+        "cn-framework-work-products"
+      ],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-20",
+      "reviewKind": "agent-source-check",
+      "reasoning": "综合 CML 2001、ILCD 2010 与 GHG Protocol 2011 原文，识别四大框架共享的阶段与迭代骨架。"
+    },
+    {
+      "id": "cl-fw179-decision-gates",
+      "kind": "synthesis",
+      "text": "真正把四套体系推向不同运行轨道的，首先是“研究要回答哪一类问题”以及“什么条件下允许对外作跨产品比较断言”。ILCD 2010（第 1 节，第 3 页）按决策情景把研究前置分流：微观产品决策支持（Situation A）假定决策不引发背景系统产能的结构性变化，中宏观战略决策支持（Situation B）则假定会引发结构性产能变化，而纯描述性核算（Situation C）不追究经济后果，再细分为计入既有外部回收收益的 C1 与不计入的 C2——不同情景直接改写后文系统边界与清单建模规则。欧盟 PEF 2021（附件一定义与第 1 节，L 471/210、220）则把可比性门槛收紧到品类规则层面：明确区分一般比较与比较断言，并规定任何比较与比较断言都只能在遵循对应产品环境足迹品类规则（PEFCR）时才能成立。GHG Protocol 产品标准（第 1.5 节与第 5.3.2 节、附录 A，第 6、23、115 页）走得更克制：它定位为单一产品的纵向排放追踪与减排管理，明确声明不支持 ISO 14044 意义上宣称一产品整体环境优于或等同于竞品的比较断言，若企业仍要作跨产品对比，必须借助额外的产品规则补足方法一致性。",
+      "scope": "跨体系决策情景分流与比较断言门槛对照；对应 ILCD 2010（§1）、EU PEF 2021（Annex I Definitions & §1）与 GHG Protocol 2011（§1.5, §5.3.2, Appendix A）。",
+      "evidenceIds": [
+        "ev-fw179-ilcd-framework",
+        "ev-fw179-pef-framework",
+        "ev-fw179-ghgp-framework"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-fw179-ilcd-framework",
+          "relation": "supports",
+          "rationale": "ILCD 2010 §1 界定 Situation A、B、C1、C2 四类决策情景分流。"
+        },
+        {
+          "evidenceId": "ev-fw179-pef-framework",
+          "relation": "supports",
+          "rationale": "EU PEF 2021 Annex I §1 规定比较与比较断言仅在遵循对应 PEFCR 时允许。"
+        },
+        {
+          "evidenceId": "ev-fw179-ghgp-framework",
+          "relation": "supports",
+          "rationale": "GHG Protocol 产品标准 §1.5 与 Appendix A 明确不支持比较断言，仅支持纵向绩效追踪。"
+        }
+      ],
+      "premiseIds": [
+        "cl-fw179-shared-phases"
+      ],
+      "conceptIds": [
+        "cn-framework-work-products"
+      ],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-20",
+      "reviewKind": "agent-source-check",
+      "reasoning": "依据三份公开指南原文，对照决策情景分流与比较断言的制度门槛差异。"
+    },
+    {
+      "id": "cl-fw179-impact-weighting",
+      "kind": "synthesis",
+      "text": "第二道实质分歧出现在影响类别覆盖范围以及是否允许把多类别结果加权汇总为单一总分。CML 2001（Part 2a，第 48、75、77–78 页）把中点问题导向的多类别特征化设为基线，强烈推荐归一化以便观察相对量级，却明确把分组与加权留作没有统一基线法的可选扩展，并转述 ISO 14042 的禁令——不得对公开披露的比较断言使用加权，因此研究者必须在放弃公开比较、改为内部使用或停止加权之间作抉择。欧盟 PEF 2021（附件一第 3.2 节表 2 与第 5.1–5.2 节，L 471/226–228、282–283）采取了几乎相反的强统一设计：强制采用全部 16 项环境足迹（EF）影响类别且不得排除任何一项，并在分类与表征之后强制执行归一化与加权，允许按统一权重汇总为单一总分并区分含与不含使用阶段的结果。GHG Protocol 产品标准（第 1.5 节与第 3.1 节）则只核算温室气体单一影响类别，省去了跨影响类别权衡与加权争议，但也因此不能代表毒性、酸化、水资源或土地利用等其他环境负担，不能据单指标推断产品“整体更环保”。",
+      "scope": "跨体系影响类别覆盖与归一化/加权规则对照；对应 CML 2001 Part 2a（pp. 48, 75, 77–78）、EU PEF 2021（Annex I Table 2, §5.1–5.2）与 GHG Protocol 2011（§1.5, §3.1）。",
+      "evidenceIds": [
+        "ev-fw179-cml-framework",
+        "ev-fw179-pef-framework",
+        "ev-fw179-ghgp-framework"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-fw179-cml-framework",
+          "relation": "supports",
+          "rationale": "CML 2001 将分组和加权列为可选扩展，并转述 ISO 14042 禁止公开比较断言使用加权。"
+        },
+        {
+          "evidenceId": "ev-fw179-pef-framework",
+          "relation": "supports",
+          "rationale": "EU PEF 2021 Table 2 与 §5.2 强制采用全部 16 项 EF 类别并强制归一化与加权。"
+        },
+        {
+          "evidenceId": "ev-fw179-ghgp-framework",
+          "relation": "supports",
+          "rationale": "GHG Protocol 产品标准仅核算温室气体排放与清除，不支持整体环境优劣断言。"
+        }
+      ],
+      "premiseIds": [
+        "cl-fw179-shared-phases",
+        "cl-fw179-decision-gates"
+      ],
+      "conceptIds": [
+        "cn-framework-work-products"
+      ],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-20",
+      "reviewKind": "agent-source-check",
+      "reasoning": "对照多类别可选加权、强制 16 类别统一加权与单一气候指标三种影响评价设计。"
+    },
+    {
+      "id": "cl-fw179-review-assurance",
+      "kind": "synthesis",
+      "text": "解释阶段的检查程序与外部审验制度，同样随着框架的治理目标而分层。CML 2001（Part 2a 第 5 章，第 80 页）把解释落脚于一致性、完整性与敏感性/不确定性评估，要求研究者先说明结果带宽与局限再给出建议。ILCD 2010（第 11 章，第 321–322 页）要求在范围定义阶段就确定审验类型，以核查研究是否符合 ILCD 与 ISO 14040/14044、方法是否科学技术有效、数据是否适宜且结论是否如实反映局限；在专门的 ILCD 审验细则文档发布之前，正文明确以 ISO 14040 与 14044 的审验要求为最低底线。欧盟 PEF 2021（附件一第 8.1 节，L 471/291）则把外部审查制度化为硬门槛：凡是研究结果或其部分信息用于任何形式的对外沟通，都强制执行独立核查与验证（verification and validation），由核查员核对模型结构、数据与报告一致性。GHG Protocol 产品标准（第 12.1–12.2 节，第 93 页）采用财务与温室气体核算常用的鉴证（assurance）框架，界定报告企业、利益相关方与鉴证方 3 类参与方，并要求产品碳清单至少经过第一方或第三方鉴证，但不等同于多指标生命周期评审小组的同行审验。",
+      "scope": "跨体系解释检查、同行审验与外部鉴证治理对照；对应 CML 2001 Part 2a（Ch. 5）、ILCD 2010（§11）、EU PEF 2021（Annex I §8.1）与 GHG Protocol 2011（§12.1–12.2）。",
+      "evidenceIds": [
+        "ev-fw179-cml-framework",
+        "ev-fw179-ilcd-framework",
+        "ev-fw179-pef-framework",
+        "ev-fw179-ghgp-framework"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-fw179-cml-framework",
+          "relation": "supports",
+          "rationale": "CML 2001 Ch. 5 说明解释阶段的稳健性与带宽评估职责。"
+        },
+        {
+          "evidenceId": "ev-fw179-ilcd-framework",
+          "relation": "supports",
+          "rationale": "ILCD 2010 §11 界定审验核查内容并以 ISO 14040/14044 为最低要求。"
+        },
+        {
+          "evidenceId": "ev-fw179-pef-framework",
+          "relation": "supports",
+          "rationale": "EU PEF 2021 §8.1 规定凡对外沟通均强制执行独立核查与验证。"
+        },
+        {
+          "evidenceId": "ev-fw179-ghgp-framework",
+          "relation": "supports",
+          "rationale": "GHG Protocol 产品标准 §12.2 要求由第一方或第三方执行涉及三方的鉴证。"
+        }
+      ],
+      "premiseIds": [
+        "cl-fw179-shared-phases",
+        "cl-fw179-decision-gates"
+      ],
+      "conceptIds": [
+        "cn-review-scope"
+      ],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-20",
+      "reviewKind": "agent-source-check",
+      "reasoning": "依据四份公开指南原文，对照解释检查、同行审验与鉴证的强制触发条件与角色分工。"
+    },
+    {
+      "id": "cl-fw179-method-choice-effects",
+      "kind": "synthesis",
+      "text": "这些框架差异并不停留在目录写法上，而是会直接改变同一项产品研究的输出形态、合规门槛与决策风险。若同一家制造企业需要面向欧盟市场发布竞品对比声明，仅按 GHG Protocol 产品标准完成单一温室气体核算并做第一方鉴证，既缺少 15 项非气候影响类别，也不具备比较断言的制度资格；转向 CML 2001 详细基线可以得到多类别中点剖面，但若缺乏统一品类规则与公开加权许可，不同研究在边界、分配与数据库上仍可能各说各话；改用欧盟 PEF 2021 并遵循对应 PEFCR、通过独立核查后，确实能获得跨产品可比的 16 类别剖面与单一加权总分，但代价是必须接受预设的类别列表、归一化与权重系数以及更高的模型披露与核查成本。至于 ILCD 2010，若研究目的是评估会改变电网或原材料产能的政策方案，误选 Situation A（微观）而非 Situation B（中宏观），更会在框架起点就把后续清单建模导向错误方向。",
+      "scope": "框架选择对研究输出形态、可比性资格与决策风险的实际影响；综合上述四份公开指南规则。",
+      "evidenceIds": [
+        "ev-fw179-cml-framework",
+        "ev-fw179-ilcd-framework",
+        "ev-fw179-pef-framework",
+        "ev-fw179-ghgp-framework"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-fw179-cml-framework",
+          "relation": "supports",
+          "rationale": "CML 2001 详细基线提供多类别剖面但公开比较断言不得使用加权。"
+        },
+        {
+          "evidenceId": "ev-fw179-ilcd-framework",
+          "relation": "supports",
+          "rationale": "ILCD 2010 Situation A 与 B 的区分决定是否计入结构性产能变化。"
+        },
+        {
+          "evidenceId": "ev-fw179-pef-framework",
+          "relation": "supports",
+          "rationale": "EU PEF 2021 以 PEFCR、16 类别、强制归一化加权与独立核查换取外部可比性。"
+        },
+        {
+          "evidenceId": "ev-fw179-ghgp-framework",
+          "relation": "supports",
+          "rationale": "GHG Protocol 产品标准适合纵向碳追踪但不支持跨产品整体环境断言。"
+        }
+      ],
+      "premiseIds": [
+        "cl-fw179-decision-gates",
+        "cl-fw179-impact-weighting",
+        "cl-fw179-review-assurance"
+      ],
+      "conceptIds": [
+        "cn-framework-work-products",
+        "cn-review-scope"
+      ],
+      "caveats": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-20",
+      "reviewKind": "agent-source-check",
+      "reasoning": "基于四套已核验公开框架规则，推演同一产品或政策研究选错框架时的具体后果与权衡。"
+    },
+    {
+      "id": "cl-fw179-epistemic-limits",
+      "kind": "synthesis",
+      "text": "最后须明确本节跨体系对照的史料与证据边界。上述比较全部直接核自 CML 2001 Part 2a、ILCD 2010 详细指南、欧盟（EU）2021/2279 附件一与 GHG Protocol 产品标准（2011）四份公开原文；对于受版权限制的 ISO 14040:2006 与 ISO 14044:2006 付费完整标准文本以及尚未获取的 SETAC 1991/1993 原始会议文集，本书不补造未读到的内部条款，正文提及 ISO 要求之处仅限公开预览定义或明确经由上述公开指南转述的条目。同样重要的是，符合任一评价框架的阶段步骤并通过外部审验或鉴证，只能证明核算遵循了该框架的程序与披露规则，本身既不能弥补缺失的实测排放数据，也不能替代后续各部将逐项展开的功能参照、清单边界、分配规则、影响模型与不确定性验证。",
+      "scope": "本节跨体系框架对照的付费原文边界、未获取史料边界与合规性认识边界。",
+      "evidenceIds": [
+        "ev-fw179-cml-framework",
+        "ev-fw179-ilcd-framework",
+        "ev-fw179-pef-framework",
+        "ev-fw179-ghgp-framework"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-fw179-cml-framework",
+          "relation": "supports",
+          "rationale": "CML 2001 Part 2a 为公开核验载体，其中 ISO 14042 条款属转述。"
+        },
+        {
+          "evidenceId": "ev-fw179-ilcd-framework",
+          "relation": "supports",
+          "rationale": "ILCD 2010 §11 说明审验细则当时尚在编制并以 ISO 14040/14044 为底线。"
+        },
+        {
+          "evidenceId": "ev-fw179-pef-framework",
+          "relation": "supports",
+          "rationale": "EU PEF 2021 Annex I §8.1 核查验证针对合规性与一致性而非替代实测物理验证。"
+        },
+        {
+          "evidenceId": "ev-fw179-ghgp-framework",
+          "relation": "supports",
+          "rationale": "GHG Protocol 产品标准 §12.1 鉴证提供清单报告可信度等级而非多指标环境因果证明。"
+        }
+      ],
+      "premiseIds": [
+        "cl-fw179-method-choice-effects"
+      ],
+      "conceptIds": [
+        "cn-review-scope"
+      ],
+      "caveats": [
+        "本节未直接核验 ISO 14040/14044 付费完整条款与 SETAC 1991/1993 原始会议全文。"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-20",
+      "reviewKind": "agent-source-check",
+      "reasoning": "显式声明付费标准与未获取史料边界，并区分框架程序合规与实证科学验证。"
     }
   ],
   "concepts": [

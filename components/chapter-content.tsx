@@ -3,6 +3,7 @@ import { part7RereadCorrections, part7RereadHistoryControls, part7RereadOrdinary
 import { functionalReferenceComparisonHistoryControls, functionalReferenceComparisonOrdinaryId, functionalReferenceComparisonSource } from '@/scripts/reader-functional-reference-comparison.mjs';
 import { hybridInventoryComparisonHistoryControls, hybridInventoryComparisonOrdinaryId, hybridInventoryComparisonRoute, hybridInventoryComparisonSource } from '@/scripts/reader-hybrid-inventory-comparison.mjs';
 import { part2RereadCorrections, part2RereadHistoryControls, part2RereadSource } from '@/scripts/reader-part2-reread.mjs';
+import { frameworkComparisonHistoryControls, frameworkComparisonOrdinaryId, frameworkComparisonSource } from '@/scripts/reader-framework-comparison.mjs';
 import { part3RereadCorrections, part3RereadHistoryControls, part3RereadOrdinaryId, part3RereadSource } from '@/scripts/reader-part3-reread.mjs';
 import { marketResponseComparisonHistoryControls, marketResponseComparisonOrdinaryId, marketResponseComparisonSource } from '@/scripts/reader-market-response-comparison.mjs';
 import { revisableJudgmentHistoryControls, revisableJudgmentOrdinaryId, revisableJudgmentRoutes, revisableJudgmentSource } from '@/scripts/reader-revisable-judgment.mjs';
@@ -34,7 +35,7 @@ import { landRecoveryHistoryControls, landRecoveryOrdinaryId, landRecoverySource
 import { circularFootprintHistoryControls, circularFootprintOrdinaryId, circularFootprintSource } from '@/scripts/reader-circular-footprint.mjs';
 import { loadShiftHistoryControls, loadShiftOrdinaryId, loadShiftSource } from '@/scripts/reader-load-shift.mjs';
 import { substitutionRulesHistoryControls, substitutionRulesOrdinaryId, substitutionRulesSource } from '@/scripts/reader-substitution-rules.mjs';
-import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity, currentBiogenicCarbon, currentEutrophicationPathways, currentParticulateComparison, currentPart4Reread, currentWeightingValuation, currentLocalizationComparison, currentSocialComparison, currentCostSustainability, currentPart5Reread, currentDataApplicabilityComparison, currentUncertaintyComparison, currentProductFootprintComparison, currentDataQualityComparison, currentPart6Reread, currentWallServiceComparison, currentInterpretationBags, currentFutureScenarios, currentRevisableJudgment, currentPart7Reread, currentMarketResponseComparison, currentPart3Reread, currentFunctionalReferenceComparison, currentHybridInventoryComparison, currentPart2Reread } from '@/scripts/reader-current-expectations.mjs';
+import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity, currentBiogenicCarbon, currentEutrophicationPathways, currentParticulateComparison, currentPart4Reread, currentWeightingValuation, currentLocalizationComparison, currentSocialComparison, currentCostSustainability, currentPart5Reread, currentDataApplicabilityComparison, currentUncertaintyComparison, currentProductFootprintComparison, currentDataQualityComparison, currentPart6Reread, currentWallServiceComparison, currentInterpretationBags, currentFutureScenarios, currentRevisableJudgment, currentPart7Reread, currentMarketResponseComparison, currentPart3Reread, currentFunctionalReferenceComparison, currentHybridInventoryComparison, currentPart2Reread, currentFrameworkComparison } from '@/scripts/reader-current-expectations.mjs';
 import { flowBoundaryHistoryControls, flowBoundaryHistoryTargets, flowBoundaryOrdinaryTargets, flowBoundaryOrdinaryId } from '@/scripts/reader-flow-boundary.mjs';
 import { serviceConstraintsHistoryControls, serviceConstraintsOrdinaryId, serviceConstraintsSource } from '@/scripts/reader-service-constraints.mjs';
 import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
@@ -101,6 +102,7 @@ const histories = [
   { controls: functionalReferenceComparisonHistoryControls(currentFunctionalReferenceComparison), edition: functionalReferenceComparisonSource, attribute: 'functional-reference-comparison' },
   { controls: hybridInventoryComparisonHistoryControls(currentHybridInventoryComparison), edition: hybridInventoryComparisonSource, attribute: 'hybrid-inventory-comparison' },
   { controls: part2RereadHistoryControls(currentPart2Reread), edition: part2RereadSource, attribute: 'part2-reread' },
+  { controls: frameworkComparisonHistoryControls(currentFrameworkComparison), edition: frameworkComparisonSource, attribute: 'framework-comparison' },
 ];
 
 function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
@@ -133,7 +135,8 @@ function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
     || marketResponseComparisonOrdinaryId(currentMarketResponseComparison, route, print, index)
     || part3RereadOrdinaryId(currentPart3Reread, route, print, index)
     || functionalReferenceComparisonOrdinaryId(currentFunctionalReferenceComparison, route, print, index)
-    || hybridInventoryComparisonOrdinaryId(currentHybridInventoryComparison, route, print, index);
+    || hybridInventoryComparisonOrdinaryId(currentHybridInventoryComparison, route, print, index)
+    || frameworkComparisonOrdinaryId(currentFrameworkComparison, route, print, index);
 }
 
 // Leave versioned native fragments below the screen's sticky site header.
@@ -167,7 +170,8 @@ export function currentReaderOrdinaryAttributes(route: string, print: boolean, i
       || id === marketResponseComparisonOrdinaryId(currentMarketResponseComparison, route, print, index)
       || id === part3RereadOrdinaryId(currentPart3Reread, route, print, index)
       || id === functionalReferenceComparisonOrdinaryId(currentFunctionalReferenceComparison, route, print, index)
-      || id === hybridInventoryComparisonOrdinaryId(currentHybridInventoryComparison, route, print, index))
+      || id === hybridInventoryComparisonOrdinaryId(currentHybridInventoryComparison, route, print, index)
+      || id === frameworkComparisonOrdinaryId(currentFrameworkComparison, route, print, index))
     ? { id, style: scientificHistoryScroll }
     : { id };
 }
@@ -254,7 +258,8 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
     || revisableJudgmentOrdinaryId(currentRevisableJudgment, cleanRoute, print, 'table')
     || marketResponseComparisonOrdinaryId(currentMarketResponseComparison, cleanRoute, print, 'table')
     || functionalReferenceComparisonOrdinaryId(currentFunctionalReferenceComparison, cleanRoute, print, 'table')
-    || hybridInventoryComparisonOrdinaryId(currentHybridInventoryComparison, cleanRoute, print, 'table');
+    || hybridInventoryComparisonOrdinaryId(currentHybridInventoryComparison, cleanRoute, print, 'table')
+    || frameworkComparisonOrdinaryId(currentFrameworkComparison, cleanRoute, print, 'table');
   const hasHybridInventoryTables = Boolean(currentHybridInventoryComparison && cleanRoute === hybridInventoryComparisonRoute);
   const hasLocalizationTables = Boolean(currentLocalizationComparison && cleanRoute === localizationComparisonRoute);
   const hasSocialTables = Boolean(currentSocialComparison && cleanRoute === socialComparisonRoute);

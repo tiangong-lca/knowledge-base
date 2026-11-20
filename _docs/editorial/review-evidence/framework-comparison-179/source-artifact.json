@@ -1,0 +1,2334 @@
+{
+  "schemaVersion": 1,
+  "kind": "source",
+  "unit": "framework-comparison-179",
+  "date": "2026-11-20",
+  "subjectSha256": "0b5c4268379d4394ca8fcbeee52ca92d9241edc99767267f826818c9eb41b362",
+  "scope": [
+    "content/monograph/framework-responsibilities.mdx",
+    "content/docs/book/framework-history.mdx",
+    "knowledge/catalog.json",
+    "knowledge/research/readings.json"
+  ],
+  "observed": "Unit 31 (B04 cross-system evaluation framework comparison, #179) against exact predecessor commit d4c9993b2ec2e395bba7a86ac6cb7213feccb183, comparing CML 2001/2002, ILCD 2010, EU PEF 2021 (2021/2279 Annex I), and GHG Protocol Product Standard (2011) with explicit ISO 14040/14044 paywalled-clause and SETAC boundaries.",
+  "observations": {
+    "state": {
+      "before": "4aa126f5508263e0107cd6e6248b58a116af4a887a760925235721a32b0129c5",
+      "after": "7eaeed679ad47a1417aa30841c4bf5ef11d90b20a2cc262a504639264c772ef9"
+    },
+    "changes": [
+      {
+        "kind": "file",
+        "key": "content/docs/book/framework-history.mdx",
+        "from": "243dc8a672f1cb62be2257138372263500dcc95ff099abc22f26ec815833522a",
+        "to": "3ad8c4af3e34272ae4b3acb848046bcee707767240bd0783456b3095d4995986",
+        "rationale": "Unit 31 (#179) B04 cross-system evaluation framework comparison update for file:content/docs/book/framework-history.mdx."
+      },
+      {
+        "kind": "file",
+        "key": "content/monograph/framework-responsibilities.mdx",
+        "from": "aede02111773a801ed0955d1f31fedd21fa3357ec3fb0a7f6ba86bf7d2ae5407",
+        "to": "1aa62d4bcd843511a37a76f1d88862aa8352ad462f152452402cc9e20fb1676c",
+        "rationale": "Unit 31 (#179) B04 cross-system evaluation framework comparison update for file:content/monograph/framework-responsibilities.mdx."
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fw179-decision-gates",
+        "from": null,
+        "to": {
+          "raw": "4771de92b88b23fb540fdf9f572d1e3d50c8c91ec74e0810ff496dbdb45aea3c",
+          "public": "4771de92b88b23fb540fdf9f572d1e3d50c8c91ec74e0810ff496dbdb45aea3c",
+          "protected": "7f54f3918aa435501590c965861f2278f486424fbb1a9070fc09e31e3d5b1f7a"
+        },
+        "rationale": "Unit 31 (#179) B04 cross-system evaluation framework comparison update for record:claims:cl-fw179-decision-gates."
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fw179-epistemic-limits",
+        "from": null,
+        "to": {
+          "raw": "b60e119a078f7fd15c47551d0e7a130f71fa1f2e5a21d62fd366560c11de3604",
+          "public": "b60e119a078f7fd15c47551d0e7a130f71fa1f2e5a21d62fd366560c11de3604",
+          "protected": "dd8b87b3a6e988c5e6090ebce18b8bddd6403a3f402d9d549882b2d860a2ac55"
+        },
+        "rationale": "Unit 31 (#179) B04 cross-system evaluation framework comparison update for record:claims:cl-fw179-epistemic-limits."
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fw179-impact-weighting",
+        "from": null,
+        "to": {
+          "raw": "84417bae50ff00f6f2e8397a286aa96abcccad5aab24c3dd145a3f1b30ee53f6",
+          "public": "84417bae50ff00f6f2e8397a286aa96abcccad5aab24c3dd145a3f1b30ee53f6",
+          "protected": "eb32feeac0c731a14c645907d598da898a95ae6e183edd3d1b089fbf1b8bc7be"
+        },
+        "rationale": "Unit 31 (#179) B04 cross-system evaluation framework comparison update for record:claims:cl-fw179-impact-weighting."
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fw179-method-choice-effects",
+        "from": null,
+        "to": {
+          "raw": "713d0cb0cd0e0bd8b5149156e5e179088a191f0b62147059e463f2e5fc8d1fca",
+          "public": "713d0cb0cd0e0bd8b5149156e5e179088a191f0b62147059e463f2e5fc8d1fca",
+          "protected": "5673c28d6bf7a3bd4d9342e50f811d44235819715c261d5c09c2a9a22026f6fc"
+        },
+        "rationale": "Unit 31 (#179) B04 cross-system evaluation framework comparison update for record:claims:cl-fw179-method-choice-effects."
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fw179-review-assurance",
+        "from": null,
+        "to": {
+          "raw": "9fab88ab9d8e054445def54a7cd52bae0c0ac09128ba74901f62fc5aa1539a0f",
+          "public": "9fab88ab9d8e054445def54a7cd52bae0c0ac09128ba74901f62fc5aa1539a0f",
+          "protected": "6be274665a4d4bcef1b36ba8a3e4b49d611538b4e14be076886933cb3f4f2238"
+        },
+        "rationale": "Unit 31 (#179) B04 cross-system evaluation framework comparison update for record:claims:cl-fw179-review-assurance."
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-fw179-shared-phases",
+        "from": null,
+        "to": {
+          "raw": "659efd02cb961aa818e324401f7f4d20f6573986dd8a6a902ec6f568fdac4b02",
+          "public": "659efd02cb961aa818e324401f7f4d20f6573986dd8a6a902ec6f568fdac4b02",
+          "protected": "99a5eede1bbee3ea2c37aceba56781076472ad7276376e4d88da59545100eef7"
+        },
+        "rationale": "Unit 31 (#179) B04 cross-system evaluation framework comparison update for record:claims:cl-fw179-shared-phases."
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fw179-cml-framework",
+        "from": null,
+        "to": {
+          "raw": "f0d2671ea3b8627d742c8e2b5392a5c97da58b9c0cca153081462c6e4240756e",
+          "public": "f0d2671ea3b8627d742c8e2b5392a5c97da58b9c0cca153081462c6e4240756e",
+          "protected": "f0d2671ea3b8627d742c8e2b5392a5c97da58b9c0cca153081462c6e4240756e"
+        },
+        "rationale": "Unit 31 (#179) B04 cross-system evaluation framework comparison update for record:evidence:ev-fw179-cml-framework."
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fw179-ghgp-framework",
+        "from": null,
+        "to": {
+          "raw": "75fb2b53cab48b5f435f133207d6df6885eec4d378df95e8089f6dd43bd01e6d",
+          "public": "75fb2b53cab48b5f435f133207d6df6885eec4d378df95e8089f6dd43bd01e6d",
+          "protected": "75fb2b53cab48b5f435f133207d6df6885eec4d378df95e8089f6dd43bd01e6d"
+        },
+        "rationale": "Unit 31 (#179) B04 cross-system evaluation framework comparison update for record:evidence:ev-fw179-ghgp-framework."
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fw179-ilcd-framework",
+        "from": null,
+        "to": {
+          "raw": "a1640879304c590151844b2098f5db3fedbc4dfef9e0b410d080e21755726254",
+          "public": "a1640879304c590151844b2098f5db3fedbc4dfef9e0b410d080e21755726254",
+          "protected": "a1640879304c590151844b2098f5db3fedbc4dfef9e0b410d080e21755726254"
+        },
+        "rationale": "Unit 31 (#179) B04 cross-system evaluation framework comparison update for record:evidence:ev-fw179-ilcd-framework."
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-fw179-pef-framework",
+        "from": null,
+        "to": {
+          "raw": "c6749c225f300bd9e621c1c1ea99f7c9996445a0e586f3a9645d31bb89255948",
+          "public": "c6749c225f300bd9e621c1c1ea99f7c9996445a0e586f3a9645d31bb89255948",
+          "protected": "c6749c225f300bd9e621c1c1ea99f7c9996445a0e586f3a9645d31bb89255948"
+        },
+        "rationale": "Unit 31 (#179) B04 cross-system evaluation framework comparison update for record:evidence:ev-fw179-pef-framework."
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-cml-2001-part2a",
+        "from": {
+          "raw": "0406a911af0b569bf9f1f8d38f632b92dd2c09765b1b24ae92822bdc76a7f840",
+          "public": null,
+          "protected": "0406a911af0b569bf9f1f8d38f632b92dd2c09765b1b24ae92822bdc76a7f840"
+        },
+        "to": {
+          "raw": "b16bd886b8682335387267df2e92f541c5be20b6b15c6e689172349452e26c45",
+          "public": null,
+          "protected": "b16bd886b8682335387267df2e92f541c5be20b6b15c6e689172349452e26c45"
+        },
+        "rationale": "Unit 31 (#179) B04 cross-system evaluation framework comparison update for record:readings:rd-cml-2001-part2a."
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-ilcd-2010",
+        "from": {
+          "raw": "c5a817e6f97055973dd5235361655ddafd4e669beefe936433bf64559f09fa9c",
+          "public": null,
+          "protected": "c5a817e6f97055973dd5235361655ddafd4e669beefe936433bf64559f09fa9c"
+        },
+        "to": {
+          "raw": "09b3a5d6008b9112b9164698d90d00d41fde0be7cedad8754fd10fa01a0be472",
+          "public": null,
+          "protected": "09b3a5d6008b9112b9164698d90d00d41fde0be7cedad8754fd10fa01a0be472"
+        },
+        "rationale": "Unit 31 (#179) B04 cross-system evaluation framework comparison update for record:readings:rd-ilcd-2010."
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-kb44-ec2021",
+        "from": {
+          "raw": "df045e3c21465c5de4541c259d43e41da3ecc9c74f033c8b225dafd3ed1154c1",
+          "public": null,
+          "protected": "df045e3c21465c5de4541c259d43e41da3ecc9c74f033c8b225dafd3ed1154c1"
+        },
+        "to": {
+          "raw": "0d8aa9b839d76aa9d1c501c3c18212f61789334074f695f8e1029d62a99315ed",
+          "public": null,
+          "protected": "0d8aa9b839d76aa9d1c501c3c18212f61789334074f695f8e1029d62a99315ed"
+        },
+        "rationale": "Unit 31 (#179) B04 cross-system evaluation framework comparison update for record:readings:rd-kb44-ec2021."
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-pfr151-ghgp-2011",
+        "from": {
+          "raw": "71e3080b9ee172f7aee594f7557e893b54d633cf178daea699316086312e60cf",
+          "public": null,
+          "protected": "71e3080b9ee172f7aee594f7557e893b54d633cf178daea699316086312e60cf"
+        },
+        "to": {
+          "raw": "0f2f26a46170b894ae1558d4a245fec8c01725e31bf070bbfad3783932309eed",
+          "public": null,
+          "protected": "0f2f26a46170b894ae1558d4a245fec8c01725e31bf070bbfad3783932309eed"
+        },
+        "rationale": "Unit 31 (#179) B04 cross-system evaluation framework comparison update for record:readings:rd-pfr151-ghgp-2011."
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:claims",
+        "from": {
+          "raw": "ddd45e222d41a234015ca144409e1672ff7ed0ee07839dcec57725817437679f",
+          "public": null,
+          "protected": "ddd45e222d41a234015ca144409e1672ff7ed0ee07839dcec57725817437679f"
+        },
+        "to": {
+          "raw": "b5f2c6a2d779bec41011020a1306c8a51f8369b1cd47ea0f554630877cb3cfd4",
+          "public": null,
+          "protected": "b5f2c6a2d779bec41011020a1306c8a51f8369b1cd47ea0f554630877cb3cfd4"
+        },
+        "rationale": "Unit 31 (#179) B04 cross-system evaluation framework comparison update for record:researchMetadata:order:claims."
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:evidence",
+        "from": {
+          "raw": "23fea7a3c75fe4238d86a1e241f6dd7afe7af8280abc9eaf4db42b7fb0f5401f",
+          "public": null,
+          "protected": "23fea7a3c75fe4238d86a1e241f6dd7afe7af8280abc9eaf4db42b7fb0f5401f"
+        },
+        "to": {
+          "raw": "84c3f9d0c8c2c155406afc349638fc214b67721ca8902b3c831cf1881a48286b",
+          "public": null,
+          "protected": "84c3f9d0c8c2c155406afc349638fc214b67721ca8902b3c831cf1881a48286b"
+        },
+        "rationale": "Unit 31 (#179) B04 cross-system evaluation framework comparison update for record:researchMetadata:order:evidence."
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:public-projection",
+        "from": {
+          "raw": "87e5b989f20b018ed6935f4a73bad612620998689fe0bbf482f48ef964c0d30a",
+          "public": null,
+          "protected": "87e5b989f20b018ed6935f4a73bad612620998689fe0bbf482f48ef964c0d30a"
+        },
+        "to": {
+          "raw": "889ce35aa1f3207cde6b83f6ce52d43398bd056238c5172b88990c677213614d",
+          "public": null,
+          "protected": "889ce35aa1f3207cde6b83f6ce52d43398bd056238c5172b88990c677213614d"
+        },
+        "rationale": "Unit 31 (#179) B04 cross-system evaluation framework comparison update for record:researchMetadata:public-projection."
+      }
+    ],
+    "consumers": [
+      {
+        "id": "cl-flow-type",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-exchange",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-flow-exchange-distinction",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-waste-no-universal",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-ilcd-reference-flow",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-ilcd-fu",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-fu-distinction",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-fu-example",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-zero-example",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-bw-direction",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-bw-sign",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-book-service",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-book-service-contract",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-book-cml-reference",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-book-ilcd-reference",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-book-reference-reading",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-book-comparison-more",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-book-three-comparisons",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-book-interpret-iterate",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-book-not-equivalent",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-book-conclusion-conditions",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-book-integrative-function",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-book-integrative-iteration",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-book-integrative-path",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-regional-localization-not-translation",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-regional-method-origin-not-validity",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-regional-benchmarks-and-policy-goals",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-regional-wf-ambiguity",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-regional-research-agenda-not-country-claim",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-db2011-review-relative-to-criteria",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-db2011-validation-context",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-db2011-versioned-confidence",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-future-definition",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-future-scale-up",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-future-incumbent",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-future-scenarios",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-future-background",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-future-impact-limits",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-future-comparison-conditions",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-connect-object-before-unit",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-connect-service-changes-system",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-connect-three-scalings",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-connect-time-relations",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-connect-prospective-two-questions",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-connect-reuse-keeps-relation",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-connect-evidence-to-probability",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-connect-useful-without-winner",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-connect-review-does-not-transfer",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-connect-next-evidence-at-link",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wall-question",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wall-quantities",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wall-reference",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wall-same-mass",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wall-coordinates",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wall-demand",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wall-activities",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wall-balance-meaning",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wall-inventory",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wall-inventory-boundary",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wall-factor-choice",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wall-characterization",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wall-metric-meaning",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wall-time",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wall-unknown",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wall-paired-range",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wall-pairing",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wall-tolerance",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wall-rough-demand",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wall-rough-comparison",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wall-exercise",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wall-answer",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-framework-design-sideeffects",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-framework-cml-information",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-framework-cml-two-outputs",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-framework-comparison-not-replacement",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-framework-reader-work-product",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-market-closing",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-hyb-accounts",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-hyb-service",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-hyb-ledger",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-hyb-invoices",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-hyb-raw",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-hyb-naive",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-hyb-remove",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-hyb-equations",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-hyb-corrected",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-hyb-naive-result",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-hyb-swap",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-hyb-swap-result",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-hyb-audit",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-es-authority",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-es-three",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-es-equation",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-es-why-square",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-es-nmvoc",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-es-nox",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-es-service",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-es-score",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-es-scale",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-es-threshold",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-es-test",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-es-later",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-es-judgment",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-purpose",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-policy-contrast",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-baseline",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-units",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-display",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-logit",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-trade",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-precision",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-primary-ratio",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-households",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-health",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-mismatch",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-annual",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-shares",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-two-forms",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-different-card",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-english",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-english-basis",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-service",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-japan-route",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-break-even",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-english-route",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-numeraire",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-edition",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-validity",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-null",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-order",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-transfer",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lime-decision",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-pack-limits",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cn-question",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cn-two-branches",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cn-characterization",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cn-reference",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cn-service-period",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cn-target",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cn-weight-meaning",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cn-cancellation",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cn-time-bridge",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cn-resource-meaning",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cn-resource-units",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cn-parameter-history",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cn-later-critique",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cn-policy-records",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cn-changed-reference",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cn-policy-limit",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cn-hk-borrowing",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cn-hk-local",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cn-hk-weights",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cn-standard-authority",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cn-conclusion",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cycle-opening",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cycle-service-boundary",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cycle-product-yield",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cycle-fixed-cascade",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cycle-extraction-rule",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cycle-adjacent-rule",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cycle-printed-correction",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cycle-same-name",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cycle-substitution-chain",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cycle-virgin-reference",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cycle-annual-quality",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cycle-grade-quality",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cycle-substitution-point",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cycle-performance-question",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cycle-energy-products",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cycle-energy-mismatch",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cycle-energy-matched",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cycle-energy-comparison",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cycle-heat-only",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cycle-market-question",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cycle-conclusion",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-opening",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-rp",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-why-chain",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-force",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-category",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-version",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-use-boundary",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-default",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-results-layer",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-reconstruction-limit",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-review-objects",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-review-2018",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-review-2024",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-review-identity",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-validity",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-methane-rule",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-nordic-design",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-niu-provenance",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-ipcc-class",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-model-meaning",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-comparison-limits",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-evidence-judgment",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-conclusion",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-wash-cycles",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-wash-inputs",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-use-result",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-report-split",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-quantity-scale",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-capital-gap",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-storage-gap",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-ration-units",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-niu-result",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-ipcc-result",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rule-issuer",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-pm-population-meaning",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-pm-factor-correction",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-pm-implementation-layer",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-pm-matched-scope",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-pm-uncovered-pathways",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-pm-conclusion",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-pm-activity-indicators",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-opening",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-service",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-coordinates",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-voltage-path",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-grid-assets",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-loss-definition",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-norway-loss",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-segment-denominators",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-database-voltage",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-loss-proxy",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-egrid-scope",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-egrid-adjustments",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-egrid-rate",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-egrid-loss",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-egrid-loss-conflict",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-region-membership",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-eia-emissions",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-average-response",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-historical-generation",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-historical-consumption",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-empirical-limits",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-price-versus-energy",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-native-model",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-native-scenario",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-native-loss",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-native-loss-document",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-native-interpolation",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-native-output",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-native-ratios",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-native-check-meaning",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-native-two-hours",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-native-pollutants",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-native-application",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-future-question",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-future-system",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-future-perturbation",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-future-postprocessing",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-future-balance",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-future-load-parts",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-future-distribution",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-future-direct-rates",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-future-three-questions",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-future-gases",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-future-gases-total",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-future-scenario",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-future-time",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-future-formula",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-alternative-lca",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-validation-objects",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-connection",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-nonbaseload",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-native-coordinate",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-power-future-storage-policy",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-opening",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-record-and-link",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-bottle-reference",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-example-scope",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-opposite",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-scale",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-matrix-sign",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-allocation-held",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-representation-result",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-small-inventory",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-same-flow-total",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-three-co2-quantities",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-allocation-result",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-printed-comparator",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-missing-link",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-missing-link-score",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-jrc-instance",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-jrc-connectors",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-jrc-parameters",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-jrc-weight-control",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-jrc-bare-setup",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-jrc-machine-edge",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-jrc-machine-coordinate",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-jrc-source-discrepancy",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-jrc-partial-match",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-jrc-result-projection",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-jrc-version-reference",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-format-scope",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-format-original-target",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-format-double-target",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-format-result-scale",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-result-direction",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-conversion-study",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-factor-probe",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-factor-zero-absent",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-factor-real-gap",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-factor-report",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-preservation-meaning",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-native-service-meaning",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cml-components",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cml-target-before-improvement",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cml-feasibility",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cml-soot",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cml-design-loop",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cml-weight-description",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cml-checks",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cml-checks-preference",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cml-guide-genres",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cml-check-order",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cml-rearrangement",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cml-weights-2001",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cml-recommendation",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cml-decision-levels",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cml-covenant",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cml-decision-procedure",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cml-reception-question",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cml-screening-boundaries",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cml-reception-lineage",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cml-ending",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cml-solvent-bins",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cml-range-bins",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cml-operational-availability",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-climate-wall-fixed",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-climate-wall-reweighted",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-climate-comparison-criteria",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-climate-conclusion",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-closing-wall-substrate",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-closing-historical-return",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cml-response-scale",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cml-screening-range-limit",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-book-maintenance-condition",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-book-record-model-limit",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-inv-service-to-demand",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-db2011-conditional-use",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-pm-matched-scenario",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-pm-version-and-model",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-book-future-scenario-matrix",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-book-future-decision",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-book-unc-bridge",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-book-social-results-to-cost",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-book-cost-decision",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-flow99-two-boundaries",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-flow99-elementary",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-flow99-landfill",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-flow99-boundary-consequence",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-flow99-agricultural-boundary",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-flow99-boundary-exceptions",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-flow99-record-and-instance",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-flow99-schema-levels",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-flow99-identity-example",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-flow99-waste-classification",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-flow99-material-and-service",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-flow99-direction-equivalence",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-flow99-reference-levels",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-flow99-basis-and-demand",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-flow99-pesticide-interface",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-flow99-interface-consequence",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-flow99-phosphorus-interface",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-flow99-zero-placeholder",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-flow99-zero-reasons",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-flow99-zero-reporting",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-flow99-conclusion",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-flow99-probe-reference",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-sub105-two-uses",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-sub105-pef-report",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-sub105-ilcd-market",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-sub105-ilcd-absorption",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-sub105-pef-direct",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-sub105-evidence-example",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-sub105-fallbacks",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-sub105-conditional-results",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-sub105-reporting-objects",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-shift107-complete-action",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-shift107-joint-direction",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-shift107-service",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-shift107-supply",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-shift107-small",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-shift107-large",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-shift107-control",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-shift107-comparison-judgment",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cff109-question",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cff109-quality",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cff109-control",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cff109-version",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cff109-response",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-cff109-judgment",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-bio127-midpoint-endpoint-genealogy",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-bio127-feedback-perspective-asymmetry",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-bio127-ef31-subindicator-partition",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-bio127-zero-zero-vs-minus-plus-one",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-bio127-co-removal-and-methane-shift",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-bio127-package-and-report-discrepancies",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-bio127-storage-abolition-and-dluc-window",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-bio127-climate-diagnostic-synthesis",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-eutro129-category-genealogy",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-eutro129-phosphorus-soil-water-interface",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-eutro129-phosphorus-stoichiometry-and-p2o5",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-eutro129-nitrogen-soil-prohibition",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-eutro129-aquatic-and-airborne-n-reversals",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-eutro129-location-copies-and-nox-inversion",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-eutro129-normalization-double-counting-and-xml-anomalies",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-eutro129-operational-synthesis",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-particulate131-indicator-cutpoints",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-particulate131-size-and-subcompartment",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-particulate131-cohen-empirical-limits",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-particulate131-precursor-perspectives",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-particulate131-ef-ammonia-inversion",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-particulate131-regional-endpoint-reversal",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-particulate131-package-discrepancies",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-weight135-ef-coating-outdoor",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-weight135-ef-coating-indoor",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-weight135-ef-robustness-weights",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-weight135-denominator-coupling-and-drift",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-weight135-comparative-assertion-regimes",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-weight135-target-vs-hybrid-boundary",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-weight135-lime-three-table-rereversal",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-weight135-recipe-endpoint-stop",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-weight135-health-perspective-reversal",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-weight135-four-paradigm-synthesis",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-weight135-monetary-incommensurability",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-weight135-glam3-reporting-discipline",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-loc137-ef31-location-regimes",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-loc137-ef31-global-nf-extrapolation",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-loc137-dirty-denominator-paradox",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-loc137-open-economy-boundary-reversal",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-loc137-biophysical-vs-political-units",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-loc137-pm-nonlinear-and-endpoint-reversals",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-loc137-institutional-adoption-vs-compliance",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-loc137-four-layer-localization-audit",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-soc139-portfolio-reference-and-comparative-assertions",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-soc139-occupational-health-pathways-and-rights-boundary",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-soc139-cross-pillar-overlap-audit",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lcc143-three-lcc-archetypes-and-value-added-consolidation",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lcc143-actor-split-incentive-and-discount-rate-reversal",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lcc143-five-monetary-quantities-and-shadow-price-double-counting",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lcc143-cut-off-asymmetry-and-cost-rebound-boundary",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lcc143-demarcating-ra-eia-and-mfa-ioa",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-lcc143-single-issue-footprints-vs-multi-indicator-profiles",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-dapp147-dataset-roles-and-system-linking",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-dapp147-intrinsic-vs-context-representativeness",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-dapp147-quality-architectures-and-prerequisite-split",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-dapp147-weakest-link-vs-mean-and-80pct-masking",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-dapp147-validation-vs-review-and-team-thresholds",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-dapp147-five-aspect-compliance-and-uuid-semantics",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-dapp147-package-migration-inheritance-and-surveillance",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-unc149-framework-comparison",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-unc149-local-vs-global-sa",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-unc149-taylor-vs-sampling",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-unc149-gsa-outliers-nonlinearity",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-unc149-mc-runs-precision-vs-accuracy",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-unc149-comparative-paired-and-pvalue",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-unc149-pedigree-mc-boundary",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-pfr151-binding-batteries",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-pfr151-espr-dpp-conversion",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-pfr151-ghgp-boundary-unit",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-pfr151-ghgp-vs-battery-accounting",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-pfr151-assurance-vs-notified-body",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-pfr151-product-vs-corporate-scope3",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-pfr151-comparative-assertion-gates",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-pfr151-paywalled-standard-boundaries",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-dqp-ecoinvent-v3-variance",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-dqp-pef-ordinal-dqr",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-dqp-ghgp-qualitative-dqi",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-dqp-four-framework-synthesis",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-dqp-paywalled-iso-boundary",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-dqp-cross-chapter-bridge",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wsc157-equivalence-and-pairing",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wsc157-paired-vs-mc-fallacy",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wsc157-ilcd-comparative-assertion",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wsc157-pef-pefcr-and-classes",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wsc157-ghgp-and-paywalled-iso",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-wsc157-comparison-synthesis-bridge",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-int159-danish-epa-fu-eol",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-int159-danish-epa-multi-indicator",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-int159-ilcd-pef-interpretation-hotspots",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-int159-critical-review-governance",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-int159-limitations-and-paywalled-iso",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-int159-interpretation-synthesis-bridge",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-fut161-terminology-axes",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-fut161-upscaling-methods",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-fut161-superstructure-iam",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-fut161-superstructure-limits",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-fut161-dynamic-time-horizons",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-fut161-temporal-barriers-values",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rev163-lcia-pathway-and-packet-drift",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rev163-circular-and-prospective-coupling",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rev163-pedigree-dqr-and-sampling-limits",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rev163-comparative-assertion-three-regimes",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rev163-targeted-revision-routing",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-rev163-monograph-closing-boundary",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-mkt169-shared-questions",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-mkt169-conditional-convergence",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-mkt169-context-and-scale",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-mkt169-electricity-mix-regimes",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-mkt169-coproduct-substitution",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-mkt169-ranking-inversions",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-mkt169-epistemic-limits",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-fr173-shared-core",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-fr173-layer-split",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-fr173-intermediate-unit",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-fr173-conversion-and-attributes",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-fr173-comparability-gates",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-fr173-epistemic-limits",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-hyb175-shared-completeness-dilemma",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-hyb175-process-standards-cutoff-and-capital",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-hyb175-eeio-admission-and-hybrid-architectures",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-hyb175-double-counting-governance",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-hyb175-price-aggregation-and-denominator-comparability",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      },
+      {
+        "id": "cl-hyb175-epistemic-limits",
+        "rationale": "Downstream claim referencing B04 framework comparison scope verified unchanged."
+      }
+    ],
+    "assessment": {
+      "scope": "Unit 31 (B04 cross-system evaluation framework comparison, #179) against exact predecessor commit d4c9993b2ec2e395bba7a86ac6cb7213feccb183, comparing CML 2001/2002, ILCD 2010, EU PEF 2021 (2021/2279 Annex I), and GHG Protocol Product Standard (2011) with explicit ISO 14040/14044 paywalled-clause and SETAC boundaries.",
+      "conservation": "Adds 4 exact SHA-256-matched PDF passages, 4 evidence records (4 verified numericFacts), 6 comparative synthesis claims (1,118 -> 1,124), and 1 structured 4-system table in both B04 book and B04-web1; 0 new H2 sections (120 ceiling preserved), 0 caseBinding edits (6/6 B04 / 242 book-wide untouched), and 40/40 knowledge/cases/ files byte-identical.",
+      "review": "Independent Primary-Source, Numeric & Non-Mutation Auditor (24a51c79) re-verified PASS (0 BLOCKER / 0 MAJOR / 0 MINOR) after fixing PEF artifactId/§1 and GHG Protocol printed pages."
+    }
+  }
+}
