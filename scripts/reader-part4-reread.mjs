@@ -749,7 +749,12 @@ const part7SuccessorOverrideKeys = Object.freeze(new Set([
   `/print#${printUnitAnchor('/docs/book')}-part4-133-ordinary-8`,
 ]));
 
-export function qualifyPart4RereadHistory(documents, unit, actual, particulateComparison, biogenicCarbon, part5Reread = null, part6Reread = null, part7Reread = null, part3Reread = null, part2Reread = null) {
+const part1SuccessorOverrideKeys = Object.freeze(new Set([
+  `/docs/book#${chapterAnchorPrefix('/docs/book')}-part4-133-ordinary-2`,
+  `/print#${printUnitAnchor('/docs/book')}-part4-133-ordinary-2`,
+]));
+
+export function qualifyPart4RereadHistory(documents, unit, actual, particulateComparison, biogenicCarbon, part5Reread = null, part6Reread = null, part7Reread = null, part3Reread = null, part2Reread = null, part1Reread = null) {
   if (!unit) return { prior: actual, errors: [] };
   const overrides = unit.history?.ordinaryOverrides;
   if (!validOrdinaryOverridesShape(overrides, true))
@@ -817,6 +822,17 @@ export function qualifyPart4RereadHistory(documents, unit, actual, particulateCo
       } else {
         successorOverrides[key] = { from: raw[key].from, to: raw[key].to };
       }
+      allowedSuccessorKeys.add(key);
+    }
+  }
+  if (part1Reread) {
+    const raw = part1Reread.history?.ordinaryOverrides;
+    if (!plainObject(raw) || [...part1SuccessorOverrideKeys].some(key => !plainObject(raw[key])
+        || !scienceDigest(raw[key].from) || !scienceDigest(raw[key].to) || raw[key].from === raw[key].to))
+      throw new Error('Part IV continuous reread successor ordinaryOverrides violates the 2-key Part I allowlist');
+    successorOverrides = { ...(successorOverrides ?? {}) };
+    for (const key of part1SuccessorOverrideKeys) {
+      successorOverrides[key] = { from: raw[key].from, to: raw[key].to };
       allowedSuccessorKeys.add(key);
     }
   }

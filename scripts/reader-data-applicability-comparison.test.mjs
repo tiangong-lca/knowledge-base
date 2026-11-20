@@ -5,6 +5,7 @@ import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 import mkt from '../config/reader-market-response-comparison.json' with { type: 'json' };
 import part3 from '../config/reader-part3-reread.json' with { type: 'json' };
 import fr from '../config/reader-functional-reference-comparison.json' with { type: 'json' };
+import part1 from '../config/reader-part1-reread.json' with { type: 'json' };
 import fw from '../config/reader-framework-comparison.json' with { type: 'json' };
 import part2 from '../config/reader-part2-reread.json' with { type: 'json' };
 import hyb from '../config/reader-hybrid-inventory-comparison.json' with { type: 'json' };
@@ -12,6 +13,7 @@ import part7 from '../config/reader-part7-reread.json' with { type: 'json' };
 import { restoreMarketResponseComparisonTestFiles } from './reader-market-response-comparison.mjs';
 import { restorePart3RereadTestFiles } from './reader-part3-reread.mjs';
 import { restoreFunctionalReferenceComparisonTestFiles } from './reader-functional-reference-comparison.mjs';
+import { restorePart1RereadTestFiles } from './reader-part1-reread.mjs';
 import { restoreFrameworkComparisonTestFiles } from './reader-framework-comparison.mjs';
 import { restorePart2RereadTestFiles } from './reader-part2-reread.mjs';
 import { restoreHybridInventoryComparisonTestFiles } from './reader-hybrid-inventory-comparison.mjs';
@@ -71,7 +73,7 @@ import {
 } from './reader-data-applicability-comparison.mjs';
 
 test('Data applicability comparison enforces exact 1052 claims, 18 single-artifact evidence pairs, 63 BigInt facts and zero-survivor mutation', () => {
-  const prev147 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, fw.unit), part2.unit), hyb.unit), fr.unit), part3.unit), mkt.unit), part7.unit), rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit);
+  const prev147 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part1.unit), fw.unit), part2.unit), hyb.unit), fr.unit), part3.unit), mkt.unit), part7.unit), rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit);
   assert.equal(prev147.catalog.claims.length, 1052);
   assert.equal(catalog.claims.filter(c => c.id.startsWith('cl-dapp147-')).length, 8);
   assert.equal(catalog.evidence.filter(e => e.id.startsWith('ev-dapp147-')).length, 18);
@@ -169,7 +171,7 @@ test('Data applicability comparison source plan recovers exact c5b90b03 state an
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [p, bytes] of [...shiftFiles, ...serviceFiles]) files.set(p, bytes);
-  restoreMarketResponseComparisonTestFiles(restorePart3RereadTestFiles(restoreFunctionalReferenceComparisonTestFiles(restoreHybridInventoryComparisonTestFiles(restorePart2RereadTestFiles(restoreFrameworkComparisonTestFiles(files, fw.unit), part2.unit), hyb.unit), fr.unit), part3.unit), mkt.unit);
+  restoreMarketResponseComparisonTestFiles(restorePart3RereadTestFiles(restoreFunctionalReferenceComparisonTestFiles(restoreHybridInventoryComparisonTestFiles(restorePart2RereadTestFiles(restoreFrameworkComparisonTestFiles(restorePart1RereadTestFiles(files, part1.unit), fw.unit), part2.unit), hyb.unit), fr.unit), part3.unit), mkt.unit);
   restorePart7RereadTestFiles(files, part7.unit);
   restoreRevisableJudgmentTestFiles(files, rev.unit);
   restoreFutureScenariosTestFiles(files, fut.unit);
@@ -179,7 +181,7 @@ test('Data applicability comparison source plan recovers exact c5b90b03 state an
   restoreDataQualityComparisonTestFiles(files, dqp.unit);
   restoreProductFootprintComparisonTestFiles(files, pfr.unit);
   restoreUncertaintyComparisonTestFiles(files, unc.unit);
-  const prev147 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, fw.unit), part2.unit), hyb.unit), fr.unit), part3.unit), mkt.unit), part7.unit), rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit);
+  const prev147 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part1.unit), fw.unit), part2.unit), hyb.unit), fr.unit), part3.unit), mkt.unit), part7.unit), rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit);
   const input = { ...prev147, files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
@@ -227,7 +229,7 @@ test('Data applicability comparison source plan recovers exact c5b90b03 state an
 });
 
 test('Data applicability comparison receipt binding behaves fail-closed before and after capture pinning', () => {
-  const prev147 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, fw.unit), part2.unit), hyb.unit), fr.unit), part3.unit), mkt.unit), part7.unit), rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit);
+  const prev147 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part1.unit), fw.unit), part2.unit), hyb.unit), fr.unit), part3.unit), mkt.unit), part7.unit), rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit);
   const expected = readerPublicDownloads(prev147.catalog, prev147.literature, prev147.readings);
   if (dataApplicabilityComparisonCapturePin === null) {
     const unit = structuredClone(config.unit);

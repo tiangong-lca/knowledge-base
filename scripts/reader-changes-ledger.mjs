@@ -26,6 +26,7 @@ import {
   currentHybridInventoryComparison,
   currentPart2Reread,
   currentFrameworkComparison,
+  currentPart1Reread,
   currentMarketResponseComparison,
   currentPart3Reread,
   currentPart7Reread,
@@ -58,6 +59,7 @@ import { part6RereadCorrections, part6RereadSource } from './reader-part6-reread
 import { part7RereadCorrections, part7RereadSource } from './reader-part7-reread.mjs';
 import { part3RereadCorrections, part3RereadSource } from './reader-part3-reread.mjs';
 import { part2RereadCorrections, part2RereadSource } from './reader-part2-reread.mjs';
+import { part1RereadCorrections, part1RereadSource } from './reader-part1-reread.mjs';
 
 const titleByRoute = new Map();
 for (const entry of [...(numbering.web ?? []), ...(numbering.book ?? [])]) {
@@ -110,6 +112,7 @@ function summarizeUnit(unit, fallbackSource = null) {
  */
 export function buildPublicChangesLedger() {
   const orderedUnits = [
+    summarizeUnit(currentPart1Reread),
     summarizeUnit(currentFrameworkComparison),
     summarizeUnit(currentPart2Reread),
     summarizeUnit(currentHybridInventoryComparison),
@@ -188,6 +191,7 @@ export function buildPublicChangesLedger() {
     [currentPart7Reread, currentPart7Reread?.id, part7RereadSource, part7RereadCorrections],
     [currentPart3Reread, currentPart3Reread?.id, part3RereadSource, part3RereadCorrections],
     [currentPart2Reread, currentPart2Reread?.id, part2RereadSource, part2RereadCorrections],
+    [currentPart1Reread, currentPart1Reread?.id, part1RereadSource, part1RereadCorrections],
   ];
   const seenCorr = new Set();
   for (const [active, unitId, source, rows] of correctionSets) {
@@ -210,6 +214,15 @@ export function buildPublicChangesLedger() {
   const corrections = rawCorrections.reverse();
 
   const partIntroductions = [
+    currentPart1Reread && {
+      part: 1,
+      title: numbering.parts?.[0]?.title ?? '问题的来源',
+      unitId: currentPart1Reread.id,
+      date: part1RereadSource.date,
+      from: currentPart1Reread.partIntroduction.from,
+      to: currentPart1Reread.partIntroduction.to,
+      sourceHref: citationSourceHref(part1RereadSource.commit),
+    },
     currentPart2Reread && {
       part: 2,
       title: numbering.parts?.[1]?.title ?? '第二部',

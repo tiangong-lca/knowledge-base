@@ -4,6 +4,7 @@ import { selectFunctionalReferenceComparison, prepareFunctionalReferenceComparis
 import { selectHybridInventoryComparison, prepareHybridInventoryComparisonSource, effectiveHybridInventoryComparison, verifyHybridInventoryComparisonReceipts } from './reader-hybrid-inventory-comparison.mjs';
 import { selectPart2Reread, preparePart2RereadSource, effectivePart2Reread, verifyPart2RereadReceipts } from './reader-part2-reread.mjs';
 import { selectFrameworkComparison, prepareFrameworkComparisonSource, effectiveFrameworkComparison, verifyFrameworkComparisonReceipts } from './reader-framework-comparison.mjs';
+import { selectPart1Reread, preparePart1RereadSource, effectivePart1Reread, verifyPart1RereadReceipts } from './reader-part1-reread.mjs';
 import { selectPart7Reread, preparePart7RereadSource, effectivePart7Reread, verifyPart7RereadReceipts } from './reader-part7-reread.mjs';
 import { selectRevisableJudgment, prepareRevisableJudgmentSource, effectiveRevisableJudgment, verifyRevisableJudgmentReceipts } from './reader-revisable-judgment.mjs';
 import { selectFutureScenarios, prepareFutureScenariosSource, effectiveFutureScenarios, verifyFutureScenariosReceipts } from './reader-future-scenarios.mjs';
@@ -96,6 +97,9 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const fwConfig = await readConfig('reader-framework-comparison.json');
   const frameworkComparison = selectFrameworkComparison(fwConfig, undefined, preview === 'framework-comparison');
   if (preview === 'framework-comparison' && fwConfig.status !== 'preview') throw new Error('Framework comparison review requires a private preview state');
+  const part1Config = await readConfig('reader-part1-reread.json');
+  const part1Reread = selectPart1Reread(part1Config, undefined, preview === 'part1-reread');
+  if (preview === 'part1-reread' && part1Config.status !== 'preview') throw new Error('Part I continuous reread review requires a private preview state');
   const revConfig = await readConfig('reader-revisable-judgment.json');
   const revisableJudgment = selectRevisableJudgment(revConfig, undefined, preview === 'revisable-judgment');
   if (preview === 'part7-reread' && part7Config.status !== 'preview') throw new Error('Part VII continuous reread review requires a private preview state');
@@ -195,6 +199,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (landRecovery && !circularFootprint) throw new Error('Land recovery requires the accepted #109 generation');
   if (part2Reread && !hybridInventoryComparison) throw new Error('Part II continuous reread requires the accepted #175 generation');
   if (frameworkComparison && !part2Reread) throw new Error('Framework comparison requires the accepted #177 generation');
+  if (part1Reread && !frameworkComparison) throw new Error('Part I continuous reread requires the accepted #179 generation');
   if (hybridInventoryComparison && !functionalReferenceComparison) throw new Error('Hybrid inventory comparison requires the accepted #173 generation');
   if (functionalReferenceComparison && !part3Reread) throw new Error('Functional reference comparison requires the accepted #171 generation');
   if (part3Reread && !marketResponseComparison) throw new Error('Part III continuous reread requires the accepted #169 generation');
@@ -227,7 +232,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (acidEquivalents && !landRecovery) throw new Error('Acid equivalents requires the accepted #111 generation');
   for (const [path, bytes] of await readLoadShiftCaseFiles(root, loadShift)) files.set(path, bytes);
   for (const [path, bytes] of await readServiceConstraintsFiles(root, serviceConstraints)) files.set(path, bytes);
-  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison, waterScarcity, biogenicCarbon, eutrophicationPathways, particulateComparison, part4Reread, weightingValuation, localizationComparison, socialComparison, costSustainability, part5Reread, dataApplicabilityComparison, uncertaintyComparison, productFootprintComparison, dataQualityComparison, part6Reread, wallServiceComparison, interpretationBags, futureScenarios, revisableJudgment, part7Reread, marketResponseComparison, part3Reread, functionalReferenceComparison, hybridInventoryComparison, part2Reread, frameworkComparison].filter(Boolean)];
+  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison, waterScarcity, biogenicCarbon, eutrophicationPathways, particulateComparison, part4Reread, weightingValuation, localizationComparison, socialComparison, costSustainability, part5Reread, dataApplicabilityComparison, uncertaintyComparison, productFootprintComparison, dataQualityComparison, part6Reread, wallServiceComparison, interpretationBags, futureScenarios, revisableJudgment, part7Reread, marketResponseComparison, part3Reread, functionalReferenceComparison, hybridInventoryComparison, part2Reread, frameworkComparison, part1Reread].filter(Boolean)];
   const realRoot = await realpath(root);
   const reviewFiles = new Set((reviewUnits ?? []).flatMap(unit =>
     (unit.reviewEvidence ?? []).flatMap(row => [row.reportFile, row.artifactFile])));
@@ -242,8 +247,10 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const input = { catalog, readings, literature, files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
-  const fw = frameworkComparison && prepareFrameworkComparisonSource(frameworkComparison, input, actual, structure);
-  const fwInput = fw ? { ...fw.previousRecords, files: fw.files } : input;
+  const part1 = part1Reread && preparePart1RereadSource(part1Reread, input, actual, structure);
+  const part1Input = part1 ? { ...part1.previousRecords, files: part1.files } : input;
+  const fw = frameworkComparison && prepareFrameworkComparisonSource(frameworkComparison, part1Input, part1?.previous ?? actual, part1?.structure ?? structure);
+  const fwInput = fw ? { ...fw.previousRecords, files: fw.files } : part1Input;
   const part2 = part2Reread && preparePart2RereadSource(part2Reread, fwInput, fw?.previous ?? actual, fw?.structure ?? structure);
   const part2Input = part2 ? { ...part2.previousRecords, files: part2.files } : fwInput;
   const hyb = hybridInventoryComparison && prepareHybridInventoryComparisonSource(hybridInventoryComparison, part2Input, part2?.previous ?? actual, part2?.structure ?? structure);
@@ -491,9 +498,14 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
     if (!verifyFutureScenariosReceipts(futureScenarios, artifacts, readerPublicDownloads(revInput.catalog, revInput.literature, revInput.readings)))
       throw new Error('Future technology & scenarios comparison lacks exact independent source, reader, and output evidence');
   }
+  if (part1Reread && preview !== 'part1-reread') {
+    const { readerPublicDownloads } = await import('./reader-current-output.mjs');
+    if (!verifyPart1RereadReceipts(part1Reread, artifacts, readerPublicDownloads(catalog, literature, readings)))
+      throw new Error('Part I continuous reread lacks exact independent source, reader, and output evidence');
+  }
   if (frameworkComparison && preview !== 'framework-comparison') {
     const { readerPublicDownloads } = await import('./reader-current-output.mjs');
-    if (!verifyFrameworkComparisonReceipts(frameworkComparison, artifacts, readerPublicDownloads(catalog, literature, readings)))
+    if (!verifyFrameworkComparisonReceipts(frameworkComparison, artifacts, readerPublicDownloads(part1Input.catalog, part1Input.literature, part1Input.readings)))
       throw new Error('Framework comparison lacks exact independent source, reader, and output evidence');
   }
   if (part2Reread && preview !== 'part2-reread') {
@@ -590,7 +602,8 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const qualifiedFr = effectiveFunctionalReferenceComparison(qualifiedPart3, functionalReferenceComparison, fr?.affectedClaimIds);
   const qualifiedHyb = effectiveHybridInventoryComparison(qualifiedFr, hybridInventoryComparison, hyb?.affectedClaimIds);
   const qualifiedPart2 = effectivePart2Reread(qualifiedHyb, part2Reread, part2?.affectedClaimIds);
-  return effectiveFrameworkComparison(qualifiedPart2, frameworkComparison, fw?.affectedClaimIds);
+  const qualifiedFw = effectiveFrameworkComparison(qualifiedPart2, frameworkComparison, fw?.affectedClaimIds);
+  return effectivePart1Reread(qualifiedFw, part1Reread, part1?.affectedClaimIds);
 }
 
 export function validateReadableBookCurrent(root, catalog, readings, literature) {
@@ -816,4 +829,10 @@ export function validateFrameworkComparisonReviewSources(root, catalog, readings
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Framework comparison review requires the explicit private preview');
   return qualifyCurrentReaderSources(root, catalog, readings, literature, 'framework-comparison');
+}
+
+export function validatePart1RereadReviewSources(root, catalog, readings, literature) {
+  if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
+    throw new Error('Part I continuous reread review requires the explicit private preview');
+  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'part1-reread');
 }

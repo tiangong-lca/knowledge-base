@@ -15,7 +15,7 @@ import { part6RereadHistoryControls } from './reader-part6-reread.mjs';
 import { part7RereadHistoryControls } from './reader-part7-reread.mjs';
 import {
   exactPublicJsonReceipt, mergeScientificFileAndRecordChanges, mergeScientificOutput,
-  qualifyScientificHistory, restoreScientificRecords, sameScienceValue, scienceDigest, scienceText,
+  projectScientificOrdinaryTargets, qualifyScientificHistory, restoreScientificRecords, sameScienceValue, scienceDigest, scienceText,
 } from './reader-scientific-delta.mjs';
 
 export const part2RereadId = 'part2-reread-177';
@@ -583,14 +583,33 @@ export function validatePart2RereadCorrectionOutput(document, path, unit) {
   return errors;
 }
 
-export function qualifyPart2RereadHistory(documents, unit, actual, part3Reread, part7Reread, part6Reread, part5Reread, part4Reread) {
+const part1SuccessorOverrideKeys = Object.freeze(new Set([
+  `/docs/book#${chapterAnchorPrefix('/docs/book')}-part4-133-ordinary-2`,
+  `/print#${printUnitAnchor('/docs/book')}-part4-133-ordinary-2`,
+]));
+
+export function qualifyPart2RereadHistory(documents, unit, actual, part3Reread, part7Reread, part6Reread, part5Reread, part4Reread, part1Reread = null) {
   if (!unit) return { prior: actual, errors: [] };
   assertUnitEnvelopeKeys(unit, unit.reviewEvidence !== undefined, false);
   const overrides = unit.history?.ordinaryOverrides;
   if (!validOrdinaryOverridesShape(overrides, true)) {
     throw new Error('Part II continuous reread ordinaryOverrides violates the 2-key allowlist');
   }
-  const targets = observePart2RereadOrdinaryTargets(documents);
+  let successorOverrides = null;
+  if (part1Reread) {
+    const raw = part1Reread.history?.ordinaryOverrides;
+    if (!plainObject(raw) || [...part1SuccessorOverrideKeys].some(key => !plainObject(raw[key])
+        || !scienceDigest(raw[key].from) || !scienceDigest(raw[key].to) || raw[key].from === raw[key].to)) {
+      throw new Error('Part II continuous reread successor ordinaryOverrides violates the 2-key Part I allowlist');
+    }
+    successorOverrides = Object.fromEntries([...part1SuccessorOverrideKeys].map(key => [key, { from: raw[key].from, to: raw[key].to }]));
+  }
+  const targets = projectScientificOrdinaryTargets(
+    successorOverrides,
+    observePart2RereadOrdinaryTargets(documents),
+    'Part II continuous reread',
+    part1SuccessorOverrideKeys,
+  );
   const prior = qualifyScientificHistory(unit.history, actual, targets, {
     label: 'Part II continuous reread', routes: part2RereadRoutes, predecessorPin: addressPin,
   });
@@ -632,6 +651,7 @@ export function qualifyPart2RereadHistory(documents, unit, actual, part3Reread, 
       ordinaryTags: ['P'],
       label: 'Part II continuous reread',
       ordinaryTargets: Object.fromEntries(Object.entries(unit.history.ordinaryTargets).map(([key, row]) => [key, row.sha256])),
+      ordinaryOverrides: successorOverrides,
     }),
     ...validatePart2RereadPartDisclosure(documents.get('/print'), unit),
   ];
