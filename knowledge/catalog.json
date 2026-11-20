@@ -43343,7 +43343,7 @@
   "claims": [
     {
       "id": "cl-flow-type",
-      "text": "先认清箭头上的对象。openLCA 2手册把flow分为基础流（elementary）、产品流（product）和废物流（waste）。未经先前人类转化就从自然环境取得的物质或能量，例如开采原油，可以记录为基础流。无需后续人类转化就排入环境的物质或能量也属此类，例如向空气排放。产品流和废物流要结合过程里的用途来认。手册举例，送去回收的废纸也可以建模为产品流。",
+      "text": "先认清箭头上的对象。openLCA 2手册把flow分为基本流（elementary）、产品流（product）和废物流（waste）。未经先前人类转化就从自然环境取得的物质或能量，例如开采原油，可以记录为基本流。无需后续人类转化就排入环境的物质或能量也属此类，例如向空气排放。产品流和废物流要结合过程里的用途来认。手册举例，送去回收的废纸也可以建模为产品流。",
       "kind": "source-statement",
       "scope": "openLCA 2 手册的 flow 数据对象",
       "evidenceIds": [
@@ -43566,8 +43566,8 @@
         "ev-ilcd-service"
       ],
       "premiseIds": [
-        "cl-ilcd-reference-flow",
-        "cl-ilcd-fu"
+        "cl-book-service",
+        "cl-book-service-contract"
       ],
       "conceptIds": [
         "cn-fu",
@@ -43811,7 +43811,7 @@
         "ev-lcia-unmapped"
       ],
       "premiseIds": [
-        "cl-missing-not-zero"
+        "cl-flow99-interface-consequence"
       ],
       "conceptIds": [
         "cn-cf",
@@ -43935,7 +43935,7 @@
         "cl-book-geometry"
       ],
       "caveats": [
-        "对部分可比对象的讨论不豁免特定比较性断言、产品类别规则或其他适用要求。"
+        "对部分可比对象的讨论不豁免特定比较断言、产品类别规则或其他适用要求。"
       ],
       "conceptIds": [],
       "status": "reviewed",
@@ -44080,7 +44080,7 @@
       "id": "cl-book-comparison-more",
       "text": "确认服务可比以后，还要检查实现服务的系统。CML 2001 在讨论环境优劣或等效断言时，转述了 ISO 对边界、数据质量、分配和影响评价的要求。ILCD 2010 还讨论怎样检查情景、寿命、维护、数据和建模是否一致，并说明不确定性及所纳入的影响类别会限制结论。即使两种方案提供的服务可以比较，结果也可能只支持某个指标上的差别。发表总体判断时，应说明用了哪些影响类别、模型和条件。",
       "kind": "synthesis",
-      "scope": "CML比较性断言要求与ILCD比较研究条件的有界综合",
+      "scope": "CML比较断言要求与ILCD比较研究条件的有界综合",
       "evidenceIds": [
         "ev-cml-comparison",
         "ev-ilcd-comparison"
@@ -44112,7 +44112,7 @@
     },
     {
       "id": "cl-book-three-comparisons",
-      "text": "本书把一次比较分作三项判断：两种方案的服务要求怎样对齐，哪些差异可以接受；模型的边界和数据怎样描述提供服务的过程；最后的结果能支持多强的差异判断。下一章接着看第二项：知道要交付多少产品以后，怎样求出为此需要的各项过程活动。",
+      "text": "本书把一次比较分作三项判断：两种方案的服务要求怎样对齐，哪些差异可以接受；模型的边界和数据怎样描述提供服务的过程；最后的结果能支持多强的差异判断。下文先把第一项放进四套主流规范与数据库体系里对照，看清功能单位、声明单位、活动层参考产品与可比性门槛分别在什么条件下一致、又在何处分化。",
       "kind": "proposal",
       "scope": "比较研究中服务、模型和结果三个层次的分析建议；不是新增标准阶段",
       "evidenceIds": [
@@ -45342,9 +45342,7 @@
       "evidenceIds": [],
       "evidenceLinks": [],
       "premiseIds": [
-        "cl-inv-coordinate-meaning",
-        "cl-inv-demand-balance",
-        "cl-inv-environment-scaling"
+        "cl-inv-coordinate-meaning"
       ],
       "caveats": [
         "所有系数为人为输入；外部来源仅支撑表达与计算规则，不为虚构系数提供经验依据。"
@@ -45582,7 +45580,7 @@
     },
     {
       "id": "cl-inv-judgement",
-      "text": "混合清单可以给已知采购接上相应的经济背景数据。部门数据也可以为查找可能遗漏的活动提供线索，或用来估计缺失的投入。方程配平以后，还要查实际由谁供给、部门平均投入能否代表缺少的过程。比较方法时，也应保留独立案例和不支持自己判断的结果。下一部把目光移到供给本身：同一次生产提供多种产品时，已有的负担可以怎样分担？需求发生变化时，又会牵动哪些供应活动？",
+      "text": "混合清单可以给已知采购接上相应的经济背景数据。部门数据也可以为查找可能遗漏的活动提供线索，或用来估计缺失的投入。方程配平以后，还要查实际由谁供给、部门平均投入能否代表缺少的过程。比较方法时，也应保留独立案例和不支持自己判断的结果。下文把过程清单与混合清单放回主流标准与数据库体系对照，看清不同规范如何在截断阈值、资本品边界、经济数据准入与防重叠之间划定各自的可比门槛。",
       "kind": "synthesis",
       "scope": "形式求解、数据代表性和系统覆盖的检查框架；不是通用方法排名。",
       "evidenceIds": [
@@ -55901,8 +55899,8 @@
         }
       ],
       "premiseIds": [
-        "cl-hyb-downstream-dispute",
-        "cl-hyb-toaster"
+        "cl-hyb-toaster",
+        "cl-hyb-downstream-dispute"
       ],
       "conceptIds": [
         "cn-hyb-downstream-bridge"
@@ -66300,7 +66298,7 @@
         {
           "evidenceId": "ev-kb50-olca-open-inventory",
           "relation": "supports",
-          "rationale": "基础流进入环境介入表。可连接的产品输入或废物输出有选中供方时进入技术矩阵，无选中供方时进入介入表，原流类别仍须单独检查。"
+          "rationale": "基本流进入环境介入表。可连接的产品输入或废物输出有选中供方时进入技术矩阵，无选中供方时进入介入表，原流类别仍须单独检查。"
         }
       ],
       "premiseIds": [
@@ -68147,8 +68145,8 @@
         }
       ],
       "premiseIds": [
-        "cl-missing-not-zero",
-        "cl-native-factor-zero-absent"
+        "cl-native-factor-zero-absent",
+        "cl-missing-not-zero"
       ],
       "conceptIds": [
         "cn-cf",
@@ -68248,7 +68246,7 @@
       "mappingIds": [],
       "caveats": [],
       "reasoning": "依次核对源对象、定量参考、选中连接、计算设置、原生矩阵与结果。源码描述和原件字面值保留各自来源；新求值与作者控制绑定具名运行摘要。解释限定于所示表示和设置，不由数值相符推出物理适用性、历史版行为或通用格式等价。",
-      "text": "查清记录怎样进入求解，还要回到服务本身。这批材料是否适合该处理？制成的件数和性能能否满足同样用途？选用的背景数据、分配规则和影响方法能支持什么比较？模块求解可以说明已有记录在计算中起了什么作用。要查模型是否漏掉活动，或清单中的流为何未获表征，还需各自的证据。下一章沿已经接入的过程往外追，看看边界处省略了哪些供给。",
+      "text": "查清记录怎样进入求解，还要回到服务本身。这批材料是否适合该处理？制成的件数和性能能否满足同样用途？选用的背景数据、分配规则和影响方法能支持什么比较？模块求解可以说明已有记录在计算中起了什么作用。要查模型是否漏掉活动，或清单中的流为何未获表征，还需各自的证据。",
       "status": "reviewed",
       "reviewedAt": "2026-11-08",
       "reviewKind": "agent-source-check"
@@ -71831,8 +71829,8 @@
         "ev-ilcd-service"
       ],
       "premiseIds": [
-        "cl-fu-example",
-        "cl-fu-distinction"
+        "cl-fu-distinction",
+        "cl-fu-example"
       ],
       "conceptIds": [
         "cn-fu",
@@ -71861,10 +71859,10 @@
         "ev-ilcd-qr"
       ],
       "premiseIds": [
+        "cl-fu-distinction",
         "cl-ilcd-quant-ref",
         "cl-ilcd-reference-flow",
-        "cl-ilcd-fu",
-        "cl-fu-distinction"
+        "cl-ilcd-fu"
       ],
       "conceptIds": [
         "cn-fu",
@@ -71907,8 +71905,7 @@
         }
       ],
       "premiseIds": [
-        "cl-fu-distinction",
-        "cl-inv-demand-balance"
+        "cl-fu-distinction"
       ],
       "caveats": [
         "需求坐标与过程关系属于明确给定的模型；有了形式表达不证明实际服务等效、数据充分或真实供给链已完整。"
@@ -72723,8 +72720,7 @@
         "ev-kb99-ilcd2010-boundary-and-partly-terminated"
       ],
       "premiseIds": [
-        "cl-native-missing-link",
-        "cl-inv-boundary-carrier"
+        "cl-inv-example-meaning"
       ],
       "conceptIds": [
         "cn-flow",
@@ -73104,7 +73100,8 @@
         "ev-kb99-cml2001-flow-vocabulary"
       ],
       "premiseIds": [
-        "cl-native-jrc-machine-edge"
+        "cl-flow-type",
+        "cl-flow99-schema-levels"
       ],
       "conceptIds": [
         "cn-flow",
@@ -73140,8 +73137,7 @@
         "ev-kb99-ilcd2010-waste-boundary-and-service"
       ],
       "premiseIds": [
-        "cl-waste-material",
-        "cl-waste-opposite"
+        "cl-flow99-waste-classification"
       ],
       "conceptIds": [
         "cn-flow",
@@ -73397,7 +73393,7 @@
       "id": "cl-flow99-zero-placeholder",
       "text": "即使已经找到一条数值为零的因子记录，也还没有解释这个零。ILCD Format 1.1 的 meanValue 字段建议，在已知某基本流对该影响主题有相关贡献、方法却没有提供因子时，仍应引用该流并填入零。这里的零保留了一个待解释的缺因子状态。它和有依据地认定某适用系数为零，能使用同样的字段和数字，却承载不同的信息。",
       "kind": "source-statement",
-      "scope": "ILCD Format1.1 LCIA meanValue eDoc3-23-100-263",
+      "scope": "ILCD Format 1.1 LCIA 因子 meanValue 字段的零值占位建议（eDoc3-23-100-263）",
       "evidenceIds": [
         "ev-flow-pilot-ilcd-impact-factor"
       ],
@@ -73467,11 +73463,11 @@
         "ev-kb50-olca-impact-factor-build"
       ],
       "premiseIds": [
-        "cl-native-factor-zero-absent",
-        "cl-flow99-zero-reasons",
-        "cl-missing-not-zero",
         "cl-native-missing-link",
-        "cl-native-missing-link-score"
+        "cl-native-missing-link-score",
+        "cl-flow99-zero-reasons",
+        "cl-native-factor-zero-absent",
+        "cl-missing-not-zero"
       ],
       "conceptIds": [
         "cn-flow",
@@ -73555,8 +73551,7 @@
         "ev-kb50-olca-result-flow-view"
       ],
       "premiseIds": [
-        "cl-native-three-co2-quantities",
-        "cl-native-factor-probe"
+        "cl-native-three-co2-quantities"
       ],
       "conceptIds": [
         "cn-flow"
@@ -73603,8 +73598,7 @@
       ],
       "premiseIds": [
         "cl-inv-demand-balance",
-        "cl-inv-scaling-basis",
-        "cl-flow99-basis-and-demand"
+        "cl-inv-scaling-basis"
       ],
       "caveats": [
         "固定模型的代数约束不替代服务性能、资料适用性和实际供应关系的证据。"
@@ -73666,9 +73660,7 @@
       ],
       "premiseIds": [
         "cl-service102-residual-condition",
-        "cl-service102-redundant",
-        "cl-inv-example-truncated",
-        "cl-inv-judgement"
+        "cl-service102-redundant"
       ],
       "caveats": [
         "固定模型的代数约束不替代服务性能、资料适用性和实际供应关系的证据。"
@@ -83678,7 +83670,7 @@
     },
     {
       "id": "cl-fr173-epistemic-limits",
-      "text": "上述对照也标明了功能参照的认识边界：标准条款只能规定功能单位、声明单位或参考产品的书写格式与合格门槛，无法替代具体产品的实测服役寿命、老化衰减、用户实际使用频率与非功能替代偏好的经验证据。把按某一体系折算出的参考流、取整数量或活动层参考产品直接当成真实市场中的等效替代，仍须另行核验工程与使用阶段的实证资料；此外，受版权与付费授权保护的 ISO 14040 与 ISO 14044 原文条款在公开文献核对中不作逐句转引，其具体要求仍须以正式授权文本为准。",
+      "text": "上述对照也标明了功能参照的认识边界：标准条款只能规定功能单位、声明单位或参考产品的书写格式与合格门槛，无法替代具体产品的实测服役寿命、老化衰减、用户实际使用频率与非功能替代偏好的经验证据。把按某一体系折算出的参考流、取整数量或活动层参考产品直接当成真实市场中的等效替代，仍须另行核验工程与使用阶段的实证资料；此外，受版权与付费授权保护的 ISO 14040 与 ISO 14044 原文条款在公开文献核对中不作逐句转引，其具体要求仍须以正式授权文本为准。固定了功能参照与参考流之后，下一章接着看第二项：知道要交付多少产品以后，怎样通过线性过程网络求出为此需要的各项供给活动。",
       "kind": "synthesis",
       "scope": "功能参照跨体系比较的实证局限与付费标准引用边界",
       "evidenceIds": [
@@ -83968,7 +83960,7 @@
     {
       "id": "cl-hyb175-epistemic-limits",
       "kind": "synthesis",
-      "text": "对照表给出的不是“混合清单必然优于过程标准”或“严守 3% 过程截断必然更可靠”的单一排序，而是不同边界机制各自成立的条件。对同一产品体系，如果一份研究按 PEF 规则默认排除资本品并采用 3.0% 过程截断，另一份研究用 ecoinvent v3 纳入基础设施，第三份研究又叠加 EEIO 补齐外购服务与资本品，三者得出的总量差异既包含真实覆盖面扩大，也混杂着部门聚合、价格折算与扣除假设的误差。在缺乏同口径边界声明、资本品与外购服务清单、价格基准、重复计算扣除规则和分母定义之前，直接拿过程标准结果与混合清单结果做数值高低比较，并不能支撑关于产品优劣的稳健判断；至于特定行业中聚合误差与截断误差究竟孰大孰小，仍须依托具体部门分辨率、价格分布和供应关系实证检验，而不能由一般性方法口号预先判定。",
+      "text": "对照表给出的不是“混合清单必然优于过程标准”或“严守 3% 过程截断必然更可靠”的单一排序，而是不同边界机制各自成立的条件。对同一产品体系，如果一份研究按 PEF 规则默认排除资本品并采用 3.0% 过程截断，另一份研究用 ecoinvent v3 纳入基础设施，第三份研究又叠加 EEIO 补齐外购服务与资本品，三者得出的总量差异既包含真实覆盖面扩大，也混杂着部门聚合、价格折算与扣除假设的误差。在缺乏同口径边界声明、资本品与外购服务清单、价格基准、重复计算扣除规则和分母定义之前，直接拿过程标准结果与混合清单结果做数值高低比较，并不能支撑关于产品优劣的稳健判断；至于特定行业中聚合误差与截断误差究竟孰大孰小，仍须依托具体部门分辨率、价格分布和供应关系实证检验，而不能由一般性方法口号预先判定。厘清服务参照、过程网络、流边界与混合清单之后，下一部把目光移到供给本身：同一次生产提供多种产品时，已有的负担可以怎样分担？需求发生变化时，又会牵动哪些供应活动？",
       "scope": "跨体系比较的认识论边界与未知声明。",
       "evidenceIds": [
         "ev-hyb175-ilcd-cutoff",

@@ -2,10 +2,12 @@ import mktConfig from '../config/reader-market-response-comparison.json' with { 
 import part3Config from '../config/reader-part3-reread.json' with { type: 'json' };
 import frConfig from '../config/reader-functional-reference-comparison.json' with { type: 'json' };
 import hybConfig from '../config/reader-hybrid-inventory-comparison.json' with { type: 'json' };
+import part2Config from '../config/reader-part2-reread.json' with { type: 'json' };
 import { selectMarketResponseComparison, effectiveMarketResponseComparison, marketResponseComparisonLayout } from './reader-market-response-comparison.mjs';
 import { selectPart3Reread, effectivePart3Reread, part3RereadLayout } from './reader-part3-reread.mjs';
 import { selectFunctionalReferenceComparison, effectiveFunctionalReferenceComparison, functionalReferenceComparisonLayout } from './reader-functional-reference-comparison.mjs';
 import { selectHybridInventoryComparison, effectiveHybridInventoryComparison, hybridInventoryComparisonLayout } from './reader-hybrid-inventory-comparison.mjs';
+import { selectPart2Reread, effectivePart2Reread } from './reader-part2-reread.mjs';
 import part7Config from '../config/reader-part7-reread.json' with { type: 'json' };
 import { selectPart7Reread, effectivePart7Reread, part7RereadLayout } from './reader-part7-reread.mjs';
 import revConfig from '../config/reader-revisable-judgment.json' with { type: 'json' };
@@ -118,8 +120,9 @@ export const currentMarketResponseComparison = selectMarketResponseComparison(mk
 export const currentPart3Reread = selectPart3Reread(part3Config, undefined, preview);
 export const currentFunctionalReferenceComparison = selectFunctionalReferenceComparison(frConfig, undefined, preview);
 export const currentHybridInventoryComparison = selectHybridInventoryComparison(hybConfig, undefined, preview);
+export const currentPart2Reread = selectPart2Reread(part2Config, undefined, preview);
 export const isReadableBookReviewPreview = oldPreview
-  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview' || acidConfig.status === 'preview' || mineralConfig.status === 'preview' || fossilConfig.status === 'preview' || ozoneConfig.status === 'preview' || ozradConfig.status === 'preview' || toxConfig.status === 'preview' || waterConfig.status === 'preview' || biogenicConfig.status === 'preview' || eutroConfig.status === 'preview' || particulateConfig.status === 'preview' || part4Config.status === 'preview' || weightingConfig.status === 'preview' || localizationConfig.status === 'preview' || socialConfig.status === 'preview' || costConfig.status === 'preview' || part5Config.status === 'preview' || dappConfig.status === 'preview' || uncConfig.status === 'preview' || pfrConfig.status === 'preview' || dqpConfig.status === 'preview' || part6Config.status === 'preview' || wscConfig.status === 'preview' || intConfig.status === 'preview' || futConfig.status === 'preview' || revConfig.status === 'preview' || part7Config.status === 'preview' || mktConfig.status === 'preview' || part3Config.status === 'preview' || frConfig.status === 'preview' || hybConfig.status === 'preview');
+  || preview && (copyeditConfig.status === 'preview' || flowBoundaryConfig.status === 'preview' || serviceConstraintsConfig.status === 'preview' || substitutionConfig.status === 'preview' || loadShiftConfig.status === 'preview' || circularConfig.status === 'preview' || landConfig.status === 'preview' || acidConfig.status === 'preview' || mineralConfig.status === 'preview' || fossilConfig.status === 'preview' || ozoneConfig.status === 'preview' || ozradConfig.status === 'preview' || toxConfig.status === 'preview' || waterConfig.status === 'preview' || biogenicConfig.status === 'preview' || eutroConfig.status === 'preview' || particulateConfig.status === 'preview' || part4Config.status === 'preview' || weightingConfig.status === 'preview' || localizationConfig.status === 'preview' || socialConfig.status === 'preview' || costConfig.status === 'preview' || part5Config.status === 'preview' || dappConfig.status === 'preview' || uncConfig.status === 'preview' || pfrConfig.status === 'preview' || dqpConfig.status === 'preview' || part6Config.status === 'preview' || wscConfig.status === 'preview' || intConfig.status === 'preview' || futConfig.status === 'preview' || revConfig.status === 'preview' || part7Config.status === 'preview' || mktConfig.status === 'preview' || part3Config.status === 'preview' || frConfig.status === 'preview' || hybConfig.status === 'preview' || part2Config.status === 'preview');
 const previousPlan = readableBookReviewPlan(oldPreview
   ? acceptance.units
   : pinnedReadableBookUnits(acceptance, readableBookBaselineDigest, readableBookAcceptancePins));
@@ -159,7 +162,8 @@ const acceptedPart7 = effectivePart7Reread(acceptedRev, currentPart7Reread);
 const acceptedMkt = effectiveMarketResponseComparison(acceptedPart7, currentMarketResponseComparison);
 const acceptedPart3 = effectivePart3Reread(acceptedMkt, currentPart3Reread);
 const acceptedFr = effectiveFunctionalReferenceComparison(acceptedPart3, currentFunctionalReferenceComparison);
-export const currentBookPlan = effectiveHybridInventoryComparison(acceptedFr, currentHybridInventoryComparison);
+const acceptedHyb = effectiveHybridInventoryComparison(acceptedFr, currentHybridInventoryComparison);
+export const currentBookPlan = effectivePart2Reread(acceptedHyb, currentPart2Reread);
 
 export function currentBookRecordMatches(kind, previous, current, projection) {
   if (projection !== undefined) return matchesAcceptedRecord(currentBookPlan, kind, previous, current, projection);

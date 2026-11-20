@@ -749,7 +749,7 @@ const part7SuccessorOverrideKeys = Object.freeze(new Set([
   `/print#${printUnitAnchor('/docs/book')}-part4-133-ordinary-8`,
 ]));
 
-export function qualifyPart4RereadHistory(documents, unit, actual, particulateComparison, biogenicCarbon, part5Reread = null, part6Reread = null, part7Reread = null, part3Reread = null) {
+export function qualifyPart4RereadHistory(documents, unit, actual, particulateComparison, biogenicCarbon, part5Reread = null, part6Reread = null, part7Reread = null, part3Reread = null, part2Reread = null) {
   if (!unit) return { prior: actual, errors: [] };
   const overrides = unit.history?.ordinaryOverrides;
   if (!validOrdinaryOverridesShape(overrides, true))
@@ -800,6 +800,23 @@ export function qualifyPart4RereadHistory(documents, unit, actual, particulateCo
     successorOverrides = { ...(successorOverrides ?? {}) };
     for (const key of part3SuccessorOverrideKeys) {
       successorOverrides[key] = { from: raw[key].from, to: raw[key].to };
+      allowedSuccessorKeys.add(key);
+    }
+  }
+  if (part2Reread) {
+    const raw = part2Reread.history?.ordinaryOverrides;
+    if (!plainObject(raw) || [...part3SuccessorOverrideKeys].some(key => !plainObject(raw[key])
+        || !scienceDigest(raw[key].from) || !scienceDigest(raw[key].to) || raw[key].from === raw[key].to))
+      throw new Error('Part IV continuous reread successor ordinaryOverrides violates the 2-key Part II allowlist');
+    successorOverrides = { ...(successorOverrides ?? {}) };
+    for (const key of part3SuccessorOverrideKeys) {
+      if (successorOverrides[key]) {
+        if (successorOverrides[key].to !== raw[key].from)
+          throw new Error(`Part IV continuous reread chained successor ordinaryOverrides broken at ${key}`);
+        successorOverrides[key] = { from: successorOverrides[key].from, to: raw[key].to };
+      } else {
+        successorOverrides[key] = { from: raw[key].from, to: raw[key].to };
+      }
       allowedSuccessorKeys.add(key);
     }
   }

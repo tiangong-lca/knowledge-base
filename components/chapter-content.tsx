@@ -2,6 +2,7 @@ import { showEditorialHistoryInProse } from '@/scripts/reader-editorial-mode.mjs
 import { part7RereadCorrections, part7RereadHistoryControls, part7RereadOrdinaryId, part7RereadSource } from '@/scripts/reader-part7-reread.mjs';
 import { functionalReferenceComparisonHistoryControls, functionalReferenceComparisonOrdinaryId, functionalReferenceComparisonSource } from '@/scripts/reader-functional-reference-comparison.mjs';
 import { hybridInventoryComparisonHistoryControls, hybridInventoryComparisonOrdinaryId, hybridInventoryComparisonRoute, hybridInventoryComparisonSource } from '@/scripts/reader-hybrid-inventory-comparison.mjs';
+import { part2RereadCorrections, part2RereadHistoryControls, part2RereadSource } from '@/scripts/reader-part2-reread.mjs';
 import { part3RereadCorrections, part3RereadHistoryControls, part3RereadOrdinaryId, part3RereadSource } from '@/scripts/reader-part3-reread.mjs';
 import { marketResponseComparisonHistoryControls, marketResponseComparisonOrdinaryId, marketResponseComparisonSource } from '@/scripts/reader-market-response-comparison.mjs';
 import { revisableJudgmentHistoryControls, revisableJudgmentOrdinaryId, revisableJudgmentRoutes, revisableJudgmentSource } from '@/scripts/reader-revisable-judgment.mjs';
@@ -33,7 +34,7 @@ import { landRecoveryHistoryControls, landRecoveryOrdinaryId, landRecoverySource
 import { circularFootprintHistoryControls, circularFootprintOrdinaryId, circularFootprintSource } from '@/scripts/reader-circular-footprint.mjs';
 import { loadShiftHistoryControls, loadShiftOrdinaryId, loadShiftSource } from '@/scripts/reader-load-shift.mjs';
 import { substitutionRulesHistoryControls, substitutionRulesOrdinaryId, substitutionRulesSource } from '@/scripts/reader-substitution-rules.mjs';
-import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity, currentBiogenicCarbon, currentEutrophicationPathways, currentParticulateComparison, currentPart4Reread, currentWeightingValuation, currentLocalizationComparison, currentSocialComparison, currentCostSustainability, currentPart5Reread, currentDataApplicabilityComparison, currentUncertaintyComparison, currentProductFootprintComparison, currentDataQualityComparison, currentPart6Reread, currentWallServiceComparison, currentInterpretationBags, currentFutureScenarios, currentRevisableJudgment, currentPart7Reread, currentMarketResponseComparison, currentPart3Reread, currentFunctionalReferenceComparison, currentHybridInventoryComparison } from '@/scripts/reader-current-expectations.mjs';
+import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity, currentBiogenicCarbon, currentEutrophicationPathways, currentParticulateComparison, currentPart4Reread, currentWeightingValuation, currentLocalizationComparison, currentSocialComparison, currentCostSustainability, currentPart5Reread, currentDataApplicabilityComparison, currentUncertaintyComparison, currentProductFootprintComparison, currentDataQualityComparison, currentPart6Reread, currentWallServiceComparison, currentInterpretationBags, currentFutureScenarios, currentRevisableJudgment, currentPart7Reread, currentMarketResponseComparison, currentPart3Reread, currentFunctionalReferenceComparison, currentHybridInventoryComparison, currentPart2Reread } from '@/scripts/reader-current-expectations.mjs';
 import { flowBoundaryHistoryControls, flowBoundaryHistoryTargets, flowBoundaryOrdinaryTargets, flowBoundaryOrdinaryId } from '@/scripts/reader-flow-boundary.mjs';
 import { serviceConstraintsHistoryControls, serviceConstraintsOrdinaryId, serviceConstraintsSource } from '@/scripts/reader-service-constraints.mjs';
 import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
@@ -99,6 +100,7 @@ const histories = [
   { controls: part3RereadHistoryControls(currentPart3Reread), edition: part3RereadSource, attribute: 'part3-reread' },
   { controls: functionalReferenceComparisonHistoryControls(currentFunctionalReferenceComparison), edition: functionalReferenceComparisonSource, attribute: 'functional-reference-comparison' },
   { controls: hybridInventoryComparisonHistoryControls(currentHybridInventoryComparison), edition: hybridInventoryComparisonSource, attribute: 'hybrid-inventory-comparison' },
+  { controls: part2RereadHistoryControls(currentPart2Reread), edition: part2RereadSource, attribute: 'part2-reread' },
 ];
 
 function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
@@ -422,6 +424,11 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
           <p key={`${row.chapter}-${row.claimId}`} className="legacy-citation-context" data-part3-reread-correction={note.id} style={{ display: 'block' }}>
             <time dateTime={part3RereadSource.date}>{part3RereadSource.date}</time>{' 修订：'}{row.scope}{' '}
             <a href={citationSourceHref(part3RereadSource.commit)}>查看前版源文件</a>
+          </p>)}
+        {currentPart2Reread && part2RereadCorrections.filter(row => row.chapter === cleanRoute && row.claimId === note.id).map(row =>
+          <p key={`${row.chapter}-${row.claimId}`} className="legacy-citation-context" data-part2-reread-correction={note.id} style={{ display: 'block' }}>
+            <time dateTime={part2RereadSource.date}>{part2RereadSource.date}</time>{' 修订：'}{row.scope}{' '}
+            <a href={citationSourceHref(part2RereadSource.commit)}>查看前版源文件</a>
           </p>)}
         </>}
       </li>)}</ol>

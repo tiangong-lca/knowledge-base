@@ -2,11 +2,14 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import test from 'node:test';
 import config from '../config/reader-hybrid-inventory-comparison.json' with { type: 'json' };
+import part2Config from '../config/reader-part2-reread.json' with { type: 'json' };
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
 import { readReadableBookFiles } from './reader-current-edition-files.mjs';
 import { readerPublicDownloads } from './reader-current-output.mjs';
 import { readLoadShiftCaseFiles } from './reader-load-shift.mjs';
+import { restorePart2RereadTestFiles } from './reader-part2-reread.mjs';
+import { previousScientificTestRecords } from './fixtures/scientific-receipt-envelope.mjs';
 import { readServiceConstraintsFiles } from './reader-service-constraints.mjs';
 import {
   hybridInventoryComparisonPredecessorPin,
@@ -34,7 +37,8 @@ async function loadInput() {
   ]);
   for (const [k, v] of shiftFiles) files.set(k, v);
   for (const [k, v] of serviceFiles) files.set(k, v);
-  return { catalog, readings, literature, files };
+  const rolled = part2Config.unit ? previousScientificTestRecords({ catalog, readings, literature }, part2Config.unit) : { catalog, readings, literature };
+  return { ...rolled, files: part2Config.unit ? restorePart2RereadTestFiles(files, part2Config.unit) : files };
 }
 
 test('Unit #175 B09 hybrid inventory comparison prepares cleanly and recovers exact 744b371af predecessor pin with 1118 claims', async () => {

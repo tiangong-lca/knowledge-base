@@ -16,7 +16,8 @@ import { part7RereadHistoryControls } from './reader-part7-reread.mjs';
 import { marketResponseComparisonHistoryControls } from './reader-market-response-comparison.mjs';
 import {
   exactPublicJsonReceipt, mergeScientificFileAndRecordChanges, mergeScientificOutput,
-  qualifyScientificHistory, restoreScientificRecords, sameScienceValue, scienceDigest, scienceText,
+  projectScientificOrdinaryTargets, qualifyScientificHistory, restoreScientificRecords,
+  sameScienceValue, scienceDigest, scienceText,
 } from './reader-scientific-delta.mjs';
 
 export const part3RereadId = 'part3-reread-171';
@@ -624,14 +625,27 @@ export function validatePart3RereadCorrectionOutput(document, path, unit) {
   return errors;
 }
 
-export function qualifyPart3RereadHistory(documents, unit, actual, marketResponseComparison, part7Reread, part6Reread, part5Reread, part4Reread, substitutionRules) {
+export function qualifyPart3RereadHistory(documents, unit, actual, marketResponseComparison, part7Reread, part6Reread, part5Reread, part4Reread, substitutionRules, part2Reread = null) {
   if (!unit) return { prior: actual, errors: [] };
   assertUnitEnvelopeKeys(unit, unit.reviewEvidence !== undefined, false);
   const overrides = unit.history?.ordinaryOverrides;
   if (!validOrdinaryOverridesShape(overrides, true)) {
     throw new Error('Part III continuous reread ordinaryOverrides violates the 2-key allowlist');
   }
-  const targets = observePart3RereadOrdinaryTargets(documents);
+  let successorOverrides = null;
+  if (part2Reread) {
+    const raw = part2Reread.history?.ordinaryOverrides;
+    if (!validOrdinaryOverridesShape(raw, true)) {
+      throw new Error('Part III continuous reread successor ordinaryOverrides violates the 2-key Part II allowlist');
+    }
+    successorOverrides = Object.fromEntries([...allowedPart3OrdinaryOverrideKeys].map(key => [key, { from: raw[key].from, to: raw[key].to }]));
+  }
+  const targets = projectScientificOrdinaryTargets(
+    successorOverrides,
+    observePart3RereadOrdinaryTargets(documents),
+    'Part III continuous reread',
+    allowedPart3OrdinaryOverrideKeys,
+  );
   const prior = qualifyScientificHistory(unit.history, actual, targets, {
     label: 'Part III continuous reread', routes: part3RereadRoutes, predecessorPin: addressPin,
   });
@@ -675,6 +689,7 @@ export function qualifyPart3RereadHistory(documents, unit, actual, marketRespons
       ordinaryPattern,
       ordinaryTags: ['P', 'TABLE'],
       label: 'Part III continuous reread',
+      ordinaryOverrides: successorOverrides,
       ordinaryTargets: Object.fromEntries(Object.entries(unit.history.ordinaryTargets).map(([key, row]) => [key, row.sha256])),
     }),
     ...validatePart3RereadPartDisclosure(documents.get('/print'), unit),

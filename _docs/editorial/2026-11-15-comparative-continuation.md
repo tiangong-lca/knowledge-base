@@ -1,4 +1,6 @@
 ---
+lastReviewedAt: 2026-11-20
+lastReviewedCommit: 3034503fadf4353e3e58b01f32c74886bfbe6c92
 title: 持续比较修订的范围与执行顺序
 docType: reference
 scope: repo
