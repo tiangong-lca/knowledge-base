@@ -2053,6 +2053,29 @@
           "limits": [
             "Public official PDF guidance text only; does not substitute for empirical service-life or user-behavior data."
           ]
+        },
+        {
+          "id": "psg-hyb175-ilcd-cutoff",
+          "artifactId": "art-ilcd-2010-pdf",
+          "locator": "§6.6.2–6.6.3 & Provisions 6.6 (printed pp. 102–106; PDF pp. 122–126)",
+          "pdfIndices": [
+            121,
+            122,
+            123,
+            124,
+            125
+          ],
+          "summary": "ILCD 2010 §6.6.2–6.6.3 与 Provisions 6.6 明确指出任何生命周期方法都无法确知 100% 总清单，要求以总环境影响覆盖度（如各影响类别或加权总影响的 85% 或 95%）定义定量截断标准；原则上应纳入资本品与清洁、法律、营销、办公等外购服务，除非按截断规则证明其数量上不显著，且须迭代更新并公开排除清单，不以 EEIO 替代过程边界闭合。",
+          "topics": [
+            "system-boundary",
+            "cut-off",
+            "completeness",
+            "capital-goods",
+            "purchased-services"
+          ],
+          "limits": [
+            "ILCD 2010 未纳入 EEIO 或混合清单架构，截断百分比本身仍依赖对未知 100% 总量的近似估计。"
+          ]
         }
       ],
       "appraisal": {
@@ -16472,6 +16495,27 @@
           ],
           "limits": [
             "Public official PDF guidance text only; does not substitute for empirical service-life or user-behavior data."
+          ]
+        },
+        {
+          "id": "psg-hyb175-pef-cutoff",
+          "artifactId": "art-kb44-ec2021-original-pdf",
+          "locator": "Annex I §4.1 (L 471/231), §4.4.4 (L 471/245), §4.6.3–4.6.4 (L 471/274) (PDF pp. 34, 48, 77)",
+          "pdfIndices": [
+            33,
+            47,
+            76
+          ],
+          "summary": "欧盟 PEF (EU) 2021/2279 附件一规定：筛查阶段不允许截断（§4.1）；资本品（基础设施与设备）及其生命末期默认排除，除非既往研究证明其显著（§4.4.4）；二级数据须按 EF 合规→EF 替代→ILCD-EL 替代（累计不超过单一总分 10%）的层级选取，均缺失时须排除该过程并作为数据缺口经核查员确认（§4.6.3）；正式研究累计截断上限为物质流、能量流与环境显著性（单一总分及各影响类别）的 3.0%（§4.6.4），未设 EEIO 补缺路径。",
+          "topics": [
+            "pef",
+            "cut-off",
+            "capital-goods",
+            "data-hierarchy",
+            "completeness"
+          ],
+          "limits": [
+            "PEF 的 3.0% 截断规则叠加在背景数据集已有截断之上，且不含 EEIO 或混合清单规则。"
           ]
         }
       ],
@@ -35807,6 +35851,31 @@
           "limits": [
             "Public official PDF guidance text only; does not substitute for empirical service-life or user-behavior data."
           ]
+        },
+        {
+          "id": "psg-hyb175-ecoinvent-completeness",
+          "artifactId": "art-dapp147-ecoinvent-v3-2013-pdf",
+          "locator": "§4.11 (pp. 25–26), §5.10 (pp. 43–44), §6.1–6.4 (pp. 45–47) (PDF pp. 33–34, 51–55)",
+          "pdfIndices": [
+            32,
+            33,
+            50,
+            51,
+            52,
+            53,
+            54
+          ],
+          "summary": "ecoinvent v3 导则（2013）按寿命与产能显式建模基础设施/资本品（§4.11）；§5.10 声明数据库不采用严格定量截断规则、回收副产品不截断，缺数据时以合理估计补足；§6.1–6.2 以化学计量（默认 95% 收率）与质量/元素守恒检验单元过程完备性；§6.4 引入含增加值（GDP 贡献）在内的货币平衡，并说明数据库力图纳入所有有据可查的物理因果（如免费使用的公共道路基础设施），而不以是否存在直接货币支付为前提。",
+          "topics": [
+            "ecoinvent",
+            "no-cutoff",
+            "capital-goods",
+            "mass-balance",
+            "monetary-balance"
+          ],
+          "limits": [
+            "ecoinvent v3 仍是纯单元过程网络，其“无截断”受限于数据提供者认知与已建模过程覆盖度，不提供 EEIO 宏观闭合。"
+          ]
         }
       ],
       "sourceKeys": [
@@ -36493,6 +36562,29 @@
           ],
           "limits": [
             "Public official PDF guidance text only; does not substitute for empirical service-life or user-behavior data."
+          ]
+        },
+        {
+          "id": "psg-hyb175-ghgp-boundary-eeio",
+          "artifactId": "art-pfr151-ghgp-2011-pdf",
+          "locator": "Ch. 7 (pp. [34]–[36]) & §8.3.4 / Box 8.2 (pp. [51]–[52]) (PDF pp. 36–38, 53–54)",
+          "pdfIndices": [
+            35,
+            36,
+            37,
+            52,
+            53
+          ],
+          "summary": "GHG Protocol 产品标准（2011）第 7 章区分必须纳入的归属过程（仅在同时满足数据缺失、无替代/外推数据且估算低于披露的不显著阈值三项条件时可排除）与可选的非归属过程（资本品、管理能耗、研发/行政/营销等企业服务及通勤）；§8.3.4 与框 8.2 明确允许用财务活动数据乘以 EEIO 排放因子开展筛查或上游排放估算，同时指出 EEIO 覆盖广但部门颗粒度低，企业须核清各排放因子涵盖的过程范围以免漏算或重复计算。",
+          "topics": [
+            "ghg-protocol",
+            "attributable-processes",
+            "capital-goods",
+            "eeio",
+            "double-counting"
+          ],
+          "limits": [
+            "框 8.2 仅在碳排放筛查与财务支出估算层引入 EEIO 因子，未定义双向混合账户或算法化重复计算扣除。"
           ]
         }
       ],

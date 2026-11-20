@@ -1,4 +1,4 @@
-import { inspectReviewedStaticTable, removeReviewedProse, validateReviewedStaticTable } from './reader-reviewed-static-table.mjs';
+import { blocksReaderText, inspectReviewedStaticTable, removeReviewedProse, validateReviewedStaticTable } from './reader-reviewed-static-table.mjs';
 import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import { isVerifiedReaderPagination } from './reader-numbering-output.mjs';
 import { validateReaderHistoricalText } from './reader-publication-text.mjs';
@@ -23,22 +23,59 @@ const invoiceTableShape = {
   previousClaim: 'cl-hyb-swap', nextClaim: 'cl-hyb-swap-result',
 };
 
+function inspectB09ComparisonTable(body, expected) {
+  const blocks = body.trim().split(/\n[ \t]*\n/);
+  const proseLine = /^<Prose ids="[^"]+"\s*\/>$/;
+  const tableIdx = blocks.findIndex(block => !proseLine.test(block));
+  if (tableIdx < 1 || tableIdx + 1 >= blocks.length || !blocks.slice(tableIdx + 1).every(block => proseLine.test(block))) return false;
+  if (collectChapterClaimOccurrences(blocks[tableIdx - 1]).at(-1) !== expected.previousClaim
+      || collectChapterClaimOccurrences(blocks[tableIdx + 1])[0] !== expected.nextClaim) return false;
+  const rows = blocks[tableIdx].split('\n').map(line => (line.startsWith('|') && line.endsWith('|')
+    ? line.slice(1, -1).split('|').map(cell => cell.trim()) : []));
+  if (rows.length !== expected.rows.length + 2 || !rows[1].every(cell => cell === '---')) return false;
+  return same(rows[0], expected.headers) && same(rows.slice(2), expected.rows);
+}
+
 /** null is the prior table-free layout; undefined is unqualified extra source. */
 export function inspectHybridInventoryInvoiceTable(raw) {
   const sections = raw.replaceAll('\r\n', '\n').split(/^## (.+)\s*$/m);
-  let table = null;
+  const comparisonTable = currentBookLayout('B09:comparison-table', null);
+  let table = null, comparisonFound = false;
   for (let i = 1; i < sections.length; i += 2) {
     const body = sections[i + 1];
     if (!removeReviewedProse(body).trim()) continue;
-    if (readSourceHeading(sections[i]).id !== invoiceTableShape.section || table) return undefined;
+    const secId = readSourceHeading(sections[i]).id;
+    if (comparisonTable && secId === comparisonTable.section && !comparisonFound) {
+      if (!inspectB09ComparisonTable(body, comparisonTable)) return undefined;
+      comparisonFound = true;
+      continue;
+    }
+    if (secId !== invoiceTableShape.section || table) return undefined;
     table = inspectReviewedStaticTable(body, invoiceTableShape);
     if (!table) return undefined;
   }
+  if (comparisonTable && !comparisonFound) return undefined;
   return table;
 }
 
 export function validateHybridInventoryInvoiceTable(unit, path, expected) {
-  return validateReviewedStaticTable(unit, path, expected, invoiceTableShape);
+  const comparisonTable = currentBookLayout('B09:comparison-table', null);
+  const res = validateReviewedStaticTable(unit, path, expected, {
+    ...invoiceTableShape,
+    expectedTableCount: comparisonTable ? 2 : 1,
+  });
+  if (comparisonTable) {
+    const tables = unit.querySelectorAll('table');
+    const second = tables[1];
+    const heads = second?.querySelectorAll('thead tr th').map(th => th.text.trim()) ?? [];
+    const bodyRows = second?.querySelectorAll('tbody tr').map(tr => tr.querySelectorAll('td').map(td => td.text.trim())) ?? [];
+    if (!second || blocksReaderText(second) || !same(heads, comparisonTable.headers) || !same(bodyRows, comparisonTable.rows)) {
+      res.errors.push(`${path}: B09 comparison table headers or cells differ from reviewed source`);
+    } else {
+      res.checked.add(second);
+    }
+  }
+  return res;
 }
 
 
@@ -201,7 +238,7 @@ function validateHybridInventoryTextCoverage(unit, path, accepted, prose, {legac
   }
   // The shared annotation validator accounts for all annotation text below its
   // checked scope/source/carrier/caveat/premise/input nodes, including additions.
-  const expectedClaimIds = accepted.sections.flatMap(section => section.claimIds);
+  const expectedClaimIds = currentBookLayout('B09:occurrences', accepted.sections.flatMap(section => section.claimIds.map(id => ({ id, section: section.id })))).map(row => row.id);
   for (const note of unit.querySelectorAll('[data-reader-claim]')) {
     const id = note.getAttribute('data-reader-claim'), annotations = note.querySelectorAll('.claim-annotation');
     if (expectedClaimIds.includes(id) && note.id === `${prefix}-claim-${id}` && annotations.length === 1) checked.add(annotations[0]);
@@ -254,7 +291,7 @@ export function validateRenderedHybridInventory(document, path, accepted, catalo
   const groups = unit.querySelectorAll('.chapter-notes');
   if (groups.length !== 1 || groups[0].querySelector('h2,h3')?.id !== `${print ? printUnitAnchor(hybridInventoryRoute) : chapterAnchorPrefix(hybridInventoryRoute)}-annotations` || groups[0].querySelector('h2,h3')?.text !== '注释') errors.push(`${path}: missing or repeated actual B09 annotation group`);
   const notes = unit.querySelectorAll('[data-reader-claim]').map(node => node.getAttribute('data-reader-claim'));
-  if (!same(notes, currentBookLayout('B09:occurrences', accepted.sections.flatMap(section => section.claimIds.map(id => ({ id, section: section.id })))).map(row => row.id))) errors.push(`${path}: actual B09 endnotes differ from the 39-claim continuous plan`);
+  if (!same(notes, currentBookLayout('B09:occurrences', accepted.sections.flatMap(section => section.claimIds.map(id => ({ id, section: section.id })))).map(row => row.id))) errors.push(`${path}: actual B09 endnotes differ from the expected continuous plan`);
   errors.push(...validateExchangeAnnotationOutput(document, unit, hybridInventoryRoute, catalog, { print }));
   errors.push(...validateHybridInventoryTextCoverage(unit, path, accepted, prose, legacyContext));
   return errors;

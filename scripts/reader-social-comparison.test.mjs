@@ -6,10 +6,12 @@ import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 import mkt from '../config/reader-market-response-comparison.json' with { type: 'json' };
 import part3 from '../config/reader-part3-reread.json' with { type: 'json' };
 import fr from '../config/reader-functional-reference-comparison.json' with { type: 'json' };
+import hyb from '../config/reader-hybrid-inventory-comparison.json' with { type: 'json' };
 import part7 from '../config/reader-part7-reread.json' with { type: 'json' };
 import { restoreMarketResponseComparisonTestFiles } from './reader-market-response-comparison.mjs';
 import { restorePart3RereadTestFiles } from './reader-part3-reread.mjs';
 import { restoreFunctionalReferenceComparisonTestFiles } from './reader-functional-reference-comparison.mjs';
+import { restoreHybridInventoryComparisonTestFiles } from './reader-hybrid-inventory-comparison.mjs';
 import { restorePart7RereadTestFiles } from './reader-part7-reread.mjs';
 import rev from '../config/reader-revisable-judgment.json' with { type: 'json' };
 import { restoreRevisableJudgmentTestFiles } from './reader-revisable-judgment.mjs';
@@ -64,7 +66,7 @@ import {
 } from './reader-social-comparison.mjs';
 
 test('Social comparison enforces exact 1036 claims, 14 single-artifact evidence records, 90 BigInt facts, prose bindings and zero hygiene leaks', () => {
-  const prev139 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, fr.unit), part3.unit), mkt.unit), part7.unit), rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit), part5.unit), cost.unit);
+  const prev139 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, hyb.unit), fr.unit), part3.unit), mkt.unit), part7.unit), rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit), part5.unit), cost.unit);
   assert.equal(prev139.catalog.claims.length, 1036);
   assert.equal(prev139.catalog.claims.filter(c => c.id.startsWith('cl-soc139-')).length, 8);
   assert.equal(prev139.catalog.evidence.filter(e => e.id.startsWith('ev-soc139-')).length, 14);
@@ -198,7 +200,7 @@ test('Social comparison source plan recovers exact b1f96c03 predecessor and reje
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
-  restoreMarketResponseComparisonTestFiles(restorePart3RereadTestFiles(restoreFunctionalReferenceComparisonTestFiles(files, fr.unit), part3.unit), mkt.unit);
+  restoreMarketResponseComparisonTestFiles(restorePart3RereadTestFiles(restoreFunctionalReferenceComparisonTestFiles(restoreHybridInventoryComparisonTestFiles(files, hyb.unit), fr.unit), part3.unit), mkt.unit);
   restorePart7RereadTestFiles(files, part7.unit);
   restoreRevisableJudgmentTestFiles(files, rev.unit);
   restoreFutureScenariosTestFiles(files, fut.unit);
@@ -211,7 +213,7 @@ test('Social comparison source plan recovers exact b1f96c03 predecessor and reje
   restoreDataApplicabilityComparisonTestFiles(files, dapp.unit);
   restorePart5RereadTestFiles(files, part5.unit);
   restoreCostSustainabilityTestFiles(files, cost.unit);
-  const prev139Rec = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, fr.unit), part3.unit), mkt.unit), part7.unit), rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit), part5.unit), cost.unit);
+  const prev139Rec = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, hyb.unit), fr.unit), part3.unit), mkt.unit), part7.unit), rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit), part5.unit), cost.unit);
   const input = { ...prev139Rec, files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
   const qualify = (unit, customInput = input, customActual = actual, customStruct = structure) =>
@@ -366,7 +368,7 @@ test('Social comparison receipt binding behaves fail-closed before and after cap
   }
 
   const { readerPublicDownloads } = await import('./reader-current-output.mjs');
-  const prev139 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, fr.unit), part3.unit), mkt.unit), part7.unit), rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit), part5.unit), cost.unit);
+  const prev139 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, hyb.unit), fr.unit), part3.unit), mkt.unit), part7.unit), rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit), part5.unit), cost.unit);
   const expected = readerPublicDownloads(prev139.catalog, prev139.literature, prev139.readings);
   const verify = (mutateUnit = () => {}, mutateOutput) => {
     const unit = structuredClone(config.unit);

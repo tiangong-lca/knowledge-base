@@ -1,0 +1,2241 @@
+{
+  "schemaVersion": 1,
+  "kind": "source",
+  "unit": "hybrid-inventory-comparison-175",
+  "date": "2026-11-20",
+  "subjectSha256": "8530e26f14906e994f6724b103a877dc39aac35e6567838e5946d4d8b00b891c",
+  "scope": [
+    "content/docs/book/inventory-boundary-and-hybrid.mdx",
+    "readings:rd-ilcd-2010",
+    "readings:rd-kb44-ec2021",
+    "readings:rd-dapp147-ecoinvent-v3-2013",
+    "readings:rd-pfr151-ghgp-2011",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:public-projection",
+    "claims:cl-hyb175-shared-completeness-dilemma",
+    "claims:cl-hyb175-process-standards-cutoff-and-capital",
+    "claims:cl-hyb175-eeio-admission-and-hybrid-architectures",
+    "claims:cl-hyb175-double-counting-governance",
+    "claims:cl-hyb175-price-aggregation-and-denominator-comparability",
+    "claims:cl-hyb175-epistemic-limits",
+    "evidence:ev-hyb175-ilcd-cutoff",
+    "evidence:ev-hyb175-pef-cutoff",
+    "evidence:ev-hyb175-ghgp-boundary-eeio",
+    "evidence:ev-hyb175-ecoinvent-completeness"
+  ],
+  "observed": "Unit 29 (B09《混合清单》cross-system comparison, #175) against exact predecessor commit 744b371af100522b0d0f51e41adaa82eb8943d30, registering 4 close-read primary passages (20 exact 0-based pdfIndices) from ILCD Handbook 2010 (§6.6.2–6.6.3 & Provisions 6.6), EU PEF (EU 2021/2279 OJ L 471 Annex I §§4.1, 4.4.4, 4.6.3–4.6.4), GHG Protocol Product Standard 2011 (Ch. 7 & §8.3.4 / Box 8.2), and ecoinvent v3 DQG 2013 (§4.11, §5.10, §6.1–6.4), plus 4 evidence records, 5 numericFacts (85%, 95% ILCD; 10%, 3.0% PEF; 95% ecoinvent yield), 6 comparative synthesis claims (Notes 40–45), and 1 5-row comparison table.",
+  "observations": {
+    "state": {
+      "before": "d851b2b70ef3522e4216db445096bb7c4b8f9f3d7a97d329aa005d3ac1afeff3",
+      "after": "1f0a68fa2de7d8050980e131f7e36458492b869e1a2092545cd147c1c219e2e5"
+    },
+    "changes": [
+      {
+        "kind": "file",
+        "key": "content/docs/book/inventory-boundary-and-hybrid.mdx",
+        "from": "64380def6514103aaa3eb2e108a2f49b5c6e56e4ff13520e87e9d540104358ae",
+        "to": "b6cad879e67319c1c8f697139286d134254624acefcf7b6665d039b36a221f8c",
+        "rationale": "Add 6 concept-led cross-system comparative claims and 1 5-framework comparison table to B09 while preserving all 3 H2 sections, all 39 existing claims, and all 23 legacy migration notices"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-ilcd-2010",
+        "from": {
+          "raw": "2e4a2d8f8180cb272379656007ed2cdb03878fa8760cacd18a96c5acf3a4cc59",
+          "public": null,
+          "protected": "2e4a2d8f8180cb272379656007ed2cdb03878fa8760cacd18a96c5acf3a4cc59"
+        },
+        "to": {
+          "raw": "c5a817e6f97055973dd5235361655ddafd4e669beefe936433bf64559f09fa9c",
+          "public": null,
+          "protected": "c5a817e6f97055973dd5235361655ddafd4e669beefe936433bf64559f09fa9c"
+        },
+        "rationale": "Unit #175 B09 hybrid inventory cross-system comparison record transition for readings:rd-ilcd-2010"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-kb44-ec2021",
+        "from": {
+          "raw": "6954761c37af35964c1987904ada10c388dcab59c362a2f3cc25a0c418912a43",
+          "public": null,
+          "protected": "6954761c37af35964c1987904ada10c388dcab59c362a2f3cc25a0c418912a43"
+        },
+        "to": {
+          "raw": "df045e3c21465c5de4541c259d43e41da3ecc9c74f033c8b225dafd3ed1154c1",
+          "public": null,
+          "protected": "df045e3c21465c5de4541c259d43e41da3ecc9c74f033c8b225dafd3ed1154c1"
+        },
+        "rationale": "Unit #175 B09 hybrid inventory cross-system comparison record transition for readings:rd-kb44-ec2021"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-dapp147-ecoinvent-v3-2013",
+        "from": {
+          "raw": "7a6d2cd9369e8ea2211be4215481e937b9613b7283cc86b399e19207248c4246",
+          "public": null,
+          "protected": "7a6d2cd9369e8ea2211be4215481e937b9613b7283cc86b399e19207248c4246"
+        },
+        "to": {
+          "raw": "6333d9cd2949ac952c98e948442f4df269c2fbe04d51e00dcf42c05688fe8f5d",
+          "public": null,
+          "protected": "6333d9cd2949ac952c98e948442f4df269c2fbe04d51e00dcf42c05688fe8f5d"
+        },
+        "rationale": "Unit #175 B09 hybrid inventory cross-system comparison record transition for readings:rd-dapp147-ecoinvent-v3-2013"
+      },
+      {
+        "kind": "record",
+        "key": "readings:rd-pfr151-ghgp-2011",
+        "from": {
+          "raw": "1125461765631a2469f63e7014636591809f3795186d7c2b8708769c696d02bd",
+          "public": null,
+          "protected": "1125461765631a2469f63e7014636591809f3795186d7c2b8708769c696d02bd"
+        },
+        "to": {
+          "raw": "71e3080b9ee172f7aee594f7557e893b54d633cf178daea699316086312e60cf",
+          "public": null,
+          "protected": "71e3080b9ee172f7aee594f7557e893b54d633cf178daea699316086312e60cf"
+        },
+        "rationale": "Unit #175 B09 hybrid inventory cross-system comparison record transition for readings:rd-pfr151-ghgp-2011"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:claims",
+        "from": {
+          "raw": "145206c700e24162d449ef82ec77dda23b7431e567ea687b03910c1c6f077ed9",
+          "public": null,
+          "protected": "145206c700e24162d449ef82ec77dda23b7431e567ea687b03910c1c6f077ed9"
+        },
+        "to": {
+          "raw": "ddd45e222d41a234015ca144409e1672ff7ed0ee07839dcec57725817437679f",
+          "public": null,
+          "protected": "ddd45e222d41a234015ca144409e1672ff7ed0ee07839dcec57725817437679f"
+        },
+        "rationale": "Unit #175 B09 hybrid inventory cross-system comparison record transition for researchMetadata:order:claims"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:order:evidence",
+        "from": {
+          "raw": "e244181f1302b05c37791e7998aef5db964659ed3e83c2742f557f8fc3e35264",
+          "public": null,
+          "protected": "e244181f1302b05c37791e7998aef5db964659ed3e83c2742f557f8fc3e35264"
+        },
+        "to": {
+          "raw": "23fea7a3c75fe4238d86a1e241f6dd7afe7af8280abc9eaf4db42b7fb0f5401f",
+          "public": null,
+          "protected": "23fea7a3c75fe4238d86a1e241f6dd7afe7af8280abc9eaf4db42b7fb0f5401f"
+        },
+        "rationale": "Unit #175 B09 hybrid inventory cross-system comparison record transition for researchMetadata:order:evidence"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:public-projection",
+        "from": {
+          "raw": "85d079ff168004764982dce55cc8056208f13680e6204d885c208184109cc99e",
+          "public": null,
+          "protected": "85d079ff168004764982dce55cc8056208f13680e6204d885c208184109cc99e"
+        },
+        "to": {
+          "raw": "3b41f086fd3079e89a9525435fffec1d8f953ff514fc35396f0a0b35fc72ad8d",
+          "public": null,
+          "protected": "3b41f086fd3079e89a9525435fffec1d8f953ff514fc35396f0a0b35fc72ad8d"
+        },
+        "rationale": "Unit #175 B09 hybrid inventory cross-system comparison record transition for researchMetadata:public-projection"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-hyb175-shared-completeness-dilemma",
+        "from": null,
+        "to": {
+          "raw": "04e60eeccefcc7364cd70da3bd9bbcd7a131b0589ec4412c07bca832086da5b4",
+          "public": "04e60eeccefcc7364cd70da3bd9bbcd7a131b0589ec4412c07bca832086da5b4",
+          "protected": "2605dc774847c891ee20b33f92a5815761c050612bdd1959c50c237c50221f86"
+        },
+        "rationale": "Unit #175 B09 hybrid inventory cross-system comparison record transition for claims:cl-hyb175-shared-completeness-dilemma"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-hyb175-process-standards-cutoff-and-capital",
+        "from": null,
+        "to": {
+          "raw": "62d785069a10df0b7730685f1d7dedc73492387f8b0a0934a7a99bb48c928dd3",
+          "public": "62d785069a10df0b7730685f1d7dedc73492387f8b0a0934a7a99bb48c928dd3",
+          "protected": "a04b3532b883da982fc1411cf27451e6659be814be2bd2a3ab59b4a120685a8f"
+        },
+        "rationale": "Unit #175 B09 hybrid inventory cross-system comparison record transition for claims:cl-hyb175-process-standards-cutoff-and-capital"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-hyb175-eeio-admission-and-hybrid-architectures",
+        "from": null,
+        "to": {
+          "raw": "08fe1bd2f0954076a7f0a63f7e4e790964ef6157f7bc9bf37bde8870ad7f548c",
+          "public": "08fe1bd2f0954076a7f0a63f7e4e790964ef6157f7bc9bf37bde8870ad7f548c",
+          "protected": "3edbee8e17e43832704d5fb18a0c4dca76170a76ddf5b273c64c5012dfd27fe9"
+        },
+        "rationale": "Unit #175 B09 hybrid inventory cross-system comparison record transition for claims:cl-hyb175-eeio-admission-and-hybrid-architectures"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-hyb175-double-counting-governance",
+        "from": null,
+        "to": {
+          "raw": "a799144d97c414081d0dfcd11be371ab9472481ae1ac9e23503ac75b5545be71",
+          "public": "a799144d97c414081d0dfcd11be371ab9472481ae1ac9e23503ac75b5545be71",
+          "protected": "9aae4cd0d6353d79e81dbe3b34b957cb4ae6039997c904f0cd18021e4074139a"
+        },
+        "rationale": "Unit #175 B09 hybrid inventory cross-system comparison record transition for claims:cl-hyb175-double-counting-governance"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-hyb175-price-aggregation-and-denominator-comparability",
+        "from": null,
+        "to": {
+          "raw": "0014f5142dc34cc29e2e4c0932682c008cbd4db671de6eba80742459bfbc6b3a",
+          "public": "0014f5142dc34cc29e2e4c0932682c008cbd4db671de6eba80742459bfbc6b3a",
+          "protected": "e2a92df9edf8359dca8251d792d116d0dfbbe51ed228538bee450ffb1ad7308d"
+        },
+        "rationale": "Unit #175 B09 hybrid inventory cross-system comparison record transition for claims:cl-hyb175-price-aggregation-and-denominator-comparability"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-hyb175-epistemic-limits",
+        "from": null,
+        "to": {
+          "raw": "92a71a946478b27f46b1c8899f105b729e68b059987d251940d46f410a22d9ee",
+          "public": "92a71a946478b27f46b1c8899f105b729e68b059987d251940d46f410a22d9ee",
+          "protected": "1875b2759a6f65ad4841fbad34a199a2f2f2a3636e55ea4b77933c227515ad1c"
+        },
+        "rationale": "Unit #175 B09 hybrid inventory cross-system comparison record transition for claims:cl-hyb175-epistemic-limits"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-hyb175-ilcd-cutoff",
+        "from": null,
+        "to": {
+          "raw": "1e93030bf141473e5c5ac0d87908b71e61436a1060e4e4375c88a78524277a0f",
+          "public": "1e93030bf141473e5c5ac0d87908b71e61436a1060e4e4375c88a78524277a0f",
+          "protected": "1e93030bf141473e5c5ac0d87908b71e61436a1060e4e4375c88a78524277a0f"
+        },
+        "rationale": "Unit #175 B09 hybrid inventory cross-system comparison record transition for evidence:ev-hyb175-ilcd-cutoff"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-hyb175-pef-cutoff",
+        "from": null,
+        "to": {
+          "raw": "dbfa3d44c7333788a49e16247f6d924318e2bb4078a6372674920f2f0243dab6",
+          "public": "dbfa3d44c7333788a49e16247f6d924318e2bb4078a6372674920f2f0243dab6",
+          "protected": "dbfa3d44c7333788a49e16247f6d924318e2bb4078a6372674920f2f0243dab6"
+        },
+        "rationale": "Unit #175 B09 hybrid inventory cross-system comparison record transition for evidence:ev-hyb175-pef-cutoff"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-hyb175-ghgp-boundary-eeio",
+        "from": null,
+        "to": {
+          "raw": "68df698f926b0771a621d596538159bc4d952e238c3300c2d662831b3a50d721",
+          "public": "68df698f926b0771a621d596538159bc4d952e238c3300c2d662831b3a50d721",
+          "protected": "68df698f926b0771a621d596538159bc4d952e238c3300c2d662831b3a50d721"
+        },
+        "rationale": "Unit #175 B09 hybrid inventory cross-system comparison record transition for evidence:ev-hyb175-ghgp-boundary-eeio"
+      },
+      {
+        "kind": "record",
+        "key": "evidence:ev-hyb175-ecoinvent-completeness",
+        "from": null,
+        "to": {
+          "raw": "c05e11d711f9190958634843eceffeb17838fb56356d4e5a55885537c064ecb8",
+          "public": "c05e11d711f9190958634843eceffeb17838fb56356d4e5a55885537c064ecb8",
+          "protected": "c05e11d711f9190958634843eceffeb17838fb56356d4e5a55885537c064ecb8"
+        },
+        "rationale": "Unit #175 B09 hybrid inventory cross-system comparison record transition for evidence:ev-hyb175-ecoinvent-completeness"
+      }
+    ],
+    "consumers": [
+      {
+        "id": "cl-flow-type",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-exchange",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-flow-exchange-distinction",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-waste-no-universal",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-ilcd-reference-flow",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-ilcd-fu",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-fu-distinction",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-fu-example",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-bw-direction",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-bw-sign",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-book-service",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-book-service-contract",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-book-ilcd-reference",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-book-reference-reading",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-book-comparison-more",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-book-three-comparisons",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-book-interpret-iterate",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-book-not-equivalent",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-book-conclusion-conditions",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-book-integrative-function",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-book-integrative-iteration",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-book-integrative-path",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-regional-localization-not-translation",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-regional-method-origin-not-validity",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-regional-benchmarks-and-policy-goals",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-regional-wf-ambiguity",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-regional-research-agenda-not-country-claim",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-db2011-review-relative-to-criteria",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-db2011-validation-context",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-db2011-versioned-confidence",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-future-definition",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-future-scale-up",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-future-incumbent",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-future-scenarios",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-future-background",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-future-impact-limits",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-future-comparison-conditions",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-connect-object-before-unit",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-connect-service-changes-system",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-connect-three-scalings",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-connect-time-relations",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-connect-prospective-two-questions",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-connect-reuse-keeps-relation",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-connect-evidence-to-probability",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-connect-useful-without-winner",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-connect-review-does-not-transfer",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-connect-next-evidence-at-link",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wall-question",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wall-quantities",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wall-reference",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wall-same-mass",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wall-coordinates",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wall-demand",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wall-activities",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wall-balance-meaning",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wall-inventory",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wall-inventory-boundary",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wall-factor-choice",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wall-characterization",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wall-metric-meaning",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wall-time",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wall-unknown",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wall-paired-range",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wall-pairing",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wall-tolerance",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wall-rough-demand",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wall-rough-comparison",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wall-exercise",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wall-answer",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-framework-design-sideeffects",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-framework-reader-work-product",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-market-closing",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-hyb-accounts",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-hyb-service",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-hyb-ledger",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-hyb-invoices",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-hyb-raw",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-hyb-naive",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-hyb-remove",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-hyb-equations",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-hyb-corrected",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-hyb-naive-result",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-hyb-swap",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-hyb-swap-result",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-hyb-audit",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-es-authority",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-es-three",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-es-equation",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-es-why-square",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-es-nmvoc",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-es-nox",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-es-service",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-es-score",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-es-scale",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-es-threshold",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-es-test",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-es-later",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-es-judgment",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-purpose",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-policy-contrast",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-baseline",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-units",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-display",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-logit",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-trade",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-precision",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-primary-ratio",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-households",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-health",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-mismatch",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-annual",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-shares",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-two-forms",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-different-card",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-english",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-english-basis",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-service",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-japan-route",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-break-even",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-english-route",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-numeraire",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-edition",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-validity",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-null",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-order",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-transfer",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lime-decision",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-pack-limits",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cn-question",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cn-two-branches",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cn-characterization",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cn-reference",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cn-service-period",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cn-target",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cn-weight-meaning",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cn-cancellation",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cn-time-bridge",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cn-resource-meaning",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cn-resource-units",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cn-parameter-history",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cn-later-critique",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cn-policy-records",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cn-changed-reference",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cn-policy-limit",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cn-hk-borrowing",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cn-hk-local",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cn-hk-weights",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cn-standard-authority",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cn-conclusion",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cycle-opening",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cycle-service-boundary",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cycle-product-yield",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cycle-fixed-cascade",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cycle-extraction-rule",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cycle-adjacent-rule",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cycle-printed-correction",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cycle-same-name",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cycle-substitution-chain",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cycle-virgin-reference",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cycle-annual-quality",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cycle-grade-quality",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cycle-substitution-point",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cycle-performance-question",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cycle-energy-products",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cycle-energy-mismatch",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cycle-energy-matched",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cycle-energy-comparison",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cycle-heat-only",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cycle-market-question",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cycle-conclusion",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-opening",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-rp",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-why-chain",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-force",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-category",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-version",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-use-boundary",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-default",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-results-layer",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-reconstruction-limit",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-review-objects",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-review-2018",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-review-2024",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-review-identity",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-validity",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-methane-rule",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-nordic-design",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-niu-provenance",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-ipcc-class",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-model-meaning",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-comparison-limits",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-evidence-judgment",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-conclusion",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-wash-cycles",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-wash-inputs",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-use-result",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-report-split",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-quantity-scale",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-capital-gap",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-storage-gap",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-ration-units",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-niu-result",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-ipcc-result",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rule-issuer",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-pm-population-meaning",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-pm-factor-correction",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-pm-implementation-layer",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-pm-matched-scope",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-pm-uncovered-pathways",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-pm-conclusion",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-pm-activity-indicators",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-opening",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-service",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-coordinates",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-voltage-path",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-grid-assets",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-loss-definition",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-norway-loss",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-segment-denominators",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-database-voltage",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-loss-proxy",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-egrid-scope",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-egrid-adjustments",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-egrid-rate",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-egrid-loss",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-egrid-loss-conflict",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-region-membership",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-eia-emissions",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-average-response",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-historical-generation",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-historical-consumption",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-empirical-limits",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-price-versus-energy",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-native-model",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-native-scenario",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-native-loss",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-native-loss-document",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-native-interpolation",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-native-output",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-native-ratios",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-native-check-meaning",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-native-two-hours",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-native-pollutants",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-native-application",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-future-question",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-future-system",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-future-perturbation",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-future-postprocessing",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-future-balance",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-future-load-parts",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-future-distribution",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-future-direct-rates",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-future-three-questions",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-future-gases",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-future-gases-total",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-future-scenario",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-future-time",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-future-formula",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-alternative-lca",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-validation-objects",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-connection",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-nonbaseload",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-native-coordinate",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-power-future-storage-policy",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-opening",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-record-and-link",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-bottle-reference",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-example-scope",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-opposite",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-scale",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-matrix-sign",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-allocation-held",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-representation-result",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-small-inventory",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-same-flow-total",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-three-co2-quantities",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-allocation-result",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-printed-comparator",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-missing-link",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-missing-link-score",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-jrc-instance",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-jrc-connectors",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-jrc-parameters",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-jrc-weight-control",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-jrc-bare-setup",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-jrc-machine-edge",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-jrc-machine-coordinate",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-jrc-source-discrepancy",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-jrc-partial-match",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-jrc-result-projection",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-jrc-version-reference",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-format-scope",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-format-original-target",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-format-double-target",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-format-result-scale",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-result-direction",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-conversion-study",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-factor-probe",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-factor-zero-absent",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-factor-real-gap",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-factor-report",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-preservation-meaning",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-native-service-meaning",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cml-reception-question",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cml-screening-boundaries",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cml-reception-lineage",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cml-ending",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cml-solvent-bins",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cml-range-bins",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-climate-wall-fixed",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-climate-wall-reweighted",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-climate-comparison-criteria",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-climate-conclusion",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-closing-wall-substrate",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-closing-historical-return",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cml-screening-range-limit",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-book-maintenance-condition",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-book-record-model-limit",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-inv-service-to-demand",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-db2011-conditional-use",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-pm-matched-scenario",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-pm-version-and-model",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-book-future-scenario-matrix",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-book-future-decision",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-book-unc-bridge",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-book-social-results-to-cost",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-book-cost-decision",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-flow99-two-boundaries",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-flow99-elementary",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-flow99-landfill",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-flow99-boundary-consequence",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-flow99-agricultural-boundary",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-flow99-boundary-exceptions",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-flow99-record-and-instance",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-flow99-schema-levels",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-flow99-identity-example",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-flow99-waste-classification",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-flow99-material-and-service",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-flow99-direction-equivalence",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-flow99-reference-levels",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-flow99-basis-and-demand",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-flow99-pesticide-interface",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-flow99-interface-consequence",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-flow99-phosphorus-interface",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-flow99-zero-placeholder",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-flow99-zero-reasons",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-flow99-zero-reporting",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-flow99-conclusion",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-flow99-probe-reference",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-service102-row-map",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-service102-service-meaning",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-service102-redundant",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-service102-residual-condition",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-sub105-two-uses",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-sub105-pef-report",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-sub105-ilcd-market",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-sub105-ilcd-absorption",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-sub105-pef-direct",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-sub105-evidence-example",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-sub105-fallbacks",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-sub105-conditional-results",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-sub105-reporting-objects",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-shift107-complete-action",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-shift107-joint-direction",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-shift107-service",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-shift107-supply",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-shift107-small",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-shift107-large",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-shift107-control",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-shift107-comparison-judgment",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cff109-question",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cff109-quality",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cff109-control",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cff109-version",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cff109-response",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-cff109-judgment",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-bio127-midpoint-endpoint-genealogy",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-bio127-feedback-perspective-asymmetry",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-bio127-ef31-subindicator-partition",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-bio127-zero-zero-vs-minus-plus-one",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-bio127-co-removal-and-methane-shift",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-bio127-package-and-report-discrepancies",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-bio127-storage-abolition-and-dluc-window",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-bio127-climate-diagnostic-synthesis",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-eutro129-category-genealogy",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-eutro129-phosphorus-soil-water-interface",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-eutro129-phosphorus-stoichiometry-and-p2o5",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-eutro129-nitrogen-soil-prohibition",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-eutro129-aquatic-and-airborne-n-reversals",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-eutro129-location-copies-and-nox-inversion",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-eutro129-normalization-double-counting-and-xml-anomalies",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-eutro129-operational-synthesis",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-particulate131-indicator-cutpoints",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-particulate131-size-and-subcompartment",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-particulate131-cohen-empirical-limits",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-particulate131-precursor-perspectives",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-particulate131-ef-ammonia-inversion",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-particulate131-regional-endpoint-reversal",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-particulate131-package-discrepancies",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-weight135-ef-coating-outdoor",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-weight135-ef-coating-indoor",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-weight135-ef-robustness-weights",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-weight135-denominator-coupling-and-drift",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-weight135-comparative-assertion-regimes",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-weight135-target-vs-hybrid-boundary",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-weight135-lime-three-table-rereversal",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-weight135-recipe-endpoint-stop",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-weight135-health-perspective-reversal",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-weight135-four-paradigm-synthesis",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-weight135-monetary-incommensurability",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-weight135-glam3-reporting-discipline",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-loc137-ef31-location-regimes",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-loc137-ef31-global-nf-extrapolation",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-loc137-dirty-denominator-paradox",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-loc137-open-economy-boundary-reversal",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-loc137-biophysical-vs-political-units",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-loc137-pm-nonlinear-and-endpoint-reversals",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-loc137-institutional-adoption-vs-compliance",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-loc137-four-layer-localization-audit",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-soc139-portfolio-reference-and-comparative-assertions",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-soc139-occupational-health-pathways-and-rights-boundary",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-soc139-cross-pillar-overlap-audit",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lcc143-three-lcc-archetypes-and-value-added-consolidation",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lcc143-actor-split-incentive-and-discount-rate-reversal",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lcc143-five-monetary-quantities-and-shadow-price-double-counting",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lcc143-cut-off-asymmetry-and-cost-rebound-boundary",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lcc143-demarcating-ra-eia-and-mfa-ioa",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-lcc143-single-issue-footprints-vs-multi-indicator-profiles",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-dapp147-dataset-roles-and-system-linking",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-dapp147-intrinsic-vs-context-representativeness",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-dapp147-quality-architectures-and-prerequisite-split",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-dapp147-weakest-link-vs-mean-and-80pct-masking",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-dapp147-validation-vs-review-and-team-thresholds",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-dapp147-five-aspect-compliance-and-uuid-semantics",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-dapp147-package-migration-inheritance-and-surveillance",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-unc149-framework-comparison",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-unc149-local-vs-global-sa",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-unc149-taylor-vs-sampling",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-unc149-gsa-outliers-nonlinearity",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-unc149-mc-runs-precision-vs-accuracy",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-unc149-comparative-paired-and-pvalue",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-unc149-pedigree-mc-boundary",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-pfr151-binding-batteries",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-pfr151-espr-dpp-conversion",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-pfr151-ghgp-boundary-unit",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-pfr151-ghgp-vs-battery-accounting",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-pfr151-assurance-vs-notified-body",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-pfr151-product-vs-corporate-scope3",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-pfr151-comparative-assertion-gates",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-pfr151-paywalled-standard-boundaries",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-dqp-ecoinvent-v3-variance",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-dqp-pef-ordinal-dqr",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-dqp-ghgp-qualitative-dqi",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-dqp-four-framework-synthesis",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-dqp-paywalled-iso-boundary",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-dqp-cross-chapter-bridge",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wsc157-equivalence-and-pairing",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wsc157-paired-vs-mc-fallacy",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wsc157-ilcd-comparative-assertion",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wsc157-pef-pefcr-and-classes",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wsc157-ghgp-and-paywalled-iso",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-wsc157-comparison-synthesis-bridge",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-int159-danish-epa-fu-eol",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-int159-danish-epa-multi-indicator",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-int159-ilcd-pef-interpretation-hotspots",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-int159-critical-review-governance",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-int159-limitations-and-paywalled-iso",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-int159-interpretation-synthesis-bridge",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-fut161-terminology-axes",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-fut161-upscaling-methods",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-fut161-superstructure-iam",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-fut161-superstructure-limits",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-fut161-dynamic-time-horizons",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-fut161-temporal-barriers-values",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rev163-lcia-pathway-and-packet-drift",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rev163-circular-and-prospective-coupling",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rev163-pedigree-dqr-and-sampling-limits",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rev163-comparative-assertion-three-regimes",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rev163-targeted-revision-routing",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-rev163-monograph-closing-boundary",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-mkt169-shared-questions",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-mkt169-conditional-convergence",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-mkt169-context-and-scale",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-mkt169-electricity-mix-regimes",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-mkt169-coproduct-substitution",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-mkt169-ranking-inversions",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-mkt169-epistemic-limits",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-fr173-shared-core",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-fr173-layer-split",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-fr173-intermediate-unit",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-fr173-conversion-and-attributes",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-fr173-comparability-gates",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      },
+      {
+        "id": "cl-fr173-epistemic-limits",
+        "rationale": "Dependent claim verified under B09 hybrid inventory cross-system comparison"
+      }
+    ],
+    "assessment": {
+      "scope": "Unit 29 (B09《混合清单》cross-system comparison, #175) against exact predecessor commit 744b371af100522b0d0f51e41adaa82eb8943d30, registering 4 close-read primary passages (20 exact 0-based pdfIndices) from ILCD Handbook 2010 (§6.6.2–6.6.3 & Provisions 6.6), EU PEF (EU 2021/2279 OJ L 471 Annex I §§4.1, 4.4.4, 4.6.3–4.6.4), GHG Protocol Product Standard 2011 (Ch. 7 & §8.3.4 / Box 8.2), and ecoinvent v3 DQG 2013 (§4.11, §5.10, §6.1–6.4), plus 4 evidence records, 5 numericFacts (85%, 95% ILCD; 10%, 3.0% PEF; 95% ecoinvent yield), 6 comparative synthesis claims (Notes 40–45), and 1 5-row comparison table.",
+      "conservation": "Conserves 100% of all 1,112 existing claims (1,118 total), 0 caseBinding edits, 40/40 knowledge/cases/ files byte-identical, exact 3 H2 sections in B09 (120 formal chapter H2 sections total), and all 23 legacy migration notices (#1–#39) untouched.",
+      "review": "Independent Primary-Source, Numeric & Premise-DAG Auditor (836a05ac) re-verified unconditional PASS (0 BLOCKER / 0 MAJOR / 0 MINOR)."
+    }
+  }
+}
