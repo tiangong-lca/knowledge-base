@@ -23,6 +23,7 @@ import {
   currentPart5Reread,
   currentPart6Reread,
   currentMarketResponseComparison,
+  currentPart3Reread,
   currentPart7Reread,
   currentParticulateComparison,
   currentPhotochemicalOzone,
@@ -51,6 +52,7 @@ import { dataApplicabilityComparisonCorrections, dataApplicabilityComparisonSour
 import { uncertaintyComparisonCorrections, uncertaintyComparisonSource } from './reader-uncertainty-comparison.mjs';
 import { part6RereadCorrections, part6RereadSource } from './reader-part6-reread.mjs';
 import { part7RereadCorrections, part7RereadSource } from './reader-part7-reread.mjs';
+import { part3RereadCorrections, part3RereadSource } from './reader-part3-reread.mjs';
 
 const titleByRoute = new Map();
 for (const entry of [...(numbering.web ?? []), ...(numbering.book ?? [])]) {
@@ -103,6 +105,7 @@ function summarizeUnit(unit, fallbackSource = null) {
  */
 export function buildPublicChangesLedger() {
   const orderedUnits = [
+    summarizeUnit(currentPart3Reread),
     summarizeUnit(currentMarketResponseComparison),
     summarizeUnit(currentPart7Reread),
     summarizeUnit(currentRevisableJudgment),
@@ -174,6 +177,7 @@ export function buildPublicChangesLedger() {
     [currentUncertaintyComparison?.corrections, currentUncertaintyComparison?.id, uncertaintyComparisonSource, uncertaintyComparisonCorrections],
     [currentPart6Reread, currentPart6Reread?.id, part6RereadSource, part6RereadCorrections],
     [currentPart7Reread, currentPart7Reread?.id, part7RereadSource, part7RereadCorrections],
+    [currentPart3Reread, currentPart3Reread?.id, part3RereadSource, part3RereadCorrections],
   ];
   const seenCorr = new Set();
   for (const [active, unitId, source, rows] of correctionSets) {
@@ -196,6 +200,15 @@ export function buildPublicChangesLedger() {
   const corrections = rawCorrections.reverse();
 
   const partIntroductions = [
+    currentPart3Reread && {
+      part: 3,
+      title: numbering.parts?.[2]?.title ?? '第三部',
+      unitId: currentPart3Reread.id,
+      date: part3RereadSource.date,
+      from: currentPart3Reread.partIntroduction.from,
+      to: currentPart3Reread.partIntroduction.to,
+      sourceHref: citationSourceHref(part3RereadSource.commit),
+    },
     currentPart7Reread && {
       part: 7,
       title: numbering.parts?.[6]?.title ?? '第七部',

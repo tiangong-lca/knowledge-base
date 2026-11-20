@@ -188,6 +188,8 @@ test('the actual adopted source is independently qualified and a changed reviewe
   const eutro = await read('config/reader-eutrophication-pathways.json');
   const particulate = await read('config/reader-particulate-comparison.json');
   const part4 = await read('config/reader-part4-reread.json');
+  const part3 = await read('config/reader-part3-reread.json');
+  const privatePart3 = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1' && part3.status === 'preview';
   const mkt = await read('config/reader-market-response-comparison.json');
   const privateMkt = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1' && mkt.status === 'preview';
   const part7 = await read('config/reader-part7-reread.json');
@@ -260,6 +262,11 @@ test('the actual adopted source is independently qualified and a changed reviewe
     ? 'Reader copyedit successor differs from actual source'
     : 'stale predecessor, missing successor or mismatched result';
   await assert.rejects(qualify(root, catalog, readings, literature), error => {
+    if (privatePart3 || part3.status === 'reviewed') {
+      return error.message === 'Part III continuous reread did not recover the independently observed raw f6d1eca5 state'
+        || error.message.startsWith('Part III continuous reread lacks its exact candidate transition:')
+        || error.message.startsWith('Part III continuous reread actual source state differs');
+    }
     if (privateMkt || mkt.status === 'reviewed') {
       return error.message === 'Market response comparison did not recover the independently observed raw 8949778f state'
         || error.message.startsWith('Market response comparison lacks its exact candidate transition:');
