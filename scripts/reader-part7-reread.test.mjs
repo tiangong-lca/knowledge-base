@@ -5,11 +5,13 @@ import config from '../config/reader-part7-reread.json' with { type: 'json' };
 import mkt from '../config/reader-market-response-comparison.json' with { type: 'json' };
 import part3 from '../config/reader-part3-reread.json' with { type: 'json' };
 import fr from '../config/reader-functional-reference-comparison.json' with { type: 'json' };
+import part2 from '../config/reader-part2-reread.json' with { type: 'json' };
 import hyb from '../config/reader-hybrid-inventory-comparison.json' with { type: 'json' };
 import { previousScientificTestRecords } from './fixtures/scientific-receipt-envelope.mjs';
 import { restoreMarketResponseComparisonTestFiles } from './reader-market-response-comparison.mjs';
 import { restorePart3RereadTestFiles } from './reader-part3-reread.mjs';
 import { restoreFunctionalReferenceComparisonTestFiles } from './reader-functional-reference-comparison.mjs';
+import { restorePart2RereadTestFiles } from './reader-part2-reread.mjs';
 import { restoreHybridInventoryComparisonTestFiles } from './reader-hybrid-inventory-comparison.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
@@ -45,8 +47,8 @@ async function loadInput() {
   ]);
   for (const [p, b] of [...shiftFiles, ...serviceFiles]) files.set(p, b);
   if (mkt.unit) {
-    const prev = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, hyb.unit), fr.unit), part3.unit), mkt.unit);
-    restoreMarketResponseComparisonTestFiles(restorePart3RereadTestFiles(restoreFunctionalReferenceComparisonTestFiles(restoreHybridInventoryComparisonTestFiles(files, hyb.unit), fr.unit), part3.unit), mkt.unit);
+    const prev = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part2.unit), hyb.unit), fr.unit), part3.unit), mkt.unit);
+    restoreMarketResponseComparisonTestFiles(restorePart3RereadTestFiles(restoreFunctionalReferenceComparisonTestFiles(restoreHybridInventoryComparisonTestFiles(restorePart2RereadTestFiles(files, part2.unit), hyb.unit), fr.unit), part3.unit), mkt.unit);
     return { catalog: prev.catalog, readings: prev.readings, literature: prev.literature, files };
   }
   return { catalog, readings, literature, files };

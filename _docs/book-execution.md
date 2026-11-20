@@ -1,6 +1,6 @@
 ---
 lastReviewedAt: 2026-11-20
-lastReviewedCommit: f6d1eca5190bb2afaade08549c59405b48e026cc
+lastReviewedCommit: 3034503fadf4353e3e58b01f32c74886bfbe6c92
 title: Approved LCA book execution and wave ledger
 docType: reference
 scope: repo
