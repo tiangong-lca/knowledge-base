@@ -1,0 +1,1972 @@
+{
+  "schemaVersion": 1,
+  "kind": "output",
+  "unit": "hybrid-inventory-comparison-175",
+  "date": "2026-11-20",
+  "subjectSha256": "091e363e10dd5d9caedb0a36ecf044bb8e3f3a0c0bdd544736c7a7d3dd1b9e25",
+  "scope": [
+    "content/docs/book/inventory-boundary-and-hybrid.mdx",
+    "readings:rd-ilcd-2010",
+    "readings:rd-kb44-ec2021",
+    "readings:rd-dapp147-ecoinvent-v3-2013",
+    "readings:rd-pfr151-ghgp-2011",
+    "researchMetadata:order:claims",
+    "researchMetadata:order:evidence",
+    "researchMetadata:public-projection",
+    "claims:cl-hyb175-shared-completeness-dilemma",
+    "claims:cl-hyb175-process-standards-cutoff-and-capital",
+    "claims:cl-hyb175-eeio-admission-and-hybrid-architectures",
+    "claims:cl-hyb175-double-counting-governance",
+    "claims:cl-hyb175-price-aggregation-and-denominator-comparability",
+    "claims:cl-hyb175-epistemic-limits",
+    "evidence:ev-hyb175-ilcd-cutoff",
+    "evidence:ev-hyb175-pef-cutoff",
+    "evidence:ev-hyb175-ghgp-boundary-eeio",
+    "evidence:ev-hyb175-ecoinvent-completeness"
+  ],
+  "observed": "Actual Next.js static export bytes from base a36bd90e36ec14089f0a2783d6f18cf2f4ab5821 under Goal §2.15 Clean Public Delivery (468 manifest files, CSS zero-drift 7f71d0b6...).",
+  "observations": {
+    "outputs": [
+      {
+        "path": "/docs/book/inventory-boundary-and-hybrid",
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "from": "34c5ffd6d17a62205a3ebd1a1316c10eb6950e7b95a6d6e03ca2952b22f0e54a",
+        "sha256": "0be2cdad9ff9bfbfa72f894105ed46565cd53d80cfeaa812e360d5c38aea53c3",
+        "rationale": "Updated rendered article under B09 hybrid inventory cross-system comparison (#175)"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "from": "ff60812ae5c746c9814353315a762091436cc7f764c73712ca995c9166822cdd",
+        "sha256": "b112467fe8eada3bf2e8e41766de32b4bb07d96d73201b0b4470963f524085f2",
+        "rationale": "Updated rendered article under B09 hybrid inventory cross-system comparison (#175)"
+      }
+    ],
+    "publicArtifacts": [
+      {
+        "path": "downloads/bibliography.json",
+        "from": "b7aef68e5785c4c6ef425e479d1c97ce7a93e7f4220e4c57085ef355795bdf0c",
+        "sha256": "dc62d0d6fb12fbda4a455858e3d4e845ed4ee6adee2827af24961fbdd15a1041",
+        "rationale": "Updated public artifact under B09 hybrid inventory cross-system comparison (#175)"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "from": "a2e0ac5c61c279759b8d4a59f7c3d8e6b37a2de25f6bc014f367b984cb40d3f3",
+        "sha256": "4dc45672ee269f9c7231458ac666110219569f18eeb3104a3205c26da746da9d",
+        "rationale": "Updated public artifact under B09 hybrid inventory cross-system comparison (#175)"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "from": "ff1e827fd66895df107cca2ad853ce66427b35e49b6481903fe8dc0089219134",
+        "sha256": "78a5958afbfdf7a4b8657071269c752308f8af376aadbf6890f601c28fe3bc3a",
+        "rationale": "Updated public artifact under B09 hybrid inventory cross-system comparison (#175)"
+      },
+      {
+        "path": "downloads/research.json",
+        "from": "b7aef68e5785c4c6ef425e479d1c97ce7a93e7f4220e4c57085ef355795bdf0c",
+        "sha256": "dc62d0d6fb12fbda4a455858e3d4e845ed4ee6adee2827af24961fbdd15a1041",
+        "rationale": "Updated public artifact under B09 hybrid inventory cross-system comparison (#175)"
+      },
+      {
+        "path": "claims/index.html",
+        "from": "cd691199a6cf94ef2640e32491f021d15e92316f8959eff5bc46261bb8c478a1",
+        "sha256": "d1647cbe152ac3a5e0c08bda73cf39d4d64f2aaf9066cafad2a9eb37b065eae6",
+        "rationale": "Updated public artifact under B09 hybrid inventory cross-system comparison (#175)"
+      },
+      {
+        "path": "sources/index.html",
+        "from": "4fd7b6bcb048fcc131230465f6ef0aba10aa2789f8b1fe5c8383471da9bb5905",
+        "sha256": "588558551c7139f76b559bc83e9cb7c154d500ff38d7379ec27a3349c5d26526",
+        "rationale": "Updated public artifact under B09 hybrid inventory cross-system comparison (#175)"
+      },
+      {
+        "path": "research/index.html",
+        "from": "031a28387f496cdc91a7dfe07246dad30414e994711d0455dc74b89f2a89baf6",
+        "sha256": "74baec85bd8a1802d056e1f0b9be73f11bf62895374921b161336a2068958002",
+        "rationale": "Updated public artifact under B09 hybrid inventory cross-system comparison (#175)"
+      }
+    ],
+    "addresses": {
+      "/docs/book/inventory-boundary-and-hybrid#nd-page": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "chapter",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-inv-boundary-carrier",
+          "cl-inv-small-cuts",
+          "cl-hyb-question",
+          "cl-inv-io-limits",
+          "cl-inv-hybrid-forms",
+          "cl-inv-double-counting",
+          "cl-hyb-object",
+          "cl-hyb-sign",
+          "cl-hyb-upstream",
+          "cl-hyb-downstream",
+          "cl-hyb-balance",
+          "cl-hyb-inventory",
+          "cl-hyb-toaster",
+          "cl-hyb-downstream-dispute",
+          "cl-hyb-downstream-test",
+          "cl-hyb-downstream-zero",
+          "cl-hyb-accounts",
+          "cl-hyb-evidence-boundary",
+          "cl-hyb-service",
+          "cl-hyb-ledger",
+          "cl-hyb-invoices",
+          "cl-hyb-raw",
+          "cl-hyb-naive",
+          "cl-hyb-remove",
+          "cl-hyb-equations",
+          "cl-hyb-corrected",
+          "cl-hyb-naive-result",
+          "cl-hyb-swap",
+          "cl-hyb-swap-result",
+          "cl-hyb-pump",
+          "cl-hyb-bpc",
+          "cl-hyb-paths",
+          "cl-hyb-popcorn",
+          "cl-hyb-response",
+          "cl-hyb-database",
+          "cl-hyb-denominator",
+          "cl-hyb-limits",
+          "cl-hyb-audit",
+          "cl-inv-judgement",
+          "cl-hyb175-shared-completeness-dilemma",
+          "cl-hyb175-process-standards-cutoff-and-capital",
+          "cl-hyb175-eeio-admission-and-hybrid-architectures",
+          "cl-hyb175-double-counting-governance",
+          "cl-hyb175-price-aggregation-and-denominator-comparability",
+          "cl-hyb175-epistemic-limits"
+        ],
+        "ordinary": [
+          "27b04a8fc87568abcb9ae0def813f868b75ecb67415516a5c3a41fa295a02720",
+          "826ad428a7c437fbaf03ba94d07240df318df2493a2874b3a77a4c6624b428a2",
+          "8a1815fe72a4183ceeeb64fecd1e797f347fb30937f1de64ed70a6f50da29820",
+          "06ca418c9e52568332d09fe8a1c9b3f418f16ea45970892920bf47d01110051d",
+          "63160d50df6d13b1dade77f9093ac0d3e4ede87671666bfcc3f5e8d5ca0d1bac"
+        ],
+        "bindings": {
+          "links": [
+            [],
+            [],
+            [],
+            [],
+            []
+          ],
+          "tables": [
+            {
+              "header": [
+                [
+                  {},
+                  {},
+                  {}
+                ]
+              ],
+              "body": [
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "F → S（电）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "10"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "0"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "G → S（电）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "10"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "20"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "S → F（服务）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "20"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "20"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "S → G（服务）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "30"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "30"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "S → S（自用）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "20"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "20"
+                  }
+                ]
+              ]
+            },
+            {
+              "header": [
+                [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              ],
+              "body": [
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "ILCD 2010（§6.6.2–6.6.3、第 6.6 节规定）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "承认 100% 总量不可知；按影响覆盖度设截断（如 85% / 95%）并公开排除清单"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "原则上纳入资本品及清洁、法律、营销、办公等外购服务，除非证明不显著"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "无 EEIO / 混合补缺条款；依赖过程边界迭代闭合"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "须披露排除清单与覆盖度基线，截断过大限制可比性"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "欧盟 PEF（2021/2279 附件一 §§4.1, 4.4.4, 4.6.3–4.6.4）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "筛查禁止截断；正式研究累计截断上限 3.0%（物质、能量与环境显著性）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "资本品及其生命末期默认排除，除非既往研究证明显著"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "无 EEIO 路径；ILCD-EL 替代上限 10%，缺数须经核查排除"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "高度统一的过程口径，但默认不含资本品与宏观服务尾项"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "GHG Protocol 产品标准（2011 第 7 章、§8.3.4、框 8.2）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "归属过程仅在缺数、无替代且估算低于披露阈值时可排除"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "资本品、管理能耗及研发/行政/营销属可选非归属过程，纳入须披露"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "允许财务数据配 EEIO 因子做筛查与上游估算；人工核清因子覆盖防重叠"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "非归属项可选且仅含温室气体，跨研究须对齐边界与因子类型"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "ecoinvent v3 导则（2013 §4.11、§5.10、§6.1–6.4）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "声明无严格定量截断、不截断回收；缺数以合理估计及 95% 默认收率补足"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "按寿命与产能显式建模资本品，并尽量纳入无直接付费的物理因果"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "建有单元过程货币平衡，但主体为纯物理单元过程网络"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "无宏观部门闭合，受限于已建单元过程覆盖度"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "混合清单框架（Suh 2004；Agez 2019/2020；Jakobs 2021）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "用经济投入产出表闭合上游截断，但引入部门聚合与价格换算误差"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "通过货币采购自然覆盖外购服务与资本品上游（取决于投入产出表口径）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "分层 / IO 型 / 集成混合；须显式扣除重叠（账户扣除、二元修正、BPC、STAM）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "须同口径交代价格基、部门分辨率、扣除规则与分母口径"
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "/docs/book/inventory-boundary-and-hybrid#main-content": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "reading-title",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-inv-boundary-carrier",
+          "cl-inv-small-cuts",
+          "cl-hyb-question",
+          "cl-inv-io-limits",
+          "cl-inv-hybrid-forms",
+          "cl-inv-double-counting",
+          "cl-hyb-object",
+          "cl-hyb-sign",
+          "cl-hyb-upstream",
+          "cl-hyb-downstream",
+          "cl-hyb-balance",
+          "cl-hyb-inventory",
+          "cl-hyb-toaster",
+          "cl-hyb-downstream-dispute",
+          "cl-hyb-downstream-test",
+          "cl-hyb-downstream-zero",
+          "cl-hyb-accounts",
+          "cl-hyb-evidence-boundary",
+          "cl-hyb-service",
+          "cl-hyb-ledger",
+          "cl-hyb-invoices",
+          "cl-hyb-raw",
+          "cl-hyb-naive",
+          "cl-hyb-remove",
+          "cl-hyb-equations",
+          "cl-hyb-corrected",
+          "cl-hyb-naive-result",
+          "cl-hyb-swap",
+          "cl-hyb-swap-result",
+          "cl-hyb-pump",
+          "cl-hyb-bpc",
+          "cl-hyb-paths",
+          "cl-hyb-popcorn",
+          "cl-hyb-response",
+          "cl-hyb-database",
+          "cl-hyb-denominator",
+          "cl-hyb-limits",
+          "cl-hyb-audit",
+          "cl-inv-judgement",
+          "cl-hyb175-shared-completeness-dilemma",
+          "cl-hyb175-process-standards-cutoff-and-capital",
+          "cl-hyb175-eeio-admission-and-hybrid-architectures",
+          "cl-hyb175-double-counting-governance",
+          "cl-hyb175-price-aggregation-and-denominator-comparability",
+          "cl-hyb175-epistemic-limits"
+        ],
+        "ordinary": [
+          "27b04a8fc87568abcb9ae0def813f868b75ecb67415516a5c3a41fa295a02720",
+          "826ad428a7c437fbaf03ba94d07240df318df2493a2874b3a77a4c6624b428a2",
+          "8a1815fe72a4183ceeeb64fecd1e797f347fb30937f1de64ed70a6f50da29820",
+          "06ca418c9e52568332d09fe8a1c9b3f418f16ea45970892920bf47d01110051d",
+          "63160d50df6d13b1dade77f9093ac0d3e4ede87671666bfcc3f5e8d5ca0d1bac"
+        ],
+        "chapter": "nd-page"
+      },
+      "/docs/book/inventory-boundary-and-hybrid#过程经济边界": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "heading",
+        "title": "过程清单与经济数据",
+        "claimIds": [
+          "cl-inv-boundary-carrier",
+          "cl-inv-small-cuts",
+          "cl-hyb-question",
+          "cl-inv-io-limits",
+          "cl-inv-hybrid-forms",
+          "cl-inv-double-counting",
+          "cl-hyb-object",
+          "cl-hyb-sign"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#双向账户": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "heading",
+        "title": "双向账户",
+        "claimIds": [
+          "cl-hyb-upstream",
+          "cl-hyb-downstream",
+          "cl-hyb-balance",
+          "cl-hyb-inventory",
+          "cl-hyb-toaster",
+          "cl-hyb-downstream-dispute",
+          "cl-hyb-downstream-test",
+          "cl-hyb-downstream-zero",
+          "cl-hyb-accounts",
+          "cl-hyb-evidence-boundary",
+          "cl-hyb-service",
+          "cl-hyb-ledger",
+          "cl-hyb-invoices",
+          "cl-hyb-raw",
+          "cl-hyb-naive",
+          "cl-hyb-remove",
+          "cl-hyb-equations",
+          "cl-hyb-corrected",
+          "cl-hyb-naive-result",
+          "cl-hyb-swap",
+          "cl-hyb-swap-result"
+        ],
+        "ordinary": [
+          "826ad428a7c437fbaf03ba94d07240df318df2493a2874b3a77a4c6624b428a2",
+          "8a1815fe72a4183ceeeb64fecd1e797f347fb30937f1de64ed70a6f50da29820",
+          "06ca418c9e52568332d09fe8a1c9b3f418f16ea45970892920bf47d01110051d"
+        ]
+      },
+      "/docs/book/inventory-boundary-and-hybrid#误差来源": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "heading",
+        "title": "误差来源",
+        "claimIds": [
+          "cl-hyb-pump",
+          "cl-hyb-bpc",
+          "cl-hyb-paths",
+          "cl-hyb-popcorn",
+          "cl-hyb-response",
+          "cl-hyb-database",
+          "cl-hyb-denominator",
+          "cl-hyb-limits",
+          "cl-hyb-audit",
+          "cl-inv-judgement",
+          "cl-hyb175-shared-completeness-dilemma",
+          "cl-hyb175-process-standards-cutoff-and-capital",
+          "cl-hyb175-eeio-admission-and-hybrid-architectures",
+          "cl-hyb175-double-counting-governance",
+          "cl-hyb175-price-aggregation-and-denominator-comparability",
+          "cl-hyb175-epistemic-limits"
+        ],
+        "ordinary": [
+          "63160d50df6d13b1dade77f9093ac0d3e4ede87671666bfcc3f5e8d5ca0d1bac"
+        ]
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-annotations": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note-group",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-inv-boundary-carrier",
+          "cl-inv-small-cuts",
+          "cl-hyb-question",
+          "cl-inv-io-limits",
+          "cl-inv-hybrid-forms",
+          "cl-inv-double-counting",
+          "cl-hyb-object",
+          "cl-hyb-sign",
+          "cl-hyb-upstream",
+          "cl-hyb-downstream",
+          "cl-hyb-balance",
+          "cl-hyb-inventory",
+          "cl-hyb-toaster",
+          "cl-hyb-downstream-dispute",
+          "cl-hyb-downstream-test",
+          "cl-hyb-downstream-zero",
+          "cl-hyb-accounts",
+          "cl-hyb-evidence-boundary",
+          "cl-hyb-service",
+          "cl-hyb-ledger",
+          "cl-hyb-invoices",
+          "cl-hyb-raw",
+          "cl-hyb-naive",
+          "cl-hyb-remove",
+          "cl-hyb-equations",
+          "cl-hyb-corrected",
+          "cl-hyb-naive-result",
+          "cl-hyb-swap",
+          "cl-hyb-swap-result",
+          "cl-hyb-pump",
+          "cl-hyb-bpc",
+          "cl-hyb-paths",
+          "cl-hyb-popcorn",
+          "cl-hyb-response",
+          "cl-hyb-database",
+          "cl-hyb-denominator",
+          "cl-hyb-limits",
+          "cl-hyb-audit",
+          "cl-inv-judgement",
+          "cl-hyb175-shared-completeness-dilemma",
+          "cl-hyb175-process-standards-cutoff-and-capital",
+          "cl-hyb175-eeio-admission-and-hybrid-architectures",
+          "cl-hyb175-double-counting-governance",
+          "cl-hyb175-price-aggregation-and-denominator-comparability",
+          "cl-hyb175-epistemic-limits"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-boundary-carrier": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-inv-boundary-carrier"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-small-cuts": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-inv-small-cuts"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-question": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-question"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-io-limits": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-inv-io-limits"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-hybrid-forms": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-inv-hybrid-forms"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-double-counting": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-inv-double-counting"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-object": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-object"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-sign": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-sign"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-upstream": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-upstream"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-downstream": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-downstream"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-balance": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-balance"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-inventory": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-inventory"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-toaster": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-toaster"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-downstream-dispute": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-downstream-dispute"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-downstream-test": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-downstream-test"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-downstream-zero": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-downstream-zero"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-accounts": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-accounts"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-evidence-boundary": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-evidence-boundary"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-service": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-service"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-ledger": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-ledger"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-invoices": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-invoices"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-raw": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-raw"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-naive": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-naive"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-remove": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-remove"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-equations": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-equations"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-corrected": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-corrected"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-naive-result": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-naive-result"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-swap": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-swap"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-swap-result": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-swap-result"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-pump": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-pump"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-bpc": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-bpc"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-paths": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-paths"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-popcorn": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-popcorn"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-response": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-response"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-database": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-database"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-denominator": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-denominator"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-limits": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-limits"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-audit": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-audit"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-judgement": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-inv-judgement"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb175-shared-completeness-dilemma": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb175-shared-completeness-dilemma"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb175-process-standards-cutoff-and-capital": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb175-process-standards-cutoff-and-capital"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb175-eeio-admission-and-hybrid-architectures": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb175-eeio-admission-and-hybrid-architectures"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb175-double-counting-governance": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb175-double-counting-governance"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb175-price-aggregation-and-denominator-comparability": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb175-price-aggregation-and-denominator-comparability"
+        ],
+        "ordinary": []
+      },
+      "/docs/book/inventory-boundary-and-hybrid#chapter-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb175-epistemic-limits": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb175-epistemic-limits"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "chapter",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-inv-boundary-carrier",
+          "cl-inv-small-cuts",
+          "cl-hyb-question",
+          "cl-inv-io-limits",
+          "cl-inv-hybrid-forms",
+          "cl-inv-double-counting",
+          "cl-hyb-object",
+          "cl-hyb-sign",
+          "cl-hyb-upstream",
+          "cl-hyb-downstream",
+          "cl-hyb-balance",
+          "cl-hyb-inventory",
+          "cl-hyb-toaster",
+          "cl-hyb-downstream-dispute",
+          "cl-hyb-downstream-test",
+          "cl-hyb-downstream-zero",
+          "cl-hyb-accounts",
+          "cl-hyb-evidence-boundary",
+          "cl-hyb-service",
+          "cl-hyb-ledger",
+          "cl-hyb-invoices",
+          "cl-hyb-raw",
+          "cl-hyb-naive",
+          "cl-hyb-remove",
+          "cl-hyb-equations",
+          "cl-hyb-corrected",
+          "cl-hyb-naive-result",
+          "cl-hyb-swap",
+          "cl-hyb-swap-result",
+          "cl-hyb-pump",
+          "cl-hyb-bpc",
+          "cl-hyb-paths",
+          "cl-hyb-popcorn",
+          "cl-hyb-response",
+          "cl-hyb-database",
+          "cl-hyb-denominator",
+          "cl-hyb-limits",
+          "cl-hyb-audit",
+          "cl-inv-judgement",
+          "cl-hyb175-shared-completeness-dilemma",
+          "cl-hyb175-process-standards-cutoff-and-capital",
+          "cl-hyb175-eeio-admission-and-hybrid-architectures",
+          "cl-hyb175-double-counting-governance",
+          "cl-hyb175-price-aggregation-and-denominator-comparability",
+          "cl-hyb175-epistemic-limits"
+        ],
+        "ordinary": [
+          "27b04a8fc87568abcb9ae0def813f868b75ecb67415516a5c3a41fa295a02720",
+          "826ad428a7c437fbaf03ba94d07240df318df2493a2874b3a77a4c6624b428a2",
+          "8a1815fe72a4183ceeeb64fecd1e797f347fb30937f1de64ed70a6f50da29820",
+          "06ca418c9e52568332d09fe8a1c9b3f418f16ea45970892920bf47d01110051d",
+          "63160d50df6d13b1dade77f9093ac0d3e4ede87671666bfcc3f5e8d5ca0d1bac"
+        ],
+        "bindings": {
+          "links": [
+            [],
+            [],
+            [],
+            [],
+            []
+          ],
+          "tables": [
+            {
+              "header": [
+                [
+                  {},
+                  {},
+                  {}
+                ]
+              ],
+              "body": [
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "F → S（电）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "10"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "0"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "G → S（电）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "10"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "20"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "S → F（服务）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "20"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "20"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "S → G（服务）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "30"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "30"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "S → S（自用）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "20"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "20"
+                  }
+                ]
+              ]
+            },
+            {
+              "header": [
+                [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              ],
+              "body": [
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "ILCD 2010（§6.6.2–6.6.3、第 6.6 节规定）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "承认 100% 总量不可知；按影响覆盖度设截断（如 85% / 95%）并公开排除清单"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "原则上纳入资本品及清洁、法律、营销、办公等外购服务，除非证明不显著"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "无 EEIO / 混合补缺条款；依赖过程边界迭代闭合"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "须披露排除清单与覆盖度基线，截断过大限制可比性"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "欧盟 PEF（2021/2279 附件一 §§4.1, 4.4.4, 4.6.3–4.6.4）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "筛查禁止截断；正式研究累计截断上限 3.0%（物质、能量与环境显著性）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "资本品及其生命末期默认排除，除非既往研究证明显著"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "无 EEIO 路径；ILCD-EL 替代上限 10%，缺数须经核查排除"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "高度统一的过程口径，但默认不含资本品与宏观服务尾项"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "GHG Protocol 产品标准（2011 第 7 章、§8.3.4、框 8.2）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "归属过程仅在缺数、无替代且估算低于披露阈值时可排除"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "资本品、管理能耗及研发/行政/营销属可选非归属过程，纳入须披露"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "允许财务数据配 EEIO 因子做筛查与上游估算；人工核清因子覆盖防重叠"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "非归属项可选且仅含温室气体，跨研究须对齐边界与因子类型"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "ecoinvent v3 导则（2013 §4.11、§5.10、§6.1–6.4）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "声明无严格定量截断、不截断回收；缺数以合理估计及 95% 默认收率补足"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "按寿命与产能显式建模资本品，并尽量纳入无直接付费的物理因果"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "建有单元过程货币平衡，但主体为纯物理单元过程网络"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "无宏观部门闭合，受限于已建单元过程覆盖度"
+                  }
+                ],
+                [
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "混合清单框架（Suh 2004；Agez 2019/2020；Jakobs 2021）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "用经济投入产出表闭合上游截断，但引入部门聚合与价格换算误差"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "通过货币采购自然覆盖外购服务与资本品上游（取决于投入产出表口径）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "分层 / IO 型 / 集成混合；须显式扣除重叠（账户扣除、二元修正、BPC、STAM）"
+                  },
+                  {
+                    "tag": "TD",
+                    "attributes": {},
+                    "text": "须同口径交代价格基、部门分辨率、扣除规则与分母口径"
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "/print#print-reading-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "reading-title",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-inv-boundary-carrier",
+          "cl-inv-small-cuts",
+          "cl-hyb-question",
+          "cl-inv-io-limits",
+          "cl-inv-hybrid-forms",
+          "cl-inv-double-counting",
+          "cl-hyb-object",
+          "cl-hyb-sign",
+          "cl-hyb-upstream",
+          "cl-hyb-downstream",
+          "cl-hyb-balance",
+          "cl-hyb-inventory",
+          "cl-hyb-toaster",
+          "cl-hyb-downstream-dispute",
+          "cl-hyb-downstream-test",
+          "cl-hyb-downstream-zero",
+          "cl-hyb-accounts",
+          "cl-hyb-evidence-boundary",
+          "cl-hyb-service",
+          "cl-hyb-ledger",
+          "cl-hyb-invoices",
+          "cl-hyb-raw",
+          "cl-hyb-naive",
+          "cl-hyb-remove",
+          "cl-hyb-equations",
+          "cl-hyb-corrected",
+          "cl-hyb-naive-result",
+          "cl-hyb-swap",
+          "cl-hyb-swap-result",
+          "cl-hyb-pump",
+          "cl-hyb-bpc",
+          "cl-hyb-paths",
+          "cl-hyb-popcorn",
+          "cl-hyb-response",
+          "cl-hyb-database",
+          "cl-hyb-denominator",
+          "cl-hyb-limits",
+          "cl-hyb-audit",
+          "cl-inv-judgement",
+          "cl-hyb175-shared-completeness-dilemma",
+          "cl-hyb175-process-standards-cutoff-and-capital",
+          "cl-hyb175-eeio-admission-and-hybrid-architectures",
+          "cl-hyb175-double-counting-governance",
+          "cl-hyb175-price-aggregation-and-denominator-comparability",
+          "cl-hyb175-epistemic-limits"
+        ],
+        "ordinary": [
+          "27b04a8fc87568abcb9ae0def813f868b75ecb67415516a5c3a41fa295a02720",
+          "826ad428a7c437fbaf03ba94d07240df318df2493a2874b3a77a4c6624b428a2",
+          "8a1815fe72a4183ceeeb64fecd1e797f347fb30937f1de64ed70a6f50da29820",
+          "06ca418c9e52568332d09fe8a1c9b3f418f16ea45970892920bf47d01110051d",
+          "63160d50df6d13b1dade77f9093ac0d3e4ede87671666bfcc3f5e8d5ca0d1bac"
+        ],
+        "chapter": "print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964"
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-过程经济边界": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "heading",
+        "title": "过程清单与经济数据",
+        "claimIds": [
+          "cl-inv-boundary-carrier",
+          "cl-inv-small-cuts",
+          "cl-hyb-question",
+          "cl-inv-io-limits",
+          "cl-inv-hybrid-forms",
+          "cl-inv-double-counting",
+          "cl-hyb-object",
+          "cl-hyb-sign"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-双向账户": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "heading",
+        "title": "双向账户",
+        "claimIds": [
+          "cl-hyb-upstream",
+          "cl-hyb-downstream",
+          "cl-hyb-balance",
+          "cl-hyb-inventory",
+          "cl-hyb-toaster",
+          "cl-hyb-downstream-dispute",
+          "cl-hyb-downstream-test",
+          "cl-hyb-downstream-zero",
+          "cl-hyb-accounts",
+          "cl-hyb-evidence-boundary",
+          "cl-hyb-service",
+          "cl-hyb-ledger",
+          "cl-hyb-invoices",
+          "cl-hyb-raw",
+          "cl-hyb-naive",
+          "cl-hyb-remove",
+          "cl-hyb-equations",
+          "cl-hyb-corrected",
+          "cl-hyb-naive-result",
+          "cl-hyb-swap",
+          "cl-hyb-swap-result"
+        ],
+        "ordinary": [
+          "826ad428a7c437fbaf03ba94d07240df318df2493a2874b3a77a4c6624b428a2",
+          "8a1815fe72a4183ceeeb64fecd1e797f347fb30937f1de64ed70a6f50da29820",
+          "06ca418c9e52568332d09fe8a1c9b3f418f16ea45970892920bf47d01110051d"
+        ]
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-误差来源": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "heading",
+        "title": "误差来源",
+        "claimIds": [
+          "cl-hyb-pump",
+          "cl-hyb-bpc",
+          "cl-hyb-paths",
+          "cl-hyb-popcorn",
+          "cl-hyb-response",
+          "cl-hyb-database",
+          "cl-hyb-denominator",
+          "cl-hyb-limits",
+          "cl-hyb-audit",
+          "cl-inv-judgement",
+          "cl-hyb175-shared-completeness-dilemma",
+          "cl-hyb175-process-standards-cutoff-and-capital",
+          "cl-hyb175-eeio-admission-and-hybrid-architectures",
+          "cl-hyb175-double-counting-governance",
+          "cl-hyb175-price-aggregation-and-denominator-comparability",
+          "cl-hyb175-epistemic-limits"
+        ],
+        "ordinary": [
+          "63160d50df6d13b1dade77f9093ac0d3e4ede87671666bfcc3f5e8d5ca0d1bac"
+        ]
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-annotations": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note-group",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-inv-boundary-carrier",
+          "cl-inv-small-cuts",
+          "cl-hyb-question",
+          "cl-inv-io-limits",
+          "cl-inv-hybrid-forms",
+          "cl-inv-double-counting",
+          "cl-hyb-object",
+          "cl-hyb-sign",
+          "cl-hyb-upstream",
+          "cl-hyb-downstream",
+          "cl-hyb-balance",
+          "cl-hyb-inventory",
+          "cl-hyb-toaster",
+          "cl-hyb-downstream-dispute",
+          "cl-hyb-downstream-test",
+          "cl-hyb-downstream-zero",
+          "cl-hyb-accounts",
+          "cl-hyb-evidence-boundary",
+          "cl-hyb-service",
+          "cl-hyb-ledger",
+          "cl-hyb-invoices",
+          "cl-hyb-raw",
+          "cl-hyb-naive",
+          "cl-hyb-remove",
+          "cl-hyb-equations",
+          "cl-hyb-corrected",
+          "cl-hyb-naive-result",
+          "cl-hyb-swap",
+          "cl-hyb-swap-result",
+          "cl-hyb-pump",
+          "cl-hyb-bpc",
+          "cl-hyb-paths",
+          "cl-hyb-popcorn",
+          "cl-hyb-response",
+          "cl-hyb-database",
+          "cl-hyb-denominator",
+          "cl-hyb-limits",
+          "cl-hyb-audit",
+          "cl-inv-judgement",
+          "cl-hyb175-shared-completeness-dilemma",
+          "cl-hyb175-process-standards-cutoff-and-capital",
+          "cl-hyb175-eeio-admission-and-hybrid-architectures",
+          "cl-hyb175-double-counting-governance",
+          "cl-hyb175-price-aggregation-and-denominator-comparability",
+          "cl-hyb175-epistemic-limits"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-boundary-carrier": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-inv-boundary-carrier"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-small-cuts": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-inv-small-cuts"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-question": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-question"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-io-limits": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-inv-io-limits"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-hybrid-forms": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-inv-hybrid-forms"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-double-counting": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-inv-double-counting"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-object": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-object"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-sign": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-sign"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-upstream": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-upstream"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-downstream": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-downstream"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-balance": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-balance"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-inventory": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-inventory"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-toaster": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-toaster"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-downstream-dispute": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-downstream-dispute"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-downstream-test": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-downstream-test"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-downstream-zero": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-downstream-zero"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-accounts": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-accounts"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-evidence-boundary": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-evidence-boundary"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-service": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-service"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-ledger": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-ledger"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-invoices": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-invoices"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-raw": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-raw"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-naive": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-naive"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-remove": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-remove"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-equations": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-equations"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-corrected": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-corrected"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-naive-result": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-naive-result"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-swap": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-swap"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-swap-result": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-swap-result"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-pump": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-pump"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-bpc": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-bpc"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-paths": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-paths"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-popcorn": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-popcorn"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-response": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-response"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-database": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-database"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-denominator": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-denominator"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-limits": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-limits"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb-audit": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb-audit"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-inv-judgement": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-inv-judgement"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb175-shared-completeness-dilemma": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb175-shared-completeness-dilemma"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb175-process-standards-cutoff-and-capital": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb175-process-standards-cutoff-and-capital"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb175-eeio-admission-and-hybrid-architectures": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb175-eeio-admission-and-hybrid-architectures"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb175-double-counting-governance": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb175-double-counting-governance"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb175-price-aggregation-and-denominator-comparability": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb175-price-aggregation-and-denominator-comparability"
+        ],
+        "ordinary": []
+      },
+      "/print#print-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964-claim-cl-hyb175-epistemic-limits": {
+        "route": "/docs/book/inventory-boundary-and-hybrid",
+        "kind": "note",
+        "title": "混合清单",
+        "claimIds": [
+          "cl-hyb175-epistemic-limits"
+        ],
+        "ordinary": []
+      }
+    },
+    "source": "actual-export",
+    "sourceCommit": "a36bd90e36ec14089f0a2783d6f18cf2f4ab5821",
+    "capture": {
+      "sourceCommit": "a36bd90e36ec14089f0a2783d6f18cf2f4ab5821",
+      "dirty": true,
+      "status": "working-preview",
+      "manifestSha256": "51113fe759e4567b36e439ad545d3945c134b0b99f0287215b42c9088b5c26f8",
+      "normalizedProofSha256": "c05cba71908c09164b1790f41b42d6acb9d08da60a858a21e7dfbc3407d51df9"
+    },
+    "articleFiles": [
+      {
+        "path": "docs/book/inventory-boundary-and-hybrid/index.html",
+        "sha256": "5e53ab8ce94ccd0fe2db20861917d6cd6ffb2b3e5cea22e597d57b3d73ed1c7f",
+        "bytes": 1595320
+      },
+      {
+        "path": "print/index.html",
+        "sha256": "6b1c8d4aa5de744d807dff9a4a8c8eee6a336165555d8c5791b95efb930b37ef",
+        "bytes": 14047069
+      }
+    ],
+    "artifactFiles": [
+      {
+        "path": "downloads/bibliography.json",
+        "sha256": "dc62d0d6fb12fbda4a455858e3d4e845ed4ee6adee2827af24961fbdd15a1041",
+        "bytes": 1626247
+      },
+      {
+        "path": "downloads/catalog.json",
+        "sha256": "4dc45672ee269f9c7231458ac666110219569f18eeb3104a3205c26da746da9d",
+        "bytes": 4907601
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "sha256": "78a5958afbfdf7a4b8657071269c752308f8af376aadbf6890f601c28fe3bc3a",
+        "bytes": 484209
+      },
+      {
+        "path": "downloads/research.json",
+        "sha256": "dc62d0d6fb12fbda4a455858e3d4e845ed4ee6adee2827af24961fbdd15a1041",
+        "bytes": 1626247
+      },
+      {
+        "path": "claims/index.html",
+        "sha256": "813379f6c6f5d897dfadb6424cd0b46ae166f760e68a4c7feeb0ca8490eb97e4",
+        "bytes": 8770907,
+        "contentSha256": "d1647cbe152ac3a5e0c08bda73cf39d4d64f2aaf9066cafad2a9eb37b065eae6"
+      },
+      {
+        "path": "sources/index.html",
+        "sha256": "1a45f6fcf83d27f71749a50c92045bf6965beda98c143192fb040dbee206b5a5",
+        "bytes": 7898820,
+        "contentSha256": "588558551c7139f76b559bc83e9cb7c154d500ff38d7379ec27a3349c5d26526"
+      },
+      {
+        "path": "research/index.html",
+        "sha256": "42835d53e5eb229f0703cb5de48be2c4f138a71680b885dcc25a487c526bef83",
+        "bytes": 2079350,
+        "contentSha256": "74baec85bd8a1802d056e1f0b9be73f11bf62895374921b161336a2068958002"
+      }
+    ],
+    "assessment": {
+      "provenance": "Actual Next.js static export bytes from base a36bd90e36ec14089f0a2783d6f18cf2f4ab5821 under Goal §2.15 Clean Public Delivery (468 manifest files, CSS zero-drift 7f71d0b6...).",
+      "guards": "Independent Adversarial Publication-Engineering & Goal §2.15 Auditor (f3cfad81) re-verified unconditional PASS (0 BLOCKER / 0 MAJOR / 0 MINOR), confirming fail-closed reviewed pin check, 8 ordinaryTargets (0–2 + table), direct qualifyScientificHistory pass (90 prior keys), strict B09 dual-table verification, 0 inline process controls on prose/print, clean /changes/ aggregation (37 iterations), and validateHybridInventoryComparisonPreviewOutput 0 errors.",
+      "browser": "12/12 Playwright QA combos passed (4 routes × desktop/mobile/print, 0 errors, 0 inline history controls, both B09 tables & /changes/ entry verified)."
+    }
+  }
+}

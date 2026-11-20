@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import test from 'node:test';
 import frConfig from '../config/reader-functional-reference-comparison.json' with { type: 'json' };
+import hybConfig from '../config/reader-hybrid-inventory-comparison.json' with { type: 'json' };
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
 import loadShiftConfig from '../config/reader-load-shift.json' with { type: 'json' };
 import serviceConfig from '../config/reader-service-constraints.json' with { type: 'json' };
@@ -12,6 +13,8 @@ import { readerPublicDownloads } from './reader-current-output.mjs';
 import { readLoadShiftCaseFiles } from './reader-load-shift.mjs';
 import { readServiceConstraintsFiles } from './reader-service-constraints.mjs';
 import { buildPublicChangesLedger } from './reader-changes-ledger.mjs';
+import { restoreHybridInventoryComparisonTestFiles } from './reader-hybrid-inventory-comparison.mjs';
+import { previousScientificTestRecords } from './fixtures/scientific-receipt-envelope.mjs';
 import {
   functionalReferenceComparisonId,
   functionalReferenceComparisonLayout,
@@ -43,7 +46,8 @@ test('prepareFunctionalReferenceComparisonSource recovers exact d4a7e98f predece
   ]);
   for (const [p, b] of shiftFiles) files.set(p, b);
   for (const [p, b] of serviceFiles) files.set(p, b);
-  const input = { catalog, readings, literature, files };
+  restoreHybridInventoryComparisonTestFiles(files, hybConfig.unit);
+  const input = { ...previousScientificTestRecords({ catalog, readings, literature }, hybConfig.unit), files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
   const unit = selectFunctionalReferenceComparison(frConfig, functionalReferenceComparisonUnitPin, false);
@@ -61,7 +65,7 @@ test('prepareFunctionalReferenceComparisonSource recovers exact d4a7e98f predece
     artifacts.set(row.artifactFile, await fs.readFile(row.artifactFile));
     artifacts.set(row.reportFile, await fs.readFile(row.reportFile));
   }
-  assert.equal(verifyFunctionalReferenceComparisonReceipts(unit, artifacts, readerPublicDownloads(catalog, literature, readings)), true);
+  assert.equal(verifyFunctionalReferenceComparisonReceipts(unit, artifacts, readerPublicDownloads(input.catalog, input.literature, input.readings)), true);
 });
 
 test('functionalReferenceComparisonLayout and changes ledger behave reversibly', () => {

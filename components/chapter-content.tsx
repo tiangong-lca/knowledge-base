@@ -1,6 +1,7 @@
 import { showEditorialHistoryInProse } from '@/scripts/reader-editorial-mode.mjs';
 import { part7RereadCorrections, part7RereadHistoryControls, part7RereadOrdinaryId, part7RereadSource } from '@/scripts/reader-part7-reread.mjs';
 import { functionalReferenceComparisonHistoryControls, functionalReferenceComparisonOrdinaryId, functionalReferenceComparisonSource } from '@/scripts/reader-functional-reference-comparison.mjs';
+import { hybridInventoryComparisonHistoryControls, hybridInventoryComparisonOrdinaryId, hybridInventoryComparisonRoute, hybridInventoryComparisonSource } from '@/scripts/reader-hybrid-inventory-comparison.mjs';
 import { part3RereadCorrections, part3RereadHistoryControls, part3RereadOrdinaryId, part3RereadSource } from '@/scripts/reader-part3-reread.mjs';
 import { marketResponseComparisonHistoryControls, marketResponseComparisonOrdinaryId, marketResponseComparisonSource } from '@/scripts/reader-market-response-comparison.mjs';
 import { revisableJudgmentHistoryControls, revisableJudgmentOrdinaryId, revisableJudgmentRoutes, revisableJudgmentSource } from '@/scripts/reader-revisable-judgment.mjs';
@@ -32,7 +33,7 @@ import { landRecoveryHistoryControls, landRecoveryOrdinaryId, landRecoverySource
 import { circularFootprintHistoryControls, circularFootprintOrdinaryId, circularFootprintSource } from '@/scripts/reader-circular-footprint.mjs';
 import { loadShiftHistoryControls, loadShiftOrdinaryId, loadShiftSource } from '@/scripts/reader-load-shift.mjs';
 import { substitutionRulesHistoryControls, substitutionRulesOrdinaryId, substitutionRulesSource } from '@/scripts/reader-substitution-rules.mjs';
-import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity, currentBiogenicCarbon, currentEutrophicationPathways, currentParticulateComparison, currentPart4Reread, currentWeightingValuation, currentLocalizationComparison, currentSocialComparison, currentCostSustainability, currentPart5Reread, currentDataApplicabilityComparison, currentUncertaintyComparison, currentProductFootprintComparison, currentDataQualityComparison, currentPart6Reread, currentWallServiceComparison, currentInterpretationBags, currentFutureScenarios, currentRevisableJudgment, currentPart7Reread, currentMarketResponseComparison, currentPart3Reread, currentFunctionalReferenceComparison } from '@/scripts/reader-current-expectations.mjs';
+import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity, currentBiogenicCarbon, currentEutrophicationPathways, currentParticulateComparison, currentPart4Reread, currentWeightingValuation, currentLocalizationComparison, currentSocialComparison, currentCostSustainability, currentPart5Reread, currentDataApplicabilityComparison, currentUncertaintyComparison, currentProductFootprintComparison, currentDataQualityComparison, currentPart6Reread, currentWallServiceComparison, currentInterpretationBags, currentFutureScenarios, currentRevisableJudgment, currentPart7Reread, currentMarketResponseComparison, currentPart3Reread, currentFunctionalReferenceComparison, currentHybridInventoryComparison } from '@/scripts/reader-current-expectations.mjs';
 import { flowBoundaryHistoryControls, flowBoundaryHistoryTargets, flowBoundaryOrdinaryTargets, flowBoundaryOrdinaryId } from '@/scripts/reader-flow-boundary.mjs';
 import { serviceConstraintsHistoryControls, serviceConstraintsOrdinaryId, serviceConstraintsSource } from '@/scripts/reader-service-constraints.mjs';
 import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
@@ -97,6 +98,7 @@ const histories = [
   { controls: marketResponseComparisonHistoryControls(currentMarketResponseComparison), edition: marketResponseComparisonSource, attribute: 'market-response-comparison' },
   { controls: part3RereadHistoryControls(currentPart3Reread), edition: part3RereadSource, attribute: 'part3-reread' },
   { controls: functionalReferenceComparisonHistoryControls(currentFunctionalReferenceComparison), edition: functionalReferenceComparisonSource, attribute: 'functional-reference-comparison' },
+  { controls: hybridInventoryComparisonHistoryControls(currentHybridInventoryComparison), edition: hybridInventoryComparisonSource, attribute: 'hybrid-inventory-comparison' },
 ];
 
 function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
@@ -128,7 +130,8 @@ function currentReaderOrdinaryId(route: string, print: boolean, index: number) {
     || revisableJudgmentOrdinaryId(currentRevisableJudgment, route, print, index)
     || marketResponseComparisonOrdinaryId(currentMarketResponseComparison, route, print, index)
     || part3RereadOrdinaryId(currentPart3Reread, route, print, index)
-    || functionalReferenceComparisonOrdinaryId(currentFunctionalReferenceComparison, route, print, index);
+    || functionalReferenceComparisonOrdinaryId(currentFunctionalReferenceComparison, route, print, index)
+    || hybridInventoryComparisonOrdinaryId(currentHybridInventoryComparison, route, print, index);
 }
 
 // Leave versioned native fragments below the screen's sticky site header.
@@ -161,7 +164,8 @@ export function currentReaderOrdinaryAttributes(route: string, print: boolean, i
       || id === revisableJudgmentOrdinaryId(currentRevisableJudgment, route, print, index)
       || id === marketResponseComparisonOrdinaryId(currentMarketResponseComparison, route, print, index)
       || id === part3RereadOrdinaryId(currentPart3Reread, route, print, index)
-      || id === functionalReferenceComparisonOrdinaryId(currentFunctionalReferenceComparison, route, print, index))
+      || id === functionalReferenceComparisonOrdinaryId(currentFunctionalReferenceComparison, route, print, index)
+      || id === hybridInventoryComparisonOrdinaryId(currentHybridInventoryComparison, route, print, index))
     ? { id, style: scientificHistoryScroll }
     : { id };
 }
@@ -247,7 +251,9 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
     || futureScenariosOrdinaryId(currentFutureScenarios, cleanRoute, print, 'table')
     || revisableJudgmentOrdinaryId(currentRevisableJudgment, cleanRoute, print, 'table')
     || marketResponseComparisonOrdinaryId(currentMarketResponseComparison, cleanRoute, print, 'table')
-    || functionalReferenceComparisonOrdinaryId(currentFunctionalReferenceComparison, cleanRoute, print, 'table');
+    || functionalReferenceComparisonOrdinaryId(currentFunctionalReferenceComparison, cleanRoute, print, 'table')
+    || hybridInventoryComparisonOrdinaryId(currentHybridInventoryComparison, cleanRoute, print, 'table');
+  const hasHybridInventoryTables = Boolean(currentHybridInventoryComparison && cleanRoute === hybridInventoryComparisonRoute);
   const hasLocalizationTables = Boolean(currentLocalizationComparison && cleanRoute === localizationComparisonRoute);
   const hasSocialTables = Boolean(currentSocialComparison && cleanRoute === socialComparisonRoute);
   const hasCostTables = Boolean(currentCostSustainability && cleanRoute === costSustainabilityRoute);
@@ -283,7 +289,7 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
     if (index === 2 && cleanRoute === '/docs/book/lime-preferences-and-damage-weights') {
       return createElement(defaults.table ?? 'table', props);
     }
-    if ((index === 1 || index === 2) && (hasLocalizationTables || hasSocialTables || hasCostTables || hasUncertaintyTables || hasProductFootprintTables || hasDataQualityTables || hasWallServiceTables || hasInterpretationBagsTables || hasFutureScenariosTables || hasRevisableJudgmentTables)) {
+    if ((index === 1 || index === 2) && (hasLocalizationTables || hasSocialTables || hasCostTables || hasUncertaintyTables || hasProductFootprintTables || hasDataQualityTables || hasWallServiceTables || hasInterpretationBagsTables || hasFutureScenariosTables || hasRevisableJudgmentTables || hasHybridInventoryTables)) {
       return createElement(defaults.table ?? 'table', props);
     }
     if (hasDataApplicabilityTables && (index === 1 || (index === 2 && cleanRoute === 'book-data-applicability'))) {
@@ -337,7 +343,7 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
     <RetainedScope entry={legacy.scopes.get(prefix)} readingTitle={print ? printReadingEntryAnchor(page.url) : undefined} />
     {historyAt(historyPath, print ? prefix : 'nd-page')}
     {historyAt(historyPath, print ? printReadingEntryAnchor(page.url) : 'main-content')}
-    <MDX components={getMDXComponents({ Prose: ChapterProse, Claim: Paragraph, ReaderSection, ReaderFigure, TeachingCase: ChapterTeachingCase, a: ReaderLink, ...(currentReaderOrdinaryId(cleanRoute, print, 0) ? { p: ReaderParagraph } : {}), ...((tableId || hasLocalizationTables || hasSocialTables || hasCostTables || hasDataApplicabilityTables || hasUncertaintyTables || hasProductFootprintTables || hasDataQualityTables) ? { table: ReaderTable } : {}), ...headings })} />
+    <MDX components={getMDXComponents({ Prose: ChapterProse, Claim: Paragraph, ReaderSection, ReaderFigure, TeachingCase: ChapterTeachingCase, a: ReaderLink, ...(currentReaderOrdinaryId(cleanRoute, print, 0) ? { p: ReaderParagraph } : {}), ...((tableId || hasLocalizationTables || hasSocialTables || hasCostTables || hasDataApplicabilityTables || hasUncertaintyTables || hasProductFootprintTables || hasDataQualityTables || hasHybridInventoryTables) ? { table: ReaderTable } : {}), ...headings })} />
     {plan.notes.length > 0 && <section className="chapter-notes not-prose" aria-labelledby={plan.headingId}>
       <LegacyCitationAliases ids={legacy.aliases.get(plan.headingId)} target={plan.headingId} />
       {print ? <h4 id={plan.headingId}>注释</h4> : <h2 id={plan.headingId}>注释</h2>}

@@ -4,6 +4,7 @@ import test from 'node:test';
 import config from '../config/reader-market-response-comparison.json' with { type: 'json' };
 import part3 from '../config/reader-part3-reread.json' with { type: 'json' };
 import fr from '../config/reader-functional-reference-comparison.json' with { type: 'json' };
+import hyb from '../config/reader-hybrid-inventory-comparison.json' with { type: 'json' };
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
 import { readReadableBookFiles } from './reader-current-edition-files.mjs';
@@ -12,6 +13,7 @@ import { readLoadShiftCaseFiles } from './reader-load-shift.mjs';
 import { readServiceConstraintsFiles } from './reader-service-constraints.mjs';
 import { restorePart3RereadTestFiles } from './reader-part3-reread.mjs';
 import { restoreFunctionalReferenceComparisonTestFiles } from './reader-functional-reference-comparison.mjs';
+import { restoreHybridInventoryComparisonTestFiles } from './reader-hybrid-inventory-comparison.mjs';
 import { previousScientificTestRecords } from './fixtures/scientific-receipt-envelope.mjs';
 import {
   marketResponseComparisonPredecessorPin,
@@ -39,9 +41,9 @@ async function loadInput() {
   ]);
   for (const [k, v] of shiftFiles) files.set(k, v);
   for (const [k, v] of serviceFiles) files.set(k, v);
-  restoreFunctionalReferenceComparisonTestFiles(files, fr.unit);
+  restoreFunctionalReferenceComparisonTestFiles(restoreHybridInventoryComparisonTestFiles(files, hyb.unit), fr.unit);
   restorePart3RereadTestFiles(files, part3.unit);
-  return { ...previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, fr.unit), part3.unit), files };
+  return { ...previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, hyb.unit), fr.unit), part3.unit), files };
 }
 
 test('Unit #169 B11 market response comparison prepares cleanly and recovers exact 8949778f predecessor pin with 1106 claims', async () => {

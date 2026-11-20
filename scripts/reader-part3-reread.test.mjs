@@ -3,6 +3,7 @@ import fs from 'node:fs/promises';
 import test from 'node:test';
 import part3Config from '../config/reader-part3-reread.json' with { type: 'json' };
 import frConfig from '../config/reader-functional-reference-comparison.json' with { type: 'json' };
+import hybConfig from '../config/reader-hybrid-inventory-comparison.json' with { type: 'json' };
 import numbering from '../config/reader-numbering.json' with { type: 'json' };
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
 import loadShiftConfig from '../config/reader-load-shift.json' with { type: 'json' };
@@ -15,6 +16,7 @@ import { readLoadShiftCaseFiles } from './reader-load-shift.mjs';
 import { readServiceConstraintsFiles } from './reader-service-constraints.mjs';
 import { buildPublicChangesLedger } from './reader-changes-ledger.mjs';
 import { restoreFunctionalReferenceComparisonTestFiles } from './reader-functional-reference-comparison.mjs';
+import { restoreHybridInventoryComparisonTestFiles } from './reader-hybrid-inventory-comparison.mjs';
 import { previousScientificTestRecords } from './fixtures/scientific-receipt-envelope.mjs';
 import {
   part3RereadCorrections,
@@ -48,8 +50,8 @@ test('preparePart3RereadSource recovers exact f6d1eca5 predecessor state and ver
   ]);
   for (const [p, b] of shiftFiles) files.set(p, b);
   for (const [p, b] of serviceFiles) files.set(p, b);
-  restoreFunctionalReferenceComparisonTestFiles(files, frConfig.unit);
-  const input = { ...previousScientificTestRecords({ catalog, readings, literature }, frConfig.unit), files };
+  restoreFunctionalReferenceComparisonTestFiles(restoreHybridInventoryComparisonTestFiles(files, hybConfig.unit), frConfig.unit);
+  const input = { ...previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, hybConfig.unit), frConfig.unit), files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
   const unit = selectPart3Reread(part3Config, part3RereadUnitPin, false);

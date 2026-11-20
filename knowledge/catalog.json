@@ -43260,6 +43260,84 @@
       "locator": "Weidema et al. 2013 (ecoinvent v3 DQG) Ch. 3, §4.1.2, §14.1–14.3, Glossary",
       "summary": "ecoinvent 第三版数据质量导则在单元过程活动层将需求变化驱动活动规模的产物定义为参考产品（即决定性产品），废物处理服务以负物理参考产品表示，而将下游服务层功能单位等价判断留给具体研究。",
       "passageId": "psg-fr173-ecoinvent-refprod"
+    },
+    {
+      "id": "ev-hyb175-ilcd-cutoff",
+      "sourceId": "src-book-ilcd-2010",
+      "readingId": "rd-ilcd-2010",
+      "passageId": "psg-hyb175-ilcd-cutoff",
+      "locator": "ILCD Handbook (2010) §6.6.2–6.6.3 & Provisions 6.6 (pp. 102–106; PDF pp. 122–126)",
+      "summary": "ILCD 2010 指出任何生命周期方法都无法确知 100% 总清单，定量截断须基于环境影响覆盖度（举例 85% 或 95%），原则上纳入资本品与清洁、法律、营销等外购服务，并对最终排除项逐一披露论证。",
+      "numericFacts": [
+        {
+          "id": "nf-hyb175-ilcd-cutoff-85",
+          "quantity": "ILCD 2010 §6.6.3 举例的截断覆盖度下限",
+          "value": "85",
+          "unit": "%",
+          "basis": "ILCD Handbook (2010) §6.6.3（按单项影响类别或加权总环境影响覆盖度举例）",
+          "subject": "ILCD 2010 §6.6.3 截断覆盖度示例"
+        },
+        {
+          "id": "nf-hyb175-ilcd-cutoff-95",
+          "quantity": "ILCD 2010 §6.6.3 举例的加权总影响覆盖度阈值",
+          "value": "95",
+          "unit": "%",
+          "basis": "ILCD Handbook (2010) §6.6.3（具体研究或背景数据集覆盖至少 95% 加权总影响示例）",
+          "subject": "ILCD 2010 §6.6.3 具体研究截断覆盖度示例"
+        }
+      ]
+    },
+    {
+      "id": "ev-hyb175-pef-cutoff",
+      "sourceId": "src-kb44-ec2021",
+      "readingId": "rd-kb44-ec2021",
+      "passageId": "psg-hyb175-pef-cutoff",
+      "locator": "Commission Recommendation (EU) 2021/2279, OJ L 471, Annex I §4.1 (L 471/231), §4.4.4 (L 471/245), §4.6.3–4.6.4 (L 471/274)",
+      "summary": "欧盟 PEF 筛查阶段禁止截断；资本品默认排除除非既往研究证明其显著；ILCD-EL 替代数据集累计不得超过单一总分 10%，无合格替代时须排除该过程并经核查员确认；正式截断累计不得超过物质流、能量流与环境显著性的 3.0%。",
+      "numericFacts": [
+        {
+          "id": "nf-hyb175-pef-ilcd-el-cap",
+          "quantity": "欧盟 PEF 附件一 §4.6.3 允许源自 ILCD-EL 替代数据集的单一总分上限",
+          "value": "10",
+          "unit": "%",
+          "basis": "Commission Recommendation (EU) 2021/2279 Annex I §4.6.3 (OJ L 471/274)",
+          "subject": "欧盟 PEF ILCD-EL 替代数据集占比上限"
+        },
+        {
+          "id": "nf-hyb175-pef-cutoff-3pct",
+          "quantity": "欧盟 PEF 附件一 §4.6.4 累计截断上限",
+          "value": "3.0",
+          "unit": "%",
+          "basis": "Commission Recommendation (EU) 2021/2279 Annex I §4.6.4 (OJ L 471/274，物质流、能量流与环境显著性)",
+          "subject": "欧盟 PEF 正式研究累计截断上限"
+        }
+      ]
+    },
+    {
+      "id": "ev-hyb175-ghgp-boundary-eeio",
+      "sourceId": "src-pfr151-ghgp-2011",
+      "readingId": "rd-pfr151-ghgp-2011",
+      "passageId": "psg-hyb175-ghgp-boundary-eeio",
+      "locator": "GHG Protocol Product Standard (2011) Ch. 7 (pp. [34]–[36]) & §8.3.4 / Box 8.2 (pp. [51]–[52])",
+      "summary": "GHG Protocol 将资本品、管理能耗与企业服务归入可选非归属过程，归属过程仅在同时满足缺数、无替代且估算不显著时可排除；并在 §8.3.4 与框 8.2 允许用财务支出乘以 EEIO 因子进行筛查与上游估算，同时要求核清因子覆盖的过程范围。"
+    },
+    {
+      "id": "ev-hyb175-ecoinvent-completeness",
+      "sourceId": "src-dapp147-ecoinvent-v3-2013",
+      "readingId": "rd-dapp147-ecoinvent-v3-2013",
+      "passageId": "psg-hyb175-ecoinvent-completeness",
+      "locator": "ecoinvent v3 Data Quality Guidelines (2013) §4.11 (pp. 25–26), §5.10 (pp. 43–44), §6.1–6.4 (pp. 45–47)",
+      "summary": "ecoinvent v3 显式建模资本品与基础设施，声明不采用严格定量截断规则且不截断回收副产品，缺数据时以合理估计及化学计量（默认 95% 收率）与质量/货币平衡补足，并尽量纳入无直接付费关系的物理因果。",
+      "numericFacts": [
+        {
+          "id": "nf-hyb175-ecoinvent-yield-95",
+          "quantity": "ecoinvent v3 导则 §6.1 化学计量平衡默认收率",
+          "value": "95",
+          "unit": "%",
+          "basis": "ecoinvent v3 Data Quality Guidelines (2013) §6.1 (p. 45，无具体信息时采用的默认收率)",
+          "subject": "ecoinvent v3 化学计量平衡默认收率"
+        }
+      ]
     }
   ],
   "claims": [
@@ -83647,6 +83725,301 @@
       "reviewedAt": "2026-11-20",
       "reviewKind": "agent-source-check",
       "reasoning": "明确区分规范性参照格式与实际服役、用户行为实证证据及付费标准边界。"
+    },
+    {
+      "id": "cl-hyb175-shared-completeness-dilemma",
+      "kind": "synthesis",
+      "text": "把过程清单与混合清单放回主流标准与数据库体系对照，会发现所有体系面对的是同一道结构性难题：总清单的 100% 真值在任何生命周期方法下都无法直接观测。ILCD 2010（§6.6.3）明言，无论采用哪种生命周期建模路径，100% 总量始终需要依据实测或计算数据近似外推；过程网络把未连入矩阵的轻量投入、资本品和外购服务留在边界之外，产生截断误差，而投入产出与混合清单用宏观部门账闭合上游，又把部门聚合、价格折算与重叠扣除引入结果。不同规范真正的分歧，不在于谁声称“没有误差”，而在于各自把哪一类误差留在边界内治理、把哪一类误差排除在许可范围之外。",
+      "scope": "跨体系清单完备性比较；对应 ILCD 2010 §6.6.3 与 Suh (2004) 边界截断分析。",
+      "evidenceIds": [
+        "ev-hyb175-ilcd-cutoff",
+        "ev-inv-suh-matrix"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb175-ilcd-cutoff",
+          "relation": "supports",
+          "rationale": "ILCD 2010 §6.6.3 明确指出任何生命周期方法都无法确知 100% 总清单。"
+        },
+        {
+          "evidenceId": "ev-inv-suh-matrix",
+          "relation": "supports",
+          "rationale": "Suh (2004) 说明过程矩阵只能覆盖已纳入边界的有限过程。"
+        }
+      ],
+      "premiseIds": [
+        "cl-inv-boundary-carrier",
+        "cl-inv-small-cuts",
+        "cl-inv-io-limits"
+      ],
+      "caveats": [],
+      "conceptIds": [
+        "cn-inventory-truncation",
+        "cn-hybrid-inventory"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-20",
+      "reviewKind": "agent-source-check",
+      "reasoning": "依据 ILCD 2010 §6.6.3 与 Suh (2004) 对照过程截断与混合闭合共同面对的完备性困境。"
+    },
+    {
+      "id": "cl-hyb175-process-standards-cutoff-and-capital",
+      "kind": "synthesis",
+      "text": "即便同样停留在纯过程体系内，四套公开规范在截断阈值、资本品与外购服务边界上也并不统一。ILCD 2010（§6.6.2–6.6.3）要求按环境影响覆盖度设定定量截断（如覆盖各影响类别或加权总影响的 85% 或 95%），原则上将资本品以及清洁、法律、营销和办公等外购服务纳入边界，除非按截断规则证明其不显著。欧盟 PEF（(EU) 2021/2279 附件一 §4.1、§4.4.4、§4.6.3–4.6.4）在筛查阶段禁止截断，但在正式研究中设 3.0% 累计截断上限（同时约束物质流、能量流与环境显著性），默认排除资本品，并规定 ILCD 入门级（ILCD-EL）替代数据集不得超过单一总分的 10%；若连合规替代也缺失，则须直接排除该过程并经核查员确认数据缺口。GHG Protocol 产品标准（2011 第 7 章）把资本品、管理能耗与研发、行政、营销等企业服务划入可选的非归属过程，归属过程仅在同时满足缺数、无替代且估算低于披露阈值三项条件时允许排除。ecoinvent v3（2013 §4.11、§5.10、§6.1–6.4）则按寿命与产能显式建模资本品与基础设施，声明数据库不设严格定量截断且不截断回收副产品，缺数时用合理估计、默认 95% 收率的化学计量与质量、货币平衡补足，并尽量纳入无直接付费关系的物理因果。",
+      "scope": "四套过程标准与数据库的截断规则、资本品及服务边界比较。",
+      "evidenceIds": [
+        "ev-hyb175-ilcd-cutoff",
+        "ev-hyb175-pef-cutoff",
+        "ev-hyb175-ghgp-boundary-eeio",
+        "ev-hyb175-ecoinvent-completeness"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb175-ilcd-cutoff",
+          "relation": "supports",
+          "rationale": "ILCD 2010 §6.6.2–6.6.3 给出 85%/95% 影响覆盖度截断示例及资本品/外购服务原则纳入要求。"
+        },
+        {
+          "evidenceId": "ev-hyb175-pef-cutoff",
+          "relation": "supports",
+          "rationale": "欧盟 PEF 附件一 §§4.1, 4.4.4, 4.6.3–4.6.4 规定筛查零截断、资本品默认排除、10% ILCD-EL 上限与 3.0% 累计截断上限。"
+        },
+        {
+          "evidenceId": "ev-hyb175-ghgp-boundary-eeio",
+          "relation": "supports",
+          "rationale": "GHG Protocol 第 7 章区分归属过程三条件排除与可选非归属过程。"
+        },
+        {
+          "evidenceId": "ev-hyb175-ecoinvent-completeness",
+          "relation": "supports",
+          "rationale": "ecoinvent v3 §4.11, §5.10, §6.1–6.4 规定基础设施显式建模、无严格截断及 95% 默认收率与守恒检验。"
+        }
+      ],
+      "premiseIds": [
+        "cl-hyb175-shared-completeness-dilemma"
+      ],
+      "caveats": [],
+      "conceptIds": [
+        "cn-inventory-truncation",
+        "cn-inventory-balance"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-20",
+      "reviewKind": "agent-source-check",
+      "reasoning": "逐条核对四份公开原件 PDF 在截断、资本品与外购服务边界上的制度差异。"
+    },
+    {
+      "id": "cl-hyb175-eeio-admission-and-hybrid-architectures",
+      "kind": "synthesis",
+      "text": "能否把环境扩展投入产出（EEIO）数据接入产品清单，构成了过程标准与混合清单之间最鲜明的制度分水岭。ILCD 2010 与欧盟 PEF 2021 均未设置 EEIO 或混合清单补缺条款，其数据层级止步于合规过程数据集与受控替代，缺口宁可公开排除也不跨口径引入宏观部门因子；ecoinvent v3 虽然在单元过程层建立了含增加值的货币平衡，其主体仍是纯物理单元过程网络。相比之下，GHG Protocol 产品标准（§8.3.4 与框 8.2）是上述四套过程规范中唯一明确允许用财务支出数据乘以 EEIO 排放因子开展筛查与上游估算的标准，同时也点明 EEIO 覆盖广但部门颗粒度低。从本章区分的三种混合形态看，这种按采购金额挂接 EEIO 因子的做法在结构上更接近分层混合，而并非 Suh（2004）建立双向物料与货币账户的集成混合。",
+      "scope": "过程标准对 EEIO 数据的准入差异与分层/集成混合形态的制度对照。",
+      "evidenceIds": [
+        "ev-hyb175-ilcd-cutoff",
+        "ev-hyb175-pef-cutoff",
+        "ev-hyb175-ghgp-boundary-eeio",
+        "ev-hyb175-ecoinvent-completeness",
+        "ev-inv-suh-hybrid"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb175-ilcd-cutoff",
+          "relation": "supports",
+          "rationale": "ILCD 2010 §6.6 依赖过程边界迭代闭合与排除清单，未设 EEIO 补缺条款。"
+        },
+        {
+          "evidenceId": "ev-hyb175-pef-cutoff",
+          "relation": "supports",
+          "rationale": "欧盟 PEF §4.6.3 规定无合规过程数据集时须排除过程，不含 EEIO 补缺。"
+        },
+        {
+          "evidenceId": "ev-hyb175-ghgp-boundary-eeio",
+          "relation": "supports",
+          "rationale": "GHG Protocol §8.3.4 与框 8.2 明确允许财务活动数据配 EEIO 因子并指出其低颗粒度局限。"
+        },
+        {
+          "evidenceId": "ev-hyb175-ecoinvent-completeness",
+          "relation": "supports",
+          "rationale": "ecoinvent v3 §6.4 建有单元过程货币平衡，但仍属单元过程网络。"
+        },
+        {
+          "evidenceId": "ev-inv-suh-hybrid",
+          "relation": "supports",
+          "rationale": "Suh (2004) 区分分层混合与集成混合的结构差异。"
+        }
+      ],
+      "premiseIds": [
+        "cl-inv-hybrid-forms",
+        "cl-hyb175-process-standards-cutoff-and-capital"
+      ],
+      "caveats": [],
+      "conceptIds": [
+        "cn-hybrid-inventory",
+        "cn-hyb-upstream-bridge"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-20",
+      "reviewKind": "agent-source-check",
+      "reasoning": "对照四套过程规范对 EEIO 数据的准入边界与 Suh (2004) 混合形态分类。"
+    },
+    {
+      "id": "cl-hyb175-double-counting-governance",
+      "kind": "synthesis",
+      "text": "一旦允许过程数据与宏观经济账户并存，重复计算防控的方式也会随之改变。在 GHG Protocol 产品标准（第 8.3.4 节）这类以过程为主的框架中，防重叠主要依靠编制者人工核清每个排放因子涵盖的上游过程，以免既按实测燃料或电力算了一次，又在支出类因子里再算一次；而在系统化混合清单中，过程网络与部门投入产出表在多级供应链上普遍交叠，必须依赖显式的矩阵扣除或筛选算法——例如 Suh（2004）在集成混合中先在供应表、使用表和环境账户中扣除过程部分已覆盖的交易，以及 Agez 等（2019/2020）对比的二元修正、副产品修正（BPC）、TPC 与 STAM 筛选。前面三家供应者的发票算例已经证明，单靠部门汇总账面无法区分服务部门的用电究竟来自哪家发电方，因此任何只看部门总额的扣除规则都只能按假设近似，而不能替代对具体供应关系的核证。",
+      "scope": "过程规范的人工范围核查与混合清单算法扣除的比较。",
+      "evidenceIds": [
+        "ev-hyb175-ghgp-boundary-eeio",
+        "ev-inv-suh-hybrid",
+        "ev-hyb-agez-resolution",
+        "ev-hyb-agez-bpc",
+        "ev-hyb-agez-stam"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb175-ghgp-boundary-eeio",
+          "relation": "supports",
+          "rationale": "GHG Protocol 第 8.3.4 节要求编制者核清各排放因子涵盖的过程范围。"
+        },
+        {
+          "evidenceId": "ev-inv-suh-hybrid",
+          "relation": "supports",
+          "rationale": "Suh (2004) 在集成混合中通过扣除过程已覆盖交易处理重复计算。"
+        },
+        {
+          "evidenceId": "ev-hyb-agez-resolution",
+          "relation": "supports",
+          "rationale": "Agez 等 (2019/2020) 讨论二元修正与过程-部门分辨率对重叠处理的影响。"
+        },
+        {
+          "evidenceId": "ev-hyb-agez-bpc",
+          "relation": "supports",
+          "rationale": "Agez 等 (2019/2020) 给出副产品修正（BPC）扣除规则。"
+        },
+        {
+          "evidenceId": "ev-hyb-agez-stam",
+          "relation": "supports",
+          "rationale": "Agez 等 (2019/2020) 给出 STAM 筛选及 TPC/BPC 比较背景。"
+        }
+      ],
+      "premiseIds": [
+        "cl-inv-double-counting",
+        "cl-hyb-swap-result",
+        "cl-hyb-bpc",
+        "cl-hyb175-eeio-admission-and-hybrid-architectures"
+      ],
+      "caveats": [],
+      "conceptIds": [
+        "cn-hybrid-inventory",
+        "cn-hyb-residual-background"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-20",
+      "reviewKind": "agent-source-check",
+      "reasoning": "比较过程规范的人工因子覆盖核查与混合清单的矩阵扣除及供应关系识别边界。"
+    },
+    {
+      "id": "cl-hyb175-price-aggregation-and-denominator-comparability",
+      "kind": "synthesis",
+      "text": "跨体系比较混合清单与过程清单的结果时，还必须把货币换算、部门聚合与分母口径一并拉到同一基准面上。纯过程清单主要受截断深度与背景库覆盖限制；混合清单在减少截断的同时，却引入了三个过程标准中原本不存在的敏感开关：一是部门同质性假设失效带来的聚合误差（如 Yang 等 2017 的爆米花反例显示聚合误差可超过截断误差，而 Pomponi 与 Lenzen 2018 的回应说明误差大小本身依赖经济体结构）；二是生产者价格与购买者价格及单位价格离散度带来的换算不确定性；三是 Jakobs 等（2021）指出的分母切换（按消费篮子全部相关过程基准 Γ 还是仅按被混合过程子集基准 Λ 归一化），会使同一套数据库的增幅判断发生偏移。此外，ecoinvent v3 纳入无直接付费关系的物理因果（§6.4），而 EEIO 只沿货币交易传递上游负担，两者对免费公共服务的覆盖口径也不重合。",
+      "scope": "货币-物理换算、部门聚合、分母口径与无付费物理因果对跨体系可比性的影响。",
+      "evidenceIds": [
+        "ev-hyb175-ecoinvent-completeness",
+        "ev-hyb-yang-counterexample",
+        "ev-hyb-response-abstract",
+        "ev-hyb-jakobs-denominators"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb175-ecoinvent-completeness",
+          "relation": "supports",
+          "rationale": "ecoinvent v3 §6.4 纳入无直接付费关系的物理因果。"
+        },
+        {
+          "evidenceId": "ev-hyb-yang-counterexample",
+          "relation": "supports",
+          "rationale": "Yang 等 (2017) 展示部门聚合误差可能大于过程截断误差。"
+        },
+        {
+          "evidenceId": "ev-hyb-response-abstract",
+          "relation": "supports",
+          "rationale": "Pomponi 与 Lenzen (2018) 说明聚合误差幅度随经济体结构而变。"
+        },
+        {
+          "evidenceId": "ev-hyb-jakobs-denominators",
+          "relation": "supports",
+          "rationale": "Jakobs 等 (2021) 展示全部过程基准 Γ 与被混合过程子集基准 Λ 的分母切换会改变增幅判断。"
+        }
+      ],
+      "premiseIds": [
+        "cl-hyb-popcorn",
+        "cl-hyb-response",
+        "cl-hyb-denominator",
+        "cl-hyb175-double-counting-governance"
+      ],
+      "caveats": [],
+      "conceptIds": [
+        "cn-hybrid-inventory",
+        "cn-inventory-truncation"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-20",
+      "reviewKind": "agent-source-check",
+      "reasoning": "综合部门聚合、价格折算、分母口径与无付费物理因果四类跨体系可比性门槛。"
+    },
+    {
+      "id": "cl-hyb175-epistemic-limits",
+      "kind": "synthesis",
+      "text": "对照表给出的不是“混合清单必然优于过程标准”或“严守 3% 过程截断必然更可靠”的单一排序，而是不同边界机制各自成立的条件。对同一产品体系，如果一份研究按 PEF 规则默认排除资本品并采用 3.0% 过程截断，另一份研究用 ecoinvent v3 纳入基础设施，第三份研究又叠加 EEIO 补齐外购服务与资本品，三者得出的总量差异既包含真实覆盖面扩大，也混杂着部门聚合、价格折算与扣除假设的误差。在缺乏同口径边界声明、资本品与外购服务清单、价格基准、重复计算扣除规则和分母定义之前，直接拿过程标准结果与混合清单结果做数值高低比较，并不能支撑关于产品优劣的稳健判断；至于特定行业中聚合误差与截断误差究竟孰大孰小，仍须依托具体部门分辨率、价格分布和供应关系实证检验，而不能由一般性方法口号预先判定。",
+      "scope": "跨体系比较的认识论边界与未知声明。",
+      "evidenceIds": [
+        "ev-hyb175-ilcd-cutoff",
+        "ev-hyb175-pef-cutoff",
+        "ev-hyb175-ghgp-boundary-eeio",
+        "ev-hyb175-ecoinvent-completeness",
+        "ev-hyb-jakobs-denominators"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-hyb175-ilcd-cutoff",
+          "relation": "qualifies",
+          "rationale": "ILCD 2010 指出 100% 总清单未知且排除项须公开界定适用范围。"
+        },
+        {
+          "evidenceId": "ev-hyb175-pef-cutoff",
+          "relation": "qualifies",
+          "rationale": "PEF 规则限定在 3.0% 截断与默认不含资本品的统一口径内。"
+        },
+        {
+          "evidenceId": "ev-hyb175-ghgp-boundary-eeio",
+          "relation": "qualifies",
+          "rationale": "GHG Protocol 仅覆盖温室气体且非归属项可选。"
+        },
+        {
+          "evidenceId": "ev-hyb175-ecoinvent-completeness",
+          "relation": "qualifies",
+          "rationale": "ecoinvent v3 覆盖度仍受限于单元过程建模边界。"
+        },
+        {
+          "evidenceId": "ev-hyb-jakobs-denominators",
+          "relation": "qualifies",
+          "rationale": "Jakobs 等 (2021) 证明价格不确定性与分母选择显著影响混合比较结论。"
+        }
+      ],
+      "premiseIds": [
+        "cl-hyb-audit",
+        "cl-inv-judgement",
+        "cl-hyb175-price-aggregation-and-denominator-comparability"
+      ],
+      "caveats": [
+        "本比较基于公开标准与既有混合清单文献，不替代特定行业部门分辨率与价格分布的实证检验。"
+      ],
+      "conceptIds": [
+        "cn-hybrid-inventory",
+        "cn-inventory-truncation"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-20",
+      "reviewKind": "agent-source-check",
+      "reasoning": "明确界定过程标准与混合清单跨体系比较的成立条件与未决实证边界。"
     }
   ],
   "concepts": [
