@@ -38,5 +38,5 @@ export function testEnvelopes(capture, unit, mutateOutput = () => {}, date = '20
 export function previousScientificTestRecords(raw, unit) {
   if (!unit) return raw;
   const records = new Map(unit.changes.filter(row => row.kind === 'record').map(row => [row.key,row]));
-  return restoreScientificRecords(raw, unit.rawRecords, unit.rawFields, records, () => true);
+  return restoreScientificRecords(raw, unit.rawRecords, unit.rawFields ?? [], records, () => true);
 }

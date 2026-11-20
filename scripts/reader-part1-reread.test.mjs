@@ -2,6 +2,9 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import test from 'node:test';
 import part1Config from '../config/reader-part1-reread.json' with { type: 'json' };
+import wholeBookConfig from '../config/reader-whole-book-reread.json' with { type: 'json' };
+import { previousScientificTestRecords } from './fixtures/scientific-receipt-envelope.mjs';
+import { restoreWholeBookRereadTestFiles } from './reader-whole-book-reread.mjs';
 import numbering from '../config/reader-numbering.json' with { type: 'json' };
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
 import loadShiftConfig from '../config/reader-load-shift.json' with { type: 'json' };
@@ -52,7 +55,8 @@ test('preparePart1RereadSource recovers exact 50e045f0 predecessor state and ver
   ]);
   for (const [p, b] of shiftFiles) files.set(p, b);
   for (const [p, b] of serviceFiles) files.set(p, b);
-  const input = { catalog, readings, literature, files };
+  const rolled = wholeBookConfig.unit ? previousScientificTestRecords({ catalog, readings, literature }, wholeBookConfig.unit) : { catalog, readings, literature };
+  const input = { ...rolled, files: wholeBookConfig.unit ? restoreWholeBookRereadTestFiles(files, wholeBookConfig.unit) : files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
   const prepared = preparePart1RereadSource(unit, input, actual, structure);
@@ -65,7 +69,7 @@ test('preparePart1RereadSource recovers exact 50e045f0 predecessor state and ver
       artifacts.set(row.artifactFile, await fs.readFile(row.artifactFile));
       artifacts.set(row.reportFile, await fs.readFile(row.reportFile));
     }
-    assert.equal(verifyPart1RereadReceipts(unit, artifacts, readerPublicDownloads(catalog, literature, readings)), true);
+    assert.equal(verifyPart1RereadReceipts(unit, artifacts, readerPublicDownloads(input.catalog, input.literature, input.readings)), true);
   }
 });
 

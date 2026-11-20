@@ -16,7 +16,7 @@ import { part6RereadHistoryControls } from './reader-part6-reread.mjs';
 import { part7RereadHistoryControls } from './reader-part7-reread.mjs';
 import {
   exactPublicJsonReceipt, mergeScientificFileAndRecordChanges, mergeScientificOutput,
-  qualifyScientificHistory, restoreScientificRecords, sameScienceValue, scienceDigest, scienceText,
+  projectScientificOrdinaryTargets, qualifyScientificHistory, restoreScientificRecords, sameScienceValue, scienceDigest, scienceText,
 } from './reader-scientific-delta.mjs';
 
 export const part1RereadId = 'part1-reread-181';
@@ -558,14 +558,33 @@ export function validatePart1RereadCorrectionOutput(document, path, unit) {
   return errors;
 }
 
-export function qualifyPart1RereadHistory(documents, unit, actual, part2Reread, part3Reread, part7Reread, part6Reread, part5Reread, part4Reread) {
+const wholeBookSuccessorOverrideKeys = Object.freeze(new Set([
+  `/docs/book#${chapterAnchorPrefix('/docs/book')}-part4-133-ordinary-4`,
+  `/print#${printUnitAnchor('/docs/book')}-part4-133-ordinary-4`,
+]));
+
+export function qualifyPart1RereadHistory(documents, unit, actual, part2Reread, part3Reread, part7Reread, part6Reread, part5Reread, part4Reread, wholeBookReread = null) {
   if (!unit) return { prior: actual, errors: [] };
   assertUnitEnvelopeKeys(unit, unit.reviewEvidence !== undefined, false);
   const overrides = unit.history?.ordinaryOverrides;
   if (!validOrdinaryOverridesShape(overrides, true)) {
     throw new Error('Part I continuous reread ordinaryOverrides violates the 2-key allowlist');
   }
-  const targets = observePart1RereadOrdinaryTargets(documents);
+  let successorOverrides = null;
+  if (wholeBookReread) {
+    const raw = wholeBookReread.history?.ordinaryOverrides;
+    if (!plainObject(raw) || [...wholeBookSuccessorOverrideKeys].some(key => !plainObject(raw[key])
+        || !scienceDigest(raw[key].from) || !scienceDigest(raw[key].to) || raw[key].from === raw[key].to)) {
+      throw new Error('Part I continuous reread successor ordinaryOverrides violates the 2-key Whole-book allowlist');
+    }
+    successorOverrides = Object.fromEntries([...wholeBookSuccessorOverrideKeys].map(key => [key, { from: raw[key].from, to: raw[key].to }]));
+  }
+  const targets = projectScientificOrdinaryTargets(
+    successorOverrides,
+    observePart1RereadOrdinaryTargets(documents),
+    'Part I continuous reread',
+    wholeBookSuccessorOverrideKeys,
+  );
   const prior = qualifyScientificHistory(unit.history, actual, targets, {
     label: 'Part I continuous reread', routes: part1RereadRoutes, predecessorPin: addressPin,
   });
@@ -608,6 +627,7 @@ export function qualifyPart1RereadHistory(documents, unit, actual, part2Reread, 
       ordinaryTags: ['P'],
       label: 'Part I continuous reread',
       ordinaryTargets: Object.fromEntries(Object.entries(unit.history.ordinaryTargets).map(([key, row]) => [key, row.sha256])),
+      ordinaryOverrides: successorOverrides,
     }),
     ...validatePart1RereadPartDisclosure(documents.get('/print'), unit),
   ];

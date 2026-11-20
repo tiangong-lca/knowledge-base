@@ -1169,7 +1169,8 @@ export function validatePart5RereadCorrectionOutput(document, path, unit) {
         || note.getAttribute('data-reader-claim') !== claimId
         || article?.getAttribute('data-reader-route') !== chapter || sections.length !== 1
         || note.parentNode !== list || noteItems[noteIndex] !== note
-        || marker.tagName !== 'P' || marker.parentNode !== note || marker.nextElementSibling !== null
+        || marker.tagName !== 'P' || marker.parentNode !== note
+        || (marker.nextElementSibling !== null && !marker.nextElementSibling?.hasAttribute('data-whole-book-reread-correction'))
         || !attrs(marker, 'class', 'data-part5-reread-correction', 'style')
         || marker.getAttribute('class') !== 'legacy-citation-context'
         || marker.getAttribute('style') !== 'display:block'
@@ -1210,7 +1211,12 @@ const part1SuccessorOverrideKeys = Object.freeze(new Set([
   `/print#${printUnitAnchor('/docs/book')}-part4-133-ordinary-2`,
 ]));
 
-export function qualifyPart5RereadHistory(documents, unit, actual, part4Reread, weightingValuation, socialComparison, part6Reread = null, part7Reread = null, part3Reread = null, part2Reread = null, part1Reread = null) {
+const wholeBookSuccessorOverrideKeys = Object.freeze(new Set([
+  `/docs/book#${chapterAnchorPrefix('/docs/book')}-part4-133-ordinary-4`,
+  `/print#${printUnitAnchor('/docs/book')}-part4-133-ordinary-4`,
+]));
+
+export function qualifyPart5RereadHistory(documents, unit, actual, part4Reread, weightingValuation, socialComparison, part6Reread = null, part7Reread = null, part3Reread = null, part2Reread = null, part1Reread = null, wholeBookReread = null) {
   if (!unit) return { prior: actual, errors: [] };
   assertUnitEnvelopeKeys(unit, {
     reviewed: unit.reviewEvidence !== undefined,
@@ -1273,6 +1279,23 @@ export function qualifyPart5RereadHistory(documents, unit, actual, part4Reread, 
     successorOverrides = { ...(successorOverrides ?? {}) };
     for (const key of part1SuccessorOverrideKeys) {
       successorOverrides[key] = { from: raw[key].from, to: raw[key].to };
+      allowedSuccessorKeys.add(key);
+    }
+  }
+  if (wholeBookReread) {
+    const raw = wholeBookReread.history?.ordinaryOverrides;
+    if (!plainObject(raw) || [...wholeBookSuccessorOverrideKeys].some(key => !plainObject(raw[key])
+        || !scienceDigest(raw[key].from) || !scienceDigest(raw[key].to) || raw[key].from === raw[key].to))
+      throw new Error('Part V continuous reread successor ordinaryOverrides violates the 2-key Whole-book allowlist');
+    successorOverrides = { ...(successorOverrides ?? {}) };
+    for (const key of wholeBookSuccessorOverrideKeys) {
+      if (successorOverrides[key]) {
+        if (successorOverrides[key].to !== raw[key].from)
+          throw new Error(`Part V continuous reread chained successor ordinaryOverrides broken at ${key}`);
+        successorOverrides[key] = { from: successorOverrides[key].from, to: raw[key].to };
+      } else {
+        successorOverrides[key] = { from: raw[key].from, to: raw[key].to };
+      }
       allowedSuccessorKeys.add(key);
     }
   }

@@ -27,6 +27,7 @@ import {
   currentPart2Reread,
   currentFrameworkComparison,
   currentPart1Reread,
+  currentWholeBookReread,
   currentMarketResponseComparison,
   currentPart3Reread,
   currentPart7Reread,
@@ -60,6 +61,7 @@ import { part7RereadCorrections, part7RereadSource } from './reader-part7-reread
 import { part3RereadCorrections, part3RereadSource } from './reader-part3-reread.mjs';
 import { part2RereadCorrections, part2RereadSource } from './reader-part2-reread.mjs';
 import { part1RereadCorrections, part1RereadSource } from './reader-part1-reread.mjs';
+import { wholeBookRereadCorrections, wholeBookRereadSource } from './reader-whole-book-reread.mjs';
 
 const titleByRoute = new Map();
 for (const entry of [...(numbering.web ?? []), ...(numbering.book ?? [])]) {
@@ -77,7 +79,27 @@ function sanitizeReaderSummary(text) {
     .replace(/\b(?:cl|ev|src|cn|rd)-[a-z0-9-]+\b/gi, '相关条目')
     .replace(/(?:相关条目[、，,／/\s]+)+相关条目/g, '相关条目')
     .replace(/\bCASE-[A-Z0-9-]+\b/g, '贯穿案例')
+    .replace(/\bpack-study-v\d+\b/gi, '购物袋对照算例')
     .replace(/(?<![a-f0-9])[a-f0-9]{64}(?![a-f0-9])/gi, '已钉扎版本')
+    .replace(/\bMain8148\b/g, '初版书稿')
+    .replace(/\b0496e14\b/g, '初版基线')
+    .replace(/\bReaderSection\b/g, '分节锚点')
+    .replace(/\bBigInt\b/g, '精确整数')
+    .replace(/经\s*SHA-256\s*核验/g, '经原件核验')
+    .replace(/\bSHA-256\b/g, '校验指纹')
+    .replace(/\bV\d+-[A-Z]\b/g, '既定修订项')
+    .replace(/\b(?:[BWX]\d{1,2}(?:\[\d+\])?)(?:[—–→/∪∩、，,\s]+(?:[BWX]\d{1,2}(?:\[\d+\])?|∅|=))*\b/g, '')
+    .replace(/（\s*）/g, '')
+    .replace(/\(\s*\)/g, '')
+    .replace(/纯英文\s*scope/g, '英文修订说明')
+    .replace(/\bscope\b/gi, '修订说明')
+    .replace(/前提\s*DAG\s*升序清理/g, '前提依赖顺序规整')
+    .replace(/\bDAG\b/g, '前提依赖图')
+    .replace(/\bH2\b/g, '二级标题')
+    .replace(/逐字节保留/g, '完整保留')
+    .replace(/逐字节不变/g, '保持不变')
+    .replace(/冻结节标题/g, '既有节标题')
+    .replace(/零改动/g, '保持不变')
     .replace(/本\s*轮/g, '本次')
     .replace(/本次\s*核读/g, '本次审读')
     .replace(/首版\s*建设/g, '初版整理')
@@ -87,7 +109,9 @@ function sanitizeReaderSummary(text) {
     .replace(/研究\s*进行中/g, '持续研究中')
     .replace(/核查\s*日志/g, '核查记录')
     .replace(/检索\s*日志/g, '检索记录')
-    .replace(/构建\s*状态/g, '出版状态');
+    .replace(/构建\s*状态/g, '出版状态')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
 }
 
 function summarizeUnit(unit, fallbackSource = null) {
@@ -112,7 +136,8 @@ function summarizeUnit(unit, fallbackSource = null) {
  */
 export function buildPublicChangesLedger() {
   const orderedUnits = [
-    summarizeUnit(currentPart1Reread),
+    summarizeUnit(currentWholeBookReread, wholeBookRereadSource),
+    summarizeUnit(currentPart1Reread, part1RereadSource),
     summarizeUnit(currentFrameworkComparison),
     summarizeUnit(currentPart2Reread),
     summarizeUnit(currentHybridInventoryComparison),
@@ -192,6 +217,7 @@ export function buildPublicChangesLedger() {
     [currentPart3Reread, currentPart3Reread?.id, part3RereadSource, part3RereadCorrections],
     [currentPart2Reread, currentPart2Reread?.id, part2RereadSource, part2RereadCorrections],
     [currentPart1Reread, currentPart1Reread?.id, part1RereadSource, part1RereadCorrections],
+    [currentWholeBookReread, currentWholeBookReread?.id, wholeBookRereadSource, wholeBookRereadCorrections],
   ];
   const seenCorr = new Set();
   for (const [active, unitId, source, rows] of correctionSets) {
@@ -214,6 +240,15 @@ export function buildPublicChangesLedger() {
   const corrections = rawCorrections.reverse();
 
   const partIntroductions = [
+    currentWholeBookReread && {
+      part: 4,
+      title: numbering.parts?.[3]?.title ?? '环境后果',
+      unitId: currentWholeBookReread.id,
+      date: wholeBookRereadSource.date,
+      from: currentWholeBookReread.partIntroduction.from,
+      to: currentWholeBookReread.partIntroduction.to,
+      sourceHref: citationSourceHref(wholeBookRereadSource.commit),
+    },
     currentPart1Reread && {
       part: 1,
       title: numbering.parts?.[0]?.title ?? '问题的来源',

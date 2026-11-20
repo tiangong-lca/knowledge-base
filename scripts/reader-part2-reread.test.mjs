@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import test from 'node:test';
 import part2Config from '../config/reader-part2-reread.json' with { type: 'json' };
+import wholeBookConfig from '../config/reader-whole-book-reread.json' with { type: 'json' };
 import part1Config from '../config/reader-part1-reread.json' with { type: 'json' };
 import fwConfig from '../config/reader-framework-comparison.json' with { type: 'json' };
 import numbering from '../config/reader-numbering.json' with { type: 'json' };
@@ -9,6 +10,7 @@ import baseline from '../config/readable-book-baseline.json' with { type: 'json'
 import loadShiftConfig from '../config/reader-load-shift.json' with { type: 'json' };
 import serviceConfig from '../config/reader-service-constraints.json' with { type: 'json' };
 import { previousScientificTestRecords } from './fixtures/scientific-receipt-envelope.mjs';
+import { restoreWholeBookRereadTestFiles } from './reader-whole-book-reread.mjs';
 import { restorePart1RereadTestFiles } from './reader-part1-reread.mjs';
 import { restoreFrameworkComparisonTestFiles } from './reader-framework-comparison.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
@@ -57,8 +59,8 @@ test('preparePart2RereadSource recovers exact 3034503f predecessor state and ver
   ]);
   for (const [p, b] of shiftFiles) files.set(p, b);
   for (const [p, b] of serviceFiles) files.set(p, b);
-  const rolled = fwConfig.unit ? previousScientificTestRecords(part1Config.unit ? previousScientificTestRecords({ catalog, readings, literature }, part1Config.unit) : { catalog, readings, literature }, fwConfig.unit) : { catalog, readings, literature };
-  const input = { ...rolled, files: fwConfig.unit ? restoreFrameworkComparisonTestFiles(part1Config.unit ? restorePart1RereadTestFiles(files, part1Config.unit) : files, fwConfig.unit) : files };
+  const rolled = fwConfig.unit ? previousScientificTestRecords(part1Config.unit ? previousScientificTestRecords(wholeBookConfig.unit ? previousScientificTestRecords({ catalog, readings, literature }, wholeBookConfig.unit) : { catalog, readings, literature }, part1Config.unit) : { catalog, readings, literature }, fwConfig.unit) : { catalog, readings, literature };
+  const input = { ...rolled, files: fwConfig.unit ? restoreFrameworkComparisonTestFiles(part1Config.unit ? restorePart1RereadTestFiles(wholeBookConfig.unit ? restoreWholeBookRereadTestFiles(files, wholeBookConfig.unit) : files, part1Config.unit) : files, fwConfig.unit) : files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
   const prepared = preparePart2RereadSource(unit, input, actual, structure);
