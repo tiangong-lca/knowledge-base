@@ -5,12 +5,14 @@ import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 import mkt from '../config/reader-market-response-comparison.json' with { type: 'json' };
 import part3 from '../config/reader-part3-reread.json' with { type: 'json' };
 import fr from '../config/reader-functional-reference-comparison.json' with { type: 'json' };
+import fw from '../config/reader-framework-comparison.json' with { type: 'json' };
 import part2 from '../config/reader-part2-reread.json' with { type: 'json' };
 import hyb from '../config/reader-hybrid-inventory-comparison.json' with { type: 'json' };
 import part7 from '../config/reader-part7-reread.json' with { type: 'json' };
 import { restoreMarketResponseComparisonTestFiles } from './reader-market-response-comparison.mjs';
 import { restorePart3RereadTestFiles } from './reader-part3-reread.mjs';
 import { restoreFunctionalReferenceComparisonTestFiles } from './reader-functional-reference-comparison.mjs';
+import { restoreFrameworkComparisonTestFiles } from './reader-framework-comparison.mjs';
 import { restorePart2RereadTestFiles } from './reader-part2-reread.mjs';
 import { restoreHybridInventoryComparisonTestFiles } from './reader-hybrid-inventory-comparison.mjs';
 import { restorePart7RereadTestFiles } from './reader-part7-reread.mjs';
@@ -77,7 +79,7 @@ import {
 } from './reader-part5-reread.mjs';
 
 test('Part V continuous reread conserves 1044 claims, harmonizes Part V terminology, bridges cross-chapter premises and normalizes all 48 Part V locators', () => {
-  const prev145 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part2.unit), hyb.unit), fr.unit), part3.unit), mkt.unit), part7.unit), rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit);
+  const prev145 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, fw.unit), part2.unit), hyb.unit), fr.unit), part3.unit), mkt.unit), part7.unit), rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit);
   assert.equal(prev145.catalog.claims.length, 1044);
   assert.deepEqual(catalog.claims.filter(c => c.scope.includes('具名方法与证据范围')), []);
 
@@ -245,7 +247,7 @@ test('Part V continuous reread rollback recovers exact 915af295 state and reject
     readServiceConstraintsFiles(root, service.unit),
   ]);
   for (const [path, bytes] of [...shiftFiles, ...serviceFiles]) files.set(path, bytes);
-  restoreMarketResponseComparisonTestFiles(restorePart3RereadTestFiles(restoreFunctionalReferenceComparisonTestFiles(restoreHybridInventoryComparisonTestFiles(restorePart2RereadTestFiles(files, part2.unit), hyb.unit), fr.unit), part3.unit), mkt.unit);
+  restoreMarketResponseComparisonTestFiles(restorePart3RereadTestFiles(restoreFunctionalReferenceComparisonTestFiles(restoreHybridInventoryComparisonTestFiles(restorePart2RereadTestFiles(restoreFrameworkComparisonTestFiles(files, fw.unit), part2.unit), hyb.unit), fr.unit), part3.unit), mkt.unit);
   restorePart7RereadTestFiles(files, part7.unit);
   restoreRevisableJudgmentTestFiles(files, rev.unit);
   restoreFutureScenariosTestFiles(files, fut.unit);
@@ -256,7 +258,7 @@ test('Part V continuous reread rollback recovers exact 915af295 state and reject
   restoreProductFootprintComparisonTestFiles(files, pfr.unit);
   restoreUncertaintyComparisonTestFiles(files, unc.unit);
   restoreDataApplicabilityComparisonTestFiles(files, dapp.unit);
-  const prev145 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part2.unit), hyb.unit), fr.unit), part3.unit), mkt.unit), part7.unit), rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit);
+  const prev145 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, fw.unit), part2.unit), hyb.unit), fr.unit), part3.unit), mkt.unit), part7.unit), rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit);
   const input = { ...prev145, files };
   const actual = inspectReadableBookEdition(input), structure = copyeditSourceStructure(input);
   const qualify = (unit, customInput = input, customActual = actual, customStruct = structure) =>
@@ -337,7 +339,7 @@ test('Part V continuous reread rollback recovers exact 915af295 state and reject
 
 test('Part V continuous reread receipt verifier fails closed when capture pin is absent', () => {
   if (part5RereadCapturePin !== null || !config.unit) return;
-  const prev145 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part2.unit), hyb.unit), fr.unit), part3.unit), mkt.unit), part7.unit), rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit);
+  const prev145 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, fw.unit), part2.unit), hyb.unit), fr.unit), part3.unit), mkt.unit), part7.unit), rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit);
   const expected = readerPublicDownloads(prev145.catalog, prev145.literature, prev145.readings);
   const unit = structuredClone(config.unit);
   unit.outputCapture = {
@@ -373,7 +375,7 @@ test('Part V continuous reread receipt verifier fails closed when capture pin is
 });
 
 test('Part V continuous reread receipts bind actual output capture independently', { skip: !part5RereadCapturePin && config.status !== 'reviewed' }, () => {
-  const prev145 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part2.unit), hyb.unit), fr.unit), part3.unit), mkt.unit), part7.unit), rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit);
+  const prev145 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, fw.unit), part2.unit), hyb.unit), fr.unit), part3.unit), mkt.unit), part7.unit), rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit), pfr.unit), unc.unit), dapp.unit);
   const expected = readerPublicDownloads(prev145.catalog, prev145.literature, prev145.readings);
   const verify = (mutateUnit = () => {}, mutateOutput) => {
     const unit = structuredClone(config.unit);

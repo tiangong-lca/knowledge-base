@@ -2,10 +2,13 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import test from 'node:test';
 import part2Config from '../config/reader-part2-reread.json' with { type: 'json' };
+import fwConfig from '../config/reader-framework-comparison.json' with { type: 'json' };
 import numbering from '../config/reader-numbering.json' with { type: 'json' };
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
 import loadShiftConfig from '../config/reader-load-shift.json' with { type: 'json' };
 import serviceConfig from '../config/reader-service-constraints.json' with { type: 'json' };
+import { previousScientificTestRecords } from './fixtures/scientific-receipt-envelope.mjs';
+import { restoreFrameworkComparisonTestFiles } from './reader-framework-comparison.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { inspectReadableBookEdition } from './reader-current-edition.mjs';
 import { readReadableBookFiles } from './reader-current-edition-files.mjs';
@@ -52,7 +55,8 @@ test('preparePart2RereadSource recovers exact 3034503f predecessor state and ver
   ]);
   for (const [p, b] of shiftFiles) files.set(p, b);
   for (const [p, b] of serviceFiles) files.set(p, b);
-  const input = { catalog, readings, literature, files };
+  const rolled = fwConfig.unit ? previousScientificTestRecords({ catalog, readings, literature }, fwConfig.unit) : { catalog, readings, literature };
+  const input = { ...rolled, files: fwConfig.unit ? restoreFrameworkComparisonTestFiles(files, fwConfig.unit) : files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
   const prepared = preparePart2RereadSource(unit, input, actual, structure);
@@ -65,7 +69,7 @@ test('preparePart2RereadSource recovers exact 3034503f predecessor state and ver
       artifacts.set(row.artifactFile, await fs.readFile(row.artifactFile));
       artifacts.set(row.reportFile, await fs.readFile(row.reportFile));
     }
-    assert.equal(verifyPart2RereadReceipts(unit, artifacts, readerPublicDownloads(catalog, literature, readings)), true);
+    assert.equal(verifyPart2RereadReceipts(unit, artifacts, readerPublicDownloads(input.catalog, input.literature, input.readings)), true);
   }
 });
 
