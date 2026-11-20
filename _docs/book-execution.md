@@ -1,6 +1,6 @@
 ---
 lastReviewedAt: 2026-11-20
-lastReviewedCommit: 29771936c01311172371a4569dc1b1154e205599
+lastReviewedCommit: 8949778f8a2cc9a78c3bff879c6686026c6e1857
 title: Approved LCA book execution and wave ledger
 docType: reference
 scope: repo
@@ -141,22 +141,34 @@ bytes, `0` guard errors), and exact root integration `workspace#2521` /
 
 [Issue165](https://github.com/tiangong-lca/knowledge-base/issues/165) (Part VII
 Whole-Part Continuous Reread,
-[protocol](editorial/2026-11-19-part7-continuous-reread.md)) is rebased onto
-Goal §2.15 Clean Public Delivery `main`
-`29771936c01311172371a4569dc1b1154e205599` and reviewed across `F02` Part VII
-overviews, `parts[6].introduction`, `B30`–`B32`, and `W1`/`W2` dual view (`33`
-modified non-case claims, `0` `caseBinding` modifications, `1,099` claims and
-`40/40` case downloads conserved byte-for-byte, `W1 ∪ W2 = B32` exact parity,
-`80/80` strictly ascending Part VII `premiseIds`). Separate multi-round
-primary-source/DAG, zero-context whole-Part-VII reader, adversarial
-publication-engineering, and 80-combo Playwright Clean-Delivery & `@media print`
-acceptances (`unitPin = b7288820...`, `capturePin = 21d1fc7d...`, `0`
-Clean-Delivery Gate errors, `/changes/` ledger showing `33` iterations, `80`
-deduplicated named corrections including `12` from `#165`, and `4` Part
-introductions) are bound; clean production build (`dirty: false`), PR/CI/merge,
-hosted EdgeOne qualification, and root submodule integration follow. Parts I–III
-and appendices audit, whole-book continuous reread, and all 8 global Programme
-#9 criteria remain open.
+[protocol](editorial/2026-11-19-part7-continuous-reread.md)) is fully delivered:
+source PR168/Main `8949778f8a2cc9a78c3bff879c6686026c6e1857` (tree
+`7296c729...`, CI `44675199633`), qualified hosted 468-file output on
+`https://prism.tiangong.earth` (`manifestSha256 = ab60a77b...`, `362,994,514`
+bytes, `0` guard errors including Goal §2.15 Clean-Delivery Gate,
+`QUAL_ABSENT=true`), and exact root integration `workspace#2532` / `PR #2533`
+(`96f9fb576...`, `Project status: Done`, `Integration: Done`).
+
+[Issue169](https://github.com/tiangong-lca/knowledge-base/issues/169) (Unit 26:
+`B11`《市场响应》Cross-System Comparison,
+[protocol](editorial/2026-11-20-market-response-comparison.md)) builds on
+qualified `main` `8949778f8a2cc9a78c3bff879c6686026c6e1857` under Goal §2.15
+Clean Public Delivery, registering 4 close-read passages from official public
+PDFs (`ILCD Handbook 2010`, `Weidema et al. 2013` ecoinvent v3 Ch. 14–15,
+`Commission Recommendation (EU) 2021/2279` OJ L 471 Annex I `§4.4.2`, and
+`GHG Protocol Product Standard 2011` `§§5.1–5.2`, `Box 5.1`, `§§9.1–9.3.2`,
+`§11.3.2`), adding `4` evidence records, `5` `numericFacts`, `7` comparative
+claims (`1,099` → `1,106`), and `1` 5-row comparison table while conserving all
+`1,099` prior claims, `40/40` case downloads, and exact `4` H2 headings (`120`
+formal sections total). Separate multi-round primary-source/DAG (`0/0/0 PASS`),
+zero-context full-`B11` reader (`0/0/2 deferred PASS`), adversarial
+publication-engineering (`0/0 PASS`), and 30-combo Playwright Clean-Delivery &
+`@media print` acceptances (`unitPin = fa8bf6b6...`, `capturePin = 24f7092f...`,
+`746/746` tests, `0` CSS drift `7f71d0b6...`, `0` Clean-Delivery Gate errors,
+`/changes/` ledger showing `34` iterations) are bound; clean production build
+(`dirty: false`), PR/CI/merge, live EdgeOne qualification, and root submodule
+integration follow. Part III continuous reread, Parts I–II, whole-book
+continuous reread, and all 8 global Programme #9 criteria remain open.
 
 [Issue105](https://github.com/tiangong-lca/knowledge-base/issues/105) continues
 with B10: reporting objects and evidence conditions for co-product substitution.
