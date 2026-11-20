@@ -2,6 +2,9 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import test from 'node:test';
 import config from '../config/reader-framework-comparison.json' with { type: 'json' };
+import part1Config from '../config/reader-part1-reread.json' with { type: 'json' };
+import { previousScientificTestRecords } from './fixtures/scientific-receipt-envelope.mjs';
+import { restorePart1RereadTestFiles } from './reader-part1-reread.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
 import { readReadableBookFiles } from './reader-current-edition-files.mjs';
@@ -34,7 +37,9 @@ async function loadInput() {
   ]);
   for (const [k, v] of shiftFiles) files.set(k, v);
   for (const [k, v] of serviceFiles) files.set(k, v);
-  return { catalog, readings, literature, files };
+  const rolled = part1Config.unit ? previousScientificTestRecords({ catalog, readings, literature }, part1Config.unit) : { catalog, readings, literature };
+  const rolledFiles = part1Config.unit ? restorePart1RereadTestFiles(files, part1Config.unit) : files;
+  return { ...rolled, files: rolledFiles };
 }
 
 test('Unit #179 B04 framework comparison prepares cleanly and recovers exact d4c9993b predecessor pin with 1124 claims', async () => {

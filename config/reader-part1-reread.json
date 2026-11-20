@@ -1,0 +1,2118 @@
+{
+  "schemaVersion": 1,
+  "status": "reviewed",
+  "unit": {
+    "id": "part1-reread-181",
+    "source": {
+      "commit": "50e045f012090813d3b90f543b65fbb2c24b1d8f",
+      "tree": "1e525e987a4ed9144a03fa1d9963fd24c141f0df",
+      "manifest": "02e05175a7bf0da710bd6c1e69383cda5ee6c971d37518402e2a3c2f0cbf7eb4",
+      "date": "2026-11-20"
+    },
+    "routes": [
+      "/docs/book"
+    ],
+    "rationale": "完成第一部《问题的来源》整部连续回读：升级第一部引言与全书目录总览第一部概述，补齐各章链接与跨体系评价框架对照脉络，规范“题页”与章节自指用语、收紧第一部至第二部《服务与清单》衔接，并清理第一部非案例绑定论述的前提依赖顺序，保持全书原有论述数量、章节结构与全部案例绑定不变。",
+    "scope": [
+      "config/reader-numbering.json",
+      "content/docs/book/index.mdx",
+      "knowledge/catalog.json"
+    ],
+    "state": {
+      "before": "7eaeed679ad47a1417aa30841c4bf5ef11d90b20a2cc262a504639264c772ef9",
+      "after": "533f12cbaf79de6f15515c69b70ee77596e627f1d4446b58223748034adf13ec"
+    },
+    "partIntroduction": {
+      "part": 1,
+      "from": "比较一件产品的环境表现，为什么需要考察生产、使用和处置等阶段？本部先介绍生命周期视角，再通过早期饮料容器研究、政策分析和评价框架，说明研究者如何组织比较，以及证据能够支持什么判断。最后讨论生命周期评价在清洁生产中的用途，并引出下一部的问题：不同方案需要满足哪些共同条件，才有比较的基础。",
+      "to": "比较一件产品的环境表现，为什么不能只盯住单个环节，而必须沿生产、使用与处置展开？本部先从生命周期视角界定比较的起点、系统简化与迭代逻辑，再回到早期饮料容器账本与政策分析，辨析能源核算、周转假设与政府干预理由各自依赖的证据；随后通过《评价框架与分析步骤》梳理历史指南并对照 CML 2001/2002、国际参考生命周期数据系统（ILCD）2010、欧盟产品环境足迹（PEF）2021 与温室气体核算体系（GHG Protocol）产品标准（2011）在阶段迭代、决策情景与比较断言门槛、影响类别与加权以及审验鉴证上的共同核心与真实分歧；最后考察清洁生产中的生命周期评价用途与本地应用条件，引出第二部的问题：不同方案须满足哪些共同的功能参照与清单边界，才能建立可比账本。",
+      "rationale": "升级第一部《问题的来源》引言，完整涵盖五章内容、四体系评价框架对照以及通向第二部《服务与清单》的过渡。"
+    },
+    "printPart1": {
+      "id": "print-part-1",
+      "from": "84e3549ade04ff4456f89bfab3e2fad43e988314229f9c78d2391347fddeefbc",
+      "to": "c6fc93eb7ede4d9641ac73e7595d593d4a766c27db06c3da47af0f690fc0b1ef"
+    },
+    "previousFiles": {
+      "config/reader-numbering.json": "{\n  \"version\": 1,\n  \"scope\": \"current-40-unit-32-chapter-book-and-48-unit-37-chapter-website-presentation\",\n  \"parts\": [\n    {\n      \"number\": 1,\n      \"title\": \"问题的来源\",\n      \"introduction\": \"比较一件产品的环境表现，为什么需要考察生产、使用和处置等阶段？本部先介绍生命周期视角，再通过早期饮料容器研究、政策分析和评价框架，说明研究者如何组织比较，以及证据能够支持什么判断。最后讨论生命周期评价在清洁生产中的用途，并引出下一部的问题：不同方案需要满足哪些共同条件，才有比较的基础。\"\n    },\n    {\n      \"number\": 2,\n      \"title\": \"服务与清单\",\n      \"introduction\": \"要比较两种方案，先要固定它们共同交付的功能参照，并看清国际参考生命周期数据系统（ILCD）、欧盟产品环境足迹（PEF）、温室气体核算体系（GHG Protocol）与 ecoinvent 第三版在功能单位、声明单位、参考产品与可比性门槛上的分工。确定产品需求之后，再通过线性过程网络求解各项供给活动，并辨认配平方程背后的截断、零价与多余约束边界。进入软件与数据交换层面，还须分清技术界面与环境界面、基本流与产品/废物流以及零值与缺因子的区别。最后，当过程网络存在截断而借助经济投入产出数据闭合上游时，要对照主流过程标准与混合清单架构在截断阈值、资本品边界、重复计算扣除、价格与分母口径上的真实差异；厘清清单如何建立与闭合以后，第三部将进一步转向共产品分配与供给变化。\"\n    },\n    {\n      \"number\": 3,\n      \"title\": \"负担分配与供给变化\",\n      \"introduction\": \"一次生产同时产出多种产品时，既可以问已有排放该怎样按物理或经济依据分担，也可以问改换供给在何种条件下会引发哪些供应者增产、减产或退出。本部依次沿共同生产、市场响应、供电系统与材料循环展开这两种判断：先辨析共产品份额、参照残余与规则边界；再对照国际参考生命周期数据系统（ILCD）、ecoinvent 第三版后果模型、欧盟产品环境足迹（PEF）与温室气体核算体系（GHG Protocol）在决策尺度、合同追踪与受约束供给上的条件与分歧；继而沿输配网段、电量账户与短长期边际响应检验电力尺度；最后在瓦楞纸回收链中辨明负担交接、质量折算与循环足迹公式（CFF）的外部替代边界。查清活动和排放怎样变化之后，下一部将进一步追查这些排放与资源开采会沿着怎样的环境路径转化为中点与终点指标。\"\n    },\n    {\n      \"number\": 4,\n      \"title\": \"环境后果\",\n      \"introduction\": \"清单给出了资源采掘、土地利用、取耗水和污染物排放等数量。要知道这些活动可能带来什么后果，还要沿着环境机制追查：土地恢复进程与矿石品位怎样变化，温室气体怎样改变辐射强迫，酸性和营养物质、细颗粒物及有毒化学品怎样经空气、水体与土壤到达生态系统或人群，以及当地还有多少水可用。各章借这些过程说明中点与终点指标的含义、比较条件与证据边界，为下一部讨论不同后果之间的取舍打下基础。\"\n    },\n    {\n      \"number\": 5,\n      \"title\": \"尺度与取舍\",\n      \"introduction\": \"一种方案可能在某项环境指标上较低，在另一项上较高。本部依次检验跨类别与跨维度取舍的五重边界：先比较法定政策目标距离同公众—专家重要性乘科学稳健度的中点加权及公开比较规则，再追查基本流空间粒度与归一化人均分母在同权重组合时的约消或放大，继而对照保护领域终点主动截停与陈述偏好货币估值的次序反转；随后将视野扩展到产品与组织参照下的社会风险量表、职业健康损害及不可抵消的基本权利底线，最后辨析三类生命周期成本主体账本、五类异质货币消重、多准则补偿与否决规则以及地球边界配额分配。即使算式清晰，结论仍取决于底层资料能代表哪里的工厂、人群与时期；下一部由此进入数据适用性、不确定性与合规审查。\"\n    },\n    {\n      \"number\": 6,\n      \"title\": \"数据与证据\",\n      \"introduction\": \"一个结果即使能够精确复算，所用资料仍未必代表研究所需的过程。本部依次考察数据与证据链条的四重边界：先比较国际参考生命周期数据系统（ILCD）、欧盟产品环境足迹（PEF）、ecoinvent 第三版与天工规范（TIDAS）对背景数据适用性、区域化父子数据集与多角色审查的治理路径；再辨析固有变异、参数认识不确定性、模型结构、方法选择与数值求解五类误差层次，并检验一阶泰勒与随机全局灵敏度及蒙特卡洛运行次数的失效边界；继而从柏林杯重调查出发，对照 ecoinvent 专家与实证谱系方差、欧盟 PEF 序数数据质量评级（DQR）门槛与温室气体核算体系（GHG Protocol）定性披露对同一套质量词项的截然不同用法；最后对照欧盟建议书、GHG Protocol、欧盟电池法规与生态设计法规（ESPR），说明类别规则、活动数据、合格评定与比较断言门槛如何决定足迹结果的合法用途。下一部将把这些数据、模型与规则边界放回完整的产品方案比较与全书收束判断中。\"\n    },\n    {\n      \"number\": 7,\n      \"title\": \"比较与判断\",\n      \"introduction\": \"比较两个方案的环境负担，不能只看单一指标或单一场景。本部先通过墙面服务比较复算假想条件，辨明功能单位、参考流、系统边界与国际参考生命周期数据系统（ILCD）、欧盟产品环境足迹（PEF）及温室气体核算体系（GHG Protocol）对比较断言与成对不确定性的门槛；再借助英国环境署（2011）与丹麦环保署（2018）购物袋评估，对照 ILCD 与 PEF 的热点阈值、负信用重算及关键性审查体制；继而区分前瞻性、事前、预期式、实验室尺度与动态评价，说明工艺放大、综合评估模型（IAM）超结构情景耦合与动态时间边界如何影响未来比较；最后回到全书开篇的容器研究，结合墙面与购物袋案例收束七类修订路由，辨认哪些结论已有依据、哪些应随新证据定向修订。\"\n    }\n  ],\n  \"book\": [\n    {\n      \"key\": \"/docs\",\n      \"source\": \"/docs\",\n      \"kind\": \"front-matter\",\n      \"title\": \"前言\"\n    },\n    {\n      \"key\": \"/docs/book\",\n      \"source\": \"/docs/book\",\n      \"kind\": \"front-matter\",\n      \"title\": \"阅读导论\"\n    },\n    {\n      \"key\": \"/docs/book/integrative-ambitions\",\n      \"source\": \"/docs/book/integrative-ambitions\",\n      \"kind\": \"chapter\",\n      \"part\": 1,\n      \"title\": \"生命周期视角\"\n    },\n    {\n      \"key\": \"/docs/book/early-container-comparisons\",\n      \"source\": \"/docs/book/early-container-comparisons\",\n      \"kind\": \"chapter\",\n      \"part\": 1,\n      \"title\": \"饮料容器账本\"\n    },\n    {\n      \"key\": \"/docs/book/early-container-policy-and-systems\",\n      \"source\": \"/docs/book/early-container-policy-and-systems\",\n      \"kind\": \"chapter\",\n      \"part\": 1,\n      \"title\": \"容器比较与政策判断\"\n    },\n    {\n      \"key\": \"book-framework-responsibilities\",\n      \"source\": \"/monograph/framework-responsibilities\",\n      \"kind\": \"chapter\",\n      \"part\": 1,\n      \"title\": \"评价框架与分析步骤\"\n    },\n    {\n      \"key\": \"/docs/book/cleaner-production-purpose-and-prospects\",\n      \"source\": \"/docs/book/cleaner-production-purpose-and-prospects\",\n      \"kind\": \"chapter\",\n      \"part\": 1,\n      \"title\": \"清洁生产中的生命周期评价\"\n    },\n    {\n      \"key\": \"/docs/book/service-and-reference\",\n      \"source\": \"/docs/book/service-and-reference\",\n      \"kind\": \"chapter\",\n      \"part\": 2,\n      \"title\": \"功能参照\"\n    },\n    {\n      \"key\": \"/docs/book/inventory-calculation\",\n      \"source\": \"/docs/book/inventory-calculation\",\n      \"kind\": \"chapter\",\n      \"part\": 2,\n      \"title\": \"过程网络\"\n    },\n    {\n      \"key\": \"/docs/book/exchange-semantics-and-conversion\",\n      \"source\": \"/docs/book/exchange-semantics-and-conversion\",\n      \"kind\": \"chapter\",\n      \"part\": 2,\n      \"title\": \"流、交换与边界\"\n    },\n    {\n      \"key\": \"/docs/book/inventory-boundary-and-hybrid\",\n      \"source\": \"/docs/book/inventory-boundary-and-hybrid\",\n      \"kind\": \"chapter\",\n      \"part\": 2,\n      \"title\": \"混合清单\"\n    },\n    {\n      \"key\": \"book-joint-production\",\n      \"source\": \"/monograph/joint-production\",\n      \"kind\": \"chapter\",\n      \"part\": 3,\n      \"title\": \"共同生产\"\n    },\n    {\n      \"key\": \"/docs/book/market-boundaries-and-response\",\n      \"source\": \"/docs/book/market-boundaries-and-response\",\n      \"kind\": \"chapter\",\n      \"part\": 3,\n      \"title\": \"市场响应\"\n    },\n    {\n      \"key\": \"/docs/book/electricity-service-and-response\",\n      \"source\": \"/docs/book/electricity-service-and-response\",\n      \"kind\": \"chapter\",\n      \"part\": 3,\n      \"title\": \"供电系统\"\n    },\n    {\n      \"key\": \"/docs/book/recycling-chains-and-accounting\",\n      \"source\": \"/docs/book/recycling-chains-and-accounting\",\n      \"kind\": \"chapter\",\n      \"part\": 3,\n      \"title\": \"材料循环\"\n    },\n    {\n      \"key\": \"/docs/book/midpoint-endpoint-value-choices\",\n      \"source\": \"/docs/book/midpoint-endpoint-value-choices\",\n      \"kind\": \"chapter\",\n      \"part\": 4,\n      \"title\": \"中点与终点\"\n    },\n    {\n      \"key\": \"book-climate-equivalence\",\n      \"source\": \"/monograph/climate-equivalence\",\n      \"kind\": \"chapter\",\n      \"part\": 4,\n      \"title\": \"气候当量\"\n    },\n    {\n      \"key\": \"/docs/book/acidification-and-nutrient-pathways\",\n      \"source\": \"/docs/book/acidification-and-nutrient-pathways\",\n      \"kind\": \"chapter\",\n      \"part\": 4,\n      \"title\": \"酸化与营养富集\"\n    },\n    {\n      \"key\": \"/docs/book/particulate-emissions-and-health\",\n      \"source\": \"/docs/book/particulate-emissions-and-health\",\n      \"kind\": \"chapter\",\n      \"part\": 4,\n      \"title\": \"颗粒物排放与健康损害\"\n    },\n    {\n      \"key\": \"/docs/book/water-scarcity-and-reference\",\n      \"source\": \"/docs/book/water-scarcity-and-reference\",\n      \"kind\": \"chapter\",\n      \"part\": 4,\n      \"title\": \"耗水与缺水潜势\"\n    },\n    {\n      \"key\": \"/docs/book/usetox-pathways-and-boundaries\",\n      \"source\": \"/docs/book/usetox-pathways-and-boundaries\",\n      \"kind\": \"chapter\",\n      \"part\": 4,\n      \"title\": \"毒性路径\"\n    },\n    {\n      \"key\": \"/docs/book/ecological-scarcity-and-targets\",\n      \"source\": \"/docs/book/ecological-scarcity-and-targets\",\n      \"kind\": \"chapter\",\n      \"part\": 5,\n      \"title\": \"生态稀缺赋权\"\n    },\n    {\n      \"key\": \"/docs/book/localization-evidence-and-denominators\",\n      \"source\": \"/docs/book/localization-evidence-and-denominators\",\n      \"kind\": \"chapter\",\n      \"part\": 5,\n      \"title\": \"影响评价本地化\"\n    },\n    {\n      \"key\": \"/docs/book/lime-preferences-and-damage-weights\",\n      \"source\": \"/docs/book/lime-preferences-and-damage-weights\",\n      \"kind\": \"chapter\",\n      \"part\": 5,\n      \"title\": \"环境损害估值\"\n    },\n    {\n      \"key\": \"/docs/book/social-assessment-objects-and-meaning\",\n      \"source\": \"/docs/book/social-assessment-objects-and-meaning\",\n      \"kind\": \"chapter\",\n      \"part\": 5,\n      \"title\": \"社会表现与影响\"\n    },\n    {\n      \"key\": \"/docs/book/cost-perspectives-and-sustainability-combination\",\n      \"source\": \"/docs/book/cost-perspectives-and-sustainability-combination\",\n      \"kind\": \"chapter\",\n      \"part\": 5,\n      \"title\": \"生命周期成本与综合评价\"\n    },\n    {\n      \"key\": \"book-data-applicability\",\n      \"source\": \"/monograph/data-applicability\",\n      \"kind\": \"chapter\",\n      \"part\": 6,\n      \"title\": \"数据适用性\"\n    },\n    {\n      \"key\": \"/docs/book/uncertainty-and-variability\",\n      \"source\": \"/docs/book/uncertainty-and-variability\",\n      \"kind\": \"chapter\",\n      \"part\": 6,\n      \"title\": \"变异与不确定性\"\n    },\n    {\n      \"key\": \"/docs/book/data-quality-and-probability\",\n      \"source\": \"/docs/book/data-quality-and-probability\",\n      \"kind\": \"chapter\",\n      \"part\": 6,\n      \"title\": \"质量评分与概率\"\n    },\n    {\n      \"key\": \"/docs/book/product-footprint-rules-and-practice\",\n      \"source\": \"/docs/book/product-footprint-rules-and-practice\",\n      \"kind\": \"chapter\",\n      \"part\": 6,\n      \"title\": \"产品足迹规则\"\n    },\n    {\n      \"key\": \"/docs/book/wall-service-to-comparison\",\n      \"source\": \"/docs/book/wall-service-to-comparison\",\n      \"kind\": \"chapter\",\n      \"part\": 7,\n      \"title\": \"墙面服务比较\"\n    },\n    {\n      \"key\": \"/docs/book/interpretation-and-limits\",\n      \"source\": \"/docs/book/interpretation-and-limits\",\n      \"kind\": \"chapter\",\n      \"part\": 7,\n      \"title\": \"购物袋研究\"\n    },\n    {\n      \"key\": \"/docs/book/future-technology-and-context\",\n      \"source\": \"/docs/book/future-technology-and-context\",\n      \"kind\": \"chapter\",\n      \"part\": 7,\n      \"title\": \"未来技术与情景\"\n    },\n    {\n      \"key\": \"book-revisable-judgment\",\n      \"source\": \"/monograph/revisable-judgment\",\n      \"kind\": \"chapter\",\n      \"part\": 7,\n      \"title\": \"可修订的判断\"\n    },\n    {\n      \"key\": \"/docs/history\",\n      \"source\": \"/docs/history\",\n      \"kind\": \"topic\",\n      \"title\": \"史料辨读\"\n    },\n    {\n      \"key\": \"/docs/allocation\",\n      \"source\": \"/docs/allocation\",\n      \"kind\": \"topic\",\n      \"title\": \"系统模型辨读\"\n    },\n    {\n      \"key\": \"/docs/appendices/container-energy-check\",\n      \"source\": \"/docs/appendices/container-energy-check\",\n      \"kind\": \"appendix\",\n      \"title\": \"容器能源复核\"\n    },\n    {\n      \"key\": \"/docs/appendices/cml-framework-calculations\",\n      \"source\": \"/docs/appendices/cml-framework-calculations\",\n      \"kind\": \"appendix\",\n      \"title\": \"指南算例复核\"\n    },\n    {\n      \"key\": \"/docs/appendices/climate-numerical-reconstruction\",\n      \"source\": \"/docs/appendices/climate-numerical-reconstruction\",\n      \"kind\": \"appendix\",\n      \"title\": \"气候数值的重建\"\n    },\n    {\n      \"key\": \"/docs/appendices/particulate-factor-calculations\",\n      \"source\": \"/docs/appendices/particulate-factor-calculations\",\n      \"kind\": \"appendix\",\n      \"title\": \"颗粒物因子的复算\"\n    }\n  ],\n  \"web\": [\n    {\n      \"key\": \"/docs\",\n      \"source\": \"/docs\",\n      \"kind\": \"front-matter\",\n      \"title\": \"前言\"\n    },\n    {\n      \"key\": \"/docs/book\",\n      \"source\": \"/docs/book\",\n      \"kind\": \"front-matter\",\n      \"title\": \"阅读导论\"\n    },\n    {\n      \"key\": \"/docs/book/integrative-ambitions\",\n      \"source\": \"/docs/book/integrative-ambitions\",\n      \"kind\": \"chapter\",\n      \"part\": 1,\n      \"title\": \"生命周期视角\"\n    },\n    {\n      \"key\": \"/docs/book/early-container-comparisons\",\n      \"source\": \"/docs/book/early-container-comparisons\",\n      \"kind\": \"chapter\",\n      \"part\": 1,\n      \"title\": \"饮料容器账本\"\n    },\n    {\n      \"key\": \"/docs/book/early-container-policy-and-systems\",\n      \"source\": \"/docs/book/early-container-policy-and-systems\",\n      \"kind\": \"chapter\",\n      \"part\": 1,\n      \"title\": \"容器比较与政策判断\"\n    },\n    {\n      \"key\": \"/docs/book/framework-history\",\n      \"source\": \"/docs/book/framework-history\",\n      \"kind\": \"chapter\",\n      \"part\": 1,\n      \"title\": \"评价框架的形成\"\n    },\n    {\n      \"key\": \"/docs/book/cml-computation-judgment-and-improvement\",\n      \"source\": \"/docs/book/cml-computation-judgment-and-improvement\",\n      \"kind\": \"chapter\",\n      \"part\": 1,\n      \"title\": \"CML指南中的评价与改进\"\n    },\n    {\n      \"key\": \"/docs/book/cleaner-production-purpose-and-prospects\",\n      \"source\": \"/docs/book/cleaner-production-purpose-and-prospects\",\n      \"kind\": \"chapter\",\n      \"part\": 1,\n      \"title\": \"清洁生产中的生命周期评价\"\n    },\n    {\n      \"key\": \"/docs/book/service-and-reference\",\n      \"source\": \"/docs/book/service-and-reference\",\n      \"kind\": \"chapter\",\n      \"part\": 2,\n      \"title\": \"功能参照\"\n    },\n    {\n      \"key\": \"/docs/book/inventory-calculation\",\n      \"source\": \"/docs/book/inventory-calculation\",\n      \"kind\": \"chapter\",\n      \"part\": 2,\n      \"title\": \"过程网络\"\n    },\n    {\n      \"key\": \"/docs/book/exchange-semantics-and-conversion\",\n      \"source\": \"/docs/book/exchange-semantics-and-conversion\",\n      \"kind\": \"chapter\",\n      \"part\": 2,\n      \"title\": \"流、交换与边界\"\n    },\n    {\n      \"key\": \"/docs/book/inventory-boundary-and-hybrid\",\n      \"source\": \"/docs/book/inventory-boundary-and-hybrid\",\n      \"kind\": \"chapter\",\n      \"part\": 2,\n      \"title\": \"混合清单\"\n    },\n    {\n      \"key\": \"/docs/book/allocation-and-substitution\",\n      \"source\": \"/docs/book/allocation-and-substitution\",\n      \"kind\": \"chapter\",\n      \"part\": 3,\n      \"title\": \"共产品的分配与替代\"\n    },\n    {\n      \"key\": \"/docs/book/allocation-judgment-and-corrections\",\n      \"source\": \"/docs/book/allocation-judgment-and-corrections\",\n      \"kind\": \"chapter\",\n      \"part\": 3,\n      \"title\": \"分配规则与修订\"\n    },\n    {\n      \"key\": \"/docs/book/market-boundaries-and-response\",\n      \"source\": \"/docs/book/market-boundaries-and-response\",\n      \"kind\": \"chapter\",\n      \"part\": 3,\n      \"title\": \"市场响应\"\n    },\n    {\n      \"key\": \"/docs/book/electricity-service-and-response\",\n      \"source\": \"/docs/book/electricity-service-and-response\",\n      \"kind\": \"chapter\",\n      \"part\": 3,\n      \"title\": \"供电系统\"\n    },\n    {\n      \"key\": \"/docs/book/recycling-chains-and-accounting\",\n      \"source\": \"/docs/book/recycling-chains-and-accounting\",\n      \"kind\": \"chapter\",\n      \"part\": 3,\n      \"title\": \"材料循环\"\n    },\n    {\n      \"key\": \"/docs/book/midpoint-endpoint-value-choices\",\n      \"source\": \"/docs/book/midpoint-endpoint-value-choices\",\n      \"kind\": \"chapter\",\n      \"part\": 4,\n      \"title\": \"中点与终点\"\n    },\n    {\n      \"key\": \"/docs/book/climate-response-and-metrics\",\n      \"source\": \"/docs/book/climate-response-and-metrics\",\n      \"kind\": \"chapter\",\n      \"part\": 4,\n      \"title\": \"气候响应与当量\"\n    },\n    {\n      \"key\": \"/docs/book/emission-time-and-assessment\",\n      \"source\": \"/docs/book/emission-time-and-assessment\",\n      \"kind\": \"chapter\",\n      \"part\": 4,\n      \"title\": \"排放时间与评价\"\n    },\n    {\n      \"key\": \"/docs/book/acidification-and-nutrient-pathways\",\n      \"source\": \"/docs/book/acidification-and-nutrient-pathways\",\n      \"kind\": \"chapter\",\n      \"part\": 4,\n      \"title\": \"酸化与营养富集\"\n    },\n    {\n      \"key\": \"/docs/book/particulate-emissions-and-health\",\n      \"source\": \"/docs/book/particulate-emissions-and-health\",\n      \"kind\": \"chapter\",\n      \"part\": 4,\n      \"title\": \"颗粒物排放与健康损害\"\n    },\n    {\n      \"key\": \"/docs/book/water-scarcity-and-reference\",\n      \"source\": \"/docs/book/water-scarcity-and-reference\",\n      \"kind\": \"chapter\",\n      \"part\": 4,\n      \"title\": \"耗水与缺水潜势\"\n    },\n    {\n      \"key\": \"/docs/book/usetox-pathways-and-boundaries\",\n      \"source\": \"/docs/book/usetox-pathways-and-boundaries\",\n      \"kind\": \"chapter\",\n      \"part\": 4,\n      \"title\": \"毒性路径\"\n    },\n    {\n      \"key\": \"/docs/book/ecological-scarcity-and-targets\",\n      \"source\": \"/docs/book/ecological-scarcity-and-targets\",\n      \"kind\": \"chapter\",\n      \"part\": 5,\n      \"title\": \"生态稀缺赋权\"\n    },\n    {\n      \"key\": \"/docs/book/localization-evidence-and-denominators\",\n      \"source\": \"/docs/book/localization-evidence-and-denominators\",\n      \"kind\": \"chapter\",\n      \"part\": 5,\n      \"title\": \"影响评价本地化\"\n    },\n    {\n      \"key\": \"/docs/book/lime-preferences-and-damage-weights\",\n      \"source\": \"/docs/book/lime-preferences-and-damage-weights\",\n      \"kind\": \"chapter\",\n      \"part\": 5,\n      \"title\": \"环境损害估值\"\n    },\n    {\n      \"key\": \"/docs/book/social-assessment-objects-and-meaning\",\n      \"source\": \"/docs/book/social-assessment-objects-and-meaning\",\n      \"kind\": \"chapter\",\n      \"part\": 5,\n      \"title\": \"社会表现与影响\"\n    },\n    {\n      \"key\": \"/docs/book/cost-perspectives-and-sustainability-combination\",\n      \"source\": \"/docs/book/cost-perspectives-and-sustainability-combination\",\n      \"kind\": \"chapter\",\n      \"part\": 5,\n      \"title\": \"生命周期成本与综合评价\"\n    },\n    {\n      \"key\": \"/docs/book/database-fitness-and-documentation\",\n      \"source\": \"/docs/book/database-fitness-and-documentation\",\n      \"kind\": \"chapter\",\n      \"part\": 6,\n      \"title\": \"过程数据的用途\"\n    },\n    {\n      \"key\": \"/docs/book/review-support-and-version-boundaries\",\n      \"source\": \"/docs/book/review-support-and-version-boundaries\",\n      \"kind\": \"chapter\",\n      \"part\": 6,\n      \"title\": \"数据审查与版本\"\n    },\n    {\n      \"key\": \"/docs/book/uncertainty-and-variability\",\n      \"source\": \"/docs/book/uncertainty-and-variability\",\n      \"kind\": \"chapter\",\n      \"part\": 6,\n      \"title\": \"变异与不确定性\"\n    },\n    {\n      \"key\": \"/docs/book/data-quality-and-probability\",\n      \"source\": \"/docs/book/data-quality-and-probability\",\n      \"kind\": \"chapter\",\n      \"part\": 6,\n      \"title\": \"质量评分与概率\"\n    },\n    {\n      \"key\": \"/docs/book/product-footprint-rules-and-practice\",\n      \"source\": \"/docs/book/product-footprint-rules-and-practice\",\n      \"kind\": \"chapter\",\n      \"part\": 6,\n      \"title\": \"产品足迹规则\"\n    },\n    {\n      \"key\": \"/docs/book/wall-service-to-comparison\",\n      \"source\": \"/docs/book/wall-service-to-comparison\",\n      \"kind\": \"chapter\",\n      \"part\": 7,\n      \"title\": \"墙面服务比较\"\n    },\n    {\n      \"key\": \"/docs/book/interpretation-and-limits\",\n      \"source\": \"/docs/book/interpretation-and-limits\",\n      \"kind\": \"chapter\",\n      \"part\": 7,\n      \"title\": \"购物袋研究\"\n    },\n    {\n      \"key\": \"/docs/book/future-technology-and-context\",\n      \"source\": \"/docs/book/future-technology-and-context\",\n      \"kind\": \"chapter\",\n      \"part\": 7,\n      \"title\": \"未来技术与情景\"\n    },\n    {\n      \"key\": \"/docs/book/connecting-objects-references-and-time\",\n      \"source\": \"/docs/book/connecting-objects-references-and-time\",\n      \"kind\": \"chapter\",\n      \"part\": 7,\n      \"title\": \"服务、系统与时间\"\n    },\n    {\n      \"key\": \"/docs/book/from-connected-results-to-conditional-judgment\",\n      \"source\": \"/docs/book/from-connected-results-to-conditional-judgment\",\n      \"kind\": \"chapter\",\n      \"part\": 7,\n      \"title\": \"判断依据与修订\"\n    },\n    {\n      \"key\": \"/docs/history\",\n      \"source\": \"/docs/history\",\n      \"kind\": \"topic\",\n      \"title\": \"史料辨读\"\n    },\n    {\n      \"key\": \"/docs/flows\",\n      \"source\": \"/docs/flows\",\n      \"kind\": \"topic\",\n      \"title\": \"流的身份与过程交换\"\n    },\n    {\n      \"key\": \"/docs/functional-unit\",\n      \"source\": \"/docs/functional-unit\",\n      \"kind\": \"topic\",\n      \"title\": \"功能单位与参考流\"\n    },\n    {\n      \"key\": \"/docs/allocation\",\n      \"source\": \"/docs/allocation\",\n      \"kind\": \"topic\",\n      \"title\": \"系统模型辨读\"\n    },\n    {\n      \"key\": \"/docs/characterization\",\n      \"source\": \"/docs/characterization\",\n      \"kind\": \"topic\",\n      \"title\": \"缺少表征因子不等于因子为零\"\n    },\n    {\n      \"key\": \"/docs/appendices/container-energy-check\",\n      \"source\": \"/docs/appendices/container-energy-check\",\n      \"kind\": \"appendix\",\n      \"title\": \"容器能源复核\"\n    },\n    {\n      \"key\": \"/docs/appendices/cml-framework-calculations\",\n      \"source\": \"/docs/appendices/cml-framework-calculations\",\n      \"kind\": \"appendix\",\n      \"title\": \"指南算例复核\"\n    },\n    {\n      \"key\": \"/docs/appendices/climate-numerical-reconstruction\",\n      \"source\": \"/docs/appendices/climate-numerical-reconstruction\",\n      \"kind\": \"appendix\",\n      \"title\": \"气候数值的重建\"\n    },\n    {\n      \"key\": \"/docs/appendices/particulate-factor-calculations\",\n      \"source\": \"/docs/appendices/particulate-factor-calculations\",\n      \"kind\": \"appendix\",\n      \"title\": \"颗粒物因子的复算\"\n    }\n  ],\n  \"headings\": {\n    \"/docs\": [],\n    \"/docs/book\": [],\n    \"/docs/book/integrative-ambitions\": [\n      {\n        \"key\": \"把问题沿系统展开\",\n        \"id\": \"把问题沿系统展开\",\n        \"title\": \"比较的起点\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"综合范围怎样遇到遗漏和简化\",\n        \"id\": \"综合范围怎样遇到遗漏和简化\",\n        \"title\": \"系统范围与模型简化\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"从影响结果到可支持的判断\",\n        \"id\": \"从影响结果到可支持的判断\",\n        \"title\": \"决策依据与研究迭代\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/early-container-comparisons\": [\n      {\n        \"key\": \"从产品名称到可比任务\",\n        \"id\": \"从产品名称到可比任务\",\n        \"title\": \"饮料供应与比较基准\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"灌装新瓶与返回各自计数\",\n        \"id\": \"灌装新瓶与返回各自计数\",\n        \"title\": \"周转次数与过程核算\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"从百万次灌装到一千升\",\n        \"id\": \"从百万次灌装到一千升\",\n        \"title\": \"能源汇总与换算\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"明细表能否重新组装总量\",\n        \"id\": \"明细表能否重新组装总量\",\n        \"title\": \"系统重建的限度\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/early-container-policy-and-systems\": [\n      {\n        \"key\": \"政策理由与数量对象\",\n        \"id\": \"政策理由与数量对象\",\n        \"title\": \"政策干预的理由\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"从容器链走向其他消费\",\n        \"id\": \"从容器链走向其他消费\",\n        \"title\": \"其他消费与能源需求\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"能源危机与研究问题的变化\",\n        \"id\": \"能源危机与研究问题的变化\",\n        \"title\": \"能源危机与研究重点\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/monograph/framework-responsibilities\": [\n      {\n        \"key\": \"史料与职责\",\n        \"id\": \"史料与职责\",\n        \"title\": \"史料与分析任务\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"清单计算\",\n        \"id\": \"清单计算\",\n        \"title\": \"清单计算\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"评价取舍\",\n        \"id\": \"评价取舍\",\n        \"title\": \"评价取舍\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"改进与解释\",\n        \"id\": \"改进与解释\",\n        \"title\": \"改进与解释\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"外部采用\",\n        \"id\": \"外部采用\",\n        \"title\": \"指南的实际采用\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/cleaner-production-purpose-and-prospects\": [\n      {\n        \"key\": \"预防目的\",\n        \"id\": \"预防目的\",\n        \"title\": \"清洁生产的预防目标\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"应用设想\",\n        \"id\": \"应用设想\",\n        \"title\": \"生命周期评价的应用\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"发展条件\",\n        \"id\": \"发展条件\",\n        \"title\": \"本地应用的研究条件\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/service-and-reference\": [\n      {\n        \"key\": \"服务要求\",\n        \"id\": \"服务要求\",\n        \"title\": \"服务要求\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"参考对象\",\n        \"id\": \"参考对象\",\n        \"title\": \"参考对象\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"比较条件\",\n        \"id\": \"比较条件\",\n        \"title\": \"比较条件\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/inventory-calculation\": [\n      {\n        \"key\": \"数量坐标\",\n        \"id\": \"数量坐标\",\n        \"title\": \"数量坐标\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"需求平衡\",\n        \"id\": \"需求平衡\",\n        \"title\": \"需求平衡\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"反馈边界\",\n        \"id\": \"反馈边界\",\n        \"title\": \"反馈边界\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/exchange-semantics-and-conversion\": [\n      {\n        \"key\": \"对象与交换\",\n        \"id\": \"对象与交换\",\n        \"title\": \"系统边界与流的身份\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"填埋与农地的不同分界\",\n        \"id\": \"填埋与农地的不同分界\",\n        \"title\": \"填埋与农地的不同分界\",\n        \"depth\": 3,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"对象定义与过程记录\",\n        \"id\": \"对象定义与过程记录\",\n        \"title\": \"对象定义与过程记录\",\n        \"depth\": 3,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"计算活动\",\n        \"id\": \"计算活动\",\n        \"title\": \"物质方向与处理活动\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"同一处理的两种记法\",\n        \"id\": \"同一处理的两种记法\",\n        \"title\": \"处理活动的不同表示\",\n        \"depth\": 3,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"活动清单与类别结果\",\n        \"id\": \"活动清单与类别结果\",\n        \"title\": \"活动、清单与类别结果\",\n        \"depth\": 3,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"连接保存以后仍可能漏算\",\n        \"id\": \"连接保存以后仍可能漏算\",\n        \"title\": \"连接保存以后仍可能漏算\",\n        \"depth\": 3,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"转换边界\",\n        \"id\": \"转换边界\",\n        \"title\": \"模型转换与参照\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"表征状态\",\n        \"id\": \"表征状态\",\n        \"title\": \"清单表征与零值\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"环境迁移由哪一侧计算\",\n        \"id\": \"环境迁移由哪一侧计算\",\n        \"title\": \"环境迁移由哪一侧计算\",\n        \"depth\": 3,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"数值为零以后还要辨明什么\",\n        \"id\": \"数值为零以后还要辨明什么\",\n        \"title\": \"数值为零以后还要辨明什么\",\n        \"depth\": 3,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/inventory-boundary-and-hybrid\": [\n      {\n        \"key\": \"过程经济边界\",\n        \"id\": \"过程经济边界\",\n        \"title\": \"过程清单与经济数据\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"双向账户\",\n        \"id\": \"双向账户\",\n        \"title\": \"双向账户\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"误差来源\",\n        \"id\": \"误差来源\",\n        \"title\": \"误差来源\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/monograph/joint-production\": [\n      {\n        \"key\": \"信息目的\",\n        \"id\": \"信息目的\",\n        \"title\": \"信息目的\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"负担份额\",\n        \"id\": \"负担份额\",\n        \"title\": \"负担份额\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"参照供给\",\n        \"id\": \"参照供给\",\n        \"title\": \"参照供给\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"@case:joint:title\",\n        \"title\": \"同一批共产品：份额、路线与比较残余\",\n        \"depth\": 3,\n        \"type\": \"case\"\n      },\n      {\n        \"key\": \"@case:joint:partition\",\n        \"title\": \"问题一：怎样把既有一批的清单分派给产品标签？\",\n        \"depth\": 4,\n        \"type\": \"case\"\n      },\n      {\n        \"key\": \"@case:joint:routes\",\n        \"title\": \"问题二：保持两项服务，改变供给路线会怎样？\",\n        \"depth\": 4,\n        \"type\": \"case\"\n      },\n      {\n        \"key\": \"规则边界\",\n        \"id\": \"规则边界\",\n        \"title\": \"规则边界\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/market-boundaries-and-response\": [\n      {\n        \"key\": \"从能相减到确实会改变\",\n        \"id\": \"从能相减到确实会改变\",\n        \"title\": \"响应对象\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"批评改变了哪一道边界\",\n        \"id\": \"批评改变了哪一道边界\",\n        \"title\": \"市场边界\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"平均供电也需要一个模型\",\n        \"id\": \"平均供电也需要一个模型\",\n        \"title\": \"平均组合\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"同一次新增需求两种电力响应\",\n        \"id\": \"同一次新增需求两种电力响应\",\n        \"title\": \"条件供给\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/electricity-service-and-response\": [\n      {\n        \"key\": \"同一度电先问在哪里交付\",\n        \"id\": \"同一度电先问在哪里交付\",\n        \"title\": \"交付链条\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"年度发电账包含什么\",\n        \"id\": \"年度发电账包含什么\",\n        \"title\": \"电量账户\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"平均与响应为何不是同一个估计\",\n        \"id\": \"平均与响应为何不是同一个估计\",\n        \"title\": \"运行响应\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"未来需求还会改变哪些资产\",\n        \"id\": \"未来需求还会改变哪些资产\",\n        \"title\": \"容量与长期响应\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"把响应接回生命周期问题\",\n        \"id\": \"把响应接回生命周期问题\",\n        \"title\": \"生命周期连接\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/recycling-chains-and-accounting\": [\n      {\n        \"key\": \"从处理一千克纸开始\",\n        \"id\": \"从处理一千克纸开始\",\n        \"title\": \"纸料去向\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"同一条链不同的负担分担\",\n        \"id\": \"同一条链不同的负担分担\",\n        \"title\": \"负担交接\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"质量折算发生在哪里\",\n        \"id\": \"质量折算发生在哪里\",\n        \"title\": \"质量折算\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"替代能源时热和电分别相等\",\n        \"id\": \"替代能源时热和电分别相等\",\n        \"title\": \"外部替代\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/midpoint-endpoint-value-choices\": [\n      {\n        \"key\": \"指标停在因果路径的哪里\",\n        \"id\": \"指标停在因果路径的哪里\",\n        \"title\": \"指标的位置\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"时间证据和地点怎样进入结果\",\n        \"id\": \"时间证据和地点怎样进入结果\",\n        \"title\": \"情景与地点\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"模型输入数据与因子发行包\",\n        \"id\": \"模型输入数据与因子发行包\",\n        \"title\": \"模型与资料\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/monograph/climate-equivalence\": [\n      {\n        \"key\": \"响应与指标\",\n        \"id\": \"响应与指标\",\n        \"title\": \"响应与指标\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"气体与碳收支\",\n        \"id\": \"气体与碳收支\",\n        \"title\": \"气体与碳收支\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"清单比较\",\n        \"id\": \"清单比较\",\n        \"title\": \"清单比较\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"排放日历\",\n        \"id\": \"排放日历\",\n        \"title\": \"排放日历\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"历史与用途\",\n        \"id\": \"历史与用途\",\n        \"title\": \"历史与用途\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/acidification-and-nutrient-pathways\": [\n      {\n        \"key\": \"从排放找到接收系统\",\n        \"id\": \"从排放找到接收系统\",\n        \"title\": \"酸输入与土壤\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"营养进入淡水与近岸海洋\",\n        \"id\": \"营养进入淡水与近岸海洋\",\n        \"title\": \"营养与接收环境\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"响应曲线回答哪一种变化\",\n        \"id\": \"响应曲线回答哪一种变化\",\n        \"title\": \"背景与响应\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"从施用量走到净排放和指标\",\n        \"id\": \"从施用量走到净排放和指标\",\n        \"title\": \"清单与类别指标\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/particulate-emissions-and-health\": [\n      {\n        \"key\": \"排放与健康量\",\n        \"id\": \"排放与健康量\",\n        \"title\": \"排放与健康量\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"暴露与证据\",\n        \"id\": \"暴露与证据\",\n        \"title\": \"暴露与证据\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"参照与响应\",\n        \"id\": \"参照与响应\",\n        \"title\": \"参照与响应\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"因子与比较\",\n        \"id\": \"因子与比较\",\n        \"title\": \"因子与比较\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/water-scarcity-and-reference\": [\n      {\n        \"key\": \"体积记录了什么\",\n        \"id\": \"体积记录了什么\",\n        \"title\": \"水量与剩余量\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"月份参照与背景\",\n        \"id\": \"月份参照与背景\",\n        \"title\": \"时空与参照\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"把两处耗水接到同一产品\",\n        \"id\": \"把两处耗水接到同一产品\",\n        \"title\": \"两处耗水的比较\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"更换情境与更换运算次序\",\n        \"id\": \"更换情境与更换运算次序\",\n        \"title\": \"情境与加总\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/usetox-pathways-and-boundaries\": [\n      {\n        \"key\": \"排放与受体\",\n        \"id\": \"排放与受体\",\n        \"title\": \"排放与受体\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"模型与范围\",\n        \"id\": \"模型与范围\",\n        \"title\": \"模型与范围\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"比较的依据\",\n        \"id\": \"比较的依据\",\n        \"title\": \"比较的依据\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/ecological-scarcity-and-targets\": [\n      {\n        \"key\": \"排放目标与计分\",\n        \"id\": \"排放目标与计分\",\n        \"title\": \"排放目标与计分\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"因子来源与版本\",\n        \"id\": \"因子来源与版本\",\n        \"title\": \"因子来源与版本\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"服务比较与分界\",\n        \"id\": \"服务比较与分界\",\n        \"title\": \"服务比较与分界\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"赋权的地域参照\",\n        \"id\": \"赋权的地域参照\",\n        \"title\": \"赋权的地域参照\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/localization-evidence-and-denominators\": [\n      {\n        \"key\": \"类别与人均参照\",\n        \"id\": \"类别与人均参照\",\n        \"title\": \"类别与人均参照\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"权重与资源耗竭\",\n        \"id\": \"权重与资源耗竭\",\n        \"title\": \"权重与资源耗竭\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"政策参照与采用\",\n        \"id\": \"政策参照与采用\",\n        \"title\": \"政策参照与采用\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"制度与统计覆盖\",\n        \"id\": \"制度与统计覆盖\",\n        \"title\": \"制度与统计覆盖\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/lime-preferences-and-damage-weights\": [\n      {\n        \"key\": \"问卷与损害参照\",\n        \"id\": \"问卷与损害参照\",\n        \"title\": \"问卷与损害参照\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"选择与权重换算\",\n        \"id\": \"选择与权重换算\",\n        \"title\": \"选择与权重换算\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"发表表值与排序\",\n        \"id\": \"发表表值与排序\",\n        \"title\": \"发表表值与排序\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"行为效度与迁移\",\n        \"id\": \"行为效度与迁移\",\n        \"title\": \"行为效度与迁移\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/social-assessment-objects-and-meaning\": [\n      {\n        \"key\": \"社会评价对象\",\n        \"id\": \"社会评价对象\",\n        \"title\": \"社会评价对象\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"社会评价证据\",\n        \"id\": \"社会评价证据\",\n        \"title\": \"活动与社会表现\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"社会量表解释\",\n        \"id\": \"社会量表解释\",\n        \"title\": \"量表与抵消\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/cost-perspectives-and-sustainability-combination\": [\n      {\n        \"key\": \"成本主体\",\n        \"id\": \"成本主体\",\n        \"title\": \"成本主体与范围\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"三类结果\",\n        \"id\": \"三类结果\",\n        \"title\": \"三类结果与重叠\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"取舍呈现\",\n        \"id\": \"取舍呈现\",\n        \"title\": \"权重与结果呈现\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/monograph/data-applicability\": [\n      {\n        \"key\": \"表示对象\",\n        \"id\": \"表示对象\",\n        \"title\": \"数据所代表的过程\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"质量信息\",\n        \"id\": \"质量信息\",\n        \"title\": \"数据的质量信息\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"审查范围\",\n        \"id\": \"审查范围\",\n        \"title\": \"数据的审查范围\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"版本变化\",\n        \"id\": \"版本变化\",\n        \"title\": \"数据换版与补缺\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/uncertainty-and-variability\": [\n      {\n        \"key\": \"估计对象\",\n        \"id\": \"估计对象\",\n        \"title\": \"分布与估计对象\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"不确定性来源\",\n        \"id\": \"不确定性来源\",\n        \"title\": \"参数与模型选择\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"数值可靠性\",\n        \"id\": \"数值可靠性\",\n        \"title\": \"求解的数值稳定性\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/data-quality-and-probability\": [\n      {\n        \"key\": \"杯重调查与估计\",\n        \"id\": \"杯重调查与估计\",\n        \"title\": \"杯重调查与估计\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"散布与估计精度\",\n        \"id\": \"散布与估计精度\",\n        \"title\": \"散布与估计精度\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"完整性评分的校准\",\n        \"id\": \"完整性评分的校准\",\n        \"title\": \"完整性评分的校准\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"概率模型与参数\",\n        \"id\": \"概率模型与参数\",\n        \"title\": \"概率模型与参数\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"评分的检验与适用\",\n        \"id\": \"评分的检验与适用\",\n        \"title\": \"评分检验与使用条件\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/product-footprint-rules-and-practice\": [\n      {\n        \"key\": \"规则与规定服务\",\n        \"id\": \"规则与规定服务\",\n        \"title\": \"类别规则与默认服务\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"活动量与报表\",\n        \"id\": \"活动量与报表\",\n        \"title\": \"使用阶段的活动与结果\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"模型与审查范围\",\n        \"id\": \"模型与审查范围\",\n        \"title\": \"模型与审查范围\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"算法响应与比较\",\n        \"id\": \"算法响应与比较\",\n        \"title\": \"甲烷算法与比较条件\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/wall-service-to-comparison\": [\n      {\n        \"key\": \"功能实现\",\n        \"id\": \"功能实现\",\n        \"title\": \"功能实现\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"清单形成\",\n        \"id\": \"清单形成\",\n        \"title\": \"清单形成\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"指标含义\",\n        \"id\": \"指标含义\",\n        \"title\": \"指标含义\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"配对判断\",\n        \"id\": \"配对判断\",\n        \"title\": \"配对判断\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"@case:wall:title\",\n        \"title\": \"计算表与参数\",\n        \"depth\": 3,\n        \"type\": \"case\"\n      },\n      {\n        \"key\": \"@case:wall:current\",\n        \"title\": \"计算示例：平整基底 smooth · θ=0.3\",\n        \"depth\": 4,\n        \"type\": \"case\"\n      },\n      {\n        \"key\": \"@case:wall:paintA\",\n        \"title\": \"涂料 A：f → s → g → I\",\n        \"depth\": 4,\n        \"type\": \"case\"\n      },\n      {\n        \"key\": \"@case:wall:paintB\",\n        \"title\": \"涂料 B：f → s → g → I\",\n        \"depth\": 4,\n        \"type\": \"case\"\n      },\n      {\n        \"key\": \"@case:wall:baseline\",\n        \"title\": \"固定结果与全域判断\",\n        \"depth\": 4,\n        \"type\": \"case\"\n      }\n    ],\n    \"/docs/book/interpretation-and-limits\": [\n      {\n        \"key\": \"购物运输服务\",\n        \"id\": \"购物运输服务\",\n        \"title\": \"购物运输服务\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"替代与复用门槛\",\n        \"id\": \"替代与复用门槛\",\n        \"title\": \"替代与复用门槛\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"多指标与研究边界\",\n        \"id\": \"多指标与研究边界\",\n        \"title\": \"多指标与研究边界\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"审查与实际建议\",\n        \"id\": \"审查与实际建议\",\n        \"title\": \"审查与实际建议\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/future-technology-and-context\": [\n      {\n        \"key\": \"技术规模与功能\",\n        \"id\": \"技术规模与功能\",\n        \"title\": \"工艺放大与比较对象\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"情景与供给背景\",\n        \"id\": \"情景与供给背景\",\n        \"title\": \"情景与供给背景\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"前瞻判断条件\",\n        \"id\": \"前瞻判断条件\",\n        \"title\": \"前瞻比较的适用条件\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/monograph/revisable-judgment\": [\n      {\n        \"key\": \"对象连接\",\n        \"id\": \"对象连接\",\n        \"title\": \"服务与系统\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"覆盖状态\",\n        \"id\": \"覆盖状态\",\n        \"title\": \"模型与证据覆盖\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"判断理由\",\n        \"id\": \"判断理由\",\n        \"title\": \"取舍与结论强度\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"历史与修订\",\n        \"id\": \"历史与修订\",\n        \"title\": \"结论修订的依据\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/history\": [\n      {\n        \"key\": \"容器比较与政策问题\",\n        \"id\": \"容器比较与政策问题\",\n        \"title\": \"报告与出版日期\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"框架中的组件与研究活动\",\n        \"id\": \"框架中的组件与研究活动\",\n        \"title\": \"会议与框架活动\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"指南承担怎样的任务\",\n        \"id\": \"指南承担怎样的任务\",\n        \"title\": \"指南与实际采用\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"软件和数据库的版本节点\",\n        \"id\": \"软件和数据库的版本节点\",\n        \"title\": \"软件与数据库版本\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"时间线不能代替因果\",\n        \"id\": \"时间线不能代替因果\",\n        \"title\": \"先后与因果\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/allocation\": [\n      {\n        \"key\": \"系统模型规定了什么\",\n        \"id\": \"系统模型规定了什么\",\n        \"title\": \"系统模型的选择\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"回收链的负担如何解释\",\n        \"id\": \"回收链的负担如何解释\",\n        \"title\": \"回收链与负担\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"名称与版本\",\n        \"id\": \"名称与版本\",\n        \"title\": \"名称与版本\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"把格式连接与方法放在一起比较\",\n        \"id\": \"把格式连接与方法放在一起比较\",\n        \"title\": \"格式与方法\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/appendices/container-energy-check\": [\n      {\n        \"key\": \"工序输入\",\n        \"id\": \"工序输入\",\n        \"title\": \"工序输入\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"玻璃支路\",\n        \"id\": \"玻璃支路\",\n        \"title\": \"玻璃制造与原料供应\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"舍入界限\",\n        \"id\": \"舍入界限\",\n        \"title\": \"显示舍入的误差界限\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/appendices/cml-framework-calculations\": [\n      {\n        \"key\": \"方程与原表\",\n        \"id\": \"方程与原表\",\n        \"title\": \"方程与原表\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"参数响应\",\n        \"id\": \"参数响应\",\n        \"title\": \"参数响应\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"来源范围与分档\",\n        \"id\": \"来源范围与分档\",\n        \"title\": \"因子范围与评分档位\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/appendices/climate-numerical-reconstruction\": [\n      {\n        \"key\": \"参考响应\",\n        \"id\": \"参考响应\",\n        \"title\": \"参考响应\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"显示精度\",\n        \"id\": \"显示精度\",\n        \"title\": \"显示精度\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"历史程序\",\n        \"id\": \"历史程序\",\n        \"title\": \"历史程序\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/appendices/particulate-factor-calculations\": [\n      {\n        \"key\": \"排放原型与加权\",\n        \"id\": \"排放原型与加权\",\n        \"title\": \"排放原型与加权\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"区室与活动时间\",\n        \"id\": \"区室与活动时间\",\n        \"title\": \"区室与活动时间\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"参照与模型核验\",\n        \"id\": \"参照与模型核验\",\n        \"title\": \"参照与模型核验\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"发行范围与因子表\",\n        \"id\": \"发行范围与因子表\",\n        \"title\": \"发行范围与因子表\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/framework-history\": [\n      {\n        \"key\": \"先辨认史料描述的对象\",\n        \"id\": \"先辨认史料描述的对象\",\n        \"title\": \"史料与事件\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"组件和步骤怎样组织研究\",\n        \"id\": \"组件和步骤怎样组织研究\",\n        \"title\": \"组成部分与步骤\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"每个环节究竟交付什么\",\n        \"id\": \"每个环节究竟交付什么\",\n        \"title\": \"清单与影响\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"诊断如何走向设计改变\",\n        \"id\": \"诊断如何走向设计改变\",\n        \"title\": \"诊断与改进\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"解释如何形成有根据的建议\",\n        \"id\": \"解释如何形成有根据的建议\",\n        \"title\": \"解释与建议\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"职责的展开与重新安排\",\n        \"id\": \"职责的展开与重新安排\",\n        \"title\": \"分析任务的变化\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/cml-computation-judgment-and-improvement\": [\n      {\n        \"key\": \"一个建议怎样获得根据\",\n        \"id\": \"一个建议怎样获得根据\",\n        \"title\": \"研究用途\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"从活动平衡到废物贡献\",\n        \"id\": \"从活动平衡到废物贡献\",\n        \"title\": \"计算与改进\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"同一张环境剖面仍需要取舍\",\n        \"id\": \"同一张环境剖面仍需要取舍\",\n        \"title\": \"取舍与检查\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"2001年重新安排了哪些工作\",\n        \"id\": \"2001年重新安排了哪些工作\",\n        \"title\": \"指南修订\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"分析结果怎样进入参与者的决定\",\n        \"id\": \"分析结果怎样进入参与者的决定\",\n        \"title\": \"分析与决策\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"另一个研究怎样使用这份指南\",\n        \"id\": \"另一个研究怎样使用这份指南\",\n        \"title\": \"指南的实际采用\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/allocation-and-substitution\": [\n      {\n        \"key\": \"先固定分担对象和系统层级\",\n        \"id\": \"先固定分担对象和系统层级\",\n        \"title\": \"分担对象\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"因果方向与替代供给\",\n        \"id\": \"因果方向与替代供给\",\n        \"title\": \"因果与替代\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"联合生产中的决策情境\",\n        \"id\": \"联合生产中的决策情境\",\n        \"title\": \"决策情境\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"同一批产品先问份额归给谁\",\n        \"id\": \"同一批产品先问份额归给谁\",\n        \"title\": \"批次份额\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"把两项原文的评价标准放到一起\",\n        \"id\": \"把两项原文的评价标准放到一起\",\n        \"title\": \"文献判断\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"先保留两项服务再看替代减项\",\n        \"id\": \"先保留两项服务再看替代减项\",\n        \"title\": \"同一组服务\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"部分利用时重新交代活动与去向\",\n        \"id\": \"部分利用时重新交代活动与去向\",\n        \"title\": \"部分利用\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"案例计算总览\",\n        \"id\": \"案例计算总览\",\n        \"title\": \"案例总表\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"@case:joint:title\",\n        \"title\": \"同一批共产品：份额、路线与比较残余\",\n        \"depth\": 3,\n        \"type\": \"case\"\n      },\n      {\n        \"key\": \"@case:joint:partition\",\n        \"title\": \"问题一：怎样把既有一批的清单分派给产品标签？\",\n        \"depth\": 4,\n        \"type\": \"case\"\n      },\n      {\n        \"key\": \"@case:joint:routes\",\n        \"title\": \"问题二：保持两项服务，改变供给路线会怎样？\",\n        \"depth\": 4,\n        \"type\": \"case\"\n      },\n      {\n        \"key\": \"从路线开始复核\",\n        \"id\": \"从路线开始复核\",\n        \"title\": \"路线复核\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/allocation-judgment-and-corrections\": [\n      {\n        \"key\": \"公平可接受性和可操作性\",\n        \"id\": \"公平可接受性和可操作性\",\n        \"title\": \"责任与可行性\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"方法选择索取怎样的信息\",\n        \"id\": \"方法选择索取怎样的信息\",\n        \"title\": \"所需信息\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"修订怎样改变规则的适用范围\",\n        \"id\": \"修订怎样改变规则的适用范围\",\n        \"title\": \"增补与适用范围\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/climate-response-and-metrics\": [\n      {\n        \"key\": \"响应与指标\",\n        \"id\": \"响应与指标\",\n        \"title\": \"响应与指标\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"气体与碳收支\",\n        \"id\": \"气体与碳收支\",\n        \"title\": \"气体与碳收支\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"清单比较\",\n        \"id\": \"清单比较\",\n        \"title\": \"清单比较\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"排放日历\",\n        \"id\": \"排放日历\",\n        \"title\": \"排放日历\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"历史与用途\",\n        \"id\": \"历史与用途\",\n        \"title\": \"历史与用途\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/emission-time-and-assessment\": [\n      {\n        \"key\": \"先把三种时间分开\",\n        \"id\": \"先把三种时间分开\",\n        \"title\": \"三种时间\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"响应怎样进入计算\",\n        \"id\": \"响应怎样进入计算\",\n        \"title\": \"响应计算\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"动态方法的范围\",\n        \"id\": \"动态方法的范围\",\n        \"title\": \"动态方法的范围\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/database-fitness-and-documentation\": [\n      {\n        \"key\": \"表示对象\",\n        \"id\": \"表示对象\",\n        \"title\": \"数据所代表的过程\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"质量信息\",\n        \"id\": \"质量信息\",\n        \"title\": \"数据的质量信息\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"聚合与覆盖\",\n        \"id\": \"聚合与覆盖\",\n        \"title\": \"数据聚合与覆盖\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/review-support-and-version-boundaries\": [\n      {\n        \"key\": \"准则与记录\",\n        \"id\": \"准则与记录\",\n        \"title\": \"审查准则与记录\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"指导的支持程度\",\n        \"id\": \"指导的支持程度\",\n        \"title\": \"指南建议及其依据\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"版本变化\",\n        \"id\": \"版本变化\",\n        \"title\": \"数据换版与补缺\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/connecting-objects-references-and-time\": [\n      {\n        \"key\": \"先让连接两端各有所指\",\n        \"id\": \"先让连接两端各有所指\",\n        \"title\": \"比较对象与参照\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"再说明数量时间和用途的关系\",\n        \"id\": \"再说明数量时间和用途的关系\",\n        \"title\": \"数量与时间\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/from-connected-results-to-conditional-judgment\": [\n      {\n        \"key\": \"先保留数值的来历与覆盖\",\n        \"id\": \"先保留数值的来历与覆盖\",\n        \"title\": \"数值来源与证据覆盖\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"让判断审查和后续证据各有边界\",\n        \"id\": \"让判断审查和后续证据各有边界\",\n        \"title\": \"判断与审查\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"history-and-revision\",\n        \"id\": \"history-and-revision\",\n        \"title\": \"案例与结论修订\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/flows\": [\n      {\n        \"key\": \"一个对象与一次交换\",\n        \"id\": \"一个对象与一次交换\",\n        \"title\": \"一个对象与一次交换\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"两种废物表达\",\n        \"id\": \"两种废物表达\",\n        \"title\": \"废物与处置服务\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"版本怎样影响表达\",\n        \"id\": \"版本怎样影响表达\",\n        \"title\": \"版本怎样影响表达\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"对应关系的边界\",\n        \"id\": \"对应关系的边界\",\n        \"title\": \"对应关系的边界\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/functional-unit\": [\n      {\n        \"key\": \"先找到数据集相对于什么计量\",\n        \"id\": \"先找到数据集相对于什么计量\",\n        \"title\": \"先找到数据集相对于什么计量\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"从功能要求到产品需求\",\n        \"id\": \"从功能要求到产品需求\",\n        \"title\": \"从功能要求到产品需求\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"性能或计划改变时\",\n        \"id\": \"性能或计划改变时\",\n        \"title\": \"性能或计划改变时\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"概念记录与模型\",\n        \"id\": \"概念记录与模型\",\n        \"title\": \"概念、记录与模型\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/characterization\": [\n      {\n        \"key\": \"一个因子需要什么上下文\",\n        \"id\": \"一个因子需要什么上下文\",\n        \"title\": \"一个因子需要什么上下文\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"把信息状态明确留下来\",\n        \"id\": \"把信息状态明确留下来\",\n        \"title\": \"把信息状态明确留下来\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"一个可以手算的例子\",\n        \"id\": \"一个可以手算的例子\",\n        \"title\": \"一个可以手算的例子\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"在原生模型中区分零与缺失\",\n        \"id\": \"在原生模型中区分零与缺失\",\n        \"title\": \"在原生模型中区分零与缺失\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"检查报告保留了什么\",\n        \"id\": \"检查报告保留了什么\",\n        \"title\": \"检查报告保留了什么\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ]\n  }\n}\n",
+      "content/docs/book/index.mdx": "---\ntitle: 阅读导论\ndescription: 按历史、比较对象、系统、环境路径和证据判断的顺序阅读，也可从具体案例查阅相关方法。\n---\n\n本书围绕一个问题展开：一项环境判断需要哪些依据？先明确所比较的服务，再把提供服务所需的活动组织为系统，据此计算排放和资源需求。环境模型进一步估计这些量可能造成的后果。使用结果时，还须回到原来的问题，判断数据和分析能够支持什么结论。\n\n<ReaderSection id=\"问题与历史\" />\n<ReaderSection id=\"用途与地区语境\" />\n\n第一部从[生命周期视角](/docs/book/integrative-ambitions/)进入容器研究。一份早期报告计算提供同一饮料服务所需的能源及相关排放，另一份报告分析政府干预瓶罐使用的理由。这两类问题需要不同的资料。随后对照评价框架和清洁生产的讨论，可以进一步区分报告、会议、规则和实际采用各自提供的证据。\n\n<ReaderSection id=\"比较对象与方法选择\" />\n<ReaderSection id=\"从系统关系到计算结果\" />\n\n第二部沿[功能参照](/docs/book/service-and-reference/)、[过程网络](/docs/book/inventory-calculation/)、[流、交换与边界](/docs/book/exchange-semantics-and-conversion/)与[混合清单](/docs/book/inventory-boundary-and-hybrid/)展开，说明系统如何建立与闭合：从功能单位、声明单位与活动层参考产品的四体系对照出发，经线性过程配平、流与交换边界及零/缺项分辨，到过程截断阈值、资本品边界与混合清单防重叠的跨体系比较。第三部沿[共产品的分配与替代](/docs/book/allocation-and-substitution/)、[分配规则与修订](/docs/book/allocation-judgment-and-corrections/)、[市场响应](/docs/book/market-boundaries-and-response/)、[供电系统](/docs/book/electricity-service-and-response/)与[材料循环](/docs/book/recycling-chains-and-accounting/)展开，区分如何分担已有负担与一项选择会改变哪些供给活动，并对照国际参考生命周期数据系统（ILCD）、ecoinvent 第三版、欧盟产品环境足迹（PEF）及温室气体核算体系（GHG Protocol）在替代边界、市场约束、电力尺度与循环足迹公式（CFF）上的条件与分歧。\n\n清单记录资源采掘、土地利用、取耗水与物质排放。第四部从[中点与终点](/docs/book/midpoint-endpoint-value-choices/)的因果截点出发，依次讨论气候当量、酸化与营养富集、颗粒物健康损害、耗水与缺水潜势以及多介质化学毒性，解释清单量如何转化为不同的环境指标。阅读时可以选取一个表征因子，追查它所对应的干预对象、空间背景、时间窗口与证据边界。第五部沿[生态稀缺赋权](/docs/book/ecological-scarcity-and-targets/)、[影响评价本地化](/docs/book/localization-evidence-and-denominators/)与[环境损害估值](/docs/book/lime-preferences-and-damage-weights/)考察跨类别取舍，辨析政策目标距离、混合稳健度权重、空间表征与归一化分母耦合、保护领域截停以及陈述偏好货币估值如何改变方案排序与公开比较边界。\n\n<ReaderSection id=\"时间未来与相邻评价\" />\n\n不同章节中的“时间”也可能表示不同对象。气候计算关心排放发生的时刻和响应的计算终点，[未来技术与情景](/docs/book/future-technology-and-context/)则需要设定工艺规模及其供给背景。第五部后两章通过[社会表现与影响](/docs/book/social-assessment-objects-and-meaning/)和[生命周期成本与综合评价](/docs/book/cost-perspectives-and-sustainability-combination/)进一步区分产品与组织参照、风险工时量表与不可抵消的基本权利底线，以及主体成本账本、异质货币消重、多准则否决阈值与地球边界配额分配；合并使用前，仍须明确某个量表示谁的经历、权利或支出。\n\n<ReaderSection id=\"数据与审查\" />\n<ReaderSection id=\"数据质量与不确定性\" />\n\n第六部考察结果所依据的数据、模型和规则。取得数据并不意味着它就适合当前对象，[过程数据的用途](/docs/book/database-fitness-and-documentation/)与[数据审查与版本](/docs/book/review-support-and-version-boundaries/)分别说明背景数据集的适用性、区域化覆盖与审查边界；[变异与不确定性](/docs/book/uncertainty-and-variability/)辨明五类误差层次及全局灵敏度与蒙特卡洛次数的失效边界；[质量评分与概率](/docs/book/data-quality-and-probability/)借柏林杯重调查与跨体系对照区分谱系方差、序数评级门槛与定性披露；[产品足迹规则](/docs/book/product-footprint-rules-and-practice/)则说明自愿与法定规则如何把服务定义、活动量、合格评定与比较条件连成一体。\n\n<ReaderSection id=\"解释与使用\" />\n<ReaderSection id=\"完整做一遍\" />\n\n第七部先用[墙面服务比较](/docs/book/wall-service-to-comparison/)复算假想条件并对照国际参考生命周期数据系统（ILCD）、欧盟产品环境足迹（PEF）与温室气体核算体系（GHG Protocol）的比较断言与成对不确定性门槛；再通过[购物袋研究](/docs/book/interpretation-and-limits/)对照英国环境署与丹麦环保署评估及国际解释审查规则，区分实际资料能解释的差异与需另行佐证的建议；随后借[未来技术与情景](/docs/book/future-technology-and-context/)辨析前瞻性、事前与动态评价中的工艺放大、情景背景与时间边界。\n\n<ReaderSection id=\"把各章接起来\" />\n\n收束章结合容器、墙面和购物袋案例，将全书的服务界定、系统边界、背景数据、影响路径、价值取舍、不确定性与审查体制收束为七类定向修订路由。把研究对象、数量关系、适用边界与证据来历说明白，后续研究才知道出现新资料时应重算哪一步、保留哪些既有依据，以及哪些推论不得越界。\n\n初次系统学习可以顺读七部。有清单计算基础的读者，也可以从过程网络或环境路径开始，遇到定义和历史身份问题时再查前文。若想先看一次完整比较，可以从墙面和购物袋案例入手，沿注释及章内链接查阅服务、矩阵或气候指标。三条阅读路线采用同一套案例条件和文献依据。\n"
+    },
+    "rawRecords": [
+      {
+        "path": "catalog.claims",
+        "id": "cl-book-integrative-function",
+        "from": {
+          "id": "cl-book-integrative-function",
+          "text": "以涂墙为例。我们需要的是达到规定性能的墙面覆盖，为此才需要涂料。在 CML 2001 年指南 Part 2a 的例子中，功能单位规定覆盖性能；参考流则写为用涂料 A 实现的规定覆盖，并以面积表示，所需涂料体积列为过程数据。欧盟委员会联合研究中心 2010 年手册（ILCD）在自己的涂装例中给出两种参考流写法：直接表述用涂料完成的规定覆盖，或写出所需涂料体积。采用哪一种写法，还要看产品用途、数据用法和软件中的过程连接。面积和体积能否换用，取决于各自表示哪一步的量，以及两者之间的关系。两份指南的措辞有别，仅凭这一点还不能断定它们提出了相反要求。",
+          "kind": "synthesis",
+          "scope": "所列 CML 与 ILCD 段落的表述用途对照",
+          "evidenceIds": [
+            "ev-book-cml2001-reference-context",
+            "ev-book-ilcd2010-reference-context"
+          ],
+          "premiseIds": [
+            "cl-book-cml-reference",
+            "cl-book-ilcd-reference"
+          ],
+          "caveats": [
+            "不提出跨体系固定定义，也不由例子差别判定规范矛盾；术语对应还取决于完整定义和用途。"
+          ],
+          "reasoning": "两个具体表述分别具有章节用途；对照时需先区分功能、参考流和过程数据，才能判断是否可映射。",
+          "conceptIds": [],
+          "status": "reviewed",
+          "reviewedAt": "2026-11-07",
+          "reviewKind": "agent-source-check",
+          "evidenceLinks": [
+            {
+              "evidenceId": "ev-book-cml2001-reference-context",
+              "relation": "context",
+              "rationale": "该原文提供解释或推理的前提；本段的作者综合、推论或建议不冒充来源原句。"
+            },
+            {
+              "evidenceId": "ev-book-ilcd2010-reference-context",
+              "relation": "context",
+              "rationale": "该原文提供解释或推理的前提；本段的作者综合、推论或建议不冒充来源原句。"
+            }
+          ]
+        }
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-hist-two-reuse-choices",
+        "from": {
+          "id": "cl-hist-two-reuse-choices",
+          "kind": "synthesis",
+          "scope": "同一报告内的条件比较与变化归属。",
+          "evidenceIds": [
+            "ev-hist-systems",
+            "ev-hist-package-sensitivity"
+          ],
+          "evidenceLinks": [
+            {
+              "evidenceId": "ev-hist-systems",
+              "relation": "supports",
+              "rationale": "系统定义显示5-RET与10-RET同时改变瓶子和纸包装次数；单一因素归因的限制是正文综合。"
+            },
+            {
+              "evidenceId": "ev-hist-package-sensitivity",
+              "relation": "supports",
+              "rationale": "p29固定瓶子次数而改变包装次数，为区分这两个问题提供实际来源情境。"
+            }
+          ],
+          "premiseIds": [
+            "cl-hist-package-sensitivity",
+            "cl-hist-counting"
+          ],
+          "conceptIds": [],
+          "mappingIds": [
+            "map-hist-two-trippages"
+          ],
+          "caveats": [
+            "这不是对真实市场因果效应的识别；源模型的供给、回流与技术条件仍然成立。"
+          ],
+          "reasoning": "同时变化的因素不能只归因于其中一项。",
+          "text": "5-RET 假定瓶子使用五次、纸包装使用一次；10-RET 则分别为十次和三次。两套系统同时改变了瓶子与包装的使用次数，因此整体能源差异不能全部归因于瓶子的回用。另有三个情境将瓶子固定为五次使用，只改变纸包装次数。这两组结果分别说明两套系统之间的差异，以及给定模型中包装使用次数的影响。解释结果时，应同时说明各自的比较条件。",
+          "status": "reviewed",
+          "reviewedAt": "2026-11-07",
+          "reviewKind": "agent-source-check"
+        }
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-framework-work-before-boxes",
+        "from": {
+          "id": "cl-framework-work-before-boxes",
+          "text": "算出一组排放量后，研究者还须估计相关环境后果，才能判断值得在哪些环节寻找改进办法。设计者提出方案后，又要检查改动会带来哪些变化，才有理由建议采取行动。美国环境保护署（EPA）、联合国环境规划署（UNEP）和莱顿大学环境科学中心（CML）的指南以不同方式组织这些工作。本章根据各阶段形成的结果，比较这些评价框架。",
+          "kind": "proposal",
+          "scope": "EPA1993、UNEP1996、CML2001与EPA2006有关阶段职责和结果的论述；不构成完整思想谱系或现行通用规定",
+          "evidenceIds": [],
+          "evidenceLinks": [],
+          "premiseIds": [
+            "cl-book-framework-epa1993",
+            "cl-book-framework-unep",
+            "cl-book-framework-epa2006",
+            "cl-book-framework-guide"
+          ],
+          "conceptIds": [],
+          "caveats": [],
+          "status": "reviewed",
+          "reviewedAt": "2026-11-07",
+          "reviewKind": "agent-source-check",
+          "reasoning": "由已有文本身份和组件差异提出比较任务；作者组织叙述，不给原作者追认统一发展目标。"
+        }
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-book-framework-records",
+        "from": {
+          "id": "cl-book-framework-records",
+          "text": "会议中的研究议题、报告中的组成部分和指南中的操作步骤，可能被后人画进同一张框架图。考察某一环节何时出现，须先辨认材料的性质：会议记录说明组织者提出了什么，操作指南说明研究者应当怎样做，后来的教学图则可能将几种安排简化为便于理解的形式。现有资料能够追踪清单分析、影响评价、问题界定和结果解释的不同安排，但尚不能确定这些安排是否有同一个起点。",
+          "kind": "synthesis",
+          "scope": "早期机构文献所述会议、报告、方法组件和教学分类的历史对象区分",
+          "evidenceIds": [
+            "ev-book-epa1991-event",
+            "ev-book-epa1993-framework",
+            "ev-book-unep1996-framework",
+            "ev-book-epa2006-terminology"
+          ],
+          "premiseIds": [
+            "cl-book-framework-project",
+            "cl-book-framework-epa1993",
+            "cl-book-framework-unep",
+            "cl-book-framework-epa2006"
+          ],
+          "caveats": [
+            "不主张全球起源、个人发明者或完整影响谱系。"
+          ],
+          "reasoning": "选段分别记录会议目标、方法组件、教学图示和来源承接；这些对象不能直接合并为单一优先权事件。",
+          "conceptIds": [],
+          "status": "reviewed",
+          "reviewedAt": "2026-11-07",
+          "reviewKind": "agent-source-check",
+          "evidenceLinks": [
+            {
+              "evidenceId": "ev-book-epa1991-event",
+              "relation": "context",
+              "rationale": "该原文提供解释或推理的前提；本段的作者综合、推论或建议不冒充来源原句。"
+            },
+            {
+              "evidenceId": "ev-book-epa1993-framework",
+              "relation": "context",
+              "rationale": "该原文提供解释或推理的前提；本段的作者综合、推论或建议不冒充来源原句。"
+            },
+            {
+              "evidenceId": "ev-book-unep1996-framework",
+              "relation": "context",
+              "rationale": "该原文提供解释或推理的前提；本段的作者综合、推论或建议不冒充来源原句。"
+            },
+            {
+              "evidenceId": "ev-book-epa2006-terminology",
+              "relation": "context",
+              "rationale": "该原文提供解释或推理的前提；本段的作者综合、推论或建议不冒充来源原句。"
+            }
+          ]
+        }
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-book-framework-method",
+        "from": {
+          "id": "cl-book-framework-method",
+          "text": "比较评价框架，需要同时辨认各阶段的分析任务、形成的结果，以及不同版本对这些工作的安排。同一名称可能对应不同操作，同一项工作也可能被放在另一标题之下。辨认这种变化，需要分别核对时间、载体和原件之间的关系；联系尚不能确认时，应分别陈述各份材料能够证明的事实。",
+          "kind": "synthesis",
+          "scope": "框架史料中职责、来源承接与术语变化的分析方法",
+          "evidenceIds": [
+            "ev-book-epa1993-framework",
+            "ev-book-unep1996-framework",
+            "ev-book-epa2006-terminology",
+            "ev-book-cml2001-guide"
+          ],
+          "premiseIds": [
+            "cl-book-framework-epa1993",
+            "cl-book-framework-unep",
+            "cl-book-framework-epa2006",
+            "cl-book-framework-guide"
+          ],
+          "caveats": [
+            "这种史料分析方式不等于机构要求或完整历史结论。"
+          ],
+          "reasoning": "分类差别、载体承接与指南自定任务共同要求逐项核对；它们不能由时间先后自动转换为因果继承。",
+          "conceptIds": [],
+          "status": "reviewed",
+          "reviewedAt": "2026-11-07",
+          "reviewKind": "agent-source-check",
+          "evidenceLinks": [
+            {
+              "evidenceId": "ev-book-epa1993-framework",
+              "relation": "context",
+              "rationale": "该原文提供解释或推理的前提；本段的作者综合、推论或建议不冒充来源原句。"
+            },
+            {
+              "evidenceId": "ev-book-unep1996-framework",
+              "relation": "context",
+              "rationale": "该原文提供解释或推理的前提；本段的作者综合、推论或建议不冒充来源原句。"
+            },
+            {
+              "evidenceId": "ev-book-epa2006-terminology",
+              "relation": "context",
+              "rationale": "该原文提供解释或推理的前提；本段的作者综合、推论或建议不冒充来源原句。"
+            },
+            {
+              "evidenceId": "ev-book-cml2001-guide",
+              "relation": "context",
+              "rationale": "该原文提供解释或推理的前提；本段的作者综合、推论或建议不冒充来源原句。"
+            }
+          ]
+        }
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-cml-edition",
+        "from": {
+          "id": "cl-cml-edition",
+          "kind": "source-statement",
+          "scope": "1992 CML英文报告集两分册及英译前言的日期身份",
+          "evidenceIds": [
+            "ev-cml-1992-part1-identity",
+            "ev-kb52-cml1992-backgrounds-identity"
+          ],
+          "evidenceLinks": [
+            {
+              "evidenceId": "ev-cml-1992-part1-identity",
+              "relation": "supports",
+              "rationale": "题叶明确最终编辑与英文 Guide 的身份。版权页给出英文报告集 ISBN、项目合同和报告完成日。英文序言回顾 1993 年 4 月，文件指引区分 Guide 的实践用途与 Backgrounds 的论证用途。 本段的重算或跨文本解释保留原件的对象与限制。"
+            },
+            {
+              "evidenceId": "ev-kb52-cml1992-backgrounds-identity",
+              "relation": "supports",
+              "rationale": "英译报告集的第二部说明 Guide 实务步骤的理论理由及依据。原件给出终审编辑、合作单位、译者、出版机构、合同与版权事实。 本段的重算或跨文本解释保留原件的对象与限制。"
+            }
+          ],
+          "premiseIds": [],
+          "conceptIds": [],
+          "caveats": [
+            "英文译本确切刊印日未核定；荷兰文原版不由此替代。"
+          ],
+          "text": "该例出自 CML 等团队完成的《产品环境生命周期评价》。介绍操作的 Guide 与说明依据的 Backgrounds 属于同一项目，可以相互参照，不能算作两项独立验证。英文题叶注明 1992 年 10 月，英文前言则回顾了 1993 年 4 月的讨论。本文以“1992 报告”识别这份出版物，但不能仅据题叶日期确定全部英文段落的写作时间。",
+          "status": "reviewed",
+          "reviewedAt": "2026-11-07",
+          "reviewKind": "agent-source-check"
+        }
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-cml-response-scale",
+        "from": {
+          "id": "cl-cml-response-scale",
+          "text": "本例中，固体废物的直接贡献主要来自供电；按百分比衡量时，局部响应绝对值最大的却是铝产出系数。贡献分析区分已有总量来自哪些活动，局部响应分析考察原状态附近的变化。参数若发生有限幅度的改动，就须重新求解。即使求解结果接近局部近似，也还需要检验这种改动在生产中是否可行。",
+          "kind": "synthesis",
+          "scope": "固定铝箔假想模型中的贡献、局部响应与有限变化",
+          "evidenceIds": [],
+          "evidenceLinks": [],
+          "premiseIds": [
+            "cl-cml-toy-dominance",
+            "cl-cml-relative-response",
+            "cl-cml-finite-response",
+            "cl-cml-feasibility"
+          ],
+          "conceptIds": [],
+          "status": "reviewed",
+          "reviewedAt": "2026-11-07",
+          "reviewKind": "agent-source-check",
+          "caveats": [
+            "只综合列出的原例与重算前提，不证明完整方法复现或实际环境改善。"
+          ],
+          "reasoning": "将同一原例的已登记计算和限定接回正文问题，不复制新的未绑定数值；源内差别、未知规则与工程适用性分别保留。"
+        }
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-framework-design-sideeffects",
+        "from": {
+          "id": "cl-framework-design-sideeffects",
+          "text": "UNEP1996的咖啡包装例说明，少用包装材料也会改变其他负担。包装变薄若使破损增多，损失的咖啡可能抵消甚至反转材料节约。研究要同时追踪这两种变化，并说明服务有没有变化。这个例子给出了检查方案的理由，任意包装的最佳厚度仍要用其实际性能来确定。",
+          "kind": "interpretation",
+          "scope": "EPA1993、UNEP1996、CML2001与EPA2006有关阶段职责和结果的论述；不构成完整思想谱系或现行通用规定",
+          "evidenceIds": [
+            "ev-framework-unep1996-design"
+          ],
+          "evidenceLinks": [
+            {
+              "evidenceId": "ev-framework-unep1996-design",
+              "relation": "context",
+              "rationale": "p22案例说明可能的副作用，后两句将其限定为问题与作者教学联系，不复述未验证经验量或宣称两案例经验等同。"
+            }
+          ],
+          "premiseIds": [
+            "cl-framework-design-return",
+            "cl-wall-question",
+            "cl-wall-rough-demand"
+          ],
+          "conceptIds": [],
+          "caveats": [],
+          "status": "reviewed",
+          "reviewedAt": "2026-11-07",
+          "reviewKind": "agent-source-check"
+        }
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-cml-decision-procedure",
+        "from": {
+          "id": "cl-cml-decision-procedure",
+          "kind": "interpretation",
+          "scope": "该回顾案例中分析检查与参与者判断准则的关系",
+          "evidenceIds": [
+            "ev-kb52-cml2001-2a-process-and-covenant",
+            "ev-kb52-cml2001-process-outcome",
+            "ev-kb52-cml2001-conclusion-rationale"
+          ],
+          "evidenceLinks": [
+            {
+              "evidenceId": "ev-kb52-cml2001-2a-process-and-covenant",
+              "relation": "context",
+              "rationale": "原指南回顾一宗荷兰包装协议，说明委员会的判断标准、不同参与者解释和补研要求各有职责。 本段的重算或跨文本解释保留原件的对象与限制。"
+            },
+            {
+              "evidenceId": "ev-kb52-cml2001-process-outcome",
+              "relation": "context",
+              "rationale": "分析输出、依据分析所得的决策结论与实施结果分开；事前定义目标、取舍程序和执行约束。 本段的重算或跨文本解释保留原件的对象与限制。"
+            },
+            {
+              "evidenceId": "ev-kb52-cml2001-conclusion-rationale",
+              "relation": "context",
+              "rationale": "最终结论必须纳入检查和敏感性发现，超出所分析系统需另行论证，外部评审具有不同作用。 本段的重算或跨文本解释保留原件的对象与限制。"
+            }
+          ],
+          "premiseIds": [
+            "cl-cml-covenant",
+            "cl-cml-decision-levels"
+          ],
+          "conceptIds": [],
+          "caveats": [],
+          "reasoning": "沿具体研究任务比较输入、动作、产出和返回条件；原例的计算、取舍、技术可行性和实际实施分别有证据边界，不从阶段名称、时间先后或数值一致推出普遍等价。",
+          "text": "荷兰包装争议涉及两项问题：资料是否足以支持比较，参与者按什么准则作出决定。增加一个指标可以补充部分资料，却不能替参与者商定准则；即使准则已经商定，资料和推论仍须接受检查。明确这两方面的依据，环境剖面才可能支持一项理由清楚的共同决定。",
+          "status": "reviewed",
+          "reviewedAt": "2026-11-07",
+          "reviewKind": "agent-source-check"
+        }
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-framework-reader-work-product",
+        "from": {
+          "id": "cl-framework-reader-work-product",
+          "text": "阅读一项研究时，也可以据此判断它目前支持哪些结论。后文的墙面教学例，在给定条件下比较两种提供相同服务的涂装方案：先计算气体数量，再通过模型得到气候指标。比较两种涂装，还须固定共同参数并说明判断准则；推荐现实产品，则另需实际性能和环境资料。每一步判断都依赖相应的关系与证据，不能由前一步的数值直接代替。",
+          "kind": "synthesis",
+          "scope": "EPA1993、UNEP1996、CML2001与EPA2006有关阶段职责和结果的论述；不构成完整思想谱系或现行通用规定",
+          "evidenceIds": [],
+          "evidenceLinks": [],
+          "premiseIds": [
+            "cl-framework-work-before-boxes",
+            "cl-framework-cml-information",
+            "cl-framework-comparison-not-replacement",
+            "cl-wall-inventory",
+            "cl-wall-characterization",
+            "cl-wall-tolerance",
+            "cl-wall-answer"
+          ],
+          "conceptIds": [],
+          "caveats": [],
+          "status": "reviewed",
+          "reviewedAt": "2026-11-07",
+          "reviewKind": "agent-source-check",
+          "reasoning": "用已建立的框架输出区别解释本书教学案例的运算及证据边界；作者阅读建议不是额外规范。"
+        }
+      },
+      {
+        "path": "catalog.claims",
+        "id": "cl-regional-sun-development-agenda",
+        "from": {
+          "id": "cl-regional-sun-development-agenda",
+          "text": "作者据此建议引进、消化国际方法，发展适合本地的方法和资料，并在清洁生产审计、生态设计、废物管理与生态工业中开展应用研究和示范。这些讨论区分了两项问题：生命周期评价能够帮助研究什么，以及开展这些研究还需要哪些条件。作者在 2002 年提出这些建议时，相关工作仍有待推进。下一部从共同服务出发，讨论怎样明确分析对象，使不同方案能够比较。",
+          "kind": "interpretation",
+          "scope": "Sun2002 §5a、d的方法/数据支持与应用研究建议",
+          "evidenceIds": [
+            "ev-regional-sun-prospects"
+          ],
+          "evidenceLinks": [
+            {
+              "evidenceId": "ev-regional-sun-prospects",
+              "relation": "supports",
+              "rationale": "印刷p6 §5a提出引进消化方法、建立适合本地的方法学和数据支持；§5d提出在列举领域研究和示范应用。正文保留其建议性质，不把工作方向当成完成或效果证据。"
+            }
+          ],
+          "premiseIds": [
+            "cl-regional-sun-maturity-scopes"
+          ],
+          "caveats": [
+            "只解释2002年文章所提工作方向，不据此确认后续项目实施、全国采纳或实际环境收益。",
+            "这些历史工作建议不等同于现行制度要求。"
+          ],
+          "reasoning": "结论中的建议以基础研究、数据和支持条件为背景。将方法/数据建设与应用研究并列可以说明作者提出怎样的工作方向，但文中没有完成状态或净收益资料可把这份议程升级为效果报告。",
+          "conceptIds": [],
+          "status": "reviewed",
+          "reviewedAt": "2026-11-07",
+          "reviewKind": "agent-source-check"
+        }
+      }
+    ],
+    "rawFields": [],
+    "changes": [
+      {
+        "kind": "file",
+        "key": "config/reader-numbering.json",
+        "from": "fbe860f73508d0a62dcc369385f2b1b030244f79813b3758fadd821e053aa357",
+        "to": "ee2cd9419aa98d4eeb1ba5b124affa733241c26c3d070e09cb4e0a52ddd72c11",
+        "rationale": "第一部《问题的来源》整部连续回读更新 file:config/reader-numbering.json。"
+      },
+      {
+        "kind": "file",
+        "key": "content/docs/book/index.mdx",
+        "from": "92b233f24363a3a72daf86bf4d5e8c43d294782f7feb069d466b9dbe11e9646d",
+        "to": "3013ba681b2c9e3b752a3a258c3472f6a8645cafc381a65adae1645551c208ad",
+        "rationale": "第一部《问题的来源》整部连续回读更新 file:content/docs/book/index.mdx。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-book-framework-method",
+        "from": {
+          "raw": "43fe0984868edf91864ab603a608b8d528c83d4c992f1566596a84b40ee6b680",
+          "public": "43fe0984868edf91864ab603a608b8d528c83d4c992f1566596a84b40ee6b680",
+          "protected": "3a97cec9a680c23cedbede774539e15a0659b9a21fa5f466927347ee937cf48f"
+        },
+        "to": {
+          "raw": "b0126f897bc975c1f1583d7b0dd80343c5acc21c9a7a2573cb6fbcf6969eb374",
+          "public": "b0126f897bc975c1f1583d7b0dd80343c5acc21c9a7a2573cb6fbcf6969eb374",
+          "protected": "59e6406c0a475a5e06662a18a1a73a0c580d93ab68f1ed04f5e19cc461d15238"
+        },
+        "rationale": "第一部《问题的来源》整部连续回读更新 record:claims:cl-book-framework-method。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-book-framework-records",
+        "from": {
+          "raw": "0b0aed6f58171f1455f434ad166f5de362114c1ccd42cca1773dff7e94d0bd2a",
+          "public": "0b0aed6f58171f1455f434ad166f5de362114c1ccd42cca1773dff7e94d0bd2a",
+          "protected": "0e92b95f898287f11591dbf60b725a81a22ed962c9c707902b4e7b4dce17c1d4"
+        },
+        "to": {
+          "raw": "150917b63e18ef2a6fcc9f89e219177f02359eb994e10bf921756b11b4da783d",
+          "public": "150917b63e18ef2a6fcc9f89e219177f02359eb994e10bf921756b11b4da783d",
+          "protected": "56745cd1041f4852b9a08c310f365d279a7539ce4cd297b83a0a9efc1b6cf64a"
+        },
+        "rationale": "第一部《问题的来源》整部连续回读更新 record:claims:cl-book-framework-records。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-book-integrative-function",
+        "from": {
+          "raw": "71188fcc3c5f1bbb24056b073fef2d1666852068c448ae167d9c070f8b30da97",
+          "public": "71188fcc3c5f1bbb24056b073fef2d1666852068c448ae167d9c070f8b30da97",
+          "protected": "c619759ed8993a03a6258b5f8725df21c6a6a04779cdd2bb4248a703eeb4e414"
+        },
+        "to": {
+          "raw": "572e1a4a03bef94315623191119418712d014432959226fb902d15e2c320fc5d",
+          "public": "572e1a4a03bef94315623191119418712d014432959226fb902d15e2c320fc5d",
+          "protected": "d0d625d42cc493f6ce401f66b650802bb0e17541601625193d27328d6b5bf0bd"
+        },
+        "rationale": "第一部《问题的来源》整部连续回读更新 record:claims:cl-book-integrative-function。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-cml-decision-procedure",
+        "from": {
+          "raw": "ab788ffe7337031f1991e4e613780dd2c3c286361d921026b80f304f0b76e0fe",
+          "public": "ab788ffe7337031f1991e4e613780dd2c3c286361d921026b80f304f0b76e0fe",
+          "protected": "cdfb33fc8fd15f90dd715f21f172375ad5373e585fe2156e923ed6ffebcc0b26"
+        },
+        "to": {
+          "raw": "abe95b329e8dde3449a0d4f738092b1119b3148d9a28d54f9b41fbc77d80bb4d",
+          "public": "abe95b329e8dde3449a0d4f738092b1119b3148d9a28d54f9b41fbc77d80bb4d",
+          "protected": "da5a5d25c4544c228e60969483cd844d7feecfb9709ade114198cb5d823f9d7b"
+        },
+        "rationale": "第一部《问题的来源》整部连续回读更新 record:claims:cl-cml-decision-procedure。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-cml-edition",
+        "from": {
+          "raw": "57fa91fba8f1a2b5e9febf596b34e61194368175560f21100153b0e1cca61aae",
+          "public": "57fa91fba8f1a2b5e9febf596b34e61194368175560f21100153b0e1cca61aae",
+          "protected": "3065c6ea1cbcdec3b6195e545baa848e664d7cd6783b7f12a1910c093a3e6e59"
+        },
+        "to": {
+          "raw": "209214af708dbedd45d026351448663601913b91e63eff0315c0520e78f13a28",
+          "public": "209214af708dbedd45d026351448663601913b91e63eff0315c0520e78f13a28",
+          "protected": "3065c6ea1cbcdec3b6195e545baa848e664d7cd6783b7f12a1910c093a3e6e59"
+        },
+        "rationale": "第一部《问题的来源》整部连续回读更新 record:claims:cl-cml-edition。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-cml-response-scale",
+        "from": {
+          "raw": "3e5fef705ec8c7a3abbdb4f6078a76b9a65a0ce190f982810fdce04353497523",
+          "public": "3e5fef705ec8c7a3abbdb4f6078a76b9a65a0ce190f982810fdce04353497523",
+          "protected": "5f02f1690338703d9a4d74a93ada4da1d6ee8832883d30e3b5d5c1c66316cded"
+        },
+        "to": {
+          "raw": "951d290a75983f08bcaaa93fc3530823f6257fd0b23912ad81f5438bb0b0dc1a",
+          "public": "951d290a75983f08bcaaa93fc3530823f6257fd0b23912ad81f5438bb0b0dc1a",
+          "protected": "25999b865927dd495ba8fe41ec4c481431e5d6f974f619c666fc310e2fa2eeb0"
+        },
+        "rationale": "第一部《问题的来源》整部连续回读更新 record:claims:cl-cml-response-scale。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-framework-design-sideeffects",
+        "from": {
+          "raw": "77fba261939f2925f03ff9e2232202e7acee3c33c8b0815a7879af53de74fd25",
+          "public": "77fba261939f2925f03ff9e2232202e7acee3c33c8b0815a7879af53de74fd25",
+          "protected": "e2b76d73042c8afcd9a4659d6ddf9d7ecad069977a7c5d53a96b97854f35b9e7"
+        },
+        "to": {
+          "raw": "22e97ae176ba02414080697f7e67ee13405d93097fd80aaa1187866dcfc06e83",
+          "public": "22e97ae176ba02414080697f7e67ee13405d93097fd80aaa1187866dcfc06e83",
+          "protected": "1b3f11a38d02a0d5de9a5f81e585264a77d6fdd7b8f151cb885632c9d1ddb0aa"
+        },
+        "rationale": "第一部《问题的来源》整部连续回读更新 record:claims:cl-framework-design-sideeffects。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-framework-reader-work-product",
+        "from": {
+          "raw": "40ea0690e5eb0d1ceecd9ad42bc545c527e187de9bb5b96420f15ea0f0eddb55",
+          "public": "40ea0690e5eb0d1ceecd9ad42bc545c527e187de9bb5b96420f15ea0f0eddb55",
+          "protected": "eef6e98356355cc4bbd47d312b36ea3e71e6e8f5f83369d9da485f91f827bf25"
+        },
+        "to": {
+          "raw": "674bec8f5658f932a53ede0b6652ca36195c8eb21a4d0854c7436cd8d96f5a83",
+          "public": "674bec8f5658f932a53ede0b6652ca36195c8eb21a4d0854c7436cd8d96f5a83",
+          "protected": "23142b23e6f290b75d8a446053e88df3b7ca5cf43b0a6db8cc68a06bc62e1bbe"
+        },
+        "rationale": "第一部《问题的来源》整部连续回读更新 record:claims:cl-framework-reader-work-product。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-framework-work-before-boxes",
+        "from": {
+          "raw": "b5e7a224f68b5f7576a0783cc1eeff4a11df65ff448356ea1d76fc691fa0b121",
+          "public": "b5e7a224f68b5f7576a0783cc1eeff4a11df65ff448356ea1d76fc691fa0b121",
+          "protected": "9a7a0a762fff940203dded9efa69ce83cbcca52c8fbd94a3ad325983e95ee54e"
+        },
+        "to": {
+          "raw": "7e966906a64e52a1a62dbe7ab02eb050756b6f2437301c8dfbae2b18a52c826c",
+          "public": "7e966906a64e52a1a62dbe7ab02eb050756b6f2437301c8dfbae2b18a52c826c",
+          "protected": "f76686e7ae5453608c9ceadaf7bb572e7ba9a8b0b05c5d5760bc01fa300d416a"
+        },
+        "rationale": "第一部《问题的来源》整部连续回读更新 record:claims:cl-framework-work-before-boxes。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-hist-two-reuse-choices",
+        "from": {
+          "raw": "2d5353b7f3028dbf9dcd0d06cfe482ae4c16f6e774d2fd0752d8e9b4d966b6cc",
+          "public": "2d5353b7f3028dbf9dcd0d06cfe482ae4c16f6e774d2fd0752d8e9b4d966b6cc",
+          "protected": "ff3d22349e5624f1f07550b83a2234df1e404e0eb910bd64b886eef1f74e0fb3"
+        },
+        "to": {
+          "raw": "7eefd77c83c62da83dad2596e4f07a465a9ff0cfca058946af74efdf906301c1",
+          "public": "7eefd77c83c62da83dad2596e4f07a465a9ff0cfca058946af74efdf906301c1",
+          "protected": "78ee610ae0e030c55f28194ccc0ff556bfb2f04be83891e6907bfdfadc76b14e"
+        },
+        "rationale": "第一部《问题的来源》整部连续回读更新 record:claims:cl-hist-two-reuse-choices。"
+      },
+      {
+        "kind": "record",
+        "key": "claims:cl-regional-sun-development-agenda",
+        "from": {
+          "raw": "b499488b6ca11d407878dd6e49870df53ee533cfa9fc76c4a7380d4d39bb19bf",
+          "public": "b499488b6ca11d407878dd6e49870df53ee533cfa9fc76c4a7380d4d39bb19bf",
+          "protected": "1bded857dab81cb1d26317184c0f7eed863df9f381c8734da2c081fdf2d14f89"
+        },
+        "to": {
+          "raw": "0f90aaa553e0d20b8750581e4eea939bb257c7980f4b0f8ee21aad0f57cb1f4a",
+          "public": "0f90aaa553e0d20b8750581e4eea939bb257c7980f4b0f8ee21aad0f57cb1f4a",
+          "protected": "1bded857dab81cb1d26317184c0f7eed863df9f381c8734da2c081fdf2d14f89"
+        },
+        "rationale": "第一部《问题的来源》整部连续回读更新 record:claims:cl-regional-sun-development-agenda。"
+      },
+      {
+        "kind": "record",
+        "key": "researchMetadata:public-projection",
+        "from": {
+          "raw": "889ce35aa1f3207cde6b83f6ce52d43398bd056238c5172b88990c677213614d",
+          "public": null,
+          "protected": "889ce35aa1f3207cde6b83f6ce52d43398bd056238c5172b88990c677213614d"
+        },
+        "to": {
+          "raw": "bed79deb130893252309043be606a238ba1e700347e353c6b859adb26d8d5e80",
+          "public": null,
+          "protected": "bed79deb130893252309043be606a238ba1e700347e353c6b859adb26d8d5e80"
+        },
+        "rationale": "第一部《问题的来源》整部连续回读更新 record:researchMetadata:public-projection。"
+      }
+    ],
+    "consumers": [
+      {
+        "id": "cl-book-integrative-path",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-early-container-service-basis",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-early-policy-counting-objects",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-early-policy-io-unit",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-early-policy-judgment",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-early-research-plural-paths",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-connect-money-has-roles",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-hist-pair",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-hist-counting",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-hist-operating-demand",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-hist-what-closed",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-hist-provenance-limit",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-hist-conclusion",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-hist-bottle-demand",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-hist-flow-bases",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-hist-glass-inputs",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-hist-fuel-multiplication",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-hist-glass-branch",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-hist-branch-scaling",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-hist-branch-check",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-hist-reported-summaries",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-hist-normalization",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-hist-assembly-check",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-hist-rounding-bound",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-hist-package-sensitivity",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-cml-ending",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-closing-container-comparison-and-policy",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-closing-historical-return",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-hist-local-reconstruction-scope",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-early-policy-resource-comparison",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-rev163-valuation-denominator-and-veto-limits",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-rev163-targeted-revision-routing",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-rev163-monograph-closing-boundary",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-fw179-shared-phases",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-fw179-decision-gates",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-fw179-impact-weighting",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-fw179-review-assurance",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-fw179-method-choice-effects",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      },
+      {
+        "id": "cl-fw179-epistemic-limits",
+        "rationale": "经核查受第一部连续回读影响的下游论述语义保持不变。"
+      }
+    ],
+    "history": {
+      "previousAddresses": {
+        "/docs/book#nd-page": {
+          "route": "/docs/book",
+          "kind": "chapter",
+          "title": "阅读导论",
+          "claimIds": [],
+          "ordinary": [
+            "32c26733539536581281445936b2043cecb589449758062551c9420124bd1942",
+            "29c14b1bb903785effa8ca5578f368a98008f915c4c2eb0432627069427d7f18",
+            "5ae578a42e033518a1565e5942c5049e2dcd6d5e1652bc0fb047819c2456e56f",
+            "38d35e76adc40febde39c8d8506bbb6c3a1e7205767e2ef8e01ca17084cf9941",
+            "1ac1fda6fb118a330e1c0e6b8c92d4038cc4286ff94a62a0b390c80115fffe84",
+            "677ac3f7494ba4ff29f10f31d35abdc5a55bdd7b7734f1a64b963e91ca615c4d",
+            "828443617cc6219c46edc768978435f313ae00a42484bcbfe1f4d193ee53c72f",
+            "278488355d4c2368c2b20d83d01db81e997ce89a206a14f66a4e075f6ddfb96c",
+            "1de36c3e51ae846afb1c5fc5e88fa4e9d0432970af0f937f6cc76f79e8f008a0",
+            "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245"
+          ],
+          "bindings": {
+            "links": [
+              [],
+              [],
+              [
+                "/docs/book/integrative-ambitions/"
+              ],
+              [
+                "/docs/book/service-and-reference/",
+                "/docs/book/inventory-calculation/",
+                "/docs/book/exchange-semantics-and-conversion/",
+                "/docs/book/inventory-boundary-and-hybrid/",
+                "/docs/book/allocation-and-substitution/",
+                "/docs/book/allocation-judgment-and-corrections/",
+                "/docs/book/market-boundaries-and-response/",
+                "/docs/book/electricity-service-and-response/",
+                "/docs/book/recycling-chains-and-accounting/"
+              ],
+              [
+                "/docs/book/midpoint-endpoint-value-choices/",
+                "/docs/book/ecological-scarcity-and-targets/",
+                "/docs/book/localization-evidence-and-denominators/",
+                "/docs/book/lime-preferences-and-damage-weights/"
+              ],
+              [
+                "/docs/book/future-technology-and-context/",
+                "/docs/book/social-assessment-objects-and-meaning/",
+                "/docs/book/cost-perspectives-and-sustainability-combination/"
+              ],
+              [
+                "/docs/book/database-fitness-and-documentation/",
+                "/docs/book/review-support-and-version-boundaries/",
+                "/docs/book/uncertainty-and-variability/",
+                "/docs/book/data-quality-and-probability/",
+                "/docs/book/product-footprint-rules-and-practice/"
+              ],
+              [
+                "/docs/book/wall-service-to-comparison/",
+                "/docs/book/interpretation-and-limits/",
+                "/docs/book/future-technology-and-context/"
+              ],
+              [],
+              []
+            ],
+            "tables": []
+          }
+        },
+        "/docs/book#main-content": {
+          "route": "/docs/book",
+          "kind": "reading-title",
+          "title": "阅读导论",
+          "claimIds": [],
+          "ordinary": [
+            "32c26733539536581281445936b2043cecb589449758062551c9420124bd1942",
+            "29c14b1bb903785effa8ca5578f368a98008f915c4c2eb0432627069427d7f18",
+            "5ae578a42e033518a1565e5942c5049e2dcd6d5e1652bc0fb047819c2456e56f",
+            "38d35e76adc40febde39c8d8506bbb6c3a1e7205767e2ef8e01ca17084cf9941",
+            "1ac1fda6fb118a330e1c0e6b8c92d4038cc4286ff94a62a0b390c80115fffe84",
+            "677ac3f7494ba4ff29f10f31d35abdc5a55bdd7b7734f1a64b963e91ca615c4d",
+            "828443617cc6219c46edc768978435f313ae00a42484bcbfe1f4d193ee53c72f",
+            "278488355d4c2368c2b20d83d01db81e997ce89a206a14f66a4e075f6ddfb96c",
+            "1de36c3e51ae846afb1c5fc5e88fa4e9d0432970af0f937f6cc76f79e8f008a0",
+            "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245"
+          ],
+          "chapter": "nd-page"
+        },
+        "/docs/book#问题与历史": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": []
+        },
+        "/docs/book#用途与地区语境": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": [
+            "5ae578a42e033518a1565e5942c5049e2dcd6d5e1652bc0fb047819c2456e56f"
+          ]
+        },
+        "/docs/book#比较对象与方法选择": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": []
+        },
+        "/docs/book#从系统关系到计算结果": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": [
+            "38d35e76adc40febde39c8d8506bbb6c3a1e7205767e2ef8e01ca17084cf9941",
+            "1ac1fda6fb118a330e1c0e6b8c92d4038cc4286ff94a62a0b390c80115fffe84"
+          ]
+        },
+        "/docs/book#时间未来与相邻评价": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": [
+            "677ac3f7494ba4ff29f10f31d35abdc5a55bdd7b7734f1a64b963e91ca615c4d"
+          ]
+        },
+        "/docs/book#数据与审查": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": []
+        },
+        "/docs/book#数据质量与不确定性": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": [
+            "828443617cc6219c46edc768978435f313ae00a42484bcbfe1f4d193ee53c72f"
+          ]
+        },
+        "/docs/book#解释与使用": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": []
+        },
+        "/docs/book#完整做一遍": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": [
+            "278488355d4c2368c2b20d83d01db81e997ce89a206a14f66a4e075f6ddfb96c"
+          ]
+        },
+        "/docs/book#把各章接起来": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": [
+            "1de36c3e51ae846afb1c5fc5e88fa4e9d0432970af0f937f6cc76f79e8f008a0",
+            "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245"
+          ]
+        },
+        "/print#print-unit-2f646f63732f626f6f6b": {
+          "route": "/docs/book",
+          "kind": "chapter",
+          "title": "阅读导论",
+          "claimIds": [],
+          "ordinary": [
+            "29c14b1bb903785effa8ca5578f368a98008f915c4c2eb0432627069427d7f18",
+            "30261677cd4ebadd9b37a44c4f6dd746b14db98ad9d8c5a1fb200eaf06524d2a",
+            "3a6114327941d9eedc4c3c549d1aeeb01908898e14a14828f2a2322d156820a1",
+            "b0f98d05d8911e19222749c806332d1c91d983b0e2977177b6cb19edb618899e",
+            "f21bc352371ba86c78e298fb3a1b3f432464576935edd38d587a3854b6a07ed2",
+            "c9dfe13716d7a2648b651818144fba97568ab1a9c1bfef1f8c041b6a883d9ead",
+            "9ec61bcc5f5ef23c82efce0fbd8c7c8edbf9c8ff068b8688d0d09fb0462fd5d7",
+            "1de36c3e51ae846afb1c5fc5e88fa4e9d0432970af0f937f6cc76f79e8f008a0",
+            "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245"
+          ],
+          "bindings": {
+            "links": [
+              [],
+              [
+                "#print-reading-unit-2f646f63732f626f6f6b2f696e7465677261746976652d616d626974696f6e73"
+              ],
+              [
+                "#print-reading-unit-2f646f63732f626f6f6b2f736572766963652d616e642d7265666572656e6365",
+                "#print-reading-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e",
+                "#print-reading-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e",
+                "#print-reading-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964",
+                "#print-reading-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e",
+                "/docs/book/allocation-judgment-and-corrections/",
+                "#print-reading-unit-2f646f63732f626f6f6b2f6d61726b65742d626f756e6461726965732d616e642d726573706f6e7365",
+                "#print-reading-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365",
+                "#print-reading-unit-2f646f63732f626f6f6b2f72656379636c696e672d636861696e732d616e642d6163636f756e74696e67"
+              ],
+              [
+                "#print-reading-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573",
+                "#print-reading-unit-2f646f63732f626f6f6b2f65636f6c6f676963616c2d73636172636974792d616e642d74617267657473",
+                "#print-reading-unit-2f646f63732f626f6f6b2f6c6f63616c697a6174696f6e2d65766964656e63652d616e642d64656e6f6d696e61746f7273",
+                "#print-reading-unit-2f646f63732f626f6f6b2f6c696d652d707265666572656e6365732d616e642d64616d6167652d77656967687473"
+              ],
+              [
+                "#print-reading-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874",
+                "#print-reading-unit-2f646f63732f626f6f6b2f736f6369616c2d6173736573736d656e742d6f626a656374732d616e642d6d65616e696e67",
+                "#print-reading-unit-2f646f63732f626f6f6b2f636f73742d7065727370656374697665732d616e642d7375737461696e6162696c6974792d636f6d62696e6174696f6e"
+              ],
+              [
+                "#print-reading-unit-626f6f6b2d646174612d6170706c69636162696c697479",
+                "#print-reading-unit-626f6f6b2d646174612d6170706c69636162696c697479",
+                "#print-reading-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479",
+                "#print-reading-unit-2f646f63732f626f6f6b2f646174612d7175616c6974792d616e642d70726f626162696c697479",
+                "#print-reading-unit-2f646f63732f626f6f6b2f70726f647563742d666f6f747072696e742d72756c65732d616e642d7072616374696365"
+              ],
+              [
+                "#print-reading-unit-2f646f63732f626f6f6b2f77616c6c2d736572766963652d746f2d636f6d70617269736f6e",
+                "#print-reading-unit-2f646f63732f626f6f6b2f696e746572707265746174696f6e2d616e642d6c696d697473",
+                "#print-reading-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874"
+              ],
+              [],
+              []
+            ],
+            "tables": []
+          }
+        },
+        "/print#print-reading-unit-2f646f63732f626f6f6b": {
+          "route": "/docs/book",
+          "kind": "reading-title",
+          "title": "阅读导论",
+          "claimIds": [],
+          "ordinary": [
+            "29c14b1bb903785effa8ca5578f368a98008f915c4c2eb0432627069427d7f18",
+            "30261677cd4ebadd9b37a44c4f6dd746b14db98ad9d8c5a1fb200eaf06524d2a",
+            "3a6114327941d9eedc4c3c549d1aeeb01908898e14a14828f2a2322d156820a1",
+            "b0f98d05d8911e19222749c806332d1c91d983b0e2977177b6cb19edb618899e",
+            "f21bc352371ba86c78e298fb3a1b3f432464576935edd38d587a3854b6a07ed2",
+            "c9dfe13716d7a2648b651818144fba97568ab1a9c1bfef1f8c041b6a883d9ead",
+            "9ec61bcc5f5ef23c82efce0fbd8c7c8edbf9c8ff068b8688d0d09fb0462fd5d7",
+            "1de36c3e51ae846afb1c5fc5e88fa4e9d0432970af0f937f6cc76f79e8f008a0",
+            "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245"
+          ],
+          "chapter": "print-unit-2f646f63732f626f6f6b"
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-问题与历史": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-用途与地区语境": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": [
+            "30261677cd4ebadd9b37a44c4f6dd746b14db98ad9d8c5a1fb200eaf06524d2a"
+          ]
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-比较对象与方法选择": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-从系统关系到计算结果": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": [
+            "3a6114327941d9eedc4c3c549d1aeeb01908898e14a14828f2a2322d156820a1",
+            "b0f98d05d8911e19222749c806332d1c91d983b0e2977177b6cb19edb618899e"
+          ]
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-时间未来与相邻评价": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": [
+            "f21bc352371ba86c78e298fb3a1b3f432464576935edd38d587a3854b6a07ed2"
+          ]
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-数据与审查": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-数据质量与不确定性": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": [
+            "c9dfe13716d7a2648b651818144fba97568ab1a9c1bfef1f8c041b6a883d9ead"
+          ]
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-解释与使用": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-完整做一遍": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": [
+            "9ec61bcc5f5ef23c82efce0fbd8c7c8edbf9c8ff068b8688d0d09fb0462fd5d7"
+          ]
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-把各章接起来": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": [
+            "1de36c3e51ae846afb1c5fc5e88fa4e9d0432970af0f937f6cc76f79e8f008a0",
+            "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245"
+          ]
+        }
+      },
+      "currentAddresses": {
+        "/docs/book#nd-page": {
+          "route": "/docs/book",
+          "kind": "chapter",
+          "title": "阅读导论",
+          "claimIds": [],
+          "ordinary": [
+            "32c26733539536581281445936b2043cecb589449758062551c9420124bd1942",
+            "29c14b1bb903785effa8ca5578f368a98008f915c4c2eb0432627069427d7f18",
+            "c09c7cd42140a2d78ada2abed783678e58f65925ee490f526f4527ab4e7265c5",
+            "38d35e76adc40febde39c8d8506bbb6c3a1e7205767e2ef8e01ca17084cf9941",
+            "1ac1fda6fb118a330e1c0e6b8c92d4038cc4286ff94a62a0b390c80115fffe84",
+            "677ac3f7494ba4ff29f10f31d35abdc5a55bdd7b7734f1a64b963e91ca615c4d",
+            "828443617cc6219c46edc768978435f313ae00a42484bcbfe1f4d193ee53c72f",
+            "278488355d4c2368c2b20d83d01db81e997ce89a206a14f66a4e075f6ddfb96c",
+            "1de36c3e51ae846afb1c5fc5e88fa4e9d0432970af0f937f6cc76f79e8f008a0",
+            "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245"
+          ],
+          "bindings": {
+            "links": [
+              [],
+              [],
+              [
+                "/docs/book/integrative-ambitions/",
+                "/docs/book/early-container-comparisons/",
+                "/docs/book/early-container-policy-and-systems/",
+                "/docs/book/framework-history/",
+                "/docs/book/cml-computation-judgment-and-improvement/",
+                "/docs/book/cleaner-production-purpose-and-prospects/"
+              ],
+              [
+                "/docs/book/service-and-reference/",
+                "/docs/book/inventory-calculation/",
+                "/docs/book/exchange-semantics-and-conversion/",
+                "/docs/book/inventory-boundary-and-hybrid/",
+                "/docs/book/allocation-and-substitution/",
+                "/docs/book/allocation-judgment-and-corrections/",
+                "/docs/book/market-boundaries-and-response/",
+                "/docs/book/electricity-service-and-response/",
+                "/docs/book/recycling-chains-and-accounting/"
+              ],
+              [
+                "/docs/book/midpoint-endpoint-value-choices/",
+                "/docs/book/ecological-scarcity-and-targets/",
+                "/docs/book/localization-evidence-and-denominators/",
+                "/docs/book/lime-preferences-and-damage-weights/"
+              ],
+              [
+                "/docs/book/future-technology-and-context/",
+                "/docs/book/social-assessment-objects-and-meaning/",
+                "/docs/book/cost-perspectives-and-sustainability-combination/"
+              ],
+              [
+                "/docs/book/database-fitness-and-documentation/",
+                "/docs/book/review-support-and-version-boundaries/",
+                "/docs/book/uncertainty-and-variability/",
+                "/docs/book/data-quality-and-probability/",
+                "/docs/book/product-footprint-rules-and-practice/"
+              ],
+              [
+                "/docs/book/wall-service-to-comparison/",
+                "/docs/book/interpretation-and-limits/",
+                "/docs/book/future-technology-and-context/"
+              ],
+              [],
+              []
+            ],
+            "tables": []
+          }
+        },
+        "/docs/book#main-content": {
+          "route": "/docs/book",
+          "kind": "reading-title",
+          "title": "阅读导论",
+          "claimIds": [],
+          "ordinary": [
+            "32c26733539536581281445936b2043cecb589449758062551c9420124bd1942",
+            "29c14b1bb903785effa8ca5578f368a98008f915c4c2eb0432627069427d7f18",
+            "c09c7cd42140a2d78ada2abed783678e58f65925ee490f526f4527ab4e7265c5",
+            "38d35e76adc40febde39c8d8506bbb6c3a1e7205767e2ef8e01ca17084cf9941",
+            "1ac1fda6fb118a330e1c0e6b8c92d4038cc4286ff94a62a0b390c80115fffe84",
+            "677ac3f7494ba4ff29f10f31d35abdc5a55bdd7b7734f1a64b963e91ca615c4d",
+            "828443617cc6219c46edc768978435f313ae00a42484bcbfe1f4d193ee53c72f",
+            "278488355d4c2368c2b20d83d01db81e997ce89a206a14f66a4e075f6ddfb96c",
+            "1de36c3e51ae846afb1c5fc5e88fa4e9d0432970af0f937f6cc76f79e8f008a0",
+            "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245"
+          ],
+          "chapter": "nd-page"
+        },
+        "/docs/book#问题与历史": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": []
+        },
+        "/docs/book#用途与地区语境": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": [
+            "c09c7cd42140a2d78ada2abed783678e58f65925ee490f526f4527ab4e7265c5"
+          ]
+        },
+        "/docs/book#比较对象与方法选择": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": []
+        },
+        "/docs/book#从系统关系到计算结果": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": [
+            "38d35e76adc40febde39c8d8506bbb6c3a1e7205767e2ef8e01ca17084cf9941",
+            "1ac1fda6fb118a330e1c0e6b8c92d4038cc4286ff94a62a0b390c80115fffe84"
+          ]
+        },
+        "/docs/book#时间未来与相邻评价": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": [
+            "677ac3f7494ba4ff29f10f31d35abdc5a55bdd7b7734f1a64b963e91ca615c4d"
+          ]
+        },
+        "/docs/book#数据与审查": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": []
+        },
+        "/docs/book#数据质量与不确定性": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": [
+            "828443617cc6219c46edc768978435f313ae00a42484bcbfe1f4d193ee53c72f"
+          ]
+        },
+        "/docs/book#解释与使用": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": []
+        },
+        "/docs/book#完整做一遍": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": [
+            "278488355d4c2368c2b20d83d01db81e997ce89a206a14f66a4e075f6ddfb96c"
+          ]
+        },
+        "/docs/book#把各章接起来": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": [
+            "1de36c3e51ae846afb1c5fc5e88fa4e9d0432970af0f937f6cc76f79e8f008a0",
+            "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245"
+          ]
+        },
+        "/print#print-unit-2f646f63732f626f6f6b": {
+          "route": "/docs/book",
+          "kind": "chapter",
+          "title": "阅读导论",
+          "claimIds": [],
+          "ordinary": [
+            "29c14b1bb903785effa8ca5578f368a98008f915c4c2eb0432627069427d7f18",
+            "039d4212f05d4a745b46e6255ad70996a879b1724a24837d578943de850f4919",
+            "3a6114327941d9eedc4c3c549d1aeeb01908898e14a14828f2a2322d156820a1",
+            "b0f98d05d8911e19222749c806332d1c91d983b0e2977177b6cb19edb618899e",
+            "f21bc352371ba86c78e298fb3a1b3f432464576935edd38d587a3854b6a07ed2",
+            "c9dfe13716d7a2648b651818144fba97568ab1a9c1bfef1f8c041b6a883d9ead",
+            "9ec61bcc5f5ef23c82efce0fbd8c7c8edbf9c8ff068b8688d0d09fb0462fd5d7",
+            "1de36c3e51ae846afb1c5fc5e88fa4e9d0432970af0f937f6cc76f79e8f008a0",
+            "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245"
+          ],
+          "bindings": {
+            "links": [
+              [],
+              [
+                "#print-reading-unit-2f646f63732f626f6f6b2f696e7465677261746976652d616d626974696f6e73",
+                "#print-reading-unit-2f646f63732f626f6f6b2f6561726c792d636f6e7461696e65722d636f6d70617269736f6e73",
+                "#print-reading-unit-2f646f63732f626f6f6b2f6561726c792d636f6e7461696e65722d706f6c6963792d616e642d73797374656d73",
+                "/docs/book/framework-history/",
+                "/docs/book/cml-computation-judgment-and-improvement/",
+                "#print-reading-unit-2f646f63732f626f6f6b2f636c65616e65722d70726f64756374696f6e2d707572706f73652d616e642d70726f737065637473"
+              ],
+              [
+                "#print-reading-unit-2f646f63732f626f6f6b2f736572766963652d616e642d7265666572656e6365",
+                "#print-reading-unit-2f646f63732f626f6f6b2f696e76656e746f72792d63616c63756c6174696f6e",
+                "#print-reading-unit-2f646f63732f626f6f6b2f65786368616e67652d73656d616e746963732d616e642d636f6e76657273696f6e",
+                "#print-reading-unit-2f646f63732f626f6f6b2f696e76656e746f72792d626f756e646172792d616e642d687962726964",
+                "#print-reading-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e",
+                "/docs/book/allocation-judgment-and-corrections/",
+                "#print-reading-unit-2f646f63732f626f6f6b2f6d61726b65742d626f756e6461726965732d616e642d726573706f6e7365",
+                "#print-reading-unit-2f646f63732f626f6f6b2f656c6563747269636974792d736572766963652d616e642d726573706f6e7365",
+                "#print-reading-unit-2f646f63732f626f6f6b2f72656379636c696e672d636861696e732d616e642d6163636f756e74696e67"
+              ],
+              [
+                "#print-reading-unit-2f646f63732f626f6f6b2f6d6964706f696e742d656e64706f696e742d76616c75652d63686f69636573",
+                "#print-reading-unit-2f646f63732f626f6f6b2f65636f6c6f676963616c2d73636172636974792d616e642d74617267657473",
+                "#print-reading-unit-2f646f63732f626f6f6b2f6c6f63616c697a6174696f6e2d65766964656e63652d616e642d64656e6f6d696e61746f7273",
+                "#print-reading-unit-2f646f63732f626f6f6b2f6c696d652d707265666572656e6365732d616e642d64616d6167652d77656967687473"
+              ],
+              [
+                "#print-reading-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874",
+                "#print-reading-unit-2f646f63732f626f6f6b2f736f6369616c2d6173736573736d656e742d6f626a656374732d616e642d6d65616e696e67",
+                "#print-reading-unit-2f646f63732f626f6f6b2f636f73742d7065727370656374697665732d616e642d7375737461696e6162696c6974792d636f6d62696e6174696f6e"
+              ],
+              [
+                "#print-reading-unit-626f6f6b2d646174612d6170706c69636162696c697479",
+                "#print-reading-unit-626f6f6b2d646174612d6170706c69636162696c697479",
+                "#print-reading-unit-2f646f63732f626f6f6b2f756e6365727461696e74792d616e642d766172696162696c697479",
+                "#print-reading-unit-2f646f63732f626f6f6b2f646174612d7175616c6974792d616e642d70726f626162696c697479",
+                "#print-reading-unit-2f646f63732f626f6f6b2f70726f647563742d666f6f747072696e742d72756c65732d616e642d7072616374696365"
+              ],
+              [
+                "#print-reading-unit-2f646f63732f626f6f6b2f77616c6c2d736572766963652d746f2d636f6d70617269736f6e",
+                "#print-reading-unit-2f646f63732f626f6f6b2f696e746572707265746174696f6e2d616e642d6c696d697473",
+                "#print-reading-unit-2f646f63732f626f6f6b2f6675747572652d746563686e6f6c6f67792d616e642d636f6e74657874"
+              ],
+              [],
+              []
+            ],
+            "tables": []
+          }
+        },
+        "/print#print-reading-unit-2f646f63732f626f6f6b": {
+          "route": "/docs/book",
+          "kind": "reading-title",
+          "title": "阅读导论",
+          "claimIds": [],
+          "ordinary": [
+            "29c14b1bb903785effa8ca5578f368a98008f915c4c2eb0432627069427d7f18",
+            "039d4212f05d4a745b46e6255ad70996a879b1724a24837d578943de850f4919",
+            "3a6114327941d9eedc4c3c549d1aeeb01908898e14a14828f2a2322d156820a1",
+            "b0f98d05d8911e19222749c806332d1c91d983b0e2977177b6cb19edb618899e",
+            "f21bc352371ba86c78e298fb3a1b3f432464576935edd38d587a3854b6a07ed2",
+            "c9dfe13716d7a2648b651818144fba97568ab1a9c1bfef1f8c041b6a883d9ead",
+            "9ec61bcc5f5ef23c82efce0fbd8c7c8edbf9c8ff068b8688d0d09fb0462fd5d7",
+            "1de36c3e51ae846afb1c5fc5e88fa4e9d0432970af0f937f6cc76f79e8f008a0",
+            "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245"
+          ],
+          "chapter": "print-unit-2f646f63732f626f6f6b"
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-问题与历史": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-用途与地区语境": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": [
+            "039d4212f05d4a745b46e6255ad70996a879b1724a24837d578943de850f4919"
+          ]
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-比较对象与方法选择": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-从系统关系到计算结果": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": [
+            "3a6114327941d9eedc4c3c549d1aeeb01908898e14a14828f2a2322d156820a1",
+            "b0f98d05d8911e19222749c806332d1c91d983b0e2977177b6cb19edb618899e"
+          ]
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-时间未来与相邻评价": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": [
+            "f21bc352371ba86c78e298fb3a1b3f432464576935edd38d587a3854b6a07ed2"
+          ]
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-数据与审查": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-数据质量与不确定性": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": [
+            "c9dfe13716d7a2648b651818144fba97568ab1a9c1bfef1f8c041b6a883d9ead"
+          ]
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-解释与使用": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": []
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-完整做一遍": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": [
+            "9ec61bcc5f5ef23c82efce0fbd8c7c8edbf9c8ff068b8688d0d09fb0462fd5d7"
+          ]
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-把各章接起来": {
+          "route": "/docs/book",
+          "kind": "heading",
+          "title": null,
+          "claimIds": [],
+          "ordinary": [
+            "1de36c3e51ae846afb1c5fc5e88fa4e9d0432970af0f937f6cc76f79e8f008a0",
+            "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245"
+          ]
+        }
+      },
+      "ordinaryTargets": {
+        "/docs/book#chapter-2f646f63732f626f6f6b-part4-133-ordinary-0": {
+          "route": "/docs/book",
+          "sha256": "32c26733539536581281445936b2043cecb589449758062551c9420124bd1942",
+          "tag": "P"
+        },
+        "/docs/book#chapter-2f646f63732f626f6f6b-part4-133-ordinary-1": {
+          "route": "/docs/book",
+          "sha256": "29c14b1bb903785effa8ca5578f368a98008f915c4c2eb0432627069427d7f18",
+          "tag": "P"
+        },
+        "/docs/book#chapter-2f646f63732f626f6f6b-part4-133-ordinary-2": {
+          "route": "/docs/book",
+          "sha256": "c09c7cd42140a2d78ada2abed783678e58f65925ee490f526f4527ab4e7265c5",
+          "tag": "P"
+        },
+        "/docs/book#chapter-2f646f63732f626f6f6b-part4-133-ordinary-3": {
+          "route": "/docs/book",
+          "sha256": "38d35e76adc40febde39c8d8506bbb6c3a1e7205767e2ef8e01ca17084cf9941",
+          "tag": "P"
+        },
+        "/docs/book#chapter-2f646f63732f626f6f6b-part4-133-ordinary-4": {
+          "route": "/docs/book",
+          "sha256": "1ac1fda6fb118a330e1c0e6b8c92d4038cc4286ff94a62a0b390c80115fffe84",
+          "tag": "P"
+        },
+        "/docs/book#chapter-2f646f63732f626f6f6b-part4-133-ordinary-5": {
+          "route": "/docs/book",
+          "sha256": "677ac3f7494ba4ff29f10f31d35abdc5a55bdd7b7734f1a64b963e91ca615c4d",
+          "tag": "P"
+        },
+        "/docs/book#chapter-2f646f63732f626f6f6b-part4-133-ordinary-6": {
+          "route": "/docs/book",
+          "sha256": "828443617cc6219c46edc768978435f313ae00a42484bcbfe1f4d193ee53c72f",
+          "tag": "P"
+        },
+        "/docs/book#chapter-2f646f63732f626f6f6b-part4-133-ordinary-7": {
+          "route": "/docs/book",
+          "sha256": "278488355d4c2368c2b20d83d01db81e997ce89a206a14f66a4e075f6ddfb96c",
+          "tag": "P"
+        },
+        "/docs/book#chapter-2f646f63732f626f6f6b-part4-133-ordinary-8": {
+          "route": "/docs/book",
+          "sha256": "1de36c3e51ae846afb1c5fc5e88fa4e9d0432970af0f937f6cc76f79e8f008a0",
+          "tag": "P"
+        },
+        "/docs/book#chapter-2f646f63732f626f6f6b-part4-133-ordinary-9": {
+          "route": "/docs/book",
+          "sha256": "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245",
+          "tag": "P"
+        },
+        "/docs/appendices/particulate-factor-calculations#chapter-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-part4-133-ordinary-0": {
+          "route": "/docs/appendices/particulate-factor-calculations",
+          "sha256": "23a35755cdb28c4601511daaa4cfe7fc1943b3a5ad8e59dc3ddd7a89d00007e6",
+          "tag": "P"
+        },
+        "/docs/appendices/particulate-factor-calculations#chapter-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-part4-133-ordinary-1": {
+          "route": "/docs/appendices/particulate-factor-calculations",
+          "sha256": "64149fd2b3a529bf841797e9fb87949212fc4510c89ffb29b45df7955a3dc462",
+          "tag": "P"
+        },
+        "/docs/appendices/particulate-factor-calculations#chapter-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-part4-133-ordinary-2": {
+          "route": "/docs/appendices/particulate-factor-calculations",
+          "sha256": "d08f67d5b6a74a109512a928c9396d2a73f9ea6cd1f4568d2fa9908a38d3b0df",
+          "tag": "P"
+        },
+        "/docs/appendices/particulate-factor-calculations#chapter-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-part4-133-ordinary-3": {
+          "route": "/docs/appendices/particulate-factor-calculations",
+          "sha256": "8527a7948a8c8d8eabdc1f9810d49e9b3fa03f54b3a00ad0c2afa3045a09951a",
+          "tag": "P"
+        },
+        "/docs/appendices/particulate-factor-calculations#chapter-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-part4-133-ordinary-4": {
+          "route": "/docs/appendices/particulate-factor-calculations",
+          "sha256": "98d17af029346dc1080b794f0f8cfcaf410e0991ea13569dc690d56baa2f7c76",
+          "tag": "P"
+        },
+        "/docs/appendices/particulate-factor-calculations#chapter-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-part4-133-ordinary-5": {
+          "route": "/docs/appendices/particulate-factor-calculations",
+          "sha256": "a3b3d92d124628f6e14f753356705a8526d3901348401b1e73140f972369bfcb",
+          "tag": "P"
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-part4-133-ordinary-1": {
+          "route": "/docs/book",
+          "sha256": "29c14b1bb903785effa8ca5578f368a98008f915c4c2eb0432627069427d7f18",
+          "tag": "P"
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-part4-133-ordinary-2": {
+          "route": "/docs/book",
+          "sha256": "039d4212f05d4a745b46e6255ad70996a879b1724a24837d578943de850f4919",
+          "tag": "P"
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-part4-133-ordinary-3": {
+          "route": "/docs/book",
+          "sha256": "3a6114327941d9eedc4c3c549d1aeeb01908898e14a14828f2a2322d156820a1",
+          "tag": "P"
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-part4-133-ordinary-4": {
+          "route": "/docs/book",
+          "sha256": "b0f98d05d8911e19222749c806332d1c91d983b0e2977177b6cb19edb618899e",
+          "tag": "P"
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-part4-133-ordinary-5": {
+          "route": "/docs/book",
+          "sha256": "f21bc352371ba86c78e298fb3a1b3f432464576935edd38d587a3854b6a07ed2",
+          "tag": "P"
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-part4-133-ordinary-6": {
+          "route": "/docs/book",
+          "sha256": "c9dfe13716d7a2648b651818144fba97568ab1a9c1bfef1f8c041b6a883d9ead",
+          "tag": "P"
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-part4-133-ordinary-7": {
+          "route": "/docs/book",
+          "sha256": "9ec61bcc5f5ef23c82efce0fbd8c7c8edbf9c8ff068b8688d0d09fb0462fd5d7",
+          "tag": "P"
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-part4-133-ordinary-8": {
+          "route": "/docs/book",
+          "sha256": "1de36c3e51ae846afb1c5fc5e88fa4e9d0432970af0f937f6cc76f79e8f008a0",
+          "tag": "P"
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-part4-133-ordinary-9": {
+          "route": "/docs/book",
+          "sha256": "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245",
+          "tag": "P"
+        },
+        "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-part4-133-ordinary-0": {
+          "route": "/docs/appendices/particulate-factor-calculations",
+          "sha256": "23a35755cdb28c4601511daaa4cfe7fc1943b3a5ad8e59dc3ddd7a89d00007e6",
+          "tag": "P"
+        },
+        "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-part4-133-ordinary-1": {
+          "route": "/docs/appendices/particulate-factor-calculations",
+          "sha256": "bf6774aeb8757f95b001792a4d5e94555f182d4ce3d2d56ad9b7c6a7e8b52129",
+          "tag": "P"
+        },
+        "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-part4-133-ordinary-2": {
+          "route": "/docs/appendices/particulate-factor-calculations",
+          "sha256": "94dff01fe97616253ce1541d3c16f4cff0e139fb25610406a956b24b9389e8bf",
+          "tag": "P"
+        },
+        "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-part4-133-ordinary-3": {
+          "route": "/docs/appendices/particulate-factor-calculations",
+          "sha256": "048532a9a519a1df7326696b28bc363ed9fc974a123f26cbdac1809cd8eb30f2",
+          "tag": "P"
+        },
+        "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-part4-133-ordinary-4": {
+          "route": "/docs/appendices/particulate-factor-calculations",
+          "sha256": "6390b202ffdeebb8bd57d7c9542bbaf6da76822f2be60d7f17b24192e3c0e70c",
+          "tag": "P"
+        },
+        "/print#print-unit-2f646f63732f617070656e64696365732f706172746963756c6174652d666163746f722d63616c63756c6174696f6e73-part4-133-ordinary-5": {
+          "route": "/docs/appendices/particulate-factor-calculations",
+          "sha256": "d5182db9ede153e9b811228230f39eb4b9634e51fb453d3e37e0fa94fd23ddad",
+          "tag": "P"
+        }
+      },
+      "ordinaryOverrides": {
+        "/docs/book#chapter-2f646f63732f626f6f6b-part4-133-ordinary-2": {
+          "from": "5ae578a42e033518a1565e5942c5049e2dcd6d5e1652bc0fb047819c2456e56f",
+          "to": "c09c7cd42140a2d78ada2abed783678e58f65925ee490f526f4527ab4e7265c5",
+          "rationale": "在全书目录总览第 11 行（part4-133-ordinary-2）原段内更新第一部概述并补齐全部六篇网页链接，不拆分段落。"
+        },
+        "/print#print-unit-2f646f63732f626f6f6b-part4-133-ordinary-2": {
+          "from": "30261677cd4ebadd9b37a44c4f6dd746b14db98ad9d8c5a1fb200eaf06524d2a",
+          "to": "039d4212f05d4a745b46e6255ad70996a879b1724a24837d578943de850f4919",
+          "rationale": "在全书目录总览第 11 行（part4-133-ordinary-2）原段内更新第一部概述并补齐全部六篇网页链接，不拆分段落。"
+        }
+      },
+      "history": [
+        {
+          "address": "/docs/book#main-content",
+          "from": "f636e178926fa1ec18593382dd7683378ca158d0de241d698e5ef24fc586d035",
+          "ordinary": [
+            {
+              "from": "32c26733539536581281445936b2043cecb589449758062551c9420124bd1942",
+              "to": "32c26733539536581281445936b2043cecb589449758062551c9420124bd1942",
+              "address": "/docs/book#main-content",
+              "targetId": "chapter-2f646f63732f626f6f6b-part4-133-ordinary-0",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "29c14b1bb903785effa8ca5578f368a98008f915c4c2eb0432627069427d7f18",
+              "to": "29c14b1bb903785effa8ca5578f368a98008f915c4c2eb0432627069427d7f18",
+              "address": "/docs/book#main-content",
+              "targetId": "chapter-2f646f63732f626f6f6b-part4-133-ordinary-1",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "5ae578a42e033518a1565e5942c5049e2dcd6d5e1652bc0fb047819c2456e56f",
+              "to": "c09c7cd42140a2d78ada2abed783678e58f65925ee490f526f4527ab4e7265c5",
+              "address": "/docs/book#main-content",
+              "targetId": "chapter-2f646f63732f626f6f6b-part4-133-ordinary-2",
+              "rationale": "在全书目录总览原段内更新第一部概述，补齐六篇链接与四体系评价框架对照脉络，保持段落索引零偏移。"
+            },
+            {
+              "from": "38d35e76adc40febde39c8d8506bbb6c3a1e7205767e2ef8e01ca17084cf9941",
+              "to": "38d35e76adc40febde39c8d8506bbb6c3a1e7205767e2ef8e01ca17084cf9941",
+              "address": "/docs/book#main-content",
+              "targetId": "chapter-2f646f63732f626f6f6b-part4-133-ordinary-3",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "1ac1fda6fb118a330e1c0e6b8c92d4038cc4286ff94a62a0b390c80115fffe84",
+              "to": "1ac1fda6fb118a330e1c0e6b8c92d4038cc4286ff94a62a0b390c80115fffe84",
+              "address": "/docs/book#main-content",
+              "targetId": "chapter-2f646f63732f626f6f6b-part4-133-ordinary-4",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "677ac3f7494ba4ff29f10f31d35abdc5a55bdd7b7734f1a64b963e91ca615c4d",
+              "to": "677ac3f7494ba4ff29f10f31d35abdc5a55bdd7b7734f1a64b963e91ca615c4d",
+              "address": "/docs/book#main-content",
+              "targetId": "chapter-2f646f63732f626f6f6b-part4-133-ordinary-5",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "828443617cc6219c46edc768978435f313ae00a42484bcbfe1f4d193ee53c72f",
+              "to": "828443617cc6219c46edc768978435f313ae00a42484bcbfe1f4d193ee53c72f",
+              "address": "/docs/book#main-content",
+              "targetId": "chapter-2f646f63732f626f6f6b-part4-133-ordinary-6",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "278488355d4c2368c2b20d83d01db81e997ce89a206a14f66a4e075f6ddfb96c",
+              "to": "278488355d4c2368c2b20d83d01db81e997ce89a206a14f66a4e075f6ddfb96c",
+              "address": "/docs/book#main-content",
+              "targetId": "chapter-2f646f63732f626f6f6b-part4-133-ordinary-7",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "1de36c3e51ae846afb1c5fc5e88fa4e9d0432970af0f937f6cc76f79e8f008a0",
+              "to": "1de36c3e51ae846afb1c5fc5e88fa4e9d0432970af0f937f6cc76f79e8f008a0",
+              "address": "/docs/book#main-content",
+              "targetId": "chapter-2f646f63732f626f6f6b-part4-133-ordinary-8",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245",
+              "to": "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245",
+              "address": "/docs/book#main-content",
+              "targetId": "chapter-2f646f63732f626f6f6b-part4-133-ordinary-9",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            }
+          ],
+          "rationale": "第一部《问题的来源》整部连续回读：更新目录总览中第一部概述段，保持其余段落与索引不变。"
+        },
+        {
+          "address": "/docs/book#nd-page",
+          "from": "ae58e92bfd6c8904203994b31daff0dade312e04df0e602f261861d6de6b6b9f",
+          "ordinary": [
+            {
+              "from": "32c26733539536581281445936b2043cecb589449758062551c9420124bd1942",
+              "to": "32c26733539536581281445936b2043cecb589449758062551c9420124bd1942",
+              "address": "/docs/book#nd-page",
+              "targetId": "chapter-2f646f63732f626f6f6b-part4-133-ordinary-0",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "29c14b1bb903785effa8ca5578f368a98008f915c4c2eb0432627069427d7f18",
+              "to": "29c14b1bb903785effa8ca5578f368a98008f915c4c2eb0432627069427d7f18",
+              "address": "/docs/book#nd-page",
+              "targetId": "chapter-2f646f63732f626f6f6b-part4-133-ordinary-1",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "5ae578a42e033518a1565e5942c5049e2dcd6d5e1652bc0fb047819c2456e56f",
+              "to": "c09c7cd42140a2d78ada2abed783678e58f65925ee490f526f4527ab4e7265c5",
+              "address": "/docs/book#nd-page",
+              "targetId": "chapter-2f646f63732f626f6f6b-part4-133-ordinary-2",
+              "rationale": "在全书目录总览原段内更新第一部概述，补齐六篇链接与四体系评价框架对照脉络，保持段落索引零偏移。"
+            },
+            {
+              "from": "38d35e76adc40febde39c8d8506bbb6c3a1e7205767e2ef8e01ca17084cf9941",
+              "to": "38d35e76adc40febde39c8d8506bbb6c3a1e7205767e2ef8e01ca17084cf9941",
+              "address": "/docs/book#nd-page",
+              "targetId": "chapter-2f646f63732f626f6f6b-part4-133-ordinary-3",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "1ac1fda6fb118a330e1c0e6b8c92d4038cc4286ff94a62a0b390c80115fffe84",
+              "to": "1ac1fda6fb118a330e1c0e6b8c92d4038cc4286ff94a62a0b390c80115fffe84",
+              "address": "/docs/book#nd-page",
+              "targetId": "chapter-2f646f63732f626f6f6b-part4-133-ordinary-4",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "677ac3f7494ba4ff29f10f31d35abdc5a55bdd7b7734f1a64b963e91ca615c4d",
+              "to": "677ac3f7494ba4ff29f10f31d35abdc5a55bdd7b7734f1a64b963e91ca615c4d",
+              "address": "/docs/book#nd-page",
+              "targetId": "chapter-2f646f63732f626f6f6b-part4-133-ordinary-5",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "828443617cc6219c46edc768978435f313ae00a42484bcbfe1f4d193ee53c72f",
+              "to": "828443617cc6219c46edc768978435f313ae00a42484bcbfe1f4d193ee53c72f",
+              "address": "/docs/book#nd-page",
+              "targetId": "chapter-2f646f63732f626f6f6b-part4-133-ordinary-6",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "278488355d4c2368c2b20d83d01db81e997ce89a206a14f66a4e075f6ddfb96c",
+              "to": "278488355d4c2368c2b20d83d01db81e997ce89a206a14f66a4e075f6ddfb96c",
+              "address": "/docs/book#nd-page",
+              "targetId": "chapter-2f646f63732f626f6f6b-part4-133-ordinary-7",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "1de36c3e51ae846afb1c5fc5e88fa4e9d0432970af0f937f6cc76f79e8f008a0",
+              "to": "1de36c3e51ae846afb1c5fc5e88fa4e9d0432970af0f937f6cc76f79e8f008a0",
+              "address": "/docs/book#nd-page",
+              "targetId": "chapter-2f646f63732f626f6f6b-part4-133-ordinary-8",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245",
+              "to": "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245",
+              "address": "/docs/book#nd-page",
+              "targetId": "chapter-2f646f63732f626f6f6b-part4-133-ordinary-9",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            }
+          ],
+          "rationale": "第一部《问题的来源》整部连续回读：更新目录总览中第一部概述段，保持其余段落与索引不变。"
+        },
+        {
+          "address": "/docs/book#用途与地区语境",
+          "from": "30789b4d7809c471a700bccd7ef8fb98e590ee8d7b282e0cc68501d343bc6ff3",
+          "ordinary": [
+            {
+              "from": "5ae578a42e033518a1565e5942c5049e2dcd6d5e1652bc0fb047819c2456e56f",
+              "to": "c09c7cd42140a2d78ada2abed783678e58f65925ee490f526f4527ab4e7265c5",
+              "address": "/docs/book#用途与地区语境",
+              "targetId": "chapter-2f646f63732f626f6f6b-part4-133-ordinary-2",
+              "rationale": "在全书目录总览原段内更新第一部概述，补齐六篇链接与四体系评价框架对照脉络，保持段落索引零偏移。"
+            }
+          ],
+          "rationale": "第一部《问题的来源》整部连续回读：更新目录总览中第一部概述段，保持其余段落与索引不变。"
+        },
+        {
+          "address": "/print#print-reading-unit-2f646f63732f626f6f6b",
+          "from": "75f8479f1899b5aed688c12bd5c8af53ad225982d8fb4534c3a9945d798f8837",
+          "ordinary": [
+            {
+              "from": "29c14b1bb903785effa8ca5578f368a98008f915c4c2eb0432627069427d7f18",
+              "to": "29c14b1bb903785effa8ca5578f368a98008f915c4c2eb0432627069427d7f18",
+              "address": "/print#print-reading-unit-2f646f63732f626f6f6b",
+              "targetId": "print-unit-2f646f63732f626f6f6b-part4-133-ordinary-1",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "30261677cd4ebadd9b37a44c4f6dd746b14db98ad9d8c5a1fb200eaf06524d2a",
+              "to": "039d4212f05d4a745b46e6255ad70996a879b1724a24837d578943de850f4919",
+              "address": "/print#print-reading-unit-2f646f63732f626f6f6b",
+              "targetId": "print-unit-2f646f63732f626f6f6b-part4-133-ordinary-2",
+              "rationale": "在全书目录总览原段内更新第一部概述，补齐六篇链接与四体系评价框架对照脉络，保持段落索引零偏移。"
+            },
+            {
+              "from": "3a6114327941d9eedc4c3c549d1aeeb01908898e14a14828f2a2322d156820a1",
+              "to": "3a6114327941d9eedc4c3c549d1aeeb01908898e14a14828f2a2322d156820a1",
+              "address": "/print#print-reading-unit-2f646f63732f626f6f6b",
+              "targetId": "print-unit-2f646f63732f626f6f6b-part4-133-ordinary-3",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "b0f98d05d8911e19222749c806332d1c91d983b0e2977177b6cb19edb618899e",
+              "to": "b0f98d05d8911e19222749c806332d1c91d983b0e2977177b6cb19edb618899e",
+              "address": "/print#print-reading-unit-2f646f63732f626f6f6b",
+              "targetId": "print-unit-2f646f63732f626f6f6b-part4-133-ordinary-4",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "f21bc352371ba86c78e298fb3a1b3f432464576935edd38d587a3854b6a07ed2",
+              "to": "f21bc352371ba86c78e298fb3a1b3f432464576935edd38d587a3854b6a07ed2",
+              "address": "/print#print-reading-unit-2f646f63732f626f6f6b",
+              "targetId": "print-unit-2f646f63732f626f6f6b-part4-133-ordinary-5",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "c9dfe13716d7a2648b651818144fba97568ab1a9c1bfef1f8c041b6a883d9ead",
+              "to": "c9dfe13716d7a2648b651818144fba97568ab1a9c1bfef1f8c041b6a883d9ead",
+              "address": "/print#print-reading-unit-2f646f63732f626f6f6b",
+              "targetId": "print-unit-2f646f63732f626f6f6b-part4-133-ordinary-6",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "9ec61bcc5f5ef23c82efce0fbd8c7c8edbf9c8ff068b8688d0d09fb0462fd5d7",
+              "to": "9ec61bcc5f5ef23c82efce0fbd8c7c8edbf9c8ff068b8688d0d09fb0462fd5d7",
+              "address": "/print#print-reading-unit-2f646f63732f626f6f6b",
+              "targetId": "print-unit-2f646f63732f626f6f6b-part4-133-ordinary-7",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "1de36c3e51ae846afb1c5fc5e88fa4e9d0432970af0f937f6cc76f79e8f008a0",
+              "to": "1de36c3e51ae846afb1c5fc5e88fa4e9d0432970af0f937f6cc76f79e8f008a0",
+              "address": "/print#print-reading-unit-2f646f63732f626f6f6b",
+              "targetId": "print-unit-2f646f63732f626f6f6b-part4-133-ordinary-8",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245",
+              "to": "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245",
+              "address": "/print#print-reading-unit-2f646f63732f626f6f6b",
+              "targetId": "print-unit-2f646f63732f626f6f6b-part4-133-ordinary-9",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            }
+          ],
+          "rationale": "第一部《问题的来源》整部连续回读：更新目录总览中第一部概述段，保持其余段落与索引不变。"
+        },
+        {
+          "address": "/print#print-unit-2f646f63732f626f6f6b",
+          "from": "9016375634326273e1b4797eb9e26ad4634d9c4cb559dffe0692a8a9e10ab4d7",
+          "ordinary": [
+            {
+              "from": "29c14b1bb903785effa8ca5578f368a98008f915c4c2eb0432627069427d7f18",
+              "to": "29c14b1bb903785effa8ca5578f368a98008f915c4c2eb0432627069427d7f18",
+              "address": "/print#print-unit-2f646f63732f626f6f6b",
+              "targetId": "print-unit-2f646f63732f626f6f6b-part4-133-ordinary-1",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "30261677cd4ebadd9b37a44c4f6dd746b14db98ad9d8c5a1fb200eaf06524d2a",
+              "to": "039d4212f05d4a745b46e6255ad70996a879b1724a24837d578943de850f4919",
+              "address": "/print#print-unit-2f646f63732f626f6f6b",
+              "targetId": "print-unit-2f646f63732f626f6f6b-part4-133-ordinary-2",
+              "rationale": "在全书目录总览原段内更新第一部概述，补齐六篇链接与四体系评价框架对照脉络，保持段落索引零偏移。"
+            },
+            {
+              "from": "3a6114327941d9eedc4c3c549d1aeeb01908898e14a14828f2a2322d156820a1",
+              "to": "3a6114327941d9eedc4c3c549d1aeeb01908898e14a14828f2a2322d156820a1",
+              "address": "/print#print-unit-2f646f63732f626f6f6b",
+              "targetId": "print-unit-2f646f63732f626f6f6b-part4-133-ordinary-3",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "b0f98d05d8911e19222749c806332d1c91d983b0e2977177b6cb19edb618899e",
+              "to": "b0f98d05d8911e19222749c806332d1c91d983b0e2977177b6cb19edb618899e",
+              "address": "/print#print-unit-2f646f63732f626f6f6b",
+              "targetId": "print-unit-2f646f63732f626f6f6b-part4-133-ordinary-4",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "f21bc352371ba86c78e298fb3a1b3f432464576935edd38d587a3854b6a07ed2",
+              "to": "f21bc352371ba86c78e298fb3a1b3f432464576935edd38d587a3854b6a07ed2",
+              "address": "/print#print-unit-2f646f63732f626f6f6b",
+              "targetId": "print-unit-2f646f63732f626f6f6b-part4-133-ordinary-5",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "c9dfe13716d7a2648b651818144fba97568ab1a9c1bfef1f8c041b6a883d9ead",
+              "to": "c9dfe13716d7a2648b651818144fba97568ab1a9c1bfef1f8c041b6a883d9ead",
+              "address": "/print#print-unit-2f646f63732f626f6f6b",
+              "targetId": "print-unit-2f646f63732f626f6f6b-part4-133-ordinary-6",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "9ec61bcc5f5ef23c82efce0fbd8c7c8edbf9c8ff068b8688d0d09fb0462fd5d7",
+              "to": "9ec61bcc5f5ef23c82efce0fbd8c7c8edbf9c8ff068b8688d0d09fb0462fd5d7",
+              "address": "/print#print-unit-2f646f63732f626f6f6b",
+              "targetId": "print-unit-2f646f63732f626f6f6b-part4-133-ordinary-7",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "1de36c3e51ae846afb1c5fc5e88fa4e9d0432970af0f937f6cc76f79e8f008a0",
+              "to": "1de36c3e51ae846afb1c5fc5e88fa4e9d0432970af0f937f6cc76f79e8f008a0",
+              "address": "/print#print-unit-2f646f63732f626f6f6b",
+              "targetId": "print-unit-2f646f63732f626f6f6b-part4-133-ordinary-8",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            },
+            {
+              "from": "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245",
+              "to": "5cb36ec51f69463fd9193869139a708f48968f905332812638dbae608731f245",
+              "address": "/print#print-unit-2f646f63732f626f6f6b",
+              "targetId": "print-unit-2f646f63732f626f6f6b-part4-133-ordinary-9",
+              "rationale": "保留该普通段落不变，定位至现行锚点。"
+            }
+          ],
+          "rationale": "第一部《问题的来源》整部连续回读：更新目录总览中第一部概述段，保持其余段落与索引不变。"
+        },
+        {
+          "address": "/print#print-unit-2f646f63732f626f6f6b-用途与地区语境",
+          "from": "a7f4a4151cc935e3d2992c43da9791f15c4edc4a9af435698e8d6cdc9be43701",
+          "ordinary": [
+            {
+              "from": "30261677cd4ebadd9b37a44c4f6dd746b14db98ad9d8c5a1fb200eaf06524d2a",
+              "to": "039d4212f05d4a745b46e6255ad70996a879b1724a24837d578943de850f4919",
+              "address": "/print#print-unit-2f646f63732f626f6f6b-用途与地区语境",
+              "targetId": "print-unit-2f646f63732f626f6f6b-part4-133-ordinary-2",
+              "rationale": "在全书目录总览原段内更新第一部概述，补齐六篇链接与四体系评价框架对照脉络，保持段落索引零偏移。"
+            }
+          ],
+          "rationale": "第一部《问题的来源》整部连续回读：更新目录总览中第一部概述段，保持其余段落与索引不变。"
+        }
+      ]
+    },
+    "outputs": [
+      {
+        "path": "/docs/book",
+        "route": "/docs/book",
+        "from": "f99aab6d6dfead0c8e1068b001dc228e68fe229f40fcd2bbc17056681a0c762d",
+        "sha256": "1ae3de6983329af09acf11064c4b7fe3ac2942c7f0f4a7b7d23e3f0be0ac12c6",
+        "rationale": "第一部《问题的来源》整部连续回读更新后的渲染文章。"
+      },
+      {
+        "path": "/docs/book/cleaner-production-purpose-and-prospects",
+        "route": "/docs/book/cleaner-production-purpose-and-prospects",
+        "from": "9c76d4fe7fc791526171b3773b2d448544ee0af44083c6ee8cb98acd1a6cce1a",
+        "sha256": "314898b959b996fc4fa66bb581f67b695ce95c689df016a2c8d8ed065d70888a",
+        "rationale": "第一部《问题的来源》整部连续回读更新后的渲染文章。"
+      },
+      {
+        "path": "/docs/book/cml-computation-judgment-and-improvement",
+        "route": "/docs/book/cml-computation-judgment-and-improvement",
+        "from": "a72954b3ebb81bcbe94e0c7b1bbe403942cb81b8c6e767a443aa4f2982f39bde",
+        "sha256": "8b1f5c83738e7565f3b1d142d9a1c50dbd8fca06f8961b95b1304a404770e576",
+        "rationale": "第一部《问题的来源》整部连续回读更新后的渲染文章。"
+      },
+      {
+        "path": "/docs/book/early-container-comparisons",
+        "route": "/docs/book/early-container-comparisons",
+        "from": "cb382543b440aee2a6c6410e63ab0f415ab5556632e29261c982ffdf4b0a75f9",
+        "sha256": "605c42775113b83c1e76603ffe99e450821a56a7cefe8ab84860c53dc1af3c9d",
+        "rationale": "第一部《问题的来源》整部连续回读更新后的渲染文章。"
+      },
+      {
+        "path": "/docs/book/framework-history",
+        "route": "/docs/book/framework-history",
+        "from": "bb126939487b0d118983bcceb8dea5ebc5753beb0e93bbe9d78ec49340d66a22",
+        "sha256": "b3a3c0c85d177880b10e0d074852a5f8f0d205842d143660da24e27a16084bf4",
+        "rationale": "第一部《问题的来源》整部连续回读更新后的渲染文章。"
+      },
+      {
+        "path": "/docs/book/integrative-ambitions",
+        "route": "/docs/book/integrative-ambitions",
+        "from": "af105e667fe043b787c6de055d41df32fbd3140246ff7f91bedc7bdad0bd2616",
+        "sha256": "26582e4983e4fb1d043288e751aa0b0a5722a39eeb38a5b047db8f72143ceb40",
+        "rationale": "第一部《问题的来源》整部连续回读更新后的渲染文章。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book",
+        "from": "3e69e057ba6d157ce9db0f8499cd6388365fb2e5b00afe1dda18c9b9cd590031",
+        "sha256": "5a23786d76b255f66c6f04cf9ee83ef75999203d6c0114b44834c86e3327f8f4",
+        "rationale": "第一部《问题的来源》整部连续回读更新后的渲染文章。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/integrative-ambitions",
+        "from": "d9874b38c533a0a6d70daef9f974f4b19231e7231004ea7be573a404bb97debf",
+        "sha256": "d4e37c022d5b51972e126b50fbbd66cc56daa74a8df1e91b2e6f84de663c3357",
+        "rationale": "第一部《问题的来源》整部连续回读更新后的渲染文章。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/early-container-comparisons",
+        "from": "e6f621545282181bfb1a5ee3af01deddcbf017ff96953934d059e3d24135b092",
+        "sha256": "bd36cb507f5bcd0b90ea55403788e2bc9666f4186462d5e1dbcd7b31f52f05d1",
+        "rationale": "第一部《问题的来源》整部连续回读更新后的渲染文章。"
+      },
+      {
+        "path": "/print",
+        "route": "book-framework-responsibilities",
+        "from": "bb7b449dc0a766879ce71d2a8c284f49b2e82fcfefa99075453051c5df256667",
+        "sha256": "20bf5e351b9c6c641db02216ee3b332d4564d3cacd97c26e86c1f633cfb8ef69",
+        "rationale": "第一部《问题的来源》整部连续回读更新后的渲染文章。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/cleaner-production-purpose-and-prospects",
+        "from": "6567039124f0956ff199b6b852e43dd5860f7f47089d911444e29b1ce2641ff5",
+        "sha256": "4e172b05e3854aa4db317a2e8fb9eec9d872ef7612deecce59fea4d74af053bf",
+        "rationale": "第一部《问题的来源》整部连续回读更新后的渲染文章。"
+      },
+      {
+        "path": "/print",
+        "route": "/docs/book/wall-service-to-comparison",
+        "from": "ec7d2ab5a50cb0ea9ee8a84d03efde8247f8f39f7da38c69e874496a0e1b3a57",
+        "sha256": "330021462c99ab077ca7c3426b26998d55c83a5814f3e80bebce550ea3d211b1",
+        "rationale": "第一部《问题的来源》整部连续回读更新后的渲染文章。"
+      }
+    ],
+    "publicArtifacts": [
+      {
+        "path": "claims/index.html",
+        "from": "cb0035eda6611f89457eb5d0386219e993c8d2a198648c2283c430fd8d4d123c",
+        "sha256": "e2e7a820e1365e5cf9c8c44454d118c0ba78d3713e02e11dee2657c15bdfd1e5",
+        "rationale": "第一部《问题的来源》整部连续回读更新后的公开构建产物。"
+      },
+      {
+        "path": "concepts/index.html",
+        "from": "d5fef431c5ab18610c9fb8275cd0921ffe6d170f120d92f56e638c9c4296e642",
+        "sha256": "6a0fae15bf9eebbe33badf3bc58f93ea1b767cc44234774c8c48610f873b4de6",
+        "rationale": "第一部《问题的来源》整部连续回读更新后的公开构建产物。"
+      },
+      {
+        "path": "sources/index.html",
+        "from": "46880a65fdbe4f80fe8d6f7ca33dd6b70271835db7e52559bc48278247032739",
+        "sha256": "858cc87440ead2c69dea2bb9d758ed8a0cdf9c41edacdd20c9c1d5ef3531f3a3",
+        "rationale": "第一部《问题的来源》整部连续回读更新后的公开构建产物。"
+      },
+      {
+        "path": "downloads/catalog.json",
+        "from": "f98d26ff0668b7772ab051c92a088807c9348822f867f2782f8f28f59165b84d",
+        "sha256": "d3f61a3f65312b7b96fb22e2d5a44beb8e7d0e42336610ef4624fb0dc74920a3",
+        "rationale": "第一部《问题的来源》整部连续回读更新后的公开构建产物。"
+      },
+      {
+        "path": "downloads/dependencies.json",
+        "from": "b943349daf78ada73abab7456e9c43dfa8499001cd932db9db9d4c867380108d",
+        "sha256": "51cc88bf90fd4c4125b712bbb0cb079f51fcdf061ba30d83c0fcdcdb98c9a7dc",
+        "rationale": "第一部《问题的来源》整部连续回读更新后的公开构建产物。"
+      }
+    ],
+    "outputCapture": {
+      "sourceCommit": "c34d6cb2daa16a8ed84586360c8ac8e2bef0a81e",
+      "dirty": true,
+      "status": "working-preview",
+      "manifestSha256": "a458385026ba576ebcd6333de202ea445375241f1e078e67afceee62a8ebdb20",
+      "normalizedProofSha256": "7388d8c928a00781e42ecdc7a1bef26285990158b441dfee2faafc48dc76fa43"
+    },
+    "reviewEvidence": [
+      {
+        "kind": "source",
+        "date": "2026-11-20",
+        "artifactFile": "_docs/editorial/review-evidence/part1-reread-181/source-artifact.json",
+        "artifactSha256": "616eaf8700fe6b48a99b4606056d4abbb16e0fc056ec70fcc0a7cf9ab6afa888",
+        "reportFile": "_docs/editorial/review-evidence/part1-reread-181/source-report.json",
+        "reportSha256": "06f775a035360a5dd3da7fefbb5b1ca0ab5871a18086251f28be5f304f18b2be"
+      },
+      {
+        "kind": "reader",
+        "date": "2026-11-20",
+        "artifactFile": "_docs/editorial/review-evidence/part1-reread-181/reader-artifact.json",
+        "artifactSha256": "32e87fe29910a2530518d6dee57f219829b3db63cb1a2d7c32fd5dd4c5ca7573",
+        "reportFile": "_docs/editorial/review-evidence/part1-reread-181/reader-report.json",
+        "reportSha256": "d6329224c01ae3e4f3813c98dddd6fd1a6d41f159dadcc3f0812c0cb19c56a8d"
+      },
+      {
+        "kind": "output",
+        "date": "2026-11-20",
+        "artifactFile": "_docs/editorial/review-evidence/part1-reread-181/output-artifact.json",
+        "artifactSha256": "14adaa31364ff91060ce04d0e4bd73bfc994d55732deb88bd347783037c52a63",
+        "reportFile": "_docs/editorial/review-evidence/part1-reread-181/output-report.json",
+        "reportSha256": "46e039b58132328a5d52ca5f66a1f3c2d02bc9cf2db8b65742e79cc56043432b"
+      }
+    ]
+  }
+}

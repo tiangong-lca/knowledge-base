@@ -8,7 +8,7 @@ import { NumberedHeading, NumberedTitle } from '@/components/numbered-heading';
 import { PrintButton } from '@/components/print-button';
 import { PublicationShell } from '@/components/publication-shell';
 import { citationSourceHref } from '@/scripts/reader-citations.mjs';
-import { currentPart2Reread, currentPart3Reread, currentPart4Reread, currentPart5Reread, currentPart6Reread, currentPart7Reread } from '@/scripts/reader-current-expectations.mjs';
+import { currentPart1Reread, currentPart2Reread, currentPart3Reread, currentPart4Reread, currentPart5Reread, currentPart6Reread, currentPart7Reread } from '@/scripts/reader-current-expectations.mjs';
 import { bookTopicPresentation, getPresentationUnits, getUnitHeadingPlan, printReadingEntryAnchor, readerParts } from '@/scripts/reader-numbering.mjs';
 import { showEditorialHistoryInProse } from '@/scripts/reader-editorial-mode.mjs';
 import { part4RereadSource } from '@/scripts/reader-part4-reread.mjs';
@@ -17,6 +17,7 @@ import { part6RereadSource } from '@/scripts/reader-part6-reread.mjs';
 import { part7RereadSource } from '@/scripts/reader-part7-reread.mjs';
 import { part3RereadSource } from '@/scripts/reader-part3-reread.mjs';
 import { part2RereadSource } from '@/scripts/reader-part2-reread.mjs';
+import { part1RereadSource } from '@/scripts/reader-part1-reread.mjs';
 import { printUnitAnchor } from '@/scripts/reader-book.mjs';
 
 export const metadata = { title: '书籍目录、连续阅读与打印' };
@@ -61,6 +62,10 @@ export default function Page() {
         <><h2 id={`print-part-${part.number}`} data-reader-part={part.number}><NumberedTitle number={part.label}>{part.title}</NumberedTitle></h2>
           <CopyeditHistoricalTitle path="/print" id={`print-part-${part.number}`} /></>
         <p className="print-part-introduction">{part.introduction}</p>
+        {showEditorialHistoryInProse() && currentPart1Reread && part.number === 1 && <details className="legacy-citation-context" data-part1-reread-part="1">
+          <summary><time dateTime={part1RereadSource.date}>{part1RereadSource.date}</time> 版第一部导言范围</summary>
+          <p>{'前版导言：“'}{currentPart1Reread.partIntroduction.from}{'” '}<a href={citationSourceHref(part1RereadSource.commit)} data-part1-reread-part-source="">查看该版源文件</a></p>
+        </details>}
         {showEditorialHistoryInProse() && currentPart2Reread && part.number === 2 && <details className="legacy-citation-context" data-part2-reread-part="2">
           <summary><time dateTime={part2RereadSource.date}>{part2RereadSource.date}</time> 版第二部导言范围</summary>
           <p>{'前版导言：“'}{currentPart2Reread.partIntroduction.from}{'” '}<a href={citationSourceHref(part2RereadSource.commit)} data-part2-reread-part-source="">查看该版源文件</a></p>
