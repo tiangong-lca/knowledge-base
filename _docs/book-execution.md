@@ -1,6 +1,6 @@
 ---
-lastReviewedAt: 2026-11-19
-lastReviewedCommit: 4bb508394ef2f6c671b1468d41a2b67c51296be6
+lastReviewedAt: 2026-11-20
+lastReviewedCommit: a55c9fb3909130cdc0165cc1e417f2412523c72c
 title: Approved LCA book execution and wave ledger
 docType: reference
 scope: repo
@@ -23,6 +23,15 @@ related:
 ---
 
 # Approved book execution
+
+## 2026-11-20 Clean Public Delivery & Editorial History Separation (`#166`)
+
+Per the user's 2026-11-20 directive and [`_docs/lca-book-goal.md`](lca-book-goal.md) §2.15, every iteration and production build enforces **two-layer separation between editorial provenance and public reader presentation**:
+
+- **Editorial provenance stays intact**: all `config/reader-*.json`, `_docs/editorial/` protocols and `review-evidence/` artifacts remain in Git to guide ongoing authoring and auditing.
+- **Public reading pages stay clean**: default production builds (`READER_EDITORIAL_HISTORY !== '1'`) render ONLY the finished monograph on `/docs/book/**` and `/print/` with ZERO inline development-process disclosures (`[data-copyedit-history]`, `[data-*-history]`, `[data-part*-reread-part]`, `[data-legacy-scope]`, `[data-*-correction]`), while keeping invisible legacy anchor targets (`LegacyCitationAliases`, `[data-legacy-notice]`) alive so old `#fragment` links never break.
+- **`/changes/` auto-aggregates the full revision ledger**: `app/changes/page.tsx` (backed by `scripts/reader-changes-ledger.mjs`) automatically lists every reviewed iteration, all named claim corrections, and all Part introduction updates with source links.
+- **Per-iteration mandatory CI gate**: `scripts/reader-surface.mjs` runs `validateCleanDeliveryOutput` on every default build, failing CI immediately if any development-process control leaks into `/docs/book/**` or `/print/`, or if `/changes/` omits any reviewed iteration or correction. Use `READER_EDITORIAL_HISTORY=1` only for local editorial-audit previews.
 
 ## 2026-11-15 continuous comparative revision GOAL
 

@@ -1,3 +1,4 @@
+import { isCleanDeliveryValidation } from './reader-editorial-mode.mjs';
 import { projectOrdinaryReaderNavigation } from './reader-edition.mjs';
 import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import { createHash } from "node:crypto";
@@ -557,7 +558,7 @@ function validateRenderedDataApplicability(document, path, catalog, accepted, in
             || !(context.parentNode === unit
             && unit.id === entry.id
             || context.previousElementSibling?.id === entry.id
-            && context.parentNode === context.previousElementSibling.parentNode)) errors.push(`${path}: Data applicability native historical subset missing/detached: ${entry.id}`);
+            && context.parentNode === context.previousElementSibling.parentNode)) { if (!isCleanDeliveryValidation()) errors.push(`${path}: Data applicability native historical subset missing/detached: ${entry.id}`); }
       }
     }
     const historical = validateReaderHistoricalText(unit, unitEntries, path, label);

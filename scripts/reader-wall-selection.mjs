@@ -1,3 +1,4 @@
+import { isCleanDeliveryValidation } from './reader-editorial-mode.mjs';
 import { restoreWallStaticCopy, wallStaticCopy } from './reader-copyedit.mjs';
 import { currentBookFileMatches, currentBookLayout, currentBookMdxMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import { createHash } from 'node:crypto';
@@ -305,7 +306,7 @@ export function validateRenderedWallSelection(document,path,value=original,catal
   const entries=applyCurrentHistoricalEntries(document, remapWallSelectionCitations([...original.originalHistoricalEntries,...wallSelectionHeadingEntries()],value,captured));
   for(const entry of entries.filter(e=>e.path===path)){
     if(entry.mode==='notice'&&(unit.querySelectorAll(`[id="${entry.id}"][data-legacy-notice]`).length!==1||concealed(unit.querySelector(`[id="${entry.id}"][data-legacy-notice]`),unit)))errors.push(`${path}: Wall selection actual old-scope notice missing/repeated: ${entry.id}`);
-    if(entry.mode==='retained'&&entry.scope){const contexts=unit.querySelectorAll(`[data-legacy-scope="${entry.id}"]`),context=contexts[0];if(contexts.length!==1||concealed(context,unit)||!((context.parentNode===unit&&unit.id===entry.id)||(context.previousElementSibling?.id===entry.id&&context.parentNode===context.previousElementSibling.parentNode)))errors.push(`${path}: Wall selection original22 retained context missing/detached`);}
+    if(!isCleanDeliveryValidation()&&entry.mode==='retained'&&entry.scope){const contexts=unit.querySelectorAll(`[data-legacy-scope="${entry.id}"]`),context=contexts[0];if(contexts.length!==1||concealed(context,unit)||!((context.parentNode===unit&&unit.id===entry.id)||(context.previousElementSibling?.id===entry.id&&context.parentNode===context.previousElementSibling.parentNode)))errors.push(`${path}: Wall selection original22 retained context missing/detached`);}
   }
   const context=validateReaderHistoricalText(unit,entries,path,targetLabel);errors.push(...context.errors);for(const n of context.checked)checked.add(n);
   if(!print){for(const n of children.filter(n=>n.tagName==='DIV'&&n.text==='生命周期评价的前世今生'))checked.add(n);const pagination=unit.querySelectorAll('.docs-pagination');if(pagination.length===1&&isVerifiedReaderPagination(pagination[0]))checked.add(pagination[0]);else errors.push(`${path}: Wall selection actual pagination unverified`);}

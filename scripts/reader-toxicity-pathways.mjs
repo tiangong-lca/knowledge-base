@@ -1,3 +1,4 @@
+import { isCleanDeliveryValidation } from './reader-editorial-mode.mjs';
 import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches, currentToxicityComparison } from './reader-current-expectations.mjs';
 import { createHash } from 'node:crypto';
 import original from '../config/toxicity-pathways-original.json' with { type: 'json' };
@@ -396,7 +397,7 @@ export function validateRenderedToxicityPathways(document, path, catalog, accept
       const contexts = unit.querySelectorAll(`[data-legacy-scope="${entry.id}"]`), context = contexts[0];
       if (contexts.length !== 1 || !(context.parentNode === unit && unit.id === entry.id
           || context.previousElementSibling?.id === entry.id && context.previousElementSibling.parentNode === context.parentNode))
-        errors.push(`${path}: Toxicity pathways historical scope is missing or detached: ${entry.id}`);
+        if (!isCleanDeliveryValidation()) errors.push(`${path}: Toxicity pathways historical scope is missing or detached: ${entry.id}`);
     }
   }
   const historical = validateReaderHistoricalText(unit, entries, path, destination => toxicityPathwaysCitationLabel(destination, accepted));

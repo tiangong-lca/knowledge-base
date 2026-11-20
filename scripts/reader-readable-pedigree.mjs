@@ -1,3 +1,4 @@
+import { isCleanDeliveryValidation } from './reader-editorial-mode.mjs';
 import { blocksReaderText, inspectReviewedStaticTable, removeReviewedProse, validateReviewedStaticTable } from './reader-reviewed-static-table.mjs';
 import { currentBookFileMatches, currentBookLayout, currentBookMdxMatches, currentBookRecordMatches, currentFlowBoundary, currentFlowBoundaryRecordMatches } from './reader-current-expectations.mjs';
 import { createHash } from 'node:crypto';
@@ -422,7 +423,7 @@ function validateHistoricalLocations(document, unit, path, entries) {
         ? context.parentNode === node
         : context.previousElementSibling === node && context.parentNode === node?.parentNode);
       if (contexts.length !== 1 || !attached || !inUnit(context) || blocksReaderText(context))
-        errors.push(`${path}: Readable pedigree retained historical scope is missing, repeated, hidden or detached: ${entry.id}`);
+        if (!isCleanDeliveryValidation()) errors.push(`${path}: Readable pedigree retained historical scope is missing, repeated, hidden or detached: ${entry.id}`);
     } else if (contexts.length) errors.push(`${path}: Readable pedigree unexpected retained historical scope: ${entry.id}`);
   }
   return errors;

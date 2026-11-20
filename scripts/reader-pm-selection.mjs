@@ -1,3 +1,4 @@
+import { isCleanDeliveryValidation } from './reader-editorial-mode.mjs';
 import { currentAcidEquivalents, currentEutrophicationPathways, currentParticulateComparison, currentLocalizationComparison, currentSocialComparison, currentBookLayout, currentBookMdxMatches, currentBookFileMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import { createHash } from 'node:crypto';
 import { isDeepStrictEqual as same } from 'node:util';
@@ -480,7 +481,7 @@ export function validateRenderedPmSelection(document, path, catalog, accepted, i
         const contexts = unit.querySelectorAll(`[data-legacy-scope="${entry.id}"]`);
         const [context] = contexts;
         if (!inUnit || contexts.length !== 1 || !(anchor === unit ? context.parentNode === unit : context.previousElementSibling === anchor))
-          fail(`historical source scope is missing or detached: ${entry.id}`);
+          if (!isCleanDeliveryValidation()) fail(`historical source scope is missing or detached: ${entry.id}`);
       } else if (!inUnit || entry.mode !== 'retained' && !anchor.hasAttribute(entry.mode === 'alias' ? 'data-legacy-for' : 'data-legacy-notice')
           || entry.mode === 'alias' && anchor.parentNode?.id !== entry.targets[0].id)
         fail(`historical source address is missing or misplaced: ${entry.id}`);
