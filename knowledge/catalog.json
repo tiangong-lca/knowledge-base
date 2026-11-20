@@ -43192,6 +43192,74 @@
           "basis": "GHG Protocol 产品标准（2011）第 9.3.2 节第 67 页（1000 kg − 50 kg 平均电网替代 = 950 kg）"
         }
       ]
+    },
+    {
+      "id": "ev-fr173-ilcd-fu",
+      "sourceId": "src-book-ilcd-2010",
+      "readingId": "rd-ilcd-2010",
+      "locator": "ILCD Handbook 2010 §6.4 (pp. 59–69, Table 4, Provisions 6.4)",
+      "summary": "ILCD 2010 规定功能单位须明确四要素（做什么、做多少、做到何种质量、持续多久），以必备属性与定位属性区分强制与附加特征；表 4 室外墙漆算例给出十年期内溶剂型漆 A 参考流 6.5 l（含 5 年重涂与注 39 条件）与水性漆 B 参考流 3.8 l；非特定用途材料（如 1 kg 钢卷）采用声明单位并明言其非功能单位。",
+      "numericFacts": [
+        {
+          "id": "nf-fr173-ilcd-paint-a",
+          "quantity": "ILCD 表 4 室外墙漆 A（溶剂型）十年期参考流",
+          "value": "6.5",
+          "unit": "l",
+          "basis": "ILCD 2010 Table 4（两遍涂刷并含第 5 年重涂，注 39）",
+          "subject": "ILCD 2010 表 4 溶剂型室外墙漆 A"
+        },
+        {
+          "id": "nf-fr173-ilcd-paint-b",
+          "quantity": "ILCD 表 4 室外墙漆 B（水性）十年期参考流",
+          "value": "3.8",
+          "unit": "l",
+          "basis": "ILCD 2010 Table 4（一遍涂刷、维持 10 年）",
+          "subject": "ILCD 2010 表 4 水性室外墙漆 B"
+        }
+      ],
+      "passageId": "psg-fr173-ilcd-fu"
+    },
+    {
+      "id": "ev-fr173-pef-fu",
+      "sourceId": "src-kb44-ec2021",
+      "readingId": "rd-kb44-ec2021",
+      "locator": "Commission Recommendation (EU) 2021/2279 OJ L 471 Annex I §1 (L 471/220) & §3.2.1 (L 471/225)",
+      "summary": "欧盟 PEF 规定功能单位四要素并给出装饰漆示例（1 m² 基层、持续 50 年、遮盖力不低于 98%）；规定寿命期内产品数量原则上向上取整，强制披露并论证未纳入功能单位的主观或非量化属性，中间产品采用声明单位，且跨产品比较与比较断言仅在遵循适用 PEFCR 时允许。",
+      "numericFacts": [
+        {
+          "id": "nf-fr173-pef-paint-duration",
+          "quantity": "欧盟 PEF 装饰漆功能单位示例持续时长",
+          "value": "50",
+          "unit": "年",
+          "basis": "OJ L 471 Annex I §3.2.1（建筑使用寿命 50 年）",
+          "subject": "欧盟 PEF 2021/2279 装饰漆功能单位示例"
+        },
+        {
+          "id": "nf-fr173-pef-paint-opacity",
+          "quantity": "欧盟 PEF 装饰漆功能单位示例最低遮盖力",
+          "value": "98",
+          "unit": "%",
+          "basis": "OJ L 471 Annex I §3.2.1（minimum 98% opacity）",
+          "subject": "欧盟 PEF 2021/2279 装饰漆功能单位示例"
+        }
+      ],
+      "passageId": "psg-fr173-pef-fu"
+    },
+    {
+      "id": "ev-fr173-ghgp-fu",
+      "sourceId": "src-pfr151-ghgp-2011",
+      "readingId": "rd-pfr151-ghgp-2011",
+      "locator": "GHG Protocol Product Standard 2011 Ch. 6 (pp. [27]–[31]), §7.3.7 (pp. [44]–[45]), Appendix A (pp. [115]–[116])",
+      "summary": "GHG Protocol 产品标准以“分析单位”统摄两类对象：最终产品须以功能单位为分析单位，用途未定的中间产品直接以参考流为分析单位并可采用摇篮到大门边界；附录 A 明言按现状仅支持同产品绩效追踪、不支持 ISO 14044 比较断言。",
+      "passageId": "psg-fr173-ghgp-fu"
+    },
+    {
+      "id": "ev-fr173-ecoinvent-refprod",
+      "sourceId": "src-dapp147-ecoinvent-v3-2013",
+      "readingId": "rd-dapp147-ecoinvent-v3-2013",
+      "locator": "Weidema et al. 2013 (ecoinvent v3 DQG) Ch. 3, §4.1.2, §14.1–14.3, Glossary",
+      "summary": "ecoinvent 第三版数据质量导则在单元过程活动层将需求变化驱动活动规模的产物定义为参考产品（即决定性产品），废物处理服务以负物理参考产品表示，而将下游服务层功能单位等价判断留给具体研究。",
+      "passageId": "psg-fr173-ecoinvent-refprod"
     }
   ],
   "claims": [
@@ -83326,6 +83394,259 @@
         }
       ],
       "reasoning": "依据 Ekvall & Weidema（2004）、ILCD 2010、Weidema 等（2013）与 Vandepaer 等（2019）明确披露现实响应事后实证缺口、A/B 实践临界点共识缺位、数据库实现缺陷与未精读文献边界。"
+    },
+    {
+      "id": "cl-fr173-shared-core",
+      "text": "把国际参考生命周期数据系统（ILCD）、欧盟产品环境足迹（PEF）、温室气体核算体系（GHG Protocol）产品标准与 ecoinvent 第三版数据质量导则放在一起对照，四套体系都承认比较不同方案前必须先固定可核对的计量基准，并把“要交付的服务”同“实现该服务所需的物理产品量”分开。但这种共识主要停留在四要素（做什么、做多少、做到何种质量、持续多久）已明确且边界同构的最终产品比较中；一旦涉及活动层数据建模、用途未定的中间产品、寿命换算取整或公开比较断言，四套体系的分工与门槛就会显著分化。",
+      "kind": "synthesis",
+      "scope": "ILCD、PEF、GHG Protocol 与 ecoinvent 第三版在功能参照上的共同前提与分化起点",
+      "evidenceIds": [
+        "ev-fr173-ilcd-fu",
+        "ev-fr173-pef-fu",
+        "ev-fr173-ghgp-fu",
+        "ev-fr173-ecoinvent-refprod"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-fr173-ilcd-fu",
+          "relation": "supports",
+          "rationale": "ILCD §6.4 区分四要素功能单位与参考流。"
+        },
+        {
+          "evidenceId": "ev-fr173-pef-fu",
+          "relation": "supports",
+          "rationale": "PEF Annex I §3.2.1 沿用四要素并区分功能单位与参考流。"
+        },
+        {
+          "evidenceId": "ev-fr173-ghgp-fu",
+          "relation": "supports",
+          "rationale": "GHG Protocol 第 6 章区分分析单位（含功能单位）与参考流。"
+        },
+        {
+          "evidenceId": "ev-fr173-ecoinvent-refprod",
+          "relation": "supports",
+          "rationale": "ecoinvent 第三版区分活动层参考产品与研究层功能单位。"
+        }
+      ],
+      "premiseIds": [
+        "cl-fu-distinction",
+        "cl-book-record-model-limit",
+        "cl-book-comparison-more"
+      ],
+      "caveats": [],
+      "conceptIds": [
+        "cn-fu",
+        "cn-reference-flow"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-20",
+      "reviewKind": "agent-source-check",
+      "reasoning": "依据四份官方原件条款对照功能单位与参考流的共同起点和分化条件。"
+    },
+    {
+      "id": "cl-fr173-layer-split",
+      "text": "第一项结构分歧在于参照所处的层级不同。ILCD、PEF 与 GHG Protocol 都在研究层界定面向最终服务的功能单位与参考流；ecoinvent 第三版数据质量导则则立足单元过程活动层，并不为下游研究规定统一的功能单位，而是把“需求变化会直接驱动该活动产出规模的产物”界定为参考产品（亦即后果建模中的决定性产品），并把废物处理活动的处理服务记作接收物料的负物理参考产品。因此，数据库里的参考产品单位只回答“单道过程按什么计量与连接”，不能直接等同于跨方案比较所需的服务功能单位。",
+      "kind": "synthesis",
+      "scope": "研究层功能单位与 ecoinvent 第三版活动层决定性参考产品的层级分工",
+      "evidenceIds": [
+        "ev-fr173-ecoinvent-refprod",
+        "ev-fr173-ilcd-fu"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-fr173-ecoinvent-refprod",
+          "relation": "supports",
+          "rationale": "Weidema et al. 2013 §4.1.2 与词汇表将参考产品界定为决定性产品，处理服务记为负参考产品。"
+        },
+        {
+          "evidenceId": "ev-fr173-ilcd-fu",
+          "relation": "supports",
+          "rationale": "ILCD §6.4 在研究层界定服务导向的功能单位与参考流。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ilcd-quant-ref",
+        "cl-book-record-model-limit",
+        "cl-fr173-shared-core"
+      ],
+      "caveats": [],
+      "conceptIds": [
+        "cn-fu",
+        "cn-reference-flow"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-20",
+      "reviewKind": "agent-source-check",
+      "reasoning": "按原件区分单元过程决定性参考产品与研究层服务功能单位的层级边界。"
+    },
+    {
+      "id": "cl-fr173-intermediate-unit",
+      "text": "第二项分歧出现在用途尚未确定的中间产品上。面对可进入多种下游用途的半成品或材料，ILCD（如 1 kg 钢卷）与 PEF 均采用“声明单位”并辅以技术规格说明，且 ILCD 在第 6.4 节条款中明确指出声明单位不是功能单位，只能用于比较生产同一材料的不同工艺路线，不能拿不同材料的单位质量直接比较优劣。GHG Protocol 产品标准则不使用“声明单位”一词，而是引入上位概念“分析单位”：最终产品须以功能单位为分析单位，下游功能未定的中间产品直接以参考流为分析单位，并在摇篮到大门边界下如实披露所排除的使用与生命末期阶段。",
+      "kind": "synthesis",
+      "scope": "ILCD、PEF 的声明单位与 GHG Protocol 中间产品参考流分析单位的口径分歧",
+      "evidenceIds": [
+        "ev-fr173-ilcd-fu",
+        "ev-fr173-pef-fu",
+        "ev-fr173-ghgp-fu"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-fr173-ilcd-fu",
+          "relation": "supports",
+          "rationale": "ILCD §6.4.2、§6.4.6 与 Provisions 6.4 VII.a 规定声明单位非功能单位及材料比较边界。"
+        },
+        {
+          "evidenceId": "ev-fr173-pef-fu",
+          "relation": "supports",
+          "rationale": "PEF Annex I §3.2.1 规定中间产品可采用声明单位，此时参考流可与功能单位一致。"
+        },
+        {
+          "evidenceId": "ev-fr173-ghgp-fu",
+          "relation": "supports",
+          "rationale": "GHG Protocol §§6.1–6.2、§6.3.3 与 §7.3.7 对中间产品直接以参考流为分析单位并允许摇篮到大门边界。"
+        }
+      ],
+      "premiseIds": [
+        "cl-book-record-model-limit",
+        "cl-fr173-shared-core"
+      ],
+      "caveats": [],
+      "conceptIds": [
+        "cn-fu",
+        "cn-reference-flow"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-20",
+      "reviewKind": "agent-source-check",
+      "reasoning": "对照三份标准对中间产品声明单位、分析单位与摇篮到大门边界的具体规定。"
+    },
+    {
+      "id": "cl-fr173-conversion-and-attributes",
+      "text": "第三项分歧落在服务到参考流的换算规则与非功能属性处理上。ILCD 通过“必备属性”与“定位属性”把必须满足的技术与法规要求同舒适、外观等市场特征分开，并在表 4 室外墙漆算例中展示：同一十年防护服务下，需两遍涂刷且五年后重涂的溶剂型漆 A 需要参考流 6.5 l（同时在注 39 提示旧漆清除与未来涂装条件），而一遍涂刷可维持十年的水性漆 B 仅需 3.8 l。欧盟 PEF 则以装饰漆（保护并装饰 1 m² 基层、持续 50 年、最低遮盖力 98%）示范四要素，并进一步立下两项硬性约束：满足规定寿命所需的产品数量原则上向上取整（除非有正当理由），且任何未能纳入功能单位的主观或非量化属性都必须公开披露并说明理由。",
+      "kind": "synthesis",
+      "scope": "ILCD 必备/定位属性及表 4 换算与 PEF 向上取整及未涵盖属性强制披露的比较",
+      "evidenceIds": [
+        "ev-fr173-ilcd-fu",
+        "ev-fr173-pef-fu"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-fr173-ilcd-fu",
+          "relation": "supports",
+          "rationale": "ILCD §6.4.4 与表 4 给出必备/定位属性区分及 6.5 l 对 3.8 l 参考流换算。"
+        },
+        {
+          "evidenceId": "ev-fr173-pef-fu",
+          "relation": "supports",
+          "rationale": "PEF Annex I §3.2.1 规定 1 m² / 50 年 / 98% 遮盖力示例、向上取整规则与未涵盖属性披露。"
+        }
+      ],
+      "premiseIds": [
+        "cl-fu-example",
+        "cl-book-maintenance-condition",
+        "cl-fr173-shared-core"
+      ],
+      "caveats": [],
+      "conceptIds": [
+        "cn-fu",
+        "cn-reference-flow"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-20",
+      "reviewKind": "agent-source-check",
+      "reasoning": "按 ILCD 表 4 与 PEF Annex I §3.2.1 原文逐项核对换算数字、取整规则与非功能属性要求。"
+    },
+    {
+      "id": "cl-fr173-comparability-gates",
+      "text": "第四项分歧关乎固定功能单位之后能否作出公开比较断言。即使两个方案已按同一四要素折算参考流，不同体系赋予结果的使用权限仍然大不相同：欧盟 PEF 在附录一第 1 节规定，只有严格依据适用的产品环境足迹类别规则（PEFCR）开展的研究，才允许进行跨产品比较与公开比较断言；GHG Protocol 产品标准则在附录 A 中明言，该标准按现状仅支持同一产品跨时期的纵向绩效追踪，不支持 ISO 14044 意义上的跨产品比较断言，若要比较不同产品须另满足附加产品规则、等效边界与第三方核证；ILCD 则要求比较研究除对齐功能单位外，还须同步核验情景、寿命、维护、数据质量与建模一致性。",
+      "kind": "synthesis",
+      "scope": "PEF、GHG Protocol 与 ILCD 在跨产品比较与公开比较断言资格上的门槛分歧",
+      "evidenceIds": [
+        "ev-fr173-pef-fu",
+        "ev-fr173-ghgp-fu",
+        "ev-fr173-ilcd-fu"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-fr173-pef-fu",
+          "relation": "supports",
+          "rationale": "PEF Annex I §1 要求比较与比较断言须依据适用 PEFCR。"
+        },
+        {
+          "evidenceId": "ev-fr173-ghgp-fu",
+          "relation": "supports",
+          "rationale": "GHG Protocol Appendix A 明言按现状仅支持绩效追踪、不支持 ISO 14044 比较断言。"
+        },
+        {
+          "evidenceId": "ev-fr173-ilcd-fu",
+          "relation": "supports",
+          "rationale": "ILCD §6.4.7（指向 §6.10）与 Provisions 6.4 IX 规定比较研究的功能单位与一致性要求。"
+        }
+      ],
+      "premiseIds": [
+        "cl-book-comparison-more",
+        "cl-fr173-shared-core",
+        "cl-fr173-conversion-and-attributes"
+      ],
+      "caveats": [],
+      "conceptIds": [
+        "cn-fu",
+        "cn-reference-flow"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-20",
+      "reviewKind": "agent-source-check",
+      "reasoning": "对照三份官方标准对跨产品比较与公开比较断言的明确准入条件。"
+    },
+    {
+      "id": "cl-fr173-epistemic-limits",
+      "text": "上述对照也标明了功能参照的认识边界：标准条款只能规定功能单位、声明单位或参考产品的书写格式与合格门槛，无法替代具体产品的实测服役寿命、老化衰减、用户实际使用频率与非功能替代偏好的经验证据。把按某一体系折算出的参考流、取整数量或活动层参考产品直接当成真实市场中的等效替代，仍须另行核验工程与使用阶段的实证资料；此外，受版权与付费授权保护的 ISO 14040 与 ISO 14044 原文条款在公开文献核对中不作逐句转引，其具体要求仍须以正式授权文本为准。",
+      "kind": "synthesis",
+      "scope": "功能参照跨体系比较的实证局限与付费标准引用边界",
+      "evidenceIds": [
+        "ev-fr173-ilcd-fu",
+        "ev-fr173-pef-fu",
+        "ev-fr173-ghgp-fu",
+        "ev-fr173-ecoinvent-refprod"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-fr173-ilcd-fu",
+          "relation": "supports",
+          "rationale": "ILCD §6.4.3–6.4.4 提示老化、主观感知与直接产品属性需另行核验。"
+        },
+        {
+          "evidenceId": "ev-fr173-pef-fu",
+          "relation": "supports",
+          "rationale": "PEF Annex I §3.2.1 要求披露未纳入功能单位的主观或非量化方面。"
+        },
+        {
+          "evidenceId": "ev-fr173-ghgp-fu",
+          "relation": "supports",
+          "rationale": "GHG Protocol Appendix A 明确仅靠标准文本不足以支撑跨产品比较断言。"
+        },
+        {
+          "evidenceId": "ev-fr173-ecoinvent-refprod",
+          "relation": "supports",
+          "rationale": "ecoinvent 第三版导则说明活动层参考产品不替代下游服务等价判断。"
+        }
+      ],
+      "premiseIds": [
+        "cl-fr173-shared-core",
+        "cl-fr173-layer-split",
+        "cl-fr173-intermediate-unit",
+        "cl-fr173-conversion-and-attributes",
+        "cl-fr173-comparability-gates"
+      ],
+      "caveats": [],
+      "conceptIds": [
+        "cn-fu",
+        "cn-reference-flow"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-20",
+      "reviewKind": "agent-source-check",
+      "reasoning": "明确区分规范性参照格式与实际服役、用户行为实证证据及付费标准边界。"
     }
   ],
   "concepts": [

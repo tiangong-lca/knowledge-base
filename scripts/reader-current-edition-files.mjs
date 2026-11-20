@@ -1,5 +1,6 @@
 import { selectMarketResponseComparison, prepareMarketResponseComparisonSource, effectiveMarketResponseComparison, verifyMarketResponseComparisonReceipts } from './reader-market-response-comparison.mjs';
 import { selectPart3Reread, preparePart3RereadSource, effectivePart3Reread, verifyPart3RereadReceipts } from './reader-part3-reread.mjs';
+import { selectFunctionalReferenceComparison, prepareFunctionalReferenceComparisonSource, effectiveFunctionalReferenceComparison, verifyFunctionalReferenceComparisonReceipts } from './reader-functional-reference-comparison.mjs';
 import { selectPart7Reread, preparePart7RereadSource, effectivePart7Reread, verifyPart7RereadReceipts } from './reader-part7-reread.mjs';
 import { selectRevisableJudgment, prepareRevisableJudgmentSource, effectiveRevisableJudgment, verifyRevisableJudgmentReceipts } from './reader-revisable-judgment.mjs';
 import { selectFutureScenarios, prepareFutureScenariosSource, effectiveFutureScenarios, verifyFutureScenariosReceipts } from './reader-future-scenarios.mjs';
@@ -80,6 +81,9 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const part3Config = await readConfig('reader-part3-reread.json');
   const part3Reread = selectPart3Reread(part3Config, undefined, preview === 'part3-reread');
   if (preview === 'part3-reread' && part3Config.status !== 'preview') throw new Error('Part III continuous reread review requires a private preview state');
+  const frConfig = await readConfig('reader-functional-reference-comparison.json');
+  const functionalReferenceComparison = selectFunctionalReferenceComparison(frConfig, undefined, preview === 'functional-reference-comparison');
+  if (preview === 'functional-reference-comparison' && frConfig.status !== 'preview') throw new Error('Functional reference comparison review requires a private preview state');
   const revConfig = await readConfig('reader-revisable-judgment.json');
   const revisableJudgment = selectRevisableJudgment(revConfig, undefined, preview === 'revisable-judgment');
   if (preview === 'part7-reread' && part7Config.status !== 'preview') throw new Error('Part VII continuous reread review requires a private preview state');
@@ -177,6 +181,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (loadShift && !substitutionRules) throw new Error('Load shift requires the accepted #105 generation');
   if (circularFootprint && !loadShift) throw new Error('Circular footprint requires the accepted #107 generation');
   if (landRecovery && !circularFootprint) throw new Error('Land recovery requires the accepted #109 generation');
+  if (functionalReferenceComparison && !part3Reread) throw new Error('Functional reference comparison requires the accepted #171 generation');
   if (part3Reread && !marketResponseComparison) throw new Error('Part III continuous reread requires the accepted #169 generation');
   if (marketResponseComparison && !part7Reread) throw new Error('Market response comparison requires the accepted #165 generation');
   if (part7Reread && !revisableJudgment) throw new Error('Part VII continuous reread requires the accepted #163 generation');
@@ -207,7 +212,7 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   if (acidEquivalents && !landRecovery) throw new Error('Acid equivalents requires the accepted #111 generation');
   for (const [path, bytes] of await readLoadShiftCaseFiles(root, loadShift)) files.set(path, bytes);
   for (const [path, bytes] of await readServiceConstraintsFiles(root, serviceConstraints)) files.set(path, bytes);
-  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison, waterScarcity, biogenicCarbon, eutrophicationPathways, particulateComparison, part4Reread, weightingValuation, localizationComparison, socialComparison, costSustainability, part5Reread, dataApplicabilityComparison, uncertaintyComparison, productFootprintComparison, dataQualityComparison, part6Reread, wallServiceComparison, interpretationBags, futureScenarios, revisableJudgment, part7Reread, marketResponseComparison, part3Reread].filter(Boolean)];
+  const reviewUnits = [...acceptance.units, ...[unit, flowBoundary, serviceConstraints, substitutionRules, loadShift, circularFootprint, landRecovery, acidEquivalents, mineralResources, fossilResources, photochemicalOzone, ozoneRadiation, toxicityComparison, waterScarcity, biogenicCarbon, eutrophicationPathways, particulateComparison, part4Reread, weightingValuation, localizationComparison, socialComparison, costSustainability, part5Reread, dataApplicabilityComparison, uncertaintyComparison, productFootprintComparison, dataQualityComparison, part6Reread, wallServiceComparison, interpretationBags, futureScenarios, revisableJudgment, part7Reread, marketResponseComparison, part3Reread, functionalReferenceComparison].filter(Boolean)];
   const realRoot = await realpath(root);
   const reviewFiles = new Set((reviewUnits ?? []).flatMap(unit =>
     (unit.reviewEvidence ?? []).flatMap(row => [row.reportFile, row.artifactFile])));
@@ -222,8 +227,10 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const input = { catalog, readings, literature, files };
   const actual = inspectReadableBookEdition(input);
   const structure = copyeditSourceStructure(input);
-  const part3 = part3Reread && preparePart3RereadSource(part3Reread, input, actual, structure);
-  const part3Input = part3 ? { ...part3.previousRecords, files: part3.files } : input;
+  const fr = functionalReferenceComparison && prepareFunctionalReferenceComparisonSource(functionalReferenceComparison, input, actual, structure);
+  const frInput = fr ? { ...fr.previousRecords, files: fr.files } : input;
+  const part3 = part3Reread && preparePart3RereadSource(part3Reread, frInput, fr?.previous ?? actual, fr?.structure ?? structure);
+  const part3Input = part3 ? { ...part3.previousRecords, files: part3.files } : frInput;
   const mkt = marketResponseComparison && prepareMarketResponseComparisonSource(marketResponseComparison, part3Input, part3?.previous ?? actual, part3?.structure ?? structure);
   const mktInput = mkt ? { ...mkt.previousRecords, files: mkt.files } : part3Input;
   const part7 = part7Reread && preparePart7RereadSource(part7Reread, mktInput, mkt?.previous ?? actual, mkt?.structure ?? structure);
@@ -463,9 +470,14 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
     if (!verifyFutureScenariosReceipts(futureScenarios, artifacts, readerPublicDownloads(revInput.catalog, revInput.literature, revInput.readings)))
       throw new Error('Future technology & scenarios comparison lacks exact independent source, reader, and output evidence');
   }
+  if (functionalReferenceComparison && preview !== 'functional-reference-comparison') {
+    const { readerPublicDownloads } = await import('./reader-current-output.mjs');
+    if (!verifyFunctionalReferenceComparisonReceipts(functionalReferenceComparison, artifacts, readerPublicDownloads(catalog, literature, readings)))
+      throw new Error('Functional reference comparison lacks exact independent source, reader, and output evidence');
+  }
   if (part3Reread && preview !== 'part3-reread') {
     const { readerPublicDownloads } = await import('./reader-current-output.mjs');
-    if (!verifyPart3RereadReceipts(part3Reread, artifacts, readerPublicDownloads(catalog, literature, readings)))
+    if (!verifyPart3RereadReceipts(part3Reread, artifacts, readerPublicDownloads(frInput.catalog, frInput.literature, frInput.readings)))
       throw new Error('Part III continuous reread lacks exact independent source, reader, and output evidence');
   }
   if (marketResponseComparison && preview !== 'market-response-comparison') {
@@ -538,7 +550,8 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
   const qualifiedRev = effectiveRevisableJudgment(qualifiedFut, revisableJudgment, rev?.affectedClaimIds);
   const qualifiedPart7 = effectivePart7Reread(qualifiedRev, part7Reread, part7?.affectedClaimIds);
   const qualifiedMkt = effectiveMarketResponseComparison(qualifiedPart7, marketResponseComparison, mkt?.affectedClaimIds);
-  return effectivePart3Reread(qualifiedMkt, part3Reread, part3?.affectedClaimIds);
+  const qualifiedPart3 = effectivePart3Reread(qualifiedMkt, part3Reread, part3?.affectedClaimIds);
+  return effectiveFunctionalReferenceComparison(qualifiedPart3, functionalReferenceComparison, fr?.affectedClaimIds);
 }
 
 export function validateReadableBookCurrent(root, catalog, readings, literature) {
@@ -740,4 +753,10 @@ export function validatePart3RereadReviewSources(root, catalog, readings, litera
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Part III continuous reread review requires the explicit private preview');
   return qualifyCurrentReaderSources(root, catalog, readings, literature, 'part3-reread');
+}
+
+export function validateFunctionalReferenceComparisonReviewSources(root, catalog, readings, literature) {
+  if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
+    throw new Error('Functional reference comparison review requires the explicit private preview');
+  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'functional-reference-comparison');
 }

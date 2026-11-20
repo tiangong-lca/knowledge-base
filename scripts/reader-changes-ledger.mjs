@@ -22,6 +22,7 @@ import {
   currentPart4Reread,
   currentPart5Reread,
   currentPart6Reread,
+  currentFunctionalReferenceComparison,
   currentMarketResponseComparison,
   currentPart3Reread,
   currentPart7Reread,
@@ -105,6 +106,7 @@ function summarizeUnit(unit, fallbackSource = null) {
  */
 export function buildPublicChangesLedger() {
   const orderedUnits = [
+    summarizeUnit(currentFunctionalReferenceComparison),
     summarizeUnit(currentPart3Reread),
     summarizeUnit(currentMarketResponseComparison),
     summarizeUnit(currentPart7Reread),

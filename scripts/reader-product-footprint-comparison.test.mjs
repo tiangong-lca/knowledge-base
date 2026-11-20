@@ -3,9 +3,11 @@ import fs from 'node:fs/promises';
 import test from 'node:test';
 import mkt from '../config/reader-market-response-comparison.json' with { type: 'json' };
 import part3 from '../config/reader-part3-reread.json' with { type: 'json' };
+import fr from '../config/reader-functional-reference-comparison.json' with { type: 'json' };
 import part7 from '../config/reader-part7-reread.json' with { type: 'json' };
 import { restoreMarketResponseComparisonTestFiles } from './reader-market-response-comparison.mjs';
 import { restorePart3RereadTestFiles } from './reader-part3-reread.mjs';
+import { restoreFunctionalReferenceComparisonTestFiles } from './reader-functional-reference-comparison.mjs';
 import { restorePart7RereadTestFiles } from './reader-part7-reread.mjs';
 import rev from '../config/reader-revisable-judgment.json' with { type: 'json' };
 import { restoreRevisableJudgmentTestFiles } from './reader-revisable-judgment.mjs';
@@ -52,7 +54,7 @@ async function loadInput() {
     readServiceConstraintsFiles('.', service.unit),
   ]);
   for (const [p, b] of [...shiftFiles, ...serviceFiles]) files.set(p, b);
-  restoreMarketResponseComparisonTestFiles(restorePart3RereadTestFiles(files, part3.unit), mkt.unit);
+  restoreMarketResponseComparisonTestFiles(restorePart3RereadTestFiles(restoreFunctionalReferenceComparisonTestFiles(files, fr.unit), part3.unit), mkt.unit);
   restorePart7RereadTestFiles(files, part7.unit);
   restoreRevisableJudgmentTestFiles(files, rev.unit);
   restoreFutureScenariosTestFiles(files, fut.unit);
@@ -60,7 +62,7 @@ async function loadInput() {
   restoreWallServiceComparisonTestFiles(files, wsc.unit);
   restorePart6RereadTestFiles(files, part6.unit);
   restoreDataQualityComparisonTestFiles(files, dqp.unit);
-  const prev151 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, part3.unit), mkt.unit), part7.unit), rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit);
+  const prev151 = previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords(previousScientificTestRecords({ catalog, readings, literature }, fr.unit), part3.unit), mkt.unit), part7.unit), rev.unit), fut.unit), intBags.unit), wsc.unit), part6.unit), dqp.unit);
   return { ...prev151, files };
 }
 
