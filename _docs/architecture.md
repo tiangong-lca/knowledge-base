@@ -17,10 +17,18 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-21
-lastReviewedCommit: b1629d01b7f4b0ee5b91d291c6c46ef585c5c4cc
+lastReviewedCommit: d139cbc47481f9b819cd71d5f17ac2903ce8ba58
 ---
 
 # Publication architecture
+
+## Checkpoint collapse and post-checkpoint revisions (`#192`)
+
+Per the user's 2026-11-21 decision (option C), HEAD validation (`validateReadableBookCurrent` in `scripts/reader-current-edition-files.mjs`) delegates to `qualifyCheckpointSources` (`scripts/reader-checkpoint.mjs`). Instead of replaying the 41-unit historical rollback chain on every `validate`, `next build` and `export` invocation, HEAD reverses only declared post-checkpoint revisions (`config/revisions/index.json` + `scripts/reader-revisions.mjs`) and asserts that the recovered source state matches the digest-pinned checkpoint (`config/readable-book-checkpoint.json`, commit `fff371413af1436a9e7802831c349a583bfa41b6`, state digest `4ca4fcd1...`).
+
+The complete 41-unit pre-checkpoint chain remains intact in `qualifyHistoricalReaderSources` and is verified independently against the byte-pinned snapshot (`scripts/fixtures/checkpoint-2026-11-21/`) via `node scripts/verify-checkpoint-history.mjs` (enforced as a dedicated step in `.github/workflows/validate.yml`). The 36 historical unit test suites read their starting state from `checkpointInput()` (`scripts/reader-checkpoint-input.mjs`) rather than HEAD so future chapter rewrites do not require editing historical tests.
+
+Declarative claim retirement (`op: "retire"` in `config/revisions/*.json`) restores retired records on inverse rollback, retargets historical web and `/print` note anchors symmetrically in `lib/reader-book.ts` and `scripts/reader-surface.mjs` via `applyClaimRetirementsToCitations`, and surfaces post-checkpoint revisions and retirements on `/changes/`. See `_docs/runbooks/post-checkpoint-revisions.md`.
 
 ## Ordinary CI source-validation entrypoints
 

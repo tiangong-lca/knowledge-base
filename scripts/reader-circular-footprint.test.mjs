@@ -1,3 +1,5 @@
+import { checkpointInput, checkpointInputSync } from './reader-checkpoint-input.mjs';
+const { catalog, readings, literature } = checkpointInputSync();
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import config from '../config/reader-circular-footprint.json' with { type: 'json' };
@@ -35,9 +37,6 @@ import ozrad from '../config/reader-ozone-radiation.json' with { type: 'json' };
 import ozone from '../config/reader-photochemical-ozone.json' with { type: 'json' };
 import fossils from '../config/reader-fossil-resources.json' with { type: 'json' };
 import minerals from '../config/reader-mineral-resources.json' with { type: 'json' };
-import catalog from '../knowledge/catalog.json' with { type: 'json' };
-import literature from '../knowledge/research/literature-map.json' with { type: 'json' };
-import readings from '../knowledge/research/readings.json' with { type: 'json' };
 import { editionDigest } from './reader-current-edition.mjs';
 import { readerPublicDownloads } from './reader-current-output.mjs';
 import { verifyCircularFootprintReceipts } from './reader-circular-footprint.mjs';

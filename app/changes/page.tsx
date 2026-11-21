@@ -12,6 +12,8 @@ export default function Page() {
   const iterations = ledger.iterations.filter((item): item is NonNullable<typeof item> => Boolean(item));
   const corrections = ledger.corrections;
   const partIntroductions = ledger.partIntroductions.filter((item): item is NonNullable<typeof item> => Boolean(item));
+  const revisions = ledger.revisions ?? [];
+  const retirements = ledger.retirements ?? [];
   return <PublicationShell title="版本与勘误" description="《生命周期评价的前世今生》的在线文本、修订清单与勘误入口。">
     <h2>在线文本</h2>
     <p>引用网页时，请记录篇名、网址和访问日期；引用原始研究时，以章末注释列明的作品与版本为准。历史指南的年份与方法版本，是其解释范围的一部分。为保持正文与打印版连续洁净，各轮修订说明与历史版本追踪统一汇总于本页，不再嵌入正文章节阅读流。</p>
@@ -20,6 +22,33 @@ export default function Page() {
     <p>如发现引文、算式或论述存在问题，可提供篇名、相关段落与原始出处，<a href={identity.errataUrl}>提出勘误或补充证据</a>。第三方文献的更正需要同时辨认原版和更正版本；不能只改一个数字而丢失它的来源。</p>
     <PublicationNote />
     <section data-reader-changes-ledger="">
+      {revisions.length > 0 && <>
+        <h2>整合修订记录（共 {revisions.length} 项）</h2>
+        <ul>
+          {revisions.map(rev => <li key={rev.id} data-changes-revision={rev.id}>
+            <p>
+              <strong><time dateTime={rev.date}>{rev.date}</time> · {rev.title}</strong>
+              {rev.routeLabels.length > 0 && <> · 涉及：{rev.routeLabels.join('、')}</>}
+              {rev.sourceHref && <> · <a href={rev.sourceHref}>查看前版源文件</a></>}
+            </p>
+            <p>{rev.rationale}</p>
+          </li>)}
+        </ul>
+      </>}
+
+      {retirements.length > 0 && <>
+        <h2>已合并或退役的旧论述（共 {retirements.length} 项）</h2>
+        <ul>
+          {retirements.map(ret => <li key={`${ret.revisionId}-${ret.id}`} data-changes-retirement={ret.id}>
+            <strong><time dateTime={ret.date}>{ret.date}</time></strong>
+            {ret.routeLabels.length > 0 && <> · {ret.routeLabels.join('、')}</>}
+            {'：'}
+            {ret.rationale}
+            {ret.sourceHref && <> <a href={ret.sourceHref}>查看前版源文件</a></>}
+          </li>)}
+        </ul>
+      </>}
+
       <h2>已发布迭代修订清单（共 {iterations.length} 轮）</h2>
       <p>以下记录由仓库受控版本账本自动汇总，按时间倒序列明各轮审定更新的涉及篇章、修订概要与对应前版源码链接。</p>
       <ul>
@@ -44,8 +73,7 @@ export default function Page() {
             : <a href={`/print/#${printUnitAnchor(row.chapter)}`}>{row.chapterTitle}</a>}
           {'：'}
           {row.scope}
-          {' '}
-          <a href={row.sourceHref}>查看前版源文件</a>
+          {row.sourceHref && <> <a href={row.sourceHref}>查看前版源文件</a></>}
         </li>)}
       </ul>
 

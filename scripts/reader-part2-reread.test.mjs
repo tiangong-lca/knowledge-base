@@ -1,3 +1,4 @@
+import { checkpointInput } from './reader-checkpoint-input.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import test from 'node:test';
@@ -50,12 +51,12 @@ test('preparePart2RereadSource recovers exact 3034503f predecessor state and ver
   const unit = selectPart2Reread(part2Config, part2RereadUnitPin, preview);
   if (!unit) return;
   const [files, shiftFiles, serviceFiles, catalog, readings, literature] = await Promise.all([
-    readReadableBookHistoryFiles(root, baseline.fixedFiles),
+    checkpointInput().then(x => x.files),
     readLoadShiftCaseFiles(root, loadShiftConfig.unit),
     readServiceConstraintsFiles(root, serviceConfig.unit),
-    fs.readFile('knowledge/catalog.json', 'utf8').then(JSON.parse),
-    fs.readFile('knowledge/research/readings.json', 'utf8').then(JSON.parse),
-    fs.readFile('knowledge/research/literature-map.json', 'utf8').then(JSON.parse),
+    checkpointInput().then(x => x.catalog),
+    checkpointInput().then(x => x.readings),
+    checkpointInput().then(x => x.literature),
   ]);
   for (const [p, b] of shiftFiles) files.set(p, b);
   for (const [p, b] of serviceFiles) files.set(p, b);

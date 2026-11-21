@@ -1,3 +1,5 @@
+import { checkpointInput, checkpointInputSync } from './reader-checkpoint-input.mjs';
+const { catalog, readings, literature } = checkpointInputSync();
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import { join } from 'node:path';
@@ -38,9 +40,6 @@ import { restoreDataQualityComparisonTestFiles } from './reader-data-quality-com
 import pfr from '../config/reader-product-footprint-comparison.json' with { type: 'json' };
 import { restoreProductFootprintComparisonTestFiles } from './reader-product-footprint-comparison.mjs';
 import config from '../config/reader-uncertainty-comparison.json' with { type: 'json' };
-import catalog from '../knowledge/catalog.json' with { type: 'json' };
-import literature from '../knowledge/research/literature-map.json' with { type: 'json' };
-import readings from '../knowledge/research/readings.json' with { type: 'json' };
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { inspectReadableBookEdition } from './reader-current-edition.mjs';
 import { readReadableBookHistoryFiles } from './reader-current-edition-files.mjs';
@@ -64,7 +63,7 @@ const previewMode = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1';
 
 async function loadInput() {
   const [files, shiftFiles, serviceFiles] = await Promise.all([
-    readReadableBookHistoryFiles(root, baseline.fixedFiles),
+    checkpointInput().then(x => x.files),
     readLoadShiftCaseFiles(root, loadShift.unit),
     readServiceConstraintsFiles(root, service.unit),
   ]);

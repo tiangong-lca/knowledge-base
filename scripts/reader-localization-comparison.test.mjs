@@ -1,3 +1,5 @@
+import { checkpointInput, checkpointInputSync } from './reader-checkpoint-input.mjs';
+const { catalog, readings, literature } = checkpointInputSync();
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import test from 'node:test';
@@ -50,9 +52,6 @@ import capture from '../config/reader-localization-comparison-capture.json' with
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
 import loadShift from '../config/reader-load-shift.json' with { type: 'json' };
 import service from '../config/reader-service-constraints.json' with { type: 'json' };
-import catalog from '../knowledge/catalog.json' with { type: 'json' };
-import readings from '../knowledge/research/readings.json' with { type: 'json' };
-import literature from '../knowledge/research/literature-map.json' with { type: 'json' };
 import { previousScientificTestRecords, testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
 import { chapterAnchorPrefix, printUnitAnchor } from './reader-book.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
@@ -208,7 +207,7 @@ test('Localization comparison source plan recovers exact cec53208 predecessor an
 
   const root = fileURLToPath(new URL('../', import.meta.url));
   const [files, shiftFiles, serviceFiles] = await Promise.all([
-    readReadableBookHistoryFiles(root, baseline.fixedFiles),
+    checkpointInput().then(x => x.files),
     readLoadShiftCaseFiles(root, loadShift.unit),
     readServiceConstraintsFiles(root, service.unit),
   ]);

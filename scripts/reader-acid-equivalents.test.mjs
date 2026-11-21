@@ -1,3 +1,5 @@
+import { checkpointInput, checkpointInputSync } from './reader-checkpoint-input.mjs';
+const { catalog, readings, literature } = checkpointInputSync();
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
@@ -60,9 +62,6 @@ import ozrad from '../config/reader-ozone-radiation.json' with { type: 'json' };
 import ozone from '../config/reader-photochemical-ozone.json' with { type: 'json' };
 import fossils from '../config/reader-fossil-resources.json' with { type: 'json' };
 import minerals from '../config/reader-mineral-resources.json' with { type: 'json' };
-import catalog from '../knowledge/catalog.json' with { type: 'json' };
-import literature from '../knowledge/research/literature-map.json' with { type: 'json' };
-import readings from '../knowledge/research/readings.json' with { type: 'json' };
 import sourceBaseline from '../config/readable-book-baseline.json' with { type: 'json' };
 import loadShift from '../config/reader-load-shift.json' with { type: 'json' };
 import serviceConstraints from '../config/reader-service-constraints.json' with { type: 'json' };
@@ -109,7 +108,7 @@ test('B16 receipts bind captured raw files, normalized article pairs, public pag
 test('B16 source plan declares every actual transition with its real predecessor', { skip: !config.unit }, async t => {
   const root = fileURLToPath(new URL('../', import.meta.url));
   const [files, shiftFiles, serviceFiles] = await Promise.all([
-    readReadableBookHistoryFiles(root, sourceBaseline.fixedFiles),
+    checkpointInput().then(x => x.files),
     readLoadShiftCaseFiles(root, loadShift.unit),
     readServiceConstraintsFiles(root, serviceConstraints.unit),
   ]);
@@ -212,7 +211,7 @@ test('PM retains the original GLAM reading and accepts only its scoped, exact su
   const { default: accepted } = await import('../config/pm-selection-accepted.json', { with: { type: 'json' } });
   const { default: edition } = await import('../config/book-edition.json', { with: { type: 'json' } });
   const root = fileURLToPath(new URL('../', import.meta.url));
-  const files = await readReadableBookHistoryFiles(root, sourceBaseline.fixedFiles);
+  const files = await checkpointInput().then(x => x.files);
   const sources = new Map([...files].filter(([path]) => /^content\/.+\.mdx?$/.test(path))
     .map(([path, bytes]) => [path.slice(7).replace(/\.mdx?$/, '').replace(/\/index$/, ''), bytes.toString()]));
   const validate = ledger => validatePmSelectionCoverage(edition,sources,catalog,accepted,undefined,{readings:ledger,literature});
