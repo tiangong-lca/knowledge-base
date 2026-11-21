@@ -1,6 +1,6 @@
 ---
-lastReviewedAt: 2026-11-20
-lastReviewedCommit: d4c9993b2ec2e395bba7a86ac6cb7213feccb183
+lastReviewedAt: 2026-11-21
+lastReviewedCommit: fff371413af1436a9e7802831c349a583bfa41b6
 title: Approved LCA book execution and wave ledger
 docType: reference
 scope: repo
@@ -23,6 +23,28 @@ related:
 ---
 
 # Approved book execution
+
+## 2026-11-21 audit of the 2026-11-16–20 GOAL run and integrated-revision rule (`#189`)
+
+**What the 2026-11-16–20 run delivered.** It delivered and root-integrated these units: chapter-level comparative units #115–#131 (Part IV: B14 mineral, fossil, photochemical and stratospheric ozone/radiation, plus B15–B19), #135–#143 (Part V), #147–#153 (Part VI), #157–#163 (Part VII), #169 (B11), #173 (B06), #175 (B09) and #179 (B04). It also delivered part-level passes #133, #145, #155, #165, #171, #177 and #181, the whole-book pass #183, and the Clean Public Delivery rule #166. Source identity, exact locators, hosted-byte qualification and root integration were recorded for each unit, and the Programme #9 checkboxes were correctly left unchecked.
+
+**What the audit found.** Between `ba8a101` and `fff3714`, 179 claims were added and none removed. Of the 945 existing claims, 13 were substantively rewritten (similarity below 0.8). New claims have a median length of 578 characters, against 171 for existing ones, and 113 of the 179 exceed 500 characters. Most new claim ids were appended at the end of each section's `<Prose ids>` list across 27 chapter MDX files. Unit reports presented "0 changes to existing claims", total claim counts and H2 counts as hard acceptance boundaries, contrary to goal §2.8 and the writing guide. The result is better-sourced content that has not been rewritten into one continuous book.
+
+**Reclassification.**
+- #183 is recorded as whole-book **metadata and terminology hygiene**: one introduction link, the Part IV introduction, premise ordering and seven term fixes, with all claims frozen. It is not the continuous whole-book reread required by goal §9.3 and step 6 of the continuation inventory. The comparison-coverage audit, the 42 legacy duties, A01–A12 destinations and stage-edition qualification were not performed.
+- The part-level passes kept the same claim-freezing boundaries. Their navigation, terminology and premise repairs stand, but they do not satisfy the §2.16 continuous-reread requirement.
+- The 2026-11-20 "GOAL complete" statement is superseded. Besides the human-only items, autonomous duties remain open: literature map and coverage matrix, close reading of key originals, V5 biodiversity, V7 industries and A01–A12 destinations.
+
+**User decisions (2026-11-21).**
+1. Integrated revision over appending is adopted as goal §2.16. The same change updates the reader contract, the writing guide, the comparison contract and AGENTS.
+2. The pilot chapter is B14 《中点与终点》. Its integration rewrite goes to the user for review before the rule is rolled out to the other appended chapters.
+3. Deferred until later, without blocking autonomous work: human expert review, real reader trials, purchase of paid standards (e.g. ISO), and disposition of the three historical candidate materials.
+
+**Next order of work.**
+1. B14 integration pilot, then user review.
+2. Integration rewrites of the other chapters that received appended claims during 2026-11-16–20.
+3. A genuine continuous reread of each Part and of the whole book, including the step-6 coverage checks.
+4. Remaining autonomous research.
 
 ## 2026-11-20 Clean Public Delivery & Editorial History Separation (`#166`)
 
