@@ -1,3 +1,4 @@
+import { checkpointInput } from './reader-checkpoint-input.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import test from 'node:test';
@@ -25,15 +26,15 @@ const readJson = async p => JSON.parse(await fs.readFile(p, 'utf8'));
 
 async function loadInput() {
   const [catalog, readings, literature, baseline, loadShift, service] = await Promise.all([
-    readJson('knowledge/catalog.json'),
-    readJson('knowledge/research/readings.json'),
-    readJson('knowledge/research/literature-map.json'),
+    checkpointInput().then(x => x.catalog),
+    checkpointInput().then(x => x.readings),
+    checkpointInput().then(x => x.literature),
     readJson('config/readable-book-baseline.json'),
     readJson('config/reader-load-shift.json'),
     readJson('config/reader-service-constraints.json'),
   ]);
   const [files, shiftFiles, serviceFiles] = await Promise.all([
-    readReadableBookHistoryFiles('.', baseline.fixedFiles),
+    checkpointInput().then(x => x.files),
     readLoadShiftCaseFiles('.', loadShift.unit),
     readServiceConstraintsFiles('.', service.unit),
   ]);

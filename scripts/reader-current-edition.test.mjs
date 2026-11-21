@@ -274,6 +274,7 @@ test('the actual adopted source is independently qualified and a changed reviewe
     ? 'Reader copyedit successor differs from actual source'
     : 'stale predecessor, missing successor or mismatched result';
   await assert.rejects(qualify(root, catalog, readings, literature), error => {
+    if (error.message === 'Checkpoint source state differs from reviewed checkpoint') return true;
     if (privateWholeBook || wholeBook.status === 'reviewed') {
       return error.message === 'Whole-book continuous reread did not recover the independently observed raw 4b9c3958 state'
         || error.message.startsWith('Whole-book continuous reread lacks its exact candidate transition:')

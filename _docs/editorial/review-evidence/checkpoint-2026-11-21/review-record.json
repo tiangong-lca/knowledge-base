@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "unit": "checkpoint-2026-11-21",
+  "date": "2026-11-21",
+  "task": "tiangong-lca/knowledge-base#192",
+  "userAuthorization": "2026-11-21 option C: collapse ~35-unit rollback chain into a reviewed checkpoint while preserving full history and adding claim retirement",
+  "checkpointCommit": "fff371413af1436a9e7802831c349a583bfa41b6",
+  "checkpointTree": "6a4cae50864fe3781df3414f25bc2fe8ab5fd2a1",
+  "stateDigest": "4ca4fcd17ff77fa99d3338f6bde32c218eadb0b97fa4dd18ab6ba08403272eea",
+  "effectivePlanDigest": "112abbcc1b51588dbfb61aa29f9a830dd408ecb8bac41ceb414193e6f1ef1feb",
+  "changesLedgerDigest": "34715822897c9b7291564f81df7d574efdaef770b40ed279ba1939389746e4eb",
+  "snapshotManifestSha256": "04a8f548cc4f231502d7916978697b1fb6d86559e7db08ce7645eca5539b35f0",
+  "historicalUnitCount": 41,
+  "disposition": "accepted",
+  "note": "Checkpoint is a verifiable collapse, not a baseline refresh. Every historical unit remains preserved and independently verifiable via pnpm verify:history; every post-checkpoint change must be declared in config/revisions/."
+}

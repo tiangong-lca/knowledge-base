@@ -40,6 +40,7 @@ import { loadCasePublications } from './case-publication.mjs';
 import { selectServiceConstraints, readServiceConstraintsFiles, prepareServiceConstraintsSource, effectiveServiceConstraints, verifyServiceConstraintsReceipts } from './reader-service-constraints.mjs';
 import { selectFlowBoundary, prepareFlowBoundarySource, effectiveFlowBoundary, verifyFlowBoundaryReceipts } from './reader-flow-boundary.mjs';
 import { flowBoundaryUnitPin, flowBoundaryPredecessorPin } from './reader-flow-boundary-pins.mjs';
+import { existsSync } from 'node:fs';
 import { lstat, readdir, readFile, realpath } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { editionDigest, inspectReadableBookEdition, qualifyReadableBookEdition, readableBookReviewPlan, pinnedReadableBookUnits, sha256, validReadableBookReviewFile, verifyReadableBookReviewReceipts } from './reader-current-edition.mjs';
@@ -47,6 +48,7 @@ import { editionDigest, inspectReadableBookEdition, qualifyReadableBookEdition, 
 import { copyeditSourceStructure, effectiveReaderCopyedit, qualifyReaderCopyedit, readerCopyeditSupportReferences, selectReaderCopyedit } from './reader-copyedit.mjs';
 import { readerCopyeditUnitPin, readerCopyeditCaptureDigest } from './reader-copyedit-pins.mjs';
 import { readableBookBaselineDigest, readableBookAcceptancePins } from './reader-current-edition-pins.mjs';
+import { qualifyCheckpointSources } from './reader-checkpoint.mjs';
 
 export function isReadableBookMutableFile(path) {
   return /^content\/.+\.(mdx?|json)$/.test(path)
@@ -80,7 +82,7 @@ export async function readReadableBookHistoryFiles(root, fixedFiles) {
   return files;
 }
 
-async function qualifyCurrentReaderSources(root, catalog, readings, literature, preview = null) {
+export async function qualifyHistoricalReaderSources(root, catalog, readings, literature, preview = null) {
   const readConfig = async name => JSON.parse(await readFile(join(root, 'config', name), 'utf8'));
   const baseline = await readConfig('readable-book-baseline.json');
   const acceptance = await readConfig('readable-book-current.json');
@@ -632,238 +634,241 @@ async function qualifyCurrentReaderSources(root, catalog, readings, literature, 
 }
 
 export function validateReadableBookCurrent(root, catalog, readings, literature) {
-  return qualifyCurrentReaderSources(root, catalog, readings, literature);
+  if (!existsSync(join(root, 'config', 'readable-book-checkpoint.json'))) {
+    return qualifyHistoricalReaderSources(root, catalog, readings, literature);
+  }
+  return qualifyCheckpointSources(root, catalog, readings, literature, readReadableBookHistoryFiles);
 }
 
 export function validateServiceConstraintsReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Service constraints review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'service');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'service');
 }
 
 export function validateSubstitutionRulesReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Substitution rules review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'substitution');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'substitution');
 }
 
 export function validateLoadShiftReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1') throw new Error('Load shift review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'load-shift');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'load-shift');
 }
 
 export function validateCircularFootprintReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Circular footprint review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'circular-footprint');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'circular-footprint');
 }
 
 export function validateLandRecoveryReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Land recovery review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'land-recovery');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'land-recovery');
 }
 
 export function validateAcidEquivalentsReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Acid equivalents review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'acid-equivalents');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'acid-equivalents');
 }
 
 export function validateMineralResourcesReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Mineral resources review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'mineral-resources');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'mineral-resources');
 }
 
 export function validateFossilResourcesReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Fossil resources review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'fossil-resources');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'fossil-resources');
 }
 
 export function validatePhotochemicalOzoneReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Photochemical ozone review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'photochemical-ozone');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'photochemical-ozone');
 }
 
 export function validateOzoneRadiationReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Ozone and radiation review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'ozone-radiation');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'ozone-radiation');
 }
 
 export function validateToxicityComparisonReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Toxicity comparison review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'toxicity-comparison');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'toxicity-comparison');
 }
 
 export function validateWaterScarcityReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Water scarcity review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'water-scarcity');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'water-scarcity');
 }
 
 export function validateBiogenicCarbonReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Biogenic carbon review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'biogenic-carbon');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'biogenic-carbon');
 }
 
 export function validateEutrophicationPathwaysReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Eutrophication pathways review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'eutrophication-pathways');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'eutrophication-pathways');
 }
 
 export function validateParticulateComparisonReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Particulate comparison review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'particulate-comparison');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'particulate-comparison');
 }
 
 export function validatePart4RereadReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Part IV continuous reread review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'part4-reread');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'part4-reread');
 }
 
 export function validateWeightingValuationReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Weighting and valuation review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'weighting-valuation');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'weighting-valuation');
 }
 
 export function validateLocalizationComparisonReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Localization comparison review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'localization-comparison');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'localization-comparison');
 }
 
 export function validateSocialComparisonReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Social comparison review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'social-comparison');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'social-comparison');
 }
 
 export function validateCostSustainabilityReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Cost and sustainability review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'cost-sustainability');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'cost-sustainability');
 }
 
 export function validatePart5RereadReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Part V continuous reread review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'part5-reread');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'part5-reread');
 }
 
 export function validateDataApplicabilityComparisonReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Data applicability comparison review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'data-applicability-comparison');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'data-applicability-comparison');
 }
 
 export function validateUncertaintyComparisonReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Uncertainty comparison review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'uncertainty-comparison');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'uncertainty-comparison');
 }
 
 export function validateProductFootprintComparisonReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Product footprint comparison review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'product-footprint-comparison');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'product-footprint-comparison');
 }
 
 export function validateDataQualityComparisonReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Data quality comparison review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'data-quality-comparison');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'data-quality-comparison');
 }
 
 export function validatePart6RereadReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Part VI continuous reread review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'part6-reread');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'part6-reread');
 }
 
 export function validateWallServiceComparisonReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Wall service comparison review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'wall-service-comparison');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'wall-service-comparison');
 }
 
 export function validateInterpretationBagsReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Interpretation & shopping-bag comparison review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'interpretation-bags');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'interpretation-bags');
 }
 
 export function validateFutureScenariosReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Future technology & scenarios comparison review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'future-scenarios');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'future-scenarios');
 }
 
 export function validateRevisableJudgmentReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Revisable judgment synthesis review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'revisable-judgment');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'revisable-judgment');
 }
 
 export function validatePart7RereadReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Part VII continuous reread review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'part7-reread');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'part7-reread');
 }
 
 export function validateMarketResponseComparisonReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Market response comparison review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'market-response-comparison');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'market-response-comparison');
 }
 
 export function validatePart3RereadReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Part III continuous reread review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'part3-reread');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'part3-reread');
 }
 
 export function validateFunctionalReferenceComparisonReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Functional reference comparison review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'functional-reference-comparison');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'functional-reference-comparison');
 }
 
 export function validateHybridInventoryComparisonReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Hybrid inventory comparison review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'hybrid-inventory-comparison');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'hybrid-inventory-comparison');
 }
 
 export function validatePart2RereadReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Part II continuous reread review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'part2-reread');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'part2-reread');
 }
 
 export function validateFrameworkComparisonReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Framework comparison review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'framework-comparison');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'framework-comparison');
 }
 
 export function validatePart1RereadReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Part I continuous reread review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'part1-reread');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'part1-reread');
 }
 
 export function validateWholeBookRereadReviewSources(root, catalog, readings, literature) {
   if (process.env.READABLE_BOOK_REVIEW_PREVIEW !== '1')
     throw new Error('Whole-book continuous reread review requires the explicit private preview');
-  return qualifyCurrentReaderSources(root, catalog, readings, literature, 'whole-book-reread');
+  return qualifyHistoricalReaderSources(root, catalog, readings, literature, 'whole-book-reread');
 }

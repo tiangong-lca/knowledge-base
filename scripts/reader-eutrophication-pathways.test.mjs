@@ -1,3 +1,5 @@
+import { checkpointInput, checkpointInputSync } from './reader-checkpoint-input.mjs';
+const { catalog, readings, literature } = checkpointInputSync();
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
@@ -58,9 +60,6 @@ import acid from '../config/reader-acid-equivalents.json' with { type: 'json' };
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
 import loadShift from '../config/reader-load-shift.json' with { type: 'json' };
 import service from '../config/reader-service-constraints.json' with { type: 'json' };
-import catalog from '../knowledge/catalog.json' with { type: 'json' };
-import readings from '../knowledge/research/readings.json' with { type: 'json' };
-import literature from '../knowledge/research/literature-map.json' with { type: 'json' };
 import { previousScientificTestRecords, testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
@@ -275,7 +274,7 @@ test('B16 eutrophication pathways source plan preserves 8fcb2485 predecessor, 38
 
   const root = fileURLToPath(new URL('../', import.meta.url));
   const [files, shiftFiles, serviceFiles] = await Promise.all([
-    readReadableBookHistoryFiles(root, baseline.fixedFiles),
+    checkpointInput().then(x => x.files),
     readLoadShiftCaseFiles(root, loadShift.unit),
     readServiceConstraintsFiles(root, service.unit),
   ]);
@@ -413,7 +412,7 @@ test('PM retains the original GLAM work and accepts only its scoped, exact liter
   const { default: accepted } = await import('../config/pm-selection-accepted.json', { with: { type: 'json' } });
   const { default: edition } = await import('../config/book-edition.json', { with: { type: 'json' } });
   const root = fileURLToPath(new URL('../', import.meta.url));
-  const files = await readReadableBookHistoryFiles(root, baseline.fixedFiles);
+  const files = await checkpointInput().then(x => x.files);
   const sources = new Map([...files].filter(([path]) => /^content\/.+\.mdx?$/.test(path))
     .map(([path, bytes]) => [path.slice(7).replace(/\.mdx?$/, '').replace(/\/index$/, ''), bytes.toString()]));
   const validate = lit => validatePmSelectionCoverage(edition, sources, catalog, accepted, undefined, { readings, literature: lit });

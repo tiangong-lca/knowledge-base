@@ -1,3 +1,4 @@
+import { checkpointInput } from './reader-checkpoint-input.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import test from 'node:test';
@@ -45,10 +46,10 @@ const isPreview = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1';
 
 async function loadInput() {
   const [catalog, readings, literature, files, shiftFiles, serviceFiles] = await Promise.all([
-    readJson('knowledge/catalog.json'),
-    readJson('knowledge/research/readings.json'),
-    readJson('knowledge/research/literature-map.json'),
-    readReadableBookHistoryFiles(process.cwd(), baseline.fixedFiles),
+    checkpointInput().then(x => x.catalog),
+    checkpointInput().then(x => x.readings),
+    checkpointInput().then(x => x.literature),
+    checkpointInput().then(x => x.files),
     readLoadShiftCaseFiles(process.cwd(), loadShift.unit),
     readServiceConstraintsFiles(process.cwd(), service.unit),
   ]);
@@ -106,8 +107,8 @@ test('Unit #161 selectFutureScenarios fails closed on preview without flag, forg
 });
 
 test('Unit #161 factor & numeric-fact guard validates 14 BigInt rationals and rejects tampering or unclean locators', async () => {
-  const catalog = await readJson('knowledge/catalog.json');
-  const readings = await readJson('knowledge/research/readings.json');
+  const catalog = await checkpointInput().then(x => x.catalog);
+  const readings = await checkpointInput().then(x => x.readings);
   assert.doesNotThrow(() => validateFutureScenariosFactors(catalog, readings));
 
   const badVal = structuredClone(catalog);

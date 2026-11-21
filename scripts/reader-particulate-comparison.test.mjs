@@ -1,3 +1,5 @@
+import { checkpointInput, checkpointInputSync } from './reader-checkpoint-input.mjs';
+const { catalog, readings, literature } = checkpointInputSync();
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
@@ -55,9 +57,6 @@ import capture from '../config/reader-particulate-comparison-capture.json' with 
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
 import loadShift from '../config/reader-load-shift.json' with { type: 'json' };
 import service from '../config/reader-service-constraints.json' with { type: 'json' };
-import catalog from '../knowledge/catalog.json' with { type: 'json' };
-import readings from '../knowledge/research/readings.json' with { type: 'json' };
-import literature from '../knowledge/research/literature-map.json' with { type: 'json' };
 import { previousScientificTestRecords, testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
 import { chapterAnchorPrefix, printUnitAnchor } from './reader-book.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
@@ -301,7 +300,7 @@ test('B17 particulate comparison source plan preserves c0ffd968 predecessor, 45-
 
   const root = fileURLToPath(new URL('../', import.meta.url));
   const [files, shiftFiles, serviceFiles] = await Promise.all([
-    readReadableBookHistoryFiles(root, baseline.fixedFiles),
+    checkpointInput().then(x => x.files),
     readLoadShiftCaseFiles(root, loadShift.unit),
     readServiceConstraintsFiles(root, service.unit),
   ]);
@@ -459,7 +458,7 @@ test('PM selection coverage retains all 54 cl-pm-* claims and X04 unchanged whil
   const { default: accepted } = await import('../config/pm-selection-accepted.json', { with: { type: 'json' } });
   const { default: edition } = await import('../config/book-edition.json', { with: { type: 'json' } });
   const root = fileURLToPath(new URL('../', import.meta.url));
-  const files = await readReadableBookHistoryFiles(root, baseline.fixedFiles);
+  const files = await checkpointInput().then(x => x.files);
   const sources = new Map([...files].filter(([path]) => /^content\/.+\.mdx?$/.test(path))
     .map(([path, bytes]) => [path.slice(7).replace(/\.mdx?$/, '').replace(/\/index$/, ''), bytes.toString()]));
   assert.deepEqual(validatePmSelectionCoverage(edition, sources, catalog, accepted, undefined, { readings, literature }), []);

@@ -1,4 +1,5 @@
 import numbering from '../config/reader-numbering.json' with { type: 'json' };
+import { currentRetirements, currentRevisions } from './reader-checkpoint.mjs';
 import { printUnitAnchor } from './reader-book.mjs';
 import { citationSourceHref } from './reader-citations.mjs';
 import {
@@ -63,14 +64,20 @@ import { part2RereadCorrections, part2RereadSource } from './reader-part2-reread
 import { part1RereadCorrections, part1RereadSource } from './reader-part1-reread.mjs';
 import { wholeBookRereadCorrections, wholeBookRereadSource } from './reader-whole-book-reread.mjs';
 
-const titleByRoute = new Map();
-for (const entry of [...(numbering.web ?? []), ...(numbering.book ?? [])]) {
-  if (entry?.source && entry?.title) titleByRoute.set(entry.source, entry.title);
-  if (entry?.key && entry?.title) titleByRoute.set(entry.key, entry.title);
+function buildTitleResolver(numberingManifest) {
+  const map = new Map();
+  for (const entry of [...(numberingManifest.web ?? []), ...(numberingManifest.book ?? [])]) {
+    if (entry?.source && entry?.title) map.set(entry.source, entry.title);
+    if (entry?.key && entry?.title) map.set(entry.key, entry.title);
+  }
+  return route => map.get(route) ?? route;
 }
 
+const defaultRouteTitle = buildTitleResolver(numbering);
+let activeRouteTitle = defaultRouteTitle;
+
 function routeTitle(route) {
-  return titleByRoute.get(route) ?? route;
+  return activeRouteTitle(route);
 }
 
 function sanitizeReaderSummary(text) {
@@ -134,7 +141,17 @@ function summarizeUnit(unit, fallbackSource = null) {
  * Automatically aggregates every reviewed publication iteration, every named
  * claim correction, and every Part introduction update for /changes/.
  */
-export function buildPublicChangesLedger() {
+export function buildPublicChangesLedger(numberingManifest = numbering) {
+  const prevResolver = activeRouteTitle;
+  activeRouteTitle = numberingManifest === numbering ? defaultRouteTitle : buildTitleResolver(numberingManifest);
+  try {
+    return buildPublicChangesLedgerWith(numberingManifest);
+  } finally {
+    activeRouteTitle = prevResolver;
+  }
+}
+
+function buildPublicChangesLedgerWith(numberingManifest) {
   const orderedUnits = [
     summarizeUnit(currentWholeBookReread, wholeBookRereadSource),
     summarizeUnit(currentPart1Reread, part1RereadSource),
@@ -242,7 +259,7 @@ export function buildPublicChangesLedger() {
   const partIntroductions = [
     currentWholeBookReread && {
       part: 4,
-      title: numbering.parts?.[3]?.title ?? '环境后果',
+      title: numberingManifest.parts?.[3]?.title ?? '环境后果',
       unitId: currentWholeBookReread.id,
       date: wholeBookRereadSource.date,
       from: currentWholeBookReread.partIntroduction.from,
@@ -251,7 +268,7 @@ export function buildPublicChangesLedger() {
     },
     currentPart1Reread && {
       part: 1,
-      title: numbering.parts?.[0]?.title ?? '问题的来源',
+      title: numberingManifest.parts?.[0]?.title ?? '问题的来源',
       unitId: currentPart1Reread.id,
       date: part1RereadSource.date,
       from: currentPart1Reread.partIntroduction.from,
@@ -260,7 +277,7 @@ export function buildPublicChangesLedger() {
     },
     currentPart2Reread && {
       part: 2,
-      title: numbering.parts?.[1]?.title ?? '第二部',
+      title: numberingManifest.parts?.[1]?.title ?? '第二部',
       unitId: currentPart2Reread.id,
       date: part2RereadSource.date,
       from: currentPart2Reread.partIntroduction.from,
@@ -269,7 +286,7 @@ export function buildPublicChangesLedger() {
     },
     currentPart3Reread && {
       part: 3,
-      title: numbering.parts?.[2]?.title ?? '第三部',
+      title: numberingManifest.parts?.[2]?.title ?? '第三部',
       unitId: currentPart3Reread.id,
       date: part3RereadSource.date,
       from: currentPart3Reread.partIntroduction.from,
@@ -278,7 +295,7 @@ export function buildPublicChangesLedger() {
     },
     currentPart7Reread && {
       part: 7,
-      title: numbering.parts?.[6]?.title ?? '第七部',
+      title: numberingManifest.parts?.[6]?.title ?? '第七部',
       unitId: currentPart7Reread.id,
       date: part7RereadSource.date,
       from: currentPart7Reread.partIntroduction.from,
@@ -287,7 +304,7 @@ export function buildPublicChangesLedger() {
     },
     currentPart6Reread && {
       part: 6,
-      title: numbering.parts?.[5]?.title ?? '第六部',
+      title: numberingManifest.parts?.[5]?.title ?? '第六部',
       unitId: currentPart6Reread.id,
       date: part6RereadSource.date,
       from: currentPart6Reread.partIntroduction.from,
@@ -296,7 +313,7 @@ export function buildPublicChangesLedger() {
     },
     currentPart5Reread && {
       part: 5,
-      title: numbering.parts?.[4]?.title ?? '第五部',
+      title: numberingManifest.parts?.[4]?.title ?? '第五部',
       unitId: currentPart5Reread.id,
       date: part5RereadSource.date,
       from: currentPart5Reread.partIntroduction.from,
@@ -305,7 +322,7 @@ export function buildPublicChangesLedger() {
     },
     currentPart4Reread && {
       part: 4,
-      title: numbering.parts?.[3]?.title ?? '第四部',
+      title: numberingManifest.parts?.[3]?.title ?? '第四部',
       unitId: currentPart4Reread.id,
       date: part4RereadSource.date,
       from: currentPart4Reread.partIntroduction.from,
@@ -314,5 +331,39 @@ export function buildPublicChangesLedger() {
     },
   ].filter(Boolean);
 
-  return { iterations: orderedUnits, corrections, partIntroductions };
+  const revisions = [...currentRevisions].reverse().map(rev => ({
+    id: rev.id,
+    date: rev.date,
+    title: rev.title,
+    rationale: rev.rationale,
+    routes: rev.routes,
+    routeLabels: rev.routes.map(routeTitle),
+    sourceHref: rev.sourceCommit ? citationSourceHref(rev.sourceCommit) : null,
+  }));
+
+  const retirements = currentRetirements.map(ret => ({
+    id: ret.id,
+    successor: ret.successor,
+    rationale: ret.rationale,
+    revisionId: ret.revisionId,
+    date: ret.date,
+    routeLabels: (ret.routes ?? []).map(routeTitle),
+    sourceHref: ret.sourceCommit ? citationSourceHref(ret.sourceCommit) : null,
+  }));
+
+  for (const rev of currentRevisions) {
+    for (const corr of rev.corrections ?? []) {
+      corrections.unshift({
+        unitId: rev.id,
+        date: rev.date,
+        chapter: corr.chapter,
+        chapterTitle: routeTitle(corr.chapter),
+        claimId: corr.claimId,
+        scope: corr.scope,
+        sourceHref: rev.sourceCommit ? citationSourceHref(rev.sourceCommit) : '',
+      });
+    }
+  }
+
+  return { iterations: orderedUnits, corrections, partIntroductions, revisions, retirements };
 }
