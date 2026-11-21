@@ -64,7 +64,7 @@ import { chapterAnchorPrefix, printUnitAnchor } from './reader-book.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { fingerprintCopyeditPrintParts } from './reader-copyedit-history.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
-import { readReadableBookFiles } from './reader-current-edition-files.mjs';
+import { readReadableBookHistoryFiles } from './reader-current-edition-files.mjs';
 import { readerPublicDownloads } from './reader-current-output.mjs';
 import { validateDatedHistoryOutput, visibleHistoryControl } from './reader-flow-boundary.mjs';
 import { readLoadShiftCaseFiles } from './reader-load-shift.mjs';
@@ -295,7 +295,7 @@ test('Part IV continuous reread source plan preserves exact 2ba0bfe2 state and r
 
   const root = fileURLToPath(new URL('../', import.meta.url));
   const [files, shiftFiles, serviceFiles] = await Promise.all([
-    readReadableBookFiles(root, baseline.fixedFiles),
+    readReadableBookHistoryFiles(root, baseline.fixedFiles),
     readLoadShiftCaseFiles(root, loadShift.unit),
     readServiceConstraintsFiles(root, service.unit),
   ]);

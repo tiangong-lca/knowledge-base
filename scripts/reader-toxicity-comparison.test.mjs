@@ -66,7 +66,7 @@ import { previousScientificTestRecords, testEnvelopes } from './fixtures/scienti
 import { chapterAnchorPrefix, printUnitAnchor } from './reader-book.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
-import { readReadableBookFiles } from './reader-current-edition-files.mjs';
+import { readReadableBookHistoryFiles } from './reader-current-edition-files.mjs';
 import { readerPublicDownloads } from './reader-current-output.mjs';
 import { flowBoundaryOrdinaryDigest, validateDatedHistoryOutput } from './reader-flow-boundary.mjs';
 import { readLoadShiftCaseFiles } from './reader-load-shift.mjs';
@@ -324,7 +324,7 @@ test('B19 toxicity comparison source plan preserves 2eba26c6 predecessor, 20-cla
   }
   const root = fileURLToPath(new URL('../', import.meta.url));
   const [files, shiftFiles, serviceFiles] = await Promise.all([
-    readReadableBookFiles(root, baseline.fixedFiles),
+    readReadableBookHistoryFiles(root, baseline.fixedFiles),
     readLoadShiftCaseFiles(root, loadShift.unit),
     readServiceConstraintsFiles(root, service.unit),
   ]);

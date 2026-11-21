@@ -1,7 +1,7 @@
 import { readFile, readdir } from 'node:fs/promises';
 import { join, relative, resolve } from 'node:path';
 import { editionDigest, inspectReadableBookEdition, readableBookReviewPlan, sha256 } from './reader-current-edition.mjs';
-import { readReadableBookFiles } from './reader-current-edition-files.mjs';
+import { readReadableBookHistoryFiles } from './reader-current-edition-files.mjs';
 import { copyeditSourceStructure, effectiveReaderCopyedit, verifyReaderCopyeditSource } from './reader-copyedit.mjs';
 import { observeCopyeditHistory } from './reader-copyedit-observation.mjs';
 import { currentCopyedit } from './reader-current-expectations.mjs';
@@ -21,7 +21,7 @@ async function source(root) {
     json(join(root, 'knowledge/research/literature-map.json')),
     json(join(root, 'config/readable-book-baseline.json')),
   ]);
-  const files = await readReadableBookFiles(root, fixedFiles);
+  const files = await readReadableBookHistoryFiles(root, fixedFiles);
   return { catalog, files, readings, literature };
 }
 

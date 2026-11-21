@@ -8,7 +8,7 @@ import loadShiftConfig from '../config/reader-load-shift.json' with { type: 'jso
 import serviceConfig from '../config/reader-service-constraints.json' with { type: 'json' };
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
-import { readReadableBookFiles } from './reader-current-edition-files.mjs';
+import { readReadableBookHistoryFiles } from './reader-current-edition-files.mjs';
 import { readerPublicDownloads } from './reader-current-output.mjs';
 import { readLoadShiftCaseFiles } from './reader-load-shift.mjs';
 import { readServiceConstraintsFiles } from './reader-service-constraints.mjs';
@@ -43,7 +43,7 @@ test('prepareWholeBookRereadSource recovers exact 4b9c3958 predecessor state and
   const unit = selectWholeBookReread(wholeBookConfig, wholeBookRereadUnitPin, preview);
   if (!unit) return;
   const [files, shiftFiles, serviceFiles, catalog, readings, literature] = await Promise.all([
-    readReadableBookFiles(root, baseline.fixedFiles),
+    readReadableBookHistoryFiles(root, baseline.fixedFiles),
     readLoadShiftCaseFiles(root, loadShiftConfig.unit),
     readServiceConstraintsFiles(root, serviceConfig.unit),
     fs.readFile('knowledge/catalog.json', 'utf8').then(JSON.parse),

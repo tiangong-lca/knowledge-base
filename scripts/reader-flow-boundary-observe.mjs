@@ -1,7 +1,7 @@
 import { readFile } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { inspectReadableBookEdition, editionDigest, sha256 } from './reader-current-edition.mjs';
-import { readReadableBookFiles } from './reader-current-edition-files.mjs';
+import { readReadableBookHistoryFiles } from './reader-current-edition-files.mjs';
 import { collectChapterClaimOccurrences, readSourceHeading } from './reader-book.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { flowBoundaryChapter, flowBoundaryGuide, flowBoundaryRoutes, flowBoundaryOrdinaryDigest, observeFlowBoundaryChanges, qualifyFlowBoundarySource } from './reader-flow-boundary.mjs';
@@ -17,7 +17,7 @@ async function source(root) {
     'knowledge/catalog.json', 'knowledge/research/readings.json', 'knowledge/research/literature-map.json',
     'config/readable-book-baseline.json', 'config/reader-numbering.json', 'config/book-edition.json',
   ].map(name => readJson(join(root, name))));
-  const files = await readReadableBookFiles(root, fixedFiles);
+  const files = await readReadableBookHistoryFiles(root, fixedFiles);
   const state = inspectReadableBookEdition({ catalog, readings, literature, files });
   return { state, catalog, readings, literature, structure: copyeditSourceStructure({ catalog, files }), files, numbering, edition };
 }

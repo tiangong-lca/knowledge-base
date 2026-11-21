@@ -14,7 +14,7 @@ import loadShiftConfig from '../config/reader-load-shift.json' with { type: 'jso
 import serviceConfig from '../config/reader-service-constraints.json' with { type: 'json' };
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { inspectReadableBookEdition } from './reader-current-edition.mjs';
-import { readReadableBookFiles } from './reader-current-edition-files.mjs';
+import { readReadableBookHistoryFiles } from './reader-current-edition-files.mjs';
 import { readerPublicDownloads } from './reader-current-output.mjs';
 import { readLoadShiftCaseFiles } from './reader-load-shift.mjs';
 import { readServiceConstraintsFiles } from './reader-service-constraints.mjs';
@@ -49,7 +49,7 @@ test('selectPart3Reread verifies reviewed unit pin and rejects tampering', () =>
 
 test('preparePart3RereadSource recovers exact f6d1eca5 predecessor state and verifies receipts', async () => {
   const [files, shiftFiles, serviceFiles, catalog, readings, literature] = await Promise.all([
-    readReadableBookFiles(root, baseline.fixedFiles),
+    readReadableBookHistoryFiles(root, baseline.fixedFiles),
     readLoadShiftCaseFiles(root, loadShiftConfig.unit),
     readServiceConstraintsFiles(root, serviceConfig.unit),
     fs.readFile('knowledge/catalog.json', 'utf8').then(JSON.parse),

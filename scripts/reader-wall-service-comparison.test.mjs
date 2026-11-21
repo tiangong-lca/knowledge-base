@@ -29,7 +29,7 @@ import { previousScientificTestRecords } from './fixtures/scientific-receipt-env
 import config from '../config/reader-wall-service-comparison.json' with { type: 'json' };
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
-import { readReadableBookFiles } from './reader-current-edition-files.mjs';
+import { readReadableBookHistoryFiles } from './reader-current-edition-files.mjs';
 import { readerPublicDownloads } from './reader-current-output.mjs';
 import { readLoadShiftCaseFiles } from './reader-load-shift.mjs';
 import { readServiceConstraintsFiles } from './reader-service-constraints.mjs';
@@ -53,7 +53,7 @@ async function loadInput() {
     readJson('config/reader-service-constraints.json'),
   ]);
   const [files, shiftFiles, serviceFiles] = await Promise.all([
-    readReadableBookFiles('.', baseline.fixedFiles),
+    readReadableBookHistoryFiles('.', baseline.fixedFiles),
     readLoadShiftCaseFiles('.', loadShift.unit),
     readServiceConstraintsFiles('.', service.unit),
   ]);

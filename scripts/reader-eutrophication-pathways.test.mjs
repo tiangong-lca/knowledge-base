@@ -64,7 +64,7 @@ import literature from '../knowledge/research/literature-map.json' with { type: 
 import { previousScientificTestRecords, testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
-import { readReadableBookFiles } from './reader-current-edition-files.mjs';
+import { readReadableBookHistoryFiles } from './reader-current-edition-files.mjs';
 import { readerPublicDownloads } from './reader-current-output.mjs';
 import { validateDatedHistoryOutput } from './reader-flow-boundary.mjs';
 import { readLoadShiftCaseFiles } from './reader-load-shift.mjs';
@@ -275,7 +275,7 @@ test('B16 eutrophication pathways source plan preserves 8fcb2485 predecessor, 38
 
   const root = fileURLToPath(new URL('../', import.meta.url));
   const [files, shiftFiles, serviceFiles] = await Promise.all([
-    readReadableBookFiles(root, baseline.fixedFiles),
+    readReadableBookHistoryFiles(root, baseline.fixedFiles),
     readLoadShiftCaseFiles(root, loadShift.unit),
     readServiceConstraintsFiles(root, service.unit),
   ]);
@@ -413,7 +413,7 @@ test('PM retains the original GLAM work and accepts only its scoped, exact liter
   const { default: accepted } = await import('../config/pm-selection-accepted.json', { with: { type: 'json' } });
   const { default: edition } = await import('../config/book-edition.json', { with: { type: 'json' } });
   const root = fileURLToPath(new URL('../', import.meta.url));
-  const files = await readReadableBookFiles(root, baseline.fixedFiles);
+  const files = await readReadableBookHistoryFiles(root, baseline.fixedFiles);
   const sources = new Map([...files].filter(([path]) => /^content\/.+\.mdx?$/.test(path))
     .map(([path, bytes]) => [path.slice(7).replace(/\.mdx?$/, '').replace(/\/index$/, ''), bytes.toString()]));
   const validate = lit => validatePmSelectionCoverage(edition, sources, catalog, accepted, undefined, { readings, literature: lit });

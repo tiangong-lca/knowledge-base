@@ -70,7 +70,7 @@ import { chapterAnchorPrefix, chapterNoteAnchor, printUnitAnchor } from './reade
 import { assertCitationHistory } from './reader-citation-history.mjs';
 import { assertCitationBaseline, assertPrintFrontMatter } from './reader-citation-baseline.mjs';
 import { citationHref, citationSourceHref, createCurrentPrintRoutes, createLegacyCitationEntries, createCanonicalCitationEntries } from './reader-citations.mjs';
-// Use the parser already bundled by the exact Next dependency (16.4.4).
+// Use the parser already bundled by the exact Next dependency (16.4.6).
 // This internal bundle is intentionally version-coupled and covered by tests;
 // there is no additional parser dependency or hand-written HTML stripping.
 import { currentEditionKeys, validateFrameworkCoverage, remapBookCitations, publishedHeadingEntries, validateRenderedFrameworkCoverage } from './reader-edition.mjs';
