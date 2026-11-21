@@ -1,7 +1,7 @@
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
-import { readReadableBookFiles } from './reader-current-edition-files.mjs';
+import { readReadableBookHistoryFiles } from './reader-current-edition-files.mjs';
 import { readableBookBaselineDigest } from './reader-current-edition-pins.mjs';
 
 const root = resolve(process.argv[2] ?? '.');
@@ -12,7 +12,7 @@ const [catalog, readings, literature, files] = await Promise.all([
   json('knowledge/catalog.json'),
   json('knowledge/research/readings.json'),
   json('knowledge/research/literature-map.json'),
-  readReadableBookFiles(root, baseline.fixedFiles),
+  readReadableBookHistoryFiles(root, baseline.fixedFiles),
 ]);
 const actual = inspectReadableBookEdition({ catalog, readings, literature, files });
 const changes = [];

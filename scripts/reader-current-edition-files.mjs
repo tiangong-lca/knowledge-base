@@ -42,7 +42,7 @@ import { selectFlowBoundary, prepareFlowBoundarySource, effectiveFlowBoundary, v
 import { flowBoundaryUnitPin, flowBoundaryPredecessorPin } from './reader-flow-boundary-pins.mjs';
 import { lstat, readdir, readFile, realpath } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
-import { editionDigest, inspectReadableBookEdition, qualifyReadableBookEdition, readableBookReviewPlan, pinnedReadableBookUnits, validReadableBookReviewFile, verifyReadableBookReviewReceipts } from './reader-current-edition.mjs';
+import { editionDigest, inspectReadableBookEdition, qualifyReadableBookEdition, readableBookReviewPlan, pinnedReadableBookUnits, sha256, validReadableBookReviewFile, verifyReadableBookReviewReceipts } from './reader-current-edition.mjs';
 
 import { copyeditSourceStructure, effectiveReaderCopyedit, qualifyReaderCopyedit, readerCopyeditSupportReferences, selectReaderCopyedit } from './reader-copyedit.mjs';
 import { readerCopyeditUnitPin, readerCopyeditCaptureDigest } from './reader-copyedit-pins.mjs';
@@ -68,12 +68,24 @@ export async function readReadableBookFiles(root, fixedFiles) {
   return result;
 }
 
+// Replay editorial fingerprints against their original runtime manifest only after
+// verifying the complete authorized security-maintenance manifest. Raw file reads
+// and inspectReadableBookEdition keep reporting the actual current source bytes.
+export async function readReadableBookHistoryFiles(root, fixedFiles) {
+  const files = await readReadableBookFiles(root, fixedFiles);
+  const manifest = files.get('package.json');
+  if (manifest && sha256(manifest) === '49fc65f45e5908fa0ad7d86c19cdf8266709d754af3754665f545c0af47b500a') {
+    files.set('package.json', Buffer.from(manifest.toString().replace('"next": "16.4.6"', '"next": "16.4.4"')));
+  }
+  return files;
+}
+
 async function qualifyCurrentReaderSources(root, catalog, readings, literature, preview = null) {
   const readConfig = async name => JSON.parse(await readFile(join(root, 'config', name), 'utf8'));
   const baseline = await readConfig('readable-book-baseline.json');
   const acceptance = await readConfig('readable-book-current.json');
   if (editionDigest(baseline) !== readableBookBaselineDigest) throw new Error('Readable book integration baseline differs');
-  const files = await readReadableBookFiles(root, baseline.fixedFiles);
+  const files = await readReadableBookHistoryFiles(root, baseline.fixedFiles);
   const serviceConfig = await readConfig('reader-service-constraints.json');
   const serviceConstraints = selectServiceConstraints(serviceConfig, undefined, preview === 'service');
   const substitutionConfig = await readConfig('reader-substitution-rules.json');

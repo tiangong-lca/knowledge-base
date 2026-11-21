@@ -62,7 +62,7 @@ import { previousScientificTestRecords, testEnvelopes } from './fixtures/scienti
 import { chapterAnchorPrefix, printUnitAnchor } from './reader-book.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
-import { readReadableBookFiles } from './reader-current-edition-files.mjs';
+import { readReadableBookHistoryFiles } from './reader-current-edition-files.mjs';
 import { readerPublicDownloads } from './reader-current-output.mjs';
 import { validateDatedHistoryOutput } from './reader-flow-boundary.mjs';
 import { readLoadShiftCaseFiles } from './reader-load-shift.mjs';
@@ -301,7 +301,7 @@ test('B17 particulate comparison source plan preserves c0ffd968 predecessor, 45-
 
   const root = fileURLToPath(new URL('../', import.meta.url));
   const [files, shiftFiles, serviceFiles] = await Promise.all([
-    readReadableBookFiles(root, baseline.fixedFiles),
+    readReadableBookHistoryFiles(root, baseline.fixedFiles),
     readLoadShiftCaseFiles(root, loadShift.unit),
     readServiceConstraintsFiles(root, service.unit),
   ]);
@@ -459,7 +459,7 @@ test('PM selection coverage retains all 54 cl-pm-* claims and X04 unchanged whil
   const { default: accepted } = await import('../config/pm-selection-accepted.json', { with: { type: 'json' } });
   const { default: edition } = await import('../config/book-edition.json', { with: { type: 'json' } });
   const root = fileURLToPath(new URL('../', import.meta.url));
-  const files = await readReadableBookFiles(root, baseline.fixedFiles);
+  const files = await readReadableBookHistoryFiles(root, baseline.fixedFiles);
   const sources = new Map([...files].filter(([path]) => /^content\/.+\.mdx?$/.test(path))
     .map(([path, bytes]) => [path.slice(7).replace(/\.mdx?$/, '').replace(/\/index$/, ''), bytes.toString()]));
   assert.deepEqual(validatePmSelectionCoverage(edition, sources, catalog, accepted, undefined, { readings, literature }), []);

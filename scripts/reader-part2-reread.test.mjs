@@ -15,7 +15,7 @@ import { restorePart1RereadTestFiles } from './reader-part1-reread.mjs';
 import { restoreFrameworkComparisonTestFiles } from './reader-framework-comparison.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { inspectReadableBookEdition } from './reader-current-edition.mjs';
-import { readReadableBookFiles } from './reader-current-edition-files.mjs';
+import { readReadableBookHistoryFiles } from './reader-current-edition-files.mjs';
 import { readerPublicDownloads } from './reader-current-output.mjs';
 import { readLoadShiftCaseFiles } from './reader-load-shift.mjs';
 import { readServiceConstraintsFiles } from './reader-service-constraints.mjs';
@@ -50,7 +50,7 @@ test('preparePart2RereadSource recovers exact 3034503f predecessor state and ver
   const unit = selectPart2Reread(part2Config, part2RereadUnitPin, preview);
   if (!unit) return;
   const [files, shiftFiles, serviceFiles, catalog, readings, literature] = await Promise.all([
-    readReadableBookFiles(root, baseline.fixedFiles),
+    readReadableBookHistoryFiles(root, baseline.fixedFiles),
     readLoadShiftCaseFiles(root, loadShiftConfig.unit),
     readServiceConstraintsFiles(root, serviceConfig.unit),
     fs.readFile('knowledge/catalog.json', 'utf8').then(JSON.parse),

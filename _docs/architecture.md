@@ -16,8 +16,8 @@ checkPaths:
   - "scripts/**"
   - "package.json"
   - ".github/**"
-lastReviewedAt: 2026-11-20
-lastReviewedCommit: 4b9c3958f316693f85e0bab789400a8215b19ca9
+lastReviewedAt: 2026-11-21
+lastReviewedCommit: a07016dc693d21f331cd6b6646d4bd2d6db733b1
 ---
 
 # Publication architecture
@@ -1064,6 +1064,17 @@ are excluded from Git and the website. The replay is tested on macOS arm64;
 Linux x64 and Windows x64 replay results are unqualified. No app server, GUI,
 macro, hosted operation or package-install lifecycle is part of the driver.
 
+The Next.js 16.4.6 security maintenance in #186 preserves actual source hashing
+through `readReadableBookFiles` and `inspectReadableBookEdition`. Editorial
+predecessor validation explicitly uses `readReadableBookHistoryFiles`, which
+verifies the complete authorized manifest SHA-256
+`49fc65f45e5908fa0ad7d86c19cdf8266709d754af3754665f545c0af47b500a`
+before reconstructing the original Next.js 16.4.4 manifest bytes for historical
+replay. Other manifest changes retain their real bytes and encounter the existing
+history guards. The original scientific baselines and reviewed receipts retain
+their identities. Builds execute the actual installed patched framework, and
+exported source identity continues to describe the actual Git state.
+
 Next.js App Router, Fumadocs MDX/UI, React, TypeScript and Tailwind produce a static site. Chinese is the initial publication language; English labels preserve terminology. Exact compatible dependencies and the pnpm lockfile are authoritative. The architecture follows the workspace docs site; its product routes, four-locale editorial policy and hosted search identity are not imported.
 
 MDX carries authored prose and renders canonical claims by stable IDs. knowledge/catalog.json owns source/evidence/claim/concept/mapping records and coverage. lib/catalog.ts applies the same public projection used by scripts/export.mjs. Reviewed status records editorial source checking, not expert certification. Draft, needs-review and withdrawn claims do not enter public claim statements. Unresolved topics remain visible in coverage and explicit caveats.
@@ -1163,7 +1174,7 @@ Remaining full monograph migration (user requirement, 2026-11-06; bounded B04/B1
 
 `reader-bibliography.mjs` exports schemaVersion2 / reader-bibliography: bibliographic sources, cited evidence and exact cited passage/carrier identity. Both `/downloads/bibliography.json` and the retained `/downloads/research.json` URL return identical curated bytes; the latter no longer exposes the schema1 research workbench. Queries, gaps, editorial revisions and workflow states remain in repository research/development records. Public catalog provenance remains separately available, with its actual review kind unchanged. The AI reading index links the book and bibliography, not execution records.
 
-`reader-surface.mjs` checks authored reader fields and the generated HTML/aria text, while allowing internal anchors and structured data. It catches strong project-process wording, visible internal labels and duplicate DOM IDs; semantic review still decides whether a condition is scientifically necessary. The HTML parser is bundled with pinned Next16.4.4, without a new dependency; its use is covered by compatibility fixtures.
+`reader-surface.mjs` checks authored reader fields and the generated HTML/aria text, while allowing internal anchors and structured data. It catches strong project-process wording, visible internal labels and duplicate DOM IDs; semantic review still decides whether a condition is scientifically necessary. The HTML parser is bundled with pinned Next.js 16.4.6, without a new dependency; its use is covered by compatibility fixtures.
 
 `SidebarKeyboard` completes Escape dismissal for the installed standard mobile drawer through the exported sidebar hook. It is active only for an open drawer, returns focus to its external trigger and leaves Escape inside nested search/menu/listbox controls to that control. Desktop collapsed state and page navigation remain owned by Fumadocs.
 

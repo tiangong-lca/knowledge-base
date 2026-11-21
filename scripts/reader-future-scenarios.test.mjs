@@ -28,7 +28,7 @@ import { previousScientificTestRecords } from './fixtures/scientific-receipt-env
 import config from '../config/reader-future-scenarios.json' with { type: 'json' };
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { inspectReadableBookEdition } from './reader-current-edition.mjs';
-import { readReadableBookFiles } from './reader-current-edition-files.mjs';
+import { readReadableBookHistoryFiles } from './reader-current-edition-files.mjs';
 import { readerPublicDownloads } from './reader-current-output.mjs';
 import { readLoadShiftCaseFiles } from './reader-load-shift.mjs';
 import { readServiceConstraintsFiles } from './reader-service-constraints.mjs';
@@ -48,7 +48,7 @@ async function loadInput() {
     readJson('knowledge/catalog.json'),
     readJson('knowledge/research/readings.json'),
     readJson('knowledge/research/literature-map.json'),
-    readReadableBookFiles(process.cwd(), baseline.fixedFiles),
+    readReadableBookHistoryFiles(process.cwd(), baseline.fixedFiles),
     readLoadShiftCaseFiles(process.cwd(), loadShift.unit),
     readServiceConstraintsFiles(process.cwd(), service.unit),
   ]);

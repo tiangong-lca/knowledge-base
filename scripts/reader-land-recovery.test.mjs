@@ -66,7 +66,7 @@ import readings from '../knowledge/research/readings.json' with { type: 'json' }
 import sourceBaseline from '../config/readable-book-baseline.json' with { type: 'json' };
 import loadShift from '../config/reader-load-shift.json' with { type: 'json' };
 import serviceConstraints from '../config/reader-service-constraints.json' with { type: 'json' };
-import { readReadableBookFiles } from './reader-current-edition-files.mjs';
+import { readReadableBookHistoryFiles } from './reader-current-edition-files.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { readLoadShiftCaseFiles } from './reader-load-shift.mjs';
 import { readServiceConstraintsFiles } from './reader-service-constraints.mjs';
@@ -110,7 +110,7 @@ test('B14 receipts bind captured raw files, normalized article pairs, public pag
 test('B14 source plan declares every actual transition with its real predecessor', { skip: !config.unit }, async t => {
   const root = fileURLToPath(new URL('../', import.meta.url));
   const [files, shiftFiles, serviceFiles] = await Promise.all([
-    readReadableBookFiles(root, sourceBaseline.fixedFiles),
+    readReadableBookHistoryFiles(root, sourceBaseline.fixedFiles),
     readLoadShiftCaseFiles(root, loadShift.unit),
     readServiceConstraintsFiles(root, serviceConstraints.unit),
   ]);

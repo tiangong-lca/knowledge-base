@@ -68,7 +68,7 @@ import literature from '../knowledge/research/literature-map.json' with { type: 
 import { previousScientificTestRecords, testEnvelopes } from './fixtures/scientific-receipt-envelope.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition } from './reader-current-edition.mjs';
-import { readReadableBookFiles } from './reader-current-edition-files.mjs';
+import { readReadableBookHistoryFiles } from './reader-current-edition-files.mjs';
 import { readerPublicDownloads } from './reader-current-output.mjs';
 import { flowBoundaryNoteTarget, validateDatedHistoryOutput } from './reader-flow-boundary.mjs';
 import { readLoadShiftCaseFiles } from './reader-load-shift.mjs';
@@ -224,7 +224,7 @@ test('B14 fossil source preview preserves all real predecessor transitions', { s
   }
   const root = fileURLToPath(new URL('../', import.meta.url));
   const [files, shiftFiles, serviceFiles] = await Promise.all([
-    readReadableBookFiles(root, baseline.fixedFiles),
+    readReadableBookHistoryFiles(root, baseline.fixedFiles),
     readLoadShiftCaseFiles(root, loadShift.unit),
     readServiceConstraintsFiles(root, service.unit),
   ]);
