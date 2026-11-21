@@ -14,7 +14,7 @@ checkPaths:
   - ".docpact/config.yaml"
   - "_docs/**"
 lastReviewedAt: 2026-11-21
-lastReviewedCommit: b1629d01b7f4b0ee5b91d291c6c46ef585c5c4cc
+lastReviewedCommit: fff371413af1436a9e7802831c349a583bfa41b6
 ---
 
 # Knowledge Base contributor contract
@@ -41,6 +41,8 @@ evidence, historical disposition and affected-consumer review. Chapter delivery
 does not complete the remaining whole-book programme.
 
 On 2026-11-20 the user established the mandatory Clean Public Delivery & Editorial History Separation rule (`_docs/lca-book-goal.md` §2.15, `_docs/reader-publication-contract.md`, task `#166`): keep 100% of iteration provenance, predecessor hashes, review evidence and rationales in `config/reader-*.json`, `_docs/editorial/` and Git history to support ongoing authoring and auditing, and auto-aggregate the full public revision/errata ledger on `/changes/`; default production builds (`READER_EDITORIAL_HISTORY !== '1'`) MUST render ONLY the clean finished monograph on `/docs/book/**` and `/print/` with ZERO inline development-process disclosures (`[data-copyedit-history]`, `[data-*-history]`, `[data-part*-reread-part]`, `[data-legacy-scope]`, `[data-*-correction]`), enforced by the Clean-Delivery Gate in `scripts/reader-surface.mjs`. Use `READER_EDITORIAL_HISTORY=1` only for local editorial-comparison previews.
+
+On 2026-11-21 the user adopted integrated revision over appending (`_docs/lca-book-goal.md` §2.16, task `#189`). Place new comparisons, evidence and corrections where the reader's question arises, and rewrite the existing paragraphs they affect. Do not append standalone summary paragraphs at section or chapter ends. Existing claims may be rewritten, merged, split, moved to notes or tables, or deleted, provided each change records its old-to-new destination, its reason, the affected premises and consumers, and a `/changes/` entry readers can follow, and old anchors stay reachable. Claim counts, unchanged old text and premise tidiness are not acceptance evidence. The structural limits (3–5 sections per chapter, ≤120 sections book-wide) and case numeric identity remain. A fresh-context reader must read each whole chapter continuously before delivery. Part and whole-book rereads must read and revise the actual text; metadata or terminology fixes alone are not a continuous reread. The B14 integration pilot goes to the user for review before the rule is rolled out to other chapters. Human expert review, real reader trials, paid-standard purchases and the three historical candidate materials are deferred by the user and do not block autonomous work.
 
 Never publish private conversation/meeting text or licensed source originals. Source existence is not evidence of claim entailment. Distinguish source statements, synthesis, calculation, interpretation and proposal; retain uncertainty, negative evidence and conflicting views. Software tests do not establish scientific or human expert approval.
 
