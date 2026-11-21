@@ -17,10 +17,29 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-21
-lastReviewedCommit: a07016dc693d21f331cd6b6646d4bd2d6db733b1
+lastReviewedCommit: b1629d01b7f4b0ee5b91d291c6c46ef585c5c4cc
 ---
 
 # Publication architecture
+
+## Ordinary CI source-validation entrypoints
+
+When the package build/validation scripts exactly match the audited composition
+and have no pre/post lifecycle hooks, the ordinary CI build step invokes
+`pnpm exec next build` and then the original
+`node scripts/export.mjs`. Next's production configuration still validates the
+actual source on a cold configuration load. The exporter independently validates
+the current source again before checking the rendered/public artifact. A failed
+Next command stops the step before export. Any changed script or added lifecycle
+hook falls back to the complete `pnpm build`, so future preparation is retained.
+
+The normal `pnpm build` command retains its existing standalone preparation and
+remains the hosting/developer entrypoint. CI does not prepend that command's
+additional identical `pnpm validate` invocation to its already guarded Next
+build. No source-validation result is cached or transferred as admission, and no
+new environment bypass is introduced. Existing preview output isolation and
+the exporter's preview/editorial-history refusals remain unchanged.
+
 
 ## Product-footprint-comparison successor
 
