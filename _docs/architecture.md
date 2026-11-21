@@ -22,6 +22,22 @@ lastReviewedCommit: a07016dc693d21f331cd6b6646d4bd2d6db733b1
 
 # Publication architecture
 
+## Ordinary CI source-validation entrypoints
+
+The ordinary CI build step invokes `pnpm exec next build` and then the original
+`node scripts/export.mjs`. Next's production configuration still validates the
+actual source on a cold configuration load. The exporter independently validates
+the current source again before checking the rendered/public artifact. A failed
+Next command stops the step before export.
+
+The normal `pnpm build` command retains its existing standalone preparation and
+remains the hosting/developer entrypoint. CI does not prepend that command's
+additional identical `pnpm validate` invocation to its already guarded Next
+build. No source-validation result is cached or transferred as admission, and no
+new environment bypass is introduced. Existing preview output isolation and
+the exporter's preview/editorial-history refusals remain unchanged.
+
+
 ## Product-footprint-comparison successor
 
 The #151 Part VI `B28` product-footprint-rules comparison successor

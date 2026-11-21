@@ -22,6 +22,21 @@ lastReviewedCommit: a07016dc693d21f331cd6b6646d4bd2d6db733b1
 
 # Publication contract
 
+## Source checks at build and export boundaries
+
+Cold production Next configuration validates the actual current source. Public
+export independently rechecks source joins and publication eligibility, then
+validates the rendered output. Those checks remain separate; an earlier success
+does not authorize changed inputs or a later export.
+
+Ordinary CI calls that guarded Next build followed by the original exporter,
+without adding the normal package build command's identical upfront source
+check. The normal `pnpm build` and standalone `pnpm validate` commands remain
+unchanged. CI tests, typechecking, governed-change checks, artifacts, fixed
+dependencies and hosting Git publisher keep their existing owners. No reusable
+validation token, skip variable or new source-admission cache is introduced.
+
+
 ## Scoped scientific successors
 
 The Part VI `B28` product-footprint-rules comparison unit #151 compares
