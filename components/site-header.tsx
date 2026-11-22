@@ -83,6 +83,6 @@ export function SiteChrome({ children }: { children: ReactNode }) {
   if (pathname === '/docs' || pathname.startsWith('/docs/')) return children;
   return <HomeLayout {...baseOptions()} slots={{ container: HomeContainer }}>
     {children}
-    <footer className="site-footer"><div><strong>天工 LCA 知识库</strong><p>每个判断都可以追问，每次修订都留下依据。</p></div><nav aria-label="页脚导航"><a href="/changes/">版本与勘误</a><a href="/print/">连续阅读与打印</a><a href="https://github.com/tiangong-lca/knowledge-base">GitHub</a></nav></footer>
+    <footer className="site-footer"><div><strong>天工 LCA 知识库</strong><p>每个判断都可以追问，每次修订都留下依据。</p></div><nav aria-label="页脚导航"><a href="/timeline/">发展大事记</a><a href="/changes/">版本与勘误</a><a href="/print/">连续阅读与打印</a><a href="https://github.com/tiangong-lca/knowledge-base">GitHub</a></nav></footer>
   </HomeLayout>;
 }
