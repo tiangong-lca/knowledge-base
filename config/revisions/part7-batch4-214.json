@@ -1,0 +1,736 @@
+{
+  "schemaVersion": 1,
+  "id": "part7-batch4-214",
+  "date": "2026-11-22",
+  "title": "第七部分 B29–B32 整合改写（批次 4）",
+  "rationale": "按全书目标第 2.16 节将第七部分四篇（B29《墙面服务比较》、B30《购物袋研究》、B31《未来技术与情景》、B32《服务、系统与时间》《判断依据与修订》及专论《可修订的判断》）中的 12 段超长追加比较段落压实至 440 字以内，清除两处草稿章号残留并改为正式篇名，为既有对照表补齐表题；全部 32 个算例绑定段落与既有章节标题均保持不变。",
+  "routes": [
+    "/docs/book/wall-service-to-comparison",
+    "/docs/book/interpretation-and-limits",
+    "/docs/book/future-technology-and-context",
+    "/docs/book/connecting-objects-references-and-time",
+    "/docs/book/from-connected-results-to-conditional-judgment",
+    "/docs/monograph/revisable-judgment"
+  ],
+  "sourceCommit": "e50170fc47b1a7ae82ae9997d61dd9a04c2bfff1",
+  "claims": [
+    {
+      "id": "cl-wsc157-equivalence-and-pairing",
+      "op": "modify",
+      "from": {
+        "id": "cl-wsc157-equivalence-and-pairing",
+        "text": "离开单一教学算例、把上述墙面比较放回现行国际规范，可以看到两条超越具体材料的共同底线。其一，比较对象必须受决策语境与等价建界约束：欧盟联合研究中心《国际参考生命周期数据系统详细指南》（ILCD 2010）第 5.3 节表 2 将产品比较与公开比较断言划归情景 A（微观决策支持），并明确排除将纯会计统计（情景 C）直接用于判定方案优劣的采购或政策决策；第 6.10.3 至 6.10.7 节要求两套比较模型按等同的系统边界与清单建模规则构建，只有真正完全相同的部件才可省略，若同一种材料在不同组件中仅呈部分相关，就必须留在模型内并在解释差异时显式处理相关性，同时补充合理最佳与合理最差情景及不确定度计算。其二，不确定性比较不能退回各自孤立的区间对照：温室气体核算体系（GHG Protocol）产品标准（2011）第 10.3.4 节（印第 82 页）明确指出，不应直接并排比较方案 A 与方案 B 各自的不确定性范围，而应直接评估比较量本身（如 A/B）的参数与情景不确定性——这正是前文墙面算例在共享电网因子下作配对差值的原因。",
+        "kind": "interpretation",
+        "scope": "对照 ILCD 2010 情景 A/C 界定、边界对称与部分相关部件保留规则，以及 GHG Protocol 产品标准（2011）第 10.3.4 节比较量不确定性原则。",
+        "evidenceIds": [
+          "ev-wsc157-ilcd-equivalence-scenarios",
+          "ev-wsc157-ghgp-comparison-uncertainty"
+        ],
+        "premiseIds": [
+          "cl-wall-same-mass",
+          "cl-wall-pairing",
+          "cl-wall-tolerance"
+        ],
+        "conceptIds": [
+          "cn-fu",
+          "cn-system-model",
+          "cn-variability-uncertainty"
+        ],
+        "caveats": [
+          "等价建界与配对评估只能消除口径错位与共享背景带来的虚假离散，并不能替代对具体使用场景、维护周期或未建模影响类别的核查。"
+        ],
+        "reviewedAt": "2026-11-19",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：压实至 410 字以内，收束 ILCD 2010 与 GHG Protocol 的等价建界与配对比较底线。"
+    },
+    {
+      "id": "cl-wsc157-paired-vs-mc-fallacy",
+      "op": "modify",
+      "from": {
+        "id": "cl-wsc157-paired-vs-mc-fallacy",
+        "text": "然而，消除未配对的虚假重叠并不意味着只要多跑随机抽样就能得到可靠的统计排序。承接第二十六章对蒙特卡洛次数的分析，Heijungs (2020) 第 2.8 至 4 节（印第 399—401 页）用同一母体分布 N(10, 1) 抽出的两组小样本（每组实证样本量仅 16 个）证明：直接对实证样本作双尾 t 检验得 p = 0.67，完全没有差异证据；但若把这两组不精确的样本均值（配以已知标准差）塞进蒙特卡洛模拟器连跑 100,000 次，就会得到 p 约等于 10 的负 16 次方的极端伪显著结果。原因在于增大模拟次数只会压低蒙特卡洛自身的抽样标准误，却丝毫不能修复原始输入数据的有限样本偏差；因此模拟次数须受最弱实证样本量约束（如两项输入样本量分别为 16 与 9 时，运行次数上限不应超过 9 次），而缺乏真实样本量的谱系矩阵分布更不能直接拿去做大规模蒙特卡洛显著性检验。墙面算例之所以先用确定性配对差值区间与容差界定排序边界，正是为了避免用海量伪抽样掩盖输入端的不准确。",
+        "kind": "interpretation",
+        "scope": "衔接第二十六章 Heijungs (2020) 第 2.8—4 节的蒙特卡洛伪显著性反例与墙面配对区间方法的双侧统计边界。",
+        "evidenceIds": [
+          "ev-wsc157-heijungs-mc-false-sig"
+        ],
+        "premiseIds": [
+          "cl-unc149-pedigree-mc-boundary",
+          "cl-wall-paired-range",
+          "cl-wall-tolerance",
+          "cl-wsc157-equivalence-and-pairing"
+        ],
+        "conceptIds": [
+          "cn-variability-uncertainty",
+          "cn-quality-calibration"
+        ],
+        "caveats": [
+          "确定性配对敏感性分析能清晰暴露共享背景抵消与关键阈值，但当多个非共享参数同时存在复杂相关性时仍需结合有实证样本量支撑的联合不确定性分析。"
+        ],
+        "reviewedAt": "2026-11-19",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：压实至 380 字以内，并将正文与注释范围中的草稿章号替换为正式篇名《变异与不确定性》。"
+    },
+    {
+      "id": "cl-wsc157-pef-pefcr-and-classes",
+      "op": "modify",
+      "from": {
+        "id": "cl-wsc157-pef-pefcr-and-classes",
+        "text": "与 ILCD 2010 禁止在公开比较断言中加权形成鲜明对照，欧盟委员会建议书 (EU) 2021/2279（产品环境足迹 PEF，2022 年更正重刊版公报 OJ L 144 第 23—24、88、95—102、149 页；对应 2021 年原刊公报 OJ L 471 第 220、291—298、345 页）走的是“类别规则专属许可加统一加权分级”路线。附件一第 1 节与第 1.1 节明文规定：只有遵循有效产品环境足迹类别规则（PEFCR）的研究才允许开展产品比较与比较断言；若某品类尚无有效 PEFCR，研究只能用于内部管理或非比较类对外传播。一旦具备有效 PEFCR，附件一第 5.2.1 至 5.2.2 节与附件二表 NN-9 不仅允许、而且强制基于全部 16 项环境足迹影响类别的全球人均归一化与加权单一总分，以代表产品基准（BM）作为 C 档中点、结合灵敏度分析所得理论最佳与最差总分，按 0.30 与 0.85 线性插值系数划定 A 至 E 五档性能等级。作为放行加权分级的制度对价，附件一第 8.1 至 8.5 节对全部对外传播强制实施符合 EN ISO/IEC 17020:2012 的独立第三方验证与确认：凡导致任一影响类别最终结果变动超过 5% 的误差即构成重大差错，核查员资质积分不得低于 6 分，验证声明最长有效期为 3 年。",
+        "kind": "source-statement",
+        "scope": "依据欧盟委员会建议书 (EU) 2021/2279 附件一第 1、1.1、5.2.1—5.2.2、8.1—8.5 节与附件二表 NN-9 核验 PEFCR 专属比较许可、16 类别单一总分 A—E 分级与强制第三方验证门槛。",
+        "evidenceIds": [
+          "ev-wsc157-pef-pefcr-classes-verification"
+        ],
+        "premiseIds": [
+          "cl-pfr151-comparative-assertion-gates",
+          "cl-wsc157-ilcd-comparative-assertion"
+        ],
+        "conceptIds": [
+          "cn-review-scope",
+          "cn-framework-work-products"
+        ],
+        "caveats": [
+          "欧盟委员会建议书 (EU) 2021/2279 本身属于非约束性建议文件，其强制法律效力取决于电池法规或生态设计法规等具体授权法案的吸收引用。"
+        ],
+        "reviewedAt": "2026-11-19",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：压实至 415 字以内，精简公报页码冗述，保留 PEFCR 许可、五档分级与第三方核查核心门槛。"
+    },
+    {
+      "id": "cl-wsc157-ghgp-and-paywalled-iso",
+      "op": "modify",
+      "from": {
+        "id": "cl-wsc157-ghgp-and-paywalled-iso",
+        "text": "第三条路线则体现在单一温室气体核算标准之中。GHG Protocol 产品标准（2011）第 1.5 节、第 5.3.2 节、第 13.2 节及附录 A 表 A.1—A.2（印第 6、23—24、101、115—116 页）明确划定了应用边界：该标准“按原样”仅支持同一产品跨时期的温室气体绩效追踪与减排评估，明确不支持关于一产品相对竞争产品总体环境优劣的比较断言；若企业确需在产品间开展基于温室气体的比较、标签或绩效声明，就必须另行遵循统一的产品规则，对齐分析单元、系统与时间边界及分配规则，公开数据质量与不确定性并完成第三方鉴证。此外，在来源边界上须明确交代：国际标准 ISO 14044:2006 关于公开比较断言与关键性审查的正式条款正文属受版权与付费授权保护文本，本书未持有其授权全文，因此本章不引述或补造其内部条款编号，全部跨体系对照严格立足于已逐页核验的开放获取一手材料（ILCD 2010、欧盟委员会建议书 (EU) 2021/2279、GHG Protocol 产品标准 2011 与 Heijungs 2020）。",
+        "kind": "source-statement",
+        "scope": "依据 GHG Protocol 产品标准（2011）第 1.5、5.3.2、13.2 节与附录 A 说明不支持比较断言的边界，并显式声明 ISO 14044:2006 付费全文缺口。",
+        "evidenceIds": [
+          "ev-wsc157-ghgp-no-comparative-assertion"
+        ],
+        "premiseIds": [
+          "cl-pfr151-paywalled-standard-boundaries",
+          "cl-wsc157-ilcd-comparative-assertion",
+          "cl-wsc157-pef-pefcr-and-classes"
+        ],
+        "conceptIds": [
+          "cn-review-scope",
+          "cn-framework-work-products"
+        ],
+        "caveats": [
+          "ISO 14044:2006 付费标准原文暂留作公开文献边界，待取得正式授权后再作逐条补证。"
+        ],
+        "reviewedAt": "2026-11-19",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：压实至 390 字以内，保持 GHG Protocol 应用边界与付费标准来源界定。"
+    },
+    {
+      "id": "cl-wsc157-comparison-synthesis-bridge",
+      "op": "modify",
+      "from": {
+        "id": "cl-wsc157-comparison-synthesis-bridge",
+        "text": "综合墙面教学案例与三套国际规范可见，一项产品比较能否成立取决于两层彼此独立、缺一不可的资格：在计算层，必须先固定同一功能服务，再对齐系统边界与共享背景因子（避免未配对重叠，也避免用超出实证样本量的蒙特卡洛次数制造伪显著性），并检查容差与基底变化下的排序翻转；在治理层，还必须区分研究是用于内部改进、遵循统一类别规则的基准分级（如欧盟 PEFCR 的 A—E 五档），还是面向公众的跨产品优劣比较断言（ILCD 禁止加权并要求外部评审组把关，GHG Protocol 产品标准则按原样拒绝支持）。因此，任何产品比较的站脚边界，都必须同时经过计算层与治理层的双重核验。",
+        "kind": "interpretation",
+        "scope": "综合第二十九章墙面算例与三套国际规范的计算层与治理层双重比较资格。",
+        "evidenceIds": [
+          "ev-wsc157-ilcd-equivalence-scenarios",
+          "ev-wsc157-pef-pefcr-classes-verification",
+          "ev-wsc157-ghgp-no-comparative-assertion"
+        ],
+        "premiseIds": [
+          "cl-wall-answer",
+          "cl-wsc157-equivalence-and-pairing",
+          "cl-wsc157-paired-vs-mc-fallacy",
+          "cl-wsc157-ilcd-comparative-assertion",
+          "cl-wsc157-pef-pefcr-and-classes",
+          "cl-wsc157-ghgp-and-paywalled-iso"
+        ],
+        "conceptIds": [
+          "cn-fu",
+          "cn-variability-uncertainty",
+          "cn-review-scope"
+        ],
+        "caveats": [
+          "墙面算例只演示单指标气候当量下的配对机制，真实多指标产品比较还须同时处理跨类别权衡、行为复用率与评审独立性问题，留待第三十章展开。"
+        ],
+        "reviewedAt": "2026-11-19",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "清理注释中的草稿章号残留，改为正式篇名《购物袋研究》。"
+    },
+    {
+      "id": "cl-int159-ilcd-pef-interpretation-hotspots",
+      "op": "modify",
+      "from": {
+        "id": "cl-int159-ilcd-pef-interpretation-hotspots",
+        "text": "把两份购物袋研究里的取整敏感性、次级替代信用与未量化遗漏上升为一般方法规则，可以看到现行国际规范对“生命周期解释”既有共同底线、也有显著的定量化分歧。欧盟联合研究中心《国际参考生命周期数据系统详细指南》（ILCD 2010）第 9 章确立了“重大议题识别—完整性、灵敏度与一致性三项评估核查—结论与局限”三步结构，强调灵敏度分析须同时覆盖清单参数、影响因子与建模选择，明确指出随机不确定度计算不能发现系统性偏差，且乱丢弃等 LCA 范围之外的未量化效应必须单列隔离、不得与 LCA 得分暗中排序。欧盟委员会建议书 (EU) 2021/2279（产品环境足迹 PEF）在保留稳健性三查的基础上，把热点识别全面定量化（附件一第 6.3 节与表 27）：最相关影响类别须累计占加权单一总分至少 80% 且不少于 3 类；最相关生命周期阶段与过程累计超过 80%，若使用阶段占比超过 50% 还须剔除使用阶段重算并一并报告；最相关基本流累计至少 80%；更关键的是第 6.3.5 节明文规定，当过程或基本流因回收或垃圾袋替代产生负值抵扣时，必须改取绝对值重算 100% 占比（生命周期阶段除外），防止正负相抵掩盖真实大户。",
+        "kind": "interpretation",
+        "scope": "比较 ILCD 2010 第 9 章解释三查与范围外效应隔离规则，以及欧盟 PEF 附件一第 6.2—6.3 节 80% 热点阈值、50% 使用阶段重算与第 6.3.5 节负信用绝对值规则。",
+        "evidenceIds": [
+          "ev-int159-ilcd-interpretation-checks",
+          "ev-int159-pef-interpretation-report"
+        ],
+        "premiseIds": [
+          "cl-pack-hotspot",
+          "cl-book-consistency",
+          "cl-int159-danish-epa-multi-indicator"
+        ],
+        "conceptIds": [
+          "cn-system-model",
+          "cn-variability-uncertainty",
+          "cn-framework-work-products"
+        ],
+        "caveats": [
+          "欧盟 PEF 的 80% 类别筛选依赖全球归一化与加权单一总分，在禁用加权的 ILCD 公开比较断言语境下不能直接照搬。"
+        ],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19"
+      },
+      "rationale": "整合改写：压实至 410 字以内，理顺 ILCD 2010 稳健性三查与欧盟 PEF 定量热点及负值绝对值重算规则。"
+    },
+    {
+      "id": "cl-int159-critical-review-governance",
+      "op": "modify",
+      "from": {
+        "id": "cl-int159-critical-review-governance",
+        "text": "除了补齐实测行为数据，不同规范体系对关键性审查与报告公开的制度要求，同样决定了研究结论的法律与科学效力。ILCD 2010 第 6.11 至 6.12 节与第 11 章区分独立内部审查、独立外部审查与外部评审组审查，倡导从目标与范围阶段启动同步交互审查，以 5 项保证准绳检验方法一致性、科学合理性、数据适当性、解释局限与报告透明性，并允许把商业机密数据单独编入仅供评审人审阅的补充报告，同时要求对外摘要附带完整报告与审查报告的查阅路径。现实案例正好体现了评审体制的边界：英国环境署（2011）经由三人外部评审组审查并在附录 E 与正文中保留未消除的遗留分歧；而丹麦环保署（2018）虽由咨询机构 COWI A/S 两名专家完成外部同行评审，却坦诚声明其并未组建覆盖全过程的利益相关方评审组，因此不严格符合 ISO 14044 公开比较断言程序，仅作丹麦环保署内部决策支持。欧盟 PEF（附件一第 7.1 与 8.1 节）则进一步将报告固化为 6 项基本组成——独立摘要、聚合环境足迹（EF）合规数据集（公开数据集须连带公开底层报告）、主报告、验证声明、附带评审报告的技术附件，以及仅供核查员审阅的可选机密报告——并明确凡导致任一影响类别结果变动超过 5% 或改变最相关类别、阶段、过程清单的错误均构成必须纠正的重大差错。",
+        "kind": "source-statement",
+        "scope": "对比 ILCD 2010 第 6.11—6.12 节与第 11 章、英国环境署 2011 三人评审组、丹麦环保署 2018 内部支持边界与欧盟 PEF 附件一第 7.1/8.1 节报告公开及 5% 重大差错门槛。",
+        "evidenceIds": [
+          "ev-int159-ilcd-critical-review",
+          "ev-int159-danish-epa-review-boundary",
+          "ev-int159-pef-interpretation-report"
+        ],
+        "premiseIds": [
+          "cl-int159-ilcd-pef-interpretation-hotspots",
+          "cl-pack-reviewers",
+          "cl-pack-review-residual",
+          "cl-pack-acceptance"
+        ],
+        "conceptIds": [
+          "cn-review-scope",
+          "cn-quality-calibration",
+          "cn-framework-work-products"
+        ],
+        "caveats": [
+          "ILCD 2010 第 11 章正文仅列出 5 项总体保证准绳，具体评审方案与评审人资格细则另载于独立分册；欧盟 PEF 的强制验证效力仍取决于具体法规吸收引用。"
+        ],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19"
+      },
+      "rationale": "整合改写：压实至 420 字以内，保持英丹政府案例与 ILCD、PEF 审查体制对照。"
+    },
+    {
+      "id": "cl-int159-limitations-and-paywalled-iso",
+      "op": "modify",
+      "from": {
+        "id": "cl-int159-limitations-and-paywalled-iso",
+        "text": "把解释规则收束到对外传播，国际指南最容易被忽视却最要紧的一条底线是“局限必须随结论同行，且未检出差异绝不等于等效”。ILCD 2010 第 9.4 节规定条款 II.a 至 II.d 明确要求：所有建议必须严格且保守地源自已核实的重大发现，关键局限不得藏在附录而必须写入核心结论与执行摘要，以防非技术读者误读；尤其规定不得在缺乏显著性证明时宣称两套方案“等效”——算不出显著差别只说明现有证据不足以区分，而非两者环境表现相同。欧盟 PEF 附件一第 6.4 节同样强调结论须写明稳健性与适用范围，且产品环境足迹是对厂址级环境影响评价与化学品风险评估的补充而非替代。需要说明的是，ISO 14044:2006 中关于生命周期解释与关键性审查的正式条款，以及专门规范评审流程与评审人能力的 ISO/TS 14071:2014 均属受版权保护的付费标准，此处未逐条引述其原文，所有对照均直接依据公开可核验的 ILCD 2010、欧盟官方公报与英丹两国政府报告。",
+        "kind": "interpretation",
+        "scope": "依据 ILCD 2010 第 9.4 节规定条款 II.a—II.d 与欧盟 PEF 附件一第 6.4 节界定局限随行与非等效底线，并说明付费 ISO 14044:2006 与 ISO/TS 14071:2014 原文未逐条引述的边界。",
+        "evidenceIds": [
+          "ev-int159-ilcd-interpretation-checks",
+          "ev-int159-pef-interpretation-report"
+        ],
+        "premiseIds": [
+          "cl-book-no-ranking",
+          "cl-book-not-equivalent",
+          "cl-pack-recommendation",
+          "cl-int159-critical-review-governance"
+        ],
+        "conceptIds": [
+          "cn-review-scope",
+          "cn-variability-uncertainty"
+        ],
+        "caveats": [
+          "ISO 14044:2006 与 ISO/TS 14071:2014 属受版权保护的付费标准，其逐字细则待取得授权文本后再行补充核对。"
+        ],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19"
+      },
+      "rationale": "整合改写：压实至 335 字以内，保留局限随行、非等效底线与付费标准来源边界。"
+    },
+    {
+      "id": "cl-future-incumbent",
+      "op": "modify",
+      "from": {
+        "id": "cl-future-incumbent",
+        "text": "估计涂层在较大规模下的生产后，还要找能提供同一服务的材料来比较。沿用第二十九章的方法，先给定基底、遮盖效果和服役时间，再确定各方案的用量和施工次数。van der Giesen 等人 2020 年指出，比较还应交代在哪个时期假定新技术达到所设的规模和成熟度，以及竞争技术在同期可能怎样变化。候选涂层如果用于不同基底，或能提供不同的保护性能，比较对象也可能随之改变。不能默认今天的在位方案就是未来唯一可能被替代的产品。",
+        "kind": "interpretation",
+        "scope": "van der Giesen等2020年同时间和功能的比较建议，结合第二十九章墙面服务和本书涂层设例",
+        "evidenceIds": [
+          "ev-time-gie-scope",
+          "ev-time-gie-upscale"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-time-gie-scope",
+            "relation": "supports",
+            "rationale": "实际p3把未来时期、成熟度、功能与替代技术放在目标范围中讨论。"
+          },
+          {
+            "evidenceId": "ev-time-gie-upscale",
+            "relation": "supports",
+            "rationale": "实际p6 §4.2.1指出在位技术也可能进一步发展，并要求明确应用和竞争功能。"
+          }
+        ],
+        "premiseIds": [
+          "cl-wall-question"
+        ],
+        "caveats": [
+          "不同假设下的替代对象需要个案证据，方法建议本身不证明具体替代关系。",
+          "基底、遮盖、涂层和对照路线是教学语境，未报告真实未来材料或市场替代。"
+        ],
+        "conceptIds": [
+          "cn-future-scenarios"
+        ],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-04",
+        "reviewKind": "agent-source-check",
+        "reasoning": "原文要求协调新技术与在位技术的成熟度和时期。借第二十九章规定共同服务的方法，可说明为何候选涂层的用途会影响竞争对象。"
+      },
+      "rationale": "清除正文与注释范围中的草稿章号残留，改为正式篇名《墙面服务比较》。"
+    },
+    {
+      "id": "cl-book-future-scenario-matrix",
+      "op": "modify",
+      "from": {
+        "id": "cl-book-future-scenario-matrix",
+        "text": "仍以相同的墙面服务为参照，先在相同供电条件下比较两种工艺的材料和电力需求，再选一套条件明确的未来供电情景，用同一时期的数据重算两条路线。若只给一条路线换供电数据，就难以判断指标差异究竟来自工艺还是供电。不过，若一种路线在实际情景中确实需要不同的电力来源，模型也应表示这种差别。这样才能辨认指标差异来自工艺、共同供电条件的改变，还是各方案确有不同的供电来源。",
+        "kind": "synthesis",
+        "scope": "不改用第二十九章实数的定性教学对照",
+        "evidenceIds": [],
+        "premiseIds": [
+          "cl-wall-question",
+          "cl-future-incumbent",
+          "cl-future-scenarios",
+          "cl-future-background"
+        ],
+        "conceptIds": [
+          "cn-future-scenarios"
+        ],
+        "caveats": [
+          "此处没有增设墙面案例数值、假定现实工艺或预测供电。"
+        ],
+        "reasoning": "对齐墙面服务与竞争用途后，可先在同一背景比较工艺，再将两条路线放在有明示条件的另一背景下重算。若供电差异来自路线自身，则应随该路线入账并说明证据。",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-12"
+      },
+      "rationale": "清除注释范围中的草稿章号残留，改为正式篇名《墙面服务比较》。"
+    },
+    {
+      "id": "cl-future-impact-limits",
+      "op": "modify",
+      "from": {
+        "id": "cl-future-impact-limits",
+        "text": "即使新工艺、竞争方案和背景已按同一情景设定，某些排放仍可能没有合适的影响类别或表征因子。2018 年论文将如何进一步发展影响评价留作研究问题。2020 年的论文指出，新材料和新技术可能遇到这种缺口。第十五章的动态气候计算处理排放时点和响应的观察期限，其他环境后果需要各自的表征方法。结果表里如果缺少相应的影响指标，应说明这部分后果尚未评价。",
+        "kind": "interpretation",
+        "scope": "三项作品对时间表征与未来技术评价范围的限制；不是具体新材料危害判断。",
+        "evidenceIds": [
+          "ev-time-arv-limits",
+          "ev-time-gie-conditional",
+          "ev-time-lev-limits"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-time-arv-limits",
+            "relation": "supports",
+            "rationale": "实际p1292明确说明本文未展开prospective LCIA，并提出未来影响类别问题。"
+          },
+          {
+            "evidenceId": "ev-time-gie-conditional",
+            "relation": "supports",
+            "rationale": "实际p5 §3.4指出缺少类别或因子可能使潜在影响未被分类。"
+          },
+          {
+            "evidenceId": "ev-time-lev-limits",
+            "relation": "context",
+            "rationale": "实际p101提出其他类别需发展动态因子，说明时间方法的扩展并非现成覆盖。"
+          }
+        ],
+        "premiseIds": [
+          "cl-time-model-limits",
+          "cl-future-definition",
+          "cl-future-background"
+        ],
+        "caveats": [
+          "未识别或量化任何具体未来损害；未把缺失表征直接转成统一阻断规则。"
+        ],
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-04",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "清除正文中的草稿章号残留，改为正式篇名《排放时间与评价》。"
+    },
+    {
+      "id": "cl-fut161-terminology-axes",
+      "op": "modify",
+      "from": {
+        "id": "cl-fut161-terminology-axes",
+        "text": "前文以墙面涂层为例勾勒了工艺放大与同期对手的基本思路；但在展开更系统的建模之前，还须先厘清文献里常被混用的几组面向未来术语。Arvidsson 等（2024）汇编了三个核心术语的 7 条典型既有定义，并提出用“时间位置”与“技术成熟度”两维坐标来定位五类概念：时间位置区分研究面向未来（前瞻性 LCA）还是过去（回顾性 LCA），技术成熟度则区分技术尚未商业化（事前 LCA）、已商业化（事后 LCA）或停留在未放大的实验室阶段（实验室尺度 LCA）。作者由此推荐将“前瞻性 LCA”作为统一总称——它不仅覆盖新兴技术，也涵盖未来时点的归因研究以及在未来背景下评估已成熟技术；相比之下，事前 LCA 必含技术成熟度提升，实验室尺度 LCA 不做放大因而只宜用于早期热点诊断而不宜直接与成熟工业技术比拼，预期式 LCA 在事前放大之外着重引入利益相关方参与系统边界、功能单位与权重选择，而动态 LCA 则强调按时间点解析排放与表征因子，与多数把系统聚合到单一未来年份的时点前瞻研究属于不同维度。",
+        "kind": "source-statement",
+        "scope": "依据 Arvidsson 等（2024）梳理时间位置与技术成熟度两维坐标，区分前瞻性、事前、预期式、实验室尺度与动态 LCA。",
+        "evidenceIds": [
+          "ev-fut161-arvidsson-terminology"
+        ],
+        "premiseIds": [
+          "cl-future-definition",
+          "cl-future-scale-up",
+          "cl-future-incumbent"
+        ],
+        "conceptIds": [
+          "cn-future-scenarios",
+          "cn-framework-work-products"
+        ],
+        "caveats": [
+          "Arvidsson 等（2024）的术语建议意在统一报告范围披露（明确给出目标年份或时段以及技术就绪度等级），并不强制规定单一建模算法。"
+        ],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19"
+      },
+      "rationale": "整合改写：压实至 380 字以内，突出时间位置与技术成熟度两维坐标及五类术语界线。"
+    },
+    {
+      "id": "cl-fut161-upscaling-methods",
+      "op": "modify",
+      "from": {
+        "id": "cl-fut161-upscaling-methods",
+        "text": "术语厘清之后，真正的工程难点落在如何把实验室配方推演成工业清单。Tsoy 等（2020）从 184 篇初筛文献中系统评估了 18 项事前 LCA 放大研究（其中 15 项集中于化工与废物处理，11 项从实验室直接放大至工业规模），暴露出两处严峻的实证缺口：按欧洲研究与技术组织（EARTO）技术就绪度（TRL 1—9）分级，全部 18 项研究中有 0 篇明确报告了 TRL 数值（均只用“实验室”“中试”等定性标签），且有 0 篇在工业化投产后做过实测回验；另有 15 篇未交代技术专家是否参与，9 篇未提供完整流程图。为收紧这一过程，作者总结出“定义预测技术情景—绘制预测流程图—估算清单数据”三步放大框架，并将清单估算按准确度从高到低排成四类（部分研究混用多种方法）：流程模拟（6 篇，准确度最高但依赖详尽工艺条件与商业软件）、手工计算（10 篇，最常用，涵盖热力学／化学计量与缩放因子）、分子结构模型（1 篇，速度快但仅限化工物质）以及近似代理数据（7 篇，准确度最低但适用于数据匮乏阶段）。",
+        "kind": "source-statement",
+        "scope": "依据 Tsoy 等（2020）18 项事前 LCA 放大综述，总结 TRL 报告与投产回验缺口、三步放大框架及四类清单估算方法排序。",
+        "evidenceIds": [
+          "ev-fut161-tsoy-upscaling"
+        ],
+        "premiseIds": [
+          "cl-future-scale-up",
+          "cl-future-incumbent",
+          "cl-fut161-terminology-axes"
+        ],
+        "conceptIds": [
+          "cn-future-scenarios",
+          "cn-variability-uncertainty"
+        ],
+        "caveats": [
+          "Tsoy 等（2020）综述的 18 项案例高度偏重化工与废物处理领域，且未将经验学习曲线列为单独的数据估算类别（学习曲线多与宏观产能预测配合使用）。"
+        ],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19"
+      },
+      "rationale": "整合改写：压实至 365 字以内，保留 18 项研究实证缺口、三步框架与四类估算方法。"
+    },
+    {
+      "id": "cl-fut161-superstructure-iam",
+      "op": "modify",
+      "from": {
+        "id": "cl-fut161-superstructure-iam",
+        "text": "当前景工艺已经按上述三步放大到 2030 或 2050 年，如果背景电网、钢铁与水泥仍停留在今日数据库，就会出现严重的前景—背景时间错位。近年来主流解法是把综合评估模型（IAM，如 IMAGE 3.0）输出的未来能源与工业路径写入背景生命周期清单（LCI）数据库（如 ecoinvent 3.7），但按传统做法每组合一个气候情景与参考年份就会生成一套含约 15,000 个过程的独立数据库，手工把前景重新链接到数十套数据库极易出错且存储冗重。Steubing 与 de Koning（2021）为此提出“超结构数据库＋情景差异文件（SDF）”架构：超结构数据库取所有情景过程与交换的并集，差异文件仅记录跨情景变化的数值，求解时在内存中一次性构建矩阵并逐情景覆写差异项。其电动车算例把 2 种路径（共享社会经济路径 SSP2 基准情景与典型浓度路径 2.6［RCP 2.6］减排情景）乘以 4 个年份（2020、2030、2040、2050）的 8 套数据库压缩为 1 套超结构加 1 份差异表，每情景覆写约 135,000 条交换，在 5 秒内完成基准与改进两类前景配置下的全部 16 次计算；结果表明，背景电力脱碳的减排杠杆可超过前景设定“单车能耗与电池投入各降 40%”的改进幅度。",
+        "kind": "source-statement",
+        "scope": "依据 Steubing 与 de Koning（2021）阐明 IAM 耦合背景情景数据库的时间对齐机理与“超结构＋情景差异文件（SDF）”架构。",
+        "evidenceIds": [
+          "ev-fut161-steubing-superstructure"
+        ],
+        "premiseIds": [
+          "cl-future-scenarios",
+          "cl-future-background",
+          "cl-book-future-scenario-matrix"
+        ],
+        "conceptIds": [
+          "cn-future-scenarios",
+          "cn-system-model"
+        ],
+        "caveats": [
+          "电动车算例中“能耗与电池各降 40%”为方法演示用假定改进值，其结论旨在展示背景电力脱碳相对于前景效率的灵敏度，而非对特定车型实测性能的预测。"
+        ],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19"
+      },
+      "rationale": "整合改写：压实至 430 字以内，保持超结构＋SDF 架构与电动车算例核心数据。"
+    },
+    {
+      "id": "cl-fut161-dynamic-time-horizons",
+      "op": "modify",
+      "from": {
+        "id": "cl-fut161-dynamic-time-horizons",
+        "text": "在时间维度上，还有一层容易与前瞻情景混淆的边界须先说清：把“选定未来某一年份快照”的前瞻情景与“逐年追踪排放发生时刻”的动态建模放在一起对照，就能看清这最后一层界线。Lueddeckens 等（2020）系统综述了 1997 至 2018 年间的 60 篇时间议题文献（24 篇方法论文与 36 篇案例研究），梳理出 6 项直接时间议题（剔除极少使用的动态加权与动态归一化后余 4 项实用议题：评估时间范围、时间贴现、动态清单与动态表征）。该综述特别区分了三类不可混为一谈的时间范围：目标与范围界定的“评估时间范围”、清单记录排放的“清单时间范围”，以及影响因子自带的“表征时间范围”。若在动态清单中把第 99 年发生的温室气体排放直接乘以静态百年全球变暖潜势（GWP100），就会隐含长达 199 年的考察跨度，直接违背原本设定的 100 年评估边界；而仅给技术圈清单加上时间标签却沿用静态影响因子的做法只能算“半动态 LCA”，唯有同时耦合动态清单与随背景浓度及受体敏感度变化的动态表征因子，才构成“全动态 LCA”。",
+        "kind": "source-statement",
+        "scope": "依据 Lueddeckens 等（2020）60 篇系统综述，区分三类时间范围、半动态与全动态 LCA 以及静态 GWP100 的跨度冲突。",
+        "evidenceIds": [
+          "ev-fut161-lueddeckens-temporal"
+        ],
+        "premiseIds": [
+          "cl-future-impact-limits",
+          "cl-future-comparison-conditions",
+          "cl-book-future-decision"
+        ],
+        "conceptIds": [
+          "cn-future-scenarios",
+          "cn-system-model"
+        ],
+        "caveats": [
+          "Lueddeckens 等（2020）将后果式 LCA 与寿命周期阶段划分归为间接时间议题而未纳入其 6 项直接时间议题统计。"
+        ],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19"
+      },
+      "rationale": "整合改写：压实至 355 字以内，保留三类时间范围与半动态／全动态 LCA 分界。"
+    },
+    {
+      "id": "cl-fut161-temporal-barriers-values",
+      "op": "modify",
+      "from": {
+        "id": "cl-fut161-temporal-barriers-values",
+        "text": "理解了全动态 LCA 的理论严格性，也就理解了为何大多数面向未来研究在实践中仍采用离散年份情景并辅以灵敏度区间。Lueddeckens 等（2020）指出两重现实硬约束：在数据与工具层，绝大多数影响类别至今仍缺乏经共识检验的动态表征因子（现有动态因子高度集中于全球变暖、光化学臭氧及少量局地类别），背景供应链也普遍缺失时序排程与延迟数据，常规 LCA 软件尚难全面支撑；在价值判断层，时间范围长短与是否贴现均无科学共识——过短的时间范围会诱发把排放推迟到截止年之后的规避并损害代际公平，过长则削弱当下行动的权重，而哪怕仅施加约 1% 的贴现率，就足以在数十年尺度上大幅边缘化远期环境影响。此外，动态归一化还暗藏一项反直觉陷阱：若假定未来社会背景污染持续下降，反而可能使当下的单位排放显得更次要或更难比较，进而削弱眼前减排激励。因此，面向未来的比较不能只报单一预测值，而应明确区分情景设定、时间范围与价值选择，并以多情景包络呈现结论成立的条件。",
+        "kind": "interpretation",
+        "scope": "依据 Lueddeckens 等（2020）总结动态表征覆盖、供应链数据瓶颈、时间范围／贴现价值选择及动态归一化陷阱，收束面向未来比较的条件化报告纪律。",
+        "evidenceIds": [
+          "ev-fut161-lueddeckens-barriers"
+        ],
+        "premiseIds": [
+          "cl-future-comparison-conditions",
+          "cl-book-future-decision",
+          "cl-fut161-dynamic-time-horizons"
+        ],
+        "conceptIds": [
+          "cn-future-scenarios",
+          "cn-variability-uncertainty",
+          "cn-review-scope"
+        ],
+        "caveats": [
+          "动态表征因子的可用性随大气与生态模型更新而逐步扩展，但时间范围截断与代际贴现率本质上仍属规范性价值选择，无法仅靠提高模型分辨率消除。"
+        ],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19"
+      },
+      "rationale": "整合改写：压实至 350 字以内，保持数据/工具与价值判断两重硬约束。"
+    },
+    {
+      "id": "cl-rev163-monograph-closing-boundary",
+      "op": "modify",
+      "from": {
+        "id": "cl-rev163-monograph-closing-boundary",
+        "text": "合上全书回望饮料容器、墙面涂层与购物袋三个贯通案例，以及贯穿七部的方法比较，生命周期评价真正能够负责任地交付的，并不是脱离语境的“终极胜者标签”，而是一套可追溯、可复算、可证伪的条件化判断结构：把环境、社会与成本负担的转移路径摊在明处，标出结论翻转的定量门槛，写清模型边界、数据来历与审查权限，并为后来者留下精确的修订入口。它永远不能替代政治与伦理层面的价值抉择，不能替代尚未发生的实地使用观测，也不能凭单次计算自动跨过不同法域的合规审查；但正因为承认这些边界并拒绝把假设藏进黑箱，生命周期评价才得以成为一项随证据成长、经得起公开检验的科学工具。",
+        "kind": "interpretation",
+        "scope": "全书三十二章收束论述：合拢三个贯通案例与七部方法比较，明确可修订 LCA 判断的负责任交付物与不可替代边界。",
+        "evidenceIds": [
+          "ev-int159-danish-epa-multi-indicator",
+          "ev-int159-pef-interpretation-report",
+          "ev-fut161-tsoy-upscaling",
+          "ev-lcc143-oneill2026-strong-vs-weak-sustainability"
+        ],
+        "premiseIds": [
+          "cl-rev163-circular-and-prospective-coupling",
+          "cl-rev163-valuation-denominator-and-veto-limits",
+          "cl-rev163-comparative-assertion-three-regimes",
+          "cl-closing-historical-return",
+          "cl-rev163-targeted-revision-routing"
+        ],
+        "conceptIds": [
+          "cn-historical-comparison-basis",
+          "cn-framework-work-products",
+          "cn-review-scope"
+        ],
+        "caveats": [
+          "本收束论述综合全书已核验的一手文献与公开计算案例，不替代特定工程项目的实地监测或特定法域的法定合格评定。"
+        ],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-int159-danish-epa-multi-indicator",
+            "relation": "supports",
+            "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+          },
+          {
+            "evidenceId": "ev-int159-pef-interpretation-report",
+            "relation": "supports",
+            "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+          },
+          {
+            "evidenceId": "ev-fut161-tsoy-upscaling",
+            "relation": "supports",
+            "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+          },
+          {
+            "evidenceId": "ev-lcc143-oneill2026-strong-vs-weak-sustainability",
+            "relation": "supports",
+            "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+          }
+        ]
+      },
+      "rationale": "清除注释范围中的“全书三十二章”旧版章数残留。"
+    }
+  ],
+  "files": [
+    {
+      "path": "content/docs/book/wall-service-to-comparison.mdx",
+      "fromSha256": "1cf4089f9f39c5b7cd5952ef2071eb27aa1c7cc873cec0dd1db649a2e983a58a",
+      "toSha256": "562dd93d9b6c5510cacbbeda3558ee220a7bf2c7314ecf5d224a6e7e8e969663",
+      "previous": "---\ntitle: 墙面服务比较\ndescription: 比较两种涂料如何在同一片墙面维持十年的颜色和遮盖效果，逐步算出所需活动和气候指标，再看基底和共同供电条件怎样影响指标差。\n---\n\n## 功能实现 [#功能实现]\n\n<Prose ids=\"cl-wall-question cl-wall-quantities cl-wall-reference cl-wall-same-mass\" />\n\n## 清单形成 [#清单形成]\n\n<Prose ids=\"cl-wall-coordinates\" />\n\n[计算表与参数](#wall-case-reference)列出技术矩阵、排放矩阵和分步算式。下面先看涂料和基底准备活动需要多少电。\n\n<Prose ids=\"cl-wall-demand cl-wall-activities cl-wall-balance-meaning cl-wall-inventory cl-wall-inventory-boundary\" />\n\n## 指标含义 [#指标含义]\n\n<Prose ids=\"cl-wall-factor-choice cl-wall-characterization cl-wall-metric-meaning cl-wall-time\" />\n\n## 配对判断 [#配对判断]\n\n<Prose ids=\"cl-wall-unknown cl-wall-paired-range cl-wall-pairing cl-wall-tolerance cl-wall-rough-demand cl-wall-rough-comparison\" />\n\n<TeachingCase id=\"CASE-WALL-CONNECT\" version=\"1.0.0\" />\n\n<Prose ids=\"cl-wall-exercise cl-wall-answer\" />\n\n<Prose ids=\"cl-wsc157-equivalence-and-pairing cl-wsc157-paired-vs-mc-fallacy cl-wsc157-ilcd-comparative-assertion cl-wsc157-pef-pefcr-and-classes cl-wsc157-ghgp-and-paywalled-iso cl-wsc157-comparison-synthesis-bridge\" />\n\n下表把三套公开国际规范在产品比较对象、不确定性配对、加权禁限、性能分级与外部审查上的核心条款放在同一口径下对照，方便区分“算术配对成立”与“公开比较断言合法”这两层不同资格。\n\n| 规范体系与一手来源 | 比较适用条件与对象 | 不确定性与配对要求 | 加权与性能分级立场 | 强制外部审查与关键边界 |\n| --- | --- | --- | --- | --- |\n| 欧盟国际参考生命周期数据系统指南（ILCD 2010，第 5.2.5、5.3、6.10—6.11、8.4 节） | 情景 A 微观决策支持涵盖产品比较与基准对照；非断言并排比较亦须遵守公开比较断言规则，禁止仅凭清单（LCI）比较 | 同口径建界，仅完全相同部件可省去，部分相关部件须保留并分析相关性；强制做合理最佳／最差情景与不确定度计算 | 公开比较断言严格禁止使用加权（价值选择不可替代分项影响剖面） | 背景与前景数据须经比较断言预审，否则升格为外部评审组审查；会计类情景 C 不得用于优劣采购或政策决策 |\n| 欧盟委员会建议书 (EU) 2021/2279（产品环境足迹 PEF，公报 OJ L 144 第 23—24、88、95—102、149 页；原刊 OJ L 471 第 220、291—298、345 页） | 仅当遵循有效产品环境足迹类别规则（PEFCR）时允许比较与比较断言；无有效 PEFCR 时仅限内部应用与非比较类对外传播 | 须按统一类别规则（PEFCR）对齐模型与代表产品基准（BM），并结合灵敏度分析确定理论最佳与最差总分 | 强制对 16 项环境足迹类别做归一化与加权合成单一总分，按基准中点与 0.30／0.85 系数划分 A—E 五档性能等级 | 凡对外传播均须第三方验证与确认（重大差错阈值大于 5%，核查员资质至少 6 分，有效期最长 3 年） |\n| 温室气体核算体系（GHG Protocol）产品标准（2011，第 1.5、5.3.2、10.3.4、13.2 节与附录 A） | 按原样仅支持同一产品跨期减排追踪；明确不支持产品间总体环境优劣比较断言，跨产品比较须另依产品规则 | 明确禁止直接并排比较方案 A 与 B 各自的边缘不确定性区间，要求评估比较量本身（如 A/B）的参数与情景不确定性 | 仅核算单一温室气体指标，不设多类别加权或跨产品性能等级 | 跨产品比较须对齐分析单元、系统与时间边界、分配方法并完成第三方鉴证；多类别公开比较须满足对应国际标准 |\n\n下一章讨论已发表的[购物袋研究](/docs/book/interpretation-and-limits/)。两种袋子要完成相同的运输服务，但是否能达到算出的复用次数，还要看实际使用情况。\n"
+    },
+    {
+      "path": "content/docs/book/interpretation-and-limits.mdx",
+      "fromSha256": "0728fe36159455b3e5e5f3798dbe4cb07f9ffeb4f85bb7ced937af1ba049d79b",
+      "toSha256": "a489664d8f87bfc154a616d529a32b1dbc7f678ab3a4071c1c102b60e3ebca48",
+      "previous": "---\ntitle: 购物袋研究\ndescription: 复算英国购物袋研究中厚袋需要使用多少次，查看垃圾桶内衬替代如何改变门槛，并区分气候结果、其他影响及审查能够确认的结论。\n---\n\n## 购物运输服务 [#购物运输服务]\n\n<Prose ids=\"cl-pack-question cl-pack-goal cl-pack-service cl-pack-capacity cl-pack-count cl-pack-provenance cl-pack-baseline-boundary\" />\n\n## 替代与复用门槛 [#替代与复用门槛]\n\n<Prose ids=\"cl-pack-credit cl-pack-people cl-pack-mapping cl-pack-baseline cl-pack-uses cl-pack-shift cl-pack-three\" />\n\n下面逐项比较轻薄袋的使用条件，看看“五次”适用于哪种情形。厚 LDPE 袋只使用一次时，同一月购物运输服务的气候指标为 6.924 kg CO₂ eq；各行都用这个数除以总购物次数。\n\n| HDPE 袋的使用条件 | HDPE 气候指标（kg CO₂ eq／同一月购物运输服务，483 件） | LDPE 气候指标严格较低所需的总购物次数 |\n| --- | --- | --- |\n| 一次购物，不计内衬替代 | 2.082 | 至少4次 |\n| 一次购物，按报告假定将40.28%的HDPE袋替代内衬袋 | 表列1.578 | 至少5次 |\n| 一次购物，全部HDPE袋用于替代内衬袋 | 0.830 | 至少9次 |\n| 三次购物，再将约四成HDPE袋用于内衬 | 1.578／3 | 至少14次 |\n\n每行都求使 6.924／n 小于第二列指标值的最小整数 n，并把第一次购物计入 n。最后一行按原报告正文所述条件计算。原表 8.1 列的是十二次，正文约为十四次，表中没有交代的条件仍待查明。\n\n<Prose ids=\"cl-pack-rounding\" />\n\n## 多指标与研究边界 [#多指标与研究边界]\n\n<Prose ids=\"cl-pack-categories cl-pack-selection cl-pack-hotspot cl-book-consistency cl-pack-data cl-pack-missing cl-pack-litter cl-pack-environment\" />\n\n<Prose ids=\"cl-int159-danish-epa-fu-eol cl-int159-danish-epa-multi-indicator cl-int159-ilcd-pef-interpretation-hotspots\" />\n\n## 审查与实际建议 [#审查与实际建议]\n\n<Prose ids=\"cl-book-interpret-iterate cl-pack-reviewers cl-pack-review-flow cl-pack-review-capacity cl-pack-review-residual cl-pack-acceptance cl-book-no-ranking cl-book-not-equivalent cl-pack-recommendation cl-pack-later cl-pack-iterate\" />\n\n<Prose ids=\"cl-int159-critical-review-governance cl-int159-limitations-and-paywalled-iso cl-int159-interpretation-synthesis-bridge\" />\n\n下表把英国与丹麦两份政府购物袋评估，以及 ILCD 2010 与欧盟 PEF 两套国际解释／审查规范放在同一口径下对照，呈现功能单位与基准设定、热点与负信用规则、外部审查体制和局限披露之间的实质异同。\n\n| 评估或规范体系与一手来源 | 功能单位与基准口径 | 热点识别与稳健性规则 | 负信用与范围外效应处理 | 外部审查体制与结论局限边界 |\n| --- | --- | --- | --- | --- |\n| 英国环境署购物袋评估（2011，表 8.1 与评审章节） | 一月超市购物（483 件商品）；以 40.28% 作垃圾桶内衬的 HDPE 袋为参照，基准内衬比例直接移动复用门槛 | 聚焦气候变化并辅以多指标灵敏度分析，检验袋重、承载量与内衬替代率对复用次数的影响 | 明确计入垃圾桶内衬替代信用；土地、用水缺失与乱丢弃、海洋塑料风险单列为研究局限 | 三人外部评审组审查并在附录 E 与正文中保留未消除分歧；结论限于给定英国情景，不作普适排序 |\n| 丹麦环保署购物袋评估（Miljøstyrelsen 2018，第 1985 号报告） | 单次超市购物 22 升、12 千克；容积或承重不足的 6 类袋子按整数取整计 2 只；以作垃圾袋后焚烧的 LDPE 袋（EOL3）为动态基准 | 无加权逐项计算 15 项环境指标最小复用次数：普通棉袋气候 52 次／全指标 7,100 次，有机棉袋气候 149 次／全指标 20,000 次，纸袋气候 0—1 次／全指标 43 次 | 基准袋复用会同比例放大门槛；丹麦乱丢弃效应视为可忽略而未建模，复用次数仅为数学盈亏下限 | COWI 两名专家外部同行评审；明文声明不严格符合 ISO 14044 公开比较断言程序，仅作内部决策支持 |\n| 欧盟 ILCD 详细指南（2010，第 6.11—6.12 节、第 9 章与第 11 章） | 按既有目标与范围设定功能单位与系统边界，结论须严格服从该范围 | 重大议题识别加完整性、灵敏度与一致性三项核查；随机不确定度计算不能替代对系统性偏差的专家判断 | LCA 范围外未量化效应（如乱丢弃）须明确隔离，不得与 LCA 得分暗中排序 | 区分内部、外部与评审组审查并倡导同步审查，列明 5 项保证准绳；关键局限须写入摘要，未检出显著差异不得宣称等效 |\n| 欧盟委员会建议书 (EU) 2021/2279（产品环境足迹 PEF，公报 OJ L 144 附件一第 6—8 节） | 按统一产品环境足迹方法口径建立功能单位与模型，公开聚合环境足迹数据集须连带公开底层报告 | 稳健性三查叠加定量热点阈值：类别 ≥ 80%（至少 3 类）、阶段／过程 > 80%（使用阶段 > 50% 须剔除重算）、基本流 ≥ 80% | 第 6.3.5 节规定过程与基本流出现负值抵扣时按绝对值重算 100% 占比（阶段除外）；明确不替代厂址级环评与化学品风险评估 | 固化 6 项报告组成（含仅供核查员审阅的可选机密报告）；单项类别变动 > 5% 或改变热点清单构成重大差错 |\n\n比较尚未实现的工艺，同样需要说明模型设定能代表哪些实际条件。[未来技术与情景](/docs/book/future-technology-and-context/)继续追问：假定新工艺在某年达到所设规模，应与哪项同期技术比较？应采用什么材料与能源供应条件？\n"
+    },
+    {
+      "path": "content/docs/book/future-technology-and-context.mdx",
+      "fromSha256": "7ade912085f7fb766e12bfa7913adfe4584567b7549164b94dd3c2f16273226e",
+      "toSha256": "430ca2e83a093f92aa6ad49248860f53358651ab23baa44338c55ba8f6c63048",
+      "previous": "---\ntitle: 未来技术与情景\ndescription: 评价尚在开发的工艺时，怎样设定它未来的生产规模、同期竞争方案和供给条件？本章说明这些设定如何影响比较。\n---\n\n## 工艺放大与比较对象 [#技术规模与功能]\n\n<Prose ids=\"cl-future-definition cl-future-scale-up cl-future-incumbent\" />\n\n<Prose ids=\"cl-fut161-terminology-axes cl-fut161-upscaling-methods\" />\n\n## 情景与供给背景 [#情景与供给背景]\n\n<Prose ids=\"cl-future-scenarios cl-future-background cl-book-future-scenario-matrix\" />\n\n<Prose ids=\"cl-fut161-superstructure-iam cl-fut161-superstructure-limits\" />\n\n## 前瞻比较的适用条件 [#前瞻判断条件]\n\n<Prose ids=\"cl-future-impact-limits cl-future-comparison-conditions cl-book-future-decision\" />\n\n<Prose ids=\"cl-fut161-dynamic-time-horizons cl-fut161-temporal-barriers-values\" />\n\n下表把五类常见的面向未来与时间解析 LCA 方法放在同一口径下对照，呈现它们在时间定位、技术成熟度、背景与影响评价处理以及主要局限上的实质差异。\n\n| 方法类别与代表文献 | 时间定位与解析度 | 技术成熟度与放大焦点 | 背景系统与影响评价处理 | 主要适用边界与局限 |\n| --- | --- | --- | --- | --- |\n| 前瞻性 LCA（推荐总称；Arvidsson 等 2024；Steubing 与 de Koning 2021） | 面向未来特定年份或时段，多数按单一时点聚合求解 | 可评估新兴技术，也可在未来背景下评估已成熟技术 | 需用综合评估模型（IAM）耦合未来背景数据库（如超结构＋情景差异文件），避免前景—背景时间错位 | 超结构架构仅解决软件工程瓶颈、不担保情景质量；存在幽灵过程、不确定度与许可局限 |\n| 事前 LCA（Arvidsson 等 2024；Tsoy 等 2020） | 面向技术商业化与大规模投产之前的未来时点 | 必含技术成熟度由实验室／中试向工业规模的放大推演 | 依三步放大框架与流程模拟、手工计算、分子结构模型或代理数据估算工业清单，再耦合未来背景 | 综述 18 项案例中 0 篇报告技术就绪度（TRL）、0 篇完成投产后实测回验，专家参与与流程图披露不足 |\n| 预期式 LCA（Arvidsson 等 2024） | 面向新兴技术未来发展路径 | 与事前 LCA 同样关注早期技术放大 | 在前景与背景建模之外，着重引入利益相关方参与系统边界、功能单位、影响类别与权重选择 | 结果高度依赖参与方价值偏好与治理框架，不可直接替代技术实测 |\n| 实验室尺度 LCA（Arvidsson 等 2024；Tsoy 等 2020） | 当下或近期实验室研究阶段 | 保持低成熟度现状，不做工业规模放大 | 直接使用实验室实测或近似代理数据，通常配以现行背景数据库 | 仅宜用于早期研发热点诊断，不能直接拿去与成熟商业工业技术比拼优劣 |\n| 动态 LCA（Lueddeckens 等 2020；Arvidsson 等 2024） | 按时间点解析排放发生时刻与影响响应（区分评估、清单与表征三类时间范围） | 不限于新兴技术，重点追踪全生命周期排放时序 | 仅动态清单属半动态；同时耦合动态清单与动态表征因子才构成全动态 LCA | 绝大多数类别缺乏动态表征因子，供应链时序数据与软件受限；时间范围、贴现率与动态归一化暗含价值选择 |\n\n无论是当下产品比较还是面向未来的情景推演，单个章节的结论都仍需放回整本书的证据链条中检验。末章[服务、系统与时间](/docs/book/connecting-objects-references-and-time/)与[判断依据与修订](/docs/book/from-connected-results-to-conditional-judgment/)将回到容器、墙面与购物袋三组案例，说明当新证据或新规则出现时，应如何定向修订结论。\n"
+    },
+    {
+      "path": "content/docs/book/from-connected-results-to-conditional-judgment.mdx",
+      "fromSha256": "28abe503bfd418187d6b011b60a393185620c0ffb87058d727e4e8e3f723614c",
+      "toSha256": "91162aca5f7d739a5d947f683663825db5428a0ed3ab40528689c5a7fbb79f7b",
+      "previous": "---\ntitle: 判断依据与修订\ndescription: 通过饮料容器、墙面和购物袋三个案例，辨认证据支持哪一项判断、新资料会改变哪一步。\n---\n\n判断是否适用，要看数值怎样得出、证据覆盖哪些后果。与[服务、系统与时间](/docs/book/connecting-objects-references-and-time/)合读，可以看到本书末章的完整论证。下文提到的开篇与案例均指本书相应章节。\n\n## 数值来源与证据覆盖 [#先保留数值的来历与覆盖]\n\n<Prose ids=\"cl-connect-zero-needs-origin cl-connect-proxy-and-outcome cl-connect-evidence-to-probability cl-connect-coverage-and-overlap cl-rev163-pedigree-dqr-and-sampling-limits\" />\n\n## 判断与审查 [#让判断审查和后续证据各有边界]\n\n<Prose ids=\"cl-connect-values-stay-specific cl-connect-useful-without-winner cl-connect-review-does-not-transfer cl-book-conclusion-conditions cl-rev163-valuation-denominator-and-veto-limits cl-rev163-comparative-assertion-three-regimes\" />\n\n## 案例与结论修订 [#history-and-revision]\n\n<Prose ids=\"cl-closing-container-comparison-and-policy cl-closing-wall-substrate cl-closing-pack-threshold-and-review cl-pack-limits cl-connect-next-evidence-at-link cl-closing-historical-return\" />\n\n<Prose ids=\"cl-rev163-targeted-revision-routing\" />\n\n下表把全书七部最常遇到的七类新增证据或规则变更收束到同一张修订路由表中，便于在出现新数据时快速定位应重算的环节、保持不变的依据与不得越界的推论。\n\n| 新增证据或变更类型 | 受影响环节与主要主题 | 应修订的命题类别 | 保持不变的既有依据 | 不得由此直接推论 |\n| --- | --- | --- | --- | --- |\n| 服务性能、次级功能或真实使用行为变化（如基底准备、复用次数与内衬替代） | 功能单位、参考流与案例比较（服务与清单、墙面与购物袋案例） | 服务等效性、参考流数量、复用门槛与多指标优劣结论 | 上游单品工艺物料平衡与各影响因子本身 | 仅凭质量相等即等效，或假定消费者实际复用次数必然达标 |\n| 工艺放大系数、前景—背景年份错位或循环分账参数变更 | 系统边界、多功能分配与前瞻情景（循环足迹、未来技术与情景） | 工业放大清单、再生料归属方向与未来情景包络区间 | 既有实测基准年清单与历史回望记录 | 实验室热点等同商业化表现，或超结构软件即担保情景合理 |\n| 背景数据库换版、剩余地区（RoW）市场重算或缺失流补全 | 清单链接与数据适用性（流与交换、数据库适用性与版本边界） | 背景上游贡献、区域代表性偏差与缺失流补齐说明 | 前景实测工艺输入输出与既定功能单位 | 数据库换版导致的数值变化等同企业现场节能或增排 |\n| 影响评价方法换版、因果截点调整或官方数据包勘误 | 表征模型与影响路径（矿产、化石、生物碳、酸化、富营养化、颗粒物、水、臭氧与毒性） | 类别归属、空间与时间窗因子值及受勘误影响的类别排序 | 物理排放与资源开采清单（以自然单位计） | 影响分值变化源于物理排放变动，或旧版数据包勘误可忽略 |\n| 归一化分母漂移、权重与货币估值立场或地球边界配额改变 | 跨类汇总与价值判断（归一化与加权、本地化、社会评价、成本与地球边界） | 综合单分排序、补偿限度、社会底线否决与绝对合规判定 | 归一化前的中点／终点物理与生态指标结果 | 综合加权分值属于纯自然科学事实，或现金流成本可与生态损害直接相抵 |\n| 实测抽样方差更新、谱系矩阵替代或数据质量等级变化 | 不确定度与质量表征（变异与不确定性、质量评分与概率） | 置信区间、成对比较稳健性判定与数据质量评级披露 | 确定性点估计公式结构与物理守恒关系 | 谱系蒙特卡洛区间等同实测统计方差，或高 DQR 消除系统边界截断 |\n| 产品足迹类别规则、法定核查要求或关键性审查范围变更 | 制度边界与外部审查（产品足迹规则、墙面与购物袋审查体制） | 面向公众的比较断言资格、性能分级与法定披露格式 | 内部热点诊断、灵敏度结构与物理改进方向 | 某法域或导则审查通过即自动满足另一法域或国际标准原文要求 |\n\n<Prose ids=\"cl-rev163-monograph-closing-boundary\" />\n"
+    },
+    {
+      "path": "content/monograph/revisable-judgment.mdx",
+      "fromSha256": "5f004b433d2913e6831705adafb5b87f236e2c1b52c39de206b1654514ba70f0",
+      "toSha256": "dc1f483e429c19f3866ba953e4b7ed901a2bae6b7e001dec198a44d7863fdab8",
+      "previous": "---\ntitle: 可修订的判断\ndescription: 回到饮料容器、墙面和购物袋，说明比较结果可以支持什么判断，又该根据什么新证据修订结论。\n---\n\n## 服务与系统 [#对象连接]\n\n<Prose ids=\"cl-connect-object-before-unit cl-closing-container-comparison-and-policy cl-connect-service-changes-system cl-connect-three-scalings cl-connect-prospective-two-questions cl-connect-time-relations cl-rev163-circular-and-prospective-coupling\" />\n\n## 模型与证据覆盖 [#覆盖状态]\n\n<Prose ids=\"cl-closing-wall-substrate cl-connect-reuse-keeps-relation cl-connect-zero-needs-origin cl-connect-proxy-and-outcome cl-connect-target-and-distribution cl-connect-evidence-to-probability cl-connect-coverage-and-overlap cl-rev163-lcia-pathway-and-packet-drift cl-rev163-pedigree-dqr-and-sampling-limits\" />\n\n## 取舍与结论强度 [#判断理由]\n\n<Prose ids=\"cl-connect-values-stay-specific cl-connect-money-has-roles cl-connect-review-does-not-transfer cl-connect-useful-without-winner cl-book-conclusion-conditions cl-rev163-valuation-denominator-and-veto-limits cl-rev163-comparative-assertion-three-regimes\" />\n\n## 结论修订的依据 [#历史与修订]\n\n<Prose ids=\"cl-closing-pack-threshold-and-review cl-pack-limits cl-connect-next-evidence-at-link cl-closing-historical-return\" />\n\n<Prose ids=\"cl-rev163-targeted-revision-routing\" />\n\n下表把全书七部最常遇到的七类新增证据或规则变更收束到同一张修订路由表中，便于在出现新数据时快速定位应重算的环节、保持不变的依据与不得越界的推论。\n\n| 新增证据或变更类型 | 受影响环节与主要主题 | 应修订的命题类别 | 保持不变的既有依据 | 不得由此直接推论 |\n| --- | --- | --- | --- | --- |\n| 服务性能、次级功能或真实使用行为变化（如基底准备、复用次数与内衬替代） | 功能单位、参考流与案例比较（服务与清单、墙面与购物袋案例） | 服务等效性、参考流数量、复用门槛与多指标优劣结论 | 上游单品工艺物料平衡与各影响因子本身 | 仅凭质量相等即等效，或假定消费者实际复用次数必然达标 |\n| 工艺放大系数、前景—背景年份错位或循环分账参数变更 | 系统边界、多功能分配与前瞻情景（循环足迹、未来技术与情景） | 工业放大清单、再生料归属方向与未来情景包络区间 | 既有实测基准年清单与历史回望记录 | 实验室热点等同商业化表现，或超结构软件即担保情景合理 |\n| 背景数据库换版、剩余地区（RoW）市场重算或缺失流补全 | 清单链接与数据适用性（流与交换、数据库适用性与版本边界） | 背景上游贡献、区域代表性偏差与缺失流补齐说明 | 前景实测工艺输入输出与既定功能单位 | 数据库换版导致的数值变化等同企业现场节能或增排 |\n| 影响评价方法换版、因果截点调整或官方数据包勘误 | 表征模型与影响路径（矿产、化石、生物碳、酸化、富营养化、颗粒物、水、臭氧与毒性） | 类别归属、空间与时间窗因子值及受勘误影响的类别排序 | 物理排放与资源开采清单（以自然单位计） | 影响分值变化源于物理排放变动，或旧版数据包勘误可忽略 |\n| 归一化分母漂移、权重与货币估值立场或地球边界配额改变 | 跨类汇总与价值判断（归一化与加权、本地化、社会评价、成本与地球边界） | 综合单分排序、补偿限度、社会底线否决与绝对合规判定 | 归一化前的中点／终点物理与生态指标结果 | 综合加权分值属于纯自然科学事实，或现金流成本可与生态损害直接相抵 |\n| 实测抽样方差更新、谱系矩阵替代或数据质量等级变化 | 不确定度与质量表征（变异与不确定性、质量评分与概率） | 置信区间、成对比较稳健性判定与数据质量评级披露 | 确定性点估计公式结构与物理守恒关系 | 谱系蒙特卡洛区间等同实测统计方差，或高 DQR 消除系统边界截断 |\n| 产品足迹类别规则、法定核查要求或关键性审查范围变更 | 制度边界与外部审查（产品足迹规则、墙面与购物袋审查体制） | 面向公众的比较断言资格、性能分级与法定披露格式 | 内部热点诊断、灵敏度结构与物理改进方向 | 某法域或导则审查通过即自动满足另一法域或国际标准原文要求 |\n\n<Prose ids=\"cl-rev163-monograph-closing-boundary\" />\n"
+    }
+  ],
+  "corrections": [
+    {
+      "chapter": "/docs/book/wall-service-to-comparison",
+      "claimId": "cl-wsc157-equivalence-and-pairing",
+      "scope": "整合改写：压实至 410 字以内，收束 ILCD 2010 与 GHG Protocol 的等价建界与配对比较底线。"
+    },
+    {
+      "chapter": "/docs/book/wall-service-to-comparison",
+      "claimId": "cl-wsc157-paired-vs-mc-fallacy",
+      "scope": "整合改写：压实至 380 字以内，并将正文与注释范围中的草稿章号替换为正式篇名《变异与不确定性》。"
+    },
+    {
+      "chapter": "/docs/book/wall-service-to-comparison",
+      "claimId": "cl-wsc157-pef-pefcr-and-classes",
+      "scope": "整合改写：压实至 415 字以内，精简公报页码冗述，保留 PEFCR 许可、五档分级与第三方核查核心门槛。"
+    },
+    {
+      "chapter": "/docs/book/wall-service-to-comparison",
+      "claimId": "cl-wsc157-ghgp-and-paywalled-iso",
+      "scope": "整合改写：压实至 390 字以内，保持 GHG Protocol 应用边界与付费标准来源界定。"
+    },
+    {
+      "chapter": "/docs/book/wall-service-to-comparison",
+      "claimId": "cl-wsc157-comparison-synthesis-bridge",
+      "scope": "清理注释中的草稿章号残留，改为正式篇名《购物袋研究》。"
+    },
+    {
+      "chapter": "/docs/book/interpretation-and-limits",
+      "claimId": "cl-int159-ilcd-pef-interpretation-hotspots",
+      "scope": "整合改写：压实至 410 字以内，理顺 ILCD 2010 稳健性三查与欧盟 PEF 定量热点及负值绝对值重算规则。"
+    },
+    {
+      "chapter": "/docs/book/interpretation-and-limits",
+      "claimId": "cl-int159-critical-review-governance",
+      "scope": "整合改写：压实至 420 字以内，保持英丹政府案例与 ILCD、PEF 审查体制对照。"
+    },
+    {
+      "chapter": "/docs/book/interpretation-and-limits",
+      "claimId": "cl-int159-limitations-and-paywalled-iso",
+      "scope": "整合改写：压实至 335 字以内，保留局限随行、非等效底线与付费标准来源边界。"
+    },
+    {
+      "chapter": "/docs/book/future-technology-and-context",
+      "claimId": "cl-future-incumbent",
+      "scope": "清除正文与注释范围中的草稿章号残留，改为正式篇名《墙面服务比较》。"
+    },
+    {
+      "chapter": "/docs/book/future-technology-and-context",
+      "claimId": "cl-book-future-scenario-matrix",
+      "scope": "清除注释范围中的草稿章号残留，改为正式篇名《墙面服务比较》。"
+    },
+    {
+      "chapter": "/docs/book/future-technology-and-context",
+      "claimId": "cl-future-impact-limits",
+      "scope": "清除正文中的草稿章号残留，改为正式篇名《排放时间与评价》。"
+    },
+    {
+      "chapter": "/docs/book/future-technology-and-context",
+      "claimId": "cl-fut161-terminology-axes",
+      "scope": "整合改写：压实至 380 字以内，突出时间位置与技术成熟度两维坐标及五类术语界线。"
+    },
+    {
+      "chapter": "/docs/book/future-technology-and-context",
+      "claimId": "cl-fut161-upscaling-methods",
+      "scope": "整合改写：压实至 365 字以内，保留 18 项研究实证缺口、三步框架与四类估算方法。"
+    },
+    {
+      "chapter": "/docs/book/future-technology-and-context",
+      "claimId": "cl-fut161-superstructure-iam",
+      "scope": "整合改写：压实至 430 字以内，保持超结构＋SDF 架构与电动车算例核心数据。"
+    },
+    {
+      "chapter": "/docs/book/future-technology-and-context",
+      "claimId": "cl-fut161-dynamic-time-horizons",
+      "scope": "整合改写：压实至 355 字以内，保留三类时间范围与半动态／全动态 LCA 分界。"
+    },
+    {
+      "chapter": "/docs/book/future-technology-and-context",
+      "claimId": "cl-fut161-temporal-barriers-values",
+      "scope": "整合改写：压实至 350 字以内，保持数据/工具与价值判断两重硬约束。"
+    },
+    {
+      "chapter": "/docs/book/from-connected-results-to-conditional-judgment",
+      "claimId": "cl-rev163-monograph-closing-boundary",
+      "scope": "清除注释范围中的“全书三十二章”旧版章数残留。"
+    }
+  ],
+  "reviewEvidence": [
+    {
+      "kind": "integration-review",
+      "date": "2026-11-22",
+      "file": "_docs/editorial/review-evidence/part7-batch4-214/review-record.json",
+      "sha256": "c8138de8df984f73266b31b6f40adbb03b49da5b4daf976a3f64caba230db0d5"
+    }
+  ],
+  "publicArtifacts": [
+    {
+      "path": "claims/index.html",
+      "sha256": "365d56cceea25e5203bc529dbe8f73d64501313a47d92cbd7166d1aefca66c6e"
+    },
+    {
+      "path": "sources/index.html",
+      "sha256": "59574e4d70d83e8b80bc2601a4d45051e4cdfd6f854520eae91d010896cbee9d"
+    },
+    {
+      "path": "concepts/index.html",
+      "sha256": "884a6efc4afaf1ae8a06a2f90c1b68b725f40a6cd0de9a8fb8e52e687c98e657"
+    },
+    {
+      "path": "coverage/index.html",
+      "sha256": "5be994cb31a7a77576597707dafb8cfa6e932c161d4e273bc9783eb1c0f7fa2a"
+    },
+    {
+      "path": "downloads/catalog.json",
+      "sha256": "bf08138185fc49f4ab0b60e506091dca92f307d8b780bab35f99e6635dd7df4b"
+    },
+    {
+      "path": "downloads/dependencies.json",
+      "sha256": "455a10ee593c62d142db01eee90587f5b097fa7f815b8fe3f589ead119def018"
+    }
+  ]
+}
