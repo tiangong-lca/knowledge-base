@@ -1,0 +1,1345 @@
+{
+  "schemaVersion": 1,
+  "id": "part6-batch3-211",
+  "date": "2026-11-22",
+  "title": "第六部分 B25–B28 整合改写（批次 3）",
+  "rationale": "按全书目标第 2.16 节将第六部分四篇（B25《过程数据的用途》《数据审查与版本》及专论《数据适用性》、B26《变异与不确定性》、B27《质量评分与概率》、B28《产品足迹规则》）中的 19 段追加比较长段压实至 440 字以内，联动既有对照表并补齐表题，将冗长细目转入注释；全部 24 个算例绑定段落与既有章节标题均保持不变。",
+  "routes": [
+    "/docs/book/database-fitness-and-documentation",
+    "/docs/book/review-support-and-version-boundaries",
+    "/docs/monograph/data-applicability",
+    "/docs/book/uncertainty-and-variability",
+    "/docs/book/data-quality-and-probability",
+    "/docs/book/product-footprint-rules-and-practice"
+  ],
+  "sourceCommit": "8add4bd9397971bc0138bcf2bd210cee419e6c62",
+  "claims": [
+    {
+      "id": "cl-dapp147-dataset-roles-and-system-linking",
+      "op": "modify",
+      "from": {
+        "id": "cl-dapp147-dataset-roles-and-system-linking",
+        "status": "reviewed",
+        "text": "核对供电或原材料数据时，先要看清数据集在库内承担的结构角色与上下游拼接禁区。欧盟联合研究中心国际参考生命周期数据系统（ILCD）2010 年详细指南将过程数据集区分为单工序或黑箱单元过程、部分终止系统与生命周期清单结果三类，并要求按微观决策支持（情景 A）、中宏观政策支持（情景 B）及含或不含既有外部交互的核算归因（情景 C1、C2）指明方法适用边界。瑞士生命周期清单中心数据库第 3 版（ecoinvent v3）则把改变投入物理形态的转换活动（transforming activity）同按产量权重汇集区域供应并计入平均运输与流通损耗的消费组合市场活动（market activity）拆开，强制要求每项活动先建立全球父过程（GLO），再在存在非全球区域记录时按产量差额自动生成世界其余地区残差（RoW）；其 3.0 版发布说明披露，新增局部数据后若未同步更新全球父过程，残差扣减会出现负交换伪影，系统只能自动置零或在少数受监督例外中直接复制全球父过程。欧盟环境足迹合规数据集指南（EF Data Guide）2.0 版进一步规定，部分解聚模型由标为部分终止系统的中心数据集承载完整文档，下挂的非主要支撑子过程虽标为单工序单元过程，却免除独立质量评级与独立审查，严禁脱离父系统单独取用。天工生命周期数据体系公开规范（TIDAS）亦在公开规则中明确，生产组合与消费组合应具备给定地域和时期的成文权重依据，电网损耗代理或 1:1 变压核算节点不会把生产组合自动变成消费组合，购电绿证等合同属性也不得改写物理发电技术。",
+        "scope": "ILCD 2010、ecoinvent v3、欧盟 EF 合规数据集指南 2.0 版与 TIDAS v0.3.0 对过程数据集结构角色、区域残差闭合及混合市场命名的比较",
+        "caveats": [
+          "ecoinvent 3.0 版关于未同步更新全球父过程导致负残差置零或复制 GLO 的记录属该版发布说明披露的历史过渡机制，不直接代表后续商业子版本的全库现状。",
+          "TIDAS 结构化过程命名限定词规则在公开索引中标为推荐级定义，具体消费端是否阻断由下游工具链或产品策略决定。"
+        ],
+        "premiseIds": [
+          "cl-db2011-user-and-manager",
+          "cl-db2011-represented-object",
+          "cl-db2011-scope-examples"
+        ],
+        "evidenceIds": [
+          "ev-dapp147-ilcd2010-dataset-types-and-review",
+          "ev-dapp147-ecoinvent2013-glo-row-and-markets",
+          "ev-dapp147-efguide2020-supporting-subprocesses",
+          "ev-dapp147-tidas-public-rules"
+        ],
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "conceptIds": [],
+        "mappingIds": [],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-dapp147-ilcd2010-dataset-types-and-review",
+            "relation": "supports",
+            "rationale": "ILCD 2010 界定三类过程数据集、情景 A/B/C1/C2 合规边界及第 11 章关键评审委派规则。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ecoinvent2013-glo-row-and-markets",
+            "relation": "supports",
+            "rationale": "ecoinvent v3 指南界定转换活动与消费组合市场活动拆分、强制 GLO 父过程与动态 RoW 残差及 3.0 版负残差置零规则。"
+          },
+          {
+            "evidenceId": "ev-dapp147-efguide2020-supporting-subprocesses",
+            "relation": "supports",
+            "rationale": "EF 合规数据集指南 2.0 版第 5.4.1—5.4.2 节界定部分终止系统中心数据集与禁止独立复用的非主要支撑子过程。"
+          },
+          {
+            "evidenceId": "ev-dapp147-tidas-public-rules",
+            "relation": "supports",
+            "rationale": "TIDAS v0.3.0 公开规则限定生产组合与消费组合权重基础、分离绿证与物理发电并要求 NN.NN / NN.NN.NNN 版本递增。"
+          }
+        ],
+        "reasoning": "基于已固定哈希值的一手规范原件与精确有理数验算，区分各体系共同要求、条件对应与算式或门槛反转。"
+      },
+      "rationale": "整合改写：压实至 420 字以内，展开 ILCD 全称并理顺四套体系的数据集角色与拼接禁区。"
+    },
+    {
+      "id": "cl-dapp147-intrinsic-vs-context-representativeness",
+      "op": "modify",
+      "from": {
+        "id": "cl-dapp147-intrinsic-vs-context-representativeness",
+        "status": "reviewed",
+        "text": "同一份数据集在原库评为最高等级，换入另一项产品研究后为何可能直接丧失合规资格？ILCD 2010 年指南第 12.2 节区分固有代表性与外部适配度：前者衡量清单贴合数据集自身功能单位与参考范围的程度，后者衡量它在当前系统模型中代表真实所需过程的程度；单一技术路线建模的国家混合过程对全国平均代表性有限，对恰好采用该技术路线的工厂却高度适配，反之用平均 80% 装载率的低方差货运数据代替特定满载或轻载情境则会引入系统性偏差而非随机误差。欧盟环境足迹体系把这一区分转化为两阶段数据质量评级（DQR）门槛：在供应端，一座特定时期与区域的煤粉锅炉电厂相对自身定量参考在技术代表性（TeR）、地域代表性（GeR，数据集指南记作 GR）、时间代表性（TiR）与精密度（P）四项均评 1 分时，出厂评级为 1.0（建议书表 22“极优质量”）；进入欧盟委员会建议书 (EU) 2021/2279 附件一的数据需求矩阵（DNM，表 25）后，若该电厂属于企业自营过程（情境 1）或有现场信息且选用初级方案（情境 2 选项 1），必须采集公司特定初级数据并满足 DQR ≤ 1.5（且 P 不高于 3 分、三项代表性不高于 2 分），任何次级库记录均不得顶替；若属于无权获取初级数据的上游最相关过程（情境 3），则须保持原精密度 P = 1 不变并按该附件表 24 重评研究语境代表性——用该数据代理异国（GeR = 5）、跨代逾十年（TiR = 5）的循环流化床供电（TeR = 4）时，语境得分即升至 (4 + 5 + 5 + 1) / 4 = 3.75，高出次级合规上限 3.0 而出局；唯有在情境 2 选项 2 中采用解聚的 EF 合规次级数据集并真实替换供应链特定电力组合与运输距离，方可按第 4.6.5.6 节在重评 TeR、TiR 且保留原 P 的同时将原地域代表性分值下调 30%（例如原 GeR = 3.0、P = 2.5 的合规次级数据在表 24 语境重评得 TeR = 4、TiR = 3 时，未折减均值为 12.5/4 = 3.125 而超标，经 GeR = 3.0 × 0.7 = 2.1 折减后降为 11.6/4 = 2.90 ≤ 3.0）。",
+        "scope": "ILCD 2010 固有代表性与外部适配度区分同欧盟建议书 (EU) 2021/2279 数据需求矩阵及语境重评算式的跨阶段对照",
+        "caveats": [
+          "出厂 1.0 分重评为 3.75 分及情境 2 选项 2 由未折减 3.125 分降为 2.90 分系严格代入欧盟建议书式 19、表 24—25 与第 4.6.5.6 节规则构造的受控说明算例，不指代某一特定电厂商业档案。"
+        ],
+        "premiseIds": [
+          "cl-db2011-represented-object",
+          "cl-db2011-scope-examples",
+          "cl-dapp147-dataset-roles-and-system-linking"
+        ],
+        "evidenceIds": [
+          "ev-dapp147-ilcd2010-representativeness-vs-appropriateness",
+          "ev-dapp147-ec2021-dqr-equations-and-dnm",
+          "ev-dapp147-efguide2020-provider-dqr-and-ceiling"
+        ],
+        "kind": "calculation",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "conceptIds": [],
+        "mappingIds": [],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-dapp147-ilcd2010-representativeness-vs-appropriateness",
+            "relation": "supports",
+            "rationale": "ILCD 2010 第 12.2 节区分固有代表性与研究语境适配度，并以图 28 及 80% 装载率货运说明系统偏差与随机方差。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ec2021-dqr-equations-and-dnm",
+            "relation": "supports",
+            "rationale": "欧盟建议书第 4.6.5—4.6.5.8 节给出四项指标式 19—20、表 22 五档、数据需求矩阵三情境与情境 2 选项 2 地域分下调 30%。"
+          },
+          {
+            "evidenceId": "ev-dapp147-efguide2020-provider-dqr-and-ceiling",
+            "relation": "supports",
+            "rationale": "EF 合规数据集指南 2.0 版第 5.2.17 节规定前 80% 单分贡献重标定、单项加权上限 3.0 及方法学与完整性标 Not applicable。"
+          }
+        ],
+        "reasoning": "基于已固定哈希值的一手规范原件与精确有理数验算，区分各体系共同要求、条件对应与算式或门槛反转。"
+      },
+      "rationale": "整合改写：联动表 1，压实至 440 字以内并将情境 2 折减算例移入注释。"
+    },
+    {
+      "id": "cl-dapp147-quality-architectures-and-prerequisite-split",
+      "op": "modify",
+      "from": {
+        "id": "cl-dapp147-quality-architectures-and-prerequisite-split",
+        "status": "reviewed",
+        "text": "要把代表性、完整性与精密度写成可核查的质量记录，不同体系在指标取舍和数学形态上分出了四条路径。2011 年 UNEP/SETAC 指南表 4.1 并列定性维度而不设合成公式。ILCD 2010 年指南第 12.3 节将技术、地域、时间代表性同完整性（C）、精密度（P）及方法学适配性与一致性（M）共六项指标纳入 1 至 5 分标度：未经评估或未知项一律按最差档赋 5 分，无特定地点单元过程的地域代表性等确属不适用项则赋 0 分并从有效指标数中扣除。欧盟建议书 (EU) 2021/2279 与 EF 合规数据集指南 2.0 版则把完整性同方法学一致性从评分均值中剥离，改设为不可拿高精密度抵消的二元最低准入前提（在数据集可扩展标记语言 XML 字段中固定标为“不适用”，即 Not applicable），仅对技术、地域、时间代表性与精密度共四项指标打分。瑞士 ecoinvent v3 数据库第 10 章走上另一条轨道：它不在数据集层面计算标量准入分，而是针对除参考产品外的每一条输入输出交换流，将表 10.3 的基本不确定度同可靠性、完整性、时间相关性、地域相关性及进一步技术相关性五项谱系矩阵（Pedigree Matrix）指标相加，合成为对数正态分布底层正态方差的六项可加和（五项谱系指标在默认最差档 5 分下的附加方差依次为 0.04、0.008、0.04、0.002 与 0.12，合计 0.21），专供蒙特卡洛模拟传播使用；至于这类经验谱系方差能否准确刻画真实观测分布，将在后文《质量评分与概率》专门检验。",
+        "scope": "UNEP/SETAC 2011、ILCD 2010、欧盟环境足迹体系与 ecoinvent v3 四类数据质量记录架构及前置条件拆分的横向比较",
+        "caveats": [
+          "ecoinvent v3 的 0.21 仅为五项谱系指标在 5 分档下的底层正态附加方差之和，实际交换流总方差还须加上按物质与交换类别查表所得的基本不确定度方差。"
+        ],
+        "premiseIds": [
+          "cl-dapp147-intrinsic-vs-context-representativeness",
+          "cl-db2011-representativeness-and-precision",
+          "cl-db2011-documenting-number"
+        ],
+        "evidenceIds": [
+          "ev-db2011-quality-dimensions",
+          "ev-dapp147-ilcd2010-dqr-formula-and-five-aspects",
+          "ev-dapp147-ec2021-dqr-equations-and-dnm",
+          "ev-dapp147-efguide2020-provider-dqr-and-ceiling",
+          "ev-dapp147-ecoinvent2013-pedigree-variance"
+        ],
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "conceptIds": [],
+        "mappingIds": [],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-quality-dimensions",
+            "relation": "supports",
+            "rationale": "UNEP/SETAC 2011 表 4.1 提供定性质量维度基准，与标量 DQR 及交换级谱系方差对照。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ilcd2010-dqr-formula-and-five-aspects",
+            "relation": "supports",
+            "rationale": "ILCD 2010 第 12.3—12.4 节给出六项指标、式 3 最弱项五倍权重、表 7 三档上限及表 9 五维合规架构。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ec2021-dqr-equations-and-dnm",
+            "relation": "supports",
+            "rationale": "欧盟建议书第 4.6.5—4.6.5.8 节给出四项指标式 19—20、表 22 五档、数据需求矩阵三情境与情境 2 选项 2 地域分下调 30%。"
+          },
+          {
+            "evidenceId": "ev-dapp147-efguide2020-provider-dqr-and-ceiling",
+            "relation": "supports",
+            "rationale": "EF 合规数据集指南 2.0 版第 5.2.17 节规定前 80% 单分贡献重标定、单项加权上限 3.0 及方法学与完整性标 Not applicable。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ecoinvent2013-pedigree-variance",
+            "relation": "supports",
+            "rationale": "ecoinvent v3 第 10 章规定交换流级基本不确定度加 5 项谱系方差的对数正态六项和（5 分谱系附加方差和为 0.21）。"
+          }
+        ],
+        "reasoning": "基于已固定哈希值的一手规范原件与精确有理数验算，区分各体系共同要求、条件对应与算式或门槛反转。"
+      },
+      "rationale": "整合改写：联动表 1，压实至 390 字以内。"
+    },
+    {
+      "id": "cl-dapp147-weakest-link-vs-mean-and-80pct-masking",
+      "op": "modify",
+      "from": {
+        "id": "cl-dapp147-weakest-link-vs-mean-and-80pct-masking",
+        "status": "reviewed",
+        "text": "即便候选次级数据集都已通过方法学与完整性准入核查（设 ILCD 中 C = 2、M = 2），聚合算式、单项上限与贡献截断规则的差异仍会造成三重判定反转。第一重是短板重罚与算术均值的优选次序反转：ILCD 2010 式 3 将最弱指标按五倍计入分子、分母取有效指标数加 4（表 8 算例在地域不适用记 0 分时得 23/9 ≈ 2.56），表 7 仅设不高于 1.6（高质量，最多允许两项 2 分其余 1 分）、高于 1.6 至不高于 3（基本质量）及高于 3 至不高于 4（数据估计）三档；欧盟建议书式 19 则取四项指标算术均值，并在情境 3 研究语境重评中仅设总分不高于 3.0 而无单项封顶。比较均衡中等适配的数据甲（四项为 2, 3, 3, 2，最弱项 3）与实测极精密但地域完全失配的数据乙（四项为 1, 5, 2, 1，最弱项 5）：按 ILCD 式 3，甲得 26/10 = 2.60（不高于 3，属基本质量），乙得 33/10 = 3.30（高于 3，跌入数据估计），甲优于乙；按欧盟式 19 语境重评，甲得 10/4 = 2.50，乙得 9/4 = 2.25，两份均落入建议书表 22 高于 2.0 至不高于 3.0 的良好质量档（满足次级数据 ≤ 3.0 准入线）且反转为乙优于甲。第二重是供应端单项封顶否决：若次级数据集丙在供应端四项加权得分为 (1, 4, 1, 1)（配 C = 1、M = 1），算术均值仅 1.75（在 ILCD 式 3 下亦为 2.50），却因 EF 合规数据集指南 2.0 版第 5.2.17 节规定任一单项加权分不得高于 3.0 而被直接拒收。第三重是单一总分截断对缺项的遮蔽：供应端公司特定数据分别按至少 80% 影响阈值截取最相关活动数据与最相关直接基本流（子过程另由数据需求矩阵核查），EF 次级数据集亦仅筛选累计贡献占环境足迹单一总分至少 80% 的最相关子过程与直接基本流重标定为 100% 加权打分（如指南示例将 30% 与 50% 重标定为 37.5% 与 62.5%），其余次要项不入算式；研究端又允许最高占单一总分 10% 的国际参考生命周期数据系统入门级（ILCD-EL，质量合规标“未定义”）代理数据免于重算 DQR。若缺失大部分痕量重金属排放的代理数据在气候主导的单一总分中占比低于 10% 或落在次要 20% 子过程内，总分门槛便会将其放行，却掩盖了淡水生态毒性或人体毒性的系统性漏算。下表汇总五套主要数据体系在质量维度、单维缺省与上限、总分聚合算式及准入或方差用途上的结构分工，为随后核查审查记录与换版边界奠定量化基准。",
+        "scope": "ILCD 式 3 最弱项五倍惩罚、欧盟建议书式 19 算术均值、EF 供应端单项 3.0 上限以及前 80% 加权与 10% 入门级豁免的定量反转和盲区证明",
+        "caveats": [
+          "甲、乙、丙三组评分为固定相同输入条件下检验算式代数性质的受控对比向量；现实研究中若某缺失基本流使过程违反最低完整性要求，验证员仍可独立于 DQR 分数要求补充或披露。"
+        ],
+        "premiseIds": [
+          "cl-dapp147-quality-architectures-and-prerequisite-split",
+          "cl-db2011-aggregation-information",
+          "cl-db2011-missing-and-zero"
+        ],
+        "evidenceIds": [
+          "ev-dapp147-ilcd2010-dqr-formula-and-five-aspects",
+          "ev-dapp147-ec2021-dqr-equations-and-dnm",
+          "ev-dapp147-ec2021-secondary-hierarchy-and-cutoff",
+          "ev-dapp147-efguide2020-provider-dqr-and-ceiling",
+          "ev-dapp147-ilcd2012-entry-level-rules"
+        ],
+        "kind": "calculation",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "conceptIds": [],
+        "mappingIds": [],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-dapp147-ilcd2010-dqr-formula-and-five-aspects",
+            "relation": "supports",
+            "rationale": "ILCD 2010 第 12.3—12.4 节给出六项指标、式 3 最弱项五倍权重、表 7 三档上限及表 9 五维合规架构。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ec2021-dqr-equations-and-dnm",
+            "relation": "supports",
+            "rationale": "欧盟建议书第 4.6.5—4.6.5.8 节给出四项指标式 19—20、表 22 五档、数据需求矩阵三情境与情境 2 选项 2 地域分下调 30%。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ec2021-secondary-hierarchy-and-cutoff",
+            "relation": "supports",
+            "rationale": "欧盟建议书第 4.6.3—4.6.4 节规定次级数据四级优先序、旧版转换降为代理、10% 入门级上限与 3.0% 累计截断。"
+          },
+          {
+            "evidenceId": "ev-dapp147-efguide2020-provider-dqr-and-ceiling",
+            "relation": "supports",
+            "rationale": "EF 合规数据集指南 2.0 版第 5.2.17 节规定前 80% 单分贡献重标定、单项加权上限 3.0 及方法学与完整性标 Not applicable。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ilcd2012-entry-level-rules",
+            "relation": "supports",
+            "rationale": "EUR 24380 EN 表 7 规定入门级将质量合规标为 Not defined，并允许单名合格外审或内审方案。"
+          }
+        ],
+        "reasoning": "基于已固定哈希值的一手规范原件与精确有理数验算，区分各体系共同要求、条件对应与算式或门槛反转。"
+      },
+      "rationale": "整合改写：联动表 1，压实至 440 字以内，突出三重判定反转与 80%/10% 毒性遮蔽。"
+    },
+    {
+      "id": "cl-dapp147-validation-vs-review-and-team-thresholds",
+      "op": "modify",
+      "from": {
+        "id": "cl-dapp147-validation-vs-review-and-team-thresholds",
+        "status": "reviewed",
+        "text": "把“自动程序校验”与“独立专家审查”放回各体系的操作细则，可以看到四级严格递进的核验门槛。瑞士生命周期清单中心数据库第 3 版（ecoinvent v3）第 12 章将在线编辑器 ecoEditor 的自动例程界定为验证，结果直接覆盖写入数据集第 3340 号验证详情字段：时间跨度不足一年、未选行业分类或尚未建立全球父过程（GLO）会硬性阻断上传，而多参考产品或物质能量合理性异常通常只发出警告并要求填写理由；人工审查则设定转换活动（改变投入物理形态的生产过程）入库前须经至少 3 名专家（至少 1 名经济活动编辑加至少 2 名来自地理、清单指标、元数据、语言四类子角色的横向编辑）并行审阅，惟其 3.0 版发布说明坦承当时合理性自动检查大面积缺失，且尚未对全部数据集配齐三名专家审查。欧盟联合研究中心国际参考生命周期数据系统（ILCD）2010 年总论卷第 11 章将不同交付物的最低评审形式移交独立专卷，并要求中宏观政策支持情景（情景 B）尽早吸纳利益相关方；其数据网络入门级（ILCD-EL）规则允许两套单人最低方案：1 名合格独立外部评审员且免交单独报告，或 1 名合格独立内部评审员但必须附交单独审查报告。欧盟环境足迹（EF）合规数据集指南 2.0 版第 8.2 节表 4 则在五类评审形式中仅批准类型 1（至少 3 名独立评审员且含至少 1 名外部）与类型 2（2 名独立评审员且含至少 1 名外部），明文否决单人独立外部评审（类型 4）与双人内部评审（类型 3），强制要求签署唯一共识报告与两位有效数字的数据质量评级（DQR），并用生命周期影响评价核验工具（Look@LCI）复算数据集内嵌结果——偏差高于 1% 即判不合规。到了面向对外沟通的研究端，欧盟委员会建议书 (EU) 2021/2279 第 8.3.1—8.4.1 节要求独立外部验证员或验证组在审核实务、生命周期方法与欧盟经济活动统计分类（NACE）行业知识三项必选准则上总分至少达到 6 分（每项至少 1 分），公司特定初级数据的确认必须始终通过赴生产场所的现场核查完成，软件结果同 Look@LCI 的偏差亦须控制在 1% 以内。相比之下，天工生命周期数据体系公开规范（TIDAS v0.3.0）在过程审查结构定义中用兼容单条或非空数组的结构保存多轮记录，在六项审查类型受控词表中保留“未经审查”（Not reviewed）并将完整报告引用设为可选，同时在公开裁决说明中把严重度分级与阻断放行权明确交给下游消费方策略——通过公开模式校验因此只代表审查状态记录诚实合式，绝不等于跨过了某一制度方案的专家评审门槛。",
+        "scope": "ecoinvent v3、ILCD 2010 与入门级 1.1 版、EF 合规数据集指南 2.0 版、欧盟建议书 (EU) 2021/2279 及 TIDAS v0.3.0 在程序验证、专家人数、现场核查与模式边界上的对照",
+        "caveats": [
+          "EF 合规数据集指南第 8 章针对次级数据集入库评审，欧盟建议书第 8 章针对面向外部沟通的环境足迹研究验证，二者在单人外部验证员能否达标及资格计分方式上各有专属规定，不可混用。"
+        ],
+        "premiseIds": [
+          "cl-db2011-review-relative-to-criteria",
+          "cl-db2011-review-questions",
+          "cl-db2011-validation-context"
+        ],
+        "evidenceIds": [
+          "ev-dapp147-ecoinvent2013-ecoeditor-and-editorial-review",
+          "ev-dapp147-ilcd2010-dataset-types-and-review",
+          "ev-dapp147-ilcd2012-entry-level-rules",
+          "ev-dapp147-efguide2020-review-types-and-looklci",
+          "ev-dapp147-ec2021-verification-and-surveillance",
+          "ev-dapp147-tidas-process-review-schema",
+          "ev-dapp147-tidas-adjudication-boundary"
+        ],
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "conceptIds": [],
+        "mappingIds": [],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-dapp147-ecoinvent2013-ecoeditor-and-editorial-review",
+            "relation": "supports",
+            "rationale": "ecoinvent v3 第 12 章区分写入第 3340 字段的自动验证与目标至少 3 名专家（含 4 类横向编辑）审查，并披露 3.0 版缺口。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ilcd2010-dataset-types-and-review",
+            "relation": "supports",
+            "rationale": "ILCD 2010 界定三类过程数据集、情景 A/B/C1/C2 合规边界及第 11 章关键评审委派规则。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ilcd2012-entry-level-rules",
+            "relation": "supports",
+            "rationale": "EUR 24380 EN 表 7 规定入门级将质量合规标为 Not defined，并允许单名合格外审或内审方案。"
+          },
+          {
+            "evidenceId": "ev-dapp147-efguide2020-review-types-and-looklci",
+            "relation": "supports",
+            "rationale": "EF 合规数据集指南 2.0 版第 8 章仅批准类型 1 与类型 2 含外部专家联合评审并设 Look@LCI 1% 偏差红线。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ec2021-verification-and-surveillance",
+            "relation": "supports",
+            "rationale": "欧盟建议书第 8 章规定验证员至少 6 分资格、初级数据强制现场核查、Look@LCI 1% 偏差及 3 年有效期内 10.0% / 5.0% 重审阈值。"
+          },
+          {
+            "evidenceId": "ev-dapp147-tidas-process-review-schema",
+            "relation": "supports",
+            "rationale": "TIDAS v0.3.0 过程模式支持单条或数组审查历史，含 Not reviewed 六值枚举与可选完整报告引用。"
+          },
+          {
+            "evidenceId": "ev-dapp147-tidas-adjudication-boundary",
+            "relation": "supports",
+            "rationale": "TIDAS v0.3.0 公开裁决说明把公开规则真假定义同下游消费方严重度、阶段及阻断策略严格分离。"
+          }
+        ],
+        "reasoning": "基于已固定哈希值的一手规范原件与精确有理数验算，区分各体系共同要求、条件对应与算式或门槛反转。"
+      },
+      "rationale": "整合改写：联动表 1，压实至 440 字以内，补全 ILCD、EF 与 GLO 中文展开。"
+    },
+    {
+      "id": "cl-dapp147-five-aspect-compliance-and-uuid-semantics",
+      "op": "modify",
+      "from": {
+        "id": "cl-dapp147-five-aspect-compliance-and-uuid-semantics",
+        "status": "reviewed",
+        "text": "阅读官方数据集元数据时，常会见到同一份文件并列标出多项“完全合规”（Fully compliant）与多项“未定义”（Not defined）；若不了解五维合规块的制度编码，极易把正常规范声明误判为质量缺陷或把局部流列表对齐误当成方法学全面合规。ILCD 2010 年指南第 12.4 节表 9 将合规拆成质量、方法、命名、审查与文档五个独立维度；2012 年《ILCD 数据网络合规规则与入门级要求》（1.1 版，设最长 3 年网络建设期）据此在表 2 中为完整手册合规设立了按四类决策情景乘三档质量编码的 12 套过程合规源数据集通用唯一标识符（UUID），并在表 3 与表 7 中另设低于手册方法合规的入门级标识——入门级允许保留挥发性有机化合物（VOC）等部分聚合基本流、按国际标准准则陈述质量并遵循国际标准过程方法，而把质量合规固定设为第四种状态“Not defined”。欧盟环境足迹 3.1 版数据指南增补说明（Valente 等，2022 年第 5.2.15 节表 1）更规定，每份官方 EF 合规数据集必须在元数据中固定并列声明 6 组合规系统标识（无适用产品环境足迹类别规则时声明 5 组，禁止增列其他系统）：欧盟委员会建议书 (EU) 2021/2279 方法与所适用类别规则两组在总体及全部五维均填“Fully compliant”；ILCD 入门级一组将质量合规填“Not defined”、其余填“Fully compliant”；国际标准化组织（ISO）14040 一组将命名、文档与质量三项填“Not defined”；ISO 14044 一组将命名、审查与质量三项填“Not defined”；而挂接 EF 2.0、3.0 或 3.1 参考包流列表的一组仅将命名一项填“Fully compliant”，其余全部填“Not defined”。这里的“Not defined”精确记录了对应上游标准或流列表本身未界定的维度，而非数据集漏审。交叉核对原件还可发现，该增补说明第 5 页红字标题写明更新 2020 年原指南第 29 页“第 5.4.1 节”，但原指南第 29 页关于部分解聚模型下非主要支撑子过程合规标识（挂接于承载完整文档的中心部分终止系统之下，质量标“Not defined”、其余标“Fully compliant”，严禁脱离父系统单独复用）的规定实属第 5.4.2 节（第 5.4.1 节为第 28 页中心数据集），核验机器规则时必须据两份原件正文互校。",
+        "scope": "ILCD 2010 表 9 五维合规架构、ILCD 数据网络合规规则（1.1 版）12 套完整合规加入门级标识矩阵与 EF 3.1 增补说明表 1 六组合规声明及原件节号勘误",
+        "caveats": [
+          "合规系统标识仅反映数据集发布者与评审组按当时参考包签认的制度状态；数据集跨版本迁移或跨语境复用时仍须重新核对参考包版本与数据需求矩阵。"
+        ],
+        "premiseIds": [
+          "cl-dapp147-validation-vs-review-and-team-thresholds",
+          "cl-db2011-recommendation-strength",
+          "cl-db2011-review-of-guidance"
+        ],
+        "evidenceIds": [
+          "ev-dapp147-ilcd2010-dqr-formula-and-five-aspects",
+          "ev-dapp147-ilcd2012-twelve-compliance-uuids",
+          "ev-dapp147-ilcd2012-entry-level-rules",
+          "ev-dapp147-efguide2020-supporting-subprocesses",
+          "ev-dapp147-ef31addendum-six-uuid-matrix-and-erratum"
+        ],
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "conceptIds": [],
+        "mappingIds": [],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-dapp147-ilcd2010-dqr-formula-and-five-aspects",
+            "relation": "supports",
+            "rationale": "ILCD 2010 第 12.3—12.4 节给出六项指标、式 3 最弱项五倍权重、表 7 三档上限及表 9 五维合规架构。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ilcd2012-twelve-compliance-uuids",
+            "relation": "supports",
+            "rationale": "EUR 24380 EN 表 2—4 给出完整 ILCD 合规 12 套过程源数据集 UUID、3 年建设期与入门级 UUID。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ilcd2012-entry-level-rules",
+            "relation": "supports",
+            "rationale": "EUR 24380 EN 表 7 规定入门级将质量合规标为 Not defined，并允许单名合格外审或内审方案。"
+          },
+          {
+            "evidenceId": "ev-dapp147-efguide2020-supporting-subprocesses",
+            "relation": "supports",
+            "rationale": "EF 合规数据集指南 2.0 版第 5.4.1—5.4.2 节界定部分终止系统中心数据集与禁止独立复用的非主要支撑子过程。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ef31addendum-six-uuid-matrix-and-erratum",
+            "relation": "supports",
+            "rationale": "EF 3.1 增补说明表 1 规定固定 6 组（或 5 组）合规系统声明与 Not defined 填法，且第 5 页标题误印第 5.4.1 节。"
+          }
+        ],
+        "reasoning": "基于已固定哈希值的一手规范原件与精确有理数验算，区分各体系共同要求、条件对应与算式或门槛反转。"
+      },
+      "rationale": "整合改写：联动表 1，压实至 435 字以内，补全 UUID 中文展开。"
+    },
+    {
+      "id": "cl-dapp147-package-migration-inheritance-and-surveillance",
+      "op": "modify",
+      "from": {
+        "id": "cl-dapp147-package-migration-inheritance-and-surveillance",
+        "status": "reviewed",
+        "text": "当背景数据库、影响评价参考包或企业现场运行状况随时间演进时，旧版适用理由与验证声明能否沿用受制于三层定量联动机制。第一层是背景库过程角色与区域残差重算：在 ecoinvent v3 严格拆分转换活动与消费组合市场活动、强制先建全球父过程（GLO）并按产量差额自动生成世界其余地区残差（RoW）的架构下，即便目标研究引用的某国特定活动未变，新版数据库只要增补了其他国家的同类活动记录，RoW 的产量加权残差与下游市场活动的供应结构就会随之改变（ILCD 与欧盟 EF 的部分终止系统及支撑子过程、TIDAS 的生产与消费组合亦各有严格拼接禁区）。第二层是参考包换版漂移与代理降格：EF 3.1 增补说明指出参考包升级会直接改写过程数据集内嵌的影响评价结果元素并切换合规源标识；欧盟联合研究中心更新报告（JRC130796）对官方节点全部 2,752 份过程数据集的实测证明，在底层单元过程物质与能量交换毫未变动的条件下，仅将表征因子与全球人均归一化基准从 EF 3.0 升至 EF 3.1，单一总分下第 1、第 2、第 3 顺位最相关影响类别就在 171（6%）、280（10%）与 358（13%）份数据集中易位；同时按欧盟委员会建议书 (EU) 2021/2279 附件一第 4.6.3 节，凡由旧版 EF 合规体系（如 EF 2.0 转 EF 3.0）转换而未经新版完整合规重审的数据集一律降格为代理数据，须在报告局限性章节披露。在公开数据资产版本标识上，TIDAS v0.3.0 公开规则强制采用定长 NN.NN 或含三位开发版号的 NN.NN.NNN 格式，且内容一旦改动版本号必须严格递增（生产组合权重依据、电网过账节点与绿证合同属性分离等命名规则亦同步受控）。第三层是已验证研究的有效期与恶化触发线：欧盟建议书第 8.5.3 节规定验证与确认报告及确认声明最长有效期自签发日起不超过 3 年；且无论是否仍在三年有效期内，只要监督期内任一对外沟通影响类别结果较已验证数据恶化超过 10.0%，或聚合单一总分恶化超过 5.0%，就必须强制更新环境足迹研究与报告并重新核验。",
+        "scope": "ecoinvent v3 残差联动、EF 3.0 至 3.1 官方 2,752 份数据集主类易位与旧版转换降格、TIDAS 版本递增规则及欧盟建议书 3 年有效期与 10.0% / 5.0% 重审阈值的贯通分析",
+        "caveats": [
+          "JRC130796 报告的 6%、10% 与 13% 顺位易位统计基于 2,752 份官方 EF 节点数据集的单一总分测试，具体产品模型的主导过程是否易位仍取决于前台配方权重。"
+        ],
+        "premiseIds": [
+          "cl-dapp147-dataset-roles-and-system-linking",
+          "cl-dapp147-five-aspect-compliance-and-uuid-semantics",
+          "cl-db2011-versioned-confidence"
+        ],
+        "evidenceIds": [
+          "ev-dapp147-ecoinvent2013-glo-row-and-markets",
+          "ev-dapp147-ef31addendum-six-uuid-matrix-and-erratum",
+          "ev-weight135-jrc130796-nf-drift-and-rankings",
+          "ev-dapp147-ec2021-secondary-hierarchy-and-cutoff",
+          "ev-dapp147-ec2021-verification-and-surveillance",
+          "ev-dapp147-tidas-public-rules"
+        ],
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "conceptIds": [],
+        "mappingIds": [],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-dapp147-ecoinvent2013-glo-row-and-markets",
+            "relation": "supports",
+            "rationale": "ecoinvent v3 指南界定转换活动与消费组合市场活动拆分、强制 GLO 父过程与动态 RoW 残差及 3.0 版负残差置零规则。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ef31addendum-six-uuid-matrix-and-erratum",
+            "relation": "supports",
+            "rationale": "EF 3.1 增补说明表 1 规定固定 6 组（或 5 组）合规系统声明与 Not defined 填法，且第 5 页标题误印第 5.4.1 节。"
+          },
+          {
+            "evidenceId": "ev-weight135-jrc130796-nf-drift-and-rankings",
+            "relation": "supports",
+            "rationale": "JRC130796 实测 2,752 份官方 EF 数据集在底层清单未变时升至 EF 3.1 后有 6%、10%、13% 发生前三主类易位。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ec2021-secondary-hierarchy-and-cutoff",
+            "relation": "supports",
+            "rationale": "欧盟建议书第 4.6.3—4.6.4 节规定次级数据四级优先序、旧版转换降为代理、10% 入门级上限与 3.0% 累计截断。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ec2021-verification-and-surveillance",
+            "relation": "supports",
+            "rationale": "欧盟建议书第 8 章规定验证员至少 6 分资格、初级数据强制现场核查、Look@LCI 1% 偏差及 3 年有效期内 10.0% / 5.0% 重审阈值。"
+          },
+          {
+            "evidenceId": "ev-dapp147-tidas-public-rules",
+            "relation": "supports",
+            "rationale": "TIDAS v0.3.0 公开规则限定生产组合与消费组合权重基础、分离绿证与物理发电并要求 NN.NN / NN.NN.NNN 版本递增。"
+          }
+        ],
+        "reasoning": "基于已固定哈希值的一手规范原件与精确有理数验算，区分各体系共同要求、条件对应与算式或门槛反转。"
+      },
+      "rationale": "整合改写：联动表 1，压实至 425 字以内，补全 JRC 报告主语。"
+    },
+    {
+      "id": "cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge",
+      "op": "modify",
+      "from": {
+        "id": "cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge",
+        "status": "reviewed",
+        "text": "若首选合规库中确无完全匹配的次级数据集，制度规范并非任由研究者随意拼凑，而是把“依序降级补缺、定量截断豁免与诚实披露缺口”排成刚性阶梯。2011 年 UNEP/SETAC 指南表 2.1 末行将近似一致数据列作别无更佳资料时的条件性补缺选项；欧盟建议书 (EU) 2021/2279 附件一第 4.6.3—4.6.4 节则将其细化为四级规则与三重截断红线：首选 EF 合规次级数据集；不可得时第一步采用 EF 合规代理数据（含旧版转换数据集）并记入局限性章节；第二步采用基本流命名已对齐 EF 参考包的 ILCD 入门级代理数据，但其对单一总分的累计贡献不得超过 10%（且该附件表 25 注释禁止重算其数据质量评级 DQR）；第三步若上述两类代理均不可得，则必须将该过程从模型中剔除，作为数据缺口在局限性章节明示并交验证员确认；唯有当被排除过程与基本流在物料流、能量流以及每一项环境影响类别（含单一总分）上的累计占比均低于 3.0%，并在报告中明示和论证其环境显著性时，方可适用截断免除（建议书建议通过筛选研究识别可截断过程）。针对 EF 3.1 合规次级数据集阶段性紧缺的现状，欧盟委员会 2026 年 5 月过渡期指导文件进一步明确，在下一代数据库到位前（文中预计至 2028 年），与委员会正式合作制定的产品类别规则或组织部门规则研究在缺失 EF 合规数据时，应先采用技术秘书组选定的 ILCD 入门级数据，仍缺失时再由使用者择取其他次级数据并在报告中披露、接受验证员核查，同时直言用户自选非合规数据可能降低跨研究可比性。下表对照五套体系在校验与独立评审门槛、合规声明结构、过程角色与区域残差、换版重审触发及次级代理补缺边界上的制度规则。",
+        "scope": "UNEP/SETAC 2011 末位补缺、欧盟建议书 (EU) 2021/2279 四级次级阶梯与 3.0% 截断边界及欧盟 2026 过渡指导比较",
+        "caveats": [
+          "欧盟 2026 年 5 月过渡期指导文件中的 2028 年系该文件对下一版官方环境足迹数据库到位时间的预期表述，实际切换日期取决于欧盟后续正式发布进程。",
+          "过渡期放宽次级数据来源旨在维持规则可执行性，并不免除局限性披露或自动赋予跨研究严格可比资格。"
+        ],
+        "premiseIds": [
+          "cl-dapp147-weakest-link-vs-mean-and-80pct-masking",
+          "cl-dapp147-package-migration-inheritance-and-surveillance"
+        ],
+        "evidenceIds": [
+          "ev-db2011-conditional-consistency",
+          "ev-dapp147-ec2021-secondary-hierarchy-and-cutoff",
+          "ev-kb44-ec-transition2026-scope",
+          "ev-kb44-ec-transition2026-hierarchy"
+        ],
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "conceptIds": [],
+        "mappingIds": [],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-conditional-consistency",
+            "relation": "supports",
+            "rationale": "UNEP/SETAC 2011 表 2.1 末行与第 2.3.4 节界定无更佳资料时的条件性补缺与逐项论证要求。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ec2021-secondary-hierarchy-and-cutoff",
+            "relation": "supports",
+            "rationale": "欧盟建议书第 4.6.3—4.6.4 节规定次级数据四级优先序、旧版转换降为代理、10% 入门级上限与 3.0% 累计截断。"
+          },
+          {
+            "evidenceId": "ev-kb44-ec-transition2026-scope",
+            "relation": "supports",
+            "rationale": "欧盟 2026 年 5 月过渡指导将次级数据过渡安排延至预计 2028 年下一版 EF 数据库到位，并提示可比性影响。"
+          },
+          {
+            "evidenceId": "ev-kb44-ec-transition2026-hierarchy",
+            "relation": "supports",
+            "rationale": "欧盟 2026 年 5 月过渡指导第 2.2 节规定缺失 EF 合规数据时依次采用技术秘书组选定入门级数据与用户披露自选数据。"
+          }
+        ],
+        "reasoning": "基于已固定哈希值的一手规范原件与精确有理数验算，区分各体系共同要求、条件对应与算式或门槛反转。"
+      },
+      "rationale": "整合改写：压实至 400 字以内，补全 DQR 中文展开并衔接表 1。"
+    },
+    {
+      "id": "cl-db2011-conditional-use",
+      "op": "modify",
+      "from": {
+        "id": "cl-db2011-conditional-use",
+        "text": "综合过程数据的表示角色与语境代表性、质量聚合算式（详见《过程数据的用途》或本章前两节）以及审查合规、换版补缺五重边界：资料不足时，唯有数据与研究的目标和范围足够一致且别无更合适资料，指南才允许有条件补缺，并要求使用者逐项说明采用理由、记录不一致或缺失之处会影响哪些类别。同一份煤电数据因此可能在明确条件下适用于一项计算，却因技术失配、语境越界或缺少重金属等关键输入而不适用于另一项。选择数据时，应能说明它代表什么、为什么仍可采用或需要另选，以及更好的资料会改变哪一步。后文《变异与不确定性》将继续区分现有观测能把数值估到多准与模型是否包含所需过程，《质量评分与概率》专门检验经验谱系矩阵（Pedigree Matrix）方差同实测分布的校准，《产品足迹规则》再讨论类别规则如何约束公开比较声明。",
+        "kind": "synthesis",
+        "scope": "由数据表示对象、质量聚合边界、审查准则与换版补缺阶梯共同形成的章末条件使用综合",
+        "evidenceIds": [
+          "ev-db2011-conditional-consistency",
+          "ev-db2011-review-purpose",
+          "ev-db2011-change"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-conditional-consistency",
+            "relation": "supports",
+            "rationale": "Table2.1允许最后选择中足够一致的数据补缺并逐项论证；p64要求记载不一致的作用，支持有条件而非全有全无的使用判断。"
+          },
+          {
+            "evidenceId": "ev-db2011-review-purpose",
+            "relation": "supports",
+            "rationale": "数据集审查为具体目标范围的适用性评价提供信息，并不替代用户判断。"
+          },
+          {
+            "evidenceId": "ev-db2011-change",
+            "relation": "supports",
+            "rationale": "对更新和关联影响的记录为后来修订提供具体连接。"
+          }
+        ],
+        "premiseIds": [
+          "cl-db2011-represented-object",
+          "cl-db2011-documenting-number",
+          "cl-db2011-missing-and-zero",
+          "cl-dapp147-weakest-link-vs-mean-and-80pct-masking",
+          "cl-db2011-review-relative-to-criteria",
+          "cl-db2011-review-questions",
+          "cl-db2011-versioned-confidence",
+          "cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge"
+        ],
+        "caveats": [
+          "允许逐项论证不等于所有不一致或遗漏都可接受，也不替代特定研究的适用规则、敏感性或不确定性分析。",
+          "本段综合各公开指南与方法规范的适用性边界，不代替针对具体现实数据集的现场核验或付费国际标准条文审阅。"
+        ],
+        "reasoning": "目标范围给出判断对象，文档与审查提供已知条件，允许有理由的有限补缺避免把完美数据作为唯一选项；变更记录保留修订入口。此连接是作者综合，不由来源名望或审查标签自动成立。",
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-19",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "消除拆章残留的“或本章前两节”错误自指，理顺与《过程数据的用途》的衔接。"
+    },
+    {
+      "id": "cl-unc149-framework-comparison",
+      "op": "modify",
+      "from": {
+        "id": "cl-unc149-framework-comparison",
+        "text": "现行国际规范对不确定性与灵敏度分析的制度落地并不一致。欧盟联合研究中心《国际参考生命周期数据系统详细指南》（ILCD 2010）第 9.3.3 节规定条款 I 要求开展关键议题灵敏度与随机／系统不确定性检查，并在正文说明可以情景分析配合不确定性计算加以支撑：目标范围、多功能性分配与不同影响评价方法宜用情景对照，清单与影响层可配合蒙特卡洛计算，并以图 26 确立“高影响且高不确定性”数据为优先改进焦点，同时在规定条款 I.a 中明确警示计算所得的不确定度往往未包含模型假设与数据缺口导致的系统性偏差。相比之下，欧盟委员会建议书 (EU) 2021/2279（2022 年更正重刊版公报 OJ L 144 全篇 384 页）未出现一次“蒙特卡洛”强制要求：附件一第 6.2 节仅建议开展完整性、灵敏度与一致性稳健性检验，第 6.3 节则强制采用确定性热点门槛——须识别累计贡献不少于 80% 单一总分且至少 3 项最相关影响类别、超过 80% 贡献的生命周期阶段（使用阶段超过 50% 时须剔除使用阶段重算）、超过 80% 的过程与不少于 80% 的基本流（第 6.3.5 节对回收抵扣等负值改取绝对值重算份额），并把参数不确定性折入第 4.6.5.1 节数据质量评级的精密度项 P。两套体系的分歧并非谁忽视误差，而是欧盟产品环境足迹（PEF）为换取监管可核查性与跨研究可比性，选择用固定热点阈值与半定量精密度评分替代自由设定的随机模拟。",
+        "kind": "interpretation",
+        "scope": "对照 ILCD 2010 第 9.3.3 节与欧盟建议书 2021/2279 附件一第 4.6.5.1、6.2—6.4 节在不确定性、灵敏度与热点识别上的制度差异。",
+        "evidenceIds": [
+          "ev-unc149-ilcd2010-sensitivity-check",
+          "ev-unc149-eu2021-robustness-hotspots"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-unc149-ilcd2010-sensitivity-check",
+            "relation": "supports",
+            "rationale": "ILCD 2010 印第 295—299 页规定情景与不确定性计算配合、图 26 优先改进矩阵及系统性偏差警示。"
+          },
+          {
+            "evidenceId": "ev-unc149-eu2021-robustness-hotspots",
+            "relation": "supports",
+            "rationale": "欧盟建议书 2021/2279 印 L 144/81、88—94 页全篇无蒙特卡洛强制条款，确立 80%/50%/至少 3 类热点阈值、负值绝对值规则与精密度项 P。"
+          }
+        ],
+        "premiseIds": [
+          "cl-dapp147-quality-architectures-and-prerequisite-split",
+          "cl-dapp147-weakest-link-vs-mean-and-80pct-masking",
+          "cl-unc-parameters",
+          "cl-unc-model",
+          "cl-unc-choices",
+          "cl-book-unc-separate"
+        ],
+        "caveats": [
+          "欧盟产品环境足迹（PEF）的确定性热点门槛仅规定了监管报告底线，不禁止学术研究在满足其披露要求之外补充定量概率传播。"
+        ],
+        "conceptIds": [
+          "cn-variability-uncertainty"
+        ],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-19",
+        "reviewKind": "agent-source-check",
+        "reasoning": "通过一手条文对比揭示 ILCD 开放式“情景+随机”框架与 EU PEF 确定性“热点+精密度评分”框架的真实制度分化。"
+      },
+      "rationale": "整合改写：联动表 1，压实至 400 字以内，突出 ILCD 蒙特卡洛与 PEF 确定性 80% 热点门槛之别。"
+    },
+    {
+      "id": "cl-unc149-local-vs-global-sa",
+      "op": "modify",
+      "from": {
+        "id": "cl-unc149-local-vs-global-sa",
+        "text": "明确了误差来源与制度框架之后，计算与求解环节同样会放大、扭曲或误导不确定性结论——既包括不确定性传播与灵敏度算法本身的选择，也包括矩阵求逆的数值稳定性。先看输入误差如何在计算中传播：要查明哪些输入参数真正左右结果波动，须先区分局部灵敏度分析与全局灵敏度分析。Groen 等人（2017）表 1 指出，局部方法（如单因子扰动 OAT 或偏导数分析）仅需输入点估计值，考察单参数在基准点附近的边际斜率，却看不到各参数实际不确定性幅度相差悬殊，也捕捉不到多参数同时变化时的交互效应。全局灵敏度分析则把矩阵模型 g = B A⁻¹ f（其中 g 为环境清单向量、B 为干预矩阵、A 为技术矩阵、f 为最终需求向量）的输出总方差按条件期望分解为 var(g) = var(E(g|p_j)) + E(var(g|p_j))，以一阶敏感度指标 S_j = var(E(g|p_j)) / var(g) 度量第 j 个参数在自身完整离散范围内对输出方差的贡献比例；它至少需要每个参数的中心值与离散度，多数抽样方法还需要完整的概率密度函数。",
+        "kind": "interpretation",
+        "scope": "依据 Groen et al. (2017) 第 1—2.1 节、表 1 与式 1—3 区分局部单点灵敏度与全局方差分解灵敏度。",
+        "evidenceIds": [
+          "ev-unc149-groen2017-variability-local-global"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-unc149-groen2017-variability-local-global",
+            "relation": "supports",
+            "rationale": "表 1 与式 1—3（印第 1126—1129 页）明确对照局部与全局灵敏度分析的输入要求及方差分解定义。"
+          }
+        ],
+        "premiseIds": [
+          "cl-unc149-variability-vs-epistemic",
+          "cl-unc149-framework-comparison"
+        ],
+        "caveats": [
+          "全局方差分解把“重要”定义为对输出方差的贡献，若某参数点估计极大但完全确定（方差为零），它在全局灵敏度排序中为零，仍须结合贡献度分析识别主排源。"
+        ],
+        "conceptIds": [
+          "cn-variability-uncertainty"
+        ],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-19",
+        "reviewKind": "agent-source-check",
+        "reasoning": "界定局部与全局灵敏度分析的问题差异与数学前提，为下一条对比一阶泰勒与随机抽样方法铺路。"
+      },
+      "rationale": "整合改写：联动表 2，压实至 300 字以内。"
+    },
+    {
+      "id": "cl-unc149-taylor-vs-sampling",
+      "op": "modify",
+      "from": {
+        "id": "cl-unc149-taylor-vs-sampling",
+        "text": "在全局不确定性传播与灵敏度计算中，一阶泰勒解析法（关键议题分析，KIA）与随机抽样法在低离散度下高度一致，但在高离散度对数正态输入下会出现显著背离。Groen 等人（2017）在 6 参数电力案例与 115 参数东北大西洋白鱼渔业案例中（各设单轮抽样规模 N = 4096 次并重复 50 轮，以 10⁶ 次蒙特卡洛为基准），对比了仅需 1 次解析求解的 KIA 与需 N 次抽样的标准化回归平方（SRC）、斯皮尔曼秩相关平方（SCC）、随机平衡设计（RBD）以及表 3 计作 2N 基础样本矩阵的索博尔一阶与总效应指标（Sobol SME/STE）。当输入变异系数（CV）= 5% 时，KIA 与百万次基准几乎重合：电力案例均值同为 128 千克二氧化碳，方差为 80.0 对比 80.8 (千克二氧化碳)²；白鱼案例均值 1.95 对比 1.96 千克二氧化碳，方差 0.0168 对比 0.0170 (千克二氧化碳)²。但当 CV 升至 30% 时，一阶线性近似既漏掉了对数正态右偏导致的均值上移（电力案例 KIA 仍给 128 而基准已升至 145 千克二氧化碳；白鱼案例 1.95 对比 2.16 千克二氧化碳），又大幅低估输出方差（电力案例 2880 对比基准 4300 (千克二氧化碳)²，低估约 33%；白鱼案例 0.606 对比基准 0.76 (千克二氧化碳)²，低估约 20%）。可见解析法并非永远近似良好：一旦数据库输入呈大跨度右偏分布，线性展开就会系统性低估风险尾端。",
+        "kind": "interpretation",
+        "scope": "依据 Groen et al. (2017) 第 2.5 节与表 3—5（印第 1131—1133 页）定量比较一阶泰勒 KIA 与随机抽样方法在 CV = 5% 与 30% 下的均值与方差偏差。",
+        "evidenceIds": [
+          "ev-unc149-groen2017-methods-cost-case-studies"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-unc149-groen2017-methods-cost-case-studies",
+            "relation": "supports",
+            "rationale": "表 3—5 给出电力（6 参数）与白鱼（115 参数）案例在 cv = 5% 与 30% 下 KIA 与 N = 10^6 基准的全部精确对比数值。"
+          }
+        ],
+        "premiseIds": [
+          "cl-unc149-local-vs-global-sa"
+        ],
+        "caveats": [
+          "上述对比设定所有输入服从相同变异系数的无相关对数正态分布；不同分布族或混合离散度下，一阶泰勒低估比例会随具体模型结构变化。"
+        ],
+        "conceptIds": [
+          "cn-variability-uncertainty"
+        ],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-19",
+        "reviewKind": "agent-source-check",
+        "reasoning": "用同源双案例的精确数值边界打破“泰勒展开只是蒙特卡洛的快速替代”这一常见误解。"
+      },
+      "rationale": "整合改写：联动表 2，压实至 410 字以内，精准保留 CV=5% 与 CV=30% 对比数值。"
+    },
+    {
+      "id": "cl-unc149-gsa-outliers-nonlinearity",
+      "op": "modify",
+      "from": {
+        "id": "cl-unc149-gsa-outliers-nonlinearity",
+        "text": "即便转用随机抽样，不同全局灵敏度指标在高离散度、离群值与非线性交互下的稳健性仍相差甚远。在 Groen 等人（2017）的 CV = 30% 电力案例中，基于线性回归的 SRC 受对数正态右尾离群值拖累，解释方差份额跌至 81.7%（残差达 18.3%），RBD 也跌至 79.7%；而先对样本取秩的 SCC 将解释比例保持在 94.0%（白鱼 115 参数案例达 94.5%），Sobol 一阶指标 SME 为 91.6%，总效应指标 STE 之和达 110%——两者 18.4 个百分点的差额直接显露出高离散度下矩阵求逆引发的参数交互与非线性效应。作者据此建议：小不确定性时优先用 SRC 或仅需离散度的 KIA；大不确定性时优先用 SCC 或 Sobol SME/STE。但原文第 4 节同时留出两项重要未知边界：其一，两项案例均假定全部输入彼此无相关，现实供应链中存在参数相关时，纳入相关性才会提高灵敏度排序准确度；其二，若从清单到中点或中点到终点存在非线性表征关系，Sobol 方法较线性回归更具优势，但相关实证仍待扩展。",
+        "kind": "interpretation",
+        "scope": "依据 Groen et al. (2017) 第 3.2—5 节比较高离散度下 SRC、SCC、RBD 与 Sobol SME/STE 的离群值与交互稳健性，并保留相关性与非线性限制。",
+        "evidenceIds": [
+          "ev-unc149-groen2017-outliers-caveats"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-unc149-groen2017-outliers-caveats",
+            "relation": "supports",
+            "rationale": "表 4—5 与第 4—5 节（印第 1132—1136 页）给出 SRC 81.7%、SCC 94.0%/94.5%、SME 91.6%、STE 110% 及相关性与非线性两项局限。"
+          }
+        ],
+        "premiseIds": [
+          "cl-unc149-taylor-vs-sampling"
+        ],
+        "caveats": [
+          "原文图 8 框内括号文字将案例 1 与案例 2 标注互换，本段严格依据第 1132—1135 页正文与表 4—5 数据，不沿用印刷误标。"
+        ],
+        "conceptIds": [
+          "cn-variability-uncertainty"
+        ],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-19",
+        "reviewKind": "agent-source-check",
+        "reasoning": "在同一样本框架下揭示秩相关与方差分解指标如何克服右尾离群值，并诚实保留无相关假设与非线性 LCIA 的证据缺口。"
+      },
+      "rationale": "整合改写：联动表 2，压实至 330 字以内。"
+    },
+    {
+      "id": "cl-unc149-mc-runs-precision-vs-accuracy",
+      "op": "modify",
+      "from": {
+        "id": "cl-unc149-mc-runs-precision-vs-accuracy",
+        "text": "就算选对了随机传播方法，把蒙特卡洛模拟次数（N_run）误当成原始观测样本量（n），也会制造极具迷惑性的“虚假精确”。Heijungs（2020）指出，单次生命周期评价计算通常耗时 1 秒至 5 分钟，跑满 100,000 次蒙特卡洛模拟耗时可从超过一整天拉长到近一年；更致命的是统计逻辑的错位。假设真实总体服从正态分布 N(10, 1)，模型为最简恒等式 Y = X，但研究者只测得 n = 16 个实测样本，得到样本均值 10.31、实测标准误 0.25、95% 置信区间 [9.819, 10.799]——此时区间包含真值 10，不精确通过较宽区间清晰可见。若把这一含偏样本均值 10.31 当作输入分布中心再执行 N_run = 100,000 次蒙特卡洛抽样，模拟均值仍滞留在 10.31，但模拟标准误按 1/√N_run 骤缩至 0.0031，95% 置信区间收窄为 [10.305, 10.318]，反而把真值 10 排除在外。正如原文所言，加大模拟次数只消除可见的模拟不精确，却丝毫不减少输入样本固有的偏差，最终把“可见的不精确”伪装成“不可见的不准确”。",
+        "kind": "interpretation",
+        "scope": "依据 Heijungs (2020) 第 1、2.5—3 节与图 1（印第 395、397—400 页）区分模拟收敛误差与实测样本估计误差。",
+        "evidenceIds": [
+          "ev-unc149-heijungs2020-sources-runtime",
+          "ev-unc149-heijungs2020-standalone-precision-accuracy"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-unc149-heijungs2020-sources-runtime",
+            "relation": "supports",
+            "rationale": "第 1 节印第 395 页给出单次 1 秒至 5 分钟及 100,000 次模拟的总耗时量级。"
+          },
+          {
+            "evidenceId": "ev-unc149-heijungs2020-standalone-precision-accuracy",
+            "relation": "supports",
+            "rationale": "第 2.5—3 节与图 1（印第 397—400 页）给出 n = 16 区间 [9.819, 10.799] 与 N_run = 100,000 区间 [10.305, 10.318] 的完整数值对照。"
+          }
+        ],
+        "premiseIds": [
+          "cl-unc-sd-sem",
+          "cl-unc149-taylor-vs-sampling"
+        ],
+        "caveats": [
+          "该构造针对将模拟均值标准误 s_Y / √N_run 误用于总体均值置信区间与假设检验的情形；若仅用于稳定刻画给定输入分布的分位数（如第 5% 与第 95% 分位），大 N_run 仍能减小蒙特卡洛数值噪声，但无法修正输入分布本身的偏误。"
+        ],
+        "conceptIds": [
+          "cn-variability-uncertainty"
+        ],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-19",
+        "reviewKind": "agent-source-check",
+        "reasoning": "以精确算例阐明 N_run 只能收敛数值积分误差而不能替代真实样本量 n，为下一条比较性显著性检验陷阱奠基。"
+      },
+      "rationale": "整合改写：联动表 2，压实至 370 字以内。"
+    },
+    {
+      "id": "cl-unc149-comparative-paired-and-pvalue",
+      "op": "modify",
+      "from": {
+        "id": "cl-unc149-comparative-paired-and-pvalue",
+        "text": "在比较两套备选方案时，统计推断同时面临“忽略共享背景”与“滥用大样本假设检验”两重陷阱。一方面，ILCD 2010 第 9.4 节正文建议：若用不确定性分析检验两系统差异是否显著，宜在保密条件允许范围内对“两系统之差”进行计算并计入共享过程的协方差——因为两个方案若共用同一电网或上游材料库，独立分别画误差棒会把共有的背景波动重复计入，掩盖真实的方案差别；第 9.4 节正文同时警示不得对仅覆盖局部参数误差的显著性结论抱以过高把握，规定条款 II.d 则明令禁止把“在现有数据与不确定性下未识别出显著差异”曲解为“两方案环境表现相等”。另一方面，Heijungs（2020）图 2 用两套完全同源的正态总体 X_A、X_B ~ N(10, 1)（各抽 n = 16 个实测样本）证明：比较两组均值的双样本 t 检验在实测样本上给出 p = 0.67（p 值衡量原假设下偶然出现如此差异的概率），并不支持两方案有别；可一旦执行 N_run = 100,000 次蒙特卡洛抽样再做 t 检验，p 值便骤降至约 10⁻¹⁶，硬生生把两个毫无差别的总体判出“压倒性显著差异”。为此，Heijungs 建议将用于假设检验的模拟次数上限约束在实测样本量之内——当两项输入的实测样本量分别为 16 与 9 时，按最弱环节仅取 9 次。",
+        "kind": "interpretation",
+        "scope": "结合 ILCD 2010 第 9.4 节（印第 302—305 页）差值协方差建议与规定条款 II.d 误用禁令，以及 Heijungs (2020) 图 2 与第 4 节（印第 400—401 页）比较显著性检验失真与样本量上限。",
+        "evidenceIds": [
+          "ev-unc149-ilcd2010-comparative-covariance",
+          "ev-unc149-heijungs2020-comparative-pvalue-cap"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-unc149-ilcd2010-comparative-covariance",
+            "relation": "supports",
+            "rationale": "ILCD 2010 印第 302—305 页正文建议对两系统之差计入共享过程协方差并警示过度解读，规定条款 II.d 明令禁止误宣相等。"
+          },
+          {
+            "evidenceId": "ev-unc149-heijungs2020-comparative-pvalue-cap",
+            "relation": "supports",
+            "rationale": "Heijungs (2020) 印第 400—401 页给出 p = 0.67 至 p ≈ 10^-16 的双样本 t 检验对比及 n = 16, 9 取最弱环节 9 次的上限建议。"
+          }
+        ],
+        "premiseIds": [
+          "cl-unc149-framework-comparison",
+          "cl-unc149-mc-runs-precision-vs-accuracy"
+        ],
+        "caveats": [
+          "以实测样本量限制 N_run 是 Heijungs（2020）针对蒙特卡洛假设检验提出的警示性边界；在配对模拟中结合效应量阈值或判别率（如 P(A < B)）而非机械依赖 p 值，是学界并行讨论的替代路径，但仍须受底层输入数据真实准确度制约。"
+        ],
+        "conceptIds": [
+          "cn-variability-uncertainty"
+        ],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-19",
+        "reviewKind": "agent-source-check",
+        "reasoning": "把 ILCD 的配对差值协方差规范与 Heijungs 的大 N_run p 值衰减警示合为一处，确立比较性概率推断的双重底线。"
+      },
+      "rationale": "整合改写：联动表 2，压实至 380 字以内。"
+    },
+    {
+      "id": "cl-unc-model",
+      "op": "modify",
+      "from": {
+        "id": "cl-unc-model",
+        "text": "模型若只保留各处排放或资源消耗的合计，而环境后果取决于具体地点，合计就缺少判定影响所需的信息。第十八章的流域耗水就是例子：只知道耗水体积的总和，就无法按原地点匹配因子。即使把总耗水量估得更准，地点信息仍然缺失。因此还要单独检查模型是否保留了估计环境后果所需的关系。",
+        "kind": "interpretation",
+        "scope": "依据1998框架解释模型遗漏与参数区间的区别；不把当时的简化归给所有现行LCA。",
+        "evidenceIds": [
+          "ev-unc-huij-model"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-unc-huij-model",
+            "relation": "supports",
+            "rationale": "实际p17明确警告：模型不确定性较大时，参数不确定性分析可能产生误导。"
+          }
+        ],
+        "premiseIds": [
+          "cl-water-reference-and-units",
+          "cl-water-time-and-aggregation",
+          "cl-unc-types",
+          "cl-unc-parameters"
+        ],
+        "caveats": [
+          "本段不量化模型遗漏，也未验证某个具体影响模型。"
+        ],
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-04",
+        "reviewKind": "agent-source-check",
+        "reasoning": "空间聚合的后果用第18章例示。若流域标签丢失，不能逐一选择原来的因子。只收窄体积参数的分布不能恢复空间分辨率。"
+      },
+      "rationale": "清除草稿章号残留，改为正式篇名《耗水与缺水潜势》。"
+    },
+    {
+      "id": "cl-unc149-pedigree-mc-boundary",
+      "op": "modify",
+      "from": {
+        "id": "cl-unc149-pedigree-mc-boundary",
+        "text": "上述样本量约束直接触及主流生命周期清单数据库最常依赖的谱系矩阵。Heijungs（2020）在摘要与第 4 节直言：当输入分布参数并非来自实测抽样，而是通过谱系矩阵（Pedigree Matrix）等定性或半定量评分程序赋给时，研究者根本无从界定有效的实测样本量 n，也就无法计算均值的真实标准误；把本就不准确的谱系输入分布送入动辄上万次的蒙特卡洛模拟，只会输出看似极其精确却脱离经验基础的结果，因此谱系矩阵导出的概率分布与大规模蒙特卡洛显著性检验存在根本冲突。这一尖锐批评并不否定半定量质量评分的筛选价值，但它提醒我们：把定性评分换算为对数正态概率参数前，必须先经受实地抽样设计与实证校准的检验（下章展开）。",
+        "kind": "interpretation",
+        "scope": "依据 Heijungs (2020) 摘要与第 4 节（印第 394、401 页）界定谱系矩阵分布与大规模蒙特卡洛显著性检验的边界，衔接第二十七章。",
+        "evidenceIds": [
+          "ev-unc149-heijungs2020-pedigree-incompatibility"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-unc149-heijungs2020-pedigree-incompatibility",
+            "relation": "supports",
+            "rationale": "摘要印第 394 页与第 4 节印第 401 页明确指出谱系矩阵分布缺乏样本量依据，不宜直接用于大规模蒙特卡洛模拟推断。"
+          }
+        ],
+        "premiseIds": [
+          "cl-unc149-comparative-paired-and-pvalue"
+        ],
+        "caveats": [
+          "该批评针对把谱系分布当成经实测校准的随机变量并做显著性检验的做法，不等于否定在探索性敏感度筛查或缺失实测时记录半定量质量等级的文档价值。"
+        ],
+        "conceptIds": [
+          "cn-variability-uncertainty"
+        ],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-19",
+        "reviewKind": "agent-source-check",
+        "reasoning": "以一手文献对谱系-蒙特卡洛组合的质疑收束方法边界，形成向第 27 章柏林杯重调查与 Ciroth 实证校准的因果衔接。"
+      },
+      "rationale": "清除注释范围中的草稿章号残留，改为正式篇名《质量评分与概率》。"
+    },
+    {
+      "id": "cl-book-unc-bridge",
+      "op": "modify",
+      "from": {
+        "id": "cl-book-unc-bridge",
+        "text": "解读任意一张不确定性分布图或比较区间前，应按五步逐项核查：先辨认图上画的是不可缩减的厂际／地域固有变异、可缩减的均值估计误差，还是非概率的方法选择情景；再核对模型是否保留了关键空间与机制关系，以及所依循的是开放情景加随机传播框架（如 ILCD）还是确定性热点门槛加精密度评分框架（如欧盟产品环境足迹）；第三步检查传播与灵敏度方法是否匹配离散度——高变异系数下须警惕一阶泰勒均值漏偏与方差低估，以及离群值对线性回归的扭曲；第四步在方案比较中检查是否对差值计入了共享过程协方差，并区分模拟运行次数与真实样本量，避免把大样本蒙特卡洛压出的极小 p 值误当实证差异，更不可将“无显著差异”曲解为“相等”；最后单独核验矩阵求解的数值稳定性。第二十七章《质量评分与概率》将沿着谱系分布的实证边界继续推进，用柏林酸奶杯重调查与谱系矩阵校准实验检验“样本设计如何决定标准误”以及“定性评分究竟能否可靠换算为对数正态概率参数”。",
+        "kind": "synthesis",
+        "scope": "全章五步核查收束与向第二十七章《质量评分与概率》的过渡。",
+        "evidenceIds": [],
+        "premiseIds": [
+          "cl-unc-sd-sem",
+          "cl-unc149-variability-vs-epistemic",
+          "cl-unc-choices",
+          "cl-unc149-framework-comparison",
+          "cl-unc149-taylor-vs-sampling",
+          "cl-unc149-gsa-outliers-nonlinearity",
+          "cl-unc149-comparative-paired-and-pvalue",
+          "cl-unc149-pedigree-mc-boundary",
+          "cl-unc-numerical"
+        ],
+        "conceptIds": [
+          "cn-variability-uncertainty"
+        ],
+        "caveats": [
+          "此处不借工厂例给真实杯重调查设定正态性或代表性。"
+        ],
+        "reasoning": "从统计量的对象、选择情景和数值求解分别判断结果的含义，再将均值精度和个体散布之别应用到杯重调查明示的总体与抽样设计。",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19"
+      },
+      "rationale": "清除草稿章号残留，改为“下一章《质量评分与概率》”。"
+    },
+    {
+      "id": "cl-dqp-ecoinvent-v3-variance",
+      "op": "modify",
+      "from": {
+        "id": "cl-dqp-ecoinvent-v3-variance",
+        "text": "把谱系评分转成概率参数并非只有前文介绍的实证校准一条路径。Weidema 等人在 2013 年的 ecoinvent 第三版数据质量导则第 10.1 至 10.2 节中，先把第二版以几何标准差平方表达的谱系系数改写为对数尺度正态分布的附加方差（σ²），再对可靠性、完整性、时间、地理与进一步技术相关性这 5 项指标（表 10.4 至 10.5）按 1 至 5 级赋予附加方差——例如第 5 级的附加方差分别为可靠性 0.04、完整性 0.008、时间 0.04、地理 0.002 与技术 0.12——随后在零均值与相互独立（协方差为零）的假定下，与 1 项基础不确定性方差共 6 项直接线性相加。需要辨明的是，2013 年导则表 10.5 所列数字当时仍来自专家判断，文中第 77 页的“展望”明确说明实证校准项目尚在进行中，这正是前文 Ciroth 等人（2012、2016）工作试图补齐的缺口；同时导则第 10.3 至 10.4 节明确将模型结构不确定性与人为错误排除在谱系方差之外，并提醒确定性计算所用的对数正态几何均值恒小于蒙特卡洛模拟所得的算术均值。",
+        "kind": "source-statement",
+        "scope": "ecoinvent v3 数据质量导则（2013）第 10 章谱系方差公式、专家判断来源与适用边界。",
+        "evidenceIds": [
+          "ev-dqp153-ecoinvent-v3-pedigree",
+          "ev-dqp153-ecoinvent-v3-limits"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-dqp153-ecoinvent-v3-pedigree",
+            "relation": "supports",
+            "rationale": "表 10.4–10.5 与第 74–77 页原文给出 5 项谱系指标、各 5 级专家判断附加方差及 6 项线性相加规则与实证项目展望。"
+          },
+          {
+            "evidenceId": "ev-dqp153-ecoinvent-v3-limits",
+            "relation": "qualifies",
+            "rationale": "第 10.3–10.4 节限定了谱系方差不覆盖模型不确定性与人为错误，并指明几何均值与蒙特卡洛算术均值之差。"
+          }
+        ],
+        "premiseIds": [
+          "cl-dapp147-quality-architectures-and-prerequisite-split",
+          "cl-ped-factor-conventions",
+          "cl-ped-inventory-combination",
+          "cl-ped-inventory-center"
+        ],
+        "caveats": [
+          "表 10.5 的数值属于 2013 年发布的专家判断基线，不能与后续 Ciroth 等实证校准系数混为一谈。"
+        ],
+        "reasoning": "通过对照 Weidema 等（2013）原始方差表与前文实证校准步骤，明确区分“方差化参数表达”和“系数实证校准”两个层面。",
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-19",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：联动表 2，压实至 310 字以内。"
+    },
+    {
+      "id": "cl-dqp-pef-ordinal-dqr",
+      "op": "modify",
+      "from": {
+        "id": "cl-dqp-pef-ordinal-dqr",
+        "text": "与 ecoinvent 把评分变成随机方差的做法截然不同，欧盟产品环境足迹（PEF）在欧盟委员会建议书 (EU) 2021/2279 附件一第 4.6.5 节中走的是序数数据质量评级（DQR）与硬性准入门槛路线。该建议书表 20 把完整性和方法学一致性列为不打分的前提要求，仅对技术代表性（TeR）、地域代表性（GeR）、时间代表性（TiR）与精密度（P）这 4 项指标按 1 至 5 级打分并取等权算术平均（式 19 与式 20），按表 22 划分为 5 档序数质量等级（DQR 不超过 1.5 为极优，大于 4 为差）。在表 25 数据需求矩阵（DNM）下，企业自行运营过程所建实测数据集须满足综合 DQR 不超过 1.5（且精密度不超过 3、时间、技术与地域各项不超过 2），次级数据集须满足综合 DQR 不超过 3.0，符合国际参考生命周期数据系统入门级（ILCD-EL）的替代数据集对单一总分贡献不得超过 10%。通览 2021 年原刊公报 OJ L 471 全部 396 页（及 2022 年更正重刊版公报 OJ L 144 全部 384 页）可见，PEF 从未把 DQR 转化为对数正态方差或蒙特卡洛概率分布，它回答的是“数据是否达到规定收集档次与准入条件”，而非“参数随机误差服从何种分布”。",
+        "kind": "source-statement",
+        "scope": "欧盟委员会建议书 (EU) 2021/2279 附件一第 4.6.5 节 DQR 公式、表 22 分档与表 25 数据需求矩阵门槛。",
+        "evidenceIds": [
+          "ev-dqp153-pef-dqr-formula",
+          "ev-dqp153-pef-dnm-thresholds"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-dqp153-pef-dqr-formula",
+            "relation": "supports",
+            "rationale": "表 20–22 与式 19–20 证实 PEF 仅对 TeR/GeR/TiR/P 四项等权求均值并划为 5 档序数等级，完整性为不打分前提。"
+          },
+          {
+            "evidenceId": "ev-dqp153-pef-dnm-thresholds",
+            "relation": "supports",
+            "rationale": "表 25 与公报全文检索证实企业实测 DQR≤1.5、次级 DQR≤3.0、替代贡献≤10% 的准入规则，且 396 页全文无对数正态/蒙特卡洛转换。"
+          }
+        ],
+        "premiseIds": [
+          "cl-dapp147-quality-architectures-and-prerequisite-split",
+          "cl-dapp147-weakest-link-vs-mean-and-80pct-masking",
+          "cl-dqp-ecoinvent-v3-variance"
+        ],
+        "caveats": [
+          "2021 年建议将企业实测门槛定为 DQR≤1.5，不同于早期 2018 年 PEFCR 导则草案中常见的 1.6 口径，引用时须核对版本。"
+        ],
+        "reasoning": "把欧盟 PEF 的序数门槛与 ecoinvent 的方差叠加放在同一概念轴上对比，揭示“同称数据质量评分、实则服务于不同决策机制”的实质差异。",
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-19",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：联动表 2，压实至 350 字以内并展开 ILCD 中文全称。"
+    },
+    {
+      "id": "cl-dqp-ghgp-qualitative-dqi",
+      "op": "modify",
+      "from": {
+        "id": "cl-dqp-ghgp-qualitative-dqi",
+        "text": "与前文 ecoinvent 谱系方差和欧盟 PEF 序数门槛两条路径不同，第三条路线见于温室气体核算体系（GHG Protocol）2011 年产品标准第 8.3 节与第 10 章：它沿用了 Weidema 与 Wesnæs 的 5 项数据质量指标（DQI，即技术、时间、地理、完整性与可靠性，表 8.1），但在表 8.2 中仅给出“很好、良好、尚可、差”（Very good / Good / Fair / Poor）4 档定性评级，既不规定统一的数值综合 DQR 公式，也不把定性评级直接换算为概率分布。该标准第 8 章要求企业对显著过程的数据来源、质量状况与改进措施作出文字披露，第 10.2 至 10.3 节强制要求报告清单不确定性来源与关键方法学选择的定性说明，同时明确把蒙特卡洛模拟或泰勒展开等定量不确定性传播列为可选项。由此可见，即使采用同一套五维指标名称，GHG Protocol 选择的是“强制文字披露 + 可选定量传播”，与前文 Edelen 和 Ingwersen 主张将代表性元数据与定量不确定性并行保留的立场相呼应，而与自动数值化或硬门槛截然有别。",
+        "kind": "source-statement",
+        "scope": "GHG Protocol 产品标准（2011）第 8.3 节定性 DQI 评级与第 10 章定性/定量不确定性报告边界。",
+        "evidenceIds": [
+          "ev-dqp153-ghgp-qualitative-dqi",
+          "ev-dqp153-ghgp-uncertainty-boundary"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-dqp153-ghgp-qualitative-dqi",
+            "relation": "supports",
+            "rationale": "第 48、55–57 页表 8.1–8.3 证实 5 项定性 DQI 与 4 档文字评级，无统一数值综合 DQR。"
+          },
+          {
+            "evidenceId": "ev-dqp153-ghgp-uncertainty-boundary",
+            "relation": "supports",
+            "rationale": "第 79–83 页证实定性不确定性说明为强制项，蒙特卡洛或泰勒展开定量传播为可选项。"
+          }
+        ],
+        "premiseIds": [
+          "cl-dqp-pef-ordinal-dqr",
+          "cl-unc-alongside"
+        ],
+        "caveats": [
+          "第 8.3.7 节虽提示企业可参考配套工具尝试以 DQI 辅助估算不确定性，但标准正文不要求强制概率转换。"
+        ],
+        "reasoning": "补齐定性披露路线，使“专家方差化—实证校准方差化—序数门槛—定性披露”四类体系形成完整对照。",
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-19",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：平滑过渡衔接，压实至 300 字以内。"
+    },
+    {
+      "id": "cl-dqp-paywalled-iso-boundary",
+      "op": "modify",
+      "from": {
+        "id": "cl-dqp-paywalled-iso-boundary",
+        "text": "在来源边界上需要明确说明：国际标准 ISO 14044:2006 中关于数据质量要求与不确定性报告的正式条款属受版权与付费授权保护文本，本书未持有其授权全文，因此本章不引述或转述其具体条款编号与逐字要求。本章全部跨体系对照严格建立在已核验原文的开放获取一手材料之上——即柏林杯重抽样与谱系校准文献（Ciroth 等 2008、2012、2016）、美国环保署数据质量框架（Edelen 与 Ingwersen 2018）、ecoinvent 第三版数据质量导则（Weidema 等 2013）、欧盟委员会建议书 (EU) 2021/2279 及 GHG Protocol 产品标准（2011）；其余付费标准条款留待取得正式授权后再作逐条补证。",
+        "kind": "interpretation",
+        "scope": "第二十七章跨体系比较的一手文献核验边界与 ISO 14044:2006 付费全文缺口声明。",
+        "evidenceIds": [
+          "ev-dqp153-pef-dqr-formula",
+          "ev-dqp153-ghgp-qualitative-dqi"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-dqp153-pef-dqr-formula",
+            "relation": "context",
+            "rationale": "欧盟 PEF 建议脚注 72 虽提及 ISO 14044“精度”概念，但本仓库不据此反向补造未核验的 ISO 条款原文。"
+          },
+          {
+            "evidenceId": "ev-dqp153-ghgp-qualitative-dqi",
+            "relation": "context",
+            "rationale": "GHG Protocol 产品标准为开放获取全文，可直接核对表 8.1–8.3 与第 10 章条款。"
+          }
+        ],
+        "premiseIds": [
+          "cl-dqp-four-framework-synthesis"
+        ],
+        "caveats": [
+          "该付费标准原文暂留作公开文献边界，待取得正式授权后再作逐条补证。"
+        ],
+        "reasoning": "贯彻公开证据边界原则，避免借二次转述冒充对付费国际标准条款的一手核验。",
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-19",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "清除注释范围中的草稿章号残留。"
+    },
+    {
+      "id": "cl-dqp-cross-chapter-bridge",
+      "op": "modify",
+      "from": {
+        "id": "cl-dqp-cross-chapter-bridge",
+        "text": "放回第六部的整体链条中，本章处于数据适用性、不确定性传播与产品足迹规则三者的交汇处：第二十五章讨论背景数据库如何通过适用性筛选、区域化父子数据集与多角色审查管理“数据该不该用”，第二十六章辨明参数随机误差、情景选择与模型结构不确定性为何不能混进同一轮蒙特卡洛抽样，本章则揭示质量评分在各体系中究竟是变成了随机方差、序数准入闸门还是定性披露元数据；而下一章将看到，欧盟 PEF 的 DQR 门槛与 GHG Protocol 的定性披露如何进一步嵌入产品足迹规则与法定合规框架，共同决定一项核算结果能否用于公开声明或跨产品比较。",
+        "kind": "synthesis",
+        "scope": "第二十七章与第六部其余三章（第二十五、二十六、二十八章）的概念衔接与全部分工边界。",
+        "evidenceIds": [
+          "ev-dqp153-pef-dnm-thresholds",
+          "ev-dqp153-ecoinvent-v3-limits"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-dqp153-pef-dnm-thresholds",
+            "relation": "context",
+            "rationale": "PEF 数据需求矩阵直接衔接下一章 B28 的产品足迹规则与法定准入体系。"
+          },
+          {
+            "evidenceId": "ev-dqp153-ecoinvent-v3-limits",
+            "relation": "context",
+            "rationale": "谱系方差排除模型不确定性的边界直接呼应 B26 对参数与模型不确定性的区分。"
+          }
+        ],
+        "premiseIds": [
+          "cl-db2011-conditional-use",
+          "cl-book-unc-bridge",
+          "cl-dqp-four-framework-synthesis",
+          "cl-dqp-paywalled-iso-boundary"
+        ],
+        "caveats": [
+          "各章职责衔接用于说明概念依赖关系，具体规则与案例证据仍以各自章节的一手引注为准。"
+        ],
+        "reasoning": "为读者建立第六部四章之间清晰的概念依赖脉络，便于后续整部连续回读。",
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-19",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "清除正文与注释范围中的草稿章号及篇数矛盾，统一改为正式篇名。"
+    },
+    {
+      "id": "cl-pfr151-espr-dpp-conversion",
+      "op": "modify",
+      "from": {
+        "id": "cl-pfr151-espr-dpp-conversion",
+        "kind": "interpretation",
+        "scope": "欧盟《可持续产品生态设计法规》(EU) 2024/1781（ESPR）适用与豁免范围、自愿 PEF 向授权法案转化机制及数字产品护照",
+        "evidenceIds": [
+          "ev-pfr151-espr-conversion-dpp"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-pfr151-espr-conversion-dpp",
+            "relation": "supports",
+            "rationale": "直接引证已核验官方一手 PDF 原文条款与精确数值。"
+          }
+        ],
+        "premiseIds": [
+          "cl-pfr151-binding-batteries"
+        ],
+        "conceptIds": [
+          "cn-rule-conformance"
+        ],
+        "mappingIds": [],
+        "caveats": [
+          "ESPR 本身为框架法规，不直接对具体产品设定统一足迹数值，须视后续按产品组颁布的授权法案而定。"
+        ],
+        "reasoning": "依据 ESPR 序言第 23 条、第 1—2、4—7、9—13、79—80 条与附件一，界定自愿 PEF 方法进入欧盟跨产品强制法制的条件与数字载体边界。",
+        "text": "电池之外，欧盟在 2024 年 6 月发布的《可持续产品生态设计法规》（ESPR，Regulation (EU) 2024/1781，公报全文 89 页）把这一转化路径推广到了更广泛的实物商品。法规自 2024 年 7 月 18 日起废止旧生态设计指令（2009/125/EC）并直接适用于全体成员国，覆盖含零部件与中间品在内的实物商品，但第 1 条第 2 款明确排除食品、饲料、药品、活体动植物及受专项法规管辖的机动车（也就是说，前文讨论的液态奶乳制品并不落入 ESPR 范围）。序言第 23 条、第 2 条第 24—25 款、第 5 条第 1 款 (o) 项与附件一说明：建议书 (EU) 2021/2279 的 PEF 方法只是备选方法库之一，只有被后续按产品组颁布的授权法案（通常给予至少 18 个月过渡期，首部不得早于 2025 年 7 月 19 日生效）选定或调整后，才会成为强制披露或性能门槛。同时，第 9—13 条要求相关产品配备连接至唯一产品、经营者与设施标识符的开放机读数字产品护照（DPP），并规定欧盟委员会须在 2026 年 7 月 19 日前建成中央注册库。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-19",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：联动表 1，压实至 330 字以内。"
+    },
+    {
+      "id": "cl-pfr151-ghgp-vs-battery-accounting",
+      "op": "modify",
+      "from": {
+        "id": "cl-pfr151-ghgp-vs-battery-accounting",
+        "kind": "interpretation",
+        "scope": "GHG Protocol 生物源/土地利用/抵消规则与欧盟电池法规附件二 1 kWh、排除使用阶段、厂级特定数据之对照",
+        "evidenceIds": [
+          "ev-pfr151-ghgp-carbon-rules",
+          "ev-pfr151-battery-annex2"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-pfr151-ghgp-carbon-rules",
+            "relation": "supports",
+            "rationale": "直接引证已核验官方一手 PDF 原文条款与精确数值。"
+          },
+          {
+            "evidenceId": "ev-pfr151-battery-annex2",
+            "relation": "supports",
+            "rationale": "直接引证已核验官方一手 PDF 原文条款与精确数值。"
+          }
+        ],
+        "premiseIds": [
+          "cl-pfr151-binding-batteries",
+          "cl-pfr151-ghgp-boundary-unit"
+        ],
+        "conceptIds": [
+          "cn-fu",
+          "cn-rule-conformance"
+        ],
+        "mappingIds": [],
+        "caveats": [
+          "两者在“禁止将碳抵消冲减声明总值”上立场一致，但在使用阶段是否纳入与厂级数据粒度上截然不同，绝不能直接混用或跨体系互换数值。"
+        ],
+        "reasoning": "并置 GHG Protocol 第 6.2、7.2、11.2 节及附录 B.1.1 与欧盟电池法规附件二第 3—7 点，展示制度目标如何决定系统边界与数据粒度。",
+        "text": "把《GHG Protocol 产品标准》与欧盟《电池法规》附件二放在一起看，就能明白为何“同样叫产品碳足迹”，算出的边界却可能完全相反。GHG Protocol 要求核算京都议定书 6 类温室气体并采用 100 年全球增温潜势（GWP），在缺乏现行科学共识或产品规则时建议采用最短 100 年的默认评估期；生物源排放与清除、以及 20 年或单次收获期（取较长者）内的直接土地利用变化（LUC）必须单独列示（间接土地利用变化 iLUC 不作强制），同时严禁把延迟排放折算权重、碳抵消或避免排放混入清单总计（第 11.2 节）。欧盟《电池法规》附件二第 7 点同样禁止把碳抵消计入碳足迹声明，但在系统边界上作出了截然不同的制度裁剪：它把功能单位定为电池寿命期总供电量 1 千瓦时（备用电池例外为 1 千瓦分，kWmin），边界仅含原材料获取与预处理、主产品生产、分销及报废回收 4 个阶段，并明确排除使用阶段——理由是使用阶段充放电电网结构不在电池制造商直接控制之下（除非设计选择带来不可忽略的影响）。与此同时，附件二第 5 点把数据粒度收紧到工厂级：正极、负极、电解液、隔膜与电芯壳体 5 类核心部件必须使用具体生产工厂的特定活动数据，禁用默认活动数据，且明确禁止对不同工厂生产的同型号电池进行抽样代替。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-19",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：联动表 2，压实至 360 字以内，清晰对比两者边界与厂级数据粒度。"
+    }
+  ],
+  "files": [
+    {
+      "path": "content/docs/book/database-fitness-and-documentation.mdx",
+      "fromSha256": "e6fceda41439a9b5028554806f0757b38e3cfbfc4770c2c11e82efbfe622177e",
+      "toSha256": "16962796ec22dcd32375880dd4d2117b6913e6f79af2942446c188128b6cdcf6",
+      "previous": "---\ntitle: 过程数据的用途\ndescription: 从一份供电或原材料过程数据出发，比较单元过程、市场活动与支撑子过程的衔接边界，辨析固有代表性与研究语境重评，并验算最弱项五倍惩罚、四维算术均值与前 80% 单一总分加权带来的判定差异。\n---\n\n## 数据所代表的过程 [#表示对象]\n\n<Prose ids=\"cl-db2011-user-and-manager cl-db2011-represented-object cl-db2011-scope-examples\" />\n\n<Prose ids=\"cl-dapp147-dataset-roles-and-system-linking cl-dapp147-intrinsic-vs-context-representativeness\" />\n\n## 数据的质量信息 [#质量信息]\n\n<Prose ids=\"cl-db2011-representativeness-and-precision cl-db2011-documenting-number\" />\n\n<Prose ids=\"cl-dapp147-quality-architectures-and-prerequisite-split\" />\n\n## 数据聚合与覆盖 [#聚合与覆盖]\n\n<Prose ids=\"cl-db2011-aggregation-information cl-db2011-missing-and-zero\" />\n\n<Prose ids=\"cl-dapp147-weakest-link-vs-mean-and-80pct-masking\" />\n\n| 比较维度 | UNEP/SETAC（2011） | ILCD 详细指南（2010） | ILCD 入门级（1.1 版，2012） | 欧盟建议书 2021/2279 与 EF 指南 2.0 | ecoinvent 第 3 版（2013） |\n| --- | --- | --- | --- | --- | --- |\n| 评价对象层级 | 单元过程或聚合过程数据集文档 | 过程数据集整体（区分单元过程、部分终止系统、清单结果） | 过程数据集整体（不作质量分档） | 公司特定数据集、次级数据集及研究语境最相关过程 | 除参考产品外的单条输入输出交换流 |\n| 计分质量指标 | 表 4.1 定性说明精密度、完整性、代表性、一致性、重现性 | 技术、地域、时间代表性加完整性、精密度、方法学共 6 项（1—5 分） | 质量合规固定标为“未定义”（Not defined），按国际标准准则陈述质量并记述三项代表性 | 技术（TeR）、地域（GeR 或 GR）、时间（TiR）代表性与精密度（P）共 4 项（1—5 分） | 基本不确定度加可靠性、完整性、时间、地域、进一步技术相关性 5 项谱系分 |\n| 完整性与方法学 | 与代表性、精密度并列作定性文档审查 | 纳入 6 项打分指标参与式 3 合成 | 遵循国际标准过程方法并记录建模与分配，不强制手册方法 | 移出算式设为二元最低准入前提，XML 字段标为“不适用”（Not applicable） | 方法学由主库编审规则统一约束，完整性为第 2 项谱系方差指标 |\n| 未知项与单项封顶 | 要求区分真实零值与缺失值并文字交代缺口 | 未评估或未知项赋 5 分，不适用赋 0 分并扣减有效指标数；无独立单项硬顶 | 无量化总分与单项上限 | 供应端次级数据每项加权分 ≤ 3.0；公司特定数据 P ≤ 3、三项代表性 ≤ 2 | 未评估交换流默认取最差谱系档 5 分，无数据集级淘汰上限 |\n| 聚合算式或映射 | 不设标量聚合公式 | 式 3 最弱项五倍权重：(六项和 + 4×最弱分) / (有效项数 + 4) | 不计算总体数据质量评级（研究端引用时亦禁止重算） | 式 19 与式 20 四项算术均值；公司特定数据按 80% 阈值分别筛活动数据与直接流，次级数据按单一总分前 80% 重标定加权 | 对数正态底层正态方差 6 项直接相加（5 分谱系附加方差和为 0.21） |\n| 分档门槛与用途 | 支撑使用者按目标与范围作人工适用性判断 | 表 7 三档：≤ 1.6 高质量、高于 1.6 至 ≤ 3 基本质量、高于 3 至 ≤ 4 数据估计 | 供数据网络节点起步准入；在欧盟研究中作 ≤ 10% 单一总分代理 | 表 22 五档（≤ 1.5 极优、高于 1.5 至 ≤ 2.0 优良、高于 2.0 至 ≤ 3.0 良好、高于 3 至 ≤ 4.0 尚可、高于 4 差）；数据需求矩阵规定公司特定数据 ≤ 1.5、合规次级数据 ≤ 3.0 | 静态清单取中位数，方差专供蒙特卡洛清单不确定性传播 |\n"
+    },
+    {
+      "path": "content/docs/book/review-support-and-version-boundaries.mdx",
+      "fromSha256": "fb3c8d579bc20b2f785f14cbec4b9ee589d73bf30d62cd87d3a6d6ba9202fc0d",
+      "toSha256": "5fbb77172c0f2639150029b774a1923e41179c03968f06c8df79f791ff4579cd",
+      "previous": "---\ntitle: 数据审查与版本\ndescription: 对比自动平衡验证、多角色编辑审查与独立外部评审团队门槛，解析五维合规块中“未定义”字段的真实制度含义，并追踪参考包换版漂移、三年期恶化重审红线与次级代理补缺阶梯。\n---\n\n## 审查准则与记录 [#准则与记录]\n\n<Prose ids=\"cl-db2011-review-relative-to-criteria cl-db2011-review-questions cl-db2011-validation-context\" />\n\n<Prose ids=\"cl-dapp147-validation-vs-review-and-team-thresholds\" />\n\n## 指南建议及其依据 [#指导的支持程度]\n\n<Prose ids=\"cl-db2011-recommendation-strength cl-db2011-review-of-guidance\" />\n\n<Prose ids=\"cl-dapp147-five-aspect-compliance-and-uuid-semantics\" />\n\n## 数据换版与补缺 [#版本变化]\n\n<Prose ids=\"cl-db2011-versioned-confidence\" />\n\n<Prose ids=\"cl-dapp147-package-migration-inheritance-and-surveillance cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge\" />\n\n| 制度维度 | UNEP/SETAC（2011） | ILCD 2010 与入门级 1.1 版 | 欧盟建议书 2021/2279 与 EF 指南（2.0 及 3.1 增补） | ecoinvent 第 3 版（2013） | 天工公开规范 TIDAS（v0.3.0） |\n| --- | --- | --- | --- | --- | --- |\n| 自动校验与人工审查 | 第 2 章与第 4 章区分手工或自动验证同独立系统审查 | 总论第 11 章将交付物评审矩阵移交专卷；入门级允许 1 名外部免报告或 1 名内部附报告 | 次级入库仅准许至少 2 名含外部专家联合评审并禁用单人外审；研究验证须达 6 分且初级数据必做现场核查，Look@LCI 偏差 ≤ 1% | 在线 ecoEditor 自动验证写入第 3340 字段；转换活动目标至少 3 名专家（含 4 类横向编辑）审查，3.0 版如实披露缺口 | 过程模式支持单条或数组审查历史，含“Not reviewed”共 6 值枚举且报告引用可选 |\n| 合规声明矩阵结构 | 区分强烈推荐（shall）、推荐与建议，保留有依据少数意见 | 表 9 确立质量、方法、命名、审查、文档五维；完整合规设 12 套情景乘质量 UUID，入门级另设独立 UUID | 表 1 强制并列 6 组（无类别规则时 5 组）UUID，国际标准与流列表维度按职责精确标“Not defined” | 按主库统一活动命名、地理父子继承与系统模型规则管理，不用多系统 UUID 并列块 | 公开规则定义语义与格式谓词，刻意排除严重度、阶段归属与默认阻断策略 |\n| 区域残差与混合命名 | 建议记录聚合范围、底层数据可得性与分配方式 | 区分单工序或黑箱单元过程、部分终止系统与清单结果 | 中心数据集标部分终止系统；非主要支撑子过程标单工序单元过程且严禁脱离父系统复用 | 强制先建全球父过程 GLO 并按产量差额自动算 RoW；严格拆分转换活动与消费组合市场活动 | 生产组合应具成文权重；电网损耗或 1:1 变压节点不自动转消费组合，绿证不改写物理发电技术 |\n| 版本演进与失效红线 | 建议报告技术、资料或基本流更新及新版实际受审范围 | 合规源数据集基线版本号 01.02.000（或更高可用版），网络建设过渡期最长 3 年 | 旧版转换数据降为代理；JRC130796 实测 2,752 份数据集中 6%、10%、13% 前三主类易位；报告最长 3 年有效，单类恶化超 10.0% 或总分恶化超 5.0% 强制更新 | 新增局部数据联动改写 RoW 与市场份额；3.0 版记录未同步更新 GLO 时负交换置零或复制 GLO 例外 | 强制要求 NN.NN 或 NN.NN.NNN 定长版本号随内容变更严格单调递增 |\n| 缺口补齐与截断上限 | 表 2.1 末行允许在无更佳资料时用足够一致数据补缺并逐项说明理由 | 入门级允许 VOC 等部分聚合基本流作为起步过渡 | 四级次级阶梯（EF 合规、EF 代理、≤ 10% 单一总分 ILCD-EL 代理、剔除并报缺口）；物料、能量与各影响类别累计截断均低于 3.0%；2026 过渡指导预计延用至 2028 年 | 未指明子区室仅在无具体信息时使用；除特定水体总和指标等例外，总和排放须扣除已单报物质以防双计 | 消费方产品可设定业务豁免与阶段门禁，但不得把未通过公开规则定义的记录改写为通过 |\n\n<Prose ids=\"cl-db2011-conditional-use\" />\n\n继续阅读：[变异与不确定性](/docs/book/uncertainty-and-variability)。\n"
+    },
+    {
+      "path": "content/monograph/data-applicability.mdx",
+      "fromSha256": "0a0f28bc5e641d44bafda830e803c1cafbb8a20aa56f8ac7d906fb0a6d06634e",
+      "toSha256": "f413fd2dfef8abc27fbe7c5e3095a0e49c3f1776248189162095255b8f195a5c",
+      "previous": "---\ntitle: 数据适用性\ndescription: 围绕过程数据的表示角色、固有与研究语境代表性、多维质量聚合算式、验证与独立评审门槛、五维合规声明及参考包换版补缺规则，系统比较国际指南、欧盟环境足迹、瑞士 ecoinvent 数据库与天工公开规范的共同条件与结论反转。\n---\n\n## 数据所代表的过程 [#表示对象]\n\n<Prose ids=\"cl-db2011-user-and-manager cl-db2011-represented-object cl-db2011-scope-examples\" />\n\n<Prose ids=\"cl-dapp147-dataset-roles-and-system-linking cl-dapp147-intrinsic-vs-context-representativeness\" />\n\n## 数据的质量信息 [#质量信息]\n\n<Prose ids=\"cl-db2011-representativeness-and-precision cl-db2011-documenting-number\" />\n\n<Prose ids=\"cl-dapp147-quality-architectures-and-prerequisite-split\" />\n\n<Prose ids=\"cl-db2011-aggregation-information cl-db2011-missing-and-zero\" />\n\n<Prose ids=\"cl-dapp147-weakest-link-vs-mean-and-80pct-masking\" />\n\n| 比较维度 | UNEP/SETAC（2011） | ILCD 详细指南（2010） | ILCD 入门级（1.1 版，2012） | 欧盟建议书 2021/2279 与 EF 指南 2.0 | ecoinvent 第 3 版（2013） |\n| --- | --- | --- | --- | --- | --- |\n| 评价对象层级 | 单元过程或聚合过程数据集文档 | 过程数据集整体（区分单元过程、部分终止系统、清单结果） | 过程数据集整体（不作质量分档） | 公司特定数据集、次级数据集及研究语境最相关过程 | 除参考产品外的单条输入输出交换流 |\n| 计分质量指标 | 表 4.1 定性说明精密度、完整性、代表性、一致性、重现性 | 技术、地域、时间代表性加完整性、精密度、方法学共 6 项（1—5 分） | 质量合规固定标为“未定义”（Not defined），按国际标准准则陈述质量并记述三项代表性 | 技术（TeR）、地域（GeR 或 GR）、时间（TiR）代表性与精密度（P）共 4 项（1—5 分） | 基本不确定度加可靠性、完整性、时间、地域、进一步技术相关性 5 项谱系分 |\n| 完整性与方法学 | 与代表性、精密度并列作定性文档审查 | 纳入 6 项打分指标参与式 3 合成 | 遵循国际标准过程方法并记录建模与分配，不强制手册方法 | 移出算式设为二元最低准入前提，XML 字段标为“不适用”（Not applicable） | 方法学由主库编审规则统一约束，完整性为第 2 项谱系方差指标 |\n| 未知项与单项封顶 | 要求区分真实零值与缺失值并文字交代缺口 | 未评估或未知项赋 5 分，不适用赋 0 分并扣减有效指标数；无独立单项硬顶 | 无量化总分与单项上限 | 供应端次级数据每项加权分 ≤ 3.0；公司特定数据 P ≤ 3、三项代表性 ≤ 2 | 未评估交换流默认取最差谱系档 5 分，无数据集级淘汰上限 |\n| 聚合算式或映射 | 不设标量聚合公式 | 式 3 最弱项五倍权重：(六项和 + 4×最弱分) / (有效项数 + 4) | 不计算总体数据质量评级（研究端引用时亦禁止重算） | 式 19 与式 20 四项算术均值；公司特定数据按 80% 阈值分别筛活动数据与直接流，次级数据按单一总分前 80% 重标定加权 | 对数正态底层正态方差 6 项直接相加（5 分谱系附加方差和为 0.21） |\n| 分档门槛与用途 | 支撑使用者按目标与范围作人工适用性判断 | 表 7 三档：≤ 1.6 高质量、高于 1.6 至 ≤ 3 基本质量、高于 3 至 ≤ 4 数据估计 | 供数据网络节点起步准入；在欧盟研究中作 ≤ 10% 单一总分代理 | 表 22 五档（≤ 1.5 极优、高于 1.5 至 ≤ 2.0 优良、高于 2.0 至 ≤ 3.0 良好、高于 3 至 ≤ 4.0 尚可、高于 4 差）；数据需求矩阵规定公司特定数据 ≤ 1.5、合规次级数据 ≤ 3.0 | 静态清单取中位数，方差专供蒙特卡洛清单不确定性传播 |\n\n## 数据的审查范围 [#审查范围]\n\n<Prose ids=\"cl-db2011-review-relative-to-criteria cl-db2011-review-questions cl-db2011-validation-context\" />\n\n<Prose ids=\"cl-dapp147-validation-vs-review-and-team-thresholds\" />\n\n<Prose ids=\"cl-db2011-recommendation-strength cl-db2011-review-of-guidance\" />\n\n<Prose ids=\"cl-dapp147-five-aspect-compliance-and-uuid-semantics\" />\n\n## 数据换版与补缺 [#版本变化]\n\n<Prose ids=\"cl-db2011-versioned-confidence\" />\n\n<Prose ids=\"cl-dapp147-package-migration-inheritance-and-surveillance cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge\" />\n\n| 制度维度 | UNEP/SETAC（2011） | ILCD 2010 与入门级 1.1 版 | 欧盟建议书 2021/2279 与 EF 指南（2.0 及 3.1 增补） | ecoinvent 第 3 版（2013） | 天工公开规范 TIDAS（v0.3.0） |\n| --- | --- | --- | --- | --- | --- |\n| 自动校验与人工审查 | 第 2 章与第 4 章区分手工或自动验证同独立系统审查 | 总论第 11 章将交付物评审矩阵移交专卷；入门级允许 1 名外部免报告或 1 名内部附报告 | 次级入库仅准许至少 2 名含外部专家联合评审并禁用单人外审；研究验证须达 6 分且初级数据必做现场核查，Look@LCI 偏差 ≤ 1% | 在线 ecoEditor 自动验证写入第 3340 字段；转换活动目标至少 3 名专家（含 4 类横向编辑）审查，3.0 版如实披露缺口 | 过程模式支持单条或数组审查历史，含“Not reviewed”共 6 值枚举且报告引用可选 |\n| 合规声明矩阵结构 | 区分强烈推荐（shall）、推荐与建议，保留有依据少数意见 | 表 9 确立质量、方法、命名、审查、文档五维；完整合规设 12 套情景乘质量 UUID，入门级另设独立 UUID | 表 1 强制并列 6 组（无类别规则时 5 组）UUID，国际标准与流列表维度按职责精确标“Not defined” | 按主库统一活动命名、地理父子继承与系统模型规则管理，不用多系统 UUID 并列块 | 公开规则定义语义与格式谓词，刻意排除严重度、阶段归属与默认阻断策略 |\n| 区域残差与混合命名 | 建议记录聚合范围、底层数据可得性与分配方式 | 区分单工序或黑箱单元过程、部分终止系统与清单结果 | 中心数据集标部分终止系统；非主要支撑子过程标单工序单元过程且严禁脱离父系统复用 | 强制先建全球父过程 GLO 并按产量差额自动算 RoW；严格拆分转换活动与消费组合市场活动 | 生产组合应具成文权重；电网损耗或 1:1 变压节点不自动转消费组合，绿证不改写物理发电技术 |\n| 版本演进与失效红线 | 建议报告技术、资料或基本流更新及新版实际受审范围 | 合规源数据集基线版本号 01.02.000（或更高可用版），网络建设过渡期最长 3 年 | 旧版转换数据降为代理；JRC130796 实测 2,752 份数据集中 6%、10%、13% 前三主类易位；报告最长 3 年有效，单类恶化超 10.0% 或总分恶化超 5.0% 强制更新 | 新增局部数据联动改写 RoW 与市场份额；3.0 版记录未同步更新 GLO 时负交换置零或复制 GLO 例外 | 强制要求 NN.NN 或 NN.NN.NNN 定长版本号随内容变更严格单调递增 |\n| 缺口补齐与截断上限 | 表 2.1 末行允许在无更佳资料时用足够一致数据补缺并逐项说明理由 | 入门级允许 VOC 等部分聚合基本流作为起步过渡 | 四级次级阶梯（EF 合规、EF 代理、≤ 10% 单一总分 ILCD-EL 代理、剔除并报缺口）；物料、能量与各影响类别累计截断均低于 3.0%；2026 过渡指导预计延用至 2028 年 | 未指明子区室仅在无具体信息时使用；除特定水体总和指标等例外，总和排放须扣除已单报物质以防双计 | 消费方产品可设定业务豁免与阶段门禁，但不得把未通过公开规则定义的记录改写为通过 |\n\n<Prose ids=\"cl-db2011-conditional-use\" />\n\n继续阅读：[变异与不确定性](/docs/book/uncertainty-and-variability)。\n"
+    },
+    {
+      "path": "content/docs/book/uncertainty-and-variability.mdx",
+      "fromSha256": "6397a6bf7db133aa941465d727d37d547994798b025ebe8cf093f028f2492464",
+      "toSha256": "2411e752800911f1f0de4d390370de421b5d8045c9bdd50bb56701fc79a0ae4c",
+      "previous": "---\ntitle: 变异与不确定性\ndescription: 区分固有变异、认识不确定性与方法选择，跨体系对照国际参考生命周期数据系统（ILCD）与欧盟产品环境足迹（PEF）的不确定性与热点规则、一阶泰勒与随机全局灵敏度失效边界、蒙特卡洛次数陷阱及求解数值稳定性。\n---\n\n## 分布与估计对象 [#估计对象]\n\n<Prose ids=\"cl-unc-types cl-unc-target cl-unc-sd-sem cl-unc149-variability-vs-epistemic\" />\n\n## 参数与模型选择 [#不确定性来源]\n\n<Prose ids=\"cl-unc-parameters cl-unc-model cl-unc-choices cl-book-unc-separate cl-unc149-framework-comparison\" />\n\n| 误差或差异层次 | 本质与可缩减性 | 恰当数学或程序表达 | ILCD 2010 指南处理 | 欧盟建议书 2021/2279（PEF）处理 | 常见误用陷阱 |\n| --- | --- | --- | --- | --- | --- |\n| 固有变异（厂际、地域、时间） | 系统内在真实散布；不能靠增加抽样消除，须分区域／工艺／时段刻画 | 总体分布与标准差（SD）、子总体分层 | 区分来源变异与均值估计，按目标界定代表性 | 经技术、地域、时间代表性评分与细化活动数据反映 | 用均值标准误掩盖个体工厂或流域极端值 |\n| 参数认识不确定性 | 测量精度不足或资料缺口；可经补充实测与文献核查缩减 | 样本均值标准误（SEM）、概率密度函数与相关性 | 清单与影响层可配合蒙特卡洛计算并按图 26 优先改进 | 全篇无蒙特卡洛强制条款，折入数据质量评级精密度项 P | 以重复模拟替代缺失观测或把模拟次数当样本量 |\n| 模型结构不确定性 | 空间聚合、机制简化或边界遗漏；不能靠收窄参数分布补回，须改进结构 | 机制对照、高分辨率模型或结构残差分析 | 规定条款 I.a 明示计算不确定度常遗漏系统性偏差 | 第 6.2 节完整性与一致性稳健性检验配合边界规则 | 仅报告极窄参数误差棒却忽略流域或排放路径丢失 |\n| 方法与规范选择不确定性 | 功能单位、分配、表征与赋权约定；属研究设定，不适用抽样缩减 | 离散情景分析与条件对照，默认不赋等概率 | 目标范围、多功能性与不同影响评价（LCIA）方法以情景并列检验 | 由统一产品规则与强制热点门槛锁定，第 6.2 节作敏感度检视 | 将两种规范情景当成随机抽样或混算均值与方差 |\n| 数值求解不稳定性 | 矩阵条件数、舍入与算法误差；独立于数据抽样，须靠数值算法诊断 | 矩阵病态（条件数）分析、算法稳健性与收敛诊断 | 与清单数据不确定性分属不同层次 | 依赖标准化参考包与合规工具校验，不替代算法分析 | 把矩阵病态导致的解跳变误归咎于原始工厂数据 |\n\n## 求解的数值稳定性 [#数值可靠性]\n\n<Prose ids=\"cl-unc149-local-vs-global-sa cl-unc149-taylor-vs-sampling cl-unc149-gsa-outliers-nonlinearity cl-unc149-mc-runs-precision-vs-accuracy cl-unc149-comparative-paired-and-pvalue cl-unc149-pedigree-mc-boundary\" />\n\n| 方法类别 | 所需输入信息 | 计算代价 | 高离散度（CV = 30%）与偏斜表现 | 交互、离群值与相关性处理 | 合法支持的结论边界 |\n| --- | --- | --- | --- | --- | --- |\n| 局部单因子灵敏度（OAT／偏导数） | 仅基准点估计值 | 低（按参数逐一微扰） | 忽略各参数真实离散跨度，无法反映右偏均值上移 | 不能捕捉多参数同时变化的交互效应 | 仅用于初步识别基准点附近的边际斜率 |\n| 一阶泰勒关键议题分析（KIA） | 中心值与离散度（无需完整分布） | 1 次解析计算（Groen 等人 2017 表 3，最快） | 电力案例方差低估约 33%、白鱼低估约 20%，且漏掉均值上移 | 仅作一阶线性展开，不输出完整概率分布 | 仅适用于低离散度（如 CV = 5%）近似线性模型的快速筛查 |\n| 标准化回归平方（SRC） | 完整概率密度函数与随机样本 | N 次抽样运行（Groen 等人 2017 表 3） | 均值与方差贴近基准，但电力案例解释份额跌至 81.7% | 对右尾离群值敏感；常规实现假定输入无相关 | 适用于低至中等离散度、近似线性且离群值不突出的模型 |\n| 随机平衡设计（RBD） | 完整概率密度函数与分层样本 | N 次抽样运行（Groen 等人 2017 表 3，后处理快于 SRC） | 电力案例解释份额跌至 79.7%；白鱼 115 参数案例为 94.0% | 易受高离散度右尾影响且低贡献参数可能高估；假定输入无相关 | 适用于参数较多且需快速频域分解的探索性筛查 |\n| 斯皮尔曼秩相关平方（SCC） | 完整概率密度函数与随机样本 | N 次抽样运行（Groen 等人 2017 表 3，与 SRC 共用样本） | 电力案例解释 94.0%、白鱼 115 参数案例解释 94.5% | 秩变换显著抑制右尾离群值；仍假定输入无相关 | 适用于高离散度单调非线性模型的稳健主因排序 |\n| 索博尔一阶与总效应（Sobol SME／STE） | 完整概率密度函数与双样本矩阵 | 表 3 计作 2N 基础矩阵（含混合矩阵评估，最慢） | 电力案例 SME 91.6%、STE 110%，稳健捕捉 18.4 个百分点交互差额 | 可显式分离主效应与交互及非线性表征效应 | 适用于高离散度、强交互或非线性中点／终点路径的深度诊断 |\n| 差值协方差蒙特卡洛＋样本量上限 | 含共享过程结构与真实样本量 n 的输入 | 随 N_run 线性增长（Heijungs 2020 第 1 节：单次 1 秒至 5 分钟） | 可保留真实分布形态，但大 N_run 会把均值标准误压至虚假极小 | 宜对两系统之差计入共享过程协方差；谱系分布缺真实样本量 | 仅可在区分模拟误差与实测样本量、且不把无显著差异当相等的前提下支持比较推断 |\n\n<Prose ids=\"cl-unc-numerical cl-book-unc-bridge\" />\n"
+    },
+    {
+      "path": "content/docs/book/data-quality-and-probability.mdx",
+      "fromSha256": "6ae22685eba989efd73f132001ab3f1139d0610a216805cf27a4f44490a43e7a",
+      "toSha256": "fb4d207da23d3e937625826a635a3f001ec6793b80899f711e473f3441ca9b4a",
+      "previous": "---\ntitle: 质量评分与概率\ndescription: 从柏林杯重调查看平均值的估计精度与杯重散布有何不同，再说明怎样用这批资料提出完整性因子，并比较 ecoinvent 谱系方差、欧盟 PEF 序数 DQR 门槛与 GHG Protocol 定性披露对质量评分的不同用法。\n---\n\n## 杯重调查与估计 [#杯重调查与估计]\n\n<Prose ids=\"cl-ped-study-question cl-ped-population cl-ped-design cl-ped-weighted-mean cl-ped-design-variance\" />\n\n## 散布与估计精度 [#散布与估计精度]\n\n<Prose ids=\"cl-ped-cluster-arithmetic cl-ped-population-spread cl-ped-poststratification cl-ped-stratified-conflict\" />\n\n下表比较同一调查中杯重的散布与几种方法估计均值的精度。均值和方差采用报告给出的数值，标准差、标准误及相对值按上文的算式重算。总体仍以某种杯型在一家门店的出现为一个元素。\n\n| 比较对象 | 报告所列的均值和方差 | 据报告复算的结果 |\n| --- | --- | --- |\n| 整群路线的均值精度 | 均值5.6589 g；均值估计方差0.0072 g² | 标准误约0.0849 g；相对标准误约1.4995% |\n| 总体杯重的散布 | 杯重方差0.72 g²；以5.6474 g为比较分母 | 标准差约0.8485 g；相对标准差约15.0251% |\n| 后分层的均值精度 | 均值5.7245 g；均值估计方差0.0014 g² | 标准误约0.0374 g；相对标准误约0.6536% |\n| 分层路线的均值精度 | 均值5.6474 g；均值估计方差0.0034 g² | 相对标准误约1.0325%；原文讨论写0.07%，尚不相合 |\n\n“总体杯重的散布”一行说明杯重相差多大，其余三行说明用各自的方法估计平均杯重有多精确。相对标准差和相对标准误都可以用百分数表示，解释时仍要区分它们。\n\n<Prose ids=\"cl-ped-estimate-boundary\" />\n\n## 完整性评分的校准 [#完整性评分的校准]\n\n<Prose ids=\"cl-unc-scores cl-unc-calibration cl-ped-subsets cl-ped-score-mapping cl-ped-gsd-definition cl-ped-completeness-ratio cl-ped-factor-values cl-ped-calibration-boundary cl-unc-calibration-limits\" />\n\n## 概率模型与参数 [#概率模型与参数]\n\n<Prose ids=\"cl-ped-ratio-rule cl-ped-ratio-example cl-ped-independent-product cl-ped-ratio-residual cl-ped-factor-conventions cl-unc-baseline cl-ped-inventory-assumptions cl-ped-inventory-combination cl-ped-inventory-interval cl-ped-inventory-center cl-dqp-ecoinvent-v3-variance cl-dqp-pef-ordinal-dqr\" />\n\n## 评分检验与使用条件 [#评分的检验与适用]\n\n<Prose ids=\"cl-unc-table-conflict cl-ped-reliability-cv-trace cl-ped-score-test-design cl-ped-score-test-results cl-ped-three-tests cl-unc-alongside cl-unc-context cl-unc-synthesis cl-dqp-ghgp-qualitative-dqi\" />\n\n下表把四类代表性体系处理相近质量维度的核心机制放在同一口径下对照，方便区分“将评分转成概率方差”“以序数门槛控制准入”与“保持定性文字披露”三类不同设计。\n\n| 体系与一手来源 | 评估维度与打分刻度 | 综合规则与概率转换 | 准入门槛或报告义务 | 关键假定与适用边界 |\n| --- | --- | --- | --- | --- |\n| ecoinvent 第三版专家谱系（Weidema 等 2013，表 10.4–10.5） | 5 项（可靠性、完整性、时间、地理、进一步技术）；1–5 级 | 转为对数尺度正态附加方差 σ²，与 1 项基础方差共 6 项线性相加 | 作为清单参数蒙特卡洛抽样输入，无统一总分准入闸门 | 假定附加误差零均值且相互独立；2013 年表仍属专家判断，不含模型不确定性与人为错误 |\n| ecoinvent 实证校准谱系（Ciroth 等 2012/2016） | 同 5 项谱系维度（本章详析完整性与可靠性校准）；1–5 级 | 以实证子集与参照组散布比值校准几何标准差或方差系数 | 旨在替换专家系数，仍服务于对数正态概率分布构造 | 校准受限于有限样本与分组规则，仍依赖独立性与零偏差假定，无法自动消除系统偏差 |\n| 欧盟 PEF 序数评级（建议书 (EU) 2021/2279 附件一第 4.6.5 节） | 4 项打分（TeR、GeR、TiR、P，1–5 级）；完整性与方法一致性为不打分前提 | 四项等权算术平均得 DQR（式 19–20），划 5 档序数等级；2021 年原刊公报 OJ L 471 全文 396 页（2022 年更正重刊版 OJ L 144 全文 384 页）均未设置概率转换 | 数据需求矩阵硬门槛：企业实测 DQR≤1.5、次级 DQR≤3.0、替代贡献≤10% | 衡量数据收集档次与合规准入，不代表参数随机方差大小，也不能替代不确定性分析 |\n| 温室气体核算体系（GHG Protocol）产品标准（2011，第 8.3 节与第 10 章）及美国环保署框架 | 5 项（技术、时间、地域、完整性、可靠性）；4 档定性（很好/良好/尚可/差） | 无统一数值综合 DQR，也不强制转为概率分布；代表性元数据与定量误差分离 | 强制文字披露显著过程数据质量与定性不确定性来源；蒙特卡洛或泰勒展开为可选项 | 防止将方向性偏差与多维代表性欠缺压扁为单一区间宽度，但纯定性描述难直接跨报告自动比对 |\n\n<Prose ids=\"cl-dqp-four-framework-synthesis cl-dqp-paywalled-iso-boundary cl-dqp-cross-chapter-bridge\" />\n"
+    },
+    {
+      "path": "content/docs/book/product-footprint-rules-and-practice.mdx",
+      "fromSha256": "1ea259d747d19991c52e2a08ee746ab8efbe7d0b92ec0936aba599accb13db6c",
+      "toSha256": "e6ef7f026b24b7cec98056cbe958eaf2cab36a725f4ae9c9e8c2e4ba0a7408d0",
+      "previous": "---\ntitle: 产品足迹规则\ndescription: 从一升牛奶的冷藏和洗涤出发，核对类别规则、活动用量、发布的气候结果及审查范围，并横向比较欧盟自愿产品环境足迹（PEF）、温室气体核算体系（GHG Protocol）产品标准与具有直接法律约束力的欧盟电池法规和生态设计法规（ESPR），再用甲烷算法说明比较声明的共同条件。\n---\n\n## 类别规则与默认服务 [#规则与规定服务]\n\n<Prose ids=\"cl-rule-opening cl-rule-force cl-rule-category cl-rule-rp cl-rule-issuer cl-rule-version cl-rule-validity cl-pfr151-binding-batteries cl-pfr151-espr-dpp-conversion\" />\n\n| 规则体系与文本 | 法律效力与发布主体 | 适用范围与主要豁免 | 影响类别与指标 | 分析单位与生命周期边界 | 声明用途与准入门槛 |\n| --- | --- | --- | --- | --- | --- |\n| 欧盟建议书 (EU) 2021/2279 与乳制品产品环境足迹类别规则（PEFCR） | 无强制约束力建议（《欧盟运行条约》TFEU 第 288 条）；欧盟委员会 / 行业技术秘书处 | 通用 PEF 与组织环境足迹（OEF）方法及具体类别规则（如液态奶等乳制品） | 多类别环境足迹（含气候变化等 16 类指标，可归一化加权） | 功能单位与代表产品基准；含默认使用阶段（家用冷藏与洗涤） | 仅按同版规则与验证条件支持基准对照与比较，不自动产生法定准入 |\n| 温室气体核算体系（GHG Protocol）产品标准（2011） | 自愿核算标准；世界资源研究所（WRI）与世界可持续发展工商理事会（WBCSD）联合发布 | 各类商品与服务的生命周期温室气体核算 | 单一气候指标（6 类京都温室气体，100 年全球增温潜势 GWP；不应代称整体环境表现） | 最终产品须用功能单位＋摇篮到坟墓；中间产品用参考流＋摇篮到大门 | 原样仅支持同产品跨期追踪；不支持国际标准化组织（ISO）14044 比较断言，采购比较需配产品规则 |\n| 欧盟电池法规 (EU) 2023/1542 | 直接适用全成员国之强制法规（第 96 条）；欧洲议会与理事会 | 电动汽车、容量大于 2 kWh 可充电工业与轻型交通工具电池（按厂按型号） | 单一气候变化表征结果（不作归一化与加权，遵循 PEF 气候方法） | 寿命期总供电量 1 千瓦时（kWh，备用电池 1 千瓦分 kWmin）；覆盖 4 阶段并排除使用阶段 | 三阶段强制市场准入：申报 → 性能分级（每 3 年复核）→ 法定最高限值 |\n| 欧盟生态设计法规 (EU) 2024/1781（ESPR） | 直接适用全成员国之框架法规（第 80 条）；欧洲议会与理事会 | 含零部件与中间品的实物商品；排除食品、饲料、药品、活体及专项机动车 | 授权法案可设定碳足迹或环境足迹（择用 PEF 2021/2279 或国际标准） | 由各产品组授权法案逐类规定（通常给予至少 18 个月过渡期） | 授权法案确立强制披露/性能门槛并绑定数字产品护照（中央库 2026-07-19 前建成） |\n\n## 使用阶段的活动与结果 [#活动量与报表]\n\n<Prose ids=\"cl-rule-use-boundary cl-rule-default cl-rule-wash-cycles cl-rule-wash-inputs cl-rule-results-layer cl-rule-use-result cl-rule-report-split cl-rule-quantity-scale cl-rule-capital-gap cl-rule-storage-gap cl-rule-reconstruction-limit cl-pfr151-ghgp-boundary-unit cl-pfr151-ghgp-vs-battery-accounting\" />\n\n## 模型与审查范围 [#模型与审查范围]\n\n<Prose ids=\"cl-rule-why-chain cl-rule-review-objects cl-rule-review-2018 cl-rule-review-2024 cl-rule-review-identity cl-pfr151-assurance-vs-notified-body cl-pfr151-product-vs-corporate-scope3\" />\n\n## 甲烷算法与比较条件 [#算法响应与比较]\n\n<Prose ids=\"cl-rule-methane-rule cl-rule-nordic-design cl-rule-ration-units cl-rule-niu-provenance cl-rule-niu-result cl-rule-ipcc-result cl-rule-ipcc-class cl-rule-model-meaning cl-rule-comparison-limits cl-rule-evidence-judgment cl-pfr151-comparative-assertion-gates cl-pfr151-paywalled-standard-boundaries\" />\n\n| 比较维度 | 乳制品 PEFCR（欧盟 PEF 体系） | GHG Protocol 产品标准（2011） | 欧盟电池法规 (EU) 2023/1542 | 欧盟 ESPR (EU) 2024/1781 与未检视付费标准边界 |\n| --- | --- | --- | --- | --- |\n| 使用阶段与非归因过程 | 强制纳入默认家用冷藏与洗涤活动，受类别规则参数约束 | 最终产品强制摇篮到坟墓；资本品、管理费用、研发与通勤默认非归因可排除 | 附件二明确排除使用阶段（除非设计显著影响），仅算原材料、生产、分销与报废 | ESPR 按产品组授权法案定边界；ISO 14067 / EN 15804 细则须查授权原文 |\n| 生物源、土地利用与抵消 | 遵循环境足迹（EF）方法与类别规则（如甲烷方程须全链一致） | 生物源与 20 年/单次收获期直接 LUC 分列（iLUC 非强制）；禁用延迟折算、抵消与避免排放 | 附件二第 7 点严禁将碳抵消计入碳足迹声明（仅可另作附加环境信息） | ESPR 序言第 23 条提及临时碳储等方法考量，具体规则待授权法案落定 |\n| 活动数据与截断门槛 | 区分企业特定数据与 EF 次级数据集，受过渡指导约束 | 归因过程无统一百分比截断，须同时满足缺口、无代理、不显著 3 条件并披露 | 5 大核心部件强制采用具体工厂特定活动数据，禁用默认值且禁止跨厂抽样 | 视具体授权法案而定；数字产品护照绑定唯一产品、经营者与设施标识 |\n| 审查、鉴证与合格评定 | 类别规则评审小组审查＋研究层独立验证员验证 | 允许第一方或第三方独立鉴证，区分有限保证（消极意见）与合理保证（积极意见） | 禁用模块 A 自我声明；强制第三方公告机构按模块 D1（定期审核、可不定期抽查）或模块 G 评定 | 依授权法案规定合格评定路径；付费标准认证细则须核现行授权文本 |\n| 比较声明与企业核算接口 | 比较声明须统一甲烷算法、规则版本、功能单位与验证范围 | 不支持比较断言；产品清单之和须加非归因范围三类别方近似企业范围一二三总量 | 通过法定统一计算与公告机构核验支撑跨型号性能分级与最高限值合规 | ESPR 比较与披露口径待授权法案确立；ISO 14067:2018、ISO 14025:2006、EN 15804+A2、GB/T 24067-2024 付费正文留作开放边界 |\n\n<Prose ids=\"cl-rule-conclusion\" />\n"
+    }
+  ],
+  "corrections": [
+    {
+      "chapter": "/docs/book/database-fitness-and-documentation",
+      "claimId": "cl-dapp147-dataset-roles-and-system-linking",
+      "scope": "整合改写：压实至 420 字以内，展开 ILCD 全称并理顺四套体系的数据集角色与拼接禁区。"
+    },
+    {
+      "chapter": "/docs/book/database-fitness-and-documentation",
+      "claimId": "cl-dapp147-intrinsic-vs-context-representativeness",
+      "scope": "整合改写：联动表 1，压实至 440 字以内并将情境 2 折减算例移入注释。"
+    },
+    {
+      "chapter": "/docs/book/database-fitness-and-documentation",
+      "claimId": "cl-dapp147-quality-architectures-and-prerequisite-split",
+      "scope": "整合改写：联动表 1，压实至 390 字以内。"
+    },
+    {
+      "chapter": "/docs/book/database-fitness-and-documentation",
+      "claimId": "cl-dapp147-weakest-link-vs-mean-and-80pct-masking",
+      "scope": "整合改写：联动表 1，压实至 440 字以内，突出三重判定反转与 80%/10% 毒性遮蔽。"
+    },
+    {
+      "chapter": "/docs/book/review-support-and-version-boundaries",
+      "claimId": "cl-dapp147-validation-vs-review-and-team-thresholds",
+      "scope": "整合改写：联动表 1，压实至 440 字以内，补全 ILCD、EF 与 GLO 中文展开。"
+    },
+    {
+      "chapter": "/docs/book/review-support-and-version-boundaries",
+      "claimId": "cl-dapp147-five-aspect-compliance-and-uuid-semantics",
+      "scope": "整合改写：联动表 1，压实至 435 字以内，补全 UUID 中文展开。"
+    },
+    {
+      "chapter": "/docs/book/review-support-and-version-boundaries",
+      "claimId": "cl-dapp147-package-migration-inheritance-and-surveillance",
+      "scope": "整合改写：联动表 1，压实至 425 字以内，补全 JRC 报告主语。"
+    },
+    {
+      "chapter": "/docs/book/review-support-and-version-boundaries",
+      "claimId": "cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge",
+      "scope": "整合改写：压实至 400 字以内，补全 DQR 中文展开并衔接表 1。"
+    },
+    {
+      "chapter": "/docs/book/review-support-and-version-boundaries",
+      "claimId": "cl-db2011-conditional-use",
+      "scope": "消除拆章残留的“或本章前两节”错误自指，理顺与《过程数据的用途》的衔接。"
+    },
+    {
+      "chapter": "/docs/book/uncertainty-and-variability",
+      "claimId": "cl-unc149-framework-comparison",
+      "scope": "整合改写：联动表 1，压实至 400 字以内，突出 ILCD 蒙特卡洛与 PEF 确定性 80% 热点门槛之别。"
+    },
+    {
+      "chapter": "/docs/book/uncertainty-and-variability",
+      "claimId": "cl-unc149-local-vs-global-sa",
+      "scope": "整合改写：联动表 2，压实至 300 字以内。"
+    },
+    {
+      "chapter": "/docs/book/uncertainty-and-variability",
+      "claimId": "cl-unc149-taylor-vs-sampling",
+      "scope": "整合改写：联动表 2，压实至 410 字以内，精准保留 CV=5% 与 CV=30% 对比数值。"
+    },
+    {
+      "chapter": "/docs/book/uncertainty-and-variability",
+      "claimId": "cl-unc149-gsa-outliers-nonlinearity",
+      "scope": "整合改写：联动表 2，压实至 330 字以内。"
+    },
+    {
+      "chapter": "/docs/book/uncertainty-and-variability",
+      "claimId": "cl-unc149-mc-runs-precision-vs-accuracy",
+      "scope": "整合改写：联动表 2，压实至 370 字以内。"
+    },
+    {
+      "chapter": "/docs/book/uncertainty-and-variability",
+      "claimId": "cl-unc149-comparative-paired-and-pvalue",
+      "scope": "整合改写：联动表 2，压实至 380 字以内。"
+    },
+    {
+      "chapter": "/docs/book/uncertainty-and-variability",
+      "claimId": "cl-unc-model",
+      "scope": "清除草稿章号残留，改为正式篇名《耗水与缺水潜势》。"
+    },
+    {
+      "chapter": "/docs/book/uncertainty-and-variability",
+      "claimId": "cl-unc149-pedigree-mc-boundary",
+      "scope": "清除注释范围中的草稿章号残留，改为正式篇名《质量评分与概率》。"
+    },
+    {
+      "chapter": "/docs/book/uncertainty-and-variability",
+      "claimId": "cl-book-unc-bridge",
+      "scope": "清除草稿章号残留，改为“下一章《质量评分与概率》”。"
+    },
+    {
+      "chapter": "/docs/book/data-quality-and-probability",
+      "claimId": "cl-dqp-ecoinvent-v3-variance",
+      "scope": "整合改写：联动表 2，压实至 310 字以内。"
+    },
+    {
+      "chapter": "/docs/book/data-quality-and-probability",
+      "claimId": "cl-dqp-pef-ordinal-dqr",
+      "scope": "整合改写：联动表 2，压实至 350 字以内并展开 ILCD 中文全称。"
+    },
+    {
+      "chapter": "/docs/book/data-quality-and-probability",
+      "claimId": "cl-dqp-ghgp-qualitative-dqi",
+      "scope": "整合改写：平滑过渡衔接，压实至 300 字以内。"
+    },
+    {
+      "chapter": "/docs/book/data-quality-and-probability",
+      "claimId": "cl-dqp-paywalled-iso-boundary",
+      "scope": "清除注释范围中的草稿章号残留。"
+    },
+    {
+      "chapter": "/docs/book/data-quality-and-probability",
+      "claimId": "cl-dqp-cross-chapter-bridge",
+      "scope": "清除正文与注释范围中的草稿章号及篇数矛盾，统一改为正式篇名。"
+    },
+    {
+      "chapter": "/docs/book/product-footprint-rules-and-practice",
+      "claimId": "cl-pfr151-espr-dpp-conversion",
+      "scope": "整合改写：联动表 1，压实至 330 字以内。"
+    },
+    {
+      "chapter": "/docs/book/product-footprint-rules-and-practice",
+      "claimId": "cl-pfr151-ghgp-vs-battery-accounting",
+      "scope": "整合改写：联动表 2，压实至 360 字以内，清晰对比两者边界与厂级数据粒度。"
+    }
+  ],
+  "reviewEvidence": [
+    {
+      "kind": "integration-review",
+      "date": "2026-11-22",
+      "file": "_docs/editorial/review-evidence/part6-batch3-211/review-record.json",
+      "sha256": "f2f827f6cb582e351a05401a54404784f4b14cc63967e27b86bfa035dffdd79e"
+    }
+  ],
+  "publicArtifacts": [
+    {
+      "path": "claims/index.html",
+      "sha256": "e8cbe82b5712bdfd63160245fb967e0eea91d6a920823b0acaeb40c2228eb943"
+    },
+    {
+      "path": "sources/index.html",
+      "sha256": "753f37797ee9ffb95de4457859b6a47adc0efd9f90874e98a96d3fe3a02206e6"
+    },
+    {
+      "path": "concepts/index.html",
+      "sha256": "7354b7ee589a3a3656a0db74620d56f5d201b9fa88bd6bc9496497d248059d7f"
+    },
+    {
+      "path": "coverage/index.html",
+      "sha256": "5be994cb31a7a77576597707dafb8cfa6e932c161d4e273bc9783eb1c0f7fa2a"
+    },
+    {
+      "path": "downloads/catalog.json",
+      "sha256": "c33e0c81ee781255f72e2e19c1ef0359d8f60237e1bd84c7b3340f8472bf0399"
+    },
+    {
+      "path": "downloads/dependencies.json",
+      "sha256": "455a10ee593c62d142db01eee90587f5b097fa7f815b8fe3f589ead119def018"
+    }
+  ]
+}
