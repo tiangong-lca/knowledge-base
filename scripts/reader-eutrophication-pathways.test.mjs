@@ -412,10 +412,13 @@ test('PM retains the original GLAM work and accepts only its scoped, exact liter
   const { default: accepted } = await import('../config/pm-selection-accepted.json', { with: { type: 'json' } });
   const { default: edition } = await import('../config/book-edition.json', { with: { type: 'json' } });
   const root = fileURLToPath(new URL('../', import.meta.url));
-  const files = await checkpointInput().then(x => x.files);
+  const [files, headCatalog] = await Promise.all([
+    readReadableBookHistoryFiles(root, baseline.fixedFiles),
+    (await import('node:fs/promises')).readFile(new URL('../knowledge/catalog.json', import.meta.url), 'utf8').then(JSON.parse),
+  ]);
   const sources = new Map([...files].filter(([path]) => /^content\/.+\.mdx?$/.test(path))
     .map(([path, bytes]) => [path.slice(7).replace(/\.mdx?$/, '').replace(/\/index$/, ''), bytes.toString()]));
-  const validate = lit => validatePmSelectionCoverage(edition, sources, catalog, accepted, undefined, { readings, literature: lit });
+  const validate = lit => validatePmSelectionCoverage(edition, sources, headCatalog, accepted, undefined, { readings, literature: lit });
   assert.deepEqual(validate(literature), []);
 
   const tamperedGlam = structuredClone(literature);
