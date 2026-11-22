@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-21
-lastReviewedCommit: fff371413af1436a9e7802831c349a583bfa41b6
+lastReviewedCommit: d139cbc47481f9b819cd71d5f17ac2903ce8ba58
 ---
 
 # Publication contract
@@ -28,6 +28,17 @@ Cold production Next configuration validates the actual current source. Public
 export independently rechecks source joins and publication eligibility, then
 validates the rendered output. Those checks remain separate; an earlier success
 does not authorize changed inputs or a later export.
+
+Since 2026-11-21 (`#192`), HEAD source qualification (`scripts/reader-checkpoint.mjs`)
+verifies the pinned checkpoint (`config/readable-book-checkpoint.json`) and
+reverses all declared post-checkpoint revisions (`config/revisions/index.json`)
+to reproduce the exact checkpoint state digest (`4ca4fcd1...`); any undeclared
+change fails closed. The full 41-unit pre-checkpoint rollback chain remains
+intact in `qualifyHistoricalReaderSources` and is verified independently against
+the byte-pinned checkpoint snapshot (`scripts/fixtures/checkpoint-2026-11-21/`)
+by `node scripts/verify-checkpoint-history.mjs` in CI. Post-checkpoint claim
+retirements are enforced symmetrically in runtime rendering (`lib/reader-book.ts`)
+and export output checks (`scripts/reader-surface.mjs`), and rendered on `/changes/`.
 
 For the exact audited package scripts without build/validation lifecycle hooks,
 ordinary CI calls that guarded Next build followed by the original exporter,

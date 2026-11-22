@@ -1,3 +1,8 @@
+import { readFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { currentRevisions } from './reader-checkpoint.mjs';
+import { applyRevisionsToPlanStatic } from './reader-revisions.mjs';
 import mktConfig from '../config/reader-market-response-comparison.json' with { type: 'json' };
 import part3Config from '../config/reader-part3-reread.json' with { type: 'json' };
 import frConfig from '../config/reader-functional-reference-comparison.json' with { type: 'json' };
@@ -175,7 +180,11 @@ const acceptedHyb = effectiveHybridInventoryComparison(acceptedFr, currentHybrid
 const acceptedPart2 = effectivePart2Reread(acceptedHyb, currentPart2Reread);
 const acceptedFw = effectiveFrameworkComparison(acceptedPart2, currentFrameworkComparison);
 const acceptedPart1 = effectivePart1Reread(acceptedFw, currentPart1Reread);
-export const currentBookPlan = effectiveWholeBookReread(acceptedPart1, currentWholeBookReread);
+export const baseCheckpointPlan = effectiveWholeBookReread(acceptedPart1, currentWholeBookReread);
+const expectationsRepoRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
+export const currentBookPlan = currentRevisions.length
+  ? applyRevisionsToPlanStatic(baseCheckpointPlan, currentRevisions, JSON.parse(readFileSync(join(expectationsRepoRoot, 'knowledge', 'catalog.json'), 'utf8')))
+  : baseCheckpointPlan;
 
 export function currentBookRecordMatches(kind, previous, current, projection) {
   if (projection !== undefined) return matchesAcceptedRecord(currentBookPlan, kind, previous, current, projection);

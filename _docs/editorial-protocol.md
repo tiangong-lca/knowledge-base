@@ -13,8 +13,8 @@ checkPaths:
   - "content/**"
   - "knowledge/**"
   - "releases/**"
-lastReviewedAt: 2026-11-20
-lastReviewedCommit: 4b9c3958f316693f85e0bab789400a8215b19ca9
+lastReviewedAt: 2026-11-21
+lastReviewedCommit: d139cbc47481f9b819cd71d5f17ac2903ce8ba58
 ---
 
 # Editorial and living review protocol
@@ -52,6 +52,8 @@ Each unit's existing editorial record must establish four things: (1) its questi
 A source check determines the strength of an admissible assertion, not whether it belongs in this chapter. Preserve strong counterevidence and reader-essential qualifications; allocate space by relevance, evidence and consequences, not source counts or symmetrical treatment of positions. Field-wide consensus needs evidence for its claimed community, period and proposition; agreement among selected sources is narrower. Different purposes or versions need explanation before being called a dispute. Give a reasoned conditional judgment where possible, and identify the missing evidence where it is not.
 
 Conservation protects substantive responsibilities and citation history, not permanent paragraph membership in the main text. Reviewed destinations may include integrated prose, notes, appendices or an independently useful website topic; corrections require historical identity and affected-consumer review. Current validators still bind the accepted edition until an explicitly reviewed disposition and actual target replace that arrangement. Do not delete a guard or refresh an entire baseline merely to accommodate cuts. Current book-source registration does not yet support an arbitrary website-only topic, and the new policy alone does not implement that capability.
+
+On 2026-11-21 (`#192`), per explicit user authorization (option C), the 41-unit pre-checkpoint rollback chain was collapsed into a reviewed, digest-pinned checkpoint (`config/readable-book-checkpoint.json`, commit `fff371413af1436a9e7802831c349a583bfa41b6`, state digest `4ca4fcd1...`), and declarative claim retirement was added (`scripts/reader-revisions.mjs`, `config/revisions/`). This checkpoint is a verifiable collapse, not a baseline refresh to hide changes: all 41 historical units, their review evidence and the `/changes/` ledger remain intact and independently re-verifiable against the checkpoint snapshot via `node scripts/verify-checkpoint-history.mjs` (enforced in CI), while every post-checkpoint change—including claim modifications, additions and retirements—must be explicitly declared in `config/revisions/` so inverse application reproduces the exact checkpoint state digest. Retired claims must either retarget their historical note anchors to a successor claim note or emit an explicit chapter notice, and are surfaced on `/changes/`. See [the post-checkpoint revisions runbook](runbooks/post-checkpoint-revisions.md).
 
 Stop this round of retrieval when the declared question has a defensible answer or a precisely bounded unresolved state, major alternatives and counterevidence have dispositions, and further acquisition would only repeat examples. Record the stop reason and reopening trigger without claiming exhaustive coverage. At chapter end state what has been learned and can be used, not just what cannot be inferred. Part-level and whole-book coherence remain separate from local source/reader acceptance.
 

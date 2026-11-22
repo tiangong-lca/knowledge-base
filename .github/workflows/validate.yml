@@ -21,6 +21,7 @@ jobs:
           install: false
       - run: pnpm install --frozen-lockfile
       - run: pnpm test
+      - run: node scripts/verify-checkpoint-history.mjs
       - run: pnpm typecheck
       - name: Build guarded Next output and independently verify the export
         run: |

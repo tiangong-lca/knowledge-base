@@ -1,5 +1,7 @@
 import { showEditorialHistoryInProse, withCleanDeliveryValidation, FORBIDDEN_PROSE_ATTR_PATTERNS, FORBIDDEN_PROSE_TEXT_PATTERNS } from './reader-editorial-mode.mjs';
 import { buildPublicChangesLedger } from './reader-changes-ledger.mjs';
+import { currentRetirements } from './reader-checkpoint.mjs';
+import { applyClaimRetirementsToCitations } from './reader-revisions.mjs';
 import { functionalReferenceComparisonPreviousSurface, qualifyFunctionalReferenceComparisonHistory } from './reader-functional-reference-comparison.mjs';
 import { hybridInventoryComparisonPreviousSurface, qualifyHybridInventoryComparisonHistory } from './reader-hybrid-inventory-comparison.mjs';
 import { part2RereadPreviousSurface, projectPart2RereadPrintParts, qualifyPart2RereadHistory } from './reader-part2-reread.mjs';
@@ -417,9 +419,9 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
   const wholeBookReread = book?.current?.wholeBookReread;
   const part7Reread = book?.current?.part7Reread;
   const revisableJudgment = book?.current?.revisableJudgment;
-  const entries = relabelHistoricalTargets(flowBoundaryCitationEntries(
+  const entries = applyClaimRetirementsToCitations(relabelHistoricalTargets(flowBoundaryCitationEntries(
     copyeditHistoryEntries(getHistoricalCitationEntries(sourceBaseline, locations, history, historicPrintRoutes, book), copyedit),
-    book?.current?.flowBoundary), [...serviceConstraints?.routes ?? [], ...substitutionRules?.routes ?? [], ...loadShift?.routes ?? [], ...footprint?.routes ?? [], ...land?.routes ?? [], ...acid?.routes ?? [], ...minerals?.routes ?? [], ...fossils?.routes ?? [], ...photochemicalOzone?.routes ?? [], ...ozoneRadiation?.routes ?? [], ...toxicityComparison?.routes ?? [], ...waterScarcity?.routes ?? [], ...biogenicCarbon?.routes ?? [], ...eutrophicationPathways?.routes ?? [], ...particulateComparison?.routes ?? [], ...part4Reread?.routes ?? [], ...weightingValuation?.routes ?? [], ...localizationComparison?.routes ?? [], ...socialComparison?.routes ?? [], ...costSustainability?.routes ?? [], ...part5Reread?.routes ?? [], ...dataApplicabilityComparison?.routes ?? [], ...uncertaintyComparison?.routes ?? [], ...productFootprintComparison?.routes ?? [], ...dataQualityComparison?.routes ?? [], ...part6Reread?.routes ?? [], ...wallServiceComparison?.routes ?? [], ...interpretationBags?.routes ?? [], ...futureScenarios?.routes ?? [], ...revisableJudgment?.routes ?? [], ...part7Reread?.routes ?? [], ...marketResponseComparison?.routes ?? [], ...part3Reread?.routes ?? [], ...functionalReferenceComparison?.routes ?? [], ...hybridInventoryComparison?.routes ?? [], ...part2Reread?.routes ?? [], ...frameworkComparison?.routes ?? [], ...part1Reread?.routes ?? [], ...wholeBookReread?.routes ?? []]);
+    book?.current?.flowBoundary), [...serviceConstraints?.routes ?? [], ...substitutionRules?.routes ?? [], ...loadShift?.routes ?? [], ...footprint?.routes ?? [], ...land?.routes ?? [], ...acid?.routes ?? [], ...minerals?.routes ?? [], ...fossils?.routes ?? [], ...photochemicalOzone?.routes ?? [], ...ozoneRadiation?.routes ?? [], ...toxicityComparison?.routes ?? [], ...waterScarcity?.routes ?? [], ...biogenicCarbon?.routes ?? [], ...eutrophicationPathways?.routes ?? [], ...particulateComparison?.routes ?? [], ...part4Reread?.routes ?? [], ...weightingValuation?.routes ?? [], ...localizationComparison?.routes ?? [], ...socialComparison?.routes ?? [], ...costSustainability?.routes ?? [], ...part5Reread?.routes ?? [], ...dataApplicabilityComparison?.routes ?? [], ...uncertaintyComparison?.routes ?? [], ...productFootprintComparison?.routes ?? [], ...dataQualityComparison?.routes ?? [], ...part6Reread?.routes ?? [], ...wallServiceComparison?.routes ?? [], ...interpretationBags?.routes ?? [], ...futureScenarios?.routes ?? [], ...revisableJudgment?.routes ?? [], ...part7Reread?.routes ?? [], ...marketResponseComparison?.routes ?? [], ...part3Reread?.routes ?? [], ...functionalReferenceComparison?.routes ?? [], ...hybridInventoryComparison?.routes ?? [], ...part2Reread?.routes ?? [], ...frameworkComparison?.routes ?? [], ...part1Reread?.routes ?? [], ...wholeBookReread?.routes ?? []]), book?.current?.retirements ?? currentRetirements);
   const addresses = new Set();
   for (const entry of entries) {
     const address = `${entry.path}#${entry.id}`;
@@ -600,7 +602,7 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
         target.kind === 'chapter' ? actual.tag === 'ARTICLE' :
         target.kind === 'note-group' ? /^H[23]$/.test(actual.tag) : actual.section);
       if (!semanticMatch) errors.push(`${address}: wrong or missing ${target.kind} destination ${target.path}/#${target.id}`);
-      if (entry.mode === 'alias' && !entry.scope && entry.capturedScope
+      if (entry.mode === 'alias' && !entry.scope && !entry.retiredFrom && entry.capturedScope
           && !matchesCapturedScope(previousSurface(`${target.path}#${target.id}`, actual), entry))
         errors.push(`${address}: old ${entry.capturedScope.title} aliased scope changed without a reviewed migration`);
 
@@ -689,6 +691,14 @@ export async function validateCleanDeliveryOutput(root, documents, ledger = buil
   const renderedParts = new Set(ledgerEl.querySelectorAll('[data-changes-part-intro]').map(n => n.getAttribute('data-changes-part-intro')));
   for (const item of ledger.partIntroductions) {
     if (!renderedParts.has(String(item.part))) errors.push(`changes/index.html: missing Part ${item.part} introduction entry`);
+  }
+  const renderedRevisions = new Set(ledgerEl.querySelectorAll('[data-changes-revision]').map(n => n.getAttribute('data-changes-revision')));
+  for (const rev of ledger.revisions ?? []) {
+    if (!renderedRevisions.has(rev.id)) errors.push(`changes/index.html: missing post-checkpoint revision entry ${rev.id}`);
+  }
+  const renderedRetirements = new Set(ledgerEl.querySelectorAll('[data-changes-retirement]').map(n => n.getAttribute('data-changes-retirement')));
+  for (const ret of ledger.retirements ?? []) {
+    if (!renderedRetirements.has(ret.id)) errors.push(`changes/index.html: missing retired claim entry ${ret.id}`);
   }
   return errors;
 }
