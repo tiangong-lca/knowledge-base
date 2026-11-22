@@ -1,0 +1,914 @@
+{
+  "schemaVersion": 1,
+  "id": "part1-3-batch5-215",
+  "date": "2026-11-22",
+  "title": "第一至三部分 B04、B06、B09、B11 整合改写（批次 5）",
+  "rationale": "按全书目标第 2.16 节完成第一至三部分四篇（B04《评价框架的形成》及专论《评价框架与分析步骤》、B06《功能参照》、B09《混合清单》、B11《市场响应》）的整合改写，将 11 段超过 420 字的追加比较长段压实至 440 字以内，清除注释中的草稿章号残留并改为正式篇名，为五处既有对照表补齐表题；全部 25 个算例绑定段落与既有章节标题均保持不变。",
+  "routes": [
+    "/docs/book/framework-history",
+    "/docs/monograph/framework-responsibilities",
+    "/docs/book/service-and-reference",
+    "/docs/book/inventory-boundary-and-hybrid",
+    "/docs/book/market-boundaries-and-response"
+  ],
+  "sourceCommit": "3941dfee2f79f86dfb8d66d9b4f6ced142b3a3a9",
+  "claims": [
+    {
+      "id": "cl-fw179-shared-phases",
+      "op": "modify",
+      "from": {
+        "id": "cl-fw179-shared-phases",
+        "kind": "synthesis",
+        "text": "把上述历史脉络延伸到当代主流操作指南，会看到 CML 2001/2002、国际参考生命周期数据系统（ILCD）2010、欧盟产品环境足迹（PEF）2021 与 GHG Protocol 产品标准（2011）共享同一套底层分析骨架：都先界定研究目的、功能或分析基准与系统边界，再归集清单数据、计算环境影响，并在全过程中通过完整性、敏感性与一致性检查反复修正前期假设。CML 2001（Part 2a，第 3–4 页）沿 ISO 共识把评价组织为目标与范围定义、清单分析、影响评价与解释 4 个阶段，并在指南前置项目程序管理章形成 5 章操作结构；ILCD 2010（第 4 章图 4，第 25 页）把这四个阶段明确画成多轮精化的迭代回路，先用通用数据筛出关键过程，再把精化数据集中投入主导环节；GHG Protocol 产品标准（第 3.1 节图 3.1，第 13 页）虽然改按商业目标、范围、边界、数据质量、分配、不确定性、结果计算、鉴证、报告与减排目标展开，本质上仍保留了“先定问题、再建账、后核验”的闭环逻辑。",
+        "scope": "跨体系框架阶段与迭代结构对照；对应 CML 2001 Part 2a（pp. 3–4）、ILCD 2010（§4 Fig. 4）与 GHG Protocol 产品标准 2011（§3.1 Fig. 3.1）。",
+        "evidenceIds": [
+          "ev-fw179-cml-framework",
+          "ev-fw179-ilcd-framework",
+          "ev-fw179-ghgp-framework"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-fw179-cml-framework",
+            "relation": "supports",
+            "rationale": "CML 2001 Part 2a 明确列出 ISO 四阶段并前置项目程序管理章（共 5 章）。"
+          },
+          {
+            "evidenceId": "ev-fw179-ilcd-framework",
+            "relation": "supports",
+            "rationale": "ILCD 2010 第 4 章图 4 将四阶段组织为由三项检查驱动的多轮迭代回路。"
+          },
+          {
+            "evidenceId": "ev-fw179-ghgp-framework",
+            "relation": "supports",
+            "rationale": "GHG Protocol 产品标准图 3.1 以企业核算步骤重构了目标—边界—清单—核验—报告闭环。"
+          }
+        ],
+        "premiseIds": [
+          "cl-framework-comparison-not-replacement",
+          "cl-framework-reader-work-product"
+        ],
+        "conceptIds": [
+          "cn-framework-work-products"
+        ],
+        "caveats": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-20",
+        "reviewKind": "agent-source-check",
+        "reasoning": "综合 CML 2001、ILCD 2010 与 GHG Protocol 2011 原文，识别四大框架共享的阶段与迭代骨架。"
+      },
+      "rationale": "整合改写：压实至 355 字以内，理顺四套当代操作指南的共享闭环骨架。"
+    },
+    {
+      "id": "cl-fw179-decision-gates",
+      "op": "modify",
+      "from": {
+        "id": "cl-fw179-decision-gates",
+        "kind": "synthesis",
+        "text": "真正把四套体系推向不同运行轨道的，首先是“研究要回答哪一类问题”以及“什么条件下允许对外作跨产品比较断言”。ILCD 2010（第 1 节，第 3 页）按决策情景把研究前置分流：微观产品决策支持（Situation A）假定决策不引发背景系统产能的结构性变化，中宏观战略决策支持（Situation B）则假定会引发结构性产能变化，而纯描述性核算（Situation C）不追究经济后果，再细分为计入既有外部回收收益的 C1 与不计入的 C2——不同情景直接改写后文系统边界与清单建模规则。欧盟 PEF 2021（附件一定义与第 1 节，L 471/210、220）则把可比性门槛收紧到品类规则层面：明确区分一般比较与比较断言，并规定任何比较与比较断言都只能在遵循对应产品环境足迹品类规则（PEFCR）时才能成立。GHG Protocol 产品标准（第 1.5 节与第 5.3.2 节、附录 A，第 6、23、115 页）走得更克制：它定位为单一产品的纵向排放追踪与减排管理，明确声明不支持 ISO 14044 意义上宣称一产品整体环境优于或等同于竞品的比较断言，若企业仍要作跨产品对比，必须借助额外的产品规则补足方法一致性。",
+        "scope": "跨体系决策情景分流与比较断言门槛对照；对应 ILCD 2010（§1）、EU PEF 2021（Annex I Definitions & §1）与 GHG Protocol 2011（§1.5, §5.3.2, Appendix A）。",
+        "evidenceIds": [
+          "ev-fw179-ilcd-framework",
+          "ev-fw179-pef-framework",
+          "ev-fw179-ghgp-framework"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-fw179-ilcd-framework",
+            "relation": "supports",
+            "rationale": "ILCD 2010 §1 界定 Situation A、B、C1、C2 四类决策情景分流。"
+          },
+          {
+            "evidenceId": "ev-fw179-pef-framework",
+            "relation": "supports",
+            "rationale": "EU PEF 2021 Annex I §1 规定比较与比较断言仅在遵循对应 PEFCR 时允许。"
+          },
+          {
+            "evidenceId": "ev-fw179-ghgp-framework",
+            "relation": "supports",
+            "rationale": "GHG Protocol 产品标准 §1.5 与 Appendix A 明确不支持比较断言，仅支持纵向绩效追踪。"
+          }
+        ],
+        "premiseIds": [
+          "cl-fw179-shared-phases"
+        ],
+        "conceptIds": [
+          "cn-framework-work-products"
+        ],
+        "caveats": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-20",
+        "reviewKind": "agent-source-check",
+        "reasoning": "依据三份公开指南原文，对照决策情景分流与比较断言的制度门槛差异。"
+      },
+      "rationale": "整合改写：压实至 390 字以内，清晰对比 ILCD、PEF 与 GHG Protocol 的决策分流与比较门槛。"
+    },
+    {
+      "id": "cl-fw179-impact-weighting",
+      "op": "modify",
+      "from": {
+        "id": "cl-fw179-impact-weighting",
+        "kind": "synthesis",
+        "text": "第二道实质分歧出现在影响类别覆盖范围以及是否允许把多类别结果加权汇总为单一总分。CML 2001（Part 2a，第 48、75、77–78 页）把中点问题导向的多类别表征设为基线，强烈推荐归一化以便观察相对量级，却明确把分组与加权留作没有统一基线法的可选扩展，并转述 ISO 14042 的禁令——不得对公开披露的比较断言使用加权，因此研究者必须在放弃公开比较、改为内部使用或停止加权之间作抉择。欧盟 PEF 2021（附件一第 3.2 节表 2 与第 5.1–5.2 节，L 471/226–228、282–283）采取了几乎相反的强统一设计：强制采用全部 16 项环境足迹（EF）影响类别且不得排除任何一项，并在分类与表征之后强制执行归一化与加权，允许按统一权重汇总为单一总分并区分含与不含使用阶段的结果。GHG Protocol 产品标准（第 1.5 节与第 3.1 节）则只核算温室气体单一影响类别，省去了跨影响类别权衡与加权争议，但也因此不能代表毒性、酸化、水资源或土地利用等其他环境负担，不能据单指标推断产品“整体更环保”。",
+        "scope": "跨体系影响类别覆盖与归一化/加权规则对照；对应 CML 2001 Part 2a（pp. 48, 75, 77–78）、EU PEF 2021（Annex I Table 2, §5.1–5.2）与 GHG Protocol 2011（§1.5, §3.1）。",
+        "evidenceIds": [
+          "ev-fw179-cml-framework",
+          "ev-fw179-pef-framework",
+          "ev-fw179-ghgp-framework"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-fw179-cml-framework",
+            "relation": "supports",
+            "rationale": "CML 2001 将分组和加权列为可选扩展，并转述 ISO 14042 禁止公开比较断言使用加权。"
+          },
+          {
+            "evidenceId": "ev-fw179-pef-framework",
+            "relation": "supports",
+            "rationale": "EU PEF 2021 Table 2 与 §5.2 强制采用全部 16 项 EF 类别并强制归一化与加权。"
+          },
+          {
+            "evidenceId": "ev-fw179-ghgp-framework",
+            "relation": "supports",
+            "rationale": "GHG Protocol 产品标准仅核算温室气体排放与清除，不支持整体环境优劣断言。"
+          }
+        ],
+        "premiseIds": [
+          "cl-fw179-shared-phases",
+          "cl-fw179-decision-gates"
+        ],
+        "conceptIds": [
+          "cn-framework-work-products"
+        ],
+        "caveats": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-20",
+        "reviewKind": "agent-source-check",
+        "reasoning": "对照多类别可选加权、强制 16 类别统一加权与单一气候指标三种影响评价设计。"
+      },
+      "rationale": "整合改写：压实至 365 字以内，精炼三套体系在类别覆盖与加权禁限上的对立立场。"
+    },
+    {
+      "id": "cl-fw179-review-assurance",
+      "op": "modify",
+      "from": {
+        "id": "cl-fw179-review-assurance",
+        "kind": "synthesis",
+        "text": "解释阶段的检查程序与外部审验制度，同样随着框架的治理目标而分层。CML 2001（Part 2a 第 5 章，第 80 页）把解释落脚于一致性、完整性与敏感性/不确定性评估，要求研究者先说明结果带宽与局限再给出建议。ILCD 2010（第 11 章，第 321–322 页）要求在范围定义阶段就确定审验类型，以核查研究是否符合 ILCD 与 ISO 14040/14044、方法是否科学技术有效、数据是否适宜且结论是否如实反映局限；在专门的 ILCD 审验细则文档发布之前，正文明确以 ISO 14040 与 14044 的审验要求为最低底线。欧盟 PEF 2021（附件一第 8.1 节，L 471/291）则把外部审查制度化为硬门槛：凡是研究结果或其部分信息用于任何形式的对外沟通，都强制执行独立核查与验证（verification and validation），由核查员核对模型结构、数据与报告一致性。GHG Protocol 产品标准（第 12.1–12.2 节，第 93 页）采用财务与温室气体核算常用的鉴证（assurance）框架，界定报告企业、利益相关方与鉴证方 3 类参与方，并要求产品碳清单至少经过第一方或第三方鉴证，但不等同于多指标生命周期评审小组的同行审验。",
+        "scope": "跨体系解释检查、同行审验与外部鉴证治理对照；对应 CML 2001 Part 2a（Ch. 5）、ILCD 2010（§11）、EU PEF 2021（Annex I §8.1）与 GHG Protocol 2011（§12.1–12.2）。",
+        "evidenceIds": [
+          "ev-fw179-cml-framework",
+          "ev-fw179-ilcd-framework",
+          "ev-fw179-pef-framework",
+          "ev-fw179-ghgp-framework"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-fw179-cml-framework",
+            "relation": "supports",
+            "rationale": "CML 2001 Ch. 5 说明解释阶段的稳健性与带宽评估职责。"
+          },
+          {
+            "evidenceId": "ev-fw179-ilcd-framework",
+            "relation": "supports",
+            "rationale": "ILCD 2010 §11 界定审验核查内容并以 ISO 14040/14044 为最低要求。"
+          },
+          {
+            "evidenceId": "ev-fw179-pef-framework",
+            "relation": "supports",
+            "rationale": "EU PEF 2021 §8.1 规定凡对外沟通均强制执行独立核查与验证。"
+          },
+          {
+            "evidenceId": "ev-fw179-ghgp-framework",
+            "relation": "supports",
+            "rationale": "GHG Protocol 产品标准 §12.2 要求由第一方或第三方执行涉及三方的鉴证。"
+          }
+        ],
+        "premiseIds": [
+          "cl-fw179-shared-phases",
+          "cl-fw179-decision-gates"
+        ],
+        "conceptIds": [
+          "cn-review-scope"
+        ],
+        "caveats": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-20",
+        "reviewKind": "agent-source-check",
+        "reasoning": "依据四份公开指南原文，对照解释检查、同行审验与鉴证的强制触发条件与角色分工。"
+      },
+      "rationale": "整合改写：压实至 395 字以内，理顺四套体系的解释检查与审验／鉴证制度分层。"
+    },
+    {
+      "id": "cl-book-service",
+      "op": "modify",
+      "from": {
+        "id": "cl-book-service",
+        "text": "为一面墙选涂料，先说清希望墙面达到什么状态、维持多久。千克可以计量买了多少涂料，墙面的覆盖性能还得另行说明。ILCD 2010 指南用对象、数量、性能和期间来描述功能单位。本章把这四项合称为服务要求：做什么、做多少、做到什么程度、维持多久。固定这些条件，才好比较两种涂料各需多少。",
+        "kind": "interpretation",
+        "scope": "依据ILCD2010功能表述构造的服务比较入口",
+        "evidenceIds": [
+          "ev-ilcd-service"
+        ],
+        "premiseIds": [],
+        "caveats": [],
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-08",
+        "reviewKind": "agent-source-check",
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-ilcd-service",
+            "relation": "context",
+            "rationale": "来源提供讨论语境；作者的解释、假设算术或组织建议不冒充原文规定或实测结论。"
+          }
+        ]
+      },
+      "rationale": "在首段展开 ILCD 中文全称，消除跨节延迟展开。"
+    },
+    {
+      "id": "cl-hyb175-shared-completeness-dilemma",
+      "op": "modify",
+      "from": {
+        "id": "cl-hyb175-shared-completeness-dilemma",
+        "kind": "synthesis",
+        "text": "把过程清单与混合清单放回主流标准与数据库体系对照，会发现所有体系面对的是同一道结构性难题：总清单的 100% 真值在任何生命周期方法下都无法直接观测。ILCD 2010（§6.6.3）明言，无论采用哪种生命周期建模路径，100% 总量始终需要依据实测或计算数据近似外推；过程网络把未连入矩阵的轻量投入、资本品和外购服务留在边界之外，产生截断误差，而投入产出与混合清单用宏观部门账闭合上游，又把部门聚合、价格折算与重叠扣除引入结果。不同规范真正的分歧，不在于谁声称“没有误差”，而在于各自把哪一类误差留在边界内治理、把哪一类误差排除在许可范围之外。",
+        "scope": "跨体系清单完备性比较；对应 ILCD 2010 §6.6.3 与 Suh (2004) 边界截断分析。",
+        "evidenceIds": [
+          "ev-hyb175-ilcd-cutoff",
+          "ev-inv-suh-matrix"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-hyb175-ilcd-cutoff",
+            "relation": "supports",
+            "rationale": "ILCD 2010 §6.6.3 明确指出任何生命周期方法都无法确知 100% 总清单。"
+          },
+          {
+            "evidenceId": "ev-inv-suh-matrix",
+            "relation": "supports",
+            "rationale": "Suh (2004) 说明过程矩阵只能覆盖已纳入边界的有限过程。"
+          }
+        ],
+        "premiseIds": [
+          "cl-inv-boundary-carrier",
+          "cl-inv-small-cuts",
+          "cl-inv-io-limits"
+        ],
+        "caveats": [],
+        "conceptIds": [
+          "cn-inventory-truncation",
+          "cn-hybrid-inventory"
+        ],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-20",
+        "reviewKind": "agent-source-check",
+        "reasoning": "依据 ILCD 2010 §6.6.3 与 Suh (2004) 对照过程截断与混合闭合共同面对的完备性困境。"
+      },
+      "rationale": "消除与前段末句的字面重复，并补全 ILCD 与投入产出（IO）缩写展开。"
+    },
+    {
+      "id": "cl-hyb175-process-standards-cutoff-and-capital",
+      "op": "modify",
+      "from": {
+        "id": "cl-hyb175-process-standards-cutoff-and-capital",
+        "kind": "synthesis",
+        "text": "即便同样停留在纯过程体系内，四套公开规范在截断阈值、资本品与外购服务边界上也并不统一。ILCD 2010（§6.6.2–6.6.3）要求按环境影响覆盖度设定定量截断（如覆盖各影响类别或加权总影响的 85% 或 95%），原则上将资本品以及清洁、法律、营销和办公等外购服务纳入边界，除非按截断规则证明其不显著。欧盟 PEF（(EU) 2021/2279 附件一 §4.1、§4.4.4、§4.6.3–4.6.4）在筛查阶段禁止截断，但在正式研究中设 3.0% 累计截断上限（同时约束物质流、能量流与环境显著性），默认排除资本品，并规定 ILCD 入门级（ILCD-EL）替代数据集不得超过单一总分的 10%；若连合规替代也缺失，则须直接排除该过程并经核查员确认数据缺口。GHG Protocol 产品标准（2011 第 7 章）把资本品、管理能耗与研发、行政、营销等企业服务划入可选的非归属过程，归属过程仅在同时满足缺数、无替代且估算低于披露阈值三项条件时允许排除。ecoinvent v3（2013 §4.11、§5.10、§6.1–6.4）则按寿命与产能显式建模资本品与基础设施，声明数据库不设严格定量截断且不截断回收副产品，缺数时用合理估计、默认 95% 收率的化学计量与质量、货币平衡补足，并尽量纳入无直接付费关系的物理因果。",
+        "scope": "四套过程标准与数据库的截断规则、资本品及服务边界比较。",
+        "evidenceIds": [
+          "ev-hyb175-ilcd-cutoff",
+          "ev-hyb175-pef-cutoff",
+          "ev-hyb175-ghgp-boundary-eeio",
+          "ev-hyb175-ecoinvent-completeness"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-hyb175-ilcd-cutoff",
+            "relation": "supports",
+            "rationale": "ILCD 2010 §6.6.2–6.6.3 给出 85%/95% 影响覆盖度截断示例及资本品/外购服务原则纳入要求。"
+          },
+          {
+            "evidenceId": "ev-hyb175-pef-cutoff",
+            "relation": "supports",
+            "rationale": "欧盟 PEF 附件一 §§4.1, 4.4.4, 4.6.3–4.6.4 规定筛查零截断、资本品默认排除、10% ILCD-EL 上限与 3.0% 累计截断上限。"
+          },
+          {
+            "evidenceId": "ev-hyb175-ghgp-boundary-eeio",
+            "relation": "supports",
+            "rationale": "GHG Protocol 第 7 章区分归属过程三条件排除与可选非归属过程。"
+          },
+          {
+            "evidenceId": "ev-hyb175-ecoinvent-completeness",
+            "relation": "supports",
+            "rationale": "ecoinvent v3 §4.11, §5.10, §6.1–6.4 规定基础设施显式建模、无严格截断及 95% 默认收率与守恒检验。"
+          }
+        ],
+        "premiseIds": [
+          "cl-hyb175-shared-completeness-dilemma"
+        ],
+        "caveats": [],
+        "conceptIds": [
+          "cn-inventory-truncation",
+          "cn-inventory-balance"
+        ],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-20",
+        "reviewKind": "agent-source-check",
+        "reasoning": "逐条核对四份公开原件 PDF 在截断、资本品与外购服务边界上的制度差异。"
+      },
+      "rationale": "整合改写：压实至 425 字以内，补全 PEF 与 GHG Protocol 中文全称。"
+    },
+    {
+      "id": "cl-hyb175-epistemic-limits",
+      "op": "modify",
+      "from": {
+        "id": "cl-hyb175-epistemic-limits",
+        "kind": "synthesis",
+        "text": "对照表给出的不是“混合清单必然优于过程标准”或“严守 3% 过程截断必然更可靠”的单一排序，而是不同边界机制各自成立的条件。对同一产品体系，如果一份研究按 PEF 规则默认排除资本品并采用 3.0% 过程截断，另一份研究用 ecoinvent v3 纳入基础设施，第三份研究又叠加 EEIO 补齐外购服务与资本品，三者得出的总量差异既包含真实覆盖面扩大，也混杂着部门聚合、价格折算与扣除假设的误差。在缺乏同口径边界声明、资本品与外购服务清单、价格基准、重复计算扣除规则和分母定义之前，直接拿过程标准结果与混合清单结果做数值高低比较，并不能支撑关于产品优劣的稳健判断；至于特定行业中聚合误差与截断误差究竟孰大孰小，仍须依托具体部门分辨率、价格分布和供应关系实证检验，而不能由一般性方法口号预先判定。厘清服务参照、过程网络、流边界与混合清单之后，下一部把目光移到供给本身：同一次生产提供多种产品时，已有的负担可以怎样分担？需求发生变化时，又会牵动哪些供应活动？",
+        "scope": "跨体系比较的认识论边界与未知声明。",
+        "evidenceIds": [
+          "ev-hyb175-ilcd-cutoff",
+          "ev-hyb175-pef-cutoff",
+          "ev-hyb175-ghgp-boundary-eeio",
+          "ev-hyb175-ecoinvent-completeness",
+          "ev-hyb-jakobs-denominators"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-hyb175-ilcd-cutoff",
+            "relation": "qualifies",
+            "rationale": "ILCD 2010 指出 100% 总清单未知且排除项须公开界定适用范围。"
+          },
+          {
+            "evidenceId": "ev-hyb175-pef-cutoff",
+            "relation": "qualifies",
+            "rationale": "PEF 规则限定在 3.0% 截断与默认不含资本品的统一口径内。"
+          },
+          {
+            "evidenceId": "ev-hyb175-ghgp-boundary-eeio",
+            "relation": "qualifies",
+            "rationale": "GHG Protocol 仅覆盖温室气体且非归属项可选。"
+          },
+          {
+            "evidenceId": "ev-hyb175-ecoinvent-completeness",
+            "relation": "qualifies",
+            "rationale": "ecoinvent v3 覆盖度仍受限于单元过程建模边界。"
+          },
+          {
+            "evidenceId": "ev-hyb-jakobs-denominators",
+            "relation": "qualifies",
+            "rationale": "Jakobs 等 (2021) 证明价格不确定性与分母选择显著影响混合比较结论。"
+          }
+        ],
+        "premiseIds": [
+          "cl-hyb-audit",
+          "cl-inv-judgement",
+          "cl-hyb175-price-aggregation-and-denominator-comparability"
+        ],
+        "caveats": [
+          "本比较基于公开标准与既有混合清单文献，不替代特定行业部门分辨率与价格分布的实证检验。"
+        ],
+        "conceptIds": [
+          "cn-hybrid-inventory",
+          "cn-inventory-truncation"
+        ],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-20",
+        "reviewKind": "agent-source-check",
+        "reasoning": "明确界定过程标准与混合清单跨体系比较的成立条件与未决实证边界。"
+      },
+      "rationale": "整合改写：压实至 365 字以内，补全 EEIO 展开名并保持向第三部分过渡。"
+    },
+    {
+      "id": "cl-mkt169-shared-questions",
+      "op": "modify",
+      "from": {
+        "id": "cl-mkt169-shared-questions",
+        "text": "现实中完整观测每一环产能、贸易与调度响应往往超出单个研究的能力，主流国际导则、标准与背景数据库于是各自规定了一套可执行的建模边界。无论是欧盟联合研究中心的 ILCD 2010 指南、ecoinvent v3 后台系统模型、欧盟产品环境足迹（PEF），还是 GHG Protocol 产品标准，它们面对的其实是本章前文已经浮现的同一组结构问题：第一，拟支持的决定尺度有多大，会不会突破阈值去改变背景行业的装机与退役；第二，哪些供应活动受资源、政策或共生产约束而不能随需求自由增产；第三，面对同一度外购电力或大宗材料，应按物理贸易平衡、合同追踪与残余组合，还是长期无约束边际来记账；第四，需求变动时伴生的副产品与回收流，究竟该以替代扣减、归因分配还是固定公式分摊。",
+        "kind": "synthesis",
+        "scope": "四套国际制度框架面对的四项共同市场边界问题",
+        "evidenceIds": [
+          "ev-mkt169-ilcd-contexts",
+          "ev-mkt169-ecoinvent-consequential",
+          "ev-mkt169-pef-electricity",
+          "ev-mkt169-ghgp-attributional-allocation"
+        ],
+        "premiseIds": [
+          "cl-market-question",
+          "cl-market-psi-dissent",
+          "cl-market-observations"
+        ],
+        "conceptIds": [
+          "cn-market-marginal-production",
+          "cn-market-supply-segment",
+          "cn-market-average-consumption"
+        ],
+        "caveats": [
+          "四套体系的共同问题并不意味着它们共享同一目标函数：前两者允许在限定条件下建模市场后果，后两者则刻意锁定归因核算以维持可比性与可审计性。"
+        ],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-20",
+        "reasoning": "综合 ILCD 2010、ecoinvent v3、欧盟 PEF 与 GHG Protocol 产品标准四份原始官方指南中关于决策尺度、市场约束、电力组合与共产品处理的条款，将各体系规则映射到本章前四节提出的同一组结构问题。",
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-mkt169-ilcd-contexts",
+            "relation": "supports",
+            "rationale": "ILCD 2010 以决策导向与是否触发产能增退划分情境 A、B、C1/C2，并明确仅在突破年更新容量门槛的大变化过程启用长期边际建模。"
+          },
+          {
+            "evidenceId": "ev-mkt169-ecoinvent-consequential",
+            "relation": "supports",
+            "rationale": "ecoinvent v3 后果模型以 30 年设备寿命（3.33%/年更新率）自动筛选长期无约束供应者并强制替代副产品，同时限定归因模型的适用边界。"
+          },
+          {
+            "evidenceId": "ev-mkt169-pef-electricity",
+            "relation": "supports",
+            "rationale": "欧盟 PEF 第 4.4.2 节通过四级合同追踪与残余消费电网组合防止双重计算，但该规则回答归因归属而非物理新增装机响应。"
+          },
+          {
+            "evidenceId": "ev-mkt169-ghgp-attributional-allocation",
+            "relation": "supports",
+            "rationale": "GHG Protocol 产品标准限定归因核算边界，仅允许基于平均因子的直接系统扩展，并禁止将市场响应型避免排放扣减出清单总计。"
+          }
+        ]
+      },
+      "rationale": "在首次出现处补全 ILCD 与 GHG Protocol 中文全称。"
+    },
+    {
+      "id": "cl-mkt169-context-and-scale",
+      "op": "modify",
+      "from": {
+        "id": "cl-mkt169-context-and-scale",
+        "text": "真正的分歧首先出现在决策情境的划分与尺度门槛上。ILCD 2010 指南在“是否支持决策”和“背景市场是否发生大尺度结构变化”两维交叉下划分出三类情境：面向单个产品比较与公开比较断言的情境 A（微观决策）假定变动不足以突破阈值改变装机，因而以既有供应链和平均消费组合作为实用简化；只有当年新增需求或供给超过受影响过程每年正常设备更新容量、触发额外新建或提前退役时，才进入情境 B（中宏观决策），且仅对这些受“大变化”影响的过程改用长期边际组合，同时配套覆盖 90% 误差范围的合理最差与最好假设情景及“无行动”零方案；纯描述性核算（情境 C1 计入既有外部交互、C2 仅作分配）则不得直接用于采购或政策比较，且指南脚注 15 特别澄清“过去还是未来”并非归因与后果的分界轴。ecoinvent v3 的“替代、后果、长期”模型则正面挑战了 ILCD 情境 A 的微尺度简化：Weidema 等（2013）延续微小增量累积改变资本投资的推论，主张即便单个购买或产品声明也应链接长期无约束边际供应者，并规定默认 30 年设备寿命对应 3.33%/年的资本更新率——当参考产品产量年降幅超过 3.33% 时链接旧技术（缺省退回过时或当前技术），其余增长、平稳或缓降市场均链接现代或新技术，且只以条件交换处理绝对市场约束而不引入经验价格弹性。与之相对，欧盟 PEF 与 GHG Protocol 产品标准为保障企业核算的可审计性，将产品清单整体锁定在归因边界：GHG Protocol 框 5.1 明确把后果路径留给减排项目或公共政策评估，产品清单本身严禁混入市场响应型扣减。",
+        "kind": "synthesis",
+        "scope": "决策情境分类与装机更新尺度门槛的框架分歧",
+        "evidenceIds": [
+          "ev-mkt169-ilcd-contexts",
+          "ev-mkt169-ecoinvent-consequential",
+          "ev-mkt169-ghgp-attributional-allocation",
+          "ev-pfr151-ghgp-comparative-gates"
+        ],
+        "premiseIds": [
+          "cl-market-time",
+          "cl-market-concession",
+          "cl-mkt169-shared-questions",
+          "cl-mkt169-conditional-convergence"
+        ],
+        "conceptIds": [
+          "cn-market-marginal-production",
+          "cn-market-supply-segment"
+        ],
+        "caveats": [
+          "ILCD 情境 B 的“大变化”门槛依赖受影响过程的年更新容量估计，而 ecoinvent v3 的 30 年/3.33% 规则是数据库级统一默认值，二者在具体行业均可能与实际设备寿命存在偏差。"
+        ],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-20",
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-mkt169-ilcd-contexts",
+            "relation": "supports",
+            "rationale": "ILCD 2010 以决策导向与是否触发产能增退划分情境 A、B、C1/C2，并明确仅在突破年更新容量门槛的大变化过程启用长期边际建模。"
+          },
+          {
+            "evidenceId": "ev-mkt169-ecoinvent-consequential",
+            "relation": "supports",
+            "rationale": "ecoinvent v3 后果模型以 30 年设备寿命（3.33%/年更新率）自动筛选长期无约束供应者并强制替代副产品，同时限定归因模型的适用边界。"
+          },
+          {
+            "evidenceId": "ev-mkt169-ghgp-attributional-allocation",
+            "relation": "supports",
+            "rationale": "GHG Protocol 产品标准限定归因核算边界，仅允许基于平均因子的直接系统扩展，并禁止将市场响应型避免排放扣减出清单总计。"
+          },
+          {
+            "evidenceId": "ev-pfr151-ghgp-comparative-gates",
+            "relation": "supports",
+            "rationale": "通用产品碳足迹标准原样只支撑同产品跨期追踪，横向竞品比较需额外借助产品规则并建议采用第三方鉴证。"
+          }
+        ],
+        "reasoning": "逐条比对 ILCD 2010 情境 A/B/C1/C2 与年更新容量门槛、ecoinvent v3 的 30 年/3.33% 自动更新率与小尺度累积投资逻辑，以及 PEF 与 GHG Protocol 框 5.1 的归因锁定边界。"
+      },
+      "rationale": "整合改写：压实至 435 字以内，理顺 ILCD、ecoinvent v3、PEF 与 GHG Protocol 的决策情境与尺度分歧。"
+    },
+    {
+      "id": "cl-mkt169-electricity-mix-regimes",
+      "op": "modify",
+      "from": {
+        "id": "cl-mkt169-electricity-mix-regimes",
+        "text": "同样的分歧在电力与供应组合记账规则中表现得最为直观。本章第三节检视的 PSI 方案（M1 至 M4）基于海关电量与发电统计建立物理贸易平衡，不依赖合同证书；即便在同一份 1995 年瑞士数据下，四种分配规则已得出不同平均来源，PSI 作者仍主张报告先用平均组合再以边际作灵敏度检验，而 Frischknecht 在脚注 14 中坚持面向决策应直接使用边际组合。欧盟 PEF 附件一第 4.4.2 节则走上另一条严格归因的合同追踪路线：依次优先使用满足 100% 追踪或三项最低准则（传递能源属性、单证或欧洲发证机构协会核验唯一声明、时间邻近；若一国未追踪消费比例高于 95% 则强制退回残余组合）的供应商特定电力产品、供应商总组合、国家残余消费电网组合，最后才是欧盟加欧洲自由贸易联盟或区域残余组合，而在产品使用阶段则改用消费电网组合。相比之下，ecoinvent v3 后果模型把水电、垃圾焚烧与热电联产副产电等受限电源排除在边际供给之外，按情景年份间正增长的无约束技术份额构造长期边际电力组合；正如 Treyer 与 Bauer（2016）及 Vandepaer 等（2019）所指出的，这种模型回答的是长期装机扩张而非逐小时短期调度，一旦市场收缩且以延迟退役而非新建机组响应，只按正增长归一化的边际算法就会失效。",
+        "kind": "synthesis",
+        "scope": "物理贸易平衡、合同残余组合与长期边际电力的记账分歧",
+        "evidenceIds": [
+          "ev-market-psi-models",
+          "ev-market-psi-judgment",
+          "ev-mkt169-pef-electricity",
+          "ev-kb48-treyer-longterm-scope",
+          "ev-kb48-future-vandepaer2019-positive-growth"
+        ],
+        "premiseIds": [
+          "cl-market-average-models",
+          "cl-market-psi-dissent",
+          "cl-mkt169-context-and-scale"
+        ],
+        "conceptIds": [
+          "cn-market-average-consumption",
+          "cn-market-marginal-production",
+          "cn-market-supply-segment"
+        ],
+        "caveats": [
+          "PEF 的合同追踪层级可防止归因账面双重计算，但并不检验买方购证是否真正促成了额外可再生装机；ecoinvent v3 长期边际电力亦不能替代下一章讨论的小时级调度与负荷转移分析。"
+        ],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-20",
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-market-psi-models",
+            "relation": "supports",
+            "rationale": "M1以本地产出赋予消费；M2混合产出进口并给出口同一池；M3按本地产出扣出口、进口全归国内；M4按瞬时净进口/出口分段处理过境。相同历史贸易数据可因规则产生不同平均来源。"
+          },
+          {
+            "evidenceId": "ev-market-psi-judgment",
+            "relation": "supports",
+            "rationale": "报告区分短/长期供给调整并承认需求变化严格对应供给变化；继而呈列法国核电采购权与意大利被替代供给两种论证。平均优先/边际敏感性与负担归属是作者立场；fn14另记Frischknecht偏好决策支持采用边际方法的不同意见。"
+          },
+          {
+            "evidenceId": "ev-mkt169-pef-electricity",
+            "relation": "supports",
+            "rationale": "欧盟 PEF 第 4.4.2 节通过四级合同追踪与残余消费电网组合防止双重计算，但该规则回答归因归属而非物理新增装机响应。"
+          },
+          {
+            "evidenceId": "ev-kb48-treyer-longterm-scope",
+            "relation": "qualifies",
+            "rationale": "归因市场连接当前平均供应者。此版后果模型按无约束供应及技术分类连接，明示为长期新增容量用途，小时、日和季节边际不是该设定的研究对象。"
+          },
+          {
+            "evidenceId": "ev-kb48-future-vandepaer2019-positive-growth",
+            "relation": "supports",
+            "rationale": "在同一情景选择年份差，归一产量增长的非受限技术。对美国等国内子区，单个国家前景用于共同技术份额，随后关联电压、地区和背景清单。"
+          }
+        ],
+        "reasoning": "将 PSI 1998 M1–M4 物理贸易平衡与 Frischknecht 脚注 14、欧盟 PEF 第 4.4.2 节四级合同追踪与残余消费组合，以及 ecoinvent v3 长期无约束边际电力置于同一外购电力问题下对照。"
+      },
+      "rationale": "整合改写：压实至 440 字以内，清晰对比物理平衡、合同追踪与长期边际三类电力记账机制。"
+    },
+    {
+      "id": "cl-mkt169-coproduct-substitution",
+      "op": "modify",
+      "from": {
+        "id": "cl-mkt169-coproduct-substitution",
+        "text": "市场约束的判别逻辑同样直接决定了各框架如何处置共产品与回收流。在 ecoinvent v3 后果模型中，联合生产活动原则上只保留一个决定性参考产品（除非多种产出均无替代路线），其余副产品天然受主产品产量约束而不能响应自身需求，因此一律以替代（系统扩展）抵减对应无约束边际路线，或在受限市场中经条件交换转化为其他用户的消费缩减。ILCD 情境 A 虽允许在细分不可行时采用替代，却要求满足市场吸收等限定条件并以平均市场组合替代，否则退回两步分配；情境 C2 则一律分配。欧盟 PEF 附件一第 4.5 节进一步收紧了替代门槛，要求同时举证直接市场效应与直接代表性清单才准予直接替代，并在生命末期回收环节以循环足迹公式替代开放式市场后果推演——其中的市场供需参数 A（0.2、0.5 或 0.8）与能量回收参数 B（默认 0）属于固定约定因子，而非动态价格弹性。GHG Protocol 产品标准第 9.3.2 节则把系统扩展限定在归因框架内：企业只有直接掌握副产品去向且采用供应商或平均排放因子时才能扣减（例如浆厂黑液发电按当地平均电网计为 50 kg，从工厂 1000 kg 中扣减得 950 kg），闭环近似替代因子还须与分阶段占比分列以防生命末期出现负值；至于市场间接响应带来的“避免排放”，第 11.3.2 节明令不得从清单总计中扣除，若选择单独披露，则必须连同间接土地利用变化等间接增排一并报告。",
+        "kind": "synthesis",
+        "scope": "需求变动下的共产品替代、循环足迹公式与避免排放禁令",
+        "evidenceIds": [
+          "ev-mkt169-ecoinvent-consequential",
+          "ev-sub105-ilcd-conditions",
+          "ev-sub105-pef-hierarchy",
+          "ev-cff109-2022-allocation",
+          "ev-mkt169-ghgp-attributional-allocation"
+        ],
+        "premiseIds": [
+          "cl-market-question",
+          "cl-market-pulp",
+          "cl-mkt169-context-and-scale"
+        ],
+        "conceptIds": [
+          "cn-market-marginal-production",
+          "cn-market-supply-segment"
+        ],
+        "caveats": [
+          "各框架对共产品与回收的详细数学展开已分别归入第十章与第十三章；此处聚焦市场约束判别如何引发不同框架的制度分流。"
+        ],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-20",
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-mkt169-ecoinvent-consequential",
+            "relation": "supports",
+            "rationale": "ecoinvent v3 后果模型以 30 年设备寿命（3.33%/年更新率）自动筛选长期无约束供应者并强制替代副产品，同时限定归因模型的适用边界。"
+          },
+          {
+            "evidenceId": "ev-sub105-ilcd-conditions",
+            "relation": "supports",
+            "rationale": "一般多功能情形在细分前提、依附功能、等效备选及足量吸收等条件下尽可能使用平均市场消费混合；保留排除自身路线的小环境影响例外、尺度判据、其他分支和完整比较要求。"
+          },
+          {
+            "evidenceId": "ev-sub105-pef-hierarchy",
+            "relation": "supports",
+            "rationale": "先考察细分或扩展；扩展时报告整体。无法采用第一步时，第二步直接替代有经验效应与直接代表性清单两项证明；其他物理关系及第三步各有自己的前提。"
+          },
+          {
+            "evidenceId": "ev-cff109-2022-allocation",
+            "relation": "supports",
+            "rationale": "A在再生材料供应与使用生命周期间分配负担和抵扣。B同时作用于能量回收负担和抵扣，默认0，除非Annex II Part C有合适值。热电抵扣依据出售量并考虑一年内相关变化，非零B时上游与后续系统仍须避免重复核算。"
+          },
+          {
+            "evidenceId": "ev-mkt169-ghgp-attributional-allocation",
+            "relation": "supports",
+            "rationale": "GHG Protocol 产品标准限定归因核算边界，仅允许基于平均因子的直接系统扩展，并禁止将市场响应型避免排放扣减出清单总计。"
+          }
+        ],
+        "reasoning": "围绕市场约束判别，对照 ecoinvent v3 副产品必替代、ILCD 情境 A 市场吸收条件与平均替代、欧盟 PEF 第 4.5 节双重实证门槛与循环足迹公式固定参数 A/B，以及 GHG Protocol 第 9.3.2 节归因平均扩展与第 11.3.2 节避免排放禁令。"
+      },
+      "rationale": "整合改写：压实至 435 字以内，并将注释中的草稿章号替换为正式篇名《共产品的分配与替代》与《材料循环》。"
+    },
+    {
+      "id": "cl-mkt169-ranking-inversions",
+      "op": "modify",
+      "from": {
+        "id": "cl-mkt169-ranking-inversions",
+        "text": "这些框架差异绝非术语之争，而是会在相同物理事实与采购凭证下直接翻转方案排序。回到本节前文的假想算例：面对完全相同的 10 kWh 购电合同与低碳电源 H 总量锁定的物理约束，按欧盟 PEF 合同追踪或 GHG Protocol 供应商归因口径，工厂可记为 0.2 kg CO₂；一旦改按 Weidema 与 ecoinvent v3 的受限市场后果逻辑，新增需求挤占其他用户的电源 H 份额并迫使高碳电源 G 增发 10 kWh，系统净增量立刻跃升至 8 kg CO₂——两者相差 40 倍（净差 7.8 kg）。同样地，在 Ekvall、Tillman 与 Molander（2005）讨论的瑞典 Thorskog 城堡会议酒店例中，酒店所接水电在局部归因视角下低碳，在边际电网后果视角下却可能对应高碳化石发电；在瑞士 1995 年电量账中，M3 口径算出本国留用 65.9831% 与四国进口合计约 34.02%，同样不能直接外推为新增用电的响应比例。因此，当比较对象之一依赖受限低碳电源的绿证或水电合同时，从合同归因切换到长期后果模型足以颠倒电解铝或高耗电工艺的优劣次序；反过来，若把只反映长期装机扩张的后果电力因子直接套用于短期负荷转移或正在收缩的电网市场，也可能把真实减排效果估反。这正是跨体系比较严禁在同一个对比中静默混用不同建模边界的根本原因。",
+        "kind": "synthesis",
+        "scope": "框架切换导致方案排序翻转的条件与反向失真风险",
+        "evidenceIds": [
+          "ev-joint-2005-conference-feedback",
+          "ev-market-psi-m3",
+          "ev-mkt169-pef-electricity",
+          "ev-mkt169-ecoinvent-consequential",
+          "ev-kb48-future-vandepaer2019-positive-growth"
+        ],
+        "premiseIds": [
+          "cl-market-m3-origins",
+          "cl-market-toy-constrained",
+          "cl-market-toy-purchase",
+          "cl-mkt169-electricity-mix-regimes",
+          "cl-mkt169-coproduct-substitution"
+        ],
+        "conceptIds": [
+          "cn-market-marginal-production",
+          "cn-market-average-consumption"
+        ],
+        "caveats": [
+          "40 倍（8 kg 对 0.2 kg）来自本章固定系数的假想教学算例，用于揭示机制方向而非预测具体电网实测倍数。"
+        ],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-20",
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-joint-2005-conference-feedback",
+            "relation": "supports",
+            "rationale": "作者用并网水电旅馆情境区分局地系统描述、边际供电后果与假想断网激励，说明两类方法各受所用目的和行为条件限制。"
+          },
+          {
+            "evidenceId": "ev-market-psi-m3",
+            "relation": "supports",
+            "rationale": "M3将出口按本地产出扣除并将所有进口归入国内，分母含最终消费与损失。瑞士表值支持60277＋18113－25143＝51567＋1680＝53247GWh，并给出四个直接进口来源电量。"
+          },
+          {
+            "evidenceId": "ev-mkt169-pef-electricity",
+            "relation": "supports",
+            "rationale": "欧盟 PEF 第 4.4.2 节通过四级合同追踪与残余消费电网组合防止双重计算，但该规则回答归因归属而非物理新增装机响应。"
+          },
+          {
+            "evidenceId": "ev-mkt169-ecoinvent-consequential",
+            "relation": "supports",
+            "rationale": "ecoinvent v3 后果模型以 30 年设备寿命（3.33%/年更新率）自动筛选长期无约束供应者并强制替代副产品，同时限定归因模型的适用边界。"
+          },
+          {
+            "evidenceId": "ev-kb48-future-vandepaer2019-positive-growth",
+            "relation": "supports",
+            "rationale": "在同一情景选择年份差，归一产量增长的非受限技术。对美国等国内子区，单个国家前景用于共同技术份额，随后关联电压、地区和背景清单。"
+          }
+        ],
+        "reasoning": "将本章第四节电源 H 受限算例（8 kg 对 0.2 kg）、瑞士 M3 份额与 Ekvall 等（2005）Thorskog 城堡酒店例分别代入合同归因与受限市场后果两类框架，说明规则切换如何直接翻转方案排序。"
+      },
+      "rationale": "整合改写：压实至 435 字以内，保留 40 倍翻转算例、Thorskog 酒店与瑞士 1995 年 M3 证据。"
+    },
+    {
+      "id": "cl-mkt169-epistemic-limits",
+      "op": "modify",
+      "from": {
+        "id": "cl-mkt169-epistemic-limits",
+        "text": "上表对照五套体系后，还须如实交代：无论是本章的条件算例还是上述四套制度框架，都尚未解决几类关键的实证与治理未知。其一，在真实市场中，一笔新增需求究竟通过短期机组调度、启用闲置产能、延迟旧厂退役、新增投资还是价格上升抑制其他消费来消化，仍缺乏广泛的事后实证检验，不能仅凭理论步骤或假定完全供给弹性就视作已观测事实。其二，ILCD 情境 A 与情境 B 之间在实践中仍缺少跨行业公认的实证临界点，而 ecoinvent v3 后果模型不仅用 30 年/3.33% 统一默认值替代行业差异、省略经验弹性，其具体数据库版本也曾暴露实现偏差与对能源情景及时间窗口选择的高度敏感（Vandepaer 等 2019 记录了 v3.4 中的硬煤遗漏、水电映射与光热重复计数等具体缺陷，尽管平均修正幅度小于 3% 并在 v3.5 修复）。其三，本章前文涉及的部分历史产能与行业统计原件仍未取得底层数据，部分后续学术综述与范围依赖争论亦超出本章所核查的公开文献范围；在缺乏这些实证证据前，任何跨体系比较结论都应连同所选框架的前提、约束假设与灵敏度区间一并给出，而不能把单一体系的合规结果当作市场响应的唯一真相。",
+        "kind": "synthesis",
+        "scope": "现实市场响应的实证缺口、数据库实现敏感性与文献核查边界",
+        "evidenceIds": [
+          "ev-market-2004-limits",
+          "ev-mkt169-ilcd-contexts",
+          "ev-mkt169-ecoinvent-consequential",
+          "ev-kb48-future-vandepaer2019-esm1-known-issues"
+        ],
+        "premiseIds": [
+          "cl-market-projection-limits",
+          "cl-market-observations",
+          "cl-mkt169-ranking-inversions"
+        ],
+        "conceptIds": [
+          "cn-market-marginal-production",
+          "cn-market-supply-segment",
+          "cn-market-average-consumption"
+        ],
+        "caveats": [
+          "实证缺口不意味着建模无用，而是要求把归因账本与后果情景清晰分列，并把待检验的市场响应假设暴露给读者与审查者。"
+        ],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-20",
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-market-2004-limits",
+            "relation": "supports",
+            "rationale": "作者将模型视为决策引发的因果链，同时承认未来技术、经济响应、远端后果和扩展停止条件的不确定性；现有清单并不自动代表未来活动。"
+          },
+          {
+            "evidenceId": "ev-mkt169-ilcd-contexts",
+            "relation": "supports",
+            "rationale": "ILCD 2010 以决策导向与是否触发产能增退划分情境 A、B、C1/C2，并明确仅在突破年更新容量门槛的大变化过程启用长期边际建模。"
+          },
+          {
+            "evidenceId": "ev-mkt169-ecoinvent-consequential",
+            "relation": "supports",
+            "rationale": "ecoinvent v3 后果模型以 30 年设备寿命（3.33%/年更新率）自动筛选长期无约束供应者并强制替代副产品，同时限定归因模型的适用边界。"
+          },
+          {
+            "evidenceId": "ev-kb48-future-vandepaer2019-esm1-known-issues",
+            "relation": "qualifies",
+            "rationale": "附件记录硬煤遗漏、水电映射、CSP重计及高/中压输入差异。作者报告修订平均差低于3%且 v3.5 已处理。"
+          }
+        ],
+        "reasoning": "依据 Ekvall & Weidema（2004）、ILCD 2010、Weidema 等（2013）与 Vandepaer 等（2019）明确披露现实响应事后实证缺口、A/B 实践临界点共识缺位、数据库实现缺陷与未精读文献边界。"
+      },
+      "rationale": "整合改写：压实至 395 字以内，理顺三类实证与治理未知并移除“上表”硬衔接。"
+    },
+    {
+      "id": "cl-market-closing",
+      "op": "modify",
+      "from": {
+        "id": "cl-market-closing",
+        "kind": "synthesis",
+        "scope": "平均权重复算、条件响应演算与实际供应证据的不同证明范围",
+        "evidenceIds": [
+          "ev-market-2004-limits"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-market-2004-limits",
+            "relation": "qualifies",
+            "rationale": "原文的因果链与扩展边界支持保留条件，不把算术闭合升级为实际响应验证。"
+          }
+        ],
+        "premiseIds": [
+          "cl-joint-answer",
+          "cl-market-m3-origins",
+          "cl-market-toy-purchase",
+          "cl-market-observations",
+          "cl-mkt169-epistemic-limits"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [],
+        "text": "瑞士电量账表明，给定进口和出口的分配规则，就能核对电量的平均来源。两种新增需求的算例又表明，工厂买到同样的电，实际多发的电仍可能来自不同电源；国际参考生命周期数据系统（ILCD）、ecoinvent 第三版后果模型、欧盟产品环境足迹（PEF）与温室气体核算体系（GHG Protocol）的对照进一步说明，决策尺度判据、合同追踪与物理约束假设会改变方案排序，且单一体系的合规结果不能替代事后实证。要把共同生产中的减项解释为真实后果，须先说明采取了什么行动、要提供什么服务，再查市场的范围、供应受什么限制、哪些活动会改变。下一章据此查看电在哪里交付、在哪里发出，以及供给模型怎样估计需求变化的后果。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-05",
+        "reviewKind": "agent-source-check",
+        "reasoning": "在已列明的来源前提或本书明示条件内作连接解释；不将条件演算提升为经验因果识别。"
+      },
+      "rationale": "消除末段重复展开缩写与拼接缝，收束并衔接下一章《供电系统》。"
+    }
+  ],
+  "files": [
+    {
+      "path": "content/docs/book/framework-history.mdx",
+      "fromSha256": "8cb5b09c345eb6fea9a3ad0e12203540d9b4879bd9429d4a3f2944e65333af78",
+      "toSha256": "82b8764c9c8aaddc9547e280c966a1fa6277ddc01e72ad0e0f4664385f56a30e",
+      "previous": "---\ntitle: 评价框架的形成\ndescription: 比较会议记录与不同指南，辨认清单、评价、改进和解释的分析任务及其历史安排。\n---\n\n## 史料与事件 [#先辨认史料描述的对象]\n\n<Prose ids=\"cl-book-framework-records cl-book-framework-project\" />\n\n<ReaderSection id=\"事件与文献的身份\" />\n\n<Prose ids=\"cl-book-framework-event-gap cl-book-framework-method\" />\n\n## 组成部分与步骤 [#组件和步骤怎样组织研究]\n\n<Prose ids=\"cl-book-framework-epa1993 cl-book-framework-unep\" />\n\n<ReaderSection id=\"同一框架中的不同表达任务\" />\n\n<Prose ids=\"cl-book-framework-epa2006 cl-book-framework-guide\" />\n\n## 清单与影响 [#每个环节究竟交付什么]\n\n<Prose ids=\"cl-framework-work-before-boxes cl-framework-early-division cl-framework-early-feedback\" />\n\n<ReaderSection id=\"从清单到影响评价\" />\n\n<Prose ids=\"cl-framework-inventory-return cl-framework-profile-return\" />\n\n## 诊断与改进 [#诊断如何走向设计改变]\n\n<Prose ids=\"cl-framework-design-return cl-framework-design-sideeffects\" />\n\n## 解释与建议 [#解释如何形成有根据的建议]\n\n<Prose ids=\"cl-framework-cml-information cl-framework-cml-two-outputs cl-framework-epa-checks cl-framework-epa-recommendations\" />\n\n## 分析任务的变化 [#职责的展开与重新安排]\n\n<Prose ids=\"cl-framework-comparison-not-replacement cl-framework-reader-work-product\" />\n\n<Prose ids=\"cl-fw179-shared-phases cl-fw179-decision-gates cl-fw179-impact-weighting cl-fw179-review-assurance cl-fw179-method-choice-effects cl-fw179-epistemic-limits\" />\n\n| 对比维度 | CML 2001/2002（Part 2a 指南） | ILCD 2010（详细指南） | 欧盟 PEF 2021（2021/2279 附件一） | GHG Protocol 产品标准（2011） |\n| --- | --- | --- | --- | --- |\n| 阶段与流程组织 | 4 阶段（目标与范围、清单、影响评价、解释）+ 第 1 章项目程序管理（共 5 章）；分简化级、详细基线级与可选扩展级 | 4 阶段多轮迭代回路（由完整性、敏感性与一致性检查驱动精化） | 遵循 PEF/PEFCR 标准化流程；报告含/不含使用阶段全生命周期结果 | 企业商业目标→原则→范围→边界→数据质量→分配→不确定性→结果→鉴证→报告与减排目标 |\n| 决策情景与比较断言门槛 | 详细级兼容 ISO；公开比较断言受限，不含品类强制统一规则 | 按决策情景前置分流为 Situation A（微观）、B（中宏观）与 C1/C2（描述性核算） | 区分一般比较与比较断言；两者仅在遵循对应 PEFCR 时允许 | 定位为单一产品纵向减排追踪；明确不支持 ISO 14044 比较断言（对比须另加产品规则） |\n| 影响类别与加权规则 | 多类别中点问题导向；强推荐归一化，分组与加权可选无基线法；转述 ISO 14042 禁止公开比较断言加权 | 多类别影响评价；按情景与目标匹配表征与可选归一化/加权 | 强制采用全部 16 项 EF 影响类别（不得排除）；分类表征后强制归一化与加权并可汇总单一总分 | 仅核算温室气体（GHG）单一影响类别，不涉及多类别权衡与加权 |\n| 解释检查与审验/鉴证治理 | 第 5 章开展一致性、完整性与敏感性/不确定性评估，报告结果带宽与局限 | 第 11 章要求按范围确定审验，核查一致性与有效性；细则出台前以 ISO 14040/14044 为底线 | 第 8.1 节规定凡用于任何形式对外沟通，均强制执行独立核查与验证 | 第 12.2 节界定三方结构，要求产品碳清单经由第一方或第三方鉴证 |\n\n要沿同一项服务核对清单、指标和比较准则，可读[墙面服务比较](/docs/book/wall-service-to-comparison/)。\n\n关于具体计算如何用于评价和改进，可接着读[CML指南中的评价与改进](/docs/book/cml-computation-judgment-and-improvement/)。合订本将这两篇的相关内容编入[评价框架与分析步骤](/print/#print-unit-626f6f6b2d6672616d65776f726b2d726573706f6e736962696c6974696573)一章。\n"
+    },
+    {
+      "path": "content/monograph/framework-responsibilities.mdx",
+      "fromSha256": "17364648d127d324b9258e49d2205096a6541b06e1159e04f2b23a276c40d845",
+      "toSha256": "341839e650b0671b0748a8a97d75abf53f88d0f8e3bcf366299e00f677fd4db2",
+      "previous": "---\ntitle: 评价框架与分析步骤\ndescription: 比较清单、评价、改进和解释的任务，考察各阶段结果如何支持判断，以及指南如何被其他研究采用。\n---\n\n## 史料与分析任务 [#史料与职责]\n\n<Prose ids=\"cl-framework-work-before-boxes cl-book-framework-records\" />\n\n下面通过铝箔、椅子和包装的例子，考察这些分析任务，再看一份印刷筛查报告如何使用指南中的表征数据。\n\n<Prose ids=\"cl-book-framework-project\" />\n\n<Prose ids=\"cl-book-framework-epa1993 cl-framework-early-division cl-framework-early-feedback cl-book-framework-unep cl-book-framework-epa2006\" />\n\n<Prose ids=\"cl-cml-opening cl-cml-edition cl-cml-components cl-book-framework-guide cl-book-framework-event-gap\" />\n\n<Prose ids=\"cl-cml-goal-service cl-cml-conditional-path cl-cml-target-before-improvement cl-book-framework-method\" />\n\n## 清单计算 [#清单计算]\n\n<Prose ids=\"cl-framework-inventory-return cl-cml-toy-records cl-cml-toy-balance cl-cml-toy-waste cl-cml-balance-caution\" />\n\n行列式的逐项对照见附录[指南算例复核：方程与原表](/docs/appendices/cml-framework-calculations/#方程与原表)。\n\n<Prose ids=\"cl-cml-toy-dominance cl-cml-response-question cl-cml-response-scale\" />\n\n局部与有限改动的计算分别列在附录[参数响应](/docs/appendices/cml-framework-calculations/#参数响应)。\n\n## 评价取舍 [#评价取舍]\n\n<Prose ids=\"cl-framework-profile-return cl-cml-chairs cl-cml-normalization cl-cml-panel cl-cml-weight-description\" />\n\n<Prose ids=\"cl-cml-checks cl-cml-crockery cl-cml-checks-preference\" />\n\n## 改进与解释 [#改进与解释]\n\n<Prose ids=\"cl-framework-design-return cl-cml-feasibility cl-cml-soot cl-framework-design-sideeffects cl-cml-design-loop\" />\n\n<Prose ids=\"cl-cml-rewrite cl-cml-guide-genres cl-cml-scope-choices cl-framework-cml-information cl-cml-check-order cl-cml-operational-availability cl-cml-weights-2001 cl-cml-rearrangement\" />\n\n<Prose ids=\"cl-framework-cml-two-outputs cl-framework-epa-checks cl-framework-epa-recommendations cl-cml-recommendation\" />\n\n<Prose ids=\"cl-cml-decision-levels cl-cml-covenant cl-cml-decision-procedure cl-framework-comparison-not-replacement cl-framework-reader-work-product\" />\n\n<Prose ids=\"cl-fw179-shared-phases cl-fw179-decision-gates cl-fw179-impact-weighting cl-fw179-review-assurance cl-fw179-method-choice-effects cl-fw179-epistemic-limits\" />\n\n| 对比维度 | CML 2001/2002（Part 2a 指南） | ILCD 2010（详细指南） | 欧盟 PEF 2021（2021/2279 附件一） | GHG Protocol 产品标准（2011） |\n| --- | --- | --- | --- | --- |\n| 阶段与流程组织 | 4 阶段（目标与范围、清单、影响评价、解释）+ 第 1 章项目程序管理（共 5 章）；分简化级、详细基线级与可选扩展级 | 4 阶段多轮迭代回路（由完整性、敏感性与一致性检查驱动精化） | 遵循 PEF/PEFCR 标准化流程；报告含/不含使用阶段全生命周期结果 | 企业商业目标→原则→范围→边界→数据质量→分配→不确定性→结果→鉴证→报告与减排目标 |\n| 决策情景与比较断言门槛 | 详细级兼容 ISO；公开比较断言受限，不含品类强制统一规则 | 按决策情景前置分流为 Situation A（微观）、B（中宏观）与 C1/C2（描述性核算） | 区分一般比较与比较断言；两者仅在遵循对应 PEFCR 时允许 | 定位为单一产品纵向减排追踪；明确不支持 ISO 14044 比较断言（对比须另加产品规则） |\n| 影响类别与加权规则 | 多类别中点问题导向；强推荐归一化，分组与加权可选无基线法；转述 ISO 14042 禁止公开比较断言加权 | 多类别影响评价；按情景与目标匹配表征与可选归一化/加权 | 强制采用全部 16 项 EF 影响类别（不得排除）；分类表征后强制归一化与加权并可汇总单一总分 | 仅核算温室气体（GHG）单一影响类别，不涉及多类别权衡与加权 |\n| 解释检查与审验/鉴证治理 | 第 5 章开展一致性、完整性与敏感性/不确定性评估，报告结果带宽与局限 | 第 11 章要求按范围确定审验，核查一致性与有效性；细则出台前以 ISO 14040/14044 为底线 | 第 8.1 节规定凡用于任何形式对外沟通，均强制执行独立核查与验证 | 第 12.2 节界定三方结构，要求产品碳清单经由第一方或第三方鉴证 |\n\n服务、清单、指标与比较准则的完整教学例，见[墙面服务比较](/print/#print-unit-2f646f63732f626f6f6b2f77616c6c2d736572766963652d746f2d636f6d70617269736f6e)。\n\n## 指南的实际采用 [#外部采用]\n\n<Prose ids=\"cl-cml-reception-question cl-cml-factor-meaning cl-cml-solvent-bins cl-cml-screening-range-limit\" />\n\n甲苯范围与档位的对照见附录[因子范围与评分档位](/docs/appendices/cml-framework-calculations/#来源范围与分档)。\n\n<Prose ids=\"cl-cml-methane-counter cl-cml-screening-boundaries cl-cml-reception-lineage cl-cml-historical-crosswalk cl-cml-ending\" />\n"
+    },
+    {
+      "path": "content/docs/book/service-and-reference.mdx",
+      "fromSha256": "c324c502be96e706eba701d9f3813dec7cc2ce7c3e585773f4a2fa4839a84904",
+      "toSha256": "44e555a1bd7e5fe29f2420ae1750e8cb62b33f6b824b570c7c7ca45ce26c2d7f",
+      "previous": "---\ntitle: 功能参照\ndescription: 先说明要提供的服务，再看每个方案要用多少产品，以及过程数据按什么量给出。\n---\n\n## 服务要求 [#服务要求]\n\n<Prose ids=\"cl-book-service cl-book-geometry cl-book-service-contract cl-book-soap cl-book-function-boundary cl-fu-distinction cl-fu-example\" />\n\n## 参考对象 [#参考对象]\n\n<Prose ids=\"cl-book-cml-reference cl-book-ilcd-reference cl-book-reference-reading cl-ilcd-quant-ref cl-ilcd-reference-flow cl-ilcd-fu\" />\n\n字段的详细定义见<SourceRef id=\"src-ilcd-process\" />的 Quantitative reference 部分。\n\n## 比较条件 [#比较条件]\n\n<Prose ids=\"cl-book-maintenance-condition\" />\n\n[墙面服务比较](/docs/book/wall-service-to-comparison/)另设一面 100 m²、需维持十年的墙，说明性能、寿命和维护怎样决定各过程的用量，并影响评价指标。两个算例各有自己的假设。\n\n<Prose ids=\"cl-book-record-model-limit cl-book-comparison-more cl-book-three-comparisons cl-fr173-shared-core cl-fr173-layer-split cl-fr173-intermediate-unit cl-fr173-conversion-and-attributes cl-fr173-comparability-gates\" />\n\n| 体系与公开原件 | 核心参照层级与要素 | 中间产品处理口径 | 换算规则与非功能属性 | 可比性与比较断言边界 |\n| --- | --- | --- | --- | --- |\n| ILCD 2010（第 6.4、6.10 节） | 研究层功能单位（做什么、做多少、质量、时长）与参考流 | 采用声明单位（如 1 kg 钢卷），明言其非功能单位 | 区分必备属性与定位属性；表 4 墙漆十年期折算为 6.5 l 对 3.8 l | 比较研究须同步核验情景、寿命、维护、数据与建模一致性 |\n| 欧盟 PEF（2021/2279 附录一第 1、3.2.1 节） | 研究层四要素功能单位（如装饰漆 1 m²、50 年、遮盖力 ≥ 98%）与参考流 | 中间产品可采用声明单位（此时参考流可与功能单位一致） | 寿命产品数原则上向上取整；强制披露并论证未涵盖属性 | 仅在严格遵循适用 PEFCR 时允许比较与公开比较断言 |\n| GHG Protocol 产品标准 2011（第 6 章、第 7.3.7 节、附录 A） | 研究层上位“分析单位”与参考流；最终产品以功能单位为分析单位 | 不使用声明单位，直接以参考流为分析单位并可摇篮到大门披露 | 允许先定功能单位或先定参考流，须防止半个产品失真 | 按现状仅支持同产品绩效追踪，不支持 ISO 14044 比较断言 |\n| ecoinvent 第三版导则 2013（第 3、4.1.2、14.1–14.3 节） | 单元过程活动层决定性参考产品（处理服务记为负参考产品） | 中间产品默认按单元过程参考产品连接本地市场 | 不规定研究层寿命取整或定位属性，交由下游研究处理 | 仅提供活动层数据连接基础，不直接构成服务等价证明 |\n\n<Prose ids=\"cl-fr173-epistemic-limits\" />\n\n两个概念的定义和出处见<ConceptRef id=\"cn-fu\" />与<ConceptRef id=\"cn-reference-flow\" />。\n"
+    },
+    {
+      "path": "content/docs/book/inventory-boundary-and-hybrid.mdx",
+      "fromSha256": "b6cad879e67319c1c8f697139286d134254624acefcf7b6665d039b36a221f8c",
+      "toSha256": "5ffef1ccdb94c86cb5a6d9c0b1747d4ae178b0be37f24441c5d3ebc5e94b9f03",
+      "previous": "---\ntitle: 混合清单\ndescription: 过程清单缺少一项投入时，经济数据能补上什么？烤面包器的双向采购、三家供应者的发票和泵的用钢，说明了哪些活动可以补入，哪些可能算了两次。\n---\n\n## 过程清单与经济数据 [#过程经济边界]\n\n<Prose ids=\"cl-inv-boundary-carrier cl-inv-small-cuts cl-hyb-question cl-inv-io-limits\" />\n\n<Prose ids=\"cl-inv-hybrid-forms cl-inv-double-counting cl-hyb-object cl-hyb-sign\" />\n\n## 双向账户 [#双向账户]\n\n<Prose ids=\"cl-hyb-upstream cl-hyb-downstream cl-hyb-balance cl-hyb-inventory\" />\n\n<Prose ids=\"cl-hyb-toaster cl-hyb-downstream-dispute cl-hyb-downstream-test cl-hyb-downstream-zero\" />\n\n<Prose ids=\"cl-hyb-accounts cl-hyb-evidence-boundary cl-hyb-service cl-hyb-ledger\" />\n\n<Prose ids=\"cl-hyb-invoices cl-hyb-raw cl-hyb-naive cl-hyb-remove\" />\n\n<Prose ids=\"cl-hyb-equations cl-hyb-corrected cl-hyb-naive-result cl-hyb-swap\" />\n\n表中列出两组假想发票的年度金额，单位是 CU/年。F、G 是两家发电方，S 提供服务。\n\n| 卖方 → 买方 | 第一组发票 | 第二组发票 |\n| --- | --- | --- |\n| F → S（电） | 10 | 0 |\n| G → S（电） | 10 | 20 |\n| S → F（服务） | 20 | 20 |\n| S → G（服务） | 30 | 30 |\n| S → S（自用） | 20 | 20 |\n\n把 F 和 G 合成电力部门 E，两组账都显示 E 每年向 S 售电 20 CU，S 每年向 E 售服务 50 CU。部门表因此看不出 S 的电是向 F 还是向 G 买的。\n\n<Prose ids=\"cl-hyb-swap-result\" />\n\n## 误差来源 [#误差来源]\n\n<Prose ids=\"cl-hyb-pump cl-hyb-bpc cl-hyb-paths cl-hyb-popcorn\" />\n\n<Prose ids=\"cl-hyb-response cl-hyb-database cl-hyb-denominator cl-hyb-limits\" />\n\n<Prose ids=\"cl-hyb-audit cl-inv-judgement\" />\n\n<Prose ids=\"cl-hyb175-shared-completeness-dilemma cl-hyb175-process-standards-cutoff-and-capital cl-hyb175-eeio-admission-and-hybrid-architectures cl-hyb175-double-counting-governance cl-hyb175-price-aggregation-and-denominator-comparability\" />\n\n| 体系与公开原件 | 截断与完备性规则 | 资本品与采购服务边界 | EEIO / 混合补缺与防重叠 | 跨研究可比性门槛 |\n| --- | --- | --- | --- | --- |\n| ILCD 2010（§6.6.2–6.6.3、第 6.6 节规定） | 承认 100% 总量不可知；按影响覆盖度设截断（如 85% / 95%）并公开排除清单 | 原则上纳入资本品及清洁、法律、营销、办公等外购服务，除非证明不显著 | 无 EEIO / 混合补缺条款；依赖过程边界迭代闭合 | 须披露排除清单与覆盖度基线，截断过大限制可比性 |\n| 欧盟 PEF（2021/2279 附件一 §§4.1, 4.4.4, 4.6.3–4.6.4） | 筛查禁止截断；正式研究累计截断上限 3.0%（物质、能量与环境显著性） | 资本品及其生命末期默认排除，除非既往研究证明显著 | 无 EEIO 路径；ILCD-EL 替代上限 10%，缺数须经核查排除 | 高度统一的过程口径，但默认不含资本品与宏观服务尾项 |\n| GHG Protocol 产品标准（2011 第 7 章、§8.3.4、框 8.2） | 归属过程仅在缺数、无替代且估算低于披露阈值时可排除 | 资本品、管理能耗及研发/行政/营销属可选非归属过程，纳入须披露 | 允许财务数据配 EEIO 因子做筛查与上游估算；人工核清因子覆盖防重叠 | 非归属项可选且仅含温室气体，跨研究须对齐边界与因子类型 |\n| ecoinvent v3 导则（2013 §4.11、§5.10、§6.1–6.4） | 声明无严格定量截断、不截断回收；缺数以合理估计及 95% 默认收率补足 | 按寿命与产能显式建模资本品，并尽量纳入无直接付费的物理因果 | 建有单元过程货币平衡，但主体为纯物理单元过程网络 | 无宏观部门闭合，受限于已建单元过程覆盖度 |\n| 混合清单框架（Suh 2004；Agez 2019/2020；Jakobs 2021） | 用经济投入产出表闭合上游截断，但引入部门聚合与价格换算误差 | 通过货币采购自然覆盖外购服务与资本品上游（取决于投入产出表口径） | 分层 / IO 型 / 集成混合；须显式扣除重叠（账户扣除、二元修正、BPC、STAM） | 须同口径交代价格基、部门分辨率、扣除规则与分母口径 |\n\n<Prose ids=\"cl-hyb175-epistemic-limits\" />\n"
+    },
+    {
+      "path": "content/docs/book/market-boundaries-and-response.mdx",
+      "fromSha256": "fb22fe217a010ed256d1fc3c8e3cf1215a96138a65cfa46a0e7c391e870be189",
+      "toSha256": "a8210574e1b6158ad14b4169f4ebcc963a42310eae59e9c975df190ec5e5565d",
+      "previous": "---\ntitle: 市场响应\ndescription: 比较瑞士电量账和两种假想供电情景，说明买到的电来自哪里，新增需求又会让谁多发电。\n---\n\n## 响应对象 [#从能相减到确实会改变]\n\n<Prose ids=\"cl-market-question cl-market-meaning\" />\n\n<ReaderSection id=\"1999年的程序先辨认能够响应的活动\" />\n\n<Prose ids=\"cl-market-time cl-market-procedure cl-market-supplier cl-market-trend cl-market-conditional-fuels cl-market-pulp\" />\n\n## 市场边界 [#批评改变了哪一道边界]\n\n<Prose ids=\"cl-market-nordheim cl-market-nordheim-conclusion cl-market-concession cl-market-regional cl-market-projection-limits\" />\n\n<ReaderSection id=\"2004年的整理先划分市场再辨认响应\" />\n\n<Prose ids=\"cl-market-lineage cl-market-segments cl-market-hydro-transfer\" />\n\n## 平均组合 [#平均供电也需要一个模型]\n\n<Prose ids=\"cl-market-average-question cl-market-balance cl-market-average-models cl-market-m3-denominator cl-market-m3-origins cl-market-emission-boundary cl-market-psi-dissent\" />\n\n## 条件供给 [#同一次新增需求两种电力响应]\n\n<Prose ids=\"cl-market-toy-service cl-market-toy-boundary cl-market-toy-reference cl-market-toy-constrained cl-market-toy-expandable cl-market-toy-purchase\" />\n\n<ReaderSection id=\"从条件演算回到市场证据\" />\n\n<Prose ids=\"cl-market-multi-market cl-market-observations\" />\n\n<Prose ids=\"cl-mkt169-shared-questions cl-mkt169-conditional-convergence cl-mkt169-context-and-scale cl-mkt169-electricity-mix-regimes cl-mkt169-coproduct-substitution cl-mkt169-ranking-inversions\" />\n\n| 框架与核心文献 | 决策情境与尺度判据 | 市场边界与电力/供应组合规则 | 共产品与替代处理 | 主要盲区与适用边界 |\n| --- | --- | --- | --- | --- |\n| **ILCD 2010 指南**（欧盟联合研究中心，2010） | 按是否支持决策及是否突破年正常设备更新容量划定情境 A（微观）、B（中宏观）与 C1/C2（核算）；时间不作分界轴 | 情境 A 沿用既有产能与平均消费组合；情境 B 仅对“大变化”过程用长期边际组合并配 90% 合理最差/最好情景 | 情境 A 满足市场吸收等条件时以平均组合替代，否则两步分配；C2 一律分配；C1/C2 不得直接作比较决策 | 实践缺少跨行业统一的 A/B 实证临界点；微尺度平均简化未计小增量累积效应 |\n| **ecoinvent v3 后果模型**（Weidema 等 2013；Treyer & Bauer 2016；Vandepaer 等 2019） | 面向小尺度长期决策；主张单次购买累积驱动资本投资，不接受微尺度平均简化 | 排除受限电源与副产品；默认 30 年寿命对应 3.33%/年更新率，年降超 3.33% 链接旧技术，否则链接现代/新技术 | 副产品恒为受限，一律以无约束边际路线替代；受限市场用条件交换表示消费缩减 | 仅建模绝对约束而不采经验弹性；不适用于短期逐小时调度，且收缩市场正增长归一化会失效 |\n| **欧盟 PEF**（欧盟委员会建议书 (EU) 2021/2279，OJ L 471，更正版 OJ L 144） | 锁定产品归因核算框架以维持跨企业可比性与审计一致性 | 第 4.4.2 节四级合同层级：合格供应商产品 → 供应商总组合 → 国家残余消费组合（未追踪 > 95% 强制退回）→ 区域残余组合；使用阶段用消费组合 | 第 4.5 节要求直接市场效应与直接清单双重举证才准直接替代；生命末期用固定参数 A/B 的循环足迹公式 | 防止归因双重计算，但不验证绿证是否促成物理新增装机；参数 A 为固定约定而非动态弹性 |\n| **GHG Protocol 产品标准**（WRI / WBCSD，2011） | 强制归因核算（第 5.2 节）；框 5.1 将后果路径留给减排项目与公共政策 | 沿归因过程链接供应商或平均排放因子；聚焦单一温室气体指标，不支持 ISO 14044 公开比较断言 | 第 9.3.2 节仅在掌握去向且用平均因子时准予归因系统扩展（黑液例 1000 − 50 = 950 kg）；第 11.3.2 节禁扣市场避免排放 | 单独披露避免排放须并列间接增排（如间接土地利用变化）；不回答跨产品市场替代的净系统后果 |\n| **PSI 1998 电量账与异议**（Ménard 等 1998；Frischknecht 脚注 14） | 在一致性可比性与决策边际响应之间存在显式立场分歧 | M1–M4 基于物理发电与海关贸易平衡（M3 瑞士留用 65.9831%）；PSI 建议平均优先加边际灵敏度，Frischknecht 主张决策直用边际 | 将瑞士用法国核电引发的意大利增发归给意大利用户，体现归属边界与物理因果边界的分离 | 仅覆盖历史年度电量统计，未含合同追踪证书体系，亦未实证验证跨国调度因果链 |\n\n<Prose ids=\"cl-mkt169-epistemic-limits cl-market-closing\" />\n"
+    }
+  ],
+  "corrections": [
+    {
+      "chapter": "/docs/book/framework-history",
+      "claimId": "cl-fw179-shared-phases",
+      "scope": "整合改写：压实至 355 字以内，理顺四套当代操作指南的共享闭环骨架。"
+    },
+    {
+      "chapter": "/docs/book/framework-history",
+      "claimId": "cl-fw179-decision-gates",
+      "scope": "整合改写：压实至 390 字以内，清晰对比 ILCD、PEF 与 GHG Protocol 的决策分流与比较门槛。"
+    },
+    {
+      "chapter": "/docs/book/framework-history",
+      "claimId": "cl-fw179-impact-weighting",
+      "scope": "整合改写：压实至 365 字以内，精炼三套体系在类别覆盖与加权禁限上的对立立场。"
+    },
+    {
+      "chapter": "/docs/book/framework-history",
+      "claimId": "cl-fw179-review-assurance",
+      "scope": "整合改写：压实至 395 字以内，理顺四套体系的解释检查与审验／鉴证制度分层。"
+    },
+    {
+      "chapter": "/docs/book/service-and-reference",
+      "claimId": "cl-book-service",
+      "scope": "在首段展开 ILCD 中文全称，消除跨节延迟展开。"
+    },
+    {
+      "chapter": "/docs/book/inventory-boundary-and-hybrid",
+      "claimId": "cl-hyb175-shared-completeness-dilemma",
+      "scope": "消除与前段末句的字面重复，并补全 ILCD 与投入产出（IO）缩写展开。"
+    },
+    {
+      "chapter": "/docs/book/inventory-boundary-and-hybrid",
+      "claimId": "cl-hyb175-process-standards-cutoff-and-capital",
+      "scope": "整合改写：压实至 425 字以内，补全 PEF 与 GHG Protocol 中文全称。"
+    },
+    {
+      "chapter": "/docs/book/inventory-boundary-and-hybrid",
+      "claimId": "cl-hyb175-epistemic-limits",
+      "scope": "整合改写：压实至 365 字以内，补全 EEIO 展开名并保持向第三部分过渡。"
+    },
+    {
+      "chapter": "/docs/book/market-boundaries-and-response",
+      "claimId": "cl-mkt169-shared-questions",
+      "scope": "在首次出现处补全 ILCD 与 GHG Protocol 中文全称。"
+    },
+    {
+      "chapter": "/docs/book/market-boundaries-and-response",
+      "claimId": "cl-mkt169-context-and-scale",
+      "scope": "整合改写：压实至 435 字以内，理顺 ILCD、ecoinvent v3、PEF 与 GHG Protocol 的决策情境与尺度分歧。"
+    },
+    {
+      "chapter": "/docs/book/market-boundaries-and-response",
+      "claimId": "cl-mkt169-electricity-mix-regimes",
+      "scope": "整合改写：压实至 440 字以内，清晰对比物理平衡、合同追踪与长期边际三类电力记账机制。"
+    },
+    {
+      "chapter": "/docs/book/market-boundaries-and-response",
+      "claimId": "cl-mkt169-coproduct-substitution",
+      "scope": "整合改写：压实至 435 字以内，并将注释中的草稿章号替换为正式篇名《共产品的分配与替代》与《材料循环》。"
+    },
+    {
+      "chapter": "/docs/book/market-boundaries-and-response",
+      "claimId": "cl-mkt169-ranking-inversions",
+      "scope": "整合改写：压实至 435 字以内，保留 40 倍翻转算例、Thorskog 酒店与瑞士 1995 年 M3 证据。"
+    },
+    {
+      "chapter": "/docs/book/market-boundaries-and-response",
+      "claimId": "cl-mkt169-epistemic-limits",
+      "scope": "整合改写：压实至 395 字以内，理顺三类实证与治理未知并移除“上表”硬衔接。"
+    },
+    {
+      "chapter": "/docs/book/market-boundaries-and-response",
+      "claimId": "cl-market-closing",
+      "scope": "消除末段重复展开缩写与拼接缝，收束并衔接下一章《供电系统》。"
+    }
+  ],
+  "reviewEvidence": [
+    {
+      "kind": "integration-review",
+      "date": "2026-11-22",
+      "file": "_docs/editorial/review-evidence/part1-3-batch5-215/review-record.json",
+      "sha256": "a79f9e8f99c671725e50d6bad5e5042815ddb75de116d645238749f2a6c4d092"
+    }
+  ],
+  "publicArtifacts": [
+    {
+      "path": "claims/index.html",
+      "sha256": "bd4ba0435015fd6489248cb6f20eab711db31b49a0ac5852651fb510f262c0e6"
+    },
+    {
+      "path": "sources/index.html",
+      "sha256": "03d7c97ab3a0c025eab0b6b6bc0d41b2aff245f5074a831ebcfe3a0543acd591"
+    },
+    {
+      "path": "concepts/index.html",
+      "sha256": "cddbeab3b6a328ace107e9a4d611c686aeb6571ed7f40699bf820bb2fdc35fb5"
+    },
+    {
+      "path": "coverage/index.html",
+      "sha256": "5be994cb31a7a77576597707dafb8cfa6e932c161d4e273bc9783eb1c0f7fa2a"
+    },
+    {
+      "path": "downloads/catalog.json",
+      "sha256": "2719d00a06f2005845624d1f2a850507426e4f0eba0f7a21df109077d49eeac1"
+    },
+    {
+      "path": "downloads/dependencies.json",
+      "sha256": "455a10ee593c62d142db01eee90587f5b097fa7f815b8fe3f589ead119def018"
+    }
+  ]
+}
