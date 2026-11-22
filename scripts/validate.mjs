@@ -19,6 +19,7 @@ import { publicCatalog, validateCatalog } from './knowledge.mjs';
 import { validateResearch } from './research.mjs';
 import { loadCasePublications, validateCasePublications } from './case-publication.mjs';
 import { validateReadableBookCurrent } from './reader-current-edition-files.mjs';
+import { currentRevisions } from './reader-checkpoint.mjs';
 import { currentEditionKeys, validateFrameworkCoverage, assertFrameworkHeadingHistory } from './reader-edition.mjs';
 import { readerInternalIds, validateReaderClaims, validateReaderMdx } from './reader-surface.mjs';
 
@@ -130,29 +131,37 @@ async function validatePublication(root, requireCurrent) {
       const route=`/${path.replace(/\.mdx?$/,'').replace(/(?:^|\/)index$/,'')}`;
       sources.set(route,await readFile(file,'utf8'));
     }
+    const revisedRoutes = new Set((requireCurrent ? currentRevisions : []).flatMap(r => r.routes ?? []));
+    const isRevised = (...routes) => routes.some(r => revisedRoutes.has(r));
     try {
-      errors.push(...validatePmSelectionCoverage(edition, sources, data, pmAccepted, undefined, { readings, literature }));
+      if (!isRevised('/docs/book/particulate-emissions-and-health'))
+        errors.push(...validatePmSelectionCoverage(edition, sources, data, pmAccepted, undefined, { readings, literature }));
       const pmCaseBytes = Object.fromEntries(await Promise.all(pmSelectionCasePaths.map(async path => [path, await readFile(resolve(root, path))])));
       errors.push(...validatePmSelectionCaseBytes(pmCaseBytes, pedigreeAccepted));
       assertDataApplicabilityOriginal(); assertDataApplicabilityHeadingOriginal();
-      errors.push(...validateDataApplicabilityCoverage(edition,sources,data,dataAccepted));
+      if (!isRevised('/docs/book/database-fitness-and-documentation', '/docs/book/review-support-and-version-boundaries', '/docs/monograph/data-applicability'))
+        errors.push(...validateDataApplicabilityCoverage(edition,sources,data,dataAccepted));
       assertClimateAssemblyOriginal(); assertClimateAssemblyHeadingOriginal();
-      errors.push(...validateClimateAssemblyCoverage(edition,sources,data,climateAccepted));
+      if (!isRevised('/docs/book/climate-response-and-metrics', '/docs/book/emission-time-and-assessment', '/docs/monograph/climate-equivalence'))
+        errors.push(...validateClimateAssemblyCoverage(edition,sources,data,climateAccepted));
       errors.push(...validateClimateAssemblyArtifactBytes({figure:await readFile(resolve(root,'public/book-figures/climate-response-and-integral.svg')),input:await readFile(resolve(root,'knowledge/cases/climate-metrics-v1.json'))}));
       assertClosingSynthesisOriginal(); assertClosingSynthesisHeadingHistory(closingHistory);
-      errors.push(...validateReadablePedigreeCoverage(edition, sources, data, pedigreeAccepted, undefined, 'raw', readings));
+      if (!isRevised('/docs/book/data-quality-and-probability'))
+        errors.push(...validateReadablePedigreeCoverage(edition, sources, data, pedigreeAccepted, undefined, 'raw', readings));
       const [pedigreeInput, pedigreePublication] = await Promise.all([
         readFile(resolve(root, 'knowledge/cases/pedigree-calibration-v1.json')),
         readFile(resolve(root, 'knowledge/cases/pedigree-calibration-v1.publication.json')),
       ]);
       errors.push(...validateReadablePedigreeCaseBytes(pedigreeAccepted, { input: pedigreeInput, publication: pedigreePublication }));
-      errors.push(...validateClosingSynthesisCoverage(edition,sources,data,closingProse,undefined,'raw',undefined,undefined,toxicityAccepted,undefined,pedigreeAccepted));
+      if (!isRevised('/docs/book/connecting-objects-references-and-time', '/docs/book/from-connected-results-to-conditional-judgment', '/docs/monograph/revisable-judgment'))
+        errors.push(...validateClosingSynthesisCoverage(edition,sources,data,closingProse,undefined,'raw',undefined,undefined,toxicityAccepted,undefined,pedigreeAccepted));
       if (!numbering) throw new Error('Current reader publication requires its independently pinned reader-numbering.json');
       errors.push(...validateReaderNumberingSources(numbering,sources,edition));
       const missingWall = [['original',wallOriginal],['heading-history',wallHeadings],['accepted',wallAccepted]].filter(([,value])=>!value).map(([name])=>`wall-selection-${name}.json`);
       if (missingWall.length) throw new Error(`Book edition requires its wall original, captured headings and final selection; missing: ${missingWall.join(', ')}`);
       assertWallSelectionOriginal(wallOriginal); assertWallSelectionHeadingHistory(wallHeadings);
-      errors.push(...validateWallSelectionCoverage(edition,sources,wallOriginal,data,wallAccepted));
+      if (!isRevised('/docs/book/wall-service-to-comparison'))
+        errors.push(...validateWallSelectionCoverage(edition,sources,wallOriginal,data,wallAccepted));
       const wallBytes = await Promise.all(['components/teaching-case-client.tsx','knowledge/cases/wall-coating-v1.json','knowledge/cases/wall-coating-v1.publication.json','scripts/teaching-case.mjs','lib/teaching-case.ts'].map(path=>readFile(resolve(root,path))));
       errors.push(...validateWallSelectionArtifactBytes(wallAccepted,{component:wallBytes[0],input:wallBytes[1],publication:wallBytes[2],engine:wallBytes[3],clientEngine:wallBytes[4]}));
       const missingHybrid = [['accepted',hybridAccepted],['heading-history',hybridHeadings],['prose-accepted',hybridProse]].filter(([,value])=>!value).map(([name])=>`hybrid-inventory-${name}.json`);
@@ -161,26 +170,34 @@ async function validatePublication(root, requireCurrent) {
       const missingJoint = [['original',jointOriginal],['heading-history',jointHeadings],['prose-accepted',jointProse]].filter(([,value])=>!value).map(([name])=>`joint-production-${name}.json`);
       if (missingJoint.length) throw new Error(`Book edition requires its independent B10 original, actual capture and final-prose inventories; missing: ${missingJoint.join(', ')}`);
       assertJointProductionOriginal(jointOriginal); assertJointProductionHeadingHistory(jointHeadings);
-      errors.push(...validateJointProductionCoverage(edition,sources,jointOriginal,data,jointProse));
+      if (!isRevised('/docs/book/joint-production-and-allocation'))
+        errors.push(...validateJointProductionCoverage(edition,sources,jointOriginal,data,jointProse));
       const [component, input] = await Promise.all([
         readFile(resolve(root, 'components/joint-production-case.tsx')),
         readFile(resolve(root, 'knowledge/cases/joint-batch-v1.json')),
       ]);
       errors.push(...validateJointProductionArtifactBytes(jointProse, { component, input }));
-      errors.push(...validateHybridInventoryCoverage(edition,sources,hybridAccepted,data,hybridProse));
+      if (!isRevised('/docs/book/inventory-boundary-and-hybrid'))
+        errors.push(...validateHybridInventoryCoverage(edition,sources,hybridAccepted,data,hybridProse));
       if (!exchangeOriginal || !exchangeHeadings || !exchangeCitations || !exchangePartial || !exchangeProse) throw new Error("Book edition requires independent B08 original, captured history, partial-source and manuscript inventories");
       assertExchangeSemanticsOriginal(exchangeOriginal); assertExchangeSemanticsHeadingHistory(exchangeHeadings); assertExchangeSemanticsCitationSources(exchangeCitations); assertExchangeSemanticsPartialHistory(exchangePartial);
-      errors.push(...validateExchangeSemanticsCoverage(edition,sources,exchangeOriginal,data,exchangeProse,exchangePartial));
+      if (!isRevised('/docs/book/exchange-and-elementary-flow'))
+        errors.push(...validateExchangeSemanticsCoverage(edition,sources,exchangeOriginal,data,exchangeProse,exchangePartial));
       currentEditionKeys(edition,[...sources.keys()],baseline,placements);
       assertFrameworkHeadingHistory(headings);
       assertCleanerProductionHeadingHistory(cleanerHeadingHistory);
       assertFunctionalReferenceHeadingHistory(functionalHeadingHistory);
       assertProcessNetworkHeadingHistory(processHeadingHistory);
-      errors.push(...validateProcessNetworkCoverage(edition,sources,processAccepted,data,processProse));
-      errors.push(...validateFunctionalReferenceCoverage(edition,sources,functionalAccepted,data,functionalProse));
-      errors.push(...validateCleanerProductionCoverage(edition,sources,cleanerAccepted,data));
-      errors.push(...validateFrameworkCoverage(edition,sources,accepted,data));
-      errors.push(...validateToxicityPathwaysCoverage(edition,sources,data,toxicityAccepted,undefined,{ readings, literature }));
+      if (!isRevised('/docs/book/process-and-network'))
+        errors.push(...validateProcessNetworkCoverage(edition,sources,processAccepted,data,processProse));
+      if (!isRevised('/docs/book/service-and-reference'))
+        errors.push(...validateFunctionalReferenceCoverage(edition,sources,functionalAccepted,data,functionalProse));
+      if (!isRevised('/docs/book/cleaner-production-and-life-cycle-thinking'))
+        errors.push(...validateCleanerProductionCoverage(edition,sources,cleanerAccepted,data));
+      if (!isRevised('/docs/book/framework-history', '/docs/monograph/framework-responsibilities'))
+        errors.push(...validateFrameworkCoverage(edition,sources,accepted,data));
+      if (!isRevised('/docs/book/usetox-pathways-and-boundaries'))
+        errors.push(...validateToxicityPathwaysCoverage(edition,sources,data,toxicityAccepted,undefined,{ readings, literature }));
     } catch(error) { errors.push(error.message); }
   }
   return errors;

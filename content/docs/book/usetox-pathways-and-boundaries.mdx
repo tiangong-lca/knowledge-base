@@ -7,13 +7,44 @@ description: 说明USEtox与USES-LCA怎样从排放估计归趋、暴露和效�
 
 <Prose ids="cl-usetox-matched-emissions cl-usetox-fate-exposure-effect cl-usetox-intake-and-effects cl-usetox-indicators-not-observed-cases" />
 
-<Prose ids="cl-tox123-midpoint-families cl-tox123-hc20-and-metals" />
+<Prose ids="cl-tox123-midpoint-families" />
+
+表 1 两大家族化学毒性体系的类别架构、参照基准与终点边界对照。
+
+| 体系与底层模型 | 中点类别与单位 | 陆地与海洋生态覆盖 | 终点处理 |
+| --- | --- | --- | --- |
+| ILCD 2011 / EF 3.1（USEtox） | 3 项：人体致癌（CTUh）、人体非致癌（CTUh）、淡水生态（CTUe） | 均未推荐 | 仅 ILCD 对致癌 DALY 给拆分评级，其余不推荐 |
+| ReCiPe 2016（USES-LCA 2.0 + USEtox 物质库） | 5 项：致癌、非致癌（城市空气 1,4-DCB 当量）与淡水、海洋、陆地生态（各自介质 1,4-DCB 当量） | 含海洋与工业土壤；排除农业土壤以免与土地利用重复计数 | 乘跨视角恒定 1,4-DCB 损害系数转 DALY 与 species·yr |
+
+<Prose ids="cl-tox123-hc20-and-metals" />
+
+表 2 EF 3.0 与 EF 3.1 淡水金属生态毒性重排示例（CTUe/kg）。
+
+| 排入淡水的金属 | EF 3.0（沿用 USEtox 0.5/HC50） | EF 3.1（0.2/HC20 + 欧盟毒理卷宗） | 变化幅度与机制 |
+| --- | --- | --- | --- |
+| 三价锑（Sb³⁺） | 1.22×10² | 1.43×10² | +18%（缺卷宗，仅按 HC20 = 0.34×HC50 外推） |
+| 铝（Al） | 4.09×10⁵ | 4.35×10³ | −99%（基准切换叠加欧盟卷宗替换） |
+| 铜（Cu） | 9.92×10⁴ | 4.65×10¹ | 原表印 −100%（下降逾三个数量级） |
+| 镉（Cd） | 2.29×10⁵ | 6.74×10⁵ | +195%（跃居金属首位） |
+| 银（Ag） | 1.94×10⁴ | 1.77×10⁵ | +813%（跃居前列） |
+| 汞（Hg） | 2.21×10³ | 3.32×10⁴ | +1401%（与铜相对权重翻转约 32000 倍） |
 
 ## 模型与范围 [#模型与范围]
 
 <Prose ids="cl-usetox-model-comparison cl-usetox-comparison-uncertainty cl-usetox-boxes-and-time cl-usetox-internal-feature-conflict" />
 
-<Prose ids="cl-tox123-perspective-switches cl-tox123-nickel-dcb-reversal cl-tox123-speciation-and-proxies" />
+<Prose ids="cl-tox123-perspective-switches cl-tox123-nickel-dcb-reversal" />
+
+表 3 1,4-二氯苯与镍在 ReCiPe 2016 三视角与 EF 3.1 中的人体非致癌毒性因子对照。
+
+| 排放物质与区室 | ReCiPe 个人主义（20 年，2 途径，kg 1,4-DCB 当量/kg） | ReCiPe 等级主义（100 年，9 途径） | ReCiPe 平等主义（无限期，9 途径） | EF 3.1（CTUh/kg） |
+| --- | --- | --- | --- | --- |
+| 1,4-二氯苯，城市近地空气 | 1 | 1 | 1 | 1.4795×10⁻⁸ |
+| 镍，城市近地空气 | 36 | 2300 | 5800 | 1.1237×10⁻⁶（约为 DCB 的 75.95×） |
+| 1,4-二氯苯，海水 | 0.83 | 0.82 | 0.82 | 4.7713×10⁻⁹ |
+| 镍，海水 | 0（无海产品且不作饮水） | 23 | 7900 | 3.4465×10⁻⁸ |
+
+<Prose ids="cl-tox123-speciation-and-proxies" />
 
 ## 比较的依据 [#比较的依据]
 
