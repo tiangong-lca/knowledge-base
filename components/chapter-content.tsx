@@ -1,4 +1,5 @@
 import { showEditorialHistoryInProse } from '@/scripts/reader-editorial-mode.mjs';
+import { currentRevisions } from '@/scripts/reader-checkpoint.mjs';
 import { part7RereadCorrections, part7RereadHistoryControls, part7RereadOrdinaryId, part7RereadSource } from '@/scripts/reader-part7-reread.mjs';
 import { functionalReferenceComparisonHistoryControls, functionalReferenceComparisonOrdinaryId, functionalReferenceComparisonSource } from '@/scripts/reader-functional-reference-comparison.mjs';
 import { hybridInventoryComparisonHistoryControls, hybridInventoryComparisonOrdinaryId, hybridInventoryComparisonRoute, hybridInventoryComparisonSource } from '@/scripts/reader-hybrid-inventory-comparison.mjs';
@@ -276,6 +277,7 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
   const hasInterpretationBagsTables = Boolean(currentInterpretationBags && cleanRoute === interpretationBagsRoute);
   const hasFutureScenariosTables = Boolean(currentFutureScenarios && cleanRoute === futureScenariosRoute);
   const hasRevisableJudgmentTables = Boolean(currentRevisableJudgment && revisableJudgmentRoutes.includes(cleanRoute));
+  const hasPostCheckpointRevisionTables = currentRevisions.some(rev => rev.routes.includes(cleanRoute));
   let tableCount = 0;
   function ReaderTable(props: HTMLAttributes<HTMLTableElement>) {
     if (Object.hasOwn(props, 'id')) {
@@ -308,6 +310,9 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
       return createElement(defaults.table ?? 'table', props);
     }
     if (hasDataApplicabilityTables && (index === 1 || (index === 2 && cleanRoute === 'book-data-applicability'))) {
+      return createElement(defaults.table ?? 'table', props);
+    }
+    if (hasPostCheckpointRevisionTables) {
       return createElement(defaults.table ?? 'table', props);
     }
     throw new Error(`Invalid, unauthorized or duplicate ReaderTable on ${page.url}`);

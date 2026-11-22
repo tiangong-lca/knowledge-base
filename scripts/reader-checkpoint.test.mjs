@@ -9,7 +9,7 @@ import { currentCheckpoint, currentRetirements, currentRevisions, effectivePlanD
 import { checkpointInput } from './reader-checkpoint-input.mjs';
 import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition, matchesAcceptedRecord } from './reader-current-edition.mjs';
-import { currentBookPlan } from './reader-current-expectations.mjs';
+import { baseCheckpointPlan, currentBookPlan } from './reader-current-expectations.mjs';
 import { publicCatalog } from './knowledge.mjs';
 import { applyClaimRetirementsToCitations, applyRevisionsInverse, applyRevisionsToPlan, applyRevisionsToPlanStatic, loadRevisions, projectRevisionNumbering, validateRevisionSchema } from './reader-revisions.mjs';
 
@@ -18,9 +18,9 @@ const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
 test('checkpoint config and revisions index match their independent pins', () => {
   assert.equal(currentCheckpoint.id, 'checkpoint-2026-11-21');
   assert.equal(editionDigest(currentCheckpoint), readableBookCheckpointPin);
-  assert.equal(effectivePlanDigestOf(currentBookPlan), currentCheckpoint.effectivePlanDigest);
-  assert.deepEqual(currentRevisions, []);
-  assert.deepEqual(currentRetirements, []);
+  assert.equal(effectivePlanDigestOf(baseCheckpointPlan), currentCheckpoint.effectivePlanDigest);
+  assert.ok(Array.isArray(currentRevisions));
+  assert.ok(Array.isArray(currentRetirements));
   assert.throws(() => selectCheckpoint({ ...currentCheckpoint, stateDigest: '0'.repeat(64) }), /pinned digest/);
 });
 

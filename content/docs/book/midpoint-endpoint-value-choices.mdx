@@ -7,34 +7,79 @@ description: 中点和终点对应环境因果路径上的不同位置。指标�
 
 <Prose ids="cl-lcia-midpoint-pathway cl-lcia-endpoint-units cl-lcia-mid-end-conversion-limits" />
 
-<Prose ids="cl-land111-episode cl-land111-midpoint cl-land111-conversion" />
+<Prose ids="cl-ozrad121-emission-midpoint" />
 
-<Prose ids="cl-mineral115-input cl-mineral115-adp cl-mineral115-sop" />
+<Prose ids="cl-land111-midpoint cl-land111-conversion" />
+
+<Prose ids="cl-mineral115-adp cl-mineral115-sop cl-mineral115-rank" />
 
 <Prose ids="cl-fossil117-scarcity-energy cl-fossil117-heating-basis cl-fossil117-uranium-boundary" />
 
-<Prose ids="cl-ozrad121-emission-midpoint cl-ozrad121-reference-scope" />
+表 1 能量载体与天然铀在两套资源中点体系中的口径对照（ReCiPe 2016 化石燃料潜势与 EF 3.1 化石资源使用）。
+
+| 输入 | ecoinvent 高位热值（MJ-eq） | ReCiPe 2016 中点 | EF 3.1 化石资源使用 |
+| --- | --- | --- | --- |
+| 原油 | 45.8 /kg | 1 kg 油当量/kg | 1 MJ/MJ（净热值） |
+| 天然气 | 38.3 /Nm³ | 0.84 kg 油当量/Nm³ | 1 MJ/MJ（净热值） |
+| 硬煤 | 19.1 /kg | 0.42 kg 油当量/kg（未舍入约 0.4170） | 1 MJ/MJ（净热值） |
+| 褐煤 | 9.9 /kg | 0.22 kg 油当量/kg | 1 MJ/MJ（净热值） |
+| 泥炭 | 9.9 /kg | 0.22 kg 油当量/kg | 1 MJ/MJ（净热值） |
+| 天然铀 | — | 不在化石表；矿产 SOP 35.8（经济储量情景）、25.2（最终可采资源情景）kg 铜当量/kg | 1 MJ/MJ，列入化石资源使用 |
+
+注：ReCiPe 2016 化石中点由高位热值与原油高位热值之比舍入得到；Van Oers 等人 2020 年附表将天然铀留在元素耗竭中，累计 ADP 约 0.007823 kg 锑当量/kg（正文表舍入作 7.8×10⁻³）。
 
 ## 情景与地点 [#时间证据和地点怎样进入结果]
 
 <Prose ids="cl-lcia-scenarios-are-choices cl-lcia-global-is-not-site-specific" />
 
-<Prose ids="cl-land111-pathway cl-land111-horizon cl-land111-factor-scale cl-land111-integral cl-land111-countercheck cl-land111-aggregation" />
+<Prose ids="cl-ozrad121-odp-horizons cl-ozrad121-n2o-scope" />
 
-<Prose ids="cl-mineral115-reserves" />
+表 2 平流层臭氧耗竭中点因子示例（kg CFC-11 当量/kg）。
 
-<Prose ids="cl-fossil117-scenario-proxy" />
+| 物质 | 大气寿命 | ReCiPe 2016 20 年（个人主义） | 100 年（等级主义） | 无限期（平等主义） | EF 3.1 稳态 |
+| --- | --- | --- | --- | --- | --- |
+| Halon-1211 | 约 16 年 | 15.053 | 8.777 | 7.900 | — |
+| Halon-1301 | 约 65 年 | 11.841 | 14.066 | 15.900 | 15.2 |
+| Halon-2402 | — | — | — | 13.000 | 15.7 |
+| 溴甲烷 | 不到 1 年 | 1.649 | 0.734 | 0.660 | 0.57 |
+| CFC-115 | 逾千年 | 0.032 | 0.061 | 0.570 | — |
+| HCFC-22 | — | 0.085 | 0.045 | 0.040 | 0.034 |
+| 氧化亚氮（N₂O） | — | 0.007 | 0.011 | 0.017 | 未收录 |
 
-<Prose ids="cl-ozrad121-odp-horizons cl-ozrad121-ir-horizons cl-ozrad121-endpoint-choices" />
+注：ReCiPe 2016 的氧化亚氮数值在 RIVM 2016-0104 原表中标为初步估计；表中“—”表示正文对照未列出该项数值，不表示发行包缺项。
+
+<Prose ids="cl-ozrad121-reference-scope cl-ozrad121-ir-horizons" />
+
+表 3 电离辐射中点因子示例（EF 3.1 单位为 kBq U-235 当量/kBq；ReCiPe 2016 单位为 kBq 钴-60 排入空气当量/kBq）。
+
+| 核素与排放去向 | EF 3.1 | ReCiPe 2016 20 年（个人主义） | 100 年（等级主义） | 100,000 年（平等主义） |
+| --- | --- | --- | --- | --- |
+| 碳-14，空气 | 10.0 | 0.614 | 1.15 | 12.9 |
+| 铯-137，空气 | 0.636 | 1.27 | 1.64 | 1.64 |
+| 碘-129，空气 | — | — | 10.5 | 207 |
+| 碘-129，淡水 | — | — | 0.287 | 155 |
+| 铀-235，空气 | 1.0 | 空 | 空 | 1.27 |
+| 铀-238，空气 | 0.386 | 空 | 空 | 0.491 |
+| 铀-234，空气 | 4.57 | 空 | 空 | 5.82 |
+| 钍-230，空气 | 2.14 | 空 | 空 | 2.73 |
+| 镭-226，空气 | 0.0429 | 空 | 空 | 0.0545 |
+
+注：“空”表示 RIVM 2016-0104 原表该列未提供因子；“—”表示正文对照未列出原单位表值（碘-129 按 14/11 折算后的 EF 3.1 参照值见正文）。
+
+<Prose ids="cl-ozrad121-endpoint-choices cl-ozrad121-endpoint-limits" />
+
+<Prose ids="cl-land111-horizon cl-land111-integral cl-land111-aggregation" />
+
+<Prose ids="cl-mineral115-reserves cl-fossil117-scenario-proxy" />
 
 ## 模型与资料 [#模型输入数据与因子发行包]
 
-<Prose ids="cl-ozrad121-formula-table cl-ozrad121-package-discrepancies cl-ozrad121-emission-bridge" />
-
-<Prose ids="cl-land111-printed-record" />
-
-<Prose ids="cl-fossil117-equal-midpoint cl-fossil117-proxy-consequence cl-fossil117-printed-limits cl-fossil117-bridge" />
-
-<Prose ids="cl-mineral115-rank cl-mineral115-cost-proxy cl-mineral115-metal-cost cl-mineral115-calibration cl-mineral115-assumptions cl-mineral115-judgment" />
-
 <Prose ids="cl-lcia-model-data-factor-separation" />
+
+<Prose ids="cl-fossil117-equal-midpoint cl-fossil117-proxy-consequence" />
+
+<Prose ids="cl-mineral115-cost-proxy cl-mineral115-metal-cost cl-mineral115-calibration cl-mineral115-assumptions" />
+
+<Prose ids="cl-ozrad121-formula-table cl-ozrad121-package-discrepancies" />
+
+<Prose ids="cl-mineral115-judgment cl-b14-reading-checks" />

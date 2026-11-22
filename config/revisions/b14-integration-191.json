@@ -1,0 +1,2162 @@
+{
+  "schemaVersion": 1,
+  "id": "b14-integration-191",
+  "date": "2026-11-22",
+  "title": "B14《中点与终点》整合改写试点",
+  "rationale": "按全书目标第 2.16 节将原四组追加段落整合为连续论证：全章由 42 段压至 36 段（保留或改写 33 段、合并退役 9 段、拆分及收束新增 3 段），将因子明细汇总为 3 张对照表，并将版式异文与数据包明细转入注释限定；所有旧注释锚点均自动改指继任段落。",
+  "routes": [
+    "/docs/book/midpoint-endpoint-value-choices"
+  ],
+  "sourceCommit": "bb6ab1a0dc38fc70155714793381bbed46890af4",
+  "claims": [
+    {
+      "id": "cl-lcia-midpoint-pathway",
+      "op": "modify",
+      "from": {
+        "id": "cl-lcia-midpoint-pathway",
+        "text": "先看排放这类清单输入。清单已经算出了排放量，环境比较为何还要引入中点和终点？因为排出多少物质，尚未说明这些物质怎样改变环境。以ReCiPe2016方法论文中的排放路径为例，中点和终点位于这条因果路径的不同位置。中点通常设在同一类别中不同排放物的后续机制可以统一处理的地方，以便比较它们的相对潜势。终点则把这些作用进一步联系到人类健康或生态系统质量。读中点时，所问的是排放在某条路径上造成多大潜在作用；读终点时，则追问模型怎样把作用连接到所保护的对象。两层结果能够互相补充，因为它们描述的是因果路径上不同的环节。用地、矿产与化石能源开采则从另外的清单输入出发，再加上停在物理暴露量的平流层臭氧耗竭与电离辐射排放路径，都须进一步追问：转换只是在重新表达已有估计，还是加入了新的模型关系？本章把这四类路径并置讨论。",
+        "kind": "interpretation",
+        "scope": "ReCiPe排放路径框架的有界示例，以及本章四类路径比较的问题",
+        "evidenceIds": [
+          "ev-lcia-midpoint-pathway",
+          "ev-lcia-mid-end-conversion-limits",
+          "ev-mineral115-rivm-sop-method",
+          "ev-fossil117-rivm-ffp-and-hhv",
+          "ev-ozrad121-ilcd2011-odp",
+          "ev-ozrad121-ilcd2011-ir"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-lcia-midpoint-pathway",
+            "relation": "supports",
+            "rationale": "原文§2.1给出三个保护领域；此段只用排放示例说明健康及生态路径，资源稀缺另由后续开采输入说明，不将排放接成开采路径。"
+          },
+          {
+            "evidenceId": "ev-lcia-mid-end-conversion-limits",
+            "relation": "supports",
+            "rationale": "原论文的土地转换例外支持区分重新表达既有估计与新增模型关系。"
+          },
+          {
+            "evidenceId": "ev-mineral115-rivm-sop-method",
+            "relation": "supports",
+            "rationale": "原2016报告的矿产SOP从元素开采出发，为另一种清单起点及后续比较提供依据。"
+          },
+          {
+            "evidenceId": "ev-fossil117-rivm-ffp-and-hhv",
+            "relation": "supports",
+            "rationale": "化石能源开采从中点热值出发并与终点费用模型分离，构成本章第三类清单起点。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-ilcd2011-odp",
+            "relation": "supports",
+            "rationale": "平流层臭氧耗竭停在物理化学负荷中点，通往健康终点需另加紫外暴露—疾病关系。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-ilcd2011-ir",
+            "relation": "supports",
+            "rationale": "电离辐射停在人群集体有效剂量中点，通往健康终点需另加低剂量致癌与遗传伤残假设。"
+          }
+        ],
+        "premiseIds": [],
+        "caveats": [
+          "中点位置和后续模型随影响类别而变；不把这一方法的定义直接归为ISO条款。",
+          "排放路径、土地占用与原生资源开采具有不同的清单起点，不能将排放驱动的环境机制直接套用于资源或用地指标。"
+        ],
+        "conceptIds": [
+          "cn-midpoint"
+        ],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-18",
+        "reviewKind": "agent-source-check",
+        "reasoning": "先以排放说明框架，再明确用地与开采也属于本章输入。转换是否新增关系须按实际类别判断；此处的问题导入不声称已验证现实损害。"
+      },
+      "rationale": "整合改写：聚焦排放路径中点与终点含义，移除末尾预告式过渡。"
+    },
+    {
+      "id": "cl-lcia-mid-end-conversion-limits",
+      "op": "modify",
+      "from": {
+        "id": "cl-lcia-mid-end-conversion-limits",
+        "text": "中点与终点之间的关系随影响类别而变。ReCiPe2016论文的土地利用中点因子以局地相对物种损失为依据，结果仍按年作物等效的面积与时间（m²·yr）表示；转到终点没有再增加新的因果步骤；化石资源则因完整路径认识不足，没有得到常数的中点到终点因子。因此，选用中点或终点时，先看该类别究竟增加了什么关系。多向后计算一层是否有助于当前问题，要由这项关系及其依据判断，不能从“终点”二字推出它必然更准确。",
+        "kind": "source-statement",
+        "scope": "ReCiPe2016原始论文列出的类别内转换例外",
+        "evidenceIds": [
+          "ev-lcia-mid-end-conversion-limits",
+          "ev-readable-recipe-land-units"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-lcia-mid-end-conversion-limits",
+            "relation": "supports",
+            "rationale": "两个小节分别明确非新增步骤与不存在常数因子的情形；解释保留原例外，没有外推通用定理。"
+          },
+          {
+            "evidenceId": "ev-readable-recipe-land-units",
+            "relation": "qualifies",
+            "rationale": "明确所用生态依据与中点输出单位的区别，限定对§3.2.10的解释。"
+          }
+        ],
+        "premiseIds": [],
+        "caveats": [
+          "类别内例外不能直接用来判定哪一种层级更优。",
+          "适用范围是该论文版本；后续报告或软件的实现应按相应版本确认。"
+        ],
+        "conceptIds": [
+          "cn-endpoint"
+        ],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-12",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：对齐化石资源无常数因子的原因，并自然引出四类清单起点。"
+    },
+    {
+      "id": "cl-ozrad121-emission-midpoint",
+      "op": "modify",
+      "from": {
+        "id": "cl-ozrad121-emission-midpoint",
+        "text": "从核燃料链的天然铀开采再往后走一步，核电站、后处理厂以及燃煤和磷矿加工还会向大气或水体排出放射性核素；与此同时，制冷、发泡、灭火与农业过程排出的卤代烃和氧化亚氮也会进入平流层消耗臭氧。回到本章开篇提到的排放路径，平流层臭氧耗竭与电离辐射展示出与用地、矿产和化石热值都不同的第四种结构：两者的中点真正停在物理化学负荷或人群集体暴露量上。臭氧耗竭潜势（ODP，以 kg CFC-11 当量计）比较单位质量排放引起的等效有效平流层氯或时间积分臭氧减少，尚未计算地面紫外辐射（UV-B）增强后引发多少皮肤癌与白内障；电离辐射潜势（IRP）比较单位放射性活度排放经空气、河流或海洋迁移与食物链富集后在人群中累积的集体有效剂量（man·Sv），尚未把辐射剂量折算成致死与非致死癌症或严重遗传疾病的寿命损失。正因走向人类健康终点（DALY）必须额外引入紫外暴露—疾病关系或低剂量外推与遗传伤残权重，2011 年《ILCD 手册》将世界气象组织（WMO）稳态 ODP（第一级推荐）和 Frischknecht 等人 2000 年基于法国核燃料循环扩散模型（Dreicer 等 1995）建立的电离辐射中点（第二级推荐）定为默认中点，却对两者的健康终点均不作正式推荐，仅列为过渡备选。至于生态系统影响，该手册指出日本生命周期影响评价方法 LIME 的作物、火炬松木材与浮游生物紫外损失以及 Garnier-Laplace 等人基于慢性外照射半数效应剂量率（EDR50）构造的淡水生态辐射指标均未成熟；EF 3.1 与 ReCiPe 2016 也都没有为这两条路径设立生态系统终点。",
+        "kind": "interpretation",
+        "scope": "平流层臭氧耗竭与电离辐射在因果链上的物理暴露中点位置、通往人类健康DALY终点的附加环节，以及ILCD/EF/ReCiPe对健康终点与生态终点的推荐边界。",
+        "evidenceIds": [
+          "ev-ozrad121-ilcd2011-odp",
+          "ev-ozrad121-ilcd2011-ir",
+          "ev-ozrad121-rivm-ch3-odp-tables",
+          "ev-ozrad121-rivm-ch4-ir-tables",
+          "ev-ozrad121-recipe2017-summary"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-ozrad121-ilcd2011-odp",
+            "relation": "supports",
+            "rationale": "ILCD 2011界定WMO稳态ODP（Level I）中点推荐地位，并说明紫外健康终点与LIME农林水生生态指标暂不推荐的原因。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-ilcd2011-ir",
+            "relation": "supports",
+            "rationale": "ILCD 2011界定Frischknecht 2000电离辐射中点（Level II）推荐地位，并说明遗传病DALY不确定性与Garnier-Laplace淡水生态辐射EDR50暂不推荐的原因。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-rivm-ch3-odp-tables",
+            "relation": "supports",
+            "rationale": "RIVM 2016-0104第3章区分EESC/ODP中点与经UV-B增加计算皮肤癌及白内障DALY的终点步骤。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-rivm-ch4-ir-tables",
+            "relation": "supports",
+            "rationale": "RIVM 2016-0104第4章区分集体剂量man·Sv中点与癌症/遗传病DALY终点，并明言尚无生态系统电离辐射LCIA方法。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-recipe2017-summary",
+            "relation": "context",
+            "rationale": "Huijbregts等2017表1–2确认两条路径均只连向人类健康终点而无生态系统终点。"
+          }
+        ],
+        "premiseIds": [
+          "cl-lcia-midpoint-pathway",
+          "cl-lcia-mid-end-conversion-limits",
+          "cl-fossil117-uranium-boundary"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "未设生态系统终点只代表现行LCIA方法缺口，不代表强紫外辐射对农林水生系统或电离辐射对非人类生物没有现实影响。"
+        ],
+        "reasoning": "把停在物理负荷／集体剂量的排放中点与已嵌入局地物种损失的用地区分开来，说明“算到终点”在此处确会引入新的生物医学外推假设与不确定性。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-17",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：首次展开 ILCD 2011 与 EF 3.1，按第一种情形置入第一节。"
+    },
+    {
+      "id": "cl-land111-midpoint",
+      "op": "modify",
+      "from": {
+        "id": "cl-land111-midpoint",
+        "text": "原2016年ReCiPe报告已在中点处理这段恢复。它先比较某种土地利用下的局地物种丰富度与参照，再用一年生作物的相对损失作为换算基准。被动恢复的中点因子，按相应占用因子乘恢复历时的一半计算。这个“一半”对应线性恢复的面积关系；恢复历时是从图示占用结束时刻算起的时长，不是图中那个时刻本身。占用因子乘面积与占用时间，恢复因子乘面积，两项最终都可表示为年作物等效的面积乘年。恢复期因此已经进入中点，而不是等到计算终点才出现。",
+        "kind": "interpretation",
+        "scope": "原2016 ReCiPe主文土地恢复中点关系",
+        "evidenceIds": [
+          "ev-land111-rivm-recovery",
+          "ev-land111-rivm-phases"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-land111-rivm-recovery",
+            "relation": "supports",
+            "rationale": "原报告主文给出丰富度参照、恢复历时与中点因子及其单位。"
+          },
+          {
+            "evidenceId": "ev-land111-rivm-phases",
+            "relation": "supports",
+            "rationale": "原图定义阶段和恢复计时，§11.2限定本报告土地类别价值选择的处理。"
+          }
+        ],
+        "premiseIds": [
+          "cl-land111-episode"
+        ],
+        "conceptIds": [],
+        "caveats": [],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-15",
+        "reasoning": "原报告给出半历时关系与被动恢复假设；恢复时长不同于图上的时点。"
+      },
+      "rationale": "合并原相邻段落，统一说明土地占用与恢复的中点处理。"
+    },
+    {
+      "id": "cl-land111-conversion",
+      "op": "modify",
+      "from": {
+        "id": "cl-land111-conversion",
+        "text": "该报告再把这两类中点因子乘同一个正的转换系数，得到土地路径的生态系统终点因子，最终结果以物种乘年（species·yr）表示。这个系数包含物种密度与年作物参照损失的模型约定，不是任意两个物种指标之间的物理单位换算。将已算好的兼容中点结果记为M、固定系数记为k，终点结果就是kM；同一类别、同一规则下，两方案原有的大小顺序随之保留。换算没有让恢复时间变长，也没有加入原来未计的年份。这解释了为什么“算到终点”在此处不等于再增加一道因果机制。它不保证跨影响类别加权后的总排序也保持。",
+        "kind": "interpretation",
+        "scope": "原报告同一土地路径正系数换算及作者保序解释",
+        "evidenceIds": [
+          "ev-land111-rivm-conversion",
+          "ev-lcia-mid-end-conversion-limits"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-land111-rivm-conversion",
+            "relation": "supports",
+            "rationale": "§11.4及表11.2规定占用和恢复使用同一正换算关系及终点单位。"
+          },
+          {
+            "evidenceId": "ev-lcia-mid-end-conversion-limits",
+            "relation": "supports",
+            "rationale": "已核期刊原文限定土地转换没有新增因果步骤，不扩为所有类别的判断。"
+          }
+        ],
+        "premiseIds": [
+          "cl-land111-midpoint"
+        ],
+        "conceptIds": [],
+        "caveats": [],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-15",
+        "reasoning": "原公式给出共同正系数；固定k下kM的保序是作者直接推论，限兼容土地路径结果。"
+      },
+      "rationale": "整合改写：明确固定系数线性缩放与模型约定的关系，消除同段张力。"
+    },
+    {
+      "id": "cl-mineral115-adp",
+      "op": "modify",
+      "from": {
+        "id": "cl-mineral115-adp",
+        "text": "非生物资源耗竭潜势（Abiotic Depletion Potential，ADP）把原生资源使用与地质存量联系起来。其基本构造是用一种元素的生产量除以估计存量的平方，再除以参照元素锑的同类比值。Van Oers 等人在 2020 年卷期发表的更新建议，为长期耗竭问题使用累计生产量。这里选用附表中以 1970—2015 年累计量计算、并从存量中扣除同一累计量的版本。地质存量主要依据地壳含量估计，不能当成已经查明可以盈利开采的储量。这个指标比较的是给定存量和开采记录下的相对耗竭，尚未说明未来矿石处理量或开采费用会增加多少。",
+        "kind": "interpretation",
+        "scope": "2020卷期原文及ESM1推荐的1970—2015累计生产与存量扣除版本",
+        "evidenceIds": [
+          "ev-mineral115-adp-cumulative",
+          "ev-mineral115-adp-workbook-basis",
+          "ev-mineral115-adp-extraction"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-mineral115-adp-cumulative",
+            "relation": "supports",
+            "rationale": "原文给出相对锑的生产量／平方存量构造，讨论累计法及可选存量扣除。"
+          },
+          {
+            "evidenceId": "ev-mineral115-adp-workbook-basis",
+            "relation": "supports",
+            "rationale": "所选推荐I列实际指向扣除累计量的KG列；另列J是2015归一化生产量。"
+          },
+          {
+            "evidenceId": "ev-mineral115-adp-extraction",
+            "relation": "supports",
+            "rationale": "说明元素生产、地质含量估计与实际可采储量的差别。"
+          }
+        ],
+        "premiseIds": [
+          "cl-mineral115-input"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "原文2019年在线发表，2020年卷期；本文选择存量扣除版本，不把原文允许的未扣除累计版本混成同一行。",
+          "所选存量主要来自地壳估计，工作簿实际还含较小海水项；不是纯地壳小计或经济储量。该指标未显式追踪人为存量及耗散，也不直接模拟未来开采费用。"
+        ],
+        "reasoning": "先核构造与工作簿引用，再解释该因子的长期耗竭用途；2015归一化生产量不替代累计生产。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-16",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "合并原相邻段落，将等质量输入设定与 ADP 定义合为一段。"
+    },
+    {
+      "id": "cl-mineral115-sop",
+      "op": "modify",
+      "from": {
+        "id": "cl-mineral115-sop",
+        "text": "ReCiPe 原 2016 年报告的矿产中点换了一个问题。矿石品位表示单位矿石中含有多少目标元素；按相同的回收率和共同生产处理比较时，品位越低，为取得同量元素所需处理的矿石越多。报告以优先开采高品位矿产为前提，用品位与累计开采量的关系，估计当前每开采 1 kg 元素对应的未来平均额外矿石需求，再除以同一情景下铜的相应需求，形成额外矿石潜势（Surplus Ore Potential，SOP）。它的单位是每千克开采元素对应多少千克铜当量。这不是把前述锑当量换个名称：从地质存量的耗竭转向未来矿石需求，已经改变了模型所回答的问题。",
+        "kind": "synthesis",
+        "scope": "原2016 ReCiPe矿产SOP的问题与同情景铜参照",
+        "evidenceIds": [
+          "ev-mineral115-rivm-sop-method",
+          "ev-mineral115-adp-cumulative"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-mineral115-rivm-sop-method",
+            "relation": "supports",
+            "rationale": "§12.3及§23.1以当前每kg开采对应的未来平均额外矿石需求除以同情景铜需求。"
+          },
+          {
+            "evidenceId": "ev-mineral115-adp-cumulative",
+            "relation": "supports",
+            "rationale": "ADP构造提供不同估计对象的比较项。"
+          }
+        ],
+        "premiseIds": [
+          "cl-mineral115-adp"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "品位和矿石量的解释固定回收及共同生产处理；原模型用收入分配，本文没有由矿石成分自行构造新因子。优先开采高品位是模型前提，不是所有现实矿山的已验证次序。"
+        ],
+        "reasoning": "比较的是耗竭与未来矿石需求两个对象，而非仅比较参考物质名称。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-16",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：紧凑衔接 ADP 与 SOP 的问题转换。"
+    },
+    {
+      "id": "cl-mineral115-rank",
+      "op": "modify",
+      "from": {
+        "id": "cl-mineral115-rank",
+        "text": "回到矿产开采，不同定义的后果也能在原件所报因子中看见。上述累计 ADP 附表对铜、镍、锰分别给出约 0.02134、0.0008147 和 0.00002505 kg 锑当量/kg；铜排在镍之前。原 ReCiPe 报告采用最终可采资源量时，相应 SOP 为 1、2.89 和 0.0823 kg 铜当量/kg，镍却排在铜之前。两组绝对数值不能直接相减，排序差别也不能归因于一种用了锑、另一种用了铜。对固定的一组因子改用另一个正的共同参照，只会把所有值同乘一个倍率，不会改变铜与镍的次序。这里变的是估计对象及其构造，不能仅凭顺序不同判定一方算错。",
+        "kind": "calculation",
+        "scope": "所选累计ADP与原2016 H/E SOP的铜镍锰次序",
+        "evidenceIds": [
+          "ev-mineral115-adp-cu",
+          "ev-mineral115-adp-ni",
+          "ev-mineral115-adp-mn",
+          "ev-mineral115-sop-he-cu",
+          "ev-mineral115-sop-he-ni",
+          "ev-mineral115-sop-he-mn",
+          "ev-mineral115-adp-cumulative",
+          "ev-mineral115-rivm-sop-method"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-mineral115-adp-cu",
+            "relation": "supports",
+            "rationale": "铜所选原行提供本段比较的实际数值、情景及单位。"
+          },
+          {
+            "evidenceId": "ev-mineral115-adp-ni",
+            "relation": "supports",
+            "rationale": "镍所选原行提供本段比较的实际数值、情景及单位。"
+          },
+          {
+            "evidenceId": "ev-mineral115-adp-mn",
+            "relation": "supports",
+            "rationale": "锰所选原行提供本段比较的实际数值、情景及单位。"
+          },
+          {
+            "evidenceId": "ev-mineral115-sop-he-cu",
+            "relation": "supports",
+            "rationale": "铜所选原行提供本段比较的实际数值、情景及单位。"
+          },
+          {
+            "evidenceId": "ev-mineral115-sop-he-ni",
+            "relation": "supports",
+            "rationale": "镍所选原行提供本段比较的实际数值、情景及单位。"
+          },
+          {
+            "evidenceId": "ev-mineral115-sop-he-mn",
+            "relation": "supports",
+            "rationale": "锰所选原行提供本段比较的实际数值、情景及单位。"
+          },
+          {
+            "evidenceId": "ev-mineral115-adp-cumulative",
+            "relation": "supports",
+            "rationale": "固定参照物质的正比例重标与模型构造。"
+          },
+          {
+            "evidenceId": "ev-mineral115-rivm-sop-method",
+            "relation": "supports",
+            "rationale": "SOP同情景铜参照及未来矿石对象。"
+          }
+        ],
+        "premiseIds": [
+          "cl-mineral115-adp",
+          "cl-mineral115-sop",
+          "cl-mineral115-reserves"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "ADP保存值为0.021343167358800229、0.00081471837508660216、0.000025050438058630777；正文作有限位数近似。使用原工作簿保存值，不声称执行过工作簿原生重算。",
+          "等质量比较不建立材料功能替代；两种单位的绝对数不可直接相减。"
+        ],
+        "reasoning": "正数c下a>b当且仅当ca>cb。所选ADP为Cu>Ni>Mn，SOP为Ni>Cu>Mn，故改用同一正参考倍率不足以解释铜镍反转；估计对象和构造同时改变。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-16",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "前移至第一节紧接 ADP/SOP 定义展示排序反转，并补充最终可采资源情景简注。"
+    },
+    {
+      "id": "cl-fossil117-scarcity-energy",
+      "op": "modify",
+      "from": {
+        "id": "cl-fossil117-scarcity-energy",
+        "text": "从金属等元素矿产转向煤、石油、天然气等化石能源开采，先遇到另一道中点问题：把不同燃料折算到同一个中点单位时，依据的究竟是存量稀缺，还是供能时可相互替代的能量含量？Van Oers 等人在 2002 年更新中已提出将化石燃料从元素耗竭拆出；2011 年《ILCD 手册》评估资源方法时则拒绝了归入固有性质类的火用（exergy）指标，理由是火用只度量资源的固有性质，即便取走最后 1 t 资源，这一单位数值也不会改变，因而不能反映未来稀缺性，遂在中点推荐以锑为共同参照的储量基数 ADP（kg 锑当量），把金属与化石燃料放在同一稀缺框架内比较。后续欧盟环境足迹（2018 年推荐方法报告及沿用该模型的 EF 3.0、EF 3.1）采纳了拆分思路，将能量载体单列为独立中点类别：明确假设化石能量载体在供能用途上可以完全相互替代，直接对能量输入赋予 1 MJ/MJ 的因子。底层指标名称虽仍沿用“非生物资源耗竭”（ADP-fossil），中点运算却已从存量与产量的比值改成了等能量相加。",
+        "kind": "interpretation",
+        "scope": "ILCD 2011稀缺性判据、合并锑当量与EF能量载体1 MJ/MJ完全替代假设之间的概念张力",
+        "evidenceIds": [
+          "ev-fossil117-ilcd2011-exergy-and-adp",
+          "ev-fossil117-ilcd2011-combined-adp",
+          "ev-fossil117-jrc109369-energy-carriers",
+          "ev-fossil117-ef31-unchanged-resources",
+          "ev-fossil117-ef31-fossil-factors",
+          "ev-fossil117-adp2020-split"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-fossil117-ilcd2011-exergy-and-adp",
+            "relation": "supports",
+            "rationale": "ILCD 2011因固有性质不随剩余储量变化而拒绝火用类资源中点。"
+          },
+          {
+            "evidenceId": "ev-fossil117-ilcd2011-combined-adp",
+            "relation": "supports",
+            "rationale": "ILCD 2011推荐储量基数ADP以锑当量同时覆盖金属与化石燃料。"
+          },
+          {
+            "evidenceId": "ev-fossil117-jrc109369-energy-carriers",
+            "relation": "supports",
+            "rationale": "JRC109369说明EF基于能量载体相似功能单列ADP-fossil并赋1 MJ/MJ。"
+          },
+          {
+            "evidenceId": "ev-fossil117-ef31-unchanged-resources",
+            "relation": "supports",
+            "rationale": "EF 3.0与EF 3.1沿用该矿产与化石两类划分及MJ单位。"
+          },
+          {
+            "evidenceId": "ev-fossil117-ef31-fossil-factors",
+            "relation": "supports",
+            "rationale": "EF 3.1方法XML明确写出假设化石能量载体之间可完全替代并对能量输入赋1 MJ/MJ。"
+          },
+          {
+            "evidenceId": "ev-fossil117-adp2020-split",
+            "relation": "context",
+            "rationale": "2002年将ADP拆分为化石燃料与元素两类的历史沿革说明。"
+          }
+        ],
+        "premiseIds": [
+          "cl-lcia-mid-end-conversion-limits",
+          "cl-mineral115-adp"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "此处比较LCIA资源中点构造所依据的等效准则，不评价热力学火用分析在工艺节能诊断中的工程用途。"
+        ],
+        "reasoning": "同一“资源耗竭”标题下，ILCD 2011要求指标随储量变化，而EF的能量载体中点假定不同燃料按MJ完全互换，两者回答不同问题。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-16",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：理顺 ILCD 稀缺路线与 Van Oers 2002 / EF 拆分路线，交代储量基与地壳存量 ADP 的区别。"
+    },
+    {
+      "id": "cl-fossil117-heating-basis",
+      "op": "modify",
+      "from": {
+        "id": "cl-fossil117-heating-basis",
+        "text": "同样按热值建立化石中点，不同体系选用的热值定义与参考基准仍需核对。EF 3.1 官方参考包中的“化石资源使用”方法将全部列入的能量载体绑定到净热值（即低位热值，MJ）属性，因子一律为 1 MJ/MJ。原 2016 年 ReCiPe 报告的化石燃料潜势（Fossil Fuel Potential，FFP）则采用高位热值与原油高位热值之比：按附表所引 ecoinvent 能量当量（MJ-eq）数据，原油为 45.8 MJ-eq/kg，天然气为 38.3 MJ-eq/Nm³，硬煤为 19.1 MJ-eq/kg，褐煤与泥炭均为 9.9 MJ-eq/kg；正文表据此将原油记为 1 kg 油当量/kg，天然气、硬煤、褐煤、泥炭分别舍入为 0.84 kg 油当量/Nm³ 及 0.42、0.22、0.22 kg 油当量/kg。在这五种化石燃料内部，只有先统一高低位热值口径，并考虑两位小数舍入（如硬煤未舍入商约为 0.4170），MJ 与 kg 油当量才呈固定比例对应；不能见到热值单位，就假定两套中点对富含氢的天然气与含水较高的煤保持完全相同的相对比值。",
+        "kind": "interpretation",
+        "scope": "EF 3.1净热值MJ中点与ReCiPe 2016高位热值FFP中点的条件对应关系",
+        "evidenceIds": [
+          "ev-fossil117-ef31-fossil-factors",
+          "ev-fossil117-ef31-ncv-and-mineral-boundary",
+          "ev-fossil117-rivm-ffp-and-hhv"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-fossil117-ef31-fossil-factors",
+            "relation": "supports",
+            "rationale": "EF 3.1化石资源方法对列入的能量载体统一赋1.00E+00 MJ/MJ。"
+          },
+          {
+            "evidenceId": "ev-fossil117-ef31-ncv-and-mineral-boundary",
+            "relation": "supports",
+            "rationale": "EF 3.1方法与基本流的能量属性UUID定义为净热值（低位热值，MJ）。"
+          },
+          {
+            "evidenceId": "ev-fossil117-rivm-ffp-and-hhv",
+            "relation": "supports",
+            "rationale": "ReCiPe 2016采用高位热值比并舍入给出五种化石燃料的FFP表值。"
+          }
+        ],
+        "premiseIds": [
+          "cl-fossil117-scarcity-energy"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "EF 3.1相关方法与基本流XML的内嵌简述留有“Radioactivity”旧标签文字，核查UUID 93a60a56-a3c8-11da-a746-0800200c9a66对应的流属性定义文件方可确认其为净热值（MJ）。"
+        ],
+        "reasoning": "比较两套热值中点须同时对齐热值性质（LHV对HHV）与表值舍入，故属条件对应而非无条件恒等。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-16",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：将五种燃料热值明细汇总至表 1，正文聚焦高低位热值口径与舍入条件。"
+    },
+    {
+      "id": "cl-fossil117-uranium-boundary",
+      "op": "modify",
+      "from": {
+        "id": "cl-fossil117-uranium-boundary",
+        "text": "更显著的差异出现在类别边界：核能链开采的天然铀究竟算矿产元素，还是算“化石／能量载体”？JRC 的 EF 方法说明记载，原 ADP 模型按质量（kg）给铀因子，但 ILCD 基本流表把铀列入以 MJ 计量的能量载体清单（流分类为地下不可再生能源资源），因此 EF 在能量载体类别中为铀赋予 1 MJ/MJ。核查 EF 3.1 官方方法文件可见，“化石资源使用”共含褐煤、原油、硬煤、天然气、泥炭与铀 6 项输入流，而“矿产与金属资源使用”不含铀。相反，Van Oers 等人在 2020 年论文表注中明确反对欧盟产品环境足迹（PEF）将铀并入化石或能量载体类别，强调铀除供能外另有其他用途，其附表把铀留在元素耗竭中（累计 ADP 约为 0.007823 kg 锑当量/kg，正文表舍入作 7.8×10⁻³）；ReCiPe 2016 同样把铀留在矿产 SOP 表内（短期视角为 35.8、另两组视角为 25.2 kg 铜当量/kg），化石 FFP 表不收铀。若用不同体系比较核电与煤电或气电，仅这一基本流单位与归类选择，就会改变铀资源负担落在“化石”还是“矿产”指标上。",
+        "kind": "interpretation",
+        "scope": "EF与Van Oers 2020元素ADP及ReCiPe 2016矿产SOP在天然铀类别归属上的体系分歧",
+        "evidenceIds": [
+          "ev-fossil117-jrc109369-energy-carriers",
+          "ev-fossil117-ef31-fossil-factors",
+          "ev-fossil117-ef31-ncv-and-mineral-boundary",
+          "ev-fossil117-adp2020-uranium-element",
+          "ev-fossil117-esm1-elements-scope",
+          "ev-fossil117-esm1-uranium",
+          "ev-fossil117-rivm-uranium-sop"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-fossil117-jrc109369-energy-carriers",
+            "relation": "supports",
+            "rationale": "JRC109369明确说明因ILCD流表将铀列入以MJ计量的能量载体而将铀赋1纳入能量载体类别。"
+          },
+          {
+            "evidenceId": "ev-fossil117-ef31-fossil-factors",
+            "relation": "supports",
+            "rationale": "EF 3.1化石方法XML实收uranium流并赋1.00E+00。"
+          },
+          {
+            "evidenceId": "ev-fossil117-ef31-ncv-and-mineral-boundary",
+            "relation": "supports",
+            "rationale": "EF 3.1中uranium流归类为地下不可再生能源资源，且矿产与金属方法XML不含uranium条目。"
+          },
+          {
+            "evidenceId": "ev-fossil117-adp2020-uranium-element",
+            "relation": "supports",
+            "rationale": "Van Oers等2020表3注1明确反对PEF把铀归入化石／能量载体类别。"
+          },
+          {
+            "evidenceId": "ev-fossil117-esm1-elements-scope",
+            "relation": "context",
+            "rationale": "ESM1模型说明区分元素与化石燃料能量含量并界定本工作簿仅更新元素ADP。"
+          },
+          {
+            "evidenceId": "ev-fossil117-esm1-uranium",
+            "relation": "supports",
+            "rationale": "ESM1将铀列为element组并给出累计ADP全精度保存值。"
+          },
+          {
+            "evidenceId": "ev-fossil117-rivm-uranium-sop",
+            "relation": "supports",
+            "rationale": "ReCiPe 2016将铀列入矿产SOP表12.2与经验品位—吨位表S8.1。"
+          }
+        ],
+        "premiseIds": [
+          "cl-mineral115-sop",
+          "cl-fossil117-heating-basis"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "EF 3.1数据集标题保留“Resource use, fossils”字面名称而内含核燃料铀；解释“化石资源”得分前须先核查所包含的基本流。"
+        ],
+        "reasoning": "基本流参考属性（MJ能量或kg元素质量）与用途界定共同决定铀归属哪一影响类别，不能只按类别名称字面推断核电不含“化石资源”得分。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-16",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：保留 JRC 记载与铀累计 ADP 舍入注记，与表 1 联动呈现。"
+    },
+    {
+      "id": "cl-lcia-scenarios-are-choices",
+      "op": "modify",
+      "from": {
+        "id": "cl-lcia-scenarios-are-choices",
+        "text": "路径的位置确定以后，仍需决定把未来看多远、接纳哪些效应证据。ReCiPe2016论文用三组情景组织这些选择：短期、百年以及千年或无限期，并同时改变纳入效应所要求的证据程度。最长情景受底层模型资料限制，也不是每个类别都计算到无限远。这意味着两组情景的差别可能同时来自时间范围和效应取舍，不能一概解释为某个物理参数变了。情景对照的作用，是让这些选择及其影响可见；哪一组适合研究目的，仍须另给理由。",
+        "kind": "interpretation",
+        "scope": "ReCiPe2016论文§2.3的情景分析",
+        "evidenceIds": [
+          "ev-lcia-scenarios-are-choices"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-lcia-scenarios-are-choices",
+            "relation": "supports",
+            "rationale": "所列时间/证据选择及不总为无限的限定均来自该选段；没有把情景命名等同于现实人群或当前科学唯一结论。"
+          }
+        ],
+        "premiseIds": [],
+        "caveats": [
+          "§4.1指出若干类别尚未量化时间/证据选择影响；三组情景不是所有不确定性的完整分布。",
+          "不把2016/2017作者所引的证据接受程度改写为2026现行规范。"
+        ],
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-04",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：一次性统一交代个人主义／等级主义（默认）／平等主义三视角与情景的对应关系。"
+    },
+    {
+      "id": "cl-ozrad121-odp-horizons",
+      "op": "modify",
+      "from": {
+        "id": "cl-ozrad121-odp-horizons",
+        "text": "再把情景时间窗放进平流层臭氧耗竭与电离辐射这两条排放路径，就能看见“看多远”如何直接翻转不同气体的中点次序。EF 3.1 的臭氧耗竭只发布超过百年的无限期稳态 ODP；ReCiPe 2016 表 3.1 与表 3.2 则按每种物质相对于 CFC-11（大气寿命约 45 年）的去除速率，分别给出个人主义（20 年）、等级主义（100 年）和平等主义（无限期）三套中点因子。大气寿命越短的溴代或氯代气体，破坏作用越集中在前几十年：同排 1 kg 时，寿命约 16 年的 Halon-1211 与寿命约 65 年的 Halon-1301 在 ReCiPe 2016 的 20 年窗口下为 15.053 对 11.841 kg CFC-11 当量（前者高约 27%），拉长到 100 年（8.777 对 14.066）与无限期（7.900 对 15.900）后却彻底反转为后者更高。寿命不到 1 年的熏蒸剂溴甲烷在 20 年窗口高达 1.649（超过基准物 CFC-11），到无限期降至 0.660；而寿命逾千年的 CFC-115 则从 20 年的 0.032、100 年的 0.061 升至无限期的 0.570。若进一步比较农业或化工方案甲（排放 1 kg 氧化亚氮）与制冷方案乙（泄漏 0.2 kg HCFC-22）：EF 3.1 因未收氧化亚氮给出 0 对 0.0068 kg CFC-11 当量（0.2×0.034），ReCiPe 2016 的 20 年视角也判甲小于乙（0.007 对 0.2×0.085 = 0.017），但 100 年视角（0.011 对 0.2×0.045 = 0.009）与无限期视角（0.017 对 0.2×0.040 = 0.008）双双反转为氧化亚氮方案更高。即便同样固定在无限期稳态，WMO 评估版本更新也会改变次序：1 kg Halon-1301 与 1 kg Halon-2402 在采用 WMO 2011 的 ReCiPe 2016 平等主义列中为 15.900 大于 13.000，在采用 WMO 2014 的 EF 3.1 中却变成 15.2 小于 15.7。",
+        "kind": "interpretation",
+        "scope": "平流层臭氧耗竭在20年／100年／无限期时间窗、N2O纳排及WMO 2011与2014版本之间的受控排序反转证明。",
+        "evidenceIds": [
+          "ev-ozrad121-ef31-odp-xml",
+          "ev-ozrad121-rivm-ch3-odp-tables"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-ozrad121-ef31-odp-xml",
+            "relation": "supports",
+            "rationale": "提供EF 3.1（WMO 2014）无限期HCFC-22=0.034、Halon-1301=15.2、Halon-2402=15.7及无N2O实测值。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-rivm-ch3-odp-tables",
+            "relation": "supports",
+            "rationale": "提供ReCiPe 2016表3.2在20/100/无限期下的Halon-1211、Halon-1301、Halon-2402、CH3Br、CFC-115、HCFC-22与N2O*表值。"
+          }
+        ],
+        "premiseIds": [
+          "cl-ozrad121-reference-scope",
+          "cl-lcia-scenarios-are-choices"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "方案甲（1 kg N2O）与方案乙（0.2 kg HCFC-22）是用于检验因子表代数次序的受控排放对，不代表完整农业或制冷产品系统的全部清单交换；N2O的ODP在原报告中明确标为初步估计（preliminary）。"
+        ],
+        "reasoning": "当不同物质的大气寿命跨度从不足1年到逾千年且N2O纳排不一时，选择20年、100年或无限期以及不同WMO评估版次必然改变相对权重与方案排序。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-17",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：将卤代烃数值明细移入表 2，将氧化亚氮与 WMO 版本对照拆入独立新段。"
+    },
+    {
+      "id": "cl-ozrad121-reference-scope",
+      "op": "modify",
+      "from": {
+        "id": "cl-ozrad121-reference-scope",
+        "text": "即便停在中点，同叫“臭氧耗竭”或同源出自同一套核燃料循环剂量模型，也不等于不同体系只差一个固定换算系数。在平流层臭氧耗竭中，ILCD 2011（沿用 WMO 1999）、EF 3.0/3.1（升级为 WMO 2014 稳态值并整合补充项）与 ReCiPe 2016（采用 WMO 2011）都用 kg CFC-11 当量表示中点。但 ReCiPe 2016 原始表征报告（RIVM 2016-0104，早于 2017 年发表的方法综述论文）表 3.2 按个人主义（短期 20 年）、等级主义（基准 100 年）和平等主义（长期预防，此处取无限期）三列，额外纳入了不属卤代烃的氧化亚氮（N₂O，原表标星号列为初步估计，三列依次为 0.007、0.011、0.017 kg CFC-11 当量/kg）；而 EF 3.1 官方臭氧耗竭方法数据集完全未收氧化亚氮——同一个氧化亚氮空气流在同包气候变化方法中赋 273.0 kg CO₂ 当量/kg，在臭氧耗竭中却没有任何条目。在电离辐射中，EF 3.1 官方电离辐射数据集沿用“相对铀-235 的人体暴露效率”（kBq U-235 当量/kBq），ReCiPe 2016 表 4.2 则改以 1 kBq 钴-60 排入空气的集体剂量为参照（kBq Co-60 排入空气当量/kBq）。在 Frischknecht 等人 2000 年原 10 万年集体剂量下，铀-235 与钴-60 排入空气的比值为 14∶11，故 EF 3.1 中铀-235 排入空气为 1.0、钴-60 排入空气为 0.786，乘 14/11（约 1.273）恰好对应 ReCiPe 2016 平等主义（10 万年）列的铀-235 空气因子 1.27，以及钴-60 淡水（2.07 对 2.64）、铯-134 空气（0.564 对 0.718）、氡-222 空气（0.00114 对 0.00145）等短寿命核素。然而同一核素排入不同环境介质时暴露效率悬殊：EF 3.1 中 1 kBq 铯-137 排入淡水为 7.86、排入空气为 0.636、排入海水仅 0.00371 kBq U-235 当量（ReCiPe 2016 等级主义与平等主义列依次为 10.0、1.64、0.00582），在 EF 3.1 中淡水与海水相差逾两千倍（ReCiPe 2016 中亦逾 1700 倍）；反过来，以气态二氧化碳形式参与全球光合作用的碳-14 排入空气高达 10.0 kBq U-235 当量/kBq，排入淡水或海水却只有 0.0557。核查结果前，必须先对齐物质纳排、参照核素与排放去向。",
+        "kind": "interpretation",
+        "scope": "臭氧耗竭中N2O纳排差异、电离辐射中U-235与Co-60的14∶11集体剂量基准换算关系，以及同一核素跨空气／淡水／海水介质的数量级差异。",
+        "evidenceIds": [
+          "ev-ozrad121-ef31-odp-xml",
+          "ev-ozrad121-ef31-ir-xml",
+          "ev-ozrad121-rivm-ch3-odp-tables",
+          "ev-ozrad121-rivm-ch4-ir-tables"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-ozrad121-ef31-odp-xml",
+            "relation": "supports",
+            "rationale": "实测EF 3.1 b5c629d6.xml完全不含nitrous oxide，而同一流UUID在6209b35f.xml中为273.0 kg CO2 eq/kg。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-ef31-ir-xml",
+            "relation": "supports",
+            "rationale": "实测EF 3.1 b5c632be.xml中U-235空气=1.0、Co-60空气=0.786/淡水=2.07、Cs-134空气=0.564、Rn-222空气=0.00114，以及Cs-137（7.86/0.636/0.00371，淡水/海水2118.6倍）与C-14（10.0/0.0557）介质对比。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-rivm-ch3-odp-tables",
+            "relation": "supports",
+            "rationale": "RIVM 2016-0104表3.2将初步估计N2O*（0.007/0.011/0.017）列入平流层臭氧耗竭中点表。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-rivm-ch4-ir-tables",
+            "relation": "supports",
+            "rationale": "RIVM 2016-0104表4.2给出Co-60空气参照下的U-235（E列1.27）、Co-60淡水（2.64）、Cs-134（0.718）、Rn-222（0.00145）与Cs-137（10.0/1.64/0.00582，淡水/海水1718.2倍）。"
+          }
+        ],
+        "premiseIds": [
+          "cl-ozrad121-emission-midpoint"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "14/11比例仅在两体系共享Frischknecht等2000同一时间积分且未更新剂量模型的核素条目上成立；一旦改变积分时间窗、核素覆盖或采用De Schryver等2011修订值，该比例即不再通用。"
+        ],
+        "reasoning": "先展示共享Frischknecht 2000底数时的14∶11精确对应，再引入N2O纳排与水气介质差异，为下一节时间窗截断导致的次序反转奠定基准。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-17",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "移至第二节并明确 14/11 换算仅适用于共享 Frischknecht 2000 且未重算的条目，消除固定换算误解。"
+    },
+    {
+      "id": "cl-ozrad121-ir-horizons",
+      "op": "modify",
+      "from": {
+        "id": "cl-ozrad121-ir-horizons",
+        "text": "电离辐射的集体剂量积分期更把时间选择拉长到十万年尺度，并直接牵动核燃料前端核素是否计分。EF 3.1 方法文件虽将时间字段标作“与时间无关”（time independent），其对碳-14、碘-129 等全球扩散长寿命核素沿用的却是 Frischknecht 等人 10 万年积分结果；ReCiPe 2016 表 4.1 与表 4.2 则显式切分为 20 年（个人主义）、100 年（等级主义）和 100,000 年（平等主义）。比较同向空气排放 1 kBq 碳-14（半衰期约 5730 年）与 1 kBq 铯-137（半衰期约 30 年）：在 EF 3.1（10.0 对 0.636 kBq U-235 当量）和 ReCiPe 2016 的 100,000 年视角（12.9 对 1.64 kBq Co-60 排入空气当量）下，碳-14 分别是铯-137 的约 15.7 倍与约 7.87 倍；一旦把积分上限截断到 100 年（1.15 对 1.64）或 20 年（0.614 对 1.27），碳-14 绝大部分后续剂量落在窗口之外，排序立刻倒转为铯-137 更高。半衰期逾千万年的碘-129 跳变尤为剧烈：在 ReCiPe 2016 中，100 年与 100,000 年之间的空气因子从 10.5 升至 207，淡水因子更从 0.287 跃升至 155（约 540 倍），且与 EF 3.1 按 14/11 折算的空气 56.4、淡水 5.99 显著不同，反映 De Schryver 等人 2011 年还重算了部分核素的迁移暴露结果。更需警惕的是表 4.2 及其脚注 a 呈现的覆盖缺口：铀矿采冶与尾矿库特征核素铀-234、铀-235、铀-238、钍-230（脚注 a 明示与 α 钚、α 锔一并按 Frischknecht 等人 2000 年结果换算），连同同样未提供短中期值的镭-226 和钚-238，在 ReCiPe 2016 中只填入平等主义（100,000 年）一列（空气铀-235 为 1.27、铀-238 为 0.491、铀-234 为 5.82、钍-230 为 2.73、镭-226 为 0.0545），个人主义与默认等级主义两列全部留空。连 EF 3.1 的参照核素铀-235 在 ReCiPe 默认 100 年表中都没有因子，而 EF 3.1 对上述五种空气排放均赋非零值（1.0、0.386、4.57、2.14、0.0429）；反过来，ReCiPe 2016 收录的锝-99 与空气锶-90 在 EF 3.1 中缺失（EF 3.1 仅含水体锶-90 因子 1.93×10⁻⁴）。不查核素覆盖就套用默认 100 年视角，会把尾矿长寿命 α 核素排放静默算成零。",
+        "kind": "interpretation",
+        "scope": "电离辐射在20年／100年／100,000年集体剂量积分期下的C-14与Cs-137排序反转、I-129跳变，以及ReCiPe 2016表4.2及注a在I/H视角下对铀系及超铀核素留空的覆盖边界。",
+        "evidenceIds": [
+          "ev-ozrad121-ilcd2011-ir",
+          "ev-ozrad121-ef31-ir-xml",
+          "ev-ozrad121-rivm-ch4-ir-tables"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-ozrad121-ilcd2011-ir",
+            "relation": "context",
+            "rationale": "ILCD 2011 §3.5.3指出H-3、C-14、Kr-85、I-129全球暴露按100,000年与100年计算且不确定性超过一个数量级。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-ef31-ir-xml",
+            "relation": "supports",
+            "rationale": "提供EF 3.1 b5c632be.xml中C-14=10.0、Cs-137=0.636、I-129=44.3/4.71、铀系核素非零值及缺Tc-99/空气Sr-90实测事实。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-rivm-ch4-ir-tables",
+            "relation": "supports",
+            "rationale": "提供ReCiPe 2016表4.2在三视角下的C-14、Cs-137、I-129、Tc-99、Sr-90表值及表4.2与脚注a仅在E列给出铀系与超铀核素的规定。"
+          }
+        ],
+        "premiseIds": [
+          "cl-ozrad121-reference-scope",
+          "cl-lcia-scenarios-are-choices"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "即使在100,000年平等主义视角下，原报告也指出该积分期相较铀-235（半衰期7.1×10^8年）等超长寿命核素仍然很短，不能误读为全部衰变链无限期完全积分。"
+        ],
+        "reasoning": "同时揭示时间截断对C-14/I-129的量级压缩与表4.2在I/H列留空铀系核素的结构性缺口，解释为何核能链评价在EF 3.1与ReCiPe默认H视角之间会出现巨大偏差。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-17",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：将电离辐射中点因子整理为纯单位表 3，保留碘-129 折算对照、表 4.2 脚注 a 与水体锶-90 细节。"
+    },
+    {
+      "id": "cl-ozrad121-endpoint-choices",
+      "op": "modify",
+      "from": {
+        "id": "cl-ozrad121-endpoint-choices",
+        "text": "从中点继续算到人类健康终点时，疾病证据门槛、低剂量外推系数与全球普适假设又一并写进了视角转换常数。ReCiPe 2016 在单一视角内部对两条路径都采用固定正转换系数：臭氧耗竭表 3.3 在个人主义、等级主义、平等主义下依次乘 2.37×10⁻⁴、5.31×10⁻⁴ 与 1.34×10⁻³ DALY/kg CFC-11 当量（改掉了 ILCD 2011 第 3.2.7 节批评过的 ReCiPe 2008 按 6 个物质亚组分别赋损害因子的做法），前两组只计恶性黑色素瘤、基底细胞癌与鳞状细胞癌三类皮肤癌，仅平等主义纳入紫外暴露证据尚有争议的白内障。电离辐射表 4.1 与表 4.3 则依次乘 6.8×10⁻⁹、8.5×10⁻⁹ 与 1.4×10⁻⁸ DALY/kBq Co-60 排入空气当量：模型把广岛、长崎及职业中高剂量研究得出的每 man·Sv 0.05 例致死癌与 0.12 例非致死癌分别除以剂量与剂量率效能因子（DDREF）10、6 与 2，按视角把计入癌症部位从 4 类（甲状腺、骨髓、肺、乳腺）扩至 11 类再到包含骨表面癌与其余癌症的 13 项，并加上每 man·Sv 0.01 例严重遗传疾病（原报告按半数即刻死亡、半数伤残权重 0.4 计每例 57 DALY，而 ILCD 2011 引述无年龄加权为每例 61 DALY）。在同一固定视角内，乘一个正常数不会改变该视角已定的中点物质次序；但跨视角比较时，中点时间窗、核素覆盖与终点疾病及 DDREF 同时变动，终点差值不能归结为单一物理参数。空间尺度同样受限：无论是 Hayashi 等人按 10 度纬度带与未反映现代人口迁徙的原住民肤色分布估算紫外健康效应，还是 Dreicer 与 Frischknecht 由法国核设施外推全球并假设未来 10 万年世界人口恒为 100 亿，得到的都是无空间分异的全球缺省潜势，不能替代具体核设施周边剂量限值核定或局地紫外公共卫生评估。",
+        "kind": "interpretation",
+        "scope": "ReCiPe 2016在臭氧耗竭与电离辐射终点转换系数中捆绑的疾病范围、DDREF与遗传病DALY选择，以及同视角保序性与全球位点普适假设的空间边界。",
+        "evidenceIds": [
+          "ev-ozrad121-ilcd2011-odp",
+          "ev-ozrad121-ilcd2011-ir",
+          "ev-ozrad121-rivm-ch3-odp-tables",
+          "ev-ozrad121-rivm-ch4-ir-tables"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-ozrad121-ilcd2011-odp",
+            "relation": "supports",
+            "rationale": "提供ILCD 2011关于ReCiPe 2008分6亚组与原住民肤色分布未反映人口迁移的对照。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-ilcd2011-ir",
+            "relation": "supports",
+            "rationale": "提供ILCD 2011关于法国核设施推广为无空间分异全球评估及每例严重遗传病61 DALY的对照。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-rivm-ch3-odp-tables",
+            "relation": "supports",
+            "rationale": "提供表3.1与表3.3的三视角皮肤癌/白内障范围、10度带与肤色分层建模及2.37E-04/5.31E-04/1.34E-03转换系数。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-rivm-ch4-ir-tables",
+            "relation": "supports",
+            "rationale": "提供表4.1与表4.3的DDREF=10/6/2、4/11/13项致癌谱、100亿恒定人口假设、每例遗传病57 DALY及6.8E-09/8.5E-09/1.4E-08转换系数。"
+          }
+        ],
+        "premiseIds": [
+          "cl-lcia-global-is-not-site-specific",
+          "cl-ozrad121-odp-horizons",
+          "cl-ozrad121-ir-horizons"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "57 DALY/case与61 DALY/case的差异反映不同伤残权重或寿命表设定，正印证了ILCD 2011因遗传效应DALY高度不确定而拒绝在终点层给出正式推荐的判断。"
+        ],
+        "reasoning": "把单视角正常数保序、跨视角中终点双层联动以及全球缺省空间假设三件事拆清，回应第二节“时间、证据和地点怎样进入结果”的核心问题。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-17",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：聚焦健康终点系数与疾病模型，将跨视角与空间限制拆入独立新段。"
+    },
+    {
+      "id": "cl-land111-horizon",
+      "op": "modify",
+      "from": {
+        "id": "cl-land111-horizon",
+        "text": "技术章在式11.18中计算弃用后前100年的核心贡献，邻近文字另说明核心部分与其后部分相加，得到完整恢复期的贡献。这里的100年从停止人类土地使用后起算，不是从开始占地起算，也不把前面的占用清单一并截短。若模型恢复在100年以内结束，核心部分已经包括全部恢复贡献；若更久，式中仍计算前100年内的贡献，并未把窗口外的曲线改成零，其后贡献另计。因此，选用100年窗口没有把模型改成“第100年生态系统一定恢复”。这是原式的时间处理，不是对某处土地恢复速度的观察。",
+        "kind": "interpretation",
+        "scope": "LC技术章式11.18的核心时间范围及邻文尾部关系",
+        "evidenceIds": [
+          "ev-land111-lc-cutoff"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-land111-lc-cutoff",
+            "relation": "supports",
+            "rationale": "明确的100年／完整恢复关系与分支是解释依据；任意H与控制关系由作者在明示条件下推导。"
+          }
+        ],
+        "premiseIds": [
+          "cl-land111-episode",
+          "cl-land111-pathway"
+        ],
+        "conceptIds": [],
+        "caveats": [
+          "技术章同页“Level of robustness”的括注将core简写为t_reg≤100；这里依据式11.18明确列出的t_reg>100分支和相邻“Time horizon”说明，不把慢恢复分层排除。尚无已核正式更正可用于消除此原文差异。"
+        ],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-15",
+        "reasoning": "以明确公式分支及邻近Time horizon说明为据，保留同页robustness括注冲突；不把核心窗口误作生态恢复时间。"
+      },
+      "rationale": "合并原相邻段落，统一说明 LC-IMPACT 指标身份与百年恢复窗口。"
+    },
+    {
+      "id": "cl-land111-integral",
+      "op": "modify",
+      "from": {
+        "id": "cl-land111-integral",
+        "text": "若只计H≥0年，令u为H与T中较小者，缺口曲线下的面积就是c[u−u²/(2T)]；完整面积为cT/2。两者的单位都是区域物种损失·年/m²，表示每平方米的累计恢复缺口。再乘相应土地面积，才得到这一分层的恢复贡献；因此不能把公式中的积分面积与清单里的土地面积当成同一项。这里把H写成变量只是解释算式，原技术章的核心窗口取100年，并不由此推出任意H的官方因子已经发布。",
+        "kind": "calculation",
+        "scope": "一个固定分层中重现原时间分支的作者积分表达",
+        "evidenceIds": [
+          "ev-land111-lc-full-recovery",
+          "ev-land111-lc-cutoff"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-land111-lc-full-recovery",
+            "relation": "supports",
+            "rationale": "原式11.8及应用说明提供全恢复期关系、每面积因子与两种清单量义。"
+          },
+          {
+            "evidenceId": "ev-land111-lc-cutoff",
+            "relation": "supports",
+            "rationale": "明确的100年／完整恢复关系与分支是解释依据；任意H与控制关系由作者在明示条件下推导。"
+          }
+        ],
+        "premiseIds": [
+          "cl-land111-episode",
+          "cl-land111-horizon",
+          "cl-land111-factor-scale"
+        ],
+        "conceptIds": [],
+        "caveats": [],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-15",
+        "reasoning": "以同一每面积因子与恢复历时表示原线性面积关系，推广H是作者解释，不是官方任意时窗因子或实测恢复。"
+      },
+      "rationale": "合并原相邻段落 为一段完整时间截断检验。"
+    },
+    {
+      "id": "cl-land111-aggregation",
+      "op": "modify",
+      "from": {
+        "id": "cl-land111-aggregation",
+        "text": "这种截断通常也不能由一个通用比例完成。恢复历时不同，各分层在前100年保留的比例就可能不同，应先按相应历时计算，再以一致的范围和权重汇总；先把历时平均再代入，通常是另一种运算。恢复部分的保留比例，也不能直接用作包含占用部分的总结果比例。c非负时，核心贡献在零与全期贡献之间；若c为负，数值大小关系就反向，不能套用同一不等式。原章表11.1的一些低分位数为负，这不足以判定某个地块获得净生态收益。仅凭分别报告的核心和全期分位数，也不能确定尾部的相应分位数；须取得或建立两者的联合关系，再按相互对应的结果计算差值。固定的ReCiPe系数k无法决定LC-IMPACT排除了哪段时间，更不是补回尾部的规则。",
+        "kind": "synthesis",
+        "scope": "分层时间截断、汇总与符号的不同职责",
+        "evidenceIds": [
+          "ev-land111-lc-aggregation",
+          "ev-land111-lc-cutoff",
+          "ev-land111-rivm-conversion"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-land111-lc-aggregation",
+            "relation": "qualifies",
+            "rationale": "原分层、汇总及有符号分位数限定统一比例和非负解释的外推。"
+          },
+          {
+            "evidenceId": "ev-land111-lc-cutoff",
+            "relation": "supports",
+            "rationale": "明确的100年／完整恢复关系与分支是解释依据；任意H与控制关系由作者在明示条件下推导。"
+          },
+          {
+            "evidenceId": "ev-land111-rivm-conversion",
+            "relation": "supports",
+            "rationale": "§11.4及表11.2规定占用和恢复使用同一正换算关系及终点单位。"
+          }
+        ],
+        "premiseIds": [
+          "cl-land111-conversion",
+          "cl-land111-integral",
+          "cl-land111-countercheck"
+        ],
+        "conceptIds": [],
+        "caveats": [],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-15",
+        "reasoning": "由逐层T的非线性时间权重及固定k区别作有条件综合；负分位数不证明真实地块受益，独立分位数也不构成联合尾部分布。"
+      },
+      "rationale": "整合改写：明确“放宽 c ≥ 0 假定”并加“LC-IMPACT 土地技术章表 11.1”前缀。"
+    },
+    {
+      "id": "cl-mineral115-reserves",
+      "op": "modify",
+      "from": {
+        "id": "cl-mineral115-reserves",
+        "text": "回到矿产SOP，未来矿石需求还取决于把多少资源纳入未来开采范围。原报告的短期情景采用当时价格与技术条件下可经济开采的储量，另两组情景采用最终可采资源量；后者按其引用的假设，取地下 3 km 范围内总量的 0.01%。它是对未来开采上限的估计，不是一个确定的枯竭年份，也不是 ADP 中那份地质存量。用不同开采上限对曲线取平均，可能改变因子；铜在各自的归一化结果中仍以 1 作为参照。因此，“看多远”在这里首先落实为未来开采多少，不能直接套用土地恢复例中的百年时间窗。",
+        "kind": "interpretation",
+        "scope": "SOP未来开采上限与归一化情景的含义",
+        "evidenceIds": [
+          "ev-mineral115-rivm-sop-method",
+          "ev-mineral115-scp-sample-boundary"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-mineral115-rivm-sop-method",
+            "relation": "supports",
+            "rationale": "原报告将经济储量R用于Individualist，URR用于Hierarchist/Egalitarian；URR假设为至3 km总量的0.01%。"
+          },
+          {
+            "evidenceId": "ev-mineral115-scp-sample-boundary",
+            "relation": "qualifies",
+            "rationale": "原SCP的R与URR分别列示，不能以同名情景推定铜等所有取值相同。"
+          }
+        ],
+        "premiseIds": [
+          "cl-mineral115-sop",
+          "cl-land111-horizon"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "此处短期指原报告Individualist情景的相对框架，不给出固定年数。改变绝对开采上限不保证每个铜归一化因子变化；铜在两栏都是1。"
+        ],
+        "reasoning": "土地的时间窗与资源的累计开采量上限不是可直接互换的轴；情景可能改变因子，不能说必然改变每项因子。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-16",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：删去“回到矿产”硬过渡，统一个人主义／等级主义／平等主义情景名。"
+    },
+    {
+      "id": "cl-fossil117-scenario-proxy",
+      "op": "modify",
+      "from": {
+        "id": "cl-fossil117-scenario-proxy",
+        "text": "化石资源的终点情景设定，也与矿产 SOP 不同。原 2016 年 ReCiPe 报告第 13 章假设开采费用最低的化石燃料先被采出，例如常规原油耗尽后转向强化采油或北极等高成本产区，并对全部预期未来产量取无折现的平均额外费用，形成按 2013 年不变美元计的终点指标额外费用潜势（Surplus Cost Potential，SCP）。前文提到的短期、基准与长期预防三组情景，在该报告中依次对应个人主义、等级主义与平等主义三种文化视角。作者在第 13.2 节写明化石资源在中点与终点均不设视角差异：原油、硬煤和天然气采用国际能源署（IEA）2013 年报告中的最大未来产量估计，三列共用同一套终点因子。但翻到表 13.2，褐煤与泥炭因缺少产量和成本资料，在个人主义与等级主义两列留空，在平等主义一列则依“预防角度”直接借用硬煤因子（0.034 USD2013/kg）。可见即便模型没有改变时间窗或储量上限，情景列之间仍会因缺资料时的代理规则而改变覆盖范围。",
+        "kind": "interpretation",
+        "scope": "RIVM 2016-0104第13章化石终点SCP假设、三视角同值范围与褐煤／泥炭平等主义代理",
+        "evidenceIds": [
+          "ev-fossil117-rivm-scp-endpoint",
+          "ev-fossil117-rivm-scp-curve-discrepancy"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-fossil117-rivm-scp-endpoint",
+            "relation": "supports",
+            "rationale": "最低成本先开采假设、§13.2无价值选择声明及表13.2褐煤／泥炭仅在E列采用硬煤代理。"
+          },
+          {
+            "evidenceId": "ev-fossil117-rivm-scp-curve-discrepancy",
+            "relation": "supports",
+            "rationale": "§24.2说明原油、天然气与硬煤未来产量取IEA 2013最大未来产量估计。"
+          }
+        ],
+        "premiseIds": [
+          "cl-lcia-scenarios-are-choices",
+          "cl-mineral115-reserves"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "表13.2中个人主义与等级主义对褐煤和泥炭留空，表示因缺资料未显式计算终点因子，不能把空白解释为已证实未来开采费用无增量。"
+        ],
+        "reasoning": "显式对齐三种文化视角与前文三组情景，对照正文“不设价值选择”与表注预防性代理，说明情景差异还可来自缺失资料的补缺约定。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-16",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：统一加 RIVM 2016-0104 报告章节与表号前缀。"
+    },
+    {
+      "id": "cl-lcia-model-data-factor-separation",
+      "op": "modify",
+      "from": {
+        "id": "cl-lcia-model-data-factor-separation",
+        "text": "同一名称可以指所用模型，也可以指输入资料的来源。两者在一项计算中的作用需要分清。ReCiPe2016论文的毒性计算以USES-LCA2.0为基础，使用了USEtox的物质数据；作者特别说明，这不等于实现USEtox模型。模型给出物质怎样迁移、接触并形成效应的关系，输入资料为这些关系提供参数，发行因子表则保存某组条件下算出的结果。借用相同资料，并不使公式或情景相同；同用一个方法名，也还需查明实际采用哪份因子。解释一项结果时，要说明模型估计了哪种后果，又用哪些关系和资料算出这一结果。下一章从气体排放和气候响应的关系讲起。",
+        "kind": "interpretation",
+        "scope": "该论文的毒性实现与文献/数据/因子载体区分",
+        "evidenceIds": [
+          "ev-lcia-model-data-factor-separation"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-lcia-model-data-factor-separation",
+            "relation": "supports",
+            "rationale": "§3.1.8明确给出模型与数据的不同身份；据此解释同名数据不能证明同模型，是直接受该例约束的推论。"
+          }
+        ],
+        "premiseIds": [
+          "cl-lcia-midpoint-pathway"
+        ],
+        "caveats": [
+          "方法论文不替代因子表、数据库或软件实现的独立验证；原始论文、RIVM2016 报告及 2017v1.1 更新仍有各自版本。",
+          "这个历史实施选择不证明后来 USEtox 缺乏某项能力。"
+        ],
+        "reasoning": "同一明确实例同时出现USES-LCA模型和USEtox输入数据，因而数据来源名称不足以确定模型；因子文件另有载体，核读论文不能替代实施核验。",
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-04",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "移至第三节首段作为“模型—资料—因子”三层框架，移除原章末预告句。"
+    },
+    {
+      "id": "cl-fossil117-equal-midpoint",
+      "op": "modify",
+      "from": {
+        "id": "cl-fossil117-equal-midpoint",
+        "text": "土地恢复附表反映的是“模型规定了固定换算系数，但个别印表行与公式失合”；对照化石资源已发表的中点与终点表值，看到的则是另一种情形——两层指标之间原本就不存在常数的中点—终点转换因子。按表 13.1，开采 1 kg 原油、约 1.190 Nm³ 天然气（1/0.84）或约 2.381 kg 硬煤（1/0.42），中点结果同样是 1 kg 油当量。再乘表 13.2 对各燃料分别拟合的终点因子——原油 0.457 USD2013/kg、天然气 0.301 USD2013/Nm³、硬煤 0.034 USD2013/kg——这三笔等热值开采对应的终点额外费用分别约为 0.457、0.358 和 0.081 USD2013，原油约为硬煤的 5.6 倍（即便改用附表未舍入的高位热值比 45.8/38.3 与 45.8/19.1 折算开采量，天然气与硬煤仍分别约为 0.360 与 0.0815 USD2013，悬殊依旧）。原因不在舍入，而在模型换了问题：中点比较燃料所含热量，终点则按原油、天然气和硬煤各自的储量规模与成本—累计产量曲线估计采出难度。两条物理与经济关系并不同步，任何单一正倍率都无法把相同的 kg 油当量映射成这组终点费用。",
+        "kind": "calculation",
+        "scope": "ReCiPe 2016内相同1 kg oil-eq中点输入在原油、天然气、硬煤间的终点SCP分叉验算",
+        "evidenceIds": [
+          "ev-lcia-mid-end-conversion-limits",
+          "ev-fossil117-rivm-ffp-and-hhv",
+          "ev-fossil117-rivm-scp-endpoint"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-lcia-mid-end-conversion-limits",
+            "relation": "supports",
+            "rationale": "ReCiPe 2016论文明确指出化石资源未建立常数中点—终点因子。"
+          },
+          {
+            "evidenceId": "ev-fossil117-rivm-ffp-and-hhv",
+            "relation": "supports",
+            "rationale": "表13.1与表S9.1提供原油、天然气、硬煤的中点FFP及原始高位热值。"
+          },
+          {
+            "evidenceId": "ev-fossil117-rivm-scp-endpoint",
+            "relation": "supports",
+            "rationale": "表13.2提供三种燃料各自的终点SCP（USD2013）因子。"
+          }
+        ],
+        "premiseIds": [
+          "cl-lcia-mid-end-conversion-limits",
+          "cl-fossil117-heating-basis",
+          "cl-fossil117-scenario-proxy"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "1/0.84 Nm³与1/0.42 kg是为固定中点等于1 kg oil-eq而构造的受控输入，不代表电厂或锅炉中1 MJ不同燃料具有相同的发电或供热效率。"
+        ],
+        "reasoning": "对表13.1中点因子取倒数得到同为1 kg oil-eq的燃料量，再与表13.2终点因子逐燃料相乘：0.457×1=0.457，0.301/0.84=0.35833...，0.034/0.42=0.08095...；未舍入热值比45.8/38.3×0.301=0.3599425...，45.8/19.1×0.034=0.0815287...，证明不存在公共转换常数。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-16",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：统一加 RIVM 2016-0104 报告表号前缀，删去与土地附表的生硬过渡。"
+    },
+    {
+      "id": "cl-fossil117-proxy-consequence",
+      "op": "modify",
+      "from": {
+        "id": "cl-fossil117-proxy-consequence",
+        "text": "把褐煤与泥炭放进同一比较，还能看见代理规则怎样改变等热值次序。按表 13.1 的 0.22 kg 油当量/kg 计算，要凑足同样的 1 kg 油当量中点，需要开采约 4.545 kg（1/0.22）褐煤或泥炭。在个人主义和等级主义视角下，这笔中点负担因缺少终点因子而不在资源终点中计分；转到平等主义视角，表 13.2 把硬煤的 0.034 USD2013/kg 直接按每千克质量套用到褐煤和泥炭上，并未按两者较低的热值（9.9 对 19.1 MJ-eq/kg）折减，结果同一 1 kg 油当量的褐煤或泥炭在终点变为约 0.155 USD2013（0.034/0.22），约为同热值硬煤（约 0.081 USD2013）的 1.9 倍。这里的美元同样只是模型设定的未来额外开采成本代理，既不包括燃料燃烧排出的温室气体（见后文关于气候响应与气候当量的讨论），也不等于电厂转换损失或企业当期购煤支出。",
+        "kind": "calculation",
+        "scope": "褐煤与泥炭在I/H缺省与E按每kg借用硬煤代理时对同1 kg oil-eq比较的定量后果及跨章边界",
+        "evidenceIds": [
+          "ev-fossil117-rivm-ffp-and-hhv",
+          "ev-fossil117-rivm-scp-endpoint"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-fossil117-rivm-ffp-and-hhv",
+            "relation": "supports",
+            "rationale": "褐煤与泥炭FFP均为0.22 kg oil-eq/kg，对应高位热值9.9 MJ-eq/kg，低于硬煤19.1 MJ-eq/kg。"
+          },
+          {
+            "evidenceId": "ev-fossil117-rivm-scp-endpoint",
+            "relation": "supports",
+            "rationale": "表13.2在I/H留空而在E对每kg褐煤与泥炭直接赋硬煤值0.034 USD2013/kg。"
+          }
+        ],
+        "premiseIds": [
+          "cl-lcia-endpoint-units",
+          "cl-fossil117-equal-midpoint"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "0.155 USD2013高于硬煤0.081 USD2013完全源于“按质量借用硬煤因子而按热值归一”的代理构造，不能解释为已观测到褐煤未来采出成本斜率高于硬煤。"
+        ],
+        "reasoning": "对1 kg oil-eq褐煤或泥炭需1/0.22=4.54545... kg，乘E列代理因子0.034 USD2013/kg得0.15454... USD2013，与同热值硬煤0.034/0.42=0.08095... USD2013之比为0.42/0.22=1.90909...。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-16",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：统一报告表号前缀，保留代理限定与气候章节指引。"
+    },
+    {
+      "id": "cl-mineral115-cost-proxy",
+      "op": "modify",
+      "from": {
+        "id": "cl-mineral115-cost-proxy",
+        "text": "若进一步把矿石需求写成费用，单有铜当量还不够。原 ReCiPe 报告在这组情景下为所有矿产采用同一换算系数 0.23 USD2013/kg 铜当量。按所报 SOP 乘算，铜、镍、锰的未来额外费用因子分别为 0.23、约 0.665 和约 0.0189 USD2013/kg 开采元素；对各 1 kg 的输入，各结果的数值与对应因子相同，单位变为 USD2013，这与前面土地例中的固定系数关系一样，排序仍与 SOP 一致。USD2013 表示固定的 2013 年币值，不是说这笔钱在 2013 年已经支付。报告借助价格与矿石需求、费用的回归关系，近似以一个公共比率连接两类量。这个公共比率是一项模型选择；把单位写成货币，并不会自动增加每种金属各自的费用机制。",
+        "kind": "calculation",
+        "scope": "原2016 H/E统一铜费用率与本书按显示值乘算",
+        "evidenceIds": [
+          "ev-mineral115-sop-he-cu",
+          "ev-mineral115-sop-he-ni",
+          "ev-mineral115-sop-he-mn",
+          "ev-mineral115-conversion-he",
+          "ev-mineral115-rivm-money-proxy"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-mineral115-sop-he-cu",
+            "relation": "supports",
+            "rationale": "铜所选原行提供本段比较的实际数值、情景及单位。"
+          },
+          {
+            "evidenceId": "ev-mineral115-sop-he-ni",
+            "relation": "supports",
+            "rationale": "镍所选原行提供本段比较的实际数值、情景及单位。"
+          },
+          {
+            "evidenceId": "ev-mineral115-sop-he-mn",
+            "relation": "supports",
+            "rationale": "锰所选原行提供本段比较的实际数值、情景及单位。"
+          },
+          {
+            "evidenceId": "ev-mineral115-conversion-he",
+            "relation": "supports",
+            "rationale": "表12.3的H/E公共费用系数0.23 USD2013/kg Cu eq。"
+          },
+          {
+            "evidenceId": "ev-mineral115-rivm-money-proxy",
+            "relation": "supports",
+            "rationale": "§12.4与§23.2解释借助价格回归的公共转换，并保留其近似条件。"
+          }
+        ],
+        "premiseIds": [
+          "cl-land111-conversion",
+          "cl-mineral115-rank"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "本书按原印表显示值计算1×0.23＝0.23、2.89×0.23＝0.6647、0.0823×0.23＝0.018929；正文后两项舍入。没有以此声称读取了官方端点发行工作簿或执行软件。",
+          "原表12.3将分母简写为kg Cu，§12.4的转换定义以kg Cu eq为分母。USD2013是币值年，不是发生年份或现时购买价格；这些是未来费用指标，不是矿山实付成本。"
+        ],
+        "reasoning": "公共正转换保留所选SOP排序；货币维度不自行提供逐金属费用机制。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-16",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：回指第一节固定倍率保序结论，压缩重复论证。"
+    },
+    {
+      "id": "cl-mineral115-metal-cost",
+      "op": "modify",
+      "from": {
+        "id": "cl-mineral115-metal-cost",
+        "text": "逐种金属拟合的费用指标，在这些结果中给出不同的排序。Vieira 等人 2016 年的研究采用已按产值分摊共同生产费用的数据，按每千克目标金属的采选运营费用排列矿山，再分别拟合各金属的费用—吨位关系，依设定的未来开采范围取平均，构造被作者解释为当前每开采 1 kg 元素对应的未来额外采选费用指标。其最终可采资源情景对铜、镍、锰分别报告 0.744、5.62 和 4.42 USD2013/kg。镍仍高于铜，锰却从低于铜变为高于铜。一个共同的正倍率不能同时重建这两组铜、锰次序。这表明，保留矿石指标排序的费用换算，与逐金属拟合得到的费用指标并不等同；两份估计的资料、曲线和计算办法同时不同，不能把差别只归因于逐金属拟合，也不能据此证明后者已经准确预测了实际未来费用。",
+        "kind": "synthesis",
+        "scope": "所选原SCP与ReCiPe费用代理的有限向量比较",
+        "evidenceIds": [
+          "ev-mineral115-scp-urr-cu",
+          "ev-mineral115-scp-urr-ni",
+          "ev-mineral115-scp-urr-mn",
+          "ev-mineral115-sop-he-cu",
+          "ev-mineral115-sop-he-mn",
+          "ev-mineral115-conversion-he",
+          "ev-mineral115-scp-curve",
+          "ev-mineral115-scp-sample-boundary"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-mineral115-scp-urr-cu",
+            "relation": "supports",
+            "rationale": "铜所选原行提供本段比较的实际数值、情景及单位。"
+          },
+          {
+            "evidenceId": "ev-mineral115-scp-urr-ni",
+            "relation": "supports",
+            "rationale": "镍所选原行提供本段比较的实际数值、情景及单位。"
+          },
+          {
+            "evidenceId": "ev-mineral115-scp-urr-mn",
+            "relation": "supports",
+            "rationale": "锰所选原行提供本段比较的实际数值、情景及单位。"
+          },
+          {
+            "evidenceId": "ev-mineral115-sop-he-cu",
+            "relation": "supports",
+            "rationale": "铜所选原行提供本段比较的实际数值、情景及单位。"
+          },
+          {
+            "evidenceId": "ev-mineral115-sop-he-mn",
+            "relation": "supports",
+            "rationale": "锰所选原行提供本段比较的实际数值、情景及单位。"
+          },
+          {
+            "evidenceId": "ev-mineral115-conversion-he",
+            "relation": "supports",
+            "rationale": "与直接费用向量比较的公共代理倍率。"
+          },
+          {
+            "evidenceId": "ev-mineral115-scp-curve",
+            "relation": "supports",
+            "rationale": "按目标金属采选运营费用排序、收入分配和逐金属费用曲线；作者将指标解释为未来平均额外费用。"
+          },
+          {
+            "evidenceId": "ev-mineral115-scp-sample-boundary",
+            "relation": "qualifies",
+            "rationale": "样本主要来自2000—2012/13；矿山资料的覆盖、时间与未来边界限制外推。"
+          }
+        ],
+        "premiseIds": [
+          "cl-mineral115-cost-proxy"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "原论文式(2)以C对未来开采区间积分并平均；ReCiPe支持材料以ΔC记费用增加。这里忠实说明作者给予指标的解释，不认定两式逐项相等，也不重建实际因果费用差。",
+          "原模型使用历史跨矿山费用拟合；支持材料S1对锰列9座矿山。不同曲线、资料和估计式同时变化，不能将全部差额只因果归于逐种拟合。",
+          "论文先将各年运营费用统一为2013美元，再按各矿产量计算每kg目标金属的加权平均费用，以此排列矿山；排序不是未经分摊的矿山总费用次序。"
+        ],
+        "reasoning": "所选代理为Ni>Cu>Mn，SCP为Ni>Mn>Cu；铜锰次序相反足以否定同一正倍率复制两向量，但不证明任何一组是真实未来费用。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-16",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：保持全部数值与多因共变限定，衔接上段。"
+    },
+    {
+      "id": "cl-mineral115-calibration",
+      "op": "modify",
+      "from": {
+        "id": "cl-mineral115-calibration",
+        "text": "这个比较也保留了原件之间尚未解释的差别。ReCiPe 表中把 0.23 USD2013/kg 铜当量归为铜的费用换算值；对铜本身，SOP等于1，故对应因子为0.23 USD2013/kg 开采铜，所引论文却报告0.744 USD2013/kg 开采铜；两份材料对铜最终可采资源量的取值也不相同，不能把它们说成使用了完全相同的资料。不过，在另一组经济储量情景中，对铜、锰各自而言，两份原件所列储量与起始累计开采量分别相符（按显示值），而铜、锰的费用次序仍然相反：统一换算得到的铜为 0.16、锰约为 0.00602 USD2013/kg，逐金属模型则分别为 0.521 和 1.39。即使把公共倍率重新校准到论文的铜值，原 SOP 中小于铜的锰也仍会小于铜。因此，不能用“换一个铜参照值”消除这组差异；这一有限判断并不需要替原报告猜定一个正确的校准值。",
+        "kind": "calculation",
+        "scope": "铜校准异文与相同显示储量及累计开采输入下的有限反例",
+        "evidenceIds": [
+          "ev-mineral115-rivm-money-proxy",
+          "ev-mineral115-rivm-sop-method",
+          "ev-mineral115-scp-sample-boundary",
+          "ev-mineral115-scp-start",
+          "ev-mineral115-sop-i-cu",
+          "ev-mineral115-sop-i-mn",
+          "ev-mineral115-scp-r-cu",
+          "ev-mineral115-scp-r-mn",
+          "ev-mineral115-sop-he-cu",
+          "ev-mineral115-sop-he-mn",
+          "ev-mineral115-scp-urr-cu",
+          "ev-mineral115-scp-urr-mn",
+          "ev-mineral115-conversion-i",
+          "ev-mineral115-conversion-he"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-mineral115-rivm-money-proxy",
+            "relation": "supports",
+            "rationale": "原报告铜费用归属、近似回归及未解印刷差异。"
+          },
+          {
+            "evidenceId": "ev-mineral115-rivm-sop-method",
+            "relation": "supports",
+            "rationale": "附录表S8.1提供Cu/Mn的经济储量和起始累计开采显示值。"
+          },
+          {
+            "evidenceId": "ev-mineral115-scp-sample-boundary",
+            "relation": "supports",
+            "rationale": "论文支持表S2提供独立载体的Cu/Mn经济储量与不同铜URR。"
+          },
+          {
+            "evidenceId": "ev-mineral115-scp-start",
+            "relation": "supports",
+            "rationale": "论文正文表1提供Cu/Mn起始累计开采显示值，完成同输入边界检查。"
+          },
+          {
+            "evidenceId": "ev-mineral115-sop-i-cu",
+            "relation": "supports",
+            "rationale": "铜所选原行提供本段比较的实际数值、情景及单位。"
+          },
+          {
+            "evidenceId": "ev-mineral115-sop-i-mn",
+            "relation": "supports",
+            "rationale": "锰所选原行提供本段比较的实际数值、情景及单位。"
+          },
+          {
+            "evidenceId": "ev-mineral115-scp-r-cu",
+            "relation": "supports",
+            "rationale": "铜所选原行提供本段比较的实际数值、情景及单位。"
+          },
+          {
+            "evidenceId": "ev-mineral115-scp-r-mn",
+            "relation": "supports",
+            "rationale": "锰所选原行提供本段比较的实际数值、情景及单位。"
+          },
+          {
+            "evidenceId": "ev-mineral115-sop-he-cu",
+            "relation": "supports",
+            "rationale": "铜所选原行提供本段比较的实际数值、情景及单位。"
+          },
+          {
+            "evidenceId": "ev-mineral115-sop-he-mn",
+            "relation": "supports",
+            "rationale": "锰所选原行提供本段比较的实际数值、情景及单位。"
+          },
+          {
+            "evidenceId": "ev-mineral115-scp-urr-cu",
+            "relation": "supports",
+            "rationale": "铜所选原行提供本段比较的实际数值、情景及单位。"
+          },
+          {
+            "evidenceId": "ev-mineral115-scp-urr-mn",
+            "relation": "supports",
+            "rationale": "锰所选原行提供本段比较的实际数值、情景及单位。"
+          },
+          {
+            "evidenceId": "ev-mineral115-conversion-i",
+            "relation": "supports",
+            "rationale": "储量情景统一转换率0.16。"
+          },
+          {
+            "evidenceId": "ev-mineral115-conversion-he",
+            "relation": "supports",
+            "rationale": "URR情景统一转换率0.23及铜值归属差异。"
+          }
+        ],
+        "premiseIds": [
+          "cl-mineral115-metal-cost"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "原RIVM表S8.1与SCP支持表S2对铜URR分别列4.36×10¹²与4.63×10¹² kg。经济储量情景中铜R为6.90×10¹¹、CME为5.92×10¹¹ kg，锰R为5.70×10¹¹、CME为5.80×10¹¹ kg，两份原件显示相同。CME须由RIVM S8.1与论文正文表1对读，不能仅由S2补出。",
+          "储量情景本书乘算0.0376×0.16＝0.006016，与SCP锰1.39及铜0.521比较。匹配R和CME不使底层曲线、样本、积分记法和估计式相同；所核原件未解释0.23与0.744的差别，也未提供正式勘误。",
+          "原报告§12.4的斜率范围叙述与图S8.2所印费用指数0.92/0.95不完全一致；图12.3坐标标2013美元而图注写1998美元。原SCP式(2)用C、报告用ΔC，均保留其载体与位置；不据这些异文猜定正确系数。"
+        ],
+        "reasoning": "在两套经济储量显示输入对齐后，0.006016<0.16而1.39>0.521；共同正倍率不改变SOP铜锰次序。结论仅排除靠重设公共铜倍率抹平该差别，不解答校准差异起因。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-16",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：统一“经济储量情景（个人主义）”名称，去掉自辩式结尾。"
+    },
+    {
+      "id": "cl-ozrad121-formula-table",
+      "op": "modify",
+      "from": {
+        "id": "cl-ozrad121-formula-table",
+        "text": "方法文献写明的计算公式、所引输入资料与实际发布的因子表未必处处吻合；平流层臭氧耗竭与电离辐射在 ReCiPe 2016 文献内部就提供了直接例证。RIVM 2016-0104 第 36 页正文解释有限时间窗臭氧耗竭缩放时写明，常数 3 代表物质从对流层排入后传输到平流层所需的 3 年滞后；其中 k 为该物质大气寿命的倒数（年去除速率常数，不同于前文土地路径的固定换算系数 k），F_t 为时间窗 t 内已释放潜势的比例，有限时间窗 ODP 按该物质与 CFC-11 的 F_t 比值折算稳态 ODP。按 3 年滞后的物理含义，20 年或 100 年窗口内实际发生平流层去除的时间应为 t − 3 年（即 17 年与 97 年，对应 1 − e^{−(t−3)k}），但该页印出的公式却写作 F_t = 1 − e^{(−t−3)·k}（等价于 1 − e^{−(t+3)k}，反而把作用时间算成 23 年与 103 年）。取 WMO 2011 公布的各物质寿命逐项复算表 3.2 可见，全部卤代烃的 20 年与 100 年表值（如 CFC-12 的 0.421 与 0.587、Halon-1301 的 11.841 与 14.066、Halon-1211 的 15.053 与 8.777、溴甲烷的 1.649 与 0.734）都与印式 (−t−3)·k 精确吻合到小数点后三位；若按物理滞后 −(t−3)·k 计算，20 年溴甲烷应为 2.098、Halon-1211 应为 16.432、CFC-12 应为 0.407。这说明 (−t−3)·k 并非单纯的排版笔误，而是实际生成表 3.2 的工作表算式。同套文献还有四处表文异文需要原样保留：2017 年期刊论文第 3.1.2 节仅把中点 ODP 概括为“无限时间范围（WMO 2011）”，漏提报告表 3.2 的 20 年与 100 年中点列；报告第 38 页前文刚定义 10 度纬度带（latitudinal zones），后文却把肤色比例写成按“经度带”（longitudinal zone）确定；总表 1.5 把表 3.3 的三位有效数字舍入成 2.4×10⁻⁴、5.3×10⁻⁴、1.3×10⁻³ 并在电离辐射单位栏印出双斜杠“yr//kBq Co-60 to air”；第 44 至 45 页更把核素活度单位误印成质量单位“Co-60 to air eq/kg”和“DALY/kg Co-60 to air eq.”，并将紧随其后的表 4.3 误引为“Table 3.3”。",
+        "kind": "interpretation",
+        "scope": "RIVM 2016-0104第36页(-t-3)·k滞后符号与表3.2实算一致性验证，以及2017论文无限期概括、经纬度用词、有效数字与第4章量纲／表号异文记录。",
+        "evidenceIds": [
+          "ev-ozrad121-rivm-ch3-odp-tables",
+          "ev-ozrad121-rivm-ch4-ir-tables",
+          "ev-ozrad121-recipe2017-summary"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-ozrad121-rivm-ch3-odp-tables",
+            "relation": "supports",
+            "rationale": "核实印p36公式Ft=1-e^{(-t-3)·k}与表3.2全部卤代烃表值一致、印p38 longitudinal zone用词及表3.3与表1.5有效数字差异。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-rivm-ch4-ir-tables",
+            "relation": "supports",
+            "rationale": "核实印p22表1.5双斜杠yr//kBq、印p44将kBq误印为kg及印p45误引(Table 3.3)。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-recipe2017-summary",
+            "relation": "supports",
+            "rationale": "核实Huijbregts等2017 §3.1.2仅提无限期ODP而未提报告表3.2的20/100年列。"
+          }
+        ],
+        "premiseIds": [
+          "cl-ozrad121-odp-horizons",
+          "cl-ozrad121-endpoint-choices"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "揭示(-t-3)·k与文字物理含义反向，是为了说明已发布表3.2数值的真实生成算式，绝不授权使用者在引用ReCiPe 2016官方表值时私自篡改原表数字。"
+        ],
+        "reasoning": "通过独立复算证明印式符号已实际进入表3.2数值，直接体现“文字释义、数学公式、综述论文与发行数表必须分开检验”的方法论原则。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-17",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "合并原相邻段落，统一呈现 RIVM 2016-0104 三条路径的印表与公式不一致，版式与复算明细移入注释限定。"
+    },
+    {
+      "id": "cl-ozrad121-package-discrepancies",
+      "op": "modify",
+      "from": {
+        "id": "cl-ozrad121-package-discrepancies",
+        "text": "对照欧盟环境足迹（EF）的技术说明报告与 EF 3.1 官方参考包 XML 数据集，同样能看到报告文字、表头元数据与实际机读因子之间的错位。在臭氧耗竭方面，2018 年方法报告（JRC109369）表 1、表 2 以及 EF 3.1 官方方法 XML 数据集（UUID 前缀 b5c629d6）的说明字段仍写着“基于 WMO 1999 评估”、清单项数填 23；但报告第 4.2 节与附录 1（列出 23 种物质共 113 行，其中 CFC-113 与 HCFC-142b 漏印高空子区室行，并把一氯甲烷记作制冷剂代号 R-40）、2023 年更新报告（JRC130796）表 1 以及 XML 实载的 25 个物质名称共 124 条因子，执行的都是 WMO 2014 稳态值加补充整合。EF 3.1 按同义流规则新增的四氯化碳（与 CFC-10 同为 0.72，含 5 个空气子区室）和甲基溴（英文流名 Methyl bromide，与 Halon-1001 同为 0.57，却只建了 4 个子区室、漏掉平流层下部与对流层上部）在各自流 XML 中均未填 CAS 号；归一化背景清单则删去了与甲基溴重复计入的另一英文流“溴甲烷”（Bromomethane），使人均归一化基准从 5.36×10⁻² 微调至 5.23×10⁻² kg CFC-11 当量/人，而电离辐射维持 4.22×10³ kBq U-235 当量/人不变。在电离辐射方面，两份报告表 1 把单位简写为“kBq U235”（漏印 eq），2018 年报告表 2 更把流属性误写成质量类的“Mass U235-equivalents（kg）”，且第 4.5 节声称排除了平流层下部与对流层上部以及除淡水外的多数水体子区室、并将淡水近似标为“estimated”。然而实测 EF 3.1 官方电离辐射方法 XML 数据集（UUID 前缀 b5c632be，表头标 30 项、实载 29 个核素前缀共 189 条因子）不仅正确绑定放射性活度流属性（Radioactivity，频率单位组），还完整保留了平流层下部与对流层上部、海水以及未指定水体条目，且淡水因子均标为“Calculated”；反倒是铯-137、碘-129 和氡-222 等基本流 XML 的同义词字段串入了“Cs-131”“Iodine, isotope of mass 125”“219rn”等异核素文本。",
+        "kind": "interpretation",
+        "scope": "JRC109369/JRC130796报告叙述与EF 3.1官方b5c629d6.xml及b5c632be.xml在WMO年份、Annex 1行数、流属性、子区室保留、估算状态与同义词字段上的实测冲突。",
+        "evidenceIds": [
+          "ev-ozrad121-jrc109369-odp",
+          "ev-ozrad121-jrc109369-ir",
+          "ev-ozrad121-jrc130796-odp-ir",
+          "ev-ozrad121-ef31-odp-xml",
+          "ev-ozrad121-ef31-ir-xml"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-ozrad121-jrc109369-odp",
+            "relation": "supports",
+            "rationale": "提供JRC109369表1–2旧WMO 1999标签与§4.2/Annex 1（23种物质113行、R-40记法及2种物质漏高空子区室行）记录。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-jrc109369-ir",
+            "relation": "supports",
+            "rationale": "提供JRC109369表1漏印eq、表2误标Mass U235-equivalents及§4.5声称排除高空与非淡水水体子区室的叙述。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-jrc130796-odp-ir",
+            "relation": "supports",
+            "rationale": "提供JRC130796表1沿用说明、表15同义流赋同值及§4.2/表10删去重复Bromomethane使归一化基准由5.36E-02调至5.23E-02（电离辐射保持4.22E+03）的记录。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-ef31-odp-xml",
+            "relation": "supports",
+            "rationale": "提供b5c629d6.xml顶部1999/23项旧元数据、实载25物质124行WMO 2014因子及Methyl bromide漏第5子区室与空CAS事实。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-ef31-ir-xml",
+            "relation": "supports",
+            "rationale": "提供b5c632be.xml绑定Radioactivity、保留高空与海水子区室、淡水标Calculated及核素流XML同义词串入事实。"
+          }
+        ],
+        "premiseIds": [
+          "cl-ozrad121-formula-table"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "官方XML数据集与技术报告文字出现分歧时，软件计算结果取决于实际加载的方法XML与流UUID映射，审计时必须同时核验两者而不能只读报告摘要表。"
+        ],
+        "reasoning": "以官方压缩包实测XML反证报告表2与§4.5中的多处失准描述，强化数据层核查必须直达精确UUID与字段的结论。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-17",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：修正甲基溴子区室计数为 1 个（平流层下部与对流层上部），保留报告内部不一致，UUID/CAS/归一化基准与同义词明细写入注释限定。"
+    },
+    {
+      "id": "cl-mineral115-judgment",
+      "op": "modify",
+      "from": {
+        "id": "cl-mineral115-judgment",
+        "text": "这也是方法评价中真正存在的分歧。Berger 等人的 2020 年评估暂时接受用后来的 SOP 版本比较矿产质量变化的后果，同时质疑统一的铜费用换算和受高需求时期资料影响的逐金属费用估计；Ericsson 等人则更广泛地反对把这类“未来努力”模型用于生命周期影响评价。这里不能靠暂时推荐或反对意见替读者裁定现实真值。已经能够分清的是：原生存量耗竭、未来矿石需求和未来采选费用各有估计对象；相同的元素开采量可以得到不同次序；固定倍率只能传递原有次序，不能代替资源各自的模型关系。若要据此选择材料，还须恢复相同服务的产品清单，并为所关心的资源后果选择有依据的模型与适用条件。平流层臭氧与电离辐射、土地、化石能源和矿产四组例子都说明，读一个结果还要分清模型关系、所用资料与实际因子。毒性计算中的一个具名实例，可以进一步说明这三者的区别。",
+        "kind": "synthesis",
+        "scope": "给定对象的条件性模型比较与真实使用争议",
+        "evidenceIds": [
+          "ev-mineral115-guidance-sop-scp",
+          "ev-mineral115-dissent-cost",
+          "ev-mineral115-adp-cumulative",
+          "ev-fossil117-rivm-scp-endpoint",
+          "ev-ozrad121-rivm-ch3-odp-tables",
+          "ev-ozrad121-ef31-ir-xml"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-mineral115-guidance-sop-scp",
+            "relation": "supports",
+            "rationale": "评估暂荐后期SOP_URR却质疑公共铜费用代理和原SCP样本的用途。"
+          },
+          {
+            "evidenceId": "ev-mineral115-dissent-cost",
+            "relation": "supports",
+            "rationale": "2019评论较广反对未来努力类模型的LCIA使用，是真实使用争议。"
+          },
+          {
+            "evidenceId": "ev-mineral115-adp-cumulative",
+            "relation": "supports",
+            "rationale": "耗竭对象及长期累计法边界。"
+          },
+          {
+            "evidenceId": "ev-fossil117-rivm-scp-endpoint",
+            "relation": "supports",
+            "rationale": "化石资源从中点热值转向分燃料终点费用与代理规则，同样要求分清模型关系、底层资料与实际因子表。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-rivm-ch3-odp-tables",
+            "relation": "supports",
+            "rationale": "平流层臭氧耗竭中文字滞后解释与实算表3.2公式符号的差异，同样要求分开核对模型公式与发布数表。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-ef31-ir-xml",
+            "relation": "supports",
+            "rationale": "电离辐射中JRC报告文字与EF 3.1官方XML子区室及流属性的差异，同样要求分开核对说明文档与实际因子包。"
+          }
+        ],
+        "premiseIds": [
+          "cl-mineral115-rank",
+          "cl-mineral115-calibration",
+          "cl-mineral115-assumptions"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "Berger等的暂时推荐对应Vieira2018/2017谱系的SOP_URR（75个矿产因子），不签收本书选择的原2016表行；其当时ADP建议也不自动覆盖2020累计更新。",
+          "共同作者、复用数据和引用链不是独立实证重复；本节仅就已发表方法文献、评估综述与官方发行包开展模型条件对比，不替代具体矿种的独立地质或采选实证调查。"
+        ],
+        "reasoning": "不同估计对象应先分清；相近货币单位也不能替代模型对应。所报反例给出公共正倍率不能做什么，以及产品选择还需要恢复的服务清单和适用证据。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-18",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：聚焦矿产方法学分歧与已能分清的判断，移除末尾向毒性例的生硬过渡。"
+    },
+    {
+      "id": "cl-land111-episode",
+      "op": "retire",
+      "from": {
+        "id": "cl-land111-episode",
+        "text": "土地使用能把这个特例说得更具体。改变植被和占用土地可以直接改变栖息地，不必先经过一种污染物的排放。先约定同一片面积怎样被转变、使用多久、何时停止使用，以及随后向什么参照状态恢复。占用一段时间与用后恢复是两个阶段：占用清单用面积乘占用年数，转变清单用面积；恢复持续多久，可以已经进入转变或恢复因子。若又把这样的因子乘一次恢复年数，时间就计了两遍。这里采用一次使用后弃用的明确模型情形，实际清单若用另一种土地转变编码，还须核对它的量义。",
+        "kind": "interpretation",
+        "scope": "一次直接土地使用与用后恢复情形的量义",
+        "evidenceIds": [
+          "ev-land111-rivm-phases",
+          "ev-land111-lc-full-recovery"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-land111-rivm-phases",
+            "relation": "supports",
+            "rationale": "原图定义阶段和恢复计时，§11.2限定本报告土地类别价值选择的处理。"
+          },
+          {
+            "evidenceId": "ev-land111-lc-full-recovery",
+            "relation": "supports",
+            "rationale": "原式11.8及应用说明提供全恢复期关系、每面积因子与两种清单量义。"
+          }
+        ],
+        "premiseIds": [
+          "cl-lcia-mid-end-conversion-limits"
+        ],
+        "conceptIds": [],
+        "caveats": [],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-15",
+        "reasoning": "按原图与因子单位分开占用历时和已积分恢复因子，不声称所有清单编码相同。"
+      },
+      "index": 917,
+      "successor": "cl-land111-midpoint",
+      "rationale": "与土地恢复中点段同述一次使用—恢复的量义与处理，合并入继任段落。"
+    },
+    {
+      "id": "cl-mineral115-input",
+      "op": "retire",
+      "from": {
+        "id": "cl-mineral115-input",
+        "text": "矿产开采提供了另一种清单起点。从自然矿藏取出铜、镍或锰，会减少原来留在地下的相应元素；资源指标还可能追问，后续开采需要处理多少矿石、付出多少费用。为了看清这些问题的差别，下面分别考察开采 1 kg 铜、1 kg 镍和 1 kg 锰。这里的 kg 都指从自然界取出的元素质量，不是矿石总质量，也不是买到的精炼金属质量。三项取相同质量，只是为了比较因子的含义，不能据此认定这三种材料提供了相同服务。",
+        "kind": "interpretation",
+        "scope": "原生元素开采质量的比较输入及三个资源估计对象",
+        "evidenceIds": [
+          "ev-mineral115-adp-extraction",
+          "ev-mineral115-rivm-sop-method",
+          "ev-mineral115-scp-curve"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-mineral115-adp-extraction",
+            "relation": "supports",
+            "rationale": "生产中的元素质量作为原生开采量，而非矿石或精炼产品购买质量。"
+          },
+          {
+            "evidenceId": "ev-mineral115-rivm-sop-method",
+            "relation": "supports",
+            "rationale": "额外矿石需求模型的每kg元素分母。"
+          },
+          {
+            "evidenceId": "ev-mineral115-scp-curve",
+            "relation": "supports",
+            "rationale": "费用模型的每kg目标金属分母及采选范围。"
+          }
+        ],
+        "premiseIds": [
+          "cl-lcia-endpoint-units"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "三个1 kg输入是本书用于解释因子的假定开采脉冲，不是功能相同的产品替代清单。实际矿石或共生产物还须对齐含量、损失、收入分配及边界。"
+        ],
+        "reasoning": "固定元素质量用于区分模型估计对象；相同质量不能推出相同服务。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-16",
+        "reviewKind": "agent-source-check"
+      },
+      "index": 935,
+      "successor": "cl-mineral115-adp",
+      "rationale": "等质量开采脉冲设定合并入 ADP 定义段 开头。"
+    },
+    {
+      "id": "cl-land111-pathway",
+      "op": "retire",
+      "from": {
+        "id": "cl-land111-pathway",
+        "text": "前述三组情景也不意味着每个类别都另算了时间窗：2016年原报告并未对土地利用因子量化价值选择。另一份LC-IMPACT土地技术章则提供了明确的时间范围对照。它从局地变化出发，经区域物种—面积关系、脆弱性和类群处理形成全球PDF指标。2020年的LC-IMPACT论文把全球潜在物种消失比例乘年（PDF·yr）解释为计及时间的全球灭绝风险指标：它不是已观察到的灭绝个数，也不是预测已灭绝物种会重新出现。它与前述ReCiPe的物种损失汇总并非同一估计量，所以不能仅按相同面积和年数直接换算分值。下面借技术章的公式考察一个操作：在它自己的指标和恢复模型内，计入多长的时间。",
+        "kind": "synthesis",
+        "scope": "不同土地指标与明确时间范围选择",
+        "evidenceIds": [
+          "ev-land111-rivm-phases",
+          "ev-land111-lc-pathway",
+          "ev-land111-lc-endpoint-meaning"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-land111-rivm-phases",
+            "relation": "supports",
+            "rationale": "原图定义阶段和恢复计时，§11.2限定本报告土地类别价值选择的处理。"
+          },
+          {
+            "evidenceId": "ev-land111-lc-pathway",
+            "relation": "supports",
+            "rationale": "技术章的物种—面积、区域及脆弱性关系说明指标构造，不等于某地实况。"
+          },
+          {
+            "evidenceId": "ev-land111-lc-endpoint-meaning",
+            "relation": "supports",
+            "rationale": "2020论文§2.5与表3支持全球风险的时间表述和恢复部分的时间范围。"
+          }
+        ],
+        "premiseIds": [
+          "cl-lcia-endpoint-units",
+          "cl-lcia-global-is-not-site-specific"
+        ],
+        "conceptIds": [],
+        "caveats": [],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-15",
+        "reasoning": "区分所选原报告未量化的土地价值选择与另一模型的时间窗，不能互换全球风险和局地物种量。"
+      },
+      "index": 920,
+      "successor": "cl-land111-horizon",
+      "rationale": "LC-IMPACT 指标身份与百年窗口合并入继任段落。"
+    },
+    {
+      "id": "cl-land111-factor-scale",
+      "op": "retire",
+      "from": {
+        "id": "cl-land111-factor-scale",
+        "text": "核对时间运算时，先回到技术章未加权的一个区域分层，固定土地类型、生态区、类群和因子口径。将该分层的占用因子记为c，单位是区域物种损失/m²，先取c≥0；匹配的恢复历时为T＞0。用c(1−s/T)表示弃用后经过s年时，原式所对应的线性恢复缺口，达到T后取零。这是按原公式写出的模型表示，不是现场测得的恢复曲线。之后还须按原章的脆弱性和类群关系形成全球指标；这里先把这一分层的时间关系单独列出。",
+        "kind": "interpretation",
+        "scope": "LC技术章区域未加权分层因子的尺度、单位和后续处理",
+        "evidenceIds": [
+          "ev-land111-lc-full-recovery",
+          "ev-land111-lc-aggregation"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-land111-lc-full-recovery",
+            "relation": "supports",
+            "rationale": "原式11.8及应用说明给出未加权区域因子的单位与半历时关系；曲线表述是重现该关系的作者解释。"
+          },
+          {
+            "evidenceId": "ev-land111-lc-aggregation",
+            "relation": "supports",
+            "rationale": "脆弱性处理与类群汇总位于分层时间关系之后，区域量尚不是最终全球PDF量。"
+          }
+        ],
+        "premiseIds": [
+          "cl-land111-pathway",
+          "cl-land111-horizon"
+        ],
+        "conceptIds": [],
+        "caveats": [],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-15",
+        "reasoning": "以已核原式尺度解释符号c和恢复时间，避免将单一未加权区域分层直接标为全球结果。"
+      },
+      "index": 922,
+      "successor": "cl-land111-integral",
+      "rationale": "未加权区域分层设定合并入时间截断积分与反算段。"
+    },
+    {
+      "id": "cl-land111-countercheck",
+      "op": "retire",
+      "from": {
+        "id": "cl-land111-countercheck",
+        "text": "令T恰为H的两倍作一次检查。到窗口末端，模型还剩起始缺口的一半，前H年的面积为3cH/4。若误把恢复本身加速到H年结束，面积却变成cH/2；直接把完整结果乘H/T也会落到这个不同的量。少统计一段时间，与让缺口更快消失，因而不是一回事。若T不超过H，窗口内与全期结果相同；若c为零，两者都为零，不能再用零除以零谈“保留比例”。这些关系检验的是固定模型中的时间运算，不是一次生态修复的效果。",
+        "kind": "calculation",
+        "scope": "作者T=2H、短恢复和零值控制",
+        "evidenceIds": [
+          "ev-land111-lc-cutoff"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-land111-lc-cutoff",
+            "relation": "context",
+            "rationale": "明确的100年／完整恢复关系与分支是解释依据；任意H与控制关系由作者在明示条件下推导。"
+          }
+        ],
+        "premiseIds": [
+          "cl-land111-integral"
+        ],
+        "conceptIds": [],
+        "caveats": [],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-15",
+        "reasoning": "在前段T>0条件内推导截断梯形与加速恢复三角形的差别，原章只提供相关原式；不引入产品案例或因子定值。"
+      },
+      "index": 924,
+      "successor": "cl-land111-integral",
+      "rationale": "T = 2H 反算检查合并入继任段落。"
+    },
+    {
+      "id": "cl-land111-printed-record",
+      "op": "retire",
+      "from": {
+        "id": "cl-land111-printed-record",
+        "text": "方法规定了怎样换算，实际表格是否照此列值，还要分开检查。原2016年ReCiPe报告的正文公式和中点表，与附表S7.3中草地／牧场及一年生作物的两项恢复终点因子不相符；按正文所列占用因子、平均恢复历时与转换系数复算，两项分别与对方行相符至报告显示精度。这是原报告内部可定位的不一致，不等于已经找到正式勘误。前面的固定系数推理说明的是所列模型关系，不能代替对某份因子表或软件结果的核验；原版、更新报告与电子发行文件也各须保留自己的身份。",
+        "kind": "interpretation",
+        "scope": "原2016报告表格与明示换算关系的不一致",
+        "evidenceIds": [
+          "ev-land111-rivm-printed-conflict",
+          "ev-land111-rivm-conversion"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-land111-rivm-printed-conflict",
+            "relation": "supports",
+            "rationale": "实际原页表格与公式显示参数核算支持两行不一致，不提供正式勘误。"
+          },
+          {
+            "evidenceId": "ev-land111-rivm-conversion",
+            "relation": "supports",
+            "rationale": "§11.4及表11.2规定占用和恢复使用同一正换算关系及终点单位。"
+          }
+        ],
+        "premiseIds": [
+          "cl-land111-midpoint",
+          "cl-land111-conversion"
+        ],
+        "conceptIds": [],
+        "caveats": [],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-15",
+        "reasoning": "原页和显示参数独立复算定位两行不一致；类似交换的模式不是正式修正或未查发行文件行为。"
+      },
+      "index": 926,
+      "successor": "cl-ozrad121-formula-table",
+      "rationale": "土地附表 S7.3 印表与公式不合合并入三条路径统一印表核对段。"
+    },
+    {
+      "id": "cl-fossil117-printed-limits",
+      "op": "retire",
+      "from": {
+        "id": "cl-fossil117-printed-limits",
+        "text": "与土地恢复附表一样，原报告化石章节也有需要据实保留的文本与量纲缺口。第 96 页把高位热值附表误引为表 S9.2（实际印在表 S9.1），把原油成本曲线误引为图 11.2（实为图 13.2），又将对数线性成本公式 C_x = 1/(a_x + b_x·ln CFE_x) 标到该报告矿产章所引的额外矿石潜势论文（Vieira 等 2016b）名下，而把终点因子本身归于一篇“准备中”的未刊稿。更关键的是，第 96 页与附表 S9.2 将累计开采量 CFE_x 的单位标为 kg 或 Nm³，附表列原油 a = 40.0、b = −4.45、CFE = 1.61×10¹⁴ kg；若直接将这一千克数代入印刷公式的分母，40.0 − 4.45·ln(1.61×10¹⁴) 约为 −105.6，得不到正的生产成本，而图 13.2 的横轴实际标为“十亿桶原油”；同表中硬煤的累计开采量印作 n.a.，当期成本标为 USD2008，正文终点表则标为 USD2013。在未取得未刊原稿和底层能源署曲线前，只能按已发表的表 13.1 与表 13.2 检验中点—终点关系，不能替原报告猜定单位换算系数来宣称重算了那些终点值。",
+        "kind": "interpretation",
+        "scope": "RIVM 2016-0104第13章与§24表S9.2的跨表图及2016b文献误引、公式横轴量纲不闭合与未刊稿边界",
+        "evidenceIds": [
+          "ev-fossil117-rivm-ffp-and-hhv",
+          "ev-fossil117-rivm-scp-curve-discrepancy"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-fossil117-rivm-ffp-and-hhv",
+            "relation": "supports",
+            "rationale": "印p96误写Table S9.2而热值实载于印p187 Table S9.1。"
+          },
+          {
+            "evidenceId": "ev-fossil117-rivm-scp-curve-discrepancy",
+            "relation": "supports",
+            "rationale": "印p96误引Figure 11.2并将化石成本式标到矿产SOP论文Vieira et al. 2016b名下，且图13.2十亿桶横轴与表S9.2千克单位不闭合、硬煤CFE=n.a.、USD2008与USD2013并列。"
+          }
+        ],
+        "premiseIds": [
+          "cl-land111-printed-record",
+          "cl-fossil117-equal-midpoint"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "40.0 - 4.45·ln(1.61×10¹⁴) ≈ -105.6 仅用于证明印刷公式与表S9.2的kg单位不能直接闭合，不据此否定图13.2在十亿桶标度下的原拟合。"
+        ],
+        "reasoning": "核对印刷公式、图轴单位与附表参数能否闭合，是区分“使用已发表因子表比较关系”与“声称复现底层拟合”的必要边界。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-16",
+        "reviewKind": "agent-source-check"
+      },
+      "index": 951,
+      "successor": "cl-ozrad121-formula-table",
+      "rationale": "化石章成本公式与单位缺口合并入继任段落，文献误引与参数细节移入注释限定。"
+    },
+    {
+      "id": "cl-ozrad121-emission-bridge",
+      "op": "retire",
+      "from": {
+        "id": "cl-ozrad121-emission-bridge",
+        "text": "把平流层臭氧耗竭与电离辐射这两条物理暴露型排放路径合起来看，跨研究或跨软件核对结果时至少要守住四道边界：第一，查清臭氧耗竭究竟采用哪一版 WMO 稳态值、是否做有限时间窗折算，以及氧化亚氮是否被纳入该类别（否则含氮肥或燃烧氧化亚氮的系统在 EF 3.1 与 ReCiPe 2016 之间会出现结构性断层，而一氯甲烷等气体还会同时跨平流层臭氧耗竭、气候变化与光化学臭氧全量计分，见后文第 16 章关于酸化、营养富集与多路径前体的讨论）；第二，查清电离辐射以铀-235 还是钴-60 排入空气为参照、积分上限取百年还是十万年、铀系与超铀核素在所选视角下是否留空，以及排放去向是空气、淡水还是海水；第三，在引用机读数据包时按精确流 UUID、核素或物质身份与 CAS 号核对实际因子，不轻信表头旧年份、缺失的更新标记或未清理的同义词文本；第四，把视角内固定正常数生成的 DALY 终点结果严格解释为全球缺省情景下的相对健康负担指标，不冒充核设施场址辐射安全结论或局地紫外流行病学实测。把这两条排放路径的模型、时间窗和发行包边界立住之后，下文继续沿着同一准则转向土地恢复、化石能源与金属矿产的印表和附表。",
+        "kind": "synthesis",
+        "scope": "平流层臭氧耗竭与电离辐射跨体系比较的四项核查准则，以及向本章第三节后续土地恢复与资源印表核查的承接过渡。",
+        "evidenceIds": [
+          "ev-ozrad121-ilcd2011-odp",
+          "ev-ozrad121-ilcd2011-ir",
+          "ev-ozrad121-jrc130796-odp-ir",
+          "ev-ozrad121-ef31-odp-xml",
+          "ev-ozrad121-ef31-ir-xml",
+          "ev-ozrad121-rivm-ch3-odp-tables",
+          "ev-ozrad121-rivm-ch4-ir-tables"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-ozrad121-ilcd2011-odp",
+            "relation": "supports",
+            "rationale": "支撑平流层臭氧耗竭中点推荐与紫外健康／生态终点适用边界。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-ilcd2011-ir",
+            "relation": "supports",
+            "rationale": "支撑电离辐射中点推荐与全球缺省集体剂量对场址安全的适用边界。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-jrc130796-odp-ir",
+            "relation": "context",
+            "rationale": "支撑EF 3.1同义流与重复清单治理下按精确流身份核查的要求。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-ef31-odp-xml",
+            "relation": "supports",
+            "rationale": "支撑WMO 2014实载因子、无N2O覆盖与同义流UUID核查要求。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-ef31-ir-xml",
+            "relation": "supports",
+            "rationale": "支撑U-235参照、水气介质悬殊、核素覆盖及流XML同义词污染核查要求。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-rivm-ch3-odp-tables",
+            "relation": "supports",
+            "rationale": "支撑20/100/无限期ODP、N2O初步因子与(-t-3)·k印表核查要求。"
+          },
+          {
+            "evidenceId": "ev-ozrad121-rivm-ch4-ir-tables",
+            "relation": "supports",
+            "rationale": "支撑Co-60参照、20/100/100,000年积分、I/H铀系留空与DDREF全球缺省终点边界。"
+          }
+        ],
+        "premiseIds": [
+          "cl-ozrad121-reference-scope",
+          "cl-ozrad121-odp-horizons",
+          "cl-ozrad121-ir-horizons",
+          "cl-ozrad121-endpoint-choices",
+          "cl-ozrad121-package-discrepancies"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "四道边界仅保证生命周期影响评价表征层面的条件透明与可比性，不能替代反应堆事故概率安全评价、放射性废物深地质处置场安全论证或区域臭氧层恢复地球物理模拟。"
+        ],
+        "reasoning": "收束两条物理暴露型排放路径的共同方法学教训，并自然衔接紧随其后的土地恢复附表、化石资源与金属矿产印表核查段落。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-17",
+        "reviewKind": "agent-source-check"
+      },
+      "index": 967,
+      "successor": "cl-b14-reading-checks",
+      "rationale": "臭氧与辐射独立话题总结整合入全章四项核对收束段。"
+    },
+    {
+      "id": "cl-fossil117-bridge",
+      "op": "retire",
+      "from": {
+        "id": "cl-fossil117-bridge",
+        "text": "把这组能源载体对照收束起来，可以得到两条清楚的使用界限。第一，在中点层看到“化石资源”或“能量载体”指标时，先核对它采用净热值还是高位热值，以及基本流是否像 EF 那样把核燃料铀按 MJ 一并归入该类别；否则跨方法对比发电或供热方案时，会把分类边界差异误读成燃料消耗增减。第二，从热值中点走向未来额外开采费用终点，不是给能量单位换一个货币标尺，而是改用各燃料独立的成本—累计产量曲线和缺省代理；相同热值因此不再对应相同终点后果。与化石资源拒绝单一换算系数恰成对照，同一份 ReCiPe 报告处理矿产资源时却尝试用一个公共的铜费用系数连接中点与终点——下文先对照不同矿产中点的排序，再检验这种固定费用倍率能够保留什么、又会掩盖什么。",
+        "kind": "synthesis",
+        "scope": "化石与能量载体中点边界、终点非常数转换总结及向矿产中点排序与公共铜倍率对照的承接",
+        "evidenceIds": [
+          "ev-fossil117-jrc109369-energy-carriers",
+          "ev-fossil117-ef31-fossil-factors",
+          "ev-fossil117-rivm-ffp-and-hhv",
+          "ev-fossil117-rivm-scp-endpoint"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-fossil117-jrc109369-energy-carriers",
+            "relation": "supports",
+            "rationale": "EF能量载体类别边界及铀按MJ归类的依据。"
+          },
+          {
+            "evidenceId": "ev-fossil117-ef31-fossil-factors",
+            "relation": "supports",
+            "rationale": "EF 3.1化石资源方法包含五种化石燃料与铀并统一赋1 MJ/MJ。"
+          },
+          {
+            "evidenceId": "ev-fossil117-rivm-ffp-and-hhv",
+            "relation": "supports",
+            "rationale": "ReCiPe 2016中点FFP基于高位热值且不含铀。"
+          },
+          {
+            "evidenceId": "ev-fossil117-rivm-scp-endpoint",
+            "relation": "supports",
+            "rationale": "ReCiPe 2016终点SCP按燃料分别给值并对褐煤／泥炭设情景代理。"
+          }
+        ],
+        "premiseIds": [
+          "cl-fossil117-heating-basis",
+          "cl-fossil117-uranium-boundary",
+          "cl-fossil117-equal-midpoint",
+          "cl-fossil117-proxy-consequence",
+          "cl-fossil117-printed-limits"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "本段总结所核方法文本与发行表值支持的判断条件，不替代能源安全评估、电力调度模拟或矿山／油气田项目财务评价。"
+        ],
+        "reasoning": "汇合中点热值／铀边界与终点分燃料成本曲线两方面证据，明确化石资源为何无常数转换因子，并自然引出下文矿产排序与固定铜费用倍率的对照。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-16",
+        "reviewKind": "agent-source-check"
+      },
+      "index": 952,
+      "successor": "cl-b14-reading-checks",
+      "rationale": "化石能源独立话题总结整合入全章四项核对收束段。"
+    },
+    {
+      "id": "cl-ozrad121-n2o-scope",
+      "op": "add",
+      "from": null,
+      "rationale": "从原相邻段落 拆分独立成段，将 WMO 版本沿革、氧化亚氮纳排与受控排放对次序翻转集中呈现，避免单段过密。"
+    },
+    {
+      "id": "cl-ozrad121-endpoint-limits",
+      "op": "add",
+      "from": null,
+      "rationale": "由原相邻段落后半拆出，使系数模型与跨视角／空间限制各自独立成段。"
+    },
+    {
+      "id": "cl-b14-reading-checks",
+      "op": "add",
+      "from": null,
+      "rationale": "整合原相邻段落 的独立话题总结，收束全章四类清单起点的共同核对边界并衔接气候章节。"
+    }
+  ],
+  "files": [
+    {
+      "path": "content/docs/book/midpoint-endpoint-value-choices.mdx",
+      "fromSha256": "91f2c3f67aefc568ebbaaf01d7225bbb33370705115a35c7884271d8f02dd030",
+      "toSha256": "e2ee59f9659e08c3a742a66caf37568965623212581fc1c2bade31c5fdc92060",
+      "previous": "---\ntitle: 中点与终点\ndescription: 中点和终点对应环境因果路径上的不同位置。指标能回答什么，还取决于模型怎样处理时间、地点和效应证据。\n---\n\n## 指标的位置 [#指标停在因果路径的哪里]\n\n<Prose ids=\"cl-lcia-midpoint-pathway cl-lcia-endpoint-units cl-lcia-mid-end-conversion-limits\" />\n\n<Prose ids=\"cl-land111-episode cl-land111-midpoint cl-land111-conversion\" />\n\n<Prose ids=\"cl-mineral115-input cl-mineral115-adp cl-mineral115-sop\" />\n\n<Prose ids=\"cl-fossil117-scarcity-energy cl-fossil117-heating-basis cl-fossil117-uranium-boundary\" />\n\n<Prose ids=\"cl-ozrad121-emission-midpoint cl-ozrad121-reference-scope\" />\n\n## 情景与地点 [#时间证据和地点怎样进入结果]\n\n<Prose ids=\"cl-lcia-scenarios-are-choices cl-lcia-global-is-not-site-specific\" />\n\n<Prose ids=\"cl-land111-pathway cl-land111-horizon cl-land111-factor-scale cl-land111-integral cl-land111-countercheck cl-land111-aggregation\" />\n\n<Prose ids=\"cl-mineral115-reserves\" />\n\n<Prose ids=\"cl-fossil117-scenario-proxy\" />\n\n<Prose ids=\"cl-ozrad121-odp-horizons cl-ozrad121-ir-horizons cl-ozrad121-endpoint-choices\" />\n\n## 模型与资料 [#模型输入数据与因子发行包]\n\n<Prose ids=\"cl-ozrad121-formula-table cl-ozrad121-package-discrepancies cl-ozrad121-emission-bridge\" />\n\n<Prose ids=\"cl-land111-printed-record\" />\n\n<Prose ids=\"cl-fossil117-equal-midpoint cl-fossil117-proxy-consequence cl-fossil117-printed-limits cl-fossil117-bridge\" />\n\n<Prose ids=\"cl-mineral115-rank cl-mineral115-cost-proxy cl-mineral115-metal-cost cl-mineral115-calibration cl-mineral115-assumptions cl-mineral115-judgment\" />\n\n<Prose ids=\"cl-lcia-model-data-factor-separation\" />\n"
+    }
+  ],
+  "corrections": [
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-lcia-midpoint-pathway",
+      "scope": "整合改写：聚焦排放路径中点与终点含义，移除末尾预告式过渡。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-lcia-mid-end-conversion-limits",
+      "scope": "整合改写：对齐化石资源无常数因子的原因，并自然引出四类清单起点。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-ozrad121-emission-midpoint",
+      "scope": "整合改写：首次展开 ILCD 2011 与 EF 3.1，按第一种情形置入第一节。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-land111-midpoint",
+      "scope": "合并原相邻段落，统一说明土地占用与恢复的中点处理。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-land111-conversion",
+      "scope": "整合改写：明确固定系数线性缩放与模型约定的关系，消除同段张力。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-mineral115-adp",
+      "scope": "合并原相邻段落，将等质量输入设定与 ADP 定义合为一段。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-mineral115-sop",
+      "scope": "整合改写：紧凑衔接 ADP 与 SOP 的问题转换。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-mineral115-rank",
+      "scope": "前移至第一节紧接 ADP/SOP 定义展示排序反转，并补充最终可采资源情景简注。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-fossil117-scarcity-energy",
+      "scope": "整合改写：理顺 ILCD 稀缺路线与 Van Oers 2002 / EF 拆分路线，交代储量基与地壳存量 ADP 的区别。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-fossil117-heating-basis",
+      "scope": "整合改写：将五种燃料热值明细汇总至表 1，正文聚焦高低位热值口径与舍入条件。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-fossil117-uranium-boundary",
+      "scope": "整合改写：保留 JRC 记载与铀累计 ADP 舍入注记，与表 1 联动呈现。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-lcia-scenarios-are-choices",
+      "scope": "整合改写：一次性统一交代个人主义／等级主义（默认）／平等主义三视角与情景的对应关系。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-ozrad121-odp-horizons",
+      "scope": "整合改写：将卤代烃数值明细移入表 2，将氧化亚氮与 WMO 版本对照拆入独立新段。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-ozrad121-reference-scope",
+      "scope": "移至第二节并明确 14/11 换算仅适用于共享 Frischknecht 2000 且未重算的条目，消除固定换算误解。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-ozrad121-ir-horizons",
+      "scope": "整合改写：将电离辐射中点因子整理为纯单位表 3，保留碘-129 折算对照、表 4.2 脚注 a 与水体锶-90 细节。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-ozrad121-endpoint-choices",
+      "scope": "整合改写：聚焦健康终点系数与疾病模型，将跨视角与空间限制拆入独立新段。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-land111-horizon",
+      "scope": "合并原相邻段落，统一说明 LC-IMPACT 指标身份与百年恢复窗口。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-land111-integral",
+      "scope": "合并原相邻段落 为一段完整时间截断检验。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-land111-aggregation",
+      "scope": "整合改写：明确“放宽 c ≥ 0 假定”并加“LC-IMPACT 土地技术章表 11.1”前缀。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-mineral115-reserves",
+      "scope": "整合改写：删去“回到矿产”硬过渡，统一个人主义／等级主义／平等主义情景名。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-fossil117-scenario-proxy",
+      "scope": "整合改写：统一加 RIVM 2016-0104 报告章节与表号前缀。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-lcia-model-data-factor-separation",
+      "scope": "移至第三节首段作为“模型—资料—因子”三层框架，移除原章末预告句。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-fossil117-equal-midpoint",
+      "scope": "整合改写：统一加 RIVM 2016-0104 报告表号前缀，删去与土地附表的生硬过渡。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-fossil117-proxy-consequence",
+      "scope": "整合改写：统一报告表号前缀，保留代理限定与气候章节指引。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-mineral115-cost-proxy",
+      "scope": "整合改写：回指第一节固定倍率保序结论，压缩重复论证。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-mineral115-metal-cost",
+      "scope": "整合改写：保持全部数值与多因共变限定，衔接上段。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-mineral115-calibration",
+      "scope": "整合改写：统一“经济储量情景（个人主义）”名称，去掉自辩式结尾。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-ozrad121-formula-table",
+      "scope": "合并原相邻段落，统一呈现 RIVM 2016-0104 三条路径的印表与公式不一致，版式与复算明细移入注释限定。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-ozrad121-package-discrepancies",
+      "scope": "整合改写：修正甲基溴子区室计数为 1 个（平流层下部与对流层上部），保留报告内部不一致，UUID/CAS/归一化基准与同义词明细写入注释限定。"
+    },
+    {
+      "chapter": "/docs/book/midpoint-endpoint-value-choices",
+      "claimId": "cl-mineral115-judgment",
+      "scope": "整合改写：聚焦矿产方法学分歧与已能分清的判断，移除末尾向毒性例的生硬过渡。"
+    }
+  ],
+  "reviewEvidence": [
+    {
+      "kind": "integration-review",
+      "date": "2026-11-22",
+      "file": "_docs/editorial/review-evidence/b14-integration-191/review-record.json",
+      "sha256": "2112b5759b8fba465daa0aa3325a163461294e7b8dd49b2fcd2ade25a8ad827a"
+    }
+  ],
+  "publicArtifacts": [
+    {
+      "path": "claims/index.html",
+      "sha256": "04ad76b5870c6ead9fb69ebdb3a11f0ef8497d5e49869adb2afa9b3cf2169c07"
+    },
+    {
+      "path": "sources/index.html",
+      "sha256": "b8760f1937f712409d46f67baab4b7e39077b6c161dbbb2a0fc3a3ceb8bd85e2"
+    },
+    {
+      "path": "concepts/index.html",
+      "sha256": "c53fc9af741abad0267a203c6b8ec104f2e96a614005c72cf40b1857e90dbf43"
+    },
+    {
+      "path": "downloads/catalog.json",
+      "sha256": "2a250aed41d53d5df8bfbde6bd450d6ab7cf1b76df85edfaef0c9024e1f9d9f7"
+    },
+    {
+      "path": "downloads/dependencies.json",
+      "sha256": "b64c37934d78e4d984fc9357a30dbd6fe2db38096efd2e2b850394ef5b1a6a55"
+    }
+  ]
+}

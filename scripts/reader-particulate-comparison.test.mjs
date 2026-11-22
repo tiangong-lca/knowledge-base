@@ -458,18 +458,21 @@ test('PM selection coverage retains all 54 cl-pm-* claims and X04 unchanged whil
   const { default: accepted } = await import('../config/pm-selection-accepted.json', { with: { type: 'json' } });
   const { default: edition } = await import('../config/book-edition.json', { with: { type: 'json' } });
   const root = fileURLToPath(new URL('../', import.meta.url));
-  const files = await checkpointInput().then(x => x.files);
+  const [files, headCatalog] = await Promise.all([
+    readReadableBookHistoryFiles(root, baseline.fixedFiles),
+    (await import('node:fs/promises')).readFile(new URL('../knowledge/catalog.json', import.meta.url), 'utf8').then(JSON.parse),
+  ]);
   const sources = new Map([...files].filter(([path]) => /^content\/.+\.mdx?$/.test(path))
     .map(([path, bytes]) => [path.slice(7).replace(/\.mdx?$/, '').replace(/\/index$/, ''), bytes.toString()]));
-  assert.deepEqual(validatePmSelectionCoverage(edition, sources, catalog, accepted, undefined, { readings, literature }), []);
+  assert.deepEqual(validatePmSelectionCoverage(edition, sources, headCatalog, accepted, undefined, { readings, literature }), []);
 
   const tamperedLcWork = structuredClone(literature);
   tamperedLcWork.records.find(row => row.id === 'work-kb46-lcimpact2020').limitations.push('Unreviewed addition.');
-  assert(validatePmSelectionCoverage(edition, sources, catalog, accepted, undefined, { readings, literature: tamperedLcWork })
+  assert(validatePmSelectionCoverage(edition, sources, headCatalog, accepted, undefined, { readings, literature: tamperedLcWork })
     .includes('PM selection reviewed research literature differs'));
 
   const tamperedLcReading = structuredClone(readings);
   tamperedLcReading.readings.find(row => row.id === 'rd-kb46-lcimpact2020').unread.push('Unreviewed unread note.');
-  assert(validatePmSelectionCoverage(edition, sources, catalog, accepted, undefined, { readings: tamperedLcReading, literature })
+  assert(validatePmSelectionCoverage(edition, sources, headCatalog, accepted, undefined, { readings: tamperedLcReading, literature })
     .includes('PM selection reviewed research readings differs'));
 });
