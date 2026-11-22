@@ -1,18 +1,42 @@
 name: Validate publication
 on:
   pull_request:
-  push:
-    branches: [main]
-  workflow_dispatch:
+    branches: ['diagnostic/kb-209-cpu-base-v1']
+    types: [opened]
 permissions:
   contents: read
 jobs:
   validate:
+    if: >-
+      github.event_name == 'pull_request' && github.repository == 'tiangong-lca/knowledge-base' && github.run_attempt == '1' && github.event.action == 'opened' && github.base_ref == 'diagnostic/kb-209-cpu-base-v1' && github.event.pull_request.base.sha == 'ee384d86eaefb05139a49d0bf83c6a5b8a99d5f7' && contains(fromJSON('["diagnostic/kb-209-cpu-v1-01-one","diagnostic/kb-209-cpu-v1-02-default","diagnostic/kb-209-cpu-v1-03-all","diagnostic/kb-209-cpu-v1-04-default","diagnostic/kb-209-cpu-v1-05-all","diagnostic/kb-209-cpu-v1-06-one","diagnostic/kb-209-cpu-v1-07-all","diagnostic/kb-209-cpu-v1-08-one","diagnostic/kb-209-cpu-v1-09-default"]'), github.head_ref)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           fetch-depth: 0
+          ref: e1c2ec26ed16d409e8fd18c7ed0543c575ddad74
+      - name: Attest source and initialize CPU observation
+        env:
+          STUDY_HEAD: ${{ github.head_ref }}
+          OBSERVER_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = 'e1c2ec26ed16d409e8fd18c7ed0543c575ddad74'
+          test "$(git rev-parse 'HEAD^{tree}')" = 'd9013fd95dd5cd67eaca6100d0b34c2cb84f5f4a'
+          test "$(git rev-parse HEAD:pnpm-lock.yaml)" = '6290aaa833958693c8d038664d55928e8815418d'
+          test "$(sha256sum pnpm-lock.yaml | cut -d ' ' -f 1)" = '1113b5b1a07168629eb0dd5cf460b8ba8ef2e8f79decb9ff5ac150fe85b89737'
+          test -z "$(git status --porcelain --untracked-files=normal)"
+          observation="$RUNNER_TEMP/kb-cpu-observation"
+          mkdir "$observation"
+          if ! git cat-file -e "$OBSERVER_SHA^{commit}" 2>/dev/null; then
+            git fetch --no-tags origin "refs/heads/$STUDY_HEAD"
+            test "$(git rev-parse FETCH_HEAD)" = "$OBSERVER_SHA"
+          fi
+          git show "$OBSERVER_SHA:.github/experiments/kb209/telemetry.py" > "$observation/telemetry.py"
+          test "$(sha256sum "$observation/telemetry.py" | cut -d ' ' -f 1)" = 'd13cb8f6bb02ad2a22e745c06d3ceafd760d7d5fb47b645ab872f07012800558'
+          printf 'KB_CPU_OBSERVATION=%s\n' "$observation" >> "$GITHUB_ENV"
+          printf 'KB_CPU_SOURCE %s %s %s %s %s %s\n' 'e1c2ec26ed16d409e8fd18c7ed0543c575ddad74' 'd9013fd95dd5cd67eaca6100d0b34c2cb84f5f4a' '6290aaa833958693c8d038664d55928e8815418d' '1113b5b1a07168629eb0dd5cf460b8ba8ef2e8f79decb9ff5ac150fe85b89737' "$ImageOS" "$ImageVersion"
+          python3 "$observation/telemetry.py" start --out "$observation/evidence/job"
       - uses: pnpm/setup@84cb39b217b10273981911c288cd62326dc7c6d2 # v2.0.2
         with:
           version: 12.16.1
@@ -20,7 +44,75 @@ jobs:
           cache: true
           install: false
       - run: pnpm install --frozen-lockfile
-      - run: pnpm test
+      - name: Test original suite with selected CPU concurrency
+        env:
+          STUDY_HEAD: ${{ github.head_ref }}
+        run: |
+          set -euo pipefail
+          case "$STUDY_HEAD" in
+            diagnostic/kb-209-cpu-v1-01-one) arm='one' ;;
+            diagnostic/kb-209-cpu-v1-02-default) arm='default' ;;
+            diagnostic/kb-209-cpu-v1-03-all) arm='all' ;;
+            diagnostic/kb-209-cpu-v1-04-default) arm='default' ;;
+            diagnostic/kb-209-cpu-v1-05-all) arm='all' ;;
+            diagnostic/kb-209-cpu-v1-06-one) arm='one' ;;
+            diagnostic/kb-209-cpu-v1-07-all) arm='all' ;;
+            diagnostic/kb-209-cpu-v1-08-one) arm='one' ;;
+            diagnostic/kb-209-cpu-v1-09-default) arm='default' ;;
+            *) echo 'Unregistered experiment branch' >&2; exit 2 ;;
+          esac
+          test "$(pnpm exec node --version)" = 'v24.19.0'
+          pnpm exec node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import { readFileSync } from 'node:fs';
+          import { availableParallelism, cpus, totalmem } from 'node:os';
+          const p = JSON.parse(readFileSync('package.json', 'utf8'));
+          assert.equal(p.scripts.test, 'node --test scripts/*.test.mjs');
+          assert.ok(!Object.hasOwn(p.scripts, 'pretest') && !Object.hasOwn(p.scripts, 'posttest'));
+          assert.equal(availableParallelism(), 4);
+          assert.equal(cpus().length, 4);
+          assert.ok(totalmem() >= 12 * 1024 ** 3 && totalmem() <= 20 * 1024 ** 3);
+          console.log('KB_CPU_NODE', JSON.stringify({ availableParallelism: availableParallelism(), cpus: cpus().length, memoryBytes: totalmem(), node: process.version }));
+          NODE
+          python3 - <<'CAPACITY'
+          import json, os
+          from pathlib import Path
+          root = Path('/sys/fs/cgroup')
+          membership = Path('/proc/self/cgroup').read_text().splitlines()
+          relative = next((v[3:] for v in membership if v.startswith('0::')), None)
+          observations = []
+          if relative is not None:
+              current = root / relative.lstrip('/')
+              while current == root or root in current.parents:
+                  quota_file = current / 'cpu.max'
+                  if quota_file.is_file():
+                      quota, period = quota_file.read_text().split()
+                      limit = None if quota == 'max' else int(quota) / int(period)
+                      observations.append(dict(path=str(quota_file), raw=quota_file.read_text().strip(), cpu_limit=limit))
+                      assert limit is None or limit >= 4, 'CPU quota is below registered capacity'
+                  if current == root:
+                      break
+                  current = current.parent
+          assert os.uname().machine == 'x86_64'
+          assert len(os.sched_getaffinity(0)) == 4
+          receipt = dict(affinity_cpus=sorted(os.sched_getaffinity(0)), quota_observations=observations)
+          target = Path(os.environ['KB_CPU_OBSERVATION']) / 'evidence' / 'capacity.json'
+          target.write_text(json.dumps(receipt, indent=2) + chr(10))
+          print('KB_CPU_CAPACITY', json.dumps(receipt))
+          CAPACITY
+          available=$(pnpm exec node -p 'require("node:os").availableParallelism()')
+          case "$arm" in
+            one) workers=1 ;;
+            default) workers=$((available > 1 ? available - 1 : 1)) ;;
+            all) workers=$available ;;
+            *) exit 2 ;;
+          esac
+          printf 'KB_CPU_WORKERS %s %s %s\n' "$arm" "$workers" "$available"
+          if [ "$arm" = 'default' ]; then
+            python3 "$KB_CPU_OBSERVATION/telemetry.py" run --out "$KB_CPU_OBSERVATION/evidence/test" -- pnpm exec node --test scripts/*.test.mjs
+          else
+            python3 "$KB_CPU_OBSERVATION/telemetry.py" run --out "$KB_CPU_OBSERVATION/evidence/test" -- pnpm exec node --test "--test-concurrency=$workers" scripts/*.test.mjs
+          fi
       - run: node scripts/verify-checkpoint-history.mjs
       - run: pnpm typecheck
       - name: Build guarded Next output and independently verify the export
@@ -55,3 +147,16 @@ jobs:
         with:
           name: knowledge-base-static
           path: out/
+      - name: Finish CPU observation
+        if: always()
+        run: |
+          if [ -n "${KB_CPU_OBSERVATION:-}" ] && [ -f "$KB_CPU_OBSERVATION/telemetry.py" ]; then
+            python3 "$KB_CPU_OBSERVATION/telemetry.py" stop --out "$KB_CPU_OBSERVATION/evidence/job"
+          fi
+      - name: Preserve CPU observation receipts
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: kb-cpu-telemetry
+          path: ${{ runner.temp }}/kb-cpu-observation/evidence/
+          if-no-files-found: error
