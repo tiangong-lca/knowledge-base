@@ -5,7 +5,29 @@ description: 从排放量算到人群吸入量、死亡或发病计数与潜在�
 
 ## 排放与健康量 [#排放与健康量]
 
-<Prose ids="cl-pm-opening cl-pm-particle-identity cl-pm-intake-definition cl-pm-intake-unit cl-pm-receptor-boundary cl-pm-effect-definition cl-pm-effect-default cl-pm-urban-health cl-pm-rural-health cl-pm-precursor-denominator cl-pm-precursor-health cl-particulate131-indicator-cutpoints cl-particulate131-size-and-subcompartment" />
+<Prose ids="cl-pm-opening cl-pm-particle-identity cl-pm-intake-definition cl-pm-intake-unit cl-pm-receptor-boundary cl-pm-effect-definition cl-pm-effect-default cl-pm-urban-health cl-pm-rural-health cl-pm-precursor-denominator cl-pm-precursor-health cl-particulate131-indicator-cutpoints" />
+
+表 1 主流影响评价体系的颗粒物健康指标截点与量纲对照。
+
+| 体系 | 中点指标与单位 | 终点指标与单位 | 底层模型与关键说明 |
+| --- | --- | --- | --- |
+| ILCD 2011 | kg PM₂.₅ 当量（Level I） | DALY（初级 Level I / 二次 Level II） | 结合欧洲 RiskPoll 与美国源—受体模型 |
+| ReCiPe 2016 | kg PM₂.₅ 当量（吸入比例比值） | 全球默认乘 6.29×10⁻⁴ DALY/kg PM₂.₅ 当量 | 56 区域 TM5-FASST + 30 岁以上成人队列 |
+| LC-IMPACT | 0 项中点 | 区域 DALY/kg（初级全球均值 6.29×10⁻⁴） | 同源 TM5-FASST + 成人队列，分两档稳健度 |
+| EF 3.1 | 疾病发生例数（人均基准 5.95×10⁻⁴ 例/人，权重 8.96%） | 0 项正式终点 | UNEP/SETAC 2016 非线性模型；实为过早死亡纯文字改名 |
+
+<Prose ids="cl-particulate131-size-and-subcompartment" />
+
+表 2 EF 3.1 初级颗粒物空气子区室表征因子示例（疾病发生例数/kg）。
+
+| 空气子区室 | PM₂.₅（及 PM₀.₂ / PM₀.₂–₂.₅） | PM₁₀（按 0.23×PM₂.₅ 折算） | 相对城市近地面的倍数 |
+| --- | --- | --- | --- |
+| 城市近地面 / 未指定空气 | 2.38497×10⁻⁴ | 5.48544×10⁻⁵ | 1×（基准） |
+| 非城市近地面 | 1.13763×10⁻⁵ | 2.61654×10⁻⁶ | 1/20.96 |
+| 非城市高烟囱 | 3.01757×10⁻⁶ | 6.94041×10⁻⁷ | 1/79.04 |
+| 非城市超高烟囱 | 1.62949×10⁻⁶ | 3.74783×10⁻⁷ | 1/146.36 |
+
+注：PM₂.₅–₁₀ 与大于 10 µm 粗颗粒物及高空子区室在 EF 3.1 颗粒物方法中均赋 0。
 
 ## 暴露与证据 [#暴露与证据]
 
@@ -21,6 +43,19 @@ description: 从排放量算到人群吸入量、死亡或发病计数与潜在�
 
 ## 因子与比较 [#因子与比较]
 
-<Prose ids="cl-pm-concentration-route cl-pm-regional-summary cl-pm-factor-order cl-pm-version-and-model cl-pm-matched-scope cl-pm-matched-scenario cl-pm-uncovered-pathways cl-particulate131-precursor-perspectives cl-particulate131-ef-ammonia-inversion cl-particulate131-regional-endpoint-reversal cl-particulate131-package-discrepancies cl-pm-population-meaning cl-pm-conclusion" />
+<Prose ids="cl-pm-concentration-route cl-pm-regional-summary cl-pm-factor-order cl-pm-version-and-model cl-pm-matched-scope cl-pm-matched-scenario cl-pm-uncovered-pathways cl-particulate131-precursor-perspectives cl-particulate131-ef-ammonia-inversion" />
+
+表 3 二次无机前体（SO₂、NH₃、NOₓ）在不同体系与子区室中的相对权重对照。
+
+| 体系与情景 | 单位 | SO₂ | NH₃ | NOₓ | 1 kg 郊区 NH₃ vs 2 kg 高烟囱 SO₂ |
+| --- | --- | --- | --- | --- | --- |
+| ReCiPe 2016 个人主义（I） | kg PM₂.₅ 当量/kg | 0 | 0 | 0 | 均为 0 |
+| ReCiPe 2016 等级主义（H，默认） | kg PM₂.₅ 当量/kg | 0.29 | 0 | 0 | 0 < 0.58（SO₂ 胜） |
+| ReCiPe 2016 平等主义（E，全球） | kg PM₂.₅ 当量/kg | 0.29 | 0.24 | 0.11 | 0.24 < 0.58（SO₂ 胜） |
+| LC-IMPACT 全部效应（全球） | DALY/kg | 1.83×10⁻⁴ | 1.61×10⁻⁴ | 7.62×10⁻⁵ | 1.61×10⁻⁴ < 3.66×10⁻⁴（SO₂ 胜） |
+| EF 3.1 未指定空气 | 例/kg | 8.0×10⁻⁶ | 2.1×10⁻⁵ | 1.6×10⁻⁶ | — |
+| EF 3.1 非城市 / 高烟囱 | 例/kg | 9.9×10⁻⁷ | 2.1×10⁻⁵ | 2.1×10⁻⁷ | 2.1×10⁻⁵ > 1.98×10⁻⁶（NH₃ 胜 10.61×） |
+
+<Prose ids="cl-particulate131-regional-endpoint-reversal cl-particulate131-package-discrepancies cl-pm-population-meaning cl-pm-conclusion" />
 
 GLAM澳大利亚城乡四个初级PM₂.₅发布因子的数值换算及其发行范围见[发行范围与因子表](/docs/appendices/particulate-factor-calculations#发行范围与因子表)。
