@@ -1,4 +1,5 @@
 import { isCleanDeliveryValidation } from './reader-editorial-mode.mjs';
+import { currentRevisions } from './reader-checkpoint.mjs';
 import { currentAcidEquivalents, currentEutrophicationPathways, currentParticulateComparison, currentLocalizationComparison, currentSocialComparison, currentBookLayout, currentBookMdxMatches, currentBookFileMatches, currentBookRecordMatches } from './reader-current-expectations.mjs';
 import { createHash } from 'node:crypto';
 import { isDeepStrictEqual as same } from 'node:util';
@@ -228,6 +229,11 @@ export function validatePmSelectionCoverage(edition, sources, catalog, accepted,
   for (const unit of accepted.units) {
     try {
       const raw = sources.get(unit.route);
+      if (currentRevisions.some(r => r.routes?.includes(unit.route))) {
+        if (!raw || !currentBookMdxMatches(unit.route, unit.mdxSha256, hash(raw.replaceAll('\r\n', '\n'))))
+          throw new Error(`PM selection actual title, description, heading, prose or navigation differs: ${unit.route}`);
+        continue;
+      }
       const expected = currentBookLayout(`B17:${unit.route}:source`, unit);
       const actual = raw && inspectPmSelectionSource(unit.route, raw);
       if (!actual || !currentBookMdxMatches(unit.route, unit.mdxSha256, actual.mdxSha256) || !same({ ...actual, mdxSha256: expected.mdxSha256 }, expected)) throw new Error(`PM selection actual title, description, heading, prose or navigation differs: ${unit.route}`);
