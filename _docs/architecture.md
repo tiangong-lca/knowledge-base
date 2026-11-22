@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-22
-lastReviewedCommit: 781e935b83cbe90e651abec3fba58f600ae99650
+lastReviewedCommit: 38562b0da81f7f1cf44faa8dba1f893eae5af7de
 ---
 
 # Publication architecture

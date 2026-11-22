@@ -98,7 +98,7 @@ export function LcaTimeline() {
             type="search"
             value={query}
             onChange={event => setQuery(event.target.value)}
-            placeholder="筛选年份、机构或关键词（如 ISO / PEF / 购物袋）"
+            placeholder="搜索年份、机构或关键词"
             aria-label="筛选大事记节点"
             className={styles.searchInput}
           />
