@@ -14,7 +14,7 @@ checkPaths:
   - "knowledge/**"
   - "releases/**"
 lastReviewedAt: 2026-11-22
-lastReviewedCommit: 38562b0da81f7f1cf44faa8dba1f893eae5af7de
+lastReviewedCommit: 40b3cee15155b60ce99151da96b2bb303d2349bc
 ---
 
 # Editorial and living review protocol
@@ -324,3 +324,28 @@ the mapping algorithm or a software runtime. A newly generated carrier of the
 same work gets a separate artifact and reading event. Reader clarification of
 emission-by-CF summation receives a bounded source recheck; it does not reopen
 or rewrite the immutable numerical templates.
+
+## Post-checkpoint revision tooling
+
+All post-checkpoint revisions registered under `config/revisions/` use the
+repository-tracked scripts in `scripts/` (without modifying the pinned
+`package.json` manifest):
+
+- `node scripts/revision-apply.mjs <spec.mjs> [--allow-case-binding]`: applies a
+  declarative revision spec against clean `git HEAD` baselines, enforces the
+  Clean-Delivery Guard (no internal `cl-...` IDs in reader-facing rationales or
+  correction scopes), preserves H2 count/anchors and premise ordering, blocks
+  `caseBinding: true` edits unless `--allow-case-binding` is explicitly paired
+  with a `knowledge/cases/*.publication.json` file transition, writes review
+  evidence, and updates `config/revisions/index.json` and `revisionsIndexPin`.
+- `node scripts/revision-refresh.mjs <revId> [--css] [--skip-build] [--no-verify]`:
+  runs `pnpm validate` and `next build`, materializes public download payloads,
+  recomputes exact `publicArtifacts` fingerprints (and `asset:reader-css` when
+  `--css` is passed), updates `index.json` and `revisionsIndexPin`, and verifies
+  with a full `pnpm build`.
+- `node scripts/revision-ui.mjs <revId> --task <task> --title <title> --rationale <text> --routes <r1,r2> [--html <paths>]`:
+  registers a pure UI/layout revision with `asset:reader-css` and optional HTML
+  artifact fingerprints.
+- `node scripts/reader-extract-text.mjs [--out-dir <dir>] <label:relRoute> [...]`:
+  extracts clean rendered prose, tables, and notes from static HTML under `out/`
+  for zero-context reader audits using the bundled HTML parser.
