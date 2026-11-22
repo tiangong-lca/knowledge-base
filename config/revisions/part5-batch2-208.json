@@ -1,0 +1,2285 @@
+{
+  "schemaVersion": 1,
+  "id": "part5-batch2-208",
+  "date": "2026-11-22",
+  "title": "第五部分 B20–B24 整合改写（批次 2）",
+  "rationale": "按全书目标第 2.16 节将第五部分五篇（B20《生态稀缺赋权》、B21《影响评价本地化》、B22《环境损害估值》、B23《社会表现与影响》、B24《生命周期成本与综合评价》）中的 36 段追加比较长段整合为连续章节论证：全部压实至 450 字以内，联动既有及新增对照表，将详细工作簿与排印异文归入注释；全部 16 个算例绑定段落与既有章节标题均保持不变。",
+  "routes": [
+    "/docs/book/ecological-scarcity-and-targets",
+    "/docs/book/localization-evidence-and-denominators",
+    "/docs/book/lime-preferences-and-damage-weights",
+    "/docs/book/social-assessment-objects-and-meaning",
+    "/docs/book/cost-perspectives-and-sustainability-combination"
+  ],
+  "sourceCommit": "e1c2ec26ed16d409e8fd18c7ed0543c575ddad74",
+  "claims": [
+    {
+      "id": "cl-weight135-ef-coating-outdoor",
+      "op": "modify",
+      "from": {
+        "id": "cl-weight135-ef-coating-outdoor",
+        "status": "reviewed",
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "conceptIds": [],
+        "mappingIds": [],
+        "premiseIds": [
+          "cl-es-selection",
+          "cl-es-service",
+          "cl-es-score",
+          "cl-es-threshold"
+        ],
+        "evidenceIds": [
+          "ev-es-nmvoc",
+          "ev-es-nox",
+          "ev-es-new-nmvoc",
+          "ev-es-new-nox",
+          "ev-weight135-ef31-pof-equal-cf",
+          "ev-weight135-ef31-nox-acid",
+          "ev-weight135-ef31-nox-terr",
+          "ev-weight135-ef31-nox-marine",
+          "ev-weight135-ef31-nox-and-pm25-pm",
+          "ev-weight135-ef31-nmvoc-ecotox-subcompartments",
+          "ev-weight135-ef31-nmvoc-htnc-subcompartments",
+          "ev-weight135-ef31-nf-wf-workbook"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-es-nmvoc",
+            "relation": "supports",
+            "rationale": "核实瑞士2013年版表14一般空气NMVOC公布因子14 UBP/g。"
+          },
+          {
+            "evidenceId": "ev-es-nox",
+            "relation": "supports",
+            "rationale": "核实瑞士2013年版表15空气NOx公布因子39 UBP/g（比值39/14≈2.786，高于2）。"
+          },
+          {
+            "evidenceId": "ev-es-new-nmvoc",
+            "relation": "supports",
+            "rationale": "核实瑞士2021年版表16一般空气NMVOC公布因子12 UBP/g。"
+          },
+          {
+            "evidenceId": "ev-es-new-nox",
+            "relation": "supports",
+            "rationale": "核实瑞士2021年版表18空气NOx公布因子33 UBP/g（比值33/12=2.750，高于2）。"
+          },
+          {
+            "evidenceId": "ev-weight135-ef31-pof-equal-cf",
+            "relation": "supports",
+            "rationale": "核实欧盟EF 3.1光化学臭氧形成单一中点下室外一般NMVOC与NOx表征因子同为1.0 kg NMVOC-eq/kg。"
+          },
+          {
+            "evidenceId": "ev-weight135-ef31-nox-acid",
+            "relation": "supports",
+            "rationale": "核实欧盟EF 3.1中空气NOx酸化表征因子为0.74 mol H⁺-eq/kg。"
+          },
+          {
+            "evidenceId": "ev-weight135-ef31-nox-terr",
+            "relation": "supports",
+            "rationale": "核实欧盟EF 3.1中空气NOx陆地富营养化表征因子为4.26 mol N-eq/kg。"
+          },
+          {
+            "evidenceId": "ev-weight135-ef31-nox-marine",
+            "relation": "supports",
+            "rationale": "核实欧盟EF 3.1中空气NOx海洋富营养化表征因子为0.389 kg N-eq/kg。"
+          },
+          {
+            "evidenceId": "ev-weight135-ef31-nox-and-pm25-pm",
+            "relation": "supports",
+            "rationale": "核实欧盟EF 3.1中空气NOx细颗粒物二次前体因子在城市近地面或未指定空气为1.6×10⁻⁶、非城市或高烟囱为2.1×10⁻⁷例/kg。"
+          },
+          {
+            "evidenceId": "ev-weight135-ef31-nmvoc-ecotox-subcompartments",
+            "relation": "supports",
+            "rationale": "核实欧盟EF 3.1中一般NMVOC在室外三类空气子区室的淡水生态毒性因子（8.6069、9.4933、7.7204 CTUe/kg）。"
+          },
+          {
+            "evidenceId": "ev-weight135-ef31-nmvoc-htnc-subcompartments",
+            "relation": "supports",
+            "rationale": "核实欧盟EF 3.1中一般NMVOC在室外三类空气子区室的人体非致癌毒性因子（6.2186×10⁻⁸、1.1026×10⁻⁷、1.4112×10⁻⁸ CTUh/kg）。"
+          },
+          {
+            "evidenceId": "ev-weight135-ef31-nf-wf-workbook",
+            "relation": "supports",
+            "rationale": "核实欧盟EF 3.1全部16类2010年全球人均年度归一化基准NF与Sala等2018百分权重WF。"
+          }
+        ],
+        "scope": "固定本章涂装清单（甲：4克一般NMVOC加1克NOx；乙：2克一般NMVOC加2克NOx，换位分界为NOx对NMVOC单位分值比等于2），对比瑞士生态稀缺法与欧盟EF 3.1单一光化学臭氧中点及室外全16类加权总分。",
+        "text": "把同一组涂装清单（甲排4克一般NMVOC与1克NOx，乙排2克一般NMVOC与2克NOx）放进欧盟环境足迹（Environmental Footprint，下称欧盟EF）3.1版，就能看清“取单一最严目标”与“跨多类别加权求和”的机制差别。乙比甲少排2克NMVOC而多排1克NOx：只要NOx的每克计分高于NMVOC的2倍，甲就占优；低于2倍，乙就占优。瑞士生态稀缺法在2013年版（39对14 UBP/g，比值约2.786）与2021年版（33对12 UBP/g，比值2.750）都高于2，因为瑞士全国NOx相对法定临界流的超标平方远大于NMVOC，且对多途径物质只取单一最高因子而不跨途径累加。若只截出欧盟EF 3.1的光化学臭氧形成单一中点，排入室外空气的一般NMVOC与NOx表征因子同为1.0千克NMVOC当量/千克（比值1.000低于2），乙（4.0克当量）反而优于甲（5.0克当量）。但进入欧盟EF 3.1全部16类指标的2010年全球人均年度归一化（全球人口6,895,889,018人）与混合加权总分后，两类排放的计分路径便拉开差距。室外NOx同时在五个中点计分：光化学臭氧形成（1.0 kg NMVOC-eq/kg，权重4.78%）、酸化（0.74摩尔氢离子当量mol H⁺-eq/kg，权重6.20%）、陆地富营养化（4.26摩尔氮当量mol N-eq/kg，权重3.71%）、海洋富营养化（0.389千克氮当量kg N-eq/kg，权重2.96%）及细颗粒物（权重8.96%）。室外一般NMVOC则只进入光化学臭氧形成（1.0）、淡水生态毒性（以淡水生态比较毒性单位CTUe/kg计，权重1.92%）与人体非致癌毒性（以人体比较毒性单位CTUh/kg计，权重1.84%）三项。按各表征因子除以全球每人每年归一化基准再乘权重求和，未指定室外空气下每克NOx与NMVOC分别得3.7196×10⁻⁶与1.1817×10⁻⁶点，比值约3.148，甲（8.446×10⁻⁶点）优于乙（9.802×10⁻⁶点）；城市近地面比值约3.129，非城市或高烟囱比值约2.989。三种室外口径虽与瑞士点数一样判甲占优，靠的却是五条环境机制的跨类别累加，而非国内法定目标距离的平方放大。",
+        "reasoning": "同一4 g/1 g对2 g/2 g涂装清单在EF 3.1单一POF中点下比值为1（乙优），在室外16类加权总分下因NOx五路径累加使比值升至2.989–3.148（甲优），与瑞士UBP同向但聚合机制截然不同。",
+        "caveats": [
+          "按工作簿精确缓存值计算，城市近地面下室外一般NMVOC淡水生态毒性为9.4933 CTUe/kg、非致癌毒性为1.1026×10⁻⁷ CTUh/kg（未指定空气分别为8.6069与6.2186×10⁻⁸），甲为8.4749×10⁻⁶点、乙为9.8168×10⁻⁶点；非城市或高烟囱下一般NMVOC两项因子为7.7204与1.4112×10⁻⁸（NOx颗粒物因子由1.6×10⁻⁶降至2.1×10⁻⁷例/kg），甲为8.2084×10⁻⁶点、乙为9.3698×10⁻⁶点。",
+          "一般NMVOC在欧盟EF 3.1中为未分物种混合物代理流；若涂装溶剂已拆分为苯乙烯、甲苯、二甲苯等具体物质，两套体系均须改匹配各自物质流因子。"
+        ]
+      },
+      "rationale": "整合改写：统一 pt/点 单位，压实至 440 字以内并将涂装对比汇总入表 1。"
+    },
+    {
+      "id": "cl-weight135-ef-coating-indoor",
+      "op": "modify",
+      "from": {
+        "id": "cl-weight135-ef-coating-indoor",
+        "status": "reviewed",
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "conceptIds": [],
+        "mappingIds": [],
+        "premiseIds": [
+          "cl-es-nmvoc",
+          "cl-weight135-ef-coating-outdoor"
+        ],
+        "evidenceIds": [
+          "ev-es-nmvoc",
+          "ev-weight135-ef31-pof-equal-cf",
+          "ev-weight135-ef31-nox-and-pm25-pm",
+          "ev-weight135-ef31-nmvoc-ecotox-subcompartments",
+          "ev-weight135-ef31-nmvoc-htnc-subcompartments",
+          "ev-weight135-ef31-styrene-htc-subcompartments",
+          "ev-weight135-ef31-nf-wf-workbook"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-es-nmvoc",
+            "relation": "supports",
+            "rationale": "核实瑞士2013年版表14仅对排入空气的一般NMVOC给出单一全国因子14 UBP/g，不拆分室内空气子区室。"
+          },
+          {
+            "evidenceId": "ev-weight135-ef31-pof-equal-cf",
+            "relation": "supports",
+            "rationale": "核实欧盟EF 3.1光化学臭氧形成方法表对室外苯乙烯取0.24 kg NMVOC-eq/kg，但未收录排入室内空气的一般NMVOC与苯乙烯（有效因子为0）。"
+          },
+          {
+            "evidenceId": "ev-weight135-ef31-nox-and-pm25-pm",
+            "relation": "supports",
+            "rationale": "核实燃烧NOx排入室外空气的两档每克综合点数（非城市或高烟囱3.5104×10⁻⁶与城市或未指定室外3.7196×10⁻⁶点/克）。"
+          },
+          {
+            "evidenceId": "ev-weight135-ef31-nmvoc-ecotox-subcompartments",
+            "relation": "supports",
+            "rationale": "核实室内空气一般NMVOC（8.8728 CTUe/kg）与苯乙烯（室外未指定0.22706、室内0.2382 CTUe/kg）的淡水生态毒性因子。"
+          },
+          {
+            "evidenceId": "ev-weight135-ef31-nmvoc-htnc-subcompartments",
+            "relation": "supports",
+            "rationale": "核实室内空气一般NMVOC（8.957×10⁻⁶ CTUh/kg）与苯乙烯（室外未指定1.9325×10⁻⁸、室内4.075×10⁻⁶ CTUh/kg）的人体非致癌毒性因子。"
+          },
+          {
+            "evidenceId": "ev-weight135-ef31-styrene-htc-subcompartments",
+            "relation": "supports",
+            "rationale": "核实苯乙烯在室外未指定空气（5.1149×10⁻⁷ CTUh/kg）与室内空气（1.0787×10⁻⁴ CTUh/kg）的人体致癌毒性因子。"
+          },
+          {
+            "evidenceId": "ev-weight135-ef31-nf-wf-workbook",
+            "relation": "supports",
+            "rationale": "核实毒性与光化学臭氧的全球人均年度NF和权重WF，闭合室内一般NMVOC（1.2832×10⁻⁶点/克）与苯乙烯（室外9.1508×10⁻⁷对室内1.3376×10⁻⁴点/克）的综合加权得分。"
+          }
+        ],
+        "scope": "保持涂装排放克数不变，检验车间溶剂改记入欧盟EF 3.1室内空气子区室时的光化学臭氧缺行抵消效应（一般NMVOC）与具体有机溶剂（苯乙烯）的排序反转，并对照瑞士生态稀缺法的子区室边界。",
+        "text": "如果保持4克与2克的排放克数分毫不改，只把车间内挥发的涂装溶剂改记入欧盟EF 3.1的“排入室内空气”子区室，而烘干炉燃烧产生的NOx仍排往室外空气，结果会同时暴露出数据包覆盖不对称与近场暴露反转两重现象。先看未分物种的一般NMVOC：在一致化毒性模型（USEtox）中，室内排放先在封闭空间以高吸入比例暴露于室内人员，再经通风排往室外，因此室内一般NMVOC的人体非致癌毒性因子从室外未指定空气的6.2186×10⁻⁸跃升约144倍至8.957×10⁻⁶ CTUh/kg（单项贡献1.2802×10⁻⁶点/克），淡水生态毒性也保持8.8728 CTUe/kg。然而欧盟EF 3.1的光化学臭氧形成方法表根本未收录“排入室内空气”的挥发性有机物基本流（有效因子归零），凭空抹去了室外原本占1.1699×10⁻⁶点/克的臭氧生成得分。一增一减几乎相抵，使室内一般NMVOC的综合得分仅微升至1.2832×10⁻⁶点/克；室外NOx对它的分值比为2.736（非城市或高烟囱NOx：甲8.6432×10⁻⁶点仍低于乙9.5872×10⁻⁶点）或2.899（未指定室外NOx），甲依旧占优。但若将清单指明为不饱和聚酯涂装常用的苯乙烯溶剂，排序就会发生剧烈翻转。苯乙烯排入未指定室外空气时（光化学臭氧0.24、淡水生态毒性0.22706 CTUe/kg、非致癌毒性1.9325×10⁻⁸与致癌毒性5.1149×10⁻⁷ CTUh/kg），每克仅计9.1508×10⁻⁷点，室外NOx对苯乙烯的分值比高达4.065（非城市NOx下为3.836），高于换位分界2，甲（7.380×10⁻⁶点）优于乙（9.269×10⁻⁶点）。一旦将苯乙烯改记入室内空气，即便光化学臭氧同样归零，其人体致癌毒性（1.0787×10⁻⁴ CTUh/kg，权重2.13%）与非致癌毒性（4.075×10⁻⁶ CTUh/kg）两项表征因子均达室外的约211倍，仍将每克综合得分推高约146倍至1.3376×10⁻⁴点；NOx对苯乙烯的分值比骤降至0.0278（非城市NOx下为0.0262），远低于分界2，结论彻底反转为乙（2.750×10⁻⁴点）优于甲（5.387×10⁻⁴点）。反观瑞士2013年版表14，生态稀缺法并不在生态点数表内拆分车间室内空气子区室，职业暴露另归劳动卫生限值管理。",
+        "reasoning": "揭示EF 3.1室内空气子区室的双重机制：对一般NMVOC因光化学臭氧方法表缺行归零抵消了91%的144倍非致癌毒性增幅（比值2.736–2.899仍判甲优），而对具致癌毒性的具体溶剂苯乙烯则将每克分值推升146倍（比值跌至0.0262–0.0278改判乙优）。",
+        "caveats": [
+          "室内空气子区室因子依赖默认室内换气率与人员停留假设，且低毒性高臭氧潜势溶剂（如甲苯）若误记为室内空气还会因光化学臭氧缺行而出现总分反常暴跌；若车间配有密闭收集与尾气焚烧装置，实际排入室内与室外的质量本身也会改变。"
+        ]
+      },
+      "rationale": "整合改写：压实至 440 字以内，联动表 1 突出室内臭氧缺行与苯乙烯百倍反转。"
+    },
+    {
+      "id": "cl-weight135-ef-robustness-weights",
+      "op": "modify",
+      "from": {
+        "id": "cl-weight135-ef-robustness-weights",
+        "status": "reviewed",
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-18",
+        "conceptIds": [],
+        "mappingIds": [],
+        "premiseIds": [
+          "cl-es-authority",
+          "cl-weight135-ef-coating-indoor"
+        ],
+        "evidenceIds": [
+          "ev-weight135-pef-guidance-robustness-table",
+          "ev-weight135-ef31-nf-wf-workbook"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-weight135-pef-guidance-robustness-table",
+            "relation": "supports",
+            "rationale": "核实PEFCR Guidance v6.3附录A（第163—164页）与附录B.1（第209页）含毒性与不含毒性两套A列（50:50重要性，16项印值和100.03）、B列（1至0.1稳健度系数）、C=A×B与最终权重表。"
+          },
+          {
+            "evidenceId": "ev-weight135-ef31-nf-wf-workbook",
+            "relation": "supports",
+            "rationale": "核实EF 3.1工作簿WFs表沿用Sala等2018含毒性最终权重（气候变化21.06%、细颗粒物8.96%，三项毒性2.13%+1.84%+1.92%=5.89%）。"
+          }
+        ],
+        "scope": "依据PEFCR Guidance v6.3附录A/B.1与EF 3.1加权工作簿（Sala等2018），拆解50:50公众—专家偏好A列与模型稳健度B列的相乘机制及其引发的方案换位。",
+        "text": "为什么室内一般NMVOC的非致癌毒性跃升144倍后，单项加权贡献仍只有1.2802×10⁻⁶点/克，刚刚追平室外光化学臭氧？拆开欧盟产品环境足迹类别规则导则（PEFCR Guidance v6.3）附录A与EF 3.1工作簿所载的Sala等2018年混合赋权表，就能看到“价值重要性”与“科学稳健度折减”被乘在了同一个百分数里。含毒性表先将普通公众与生命周期评价专家按50:50汇总的原始重要性列作A列：气候变化12.9、用水9.69、土地利用9.04、化石资源7.37、人体致癌毒性6.8、矿产金属6.68、淡水生态毒性6.12、人体非致癌毒性5.88、细颗粒物5.49。全部16项印值之和为100.03，其中三项毒性原始重要性合计达18.80，接近受访者总偏好的五分之一。紧接着，方法把A列乘上0.1至1量表的模型科学稳健度系数B列：气候变化与细颗粒物同获最高档0.87，酸化与陆地富营养化为0.67，臭氧耗竭与两项资源为0.6，光化学臭氧与海洋富营养化为0.53，电离辐射、淡水富营养化、土地与水为0.47，而三项基于USEtox的毒性类别因跨数千种化学品的暴露与效应外推不确定性大，一律被压至最低档0.17。将乘积C列重标定为100%后，气候变化跃升至21.06%、细颗粒物升至8.96%，三项毒性在总权重中的合计份额则被压缩约3.19倍至5.89%（致癌2.13%、非致癌1.84%、淡水生态毒性1.92%；早期试点不含毒性表更将三者剔除，使气候变化升至22.19%、细颗粒物升至9.54%）。现以全球人均年度归一化后的相对量“人年”（即产品中点结果除以全球每人每年的平均环境负荷基准，代表相当于多少名全球居民一年的平均负荷，切勿与后文衡量健康寿命损失的伤残调整生命年DALY混淆）检验这一折减的后果：设路线丙具0.10人年气候变化与0.60人年淡水生态毒性，路线丁具0.25人年气候变化与0.05人年淡水生态毒性，其余14类得分相等，两路线换位分界为气候与生态毒性权重比(0.60 − 0.05) ÷ (0.25 − 0.10) = 11/3 ≈ 3.667。若直接按受访公众与专家的原始偏好A列计分（12.9 ÷ 6.12 ≈ 2.108，低于11/3），丁优于丙（A列加权和为3.531对4.962，除以16项印值总和100.03归一后约为0.03530对0.04961）；改用乘过稳健度B列的EF 3.1正式权重（21.06% ÷ 1.92% = 10.96875，高于11/3），结果立刻反转为丙优于丁（0.03258对0.05361点）。这里的次序翻转并非源于受访者轻视化学品毒性，而是源于方法开发者对毒性施加了0.17档稳健度系数（相对气候变化0.87档折减逾五倍，使两类权重比放大逾五倍）。",
+        "reasoning": "对比A列原始50:50偏好（CC/Ecotox=12.9/6.12≈2.108，16项印值和100.03）与乘B列稳健度后的正式WF（21.06%/1.92%=10.96875），证明模型稳健度折减（0.87对0.17）可独立跨越3.667分界翻转产品排序。",
+        "caveats": [
+          "PEFCR Guidance v6.3附录A印出的C=A×B列由底层未舍入稳健度分值相乘后取两位小数（如气候变化印11.18而12.9×0.87=11.223，致癌毒性印1.13而6.8×0.17=1.156），引用时保留原表列值而不强行改算。"
+        ]
+      },
+      "rationale": "整合改写：压实至 440 字以内，将 16 项 A/B 列明细与算例中间值移入注释。"
+    },
+    {
+      "id": "cl-weight135-denominator-coupling-and-drift",
+      "op": "modify",
+      "from": {
+        "id": "cl-weight135-denominator-coupling-and-drift",
+        "status": "reviewed",
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "conceptIds": [],
+        "mappingIds": [],
+        "premiseIds": [
+          "cl-es-equation",
+          "cl-es-why-square",
+          "cl-weight135-ef-robustness-weights",
+          "cl-es-metals",
+          "cl-es-judgment"
+        ],
+        "evidenceIds": [
+          "ev-es-equation",
+          "ev-es-muhl-2021-perspective-scope",
+          "ev-weight135-ef31-nf-wf-workbook",
+          "ev-weight135-jrc130796-nf-drift-and-rankings"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-es-equation",
+            "relation": "supports",
+            "rationale": "核实瑞士生态稀缺法式(4)中归一化项1/F_n与目标距离权重(F/F_k)²的相乘结构。"
+          },
+          {
+            "evidenceId": "ev-es-muhl-2021-perspective-scope",
+            "relation": "supports",
+            "rationale": "核实Muhl等2021固定欧盟年度归一化基准F_n而切换消费／生产地区权重的跨区域组合方式。"
+          },
+          {
+            "evidenceId": "ev-weight135-ef31-nf-wf-workbook",
+            "relation": "supports",
+            "rationale": "核实欧盟EF 3.1单一总分按表征结果除以全球人均年度基准NF_i再乘固定百分权重WF_i求和的算式。"
+          },
+          {
+            "evidenceId": "ev-weight135-jrc130796-nf-drift-and-rankings",
+            "relation": "supports",
+            "rationale": "核实JRC130796从EF 3.0到EF 3.1的人均年度NF变动幅度及2,752个官方数据集单一总分变动主导类别与顺位更替统计。"
+          }
+        ],
+        "scope": "对比瑞士生态稀缺法与欧盟EF 3.1中归一化分母进入单位排放折算率的代数方式，并结合JRC130796量化全球人均年度基准修订对单一总分的传导效应。",
+        "text": "顺着地域参照往下追问，还要看清“归一化分母”和“权重”在算式里怎样耦合。瑞士生态稀缺法把归一化项1/Fₙ与政策超标平方(F/Fₖ)²相乘：当归一化与赋权同取瑞士本国年度现状流（Fₙ = F）时，分子与分母约去一次F，单位排放点数正比于F/Fₖ²，背景排放上升会推高每克罚分；像Muhl等那样固定欧盟年度总量Fₙ而改取产地F/Fₖ时，Fₙ便作为独立外部尺度保留在分母中。欧盟EF 3.1则先设全球每人每年的平均环境负荷基准NFᵢ，再固定Sala等2018年的百分权重WFᵢ不变，将每单位中点表征结果乘以WFᵢ/NFᵢ：一旦全球背景排放清单补漏、删重或改换表征因子使NFᵢ变小，前景产品每单位中点影响的折算率就会成反比被动放大。欧盟联合研究中心（JRC）的EF 3.1更新报告（JRC130796）提供了直接实证。从EF 3.0升至EF 3.1，因删除空气一氧化碳的非致癌毒性因子，人体非致癌毒性的全球人均年度NF从2.30×10⁻⁴骤降44%至1.29×10⁻⁴ CTUh/(人·年)（工作簿精确值1.2874×10⁻⁴），在不改1.84%权重的情况下把每CTUh的加权折算率自动抬高约1.79倍；淡水生态毒性NF上升33%（4.27×10⁴至5.67×10⁴ CTUe/(人·年)），气候变化NF下降6.7%（8.10×10³至7.55×10³ kg CO₂-eq/(人·年)）。在表征因子与归一化分母的协同更新下，全部2,752个官方EF数据集中有2,751个总分发生变动：名义权重仅1.92%的淡水生态毒性在1,535个数据集（占55.8%）中成为驱动单一总分变动的首要类别，反而压过权重高达21.06%的气候变化（1,043个，占37.9%）以及人体非致癌毒性（172个）与致癌毒性（1个），并使第1、第2、第3顺位“最相关影响类别”分别在171个（6%）、280个（10%）和358个（13%）数据集中发生更替。后文《环境损害估值》还将展示第三种代数结构：直接按每单位损害的边际支付意愿金额求和时不经外部年度归一化分母，一旦改写为无量纲年度份额权重，年度参照量便重新嵌入权重分子。",
+        "reasoning": "在WF_i/NF_i结构下，固定百分权重并不能锁定物理单位折算率；JRC130796对2,752个官方数据集的统计证明NF与CF协同修订可令1.92%权重的生态毒性主导55.8%数据集的总分变化。",
+        "caveats": [
+          "JRC130796第5.2节表14对49个代表产品的对照中，27个单一总分下降、22个上升（静止葡萄酒降幅达15%，食用动物饲料正文报升幅13%、表14印12.8%），变动同时包含表征因子更新与NF分母重算两方面贡献。"
+        ]
+      },
+      "rationale": "整合改写：压实至 430 字以内，正文突出分母漂移被动放大折算率。"
+    },
+    {
+      "id": "cl-weight135-comparative-assertion-regimes",
+      "op": "modify",
+      "from": {
+        "id": "cl-weight135-comparative-assertion-regimes",
+        "status": "reviewed",
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "conceptIds": [],
+        "mappingIds": [],
+        "premiseIds": [
+          "cl-es-authority",
+          "cl-weight135-denominator-coupling-and-drift"
+        ],
+        "evidenceIds": [
+          "ev-weight135-cml2001-part2a-optional-and-ban",
+          "ev-weight135-cml2001-part3-finnveden-monetary",
+          "ev-weight135-ilcd2010-no-public-weighting",
+          "ev-weight135-ec2021-mandatory-weighting-and-pefcr"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-weight135-cml2001-part2a-optional-and-ban",
+            "relation": "supports",
+            "rationale": "核实CML 2001操作导则第2a分册第4.3.6至4.3.8节强烈建议归一化、保持加权可选，并按ISO 14042禁止在公开比较主张中使用加权。"
+          },
+          {
+            "evidenceId": "ev-weight135-cml2001-part3-finnveden-monetary",
+            "relation": "supports",
+            "rationale": "核实CML 2001科学背景第3分册第4.6至4.8节引ISO 14042指出加权基于价值选择而非自然科学，并引Finnveden 1999a指出不存在单一通用推荐权重。"
+          },
+          {
+            "evidenceId": "ev-weight135-ilcd2010-no-public-weighting",
+            "relation": "supports",
+            "rationale": "核实ILCD 2010通用导则第6.7.2、6.7.6、8.2至8.4节（对应ISO 14044:2006第4.4.3.2、4.4.3.4与4.4.5节）将归一化与加权列为可选，并在Provision 8.4 III明令禁止在拟向公众披露的比较主张中使用任何数值加权。"
+          },
+          {
+            "evidenceId": "ev-weight135-ec2021-mandatory-weighting-and-pefcr",
+            "relation": "supports",
+            "rationale": "核实欧盟建议书(EU) 2021/2279附件I第1至1.1、5.2、6.3至6.3.4节及附件III对称条款将归一化与加权定为PEF/OEF强制步骤（累计至少80%且不少于3类），仅在遵循PEFCR并同步报告表征与归一化剖面时容许比较主张。"
+          }
+        ],
+        "scope": "对照ISO 14042/14044、CML 2001、ILCD 2010与欧盟委员会建议书(EU) 2021/2279（PEF/OEF体系）关于归一化、加权及公开比较主张的强制与禁用边界。",
+        "text": "正因为单一总分同时装进了价值立场、稳健度折减与分母尺度，国际标准传统与欧盟环境足迹制度才对“能否用加权分数对外宣称某产品更环保”作出了方向相反的制度安排。在国际标准化组织（ISO）14042与14044传统下，归一化与加权同属可选步骤；荷兰莱顿大学环境科学中心（CML）2001年操作与背景导则虽在方法层面强烈建议开展归一化以展示各项指标的相对量级，但在加权边界上与国际参考生命周期数据系统（ILCD）2010年通用导则完全一致——后者对应ISO 14044:2006第4.4.3.2、4.4.3.4与4.4.5节，并在强制规定（Provision 8.4 III）中明令禁止在拟向公众披露的比较主张（comparative assertions disclosed to the public）中使用任何数值价值加权，因为跨类别加权立足于政治、文化或伦理价值选择而非自然科学推导，不能以客观定论的名义向公众裁断产品优劣。欧盟委员会建议书(EU) 2021/2279则在产品环境足迹（PEF）与组织环境足迹（OEF）框架内走上另一条制度路径：它将全球人均归一化与Sala等2018年加权系数定为强制步骤，要求按单一总分从高到低累计贡献至少80%（且不少于3个类别）识别最相关影响类别、生命周期阶段、过程与基本流，并在严格遵循经批准的产品环境足迹类别规则（PEFCR）的前提下允许作出比较主张。与此同时，欧盟规则设下三条硬护栏：严禁把未加权的归一化指标直接相加（因为那等价于暗中赋予16类指标等权重），强制把已表征结果、已归一化结果与加权分数并列报告，且无PEFCR约束的一般研究不得援引单一总分对外发布优劣断言。",
+        "reasoning": "厘清ISO/ILCD将归一化与加权双双列为可选、CML强烈建议归一化但与ISO/ILCD一致禁止公开比较加权，以及EU 2021/2279通过“统一固定NF/WF + PEFCR同品类规则 + 强制并列披露分项剖面”实现受控比较的三层制度差异。",
+        "caveats": [
+          "ISO 14044:2006第4.4节关于公开比较主张的具体条款系经欧盟ILCD 2010通用导则与荷兰CML 2001指南的公开引述核对，不替代受版权保护的ISO标准授权文本。"
+        ]
+      },
+      "rationale": "整合改写：压实至 430 字以内，清晰对比 ISO/ILCD 公开比较禁令与欧盟 PEF 护栏制度。"
+    },
+    {
+      "id": "cl-weight135-target-vs-hybrid-boundary",
+      "op": "modify",
+      "from": {
+        "id": "cl-weight135-target-vs-hybrid-boundary",
+        "status": "reviewed",
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "conceptIds": [],
+        "mappingIds": [],
+        "premiseIds": [
+          "cl-es-selection",
+          "cl-weight135-ef-coating-outdoor",
+          "cl-weight135-ef-coating-indoor",
+          "cl-es-place",
+          "cl-es-judgment",
+          "cl-weight135-comparative-assertion-regimes"
+        ],
+        "evidenceIds": [
+          "ev-es-multiple",
+          "ev-es-place",
+          "ev-weight135-pef-guidance-robustness-table",
+          "ev-weight135-ec2021-mandatory-weighting-and-pefcr"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-es-multiple",
+            "relation": "supports",
+            "rationale": "核实瑞士生态稀缺法对多途径物质取最高单一目标因子而不跨途径相加的规则。"
+          },
+          {
+            "evidenceId": "ev-es-place",
+            "relation": "supports",
+            "rationale": "核实瑞士生态稀缺法默认以瑞士国内目标与现状作为政策参照的地域边界。"
+          },
+          {
+            "evidenceId": "ev-weight135-pef-guidance-robustness-table",
+            "relation": "supports",
+            "rationale": "核实欧盟EF混合权重将50:50公众与专家重要性同0.17至0.87模型稳健度相乘的构造。"
+          },
+          {
+            "evidenceId": "ev-weight135-ec2021-mandatory-weighting-and-pefcr",
+            "relation": "supports",
+            "rationale": "核实欧盟EF以16类跨路径加权求和配合PEFCR同品类边界及分项剖面并列披露的制度要求。"
+          }
+        ],
+        "scope": "收束瑞士生态稀缺法与欧盟EF 3.1在中点与政策赋权层的四项结构诊断前提，总结全章并引出后续本地化与终点估值议题。",
+        "text": "综合全章对瑞士生态稀缺法与欧盟EF混合加权的同题拆解，两者都在尚未推到终点生命年或货币金额之前就把多维清单压成了单一分数，但引用任何一分之前都必须先核对四项结构前提：第一，权威来源与跨路径规则——究竟是按本国法定目标超标平方计分并对同一物质只取最严单一途径，还是把16个中点类别的多路径负担累加后乘以“公众—专家偏好×科学稳健度”混合权重；第二，子区室与物质拆分——究竟是像瑞士表14那样按全国一般大气排放赋单一因子，还是像欧盟EF 3.1那样拆分室内外空气（同时留意室内光化学臭氧缺行对一般NMVOC的抵消及苯乙烯等具体致癌溶剂的百倍放大）；第三，地域参照与分母漂移——物理单位折算率究竟绑定本国现状流、产地水压力，还是随全球人均年度基准NF修订而反向缩放，绝不能把不同版次的总点数跨版直减；第四，公开比较的制度边界——所依据的规范究竟属于禁止加权公开比较主张的ISO与ILCD体系，还是要求依托同品类PEFCR并同步披露未加权剖面的欧盟环境足迹体系。厘清这四道关口后，后续《影响评价本地化》将进一步检验空间尺度与归一化基准的代表性，而《环境损害估值》则转向另一条路线：当评价先推进到健康、生态与资源终点时，跨类别取舍还会遇到怎样的价值关口。",
+        "reasoning": "将权威来源与跨路径规则、子区室与物质拆分、地域参照与分母漂移、公开比较制度边界完整展开为严格对应的四项前提，作为《生态稀缺赋权》全章统一收束并与后续《影响评价本地化》及《环境损害估值》双视图衔接。",
+        "caveats": [
+          "本段归纳中点与政策目标赋权的四项结构前提；将不同环境机制先映射到人体健康、生态系统与资源终点再作折算的路线，须结合后文《环境损害估值》继续检验。"
+        ]
+      },
+      "rationale": "整合改写：压实至 350 字以内，形成紧凑的四关口收束并衔接后续两篇。"
+    },
+    {
+      "id": "cl-loc137-ef31-location-regimes",
+      "op": "modify",
+      "from": {
+        "id": "cl-loc137-ef31-location-regimes",
+        "kind": "synthesis",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "scope": "欧盟ILCD 2011欧洲适用域限定及EF 3.1数据指南与四份官方方法表对国家或地区位置码的三档处理",
+        "premiseIds": [
+          "cl-cn-characterization",
+          "cl-cn-reference"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "evidenceIds": [
+          "ev-loc137-ilcd2011-european-scope",
+          "ev-loc137-ef-guide-regionalized-allowlist",
+          "ev-loc137-ef31-water-global-locations",
+          "ev-loc137-ef31-acid-eu36-locations",
+          "ev-loc137-ef31-pof-flat-locations",
+          "ev-loc137-ef31-pm-flat-locations"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-loc137-ilcd2011-european-scope",
+            "relation": "supports",
+            "rationale": "证明ILCD 2011推荐表征因子明确限定于欧洲环境情境，对非欧洲排放不作自动适用背书。"
+          },
+          {
+            "evidenceId": "ev-loc137-ef-guide-regionalized-allowlist",
+            "relation": "supports",
+            "rationale": "证明EF数据集合规指南v2.0将全球国别码仅开放给水资源与土地利用，其余25条无机大气区域化流限用附录1表7欧洲位置白名单。"
+          },
+          {
+            "evidenceId": "ev-loc137-ef31-water-global-locations",
+            "relation": "supports",
+            "rationale": "提供EF 3.1水资源方法表209个国家或地区位置码及西班牙77.7、中国42.4、德国1.36、瑞士1.34、日本0.897与未指定42.95的精确值。"
+          },
+          {
+            "evidenceId": "ev-loc137-ef31-acid-eu36-locations",
+            "relation": "supports",
+            "rationale": "提供EF 3.1酸化方法表36个欧洲位置码（德国SO₂=2.281、瑞士0.494、西班牙0.108，NOx=0.849至0.052）及欧洲外回退1.31与0.74的事实。"
+          },
+          {
+            "evidenceId": "ev-loc137-ef31-pof-flat-locations",
+            "relation": "supports",
+            "rationale": "证明光化学臭氧方法表36个欧洲位置行对氮氧化物（1.0）与二氧化硫（0.0811）完全恒定无分化。"
+          },
+          {
+            "evidenceId": "ev-loc137-ef31-pm-flat-locations",
+            "relation": "supports",
+            "rationale": "证明细颗粒物方法表36个欧洲位置行对二次前体二氧化硫（8.0×10⁻⁶）与氮氧化物（1.6×10⁻⁶）完全恒定，且初级PM₂.₅设0个国别位置行。"
+          }
+        ],
+        "text": "在比较人均基准之前，先要查明基本流挂上国家或地区代码后，表征因子（国家标准及部分中文文献亦称“特征化”因子，characterization factor）究竟有没有改变。国际参考生命周期数据系统（ILCD）2011年推荐手册明文声明其推荐因子针对欧洲情境遴选，对欧洲以外排放不构成自动背书；在此基础上演进的欧盟环境足迹（EF 3.1）数据集合规指南（全套覆盖16类影响，要求填报6项、无产品类别规则时5项合规声明）与官方方法表，实际上把位置代码分成三种截然不同的情形。第一类是全球国别分化：水资源使用采用剩余可用水模型（AWARE），列出209个国家或地区位置码与未指定默认值（42.95 m³世界当量水/m³），西班牙（77.7）为日本（0.897）的86.62倍，中国（42.4）为德国（1.36）的31.18倍（瑞士1.34、美国33.8、印度29.4）。第二类是欧洲制度白名单：指南附录1表6仅允许氨、氮氧化物与硫氧化物等25条无机大气流挂区域码，且酸化方法表仅容许36个欧洲国家或地区代码，1 kg二氧化硫在德国（2.281摩尔氢离子当量（mol H⁺-eq））为西班牙（0.108）的21.12倍（瑞士0.494；氮氧化物（NOx）德国0.849为西班牙0.052的16.33倍、瑞士0.252），而中国、美国、印度、日本均被排除在白名单之外，一律回退至欧洲加权未指定默认值（二氧化硫1.31、NOx 0.74）。第三类是纯名义位置标签：光化学臭氧与细颗粒物（PM₂.₅）方法表虽同样列出36个欧洲位置行，但全部36处均重复同一常数——光化学臭氧中NOx恒为1.0 kg非甲烷挥发性有机物（NMVOC）当量/kg、二氧化硫恒为0.0811，颗粒物中二氧化硫恒为8.0×10⁻⁶、NOx恒为1.6×10⁻⁶疾病发生例数/kg，初级PM₂.₅更不设任何国别位置行（未指定空气0.000238497）。因此，同一座排放10 kg二氧化硫并消耗10 m³淡水的印染或化工厂，在德国（酸化22.81 mol H⁺-eq、耗水13.6 m³世界当量）与西班牙（1.08与777.0）之间两项指标分别呈21.12倍与57.13倍的反向悬殊；若把厂址改标为中国，EF 3.1会把耗水切换为中国因子（424.0），却把二氧化硫酸化锁死在欧洲默认值（13.10）。",
+        "reasoning": "10×2.281=22.81，10×0.108=1.08（22.81/1.08=21.120）；10×77.7=777.0，10×1.36=13.6（777.0/13.6=57.132，77.7/0.897=86.622，42.4/1.36=31.176）；中国不在36个欧洲位置白名单内故10 kg SO₂按未指定位置1.31计得13.10 mol H⁺-eq → 位置代码本身不等同于物理区域化建模。",
+        "caveats": [
+          "10 kg二氧化硫与10 m³淡水消耗为受控同厂址敏感度算例，用于隔离EF 3.1四份官方方法表对位置代码的响应差异，不代表特定印染企业实测全清单。",
+          "水资源的209个国家或地区位置码系方法表内非空位置记录数（不含未指定默认行），包含部分海外领地与岛屿代码，不等同于联合国成员国数目。"
+        ]
+      },
+      "rationale": "整合改写：联动表 1，压实至 440 字以内并突出白名单截断与纯名义标签机制。"
+    },
+    {
+      "id": "cl-loc137-ef31-global-nf-extrapolation",
+      "op": "modify",
+      "from": {
+        "id": "cl-loc137-ef31-global-nf-extrapolation",
+        "kind": "synthesis",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "scope": "欧盟PEF全球人均归一化规则与EF 3.1归一化计算工作簿1,803条基本流的区域外推构成",
+        "premiseIds": [
+          "cl-cn-reference",
+          "cl-loc137-ef31-location-regimes"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "evidenceIds": [
+          "ev-loc137-pef-method-global-nf",
+          "ev-loc137-ef31-nf-calculation-upscaling",
+          "ev-loc137-lcimpact-article-scales-vs-nf"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-loc137-pef-method-global-nf",
+            "relation": "supports",
+            "rationale": "证明产品环境足迹方法更新报告第5.2.1节与附录B1规定按全球人均环境负荷表达归一化因子。"
+          },
+          {
+            "evidenceId": "ev-loc137-ef31-nf-calculation-upscaling",
+            "relation": "supports",
+            "rationale": "提供NFs EF3.1_calculation表头2010年全球库存标注及全部1,803条基本流的来源结构与欧盟耕地／经济外推及中国排放外推份额。"
+          },
+          {
+            "evidenceId": "ev-loc137-lcimpact-article-scales-vs-nf",
+            "relation": "supports",
+            "rationale": "印证多数国家对数千种化学品缺乏系统监测，使全球毒性归一化清单包含重大缺口与外推不确定性。"
+          }
+        ],
+        "text": "把标准化参照（欧美方法译介与近期中文文献常译作“归一化”基准以别于制定技术标准，二者均对应英文normalisation）从区域换成“全球”，同样不能只看分母名称。欧盟产品环境足迹（PEF）方法更新报告规定按全球人均负荷表达归一化基准（NFᵢ），EF 3.1归一化计算工作簿据此采用2010年全球库存与全球人口（6,895,889,018人）。然而直接核查该工作簿的全部1,803条基本流明细可见，所谓“全球总负荷”在不同类别间由完备度迥异的区域资料拼接而成：全表有1,287条流（占总行数71.38%）是将欧盟农田排放除以欧盟耕地占全球比例0.0384（放大约26.04倍），232条流（占12.87%）是将欧盟排放乘全球经济放大系数14.12，另有11条重金属与大气流由中国排放外推至全球。落到具体类别上，酸化（55.57 mol H⁺-eq/人）、细颗粒物（5.9537×10⁻⁴疾病发生例数/人）与陆地富营养化（176.75 mol N-eq/人）100.00%取自全球大气研究排放数据库（EDGAR）网格清单（欧盟与中国简单比例外推占0%；气候变化7,553.08 kg CO₂-eq/人中欧盟14.12倍外推亦仅占0.03%）；反观淡水生态毒性人均基准（56,716.59淡水生态比较毒性单位（CTUe）/人），竟有69.25%来自欧盟农田除以0.0384外推、27.56%来自欧盟乘14.12外推，合计96.81%由欧盟区域清单放大生成（另有0.34%由中国外推）；人体非致癌毒性（1.2874×10⁻⁴人体比较毒性单位（CTUh）/人）与致癌毒性（1.7253×10⁻⁵ CTUh/人）除了分别含19.57%与9.81%的欧盟外推外，还各有11.62%与4.24%来自中国排放外推。正如区域化生命周期影响评价方法（LC-IMPACT）论文第4.1节所指出的，数千种毒性化学品在多数国家缺乏常规监测，全球毒性清单高度依赖外推修补：无论漏计无监测地区排放，还是按单一耕地或经济倍率把欧洲与中国的局部施用结构投射到全球，改贴“全球基准”标签都无法消除燃烧排放与毒性类别之间的底数完备度偏倚。",
+        "reasoning": "1287/1803=71.381%，1/0.0384=26.0417，232/1803=12.867%；淡水生态毒性(270830785673510.05+107796264357777.41)/391111284860177.54=96.8080%，中国外推1349271770258.49/391111284860177.54=0.34498%（约0.34%）；非致癌毒性欧盟外推19.5664%、中国外推11.6217%，致癌毒性欧盟外推9.8115%、中国外推4.2401% → “全球分母”内部实为全量全球大气清单与高比例区域外推毒性清单的非对称组合。",
+        "caveats": [
+          "工作簿百分比按NFs EF3.1_calculation第3—1805行各流全球贡献列精确求和计算；人体非致癌毒性最大单项来源为联合国环境署全球汞评估报告最大值（占58.59%），未计入上述欧盟或中国国别比例外推份额。",
+          "此结论揭示官方“全球”归一化分母的数据构造依赖，不否定全球人均基准在跨国供应链边界一致性上优于单一地区领土分母的方法初衷。"
+        ]
+      },
+      "rationale": "整合改写：压实至 440 字以内，将分项百分比明细归入注释，正文突出 96.81% 欧盟外推偏倚。"
+    },
+    {
+      "id": "cl-loc137-dirty-denominator-paradox",
+      "op": "modify",
+      "from": {
+        "id": "cl-loc137-dirty-denominator-paradox",
+        "kind": "synthesis",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "scope": "CML 2001第3分册第4.6节区域归一化重污染稀释悖论与杨建新等2001及“十五”计划两控区目标比值权重的对照",
+        "premiseIds": [
+          "cl-cn-weight-meaning",
+          "cl-cn-cancellation"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "evidenceIds": [
+          "ev-loc137-cml2001-part3-regional-nf-bias",
+          "ev-cn-yang-wang-liu-2001-weighting",
+          "ev-cn-yang-wang-liu-2001-eil",
+          "ev-kb40-tenth-plan-targets"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-loc137-cml2001-part3-regional-nf-bias",
+            "relation": "supports",
+            "rationale": "阐述CML 2001第3分册第4.6节关于高现状污染地区归一化分母偏大导致单位排放相对得分被压低及目标距离加权消解该偏倚的原理。"
+          },
+          {
+            "evidenceId": "ev-cn-yang-wang-liu-2001-weighting",
+            "relation": "supports",
+            "rationale": "提供杨建新等2001以同一1990年人口构造基准与目标比值WF=B/G的定义。"
+          },
+          {
+            "evidenceId": "ev-cn-yang-wang-liu-2001-eil",
+            "relation": "supports",
+            "rationale": "提供加权乘积(B/G)×(E/B)=E/G中现状基准B相消的代数条件。"
+          },
+          {
+            "evidenceId": "ev-kb40-tenth-plan-targets",
+            "relation": "supports",
+            "rationale": "提供“十五”计划全国二氧化硫削减10%（1,995万吨降至1,800万吨）与两控区削减20%（2005年控制量1,053万吨）的官方政策梯度。"
+          }
+        ],
+        "text": "把杨建新等人的约消式放回国际方法争论，就能看清区域归一化为何不能脱离权重单独判读。荷兰莱顿大学环境科学中心（CML）2001年指南第3分册第4.6节专门指出一项反直觉机制：如果只做区域人均归一化NEP = E/B，或者在归一化后乘上一组不随本地现状调整的固定跨类别权重，那么某个地区在某一类别上的历史人均污染B越重，分母就越大，同一千克产品排放E算出的归一化得分反而越微不足道——重污染背景非但没有提高警示，反而稀释了单位新增排放的相对份额。CML指南继而说明，只有当加权采用同口径目标距离法WF = B/G时，现状分母B才会在(B/G) × (E/B) = E/G中约去，使最终计分由政策允许的目标容量G主导。这也从反面印证了“十五”计划为何必须在高负荷区域收紧目标比例：全国二氧化硫2005年总量控制目标较2000年计划基准（1,995万吨至1,800万吨，计划标称削减10%）对应目标比值权重约1.108（按1/(1−10%)计为1.111），而酸雨和二氧化硫污染控制区（两控区，2005年控制量1,053万吨）规定较其自身2000年基准削减20%，对应权重升至1/(1−20%) = 1.250。倘若只替换高排放地区的现状分母B，却不配套收紧目标G或重设权重，本地化就会把更严峻的区域污染算成更轻微的相对影响。",
+        "reasoning": "对任意E>0，若B_高 > B_低且权重w固定，则w×(E/B_高) < w×(E/B_低)；而在WF=B/G下乘积化为E/G，且“十五”计划两控区削减20%给出1/0.80=1.250 > 全国1995/1800=1.1083（或1/0.90=1.1111）→ 唯有同源政策目标收紧才能避免高污染现状分母反向压低权重。",
+        "caveats": [
+          "“十五”计划全国基准 1,995 万吨除以控制值 1,800 万吨精确为 1.1083，计划正文同时标称减少 10%（按比例折算 1/0.90=1.1111）；两处计划文本口径一并保留，均显著低于两控区削减 20% 对应的 1.250。",
+          "即便 B 在代数上约去，剩余项 E/G 在不同地区之间仍只有当两地目标 G 按统一人口与保护准则设定时才可跨区直接比较大小。"
+        ]
+      },
+      "rationale": "整合改写：压实至 420 字以内，紧扣重污染稀释悖论与 B 约消条件。"
+    },
+    {
+      "id": "cl-loc137-open-economy-boundary-reversal",
+      "op": "modify",
+      "from": {
+        "id": "cl-loc137-open-economy-boundary-reversal",
+        "kind": "synthesis",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "scope": "开放经济体领土人均分母与跨国供应链清单的边界错配及香港2000年气候参照触发的等权方案换位",
+        "premiseIds": [
+          "cl-loc137-dirty-denominator-paradox",
+          "cl-cn-hk-local",
+          "cl-cn-hk-weights"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "evidenceIds": [
+          "ev-hkha-2005-hk-glass-numeric",
+          "ev-hkha-2005-hk-local-and-workshop",
+          "ev-loc137-ilcd2010-supply-chain-nf-boundary",
+          "ev-loc137-glam3-territorial-vs-footprint-nf",
+          "ev-loc137-ef31-nf-calculation-upscaling",
+          "ev-loc137-ef31-acid-eu36-locations"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-hkha-2005-hk-glass-numeric",
+            "relation": "supports",
+            "rationale": "提供香港2000年本地气候归一化参照5,922.49 kg CO₂-eq/(人·年)及1 kg玻璃1.3200 kg CO₂-eq得0.00022人·年的原件算例。"
+          },
+          {
+            "evidenceId": "ev-hkha-2005-hk-local-and-workshop",
+            "relation": "supports",
+            "rationale": "证明香港C1169项目将本地归一化参照与第一阶段工作坊固定权重组合使用，不发生政策目标分母约消。"
+          },
+          {
+            "evidenceId": "ev-loc137-ilcd2010-supply-chain-nf-boundary",
+            "relation": "supports",
+            "rationale": "阐述ILCD 2010第6.7.6节与条款XV.a.i关于归一化基准须同产品系统保持地理一致、优先采用全球总清单或区分领土端与消费端清单的准则。"
+          },
+          {
+            "evidenceId": "ev-loc137-glam3-territorial-vs-footprint-nf",
+            "relation": "supports",
+            "rationale": "提供UNEP GLAM第三阶段表3按“消费＝生产＋进口−出口”区分领土生产端清单分母与消费端足迹分母的框架。"
+          },
+          {
+            "evidenceId": "ev-loc137-ef31-nf-calculation-upscaling",
+            "relation": "supports",
+            "rationale": "提供EF 3.1全球气候变化人均基准7,553.0832 kg CO₂-eq/人与酸化人均基准55.5695 mol H⁺-eq/人。"
+          },
+          {
+            "evidenceId": "ev-loc137-ef31-acid-eu36-locations",
+            "relation": "supports",
+            "rationale": "提供EF 3.1未指定位置1 kg二氧化硫=1.31 mol H⁺-eq，用于将全球酸化基准折算为42.4195 kg SO₂-eq/人的可比当量分母。"
+          }
+        ],
+        "text": "香港C1169建材报告把CML表征、本地归一化参照与工作坊固定权重拼装在一起，恰好展示了开放经济体最易忽视的“领土分母错配”。ILCD 2010年通用指南第6.7.6节及条款XV.a.i要求归一化基准与所分析系统保持地理一致（优先采用全球年度总清单，或区分领土端与消费端清单），联合国环境规划署全球生命周期影响评价方法共识项目（UNEP GLAM）第三阶段范围报告表3进一步按“消费＝生产＋进口−出口”指出：服务型城市或净进口经济体把水泥、玻璃、钢铁等高耗能制造留在境外，领土内生产端排放清单不能代表其消费供应链的真实基准。香港报告附录C所列2000年本地气候人均参照为5,922.49 kg CO₂-eq/(人·年)，比EF 3.1全球人均基准（7,553.08 kg CO₂-eq/(人·年)）低21.59%；同样1 kg玻璃的1.3200 kg CO₂-eq供应链排放，按全球基准归一化为1.7476×10⁻⁴人·年，换用香港领土基准即升至2.2288×10⁻⁴人·年（报告印0.00022），相对放大27.53%。由于工作坊权重固定、分母不再约消，单换这一项分母便足以翻转方案优劣：设两套提供同等围护功能的建材方案，甲排放80 kg二氧化碳与0.40 kg二氧化硫，乙排放50 kg二氧化碳与0.60 kg二氧化硫，两类别取1:1等权，酸化统一采用EF 3.1全球未指定二氧化硫折算基准（55.5695 / 1.31 = 42.4195 kg SO₂-eq/(人·年)，两方案换位临界分母比为(80−50)/(0.60−0.40) = 150 kg CO₂/kg SO₂）。在EF 3.1全球气候基准下，分母比178.06大于150，甲的总归一化得分（0.02002人·年）优于乙（0.02076人·年）；一旦仅把气候分母替换为香港领土值5,922.49，分母比跌至139.62小于150，排序立刻反转为乙（0.02259人·年）优于甲（0.02294人·年）。清单与价值权重分毫未动，仅因混用了全球制造分子与服务型城市领土分母，优选结论就发生了换位。",
+        "reasoning": "1.3200/7553.0831628511733=0.000174763，1.3200/5922.49=0.000222879（+27.532%）；酸化折算基准B_SO2=55.569541230601935/1.31=42.4194971225969 kg SO₂-eq/人；全球分母下7553.0832/42.4195=178.0569>150，甲=80/7553.0832+0.40/42.4195=0.0200215 < 乙=50/7553.0832+0.60/42.4195=0.0207642；香港气候分母下5922.49/42.4195=139.6172<150，乙=50/5922.49+0.60/42.4195=0.0225870 < 甲=80/5922.49+0.40/42.4195=0.0229377 → 非约消权重下跨尺度混配分母直接逆转方案次序。",
+        "caveats": [
+          "甲、乙建材对比为基于报告附录与方法表所列分母（香港 5,922.49 与 EF 3.1 全球 7,553.08 及 42.4195）构造的受控代数检验，用于展示领土与全球分母切换的临界换位机制，不代表 C1169 软件未公开的香港本地二氧化硫分母实跑结果。",
+          "若改用与跨区域供应链一致的全球人均分母或消费端足迹分母，上述因贸易外包造成的领土分母缩水偏倚即可避免。"
+        ]
+      },
+      "rationale": "整合改写：首次展开 UNEP GLAM、补齐 1.32 kg CO₂-eq 排放基准并压实至 440 字以内。"
+    },
+    {
+      "id": "cl-loc137-biophysical-vs-political-units",
+      "op": "modify",
+      "from": {
+        "id": "cl-loc137-biophysical-vs-political-units",
+        "kind": "synthesis",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "scope": "LC-IMPACT与UNEP GLAM的原生生物物理空间单元及ReCiPe 2016在中港澳大气合并与中国四大流域耗水上的次国家聚合偏差",
+        "premiseIds": [
+          "cl-loc137-ef31-location-regimes",
+          "cl-cn-hk-borrowing",
+          "cl-cn-hk-local"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "evidenceIds": [
+          "ev-loc137-lcimpact-article-scales-vs-nf",
+          "ev-loc137-lcimpact-report-pdf-reg-glo-units",
+          "ev-loc137-glam2019-spatial-and-rice-cases",
+          "ev-loc137-rivm2016-spatial-boxes-basins-reversals"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-loc137-lcimpact-article-scales-vs-nf",
+            "relation": "supports",
+            "rationale": "提供LC-IMPACT表2所列804个陆地生态区与449个淡水生态区规模，并阐明向国家尺度聚合时的空间聚合误差。"
+          },
+          {
+            "evidenceId": "ev-loc137-lcimpact-report-pdf-reg-glo-units",
+            "relation": "supports",
+            "rationale": "提供总体报告第1章表1.4所列56个大气世界源区与约11,000个水文流域的原生单元规模。"
+          },
+          {
+            "evidenceId": "ev-loc137-glam2019-spatial-and-rice-cases",
+            "relation": "supports",
+            "rationale": "证明UNEP GLAM第2卷及其多国熟米案例关于原生空间分辨率同国家背景清单错配会掩盖局地环境梯度的结论。"
+          },
+          {
+            "evidenceId": "ev-loc137-rivm2016-spatial-boxes-basins-reversals",
+            "relation": "supports",
+            "rationale": "提供ReCiPe 2016附表S1.1—S1.2（中国大陆、香港、澳门同区2.90与1.7×10⁻³对台湾0.75与3.5×10⁻⁴）及附表S6.3—S6.4（中国均值3.91×10⁻¹²对珠江1.67×10⁻¹²、黄河4.84×10⁻¹²、长江5.52×10⁻¹²）的实证数据。"
+          }
+        ],
+        "text": "就算分母与权重不再错位，“按国家或行政区冠名的方法”也未必对准了环境过程本身的边界。LC-IMPACT总体报告、2020年期刊论文与UNEP GLAM第2卷（含多国熟米供应链案例）列明了各路径的原生生物物理空间单元：大气颗粒物与臭氧传输按56个世界源区模拟，水资源压力按约11,000个水文流域核算，陆地与淡水生物多样性分别按804个陆地生态区和449个淡水生态区评估；这些自然单元既不沿海关分界，也不会在大国境内均匀分布。把荷兰国家公共卫生与环境研究院（RIVM）发布的协调生命周期影响评价方法（ReCiPe 2016）区域附表放到中港台与华南尺度下核对，立刻可见双向失真：在细颗粒物大气源区表（附表S1.1—S1.2）中，尽管香港建材项目在归一化阶段把香港同“东南中国”严格拆开，大气传输网格却把中国大陆、香港与澳门合并为同一个均质源区，初级PM₂.₅中点统一取2.90 kg PM₂.₅-eq/kg、健康终点统一取1.7×10⁻³伤残调整生命年（DALY）/kg（原表印1.7×10³年/千吨），而一水之隔的台湾单独成区，中点0.75、终点3.5×10⁻⁴ DALY/kg，中港澳终点为台湾的4.86倍（中点为3.87倍）；反过来，在淡水生态系统耗水表（附表S6.3—S6.4）中，中国全国平均值（3.91×10⁻¹²物种·年/m³）又把南北流域拉平——供水华南与香港的珠江／西江流域因子仅1.67×10⁻¹²（比全国均值低57.29%，塔里木河为1.99×10⁻¹²），而黄河（4.84×10⁻¹²）与长江流域（5.52×10⁻¹²，比全国均值高41.18%）分别为珠江的2.90倍与3.31倍。把珠江流域工厂的耗水简单套上“中国”国家平均因子，计算出的淡水生态损害就会被放大至珠江流域因子的2.34倍（高估134.1%）。",
+        "reasoning": "0.0017/0.00035=4.8571（中点2.90/0.75=3.8667）；淡水生态耗水(1.67−3.91)/3.91=−57.289%，(5.52−3.91)/3.91=+41.176%，4.84/1.67=2.8982，5.52/1.67=3.3054，3.91/1.67=2.3413（高估134.13%）→ 行政标签在大气网格中可能过粗合并，在大国水文生态中又掩盖逾三倍的次国家梯度。",
+        "caveats": [
+          "ReCiPe 2016附表S1.2原始单位为年/千吨（yr/kton），因1千吨=10⁶千克且人体健康年即DALY，1.7×10³ yr/kton恒等于1.7×10⁻³ DALY/kg。",
+          "附表S6.4流域因子仅覆盖径流减少对淡水鱼类物种的生态损害，不含水资源短缺对农业营养不良的人体健康路径。"
+        ]
+      },
+      "rationale": "整合改写：压实至 410 字以内，联动表 1 突出合并与拉平两类空间失真。"
+    },
+    {
+      "id": "cl-loc137-pm-nonlinear-and-endpoint-reversals",
+      "op": "modify",
+      "from": {
+        "id": "cl-loc137-pm-nonlinear-and-endpoint-reversals",
+        "kind": "synthesis",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "scope": "近地面初级PM₂.₅在中瑞德之间的跨模型／跨原型双重排序翻转及中点至终点、跨受体臭氧与物种脆弱度的空间反转",
+        "premiseIds": [
+          "cl-loc137-biophysical-vs-political-units"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "evidenceIds": [
+          "ev-loc137-rivm2016-spatial-boxes-basins-reversals",
+          "ev-loc137-glam-pm2024-marginal-vs-average",
+          "ev-loc137-lcimpact-article-scales-vs-nf",
+          "ev-loc137-lcimpact-report-pdf-reg-glo-units"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-loc137-rivm2016-spatial-boxes-basins-reversals",
+            "relation": "supports",
+            "rationale": "提供ReCiPe 2016初级PM₂.₅线性健康终点（中港澳1.7×10⁻³、瑞列1.5×10⁻³、德国1.3×10⁻³、全球6.292×10⁻⁴）、韩国对瑞列与德国的中终点排序反转（中点2.15高于1.92与1.74，终点7.0×10⁻⁴低于1.5×10⁻³与1.3×10⁻³）、酸化中点（中国1.55、德国2.43、瑞士2.21）及NOx臭氧健康与生态两套中点因子的跨国反转数据。"
+          },
+          {
+            "evidenceId": "ev-loc137-glam-pm2024-marginal-vs-average",
+            "relation": "supports",
+            "rationale": "提供UNEP GLAM 2024凹形暴露响应下近地面初级PM₂.₅在未指定边际（瑞士6.4458×10⁻⁴、德国6.3059×10⁻⁴为中国2.1460×10⁻⁴的3.00倍与2.94倍，中国城乡边际2.65倍差距）与城市平均（中国1.2045×10⁻³、德国8.5423×10⁻⁴、瑞士6.9890×10⁻⁴）下的双重翻转数值。"
+          },
+          {
+            "evidenceId": "ev-loc137-lcimpact-article-scales-vs-nf",
+            "relation": "supports",
+            "rationale": "证明LC-IMPACT通过特有度与受威胁等级脆弱度得分VS区分区域潜在物种消失与全球不可逆灭绝。"
+          },
+          {
+            "evidenceId": "ev-loc137-lcimpact-report-pdf-reg-glo-units",
+            "relation": "supports",
+            "rationale": "提供总体报告第1章式1.2将区域潜在消失物种比例乘脆弱度得分VS折算全球潜在消失物种比例的结构公式。"
+          }
+        ],
+        "text": "更深一层的挑战在于，即便两套国际方法都声称完成了“分国区域化”，同一千克排放究竟在东亚还是在欧洲造成更大影响，连方向都可以随剂量响应曲率、城乡原型、中点至终点基线疾病率以及受体类别而多次翻转。先看1 kg近地面初级PM₂.₅的人体健康损害：ReCiPe 2016沿用线性暴露响应斜率，终点损害呈中国大陆及港澳（1.7×10⁻³ DALY/kg）高于瑞士与列支敦士登（1.5×10⁻³）、德国（1.3×10⁻³）及全球均值（6.292×10⁻⁴）；但换用UNEP GLAM 2024年发布的凹形非线性剂量响应工作簿，在“未指定城乡边际”口径下，由于高背景浓度压平了边际斜率且全国未指定排放含大量农村份额（中国城市边际5.5694×10⁻⁴为农村边际2.0979×10⁻⁴的2.65倍），跨国排序彻底反转为瑞士（6.4458×10⁻⁴）与德国（6.3059×10⁻⁴）分别为中国（2.1460×10⁻⁴）的3.00倍与2.94倍；若再切换为同一工作簿的“城市近地面平均”口径（全球未指定高度默认平均为6.6594×10⁻⁴，中国未指定城乡平均为4.2217×10⁻⁴），排序又第二次反转为中国（1.2045×10⁻³ DALY/kg）高于德国（8.5423×10⁻⁴）与瑞士（6.9890×10⁻⁴，中国为瑞士的1.72倍）。再看ReCiPe 2016内部的中终点与跨受体分化：即使在同一颗粒物路径内，韩国初级PM₂.₅中点潜值（2.15 kg PM₂.₅-eq/kg）高于瑞士与列支敦士登（1.92）和德国（1.74，为德国的1.24倍），乘入本地基线心肺死亡率转入终点后，韩国（7.0×10⁻⁴ DALY/kg）反而跌至瑞士与列支敦士登（1.5×10⁻³）和德国（1.3×10⁻³，德国反为韩国的1.86倍）之下；陆地酸化中点中国1 kg二氧化硫潜值达1.55 kg SO₂-eq/kg（高于全球均值1达55.0%，德国2.43、瑞士2.21，均异于EF 3.1锁定的1.31默认值）；而在同以各自全球均值1 kg NOx-eq/kg为参照的两套光化学臭氧形成中点上，1 kg NOx的人体健康臭氧中点因子呈中国大陆及港澳（2.07）高于西班牙与葡萄牙（1.18，约为其1.75倍），陆地生态臭氧中点因子却反转为西班牙与葡萄牙（3.41）达中国大陆及港澳（0.07）的48.71倍。LC-IMPACT第1章式1.2更进一步用物种特有度与受威胁脆弱度得分（VS）把局地可恢复的区域潜在消失物种比例折算为全球不可逆的潜在消失物种比例，提醒评价者：局地生境退化高，不等于全球狭域特有种灭绝风险同比例高。",
+        "reasoning": "PM₂.₅边际0.0006445819/0.0002146011=3.0036，0.0006305902/0.0002146011=2.9384，中国城市/农村边际0.0005569425/0.0002097909=2.6548；城市平均0.0012045307/0.0006989023=1.7235；韩国PM₂.₅中点2.15/1.74=1.2356>1，终点0.0013/0.0007=1.8571>1反向；酸化中点(1.55−1)/1=+55.0%；臭氧同类别跨区比值健康2.07/1.18=1.7542、生态3.41/0.07=48.7143 → 区域化因子的跨国高低方向高度依赖响应曲率、城乡拆分、基线疾病率与保护受体。",
+        "caveats": [
+          "UNEP GLAM 2024 颗粒物工作簿底层特征化因子表的近地面排放记录同时列出边际、平均与线性三套响应曲线推导值，正式推荐映射子表则按平均斜率口径匹配空气子区室，引用时必须指明表层、曲线推导口径与城乡情景；国家级城乡汇总场景的区域空间均值未按人口密度或排放强度加权，不替代具体排放源的局地烟羽扩散建模。",
+          "高背景浓度下边际因子偏低仅反映凹形浓度—响应函数局部切线斜率较缓，绝不代表高污染地区的总体人群健康负担较轻（按响应曲线平均斜率口径计算，中国城市因子仍居首）。",
+          "RIVM 报告 2016-0104 附表 S3.2（陆地酸化终点）自印第 144 页巴西行起漏印布韦岛国名并多插一格氮氧化物零值，致后续各国氨与二氧化硫列整体下移一行（中国行误印智利数值 1.40×10⁻⁷，德国行误印格鲁吉亚数值 4.77×10⁻⁷），查阅该附表时不得将错位行误作中终点反转证据。"
+        ]
+      },
+      "rationale": "整合改写：压实至 440 字以内，联动表 1 突出四重区域排序反转。"
+    },
+    {
+      "id": "cl-loc137-institutional-adoption-vs-compliance",
+      "op": "modify",
+      "from": {
+        "id": "cl-loc137-institutional-adoption-vs-compliance",
+        "kind": "synthesis",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "scope": "中国GB/T等同采标的程序属性与欧盟EF 3.1补篇锁定因子包却将ISO 14040/14044多项合规标为Not defined的制度镜像",
+        "premiseIds": [
+          "cl-loc137-ef31-location-regimes",
+          "cl-cn-standard-events",
+          "cl-cn-standard-authority"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "evidenceIds": [
+          "ev-cn-gbt24040-1999-official-history",
+          "ev-cn-gbt24042-2002-official-history",
+          "ev-loc137-ef31-addendum-compliance-table",
+          "ev-loc137-pef-method-global-nf",
+          "ev-weight135-ec2021-mandatory-weighting-and-pefcr",
+          "ev-loc137-ilcd2011-european-scope"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-cn-gbt24040-1999-official-history",
+            "relation": "supports",
+            "rationale": "证明GB/T 24040—1999等同采用ISO 14040:1997并于2008年由GB/T 24040—2008与24044—2008替代，属原则与程序框架标准。"
+          },
+          {
+            "evidenceId": "ev-cn-gbt24042-2002-official-history",
+            "relation": "supports",
+            "rationale": "证明GB/T 24042—2002等同采用ISO 14042:2000，规定影响评价阶段程序而不锁定单一国家基准或权重参数表。"
+          },
+          {
+            "evidenceId": "ev-loc137-ef31-addendum-compliance-table",
+            "relation": "supports",
+            "rationale": "提供EF 3.1补篇表1强制锁定参考包合规源、修正CZ与AL两处二氧化硫酸化因子，同时将ISO 14040与14044命名、文档／评审与数据质量合规设为“Not defined”的制度事实。"
+          },
+          {
+            "evidenceId": "ev-loc137-pef-method-global-nf",
+            "relation": "supports",
+            "rationale": "证明欧盟PEF方法报告第5.2.1—5.2.2节与附录B1锁定统一全球人均归一化基准与强制归一化／加权计算流程。"
+          },
+          {
+            "evidenceId": "ev-weight135-ec2021-mandatory-weighting-and-pefcr",
+            "relation": "supports",
+            "rationale": "证明欧盟委员会建议书（EU）2021/2279将归一化与加权同时设为PEF与OEF强制步骤，并规定仅在获批PEFCR或OEFSR框架内允许比较主张。"
+          },
+          {
+            "evidenceId": "ev-loc137-ilcd2011-european-scope",
+            "relation": "supports",
+            "rationale": "印证欧洲官方推荐因子包具有明确地理适用域边界，行政锁定不等同于跨区普适科学背书。"
+          }
+        ],
+        "text": "把中国国家标准登记与欧盟环境足迹合规规则并置对照，正好构成一对互补的制度镜像：中国GB/T 24040与24042（及其2008年替代标准GB/T 24040—2008、24044—2008）等同采用ISO程序框架，规定了分类、特征化、可选标准化与加权的方法纪律和报告审查要求，却故意不指定任何唯一法定的表征因子表、全国人均基准或政策权重；反过来，欧盟2022年发布的EF 3.1数据指南补篇不仅在方法包内直接修订捷克与阿尔巴尼亚等具体国别的二氧化硫酸化数值，还在第5.2.15节表1强制要求合规数据集绑定指定版本的EF参考包与欧盟建议书声明，同时明文指令把ISO 14040的命名、文档、质量合规以及ISO 14044的命名、评审、质量合规字段一律填为“未定义”（Not defined）。前者守住了通用程序边界却留白具体参数，后者用行政规则锁死了统一因子包、归一化分母与强制加权步骤（例如在产品环境足迹（PEF）与组织环境足迹（OEF）中将归一化与加权设为强制步骤，仅在获批产品环境足迹类别规则（PEFCR）框架内允许可比性声明）却主动标明不等同于ISO全项元数据合规。因此，不论研究者声称“遵循国家GB/T标准”还是“通过欧盟EF 3.1官方合规校验”，都不能单凭这两类制度身份推出其选用的地区参数已在当地环境机制上得到独立验证。",
+        "reasoning": "GB/T等同采用ISO程序标准（参数开放、标准化与加权可选）与欧盟EF 3.1锁定参考包及强制加权但将ISO 14040/14044多项合规标为Not defined（程序不等同、欧洲以外酸化等回退默认值）互为镜像 → 程序标准合规与官方因子包锁定均不能替代目标地区表征与分母的实证核查。",
+        "caveats": [
+          "此处关于GB/T 24040与24044的判断严格限定于国家市场监督管理总局公开登记的等同采标身份与标准更替关系，不涉及标准受版权保护正文的逐句重排。",
+          "欧盟EF补篇将ISO 14040/14044部分合规项设为“Not defined”系其ILCD数据格式字段映射规定，并非否定EF研究自身的内部审核机制。"
+        ]
+      },
+      "rationale": "整合改写：联动表 2，压实至 370 字以内。"
+    },
+    {
+      "id": "cl-loc137-four-layer-localization-audit",
+      "op": "modify",
+      "from": {
+        "id": "cl-loc137-four-layer-localization-audit",
+        "kind": "synthesis",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "scope": "综合中港案例、欧美方法包与UNEP GLAM熟米多国案例确立的本地化四层核查准则",
+        "premiseIds": [
+          "cl-loc137-ef31-global-nf-extrapolation",
+          "cl-loc137-open-economy-boundary-reversal",
+          "cl-loc137-pm-nonlinear-and-endpoint-reversals",
+          "cl-regional-localization-not-translation",
+          "cl-regional-method-origin-not-validity",
+          "cl-loc137-institutional-adoption-vs-compliance"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "evidenceIds": [
+          "ev-regional-xie-localization-layers",
+          "ev-regional-xie-screening-denominator",
+          "ev-loc137-glam2019-spatial-and-rice-cases",
+          "ev-loc137-ef31-nf-calculation-upscaling",
+          "ev-loc137-rivm2016-spatial-boxes-basins-reversals",
+          "ev-loc137-glam-pm2024-marginal-vs-average"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-regional-xie-localization-layers",
+            "relation": "supports",
+            "rationale": "对应谢明辉等2022年区分清单数据库、环境参数、基准值、权重与影响模型的分层线索。"
+          },
+          {
+            "evidenceId": "ev-regional-xie-screening-denominator",
+            "relation": "supports",
+            "rationale": "约束CNKI检索243篇中186篇（77%）国外方法占比仅代表文献方法命名来源而非模型误差率。"
+          },
+          {
+            "evidenceId": "ev-loc137-glam2019-spatial-and-rice-cases",
+            "relation": "supports",
+            "rationale": "提供UNEP GLAM第2卷中国城市、印度农村与美瑞熟米案例在酸化富营养化、人体毒性、土壤有机碳与水蚀及淡水生态毒性上关于清单空间粒度须匹配环境梯度的实证准则。"
+          },
+          {
+            "evidenceId": "ev-loc137-ef31-nf-calculation-upscaling",
+            "relation": "supports",
+            "rationale": "约束全球归一化分母内部96.81%欧盟生态毒性外推与11.62%中国非致癌毒性外推的底数完备度审查。"
+          },
+          {
+            "evidenceId": "ev-loc137-rivm2016-spatial-boxes-basins-reversals",
+            "relation": "supports",
+            "rationale": "约束国家标签对流域水生态（长江为珠江3.31倍）及中终点／跨受体次序反转的聚合遮蔽审查。"
+          },
+          {
+            "evidenceId": "ev-loc137-glam-pm2024-marginal-vs-average",
+            "relation": "supports",
+            "rationale": "约束近地面PM₂.₅在线性斜率、凹形边际与城市平均口径下跨国次序双重翻转的模型曲率审查。"
+          }
+        ],
+        "text": "综合中港早期探索、欧美合规因子包以及UNEP GLAM第2卷以中国城市、印度农村和美国生产／瑞士消费三套1 kg熟米供应链所做的跨国验证，审读任何一项冠以“本地化”或“全球统一”之名的影响评价，都必须拆开四道互不替代的核查门槛：第一，查清单与表征的空间粒度是否同构——基本流究竟停在无坐标国别均值、撞上欧洲36国白名单回退默认，还是真正落到水文流域、生态区与城乡近地面（熟米案例表明，唯有农田土壤生态区、水体受纳域与城乡化学品及颗粒物暴露坐标同时具备，区域因子才会给出有物理意义的分化）；第二，查归一化分母的边界与完备度——分母是服务型城市领土排放（如香港5,922.49气候基准）、按耕地0.0384或经济14.12倍放大的区域外推“全球值”，还是与供应链匹配的实测负荷，以及后续权重究竟同源约消分母还是放大分母偏差；第三，查模型曲率与终点脆弱度——跨国高低比较使用的是线性斜率、高背景压平的凹形边际还是城市平均，停在污染物沉降或摄入中点还是乘入了本地基线疾病率与全球物种脆弱度；第四，查“本地采纳”的证据性质——分清推荐性标准程序登记、项目部件借用、中文期刊77%（186/243）方法来源计数与区域暴露—效应机制的独立验证。如下表所示，只有把这四层账目逐一摊开，“换用本地或全球方法后结论为何改变”才能成为可复核的科学判断。",
+        "reasoning": "四道核查门槛分别对应本章已证的四类独立失真机制（位置代码白名单／恒值、分母外推与开放经济体非约消换位、响应曲率／流域／中终点及跨受体空间反转、程序采标与文献统计误作模型验证）→ 任一层缺位均足以令“本地化”流于标签更替。",
+        "caveats": [
+          "四层核查准则用于诊断具体研究的方法匹配度，不预设所有产品比较都必须采集次国家前景坐标；当贡献分析证实空间不敏感路径占主导时，全球或未指定因子仍可满足决策精度。"
+        ]
+      },
+      "rationale": "整合改写：作为表 2 引导段并消除与末段总结的重复及未引入的熟米案例指代。"
+    },
+    {
+      "id": "cl-weight135-lime-three-table-rereversal",
+      "op": "modify",
+      "from": {
+        "id": "cl-weight135-lime-three-table-rereversal",
+        "status": "reviewed",
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-18",
+        "conceptIds": [],
+        "mappingIds": [],
+        "premiseIds": [
+          "cl-lime-japan-route",
+          "cl-lime-break-even",
+          "cl-lime-english-route",
+          "cl-lime-national",
+          "cl-lime-edition"
+        ],
+        "evidenceIds": [
+          "ev-lime-jp-weights",
+          "ev-lime-2004-conjoint-weights",
+          "ev-lime-2012-conjoint-weights"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-lime-jp-weights",
+            "relation": "supports",
+            "rationale": "核实2003年日文表7（LIME1）公布健康572,000日元/DALY、生物多样性7.68×10¹¹日元/物种（比值约1,342,657 DALY/物种）。"
+          },
+          {
+            "evidenceId": "ev-lime-2004-conjoint-weights",
+            "relation": "supports",
+            "rationale": "核实2004年英文表7（LIME1）公布健康9.70×10⁶日元/DALY、生物多样性4.80×10¹²日元/物种（比值约494,845 DALY/物种）。"
+          },
+          {
+            "evidenceId": "ev-lime-2012-conjoint-weights",
+            "relation": "supports",
+            "rationale": "核实2012年全国调查LIME2表4公布健康1.47×10⁷日元/DALY、初级生产4.63×10⁴日元/干吨、生物多样性1.42×10¹³日元/物种（生物多样性对健康比值约965,986 DALY/物种）。"
+          }
+        ],
+        "scope": "衔接上文LIME1两份早期表与LIME2全国调查表4，固定人体健康与生物多样性终点权衡（庚：0.010 DALY加1.0×10⁻⁸物种；辛：0.002 DALY加2.0×10⁻⁸物种，换位分界800,000 DALY/物种），核验三表间的非单调“反转—再反转”。",
+        "text": "把前面早期东京调查（LIME1）两份发表与2012年全国入户调查（LIME2）表4连成一条完整时间线，再考察人体健康与生物多样性这一对核心终点权衡，就会看到非单调的“反转—再反转”。先核对同一研究团队三张正式发表表的公布单价：2003年日文表7给每DALY计572,000日元、每灭绝一个物种计7.68×10¹¹日元，折合1个物种相当于约1,342,657 DALY；2004年英文表7给每DALY计9.70×10⁶日元、每物种计4.80×10¹²日元，折合比降至约494,845 DALY/物种；2012年全国调查LIME2表4（初级生产升至4.63×10⁴日元/干吨，健康对初级生产比值约317.5干吨/DALY，仍低于前节算例的30,000分界）则给每DALY计1.47×10⁷日元、每物种计1.42×10¹³日元，物种对健康的折合比又回升至约965,986 DALY/物种。现设提供同等交付服务的方案庚造成0.010 DALY健康损失与1.0×10⁻⁸物种损失，方案辛通过迁离人口密集区将健康损失压低至0.002 DALY，却因占用生境使物种损失增至2.0×10⁻⁸物种，其余损害相等。从庚改用辛少损失0.008 DALY、多损失1.0×10⁻⁸物种，两方案打平的分界为0.008 ÷ 1.0×10⁻⁸ = 800,000 DALY/物种。代入三份公布表：按2003年日文表7（高于80万分界），庚合计13,400日元低于辛的16,504日元，庚占优；换用2004年英文表7（跌破80万分界），庚升至145,000日元而辛为115,400日元，第一次反转为辛占优；再换用2012年全国LIME2表4（重新越过80万分界），庚为289,000日元而辛为313,400日元，第二次反转为庚占优。同一学派三张同行评审表值在80万DALY/物种分界两侧往返跨越，直观说明跨保护领域的货币单分不能脱离具体表次、计价标尺与敏感度分界单独充当定论。",
+        "reasoning": "在读者已读完LIME1两表与LIME2全国调查及表4核查之后，精确计算三表的v_bio/v_health比值（1,342,657 → 494,845 → 965,986 DALY/species），证明固定终点损害差（分界800,000）在三表间经历庚优→辛优→庚优的非单调往返反转。",
+        "caveats": [
+          "方案庚与辛的损害量为用以检验800,000 DALY/物种分界两侧行为的同口径教学设定；三份表的日元绝对额分属各自计价标尺与调查设定，不得跨表直接相减解读为真实社会福利增减。"
+        ]
+      },
+      "rationale": "整合改写：压实至 420 字以内，清晰呈现 LIME 三张发表表在 80 万分界两侧的反转—再反转。"
+    },
+    {
+      "id": "cl-weight135-recipe-endpoint-stop",
+      "op": "modify",
+      "from": {
+        "id": "cl-weight135-recipe-endpoint-stop",
+        "status": "reviewed",
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "conceptIds": [],
+        "mappingIds": [],
+        "premiseIds": [
+          "cl-lime-purpose",
+          "cl-lime-units",
+          "cl-weight135-lime-three-table-rereversal"
+        ],
+        "evidenceIds": [
+          "ev-weight135-rivm2016-aop-and-perspectives",
+          "ev-weight135-recipe2017-three-aop-halt",
+          "ev-lime-jp-damage",
+          "ev-lime-2004-conjoint-weights"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-weight135-rivm2016-aop-and-perspectives",
+            "relation": "supports",
+            "rationale": "核实RIVM 2016-0104第1.2至1.3节表1.2与第1.5节表1.5将终点定位于DALY（印year）、species×yr与US2013 Dollar三个保护领域且不发布跨保护领域单一总分权重。"
+          },
+          {
+            "evidenceId": "ev-weight135-recipe2017-three-aop-halt",
+            "relation": "supports",
+            "rationale": "核实Huijbregts等2017第2.1节（第139页）、图1（第140页）与第5节（第145页）将17个中点汇聚至3个保护领域终点后主动截停。"
+          },
+          {
+            "evidenceId": "ev-lime-jp-damage",
+            "relation": "supports",
+            "rationale": "核实LIME将四项保护对象损害进一步推入「統合化」货币综合的架构。"
+          },
+          {
+            "evidenceId": "ev-lime-2004-conjoint-weights",
+            "relation": "supports",
+            "rationale": "核实LIME以家庭联合分析边际支付意愿将跨保护领域损害统一折算为日元。"
+          }
+        ],
+        "scope": "对比ReCiPe 2016在三个异量纲保护领域主动截停的方法边界与日本LIME通过陈述偏好跨越保护领域合成单一日元总分的路径差异。",
+        "text": "看到同一学派的三张货币表就能让跨保护领域排序往返倒转，读者自然会问：既然终点模型已经把十几类排放汇聚成少数损害指标，干脆停在保护领域终点、不做跨领域货币加权行不行？欧洲主流终点方法ReCiPe 2016作出的正是这一截停选择。在荷兰国家公共卫生与环境研究院（RIVM）报告与Huijbregts等2017年论文中，ReCiPe 2016把17个中点类别分别映射到三个保护领域：以伤残调整生命年（DALY，总表印作year）计量的人体健康、以时间积分局地物种损失（species·yr）计量的生态系统质量，以及以2013年美元未来额外采选成本（USD2013，例如原油0.46美元/千克，铜在短期视角下0.16美元/千克、中长期视角下0.23美元/千克）计量的资源稀缺。到达这三个保护领域后，ReCiPe 2016便主动止步，不再随方法发布早年欧洲方法曾附带的默认专家组跨保护领域单一总分权重。在ReCiPe 2016的边界内，一年健康生命损失、一物种年的生态损失与一美元矿石采选额外成本保持各自物理或工程成本量纲，任何跨保护领域的合并都必须由使用者另行引入显式价值权重；日本LIME则把这道跨保护领域的价值折算直接放进居民政策选择卡，用家庭回避单位损害的边际支付意愿把四个保护对象压成同一日元标尺。",
+        "reasoning": "区分“中点至保护领域终点的生物物理与采选成本汇聚”（ReCiPe 2016止步处）与“跨保护领域的社会偏好货币通约”（LIME「統合化」），阐明终点建模本身并不自动产生单一总分。",
+        "caveats": [
+          "部分商业生命周期评价软件在数据库菜单中为ReCiPe提供附加归一化或历史专家组加权选项，属于软件端外挂配置而非RIVM 2016-0104或Huijbregts等2017年原方法发布的组成部分。"
+        ]
+      },
+      "rationale": "整合改写：联动表 2，压实至 360 字以内。"
+    },
+    {
+      "id": "cl-weight135-health-perspective-reversal",
+      "op": "modify",
+      "from": {
+        "id": "cl-weight135-health-perspective-reversal",
+        "status": "reviewed",
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "conceptIds": [],
+        "mappingIds": [],
+        "premiseIds": [
+          "cl-weight135-ef-robustness-weights",
+          "cl-weight135-recipe-endpoint-stop"
+        ],
+        "evidenceIds": [
+          "ev-weight135-rivm2016-aop-and-perspectives",
+          "ev-weight135-ef31-nf-wf-workbook",
+          "ev-weight135-ef31-nox-and-pm25-pm"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-weight135-rivm2016-aop-and-perspectives",
+            "relation": "supports",
+            "rationale": "核实RIVM 2016-0104表1.5中排入空气的初级PM₂.₅在I/H/E三视角下恒为6.3×10⁻⁴ yr/kg，而气候变化健康因子由I=8.1×10⁻⁸经H=9.3×10⁻⁷升至E=1.3×10⁻⁵ yr/kg CO₂（相差约160.5倍）。"
+          },
+          {
+            "evidenceId": "ev-weight135-ef31-nf-wf-workbook",
+            "relation": "supports",
+            "rationale": "核实欧盟EF 3.1气候变化（WF 21.06% / NF 7,553.083）与细颗粒物（WF 8.96% / NF 5.9537×10⁻⁴）的单位当量加权换算比（1例疾病发生折合5,397,458 kg CO₂-eq）。"
+          },
+          {
+            "evidenceId": "ev-weight135-ef31-nox-and-pm25-pm",
+            "relation": "supports",
+            "rationale": "核实欧盟EF 3.1初级细颗粒物在城市近地面（2.38497×10⁻⁴）、城市高烟囱（6.32619×10⁻⁵）与非城市近地面（1.13763×10⁻⁵）三档表征因子。"
+          }
+        ],
+        "scope": "固定二氧化碳与初级细颗粒物（PM₂.₅）权衡算例（戊：1,000 kg CO₂加0.10 kg PM₂.₅；己：500 kg CO₂加0.60 kg PM₂.₅，换位分界1,000 kg CO₂/kg PM₂.₅），检验ReCiPe 2016单一健康终点内部三文化视角与欧盟EF 3.1三空气子区室的百倍级换位。",
+        "text": "不过，主动停在三个保护领域并不意味着已经绕开了价值判断：即便完全留在“人体健康”这一个终点内部、根本不跨物种或货币做二次加权，模型内部的时间视野与证据纳入门槛照样能让方案次序发生百倍级反转。考察一组固定的减排权衡：方案戊排放1,000千克化石二氧化碳（CO₂）与0.10千克初级细颗粒物（PM₂.₅），方案己通过余热回收少排500千克CO₂，却因燃料改换多排0.50千克初级PM₂.₅（即500 kg CO₂与0.60 kg PM₂.₅），其余活动完全相同；两方案打平的分界恰为每少排1千克初级PM₂.₅可抵1,000千克CO₂。在ReCiPe 2016总表（表1.5）的人体健康终点下，初级PM₂.₅属短寿命局地污染物，在个人主义（Individualist，I，20年视野）、等级主义（Hierarchist，H，100年视野）与平等主义（Egalitarian，E，1,000年视野）三种文化视角下恒取6.3×10⁻⁴ DALY/kg。化石CO₂的健康损害因子却随积分年限与气候健康路径纳入范围从I视角的8.1×10⁻⁸升至H视角的9.3×10⁻⁷，再跃升至E视角的1.3×10⁻⁵ DALY/kg CO₂（E与I相差约160.5倍），使1千克初级PM₂.₅折合的等健康损害CO₂质量从7,778千克（I）一路跌至677千克（H）和48.5千克（E）。再对照前文《生态稀缺赋权》讨论的欧盟EF 3.1中点加权总分：1例颗粒物疾病发生在总分中折合5,397,458千克CO₂当量，乘上各空气子区室因子后，1千克初级PM₂.₅在城市近地面折合1,287千克CO₂，在城市高烟囱折合341千克CO₂，在非城市近地面仅折合61.4千克CO₂。代入戊与己：在ReCiPe个人主义视角（戊1.440×10⁻⁴低于己4.185×10⁻⁴ DALY）或欧盟EF 3.1城市近地面排放（戊0.03147低于己0.03548点）下，结论同为戊更优；一旦切到ReCiPe等级主义（戊9.930×10⁻⁴高于己8.430×10⁻⁴ DALY）、平等主义（戊1.306×10⁻²高于己6.878×10⁻³ DALY），或改记为欧盟EF 3.1城市高烟囱（戊0.02883高于己0.01965点）与非城市近地面（戊0.02805高于己0.01497点），结论全部反转为己更优。可见进入终点评价后仍有两道独立的价值关口：第一道在保护领域内部决定代际时间视野，第二道在保护领域之间决定社会偏好折算。",
+        "reasoning": "用1,000 kg CO2 / kg PM2.5分界同时穿透ReCiPe 2016 I/H/E（7,778 / 677 / 48.5 kg CO2）与EF 3.1城乡烟囱子区室（1,287 / 341 / 61.4 kg CO2，高烟囱戊精确值0.02883 pt），证明单一DALY终点内部的时间视野选择与中点加权的子区室选择具有同量级的排序支配力。",
+        "caveats": [
+          "RIVM报告第5章正文中初级PM₂.₅未舍入全球因子为6.29×10⁻⁴ DALY/kg（总表1.5四舍五入印6.3×10⁻⁴）；改用6.29×10⁻⁴时三视角等效CO₂质量依次约为7,765、676与48.4千克，戊与己在三种视角下的优劣方向完全不变。"
+        ]
+      },
+      "rationale": "整合改写：压实至 440 字以内，突出单保护领域内的时间视野翻转。"
+    },
+    {
+      "id": "cl-weight135-four-paradigm-synthesis",
+      "op": "modify",
+      "from": {
+        "id": "cl-weight135-four-paradigm-synthesis",
+        "status": "reviewed",
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "conceptIds": [],
+        "mappingIds": [],
+        "premiseIds": [
+          "cl-weight135-target-vs-hybrid-boundary",
+          "cl-lime-policy-contrast",
+          "cl-lime-two-forms",
+          "cl-lime-transfer",
+          "cl-weight135-lime-three-table-rereversal",
+          "cl-weight135-recipe-endpoint-stop",
+          "cl-weight135-health-perspective-reversal"
+        ],
+        "evidenceIds": [
+          "ev-es-equation",
+          "ev-weight135-pef-guidance-robustness-table",
+          "ev-weight135-rivm2016-aop-and-perspectives",
+          "ev-lime-2012-conjoint-weights"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-es-equation",
+            "relation": "supports",
+            "rationale": "核实政策目标距离范式（瑞士UBP）的(1/F_n)×(F/F_k)²代数结构与国内法定目标权威来源。"
+          },
+          {
+            "evidenceId": "ev-weight135-pef-guidance-robustness-table",
+            "relation": "supports",
+            "rationale": "核实混合中点赋权范式（欧盟EF 3.1）的50:50公众与专家重要性乘0.17至0.87科学稳健度结构。"
+          },
+          {
+            "evidenceId": "ev-weight135-rivm2016-aop-and-perspectives",
+            "relation": "supports",
+            "rationale": "核实文化视角终点截停范式（ReCiPe 2016）的I/H/E时间视野参数与三保护领域异量纲边界。"
+          },
+          {
+            "evidenceId": "ev-lime-2012-conjoint-weights",
+            "relation": "supports",
+            "rationale": "核实陈述偏好货币化范式（LIME1/LIME2）的联合分析支付意愿标尺与日本地域适用限制。"
+          }
+        ],
+        "scope": "从聚合层级、折算权威来源、归一化进入方式、零清单改动换位触发器与公开比较约束五个维度，系统并置《生态稀缺赋权》与《环境损害估值》涵盖的四条代表性路线，并引出下表对照。",
+        "text": "把前文《生态稀缺赋权》与本章放到同一张诊断图上，现行生命周期评价处理“跨类别取舍”的四条代表性路线便各有清晰的权力来源与失效边界。第一条路线是瑞士生态稀缺法代表的政策目标距离赋权，依据本国法定限值与减排目标直接给排放计分，同源归一化时约化为F/Fₖ²并取单一最严途径。第二条路线是欧盟EF 3.1代表的混合中点加权，将16类全球人均年度归一化指标乘上“公众—专家50:50重要性×模型稳健度”求和。第三条路线是ReCiPe 2016代表的文化视角终点截停，把17个中点汇聚到DALY、species·yr和USD2013三个异量纲保护领域后主动停步，但把20年、100年与1,000年时间视野写进了保护领域内部。第四条路线则是日本LIME1与LIME2代表的陈述偏好终点货币估值，用受访家庭的边际支付意愿把四项终点损害折成日元——直接按单位支付意愿vₑ乘损害量求和时不经外部归一化分母，改写为无量纲年度份额权重Nₑvₑ/ΣNⱼvⱼ时全国年度损害参照Nₑ便重新进入权重分子。下表将四条路线的核心机制与换位触发条件横向并置，便于逐项核对它们各自回答的规范性问题。",
+        "reasoning": "打通《生态稀缺赋权》与《环境损害估值》，用精炼短句概括四条代表性路线并衔接紧随其后的五维对照表，消除将任一总分当作纯客观物理度量的误区。",
+        "caveats": [
+          "四类范式的适用前提彼此独立，不得把欧盟EF的0.17毒性稳健度系数、瑞士的(F/Fₖ)²目标超标倍率与LIME的家庭支付意愿混合拼装成未经验证的新复合因子。"
+        ]
+      },
+      "rationale": "整合改写：压实至 330 字以内，清晰引出表 2 四范式横向对照。"
+    },
+    {
+      "id": "cl-weight135-monetary-incommensurability",
+      "op": "modify",
+      "from": {
+        "id": "cl-weight135-monetary-incommensurability",
+        "status": "reviewed",
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "conceptIds": [],
+        "mappingIds": [],
+        "premiseIds": [
+          "cl-lime-units",
+          "cl-lime-numeraire",
+          "cl-weight135-recipe-endpoint-stop",
+          "cl-weight135-four-paradigm-synthesis"
+        ],
+        "evidenceIds": [
+          "ev-weight135-cml2001-part3-finnveden-monetary",
+          "ev-weight135-rivm2016-aop-and-perspectives",
+          "ev-lime-2012-conjoint-weights"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-weight135-cml2001-part3-finnveden-monetary",
+            "relation": "supports",
+            "rationale": "核实CML 2001第3分册第4.8节引Finnveden 1999a指出个体支付意愿、集体显示偏好与削减／修复成本等不同货币化概念不可直接互比。"
+          },
+          {
+            "evidenceId": "ev-weight135-rivm2016-aop-and-perspectives",
+            "relation": "supports",
+            "rationale": "核实ReCiPe 2016资源稀缺终点（US2013 Dollar）定义为矿产与化石资源未来额外开采成本（surplus cost）而非支付意愿。"
+          },
+          {
+            "evidenceId": "ev-lime-2012-conjoint-weights",
+            "relation": "supports",
+            "rationale": "核实LIME2以家庭陈述偏好联合分析及社会资产经济损失标尺估算外部损害货币权重。"
+          }
+        ],
+        "scope": "依据CML 2001第3分册第4.8节（引Finnveden 1999a）、ReCiPe 2016表1.2与LIME计价结构，划清陈述支付意愿、资源未来额外采选成本与生命周期市场现金流（LCC）三类货币指标的不可通约与防重复计算边界。",
+        "text": "当评价结果印上“日元”或“美元”符号时，尤其需要防止把同挂货币单位的不同概念直接相加。荷兰莱顿大学环境科学中心（CML）2001年科学背景导则第4.8节在评述Finnveden（1999）的赋权分类时早已指出，货币估值内部包含个体陈述支付意愿、集体显示偏好以及污染削减或生态修复成本等截然不同的经济学量纲，即便折算成同一种货币符号也不能直接互比。仅在第四部与第五部涉及的指标中，就并存着三类性质迥异的“货币数”：第一类是本章LIME通过假设政策卡估出的受访家庭边际支付意愿（日元），衡量的是特定抽样人群对回避边际健康或物种损害的主观福利折算；第二类是ReCiPe 2016资源稀缺终点的2013年美元额外成本（USD2013），衡量的是未来矿石品位下降或化石燃料替代所增加的开采与提炼工程成本积分，不含生态或健康外部效用；第三类则是后文《生命周期成本与综合评价》将专门讨论的生命周期成本（Life Cycle Costing，LCC），记录特定决策主体在真实市场中实际收付的设备、能源、排污税费与处置现金流。若在可持续性综合评价中不加甄别地把LIME式的外部损害货币估值直接叠加上企业LCC现金流，不仅混同了真实财务支出与假想福利交换率，还会把已经通过碳税、排污费或合规治理设施进入企业账面的那部分环境代价重复计入总分。",
+        "reasoning": "厘清陈述支付意愿（WTP）、工程额外采选成本（surplus cost）与真实财务现金流（LCC）的概念异质性与内化税费重复计算风险，同时为后文《生命周期成本与综合评价》埋下严谨伏笔。",
+        "caveats": [
+          "即便在同一陈述偏好类别内部，不同基准年汇率、购买力平价（PPP）与收入弹性修正也会改变跨国货币数值，不能仅按市场汇率把日本日元权重折成美元或欧元后视作当地偏好。"
+        ]
+      },
+      "rationale": "整合改写：压实至 320 字以内，清晰区分三类异质货币量与重复计入风险。"
+    },
+    {
+      "id": "cl-weight135-glam3-reporting-discipline",
+      "op": "modify",
+      "from": {
+        "id": "cl-weight135-glam3-reporting-discipline",
+        "status": "reviewed",
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "conceptIds": [],
+        "mappingIds": [],
+        "premiseIds": [
+          "cl-weight135-comparative-assertion-regimes",
+          "cl-weight135-four-paradigm-synthesis",
+          "cl-weight135-monetary-incommensurability"
+        ],
+        "evidenceIds": [
+          "ev-weight135-glam3-scoping-agenda",
+          "ev-weight135-ilcd2010-no-public-weighting",
+          "ev-weight135-ec2021-mandatory-weighting-and-pefcr"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-weight135-glam3-scoping-agenda",
+            "relation": "supports",
+            "rationale": "核实UNEP GLAM Phase 3范围界定报告（2020，第134—135、141—144、156、158—163页）确认无单一跨语境普适赋权法，设定语境化选择指南、通用语境确定性权重与权重概率分布三项产出，并记录成员对PROMETHEE/SMAA的调研答复及LIME3引用情况。"
+          },
+          {
+            "evidenceId": "ev-weight135-ilcd2010-no-public-weighting",
+            "relation": "supports",
+            "rationale": "核实ILCD 2010对价值选择透明披露与公开比较主张禁用加权的基准约束。"
+          },
+          {
+            "evidenceId": "ev-weight135-ec2021-mandatory-weighting-and-pefcr",
+            "relation": "supports",
+            "rationale": "核实EU 2021/2279强制将已表征剖面、已归一化剖面与加权结果并列报告的披露要求。"
+          }
+        ],
+        "scope": "依据 UNEP GLAM 第三阶段范围界定报告与跨体系制度对照，确立使用任何加权或货币估值结果时的三项硬性透明报告纪律。",
+        "text": "联合国环境规划署全球生命周期影响评价方法共识项目（UNEP GLAM）第三阶段范围界定报告总结国际学界现状时明确承认，迄今并不存在一套跨越所有决策情境唯一有效的赋权方法。因此，赋权子工作组没有把单一静态表当作放之四海而皆准的标准，而是并行部署三项产出：一是梳理生命周期评价与多准则决策分析术语、指导研究者按决策语境选择方法的指南，二是针对特定通用语境构建覆盖全部中点与终点损害指标的一致确定性权重集，三是给出中点与终点权重的概率分布以传播不确定性；其专家调研附录还记录了无须把异质指标硬折成同一单位的偏好排序组织法（PROMETHEE）以及可探索全权重空间的随机多属性可接受度分析（SMAA，既可结合归一化加权求和，也可与PROMETHEE联用），并在文献与答复中提及将陈述偏好调查扩展至二十国集团的第三版LIME3（Itsubo等2015年，同时指出当时尚缺公开的不确定性参数）。综合这一国际共识与两章算例，使用任何单一分数或货币估值时都应守住三条最低报告纪律：第一，必须并列公开未加权的中点表征剖面或分保护领域终点剖面，绝不用单一总分遮蔽反向变化的指标；第二，必须写明归一化分母（本国现状流Fₙ、全球人均年度基准NF或全国年度损害参照Nₑ）、科学稳健度乘数、文化时间视角及权重表的精确发表版次，拒绝使用来历不明的软件默认总分；第三，凡涉及方案优劣判断，均应像涂装例的2倍分界、气候对生态毒性的11/3分界、CO₂对PM₂.₅的1,000千克分界及物种对健康的80万DALY分界那样，算出令次序翻转的临界比值，把“科学模型算到了哪里”同“哪一步价值判断决定了胜负”清清楚楚地交还给决策者。",
+        "reasoning": "严格忠实于UNEP GLAM Phase 3的三项正式产出与调研附录记录（PROMETHEE、SMAA与LIME3不确定性反馈），将两章全部比较算例收束为三条可操作的科学报告准则。",
+        "caveats": [
+          "文中提及的LIME3二十国集团陈述偏好调查仅依据UNEP GLAM第三阶段范围界定报告的参考文献与专家调研记录其方法动向；本章未引入LIME3各国因子表，故不对具体国别数值展开比较。"
+        ]
+      },
+      "rationale": "整合改写：压实至 370 字以内，凝练 UNEP GLAM 共识与三条最低报告纪律。"
+    },
+    {
+      "id": "cl-soc139-portfolio-reference-and-comparative-assertions",
+      "op": "modify",
+      "from": {
+        "id": "cl-soc139-portfolio-reference-and-comparative-assertions",
+        "kind": "synthesis",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "scope": "产品功能单位与组织服装组合参照的定量结构，以及 UNEP 2020 年 SO-LCA 同欧盟建议书 (EU) 2021/2279 组织环境足迹（OEF）在公开比较声明上的制度分歧",
+        "text": "把“100 人·年防护穿用服务”换成“供应商一年内的全部经营活动”，改变的不只是统计范围，还有指标能否被产量整除。欧盟建议书（EU）2021/2279 附件三组织环境足迹（OEF）第 3.2.1 至 3.2.2 节恰好以欧盟经济活动统计分类（NACE 14 部门）成衣制造企业 Y Company Ltd. 为例：报告期 1 年内的产品组合包含 40,000 件 0.16 kg 的 T 恤与 20,000 条 0.53 kg 的长裤（共 60,000 件、总重 17,000 kg，设定使用期 5 年），连厂区食堂餐食与园艺维护也一并纳入组织边界；其第 1.1 节与配套部门规则指南（OEFSR Guidance v6.3）明确允许同部门相似产品组合的组织在遵守部门规则、并按年度营业额等参照系统归一化后发布面向公众的组织间比较声明。UNEP 2020 年指南对同样以“组织＋产品组合＋参照期间”定义的 SO-LCA 却明确拒绝用于公开比较声明。分歧源于所测量的数学性质不同：温室气体或耗水属于随件数累加的外延物理量，而压制集体谈判、就业歧视或分包童工属于组织层面的制度状态与权利底线——若把 1 起打压工会事件除以 60,000 件成衣折成每件 0.0000167 起，或除以更高的品牌营业额，扩大产量和提高售价就会在算术上稀释权利侵害。",
+        "caveats": [
+          "欧盟建议书（EU）2021/2279 序言第（18）条明示该建议书仅规范环境影响，欧盟消费品在第三国供应链上的社会与劳工影响另行跟踪；此处对照其组织报告单位与公开比较规则，不代表 OEF 已包含社会指标。",
+          "欧盟建议书勘误本印第 L 144/215 页保留“fro”与“environemtnal”两处原印拼写，印第 L 144/218 页所示每周 30 ℃机洗能耗 0.4968 MJ 与耗水 6.9 L 系按 1 件 T 恤加 1 条长裤共 0.69 kg 乘 0.72 MJ/kg 与 10 L/kg 算出，而非 40,000 件与 20,000 条年度总组合的周洗总量。"
+        ],
+        "conceptIds": [],
+        "premiseIds": [
+          "cl-weight135-comparative-assertion-regimes",
+          "cl-sustainability-product-functional-reference",
+          "cl-sustainability-organization-reporting-reference"
+        ],
+        "evidenceIds": [
+          "ev-sustainability-slca-organizational-reference",
+          "ev-soc139-ec2021-oef-garment-and-assertions",
+          "ev-soc139-oefsr-v63-portfolio-and-comparability"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-sustainability-slca-organizational-reference",
+            "relation": "supports",
+            "rationale": "UNEP 2020 年指南第 7 章规定 SO-LCA 以组织、产品组合与参照期为基础且不拟用于公开比较声明。"
+          },
+          {
+            "evidenceId": "ev-soc139-ec2021-oef-garment-and-assertions",
+            "relation": "supports",
+            "rationale": "欧盟建议书附件三给出 NACE 14 成衣制造企业 40,000 件 T 恤与 20,000 条长裤的组合实例，并允许按年度营业额归一化后开展公开组织比较声明。"
+          },
+          {
+            "evidenceId": "ev-soc139-oefsr-v63-portfolio-and-comparability",
+            "relation": "supports",
+            "rationale": "OEFSR 指南第 7.1 节限定唯有同部门内具备相似产品组合的组织方可按部门规则作出公开比较声明。"
+          }
+        ],
+        "mappingIds": [],
+        "reasoning": "40,000×0.16 + 20,000×0.53 = 6,400 + 10,600 = 17,000 kg（共60,000件成衣），1/60,000 ≈ 0.0000167 起/件；原印周洗按单套 0.16+0.53=0.69 kg 算得 0.69×0.72=0.4968 MJ 与 0.69×10=6.9 L → 物理排放具外延可加性而权利状态不可被产量或营业额整除稀释。"
+      },
+      "rationale": "整合改写：联动表 1，压实至 370 字以内，清晰对比 OEF 与 SO-LCA 的公开比较边界。"
+    },
+    {
+      "id": "cl-soc139-matrix-satellite-linearity-and-software-encoding",
+      "op": "modify",
+      "from": {
+        "id": "cl-soc139-matrix-satellite-linearity-and-software-encoding",
+        "kind": "synthesis",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "scope": "矩阵可持续性计算结构（Heijungs 等 2013）对社会卫星矩阵的猜想、强度与阈值指标的非可加性，以及 PSILCA v3 在 openLCA 中的两种软件编码方案",
+        "text": "即使固定了产品功能单位，社会指标也并非都能像排放清单那样直接装入线性矩阵。Heijungs、Settanni 与 Guinée（2013）在统一生命周期评价与成本核算的矩阵方程时指出，早期社会评价文献从未写出计算公式，并猜想社会议题与环境排放一样主要附着于单元过程，因而可用线性社会卫星矩阵写成 g_soc = B_soc A_p⁻¹ f。对照 UNEP 2021 年《社会生命周期评价方法学子类别表》的工人指标便知，这一猜想仅对直接工时、急性工伤例数或满足无阈值线性假设的车间吸入量等外延量成立：只有在工艺与排班不变时，它们才随过程缩放向量 s = A_p⁻¹ f 成比例相加且不受工序拆分影响。相反，法定最低工资与生活工资之比、结社自由状态或每周工时上限属于强度量或阈值状态——工厂尚有富余产能时，工作服订单从 1,000 套增至 2,000 套仍可维持每周 40 h 正常排班而零超时违规；一旦越过排班临界点推高至每周 65 h，疲劳与工伤风险才骤然跃升，若把状态等级直接左乘 s，把一道缝制工序拆成两道子工序就会凭空将违规分翻倍。正因如此，原生产品社会影响生命周期评价数据库（PSILCA v3）在开源软件 openLCA 中不得不采取两种折中：默认做法把经风险评估的社会指标编码为伪“基本流”，统一乘以每美元产值工时后再沿供应链求和；备选第 3.7.2 与 5.4 节直接量化脚本则对原始百分比或布尔值求和后，再除以技术矩阵缩放对角元之和 ∑ a_ii s_i，折算成供应链各部门经济总产值加权平均。下表先并置五套产品、组织与投入产出体系的对象参照、缩放关系与公开比较规则，产值反推工时及跨国工资折算的具体悖论随后在下一节展开。",
+        "caveats": [
+          "PSILCA v3 第 5.4 节印第 103 页提供的 openLCA Python 脚本在注释中明示其分母求和假定全部对角元产品可相加（如同以美元计价）；若前景系统混入以千克或件数计量的物理单元过程而未先统一货币单位，对角元直接相加即发生异量纲混加。",
+          "订单由 1,000 套增至 2,000 套及每周 40 h 至 65 h 为用以展示阈值非线性的受控算例，不指代特定真实服装厂排班记录。"
+        ],
+        "conceptIds": [],
+        "premiseIds": [
+          "cl-sustainability-product-functional-reference"
+        ],
+        "evidenceIds": [
+          "ev-soc139-hsg2013-social-satellite-matrix",
+          "ev-soc139-unep-sheets-2021-worker-subcategories",
+          "ev-soc139-psilca-v3-architecture-and-scales"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-soc139-hsg2013-social-satellite-matrix",
+            "relation": "supports",
+            "rationale": "Heijungs 等 2013 年印第 1732—1733 页指出既有文献未定义 SLCA 计算形式并提出线性过程卫星矩阵猜想。"
+          },
+          {
+            "evidenceId": "ev-soc139-unep-sheets-2021-worker-subcategories",
+            "relation": "supports",
+            "rationale": "UNEP 2021 年方法学子类别表列明结社自由、生活工资比与法定工时等大量非外延状态与阈值指标。"
+          },
+          {
+            "evidenceId": "ev-soc139-psilca-v3-architecture-and-scales",
+            "relation": "supports",
+            "rationale": "PSILCA v3 文档印第 21—22、84—85 与 103 页详载伪基本流乘工时编码及按技术矩阵缩放对角元总产值归一化的 Python 脚本。"
+          }
+        ],
+        "mappingIds": [],
+        "reasoning": "线性卫星乘积 g_soc = B_soc A_p⁻¹ f 要求每行条目对过程拆分不变；强度比值与工时阈值不满足外延可加性，故 PSILCA v3 改以每美元工时作伪基本流权重或按对角元总产值 ∑ a_ii s_i 做加权平均归一化。"
+      },
+      "rationale": "整合改写：压实至 390 字以内并联动表 1，清晰区分外延量与强度/阈值社会指标。"
+    },
+    {
+      "id": "cl-soc139-wage-price-and-automation-paradoxes",
+      "op": "modify",
+      "from": {
+        "id": "cl-soc139-wage-price-and-automation-paradoxes",
+        "kind": "synthesis",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-18",
+        "scope": "反推工时（h/USD）与货币分母损害因子（DALY/USD）的高薪高价悖论、自动化减员悖论，以及 GLAM 2026 论文警告同 2024 实发工作簿跨国工资比外推的直接冲突",
+        "text": "为绕开强度量不可直接相加的困难，主流背景库普遍引入每美元产值工时（h/USD）或每美元产值伤残调整生命年损害（DALY/USD）作缩放桥梁：PSILCA v3 在约 15,000 个全球多区域投入产出库 Eora 部门上用雇员报酬占总产值比除以小时劳动成本（多数介于 0.001 至 1 h/USD，2011 年前旧值按每年 3% 工资增长外推），社会热点数据库（SHDB）也在 113 个国家或地区乘 57 个部门共 6,441 个国家特定部门（CSS）上用每美元产值工资支出除以小时工资率反推工时。这一换算在同部门比较中立刻诱发两重结构悖论：其一是“高薪高价惩罚悖论”——设同国两家工作服厂中，甲厂支付生活工资并配齐防护、每套售 40 USD（实耗 1.0 h 安全工时、零工伤），乙厂压低工资、每套售 20 USD（实耗 1.5 h 超时工时）；任何按采购额乘部门平均 h/USD 或 DALY/USD 的模型，都会因甲厂售价高出 1 倍而把甲厂推算成乙厂 2.0 倍的风险工时或健康负担。其二是“自动化减员悖论”——若改以实测工时直接乘同部门风险因子，安全合作社手工缝制每套耗 4.0 h 反被判成同国自动化产线（1.0 h）的 4.0 倍风险，把吸纳就业当成负面冲击。更深刻的矛盾出现在 UNEP 全球生命周期影响评价方法共识项目（GLAM）工作环境方法内部：Fantke 等（2026）表 2 与第 3.5.4 节明载因子以美国代表全球，并明文警告反对用国内生产总值等经济指标比值向其他国家简单外推，因为经济指标与职业健康表现之间并无因果关系；然而 GLAM 实发工作环境工作簿（V1.0.2024.10）在列出 420 个美国部门（411 个非零、9 个非生产部门为零，服装制造 315000 原始值为 6.662550×10⁻⁸ DALY/USD，织布 313200 为 4.208644×10⁻⁸，纺纱 313100 为 1.664539×10⁻⁸，印染涂层 313300 为 4.501886×10⁻⁸）后，却在 52 国匹配表（21,840 行）中把美国舍入值（服装制造 6.6626×10⁻⁸）在全部 411 个非零部门上精确乘以单一国别工资除数 43,746/W_c：瑞士为美国的 0.65450 倍（4.3607×10⁻⁸），德国为 43,746/41,000 即 1.06698 倍（7.1088×10⁻⁸），日本为 1.85399 倍（1.2352×10⁻⁷），中国为 3.26110 倍（2.1727×10⁻⁷），墨西哥为 7.20452 倍（4.8001×10⁻⁷），巴西为 8.21826 倍（5.4755×10⁻⁷），土耳其达 18.82252 倍（1.2541×10⁻⁶ DALY/USD，为瑞士的 28.76 倍），而印度、孟加拉国与越南完全缺席。反观 PSILCA v3“工作场所安全措施”子指标则假设各国同行业安全风险相同，把美国每 100,000 名雇员职业安全违规率原样复制到全球。前者把汇率与低工资直接放大成伤残寿命损失，后者抹平跨国监管差异，两者都不能代替工厂实测工时与真实安全记录。",
+        "caveats": [
+          "GLAM 三份一手载体在部门总数上存在源内差异：2026 年主文图 7 图注称全集含 362 个部门（且将示例说明误排为“Fig. 72”），电子补充材料印第 S23 页式 2 称 397 个工业商品部门，而 2024 年 10 月实发工作簿 lciamethods_CF 实含 420 个部门（第 385 行化纤制造缺失 NAICS 代码，LCIAMethod_location 自第 2 行起国家代码右移至 C 列，FLOW_class 表头 F1 印作“Classfied”）。",
+          "两家工作服厂（40 USD 对 20 USD 及 4.0 h 对 1.0 h）为固定部门背景因子下的受控代数反例，用于分离价格、工时与真实伤害率的作用，不代表具体企业实测值。"
+        ],
+        "conceptIds": [],
+        "premiseIds": [
+          "cl-soc139-matrix-satellite-linearity-and-software-encoding",
+          "cl-sustainability-worker-hours-not-impact"
+        ],
+        "evidenceIds": [
+          "ev-soc139-psilca-v3-architecture-and-scales",
+          "ev-soc139-shdb-2012-worker-hours-and-shi",
+          "ev-soc139-glam2026-work-environment-and-activity",
+          "ev-soc139-glam2026-si-work-environment-io",
+          "ev-soc139-glam-work-env-2024-workbook"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-soc139-psilca-v3-architecture-and-scales",
+            "relation": "supports",
+            "rationale": "PSILCA v3 印第 19—20 与 41 页给出式 1 每美元工时反推法及美国每 10 万雇员 OSHA 违规率全球照搬假设。"
+          },
+          {
+            "evidenceId": "ev-soc139-shdb-2012-worker-hours-and-shi",
+            "relation": "supports",
+            "rationale": "Benoît-Norris 等 2012 年印第 1954 页给出 6,441 个 GTAP 国家特定部门由工资支出比除以小时工资率反推工时的模型。"
+          },
+          {
+            "evidenceId": "ev-soc139-glam2026-work-environment-and-activity",
+            "relation": "supports",
+            "rationale": "Fantke 等 2026 年印第 4 与 13—15 页明载 USD2012 货币分母及第 3.5.4 节反对按经济指标比值跨国外推的警告。"
+          },
+          {
+            "evidenceId": "ev-soc139-glam2026-si-work-environment-io",
+            "relation": "supports",
+            "rationale": "补篇印第 S23 页记录 397 个部门投入产出转换方程，与主文 362 个部门及工作簿 420 个部门构成源内口径对照。"
+          },
+          {
+            "evidenceId": "ev-soc139-glam-work-env-2024-workbook",
+            "relation": "supports",
+            "rationale": "工作簿全表精确核实 420 个美国部门与 52 国 21,840 行按单一国别除数 43,746/W_c 统一缩放及印孟越缺席事实。"
+          }
+        ],
+        "mappingIds": [],
+        "reasoning": "40 USD / 20 USD = 2.00 倍（高薪安全厂被产值模型反推翻倍风险），4.0 h / 1.0 h = 4.00 倍（吸纳就业被工时模型判高风险）；GLAM 工作簿 420×52=21,840 行中 411 个非零部门跨国比恒等于 43,746/W_c（德国 43,746/41,000=1.06698，土耳其 18.82252 为瑞士 0.65450 的 28.76 倍），背离 2026 主文第 3.5.4 节非因果警告。"
+      },
+      "rationale": "整合改写：压实至 440 字以内，将 GLAM 各部门及国别倍率明细移入注释，正文突出两重结构悖论。"
+    },
+    {
+      "id": "cl-soc139-macro-screening-cutoffs-and-certification-limits",
+      "op": "modify",
+      "from": {
+        "id": "cl-soc139-macro-screening-cutoffs-and-certification-limits",
+        "kind": "synthesis",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-18",
+        "scope": "国家—部门热点筛查的货币截断盲区（PSILCA v3 德国纺织链与 SHDB 0.1% 工时截断）及第三方可持续性认证的自选择与抽检效度边界（Meemken 等 2021）",
+        "text": "既然宏观部门因子不能直接充当工厂表现，采购方通常采用“先用数据库筛查高风险环节，再查现场认证或审核报告”的两步策略；但每一步都有各自的盲区。在筛查阶段，SHDB 用 20 张社会主题表覆盖 191 个国家与 57 个部门，并将工时占比低于 0.1% 的部门视为贡献不显著；PSILCA v3 第 5.3 节对“德国纺织品制造”产品系统的截断实验（上游童工风险主要由土耳其服装制造与乌克兰缝制品贡献）则显示：无截断时童工风险为 0.0868 中风险工时，按货币贡献比例截断在 10⁻¹¹ 与 10⁻⁹ 时为 0.08662 与 0.0842，放宽到 10⁻⁷ 时降至 0.07056，到 10⁻⁵ 时跌至 0.04864（损失 43.96%），到 10⁻³ 时仅剩 0.02 中风险工时（损失 76.96%）——越是工资极低、采购金额占比微小的非正规分包环节，越容易在常规成本截断下从模型中消失。即便顺着线索进入现场核查，一张自愿可持续性标准证书也不自动证明工厂条件已经改善。Meemken 等（2021）对全球农食与棉纺原料供应链认证的独立实证综述指出：认证仅覆盖全球不足 2% 的农地与低收入国家约 2% 的小农户（约 1,000 万农户，并雇佣同等规模的工资工人、分成佃农与分包工）；由于项目选点、合作社参与、成员吸纳、认证地块挑选与雇工招录五个层级均存在非随机自选择，认证方与非认证方的横截面差距往往反映既有能力筛选而非标准带来的净因果改善，且小农场受雇工人常因非正式用工难以监管而未能受益。同时，外部审核机构由受审单位付费聘请且检查多预先通知，在所引加纳认证可可调查中高达 50% 与 79% 的认证农户从未接受过内部与外部审核员现场检查，全球更有 30% 至 70% 的认证产量最终未能按认证渠道售出，而出口与零售端高度集中也限制了终端溢价向基层工资工人传导。",
+        "caveats": [
+          "Meemken 等（2021）实证综述主要基于全球农业与棉农等初级供应链研究；工业成衣缝制与印染环节虽同样面临分包与预告审核问题，具体漏检比例仍须依据对应制造业调查独立核实。",
+          "指出第三方认证存在自选择偏倚与抽检局限，并不否定现场文档核查对排查制度空白的实际价值，而是界定其不能替代非预告抽检、工人访谈与前后对照证据。"
+        ],
+        "conceptIds": [],
+        "premiseIds": [
+          "cl-sustainability-risk-not-facility-performance",
+          "cl-sustainability-reference-scale-performance",
+          "cl-soc139-wage-price-and-automation-paradoxes"
+        ],
+        "evidenceIds": [
+          "ev-sustainability-slca-scale-meaning",
+          "ev-soc139-shdb-2012-worker-hours-and-shi",
+          "ev-soc139-psilca-v3-architecture-and-scales",
+          "ev-soc139-meemken2021-certification-bias-and-audits"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-sustainability-slca-scale-meaning",
+            "relation": "supports",
+            "rationale": "UNEP 2020 年指南专栏 11 界定国家或部门风险代理与企业特定绩效数据的分辨率边界。"
+          },
+          {
+            "evidenceId": "ev-soc139-shdb-2012-worker-hours-and-shi",
+            "relation": "supports",
+            "rationale": "SHDB 印第 1949 与 1953 页规定 191 国 57 部门风险表、20 个主题及低于 0.1% 总工时的截断准则。"
+          },
+          {
+            "evidenceId": "ev-soc139-psilca-v3-architecture-and-scales",
+            "relation": "supports",
+            "rationale": "PSILCA v3 印第 98—99 与 102 页给出德国纺织品制造童工中风险工时随货币截断阈值由 0.0868 跌至 0.02 的实测曲线。"
+          },
+          {
+            "evidenceId": "ev-soc139-meemken2021-certification-bias-and-audits",
+            "relation": "supports",
+            "rationale": "Meemken 等 2021 年印第 759—763 页系统综述认证覆盖率、五层非随机自选择、50%/79% 未受检率、30%—70% 未按认证售出及溢价传导障碍。"
+          }
+        ],
+        "mappingIds": [],
+        "reasoning": "德国纺织链童工风险由无截断 0.0868 降至 1E-5 时 0.04864（降 43.96%）与 1E-3 时 0.02（降 76.96%）；全球认证覆盖不足 2% 农地与约 2% 低收入国小农户，叠加五层非随机自选择及最高 50%／79% 未受检率与 30%—70% 未按认证售出 → 宏观筛查与认证证书均不可冒充改善的因果证明。"
+      },
+      "rationale": "整合改写：联动表 2，压实至 420 字以内，清晰呈现货币截断盲区与认证自选择/漏检局限。"
+    },
+    {
+      "id": "cl-soc139-occupational-health-pathways-and-rights-boundary",
+      "op": "modify",
+      "from": {
+        "id": "cl-soc139-occupational-health-pathways-and-rights-boundary",
+        "kind": "synthesis",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-18",
+        "scope": "职业健康在生命周期评价三十年中的边界演进（CML 2001、ILCD 2010 至 GLAM 2026）、体力活动健康效应悖论及第二类路径不可替代第一类权利规范的边界",
+        "text": "当评价目标从制度合规推进到工人真实承受的身心健康后果时，工作环境恰好横跨环境评价与社会评价三十年的方法边界。荷兰莱顿大学环境科学中心指南（CML 2001）第 3 分册第 4.3.16 节记载，1992 年早期指南因不同工伤等级缺乏共识权重，只能以表征因子 1 无权统计事故直接死亡人数，或像丹麦工业产品环境设计方法（EDIP）那样按每千克商品单独建立工作环境清单；国际参考生命周期数据系统（ILCD）2010 年通用指南第 6.6.1 与 6.7 节则划出严格的技术圈隔离墙，将车间暴露、工伤与社会劳动条件排除在标准生态圈清单之外（第 7.2.3 节脚注 117 连工人日常饮食居住也一并排除，仅重体力劳动所需的额外食物热量例外），规定若研究确需纳入，必须单独建库、单独聚合与单独解释。直到 UNEP GLAM（Fantke 等 2026 年主文第 3.5 节与补篇第 S-6 节），方法学界才把 2019 年全球约 70,000,000 DALY 的职业风险重新接入人体健康终点，汇总急性非致死工伤（跨 13 类伤害性质与 15 至 80 岁三组年龄层，平均严重度 0.72 DALY/例）、致死工伤（每例死亡损失 33.3 寿命损失年（YLL），因在岗工亡者显著年轻于大气颗粒物心肺疾病逝者，达 PM₂.₅ 每例死亡 23.6 DALY 的 1.41 倍）、235 种车间有机化学品吸入、室内 PM₂.₅ 与职业噪声共 5 套子指标。即便在生理路径内部，把活动量转成健康效应仍受情境制约：GLAM 第 3.8.3 至 3.8.4 节与第三阶段范围报告体力锻炼专题指出，25 岁及以上成人在交通与休闲中的体力活动虽可带来 −1×10⁻⁴ 至 −4.8×10⁻⁴ DALY/h 的健康获益，但由于流行病学暴露表征仅统计休闲锻炼代谢当量、且将家务与职业活动混入总代谢当量违背国际建议并饱受争议，该负向健康因子尚不能直接外推至职业劳动过程。更重要的是，即便第二类影响路径算清了职业 DALY，结社自由、同工同酬、禁止童工与禁止强迫劳动本身就是不可折算成患病率的规范底线——零工伤记录既不能证明不存在强迫加班，也不能替代第一类参照量表对基本权利的独立裁定。",
+        "caveats": [
+          "GLAM 2026 表 1 中工作场所致死工伤以寿命损失年（33.3 YLL/death）报告，而 PM₂.₅ 暴露死亡以含非致死伤残分量的综合指标（23.6 DALY/death）报告；两数均引自该文表 1 基于全球疾病负担（GBD）2019 参考年的全球平均严重度表。",
+          "GLAM 补篇第 S-6 节同时指出，美国劳工统计局（BLS）工伤统计并未覆盖全部美国劳动力且存在漏报过滤机制，不能将模型输出读作全球在岗工人真实伤病的完整普查。"
+        ],
+        "conceptIds": [],
+        "premiseIds": [
+          "cl-sustainability-reference-scale-performance",
+          "cl-sustainability-social-impact-pathways"
+        ],
+        "evidenceIds": [
+          "ev-soc139-cml2001-part3-casualties-history",
+          "ev-soc139-ilcd2010-workplace-boundary-separation",
+          "ev-soc139-glam2026-work-environment-and-activity",
+          "ev-soc139-glam2026-si-work-environment-io",
+          "ev-soc139-glam3-worker-exposure-and-slca-scoring",
+          "ev-sustainability-slca-assessment-families"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-soc139-cml2001-part3-casualties-history",
+            "relation": "supports",
+            "rationale": "CML 2001 第 3 分册印第 239—240 页记录早期事故直接死亡无权计数（CF=1）及丹麦 EDIP 工作环境库路径。"
+          },
+          {
+            "evidenceId": "ev-soc139-ilcd2010-workplace-boundary-separation",
+            "relation": "supports",
+            "rationale": "ILCD 2010 第 6.6.1、6.7 与 7.2.3 节界定车间暴露与日常饮食排除规则及独立建库要求。"
+          },
+          {
+            "evidenceId": "ev-soc139-glam2026-work-environment-and-activity",
+            "relation": "supports",
+            "rationale": "Fantke 等 2026 年印第 3、13—14 与 21 页给出 0.72 DALY、33.3 YLL、23.6 DALY、5 套子指标、235 种有机化学品及体力活动获益区间与年龄下限。"
+          },
+          {
+            "evidenceId": "ev-soc139-glam2026-si-work-environment-io",
+            "relation": "supports",
+            "rationale": "补篇印第 S22—S25 页给出 2019 年约 7,000 万职业 DALY、13 类伤害、15—80 岁三年龄层及 BLS 漏报边界。"
+          },
+          {
+            "evidenceId": "ev-soc139-glam3-worker-exposure-and-slca-scoring",
+            "relation": "supports",
+            "rationale": "GLAM 第三阶段范围报告说明车间有效工时实测法同投入产出美元法的区分，以及流行病学休闲锻炼代谢当量不宜与职业活动混计的争议。"
+          },
+          {
+            "evidenceId": "ev-sustainability-slca-assessment-families",
+            "relation": "supports",
+            "rationale": "UNEP 2020 年指南第 2.4 节界定第一类参照量表与第二类影响路径各自回答的问题，不支持以路径模型取代权利评价。"
+          }
+        ],
+        "mappingIds": [],
+        "reasoning": "CML 早期直接伤亡 CF=1 无权计数 → ILCD 技术圈隔离 → GLAM 2026 纳入全球约 70,000,000 DALY（非致死 0.72 DALY/例，致死工伤 33.3 YLL/例为 PM₂.₅ 死亡 23.6 DALY/例的 1.41 倍），且休闲运动 −1×10⁻⁴ 至 −4.8×10⁻⁴ DALY/h 不可外推至繁重劳作，生理 DALY 亦不替代基本权利底线。"
+      },
+      "rationale": "整合改写：联动表 2，压实至 410 字以内，理顺工作环境路径三十年演变与权利底线边界。"
+    },
+    {
+      "id": "cl-soc139-ordinal-vs-exponential-scale-reversal",
+      "op": "modify",
+      "from": {
+        "id": "cl-soc139-ordinal-vs-exponential-scale-reversal",
+        "kind": "synthesis",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-18",
+        "scope": "SHDB 线性整数赋分与工时份额阶跃加成对比 PSILCA v3 公比 10 指数风险因子在同一 100 工时工作服路线上的 15.77 倍次序反转及源内阈值排印考证",
+        "text": "在第一类参照量表内部，把有序风险等级改写成什么间距的数字，无需改变任何现场事实就能直接翻转两条工作服供应链的优劣。对比两大原生数据库的赋分构造：SHDB 的社会热点指数（SHI）对低、中、高、极高风险四档赋线性整数 0、1、2、3 分，在每个国家特定部门内跨议题等权累加后，按部门占总工时份额达到 0.1%、0.2% 与 1% 三道门槛施加 10%、20% 与 30% 的阶跃上浮（工时占 1% 与占 60% 的部门获得完全相同的 30% 封顶加成，加成后超 100 者截断封顶为 100，且不评估正面影响）；PSILCA v3 的“社会影响加权法”表 3 则按公比 10 赋指数表征因子：无风险或无机会为 0，极低风险为 0.01，低风险为 0.1，中风险为 1，高风险为 10，极高风险为 100（低、中、高机会另赋 0.1、1、10），再与各过程工时连续相乘得到“中风险工时”。考察总工时同为 100 h 的两条工作服路线：路线甲含 10 h 极高风险印染分包与 90 h 低风险裁剪缝制，路线乙含 60 h 中风险织造缝制与 40 h 低风险整理包装。若按 SHDB 的 0、1、2、3 线性分值乘工时汇总，甲得 10×3 + 90×0 = 30 分，乙得 60×1 + 40×0 = 60 分，甲比乙低一半（乙分值为甲的 2.00 倍），因为低风险赋 0 抹去了 90 h 基数，而极高风险仅算中风险的 3 倍；一旦改按 PSILCA v3 表 3 的指数因子汇总，甲暴涨至 10×100 + 90×0.1 = 1,009 中风险工时，乙仅为 60×1 + 40×0.1 = 64 中风险工时，甲反达乙的 15.77 倍（1,009/64，即高出 14.77 倍）！两种编码体现了截然不同的价值判断：线性低倍分容许大批量低风险工时稀释局部严重侵权，公比 10 指数分则令 1 h 极高风险等价于 100 h 中风险或 1,000 h 低风险，正呼应 UNEP GLAM 第三阶段范围报告决策分析专题对序数赋分与权重开展多准则敏感度检验的要求。",
+        "caveats": [
+          "SHDB 原生社会热点指数系在单个国家特定部门内部跨议题求和后再乘 10%、20% 或 30% 工时份额阶跃系数，并不直接跨供应链各部门按工时做线性乘积加总；上文受控算例将工时固定在同一加权结构下，专门隔离“0、1、2、3 线性间距”与“0.1、1、10、100 指数间距”对极高风险浓缩工序的相反判别后果。",
+          "核查 PSILCA v3 官方文档还发现两处必须留存警示的分级表排印瑕疵：印第 41 页“工作场所安全措施不足”将每 100,000 名雇员违规数表头误印成“Indicator value y, DALYs”，并将极高风险行不等号印反为“y ≤ 0.06”（覆盖全部低档区间）；印第 55 页“认证环境管理体系”将高风险印作“y 介于 0.0005（含）至 0.005 之间”的同时把极高风险误印作“y 低于 0.005”（依梯度应为低于 0.0005），直接引用文档表面阈值前须先核对底层分布。"
+        ],
+        "conceptIds": [],
+        "premiseIds": [
+          "cl-sustainability-reference-scale-performance",
+          "cl-sustainability-ordinal-zero-and-net-zero"
+        ],
+        "evidenceIds": [
+          "ev-sustainability-slca-scale-meaning",
+          "ev-sustainability-slca-weighting",
+          "ev-soc139-shdb-2012-worker-hours-and-shi",
+          "ev-soc139-psilca-v3-architecture-and-scales",
+          "ev-soc139-glam3-worker-exposure-and-slca-scoring"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-sustainability-slca-scale-meaning",
+            "relation": "supports",
+            "rationale": "UNEP 2020 年指南第 5.2.1.3 节说明序数量表数值间距并非天然等距，取决于赋分约定。"
+          },
+          {
+            "evidenceId": "ev-sustainability-slca-weighting",
+            "relation": "supports",
+            "rationale": "UNEP 2020 年指南印第 91 页要求保留聚合前分项等级以便核查赋分与加权影响。"
+          },
+          {
+            "evidenceId": "ev-soc139-shdb-2012-worker-hours-and-shi",
+            "relation": "supports",
+            "rationale": "SHDB 印第 1954 页定义低中高极高 0、1、2、3 分及 0.1%、0.2%、1% 工时份额对应 10%、20%、30% 阶跃加成。"
+          },
+          {
+            "evidenceId": "ev-soc139-psilca-v3-architecture-and-scales",
+            "relation": "supports",
+            "rationale": "PSILCA v3 印第 22 页表 3 给出 0、0.01、0.1、1、10、100 指数因子，印第 41 与 55 页留有两处分级阈值排印失误。"
+          },
+          {
+            "evidenceId": "ev-soc139-glam3-worker-exposure-and-slca-scoring",
+            "relation": "supports",
+            "rationale": "GLAM 第三阶段范围报告印第 159 与 163 页强调对 S-LCA 序数赋分与权重开展不确定性与鲁棒排序分析。"
+          }
+        ],
+        "mappingIds": [],
+        "reasoning": "同一 100 h 工作服链（甲 10 h 极高＋90 h 低，乙 60 h 中＋40 h 低）：按 SHDB 线性分（0,1,2,3）甲=10×3+90×0=30 优于乙=60×1+40×0=60（乙/甲=2.00 倍）；按 PSILCA v3 指数因子（0.1,1,10,100）甲=10×100+90×0.1=1,009 反劣于乙=60×1+40×0.1=64（甲/乙=15.7656≈15.77 倍）。"
+      },
+      "rationale": "整合改写：联动表 2，压实至 420 字以内，清晰对比线性与指数编码引发的 2× 对 15.77× 反转。"
+    },
+    {
+      "id": "cl-soc139-three-social-zeros-and-compensation-limits",
+      "op": "modify",
+      "from": {
+        "id": "cl-soc139-three-social-zeros-and-compensation-limits",
+        "kind": "synthesis",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-18",
+        "scope": "社会评价中的三种“零”（合规或低风险门槛零、正负议题相抵零、无数据剔除或非零默认赋值 0.1）及其与绝对零损害的区分",
+        "text": "伴随量表编码而来的，还有社会评价中极易被读者混同的三种“零”。第一种是“基准门槛零”：UNEP 2020 年指南第 5.2.1 节以 0 表示恰好达到法定合规绩效参照点，SHDB 社会热点指数也给“低风险”赋 0 分；这两种 0 都只表示未跌破所选门槛或处于较优四分位，绝不表示零工伤、零超时或零生活工资缺口。第二种是“跨议题或正负相抵零”：指南专栏 12 指出，若赋分规则允许把超越合规的正面表现（如社区捐赠或职业培训计 +2）同严重负面表现（如超时强迫劳动计 −2）相加，算术净值 0 掩盖的是两项方向相反的真实事件；PSILCA v3 虽为高、中、低机会设定 10、1、0.1 因子，但把正面机会与负面风险分开统计，SHDB 则在热点指数中明确排除正面影响，正是为了防止用公益项目冲抵劳工侵权。第三种则藏在“缺失数据”的处理里：SHDB 在计算热点指数分母时直接扣减无数据与不适用议题（缺失项分子计 0、分母同步缩小，等于假设未知议题与已知议题平均风险相同），而 PSILCA v3 表 3 将“无数据（No data）”显式赋为 0.1（等同低风险，高于无风险的 0）——在前例 90 h 工序缺乏数据记录时，PSILCA 会自动计入 9.0 中风险工时而绝非 0。读懂任何社会得分上的“0”之前，必须先核对它究竟代表合规基线、正负相消、缺失剔除，还是后文综合评价仪表盘中相对最差方案的零点。",
+        "caveats": [
+          "把缺失数据按已知议题均值折算（SHDB 分母扣减）还是赋固定低风险惩罚值 0.1（PSILCA v3 表 3），都会在覆盖度不均的供应链比较中引入方向相反的偏差，因此公开报告必须单列无数据工时占比。"
+        ],
+        "conceptIds": [],
+        "premiseIds": [
+          "cl-sustainability-ordinal-zero-and-net-zero",
+          "cl-soc139-ordinal-vs-exponential-scale-reversal"
+        ],
+        "evidenceIds": [
+          "ev-sustainability-slca-scale-meaning",
+          "ev-soc139-shdb-2012-worker-hours-and-shi",
+          "ev-soc139-psilca-v3-architecture-and-scales"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-sustainability-slca-scale-meaning",
+            "relation": "supports",
+            "rationale": "UNEP 2020 年指南印第 83—84 页区分法定合规零点与专栏 12 正负相抵净零。"
+          },
+          {
+            "evidenceId": "ev-soc139-shdb-2012-worker-hours-and-shi",
+            "relation": "supports",
+            "rationale": "SHDB 印第 1954 页规定低风险赋 0、不评估正面影响并在最高可能分分母中扣除无数据与不适用项。"
+          },
+          {
+            "evidenceId": "ev-soc139-psilca-v3-architecture-and-scales",
+            "relation": "supports",
+            "rationale": "PSILCA v3 印第 16 与 22 页表 3 规定无风险为 0、机会单独分级且无数据赋 0.1 中风险工时因子。"
+          }
+        ],
+        "mappingIds": [],
+        "reasoning": "三种零值语义分离：（1）合规参照点 0 或低风险 0 分不等于零伤害；（2）专栏 12 正负议题相抵净 0 掩盖侵权（故 SHDB 排除正面项、PSILCA 分列机会）；（3）缺失数据在 SHDB 中从分母剔除，在 PSILCA 表 3 中赋 0.1（90 h 无数据计 9.0 中风险工时）。"
+      },
+      "rationale": "整合改写：联动表 2，压实至 360 字以内。"
+    },
+    {
+      "id": "cl-soc139-cross-pillar-overlap-audit",
+      "op": "modify",
+      "from": {
+        "id": "cl-soc139-cross-pillar-overlap-audit",
+        "kind": "synthesis",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "scope": "工作服印染与涂装供应链在环境生命周期评价（E-LCA）、社会生命周期评价（S-LCA）与生命周期成本（LCC）之间的四格防漏消重准则",
+        "text": "在把上述社会评价结果交向后文《生命周期成本与综合评价》之前，还须先排清“人体健康”与“劳动条件”在三大支柱间的重叠与错位。以工作服防水涂装与印染工序为例，可按承受人群、暴露介质与货币账本划出四格边界：第一格是“同名异群、严禁误删”——烟囱排入室外大气的细颗粒物和排入河流的印染废水损害厂外居民健康，缝纫车间机械伤害或超时排班损害厂内工人；正如 UNEP GLAM 第 2 卷第 4.4.1 节强调非产品使用者并不享有功能单位效用而建议分列使用者、工人与公众暴露那样，若仅因两套指标都写着“健康”就删去其一，便会抹掉整类受害人群。第二格是“同群同路、严禁双计”——前文《生态稀缺赋权》已证明，一旦环境评价激活室内空气子区室，涂装车间苯乙烯的致癌与非致癌人体毒性表征因子均达室外的约 211 倍；若环境评价已计入这类车间室内毒性或 GLAM 2026 的工作环境 DALY，而社会评价又同时汇总同一批工人的职业病伤 DALY（或在 PSILCA 等社会数据库中叠加环境管理与碳水足迹指标），直接相加就会把同一名工人的同一次职业伤害计算两遍。第三格是“合规现金流与残余损害分账”——提高生活工资、加装局部排风或缴纳工伤保险保费会进入企业或采购方的生命周期成本（LCC）账本，而未被防护消除、也未被保险补偿的残余工人健康损失仍是工人承担的非货币后果（Heijungs 等 2013 年第 3.4 节亦警示勿将外部损害影子价格混入成本后再与环境或社会损害并列）。第四格则是“基本权利独立保留”——结社自由、反歧视与禁止童工既不折算成 DALY，也不进入财务成本相抵，必须带着各自的绩效参照点进入综合权衡。",
+        "caveats": [
+          "四格消重准则要求核对实际启用的清单区室与数据库子类别，而不能仅凭“环境”“社会”“经济”三个支柱标题假定天然互不重叠或天然完全重合。"
+        ],
+        "conceptIds": [],
+        "premiseIds": [
+          "cl-weight135-ef-coating-indoor",
+          "cl-sustainability-social-object-and-stakeholders",
+          "cl-sustainability-social-impact-pathways",
+          "cl-soc139-occupational-health-pathways-and-rights-boundary",
+          "cl-soc139-three-social-zeros-and-compensation-limits"
+        ],
+        "evidenceIds": [
+          "ev-sustainability-slca-objects",
+          "ev-soc139-glam2019-nearfield-worker-user-split",
+          "ev-soc139-ilcd2010-workplace-boundary-separation",
+          "ev-soc139-glam2026-work-environment-and-activity",
+          "ev-soc139-hsg2013-social-satellite-matrix",
+          "ev-weight135-ef31-nmvoc-htnc-subcompartments",
+          "ev-weight135-ef31-styrene-htc-subcompartments"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-sustainability-slca-objects",
+            "relation": "supports",
+            "rationale": "UNEP 2020 年指南印第 16 页明确指出可持续性三支柱在健康等议题上存在潜在重叠。"
+          },
+          {
+            "evidenceId": "ev-soc139-glam2019-nearfield-worker-user-split",
+            "relation": "supports",
+            "rationale": "UNEP GLAM 第 2 卷第 4.4.1 节给出近场与远场暴露区分及将使用者同工人和公众分列报告的依据。"
+          },
+          {
+            "evidenceId": "ev-soc139-ilcd2010-workplace-boundary-separation",
+            "relation": "supports",
+            "rationale": "ILCD 2010 印第 95 与 118 页规定车间暴露若纳入须与生态圈排放分开建库与解释。"
+          },
+          {
+            "evidenceId": "ev-soc139-glam2026-work-environment-and-activity",
+            "relation": "supports",
+            "rationale": "GLAM 2026 第 3.5 节将车间有机化学品、室内 PM₂.₅、噪声与工伤并入人体健康 DALY，构成与 S-LCA 职业健康直接重叠的交界带。"
+          },
+          {
+            "evidenceId": "ev-soc139-hsg2013-social-satellite-matrix",
+            "relation": "supports",
+            "rationale": "Heijungs 等 2013 年印第 1729 页警示勿将外部性影子价格计入成本账后再与实物损害指标重复叠加。"
+          },
+          {
+            "evidenceId": "ev-weight135-ef31-nmvoc-htnc-subcompartments",
+            "relation": "supports",
+            "rationale": "欧盟 EF 3.1 苯乙烯室内空气（4.075×10⁻⁶ CTUh/kg）对未指定室外空气（1.9325×10⁻⁸ CTUh/kg）非致癌人体毒性特征化因子跃升约 211 倍（210.87 倍）。"
+          },
+          {
+            "evidenceId": "ev-weight135-ef31-styrene-htc-subcompartments",
+            "relation": "supports",
+            "rationale": "欧盟 EF 3.1 苯乙烯室内空气（1.0787×10⁻⁴ CTUh/kg）对未指定室外空气（5.1149×10⁻⁷ CTUh/kg）致癌人体毒性特征化因子跃升约 211 倍（210.89 倍），印证涂装车间室内暴露同职业健康指标的双重计算风险。"
+          }
+        ],
+        "mappingIds": [],
+        "reasoning": "按承受人群、暴露区室与货币账本四格划分：厂外居民远场排放与厂内工人条件禁误删；E-LCA 室内毒性（如涂装苯乙烯毒性因子达室外的约 211 倍）或 GLAM 工作环境 DALY 同 S-LCA 职业病伤禁双计；合规支出与工伤保费入 LCC 而未补偿残余 DALY 与基本权利分列保留。"
+      },
+      "rationale": "整合改写：联动表 2，压实至 360 字以内。"
+    },
+    {
+      "id": "cl-lcc143-three-lcc-archetypes-and-value-added-consolidation",
+      "op": "modify",
+      "from": {
+        "id": "cl-lcc143-three-lcc-archetypes-and-value-added-consolidation",
+        "kind": "synthesis",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "scope": "常规、环境与社会三类生命周期成本的制度边界，以及上游价格链重复计入同矩阵附加值抵消的代数机制",
+        "text": "把“生命周期成本”放进生命周期可持续性评价（LCSA）之前，先要分清文献中并存的三类生命周期成本范式。联合国环境规划署（UNEP）与国际环境毒理学与化学学会（SETAC）2011 年指南追溯 1933 年美国总会计局（GAO）在拖拉机招标中首开全寿命成本评估的传统，将单一组织内部的私人财务核算称为常规生命周期成本（Conventional LCC，如采购方的全拥有成本（TCO））；将对齐产品功能单位、覆盖一个或多个供应链主体真实货币流并纳入决策相关期内（如未来 2 年内预期开征的碳税或低技能用工补贴）即将内部化收支的方法称为环境生命周期成本（Environmental LCC）；而将全部私人与外部环境社会损害一并货币化的做法划为社会生命周期成本（Societal LCC）。Swarr 等人 2011 年的实务守则指出，由于货币天然具备统一单位，生命周期成本并无独立的表征影响评价阶段；但 Heijungs、Settanni 与 Guinée 2013 年的矩阵推导证明，物理排放附着于单元过程因而沿供应链逐级累加，商品价格却已浓缩上游全部成本与利润——若买车花费 10,000 €（欧元）、使用期运行支出 40,000 €，买方的生命周期成本即为 50,000 €，倘若再把车厂采购材料与零部件的 6,000 € 叠加上去算成 56,000 €，就把上游成本算作两遍。在缩放货币技术矩阵下，中间商品买卖以一负一正严格抵消，终端使用方的生命周期成本恰好等于使用过程的负附加值（例如木椅一年坐用服务由无维护时的 13.5 € 加上每年清洁喷雾维护 10 € 升至 23.5 €）；反之，缺失使用阶段的“摇篮到大门”中间产品因销售收入高于生产成本，按同一定义反而会算出负的生命周期成本（净正利润）。",
+        "caveats": [
+          "Swarr 等人 2011 年 3 页开放获取期刊论文系对 Hunkeler 等人 2008 年（总结 3 年工作组研究）与 2011 年 SETAC 出版社另行印行的 98 页精简实务单行本（表 1 记录 2006 至 2011 年间 7 次工作组里程碑，纸质单行本按会员 5 USD、非会员 12 USD 独立发行）的方法纲要说明；Heijungs 等人 2013 年核查指出该 2011 年单行本仅含 1 个公式、2008 年专著仅含 5 个公式，且单行本表 3-1a（原表 Table 3-1a）在总计中并列研发、试制、生产成本与售价仍留有重复计入瑕疵。本段比较严格限定于上述公开论文、联合国指南与 2013 年矩阵文献已核实的公式及引文范围。",
+          "负附加值恒等式要求终端参考流本身是不再进入市场买卖的使用功能（如穿用或坐用服务），并假定同一商品在不同主体间价格一致；若存在批发零售价差或流转税，须在矩阵中显式单列商贸、运输或税费过程。"
+        ],
+        "conceptIds": [],
+        "premiseIds": [
+          "cl-sustainability-lcc-actor-perspective",
+          "cl-sustainability-lcc-internalization-boundary",
+          "cl-book-cost-ledgers"
+        ],
+        "evidenceIds": [
+          "ev-lcc143-swarr2011-code-of-practice",
+          "ev-lcc143-unep2011-lcc-flavours-and-cases",
+          "ev-lcc143-hsg2013-lcc-value-added",
+          "ev-lcc143-ilcd2010-ecoefficiency-and-tco"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-lcc143-swarr2011-code-of-practice",
+            "relation": "supports",
+            "rationale": "Swarr 等 2011 界定环境 LCC 的真实货币流加预期内部化边界，并说明无独立影响评价阶段。"
+          },
+          {
+            "evidenceId": "ev-lcc143-unep2011-lcc-flavours-and-cases",
+            "relation": "supports",
+            "rationale": "UNEP/SETAC 2011 第 2.3 节追溯 1933 年 GAO 源起并在图 5 区分常规、环境（含 2 年内预期税补）与社会三类 LCC。"
+          },
+          {
+            "evidenceId": "ev-lcc143-hsg2013-lcc-value-added",
+            "relation": "supports",
+            "rationale": "Heijungs 等 2013 给出汽车 10,000+40,000=50,000 € 禁加 6,000 € 零部件、木椅 13.5 € 增至 23.5 € 的负附加值公式及摇篮到大门负 LCC 推论。"
+          },
+          {
+            "evidenceId": "ev-lcc143-ilcd2010-ecoefficiency-and-tco",
+            "relation": "supports",
+            "rationale": "ILCD 2010 第 5.2.1—5.2.2 节说明 TCO／LCC 与环境 LCA 在生态效率及细分市场可比性中的角色。"
+          }
+        ],
+        "mappingIds": [],
+        "reasoning": "10,000 + 40,000 = 50,000 €（若误加已内含于整车售价的 6,000 € 零部件则虚增至 56,000 €）；缩放货币矩阵列和给出各过程附加值 v_j，中间买卖一正一负相消，使用过程负附加值 −v_use 由 13.5 € 加 10 € 维护得 23.5 €，而摇篮到大门因产出售价大于投入成本使 v_ref > 0 即 l = −v_ref < 0。"
+      },
+      "rationale": "整合改写：联动表 1，压实至 420 字以内，将木椅示例与 GAO 溯源移入注释。"
+    },
+    {
+      "id": "cl-lcc143-actor-split-incentive-and-discount-rate-reversal",
+      "op": "modify",
+      "from": {
+        "id": "cl-lcc143-actor-split-incentive-and-discount-rate-reversal",
+        "kind": "synthesis",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "scope": "四年工作服采购的主体激励错位、供应链内部货款抵消与贴现率触发的净现值排序翻转",
+        "text": "在“为一名车间工人提供 4 年合规防护穿用服务”的功能单位下，主体账本与贴现率足以单独翻转优劣判断。设耐穿型方案甲在第 0 年按 116 € 购入 1 套穿满四年（制造厂生产成本 80 €、净利 36 €），第 1 至 4 年采购方每年支付专业洗护费 4 €（四年共 16 €）；常规更换型方案乙在第 0 年与第 2 年各按 58 € 购入 1 套（制造厂每套成本 36 €，两套总成本 72 €、货款收入 116 €、净利 44 €），第 1 至 4 年每年洗护费 6 €（四年共 24 €）。第一，出现主体激励错位：制造厂偏好高频更换的乙（净利 44 € 高于甲的 36 €），而在 0% 无贴现基准下采购方偏好耐穿的甲（总支出 132.00 € 低于乙的 140.00 €）。第二，合并供应链成本必须抵消内部转移：若把制造厂成本与采购方支出直接相加，甲（80 + 132 = 212 €）与乙（72 + 140 = 212 €）既把 116 € 货款重复计入，又制造出虚假平局；抵消内部货款后，两条路线的真实要素转化加洗护耗费同为 96 €（80 + 16 对 72 + 24），8 € 差额只是买方与卖方之间的利润重分配。第三，贴现率改变跨期权衡：按关注代际公平的 3% 社会贴现率计算采购方净现值（NPV），甲（130.87 €）依然优于乙（134.97 €）；一旦改按企业常见的 10% 资本机会成本折现，乙推迟到第 2 年支付的 58 € 补购款现值降至 47.93 €，总净现值遂以 124.95 € 反超甲的 128.68 €（临界贴现率约 6.49%），而常规百年全球变暖潜势（GWP100）却把第 0 年与第 2 年的温室气体排放按 1:1 等权相加。现实采购中税率与贴现同样左右结论：UNEP/SETAC 2011 年指南收录的德国重型公交车案例（持有期 10 年、总里程 600,000 km、燃料通胀率 2.0%、贴现率 4.4%）显示，压缩天然气客车初始投资 328,826 USD（美元）虽较传统柴油车 295,544 USD 高出 11.26%，但受德国燃气税减免带动，全寿命总净现值 849,029 USD 反较柴油车 884,657 USD 低 4.03%。",
+        "caveats": [
+          "四年工作服现金流为用于精确检验主体抵消与贴现翻转的受控教学算例，不代表特定纺织企业的真实报价；德国公交车投资与净现值则直接取自 UNEP/SETAC 2011 年指南表 3（引自 Rüdenauer 等 2007）。",
+          "贴现率敏感性分析遵循 UNEP/SETAC 2011 年指南第 2.3.1 节（包含 0% 无贴现基准）与 Swarr 等人 2011 年对私人资本机会成本同社会贴现率的区分；财务折现反映资金时间偏好，不能照搬为物理排放本身随时间消失。"
+        ],
+        "conceptIds": [],
+        "premiseIds": [
+          "cl-sustainability-lcc-actor-perspective",
+          "cl-book-cost-ledgers",
+          "cl-lcc143-three-lcc-archetypes-and-value-added-consolidation"
+        ],
+        "evidenceIds": [
+          "ev-lcc143-swarr2011-code-of-practice",
+          "ev-lcc143-unep2011-lcc-flavours-and-cases",
+          "ev-lcc143-hsg2013-lcc-value-added"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-lcc143-swarr2011-code-of-practice",
+            "relation": "supports",
+            "rationale": "Swarr 等 2011 指出不同生命周期主体目标可能冲突，并区分决策者资金机会成本与社会贴现率。"
+          },
+          {
+            "evidenceId": "ev-lcc143-unep2011-lcc-flavours-and-cases",
+            "relation": "supports",
+            "rationale": "UNEP/SETAC 2011 建议包含 0% 的多贴现率敏感性分析，并提供德国公交车投资高 11.26% 而净现值低 4.03% 的税费折现实证。"
+          },
+          {
+            "evidenceId": "ev-lcc143-hsg2013-lcc-value-added",
+            "relation": "supports",
+            "rationale": "Heijungs 等 2013 指出传统 LCA 等权加总各年 CO₂ 而 LCC 引入时间偏好计算净现值的结构差异。"
+          }
+        ],
+        "mappingIds": [],
+        "reasoning": "r=0%: 甲 116+4×4=132.00 € < 乙 58+58+4×6=140.00 €；r=3%: 甲 116+4×Σ(1.03^-t)=130.8684 € < 乙 58+58×1.03^-2+6×Σ(1.03^-t)=134.9732 €；临界点 58=58(1+r)^-2+2×Σ_{t=1..4}(1+r)^-t 唯一正根 r*≈6.4891%（约 6.49%，NPV=129.71 €）；r=10%: 58×1.1^-2=47.9339 €，乙 124.9531 € < 甲 128.6795 €；德国公交 (328,826−295,544)/295,544 = 11.26%，(884,657−849,029)/884,657 = 4.03%。"
+      },
+      "rationale": "整合改写：压实至 430 字以内，将德国公交车实证移入注释，正文聚焦主体错位、货款抵消与 6.49% 贴现翻转。"
+    },
+    {
+      "id": "cl-lcc143-five-monetary-quantities-and-shadow-price-double-counting",
+      "op": "modify",
+      "from": {
+        "id": "cl-lcc143-five-monetary-quantities-and-shadow-price-double-counting",
+        "kind": "synthesis",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "scope": "全书五类同名货币量的机制分野，以及环境税费同影子损害估值在单柱与跨柱中的双重计入证明",
+        "text": "纵观全书各章，标着美元、欧元或日元的数字其实分属五类截然不同的货币量，绝不能因符号相同而直接相加。第一类是制造或采购主体的市场现金流支出；第二类是已通过排污税、碳配额或资源特许权进入企业账本的内部化环境税费。第三类是生命周期影响评价中把终点损害折算成货币的支付意愿（WTP）或治理成本权重：荷兰莱顿大学环境科学中心（CML）2001 年科学背景指南综述 Finnveden 1999 年研究时将赋权法划为 5 组（其中货币价值、政府标准目标与专家小组 3 组适用于影响类别赋权），强调个人揭示偏好、陈述偏好、集体偏好与恢复成本测度的是异质价值——例如前文《环境损害估值》中日本 LIME2 联合分析得出 1.47×10⁷ JPY/DALY（日元每伤残调整生命年），国际标准化组织（ISO）14008:2019 标准亦区分使用价值与非使用价值，而 UNEP/SETAC 2011 年指南收录的日本洗衣机年洗 535 次、每次 8 kg 案例将 LIME 社会外部成本叠加入全成本，在无水循环旧款中占 3.74%，节水循环改型后占基准全成本的 2.56%。第四类是非生物资源耗竭终点估算的未来人类额外采选成本（如前文《中点与终点》核实的 ReCiPe 2016 报告第 13 章表 13.2 原油未贴现均值 0.457 USD2013/kg，前文《环境损害估值》所引该报告总表 1.5 四舍五入印作 0.46）；第五类则是前文《社会表现与影响》用来反推工时或职业伤害的部门产值分母（每美元产值工时或伤残调整生命年）。混用这五类货币会立即造成两层双重计算：设印染工序排放 40 kg（0.04 t）二氧化碳，染厂已按 50 €/t 缴纳 2.00 € 碳税并转入布价；若社会生命周期成本不扣除这笔纯财政转移，又按 150 €/t 叠加全部气候影子损害 6.00 €，就会把社会总负担误算成 8.00 €（未内部化的净残余外部损害实为 4.00 €）；而在可持续性评价中若既保留环境评价的 40 kg 二氧化碳当量，又并列社会生命周期成本含入的 6.00 € 气候损害，则把同一笔排放跨两根支柱算作两次。",
+        "caveats": [
+          "40 kg 二氧化碳配 50 €/t 碳税与 150 €/t 影子损害系用于展示财政转移抵消与跨支柱消重的透明代数算例，不代表特定法域现行法定碳价或官方推荐社会碳成本。",
+          "关于 ISO 14008:2019 的说明仅依据联合国环境规划署全球生命周期影响评价方法共识项目（UNEP GLAM）第三阶段范围报告印第 110 页对使用价值与非使用价值范围差异的公开综述，不延伸至付费标准条文以外的细则。"
+        ],
+        "conceptIds": [],
+        "premiseIds": [
+          "cl-lime-units",
+          "cl-weight135-recipe-endpoint-stop",
+          "cl-soc139-wage-price-and-automation-paradoxes",
+          "cl-sustainability-lcc-internalization-boundary",
+          "cl-lcc143-three-lcc-archetypes-and-value-added-consolidation"
+        ],
+        "evidenceIds": [
+          "ev-lcc143-hsg2013-lcc-value-added",
+          "ev-lcc143-cml2001-finnveden-valuation",
+          "ev-lcc143-glam3-iso14008-valuation",
+          "ev-lcc143-unep2011-lcc-flavours-and-cases",
+          "ev-lime-2012-conjoint-weights",
+          "ev-fossil117-rivm-scp-endpoint"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-lcc143-hsg2013-lcc-value-added",
+            "relation": "supports",
+            "rationale": "Heijungs 等 2013 式 17—18 单列内部化环境税费，并明文警告在经济分析中加影子成本会与环境分析双重计入同一污染物。"
+          },
+          {
+            "evidenceId": "ev-lcc143-cml2001-finnveden-valuation",
+            "relation": "supports",
+            "rationale": "CML 2001 第 4.8 节综述 Finnveden 5 组赋权分类与 3 组 LCA 适用类，指出不同货币估值法测度异质价值而不可直接比较求和。"
+          },
+          {
+            "evidenceId": "ev-lcc143-glam3-iso14008-valuation",
+            "relation": "supports",
+            "rationale": "GLAM 第三阶段范围报告第 110 页指出自然资源货币估值（ISO 14008:2019）涵盖不同使用价值与非使用价值范围。"
+          },
+          {
+            "evidenceId": "ev-lcc143-unep2011-lcc-flavours-and-cases",
+            "relation": "supports",
+            "rationale": "UNEP/SETAC 2011 表 4 给出日本洗衣机（年洗 535 次每次 8 kg）叠加 LIME 社会外部成本占 3.74% 与 2.56% 的全成本核算实例。"
+          },
+          {
+            "evidenceId": "ev-lime-2012-conjoint-weights",
+            "relation": "supports",
+            "rationale": "LIME2 联合分析以陈述偏好导出 1.47×10⁷ JPY/DALY 损害权重，属于非市场支付意愿标尺。"
+          },
+          {
+            "evidenceId": "ev-fossil117-rivm-scp-endpoint",
+            "relation": "supports",
+            "rationale": "ReCiPe 2016 对原油给出 0.457 USD2013/kg 未来平均额外开采成本终点，不折现且非现期企业现金流。"
+          }
+        ],
+        "mappingIds": [],
+        "reasoning": "0.04 t × 50 €/t = 2.00 €（已缴税费转移），0.04 t × 150 €/t = 6.00 €（总外部气候损害），未内部化残余外部成本为 6.00 − 2.00 = 4.00 €；若将 2.00 € 税费与 6.00 € 全额影子损害相加即虚增至 8.00 €，若再与 E-LCA 40 kg CO₂-eq 并列计分则跨支柱双计。"
+      },
+      "rationale": "整合改写：联动表 1，压实至 390 字以内，突出财政转移抵消与跨支柱双重计算。"
+    },
+    {
+      "id": "cl-lcc143-cut-off-asymmetry-and-cost-rebound-boundary",
+      "op": "modify",
+      "from": {
+        "id": "cl-lcc143-cut-off-asymmetry-and-cost-rebound-boundary",
+        "kind": "synthesis",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-18",
+        "scope": "跨支柱物理与经济截断规则的非对称并集、多产出分配差异，以及微观成本节约触发的宏观反弹效应",
+        "text": "要求环境、成本与社会三项评价采用“等价系统边界”，绝不意味着可以用同一把质量尺或金额尺去截断供应链。UNEP/SETAC 2011 年指南在图 14 中专门用三圆相交说明：整体的可持续性评价边界应当取至少对其中一项技术显著的所有单元过程之并集。Heijungs 等人 2013 年与 Swarr 等人 2011 年从正反两面指出了单维截断的盲区：机械缝纫机消耗的润滑油或微量含氟三防整理剂在总成本中微乎其微，若按金额占比截断就会漏掉关键生态与人体毒性来源（正如前文《社会表现与影响》中按千分之一货币阈值截断会抹去大半上游童工风险）；反过来，服装前期款式研发、检测认证与品牌营销往往占据可观成本，却几乎没有直接物料质量，若照搬物理质量截断又会严重低估制造方成本。多产出分配同样存在方法错位：ISO 14040 要求环境评价优先通过工序细分或系统扩展回避分配，而 Swarr 等人 2011 年明言企业生命周期成本核算并不执行系统扩展，而是按收入或工时分摊管理与共同费用。更进一步，Hellweg 与 Milà i Canals 2014 年在《科学》综述中提醒关注效率与降本引发的反弹效应：在微观工作服比较中，耐穿方案甲比更换方案乙为采购方节省了 8 €（无贴现下 132.00 € 对 140.00 €），静态产品级组合默认这 8 € 购买力凭空消失；若采购部门或家庭将省下的资金转而购买高碳商品或增加差旅消费，经济体层面的净减排量就会被新增消费部分乃至超额抵消。",
+        "caveats": [
+          "取三支柱相关单元过程并集可防止单维截断漏项，但对于研发设计等跨越多个产品批次的企业级共同活动，仍须透明记录其向单位功能产品分摊的产量与年限假设。",
+          "Hellweg 与 Milà i Canals（2014）期刊版权归属美国科学促进会；此处仅结合其关于财务与时间反弹效应及耦合经济均衡模型不确定性的公开论点界定产品级 LCC+LCA 的推断边界，不构建宏观一般均衡反弹系数。"
+        ],
+        "conceptIds": [],
+        "premiseIds": [
+          "cl-soc139-macro-screening-cutoffs-and-certification-limits",
+          "cl-lcc143-three-lcc-archetypes-and-value-added-consolidation",
+          "cl-sustainability-conceptual-combination-not-sum"
+        ],
+        "evidenceIds": [
+          "ev-lcc143-unep2011-boundary-union-and-aggregation",
+          "ev-lcc143-swarr2011-code-of-practice",
+          "ev-lcc143-hsg2013-cutoffs",
+          "ev-lcc143-hellweg2014-scales-and-rebound"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-lcc143-unep2011-boundary-union-and-aggregation",
+            "relation": "supports",
+            "rationale": "UNEP/SETAC 2011 第 3.1.2 节图 14 规定 LCSA 系统边界应取至少对一项技术相关的单元过程并集，并以研发部门为例。"
+          },
+          {
+            "evidenceId": "ev-lcc143-swarr2011-code-of-practice",
+            "relation": "supports",
+            "rationale": "Swarr 等 2011 指出研发高成本低排放的截断差异，并明载 LCC 不执行 ISO 14040 的工序细分或系统扩展。"
+          },
+          {
+            "evidenceId": "ev-lcc143-hsg2013-cutoffs",
+            "relation": "supports",
+            "rationale": "Heijungs 等 2013 第 3.5 节对比润滑油低成本高毒性与广告研发高成本低环境占比的非对称性。"
+          },
+          {
+            "evidenceId": "ev-lcc143-hellweg2014-scales-and-rebound",
+            "relation": "supports",
+            "rationale": "Hellweg 与 Milà i Canals 2014 指出商品变便宜或省时可触发额外消费的财务与时间反弹效应。"
+          }
+        ],
+        "mappingIds": [],
+        "reasoning": "LCSA 过程集 S_LCSA = S_LCA ∪ S_LCC ∪ S_SLCA；润滑油 ∈ S_LCA \\ S_LCC_cutoff，研发广告 ∈ S_LCC \\ S_LCA_cutoff；无贴现买方节支 140.00 − 132.00 = 8 € 若按边际碳强度再消费，宏观 ΔE_net = ΔE_direct + 8 € × e_rebound。"
+      },
+      "rationale": "整合改写：压实至 380 字以内，精炼三圆并集、单维截断盲区与 8 € 反弹效应。"
+    },
+    {
+      "id": "cl-lcc143-demarcating-ra-eia-and-mfa-ioa",
+      "op": "modify",
+      "from": {
+        "id": "cl-lcc143-demarcating-ra-eia-and-mfa-ioa",
+        "kind": "synthesis",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "scope": "产品可持续性评价同场址风险评估、环境影响评价、物质流分析及投入产出分析的原范围划界",
+        "text": "把可持续性评价推向综合决策时，还必须守住相邻分析工具各自的原生职责，不能指望一套产品指标包办场址安全许可与区域物质核算。CML 2001 科学背景附录 B 将常见环境工具箱归纳为风险评估（RA）、环境影响评价（EIA）、技术评估（TA）、生命周期评价（LCA）、特定物质流分析（SFA）与环境管理体系（EMS）共 6 种环境分析工具，欧盟建议书（EU）2021/2279 附件一第 5 节脚注（54）及欧盟国际参考生命周期数据系统（ILCD）2010 年总则亦从法规与技术圈边界重申同一分工。就局部阈值与直接暴露而言，场址特定风险评估（site-specific RA）与项目环境影响评价服务于排污许可和工程准入，检验特定水体或车间在特定时刻的预测环境浓度与预测无效应浓度之比（PEC/PNEC）是否超标，非场址特定风险评估（non-site-specific RA）支撑国家级化学品准入，工装面料涂层与皮肤直接接触等技术圈内暴露也须模块化借助风险评估处理：假设方案一在枯水小河旁单厂集中排放 10 g 染整助剂致局部浓度超标，方案二分散在十条大流量水系共排 20 g 且处处低于安全阈值，生命周期淡水生态毒性潜势（淡水生态比较毒性单位 CTUe）会判方案二潜在负荷达方案一的 2.00 倍，却绝不能据此替方案一签发排污许可。就宏观经济与区域物质循环而言，Suh 2004 年系统梳理了自 1758 年 Quesnay《经济表》刻画货币与商品循环、1936 年 Leontief 建立部门投入产出分析（IOA）并发展为国民账户体系（SNA）供给使用表，到 1969 年 Ayres 与 Kneese 引入质量守恒开创物质流分析（MFA）与物理投入产出表（PIOT）的学理脉络，同时指出投入产出表存在 1 至 5 年统计发布时滞、仅覆盖消费前阶段并混同部门内异质商品；而联合国环境规划署全球生命周期影响评价方法共识项目（UNEP GLAM）第三阶段范围报告所归纳的 25 年短期资源耗散界定与超过 100 年长期耗散动态物质流（dMFA），跟踪的则是特定金属或元素在技术圈在用存量、尾矿库与环境介质间的源汇守恒。产品链功能比较、场址超标审批与区域存量账本回答的是三个不同维度的问题。",
+        "caveats": [
+          "10 g 集中排放与 20 g 分散排放对比用于说明总量线性潜势同局部浓度阈值比（PEC/PNEC）的机制差异；即使区域化影响评价引入流域稀释因子，欧盟建议书脚注（54）仍明确其不替代法定风险评估或环评程序。",
+          "Suh 2004 年第 I 章与第 VI 章分别记录 1758 年 Quesnay《经济表》以 3 个公民阶层刻画商品货币流，并证明部分早期物理投入产出表（如 Hubacek 与 Giljum 2003）因未纳入废弃物与直接自然投入闭环而违背总质量守恒；UNEP GLAM 第三阶段范围报告所引短期资源耗散定义出自 Beylot 等人对 45 篇文献的系统综述。"
+        ],
+        "conceptIds": [],
+        "premiseIds": [
+          "cl-sustainability-conceptual-combination-not-sum",
+          "cl-book-cost-health-overlap"
+        ],
+        "evidenceIds": [
+          "ev-lcc143-cml2001-appendix-b-toolbox",
+          "ev-lcc143-ilcd2010-technosphere-ra-boundary",
+          "ev-lcc143-ec2021-ra-eia-boundary",
+          "ev-lcc143-glam3-resource-dissipation",
+          "ev-lcc143-suh2004-ioa-mfa-lineage"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-lcc143-cml2001-appendix-b-toolbox",
+            "relation": "supports",
+            "rationale": "CML 2001 第 1.2.3.1 节与附录 B（印第 279—285 页）系统对照场址与非场址风险评估、EIA、TA、LCA、SFA、EMS 共 6 种工具的对象与时空实际度边界。"
+          },
+          {
+            "evidenceId": "ev-lcc143-ilcd2010-technosphere-ra-boundary",
+            "relation": "supports",
+            "rationale": "ILCD 2010 第 6.4.3 节规定技术圈内产品直接人体接触不并入生态圈清单，应由风险评估模块化互补评估。"
+          },
+          {
+            "evidenceId": "ev-lcc143-ec2021-ra-eia-boundary",
+            "relation": "supports",
+            "rationale": "欧盟建议书脚注（54）与第 6.4 节明示环境足迹不预测特定时空阈值超标，与环境风险评估、环评及职场安全法规互补。"
+          },
+          {
+            "evidenceId": "ev-lcc143-glam3-resource-dissipation",
+            "relation": "supports",
+            "rationale": "GLAM 第三阶段范围报告第 107—108 页记录 Beylot 等综述 45 篇文献的 25 年短期耗散与 SUPRIM 超 100 年长期耗散及动态物质流结合路径。"
+          },
+          {
+            "evidenceId": "ev-lcc143-suh2004-ioa-mfa-lineage",
+            "relation": "supports",
+            "rationale": "Suh 2004 梳理 1758 年 Quesnay 三阶层经济表、1936 年 Leontief IOA、1969 年 Ayres 与 Kneese MFA/PIOT 谱系及 IO 表 1 至 5 年时滞和消费前边界。"
+          }
+        ],
+        "mappingIds": [],
+        "reasoning": "20 g / 10 g = 2.00 倍生命周期毒性潜势，而局部 PEC_1 = 10 g / Q_low > PNEC、PEC_2 = 2 g / Q_high < PNEC，证明空间积分潜势与局部浓度超标判据不可互相替代；同理 IOA 部门货币矩阵与 MFA/SFA 区域质量守恒各自回答不同于微观产品功能比较的问题。"
+      },
+      "rationale": "整合改写：联动表 2，压实至 410 字以内，将思想史溯源移入注释。"
+    },
+    {
+      "id": "cl-lcc143-single-issue-footprints-vs-multi-indicator-profiles",
+      "op": "modify",
+      "from": {
+        "id": "cl-lcc143-single-issue-footprints-vs-multi-indicator-profiles",
+        "kind": "synthesis",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-18",
+        "scope": "单项环境足迹标准与多指标生命周期剖面在九百余种产品主成分分析中的方差覆盖率及负担转移盲区",
+        "text": "在商业传播与采购招标中，决策者常希望用碳足迹或水足迹等单项环境足迹代替完整的多指标生命周期评价乃至可持续性评价。欧盟建议书（EU）2021/2279 附件一前置“与其他方法及标准的关系”小节将国际标准化组织（ISO）的产品碳足迹标准（ISO 14067）、水足迹标准（ISO 14046）与生态足迹标准列为方法参照，同时坚持要求计算并报告全部 16 类环境足迹指标；UNEP/SETAC 2011 年指南第 4 章亦专门警告不得仅凭较低的直接碳排放或资源消耗就宣称产品“更可持续”。Steinmann 等人 2016 年对 ecoinvent 3.1 数据库的大样本统计检验量化了简化指标集的信息边界：作者从数据库报告的 692 项环境指标中经版本更新与长期排放筛选保留 161 项，再剔除 26 项完全共线指标，对分属 13 套影响评价方法的 135 项指标及 7 大类共 976 种产品（按每千克产品摇篮到大门排名）执行主成分分析（PCA）。结果显示，前 4 个非平凡主成分合共解释了 92.0% 的产品排名方差（第一主成分占 83.3%，其余三个主成分依次占 3.9%、3.1% 与 1.9%）；单靠海洋生态毒性一项即可解释 78.4%，而由气候变化、臭氧耗竭、酸化与富营养化联合效应、陆地生态毒性、海洋生态毒性及土地利用组成的 6 项机制指标最优子集即可解释 92.3% 的排名方差。相比之下，化石能源（单项 62.8%）、土地（单项 37.9%，与能源合占 76.5%）、材料（单项 54.3%，三项合占 83.8%）与水（单项 58.1%，因与发电耗能及农作占地高度共线而仅额外增补 0.5%）这 4 项常用资源足迹合在一起解释了 84.3% 的排名方差，仍留下 15.7% 的产品排序差异无法捕捉——而工作服在棉纺农药毒性、水耗与化纤染整化学品之间的负担转移，连同供应链劳工权利与采购成本冲突，恰恰落在单项足迹的盲区之内。",
+        "caveats": [
+          "Steinmann 等人 2016 年正文印第 3915 页分别列出四个非平凡主成分解释方差为 83.3%、3.9%、3.1% 与 1.9%（一位小数逐项相加为 92.2%），同时报告四者合计为 92.0%（摘要四舍五入记为 92% 与 84%），系源文各分量独立一位小数舍入所致；期刊版权归属美国化学会，此处仅归纳其统计结论与局限。",
+          "该主成分分析基于每千克基础商品的摇篮到大门清单且未纳入空间显式特征化因子；包含高能耗使用阶段的终端耐用品或同组替代方案内部精细比较时，各指标间的相关性结构可能发生改变，不能把 6 项指标当成免除目标范围界定的万能固定清单。"
+        ],
+        "conceptIds": [],
+        "premiseIds": [
+          "cl-sustainability-conceptual-combination-not-sum",
+          "cl-lcc143-demarcating-ra-eia-and-mfa-ioa"
+        ],
+        "evidenceIds": [
+          "ev-lcc143-ec2021-single-issue-footprints",
+          "ev-lcc143-steinmann2016-pca-footprints",
+          "ev-lcc143-unep2011-single-indicator-caution"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-lcc143-ec2021-single-issue-footprints",
+            "relation": "supports",
+            "rationale": "欧盟建议书附件一前置“与其他方法及标准的关系”小节与参考文献列明 16 类多指标 PEF 同 ISO 14067 碳足迹、ISO 14046 水足迹及生态足迹标准的对应关系。"
+          },
+          {
+            "evidenceId": "ev-lcc143-steinmann2016-pca-footprints",
+            "relation": "supports",
+            "rationale": "Steinmann 等 2016 在 976 种产品乘 135 项指标矩阵上证得 6 项机制指标解释 92.3% 方差，而 4 项资源足迹合占 84.3%（余 15.7% 未覆盖）。"
+          },
+          {
+            "evidenceId": "ev-lcc143-unep2011-single-indicator-caution",
+            "relation": "supports",
+            "rationale": "UNEP/SETAC 2011 第 4 章明确将仅凭较低直接碳排放或较少资源消耗宣称产品更可持续列为典型权衡错误。"
+          }
+        ],
+        "mappingIds": [],
+        "reasoning": "161 − 26 = 135 项指标；资源足迹累进 62.8% → 76.5% → 83.8% → 84.3%（水足迹边际增量 84.3% − 83.8% = 0.5%），未解释排名方差 100% − 84.3% = 15.7%；四主成分印值逐项和 83.3 + 3.9 + 3.1 + 1.9 = 92.2% 对比总印值 92.0%。"
+      },
+      "rationale": "整合改写：压实至 420 字以内，精准保留 Steinmann 2016 PCA 核心量化边界。"
+    },
+    {
+      "id": "cl-lcc143-dashboard-iia-outranking-and-compensatory-reversals",
+      "op": "modify",
+      "from": {
+        "id": "cl-lcc143-dashboard-iia-outranking-and-compensatory-reversals",
+        "kind": "synthesis",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-18",
+        "scope": "集合内极差仪表盘违反无关备选方案独立性、补偿性加权掩盖底线违约与非补偿性级别高于否决规则的定量对照",
+        "text": "一旦决策者把环境、成本与社会三类结果送入同一套多准则决策分析（MCDA）算法，归一化标尺与补偿假设就会直接塑造赢家。Finkbeiner 等人 2010 年给出了两套经典图示：生命周期可持续性三角图（LCST）令三维度正权重之和等于 100%（图 3 以 0.4、0.1、0.5 为例；图 4 标出方案 A 与 B 的占优域分界，环境权重高于 53% 时 A 始终占优，仅对环境与社会赋权时社会权重高于 43% 则 B 占优，经济权重高于 47% 亦转由 B 占优）；生命周期可持续性仪表盘（LCSD）则在参评集合内对各指标最优方案赋 1,000 分、最差赋 0 分，配深红至深绿 7 色标尺（缺失资料标紫罗兰色）做线性插值与平均。UNEP/SETAC 2011 年指南因三类技术目标不可直接通约而不建议跨支柱赋权加总；UNEP GLAM 第三阶段范围报告进一步指出，即使等权重也属于主观价值设定而非客观中立，必须按决策语境区分完全补偿的加权和、多属性效用理论（MAUT）、逼近理想解排序法（TOPSIS）与随机多属性可接受度分析（SMAA），同非补偿性的消去与选择转换现实法（ELECTRE）、偏好排序组织法（PROMETHEE）及边界轮廓分类（sorting）。以四年工作服招标的三支柱数据（均越低越优：碳足迹 kg CO₂-eq、采购成本 €、供应链中风险工时 h，三支柱等权各取三分之一）即可验证三类结构翻转。第一，极差仪表盘违反无关备选方案独立性（IIA）：三份合格标书甲（22, 120, 20）、乙（30, 100, 24）、丙（18, 140, 36）按集合内极差转成 0 至 1,000 分后，甲以均分 722.22 胜过乙的 583.33 与丙的 333.33；此时若加入一份在全部三项上同时劣于甲和乙的陪跑废标丁（58, 140, 28），碳排极差被拉宽至 40，把甲对乙的气候分差从 666.67 压缩为 200.00，甲均分变为 800.00 而乙跃升至 816.67——仅因混入无人会选的严格劣方案，冠军便由甲翻转为乙。第二，补偿与否决的对立：若另设一份低价标书戊（16, 95, 80）靠涉强迫劳动的高危分包压低碳排与报价，在甲、乙、戊三者等权极差线性加权下，戊凭碳与成本两项满分以 666.67 压过乙（577.78）与甲（523.81）夺冠；而在设定社会风险否决阈值 50 h 的非补偿性 ELECTRE 规则下，尽管戊在两柱占三分之二多数优势，其与甲高达 60 h 的社会风险差距直接触发一票否决。第三，若改用碳排除以成本或附加值的生态效率（Eco-efficiency）比值，不仅隐去总量规模，在净成本趋零或摇篮到大门净附加值为正（负生命周期成本）时还会发生比值发散或优劣倒置。",
+        "caveats": [
+          "工作服标书甲至戊的三维数值系为清晰展示极差插值无关方案独立性失效与非补偿性否决机制而设计的精确有理数算例；真实招投标采用 ELECTRE 或 PROMETHEE 时，无差异阈值、严格偏好阈值与否决阈值须由利益相关者与合规底线事先界定并做稳健性检验。",
+          "UNEP GLAM 第三阶段范围报告记录赋权子任务问卷共收到 20/31 份成员回复（其中 8/20 在研究中使用多准则决策分析、17/20 陈述赋权选择），并记载美国环境保护署可持续材料管理工具（USEPA SMM）委托方曾误将等权重视为“无主观性的科学方法”；Finkbeiner 等人 2010 年原文亦明示三角图与仪表盘旨在使权重取舍透明化而非强制输出单一总分。"
+        ],
+        "conceptIds": [],
+        "premiseIds": [
+          "cl-soc139-three-social-zeros-and-compensation-limits",
+          "cl-sustainability-dashboard-zero-is-relative",
+          "cl-sustainability-explicit-aggregation-conditions"
+        ],
+        "evidenceIds": [
+          "ev-lcc143-finkbeiner2010-lcst-and-lcsd",
+          "ev-lcc143-unep2011-boundary-union-and-aggregation",
+          "ev-lcc143-glam3-mcda-and-smm",
+          "ev-lcc143-hsg2013-lcc-value-added"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-lcc143-finkbeiner2010-lcst-and-lcsd",
+            "relation": "supports",
+            "rationale": "Finkbeiner 等 2010 第 3.1—3.2 节定义权重和 100% 的 LCST（含 53%、43%、47% 切换点）与 0—1,000 分 7 色线性插值的 LCSD。"
+          },
+          {
+            "evidenceId": "ev-lcc143-unep2011-boundary-union-and-aggregation",
+            "relation": "supports",
+            "rationale": "UNEP/SETAC 2011 第 3.1 节明确因三项技术目标不可直接可比而不建议跨支柱赋权加总。"
+          },
+          {
+            "evidenceId": "ev-lcc143-glam3-mcda-and-smm",
+            "relation": "supports",
+            "rationale": "GLAM 第三阶段范围报告（20/31 回复、8/20 用 MCDA、17/20 述赋权）界分补偿性加权和同非补偿性 ELECTRE/PROMETHEE 及 SMM 等权重主观性。"
+          },
+          {
+            "evidenceId": "ev-lcc143-hsg2013-lcc-value-added",
+            "relation": "supports",
+            "rationale": "Heijungs 等 2013 讨论将环境影响与成本或附加值组成生态效率比值及摇篮到大门负 LCC 的性质。"
+          }
+        ],
+        "mappingIds": [],
+        "reasoning": "{甲,乙,丙}: 甲 (666.67+500+1000)/3=722.22 > 乙 (0+1000+750)/3=583.33 > 丙 333.33；并入严格劣方案丁(58,140,28)后 E 极差扩至 40，甲 (900+500+1000)/3=800.00 < 乙 (700+1000+750)/3=816.67；{甲,乙,戊(16,95,80)}: 补偿均分戊 666.67 > 乙 577.78 > 甲 523.81，而社会差距 80−20 = 60 h ≥ 否决线 50 h。"
+      },
+      "rationale": "整合改写：联动表 2，压实至 440 字以内，紧凑呈现 IIA 失效、非补偿否决与生态效率奇异三类翻转。"
+    },
+    {
+      "id": "cl-lcc143-planetary-boundaries-and-sharing-principle-reversal",
+      "op": "modify",
+      "from": {
+        "id": "cl-lcc143-planetary-boundaries-and-sharing-principle-reversal",
+        "kind": "synthesis",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-18",
+        "scope": "强弱可持续性范式分野、地球边界承载力绝对环境可持续性评价的覆盖缺口及微观配额分配翻转",
+        "text": "前文所有排序回答的仍是“甲与乙谁相对更轻”，却未回答“中选方案是否仍在地球生态安全上限之内”。UNEP GLAM 第三阶段范围报告表 3 将基于承载力与地球边界（Planetary Boundaries）的外部归一化单独列为绝对环境可持续性评价（AESA）路径：把产品系统造成的环境影响除以分配给该活动的安全运行空间配额，比值小于等于 1 方可称为未逾越生态边界。O’Neill 与 Creutzig 2026 年在《自然·机器智能》的论述进一步点明其背后的范式分野：传统成本收益分析属于弱可持续性，默认自然资本、人造资本与金融资产可以按货币现值相互替代；而结合地球边界生态上限与人类基本需求社会底线的“甜甜圈”框架（已用于评估 150 个以上国家及 2022 年全球状态）贯彻强可持续性原则——减缓气候变化不能用来抵消生物多样性丧失，成本节约也不能豁免劳工底线跌破。然而，将全球生态承载力下放到一件具体工作服时，必须跨越两道科学边界。其一，GLAM 范围报告明文指出，现有地球边界归一化主要局限于生态系统相关影响，尚缺乏对人体健康和自然资源两大保护领域的完整量化覆盖，且行星阈值本身不确定性高。其二，从全球或人均预算切分出单件产品配额并非自然物理定律，而是高度敏感的伦理分配选择：设某工人四年个人碳预算为 4,000 kg 二氧化碳当量、四年总消费支出为 40,000 €，比较支付生活工资的国内耐穿工作服甲′（碳排 20 kg，售价 240 €）与低价工作服乙′（碳排 16 kg，售价 120 €）。若按最终消费支出份额分配预算，高价甲′分得 24.0 kg 配额，占用比 20/24.0 = 0.833（小于等于 1，判为“处于安全空间”），而实际碳排更低的乙′仅分得 12.0 kg 配额，占用比 16/12.0 = 1.333（大于 1，反被判“突破地球边界”），形成“高价买配额”悖论；一旦改按同等四年防护穿用服务需求为两种衣服核定固定配额 18.0 kg，甲′占用比立即变为 20/18.0 = 1.111（超界），乙′则变为 16/18.0 = 0.889（达标），绝对可持续性结论完全倒转。",
+        "caveats": [
+          "4,000 kg 四年个人碳预算、40,000 € 消费总支出与 18.0 kg 服务预算系用于隔离展示“按最终消费支出份额分配”同“按同等防护功能需求分配”如何翻转达标结论的受控算例，不作为特定国家法定个人碳配额标准。",
+          "O’Neill 与 Creutzig（2026）期刊版权归属 Springer Nature；此处仅归纳其对弱可持续性成本收益折现与强可持续性“甜甜圈”不可补偿原则的范式界分，地球边界下放产品层面的分配原则综述亦见 GLAM 第三阶段范围报告所引 Bjørn 等人 2020 年研究。"
+        ],
+        "conceptIds": [],
+        "premiseIds": [
+          "cl-sustainability-dashboard-zero-is-relative",
+          "cl-sustainability-explicit-aggregation-conditions",
+          "cl-lcc143-dashboard-iia-outranking-and-compensatory-reversals"
+        ],
+        "evidenceIds": [
+          "ev-lcc143-glam3-planetary-boundaries-aesa",
+          "ev-lcc143-oneill2026-strong-vs-weak-sustainability"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-lcc143-glam3-planetary-boundaries-aesa",
+            "relation": "supports",
+            "rationale": "GLAM 第三阶段范围报告表 3 及正文（印第 138—141 页）界定承载力／地球边界外部归一化（AESA）及其缺乏人体健康与自然资源覆盖和阈值不确定性局限。"
+          },
+          {
+            "evidenceId": "ev-lcc143-oneill2026-strong-vs-weak-sustainability",
+            "relation": "supports",
+            "rationale": "O’Neill 与 Creutzig 2026 对比弱可持续性资本替代折现同强可持续性“甜甜圈”生态上限加社会底线（已评估 150 余国及 2022 年全球状态）的不可补偿原则。"
+          }
+        ],
+        "mappingIds": [],
+        "reasoning": "按消费支出份额分配：b(甲′) = 4,000 × (240/40,000) = 24.0 kg → 20/24.0 = 0.833 ≤ 1，b(乙′) = 4,000 × (120/40,000) = 12.0 kg → 16/12.0 = 1.333 > 1；按同等服务固定配额 18.0 kg：20/18.0 = 1.111 > 1 而 16/18.0 = 0.889 ≤ 1，判定完全反转。"
+      },
+      "rationale": "整合改写：联动表 2，压实至 440 字以内，突出强/弱可持续性分野与“高价买配额”悖论。"
+    }
+  ],
+  "files": [
+    {
+      "path": "content/docs/book/ecological-scarcity-and-targets.mdx",
+      "fromSha256": "d30d67b7a7588229ba1bf1131325b8b324a8eed9c28850b476ebafe054ffea31",
+      "toSha256": "dcab833936a9ec8579615f378e0b53ee2844fb707d5cfcf1ea121539b7e0c42e",
+      "previous": "---\ntitle: 生态稀缺赋权\ndescription: 用同一涂装服务比较政策目标距离与欧盟环境足迹中点加权，辨析科学稳健度折减、全球归一化分母修订与公开比较主张的制度分界。\n---\n\n## 排放目标与计分 [#排放目标与计分]\n\n<Prose ids=\"cl-es-question cl-es-authority cl-es-policy cl-es-three cl-es-equation cl-es-why-square cl-es-selection\" />\n\n## 因子来源与版本 [#因子来源与版本]\n\n<Prose ids=\"cl-es-baselines cl-es-retained cl-es-nmvoc cl-es-later cl-es-retained-nox cl-es-nox cl-es-new-base\" />\n\n## 服务比较与分界 [#服务比较与分界]\n\n<Prose ids=\"cl-es-service cl-es-score cl-es-scale cl-es-threshold cl-es-test cl-es-trial cl-es-ranks cl-es-envelope\" />\n\n<Prose ids=\"cl-weight135-ef-coating-outdoor cl-weight135-ef-coating-indoor cl-weight135-ef-robustness-weights\" />\n\n## 赋权的地域参照 [#赋权的地域参照]\n\n<Prose ids=\"cl-es-place cl-es-metals cl-es-regional-driver cl-es-judgment\" />\n\n<Prose ids=\"cl-weight135-denominator-coupling-and-drift cl-weight135-comparative-assertion-regimes cl-weight135-target-vs-hybrid-boundary\" />\n"
+    },
+    {
+      "path": "content/docs/book/localization-evidence-and-denominators.mdx",
+      "fromSha256": "f1cfc21ccb2cf010cbaa6d7eb0a72f5b39fb9b1e4022c2dcef715c75e9eb6462",
+      "toSha256": "e4b319125ec01cf70c26c2454904cfe4723967cd8241750816ad0d4e850c0ea0",
+      "previous": "---\ntitle: 影响评价本地化\ndescription: 比较早期中港本地化方案与欧美及联合国全球区域化方法，辨析流位置标签、归一化分母外推与约消、自然空间单元与制度采纳的四重分界。\n---\n\n## 类别与人均参照 [#类别与人均参照]\n\n<Prose ids=\"cl-cn-question cl-cn-two-branches cl-cn-characterization cl-cn-reference cl-cn-service-period\" />\n\n<Prose ids=\"cl-loc137-ef31-location-regimes cl-loc137-ef31-global-nf-extrapolation\" />\n\n## 权重与资源耗竭 [#权重与资源耗竭]\n\n<Prose ids=\"cl-cn-target cl-cn-weight-meaning cl-cn-cancellation cl-cn-time-bridge cl-cn-resource-meaning cl-cn-resource-units cl-cn-parameter-history cl-regional-benchmarks-and-policy-goals cl-regional-wf-ambiguity\" />\n\n<Prose ids=\"cl-loc137-dirty-denominator-paradox\" />\n\n## 政策参照与采用 [#政策参照与采用]\n\n<Prose ids=\"cl-cn-later-critique cl-cn-policy-records cl-cn-changed-reference cl-cn-policy-limit cl-cn-hk-borrowing cl-cn-hk-local cl-cn-hk-weights\" />\n\n<Prose ids=\"cl-loc137-open-economy-boundary-reversal cl-loc137-biophysical-vs-political-units cl-loc137-pm-nonlinear-and-endpoint-reversals\" />\n\n| 方法体系与载体 | 原生空间单元 | 国家或地区覆盖与白名单 | 中国及华南／港澳代表值 | 欧洲代表值与跨国梯度 | 关键失真或排序反转机制 |\n| --- | --- | --- | --- | --- | --- |\n| 欧盟 EF 3.1 四份方法表 | 水按流域聚合至国别；酸化按欧洲网格；臭氧与颗粒物按子区室 | 水资源 `209` 个位置码；酸化限 `36` 个欧洲码；臭氧与颗粒物前体 `36` 码恒值、初级 `PM₂.₅` 设 `0` 个国别行 | 耗水中国 `42.4`；酸化无中国行，回退默认值 `SO₂ = 1.31`、`NOx = 0.74`；初级 `PM₂.₅` 未指定 `2.385×10⁻⁴` | 耗水西班牙 `77.7`、德国 `1.36`、瑞士 `1.34`（西班牙为日本 `0.897` 的 `86.62` 倍）；酸化 `SO₂` 德国 `2.281`、瑞士 `0.494`、西班牙 `0.108`（差 `21.12` 倍） | 欧洲以外酸化被白名单截断回退默认；臭氧与颗粒物挂欧洲国别码却零数值变化 |\n| ReCiPe 2016（RIVM 附表） | 大气 `56` 源区；陆地网格聚合国别；淡水耗水按流域与国别双表 | 细颗粒物与臭氧将中国大陆、香港、澳门并入同一源区，台湾与韩国单列；耗水与酸化提供分国及分流域值 | 初级 `PM₂.₅` 中港澳 `1.7×10⁻³ DALY/kg`（台湾 `3.5×10⁻⁴`）；耗水中国均值 `3.91×10⁻¹²`（珠江 `1.67×10⁻¹²`、长江 `5.52×10⁻¹²`）；中国 `SO₂` 酸化中点 `1.55` | 初级 `PM₂.₅` 瑞士／列支 `1.5×10⁻³`、德国 `1.3×10⁻³`（韩国中点 `2.15` 高于德瑞，终点 `7.0×10⁻⁴` 反低于德瑞）；西葡 `NOx` 生态臭氧中点 `3.41`（为中港澳 `0.07` 的 `48.71` 倍） | 中港澳大气被均质合并；全国耗水均值达珠江因子的 `2.34` 倍；韩国与德瑞 `PM₂.₅` 中终点反转，西葡与中港澳健康／生态臭氧反转 |\n| LC-IMPACT（2020 报告与论文） | 大气 `56` 源区；水压力约 `11,000` 流域；陆地 `804`、淡水 `449` 生态区 | 全球栅格／流域／生态区原生产出，按排放或取水空间分布加权生成国家均值 | 按原生流域与生态区核算并区分区域潜在消失物种比例与全球潜在消失物种比例 | 指出多数国家对数千种化学品缺乏常规监测，全球毒性归一化含重大外推不确定性 | 以国家均值替代流域／生态区引入空间聚合偏差；忽略脆弱度得分 `VS` 会混淆局地退化与全球灭绝 |\n| UNEP GLAM 2024 颗粒物工作簿 | 全球城乡人口—浓度栅格聚合至国别与城乡子区室 | 覆盖全球国家代码的近地面边际、平均与线性因子 | 初级 `PM₂.₅` 中国未指定边际 `2.146×10⁻⁴`（农村边际 `2.098×10⁻⁴`、城市边际 `5.569×10⁻⁴`）；中国城市平均 `1.205×10⁻³ DALY/kg` | 未指定边际：瑞士 `6.446×10⁻⁴`、德国 `6.306×10⁻⁴`（为中国约 `3.00` 倍）；城市平均：德国 `8.542×10⁻⁴`、瑞士 `6.989×10⁻⁴` | 高背景浓度压平凹形曲线边际斜率叠加农村权重，使中欧排序在 ReCiPe 线性斜率、本表未指定边际与城市平均间双重翻转 |\n\n## 制度与统计覆盖 [#制度与统计覆盖]\n\n<Prose ids=\"cl-cn-standard-events cl-cn-standard-authority cl-regional-localization-not-translation cl-regional-review-denominator cl-regional-method-origin-not-validity cl-regional-research-agenda-not-country-claim\" />\n\n<Prose ids=\"cl-loc137-institutional-adoption-vs-compliance cl-loc137-four-layer-localization-audit\" />\n\n| 本地化或参照方案 | 实际更换的环节 | 归一化分母构造与人口／地域口径 | 权重来源及分母约消关系 | 制度或项目采纳性质 | 不可越界外推的限制 |\n| --- | --- | --- | --- | --- | --- |\n| 杨建新等（2001）早期中国框架 | 借鉴丹麦 EDIP 结构，选定中国八类环境问题与资源稀缺支路 | 全球类用全球尺度，区域／局地类用中国或地区 1990 年人均基准 `ER₉₀`（含服务期 `T`） | 以 1990 年同一人口折算 2000 年政策目标得 `WF = B/G`；匹配非零参照下 `B` 相消余 `E/G` | 学术论文方法提案与合作项目试算陈述 | 正文未刊完整参数表与汽车清单；服务期 `T` 在 `WP`/`EIL` 中未复现，资源支路单位待辨 |\n| “十五”计划与 Lin、Zhang 和 Chen（2005） | 改取 1995—2005 年中国五年计划政策目标与官方统计构造目标距离权重 | 区分 2000 年计划值（`2,460` 万吨 `SO₂`）与实绩（`1,995.1` 万吨）及全国／两控区口径 | 全国削减 `10%`（`1,995/1,800 ≈ 1.108`）对两控区削减 `20%`（`WF = 1.250`）；跨期中间参照不等故不可直接连乘 | 官方五年计划总量控制指标与英文学术改进研究 | 浓度目标转排放当量仍需扩散建模；氮氧化物与酸化合计数含作者估算，非纯统计实绩 |\n| 香港房委会 C1169 建材研究（2005） | 模块化拼装 CML 表征、“东南中国”／香港归一化参照与项目软件权重 | 香港本地气候参照取 2000 年领土温室气体清单 `5,922.49 kg CO₂-eq/(人·年)`（低于全球 `7,553.08` 约 `21.59%`） | 采用第一阶段工作坊固定默认权重（支持用户自设），**不与分母相消** | 公共机构委托工程研究与内部团队评阅 | 服务型城市领土分母配跨国建材供应链会放大进口气候份额（等权算例在 `150` 临界比两侧换位） |\n| 欧盟 EF 3.1 合规参考包（2022） | 统一锁定 16 类表征方法、2010 年“全球”人均归一化基准（`NFᵢ`）与混合权重 | 全球人口 `6,895,889,018`；`1,803` 条流中淡水生态毒性 `96.81%` 由欧盟外推，非致癌毒性 `11.62%` 由中国外推 | 固定混合权重除以全球归一化基准 `NFᵢ`（不约消）；分母完备度落差直接进入单一总分 | 欧盟建议书与合规指南行政锁定（`ISO 14040/14044` 多项合规标为 `Not defined`） | 欧洲以外酸化等类别被白名单回退欧洲默认；“全球分母”不代表全球化学品实测全覆盖 |\n| 中国 GB/T 采标登记与谢明辉等（2022）综述 | `GB/T 24040` 与 `24042` 等同采用 `ISO` 程序标准；2022 年综述统计中文期刊方法采用率 | 标准不设法定分母；综述以 CNKI 明确命名方法的 `243` 篇论文为分母得 `186` 篇（`77%`）国外方法 | 标准将标准化与加权列为可选程序；综述呼吁更新基准与开展支付意愿研究 | 国家推荐性程序标准登记与学术文献计量回顾 | 程序采标不授予任何研究参数法定效力；`77%` 系中文期刊子集来源分类而非全行业普查或模型误差检验 |\n\n<Prose ids=\"cl-cn-conclusion\" />\n"
+    },
+    {
+      "path": "content/docs/book/lime-preferences-and-damage-weights.mdx",
+      "fromSha256": "b8cc46133df5b2ecdef47b28b37c58a743200335c0f3db967323521f61fe19b8",
+      "toSha256": "f1d7a32c6f5eafbcfc6986a4ef622023ac71cc7d95a2a8ff018ea986ba667743",
+      "previous": "---\ntitle: 环境损害估值\ndescription: 解析陈述偏好联合分析如何估算终点损害货币权重，并与三保护领域截停、文化视角折算及政策／中点赋权对照次序反转与适用边界。\n---\n\n## 问卷与损害参照 [#问卷与损害参照]\n\n<Prose ids=\"cl-lime-card cl-lime-purpose cl-lime-policy-contrast cl-lime-baseline cl-lime-units cl-lime-plant cl-lime-display\" />\n\n## 选择与权重换算 [#选择与权重换算]\n\n<Prose ids=\"cl-lime-participants cl-lime-design cl-lime-logit cl-lime-trade cl-lime-precision cl-lime-primary-ratio cl-lime-households cl-lime-health cl-lime-mismatch cl-lime-annual cl-lime-shares cl-lime-two-forms\" />\n\n## 发表表值与排序 [#发表表值与排序]\n\n<Prose ids=\"cl-lime-same-table cl-lime-different-card cl-lime-english\" />\n\n两篇论文各自在表 7 列出了货币权重。下表对照其中三项。\n\n| 损害类别 | 2003 年日文论文表 7 | 2004 年英文论文表 7 |\n| --- | --- | --- |\n| 健康 | 572,000 日元／DALY | 9,700,000 日元／DALY |\n| 初级生产 | 17.8 日元／干吨 | 20,200 日元／干吨 |\n| 社会资产 | 4,460 日元／千日元损失 | 10,000 日元／万日元损失 |\n\n日文社会资产的系数试算约为每千日元损失 4,479.71 日元，表 7 列 4,460。英文用表 3 和表 7 计算的年度金额为 2.29×10¹² 日元，表 8 列 3.61×10¹²。日文论文的差额出现在单位损害估值，英文论文的差额出现在年度金额。\n\n<Prose ids=\"cl-lime-english-basis cl-lime-service cl-lime-japan-route cl-lime-break-even cl-lime-english-route\" />\n\n## 行为效度与迁移 [#行为效度与迁移]\n\n<Prose ids=\"cl-lime-validity cl-lime-null cl-lime-order cl-lime-national cl-lime-numeraire cl-lime-edition cl-lime-transfer\" />\n\n<Prose ids=\"cl-weight135-lime-three-table-rereversal cl-weight135-recipe-endpoint-stop cl-weight135-health-perspective-reversal cl-weight135-four-paradigm-synthesis\" />\n\n| 赋权与估值路线 | 聚合层级与输出标尺 | 折算权威来源 | 归一化分母进入方式 | 零清单改动的换位触发条件 | 公开比较主张制度边界 |\n| --- | --- | --- | --- | --- | --- |\n| 瑞士生态稀缺法（UBP 2013／2021） | 清单／中点直折环境负担点（UBP，亦称生态点数），同物质取单一最严途径 | 国内法定环境限值与政治减排目标 | `(1/Fₙ)×(F/Fₖ)²`；本国同源时约化为 `F/Fₖ²`，跨区时保留外部 `Fₙ` | 法定临界流松紧、基年现状流更新、消费地与生产地视角切换 | 属价值赋权，按 ISO 14044 传统不得用于向公众披露的比较主张 |\n| 欧盟环境足迹（EF 3.1，Sala 等 2018） | 16 类中点跨路径累加为无量纲加权总分（pt） | 公众与专家 50:50 重要性乘 0.17–0.87 模型科学稳健度 | 每单位中点乘 `WFᵢ/NFᵢ`，全球人均年度基准 `NFᵢ` 反向缩放折算率 | 室外与室内空气子区室切换、0.17 毒性稳健度折减、全球 `NFᵢ` 版本重算 | 欧盟建议书设为产品／组织环境足迹（PEF／OEF）强制步骤，仅遵循同品类类别规则（PEFCR）且并列披露分项剖面时容许比较 |\n| 文化视角终点截停（ReCiPe 2016） | 17 类中点汇聚至三保护领域（`DALY`、`species·yr`、`USD2013`）后主动止步 | 自然科学暴露—效应模型与文化理论三视角（I／H／E），不发跨领域总分权重 | 方法本体不含跨保护领域归一化加权（软件外挂配置非原方法组成） | 20 年、100 年与 1,000 年时间视野及气候健康路径纳入门槛（如 `CO₂` 对 `PM₂.₅` 相差约 160.5 倍） | 保持三项异量纲终点分列报告，任何跨保护领域加权均受公开比较禁令约束 |\n| 陈述偏好终点货币化（日本 LIME1／LIME2） | 四项保护对象终点损害折算为单一日元估值（JPY） | 抽样家庭对假设政策卡的联合分析边际支付意愿 | 单位金额 `ΣDₑvₑ` 不经外部归一化；年度份额权重 `Nₑvₑ/ΣNⱼvⱼ` 重新引入全国年度参照 `Nₑ` | 问卷损害基准幅度、税金与社会资产计价标尺转换、2003／2004／2012 调查表次更替 | 属社会偏好货币加权，受 ISO 公开比较禁令约束，且直接适用性限于日本抽样人群 |\n\n<Prose ids=\"cl-weight135-monetary-incommensurability cl-weight135-glam3-reporting-discipline\" />\n\n<Prose ids=\"cl-lime-decision\" />\n"
+    },
+    {
+      "path": "content/docs/book/social-assessment-objects-and-meaning.mdx",
+      "fromSha256": "a6506fc16cf56a7de3d64fecb6385cbd22b709499f7d65492dfbe62bf70f5aa4",
+      "toSha256": "a2eccb9cee719737a55e89061013f4119086f0a5a9e0c97ad4a9e09053a033ec",
+      "previous": "---\ntitle: 社会表现与影响\ndescription: 以工作服采购与成衣制造企业组合为例，对照产品与组织参照、矩阵卫星缩放与产值工时悖论、宏观风险筛查与现场认证局限、线性与指数参照量表、职业健康损害路径以及跨支柱消重规则。\n---\n\n## 社会评价对象 [#社会评价对象]\n\n<Prose ids=\"cl-sustainability-social-object-and-stakeholders cl-sustainability-product-functional-reference cl-sustainability-organization-reporting-reference cl-soc139-portfolio-reference-and-comparative-assertions cl-soc139-matrix-satellite-linearity-and-software-encoding\" />\n\n| 体系与版本 | 评价对象与参照基准 | 缩放变量与矩阵关系 | 公开比较声明规则 | 工作服／成衣链典型失真 | 方法边界与待核条件 |\n| --- | --- | --- | --- | --- | --- |\n| UNEP 2020 产品 S-LCA（配 2021 方法学表） | 特定穿用服务的功能单位与参考流（工作服件数或贸易采购额） | 工时等活动变量仅表过程份额；权利状态、工资比与超时阈值不满足无条件线性累加 | 未禁止产品比较，但要求风险、表现与影响表述严格匹配数据分辨率 | 用采购额作参照时，高价耐穿或生活工资产品被推算出更多部门工时 | 活动变量分配不等于证明伤害随工时成正比 |\n| UNEP 2020 组织 SO-LCA（第 7 章） | 报告组织或其一部分、产品组合与参照期间（通常 1 年） | 定性制度判断与组合级记录并存，禁止直接除以售出服装件数 | 明确不拟用于面向公众披露的组织间比较声明 | 若把 1 起打压工会事件除以 60,000 件成衣（每件 0.0000167 起），高产高销会人为稀释侵权 | 制度用途限定不替代后续法规或专门标准的适用判断 |\n| 欧盟建议书 (EU) 2021/2279 组织 OEF（配 OEFSR v6.3） | 组织加一年期产品组合（如 NACE 14 成衣厂 40,000 件 T 恤＋20,000 条长裤＝17,000 kg），含食堂园艺 | 物理环境基本流随产品组合线性缩放，可按年度营业额等参照系统归一化 | 遵守同部门相似产品组合的 OEFSR 并归一化后，允许公开组织间优劣或等效声明 | 成衣示例原印件将年度周洗水电（0.4968 MJ 与 6.9 L）误按单套 0.69 kg 计算；营业额分母对奢侈溢价敏感 | 序言第（18）条明示仅覆盖环境影响，不含劳工权利指标 |\n| PSILCA v3（全球多区域投入产出库 Eora 15,000 部门／openLCA） | 1 美元（USD）国家特定部门产值或完整产品系统需求向量 | 默认将风险指标作伪基本流乘反推工时（0.001—1 h/USD）；或按技术矩阵缩放对角元总产值求加权平均 | 定位供应链社会热点与筛选情景，不直接等同企业现场合规结论 | 支付生活工资使单价翻倍（如后节 40 对 20 美元算例）的安全工厂反被推算出 2.0 倍部门风险工时 | 对角元直接归一化脚本要求全系统统一货币单位，混入物理过程即异量纲相加 |\n| UNEP 全球生命周期影响评价方法共识项目（GLAM）2024/2026 工作环境（美国投入产出模型 USEEIO 基底） | 1 美元（2012 年不变价，USD2012）行业商品经济产出（主文表 2 标明美国代表全球） | 投入产出 Leontief 逆矩阵汇总每美元产值伤残调整生命年（DALY）；2026 主文反对按国内生产总值（GDP）比跨国外推 | 建议仅作缺乏区域实测资料时的筛查基线，不作绝对全球定论 | 2024 实发工作簿对 52 国按各国年均工资 W_c 倒数（43,746 美元/W_c）缩放，土耳其达瑞士 28.76 倍，印孟越缺席 | 主文 362 部门、补篇 397 部门与工作簿 420 部门存在源内口径差异 |\n\n## 活动与社会表现 [#社会评价证据]\n\n<Prose ids=\"cl-sustainability-worker-hours-not-impact cl-sustainability-risk-not-facility-performance cl-sustainability-reference-scale-performance cl-sustainability-social-impact-pathways cl-soc139-wage-price-and-automation-paradoxes cl-soc139-macro-screening-cutoffs-and-certification-limits cl-soc139-occupational-health-pathways-and-rights-boundary\" />\n\n## 量表与抵消 [#社会量表解释]\n\n<Prose ids=\"cl-sustainability-ordinal-zero-and-net-zero cl-soc139-ordinal-vs-exponential-scale-reversal cl-soc139-three-social-zeros-and-compensation-limits cl-soc139-cross-pillar-overlap-audit\" />\n\n| 方法或证据层 | 等级编码与零值语义 | 同一工作服链判别表现 | 能独立支持的判断 | 核心盲区与源内异文 | 与环境评价及成本评价的衔接 |\n| --- | --- | --- | --- | --- | --- |\n| 宏观国家—部门热点筛查（SHDB 191 国／PSILCA v3） | 四分位或法规基准定级；SHDB 低于 0.1% 工时截断，PSILCA 常设货币截断 | 德国纺织链童工风险无截断为 0.0868 中风险工时，10⁻⁵ 截断跌至 0.04864，10⁻³ 仅剩 0.02 | 识别高工时占比或高风险国家—部门，排定尽职调查优先级 | 生态谬误（合规厂背负高危国标签、违规分包藏身低危国均值）；PSILCA 第 41 页将美国安全违规率全球照搬 | 仅作背景风险线索，既非工厂实绩也非采购现金流 |\n| 自愿可持续性认证与现场审核（Meemken 等 2021） | 合格／不合格准入或整改项；未违规记零缺陷 | 覆盖全球不足 2% 农地与低收入国约 2% 小农户；小农场雇工常未获益 | 核验受检时刻书面制度、工资单与可见安全设施是否达标 | 五层非随机自选择混淆因果；受审方付费与预告检查致最高 50%／79% 未受内外部抽检，30%—70% 认证量未按认证售出 | 认证费、防护投入与溢价计入 LCC，证书本身不免除非预告复核 |\n| 线性等距量表与阶跃加成（SHDB 社会热点指数） | 低中高极高赋 0、1、2、3 分；工时占 0.1%、0.2%、1% 上浮 10%、20%、30%（超 100 封顶 100），无数据自分母剔除 | 100 h 受控算例中，甲（10 h 极高＋90 h 低＝30 分）较乙（60 h 中＋40 h 低＝60 分）分值低一半（乙为甲的 2.00 倍），表观更优 | 在不跨议题正负抵消的前提下汇总同一国家—部门多主题警示强度 | 低风险赋 0 且极高仅中风险 3 倍，大批量低风险工时可稀释局部严重侵权；1% 与 60% 工时占比获相同 30% 加成 | 序数合成得分不可与环境当量或货币成本直接相加 |\n| 指数风险工时汇总（PSILCA v3 表 3） | 无风险 0，极低至极高赋 0.01、0.1、1、10、100，机会 0.1、1、10，无数据默认赋 0.1 | 同一 100 h 算例中，甲暴涨至 1,009 中风险工时，反达乙（64 中风险工时）的 15.77 倍 | 凸显供应链中哪怕工时很短的极高风险工序，并单列正面机会 | 90 h 无数据自动产生 9.0 中风险工时；安全表误标 DALYs 且每十万雇员违规数指标 y 误排 y ≤ 0.06，环境管理表极高风险误印低于 0.005 | 须先剔除数据库内置的环境管理或足迹项，方可与环境评价（E-LCA）并列 |\n| 第二类职业健康损害路径（CML／ILCD 至 GLAM 2026） | 物理零暴露与零发病为 0；非致死工伤 0.72 DALY/例，致死工伤 33.3 YLL/例（高于 PM₂.₅ 的 23.6 DALY/例） | 量化全球约 70,000,000 DALY 职业负担；休闲运动负 DALY（−1×10⁻⁴ 至 −4.8×10⁻⁴/h）不可外推至职业劳动 | 在暴露浓度或工伤率可靠时，将车间健康损失与室外污染置于同一 DALY 量纲比较 | 若 E-LCA 已启用室内空气毒性（如涂装苯乙烯毒性因子达室外的约 211 倍）再叠加 S-LCA 职业病伤即双重计算 | 防护支出与工伤保费入 LCC，未补偿残余 DALY 归健康损害，基本权利仍独立保留 |\n\n<Prose ids=\"cl-book-social-results-to-cost\" />\n"
+    },
+    {
+      "path": "content/docs/book/cost-perspectives-and-sustainability-combination.mdx",
+      "fromSha256": "624693f816859a03b20af126a9eacb895375c68b9ef589855d7bf32333abd59c",
+      "toSha256": "5c88be44e7e139314c55ddc645b2f8e87e5096089ac06b17ec3acd6acd70d2ba",
+      "previous": "---\ntitle: 生命周期成本与综合评价\ndescription: 沿用工作服采购，对照三类生命周期成本账本、主体激励与贴现率翻转、五类异质货币量、多准则补偿与否决规则、场址风险与区域物质流工具边界以及地球边界配额分配。\n---\n\n## 成本主体与范围 [#成本主体]\n\n<Prose ids=\"cl-sustainability-lcc-actor-perspective cl-sustainability-lcc-internalization-boundary cl-book-cost-ledgers cl-lcc143-three-lcc-archetypes-and-value-added-consolidation cl-lcc143-actor-split-incentive-and-discount-rate-reversal cl-lcc143-five-monetary-quantities-and-shadow-price-double-counting\" />\n\n| 货币核算或估值范式 | 核算主体与决策问题 | 内部交易与税费处理 | 时间贴现约定 | 未计价环境／社会后果 | 并入生命周期可持续性评价（LCSA）的边界 |\n| --- | --- | --- | --- | --- | --- |\n| 常规生命周期成本（Conventional LCC，自 1933 年美国总会计局 GAO 传统） | 单一组织（多为采购方全拥有成本 TCO 或制造方内部成本） | 仅计该主体自身现金收支；常忽略上游外部环节或报废端 | 按企业资本机会成本贴现为净现值（NPV） | 账外外部性一律不计 | 系统边界常窄于物理生命周期，需先对齐功能单位方可并列 |\n| 环境生命周期成本（Environmental LCC，Swarr 等 2011／Heijungs 等 2013） | 产品链一个或多个主体在等价功能单位下的真实货币流 | 中间商品价格在矩阵附加值中一负一正抵消；纳入现行及预期决策期内（如 2 年内）内部化的税费或补贴 | 建议按决策目标选用私人或社会贴现率，并以 0% 无贴现作敏感性对照 | 严禁把未内部化环境损害再折算成货币叠加 | 与环境生命周期评价（E-LCA）和社会评价互补，避免同源排放双计 |\n| 社会生命周期成本（Societal LCC，UNEP/SETAC 2011 图 5） | 社会整体福利视角下的全部私人成本收益加货币化外部性 | 抵消主体间纯转移支付（如已缴环境税不可再与全额影子损害重复相加） | 多采用较低社会贴现率评估跨期公共福利 | 将气候、污染等外部损害按影子价格或治理成本并入总账 | 若已货币化环境损害，不得再与 E-LCA 物理指标重复加总同一后果 |\n| 环境损害支付意愿估值（日本 LIME2／ISO 14008，见前文《环境损害估值》） | 受访公众避免边际健康或生态损害的陈述／揭示支付意愿（WTP） | 非市场偏好权重（如 LIME2 赋 1.47×10⁷ JPY/DALY），不代表企业账面现金支出 | 取决于终点暴露积分期与调查情景设定 | 覆盖部分使用价值与非使用价值，但受收入水平与未知路径限制 | 属影响评价赋权因子；若并入全成本（如日本洗衣机占 3.74%）须防双计 |\n| 资源未来额外采选成本终点（ReCiPe 2016 USD2013，见前文《中点与终点》） | 当代开采迫使未来人类转向低品位矿床或边际油气田的额外采选费 | 宏观地质品位—产量回归积分（如原油 0.457 USD2013/kg），不含现期买方采购价 | ReCiPe 2016 化石燃料终点按未来累计额外成本未贴现均值计算 | 仅表征非生物资源稀缺保护领域，不含污染健康或劳工条件 | 属环境终点指标而非财务支出，绝不可与采购方 LCC 现金流直接相加 |\n\n## 三类结果与重叠 [#三类结果]\n\n<Prose ids=\"cl-sustainability-conceptual-combination-not-sum cl-sustainability-social-proxy-product-attribution cl-book-cost-health-overlap cl-lcc143-cut-off-asymmetry-and-cost-rebound-boundary cl-lcc143-demarcating-ra-eia-and-mfa-ioa cl-lcc143-single-issue-footprints-vs-multi-indicator-profiles\" />\n\n## 权重与结果呈现 [#取舍呈现]\n\n<Prose ids=\"cl-sustainability-dashboard-zero-is-relative cl-sustainability-explicit-aggregation-conditions cl-lcc143-dashboard-iia-outranking-and-compensatory-reversals cl-lcc143-planetary-boundaries-and-sharing-principle-reversal\" />\n\n| 综合呈现或相邻方法范式 | 零点／基准定义 | 跨维度可补偿性与否决机制 | 同一工作服算例表现 | 触发结论反转的非物理因素 | 原生适用范围与互补职责 |\n| --- | --- | --- | --- | --- | --- |\n| 分项并列与缺失单列（Finkbeiner 2010／UNEP/SETAC 2011 基线） | 各支柱保留原生物理当量、风险工时与货币零点；缺失资料单独标注 | 不做跨支柱加总，显式呈现环境、成本与劳动条件间的真实权衡 | 直接看清甲省总现值（0% 下 132.00 € 对 140.00 €）、丙低碳高价、戊涉强迫劳动风险 | 无算术掩盖；优先补证能否翻转判断的关键缺项 | 早期与常规 LCSA 首选方式，防止不可通约目标被单分抹平 |\n| 集合内极差相对仪表盘（LCSD，0—1,000 分七色标尺） | 候选集内最优赋 1,000 分（深绿）、最差赋 0 分（深红），缺失标紫罗兰色 | 同一主题及跨主题算术或加权平均，默认允许高分项补偿 0 分项 | 在甲、乙、丙中甲以 722.22 分胜乙（583.33 分）；加入严格劣标丁后乙以 816.67 分反超甲（800.00 分） | 违反无关备选方案独立性（IIA），陪跑劣方案改写极差分母 | 仅表征本组候选内部相对位次，0 分既非零影响亦非绝对红线 |\n| 补偿性效用与三角图（LCST／MAUT／线性加权和） | 按内外部归一化转无量纲效用，三支柱权重和为 100% | 完全补偿：任一维度劣势均可被其余维度的足够高分抵消 | 在甲、乙、戊等权极差加权下，涉严重劳工风险的戊凭低碳低价满分以 666.67 分夺冠 | 权重向量选择（等权重亦为主观价值设定）与效用函数曲率 | 适用于不存在底线违约、且决策者明确接受边际替代率的优选 |\n| 非补偿性级别高于与否决阈值（ELECTRE／PROMETHEE，GLAM 第三阶段） | 成对比较优劣差距，设定无差异、严格偏好与不可逾越否决阈值 | 非补偿或部分补偿：单项劣势触及否决阈值即一票阻断“级别高于”关系 | 戊虽在碳与成本两柱占 2/3 和谐多数，但社会风险差距 60 h 触及 50 h 否决线而被一票阻断级别高于关系（无缘胜出） | 否决阈值、边界轮廓类别（sorting）与和谐度门槛设定 | 守住禁止童工、强迫劳动或法定限值等不可被低价抵消的硬约束 |\n| 生态效率与场址／区域相邻工具（Eco-efficiency／RA／EIA／MFA-IOA） | 比值以单位成本或附加值作分母；RA 以预测浓度与无效应浓度比 1 为界 | 生态效率单看环境／货币比；RA 与 EIA 按场址法定浓度限值独立准入 | 摇篮到大门净附加值为正致负 LCC；单厂排 10 g 助剂可致局部超标，十厂散排 20 g 反低于限值 | 比值掩盖总量且分母趋零奇异；场址水文稀释与部门汇总层级改变结论 | 场址许可归 RA／EIA，国家与区域物质存量源汇归 MFA／SFA／IOA |\n| 地球边界承载力绝对预算比（AESA，GLAM 表 3／强可持续性甜甜圈） | 以分配给研究对象的安全运行空间配额为 1（小于等于 1 为达标） | 强可持续性禁止跨生态边界或用经济收益补偿超界项 | 甲′（20 kg，240 €）与乙′（16 kg，120 €）按消费支出分预算判甲′达标（0.833）乙′超界（1.333），按同等服务分 18.0 kg 则完全倒转 | 全球预算下放至微观产品的伦理分配原则（支出份额对同等需求） | 评估宏观或部门绝对生态上限；现缺人体健康与非生物资源边界 |\n\n<Prose ids=\"cl-book-cost-decision\" />\n"
+    }
+  ],
+  "corrections": [
+    {
+      "chapter": "/docs/book/ecological-scarcity-and-targets",
+      "claimId": "cl-weight135-ef-coating-outdoor",
+      "scope": "整合改写：统一 pt/点 单位，压实至 440 字以内并将涂装对比汇总入表 1。"
+    },
+    {
+      "chapter": "/docs/book/ecological-scarcity-and-targets",
+      "claimId": "cl-weight135-ef-coating-indoor",
+      "scope": "整合改写：压实至 440 字以内，联动表 1 突出室内臭氧缺行与苯乙烯百倍反转。"
+    },
+    {
+      "chapter": "/docs/book/ecological-scarcity-and-targets",
+      "claimId": "cl-weight135-ef-robustness-weights",
+      "scope": "整合改写：压实至 440 字以内，将 16 项 A/B 列明细与算例中间值移入注释。"
+    },
+    {
+      "chapter": "/docs/book/ecological-scarcity-and-targets",
+      "claimId": "cl-weight135-denominator-coupling-and-drift",
+      "scope": "整合改写：压实至 430 字以内，正文突出分母漂移被动放大折算率。"
+    },
+    {
+      "chapter": "/docs/book/ecological-scarcity-and-targets",
+      "claimId": "cl-weight135-comparative-assertion-regimes",
+      "scope": "整合改写：压实至 430 字以内，清晰对比 ISO/ILCD 公开比较禁令与欧盟 PEF 护栏制度。"
+    },
+    {
+      "chapter": "/docs/book/ecological-scarcity-and-targets",
+      "claimId": "cl-weight135-target-vs-hybrid-boundary",
+      "scope": "整合改写：压实至 350 字以内，形成紧凑的四关口收束并衔接后续两篇。"
+    },
+    {
+      "chapter": "/docs/book/localization-evidence-and-denominators",
+      "claimId": "cl-loc137-ef31-location-regimes",
+      "scope": "整合改写：联动表 1，压实至 440 字以内并突出白名单截断与纯名义标签机制。"
+    },
+    {
+      "chapter": "/docs/book/localization-evidence-and-denominators",
+      "claimId": "cl-loc137-ef31-global-nf-extrapolation",
+      "scope": "整合改写：压实至 440 字以内，将分项百分比明细归入注释，正文突出 96.81% 欧盟外推偏倚。"
+    },
+    {
+      "chapter": "/docs/book/localization-evidence-and-denominators",
+      "claimId": "cl-loc137-dirty-denominator-paradox",
+      "scope": "整合改写：压实至 420 字以内，紧扣重污染稀释悖论与 B 约消条件。"
+    },
+    {
+      "chapter": "/docs/book/localization-evidence-and-denominators",
+      "claimId": "cl-loc137-open-economy-boundary-reversal",
+      "scope": "整合改写：首次展开 UNEP GLAM、补齐 1.32 kg CO₂-eq 排放基准并压实至 440 字以内。"
+    },
+    {
+      "chapter": "/docs/book/localization-evidence-and-denominators",
+      "claimId": "cl-loc137-biophysical-vs-political-units",
+      "scope": "整合改写：压实至 410 字以内，联动表 1 突出合并与拉平两类空间失真。"
+    },
+    {
+      "chapter": "/docs/book/localization-evidence-and-denominators",
+      "claimId": "cl-loc137-pm-nonlinear-and-endpoint-reversals",
+      "scope": "整合改写：压实至 440 字以内，联动表 1 突出四重区域排序反转。"
+    },
+    {
+      "chapter": "/docs/book/localization-evidence-and-denominators",
+      "claimId": "cl-loc137-institutional-adoption-vs-compliance",
+      "scope": "整合改写：联动表 2，压实至 370 字以内。"
+    },
+    {
+      "chapter": "/docs/book/localization-evidence-and-denominators",
+      "claimId": "cl-loc137-four-layer-localization-audit",
+      "scope": "整合改写：作为表 2 引导段并消除与末段总结的重复及未引入的熟米案例指代。"
+    },
+    {
+      "chapter": "/docs/book/lime-preferences-and-damage-weights",
+      "claimId": "cl-weight135-lime-three-table-rereversal",
+      "scope": "整合改写：压实至 420 字以内，清晰呈现 LIME 三张发表表在 80 万分界两侧的反转—再反转。"
+    },
+    {
+      "chapter": "/docs/book/lime-preferences-and-damage-weights",
+      "claimId": "cl-weight135-recipe-endpoint-stop",
+      "scope": "整合改写：联动表 2，压实至 360 字以内。"
+    },
+    {
+      "chapter": "/docs/book/lime-preferences-and-damage-weights",
+      "claimId": "cl-weight135-health-perspective-reversal",
+      "scope": "整合改写：压实至 440 字以内，突出单保护领域内的时间视野翻转。"
+    },
+    {
+      "chapter": "/docs/book/lime-preferences-and-damage-weights",
+      "claimId": "cl-weight135-four-paradigm-synthesis",
+      "scope": "整合改写：压实至 330 字以内，清晰引出表 2 四范式横向对照。"
+    },
+    {
+      "chapter": "/docs/book/lime-preferences-and-damage-weights",
+      "claimId": "cl-weight135-monetary-incommensurability",
+      "scope": "整合改写：压实至 320 字以内，清晰区分三类异质货币量与重复计入风险。"
+    },
+    {
+      "chapter": "/docs/book/lime-preferences-and-damage-weights",
+      "claimId": "cl-weight135-glam3-reporting-discipline",
+      "scope": "整合改写：压实至 370 字以内，凝练 UNEP GLAM 共识与三条最低报告纪律。"
+    },
+    {
+      "chapter": "/docs/book/social-assessment-objects-and-meaning",
+      "claimId": "cl-soc139-portfolio-reference-and-comparative-assertions",
+      "scope": "整合改写：联动表 1，压实至 370 字以内，清晰对比 OEF 与 SO-LCA 的公开比较边界。"
+    },
+    {
+      "chapter": "/docs/book/social-assessment-objects-and-meaning",
+      "claimId": "cl-soc139-matrix-satellite-linearity-and-software-encoding",
+      "scope": "整合改写：压实至 390 字以内并联动表 1，清晰区分外延量与强度/阈值社会指标。"
+    },
+    {
+      "chapter": "/docs/book/social-assessment-objects-and-meaning",
+      "claimId": "cl-soc139-wage-price-and-automation-paradoxes",
+      "scope": "整合改写：压实至 440 字以内，将 GLAM 各部门及国别倍率明细移入注释，正文突出两重结构悖论。"
+    },
+    {
+      "chapter": "/docs/book/social-assessment-objects-and-meaning",
+      "claimId": "cl-soc139-macro-screening-cutoffs-and-certification-limits",
+      "scope": "整合改写：联动表 2，压实至 420 字以内，清晰呈现货币截断盲区与认证自选择/漏检局限。"
+    },
+    {
+      "chapter": "/docs/book/social-assessment-objects-and-meaning",
+      "claimId": "cl-soc139-occupational-health-pathways-and-rights-boundary",
+      "scope": "整合改写：联动表 2，压实至 410 字以内，理顺工作环境路径三十年演变与权利底线边界。"
+    },
+    {
+      "chapter": "/docs/book/social-assessment-objects-and-meaning",
+      "claimId": "cl-soc139-ordinal-vs-exponential-scale-reversal",
+      "scope": "整合改写：联动表 2，压实至 420 字以内，清晰对比线性与指数编码引发的 2× 对 15.77× 反转。"
+    },
+    {
+      "chapter": "/docs/book/social-assessment-objects-and-meaning",
+      "claimId": "cl-soc139-three-social-zeros-and-compensation-limits",
+      "scope": "整合改写：联动表 2，压实至 360 字以内。"
+    },
+    {
+      "chapter": "/docs/book/social-assessment-objects-and-meaning",
+      "claimId": "cl-soc139-cross-pillar-overlap-audit",
+      "scope": "整合改写：联动表 2，压实至 360 字以内。"
+    },
+    {
+      "chapter": "/docs/book/cost-perspectives-and-sustainability-combination",
+      "claimId": "cl-lcc143-three-lcc-archetypes-and-value-added-consolidation",
+      "scope": "整合改写：联动表 1，压实至 420 字以内，将木椅示例与 GAO 溯源移入注释。"
+    },
+    {
+      "chapter": "/docs/book/cost-perspectives-and-sustainability-combination",
+      "claimId": "cl-lcc143-actor-split-incentive-and-discount-rate-reversal",
+      "scope": "整合改写：压实至 430 字以内，将德国公交车实证移入注释，正文聚焦主体错位、货款抵消与 6.49% 贴现翻转。"
+    },
+    {
+      "chapter": "/docs/book/cost-perspectives-and-sustainability-combination",
+      "claimId": "cl-lcc143-five-monetary-quantities-and-shadow-price-double-counting",
+      "scope": "整合改写：联动表 1，压实至 390 字以内，突出财政转移抵消与跨支柱双重计算。"
+    },
+    {
+      "chapter": "/docs/book/cost-perspectives-and-sustainability-combination",
+      "claimId": "cl-lcc143-cut-off-asymmetry-and-cost-rebound-boundary",
+      "scope": "整合改写：压实至 380 字以内，精炼三圆并集、单维截断盲区与 8 € 反弹效应。"
+    },
+    {
+      "chapter": "/docs/book/cost-perspectives-and-sustainability-combination",
+      "claimId": "cl-lcc143-demarcating-ra-eia-and-mfa-ioa",
+      "scope": "整合改写：联动表 2，压实至 410 字以内，将思想史溯源移入注释。"
+    },
+    {
+      "chapter": "/docs/book/cost-perspectives-and-sustainability-combination",
+      "claimId": "cl-lcc143-single-issue-footprints-vs-multi-indicator-profiles",
+      "scope": "整合改写：压实至 420 字以内，精准保留 Steinmann 2016 PCA 核心量化边界。"
+    },
+    {
+      "chapter": "/docs/book/cost-perspectives-and-sustainability-combination",
+      "claimId": "cl-lcc143-dashboard-iia-outranking-and-compensatory-reversals",
+      "scope": "整合改写：联动表 2，压实至 440 字以内，紧凑呈现 IIA 失效、非补偿否决与生态效率奇异三类翻转。"
+    },
+    {
+      "chapter": "/docs/book/cost-perspectives-and-sustainability-combination",
+      "claimId": "cl-lcc143-planetary-boundaries-and-sharing-principle-reversal",
+      "scope": "整合改写：联动表 2，压实至 440 字以内，突出强/弱可持续性分野与“高价买配额”悖论。"
+    }
+  ],
+  "reviewEvidence": [
+    {
+      "kind": "integration-review",
+      "date": "2026-11-22",
+      "file": "_docs/editorial/review-evidence/part5-batch2-208/review-record.json",
+      "sha256": "4692ce882a9a11b2f1038ad321033fa778f49986875f5219d561d16ac3d20542"
+    }
+  ],
+  "publicArtifacts": [
+    {
+      "path": "claims/index.html",
+      "sha256": "2cc29357676814d98e020225eba1113d6f1b2e2ba4e94a54c0131b8bca36356d"
+    },
+    {
+      "path": "sources/index.html",
+      "sha256": "1bd75bb4ba26b1247ab25e95f7fefb5ccd8b44d0ef24d09b18f2f34bb4c0a091"
+    },
+    {
+      "path": "concepts/index.html",
+      "sha256": "c53fc9af741abad0267a203c6b8ec104f2e96a614005c72cf40b1857e90dbf43"
+    },
+    {
+      "path": "downloads/catalog.json",
+      "sha256": "379001fed5d1f17b6c58f2f528330486b7339d09589519fbce4dd14e9b54a819"
+    },
+    {
+      "path": "downloads/dependencies.json",
+      "sha256": "455a10ee593c62d142db01eee90587f5b097fa7f815b8fe3f589ead119def018"
+    }
+  ]
+}
