@@ -1,0 +1,1961 @@
+{
+  "schemaVersion": 1,
+  "id": "part4-batch1a-200",
+  "date": "2026-11-22",
+  "title": "第四部分 B16、B18、B19 整合改写（批次 1A）",
+  "rationale": "按全书目标第 2.16 节将 B16《酸化与营养富集》、B18《耗水与缺水潜势》与 B19《毒性路径》中的追加比较长段整合为连续章节论证：压实过密长段、退役一处中段重复小结并改指章末收束、将跨体系因子与排序明细整理为 9 张对照表，并将发行包与原报告排版异文细目转入注释；所有算例绑定段落与既有章节标题均保持不变。",
+  "routes": [
+    "/docs/book/acidification-and-nutrient-pathways",
+    "/docs/book/water-scarcity-and-reference",
+    "/docs/book/usetox-pathways-and-boundaries"
+  ],
+  "sourceCommit": "046650f2daaa04e65fce0c2bab4dd54288ffce25",
+  "claims": [
+    {
+      "id": "cl-eutro129-category-genealogy",
+      "op": "modify",
+      "from": {
+        "id": "cl-eutro129-category-genealogy",
+        "status": "reviewed",
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-18",
+        "conceptIds": [],
+        "mappingIds": [],
+        "premiseIds": [
+          "cl-path-freshwater",
+          "cl-path-marine",
+          "cl-path-terrestrial",
+          "cl-path-pdf",
+          "cl-path-operation-indicator"
+        ],
+        "evidenceIds": [
+          "ev-eutro129-ilcd2011-eutro",
+          "ev-eutro129-glam2019-eutro",
+          "ev-eutro129-ec2021-field-rules",
+          "ev-eutro129-ef31-nf-eutro",
+          "ev-eutro129-rivm-ch8-s4",
+          "ev-eutro129-recipe2017-eutro",
+          "ev-eutro129-lcimpact2020-eutro",
+          "ev-eutro129-lcimpact-ch8-fw",
+          "ev-eutro129-lcimpact-ch9-marine"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-eutro129-ilcd2011-eutro",
+            "relation": "supports",
+            "rationale": "核实ILCD 2011设立陆地AE、淡水EUTREND、海洋EUTREND共3项Level II中点，正式推荐终点数为0（仅早期ReCiPe淡水列为interim）。"
+          },
+          {
+            "evidenceId": "ev-eutro129-glam2019-eutro",
+            "relation": "supports",
+            "rationale": "核实UNEP GLAM 2019仅覆盖淡水与近岸海洋2项水体富营养化及其局地可逆PDF·m³·yr终点，不单设陆地富营养化。"
+          },
+          {
+            "evidenceId": "ev-eutro129-ec2021-field-rules",
+            "relation": "supports",
+            "rationale": "核实EU 2021/2279表2延续3项富营养化中点且不设损害终点。"
+          },
+          {
+            "evidenceId": "ev-eutro129-ef31-nf-eutro",
+            "relation": "supports",
+            "rationale": "核实EF 3.1三项富营养化人均归一化基准（176.75、1.61、19.55）与单一综合得分权重（3.71%、2.80%、2.96%，合计9.47%）。"
+          },
+          {
+            "evidenceId": "ev-eutro129-rivm-ch8-s4",
+            "relation": "supports",
+            "rationale": "核实ReCiPe 2016排除海洋富营养化（0项）、仅保留1项淡水磷路径（全球平均停留时间85天即0.23年）及三视角恒定终点系数6.1×10⁻⁷ species·年/kg P当量。"
+          },
+          {
+            "evidenceId": "ev-eutro129-recipe2017-eutro",
+            "relation": "supports",
+            "rationale": "核实Huijbregts等2017将海洋富营养化明确列入ReCiPe 2016缺失路径。"
+          },
+          {
+            "evidenceId": "ev-eutro129-lcimpact2020-eutro",
+            "relation": "supports",
+            "rationale": "核实LC-IMPACT在0中点架构下设立淡水（449生态区、1类群鱼类）与海洋（5772流域—LME配对、6类海洋动物）共2项全球灭绝PDF·年终点。"
+          },
+          {
+            "evidenceId": "ev-eutro129-lcimpact-ch8-fw",
+            "relation": "supports",
+            "rationale": "核实LC-IMPACT第8章以全球15000种淡水鱼类丰富度为分母折算全球物种灭绝当量。"
+          },
+          {
+            "evidenceId": "ev-eutro129-lcimpact-ch9-marine",
+            "relation": "supports",
+            "rationale": "核实LC-IMPACT第9章跨66个LME与57个物种低氧敏感度建立海洋富营养化终点。"
+          }
+        ],
+        "scope": "ILCD 2011、EF 2.0–3.1、UNEP GLAM 2019、ReCiPe 2016与LC-IMPACT在富营养化类别数量、接收系统覆盖及中点—终点结构上的四向分叉。",
+        "text": "一旦把算例中的抽象符号 c_FW 换回真实发布的方法体系，首先遇到的不是单一系数的高低，而是富营养化类别架构本身的四向分叉。2011 年《ILCD 手册》与欧盟环境足迹（EF 2.0 至 EF 3.1，及建议书 EU 2021/2279）设立 3 项中点而正式推荐 0 项终点模型（ILCD 仅把早期 ReCiPe 淡水终点列为临时方案）：陆地富营养化采用累积超载（AE，mol N 当量/人归一化基准 176.75、综合权重 3.71%），淡水与海洋富营养化采用欧洲多媒体模型 EUTREND（Struijs 等，2009），分别按淡水磷与近海氮计为 kg P 当量与 kg N 当量（归一化基准 1.61 kg P 当量/人与 19.55 kg N 当量/人，权重 2.80% 与 2.96%，三项合计占 EF 3.1 单一得分权重的 9.47%）。前两节引述的 2019 年 UNEP 全球指南只设淡水与近岸海洋 2 项水体类别及局地可逆 PDF·m³·yr 终点，不单列陆地营养富集。与之形成对照，ReCiPe 2016 全套仅保留 1 项富营养化类别——淡水富营养化（FEP），并明确写明因缺少全球终点模型而未纳入海洋富营养化（0 项海洋类别，方法论文列入缺失路径），大气氮沉降在陆地上也只经土壤氢离子进入陆地酸化；其淡水路径按 0.5°×0.5° 网格水文模型算出全球平均磷停留时间 85 天（0.23 年），再结合淡水水体物种密度 7.89×10⁻¹⁰ species/m³ 与自养藻类、异养鱼类及无脊椎动物响应曲线，在个人主义、等级主义与平等主义三套视角下共用同一个恒定转换系数 6.1×10⁻⁷ species·年/kg P 当量。LC-IMPACT 则设 0 项富营养化中点，也不设陆地富营养化，直接把局地效应乘上特有性与受威胁脆弱性权重，构建 2 项全球不可逆灭绝终点（PDF·年）：淡水富营养化跨 449 个淡水生态区、以全球 15000 种淡水鱼类为唯一效应类群（仅含 1 个类群，不含藻类与无脊椎动物），海洋富营养化则跨 5772 个流域—大型海洋生态系统（LME）配对与 66 个近海 LME，依据 57 个物种的低氧敏感性评估鱼类、甲壳类、软体动物等 6 类海洋动物损害。因此，同一份氮磷排放清单切到 ReCiPe 2016 时，全部水体排氮在富营养化维度得分为 0，绝不能误读为近海无低氧风险。",
+        "reasoning": "并置五套主流导则与方法原件的类别表、覆盖类群与终点公式，证明跨体系对比前必须先核清陆地氮、淡水磷与近海氮三类接收系统是否被该体系纳入，以及终点究竟度量局地可逆消失还是全球物种灭绝。",
+        "caveats": [
+          "ReCiPe 2016对海洋富营养化的省略属于方法覆盖缺口而非零影响判断；LC-IMPACT淡水终点仅覆盖鱼类物种丰富度，不反映蓝藻水华对初级生产者或饮用水源的直接影响。"
+        ]
+      },
+      "rationale": "整合改写：将四套富营养化体系的类别数、权重与模型细目整理入表 1 及注释，正文聚焦覆盖缺口与零分风险。"
+    },
+    {
+      "id": "cl-eutro129-phosphorus-soil-water-interface",
+      "op": "modify",
+      "from": {
+        "id": "cl-eutro129-phosphorus-soil-water-interface",
+        "status": "reviewed",
+        "kind": "calculation",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-18",
+        "conceptIds": [],
+        "mappingIds": [],
+        "premiseIds": [
+          "cl-flow99-phosphorus-interface",
+          "cl-path-operation",
+          "cl-path-operation-indicator",
+          "cl-eutro129-category-genealogy"
+        ],
+        "evidenceIds": [
+          "ev-eutro129-glam2019-eutro",
+          "ev-eutro129-ec2021-field-rules",
+          "ev-eutro129-ef31-eutro-xmls",
+          "ev-eutro129-rivm-ch8-s4",
+          "ev-eutro129-lcimpact-ch8-fw"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-eutro129-glam2019-eutro",
+            "relation": "supports",
+            "rationale": "提供UNEP GLAM 2019背景农业Tier 1总磷施用量10%（0.10）缺省入水损失比例。"
+          },
+          {
+            "evidenceId": "ev-eutro129-ec2021-field-rules",
+            "relation": "supports",
+            "rationale": "核实EU 2021/2279 §4.4.1.5规定磷径流已知记water、未知记soil且严禁双重计入。"
+          },
+          {
+            "evidenceId": "ev-eutro129-ef31-eutro-xmls",
+            "relation": "supports",
+            "rationale": "核实EF 3.1淡水富营养化b53ec18f.xml（29条因子、0条location）水体总磷1.0、土壤总磷0.05、水体与土壤磷酸根0.33与0.016、海水磷0.0。"
+          },
+          {
+            "evidenceId": "ev-eutro129-rivm-ch8-s4",
+            "relation": "supports",
+            "rationale": "核实ReCiPe 2016表8.1淡水总磷1.00、农田土壤总磷0.10、淡水与农田土壤磷酸根0.33与0.033、海水0。"
+          },
+          {
+            "evidenceId": "ev-eutro129-lcimpact-ch8-fw",
+            "relation": "supports",
+            "rationale": "核实LC-IMPACT第8章以5角分栅格分别提供直接入水、农田施磷与USLE通用作物因子0.3土壤侵蚀面积3类因子。"
+          }
+        ],
+        "scope": "本章第四节2 kg农田土壤总磷算例在UNEP GLAM 2019、EF 3.1、ReCiPe 2016与LC-IMPACT下的土壤—水体界面对齐及2倍模型差与10–20倍错配误差。",
+        "text": "把上述类别放回本节刚刚算过的“向背景农田土壤施入 2 kg 总磷”算例，就能精确拆解第 8 章所谈的清单—表征界面分工与错配幅度。欧盟建议书 EU 2021/2279 附件 I 第 4.4.1.5 节规定，田块磷径流量已知时，清单须按离开田块进入水体的净磷量记入水体区室（配 EF 3.1 淡水富营养化方法 XML 的 29 条无位置因子中水体总磷系数 1.0 kg P 当量/kg；海水磷系数为 0.0）；缺少径流资料时，才允许把肥料或粪肥施磷量直接记入“土壤”区室，由方法内置迁移率折减。但不同方法文件内置的土壤入水迁移率并不相同：EF 3.1 沿用 EUTREND 将农田与未指定土壤总磷因子设为 0.05 kg P 当量/kg（隐含 5% 入水迁移率，土壤磷酸根与磷酸均为 0.016），而 ReCiPe 2016 表 8.1 引 Bouwman 等（2009）全球估计将农田土壤总磷因子设为 0.10 kg P 当量/kg（隐含 10% 入水迁移率，土壤磷酸根为 0.033，海水为 0），恰与本节算例引用的 2019 年 UNEP 指南第一层（Tier 1）0.10（10%）清单缺省损失比例同值。对同一笔 2 kg 农田总磷施用：（1）按 UNEP 指南先折算 0.2 kg P 排入淡水再乘水体因子 1.0，或按 ReCiPe 2016 将 2 kg P 直接记入农田土壤乘 0.10，结果同为 0.20 kg P 当量；（2）按 EU 2021/2279 未知径流规则把同一 2 kg P 记入 EF 3.1 土壤流乘 0.05，得 0.10 kg P 当量，仅因缺省迁移率取 5% 而非 10% 就低了一半（相差 2 倍）；（3）若在清单阶段已按 10% 折成 0.2 kg P，映射时却仍挂入 EF 3.1 或 ReCiPe 2016 的“土壤磷”基本流，迁移折减被连乘两次，得分会跌至 0.010 或 0.020 kg P 当量（人为漏算 90%–95%，缩水 10–20 倍）；（4）反之，若把未折减的 2 kg 施磷量直接误挂到“淡水磷”基本流，得分则升至 2.0 kg P 当量（夸大 10–20 倍）。LC-IMPACT 第 8 章进一步放弃固定常数，在 5 角分网格上拆出直接排入淡水、农田施磷径流淋溶与按通用作物系数 0.3 计算的土地侵蚀面积共 3 套因子，要求清单先分清磷究竟来自施肥淋失还是表土侵蚀。",
+        "reasoning": "在固定2 kg P农田施用输入上逐一代入四套合规与错配路径，用精确算术区分模型内置迁移率差异（0.10对0.20）与清单—因子界面错配导致的数量级失真（0.010或2.0）。",
+        "caveats": [
+          "2 kg总磷属于本章教学设定的输入量；EF的5%与ReCiPe/UNEP的10%均为大尺度背景缺省迁移率，不能替代具体坡耕地或灌区的实测磷流失率。"
+        ]
+      },
+      "rationale": "整合改写：将 2 kg 总磷四种映射情景的数值结果移入表 2，正文聚焦界面互斥与双重折减/夸大机制。"
+    },
+    {
+      "id": "cl-eutro129-phosphorus-stoichiometry-and-p2o5",
+      "op": "modify",
+      "from": {
+        "id": "cl-eutro129-phosphorus-stoichiometry-and-p2o5",
+        "status": "reviewed",
+        "kind": "interpretation",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-18",
+        "conceptIds": [],
+        "mappingIds": [],
+        "premiseIds": [
+          "cl-path-operation-indicator",
+          "cl-eutro129-phosphorus-soil-water-interface"
+        ],
+        "evidenceIds": [
+          "ev-eutro129-jrc109369-eutro",
+          "ev-eutro129-ef31-eutro-xmls",
+          "ev-eutro129-rivm-ch8-s4"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-eutro129-jrc109369-eutro",
+            "relation": "supports",
+            "rationale": "核实JRC109369 §4.8表7列出3组淡水含磷物质，并在注*指明P₂O₅未建ILCD基本流、须按磷含量化学计量折算为总磷。"
+          },
+          {
+            "evidenceId": "ev-eutro129-ef31-eutro-xmls",
+            "relation": "supports",
+            "rationale": "核实EF 3.1 b53ec18f.xml淡水磷酸根0.33与磷酸0.32因子。"
+          },
+          {
+            "evidenceId": "ev-eutro129-rivm-ch8-s4",
+            "relation": "supports",
+            "rationale": "核实RIVM 2016-0104 §8.3印p62将五氧化二磷P₂O₅淡水FEP印作0.22 kg P-eq/kg（漏乘2个磷原子），以及表S4.2印p149将对数参数α（-1.430，对应表S4.1的13458 PDF·m³/kg）表头单位误印为[PDF·L/mg]。"
+          }
+        ],
+        "scope": "含磷化合物表征因子的化学计量折算规则，以及RIVM 2016-0104第8章五氧化二磷（P₂O₅）漏乘下标2与附表S4.2单位标度异文。",
+        "text": "本节算例末尾还提醒，改用磷酸盐等化合物质量记录时必须核准质量基准；核对原始方法报告即可发现，即便是纯化学计量折算，在权威印本中也留有成倍偏差。在 EF 3.1 与 ReCiPe 2016 中，排入淡水的磷酸根（PO₄³⁻，摩尔质量约 94.97 g/mol）与磷酸（H₃PO₄，约 98.00 g/mol）因子同为 0.33 与 0.32 kg P 当量/kg，恰对应单个磷原子（30.97 g/mol）占化合物分子量的质量比。然而 ReCiPe 2016 表征报告（RIVM 2016-0104）第 8.3 节（印第 62 页）在正文中推导磷酸与五氧化二磷（P₂O₅）排入淡水的中点因子时，却将五氧化二磷印作 0.22 kg P 当量/kg：由于每个 P₂O₅ 分子（摩尔质量约 141.94 g/mol）含有 2 个磷原子，真实磷质量分数应为 2×30.974/141.943≈0.436（两位有效数字为 0.44），原报告显然只按 1 个磷原子（30.974/141.943≈0.218）计算而漏乘了化学式下标 2，使按 P₂O₅ 计量的磷排放被低估一半；欧盟联合研究中心（JRC）的 EF 方法报告（JRC109369 表 7，仅列磷酸根、磷酸与总磷 3 组淡水物质）则专门加注说明 P₂O₅ 因高反应活性未建独立基本流，含 P₂O₅ 的化肥清单须先按化学计量折算成“总磷”再进入表征。同一份 RIVM 报告第 19 章附表 S4.2（印第 149 页）在给出生态效应曲线半数效应参数 α（如热带与亚热带湖泊异养生物为 -1.430）时，还将表头单位印成“[PDF·L/mg]”，而第 8.4 节正文（印第 63 页）写为“log m³/kg”——实核紧邻表 S4.1 所印线性效应因子 13458 PDF·m³/kg 可知，-1.430 实以 log₁₀(mg/L) 标度定义，需经毫克与立方米换算（0.5 / 10^(−1.430−3)≈13458）方能复现原表数值。原样保留这两处源内异文，才能防止使用者在换算化肥有效磷或复算效应斜率时盲从印本字面值。",
+        "reasoning": "按精确原子量核验PO₄³⁻、H₃PO₄与P₂O₅的磷质量分数及0.5/10^(α-3)公式，定位RIVM 2016-0104印p62漏乘磷原子数2与印p149表S4.2单位错标，并与JRC109369表7注*相互印证。",
+        "caveats": [
+          "本书披露RIVM 2016-0104中P₂O₅=0.22与表S4.2表头单位异文旨在防止应用误算，不代表替原方法团队发布修订版官方表；软件实现若另有修正须逐包单查。"
+        ]
+      },
+      "rationale": "整合改写：压缩算式展开至注释，保留 P₂O₅ 漏乘 2 与表 S4.2 表头单位异文。"
+    },
+    {
+      "id": "cl-eutro129-nitrogen-soil-prohibition",
+      "op": "modify",
+      "from": {
+        "id": "cl-eutro129-nitrogen-soil-prohibition",
+        "status": "reviewed",
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-18",
+        "conceptIds": [],
+        "mappingIds": [],
+        "premiseIds": [
+          "cl-flow99-phosphorus-interface",
+          "cl-path-marine",
+          "cl-path-terrestrial",
+          "cl-eutro129-phosphorus-soil-water-interface"
+        ],
+        "evidenceIds": [
+          "ev-eutro129-ec2021-field-rules",
+          "ev-eutro129-ef31-eutro-xmls",
+          "ev-eutro129-lcimpact-ch9-marine"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-eutro129-ec2021-field-rules",
+            "relation": "supports",
+            "rationale": "核实EU 2021/2279 §4.4.1.5明令禁止将农田氮排放建作排入soil（许可流数为0），并规定表3（0.022、0.12、0.24、1.33）与表4（0.44、0.18、0.024、0.09）清单拆分系数。"
+          },
+          {
+            "evidenceId": "ev-eutro129-ef31-eutro-xmls",
+            "relation": "supports",
+            "rationale": "核实EF 3.1海洋富营养化b5c619fa.xml（590条因子）与陆地富营养化b5c614d2.xml（575条因子）中土壤排放因子条数均为0，并核实水体硝酸根0.226、大气氨0.092与13.47因子。"
+          },
+          {
+            "evidenceId": "ev-eutro129-lcimpact-ch9-marine",
+            "relation": "supports",
+            "rationale": "核实LC-IMPACT第9章表9.3专门提供农田土壤施氮的全球平均海洋富营养化终点因子2.07×10⁻¹⁶ PDF·年/kg N（欧洲平均3.751×10⁻¹⁶）。"
+          }
+        ],
+        "scope": "农田施氮在EU 2021/2279与EF 3.1中的“禁止土壤流”反对称规则、清单气水拆分账本及误填土壤流导致的静默归零风险，与LC-IMPACT土壤氮因子的对比。",
+        "text": "更隐蔽的陷阱在于，农田里的氮与磷表面上同属化肥或粪肥养分输入，在欧盟环境足迹中却遵循截然相反的区室界面规则。EU 2021/2279 附件 I 第 4.4.1.5 节紧接在允许未知径流磷记入“土壤”之后明文规定：海洋富营养化影响评价从氮离开田块之后才开始，因此严禁将农田氮建作排入土壤（允许建入土壤的氮流为 0 条），每千克施入田块的氮必须在生命周期清单阶段拆算到空气与水体——表 3 默认按修订版 IPCC（2006）第一层系数计入空气氧化亚氮 0.022 kg N₂O/kg N（进入第 15 章化石气候变化子指标）、空气氨挥发 0.12 kg NH₃/kg N（合成氮肥）或 0.24 kg NH₃/kg N（粪肥），以及水体硝酸根淋溶 1.33 kg NO₃⁻/kg N（另设表 4 氮平衡备选测试方案：水体基础硝酸根损失 0.44 kg NO₃⁻/kg N，尿素、硝酸铵与其他合成肥氨挥发分别为 0.18、0.12 与 0.024 kg NH₃/kg N，氮气反硝化 0.09 kg N₂/kg N）。核查 EF 3.1 官方数据包即可印证这一机读边界：无论是含 590 条因子的海洋富营养化 XML，还是含 575 条因子的陆地富营养化 XML，土壤排放区室均为 0 条因子。假定某作物过程向田块施入 10 kg 合成氮肥纯氮，按表 3 合规拆分后，仅排入水体的 13.3 kg NO₃⁻（乘 0.226）与排入空气的 1.2 kg NH₃（乘通用 0.092 与 13.47）就会产生约 3.12 kg N 当量的海洋富营养化和 16.16 mol N 当量的无国别陆地富营养化；倘若建模者照搬施磷习惯，把这 10 kg 氮直接录成“排入农田土壤的氮”，软件既不会报错也不会自动补算淋溶与挥发，而是在 EF 3.1 全部富营养化与酸化类别中静默算出 0 分。相反，LC-IMPACT 第 9 章表 9.3 则把农田地下水淋溶收进影响模型，为土壤施氮提供全球平均 2.07×10⁻¹⁶ PDF·年/kg N（欧洲平均 3.751×10⁻¹⁶ PDF·年/kg N）的终点因子；跨库复用农业清单时，必须先查明土壤氮流在目标方法包里究竟配有流域淋溶系数还是直接悬空归零。",
+        "reasoning": "联立EU 2021/2279 §4.4.1.5条文、EF 3.1两份含氮方法XML零土壤流统计与10 kg合成氮肥算例复算，揭示磷氮在田间边界上的反对称设计及土壤氮流静默归零机制。",
+        "caveats": [
+          "EU 2021/2279表3明文限定该组Tier 1固定排放系数不得用于比较不同种类的合成氮肥；涉及尿素与硝铵等品种对比时须采用更精细的田间氮平衡或实测模型。"
+        ]
+      },
+      "rationale": "整合改写：将表 4 备选方案与分项乘式移入注释，正文突出土壤氮静默归零与 LC-IMPACT 对比。"
+    },
+    {
+      "id": "cl-eutro129-aquatic-and-airborne-n-reversals",
+      "op": "modify",
+      "from": {
+        "id": "cl-eutro129-aquatic-and-airborne-n-reversals",
+        "status": "reviewed",
+        "kind": "calculation",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-18",
+        "conceptIds": [],
+        "mappingIds": [],
+        "premiseIds": [
+          "cl-path-marine",
+          "cl-path-limiting-conditions",
+          "cl-eutro129-category-genealogy",
+          "cl-eutro129-nitrogen-soil-prohibition"
+        ],
+        "evidenceIds": [
+          "ev-eutro129-jrc109369-eutro",
+          "ev-eutro129-ef31-eutro-xmls",
+          "ev-eutro129-rivm-ch8-s4",
+          "ev-eutro129-lcimpact-ch9-marine"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-eutro129-jrc109369-eutro",
+            "relation": "supports",
+            "rationale": "核实JRC109369 §4.8印p20说明EF海洋富营养化将未指定水体因子直接近似赋给淡水与海水，表7列出7组含氮物质且不含COD/BOD。"
+          },
+          {
+            "evidenceId": "ev-eutro129-ef31-eutro-xmls",
+            "relation": "supports",
+            "rationale": "核实b5c619fa.xml（50条通用行、0条COD/BOD行）中淡水与海水因子逐项相等（总氮1.0、氨0.824、铵0.778、亚硝酸根0.304、硝酸根0.226）及大气NOx因子0.389。"
+          },
+          {
+            "evidenceId": "ev-eutro129-rivm-ch8-s4",
+            "relation": "supports",
+            "rationale": "核实ReCiPe 2016海洋富营养化类别数为0。"
+          },
+          {
+            "evidenceId": "ev-eutro129-lcimpact-ch9-marine",
+            "relation": "supports",
+            "rationale": "核实LC-IMPACT第9章排除大气氮沉降（0项因子），且表9.3全球平均河流排氮因子9.16×10⁻¹⁶ PDF·年/kg仅为近海直排1.95×10⁻¹⁵ PDF·年/kg的47.0%（欧洲平均1.962×10⁻¹⁵对3.869×10⁻¹⁵）。"
+          }
+        ],
+        "scope": "EF 3.1河海1:1纯化学计量假设对LC-IMPACT流域滞留衰减及排除大气氮沉降在内陆排氮、沿海直排与燃烧排氮方案间的双向次序反转。",
+        "text": "进入水系和大气之后，模型对“内陆河流反硝化滞留”与“大气含氮沉降”的取舍，又会让水体与空气排氮方案在不同体系间出现双向次序反转。核查 EF 3.1 海洋富营养化方法 XML 的 50 条无位置通用因子（覆盖 JRC109369 表 7 所列 7 组含氮物质，未收化学需氧量与生化需氧量，对应 0 条因子）可见，每一项水体含氮物质在“排入淡水”与“排入海水”两个区室下的因子分毫不差，且全按氮元素化学计量质量比赋值：总氮（不含 N₂）为 1.0、氨为 0.824、铵离子为 0.778、亚硝酸根为 0.304、硝酸根为 0.226 kg N 当量/kg——正如 JRC109369（印第 20 页）所坦承，河流排氮入海折减尚待研究，现行包直接把未指定水体因子近似复制给淡水和海水，等于假定内陆河湖排出的氮 100% 无衰减抵达近海。而在 LC-IMPACT 第 9 章表 9.3 中，计入内陆水系滞留与河口脱氮后，全球平均河流排氮损害因子（9.16×10⁻¹⁶ PDF·年/kg N）仅为近海直排（1.95×10⁻¹⁵ PDF·年/kg N）的约 47.0%（欧洲平均亦为 1.962×10⁻¹⁵ 对 3.869×10⁻¹⁵，约 50.7%）。设比较方案甲（内陆河段排放 1.5 kg 水体总氮）与方案乙（沿海直排 1.0 kg 海水总氮）：按 EF 3.1 计算，甲为 1.5、乙为 1.0 kg N 当量，甲劣于乙；改按 LC-IMPACT 全球平均因子计算，甲为 1.374×10⁻¹⁵、乙为 1.95×10⁻¹⁵ PDF·年，次序反转为甲优于乙；切到海洋富营养化类别数为 0 的 ReCiPe 2016，两方案在该维度则同为 0。再比较方案丙（向空气排放 3 kg 氮氧化物 NOx）与方案丁（向淡水河流排放 1 kg 硝酸根 NO₃⁻）：EF 3.1 海洋富营养化给空气 NOx 赋 0.389 kg N 当量/kg，判丙（1.167 kg N 当量）高于丁（0.226 kg N 当量）逾五倍；LC-IMPACT 第 9 章却因模型仅追踪水载总氮而将大气含氮排放排除在外（设 0 项大气因子），判丙为 0，丁按硝酸根含氮比 0.226 乘全球河流因子 9.16×10⁻¹⁶ 约为 2.07×10⁻¹⁶ PDF·年，优劣再次颠倒。固定正倍率既消不掉内陆滞留差异，也跨不过大气沉降纳排边界。",
+        "reasoning": "通过方案甲/乙（内陆1.5 kg N对近海1.0 kg N）与方案丙/丁（空气3 kg NOx对河流1 kg NO₃⁻）两组精确算例，证明EF 3.1河海1:1化学计量赋值与LC-IMPACT流域衰减及排除大气氮会导致实质方案逆序。",
+        "caveats": [
+          "LC-IMPACT表9.3全球与洲际平均因子按氮肥施用量或海岸线长度加权汇总；实际内陆排放是否优于沿海直排，在区域评估中须取决于具体流域至受纳LME的水力停留时间与底层缺氧敏感度。"
+        ]
+      },
+      "rationale": "整合改写：压实至 420 字以内，紧凑呈现内陆滞留与大气沉降两组跨体系排序反转。"
+    },
+    {
+      "id": "cl-eutro129-location-copies-and-nox-inversion",
+      "op": "modify",
+      "from": {
+        "id": "cl-eutro129-location-copies-and-nox-inversion",
+        "status": "reviewed",
+        "kind": "interpretation",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-18",
+        "conceptIds": [],
+        "mappingIds": [],
+        "premiseIds": [
+          "cl-acid113-so2-rows",
+          "cl-acid113-nh3-control",
+          "cl-eutro129-aquatic-and-airborne-n-reversals"
+        ],
+        "evidenceIds": [
+          "ev-eutro129-ef31-eutro-xmls",
+          "ev-eutro129-ef31-nf-eutro"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-eutro129-ef31-eutro-xmls",
+            "relation": "supports",
+            "rationale": "核实b5c619fa.xml的540条location记录全恒等于通用值（0.389与0.092；无国别NO=0.596、铵0.087、硝酸根0.028），而b5c614d2.xml（35条通用+540条分国）中通用NOx/NO₂=4.26高于全部36国（GR 0.3至LU 3.547，高空NO₂ LU为3.55；通用NO=6.532），氨（13.47）跨IE 1.085至CH 21.2。"
+          },
+          {
+            "evidenceId": "ev-eutro129-ef31-nf-eutro",
+            "relation": "supports",
+            "rationale": "核实EF 3.1全球归一化工作簿第1284–1286行对全球NOx排放直接套用高于全部36国峰值的通用因子4.26。"
+          }
+        ],
+        "scope": "EF 3.1海洋富营养化540条恒定location匹配行与陆地富营养化无国别NOx因子（4.26）高于全部36个欧洲国家代码（最高3.547）的机读结构辨析。",
+        "text": "读取 EF 3.1 两份含氮富营养化方法 XML 的空间代码时，还会遇到“带国别却毫无国别差异”与“缺省值反超全部单列国家”两类相反的机读构造。在海洋富营养化方法中，除 50 条无位置通用行（含空气一氧化氮 0.596、空气铵 0.087、空气硝酸根 0.028 kg N 当量/kg）外，确为氮氧化物、二氧化氮与氨的 15 个空气子区室流配置了覆盖 36 个欧洲国家或地区代码的 540 条位置代码（location）记录；但全部 540 条数值与无位置通用行完全恒等——氮氧化物与二氧化氮一律填 0.389 kg N 当量/kg，氨一律填 0.092 kg N 当量/kg，致使瑞士、奥地利、捷克、卢森堡等纯内陆国与沿海国拥有一模一样的“海洋富营养化”大气系数，其作用仅是防止挂有国别标签的空气流在表征时落空。而在真正采用分国累积超载模型的陆地富营养化方法（35 条通用行加同样 36 个欧洲代码的 540 条分国行）中，空间分异虽极其显著——大气氨通用值为 13.47 mol N 当量/kg，36 国从最低爱尔兰 1.085 到最高瑞士 21.2 mol N 当量/kg 横跨约 19.5 倍——但氮氧化物与二氧化氮的无位置通用值（4.26 mol N 当量/kg；无位置一氧化氮为 6.532）却严格高于全部 36 个已登记欧洲代码（最低希腊 0.3，最高卢森堡在氮氧化物与四个常规二氧化氮子区室为 3.547、仅高空二氧化氮四舍五入为 3.55），比全欧最高国别值还高出约 20.1%，原因在于通用行沿用了早期欧洲参考情景系数，未随 Posch 等（2008）的 36 国重算结果同步更新。不仅如此，EF 3.1 官方全球归一化工作簿在汇总全球大气氮氧化物排放时，直接套用了这个高于全欧峰值的 4.26。因此，在 EF 3.1 陆地富营养化中遗漏欧洲排放国代码，得到的并非各国平均水平，而是对氮氧化物人为抬高逾两成的上界惩罚值。",
+        "reasoning": "逐行比对b5c619fa.xml与b5c614d2.xml全部540条location记录同通用行的大小关系，联动NF工作簿第1284–1286行，阐明伪区域化恒值匹配行与高于全欧最大值的通用缺省值对清单核查的实际影响。",
+        "caveats": [
+          "EF 3.1陆地富营养化方法XML文件中通用NOx=4.26源自早期欧洲参考情景而36国分国行源自后续Posch等2008重算，不可用36国算术或排放加权均值反推通用行。"
+        ]
+      },
+      "rationale": "整合改写：提炼恒值位置复制与通用 NOx 反超全欧峰值两类空间构造，补充行明细入注释。"
+    },
+    {
+      "id": "cl-eutro129-normalization-double-counting-and-xml-anomalies",
+      "op": "modify",
+      "from": {
+        "id": "cl-eutro129-normalization-double-counting-and-xml-anomalies",
+        "status": "reviewed",
+        "kind": "calculation",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-18",
+        "conceptIds": [],
+        "mappingIds": [],
+        "premiseIds": [
+          "cl-eutro129-phosphorus-soil-water-interface",
+          "cl-eutro129-location-copies-and-nox-inversion"
+        ],
+        "evidenceIds": [
+          "ev-eutro129-ec2021-field-rules",
+          "ev-eutro129-jrc130796-eutro",
+          "ev-eutro129-ef31-eutro-xmls",
+          "ev-eutro129-ef31-nf-eutro"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-eutro129-ec2021-field-rules",
+            "relation": "supports",
+            "rationale": "提供EU 2021/2279 §4.4.1.5农田施磷“土壤流”与“水体径流流”互斥的法规基准。"
+          },
+          {
+            "evidenceId": "ev-eutro129-jrc130796-eutro",
+            "relation": "supports",
+            "rationale": "核实JRC130796表10印载归一化基准（177、1.61、19.5，变动0%）及表13印p30将EF3.1第4顺位整列重复印作第5顺位（152/152、8/8、201/201）。"
+          },
+          {
+            "evidenceId": "ev-eutro129-ef31-eutro-xmls",
+            "relation": "supports",
+            "rationale": "核实三份富营养化XML文件大小（26005、330296、328944 B）、零converter副本、inventoryItems错填3/7/6、淡水2条重复Phosphorus UUID、Struijs 2008年份、27条空location对8条省略location，以及铵（12.72166667对12.7217）与硝酸根（3.160645161对3.16065）舍入分裂。"
+          },
+          {
+            "evidenceId": "ev-eutro129-ef31-nf-eutro",
+            "relation": "supports",
+            "rationale": "核实Normalisation_Weighting_Factors_EF_3.1.xlsx在全球6895889018人口下对淡水磷（第1406–1408行）与海洋氮（第1283与1288行）的双重累加明细。"
+          }
+        ],
+        "scope": "EF 3.1官方归一化工作簿在淡水磷与海洋氮分母中的农业双重计算，以及三份富营养化XML与JRC130796表13的源内异文披露。",
+        "text": "将农田互斥规则拿去反查 EF 3.1 随包发布的官方全球归一化工作簿（2010 年全球基准人口 6895889018 人），还能发现归一化分母自身就违背了“土壤施磷与入水径流二选一”的建模铁律。在淡水富营养化计算表（官方人均基准约 1.61，精确值 1.6069 kg P 当量/人，较 EF 3.0 变动 0%）中，第 1406 与 1407 行先按 Bouwman 等（2013）计入全球农田化肥施磷 1.58×10¹⁰ kg 与粪肥施磷 1.88×10¹⁰ kg 并乘土壤因子 0.05（合 1.73×10⁹ kg P 当量），紧接着第 1408 行又按 Scherer 与 Pfister（2015）同时叠加全球农业排入淡水总磷 5.821×10⁹ kg 并乘水体因子 1.0（另加第 1409 行污水处理厂 3.529×10⁹ kg），把全球农田向水体输移的磷按两套文献口径重复算进同一分母，推高人均基准 +0.2509 kg P 当量/人（占官方基准的 15.6%）；海洋富营养化（精确值 19.55 kg N 当量/人）同样在第 1283 行计入 Oita 等（2016）全球水体硝酸根 7.50×10¹⁰ kg（乘 0.226 得 1.695×10¹⁰ kg N 当量）后，又在第 1288 行叠加 Bouwman 等（2013）全球农业入淡水总氮 5.92×10¹⁰ kg（乘 1.0，另加第 1289 行污水处理厂 9.691×10⁹ kg）。与此同时，EF 3.1 三份富营养化方法 XML 原件与 2023 年更新报告还留存五处机读或排版异文：（1）淡水方法同时收录 2 条同名同 CAS 号的淡水单质磷流 UUID（一条带 EC 号、一条空缺，系数均为 1.0）；（2）三份文件的清单条目数栏（inventoryItems）分别填作 3、7、6，远小于实际 29、590、575 条因子，且淡水与海洋方法的参考量底层复用通用质量属性 Mass；（3）海洋方法名称漏写逗号作“Eutrophication marine”，且淡水与海洋引用的外部源记录标为 Struijs 等 2008 年（报告正文均引 2009 年）；（4）陆地方法指标名末尾多出一格空格，35 条通用行拆成 27 条空位置标签与 8 条省略位置标签，且空气铵（12.72166667 对 12.7217）与硝酸根（3.160645161 对 3.16065）在不同子区室间存在舍入分裂；（5）2023 年更新报告表 13（印第 30 页）在统计官方节点数据集中位列单一总分贡献前五位影响类别的数据集个数时，把 EF 3.1 下第 5 顺位整列印成与第 4 顺位完全相同的重复值（三项富营养化均为 152 与 152、8 与 8、201 与 201）。这些原件瑕疵须在审计时明示保留，不能在后台私自改写官方常数。",
+        "reasoning": "逐行核算Normalisation_Weighting_Factors_EF_3.1.xlsx第1406–1409行与第1283、1288–1289行加总及人口商值，并核验三份富营养化XML与JRC130796表13字节与文本，完整固化官方发行包边界。",
+        "caveats": [
+          "合规PEF研究在计算归一化与加权得分时仍须使用欧盟官方发布的固定NF常数，但在跨方法解释农业磷贡献占比时应知晓分母中含15.6%的土壤与水体双重计入分量。"
+        ]
+      },
+      "rationale": "整合改写：正文突出归一化分母 15.6% 农田磷双重计入与海洋氮叠加，将行号明细与五处 XML/排版异文移入注释。"
+    },
+    {
+      "id": "cl-ozone119-precursor-entry",
+      "op": "modify",
+      "from": {
+        "id": "cl-ozone119-precursor-entry",
+        "text": "磷算例处理的是单一路径下由施用量推算净排放；回到空气排放清单，同一项前体记录往往还要在沉降前后进入多条环境路径。前面按沉降追踪硫氧化物、氮氧化物与氨时，关注的是它们落到土壤或水体后的酸输入与氮素供应；可在离开大气之前，排入空气的氮氧化物还会与非甲烷挥发性有机物（NMVOC）、一氧化碳及甲烷在阳光照射下发生非线性光化学反应，生成对流层臭氧。臭氧本身并非过程直接排出的清单流，却能刺激人群呼吸道、增加慢性呼吸疾病死亡风险，并在植物生长期损伤叶片气孔功能、抑制森林与草地生长。要给这类次生污染物建立表征因子，模型不仅要指明针对哪一种前体的排放增量计算边际响应，还要交代背景大气处于何种氮氧化物与有机物比例，以及最终统计的是人口吸入量还是植被暴露量。",
+        "kind": "interpretation",
+        "scope": "从单路径净排放算例与大气沉降转向对流层光化学臭氧形成的次生反应机制与受体前提。",
+        "evidenceIds": [
+          "ev-ozone119-ilcd2011-pof-methods",
+          "ev-ozone119-rivm-ch6-split-and-tables",
+          "ev-ozone119-recipe2017-ozone-overview"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-ozone119-ilcd2011-pof-methods",
+            "relation": "supports",
+            "rationale": "ILCD 2011界定对流层臭氧由VOC、CO在NOx与光照存在下经次生光化学氧化生成。"
+          },
+          {
+            "evidenceId": "ev-ozone119-rivm-ch6-split-and-tables",
+            "relation": "supports",
+            "rationale": "RIVM 2016-0104第6章说明臭氧非直接排放物，其非线性生成依赖气象与NOx/NMVOC背景浓度并同时影响人群呼吸健康与陆生植被。"
+          },
+          {
+            "evidenceId": "ev-ozone119-recipe2017-ozone-overview",
+            "relation": "supports",
+            "rationale": "Huijbregts等2017将臭氧人口摄入与生长期植被暴露分别对应人体健康与陆地生态系统两类保护对象。"
+          }
+        ],
+        "premiseIds": [
+          "cl-path-acid-soil",
+          "cl-path-operation-indicator"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "此处讨论对流层近地面生成的次生臭氧（夏季光化学烟雾），不同于平流层臭氧层耗竭所对应的紫外辐射路径。"
+        ],
+        "reasoning": "次生臭氧不在排放口直接计量，表征因子必然绑定前体身份、背景光化学状态与所选受体暴露定义。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-17",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：精简过渡句，平滑承接大气沉降与对流层光化学臭氧路径。"
+    },
+    {
+      "id": "cl-ozone119-pocp-to-lotos",
+      "op": "modify",
+      "from": {
+        "id": "cl-ozone119-pocp-to-lotos",
+        "text": "围绕这条路径，常见中点指标经历了从纯化学反应活性到单受体源—受体模型、再到双受体拆分的演变。CML 2002 采用的光化学臭氧生成潜势（POCP）以乙烯为参照（kg 乙烯当量），比较单一有机物在气团轨迹中生成臭氧的相对能力，却不给氮氧化物赋因子，也不计入下风向人口或植被分布。2011 年《ILCD 手册》与欧盟环境足迹（EF 3.0、EF 3.1）改用 ReCiPe 2008 所依托的欧洲区域化学传输模型 LOTOS-EUROS，只设一项面向人体健康的臭氧中点，以 kg NMVOC 当量表示：在 EF 3.1 官方方法文件中，未指定空气排放的 NMVOC、氮氧化物、二氧化氮与一氧化氮均赋 1.0 kg NMVOC 当量/kg，乙烯为 1.69，甲烷为 0.0101，泛指挥发性有机物（VOC）则按 2004 年欧洲 14.0 Mt NMVOC 与 47.8 Mt 甲烷排放量加权定为 0.235。ReCiPe 2016 则因“NMVOC 是物质混合物”改以二氧化氮口径的氮氧化物作参照（kg NOx 当量；一氧化氮、二氧化氮、三氧化氮按等摩尔氮折合二氧化氮质量，系数依次为 1.53、1、0.74），并借全球源—受体大气模型 TM5-FASST 拆成两项中点：按单位排放引起的人群臭氧呼吸摄入分数定义的人体健康臭氧形成潜势（HOFP），其终点按 30 岁及以上呼吸死亡乘 9.1×10⁻⁷ 伤残调整寿命年（DALY）/kg NOx 当量；以及按森林和草地生长期日间臭氧超过 40 ppb 的累积暴露量（AOT40）定义的陆地生态臭氧形成潜势（EOFP），其终点乘 1.29×10⁻⁷ species·yr/kg NOx 当量。",
+        "kind": "interpretation",
+        "scope": "CML 2002 POCP、ILCD/EF LOTOS-EUROS单中点与ReCiPe 2016 HOFP/EOFP双中点的构造与参照差异。",
+        "evidenceIds": [
+          "ev-ozone119-ilcd2011-pof-methods",
+          "ev-ozone119-jrc109369-voc-and-label",
+          "ev-ozone119-ef31-pof-core-factors",
+          "ev-ozone119-rivm-ch6-split-and-tables",
+          "ev-ozone119-recipe2017-ozone-overview"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-ozone119-ilcd2011-pof-methods",
+            "relation": "supports",
+            "rationale": "ILCD 2011对比CML 2002 POCP与推荐的ReCiPe 2008 LOTOS-EUROS人体健康单中点。"
+          },
+          {
+            "evidenceId": "ev-ozone119-jrc109369-voc-and-label",
+            "relation": "supports",
+            "rationale": "JRC109369说明EF沿用Van Zelm等2008并用14.0 Mt NMVOC与47.8 Mt CH4加权得到泛指VOC因子。"
+          },
+          {
+            "evidenceId": "ev-ozone119-ef31-pof-core-factors",
+            "relation": "supports",
+            "rationale": "EF 3.1官方XML实测NMVOC/NOx/NO2/NO=1.0、乙烯=1.69、甲烷=0.0101、VOC=0.235。"
+          },
+          {
+            "evidenceId": "ev-ozone119-rivm-ch6-split-and-tables",
+            "relation": "supports",
+            "rationale": "RIVM 2016-0104说明改用NOx参照的理由、NO/NO2/NO3摩尔换算及HOFP与EOFP中点／终点定义。"
+          },
+          {
+            "evidenceId": "ev-ozone119-recipe2017-ozone-overview",
+            "relation": "context",
+            "rationale": "2017论文确认EOFP为相对ReCiPe 2008新增的陆地生态臭氧路径且未作情景时间区分。"
+          }
+        ],
+        "premiseIds": [
+          "cl-ozone119-precursor-entry"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "按报告印载权重14.0×1.0与47.8×0.0101除以61.8的精确商约为0.23435（四舍五入取三位有效数字为0.234），EF 3.1官方方法XML刊载值为0.235（末位高0.001）；NO在EF 3.1光化学臭氧中保持1.0，而在同包酸化与富营养化及ReCiPe 2016臭氧中均按摩尔质量换算。"
+        ],
+        "reasoning": "三套指标不仅换了参照物质（乙烯、NMVOC、NOx），还改变了是否纳入NOx、人口空间分布与生长期植被阈值暴露。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-17",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：首次展开伤残调整生命年（DALY），将三代光化学臭氧体系参数汇总入表 3 与注释。"
+    },
+    {
+      "id": "cl-ozone119-order-reversal",
+      "op": "modify",
+      "from": {
+        "id": "cl-ozone119-order-reversal",
+        "text": "把参照从 NMVOC 换成 NOx 并拆开两类受体，并不是给原指标乘一个单位换算常数。在 ReCiPe 2016 世界加权平均表中，NOx 在两项中点下均为 1，而 1 kg NMVOC 在人体健康 HOFP 下为 0.18 kg NOx 当量，在陆地生态 EOFP 下为 0.29 kg NOx 当量——也就是说，全球平均每千克 NOx 的权重分别是每千克 NMVOC 的约 5.56 倍与约 3.45 倍，而在 EF 3.1 中通用 NMVOC 与 NOx 却是 1∶1 等权。设比较方案甲（排放 1 kg NOx）与方案乙（排放 2 kg NMVOC）：按 EF 3.1 计算，甲为 1.0、乙为 2.0 kg NMVOC 当量，甲只有乙的一半；改用 ReCiPe 2016 世界均值，甲在 HOFP（1.0 对 0.36 kg NOx 当量）和 EOFP（1.0 对 0.58 kg NOx 当量）下都反过来明显高于乙。再在 ReCiPe 2016 内部比较方案丙（0.25 kg NOx）与方案丁（1 kg NMVOC）：按人体健康 HOFP 计，丙高于丁（0.25 对 0.18）；按陆地生态 EOFP 计，丙却低于丁（0.25 对 0.29）。人口密集区与森林草地生长期对两类前体的空间响应权重不同，决定了单靠一个正常数既不能连通 EF 与 ReCiPe，也不能在 ReCiPe 内部由人体臭氧当量推算生态臭氧当量。",
+        "kind": "interpretation",
+        "scope": "EF 3.1光化学臭氧形成与ReCiPe 2016全球HOFP/EOFP之间的前体替代比差异及跨体系、跨受体排序反转证明。",
+        "evidenceIds": [
+          "ev-ozone119-ef31-pof-core-factors",
+          "ev-ozone119-rivm-ch6-split-and-tables"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-ozone119-ef31-pof-core-factors",
+            "relation": "supports",
+            "rationale": "EF 3.1对Nitrogen oxides与通用NMVOC均赋1.0 kg NMVOC eq/kg，故1 kg NOx对2 kg NMVOC得1.0 < 2.0。"
+          },
+          {
+            "evidenceId": "ev-ozone119-rivm-ch6-split-and-tables",
+            "relation": "supports",
+            "rationale": "RIVM 2016-0104表6.1与表6.2给出世界平均HOFP（1与0.18）和EOFP（1与0.29），直接推出跨体系与跨受体排序反转。"
+          }
+        ],
+        "premiseIds": [
+          "cl-ozone119-pocp-to-lotos"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "方案甲至丁是为展示已发布表征因子代数关系的受控前体对照，不代表某一具体燃烧设备减排工程的全部伴随排放。"
+        ],
+        "reasoning": "当两个指标对NOx与NMVOC赋予不同的相对比值（1∶1、1∶0.18、1∶0.29）时，跨前体权衡必然存在排序反转区间，排除了单标量换算。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-17",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：压缩措辞，清晰呈现跨体系与同体系跨受体的双重排序反转。"
+    },
+    {
+      "id": "cl-ozone119-titration-sign",
+      "op": "modify",
+      "from": {
+        "id": "cl-ozone119-titration-sign",
+        "text": "进入分区域因子表后，光化学反应的非线性还会让同一千克氮氧化物在两类臭氧受体之间出现一负一正的符号翻转。ReCiPe 2016 表征报告（RIVM 2016-0104）附表 S2.1 显示，在比利时、卢森堡与荷兰合并区域，NOx 的人体健康臭氧因子 HOFP 为 −0.48 kg NOx 当量/kg（英国与爱尔兰区域为 −0.20），而同一区域 NOx 的陆地生态臭氧因子 EOFP 却为 +0.16 kg NOx 当量/kg（英国与爱尔兰为 +0.44）；同一行里 NMVOC 的两项因子则分别升至 +0.69 与 +1.10（英国与爱尔兰为 +0.60 与 +1.15）。原因在于高密度城市群背景 NOx 浓度已处高位，局部新增的一氧化氮会先与近地面臭氧发生滴定反应（NO + O₃ → NO₂ + O₂），在近源区直接消耗臭氧、减少城市人口的臭氧吸入量，而生成的二氧化氮随气团向下风向输送并继续光化学演化后，仍在森林与草地生长期推高超阈值累积臭氧暴露。由此可见，负号只记录 2000 年参考排放附近对局地人口臭氧摄入的边际方向，既不是氮氧化物在所有地区的通性，也不代表生态臭氧损害一并下降。",
+        "kind": "interpretation",
+        "scope": "ReCiPe 2016附表S2.1中比荷卢与英爱区域NOx在人体HOFP与生态EOFP之间的正负号翻转及其化学与空间机理边界。",
+        "evidenceIds": [
+          "ev-ozone119-rivm-ch6-split-and-tables",
+          "ev-ozone119-rivm-s21-titration"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-ozone119-rivm-ch6-split-and-tables",
+            "relation": "context",
+            "rationale": "第6章阐明臭氧生成依赖背景NOx与NMVOC浓度，并区分人口呼吸摄入iF与森林草地生长期AOT40。"
+          },
+          {
+            "evidenceId": "ev-ozone119-rivm-s21-titration",
+            "relation": "supports",
+            "rationale": "表S2.1直接给出比荷卢（-0.48与+0.16；NMVOC 0.69与1.10）及英国爱尔兰（-0.20与+0.44；NMVOC 0.60与1.15）实测区域因子。"
+          }
+        ],
+        "premiseIds": [
+          "cl-path-marginal-average",
+          "cl-ozone119-order-reversal"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "表S2.1中的负值受限于TM5-FASST模型围绕2000年参考排放计算的边际灵敏度；若区域大幅削减NOx跨过化学敏感区，边际斜率与符号均会改变。"
+        ],
+        "reasoning": "同一源区域对城市人口吸入与下风向植被AOT40具有相反边际符号，证明单受体臭氧指标无法代理另一受体，也说明工作点条件对边际因子的决定作用。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-17",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：联动表 3，精炼滴定反应机理与边际符号边界。"
+    },
+    {
+      "id": "cl-ozone119-ef-location-copy",
+      "op": "modify",
+      "from": {
+        "id": "cl-ozone119-ef-location-copy",
+        "text": "与这种真实源—受体区域分异相对照，读取数据包时还须辨别“带有国家代码的条目”究竟是区域化模型结果，还是为避免国别流匹配落空而复制的恒定缺省值。核查 EF 3.1 光化学臭氧方法 XML 的全部 1401 条因子可见，其中确有 720 条写明了 36 个欧洲国家或地区位置代码（覆盖二氧化氮、氮氧化物、二氧化硫和硫氧化物共 20 个空气流），但无论是比利时、荷兰、英国还是其余代码，氮氧化物和二氧化氮一律填 1.0 kg NMVOC 当量/kg，硫氧化物和二氧化硫一律填 0.0811 kg NMVOC 当量/kg，与无位置通用行分毫不差。而在同一参考包的酸化方法与陆地富营养化方法中，同一个未指定空气氮氧化物基本流却在通用 0.74 mol H⁺ 当量/kg 与 4.26 mol N 当量/kg 之外，对比利时、荷兰、英国分别给出 0.837、0.892、0.729 mol H⁺ 当量/kg 和 2.72、2.109、1.084 mol N 当量/kg。正如第 8 章所见，一旦清单为酸化和富营养化给空气流挂上了排放国标签，光化学臭氧、海洋富营养化和颗粒物方法也必须为这些位置标签保留匹配条目，否则带国别的排放就会漏算；见到位置字段，并不等于该类别已经做了分国臭氧模拟。",
+        "kind": "interpretation",
+        "scope": "EF 3.1光化学臭氧XML中720条恒值location记录的流匹配作用与酸化／陆地富营养化真实国家分异因子的区分。",
+        "evidenceIds": [
+          "ev-ozone119-ef31-location-replication",
+          "ev-ozone119-ef31-multipath-uuid"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-ozone119-ef31-location-replication",
+            "relation": "supports",
+            "rationale": "穷举核实b5c610fe.xml全部720条带location因子恒为1.0或0.0811，而同UUID氮氧化物流在b5c611c6与b5c614d2中呈现显著国家差异。"
+          },
+          {
+            "evidenceId": "ev-ozone119-ef31-multipath-uuid",
+            "relation": "supports",
+            "rationale": "同包海洋富营养化（3.8900E-01）与颗粒物（1.6000E-06）同样在BE/NL/GB保留与通用行等值的匹配条目。"
+          }
+        ],
+        "premiseIds": [
+          "cl-acid113-so2-rows",
+          "cl-ozone119-titration-sign"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "此处仅指明EF 3.1发行XML中location条目的数值构造事实，不否定底层LOTOS-EUROS在推导欧洲均值时使用了网格大气传输计算。"
+        ],
+        "reasoning": "区分数据格式中的位置键匹配与科学模型中的空间分异，防止把恒值复制误读为分国没有差异或已完成分国率定。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-17",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：紧扣恒值复制与真实分国因子的对照，去除冗余举例展开。"
+    },
+    {
+      "id": "cl-ozone119-multipath-accounting",
+      "op": "modify",
+      "from": {
+        "id": "cl-ozone119-multipath-accounting",
+        "text": "把这些大气与沉降类别并排核对，就能用真实发行数据看清同一前体跨越多个中点时的核算边界。在 EF 3.1 中，向未指定空气排放 1 kg 氮氧化物，按同一基本流 UUID 同时计入光化学臭氧 1.0 kg NMVOC 当量、酸化 0.74 mol H⁺ 当量、陆地富营养化 4.26 mol N 当量、海洋富营养化 0.389 kg N 当量，以及颗粒物健康损害 1.6×10⁻⁶ 疾病发生率；排放 1 kg 化石甲烷同时计入第 15 章的气候变化 29.8 kg CO₂ 当量（EF 3.1 沿用 AR6 勘误前值）与光化学臭氧 0.0101 kg NMVOC 当量；排放 1 kg 一氯甲烷则同时计入平流层臭氧耗竭 0.015 kg CFC-11 当量、气候变化 5.54 kg CO₂ 当量与光化学臭氧 0.00845 kg NMVOC 当量。分子在大气中先参与自由基和臭氧循环、辐射吸收，随后又可转化为硝酸盐气溶胶被人群吸入或沉降到土壤与近海，各中点刻画的是串行环节或不同受体上的潜在后果，若人为把 1 kg 拆成五份反而会低估每一项机制。这也说明，绝不能单凭比荷卢区域臭氧人体因子为 −0.48 就宣称多排氮氧化物有益环境或人群健康。真正需要防范的错误，一是把不同单位的中点当量直接相加；二是将本章的臭氧呼吸死亡与第 17 章的细颗粒物死亡合并到同一健康终点（如 DALY）时，未核查底层流行病学风险系数是否已对共存污染物做过联合控制，或在像第 20 章那样按政策目标合成单一计分时忽略重叠目标之间的取舍规则。",
+        "kind": "interpretation",
+        "scope": "同一空气前体跨多类别全量表征的物理依据、负向单指标误读防范，以及跨类别相加、健康终点合并与政策目标重叠的真实边界。",
+        "evidenceIds": [
+          "ev-ozone119-ef31-pof-core-factors",
+          "ev-ozone119-ef31-location-replication",
+          "ev-ozone119-ef31-multipath-uuid",
+          "ev-ozone119-rivm-s21-titration",
+          "ev-ozone119-recipe2017-ozone-overview"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-ozone119-ef31-pof-core-factors",
+            "relation": "supports",
+            "rationale": "提供同一Nitrogen oxides与化石甲烷流在EF 3.1光化学臭氧中的1.0与0.0101因子。"
+          },
+          {
+            "evidenceId": "ev-ozone119-ef31-location-replication",
+            "relation": "supports",
+            "rationale": "提供同一Nitrogen oxides流在酸化（0.74）与陆地富营养化（4.26）中的通用因子。"
+          },
+          {
+            "evidenceId": "ev-ozone119-ef31-multipath-uuid",
+            "relation": "supports",
+            "rationale": "提供同一Nitrogen oxides流在海洋富营养化（0.389）和颗粒物（1.6e-6）、化石甲烷在气候变化（29.8）及一氯甲烷在三类大气方法（0.015、5.54、0.00845）的同UUID实测值。"
+          },
+          {
+            "evidenceId": "ev-ozone119-rivm-s21-titration",
+            "relation": "context",
+            "rationale": "结合比荷卢HOFP_NOx=-0.48说明局部臭氧滴定负值不能抵消其他路径上的正向酸沉降、富营养化、生态臭氧与颗粒物负担。"
+          },
+          {
+            "evidenceId": "ev-ozone119-recipe2017-ozone-overview",
+            "relation": "context",
+            "rationale": "表2并列臭氧呼吸死亡与二次颗粒物心肺／肺癌死亡两条人体健康终点损害路径。"
+          }
+        ],
+        "premiseIds": [
+          "cl-acid113-nh3-control",
+          "cl-ozone119-ef-location-copy"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "各中点全量表征成立的前提是类别各自报告本路径指标；若进一步合并至同量纲健康终点或按政策／价值权重合成单一总分，仍须分别检验流行病学效应独立性与重叠目标取舍规则。"
+        ],
+        "reasoning": "区分“清单质量不拆分”的物理串并联必然性与“终点效应、政策目标或异质单位不可盲目相加”的统计及价值边界。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-17",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：保持三类前体全量表征数值与多路径核算原则，压缩后半段措辞。"
+    },
+    {
+      "id": "cl-ozone119-printed-limits",
+      "op": "modify",
+      "from": {
+        "id": "cl-ozone119-printed-limits",
+        "text": "把上述多路径指标用于实际核查与决策时，还要守住模型尺度边界并辨清原始数据包中的记录差异。一方面，无论 EF 3.1 还是 ReCiPe 2016，所发布的都是网格源—受体年均或生长季边际因子，不能替代局地逐时重污染过程的达标模拟。另一方面，原始报告与数据包留有几处不能替作者抹平的异文：其一，2023 年 EF 3.1 更新报告在摘要、正文和表 2 中将“光化学臭氧形成（人体健康）”列为六个更新类别之一（把 HCFC-140 与二氯甲烷的 0.0152 和 0.115 kg NMVOC 当量/kg 同步赋给同义流甲基氯仿与亚甲基氯），印第 6 页总表 1 却漏标了该行的更新星号；而甲基氯仿本是 1,1,1-三氯乙烷（CAS 71-55-6）的常用俗名，同包平流层臭氧耗竭方法却未收录上述 HCFC-140（标 CAS 71-55-6）或甲基氯仿这两个流 UUID，而是另收一条名为 1,1,1-三氯乙烷的流（因子 0.14 kg CFC-11 当量/kg，流文件内 CAS 号却填成同分异构体 1,1,2-三氯乙烷的 79-00-5），可见核查跨类别归属必须认准流 UUID，不能单靠化学俗名或未复核的 CAS 字段。其二，2018 年 EF 方法说明表曾把该类别指标印作“光化学臭氧生成潜势（POCP）”，2023 年更新报告表 1 与方法 XML 则记为“对流层臭氧浓度增加”。其三，ReCiPe 2016 表征报告（RIVM 2016-0104）第 6 章在表 6.2 后直接跳到表 6.5、表 6.6（未出现表 6.3、6.4），并在印第 56 页将紧随其后的表 6.6 误引为“Table 5.6”。辨明这些模型尺度与原始异文之后，下面再回到章首的氨与本节的磷，收束同一清单流关联多条环境路径的通则，并为下一章气态前体转化为细颗粒物后的吸入健康计算铺路。",
+        "kind": "interpretation",
+        "scope": "光化学臭氧源—受体因子的时间与空间尺度边界，以及JRC109369、JRC130796、EF 3.1流表与RIVM 2016-0104第6章的源内异文保留。",
+        "evidenceIds": [
+          "ev-ozone119-jrc109369-voc-and-label",
+          "ev-ozone119-jrc130796-pof-synonyms",
+          "ev-ozone119-ef31-pof-core-factors",
+          "ev-ozone119-ef31-multipath-uuid",
+          "ev-ozone119-rivm-ch6-split-and-tables"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-ozone119-jrc109369-voc-and-label",
+            "relation": "supports",
+            "rationale": "JRC109369印p18表内把EF光化学臭氧指标名记作POCP。"
+          },
+          {
+            "evidenceId": "ev-ozone119-jrc130796-pof-synonyms",
+            "relation": "supports",
+            "rationale": "JRC130796表2（印p8）标POF**并于印p9设§3.2同义流说明，而印p6表1漏标星号且指标名记作Tropospheric ozone concentration increase。"
+          },
+          {
+            "evidenceId": "ev-ozone119-ef31-pof-core-factors",
+            "relation": "supports",
+            "rationale": "b5c610fe.xml实测HCFC-140与Methyl chloroform同为0.0152、dichloromethane与Methylene chloride同为0.115。"
+          },
+          {
+            "evidenceId": "ev-ozone119-ef31-multipath-uuid",
+            "relation": "supports",
+            "rationale": "b5c629d6.xml未收HCFC-140与Methyl chloroform，另收08a91e70-3ddc-11dd-9304-0050c2490048（1,1,1-trichloroethane，流XML标CAS 79-00-5，因子0.14）。"
+          },
+          {
+            "evidenceId": "ev-ozone119-rivm-ch6-split-and-tables",
+            "relation": "supports",
+            "rationale": "RIVM 2016-0104第6章说明网格源—受体线性年／生长期响应，且跳过表6.3–6.4并在印p56将表6.6误引为Table 5.6。"
+          }
+        ],
+        "premiseIds": [
+          "cl-ozone119-multipath-accounting"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [
+          "源内表号、星号与流表CAS元数据异文不影响本章已核对的前体排序反转与跨类别全量表征判断，但提示自动化映射必须核查UUID与原表上下文。"
+        ],
+        "reasoning": "先确立网格边际因子与逐时达标模拟的科学边界，再如实交代原件异文并衔接章末总结与下一章颗粒物路径。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-17",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "整合改写：正文保留模型尺度与 UUID/CAS 错位核心事实，其余表号与星号异文移入注释。"
+    },
+    {
+      "id": "cl-path-multiple-paths",
+      "op": "modify",
+      "from": {
+        "id": "cl-path-multiple-paths",
+        "text": "回看开头的氨，它可以沿不同机制参与陆地酸化，也可以把氮带向水体或陆地营养富集。分别计算这些类别时，无须先把清单中的氨任意分成几份：同一排放可以关联不同后果。磷的算例说明，先由施用量估计排入淡水的净磷量，再用匹配的因子计算富营养化指标。解释各类指标时，都要分清排放进入了哪里、经过哪些过程，以及模型估计了哪种响应。下一章继续从空气排放出发，把关注点转到人群吸入和健康。",
+        "kind": "synthesis",
+        "scope": "酸化与营养路径的分类解释；不把多类别表征当作清单质量分配。",
+        "evidenceIds": [
+          "ev-path-acid",
+          "ev-path-marine",
+          "ev-path-eutro-scope"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-path-acid",
+            "relation": "supports",
+            "rationale": "氨是所述酸化起点之一。"
+          },
+          {
+            "evidenceId": "ev-path-marine",
+            "relation": "supports",
+            "rationale": "近岸氮路径与酸化机制不同。"
+          },
+          {
+            "evidenceId": "ev-path-eutro-scope",
+            "relation": "context",
+            "rationale": "陆地营养路径图示与所选框架覆盖保持区分。"
+          }
+        ],
+        "premiseIds": [
+          "cl-path-acid-soil",
+          "cl-path-marine",
+          "cl-path-terrestrial",
+          "cl-path-units",
+          "cl-path-operation-indicator"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [],
+        "reasoning": "氨在酸化和含氮营养路径中的作用由不同过程和接收条件定义；类别是分析不同机制，不能因此推导清单必须按类别分割。以已解释的起点、过程、响应及单位组织结论，不声称获得未计算的类别结果。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-04",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "合并原富营养化操作清单与章末收束段，统一形成全章多路径核查框架并衔接下篇颗粒物健康。"
+    },
+    {
+      "id": "cl-water125-method-genealogy",
+      "op": "modify",
+      "from": {
+        "id": "cl-water125-method-genealogy",
+        "status": "reviewed",
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-18",
+        "conceptIds": [],
+        "premiseIds": [
+          "cl-water-aware-question",
+          "cl-water-remaining-mechanism"
+        ],
+        "evidenceIds": [
+          "ev-water125-ilcd2011-water",
+          "ev-water125-jrc109369-water",
+          "ev-water125-jrc130796-water",
+          "ev-water125-rivm-ch10-framework",
+          "ev-water125-recipe2017-water",
+          "ev-water125-lcimpact2020-water"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-water125-ilcd2011-water",
+            "relation": "supports",
+            "rationale": "核实ILCD 2011否定MEEuP升数相加与自然环境累积㶲提取法CEENE、推荐区分6级区域缺水的Swiss Ecoscarcity水模型（Level III）且未评估任何水终点（0项）。"
+          },
+          {
+            "evidenceId": "ev-water125-jrc109369-water",
+            "relation": "supports",
+            "rationale": "核实EF 2.0/3.0将欧盟推荐中点由Swiss Ecoscarcity替换为AWARE（Level III）且不设水终点。"
+          },
+          {
+            "evidenceId": "ev-water125-jrc130796-water",
+            "relation": "supports",
+            "rationale": "核实EF 3.1延续AWARE作为唯一水使用中点。"
+          },
+          {
+            "evidenceId": "ev-water125-rivm-ch10-framework",
+            "relation": "supports",
+            "rationale": "核实ReCiPe 2016中点WCP对耗水流直接取1 m3/m3而不加稀缺权重。"
+          },
+          {
+            "evidenceId": "ev-water125-recipe2017-water",
+            "relation": "supports",
+            "rationale": "核实ReCiPe 2016将区域水压力与脆弱性推迟到人体健康、陆地生态与淡水生态3条新增终点路径。"
+          },
+          {
+            "evidenceId": "ev-water125-lcimpact2020-water",
+            "relation": "supports",
+            "rationale": "核实LC-IMPACT不设中点（0项），直接给出11050个流域健康损害与0.05°×0.05°湿地动植物各占50%权重的全球不可逆灭绝风险PDF·yr/m3。"
+          }
+        ],
+        "scope": "四套主流LCIA体系（ILCD 2011、EF 2.0/3.0/3.1、ReCiPe 2016、LC-IMPACT）在因果链中安放区域稀缺与社会生态脆弱性的三类结构位置对比。",
+        "text": "把 AWARE（Boulay 等 2018；2025 年更新为 AWARE 2.0）放回影响评价方法史，就能看清“用剩余水量构造代理中点”并非唯一方案。围绕同一笔淡水消耗，四套主流体系在因果链的哪一层引入区域稀缺与受体脆弱性，走出了三条不同的路线。第一条是“中点即稀缺、不设终点”。欧盟 2011 年《ILCD 手册》否定了只把取水升数相加的用能产品生态设计法（MEEuP）和不反映稀缺性的自然环境累积㶲提取法（CEENE，其中“㶲”指热力学可用能），推荐以区分 6 级区域缺水程度的瑞士生态稀缺法（Swiss Ecoscarcity）作为中点默认模型（推荐等级 Level III），同时声明未评估任何水资源终点模型（推荐终点模型数为 0）。欧盟环境足迹 EF 2.0/3.0（JRC109369）与 EF 3.1（JRC130796）沿用这一单层中点框架，将瑞士生态稀缺法替换为 AWARE（截断区间 0.1 至 100，仍评 Level III）。第二条是“中点只计物理耗水体积、稀缺与脆弱性推迟到终点”。ReCiPe 2016（RIVM 2016-0104 第 10 章及 2017 年方法论文）在中点层对已按耗水量给出的蓝水一律赋表征因子 1 m³/m³，使耗水潜势 WCP 直接等于耗水立方米数而不含地区稀缺权重；水压力与受体敏感性则全部放进较 2008 版新增的 3 条终点损害路径，即缺水致营养不良的人体健康损害（伤残调整生命年 DALY/m³）、水分受限净初级生产力下降的陆地维管植物损害（species·yr/m³）和河口流量减少的淡水鱼类损害（species·yr/m³）。第三条是“取消中点、直接量化全球损害”。LC-IMPACT（Verones 等 2020）认为区域化类别若只把部分机制放进中点，会导致中点与终点排序不一致，因此设置的中点类别数为 0，直接在损害层发布 11050 个流域的营养不良健康因子（DALY/m³）和 0.05°×0.05° 湿地网格的全球不可逆物种灭绝风险因子（潜在消失物种比例 PDF·yr/m³，将维管植物与动物两大类群各赋 50% 权重，再乘世界自然保护联盟红皮书受威胁等级与分布范围脆弱性因子）。阅读任何“耗水指标”之前，都要先确认它究竟是在中点乘了稀缺倍数、在中点原样保留了立方米数，还是已经算到了终点损害。",
+        "reasoning": "对照ILCD 2011 §3.11、JRC109369 §4.11、JRC130796表1、RIVM 2016-0104第10章、Huijbregts等2017与Verones等2020 §4.2，提炼中点计稀缺、中点计纯体积与纯终点损害三种架构分叉。",
+        "caveats": [
+          "中点不乘稀缺权重的ReCiPe 2016 WCP与乘了稀缺倍数的EF 3.1 AWARE虽然都常被简称为“水足迹／水使用中点”，但前者只度量原流域失去的淡水体积，后者度量相对世界参照的用户缺水潜势，数值与排序均不可直接互换。"
+        ]
+      },
+      "rationale": "整合改写：首次展开欧盟环境足迹（EF），压实至 440 字以内并将四套体系明细整理入表 1。"
+    },
+    {
+      "id": "cl-water125-withdrawal-return-accounting",
+      "op": "modify",
+      "from": {
+        "id": "cl-water125-withdrawal-return-accounting",
+        "status": "reviewed",
+        "kind": "calculation",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-17",
+        "conceptIds": [],
+        "premiseIds": [
+          "cl-water-physical-object",
+          "cl-water-net-gross-meaning",
+          "cl-water125-method-genealogy"
+        ],
+        "evidenceIds": [
+          "ev-water125-jrc109369-water",
+          "ev-water125-ef31-water-xml",
+          "ev-water125-rivm-ch10-framework",
+          "ev-water125-rivm-s6-country-and-corruption"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-water125-jrc109369-water",
+            "relation": "supports",
+            "rationale": "核实EF规定仅表征蓝水取水减蓝水释放，排除绿水、雨水、海水与化石水。"
+          },
+          {
+            "evidenceId": "ev-water125-ef31-water-xml",
+            "relation": "supports",
+            "rationale": "核实b2ad66ce.xml以2310行（11条流×210位置）将7条取水流赋+c、4条淡水及未指明水体退水流赋-c实现正负流代数相抵。"
+          },
+          {
+            "evidenceId": "ev-water125-rivm-ch10-framework",
+            "relation": "supports",
+            "rationale": "核实ReCiPe 2016表10.2对农业取0.44（SD 0.14）、工业与生活地表水取0.1，而对工业与生活地下水因退水入地表水不回灌含水层取1。"
+          },
+          {
+            "evidenceId": "ev-water125-rivm-s6-country-and-corruption",
+            "relation": "supports",
+            "rationale": "核实表S6.1各国农业需水折算比范围为0.16至0.7。"
+          }
+        ],
+        "scope": "EF 3.1官方XML的7正4负基本流代数相抵机制与ReCiPe 2016按部门及水源类型（地表水对含水层）设定抽取转耗水折算比的10倍定量分歧。",
+        "text": "在进入地区稀缺权重之前，各套体系把“取水与退水”折算成“耗水”的账本规则，就已经能让同一生产活动的有效耗水量相差十倍。EF 3.1 官方机读水使用方法文件（共 2310 行因子，由 11 条涉水基本流在 210 个地理条目上展开）采用“正负基本流代数相抵”。其中 7 条水资源输入流（淡水、地下水、湖水、河水、冷却取水、水轮机过水与泛指水）在同一国家代码下统一赋正因子 +c，4 条水体排放输出流（排入淡水的泛指退水、冷却退水、水轮机退水共 3 条，外加排入“未指明水体”的泛指退水 1 条）统一赋相反数 −c；绿水、雨水、海水、化石水以及排入海水的退水均不收录（等效为 0）。在这套账本里，只要国家代码相同，抽取地下水与向地表淡水退水就被当作同一水库的等价收支。ReCiPe 2016（RIVM 2016-0104 第 10.3 节表 10.2 与附表 S6.1）则按用水部门与水源水体规定抽取转耗水折算比：农业灌溉无论取地表水还是地下水，因田间渗漏可回补含水层，全球默认折算比均取 0.44（标准差 0.14，附表 S6.1 各国农业折算比介于 0.16 与 0.7 之间）；工业与生活用水的地表水抽取按 90% 至 95% 退水回流，统一取折算比 0.1；唯独工业与生活抽取地下水，报告指出其退水绝大部分排入地表河流而非原含水层，因此只要未经人工回灌重返同一含水层，即便清单同时记录了地表退水，也规定不得扣减退水，折算比直接取 1。不妨核算同一笔活动：某工厂在同一国家抽取 10 m³ 地下水，使用后将 9 m³ 达标退水排入当地地表河流。按 EF 3.1 正负流相抵，10×(+c) + 9×(−c) = 1×c，系统只计 1 m³ 净耗水；按 ReCiPe 2016 工业地下水规则，含水层失去的 10 m³ 乘折算比 1 全额计为 10 m³ 耗水，两者在乘任何地区因子之前已呈 10:1 的分歧。确定净耗水体积之后，还要把它乘进按流域与月份编制的表征因子表，接下来便须核清表中月份与背景水文资料的时间口径。",
+        "reasoning": "基于EF 3.1 b2ad66ce.xml的7正4负基本流结构与RIVM 2016-0104印pp75–76表10.2工业地下水不扣地表退水规定，构造10 m3抽地下水加9 m3排地表淡水的精确代数对照，并在段末为下一节首句“表中的月份”建立明确指代前件。",
+        "caveats": [
+          "该10:1分歧针对原始清单分别记录地下水抽取与地表退水（或仅记录工业地下水抽取而套用表10.2默认比值）的常见情形；若水文证据已证实工业退水经人工回灌重新补给同一含水层并在清单中预先按净耗水建模，则须显式脱离表10.2默认假定。"
+        ]
+      },
+      "rationale": "整合改写：将 11 条基本流名称细目移入注释，正文聚焦同国代数相抵与含水层不扣减造成的 10∶1 分歧。"
+    },
+    {
+      "id": "cl-water125-ef-country-resolution-and-climates",
+      "op": "modify",
+      "from": {
+        "id": "cl-water125-ef-country-resolution-and-climates",
+        "status": "reviewed",
+        "kind": "interpretation",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-18",
+        "conceptIds": [],
+        "premiseIds": [
+          "cl-water-reference-period",
+          "cl-water-time-and-aggregation",
+          "cl-water-marginal-contexts"
+        ],
+        "evidenceIds": [
+          "ev-water125-jrc109369-water",
+          "ev-water125-jrc130796-water",
+          "ev-water125-ef31-water-xml",
+          "ev-water125-rivm-ch10-endpoints"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-water125-jrc109369-water",
+            "relation": "supports",
+            "rationale": "核实JRC109369 §4.11虽列出7种AWARE分辨率，但规定PEF/OEF默认一律采用国家尺度时空平均因子。"
+          },
+          {
+            "evidenceId": "ev-water125-jrc130796-water",
+            "relation": "supports",
+            "rationale": "核实EF 3.0与EF 3.1水使用全球人均归一化因子维持1.15×10⁴不变（变动0%），2752个数据集中居首者由125变为121。"
+          },
+          {
+            "evidenceId": "ev-water125-ef31-water-xml",
+            "relation": "supports",
+            "rationale": "提供b2ad66ce.xml中阿鲁巴100、埃及98.4、西班牙77.7、中国42.4、美国33.8、印度29.4、巴西2.17、德国1.36、瑞士1.34、挪威0.634及全局取水42.950实值。"
+          },
+          {
+            "evidenceId": "ev-water125-rivm-ch10-endpoints",
+            "relation": "supports",
+            "rationale": "核实ReCiPe 2016拼接1961–1990降水变异、2010耗水加权、2001年HDI>0.88归零门槛、1982–1999气候约束（印p115）与42°纬度淡水鱼类截断。"
+          }
+        ],
+        "scope": "PEF/OEF国家年均不分层默认规则与ReCiPe 2016跨年代水文背景、HDI>0.88社会经济门槛及42°纬度生物地理截断的时空口径错位。",
+        "text": "再看时空汇总与背景资料期，官方导则的“可操作默认设置”常把原模型的精细时空结构压平，或把不同年代的自然与社会门槛叠进同一套因子。AWARE 原方法本具备流域×月及农业／非农业分层，但欧盟方法报告（JRC109369 第 4.11 节）在列出 AWARE 的 7 种时空与行业分辨率后，因现行背景数据库多按国别记录，规定产品与组织环境足迹（PEF/OEF）默认一律采用经时空平均、不区分农业与非农业的国家尺度因子。在 EF 3.1 官方机读方法文件（XML）中，这套国别默认因子横跨三个数量级：从触及上限的阿鲁巴 100、埃及 98.4、西班牙 77.7，到中国 42.4、美国 33.8、印度 29.4（全球未指明位置取水为 42.950），再到巴西 2.17、德国 1.36、瑞士 1.34 与挪威 0.634 m³ world-eq./m³。由于 EF 3.1 未改动这套因子，全球人均归一化基准在 EF 3.0 与 EF 3.1 中维持 1.15×10⁴ m³ water eq. of deprived water/人不变（报告对 m³ world-eq./人 的异文写法，详见本章“情境与加总”一节；变动 0%，在 2752 个 EF 官方数据集中居单一总分首位的个数仅因其他类别重算由 125 个微调为 121 个）。反观 ReCiPe 2016（RIVM 2016-0104 第 10.4 节），其三条终点拼接了不同年代的资料与硬性截断条件。首先，Pfister 等（2009）提出的水压力指数 WSI（经逻辑斯谛函数缩放在 0.01 至 1 之间）用 1961—1990 年月度与年度降水标准差计算变异因子 VF（VF ≥ 1）修正枯水期压力：强径流调控流域乘 √VF 以削平降水波动，非强调控流域乘全额 VF（报告同时指出水库蓄水虽能削减波动，却可能增加蒸发损失）；值得留意的是，表 10.1 将个人主义的径流调控标为“高”，却未印出其引自 De Schryver 等（2011）的调控修正细式，而在表 10.3 按 2010 年各国总耗水量加权汇总的全球 WSI 中，个人主义为 0.698，略高于等级主义与平等主义（同为 0.657）。其次，人体健康脆弱性系数 HDF 按 2001 年各国人类发展指数（HDI）分段拟合：HDI < 0.30 取 1，0.30 ≤ HDI ≤ 0.88 按二次多项式递减，而 HDI > 0.88 的工业化国家因被假定有能力外购粮食防止饥荒，直接令 HDF = 0。再次，陆地维管植物损害采用 Nemani 等（2003，参考文献第 115 页载明基于 1982—1999 年全球陆地净初级生产力研究）的气候约束指数并乘陆地平均物种密度 1.48×10⁻⁸ species/m²；淡水鱼类损害则按河口流量减少与鱼类消失的边际关系乘水生平均物种密度 7.89×10⁻¹⁰ species/m³，并因该经验关系在中高纬度失效而剔除南北纬 42° 以外的全部流域。因此在北欧、加拿大等南北纬 42° 以外的高收入地区耗水，EF 3.1 仍给出正的物理缺水潜势，ReCiPe 2016 的人体健康与淡水鱼类终点却会因 HDI > 0.88 和纬度超 42° 双双归零。",
+        "reasoning": "整合JRC109369 §4.11、JRC130796表10/§5.1/表13、b2ad66ce.xml实测国别因子及RIVM 2016-0104 §10.4与印p115参考文献，揭示PEF国家平均压平与ReCiPe跨年代水文／社会／纬度硬阈值及表10.1/表10.3调控参数张力。",
+        "caveats": [
+          "ReCiPe 2016对HDI>0.88国家令缺水营养不良损害为零、对42°纬度以外流域剔除河口鱼类模型，仅代表特定终点方程的适用域截断，不能据此推断高收入或中高纬度地区耗水没有水生生态或供水成本影响。"
+        ]
+      },
+      "rationale": "整合改写：首次展开 PEF/OEF、补齐归一化基准单位并压实至 440 字以内。"
+    },
+    {
+      "id": "cl-water125-value-choices-and-denominator-paradox",
+      "op": "modify",
+      "from": {
+        "id": "cl-water125-value-choices-and-denominator-paradox",
+        "status": "reviewed",
+        "kind": "calculation",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-18",
+        "conceptIds": [],
+        "premiseIds": [
+          "cl-water125-method-genealogy",
+          "cl-water125-ef-country-resolution-and-climates"
+        ],
+        "evidenceIds": [
+          "ev-water125-rivm-ch10-framework",
+          "ev-water125-rivm-ch10-endpoints",
+          "ev-water125-lcimpact2020-water"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-water125-rivm-ch10-framework",
+            "relation": "supports",
+            "rationale": "核实表10.1在I视角设防营养不良需水1000 m3/(yr·capita)且在物种密度超2000 species/10000 km2流域不确定性下将陆地生态置0，H/E设1350 m3/(yr·capita)与默认值。"
+          },
+          {
+            "evidenceId": "ev-water125-rivm-ch10-endpoints",
+            "relation": "supports",
+            "rationale": "核实EF_HH = HDF / WR_malnutrition × DF（3.68×10⁻²）使表10.4全球消费加权健康因子呈I（3.10×10⁻⁶）高于H/E（2.22×10⁻⁶ DALY/m3），陆地生态为0对1.35×10⁻⁸，淡水生态中位数6.04×10⁻¹³、国家面积加权均值1.74×10⁻¹²。"
+          },
+          {
+            "evidenceId": "ev-water125-lcimpact2020-water",
+            "relation": "supports",
+            "rationale": "对照LC-IMPACT表3按科学证据把握度在“确定性影响”集仅保留地表水耗水湿地损害、在“全部影响”集纳入地下水耗水湿地损害。"
+          }
+        ],
+        "scope": "ReCiPe 2016耗水人体健康终点因人均膳食需水量WR_malnutrition位于分母而出现I > H = E（3.10×10⁻⁶对2.22×10⁻⁶ DALY/m³）的反直觉机制，以及陆地／湿地与水生生态的价值选择分化。",
+        "text": "更值得留意的是价值选择在公式里的代数位置。在 ReCiPe 2016 总表 1.5 汇总的各类中点至终点损害转换系数（以及不除以短寿命参照物的绝对损害系数）中，第 14 章的臭氧耗竭、电离辐射、第 15 章的气候变化以及第 19 章的化学毒性等类别均满足个人主义（I）低于或等于等级主义（H）与平等主义（E）；唯独在耗水的人体健康终点（表 10.4）上，全球消费加权平均因子却是个人主义（3.10×10⁻⁶ DALY/m³）显著高于等级主义与平等主义（同为 2.22×10⁻⁶ DALY/m³，高出约 40%，精确比值约 1.40 倍）。为什么技术乐观假设反而算出更高的单位耗水健康损害？答案就在第 10.2 节表 10.1 与第 10.4.1 节效应因子的分母上。模型前端先用流域水压力指数 WSI 乘农业取水占比估算单位耗水挤占的农业缺水份额，再将单位农业缺水量导致的营养不良人年数写为 EF_HH = HDF / WR_malnutrition（量纲为 年·人/m³），最后乘人均营养不良损害系数 3.68×10⁻² DALY/(年·人) 得到健康终点因子。个人主义视角假定未来农业用水管理高效，把维持一人一年基本膳食所需的最低水量 WR_malnutrition 从等级主义与平等主义的标准管理值 1350 m³/(年·人) 调低到 1000 m³/(年·人)。正因为 WR_malnutrition 处在分母位置，“每人每年只需 1000 m³ 水就能养活”反过来意味着：农业一旦被挤占同样 1 m³ 灌溉水，失去口粮保障的人年数就会从 1/1350 升至 1/1000。单这一项分母变动就把效应因子放大了 1350 ÷ 1000 = 1.35 倍，再叠加表 10.3 中略高的个人主义 WSI（0.698 对 0.657），便推高了全球及各低收入国家的个人主义健康因子。与此同时，生态质量终点的证据门槛走向相反方向。在 ReCiPe 2016 陆地生态终点（表 10.5）中，由于流域平均净初级生产力与维管植物丰富度在每万平方千米超过 2000 个物种的高多样性流域失去统计相关性，个人主义直接把陆地生态因子置为 0，而等级主义与平等主义保留全球面积加权均值 1.35×10⁻⁸ species·yr/m³；LC-IMPACT 表 3 则改按水源证据分级，在“确定性影响”集里只计地表水耗水对湿地的损害，到“全部影响”集才并入数据更匮乏的地下水耗水湿地损害。淡水鱼类终点（表 10.6）因不含视角参数而在三个视角完全相等，全球流域中位数为 6.04×10⁻¹³、国家面积加权均值为 1.74×10⁻¹² species·yr/m³，因水生物种密度（7.89×10⁻¹⁰ species/m³）与效应斜率较低而比陆地生态因子小约四个数量级。",
+        "reasoning": "基于RIVM 2016-0104表1.5、表10.1、10.3–10.6与§10.4.1分母方程EF_HH=HDF/WR_malnutrition，严格推演1350→1000导致的1.35倍分母放大与全球3.10E-06对2.22E-06反转，明确区分总表1.5中终点转换系数与除以短寿命参照物的中点因子，并对照LC-IMPACT表3湿地水源证据分级。",
+        "caveats": [
+          "个人主义视角下人体健康因子更高而陆地生态因子归零，导致把人体健康与生态系统加权成单一总分时，切换文化视角会同时改变水耗内部健康与生态的相对占比及跨国排序。"
+        ]
+      },
+      "rationale": "整合改写：首次展开伤残调整生命年（DALY），避免 EF_HH 与 EF 3.1 缩写冲突，压实至 450 字以内。"
+    },
+    {
+      "id": "cl-water125-country-rank-reversals",
+      "op": "modify",
+      "from": {
+        "id": "cl-water125-country-rank-reversals",
+        "status": "reviewed",
+        "kind": "calculation",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-17",
+        "conceptIds": [],
+        "premiseIds": [
+          "cl-water125-method-genealogy",
+          "cl-water125-ef-country-resolution-and-climates",
+          "cl-water125-value-choices-and-denominator-paradox",
+          "cl-water-case-locality",
+          "cl-water-case-weighted-factor"
+        ],
+        "evidenceIds": [
+          "ev-water125-ef31-water-xml",
+          "ev-water125-rivm-ch10-framework",
+          "ev-water125-rivm-s6-country-and-corruption"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-water125-ef31-water-xml",
+            "relation": "supports",
+            "rationale": "提供EF 3.1官方XML中澳大利亚72.1、孟加拉国2.43、智利80.1与中国42.4 m3 world-eq./m3的精确国家因子。"
+          },
+          {
+            "evidenceId": "ev-water125-rivm-ch10-framework",
+            "relation": "supports",
+            "rationale": "支撑已给耗水量时ReCiPe 2016中点WCP恒为1 m3/m3及仅给抽取量时乘国家农业折算比的规则。"
+          },
+          {
+            "evidenceId": "ev-water125-rivm-s6-country-and-corruption",
+            "relation": "supports",
+            "rationale": "提供表S6.1、表S6.2前52行（A–E段）与表S6.3中澳大利亚与孟加拉国、智利与中国的农业折算比、WSI及三项终点精确国家值。"
+          }
+        ],
+        "scope": "同一1 m³蓝水耗水在真实国家因子表（澳大利亚对孟加拉国、智利对中国）中跨越EF 3.1 AWARE中点与ReCiPe 2016三项终点发生的多重次序反转。",
+        "text": "离开两流域虚构算例，把同样 1 m³ 蓝水耗水代入 EF 3.1 官方机读文件与 ReCiPe 2016 国家尺度附表（表 S6.1 至 S6.3；此处所选国家英文名首字母均在 C 以前，避开了本章末节将说明的表 S6.2 后段排版错位区），就能看到上述结构分叉如何在真实国家比较中引发多重次序反转。先看干旱高收入的澳大利亚与湿润低收入的孟加拉国。若停在 ReCiPe 2016 中点 WCP，两国同为 1 m³ 耗水，毫无差别；若采用 EF 3.1 的 AWARE 国别因子，澳大利亚高达 72.1 m³ world-eq./m³，是孟加拉国（2.43）的约 29.7 倍；ReCiPe 2016 陆地生态终点（等级主义与平等主义）同样判澳大利亚更高，为 3.30×10⁻⁸ 对 2.16×10⁻⁹ species·yr/m³（附表 S6.3 表头记作 species-eq·yr/m³，数值与正文 species·yr/m³ 同义；澳大利亚约为孟加拉国的 15.3 倍，个人主义视角则同为 0）。然而一旦转入 ReCiPe 2016 人体健康终点，高 HDI 的澳大利亚按国家阈值本不发生缺水型营养不良，附表仅因流域汇总边界或浮点截断留存近乎为零的残差（等级主义与平等主义仅 5.76×10⁻¹⁸、个人主义为 6.69×10⁻¹⁶ DALY/m³），孟加拉国却达 1.95×10⁻⁶（等级主义与平等主义）与 2.69×10⁻⁶ DALY/m³（个人主义），在等级主义与平等主义下排序反向翻转约 3.39×10¹¹ 倍（逾十一个数量级），淡水鱼类终点亦翻转为孟加拉国略高（2.49×10⁻¹² 对 2.42×10⁻¹² species·yr/m³）。再看同样存在干旱农矿区的智利与中国。EF 3.1 的 AWARE 判智利每立方米耗水的缺水潜势接近中国的两倍（80.1 对 42.4 m³ world-eq./m³，约 1.89 倍，ReCiPe 附表中的物理水压力指数 WSI 在等级主义下亦为智利 0.773 高于中国 0.539）；但在 ReCiPe 2016 等级主义与平等主义的全部三项终点上，排序一致反转为中国高于智利：人体健康为 7.58×10⁻⁷ 对 2.93×10⁻⁷ DALY/m³（约 2.59 倍，个人主义亦为 1.07×10⁻⁶ 对 4.08×10⁻⁷），陆地生态为 4.58×10⁻⁹ 对 4.28×10⁻⁹ species·yr/m³，淡水鱼类更从智利的 0 升至中国的 3.91×10⁻¹² species·yr/m³。倘若原始清单只记录各抽取 10 m³ 农业灌溉水，按表 S6.1 农业需水折算比（智利 0.2、中国 0.36），连 ReCiPe 中点耗水量也会从相等翻转为中国更高（3.6 对 2.0 m³）。同一笔耗水究竟在何处“影响更大”，取决于评价问题问的是单位面积剩余水深、区域植被生产力还是低收入人群的粮食脆弱性。",
+        "reasoning": "严格调用EF 3.1 b2ad66ce.xml与RIVM 2016-0104表S6.1、表S6.2前52行（A–E段）及表S6.3的精确字面值，核算AU/BD与CL/CN在1 m3蓝水耗水及10 m3农业取水下的全部倍率与次序反转，并阐明澳大利亚10⁻¹⁸近零残差与表S6.3表头单位同义性。",
+        "caveats": [
+          "国家尺度因子反映的是各方法按国内耗水或面积权重汇总后的平均背景；若具体工厂或农田位于智利北部极端干旱流域、澳大利亚湿润沿海或中国华北地下水漏斗区，国家均值比较不能替代流域×月尺度的现场表征。"
+        ]
+      },
+      "rationale": "整合改写：修正悬空前向指代（“下节”改为“本节后文”），压实至 440 字以内并联动表 3。"
+    },
+    {
+      "id": "cl-water125-belgium-canada-mechanism-contrast",
+      "op": "modify",
+      "from": {
+        "id": "cl-water125-belgium-canada-mechanism-contrast",
+        "status": "reviewed",
+        "kind": "calculation",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-17",
+        "conceptIds": [],
+        "premiseIds": [
+          "cl-water-remaining-mechanism",
+          "cl-water-case-averaging",
+          "cl-water125-country-rank-reversals"
+        ],
+        "evidenceIds": [
+          "ev-water125-ef31-water-xml",
+          "ev-water125-rivm-ch10-endpoints",
+          "ev-water125-rivm-s6-country-and-corruption"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-water125-ef31-water-xml",
+            "relation": "supports",
+            "rationale": "核实EF 3.1 AWARE国家因子中加拿大为7.40而比利时为1.37 m3 world-eq./m3（加拿大约为比利时的5.40倍）。"
+          },
+          {
+            "evidenceId": "ev-water125-rivm-ch10-endpoints",
+            "relation": "supports",
+            "rationale": "核实Pfister等2009的WSI基于取水总量与水文可用水之比（∑WU / WA）经逻辑斯谛函数缩放。"
+          },
+          {
+            "evidenceId": "ev-water125-rivm-s6-country-and-corruption",
+            "relation": "supports",
+            "rationale": "核实表S6.2前52行中比利时WSI_H=0.686（WSI_I=0.900）而加拿大WSI_H=0.109（WSI_I=0.181），两国CF_HH与CF_aq均为0且陆地生态H/E为2.14×10⁻⁹对1.27×10⁻⁹。"
+          }
+        ],
+        "scope": "即便排除HDI与物种密度等终点参数，纯水文稀缺指标WSI（取水占比∑WU/WA）与AWARE（单位面积剩余水深倒数r/AMD及耗水加权）在比利时与加拿大之间仍给出相反排序的物理机制。",
+        "text": "也许有人会以为，跨国排序反转只是因为终点模型掺入了人类发展指数或物种密度，只要退回纯物理水文稀缺指标，各国先后次序就会趋同。比利时与加拿大的真实数据推翻了这一直觉。在 ReCiPe 2016 附表 S6.2 记录的物理水压力指数 WSI 中，人口与工业高度密集的比利时在等级主义与平等主义下高达 0.686（个人主义下为 0.900），在等级主义与平等主义下约为加拿大（等级主义与平等主义 0.109、个人主义 0.181）的 6.29 倍；然而在 EF 3.1 官方机读文件的 AWARE 国别因子中，加拿大却高达 7.40 m³ world-eq./m³，反过来约为比利时（1.37 m³ world-eq./m³）的 5.40 倍。两边都没有引入任何人口疾病或物种脆弱性参数，排序却依然颠倒，根源在于两个指标定义了不同的物理“稀缺”自变量，又叠加了前文算例揭示的非线性汇总效应。Pfister 等（2009）的 WSI 以无量纲的“总取水量占流域可用水量之比”（∑WU / WA，其中 WU 指各部门总取水量而非净耗水量）为自变量：比利时冷却水与市政工业取水体量庞大，即便大部分退回地表水体，高取水比仍把逻辑斯谛曲线推向高压力值。相反，AWARE 先扣除人类净耗水与水生生态需水，再除以流域面积与时间步长求出单位面积剩余可用水流量 AMD（Availability Minus Demand），并以相对倒数 r / AMD 度量剥夺潜势：比利时虽取水占比高，但气候湿润且退水返还后单位面积剩余水量并不匮乏；加拿大虽然全国总径流浩瀚、全国平均取水比极低，但其农业灌溉等净耗水高度集中在内陆半干旱草原等低剩余水量流域，经耗水量加权汇总为单一国家因子时，局部高倒数因子便把加拿大的全国默认 AWARE 拉高到了比利时的五倍以上。至于 ReCiPe 2016 终点层，地处北纬 42° 以北且 HDI > 0.88 的比利时与加拿大在人体健康与淡水鱼类上双双得 0，仅陆地生态在等级主义与平等主义下呈比利时 2.14×10⁻⁹ 略高于加拿大 1.27×10⁻⁹ species·yr/m³。“取水占径流几成”与“耗水发生处单位面积还剩多少水”，回答的本就是两个不同的水文学问题。",
+        "reasoning": "对比b2ad66ce.xml（BE=1.37, CA=7.40）与RIVM表S6.2/S6.3（BE WSI_H=0.686, CA WSI_H=0.109），从∑WU/WA无量纲总取水比与按面积归一r/AMD耗水加权倒数两条方程解释纯水文指标次序反转。",
+        "caveats": [
+          "WSI以总取水量（withdrawal）构造压力比再乘耗水量，而AWARE以净耗水量（consumption）扣减可用水并按流域面积归一，两者在冷却水直流排放比重大的工业区差异尤为显著。"
+        ]
+      },
+      "rationale": "整合改写：联动表 3，将终点残项移入注释，正文聚焦取水比与净耗水倒数加权机制差异。"
+    },
+    {
+      "id": "cl-water125-package-report-discrepancies",
+      "op": "modify",
+      "from": {
+        "id": "cl-water125-package-report-discrepancies",
+        "status": "reviewed",
+        "kind": "source-statement",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-17",
+        "conceptIds": [],
+        "premiseIds": [
+          "cl-water-remaining-mechanism",
+          "cl-water125-withdrawal-return-accounting",
+          "cl-water-version-and-boundary"
+        ],
+        "evidenceIds": [
+          "ev-water125-jrc109369-water",
+          "ev-water125-jrc130796-water",
+          "ev-water125-ef31-water-xml",
+          "ev-water125-rivm-ch10-framework",
+          "ev-water125-rivm-ch10-endpoints",
+          "ev-water125-rivm-s6-country-and-corruption",
+          "ev-water125-lcimpact2020-water"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-water125-jrc109369-water",
+            "relation": "supports",
+            "rationale": "核实JRC109369表1–2将缺水潜势单位印成kg world eq. deprived与Units of mass (kg)并附注10说明原方法为立方米。"
+          },
+          {
+            "evidenceId": "ev-water125-jrc130796-water",
+            "relation": "supports",
+            "rationale": "核实JRC130796表1改印m3 world eq. deprived water而表10写作m3 water eq. of deprived water/person。"
+          },
+          {
+            "evidenceId": "ev-water125-ef31-water-xml",
+            "relation": "supports",
+            "rationale": "核实b2ad66ce.xml（1268239字节，全包唯一水方法文件）中209个国别代码正负对称而无location全局项存在+42.950对-42.95与-42.955不对称（净差-0.005）、GL=0.00越界、inventoryItems=36及Volume通用流属性映射。"
+          },
+          {
+            "evidenceId": "ev-water125-rivm-ch10-framework",
+            "relation": "supports",
+            "rationale": "核实RIVM印p74正文把表10.1误引为“Table 9.1”且表10.1印WR_malnutrition为1350。"
+          },
+          {
+            "evidenceId": "ev-water125-rivm-ch10-endpoints",
+            "relation": "supports",
+            "rationale": "核实RIVM印p77把表10.3误引为“Table 9.3”、印p78正文将Pfister需水量印作1530及印p22表1.5舍入为3.1E-06/2.2E-06、1.4E-08并选流域中位数6.0E-13。"
+          },
+          {
+            "evidenceId": "ev-water125-rivm-s6-country-and-corruption",
+            "relation": "supports",
+            "rationale": "核实RIVM表S6.2按英文国名首字母排序前52行（Afghanistan–Ethiopia）正常，而印pp167–169自第53行Fiji起出现WSI=4.64E-03、德国34.7、塞内加尔7.28E+04、美国8.20E-07及瑞典2.40E-06、美国9.80E-07等整段列行错位损坏。"
+          },
+          {
+            "evidenceId": "ev-water125-lcimpact2020-water",
+            "relation": "supports",
+            "rationale": "核实LC-IMPACT印p4表1将水压力健康模型单列为Average而同页§2.3正文说明同时提供average/linear与marginal两套因子。"
+          }
+        ],
+        "scope": "EF-v3.1.zip涉水XML、JRC两代报告、RIVM 2016-0104正文与附表S6.2以及LC-IMPACT论文中经逐页逐字节核实的五组源内异文与印刷损坏预警。",
+        "text": "把“核对版本与因子文件”推到机读数据包与原始报告页面，还会发现五组必须原样披露、不能靠猜测静默抹平的源内异文与附表损坏。第一，在 EF 3.1 官方压缩包的水使用方法 XML（1268239 字节，官方压缩包内仅存这一份水使用方法文件，版本号仍标 2016 年 12 月的 03.00.014，引文源仍写“Boulay 等 2016 投稿稿”）中，全部 209 个两字母国家或地区代码的 7 条取水流与 4 条退水流绝对值严格相等；唯独未带地理代码的全局默认项（无 location 标签），7 条取水流全赋 +42.950，3 条排入淡水的退水流赋 −42.95，而排入“未指明水体”的退水流却赋 −42.955（该退水流自身的 XML 还把体积流属性均值写成整数“1”，其余 10 条涉水流均写“1.0”），导致一段未标国别的“取水 1 m³、向未指明水体退水 1 m³”凭空产生 −0.005 m³ world-eq. 的净负抵扣。同一方法文件还将格陵兰（GL）全部 11 条流赋 0.00（低于 AWARE 100 原方法 0.1 的下截断，而阿鲁巴停在 100 的上截断），在完整性字段声明含 36 个清单项却实际只收录 11 条基本流，并在使用建议段落中留下多处英文单词漏空格。第二，单位与流属性表述在报告与机读包之间摇摆：2018 年方法报告（JRC109369）表 1 把缺水潜势单位误印成质量单位“kg world eq. deprived”，表 2 更把单位组印成“质量单位组（kg）”并靠脚注说明原方法为立方米；2023 年更新报告（JRC130796）表 1 改印“m3 world eq. deprived water”、表 10 印“m3 water eq. of deprived water/person”，而机读方法 XML 虽把参考量简述标为“m3-world equivalents”，底层引用的却是通用技术流属性“体积（Volume，基准单位 m3）”，并未建立专属稀缺当量流属性。第三，RIVM 2016-0104 第 10 章内部存在多处前后不一：第 74 页与第 77 页正文分别把表 10.1 与表 10.3 误引为“Table 9.1”与“Table 9.3”；第 78 页正文称 Pfister 等（2009）将最低膳食需水量设为 1530 m³/(年·人)，而表 10.1 与总表 1.3 的标准管理列均印作 1350 m³/(年·人)；总表 1.5（第 22 页）不仅将表 10.4 的 3.10×10⁻⁶ / 2.22×10⁻⁶ 与表 10.5 的 1.35×10⁻⁸ 舍入为两位有效数字（3.1×10⁻⁶ / 2.2×10⁻⁶ 与 1.4×10⁻⁸），还在表 10.6 并列的两个淡水生态全球值中径取流域中位数舍入值 6.0×10⁻¹³ 而略去国家面积加权均值 1.74×10⁻¹²。第四，尤为严重的是 RIVM 2016-0104 支撑信息第 21.2 节表 S6.2（第 166—169 页，按英文国名首字母 A–Z 排列）：前 52 个国家或地区（从阿富汗 Afghanistan 至埃塞俄比亚 Ethiopia，即 A–E 区段）完全符合 WSI 介于 0.01 至 1 且 HDI > 0.88 国家健康损害归零（或仅留存 10⁻¹⁸ 量级近零残差）的定义；但从第 167 页表 S6.2 第 53 行（该页第 14 行）斐济（Fiji）起直至第 169 页表末津巴布韦（Zimbabwe），整个 F–Z 区段（涵盖法国、德国、印度、伊朗、日本、塞内加尔、瑞典、英国、美国等逾百个国家或地区）发生严重的列行错位混入。具体而言，WSI 列印出斐济 4.64×10⁻³、德国 34.7、塞内加尔 7.28×10⁴、美国 8.20×10⁻⁷ 等越出 [0.01, 1] 达数个数量级的数值，同时人体健康损害列把伊朗、肯尼亚、尼日尔、尼日利亚、塞内加尔、苏丹、乌干达、赞比亚等国印成 0.00，却给瑞典（2.40×10⁻⁶）和美国（9.80×10⁻⁷）等高 HDI 国家印出正的营养不良损害因子。第五，LC-IMPACT 论文第 4 页表 1 将水压力健康模型单列为“平均（Average）”，同页第 2.3 节正文却说明对该类别同时提供平均／线性与边际两套因子（第 11 页案例亦选用边际因子）。研究者若直接从 PDF 附表抄数而不核验函数值域与机读原件，极易把排版错位当成科学结论。",
+        "reasoning": "汇总逐字节核验的EF 3.1涉水XML、JRC109369、JRC130796、RIVM 2016-0104第10章与表S6.2（明确英文首字母A–Z排序下前52行正常、第53行Fiji起F–Z整段损坏）及Verones等2020表1/§2.3异文，给出精确数值证据与使用禁令。",
+        "caveats": [
+          "RIVM 2016-0104表S6.2第167–169页自第53行斐济至津巴布韦（英文首字母F–Z区段）的印刷数值属于排版损坏产物，严禁在任何国别评价或文献引用中充当ReCiPe 2016真实参数；如需该区段国家因子，必须核验未经PDF重排污染的原始电子表格并校验WSI∈[0.01, 1]与HDI>0.88归零约束。"
+        ]
+      },
+      "rationale": "整合改写：压实至 440 字以内，消除“正反文矛盾”与模板措辞，完整异文留存注释。"
+    },
+    {
+      "id": "cl-water125-diagnostic-synthesis",
+      "op": "modify",
+      "from": {
+        "id": "cl-water125-diagnostic-synthesis",
+        "status": "reviewed",
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-18",
+        "conceptIds": [],
+        "premiseIds": [
+          "cl-water125-method-genealogy",
+          "cl-water125-withdrawal-return-accounting",
+          "cl-water125-ef-country-resolution-and-climates",
+          "cl-water125-value-choices-and-denominator-paradox",
+          "cl-water-case-result",
+          "cl-water-case-averaging",
+          "cl-water125-belgium-canada-mechanism-contrast",
+          "cl-water-version-and-boundary",
+          "cl-water125-package-report-discrepancies"
+        ],
+        "evidenceIds": [
+          "ev-water125-ef31-water-xml",
+          "ev-water125-rivm-ch10-framework",
+          "ev-water125-rivm-ch10-endpoints",
+          "ev-water125-rivm-s6-country-and-corruption",
+          "ev-water125-lcimpact2020-water"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-water125-ef31-water-xml",
+            "relation": "supports",
+            "rationale": "支撑核查正负流相抵、未指明水体退水负抵扣（含全局项-42.955不对称）及压缩包文件字节／SHA-256身份。"
+          },
+          {
+            "evidenceId": "ev-water125-rivm-ch10-framework",
+            "relation": "supports",
+            "rationale": "支撑核查中点纯耗水体积WCP与工业地下水不扣地表退水规则。"
+          },
+          {
+            "evidenceId": "ev-water125-rivm-ch10-endpoints",
+            "relation": "supports",
+            "rationale": "支撑核查HDI>0.88、42°纬度截断与WR_malnutrition分母效应导致的I>H/E健康排序。"
+          },
+          {
+            "evidenceId": "ev-water125-rivm-s6-country-and-corruption",
+            "relation": "supports",
+            "rationale": "支撑核查取水比WSI对剩余水深AWARE机制差异及规避表S6.2自第53行Fiji起的受损附表行。"
+          },
+          {
+            "evidenceId": "ev-water125-lcimpact2020-water",
+            "relation": "supports",
+            "rationale": "支撑核查无中点全球灭绝风险PDF·yr/m3及地表水／地下水湿地证据分级。"
+          }
+        ],
+        "scope": "跨体系解释与复核生命周期耗水及缺水结果的五步核查规程，并衔接本章“两处耗水的比较”与“情境与加总”两节X、Y两流域基准算例小结。",
+        "text": "综合全章原理与跨体系证据，拿到任何一份“水足迹”或“水资源影响”数字时，可按五步次序拆解核查，避免把不同口径混作一谈。第一，先定因果链层级与物理自变量：看结果究竟是不含稀缺权重的净耗水体积（ReCiPe 中点 WCP）、按单位面积剩余水量倒数加权的代理中点（EF 3.1 的 AWARE，或早期区分 6 级缺水的瑞士生态稀缺法），还是营养不良健康损害与陆地植被、淡水鱼类、湿地物种灭绝风险终点（ReCiPe 终点与不设中点的 LC-IMPACT），并区分基于总取水占比的 WSI 与基于净耗水后单位面积剩余水量的 AWARE。第二，核对取退水账本与含水层边界：查清模型是用 7 正 4 负基本流做同国代数相抵，还是对未经人工回灌的工业和生活地下水拒绝扣减地表退水（10:1 分歧的来源）。第三，核对时空分辨率与阈值假设：区分流域×月与 PEF/OEF 国家年均默认，并在读终点时检查是否触发了 HDI > 0.88 健康归零、南北纬 42° 鱼类剔除、高物种密度流域陆地置零或地下水湿地排除，以及防营养不良需水量（1000 对 1350 m³/(年·人)）放在分母上造成的个人主义放大效应。第四，核对加总次序与数据包真伪：确认没有把“先平均剩余水量再取倒数”混充逐项表征之和，核对软件调用的方法文件路径、版本号与文件校验值（如字节数与 SHA-256 哈希值），留意无国别默认项排入“未指明水体”时的 −0.005 m³ world-eq. 超额负抵扣，并严防误引 RIVM 报告附表 S6.2 英文首字母 F–Z 区段（斐济至津巴布韦）的错位损坏行。第五，守住水量剥夺与水质污染的分工边界：本章指标只处理水量减少，甚至把洁净退水排入“未指明水体”算作负向抵扣；若退水中携带营养盐或有毒化学品，则须分别交给第 16 章的富营养化与第 19 章的化学毒性（例如在 EF 3.1 淡水生态毒性中，“排入未指明水体”恰被赋予全额正的淡水危害因子）。对照这五步核查再回看本章“两处耗水的比较”与“情境与加总”两节的 X、Y 两流域虚构算例，各环节的职责便清晰分明。",
+        "reasoning": "将B18原有的体积—剩余量—非线性加总主线与新增的四体系架构、地下水10:1账本、分母效应、跨国反转及数据包异文整合为五步核查准则，在末句平滑交回第18.3–18.4节X、Y两流域基准算例小结段cl-water-conclusion，消除重复章节交棒。",
+        "caveats": [
+          "五步核查用于对齐生命周期评价内部的方法口径与数据来源；涉及具体取水许可、生态基流调度或地下水超采治理时，仍须依赖流域水文监测与当地水资源管理法规。"
+        ]
+      },
+      "rationale": "整合改写：统一使用“本章”与末段算例绑定句衔接，并以“合计 3 m³ 耗水的两流域算例”自然过渡至末段收束。"
+    },
+    {
+      "id": "cl-tox123-midpoint-families",
+      "op": "modify",
+      "from": {
+        "id": "cl-tox123-midpoint-families",
+        "status": "reviewed",
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-17",
+        "conceptIds": [
+          "cn-toxic-pathway"
+        ],
+        "premiseIds": [
+          "cl-lcia-endpoint-units",
+          "cl-usetox-fate-exposure-effect",
+          "cl-usetox-indicators-not-observed-cases"
+        ],
+        "evidenceIds": [
+          "ev-tox123-ilcd2011-ht",
+          "ev-tox123-ilcd2011-ecotox",
+          "ev-tox123-rivm-ch9-framework",
+          "ev-tox123-recipe2017-tox"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-tox123-ilcd2011-ht",
+            "relation": "supports",
+            "rationale": "支撑ILCD 2011采用USEtox人体致癌与非致癌CTUh中点（金属与解离物质降为III）且终点仅对致癌DALY评Level II/interim（有机物II、金属等interim）。"
+          },
+          {
+            "evidenceId": "ev-tox123-ilcd2011-ecotox",
+            "relation": "supports",
+            "rationale": "支撑ILCD 2011仅推荐淡水生态毒性CTUe中点，对陆海生态中点及全部生态终点不予推荐。"
+          },
+          {
+            "evidenceId": "ev-tox123-rivm-ch9-framework",
+            "relation": "supports",
+            "rationale": "支撑ReCiPe 2016采用USES-LCA 2.0覆盖五项1,4-DCB参照中点、排除农地生态效应及乘恒定基准损害系数转终点（表9.4三位有效数字与表1.5两位有效数字汇总）。"
+          },
+          {
+            "evidenceId": "ev-tox123-recipe2017-tox",
+            "relation": "context",
+            "rationale": "对照2017年综述论文对五项中点、表2定性伤害路径、§3.2.8生态伤害因子取1及电子补充材料分工的表述。"
+          }
+        ],
+        "scope": "ILCD 2011/EF（USEtox三项CTUh/CTUe中点，排除陆海生态中点及多数终点）与ReCiPe 2016（USES-LCA 2.0五项1,4-DCB参照中点、排除农地生态效应及恒定终点转换）的结构分叉。",
+        "text": "同样沿着“归趋—暴露—效应”三步连接排放与受体，国际主流影响评价体系却先在指标个数、保护边界和单位基准上分成了两大家族。2011 年欧盟《ILCD 手册》与环境足迹（EF 2.0、3.0、3.1）采纳 USEtox，只设立 3 项化学毒性中点——人体致癌毒性、人体非致癌毒性（均以比较毒性单位 CTUh 计，表示人群累计疾病病例潜势，对应表征因子以 CTUh/kg 计）和淡水生态毒性（以 CTUe 计，表示潜在受影响物种比例 PAF 在淡水中对体积与时间的积分，表征因子以 CTUe/kg 计）。三项中点的方法成熟度推荐等级均为第二／三级（其中金属、两亲性与解离物质因机理不确定性单列为第三级）；对陆地与海洋生态毒性，该手册认定现有模型尚不足以推荐，在终点层也只对人体致癌毒性的伤残调整寿命年（DALY）给出“第二级／过渡备选”的拆分评级（非极性有机物获第二级推荐，金属、两亲性与解离物质仅列过渡备选），对非致癌与全部三类生态毒性终点均不作推荐。相反，ReCiPe 2016（以 2016 年原始报告 RIVM 2016-0104 第 9 章为准，早于仅列定性伤害路径总表并将数值移入电子补充材料的 2017 年综述论文）没有采用 USEtox 模型本体，而是选用嵌套多介质模型 USES-LCA 2.0，补入解离有机物随酸度变化的分配与摄取回归并吸纳 USEtox 物质参数库，一次设立 5 项中点，统一除以参照物质 1,4-二氯苯（1,4-DCB）排入对应基准介质的表征值：两项人体毒性参照排入城市空气（kg 1,4-DCB 排入城市空气当量），淡水、海洋与陆地生态毒性分别参照排入淡水、海水与工业土壤。由于陆地毒理实测匮乏，USES-LCA 2.0 的陆地效应因子由水生半数效应浓度经土壤孔隙水相平衡分配外推，并明确排除农业土壤的生态毒性效应，以免与第 14 章讨论的农地占用的生物多样性损失重复计数。走到终点时，ReCiPe 2016 再将 5 项中点分别乘以跨视角恒定的 1,4-DCB 基准损害系数：致癌与非致癌分别按每发病例 11.5 与 2.7 DALY 折算为 3.32×10⁻⁶ 与 6.65×10⁻⁹ DALY/kg 1,4-DCB 当量；淡水、海洋与陆地生态毒性假定急性效应近似野外消失比例（附加伤害因子取 1）并乘上各自物种密度后，在表 9.4 中分别为 6.95×10⁻¹⁰、1.05×10⁻¹⁰ 与 5.39×10⁻⁸ species·yr/kg 1,4-DCB 当量（同报告第 22 页总览表 1.5 将陆地系数四舍五入印作 5.4×10⁻⁸）。因此，两套体系并非同一中点换个单位，连海洋与工业土壤受体是否进入账本、农业土壤是否让位于土地利用类别，都已在起点分开。",
+        "reasoning": "对照ILCD 2011 §§3.3/3.9与RIVM 2016-0104第9章及2017综述，明确3中点CTUh/CTUe与5中点1,4-DCB当量、农地生态排除及终点恒定转换的制度边界。",
+        "caveats": [
+          "USES-LCA 2.0排除农业土壤生态毒性是为了避免与土地利用类别重复计分，并不代表农田施药对土壤生物群落没有现实毒理影响。"
+        ]
+      },
+      "rationale": "整合改写：首次展开 CTUh、CTUe 与 DALY，将两大家族架构与终点常数整理入表 1 及注释。"
+    },
+    {
+      "id": "cl-tox123-hc20-and-metals",
+      "op": "modify",
+      "from": {
+        "id": "cl-tox123-hc20-and-metals",
+        "status": "reviewed",
+        "kind": "calculation",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-17",
+        "conceptIds": [
+          "cn-toxic-pathway"
+        ],
+        "premiseIds": [
+          "cl-usetox-indicators-not-observed-cases",
+          "cl-tox123-midpoint-families"
+        ],
+        "evidenceIds": [
+          "ev-tox123-ilcd2011-ecotox",
+          "ev-tox123-jrc130796-hc20-proxies",
+          "ev-tox123-ef31-addendum",
+          "ev-tox123-ef31-ecotox-xml"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-tox123-ilcd2011-ecotox",
+            "relation": "context",
+            "rationale": "核实ILCD 2011表20–21对ReCiPe（USES-LCA 2.0，基于急性EC50）与TRACI（基于NOEC）生态毒性效应数据基础的记载及淡水USEtox推荐边界。"
+          },
+          {
+            "evidenceId": "ev-tox123-jrc130796-hc20-proxies",
+            "relation": "supports",
+            "rationale": "支撑0.5/HC50改0.2/HC20的公式推导、20/17外推倍率及表6铝／铜骤降与镉／银／汞跃居前三的EF 3.0对3.1对比。"
+          },
+          {
+            "evidenceId": "ev-tox123-ef31-addendum",
+            "relation": "supports",
+            "rationale": "支撑EF 3.1将原metals子指标合并入inorganics仅保留两套子指标的制度依据。"
+          },
+          {
+            "evidenceId": "ev-tox123-ef31-ecotox-xml",
+            "relation": "supports",
+            "rationale": "提供05316e7a.xml中三价锑、铝、铜、镉、银、汞排入淡水的完整精度机读实值。"
+          }
+        ],
+        "scope": "同一淡水CTUe/kg单位下USEtox原有的0.5/HC50与EF 3.0/3.1采用的0.2/HC20效应基准分歧、20/17外推比值及EF 3.1纳入欧盟注册毒理资料引发的金属跨数量级次序反转。",
+        "text": "即便同样停在淡水生态毒性、表面都标着 CTUe/kg，底层效应基准与毒理数据源的改写也足以把金属排序彻底翻转。原版 USEtox 按 50% 物种受危害浓度（HC50）将水生效应因子取为 0.5/HC50（而《ILCD 手册》表 20–21 记载 ReCiPe 所用 USES-LCA 2.0 以急性半数效应浓度 EC50 为起点建立线性浓度—响应关系，TRACI 则改用无观察效应浓度 NOEC）；欧盟自 EF 3.0 与 EF 3.1（JRC130796 第 3.4 节与图 2）起为衔接欧盟化学品环境风险评估，改以 20% 物种受危害浓度（HC20）将效应因子定为 0.2/HC20，并引入欧洲化学品管理局与欧洲食品安全局注册毒理数据及稳健度权重。EF 3.0 曾先把有机物与无机物切入新基准，却对金属暂时保留旧版 USEtox 因子；EF 3.1 则把金属同步纳入 0.2/HC20 规则，并在 2022 年 11 月数据指南补篇中将原有的“有机物、无机物、金属”三项子指标合并成“有机物”与含金属的“无机物”共 2 项子指标。若某种金属缺少欧盟毒理卷宗、只能按经验关系 HC20 = 0.34×HC50 外推且归趋与暴露不变，新旧因子之比不过是 (0.2/0.34)÷0.5 = 20/17 ≈ 1.176，即上浮约 18%（例如排入淡水的三价锑由 EF 3.0 的 1.22×10² 升至 EF 3.1 表值的 1.43×10²，官方 XML 精确值为 143.35416561027336 CTUe/kg）。然而对具备欧盟毒理卷宗的金属，效应基准切换与数据源替换叠加后引发了跨数量级重排。在 EF 3.0 中高居前两位的淡水铝（4.09×10⁵ 降至表值 4.35×10³，XML 实值 4351.936148782046，降幅 99%）与淡水铜（9.92×10⁴ 降至表值 4.65×10¹，XML 实值 46.47592828149169，原表四舍五入印作 -100%）分别骤降两个与三个以上数量级；相反，镉（2.29×10⁵ 升至表值 6.74×10⁵，XML 实值 674494.7621301207，+195%）、银（1.94×10⁴ 升至表值 1.77×10⁵，XML 实值 177087.28968187515，+813%）与汞（2.21×10³ 升至表值 3.32×10⁴，XML 实值 33175.97305971487，+1401%）跃居前三。比较排入淡水的 1 kg 铜与 1 kg 汞，EF 3.0 判铜的生态毒性约为汞的 45 倍，EF 3.1 却在同一 CTUe 单位下反转为汞约为铜的 714 倍，相对权重翻转逾四个数量级（约三万二千倍）。要在下一节追查这些分歧背后的模型结构与适用范围，仍须先回到作为共同起点的 USEtox 本身是怎样协调建立并简化真实环境的。",
+        "reasoning": "依据ILCD 2011表20–21、JRC130796式(1)–(4)与图2及表6、EF 3.1补篇及05316e7a.xml实测因子，分开纯公式外推的1.176倍微调与欧盟毒理卷宗重算带来的四数量级金属次序反转。",
+        "caveats": [
+          "铝和铜在EF 3.1中的大幅下调同时包含HC20效应基准转换与欧盟注册毒理数据集替换，不能把这一差值单独归因于斜率分子0.5改0.2。"
+        ]
+      },
+      "rationale": "整合改写：压实至 440 字以内，将 EF 3.0/3.1 金属表值与增减幅整理入表 2、XML 精确值移入注释。"
+    },
+    {
+      "id": "cl-tox123-perspective-switches",
+      "op": "modify",
+      "from": {
+        "id": "cl-tox123-perspective-switches",
+        "status": "reviewed",
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-17",
+        "conceptIds": [
+          "cn-toxic-pathway"
+        ],
+        "premiseIds": [
+          "cl-tox123-midpoint-families",
+          "cl-usetox-boxes-and-time",
+          "cl-usetox-internal-feature-conflict"
+        ],
+        "evidenceIds": [
+          "ev-tox123-rivm-ch9-framework",
+          "ev-tox123-recipe2017-tox"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-tox123-rivm-ch9-framework",
+            "relation": "supports",
+            "rationale": "支撑RIVM 2016-0104 §9.2与印p67表9.1在个人主义、等级主义与平等主义间联动切换的五项时间窗、暴露途径与准入开关。"
+          },
+          {
+            "evidenceId": "ev-tox123-recipe2017-tox",
+            "relation": "context",
+            "rationale": "对照2017年综述论文§2.3与§3.1.8对三视角时间窗及USES-LCA 2.0范围的概括。"
+          }
+        ],
+        "scope": "ReCiPe 2016（USES-LCA 2.0）个人主义、等级主义与平等主义三视角联动切换的五项结构开关，以及除以参照物质1,4-DCB何时保序、何时失效的数学条件。",
+        "text": "除同一模型内部的版本与模块差异外，跨体系比较还取决于多介质模型怎样设定时间积分与暴露准入。ReCiPe 2016 将所有物质统一除以 1,4-二氯苯的表征因子，看似只是换了一把标尺：只要时间窗口、暴露途径和毒理准入门槛固定不变，同除一个正常数确实只消去公共倍率，不会改变任何两种排放之间的先后次序。但 ReCiPe 2016（RIVM 2016-0104 第 9.2 节与表 9.1）在个人主义（I）、等级主义（H）与平等主义（E）三种文化视角之间，同时联动切换五道结构开关。第一，归趋驻留积分时间窗依次取 20 年、100 年与无限期；第二，针对金属的人体暴露路径，个人主义鉴于生物体对金属呈次线性富集、农牧水产模型的富集因子不确定性大，只保留空气吸入与饮用水共 2 条暴露途径（排除叶茎菜、根茎菜、肉、奶、鱼等 7 条食物途径），而等级主义与平等主义纳入全部 9 条吸入与经口途径；第三，针对钴、铜、锰、钼、锌共 5 种必需金属的海洋生态毒性，个人主义仅统计大陆架近海区室，等级主义与平等主义并计远洋水体。第四，人体致癌物质范围在个人主义下仅限国际癌症研究机构（IARC）第 1、2A、2B 类证据较强的致癌物，在等级主义与平等主义下则扩展至经 IARC（2004）评估的全部 844 种物质（含第 3 类及未分类项，表 9.1 概括为全部有半数致瘤剂量 TD50 报道的化学物）；第五，生态毒性效应因子的最低受试物种数在个人主义下要求至少 4 个受试物种，在后两个视角下放宽至 1 个受试物种。五道开关一并拨动时，分子上的待评物质与分母上的 1,4-二氯苯对时间窗和暴露链的敏感程度截然不同，不仅使 ReCiPe 三个视角之间无法保序，也使 1,4-二氯苯当量与 USEtox 中点因子之间不存在固定换算倍率。",
+        "reasoning": "基于RIVM 2016-0104 §§9.2.1–9.2.5与Table 9.1–9.2，阐明单一视角内标量保序与跨视角五项模型开关同时触发非等比跳变的机制。",
+        "caveats": [
+          "个人主义视角下部分致癌物或少物种受试化学品的因子为零或缺失，反映的是高证据门槛筛选规则，不能解释为已证实无毒。"
+        ]
+      },
+      "rationale": "整合改写：首次展开国际癌症研究机构（IARC），紧凑梳理 ReCiPe 2016 五道视角开关。"
+    },
+    {
+      "id": "cl-tox123-nickel-dcb-reversal",
+      "op": "modify",
+      "from": {
+        "id": "cl-tox123-nickel-dcb-reversal",
+        "status": "reviewed",
+        "kind": "calculation",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-17",
+        "conceptIds": [
+          "cn-toxic-pathway"
+        ],
+        "premiseIds": [
+          "cl-usetox-intake-and-effects",
+          "cl-tox123-perspective-switches"
+        ],
+        "evidenceIds": [
+          "ev-tox123-rivm-ch9-table93",
+          "ev-tox123-ef31-htnc-xml"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-tox123-rivm-ch9-table93",
+            "relation": "supports",
+            "rationale": "提供RIVM表9.3中1,4-二氯苯与镍在城市空气和海水三视角下的精确表征因子。"
+          },
+          {
+            "evidenceId": "ev-tox123-ef31-htnc-xml",
+            "relation": "supports",
+            "rationale": "提供EF 3.1非致癌总表XML中1,4-二氯苯与镍在城市近地空气和海水的精确CTUh/kg因子，完成跨体系双向排序反转演算。"
+          }
+        ],
+        "scope": "易降解有机物1,4-DCB与持久性金属镍在ReCiPe 2016（I/H/E）及EF 3.1非致癌毒性数据集之间跨越城市空气与海水的双向受控排序反转。",
+        "text": "把易挥发降解的参照有机物 1,4-二氯苯与不在环境中降解的持久性金属镍放到一起（RIVM 2016-0104 表 9.3 对照 EF 3.1 官方非致癌毒性数据集），就能直接算出时间窗与食物链开关怎样制造双向次序反转。由于 1,4-二氯苯在大气和水体中数周至数月即迁移降解完毕，它在城市空气下的致癌与非致癌因子在三个视角下恒为参照值 1 kg 1,4-DCB 当量/kg，排入海水的非致癌因子也稳定在个人主义 0.83、等级主义与平等主义 0.82。相反，排入城市空气的 1 kg 镍在个人主义（20 年、仅空气与饮水）下非致癌因子仅为 36 kg 1,4-DCB 当量，一旦在等级主义（100 年）与平等主义（无限期）下打开农牧水产 7 条食物链途径并拉长驻留积分，立刻跃升至 2300 与 5800（同一 1 kg 城市空气镍排放在致癌毒性上依次为 31、370、910，经大气向海洋跨介质沉降并随驻留积分拉长后，海洋生态毒性也从 31、110 跳至 55000）；若把 1 kg 镍直接排入海水，个人主义因剔除海产品摄入且海水不作饮用水源而精确给出 0，等级主义与平等主义则升至 23 与 7900（致癌由 0 升至 3.5 与 1200）。现在比较方案甲（向城市近地空气排放 100 kg 1,4-二氯苯）与方案乙（向城市近地空气排放 1 kg 镍）的人体非致癌毒性：ReCiPe 个人主义判甲大于乙（100 对 36 kg 1,4-DCB 当量），ReCiPe 等级主义与平等主义彻底反转为乙远大于甲（2300 与 5800 对 100）；而切回采用稳态无限期积分却使用另一套多介质箱体与金属分配参数的 EF 3.1 官方 XML，城市近地空气 1,4-二氯苯为 1.4795×10⁻⁸、镍为 1.1237×10⁻⁶ CTUh/kg（单千克镍约为 1,4-二氯苯的 75.95 倍，落在 ReCiPe 个人主义 36 倍与等级主义 2300 倍之间），100 kg 1,4-二氯苯得 1.4795×10⁻⁶ CTUh、重新高于 1 kg 镍的 1.1237×10⁻⁶ CTUh！反过来，若甲、乙改为向海水各排 1 kg，ReCiPe 个人主义仍判 1,4-二氯苯更大（0.83 对 0），而 ReCiPe 等级主义（0.82 对 23）、平等主义（0.82 对 7900）与 EF 3.1（4.7713×10⁻⁹ 对 3.4465×10⁻⁸ CTUh）又一致判镍更高。",
+        "reasoning": "联合RIVM Table 9.3与EF 3.1非致癌XML精确数值，构造100 kg 1,4-DCB对1 kg镍（城市空气）与各1 kg（海水）两组受控方案，严格证明跨视角与跨体系不可常数换算。",
+        "caveats": [
+          "城市空气100∶1与海水1∶1排放配比是用于揭示单千克比值（城市空气36、75.95、2300、5800及海水0、7.22、28、9634）跨越阈值的受控检验，不代表两个过程提供等价产品功能。"
+        ]
+      },
+      "rationale": "整合改写：压实至 440 字以内，联动表 3 突出城市空气与海水两组双向反转。"
+    },
+    {
+      "id": "cl-tox123-speciation-and-proxies",
+      "op": "modify",
+      "from": {
+        "id": "cl-tox123-speciation-and-proxies",
+        "status": "reviewed",
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-17",
+        "conceptIds": [
+          "cn-toxic-pathway"
+        ],
+        "premiseIds": [
+          "cl-usetox-matched-emissions",
+          "cl-tox123-hc20-and-metals"
+        ],
+        "evidenceIds": [
+          "ev-tox123-jrc109369-tox",
+          "ev-tox123-jrc130796-hc20-proxies",
+          "ev-tox123-jrc130796-nf-impacts",
+          "ev-tox123-ef31-htc-xml",
+          "ev-tox123-ef31-htnc-xml",
+          "ev-tox123-ef31-ecotox-xml"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-tox123-jrc109369-tox",
+            "relation": "context",
+            "rationale": "对照2018年方法报告JRC109369 §4.3早期价态说明（含50/50三价与六价铬旧口径）与EF 3.1实测规则的演变。"
+          },
+          {
+            "evidenceId": "ev-tox123-jrc130796-hc20-proxies",
+            "relation": "supports",
+            "rationale": "支撑元素价态赋值、2019年销量加权泛指农药代理（高于Q3）及ECOTOX未指明水体改赋淡水因子规则。"
+          },
+          {
+            "evidenceId": "ev-tox123-jrc130796-nf-impacts",
+            "relation": "supports",
+            "rationale": "支撑未指明水体规则调整推动全球淡水生态毒性归一化基准上涨33%（4.27×10⁴→5.67×10⁴ CTUe/人）。"
+          },
+          {
+            "evidenceId": "ev-tox123-ef31-htc-xml",
+            "relation": "supports",
+            "rationale": "提供致癌XML中元素铬等同六价铬（9.9035×10⁻⁵对三价0）及1,4-二氯苯未指明水体保留淡海水均值（1.1832×10⁻⁷）的实证。"
+          },
+          {
+            "evidenceId": "ev-tox123-ef31-htnc-xml",
+            "relation": "supports",
+            "rationale": "提供非致癌XML中排入淡水的泛指杀虫剂（3.77412284590839×10⁻⁴）与毒死蜱（0.0025928 CTUh/kg）同处高量级的实证。"
+          },
+          {
+            "evidenceId": "ev-tox123-ef31-ecotox-xml",
+            "relation": "supports",
+            "rationale": "提供淡水生态XML中铜／锑／砷／铬价态实值、海水铜4.33×10⁻²¹、泛指杀虫剂与毒死蜱及未指明水体同值实证。"
+          }
+        ],
+        "scope": "EF 3.1清单基本流向表征因子的三类制度代理规则：元素金属价态映射、2019销量加权泛指农药代理及“未指明水体”在生态毒性与人体毒性之间的不对称赋值。",
+        "text": "就算锁定在同一套 EF 3.1 方法包内部，生命周期清单里的基本流名称与实验室受试化学形态之间还隔着三层人工映射规则，任何一层改动都会成倍放大结果。第一层是未指明价态的元素金属流映射：淡水铜直接取二价铜的 46.47592828149169 CTUe/kg；元素锑（11236.40165143179）与元素砷（3263.3274020720564）分别取各自三价（锑 143.35416561027336、砷 1786.510738350864）与五价（锑 22329.44913725331、砷 4740.144065793249）的算术平均；唯独元素铬没有沿用 2018 年方法报告（JRC109369）第 4.3 节曾提到的三价／六价对半均值，而是直接等同高毒六价铬——淡水生态毒性同取 12274.013470217462 CTUe/kg（三价铬仅 952.2972968312423），淡水人体致癌毒性也同取 9.9035×10⁻⁵ CTUh/kg（三价铬为 0）。第二层是笼统农药类别流（未指明杀菌剂、除草剂、杀虫剂）：EF 3.0 曾取同类已表征农药的中位数，导致笼统流比高毒常用有效成分低约两个数量级；EF 3.1（JRC130796 表 8 与图 3）在淡水生态毒性与人体非致癌毒性中同步改按 2019 年欧盟农药销量加权平均，使三类泛指农药全部跃升至第三四分位数之上——例如排入淡水的“未指明杀虫剂”在生态毒性中达 5.72902829638445×10⁷ CTUe/kg（毒死蜱为 3.9365×10⁸ CTUe/kg），在人体非致癌毒性中达 3.77412284590839×10⁻⁴ CTUh/kg（毒死蜱为 0.0025928 CTUh/kg），双双进入相邻高量级，堵住了靠填报笼统清单名压低毒性的漏洞。第三层是“排入未指明水体”子区室规则：由于海水排放进入淡水受体的归趋份额近乎为零（如海水铜在淡水生态毒性中仅 4.33×10⁻²¹ CTUe/kg），EF 3.0 取淡水与海水算术平均的做法等于把所有未指明水体排放的淡水生态毒性一律腰斩；EF 3.1 在淡水生态毒性中改为直接赋全额淡水因子（如 1,4-二氯苯同为 5541.6、毒死蜱同为 3.9365×10⁸ CTUe/kg，推动全球人均归一化基准从 4.27×10⁴ 升至 5.67×10⁴ CTUe/人，增幅 33%），但在人体致癌与非致癌毒性中，“未指明水体”仍保留淡水与海水的算术平均（如 1,4-二氯苯致癌毒性为淡水 2.194×10⁻⁷ 与海水 1.724×10⁻⁸ 的均值 1.1832×10⁻⁷ CTUh/kg）。这三层清单代理映射叠在底模之上，提示进入下一节核对比较依据时，须先回到 USEtox 2.0 文档本身对资料缺口置零与因子可靠性分级的规定，再对照后续发行包的制度规则。",
+        "reasoning": "综合JRC109369 §4.3、JRC130796 §§3.4.1–3.4.2.5、表8、表10及2299222a/7cfdcfcf/05316e7a XML实测值，揭示价态映射、销量加权农药代理与未指明水体不对称规则的定量后果，并向第三节USEtox 2.0文档原段平稳过渡。",
+        "caveats": [
+          "若清单编制者已知真实排放以三价铬为主、具体低毒农药品种明确或废水排入远海，却在清单中笼统填报元素铬、未指明杀虫剂或未指明水体，EF 3.1的保守代理规则就会反过来显著高估潜在毒性。"
+        ]
+      },
+      "rationale": "整合改写：压实至 440 字以内，将 15 位 XML 精确值移入注释。"
+    },
+    {
+      "id": "cl-tox123-normative-zeros",
+      "op": "modify",
+      "from": {
+        "id": "cl-tox123-normative-zeros",
+        "status": "reviewed",
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-17",
+        "conceptIds": [
+          "cn-toxic-pathway"
+        ],
+        "premiseIds": [
+          "cl-usetox-missing-data-model-zero",
+          "cl-usetox-factor-flags-and-conditions"
+        ],
+        "evidenceIds": [
+          "ev-tox123-jrc109369-tox",
+          "ev-tox123-jrc130796-hc20-proxies",
+          "ev-tox123-jrc130796-nf-impacts",
+          "ev-tox123-ef31-htc-xml",
+          "ev-tox123-ef31-htnc-xml",
+          "ev-tox123-ef31-ecotox-xml"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-tox123-jrc109369-tox",
+            "relation": "supports",
+            "rationale": "支撑§3.4长时标排放置零规定及印p15表5残留Estimated映射的对照。"
+          },
+          {
+            "evidenceId": "ev-tox123-jrc130796-hc20-proxies",
+            "relation": "supports",
+            "rationale": "支撑表7对硫、氯化物、钙、膨润土文献无毒置零及对氯气、室外一氧化碳环境稳态置零的制度依据。"
+          },
+          {
+            "evidenceId": "ev-tox123-jrc130796-nf-impacts",
+            "relation": "supports",
+            "rationale": "支撑主要因室外一氧化碳归零使全球非致癌归一化基准降44%、94%数据集下降而避免排放抵扣数据集最高暴涨4438%。"
+          },
+          {
+            "evidenceId": "ev-tox123-ef31-htc-xml",
+            "relation": "supports",
+            "rationale": "核实致癌总表13717条中2108条long-term全置0.0。"
+          },
+          {
+            "evidenceId": "ev-tox123-ef31-htnc-xml",
+            "relation": "supports",
+            "rationale": "核实非致癌总表43816条中6748条long-term置0.0、氯气13条置0.0及一氧化碳15条室外空气+7条水土置0.0而3条室内空气保留1.717×10⁻⁶。"
+          },
+          {
+            "evidenceId": "ev-tox123-ef31-ecotox-xml",
+            "relation": "supports",
+            "rationale": "核实淡水生态总表79349条中12207条long-term置0.0，而氯气排入淡水仍保留11918.0 CTUe/kg。"
+          }
+        ],
+        "scope": "在USEtox缺数据置零之外，EF 3.1官方XML中三类制度性显式0.0（长时标子区室整批置零、文献无毒置零、室外稳态浓度边界置零）及其对归一化基准（-44%）与避免排放抵扣数据集（最高+4438%）的双向冲击。",
+        "text": "在核对比较依据时，除了前文指出的“缺毒理资料置零”和“未达最低质量门槛排除”，EF 3.1 官方三套毒性方法数据集还在机读表里写入了三类含义完全不同的制度性零值。第一类是长时标排放子区室整批置零：凡带“长期（long-term）”标记的空气与水体排放流，在人体致癌（13717 条因子中的 2108 条）、人体非致癌（43816 条中的 6748 条）与淡水生态毒性（79349 条中的 12207 条）中无一例外赋 0.0，用于切断百年后尾矿或填埋渗滤的远期不确定性（尽管 2018 年方法报告 JRC109369 第 15 页表 5 仍残留将长期子区室按常规空气或淡水估算的旧映射说明）。第二类是文献审查认定无毒置零，例如非致癌毒性中的硫与氯化物，以及淡水生态毒性中的硫、钙与膨润土在全部区室赋 0.0。第三类是环境稳态浓度边界置零（JRC130796 表 7）：EF 3.1 认定氯气与室外一氧化碳在开放环境稳态扩散下难以达到人体非致癌致毒浓度，遂将氯气在非致癌毒性的全部 13 个子区室置 0.0（但氯气排入淡水的生态毒性仍保留 11918.0 CTUe/kg），并把化石源、生物源与土地利用变化三类一氧化碳在非致癌毒性的全部 15 条室外空气流及 7 条水土流置 0.0，唯独在 3 条“排入室内空气”流中保留 1.717×10⁻⁶ CTUh/kg。据 JRC130796 表 10，主要因室外一氧化碳归零，全球人均非致癌归一化基准从 2.30×10⁻⁴ 骤降至 1.29×10⁻⁴ CTUh/人（降幅 44%），令受测的 2752 个 EF 官方数据集中有 94% 的非致癌得分下降；与此同时，带有“替代传统能源从而避免一氧化碳与氯排放”负向抵扣的过程（典型如西班牙废加工木材焚烧数据集，以及部分沼气发电供热数据集），却因原本扣减总分的负贡献突然归零而反向暴涨最高 4438%！看到表征结果里的零或剧烈跳变，若不拆清缺资料零、长期截断零、室内外边界零与系统扩展抵扣项，就会把制度边界误读成工艺优劣。",
+        "reasoning": "基于2299222a/7cfdcfcf/05316e7a XML全表扫描与JRC130796表7、表10及§5.1.1.5，把USEtox输入缺口零与EF三类制度性置零及避免排放抵扣反转完整打通。",
+        "caveats": [
+          "室外一氧化碳在EF 3.1人体非致癌稳态毒性中置0.0，并不否定其在密闭空间的急性中毒危险（故室内空气保留1.717×10⁻⁶ CTUh/kg），也不改变其在第16章光化学臭氧形成中的前体贡献。"
+        ]
+      },
+      "rationale": "整合改写：修正注释中跨篇引述为正式篇名《酸化与营养富集》，压实至 440 字以内。"
+    },
+    {
+      "id": "cl-tox123-package-discrepancies",
+      "op": "modify",
+      "from": {
+        "id": "cl-tox123-package-discrepancies",
+        "status": "reviewed",
+        "kind": "source-statement",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-17",
+        "conceptIds": [
+          "cn-toxic-pathway"
+        ],
+        "premiseIds": [
+          "cl-usetox-internal-feature-conflict",
+          "cl-tox123-normative-zeros"
+        ],
+        "evidenceIds": [
+          "ev-tox123-jrc109369-tox",
+          "ev-tox123-jrc130796-hc20-proxies",
+          "ev-tox123-jrc130796-nf-impacts",
+          "ev-tox123-ef31-addendum",
+          "ev-tox123-ef31-htc-xml",
+          "ev-tox123-ef31-htnc-xml",
+          "ev-tox123-ef31-ecotox-xml",
+          "ev-tox123-rivm-ch9-framework"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-tox123-jrc109369-tox",
+            "relation": "supports",
+            "rationale": "核实2018年报告表2将CTUe印作m3*a及印p14出现Sb(+6)笔误。"
+          },
+          {
+            "evidenceId": "ev-tox123-jrc130796-hc20-proxies",
+            "relation": "supports",
+            "rationale": "核实JRC130796印p13式(3)把HC50/HC20分式误倒印作HC20/(HC20×0.34)但仍写=1.176的排版异文。"
+          },
+          {
+            "evidenceId": "ev-tox123-jrc130796-nf-impacts",
+            "relation": "supports",
+            "rationale": "核实致癌归一化基准因补入四氯化碳升2.1%及印p28把农田二价铜误印成未变9.92E+04→9.92E+04。"
+          },
+          {
+            "evidenceId": "ev-tox123-ef31-addendum",
+            "relation": "supports",
+            "rationale": "核实官方补篇对ILCD/lciamethods正式目录与other/converter转换目录的角色界定。"
+          },
+          {
+            "evidenceId": "ev-tox123-ef31-htc-xml",
+            "relation": "supports",
+            "rationale": "核实致癌总表7327813对converter 7327801字节（project与录入者字段净差12字节）、v01.01.000对无机子表v01.00.000、四氯化碳三位有效数字4.31×10⁻⁵与缺室内水土流及\" CTUh \"空格。"
+          },
+          {
+            "evidenceId": "ev-tox123-ef31-htnc-xml",
+            "relation": "supports",
+            "rationale": "核实非致癌总表24163382对converter 24163370字节、5条氨流各37位置重复多180行及四氯化碳8.34×10⁻⁶对CFC-10 8.3428×10⁻⁶。"
+          },
+          {
+            "evidenceId": "ev-tox123-ef31-ecotox-xml",
+            "relation": "supports",
+            "rationale": "核实淡水生态总表45631200对converter 43329918字节（差2301282字节）、乳酸1033.8对0.0分裂、农田二价铜24.53395145313178及CTUe流属性元数据冲突。"
+          },
+          {
+            "evidenceId": "ev-tox123-rivm-ch9-framework",
+            "relation": "supports",
+            "rationale": "核实RIVM印p65（3094种）对印p159（3073+20=3093种及统称“(essential) metals”）对印p66（5种必需金属）的口径差异。"
+          }
+        ],
+        "scope": "EF-v3.1.zip压缩包内部ILCD/lciamethods与other/converter同UUID副本的字节及淡水乳酸（1033.8对0.0）分裂、氨流37位置重复、四氯化碳对CFC-10有效数字与区室缺口、CTUe/CTUh流属性元数据冲突及JRC/RIVM原报告笔误。",
+        "text": "进一步拆开 EF 3.1 官方参考压缩包与两套体系的技术报告，还能看到仅读方法摘要绝无可能发现的四组源内异文。第一，同一个 EF 3.1 官方 ZIP 压缩包在标准方法目录（ILCD/lciamethods）与供旧版转换工具使用的目录（other/converter）同时存放了具有相同全局唯一标识符（UUID）的三份毒性总表 XML：致癌总表（7327813 对 7327801 字节）与非致癌总表（24163382 对 24163370 字节）虽因子数值全同，却因项目署名（“EC JRC”对“EC’s JRC-IES”）与数据录入者字段（“JRC, Environmental Footprint Team”对“Simone  Fazio”）及枚举标签大小写差异而相差 12 字节；淡水生态毒性总表两处更相差 2301282 字节（45631200 对 43329918 字节），且对其中一条淡水排放“乳酸（Lactic acid）”基本流，标准目录总表与有机子表（73151 条）均赋 1033.8 CTUe/kg，转换目录同 UUID 副本却赋 0.0。此外，非致癌总表（43816 条对应 43636 个唯一流 UUID）与淡水生态总表（79349 条对应 79169 个唯一流 UUID）都因无机子表中 5 条氨空气流各自重复展开 37 行国别／缺省位置（数值完全相同）而多出 5×(37−1) = 180 行。第二，EF 3.1 补入空气四氯化碳作为 CFC-10 的同义流（使致癌人均归一化基准由 1.69×10⁻⁵ 微升至 1.73×10⁻⁵ CTUh/人，原表印 2.1%），且机读包中致癌总表与有机子表版本号标为 01.01.000，而致癌无机子表 398 条及非致癌、生态毒性全套 XML 仍标 01.00.000；但实测淡水生态毒性中四氯化碳与 CFC-10 城市近地空气同为五位有效数字 92.003 CTUe/kg，致癌与非致癌总表中新增的四氯化碳却只保留三位有效数字（4.31×10⁻⁵ 与 8.34×10⁻⁶ CTUh/kg，而原 CFC-10 为 4.3094×10⁻⁵ 与 8.3428×10⁻⁶），且四氯化碳仅建了 5 条室外空气流，缺室内空气（原包小写流名“cfc-10”为 2.775×10⁻⁴ 与 5.3729×10⁻⁵）及全部水土流。第三，USEtox 手册将 CTUe 定义为 PAF·m³·day，2018 年报告表 2 印作体积乘年（m3*a），而压缩包内 CTUe 流属性 XML 在注释里混写 [m3*a] 与 [m3*d]、把引用单位组同 CTUh 一样指向计数单位组“项（Item(s)）”并在永久链接尾部误嵌另一串 UUID，三份致癌方法 XML 的单位缩写还带首尾空格“ CTUh ”。第四，报告公式与正文亦留有明显笔误：JRC130796 第 13 页式（3）把比值分式误倒印成“HC20/(HC20×0.34)”（实算结果仍写 1.176），第 28 页把农田土壤二价铜因子的更新误印成未变的“9.92E+04 至 9.92E+04”（XML 实为 24.53395145313178 CTUe/kg），JRC109369 第 14 页印出化学上不存在的六价锑“Sb(+6)”，RIVM 2016-0104 第 65 页写共 3094 种物质而第 159 页分列 3073 种有机物与 20 种统称“必需金属”的金属（相加 3093 种，且第 66 页正文明确仅 5 种为必需金属）。这些异文必须原样记录，软件审计时更须同时锁定压缩包内完整路径与 SHA-256 文件哈希，再回到单次研究内部的优先追查顺序。",
+        "reasoning": "逐字节比对EF-v3.1.zip内34份XML成员与JRC109369、JRC130796、EF补篇及RIVM 2016-0104原文，据实披露包内副本分裂、位置重复、同义流舍入、单位组错配与报告排版笔误，并自然引回第18段贡献优先序讨论。",
+        "caveats": [
+          "披露源内异文旨在防止跨软件导入或二次脚本解析时因选错目录副本、按字符串匹配单位或轻信报告文字而引入静默偏差，绝不授权私自篡改官方已发布文件。"
+        ]
+      },
+      "rationale": "整合改写：正文突出双目录同 UUID 差异（乳酸 1033.8 对 0.0）与四氯化碳流缺口，将全部四组源内异文收归后附注释。"
+    },
+    {
+      "id": "cl-tox123-cross-system-synthesis",
+      "op": "modify",
+      "from": {
+        "id": "cl-tox123-cross-system-synthesis",
+        "status": "reviewed",
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-17",
+        "conceptIds": [
+          "cn-toxic-pathway"
+        ],
+        "premiseIds": [
+          "cl-tox123-midpoint-families",
+          "cl-tox123-hc20-and-metals",
+          "cl-tox123-nickel-dcb-reversal",
+          "cl-tox123-speciation-and-proxies",
+          "cl-tox123-normative-zeros",
+          "cl-tox123-package-discrepancies",
+          "cl-usetox-prioritization"
+        ],
+        "evidenceIds": [
+          "ev-tox123-ilcd2011-ecotox",
+          "ev-tox123-jrc130796-hc20-proxies",
+          "ev-tox123-ef31-ecotox-xml",
+          "ev-tox123-rivm-ch9-framework",
+          "ev-tox123-rivm-ch9-table93"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-tox123-ilcd2011-ecotox",
+            "relation": "supports",
+            "rationale": "支撑第一步核查受体家族范围（3中点不含陆海生态毒性）。"
+          },
+          {
+            "evidenceId": "ev-tox123-jrc130796-hc20-proxies",
+            "relation": "supports",
+            "rationale": "支撑第二、四、五步核查0.2/HC20金属重排、价态／销量加权农药／未指明水体代理、稳态置零及有机与无机子表分开解读。"
+          },
+          {
+            "evidenceId": "ev-tox123-ef31-ecotox-xml",
+            "relation": "supports",
+            "rationale": "支撑第五步核查压缩包目录路径与SHA-256文件哈希以避免converter副本偏差。"
+          },
+          {
+            "evidenceId": "ev-tox123-rivm-ch9-framework",
+            "relation": "supports",
+            "rationale": "支撑第一步农地排除边界与第三步三视角时间窗／金属食物链开关核查。"
+          },
+          {
+            "evidenceId": "ev-tox123-rivm-ch9-table93",
+            "relation": "supports",
+            "rationale": "支撑第三步持久性金属对可降解参照物跨越视角的排序反转诊断。"
+          }
+        ],
+        "scope": "跨USEtox/ILCD/EF与ReCiPe 2016（USES-LCA 2.0）开展毒性贡献追溯与方法复核的五步诊断规程，衔接章末保护目标收束段。",
+        "text": "把上述跨体系分歧合回贡献追溯，面对两份毒性评价结论相左或版本升级后得分大起大落时，就不能只笼统归咎于“毒性不确定性高”，而应按五步次序逐层定位。第一，先核受体家族与农地边界：看方案是否涉及海洋排放、工业土壤沉降或农田施药，因为 ILCD 与 EF 只计 3 项中点，而 ReCiPe 2016 计 5 项中点却把农业土壤生态效应让位给土地利用。第二，若淡水金属主导差异，立即查效应基准是 0.5/HC50 还是欧盟 0.2/HC20，区分铝、铜动辄百倍至千倍的下调与镉、银、汞跃居前三的数据源重排。第三，若持久性金属与可降解有机物发生名次倒挂，查驻留时间窗（20 年、100 年或无限期）以及农牧水产 7 条食物链暴露途径是否随个人主义视角被成批关闭。第四，返回生命周期清单核对元素铬等金属是否填了具体价态、农药是否用了销量加权泛指流、“未指明水体”是按生态毒性全额计入淡水还是按人体毒性取淡海水均值。第五，拆解所有显式零值与负向抵扣项：把缺毒理零、长期排放截断零、室外一氧化碳与氯气稳态零以及替代发电的避免排放抵扣分开，并核验所加载数据包的确切目录路径与 SHA-256 文件哈希，确认有机物与含金属无机物共 2 套子表在需要时已分开解读。",
+        "reasoning": "将B19新增的受体边界、HC20金属重排、视角时间窗／食物链开关、清单代理映射、制度性置零与压缩包SHA-256核验收敛为可操作的五步贡献诊断顺序，自然导入原有章末结论段cl-usetox-conclusion。",
+        "caveats": [
+          "五步诊断规程用于生命周期影响评价层面的方法对齐与热点追查；若决策取决于特定厂区周边人群健康风险、室内职业暴露限值或受纳水体生态达标，仍须转入场址化学风险评估与现场监测。"
+        ]
+      },
+      "rationale": "整合改写：压缩重复举例，形成简洁的五步毒性分歧诊断规程。"
+    },
+    {
+      "id": "cl-eutro129-operational-synthesis",
+      "op": "retire",
+      "from": {
+        "id": "cl-eutro129-operational-synthesis",
+        "status": "reviewed",
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-18",
+        "conceptIds": [],
+        "mappingIds": [],
+        "premiseIds": [
+          "cl-eutro129-category-genealogy",
+          "cl-eutro129-phosphorus-soil-water-interface",
+          "cl-eutro129-phosphorus-stoichiometry-and-p2o5",
+          "cl-eutro129-nitrogen-soil-prohibition",
+          "cl-eutro129-aquatic-and-airborne-n-reversals",
+          "cl-eutro129-location-copies-and-nox-inversion",
+          "cl-eutro129-normalization-double-counting-and-xml-anomalies"
+        ],
+        "evidenceIds": [
+          "ev-eutro129-ec2021-field-rules",
+          "ev-eutro129-ef31-eutro-xmls",
+          "ev-eutro129-ef31-nf-eutro",
+          "ev-eutro129-rivm-ch8-s4",
+          "ev-eutro129-lcimpact-ch9-marine"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-eutro129-ec2021-field-rules",
+            "relation": "supports",
+            "rationale": "锚定农田磷水/土二选一与农田氮禁止入soil、强制气水拆分的清单核查准则。"
+          },
+          {
+            "evidenceId": "ev-eutro129-ef31-eutro-xmls",
+            "relation": "supports",
+            "rationale": "锚定土壤磷0.05、河海氮1:1、540条恒值location及陆地NOx通用4.26高于36国峰值的机读核查准则。"
+          },
+          {
+            "evidenceId": "ev-eutro129-ef31-nf-eutro",
+            "relation": "supports",
+            "rationale": "锚定官方综合权重9.47%与淡水磷归一化分母+15.6%双重计入的解释边界。"
+          },
+          {
+            "evidenceId": "ev-eutro129-rivm-ch8-s4",
+            "relation": "supports",
+            "rationale": "锚定ReCiPe 2016缺失海洋富营养化、土壤磷0.10与P₂O₅=0.22漏乘2的核查准则。"
+          },
+          {
+            "evidenceId": "ev-eutro129-lcimpact-ch9-marine",
+            "relation": "supports",
+            "rationale": "锚定内陆河流输海47.0%衰减与排除大气沉降氮的跨体系核查准则。"
+          }
+        ],
+        "scope": "跨体系营养富集清单与指标核查的五步实操规程，以及从单一营养路径算例向多路径空气前体小节的收束衔接。",
+        "text": "综合以上证据，把营养输入与富营养化得分用于产品对比或供应链诊断前，应按五步清单逐项核验：第一，先查类别覆盖，确认所用体系究竟并列 3 项中点（ILCD、EF，合计占 EF 3.1 综合权重 9.47%）、2 项水体类别（UNEP 指南、LC-IMPACT）还是仅保留 1 项淡水磷路径（ReCiPe 2016），切勿把 ReCiPe 未建海洋富营养化或 LC-IMPACT 海洋路径排除大气氮（0 项因子）当作真实零负荷；第二，核查农田施磷与表征因子的界面互斥及化学计量，分清 EF 土壤因子（0.05）与 ReCiPe 土壤因子或 UNEP 清单损失率（0.10）的 2 倍模型差，杜绝“先乘 10% 再挂土壤流”的二次折减或“施肥量直挂水体流”的十至二十倍失真，并防范五氧化二磷按单原子误折为 0.22 的印本笔误；第三，核查农田施氮是否已按规范拆分为空气 N₂O（0.022）、NH₃（0.12 或 0.24）与水体 NO₃⁻（1.33），避免误填 EF 中条数为 0 的土壤氮流而静默漏算；第四，辨析空间分辨率真相，区分河海 1∶1 纯化学计量假设与内陆河流约 47.0% 输海折减，区分海洋方法中 540 条恒值位置匹配行与陆地方法中无国别 NOx（4.26）反超 36 国最高值（3.547）的差异；第五，在使用归一化结果时计及淡水磷分母含约 15.6% 农田双重计入，且始终牢记区域或全球富营养化潜势不能替代具体受纳湖库、河口与海湾的现场营养盐限制诊断与排污许可模拟。",
+        "reasoning": "将类别覆盖、磷界面与P₂O₅化学计量、氮土壤流禁令、河海输移与location结构及归一化分母五条证据链收束为可执行的五步核查清单，并自然过渡至下一小节多路径空气前体讨论。",
+        "caveats": [
+          "五步核查清单用于保障生命周期清单与影响评价方法在营养富集维度上的口径自洽，不能替代流域水质监测、生态毒理评价或地方环境监管审批。"
+        ]
+      },
+      "index": 990,
+      "successor": "cl-path-multiple-paths",
+      "rationale": "将原中段富营养化五步核查小结整合入章末全章多路径核查收束段，消除章节中段与末尾的重复总结。",
+      "routes": [
+        "/docs/book/acidification-and-nutrient-pathways"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "content/docs/book/acidification-and-nutrient-pathways.mdx",
+      "fromSha256": "a0275fc96f9ee419b49036ebcec89532a4153773f6315f9f43202bb3cb8fe90f",
+      "toSha256": "ef61f5f7d6314f489dab88dd869d86806b2e50b5b85cd91f0b1be02fefb0de60",
+      "previous": "---\ntitle: 酸化与营养富集\ndescription: 追踪排放怎样经空气、土壤或水体引起酸化与营养富集，并区分施用量、净排放和类别指标。\n---\n\n## 酸输入与土壤 [#从排放找到接收系统]\n\n<Prose ids=\"cl-path-start cl-path-acid-soil cl-path-acid-indicator\" />\n\n<Prose ids=\"cl-acid113-ae-question cl-acid113-threshold cl-acid113-glam-relation cl-acid113-glam-tension cl-acid113-so2-rows cl-acid113-chemistry-control\" />\n\n## 营养与接收环境 [#营养进入淡水与近岸海洋]\n\n<Prose ids=\"cl-path-freshwater cl-path-marine cl-path-limiting-conditions\" />\n\n<ReaderSection id=\"陆地营养富集与指标的单位\" />\n\n<Prose ids=\"cl-path-terrestrial cl-path-units\" />\n\n<Prose ids=\"cl-acid113-shared-moles cl-acid113-nh3-control\" />\n\n## 背景与响应 [#响应曲线回答哪一种变化]\n\n<Prose ids=\"cl-path-marginal-average cl-path-supplied-effect-conditions cl-path-background cl-path-pdf\" />\n\n## 清单与类别指标 [#从施用量走到净排放和指标]\n\n<Prose ids=\"cl-path-operation cl-path-operation-indicator\" />\n\n<Prose ids=\"cl-eutro129-category-genealogy cl-eutro129-phosphorus-soil-water-interface cl-eutro129-phosphorus-stoichiometry-and-p2o5 cl-eutro129-nitrogen-soil-prohibition cl-eutro129-aquatic-and-airborne-n-reversals cl-eutro129-location-copies-and-nox-inversion cl-eutro129-normalization-double-counting-and-xml-anomalies cl-eutro129-operational-synthesis\" />\n\n<ReaderSection id=\"同一排放不同的环境问题\" />\n\n<Prose ids=\"cl-ozone119-precursor-entry cl-ozone119-pocp-to-lotos cl-ozone119-order-reversal cl-ozone119-titration-sign cl-ozone119-ef-location-copy cl-ozone119-multipath-accounting cl-ozone119-printed-limits\" />\n\n<Prose ids=\"cl-path-multiple-paths\" />\n"
+    },
+    {
+      "path": "content/docs/book/water-scarcity-and-reference.mdx",
+      "fromSha256": "66f3d4a44cae1d36f48be185fe20c29cc9cd51a0c5d551e61bc2dbf9c0fd0cb2",
+      "toSha256": "3aa5ca9cb1e5c371b1c2e323235c3cc94e97c1ddef6064b86d384d1f83a4620c",
+      "previous": "---\ntitle: 耗水与缺水潜势\ndescription: 以两处耗水算例与跨体系对照，说明耗水体积、取退水账本、剩余可用水参照、价值选择与发行包边界如何决定缺水潜势与损害排序。\n---\n\n## 水量与剩余量 [#体积记录了什么]\n\n<Prose ids=\"cl-water-opening cl-water-physical-object cl-water-aware-question\" />\n\n<ReaderSection id=\"剩余量之前先读输入口径\" />\n\n<Prose ids=\"cl-water-remaining-mechanism cl-water-input-basis cl-water-net-gross-meaning\" />\n\n<Prose ids=\"cl-water125-method-genealogy cl-water125-withdrawal-return-accounting\" />\n\n## 时空与参照 [#月份参照与背景]\n\n<Prose ids=\"cl-water-reference-period cl-water-reference-and-units cl-water-time-and-aggregation cl-water-background-inventory cl-water-marginal-contexts\" />\n\n<Prose ids=\"cl-water125-ef-country-resolution-and-climates cl-water125-value-choices-and-denominator-paradox\" />\n\n## 两处耗水的比较 [#把两处耗水接到同一产品]\n\n<Prose ids=\"cl-water-supplychain-reference cl-water-case-input cl-water-case-factors cl-water-case-result\" />\n\n## 情境与加总 [#更换情境与更换运算次序]\n\n<Prose ids=\"cl-water-case-locality cl-water-case-averaging cl-water-case-weighted-factor\" />\n\n<Prose ids=\"cl-water125-country-rank-reversals cl-water125-belgium-canada-mechanism-contrast\" />\n\n<ReaderSection id=\"结果怎样保留它的含义\" />\n\n<Prose ids=\"cl-water-version-and-boundary\" />\n\n<Prose ids=\"cl-water125-package-report-discrepancies cl-water125-diagnostic-synthesis\" />\n\n<Prose ids=\"cl-water-conclusion\" />\n"
+    },
+    {
+      "path": "content/docs/book/usetox-pathways-and-boundaries.mdx",
+      "fromSha256": "1bcedf29891a7c110c600aab3b1e49bf5a9fe87c6373d87745c09d58b28bed02",
+      "toSha256": "3a498b2bbf78ca152e2e00624a5388e50aff244705e807d1c30e1ed684799c54",
+      "previous": "---\ntitle: 毒性路径\ndescription: 说明USEtox与USES-LCA怎样从排放估计归趋、暴露和效应，以及效应基准、时间窗、代理规则与发行包边界怎样影响毒性比较。\n---\n\n## 排放与受体 [#排放与受体]\n\n<Prose ids=\"cl-usetox-matched-emissions cl-usetox-fate-exposure-effect cl-usetox-intake-and-effects cl-usetox-indicators-not-observed-cases\" />\n\n<Prose ids=\"cl-tox123-midpoint-families cl-tox123-hc20-and-metals\" />\n\n## 模型与范围 [#模型与范围]\n\n<Prose ids=\"cl-usetox-model-comparison cl-usetox-comparison-uncertainty cl-usetox-boxes-and-time cl-usetox-internal-feature-conflict\" />\n\n<Prose ids=\"cl-tox123-perspective-switches cl-tox123-nickel-dcb-reversal cl-tox123-speciation-and-proxies\" />\n\n## 比较的依据 [#比较的依据]\n\n<Prose ids=\"cl-usetox-missing-data-model-zero cl-usetox-factor-flags-and-conditions\" />\n\n<Prose ids=\"cl-tox123-normative-zeros cl-tox123-package-discrepancies\" />\n\n<Prose ids=\"cl-usetox-prioritization\" />\n\n<Prose ids=\"cl-tox123-cross-system-synthesis\" />\n\n<Prose ids=\"cl-usetox-conclusion\" />\n"
+    }
+  ],
+  "corrections": [
+    {
+      "chapter": "/docs/book/acidification-and-nutrient-pathways",
+      "claimId": "cl-eutro129-category-genealogy",
+      "scope": "整合改写：将四套富营养化体系的类别数、权重与模型细目整理入表 1 及注释，正文聚焦覆盖缺口与零分风险。"
+    },
+    {
+      "chapter": "/docs/book/acidification-and-nutrient-pathways",
+      "claimId": "cl-eutro129-phosphorus-soil-water-interface",
+      "scope": "整合改写：将 2 kg 总磷四种映射情景的数值结果移入表 2，正文聚焦界面互斥与双重折减/夸大机制。"
+    },
+    {
+      "chapter": "/docs/book/acidification-and-nutrient-pathways",
+      "claimId": "cl-eutro129-phosphorus-stoichiometry-and-p2o5",
+      "scope": "整合改写：压缩算式展开至注释，保留 P₂O₅ 漏乘 2 与表 S4.2 表头单位异文。"
+    },
+    {
+      "chapter": "/docs/book/acidification-and-nutrient-pathways",
+      "claimId": "cl-eutro129-nitrogen-soil-prohibition",
+      "scope": "整合改写：将表 4 备选方案与分项乘式移入注释，正文突出土壤氮静默归零与 LC-IMPACT 对比。"
+    },
+    {
+      "chapter": "/docs/book/acidification-and-nutrient-pathways",
+      "claimId": "cl-eutro129-aquatic-and-airborne-n-reversals",
+      "scope": "整合改写：压实至 420 字以内，紧凑呈现内陆滞留与大气沉降两组跨体系排序反转。"
+    },
+    {
+      "chapter": "/docs/book/acidification-and-nutrient-pathways",
+      "claimId": "cl-eutro129-location-copies-and-nox-inversion",
+      "scope": "整合改写：提炼恒值位置复制与通用 NOx 反超全欧峰值两类空间构造，补充行明细入注释。"
+    },
+    {
+      "chapter": "/docs/book/acidification-and-nutrient-pathways",
+      "claimId": "cl-eutro129-normalization-double-counting-and-xml-anomalies",
+      "scope": "整合改写：正文突出归一化分母 15.6% 农田磷双重计入与海洋氮叠加，将行号明细与五处 XML/排版异文移入注释。"
+    },
+    {
+      "chapter": "/docs/book/acidification-and-nutrient-pathways",
+      "claimId": "cl-ozone119-precursor-entry",
+      "scope": "整合改写：精简过渡句，平滑承接大气沉降与对流层光化学臭氧路径。"
+    },
+    {
+      "chapter": "/docs/book/acidification-and-nutrient-pathways",
+      "claimId": "cl-ozone119-pocp-to-lotos",
+      "scope": "整合改写：首次展开伤残调整生命年（DALY），将三代光化学臭氧体系参数汇总入表 3 与注释。"
+    },
+    {
+      "chapter": "/docs/book/acidification-and-nutrient-pathways",
+      "claimId": "cl-ozone119-order-reversal",
+      "scope": "整合改写：压缩措辞，清晰呈现跨体系与同体系跨受体的双重排序反转。"
+    },
+    {
+      "chapter": "/docs/book/acidification-and-nutrient-pathways",
+      "claimId": "cl-ozone119-titration-sign",
+      "scope": "整合改写：联动表 3，精炼滴定反应机理与边际符号边界。"
+    },
+    {
+      "chapter": "/docs/book/acidification-and-nutrient-pathways",
+      "claimId": "cl-ozone119-ef-location-copy",
+      "scope": "整合改写：紧扣恒值复制与真实分国因子的对照，去除冗余举例展开。"
+    },
+    {
+      "chapter": "/docs/book/acidification-and-nutrient-pathways",
+      "claimId": "cl-ozone119-multipath-accounting",
+      "scope": "整合改写：保持三类前体全量表征数值与多路径核算原则，压缩后半段措辞。"
+    },
+    {
+      "chapter": "/docs/book/acidification-and-nutrient-pathways",
+      "claimId": "cl-ozone119-printed-limits",
+      "scope": "整合改写：正文保留模型尺度与 UUID/CAS 错位核心事实，其余表号与星号异文移入注释。"
+    },
+    {
+      "chapter": "/docs/book/acidification-and-nutrient-pathways",
+      "claimId": "cl-path-multiple-paths",
+      "scope": "合并原富营养化操作清单与章末收束段，统一形成全章多路径核查框架并衔接下篇颗粒物健康。"
+    },
+    {
+      "chapter": "/docs/book/water-scarcity-and-reference",
+      "claimId": "cl-water125-method-genealogy",
+      "scope": "整合改写：首次展开欧盟环境足迹（EF），压实至 440 字以内并将四套体系明细整理入表 1。"
+    },
+    {
+      "chapter": "/docs/book/water-scarcity-and-reference",
+      "claimId": "cl-water125-withdrawal-return-accounting",
+      "scope": "整合改写：将 11 条基本流名称细目移入注释，正文聚焦同国代数相抵与含水层不扣减造成的 10∶1 分歧。"
+    },
+    {
+      "chapter": "/docs/book/water-scarcity-and-reference",
+      "claimId": "cl-water125-ef-country-resolution-and-climates",
+      "scope": "整合改写：首次展开 PEF/OEF、补齐归一化基准单位并压实至 440 字以内。"
+    },
+    {
+      "chapter": "/docs/book/water-scarcity-and-reference",
+      "claimId": "cl-water125-value-choices-and-denominator-paradox",
+      "scope": "整合改写：首次展开伤残调整生命年（DALY），避免 EF_HH 与 EF 3.1 缩写冲突，压实至 450 字以内。"
+    },
+    {
+      "chapter": "/docs/book/water-scarcity-and-reference",
+      "claimId": "cl-water125-country-rank-reversals",
+      "scope": "整合改写：修正悬空前向指代（“下节”改为“本节后文”），压实至 440 字以内并联动表 3。"
+    },
+    {
+      "chapter": "/docs/book/water-scarcity-and-reference",
+      "claimId": "cl-water125-belgium-canada-mechanism-contrast",
+      "scope": "整合改写：联动表 3，将终点残项移入注释，正文聚焦取水比与净耗水倒数加权机制差异。"
+    },
+    {
+      "chapter": "/docs/book/water-scarcity-and-reference",
+      "claimId": "cl-water125-package-report-discrepancies",
+      "scope": "整合改写：压实至 440 字以内，消除“正反文矛盾”与模板措辞，完整异文留存注释。"
+    },
+    {
+      "chapter": "/docs/book/water-scarcity-and-reference",
+      "claimId": "cl-water125-diagnostic-synthesis",
+      "scope": "整合改写：统一使用“本章”与末段算例绑定句衔接，并以“合计 3 m³ 耗水的两流域算例”自然过渡至末段收束。"
+    },
+    {
+      "chapter": "/docs/book/usetox-pathways-and-boundaries",
+      "claimId": "cl-tox123-midpoint-families",
+      "scope": "整合改写：首次展开 CTUh、CTUe 与 DALY，将两大家族架构与终点常数整理入表 1 及注释。"
+    },
+    {
+      "chapter": "/docs/book/usetox-pathways-and-boundaries",
+      "claimId": "cl-tox123-hc20-and-metals",
+      "scope": "整合改写：压实至 440 字以内，将 EF 3.0/3.1 金属表值与增减幅整理入表 2、XML 精确值移入注释。"
+    },
+    {
+      "chapter": "/docs/book/usetox-pathways-and-boundaries",
+      "claimId": "cl-tox123-perspective-switches",
+      "scope": "整合改写：首次展开国际癌症研究机构（IARC），紧凑梳理 ReCiPe 2016 五道视角开关。"
+    },
+    {
+      "chapter": "/docs/book/usetox-pathways-and-boundaries",
+      "claimId": "cl-tox123-nickel-dcb-reversal",
+      "scope": "整合改写：压实至 440 字以内，联动表 3 突出城市空气与海水两组双向反转。"
+    },
+    {
+      "chapter": "/docs/book/usetox-pathways-and-boundaries",
+      "claimId": "cl-tox123-speciation-and-proxies",
+      "scope": "整合改写：压实至 440 字以内，将 15 位 XML 精确值移入注释。"
+    },
+    {
+      "chapter": "/docs/book/usetox-pathways-and-boundaries",
+      "claimId": "cl-tox123-normative-zeros",
+      "scope": "整合改写：修正注释中跨篇引述为正式篇名《酸化与营养富集》，压实至 440 字以内。"
+    },
+    {
+      "chapter": "/docs/book/usetox-pathways-and-boundaries",
+      "claimId": "cl-tox123-package-discrepancies",
+      "scope": "整合改写：正文突出双目录同 UUID 差异（乳酸 1033.8 对 0.0）与四氯化碳流缺口，将全部四组源内异文收归后附注释。"
+    },
+    {
+      "chapter": "/docs/book/usetox-pathways-and-boundaries",
+      "claimId": "cl-tox123-cross-system-synthesis",
+      "scope": "整合改写：压缩重复举例，形成简洁的五步毒性分歧诊断规程。"
+    }
+  ],
+  "reviewEvidence": [
+    {
+      "kind": "integration-review",
+      "date": "2026-11-22",
+      "file": "_docs/editorial/review-evidence/part4-batch1a-200/review-record.json",
+      "sha256": "8e22f8a0327d9a992b58083ff9a6ea8a787859698b8900fd5e87b718c8e0a327"
+    }
+  ],
+  "publicArtifacts": [
+    {
+      "path": "claims/index.html",
+      "sha256": "2a0bc7c27efc8e6edd7012fadd7e79744b436e4d93a54ff6dc5545400fceb781"
+    },
+    {
+      "path": "sources/index.html",
+      "sha256": "dcec642f8b0a7ece112485069014c604dd9f14123f4a9a9dba4ab8003b99b6d7"
+    },
+    {
+      "path": "concepts/index.html",
+      "sha256": "c53fc9af741abad0267a203c6b8ec104f2e96a614005c72cf40b1857e90dbf43"
+    },
+    {
+      "path": "downloads/catalog.json",
+      "sha256": "6e56598f72bf045d64388918fd6d8c9581adda6cc07d38367ce4ac04d3b08da0"
+    },
+    {
+      "path": "downloads/dependencies.json",
+      "sha256": "455a10ee593c62d142db01eee90587f5b097fa7f815b8fe3f589ead119def018"
+    }
+  ]
+}

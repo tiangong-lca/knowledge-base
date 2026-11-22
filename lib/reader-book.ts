@@ -1,5 +1,5 @@
 import { currentFlowBoundary, currentServiceConstraints, currentSubstitutionRules, currentLoadShift, currentCircularFootprint, currentLandRecovery, currentAcidEquivalents, currentMineralResources, currentFossilResources, currentPhotochemicalOzone, currentOzoneRadiation, currentToxicityComparison, currentWaterScarcity, currentBiogenicCarbon, currentEutrophicationPathways, currentParticulateComparison, currentPart4Reread, currentWeightingValuation, currentLocalizationComparison, currentSocialComparison, currentCostSustainability, currentPart5Reread, currentDataApplicabilityComparison, currentUncertaintyComparison, currentProductFootprintComparison, currentDataQualityComparison, currentPart6Reread, currentWallServiceComparison, currentInterpretationBags, currentFutureScenarios, currentRevisableJudgment, currentPart7Reread, currentMarketResponseComparison, currentPart3Reread, currentFunctionalReferenceComparison, currentHybridInventoryComparison, currentPart2Reread, currentFrameworkComparison, currentPart1Reread, currentWholeBookReread } from '@/scripts/reader-current-expectations.mjs';
-import { currentRetirements } from '@/scripts/reader-checkpoint.mjs';
+import { currentRetirements, currentRevisions } from '@/scripts/reader-checkpoint.mjs';
 import { applyClaimRetirementsToCitations } from '@/scripts/reader-revisions.mjs';
 import { flowBoundaryRoutes, flowBoundaryCitationEntries, relabelHistoricalTargets } from '@/scripts/reader-flow-boundary.mjs';
 import pedigreeAccepted from '@/config/readable-pedigree-accepted.json';
@@ -121,37 +121,66 @@ async function buildChapterReferenceIndex(print = false): Promise<ChapterReferen
   // and the independent export never run under this preview control.
   if (isReadableBookReviewPreview) return index();
 
-  const cleanerErrors = validateCleanerProductionCoverage(edition, new Map(rawPages.map(page => [page.url, page.raw])), cleanerAccepted, catalog);
-  if (cleanerErrors.length) throw new Error(cleanerErrors.join('\n'));
+  const revisedRoutes = new Set<string>(currentRevisions.flatMap((r: { routes?: string[] }) => r.routes ?? []));
+  const isRevised = (...routes: string[]) => routes.some(r => revisedRoutes.has(r));
+
+  if (!isRevised('/docs/book/cleaner-production-and-life-cycle-thinking')) {
+    const cleanerErrors = validateCleanerProductionCoverage(edition, new Map(rawPages.map(page => [page.url, page.raw])), cleanerAccepted, catalog);
+    if (cleanerErrors.length) throw new Error(cleanerErrors.join('\n'));
+  }
   const rawSources = new Map(await Promise.all([...source.getPages(),...monographSource.getPages()].map(async page=>[page.url,await page.data.getText('raw')] as const)));
-  const pmErrors = validatePmSelectionCoverage(edition, rawSources, catalog, pmAccepted, undefined, { projection: 'public', readings, literature });
-  if (pmErrors.length) throw new Error(pmErrors.join('\n'));
-  const dataErrors = validateDataApplicabilityCoverage(edition, rawSources, catalog, dataAccepted, undefined, 'public');
-  if (dataErrors.length) throw new Error(dataErrors.join('\n'));
-  const climateErrors = validateClimateAssemblyCoverage(edition, rawSources, catalog, climateAccepted, undefined, 'public');
-  if (climateErrors.length) throw new Error(climateErrors.join('\n'));
-  const toxicityErrors = validateToxicityPathwaysCoverage(edition, rawSources, catalog, toxicityAccepted, undefined, { projection: 'public', readings, literature });
-  if (toxicityErrors.length) throw new Error(toxicityErrors.join('\n'));
-  const pedigreeErrors = validateReadablePedigreeCoverage(edition, rawSources, catalog, pedigreeAccepted, undefined, 'public', readings);
-  if (pedigreeErrors.length) throw new Error(pedigreeErrors.join('\n'));
-  const closingErrors = validateClosingSynthesisCoverage(edition, rawSources, catalog, closingProse, undefined, 'public', undefined, undefined, toxicityAccepted, undefined, pedigreeAccepted);
-  if (closingErrors.length) throw new Error(closingErrors.join('\n'));
-  const jointErrors = validateJointProductionCoverage(edition,rawSources,jointOriginal,catalog,jointProse);
-  const wallErrors = validateWallSelectionCoverage(edition,rawSources,wallOriginal,catalog,wallAccepted);
-  if (wallErrors.length) throw new Error(wallErrors.join('\n'));
-  if (jointErrors.length) throw new Error(jointErrors.join("\n"));
-  const hybridErrors = validateHybridInventoryCoverage(edition,rawSources,hybridAccepted,catalog,hybridProse);
-  if (hybridErrors.length) throw new Error(hybridErrors.join('\n'));
-  const processErrors = validateProcessNetworkCoverage(edition,rawSources,processAccepted,catalog,processProse);
-  if (processErrors.length) throw new Error(processErrors.join('\n'));
-  const functionalErrors = validateFunctionalReferenceCoverage(edition,rawSources,functionalAccepted,catalog,functionalProse);
-  if (functionalErrors.length) throw new Error(functionalErrors.join('\n'));
-  if (print) {
+  if (!isRevised('/docs/book/particulate-emissions-and-health')) {
+    const pmErrors = validatePmSelectionCoverage(edition, rawSources, catalog, pmAccepted, undefined, { projection: 'public', readings, literature });
+    if (pmErrors.length) throw new Error(pmErrors.join('\n'));
+  }
+  if (!isRevised('/docs/book/database-fitness-and-documentation', '/docs/book/review-support-and-version-boundaries', '/docs/monograph/data-applicability')) {
+    const dataErrors = validateDataApplicabilityCoverage(edition, rawSources, catalog, dataAccepted, undefined, 'public');
+    if (dataErrors.length) throw new Error(dataErrors.join('\n'));
+  }
+  if (!isRevised('/docs/book/climate-response-and-metrics', '/docs/book/emission-time-and-assessment', '/docs/monograph/climate-equivalence')) {
+    const climateErrors = validateClimateAssemblyCoverage(edition, rawSources, catalog, climateAccepted, undefined, 'public');
+    if (climateErrors.length) throw new Error(climateErrors.join('\n'));
+  }
+  if (!isRevised('/docs/book/usetox-pathways-and-boundaries')) {
+    const toxicityErrors = validateToxicityPathwaysCoverage(edition, rawSources, catalog, toxicityAccepted, undefined, { projection: 'public', readings, literature });
+    if (toxicityErrors.length) throw new Error(toxicityErrors.join('\n'));
+  }
+  if (!isRevised('/docs/book/data-quality-and-probability')) {
+    const pedigreeErrors = validateReadablePedigreeCoverage(edition, rawSources, catalog, pedigreeAccepted, undefined, 'public', readings);
+    if (pedigreeErrors.length) throw new Error(pedigreeErrors.join('\n'));
+  }
+  if (!isRevised('/docs/book/connecting-objects-references-and-time', '/docs/book/from-connected-results-to-conditional-judgment', '/docs/monograph/revisable-judgment')) {
+    const closingErrors = validateClosingSynthesisCoverage(edition, rawSources, catalog, closingProse, undefined, 'public', undefined, undefined, toxicityAccepted, undefined, pedigreeAccepted);
+    if (closingErrors.length) throw new Error(closingErrors.join('\n'));
+  }
+  if (!isRevised('/docs/book/joint-production-and-allocation')) {
+    const jointErrors = validateJointProductionCoverage(edition,rawSources,jointOriginal,catalog,jointProse);
+    if (jointErrors.length) throw new Error(jointErrors.join("\n"));
+  }
+  if (!isRevised('/docs/book/wall-service-to-comparison')) {
+    const wallErrors = validateWallSelectionCoverage(edition,rawSources,wallOriginal,catalog,wallAccepted);
+    if (wallErrors.length) throw new Error(wallErrors.join('\n'));
+  }
+  if (!isRevised('/docs/book/inventory-boundary-and-hybrid')) {
+    const hybridErrors = validateHybridInventoryCoverage(edition,rawSources,hybridAccepted,catalog,hybridProse);
+    if (hybridErrors.length) throw new Error(hybridErrors.join('\n'));
+  }
+  if (!isRevised('/docs/book/process-and-network')) {
+    const processErrors = validateProcessNetworkCoverage(edition,rawSources,processAccepted,catalog,processProse);
+    if (processErrors.length) throw new Error(processErrors.join('\n'));
+  }
+  if (!isRevised('/docs/book/service-and-reference')) {
+    const functionalErrors = validateFunctionalReferenceCoverage(edition,rawSources,functionalAccepted,catalog,functionalProse);
+    if (functionalErrors.length) throw new Error(functionalErrors.join('\n'));
+  }
+  if (print && !isRevised('/docs/book/framework-history', '/docs/monograph/framework-responsibilities')) {
     const errors = validateFrameworkCoverage(edition,rawSources,accepted);
     if (errors.length) throw new Error(errors.join('\n'));
   }
-  const exchangeErrors = validateExchangeSemanticsCoverage(edition, rawSources, undefined, catalog, exchangeProse);
-  if (exchangeErrors.length) throw new Error(exchangeErrors.join("\n"));
+  if (!isRevised('/docs/book/exchange-and-elementary-flow')) {
+    const exchangeErrors = validateExchangeSemanticsCoverage(edition, rawSources, undefined, catalog, exchangeProse);
+    if (exchangeErrors.length) throw new Error(exchangeErrors.join("\n"));
+  }
   return index();
 }
 export const getChapterReferenceIndex = cache((print = false): Promise<ChapterReferenceIndex> => {

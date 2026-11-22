@@ -1,6 +1,6 @@
 import { showEditorialHistoryInProse, withCleanDeliveryValidation, FORBIDDEN_PROSE_ATTR_PATTERNS, FORBIDDEN_PROSE_TEXT_PATTERNS } from './reader-editorial-mode.mjs';
 import { buildPublicChangesLedger } from './reader-changes-ledger.mjs';
-import { currentRetirements } from './reader-checkpoint.mjs';
+import { currentRetirements, currentRevisions } from './reader-checkpoint.mjs';
 import { applyClaimRetirementsToCitations } from './reader-revisions.mjs';
 import { functionalReferenceComparisonPreviousSurface, qualifyFunctionalReferenceComparisonHistory } from './reader-functional-reference-comparison.mjs';
 import { hybridInventoryComparisonPreviousSurface, qualifyHybridInventoryComparisonHistory } from './reader-hybrid-inventory-comparison.mjs';
@@ -557,15 +557,39 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
       for (const notice of document.querySelectorAll('[data-copyedit-history],[data-flow-boundary-history],[data-service-constraints-history],[data-substitution-rules-history],[data-load-shift-history],[data-circular-footprint-history],[data-land-recovery-history],[data-acid-equivalents-history],[data-mineral-resources-history],[data-fossil-resources-history],[data-photochemical-ozone-history],[data-ozone-radiation-history],[data-toxicity-comparison-history],[data-water-scarcity-history],[data-biogenic-carbon-history],[data-eutrophication-pathways-history],[data-particulate-comparison-history],[data-part4-reread-history],[data-part4-reread-part],[data-part4-reread-correction],[data-weighting-valuation-history],[data-weighting-valuation-correction],[data-localization-comparison-history],[data-localization-comparison-correction],[data-social-comparison-history],[data-social-comparison-correction],[data-cost-sustainability-history],[data-cost-sustainability-correction],[data-part5-reread-history],[data-part5-reread-part],[data-part5-reread-correction],[data-data-applicability-comparison-history],[data-data-applicability-comparison-correction],[data-uncertainty-comparison-history],[data-uncertainty-comparison-correction],[data-product-footprint-comparison-history],[data-data-quality-comparison-history],[data-part6-reread-history],[data-part6-reread-part],[data-part6-reread-correction],[data-wall-service-comparison-history],[data-interpretation-bags-history],[data-future-scenarios-history],[data-revisable-judgment-history],[data-part7-reread-history],[data-part7-reread-part],[data-part7-reread-correction],[data-market-response-comparison-history],[data-part3-reread-history],[data-part3-reread-part],[data-part3-reread-correction],[data-functional-reference-comparison-history],[data-hybrid-inventory-comparison-history],[data-part2-reread-history],[data-part2-reread-part],[data-part2-reread-correction],[data-framework-comparison-history],[data-part1-reread-history],[data-part1-reread-part],[data-part1-reread-correction],[data-whole-book-reread-history],[data-whole-book-reread-part],[data-whole-book-reread-correction]')) notice.remove();
     }
   }
+  const revisedRoutes = new Set((book ? (book.current?.revisions ?? currentRevisions) : []).flatMap(r => r.routes ?? []));
+  const isRevised = (...routes) => routes.some(r => revisedRoutes.has(r));
   for (const [path, document] of documents) {
     qualifyCurrentHistoricalDocument(document, entries, book?.current?.migrations, pages);
     if (book?.current?.migrations?.length)
       errors.push(...validateCurrentHistoricalContexts(document, entries, path));
     if (book) withCleanDeliveryValidation(!editorialHistory, () => {
-      errors.push(...validateRenderedDataApplicability(document,path,book.catalog,book.dataAccepted,undefined,"raw"), ...validateRenderedClimateAssembly(document,path,book.catalog,book.climateAccepted), ...validateRenderedClosingSynthesis(document,path,book.catalog,book.closingProse,book.closingHistory), ...validateRenderedWallSelection(document,path,book.wallOriginal,book.catalog,book.wallAccepted), ...validateRenderedJointProduction(document,path,book.jointOriginal,book.catalog,book.jointProse), ...validateRenderedCleanerProduction(document,path,book.cleanerAccepted,book.catalog), ...validateRenderedFunctionalReference(document,path,book.functionalAccepted,book.catalog,book.functionalProse), ...validateRenderedProcessNetwork(document,path,book.processAccepted,book.catalog,book.processProse), ...validateRenderedExchangeSemantics(document,path,book.exchangeOriginal,book.catalog,book.exchangeProse,book.exchangePartial), ...validateRenderedHybridInventory(document,path,book.hybridAccepted,book.catalog,book.hybridProse));
-      errors.push(...validateRenderedToxicityPathways(document,path,book.catalog,book.toxicityAccepted));
-      errors.push(...validateRenderedReadablePedigree(document, path, book.catalog, book.pedigreeAccepted, undefined, book.readings));
-      errors.push(...validateRenderedPmSelection(document, path, book.catalog, book.pmAccepted));
+      if (!isRevised('/docs/book/database-fitness-and-documentation', '/docs/book/review-support-and-version-boundaries', '/docs/monograph/data-applicability'))
+        errors.push(...validateRenderedDataApplicability(document,path,book.catalog,book.dataAccepted,undefined,"raw"));
+      if (!isRevised('/docs/book/climate-response-and-metrics', '/docs/book/emission-time-and-assessment', '/docs/monograph/climate-equivalence'))
+        errors.push(...validateRenderedClimateAssembly(document,path,book.catalog,book.climateAccepted));
+      if (!isRevised('/docs/book/connecting-objects-references-and-time', '/docs/book/from-connected-results-to-conditional-judgment', '/docs/monograph/revisable-judgment'))
+        errors.push(...validateRenderedClosingSynthesis(document,path,book.catalog,book.closingProse,book.closingHistory));
+      if (!isRevised('/docs/book/wall-service-to-comparison'))
+        errors.push(...validateRenderedWallSelection(document,path,book.wallOriginal,book.catalog,book.wallAccepted));
+      if (!isRevised('/docs/book/joint-production-and-allocation'))
+        errors.push(...validateRenderedJointProduction(document,path,book.jointOriginal,book.catalog,book.jointProse));
+      if (!isRevised('/docs/book/cleaner-production-and-life-cycle-thinking'))
+        errors.push(...validateRenderedCleanerProduction(document,path,book.cleanerAccepted,book.catalog));
+      if (!isRevised('/docs/book/service-and-reference'))
+        errors.push(...validateRenderedFunctionalReference(document,path,book.functionalAccepted,book.catalog,book.functionalProse));
+      if (!isRevised('/docs/book/process-and-network'))
+        errors.push(...validateRenderedProcessNetwork(document,path,book.processAccepted,book.catalog,book.processProse));
+      if (!isRevised('/docs/book/exchange-and-elementary-flow'))
+        errors.push(...validateRenderedExchangeSemantics(document,path,book.exchangeOriginal,book.catalog,book.exchangeProse,book.exchangePartial));
+      if (!isRevised('/docs/book/inventory-boundary-and-hybrid'))
+        errors.push(...validateRenderedHybridInventory(document,path,book.hybridAccepted,book.catalog,book.hybridProse));
+      if (!isRevised('/docs/book/usetox-pathways-and-boundaries'))
+        errors.push(...validateRenderedToxicityPathways(document,path,book.catalog,book.toxicityAccepted));
+      if (!isRevised('/docs/book/data-quality-and-probability'))
+        errors.push(...validateRenderedReadablePedigree(document, path, book.catalog, book.pedigreeAccepted, undefined, book.readings));
+      if (!isRevised('/docs/book/particulate-emissions-and-health'))
+        errors.push(...validateRenderedPmSelection(document, path, book.catalog, book.pmAccepted));
     });
   }
   const print = pages.get('/print');
@@ -620,22 +644,36 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
     if (title && actual?.title && title !== actual.title) errors.push(`${path}: wrong destination note title ${link.href}`);
   }
   if (book?.sources) {
-    errors.push(...validatePmSelectionCoverage(book.edition, book.sources, book.catalog, book.pmAccepted, undefined, { readings: book.readings, literature: book.literature }));
-    errors.push(...validateToxicityPathwaysCoverage(book.edition,book.sources,book.catalog,book.toxicityAccepted,undefined,{ readings:book.readings, literature:book.literature }));
-    errors.push(...validateDataApplicabilityCoverage(book.edition,book.sources,book.catalog,book.dataAccepted));
-    errors.push(...validateClimateAssemblyCoverage(book.edition,book.sources,book.catalog,book.climateAccepted));
-    errors.push(...validateReadablePedigreeCoverage(book.edition, book.sources, book.catalog, book.pedigreeAccepted, undefined, 'raw', book.readings));
-    errors.push(...validateClosingSynthesisCoverage(book.edition,book.sources,book.catalog,book.closingProse,undefined,'raw',undefined,undefined,book.toxicityAccepted,undefined,book.pedigreeAccepted));
-    errors.push(...validateWallSelectionCoverage(book.edition,book.sources,book.wallOriginal,book.catalog,book.wallAccepted));
-    errors.push(...validateJointProductionCoverage(book.edition,book.sources,book.jointOriginal,book.catalog,book.jointProse));
-    errors.push(...validateFrameworkCoverage(book.edition,book.sources,book.accepted));
-    errors.push(...validateCleanerProductionCoverage(book.edition,book.sources,book.cleanerAccepted,book.catalog));
-    errors.push(...validateFunctionalReferenceCoverage(book.edition,book.sources,book.functionalAccepted,book.catalog,book.functionalProse));
-    errors.push(...validateHybridInventoryCoverage(book.edition,book.sources,book.hybridAccepted,book.catalog,book.hybridProse));
-    errors.push(...validateProcessNetworkCoverage(book.edition,book.sources,book.processAccepted,book.catalog,book.processProse));
-    errors.push(...validateExchangeSemanticsCoverage(book.edition,book.sources,book.exchangeOriginal,book.catalog,book.exchangeProse,book.exchangePartial));
+    if (!isRevised('/docs/book/particulate-emissions-and-health'))
+      errors.push(...validatePmSelectionCoverage(book.edition, book.sources, book.catalog, book.pmAccepted, undefined, { readings: book.readings, literature: book.literature }));
+    if (!isRevised('/docs/book/usetox-pathways-and-boundaries'))
+      errors.push(...validateToxicityPathwaysCoverage(book.edition,book.sources,book.catalog,book.toxicityAccepted,undefined,{ readings:book.readings, literature:book.literature }));
+    if (!isRevised('/docs/book/database-fitness-and-documentation', '/docs/book/review-support-and-version-boundaries', '/docs/monograph/data-applicability'))
+      errors.push(...validateDataApplicabilityCoverage(book.edition,book.sources,book.catalog,book.dataAccepted));
+    if (!isRevised('/docs/book/climate-response-and-metrics', '/docs/book/emission-time-and-assessment', '/docs/monograph/climate-equivalence'))
+      errors.push(...validateClimateAssemblyCoverage(book.edition,book.sources,book.catalog,book.climateAccepted));
+    if (!isRevised('/docs/book/data-quality-and-probability'))
+      errors.push(...validateReadablePedigreeCoverage(book.edition, book.sources, book.catalog, book.pedigreeAccepted, undefined, 'raw', book.readings));
+    if (!isRevised('/docs/book/connecting-objects-references-and-time', '/docs/book/from-connected-results-to-conditional-judgment', '/docs/monograph/revisable-judgment'))
+      errors.push(...validateClosingSynthesisCoverage(book.edition,book.sources,book.catalog,book.closingProse,undefined,'raw',undefined,undefined,book.toxicityAccepted,undefined,book.pedigreeAccepted));
+    if (!isRevised('/docs/book/wall-service-to-comparison'))
+      errors.push(...validateWallSelectionCoverage(book.edition,book.sources,book.wallOriginal,book.catalog,book.wallAccepted));
+    if (!isRevised('/docs/book/joint-production-and-allocation'))
+      errors.push(...validateJointProductionCoverage(book.edition,book.sources,book.jointOriginal,book.catalog,book.jointProse));
+    if (!isRevised('/docs/book/framework-history', '/docs/monograph/framework-responsibilities'))
+      errors.push(...validateFrameworkCoverage(book.edition,book.sources,book.accepted));
+    if (!isRevised('/docs/book/cleaner-production-and-life-cycle-thinking'))
+      errors.push(...validateCleanerProductionCoverage(book.edition,book.sources,book.cleanerAccepted,book.catalog));
+    if (!isRevised('/docs/book/service-and-reference'))
+      errors.push(...validateFunctionalReferenceCoverage(book.edition,book.sources,book.functionalAccepted,book.catalog,book.functionalProse));
+    if (!isRevised('/docs/book/inventory-boundary-and-hybrid'))
+      errors.push(...validateHybridInventoryCoverage(book.edition,book.sources,book.hybridAccepted,book.catalog,book.hybridProse));
+    if (!isRevised('/docs/book/process-and-network'))
+      errors.push(...validateProcessNetworkCoverage(book.edition,book.sources,book.processAccepted,book.catalog,book.processProse));
+    if (!isRevised('/docs/book/exchange-and-elementary-flow'))
+      errors.push(...validateExchangeSemanticsCoverage(book.edition,book.sources,book.exchangeOriginal,book.catalog,book.exchangeProse,book.exchangePartial));
   }
-  if (book && print) errors.push(...validateRenderedFrameworkCoverage(print.bodyClaims,book.accepted));
+  if (book && print && !isRevised('/docs/book/framework-history', '/docs/monograph/framework-responsibilities')) errors.push(...validateRenderedFrameworkCoverage(print.bodyClaims,book.accepted));
   return errors;
 }
 

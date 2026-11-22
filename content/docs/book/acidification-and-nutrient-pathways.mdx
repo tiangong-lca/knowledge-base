@@ -27,10 +27,43 @@ description: 追踪排放怎样经空气、土壤或水体引起酸化与营养�
 
 <Prose ids="cl-path-operation cl-path-operation-indicator" />
 
-<Prose ids="cl-eutro129-category-genealogy cl-eutro129-phosphorus-soil-water-interface cl-eutro129-phosphorus-stoichiometry-and-p2o5 cl-eutro129-nitrogen-soil-prohibition cl-eutro129-aquatic-and-airborne-n-reversals cl-eutro129-location-copies-and-nox-inversion cl-eutro129-normalization-double-counting-and-xml-anomalies cl-eutro129-operational-synthesis" />
+<Prose ids="cl-eutro129-category-genealogy" />
+
+表 1 四套主流影响评价体系的富营养化类别架构与覆盖对照。
+
+| 体系 | 陆地营养富集 | 淡水富营养化 | 海洋富营养化 | 正式推荐终点 |
+| --- | --- | --- | --- | --- |
+| ILCD 2011 / EF 3.1 | 累积超载（mol N 当量；EF 权重 3.71%） | EUTREND（kg P 当量；EF 权重 2.80%） | EUTREND（kg N 当量；EF 权重 2.96%） | 0 项（ILCD 仅列临时淡水方案） |
+| UNEP 2019 全球指南 | 不单列 | 磷输运与物种出现（kg P 当量） | 氮输运与底层缺氧（kg N 当量） | 2 项局地可逆终点（PDF·m³·yr） |
+| ReCiPe 2016 | 归入陆地酸化（不单列） | 0.5° 网格磷模型（kg P 当量） | 未纳入（0 项） | 1 项淡水终点（6.1×10⁻⁷ species·yr/kg P 当量，三视角恒定） |
+| LC-IMPACT | 不单列 | 无中点，直算终点 | 无中点，直算终点 | 2 项全球灭绝风险终点（PDF·yr；淡水仅计鱼类） |
+
+<Prose ids="cl-eutro129-phosphorus-soil-water-interface" />
+
+表 2 农田施用 2 kg 总磷在不同区室规则与映射失误下的淡水富营养化得分对照。
+
+| 清单处理与映射情景 | 对应规则与内置迁移率 | 得分（kg P 当量） | 相对合规基准的偏差 |
+| --- | --- | --- | --- |
+| 清单按 10% 折为 0.2 kg P 挂淡水流，或 2 kg 直挂 ReCiPe 土壤流 | UNEP Tier 1（10%）或 ReCiPe 2016 土壤因子（0.10） | 0.20 | 基准（1×） |
+| 2 kg 未折减，按未知径流挂 EF 3.1 土壤流 | EU 2021/2279 未知径流规则，EF 3.1 土壤因子（0.05） | 0.10 | 低一半（0.5×，模型迁移率差） |
+| 清单已按 10% 折为 0.2 kg P，却误挂 EF 3.1 / ReCiPe 土壤流 | 迁移折减连乘两次（×0.05 或 ×0.10） | 0.010 / 0.020 | 缩水 10–20 倍（漏算 90%–95%） |
+| 2 kg 施磷未折减，误直挂淡水总磷基本流 | 淡水直排因子（1.0） | 2.0 | 夸大 10–20 倍 |
+
+<Prose ids="cl-eutro129-phosphorus-stoichiometry-and-p2o5 cl-eutro129-nitrogen-soil-prohibition cl-eutro129-aquatic-and-airborne-n-reversals cl-eutro129-location-copies-and-nox-inversion cl-eutro129-normalization-double-counting-and-xml-anomalies" />
 
 <ReaderSection id="同一排放不同的环境问题" />
 
-<Prose ids="cl-ozone119-precursor-entry cl-ozone119-pocp-to-lotos cl-ozone119-order-reversal cl-ozone119-titration-sign cl-ozone119-ef-location-copy cl-ozone119-multipath-accounting cl-ozone119-printed-limits" />
+<Prose ids="cl-ozone119-precursor-entry cl-ozone119-pocp-to-lotos" />
+
+表 3 光化学臭氧主流体系构造与典型前体因子对照。
+
+| 体系与指标 | 参照物与受体 | NOx（世界 / 区域） | NMVOC（世界 / 区域） | 终点转换或说明 |
+| --- | --- | --- | --- | --- |
+| CML 2002（POCP） | kg 乙烯当量；气团化学活性 | 不赋因子 | 按具体有机物赋因子 | 不计下风向人口或植被分布 |
+| ILCD 2011 / EF 3.1 | kg NMVOC 当量；人体健康（LOTOS-EUROS） | 1.0（36 国同值） | 1.0（泛指 VOC 为 0.235） | 仅设 1 项人体中点 |
+| ReCiPe 2016（HOFP） | kg NOx 当量；人体呼吸摄入（TM5-FASST） | 全球 1；比荷卢 −0.48；英爱 −0.20 | 全球 0.18；比荷卢 +0.69；英爱 +0.60 | ×9.1×10⁻⁷ DALY/kg NOx 当量 |
+| ReCiPe 2016（EOFP） | kg NOx 当量；森林草地 AOT40（TM5-FASST） | 全球 1；比荷卢 +0.16；英爱 +0.44 | 全球 0.29；比荷卢 +1.10；英爱 +1.15 | ×1.29×10⁻⁷ species·yr/kg NOx 当量 |
+
+<Prose ids="cl-ozone119-order-reversal cl-ozone119-titration-sign cl-ozone119-ef-location-copy cl-ozone119-multipath-accounting cl-ozone119-printed-limits" />
 
 <Prose ids="cl-path-multiple-paths" />
